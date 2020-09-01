@@ -4,12 +4,12 @@ description: 端口类音频驱动程序参考
 ms.assetid: ce68e3fd-9d7e-4d9e-b30a-09c07a3bb805
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1af3a304eb0cf511a20992a574279c1024bd7ac4
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 6c8803a83102418747c7ae58adf10becd2bb6632
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72830236"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89210485"
 ---
 # <a name="port-class-audio-driver-reference"></a>端口类音频驱动程序参考
 
@@ -23,7 +23,7 @@ ms.locfileid: "72830236"
 
 -   端口和微型端口驱动程序用来相互通信的接口。
 
-有关操作系统版本支持各种 PortCls 函数和接口的列表，请参阅[操作系统的 PortCls 支持](https://docs.microsoft.com/windows-hardware/drivers/audio/portcls-support-by-operating-system)。
+有关操作系统版本支持各种 PortCls 函数和接口的列表，请参阅 [操作系统的 PortCls 支持](./portcls-support-by-operating-system.md)。
 
 本部分介绍以下主题：
 
@@ -39,19 +39,13 @@ ms.locfileid: "72830236"
 
 [音频流对象接口](audio-stream-object-interfaces.md)
 
-[DirectMusic 用户模式合成和合成接收器接口](directmusic-user-mode-synth-and-synth-sink-interfaces.md)
+[DirectMusic 用户模式合成器和合成器接收器接口](directmusic-user-mode-synth-and-synth-sink-interfaces.md)
 
-[音频电源管理接口](audio-power-management-interfaces.md)
+[音频电源管理界面](audio-power-management-interfaces.md)
 
-[音频端口类结构](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/)
+[音频端口类结构](/windows-hardware/drivers/ddi/portcls/)
 
-[过时函数的宏定义](macro-definitions-for-obsolete-functions.md)
-
- 
+[已过时函数的宏定义](macro-definitions-for-obsolete-functions.md)
 
  
-
-
-
-
 

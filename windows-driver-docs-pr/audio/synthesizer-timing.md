@@ -3,26 +3,26 @@ title: 合成器计时
 description: 合成器计时
 ms.assetid: 38aca8b7-f895-4b16-aaac-5a13973cf976
 keywords:
-- 合成器 WDK 音频，计时
+- 合成 WDK 音频，计时
 - 时间 WDK 音频
 - 引用时钟 WDK 音频
 - 示例时钟 WDK 音频
-- 时钟 WDK 音频，合成器
-- 用户模式下 synths WDK 音频，合成器计时
+- 时钟 WDK 音频，合成合成
+- 用户模式 synths WDK 音频，合成器计时
 - 自定义 synths WDK 音频，合成器计时
-- DirectMusic 自定义呈现 WDK 音频，合成器计时
-- 自定义呈现在用户模式 WDK 音频，合成器计时
-- DirectMusic WDK 音频，合成器
-- 计时器 WDK 音频
+- DirectMusic 自定义渲染 WDK 音频，合成器计时
+- 用户模式下的自定义呈现 WDK 音频，合成器计时
+- DirectMusic WDK 音频，合成
+- 计时器音频
 - 时钟 WDK 音频
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6c24bbbe6e8a43b49b8126e6cfe87b34db548f3a
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: c47813b63228dd7b6e70cc7591fb6ed1aececf28
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67354210"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89210339"
 ---
 # <a name="synthesizer-timing"></a>合成器计时
 
@@ -30,28 +30,23 @@ ms.locfileid: "67354210"
 ## <span id="synthesizer_timing"></span><span id="SYNTHESIZER_TIMING"></span>
 
 
-合成器适用于两个不同系统的时间：
+合成器适用于两个不同的时间系统：
 
 -   引用时间
 
 -   采样时间
 
-引用时间是一系列消息将会播放的绝对时间 （以 master 时钟为单位）。 在用户模式下实现中，它传递给[ **IDirectMusicSynth::PlayBuffer** ](https://docs.microsoft.com/windows/desktop/api/dmusics/nf-dmusics-idirectmusicsynth-playbuffer) MIDI 消息送入合成器的方法。 合成器、 批接收器和 DirectMusic 的其余部分应由您的实现的附加到合成器的相同主时钟下的所有工作[ **IDirectMusicSynth::SetMasterClock** ](https://docs.microsoft.com/windows/desktop/api/dmusics/nf-dmusics-idirectmusicsynth-setmasterclock)方法再到通过波形接收器[ **IDirectMusicSynthSink::SetMasterClock**](https://docs.microsoft.com/windows/desktop/api/dmusics/nf-dmusics-idirectmusicsynthsink-setmasterclock)。
+引用时间是在主时钟单位)  (要播放消息序列的绝对时间。 在用户模式实现中，当 MIDI 消息送入合成器时，它将传递给 [**IDirectMusicSynth：:P laybuffer**](/windows/desktop/api/dmusics/nf-dmusics-idirectmusicsynth-playbuffer) 方法。 合成器、波形接收器和 DirectMusic 的其余部分都应在相同的主时钟下运行，这是通过 [**IDirectMusicSynth：： SetMasterClock**](/windows/desktop/api/dmusics/nf-dmusics-idirectmusicsynth-setmasterclock) 方法的实现和通过 [**IDirectMusicSynthSink：： SetMasterClock**](/windows/desktop/api/dmusics/nf-dmusics-idirectmusicsynthsink-setmasterclock)实现的波形接收器附加到合成器的。
 
-采样时间用于度量到合成器的输出缓冲区的偏移量。 此缓冲区填充波样本的因此示例时间是相对于采样率。 例如，在为 22.1 kHz 采样率，每秒是时间的等效 22,100 示例或 44,200 字节 （对于 16 位的 mono 格式）。
+采样时间用于测量合成器的输出缓冲区中的偏移量。 此缓冲区填充了波形样本，因此采样时间与采样速率相关。 例如，如果采样速率为 22.1 kHz，则每秒的时间都等效于22100样本或44200字节 (16 位 mono 格式) 。
 
-播放 wave 示例缓冲区很可能由不同的计时 crystal 比主时钟控制，因为引用时和示例时倾向于偏离。 通过实现阶段锁定循环中，批接收器保留它们在步骤中。 此时钟同步中所述[时钟同步](clock-synchronization.md)。
+由于波形样本缓冲区的播放可能由与主时钟不同的 crystal 来控制，因此，引用时间和采样时间往往会发生偏差。 波形接收器通过实现阶段锁定的循环来保持它们的顺序。 [时钟](clock-synchronization.md)同步中介绍了此时钟同步。
 
 本部分还包括：
 
 [合成器延迟](synthesizer-latency.md)
 
-[带有时间戳的事件](time-stamped-events.md)
+[带时间戳的事件](time-stamped-events.md)
 
  
-
- 
-
-
-
 

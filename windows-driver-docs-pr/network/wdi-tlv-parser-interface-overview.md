@@ -4,12 +4,12 @@ description: 本部分介绍 WDI TLV 分析程序接口的概述
 ms.assetid: FD204F24-0336-4A54-992C-ACF46565D8D1
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0a543c6910e950a2d5a3810db2ac9b2e18ec2b2d
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: b09a90c159a7260b4e29c86f83b4d2976d9ddd1f
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72838021"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89210039"
 ---
 # <a name="wdi-tlv-parser-interface-overview"></a>WDI TLV 分析器接口概述
 
@@ -17,7 +17,7 @@ ms.locfileid: "72838021"
 ## <a name="callee-allocation-model"></a>被调用方分配模型
 
 
-驱动程序中的入口点接收包含 TLVs 的消息或指示。 在代码提取消息 ID 并确定它是否是它想要处理的 ID 后，它将调用一般分析例程，并传递 TLV blob （在经过[**WDI\_消息后前进\_标头**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dot11wdi/ns-dot11wdi-_wdi_message_header)）将 TLVs 解析为 C 结构。
+驱动程序中的入口点接收包含 TLVs 的消息或指示。 在代码提取消息 ID 并确定它是否是它想要处理的 ID 后，它将调用一般分析例程并在 [**WDI \_ 消息 \_ 标头**](/windows-hardware/drivers/ddi/dot11wdi/ns-dot11wdi-_wdi_message_header) 前进后传递 TLV Blob () 将 TLVs 解析为 C 结构。
 
 ```c
 ndisStatus = Parse(
@@ -28,7 +28,7 @@ ndisStatus = Parse(
     &pParsed);
 ```
 
-检查返回的错误后，代码可以将输出缓冲区（*pParsed*）转换为具体类型，如下面的示例中所示。
+检查返回的错误后，代码可以将输出缓冲区 (*pParsed*) 转换为具体类型，如下面的示例中所示。
 
 ```c
 ((WDI_INDICATION_BSS_ENTRY_LIST_PARAMETERS*)pParsed)
@@ -64,17 +64,17 @@ CleanupParsedWdiGetAdapterCapabilities(&adapterCapabilitiesParsed);
 
 调用 CleanupParse API 后，结构中的所有数据都无效。
 
-某些消息没有任何关联的数据。 为实现 API 的完整性，提供了适当命名的分析方法。 这些方法验证字节流是否为空。 为参数类型提供了 typedef，但如果使用调用方分配模型，则调用方也可以为 out 参数传递 NULL。 在所有情况下，分析器都通过返回常量空 parse 结构来避免任何分配。 调用方决不应向此返回空结构（因此，唯一的字段名 **\_保留**）。 这些消息记录为 "无附加数据"。 标头中的数据足够 "。
+某些消息没有任何关联的数据。 为实现 API 的完整性，提供了适当命名的分析方法。 这些方法验证字节流是否为空。 为参数类型提供了 typedef，但如果使用调用方分配模型，则调用方也可以为 out 参数传递 NULL。 在所有情况下，分析器都通过返回常量空 parse 结构来避免任何分配。 调用方决不应向此返回空结构 (因此，唯一字段将命名为** \_ Reserved**) 。 这些消息记录为 "无附加数据"。 标头中的数据足够 "。
 
 ## <a name="message-direction"></a>消息方向
 
 
-大多数消息的 M1 与 M0、M3 或 M4 的格式不同。 为满足此类消息，此类消息具有不同的分析和生成 Api。 对于 M1 消息，Api 遵循 Parse<em>&lt;MessageName&gt;</em>ToIhv 的命名约定，或生成<em>&lt;MessageName&gt;</em>ToIhv。 对于 M0、M3 或 M4 消息，Api 遵循 Parse<em>&lt;MessageName&gt;</em>FromIhv 的命名约定，或生成<em>&lt;MessageName&gt;</em>FromIhv。 但是，为了简化 IHV 小型端口中的代码，定义添加到别名分析<em>&lt;MessageName&gt;</em> ，以分析<em>&lt;MessageName&gt;</em>ToIhv 并生成<em>&lt;MessageName&gt;</em>以生成<em>&lt;MessageName&gt;</em>FromIhv。 如果需要分析自己的 M3 或生成 M1，则 IHV 代码只需要知道此别名。
+大多数消息的 M1 与 M0、M3 或 M4 的格式不同。 为满足此类消息，此类消息具有不同的分析和生成 Api。 对于 M1 消息，Api 遵循 Parse<em> &lt; MessageName &gt; </em>ToIhv 的命名约定，或生成<em> &lt; MessageName &gt; </em>ToIhv。 对于 M0、M3 或 M4 消息，Api 遵循 Parse<em> &lt; MessageName &gt; </em>FromIhv 的命名约定，或生成<em> &lt; MessageName &gt; </em>FromIhv。 但是，为了简化 IHV 小型端口中的代码，定义添加到别名分析<em> &lt; MessageName &gt; </em>以分析<em> &lt; MessageName &gt; </em>ToIhv 并生成<em> &lt; MessageName &gt; </em>以生成<em> &lt; MessageName &gt; </em>FromIhv。 如果需要分析自己的 M3 或生成 M1，则 IHV 代码只需要知道此别名。
 
 ## <a name="error-codes"></a>错误代码
 
 
-TLV 分析器生成器可以返回多个不同的 NDIS\_状态代码。 有关详细信息，请查看 WPP 跟踪日志。 日志应始终指示根本原因。 下面是最常见的错误代码及其含义的列表。
+TLV 分析器生成器可以返回多个不同 \_ 的 NDIS 状态代码。 有关详细信息，请查看 WPP 跟踪日志。 日志应始终指示根本原因。 下面是最常见的错误代码及其含义的列表。
 
 <table>
 <colgroup>
@@ -84,12 +84,12 @@ TLV 分析器生成器可以返回多个不同的 NDIS\_状态代码。 有关�
 <tbody>
 <tr class="odd">
 <td align="left"><p>NDIS_STATUS_INVALID_DATA</p></td>
-<td align="left"><p>在分析时，这表示固定大小的 TLV 的大小不正确。 对于列表，这意味着总体大小不是单个元素大小的偶数倍，或者元素比应有的元素多。 如果需要1个或多个元素，这也可能表示包含0个元素的列表。 如果需要0个元素，则应将<em>Optional_IsPresent</em>设置为 FALSE （TLV 标头不应在字节流中）。</p></td>
+<td align="left"><p>在分析时，这表示固定大小的 TLV 的大小不正确。 对于列表，这意味着总体大小不是单个元素大小的偶数倍，或者元素比应有的元素多。 如果需要1个或多个元素，这也可能表示包含0个元素的列表。 如果需要0个元素，则 <em>Optional_IsPresent</em> 应设置为 FALSE (TLV 标头不应在字节流) 中。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>NDIS_STATUS_BUFFER_OVERFLOW</p></td>
-<td align="left"><p>生成时，这表示由于数组（列表）中的元素数，它会溢出 TLV 标头中的2字节<strong>长度</strong>字段。 应减小元素数。 当外部 TLV 包含太多（或太大）内部 TLVs 时，也会出现这种情况，并再次溢出标头的2字节<strong>长度</strong>字段。</p>
-<p>在分析时，这表示某个 TLV 标头的<strong>长度</strong>字段大于外部 TLV 或字节流。</p></td>
+<td align="left"><p>生成时，这表示由于数组中的元素数 (列表) ，它将溢出 TLV 标头中的2字节 <strong>长度</strong> 字段。 应减小元素数。 当外部 TLV (太多或太大而) 内部 TLVs 时，也会发生这种情况，并再次溢出标头的2字节 <strong>长度</strong> 字段。</p>
+<p>在分析时，这表示某个 TLV 标头的 <strong>长度</strong> 字段大于外部 TLV 或字节流。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>NDIS_STATUS_FILE_NOT_FOUND</p></td>
@@ -101,7 +101,7 @@ TLV 分析器生成器可以返回多个不同的 NDIS\_状态代码。 有关�
 </tr>
 <tr class="odd">
 <td align="left"><p>NDIS_STATUS_UNSUPPORTED_REVISION</p></td>
-<td align="left"><p>分析或生成时，<strong>上下文</strong>参数为 NULL，或<strong>PeerVersion</strong>小于<strong>WDI_VERSION_MIN_SUPPORTED</strong>。</p></td>
+<td align="left"><p>分析或生成时， <strong>上下文</strong> 参数为 NULL，或 <strong>PeerVersion</strong> 小于 <strong>WDI_VERSION_MIN_SUPPORTED</strong>。</p></td>
 </tr>
 </tbody>
 </table>
@@ -109,10 +109,4 @@ TLV 分析器生成器可以返回多个不同的 NDIS\_状态代码。 有关�
  
 
  
-
- 
-
-
-
-
 

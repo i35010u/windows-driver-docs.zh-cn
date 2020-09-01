@@ -3,15 +3,15 @@ title: DirectSound 硬件加速概述
 description: DirectSound 硬件加速概述
 ms.assetid: 1f18f88a-2dd6-4b7a-b083-f43ab58571b3
 keywords:
-- 硬件加速 WDK DirectSound 有关 DirectSound 硬件加速
+- 硬件加速 WDK DirectSound，关于 DirectSound 硬件加速
 ms.date: 10/27/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e41110c09220d4da81b157abc3a47587bd8cdc1d
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 320fbae1a1912471a89f773a4064a9bd1727b4ab
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67355335"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89210533"
 ---
 # <a name="overview-of-directsound-hardware-acceleration"></a>DirectSound 硬件加速概述
 
@@ -19,28 +19,23 @@ ms.locfileid: "67355335"
 ## <span id="overview_of_directsound_hardware_acceleration"></span><span id="OVERVIEW_OF_DIRECTSOUND_HARDWARE_ACCELERATION"></span>
 
 
-许多音频适配器提供 DirectSound 硬件加速，对于一个或多个 DirectSound 流执行混合使用的硬件的能力。 硬件混合使用通过音频混合操作从 CPU 卸载和执行这些硬件的速度提高了性能。 除了混合，硬件执行相关的操作如衰减，采样率转换 （源） 和 （可选） 3D 处理，否则需要在软件中执行。
+许多音频适配器提供 DirectSound 硬件加速功能，这是为一个或多个 DirectSound 流执行硬件混合的能力。 硬件混合通过从 CPU 中卸载音频混合操作并按硬件速度执行，从而提高了性能。 除混合外，硬件还会执行相关操作，例如 (SRC 的采样速率转换) 、衰减，还可以选择在软件中执行的3D 处理。
 
-所有 WaveCyclic 或 WavePci 呈现设备提供一个或多个硬件 pin 进行混合音频流。 在单一流设备的情况下[KMixer 系统驱动程序](kernel-mode-wdm-audio-components.md#kmixer_system_driver)始终在一个可用的硬件呈现插针上实例化。
+所有 WaveCyclic 或 WavePci 渲染设备都提供一个或多个硬件 pin 来混合音频流。 对于单流设备， [KMixer 系统驱动程序](kernel-mode-wdm-audio-components.md#kmixer_system_driver) 将始终在可用硬件呈现 pin 上实例化。
 
-DirectSound 采用硬件加速的设备提供多个硬件混合使用 pin。 每个其他的 pin 可以用于混合 DirectSound 流。 DirectSound 流馈送到硬件 mixer pin 绕过 KMixer，避免在 KMixer 中混合使用的软件的延迟。 DirectSound 利用了所有音频设备的可用硬件加速混音器固定，只要这些 pin 必须符合的拓扑[DirectSound 节点排序要求](directsound-node-ordering-requirements.md)。 DirectSound 还要求球瓶，支持 DirectSound 数据格式由 KSDATAFORMAT\_说明符\_DSOUND (请参阅[DirectSound Stream 数据格式](directsound-stream-data-format.md))。
+具有 DirectSound 硬件加速的设备提供了多个硬件混合 pin。 可以使用每个额外的 pin 来混合 DirectSound 流。 传入硬件混音器 pin 的 DirectSound 流将绕过 KMixer，并避免 KMixer 中软件混合的延迟。 DirectSound 利用音频设备的所有可用硬件加速混音器 pin，只要这些针脚的拓扑符合 [DirectSound 的节点顺序要求](directsound-node-ordering-requirements.md)即可。 DirectSound 还要求 pin 支持 KSDATAFORMAT 说明符 DSOUND 指定的 DirectSound 数据格式 \_ \_ (参阅 [DirectSound Stream 数据格式](directsound-stream-data-format.md)) 。
 
-[SysAudio 系统驱动程序](kernel-mode-wdm-audio-components.md#sysaudio_system_driver)始终为 KMixer 保留一个硬件插针，以便其他 （非保留） 硬件 pin 所有已分配后，可以通过 KMixer 混合和送入保留的硬件 pin 任何其他流。
+[SysAudio 系统驱动程序](kernel-mode-wdm-audio-components.md#sysaudio_system_driver)始终为 KMixer 保留一个硬件 pin，以便在另一)  (未保留硬件 pin 已分配后，可通过 KMixer 将任何其他流混合到预留硬件 pin 中。
 
-在图[呈现批内容使用 DirectSound 软件和硬件缓冲区](rendering-wave-content-using-directsound-software-and-hardware-buffers.md)演示了这些概念。
+[使用 DirectSound 软件和硬件缓冲区呈现波形内容](rendering-wave-content-using-directsound-software-and-hardware-buffers.md)的图演示了这些概念。
 
-如果音频设备提供足够数量混合使用 pin，所有 DirectSound 应用程序的输出流可以是硬件的硬件加速。 如果不是，DirectSound 应用程序具有几个选项：
+如果音频设备提供了足够数量的硬件混合 pin，则所有 DirectSound 应用程序的输出流都可以进行硬件加速。 如果不是，则 DirectSound 应用程序具有几个选项：
 
--   它可以静态方式分配可用的硬件混合的流的要求最低延迟的 pin。
+-   它可以静态地将可用硬件混合 pin 分配到需要最低延迟的流中。
 
--   它可以动态地分配混合到流的 pin，如他们所需的球瓶视为共享资源池的可用硬件。
+-   它可以通过将 pin 视为共享资源池，根据需要动态地将可用硬件混合 pin 分配给流。
 
-有关详细信息，请参阅 Microsoft Windows SDK 文档中的语音管理的讨论。
+有关详细信息，请参阅 Microsoft Windows SDK 文档中的语音管理讨论。
 
-DirectSound 可以使用两种类型的硬件 mixer pin:2D 和 3D。 2D pin 执行 SRC、 衰减，和混合使用，但不是三维定位。 DirectSound 可以使用 2D pin 进行三维定位通过在软件中执行必要的衰减和频率计算并将结果应用于的 2D 插针的相应节点。 与此相反，3D pin 包含无法计算而不是依靠 DirectSound 若要执行此操作的 3D 缓冲区和 3D 侦听器属性直接从其自身三维效果的三维节点。 3D 节点的属性的列表，请参阅[ **KSNODETYPE\_3D\_效果**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksnodetype-3d-effects)。 有关 2D 和 3D pin 的详细信息，请参阅[WDM 音频中支持 2D DirectSound 加速](supporting-2d-directsound-acceleration-in-wdm-audio.md)并[WDM 音频中支持三维 DirectSound 加速](supporting-3d-directsound-acceleration-in-wdm-audio.md)。
-
- 
-
-
-
+DirectSound 可以使用两种类型的硬件混合器 pin：二维和三维。 二维 pin 执行 SRC、衰减和混合，但不执行3D 定位。 DirectSound 可以通过在软件中执行必要的衰减和频率计算，并将结果应用于 2D pin 上的相应节点，来使用 2D pin 来执行3D 定位。 与此相反，3D pin 包含一个3D 节点，该节点可以直接从3D 缓冲区和3D 侦听器属性计算自己的3D 效果，而不是依赖 DirectSound 来实现此目的。 有关3D 节点的属性列表，请参阅 [**KSNODETYPE \_ 3d \_ 效果**](./ksnodetype-3d-effects.md)。 有关二维和3D 插针的详细信息，请参阅 [支持 Wdm 音频中的 2D DirectSound 加速](supporting-2d-directsound-acceleration-in-wdm-audio.md) 和 [支持 wdm 音频中的 3d DirectSound 加速](supporting-3d-directsound-acceleration-in-wdm-audio.md)。
 

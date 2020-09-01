@@ -6,16 +6,16 @@ ms.date: 12/03/2019
 ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
-ms.openlocfilehash: 5ae0d009ed41fd1733101fc86f72ae8f4faa4ab2
-ms.sourcegitcommit: 988d100e4d3b218a59fdac034d39a1816d145c85
+ms.openlocfilehash: 78cc6e081c99009cd8dbb9e9ab77cb06c8d7749d
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2020
-ms.locfileid: "74782608"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89186437"
 ---
 # <a name="windows-driver-samples"></a>Windows 驱动程序示例
 
-可以在[“Microsoft 示例”门户](https://docs.microsoft.com/samples/browse/?products=windows-wdk)上浏览和下载各个 Windows 10 驱动程序示例。 还可以在 GitHub 上克隆、分叉或下载 [Windows-driver-samples](https://github.com/Microsoft/Windows-driver-samples) 存储库。
+可以在[“Microsoft 示例”门户](/samples/browse/?products=windows-wdk)上浏览和下载各个 Windows 10 驱动程序示例。 还可以在 GitHub 上克隆、分叉或下载 [Windows-driver-samples](https://github.com/Microsoft/Windows-driver-samples) 存储库。
 
 Windows 驱动程序示例的早期版本存档在 GitHub 上的 Microsoft Archive 中：
 

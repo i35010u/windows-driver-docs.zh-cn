@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 6a6b868bb046f15631c60c8a32d723566390d2dd
-ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
+ms.openlocfilehash: 3131f95aa587678d950f3dec0e057cb52f50a0d8
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84534740"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89209427"
 ---
 # <a name="ndiskdcompartments"></a>!ndiskd.compartments
 
@@ -35,17 +35,17 @@ ms.locfileid: "84534740"
 
 ### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
-Ndiskd
+Ndiskd.dll
 
-<a name="remarks"></a>注解
+<a name="remarks"></a>备注
 -------
 
-通过隔离舱，NDIS 可以管理接口。 第三方接口提供程序仅使用主隔离舱，如[**NDIS \_ 绑定 \_ 参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_bind_parameters)结构的**CompartmentId**成员中所述。
+通过隔离舱，NDIS 可以管理接口。 第三方接口提供程序仅使用主隔离舱，如[**NDIS \_ 绑定 \_ 参数**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_bind_parameters)结构的**CompartmentId**成员中所述。
 
 <a name="examples"></a>示例
 --------
 
-运行 **！ ndiskd**扩展，查看所有网络隔离舱的列表。 在此示例中，只有一个隔离舱（主要分段）。
+运行 **！ ndiskd** 扩展，查看所有网络隔离舱的列表。 在此示例中，只有一个隔离舱 (主) 。
 
 ```console
 3: kd> !ndiskd.compartments
@@ -60,24 +60,17 @@ Ndiskd
 ## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
-[网络驱动程序设计指南](https://docs.microsoft.com/windows-hardware/drivers/network/index)
+[网络驱动程序设计指南](../network/index.md)
 
-[Windows Vista 和更高版本的网络引用](https://docs.microsoft.com/windows-hardware/drivers/ddi/_netvista/)
+[Windows Vista 和更高版本的网络引用](/windows-hardware/drivers/ddi/_netvista/)
 
 [调试网络堆栈](https://channel9.msdn.com/Shows/Defrag-Tools/Defrag-Tools-175-Debugging-the-Network-Stack)
 
-[**NDIS 扩展（Ndiskd）**](ndis-extensions--ndiskd-dll-.md)
+[**NDIS 扩展 ( # A0) **](ndis-extensions--ndiskd-dll-.md)
 
 [**!ndiskd.help**](-ndiskd-help.md)
 
-[**NDIS \_ 绑定 \_ 参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_bind_parameters)
+[**NDIS \_ 绑定 \_ 参数**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_bind_parameters)
 
  
-
- 
-
-
-
-
-
 

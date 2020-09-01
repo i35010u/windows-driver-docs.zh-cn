@@ -1,6 +1,6 @@
 ---
-title: KSPROPERTY\_RTAUDIO\_HWLATENCY
-description: KSPROPERTY\_RTAUDIO\_HWLATENCY 属性检索音频硬件的流延迟及其关联数据路径的说明。 下表汇总了此属性的功能。
+title: KSPROPERTY \_ RTAUDIO \_ HWLATENCY
+description: KSPROPERTY \_ RTAUDIO \_ HWLATENCY 属性检索音频硬件的流延迟及其关联数据路径的说明。 下表汇总了此属性的功能。
 ms.assetid: 5083f281-853a-464e-95d3-0fe14fe00c1c
 keywords:
 - KSPROPERTY_RTAUDIO_HWLATENCY 音频设备
@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.date: 07/07/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 6b6717f37170aa261837734a44b0f43b1338c61a
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 8d43c0ab0f660dfdc08ad76b09b9860451f07e1b
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72830682"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89210945"
 ---
-# <a name="ksproperty_rtaudio_hwlatency"></a>KSPROPERTY\_RTAUDIO\_HWLATENCY
+# <a name="ksproperty_rtaudio_hwlatency"></a>KSPROPERTY \_ RTAUDIO \_ HWLATENCY
 
 
-KSPROPERTY\_RTAUDIO\_HWLATENCY 属性检索音频硬件的流延迟及其关联数据路径的说明。
+KSPROPERTY \_ RTAUDIO \_ HWLATENCY 属性检索音频硬件的流延迟及其关联数据路径的说明。
 
 下表汇总了此属性的功能。
 
@@ -40,7 +40,7 @@ KSPROPERTY\_RTAUDIO\_HWLATENCY 属性检索音频硬件的流延迟及其关联�
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">“获取”</th>
+<th align="left">获取</th>
 <th align="left">设置</th>
 <th align="left">目标</th>
 <th align="left">属性描述符类型</th>
@@ -49,10 +49,10 @@ KSPROPERTY\_RTAUDIO\_HWLATENCY 属性检索音频硬件的流延迟及其关联�
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>“是”</p></td>
-<td align="left"><p>无</p></td>
-<td align="left"><p>大头针</p></td>
-<td align="left"><p><a href="https://docs.microsoft.com/previous-versions/ff564262(v=vs.85)" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/ff564262(v=vs.85))"><strong>KSPROPERTY</strong></a></p></td>
+<td align="left"><p>是</p></td>
+<td align="left"><p>否</p></td>
+<td align="left"><p>Pin</p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/previous-versions/ff564262(v=vs.85)" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](/previous-versions/ff564262(v=vs.85))"><strong>KSPROPERTY</strong></a></p></td>
 <td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksrtaudio_hwlatency"><strong>KSRTAUDIO_HWLATENCY</strong></a></p></td>
 </tr>
 </tbody>
@@ -60,12 +60,12 @@ KSPROPERTY\_RTAUDIO\_HWLATENCY 属性检索音频硬件的流延迟及其关联�
 
 ### <a name="span-idreturn_valuespanspan-idreturn_valuespanspan-idreturn_valuespanreturn-value"></a><span id="Return_Value"></span><span id="return_value"></span><span id="RETURN_VALUE"></span>返回值
 
-KSPROPERTY\_RTAUDIO\_HWLATENCY 属性请求返回状态\_SUCCESS，以指示该请求已成功完成。 否则，请求将返回相应的失败状态代码。
+KSPROPERTY \_ RTAUDIO \_ HWLATENCY 属性请求返回状态 \_ SUCCESS 以指示该请求已成功完成。 否则，请求将返回相应的失败状态代码。
 
 <a name="remarks"></a>备注
 -------
 
-[WaveRT 微型端口驱动程序](https://docs.microsoft.com/windows-hardware/drivers/audio/wavert-miniport-driver)分配了循环缓冲区后（请参阅[**KSPROPERTY\_RTAUDIO\_buffer**](ksproperty-rtaudio-buffer.md)），客户端可以向驱动程序发送 KSPROPERTY\_RTAUDIO\_HWLATENCY 属性请求，以获取硬件延迟信息.
+在 [WaveRT 微型端口驱动程序](./wavert-miniport-driver.md) 分配了循环缓冲区后 (参阅 [**KSPROPERTY \_ RTAUDIO \_ 缓冲区**](ksproperty-rtaudio-buffer.md)) 客户端可以向 \_ 驱动程序发送 KSPROPERTY RTAUDIO \_ HWLATENCY 属性请求，以获取硬件延迟信息。
 
 <a name="requirements"></a>要求
 ------------
@@ -89,10 +89,10 @@ KSPROPERTY\_RTAUDIO\_HWLATENCY 属性请求返回状态\_SUCCESS，以指示该�
 
 ## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅
 
-[**KSPROPERTY**](https://docs.microsoft.com/previous-versions/ff564262(v=vs.85))
+[**KSPROPERTY**](/previous-versions/ff564262(v=vs.85))
 
-[**KSRTAUDIO\_HWLATENCY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksrtaudio_hwlatency)
+[**KSRTAUDIO \_ HWLATENCY**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksrtaudio_hwlatency)
 
-[**KSPROPERTY\_RTAUDIO\_缓冲区**](ksproperty-rtaudio-buffer.md)
+[**KSPROPERTY \_ RTAUDIO \_ 缓冲区**](ksproperty-rtaudio-buffer.md)
 
-[**WaveRT 微型端口驱动程序**](https://docs.microsoft.com/windows-hardware/drivers/audio/wavert-miniport-driver)
+[**WaveRT 微型端口驱动程序**](./wavert-miniport-driver.md)

@@ -1,35 +1,35 @@
 ---
 title: NDIS_STATUS_WDI_INDICATION_RADIO_STATUS
-description: 微型端口驱动程序使用 NDIS_STATUS_WDI_INDICATION_RADIO_STATUS 指示适配器的单选状态中的更改。
+description: 微型端口驱动程序使用 NDIS_STATUS_WDI_INDICATION_RADIO_STATUS 来指示适配器无线电状态发生的更改。
 ms.assetid: c2f90a52-ce55-4819-a66a-cfcc591cb3e9
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 NDIS_STATUS_WDI_INDICATION_RADIO_STATUS 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 0bc2c7969bcc9dd1f7977503ca8ca236506233d0
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: e1e73f40d2ba2a3d70a16b091901e0ac6eb2af29
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67353317"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89209699"
 ---
-# <a name="ndisstatuswdiindicationradiostatus"></a>NDIS\_状态\_WDI\_指示\_单选\_状态
+# <a name="ndis_status_wdi_indication_radio_status"></a>NDIS \_ 状态 \_ WDI \_ 指示 \_ 无线电 \_ 状态
 
 
-微型端口驱动程序使用 NDIS\_状态\_WDI\_指示\_单选\_状态，以指示适配器的单选状态中的更改。 软件无线电更改触发的主机，以及由适配器检测到硬件单选状态更改时发送此未经请求的指示。
+微型端口驱动程序使用 NDIS \_ 状态 \_ WDI \_ 指示 \_ 广播 \_ 状态来指示适配器无线电状态发生的更改。 当主机触发软件无线电更改时，以及适配器检测到硬件无线电状态更改时，会发送此未经请求的指示。
 
-| Object |
+| 对象 |
 |--------|
-| Port   |
+| 端口   |
 
  
 
-## <a name="payload-data"></a>有效负载数据
+## <a name="payload-data"></a>负载数据
 
 
-| 在任务栏的搜索框中键入                                                                  | 允许多个 TLV 实例 | 可选 | 描述                                              |
+| 类型                                                                  | 允许多个 TLV 实例 | 可选 | 说明                                              |
 |-----------------------------------------------------------------------|--------------------------------|----------|----------------------------------------------------------|
-| [**WDI\_TLV\_RADIO\_STATE**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-radio-state-parameters) |                                |          | 在硬件和软件无线电当前状态。 |
+| [**WDI \_ TLV \_ 无线电 \_ 状态**](./wdi-tlv-radio-state-parameters.md) |                                |          | 硬件和软件中的无线电的当前状态。 |
 
  
 
@@ -51,21 +51,16 @@ ms.locfileid: "67353317"
 <td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
-<td><p>Header</p></td>
-<td>Dot11wdi.h</td>
+<td><p>标头</p></td>
+<td>Dot11wdi</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
-[WDI\_TASK\_SET\_RADIO\_STATE](oid-wdi-task-set-radio-state.md)
-
- 
+[WDI \_ 任务 \_ 集 \_ 无线电 \_ 状态](oid-wdi-task-set-radio-state.md)
 
  
-
-
-
 

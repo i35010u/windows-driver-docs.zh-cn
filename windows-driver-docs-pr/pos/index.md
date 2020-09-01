@@ -7,20 +7,20 @@ ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
 ms.localizationpriority: medium
-ms.openlocfilehash: 68a0208f6b1ffec3db71e05bb2221b806c6a43b7
-ms.sourcegitcommit: 988d100e4d3b218a59fdac034d39a1816d145c85
+ms.openlocfilehash: eece914851c721fc5f8aafd3717d1537574779a9
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2020
-ms.locfileid: "72843575"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89193063"
 ---
 # <a name="pos-device-driver-design-guide"></a>POS 设备驱动程序设计指南
 
 本部分提供了服务点 (POS) 设备的驱动程序设计指南。
 
-## <a name="in-this-section"></a>本部分内容
+## <a name="in-this-section"></a>在本节中
 
-| 主题 | 描述 |
+| 主题 | 说明 |
 | --- | --- |
 | [POS 驱动程序示例](driver-samples.md) | 提供了演示如何为服务点 (POS) 设备创建通用驱动程序的示例。 |
 | [条形码扫描仪蓝牙服务 UUID](barcode-scanner-bluetooth-service-uuids.md) | 介绍了用于条形码扫描仪的蓝牙服务发现协议 (SDP) 的 UUID。 |
@@ -30,4 +30,4 @@ ms.locfileid: "72843575"
 
 ## <a name="related-sections"></a>相关章节
 
-[POS DDI 参考](https://docs.microsoft.com/windows-hardware/drivers/ddi/_pos)
+[POS DDI 参考](/windows-hardware/drivers/ddi/_pos)

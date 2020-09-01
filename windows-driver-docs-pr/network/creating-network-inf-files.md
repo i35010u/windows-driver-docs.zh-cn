@@ -3,20 +3,20 @@ title: 创建网络 INF 文件
 description: 创建网络 INF 文件
 ms.assetid: 6ac4195c-202e-42f2-815e-e8a800aac146
 keywords:
-- INF 文件 WDK 网络，有关 INF 文件
-- 可使用网络 INF 文件 WDK，有关 INF 文件
-- 安装网络组件 WDK、 INF 文件
-- 网络组件安装 WDK、 INF 文件
+- INF 文件 WDK 网络，关于 INF 文件
+- 网络 INF 文件 WDK，关于 INF 文件
+- 安装网络组件 WDK、INF 文件
+- 网络组件安装 WDK、INF 文件
 - INF 文件 WDK 网络
 - 网络 INF 文件 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1bca1fb2d55947c13aa2d8eddaf9eab5f068c8f5
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: cced0935bef9d2a2c4d1324d32af6b663b2e9eeb
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67374907"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89210205"
 ---
 # <a name="creating-network-inf-files"></a>创建网络 INF 文件
 
@@ -24,25 +24,19 @@ ms.locfileid: "67374907"
 
 
 
-一个*网络 INF 文件*基于标准的 INF 文件格式，但还包括特定于网络的项，如网络特定部分、 指令、 节条目和值。 以下网络 INF 文件的说明假定您了解基本的 INF 文件。 读取基本 INF 文件的说明，再尝试创建网络 INF 文件。 有关基本 INF 文件的详细信息，请参阅[INF 文件的部分和指令](https://docs.microsoft.com/windows-hardware/drivers/install/inf-file-sections-and-directives)。
+*网络 INF 文件*基于标准 INF 文件格式，但还包括特定于网络的项，例如特定于网络的部分、指令、节项和值。 以下对网络 INF 文件的描述假设了解基本 INF 文件。 尝试创建网络 INF 文件之前，请先阅读基本 INF 文件的描述。 有关基本 INF 文件的详细信息，请参阅 [INF 文件部分和指令](../install/index.md)。
 
-单个的 INF 文件可用于各种 Windows 平台上安装网络组件。 有关详细信息，请参阅[INF 文件的部分和指令](https://docs.microsoft.com/windows-hardware/drivers/install/inf-file-sections-and-directives)。
+单个 INF 文件可用于在各种 Windows 平台上安装网络组件。 有关详细信息，请参阅 [INF 文件部分和指令](../install/index.md)。
 
-INF 文件要求因网络组件的类型。 有关每种类型的网络组件的 INF 文件要求的详细信息，请参阅网络组件的安装要求摘要。
+INF 文件要求随网络组件类型的不同而不同。 有关每种类型的网络组件的 INF 文件要求的详细信息，请参阅网络组件安装要求摘要。
 
-本部分包括：
+本节包括：
 
 ## <a name="in-this-section"></a>本节内容
 
 
--   [网络 INF 文件中的部分](sections-in-a-network-inf-file.md)
+-   [网络 INF 文件中的节](sections-in-a-network-inf-file.md)
 -   [网络组件的安装要求](installation-requirements-for-network-components.md)
 
  
-
- 
-
-
-
-
 

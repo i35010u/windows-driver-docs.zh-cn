@@ -12,17 +12,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: bf761adeb81a225032c6a228edce06e727fb6486
-ms.sourcegitcommit: f610410e1500f0b0a4ca008b52679688ab51033d
+ms.openlocfilehash: 85f1b46ce4d8eeedcd53653853bc209710b86d2e
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/15/2020
-ms.locfileid: "88253121"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89209885"
 ---
 # <a name="blue-screen-data"></a>蓝屏数据
 
 
-**注意**   本主题适用于程序员。 如果你是在使用计算机时收到蓝屏错误代码的客户，请参阅 [排查蓝屏错误](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)。
+**注意**   本主题适用于程序员。 如果您是在使用计算机时收到蓝屏错误代码的客户，请参阅[蓝屏错误疑难解答](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)。
 
  
 
@@ -61,7 +61,7 @@ ms.locfileid: "88253121"
 
 有多种方法可以收集四个停止代码参数。
 
--   在事件查看器中检查 Windows 系统日志。 错误检查的事件属性将列出四个停止代码参数。 有关详细信息，请参阅 [Open 事件查看器](https://support.microsoft.com/hub/4338813/windows-help#1TC=windows-7)。
+-   在事件查看器中检查 Windows 系统日志。 错误检查的事件属性将列出四个停止代码参数。 有关详细信息，请参阅[打开事件查看器](https://support.microsoft.com/hub/4338813/windows-help#1TC=windows-7)。
 
 -   加载生成的转储文件，并在附加调试器中使用 [**！ "分析**](-analyze.md) " 命令。 有关详细信息，请参阅 [使用 WinDbg 分析内核模式转储文件](analyzing-a-kernel-mode-dump-file-with-windbg.md)。
 
@@ -110,7 +110,7 @@ ms.locfileid: "88253121"
 
 ### <a name="span-idusing_driver_verifier_to_gather_informationspanspan-idusing_driver_verifier_to_gather_informationspanspan-idusing_driver_verifier_to_gather_informationspanusing-driver-verifier-to-gather-information"></a><span id="Using_Driver_Verifier_to_Gather_Information"></span><span id="using_driver_verifier_to_gather_information"></span><span id="USING_DRIVER_VERIFIER_TO_GATHER_INFORMATION"></span>使用驱动程序验证器收集信息
 
-据估计，蓝屏的三个季度由错误驱动程序引起。 驱动程序验证程序是一种实时运行的工具，用于检查驱动程序的行为。 例如，驱动程序验证程序检查内存资源的使用情况，例如内存池。 如果发现驱动程序代码执行过程中出现错误，它会主动创建一个例外，以允许进一步审查驱动程序代码的一部分。 驱动程序验证器管理器内置于 Windows 中，在所有 Windows Pc 上都可用。 若要启动驱动程序验证器管理器，请在命令提示符下键入 *verifier* 。 你可以配置要验证的驱动程序。 验证驱动程序的代码会在运行时增加开销，因此请尝试并尽可能多地验证驱动程序。 有关详细信息，请参阅 [Driver Verifier](https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier)。
+据估计，蓝屏的三个季度由错误驱动程序引起。 驱动程序验证程序是一个实时运行的工具，用于检查驱动程序的行为。 例如，驱动程序验证程序检查内存资源（如内存池）的使用。 如果发现驱动程序代码执行过程中出现错误，它会主动创建一个例外，以允许进一步审查驱动程序代码的一部分。 驱动程序验证程序管理器内置于 Windows 中，可在所有 Windows PC 上使用。 若要启动驱动程序验证程序管理器，请在命令提示下键入“验证程序”  。 你可以配置要验证的驱动程序。 验证驱动程序的代码在运行时会增加开销，因此请尝试验证尽可能少的驱动程序。 有关详细信息，请参阅[驱动程序验证程序](../devtest/driver-verifier.md)。
 
 ## <a name="span-idtips_for_software_engineersspanspan-idtips_for_software_engineersspanspan-idtips_for_software_engineersspantips-for-software-engineers"></a><span id="Tips_for_Software_Engineers"></span><span id="tips_for_software_engineers"></span><span id="TIPS_FOR_SOFTWARE_ENGINEERS"></span>软件工程师的技巧
 
@@ -129,11 +129,11 @@ ms.locfileid: "88253121"
 
 -   查看 **设备管理器** 查看是否有任何设备标记为惊叹号 (！ ) 。 查看在驱动程序属性中显示的任何错误驱动程序的事件日志。 请尝试更新相关驱动程序。
 
--   检查中的系统日志事件查看器是否有其他错误消息，这些错误消息可能有助于找出导致错误的设备或驱动程序。 有关详细信息，请参阅 [Open 事件查看器](https://support.microsoft.com/hub/4338813/windows-help#1TC=windows-7)。 在与蓝色屏幕相同的时间范围内查找系统日志中的严重错误。
+-   检查中的系统日志事件查看器是否有其他错误消息，这些错误消息可能有助于找出导致错误的设备或驱动程序。 有关详细信息，请参阅[打开事件查看器](https://support.microsoft.com/hub/4338813/windows-help#1TC=windows-7)。 在系统日志中查找与蓝屏同时出现的严重错误。
 
 -   你可以尝试运行系统制造商提供的硬件诊断。
 
--   运行 Windows 内存诊断工具来测试内存。 在 "控制面板" 搜索框中键入 "内存"，然后选择 " **诊断计算机的内存问题**"。运行测试后，使用事件查看器查看系统日志下的结果。 查找 " *MemoryDiagnostics* " 项，查看结果。
+-   运行 Windows 内存诊断工具来测试内存。 在 "控制面板" 搜索框中键入 "内存"，然后选择 " **诊断计算机的内存问题**"。运行测试后，使用事件查看器查看系统日志下的结果。 查找“内存诊断结果”条目以查看结果  。
 
 -   确认安装的任何新硬件都与安装的 Windows 版本兼容。 例如，可以在 [Windows 10 规范](https://www.microsoft.com/windows/windows-10-specifications)中获取有关所需硬件的信息。
 
@@ -170,10 +170,4 @@ ms.locfileid: "88253121"
 若要有意从内核模式驱动程序中引发 bug 检查，需要将 bug 检查的符号名称传递给 **KeBugCheck** 或 **KeBugCheckEx** 函数。 只有在没有其他选项可用的情况下，才应执行此操作。 有关这些函数的更多详细信息，请参阅 Windows 驱动程序工具包。
 
  
-
- 
-
-
-
-
 

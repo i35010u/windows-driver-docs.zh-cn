@@ -4,19 +4,19 @@ description: 枚举 Hyper-V 可扩展交换机扩展
 ms.assetid: AC468A8F-5C48-419B-9E9E-D63925E1CE9D
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 477799f927ef067e391b71dc79d1b7c4f153171d
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 1ab7e003905b78d1f0ffcda2b657a63dc788150b
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67354581"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89209747"
 ---
 # <a name="enumerating-hyper-v-extensible-switch-extensions"></a>枚举 Hyper-V 可扩展交换机扩展
 
 
-[Get-vmswitchextension](https://docs.microsoft.com/powershell/module/hyper-v/get-vmsystemswitchextension) PowerShell cmdlet 枚举当前绑定到实例的可扩展交换机的 HYPER-V 可扩展交换机扩展插件。 此 cmdlet 还会报告扩展是否已启用可扩展交换机实例中。
+[VMSwitchExtension](/powershell/module/hyper-v/get-vmsystemswitchextension) PowerShell cmdlet 枚举当前绑定到可扩展交换机的实例的 hyper-v 可扩展交换机扩展。 此 cmdlet 还报告是否在可扩展交换机实例中启用了扩展。
 
-[Get-vmswitchextension](https://docs.microsoft.com/powershell/module/hyper-v/get-vmsystemswitchextension) cmdlet 使用以下语法：
+[VMSwitchExtension](/powershell/module/hyper-v/get-vmsystemswitchextension) cmdlet 使用以下语法：
 
 ``` syntax
 Get-VMSwitchExtension [[-VMSwitchName] <string[]>] [[-Name] <string[]>] [-ComputerName <string[]>]
@@ -25,7 +25,7 @@ Get-VMSwitchExtension [[-VMSwitchName] <string[]>] [[-Name] <string[]>] [-Comput
 Get-VMSwitchExtension [[-VMSwitch] <VMSwitch[]>] [-ComputerName <string[]>] [<CommonParameters>]
 ```
 
-下面的示例演示的输出[Get-vmswitchextension](https://docs.microsoft.com/powershell/module/hyper-v/get-vmsystemswitchextension) cmdlet。
+下面的示例演示了 [VMSwitchExtension](/powershell/module/hyper-v/get-vmsystemswitchextension) cmdlet 的输出。
 
 ``` syntax
 PS C:\Windows\system32> Get-VMSwitchExtension PrivateNetwork | fl -property @("Name","ExtensionType", "SwitchName","Enabled")
@@ -51,23 +51,16 @@ SwitchName    : PrivateNetwork
 Enabled       : True
 ```
 
-**请注意**  为了最小化信息的量，该示例通过管道通过筛选器命令"fl"将返回的扩展对象。 这将导致与的特性相匹配的要显示的信息子集 **-属性**切换。
+**注意**   为了最大限度地减少信息量，示例通过筛选器命令 "fl" 管道返回的扩展对象。 这将导致显示与 **-property** 开关的特性匹配的部分信息。
 
  
 
 ## <a name="related-topics"></a>相关主题
 
 
-[Get-VMSwitchExtension](https://docs.microsoft.com/powershell/module/hyper-v/get-vmsystemswitchextension)
+[VMSwitchExtension](/powershell/module/hyper-v/get-vmsystemswitchextension)
 
-[**Msvm\_EthernetSwitchExtension**](https://docs.microsoft.com/windows/desktop/HyperV_v2/msvm-ethernetswitchextension)
-
- 
+[**Msvm \_ EthernetSwitchExtension**](/windows/desktop/HyperV_v2/msvm-ethernetswitchextension)
 
  
-
-
-
-
-
 

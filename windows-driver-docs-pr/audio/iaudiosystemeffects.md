@@ -4,25 +4,19 @@ description: IAudioSystemEffects
 ms.assetid: 86429c51-6831-4266-9774-1547dc04bcb0
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a517e6e22c2eb38b43dfdc9632390251c947401d
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: ff9853fb89d4886da6dcc17920d29a4771b12b24
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67359965"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89209151"
 ---
 # <a name="iaudiosystemeffects"></a>IAudioSystemEffects
 
 
-IAudioSystemEffects 接口使用继承自的基本方法**IUnknown**，并且必须实现**初始化**方法。 传递给此参数**初始化**方法必须直接传递**IAudioProcessingObject::Initialize**方法。
+IAudioSystemEffects 接口使用从 **IUnknown**继承的基本方法，必须实现 **Initialize** 方法。 传递给此 **Initialize** 方法的参数必须直接传递到 **IAudioProcessingObject：： Initialize** 方法。
 
-请参阅[ **IAudioProcessingObject::Initialize** ](https://docs.microsoft.com/windows/desktop/api/audioenginebaseapo/nf-audioenginebaseapo-iaudioprocessingobject-initialize)方法有关的结构和实现所需的参数信息**IAudioSystemEffects::Initialize**方法。
-
- 
+有关结构的信息和实现**IAudioSystemEffects：： initialize**方法所需的参数，请参阅[**IAudioProcessingObject：： initialize**](/windows/desktop/api/audioenginebaseapo/nf-audioenginebaseapo-iaudioprocessingobject-initialize)方法。
 
  
-
-
-
-
 

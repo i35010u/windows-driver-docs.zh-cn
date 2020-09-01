@@ -1,39 +1,39 @@
 ---
 title: WDI_TLV_INDICATION_WAKE_PACKET_PATTERN_ID
-description: WDI_TLV_INDICATION_WAKE_PACKET_PATTERN_ID 是模式的 TLV 包含 ID 的唤醒数据包匹配。
+description: WDI_TLV_INDICATION_WAKE_PACKET_PATTERN_ID 是一个 TLV，其中包含与唤醒数据包匹配的模式的 ID。
 ms.assetid: 3E1D4CC4-0369-4C1F-94C6-AFC34C861E0D
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 WDI_TLV_INDICATION_WAKE_PACKET_PATTERN_ID 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: e855f9b62f86c11f6c2e3d923891950313b98c4d
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 7ccabe065594133776dcb385fa6e686151eaf4d0
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67380773"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89209595"
 ---
-# <a name="wditlvindicationwakepacketpatternid"></a>WDI\_TLV\_指示\_唤醒\_数据包\_模式\_ID
+# <a name="wdi_tlv_indication_wake_packet_pattern_id"></a>WDI \_ TLV \_ 指示 \_ 唤醒 \_ 数据包 \_ 模式 \_ ID
 
 
-WDI\_TLV\_指示\_唤醒\_数据包\_模式\_ID 是 TLV 包含 ID 的唤醒数据包匹配的模式。
+WDI \_ tlv \_ 指示 \_ 唤醒 \_ 数据包 \_ 模式 \_ ID 是一个 TLV，其中包含与唤醒数据包匹配的模式的 ID。
 
 ## <a name="tlv-type"></a>TLV 类型
 
 
 0xB0
 
-## <a name="length"></a>长度
+## <a name="length"></a>Length
 
 
-UINT32 大小 （以字节为单位）。
+UINT32) 的大小 (以字节为单位）。
 
 ## <a name="values"></a>值
 
 
-| 在任务栏的搜索框中键入   | 描述                                                                                                                                                                    |
+| 类型   | 说明                                                                                                                                                                    |
 |--------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| UINT32 | 唤醒数据包匹配的模式的 ID。 与添加模式时定义的 ID [OID\_WDI\_设置\_添加\_WOL\_模式](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wdi-set-add-wol-pattern)。 |
+| UINT32 | 与唤醒数据包匹配的模式的 ID。 此 ID 是在添加模式时定义的， [ \_ WDI \_ 设置 " \_ 添加 \_ WOL \_ 模式](./oid-wdi-set-add-wol-pattern.md)"。 |
 
  
 
@@ -55,16 +55,11 @@ UINT32 大小 （以字节为单位）。
 <td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
-<td><p>Header</p></td>
+<td><p>标头</p></td>
 <td>Wditypes.hpp</td>
 </tr>
 </tbody>
 </table>
 
  
-
- 
-
-
-
 

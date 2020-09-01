@@ -7,18 +7,18 @@ ms.topic: article
 ms.custom:
 - CI 111498
 - CSSTroubleshooting
-ms.openlocfilehash: fde47d6a24609de53ef16e6eddbe893192aaf4fb
-ms.sourcegitcommit: 7a69c2e0abf91a57407b13a30faf24925f677970
+ms.openlocfilehash: 658da9b29dbe3da35e2345579c23ec63bc9ddf41
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85829038"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89210322"
 ---
 # <a name="usb-audio-20-drivers"></a>USB 音频 2.0 驱动程序
 
 从 Windows 10 开始，版本1703，Windows 附带了一个 USB 音频2.0 驱动程序。 它设计为支持 USB 音频2.0 设备类。 驱动程序是 WaveRT 的音频端口类微型端口。 有关 USB 音频2.0 设备类的详细信息，请参阅 [https://www.usb.org/documents?search=&type%5B0%5D=55&items_per_page=50](https://www.usb.org/documents?search=&type%5B0%5D=55&items_per_page=50) 。
 
-该驱动程序的名称为： _usbaudio2.sys_ ，相关联的 inf 文件为_usbaudio2_。
+该驱动程序的名称为： _usbaudio2.sys_ ，相关联的 inf 文件为 _usbaudio2_。
 
 驱动程序将在设备管理器中标识为 "USB 音频类2设备"。 如果该名称可用，将使用 USB 产品字符串覆盖此名称。
 
@@ -38,19 +38,19 @@ USBAudio.Sys 适合 Windows USB 音频的更广泛的体系结构，如下所示
 - ADC-2 指音频设备的 USB 设备类定义，版本2.0。
 - BCP.FMT-2 指音频数据格式规范，版本2.0。
 
-USB-如果是一个特殊的兴趣组，其中维护了[官方 USB 规范](https://www.usb.org/documents)、测试规范和工具。
+USB-如果是一个特殊的兴趣组，其中维护了 [官方 USB 规范](https://www.usb.org/documents)、测试规范和工具。
 
 ## <a name="audio-formats"></a>音频格式
 
 驱动程序支持下面列出的格式。 将忽略另一个设置，该设置指定 BCP.FMT 中定义的另一种格式（或未知格式）。
 
-键入 I 格式（BCP.FMT）：
+键入 I 格式 (BCP.FMT 2.3.1) ：
 
-- 每个样本有8个32位的 PCM 格式（FMT20 2.3.1.7.1）
-- PCM8 格式（BCP.FMT-2 2.3.1.7.2）
-- IEEE_FLOAT 格式（BCP.FMT-2 2.3.1.7.3）
+- PCM 格式，每个示例 (8 个32位，) FMT20 2.3.1.7。1
+- PCM8 格式 (BCP.FMT-2 2.3.1.7.2) 
+- IEEE_FLOAT 格式 (BCP.FMT-2 2.3.1.7.3) 
 
-类型 III 格式（BCP.FMT-2 2.3.3 和2.3）：
+键入 III 格式 (BCP.FMT-2 2.3.3 和 2.3) ：
 
 - IEC61937_AC-3
 - IEC61937_MPEG-2_AAC_ADTS
@@ -71,15 +71,15 @@ USB-如果是一个特殊的兴趣组，其中维护了[官方 USB 规范](https
 
 驱动程序仅支持一个时钟源。 如果设备实现了多个时钟源实体和一个时钟选择器，则驱动程序将使用默认情况下选择的时钟源，而不会修改时钟选择器的位置。
 
-不支持具有多个输入 pin 的处理单元（ADC-2 3.13.9）。
+不支持使用多个输入 pin 的处理单元 (3.13.9) 。
 
-不支持具有多个输入 pin 的扩展单元（ADC-2 3.13.10）。
+不支持使用多个输入 pin (ADC-2 3.13.10) 的扩展单元。
 
 不允许拓扑中的循环路径。
 
 ### <a name="audio-streaming"></a>音频流式处理
 
-驱动程序支持以下终结点同步类型（USB-2 5.12.4.1）：
+驱动程序支持以下终结点同步类型 (5.12.4.1) ：
 
 - 异步入和移出
 - 同步进出
@@ -91,11 +91,11 @@ USB-如果是一个特殊的兴趣组，其中维护了[官方 USB 规范](https
 
 如果驱动程序不支持 feedforward 终结点，则为。 如果该终结点存在于备用设置中，则将被忽略。 驱动程序以与异步 IN stream 相同的方式处理流式处理中的自适应。
 
-设备创建的同步数据包大小必须在 BCP.FMT-2.0 部分2.3.1.1 中指定的限制范围内。 这意味着实际数据包大小与名义大小的偏差不能超过 +/-一个音频槽（音频槽 = 通道计数样本）。
+设备创建的同步数据包大小必须在 BCP.FMT-2.0 部分2.3.1.1 中指定的限制范围内。 这意味着实际数据包大小与名义大小的偏差不能超过 +/-一个音频插槽 (音频槽 = 通道计数示例) 。
 
 ## <a name="descriptors"></a>描述符
 
-音频函数必须仅实现一个 AudioControl 接口描述符（ADC-2 4.7）以及一个或多个 AudioStreaming 接口描述符（ADC-2 4.9）。 具有音频控制接口但不支持流接口的函数。
+音频函数必须仅实现一个 AudioControl 接口描述符 (ADC-2 4.7) 和一个或多个 AudioStreaming 接口描述符 (ADC-2 4.9) 。 具有音频控制接口但不支持流接口的函数。
 
 该驱动程序支持 ADC20 中定义的所有描述符类型，第4部分。 以下各部分提供了有关某些特定描述符类型的注释。
 
@@ -103,7 +103,7 @@ USB-如果是一个特殊的兴趣组，其中维护了[官方 USB 规范](https
 
 有关此规范的详细信息，请参阅 ADC-2 4.9.2。
 
-AS 接口描述符必须以无终结点（无带宽消耗）的备用设置0开始，并且必须在兼容 USB 音频2.0 硬件中按升序指定进一步的备用设置。
+AS 接口描述符必须以无终结点的备用设置零开头 (没有带宽消耗) 并且在兼容的 USB 音频2.0 硬件中必须按升序指定进一步的备用设置。
 
 不受驱动程序支持的格式的备用设置将被忽略。
 
@@ -111,11 +111,11 @@ AS 接口描述符必须以无终结点（无带宽消耗）的备用设置0开�
 
 BTerminalLink 字段必须引用拓扑中的终端实体，并且它的值必须与 AS 接口的所有备用设置相同。
 
-AS 接口描述符中的 bFormatType 字段必须与在格式类型描述符（BCP.FMT-2 2.3.1.6）中指定的 bFormatType 相同。
+AS 接口描述符中的 bFormatType 字段必须与 BCP.FMT-2 2.3.1.6) 格式类型描述符 (中指定的 bFormatType 相同。
 
 对于类型 I 格式，必须在 AS 接口描述符的 bmFormats 字段中设置一个位。 否则，驱动程序将忽略格式。
 
-为了节省总线带宽，一个接口可以实现具有相同格式的多个备用设置（在 bNrChannels 和 AS 格式类型描述符中），但在同步数据终结点描述符中具有不同的 wMaxPacketSize 值。 对于给定的采样率，驱动程序将选择具有可满足数据速率要求的最小 wMaxPacketSize 的备用设置。
+为了节省总线带宽，一个接口可以实现具有相同格式的多个备用设置 (bNrChannels 和 AS 格式类型描述符) 但在同步数据终结点描述符中具有不同的 wMaxPacketSize 值。 对于给定的采样率，驱动程序将选择具有可满足数据速率要求的最小 wMaxPacketSize 的备用设置。
 
 ### <a name="type-i-format-type-descriptor"></a>键入 I 格式类型描述符
 
@@ -140,7 +140,7 @@ AS 接口描述符中的 bFormatType 字段必须与在格式类型描述符（B
 
 ## <a name="class-requests-and-interrupt-data-messages"></a>类请求和中断数据消息
 
-该驱动程序支持在 ADC-2、5.2 节中定义的控制请求的一个子集，并支持某些控件的中断数据消息（ADC-2 6.1）。 下表显示了驱动程序中实现的子集。
+该驱动程序支持在 ADC-2、5.2 节中定义的控制请求的一个子集，并为某些控件支持 (ADC-2 6.1) 的中断数据消息。 下表显示了驱动程序中实现的子集。
 
 | 实体           | 控制                    | 获取当前 | 设置当前 | 获取范围 | 妨碍 |
 |------------------|----------------------------|---------|---------|-----------|-----------|
@@ -164,9 +164,9 @@ AS 接口描述符中的 bFormatType 字段必须与在格式类型描述符（B
 
 有关此规范的详细信息，请参阅 ADC-2 5.2.5.1。
 
-时钟源实体至少必须在兼容的 USB 音频2.0 硬件中实现采样频率控制获取范围并获取当前请求（ADC-2 5.2.5.1.1）。
+时钟源实体至少必须实现采样频率控制获取范围，并在兼容的 USB 音频2.0 硬件中 (ADC-2 5.2.5.1.1) 获取当前请求。
 
-采样频率控制获取范围请求返回子范围（ADC-2 5.2.1）的列表。 每个子范围描述离散的频率或频率范围。 必须通过将最小和最大字段设置为相应的频率，将 RES 设置为零，来表示离散的采样频率。 单个子范围不能重叠。 如果子范围与上一个子范围重叠，则驱动程序将忽略它。
+采样频率控制获取范围请求将返回子范围的列表， (的 5.2.1) 。 每个子范围描述离散的频率或频率范围。 必须通过将最小和最大字段设置为相应的频率，将 RES 设置为零，来表示离散的采样频率。 单个子范围不能重叠。 如果子范围与上一个子范围重叠，则驱动程序将忽略它。
 
 仅实现一个固定频率的时钟源实体无需实现采样频率控制集。 它实现了 "获取"，它将返回固定的频率，并实现报告单一离散频率的 "获取范围"。
 
@@ -174,7 +174,7 @@ AS 接口描述符中的 bFormatType 字段必须与在格式类型描述符（B
 
 有关此规范的详细信息，请参阅 ADC-2 5.2.5。2
 
-USB 音频2.0 驱动程序不支持时钟选择。 该驱动程序使用默认情况下选择的 "时钟源" 实体，并且决不会发出时钟选择器控制集的当前请求。 时钟选择器控件获取当前请求（ADC-2 5.2.5.2.1）必须在兼容的 USB 音频2.0 硬件中实现。
+USB 音频2.0 驱动程序不支持时钟选择。 该驱动程序使用默认情况下选择的 "时钟源" 实体，并且决不会发出时钟选择器控制集的当前请求。 时钟选择器控件获取当前请求 (ADC-2 5.2.5.2.1) 必须在兼容的 USB 音频2.0 硬件中实现。
 
 ### <a name="feature-unit"></a>功能单元
 
@@ -192,7 +192,7 @@ Oem 和 Ihv 应根据提供的内置驱动程序来测试其现有的和新的�
 
 没有与内置 USB 音频2.0 驱动程序关联的特定合作伙伴自定义。
 
-此 INF 文件条目（在 Windows 版本1703的更新中提供）用于标识内置驱动程序为通用设备驱动程序。
+此 INF 文件条目 (在 Windows 版本 1703) 的更新中提供，用于识别机箱内驱动程序是否为通用设备驱动程序。
 
 ```inf
 GenericDriverInstalled,,,,1
@@ -209,7 +209,7 @@ USB\Class_01&SubClass_03&Prot_20
 
 请参阅适用于子类类型的 USB 音频2.0 规范。
 
-带 MIDI 的 USB 音频2.0 设备（上面的子类0x03）会将 MIDI 函数枚举为单独的多功能设备，并加载 usbaudio.sys （USB 音频1.0 驱动程序）。
+带 MIDI (子类0x03 的 USB 音频2.0 设备的) 会将 MIDI 函数枚举为单独的多功能设备，并) 加载 usbaudio.sys (USB 音频1.0 驱动程序。
 
 USB 音频1.0 类驱动程序将此兼容 ID 注册到 wdma_usb。
 
@@ -226,7 +226,7 @@ USB\Class_01&SubClass_02&Prot_20
 USB\Class_01&SubClass_03&Prot_20
 ```
 
-由于 Windows 音频堆栈的限制，在共享模式下不支持任意数量的通道（超过8个）。
+由于 Windows 音频堆栈的限制，在共享模式下，不支持任意数量的通道 (超过8个) 。
 
 ## <a name="ihv-usb-audio-20-drivers-and-updates"></a>IHV USB 音频2.0 驱动程序和更新
 
@@ -236,7 +236,7 @@ USB\Class_01&SubClass_03&Prot_20
 
 从 Windows 10 版本1703开始，创建具有一个或多个插座的 USB 音频类2.0 设备的 Ihv 能够将这些插孔描述为内置音频类2.0 驱动程序。 当处理此设备的 KSPROPERTY_JACK_DESCRIPTION 时，内置驱动程序使用提供的插座信息。
 
-插座信息存储在设备实例密钥（HW 密钥）的注册表中。
+插座信息存储在注册表中的设备实例密钥)  (HW 密钥。
 
 下面描述了注册表中的音频插孔信息设置：
 
@@ -250,27 +250,27 @@ REG_DWORD  T<tid>_J<n>_PortConnection     The enum value is define in EPxcPortCo
 REG_DWORD  T<tid>_J<n>_Color              The color needs to be represent by RGB like this: 0x00RRGGBB (NOT a COLORREF).
 ```
 
-\<tid\>= 终端 ID （在描述符中定义）
+\<tid\> = (中定义的终端 ID) 
   
-\<n\>= 插孔号（1 ~ n）。 
+\<n\>   = (1 ~ n) 插孔号。 
 
 和的 \<tid\> 约定 \<n\> 为：
 
-- 基数为10（8，9，10，而不是8，9，a）
+- 基数为 10 (8，9，10，而不是8，9，a) 
 - 无前导零
-- n 从1开始（第一个插孔是插孔1而不是插孔0）
+- n 是从1开始的 (第一个插孔是插孔1而不是插孔 0) 
 
 例如：
 
 T1_NrJacks、T1_J2_ChannelMapping T1_J2_ConnectorType
 
-有关音频插孔的其他信息，请参阅[KSJACK_DESCRIPTION 结构](https://docs.microsoft.com/windows-hardware/drivers/audio/ksjack-description)。
+有关音频插孔的其他信息，请参阅 [KSJACK_DESCRIPTION 结构](./ksjack-description.md)。
 
 可以通过多种方式设置这些注册表值：
 
 - 使用自定义 Inf 来包装内置 INF，以设置这些值。
 
-- 通过 USB 设备的 Microsoft OS 描述符直接通过 "h/w" 设备（请参阅下面的示例）。 有关创建这些描述符的详细信息，请参阅[MICROSOFT OS 描述符 FOR USB 设备](https://docs.microsoft.com/windows-hardware/drivers/usbcon/microsoft-defined-usb-descriptors)。
+- 通过 USB 设备的 Microsoft OS 描述符直接通过 h/w 设备 (参阅下面) 的示例。 有关创建这些描述符的详细信息，请参阅 [MICROSOFT OS 描述符 FOR USB 设备](../usbcon/microsoft-defined-usb-descriptors.md)。
 
 ### <a name="microsoft-os-descriptors-for-usb-example"></a>Microsoft OS 描述符 for USB 示例
 
@@ -328,28 +328,28 @@ UCHAR Example2_MSOS20DescriptorSetForUAC2 [0x76] = {
     0x00, 0x00, 0xff, 0x00  // PropertyData - 0xff0000 - RED }
 ```
 
-## <a name="troubleshooting"></a>疑难解答
+## <a name="troubleshooting"></a>故障排除
 
-如果驱动程序未启动，则应检查系统事件日志。 驱动程序记录指示失败原因的事件。 同样，可以按照[此博客文章](https://matthewvaneerde.wordpress.com/2017/01/09/collecting-audio-logs-the-old-fashioned-way/)中所述的步骤手动收集音频日志。 如果失败可能表示驱动程序出现问题，请使用下面所述的反馈中心进行报告，并包含日志。
+如果驱动程序未启动，则应检查系统事件日志。 驱动程序记录指示失败原因的事件。 同样，可以按照 [此博客文章](https://matthewvaneerde.wordpress.com/2017/01/09/collecting-audio-logs-the-old-fashioned-way/)中所述的步骤手动收集音频日志。 如果失败可能表示驱动程序出现问题，请使用下面所述的反馈中心进行报告，并包含日志。
 
-有关如何使用补充 TMF 文件读取 USB 音频2.0 类驱动程序的日志的信息，请参阅[此博客文章](https://matthewvaneerde.wordpress.com/2016/09/26/report-problems-with-logs-and-suggest-features-with-the-feedback-hub//)。 有关使用 TMF 文件的常规信息，请参阅[使用 TMF 文件显示跟踪日志](https://docs.microsoft.com/windows-hardware/drivers/devtest/displaying-a-trace-log-with-a-tmf-file)。
+有关如何使用补充 TMF 文件读取 USB 音频2.0 类驱动程序的日志的信息，请参阅 [此博客文章](https://matthewvaneerde.wordpress.com/2016/09/26/report-problems-with-logs-and-suggest-features-with-the-feedback-hub//)。 有关使用 TMF 文件的常规信息，请参阅 [使用 TMF 文件显示跟踪日志](../devtest/displaying-a-trace-log-with-a-tmf-file.md)。
 
-有关 "音频服务未响应" 错误和 USB 音频设备在 Windows 10 版本1703中不起作用的信息，请参阅[Usb 音频未播放](usb-audio-not-playing.md)
+有关 "音频服务未响应" 错误和 USB 音频设备在 Windows 10 版本1703中不起作用的信息，请参阅 [Usb 音频未播放](usb-audio-not-playing.md)
 
 ## <a name="feedback-hub"></a>反馈中心
 
-如果遇到此驱动程序问题，请收集音频日志，然后按照[此博客文章](https://blogs.msdn.microsoft.com/matthew_van_eerde/2016/09/26/report-problems-with-logs-and-suggest-features-with-the-feedback-hub/)中所述的步骤操作，通过反馈中心来关注。
+如果遇到此驱动程序问题，请收集音频日志，然后按照 [此博客文章](/archive/blogs/matthew_van_eerde/report-problems-with-logs-and-suggest-features-with-the-feedback-hub) 中所述的步骤操作，通过反馈中心来关注。
 
 ## <a name="driver-development"></a>驱动程序开发
 
 此 USB 音频2.0 类驱动程序由 Thesycon 开发，由 Microsoft 支持。
 
-### <a name="see-also"></a>请参阅
+### <a name="see-also"></a>另请参阅
 
 [Windows 驱动程序模型 (WDM)](https://docs.microsoft.com/windows-hardware/drivers/kernel/windows-driver-model)
 
-[音频驱动程序概述](https://docs.microsoft.com/windows-hardware/drivers/audio/getting-started-with-wdm-audio-drivers)
+[音频驱动程序概述](./getting-started-with-wdm-audio-drivers.md)
 
-[WaveRT 端口驱动程序](https://docs.microsoft.com/windows-hardware/drivers/audio/introducing-the-wavert-port-driver)
+[WaveRT 端口驱动程序](./introducing-the-wavert-port-driver.md)
 
-[低延迟音频](https://docs.microsoft.com/windows-hardware/drivers/audio/low-latency-audio)
+[低延迟音频](./low-latency-audio.md)

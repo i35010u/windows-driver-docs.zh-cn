@@ -8,12 +8,12 @@ keywords:
 - 驱动程序功能 WDK Pscript
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2b76d9ce4957e10902d50473242496de12aaa4dc
-ms.sourcegitcommit: 17c1bbc5ea0bef3bbc87794b030a073f905dc942
+ms.openlocfilehash: f69ee5ab3ca3813df28a24d909bb79cb76e061d1
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88802439"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89209495"
 ---
 # <a name="ppd-features"></a>PPD 功能
 
@@ -29,14 +29,9 @@ Ppd 功能在** \* OpenUI** / ** \* CloseUI**结构关键字对中的 ppd 文件
 
 -   如果打印机的 PPD 文件包含** \* OutputBin** feature 关键字，并调用**SetOptions**来更改此功能的选项，并且更改导致 **% PageOrder**驱动程序功能的当前设置与打印机的页面顺序相反，而 **% MetafileSpooling**为 "False"，则 **% MetafileSpooling**将重置为 "True"。
 
--   当后台处理程序启用了 EMF 假脱机功能，并且将**collate**设置为 "true" 时 (可以直接在[**DEVMODEW**](https://docs.microsoft.com/windows/win32/api/wingdi/ns-wingdi-devmodew)结构的公共部分中设置此值，也可以通过对 PPD 的** \* Collate**排序功能) 关键字调用**SetOptions**来进行设置，但**collate**功能当前不可**用，%** **MetafileSpooling**将重置为 "True"。 在应用 **SetOptions** 调用中的所有请求的设置时，将执行此操作。
+-   当后台处理程序启用了 EMF 假脱机功能，并且将**collate**设置为 "true" 时 (可以直接在[**DEVMODEW**](/windows/win32/api/wingdi/ns-wingdi-devmodew)结构的公共部分中设置此值，也可以通过对 PPD 的** \* Collate**排序功能) 关键字调用**SetOptions**来进行设置，但**collate**功能当前不可**用，%** **MetafileSpooling**将重置为 "True"。 在应用 **SetOptions** 调用中的所有请求的设置时，将执行此操作。
 
 -   如果将 "**双工**" 设置为 "单工 (则可以直接在 DEVMODE 结构的公共部分中设置此项，也可以通过对 PPD 的** \* 双工**功能关键字) 调用**SetOptions** ，但将 **% PagePerSheet**设置为" 手册 "，然后将 **% PagePerSheet**更改为" 2 "。 在应用 **SetOptions** 调用中的所有请求的设置时，将执行此操作。
 
  
-
- 
-
-
-
 

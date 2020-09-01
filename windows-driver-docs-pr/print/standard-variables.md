@@ -8,12 +8,12 @@ keywords:
 - 标准变量 WDK GPD 文件
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8ab60ab5721bd06490c5ee16670dd66b205a1b24
-ms.sourcegitcommit: 17c1bbc5ea0bef3bbc87794b030a073f905dc942
+ms.openlocfilehash: 85b9f35dba3e62d360af1677ec95be29c1b710b6
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88802335"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89209245"
 ---
 # <a name="standard-variables"></a>标准变量
 
@@ -175,8 +175,8 @@ GPD 语言定义一组标准变量，可以使用 [命令字符串格式](comman
 </tr>
 <tr class="even">
 <td><p><strong>PageNumber</strong></p></td>
-<td><p>当前正在打印的页的页码。 请注意，这并不一定对应于应用程序的页码，而是不一定对应于 <a href="https://docs.microsoft.com/windows/win32/api/winddi/nf-winddi-drvsendpage" data-raw-source="[&lt;em&gt;DrvSendPage&lt;/em&gt;](https://docs.microsoft.com/windows/win32/api/winddi/nf-winddi-drvsendpage)"><em>DrvSendPage</em></a> 的调用次数。</p>
-<p>此值由 <a href="https://docs.microsoft.com/windows/win32/api/winddi/nf-winddi-drvstartdoc" data-raw-source="[&lt;strong&gt;DrvStartDoc&lt;/strong&gt;](https://docs.microsoft.com/windows/win32/api/winddi/nf-winddi-drvstartdoc)"><strong>DrvStartDoc</strong></a> 初始化，并由 <strong>DrvSendPage</strong>递增。</p>
+<td><p>当前正在打印的页的页码。 请注意，这并不一定对应于应用程序的页码，而是不一定对应于 <a href="https://docs.microsoft.com/windows/win32/api/winddi/nf-winddi-drvsendpage" data-raw-source="[&lt;em&gt;DrvSendPage&lt;/em&gt;](/windows/win32/api/winddi/nf-winddi-drvsendpage)"><em>DrvSendPage</em></a> 的调用次数。</p>
+<p>此值由 <a href="https://docs.microsoft.com/windows/win32/api/winddi/nf-winddi-drvstartdoc" data-raw-source="[&lt;strong&gt;DrvStartDoc&lt;/strong&gt;](/windows/win32/api/winddi/nf-winddi-drvstartdoc)"><strong>DrvStartDoc</strong></a> 初始化，并由 <strong>DrvSendPage</strong>递增。</p>
 <p>例如，如果选择了 "N 向上 = 4"，则仅当打印文档的第五页时， <strong>PageNumber</strong> 才会递增为2。</p>
 <p>再举一个例子，如果以相反的顺序打印文档 (回前) <strong>PageNumber</strong> 标准变量仍会报告第一页要打印为第1页，即使这是文档的最后一页。</p>
 <p>若要正确支持自动双工功能，则需要此行为。</p>
@@ -260,9 +260,4 @@ GPD 语言定义一组标准变量，可以使用 [命令字符串格式](comman
  
 
  
-
- 
-
-
-
 

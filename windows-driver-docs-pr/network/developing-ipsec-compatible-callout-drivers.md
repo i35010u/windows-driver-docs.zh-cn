@@ -7,12 +7,12 @@ keywords:
 - Windows 筛选平台标注驱动程序 WDK，IPsec 兼容性
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: aac7cf2c0144199f14a56afb37e55eb602ad3dec
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 7b4de322a6e4fc631a6bcbeb1fc822e0b9443b93
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72838141"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89209763"
 ---
 # <a name="developing-ipsec-compatible-callout-drivers"></a>开发 IPsec 兼容的标注驱动程序
 
@@ -24,20 +24,20 @@ ms.locfileid: "72838141"
 <a href="" id="tcp-packet-filtering"></a>TCP 数据包筛选  
 流层：
 
--   FWPS\_层\_流\_V4
+-   FWPS \_ 层 \_ 流 \_ V4
 
--   FWPS\_层\_流\_V6
+-   FWPS \_ 层 \_ 流 \_ V6
 
 <a href="" id="non-tcp-and-non-error-icmp-packet-filtering"></a>非 TCP 和非错误 ICMP 数据包筛选  
 数据报-数据层：
 
--   FWPS\_层\_数据报\_数据\_V4
+-   FWPS \_ 层 \_ \_ 数据报数据 \_ V4
 
--   FWPS\_层\_数据报\_数据\_V6
+-   FWPS \_ 层 \_ \_ 数据报数据 \_ V6
 
--   FWPS\_层\_数据报\_数据\_V4\_丢弃
+-   FWPS \_ 层 \_ \_ 数据报数据 \_ V4 \_ 丢弃
 
--   FWPS\_层\_数据报\_数据\_V6\_放弃
+-   FWPS \_ 层 \_ \_ 数据报数据 \_ V6 \_ 丢弃
 
 在从数据报中接收传入数据包之前必须重新生成传入数据包的情况除外，在这些数据层上注册的标注驱动程序与 IPsec 兼容。
 
@@ -47,31 +47,31 @@ ms.locfileid: "72838141"
 
 以下运行时筛选层与 IPsec 不兼容，因为 Windows 中的 IPsec 处理出现在以下层之下：
 
-FWPS\_层\_入站\_IPPACKET\_V4
+FWPS \_ 层 \_ 入站 \_ IPPACKET \_ V4
 
-FWPS\_层\_入站\_IPPACKET\_V6
+FWPS \_ 层 \_ 入站 \_ IPPACKET \_ V6
 
-FWPS\_层\_入站\_IPPACKET\_V4\_丢弃
+FWPS \_ 层 \_ 入站 \_ IPPACKET \_ V4 \_ 丢弃
 
-FWPS\_层\_入站\_IPPACKET\_V6\_放弃
+FWPS \_ 层 \_ 入站 \_ IPPACKET \_ V6 \_ 丢弃
 
-FWPS\_层\_出站\_IPPACKET\_V4
+FWPS \_ 层 \_ 出站 \_ IPPACKET \_ V4
 
-FWPS\_层\_出站\_IPPACKET\_V6
+FWPS \_ 层 \_ 出站 \_ IPPACKET \_ V6
 
-FWPS\_层\_出站\_IPPACKET\_V4\_丢弃
+FWPS \_ 层 \_ 出站 \_ IPPACKET \_ V4 \_ 丢弃
 
-FWPS\_层\_出站\_IPPACKET\_V6\_放弃
+FWPS \_ 层 \_ 出站 \_ IPPACKET \_ V6 \_ 丢弃
 
 ### <a name="special-considerations-for-transport-layers"></a>传输层的特殊注意事项
 
-若要使使用传输层（FWPS\_层\_*XXX*\_传输\_V4 或 \_V6）注册的标注驱动程序与 IPsec 兼容，请遵循以下准则：
+若要使使用传输层注册的标注驱动程序 (FWPS \_ 层 \_ *XXX* \_ 传输 \_ V4 或 \_ V6) 与 IPsec 兼容，请遵循以下准则：
 
-1.  在 ALE 批准接收/接受层（**FWPS\_层\_ale\_AUTH\_接收\_\_V4**或**FWPS\_\_ALE\_authentication\_receive\_接受\_V6**）除传输层（FWPS\_层\_*XXX*\_传输\_V4 或 \_V6）。
+1.  在 ALE 授权接收/接受层上注册标注 (**FWPS \_ 层 \_ ale \_ 身份验证接收 \_ \_ accept \_ V4**或**FWPS \_ 层 \_ ale \_ 身份验证 \_ \_ \_ **接收 accept V6) 除传输层以外，还 (FWPS \_ 层 \_ *XXX* \_ 传输 \_ V4 或 \_ V6) 。
 
-2.  若要防止内部 Windows IPsec 处理发生干扰，请在具有低于**FWPM\_子层\_通用**的子子层上注册标注。 使用[**FwpmSubLayerEnum0**](https://docs.microsoft.com/windows/desktop/api/fwpmu/nf-fwpmu-fwpmsublayerenum0)函数可查找子层的权重。 有关此功能的信息，请参阅 Microsoft Windows SDK 中的[Windows 筛选平台](https://go.microsoft.com/fwlink/p/?linkid=90220)文档。
+2.  若要防止内部 Windows IPsec 处理出现干扰，请将标注注册到权重低于 **FWPM \_ 子层 \_ 通用**的子子层。 使用 [**FwpmSubLayerEnum0**](/windows/desktop/api/fwpmu/nf-fwpmu-fwpmsublayerenum0) 函数可查找子层的权重。 有关此功能的信息，请参阅 Microsoft Windows SDK 中的 [Windows 筛选平台](https://go.microsoft.com/fwlink/p/?linkid=90220) 文档。
 
-3.  需要 ALE 分类的传入传输包必须在 ALE 授权接收/接受层（**FWPS\_层\_ale\_AUTH\_接收\_accept\_V4**或**FWPS\_层之间检查\_ALE\_AUTH\_接收\_ACCEPT\_V6**）。 必须从传入传输层允许这样的数据包。 从带有 Service Pack 1 （SP1）的 Windows Vista 和 Windows Server 2008 开始，使用**FWPS\_元数据\_字段\_ALE\_分类\_必需**的元数据标志来确定是否将传入数据包显示若要将**FWPM\_层\_ALE\_身份验证\_接收\_接受\_V4**和**FWPM\_层\_ALE\_authentication\_接收\_ACCEPT\_V6**筛选层。 此元数据标志会将\_的 .Fwp\_标志替换为\_需要在 Windows Vista 中使用 **\_ALE\_分类**条件标志。
+3.  需要 ALE 分类的传入传输数据包必须在 ALE 授权接收/接受层上检查 (**FWPS \_ 层 \_ ale \_ 身份验证接收 \_ \_ accept \_ V4** 或 **FWPS \_ 层 \_ ale \_ 身份验证 \_ 接收 \_ accept \_ V6**) 。 必须从传入传输层允许这样的数据包。 从带有 Service Pack 1 的 Windows Vista (SP1) 和 Windows Server 2008 开始，使用 **FWPS \_ METADATA \_ 字段 \_ ALE \_ 分类 \_ 所需** 的元数据标志来确定传入数据包是否将指示 **FWPM \_ 层 \_ ale \_ 身份验证 \_ 接收 \_ accept \_ V4** 和 **FWPM \_ 层 \_ ale \_ 验证 \_ 接收 \_ 接受 \_ V6** 筛选层。 此元数据标志取代了 Windows Vista 中使用的 "已使用的 ** \_ \_ \_ \_ ALE \_ 分类** 条件" 标志。
 
 4.  若要防止内部 Windows IPsec 处理发生干扰，如果 IPsec 流量尚未 detunneled，则不要在传输层上拦截 IPsec 隧道模式的流量。 下面的代码示例演示如何绕过此类数据包。
     ```C++
@@ -91,19 +91,13 @@ FWPS\_层\_出站\_IPPACKET\_V6\_放弃
     }
     ```
 
-5.  在传输层解密并验证受 IPsec 保护的数据包后，AH/ESP 标头将保留在 IP 标头中。 如果必须将此类数据包重新插入文本回 TCP/IP 堆栈，则必须重新生成 IP 标头以删除 AH/ESP 标头。 从 Windows Vista SP1 和 Windows Server 2008 开始，你可以通过克隆数据包并调用[**FwpsConstructIpHeaderForTransportPacket0**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fwpsk/nf-fwpsk-fwpsconstructipheaderfortransportpacket0)函数来执行此操作，该函数将*headerIncludeHeaderSize*参数设置为 IP 标头大小克隆包。
+5.  在传输层解密并验证受 IPsec 保护的数据包后，AH/ESP 标头将保留在 IP 标头中。 如果必须将此类数据包重新插入文本回 TCP/IP 堆栈，则必须重新生成 IP 标头以删除 AH/ESP 标头。 从 Windows Vista SP1 和 Windows Server 2008 开始，你可以通过克隆数据包并调用 [**FwpsConstructIpHeaderForTransportPacket0**](/windows-hardware/drivers/ddi/fwpsk/nf-fwpsk-fwpsconstructipheaderfortransportpacket0) 函数来执行此操作，该函数将 *headerIncludeHeaderSize* 参数设置为克隆数据包的 IP 标头大小。
 
-6.  在 ALE 接收/接受层中，标注可以通过检查是否**已设置\_条件\_标志\_\_是否设置了 ipsec\_保护**标志来检测受 ipsec 保护的流量。 在传输层上，标注可以通过调用[**FwpsGetPacketListSecurityInformation0**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fwpsk/nf-fwpsk-fwpsgetpacketlistsecurityinformation0)函数来检测受 IPsec 保护的流量，并检查 **\_\_\_** 是否在*queryFlags*参数。
+6.  在 ALE 接收/接受层中，标注可以通过检查是否设置了 " **.Fwp \_ 条件 \_ 标志是否 \_ 为 \_ ipsec \_ 安全** 标志" 来检测受 ipsec 保护的流量。 在传输层上，标注可以通过调用[**FwpsGetPacketListSecurityInformation0**](/windows-hardware/drivers/ddi/fwpsk/nf-fwpsk-fwpsgetpacketlistsecurityinformation0)函数并检查是否在*queryFlags*参数中设置了**FWPS \_ 数据包 \_ 列表 \_ INFORMATION0**标志来检测受 IPsec 保护的流量。
 
 ### <a name="working-with-ipsec-esp-packets"></a>使用 IPsec ESP 数据包
 
-当引擎指示已解密的封装式安全措施负载（ESP）数据包时，它将截断它们以排除尾随 ESP 数据。 由于引擎处理此类数据包的方式， [**NET\_缓冲区**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer)结构中的 MDL 数据不反映正确的数据包长度。 可以使用[**NET\_BUFFER\_数据\_长度**](https://docs.microsoft.com/windows-hardware/drivers/network/net-buffer-data-length)宏获取**网络\_缓冲区**结构的数据长度，以获取正确的长度。
+当引擎指示解密的封装安全负载 (ESP) 数据包时，它将截断它们以排除尾随 ESP 数据。 由于引擎处理此类数据包的方式， [**网络 \_ 缓冲区**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer) 结构中的 MDL 数据不反映正确的数据包长度。 可以通过使用 [**net \_ buffer \_ DATA \_ length**](/windows-hardware/drivers/ddi/ndis/nf-ndis-net_buffer_data_length) 宏检索 **网络 \_ 缓冲区** 的数据长度来获取正确的长度。
 
  
-
- 
-
-
-
-
 

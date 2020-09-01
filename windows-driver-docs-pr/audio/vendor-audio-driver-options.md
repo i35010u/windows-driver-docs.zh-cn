@@ -7,12 +7,12 @@ keywords:
 - 音频驱动程序 WDK，供应商选项
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 56043e570d6c66a03e8eaf054de26c1588e6f914
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 36063783f6a798cd98368c4aac1609ee1153a498
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67354132"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89209915"
 ---
 # <a name="vendor-audio-driver-options"></a>供应商音频驱动程序选项
 
@@ -20,30 +20,25 @@ ms.locfileid: "67354132"
 ## <span id="vendor_audio_driver_options"></span><span id="VENDOR_AUDIO_DRIVER_OPTIONS"></span>
 
 
-若要利用的音频设备的内置系统支持，Microsoft 建议供应商使用以下项之一：
+为了充分利用音频设备的内置系统支持，Microsoft 建议供应商使用以下各项之一：
 
--   端口类适配器驱动程序 (请参阅[音频微型端口驱动程序](audio-miniport-drivers.md)) 的 ISA 或 PCI 适配器卡
+-   端口类适配器驱动程序 (参阅适用于 ISA 或 PCI 适配器的 [音频微型端口驱动程序](audio-miniport-drivers.md)) 
 
--   USB 音频类驱动程序 (请参阅[USBAudio 类系统驱动程序](kernel-mode-wdm-audio-components.md#usbaudio_class_system_driver)) 为 USB 音频设备
+-   USB 音频类驱动程序 (参阅 [USBAudio 类系统驱动程序](kernel-mode-wdm-audio-components.md#usbaudio_class_system_driver)) 用于 USB 音频设备
 
--   自定义的 IEEE 1394 设备驱动程序 (请参阅[AVCAudio 类系统驱动程序](kernel-mode-wdm-audio-components.md#avcaudio_class_system_driver)) 的 IEEE 1394 音频设备
+-   自定义 IEEE 1394 设备驱动程序 (参阅 [AVCAudio 类系统驱动程序](kernel-mode-wdm-audio-components.md#avcaudio_class_system_driver)) 用于 IEEE 1394 音频设备
 
-但是，如果这些选项并不足够，供应商可以实现以下项之一：
+但是，如果这些选项不足，则供应商可以实现以下其中一项：
 
--   专有 KS 筛选器 (请参阅[KS 筛选器](https://docs.microsoft.com/windows-hardware/drivers/stream/ks-filters))
+-   专用 KS 筛选器 (参见 [KS 筛选](../stream/ks-filters.md) 器) 
 
--   Microsoft 不建议专有 KS 筛选器，因为它们是很难实现，且不必要的大多数 ISA、 PCI 和 USB 设备。
+-   Microsoft 不建议使用专用 KS 筛选器，因为它们难以实现，并且对于大多数 ISA、PCI 和 USB 设备都是不必要的。
 
--   Stream 类微型驱动程序 (请参阅[流式处理微型驱动程序](https://docs.microsoft.com/windows-hardware/drivers/stream/streaming-minidrivers2))
+-   Stream 类微型驱动程序 (参阅 [流式处理微型驱动程序](../stream/streaming-minidrivers2.md)) 
 
--   Microsoft 不建议专有流类微型驱动程序，因为它难以实现，但也可以是适用于集成音频和视频的设备。
+-   Microsoft 不建议使用专有的流类微型驱动程序，因为它很难实现，尽管它可能适用于集成音频和视频的设备。
 
-提供的驱动程序支持的音频设备的可用选项的深入介绍，请参阅[WDM 音频驱动程序入门](getting-started-with-wdm-audio-drivers.md)。
-
- 
+有关为音频设备提供驱动程序支持的可用选项的深入讨论，请参阅 [使用 WDM 音频驱动程序入门](getting-started-with-wdm-audio-drivers.md)。
 
  
-
-
-
 

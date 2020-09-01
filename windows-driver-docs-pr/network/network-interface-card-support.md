@@ -11,22 +11,22 @@ keywords:
 - 非总线主机 DMA Nic WDK 网络
 ms.date: 06/11/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 3cc696b3e062f3c69b60830fb7cea8f3b5a05181
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 63514cc68abaf2f78f1e37cf0455b9378e0ef80f
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72827225"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89210663"
 ---
 # <a name="network-interface-card-support"></a>网络接口卡支持
 
-本主题描述了 NDIS 微型端口驱动程序可以管理的网络接口卡（Nic）的类型，以及不同种类的 Nic 如何影响驱动程序传输网络数据的方式。
+本主题描述了 NDIS 微型端口驱动程序可以管理的网络接口卡 (Nic) 的类型，以及不同种类的 Nic 如何影响驱动程序传输网络数据的方式。
 
 ## <a name="reporting-a-nics-medium-type-to-ndis"></a>向 NDIS 报告 NIC 的媒介类型
 
-若要报告 NIC 的中等类型，微型端口驱动*程序将指针*传递到[**NDIS\_微型端口\_适配器\_常规\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_miniport_adapter_general_attributes) [**NdisMSetMiniportAttributes**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismsetminiportattributes)函数。 小型端口驱动程序在初始化期间从其[*MiniportInitializeEx*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_initialize)函数调用**NdisMSetMiniportAttributes** 。 小型端口驱动程序应在[ **\_微型端口\_适配器**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_miniport_adapter_registration_attributes)中设置注册属性后，设置*MiniportAttributes*属性，\_注册\_属性结构和设置任何其他属性. 设置*MiniportAttributes*属性是必需的。 设置*MiniportAttributes*属性时，驱动程序将**NDIS_MINIPORT_ADAPTER_GENERAL_ATTRIBUTES**结构**的媒体类型成员设置**为适当的媒体类型。
+若要报告 NIC 的中等类型，微型端口驱动程序将指针传递到[**NdisMSetMiniportAttributes**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismsetminiportattributes)函数的*MiniportAttributes*参数中的[**NDIS \_ 微型端口 \_ 适配器 \_ 常规 \_ 属性**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_miniport_adapter_general_attributes)结构。 小型端口驱动程序在初始化期间从其[*MiniportInitializeEx*](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_initialize)函数调用**NdisMSetMiniportAttributes** 。 在设置任何其他属性之前，微型端口驱动程序应设置 *MiniportAttributes* 属性，并设置 [**NDIS \_ 微型端口 \_ 适配器 \_ 注册 \_ 属性**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_miniport_adapter_registration_attributes) 结构中的注册属性。 设置 *MiniportAttributes* 属性是必需的。 设置*MiniportAttributes*属性时，驱动程序将**NDIS_MINIPORT_ADAPTER_GENERAL_ATTRIBUTES** **结构的媒体成员设置**为相应的媒体类型。
 
-当过量 NDIS 协议驱动程序调用[**NdisOpenAdapterEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisopenadapterex)绑定到指定的微型端口适配器时，它将提供可以在其上操作的介质类型的列表。 NDIS 使用微型端口驱动程序和协议驱动程序中的信息来设置绑定。 此绑定提供在驱动程序堆栈中上移和下移网络数据的路径。
+当过量 NDIS 协议驱动程序调用 [**NdisOpenAdapterEx**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisopenadapterex) 绑定到指定的微型端口适配器时，它将提供可以在其上操作的介质类型的列表。 NDIS 使用微型端口驱动程序和协议驱动程序中的信息来设置绑定。 此绑定提供在驱动程序堆栈中上移和下移网络数据的路径。
 
 ## <a name="physical-nics"></a>物理 Nic
 
@@ -59,7 +59,7 @@ ms.locfileid: "72827225"
 |   | 虚拟小型端口 | 虚拟 NIC |
 | --- | --- | --- |
 | 定义 | 映射到软件枚举的 PnP 设备的 NDIS 微型端口驱动程序。 | 由主机 OS 虚拟机监控程序管理的 NIC。 虚拟机监控程序使虚拟机认为它有一些硬件，但物理环境中实际不存在此类硬件。 |
-| 有中断 | 无 | “是” |
-| 可以使用 DMA | 无 | “是” |
-| 由创建或销毁 。 | 来宾操作系统 | 主机操作系统 |
-| 可以访问来宾 VM 之外 | 无 | “是” |
+| 有中断 | 否 | 是 |
+| 可以使用 DMA | 否 | 是 |
+| 由创建或销毁 .。。 | 来宾操作系统 | 主机操作系统 |
+| 可以访问来宾 VM 之外 | 否 | 是 |

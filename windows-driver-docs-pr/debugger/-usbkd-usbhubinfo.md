@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 23e48773de545c00ba3707bc28cca778148cc907
-ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
+ms.openlocfilehash: e186efd7e75fb02e4f05d4859ba02cfb7b41b238
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84534852"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89210875"
 ---
 # <a name="usbkdusbhubinfo"></a>!usbkd.usbhubinfo
 
@@ -32,17 +32,17 @@ ms.locfileid: "84534852"
 
 
 <span id="_______FDO______"></span><span id="_______fdo______"></span>*FDO*   
-USB 集线器的功能设备对象（FDO）的地址。
+USB 集线器 (FDO) 的功能设备对象的地址。
 
 ## <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 
-Usbkd
+Usbkd.dll
 
 <a name="examples"></a>示例
 --------
 
-下面是查找 USB 集线器的 FDO 地址的一种方法。 首先输入[**！ usbkd. usb2tree**](-usbkd-usb2tree.md)。
+下面是查找 USB 集线器的 FDO 地址的一种方法。 首先输入 [**！ usbkd. usb2tree**](-usbkd-usb2tree.md)。
 
 ```dbgcmd
 0: kd> !usbkd.usb2tree
@@ -53,7 +53,7 @@ Usbkd
 
 在上面的输出中，中心的 FDO 地址显示为建议的命令 **！ devstack ffffe00002320050**的参数。
 
-现在，将 FDO 的地址传递给 **！ usbhubinfo**命令。
+现在，将 FDO 的地址传递给 **！ usbhubinfo** 命令。
 
 ```dbgcmd
 0: kd> !usbkd.usbhubinfo ffffe00002320050
@@ -99,14 +99,7 @@ Power caps (0 = not reported)
 
 [USB 2.0 调试器扩展](usb-2-0-extensions.md)
 
-[通用串行总线（USB）驱动程序](https://docs.microsoft.com/windows-hardware/drivers/usbcon/)
+[ (USB) 驱动程序的通用串行总线](../usbcon/index.md)
 
  
-
- 
-
-
-
-
-
 

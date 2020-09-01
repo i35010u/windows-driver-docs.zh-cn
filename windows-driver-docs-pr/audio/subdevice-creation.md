@@ -8,12 +8,12 @@ keywords:
 - subdevices WDK 音频
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b66c8b9d7c71316c78d3cfec59ab68780c68b36b
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 866436b758a9c65a790234ebd1cd990ed4996dae
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72832352"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89210353"
 ---
 # <a name="subdevice-creation"></a>创建子设备
 
@@ -30,18 +30,18 @@ ms.locfileid: "72832352"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Component</th>
-<th align="left">描述</th>
+<th align="left">组件</th>
+<th align="left">说明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left"><p>微型端口对象</p></td>
-<td align="left"><p>公开微型端口驱动程序的 IMiniport<em>Xxx</em>接口的对象</p></td>
+<td align="left"><p>公开微型端口驱动程序的 IMiniport<em>Xxx</em> 接口的对象</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>端口对象</p></td>
-<td align="left"><p>一个对象，该对象公开端口驱动程序的 IPort<em>Xxx</em>接口</p></td>
+<td align="left"><p>Port 对象</p></td>
+<td align="left"><p>一个对象，该对象公开端口驱动程序的 IPort<em>Xxx</em> 接口</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>资源列表对象</p></td>
@@ -56,11 +56,11 @@ ms.locfileid: "72832352"
 
  
 
-Subdevice 的 IMiniport*xxx*和 IPort*xxx*接口分别继承自基接口[IMiniport](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nn-portcls-iminiport)和[IPort](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nn-portcls-iport)。
+Subdevice 的 IMiniport*xxx* 和 IPort*xxx* 接口分别继承自基接口 [IMiniport](/windows-hardware/drivers/ddi/portcls/nn-portcls-iminiport) 和 [IPort](/windows-hardware/drivers/ddi/portcls/nn-portcls-iport)。
 
 PortCls 系统驱动程序不区分端口驱动程序和微型端口驱动程序。 它只需要一个对象（例如端口对象）以及一个可以处理系统生成的请求的接口。
 
-同样，PortCls 不会直接纳入管理资源。 只需将请求处理程序（端口驱动程序）绑定到资源列表。 适配器驱动程序负责将端口、微型端口和资源列表对象绑定在一起。
+同样，PortCls 不会直接纳入管理资源。 只需将 (端口驱动程序) 的请求处理程序绑定到资源列表。 适配器驱动程序负责将端口、微型端口和资源列表对象绑定在一起。
 
 下面的代码示例演示如何执行以下操作：
 
@@ -123,12 +123,7 @@ PortCls 系统驱动程序不区分端口驱动程序和微型端口驱动程序
   }
 ```
 
-有关上述代码示例中的 PortCls 函数调用的信息，请参阅[**PcNewPort**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-pcnewport)、 [**PcNewMiniport**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-pcnewminiport)和[**PcRegisterSubdevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-pcregistersubdevice)。
+有关上述代码示例中的 PortCls 函数调用的信息，请参阅 [**PcNewPort**](/windows-hardware/drivers/ddi/portcls/nf-portcls-pcnewport)、 [**PcNewMiniport**](/windows-hardware/drivers/ddi/portcls/nf-portcls-pcnewminiport)和 [**PcRegisterSubdevice**](/windows-hardware/drivers/ddi/portcls/nf-portcls-pcregistersubdevice)。
 
  
-
- 
-
-
-
 

@@ -4,7 +4,7 @@ description: TCPMON Xcv 命令
 ms.assetid: 89aebc89-d81e-4d86-942e-d13b16c55fb3
 keywords:
 - 打印监视器 WDK，TCPMON Xcv
-- transceive （Xcv）命令 WDK 打印
+- transceive (Xcv) 命令 WDK 打印
 - Xcv 命令 WDK 打印
 - TCPMON Xcv 命令 WDK 打印
 - AddPort
@@ -19,12 +19,12 @@ keywords:
 - SNMPEnabled
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4a965b72820bc68fe94081d6c57b713de4fc56e5
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 94c5cb62f9640193dcbd5ae2d97bbaa5701f5155
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72838785"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89209243"
 ---
 # <a name="tcpmon-xcv-commands"></a>TCPMON Xcv 命令
 
@@ -32,9 +32,9 @@ ms.locfileid: "72838785"
 
 
 
-本部分介绍当使用[**XcvData**](https://docs.microsoft.com/previous-versions/ff564255(v=vs.85))或[**XcvDataPort**](https://docs.microsoft.com/windows-hardware/drivers/ddi/winsplp/nf-winsplp-xcvdataport)函数进行通信时，可以在对该函数的调用中指定的命令。 每个命令均由调用这些函数的*pszDataName*字符串指定。 某些命令需要输入缓冲区或输出缓冲区。 这些函数的*pInputData*和*pOutputData*参数包含这些缓冲区的地址。
+本部分介绍可在 [**XcvData**](/previous-versions/ff564255(v=vs.85)) 或 [**XcvDataPort**](/windows-hardware/drivers/ddi/winsplp/nf-winsplp-xcvdataport) 函数的调用中指定的命令，该命令与 (TCPMON) 的标准 tcp/ip 端口监视器通信。 每个命令均由调用这些函数的 *pszDataName* 字符串指定。 某些命令需要输入缓冲区或输出缓冲区。 这些函数的 *pInputData* 和 *pOutputData* 参数包含这些缓冲区的地址。
 
-以下每个命令的说明中显示的表列出了与命令一起使用的**XcvData**和**XcvDataPort**参数。 请注意， *hXcv*参数（对于这两个函数通用）未列出，也不是**XcvData**函数的*pdwStatus*参数。
+以下每个命令的说明中显示的表列出了与命令一起使用的 **XcvData** 和 **XcvDataPort** 参数。 请注意， *hXcv* 参数 () 未列出的两个函数，也不是 **XcvData** 函数的 *pdwStatus* 参数。
 
 ### <a name="addport-command"></a>AddPort 命令
 
@@ -48,7 +48,7 @@ ms.locfileid: "72838785"
 <thead>
 <tr class="header">
 <th>XcvData 参数</th>
-<th>Value</th>
+<th>值</th>
 </tr>
 </thead>
 <tbody>
@@ -58,15 +58,15 @@ ms.locfileid: "72838785"
 </tr>
 <tr class="even">
 <td><p><em>pInputData</em></p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/tcpxcv/ns-tcpxcv-_port_data_1" data-raw-source="[&lt;strong&gt;PORT_DATA_1&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/tcpxcv/ns-tcpxcv-_port_data_1)"><strong>PORT_DATA_1</strong></a>结构的地址</p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/tcpxcv/ns-tcpxcv-_port_data_1" data-raw-source="[&lt;strong&gt;PORT_DATA_1&lt;/strong&gt;](/windows-hardware/drivers/ddi/tcpxcv/ns-tcpxcv-_port_data_1)"><strong>PORT_DATA_1</strong></a>结构的地址</p></td>
 </tr>
 <tr class="odd">
 <td><p><em>cbInputData</em></p></td>
-<td><p><strong>sizeof</strong>（PORT_DATA_1）</p></td>
+<td><p><strong>sizeof</strong> (PORT_DATA_1) </p></td>
 </tr>
 <tr class="even">
 <td><p><em>pOutputData</em></p></td>
-<td><p><strong>无效</strong></p></td>
+<td><p><strong>NULL</strong></p></td>
 </tr>
 <tr class="odd">
 <td><p><em>cbOutputData</em></p></td>
@@ -81,7 +81,7 @@ ms.locfileid: "72838785"
 
  
 
-如果[**XcvData**](https://docs.microsoft.com/previous-versions/ff564255(v=vs.85))可以添加端口，则不会返回任何\_错误。 除了正常错误代码外，如果用户没有足够的权限在服务器上创建端口， **XcvData**将返回错误\_访问\_被拒绝。 此命令要求服务器\_访问\_管理权限。 如果*pInputData*参数为**NULL**，则该函数将返回错误\_无效的\_数据。 如果*pInputData*--&gt;*dwVersion*不等于1，则该函数将返回错误\_无效\_级别。
+如果[**XcvData**](/previous-versions/ff564255(v=vs.85)) \_ 可以添加端口，则不会返回错误。 除了正常错误代码外， **XcvData** \_ \_ 如果用户没有足够的权限在服务器上创建端口，XcvData 将返回错误 "访问被拒绝"。 此命令需要服务器 \_ 访问 \_ 管理权限。 如果 *pInputData* 参数为 **NULL**，则该函数将返回 \_ 错误 \_ 数据无效。 如果*pInputData* -- &gt; *dwVersion*不等于1，则该函数将返回错误 \_ \_ LEVEL。
 
 ### <a name="configport-command"></a>ConfigPort 命令
 
@@ -95,7 +95,7 @@ ms.locfileid: "72838785"
 <thead>
 <tr class="header">
 <th>XcvData 参数</th>
-<th>Value</th>
+<th>值</th>
 </tr>
 </thead>
 <tbody>
@@ -105,15 +105,15 @@ ms.locfileid: "72838785"
 </tr>
 <tr class="even">
 <td><p><em>pInputData</em></p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/tcpxcv/ns-tcpxcv-_port_data_1" data-raw-source="[&lt;strong&gt;PORT_DATA_1&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/tcpxcv/ns-tcpxcv-_port_data_1)"><strong>PORT_DATA_1</strong></a>结构的地址</p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/tcpxcv/ns-tcpxcv-_port_data_1" data-raw-source="[&lt;strong&gt;PORT_DATA_1&lt;/strong&gt;](/windows-hardware/drivers/ddi/tcpxcv/ns-tcpxcv-_port_data_1)"><strong>PORT_DATA_1</strong></a>结构的地址</p></td>
 </tr>
 <tr class="odd">
 <td><p><em>cbInputData</em></p></td>
-<td><p><strong>sizeof</strong>（PORT_DATA_1）</p></td>
+<td><p><strong>sizeof</strong> (PORT_DATA_1) </p></td>
 </tr>
 <tr class="even">
 <td><p><em>pOutputData</em></p></td>
-<td><p><strong>无效</strong></p></td>
+<td><p><strong>NULL</strong></p></td>
 </tr>
 <tr class="odd">
 <td><p><em>cbOutputData</em></p></td>
@@ -128,7 +128,7 @@ ms.locfileid: "72838785"
 
  
 
-如果[**XcvData**](https://docs.microsoft.com/previous-versions/ff564255(v=vs.85))可以配置端口，则不会返回任何\_错误。 除了正常错误代码外，如果调用方没有足够的权限来执行请求， **XcvData**会返回错误\_访问\_拒绝。 此命令要求服务器\_访问\_管理权限。 如果*pInputData*参数为**NULL**，或*cbInputData*中的值小于必需的值，则该函数将返回错误\_无效的\_数据。 如果*pInputData*--&gt;*dwVersion*不等于1，则该函数将返回错误\_无效\_级别。
+如果[**XcvData**](/previous-versions/ff564255(v=vs.85)) \_ 可以配置端口，则不会返回错误。 除了正常错误代码外， **XcvData** \_ \_ 如果调用方没有足够的权限来执行请求，XcvData 将返回错误 "访问被拒绝"。 此命令需要服务器 \_ 访问 \_ 管理权限。 如果 *pInputData* 参数为 **NULL**，或 *cbInputData* 中的值小于必需的值，则该函数将返回 \_ 错误 \_ 数据无效。 如果*pInputData* -- &gt; *dwVersion*不等于1，则该函数将返回错误 \_ \_ LEVEL。
 
 ### <a name="deleteport-command"></a>DeletePort 命令
 
@@ -142,7 +142,7 @@ ms.locfileid: "72838785"
 <thead>
 <tr class="header">
 <th>XcvData 参数</th>
-<th>Value</th>
+<th>值</th>
 </tr>
 </thead>
 <tbody>
@@ -152,15 +152,15 @@ ms.locfileid: "72838785"
 </tr>
 <tr class="even">
 <td><p><em>pInputData</em></p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/tcpxcv/ns-tcpxcv-_delete_port_data_1" data-raw-source="[&lt;strong&gt;DELETE_PORT_DATA_1&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/tcpxcv/ns-tcpxcv-_delete_port_data_1)"><strong>DELETE_PORT_DATA_1</strong></a>结构的地址</p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/tcpxcv/ns-tcpxcv-_delete_port_data_1" data-raw-source="[&lt;strong&gt;DELETE_PORT_DATA_1&lt;/strong&gt;](/windows-hardware/drivers/ddi/tcpxcv/ns-tcpxcv-_delete_port_data_1)"><strong>DELETE_PORT_DATA_1</strong></a>结构的地址</p></td>
 </tr>
 <tr class="odd">
 <td><p><em>cbInputData</em></p></td>
-<td><p><strong>sizeof</strong>（DELETE_PORT_DATA_1）</p></td>
+<td><p><strong>sizeof</strong> (DELETE_PORT_DATA_1) </p></td>
 </tr>
 <tr class="even">
 <td><p><em>pOutputData</em></p></td>
-<td><p><strong>无效</strong></p></td>
+<td><p><strong>NULL</strong></p></td>
 </tr>
 <tr class="odd">
 <td><p><em>cbOutputData</em></p></td>
@@ -175,7 +175,7 @@ ms.locfileid: "72838785"
 
  
 
-如果成功删除了端口， **XcvData**将不会返回\_错误。 除了正常错误代码外，如果调用方在服务器上没有足够的权限， **XcvData**会返回错误\_访问\_被拒绝。 此命令要求服务器\_访问\_管理权限。 如果*pInputData*参数为**NULL**，或者*cbInputData*参数小于所需的参数，则函数将返回错误\_无效的\_数据。 如果*pInputData*--&gt;*dwVersion*不等于1，则该函数将返回错误\_无效\_级别。
+如果成功删除该端口，则**XCVDATA**不会返回 \_ 错误。 除了正常错误代码外， **XcvData** \_ \_ 如果调用方在服务器上没有足够的权限，XcvData 将返回错误 "访问被拒绝"。 此命令需要服务器 \_ 访问 \_ 管理权限。 如果 *pInputData* 参数为 **NULL**，或者 *cbInputData* 参数小于所需的参数，则函数将返回错误 \_ 数据无效 \_ 。 如果*pInputData* -- &gt; *dwVersion*不等于1，则该函数将返回错误 \_ \_ LEVEL。
 
 ### <a name="getconfiginfo-command"></a>GetConfigInfo 命令
 
@@ -189,7 +189,7 @@ ms.locfileid: "72838785"
 <thead>
 <tr class="header">
 <th>XcvData 参数</th>
-<th>Value</th>
+<th>值</th>
 </tr>
 </thead>
 <tbody>
@@ -199,19 +199,19 @@ ms.locfileid: "72838785"
 </tr>
 <tr class="even">
 <td><p><em>pInputData</em></p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/tcpxcv/ns-tcpxcv-_config_info_data_1" data-raw-source="[&lt;strong&gt;CONFIG_INFO_DATA_1&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/tcpxcv/ns-tcpxcv-_config_info_data_1)"><strong>CONFIG_INFO_DATA_1</strong></a>结构的地址</p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/tcpxcv/ns-tcpxcv-_config_info_data_1" data-raw-source="[&lt;strong&gt;CONFIG_INFO_DATA_1&lt;/strong&gt;](/windows-hardware/drivers/ddi/tcpxcv/ns-tcpxcv-_config_info_data_1)"><strong>CONFIG_INFO_DATA_1</strong></a>结构的地址</p></td>
 </tr>
 <tr class="odd">
 <td><p><em>cbInputData</em></p></td>
-<td><p><strong>sizeof</strong>（CONFIG_INFO_DATA_1）</p></td>
+<td><p><strong>sizeof</strong> (CONFIG_INFO_DATA_1) </p></td>
 </tr>
 <tr class="even">
 <td><p><em>pOutputData</em></p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/tcpxcv/ns-tcpxcv-_port_data_1" data-raw-source="[&lt;strong&gt;PORT_DATA_1&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/tcpxcv/ns-tcpxcv-_port_data_1)"><strong>PORT_DATA_1</strong></a>结构的地址</p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/tcpxcv/ns-tcpxcv-_port_data_1" data-raw-source="[&lt;strong&gt;PORT_DATA_1&lt;/strong&gt;](/windows-hardware/drivers/ddi/tcpxcv/ns-tcpxcv-_port_data_1)"><strong>PORT_DATA_1</strong></a>结构的地址</p></td>
 </tr>
 <tr class="odd">
 <td><p><em>cbOutputData</em></p></td>
-<td><p><strong>sizeof</strong>（PORT_DATA_1）</p></td>
+<td><p><strong>sizeof</strong> (PORT_DATA_1) </p></td>
 </tr>
 <tr class="even">
 <td><p><em>pcbOutputNeeded</em></p></td>
@@ -222,7 +222,7 @@ ms.locfileid: "72838785"
 
  
 
-如果**XcvData**可以获取端口的配置信息，则它将不会返回任何\_错误。 如果*pInputData*为**NULL**，或*cbInputData*小于 REQUIRED，则函数将返回错误\_无效的\_数据。 如果*pInputData*--&gt;*dwVersion*不等于1，则该函数将返回错误\_无效\_级别。 如果*cbOutputData*小于所需的值，则当*pcbOutputNeeded*为**NULL**时，函数将返回错误\_无效的\_参数; 当*PCBOUTPUTNEEDED*是非时，\_缓冲区的错误\_**NULL**。
+如果**XcvData** \_ 可以获取端口的配置信息，则不会返回错误。 如果 *pInputData* 为 **NULL**，或 *cbInputData* 小于 REQUIRED，则函数将返回错误 \_ \_ 数据无效。 如果*pInputData* -- &gt; *dwVersion*不等于1，则该函数将返回错误 \_ \_ LEVEL。 如果*cbOutputData*小于所需的值，则当 PcbOutputNeeded 为 null 时，该函数将返回错误 \_ ：无效的 \_ 参数; *pcbOutputNeeded* **NULL** \_ \_ 当*pcbOutputNeeded*非**null**时，该函数将返回错误的缓冲区。
 
 ### <a name="hostaddress-command"></a>HostAddress 命令
 
@@ -236,7 +236,7 @@ ms.locfileid: "72838785"
 <thead>
 <tr class="header">
 <th>XcvData 参数</th>
-<th>Value</th>
+<th>值</th>
 </tr>
 </thead>
 <tbody>
@@ -246,7 +246,7 @@ ms.locfileid: "72838785"
 </tr>
 <tr class="even">
 <td><p><em>pInputData</em></p></td>
-<td><p><strong>无效</strong></p></td>
+<td><p><strong>NULL</strong></p></td>
 </tr>
 <tr class="odd">
 <td><p><em>cbInputData</em></p></td>
@@ -269,7 +269,7 @@ ms.locfileid: "72838785"
 
  
 
-如果[**XcvData**](https://docs.microsoft.com/previous-versions/ff564255(v=vs.85))可以获取打印机主机的名称，则不会返回任何\_错误。 如果*cbOutputData*小于所需的值，则当*pcbOutputNeeded*为**NULL**时，函数将返回错误\_无效的\_参数; 当*PCBOUTPUTNEEDED*是非时，\_缓冲区的错误\_**NULL**。 如果*pOutputData*为**NULL**，则函数将返回错误\_无效\_参数。
+如果[**XcvData**](/previous-versions/ff564255(v=vs.85)) \_ 可以获取打印机主机的名称，则不会返回错误。 如果*cbOutputData*小于所需的值，则当 PcbOutputNeeded 为 null 时，该函数将返回错误 \_ ：无效的 \_ 参数; *pcbOutputNeeded* **NULL** \_ \_ 当*pcbOutputNeeded*非**null**时，该函数将返回错误的缓冲区。 如果 *pOutputData* 为 **NULL**，则函数返回错误 \_ \_ 参数无效。
 
 ### <a name="ipaddress-command"></a>IPAddress 命令
 
@@ -283,7 +283,7 @@ ms.locfileid: "72838785"
 <thead>
 <tr class="header">
 <th>XcvData 参数</th>
-<th>Value</th>
+<th>值</th>
 </tr>
 </thead>
 <tbody>
@@ -293,7 +293,7 @@ ms.locfileid: "72838785"
 </tr>
 <tr class="even">
 <td><p><em>pInputData</em></p></td>
-<td><p><strong>无效</strong></p></td>
+<td><p><strong>NULL</strong></p></td>
 </tr>
 <tr class="odd">
 <td><p><em>cbInputData</em></p></td>
@@ -316,7 +316,7 @@ ms.locfileid: "72838785"
 
  
 
-如果[**XcvData**](https://docs.microsoft.com/previous-versions/ff564255(v=vs.85))可以获取打印机的 IP 地址，则不会返回任何\_错误。 如果*cbOutputData*小于所需的值，则当*pcbOutputNeeded*为**NULL**时，函数将返回错误\_无效的\_参数; 当*PCBOUTPUTNEEDED*是非时，\_缓冲区的错误\_**NULL**。 如果*pOutputData*为**NULL**，则函数将返回错误\_无效\_参数。
+如果[**XcvData**](/previous-versions/ff564255(v=vs.85)) \_ 可以获取打印机的 IP 地址，则不会返回错误。 如果*cbOutputData*小于所需的值，则当 PcbOutputNeeded 为 null 时，该函数将返回错误 \_ ：无效的 \_ 参数; *pcbOutputNeeded* **NULL** \_ \_ 当*pcbOutputNeeded*非**null**时，该函数将返回错误的缓冲区。 如果 *pOutputData* 为 **NULL**，则函数返回错误 \_ \_ 参数无效。
 
 ### <a name="monitorui-command"></a>MonitorUI 命令
 
@@ -330,7 +330,7 @@ ms.locfileid: "72838785"
 <thead>
 <tr class="header">
 <th>XcvData 参数</th>
-<th>Value</th>
+<th>值</th>
 </tr>
 </thead>
 <tbody>
@@ -340,7 +340,7 @@ ms.locfileid: "72838785"
 </tr>
 <tr class="even">
 <td><p><em>pInputData</em></p></td>
-<td><p><strong>无效</strong></p></td>
+<td><p><strong>NULL</strong></p></td>
 </tr>
 <tr class="odd">
 <td><p><em>cbInputData</em></p></td>
@@ -363,11 +363,11 @@ ms.locfileid: "72838785"
 
  
 
-如果[**XcvData**](https://docs.microsoft.com/previous-versions/ff564255(v=vs.85))能够获取用户界面 DLL 的名称，则不会返回任何\_错误。 除了正常错误代码外，如果调用方在服务器上没有足够的权限， **XcvData**会返回错误\_访问\_被拒绝。 此命令要求服务器\_访问\_管理权限。 如果*cbOutputData*小于所需的值，则当*pcbOutputNeeded*为**NULL**时，函数将返回错误\_无效的\_参数; 当*PCBOUTPUTNEEDED*是非时，\_缓冲区的错误\_**NULL**。 如果*pOutputData*为**NULL**，则函数将返回错误\_无效\_参数。
+如果[**XcvData**](/previous-versions/ff564255(v=vs.85)) \_ 能够获取用户界面 DLL 的名称，则不会返回错误。 除了正常错误代码外， **XcvData** \_ \_ 如果调用方在服务器上没有足够的权限，XcvData 将返回错误 "访问被拒绝"。 此命令需要服务器 \_ 访问 \_ 管理权限。 如果*cbOutputData*小于所需的值，则当 PcbOutputNeeded 为 null 时，该函数将返回错误 \_ ：无效的 \_ 参数; *pcbOutputNeeded* **NULL** \_ \_ 当*pcbOutputNeeded*非**null**时，该函数将返回错误的缓冲区。 如果 *pOutputData* 为 **NULL**，则函数返回错误 \_ \_ 参数无效。
 
 ### <a name="snmpcommunity"></a>SNMPCommunity
 
-**SNMPCommunity**命令获取打印机的简单网络管理协议（SNMP）团体名称。
+**SNMPCommunity**命令获取用于打印机的简单网络管理协议 (SNMP) 社区名称。
 
 <table>
 <colgroup>
@@ -377,7 +377,7 @@ ms.locfileid: "72838785"
 <thead>
 <tr class="header">
 <th>XcvData 参数</th>
-<th>Value</th>
+<th>值</th>
 </tr>
 </thead>
 <tbody>
@@ -387,7 +387,7 @@ ms.locfileid: "72838785"
 </tr>
 <tr class="even">
 <td><p><em>pInputData</em></p></td>
-<td><p><strong>无效</strong></p></td>
+<td><p><strong>NULL</strong></p></td>
 </tr>
 <tr class="odd">
 <td><p><em>cbInputData</em></p></td>
@@ -399,7 +399,7 @@ ms.locfileid: "72838785"
 </tr>
 <tr class="odd">
 <td><p><em>cbOutputData</em></p></td>
-<td><p>包含<em>pOutputData</em>参数指向的字符串所需的缓冲区大小</p></td>
+<td><p>包含 <em>pOutputData</em> 参数指向的字符串所需的缓冲区大小</p></td>
 </tr>
 <tr class="even">
 <td><p><em>pcbOutputNeeded</em></p></td>
@@ -410,11 +410,11 @@ ms.locfileid: "72838785"
 
  
 
-如果[**XcvData**](https://docs.microsoft.com/previous-versions/ff564255(v=vs.85))可以获取打印机的 SNMP 团体名称，则不会返回任何\_错误。 如果*cbOutputData*小于所需的值，则当*pcbOutputNeeded*为**NULL**时，函数将返回错误\_无效的\_参数; 当*PCBOUTPUTNEEDED*是非时，\_缓冲区的错误\_**NULL**。 如果*pOutputData*为**NULL**，则函数将返回错误\_无效\_参数。
+如果[**XcvData**](/previous-versions/ff564255(v=vs.85)) \_ 可以获取打印机的 SNMP 团体名称，则不会返回错误。 如果*cbOutputData*小于所需的值，则当 PcbOutputNeeded 为 null 时，该函数将返回错误 \_ ：无效的 \_ 参数; *pcbOutputNeeded* **NULL** \_ \_ 当*pcbOutputNeeded*非**null**时，该函数将返回错误的缓冲区。 如果 *pOutputData* 为 **NULL**，则函数返回错误 \_ \_ 参数无效。
 
 ### <a name="snmpdeviceindex"></a>SNMPDeviceIndex
 
-**SNMPDeviceIndex**命令获取打印机的简单网络管理协议（SNMP）设备索引。
+**SNMPDeviceIndex**命令获取 (SNMP) 设备索引的简单网络管理协议。
 
 <table>
 <colgroup>
@@ -424,7 +424,7 @@ ms.locfileid: "72838785"
 <thead>
 <tr class="header">
 <th>XcvData 参数</th>
-<th>Value</th>
+<th>值</th>
 </tr>
 </thead>
 <tbody>
@@ -434,7 +434,7 @@ ms.locfileid: "72838785"
 </tr>
 <tr class="even">
 <td><p><em>pInputData</em></p></td>
-<td><p><strong>无效</strong></p></td>
+<td><p><strong>NULL</strong></p></td>
 </tr>
 <tr class="odd">
 <td><p><em>cbInputData</em></p></td>
@@ -446,22 +446,22 @@ ms.locfileid: "72838785"
 </tr>
 <tr class="odd">
 <td><p><em>cbOutputData</em></p></td>
-<td><p><strong>sizeof</strong>（DWORD）</p></td>
+<td><p><strong>sizeof</strong> (DWORD) </p></td>
 </tr>
 <tr class="even">
 <td><p><em>pcbOutputNeeded</em></p></td>
-<td><p>包含<strong>sizeof</strong>的 dword 的地址（dword）</p></td>
+<td><p>包含 <strong>sizeof</strong> (DWORD 的 dword 的地址) </p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-如果[**XcvData**](https://docs.microsoft.com/previous-versions/ff564255(v=vs.85))无法获取打印机的 SNMP 设备索引，则不会返回任何\_错误。 如果*cbOutputData*小于所需的值，则当*pcbOutputNeeded*为**NULL**时，函数将返回错误\_无效的\_参数; 当*PCBOUTPUTNEEDED*是非时，\_缓冲区的错误\_**NULL**。 如果*pOutputData*为**NULL**，则函数将返回错误\_无效\_参数。
+如果[**XcvData**](/previous-versions/ff564255(v=vs.85)) \_ 可以获取打印机的 SNMP 设备索引，则不会返回错误。 如果*cbOutputData*小于所需的值，则当 PcbOutputNeeded 为 null 时，该函数将返回错误 \_ ：无效的 \_ 参数; *pcbOutputNeeded* **NULL** \_ \_ 当*pcbOutputNeeded*非**null**时，该函数将返回错误的缓冲区。 如果 *pOutputData* 为 **NULL**，则函数返回错误 \_ \_ 参数无效。
 
 ### <a name="snmpenabled"></a>SNMPEnabled
 
-**SNMPEnabled**命令确定是否为当前设备启用了简单网络管理协议（SNMP）。
+**SNMPEnabled**命令确定是否为当前设备启用 (SNMP) 的简单网络管理协议。
 
 <table>
 <colgroup>
@@ -471,7 +471,7 @@ ms.locfileid: "72838785"
 <thead>
 <tr class="header">
 <th>XcvData 参数</th>
-<th>Value</th>
+<th>值</th>
 </tr>
 </thead>
 <tbody>
@@ -481,7 +481,7 @@ ms.locfileid: "72838785"
 </tr>
 <tr class="even">
 <td><p><em>pInputData</em></p></td>
-<td><p><strong>无效</strong></p></td>
+<td><p><strong>NULL</strong></p></td>
 </tr>
 <tr class="odd">
 <td><p><em>cbInputData</em></p></td>
@@ -493,23 +493,18 @@ ms.locfileid: "72838785"
 </tr>
 <tr class="odd">
 <td><p><em>cbOutputData</em></p></td>
-<td><p><strong>sizeof</strong>（DWORD）</p></td>
+<td><p><strong>sizeof</strong> (DWORD) </p></td>
 </tr>
 <tr class="even">
 <td><p><em>pcbOutputNeeded</em></p></td>
-<td><p>包含<strong>sizeof</strong>的 dword 的地址（dword）</p></td>
+<td><p>包含 <strong>sizeof</strong> (DWORD 的 dword 的地址) </p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-如果为设备启用了 SNMP，则**XCVDATA**不会返回\_错误。 如果*cbOutputData*小于所需的值，则当*pcbOutputNeeded*为**NULL**时，函数将返回错误\_无效的\_参数; 当*PCBOUTPUTNEEDED*是非时，\_缓冲区的错误\_**NULL**。 如果*pOutputData*为**NULL**，则函数将返回错误\_无效\_参数。
+**XcvData** \_ 如果为设备启用了 SNMP，则 XcvData 不会返回错误。 如果*cbOutputData*小于所需的值，则当 PcbOutputNeeded 为 null 时，该函数将返回错误 \_ ：无效的 \_ 参数; *pcbOutputNeeded* **NULL** \_ \_ 当*pcbOutputNeeded*非**null**时，该函数将返回错误的缓冲区。 如果 *pOutputData* 为 **NULL**，则函数返回错误 \_ \_ 参数无效。
 
  
-
- 
-
-
-
 

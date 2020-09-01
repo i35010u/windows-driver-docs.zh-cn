@@ -10,32 +10,26 @@ keywords:
 - 筛选器模块 WDK 网络，NET_LUID 值
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8a78f97ef22bd710dfbc3beff83df4a5a1340481
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: a57f15cf664a23fe31629e7a1976c1959aa950e5
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72827236"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89210715"
 ---
-# <a name="net_luid-values-for-miniport-adapters-and-filter-modules"></a>微型端口适配器和筛选器模块的 NET\_LUID 值
+# <a name="net_luid-values-for-miniport-adapters-and-filter-modules"></a>\_微型端口适配器和筛选器模块的 NET LUID 值
 
 
 
 
 
-NDIS 代表微型端口驱动程序（适用于每个微型端口适配器）和筛选器驱动程序（适用于每个筛选器模块）注册接口。 协议驱动程序可以通过使用其绑定句柄，查询用于驱动程序绑定到的微型端口适配器的 "NDIS" 的接口索引和[**NET\_LUID**](https://docs.microsoft.com/windows/desktop/api/ifdef/ns-ifdef-net_luid_lh)值。 例如，MUX 中间驱动程序的协议驱动程序下边缘可能会获取 NET\_LUID 值以指定其内部接口的分层顺序。
+对于每个微型端口适配器 (，NDIS 为每个微型端口适配器注册接口，) 并筛选每个筛选器模块) 的驱动程序 (。 协议驱动程序可以通过使用其绑定句柄，为驱动程序绑定到的微型端口适配器查询 NDIS 作为接口索引和 [**NET \_ LUID**](/windows/desktop/api/ifdef/ns-ifdef-net_luid_lh) 值。 例如，MUX 中间驱动程序的协议驱动程序下边缘可能会获取 NET \_ LUID 值以指定其内部接口的分层顺序。
 
-协议驱动程序将*NdisBindingHandle*参数中的绑定句柄传递到[**NdisIfQueryBindingIfIndex**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisifquerybindingifindex)函数，并为筛选器堆栈的顶部和底部的接口接收接口索引和 NET\_LUID 值。 或者，协议驱动程序可以在[**NDIS\_绑定\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_bind_parameters)结构中检索这些值。
+协议驱动程序将 *NdisBindingHandle* 参数中的绑定句柄传递到 [**NdisIfQueryBindingIfIndex**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisifquerybindingifindex) 函数，并在 \_ 筛选器堆栈的顶部和底部接收接口索引和网络 LUID 值。 或者，协议驱动程序可以在 [**NDIS \_ 绑定 \_ 参数**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_bind_parameters) 结构中检索这些值。
 
-微型端口驱动程序还可以通过使用 NDIS 微型端口适配器句柄，查询 NDIS 以获得微型端口适配器的接口索引。 微型端口驱动程序在[**NDIS\_微型端口\_初始化\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_miniport_init_parameters)结构中接收接口索引和 NET\_LUID 值。
+微型端口驱动程序还可以通过使用 NDIS 微型端口适配器句柄，查询 NDIS 以获得微型端口适配器的接口索引。 小型端口驱动程序 \_ 在 [**NDIS \_ 微型端口 \_ 初始 \_ 参数**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_miniport_init_parameters) 结构中接收接口索引和 NET LUID 值。
 
-筛选器驱动程序为 NDIS\_筛选器中的筛选器模块获取接口索引和 NET\_LUID 值[ **\_附加\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_filter_attach_parameters)结构。
-
- 
+筛选器驱动程序 \_ 在 [**NDIS \_ 筛选器 \_ 附加 \_ 参数**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_filter_attach_parameters) 结构中获取筛选器模块的接口索引和 NET LUID 值。
 
  
-
-
-
-
 

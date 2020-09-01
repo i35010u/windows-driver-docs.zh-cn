@@ -1,6 +1,6 @@
 ---
 title: ndiskd.af
-description: Ndiskd.af 扩展显示面向连接的 NDIS （CoNDIS）地址系列（AF）。
+description: Ndiskd.af 扩展显示面向连接的 NDIS (CoNDIS) 地址系列 (AF) 。
 ms.assetid: 737AB46E-DFAA-42D6-A9BD-B7223167D0DD
 keywords:
 - ndiskd.af Windows 调试
@@ -12,16 +12,16 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 316dd60189943261ca9567d9714e7a4a2835fe32
-ms.sourcegitcommit: 8596782b07c8a71adf38fc2c2da68b75ba0a1259
+ms.openlocfilehash: 278f40f0808928562cca008987f1734f59ed26c1
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85593957"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89209431"
 ---
 # <a name="ndiskdaf"></a>!ndiskd.af
 
-**！ Ndiskd.af** Extension 显示面向连接的 NDIS （CoNDIS）地址系列（af）。
+**！ Ndiskd.af** extension 显示了面向连接的 NDIS (CoNDIS) 地址系列 (af) 。
 
 ```console
 !ndiskd.af -handle <x>
@@ -38,13 +38,13 @@ Ndiskd.dll
 
 ### <a name="remarks"></a>备注
 
-有关 CoNDIS 的详细信息，请参阅[面向连接的 NDIS](https://docs.microsoft.com/windows-hardware/drivers/network/connection-oriented-ndis)。
+有关 CoNDIS 的详细信息，请参阅 [面向连接的 NDIS](../network/connection-oriented-ndis.md)。
 
-有关 CoNDIS 地址系列的详细信息，请参阅[地址系列](https://docs.microsoft.com/windows-hardware/drivers/network/address-families)。
+有关 CoNDIS 地址系列的详细信息，请参阅 [地址系列](../network/address-families.md)。
 
 ### <a name="examples"></a>示例
 
-CoNDIS 在某些情况下使用，例如连接到 VPN，因此，如果系统中的微型端口驱动程序已创建并激活 CoNDIS 虚拟连接，则运行 **！ ndiskd.af**将不会显示结果。 以下示例显示了连接到 VPN 网络的计算机的结果。 首先，运行不带参数的[**！ get-netadapter**](-ndiskd-netadapter.md)扩展，以查看系统上的微型端口和微型端口驱动程序的列表 ndiskd。 在下面的输出中，查找 Marvell AVASTAR 无线-AC 网络控制器网络适配器的微型端口驱动程序。 它的句柄为 ffffc804af2e3710。
+CoNDIS 在某些情况下使用，例如连接到 VPN，因此，如果系统中的微型端口驱动程序已创建并激活 CoNDIS 虚拟连接，则运行 **！ ndiskd.af** 将不会显示结果。 以下示例显示了连接到 VPN 网络的计算机的结果。 首先，运行不带参数的 [**！ get-netadapter**](-ndiskd-netadapter.md) 扩展，以查看系统上的微型端口和微型端口驱动程序的列表 ndiskd。 在下面的输出中，查找 Marvell AVASTAR 无线-AC 网络控制器网络适配器的微型端口驱动程序。 它的句柄为 ffffc804af2e3710。
 
 ```console
 1: kd> !ndiskd.netadapter
@@ -65,7 +65,7 @@ CoNDIS 在某些情况下使用，例如连接到 VPN，因此，如果系统中
     ffffc804aef695e0   ffffc804aed331a0    TAP-Windows Adapter V9
 ```
 
-接下来，使用微型端口驱动程序的句柄输入 **！ ndiskd.af**命令，以查看此微型端口驱动程序的地址族，该地址族充当面向连接的客户端。
+接下来，使用微型端口驱动程序的句柄输入 **！ ndiskd.af** 命令，以查看此微型端口驱动程序的地址族，该地址族充当面向连接的客户端。
 
 ```console
 1: kd> !ndiskd.af ffffc804af2e3710
@@ -110,18 +110,18 @@ CLIENT HANDLERS
     ClIncomingCallQoSChangeHandler         fffff80965ffa610   wdiwifi!MPWrapperOidRequest
 ```
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
-[网络驱动程序设计指南](https://docs.microsoft.com/windows-hardware/drivers/network/index)
+[网络驱动程序设计指南](../network/index.md)
 
-[Windows Vista 和更高版本的网络引用](https://docs.microsoft.com/windows-hardware/drivers/ddi/_netvista/)
+[Windows Vista 和更高版本的网络引用](/windows-hardware/drivers/ddi/_netvista/)
 
 [调试网络堆栈](https://channel9.msdn.com/Shows/Defrag-Tools/Defrag-Tools-175-Debugging-the-Network-Stack)
 
-[**NDIS 扩展（Ndiskd.dll）**](ndis-extensions--ndiskd-dll-.md)
+[**NDIS 扩展 ( # A0) **](ndis-extensions--ndiskd-dll-.md)
 
 [**!ndiskd.help**](-ndiskd-help.md)
 
-[面向连接的 NDIS](https://docs.microsoft.com/windows-hardware/drivers/network/connection-oriented-ndis)
+[面向连接的 NDIS](../network/connection-oriented-ndis.md)
 
-[地址系列](https://docs.microsoft.com/windows-hardware/drivers/network/address-families)
+[地址系列](../network/address-families.md)

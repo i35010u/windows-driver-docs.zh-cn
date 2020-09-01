@@ -1,20 +1,20 @@
 ---
 title: 使用 DML 自定义调试器输出
-description: 调试器标记语言（DML）提供了一种机制，用于增强调试器和扩展的输出。
+description: " (DML) 的调试器标记语言提供了一种机制，用于增强调试器和扩展的输出。"
 ms.assetid: 04984510-B95F-405F-81DF-E9D0673210B4
 ms.date: 11/13/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: d0524a0bed0dbea8f4433c82983726961af28c42
-ms.sourcegitcommit: ca5045a739eefd6ed14b9dbd9249b335e090c4e9
+ms.openlocfilehash: 368be9e42ff0521f8d650568fac8410f4b237f49
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/06/2020
-ms.locfileid: "85968050"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89210881"
 ---
 # <a name="customizing-debugger-output-using-dml"></a>使用 DML 自定义调试器输出
 
 
-调试器标记语言（DML）提供了一种机制，用于增强调试器和扩展的输出。 与 HTML 类似，调试器的标记支持允许输出以标记的形式包括显示指令和额外的非显示信息。 调试程序用户界面（如 WinDbg）分析 DML 中提供的额外信息，以增强信息的显示，并提供新的行为，例如网格显示和排序。 本主题介绍如何使用 DML 自定义调试输出。 有关在调试器中启用和使用 DML 的常规信息，请参阅[使用调试器标记语言](debugger-markup-language-commands.md)。
+ (DML) 的调试器标记语言提供了一种机制，用于增强调试器和扩展的输出。 与 HTML 类似，调试器的标记支持允许输出以标记的形式包括显示指令和额外的非显示信息。 调试程序用户界面（如 WinDbg）分析 DML 中提供的额外信息，以增强信息的显示，并提供新的行为，例如网格显示和排序。 本主题介绍如何使用 DML 自定义调试输出。 有关在调试器中启用和使用 DML 的常规信息，请参阅 [使用调试器标记语言](debugger-markup-language-commands.md)。
 
 DML 适用于 Windows 10 及更高版本。
 
@@ -80,14 +80,14 @@ My DML Experiment
 
 ![dml 文件输出的屏幕截图](images/dmlcommands03.png)
 
-如果单击 "**列出以 usb 链接开头的模块**"，将看到类似于下图的输出。
+如果单击 " **列出以 usb 链接开头的模块** "，将看到类似于下图的输出。
 
 ![模块列表的屏幕截图](images/dmlcommands04.png)
 
 ## <a name="span-idright-click_behavior_in_dmlspanspan-idright-click_behavior_in_dmlspanspan-idright-click_behavior_in_dmlspanright-click-behavior-in-dml"></a><span id="Right-Click_Behavior_in_DML"></span><span id="right-click_behavior_in_dml"></span><span id="RIGHT-CLICK_BEHAVIOR_IN_DML"></span>在 DML 中右键单击行为
 
 
-在 DML 中可使用右键单击行为。 此示例演示如何使用 altlink 来定义右键单击 &lt; 行为 &gt; ，以便使用常规单击发送断点的[**最佳实践（设置断点）**](bp--bu--bm--set-breakpoint-.md)命令并发送[**u （Unassemble）**](u--unassemble-.md) 。
+在 DML 中可使用右键单击行为。 此示例演示如何使用 altlink 来定义右击行为， &lt; 以使用将 &gt; [**断点 (发送) **](bp--bu--bm--set-breakpoint-.md) 命令，并通过定期单击发送 [**u (Unassemble) **](u--unassemble-.md) 。
 
 ```text
 <link cmd="u MyProgram!memcpy">
@@ -105,7 +105,7 @@ u MyProgram!memcpy
 
 Link 标记是 DML 中的基本超链接机制。 它指导支持 DML 表示形式的用户界面将链接文本显示为可单击的链接。 当单击具有 cmd 规范的链接时，将执行调试器命令，其输出应替换当前输出。
 
-Name 和 section 参数允许在命名链接之间导航，类似于 HTML 的 &lt; 名称 &gt; 和 \# 名称支持。 当在 UI 上单击具有 section 参数的链接时，将扫描名称与匹配的链接，并将其滚动到 "查看"。 这允许链接指向同一页面的不同部分（或新页面的特定部分）。 DML 的部分名称是单独的，以避免必须定义一个新语法，这会允许在命令字符串末尾使用节名称。
+Name 和 section 参数允许在命名链接之间导航，类似于 HTML 的 &lt; 名称 &gt; 和 \# 名称支持。 当在 UI 上单击具有 section 参数的链接时，将扫描名称与匹配的链接，并将其滚动到 "查看"。 这允许链接指向同一页面的不同部分 (或新页面) 的特定部分。 DML 的部分名称是单独的，以避免必须定义一个新语法，这会允许在命令字符串末尾使用节名称。
 
 转换为纯文本会删除标记。
 
@@ -136,7 +136,7 @@ Name 和 section 参数允许在命名链接之间导航，类似于 HTML 的 &l
 
 **示例**
 
-此示例演示如何使用 altlink 来定义右键单击 &lt; 行为 &gt; ，以便使用常规单击发送断点的[**最佳实践（设置断点）**](bp--bu--bm--set-breakpoint-.md)命令并发送[**u （Unassemble）**](u--unassemble-.md) 。
+此示例演示如何使用 altlink 来定义右击行为，以使用将断点 &lt; &gt; [** (发送) **](bp--bu--bm--set-breakpoint-.md) 命令，并通过定期单击发送 [**u (Unassemble) **](u--unassemble-.md) 。
 
 ```text
 <link cmd="u MyProgram!memcpy">
@@ -223,7 +223,7 @@ Exec 标记类似于 link 标记，其中描述性文本应显示为可单击的
 
 &lt;col fg = "name" bg = "name" &gt; text &lt; /col&gt;
 
-请求文本的前景色和背景色。 颜色被指定为已知颜色的名称而不是绝对值，因为这样可以让客户控制他们看到的颜色类型。 当前颜色名称（默认值仅适用于 WinDbg）。
+请求文本的前景色和背景色。 颜色被指定为已知颜色的名称而不是绝对值，因为这样可以让客户控制他们看到的颜色类型。 当前颜色名称 (默认值仅适用于 WinDbg) 。
 
 **前台和后台元素标记**
 
@@ -265,25 +265,25 @@ Exec 标记类似于 link 标记，其中描述性文本应显示为可单击的
 <td align="left"><p>normbg-正常背景</p>
 <p>normfg-正常前景</p></td>
 <td align="left">普通
-<p>&lt;col fg = "normfg" bg = "normbg" &gt; Test Text-Normal （normfg/normbg） &lt; /col&gt;</p></td>
+<p>&lt;col fg = "normfg" bg = "normbg" &gt; Test Text-Normal (normfg/normbg) &lt; /col&gt;</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>warnbg-警告背景</p>
 <p>warnfg-Warning 前台</p></td>
 <td align="left">警告
-<p>&lt;col fg = "warnfg" bg = "warnbg" &gt; Test Text-Warning （warnfg/warnbg） &lt; /col&gt;</p></td>
+<p>&lt;col fg = "warnfg" bg = "warnbg" &gt; Test Text-Warning (warnfg/warnbg) &lt; /col&gt;</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>errbg-错误背景</p>
 <p>errfg-错误前景</p></td>
 <td align="left">错误
-<p>&lt;col fg = "errfg" bg = "errbg" &gt; Test Text-Error （errfg/errbg） &lt; /col&gt;</p></td>
+<p>&lt;col fg = "errfg" bg = "errbg" &gt; Test Text-Error (errfg/errbg) &lt; /col&gt;</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>verbbg-详细背景</p>
 <p>verbfg-详细前景</p></td>
 <td align="left">“详细”
-<p>&lt;col fg = "verbfg" bg = "verbbg" &gt; Test Text-Verbose （verbfg/verbbg） &lt; /col&gt;</p></td>
+<p>&lt;col fg = "verbfg" bg = "verbbg" &gt; Test Text-Verbose (verbfg/verbbg) &lt; /col&gt;</p></td>
 </tr>
 </tbody>
 </table>
@@ -480,7 +480,7 @@ Exec 标记类似于 link 标记，其中描述性文本应显示为可单击的
 ## <a name="span-iddml_additions_to_the_dbgeng_interfacespanspan-iddml_additions_to_the_dbgeng_interfacespanspan-iddml_additions_to_the_dbgeng_interfacespandml-additions-to-the-dbgeng-interface"></a><span id="DML_Additions_to_the_dbgeng_Interface"></span><span id="dml_additions_to_the_dbgeng_interface"></span><span id="DML_ADDITIONS_TO_THE_DBGENG_INTERFACE"></span>对 dbgeng 接口的 DML 添加
 
 
-[调试器引擎和扩展 api](debugger-engine-and-extension-apis.md)提供了一个接口，用来创建自定义应用程序。 你还可以编写将在 WinDbg、KD、CDB 和 NTSD 中运行的自定义扩展插件。 有关详细信息，请参阅[编写 DbgEng 扩展](writing-dbgeng-extensions.md)。 本节介绍调试器引擎接口的可用 DML 增强功能。
+[调试器引擎和扩展 api](debugger-engine-and-extension-apis.md)提供了一个接口，用来创建自定义应用程序。 你还可以编写将在 WinDbg、KD、CDB 和 NTSD 中运行的自定义扩展插件。 有关详细信息，请参阅 [编写 DbgEng 扩展](writing-dbgeng-extensions.md)。 本节介绍调试器引擎接口的可用 DML 增强功能。
 
 Dbgeng 已具有一组文本处理输入方法和输出接口，使用 DML 只需要指定输入和输出文本中携带的内容类型。
 
@@ -488,10 +488,10 @@ Dbgeng 已具有一组文本处理输入方法和输出接口，使用 DML 只�
 
 Output 控件标志 DEBUG \_ OUTCTL \_ DML 指示 dbgeng 方法生成的文本应作为 DML 内容处理。 如果未指定此标志，则文本将被视为纯文本上下文。 DEBUG \_ OUTCTL \_ DML 可以与以下方法一起使用。
 
--   [**IDebugControl4::ControlledOutput**](https://msdn.microsoft.com/library/windows/hardware/ff539248)
--   [**IDebugControl4::ControlledOutputVaList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugcontrol3-controlledoutputvalist)
--   [**IDebugControl4::ControlledOutputWide**](https://msdn.microsoft.com/library/windows/hardware/ff539266)
--   [**IDebugControl4::ControlledOutputVaListWide**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugcontrol4-controlledoutputvalistwide)
+-   [**IDebugControl4::ControlledOutput**](/previous-versions/ff539248(v=vs.85))
+-   [**IDebugControl4::ControlledOutputVaList**](/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugcontrol3-controlledoutputvalist)
+-   [**IDebugControl4::ControlledOutputWide**](/previous-versions/ff539266(v=vs.85))
+-   [**IDebugControl4::ControlledOutputVaListWide**](/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugcontrol4-controlledoutputvalistwide)
 
 给定的文本必须遵循用于有效字符的 DML 规则。
 
@@ -499,17 +499,17 @@ Output 控件标志 DEBUG \_ OUTCTL \_ DML 指示 dbgeng 方法生成的文本�
 
 下表总结了% Y 格式说明符的用法。
 
-**% Y {t}**：带引号的字符串。 如果输出格式（第一个 arg）为 DML，则将文本转换为 DML。
+**% Y {t}**：带引号的字符串。 如果输出格式 (第一个 arg) 为 DML，则会将文本转换为 DML。
 
 **% Y {T}**：带引号的字符串。 将始终将文本转换为 DML，而不考虑输出格式。
 
-**% Y {s}**：未加引号的字符串。 如果输出格式（第一个 arg）为 DML，则将文本转换为 DML。
+**% Y {s}**：未加引号的字符串。 如果输出格式 (第一个 arg) 为 DML，则会将文本转换为 DML。
 
 **% Y {S}**：未加引号的字符串。 将始终将文本转换为 DML，而不考虑输出格式。
 
 **% Y {as}**： ULONG64。 添加一个空字符串或9个空格的间距，以填充调试器格式的指针字段的高32位部分。 额外的空间输出9个空格，其中包含前8个零加上 \` 字符。
 
-**% Y {ps}**： ULONG64。 填充调试器格式的指针字段的额外空间（包括前8个零加上 \` 字符）。
+**% Y {ps}**： ULONG64。 填充调试器格式的指针字段 (的额外空间包括前8个零加上 \` 字符) 。
 
 **% Y {l}**： ULONG64。 作为源行信息的地址。
 
@@ -598,11 +598,11 @@ OutputDebugString(“This is plain text\n<?dml?>This is <col fg=\”emphfg\”>D
 
 **IDebugOutputCallbacks2**
 
-IDebugOutputCallbacks2 允许 dbgeng 接口客户端接收用于显示的完整 DML 内容。 IDebugOutputCallbacks2 是 IDebugOutputCallbacks 的扩展（而不是 IDebugOutputCallbacksWide），以便可以将其传递到现有的 SetOutputCallbacks 方法中。 该引擎将为 IDebugOutputCallbacks2 执行 QueryInterface，以查看传入输出回调对象支持的接口。 如果对象支持 IDebugOutputCallbacks2，则所有输出都将通过扩展的 IDebugOutputCallbacks2 方法发送;不会使用基本 IDebugOutputCallbacks：： Output 方法。
+IDebugOutputCallbacks2 允许 dbgeng 接口客户端接收用于显示的完整 DML 内容。 IDebugOutputCallbacks2 是 IDebugOutputCallbacks 的扩展 (不 IDebugOutputCallbacksWide) ，以便可以将其传递到现有的 SetOutputCallbacks 方法中。 该引擎将为 IDebugOutputCallbacks2 执行 QueryInterface，以查看传入输出回调对象支持的接口。 如果对象支持 IDebugOutputCallbacks2，则所有输出都将通过扩展的 IDebugOutputCallbacks2 方法发送;不会使用基本 IDebugOutputCallbacks：： Output 方法。
 
 新的方法是：
 
--   IDebugOutputCallbacks2：： GetInterestMask –允许回调对象描述其要接收的输出通知的类型。 基本的选择是在纯文本内容（调试 \_ OUTCBI \_ 文本）和 dml 内容（调试 \_ OUTCBI \_ DML）之间进行。 此外，回调对象还可以请求显式刷新（调试 \_ OUTCBI \_ 显式刷新）的通知 \_ 。
+-   IDebugOutputCallbacks2：： GetInterestMask –允许回调对象描述其要接收的输出通知的类型。 基本选择是纯文本内容 (调试 \_ OUTCBI \_ 文本) 和 dml CONTENT (调试 \_ OUTCBI \_ DML) 。 此外，回调对象还可以 (DEBUG \_ OUTCBI \_ explicit FLUSH) 请求显式刷新通知 \_ 。
 -   IDebugOutputCallbacks2：：输出2–所有 IDebugOutputCallbacks2 通知都通过输出2。 一个参数，指示在 Flags、Arg 和 Text 参数携带通知有效负载时传入哪种类型的通知。 通知包括：
 
     -   调试 \_ OUTCB \_ 文本–纯文本输出。 标志来自调试 \_ OUTCBF \_ \* ，Arg 是输出掩码，文本是纯文本。 仅当 \_ \_ 利息掩码中提供了 DEBUG OUTCBI 文本时才会收到此内容。
@@ -639,13 +639,3 @@ IDebugOutputCallbacks2 允许 dbgeng 接口客户端接收用于显示的完整 
 
 
 [使用调试器标记语言](debugger-markup-language-commands.md)
-
-
-
-
-
-
-
-
-
-

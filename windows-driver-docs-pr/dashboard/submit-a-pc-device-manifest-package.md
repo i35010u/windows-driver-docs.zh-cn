@@ -5,33 +5,30 @@ ms.assetid: b96b02b8-8804-403e-9513-7a5d1b730fcd
 ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 147d3c944141cbcc8075f7ab2d47193d599ba2ee
-ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
+ms.openlocfilehash: b823d7c0ebaedd81a8d0015c62ce3853ac1e2150
+ms.sourcegitcommit: 17c1bbc5ea0bef3bbc87794b030a073f905dc942
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "75209160"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88802406"
 ---
 # <a name="submit-a-pc-device-manifest-package"></a>提交电脑设备清单包
 
-
-## <a name="span-idsubmitting_a_pc_device_manifest_packagespanspan-idsubmitting_a_pc_device_manifest_packagespanspan-idsubmitting_a_pc_device_manifest_packagespansubmitting-a-pc-device-manifest-package"></a><span id="Submitting_a_PC_device_manifest_package"></span><span id="submitting_a_pc_device_manifest_package"></span><span id="SUBMITTING_A_PC_DEVICE_MANIFEST_PACKAGE"></span>提交电脑设备清单包
-
+## <a name="submitting-a-pc-device-manifest-package"></a>提交电脑设备清单包
 
 你可以使用相同的方法提交用于预览或发布的包。
 
-**提交设备清单包**
+### <a name="to-submit-a-device-manifest-package"></a>提交设备清单包
 
-1.  使用 [SignTool](https://go.microsoft.com/fwlink/p/?LinkId=238330) 工具对 devicemanifest-ms 程序包进行签名。
+1. 使用 [SignTool](https://go.microsoft.com/fwlink/p/?LinkId=238330) 工具对 devicemanifest-ms 程序包进行签名。
 
-2.  从硬件开发人员中心或 Windows 开发人员中心，使用 Microsoft 帐户登录到“仪表板”  。
+2. 从硬件开发人员中心或 Windows 开发人员中心，使用 Microsoft 帐户登录到“仪表板”  。
 
-3.  在“设备元数据”  下，单击“创建体验”  （如果你希望提交新体验），或单击“管理体验”  （如果你希望修改现有体验）。
+3. 在“设备元数据”  下，单击“创建体验”  （如果你希望提交新体验），或单击“管理体验”  （如果你希望修改现有体验）。
 
-4.  浏览并选择你的新 devicemanifest-ms 程序包，然后单击“提交”  。
+4. 浏览并选择你的新 devicemanifest-ms 程序包，然后单击“提交”  。
 
-## <a name="span-idcreating_a_device_manifest_submission_packagespanspan-idcreating_a_device_manifest_submission_packagespanspan-idcreating_a_device_manifest_submission_packagespancreating-a-device-manifest-submission-package"></a><span id="Creating_a_Device_Manifest_Submission_Package"></span><span id="creating_a_device_manifest_submission_package"></span><span id="CREATING_A_DEVICE_MANIFEST_SUBMISSION_PACKAGE"></span>创建设备清单提交程序包
-
+## <a name="creating-a-device-manifest-submission-package"></a>创建设备清单提交程序包
 
 设备清单提交程序包是所有电脑设备元数据包提交到硬件开发人员中心时必须采用的格式。
 
@@ -41,33 +38,32 @@ ms.locfileid: "75209160"
 
 硬件开发人员中心用户界面上批量上载以外的所有文件上载框都将接受设备清单提交程序包。
 
-### <a name="span-iddevice_manifest_submission_package_contentsspanspan-iddevice_manifest_submission_package_contentsspanspan-iddevice_manifest_submission_package_contentsspandevice-manifest-submission-package-contents"></a><span id="Device_Manifest_Submission_Package_Contents"></span><span id="device_manifest_submission_package_contents"></span><span id="DEVICE_MANIFEST_SUBMISSION_PACKAGE_CONTENTS"></span>设备清单提交程序包内容
+### <a name="device-manifest-submission-package-contents"></a>设备清单提交程序包内容
 
 每个设备清单提交包都包含以下组成部分：
 
--   **设备元数据包**
+- **设备元数据包**
 
     此包包含用于在 Windows 中显示设备图标、设置操作及使用设备体验功能的信息和图片。
 
     设备元数据包始终必需。
 
--   **LocaleInfo XML 文档**
+- **LocaleInfo XML 文档**
 
     此文档包含有关包含在附带设备元数据包中的区域设置的数据。 硬件开发人员中心使用此数据来正确验证一个或多个区域设置的设备元数据包。
 
     LocaleInfo XML 文档始终是必需的，即使设备元数据包仅包含单个区域设置。
 
--   **PcMetadataSubmission XML 文档**
+- **PcMetadataSubmission XML 文档**
 
     此文档包含用于验证附带的电脑设备元数据包中的 HWID 的数据。 硬件开发人员中心使用此数据来验证设备元数据包中的 HWID 是否属于正确的公司。
 
     PcMetadataSubmission XML 文档仅对电脑设备元数据包是必需的。
 
-**注意**  这些 XML 文档必须使用 UTF-8 编码进行保存。
+>[!NOTE]
+>这些 XML 文档必须使用 UTF-8 编码进行保存。
 
- 
-
-### <a name="span-idstructure_of_a_pc_device_manifest_submission_packagespanspan-idstructure_of_a_pc_device_manifest_submission_packagespanspan-idstructure_of_a_pc_device_manifest_submission_packagespanstructure-of-a-pc-device-manifest-submission-package"></a><span id="Structure_of_a_PC_Device_Manifest_Submission_Package"></span><span id="structure_of_a_pc_device_manifest_submission_package"></span><span id="STRUCTURE_OF_A_PC_DEVICE_MANIFEST_SUBMISSION_PACKAGE"></span>电脑设备清单提交包的结构
+### <a name="structure-of-a-pc-device-manifest-submission-package"></a>电脑设备清单提交包的结构
 
 设备清单包的结构取决于包含的设备元数据用于电脑、用于移动宽带还是包含对多个区域设置的支持。
 
@@ -94,15 +90,15 @@ GUID1.devicemanifest-ms
 
 使用 Cabarc 工具创建 \*.devicemanifest-ms 文件时，必须创建一个本地目录，其中设备元数据包 (\*.devicemetadata-ms)、LocaleInfo XML 文档和 PcMetadataSubmission XML 文档位于该目录的根目录中。
 
-**备注**
+#### <a name="remarks-device-manifest"></a>备注（设备清单）
 
--   .devicemanifest-ms 和 .devicemetadata-ms 文件名必须指定不带花括号 ({}) 分隔符的 GUID。
+- .devicemanifest-ms 和 .devicemetadata-ms 文件名必须指定不带花括号 ({}) 分隔符的 GUID。
 
--   每个电脑设备清单提交和设备元数据包的 GUID 都必须唯一。 当你创建新的或修改的程序包时，必须创建新 GUID。
+- 每个电脑设备清单提交和设备元数据包的 GUID 都必须唯一。 当你创建新的或修改的程序包时，必须创建新 GUID。
 
--   有关如何创建 cabinet 文件的详细信息，请参阅 [Microsoft Cabinet 软件开发工具包](https://go.microsoft.com/fwlink/p/?LinkId=248844)。
+- 有关如何创建 cabinet 文件的详细信息，请参阅 [Microsoft Cabinet 软件开发工具包](https://go.microsoft.com/fwlink/p/?LinkId=248844)。
 
-**示例**
+#### <a name="example-device-manifest"></a>示例（设备清单）
 
 下面显示了如何使用 Cabarc 工具创建 .devicemanifest-ms 文件的示例。 在此示例中，电脑设备清单文件的组成部分位于名为 PcPackages 的本地目录中：
 
@@ -116,123 +112,53 @@ GUID1.devicemanifest-ms
 GUID.devicemanifest-ms 文件在名为 PCFiles 的本地目录中创建：
 
 ``` syntax
-Cabarc.exe -r -p -P  .\PcPackages\ 
-N .\PCFiles\ GUID.devicemanifest-ms 
+Cabarc.exe -r -p -P  .\PcPackages\
+N .\PCFiles\ GUID.devicemanifest-ms
 .\PcPackages\PcMetadataSubmission.xml
 .\PcPackages\LocaleInfo.xml
 ```
 
 有关此工具的详细信息，请参阅 [Cabarc 概述](https://go.microsoft.com/fwlink/p/?LinkId=248843)。
 
-## <a name="span-idcreating_pcmetadatasubmissionxmlspanspan-idcreating_pcmetadatasubmissionxmlspancreating-pcmetadatasubmissionxml"></a><span id="creating_pcmetadatasubmission.xml"></span><span id="CREATING_PCMETADATASUBMISSION.XML"></span>创建 PcMetadataSubmission.xml
+## <a name="creating-pcmetadatasubmissionxml"></a>创建 PcMetadataSubmission.xml
 
-
-### <a name="span-idpcmetadatasubmission_xml_schemaspanspan-idpcmetadatasubmission_xml_schemaspanspan-idpcmetadatasubmission_xml_schemaspanpcmetadatasubmission-xml-schema"></a><span id="PcMetadataSubmission_XML_Schema"></span><span id="pcmetadatasubmission_xml_schema"></span><span id="PCMETADATASUBMISSION_XML_SCHEMA"></span>PcMetadataSubmission XML 架构
+### <a name="pcmetadatasubmission-xml-schema"></a>PcMetadataSubmission XML 架构
 
 设备清单提交程序包可包含一个 PcMetadataSubmission.xml 文档，其中包含硬件开发人员中心站点用于验证 PackageInfo.xml 中的计算机硬件 ID 的信息。
 
 PcMetadataSubmission.xml 文档中的数据基于 PcMetadataSubmission XML 架构（将在下面进行介绍）设置格式。
 
-**注意**  该 XML 文档必须使用 UTF-8 编码进行保存。
-
- 
+>[!NOTE]
+>该 XML 文档必须使用 UTF-8 编码进行保存。
 
 有关 ComputerHardwareID 的详细信息，请参阅[如何创建设备和打印机的设备元数据包](https://go.microsoft.com/fwlink/p/?LinkId=253559)。
 
-**PcMetadataSubmission XML 架构命名空间**
+#### <a name="pcmetadatasubmission-xml-schema-namespace"></a>PcMetadataSubmission XML 架构命名空间
 
 以下是 PcMetadataSubmission XML 架构的命名空间：
 
--   `http://schemas.microsoft.com/Windows/2009/05/MetadataSubmission/PcMetadataSubmission`
+- `http://schemas.microsoft.com/Windows/2009/05/MetadataSubmission/PcMetadataSubmission`
 
--   `http://schemas.microsoft.com/Windows/2011/06/MetadataSubmission/PcMetadataSubmissionv2`
+- `http://schemas.microsoft.com/Windows/2011/06/MetadataSubmission/PcMetadataSubmissionv2`
 
-**PcMetadataSubmission XML 元素/属性概述**
+#### <a name="overview-of-pcmetadatasubmission-xml-elementsattributes"></a>PcMetadataSubmission XML 元素/属性概述
 
 下表描述 PcMetadataSubmission XML 架构的元数据元素和属性。
 
-<table>
-<colgroup>
-<col width="25%" />
-<col width="25%" />
-<col width="25%" />
-<col width="25%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>元素/属性</th>
-<th>元素/属性类型</th>
-<th>必需/可选</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>SMBIOSEntry</p></td>
-<td><p>SMBIOSEntryType</p></td>
-<td><p>必需</p></td>
-<td><p>指定计算机的 SMBIOS 信息。</p></td>
-</tr>
-<tr class="even">
-<td><p>SystemManufacturer</p></td>
-<td><p>tns:SMBIOSStringType</p></td>
-<td><p>必需</p></td>
-<td><p>指定计算机的名称。</p></td>
-</tr>
-<tr class="odd">
-<td><p>SystemFamily</p></td>
-<td><p>tns:SMBIOSStringType</p></td>
-<td><p>可选</p></td>
-<td><p>指定计算机制造商的系列名称。</p></td>
-</tr>
-<tr class="even">
-<td><p>SystemProductName</p></td>
-<td><p>tns:SMBIOSStringType</p></td>
-<td><p>可选</p></td>
-<td><p>指定产品（计算机）的名称。</p></td>
-</tr>
-<tr class="odd">
-<td><p>BIOSVendor</p></td>
-<td><p>tns:SMBIOSStringType</p></td>
-<td><p>可选</p></td>
-<td><p>指定 BIOS 制造商的名称。</p></td>
-</tr>
-<tr class="even">
-<td><p>BIOSVersion</p></td>
-<td><p>tns:SMBIOSStringType</p></td>
-<td><p>可选</p></td>
-<td><p>指定 BIOS 的版本号。</p></td>
-</tr>
-<tr class="odd">
-<td><p>SystemBIOSMajorRelease</p></td>
-<td><p>tns:BIOSReleaseType</p></td>
-<td><p>可选</p></td>
-<td><p>指定 BIOS 的 MajorRelease 版本。</p></td>
-</tr>
-<tr class="even">
-<td><p>SystemBIOSMinorRelease</p></td>
-<td><p>tns:BIOSReleaseType</p></td>
-<td><p>可选</p></td>
-<td><p>指定 BIOS 的 MinorRelease 版本。</p></td>
-</tr>
-<tr class="odd">
-<td><p>Enclosuretype</p></td>
-<td><p>tns:TypeofEnclosureType</p></td>
-<td><p>可选</p></td>
-<td><p>指定计算机的机箱类型。</p></td>
-</tr>
-<tr class="even">
-<td><p>SKUNumber</p></td>
-<td><p>v2:SMBIOSStringType</p></td>
-<td><p>可选</p></td>
-<td><p>指定计算机的 SKU 号。</p></td>
-</tr>
-</tbody>
-</table>
+|元素/属性|元素/属性类型|必需/可选|说明|
+|----|----|----|----|
+|SMBIOSEntry|SMBIOSEntryType|必需|指定计算机的 SMBIOS 信息。|
+|SystemManufacturer|tns:SMBIOSStringType|必需|指定计算机的名称。|
+|SystemFamily|tns:SMBIOSStringType|可选|指定计算机制造商的系列名称。|
+|SystemProductName|tns:SMBIOSStringType|可选|指定产品（计算机）的名称。|
+|BIOSVendor|tns:SMBIOSStringType|可选|指定 BIOS 制造商的名称。|
+|BIOSVersion|tns:SMBIOSStringType|可选|指定 BIOS 的版本号。|
+|SystemBIOSMajorRelease|tns:BIOSReleaseType|可选|指定 BIOS 的 MajorRelease 版本。|
+|SystemBIOSMinorRelease|tns:BIOSReleaseType|可选|指定 BIOS 的 MinorRelease 版本。|
+|Enclosuretype|tns:TypeofEnclosureType|可选|指定计算机的机箱类型。|
+|SKUNumber|v2:SMBIOSStringType|可选|指定计算机的 SKU 号。|
 
- 
-
-**PcMetadataSubmission XML 架构定义**
+#### <a name="pcmetadatasubmission-xml-schema-definition"></a>PcMetadataSubmission XML 架构定义
 
 以下是 PcMetadataSubmission XML 架构定义：
 
@@ -308,33 +234,23 @@ PcMetadataSubmission.xml 文档中的数据基于 PcMetadataSubmission XML 架�
 </xs:schema>
 ```
 
-### <a name="span-idpcmetadatasubmission_xml_schema_referencespanspan-idpcmetadatasubmission_xml_schema_referencespanspan-idpcmetadatasubmission_xml_schema_referencespanpcmetadatasubmission-xml-schema-reference"></a><span id="PcMetadataSubmission_XML_Schema_Reference"></span><span id="pcmetadatasubmission_xml_schema_reference"></span><span id="PCMETADATASUBMISSION_XML_SCHEMA_REFERENCE"></span>PcMetadataSubmission XML 架构参考
+#### <a name="pcmetadatasubmission-xml-schema-reference"></a>PcMetadataSubmission XML 架构参考
 
 PcMetadataSubmission XML 架构定义以下元素和属性：
 
--   SMBIOSList
+- SMBIOSList
+  - SMBIOSEntry
+    - SystemManufacturer
+    - SystemFamily
+    - SystemProductName
+    - BIOSVendor
+    - BIOSVersion
+    - SystemBIOSMajorRelease
+    - SystemBIOSMinorRelease
+    - Enclosuretype
+    - SKUNumber
 
-    -   SMBIOSEntry
-
-        -   SystemManufacturer
-
-        -   SystemFamily
-
-        -   SystemProductName
-
-        -   BIOSVendor
-
-        -   BIOSVersion
-
-        -   SystemBIOSMajorRelease
-
-        -   SystemBIOSMinorRelease
-
-        -   Enclosuretype
-
-        -   SKUNumber
-
-**SMBIOSEntry 元素**
+### <a name="smbiosentry-elements"></a>SMBIOSEntry 元素
 
 SMBIOSEntry 元素指定计算机系统信息。 硬件开发人员中心将基于此信息创建计算机硬件 ID，并将该值与你随 PcMetadataSubmission.xml 一起提交的 packageinfo.xml 中的计算机硬件 ID 进行比较。
 
@@ -358,7 +274,7 @@ SMBIOSEntry 元素指定计算机系统信息。 硬件开发人员中心将基�
   </xs:complexType>
 ```
 
-**备注**
+#### <a name="remarks-smbiosentry-element"></a>备注（SMBIOSEntry 元素）
 
 可以使用多个 SMBIOSEntry 元素指定多个系统。
 
@@ -374,7 +290,7 @@ SMBIOSEntry 元素指定计算机系统信息。 硬件开发人员中心将基�
 </SMBIOSList>
 ```
 
-**SystemManufacturer 属性**
+### <a name="systemmanufacturer-attributes"></a>SystemManufacturer 属性
 
 SystemManufacturer 属性指定计算机的系列名称。
 
@@ -389,49 +305,17 @@ SystemManufacturer 属性指定计算机的系列名称。
 </xs:simpleType>
 ```
 
-**备注**
+#### <a name="remarks-systemmanufacturer-attributes"></a>备注（SystemManufacturer 属性）
 
 SystemManufacturer 属性指定的值必须与目标电脑 SMBIOS 表中“制造商”字段中的值相同。 下表显示了 SMBIOS 中“制造商”字段的字段信息。
 
-<table style="width:100%;">
-<colgroup>
-<col width="14%" />
-<col width="14%" />
-<col width="14%" />
-<col width="14%" />
-<col width="14%" />
-<col width="14%" />
-<col width="14%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>字段名称</th>
-<th>结构名称和类型</th>
-<th>SMBIOS 规范版本</th>
-<th>偏移量</th>
-<th>长度</th>
-<th>值</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>制造商</p></td>
-<td><p>系统信息(类型 1)</p></td>
-<td><p>2.0+</p></td>
-<td><p>04h</p></td>
-<td><p>BYTE</p></td>
-<td><p>STRING</p></td>
-<td><p>dmiStrucBuffer 数组中以 Null 结尾的字符串的索引。 此字符串指定计算机制造商的名称。</p></td>
-</tr>
-</tbody>
-</table>
-
- 
+|字段名称|结构名称和类型|SMBIOS 规范版本|偏移量|长度|值|说明|
+|----|----|----|----|----|----|----|----|
+|制造商|系统信息(类型 1)|2.0+|04h|BYTE|STRING|dmiStrucBuffer 数组中以 Null 结尾的字符串的索引。 此字符串指定计算机制造商的名称。|
 
 有关 dmiStrucBuffer 数组和 SMBIOS 字段的详细信息，请参阅[系统管理 BIOS (SMBIOS) 规范](https://go.microsoft.com/fwlink/p/?LinkId=145867)。
 
-**SystemFamily 属性**
+### <a name="systemfamily-attributes"></a>SystemFamily 属性
 
 SystemFamily 属性指定计算机制造商的名称。
 
@@ -446,49 +330,17 @@ SystemFamily 属性指定计算机制造商的名称。
 </xs:simpleType>
 ```
 
-**备注**
+#### <a name="remarks-systemfamily-attributes"></a>备注（SystemFamily 属性）
 
 SystemFamily 属性指定的值必须与目标电脑 SMBIOS 表中“系列”字段中的值相同。 下表显示了 SMBIOS 中“系列”字段的字段信息。
 
-<table style="width:100%;">
-<colgroup>
-<col width="14%" />
-<col width="14%" />
-<col width="14%" />
-<col width="14%" />
-<col width="14%" />
-<col width="14%" />
-<col width="14%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>字段名称</th>
-<th>结构名称和类型</th>
-<th>SMBIOS 规范版本</th>
-<th>偏移量</th>
-<th>长度</th>
-<th>值</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>家庭</p></td>
-<td><p>系统信息(类型 1)</p></td>
-<td><p>2.4+</p></td>
-<td><p>1Ah</p></td>
-<td><p>BYTE</p></td>
-<td><p>STRING</p></td>
-<td><p>dmiStrucBuffer 数组中以 Null 结尾的字符串的索引。 此字符串指定特定计算机所属的系列。系列指从硬件或软件的视角来看相似但不完全相同的一组计算机。通常，一个系列由不同的计算机型号组成，而这些型号具有不同的配置和价格点。 同一系列中的计算机通常具有相似的品牌和外观特点。</p></td>
-</tr>
-</tbody>
-</table>
-
- 
+|字段名称|结构名称和类型|SMBIOS 规范版本|偏移量|长度|值|说明|
+|----|----|----|----|----|----|----|
+|家庭|系统信息(类型 1)|2.4+|1Ah|BYTE|STRING|dmiStrucBuffer 数组中以 Null 结尾的字符串的索引。 此字符串指定特定计算机所属的系列。系列指从硬件或软件的视角来看相似但不完全相同的一组计算机。通常，一个系列由不同的计算机型号组成，而这些型号具有不同的配置和价格点。 同一系列中的计算机通常具有相似的品牌和外观特点。|
 
 有关 dmiStrucBuffer 数组和 SMBIOS 字段的详细信息，请参阅[系统管理 BIOS (SMBIOS) 规范](https://go.microsoft.com/fwlink/p/?LinkId=145867)。
 
-**SystemProductName 属性**
+### <a name="systemproductname-attributes"></a>SystemProductName 属性
 
 SystemProductName 属性指定产品（计算机）的名称。
 
@@ -503,49 +355,17 @@ SystemProductName 属性指定产品（计算机）的名称。
 </xs:simpleType>
 ```
 
-**备注**
+#### <a name="remarks-systemproductname-attribute"></a>备注（SystemProductName 属性）
 
 SystemProductName 属性指定的值必须与目标电脑 SMBIOS 表中“产品名称”字段中的值相同。 下表显示了 SMBIOS 中“产品名称”字段的字段信息。
 
-<table style="width:100%;">
-<colgroup>
-<col width="14%" />
-<col width="14%" />
-<col width="14%" />
-<col width="14%" />
-<col width="14%" />
-<col width="14%" />
-<col width="14%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>字段名称</th>
-<th>结构名称和类型</th>
-<th>SMBIOS 规范版本</th>
-<th>偏移量</th>
-<th>长度</th>
-<th>值</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>产品名称</p></td>
-<td><p>系统信息(类型 1)</p></td>
-<td><p>2.0+</p></td>
-<td><p>05h</p></td>
-<td><p>BYTE</p></td>
-<td><p>STRING</p></td>
-<td><p>dmiStrucBuffer 数组中以 Null 结尾的字符串的索引。 此字符串指定计算机的产品名称。</p></td>
-</tr>
-</tbody>
-</table>
-
- 
+|字段名称|结构名称和类型|SMBIOS 规范版本|偏移量|长度|值|说明|
+|----|----|----|----|----|----|----|
+|产品名称|系统信息(类型 1)|2.0+|05h|BYTE|STRING|dmiStrucBuffer 数组中以 Null 结尾的字符串的索引。 此字符串指定计算机的产品名称。|
 
 有关 dmiStrucBuffer 数组和 SMBIOS 字段的详细信息，请参阅[系统管理 BIOS (SMBIOS) 规范](https://go.microsoft.com/fwlink/p/?LinkId=145867)。
 
-**BIOSVendor 属性**
+### <a name="biosvendor-attributes"></a>BIOSVendor 属性
 
 BIOSVendor 属性指定 BIOS 制造商的名称。
 
@@ -560,49 +380,17 @@ BIOSVendor 属性指定 BIOS 制造商的名称。
 </xs:simpleType>
 ```
 
-**备注**
+#### <a name="remarks-biosvendor-attribute"></a>备注（BIOSVendor 属性）
 
 BIOSVendor 属性指定的值必须与目标电脑 SMBIOS 表中“供应商”字段中的值相同。 下表显示了 SMBIOS 中“供应商”字段的字段信息。
 
-<table style="width:100%;">
-<colgroup>
-<col width="14%" />
-<col width="14%" />
-<col width="14%" />
-<col width="14%" />
-<col width="14%" />
-<col width="14%" />
-<col width="14%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>字段名称</th>
-<th>结构名称和类型</th>
-<th>SMBIOS 规范版本</th>
-<th>偏移量</th>
-<th>长度</th>
-<th>值</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>供应商</p></td>
-<td><p>BIOS 信息(类型 0)</p></td>
-<td><p>2.0</p></td>
-<td><p>04h</p></td>
-<td><p>BYTE</p></td>
-<td><p>STRING</p></td>
-<td><p>dmiStrucBuffer 数组中以 Null 结尾的字符串的索引。 此字符串指定 BIOS 供应商的名称。</p></td>
-</tr>
-</tbody>
-</table>
-
- 
+|字段名称|结构名称和类型|SMBIOS 规范版本|偏移量|长度|值|说明|
+|----|----|----|----|----|----|----|
+|供应商|BIOS 信息(类型 0)|2.0|04h|BYTE|STRING|dmiStrucBuffer 数组中以 Null 结尾的字符串的索引。 此字符串指定 BIOS 供应商的名称。|
 
 有关 dmiStrucBuffer 数组和 SMBIOS 字段的详细信息，请参阅[系统管理 BIOS (SMBIOS) 规范](https://go.microsoft.com/fwlink/p/?LinkId=145867)。
 
-**BIOSVersion 属性**
+### <a name="biosversion-attributes"></a>BIOSVersion 属性
 
 BIOSVersion 属性指定 BIOS 的版本号。
 
@@ -617,49 +405,17 @@ BIOSVersion 属性指定 BIOS 的版本号。
 </xs:simpleType>
 ```
 
-**备注**
+#### <a name="remarks-biosversion-attribute"></a>备注（BIOSVersion 属性）
 
 BIOSVersion 属性指定的值必须与目标电脑 SMBIOS 表中“BIOS 版本”字段中的值相同。 下表显示了 SMBIOS 中“BIOS 版本”字段的字段信息。
 
-<table style="width:100%;">
-<colgroup>
-<col width="14%" />
-<col width="14%" />
-<col width="14%" />
-<col width="14%" />
-<col width="14%" />
-<col width="14%" />
-<col width="14%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>字段名称</th>
-<th>结构名称和类型</th>
-<th>SMBIOS 规范版本</th>
-<th>偏移量</th>
-<th>长度</th>
-<th>值</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>BIOS 版本</p></td>
-<td><p>BIOS 信息(类型 0)</p></td>
-<td><p>2.0</p></td>
-<td><p>05h</p></td>
-<td><p>BYTE</p></td>
-<td><p>STRING</p></td>
-<td><p>dmiStrucBuffer 数组中以 Null 结尾的字符串的索引。 此字符串包含有关处理器核心和 OEM 版本的信息。</p></td>
-</tr>
-</tbody>
-</table>
-
- 
+|字段名称|结构名称和类型|SMBIOS 规范版本|偏移量|长度|值|说明|
+|----|----|----|----|----|----|----|
+|BIOS 版本|BIOS 信息(类型 0)|2.0|05h|BYTE|STRING|dmiStrucBuffer 数组中以 Null 结尾的字符串的索引。 此字符串包含有关处理器核心和 OEM 版本的信息。|
 
 有关 dmiStrucBuffer 数组和 SMBIOS 字段的详细信息，请参阅[系统管理 BIOS (SMBIOS) 规范](https://go.microsoft.com/fwlink/p/?LinkId=145867)。
 
-**SystemBIOSMajorRelease 属性**
+### <a name="systembiosmajorrelease-attributes"></a>SystemBIOSMajorRelease 属性
 
 SystemBIOSMajorRelease 属性指定 BIOS 的主要发行版本。
 
@@ -674,49 +430,17 @@ SystemBIOSMajorRelease 属性指定 BIOS 的主要发行版本。
 </xs:simpleType>
 ```
 
-**备注**
+#### <a name="remarks-systembiosmajorrelease-attribute"></a>备注（SystemBIOSMajorRelease 属性）
 
 SystemBIOSMajorRelease 属性指定的值必须与目标电脑 SMBIOS 表中 SystemBIOSMajorRelease 字段中的值相同。 下表显示了 SMBIOS 中 SystemBIOSMajorRelease 字段的字段信息。
 
-<table style="width:100%;">
-<colgroup>
-<col width="14%" />
-<col width="14%" />
-<col width="14%" />
-<col width="14%" />
-<col width="14%" />
-<col width="14%" />
-<col width="14%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>字段名称</th>
-<th>结构名称和类型</th>
-<th>SMBIOS 规范版本</th>
-<th>偏移量</th>
-<th>长度</th>
-<th>值</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>系统 BIOS 主要版本</p></td>
-<td><p>BIOS 信息(类型 0)</p></td>
-<td><p>2.4</p></td>
-<td><p>14h</p></td>
-<td><p>BYTE</p></td>
-<td><p>视情况而定。</p></td>
-<td><p>系统 BIOS 的主要版本。</p></td>
-</tr>
-</tbody>
-</table>
-
- 
+|字段名称|结构名称和类型|SMBIOS 规范版本|偏移量|长度|值|说明|
+|----|----|----|----|----|----|----|
+|系统 BIOS 主要版本|BIOS 信息(类型 0)|2.4|14h|BYTE|视情况而定。|系统 BIOS 的主要版本。|
 
 有关 SMBIOS 字段的详细信息，请参阅[系统管理 BIOS (SMBIOS) 规范](https://go.microsoft.com/fwlink/p/?LinkId=145867)。
 
-**SystemBIOSMinorRelease 属性**
+### <a name="systembiosminorrelease-attributes"></a>SystemBIOSMinorRelease 属性
 
 SystemBIOSMinorRelease 属性指定 BIOS 的次要发行版本。
 
@@ -731,49 +455,17 @@ SystemBIOSMinorRelease 属性指定 BIOS 的次要发行版本。
 </xs:simpleType>
 ```
 
-**备注**
+#### <a name="remarks-systembiosminorrelease-attributes"></a>备注（SYSTEMBIOSMinorRelease 属性）
 
 SystemBIOSMinorRelease 属性指定的值必须与目标电脑 SMBIOS 表中 SystemBIOSMinorRelease 字段中的值相同。 下表显示了 SMBIOS 中 SystemBIOSMinorRelease 字段的字段信息。
 
-<table style="width:100%;">
-<colgroup>
-<col width="14%" />
-<col width="14%" />
-<col width="14%" />
-<col width="14%" />
-<col width="14%" />
-<col width="14%" />
-<col width="14%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>字段名称</th>
-<th>结构名称和类型</th>
-<th>SMBIOS 规范版本</th>
-<th>偏移量</th>
-<th>长度</th>
-<th>值</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>系统 BIOS 次要版本</p></td>
-<td><p>BIOS 信息(类型 0)</p></td>
-<td><p>2.4</p></td>
-<td><p>15h</p></td>
-<td><p>BYTE</p></td>
-<td><p>视情况而定。</p></td>
-<td><p>系统 BIOS 的次要版本。</p></td>
-</tr>
-</tbody>
-</table>
-
- 
+|字段名称|结构名称和类型|SMBIOS 规范版本|偏移量|长度|值|说明|
+|----|----|----|----|----|----|----|
+|系统 BIOS 次要版本|BIOS 信息(类型 0)|2.4|15h|BYTE|视情况而定。|系统 BIOS 的次要版本。|
 
 有关 SMBIOS 字段的详细信息，请参阅[系统管理 BIOS (SMBIOS) 规范](https://go.microsoft.com/fwlink/p/?LinkId=145867)。
 
-**Enclosuretype 属性**
+### <a name="enclosuretype-attribute"></a>Enclosuretype 属性
 
 Enclosuretype 属性指定计算机的机箱类型。
 
@@ -787,49 +479,17 @@ Enclosuretype 属性指定计算机的机箱类型。
 </xs:simpleType>
 ```
 
-**备注**
+#### <a name="remarks-enclosuretype-attribute"></a>备注（Enclosuretype 属性）
 
 Enclosuretype 属性指定的值必须与目标电脑 SMBIOS 表中“机箱”字段中的值相同。 下表显示了 SMBIOS 中“机箱”字段的字段信息。
 
-<table style="width:100%;">
-<colgroup>
-<col width="14%" />
-<col width="14%" />
-<col width="14%" />
-<col width="14%" />
-<col width="14%" />
-<col width="14%" />
-<col width="14%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>字段名称</th>
-<th>结构名称和类型</th>
-<th>SMBIOS 规范版本</th>
-<th>偏移量</th>
-<th>长度</th>
-<th>值</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>机箱类型</p></td>
-<td><p>系统机箱(类型 3)</p></td>
-<td><p>2.0+</p></td>
-<td><p>05h</p></td>
-<td><p>BYTE</p></td>
-<td><p>视情况而定。</p></td>
-<td><p>系统机箱或机壳类型。</p></td>
-</tr>
-</tbody>
-</table>
-
- 
+|字段名称|结构名称和类型|SMBIOS 规范版本|偏移量|长度|值|说明|
+|----|----|----|----|----|----|----|
+|机箱类型|系统机箱(类型 3)|2.0+|05h|BYTE|视情况而定。|系统机箱或机壳类型。|
 
 有关 SMBIOS 字段的详细信息，请参阅[系统管理 BIOS (SMBIOS) 规范](https://go.microsoft.com/fwlink/p/?LinkId=145867)。
 
-**SKUNumber 元素**
+### <a name="skunumber-element"></a>SKUNumber 元素
 
 SKUNumber 元素指定计算机的 SKU 号。
 
@@ -844,49 +504,17 @@ SKUNumber 元素指定计算机的 SKU 号。
 </xs:simpleType>
 ```
 
-**备注**
+#### <a name="remarks-skunumber-element"></a>备注（SKUNumber 元素）
 
 SKUNumber 元素指定的值必须与目标电脑 SMBIOS 表中“SKU 号”字段中的值相同。 下表显示了 SMBIOS 中“SKU 号”字段的字段信息。
 
-<table style="width:100%;">
-<colgroup>
-<col width="14%" />
-<col width="14%" />
-<col width="14%" />
-<col width="14%" />
-<col width="14%" />
-<col width="14%" />
-<col width="14%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>字段名称</th>
-<th>结构名称和类型</th>
-<th>SMBIOS 规范版本</th>
-<th>偏移量</th>
-<th>长度</th>
-<th>值</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>SKU 号</p></td>
-<td><p>系统信息(类型 1)</p></td>
-<td><p>2.4+</p></td>
-<td><p>19h</p></td>
-<td><p>BYTE</p></td>
-<td><p>STRING</p></td>
-<td><p>以 Null 结尾的字符串编号。此文本字符串用于标识销售的特定计算机配置。 有时也将它称为产品 ID 或采购订单号。 此编号通常会在现有字段中找到，但是没有标准格式。 通常，对于给定 OEM 的给定系统板，会有数十个独特的处理器、内存、硬盘驱动器和光驱配置。</p></td>
-</tr>
-</tbody>
-</table>
-
- 
+|字段名称|结构名称和类型|SMBIOS 规范版本|偏移量|长度|值|说明|
+|----|----|----|----|----|----|----|
+|SKU 号|系统信息(类型 1)|2.4+|19h|BYTE|STRING|以 Null 结尾的字符串编号。此文本字符串用于标识销售的特定计算机配置。 有时也将它称为产品 ID 或采购订单号。 此编号通常会在现有字段中找到，但是没有标准格式。 通常，对于给定 OEM 的给定系统板，会有数十个独特的处理器、内存、硬盘驱动器和光驱配置。|
 
 有关 SMBIOS 字段的详细信息，请参阅[系统管理 BIOS (SMBIOS) 规范](https://go.microsoft.com/fwlink/p/?LinkId=145867)。
 
-### <a name="span-idpcmetadatasubmission_xml_examplespanspan-idpcmetadatasubmission_xml_examplespanspan-idpcmetadatasubmission_xml_examplespanpcmetadatasubmission-xml-example"></a><span id="PcMetadataSubmission_XML_Example"></span><span id="pcmetadatasubmission_xml_example"></span><span id="PCMETADATASUBMISSION_XML_EXAMPLE"></span>PcMetadataSubmission XML 示例
+### <a name="pcmetadatasubmission-xml-example"></a>PcMetadataSubmission XML 示例
 
 以下 XML 文档使用 PcMetadataSubmission XML 架构来指定目标计算机的 PcMetadataSubmission 信息的组成部分。
 
@@ -909,16 +537,6 @@ SKUNumber 元素指定的值必须与目标电脑 SMBIOS 表中“SKU 号”字�
 </PcMetadataSubmission>
 ```
 
-## <a name="span-idcreating_localeinfoxmlspanspan-idcreating_localeinfoxmlspancreating-localeinfoxml"></a><span id="creating_localeinfo.xml"></span><span id="CREATING_LOCALEINFO.XML"></span>创建 LocaleInfo.xml
-
+## <a name="creating-localeinfoxml"></a>创建 LocaleInfo.xml
 
 有关创建用于提交的 Localeinfo.xml 文件的信息，请参阅[创建 LocaleInfo.xml 提交文件](https://docs.microsoft.com/windows-hardware/drivers/dashboard/)。
-
- 
-
- 
-
-
-
-
-

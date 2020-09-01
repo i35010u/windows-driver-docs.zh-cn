@@ -1,6 +1,6 @@
 ---
-title: KSPROPERTY\_E-AC3\_位\_流\_模式
-description: KSPROPERTY\_E-AC3\_位\_STREAM\_模式属性指定位流模式，这是编码为 AC 3 流的音频服务的类型。
+title: KSPROPERTY \_ E-ac3 \_ 位 \_ 流 \_ 模式
+description: KSPROPERTY \_ E-ac3 \_ 位 \_ 流 \_ 模式属性指定位流模式，这是编码为 AC 3 流的音频服务的类型。
 ms.assetid: ee3705f5-f16d-4f5e-a551-bea8986d88b6
 keywords:
 - KSPROPERTY_AC3_BIT_STREAM_MODE 音频设备
@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1a6d4e1d1247c8c9bf58a22810b16637fdab6c1a
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 54fa15a5c6c3119a9b614aec0dcc1e049a027bb1
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72831144"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89209032"
 ---
-# <a name="ksproperty_ac3_bit_stream_mode"></a>KSPROPERTY\_E-AC3\_位\_流\_模式
+# <a name="ksproperty_ac3_bit_stream_mode"></a>KSPROPERTY \_ E-ac3 \_ 位 \_ 流 \_ 模式
 
 
-KSPROPERTY\_E-AC3\_位\_STREAM\_模式属性指定位流模式，这是编码为 AC 3 流的音频服务的类型。
+KSPROPERTY \_ E-ac3 \_ 位 \_ 流 \_ 模式属性指定位流模式，这是编码为 AC 3 流的音频服务的类型。
 
 ## <span id="ddk_ksproperty_ac3_bit_stream_mode_ks"></span><span id="DDK_KSPROPERTY_AC3_BIT_STREAM_MODE_KS"></span>
 
@@ -41,7 +41,7 @@ KSPROPERTY\_E-AC3\_位\_STREAM\_模式属性指定位流模式，这是编码为
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">“获取”</th>
+<th align="left">获取</th>
 <th align="left">设置</th>
 <th align="left">目标</th>
 <th align="left">属性描述符类型</th>
@@ -50,22 +50,22 @@ KSPROPERTY\_E-AC3\_位\_STREAM\_模式属性指定位流模式，这是编码为
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>“是”</p></td>
-<td align="left"><p>无</p></td>
-<td align="left"><p>大头针</p></td>
-<td align="left"><p><a href="https://docs.microsoft.com/previous-versions/ff564262(v=vs.85)" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/ff564262(v=vs.85))"><strong>KSPROPERTY</strong></a></p></td>
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksac3_bit_stream_mode" data-raw-source="[&lt;strong&gt;KSAC3_BIT_STREAM_MODE&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksac3_bit_stream_mode)"><strong>KSAC3_BIT_STREAM_MODE</strong></a></p></td>
+<td align="left"><p>是</p></td>
+<td align="left"><p>否</p></td>
+<td align="left"><p>Pin</p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/previous-versions/ff564262(v=vs.85)" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](/previous-versions/ff564262(v=vs.85))"><strong>KSPROPERTY</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksac3_bit_stream_mode" data-raw-source="[&lt;strong&gt;KSAC3_BIT_STREAM_MODE&lt;/strong&gt;](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksac3_bit_stream_mode)"><strong>KSAC3_BIT_STREAM_MODE</strong></a></p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-属性值（操作数据）是指定位流模式的 KSAC3\_位\_流\_模式结构。
+ (操作数据) 的属性值是 \_ \_ \_ 指定位流模式的 KSAC3 位流模式结构。
 
 ### <a name="span-idreturn_valuespanspan-idreturn_valuespanspan-idreturn_valuespanreturn-value"></a><span id="Return_Value"></span><span id="return_value"></span><span id="RETURN_VALUE"></span>返回值
 
-KSPROPERTY\_E-AC3\_位\_STREAM\_模式属性请求返回状态\_SUCCESS 以指示已成功完成。 否则，请求将返回相应的错误状态代码。
+KSPROPERTY \_ E-ac3 \_ 位 \_ 流 \_ 模式属性请求返回状态 \_ SUCCESS 以指示已成功完成。 否则，请求将返回相应的错误状态代码。
 
 <a name="requirements"></a>要求
 ------------
@@ -78,7 +78,7 @@ KSPROPERTY\_E-AC3\_位\_STREAM\_模式属性请求返回状态\_SUCCESS 以指�
 <tbody>
 <tr class="odd">
 <td align="left"><p>标头</p></td>
-<td align="left">Ksmedia （包括 Ksmedia）</td>
+<td align="left">Ksmedia (包含 Ksmedia) </td>
 </tr>
 </tbody>
 </table>
@@ -86,16 +86,9 @@ KSPROPERTY\_E-AC3\_位\_STREAM\_模式属性请求返回状态\_SUCCESS 以指�
 ## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
-[**KSPROPERTY**](https://docs.microsoft.com/previous-versions/ff564262(v=vs.85))
+[**KSPROPERTY**](/previous-versions/ff564262(v=vs.85))
 
-[**KSAC3\_位\_STREAM\_模式**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksac3_bit_stream_mode)
-
- 
+[**KSAC3 \_ 位 \_ 流 \_ 模式**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksac3_bit_stream_mode)
 
  
-
-
-
-
-
 

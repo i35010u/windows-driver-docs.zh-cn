@@ -4,35 +4,35 @@ description: 处理数据包合并接收筛选器
 ms.assetid: 83FF780F-6B8F-4222-90F0-42037FFF7653
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1d5582964feafa9bd734dd2b85b94b5a6e37b7a9
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 60cc9874bea077ab71a08d3e4b9d3fcc48c95002
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72842573"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89211091"
 ---
 # <a name="handling-packet-coalescing-receive-filters"></a>处理数据包合并接收筛选器
 
 
-多个接收筛选器将通过 oid 的 OID 方法请求（ [\_接收\_筛选器\_设置\_筛选器](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-set-filter)）下载到小型端口驱动程序。 每个筛选器都可以指定一个或多个测试（*标头字段测试*），网络适配器使用该测试来确定是否应将接收的数据包合并到适配器上的硬件合并缓冲器中。
+通过 oid [ \_ 接收 \_ 筛选器 \_ 集 \_ 筛选器](./oid-receive-filter-set-filter.md)的 oid 方法请求，将多个接收筛选器下载到微型端口驱动程序。 每个筛选器都可以指定一个或多个测试 (的 *标头字段测试*) ，网络适配器使用该测试来确定是否应将接收的数据包合并到适配器上的硬件合并缓冲器中。
 
-在微型端口驱动程序将网络适配器配置为接收筛选器之前，驱动程序应根据适配器的硬件功能优化接收筛选器。 例如，所有接收筛选器都需要 MAC 标头的标头字段测试。 因此，该驱动程序可以根据此测试的结果优化筛选规则。 这允许适配器确定要执行的下一个开放系统互连（OSI）第3层（L3）和第4层（L4）标头字段测试。
+在微型端口驱动程序将网络适配器配置为接收筛选器之前，驱动程序应根据适配器的硬件功能优化接收筛选器。 例如，所有接收筛选器都需要 MAC 标头的标头字段测试。 因此，该驱动程序可以根据此测试的结果优化筛选规则。 这允许适配器确定哪些开放系统互连 (OSI) 第3层 (L3) 和第4层 (L4) 
 
 一旦网络适配器配置了接收筛选器，它就必须执行以下操作：
 
 -   对于所接收的数据包，特定筛选器的所有标头字段测试参数必须匹配，以便合并合并缓冲区中的数据包。
 
-    网络适配器将接收筛选器的所有标头字段测试的结果与逻辑 AND 运算组合在一起。 也就是说，如果在 NDIS 的数组中包含的任何标头字段测试[ **\_接收\_筛选器\_字段\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_filter_field_parameters)接收筛选器的参数结构失败，则接收的数据包不满足指定的筛选条件，并且不能合并。
+    网络适配器将接收筛选器的所有标头字段测试的结果与逻辑 AND 运算组合在一起。 也就是说，如果接收筛选 [**器的 NDIS \_ 接收 \_ 筛选器 \_ 字段 \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_filter_field_parameters) 结构中包含的任何标头字段测试失败，则接收的数据包不满足指定的筛选条件，并且不能合并。
 
 -   网络适配器仅根据指定的标头字段测试参数检查数据包数据。 适配器必须忽略未指定标头字段测试的数据包中的所有标头字段。
 
--   如果接收的数据包匹配任何接收筛选器的所有标头字段测试，则网络适配器必须在硬件合并缓冲区中合并数据包。 合并第一个数据包后，网络适配器必须启动硬件计时器，并将过期时间设置为**MaxCoalescingDelay**成员的[**NDIS\_接收\_FILTER\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_filter_parameters)结构，以便匹配接收筛选器。
+-   如果接收的数据包匹配任何接收筛选器的所有标头字段测试，则网络适配器必须在硬件合并缓冲区中合并数据包。 合并第一个数据包后，网络适配器必须启动硬件计时器，并将过期时间设置为匹配接收筛选器的[**NDIS \_ 接收 \_ 筛选器 \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_filter_parameters)结构的**MaxCoalescingDelay**成员的值。
 
 -   随着接收到与数据包合并接收筛选器匹配的数据包，网络适配器将其放入合并缓冲区。
 
-    如果硬件计时器已在运行，则适配器不得停止或重新启动匹配接收筛选器的计时器。 但是，适配器可以配置具有匹配接收筛选器的最小过期值的硬件计时器。 例如，当驱动程序收到与接收筛选器*X*匹配的数据包时，适配器将使用该接收筛选器的指定过期值启动计时器。 如果适配器接收到与接收筛选器*Y*匹配的数据包，则适配器可以使用该接收筛选器的指定过期值重新配置硬件计时器。
+    如果硬件计时器已在运行，则适配器不得停止或重新启动匹配接收筛选器的计时器。 但是，适配器可以配置具有匹配接收筛选器的最小过期值的硬件计时器。 例如，当驱动程序收到与接收筛选器 *X*匹配的数据包时，适配器将使用该接收筛选器的指定过期值启动计时器。 如果适配器接收到与接收筛选器 *Y*匹配的数据包，则适配器可以使用该接收筛选器的指定过期值重新配置硬件计时器。
 
-    **请注意**  如果计时器上的剩余时间小于接收筛选器的过期时间，则网络适配器不得重新配置硬件计时器。
+    **注意**   如果计时器上的剩余时间小于接收筛选器的过期时间，则网络适配器不得重新配置硬件计时器。
 
      
 
@@ -50,9 +50,9 @@ ms.locfileid: "72842573"
 
     一旦产生中断，网络适配器必须停止硬件定时器（如果它尚未过期），并必须清除硬件合并缓冲区。
 
-微型端口驱动程序必须维护合并的数据包计数器，该计数器包含与数据包合并筛选器匹配的已接收数据包数的值。 NDIS 通过 oid 查询请求来查询此计数器[\_数据包\_合并\_筛选器\_匹配\_计数](https://docs.microsoft.com/windows-hardware/drivers/network/oid-packet-coalescing-filter-match-count)。
+微型端口驱动程序必须维护合并的数据包计数器，该计数器包含与数据包合并筛选器匹配的已接收数据包数的值。 NDIS 通过 oid [ \_ 数据包 \_ 合并 \_ 筛选器 \_ 匹配 \_ 计数](./oid-packet-coalescing-filter-match-count.md)的 oid 查询请求来查询此计数器。
 
-网络适配器仅在硬件以全功能状态运行时才执行数据包合并。 当硬件处于低功耗状态时，适配器必须仅基于唤醒模式筛选收到的数据包，这些模式已通过 OID 设置[oid\_PNP\_启用\_唤醒\_](https://docs.microsoft.com/windows-hardware/drivers/network/oid-pnp-enable-wake-up)。
+网络适配器仅在硬件以全功能状态运行时才执行数据包合并。 当硬件处于低功耗状态时，适配器必须仅基于唤醒模式筛选收到的数据包，这些模式已通过 oid [ \_ PNP \_ ENABLE ENABLE \_ 唤醒 \_ 启用](./oid-pnp-enable-wake-up.md)。
 
 当网络适配器转换为完全电源状态时，微型端口驱动程序必须执行以下步骤：
 
@@ -63,10 +63,4 @@ ms.locfileid: "72842573"
 -   微型端口驱动程序必须清除合并的数据包计数器。
 
  
-
- 
-
-
-
-
 

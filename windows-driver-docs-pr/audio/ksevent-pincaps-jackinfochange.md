@@ -1,6 +1,6 @@
 ---
-title: KSEVENT\_PINCAPS\_JACKINFOCHANGE
-description: KSEVENT\_PINCAPS\_JACKINFOCHANGE 事件向音频堆栈表明音频设备的插孔信息已更改。
+title: KSEVENT \_ PINCAPS \_ JACKINFOCHANGE
+description: KSEVENT \_ PINCAPS \_ JACKINFOCHANGE 事件向音频堆栈表明音频设备的插孔信息已更改。
 ms.assetid: 46514043-5044-4373-94ca-b00898aeefba
 keywords:
 - KSEVENT_PINCAPS_JACKINFOCHANGE 音频设备
@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 995ad652db0d56fb71c1fb514b5e9ecfe868b12d
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 5c9b495bd4d777d60ec58de671566806ac35692e
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72833120"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89209075"
 ---
-# <a name="ksevent_pincaps_jackinfochange"></a>KSEVENT\_PINCAPS\_JACKINFOCHANGE
+# <a name="ksevent_pincaps_jackinfochange"></a>KSEVENT \_ PINCAPS \_ JACKINFOCHANGE
 
 
-`KSEVENT_PINCAPS_JACKINFOCHANGE` 事件向音频堆栈表明音频设备的插孔信息已更改。
+`KSEVENT_PINCAPS_JACKINFOCHANGE`事件向音频堆栈表明音频设备的插孔信息已更改。
 
 ### <a name="span-idusage_summary_tablespanspan-idusage_summary_tablespanusage-summary-table"></a><span id="usage_summary_table"></span><span id="USAGE_SUMMARY_TABLE"></span>使用情况摘要表
 
@@ -43,21 +43,21 @@ ms.locfileid: "72833120"
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>大头针</p></td>
-<td align="left"><p><a href="https://docs.microsoft.com/previous-versions/ff561744(v=vs.85)" data-raw-source="[&lt;strong&gt;KSEVENT&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/ff561744(v=vs.85))"><strong>KSEVENT</strong></a></p></td>
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-kseventdata" data-raw-source="[&lt;strong&gt;KSEVENTDATA&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-kseventdata)"><strong>KSEVENTDATA</strong></a></p></td>
+<td align="left"><p>Pin</p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/previous-versions/ff561744(v=vs.85)" data-raw-source="[&lt;strong&gt;KSEVENT&lt;/strong&gt;](/previous-versions/ff561744(v=vs.85))"><strong>KSEVENT</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-kseventdata" data-raw-source="[&lt;strong&gt;KSEVENTDATA&lt;/strong&gt;](/windows-hardware/drivers/ddi/ks/ns-ks-kseventdata)"><strong>KSEVENTDATA</strong></a></p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-事件值类型（操作数据）是指定要用于此事件的通知方法的**KSEVENTDATA**结构。
+ (操作数据) 的事件值类型是一个指定要用于此事件的通知方法的 **KSEVENTDATA** 结构。
 
 <a name="remarks"></a>备注
 -------
 
-有关如何实现 `KSEVENT_PINCAPS_JACKINFOCHANGE` 事件支持的信息，请参阅[**KSEVENT\_PINCAPS\_FORMATCHANGE**](ksevent-pincaps-formatchange.md)的 "备注" 部分。
+有关如何实现对事件的支持的信息 `KSEVENT_PINCAPS_JACKINFOCHANGE` ，请参阅 [**KSEVENT \_ PINCAPS \_ FORMATCHANGE**](ksevent-pincaps-formatchange.md) 主题的 "备注" 部分。
 
 <a name="requirements"></a>要求
 ------------
@@ -74,7 +74,7 @@ ms.locfileid: "72833120"
 </tr>
 <tr class="even">
 <td align="left"><p>标头</p></td>
-<td align="left">Ks （包含 Ks）</td>
+<td align="left">Ks (包含 Ks .h) </td>
 </tr>
 </tbody>
 </table>
@@ -82,18 +82,11 @@ ms.locfileid: "72833120"
 ## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
-[**KSEVENT**](https://docs.microsoft.com/previous-versions/ff561744(v=vs.85))
+[**KSEVENT**](/previous-versions/ff561744(v=vs.85))
 
-[**KSEVENTDATA**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-kseventdata)
+[**KSEVENTDATA**](/windows-hardware/drivers/ddi/ks/ns-ks-kseventdata)
 
-[**KSEVENT\_PINCAPS\_FORMATCHANGE**](ksevent-pincaps-formatchange.md)
-
- 
+[**KSEVENT \_ PINCAPS \_ FORMATCHANGE**](ksevent-pincaps-formatchange.md)
 
  
-
-
-
-
-
 

@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: ba450f644765419946c19f2a00540afd364f0042
-ms.sourcegitcommit: 8596782b07c8a71adf38fc2c2da68b75ba0a1259
+ms.openlocfilehash: a11a7ba3b0e3b86dff847d322026c6c6dcf85cc1
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85593901"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89209883"
 ---
 # <a name="ndiskdrcvqueue"></a>!ndiskd.rcvqueue
 
@@ -50,7 +50,7 @@ Ndiskd.dll
 
 ## <a name="examples"></a>示例
 
-若要获取接收队列句柄，请首先输入不带参数的[**！ ndiskd**](-ndiskd-netadapter.md)命令，以查看网络适配器列表、驱动程序及其句柄。 在以下示例中，查找 Microsoft ISATAP 适配器 \# 2 的 get-netadapter 句柄 ffff8083e02ce1a0。
+若要获取接收队列句柄，请首先输入不带参数的 [**！ ndiskd**](-ndiskd-netadapter.md) 命令，以查看网络适配器列表、驱动程序及其句柄。 在以下示例中，查找 Microsoft ISATAP 适配器 \# 2 的 get-netadapter 句柄 ffff8083e02ce1a0。
 
 ```console
 3: kd> !ndiskd.netadapter
@@ -59,7 +59,7 @@ Ndiskd.dll
     ffff8083e210fae0   ffff8083e0f501a0    Microsoft Kernel Debug Network Adapter
 ```
 
-接下来，使用 net 适配器的句柄，使用 **！ ndiskd-rcvqueues**命令获取此网络适配器及其句柄的接收队列列表。 在此示例中，只有一个接收队列（默认值）与 ffff8083e3a3d3a0 的句柄。
+接下来，使用 net 适配器的句柄，使用 **！ ndiskd-rcvqueues** 命令获取此网络适配器及其句柄的接收队列列表。 在此示例中，只有一个接收队列 (了) 句柄为 ffff8083e3a3d3a0 的默认接收队列。
 
 ```console
 3: kd> !ndiskd.netadapter ffff8083e02ce1a0 -rcvqueues
@@ -73,7 +73,7 @@ RECEIVE QUEUES
                        VM Name:            [Zero-length string]
 ```
 
-现在，你可以使用队列句柄来检查接收队列的详细信息，并提供 **！ ndiskd. rcvqueue**命令。
+现在，你可以使用队列句柄来检查接收队列的详细信息，并提供 **！ ndiskd. rcvqueue** 命令。
 
 ```console
 3: kd> !ndiskd.rcvqueue ffff8083e3a3d3a0
@@ -105,15 +105,15 @@ RECEIVE QUEUE
     Shared memory allocations
 ```
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
-[网络驱动程序设计指南](https://docs.microsoft.com/windows-hardware/drivers/network/index)
+[网络驱动程序设计指南](../network/index.md)
 
-[Windows Vista 和更高版本的网络引用](https://docs.microsoft.com/windows-hardware/drivers/ddi/_netvista/)
+[Windows Vista 和更高版本的网络引用](/windows-hardware/drivers/ddi/_netvista/)
 
 [调试网络堆栈](https://channel9.msdn.com/Shows/Defrag-Tools/Defrag-Tools-175-Debugging-the-Network-Stack)
 
-[**NDIS 扩展（Ndiskd.dll）**](ndis-extensions--ndiskd-dll-.md)
+[**NDIS 扩展 ( # A0) **](ndis-extensions--ndiskd-dll-.md)
 
 [**!ndiskd.help**](-ndiskd-help.md)
 

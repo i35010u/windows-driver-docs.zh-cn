@@ -4,17 +4,17 @@ description: 一对多 ID 映射
 ms.assetid: 395d3f20-7410-496b-9ec3-1052cd731ae3
 keywords:
 - 映射网络组件 Id
-- ID 映射 WDK netmap.inf
-- 一个多 ID 映射 WDK 网络
-- 升级前 Id WDK 网络
+- ID 映射 WDK netmap
+- 一对多 ID 映射 WDK 网络
+- preupgrade Id WDK 网络
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ef0e5dfd30cabad4a530aea809596a96597f1be8
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: b2396b4620897c1ba8074f0dd464e2a96047597d
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67366572"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89211027"
 ---
 # <a name="one-to-many-id-mapping"></a>一对多 ID 映射
 
@@ -22,37 +22,37 @@ ms.locfileid: "67366572"
 
 
 
-**请注意**  供应商提供网络升级不支持在 Microsoft Windows XP (SP1 和更高版本)，Microsoft Windows Server 2003 和更高版本操作系统。
+**注意**   Microsoft Windows XP (SP1 及更高版本) 、Microsoft Windows Server 2003 和更高版本的操作系统不支持供应商提供的网络升级。
 
  
 
-一个多 ID 映射会在表示多个网络适配器的单一升级前 ID。 区分与单个的升级前 ID 相关联的适配器的唯一方法是检查包含网络适配器实例的参数值的注册表项下的值。
+一对多 ID 映射映射表示多个网络适配器的单个 preupgrade ID。 区分与单个 preupgrade ID 相关联的适配器的唯一方法是检查包含网络适配器实例参数值的注册表项下的值。
 
-中的条目**OemAdapters**或**OemAsyncAdapters**节指定一个多 ID 映射具有以下格式：
+**OemAdapters**或**OemAsyncAdapters**节中指定一对多 ID 映射的条目具有以下格式：
 
-*preupgrade ID* = *映射方法编号*，*节名称*
+*preupgrade-ID*  = *映射-方法-编号*、*节名称*
 
 其中：
 
-*映射方法数*必须为 0
+*映射-方法号* 必须为0
 
-*节名称*包含映射信息在 netmap.inf 文件中指定的部分
+*节名称* 指定 netmap 文件中包含映射信息的部分
 
-通过指定 netmap.inf 文件节*节名称*包含以下各项：
+按 *节名称* 指定的 netmap 文件部分包含以下条目：
 
-**ValueName = "** <em>Name</em> **"**
+**ValueName = "**<em>Name</em>**"**
 
-指定 NetSetup 读取包含网络适配器实例的参数值的注册表项下的值。 *名称*标识特定网络适配器。
+指定 NetSetup 在包含网络适配器实例参数值的注册表项下读取的值。 *名称* 标识特定网络适配器。
 
-**ValueType =** *Type*
+**ValueType =** *类型*
 
-指定的注册表值类型*ValueName*。 *类型*是一个整数，对应于特定的注册表类型。
+指定 *ValueName*的注册表值类型。 *类型* 是对应于特定注册表类型的整数。
 
-*ValueName*= *postupgrade-ID*
+*ValueName* = *postupgrade-ID*
 
-*ValueName*是 NetSetup 读取包含网络适配器实例的参数值的注册表项下的值。 *postupgrade ID*是 Windows 2000 或更高版本的设备 ID 的适配器。 一个*ValueName*条目应提供有关将升级每个适配器类型。 如果*ValueName*设置为关键字**ValueNotPresent** NetSetup NetSetup 的适配器实例中不找到任何参数值，如果使用*postuprgrade ID*与相关联**ValueNotPresent**适配器。
+*ValueName* 是 NetSetup 在包含网络适配器实例参数值的注册表项下读取的值。 *postupgrade* 是适配器的 Windows 2000 或更高版本设备 id。 应为要升级的每个适配器类型提供一个 *ValueName* 条目。 如果*ValueName*设置为关键字**ValueNotPresent** ，并且 NetSetup 未找到适配器实例的参数值，则 NetSetup 将为适配器使用与**ValueNotPresent**关联的*postuprgrade ID* 。
 
-下面的示例显示了一个多设备 ID 映射：
+以下示例显示了一对多设备 ID 映射：
 
 ```cpp
 [OemAdapters]
@@ -67,39 +67,33 @@ DataFireIsa4ST= "DATAFIRE - ISA4ST"
 DataFireIsaGeneric = "ValueNotPresent"
 ```
 
-**OemAdapters**在上面的示例部分包含单个条目，用于标识为 DATAFIREU 的网络适配器的升级前的设备 ID 并指定**DATAFIREU**部分netmap.inf 文件包含此适配器的映射信息。
+上面示例中的 **OemAdapters** 部分包含一个条目，该条目将网络适配器的 PREUPGRADE 设备 ID 标识为 DATAFIREU，并指定 netmap 文件的 **DATAFIREU** 部分包含此适配器的映射信息。
 
 DATAFIREU 部分包含以下信息：
 
--   **ValueName**项指示要查找的 NetSetup **BoardType**值下**参数**网络适配器实例的密钥。
+-   **ValueName**条目指示 NetSetup 在网络适配器实例的**Parameters**关键字下查找**BoardType**值。
 
--   **ValueType**条目，设置为 1，指定**BoardType**值为 dword 值。
+-   **ValueType**项（设置为1）指定**BOARDTYPE**值为 DWORD 值。
 
--   每个剩余的值指定的升级前的设备 ID 和相应的 Windows 2000 或更高版本的 id。 例如，DataFireIsaU 板类型的 ID 是 DATAFIRE-ISA1U。 **ValueNotPresent**关键字可以指定而不是升级前的 id。
+-   剩余的每个值指定 preupgrade 设备 ID 和相应的 Windows 2000 或更高版本的 ID。 例如，DataFireIsaU 板类型的 ID 是 DATAFIRE-ISA1U。 可以指定 **ValueNotPresent** 关键字，而不是 preupgrade ID。
 
-NetSetup 执行一个多 ID 映射，如下所示：
+NetSetup 执行一对多 ID 映射，如下所示：
 
-1.  NetSetup 读取包含网络适配器实例的参数值的注册表项下指定的 ValueName。
+1.  NetSetup 读取注册表项下的指定 ValueName，其中包含网络适配器实例的参数值。
 
-2.  NetSetup 尝试匹配与一个 netmap.inf 文件的指定部分中列出 ValueNames ValueName。 如果没有 ValueName 下列出的注册表项，NetSetup 尝试 netmap.inf 文件的指定部分中找到 ValueNotPresent 关键字。
+2.  NetSetup 尝试将 ValueName 与 netmap 文件的指定部分中列出的某个 ValueNames 进行匹配。 如果注册表项下未列出 ValueName，NetSetup 将尝试在 netmap 文件的指定节中查找 ValueNotPresent 关键字。
 
-3.  如果 NetSetup 找到的匹配项，则会安装网络适配器，使用 INF 文件具有相同的名称作为映射的 Windows 2000 或更高版本 id。
+3.  如果 NetSetup 找到匹配项，它将使用与映射的 Windows 2000 或更高版本 ID 相同的 INF 文件来安装网络适配器。
 
-如果注册表项或某个适配器实例的值是相同的不同适配器类型，不可能将单个升级前的设备 ID 映射到多个 Windows 2000 或更高版本的设备 ID，而无需修改这些注册表项或值。
+如果适配器实例的注册表项或值对于不同的适配器类型是相同的，则不能将单个 preupgrade 设备 ID 映射到多个 Windows 2000 或更高版本的设备 ID，而无需首先修改这些注册表项或值。
 
-处理这种情况的最有效方法是按如下所示：
+处理此情况最有效的方法如下：
 
-1.  网络迁移 DLL [ **PreUpgradeInitialize** ](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff562439(v=vs.85))函数修改注册表，以便注册表包含网络适配器的每个实例的唯一值。 这些唯一值应指示适配器类型。
+1.  网络迁移 DLL 的 [**PreUpgradeInitialize**](/previous-versions/windows/hardware/network/ff562439(v=vs.85)) 函数修改注册表，使注册表包含每个网络适配器实例的唯一值。 这些唯一值应指示适配器类型。
 
-2.  **PreUpgradeInitialize**函数设置 NUA\_请求\_中止\_升级标志，这会导致 NetSetup 显示一条消息，提示用户重新启动 winnt32.exe 并中止升级。
+2.  **PreUpgradeInitialize**函数设置 NUA \_ 请求 \_ 中止 \_ 升级标志，这会导致 NetSetup 显示一条消息，提示用户重新启动 winnt32.exe 并中止升级。
 
-3.  用户中止升级，然后重新启动 winnt32.exe。 网络迁移 DLL 现在可以使用唯一的值将映射到多个 Windows 2000 的单一升级前的设备 ID 或更高版本的设备 id。
-
- 
+3.  用户中止升级，然后重新启动 winnt32.exe。 网络迁移 DLL 现在可以使用唯一值将单个 preupgrade 设备 ID 映射到多个 Windows 2000 或更高版本的设备 ID。
 
  
-
-
-
-
 

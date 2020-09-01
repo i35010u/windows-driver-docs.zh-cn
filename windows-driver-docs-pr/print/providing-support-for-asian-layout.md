@@ -17,12 +17,12 @@ keywords:
 - 从右到左阅读语言 WDk 打印
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 50cb696a1b75f781835f95419b9e7d34374e7819
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 9b50b7e3e39ed4fc037d57ac886a99feb07602d0
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72840420"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89209489"
 ---
 # <a name="providing-support-for-asian-layout"></a>提供亚洲语言布局支持
 
@@ -31,14 +31,9 @@ Microsoft Windows 打印处理器支持从右到左阅读的亚洲语言，如�
 
 -   **N 向上方向**：在单张纸上打印多页时，用户可以按从右到左的顺序在工作表上打印页面。
 
--   **手册边缘**：打印小册子，其中折叠了页面并并排布局页面，用户可以从右到左排列页面。 下图显示了使用手册\_边缘\_右标志的手册的页面布局。使用手册\-边缘\-右标志说明手册的页面布局![关系图](images/asian-booklet.png)
+-   **手册边缘**：打印小册子，其中折叠了页面并并排布局页面，用户可以从右到左排列页面。 下图显示了使用手册 \_ 边缘 \_ 右侧标志的手册页面布局。 ![使用手册 \- 边缘右侧标志说明手册页布局的关系图 \-](images/asian-booklet.png)
 
-在 Windows Vista 中，可以使用标志更改驱动程序中的 N 向上方向和手册边缘以支持亚洲布局。 有关如何设置这些值的详细信息，请参阅[**DrvQueryJobAttributes**](https://docs.microsoft.com/windows-hardware/drivers/ddi/winddiui/nf-winddiui-drvqueryjobattributes) and [**ATTRIBUTE\_INFO\_4**](https://docs.microsoft.com/windows-hardware/drivers/ddi/winddiui/ns-winddiui-_attribute_info_4)。
-
- 
+在 Windows Vista 中，可以使用标志更改驱动程序中的 N 向上方向和手册边缘以支持亚洲布局。 有关如何设置这些值的详细信息，请参阅 [**DrvQueryJobAttributes**](/windows-hardware/drivers/ddi/winddiui/nf-winddiui-drvqueryjobattributes) 和 [**属性 \_ 信息 \_ 4**](/windows-hardware/drivers/ddi/winddiui/ns-winddiui-_attribute_info_4)。
 
  
-
-
-
 

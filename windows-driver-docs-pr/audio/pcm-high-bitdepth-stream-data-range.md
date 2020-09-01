@@ -7,12 +7,12 @@ keywords:
 - 高 bitdepth 流数据范围 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2852f62f95b0792f8e39583b7da377acdfaddcb2
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 9ab8662f746c0133d3528dae00c5e59e95c25a97
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72830264"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89210523"
 ---
 # <a name="pcm-high-bitdepth-stream-data-range"></a>PCM 高位深度流数据范围
 
@@ -20,7 +20,7 @@ ms.locfileid: "72830264"
 ## <span id="pcm_high_bitdepth_stream_data_range"></span><span id="PCM_HIGH_BITDEPTH_STREAM_DATA_RANGE"></span>
 
 
-此示例使用[**KSDATARANGE\_音频**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksdatarange_audio)结构来描述 PCM bitdepth 流的数据范围。
+此示例使用 [**KSDATARANGE \_ 音频**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksdatarange_audio) 结构来描述 PCM bitdepth 流的数据范围。
 
 ```cpp
   DataRange.FormatSize  = sizeof(KSDATARANGE_AUDIO);
@@ -37,12 +37,7 @@ ms.locfileid: "72830264"
   MaximumSampleFrequency = 48000;
 ```
 
-本示例中的成员值类似于[PCM 多通道流数据范围](pcm-multichannel-stream-data-range.md)示例中的成员值，`MaximumBitsPerSample` 值除外，大于16。 此值设置为受支持的有效位的最大数目。 例如，如果设备支持24位容器中的20位有效音频数据，则 `MaximumBitsPerSample` 的值应设置为20。
+此示例中的成员值与 [PCM 多通道流数据范围](pcm-multichannel-stream-data-range.md) 示例中的成员值相似，但 `MaximumBitsPerSample` 值除外，大于16。 此值设置为受支持的有效位的最大数目。 例如，如果设备支持24位容器中的20位有效音频数据，则的值 `MaximumBitsPerSample` 应设置为20。
 
  
-
- 
-
-
-
 

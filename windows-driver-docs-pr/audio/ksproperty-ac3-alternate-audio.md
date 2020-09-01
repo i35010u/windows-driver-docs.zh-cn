@@ -1,6 +1,6 @@
 ---
-title: KSPROPERTY\_E-AC3\_备用\_音频
-description: KSPROPERTY\_E-AC3\_备用\_音频属性指定是否应将 AC 3 编码流中的两个 mono 通道解释为立体声对或两个独立的程序通道。
+title: KSPROPERTY \_ E-ac3 \_ 备用 \_ 音频
+description: KSPROPERTY \_ E-ac3 \_ 备用 \_ 音频属性指定是否应将 AC 3 编码流中的两个 mono 通道解释为立体声对或两个独立的程序通道。
 ms.assetid: fff2c52f-c996-4dfe-a46e-9f937cbd0d8c
 keywords:
 - KSPROPERTY_AC3_ALTERNATE_AUDIO 音频设备
@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 73e7e1b7a0114daa293611044683d66d54c10bdd
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: ab7cec484938c54f46e5e591c5934cc6fb691a0e
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72833088"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89209028"
 ---
-# <a name="ksproperty_ac3_alternate_audio"></a>KSPROPERTY\_E-AC3\_备用\_音频
+# <a name="ksproperty_ac3_alternate_audio"></a>KSPROPERTY \_ E-ac3 \_ 备用 \_ 音频
 
 
-KSPROPERTY\_E-AC3\_备用\_音频属性指定是否应将 AC 3 编码流中的两个 mono 通道解释为立体声对或两个独立的程序通道。
+KSPROPERTY \_ E-ac3 \_ 备用 \_ 音频属性指定是否应将 AC 3 编码流中的两个 mono 通道解释为立体声对或两个独立的程序通道。
 
 ## <span id="ddk_ksproperty_ac3_alternate_audio_ks"></span><span id="DDK_KSPROPERTY_AC3_ALTERNATE_AUDIO_KS"></span>
 
@@ -41,7 +41,7 @@ KSPROPERTY\_E-AC3\_备用\_音频属性指定是否应将 AC 3 编码流中的�
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">“获取”</th>
+<th align="left">获取</th>
 <th align="left">设置</th>
 <th align="left">目标</th>
 <th align="left">属性描述符类型</th>
@@ -50,22 +50,22 @@ KSPROPERTY\_E-AC3\_备用\_音频属性指定是否应将 AC 3 编码流中的�
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>“是”</p></td>
-<td align="left"><p>“是”</p></td>
-<td align="left"><p>大头针</p></td>
-<td align="left"><p><a href="https://docs.microsoft.com/previous-versions/ff564262(v=vs.85)" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/ff564262(v=vs.85))"><strong>KSPROPERTY</strong></a></p></td>
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksac3_alternate_audio" data-raw-source="[&lt;strong&gt;KSAC3_ALTERNATE_AUDIO&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksac3_alternate_audio)"><strong>KSAC3_ALTERNATE_AUDIO</strong></a></p></td>
+<td align="left"><p>是</p></td>
+<td align="left"><p>是</p></td>
+<td align="left"><p>Pin</p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/previous-versions/ff564262(v=vs.85)" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](/previous-versions/ff564262(v=vs.85))"><strong>KSPROPERTY</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksac3_alternate_audio" data-raw-source="[&lt;strong&gt;KSAC3_ALTERNATE_AUDIO&lt;/strong&gt;](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksac3_alternate_audio)"><strong>KSAC3_ALTERNATE_AUDIO</strong></a></p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-属性值（操作数据）是一种 KSAC3\_备用\_音频结构，用于指定应如何解释两个 mono 通道。
+ (操作数据) 的属性值是一个 KSAC3 \_ 备用 \_ 音频结构，用于指定应如何解释两个 mono 通道。
 
 ### <a name="span-idreturn_valuespanspan-idreturn_valuespanspan-idreturn_valuespanreturn-value"></a><span id="Return_Value"></span><span id="return_value"></span><span id="RETURN_VALUE"></span>返回值
 
-KSPROPERTY\_E-AC3\_备用\_音频属性请求返回状态\_"成功" 以指示已成功完成。 否则，请求将返回相应的错误状态代码。
+KSPROPERTY \_ E-ac3 \_ 备用 \_ 音频属性请求返回状态 " \_ 成功" 以指示它已成功完成。 否则，请求将返回相应的错误状态代码。
 
 <a name="requirements"></a>要求
 ------------
@@ -78,7 +78,7 @@ KSPROPERTY\_E-AC3\_备用\_音频属性请求返回状态\_"成功" 以指示已
 <tbody>
 <tr class="odd">
 <td align="left"><p>标头</p></td>
-<td align="left">Ksmedia （包括 Ksmedia）</td>
+<td align="left">Ksmedia (包含 Ksmedia) </td>
 </tr>
 </tbody>
 </table>
@@ -86,16 +86,9 @@ KSPROPERTY\_E-AC3\_备用\_音频属性请求返回状态\_"成功" 以指示已
 ## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
-[**KSPROPERTY**](https://docs.microsoft.com/previous-versions/ff564262(v=vs.85))
+[**KSPROPERTY**](/previous-versions/ff564262(v=vs.85))
 
-[**KSAC3\_备用\_音频**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksac3_alternate_audio)
-
- 
+[**KSAC3 \_ 备用 \_ 音频**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksac3_alternate_audio)
 
  
-
-
-
-
-
 

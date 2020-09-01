@@ -1,39 +1,39 @@
 ---
 title: WDI_TLV_PEER_MAC_ADDRESS
-description: WDI_TLV_PEER_MAC_ADDRESS 是一个 TLV，其中包含对等方的 MAC 地址。
+description: WDI_TLV_PEER_MAC_ADDRESS 是包含对等方的 MAC 地址的 TLV。
 ms.assetid: A936BAA6-96AD-4187-9933-FA02CCFED2AE
 ms.date: 07/18/2017
 keywords:
-- WDI_TLV_PEER_MAC_ADDRESS 从 Windows Vista 开始的网络驱动程序
+- 从 Windows Vista 开始 WDI_TLV_PEER_MAC_ADDRESS 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 8173782579a93dc47fcca2cf4aef2e5d96348068
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 26e07960b9128b070fe5fe965810ad3baf112ca6
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72838019"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89210035"
 ---
-# <a name="wdi_tlv_peer_mac_address"></a>WDI\_TLV\_对等互连\_MAC\_地址
+# <a name="wdi_tlv_peer_mac_address"></a>WDI \_ TLV \_ 对等 \_ MAC \_ 地址
 
 
-WDI\_TLV\_对等\_MAC\_地址是包含对等方的 MAC 地址的 TLV。
+WDI \_ tlv \_ 对等 \_ MAC \_ 地址是包含对等节点的 MAC 地址的 tlv。
 
 ## <a name="tlv-type"></a>TLV 类型
 
 
 0x4C
 
-## <a name="length"></a>长度
+## <a name="length"></a>Length
 
 
-[**WDI\_MAC\_地址**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dot11wdi/ns-dot11wdi-_wdi_mac_address)结构的大小（以字节为单位）。
+[**WDI \_ MAC \_ 地址**](/windows-hardware/drivers/ddi/dot11wdi/ns-dot11wdi-_wdi_mac_address)结构的大小 (以字节为单位) 。
 
 ## <a name="values"></a>值
 
 
-| 在任务栏的搜索框中键入                                              | 描述                                  |
+| 类型                                              | 说明                                  |
 |---------------------------------------------------|----------------------------------------------|
-| [**WDI\_MAC\_地址**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dot11wdi/ns-dot11wdi-_wdi_mac_address) | 指定对等节点的 Wi-fi MAC 地址。 |
+| [**WDI \_ MAC \_ 地址**](/windows-hardware/drivers/ddi/dot11wdi/ns-dot11wdi-_wdi_mac_address) | 指定对等节点的 Wi-fi MAC 地址。 |
 
  
 
@@ -48,7 +48,7 @@ WDI\_TLV\_对等\_MAC\_地址是包含对等方的 MAC 地址的 TLV。
 <tbody>
 <tr class="odd">
 <td><p>最低受支持的客户端</p></td>
-<td><p>Windows 10</p></td>
+<td><p>Windows 10</p></td>
 </tr>
 <tr class="even">
 <td><p>最低受支持的服务器</p></td>
@@ -62,9 +62,4 @@ WDI\_TLV\_对等\_MAC\_地址是包含对等方的 MAC 地址的 TLV。
 </table>
 
  
-
- 
-
-
-
 

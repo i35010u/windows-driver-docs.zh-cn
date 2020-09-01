@@ -1,26 +1,26 @@
 ---
-title: Hyper-v 可扩展交换机策略概述
-description: Hyper-v 可扩展交换机策略概述
+title: Hyper-V 可扩展交换机策略概述
+description: Hyper-V 可扩展交换机策略概述
 ms.assetid: 1D0AC55B-60F7-400E-A376-F3E2F7373A92
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2243cb0d13640e10393b6a2aabd41cb4dd6f94b8
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 66b6c5464013f2ba75e9c5e2b4143d5e612b23fe
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72843744"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89210097"
 ---
-# <a name="overview-of-hyper-v-extensible-switch-policies"></a>Hyper-v 可扩展交换机策略概述
+# <a name="overview-of-hyper-v-extensible-switch-policies"></a>Hyper-V 可扩展交换机策略概述
 
 
 Hyper-v 平台和可扩展交换机接口提供一个基础结构，用于管理可扩展交换机的交换机和端口策略。 这些策略通过 PowerShell cmdlet 和基于 WMI 的应用程序进行管理。 此基础结构还支持策略的存储和迁移。
 
-独立软件供应商（Isv）可以使用此基础结构来注册自己的自定义策略。 注册后，可以通过内置的 Hyper-v 策略接口发现和管理这些策略。 可以在每个端口级别或按交换机级别配置策略的属性。
+独立软件供应商 (Isv) 可以使用此基础结构来注册其自己的自定义策略。 注册后，可以通过内置的 Hyper-v 策略接口发现和管理这些策略。 可以在每个端口级别或按交换机级别配置策略的属性。
 
-除了自定义策略属性以外，Hyper-v 可扩展交换机接口还提供基础结构，以根据每个端口或每个交换机获取自定义策略属性的状态信息。 此状态信息称为*功能状态*信息。
+除了自定义策略属性以外，Hyper-v 可扩展交换机接口还提供基础结构，以根据每个端口或每个交换机获取自定义策略属性的状态信息。 此状态信息称为 *功能状态* 信息。
 
-可扩展交换机自定义策略数据使用托管对象格式（MOF）类定义注册到 WMI 管理层。 下面显示了一个用于自定义端口策略属性的 MOF 类的示例。
+可扩展交换机自定义策略数据通过使用托管对象格式 (MOF) 类定义注册到 WMI 管理层。 下面显示了一个用于自定义端口策略属性的 MOF 类的示例。
 
 ```C++
 #pragma namespace("\\\\.\\root\\virtualization\\v2")
@@ -119,19 +119,13 @@ typedef struct _VARIABLE_LENGTH_STRING
 
     `  (((MajorVersion) << 8) + (MinorVersion))`
 
-    例如，上面的版本（"1"）将通过 `(((1) << 8) + (0))`序列化为值0x0100。 版本（"1.1"）将通过 `(((1) << 8) + (1))`序列化为值0x0101。
+    例如，上面 ) 的版本 ( "1" 将被序列化为0x0100 到的值 `(((1) << 8) + (0))` 。 版本 ( "1.1" ) 将被序列化为0x0101 到的值 `(((1) << 8) + (1))` 。
 
-    将自定义策略属性颁发给基础扩展时，定义策略属性的结构的**PropertyVersion**成员包含序列化的版本值。
+    将自定义策略属性颁发给基础扩展时，定义策略属性的结构的 **PropertyVersion** 成员包含序列化的版本值。
 
-    例如，当可扩展交换机接口发出 OID 的对象标识符（OID）请求时[\_switch\_端口\_属性\_"添加](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-port-property-add)" 时，OID 与[**NDIS\_交换机\_端口关联\_属性\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_port_property_parameters)结构。 该结构的**PropertyVersion**成员包含序列化的版本值。
+    例如，当可扩展交换机接口发出对象标识符 (OID) 请求 [oid \_ 交换机 \_ 端口 \_ 属性 \_ 添加](./oid-switch-port-property-add.md)时，oid 与 [**NDIS \_ 交换机 \_ 端口 \_ 属性 \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_port_property_parameters) 结构关联。 该结构的 **PropertyVersion** 成员包含序列化的版本值。
 
--   所有可变长度字符串都序列化为包含序列化 C 结构的缓冲区内的偏移量。 每个可变长度字符串的格式为**变量\_长度**在此缓冲区偏移内\_字符串结构。
-
- 
+-   所有可变长度字符串都序列化为包含序列化 C 结构的缓冲区内的偏移量。 每个可变长度字符串的格式为此缓冲区偏移内的 **可变 \_ 长度 \_ 字符串** 结构。
 
  
-
-
-
-
 

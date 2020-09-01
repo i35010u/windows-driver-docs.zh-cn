@@ -4,12 +4,12 @@ description: SetupPreferredAudioDevices
 ms.assetid: cc6b7da4-335d-4629-ba54-32aa32a1eb09
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 517f3c57b0b4a7c6b61dbb445eb8124b349630e9
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 20a10a315a20ec141674df470685d76553c82e8b
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67355261"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89210403"
 ---
 # <a name="setuppreferredaudiodevices"></a>SetupPreferredAudioDevices
 
@@ -17,27 +17,27 @@ ms.locfileid: "67355261"
 ## <span id="ddk_setuppreferredaudiodevices_ks"></span><span id="DDK_SETUPPREFERREDAUDIODEVICES_KS"></span>
 
 
-SetupPreferredAudioDevices 关键字表示首选音频设备，这是当系统包含一个音频系统默认情况下启用的设备或更多的音频设备。 此关键字是媒体类特定且受 Microsoft Windows Millennium Edition/Windows 98、 Microsoft Windows 2000、 Windows XP 和 Windows Vista。 不支持在 Windows 7 中的 SetupPreferredAudioDevicesis。
+SetupPreferredAudioDevices 关键字表示首选音频设备，即音频系统在系统包含一个或多个音频设备时默认情况下启用的设备。 此关键字是特定于媒体类的，由 Microsoft Windows Millennium Edition/Windows 98、Microsoft Windows 2000、Windows XP 和 Windows Vista 支持。 Windows 7 中不支持 SetupPreferredAudioDevicesis。
 
-当创建音频设备，而不是显式指定设备的应用程序可以选择要使用默认值 （或首选） 设备。 (有关示例，请参阅的说明[ **waveOutOpen** ](https://docs.microsoft.com/previous-versions/dd743866(v=vs.85))并**DirectSoundCreate** Microsoft Windows SDK 文档中的函数。)
+创建音频设备时，应用程序可以选择使用默认 (或首选) 设备，而不是显式指定设备。  (示例，请参阅 Microsoft Windows SDK 文档中的 [**waveOutOpen**](/previous-versions/dd743866(v=vs.85)) 和 **DirectSoundCreate** 函数的说明。 ) 
 
-跟踪系统注册表中的当前首选音频设备的音频系统。 在用户通过安装新的音频设备升级一个系统，通常安装在设备的专有 INF 文件更新注册表，以将新设备指定为首选音频设备。
+音频系统将在系统注册表中跟踪当前首选音频设备。 当用户通过安装新的音频设备升级系统时，安装设备的专有 INF 文件通常会更新注册表，以将新设备指定为首选音频设备。
 
-SetupPreferredAudioDevices 关键字可以出现在中的注册表更新指令**添加注册表部分**(请参阅[ **INF AddReg 指令**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addreg-directive)) 的 INF 文件音频设备。 此指令的格式如下：
+SetupPreferredAudioDevices 关键字可以出现在注册表更新指令中的 " **添加注册表" 部分** 中 (参阅 [**inf AddReg 指令**](../install/inf-addreg-directive.md)) 的音频设备的 inf 文件。 此指令的格式如下：
 
-*reg rootkey*， \[*注册表子项*\]SetupPreferredAudioDevices \[*标志*\]， \[ *dword 值*\]
+*rootkey*， \[ *reg 子项* \] SetupPreferredAudioDevices \[ *flags* \] ， \[ *dword 值*\]
 
-指令指示音频系统声音播放、 声音录制和播放 MIDI 音乐作为默认值使用设备的音频功能。 安装完成后，这些三个默认值显示在声音和多媒体控制面板下**音频**选项卡。用户可以使用控制面板更改默认设备。
+指令指示音频系统使用设备的音频功能作为播放声音、录音和 MIDI 音乐的默认值。 安装之后，这三个默认值将显示在 " **音频** " 选项卡下的 "声音和多媒体" 控制面板中。用户可以使用 "控制面板" 更改默认设备。
 
-该指令*dword 值*参数指定应为非零值以启用该指令的 DWORD 值。 如果此值为零，则指令无效。 因为 Windows Me / 98 不支持将 REG\_DWORD 注册表数据类型，但是， *dword 值*通常都表示为 4 字节 REG\_作为一个 dword 值 （例如，作为"01,00,00,00"而不是二进制类型而不是"0x00000001")。 *Dword 值*参数可以通过设置的指令指定以原始二进制格式*标志*为"1"的参数 (FLG\_ADDREG\_BINVALUETYPE)。
+指令的 *dword 值* 参数指定一个 dword 值，该值应为非零值才能启用指令。 如果此值为零，则指令不起作用。 由于 Windows Me/98 不支持 REG \_ DWORD 注册表数据类型，因此， *dword 值* 通常表示为4字节的注册表 \_ 二进制类型，而不是 dword (例如，如 "01，00，00，00" 而不是 "0x00000001" ) 。 可以通过将指令的*flags*参数设置为 "1" (FLG ADDREG BINVALUETYPE) ，以原始二进制格式指定*dword 值*参数 \_ \_ 。
 
-该指令将在安装设备的驱动程序的时间生效。 如果另一台设备在安装新设备时占用的首选设备角色，该指令会导致新的设备采用首选设备，因此显示此角色的其他设备的角色。
+此指令在设备驱动程序安装时生效。 如果在安装新设备时，另一台设备占用首选设备角色，则该指令会使新设备担任首选设备的角色，从而将其他设备从此角色中取代。
 
-当升级或重新安装已安装的设备驱动程序时，你可能想要避免更改用户的当前首选设备所做选择声音播放、 声音录制和播放 MIDI 音乐。 如果是这样，设置 FLG\_ADDREG\_NOCLOBBER 位*标志*参数，这会导致指令以仅当这是设备的初始安装时，才会生效。
+升级或重新安装已安装的设备的驱动程序时，您可能希望避免更改用户当前首选设备，以便播放声音、录制声音以及 MIDI 音乐。 如果是这样，请 \_ \_ 在 *flags* 参数中设置 FLG ADDREG NOCLOBBER 位，这会使指令只有在这是设备的初始安装时才会生效。
 
 ### <a name="span-idexamplespanspan-idexamplespanexample"></a><span id="example"></span><span id="EXAMPLE"></span>示例
 
-下面的示例是演示如何使用 SetupPreferredAudioDevices 关键字 INF 文件的一部分：
+下面的示例是 INF 文件的一部分，该文件演示如何使用 SetupPreferredAudioDevices 关键字：
 
 ```inf
   AddReg = XYZ-Audio-Device.AddReg
@@ -46,15 +46,9 @@ SetupPreferredAudioDevices 关键字可以出现在中的注册表更新指令**
   HKR,,SetupPreferredAudioDevices,3,01,00,00,00
 ```
 
-该示例末尾处的指令指定名为"XYZ 音频设备"的设备现在是首选音频设备。 HKR 是注册表中的音频设备的根项。 *标志*参数设置为 3，这是按位或的 FLG\_ADDREG\_BINVALUETYPE 和 FLG\_ADDREG\_NOCLOBBER。 后者会阻止设备的现有首选设备注册表条目被覆盖，如果已安装设备，并且只是在升级其驱动程序。 指令的末尾处的四个字节指定非零值，必须启用指令。
+该示例末尾的指令指定名为 "XYZ-Audio-Device" 的设备现在是首选音频设备。 HKR 是音频设备在注册表中的根密钥。 *Flags*参数设置为3，即 FLG \_ ADDREG \_ BINVALUETYPE 和 FLG \_ ADDREG NOCLOBBER 的按位 or \_ 。 如果设备已安装并且仅升级其驱动程序，则后者会阻止设备的现有首选设备注册表项被覆盖。 指令末尾的四个字节指定一个非零值，这是启用指令所必需的。
 
-在 Windows Vista 中，与任何音频终结点的 SetupPreferredAudioDevices 关键字的当前实现使用其*dword 值*设置为奇数数目可以设置为默认设备。 若要确保正确的终结点被设置为默认设备，请确保包含相关终结点的 KS 筛选器公开上一次。 必须执行此操作由于 AudioEndpointBuilder 服务用来填充属性存储和设置默认设备的算法。
-
- 
+在 Windows Vista 中，使用 SetupPreferredAudioDevices 关键字的当前实现，将其 *dword 值* 设置为奇数的任何音频终结点都可以设置为默认设备。 若要确保将正确的终结点设置为默认设备，请确保最后公开包含相关终结点的 KS 筛选器。 由于 AudioEndpointBuilder 服务用来填充属性存储和设置默认设备的算法，必须执行此操作。
 
  
-
-
-
-
 

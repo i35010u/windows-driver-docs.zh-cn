@@ -14,12 +14,12 @@ api_location:
 api_type:
 - HeaderDef
 ms.localizationpriority: medium
-ms.openlocfilehash: b20726a1d9d65d37cc890337ceb3b12b898b741c
-ms.sourcegitcommit: 329eee396e727bbd1b2a096a5c7bb0c4b78f52e5
+ms.openlocfilehash: db6fa523be3e4a5629b937235ecdbc417130bd8e
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/10/2020
-ms.locfileid: "81007809"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89210219"
 ---
 # <a name="hresult-values"></a>HRESULT 值
 
@@ -31,40 +31,40 @@ ms.locfileid: "81007809"
 
 **成功的结果。** 这些值是在 Winerror.h 中定义的。
 
-<span id="S_OK"></span><span id="s_ok"></span>S\_确定  
+<span id="S_OK"></span><span id="s_ok"></span>S \_ 正常  
 成功完成。
 
-<span id="S_FALSE"></span><span id="s_false"></span>S\_FALSE  
+<span id="S_FALSE"></span><span id="s_false"></span>S \_ FALSE  
 已完成，但未出现错误，但仅获取了部分结果。
 
-如果缓冲区不够大，无法容纳返回的信息，则返回的信息通常会被截断以容纳到缓冲区中，并从方法返回\_FALSE。
+如果缓冲区不够大，无法容纳返回的信息，则返回的信息通常会被截断以容纳到缓冲区中，并 \_ 从方法返回 S FALSE。
 
 **错误结果。** 这些值是在 Winerror.h 中定义的。
 
-<span id="E_FAIL"></span><span id="e_fail"></span>E\_失败  
+<span id="E_FAIL"></span><span id="e_fail"></span>E \_ 失败  
 无法执行该操作。
 
-<span id="E_INVALIDARG"></span><span id="e_invalidarg"></span>E\_INVALIDARG  
+<span id="E_INVALIDARG"></span><span id="e_invalidarg"></span>E \_ INVALIDARG  
 传入的参数之一无效。
 
-<span id="E_NOINTERFACE"></span><span id="e_nointerface"></span>E\_NOINTERFACE  
+<span id="E_NOINTERFACE"></span><span id="e_nointerface"></span>E \_ NOINTERFACE  
 找不到搜索的对象。
 
-<span id="E_OUTOFMEMORY"></span><span id="e_outofmemory"></span>E\_OUTOFMEMORY  
+<span id="E_OUTOFMEMORY"></span><span id="e_outofmemory"></span>E \_ OUTOFMEMORY  
 内存分配尝试失败。
 
-<span id="E_UNEXPECTED"></span><span id="e_unexpected"></span>E\_意外  
+<span id="E_UNEXPECTED"></span><span id="e_unexpected"></span>E \_ 意外  
 目标不可访问，或引擎未处于可处理函数或方法的状态。
 
-<span id="E_NOTIMPL"></span><span id="e_notimpl"></span>E\_NOTIMPL  
+<span id="E_NOTIMPL"></span><span id="e_notimpl"></span>E \_ NOTIMPL  
 未实现。
 
-<span id="HRESULT_FROM_WIN32_ERROR_ACCESS_DENIED_"></span><span id="hresult_from_win32_error_access_denied_"></span>\_WIN32 中的 HRESULT\_（错误\_访问\_拒绝）  
-由于调试器处于[安全模式](https://docs.microsoft.com/windows-hardware/drivers/debugger/secure-mode)，操作被拒绝。
+<span id="HRESULT_FROM_WIN32_ERROR_ACCESS_DENIED_"></span><span id="hresult_from_win32_error_access_denied_"></span>HRESULT \_ 中的 HRESULT \_ (\_ 拒绝访问错误 \_)   
+由于调试器处于 [安全模式](./secure-mode.md)，操作被拒绝。
 
-**NT 错误结果。** 有时会出现其他错误代码（例如状态\_控制\_C\_退出和状态\_无\_更\_的条目）。 这些结果将从 Winerror.h 中定义的\_NT 宏传递到 HRESULT\_，然后再返回。
+**NT 错误结果。** 有时会出现其他错误代码，如状态 \_ 控制 \_ C \_ 退出和状态 \_ 不 \_ 多 \_ 项。 在 \_ 返回之前，将从 \_ winerror.h 中定义的 NT 宏将这些结果传递给 HRESULT。
 
-**Win32 错误结果。** 有时会出现其他错误代码（如错误\_读取\_错误和错误\_写入\_错误。 在返回之前，这些结果将从 Winerror.h 中定义的\_WIN32 宏传递到 HRESULT\_。
+**Win32 错误结果。** 有时会出现其他错误代码，如 "错误读取错误" \_ \_ 和 \_ "错误写入错误 \_ "。 在 \_ 返回之前，将从 \_ winerror.h 中定义的 WIN32 宏将这些结果传递给 HRESULT。
 
 <a name="requirements"></a>要求
 ------------
@@ -77,16 +77,10 @@ ms.locfileid: "81007809"
 <tbody>
 <tr class="odd">
 <td align="left"><p>标头</p></td>
-<td align="left">DbgEng （包括 DbgEng）</td>
+<td align="left">DbgEng (包含 DbgEng) </td>
 </tr>
 </tbody>
 </table>
 
  
-
- 
-
-
-
-
 

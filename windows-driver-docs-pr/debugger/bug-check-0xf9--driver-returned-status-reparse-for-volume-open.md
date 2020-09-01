@@ -13,19 +13,19 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: c1f9ee94e7f764d71c4c62f3e378ca7e87e7a522
-ms.sourcegitcommit: 1d531bf9d02653fdf9ad728126d68b8acb86182e
+ms.openlocfilehash: 7d36e6480dc98538b24fac86ccbe1b0a350d4809
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87402308"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89210233"
 ---
 # <a name="bug-check-0xf9-driver_returned_status_reparse_for_volume_open"></a>Bug 检查0xF9：驱动 \_ 程序 \_ 返回 \_ \_ 的 \_ 卷 \_ 打开状态重新分析
 
 驱动程序 \_ 返回了 " \_ \_ \_ \_ 卷 \_ 打开 bug 检查的状态重新分析" 的值为 "0x000000F9"。 这表明驱动程序将状态重新 \_ 分析返回给 IRP \_ MJ \_ CREATE 请求，但没有尾随名称。
 
 > [!IMPORTANT]
-> 本主题适用于程序员。 如果你是在使用计算机时收到蓝屏错误代码的客户，请参阅[排查蓝屏错误](https://www.windows.com/stopcode)。
+> 本主题面向程序员。 如果您是在使用计算机时收到蓝屏错误代码的客户，请参阅[蓝屏错误疑难解答](https://www.windows.com/stopcode)。
 
 
 ## <a name="driver_returned_status_reparse_for_volume_open-parameters"></a>驱动 \_ 程序 \_ 返回 \_ \_ \_ 卷 \_ 开放参数的状态重新分析
@@ -38,7 +38,7 @@ ms.locfileid: "87402308"
 <thead>
 <tr class="header">
 <th align="left">参数</th>
-<th align="left">描述</th>
+<th align="left">说明</th>
 </tr>
 </thead>
 <tbody>
@@ -52,7 +52,7 @@ ms.locfileid: "87402308"
 </tr>
 <tr class="odd">
 <td align="left"><p>3</p></td>
-<td align="left"><p>包含文件的新名称的 Unicode 字符串的地址（要被重新分析）</p></td>
+<td align="left"><p>包含要被重新分析的 (文件的新名称的 Unicode 字符串的地址) </p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>4</p></td>
@@ -67,4 +67,4 @@ ms.locfileid: "87402308"
 
 \_仅应为 IRP \_ MJ \_ CREATE requests 返回带有尾随名称的状态重新分析，因为该驱动程序支持名称空间。 
 
-有关使用文件系统驱动程序的详细信息，请参阅[文件系统驱动程序设计指南](https://docs.microsoft.com/windows-hardware/drivers/ifs/)。 有关 IRP \_ MJ CREATE 请求的信息， \_ 请参阅[IRP_MJ_CREATE （IFS）](https://docs.microsoft.com/windows-hardware/drivers/ifs/irp-mj-create)。
+有关使用文件系统驱动程序的详细信息，请参阅 [文件系统驱动程序设计指南](../ifs/index.md)。 有关 IRP \_ MJ 创建请求的信息， \_ 请参阅 [IRP_MJ_CREATE (IFS) ](../ifs/irp-mj-create.md)。

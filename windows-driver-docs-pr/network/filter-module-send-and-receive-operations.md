@@ -10,12 +10,12 @@ keywords:
 - 筛选器驱动程序 WDK 网络，接收操作
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 76e930c8a7eae4d3f38f9c4596c045b65acac7ec
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 1437a699dd8a9e5bff8ae03f69f8abca780bc3d6
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72838106"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89209323"
 ---
 # <a name="filter-module-send-and-receive-operations"></a>筛选器模块发送和接收操作
 
@@ -25,13 +25,13 @@ ms.locfileid: "72838106"
 
 本部分记录了 NDIS 6.0 筛选器驱动程序的发送和接收操作。 筛选器驱动程序可以启动发送请求并接收指示，或者筛选其他驱动程序的请求和指示。
 
-筛选器模块堆积在微型端口适配器上。 有关驱动程序堆栈的详细信息，请参阅[NDIS 6.0 驱动程序堆栈](ndis-driver-stack.md)。
+筛选器模块堆积在微型端口适配器上。 有关驱动程序堆栈的详细信息，请参阅 [NDIS 6.0 驱动程序堆栈](ndis-driver-stack.md)。
 
-驱动程序堆栈中的筛选器模块可以筛选所有发送请求并接收与基础适配器关联的指示。 这适用于所有协议绑定到适配器的情况。 有关 NDIS 6.0 发送和接收操作的详细信息，请参阅[发送和接收操作](send-and-receive-operations.md)。
+驱动程序堆栈中的筛选器模块可以筛选所有发送请求并接收与基础适配器关联的指示。 这适用于所有协议绑定到适配器的情况。 有关 NDIS 6.0 发送和接收操作的详细信息，请参阅 [发送和接收操作](send-and-receive-operations.md)。
 
-筛选器驱动程序不提供对基于[**NDIS\_数据包**](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff557086(v=vs.85))结构的传统发送和接收操作的直接支持。 取而代之的是，NDIS 会将来自旧微型端口驱动程序的接收指示转换为[**NET\_BUFFER**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer)结构。 此外，NDIS 还处理从基于 NET\_BUFFER 结构的发送请求转换为基于 NDIS\_数据包结构的旧发送请求的所需转换。
+筛选器驱动程序不提供对基于 [**NDIS \_ 数据包**](/previous-versions/windows/hardware/network/ff557086(v=vs.85)) 结构的传统发送和接收操作的直接支持。 取而代之的是，NDIS 会将来自旧微型端口驱动程序的接收指示转换为 [**网络 \_ 缓冲区**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer) 结构。 此外，NDIS 还处理从将基于 NET BUFFER 结构的发送请求转换 \_ 为基于 NDIS 数据包结构的旧发送请求的所需转换 \_ 。
 
-**请注意**  筛选器驱动程序可以动态更改筛选器模块的 send 和 receive *FliterXxx*函数。 有关详细信息，请参阅[Data 旁路 Mode](data-bypass-mode.md)。
+**注意**   筛选器驱动程序可以动态更改筛选器模块的 send 和 receive *FliterXxx*函数。 有关详细信息，请参阅 [Data 旁路 Mode](data-bypass-mode.md)。
 
  
 
@@ -41,15 +41,9 @@ ms.locfileid: "72838106"
 
 [从筛选器驱动程序发送数据](sending-data-from-a-filter-driver.md)
 
-[在筛选器驱动程序中取消发送请求](canceling-a-send-request-in-a-filter-driver.md)
+[取消筛选器驱动程序中的发送请求](canceling-a-send-request-in-a-filter-driver.md)
 
 [在筛选器驱动程序中接收数据](receiving-data-in-a-filter-driver.md)
 
  
-
- 
-
-
-
-
 

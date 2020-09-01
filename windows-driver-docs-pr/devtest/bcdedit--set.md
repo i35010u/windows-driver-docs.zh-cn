@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: high
-ms.openlocfilehash: 088372dd352e0fd6fb3fa2dff629f9d84845036b
-ms.sourcegitcommit: ca5045a739eefd6ed14b9dbd9249b335e090c4e9
+ms.openlocfilehash: f735b8f715b87f7bc6e31ee20fd9c08861ff122c
+ms.sourcegitcommit: 67efcd26f7be8f50c92b141ccd14c9c68f4412d8
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/06/2020
-ms.locfileid: "85967980"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88902555"
 ---
 # <a name="bcdedit-set"></a>BCDEdit /set
 
@@ -112,7 +112,7 @@ groupaware on 设置可确保进程在组 0 以外的组中启动。 这增加�
 hal file 指示操作系统加载程序加载备用 HAL 文件。 指定的文件必须位于 %SystemRoot%\\system32 目录中。
 
 **hypervisorbusparams** *Bus.Device.Function*  
-定义调试设备的 PCI 总线、设备和功能号。 例如，1.5.0 描述调试设备的总线 1、设备 5、功能 0。 使用 1394 电缆或 USB 2.0 或 USB 3.0 调试电缆进行调试时，请使用此选项。
+定义调试设备的 PCI 总线、设备和功能号。 例如，1.5.0 描述调试设备的总线 1、设备 5、功能 0。 这些值显示在“常规”选项卡上的“位置”下的设备管理器中 。  
 
 **hypervisordebug** \[ **On** | **Off** \]  
 控制是否启用虚拟机监控程序调试器。
@@ -132,7 +132,8 @@ bcdedit /set hypervisorlaunchtype auto
 指定用于调试的 IEEE 1394 (FireWire) 连接。 使用此选项时，还应设置 hypervisorchannel 选项。
 
 > [!IMPORTANT]
-> 1394 传输可用于 Windows 10 版本 1607 及更低版本。 它在 Windows 的更高版本中不可用。 应将项目转换为其他传输，例如使用以太网的 KDNET。 有关该传输的详细信息，请参阅[自动设置 KDNET 网络内核调试](https://docs.microsoft.com/windows-hardware/drivers/debugger/setting-up-a-network-debugging-connection-automatically)。
+> 1394 传输可用于 Windows 10 版本 1607 及更低版本。
+> 它在 Windows 的更高版本中不可用。 应将项目转换为其他传输，例如使用以太网的 KDNET。 有关该传输的详细信息，请参阅[自动设置 KDNET 网络内核调试](https://docs.microsoft.com/windows-hardware/drivers/debugger/setting-up-a-network-debugging-connection-automatically)。
 
 
 **Net**  
@@ -179,7 +180,7 @@ bcdedit /set hypervisorlaunchtype auto
 
 **kernel** *file* 指示操作系统加载程序加载备用内核。 指定的文件必须位于 %SystemRoot%\\system32 目录中。
 
-**loadoptions busparams**=*Bus.Device.Function* 指定存在多个控制器时的目标控制器。 使用 1394 电缆或 USB 2.0 调试电缆进行调试时，此语法是合适的。 Bus 指定总线号，Device 指定设备号，Function 指定功能号  。
+**loadoptions busparams**=*Bus.Device.Function* 指定目标控制器。 Bus 指定总线号，Device 指定设备号，Function 指定功能号  。 这些值显示在“常规”选项卡上的“位置”下的设备管理器中 。  
 
 > [!NOTE]
 > 对于 1394 调试，无论配置的是哪个版本的 Windows，都必须以十进制形式指定总线参数。 用于 USB 2.0 调试的总线参数的格式取决于 Windows 版本。 在 Windows Server 2008 中，必须以十六进制指定 USB 2.0 总线参数。 在 Windows 7 和 Windows Server 2008 R2 及 Windows 更高版本中，必须以十进制形式指定USB 2.0 总线参数。

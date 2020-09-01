@@ -3,21 +3,21 @@ title: 侦听 SAN 上的连接
 description: 侦听 SAN 上的连接
 ms.assetid: 7e430bda-74f5-4a1a-90f0-3b2e44fb25a3
 keywords:
-- SAN 连接安装 WDK，侦听连接
+- SAN 连接设置 WDK，侦听连接
 - 侦听操作 WDK San
 - 拒绝 SAN 连接请求
-- 远程对等连接 refusals WDK San
-- 阻止模式下 WDK San
+- 远程对等连接 refusals WDK SANs
+- 非阻止模式 WDK San
 - WSPListen
 - SAN 套接字 WDK，侦听连接
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7a719b7b288e3f2b820a3d973950d37b656819b5
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 13d3ded777553605a5b985dd4e23095c70c36356
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67356216"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89211051"
 ---
 # <a name="listening-for-connections-on-a-san"></a>侦听 SAN 上的连接
 
@@ -25,29 +25,23 @@ ms.locfileid: "67356216"
 
 
 
-下图显示了 Windows 套接字如何切换集的概述，SAN 套接字以确认和队列-即，侦听-远程对等方的传入连接请求。 后面的主题描述更详细地侦听的进程。
+下图显示了 Windows 套接交换机如何设置要确认和排队的 SAN 套接字的概述，即侦听来自远程对等方的传入连接请求。 以下主题更详细地介绍了侦听过程。
 
-![关系图概述 windows 套接字如何切换设置 san 套接字以确认并从远程对等方的传入连接请求进行排队](images/apiflow4.png)
+![图示 windows 套接交换机如何设置 san 套接字以确认和排队来自远程对等方的传入连接请求](images/apiflow4.png)
 
-Windows 套接字时切换接收**WSPListen**由应用程序中，始终开关启动的调用将调用 TCP/IP 提供程序的**WSPListen**函数首先设置 TCP/IP 提供程序套接字以确认并对传入连接请求进行排队。 如果应用程序的套接字绑定到 SAN NIC 的 IP 地址或通配符 IP 地址，该交换机还使用适当的 SAN 服务提供程序来创建和绑定其他套接字。 有关详细信息，请参阅[创建和绑定 SAN 套接字](creating-and-binding-san-sockets.md)。
+当 Windows 套接字交换机收到应用程序启动的 **WSPListen** 调用时，此开关将首先调用 tcp/ip 提供程序的 **WSPListen** 函数，以将 tcp/ip 提供程序的套接字设置为确认并将传入连接请求排队。 如果应用程序的套接字绑定到 SAN NIC 的 IP 地址或通配符 IP 地址，则交换机还会使用相应的 SAN 服务提供程序来创建和绑定其他套接字。 有关详细信息，请参阅 [创建和绑定 SAN 套接字](creating-and-binding-san-sockets.md)。
 
 ### <a name="listening-for-incoming-connection-requests"></a>侦听传入连接请求
 
-请求一个 SAN 服务提供程序来创建和绑定 SAN 套接字后，将调用该交换机[ **WSPListen** ](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff566297(v=vs.85)) SAN 服务提供程序会导致 SAN 套接字来侦听传入连接的函数和入站连接的数量指定的限制 SAN 服务提供商的请求可以排入队列。
+请求 SAN 服务提供程序创建和绑定 SAN 套接字后，交换机将调用 SAN 服务提供程序的 [**WSPListen**](/previous-versions/windows/hardware/network/ff566297(v=vs.85)) 函数，以使 san 套接字侦听传入连接，并指定 san 服务提供商可以排队的传入连接请求数的限制。
 
-### <a name="setting-up-to-accept-incoming-connections"></a>设置为接受传入连接
+### <a name="setting-up-to-accept-incoming-connections"></a>设置以接受传入连接
 
-开关接受传入连接仅在非阻止性模式下。 此开关调用 SAN 服务提供商[ **WSPEventSelect** ](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff566287(v=vs.85))函数将套接字置于阻止模式下，并请求的传入连接事件的通知。 在此调用，此开关传递 FD\_接受代码和要与该代码相关联的事件对象。 SAN 服务提供商的 SAN 服务提供程序收到侦听以前建立了其套接字上的连接请求后，调用 Win32 **SetEvent**函数发出信号的关联的事件对象。 开关的专用线程中的传入连接事件侦听和接受或拒绝连接事件对象信号后。 有关详细信息，请参阅[接受连接请求](accepting-connection-requests.md)。
+此开关仅在非阻止模式下接受传入连接。 开关调用 SAN 服务提供程序的 [**WSPEventSelect**](/previous-versions/windows/hardware/network/ff566287(v=vs.85)) 函数，使套接字处于非阻止模式并请求传入连接事件的通知。 在此调用中，开关传递 FD \_ ACCEPT 代码和要与该代码相关联的事件对象。 在 SAN 服务提供程序在其套接字上收到以前建立用于侦听的连接请求后，SAN 服务提供程序将调用 Win32 **SetEvent** 函数来发出关联事件对象的信号。 开关侦听专用线程中的传入连接事件，并在事件对象终止后接受或拒绝连接。 有关详细信息，请参阅 [接受连接请求](accepting-connection-requests.md)。
 
-### <a name="indicating-refusal-of-a-connection-request-to-a-remote-peer"></a>指示拒绝连接请求发送到远程对等方的消息
+### <a name="indicating-refusal-of-a-connection-request-to-a-remote-peer"></a>指示拒绝到远程对等方的连接请求
 
-如果收到连接请求和 SAN 服务提供商的积压工作的连接请求已满，SAN 服务提供程序应立即向指示远程对等方，它将拒绝连接请求。 在这种情况下，SAN 服务提供商不表示要通知开关来接受或拒绝连接请求的事件对象。 远程对等方上的 SAN 服务提供程序必须则失败由启动其连接操作**WSPConnect** WSAECONNREFUSED 错误代码调用。
-
- 
+如果连接请求到达，且 SAN 服务提供程序的连接请求积压（backlog）已满，则 SAN 服务提供程序应立即向远程对等机指出拒绝连接请求。 在这种情况下，SAN 服务提供程序不会向事件对象发出信号，通知交换机接受或拒绝连接请求。 远程对等方上的 SAN 服务提供程序必须使用 WSAECONNREFUSED 错误代码将 **WSPConnect** 调用启动的连接操作失败。
 
  
-
-
-
-
 

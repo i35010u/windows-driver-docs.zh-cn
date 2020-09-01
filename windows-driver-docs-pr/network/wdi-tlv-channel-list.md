@@ -4,36 +4,36 @@ description: WDI_TLV_CHANNEL_LIST 是包含一个或多个通道号的 TLV。
 ms.assetid: DBBA28C2-D80F-409B-BEE6-81B6FEDF7484
 ms.date: 07/18/2017
 keywords:
-- WDI_TLV_CHANNEL_LIST 从 Windows Vista 开始的网络驱动程序
+- 从 Windows Vista 开始 WDI_TLV_CHANNEL_LIST 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: eb2ba3fe2be6f79bb71b14733ab1a0796ff3beea
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: c3f592aa2e52ee899c72b694532ee929b07b9dee
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72844524"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89209615"
 ---
-# <a name="wdi_tlv_channel_list"></a>WDI\_TLV\_通道\_列表
+# <a name="wdi_tlv_channel_list"></a>WDI \_ TLV \_ 通道 \_ 列表
 
 
-WDI\_TLV\_通道\_列表是包含一个或多个通道号的 TLV。
+WDI \_ tlv \_ 通道 \_ 列表是包含一个或多个通道号的 tlv。
 
 ## <a name="tlv-type"></a>TLV 类型
 
 
 0x4
 
-## <a name="length"></a>长度
+## <a name="length"></a>Length
 
 
-WDI 的数组的大小（以字节为单位） [ **\_通道\_映射\_条目**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wditypes/ns-wditypes-_wdi_channel_mapping_entry)结构。 数组必须包含1个或多个结构。
+[**WDI \_ 信道 \_ 映射 \_ 条目**](/windows-hardware/drivers/ddi/wditypes/ns-wditypes-_wdi_channel_mapping_entry)结构数组的大小 (以字节为单位) 。 数组必须包含1个或多个结构。
 
 ## <a name="values"></a>值
 
 
-| 在任务栏的搜索框中键入                                                                       | 描述                          |
+| 类型                                                                       | 说明                          |
 |----------------------------------------------------------------------------|--------------------------------------|
-| [**WDI\_通道\_映射\_条目**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wditypes/ns-wditypes-_wdi_channel_mapping_entry)\[\] | 通道映射项的数组。 |
+| [**WDI \_ 通道 \_ 映射 \_ 条目**](/windows-hardware/drivers/ddi/wditypes/ns-wditypes-_wdi_channel_mapping_entry)\[\] | 通道映射项的数组。 |
 
  
 
@@ -48,7 +48,7 @@ WDI 的数组的大小（以字节为单位） [ **\_通道\_映射\_条目**](h
 <tbody>
 <tr class="odd">
 <td><p>最低受支持的客户端</p></td>
-<td><p>Windows 10</p></td>
+<td><p>Windows 10</p></td>
 </tr>
 <tr class="even">
 <td><p>最低受支持的服务器</p></td>
@@ -62,9 +62,4 @@ WDI 的数组的大小（以字节为单位） [ **\_通道\_映射\_条目**](h
 </table>
 
  
-
- 
-
-
-
 

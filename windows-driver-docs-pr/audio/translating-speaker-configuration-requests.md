@@ -3,15 +3,15 @@ title: 转换 Speaker-Configuration 请求
 description: 转换 Speaker-Configuration 请求
 ms.assetid: be3dce30-7395-4332-ba62-de9a718b62f5
 keywords:
-- 转换扬声器配置请求 WDK 音频
+- 转换发言人-配置请求 WDK 音频
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 42f30166f6e88a552b113b532ae77272cfcfab07
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 51108855f0a962f1d120a6a8a261da38d4c208a2
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67354168"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89209919"
 ---
 # <a name="translating-speaker-configuration-requests"></a>转换 Speaker-Configuration 请求
 
@@ -19,13 +19,13 @@ ms.locfileid: "67354168"
 ## <span id="translating_speaker_configuration_requests"></span><span id="TRANSLATING_SPEAKER_CONFIGURATION_REQUESTS"></span>
 
 
-**请注意**  此信息适用于 Windows XP 和早期版本的操作系统。 从 Windows Vista 开始**IDirectSound::GetSpeakerConfig**并**IDirectSound::SetSpeakerConfig**已弃用。
+**注意**   此信息适用于 Windows XP 及更早版本的操作系统。 从 Windows Vista 开始， **IDirectSound：： GetSpeakerConfig** 和 **IDirectSound：： SetSpeakerConfig** 已弃用。
 
  
 
-当应用程序调用**IDirectSound::SetSpeakerConfig** （请参阅 Microsoft Windows SDK 文档） 若要更改扬声器配置，DirectSound 转换指定的 DSSPEAKER\_*Xxx*扬声器配置参数等效 KSAUDIO\_*Xxx*通道配置掩码。 它将发送[ **KSPROPERTY\_音频\_通道\_CONFIG** ](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-audio-channel-config)包含此掩码表示 DirectSound 设备筛选的组属性请求。
+当应用程序调用**IDirectSound：： SetSpeakerConfig** (参阅 Microsoft Windows SDK 文档) 若要更改扬声器配置，DirectSound 将指定的 DSSPEAKER \_ *xxx*扬声器配置参数转换为等效的 KSAUDIO \_ *xxx*通道配置掩码。 它将包含此掩码的 [**KSPROPERTY \_ 音频 \_ 通道 \_ 配置**](./ksproperty-audio-channel-config.md) 集-属性请求发送到表示 DirectSound 设备的筛选器。
 
-在下面的表中，每个 DSSPEAKER\_*Xxx*左侧的参数与等效 KSAUDIO 配对\_*Xxx*在右侧的通道配置掩码。
+在下表中，左侧的每个 DSSPEAKER \_ *Xxx*参数与右侧的等效 KSAUDIO \_ *xxx*通道配置掩码配对。
 
 <table>
 <colgroup>
@@ -76,9 +76,9 @@ ms.locfileid: "67354168"
 
  
 
-在上表中，DirectSound 其耳机和立体声扬声器配置指定具有相同通道掩码 KSAUDIO\_演讲者\_立体声。 若要区分这两个配置，DirectSound 发送筛选器指定演讲者几何图形的第二个集属性请求 (请参阅[ **KSPROPERTY\_音频\_立体声\_说话人\_几何图形**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-audio-stereo-speaker-geometry))。 若要指示耳机，DirectSound 将值传递 KSAUDIO\_立体声\_演讲者\_GEOMETRY\_耳机使用说话人 geometry 请求。
+在上表中，DirectSound 指定其耳机和立体声扬声器配置具有相同的通道掩码 KSAUDIO \_ 扬声器 \_ 立体声。 为了区分这两种配置，DirectSound 将筛选器发送第二个属性请求，后者指定扬声器几何 (参阅 [**KSPROPERTY \_ 音频 \_ 立体声 \_ 扬声器 \_ 几何**](./ksproperty-audio-stereo-speaker-geometry.md)) 。 为了指示耳机，DirectSound 将 KSAUDIO \_ 立体声 \_ 扬声器 \_ 几何耳机的值 \_ 与扬声器几何请求一起传递。
 
-对于立体扬声器，但是，调用方流入**SetSpeakerConfig**可以指定一个或多个可能 DSSPEAKER\_*Xxx*立体声演讲者几何图形。 这些包中的以下表和等效 KSAUDIO 左列显示\_*Xxx*参数显示在右侧。
+但对于立体声扬声器， **SetSpeakerConfig**的调用方可以指定多个可能的 DSSPEAKER \_ *Xxx*扬声器几何之一。 它们显示在下表的左侧列中，等效的 KSAUDIO \_ *Xxx*参数显示在右侧。
 
 <table>
 <colgroup>
@@ -87,8 +87,8 @@ ms.locfileid: "67354168"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">DSSPEAKER 立体声演讲者 Geometry</th>
-<th align="left">KSAUDIO 立体声演讲者 Geometry</th>
+<th align="left">DSSPEAKER 立体声-发言人几何</th>
+<th align="left">KSAUDIO 立体声-发言人几何</th>
 </tr>
 </thead>
 <tbody>
@@ -113,12 +113,7 @@ ms.locfileid: "67354168"
 
  
 
-如果调用方没有显式指定一个几何图形的上面的左侧列中，DirectSound 假定 DSSPEAKER\_几何图形\_宽默认情况下。
+如果调用方未显式指定上面左列中的一个几何图形，则默认情况下，DirectSound 会假定 DSSPEAKER \_ 几何图形 \_ 宽度。
 
  
-
- 
-
-
-
 

@@ -12,23 +12,23 @@ keywords:
 - 错误信息检索 WDK WHEA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e4d22ee312cd26b21b0dc3527eeafdc184f5150c
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 5613cfa3f4d71d846c9688314fcd46eae0ee91c2
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72838824"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89209473"
 ---
 # <a name="participating-in-error-information-retrieval"></a>参与错误信息检索
 
 
 若要参与检索错误信息，PSHED 插件必须实现以下回调函数：
 
-[*RetrieveErrorInfo*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nc-ntddk-pshed_pi_retrieve_error_info)
+[*RetrieveErrorInfo*](/windows-hardware/drivers/ddi/ntddk/nc-ntddk-pshed_pi_retrieve_error_info)
 
-[*FinalizeErrorRecord*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nc-ntddk-pshed_pi_finalize_error_record)
+[*FinalizeErrorRecord*](/windows-hardware/drivers/ddi/ntddk/nc-ntddk-pshed_pi_finalize_error_record)
 
-[*ClearErrorStatus*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nc-ntddk-pshed_pi_clear_error_status)
+[*ClearErrorStatus*](/windows-hardware/drivers/ddi/ntddk/nc-ntddk-pshed_pi_clear_error_status)
 
 下面的代码示例演示如何实现这些回调函数。
 
@@ -177,9 +177,4 @@ NTSTATUS
 参与错误信息检索的 PSHED 插件在向操作系统[注册](registering-a-pshed-plug-in.md)自身时必须指定**PshedFAErrorInfoRetrieval**标志。
 
  
-
- 
-
-
-
 

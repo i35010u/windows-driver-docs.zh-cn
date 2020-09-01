@@ -1,6 +1,6 @@
 ---
 title: fxdevice
-description: Fxdevice 扩展显示有关所有电源管理框架 (PoFx) 的摘要信息注册设备。 可以在内核模式调试期间仅使用此命令。
+description: Fxdevice 扩展显示有关) 已注册设备的所有电源管理框架 (的摘要信息。 此命令只能在内核模式调试过程中使用。
 ms.assetid: 98E34825-467F-46E5-BC29-AF241FF30B90
 keywords:
 - fxdevice Windows 调试
@@ -12,19 +12,19 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 4d5612184954853960232cf44b548823bac3aa07
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: b0b151d6c73ff61b85e2a3f48d9cf0a0f8775598
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67362510"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89210245"
 ---
 # <a name="fxdevice"></a>!fxdevice
 
 
-！ Fxdevice 扩展显示有关所有电源管理框架 (PoFx) 的摘要信息注册设备。 可以在内核模式调试期间仅使用此命令。
+！ Fxdevice extension 显示有关所有电源管理框架 (PoFx) 注册设备的摘要信息。 此命令只能在内核模式调试过程中使用。
 
-有关 PoFX 详细信息，请参阅[电源管理框架概述](https://docs.microsoft.com/windows-hardware/drivers/kernel/overview-of-the-power-management-framework)。
+有关 PoFX 的详细信息，请参阅 [电源管理框架概述](../kernel/overview-of-the-power-management-framework.md)。
 
 语法
 
@@ -32,13 +32,13 @@ ms.locfileid: "67362510"
 !fxdevice[<FxDevice Address>]
 ```
 
-## <a name="span-idddkthreaddbgspanspan-idddkthreaddbgspanparameters"></a><span id="ddk__thread_dbg"></span><span id="DDK__THREAD_DBG"></span>参数
+## <a name="span-idddk__thread_dbgspanspan-idddk__thread_dbgspanparameters"></a><span id="ddk__thread_dbg"></span><span id="DDK__THREAD_DBG"></span>参数
 
 
-<span id="___________FxDevice__Address_______"></span><span id="___________fxdevice__address_______"></span><span id="___________FXDEVICE__ADDRESS_______"></span> **&lt; FxDevice Address&gt;**    
-提供 FxDevice 要显示的地址。
+<span id="___________FxDevice__Address_______"></span><span id="___________fxdevice__address_______"></span><span id="___________FXDEVICE__ADDRESS_______"></span>** &lt; FxDevice 地址 &gt; **   
+提供要显示的 FxDevice 的地址。
 
-## <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+## <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 
 <table>
@@ -59,13 +59,13 @@ ms.locfileid: "67362510"
 <a name="remarks"></a>备注
 -------
 
-！ Fxdevice 扩展目标系统上存在时显示以下信息。
+当 fxdevice 扩展出现在目标系统上时，它会显示以下信息。
 
 -   非空闲 PoFx 设备
 -   空闲 D0 PoFx 设备
--   空闲非的-D0 PoFx 设备
+-   空闲非 D0 PoFx 设备
 
-下面是从出的示例 ！ fxdevice 扩展提供的设备地址。
+下面的示例来自于！ fxdevice extension，其中包含提供的设备地址。
 
 ```dbgcmd
 kd> !fxdevice ffffe0012ccbda60
@@ -91,7 +91,7 @@ kd> !fxdevice ffffe0012ccbda60
             Component Active: No Activity
 ```
 
-下面是从默认的输出 ！ fxdevice 扩展。
+下面是！ fxdevice 扩展中的默认输出。
 
 ```dbgcmd
 kd> !fxdevice 
@@ -139,10 +139,4 @@ Dumping idle D0 PoFx devices
 ```
 
  
-
- 
-
-
-
-
 

@@ -6,12 +6,12 @@ keywords:
 - 内核流调试，视频流停止，原因
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 31c557600c9b31b47077dfb6a8d88bf5f18b417e
-ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
+ms.openlocfilehash: d807db47a7cf7bc5da44346d0776422c65c63acf
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84534378"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89209371"
 ---
 # <a name="determining-the-cause-of-a-video-stream-stall"></a>确定视频流停滞的原因
 
@@ -38,15 +38,9 @@ ms.locfileid: "84534378"
 
 1.  确定示例在图形中的位置。 这可以在本地或在内核模式调试会话中完成。
 
-2.  确定样本是否流动下游。 如果可以在[GraphEdit](https://docs.microsoft.com/windows/win32/directshow/simulating-graph-building-with-graphedit)中再现 bug，请在关系图中放置一个中间筛选器以显示示例。
+2.  确定样本是否流动下游。 如果可以在 [GraphEdit](/windows/win32/directshow/simulating-graph-building-with-graphedit)中再现 bug，请在关系图中放置一个中间筛选器以显示示例。
 
 3.  确定是否正在调用处理例程。 为此，可以在此例程中附加一个内核模式调试器并设置断点。
 
  
-
- 
-
-
-
-
 

@@ -11,12 +11,12 @@ keywords:
 - 端口驱动程序 WDK 音频，端口类
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 250cb36a47e969d718b02601d1090f8dc1a52e6f
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 3bd0920d662c39d412e21398828fc3b58e667d90
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72830097"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89209929"
 ---
 # <a name="supporting-a-device"></a>支持某个设备
 
@@ -24,17 +24,17 @@ ms.locfileid: "72830097"
 ## <span id="supporting_a_device"></span><span id="SUPPORTING_A_DEVICE"></span>
 
 
-PortCls 系统驱动程序（*PortCls*）提供了多个内置的端口驱动程序来支持呈现和捕获 WAVE 和 MIDI 流的音频设备。
+PortCls 系统驱动程序 (*Portcls.sys*) 提供了几个内置的端口驱动程序来支持呈现和捕获 WAVE 和 MIDI 流的音频设备。
 
-所有端口驱动程序都公开从基接口[IPort](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nn-portcls-iport)派生的接口。 **IPort**继承基接口**IUnknown**中的方法。 **IPort**提供了以下附加方法：
+所有端口驱动程序都公开从基接口 [IPort](/windows-hardware/drivers/ddi/portcls/nn-portcls-iport)派生的接口。 **IPort** 继承基接口 **IUnknown**中的方法。 **IPort** 提供了以下附加方法：
 
-[**IPort::GetDeviceProperty**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-iport-getdeviceproperty)
+[**IPort::GetDeviceProperty**](/windows-hardware/drivers/ddi/portcls/nf-portcls-iport-getdeviceproperty)
 
 从注册表检索音频适配器的即插即用属性。
-[**IPort：： Init**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-iport-init)
+[**IPort：： Init**](/windows-hardware/drivers/ddi/portcls/nf-portcls-iport-init)
 
 初始化 port 对象。
-[**IPort::NewRegistryKey**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-iport-newregistrykey)
+[**IPort::NewRegistryKey**](/windows-hardware/drivers/ddi/portcls/nf-portcls-iport-newregistrykey)
 
 创建新的注册表项或打开现有的项。
 PortCls 实现以下端口驱动程序：
@@ -52,9 +52,4 @@ PortCls 实现以下端口驱动程序：
 [Dmu 端口驱动程序](dmus-port-driver.md)
 
  
-
- 
-
-
-
 

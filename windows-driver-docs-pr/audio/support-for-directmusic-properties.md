@@ -11,12 +11,12 @@ keywords:
 - 属性集 Guid WDK 音频
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 79eedcd1d98a356d89aa1a6412bd0bdf6b17a801
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 53b2d4d81700cf25fabbf2ae5eccdf18cf6467e0
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72832349"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89210349"
 ---
 # <a name="support-for-directmusic-properties"></a>对 DirectMusic 属性的支持
 
@@ -24,7 +24,7 @@ ms.locfileid: "72832349"
 ## <span id="support_for_directmusic_properties"></span><span id="SUPPORT_FOR_DIRECTMUSIC_PROPERTIES"></span>
 
 
-DirectMusic 合成微型端口驱动程序以属性项数组的形式指定其硬件功能。 每个属性项都是一个[**PCPROPERTY\_项**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/ns-portcls-pcproperty_item)结构，其中包含以下内容：
+DirectMusic 合成微型端口驱动程序以属性项数组的形式指定其硬件功能。 每个属性项都是一个 [**PCPROPERTY \_ 项**](/windows-hardware/drivers/ddi/portcls/ns-portcls-pcproperty_item) 结构，其中包含以下内容：
 
 -   定义由 DirectMusic 定义的特定硬件功能的属性集 GUID。
 
@@ -36,64 +36,59 @@ DirectMusic 合成微型端口驱动程序以属性项数组的形式指定其�
 
 DirectMusic 定义了以下属性集 Guid：
 
--   GUID\_DMU\_\_DLS1
+-   GUID \_ dmu \_ \_ DLS1
 
--   GUID\_DMU\_\_DLS2
+-   GUID \_ dmu \_ \_ DLS2
 
--   GUID\_DMU\_的\_效果
+-   GUID \_ dmu \_ 的 \_ 结果
 
--   GUID\_DMU\_\_GM\_硬件
+-   GUID \_ dmu \_ \_ 通用 \_ 硬件
 
--   GUID\_DMU\_功能\_GS\_支持
+-   GUID \_ dmu \_ \_ 支持的 \_ 支持 GS
 
--   GUID\_DMU\_的\_GS\_硬件
+-   GUID \_ dmu \_ 将 \_ GS \_ 硬件
 
--   GUID\_DMU\_\_INSTRUMENT2
+-   GUID \_ dmu \_ \_ INSTRUMENT2
 
--   GUID\_DMU\_\_LegacyCaps
+-   GUID \_ dmu \_ \_ LegacyCaps
 
--   GUID\_DMU\_\_MemorySize
+-   GUID \_ dmu \_ \_ MemorySize
 
--   GUID\_DMU\_\_SampleMemorySize
+-   GUID \_ dmu \_ \_ SampleMemorySize
 
--   GUID\_DMU\_\_SamplePlaybackRate
+-   GUID \_ dmu \_ \_ SamplePlaybackRate
 
--   GUID\_DMU\_\_SetSynthSink
+-   GUID \_ dmu \_ \_ SetSynthSink
 
--   GUID\_DMU\_\_SynthSink\_DSOUND
+-   GUID \_ dmu \_ \_ SynthSink \_ DSOUND
 
--   GUID\_DMU\_\_SynthSink\_波
+-   GUID \_ dmu \_ \_ SynthSink \_ WAVE
 
--   GUID\_DMU\_的\_卷
+-   GUID \_ dmu \_ 的 \_ 数量
 
--   GUID\_DMU\_\_WavesReverb
+-   GUID \_ dmu \_ \_ WavesReverb
 
--   GUID\_DMU\_\_WriteLatency
+-   GUID \_ dmu \_ \_ WriteLatency
 
--   GUID\_DMU\_\_WritePeriod
+-   GUID \_ dmu \_ \_ WritePeriod
 
--   GUID\_DMU\_支持\_XG\_
+-   GUID \_ dmu \_ \_ 支持 XG \_
 
--   GUID\_DMU\_\_XG\_硬件
+-   GUID \_ dmu \_ \_ XG \_ 硬件
 
-有关上述属性集 Guid 的定义，请参阅 Microsoft Windows SDK 中 DirectX 8.0 程序员参考中的[**KSPROPERTY**](https://docs.microsoft.com/previous-versions/ff564262(v=vs.85))结构说明。 为上述每个 Guid 设置的属性包含一个元素，该元素由零的索引标识。
+有关上述属性集 Guid 的定义，请参阅 Microsoft Windows SDK 中 DirectX 8.0 程序员参考中的 [**KSPROPERTY**](/previous-versions/ff564262(v=vs.85)) 结构说明。 为上述每个 Guid 设置的属性包含一个元素，该元素由零的索引标识。
 
 ### <a name="span-idikscontrol_interfacespanspan-idikscontrol_interfacespanikscontrol-interface"></a><span id="ikscontrol_interface"></span><span id="IKSCONTROL_INTERFACE"></span>IKsControl 接口
 
-[IKsControl](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksproxy/nn-ksproxy-ikscontrol)接口用于获取、设置或查询属性、事件和方法的基本支持。 此接口是 WDM 内核流式处理（KS）体系结构的一部分，但 DirectMusic 也使用它来公开 DirectMusic 端口的属性。 若要检索此接口，请调用**IDirectMusicPort：： QueryInterface**方法（如 Windows SDK 文档中所述），将*riid*参数设置为**IID\_IKsControl**。
+[IKsControl](/windows-hardware/drivers/ddi/ksproxy/nn-ksproxy-ikscontrol)接口用于获取、设置或查询属性、事件和方法的基本支持。 此接口是 WDM 内核流式传输 (KS) 体系结构的一部分，但 DirectMusic 也使用它来公开 DirectMusic 端口的属性。 若要检索此接口，请调用 Windows SDK 文档) 中所述的 **IDirectMusicPort：： QueryInterface** (方法，其中 *riid* 参数设置为 ** \_ IKsControl**。
 
-[IKsControl](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksproxy/nn-ksproxy-ikscontrol)接口有三种方法： [**KsProperty**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksproxy/nf-ksproxy-ikscontrol-ksproperty)、 [**KsEvent**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksproxy/nf-ksproxy-ikscontrol-ksevent)和[**KsMethod**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksproxy/nf-ksproxy-ikscontrol-ksmethod)。 目前，DirectMusic 只支持**KsProperty** 。
+[IKsControl](/windows-hardware/drivers/ddi/ksproxy/nn-ksproxy-ikscontrol)接口有三种方法： [**KsProperty**](/windows-hardware/drivers/ddi/ksproxy/nf-ksproxy-ikscontrol-ksproperty)、 [**KsEvent**](/windows-hardware/drivers/ddi/ksproxy/nf-ksproxy-ikscontrol-ksevent)和[**KsMethod**](/windows-hardware/drivers/ddi/ksproxy/nf-ksproxy-ikscontrol-ksmethod)。 目前，DirectMusic 只支持 **KsProperty** 。
 
-[**IKsControl：： KsProperty**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/nf-ks-ikscontrol-ksproperty)方法获取或设置属性的值。 将属性项请求路由到特定 DirectMusic 端口的方式取决于端口的实现方式：
+[**IKsControl：： KsProperty**](/windows-hardware/drivers/ddi/ks/nf-ks-ikscontrol-ksproperty)方法获取或设置属性的值。 将属性项请求路由到特定 DirectMusic 端口的方式取决于端口的实现方式：
 
--   在基于 Microsoft Win32 处理程序的多媒体调用（midiOut 和 midiIn Api）上，表示 DirectMusic 仿真的端口不支持任何属性。 使用**GUID\_dmu\_属性\_LegacyCaps**属性集 GUID 来查询端口是否是使用 Win32 多媒体调用来实现的。
+-   在 midiOut 和 midiIn Api)  (基于 Microsoft Win32 基于句柄的多媒体调用的端口不支持任何属性。 使用 **guid \_ dmu \_ \_ ** 属性集 guid 查询端口是否是使用 Win32 多媒体调用来实现的。
 
--   对表示可插接式软件合成器的端口的属性项请求将完全在用户模式下处理。 此类端口的拓扑是连接到接收器节点（ [IDirectMusicSynthSink](https://docs.microsoft.com/windows/desktop/api/dmusics/nn-dmusics-idirectmusicsynthsink)接口）的合成器（由[IDirectMusicSynth](https://docs.microsoft.com/windows/desktop/api/dmusics/nn-dmusics-idirectmusicsynth)接口表示）。 首先向合成器节点提供属性请求，然后将其提供给 "接收器" 节点（如果它无法被合成器识别）。
-
- 
+-   对表示可插接式软件合成器的端口的属性项请求将完全在用户模式下处理。 这种类型的端口的拓扑 [是一种](/windows/desktop/api/dmusics/nn-dmusics-idirectmusicsynth) 合成器 (，) 连接到接收器节点 ([IDirectMusicSynthSink](/windows/desktop/api/dmusics/nn-dmusics-idirectmusicsynthsink) 接口) 。 首先向合成器节点提供属性请求，然后将其提供给 "接收器" 节点（如果它无法被合成器识别）。
 
  
-
-
-
 

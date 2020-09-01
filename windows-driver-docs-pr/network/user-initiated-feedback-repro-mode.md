@@ -1,40 +1,40 @@
 ---
 title: 用户发起的反馈 - 再现模式
-description: 本主题介绍 IHV 跟踪 WDI 驱动程序中的日志记录用户启动反馈重现的模式。
+description: 本主题介绍在 WDI 驱动程序中通过 IHV 跟踪日志记录执行用户启动的反馈的重现模式。
 ms.assetid: C9784C2D-75B1-4229-A219-748C52F430D5
 ms.date: 06/15/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: bed127cb83a53ab8f507a9e590a40ba55468196f
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: dd74d1f1b36c3f816d275ab257a5397cadbf8a33
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67366539"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89211003"
 ---
 # <a name="user-initiated-feedback---repro-mode"></a>用户发起的反馈 - 再现模式
 
-用户启动反馈 (UIF) 重现模式允许系统以收集更详细日志记录时用户重现 bug。 如 UIF 正常模式下，这也可以通过使用 IHV 定义 ETW 提供程序创建新的 WMI 日志记录会话。 重现模式完成后，详细日志收集并发送给 Microsoft 进行分析。 没有用于启用或禁用详细固件日志 IHV 扩展点。 重现日志用于更多详细信息，以便能够跟踪客户有问题的原因。 因此，重现模式日志的日志文件大小设置为最大大小为 10 MB。 IHV 应使用 ETW 提供程序标志/级别/关键字值的更详细的设置。
+用户启动的反馈 (UIF) 重现模式允许系统在用户重现 bug 时收集更详细的日志记录。 与 UIF normal 模式一样，这也是通过使用 IHV 定义的 ETW 提供程序创建新的 WMI 日志记录会话来实现的。 在重现模式完成后，将收集详细日志并将其发送给 Microsoft 进行分析。 存在用于启用或禁用详细固件日志的 IHV 扩展点。 重现日志旨在更详细地跟踪客户遇到问题的原因。） 因此，重现模式日志的日志文件大小设置为最大大小为10MB。 IHV 应为 ETW 提供程序标志/级别/关键字值使用更详细的设置。
 
-当前 UIF 重现模式模型要求之前 IHV 反馈日志将包括 Microsoft 的所有提供程序 Guid、 级别和标记通知。 将提供程序添加到注册表，如本主题中所示启用 IHV 若要测试的适当级别的日志。
+当前 UIF 重现模式模型要求在包含 IHV 反馈日志之前，向 Microsoft 通知所有提供程序 Guid、级别和标志。 如本主题中所述，向注册表中添加提供程序可使 IHV 测试日志以获取适当的级别。
 
-## <a name="microsoft-provided-wmi-auto-logger-session"></a>Microsoft 提供 WMI 自动记录器会话
+## <a name="microsoft-provided-wmi-auto-logger-session"></a>Microsoft 提供的 WMI 自动记录器会话
 
-Microsoft 提供了与没有初始的 ETW 提供程序的 WMI 自动记录器会话。 IHV 的驱动程序安装时，它们必须添加的所需的 WMI 提供程序注册表项下由 Microsoft 提供的 WMI 自动记录器会话密钥。 IHV 不应更改任何自动记录器会话注册表值。 但是，所有 ETW 提供程序选项都可供包括启用级别 IHV、 与任何匹配、 匹配所有，等等。
+Microsoft 提供了不带初始 ETW 提供程序的 WMI 自动记录器会话。 安装 IHV 的驱动程序时，必须在 Microsoft 提供的 WMI 自动记录器会话密钥下添加所需的 WMI 提供程序注册表项。 IHV 不应更改任何自动记录器会话注册表值。 但是，所有 ETW 提供程序选项都可用于 IHV，包括 enable level、match any、match all 等。
 
 > [!IMPORTANT]
-> 作为自动记录器永远不会启用自动记录器。 使用这些值来验证重现模式 IHV 日志记录中所述[测试重现模式日志](#testing-the-repro-mode-logs)。 此外，我们可能会要求用户通过使用手动提交这些日志`netsh`工具。 提供程序 Guid、 级别和标志必须还在提交给 Microsoft，以及一个示例日志，因此它们会包括在重现模式 UIFs (请参阅[向 Microsoft 提交 IHV 提供程序](#submitting-ihv-providers-to-microsoft)。
+> 永远不会将自动记录器启用为自动记录器。 这些值用于验证 [测试重现模式日志](#testing-the-repro-mode-logs)中所述的重现模式 IHV 日志记录。 此外，我们可能会要求用户使用工具手动提交这些日志 `netsh` 。 提供程序 Guid、级别和标志还必须提交给 Microsoft，以及日志的示例，因此它们将包含在重现模式下 UIFs (参阅将 [IHV 提供程序提交给 Microsoft](#submitting-ihv-providers-to-microsoft)。
 
-WMI 自动记录器会话添加到具有以下路径的 HKLM 注册表配置单元：
+WMI 自动记录器会话已添加到具有以下路径的 HKLM 注册表配置单元：
 
 `HKLM,SYSTEM\CurrentControlSet\Control\WMI\Autologger\WifiDriverIHVSessionRepro`
 
-生成的 ETL 日志文件的位置如下：
+生成的 ETL 日志文件位于以下位置：
 
 `%SystemDrive%\System32\LogFiles\WMI\WifiDriverIHVSessionRepro.etl`
 
 ## <a name="ihv-driver-inf-changes"></a>IHV 驱动程序 INF 更改
 
-Ihv 需要更新其驱动程序 INF 文件，添加以下注册表项值，以便他们可以在 UIF 正常模式期间获取详细 IHV 日志。 以下代码片段将单个 ETW 提供程序添加到自动记录器会话提供的模板。 IHV 可以添加任意多个提供商，他们认为适合。 此外，启用级别值 IHV 特定于每个 ETW 提供程序，因此，他们就不需要一定会 （TRACE_LEVEL_CRITICAL、 TRACE_LEVEL_ERROR 等） 的 Microsoft 定义的值相同。
+Ihv 需要更新其驱动程序 INF 文件来添加以下注册表项值，以便它们可以在 UIF 正常模式下获取详细的 IHV 日志。 以下代码片段提供了用于将单个 ETW 提供程序添加到自动记录器会话的模板。 IHV 可以添加尽可能多的提供程序。 此外，每个 ETW 提供程序的启用级别值都是特定于 IHV 的，因此它们不必与 Microsoft 定义的值相同 (TRACE_LEVEL_CRITICAL、TRACE_LEVEL_ERROR 等 ) 。
 
 ### <a name="add-ihv-etw-providers"></a>添加 IHV ETW 提供程序
 
@@ -55,7 +55,7 @@ REG_QWORD = 0x000B0001
 
 ### <a name="example-values"></a>示例值
 
-此示例演示使用的所有关键字 WDI UE 条信息性级别设置：
+此示例显示了 WDI UE 信息级别设置和所有关键字：
 
 ```INF
 HKLM,SYSTEM\CurrentControlSet\Control\WMI\Autologger\WifiDriverIHVSession\{21ba7b61-05f8-41f1-9048-c09493dcfe38},Enabled,%REG_DWORD%,1
@@ -71,26 +71,26 @@ Standard EnableLevel values:
 0x0 – LogAlways
 ```
 
-## <a name="etw-control-callback"></a>ETW 控制回调
+## <a name="etw-control-callback"></a>ETW 控件回调
 
-IHV 可以注册其 ETW 日志记录代码中的 ETW 控制回调。 这使得 IHV ETW 提供程序启用、 禁用，或启动捕获控件时收到通知。 这样一来，IHV 可以打开或关闭重现模式的详细固件日志。
+IHV 可以在其 ETW 日志记录代码中注册 ETW 控制回调。 这使 IHV 在启用、禁用 ETW 提供程序或启动捕获控件时得到通知。 这样，IHV 就可以打开或关闭用于重现模式的详细固件日志。
 
 > [!NOTE]
-> 如果正常和重现模式之间共享的 ETW 提供程序，应关闭 IHV 定义 EnableLevel，定义在 INF 文件中，若要启动/停止详细固件日志密钥 IHV。
+> 如果 ETW 提供程序在正常和重现模式间共享，则 IHV 应关闭 INF 文件中定义的由 IHV 定义的 EnableLevel，以启动/停止详细固件日志。
 
-### <a name="etw-callback-function"></a>ETW 的回调函数
+### <a name="etw-callback-function"></a>ETW 回调函数
 
-以下代码片段演示如何注册回调的 ETW。 这是仅重要如果 IHV 需要执行特殊操作期间的开始和结束 UIF 重现模式 （如启动或停止日志记录详细固件）。 如果使用多个 ETW 提供程序，Ihv 可以考虑仅实现一个回调以启动固件日志记录。 将所有固件记录必须都路由到 IHV 的 ETW 跟踪提供程序。 UIF 的诊断工具将仅收集 IHV 的 ETW 提供程序跟踪。
+下面的代码片段演示如何注册 ETW 回调。 这仅在以下情况下才重要： IHV 需要在 UIF 重现模式开始和结束期间采取特殊措施 (如启动或停止详细固件日志记录) 。 如果使用多个 ETW 提供程序，则 Ihv 可能只考虑实现一个回调来启动固件日志记录。 所有固件日志记录都必须路由到 IHV 的 ETW 跟踪提供程序。 UIF 的诊断工具将只收集 IHV 的 ETW 提供程序的跟踪。
 
-有两种方法来启用 ETW 回调，具体取决于如何实现 ETW 日志记录。
+可以通过两种方法启用 ETW 回调，具体取决于你实现 ETW 日志记录的方式。
 
-1. 使用自动生成的代码通过表现 ETWs `MC.exe`。 请参阅[编写检测清单](https://docs.microsoft.com/windows/desktop/WES/writing-an-instrumentation-manifest)的更多详细信息。
-    1. 以下代码片段 (etwtracingevents.h) 中的标头是已通过创建一个自动生成 ETW 事件标头`MC.exe`。 假定，已经生成的 ETW 事件，因此本主题不会重点此部分。
-    1. 必须包括自动生成 ETW 标头之前定义 MCGEN_PRIVATE_ENABLE_CALLBACK_V2。 否则，不会调用回调。
-1. 通过 ETW 回调注册[ **EventRegister** ](https://docs.microsoft.com/windows/desktop/api/evntprov/nf-evntprov-eventregister) API。
-    1. ETW 回调提供程序必须将传递给**EventRegister**时注册跟踪提供程序的功能。
+1. 通过自动生成的代码 ETWs 的清单 `MC.exe` 。 请参阅 [编写检测清单](/windows/desktop/WES/writing-an-instrumentation-manifest) 了解更多详细信息。
+    1. 以下代码片段中的标头 (etwtracingevents) 是通过创建的自动生成的 ETW 事件标头 `MC.exe` 。 假定已经生成了 ETW 事件，因此本主题并不关注此部分。
+    1. 必须先定义 MCGEN_PRIVATE_ENABLE_CALLBACK_V2，然后才能包含自动生成的 ETW 标头。 否则，将不会调用该回调。
+1. 通过 [**EventRegister**](/windows/desktop/api/evntprov/nf-evntprov-eventregister) API 注册 ETW 回调。
+    1. 注册跟踪提供程序时，必须将 ETW 回调提供程序传递到 **EventRegister** 函数。
 
-此代码段显示了 ETW 回调函数的原型。
+此代码片段显示了 ETW 回调函数的原型。
 
 ```C++
 #include <evntprov.h>
@@ -107,7 +107,7 @@ EtwEventControlCallback(
     );
 ```
 
-下面的代码只是如果您使用，则使用自动生成的 ETW 事件需要`MC.exe`工具。
+仅当使用工具自动生成 ETW 事件时，才需要以下代码 `MC.exe` 。
 
 ```C++
 #define MCGEN_PRIVATE_ENABLE_CALLBACK_V2 EtwEventControlCallback
@@ -117,7 +117,7 @@ EtwEventControlCallback(
                               // defined
 ```
 
-*ControlCode* ETW 回调的参数指示当启用或禁用该提供程序。 在中定义的值`<evntrace.h>`且具有以下值：
+ETW 回调的 *ControlCode* 参数指示何时启用或禁用该提供程序。 值在中定义 `<evntrace.h>` ，并且具有以下值：
 
 ```C++
 #define EVENT_CONTROL_CODE_DISABLE_PROVIDER 0
@@ -125,28 +125,28 @@ EtwEventControlCallback(
 #define EVENT_CONTROL_CODE_CAPTURE_STATE    2
 ```
 
-#### <a name="eventcontrolcodeenableprovider"></a>EVENT_CONTROL_CODE_ENABLE_PROVIDER
+#### <a name="event_control_code_enable_provider"></a>EVENT_CONTROL_CODE_ENABLE_PROVIDER
 
-此标志启用 ETW 提供程序，并指示 UIF 重现模式会话已启动。 这应该用于启动固件详细日志记录和/或数据包日志记录。
+此标志启用 ETW 提供程序，并指示 UIF 重现模式会话已启动。 这应该用于启动详细的固件日志记录和/或数据包日志记录。
 
-#### <a name="eventcontrolcodedisableprovider"></a>EVENT_CONTROL_CODE_DISABLE_PROVIDER
+#### <a name="event_control_code_disable_provider"></a>EVENT_CONTROL_CODE_DISABLE_PROVIDER
 
-此标志禁用 ETW 提供程序，并指示 UIF 重现模式会话已结束。 IHV 的实现应刷新和如果此时重置固件日志*级别*参数匹配的 INF 文件 (在下一节的示例中为 0xFF) 中的 IHV 指定 UIF 重现模式级别。
+此标志禁用 ETW 提供程序，并指示 UIF 重现模式会话已结束。 如果 *级别* 参数与以下部分的示例)  (0xff 中的 INF 文件中的 IHV 指定的 UIF 重现模式级别匹配，则 IHV 的实现应在此时刷新和重置固件日志。
 
-#### <a name="eventcontrolcodecapturestate"></a>EVENT_CONTROL_CODE_CAPTURE_STATE
+#### <a name="event_control_code_capture_state"></a>EVENT_CONTROL_CODE_CAPTURE_STATE
 
-此标志请求提供程序记录其状态信息。 这通常称为将内存中日志刷新到磁盘。 IHV 的实现应刷新和如果此时重置固件日志*级别*参数匹配的 INF 文件 (在下一节的示例中为 0xFF) 中的 IHV 指定 UIF 重现模式级别。
+此标志请求提供程序记录其状态信息。 通常会调用此，将内存中的日志刷新到磁盘。 如果 *级别* 参数与以下部分的示例)  (0xff 中的 INF 文件中的 IHV 指定的 UIF 重现模式级别匹配，则 IHV 的实现应在此时刷新和重置固件日志。
 
-### <a name="sample-code"></a>示例代码
+### <a name="sample-code"></a>代码示例
 
-以下是可用作模板来启用详细的驱动程序和固件的 UIF 重现模式方案的日志记录的示例 ETW 回调实现。
+下面是一个示例 ETW 回调实现，可将其用作模板，以便为 UIF 重现模式方案启用详细驱动程序和固件日志记录。
 
 > [!NOTE]
-> Ihv 需要刷新所有挂起的固件日志都**EVENT_CONTROL_CODE_CAPTURE_STATE**并**EVENT_CONTROL_CODE_DISABLE_PROVIDER**控制代码。
+> Ihv 需要刷新 **EVENT_CONTROL_CODE_CAPTURE_STATE** 和 **EVENT_CONTROL_CODE_DISABLE_PROVIDER** 控制代码的任何挂起的固件日志。
 
-之后**EVENT_CONTROL_CODE_CAPTURE_STATE**是调用，UIF 诊断工具调用 ETW 回调两个更多时间与**EVENT_CONTROL_CODE_ENABLE_PROVIDER**控制代码。 因此，若要避免重新启用固件日志记录，状态机将从移动*ReproModeStateCaptured*状态变为*ReproModeStateFinal*状态之前将移回*ReproModeStateNotStarted*状态。 **EVENT_CONTROL_CODE_DISABLE_PROVIDER**控制代码仅用于禁用此提供程序。 这不是 UIF 过程的一部分，但仍需要将接受。
+调用 **EVENT_CONTROL_CODE_CAPTURE_STATE** 后，UIF 诊断工具将多次调用 ETW 回调，并提供 **EVENT_CONTROL_CODE_ENABLE_PROVIDER** 控制代码。 因此，为了避免重新启用固件日志记录，状态机将从 *ReproModeStateCaptured* 状态移动到 *ReproModeStateFinal* 状态，然后再移回到 *ReproModeStateNotStarted* 状态。 **EVENT_CONTROL_CODE_DISABLE_PROVIDER**控制代码仅用于禁用该提供程序。 这不是 UIF 过程的一部分，但仍需遵守。
 
-应更改 Ihv **IHV_ETW_REPRO_MODE_LEVEL**值在下面的示例以匹配在 INF 文件中设置的重现模式级别。
+Ihv 应更改以下示例中的 **IHV_ETW_REPRO_MODE_LEVEL** 值，以匹配 INF 文件中设置的重现模式级别。
 
 ```C++
 #define IHV_ETW_REPRO_MODE_LEVEL 0xFF // This value must match the repro mode              
@@ -252,17 +252,17 @@ EtwEventControlCallback(
 - netsh wlan IHV startlogging
 - netsh wlan IHV stoplogging
 
-客户也使用这些命令手动从设备收集日志。
+客户还可以使用这些命令从设备中手动收集日志。
 
-## <a name="submitting-ihv-providers-to-microsoft"></a>提交给 Microsoft 的 IHV 提供程序
+## <a name="submitting-ihv-providers-to-microsoft"></a>将 IHV 提供程序提交给 Microsoft
 
-Ihv 提交重现模式用户启动反馈的最后一步是为与 Microsoft 联系，并提供请求的提供程序 Guid、 级别和标志以及示例日志数据以供审核。 日志记录经过审批后，提供程序将添加到用户启动的反馈系统中。 
+Ihv 提交重现模式用户启动的反馈的最后一步是与 Microsoft 联系，并提供所请求的提供程序 Guid、级别和标志以及用于评审的示例日志数据。 审核日志记录后，将向用户启动的反馈系统添加提供程序。 
 
 > [!NOTE]
-> 对提供程序 Guid、 级别或标志后提交不会影响 UIF 日志进行任何修改。
+> 提交后对提供程序 Guid、级别或标志的任何修改都不会对 UIF 日志产生任何影响。
 
 ## <a name="related-links"></a>相关链接
 
-[用户启动使用 IHV 跟踪日志记录的反馈](user-initiated-feedback-with-ihv-trace-logging.md)
+[用户使用 IHV 跟踪日志记录发起的反馈](user-initiated-feedback-with-ihv-trace-logging.md)
 
-[用户启动的反馈-正常模式](user-initiated-feedback-normal-mode.md)
+[用户发起的反馈 - 正常模式](user-initiated-feedback-normal-mode.md)

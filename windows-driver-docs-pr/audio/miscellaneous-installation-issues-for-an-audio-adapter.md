@@ -8,12 +8,12 @@ keywords:
 - 端口类音频适配器 WDK，安装
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 484c26d67c15a042090d999423c15adc8f4e3f2c
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: a14b68dcea3f0e4b606f670d9b17b4407b7912b0
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67355348"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89210571"
 ---
 # <a name="miscellaneous-installation-issues-for-an-audio-adapter"></a>音频适配器的其他安装问题
 
@@ -21,28 +21,23 @@ ms.locfileid: "67355348"
 ## <span id="miscellaneous_installation_issues_for_an_audio_adapter"></span><span id="MISCELLANEOUS_INSTALLATION_ISSUES_FOR_AN_AUDIO_ADAPTER"></span>
 
 
-列出了最常见的安装问题的音频的适配器：
+列出的音频适配器最常见的安装问题如下：
 
--   初始安装期间的音频设备或进行会破坏现有的音频设置的操作系统升级时，应确保该驱动程序，设置将初始化为合理的默认值。 有关详细信息，请参阅[默认音频音量设置](default-audio-volume-settings.md)。
+-   在音频设备的初始安装过程中，或在对现有音频设置进行操作系统升级时，驱动程序应确保将设置初始化为合理的默认值。 有关详细信息，请参阅 [默认音频音量设置](default-audio-volume-settings.md)。
 
--   有时在安装期间，OEM 想要重写默认音频音量级别或进行硬编码音频类驱动程序的默认麦克风提升级别。 这是不可能高达 Windows 7 的 Windows 的早期版本中实现的。 在 Windows 8 和更高版本，现在可以自定义这些设置的默认值。 有关如何执行此操作的详细信息，请参阅[自定义默认音频音量设置](customizing-default-audio-volume-settings.md)。
+-   有时，在安装过程中，OEM 希望覆盖默认音频音量级别，或由音频类驱动程序硬编码的默认麦克风提升级别。 在 windows 的早期版本中不可能出现这种情况。 在 Windows 8 及更高版本中，现在可以自定义这些设置的默认值。 有关如何执行此操作的详细信息，请参阅 [自定义默认音频音量设置](customizing-default-audio-volume-settings.md)。
 
--   在 Windows Vista 和更高版本操作系统中，将音频设备的主音量级别的默认设置是六个分贝的衰减，并在安装时设置。 无论何种频率重新启动您的计算机将保留此默认主音量级别设置或安装完成后，选择的任何其他级别。 若要选择退出卷级持久性可用于 AddProperty 注册表指令的 INF 文件，请通过设置主键的值\_AudioDevice\_DontPersistControls 注册表项。 有关如何执行此操作的详细信息，请参阅[选择的卷级别持久性](opting-out-of-volume-level-persistence.md)。
+-   在 Windows Vista 和更高版本的操作系统中，音频设备的主音量级别的默认设置为6分贝的衰减，在安装时设置该设置。 此默认的主音量级别设置或安装后选择的任何其他级别，不管你重新启动计算机的频率如何，都不会保留。 若要选择退出卷级持久性，可以通过 INF 文件使用 AddProperty 注册表指令来设置 PKEY \_ AudioDevice \_ DontPersistControls 注册表项的值。 有关如何执行此操作的详细信息，请参阅退出 [卷级持久性](opting-out-of-volume-level-persistence.md)。
 
--   进行操作系统升级时，可以经常保留音频设备的已安装的驱动程序和注册表设置。 有关如何使此过程对用户透明的指南，请参阅[操作系统升级](operating-system-upgrades.md)。
+-   在操作系统升级过程中，可以经常保留音频设备的已安装驱动程序和注册表设置。 有关如何使此过程对用户透明的指导，请参阅 [操作系统升级](operating-system-upgrades.md)。
 
--   音频驱动程序轻松地设计为允许多个音频适配器卡插入到同一系统的相同实例。 有关详细信息，请参阅[系统范围内唯一设备 Id](system-wide-unique-device-ids.md)。
+-   音频驱动程序可以轻松地设计为允许将多个相同的音频适配器实例插入同一系统。 有关详细信息，请参阅 [系统范围的唯一设备 id](system-wide-unique-device-ids.md)。
 
--   INF 文件关键字所共有的所有设备类的列表，请参阅[INF 文件的部分和指令](https://docs.microsoft.com/windows-hardware/drivers/install/inf-file-sections-and-directives)。 但是，此列表不包含多个特定于媒体的关键字。 有关详细信息，请参阅[特定于媒体的 INF 文件关键字](media-specific-inf-file-keywords.md)。
+-   有关所有设备类共有的 INF 文件关键字的列表，请参阅 [Inf 文件部分和指令](https://docs.microsoft.com/windows-hardware/drivers/install/inf-file-sections-and-directives)。 但是，此列表不包含多个特定于媒体的关键字。 有关详细信息，请参阅 [特定于媒体的 INF 文件关键字](media-specific-inf-file-keywords.md)。
 
--   有关如何适配器驱动程序或微型端口驱动程序可以获取安装信息从注册表的信息，请参阅[检索设备安装程序信息](retrieving-device-setup-information.md)。
+-   有关适配器驱动程序或微型端口驱动程序如何从注册表获取安装信息的信息，请参阅 [检索设备安装信息](retrieving-device-setup-information.md)。
 
--   有关 Windows Vista 所支持的音频适配器不具有物理卷控件旋钮的信息，请参阅[Windows Vista 软件卷控件支持](https://docs.microsoft.com/windows-hardware/drivers/audio/software-volume-control-support)主题。
-
- 
+-   有关 Windows Vista 对不具有物理音量控制旋钮的音频适配器的支持的信息，请参阅 [Windows Vista 软件音量控制支持](./software-volume-control-support.md) 主题。
 
  
-
-
-
 

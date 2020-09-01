@@ -1,6 +1,6 @@
 ---
-title: KSPROPERTY\_RTAUDIO\_查询\_通知\_支持
-description: 客户端应用程序使用 KSPROPERTY\_RTAUDIO\_查询\_通知\_支持属性来确定是否音频驱动程序可以通知客户端应用程序时执行的进程完成提交的缓冲区。
+title: KSPROPERTY \_ RTAUDIO \_ 查询 \_ 通知 \_ 支持
+description: 客户端应用程序使用 KSPROPERTY \_ RTAUDIO \_ 查询 \_ 通知 \_ 支持属性来确定音频驱动程序是否可以在提交的缓冲区上执行的进程完成时通知客户端应用程序。
 ms.assetid: 7e0910df-4b76-4e61-9f88-8953860f3abe
 keywords:
 - KSPROPERTY_RTAUDIO_QUERY_NOTIFICATION_SUPPORT 音频设备
@@ -14,19 +14,19 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c0bec65c2f7eb92fe4c8b1533828eba302cdbe1d
-ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
+ms.openlocfilehash: 0c4434f4bb5e0a15447afa440fd7c7212a97b4a7
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67391653"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89210917"
 ---
-# <a name="kspropertyrtaudioquerynotificationsupport"></a>KSPROPERTY\_RTAUDIO\_查询\_通知\_支持
+# <a name="ksproperty_rtaudio_query_notification_support"></a>KSPROPERTY \_ RTAUDIO \_ 查询 \_ 通知 \_ 支持
 
 
-客户端应用程序使用`KSPROPERTY_RTAUDIO_QUERY_NOTIFICATION_SUPPORT`属性来确定是否音频驱动程序可以通知客户端应用程序时提交的缓冲区执行的进程完成。
+客户端应用程序使用 `KSPROPERTY_RTAUDIO_QUERY_NOTIFICATION_SUPPORT` 属性来确定音频驱动程序是否可以在提交的缓冲区上执行的进程完成时通知客户端应用程序。
 
-### <a name="span-idusagesummarytablespanspan-idusagesummarytablespanspan-idusagesummarytablespanusage-summary-table"></a><span id="Usage_Summary_Table"></span><span id="usage_summary_table"></span><span id="USAGE_SUMMARY_TABLE"></span>使用率摘要表
+### <a name="span-idusage_summary_tablespanspan-idusage_summary_tablespanspan-idusage_summary_tablespanusage-summary-table"></a><span id="Usage_Summary_Table"></span><span id="usage_summary_table"></span><span id="USAGE_SUMMARY_TABLE"></span>使用情况摘要表
 
 <table>
 <colgroup>
@@ -38,7 +38,7 @@ ms.locfileid: "67391653"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Get</th>
+<th align="left">获取</th>
 <th align="left">设置</th>
 <th align="left">目标</th>
 <th align="left">属性描述符类型</th>
@@ -50,7 +50,7 @@ ms.locfileid: "67391653"
 <td align="left"><p>是</p></td>
 <td align="left"><p>否</p></td>
 <td align="left"><p>Pin</p></td>
-<td align="left"><p><a href="https://docs.microsoft.com/previous-versions/ff564262(v=vs.85)" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/ff564262(v=vs.85))"><strong>KSPROPERTY</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/previous-versions/ff564262(v=vs.85)" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](/previous-versions/ff564262(v=vs.85))"><strong>KSPROPERTY</strong></a></p></td>
 <td align="left"><p>BOOL</p></td>
 </tr>
 </tbody>
@@ -58,11 +58,11 @@ ms.locfileid: "67391653"
 
  
 
-属性值为类型 BOOL 的变量。
+属性值为 BOOL 类型的变量。
 
-### <a name="span-idreturnvaluespanspan-idreturnvaluespanspan-idreturnvaluespanreturn-value"></a><span id="Return_Value"></span><span id="return_value"></span><span id="RETURN_VALUE"></span>返回值
+### <a name="span-idreturn_valuespanspan-idreturn_valuespanspan-idreturn_valuespanreturn-value"></a><span id="Return_Value"></span><span id="return_value"></span><span id="RETURN_VALUE"></span>返回值
 
-以响应`KSPROPERTY_RTAUDIO_QUERY_NOTIFICATION_SUPPORT`属性请求驱动程序将返回**TRUE**或**FALSE**值。 此值取决于驱动程序是否支持该属性。
+为响应 `KSPROPERTY_RTAUDIO_QUERY_NOTIFICATION_SUPPORT` 属性请求，驱动程序将返回 **TRUE** 或 **FALSE** 值。 此值取决于驱动程序是否支持属性。
 
 <a name="remarks"></a>备注
 -------
@@ -79,27 +79,20 @@ ms.locfileid: "67391653"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>Version</p></td>
-<td align="left"><p>在 Windows 7 和更高版本的 Windows 操作系统中可用。</p></td>
+<td align="left"><p>版本</p></td>
+<td align="left"><p>在 windows 7 和更高版本的 Windows 操作系统中可用。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>Header</p></td>
-<td align="left">Ksmedia.h （包括 Ksmedia.h）</td>
+<td align="left"><p>标头</p></td>
+<td align="left">Ksmedia (包含 Ksmedia) </td>
 </tr>
 </tbody>
 </table>
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
-[**KSPROPERTY**](https://docs.microsoft.com/previous-versions/ff564262(v=vs.85))
-
- 
+[**KSPROPERTY**](/previous-versions/ff564262(v=vs.85))
 
  
-
-
-
-
-
 

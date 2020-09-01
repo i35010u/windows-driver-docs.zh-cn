@@ -1,6 +1,6 @@
 ---
-title: 安装的音频适配器服务
-description: 安装的音频适配器服务
+title: 安装音频适配器服务
+description: 安装音频适配器服务
 ms.assetid: 465005da-bf06-497b-801c-fe5aa19a3974
 keywords:
 - 音频适配器 WDK，服务安装
@@ -9,16 +9,16 @@ keywords:
 - 适配器服务 WDK 音频
 ms.date: 10/26/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 69fab800bc97d16bc70d0579eb365d802547e367
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 5a2b9269b695a5af41ad502878921f577b92cb87
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67359894"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89209437"
 ---
 # <a name="installing-an-audio-adapter-service-in-windows"></a>在 Windows 中安装音频适配器服务
 
-以下[ **INF AddService 指令**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addservice-directive)的 XYZ 音频设备安装适配器驱动程序 Xyzaud.sys:
+以下 [**INF AddService 指令**](../install/inf-addservice-directive.md) 将为 XYZ 音频设备安装适配器驱动程序 Xyzaud.sys：
 
 ```cpp
   [XYZ-Audio-Device.Services.NTX86]
@@ -33,9 +33,4 @@ ms.locfileid: "67359894"
 ```
 
  
-
- 
-
-
-
 

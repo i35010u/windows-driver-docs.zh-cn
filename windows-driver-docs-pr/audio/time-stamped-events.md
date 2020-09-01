@@ -3,20 +3,20 @@ title: 带时间戳的事件
 description: 带时间戳的事件
 ms.assetid: 8db89e31-bfd7-48cf-9eb2-12ac7784cc31
 keywords:
-- 合成器 WDK 音频，时间戳
+- 合成 WDK 音频，时间戳
 - 时间戳 WDK 音频
-- 带有时间戳事件 WDK 音频
+- 带有时间戳的事件 WDK 音频
 - 事件 WDK 音频
-- PCM 缓冲区 WDK 音频
-- 延迟 WDK 音频、 时钟
+- PCM 缓冲 WDK 音频
+- 延迟 WDK 音频，时钟
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0230c56142540ec0e9f9017632afb10e61f8345e
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 035c59e7f5bbb434404ac125d00dfa6d12e78e62
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67354202"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89210327"
 ---
 # <a name="time-stamped-events"></a>带时间戳的事件
 
@@ -24,40 +24,35 @@ ms.locfileid: "67354202"
 ## <span id="time_stamped_events"></span><span id="TIME_STAMPED_EVENTS"></span>
 
 
-合成器计时重要特性是而不是需要播放的确切时间发送下，每个注意是时间戳和放置于缓冲区。 然后处理和两个指定的时间戳的时间 （毫秒） 内播放此缓冲区。 （尽管计时解决方法是在数百个纳秒为单位，但我们将介绍根据毫秒，这将会更方便的时间单位，本次讨论中。）
+合成器计时的大图是，无需在需要播放时准确地发送注释，每个注释都将进行时间戳并放置在一个缓冲区中。 然后，在时间戳指定的两毫秒内处理并播放此缓冲区。  (尽管计时解决方法分为数百毫微秒，但我们将以毫秒为单位进行讨论，这是此讨论的更方便的时间单位。 ) 
 
-由于延迟到系统通过延迟时钟，加盖时间戳事件可用于其适当的时间，在播放的缓冲区中等待而不是只是事件放入队列，且希望的延迟较低。
+由于在延迟时间内系统会对系统造成延迟，因此，带时间戳的事件可能会在缓冲区中等待等待正确的时间，而不是仅仅将事件放入队列中，希望延迟较低。
 
-主时钟实现 COM [ **IReferenceClock** ](https://docs.microsoft.com/windows/desktop/wmformat/ireferenceclock)接口 （Microsoft Windows SDK 文档中所述）。 此引用时使用的所有设备在系统上。
+主时钟实现 (COM [**IReferenceClock**](/windows/desktop/wmformat/ireferenceclock) 接口，) Microsoft Windows SDK 文档中所述。 系统上的所有设备都使用此引用时间。
 
-Microsoft 的批接收器实现生成唤醒每隔 20 毫秒一个线程。 线程的任务是创建另一个缓冲区，并将其传送到 DirectSound。 若要创建该缓冲区，它调用合成器，并要求它来呈现指定的数量的音乐数据。 它要求输入量决定实际线程唤醒时，这不太可能完全 20 毫秒。
+Microsoft 的 wave 接收器实现生成一个线程，该线程每隔20毫秒唤醒一次。 线程的作业是创建另一个缓冲区，并将其交给 DirectSound。 若要创建该缓冲区，它会调入合成器并要求其呈现指定数量的音乐数据。 它要求的量取决于线程唤醒的实际时间，这不太可能正好为20毫秒。
 
-什么实际传递到合成器是只需指向开始写入数据到 PCM 缓冲区和一个长度参数，指定要写入数据量的内存中的位置。 合成器然后可以将 PCM 数据写入到此缓冲区并填充它最多指定的量。 也就是说，它将呈现从起始地址直到达到指定的长度。 内存块可以 DirectSoundBuffer （这是默认情况下），但也可能是 DirectShow 图形或其他由批接收器定义目标。
+实际传入合成器的方法只是一个指针，指向在内存中开始将数据写入到 PCM 缓冲区的位置，并指定一个长度参数，用于指定要写入的数据量。 然后，合成器可以将 PCM 数据写入此缓冲区，并将其填充到指定的量。 也就是说，它会从起始地址呈现，直到到达指定长度。 这种内存块可以是 DirectSoundBuffer (这是默认情况下) 的默认情况，但也可以是一个 DirectShow 图形，也可以是由波形接收器定义的某个其他目标。
 
-PCM 缓冲区是从概念上讲循环 （即，不断循环它）。 合成器呈现的缓冲区的后续片段描述声音的 16 位数字。 切片大小略有不同每次都会将唤醒线程，因为接收器无法唤醒完全每隔 20 毫秒。 因此每次唤醒线程 does，它充当 catch 来确定多久它应正在通过缓冲区之前重新进入睡眠状态。
+PCM 缓冲区在概念上是循环的 (也就是说，它会不断地循环) 。 合成器呈现16位数字，将声音描述为缓冲区的后续切片。 每次线程 awakens 时，切片大小都略有不同，因为接收器每隔20毫秒就无法唤醒。 因此，每次线程唤醒时，它会一直运行，以确定它在返回到休眠状态之前应该在整个缓冲区中的进度。
 
-从应用程序的角度来看，合成器端口驱动程序本身具有[ **IDirectMusicSynth::GetLatencyClock** ](https://docs.microsoft.com/windows/desktop/api/dmusics/nf-dmusics-idirectmusicsynth-getlatencyclock)从批接收器获取时钟的函数。 因此，有两个时钟：
+从应用程序的角度来看，合成端口驱动程序本身具有一个 [**IDirectMusicSynth：： GetLatencyClock**](/windows/desktop/api/dmusics/nf-dmusics-idirectmusicsynth-getlatencyclock) 函数，该函数可从波形接收器获取时钟。 因此有两个时钟：
 
--   任何人，包括批接收器侦听主时钟。
+-   每个人（包括波形接收器）侦听的主时钟。
 
--   批接收器，用作 DirectMusic 端口提供延迟时钟可以看到的应用程序实现延迟时钟。
+-   由波形接收器实现的延迟时钟，应用程序将其视为提供延迟时钟的 DirectMusic 端口。
 
-换而言之，应用程序要求提供延迟时钟，但将其视为即将从 DirectMusic 端口抽象而不是批接收器的时钟。
+换句话说，应用程序会要求延迟时钟，但会将时钟视为来自 DirectMusic 端口抽象，而不是来自波形接收器。
 
-返回此延迟时钟的时间是缓冲区可呈现给，最早时间，因为合成器具有已呈现到缓冲区中该点为止。 如果合成器必须呈现在其最后一个写入的较小的缓冲区，延迟也是较小。
+此延迟时钟返回的时间是缓冲区可呈现到的最早时间，因为合成器已在缓冲区中的该位置上呈现。 如果合成器在其上次写入时呈现了较小的缓冲区，则延迟也会更小。
 
-因此，批接收器调用[ **IDirectMusicSynth::Render** ](https://docs.microsoft.com/windows/desktop/api/dmusics/nf-dmusics-idirectmusicsynth-render)上合成器，显示缓冲区和请求，它使用填充呈现数据。 下图中所示，合成器采用加盖时间戳的所有事件为进入[ **IDirectMusicSynth::PlayBuffer** ](https://docs.microsoft.com/windows/desktop/api/dmusics/nf-dmusics-idirectmusicsynth-playbuffer)函数调用。
+因此，波形接收器对合成器调用 [**IDirectMusicSynth：： Render**](/windows/desktop/api/dmusics/nf-dmusics-idirectmusicsynth-render) ，并显示缓冲区并请求用呈现的数据进行填充。 如下图所示，合成 [**IDirectMusicSynth：:P laybuffer**](/windows/desktop/api/dmusics/nf-dmusics-idirectmusicsynth-playbuffer) 函数调用导致的所有带时间戳的事件。
 
-![说明的时间戳的消息队列的关系图](images/dmevents.png)
+![阐释带有时间戳的消息的队列的关系图](images/dmevents.png)
 
-每个输入的缓冲区包含时间戳的消息。 每个这些消息放入队列以在指定时间戳的时间呈现到缓冲区。
+每个输入缓冲区包含带有时间戳的消息。 其中每个消息都放入队列中，以便在其时间戳指定的时间呈现到缓冲区中。
 
-有关此模型的重要事情之一是，没有任何特定顺序以外的时间戳。 这些事件中，流式传输，因此可以将它们添加到队列在呈现之前的任何时间。 所有内容都是基于事件的时间。 例如，如果当前为 400 个时间单位的参考时间，然后所有内容带时间戳 400 次发生这种情况发生的情况现在。 事件时间戳，从现在起的 10 个单位发生这种情况在 410 时将发生。
-
- 
+此模型的一个重要问题是，时间戳以外没有特定顺序。 这些事件是在中进行流式处理的，因此可以在呈现前随时将它们添加到队列中。 一切都是基于事件的，与时间有关。 例如，如果引用时间当前为400时间单位，则时间戳的所有时间都将在时间400发生。 事件时间戳现在会出现10个单位，此时将在410。
 
  
-
-
-
 

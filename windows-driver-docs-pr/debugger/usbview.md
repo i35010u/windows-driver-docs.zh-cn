@@ -6,12 +6,12 @@ keywords:
 - USBView
 ms.date: 02/22/2017
 ms.localizationpriority: high
-ms.openlocfilehash: 3a7f5270d5b4231129571f391989581754fc14df
-ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
+ms.openlocfilehash: 44900de91bf2f9c4cb9acd7598dfd45f1104d610
+ms.sourcegitcommit: 17c1bbc5ea0bef3bbc87794b030a073f905dc942
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84533824"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88802803"
 ---
 # <a name="usbview"></a>USBView
 
@@ -60,11 +60,11 @@ USBView 可以枚举 USB 主机控制器、USB 集线器和连接的 USB 设备�
 
 5. 在设备管理器中展开“通用串行总线控制器”节点，然后选择所讨论的设备  。
 
-7. 右键单击以选择“属性”并查看摘要设备状态信息  。
+6. 选择并按住（或右键单击）以选择“属性”，然后查看摘要设备状态信息。
 
-8. 选择“详细信息”选项卡查看其他信息  。 
+7. 选择“详细信息”选项卡查看其他信息  。 
 
-9. 选择“属性”以查看详细信息，例如“状态”或“问题代码”    。
+8. 选择“属性”以查看详细信息，例如“状态”或“问题代码”    。
 
 
 ## <a name="windows-usb-troubleshooter"></a>Windows USB 疑难解答

@@ -10,33 +10,33 @@ keywords:
 - INF 文件 WDK Windows 筛选平台
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: eaaf81a58225e3df48ef086ffcefc0cab7abb669
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 838aa385dfbc57077e7d9214d4a3ec650c175042
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67381249"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89209305"
 ---
 # <a name="installation-of-callout-drivers"></a>标注驱动程序的安装
 
 
-可以通过右键单击驱动程序的安装信息文件 (INF) 文件并选择安装的标注驱动程序**安装**从显示的弹出菜单。
+可以通过右键单击驱动程序的安装信息文件 (INF) 文件，然后从出现的弹出菜单中选择 " **安装** " 来安装标注驱动程序。
 
-标注驱动程序已成功安装后，它可以加载 （已启动） 通过在命令提示符下键入以下内容：
+成功安装了标注驱动程序后，可通过在命令提示符下键入以下内容， (启动) 加载该驱动程序：
 
 ```cpp
 net start drivername
 ```
 
-为指定的值根据**StartType**中的条目\[ *drivername*。服务\]INF 文件标注驱动程序的部分可能会自动加载下次重新启动系统。 标注驱动程序通常应指定零 (服务\_启动\_开始) 为此值使是否加载了驱动程序，并且其标注在注册之前筛选器引擎已启动。 请参阅[ **INF AddService 指令**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addservice-directive)有关详细信息。
+根据为 drivername 中的**StartType**条目指定的值 \[ *drivername*。服务 " \] 部分中，系统下次重新启动时，可能会自动加载标注驱动程序。 标注驱动程序通常应为此值指定零 (服务 \_ 启动 \_ 开始) ，以便在启动筛选器引擎之前加载驱动程序并注册其标注。 有关详细信息，请参阅 [**INF AddService 指令**](../install/inf-addservice-directive.md) 。
 
-可以卸载当前加载的标注驱动程序 （停止） 通过在命令提示符下键入以下内容：
+可以通过在命令提示符下键入以下内容，将当前加载的标注驱动程序卸载 (停止) ：
 
 ```cpp
 net stop drivername
 ```
 
-标注驱动程序也可以安装、 加载 （已启动），卸载 （停止） 和/或通过编写调用 Win32 服务控制管理器 API 的用户模式应用程序卸载。 有关 Win32 服务控制函数，如**CreateService**， **OpenService**， **StartService**， **control服务**，并**DeleteService**，请参阅[Microsoft Windows SDK](https://go.microsoft.com/fwlink/p/?linkid=122165)。
+还可以通过编写调用 Win32 服务控制管理器 API 的用户模式应用程序，安装、加载 (启动) 、卸载 (停止) 和/或卸载标注驱动程序。 有关 Win32 服务控制功能的详细信息，如 **CreateService**、 **OpenService**、 **StartService**、 **control 服务**和 **DeleteService**，请参阅 [Microsoft Windows SDK](https://go.microsoft.com/fwlink/p/?linkid=122165)。
 
 > [!NOTE]
-> 从 Windows 8 及更高版本，标注驱动程序无法查看，或管理的设备管理器中，因为即插即用 Play (PnP) 管理器无法再创建为非 PnP （旧） 设备的设备表示形式。
+> 从 Windows 8 及更高版本开始，无法在设备管理器中查看或管理标注驱动程序，因为即插即用 (PnP) 管理器不再为非 PnP (旧) 设备创建设备表示形式。

@@ -6,19 +6,19 @@ ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 WDI_TLV_P2P_SERVICE_TYPE_HASH 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: cd2c6d3ef612cbe57dcced5bd5d06422ea87ea23
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: ac1658a5baf6bc01876de447de0a101bb9acdeb5
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72838024"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89210037"
 ---
-# <a name="wdi_tlv_p2p_service_type_hash"></a>WDI\_TLV\_P2P\_服务\_类型\_哈希
+# <a name="wdi_tlv_p2p_service_type_hash"></a>WDI \_ TLV \_ P2P \_ 服务 \_ 类型 \_ 哈希
 
 
-WDI\_TLV\_P2P\_服务\_类型\_哈希是包含服务类型的哈希的 TLV。
+WDI \_ tlv \_ P2P \_ 服务 \_ 类型 \_ 为 Hash，其中包含服务类型的哈希。
 
-**请注意**  此 TLV 添加到了 Windows 10 1607 版 WDI 版本1.0.21 中。
+**注意**   此 TLV 已添加到 Windows 10 版本1607，WDI 版本1.0.21 中。
 
  
 
@@ -27,17 +27,17 @@ WDI\_TLV\_P2P\_服务\_类型\_哈希是包含服务类型的哈希的 TLV。
 
 0x12A
 
-## <a name="length"></a>长度
+## <a name="length"></a>Length
 
 
-WDI 的大小（以字节为单位） [ **\_P2P\_SERVICE\_名称\_哈希**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dot11wdi/ns-dot11wdi-_wdi_p2p_service_name_hash)结构。
+[**WDI \_ P2P \_ 服务 \_ 名称 \_ 哈希**](/windows-hardware/drivers/ddi/dot11wdi/ns-dot11wdi-_wdi_p2p_service_name_hash)结构的大小 (以字节为单位) 。
 
 ## <a name="values"></a>值
 
 
-| 在任务栏的搜索框中键入                                                                    | 描述               |
+| 类型                                                                    | 说明               |
 |-------------------------------------------------------------------------|---------------------------|
-| [**WDI\_P2P\_服务\_名称\_哈希**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dot11wdi/ns-dot11wdi-_wdi_p2p_service_name_hash) | 服务类型的哈希。 |
+| [**WDI \_ P2P \_ 服务 \_ 名称 \_ 哈希**](/windows-hardware/drivers/ddi/dot11wdi/ns-dot11wdi-_wdi_p2p_service_name_hash) | 服务类型的哈希。 |
 
  
 
@@ -66,9 +66,4 @@ WDI 的大小（以字节为单位） [ **\_P2P\_SERVICE\_名称\_哈希**](http
 </table>
 
  
-
- 
-
-
-
 

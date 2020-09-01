@@ -3,44 +3,44 @@ title: PSHED 插件的 INF 文件
 description: PSHED 插件的 INF 文件
 ms.assetid: 60bb9902-c558-4ee1-9b33-1a08885e7c06
 keywords:
-- PSHED 插件 WDK WHEA、 INF 文件
-- 特定于平台的硬件错误驱动程序插件 WDK WHEA，INF 文件
+- PSHED 插件 WDK WHEA，INF 文件
+- 平台特定硬件错误驱动程序插件 WDK WHEA，INF 文件
 - INF 文件 WDK WHEA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d6c3cabad180eea41df3a78649186e809b68646a
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 45f51a1da1e8c4385814c1206379bd99d930b480
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386468"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89209479"
 ---
 # <a name="inf-files-for-pshed-plug-ins"></a>PSHED 插件的 INF 文件
 
 
-情况下，安装插件 PSHED[信息 (INF) 文件](https://docs.microsoft.com/windows-hardware/drivers/install/inf-files)。 PSHED 插件的 INF 文件包含以下标准的 INF 文件部分：
+PSHED 插件由 [ (INF) 文件的信息](https://docs.microsoft.com/windows-hardware/drivers/install/inf-files)安装。 用于 PSHED 插件的 INF 文件包含以下标准 INF 文件部分：
 
-[**INF 版本部分**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-version-section)
+[**INF Version 节**](../install/inf-version-section.md)
 
-[**INF SourceDisksNames 部分**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-sourcedisksnames-section)
+[**INF SourceDisksNames 节**](../install/inf-sourcedisksnames-section.md)
 
-[**INF SourceDisksFiles 部分**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-sourcedisksfiles-section)
+[**INF SourceDisksFiles 节**](../install/inf-sourcedisksfiles-section.md)
 
-[**INF DestinationDirs 部分**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-destinationdirs-section)
+[**INF DestinationDirs 节**](../install/inf-destinationdirs-section.md)
 
-[**INF 制造商部分**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-manufacturer-section)
+[**INF Manufacturer 节**](../install/inf-manufacturer-section.md)
 
-[**INF*模型*部分**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-models-section)
+[**INF *型号* 部分**](../install/inf-models-section.md)
 
-[**INF *DDInstall*部分**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-ddinstall-section)
+[**INF *DDInstall* 部分**](../install/inf-ddinstall-section.md)
 
-[**INF *DDInstall*。服务部分**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-ddinstall-services-section)
+[**INF *DDInstall*。服务部分**](../install/inf-ddinstall-services-section.md)
 
-[**INF 字符串部分**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-strings-section)
+[**INF Strings 节**](../install/inf-strings-section.md)
 
-内[ **INF*模型*部分**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-models-section)，平台供应商可以使用任何[硬件标识符 (ID)](https://docs.microsoft.com/windows-hardware/drivers/install/hardware-ids)为 PSHED 插件。 通过使用指定 ID 的硬件*hw id*中的条目*模型*部分，并可以是在 ACPI 名称空间或另一个设备命名空间中的硬件 ID。 此外可以指定供应商[兼容 ID](https://docs.microsoft.com/windows-hardware/drivers/install/compatible-ids)值为*PNP0C33*。 此兼容 ID 用于定义为与 Microsoft 兼容硬件错误设备。 供应商通过使用指定的兼容 ID*兼容 id*中的条目*模型*部分。
+在 " [**INF *模型* " 部分**](../install/inf-models-section.md)中，平台供应商可将任何 [硬件标识符 (ID) ](../install/hardware-ids.md) 用于 PSHED 插件。 硬件 ID 是使用 "*模型*" 部分中的 " *hw-ID* " 条目指定的，可以是 ACPI 命名空间或其他设备命名空间中的硬件 id。 供应商还可以指定值为*PNP0C33*的[兼容 ID](../install/compatible-ids.md) 。 此兼容 ID 用于定义与 Microsoft 兼容的硬件错误设备。 供应商通过使用 "*模型*" 部分中的 "*兼容-ID* " 条目来指定兼容 id。
 
-PSHED 插件的 INF 文件还必须包括[ **AddReg** ](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addreg-directive)指令，它引用添加到项目文件中的某个部分**系统**\\ **CurrentControlSet**\\**控件**\\**PSHED**\\**插件**密钥在注册表中。 此条目会通知 PSHED 系统中安装了插件 PSHED。 这允许 PSHED 以验证所有已安装的 PSHED 插件已成功加载每个系统启动的时间。
+PSHED 插件的 INF 文件还必须包括一个[**AddReg**](../install/inf-addreg-directive.md)指令，该指令引用文件中的一个部分，该部分将条目添加到注册表中的**System** \\ **CurrentControlSet** \\ **Control** \\ **PSHED** \\ **插件**项。 此条目通知 PSHED 已在系统中安装了 PSHED 插件。 这允许 PSHED 验证每次启动系统时是否已成功加载所有已安装的 PSHED 插件。
 
 例如：
 
@@ -106,9 +106,4 @@ ServiceBinary = %12%\%FileName%
 ```
 
  
-
- 
-
-
-
 

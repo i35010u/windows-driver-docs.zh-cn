@@ -7,12 +7,12 @@ keywords:
 - PCL-5e WDK Unidrv，其他注意事项
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fa61d1d813d3db12544d877d9a4a4cb4dc8b835f
-ms.sourcegitcommit: 17c1bbc5ea0bef3bbc87794b030a073f905dc942
+ms.openlocfilehash: b1fa58b98c748039bf83524eabbd899e076a4f59
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88802591"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89210607"
 ---
 # <a name="hp-gl2-caveats"></a>HP-GL/2 注意事项
 
@@ -30,9 +30,9 @@ ms.locfileid: "88802591"
 
         另外，驱动程序中的所有 HP-UX/2 命令都是硬编码的。
 
-3.  调用 [**DrvBitBlt**](https://docs.microsoft.com/windows/win32/api/winddi/nf-winddi-drvbitblt) 和其他位块传输函数时收到的掩码可能无法正常工作。
+3.  调用 [**DrvBitBlt**](/windows/win32/api/winddi/nf-winddi-drvbitblt) 和其他位块传输函数时收到的掩码可能无法正常工作。
 
-4.  如果在 Windows 2000 上使用 Windows XP Unidrv 并且激活了 HP-UX/2，则某些图形呈现功能可能无法正常工作。 例如， [**DrvGradientFill**](https://docs.microsoft.com/windows/win32/api/winddi/nf-winddi-drvgradientfill) 调用的输出具有红色和蓝色反转。
+4.  如果在 Windows 2000 上使用 Windows XP Unidrv 并且激活了 HP-UX/2，则某些图形呈现功能可能无法正常工作。 例如， [**DrvGradientFill**](/windows/win32/api/winddi/nf-winddi-drvgradientfill) 调用的输出具有红色和蓝色反转。
 
 5.  Unidrv 假定打印机硬件支持 ROP 命令。 如果打印机不支持 ROP，则某些文档可能无法正确打印。
 
@@ -84,9 +84,4 @@ ms.locfileid: "88802591"
 15. 即使 GPD 文件指定设备支持轮廓字体，也可以将 TrueType 轮廓字体作为光栅字体下载。 这可能是由于多种原因造成的 (例如，打印机) 上的内存不足。
 
  
-
- 
-
-
-
 

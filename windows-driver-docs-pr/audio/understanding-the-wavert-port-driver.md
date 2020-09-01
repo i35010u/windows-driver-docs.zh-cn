@@ -4,56 +4,51 @@ description: 了解 WaveRT 端口驱动程序
 ms.assetid: 2627615a-3fde-4ed6-9f7f-f6d7e5d82b3b
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 099f7346e3abf654f1cf065cb7883cd9b63912c8
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: f801002504e67e72c181f6ec55e4a3bfde1d674b
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67354166"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89210319"
 ---
 # <a name="understanding-the-wavert-port-driver"></a>了解 WaveRT 端口驱动程序
 
 
-WaveRT 端口驱动程序将以前的 WaveCyclic 端口驱动程序的简单性与硬件加速 WavePci 端口驱动程序的性能相结合。
+WaveRT 端口驱动程序将上一 WaveCyclic 端口驱动程序的简单性与 WavePci 端口驱动程序的硬件加速性能相结合。
 
-WaveRT 端口驱动程序无需不断地将映射并复制通过直接访问数据缓冲区提供其主要的客户端 （通常情况下，音频引擎） 的音频数据。 这种直接访问还消除了驱动程序处理的音频流中的数据需求。 WaveRT 端口驱动程序因此适合于某些音频设备具有的直接内存访问 (DMA) 控制器的需求。
+WaveRT 端口驱动程序无需通过提供其主客户端 (（通常为音频引擎) 并直接访问数据缓冲区）来持续映射和复制音频数据。 这种直接访问还消除了驱动程序在音频流中操作数据的需要。 因此，WaveRT 端口驱动程序可满足某些音频设备 (DMA) 控制器的直接内存访问需求。
 
-为了区分从其他波形呈现和批捕获设备本身，WaveRT 端口驱动程序注册下启用自身[ **KSCATEGORY\_实时**](https://docs.microsoft.com/windows-hardware/drivers/install/kscategory-realtime)除了[ **KSCATEGORY\_音频**](https://docs.microsoft.com/windows-hardware/drivers/install/kscategory-audio)， [ **KSCATEGORY\_呈现**](https://docs.microsoft.com/windows-hardware/drivers/install/kscategory-render)并[ **KSCATEGORY\_捕获**](https://docs.microsoft.com/windows-hardware/drivers/install/kscategory-capture)。 在适配器驱动程序的安装期间发生此自注册。
+若要将自身与其他波形呈现和 wave 捕获设备区分开来，WaveRT 端口驱动程序除了[**KSCATEGORY \_ 音频**](../install/kscategory-audio.md)、 [**KSCATEGORY \_ 呈现**](../install/kscategory-render.md)和[**KSCATEGORY \_ 捕获**](../install/kscategory-capture.md)外，还会将其自身注册到[**KSCATEGORY \_ 实时**](../install/kscategory-realtime.md)。 此自注册在安装适配器驱动程序的过程中发生。
 
-在 Windows Vista 和更高版本操作系统中，当操作系统启动并初始化音频引擎时，音频引擎枚举表示的音频设备的 KS 筛选器。 在枚举过程音频引擎实例化它找到的音频设备的驱动程序。 此过程会导致这些设备的筛选器对象的创建。 WaveRT 音频设备生成的筛选器对象具有以下组件：
+在 Windows Vista 和更高版本的操作系统中，当操作系统启动并初始化音频引擎时，音频引擎会枚举代表音频设备的 KS 筛选器。 在枚举过程中，音频引擎实例化所找到的音频设备的驱动程序。 此过程将导致为这些设备创建筛选器对象。 对于 WaveRT 音频设备，生成的筛选器对象具有以下组件：
 
--   WaveRT 端口驱动程序管理的筛选器的一般系统函数的实例
+-   用于管理筛选器的泛型系统函数的 WaveRT 端口驱动程序的实例
 
--   WaveRT 微型端口驱动程序来处理筛选器的所有特定于硬件的函数的实例
+-   用于处理筛选器的所有硬件特定函数的 WaveRT 微型端口驱动程序的实例
 
-创建筛选器对象后，音频引擎和 WaveRT 微型端口驱动程序将准备好打开音频处理所需的类型的音频流。 若要准备音频呈现 （播放） KS 筛选器，例如，音频引擎和 WaveRT 微型端口驱动程序执行以下操作以打开一个播放流：
+创建筛选器对象后，音频引擎和 WaveRT 微型端口驱动程序可以为所需的音频处理类型打开音频流。 若要为 (播放) 的音频呈现准备 KS 筛选器，例如音频引擎和 WaveRT 微型端口驱动程序，请执行以下操作来打开播放流：
 
-1.  音频引擎打开 KS 筛选器，pin 和 WaveRT 微型端口驱动程序创建 pin 的实例。 当音频引擎打开 pin 时，它还到驱动程序将流的波形格式。 驱动程序使用波形格式信息在下一步中选择适当的缓冲区大小。
+1.  音频引擎打开 KS 筛选器上的 pin，WaveRT 微型端口驱动程序创建 pin 的实例。 当音频引擎打开 pin 时，它还会将流的波形格式传递给驱动程序。 驱动程序使用波形格式信息在下一步中选择适当的缓冲区大小。
 
-2.  音频引擎循环要创建一个特定大小的缓冲区将请求发送到微型端口驱动程序。 术语*循环缓冲区*指这样一个事实，当缓冲区位置注册到达播放或录制操作中的缓冲区的末尾，位置注册可以自动环绕在周围到缓冲区的开头。 与设置的物理内存的连续块 WaveCyclic 微型端口驱动程序，不同 WaveRT 微型端口驱动程序不需要是连续的物理内存中的缓冲区。 驱动程序使用[ **KSPROPERTY\_RTAUDIO\_缓冲区**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-rtaudio-buffer)属性可为缓冲区分配空间。 如果音频设备的硬件不能从所请求大小的缓冲区的数据流，该驱动程序将在创建最接近的大小最初请求的大小的缓冲区的音频设备的资源限制中工作。 然后，驱动程序将缓冲区映射到音频设备的 DMA 引擎，并使缓冲区可访问到音频引擎在用户模式下。
+2.  对于要创建的特定大小的循环缓冲区，音频引擎会将请求发送到微型端口驱动程序。 术语 " *循环缓冲区* " 是指当缓冲区位置寄存器在播放或记录操作中到达缓冲区末尾时，位置寄存器可自动环绕到缓冲区的开头。 与设置连续物理内存块的 WaveCyclic 微型端口驱动程序不同，WaveRT 微型端口驱动程序不需要在物理内存中连续的缓冲区。 驱动程序使用 [**KSPROPERTY \_ RTAUDIO \_ BUFFER**](./ksproperty-rtaudio-buffer.md) 属性为缓冲区分配空间。 如果音频设备的硬件无法从请求大小的缓冲区进行流式处理，则驱动程序将在音频设备的资源限制内工作，以创建最接近原始请求大小的缓冲区。 然后，该驱动程序将缓冲区映射到音频设备的 DMA 引擎，并使音频引擎在用户模式下可以访问该缓冲区。
 
-3.  音频引擎将安排一个线程来定期将音频数据写入到循环缓冲区。
+3.  音频引擎计划一个线程定期将音频数据写入循环缓冲区。
 
-4.  如果音频设备的硬件不提供直接支持的循环缓冲区，微型端口驱动程序将定期 reprograms 音频设备，若要继续使用同一缓冲区。 例如，如果硬件不支持循环缓冲区，该驱动程序必须设置 DMA 地址返回到的缓冲区开始每次到达缓冲区末尾。 可以在中断服务例程 (ISR) 或较高优先级的线程中执行此更新。
+4.  如果音频设备的硬件不提供对循环缓冲区的直接支持，微型端口驱动程序会定期 reprograms 音频设备，以便继续使用同一缓冲区。 例如，如果硬件不支持缓冲区循环，则每次到达缓冲区末尾时，驱动程序必须将 DMA 地址设置回缓冲区的起始处。 此更新可在 (ISR) 或高优先级线程的中断服务例程中完成。
 
-生成的配置提供支持循环缓冲区或适用于要定期更新其硬件的微型端口驱动程序的音频设备硬件上的故障复原音频信号。
+生成的配置在音频设备硬件上提供了有问题的复原音频信号，该信号支持循环缓冲或与微型端口驱动程序一起定期更新其硬件。
 
-若要准备 （记录） 的音频捕获 KS 筛选器，音频引擎和 WaveRT 微型端口驱动程序使用类似的步骤以打开一个记录的流。
+若要为音频捕获准备 KS 筛选器 (录制) ，音频引擎和 WaveRT 微型端口驱动程序使用类似的步骤打开记录流。
 
-WaveRT 端口驱动程序提供的性能改进之一是可减少在端到端处理过程中延迟的音频流批呈现或批捕获。 此延迟称为流延迟。
+WaveRT 端口驱动程序所提供的性能改进之一是减少波形渲染或波形捕获期间音频流的端到端处理延迟。 此延迟称为流延迟。
 
-有关流延迟这两种类型的详细信息，请参阅以下主题。
+有关这两种类型的流延迟的详细信息，请参阅以下主题。
 
--   [在播放期间则 Stream 延迟](stream-latency-during-playback.md)
+-   [播放期间的流延迟](stream-latency-during-playback.md)
 
--   [录制期间的 Stream 延迟](stream-latency-during-recording.md)
+-   [录制过程中的流延迟](stream-latency-during-recording.md)
 
-有关如何开发 WaveRT 微型端口驱动程序的补充 WaveRT 端口驱动程序的信息，请参阅[开发 WaveRT 微型端口驱动程序](developing-a-wavert-miniport-driver.md)主题。
-
- 
+有关如何开发补充 WaveRT 端口驱动程序的 WaveRT 微型端口驱动程序的信息，请参阅 [开发 WaveRT 微型端口驱动程序](developing-a-wavert-miniport-driver.md) 主题。
 
  
-
-
-
 

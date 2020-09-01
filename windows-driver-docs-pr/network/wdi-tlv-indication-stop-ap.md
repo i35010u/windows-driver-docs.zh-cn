@@ -1,39 +1,39 @@
 ---
 title: WDI_TLV_INDICATION_STOP_AP
-description: WDI_TLV_INDICATION_STOP_AP 是一个 TLV，其中包含停止 AP 指示的原因。
+description: WDI_TLV_INDICATION_STOP_AP 是一种 TLV，其中包含停止 AP 指示的原因。
 ms.assetid: 49FA6AF6-68BE-437B-9715-5090F52F0109
 ms.date: 07/18/2017
 keywords:
-- WDI_TLV_INDICATION_STOP_AP 从 Windows Vista 开始的网络驱动程序
+- 从 Windows Vista 开始 WDI_TLV_INDICATION_STOP_AP 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: fc19dfffedc925b07fd8cf53dbdfcb7bdc308935
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 560e8388fe5453a4d9a7e6cf121409a52fa9449a
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72841745"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89209597"
 ---
-# <a name="wdi_tlv_indication_stop_ap"></a>WDI\_TLV\_指示\_停止\_AP
+# <a name="wdi_tlv_indication_stop_ap"></a>WDI \_ TLV \_ 指示 \_ 停止 \_ AP
 
 
-WDI\_TLV\_指示\_停止\_AP 是包含停止 AP 指示原因的 TLV。
+WDI \_ TLV \_ 指示 \_ 停止 \_ ap 是一个 TLV，其中包含停止 AP 指示的原因。
 
 ## <a name="tlv-type"></a>TLV 类型
 
 
 0xE6
 
-## <a name="length"></a>长度
+## <a name="length"></a>Length
 
 
-UINT32 的大小（以字节为单位）。
+UINT32) 的大小 (以字节为单位）。
 
 ## <a name="values"></a>值
 
 
-| 在任务栏的搜索框中键入   | 描述                                                                                                  |
+| 类型   | 说明                                                                                                  |
 |--------|--------------------------------------------------------------------------------------------------------------|
-| UINT32 | 停止 AP 原因。 有关可能的原因值，请参阅[**WDI\_停止\_AP\_原因**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wditypes/ne-wditypes-_wdi_stop_ap_reason)。 |
+| UINT32 | 停止 AP 原因。 有关可能的原因值，请参阅 [**WDI \_ 停止 \_ AP \_ 原因**](/windows-hardware/drivers/ddi/wditypes/ne-wditypes-_wdi_stop_ap_reason) 。 |
 
  
 
@@ -48,7 +48,7 @@ UINT32 的大小（以字节为单位）。
 <tbody>
 <tr class="odd">
 <td><p>最低受支持的客户端</p></td>
-<td><p>Windows 10</p></td>
+<td><p>Windows 10</p></td>
 </tr>
 <tr class="even">
 <td><p>最低受支持的服务器</p></td>
@@ -64,12 +64,7 @@ UINT32 的大小（以字节为单位）。
 ## <a name="see-also"></a>另请参阅
 
 
-[NDIS\_状态\_WDI\_指示\_停止\_AP](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-wdi-indication-stop-ap)
+[NDIS \_ 状态 \_ WDI \_ 指示 \_ 停止 \_ AP](./ndis-status-wdi-indication-stop-ap.md)
 
  
-
- 
-
-
-
 

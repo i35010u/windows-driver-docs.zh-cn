@@ -12,17 +12,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 170537d0d6f6d7235bff1905a52b053592852eb0
-ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
+ms.openlocfilehash: 3f1251aa281e7c32a20b72cd89a6413819e15210
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84534182"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89209877"
 ---
 # <a name="usb3kdhub_info_from_fdo"></a>！ usb3kd \_ \_ fdo 中的信息 \_
 
 
-Fdo 命令中的 **！ \_ usb3kd \_ Info \_ **显示有关[USB 3.0 树](usb-3-extensions.md#usb-3-tree)中的集线器的信息。
+Fdo 命令中的 **！ \_ usb3kd \_ Info \_ ** 显示有关 [USB 3.0 树](usb-3-extensions.md#usb-3-tree)中的集线器的信息。
 
 ```dbgcmd
 !usb3kd.hub_info_from_fdo DeviceObject
@@ -32,17 +32,17 @@ Fdo 命令中的 **！ \_ usb3kd \_ Info \_ **显示有关[USB 3.0 树](usb-3-ex
 
 
 <span id="_______DeviceObject______"></span><span id="_______deviceobject______"></span><span id="_______DEVICEOBJECT______"></span>*DeviceObject*   
-表示集线器的功能设备对象（FDO）的地址。
+功能设备对象的地址 (表示中心的 FDO) 。
 
 ## <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 
-Usb3kd
+Usb3kd.dll
 
 <a name="examples"></a>示例
 --------
 
-可以从[**！ usb \_ 树**](-usb3kd-usb-tree.md)的输出或其他各种调试器命令中获取 FDO 的地址。 例如， [**！ devstack**](-devstack.md)命令显示 FDO 的地址。 在下面的示例中，FDO 的地址为 fffffa800597a660。
+可以从 [**！ usb \_ 树**](-usb3kd-usb-tree.md) 的输出或其他各种调试器命令中获取 FDO 的地址。 例如， [**！ devstack**](-devstack.md) 命令显示 FDO 的地址。 在下面的示例中，FDO 的地址为 fffffa800597a660。
 
 ```dbgcmd
 3: kd> !devnode 0 1 usbhub3
@@ -104,14 +104,7 @@ Hub Event History:
 
 [**！ usb3kd \_ 信息**](-usb3kd-hub-info.md)
 
-[通用串行总线（USB）驱动程序](https://docs.microsoft.com/windows-hardware/drivers/usbcon/)
+[ (USB) 驱动程序的通用串行总线](../usbcon/index.md)
 
  
-
- 
-
-
-
-
-
 

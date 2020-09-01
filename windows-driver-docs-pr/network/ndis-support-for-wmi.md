@@ -9,15 +9,15 @@ keywords:
 - WMI WDK 网络
 - 协议驱动程序 WDK 网络，WMI 支持
 - NDIS 协议驱动程序 WDK，WMI 支持
-- 图标
+- i
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: adf3052ca42132558adfc1e64445523bb9431862
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: d8a838b68fd88042fbbbfe84f1c638e836ccc0aa
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67384390"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89210167"
 ---
 # <a name="ndis-support-for-wmi"></a>WMI 的 NDIS 支持
 
@@ -25,35 +25,29 @@ ms.locfileid: "67384390"
 
 
 
-通过 NDIS，客户端的 Windows Management Instrumentation (WMI) 可以获取和设置的信息，该 NDIS 和 NDIS 驱动程序服务。 WMI 客户端还可以注册以接收状态更新。
+通过 NDIS，Windows Management Instrumentation (WMI) 的客户端可以获取和设置 NDIS 和 NDIS 驱动程序服务的信息。 WMI 客户端还可以注册以接收状态更新。
 
-NDIS 自动注册为每个 wmi 的微型端口适配器名虚拟连接 (VCs) 和一组的全局唯一标识符 (Guid) 的微型端口适配器。 有关这些 Guid 的详细信息，请参阅[标准微型端口驱动程序 Oid 注册与 WMI](standard-miniport-driver-oids-registered-with-wmi.md)。 微型端口驱动程序也可以提供支持自定义对象标识符 (Oid) 和自定义状态指示，作为[自定义 Oid 和状态指示](customized-oids-and-status-indications.md)主题介绍。
+NDIS 自动注册微型端口适配器， (VCs) 命名为虚拟连接，并为每个带 WMI 的微型端口适配器 (Guid) 提供一组全局唯一标识符。 有关这些 Guid 的详细信息，请参阅 [在 WMI 中注册的标准微型端口驱动程序 oid](standard-miniport-driver-oids-registered-with-wmi.md)。 小型端口驱动程序还可以提供对自定义的对象标识符 (Oid) 和自定义状态指示的支持，如 [自定义 oid 和状态指示](customized-oids-and-status-indications.md) 主题所述。
 
-NDIS 不提供 WMI 支持协议驱动程序。 协议驱动程序或中间的驱动程序，可以为自身创建设备对象和直接向 WMI 注册。 有关直接向 WMI 注册的详细信息，请参阅[注册为 WMI 数据提供程序](https://docs.microsoft.com/windows-hardware/drivers/kernel/registering-as-a-wmi-data-provider)。
+NDIS 不提供对协议驱动程序的 WMI 支持。 协议驱动程序或中间驱动程序可以为自身创建设备对象，并直接使用 WMI 进行注册。 有关使用 WMI 直接注册的详细信息，请参阅 [注册为 Wmi 数据提供程序](../kernel/registering-as-a-wmi-data-provider.md)。
 
-有关 WMI 体系结构的详细信息，请参阅[Windows Management Instrumentation](https://docs.microsoft.com/windows-hardware/drivers/kernel/implementing-wmi)。
+有关 WMI 体系结构的详细信息，请参阅 [Windows Management Instrumentation](../kernel/implementing-wmi.md)。
 
-本部分包括：
+本节包括：
 
-[注册和注销的与 WMI 的 NDIS 微型端口驱动程序](registration-and-deregistration-of-ndis-miniport-drivers-with-wmi.md)
+[在 WMI 中注册和取消注册 NDIS 微型端口驱动程序](registration-and-deregistration-of-ndis-miniport-drivers-with-wmi.md)
 
-[映射的 Oid 和微型端口驱动程序状态的 Guid](mapping-of-guids-to-oids-and-miniport-driver-status.md)
+[将 GUID 映射到 OID 和微型端口驱动程序状态](mapping-of-guids-to-oids-and-miniport-driver-status.md)
 
-[对命名 VCs 的支持](support-for-named-vcs.md)
+[命名 VC 的支持](support-for-named-vcs.md)
 
-[NDIS 支持 WMI 操作](ndis-supported-wmi-operations.md)
+[NDIS 支持的 WMI 操作](ndis-supported-wmi-operations.md)
 
-[标准 WMI Oid 和状态指示](standard-wmi-oids-and-status-indications.md)
+[标准 WMI OID 和状态指示](standard-wmi-oids-and-status-indications.md)
 
-[自定义的 Oid 和状态指示](customized-oids-and-status-indications.md)
+[自定义的 OID 和状态指示](customized-oids-and-status-indications.md)
 
-[NDIS WMI Guid](ndis-wmi-guids.md)
-
- 
+[NDIS WMI GUID](ndis-wmi-guids.md)
 
  
-
-
-
-
 

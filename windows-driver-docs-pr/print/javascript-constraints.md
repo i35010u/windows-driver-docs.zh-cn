@@ -4,16 +4,16 @@ description: V4 打印机驱动程序模型支持从 v3 IPrintOemPrintTicketProv
 ms.assetid: CD2EF726-CF0F-4BB6-9F41-794699568F17
 ms.date: 06/05/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 0dec2bae12c3f8abf4251b7576c4639f94bc0b91
-ms.sourcegitcommit: 17c1bbc5ea0bef3bbc87794b030a073f905dc942
+ms.openlocfilehash: ac6c1fc61494a985f1e1b04f17a87a714762626d
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88802385"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89210046"
 ---
 # <a name="javascript-constraints"></a>JavaScript 约束
 
-V4 打印机驱动程序模型支持从 v3 [IPrintOemPrintTicketProvider](https://docs.microsoft.com/windows-hardware/drivers/ddi/prcomoem/nn-prcomoem-iprintoemprintticketprovider) 接口派生的扩展约束和 PrintTicket 处理的新模型。
+V4 打印机驱动程序模型支持从 v3 [IPrintOemPrintTicketProvider](/windows-hardware/drivers/ddi/prcomoem/nn-prcomoem-iprintoemprintticketprovider) 接口派生的扩展约束和 PrintTicket 处理的新模型。
 
 V4 打印机驱动程序不使用已编译的配置插件，而是使用 JavaScript 来实现称为 JavaScript 约束的 Api，并且打印机驱动程序可以根据需要实现其中的一个或多个 Api。 有关详细信息，请参阅本主题末尾的 **JavaScript 约束 api** 部分中的函数。
 
@@ -45,17 +45,17 @@ JavaScript 约束可用于增加 PrintCapabilities，验证 Printticket 并处�
 
 **值：** 1
 
-但是，由于 *PrintConfig.dll* 是频繁加载和卸载的，因此调试打印的应用程序并不是建议的测试/调试策略。 相反，Microsoft 建议制造商构建一个测试应用程序，该应用程序使用以下公共 Api 为 JavaScript 约束调用每个相关入口点： [PTGetPrintCapabilities](https://docs.microsoft.com/windows/win32/api/prntvpt/nf-prntvpt-ptgetprintcapabilities)、 [PTConvertDevModeToPrintTicket](https://docs.microsoft.com/windows/win32/api/prntvpt/nf-prntvpt-ptconvertdevmodetoprintticket)、 [PTConvertPrintTicketToDevMode](https://docs.microsoft.com/windows/win32/api/prntvpt/nf-prntvpt-ptconvertprinttickettodevmode)和 [PTMergeAndValidatePrintTicket](https://docs.microsoft.com/windows/win32/api/prntvpt/nf-prntvpt-ptmergeandvalidateprintticket)。
+但是，由于 *PrintConfig.dll* 是频繁加载和卸载的，因此调试打印的应用程序并不是建议的测试/调试策略。 相反，Microsoft 建议制造商构建一个测试应用程序，该应用程序使用以下公共 Api 为 JavaScript 约束调用每个相关入口点： [PTGetPrintCapabilities](/windows/win32/api/prntvpt/nf-prntvpt-ptgetprintcapabilities)、 [PTConvertDevModeToPrintTicket](/windows/win32/api/prntvpt/nf-prntvpt-ptconvertdevmodetoprintticket)、 [PTConvertPrintTicketToDevMode](/windows/win32/api/prntvpt/nf-prntvpt-ptconvertprinttickettodevmode)和 [PTMergeAndValidatePrintTicket](/windows/win32/api/prntvpt/nf-prntvpt-ptmergeandvalidateprintticket)。
 
 仅测试应用程序足以启用调试，但添加单元测试也有好处，以确保整个驱动程序按预期处理 PrintTicket、PrintCapabilities 和约束。 有关如何在 Visual Studio 中生成单元测试的详细信息，请参阅以下主题：
 
-[使用 Visual Studio Team Test 单元测试演练](https://docs.microsoft.com/previous-versions/ms379625(v=vs.80))
+[使用 Visual Studio Team Test 单元测试演练](/previous-versions/ms379625(v=vs.80))
 
 [Microsoft Visual Studio 2010 和 Team Foundation Server 的单元测试](https://channel9.msdn.com/Events/TechEd/Australia/2010/DEV362)
 
 在创建上述文本中显示的注册表项并重新启动宿主进程后，可以调试 JavaScript 源文件。
 
-需要注意的是，如果源文件分析失败，则不会调用调试器，它看起来就像调试环境失败。 如果源文件未能解析，请参阅 [Windows 脚本宿主](https://docs.microsoft.com/previous-versions/9bbdkx3k(v=vs.85)) ，了解有关如何继续操作的详细信息。
+需要注意的是，如果源文件分析失败，则不会调用调试器，它看起来就像调试环境失败。 如果源文件未能解析，请参阅 [Windows 脚本宿主](/previous-versions/9bbdkx3k(v=vs.85)) ，了解有关如何继续操作的详细信息。
 
 如果没有错误并且已成功分析源文件，请按如下所示调试源文件：
 
@@ -97,7 +97,7 @@ JavaScript 约束可用于增加 PrintCapabilities，验证 Printticket 并处�
 
 ## <a name="validateprintticket-function"></a>validatePrintTicket 函数
 
-调用此 API 是为了验证 PrintTicket 对象对于特定打印机是否有效。 在函数中，这类似于 [**IPrintOemPrintTicketProvider：： ValidatePrintTicket**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff553184(v=vs.85)) API。
+调用此 API 是为了验证 PrintTicket 对象对于特定打印机是否有效。 在函数中，这类似于 [**IPrintOemPrintTicketProvider：： ValidatePrintTicket**](/previous-versions/windows/hardware/drivers/ff553184(v=vs.85)) API。
 
 **语法**
 
@@ -109,23 +109,23 @@ function validatePrintTicket(printTicket, scriptContext)
 
 - *printTicket*
 
-  \[\] \[ \] [**IPrintSchemaTicket**](https://docs.microsoft.com/windows-hardware/drivers/ddi/printerextension/nn-printerextension-iprintschematicket)要验证的对象。
+  \[\] \[ \] [**IPrintSchemaTicket**](/windows-hardware/drivers/ddi/printerextension/nn-printerextension-iprintschematicket)要验证的对象。
 
 - *scriptContext*
 
-  \[在 \] 提供对驱动程序属性包的访问的 [**IPrinterScriptContext**](https://docs.microsoft.com/windows-hardware/drivers/ddi/printerextension/nn-printerextension-iprinterscriptcontext) 对象中，queue 属性包和用户属性包。
+  \[在 \] 提供对驱动程序属性包的访问的 [**IPrinterScriptContext**](/windows-hardware/drivers/ddi/printerextension/nn-printerextension-iprinterscriptcontext) 对象中，queue 属性包和用户属性包。
 
 **返回值**
 
 | 返回值 | 说明 |
 | --- | --- |
-| 0 | 指示 *printTicket* 参数无效，无法更正。 等效于 [E \_ PRINTTICKET \_ 格式](https://docs.microsoft.com/windows/win32/api/prntvpt/nf-prntvpt-ptmergeandvalidateprintticket)。 |
-| 1 | 指示 *printTicket* 参数是此打印机的有效 printticket。 等效于 [S \_ PT \_ 无 \_ 冲突](https://docs.microsoft.com/windows/win32/api/prntvpt/nf-prntvpt-ptmergeandvalidateprintticket)。 |
-| 2 | 指示已修改 *printTicket* 参数，使其有效。 [ \_ \_ \_ 已解决等效于 S PT 冲突](https://docs.microsoft.com/windows/win32/api/prntvpt/nf-prntvpt-ptmergeandvalidateprintticket)。 |
+| 0 | 指示 *printTicket* 参数无效，无法更正。 等效于 [E \_ PRINTTICKET \_ 格式](/windows/win32/api/prntvpt/nf-prntvpt-ptmergeandvalidateprintticket)。 |
+| 1 | 指示 *printTicket* 参数是此打印机的有效 printticket。 等效于 [S \_ PT \_ 无 \_ 冲突](/windows/win32/api/prntvpt/nf-prntvpt-ptmergeandvalidateprintticket)。 |
+| 2 | 指示已修改 *printTicket* 参数，使其有效。 [ \_ \_ \_ 已解决等效于 S PT 冲突](/windows/win32/api/prntvpt/nf-prntvpt-ptmergeandvalidateprintticket)。 |
 
 ## <a name="completeprintcapabilities-function"></a>completePrintCapabilities 函数
 
-调用此 API 以允许修改 PrintCapabilities 对象。 这应该用于条件性功能 (例如，仅在相纸上支持无边框) 或者表示无法通过 GPD 或 PPD 文件生成的功能 (例如，嵌套功能定义) 。 在函数中，这类似于 [**IPrintOemPrintTicketProvider：： CompletePrintCapabilities**](https://docs.microsoft.com/windows-hardware/drivers/ddi/prcomoem/nf-prcomoem-iprintoemprintticketprovider-completeprintcapabilities) API。
+调用此 API 以允许修改 PrintCapabilities 对象。 这应该用于条件性功能 (例如，仅在相纸上支持无边框) 或者表示无法通过 GPD 或 PPD 文件生成的功能 (例如，嵌套功能定义) 。 在函数中，这类似于 [**IPrintOemPrintTicketProvider：： CompletePrintCapabilities**](/windows-hardware/drivers/ddi/prcomoem/nf-prcomoem-iprintoemprintticketprovider-completeprintcapabilities) API。
 
 **语法**
 
@@ -137,15 +137,15 @@ function completePrintCapabilities(printTicket, scriptContext, printCapabilities
 
 - *printTicket*
 
-  \[在 \] [**IPrintSchemaTicket**](https://docs.microsoft.com/windows-hardware/drivers/ddi/printerextension/nn-printerextension-iprintschematicket) 对象输入中，将生成的 PrintCapabilities 文档约束为。
+  \[在 \] [**IPrintSchemaTicket**](/windows-hardware/drivers/ddi/printerextension/nn-printerextension-iprintschematicket) 对象输入中，将生成的 PrintCapabilities 文档约束为。
 
 - *scriptContext*
 
-  \[在 \] 提供对驱动程序属性包的访问的 [**IPrinterScriptContext**](https://docs.microsoft.com/windows-hardware/drivers/ddi/printerextension/nn-printerextension-iprinterscriptcontext) 对象中，queue 属性包和用户属性包。
+  \[在 \] 提供对驱动程序属性包的访问的 [**IPrinterScriptContext**](/windows-hardware/drivers/ddi/printerextension/nn-printerextension-iprinterscriptcontext) 对象中，queue 属性包和用户属性包。
 
 - *printCapabilities*
 
-  \[在 IPrintSchemaCapabilities 对象中，该 \] \[ \] 对象表示配置模块生成的基本 PrintCapabilities 对象。 [**IPrintSchemaCapabilities**](https://docs.microsoft.com/windows-hardware/drivers/ddi/printerextension/nn-printerextension-iprintschemacapabilities)
+  \[在 IPrintSchemaCapabilities 对象中，该 \] \[ \] 对象表示配置模块生成的基本 PrintCapabilities 对象。 [**IPrintSchemaCapabilities**](/windows-hardware/drivers/ddi/printerextension/nn-printerextension-iprintschemacapabilities)
 
 **返回值**
 
@@ -153,7 +153,7 @@ function completePrintCapabilities(printTicket, scriptContext, printCapabilities
 
 ## <a name="convertdevmodetoprintticket-function"></a>convertDevModeToPrintTicket 函数
 
-调用此 API 可将值从 DEVMODE 属性包转换为 PrintTicket。 这类似于 [**IPrintOemPrintTicketProvider：： ConvertDevModeToPrintTicket**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff553161(v=vs.85)) API 的功能，不同之处在于，此实现将 DEVMODE 的 private 节封装到 [**IPrinterScriptablePropertyBag**](https://docs.microsoft.com/windows-hardware/drivers/ddi/printerextension/nn-printerextension-iprinterscriptablepropertybag) 对象中，不允许访问 devmode 的公共部分。
+调用此 API 可将值从 DEVMODE 属性包转换为 PrintTicket。 这类似于 [**IPrintOemPrintTicketProvider：： ConvertDevModeToPrintTicket**](/previous-versions/windows/hardware/drivers/ff553161(v=vs.85)) API 的功能，不同之处在于，此实现将 DEVMODE 的 private 节封装到 [**IPrinterScriptablePropertyBag**](/windows-hardware/drivers/ddi/printerextension/nn-printerextension-iprinterscriptablepropertybag) 对象中，不允许访问 devmode 的公共部分。
 
 **语法**
 
@@ -169,11 +169,11 @@ function convertDevModeToPrintTicket(devModeProperties, scriptContext, printTick
 
 - *scriptContext*
 
-  \[在 \] 提供对驱动程序属性包的访问的 [**IPrinterScriptContext**](https://docs.microsoft.com/windows-hardware/drivers/ddi/printerextension/nn-printerextension-iprinterscriptcontext) 对象中，queue 属性包和用户属性包。
+  \[在 \] 提供对驱动程序属性包的访问的 [**IPrinterScriptContext**](/windows-hardware/drivers/ddi/printerextension/nn-printerextension-iprinterscriptcontext) 对象中，queue 属性包和用户属性包。
 
 - *printTicket*
 
-  \[\] \[ out 中 \] 表示 PrintTicket 的[**IPrintSchemaTicket**](https://docs.microsoft.com/windows-hardware/drivers/ddi/printerextension/nn-printerextension-iprintschematicket)对象。
+  \[\] \[ out 中 \] 表示 PrintTicket 的[**IPrintSchemaTicket**](/windows-hardware/drivers/ddi/printerextension/nn-printerextension-iprintschematicket)对象。
 
 **返回值**
 
@@ -181,7 +181,7 @@ function convertDevModeToPrintTicket(devModeProperties, scriptContext, printTick
 
 ## <a name="convertprinttickettodevmode-function"></a>convertPrintTicketToDevMode 函数
 
-调用此 API 可将值从 PrintTicket 转换为 DEVMODE 属性包。 这类似于 [**IPrintOemPrintTicketProvider：： ConvertPrintTicketToDevMode**](https://docs.microsoft.com/windows-hardware/drivers/ddi/prcomoem/nf-prcomoem-iprintoemprintticketprovider-convertprinttickettodevmode) API 的功能，不同之处在于，此实现将 DEVMODE 的 private 节封装到 **IPrinterScriptablePropertyBag** 对象中，不允许访问 devmode 的公共部分。
+调用此 API 可将值从 PrintTicket 转换为 DEVMODE 属性包。 这类似于 [**IPrintOemPrintTicketProvider：： ConvertPrintTicketToDevMode**](/windows-hardware/drivers/ddi/prcomoem/nf-prcomoem-iprintoemprintticketprovider-convertprinttickettodevmode) API 的功能，不同之处在于，此实现将 DEVMODE 的 private 节封装到 **IPrinterScriptablePropertyBag** 对象中，不允许访问 devmode 的公共部分。
 
 **语法**
 
@@ -215,4 +215,4 @@ Windows 8 打印对话框和打印首选项体验仅支持打印架构关键字�
 
 如果驱动程序没有使用 JavaScript 约束，则不需要提供文件。 如果驱动程序只对入口点的子集使用 JavaScript 约束 (例如，validatePrintTicket) ，则应该从 JavaScript 文件中完全省略其他入口点。
 
-有关如何使用 JavaScript 约束的详细信息，请参阅 [打印驱动程序约束示例](https://docs.microsoft.com/samples/microsoft/windows-driver-samples/print-driver-constraints-sample)。
+有关如何使用 JavaScript 约束的详细信息，请参阅 [打印驱动程序约束示例](/samples/microsoft/windows-driver-samples/print-driver-constraints-sample)。

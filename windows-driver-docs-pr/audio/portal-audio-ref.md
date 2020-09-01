@@ -1,22 +1,22 @@
 ---
 title: 音频设备 DDI 引用
-description: 本部分包含音频驱动程序的参考页，这些视频驱动程序符合 Windows 驱动模型（WDM）和用于音频处理对象接口的参考页。
+description: 本部分包含音频驱动程序的参考页面，这些页面符合 Windows 驱动模型 (WDM) 和用于处理音频处理对象接口的参考页。
 ms.assetid: 41a45180-4635-4d5d-befa-3e57467d4e33
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8be63c24d8fdd3b4d6deb33f2f480f2665fe6279
-ms.sourcegitcommit: 98930ca95b9adbb6e5e472f89e91ab084e67e31d
+ms.openlocfilehash: b2220120761ad4a8fa30c7b74b2b9fee9cc698d4
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82925538"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89210487"
 ---
 # <a name="audio-devices-ddi-reference"></a>音频设备 DDI 引用
 
 
-本部分包含音频驱动程序的参考页，这些视频驱动程序符合 Windows 驱动模型（WDM）和用于音频处理对象接口的参考页。
+本部分包含音频驱动程序的参考页面，这些页面符合 Windows 驱动模型 (WDM) 和用于处理音频处理对象接口的参考页。
 
-## <a name="span-idin_this_sectionspanin-this-section"></a><span id="in_this_section"></span>本部分内容
+## <a name="span-idin_this_sectionspanin-this-section"></a><span id="in_this_section"></span>本部分中的内容
 
 
 -   [音频驱动程序枚举](audio-drivers-enumerations.md)
@@ -36,13 +36,7 @@ ms.locfileid: "82925538"
 ## <a name="span-idadditional_resourcesspanadditional-resources"></a><span id="additional_resources"></span>其他资源
 
 
-有关开发音频设备驱动程序的常规信息，请参阅[音频设备设计指南](https://docs.microsoft.com/windows-hardware/drivers/audio/)。
+有关开发音频设备驱动程序的常规信息，请参阅 [音频设备设计指南](./index.md)。
 
  
-
- 
-
-
-
-
 

@@ -6,12 +6,12 @@ keywords:
 - KMDF Hello World
 ms.date: 04/20/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 3c886ae2b5dec4eea98b9b00aa184db1f1a1516e
-ms.sourcegitcommit: 830392693a16a87294b66679b0b3a623bd0c7971
+ms.openlocfilehash: 432ee82fd9289549aae4e7fedb5ea518502fe607
+ms.sourcegitcommit: 9e5a99dc75dfee3caa9a242adc0ed22ae4df9f29
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84633828"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89043135"
 ---
 # <a name="write-a-hello-world-windows-driver-kmdf"></a>编写 Hello World Windows 驱动程序 (KMDF)
 
@@ -35,7 +35,7 @@ ms.locfileid: "84633828"
      
 
 5.  在“位置”字段中，输入要在其中创建新项目的目录。
-6.  选中“创建解决方案的目录”。 单击“确定” 。
+6.  选中“创建解决方案的目录”。 选择“确定”。
 
     ![“新建项目”对话框的屏幕截图](images/vs2015-new-project-kmdf-empty.png)
 
@@ -43,15 +43,15 @@ ms.locfileid: "84633828"
 
     ![“解决方案资源管理器”窗口的屏幕截图，显示了解决方案和空的驱动程序项目 (kmdfhelloworld)](images/vs2015-kmdf-hello-world-solution-explorer.png)
 
-7.  在“解决方案资源管理器”窗口中，右键单击“KmdfHelloWorld”项目，然后选择“属性”。 导航到“配置属性”&gt;“驱动程序设置”&gt;“常规”。请注意，“目标平台”默认为“通用”。  单击“应用”，然后单击“确定”。
+7.  在“解决方案资源管理器”窗口中，选择并按住（或右键单击）KmdfHelloWorld 项目，然后选择“属性”  。 导航到“配置属性”&gt;“驱动程序设置”&gt;“常规”。请注意，“目标平台”默认为“通用”。  选择“应用”，然后选择“确定” 。
 
-8.  在“解决方案资源管理器”窗口中，再次右键单击“KmdfHelloWorld”项目，然后选择“添加”，再单击“新项” 。
+8.  在“解决方案资源管理器”窗口中，再再次选择并按住（或右键单击）KmdfHelloWorld 项目，选择“添加”，然后选择“新项”   。
 9.  在“添加新项目”对话框中，选择“C++ 文件”。 对于“名称”，请输入“Driver.c”。
 
     > [!NOTE]
     > 文件扩展名为 **.c**，不是 **.cpp**。
 
-     单击 **“添加”** 。 Driver.c 文件添加在源文件下，如下所示。
+     选择 **添加** 。 Driver.c 文件添加在源文件下，如下所示。
 
     ![“解决方案资源管理器”窗口的屏幕截图，显示添加到驱动程序项目中的 driver.c 文件](images/firstdriverkmdfsmall03.png)
 
@@ -226,9 +226,9 @@ ms.locfileid: "84633828"
 
 ## <a name="build-the-driver"></a>生成驱动程序
 
-1. 在“解决方案资源管理器”窗口中，右键单击“解决方案‘KmdfHelloWorld’(1 个项目)”，然后选择“配置管理器”。 为驱动程序项目选择配置和平台。 在本练习中，我们选择“调试”和“x64”。 
+1. 在“解决方案资源管理器”窗口中，选择并按住（或右键单击）“解决方案‘KmdfHelloWorld’(1 个项目)”，然后选择“配置管理器”  。 为驱动程序项目选择配置和平台。 在本练习中，我们选择“调试”和“x64”。 
 
-2. 在“解决方案资源管理器”窗口中，右键单击“KmdfHelloWorld”，然后选择“属性”。 在“Wpp 跟踪”&gt;“所有选项”中，将“运行 Wpp 跟踪”设置为“否”。 单击“应用”，然后单击“确定”。
+2. 在“解决方案资源管理器”窗口中，选择并按住（或右键单击）KmdfHelloWorld，然后选择“属性”  。 在“Wpp 跟踪”&gt;“所有选项”中，将“运行 Wpp 跟踪”设置为“否”。 依次选择“应用”、“确定” 。
 3. 若要生成驱动程序，请从“生成”菜单中选择“生成解决方案”。 Visual Studio 在“输出”窗口中显示生成进度。 （如果“输出”窗口不可见，请从“视图”菜单中选择“输出”。）验证解决方案成功生成后，即可关闭 Visual Studio。
 4. 若要查看生成的驱动程序，则在“文件资源管理器”中，依次转到 **KmdfHelloWorld** 文件夹和 **C:\\KmdfHelloWorld\\x64\\Debug\KmdfHelloWorld**。 该文件夹包括：
 
@@ -254,11 +254,11 @@ ms.locfileid: "84633828"
     > 在实际的驱动程序调试方案中，我们建议使用 KDNET 生成的密钥。 有关如何使用 KDNET 生成一个随机密钥的详细信息，请参阅[调试驱动程序 - 分步实验室（Sysvad 内核模式）](../debugger/debug-universal-drivers--kernel-mode-.md)主题。
 
 2.  在主计算机上，在 Visual Studio 中打开你的解决方案。 可以在 KmdfHelloWorld 文件夹中双击解决方案文件 KmdfHelloWorld.sln。
-3.  在“解决方案资源管理器”窗口中，右键单击“KmdfHelloWorld”项目，然后选择“属性”。
+3.  在“解决方案资源管理器”窗口中，选择并按住（或右键单击）KmdfHelloWorld 项目，然后选择“属性”  。
 4.  在“KmdfHelloWorld 属性页”窗口中，转到“配置属性”&gt;“驱动程序安装”&gt;“部署”，如下所示。
 5.  选中“部署前删除以前的驱动程序版本”。
 6.  对于“目标设备名称”，请选择配置用于测试和调试的计算机名。 在本练习中，我们使用名为 MyTestComputer 的计算机。
-7.  选择“硬件 ID 驱动程序更新”，然后输入驱动程序的硬件 ID。 在本练习中，硬件 ID 为 Root\\KmdfHelloWorld。 单击“确定” 。
+7.  选择“硬件 ID 驱动程序更新”，然后输入驱动程序的硬件 ID。 在本练习中，硬件 ID 为 Root\\KmdfHelloWorld。 选择“确定”。
 
     ![“kmdfhelloworld 属性页”窗口的屏幕截图，显示选择了“部署驱动程序安装” ](images/vs2015-kmdf-hello-world-property-pages.png)
 
@@ -300,7 +300,7 @@ ms.locfileid: "84633828"
 
         **c:\\tools\\devcon install kmdfhelloworld.inf root\kmdfhelloworld**
 
-        此时将显示一个对话框，指示测试驱动程序是未签名驱动程序。 单击“仍然安装此驱动程序”以继续。
+        此时将显示一个对话框，指示测试驱动程序是未签名驱动程序。 选择“仍然安装此驱动程序”以继续。
 
         ![驱动程序安装警告的屏幕截图](../debugger/images/debuglab-image-install-security-warning.png)
 

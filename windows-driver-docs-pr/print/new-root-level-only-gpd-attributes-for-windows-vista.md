@@ -7,12 +7,12 @@ keywords:
 - 常规打印机属性 WDK Unidrv，仅限根级别
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ce989feb0a1879e64abff0dc4c32b16424f8347f
-ms.sourcegitcommit: 17c1bbc5ea0bef3bbc87794b030a073f905dc942
+ms.openlocfilehash: a706e39a1f776c9232eb7c0f85d5c4ed0d14b701
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88802383"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89209531"
 ---
 # <a name="new-root-level-only-gpd-attributes-for-windows-vista"></a>适用于 Windows Vista 的仅限根级别的新 GPD 属性
 
@@ -201,7 +201,7 @@ ms.locfileid: "88802383"
 *Endif: WINNT_60 
 ```
 
-在 Microsoft Windows Server 2003 或 Windows XP 中，当 Unidrv 在 HP-UX/2 模式下进行打印时，如果 [**DrvRealizeBrush**](https://docs.microsoft.com/windows/win32/api/winddi/nf-winddi-drvrealizebrush) 函数中收到影线画笔，则 Unidrv 将发送一个命令，以便打印机选择合适的阴影画笔。 Unidrv 不控制阴影画笔的呈现方式。 例如，行之间的间距通常由分辨率控制。 在较高的分辨率下，间距会变小，而在较低的分辨率下，间距会更大。 因此，如果使用不同的分辨率，文档可能会以不同的方式打印。
+在 Microsoft Windows Server 2003 或 Windows XP 中，当 Unidrv 在 HP-UX/2 模式下进行打印时，如果 [**DrvRealizeBrush**](/windows/win32/api/winddi/nf-winddi-drvrealizebrush) 函数中收到影线画笔，则 Unidrv 将发送一个命令，以便打印机选择合适的阴影画笔。 Unidrv 不控制阴影画笔的呈现方式。 例如，行之间的间距通常由分辨率控制。 在较高的分辨率下，间距会变小，而在较低的分辨率下，间距会更大。 因此，如果使用不同的分辨率，文档可能会以不同的方式打印。
 
 在 Windows Vista 中，如果 GPD 指定了 **UseImageForHatchBrush？** 属性，则 Unidrv 会将阴影画笔呈现到位图图面上，然后将该位图发送到设备。 因此，Unidrv 对阴影画笔的呈现方式有一些控制。
 
@@ -250,9 +250,4 @@ ms.locfileid: "88802383"
 ```
 
  
-
- 
-
-
-
 

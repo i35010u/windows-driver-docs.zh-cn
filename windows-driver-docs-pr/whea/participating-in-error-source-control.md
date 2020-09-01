@@ -1,6 +1,6 @@
 ---
-title: 参与错误源代码管理
-description: 参与错误源代码管理
+title: 参与错误源控制
+description: 参与错误源控制
 ms.assetid: 4b2e3431-348f-48b1-924e-14b9fb5a48f0
 keywords:
 - Windows 硬件错误体系结构 WDK，错误源控制
@@ -12,23 +12,23 @@ keywords:
 - 错误源控制 WDK WHEA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6c771a3831a32d33e56a2330c2020c98314ad3f1
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 7dd528f70167359e37847846042dbbfb6fab4231
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72843550"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89210007"
 ---
-# <a name="participating-in-error-source-control"></a>参与错误源代码管理
+# <a name="participating-in-error-source-control"></a>参与错误源控制
 
 
 若要参与错误源控制，PSHED 插件必须实现以下回调函数：
 
-[*SetErrorSourceInfo*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nc-ntddk-pshed_pi_set_error_source_info)
+[*SetErrorSourceInfo*](/windows-hardware/drivers/ddi/ntddk/nc-ntddk-pshed_pi_set_error_source_info)
 
-[*EnableErrorSource*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nc-ntddk-pshed_pi_enable_error_source)
+[*EnableErrorSource*](/windows-hardware/drivers/ddi/ntddk/nc-ntddk-pshed_pi_enable_error_source)
 
-[*DisableErrorSource*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nc-ntddk-pshed_pi_disable_error_source)
+[*DisableErrorSource*](/windows-hardware/drivers/ddi/ntddk/nc-ntddk-pshed_pi_disable_error_source)
 
 下面的代码示例演示如何实现这些回调函数。
 
@@ -151,9 +151,4 @@ NTSTATUS
 参与错误源控制的 PSHED 插件必须在向操作系统[注册](registering-a-pshed-plug-in.md)自身时指定**PshedFAErrorSourceControl**标志。
 
  
-
- 
-
-
-
 

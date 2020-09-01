@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 084817a07e1d94908182a5e4a3dedaa6e64febee
-ms.sourcegitcommit: 2f37e8de9759164804a3b1c7f5c9e497a607539b
+ms.openlocfilehash: 74c1014e2a80de9dfcff0534a0db300fa6444b4c
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/26/2020
-ms.locfileid: "83851282"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89210961"
 ---
 # <a name="ksproperty_oneshot_disconnect"></a>KSPROPERTY \_ ONESHOT \_ 断开连接
 
@@ -38,7 +38,7 @@ ms.locfileid: "83851282"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Get</th>
+<th align="left">获取</th>
 <th align="left">设置</th>
 <th align="left">目标</th>
 <th align="left">属性描述符类型</th>
@@ -50,7 +50,7 @@ ms.locfileid: "83851282"
 <td align="left"><p>是</p></td>
 <td align="left"><p>否</p></td>
 <td align="left"><p>筛选器</p></td>
-<td align="left"><p><a href="https://docs.microsoft.com/previous-versions/ff564262(v=vs.85)" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/ff564262(v=vs.85))"><strong>KSPROPERTY</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/previous-versions/ff564262(v=vs.85)" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](/previous-versions/ff564262(v=vs.85))"><strong>KSPROPERTY</strong></a></p></td>
 <td align="left"><p>Null</p></td>
 </tr>
 </tbody>
@@ -62,7 +62,7 @@ ms.locfileid: "83851282"
 
 ### <a name="span-idreturn_valuespanspan-idreturn_valuespanspan-idreturn_valuespanreturn-value"></a><span id="Return_Value"></span><span id="return_value"></span><span id="RETURN_VALUE"></span>返回值
 
-如果请求成功，则**KSPROPERTY \_ ONESHOT \_ DISCONNECT**属性返回状态 \_ 成功。
+如果请求成功，则 **KSPROPERTY \_ ONESHOT \_ DISCONNECT** 属性返回状态 \_ 成功。
 
 > [!NOTE]
 > 成功的请求表示驱动程序尝试从蓝牙音频设备断开连接，但并不一定表示尝试成功。
@@ -72,7 +72,7 @@ ms.locfileid: "83851282"
 <a name="remarks"></a>备注
 -------
 
-您可以在您的驱动程序中实现[**KSPROPERTY \_ 插孔 \_ 说明**](ksproperty-jack-description.md)pin 属性。 此实现允许在进行**KSPROPERTY \_ ONESHOT \_ 断开连接**属性请求后检查终结点的连接状态。
+您可以在您的驱动程序中实现 [**KSPROPERTY \_ 插孔 \_ 说明**](ksproperty-jack-description.md) pin 属性。 此实现允许在进行 **KSPROPERTY \_ ONESHOT \_ 断开连接** 属性请求后检查终结点的连接状态。
 
 <a name="requirements"></a>要求
 ------------
@@ -88,8 +88,8 @@ ms.locfileid: "83851282"
 <td align="left"><p>在 windows 7 和更高版本的 Windows 中可用。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>Header</p></td>
-<td align="left">Ksmedia （包括 Ksmedia）</td>
+<td align="left"><p>标头</p></td>
+<td align="left">Ksmedia (包含 Ksmedia) </td>
 </tr>
 </tbody>
 </table>
@@ -97,16 +97,9 @@ ms.locfileid: "83851282"
 ## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
-[**KSPROPERTY**](https://docs.microsoft.com/previous-versions/ff564262(v=vs.85))
+[**KSPROPERTY**](/previous-versions/ff564262(v=vs.85))
 
 [**KSPROPERTY \_ 插孔 \_ 说明**](ksproperty-jack-description.md)
 
  
-
- 
-
-
-
-
-
 

@@ -6,12 +6,12 @@ keywords:
 - PCM 多通道流数据格式 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3ddf9d080fec872157e4c947a3ecd6d8c241eeef
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: d3e331a886140ab493a06a7acb9a06bcb5ebc211
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72832545"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89210509"
 ---
 # <a name="pcm-multichannel-stream-data-format"></a>PCM 多声道流数据格式
 
@@ -19,7 +19,7 @@ ms.locfileid: "72832545"
 ## <span id="pcm_multichannel_stream_data_format"></span><span id="PCM_MULTICHANNEL_STREAM_DATA_FORMAT"></span>
 
 
-此示例使用[**KSDATAFORMAT\_WAVEFORMATEX**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksdataformat_waveformatex)结构的扩展版本来描述 PCM 多通道流的数据格式。
+此示例使用 [**KSDATAFORMAT \_ WAVEFORMATEX**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksdataformat_waveformatex) 结构的扩展版本来描述 PCM 多通道流的数据格式。
 
 ```cpp
   DataFormat.FormatSize  = sizeof(KSDATAFORMAT) + sizeof(WAVEFORMATEXTENSIBLE);
@@ -42,9 +42,4 @@ ms.locfileid: "72832545"
 ```
 
  
-
- 
-
-
-
 

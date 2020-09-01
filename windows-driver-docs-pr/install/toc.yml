@@ -1952,7 +1952,7 @@
       href: suppressaddremoveprograms-xml-element.md
     - name: suppressWizard XML 元素
       href: suppresswizard-xml-element.md
-    - name: 为供应商提供的系统定义的设备安装程序类
+    - name: INF 版本部分的 Class 和 ClassGuid 条目
       href: system-defined-device-setup-classes-available-to-vendors.md
     - name: 保留给系统使用的系统定义的设备安装程序类
       href: system-defined-device-setup-classes-reserved-for-system-use.md

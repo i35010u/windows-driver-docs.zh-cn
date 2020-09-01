@@ -26,21 +26,21 @@ keywords:
 - 数据格式化 WDK 音频，头文件
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cac6b949cb493e0b71e48c39f64a731aed130bb3
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: b69796f4c6dcf613dedd74d574bfd465fddf28c5
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72831195"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89209169"
 ---
 # <a name="header-file-changes"></a>标头文件更改
 
 
-Windows 驱动程序工具包（WDK）包含两个标头文件，用于定义 Windows 多媒体控制面板支持的扬声器配置：
+Windows 驱动程序工具包 (WDK) 包含两个标头文件，用于定义 Windows 多媒体控制面板支持的扬声器配置：
 
--   Ksmedia 定义[**KSPROPERTY\_音频\_通道\_config**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-audio-channel-config)属性请求使用的[**KSAUDIO\_通道\_config**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksaudio_channel_config)结构的通道掩码。
+-   Ksmedia 定义[**KSPROPERTY \_ 音频 \_ 通道 \_ config**](./ksproperty-audio-channel-config.md)属性请求所使用的[**KSAUDIO \_ 通道 \_ 配置**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksaudio_channel_config)结构的通道掩码。
 
--   Dsound 定义可提交到**IDirectSound：： SetSpeakerConfig**方法的发言人配置标识符的列表。 有关此方法的详细信息，请参阅 Windows SDK 文档。
+-   Dsound 定义可提交到 **IDirectSound：： SetSpeakerConfig** 方法的发言人配置标识符的列表。 有关此方法的详细信息，请参阅 Windows SDK 文档。
 
 在 Windows Server 2003、带有 SP1 的 Windows XP、Windows 2000 和 Windows Me/98 中，Ksmedia 定义了下表中显示的用于5.1 和7.1 通道流的通道掩码。
 
@@ -113,11 +113,11 @@ Windows 驱动程序工具包（WDK）包含两个标头文件，用于定义 Wi
 
 通过比较上述两个表，可以看出以下几点：
 
--   第一个表中的通道掩码0x3F 的含义未在第二个表中更改，即使在 Windows SP2 和更高版本的 Windows 中，KSAUDIO\_音箱\_5POINT1 被解释为使用 SL 和 SR 扬声器，而不是 BL 和 BR。
+-   第一个表中的通道掩码0x3F 的含义未在第二个表中更改，即使在 Windows SP2 和更高版本的 Windows 中，KSAUDIO \_ 发言人 \_ 5POINT1 也被解释为使用 SL 和 SR 扬声器，而不是 BL 和 BR。
 
 -   支持值为0x63F 的新通道掩码。 此通道掩码代表7.1 家庭影院扬声器配置。
 
--   **注意**   在 windows Vista 和更高版本的 windows 中，不再支持 KSAUDIO\_扬声器\_7POINT1 扬声器配置。 因此，它不是控制面板中的可用选项。
+-   **注意**   在 Windows Vista 和更高版本的 Windows 中， \_ \_ 不再支持 KSAUDIO 扬声器7POINT1 扬声器配置。 因此，它不是控制面板中的可用选项。
 
      
 
@@ -130,14 +130,9 @@ Windows 驱动程序工具包（WDK）包含两个标头文件，用于定义 Wi
   #define DSSPEAKER_7POINT1_WIDE        DSSPEAKER_7POINT1
 ```
 
-DSSPEAKER\_7POINT1\_环绕在 "控制面板 7.1" 中。 DSSPEAKER\_7POINT1 和 DSSPEAKER\_7POINT1\_宽均为同一7.1 范围配置发言人配置的名称。
+DSSPEAKER \_ 7POINT1 \_ 环绕在 "控制面板 7.1" 中， DSSPEAKER \_ 7POINT1 和 DSSPEAKER \_ 7POINT1 \_ 都是同一7.1 范围配置发言人配置的名称。
 
-有关 DirectSound 的扬声器配置的详细信息，请参阅[DirectSound 发言人-配置设置](directsound-speaker-configuration-settings.md)。
-
- 
+有关 DirectSound 的扬声器配置的详细信息，请参阅 [DirectSound 发言人-配置设置](directsound-speaker-configuration-settings.md)。
 
  
-
-
-
 

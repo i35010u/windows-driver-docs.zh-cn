@@ -1,9 +1,9 @@
 ---
-title: KSPROPERTY\_FMRX\_STATE
-description: KSPROPERTY\_FMRX\_STATE 属性指定是否启用调频广播。
+title: KSPROPERTY \_ FMRX \_ 状态
+description: KSPROPERTY \_ FMRX \_ STATE 属性指定是否启用调频无线电。
 ms.assetid: A975221C-3300-4A44-9E8C-9AB4B4C54C32
 keywords:
-- KSPROPERTY_FMRX_STATE Audio Devices
+- KSPROPERTY_FMRX_STATE 音频设备
 topic_type:
 - apiref
 api_name:
@@ -14,19 +14,19 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4425e093e24fa183325b468f8227d6ba31954424
-ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
+ms.openlocfilehash: 93eb083b1e2675bb2ac81e2a39887a470cc22346
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67391673"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89210985"
 ---
-# <a name="kspropertyfmrxstate"></a>KSPROPERTY\_FMRX\_STATE
+# <a name="ksproperty_fmrx_state"></a>KSPROPERTY \_ FMRX \_ 状态
 
 
-**KSPROPERTY\_FMRX\_状态**属性指定是否启用了 FM 收音机。
+**KSPROPERTY \_ FMRX \_ STATE**属性指定是否启用调频无线电。
 
-### <a name="span-idusagesummarytablespanspan-idusagesummarytablespanspan-idusagesummarytablespanusage-summary-table"></a><span id="Usage_Summary_Table"></span><span id="usage_summary_table"></span><span id="USAGE_SUMMARY_TABLE"></span>使用率摘要表
+### <a name="span-idusage_summary_tablespanspan-idusage_summary_tablespanspan-idusage_summary_tablespanusage-summary-table"></a><span id="Usage_Summary_Table"></span><span id="usage_summary_table"></span><span id="USAGE_SUMMARY_TABLE"></span>使用情况摘要表
 
 <table>
 <colgroup>
@@ -38,7 +38,7 @@ ms.locfileid: "67391673"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Get</th>
+<th align="left">获取</th>
 <th align="left">设置</th>
 <th align="left">目标</th>
 <th align="left">属性描述符类型</th>
@@ -49,8 +49,8 @@ ms.locfileid: "67391673"
 <tr class="odd">
 <td align="left"><p>是</p></td>
 <td align="left"><p>是</p></td>
-<td align="left"><p>Filter</p></td>
-<td align="left"><p><a href="https://docs.microsoft.com/previous-versions/ff564262(v=vs.85)" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/ff564262(v=vs.85))"><strong>KSPROPERTY</strong></a></p></td>
+<td align="left"><p>筛选器</p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/previous-versions/ff564262(v=vs.85)" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](/previous-versions/ff564262(v=vs.85))"><strong>KSPROPERTY</strong></a></p></td>
 <td align="left"><p>BOOL</p></td>
 </tr>
 </tbody>
@@ -58,18 +58,18 @@ ms.locfileid: "67391673"
 
  
 
-属性值属于类型布尔值，指定是否启用调频广播。
+属性值的类型为 BOOL，并指定是否启用调频无线电。
 
-### <a name="span-idreturnvaluespanspan-idreturnvaluespanspan-idreturnvaluespanreturn-value"></a><span id="Return_Value"></span><span id="return_value"></span><span id="RETURN_VALUE"></span>返回值
+### <a name="span-idreturn_valuespanspan-idreturn_valuespanspan-idreturn_valuespanreturn-value"></a><span id="Return_Value"></span><span id="return_value"></span><span id="RETURN_VALUE"></span>返回值
 
-一个**KSPROPERTY\_FMRX\_状态**属性请求将返回**TRUE**如果启用了 FM 收音机和**FALSE**如果调频广播处于禁用状态。
+如果启用调频无线电， **KSPROPERTY \_ FMRX \_ 状态** 属性请求将返回 **TRUE;** 如果禁用调频无线电，则返回 **FALSE** 。
 
 <a name="remarks"></a>备注
 -------
 
-可以启用或禁用通过设置调频广播**KSPROPERTY\_FMRX\_状态**批筛选器的属性。 FM 卷和路由 （终结点选择） 受[ **KSPROPERTY\_FMRX\_卷**](ksproperty-fmrx-volume.md)并[ **KSPROPERTY\_FMRX\_ENDPOINTID** ](ksproperty-fmrx-endpointid.md)拓扑筛选器的属性。 对的基本支持**KSPROPERTY\_FMRX\_卷**属性应返回最小的卷、 最大卷和卷范围。
+可以通过在 wave 滤镜上设置 **KSPROPERTY \_ FMRX \_ STATE** 属性来启用或禁用调频广播。 FM volume 和路由 (终结点选择) 由拓扑筛选器上的 [**KSPROPERTY \_ FMRX \_ volume**](ksproperty-fmrx-volume.md) 和 [**KSPROPERTY \_ FMRX \_ ENDPOINTID**](ksproperty-fmrx-endpointid.md) 属性控制。 **KSPROPERTY \_ FMRX \_ volume**属性的基本支持应返回最小卷、最大卷和卷范围。
 
-一个新[ **KSNODETYPE\_FM\_RX** ](ksnodetype-fm-rx.md)拓扑节点终结点实现如任何其他音频的终结点是在系统中，并支持音频终结点的所有属性。 此终结点还支持下定义的插孔属性[KSPROPSETID\_Jack](kspropsetid-jack.md)属性集。 此终结点是在启动时拔出状态。 如果驱动程序支持捕获调频广播，此终结点变为活动状态时启用了 FM 收音机中。 创建一个捕获固定**KSNODETYPE\_FM\_RX**拓扑节点允许来自 FM 接收方的音频捕获。
+新的 [**KSNODETYPE \_ FM \_ RX**](ksnodetype-fm-rx.md) 拓扑节点终结点实现为系统中的任何其他音频终结点，并且它支持所有音频终结点属性。 此终结点还支持在 [KSPROPSETID \_ 插座](kspropsetid-jack.md) 属性集下定义的插座属性。 此终结点在启动时处于拔出状态。 如果驱动程序支持捕获调频广播，则启用调频广播后，此终结点将变为活动状态。 在 **KSNODETYPE \_ FM \_ RX** 拓扑节点上创建捕获 pin 后，可通过调频接收机接收音频捕获。
 
 <a name="requirements"></a>要求
 ------------
@@ -93,17 +93,11 @@ ms.locfileid: "67391673"
 <td align="left"><p>Windows 10 移动版</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>Header</p></td>
+<td align="left"><p>标头</p></td>
 <td align="left">Ksmedia.h</td>
 </tr>
 </tbody>
 </table>
 
  
-
- 
-
-
-
-
 

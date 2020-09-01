@@ -1,6 +1,6 @@
 ---
-title: Iasphelp get\_AspPage 方法
-description: AspPage 属性启用 ASP 网页，以获取用于描述特定于打印机的详细信息的初始 ASP 文件的目录路径。
+title: Iasphelp get \_ AspPage 方法
+description: 使用 AspPage 属性可以使 ASP 网页获取用于描述特定于打印机的详细信息的初始 ASP 文件的目录路径。
 MS-HAID:
 - webfnc\_6b636ee3-bc4f-4fbd-8ad9-87d6abcf3b35.xml
 - print.iasphelp\_asppage
@@ -20,17 +20,17 @@ api_type:
 - COM
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f40d9320c8ac462432598094e3e77979ca5afced
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 96384e717c5ae648ce4680487cfd460f1b067ac0
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63360474"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89210611"
 ---
-# <a name="iasphelpgetasppage-method"></a>Iasphelp::get\_AspPage 方法
+# <a name="iasphelpget_asppage-method"></a>Iasphelp：： get \_ AspPage 方法
 
 
-**AspPage**属性启用 ASP 网页，以获取用于描述特定于打印机的详细信息的初始 ASP 文件的目录路径。
+使用 **AspPage** 属性可以使 ASP 网页获取用于描述特定于打印机的详细信息的初始 ASP 文件的目录路径。
 
 <a name="syntax"></a>语法
 ------
@@ -42,19 +42,19 @@ HRESULT get_AspPage(
 );
 ```
 
-<a name="parameters"></a>Parameters
+<a name="parameters"></a>参数
 ----------
 
-*dwPage* \[in\]  
+*dwPage* \[中\]  
 必须为 1。
 
-*pVal* \[out\]  
-调用方提供的位置以接收指定初始 Web 页面描述特定于打印机的详细信息的目录路径的大小前缀的 Unicode 字符串指针。
+*pVal* \[弄\]  
+调用方提供的用于接收大小为前缀的 Unicode 字符串的位置的指针，该位置指定描述特定于打印机的详细信息的初始网页的目录路径。
 
 <a name="return-value"></a>返回值
 ------------
 
-此方法可以返回下列值之一。
+此方法可以返回这些值之一。
 
 <table>
 <colgroup>
@@ -74,7 +74,7 @@ HRESULT get_AspPage(
 </tr>
 <tr class="even">
 <td><strong>E_HANDLE</strong></td>
-<td><p><a href="iasphelp-open.md" data-raw-source="[&lt;strong&gt;Iasphelp::Open&lt;/strong&gt;](iasphelp-open.md)"> <strong>Iasphelp::Open</strong> </a>尚未调用方法。</p></td>
+<td><p>未调用 <a href="iasphelp-open.md" data-raw-source="[&lt;strong&gt;Iasphelp::Open&lt;/strong&gt;](iasphelp-open.md)"><strong>Iasphelp：： Open</strong></a> 方法。</p></td>
 </tr>
 <tr class="odd">
 <td><strong>E_NOTIMPL</strong></td>
@@ -82,16 +82,16 @@ HRESULT get_AspPage(
 </tr>
 <tr class="even">
 <td><strong>E_POINTER</strong></td>
-<td><p>无效<em>pVal</em>指针。</p></td>
+<td><p><em>PVal</em>指针无效。</p></td>
 </tr>
 </tbody>
 </table>
 
 ## <a name="vbscript-example"></a>VBScript 示例
 
-若要确定在哪里可以找到页面的 ASP 文件，该方法使用的算法中所述[将显示该打印机的详细信息页？](https://docs.microsoft.com/windows-hardware/drivers/print/which-printer-details-page-is-displayed-)。
+若要确定在何处查找页面的 ASP 文件，该方法使用 [显示 "打印机详细信息" 页](./which-printer-details-page-is-displayed-.md)中所述的算法？。
 
-[ **Iasphelp::Open** ](iasphelp-open.md)前必须调用方法**Iasphelp::AspPage**属性可以进行查询。
+在查询**Iasphelp：： AspPage**属性之前，必须先调用[**Iasphelp：： Open**](iasphelp-open.md)方法。
 
 ```vb
     Dim objPrinter, strPrinter, str
@@ -112,11 +112,11 @@ HRESULT get_AspPage(
 <tbody>
 <tr class="odd">
 <td><p>目标平台</p></td>
-<td>桌面设备</td>
+<td>“桌面”</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
-[**Iasphelp::Open**](iasphelp-open.md)
+[**Iasphelp：： Open**](iasphelp-open.md)

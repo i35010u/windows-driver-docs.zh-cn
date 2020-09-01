@@ -1,39 +1,39 @@
 ---
 title: WDI_TLV_CIPHER_KEY_BIP_KEY
-description: WDI_TLV_CIPHER_KEY_BIP_KEY 是 TLV 包含 OID_WDI_SET_ADD_CIPHER_KEYS BIP 密码算法的密钥数据。
+description: WDI_TLV_CIPHER_KEY_BIP_KEY 是一种 TLV，其中包含 OID_WDI_SET_ADD_CIPHER_KEYS 的 BIP 密码算法密钥数据。
 ms.assetid: 99630BDF-9845-4E3D-AB18-5F5BAFCF7198
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 WDI_TLV_CIPHER_KEY_BIP_KEY 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 3c7b2e3c0366cf95c85f5f17f33606c7a9167ce4
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 221baee14eccd3b73aa66561f14e448528197b0b
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67387190"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89210049"
 ---
-# <a name="wditlvcipherkeybipkey"></a>WDI\_TLV\_CIPHER\_KEY\_BIP\_KEY
+# <a name="wdi_tlv_cipher_key_bip_key"></a>WDI \_ TLV \_ 密码 \_ 密钥 \_ BIP \_ 密钥
 
 
-WDI\_TLV\_密码\_密钥\_BIP\_键是包含 BIP 密码算法密钥数据的 TLV [OID\_WDI\_设置\_添加\_密码\_密钥](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wdi-set-add-cipher-keys)。
+WDI \_ tlv \_ 密码 \_ 密钥 \_ BIP \_ 密钥是一个 TLV，其中包含 OID 的 BIP 密码算法 [密钥 \_ \_ \_ \_ \_ ](./oid-wdi-set-add-cipher-keys.md)数据。
 
 ## <a name="tlv-type"></a>TLV 类型
 
 
 0x51
 
-## <a name="length"></a>长度
+## <a name="length"></a>Length
 
 
-UINT8 元素的数组大小 （以字节为单位）。 该数组必须包含一个或多个元素。
+UINT8 元素数组的大小 (以字节为单位) 。 数组必须包含1个或多个元素。
 
 ## <a name="values"></a>值
 
 
-| 在任务栏的搜索框中键入      | 描述                              |
+| 类型      | 说明                              |
 |-----------|------------------------------------------|
-| UINT8\[\] | 指定 BIP 密码算法的密钥数据。 |
+| UINT8\[\] | 指定 BIP 密码算法密钥数据。 |
 
  
 
@@ -55,16 +55,11 @@ UINT8 元素的数组大小 （以字节为单位）。 该数组必须包含一
 <td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
-<td><p>Header</p></td>
+<td><p>标头</p></td>
 <td>Wditypes.hpp</td>
 </tr>
 </tbody>
 </table>
 
  
-
- 
-
-
-
 

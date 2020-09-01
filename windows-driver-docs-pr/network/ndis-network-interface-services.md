@@ -8,12 +8,12 @@ keywords:
 - 服务 WDK 网络接口
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c1439e42039e24b590efc22b4c7ca80fc72031db
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 87cdf9ee0a367dc2acd82661b953181fc2eb81d2
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67354978"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89210173"
 ---
 # <a name="ndis-network-interface-services"></a>NDIS 网络接口服务
 
@@ -21,28 +21,22 @@ ms.locfileid: "67354978"
 
 
 
-NDIS 网络的接口的编程接口提供的服务：
+NDIS 网络接口编程接口提供以下服务：
 
--   生成的本地唯一标识符 ( [ **NET\_LUID**](https://docs.microsoft.com/windows/desktop/api/ifdef/ns-ifdef-net_luid_lh)) 为每个接口。 NET\_LUID 值：
-    -   必须保留在计算机重新启动时。 接口提供程序必须进行 NET\_持久，即使关联的接口不是永久的 Luid。 例如，此持久性可让接口提供程序，以释放 NET\_LUID 索引计算机电源故障时。
-    -   必须与接口类型相关联 ( *IfType*在 RFC 2863)。
-    -   必须是本地计算机上唯一的。
-    -   可以将转换为文本表示形式，因为 NET\_LUID 相当于接口名称 (*ifName*在 RFC 2863)。
--   生成的本地唯一的接口索引 (一个 24 位值，也称为*IfIndex* ) 为每个接口。 *IfIndex*值具有以下属性：
-    -   较低的数值是首选。 例如，NDIS 重复使用的最小可用接口索引。
-    -   *IfIndex*计算机重新启动时不会保留值。
-    -   没有之间的一一对应关系[ **NET\_LUID** ](https://docs.microsoft.com/windows/desktop/api/ifdef/ns-ifdef-net_luid_lh)值和一个*IfIndex*值。
--   接口索引，NET 之间的映射\_LUID 值和"友好名称"（例如，为显示网络连接文件夹中的友好名称）。
+-   为每个接口 ( [**NET \_ LUID**](/windows/desktop/api/ifdef/ns-ifdef-net_luid_lh)) 生成本地唯一标识符。 NET \_ LUID 值：
+    -   计算机重新启动时必须保留。 \_即使关联的接口不是永久性的，接口提供程序也必须使 NET luid 持久。 例如，如果存在计算机电源故障，则此永久性允许接口提供程序释放 NET \_ LUID 索引。
+    -   必须与 RFC 2863) 中 ( *IfType* 的接口类型相关联。
+    -   在本地计算机上必须唯一。
+    -   由于 NET \_ LUID 等效于 RFC 2863) 中 (*ifName* 的接口名称，因此可转换为文本表示形式。
+-    (一个24位值生成本地唯一接口索引，每个接口也称为 *IfIndex* ) 。 *IfIndex* 值具有以下属性：
+    -   优先级较低。 例如，NDIS 重用最低可用的接口索引。
+    -   计算机重新启动时， *IfIndex*值不会持久保存。
+    -   [**NET \_ LUID**](/windows/desktop/api/ifdef/ns-ifdef-net_luid_lh)值与*IfIndex*值之间存在一对一的对应关系。
+-   接口索引、NET \_ LUID 值和 "友好名称" 之间的映射 (例如，) 的 "网络连接" 文件夹中显示的友好名称。
 
--   在驱动程序堆栈中定义接口的分层顺序。
+-   定义驱动程序堆栈中接口的分层顺序。
 
--   查询和设置接口属性和 NDIS 驱动程序管理，并且该 Rfc 2863 和 2864年指定表。
-
- 
+-   查询并设置 NDIS 驱动程序管理的接口属性和表，以及 Rfc 2863 和2864指定的表。
 
  
-
-
-
-
 

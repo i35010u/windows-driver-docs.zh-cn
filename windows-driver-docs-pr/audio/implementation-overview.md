@@ -1,63 +1,58 @@
 ---
 title: 实现概述
-description: 本主题是你必须是开发能够处理硬件卸载音频流的音频适配器驱动程序时考虑的实现关键点的概述。
+description: 本主题概述了在为能够处理硬件卸载音频流的音频适配器开发驱动程序时必须注意的实现关键点。
 ms.assetid: B93B9A6D-7317-482B-A0B8-298CE8F21193
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9337df0a6e845d2971a7f4ea62fe8e63d73bb619
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 5d7238f9ef4d9b200ca3dc6ebffa6a4f2f420e9d
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67359946"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89209123"
 ---
 # <a name="implementation-overview"></a>实现概述
 
 
-本主题是你必须是开发能够处理硬件卸载音频流的音频适配器驱动程序时考虑的实现关键点的概述。
+本主题概述了在为能够处理硬件卸载音频流的音频适配器开发驱动程序时必须注意的实现关键点。
 
-## <a name="span-idthenewksfiltertopologyspanspan-idthenewksfiltertopologyspanspan-idthenewksfiltertopologyspanthe-new-ks-filter-topology"></a><span id="The_New_KS_Filter_Topology"></span><span id="the_new_ks_filter_topology"></span><span id="THE_NEW_KS_FILTER_TOPOLOGY"></span>在新的 KS 筛选拓扑
-
-
-在 Windows 8 和更高版本操作系统中，支持提供了可使用板载硬件音频引擎处理音频流的音频适配器为新类型。 当开发这样的音频适配器时，关联的音频驱动程序必须以特定方式公开到用户模式音频系统这一事实，以便音频系统可以发现、 使用和正确公开此适配器和其驱动程序的功能。
-
-若要使音频驱动程序来公开这些新的音频适配器的硬件功能，Windows 8 引入了新的驱动程序必须使用 KS 筛选器拓扑：
-
-![在新 ks 筛选器的拓扑，显示在主机进程输入插针、 卸载音频输入插针和环回输出插针。 音频处理从卸载音频应用到音频流和主机进程 pins.the 环回路径的最后一个处理阶段的输出中获取并直接从 ks 筛选器拓扑的潜在顾客。 其他两种流式处理通过 dac 和流出 ks 筛选器拓扑。](images/audio-engine-ksftopology.png)
-
-您可以看到在上图中，KS 筛选器拓扑表示通过硬件使用的数据路径，并还显示了这些路径可用的函数。 对于可以处理卸载的音频的音频适配器，有以下输入和输出 （称为插针） KS 筛选器：
-
--   一个主机进程插针。 这表示软件音频引擎到 KS 筛选器的输入。
-
--   一个 Loopback 插针。 这表示从硬件音频引擎 Windows 音频会话 API （wasapi 就可以了） 层到一个输出。
-
--   Offloaded 音频的 pin 数。 尽管图显示了此类型的一个 pin，IHV 可以自由地实现任意数量 (n) 的 pin。
-
-有关此新类型的筛选器的 KS 拓扑中的 pin 的详细信息，请参阅[体系结构概述](architectural-overview.md)。
-"会导致"发现音频适配器及其驱动程序的用户模式音频系统中的实际服务是 AudioEndpointBuilder。 AudioEndpointBuilder 服务监视器**KSCATEGORY\_音频**设备接口到达和删除的类。 音频设备驱动程序时注册的新实例**KSCATEGORY\_音频**设备接口类设备接口到达通知触发。 AudioEndpointBuilder 服务将检测设备接口到达通知并会使用一种算法，以便它可以采取相应的操作在系统中检查的音频设备的拓扑。
-
-因此，您的驱动程序开发时音频驱动程序以支持可以处理卸载音频的适配器，必须使用新定义[ **KSNODETYPE\_音频\_引擎**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksnodetype-audio-engine)音频终结点公开硬件音频引擎的功能。 有关音频终结点发现过程的详细信息，请参阅[音频终结点生成器算法](audio-endpoint-builder-algorithm.md)。
-
-## <a name="span-iduserinterfaceconsiderationsspanspan-iduserinterfaceconsiderationsspanspan-iduserinterfaceconsiderationsspanuser-interface-considerations"></a><span id="User_Interface_Considerations"></span><span id="user_interface_considerations"></span><span id="USER_INTERFACE_CONSIDERATIONS"></span>用户界面的注意事项
+## <a name="span-idthe_new_ks_filter_topologyspanspan-idthe_new_ks_filter_topologyspanspan-idthe_new_ks_filter_topologyspanthe-new-ks-filter-topology"></a><span id="The_New_KS_Filter_Topology"></span><span id="the_new_ks_filter_topology"></span><span id="THE_NEW_KS_FILTER_TOPOLOGY"></span>新的 KS 筛选器拓扑
 
 
-开发音频驱动程序来控制能够处理卸载音频的音频适配器的基础硬件功能。 这意味着您的驱动程序具有有关如何控制适配器的功能的最好的知识。 因此必须开发一个用户界面，将公开给最终用户在窗体的选项，他们可以选择、 启用和/或禁用适配器的功能。
+在 Windows 8 及更高版本的操作系统中，已为一种新类型的音频适配器提供支持，可以使用板载硬件音频引擎来处理音频流。 开发此类音频适配器时，关联的音频驱动程序必须以特定方式向用户模式音频系统公开此事实，以便音频系统能够发现、使用和正确公开此适配器及其驱动程序的功能。
 
-但是，您已经有一个用户界面，用于控制音频处理对象 (Apo) 开发的如果无法扩展此 UI，可以使用新的音频适配器。 在这种情况下，你的扩展 ui 将提供软件控制的软和硬件控制适配器。
+为了使音频驱动程序可以公开这些新音频适配器的硬件功能，Windows 8 引入了驱动程序必须使用的新的 KS 筛选器拓扑：
 
-## <a name="span-idapplicationimpactspanspan-idapplicationimpactspanspan-idapplicationimpactspanapplication-impact"></a><span id="Application_Impact"></span><span id="application_impact"></span><span id="APPLICATION_IMPACT"></span>应用程序的影响
+![新的 ks 筛选器拓扑，其中显示了主机进程输入插针、卸载的音频输入插针和环回输出插针。 音频处理适用于来自卸载的音频和主机进程 pin 的音频流。环回路径取自最终处理阶段的输出，并直接从 ks 筛选器拓扑中产生。 其他两个流流过了 dac 和 ks 筛选器拓扑。](images/audio-engine-ksftopology.png)
+
+如上图所示，一个 KS 筛选器拓扑表示通过硬件的数据路径，并且还显示这些路径上可用的函数。 对于可以处理卸载音频的音频适配器，有以下输入和输出 (在 KS 筛选器上) 称为 pin：
+
+-   一个主机进程 pin。 这表示从软件音频引擎到 KS 筛选器的输入。
+
+-   一个环回 pin。 这表示硬件音频引擎到 Windows 音频会话 API (WASAPI) 层的输出。
+
+-   许多卸载音频 pin。 尽管此图仅显示此类型的一个 pin，但 IHV 可以自由地实现任何数量 (n) 的 pin。
+
+有关此新类型的 KS 筛选器拓扑中的 pin 的详细信息，请参阅 [体系结构概述](architectural-overview.md)。
+用户模式音频系统中的实际服务（"领导" 音频适配器及其驱动程序的发现）是 AudioEndpointBuilder。 AudioEndpointBuilder 服务会监视 **KSCATEGORY \_ 音频** 类，寻找设备接口到达和删除。 当音频设备驱动程序注册 **KSCATEGORY \_ 音频** 设备接口类的新实例时，将激发设备接口到达通知。 AudioEndpointBuilder 服务检测到设备接口到达通知，并使用算法检查系统中音频设备的拓扑，使其可以采取适当的措施。
+
+因此，当你开发音频驱动程序来支持能够处理卸载音频的适配器时，你的驱动程序必须使用新定义的 [**KSNODETYPE \_ 音频 \_ 引擎**](./ksnodetype-audio-engine.md) 音频终结点来公开硬件音频引擎的功能。 有关音频终结点发现过程的详细信息，请参阅 [音频终结点生成器算法](audio-endpoint-builder-algorithm.md)。
+
+## <a name="span-iduser_interface_considerationsspanspan-iduser_interface_considerationsspanspan-iduser_interface_considerationsspanuser-interface-considerations"></a><span id="User_Interface_Considerations"></span><span id="user_interface_considerations"></span><span id="USER_INTERFACE_CONSIDERATIONS"></span>用户界面注意事项
 
 
-此新类型的音频适配器和其关联的驱动程序，所述的功能可由通过 wasapi 就可以了，Media Foundation、 媒体引擎或 HTML 5 的 UWP 应用&lt;音频&gt;标记。 请注意，不能使用批和 DSound，因为它们不是适用于 UWP 应用。 另请注意，桌面应用程序不能使用支持硬件卸载音频的音频适配器的卸载功能。 这些应用程序仍可以呈现音频，但只能通过该协议使用软件音频引擎主机 pin。
+开发音频驱动程序的目的是控制能够处理卸载音频的音频适配器的基本硬件功能。 这意味着，你的驱动程序具有有关如何控制适配器功能的最佳知识。 因此，你必须开发 UI，将适配器的功能以他们可以选择、启用和/或禁用的选项形式向最终用户公开。
 
-如果 UWP 应用流式传输媒体内容，并使用媒体基础、 媒体引擎或 HTML 5&lt;音频&gt;标记，该应用是自动选择的项硬件卸载，只要正确音频类别已设置为的流。 在选择加入的硬件在每个流的基础上完成卸载。
+不过，如果你已有一个用于控制音频处理对象的 UI (你开发的) ，则可以将此 UI 扩展为与新的音频适配器一起使用。 在这种情况下，对 UI 的扩展将为该适配器的 "用户" 和 "硬件控制" 提供软件控制。
 
-使用 wasapi 就可以了或流式处理通信的 UWP 应用程序必须显式选择加入的硬件卸载。
+## <a name="span-idapplication_impactspanspan-idapplication_impactspanspan-idapplication_impactspanapplication-impact"></a><span id="Application_Impact"></span><span id="application_impact"></span><span id="APPLICATION_IMPACT"></span>应用程序影响
 
- 
+
+UWP 应用可以通过 WASAPI、媒体基础、媒体引擎或 HTML 5 音频标记来使用此新的音频适配器类型及其关联的驱动程序所描述的功能 &lt; &gt; 。 请注意，不能使用波形和 DSound，因为它们不可用于 UWP 应用。 另请注意，桌面应用程序不能使用支持硬件卸载音频的音频适配器的卸载功能。 这些应用程序仍然可以呈现音频，但只能通过主机插针使用软件音频引擎。
+
+如果 UWP 应用对媒体内容进行流式处理，并使用媒体基础、媒体引擎或 HTML 5 &lt; 音频 &gt; 标记，只要为流设置了正确的音频类别，就会自动为硬件卸载选择该应用。 硬件卸载的选择加入是根据每个流来完成的。
+
+使用 WASAPI 或流式处理通信的 UWP 应用必须明确选择加入硬件卸载。
 
  
-
-
-
 

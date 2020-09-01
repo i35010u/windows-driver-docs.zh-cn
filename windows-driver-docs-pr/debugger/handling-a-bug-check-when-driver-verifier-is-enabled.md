@@ -7,25 +7,25 @@ keywords:
 - 符
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c8f77ccdfe29a364da4cca1d4efffc2ba70bcd2b
-ms.sourcegitcommit: f610410e1500f0b0a4ca008b52679688ab51033d
+ms.openlocfilehash: b2803ca62c348618298416441a0fead18f0859ac
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/15/2020
-ms.locfileid: "88252867"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89210221"
 ---
 # <a name="handling-a-bug-check-when-driver-verifier-is-enabled"></a>在启用驱动程序验证程序的情况下处理 Bug 检查
 
 
-[驱动程序验证](https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier) 程序在运行时检测驱动程序错误。 可以结合使用驱动程序验证程序和 [**！分析**](-analyze.md) 调试器命令来检测和显示有关驱动程序中的错误的信息。
+[驱动程序验证](../devtest/driver-verifier.md) 程序在运行时检测驱动程序错误。 可以结合使用驱动程序验证程序和 [**！分析**](-analyze.md) 调试器命令来检测和显示有关驱动程序中的错误的信息。
 
-在 Windows 8 中， [驱动程序验证程序](https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier) 已通过新功能（包括 [DDI 相容性检查](https://docs.microsoft.com/windows-hardware/drivers/devtest/ddi-compliance-checking)）进行了增强。 这里提供了一个示例，演示了 DDI 相容性检查。
+在 Windows 8 中， [驱动程序验证程序](../devtest/driver-verifier.md) 已通过新功能（包括 [DDI 相容性检查](../devtest/ddi-compliance-checking.md)）进行了增强。 这里提供了一个示例，演示了 DDI 相容性检查。
 
 使用以下过程进行设置。
 
 1.  建立主机和目标计算机之间的内核模式调试会话。
 2.  在目标计算机上安装驱动程序。
-3.  在目标计算机上，打开命令提示符窗口，然后输入命令 **验证**程序。 使用 [驱动程序验证器管理器](https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier-manager--windows-xp-and-later-) 为驱动程序启用驱动程序验证程序。
+3.  在目标计算机上，打开命令提示符窗口，然后输入命令 **验证**程序。 使用 [驱动程序验证器管理器](../devtest/driver-verifier-manager--windows-xp-and-later-.md) 为驱动程序启用驱动程序验证程序。
 4.  重新启动目标计算机。
 
 当驱动程序验证程序检测到错误时，它将生成 bug 检查。 然后，Windows 将中断调试器并显示错误的简短说明。 下面是一个示例，其中，驱动程序验证程序生成 Bug 检查 [**驱动程序 \_ 验证程序 \_ 检测到 \_ 违反 (C4) **](bug-check-0xc4--driver-verifier-detected-violation.md)。
@@ -98,9 +98,9 @@ PROCESS_NAME:  TiWorker.exe
 CURRENT_IRQL:  9
 ```
 
-在上面的输出中，你可以看到违反规则的名称和 **描述，你**可以选择指向描述该规则的参考页的链接： <https://docs.microsoft.com/windows-hardware/drivers/devtest/wdm-irqlexapclte1> 。 你还可以选择一个调试器命令链接， **！ ruleinfo 0x20005**，以获取有关该规则的信息。 在这种情况下，该规则指出，如果中断请求级别 (IRQL) 大于 APC 级别，则不能调用 [ExAcquireFastMutex](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff544337(v=vs.85)) \_ 。 输出显示当前 IRQL 为9，在 wdm .h 中，你可以看到 APC 级别的值为 \_ 1。 有关 IRQLs 的详细信息，请参阅 [管理硬件优先级](https://docs.microsoft.com/windows-hardware/drivers/kernel/managing-hardware-priorities)。
+在上面的输出中，你可以看到违反规则的名称和 **描述，你**可以选择指向描述该规则的参考页的链接： <https://docs.microsoft.com/windows-hardware/drivers/devtest/wdm-irqlexapclte1> 。 你还可以选择一个调试器命令链接， **！ ruleinfo 0x20005**，以获取有关该规则的信息。 在这种情况下，该规则指出，如果中断请求级别 (IRQL) 大于 APC 级别，则不能调用 [ExAcquireFastMutex](/previous-versions/windows/hardware/drivers/ff544337(v=vs.85)) \_ 。 输出显示当前 IRQL 为9，在 wdm .h 中，你可以看到 APC 级别的值为 \_ 1。 有关 IRQLs 的详细信息，请参阅 [管理硬件优先级](../kernel/managing-hardware-priorities.md)。
 
-[**！分析-v**](-analyze.md)的输出将继续执行堆栈跟踪以及导致错误的代码的相关信息。 在下面的输出中，可以看到中的 **OnInterrupt** 例程 MyDriver.sys 称为 [ExAcquireFastMutex](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff544337(v=vs.85))。 **OnInterrupt** 是以比 APC 级别更高的 IRQL 运行的中断服务例程 \_ ，因此，此例程在调用 [ExAcquireFastMutex](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff544337(v=vs.85))时会发生冲突。
+[**！分析-v**](-analyze.md)的输出将继续执行堆栈跟踪以及导致错误的代码的相关信息。 在下面的输出中，可以看到中的 **OnInterrupt** 例程 MyDriver.sys 称为 [ExAcquireFastMutex](/previous-versions/windows/hardware/drivers/ff544337(v=vs.85))。 **OnInterrupt** 是以比 APC 级别更高的 IRQL 运行的中断服务例程 \_ ，因此，此例程在调用 [ExAcquireFastMutex](/previous-versions/windows/hardware/drivers/ff544337(v=vs.85))时会发生冲突。
 
 ```dbgcmd
 LAST_CONTROL_TRANSFER:  from fffff802a41f00ea to fffff802a40ef930
@@ -167,14 +167,7 @@ BUCKET_ID:  0xc4_IrqlExApcLte1_XDV_VRF_MyDriver!OnInterrupt
 ## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
-[静态驱动程序验证程序](https://docs.microsoft.com/windows-hardware/drivers/devtest/static-driver-verifier)
+[静态驱动程序验证程序](../devtest/static-driver-verifier.md)
 
  
-
- 
-
-
-
-
-
 

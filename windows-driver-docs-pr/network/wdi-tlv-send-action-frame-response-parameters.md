@@ -1,43 +1,43 @@
 ---
 title: WDI_TLV_SEND_ACTION_FRAME_RESPONSE_PARAMETERS
-description: WDI_TLV_SEND_ACTION_FRAME_RESPONSE_PARAMETERS 是一个 TLV，其中包含 OID_WDI_TASK_SEND_RESPONSE_ACTION_FRAME 的参数。
+description: WDI_TLV_SEND_ACTION_FRAME_RESPONSE_PARAMETERS 是包含 OID_WDI_TASK_SEND_RESPONSE_ACTION_FRAME 的参数的 TLV。
 ms.assetid: F062F8A2-EEEF-4EFC-AEC8-F1D7AB13C899
 ms.date: 07/18/2017
 keywords:
-- WDI_TLV_SEND_ACTION_FRAME_RESPONSE_PARAMETERS 从 Windows Vista 开始的网络驱动程序
+- 从 Windows Vista 开始 WDI_TLV_SEND_ACTION_FRAME_RESPONSE_PARAMETERS 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 2319c333a501dc34ef8678d942470a3bd38c6a4f
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 2ecffffc8c5caf5687072f260a8d649beef16abc
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72841733"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89209569"
 ---
-# <a name="wdi_tlv_send_action_frame_response_parameters"></a>WDI\_TLV\_发送\_操作\_帧\_响应\_参数
+# <a name="wdi_tlv_send_action_frame_response_parameters"></a>WDI \_ TLV \_ 发送 \_ 操作 \_ 帧 \_ 响应 \_ 参数
 
 
-WDI\_TLV\_发送\_操作\_帧\_的参数是一个 TLV，其中包含 OID 的参数[\_WDI\_\_\_\_\_\_帧](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wdi-task-send-response-action-frame)。
+WDI \_ tlv \_ 发送 \_ 操作 \_ 帧 \_ 响应 \_ 参数是一个 TLV，其中包含 [OID \_ WDI \_ TASK \_ 发送 \_ 响应 \_ 操作 \_ 帧](./oid-wdi-task-send-response-action-frame.md)的参数。
 
 ## <a name="tlv-type"></a>TLV 类型
 
 
 0xE2
 
-## <a name="length"></a>长度
+## <a name="length"></a>Length
 
 
-所有包含的元素的大小的总和（以字节为单位）。
+Sum (所有包含的元素的大小) 。
 
 ## <a name="values"></a>值
 
 
-| 在任务栏的搜索框中键入                                              | 描述                                                                                                                                     |
+| 类型                                              | 说明                                                                                                                                     |
 |---------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------|
-| WDI\_通道\_号（UINT32）                     | 要将操作帧发送到的通道，还会按确认后停留时间中指定的频率进行逗留。                                    |
-| WDI\_波段\_ID （UINT32）                            | 要在其上发送操作帧的带区的 ID。                                                                                           |
-| [**WDI\_MAC\_地址**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dot11wdi/ns-dot11wdi-_wdi_mac_address) | 目标访问点或对等适配器的 MAC 地址。                                                                                     |
-| UINT32                                            | 发送超时。 指定发送此操作帧的最长时间（毫秒）。                                                       |
-| UINT32                                            | 确认后停留时间。 指定在确认传入数据包后，要在侦听通道上保留的时间（以毫秒为单位）。 |
+| WDI \_ 信道 \_ 号 (UINT32)                      | 要将操作帧发送到的通道，还会按确认后停留时间中指定的频率进行逗留。                                    |
+| WDI \_ 波段 \_ ID (UINT32)                             | 要在其上发送操作帧的带区的 ID。                                                                                           |
+| [**WDI \_ MAC \_ 地址**](/windows-hardware/drivers/ddi/dot11wdi/ns-dot11wdi-_wdi_mac_address) | 目标访问点或对等适配器的 MAC 地址。                                                                                     |
+| UINT32                                            | 发送超时。 指定发送此操作帧)  (的最长时间（以毫秒为单位）。                                                       |
+| UINT32                                            | 确认后停留时间。 指定在确认传入数据包后) 在侦听通道上保留的时间（以毫秒为单位） (。 |
 
  
 
@@ -52,7 +52,7 @@ WDI\_TLV\_发送\_操作\_帧\_的参数是一个 TLV，其中包含 OID 的参�
 <tbody>
 <tr class="odd">
 <td><p>最低受支持的客户端</p></td>
-<td><p>Windows 10</p></td>
+<td><p>Windows 10</p></td>
 </tr>
 <tr class="even">
 <td><p>最低受支持的服务器</p></td>
@@ -66,9 +66,4 @@ WDI\_TLV\_发送\_操作\_帧\_的参数是一个 TLV，其中包含 OID 的参�
 </table>
 
  
-
- 
-
-
-
 

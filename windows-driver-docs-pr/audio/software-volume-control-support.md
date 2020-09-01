@@ -4,48 +4,43 @@ description: 软件音量控制支持
 ms.assetid: 2bdc7d01-9e47-4deb-b551-13e9cbc9c844
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 544fd6664582055b876c0c676b71417b56ac4ada
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: aa4fd603ce76f33c9f2a314d7ad7ea6f5e8c8f2d
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67354315"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89210405"
 ---
 # <a name="software-volume-control-support"></a>软件音量控制支持
 
 
-在 Windows Vista 及更高版本，不包括的音频硬件和使用关联的物理卷控件放大器提供软件卷支持。
+在 Windows Vista 和更高版本中，为不包含关联的物理卷控件并带有放大器的音频硬件提供软件卷支持。
 
 下图显示了 Windows 软件卷支持的简化表示形式。
 
-![说明 windows vista 软件卷的关系图支持 ](images/audio-volume-architecture.png)
+![说明 windows vista 软件卷支持的示意图 ](images/audio-volume-architecture.png)
 
-该图显示两个单独的音频数据路径。 一个放大器时存在，另一个使用 Windows APO 软件音量控制时。 如果放大器存在，该驱动程序播发，KSPROPERTY\_音频\_VOLUMELEVEL。 如果音频驱动程序并不表示它支持 KSPROPERTY\_音频\_VOLUMELEVEL，Windows 音频引擎就会创建软件音量控制 APO。
+此关系图显示了两个单独的音频数据路径。 一种情况是，当存在一个放大器时，当使用 Windows APO 软件卷控件时，会使用一个。 如果有放大器，驱动程序会公布，KSPROPERTY \_ 音频 \_ VOLUMELEVEL。 如果音频驱动程序未指明它支持 KSPROPERTY \_ 音频 \_ VOLUMELEVEL，则 Windows 音频引擎将创建软件卷控制 APO。
 
-在典型的 PC 上，只有一个这些数据路径将会显示，因为通常将一组计算机中的音频组件。 用于说明目的，这里显示了两个路径。
+在典型的 PC 上，只会出现其中一个数据路径，因为计算机中通常会有一组音频组件。 此处显示了这两个路径用于说明目的。
 
-[ **IAudioEndpointVolume** ](https://docs.microsoft.com/windows/desktop/api/endpointvolume/nn-endpointvolume-iaudioendpointvolume)接口表示音频流上的音量控制到或从音频终结点设备。
+[**IAudioEndpointVolume**](/windows/desktop/api/endpointvolume/nn-endpointvolume-iaudioendpointvolume)接口表示音频流上音频流中的音量控件和音频终结点设备。
 
-如果存在 Bluetooth 打印机或 USB 音频，则将单独控制其音量控件。
+如果存在蓝牙或 USB 音频，则会单独控制其音量控制。
 
-## <a name="span-iddatapathwithamplifierpresentspanspan-iddatapathwithamplifierpresentspanspan-iddatapathwithamplifierpresentspandata-path-with-amplifier-present"></a><span id="Data_path_with_amplifier_present"></span><span id="data_path_with_amplifier_present"></span><span id="DATA_PATH_WITH_AMPLIFIER_PRESENT"></span>使用放大器存在的数据路径
-
-
-当客户端应用程序调用[ **IAudioEndpointVolume** ](https://docs.microsoft.com/windows/desktop/api/endpointvolume/nn-endpointvolume-iaudioendpointvolume)在配置中没有放大器并且存在的一个物理卷控件，音频驱动程序公开 KSNODETYPE接口\_卷节点拓扑筛选器中。 卷节点的存在使得**IAudioEndpointVolume**识别的音频信号的卷级别将被修改的硬件。
-
-## <a name="span-iddatapathwithnoamplifierpresentspanspan-iddatapathwithnoamplifierpresentspanspan-iddatapathwithnoamplifierpresentspandata-path-with-no-amplifier-present"></a><span id="Data_path_with_no_amplifier_present"></span><span id="data_path_with_no_amplifier_present"></span><span id="DATA_PATH_WITH_NO_AMPLIFIER_PRESENT"></span>与任何放大器存在的数据路径
+## <a name="span-iddata_path_with_amplifier_presentspanspan-iddata_path_with_amplifier_presentspanspan-iddata_path_with_amplifier_presentspandata-path-with-amplifier-present"></a><span id="Data_path_with_amplifier_present"></span><span id="data_path_with_amplifier_present"></span><span id="DATA_PATH_WITH_AMPLIFIER_PRESENT"></span>具有放大器的数据路径存在
 
 
-当存在，没有放大器[ **IAudioEndpointVolume** ](https://docs.microsoft.com/windows/desktop/api/endpointvolume/nn-endpointvolume-iaudioendpointvolume)适用于音频引擎初始化 Windows 软件卷支持 APO。
+当客户端应用程序在具有放大器且存在物理音量控制的配置中调用 [**IAudioEndpointVolume**](/windows/desktop/api/endpointvolume/nn-endpointvolume-iaudioendpointvolume) 接口时，音频驱动程序会 \_ 在拓扑筛选器中公开一个 KSNODETYPE 卷节点。 卷节点的存在使 **IAudioEndpointVolume** 知道音频信号的音量级别将由硬件修改。
 
-由于没有任何物理卷控件进行建模，KSNODETYPE\_拓扑筛选器中未公开的卷节点。 卷衰减并获得由 APO 软件卷支持组件执行。
+## <a name="span-iddata_path_with_no_amplifier_presentspanspan-iddata_path_with_no_amplifier_presentspanspan-iddata_path_with_no_amplifier_presentspandata-path-with-no-amplifier-present"></a><span id="Data_path_with_no_amplifier_present"></span><span id="data_path_with_no_amplifier_present"></span><span id="DATA_PATH_WITH_NO_AMPLIFIER_PRESENT"></span>不存在放大器的数据路径
 
-有关卷范围和不同版本的 Windows 默认卷级别的信息，请参阅[默认音频音量设置](default-audio-volume-settings.md)。
 
- 
+如果不存在放大器， [**IAudioEndpointVolume**](/windows/desktop/api/endpointvolume/nn-endpointvolume-iaudioendpointvolume) 将与音频引擎配合使用来初始化 Windows 软件卷支持 APO。
+
+由于没有要建模的物理卷控制，因此 \_ 拓扑筛选器中不会公开 KSNODETYPE 卷节点。 卷衰减和收益由 APO 软件容量支持组件执行。
+
+有关不同版本的 Windows 的卷范围和默认卷级别的信息，请参阅 [默认音频音量设置](default-audio-volume-settings.md)。
 
  
-
-
-
 

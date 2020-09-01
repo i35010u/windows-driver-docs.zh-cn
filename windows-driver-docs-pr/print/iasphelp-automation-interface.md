@@ -10,23 +10,23 @@ MSHAttr:
 ms.assetid: 05f63b39-f9da-4627-bc14-13be1f266698
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9ad8a6c0dfc28264e47a80608898cb0b0ea60fd8
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8fe0a4b3b8e21352d80e984fdaf8f1a893ceb56a
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63360503"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89210603"
 ---
 # <a name="iasphelp-automation-interface"></a>Iasphelp 自动化接口
 
-自动化界面**Iasphelp**对象启用 ASP 网页，以获取与指定的打印机相关联的属性。
+通过 **Iasphelp** 对象的自动化接口，ASP 网页可获取与指定打印机关联的属性。
 
-编程标识符**Iasphelp**对象是 OlePrn.AspHelp。
+**Iasphelp**对象的编程标识符为 OlePrn. AspHelp。
 
-有关如何对访问打印机从 ASP Web 页面的详细信息，请参阅[Internet 打印](https://docs.microsoft.com/windows-hardware/drivers/print/internet-printing)。
+有关如何从 ASP 网页访问打印机的详细信息，请参阅 [Internet 打印](./internet-printing.md)。
 
-方法和中的"属性 get"操作**Iasphelp**接口以下各节所述：
+以下部分介绍了 **Iasphelp** 接口中的方法和 "属性获取" 操作：
 
 [Iasphelp 方法](iasphelp-methods.md)
 
-[Iasphelp 属性 Get 操作](iasphelp-property-get-operations.md)
+[Iasphelp 属性获取操作](iasphelp-property-get-operations.md)

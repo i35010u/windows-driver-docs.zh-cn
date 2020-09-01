@@ -9,12 +9,12 @@ keywords:
 - 接收队列 WDK RSS
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 03b7fed29d69f0d321b1df05d9fed1a79443becc
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: c5ee2dcf0025914af9f574708f1e6b95a1ab9ad3
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72841999"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89209271"
 ---
 # <a name="rss-with-hardware-queuing"></a>使用硬件队列的 RSS
 
@@ -46,24 +46,18 @@ ms.locfileid: "72841999"
 
         系统在一个中断中处理的接收缓冲区在 Cpu 之间分布。
 
-2.  NDIS 在系统确定的 CPU 上调用微型端口驱动程序的[*MiniportInterrupt*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_isr)函数（ISR）。
+2.  NDIS 在系统确定的 CPU (ISR) 上调用微型端口驱动程序的 [*MiniportInterrupt*](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_isr) 函数。
 
-3.  微型端口驱动程序请求 NDIS 对每个具有非空队列的 Cpu 的延迟过程调用（Dpc）进行排队。
+3.  微型端口驱动程序请求 NDIS 为具有非空队列的每个 Cpu (Dpc) 排队延迟的过程调用。
 
     请注意，必须先完成所有 Dpc，驱动程序才会启用中断。 另请注意，ISR 可能在没有要处理的缓冲区的 CPU 上运行。
 
-4.  NDIS 为每个排队的 DPC 调用[*MiniportInterruptDPC*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_interrupt_dpc)函数。 给定 CPU 上的 DPC：
+4.  NDIS 为每个排队的 DPC 调用 [*MiniportInterruptDPC*](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_interrupt_dpc) 函数。 给定 CPU 上的 DPC：
     1.  为其队列中所有接收的缓冲区生成接收描述符，并指示驱动程序堆栈上的数据。
 
-        有关详细信息，请参阅[指示 RSS 接收数据](indicating-rss-receive-data.md)。
+        有关详细信息，请参阅 [指示 RSS 接收数据](indicating-rss-receive-data.md)。
 
-    2.  如果是要完成的最后一个 DPC，则启用中断。 此中断已完成，进程将再次启动。 驱动程序必须使用原子操作来确定要完成的最后一个 DPC。 例如，驱动程序可以使用[**NdisInterlockedDecrement**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisinterlockeddecrement)函数来实现原子计数器。
-
- 
+    2.  如果是要完成的最后一个 DPC，则启用中断。 此中断已完成，进程将再次启动。 驱动程序必须使用原子操作来确定要完成的最后一个 DPC。 例如，驱动程序可以使用 [**NdisInterlockedDecrement**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisinterlockeddecrement) 函数来实现原子计数器。
 
  
-
-
-
-
 

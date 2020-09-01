@@ -1,6 +1,6 @@
 ---
-title: KSPROPERTY\_RTAUDIO\_GETREADPACKET
-description: KSPROPERTY\_RTAUDIO\_GETREADPACKET 返回有关捕获的音频数据包的信息。
+title: KSPROPERTY \_ RTAUDIO \_ GETREADPACKET
+description: KSPROPERTY \_ RTAUDIO \_ GETREADPACKET 返回有关捕获的音频数据包的信息。
 ms.assetid: BA52CDCE-0178-4C90-A82C-15800DD3709E
 keywords:
 - KSPROPERTY_RTAUDIO_GETREADPACKET 音频设备
@@ -14,44 +14,44 @@ api_type:
 - HeaderDef
 ms.date: 12/21/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: ed12673544f73943fc14ae1b77a3b466cea74498
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: c16ff5987b8cbd06be8a0560064c955b052e4181
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72830683"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89210949"
 ---
-# <a name="ksproperty_rtaudio_getreadpacket"></a>KSPROPERTY\_RTAUDIO\_GETREADPACKET
+# <a name="ksproperty_rtaudio_getreadpacket"></a>KSPROPERTY \_ RTAUDIO \_ GETREADPACKET
 
 
-KSPROPERTY\_RTAUDIO\_GETREADPACKET 返回有关捕获的音频数据包的信息。
+KSPROPERTY \_ RTAUDIO \_ GETREADPACKET 返回有关捕获的音频数据包的信息。
 
 ### <a name="span-idusage_summary_tablespanspan-idusage_summary_tablespanspan-idusage_summary_tablespanusage-summary-table"></a><span id="Usage_Summary_Table"></span><span id="usage_summary_table"></span><span id="USAGE_SUMMARY_TABLE"></span>使用情况摘要表
 
  
-|“获取”|设置|目标|属性描述符类型|属性值类型|
+|获取|设置|目标|属性描述符类型|属性值类型|
 |--- |--- |--- |--- |--- |
-|“是”|无|大头针|[KSPROPERTY](https://docs.microsoft.com/previous-versions/ff564262(v=vs.85))|[KSRTAUDIO_GETREADPACKET_INFO](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksrtaudio_getreadpacket_info)|
+|是|否|Pin|[KSPROPERTY](/previous-versions/ff564262(v=vs.85))|[KSRTAUDIO_GETREADPACKET_INFO](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksrtaudio_getreadpacket_info)|
 
 
-属性说明符（实例数据）是[**KSPROPERTY**](https://docs.microsoft.com/previous-versions/ff564262(v=vs.85))结构。 在发送请求之前，客户端将加载包含指示数据包编号、数据包长度和其他信息的值的结构。
+属性描述符 (实例数据) 是 [**KSPROPERTY**](/previous-versions/ff564262(v=vs.85)) 结构。 在发送请求之前，客户端将加载包含指示数据包编号、数据包长度和其他信息的值的结构。
 
-属性值是类型为[**KSRTAUDIO\_GETREADPACKET\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksrtaudio_getreadpacket_info)的变量。
+属性值是 [**KSRTAUDIO \_ GETREADPACKET \_ INFO**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksrtaudio_getreadpacket_info)类型的变量。
 
 ### <a name="span-idreturn_valuespanspan-idreturn_valuespanspan-idreturn_valuespanreturn-value"></a><span id="Return_Value"></span><span id="return_value"></span><span id="RETURN_VALUE"></span>返回值
 
-KSPROPERTY\_RTAUDIO\_GETREADPACKET 属性请求返回状态\_SUCCESS，以指示该请求已成功完成。 否则，请求将返回相应的失败状态代码。
+KSPROPERTY \_ RTAUDIO \_ GETREADPACKET 属性请求返回状态 \_ SUCCESS 以指示该请求已成功完成。 否则，请求将返回相应的失败状态代码。
 
-状态\_设备\_未\_就绪-如果没有新数据可用，则驱动程序将返回此错误。
+状态 \_ 设备 \_ 未 \_ 就绪-如果没有新数据可用，驱动程序将返回此错误。
 
 <a name="remarks"></a>备注
 -------
 
 在从 WaveRT 缓冲区读取捕获的音频数据之前，操作系统将调用此例程以获取有关可用数据的信息。
 
-数据包编号标识流中的数据包。 当流位于 KSSTATE\_停止时，这会重置为零。 每个捕获的缓冲区的数目会提升。 从数据包编号中，OS 可以在 WaveRT 缓冲区内派生数据包位置，还可以派生出数据包相对于流起始位置的流位置。
+数据包编号标识流中的数据包。 当流处于 KSSTATE 停止时，这会重置为零 \_ 。 每个捕获的缓冲区的数目会提升。 从数据包编号中，OS 可以在 WaveRT 缓冲区内派生数据包位置，还可以派生出数据包相对于流起始位置的流位置。
 
-数据包大小是 WaveRT 缓冲区大小除以传递到[**KSPROPERTY\_RTAUDIO\_buffer\_和\_通知**](ksproperty-rtaudio-buffer-with-notification.md)的 NotificationCount。 操作系统可以随时调用此例程。 在正常操作中，当驱动程序设置缓冲区通知事件之后，或在上一次调用为 MoreData 返回 true 后，操作系统将调用此例程。 当 OS 调用此例程时，驱动程序可能会假设 OS 已读取完以前的所有数据包。 如果硬件捕获了足够的数据，驱动程序可能会立即将下一个完整的数据包爆发到 WaveRT 缓冲区，并再次设置 buffer 事件。 在捕获溢出的情况下（当操作系统没有足够快地读取数据时），音频驱动程序可能会删除或覆盖某些音频数据。 音频驱动程序会先删除或覆盖最早的数据，音频驱动程序可能会继续提升其内部数据包计数器，即使 OS 可能没有读取数据。
+数据包大小是 WaveRT 缓冲区大小除以传递到 [**KSPROPERTY RTAUDIO 缓冲区的 NotificationCount， \_ \_ \_ 并 \_ 通知**](ksproperty-rtaudio-buffer-with-notification.md)。 操作系统可以随时调用此例程。 在正常操作中，当驱动程序设置缓冲区通知事件之后，或在上一次调用为 MoreData 返回 true 后，操作系统将调用此例程。 当 OS 调用此例程时，驱动程序可能会假设 OS 已读取完以前的所有数据包。 如果硬件捕获了足够的数据，驱动程序可能会立即将下一个完整的数据包爆发到 WaveRT 缓冲区，并再次设置 buffer 事件。 在捕获溢出的情况下 (当操作系统没有足够快地读取数据时) 音频驱动程序可能会删除或覆盖某些音频数据。 音频驱动程序会先删除或覆盖最早的数据，音频驱动程序可能会继续提升其内部数据包计数器，即使 OS 可能没有读取数据。
 
 <a name="requirements"></a>要求
 ------------
@@ -76,16 +76,9 @@ KSPROPERTY\_RTAUDIO\_GETREADPACKET 属性请求返回状态\_SUCCESS，以指示
 ## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
-[**KSPROPERTY\_RTAUDIO\_SETWRITEPACKET**](ksproperty-rtaudio-setwritepacket.md)
+[**KSPROPERTY \_ RTAUDIO \_ SETWRITEPACKET**](ksproperty-rtaudio-setwritepacket.md)
 
 [UsePositionLock](usepositionlock.md)
 
  
-
- 
-
-
-
-
-
 

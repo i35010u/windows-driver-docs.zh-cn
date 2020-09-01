@@ -6,19 +6,19 @@ ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 WDI_TLV_P2P_INSTANCE_NAME_HASH 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 5d09bd603504b959b4d640a26dc4c29a40488493
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: e6de6d6bc5c6660920b520f9ac604bf7569510a6
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72842359"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89209565"
 ---
-# <a name="wdi_tlv_p2p_instance_name_hash"></a>WDI\_TLV\_P2P\_实例\_名称\_哈希
+# <a name="wdi_tlv_p2p_instance_name_hash"></a>WDI \_ TLV \_ P2P \_ 实例 \_ 名称 \_ 哈希
 
 
-WDI\_TLV\_P2P\_实例\_名称\_哈希是包含 "Instance Name，Service Type" 哈希的 TLV。
+WDI \_ tlv \_ P2P \_ 实例 \_ 名称 \_ 哈希是包含 "INSTANCE NAME，Service Type" 的哈希值的 tlv。
 
-**请注意**  此 TLV 添加到了 Windows 10 1607 版 WDI 版本1.0.21 中。
+**注意**   此 TLV 已添加到 Windows 10 版本1607，WDI 版本1.0.21 中。
 
  
 
@@ -27,17 +27,17 @@ WDI\_TLV\_P2P\_实例\_名称\_哈希是包含 "Instance Name，Service Type" �
 
 0x12C
 
-## <a name="length"></a>长度
+## <a name="length"></a>Length
 
 
-WDI 的大小（以字节为单位） [ **\_P2P\_SERVICE\_名称\_哈希**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dot11wdi/ns-dot11wdi-_wdi_p2p_service_name_hash)结构。
+[**WDI \_ P2P \_ 服务 \_ 名称 \_ 哈希**](/windows-hardware/drivers/ddi/dot11wdi/ns-dot11wdi-_wdi_p2p_service_name_hash)结构的大小 (以字节为单位) 。
 
 ## <a name="values"></a>值
 
 
-| 在任务栏的搜索框中键入                                                                    | 描述                                |
+| 类型                                                                    | 说明                                |
 |-------------------------------------------------------------------------|--------------------------------------------|
-| [**WDI\_P2P\_服务\_名称\_哈希**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dot11wdi/ns-dot11wdi-_wdi_p2p_service_name_hash) | "Instance Name，Service Type" 的哈希。 |
+| [**WDI \_ P2P \_ 服务 \_ 名称 \_ 哈希**](/windows-hardware/drivers/ddi/dot11wdi/ns-dot11wdi-_wdi_p2p_service_name_hash) | "Instance Name，Service Type" 的哈希。 |
 
  
 
@@ -66,9 +66,4 @@ WDI 的大小（以字节为单位） [ **\_P2P\_SERVICE\_名称\_哈希**](http
 </table>
 
  
-
- 
-
-
-
 

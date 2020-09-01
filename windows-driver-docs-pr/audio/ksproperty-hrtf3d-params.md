@@ -1,6 +1,6 @@
 ---
-title: KSPROPERTY\_HRTF3D\_参数
-description: KSPROPERTY\_HRTF3D\_PARAMS 属性将一组3-d 参数值应用于 HRTF 算法。
+title: KSPROPERTY \_ HRTF3D \_ 参数
+description: KSPROPERTY \_ HRTF3D \_ PARAMS 属性将一组3-d 参数值应用于 HRTF 算法。
 ms.assetid: f7a7cfa9-de76-418a-be84-2519de454c89
 keywords:
 - KSPROPERTY_HRTF3D_PARAMS 音频设备
@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4266c08903e70616fe963d6c210c6f278ad810a3
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 9b61a81bfe464565ee3c5532fa003f6b95f4fa81
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72830712"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89210977"
 ---
-# <a name="ksproperty_hrtf3d_params"></a>KSPROPERTY\_HRTF3D\_参数
+# <a name="ksproperty_hrtf3d_params"></a>KSPROPERTY \_ HRTF3D \_ 参数
 
 
-KSPROPERTY\_HRTF3D\_PARAMS 属性将一组3-d 参数值应用于 HRTF 算法。
+KSPROPERTY \_ HRTF3D \_ PARAMS 属性将一组3-d 参数值应用于 HRTF 算法。
 
 ## <span id="ddk_ksproperty_hrtf3d_params_ks"></span><span id="DDK_KSPROPERTY_HRTF3D_PARAMS_KS"></span>
 
@@ -41,7 +41,7 @@ KSPROPERTY\_HRTF3D\_PARAMS 属性将一组3-d 参数值应用于 HRTF 算法。
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">“获取”</th>
+<th align="left">获取</th>
 <th align="left">设置</th>
 <th align="left">目标</th>
 <th align="left">属性描述符类型</th>
@@ -50,22 +50,22 @@ KSPROPERTY\_HRTF3D\_PARAMS 属性将一组3-d 参数值应用于 HRTF 算法。
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>无</p></td>
-<td align="left"><p>“是”</p></td>
-<td align="left"><p>大头针</p></td>
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksnodeproperty" data-raw-source="[&lt;strong&gt;KSNODEPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksnodeproperty)"><strong>KSNODEPROPERTY</strong></a></p></td>
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksds3d_hrtf_params_msg" data-raw-source="[&lt;strong&gt;KSDS3D_HRTF_PARAMS_MSG&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksds3d_hrtf_params_msg)"><strong>KSDS3D_HRTF_PARAMS_MSG</strong></a></p></td>
+<td align="left"><p>否</p></td>
+<td align="left"><p>是</p></td>
+<td align="left"><p>Pin</p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksnodeproperty" data-raw-source="[&lt;strong&gt;KSNODEPROPERTY&lt;/strong&gt;](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksnodeproperty)"><strong>KSNODEPROPERTY</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksds3d_hrtf_params_msg" data-raw-source="[&lt;strong&gt;KSDS3D_HRTF_PARAMS_MSG&lt;/strong&gt;](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksds3d_hrtf_params_msg)"><strong>KSDS3D_HRTF_PARAMS_MSG</strong></a></p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-属性值（操作数据）是指定参数值的 KSDS3D\_HRTF\_PARAMS\_MSG 类型的结构。
+ (操作数据) 的属性值是 \_ \_ 指定参数值的 KSDS3D HRTF PARAMS MSG 类型的结构 \_ 。
 
 ### <a name="span-idreturn_valuespanspan-idreturn_valuespanspan-idreturn_valuespanreturn-value"></a><span id="Return_Value"></span><span id="return_value"></span><span id="RETURN_VALUE"></span>返回值
 
-KSPROPERTY\_HRTF3D\_PARAMS 属性请求返回状态\_SUCCESS，以指示已成功完成。 否则，请求将返回相应的错误状态代码。
+KSPROPERTY \_ HRTF3D \_ PARAMS 属性请求返回状态 " \_ 成功" 以指示它已成功完成。 否则，请求将返回相应的错误状态代码。
 
 <a name="requirements"></a>要求
 ------------
@@ -78,7 +78,7 @@ KSPROPERTY\_HRTF3D\_PARAMS 属性请求返回状态\_SUCCESS，以指示已成�
 <tbody>
 <tr class="odd">
 <td align="left"><p>标头</p></td>
-<td align="left">Ksmedia （包括 Ksmedia）</td>
+<td align="left">Ksmedia (包含 Ksmedia) </td>
 </tr>
 </tbody>
 </table>
@@ -86,16 +86,9 @@ KSPROPERTY\_HRTF3D\_PARAMS 属性请求返回状态\_SUCCESS，以指示已成�
 ## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
-[**KSNODEPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksnodeproperty)
+[**KSNODEPROPERTY**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksnodeproperty)
 
-[**KSDS3D\_HRTF\_PARAMS\_MSG**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksds3d_hrtf_params_msg)
-
- 
+[**KSDS3D \_ HRTF \_ PARAMS \_ MSG**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksds3d_hrtf_params_msg)
 
  
-
-
-
-
-
 

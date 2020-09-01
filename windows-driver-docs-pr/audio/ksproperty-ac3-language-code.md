@@ -1,6 +1,6 @@
 ---
-title: KSPROPERTY\_AC3\_LANGUAGE\_CODE
-description: KSPROPERTY\_AC3\_语言\_代码属性指定的语言代码的 AC-3 编码流。
+title: KSPROPERTY \_ E-ac3 \_ 语言 \_ 代码
+description: KSPROPERTY \_ E-ac3 \_ language \_ CODE 属性指定 AC 3 编码流的语言代码。
 ms.assetid: 42c0fb44-437c-4fa9-95ee-823880028369
 keywords:
 - KSPROPERTY_AC3_LANGUAGE_CODE 音频设备
@@ -14,22 +14,22 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2922b44d5bb6a6cea8a8aa3e55aa0fed015403d8
-ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
+ms.openlocfilehash: 789300e32ee1960035c7d19faf7125d033b14137
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67391492"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89209024"
 ---
-# <a name="kspropertyac3languagecode"></a>KSPROPERTY\_AC3\_LANGUAGE\_CODE
+# <a name="ksproperty_ac3_language_code"></a>KSPROPERTY \_ E-ac3 \_ 语言 \_ 代码
 
 
-KSPROPERTY\_AC3\_语言\_代码属性指定的语言代码的 AC-3 编码流。
+KSPROPERTY \_ E-ac3 \_ language \_ CODE 属性指定 AC 3 编码流的语言代码。
 
 ## <span id="ddk_ksproperty_ac3_language_code_ks"></span><span id="DDK_KSPROPERTY_AC3_LANGUAGE_CODE_KS"></span>
 
 
-### <a name="span-idusagesummarytablespanspan-idusagesummarytablespanspan-idusagesummarytablespanusage-summary-table"></a><span id="Usage_Summary_Table"></span><span id="usage_summary_table"></span><span id="USAGE_SUMMARY_TABLE"></span>使用率摘要表
+### <a name="span-idusage_summary_tablespanspan-idusage_summary_tablespanspan-idusage_summary_tablespanusage-summary-table"></a><span id="Usage_Summary_Table"></span><span id="usage_summary_table"></span><span id="USAGE_SUMMARY_TABLE"></span>使用情况摘要表
 
 <table>
 <colgroup>
@@ -41,7 +41,7 @@ KSPROPERTY\_AC3\_语言\_代码属性指定的语言代码的 AC-3 编码流。
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Get</th>
+<th align="left">获取</th>
 <th align="left">设置</th>
 <th align="left">目标</th>
 <th align="left">属性描述符类型</th>
@@ -53,19 +53,19 @@ KSPROPERTY\_AC3\_语言\_代码属性指定的语言代码的 AC-3 编码流。
 <td align="left"><p>是</p></td>
 <td align="left"><p>否</p></td>
 <td align="left"><p>Pin</p></td>
-<td align="left"><p><a href="https://docs.microsoft.com/previous-versions/ff564262(v=vs.85)" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/ff564262(v=vs.85))"><strong>KSPROPERTY</strong></a></p></td>
-<td align="left"><p><a href="https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff537081(v=vs.85)" data-raw-source="[&lt;strong&gt;KSAC3_LANGUAGE_CODE&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff537081(v=vs.85))"><strong>KSAC3_LANGUAGE_CODE</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/previous-versions/ff564262(v=vs.85)" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](/previous-versions/ff564262(v=vs.85))"><strong>KSPROPERTY</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff537081(v=vs.85)" data-raw-source="[&lt;strong&gt;KSAC3_LANGUAGE_CODE&lt;/strong&gt;](/previous-versions/windows/hardware/drivers/ff537081(v=vs.85))"><strong>KSAC3_LANGUAGE_CODE</strong></a></p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-属性值 （操作数据） 是 KSAC3\_语言\_代码结构，它指定的语言代码。
+ (操作数据) 的属性值是 \_ \_ 指定语言代码的 KSAC3 语言代码结构。
 
-### <a name="span-idreturnvaluespanspan-idreturnvaluespanspan-idreturnvaluespanreturn-value"></a><span id="Return_Value"></span><span id="return_value"></span><span id="RETURN_VALUE"></span>返回值
+### <a name="span-idreturn_valuespanspan-idreturn_valuespanspan-idreturn_valuespanreturn-value"></a><span id="Return_Value"></span><span id="return_value"></span><span id="RETURN_VALUE"></span>返回值
 
-KSPROPERTY\_AC3\_语言\_代码属性请求将返回状态\_成功以指示已成功完成。 否则，请求将返回相应的错误状态代码。
+KSPROPERTY \_ E-ac3 \_ LANGUAGE \_ CODE 属性请求返回状态 \_ SUCCESS 以指示已成功完成。 否则，请求将返回相应的错误状态代码。
 
 <a name="requirements"></a>要求
 ------------
@@ -77,25 +77,18 @@ KSPROPERTY\_AC3\_语言\_代码属性请求将返回状态\_成功以指示已�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>Header</p></td>
-<td align="left">Ksmedia.h （包括 Ksmedia.h）</td>
+<td align="left"><p>标头</p></td>
+<td align="left">Ksmedia (包含 Ksmedia) </td>
 </tr>
 </tbody>
 </table>
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
-[**KSPROPERTY**](https://docs.microsoft.com/previous-versions/ff564262(v=vs.85))
+[**KSPROPERTY**](/previous-versions/ff564262(v=vs.85))
 
-[**KSAC3\_语言\_代码**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff537081(v=vs.85))
-
- 
+[**KSAC3 \_ 语言 \_ 代码**](/previous-versions/windows/hardware/drivers/ff537081(v=vs.85))
 
  
-
-
-
-
-
 

@@ -3,31 +3,31 @@ title: 如何使用打印机驱动程序 INF 文件中的修饰
 description: 如何使用打印机驱动程序 INF 文件中的修饰
 ms.assetid: 772e2797-8019-4715-870c-b7cd2b8e65f2
 keywords:
-- 多个处理器体系结构 WDK 打印机
+- 多处理器体系结构 WDK 打印机
 - 基于 x86 的驱动程序示例 WDK 打印机
 - 基于 Itanium 的驱动程序示例 WDK 打印机
 - 未修饰的 INF WDK 打印机
-- INF 文件 WDK 打印，修饰
-- 修饰的 INF WDK
+- INF 文件 WDK 打印，装饰品
+- 修饰 INF WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5bc627d388c65e3e785f2b4dc7bc3a36732eed25
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 4bf8269b2e1b080c5da33c60bc0c22fd9a4c16c6
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67378585"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89210609"
 ---
 # <a name="how-to-use-decorations-in-inf-files-for-printer-drivers"></a>如何使用打印机驱动程序 INF 文件中的修饰
 
 
-打印机驱动程序运行的 Windows Server 2003 SP1 和更高版本，或在 64 位版本的 Windows XP 及更高版本，且面向 x64 体系结构必须包括修饰[ **INF 模型部分**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-models-section)所示在下面的示例。 但是，可能会作为版本的 Windows Server 2003 SP1 之前的 Windows 上的其他驱动程序安装该驱动程序，因为 INF 文件还必须提供未修饰的 INF 模型部分。 此外建议修饰用于安装基于 Itanium 的驱动程序。
+在 Windows Server 2003 上运行的使用 SP1 和更高版本的打印机驱动程序，或在 Windows XP 和更高版本的64位版本上运行的打印机驱动程序，并且目标 x64 体系结构必须包括修饰的 [**INF 模型部分**](../install/inf-models-section.md) ，如以下示例中所示。 但是，因为在 Windows Server 2003 SP1 之前，驱动程序可能作为附加驱动程序安装在 Windows 版本上，因此 INF 文件还必须提供未修饰的 INF 模型部分。 还建议使用装饰来安装基于 Itanium 的驱动程序。
 
-以下示例演示如何编写可以用来安装适用于单个处理器体系结构的驱动程序的 INF 文件。
+下面的示例演示如何编写可用于为单处理器体系结构安装驱动程序的 INF 文件。
 
 ### <a name="x64-driver-sample"></a>x64 驱动程序示例
 
-第一个示例演示如何使用未修饰的 INF 模型部分安装 x64 版本的 Windows XP 之前或在 x86 或基于 Itanium 的计算机运行 Windows XP 或 Windows Server 2003 上的 Windows 上的驱动程序。 在第二个 INF 模型部分 NTamd64 修饰导致 x64 驱动程序安装在任何运行 Windows Server 2003 SP1 或更高版本的处理器体系结构的计算机上。
+第一个示例演示如何使用未修饰的 INF 模型部分在 Windows XP 之前的 Windows 版本上或在运行 Windows XP 或 Windows Server 2003 的基于 x86 或基于 Itanium 的计算机上安装 x64 驱动程序。 "第二个 INF 模型" 部分中的 NTamd64 修饰会导致在运行带有 SP1 或更高版本的 Windows Server 2003 的任何处理器体系结构的计算机上安装 x64 驱动程序。
 
 ```cpp
 [MANUFACTURER]
@@ -43,7 +43,7 @@ ms.locfileid: "67378585"
 
 ### <a name="itanium-based-driver-sample"></a>基于 Itanium 的驱动程序示例
 
-下面的示例说明如何使用未修饰的 INF 模型部分的 Windows XP 之前的 Windows 版本上或在 x86 上安装的基于 Itanium 的驱动程序机正在运行 Windows XP 或 Windows Server 2003 SP1 之前。 在第二个 INF 模型部分 NTia64 修饰会导致可在任何运行 Windows Server 2003 SP1 或更高版本的处理器体系结构的计算机上安装的基于 Itanium 的驱动程序。
+下一个示例演示如何使用未修饰的 INF 模型部分在 Windows XP 之前的 Windows 版本上或在 SP1 之前运行 Windows XP 或 Windows Server 2003 的 x86 计算机上安装基于 Itanium 的驱动程序。 "第二个 INF 模型" 部分中的 NTia64 修饰会使基于 Itanium 的驱动程序安装在运行 Windows Server 2003 SP1 或更高版本的任何处理器体系结构的计算机上。
 
 ```cpp
 [MANUFACTURER]
@@ -59,7 +59,7 @@ ms.locfileid: "67378585"
 
 ### <a name="x86-driver-sample"></a>x86 驱动程序示例
 
-在下一步的示例中，INF 模型部分不需要修饰。 不需要指定的处理器体系结构，因为未修饰的部分都假定引用到 x86 驱动程序。 它是允许添加 INF 模型部分与 NTx86 修饰，但请记住，您还应包括的 Windows Server 2003 SP1 之前的 Windows 版本的未修饰的 INF 模型节。
+在下一个示例中，"INF 模型" 部分不需要修饰。 不需要指定处理器体系结构，因为假定未修饰的部分引用 x86 驱动程序。 允许使用 NTx86 修饰添加 INF 模型部分，但请记住，在 Windows Server 2003 SP1 之前，还应包含 Windows 版本的未修饰 INF 模型部分。
 
 ```cpp
 [MANUFACTURER]
@@ -70,11 +70,11 @@ ms.locfileid: "67378585"
 "Acme LaserWhiz 100 PS" = Acme100_x86.PPD, <hardware IDs and compatible IDs for this printer>
 ```
 
-### <a name="supporting-multiple-architectures-in-a-single-inf-file"></a>在单个的 INF 文件中支持多个体系结构
+### <a name="supporting-multiple-architectures-in-a-single-inf-file"></a>在一个 INF 文件中支持多个体系结构
 
-本部分演示如何编写可以用来安装多个处理器体系结构的打印机驱动程序的 INF 文件。
+本部分介绍如何编写可用于为多处理器体系结构安装打印机驱动程序的 INF 文件。
 
-若要创建可以用来安装多个体系结构的驱动程序的 INF 文件，编写 INF 模型部分中，并请其根据需要任意多个副本，以便支持每个体系结构都有其自己 INF 模型部分。 在下面的示例所示，添加到每个生成的 INF 模型部分中，适当修饰每个处理器体系结构。
+若要创建可用于为多个体系结构安装驱动程序的 INF 文件，请编写一个 INF 模型部分，并根据需要创建它的任意数量的副本，以便每个受支持的体系结构都具有自己的 INF 模型部分。 将每个处理器体系结构的相应修饰添加到每个生成的 INF 模型部分，如下面的示例所示。
 
 ```cpp
 [MANUFACTURER]
@@ -136,9 +136,4 @@ Location = "Acme CD ROM"
 ```
 
  
-
- 
-
-
-
 

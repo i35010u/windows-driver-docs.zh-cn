@@ -6,47 +6,47 @@ ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 NDIS_STATUS_WDI_INDICATION_NLO_DISCOVERY 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: d96a1b4a5e730f63fa41e82b55fa27700fd70b9f
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: fa77a642999477080b5b4f917def9bb18f31f870
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67384916"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89209705"
 ---
-# <a name="ndisstatuswdiindicationnlodiscovery"></a>NDIS\_状态\_WDI\_指示\_NLO\_发现
+# <a name="ndis_status_wdi_indication_nlo_discovery"></a>NDIS \_ 状态 \_ WDI \_ 指示 \_ NLO \_ 发现
 
 
-微型端口驱动程序使用 NDIS\_状态\_WDI\_指示\_NLO\_发现，以指示网络列表卸载 (NLO) 发现。
+微型端口驱动程序使用 NDIS \_ 状态 \_ WDI \_ 指示 \_ NLO \_ 发现来指示 (NLO) 发现的网络列表卸载。
 
-| Object |
+| 对象 |
 |--------|
-| Port   |
+| 端口   |
 
  
 
-固件检测 APs NLO 中向下推送的 Ssid。 NLO 用在非 AOAC 系统的快速连接，从系统睡眠状态恢复时。 它还用于在 AOAC 系统中扫描 APs 推送到固件的 Ssid。
+该固件检测 NLO 中推送的 Ssid 的 Ap。 当从系统睡眠恢复时，NLO 在非 AOAC 系统中用于快速连接。 它还在 AOAC 系统中用于扫描推送到固件的 Ssid 的 Ap。
 
-操作系统不要求在 CS 中扫描周期性后台操作。 NLO 扫描是 CS 中的首选的方法因为屏幕处于关闭状态时用户不需要查看所有可见的 Ap，但这些用户具有的 Ssid 为自动连接配置文件，以自动连接到。 Ssid 来卸载从操作系统列表中有一个首选的身份验证和密码对和最多 4 个通道提示。 如果列表中有至少一个 SSID，固件应启动自动遵循的计划快速扫描和进行慢扫描阶段未 NLO 扫描。 在类驱动程序将转换为对固件请求的 OS 请求。 固件应进行 NLO 扫描根据 APs 支持首选的身份验证和密码对与 Ssid 相关联的计划。
+当在 CS 中时，OS 不会请求定期后台扫描。 NLO 扫描是 CS 中首选的方法，因为用户无需查看所有可见的 Ap，而是用户具有自动连接配置文件自动连接到的 Ssid 时，屏幕是关闭的。 要从操作系统中卸载的 Ssid 列表具有首选的身份验证和密码对以及最多4个通道提示。 当列表中至少有一个 SSID 时，固件会按照快速扫描和慢速扫描阶段的计划自行启动 NLO 扫描。 类驱动程序将操作系统请求转换为固件请求。 此固件应根据支持与 Ssid 关联的首选身份验证和密码对的 Ap 计划进行 NLO 扫描。
 
-在每个扫描期间，固件扫描与条件匹配的列表，但不是必要的通道上的通道列表受约束的 Ssid。 应为可能缓存的已发现的接入点信息。
+在每个扫描周期内，固件会扫描与通道列表上的条件匹配但不需要在通道列表中进行约束的 Ssid。 应缓存发现的 AP 信息以指示。
 
-如果找到任何匹配项，固件指示 NLO 发现和缓存主机检索发现的接入点信息的列表。
+找到任何匹配项后，固件将指示 NLO 发现，并缓存已发现的用于要检索的主机的 AP 信息的列表。
 
-在以下两种情况中发生的 NLO 发现指示。
+在以下两种情况下，NLO 发现的指示发生。
 
--   当 NIC 为 Dx 中：
-    1.  触发唤醒中断并等待集幂 D0 继续以下步骤。
+-   如果 NIC 位于 Dx 中：
+    1.  触发唤醒中断并等待将电源设置为 D0 以继续执行以下步骤。
     2.  指示 NLO 发现。
-    3.  指示固件唤醒原因为 NLO 发现堆栈。
--   当 NIC 为 D0:
+    3.  指示固件将堆栈唤醒，原因是 NLO 发现。
+-   如果 NIC 为 D0：
     -   指示 NLO 发现。
 
-## <a name="payload-data"></a>有效负载数据
+## <a name="payload-data"></a>负载数据
 
 
-| 在任务栏的搜索框中键入                                                   | 允许多个 TLV 实例 | 可选 | 描述                                                                                      |
+| 类型                                                   | 允许多个 TLV 实例 | 可选 | 说明                                                                                      |
 |--------------------------------------------------------|--------------------------------|----------|--------------------------------------------------------------------------------------------------|
-| [**WDI\_TLV\_BSS\_ENTRY**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-bss-entry) | X                              |          | BSSIDs 的列表。 该列表必须至少包含触发此发现状态的项。 |
+| [**WDI \_ TLV \_ BSS \_ 条目**](./wdi-tlv-bss-entry.md) | X                              |          | BSSIDs 的列表。 此列表必须至少包含触发此发现状态的条目。 |
 
  
 
@@ -68,16 +68,11 @@ ms.locfileid: "67384916"
 <td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
-<td><p>Header</p></td>
-<td>Dot11wdi.h</td>
+<td><p>标头</p></td>
+<td>Dot11wdi</td>
 </tr>
 </tbody>
 </table>
 
  
-
- 
-
-
-
 

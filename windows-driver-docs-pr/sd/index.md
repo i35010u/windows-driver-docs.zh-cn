@@ -12,22 +12,22 @@ ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
 author: EliotSeattle
-ms.openlocfilehash: 52b8d72daa37b4e369da27c63f61552dea54569c
-ms.sourcegitcommit: 988d100e4d3b218a59fdac034d39a1816d145c85
+ms.openlocfilehash: a09b4c766d3ef3436544eec953d6b34fe0c953c8
+ms.sourcegitcommit: 15caaf6d943135efcaf9975927ff3933957acd5d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2020
-ms.locfileid: "72824741"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88969508"
 ---
 # <a name="sd-bus-driver-design-guide"></a>SD 总线驱动程序设计指南
 
-[SD Card Driver Stack](https://docs.microsoft.com/windows-hardware/drivers/sd/sd-card-driver-stack)（SD 卡驱动程序堆栈）
+[SD 卡驱动程序堆栈](https://docs.microsoft.com/windows-hardware/drivers/sd/sd-card-driver-stack)
 
-[Opening, Initializing and Closing an SD Card Bus Interface](https://docs.microsoft.com/windows-hardware/drivers/sd/opening--initializing-and-closing-an-sd-card-bus-interface)（打开、初始化和关闭 SD 卡总线接口）
+[打开、初始化和关闭 SD 卡总线接口](https://docs.microsoft.com/windows-hardware/drivers/sd/opening--initializing-and-closing-an-sd-card-bus-interface)
 
-[Handling SD Card Interrupts](https://docs.microsoft.com/windows-hardware/drivers/sd/handling-sd-card-interrupts)（处理 SD 卡中断）
+[处理 SD 卡中断](https://docs.microsoft.com/windows-hardware/drivers/sd/handling-sd-card-interrupts)
 
-[SD Card Requests](https://docs.microsoft.com/windows-hardware/drivers/sd/sd-card-requests)（SD 卡请求）
+[SD 卡请求](https://docs.microsoft.com/windows-hardware/drivers/sd/sd-card-requests)
 
 ## <a name="sd-card-hardware-identifiers"></a>SD 卡硬件标识符
 
@@ -45,8 +45,7 @@ ms.locfileid: "72824741"
 
 SD 设备驱动程序可以管理主控制器的常用寄存器集和设备的状态，只需使用类型为 SDRF\_GET\_PROPERTY 和 SDRF\_SET\_PROPERTY 的函数请求调用 [**SdBusSubmitRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddsd/nf-ntddsd-sdbussubmitrequest) 即可。 如需这些函数请求类型的说明，请参阅 [**SD\_REQUEST\_FUNCTION**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddsd/ne-ntddsd-sd_request_function)。
 
-## <a name="sd-bus-sample"></a>SD 总线示例
+## <a name="sd-bus-sample-windows-81"></a>SD 总线示例 (Windows 8.1)
+该示例是一个功能性安全数字 (SD) IO 驱动程序，它不再受到支持。 该驱动程序使用内核模式驱动程序框架编写。 它是一个用于常规 mars 开发板的驱动程序，可实现 SDIO 协议而不需其他功能。
 
-这是功能性安全数字 (SD) IO 驱动程序的一个示例。 该驱动程序使用内核模式驱动程序框架编写。 它是一个用于常规 mars 开发板的驱动程序，可实现 SDIO 协议而不需其他功能。
-
-从 GitHub 下载[存储 SDIO 驱动程序示例](https://go.microsoft.com/fwlink/p/?LinkId=617953)。
+从 GitHub 下载[存储 SDIO 驱动程序示例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/master/Official%20Windows%20Driver%20Kit%20Sample/Windows%20Driver%20Kit%20(WDK)%208.1%20Samples/%5BC%2B%2B%5D-windows-driver-kit-81-cpp/WDK%208.1%20C%2B%2B%20Samples/Storage%20SDIO%20Driver/C%2B%2B)。

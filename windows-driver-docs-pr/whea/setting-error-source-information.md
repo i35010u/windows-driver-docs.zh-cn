@@ -10,17 +10,17 @@ keywords:
 - 硬件错误源 WDK WHEA，设置信息
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 490cd16d833ae8520ca45abc7865f0461096ad61
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 9584145c26a555db763d706996101aaccd733f87
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72843283"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89209474"
 ---
 # <a name="setting-error-source-information"></a>设置错误源信息
 
 
-用户模式应用程序可以通过调用[**WHEAErrorSourceMethods：： SetErrorSourceInfoRtn**](https://docs.microsoft.com/windows-hardware/drivers/ddi/_whea/)方法来设置硬件平台支持的特定[错误源](hardware-errors-and-error-sources.md)的信息。 在这种情况下，应用程序会提供一个[**WHEA\_错误\_源\_描述符**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/ns-ntddk-_whea_error_source_descriptor)结构，该结构描述要为指定的错误源设置的信息。
+用户模式应用程序可以通过调用[**WHEAErrorSourceMethods：： SetErrorSourceInfoRtn**](/windows-hardware/drivers/ddi/_whea/)方法来设置硬件平台支持的特定[错误源](hardware-errors-and-error-sources.md)的信息。 在这种情况下，应用程序提供了 [**WHEA \_ 错误 \_ 源 \_ 描述符**](/windows-hardware/drivers/ddi/ntddk/ns-ntddk-_whea_error_source_descriptor) 结构，描述要为指定的错误源设置的信息。
 
 下面的代码示例演示如何为特定错误源设置错误源信息。
 
@@ -165,22 +165,17 @@ pOutParameters->Release();
 
 应用程序通常会在修改错误源的配置时设置错误源的信息。 应用程序可以通过执行以下步骤来修改错误源的配置：
 
-1.  检索描述特定错误源的 WHEA\_错误\_源\_描述符结构。
+1.  检索 \_ \_ \_ 描述特定错误源的 WHEA 错误源描述符结构。
 
-    有关获取系统中所有[错误源](hardware-errors-and-error-sources.md)的信息的详细信息，请参阅[获取所有错误源的错误源信息](getting-error-source-information-for-all-error-sources.md)。
+    有关获取系统中所有 [错误源](hardware-errors-and-error-sources.md) 的信息的详细信息，请参阅 [获取所有错误源的错误源信息](getting-error-source-information-for-all-error-sources.md)。
 
-    有关获取系统中特定错误源的信息的详细信息，请参阅[获取特定错误源的错误源信息](getting-error-source-information-for-a-specific-error-source.md)。
+    有关获取系统中特定错误源的信息的详细信息，请参阅 [获取特定错误源的错误源信息](getting-error-source-information-for-a-specific-error-source.md)。
 
-2.  修改 WHEA\_错误\_源\_描述符结构的内容，以更改错误源的配置。
+2.  修改 WHEA \_ 错误 \_ 源描述符结构的内容 \_ ，更改错误源的配置。
 
-3.  调用[**WHEAErrorSourceMethods：： SetErrorSourceInfoRtn**](https://docs.microsoft.com/windows-hardware/drivers/ddi/_whea/)方法为错误源设置错误源信息
+3.  调用 [**WHEAErrorSourceMethods：： SetErrorSourceInfoRtn**](/windows-hardware/drivers/ddi/_whea/) 方法为错误源设置错误源信息
 
 在系统重新启动之前，对错误源的配置所做的任何更改都不会生效。
 
  
-
- 
-
-
-
 

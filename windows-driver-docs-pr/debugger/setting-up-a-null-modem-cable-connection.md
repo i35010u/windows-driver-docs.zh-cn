@@ -10,12 +10,12 @@ keywords:
 - '电缆连接、调试 (空调) 电缆) '
 ms.date: 07/11/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 2ce892c5331aa9131b6da55b296d18fda7a61e8f
-ms.sourcegitcommit: f610410e1500f0b0a4ca008b52679688ab51033d
+ms.openlocfilehash: a17bdee8f94e7116bc8e53cca8db1ec9105a212e
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/15/2020
-ms.locfileid: "88253083"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89210839"
 ---
 # <a name="setting-up-kernel-mode-debugging-over-a-serial-cable-manually"></a>手动设置通过串行线缆进行的内核模式调试
 
@@ -147,7 +147,7 @@ ms.locfileid: "88253083"
 
 ## <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>附加信息
 
-有关 **bcdedit** 命令的完整文档，请参阅 [bcdedit Options Reference](https://docs.microsoft.com/windows-hardware/drivers/devtest/bcd-boot-options-reference)。
+有关 **bcdedit** 命令的完整文档，请参阅 [bcdedit Options Reference](../devtest/bcd-boot-options-reference.md)。
 
 ## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 

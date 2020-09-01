@@ -11,12 +11,12 @@ keywords:
 - 多个接收队列 WDK RSS
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f144837af3abe9e5f40b7607d37361008367cc3e
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 86a756e66b69f4c23740d86e7a11b3ceec8e803d
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72842002"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89209275"
 ---
 # <a name="rss-with-a-single-hardware-receive-queue"></a>使用单个硬件接收队列的 RSS
 
@@ -44,11 +44,11 @@ ms.locfileid: "72842002"
 
     系统在一个中断中处理的接收的缓冲区可以与多个不同的网络连接关联。
 
-3.  NDIS 在系统确定的 CPU 上调用微型端口驱动程序的[*MiniportInterrupt*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_isr)函数（ISR）。
+3.  NDIS 在系统确定的 CPU (ISR) 上调用微型端口驱动程序的 [*MiniportInterrupt*](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_isr) 函数。
 
-4.  ISR 禁用中断，并请求 NDIS 对延迟的过程调用（DPC）进行排队以处理接收的数据。
+4.  ISR 禁用中断，并请求 NDIS 对延迟的过程调用排队 (DPC) 处理收到的数据。
 
-5.  NDIS 在当前 CPU 上调用[*MiniportInterruptDPC*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_interrupt_dpc)函数（DPC）。 在 DPC 中：
+5.  NDIS 在当前 CPU (DPC) 上调用 [*MiniportInterruptDPC*](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_interrupt_dpc) 函数。 在 DPC 中：
 
     1.  微型端口驱动程序使用 NIC 为每个接收的缓冲区计算的哈希值，并将每个接收的缓冲区重新分配到与 CPU 关联的接收队列。
     2.  当前 DPC 请求 NDIS 为与非空接收队列关联的每个其他 Cpu 将 DPC 排队。
@@ -57,14 +57,8 @@ ms.locfileid: "72842002"
     分配队列和排队其他 Dpc 需要额外的处理开销。 若要提高系统性能，则必须使用更好的可用 Cpu 利用率来抵消此开销。
 
 6.  给定 CPU 上的 DPC：
-    1.  处理与接收队列关联的接收缓冲区，并指示驱动程序堆栈上的数据。 有关详细信息，请参阅[指示 RSS 接收数据](indicating-rss-receive-data.md)。
-    2.  如果是要完成的最后一个 DPC，则启用中断。 此中断已完成，进程将再次启动。 驱动程序必须使用原子操作来确定要完成的最后一个 DPC。 例如，驱动程序可以使用[**NdisInterlockedDecrement**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisinterlockeddecrement)函数来实现原子计数器。
+    1.  处理与接收队列关联的接收缓冲区，并指示驱动程序堆栈上的数据。 有关详细信息，请参阅 [指示 RSS 接收数据](indicating-rss-receive-data.md)。
+    2.  如果是要完成的最后一个 DPC，则启用中断。 此中断已完成，进程将再次启动。 驱动程序必须使用原子操作来确定要完成的最后一个 DPC。 例如，驱动程序可以使用 [**NdisInterlockedDecrement**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisinterlockeddecrement) 函数来实现原子计数器。
 
  
-
- 
-
-
-
-
 

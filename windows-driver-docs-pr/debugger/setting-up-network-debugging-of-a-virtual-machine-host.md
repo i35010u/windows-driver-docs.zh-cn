@@ -4,12 +4,12 @@ description: 本主题介绍如何配置与 Hyper-v 虚拟机的内核调试连�
 ms.assetid: E4C4D2A1-2FB0-4028-8A52-30B8F4F738D0
 ms.date: 07/02/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 3ed124f97b37cef2fcca3043924327000cdd903f
-ms.sourcegitcommit: f610410e1500f0b0a4ca008b52679688ab51033d
+ms.openlocfilehash: ea2528c6bbcf5d38b7fb26ba3de44957bdae5699
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/15/2020
-ms.locfileid: "88253033"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89210833"
 ---
 # <a name="setting-up-network-debugging-of-a-virtual-machine---kdnet"></a>设置虚拟机的网络调试-KDNET
 
@@ -22,11 +22,11 @@ ms.locfileid: "88253033"
 
 **1. 创建已安装 Windows 的 VM**
 
-有关如何创建 VM 的信息，请参阅 [使用 Hyper-v 创建虚拟机](https://docs.microsoft.com/virtualization/hyper-v-on-windows/quick-start/quick-create-virtual-machine)。
+有关如何创建 VM 的信息，请参阅 [使用 Hyper-v 创建虚拟机](/virtualization/hyper-v-on-windows/quick-start/quick-create-virtual-machine)。
 
 **2. 定义外部虚拟交换机** 
 
-若要与 VM 通信，可以使用虚拟外部网络交换机。 有关如何创建外部网络交换机的信息，请参阅 [创建虚拟网络](https://docs.microsoft.com/virtualization/hyper-v-on-windows/quick-start/connect-to-network)。
+若要与 VM 通信，可以使用虚拟外部网络交换机。 有关如何创建外部网络交换机的信息，请参阅 [创建虚拟网络](/virtualization/hyper-v-on-windows/quick-start/connect-to-network)。
 
 配置外部网络交换机时，必须设置以下选项。
 
@@ -34,7 +34,7 @@ ms.locfileid: "88253033"
 |----------|----------|
 | 连接类型 | 外部网络|
 | 允许管理操作系统共享此网络适配器 | 已启用 |
-| VLAN ID | 已禁用 |
+| VLAN ID | Disabled |
 
 
 **3. 禁用安全启动**
@@ -207,11 +207,4 @@ C:\>Ping <HostComputerIPAddress>
 [手动设置网络连接](setting-up-a-network-debugging-connection.md)
 
  
-
- 
-
-
-
-
-
 

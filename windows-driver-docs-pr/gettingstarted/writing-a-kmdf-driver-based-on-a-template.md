@@ -6,12 +6,12 @@ keywords:
 - 编写 KMDF 驱动程序
 ms.date: 04/20/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 24489cd831fbcefa385e9ded5ec8792ca1e4a6b0
-ms.sourcegitcommit: 0e83928aac8f171980e94b67f9291468e6e68093
+ms.openlocfilehash: 8b6b239e2e4f976bf62efe9536690df5d3889b2b
+ms.sourcegitcommit: 9e5a99dc75dfee3caa9a242adc0ed22ae4df9f29
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84336394"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89043153"
 ---
 # <a name="write-a-universal-windows-driver-kmdf-based-on-a-template"></a>基于模板编写通用 Windows 驱动程序 (KMDF)
 
@@ -32,7 +32,7 @@ ms.locfileid: "84336394"
     > 在创建新的 KMDF 或 UMDF 驱动程序时，必须选择一个不多于 32 个字符的驱动程序名称。 此长度限制在 wdfglobals.h 中定义。  
 
 5. 在“位置”字段中，输入要在其中创建新项目的目录。
-6. 选中“创建解决方案的目录”。 单击“确定” 。
+6. 选中“创建解决方案的目录”。 选择“确定”。
 
     ![“新建项目”对话框的屏幕截图，显示选中的 WDF 和内核模式驱动程序](images/vs2015-kmdf-new-project.png)
 
@@ -40,7 +40,7 @@ ms.locfileid: "84336394"
 
     ![解决方案资源管理器的屏幕截图，其中显示驱动程序项目和程序包项目中的文件](images/vs2015-kmdf-solution-explorer.png)
 
-7. 在“解决方案资源管理器”窗口中，右键单击“解决方案‘KmdfSmall’(1 个项目)”，然后选择“配置管理器”。 为驱动程序项目和程序包项目选择配置和平台。 在本练习中，我们选择“调试”和“x64”。
+7. 在“解决方案资源管理器”窗口中，选择并按住（或右键单击）“解决方案‘KmdfDriver’(1 个项目)”，然后选择“配置管理器”  。 为驱动程序项目和程序包项目选择配置和平台。 在本练习中，我们选择“调试”和“x64”。
 
 8. 若要生成驱动程序并创建驱动程序包，请从“生成”菜单中选择“生成解决方案”。 Visual Studio 在“输出”窗口中显示生成进度。 （如果“输出”窗口不可见，请从“视图”菜单中选择“输出”。）
 
@@ -65,11 +65,11 @@ ms.locfileid: "84336394"
     > 在实际的驱动程序调试方案中，我们建议使用 KDNET 生成的密钥。 有关如何使用 KDNET 生成一个随机密钥的详细信息，请参阅[调试驱动程序 - 分步实验室（Sysvad 内核模式）](../debugger/debug-universal-drivers--kernel-mode-.md)主题。
 
 2. 在主计算机上，在 Visual Studio 中打开你的解决方案。 你可以在 KmdfDriver 文件夹中双击解决方案文件 KmdfDriver.sln。
-3. 在“解决方案资源管理器”窗口中，右键单击 **KmdfDriver** 项目，然后选择“属性”。
+3. 在“解决方案资源管理器”窗口中，选择并按住（或右键单击）KmdfDriver 项目，然后选择“属性”  。
 4. 在“KmdfDriver 包属性页”窗口的左侧窗格中，转到“配置属性”&gt;“驱动程序安装”&gt;“部署”。
 5. 选中“部署前删除以前的驱动程序版本”。
 6. 对于**远程计算机名**，请选择配置用于测试和调试的计算机名。 在本练习中，我们使用名为 MyTestComputer 的计算机。
-7. 选择“硬件 ID 驱动程序更新”，然后输入驱动程序的硬件 ID。 在本练习中，硬件 ID 为“Root\\KmdfDriver”。 单击“确定” 。
+7. 选择“硬件 ID 驱动程序更新”，然后输入驱动程序的硬件 ID。 在本练习中，硬件 ID 为“Root\\KmdfDriver”。 选择“确定”。
 
     ![“kmdfdriver 包属性页”窗口的屏幕截图，其中显示选择了“部署驱动程序安装”](images/vs2015-kmdfdriver-property-pages.png)
 
@@ -111,7 +111,7 @@ ms.locfileid: "84336394"
 
         **c:\\tools\\devcon install kmdfdriver.inf root\kmdfdriver**
 
-        此时将显示一个对话框，指示测试驱动程序是未签名驱动程序。 单击“仍然安装此驱动程序”以继续。
+        此时将显示一个对话框，指示测试驱动程序是未签名驱动程序。 选择“仍然安装此驱动程序”以继续。
 
         ![驱动程序安装警告的屏幕截图](../debugger/images/debuglab-image-install-security-warning.png)
 

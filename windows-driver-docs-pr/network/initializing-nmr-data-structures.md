@@ -8,23 +8,23 @@ keywords:
 - 初始化 NMR 数据结构
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c58da13ba5823fe2dcb55ad41cc0dbbb83b55fe7
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 53a4110983addd5e5a61d5e5f13ed9904722cb52
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72824416"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89211043"
 ---
 # <a name="initializing-nmr-data-structures"></a>初始化 NMR 数据结构
 
 
-在 Winsock 内核（WSK）应用程序可以注册到[网络模块注册机构（NMR）](network-module-registrar2.md)之前，应用程序必须先初始化以下结构。
+在使用 Winsock 内核 (WSK) 应用程序可以向 [网络模块注册器 (NMR) ](network-module-registrar2.md)注册后，应用程序必须先初始化以下结构。
 
--   [**NPI\_MODULEID**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff568813(v=vs.85))
+-   [**NPI \_ MODULEID**](/previous-versions/windows/hardware/drivers/ff568813(v=vs.85))
 
--   [**NPI\_客户端\_特征**](https://docs.microsoft.com/windows-hardware/drivers/ddi/netioddk/ns-netioddk-_npi_client_characteristics)
+-   [**NPI \_ 客户端 \_ 特征**](/windows-hardware/drivers/ddi/netioddk/ns-netioddk-_npi_client_characteristics)
 
--   [**NPI\_注册\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/netioddk/ns-netioddk-_npi_registration_instance)包含在[**NPI\_客户端\_特征**](https://docs.microsoft.com/windows-hardware/drivers/ddi/netioddk/ns-netioddk-_npi_client_characteristics)结构内的实例
+-   [**NPI \_\_**](/windows-hardware/drivers/ddi/netioddk/ns-netioddk-_npi_registration_instance) [**NPI \_ 客户端 \_ 特征**](/windows-hardware/drivers/ddi/netioddk/ns-netioddk-_npi_client_characteristics)结构中包含的注册实例
 
 只要向 NMR 注册了 WSK 应用程序，所有这些数据结构都必须保持有效并驻留在内存中。
 
@@ -79,7 +79,7 @@ const NPI_CLIENT_CHARACTERISTICS Characteristics =
 };
 ```
 
-WSK 应用程序调用[**NmrRegisterClient**](https://docs.microsoft.com/windows-hardware/drivers/ddi/netioddk/nf-netioddk-nmrregisterclient)函数来向 NMR 注册应用程序。
+WSK 应用程序调用 [**NmrRegisterClient**](/windows-hardware/drivers/ddi/netioddk/nf-netioddk-nmrregisterclient) 函数来向 NMR 注册应用程序。
 
 例如：
 
@@ -123,10 +123,4 @@ NTSTATUS
 WSK 应用程序不需要从其**DriverEntry**函数内调用**NmrRegisterClient** 。 例如，如果 WSK 应用程序是复杂驱动程序的子组件，则仅当激活 WSK 应用程序子组件时，应用程序的注册才可能发生。
 
  
-
- 
-
-
-
-
 

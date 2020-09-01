@@ -12,19 +12,19 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 7ee92f55f7253cdc1000191113f996908d1c2174
-ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
+ms.openlocfilehash: 981373f0043b5395d939946a0884ff87724680ea
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84534228"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89209425"
 ---
 # <a name="ndiskdcxadapter"></a>!ndiskd.cxadapter
 
 
 **！ Ndiskd cxadapter**扩展显示有关 get-netadapter 对象的信息。
 
-有关网络适配器 WDF 类扩展（NetAdapterCx）的详细信息，请参阅[网络适配器 Wdf 类扩展（Cx）](https://docs.microsoft.com/windows-hardware/drivers/netcx)。
+有关网络适配器 WDF 类扩展的详细信息 (NetAdapterCx) ，请参阅 [网络适配器 Wdf Class extension (Cx) ](../netcx/index.md)。
 
 ```console
 !ndiskd.cxadapter [-handle <x>] [-basic] [-power] [-datapath] 
@@ -47,12 +47,12 @@ ms.locfileid: "84534228"
 
 ### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
-Ndiskd
+Ndiskd.dll
 
 <a name="examples"></a>示例
 --------
 
-若要获取 GET-NETADAPTER 对象的句柄，请首先运行[**！ ndiskd**](-ndiskd-netadapter.md)命令，以查看系统上所有 NIC 驱动程序和 NetAdapters 的列表。 在下面的示例中，查找名为 Realtek PCIe GBE 系列控制器 Get-netadapter 示例驱动程序2的 Get-netadapter 的句柄 \# 。 它的句柄为 ffffd1022d048030。
+若要获取 GET-NETADAPTER 对象的句柄，请首先运行 [**！ ndiskd**](-ndiskd-netadapter.md) 命令，以查看系统上所有 NIC 驱动程序和 NetAdapters 的列表。 在下面的示例中，查找名为 Realtek PCIe GBE 系列控制器 Get-netadapter 示例驱动程序2的 Get-netadapter 的句柄 \# 。 它的句柄为 ffffd1022d048030。
 
 ```console
 0: kd> !ndiskd.netadapter
@@ -61,7 +61,7 @@ Ndiskd
     ffffd1022ed908e0   ffffd1022e8611a0    Microsoft Kernel Debug Network Adapter
 ```
 
-通过单击此 Get-netadapter 的句柄，或在命令行上使用其句柄输入 **！ ndiskd**命令，你可以查看此 get-netadapter 的详细信息，包括其 get-netadapter 对象。 Realtek PCIe GBE 系列控制器 Get-netadapter 示例驱动程序 \# 2 的 get-netadapter 句柄为00002efdd0e5f988。
+通过单击此 Get-netadapter 的句柄，或在命令行上使用其句柄输入 **！ ndiskd** 命令，你可以查看此 get-netadapter 的详细信息，包括其 get-netadapter 对象。 Realtek PCIe GBE 系列控制器 Get-netadapter 示例驱动程序 \# 2 的 get-netadapter 句柄为00002efdd0e5f988。
 
 ```console
 0: kd> !ndiskd.netadapter ffffd1022d048030
@@ -144,7 +144,7 @@ MORE INFORMATION
     Diagnostic log
 ```
 
-由于 GET-NETADAPTER 对象是一个 WDF 对象，因此单击其控点将导致调试程序运行[**！ wdfkd**](-wdfkd-wdfhandle.md)命令，该命令将从 WDF 角度为你显示有关它的详细信息。 若要从网络角度查看有关 GET-NETADAPTER 的更多详细信息，请单击 GET-NETADAPTER 的句柄右侧的 "详细信息" 链接，以使用其句柄运行**cxadapter**命令。
+由于 GET-NETADAPTER 对象是一个 WDF 对象，因此单击其控点将导致调试程序运行 [**！ wdfkd**](-wdfkd-wdfhandle.md) 命令，该命令将从 WDF 角度为你显示有关它的详细信息。 若要从网络角度查看有关 GET-NETADAPTER 的更多详细信息，请单击 GET-NETADAPTER 的句柄右侧的 "详细信息" 链接，以使用其句柄运行 **cxadapter** 命令。
 
 ```console
 0: kd> !ndiskd.cxadapter ffffd1022f1a0720
@@ -164,7 +164,7 @@ NETADAPTER
     Show NETPOWERSETTINGS info
 ```
 
-你还可以将此命令与其他参数（如 *-数据路径*）结合起来，查看此 get-netadapter 的详细信息。
+你还可以将此命令与其他参数（如 *-数据路径* ）结合起来，查看此 get-netadapter 的详细信息。
 
 ```console
 0: kd> !ndiskd.cxadapter ffffd1022f1a0720 -basic -datapath
@@ -190,28 +190,21 @@ DATAPATH QUEUES
 ## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
-[网络驱动程序设计指南](https://docs.microsoft.com/windows-hardware/drivers/network/index)
+[网络驱动程序设计指南](../network/index.md)
 
-[Windows Vista 和更高版本的网络引用](https://docs.microsoft.com/windows-hardware/drivers/ddi/_netvista/)
+[Windows Vista 和更高版本的网络引用](/windows-hardware/drivers/ddi/_netvista/)
 
 [调试网络堆栈](https://channel9.msdn.com/Shows/Defrag-Tools/Defrag-Tools-175-Debugging-the-Network-Stack)
 
-[**NDIS 扩展（Ndiskd）**](ndis-extensions--ndiskd-dll-.md)
+[**NDIS 扩展 ( # A0) **](ndis-extensions--ndiskd-dll-.md)
 
 [**!ndiskd.help**](-ndiskd-help.md)
 
-[网络适配器 WDF 类扩展（Cx）](https://docs.microsoft.com/windows-hardware/drivers/netcx)
+[网络适配器 WDF 类扩展 (Cx) ](../netcx/index.md)
 
 [**!ndiskd.netadapter**](-ndiskd-netadapter.md)
 
 [**!wdfkd.wdfhandle**](-wdfkd-wdfhandle.md)
 
  
-
- 
-
-
-
-
-
 

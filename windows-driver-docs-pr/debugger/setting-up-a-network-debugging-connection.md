@@ -9,12 +9,12 @@ keywords:
 - 通过网络电缆手动设置内核模式调试
 ms.date: 12/07/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 9ab28327ef97e4120af8b352a2b107483abc7f13
-ms.sourcegitcommit: 67efcd26f7be8f50c92b141ccd14c9c68f4412d8
+ms.openlocfilehash: cf0b370633d35f70bc7cb8755157383b53601ee4
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88902656"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89210859"
 ---
 # <a name="setting-up-kdnet-network-kernel-debugging-manually"></a>手动设置 KDNET 网络内核调试
 
@@ -222,7 +222,7 @@ shutdown -r -t 0
 
 使用 kdnet 实用程序时，不需要手动删除条目。 有关详细信息，请参阅 [自动设置 KDNET 网络内核调试](setting-up-a-network-debugging-connection-automatically.md)。
 
-使用 bcdedit – deletevalue 时，必须提供有效的 bcd 元素名称。 有关详细信息，请参阅 [BCDEdit/deletevalue](https://docs.microsoft.com/windows-hardware/drivers/devtest/bcdedit--deletevalue)。
+使用 bcdedit – deletevalue 时，必须提供有效的 bcd 元素名称。 有关详细信息，请参阅 [BCDEdit/deletevalue](../devtest/bcdedit--deletevalue.md)。
 
 若要手动删除 BCDEdit 条目，请完成以下步骤。
 
