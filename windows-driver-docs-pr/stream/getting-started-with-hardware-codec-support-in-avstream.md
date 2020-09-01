@@ -6,16 +6,16 @@ keywords:
 - 硬件编解码器支持 WDK AVStream，使用
 ms.date: 06/18/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 077c8225ff1b617a3e742486dad82cc998e3f72a
-ms.sourcegitcommit: 8143bb312ead6582b4b3e0ad34b6266dcfd74fb5
+ms.openlocfilehash: 714b7d663fdddf7fa8fab7aaa66dc888a686108f
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84992483"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89190603"
 ---
 # <a name="getting-started-with-hardware-codec-support-in-avstream"></a>AVStream 中的硬件编解码器支持入门
 
-从 Windows 7 开始， [windows 媒体基础](https://docs.microsoft.com/windows/win32/medfound/media-foundation-programming-guide)将基于 AVStream 的媒体组件表示为用户模式媒体基础转换（MFTs）。
+从 Windows 7 开始， [windows 媒体基础](/windows/win32/medfound/media-foundation-programming-guide) 将基于 AVStream 的媒体组件表示为用户模式媒体基础转换 (MFTs) 。
 
 通过使用此功能，供应商可以将基于硬件的解码器、编码器和视频处理器作为 MFTs 提供，进而可以在应用程序级别进行操作。
 
@@ -25,13 +25,13 @@ Windows 7 中的 AVStream 模型保持不变，只需对微型驱动程序进行
 
 ![说明转码拓扑的示意图](images/hw-transcoding.png)
 
-为了获得最佳性能，关系图底部行中显示的媒体处理应在专用硬件中出现。 在此方案中，专用转码硬件被称为 "受保护的硬件编码器解码器（舍弃）"。 可以将舍弃打包为主板的插件模块或显示适配器上的集成功能。
+为了获得最佳性能，关系图底部行中显示的媒体处理应在专用硬件中出现。 在此方案中，专用的转码硬件被称为 "受保护的硬件编码器解码器" (舍弃) 。 可以将舍弃打包为主板的插件模块或显示适配器上的集成功能。
 
 Windows 7 仍然支持基于软件的转码。 但是，因为系统在专用硬件（而不是 CPU）上执行转码，所以，基于舍弃的解决方案可显著提高用户体验与基于软件的解决方案的比较。
 
 如前面的关系图中所示，用户模式客户端可以使用在每个 MFT 上公开的 IMFTransform 接口访问用户模式转换。 IMFTransform 在 Vista 和更高版本的 Windows 中可用，但仅从 Windows 7 开始，才能向用户模式应用程序公开基于硬件的媒体处理机制。
 
-系统提供的设备代理或 Devproxy 模块在 DirectShow 流式处理模型中的角色与 KSProxy 相同。 Devproxy 在用户模式下的内核模式和 MFT 组件中*Ks.sys*之间进行代理通信。
+系统提供的设备代理或 Devproxy 模块在 DirectShow 流式处理模型中的角色与 KSProxy 相同。 Devproxy 在用户模式下的内核模式和 MFT 组件中 *Ks.sys* 之间进行代理通信。
 
 生成的包装硬件媒体处理功能称为设备代理 MFT。 若要利用此机制，AVStream 微型驱动程序应该执行以下操作：
 
@@ -47,26 +47,26 @@ Windows 7 仍然支持基于软件的转码。 但是，因为系统在专用硬
 
 - 在 Windows 7 和更高版本的 Windows 中提供的以下 KS 类别之一注册其媒体处理 KS 筛选器：
 
-  - [**KSMFT \_ 类别 \_ 视频 \_ 解码器**](https://docs.microsoft.com/windows-hardware/drivers/install/ksmft-category-video-decoder)
+  - [**KSMFT \_ 类别 \_ 视频 \_ 解码器**](../install/ksmft-category-video-decoder.md)
 
-  - [**KSMFT \_ 类别 \_ 视频 \_ 编码器**](https://docs.microsoft.com/windows-hardware/drivers/install/ksmft-category-video-encoder)
+  - [**KSMFT \_ 类别 \_ 视频 \_ 编码器**](../install/ksmft-category-video-encoder.md)
 
-  - [**KSMFT \_ 类别 \_ 视频 \_ 处理器**](https://docs.microsoft.com/windows-hardware/drivers/install/ksmft-category-video-processor)
+  - [**KSMFT \_ 类别 \_ 视频 \_ 处理器**](../install/ksmft-category-video-processor.md)
 
-  - [**KSMFT \_ 类别 \_ 音频 \_ 解码器**](https://docs.microsoft.com/windows-hardware/drivers/install/ksmft-category-audio-decoder)
+  - [**KSMFT \_ 类别 \_ 音频 \_ 解码器**](../install/ksmft-category-audio-decoder.md)
 
-  - [**KSMFT \_ 类别 \_ 音频 \_ 编码器**](https://docs.microsoft.com/windows-hardware/drivers/install/ksmft-category-audio-encoder)
+  - [**KSMFT \_ 类别 \_ 音频 \_ 编码器**](../install/ksmft-category-audio-encoder.md)
 
   此外，还定义了以下类别以用于其他转码方案：
 
-  - [**KSMFT \_ 类别 \_ 视频 \_ 效果**](https://docs.microsoft.com/windows-hardware/drivers/install/ksmft-category-video-effect)
+  - [**KSMFT \_ 类别 \_ 视频 \_ 效果**](../install/ksmft-category-video-effect.md)
 
-  - [**KSMFT \_ 类别多路复用器 \_**](https://docs.microsoft.com/windows-hardware/drivers/install/ksmft-category-multiplexer)
+  - [**KSMFT \_ 类别多路复用器 \_**](../install/ksmft-category-multiplexer.md)
 
-  - [**KSMFT \_ 类别的 \_ 信号分离器**](https://docs.microsoft.com/windows-hardware/drivers/install/ksmft-category-demultiplexer)
+  - [**KSMFT \_ 类别的 \_ 信号分离器**](../install/ksmft-category-demultiplexer.md)
 
-  - [**KSMFT \_ CATEGORY \_ 音频 \_ 效果**](https://docs.microsoft.com/windows-hardware/drivers/install/ksmft-category-audio-effect)
+  - [**KSMFT \_ CATEGORY \_ 音频 \_ 效果**](../install/ksmft-category-audio-effect.md)
 
-  - [**\_其他 KSMFT 类别 \_**](https://docs.microsoft.com/windows-hardware/drivers/install/ksmft-category-other)
+  - [**\_其他 KSMFT 类别 \_**](../install/ksmft-category-other.md)
 
-- 媒体基础应用程序随后可以使用[MFTEnumEx](https://docs.microsoft.com/windows/win32/api/mfapi/nf-mfapi-mftenumex)函数来枚举使用前面提到的类别注册为 MFTs 的设备。
+- 媒体基础应用程序随后可以使用 [MFTEnumEx](/windows/win32/api/mfapi/nf-mfapi-mftenumex) 函数来枚举使用前面提到的类别注册为 MFTs 的设备。

@@ -14,12 +14,12 @@ keywords:
 - Isr WDK 内核，硬件优先级
 ms.date: 05/08/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 64d39f3d3cd4bffa7f5aaa049a83151285e7057e
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: dc5621df25305ce479972fe7800430385e72e387
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72838550"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89189781"
 ---
 # <a name="managing-hardware-priorities"></a>管理硬件优先级
 
@@ -27,88 +27,83 @@ ms.locfileid: "72838550"
 
 
 
-驱动程序例程执行的 IRQL 决定了可调用的内核模式驱动程序支持例程。 例如，某些驱动程序支持例程要求调用方在 IRQL = 调度\_级别下运行。 如果调用方在任何比被动\_级别高的 IRQL 运行，则不能安全地调用其他的。
+驱动程序例程执行的 IRQL 决定了可调用的内核模式驱动程序支持例程。 例如，某些驱动程序支持例程要求调用方以 IRQL = 调度 \_ 级别运行。 如果调用方在任何比被动级别高的 IRQL 运行，则不能安全地调用其他的 \_ 。
 
 下面是一个 IRQLs 列表，其中调用了最常实现的标准驱动程序例程。 IRQLs 按从低到高的优先级列出。
 
-<a href="" id="passive-level"></a>**被动\_级别**  
-**中断屏蔽**-无。
+<a href="" id="passive-level"></a>**被动 \_ 级别**  
+**中断屏蔽** -无。
 
-**调用的驱动程序例程**被动\_级别- [**DriverEntry**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_initialize)、 [*AddDevice*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_add_device)、重新[*初始化*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nc-ntddk-driver_reinitialize)、[*卸载*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_unload)例程、大多数调度例程、驱动程序创建的线程和工作线程回调。
+**调用的驱动程序例程** 被动 \_ 级别： [**DriverEntry**](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_initialize)、 [*AddDevice*](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_add_device)、重新 [*初始化*](/windows-hardware/drivers/ddi/ntddk/nc-ntddk-driver_reinitialize)、 [*卸载*](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_unload) 例程、大多数调度例程、驱动程序创建的线程和工作线程。
 
-<a href="" id="apc-level"></a>**APC\_级别**  
-**屏蔽中断**— APC\_级别中断被屏蔽。
+<a href="" id="apc-level"></a>**APC \_ 级别**  
+**屏蔽中断** — APC \_ 级别中断被屏蔽。
 
-**调用的驱动程序例程**APC\_级别-某些调度例程（请参阅[调度例程和 IRQLs](dispatch-routines-and-irqls.md)）。
+**调用的驱动程序例程** APC \_ 级别-某些调度例程 (参阅 [调度例程和 IRQLs](dispatch-routines-and-irqls.md)) 。
 
-<a href="" id="dispatch-level"></a>**调度\_级别**  
-**屏蔽的中断** —调度\_级别和 APC\_级别中断被屏蔽。 可能会发生设备、时钟和电源故障中断。
+<a href="" id="dispatch-level"></a>**调度 \_ 级别**  
+**屏蔽中断**  -分派 \_ 级别和 APC \_ 级别的中断被屏蔽。 可能会发生设备、时钟和电源故障中断。
 
-**调用的驱动程序例程**调度\_级别- [*StartIo*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_startio)、 [*AdapterControl*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_control)、 [*AdapterListControl*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_list_control)、 [*ControllerControl*](https://msdn.microsoft.com/library/windows/hardware/ff542049)、 [*IoTimer*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-io_timer_routine)、 [*cancel*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_cancel) （保存 Cancel 自旋锁时）、 [*DpcForIsr*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-io_dpc_routine)、 [*CustomTimerDpc*](https://msdn.microsoft.com/library/windows/hardware/ff542983)、 [*CustomDpc*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-kdeferred_routine)例程。
+**调用的驱动程序例程** 调度 \_ 级别： [*StartIo*](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_startio)、 [*AdapterControl*](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_control)、 [*AdapterListControl*](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_list_control)、 [*ControllerControl*](https://msdn.microsoft.com/library/windows/hardware/ff542049)、 [*IoTimer*](/windows-hardware/drivers/ddi/wdm/nc-wdm-io_timer_routine)、 [*取消*](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_cancel) (，同时保留取消自旋锁) 、 [*DpcForIsr*](/windows-hardware/drivers/ddi/wdm/nc-wdm-io_dpc_routine)、 [*CustomTimerDpc*](https://msdn.microsoft.com/library/windows/hardware/ff542983)、 [*CustomDpc*](/windows-hardware/drivers/ddi/wdm/nc-wdm-kdeferred_routine) 例程。
 
 <a href="" id="dirql"></a>**DIRQL**  
-**屏蔽** 的中断-以 IRQL&lt;= DIRQL 驱动程序中断对象的所有中断。 可能会出现带有较高 DIRQL 值的设备中断，以及时钟和电源故障中断。
+**屏蔽中断**  -所有中断均为 IRQL &lt; = 驱动程序中断对象的 DIRQL。 可能会出现带有较高 DIRQL 值的设备中断，以及时钟和电源故障中断。
 
-在 DIRQL （ [*InterruptService*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-kservice_routine)， [*SynchCritSection*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-ksynchronize_routine)例程）调用的驱动程序例程。
+在 DIRQL （ [*InterruptService*](/windows-hardware/drivers/ddi/wdm/nc-wdm-kservice_routine)， [*SynchCritSection*](/windows-hardware/drivers/ddi/wdm/nc-wdm-ksynchronize_routine) 例程）调用的驱动程序例程。
 
-APC\_级别与被动\_级别之间唯一的区别在于，在 APC\_级别执行的进程无法获取 APC 中断。 但这两个 IRQLs 都表示一个线程上下文，并且都表示代码可以分页。
+APC 级别和被动级别之间唯一的区别在于 \_ \_ ，在 apc 级别执行的进程 \_ 无法获取 apc 中断。 但这两个 IRQLs 都表示一个线程上下文，并且都表示代码可以分页。
 
 最低级别驱动程序在运行以下三个 IRQLs 之一时处理 Irp：
 
--   被动\_级别，在驱动程序的调度例程中，在处理器上未屏蔽中断
+-   被动 \_ 级别，不会在处理器上屏蔽中断， (s) 
 
-    **DriverEntry**、 *AddDevice*、重新*初始化*和*卸载*例程还会在被动\_级别运行，就像驱动程序创建的任何系统线程一样。
+    **DriverEntry**、 *AddDevice*、重新 *初始化*和 *卸载* 例程也是在被动 \_ 级别运行，就像任何驱动程序创建的系统线程一样。
 
--   调度\_级别，调度\_级别和 APC\_级别中断在处理器上在*StartIo*例程中屏蔽
+-   \_ \_ \_ 在*StartIo*例程中，在处理器上屏蔽了调度级别和 APC 级别中断
 
-    *AdapterControl*、 *AdapterListControl*、 *ControllerControl*、 *IoTimer*、 *cancel* （当它持有 Cancel 自旋锁时）和*CustomTimerDpc*例程还会在调度\_级别运行，就像*DpcForIsr*和*CustomDpc*例程一样。
+    *AdapterControl*、 *AdapterListControl*、 *ControllerControl*、 *IoTimer*、 *cancel* (在持有 Cancel 自旋锁) 的情况下，也可以在调度级别运行 *CustomTimerDpc* 例程 \_ ，如 *DpcForIsr* 和 *CustomDpc* 例程。
 
--   设备 IRQL （DIRQL），其中所有中断都小于或等于驱动器上在 ISR 和*SynchCritSection*例程中屏蔽的中断对象的*SynchronizeIrql*
+-   设备 IRQL (DIRQL) ，其中的所有中断均小于或等于驱动程序中断)  (对象的 *SynchronizeIrql* ，在 ISR 和 *SynchCritSection* 例程
 
 大多数较高级别的驱动程序在运行以下两个 IRQLs 中的一个时处理 Irp：
 
--   被动\_级别，不会在处理器上的任何中断中屏蔽中断，
+-   被动 \_ 级别，不会在驱动程序的调度例程中的处理器上屏蔽中断
 
-    **DriverEntry**、重新*初始化*、 *AddDevice*和*卸载*例程也是在被动\_级别运行，就像任何驱动程序创建的系统线程或工作线程回调例程或文件系统驱动程序。
+    **DriverEntry**、重新 *初始化*、 *AddDevice*和 *卸载* 例程也是在被动级别运行 \_ ，就像任何驱动程序创建的系统线程或工作线程回调例程或文件系统驱动程序。
 
--   调度\_级别，\_驱动程序的*IoCompletion*例程中的调度级别和 APC\_级别中断在处理器上屏蔽
+-   \_ \_ \_ 在驱动程序的*IoCompletion*例程 (s 中，在处理器上屏蔽了调度级别和 APC 级别中断) 
 
-    *IoTimer*、 *Cancel*和*CUSTOMTIMERDPC*例程还会在调度\_级别运行。
+    *IoTimer*、 *Cancel*和 *CustomTimerDpc* 例程也在调度 \_ 级别运行。
 
-在某些情况下，大容量存储设备的中间和最低级别驱动程序在\_级别的 IRQL 级别下调用。 具体而言，此错误可能出现在页面错误中，文件系统驱动程序将[**IRP\_MJ**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-read)发送到更低版本的驱动程序\_读取请求。
+在某些情况下，大容量存储设备的中间和最低级别驱动程序将以 IRQL APC \_ 级别进行调用。 具体而言，这可能出现在页面错误中，文件系统驱动程序将 [**IRP \_ MJ \_ 读取**](./irp-mj-read.md) 请求发送到较低的驱动程序。
 
-大多数标准驱动程序例程以 IRQL 运行，这使它们只需调用适当的支持例程即可。 例如，设备驱动程序在以 IRQL 调度\_级别运行时必须调用[**AllocateAdapterChannel**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-pallocate_adapter_channel) 。 由于大多数设备驱动程序从*StartIo*例程调用这些例程，因此它们通常在调度\_级别上运行。
+大多数标准驱动程序例程以 IRQL 运行，这使它们只需调用适当的支持例程即可。 例如，在以 IRQL 调度级别运行时，设备驱动程序必须调用 [**AllocateAdapterChannel**](/windows-hardware/drivers/ddi/wdm/nc-wdm-pallocate_adapter_channel) \_ 。 由于大多数设备驱动程序从 *StartIo* 例程调用这些例程，因此它们通常是在调度 \_ 级别运行的。
 
-请注意，没有*StartIo*例程的设备驱动程序，因为它会设置和管理其自己的 irp 队列，因此，如果它应调用**AllocateAdapterChannel**，则不一定会在调度\_级别 IRQL 时运行。 此类驱动程序必须将对**AllocateAdapterChannel**的调用嵌套在对[**KeRaiseIrql**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-keraiseirql)和[**KeLowerIrql**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kelowerirql)的调用之间，以便在调用**AllocateAdapterChannel**时，它在所需的 irql 处运行，并在调用例程重新获得控制时还原原始的 irql。
+请注意，没有 *StartIo* 例程的设备驱动程序，因为它会设置和管理其自己的 irp 队列，因此， \_ 如果它应调用 **AllocateAdapterChannel**，则不一定会在调度级别 IRQL 上运行。 此类驱动程序必须将对 **AllocateAdapterChannel** 的调用嵌套在对 [**KeRaiseIrql**](/windows-hardware/drivers/ddi/wdm/nf-wdm-keraiseirql) 和 [**KeLowerIrql**](/windows-hardware/drivers/ddi/wdm/nf-wdm-kelowerirql) 的调用之间，以便在调用 **AllocateAdapterChannel** 时，它在所需的 irql 处运行，并在调用例程重新获得控制时还原原始的 irql。
 
 调用驱动程序支持例程时，请注意以下各项。
 
-- 使用小于当前 IRQL 的输入*NewIrql*值调用[**KeRaiseIrql**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-keraiseirql)会导致错误。 调用[**KeLowerIrql**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kelowerirql) ，但还原原始 IRQL （即，调用**KeRaiseIrql**后）也会导致错误。
+- 使用小于当前 IRQL 的输入*NewIrql*值调用[**KeRaiseIrql**](/windows-hardware/drivers/ddi/wdm/nf-wdm-keraiseirql)会导致错误。 调用 [**KeLowerIrql**](/windows-hardware/drivers/ddi/wdm/nf-wdm-kelowerirql) ，但还原原始 IRQL (也就是说，调用 **KeRaiseIrql** 后) 也会导致错误。
 
-- 在 IRQL &gt;= 调度\_级别运行时，为内核定义的调度程序对象调用[**KeWaitForSingleObject**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kewaitforsingleobject)或[**KeWaitForMultipleObjects**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kewaitformultipleobjects)以等待非零间隔将导致严重错误。
+- 在 IRQL &gt; = 调度级别运行时 \_ ，为内核定义的调度程序对象调用 [**KeWaitForSingleObject**](/windows-hardware/drivers/ddi/wdm/nf-wdm-kewaitforsingleobject) 或 [**KeWaitForMultipleObjects**](/windows-hardware/drivers/ddi/wdm/nf-wdm-kewaitformultipleobjects) 以等待非零时间间隔将导致严重错误。
 
-- 可安全等待事件、信号量、互斥体或计时器设置为 "已终止" 状态的唯一驱动程序例程是：在 IRQL 被动\_级别的 nonarbitrary 线程上下文中运行的驱动程序例程，如驱动程序创建的线程、 **DriverEntry**和重新*初始化*例程，或用于原本同步 i/o 操作（如大多数设备 i/o 控制请求）的调度例程。
+- 可以安全地等待事件、信号量、互斥体或计时器设置为 "已终止" 状态的唯一驱动程序例程是：在 IRQL 被动级别（如 \_ 驱动程序创建的线程、 **DriverEntry** 和重新 *初始化* 例程）的 nonarbitrary 线程上下文中运行的驱动程序例程，或用于原本同步 i/o (操作的调度例程，如大多数设备 i/o 控制请求) 。
 
-- 即使以 IRQL 被动\_级别运行，可分页驱动程序代码也不得调用[**KeSetEvent**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kesetevent)、 [**KeReleaseSemaphore**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kereleasesemaphore)或[**KeReleaseMutex**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kereleasemutex) ，并将输入*Wait*参数设置为**TRUE**。 此类调用可能会导致严重页错误。
+- 即使以 IRQL 被动级别运行 \_ ，可分页驱动程序代码也不得 [**调用 KeSetEvent**](/windows-hardware/drivers/ddi/wdm/nf-wdm-kesetevent)、 [**KeReleaseSemaphore**](/windows-hardware/drivers/ddi/wdm/nf-wdm-kereleasesemaphore)或 [**KeReleaseMutex**](/windows-hardware/drivers/ddi/wdm/nf-wdm-kereleasemutex) ，并将输入 *Wait* 参数设置为 **TRUE**。 此类调用可能会导致严重页错误。
 
-- 如果任何运行在大于 IRQL APC\_级别的例程，都不能从分页池分配内存，也不能安全地访问分页池中的内存。 如果在 IRQL 上运行的例程比 APC\_级别导致页错误，则是错误的。
+- 如果任何运行在超过 IRQL APC 级别的例程， \_ 都既不能从分页池分配内存，也不能安全地访问分页池中的内存。 如果以 IRQL 级别运行的例程 \_ 导致页错误，则会出现严重错误。
 
-- 当驱动程序调用[**KeAcquireSpinLockAtDpcLevel**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-keacquirespinlockatdpclevel)和[**KeReleaseSpinLockFromDpcLevel**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kereleasespinlockfromdpclevel)时，驱动程序必须在 IRQL 调度\_级别运行。
+- 当驱动程序 \_ 调用 [**KeAcquireSpinLockAtDpcLevel**](/windows-hardware/drivers/ddi/wdm/nf-wdm-keacquirespinlockatdpclevel) 和 [**KeReleaseSpinLockFromDpcLevel**](/windows-hardware/drivers/ddi/wdm/nf-wdm-kereleasespinlockfromdpclevel)时，该驱动程序必须在 IRQL 调度级别运行。
 
-  当驱动程序调用**KeAcquireSpinLock**时，可以在 IRQL &lt;= 调度\_级别运行，但它必须通过调用**KeReleaseSpinLock**来释放该自旋锁。 换句话说，它是一种编程错误，用于通过调用**KeReleaseSpinLockFromDpcLevel**释放通过**KeAcquireSpinLock**获取的旋转锁。
+  当驱动程序 &lt; 调用 KeAcquireSpinLock 时，它可以在 IRQL = 调度 \_ 级别运行，但它必须通过调用**KeReleaseSpinLock**来释放该自旋锁。 **KeAcquireSpinLock** 换句话说，它是一种编程错误，用于通过调用**KeReleaseSpinLockFromDpcLevel**释放通过**KeAcquireSpinLock**获取的旋转锁。
 
-  驱动程序在 &gt; 调度\_级别运行时，不能调用**KeAcquireSpinLockAtDpcLevel**、 **KeReleaseSpinLockFromDpcLevel**、 **KeAcquireSpinLock**或**KeReleaseSpinLock** 。
+  驱动程序在以 IRQL 调度级别运行时，不能调用 **KeAcquireSpinLockAtDpcLevel**、 **KeReleaseSpinLockFromDpcLevel**、 **KeAcquireSpinLock**或 **KeReleaseSpinLock** &gt; \_ 。
 
-- 如果调用方未在引发的 IRQL 下运行，则调用使用自旋锁（如**ExInterlocked<em>Xxx</em>** 例程）的支持例程会在当前处理器上引发 irql，以调度\_级别或 DIRQL。
+- 如果调用方未在引发的 IRQL 下运行，则调用使用自旋锁（如**ExInterlocked<em>Xxx</em> **例程）的支持例程会将当前处理器上的 IRQL 提升为调度 \_ 级别或 DIRQL。
 
-- &gt; 被动\_级别运行的驱动程序代码应尽可能快地执行。 例程的运行时间越大，更重要的是，更重要的是，更重要的是，它可以优化该例程，使其尽可能快地执行。 例如，任何调用**KeRaiseIrql**的驱动程序都应该尽快使对**KeLowerIrql**的调用。
+- 以 IRQL 被动级别运行的驱动程序代码 &gt; \_ 应尽快执行。 例程的运行时间越大，更重要的是，更重要的是，更重要的是，它可以优化该例程，使其尽可能快地执行。 例如，任何调用 **KeRaiseIrql** 的驱动程序都应该尽快使对 **KeLowerIrql** 的调用。
 
-有关确定优先级的详细信息，请参阅[计划、线程上下文和 IRQL](https://go.microsoft.com/fwlink/p/?linkid=59757)白皮书。
-
- 
+有关确定优先级的详细信息，请参阅 [计划、线程上下文和 IRQL](https://go.microsoft.com/fwlink/p/?linkid=59757) 白皮书。
 
  
-
-
-
 

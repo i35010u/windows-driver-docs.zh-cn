@@ -13,12 +13,12 @@ keywords:
 - 已清除 i/o 队列状态 WDK KMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0408d8aeaca95d4ad65b4ab7e1f8024a45e2c5db
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: fe1e3155da1a789765ca37a9cbd7fddb7b8b5cba
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72845212"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89189915"
 ---
 # <a name="io-queue-states"></a>I/O 队列状态
 
@@ -40,25 +40,19 @@ I/o 队列为空，它无法从框架接收到新的 i/o 请求，i/o 队列中�
 <a href="" id="purged"></a>*清除*  
 I/o 队列为空，它无法从框架接收到新的 i/o 请求，i/o 队列中的所有 i/o 请求都已被取消。
 
-当驱动程序调用[**WdfIoQueueCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfio/nf-wdfio-wdfioqueuecreate)后，框架可将新的 i/o 队列设置为就绪状态。 但是，仅当设备处于工作状态（D0）状态时，[电源托管 i/o 队列](using-power-managed-i-o-queues.md)才进入 "就绪" 状态。
+当驱动程序调用 [**WdfIoQueueCreate**](/windows-hardware/drivers/ddi/wdfio/nf-wdfio-wdfioqueuecreate)后，框架可将新的 i/o 队列设置为就绪状态。 但是，仅当设备处于工作状态 (D0) 状态时， [电源托管 i/o 队列](using-power-managed-i-o-queues.md) 才进入 "就绪" 状态。
 
 驱动程序可以通过以下方式更改 i/o 队列的状态：
 
--   调用[**WdfIoQueueStop**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfio/nf-wdfio-wdfioqueuestop)或[**WdfIoQueueStopSynchronously**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfio/nf-wdfio-wdfioqueuestopsynchronously) ，使队列处于停止状态。
+-   调用 [**WdfIoQueueStop**](/windows-hardware/drivers/ddi/wdfio/nf-wdfio-wdfioqueuestop) 或 [**WdfIoQueueStopSynchronously**](/windows-hardware/drivers/ddi/wdfio/nf-wdfio-wdfioqueuestopsynchronously) ，使队列处于停止状态。
 
--   调用[**WdfIoQueueDrain**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfio/nf-wdfio-wdfioqueuedrain)或[**WdfIoQueueDrainSynchronously**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfio/nf-wdfio-wdfioqueuedrainsynchronously)将队列置于其排出状态。
+-   调用 [**WdfIoQueueDrain**](/windows-hardware/drivers/ddi/wdfio/nf-wdfio-wdfioqueuedrain) 或 [**WdfIoQueueDrainSynchronously**](/windows-hardware/drivers/ddi/wdfio/nf-wdfio-wdfioqueuedrainsynchronously) 将队列置于其排出状态。
 
--   调用[**WdfIoQueuePurge**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfio/nf-wdfio-wdfioqueuepurge)或[**WdfIoQueuePurgeSynchronously**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfio/nf-wdfio-wdfioqueuepurgesynchronously)以将队列置于其清除状态。
+-   调用 [**WdfIoQueuePurge**](/windows-hardware/drivers/ddi/wdfio/nf-wdfio-wdfioqueuepurge) 或 [**WdfIoQueuePurgeSynchronously**](/windows-hardware/drivers/ddi/wdfio/nf-wdfio-wdfioqueuepurgesynchronously) 以将队列置于其清除状态。
 
--   调用[**WdfIoQueueStart**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfio/nf-wdfio-wdfioqueuestart)将队列返回到其就绪状态。
+-   调用 [**WdfIoQueueStart**](/windows-hardware/drivers/ddi/wdfio/nf-wdfio-wdfioqueuestart) 将队列返回到其就绪状态。
 
-若要获取 i/o 队列的当前状态，驱动程序可以调用[**WdfIoQueueGetState**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfio/nf-wdfio-wdfioqueuegetstate)。
-
- 
+若要获取 i/o 队列的当前状态，驱动程序可以调用 [**WdfIoQueueGetState**](/windows-hardware/drivers/ddi/wdfio/nf-wdfio-wdfioqueuegetstate)。
 
  
-
-
-
-
 

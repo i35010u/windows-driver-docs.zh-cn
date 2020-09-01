@@ -1,6 +1,6 @@
 ---
-title: KSPROPERTY\_流\_降级
-description: KSPROPERTY\_STREAM\_降级属性是一个可选属性，如果 pin 允许降级策略，则应实现该属性。
+title: KSPROPERTY \_ 流 \_ 降级
+description: KSPROPERTY \_ 流 \_ 降级属性是一个可选属性，如果 pin 允许降级策略，则应实现该属性。
 ms.assetid: b8f9db81-a9ed-4a13-8d64-14854193c91b
 keywords:
 - KSPROPERTY_STREAM_DEGRADATION 流媒体设备
@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cfc104f7b61d032819b75fd434b2128684414b09
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: e39db7ca3b17aeb34d0367ea2091ca9d71d2430e
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72844958"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89190859"
 ---
-# <a name="ksproperty_stream_degradation"></a>KSPROPERTY\_流\_降级
+# <a name="ksproperty_stream_degradation"></a>KSPROPERTY \_ 流 \_ 降级
 
 
-KSPROPERTY\_STREAM\_降级属性是一个可选属性，如果 pin 允许降级策略，则应实现该属性。
+KSPROPERTY \_ 流 \_ 降级属性是一个可选属性，如果 pin 允许降级策略，则应实现该属性。
 
 ## <span id="ddk_ksproperty_stream_degradation_ks"></span><span id="DDK_KSPROPERTY_STREAM_DEGRADATION_KS"></span>
 
@@ -41,7 +41,7 @@ KSPROPERTY\_STREAM\_降级属性是一个可选属性，如果 pin 允许降级�
 </colgroup>
 <thead>
 <tr class="header">
-<th>“获取”</th>
+<th>获取</th>
 <th>设置</th>
 <th>目标</th>
 <th>属性描述符类型</th>
@@ -50,11 +50,11 @@ KSPROPERTY\_STREAM\_降级属性是一个可选属性，如果 pin 允许降级�
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>“是”</p></td>
-<td><p>“是”</p></td>
-<td><p>大头针</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)"><strong>KSPROPERTY</strong></a></p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksmultiple_item" data-raw-source="[&lt;strong&gt;KSMULTIPLE_ITEM&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksmultiple_item)"><strong>KSMULTIPLE_ITEM</strong></a>、 <a href="https://docs.microsoft.com/previous-versions/ff561671(v=vs.85)" data-raw-source="[&lt;strong&gt;KSDEGRADE&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/ff561671(v=vs.85))"> <strong>KSDEGRADE</strong></a></p></td>
+<td><p>是</p></td>
+<td><p>是</p></td>
+<td><p>Pin</p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)"><strong>KSPROPERTY</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksmultiple_item" data-raw-source="[&lt;strong&gt;KSMULTIPLE_ITEM&lt;/strong&gt;](/windows-hardware/drivers/ddi/ks/ns-ks-ksmultiple_item)"><strong>KSMULTIPLE_ITEM</strong></a>， <a href="https://docs.microsoft.com/previous-versions/ff561671(v=vs.85)" data-raw-source="[&lt;strong&gt;KSDEGRADE&lt;/strong&gt;](/previous-versions/ff561671(v=vs.85))"> <strong>KSDEGRADE</strong></a></p></td>
 </tr>
 </tbody>
 </table>
@@ -64,11 +64,11 @@ KSPROPERTY\_STREAM\_降级属性是一个可选属性，如果 pin 允许降级�
 <a name="remarks"></a>备注
 -------
 
-查询时，属性将返回[**KSMULTIPLE\_项**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksmultiple_item)格式返回的结构的大小和计数，后跟[**KSDEGRADE**](https://docs.microsoft.com/previous-versions/ff561671(v=vs.85))结构。
+查询时，属性返回要以 [**KSMULTIPLE \_ ITEM**](/windows-hardware/drivers/ddi/ks/ns-ks-ksmultiple_item) 格式返回的结构的大小和计数，后跟 [**KSDEGRADE**](/previous-versions/ff561671(v=vs.85)) 结构。
 
-在查询中，此属性返回以 KSMULTIPLE\_项格式返回的结构的大小和计数，后跟 KSDEGRADE 结构。 在查询和设置降级策略时，必须使用多项格式。
+在查询中，此属性返回要以 KSMULTIPLE ITEM 格式返回的结构的大小和计数 \_ ，后跟 KSDEGRADE 结构。 在查询和设置降级策略时，必须使用多项格式。
 
-客户端可以查询此属性以检索当前的降级设置，也可以设置此属性来更改当前的降级设置。 降级设置用于修改筛选器 pin 对质量管理（QM）投诉的资源使用情况，或将质量调整回更高的级别。 这通常由质量管理器用来调整降级设置，并查询可调整的设置类型及其当前值。 设置值时，它可能传递多个 KSDEGRADE 结构。 有关质量管理器的详细信息，请参阅[质量管理](https://docs.microsoft.com/windows-hardware/drivers/stream/quality-management)。
+客户端可以查询此属性以检索当前的降级设置，也可以设置此属性来更改当前的降级设置。 降级设置用于通过筛选器 pin 来修改资源的使用情况，以响应质量管理 (QM) 投诉，或将质量调整回更高的级别。 这通常由质量管理器用来调整降级设置，并查询可调整的设置类型及其当前值。 设置值时，它可能传递多个 KSDEGRADE 结构。 有关质量管理器的详细信息，请参阅 [质量管理](./quality-management.md)。
 
 <a name="requirements"></a>要求
 ------------
@@ -81,7 +81,7 @@ KSPROPERTY\_STREAM\_降级属性是一个可选属性，如果 pin 允许降级�
 <tbody>
 <tr class="odd">
 <td><p>标头</p></td>
-<td>Ks （包含 Ks）</td>
+<td>Ks (包含 Ks .h) </td>
 </tr>
 </tbody>
 </table>
@@ -89,18 +89,11 @@ KSPROPERTY\_STREAM\_降级属性是一个可选属性，如果 pin 允许降级�
 ## <a name="see-also"></a>另请参阅
 
 
-[**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)
+[**KSPROPERTY**](/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)
 
-[**KSMULTIPLE\_项**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksmultiple_item)
+[**KSMULTIPLE \_ 项**](/windows-hardware/drivers/ddi/ks/ns-ks-ksmultiple_item)
 
-[**KSDEGRADE**](https://docs.microsoft.com/previous-versions/ff561671(v=vs.85))
-
- 
+[**KSDEGRADE**](/previous-versions/ff561671(v=vs.85))
 
  
-
-
-
-
-
 

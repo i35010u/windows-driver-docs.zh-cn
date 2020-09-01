@@ -3,22 +3,22 @@ title: 十字形更改事件
 description: 十字形更改事件
 ms.assetid: 67202a53-d981-47db-9bc1-7de18f9192aa
 keywords:
-- 纵横制更改事件 WDK 视频捕获
+- 十字形更改事件 WDK 视频捕获
 - 事件 WDK 视频捕获
 - EVENTSETID_CROSSBAR
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 710598c7b1073ccf988f7a1fa1ca16f14acfcf5c
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: e81c3e824a9392e24bdae54edd3cbb10f7c79a3d
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67378382"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89190601"
 ---
 # <a name="crossbar-change-event"></a>十字形更改事件
 
 
-[EVENTSETID\_纵横制](https://docs.microsoft.com/windows-hardware/drivers/stream/eventsetid-crossbar)事件集中包含纵横制更改事件。 下表描述了属于 EVENTSETID 事件\_纵横制事件集。
+[EVENTSETID \_ 纵横制](./eventsetid-crossbar.md)事件集包含纵横比变化事件。 下表描述了属于 EVENTSETID \_ 纵横制事件集的事件。
 
 <table>
 <colgroup>
@@ -28,13 +28,13 @@ ms.locfileid: "67378382"
 <thead>
 <tr class="header">
 <th>EVENTSETID_CROSSBAR KS 事件</th>
-<th>事件描述</th>
+<th>事件说明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/stream/ksevent-crossbar-changed" data-raw-source="[&lt;strong&gt;KSEVENT_CROSSBAR_CHANGED&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/stream/ksevent-crossbar-changed)"><strong>KSEVENT_CROSSBAR_CHANGED</strong></a></p></td>
-<td><p>DirectShow 纵横制已更改，例如，由于新的 pin 路由配置通知。</p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/stream/ksevent-crossbar-changed" data-raw-source="[&lt;strong&gt;KSEVENT_CROSSBAR_CHANGED&lt;/strong&gt;](./ksevent-crossbar-changed.md)"><strong>KSEVENT_CROSSBAR_CHANGED</strong></a></p></td>
+<td><p>向 DirectShow 表明，由于新的 pin 路由配置，已更改了纵横比。</p></td>
 </tr>
 </tbody>
 </table>
@@ -42,9 +42,4 @@ ms.locfileid: "67378382"
  
 
  
-
- 
-
-
-
 

@@ -1,6 +1,6 @@
 ---
-title: KSPROPERTY\_BDA\_NODE\_类型
-description: 客户端使用 KSPROPERTY\_BDA\_NODE\_类型来检索节点类型列表。
+title: KSPROPERTY \_ BDA \_ 节点 \_ 类型
+description: 客户端使用 KSPROPERTY \_ BDA \_ 节点 \_ 类型来检索节点类型的列表。
 ms.assetid: 8fe72434-3635-4c2c-a72a-1fd398e488d8
 keywords:
 - KSPROPERTY_BDA_NODE_TYPES 流媒体设备
@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1e9edfbc59d070987e4f532bdaf129f323c07fe8
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: fb189f49541cefd5635690f384964c1dd2334410
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72844341"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89191109"
 ---
-# <a name="ksproperty_bda_node_types"></a>KSPROPERTY\_BDA\_NODE\_类型
+# <a name="ksproperty_bda_node_types"></a>KSPROPERTY \_ BDA \_ 节点 \_ 类型
 
 
-客户端使用 KSPROPERTY\_BDA\_NODE\_类型来检索节点类型列表。
+客户端使用 KSPROPERTY \_ BDA \_ 节点 \_ 类型来检索节点类型的列表。
 
 ## <span id="ddk_ksproperty_bda_node_types_ks"></span><span id="DDK_KSPROPERTY_BDA_NODE_TYPES_KS"></span>
 
@@ -41,7 +41,7 @@ ms.locfileid: "72844341"
 </colgroup>
 <thead>
 <tr class="header">
-<th>“获取”</th>
+<th>获取</th>
 <th>设置</th>
 <th>目标</th>
 <th>属性描述符类型</th>
@@ -50,9 +50,9 @@ ms.locfileid: "72844341"
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>“是”</p></td>
-<td><p>无</p></td>
-<td><p>Filter</p></td>
+<td><p>是</p></td>
+<td><p>否</p></td>
+<td><p>筛选器</p></td>
 <td><p>KSPROPERTY</p></td>
 <td><p>KSNODE_DESCRIPTORs 列表</p></td>
 </tr>
@@ -64,7 +64,7 @@ ms.locfileid: "72844341"
 <a name="remarks"></a>备注
 -------
 
-在模板拓扑中，每个节点类型只能出现一次，但它可以在实际拓扑中出现多次。 此节点类型列表是 KSNODE\_描述符结构的数组。 通常，此数组中每个元素的索引用于标识每个特定节点类型。
+在模板拓扑中，每个节点类型只能出现一次，但它可以在实际拓扑中出现多次。 此节点类型列表是 KSNODE 描述符结构的数组 \_ 。 通常，此数组中每个元素的索引用于标识每个特定节点类型。
 
 <a name="requirements"></a>要求
 ------------
@@ -77,7 +77,7 @@ ms.locfileid: "72844341"
 <tbody>
 <tr class="odd">
 <td><p>标头</p></td>
-<td>Bdamedia （包括 Bdamedia）</td>
+<td>Bdamedia (包含 Bdamedia) </td>
 </tr>
 </tbody>
 </table>
@@ -85,18 +85,11 @@ ms.locfileid: "72844341"
 ## <a name="see-also"></a>另请参阅
 
 
-[**BdaPropertyNodeTypes**](https://docs.microsoft.com/windows-hardware/drivers/ddi/bdasup/nf-bdasup-bdapropertynodetypes)
+[**BdaPropertyNodeTypes**](/windows-hardware/drivers/ddi/bdasup/nf-bdasup-bdapropertynodetypes)
 
-[**KSNODE\_描述符**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-_ksnode_descriptor)
+[**KSNODE \_ 描述符**](/windows-hardware/drivers/ddi/ks/ns-ks-_ksnode_descriptor)
 
-[**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)
-
- 
+[**KSPROPERTY**](/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)
 
  
-
-
-
-
-
 

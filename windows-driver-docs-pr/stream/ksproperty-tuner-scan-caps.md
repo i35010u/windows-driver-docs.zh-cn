@@ -1,6 +1,6 @@
 ---
-title: KSPROPERTY\_调谐器\_扫描\_CAP
-description: KSPROPERTY\_调谐器\_扫描\_CAP 属性描述优化设备的扫描功能，包括设备支持的网络类型。
+title: KSPROPERTY \_ 调谐器 \_ 扫描 \_ CAP
+description: KSPROPERTY \_ 调谐器 \_ SCAN \_ cap 属性介绍了优化设备的扫描功能，包括设备支持的网络类型。
 ms.assetid: 339d5f6b-81ac-419e-9821-a7f1642e1aa8
 keywords:
 - KSPROPERTY_TUNER_SCAN_CAPS 流媒体设备
@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2e19f33c1b54b58f29f1840015aecc4aea0b3a2a
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: d5fc8028919ec923828510c8baf9160eb0f74421
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72837906"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89191271"
 ---
-# <a name="ksproperty_tuner_scan_caps"></a>KSPROPERTY\_调谐器\_扫描\_CAP
+# <a name="ksproperty_tuner_scan_caps"></a>KSPROPERTY \_ 调谐器 \_ 扫描 \_ CAP
 
 
-KSPROPERTY\_调谐器\_扫描\_CAP 属性描述优化设备的扫描功能，包括设备支持的网络类型。 必须为在 Windows Vista 和更高版本上运行的 AVStream 优化微型驱动程序实现此属性。
+KSPROPERTY \_ 调谐器 \_ SCAN \_ cap 属性介绍了优化设备的扫描功能，包括设备支持的网络类型。 必须为在 Windows Vista 和更高版本上运行的 AVStream 优化微型驱动程序实现此属性。
 
 ### <a name="usage-summary-table"></a>使用情况摘要表
 
@@ -38,7 +38,7 @@ KSPROPERTY\_调谐器\_扫描\_CAP 属性描述优化设备的扫描功能，包
 </colgroup>
 <thead>
 <tr class="header">
-<th>“获取”</th>
+<th>获取</th>
 <th>设置</th>
 <th>目标</th>
 <th>属性描述符类型</th>
@@ -47,10 +47,10 @@ KSPROPERTY\_调谐器\_扫描\_CAP 属性描述优化设备的扫描功能，包
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>“是”</p></td>
-<td><p>无</p></td>
-<td><p>大头针</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_tuner_scan_caps_s" data-raw-source="[&lt;strong&gt;KSPROPERTY_TUNER_SCAN_CAPS_S&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_tuner_scan_caps_s)"><strong>KSPROPERTY_TUNER_SCAN_CAPS_S</strong></a></p></td>
+<td><p>是</p></td>
+<td><p>否</p></td>
+<td><p>Pin</p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_tuner_scan_caps_s" data-raw-source="[&lt;strong&gt;KSPROPERTY_TUNER_SCAN_CAPS_S&lt;/strong&gt;](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_tuner_scan_caps_s)"><strong>KSPROPERTY_TUNER_SCAN_CAPS_S</strong></a></p></td>
 <td><p>KSPROPERTY_TUNER_SCAN_CAPS_S</p></td>
 </tr>
 </tbody>
@@ -58,20 +58,20 @@ KSPROPERTY\_调谐器\_扫描\_CAP 属性描述优化设备的扫描功能，包
 
  
 
-属性值（操作数据）是 KSPROPERTY\_调谐器\_扫描\_CAP\_S 结构，该结构指定支持的网络类型以及优化设备的驱动程序或固件是否可以支持硬件辅助扫描运算符.
+ (操作数据) 的属性值是一个 KSPROPERTY \_ 调谐器 \_ 扫描 \_ cap \_ S 结构，该结构指定支持的网络类型以及优化设备的驱动程序或固件是否可以支持硬件辅助扫描操作。
 
 <a name="remarks"></a>备注
 -------
 
-驱动程序应至少为其支持的网络类型返回以下 Guid 之一。 这些 Guid 是在*Bdamedia*中定义的，应从*Bdamedia*引用。 有关这些 Guid 的详细信息，请参阅[广播网络类型 guid](broadcast-network-type-guids.md)。
+驱动程序应至少为其支持的网络类型返回以下 Guid 之一。 这些 Guid 是在 *Bdamedia* 中定义的，应从 *Bdamedia*引用。 有关这些 Guid 的详细信息，请参阅 [广播网络类型 guid](broadcast-network-type-guids.md)。
 
--   数字\_电缆\_网络\_类型
+-   数字 \_ 有线 \_ 网络 \_ 类型
 
--   模拟\_TV\_网络\_类型
+-   模拟 \_ 电视 \_ 网络 \_ 类型
 
--   模拟\_AUXIN\_网络\_类型
+-   模拟 \_ AUXIN \_ 网络 \_ 类型
 
--   模拟\_FM\_网络\_类型
+-   模拟 \_ FM \_ 网络 \_ 类型
 
 <a name="requirements"></a>要求
 ------------
@@ -88,7 +88,7 @@ KSPROPERTY\_调谐器\_扫描\_CAP 属性描述优化设备的扫描功能，包
 </tr>
 <tr class="even">
 <td><p>标头</p></td>
-<td>Ksmedia （包括 Ksmedia）</td>
+<td>Ksmedia (包含 Ksmedia) </td>
 </tr>
 </tbody>
 </table>
@@ -96,14 +96,7 @@ KSPROPERTY\_调谐器\_扫描\_CAP 属性描述优化设备的扫描功能，包
 ## <a name="see-also"></a>另请参阅
 
 
-[**KSPROPERTY\_调谐器\_扫描\_CAP\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_tuner_scan_caps_s)
+[**KSPROPERTY \_ 调谐器 \_ 扫描 \_ CAP \_ S**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_tuner_scan_caps_s)
 
  
-
- 
-
-
-
-
-
 

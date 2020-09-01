@@ -1,8 +1,8 @@
 ---
 title: WIA_IPS_MULTI_FEED_DETECT_METHOD
-description: WIA_IPS_MULTI_FEED_DETECT_METHOD 属性用于配置设备用来检测多个源条件的方法。
+description: WIA_IPS_MULTI_FEED_DETECT_METHOD 属性用于配置设备用于检测多个源条件的方法。
 keywords:
-- WIA_IPS_MULTI_FEED_DETECT_METHOD 成像设备
+- WIA_IPS_MULTI_FEED_DETECT_METHOD 图像设备
 topic_type:
 - apiref
 api_name:
@@ -13,40 +13,40 @@ api_type:
 - HeaderDef
 ms.date: 05/17/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 6f46c797489681e6de4a128c75da701ca79e301f
-ms.sourcegitcommit: 2ddaca0dbaf96076ad54d39ac1e77d91e644de67
+ms.openlocfilehash: d2f84d7a3863925ac12da1fc091dc5f5b20443c3
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65958675"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89191491"
 ---
-# <a name="wiaipsmultifeeddetectmethod"></a>WIA\_IPS\_多\_馈送\_检测\_方法
+# <a name="wia_ips_multi_feed_detect_method"></a>WIA \_ IPS \_ 多 \_ 源 \_ 检测 \_ 方法
 
-**WIA\_IPS\_多\_源\_检测\_方法**属性用于配置设备用来检测多个源条件的方法。
+" **WIA \_ IPS \_ 多 \_ 源 \_ 检测 \_ 方法** " 属性用于配置设备用于检测多个源条件的方法。
 
-此属性是初始化和维护的 WIA 微型驱动程序。
+此属性由 WIA 迷你驱动程序初始化和维护。
 
-属性类型：VT\_I4
+属性类型： VT \_ I4
 
-有效值：WIA\_PROP\_列表
+有效值： WIA 内容 \_ \_ 列表
 
 访问权限：读写
 
 ## <a name="remarks"></a>备注
 
-下表中显示此属性的有效值。
+下表显示了此属性的有效值。
 
-| ReplTest1 | 描述 |
+| Value | 描述 |
 | --- | --- |
-| WIA_MULTI_FEED_DETECT_ METHOD_LENGTH | 设备测量正在扫描的原始页大小的长度与扫描的页面的长度。 |
-| WIA_MULTI_FEED_DETECT_METHOD_OVERLAP | 设备检测重叠扫描的页面。 |
+| WIA_MULTI_FEED_DETECT_ METHOD_LENGTH | 设备测量扫描页面的长度，其长度为正在扫描的原始页面大小的长度。 |
+| WIA_MULTI_FEED_DETECT_METHOD_OVERLAP | 设备检测到重叠的扫描页面。 |
 
-最小化驱动程序支持一组不同的[ **WIA\_IPS\_多\_馈送\_敏感度**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ips-multi-feed-sensitivity)属性值为每个**WIA\_IPS\_多\_馈送\_检测\_方法**属性值。 当同时**WIA\_IP\_多\_源\_检测\_方法**并**WIA\_IP\_多\_馈送\_敏感度**支持的属性，应首先设置 WIA 应用程序**WIA\_IP\_多\_源\_检测\_方法**属性来配置多源的检测方法，然后设置**WIA\_IP\_多\_源\_敏感度**若要配置此检测方法所需区分大小属性的属性。
+对于每个**wia \_ ips \_ 多 \_ 源 \_ 检测 \_ 方法**属性值，小型驱动程序可以支持一组不同的[**wia \_ ips \_ 多 \_ 源 \_ 敏感度**](./wia-ips-multi-feed-sensitivity.md)属性值。 当 **wia \_ ips \_ 多 \_ 源 \_ 检测 \_ 方法** 和 **wia \_ ips 多源 \_ \_ \_ 敏感度** 属性均受支持时，WIA 应用程序应该首先设置 " **wia \_ ips \_ 多 \_ 源 \_ 检测 \_ 方法** " 属性以配置多源检测方法，然后设置 " **wia \_ ips \_ 多 \_ 源 \_ 敏感度** " 属性以配置此检测方法的所需敏感度。
 
-此属性是仅对送纸器项有效 (WIA\_类别\_送纸器) 和是可选的。 支持的属性时，没有所需的默认值。
+此属性仅对 (WIA 类别送纸器) 的进纸器项有效 \_ \_ ，并且是可选的。 如果支持该属性，则不需要默认值。
 
 ## <a name="requirements"></a>要求
 
 | &nbsp; | &nbsp; |
 | --- |:--- |
-| **标头** | Wiadef.h （包括 Wiadef.h） |
+| **标头** | Wiadef (包含 Wiadef)  |

@@ -1,25 +1,25 @@
 ---
-title: MSiSCSI\_SessionStatistics WMI 类
-description: MSiSCSI\_SessionStatistics WMI 类
+title: MSiSCSI \_ SESSIONSTATISTICS WMI 类
+description: MSiSCSI \_ SESSIONSTATISTICS WMI 类
 ms.assetid: fc9afa1b-dad3-4f3d-9fe2-e37d402f7bef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 4a9085a0e929b513d7d845b2f1d934b66f443b69
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: e725ad3141f8dee057f30555c60b6a5f7ce8abac
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72845326"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89190407"
 ---
-# <a name="msiscsi_sessionstatistics-wmi-class"></a>MSiSCSI\_SessionStatistics WMI 类
+# <a name="msiscsi_sessionstatistics-wmi-class"></a>MSiSCSI \_ SESSIONSTATISTICS WMI 类
 
 
 ## <span id="ddk_msiscsi_sessionstatistics_wmi_class_kr"></span><span id="DDK_MSISCSI_SESSIONSTATISTICS_WMI_CLASS_KR"></span>
 
 
-MSiSCSI\_SessionStatistics WMI 类公开会话统计信息。
+MSiSCSI \_ SESSIONSTATISTICS WMI 类公开会话统计信息。
 
-MSiSCSI\_SessionStatistics 类是在 Iscsiprf 中定义的。
+MSiSCSI \_ SessionStatistics 类是在 Iscsiprf 中定义的。
 
 ```cpp
 class MSiSCSI_SessionStatistics : Win32_PerfRawData {
@@ -98,21 +98,15 @@ class MSiSCSI_SessionStatistics : Win32_PerfRawData {
 };
 ```
 
-当 WMI 工具套件编译上述类定义时，它会生成[**MSiSCSI\_SessionStatistics**](https://docs.microsoft.com/windows-hardware/drivers/ddi/iscsiprf/ns-iscsiprf-_msiscsi_sessionstatistics)数据结构。
+当 WMI 工具套件编译上述类定义时，它会生成 [**MSiSCSI \_ SessionStatistics**](/windows-hardware/drivers/ddi/iscsiprf/ns-iscsiprf-_msiscsi_sessionstatistics) 数据结构。
 
-发起方必须为会话注册 MSiSCSI\_SessionStatistics 类以及以下动态实例名称：
+发起方必须 \_ 为会话注册 MSiSCSI SessionStatistics 类和以下动态实例名称：
 
 ```cpp
 targetname_#
 ```
 
-数字符号（\#）是此类的**USID**成员中的值。
+数字符号 (\#) 是此类的 **USID** 成员中的值。
 
  
-
- 
-
-
-
-
 

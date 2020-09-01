@@ -4,12 +4,12 @@ description: WIA 项标志和类别的示例用法
 ms.assetid: 8c9f7d85-6c84-4df9-9db3-6554d7eddf93
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: dab70a556e0001eb548dea2477a39febfce77a62
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 176cf4fdd9c0e94b9e545eee9706ecb601e39ad6
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67375045"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89192093"
 ---
 # <a name="example-usage-of-wia-item-flags-and-categories"></a>WIA 项标志和类别的示例用法
 
@@ -19,37 +19,37 @@ ms.locfileid: "67375045"
 
 本主题适用于 Windows Vista 和更高版本。
 
-本部分描述了扫描仪和照相机项树在 Windows Vista 中，以及 WIA 项标志和 WIA 类别。 在关系图描绘了什么照相机项树和扫描程序项树如下所示在 Windows Vista 及更高版本。 有摄像机项树和扫描程序项树的两个关系图。 在这两种情况下，第一个关系图说明了所需的 WIA 项标志，虽然第二个关系图阐释了将使用哪个 WIA 类别。 代码示例是应用程序将如何使用的标志和类别组合的示例。
+本部分介绍了 Windows Vista 中的扫描仪和照相机项树以及 WIA 项标志和 WIA 类别。 关系图显示了在 Windows Vista 和更高版本中，照相机项树和扫描仪项树的外观。 "相机项树" 和 "扫描仪项" 树有两个关系图。 在这两种情况下，第一个关系图说明了需要哪些 WIA 项标志，而第二个关系图说明了所使用的 WIA 类别。 此代码示例是应用程序为使用标志和类别组合而执行的操作的示例。
 
-下图显示了照相机项树和标志中 WIA\_项\_标志必须设置的属性。
+下图显示了必须设置的 "WIA \_ 项" 标志属性中的 "照相机" 项树和标志 \_ 。
 
-![说明具有 wia 项标志的照相机树关系图](images/art-film-tree1.png)
+![阐释带有 wia 项标志的相机树的关系图](images/art-film-tree1.png)
 
-在上图中，在左侧的树表示照相机项树。 在右侧的批注框包含此类设备将需要使用 WIA 项标志。
+在上图中，左侧的树表示相机项树。 右侧的气球包含了此类设备需要使用的 WIA 项标志。
 
-下图显示了照相机项树和类别中 WIA\_IPA\_项\_类别属性必须设置的。
+下图显示了必须设置的 "WIA \_ IPA \_ 项类别" 属性中的 "照相机" 项树和类别 \_ 。
 
-![说明显示类别的照相机树关系图](images/art-film-tree2.png)
+![说明显示类别的相机树的关系图](images/art-film-tree2.png)
 
-在上图中，在左侧的树表示照相机项树。 在右侧气球中含有此类设备将需要使用的类别。
+在上图中，左侧的树表示相机项树。 右侧的气球包含此类设备需要使用的类别。
 
-下图显示具有文档送纸器的扫描仪和电影胶片扫描仪和标志的项树中 WIA\_项\_标志必须设置的属性。
+下图显示了具有文档送纸器和胶卷扫描器的扫描仪的项目树，以及 \_ 必须设置的 WIA 项 flags 属性中的标志 \_ 。
 
-![说明具有文档送纸器的扫描仪和电影胶片扫描仪和 wia 项标志项树的关系图](images/art-flatbed-tree1.png)
+![说明具有文档送纸器和胶卷扫描器的扫描仪的项目树的关系图，以及 wia 项标志](images/art-flatbed-tree1.png)
 
-在上图中，在左侧的树表示扫描程序项树。 在右侧的批注框包含此类设备将需要使用 WIA 项标志。
+在上图中，左侧的树表示扫描器项树。 右侧的气球包含了此类设备需要使用的 WIA 项标志。
 
-下图显示一个扫描程序，并将类别的项树中 WIA\_IPA\_项\_类别属性必须设置的。
+下图显示了扫描仪的项树以及 \_ 必须设置的 WIA IPA \_ 项类别属性中的类别 \_ 。
 
-![说明一个扫描程序，以及必须设置的类别的项树的关系图](images/art-flatbed-tree2.png)
+![说明扫描仪的项树以及必须设置的类别的关系图](images/art-flatbed-tree2.png)
 
-在上图中，在左侧的树表示扫描程序项树。 在右侧的批注框包含中 WIA 的类别\_IPA\_项\_必须设置此类设备的 CATEGORY 属性。
+在上图中，左侧的树表示扫描器项树。 右侧的气球包含 WIA \_ IPA ITEM CATEGORY 属性中的类别 \_ \_ ，此类设备必须设置此类属性。
 
-由 WIA 和有关每个类别的有效 WIA 项标志的信息定义的所有类别的完整列表，请参阅[ **WIA\_IPA\_项\_类别**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ipa-item-category)。
+有关 WIA 定义的所有类别的完整列表，以及每个类别的有效 WIA 项标志的信息，请参阅 [**WIA \_ IPA \_ item \_ category**](./wia-ipa-item-category.md)。
 
-有关所有 WIA 的完整列表项标记请参阅[ **WIA\_IPA\_项\_标志**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ipa-item-flags)。
+有关所有 WIA 项标志的完整列表，请参阅 [**WIA \_ IPA \_ item \_ 标志**](./wia-ipa-item-flags.md)。
 
-下面的代码示例演示了如何应用程序可以使用 WIA 的组合\_IPA\_项\_标志和 WIA\_IPA\_项\_类别进行分类的属性WIA 项树中发现项 WIA。
+下面的代码示例演示应用程序如何使用 WIA \_ IPA \_ item \_ 标志和 wia \_ IPA \_ 项 \_ 类别属性组合来分类 wia 项树中的 wia 项。
 
 ```cpp
 HRESULT hr = S_OK;
@@ -113,9 +113,4 @@ if (hr == S_OK)
 ```
 
  
-
- 
-
-
-
 

@@ -9,23 +9,23 @@ keywords:
 - PINNAME_VIDEO_VBI
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6cdc4c5896f5983f54e0dab6b4309e56580fc030
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 421033b6b594583377eaf51fc57b4ca02d1dbf51
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72844937"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89190350"
 ---
 # <a name="vbi-category"></a>VBI 类别
 
 
-以下 GUID 对应于垂直消隐间隔（VBI）类别：
+以下 GUID 对应于垂直消隐间隔 (VBI) 类别：
 
--   **PINNAME\_视频\_VBI**
+-   **PINNAME \_ VIDEO \_ VBI**
 
-    VBI 类别输出插针提供 VBI 波形示例流。 此流将传递到下游编解码器，这些编解码器提取隐藏式字幕（CC）、NABTS、WST、时间码以及其他数字数据流。
+    VBI 类别输出插针提供 VBI 波形示例流。 此流将传递到下游编解码器，这些编解码器 (CC) 、NABTS、WST、时间码和其他数字数据流提取隐藏式字幕。
 
-指定**PINNAME\_视频\_VBI** pin 时，请使用下表中列出的信息。
+指定 **PINNAME \_ VIDEO \_ VBI** pin 时，使用下表中列出的信息。
 
 <table>
 <colgroup>
@@ -34,14 +34,14 @@ ms.locfileid: "72844937"
 </colgroup>
 <thead>
 <tr class="header">
-<th>属性</th>
-<th>Value</th>
+<th>Attribute</th>
+<th>值</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td><p><strong>DataRange 结构</strong></p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagks_datarange_video_vbi" data-raw-source="[&lt;strong&gt;KS_DATARANGE_VIDEO_VBI&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagks_datarange_video_vbi)"><strong>KS_DATARANGE_VIDEO_VBI</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagks_datarange_video_vbi" data-raw-source="[&lt;strong&gt;KS_DATARANGE_VIDEO_VBI&lt;/strong&gt;](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagks_datarange_video_vbi)"><strong>KS_DATARANGE_VIDEO_VBI</strong></a></p></td>
 </tr>
 <tr class="even">
 <td><p><strong>DataFormat 结构</strong></p></td>
@@ -61,7 +61,7 @@ ms.locfileid: "72844937"
 </tr>
 <tr class="even">
 <td><p><strong>扩展的标头大小</strong></p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagks_vbi_frame_info" data-raw-source="[&lt;strong&gt;KS_VBI_FRAME_INFO&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagks_vbi_frame_info)"><strong>KS_VBI_FRAME_INFO</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagks_vbi_frame_info" data-raw-source="[&lt;strong&gt;KS_VBI_FRAME_INFO&lt;/strong&gt;](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagks_vbi_frame_info)"><strong>KS_VBI_FRAME_INFO</strong></a></p></td>
 </tr>
 <tr class="odd">
 <td><p><strong>必需的属性集</strong></p></td>
@@ -85,9 +85,4 @@ ms.locfileid: "72844937"
  
 
  
-
- 
-
-
-
 

@@ -7,12 +7,12 @@ keywords:
 - 设备类型 WDK 设备对象
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 65bc2576b84791b73b17277bc09877e8d292c5e6
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 1e70e6cfe9991468ab6a4dff58ad64fd4204d1e7
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72838418"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89191833"
 ---
 # <a name="specifying-device-types"></a>指定设备类型
 
@@ -20,9 +20,9 @@ ms.locfileid: "72838418"
 
 
 
-每个设备对象都有一个*设备类型*，它存储在其[**设备\_对象**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_device_object)结构的**DeviceType**成员中。 设备类型表示驱动程序的底层硬件类型。
+每个设备对象都有一个*设备类型*，它存储在其[**设备 \_ 对象**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_device_object)结构的**DeviceType**成员中。 设备类型表示驱动程序的底层硬件类型。
 
-在调用[**IoCreateDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocreatedevice)时，创建设备对象的每个内核模式驱动程序都必须指定适当的设备类型值。 **IoCreateDevice**例程使用提供的设备类型来初始化**设备\_对象**结构的**DeviceType**成员。
+在调用 [**IoCreateDevice**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iocreatedevice)时，创建设备对象的每个内核模式驱动程序都必须指定适当的设备类型值。 **IoCreateDevice**例程使用提供的设备类型来初始化**设备 \_ 对象**结构的**DeviceType**成员。
 
 系统定义下列设备类型值，这些值按字母顺序列出：
 
@@ -89,18 +89,13 @@ ms.locfileid: "72838418"
 
 这些常量在 Ntddk 和 Wdm 中定义。 检查这些文件以查看是否已定义其他设备类型。
 
-文件\_设备\_磁盘规范包含磁盘分区以及显示为磁盘的任何对象。
+文件 \_ 设备 \_ 磁盘规范包含磁盘分区以及显示为磁盘的任何对象。
 
-中间驱动程序通常指定表示基础设备的设备类型。 例如，系统提供的容错磁盘驱动程序*ftdisk*将创建文件类型的设备对象\_设备\_磁盘;它不会为镜像集、带区集和它所管理的卷集定义新设备类型。
+中间驱动程序通常指定表示基础设备的设备类型。 例如，系统提供的容错磁盘驱动程序 *ftdisk*创建了类型为文件设备磁盘的设备对象 \_ \_ ; 它不会为镜像集、带区集和它所管理的卷集定义新设备类型。
 
-在0到32767范围内的文件\_设备\_*XXX*值是为 Microsoft 保留的。 对于属于系统定义的设备类型的设备，所有驱动程序编写器都必须使用这些系统定义的常量。
+\_ \_ 0 到32767范围内的文件设备*XXX*值是为 Microsoft 保留的。 对于属于系统定义的设备类型的设备，所有驱动程序编写器都必须使用这些系统定义的常量。
 
-如果某种类型的硬件不匹配任何定义的类型，请指定 "FILE\_设备"\_"未知" 的值，或指定范围在32768到65535范围内的值。
-
- 
+如果某个硬件类型不匹配任何定义的类型，请指定 "文件设备未知" 的值 \_ \_ ，或指定范围在32768到65535范围内的值。
 
  
-
-
-
 

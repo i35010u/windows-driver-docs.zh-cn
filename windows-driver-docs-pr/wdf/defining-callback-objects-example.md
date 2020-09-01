@@ -6,19 +6,19 @@ keywords:
 - 回叫对象 WDK UMDF，定义示例
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3bd034d0ac3a8b34034ce1d79b54db08ed1967ca
-ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
+ms.openlocfilehash: aba8ea2b27ce426a5eb19f68b5b2061accef4b09
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/19/2019
-ms.locfileid: "75210487"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89191581"
 ---
 # <a name="defining-callback-objects-example"></a>定义回调对象示例
 
 
 [!include[UMDF 1 Deprecation](../includes/umdf-1-deprecation.md)]
 
-下面的代码示例演示驱动程序如何从[IPnpCallbackHardware](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-ipnpcallbackhardware)接口继承以定义设备回调对象。
+下面的代码示例演示驱动程序如何从 [IPnpCallbackHardware](/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-ipnpcallbackhardware) 接口继承以定义设备回调对象。
 
 ```cpp
 class CMyDevice :
@@ -49,10 +49,4 @@ public:
 ```
 
  
-
- 
-
-
-
-
 

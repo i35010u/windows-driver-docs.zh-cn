@@ -11,12 +11,12 @@ keywords:
 - 设备属性表 WDK WMI
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bd7de792ebbbae30f6327763944a09655d2e0698
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: f1b9a5cf7ff02035adaeb59f64cdb01e1060206f
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386997"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89190027"
 ---
 # <a name="wmi-generic-property-page-provider"></a>WMI 通用属性页提供程序
 
@@ -24,37 +24,37 @@ ms.locfileid: "67386997"
 
 
 
-在 Windows XP 和更高版本操作系统上，驱动程序可以公开它们通过 WMI 泛型属性页提供程序的 WMI 类。 提供程序使用每个类声明为创建一个简单的属性页类属性。
+在 Windows XP 和更高版本的操作系统上，驱动程序可以通过 WMI 通用属性页提供程序公开其 WMI 类。 提供程序使用每个类声明为类属性创建一个简单的属性页。
 
 ### <a name="how-property-qualifiers-determine-the-property-page"></a>属性限定符如何确定属性页
 
-WMI 通用的属性页提供程序类中使用适用于每个属性的数据类型的控件。 以下属性限定符修改控件使用的类型：
+WMI 泛型属性页提供程序使用的控件适用于类中每个属性的数据类型。 以下属性限定符修改所使用的控件类型：
 
--   **编写**
+-   **写入**
 
-    具有的属性**编写**限定符可通过属性页进行更改。 否则该属性是只读的。
+    可以通过属性页更改带有 **写入** 限定符的属性。 否则，该属性是只读的。
 
--   **值**和**ValuesMap**
+-   **Values** 和 **ValuesMap**
 
     泛型属性页提供程序使用列表框来表示可能的值。
 
--   **Range**
+-   **范围**
 
-    泛型属性页提供程序来验证输入的数据符合指定的范围。
+    泛型属性页提供程序验证输入的数据是否符合指定范围。
 
 -   **DisplayName**
 
-    泛型属性页提供程序使用此属性的限定符的值作为标签的属性。
+    泛型属性页提供程序使用此属性限定符的值作为属性的标签。
 
 -   **DisplayInHex**
 
-    如果存在，是以十六进制形式显示的属性值。
+    如果存在，则该属性值以十六进制显示。
 
-驱动程序编写人员应本地化属性限定符的字符串。 请参阅[本地化 MOF 文件](localizing-mof-files.md)有关详细信息。
+驱动程序编写器应本地化作为字符串的属性限定符。 有关详细信息，请参阅 [本地化 MOF 文件](localizing-mof-files.md) 。
 
-### <a name="enabling-the-generic-property-page-provider"></a>启用通用的属性页提供程序
+### <a name="enabling-the-generic-property-page-provider"></a>启用泛型属性页提供程序
 
-用于公开类以供 Wmiprop.dll 每个设备必须启用 Wmiprop.dll 作为辅助安装程序。 若要执行此操作，请增加了以下步骤向共同安装程序*添加注册表部分*： 添加的类 GUID 的值项下**HKLM\\系统\\CurrentControlSet\\控件\\CoDeviceInstallers**注册表项。 值项的值是"WmiProp.dll，WmiPropCoInstaller"。
+公开 Wmiprop.dll 要使用的类的每个设备都必须启用 Wmiprop.dll 作为共同安装程序。 为此，请在 " **HKLM \\ System \\ CurrentControlSet \\ Control \\ CoDeviceInstallers** " 注册表项下，为类 GUID 添加一个值项，并添加到 "共同安装程序*外接*程序" 部分。 值项的值为 "WmiProp.dll，WmiPropCoInstaller"。
 
 例如：
 
@@ -68,9 +68,9 @@ HKLM, System\CurrentControlSet\Control\CoDeviceInstallers, ClassGUID,
     0x00010000, "WmiProp.dll, WmiPropCoInstaller"
 ```
 
-*ClassGUID*是 WMI 类的 GUID。 请参阅[注册类共同安装程序](https://docs.microsoft.com/windows-hardware/drivers/install/registering-a-class-co-installer)有关详细信息。
+*ClassGUID* 是 WMI 类的 GUID。 有关详细信息，请参阅 [注册类共同安装程序](../install/registering-a-class-co-installer.md) 。
 
-您还必须指定要通过泛型属性提供程序公开的特定 WMI 类。 若要执行此操作，设置**WmiConfigClasses**中的值的项都必须是一列以逗号分隔的 WMI 类*添加注册表部分*的设备类或设备硬件实例。
+您还必须指定要通过泛型属性提供程序公开的特定 WMI 类。 为此，请将 **WmiConfigClasses** 值输入设置为设备类或设备硬件实例的 " *外接程序" 部分* 中的 WMI 类的逗号分隔列表。
 
 ```cpp
 ; the device class AddReg section.
@@ -82,14 +82,9 @@ HKR,,"WmiConfigClasses",0x00000000,"class1,class2"
 HKR,,"WmiConfigClasses",0x00000000,"class3"
 ```
 
-请参阅[ **INF AddReg 指令**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addreg-directive)有关的说明*添加注册表部分*INF 文件中。
+有关 INF 文件中的 "*添加注册表" 部分*的说明，请参阅[**inf AddReg 指令**](../install/inf-addreg-directive.md)。
 
-Wmiprop.dll 假定每个类的一个实例。 由属性表上的选项卡表示每个类。 使用**DisplayName**要设置的选项卡的标题文本的属性限定符。如果当前类的实例，才会显示一个类的属性页。 因此，如果设备已删除或未启动，不显示这些页。
-
- 
+Wmiprop.dll 假设每个类只有一个实例。 每个类由属性表上的一个选项卡表示。 使用 **DisplayName** 属性限定符设置选项卡的标题文本。仅当当前存在类的实例时，才会显示类的属性页。 因此，如果设备已删除或未启动，则不会显示这些页面。
 
  
-
-
-
 

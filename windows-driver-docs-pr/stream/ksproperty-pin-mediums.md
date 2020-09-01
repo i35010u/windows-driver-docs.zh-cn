@@ -1,5 +1,5 @@
 ---
-title: KSPROPERTY\_固定\_媒介
+title: KSPROPERTY \_ PIN \_ 媒体
 description: 此属性返回由特定的 pin 工厂实例化的 pin 支持的媒体列表。
 ms.assetid: e92c7a3d-4f72-4818-9a26-0e82c20bdb4c
 keywords:
@@ -14,14 +14,14 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 102be0ada2319573ec1f999581ee9660b9d423c1
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 7ee22bab3592cfb3f57a7dff5b29e4d58cda6b72
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72838853"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89189987"
 ---
-# <a name="ksproperty_pin_mediums"></a>KSPROPERTY\_固定\_媒介
+# <a name="ksproperty_pin_mediums"></a>KSPROPERTY \_ PIN \_ 媒体
 
 
 此属性返回由特定的 pin 工厂实例化的 pin 支持的媒体列表。
@@ -41,7 +41,7 @@ ms.locfileid: "72838853"
 </colgroup>
 <thead>
 <tr class="header">
-<th>“获取”</th>
+<th>获取</th>
 <th>设置</th>
 <th>目标</th>
 <th>属性描述符类型</th>
@@ -50,11 +50,11 @@ ms.locfileid: "72838853"
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>“是”</p></td>
-<td><p>无</p></td>
-<td><p>大头针</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksp_pin" data-raw-source="[&lt;strong&gt;KSP_PIN&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksp_pin)"><strong>KSP_PIN</strong></a></p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksmultiple_item" data-raw-source="[&lt;strong&gt;KSMULTIPLE_ITEM&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksmultiple_item)"><strong>KSMULTIPLE_ITEM</strong></a>结构，后跟一系列<a href="https://docs.microsoft.com/previous-versions/ff563538(v=vs.85)" data-raw-source="[&lt;strong&gt;KSPIN_MEDIUM&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/ff563538(v=vs.85))"><strong>KSPIN_MEDIUM</strong></a>结构。</p></td>
+<td><p>是</p></td>
+<td><p>否</p></td>
+<td><p>Pin</p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksp_pin" data-raw-source="[&lt;strong&gt;KSP_PIN&lt;/strong&gt;](/windows-hardware/drivers/ddi/ks/ns-ks-ksp_pin)"><strong>KSP_PIN</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksmultiple_item" data-raw-source="[&lt;strong&gt;KSMULTIPLE_ITEM&lt;/strong&gt;](/windows-hardware/drivers/ddi/ks/ns-ks-ksmultiple_item)"><strong>KSMULTIPLE_ITEM</strong></a>结构，后跟一系列<a href="https://docs.microsoft.com/previous-versions/ff563538(v=vs.85)" data-raw-source="[&lt;strong&gt;KSPIN_MEDIUM&lt;/strong&gt;](/previous-versions/ff563538(v=vs.85))"><strong>KSPIN_MEDIUM</strong></a>结构。</p></td>
 </tr>
 </tbody>
 </table>
@@ -66,9 +66,9 @@ ms.locfileid: "72838853"
 
 客户端使用此属性来请求由 pin 工厂实例化的 pin 支持的所有媒体的列表。 然后，客户端指定要在连接到 pin 时使用的实际媒介。
 
-使用 KSP\_PIN 指定此属性，其中成员指定要为其返回媒体列表的 PIN 工厂。
+使用 KSP PIN 指定此属性 \_ ，其中成员指定要为其返回媒体列表的 PIN 工厂。
 
-KSPROPERTY\_PIN\_媒体返回按类驱动程序首选项排序的媒体。
+KSPROPERTY \_ PIN \_ 媒体返回按类驱动程序首选项排序的媒体。
 
 Stream 微型驱动程序不需要直接处理此属性;流类驱动程序使用流请求块处理此属性以查询详细信息。
 
@@ -83,7 +83,7 @@ Stream 微型驱动程序不需要直接处理此属性;流类驱动程序使用
 <tbody>
 <tr class="odd">
 <td><p>标头</p></td>
-<td>Ks （包含 Ks）</td>
+<td>Ks (包含 Ks .h) </td>
 </tr>
 </tbody>
 </table>
@@ -91,18 +91,11 @@ Stream 微型驱动程序不需要直接处理此属性;流类驱动程序使用
 ## <a name="see-also"></a>另请参阅
 
 
-[**KSP\_PIN**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksp_pin)
+[**KSP \_ PIN**](/windows-hardware/drivers/ddi/ks/ns-ks-ksp_pin)
 
-[**KSMULTIPLE\_项**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksmultiple_item)
+[**KSMULTIPLE \_ 项**](/windows-hardware/drivers/ddi/ks/ns-ks-ksmultiple_item)
 
-[**KSPIN\_中**](https://docs.microsoft.com/previous-versions/ff563538(v=vs.85))
-
- 
+[**KSPIN \_ 中型**](/previous-versions/ff563538(v=vs.85))
 
  
-
-
-
-
-
 

@@ -4,12 +4,12 @@ description: 为 Windows 8.1 编写位置传感器驱动程序
 ms.assetid: 18852282-6529-4934-a448-b699e01987de
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0a7aceacedfe2b8a01a9e825dd6abc8fb0aaf9a2
-ms.sourcegitcommit: d9a9925f790271f4ca2c8377d551d96e8d1e62c7
+ms.openlocfilehash: 94267e561fe03e45263b35db63cd4ff5dd0c84d3
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88850275"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89189895"
 ---
 # <a name="writing-a-location-sensor-driver-for-windows-81"></a>为 Windows 8.1 编写位置传感器驱动程序
 
@@ -47,7 +47,7 @@ Windows 硬件认证计划允许硬件制造商接收其设备符合使用 Windo
 
 ## <a name="identifying-the-category"></a>标识类别
 
-通过 [**ISensorDriver：： OnGetProperties**](https://docs.microsoft.com/windows-hardware/drivers/ddi/sensorsclassextension/nf-sensorsclassextension-isensordriver-ongetproperties)调用此方法时，请将 **WPD \_ 功能 \_ 对象 \_ 类别** 属性值设置为 **传感器 \_ 类别 \_ 位置**。 下面的代码示例演示如何将此常量设置为指向名为 pValues 的 [IPortableDeviceValues](https://docs.microsoft.com/windows-hardware/drivers/ddi/portabledevicetypes/nn-portabledevicetypes-iportabledevicevalues) 的指针。
+通过 [**ISensorDriver：： OnGetProperties**](/windows-hardware/drivers/ddi/sensorsclassextension/nf-sensorsclassextension-isensordriver-ongetproperties)调用此方法时，请将 **WPD \_ 功能 \_ 对象 \_ 类别** 属性值设置为 **传感器 \_ 类别 \_ 位置**。 下面的代码示例演示如何将此常量设置为指向名为 pValues 的 [IPortableDeviceValues](/windows-hardware/drivers/ddi/portabledevicetypes/nn-portabledevicetypes-iportabledevicevalues) 的指针。
 
 ```cpp
 hr = pValues->SetGuidValue(WPD_FUNCTIONAL_OBJECT_CATEGORY, SENSOR_CATEGORY_LOCATION);
@@ -55,7 +55,7 @@ hr = pValues->SetGuidValue(WPD_FUNCTIONAL_OBJECT_CATEGORY, SENSOR_CATEGORY_LOCAT
 
 ## <a name="setting-the-location-sensor-type"></a>设置位置传感器类型
 
-通过 [**ISensorDriver：： OnGetProperties**](https://docs.microsoft.com/windows-hardware/drivers/ddi/sensorsclassextension/nf-sensorsclassextension-isensordriver-ongetproperties)调用它时，请将 " **传感器 \_ 属性 \_ 类型** " 属性值设置为正确的值。 下面的代码示例演示如何使用 **传感器 \_ 类型 \_ 位置 \_ GPS** 常量通过指向名为 pValues 的 [IPortableDeviceValues](https://docs.microsoft.com/windows-hardware/drivers/ddi/portabledevicetypes/nn-portabledevicetypes-iportabledevicevalues) 的指针来设置传感器类型。
+通过 [**ISensorDriver：： OnGetProperties**](/windows-hardware/drivers/ddi/sensorsclassextension/nf-sensorsclassextension-isensordriver-ongetproperties)调用它时，请将 " **传感器 \_ 属性 \_ 类型** " 属性值设置为正确的值。 下面的代码示例演示如何使用 **传感器 \_ 类型 \_ 位置 \_ GPS** 常量通过指向名为 pValues 的 [IPortableDeviceValues](/windows-hardware/drivers/ddi/portabledevicetypes/nn-portabledevicetypes-iportabledevicevalues) 的指针来设置传感器类型。
 
 ```cpp
 hr = pValues->SetGuidValue(SENSOR_PROPERTY_TYPE, SENSOR_TYPE_LOCATION_GPS);
@@ -77,9 +77,9 @@ Location API 定义两种类型的位置报告。 这些是组织位置数据的
 
 - 传感器 \_ 数据 \_ 类型 \_ 国家/ \_ 地区
 
-若要查看完整的平台定义位置数据字段集，请参阅[Windows 传感器参考](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)部分中的[**传感器 \_ 类别 \_ 位置**](https://docs.microsoft.com/windows-hardware/drivers/sensors/sensor-category-loc)。
+若要查看完整的平台定义位置数据字段集，请参阅[Windows 传感器参考](/windows-hardware/drivers/ddi/index)部分中的[**传感器 \_ 类别 \_ 位置**](../sensors/sensor-category-loc.md)。
 
-通过[**ISensorDriver：： OnGetSupportedDataFields**](https://docs.microsoft.com/windows-hardware/drivers/ddi/sensorsclassextension/nf-sensorsclassextension-isensordriver-ongetsupporteddatafields)调用它们时，将支持的数据字段属性键常量添加到通过*ppSupportedDataFields*参数返回的[IPortableDeviceKeyCollection](https://docs.microsoft.com/windows-hardware/drivers/ddi/portabledevicetypes/nn-portabledevicetypes-iportabledevicekeycollection) 。 下面的代码示例演示如何通过名为 pKeyCollection 的变量向 [IPortableDeviceKeyCollection](https://docs.microsoft.com/windows-hardware/drivers/ddi/portabledevicetypes/nn-portabledevicetypes-iportabledevicekeycollection) 添加邮政编码数据字段。
+通过[**ISensorDriver：： OnGetSupportedDataFields**](/windows-hardware/drivers/ddi/sensorsclassextension/nf-sensorsclassextension-isensordriver-ongetsupporteddatafields)调用它们时，将支持的数据字段属性键常量添加到通过*ppSupportedDataFields*参数返回的[IPortableDeviceKeyCollection](/windows-hardware/drivers/ddi/portabledevicetypes/nn-portabledevicetypes-iportabledevicekeycollection) 。 下面的代码示例演示如何通过名为 pKeyCollection 的变量向 [IPortableDeviceKeyCollection](/windows-hardware/drivers/ddi/portabledevicetypes/nn-portabledevicetypes-iportabledevicekeycollection) 添加邮政编码数据字段。
 
 ```cpp
 pKeyCollection->Add(SENSOR_DATA_TYPE_POSTALCODE);
@@ -87,7 +87,7 @@ pKeyCollection->Add(SENSOR_DATA_TYPE_POSTALCODE);
 
 ## <a name="support-the-required-properties"></a>支持所需的属性
 
-与其他传感器驱动程序一样，定位驱动程序通过一组属性提供有关传感器本身的信息。 Windows 硬件认证计划指定位置传感器必须支持的最低属性集。 有关传感器属性、其含义以及传感器驱动程序所需的属性的详细信息，请参阅 [**传感器属性**](https://docs.microsoft.com/windows-hardware/drivers/sensors/sensor-properties)。 下面的列表包含所需的属性：
+与其他传感器驱动程序一样，定位驱动程序通过一组属性提供有关传感器本身的信息。 Windows 硬件认证计划指定位置传感器必须支持的最低属性集。 有关传感器属性、其含义以及传感器驱动程序所需的属性的详细信息，请参阅 [**传感器属性**](../sensors/sensor-properties.md)。 下面的列表包含所需的属性：
 
 - WPD \_ 功能 \_ 对象 \_ 类别
 
@@ -113,11 +113,11 @@ pKeyCollection->Add(SENSOR_DATA_TYPE_POSTALCODE);
 
 ## <a name="providing-data"></a>提供数据
 
-位置驱动程序通过与其他传感器驱动程序相同的机制提供数据。 也就是说，传感器类扩展通过 [**ISensorDriver：： OnGetDataFields**](https://docs.microsoft.com/windows-hardware/drivers/ddi/sensorsclassextension/nf-sensorsclassextension-isensordriver-ongetdatafields) 调用驱动程序，驱动程序通过 *ppDataValues* 参数返回值。
+位置驱动程序通过与其他传感器驱动程序相同的机制提供数据。 也就是说，传感器类扩展通过 [**ISensorDriver：： OnGetDataFields**](/windows-hardware/drivers/ddi/sensorsclassextension/nf-sensorsclassextension-isensordriver-ongetdatafields) 调用驱动程序，驱动程序通过 *ppDataValues* 参数返回值。
 
 以下要求适用于从位置传感器提供数据：
 
-- 通过同步请求和通过 [引发事件](https://docs.microsoft.com/windows-hardware/drivers/sensors/raising-events)来提供数据。
+- 通过同步请求和通过 [引发事件](../sensors/raising-events.md)来提供数据。
 
 - 维护最新数据报表的副本。 如果在你请求时新数据不可用，则返回缓存的报表。 不要更新时间戳。
 
@@ -133,21 +133,21 @@ pKeyCollection->Add(SENSOR_DATA_TYPE_POSTALCODE);
 
 | 传感器常量 | Location API 方法和属性 |
 | --- | --- |
-| SENSOR_DATA_TYPE_ADDRESS1 | [ICivicAddressReport::GetAddressLine1](https://docs.microsoft.com/windows/win32/api/locationapi/nf-locationapi-icivicaddressreport-getaddressline1)<br><br>[LocationDisp. DispCivicAddressReport. AddressLine1](https://docs.microsoft.com/windows/win32/locationapi/locationdisp-dispcivicaddressreport-addressline1) |
-| SENSOR_DATA_TYPE_ADDRESS2 | [ICivicAddressReport::GetAddressLine2](https://docs.microsoft.com/windows/win32/api/locationapi/nf-locationapi-icivicaddressreport-getaddressline2)<br><br>[LocationDisp. DispCivicAddressReport. AddressLine2](https://docs.microsoft.com/windows/win32/locationapi/locationdisp-dispcivicaddressreport-addressline2) |
-| SENSOR_DATA_TYPE_ALTITUDE_ELLIPSOID_ERROR_METERS | [ILatLongReport::GetAltitudeError](https://docs.microsoft.com/windows/win32/api/locationapi/nf-locationapi-ilatlongreport-getaltitudeerror)<br><br>[LocationDisp.DispLatLongReport.AltitudeError](https://docs.microsoft.com/windows/win32/locationapi/locationdisp-displatlongreport-altitudeerror) |
-| SENSOR_DATA_TYPE_ALTITUDE_ELLIPSOID_METERS | [ILatLongReport::GetAltitude](https://docs.microsoft.com/windows/win32/api/locationapi/nf-locationapi-ilatlongreport-getaltitude)<br><br>[LocationDisp. DispLatLongReport](https://docs.microsoft.com/windows/win32/locationapi/locationdisp-displatlongreport-altitude) |
-| SENSOR_DATA_TYPE_CITY | [ICivicAddressReport::GetCity](https://docs.microsoft.com/windows/win32/api/locationapi/nf-locationapi-icivicaddressreport-getcity)<br><br>[LocationDisp. DispCivicAddressReport](https://docs.microsoft.com/windows/win32/locationapi/locationdisp-dispcivicaddressreport-city)<br><br>[Windows. CivicAddress](https://docs.microsoft.com/uwp/api/Windows.Devices.Geolocation.CivicAddress#Windows_Devices_Geolocation_CivicAddress_City) |
-| SENSOR_DATA_TYPE_COUNTRY_REGION | [ICivicAddressReport::GetCountryRegion](https://docs.microsoft.com/windows/win32/api/locationapi/nf-locationapi-icivicaddressreport-getcountryregion)<br><br>[LocationDisp. DispCivicAddressReport](https://docs.microsoft.com/windows/win32/locationapi/locationdisp-civicaddressreport-countryregion) |
-| SENSOR_DATA_TYPE_ERROR_RADIUS_METERS | [ILatLongReport::GetErrorRadius](https://docs.microsoft.com/windows/win32/api/locationapi/nf-locationapi-ilatlongreport-geterrorradius)<br><br>[LocationDisp.DispLatLongReport.ErrorRadius](https://docs.microsoft.com/windows/win32/locationapi/locationdisp-displatlongreport-errorradius) |
-| SENSOR_DATA_TYPE_LATITUDE_DEGREES | [ILatLongReport::GetLatitude](https://docs.microsoft.com/windows/win32/api/locationapi/nf-locationapi-ilatlongreport-getlatitude)<br><br>[LocationDisp. DispLatLongReport](https://docs.microsoft.com/windows/win32/locationapi/locationdisp-displatlongreport-latitude) |
-| SENSOR_DATA_TYPE_LONGITUDE_DEGREES | [ILatLongReport::GetLongitude](https://docs.microsoft.com/windows/win32/api/locationapi/nf-locationapi-ilatlongreport-getlongitude)<br><br>[LocationDisp. DispLatLongReport](https://docs.microsoft.com/windows/win32/locationapi/locationdisp-displatlongreport-longitude) |
-| SENSOR_DATA_TYPE_POSTALCODE | [ICivicAddressReport::GetPostalCode](https://docs.microsoft.com/windows/win32/api/locationapi/nf-locationapi-icivicaddressreport-getpostalcode)<br><br>[LocationDisp. DispCivicAddressReport](https://docs.microsoft.com/windows/win32/locationapi/locationdisp-dispcivicaddressreport-postalcode) |
-| SENSOR_DATA_TYPE_STATE_PROVINCE | [ICivicAddressReport::GetStateProvince](https://docs.microsoft.com/windows/win32/api/locationapi/nf-locationapi-icivicaddressreport-getstateprovince)<br><br>[LocationDisp. DispCivicAddressReport. StateProvince](https://docs.microsoft.com/windows/win32/locationapi/locationdisp-dispcivicaddressreport-stateprovince) |
+| SENSOR_DATA_TYPE_ADDRESS1 | [ICivicAddressReport::GetAddressLine1](/windows/win32/api/locationapi/nf-locationapi-icivicaddressreport-getaddressline1)<br><br>[LocationDisp. DispCivicAddressReport. AddressLine1](/windows/win32/locationapi/locationdisp-dispcivicaddressreport-addressline1) |
+| SENSOR_DATA_TYPE_ADDRESS2 | [ICivicAddressReport::GetAddressLine2](/windows/win32/api/locationapi/nf-locationapi-icivicaddressreport-getaddressline2)<br><br>[LocationDisp. DispCivicAddressReport. AddressLine2](/windows/win32/locationapi/locationdisp-dispcivicaddressreport-addressline2) |
+| SENSOR_DATA_TYPE_ALTITUDE_ELLIPSOID_ERROR_METERS | [ILatLongReport::GetAltitudeError](/windows/win32/api/locationapi/nf-locationapi-ilatlongreport-getaltitudeerror)<br><br>[LocationDisp.DispLatLongReport.AltitudeError](/windows/win32/locationapi/locationdisp-displatlongreport-altitudeerror) |
+| SENSOR_DATA_TYPE_ALTITUDE_ELLIPSOID_METERS | [ILatLongReport::GetAltitude](/windows/win32/api/locationapi/nf-locationapi-ilatlongreport-getaltitude)<br><br>[LocationDisp. DispLatLongReport](/windows/win32/locationapi/locationdisp-displatlongreport-altitude) |
+| SENSOR_DATA_TYPE_CITY | [ICivicAddressReport::GetCity](/windows/win32/api/locationapi/nf-locationapi-icivicaddressreport-getcity)<br><br>[LocationDisp. DispCivicAddressReport](/windows/win32/locationapi/locationdisp-dispcivicaddressreport-city)<br><br>[Windows. CivicAddress](/uwp/api/Windows.Devices.Geolocation.CivicAddress#Windows_Devices_Geolocation_CivicAddress_City) |
+| SENSOR_DATA_TYPE_COUNTRY_REGION | [ICivicAddressReport::GetCountryRegion](/windows/win32/api/locationapi/nf-locationapi-icivicaddressreport-getcountryregion)<br><br>[LocationDisp. DispCivicAddressReport](/windows/win32/locationapi/locationdisp-civicaddressreport-countryregion) |
+| SENSOR_DATA_TYPE_ERROR_RADIUS_METERS | [ILatLongReport::GetErrorRadius](/windows/win32/api/locationapi/nf-locationapi-ilatlongreport-geterrorradius)<br><br>[LocationDisp.DispLatLongReport.ErrorRadius](/windows/win32/locationapi/locationdisp-displatlongreport-errorradius) |
+| SENSOR_DATA_TYPE_LATITUDE_DEGREES | [ILatLongReport::GetLatitude](/windows/win32/api/locationapi/nf-locationapi-ilatlongreport-getlatitude)<br><br>[LocationDisp. DispLatLongReport](/windows/win32/locationapi/locationdisp-displatlongreport-latitude) |
+| SENSOR_DATA_TYPE_LONGITUDE_DEGREES | [ILatLongReport::GetLongitude](/windows/win32/api/locationapi/nf-locationapi-ilatlongreport-getlongitude)<br><br>[LocationDisp. DispLatLongReport](/windows/win32/locationapi/locationdisp-displatlongreport-longitude) |
+| SENSOR_DATA_TYPE_POSTALCODE | [ICivicAddressReport::GetPostalCode](/windows/win32/api/locationapi/nf-locationapi-icivicaddressreport-getpostalcode)<br><br>[LocationDisp. DispCivicAddressReport](/windows/win32/locationapi/locationdisp-dispcivicaddressreport-postalcode) |
+| SENSOR_DATA_TYPE_STATE_PROVINCE | [ICivicAddressReport::GetStateProvince](/windows/win32/api/locationapi/nf-locationapi-icivicaddressreport-getstateprovince)<br><br>[LocationDisp. DispCivicAddressReport. StateProvince](/windows/win32/locationapi/locationdisp-dispcivicaddressreport-stateprovince) |
 
 ## <a name="managing-state-transitions"></a>管理状态转换
 
-传感器驱动程序可随时处于很多状态之一。 传感器状态由 [**SensorState**](https://docs.microsoft.com/windows-hardware/drivers/ddi/sensorsclassextension/ne-sensorsclassextension-__midl___midl_itf_windowssensorclassextension_0000_0000_0001) 枚举定义。 若要正确使用 Location API，位置传感器必须遵循这些规则来处理状态转换。
+传感器驱动程序可随时处于很多状态之一。 传感器状态由 [**SensorState**](/windows-hardware/drivers/ddi/sensorsclassextension/ne-sensorsclassextension-__midl___midl_itf_windowssensorclassextension_0000_0000_0001) 枚举定义。 若要正确使用 Location API，位置传感器必须遵循这些规则来处理状态转换。
 
 - 始终在传感器 \_ 状态 \_ 初始化状态下启动，但在启动时不会引发状态更改事件。
 
@@ -163,7 +163,7 @@ pKeyCollection->Add(SENSOR_DATA_TYPE_POSTALCODE);
 
 下表介绍了位置传感器驱动程序的各种传感器状态。
 
-| 值 | 说明 | 位置 API 状态 |
+| 值 | 描述 | 位置 API 状态 |
 | --- | --- | --- |
 | SENSOR_STATE_READY | 传感器驱动程序可以提供具有完整且准确的数据的新位置报告。<br><br>例如，Wi-fi 或移动电话提供商已连接并且正常工作，或者 GPS 传感器有修补程序。<br><br>已使用三边转换传感器数据确定位置的 GPS 驱动程序处于此状态。 | REPORT_RUNNING |  
 | SENSOR_STATE_INITIALIZING | 传感器驱动程序正在尝试获取修补程序。 传感器驱动程序应在修补程序被锁定并跟踪后将此状态转换为 SENSOR_STATE_READY。<br><br>例如，Wi-fi 提供商正在寻找 Internet 连接，移动电话提供商正在寻找无线电，或 GPS 传感器正在获取修补程序。<br><br>当 GPS 传感器尝试重新获取修复时，应重新进入此状态。 | REPORT_INITIALIZING |  
@@ -175,13 +175,13 @@ pKeyCollection->Add(SENSOR_DATA_TYPE_POSTALCODE);
 
 ## <a name="raising-data-updated-and-state-changed-events"></a>引发数据更新和状态更改事件
 
-Location API 需要位置传感器（如 GPS 传感器）来引发提供数据和状态更改信息的事件。 有关引发传感器事件的详细信息，请参阅 [关于传感器驱动程序事件](https://docs.microsoft.com/windows-hardware/drivers/sensors/about-sensor-driver-events)。
+Location API 需要位置传感器（如 GPS 传感器）来引发提供数据和状态更改信息的事件。 有关引发传感器事件的详细信息，请参阅 [关于传感器驱动程序事件](../sensors/about-sensor-driver-events.md)。
 
 引发这些事件时，位置驱动程序必须遵循以下规则：
 
-- 通过调用传感器类扩展的 [**ISensorClassExtension：:P oststatechange**](https://docs.microsoft.com/windows-hardware/drivers/ddi/sensorsclassextension/nf-sensorsclassextension-isensorclassextension-poststatechange) 方法引发状态更改事件。 不要调用 [**PostEvent**](https://docs.microsoft.com/windows-hardware/drivers/ddi/sensorsclassextension/nf-sensorsclassextension-isensorclassextension-postevent) 来引发状态更改事件。
+- 通过调用传感器类扩展的 [**ISensorClassExtension：:P oststatechange**](/windows-hardware/drivers/ddi/sensorsclassextension/nf-sensorsclassextension-isensorclassextension-poststatechange) 方法引发状态更改事件。 不要调用 [**PostEvent**](/windows-hardware/drivers/ddi/sensorsclassextension/nf-sensorsclassextension-isensorclassextension-postevent) 来引发状态更改事件。
 
-- 通过调用 [**PostEvent**](https://docs.microsoft.com/windows-hardware/drivers/ddi/sensorsclassextension/nf-sensorsclassextension-isensorclassextension-postevent)引发数据更新事件。
+- 通过调用 [**PostEvent**](/windows-hardware/drivers/ddi/sensorsclassextension/nf-sensorsclassextension-isensorclassextension-postevent)引发数据更新事件。
 
 - 仅当数据是最新的且准确时才引发数据更新事件。
 
@@ -195,8 +195,8 @@ Location API 需要位置传感器（如 GPS 传感器）来引发提供数据�
 
 - 不要提供不完整的数据报告。
 
-- 你可能没有所需的数据字段的当前数据，如 GPS 传感器丢失修补程序的时间。 在这种情况下，您可能仍希望提供有关扩展数据字段（如传感器 \_ 数据 \_ 类型 \_ NMEA 句子）更新的通知 \_ 。 若要提供此类通知，必须使用自定义事件类型并仅引发自定义事件，直到所需数据字段的数据可用。 有关如何定义自定义类型的信息，请参阅 [定义常量的自定义值](https://docs.microsoft.com/windows-hardware/drivers/sensors/defining-custom-values-for-constants)。
+- 你可能没有所需的数据字段的当前数据，如 GPS 传感器丢失修补程序的时间。 在这种情况下，您可能仍希望提供有关扩展数据字段（如传感器 \_ 数据 \_ 类型 \_ NMEA 句子）更新的通知 \_ 。 若要提供此类通知，必须使用自定义事件类型并仅引发自定义事件，直到所需数据字段的数据可用。 有关如何定义自定义类型的信息，请参阅 [定义常量的自定义值](../sensors/defining-custom-values-for-constants.md)。
 
 ## <a name="related-topics"></a>相关主题
 
-[电源和性能的位置驱动程序指南](location-driver-guidelines-for-power-and-performance.md)  
+[电源和性能的位置驱动程序指南](location-driver-guidelines-for-power-and-performance.md)

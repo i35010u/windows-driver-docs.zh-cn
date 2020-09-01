@@ -1,19 +1,19 @@
 ---
 title: POS 事件
-description: 介绍从传递的设备驱动程序到点的服务 (POS) API 层通过 ReadFile 的事件。
+description: 使用 ReadFile 描述从设备驱动程序传递到服务 (POS) API 层的点的事件。
 ms.assetid: 1123b789-c0ee-4490-9081-79c08fc31417
 ms.date: 09/07/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 629658ba43349510468469b837a4d8a4a6d9bf7f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 88b7194ec09f6bd297f85a6ae432906719bbbb58
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63390951"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89189767"
 ---
 # <a name="pos-events"></a>POS 事件
 
-本部分介绍从设备驱动程序到点的服务 (POS) API 层通过使用传递的事件[ReadFile](https://docs.microsoft.com/windows/desktop/api/fileapi/nf-fileapi-readfile)。 当应用程序已成功对声明设备通过 POS API 时，运行时将维护针对设备驱动程序以接收事件的连续读的操作。 I/O 是基于消息的。 **ReadFile**需将传入的缓冲区不够大，足以无法读取当前事件中。 该驱动程序直到与足够的输出缓冲区的读取请求读取整个消息由保留该消息。
+本部分介绍使用 [ReadFile](/windows/desktop/api/fileapi/nf-fileapi-readfile)从设备驱动程序传递到服务 (POS) API 层的事件。 当应用程序通过 POS API 成功声明设备时，运行时将对设备驱动程序进行持续读取操作以接收事件。 I/o 基于消息。 **ReadFile** 需要传入足够大的缓冲区，才能读取当前事件。 驱动程序将保留消息，直到具有足够的输出缓冲区的读取请求读取整个消息。
 
 ## <a name="in-this-section"></a>本节内容
 

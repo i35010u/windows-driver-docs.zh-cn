@@ -10,12 +10,12 @@ keywords:
 - 编解码器 WDK AVStream，硬件，验证
 ms.date: 06/16/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 6f343d73a268640ef0a17f4443b80e49328ac685
-ms.sourcegitcommit: b481c9513a9ea7f824ecabd1ae18876548032252
+ms.openlocfilehash: e6db4b8a03f9763015654524a73633752157e8c1
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/17/2020
-ms.locfileid: "84879039"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89190015"
 ---
 # <a name="codec-merit-validation"></a>编解码器验证
 
@@ -23,15 +23,15 @@ ms.locfileid: "84879039"
 
 - KSMETHOD \_ OPMVIDEOOUTPUT \_ STARTINITIALIZATION
 
-    [IOPMVideoOutput：： StartInitialization](https://docs.microsoft.com/windows/win32/api/opmapi/nf-opmapi-iopmvideooutput-startinitialization)通过 KSMETHOD OPMVIDEOOUTPUT StartInitialization 向驱动程序代理 \_ \_ 。
+    [IOPMVideoOutput：： StartInitialization](/windows/win32/api/opmapi/nf-opmapi-iopmvideooutput-startinitialization) 通过 KSMETHOD OPMVIDEOOUTPUT StartInitialization 向驱动程序代理 \_ \_ 。
 
 - KSMETHOD \_ OPMVIDEOOUTPUT \_ ENDINITIALIZATION
 
-    [IOPMVideoOutput：： FinishInitialization](https://docs.microsoft.com/windows/win32/api/opmapi/nf-opmapi-iopmvideooutput-finishinitialization)通过 KSMETHOD OPMVIDEOOUTPUT ENDINITIALIZATION 向驱动程序代理 \_ \_ 。
+    [IOPMVideoOutput：： FinishInitialization](/windows/win32/api/opmapi/nf-opmapi-iopmvideooutput-finishinitialization) 通过 KSMETHOD OPMVIDEOOUTPUT ENDINITIALIZATION 向驱动程序代理 \_ \_ 。
 
 - KSMETHOD \_ OPMVIDEOOUTPUT \_ GETINFORMATION
 
-    [IOPMVideoOutput：： GetInformation](https://docs.microsoft.com/windows/win32/api/opmapi/nf-opmapi-iopmvideooutput-getinformation)通过 KSMETHOD OPMVIDEOOUTPUT GetInformation 向驱动程序代理 \_ \_ 。
+    [IOPMVideoOutput：： GetInformation](/windows/win32/api/opmapi/nf-opmapi-iopmvideooutput-getinformation) 通过 KSMETHOD OPMVIDEOOUTPUT GetInformation 向驱动程序代理 \_ \_ 。
 
 本主题的其余部分包括这三个方法的示例实现。
 
@@ -45,9 +45,9 @@ ms.locfileid: "84879039"
 #include <wincrypt.h>
 ```
 
-*Testcert*是一个示例测试证书，其中的内容位于本主题底部。 *Testcert*仅用于测试目的，不适用于发布版本;您必须为生产驱动程序获取您自己的证书。
+*Testcert* 是一个示例测试证书，其中的内容位于本主题底部。 *Testcert* 仅用于测试目的，不适用于发布版本;您必须为生产驱动程序获取您自己的证书。
 
-还必须将*Ksecdd*添加到*源代码*文件的 TARGETLIBS 部分：
+还必须将 *Ksecdd* 添加到 *源代码* 文件的 TARGETLIBS 部分：
 
 ```makefile
 $(DDK_LIB_PATH)\ksecdd.lib
@@ -811,7 +811,7 @@ DEFINE_KSAUTOMATION_TABLE(SHEDFilterAutomationTable)
 };
 ```
 
-*Testcert*如下所示：
+*Testcert* 如下所示：
 
 ```cpp
 #ifndef _TESTCERT_H_

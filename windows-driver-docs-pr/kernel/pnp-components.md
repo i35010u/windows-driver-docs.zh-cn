@@ -3,22 +3,22 @@ title: PnP 组件
 description: PnP 组件
 ms.assetid: 33612da4-1ddb-40cf-a8a2-838f85b52cd6
 keywords:
-- 即插即用 WDK 内核组件
-- 即插即用和播放 WDK 内核组件
-- WDK 即插即用的软件组件
-- 即插即用驱动程序 WDK 内核
-- 用户模式即插即用管理器 WDK
-- 内核模式即插即用 manager WDK
-- 即插即用经理 WDK
-- 即插即用组件 WDK 用户模式
+- PnP WDK 内核，组件
+- 即插即用 WDK 内核，组件
+- 软件组件 WDK PnP
+- PnP 驱动程序 WDK 内核
+- 用户模式 PnP 管理器 WDK
+- 内核模式 PnP 管理器 WDK
+- PnP 管理器 WDK
+- PnP 组件 WDK 用户模式
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3a366b3d7da6c4eedb2ecc0aa32ed3f5dc3a4d5c
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 0516b4c519d53a9a3a9657ee2e68914d07967c7f
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67380931"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89191845"
 ---
 # <a name="pnp-components"></a>PnP 组件
 
@@ -26,22 +26,17 @@ ms.locfileid: "67380931"
 
 
 
-下图显示了协同工作来支持即插即用的组件。
+下图显示了协同工作以支持 PnP 的组件。
 
-![演示如何插软件组件的关系图](images/pnpcomp.png)
+![说明即插即用软件组件的示意图](images/pnpcomp.png)
 
-PnP 管理器有两个部分： 内核模式即插即用管理器和用户模式即插即用管理器。 内核模式即插即用管理器与操作系统组件和驱动程序来配置、 管理和维护设备进行交互。 与用户模式下安装组件，如类安装程序、 配置和安装的设备进行交互的用户模式即插即用管理器。 此外在与应用程序，例如，注册的设备更改通知的应用程序和设备事件发生时通知应用程序进行交互的用户模式即插即用管理器。
+PnP 管理器有两部分：内核模式 PnP 管理器和用户模式 PnP 管理器。 内核模式 PnP 管理器与操作系统组件和驱动程序交互，以配置、管理和维护设备。 用户模式 PnP 管理器与用户模式安装组件（如类安装程序）进行交互，以配置和安装设备。 用户模式 PnP 管理器还与应用程序进行交互，例如，注册应用程序以通知设备更改，并在设备事件发生时通知应用程序。
 
-即插即用驱动程序支持的计算机上的物理、 逻辑和虚拟设备。 术语"即插即用驱动程序"是指任何 Windows 驱动程序，它支持在本部分中描述的接口。 虽然大多数即插即用驱动程序还 WDM 驱动程序，因此源兼容跨 Windows 平台，一些驱动程序支持 PnP 而无需完全实现 WDM。
+PnP 驱动程序支持计算机上的物理设备、逻辑设备和虚拟设备。 术语 "PnP 驱动程序" 是指支持此部分中所述接口的任何 Windows 驱动程序。 尽管大多数 PnP 驱动程序也是 WDM 驱动程序，因而跨 Windows 平台提供源兼容性，但少数驱动程序支持 PnP，无需完全实现 WDM。
 
-所有驱动程序应支持即插即用和电源管理。 如果单个驱动程序不支持即插即用和电源管理，它作为一个整体约束系统的 PnP 和电源管理支持。
+所有驱动程序都应支持 PnP 和电源管理。 如果单个驱动程序不支持 PnP 和电源管理，则它会限制系统的 PnP 和电源管理支持。
 
-请参阅[设备安装概述](https://docs.microsoft.com/windows-hardware/drivers/install/overview-of-device-and-driver-installation)有关设备和驱动程序安装程序的信息，包括 (INF) 文件、 CAT 文件和注册表。
-
- 
+请参阅 [设备安装概述](../install/overview-of-device-and-driver-installation.md) ，了解有关设备和驱动程序设置的信息，包括 (INF) 文件、CAT 文件和注册表。
 
  
-
-
-
 

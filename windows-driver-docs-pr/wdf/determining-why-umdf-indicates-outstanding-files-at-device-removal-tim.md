@@ -1,47 +1,41 @@
 ---
-title: 在设备删除时 UMDF 指示未完成的文件
-description: 介绍如何使用 Wudfext.dll 来确定为何 UMDF 指示时删除设备有未完成的文件。
+title: UMDF 指示在设备删除时未完成的文件
+description: 介绍如何使用 Wudfext.dll 来确定在删除设备时，该文件的原因会表明存在未完成的文件。
 ms.assetid: 9a8b3b69-1192-40c1-895b-4abfc01c1ca7
 keywords:
-- 调试方案 WDK UMDF，UMDF 在设备删除时指示未完成的文件
-- UMDF WDK，调试方案，UMDF 在设备删除时指示未完成的文件
-- UMDF WDK UMDF 在设备删除时指示未完成的文件
+- 调试方案 WDK UMDF，UMDF 指示在设备删除时未完成的文件
+- UMDF WDK，调试方案，UMDF 指示在设备删除时未完成的文件
+- UMDF WDK，UMDF 指示在设备删除时未完成的文件
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f514950f5076da63032dd47b30e3c3703981bec2
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 6f0f63321c3105ced90c29da0a5620f046ae7d27
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67377427"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89191565"
 ---
 # <a name="determining-why-umdf-indicates-outstanding-files-at-device-removal-time"></a>确定 UMDF 在删除设备时指示文件未完成的原因
 
 
-本主题介绍如何结合使用用户模式驱动程序框架 (UMDF) 版本 1 或 2 驱动程序中使用 Wudfext.dll 调试器扩展来确定为何 UMDF 指示时删除设备有未完成的文件。
+本主题介绍了如何将 Wudfext.dll 调试程序扩展与用户模式驱动程序框架结合使用， (UMDF) 第1版或第2版驱动程序，以确定在删除设备时，UMDF 指示存在未完成文件的原因。
 
-对于 UMDF 版本 1，将使用在 wudfext.dll 中实现的扩展命令。 从 UMDF 版本 2 开始，将使用在 wdfkd.dll 中实现的扩展命令。
+对于 UMDF 版本1，你将使用在 wudfext.dll 中实现的扩展命令。 从 UMDF 版本2开始，你将使用在 wdfkd.dll 中实现的扩展命令。
 
-若要确定为什么 UMDF 指示未完成的文件，请使用以下步骤：
+若要确定 UMDF 为何指示未完成的文件，请执行以下步骤：
 
-1.  使用[ **！ wudfext.umdevstack** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/-wudfext-umdevstack) (UMDF 1) 或[ **！ wdfkd.wdfumdevstack** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/-wdfkd-wdfumdevstack) (UMDF 2)，转储设备堆栈。 转储包括未完成的 UMDF 内部堆栈文件 （即，而不是由应用程序或由另一个堆栈中的驱动程序创建的文件对象的堆栈中的驱动程序创建的文件对象）。
+1.  使用 [**！ wudfext. umdevstack**](../debugger/-wudfext-umdevstack.md) (umdf 1) 或 [**！ wdfkd**](../debugger/-wdfkd-wdfumdevstack.md) (umdf 2) 来转储设备堆栈。 转储包含未处理的 UMDF 堆栈内文件 (即，堆栈中的驱动程序创建的文件对象与应用程序或另一堆栈中的驱动程序所创建的文件对象相反) 。
 
-2.  对于每个内部堆栈文件，请运行[ **！ wudfext.umfile** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/-wudfext-umfile) (UMDF 1) 或[ **！ wdfkd.wdfumfile** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/-wdfkd-wdfumfile) (UMDF 2) 若要获取有关文件的信息.
+2.  对于每个堆栈内文件，请运行 [**umfile**](../debugger/-wudfext-umfile.md) (umdf 1) 或！)  ([**wdfkd**](../debugger/-wdfkd-wdfumfile.md) ，以获取有关该文件的信息。
 
-    输出包括处于挂起状态的 Irp 的列表。
+    输出包括挂起的 Irp 的列表。
 
-3.  确定每个 IRP 为什么使用未完成[ **！ wudfext.umirp** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/-wudfext-umirp) (UMDF 1) 或[ **！ wdfkd.wdfumirp** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/-wdfkd-wdfumirp) (UMDF 2) 若要获取的信息有关 IRP。
+3.  使用 [**！ wudfext. umirp**](../debugger/-wudfext-umirp.md) (umdf 1) 或 [**！ WDFKD wdfumirp**](../debugger/-wdfkd-wdfumirp.md) (umdf 2) 来确定每个 irp 的未完成原因，以获取有关 IRP 的信息。
 
-    从每个输出[ **！ wudfext.umirp** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/-wudfext-umirp)或[ **！ wdfkd.wdfumirp**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-wdfkd-wdfumirp):
+    从每个 [**！ wudfext**](../debugger/-wudfext-umirp.md) 或 [**wdfumirp**](../debugger/-wdfkd-wdfumirp.md)的输出：
 
-    -   确定是否 IRP 已完成。
-    -   确定显式由驱动程序或对象树的隐式是否未删除驱动程序创建请求。
-
- 
+    -   确定 IRP 是否已完成。
+    -   确定驱动程序创建的请求是由驱动程序显式删除还是由对象树隐式删除。
 
  
-
-
-
-
 

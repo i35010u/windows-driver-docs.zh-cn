@@ -1,20 +1,20 @@
 ---
-title: DSM\_QueryUniqueId WMI 类
-description: DSM\_QueryUniqueId WMI 类
+title: DSM \_ QUERYUNIQUEID WMI 类
+description: DSM \_ QUERYUNIQUEID WMI 类
 ms.assetid: 576e208d-972c-47ba-ab30-a05bf3d0943d
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 21adc61357acf597e1b98677063e6f82856b76ba
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 49befce6c9776fe387db779fc0d0abcc74511879
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72844564"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89190219"
 ---
-# <a name="dsm_queryuniqueid-wmi-class"></a>DSM\_QueryUniqueId WMI 类
+# <a name="dsm_queryuniqueid-wmi-class"></a>DSM \_ QUERYUNIQUEID WMI 类
 
 
-MPIO 发布 DSM\_QueryUniqueId WMI 类，但要求 DSM 注册 GUID 并处理其实现。 WMI 客户端使用 DSM\_QueryUniqueId WMI 类来查询路径的唯一标识符。
+MPIO 发布 DSM \_ QUERYUNIQUEID WMI 类，但要求 DSM 注册 GUID 并处理其实现。 WMI 客户端使用 DSM \_ QUERYUNIQUEID WMI 类来查询路径的唯一标识符。
 
 ```cpp
 class DSM_QueryUniqueId
@@ -41,13 +41,7 @@ class DSM_QueryUniqueId
 };
 ```
 
-当 WMI 工具套件编译此类定义时，它将生成[**DSM\_QueryUniqueId**](https://docs.microsoft.com/windows-hardware/drivers/ddi/mpiodisk/ns-mpiodisk-_dsm_queryuniqueid)数据结构。 没有与此 WMI 类相关联的方法。
+当 WMI 工具套件编译此类定义时，它将生成 [**DSM \_ QueryUniqueId**](/windows-hardware/drivers/ddi/mpiodisk/ns-mpiodisk-_dsm_queryuniqueid) 数据结构。 没有与此 WMI 类相关联的方法。
 
  
-
- 
-
-
-
-
 

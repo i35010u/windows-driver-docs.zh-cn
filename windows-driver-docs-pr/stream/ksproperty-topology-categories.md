@@ -1,6 +1,6 @@
 ---
-title: KSPROPERTY\_拓扑\_类别
-description: KSPROPERTY\_拓扑\_类别 "属性查询驱动程序支持的功能类别的数组。
+title: KSPROPERTY \_ 拓扑 \_ 类别
+description: KSPROPERTY \_ 拓扑 \_ 类别属性用于查询驱动程序支持的功能类别的数组。
 ms.assetid: 35a293a1-f8fe-44da-a50b-a4429e369567
 keywords:
 - KSPROPERTY_TOPOLOGY_CATEGORIES 流媒体设备
@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8d37380229e81651e903c7685beed1253bcdd3cf
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: f45c241ca6e716a0ebb4c7d600621626b0cb59db
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72837930"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89192019"
 ---
-# <a name="ksproperty_topology_categories"></a>KSPROPERTY\_拓扑\_类别
+# <a name="ksproperty_topology_categories"></a>KSPROPERTY \_ 拓扑 \_ 类别
 
 
-KSPROPERTY\_拓扑\_类别 "属性查询驱动程序支持的功能类别的数组。
+KSPROPERTY \_ 拓扑 \_ 类别属性用于查询驱动程序支持的功能类别的数组。
 
 ## <span id="ddk_ksproperty_topology_categories_ks"></span><span id="DDK_KSPROPERTY_TOPOLOGY_CATEGORIES_KS"></span>
 
@@ -41,7 +41,7 @@ KSPROPERTY\_拓扑\_类别 "属性查询驱动程序支持的功能类别的数�
 </colgroup>
 <thead>
 <tr class="header">
-<th>“获取”</th>
+<th>获取</th>
 <th>设置</th>
 <th>目标</th>
 <th>属性描述符类型</th>
@@ -50,11 +50,11 @@ KSPROPERTY\_拓扑\_类别 "属性查询驱动程序支持的功能类别的数�
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>“是”</p></td>
-<td><p>无</p></td>
-<td><p>Filter</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)"><strong>KSPROPERTY</strong></a></p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksmultiple_item" data-raw-source="[&lt;strong&gt;KSMULTIPLE_ITEM&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksmultiple_item)"><strong>KSMULTIPLE_ITEM</strong></a>，后跟一个 guid 序列</p></td>
+<td><p>是</p></td>
+<td><p>否</p></td>
+<td><p>筛选器</p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)"><strong>KSPROPERTY</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksmultiple_item" data-raw-source="[&lt;strong&gt;KSMULTIPLE_ITEM&lt;/strong&gt;](/windows-hardware/drivers/ddi/ks/ns-ks-ksmultiple_item)"><strong>KSMULTIPLE_ITEM</strong></a>，后跟一个 guid 序列</p></td>
 </tr>
 </tbody>
 </table>
@@ -64,7 +64,7 @@ KSPROPERTY\_拓扑\_类别 "属性查询驱动程序支持的功能类别的数�
 <a name="remarks"></a>备注
 -------
 
-此属性返回[**KSMULTIPLE\_项**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksmultiple_item)结构，后跟一系列 guid，表示 KS 筛选器支持的功能类别。 Microsoft 在*ks*和*ksmedia*中提供了标准类别。 下面列出了非特定于技术的功能类别：
+此属性返回一个 [**KSMULTIPLE \_ 项**](/windows-hardware/drivers/ddi/ks/ns-ks-ksmultiple_item) 结构，后跟一个 guid 序列，该序列表示 KS 筛选器支持的可能功能类别。 Microsoft 在 *ks* 和 *ksmedia*中提供了标准类别。 下面列出了非特定于技术的功能类别：
 
 <table>
 <colgroup>
@@ -145,7 +145,7 @@ KSCATEGORY_ COMMUNICATIONSTRANSFORM</td>
 <tbody>
 <tr class="odd">
 <td><p>标头</p></td>
-<td>Ks （包含 Ks）</td>
+<td>Ks (包含 Ks .h) </td>
 </tr>
 </tbody>
 </table>
@@ -153,18 +153,11 @@ KSCATEGORY_ COMMUNICATIONSTRANSFORM</td>
 ## <a name="see-also"></a>另请参阅
 
 
-[**KSTOPOLOGY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-kstopology)
+[**KSTOPOLOGY**](/windows-hardware/drivers/ddi/ks/ns-ks-kstopology)
 
-[**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)
+[**KSPROPERTY**](/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)
 
-[**KSMULTIPLE\_项**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksmultiple_item)
-
- 
+[**KSMULTIPLE \_ 项**](/windows-hardware/drivers/ddi/ks/ns-ks-ksmultiple_item)
 
  
-
-
-
-
-
 

@@ -3,16 +3,16 @@ title: 在安装期间设置设备对象注册表属性
 description: 在安装期间设置设备对象注册表属性
 ms.assetid: 29d40398-09b9-4e64-aa47-da229066bffd
 keywords:
-- 设备对象 WDK 内核注册表
+- 设备对象 WDK 内核，注册表
 - 注册表 WDK 设备对象
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9e7d48ca5bf30b0cf9aa769caa2154efe6a2c89e
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: dc92adc4dd06b19c635683aca14202424dbf4627
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67360269"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89191451"
 ---
 # <a name="setting-device-object-registry-properties-during-installation"></a>在安装期间设置设备对象注册表属性
 
@@ -20,15 +20,15 @@ ms.locfileid: "67360269"
 
 
 
-若要在安装过程中设置设备对象属性，必须提供指定的属性的 INF 文件。 可以指定设备的设备或设备安装程序类的对象属性。
+若要在安装过程中设置设备对象属性，您必须提供指定属性的 INF 文件。 你可以为设备或设备安装程序类指定设备对象属性。
 
-按如下所示指定这些。
+它们按如下方式指定。
 
--   对于对单个设备设置的属性*添加注册表部分*设备。 INF **AddReg**指令中的设备*DDInstall*。硬件部分指定*添加注册表部分*设备。
+-   对于单个设备，可在设备的 " *添加-注册表" 部分* 中设置属性。 设备的*DDInstall*中的 INF **AddReg**指令。HW 部分指定设备的 "*添加注册表" 部分*。
 
--   设备安装程序类，属性中设置*添加注册表部分*设备安装程序类。 INF **AddReg**指令内**ClassInstall32**部分为类指定*添加注册表部分*类。
+-   对于设备安装程序类，在设备安装程序类的 " *添加-注册表" 部分* 设置属性。 类的**ClassInstall32**部分中的 INF **AddReg**指令指定类的 "*添加注册表" 部分*。
 
-内*添加注册表部分*，可以使用下列关键字来指定要设置的单个设备对象属性。
+在 " *添加注册表" 部分*中，可以使用以下关键字指定要设置的单个设备对象属性。
 
 <table>
 <colgroup>
@@ -51,8 +51,8 @@ ms.locfileid: "67360269"
 <td><p>设备特征</p></td>
 </tr>
 <tr class="odd">
-<td><p><strong>Exclusive</strong></p></td>
-<td><p>独占</p></td>
+<td><p><strong>独占</strong></p></td>
+<td><p>排他</p></td>
 </tr>
 <tr class="even">
 <td><p><strong>安全性</strong></p></td>
@@ -63,14 +63,9 @@ ms.locfileid: "67360269"
 
  
 
-有关使用这些关键字的详细信息，请参阅[ **INF AddReg 指令**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addreg-directive)。
+有关使用这些关键字的详细信息，请参阅 [**INF AddReg 指令**](../install/inf-addreg-directive.md)。
 
-可以将的设置的用户模式组件，使用的设备安装功能。 有关详细信息，请参阅[设置设备对象注册表属性之后安装](setting-device-object-registry-properties-after-installation.md)。
-
- 
+可以通过使用设备安装功能来设置用户模式组件的设置。 有关详细信息，请参阅 [安装后设置设备对象注册表属性](setting-device-object-registry-properties-after-installation.md)。
 
  
-
-
-
 

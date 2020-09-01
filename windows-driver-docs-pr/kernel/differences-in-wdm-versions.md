@@ -12,12 +12,12 @@ keywords:
 - 电源管理 WDK WDM
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3d44dc520ab0e86eb200a8b5b9a9e3f2ec574113
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: c43c282090002cc33d6d6ca2baf00637f2098332
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72838737"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89191863"
 ---
 # <a name="differences-in-wdm-versions"></a>WDM 版本的差异
 
@@ -29,48 +29,43 @@ ms.locfileid: "72838737"
 
 ### <a name="wdm-differences-in-driver-support-routines"></a>驱动程序支持例程中的 WDM 差异
 
-每个[驱动程序支持例程](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)的 "Windows 驱动程序工具包（WDK）参考" 页指示例程是否限制为特定版本的 WDM，或者其行为在不同的操作系统版本上是否不同。 在跨系统驱动程序中使用任何驱动程序支持例程之前，请务必了解任何特定于版本的限制或行为。
+每个 [驱动程序支持例程](/windows-hardware/drivers/ddi/index) 的 Windows 驱动程序工具包 (WDK) 参考页指示例程是否限制为特定版本的 WDM，或者其行为在不同的操作系统版本上是否不同。 在跨系统驱动程序中使用任何驱动程序支持例程之前，请务必了解任何特定于版本的限制或行为。
 
 ### <a name="wdm-differences-in-plug-and-play"></a>即插即用中的 WDM 差异
 
-仅 Windows 2000 和更高版本的基于 NT 的操作系统（WDM 版本1.10 及更高版本）支持以下即插即用 i/o 请求数据包（IRP）：
+以下即插即用 i/o 请求包 (IRP) 仅在) 1.10 (基于 NT 的 Windows 2000 和更高版本的 Windows 和更高版本中受支持。
 
-[**IRP\_MN\_意外\_删除**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-surprise-removal)
+[**IRP \_ MN \_ 意外 \_ 删除**](./irp-mn-surprise-removal.md)
 
 此外，在 Windows 98/Me 上，以下 Irp 的工作方式与在基于 NT 的操作系统上的工作方式不同：
 
-[**Irp\_MN\_停止\_设备**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-stop-device)和[ **IRP\_MN\_删除\_设备**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-remove-device)
+[**IRP \_MN \_ 停止 \_ 设备**](./irp-mn-stop-device.md)和[ **IRP \_ MN \_ 删除 \_ 设备**](./irp-mn-remove-device.md)
 
-[**IRP\_MN\_查询\_删除\_设备**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-remove-device)
+[**IRP \_ MN \_ 查询 \_ 删除 \_ 设备**](./irp-mn-query-remove-device.md)
 
 ### <a name="wdm-differences-in-power-management"></a>电源管理中的 WDM 差异
 
 以下电源管理功能和 i/o 请求在 Windows 98/Me 操作系统和基于 NT 的操作系统之间的操作上有所不同：
 
-[**PoSetPowerState**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-posetpowerstate)
+[**PoSetPowerState**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-posetpowerstate)
 
-[**PoRequestPowerIrp**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-porequestpowerirp)
+[**PoRequestPowerIrp**](/windows-hardware/drivers/ddi/wdm/nf-wdm-porequestpowerirp)
 
-[**PoRegisterDeviceForIdleDetection**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-poregisterdeviceforidledetection)
+[**PoRegisterDeviceForIdleDetection**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-poregisterdeviceforidledetection)
 
-[**IRP\_MN\_QUERY\_POWER**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-power)
+[**IRP \_ MN \_ 查询 \_ 能力**](./irp-mn-query-power.md)
 
-[**IRP\_MN\_集\_电源**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-set-power)
+[**IRP \_ MN \_ 设置 \_ 电源**](./irp-mn-set-power.md)
 
-完成电源 Irp 后，Windows 98/Me 上的驱动程序必须以 IRQL = 被动\_级别完成电源 Irp，而基于 NT 的操作系统上的驱动程序可以在 IRQL = 被动\_级别或 IRQL = 调度\_级别完成此类 Irp。
+完成电源 Irp 后，Windows 98/Me 上的驱动程序必须以 IRQL = 被动级别完成电源 Irp \_ ，而基于 NT 的操作系统上的驱动程序可以以 irql = 被动 \_ 级别或 IRQL = 调度级别完成此类 irp \_ 。
 
-[**设备\_对象**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_device_object)结构中的 DO\_POWER\_PAGABLE 标志在 Windows 98/Me 操作系统上的使用方式与基于 NT 的操作系统上的使用方式不同。
+与 \_ \_ 基于 NT 的操作系统相比，在 Windows 98/Me 操作系统上， [**设备 \_ 对象**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_device_object) 结构中的 DO POWER PAGABLE 标志的使用方式不同。
 
 ### <a name="wdm-differences-in-kernel-mode-driver-operation"></a>内核模式驱动程序操作中的 WDM 差异
 
-适用于 Windows 98/Me 的内核模式 WDM 驱动程序必须遵循有关使用浮点运算、MMX、3DNOW！或 Intel 的 SSE 扩展的某些准则。 有关详细信息，请参阅[在 WDM 驱动程序中使用浮点或 MMX](using-floating-point-or-mmx-in-a-wdm-driver.md)。
+适用于 Windows 98/Me 的内核模式 WDM 驱动程序必须遵循有关使用浮点运算、MMX、3DNOW！或 Intel 的 SSE 扩展的某些准则。 有关详细信息，请参阅 [在 WDM 驱动程序中使用浮点或 MMX](using-floating-point-or-mmx-in-a-wdm-driver.md)。
 
 Windows 98/Me 提供了固定数量的工作线程，这些线程可能不适合某些驱动程序。
 
  
-
- 
-
-
-
 

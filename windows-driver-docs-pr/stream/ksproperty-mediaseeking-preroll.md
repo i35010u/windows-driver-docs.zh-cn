@@ -1,6 +1,6 @@
 ---
-title: KSPROPERTY\_MEDIASEEKING\_预缓冲
-description: KSPROPERTY\_MEDIASEEKING\_预计算属性检索筛选器上所需的以100毫微秒为单位的预缓冲量。
+title: KSPROPERTY \_ MEDIASEEKING 预 \_ 缓冲
+description: KSPROPERTY \_ MEDIASEEKING \_ 预计算属性检索筛选器上所需的以100毫微秒为单位的预缓冲量。
 ms.assetid: 3b9a5458-b26a-452b-b7aa-7bbb30c3d631
 keywords:
 - KSPROPERTY_MEDIASEEKING_PREROLL 流媒体设备
@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 33f8f5faf0ec7c0307584089302fbb9fa50e775b
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 606b53fe24586c7d4cd7c2b46ed1add90a9fd4c7
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72845637"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89191407"
 ---
-# <a name="ksproperty_mediaseeking_preroll"></a>KSPROPERTY\_MEDIASEEKING\_预缓冲
+# <a name="ksproperty_mediaseeking_preroll"></a>KSPROPERTY \_ MEDIASEEKING 预 \_ 缓冲
 
 
-KSPROPERTY\_MEDIASEEKING\_预计算属性检索筛选器上所需的以100毫微秒为单位的预缓冲量。
+KSPROPERTY \_ MEDIASEEKING \_ 预计算属性检索筛选器上所需的以100毫微秒为单位的预缓冲量。
 
 ## <span id="ddk_ksproperty_mediaseeking_preroll_ks"></span><span id="DDK_KSPROPERTY_MEDIASEEKING_PREROLL_KS"></span>
 
@@ -41,7 +41,7 @@ KSPROPERTY\_MEDIASEEKING\_预计算属性检索筛选器上所需的以100毫微
 </colgroup>
 <thead>
 <tr class="header">
-<th>“获取”</th>
+<th>获取</th>
 <th>设置</th>
 <th>目标</th>
 <th>属性描述符类型</th>
@@ -50,10 +50,10 @@ KSPROPERTY\_MEDIASEEKING\_预计算属性检索筛选器上所需的以100毫微
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>“是”</p></td>
-<td><p>无</p></td>
-<td><p>Filter</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)"><strong>KSPROPERTY</strong></a></p></td>
+<td><p>是</p></td>
+<td><p>否</p></td>
+<td><p>筛选器</p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)"><strong>KSPROPERTY</strong></a></p></td>
 <td><p>LONGLONG</p></td>
 </tr>
 </tbody>
@@ -77,7 +77,7 @@ KSPROPERTY\_MEDIASEEKING\_预计算属性检索筛选器上所需的以100毫微
 <tbody>
 <tr class="odd">
 <td><p>标头</p></td>
-<td>Ks （包含 Ks）</td>
+<td>Ks (包含 Ks .h) </td>
 </tr>
 </tbody>
 </table>
@@ -85,14 +85,7 @@ KSPROPERTY\_MEDIASEEKING\_预计算属性检索筛选器上所需的以100毫微
 ## <a name="see-also"></a>另请参阅
 
 
-[KSPROPSETID\_MediaSeeking](kspropsetid-mediaseeking.md)
+[KSPROPSETID \_ MediaSeeking](kspropsetid-mediaseeking.md)
 
  
-
- 
-
-
-
-
-
 

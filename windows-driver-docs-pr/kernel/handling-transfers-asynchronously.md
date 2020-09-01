@@ -10,21 +10,21 @@ keywords:
 - 调度例程 WDK 内核，DispatchWrite 例程
 - 调度例程 WDK 内核，DispatchRead 例程
 - 读/写调度例程 WDK 内核
-- IRP_MJ_WRITE I/O 函数代码
-- IRP_MJ_READ I/O 函数代码
+- IRP_MJ_WRITE i/o 函数代码
+- IRP_MJ_READ i/o 函数代码
 - 数据传输 WDK 内核，读/写调度例程
-- 传输数据 WDK 内核，读/写调度例程
+- 传输数据 WDK 内核，读取/写入调度例程
 - 异步传输 WDK 内核
-- 数据传输 WDK 内核异步
+- 数据传输 WDK 内核，异步
 - 传输数据 WDK 内核，异步
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b7386a7dc4edeb5384389bc6e21fc8f84aa18df9
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: f02b4c3486799ad7e16f852f6ab84ead0d837c39
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67371911"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89190683"
 ---
 # <a name="handling-transfers-asynchronously"></a>以异步方式处理传输
 
@@ -32,22 +32,17 @@ ms.locfileid: "67371911"
 
 
 
-除了最高级别的驱动程序的所有驱动程序处理[ **IRP\_MJ\_读取**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-read)并[ **IRP\_MJ\_编写** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-write)异步请求。 *DispatchRead*并*DispatchWrite*甚至最高级别的驱动程序中的例程不能等待较低级驱动程序，以完成处理异步读取或写入请求; 它们必须通过此类请求到低级驱动程序并返回状态\_PENDING。
+除最高层驱动程序外，所有驱动程序都以异步方式处理 [**IRP \_ mj \_ 读取**](./irp-mj-read.md) 和 [**irp \_ mj \_ 写入**](./irp-mj-write.md) 请求。 即使是最高级别的驱动程序中的 *DispatchRead* 和 *DispatchWrite* 例程，也无法等待较低级别的驱动程序完成对异步读取或写入请求的处理;它们必须将此类请求传递到更低的驱动程序，并返回 "挂起" 状态 \_ 。
 
-同样，最低级别的设备驱动程序的*DispatchReadWrite*例程必须传输将请求传递到其他驱动程序例程来处理设备 I/O 请求并返回状态\_PENDING。
+同样，最低级别设备驱动程序的 *DispatchReadWrite* 例程必须将传输请求传递给处理设备 i/o 请求的其他驱动程序例程，然后返回状态 "挂起" \_ 。
 
-更高级别的驱动程序有时必须设置部分传输 Irp，并将它们传递到较低的驱动程序。 更高级别的驱动程序可以完成原始读/写 IRP，仅当其部分传输请求已完成的较低的驱动程序。
+较高级别的驱动程序有时必须设置部分传输的 Irp，并将其传递到较低的驱动程序。 只有当驱动程序的部分传输请求已经完成后，较低级别的驱动程序才能完成原始的读/写 IRP。
 
-例如，SCSI 类驾*DispatchReadWrite*例程所需拆分超出基础 HBA 传输功能为一系列部分传输请求的大型传输请求。 在类驱动程序必须设置其部分传输 Irp 中的参数，以便 SCSI 端口/微型端口驱动程序可满足单个 DMA 操作中的每个部分传输请求。
+例如，SCSI 类驱动程序的 *DispatchReadWrite* 例程需要将超过底层 HBA 传输功能的大型传输请求拆分为一组部分传输请求。 类驱动程序必须在其部分传输子请求中设置参数，以便 SCSI 端口/微型端口驱动程序可以在单个 DMA 操作中满足每个部分传输请求。
 
-使用 DMA 或 PIO 其他设备驱动程序可能还需要为自己拆分大型传输请求。
+使用 DMA 或 PIO 的其他设备驱动程序还可能需要为其单独拆分大型传输请求。
 
-有关使用 DMA 和 PIO 的详细信息，请参阅[输入/输出技术](i-o-programming-techniques.md)。
-
- 
+有关使用 DMA 和 PIO 的详细信息，请参阅 [输入/输出技术](i-o-programming-techniques.md)。
 
  
-
-
-
 

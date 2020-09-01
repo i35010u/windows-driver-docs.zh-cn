@@ -12,12 +12,12 @@ keywords:
 - UMDF 传感器驱动程序
 ms.date: 08/25/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: ffed10fca1469f798b0cb5a76c46f66590afa485
-ms.sourcegitcommit: d9a9925f790271f4ca2c8377d551d96e8d1e62c7
+ms.openlocfilehash: 33f59402618c0a6b578ea98266cd44e8bdb9ba39
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88850273"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89190723"
 ---
 # <a name="geolocation-driver-sample-for-windows-81"></a>Windows 8.1 的地理位置驱动程序示例
 
@@ -30,6 +30,6 @@ Windows 8.1 的地理位置示例驱动程序演示了全球定位系统 (GPS) �
 
 ## <a name="related-topics"></a>相关主题
 
-[传感器诊断工具](https://docs.microsoft.com/windows-hardware/drivers/sensors/the-sensor-diagnostic-tool)
+[传感器诊断工具](../sensors/the-sensor-diagnostic-tool.md)
   
 [写入位置传感器驱动程序](writing-a-location-sensor-driver.md)

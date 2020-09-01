@@ -4,12 +4,12 @@ description: 64 位和 WIA
 ms.assetid: 392e60c7-2ad6-4a71-83de-5e5ac550dc8b
 ms.date: 08/25/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: c2efdade0621fd815717e6fbcc2872ee176241e9
-ms.sourcegitcommit: d9a9925f790271f4ca2c8377d551d96e8d1e62c7
+ms.openlocfilehash: 976dfa258004c4084198283737d42ea04804a2fd
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88850254"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89191979"
 ---
 # <a name="64-bit-and-wia"></a>64 位和 WIA
 
@@ -21,4 +21,4 @@ ms.locfileid: "88850254"
 
 [32 位和 64 位 WIA 互操作性](32-bit-and-64-bit-wia-interoperability.md)
 
-有关开发64位驱动程序的详细信息，请参阅将 [驱动程序移植到64位 Windows](https://docs.microsoft.com/windows-hardware/drivers/kernel/porting-your-driver-to-64-bit-windows)
+有关开发64位驱动程序的详细信息，请参阅将 [驱动程序移植到64位 Windows](../kernel/porting-your-driver-to-64-bit-windows.md)

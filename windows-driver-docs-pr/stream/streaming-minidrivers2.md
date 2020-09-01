@@ -10,16 +10,16 @@ keywords:
 - 流式处理微型驱动程序 WDK Windows 2000 内核
 - 微型驱动程序 WDK Windows 2000 内核流式处理
 - Stream.sys 类驱动程序 WDK Windows 2000 内核，
-- 流式处理微型驱动程序 WDK Windows 2000 内核，
+- 流式传输微型驱动程序 WDK Windows 2000 内核，
 - 微型驱动程序 WDK Windows 2000 内核流式处理，
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d9250487bec1d1aa79d28c02a401a56e585d0cee
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 05561488d3d0e499ade784ba939beef544c15649
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67377788"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89190347"
 ---
 # <a name="streaming-minidrivers"></a>流微型驱动程序
 
@@ -27,44 +27,39 @@ ms.locfileid: "67377788"
 
 
 
-**请注意**  本部分详细介绍过时*Stream.sys*类驱动程序。 随着 Microsoft Windows XP 的发布，Microsoft 支持*Stream.sys*仅为现有的驱动程序。 截至此版本中，Microsoft 建议，请考虑供应商开发新视频或音频/视频多媒体的驱动程序使用 AVStream 类驱动程序模型。 请参阅中的详细信息[AVStream 概述](avstream-overview.md)。 如果开发的仅限音频的驱动程序，您应编写下 Microsoft 提供的音频的微型端口驱动程序*Portcls.sys*类驱动程序。 有关详细信息，请参阅[音频微型端口驱动程序](https://docs.microsoft.com/windows-hardware/drivers/audio/audio-miniport-drivers)。
+**注意**   本部分详细介绍过时的*Stream.sys*类驱动程序。 随着 Microsoft Windows XP 的发布，Microsoft 仅支持现有驱动程序的 *Stream.sys* 。 在此版本中，Microsoft 建议供应商考虑使用 AVStream 类驱动程序模型开发新的视频或音频/视频多媒体驱动程序。 请参阅 [AVStream 概述](avstream-overview.md)中的详细信息。 如果要开发仅音频驱动程序，则应在 Microsoft 提供的 *Portcls.sys* 类驱动程序下编写音频微型端口驱动程序。 有关详细信息，请参阅 [音频微型端口驱动程序](../audio/audio-miniport-drivers.md)。
 
  
 
-供应商可以通过提供在 Microsoft 提供该运行的微型驱动程序支持仅视频或音频/视频设备*Stream.sys*类驱动程序。 在此文档中，供应商提供的微型驱动程序下*Stream.sys*嘿*流式处理微型驱动程序*。
+供应商可以通过提供一个在 Microsoft 提供的 *Stream.sys* 类驱动程序下运行的微型驱动程序，来支持仅视频或音频/视频设备。 在本文档中，在 *Stream.sys* 下，供应商提供的微型驱动程序称为 *流式处理微型驱动程序*。
 
-例如，可以通过流式处理微型驱动程序支持视频捕获设备和 DVD 播放机。 特定于技术的信息，请参阅[视频捕获设备](video-capture-devices.md)并[DVD 解码器微型驱动程序](dvd-decoder-minidrivers2.md)。
+例如，流式传输微型驱动程序可支持视频捕获设备和 DVD 播放机。 有关特定于技术的信息，请参阅 [视频捕获设备](video-capture-devices.md) 和 [DVD 解码器微型驱动程序](dvd-decoder-minidrivers2.md)。
 
-流式处理的微型驱动程序支持流式处理语义的内核。 若要使用本文档，驱动程序开发人员应熟悉流概念，基本内核中所述[内核流式处理](kernel-streaming.md)。
+流式处理微型驱动程序支持内核流语义。 若要使用本文档，驱动程序开发人员应熟悉基本内核流式处理概念，如 [内核流](kernel-streaming.md)中所述。
 
-Stream 类驱动程序旨在使编写的处理很多方面与操作系统交互的流式处理更简单的设备的硬件驱动程序。
+流类驱动程序旨在通过处理与操作系统交互的许多方面，使写入流式处理设备的硬件驱动程序更简单。
 
--   微型驱动程序可以允许流类驱动程序来处理代表其自身的同步。 例如，stream 类驱动程序可以根据需要序列化输入/输出请求的微型驱动程序。 允许类驱动程序来处理同步使微型驱动程序包含多个处理器安全，但 nonreentrant 处理。 这是适用于低端到中等低端硬件。
+-   微型驱动程序可以允许 stream 类驱动程序代表其处理同步。 例如，stream 类驱动程序可以有选择地序列化微型驱动程序的 i/o 请求。 允许类驱动程序处理同步会使微型驱动程序多处理器安全，但 nonreentrant。 这适用于低端到中端硬件。
 
--   在类驱动程序会自动同步文件操作。 例如，在打开的流和设备进行正确序列化没有微型驱动程序使用 mutex、 信号量或事件的情况下。
+-   类驱动程序会自动同步文件操作。 例如，如果没有使用互斥体、信号或事件的微型驱动程序，则会正确序列化流和设备的打开。
 
--   在类驱动程序提取流语义从微型驱动程序的内核的实现。
+-   类驱动程序从微型驱动程序抽象内核流语义的实现。
 
--   在类驱动程序处理与 PnP 管理器的所有交互。 例如：
-    -   在类驱动程序微型驱动程序的名义创建功能的设备对象。
-    -   在类驱动程序管理资源配置 （如将端口地址转换、 转换和映射内存范围和连接中断）。
-    -   在类驱动程序处理 PnP Irp，如[ **IRP\_MN\_启动\_设备**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-start-device)，或[ **IRP\_MN\_停止\_设备**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-stop-device)。
--   由类驱动程序处理所有低级别的缓冲区管理：
-    -   如有必要，请分配 DMA 适配器对象。
-    -   映射缓冲区和构建散播-聚集列出了 DMA。
-    -   锁定和 DMA 和 PIO 正确刷新缓冲区。
--   所有 IOCTL 参数验证由类驱动程序都执行。
+-   类驱动程序处理与 PnP 管理器的所有交互。 例如：
+    -   类驱动程序代表微型驱动程序创建功能设备对象。
+    -   类驱动程序管理资源配置 (例如，转换端口地址、转换和映射内存范围以及连接中断) 。
+    -   类驱动程序处理 PnP Irp，如 [**irp \_ MN \_ START \_ device**](../kernel/irp-mn-start-device.md)或 [**irp \_ MN \_ STOP \_ device**](../kernel/irp-mn-stop-device.md)。
+-   类驱动程序处理所有低级别缓冲区管理：
+    -   如有必要，分配 DMA 适配器对象。
+    -   为 DMA 映射缓冲区并构建分散/收集列表。
+    -   为 DMA 和 PIO 正确锁定并刷新缓冲区。
+-   所有 IOCTL 参数验证由类驱动程序执行。
 
--   所有请求都使用监视程序计时器类驱动程序已都超时。
+-   类驱动程序使用监视程序计时器对所有请求进行计时。
 
--   微型驱动程序不会创建一个设备对象，但它们共享根据需要在类驱动程序的设备对象。 这可节省系统资源。
+-   微型驱动程序不会创建设备对象，但会根据需要共享类驱动程序的设备对象。 这将保存系统资源。
 
--   每个适配器创建只有一个设备对象。 多个子设备 (称为*流*) 适配器支持的内核流式处理插针表示。
-
- 
+-   每个适配器只创建一个设备对象。 适配器支持的多个 subdevices (称为 *流*) 由内核流 pin 表示。
 
  
-
-
-
 

@@ -1,74 +1,68 @@
 ---
 title: 确定驱动程序是否泄漏框架对象
-description: 本主题介绍如何查找未释放引用导致的驱动程序内存泄漏。 它适用于用户模式驱动程序框架 (UMDF) 版本 1 和 2 的驱动程序。
+description: 本主题介绍了如何查找由未发布引用引起的驱动程序内存泄漏。 它适用于用户模式驱动程序框架 (UMDF) 第1版和第2版驱动程序。
 ms.assetid: 617cc678-e0db-4d2f-9d19-34b6cedad234
 keywords:
-- WDK UMDF，确定驱动程序是否泄漏 framework 对象的调试方案
-- UMDF WDK，调试方案，用于确定驱动程序是否泄漏 framework 对象
-- UMDF WDK，确定驱动程序是否泄漏 framework 对象
+- 调试方案 WDK UMDF，确定驱动程序是否泄漏框架对象
+- UMDF WDK，调试方案，确定驱动程序是否泄漏框架对象
+- UMDF WDK，确定驱动程序是否泄漏框架对象
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a53ff81154cabcd787cd939eb5d135f8e4ce26c4
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 9dc246468087c3051deecdd6ae9fcf7717e511fb
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67377445"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89191569"
 ---
 # <a name="determining-if-a-driver-leaks-framework-objects"></a>确定驱动程序是否泄漏框架对象
 
 
-本主题介绍如何查找未释放引用导致的驱动程序内存泄漏。 它适用于用户模式驱动程序框架 (UMDF) 版本 1 和 2 的驱动程序。
+本主题介绍了如何查找由未发布引用引起的驱动程序内存泄漏。 它适用于用户模式驱动程序框架 (UMDF) 第1版和第2版驱动程序。
 
 ## <a name="umdf-1"></a>UMDF 1
 
 
-在 UMDF 版本 1，调用堆栈可能会导致内存泄漏如果每个调用**AddRef**不具有匹配**发行**调用。
+在 UMDF 版本1中，如果对 **AddRef** 的每次调用没有匹配的 **Release** 调用，则调用堆栈可能会导致内存泄漏。
 
-若要测试是否 UMDF 驱动程序版本 1 泄漏 framework 对象，使用以下步骤：
+若要测试 UMDF 版本1驱动程序是否泄漏框架对象，请使用以下步骤：
 
-1.  使用[WDF 验证程序控件应用程序](https://docs.microsoft.com/windows-hardware/drivers/devtest/wdf-verifier-control-application)设置所需的验证程序选项。 正则在测试期间，开始通过设置**TrackObjects**而不**TrackRefCounts**。
+1.  使用 [WDF 验证器控件应用程序](../devtest/wdf-verifier-control-application.md) 设置所需的验证程序选项。 在常规测试过程中，首先设置 **TrackObjects** ，而不是 **TrackRefCounts**。
 
-    如果未删除 framework 对象，并且它会提示你使用框架的代码验证程序卸载该驱动程序时，进入调试器[ **！ wudfdumpobjects** ](using-umdf-debugger-extensions.md)调试器扩展。 此调试器扩展显示的撤消删除的对象的列表。
+    卸载驱动程序时，如果未删除框架对象，框架的代码验证器将进入调试器，并提示你使用 [**！ wudfdumpobjects**](using-umdf-debugger-extensions.md) 调试器扩展。 此调试器扩展显示删除的对象的列表。
 
-2.  如果代码验证程序指示驱动程序正在泄漏 framework 对象，然后使用控制应用程序设置[ **TrackRefCounts** ](using-umdf-verifier.md)选项。
+2.  如果代码验证器表明驱动程序正在泄漏框架对象，请使用 control 应用程序设置 [**TrackRefCounts**](using-umdf-verifier.md) 选项。
 
-    如果设置此选项，验证人将跟踪的驱动程序运行时的 framework 对象的引用。 可以使用[ **！ wudfrefhist** ](using-umdf-debugger-extensions.md)调试器扩展，以显示每个调用堆栈 （函数调用的集） 递增或递减对象的引用计数。 通过检查**AddRef**并**发行**调用在这些调用堆栈，因此应该能够找到不减小对象的引用计数，从而导致泄漏的堆栈。
+    如果设置了此选项，则在驱动程序运行时，验证程序将跟踪对框架对象的引用。 您可以使用 [**！ wudfrefhist**](using-umdf-debugger-extensions.md) 调试器扩展显示每个调用堆栈 (一组函数调用，这些调用堆栈递增或递减对象的引用计数) 。 通过检查这些调用堆栈中的 **AddRef** 和 **Release** 调用，你应该能够找到一个堆栈，该堆栈不会减少对象的引用计数，进而导致泄漏。
 
-有关其他验证程序选项的信息，请参阅[使用 UMDF Verifier](using-umdf-verifier.md)。
+有关其他验证程序选项的信息，请参阅 [使用 UMDF 验证](using-umdf-verifier.md)程序。
 
-有关何时删除 framework 对象的信息，请参阅[管理对象生存期](managing-the-lifetime-of-objects.md)。
+有关何时删除框架对象的信息，请参阅 [管理对象的生存期](managing-the-lifetime-of-objects.md)。
 
 ## <a name="umdf-2"></a>UMDF 2
 
 
-未释放的引用 UMDF 版本 2，在很少见，但使用时可以因调用不匹配而可能发生[ **WdfObjectReference** ](https://docs.microsoft.com/windows-hardware/drivers/wdf/wdfobjectreference)并[ **WdfObjectDereference**](https://docs.microsoft.com/windows-hardware/drivers/wdf/wdfobjectdereference).
+在 UMDF 版本2中，未发布引用非常罕见，但由于使用 [**WdfObjectReference**](./wdfobjectreference.md) 和 [**WdfObjectDereference**](./wdfobjectdereference.md)时调用不匹配，可能会出现这种情况。
 
-若要测试是否 UMDF 版本 2 驱动程序泄漏 framework 对象，使用以下过程：
+若要测试 UMDF 版本2驱动程序是否泄漏框架对象，请使用以下过程：
 
-1.  请按照中所述的步骤[最佳做法](enabling-a-debugger.md#bp)UMDF 调试将计算机配置。
-2.  若要使用跟踪标记，启用 UMDF Verifier 和跟踪在注册表中的句柄。 这两个设置都存储在驱动程序的**参数\\Wdf**的子项**HKEY\_本地\_机\\软件\\Microsoft\\Windows NT\\CurrentVersion\\WUDF\\Services\\&lt;驱动程序名称&gt;** 密钥。
+1.  按照 [最佳做法](enabling-a-debugger.md#bp) 中所述的步骤配置计算机以进行 UMDF 调试。
+2.  若要使用标记跟踪，请在注册表中同时启用 UMDF 验证程序和句柄跟踪。 这两个设置都存储在**HKEY \_ 本地 \_ 计算机 \\ SOFTWARE \\ Microsoft \\ Windows NT \\ CurrentVersion \\ WUDF \\ Services \\ &lt; 驱动程序名称 &gt; **密钥的驱动程序的**参数 \\ Wdf**子项中。
 
-    若要启用 UMDF 验证工具，请将设置为非零值**VerifierOn。**
+    若要启用 UMDF 验证程序，请为 VerifierOn 设置非零值 **。**
 
-    若要跟踪的句柄，设置的值**TrackHandles**到一个或多个对象类型的名称或指定一个星号 (\*) 用于跟踪所有对象类型。
+    若要启用句柄跟踪，请将 **TrackHandles** 的值设置为一个或多个对象类型的名称，或指定星号 (\*) 以跟踪所有对象类型。
 
-    您还可以通过使用修改 UMDF 验证器设置[WdfVerifier.exe](https://docs.microsoft.com/windows-hardware/drivers/devtest/wdf-verifier-control-application)应用程序。
+    你还可以使用 [WdfVerifier.exe](../devtest/wdf-verifier-control-application.md) 应用程序修改 UMDF 验证程序设置。
 
-3.  重新启动，建立连接调试器，并使用以下调试器命令：
+3.  重新启动，建立调试器连接，然后使用以下调试器命令：
 
-    -   [ **！ wdfkd.wdfdriverinfo 0x10** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/-wdfkd-wdfdriverinfo)显示句柄层次结构
-    -   [ **！ wdfkd.wdftagtracker** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/-wdfkd-wdftagtracker)以显示标记信息
+    -   [**！ wdfkd wdfdriverinfo 0x10**](../debugger/-wdfkd-wdfdriverinfo.md) 以显示句柄层次结构
+    -   [**！ wdfkd wdftagtracker**](../debugger/-wdfkd-wdftagtracker.md) 显示标记信息
 
-如果 UMDF 验证程序上，内存泄漏检测到在驱动程序卸载，就像 KMDF 中一样。
+如果启用了 UMDF 验证程序，则会在卸载驱动程序时检测内存泄漏，就像在 KMDF 中一样。
 
-有关使用引用的其他信息中 KMDF 和 UMDF 版本 2 的驱动程序计数，请参阅[Framework 对象生命周期](framework-object-life-cycle.md)。
-
- 
+有关在 KMDF 和 UMDF 版本2驱动程序中使用引用计数的其他信息，请参阅 [框架对象生命周期](framework-object-life-cycle.md)。
 
  
-
-
-
-
 

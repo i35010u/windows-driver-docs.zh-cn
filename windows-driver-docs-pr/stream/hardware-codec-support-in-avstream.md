@@ -8,22 +8,22 @@ keywords:
 - AVStream 硬件编解码器支持 WDK
 ms.date: 06/18/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 04c941ec153dc6ba61afe477c26c25d2b99e0b4a
-ms.sourcegitcommit: 8143bb312ead6582b4b3e0ad34b6266dcfd74fb5
+ms.openlocfilehash: 62a122309e35f699735850b6eda50656bba494ac
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84992475"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89192021"
 ---
 # <a name="hardware-codec-support-in-avstream"></a>AVStream 中的硬件编解码器支持
 
-基于 AVStream 的媒体设备可以显示为用户模式应用程序媒体基础转换（MFT）筛选器。
+基于 AVStream 的媒体设备可以媒体基础转换为用户模式应用程序 (MFT) 筛选器。
 
-此功能允许硬件供应商以用户模式媒体基础转换（MFTs）的形式提供基于硬件的解码器、编码器和视频处理器。
+此功能使硬件供应商能够以用户模式媒体基础转换 (MFTs) 提供基于硬件的解码器、编码器和视频处理器。
 
 基于硬件的编码和解码极大地提高了用户体验。
 
-为了在 AVStream 中启用硬件编解码器支持，供应商提供了一种基于 AVStream 的微型驱动程序，其中每个都是单独的 AVStream 筛选器。 然后，操作系统会创建对应于每个 AVStream 筛选器的用户模式 MFT。 然后，用户模式应用程序可以通过使用[媒体基础 SDK](https://docs.microsoft.com/windows/win32/medfound/microsoft-media-foundation-sdk)中定义的 IMFTransform 接口函数，将转码请求提交到 MFTs。
+为了在 AVStream 中启用硬件编解码器支持，供应商提供了一种基于 AVStream 的微型驱动程序，其中每个都是单独的 AVStream 筛选器。 然后，操作系统会创建对应于每个 AVStream 筛选器的用户模式 MFT。 然后，用户模式应用程序可以通过使用 [媒体基础 SDK](/windows/win32/medfound/microsoft-media-foundation-sdk)中定义的 IMFTransform 接口函数，将转码请求提交到 MFTs。
 
 本部分介绍 AVStream 驱动程序使用此功能所需的更改。
 

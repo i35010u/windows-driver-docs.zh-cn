@@ -4,12 +4,12 @@ description: Windows XP 和 Windows Me 的 WIA 平板扫描仪兼容性
 ms.assetid: fc3424fa-3898-4f6a-a611-f81d97db8b1d
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c6a489d4bba2c5c9be5125dded8bfb9602c66ed9
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: c5e40c08221c408b5e85175aa4948b085f754e4d
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67384798"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89191493"
 ---
 # <a name="wia-flatbed-scanner-compatibility-for-windows-xp-and-windows-me"></a>Windows XP 和 Windows Me 的 WIA 平板扫描仪兼容性
 
@@ -17,24 +17,19 @@ ms.locfileid: "67384798"
 
 
 
-Windows Vista WIA 项树针对 Windows XP 和 Windows me.编写的应用程序中导致某些兼容性问题
+Windows Vista WIA 项树会导致为 Windows XP 和 Windows Me 编写的应用程序中出现一些兼容性问题。
 
-若要简化 Windows Vista WIA 驱动程序和应用程序和旧 WIA 驱动程序和应用程序之间的兼容性问题，Windows Vista 有内部兼容性层。 此兼容性层将允许您分别与 Windows Vista 驱动程序和应用程序，使用 Windows XP （和 Windows Me） 驱动程序和应用程序。 在 Windows Vista 中，此转换过程是透明的驱动程序和应用程序。 有关此兼容性层的详细信息，请参阅[WIA 兼容性层](wia-compatibility-layer.md)。
+为了简化 Windows Vista WIA 驱动程序和应用程序以及旧版 WIA 驱动程序和应用程序之间的兼容性问题，Windows Vista 具有内部兼容性层。 此兼容性层允许将 Windows XP (和 Windows Me 分别用于 Windows Vista 驱动程序和应用程序) 驱动程序和应用程序。 在 Windows Vista 上，此转换过程对驱动程序和应用程序都是透明的。 有关此兼容性层的详细信息，请参阅 [WIA 兼容性层](wia-compatibility-layer.md)。
 
-但是，Windows Vista 驱动程序和 Windows XP 或 Windows Me 上的应用程序兼容性是更复杂。 这些旧的操作系统存在的 WIA 的版本编写的应用程序遵循一组不同的规则和假设。 WIA 扫描程序在 Windows XP 和 Windows Me 合并到项目树中的单个项上的扫描程序的功能项树。 根项控制该子项的传输行为。 例如，扫描程序使用第一个子项目作为可编程数据源和根项属性[ **WIA\_DPS\_文档\_处理\_选择**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-dps-document-handling-select) (称为 WIA\_IPS\_文档\_处理\_选择 Windows Vista 中) 平板扫描和送纸器扫描之间进行切换。
+但是，windows XP 或 Windows Me 上 Windows Vista 驱动程序和应用程序的兼容性更复杂。 为在这些旧操作系统上存在的 WIA 版本编写的应用程序遵循一组不同的规则和假设。 Windows XP 和 Windows Me 中的 WIA 扫描器项树将扫描仪的功能合并到项树中的单个项。 根项控制该项的传输行为。 例如，扫描器使用第一个子项作为可编程数据源，根项属性 [**WIA \_ DPS \_ 文档 \_ 处理 \_ 选择**](./wia-dps-document-handling-select.md) " \_ \_ 在 Windows Vista 中选择 (称为 WIA ip 文档 \_ 处理 \_ "，) 在平板扫描和进纸器扫描之间切换。
 
-此项重载方法要求应用程序来跟踪的重要 WIA 各项以帮助进行分类的扫描仪功能的必需的 WIA 属性。 如果 WIA\_DPS\_文档\_处理\_扫描程序的根项上存在选择属性，该应用程序假设在扫描仪支持从文档送纸器扫描。 如果此属性设置为平板，该应用程序假设扫描程序还支持平板辊扫描。 因此，较旧 WIA 应用程序将导航到新的 WIA 扫描程序项树的根和将找不到任何属性，告诉他们设备的功能。
+此项重载方法要求应用程序为重要的 WIA 项跟踪所需的 WIA 属性，以帮助对扫描仪的功能分类。 如果扫描程序 \_ \_ \_ \_ 的根项上存在 WIA DPS 文档处理选择属性，则应用程序假定扫描程序支持从文档送纸器进行扫描。 如果将此属性设置为 "平板"，则应用程序会假定扫描仪还支持平板影印扫描。 因此，较旧的 WIA 应用程序将导航到新的 WIA 扫描器项树的根目录，并且找不到任何告知其设备功能的属性。
 
-**请注意**  平板扫描仪项必须是 WIA 项树中的第一个子项目，如果实现了其他扫描的数据源。 此位置可确保 Windows XP 和 Windows Me 的应用程序能够运行基本平板扫描仪将自动查找平板扫描你的设备的功能。 某些应用程序导航到第一个子项目，用于将唯一的子项目，并假定它是平板或扫描程序的送纸器。 实现通过平板扫描仪项目作为第一个子项目的扫描程序项树将防止出现许多向后兼容性问题。
-
- 
-
-有关兼容性的详细信息，请参阅[WIA 项属性和位置更改](wia-item-property-and-location-changes.md)。
+**注意**   如果实现了其他扫描数据源，则平板扫描仪项必须是 WIA 项树中的第一个子项目。 此位置可确保能够操作基本平板扫描仪的 Windows XP 和 Windows Me 应用程序将自动找到设备的平板扫描功能。 某些应用程序会导航到作为唯一子项的第一个子项目，并假定它是扫描仪的平台或送纸器。 将带有平台扫描仪项的扫描仪项树实现为第一个子项会阻止许多向后兼容性问题。
 
  
 
+有关兼容性的详细信息，请参阅 [WIA 项目属性和位置更改](wia-item-property-and-location-changes.md)。
+
  
-
-
-
 

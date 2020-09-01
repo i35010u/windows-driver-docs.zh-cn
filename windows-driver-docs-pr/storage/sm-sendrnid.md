@@ -1,6 +1,6 @@
 ---
-title: SM\_SendRNID 函数
-description: SM\_SendRNID WMI 方法向指定的端口发送请求节点标识数据（RNID）命令。
+title: SM \_ SendRNID 函数
+description: SM \_ SENDRNID WMI 方法将请求节点标识数据 (RNID) 命令发送到指定的端口。
 ms.assetid: 160e2dc7-8195-4f8a-bc59-854e5283cf6f
 keywords:
 - SM_SendRNID 函数存储设备
@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: e29155b70dce368e9306dc33cf8c69773d1723d9
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: bd2641eeef9725d42ba5b63f0c6707b183f5cdc8
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72845457"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89191645"
 ---
-# <a name="sm_sendrnid-function"></a>SM\_SendRNID 函数
+# <a name="sm_sendrnid-function"></a>SM \_ SendRNID 函数
 
 
-SM\_SendRNID WMI 方法向指定的端口发送请求节点标识数据（RNID）命令。
+SM \_ SENDRNID WMI 方法将请求节点标识数据 (RNID) 命令发送到指定的端口。
 
 <a name="syntax"></a>语法
 ------
@@ -47,31 +47,31 @@ void SM_SendRNID(
 ----------
 
 *PortWWN*   
-用于发送 RNID 命令的本地端口的全球名称（WWN）。 此信息将传送到 SM\_\_SendRNID 的 PortWWN 成员中的微型端口驱动程序。
+用于发送 RNID 命令的本地端口的全球名称 (WWN) 。 此信息将传送到 SM SendRNID 结构中的 PortWWN 成员的微型端口驱动程序 \_ \_ 。
 
 *DestWWN*   
-目标端口的全球名称（WWN）。 此信息将传送到 SM\_\_SendRNID 的 DestWWN 成员中的微型端口驱动程序。
+针对目标端口 (WWN) 的全球名称。 此信息将传送到 SM SendRNID 结构中的 DestWWN 成员的微型端口驱动程序 \_ \_ 。
 
 *DestFCID*   
-目标端口的地址标识符。 此信息将传送到 SM\_\_SendRNID 的 DestFCID 成员中的微型端口驱动程序。
+目标端口的地址标识符。 此信息将传送到 SM SendRNID 结构中的 DestFCID 成员的微型端口驱动程序 \_ \_ 。
 
 *NodeIdDataFormat*   
-节点标识数据格式。 有关此成员可以具有的值的说明，请参阅 T11 委员会*光纤通道 HBA API*规范。 此信息将传送到 SM\_\_SendRNID 的 NodeIdDataFormat 成员中的微型端口驱动程序。
+节点标识数据格式。 有关此成员可以具有的值的说明，请参阅 T11 委员会 *光纤通道 HBA API* 规范。 此信息将传送到 SM SendRNID 结构中的 NodeIdDataFormat 成员的微型端口驱动程序 \_ \_ 。
 
 *InRespBufferMaxSize*   
 响应缓冲区的最大大小。
 
 *HBAStatus*   
-操作的状态。 有关允许值及其说明的列表，请参阅[HBA\_状态](hba-status.md)。 微型端口驱动程序在 SM\_SendRNID\_OUT 结构的 HBAStatus 成员中返回此信息。
+操作的状态。 有关允许值及其说明的列表，请参阅 [HBA \_ 状态](hba-status.md)。 微型端口驱动程序在 SM \_ SendRNID OUT 结构的 HBAStatus 成员中返回此信息 \_ 。
 
 *TotalRespBufferSize*   
-RNID 命令的结果的大小（以字节为单位）。 微型端口驱动程序在 SM\_SendRNID\_OUT 结构的 TotalRspBufferSize 成员中返回此信息。
+RNID 命令的结果的大小（以字节为单位）。 微型端口驱动程序在 SM \_ SendRNID OUT 结构的 TotalRspBufferSize 成员中返回此信息 \_ 。
 
 *ResponseBufferSize*   
-RNID 命令的结果的大小（以字节为单位）。 微型端口驱动程序在 SM\_SendRNID\_OUT 结构的 ResponseBufferSize 成员中返回此信息。
+RNID 命令的结果的大小（以字节为单位）。 微型端口驱动程序在 SM \_ SendRNID OUT 结构的 ResponseBufferSize 成员中返回此信息 \_ 。
 
 *ResponseBuffer*   
-RNID 命令的结果。 微型端口驱动程序在 SM\_SendRNID\_OUT 结构的 ResponseBuffer 成员中返回此信息。
+RNID 命令的结果。 微型端口驱动程序在 SM \_ SendRNID OUT 结构的 ResponseBuffer 成员中返回此信息 \_ 。
 
 <a name="return-value"></a>返回值
 ------------
@@ -81,7 +81,7 @@ RNID 命令的结果。 微型端口驱动程序在 SM\_SendRNID\_OUT 结构的 
 <a name="remarks"></a>备注
 -------
 
-此 WMI 方法属于 MS\_SM\_FabricAndDomainManagementMethods WMI 类。
+此 WMI 方法属于 MS \_ SM \_ FabricAndDomainManagementMethods WMI 类。
 
 <a name="requirements"></a>要求
 ------------
@@ -94,7 +94,7 @@ RNID 命令的结果。 微型端口驱动程序在 SM\_SendRNID\_OUT 结构的 
 <tbody>
 <tr class="odd">
 <td align="left"><p>目标平台</p></td>
-<td align="left">桌面设备</td>
+<td align="left">“桌面”</td>
 </tr>
 <tr class="even">
 <td align="left"><p>标头</p></td>
@@ -106,18 +106,11 @@ RNID 命令的结果。 微型端口驱动程序在 SM\_SendRNID\_OUT 结构的 
 ## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
-[HBA\_状态](hba-status.md)
+[HBA \_ 状态](hba-status.md)
 
-[**SM\_SendRNID\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_sm_sendrnid_in)
+[**SM \_ SendRNID \_**](/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_sm_sendrnid_in)
 
-[**SM\_SendRNID\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_sm_sendrnid_out)
-
- 
+[**SM \_ SendRNID \_**](/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_sm_sendrnid_out)
 
  
-
-
-
-
-
 

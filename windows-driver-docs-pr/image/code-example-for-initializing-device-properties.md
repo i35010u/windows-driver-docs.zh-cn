@@ -4,27 +4,27 @@ description: 演示如何初始化设备属性的代码示例
 ms.assetid: ec25fa77-13d8-4cb0-913c-b24010355702
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b0b69445392be4fcd71f456ab155373dd720460a
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: ce393b129017cec2438e4a5fcf143fa1a06ba114
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72840873"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89191511"
 ---
 # <a name="code-example-for-initializing-device-properties"></a>演示如何初始化设备属性的代码示例
 
 
-在 IWiaMiniDrv：为根项[ **:D rvinititemproperties**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvinititemproperties)调用期间，微型驱动程序必须初始化以下描述设备的 WIA 属性：
+在 IWiaMiniDrv：为根项 [**:D rvinititemproperties**](/windows-hardware/drivers/ddi/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvinititemproperties) 调用期间，微型驱动程序必须初始化以下描述设备的 WIA 属性：
 
-[**WIA\_DPS\_服务\_ID**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-dps-service-id)
+[**WIA \_ DPS \_ 服务 \_ ID**](./wia-dps-service-id.md)
 
-[**WIA\_DPS\_设备\_ID**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-dps-device-id)
+[**WIA \_ DPS \_ 设备 \_ ID**](./wia-dps-device-id.md)
 
-[**WIA\_DP\_全局\_标识**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-dps-global-identity)
+[**WIA \_ DPS \_ 全局 \_ 标识**](./wia-dps-global-identity.md)
 
-[**WIA\_DPA\_固件\_版本**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-dpa-firmware-version)
+[**WIA \_ DPA \_ 固件 \_ 版本**](./wia-dpa-firmware-version.md)
 
-下面的代码示例演示了如何使用**OpenProperyStore**和**READDEVICEPROPERTY**方法\_DPS\_SERVICE\_ID 初始化 WIA，以读取 PKEY\_PNPX\_ServiceId。 可以使用相同的常规方法来初始化每个设备属性。
+下面的代码示例演示了如何 \_ \_ \_ 使用 **OpenProperyStore** 和 **ReadDeviceProperty** 方法来读取 PKEY \_ PNPX ServiceId，从而初始化 WIA DPS 服务 ID \_ 。 可以使用相同的常规方法来初始化每个设备属性。
 
 ```cpp
 HRESULT hr = S_OK;
@@ -87,9 +87,4 @@ if (pPropertyStore)
 ```
 
  
-
- 
-
-
-
 

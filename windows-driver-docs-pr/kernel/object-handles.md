@@ -11,12 +11,12 @@ keywords:
 - 共享对象处理 WDK
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 500ff5f6c66aa2bac7a3dced8f3eabbd0b3387d0
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 98b2a24af4e97d7c0b6905249a4a3fc9b0dd6e4f
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72838530"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89191332"
 ---
 # <a name="object-handles"></a>对象句柄
 
@@ -24,7 +24,7 @@ ms.locfileid: "72838530"
 
 
 
-驱动程序和用户模式组件通过*句柄*访问大多数系统定义的对象。 句柄由 "句柄不透明" 数据类型表示。 （请注意，句柄并不用于访问设备对象或驱动程序对象。）
+驱动程序和用户模式组件通过 *句柄*访问大多数系统定义的对象。 句柄由 "句柄不透明" 数据类型表示。  (请注意，句柄不用于访问设备对象或驱动程序对象。 ) 
 
 对于大多数对象类型，创建或打开对象的内核模式例程提供调用方的句柄。 然后，调用方在对象的后续操作中使用该句柄。
 
@@ -44,62 +44,62 @@ ms.locfileid: "72838530"
 <tbody>
 <tr class="odd">
 <td><p>文件</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocreatefile" data-raw-source="[&lt;strong&gt;IoCreateFile&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocreatefile)"><strong>IoCreateFile</strong></a>、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ntcreatefile" data-raw-source="[&lt;strong&gt;ZwCreateFile&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ntcreatefile)"><strong>ZwCreateFile</strong></a>、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ntopenfile" data-raw-source="[&lt;strong&gt;ZwOpenFile&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ntopenfile)"><strong>ZwOpenFile</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocreatefile" data-raw-source="[&lt;strong&gt;IoCreateFile&lt;/strong&gt;](/windows-hardware/drivers/ddi/wdm/nf-wdm-iocreatefile)"><strong>IoCreateFile</strong></a>、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ntcreatefile" data-raw-source="[&lt;strong&gt;ZwCreateFile&lt;/strong&gt;](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ntcreatefile)"><strong>ZwCreateFile</strong></a>、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ntopenfile" data-raw-source="[&lt;strong&gt;ZwOpenFile&lt;/strong&gt;](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ntopenfile)"><strong>ZwOpenFile</strong></a></p></td>
 </tr>
 <tr class="even">
 <td><p>注册表项</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioopendeviceinterfaceregistrykey" data-raw-source="[&lt;strong&gt;IoOpenDeviceInterfaceRegistryKey&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioopendeviceinterfaceregistrykey)"><strong>IoOpenDeviceInterfaceRegistryKey</strong></a>、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioopendeviceregistrykey" data-raw-source="[&lt;strong&gt;IoOpenDeviceRegistryKey&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioopendeviceregistrykey)"><strong>IoOpenDeviceRegistryKey</strong></a>、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-zwcreatekey" data-raw-source="[&lt;strong&gt;ZwCreateKey&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-zwcreatekey)"><strong>ZwCreateKey</strong></a>、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-zwopenkey" data-raw-source="[&lt;strong&gt;ZwOpenKey&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-zwopenkey)"><strong>ZwOpenKey</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioopendeviceinterfaceregistrykey" data-raw-source="[&lt;strong&gt;IoOpenDeviceInterfaceRegistryKey&lt;/strong&gt;](/windows-hardware/drivers/ddi/wdm/nf-wdm-ioopendeviceinterfaceregistrykey)"><strong>IoOpenDeviceInterfaceRegistryKey</strong></a>、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioopendeviceregistrykey" data-raw-source="[&lt;strong&gt;IoOpenDeviceRegistryKey&lt;/strong&gt;](/windows-hardware/drivers/ddi/wdm/nf-wdm-ioopendeviceregistrykey)"><strong>IoOpenDeviceRegistryKey</strong></a>、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-zwcreatekey" data-raw-source="[&lt;strong&gt;ZwCreateKey&lt;/strong&gt;](/windows-hardware/drivers/ddi/wdm/nf-wdm-zwcreatekey)"><strong>ZwCreateKey</strong></a>、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-zwopenkey" data-raw-source="[&lt;strong&gt;ZwOpenKey&lt;/strong&gt;](/windows-hardware/drivers/ddi/wdm/nf-wdm-zwopenkey)"><strong>ZwOpenKey</strong></a></p></td>
 </tr>
 <tr class="odd">
-<td><p>线程</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-pscreatesystemthread" data-raw-source="[&lt;strong&gt;PsCreateSystemThread&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-pscreatesystemthread)"><strong>PsCreateSystemThread</strong></a></p></td>
+<td><p>线程数</p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-pscreatesystemthread" data-raw-source="[&lt;strong&gt;PsCreateSystemThread&lt;/strong&gt;](/windows-hardware/drivers/ddi/wdm/nf-wdm-pscreatesystemthread)"><strong>PsCreateSystemThread</strong></a></p></td>
 </tr>
 <tr class="even">
 <td><p>事件</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocreatesynchronizationevent" data-raw-source="[&lt;strong&gt;IoCreateSynchronizationEvent&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocreatesynchronizationevent)"><strong>IoCreateSynchronizationEvent</strong></a>、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocreatenotificationevent" data-raw-source="[&lt;strong&gt;IoCreateNotificationEvent&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocreatenotificationevent)"> <strong>IoCreateNotificationEvent</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocreatesynchronizationevent" data-raw-source="[&lt;strong&gt;IoCreateSynchronizationEvent&lt;/strong&gt;](/windows-hardware/drivers/ddi/wdm/nf-wdm-iocreatesynchronizationevent)"><strong>IoCreateSynchronizationEvent</strong></a>、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocreatenotificationevent" data-raw-source="[&lt;strong&gt;IoCreateNotificationEvent&lt;/strong&gt;](/windows-hardware/drivers/ddi/wdm/nf-wdm-iocreatenotificationevent)"> <strong>IoCreateNotificationEvent</strong></a></p></td>
 </tr>
 <tr class="odd">
 <td><p>符号链接</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-zwopensymboliclinkobject" data-raw-source="[&lt;strong&gt;ZwOpenSymbolicLinkObject&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-zwopensymboliclinkobject)"><strong>ZwOpenSymbolicLinkObject</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-zwopensymboliclinkobject" data-raw-source="[&lt;strong&gt;ZwOpenSymbolicLinkObject&lt;/strong&gt;](/windows-hardware/drivers/ddi/wdm/nf-wdm-zwopensymboliclinkobject)"><strong>ZwOpenSymbolicLinkObject</strong></a></p></td>
 </tr>
 <tr class="even">
 <td><p>目录对象</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-zwcreatedirectoryobject" data-raw-source="[&lt;strong&gt;ZwCreateDirectoryObject&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-zwcreatedirectoryobject)"><strong>ZwCreateDirectoryObject</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-zwcreatedirectoryobject" data-raw-source="[&lt;strong&gt;ZwCreateDirectoryObject&lt;/strong&gt;](/windows-hardware/drivers/ddi/wdm/nf-wdm-zwcreatedirectoryobject)"><strong>ZwCreateDirectoryObject</strong></a></p></td>
 </tr>
 <tr class="odd">
 <td><p>节对象</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-zwopensection" data-raw-source="[&lt;strong&gt;ZwOpenSection&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-zwopensection)"><strong>ZwOpenSection</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-zwopensection" data-raw-source="[&lt;strong&gt;ZwOpenSection&lt;/strong&gt;](/windows-hardware/drivers/ddi/wdm/nf-wdm-zwopensection)"><strong>ZwOpenSection</strong></a></p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-当驱动程序不再需要访问该对象时，它将调用[**ZwClose**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ntclose)例程来关闭该句柄。 这适用于上表中列出的所有对象类型。
+当驱动程序不再需要访问该对象时，它将调用 [**ZwClose**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ntclose) 例程来关闭该句柄。 这适用于上表中列出的所有对象类型。
 
-提供句柄的大多数例程采用[**对象\_特性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfwdm/ns-wudfwdm-_object_attributes)结构作为参数。 此结构可用于为句柄指定属性。
+提供句柄的大多数例程将 [**对象 \_ 属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfwdm/ns-wudfwdm-_object_attributes) 结构作为参数。 此结构可用于为句柄指定属性。
 
 驱动程序可以指定下列句柄属性：
 
--   OBJ\_内核\_句柄
+-   OBJ \_ 内核 \_ 句柄
 
     只能从内核模式访问句柄。
 
--   OBJ\_继承
+-   OBJ \_ 继承
 
     当创建句柄时，当前进程的所有子级都将接收该句柄的副本。
 
--   OBJ\_强制\_访问\_检查
+-   OBJ \_ 强制 \_ 访问 \_ 检查
 
     此属性指定系统对句柄执行所有访问检查。 默认情况下，系统会绕过在内核模式下创建的句柄的所有访问检查。
 
-使用[**InitializeObjectAttributes**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfwdm/nf-wudfwdm-initializeobjectattributes)例程在**对象\_属性**结构中设置这些属性。
+使用 [**InitializeObjectAttributes**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfwdm/nf-wudfwdm-initializeobjectattributes) 例程在 **对象 \_ 属性** 结构中设置这些属性。
 
-有关验证对象句柄的信息，请参阅[验证对象句柄失败](failure-to-validate-object-handles.md)。
+有关验证对象句柄的信息，请参阅 [验证对象句柄失败](failure-to-validate-object-handles.md)。
 
 ### <a name="private-object-handles"></a>专用对象句柄
 
-每当驱动程序为其专用使用创建对象句柄时，驱动程序必须指定\_内核\_句柄属性的 OBJ。 这可确保用户模式应用程序无法访问句柄。
+每当驱动程序为其专用使用创建对象句柄时，驱动程序必须指定 OBJ \_ 内核 \_ 句柄特性。 这可确保用户模式应用程序无法访问句柄。
 
 ### <a name="shared-object-handles"></a>共享对象句柄
 
@@ -107,16 +107,11 @@ ms.locfileid: "72838530"
 
 1.  在内核模式下创建句柄并将其传递给用户模式，而不是其他方法。 用户模式组件创建并传递给驱动程序的句柄不应受信任。
 
-2.  如果驱动程序必须代表用户模式应用程序操作句柄，请使用 OBJ\_强制\_访问\_检查属性来验证应用程序是否具有所需的访问权限。
+2.  如果驱动程序必须代表用户模式应用程序操作句柄，请使用 OBJ \_ 强制 \_ 访问 \_ 检查属性来验证应用程序是否具有所需的访问权限。
 
-3.  使用[**ObReferenceObjectByPointer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-obreferenceobjectbypointer)将内核模式引用保留在共享句柄上。 否则，如果用户模式组件关闭了句柄，则引用计数将变为零，并且如果驱动程序尝试使用或关闭句柄，系统会崩溃。
+3.  使用 [**ObReferenceObjectByPointer**](/windows-hardware/drivers/ddi/wdm/nf-wdm-obreferenceobjectbypointer) 将内核模式引用保留在共享句柄上。 否则，如果用户模式组件关闭了句柄，则引用计数将变为零，并且如果驱动程序尝试使用或关闭句柄，系统会崩溃。
 
-如果用户模式应用程序创建一个事件对象，则驱动程序可以安全等待该事件发出信号，但前提是该应用程序通过 IOCTL 将事件对象的句柄传递给驱动程序。 驱动程序必须在创建事件的进程的上下文中处理 IOCTL，并必须通过调用[**ObReferenceObjectByHandle**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-obreferenceobjectbyhandle)来验证该句柄是否为事件句柄。
-
- 
+如果用户模式应用程序创建一个事件对象，则驱动程序可以安全等待该事件发出信号，但前提是该应用程序通过 IOCTL 将事件对象的句柄传递给驱动程序。 驱动程序必须在创建事件的进程的上下文中处理 IOCTL，并必须通过调用 [**ObReferenceObjectByHandle**](/windows-hardware/drivers/ddi/wdm/nf-wdm-obreferenceobjectbyhandle)来验证该句柄是否为事件句柄。
 
  
-
-
-
 

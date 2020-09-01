@@ -4,43 +4,37 @@ description: 在 KMDF 驱动程序中测试 DMA
 ms.assetid: 1D37F8B3-EAFC-4BB0-988D-64ADF30DBC40
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3b65bcead90da7d014fab74eae5b6b66b3046f79
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 7580fb70d78c0cc2bcede27a84a8b17cc42d2346
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67372318"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89191397"
 ---
 # <a name="testing-dma-in-kmdf-drivers"></a>在 KMDF 驱动程序中测试 DMA
 
 
 \[仅适用于 KMDF\]
 
-以下工具可帮助调试基于框架的驱动程序支持 DMA 的：
+以下工具可帮助调试支持 DMA 的基于框架的驱动程序：
 
--   [驱动程序验证程序](https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier)包括检测错误地使用各种 DMA 操作的特定验证测试。 有关特定于 DMA 的验证的详细信息，请参阅[DMA 验证](https://docs.microsoft.com/windows-hardware/drivers/devtest/dma-verification)。
+-   [驱动程序验证程序](../devtest/driver-verifier.md) 包括检测各种 DMA 操作的不当使用的特定验证测试。 有关特定于 DMA 的验证的详细信息，请参阅 [Dma 验证](../devtest/dma-verification.md)。
 
--   [ **！ Dma** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/-dma)内核调试器扩展显示 DMA 子系统和 DMA 的设备驱动程序验证的信息[Driver Verifier](https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier)。
+-   [**！ Dma**](../debugger/-dma.md)内核调试器扩展显示有关[驱动程序验证程序](../devtest/driver-verifier.md)正在验证的 dma 子系统和 dma 设备驱动程序的信息。
 
--   [内核模式驱动程序框架扩展](https://docs.microsoft.com/windows-hardware/drivers/debugger/kernel-mode-driver-framework-extensions--wdfkd-dll-)包括以下特定于 DMA 的命令：
+-   [内核模式驱动程序框架扩展](../debugger/kernel-mode-driver-framework-extensions--wdfkd-dll-.md)包含以下特定于 DMA 的命令：
 
-    <a href="" id="-wdfcommonbuffer"></a>[ **!wdfcommonbuffer**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-wdfkd-wdfcommonbuffer)  
-    转储有关给定的常见缓冲区对象的信息。
+    <a href="" id="-wdfcommonbuffer"></a>[**!wdfcommonbuffer**](../debugger/-wdfkd-wdfcommonbuffer.md)  
+    转储有关给定公用缓冲区对象的信息。
 
-    <a href="" id="-wdfdmaenabler"></a>[ **!wdfdmaenabler**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-wdfkd-wdfdmaenabler)  
-    转储有关特定 DMA 启用程序对象和其事务和公共缓冲区对象的信息。
+    <a href="" id="-wdfdmaenabler"></a>[**!wdfdmaenabler**](../debugger/-wdfkd-wdfdmaenabler.md)  
+    转储有关特定 DMA 启用程序对象及其事务和常见缓冲区对象的信息。
 
-    <a href="" id="-wdfdmaenablers"></a>[ **!wdfdmaenablers**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-wdfkd-wdfdmaenablers)  
-    列出所有的 DMA 实现方法及其事务和公共缓冲区对象。
+    <a href="" id="-wdfdmaenablers"></a>[**!wdfdmaenablers**](../debugger/-wdfkd-wdfdmaenablers.md)  
+    列出所有 DMA 启用码及其事务和公用缓冲区对象。
 
-    <a href="" id="-wdfdmatransaction"></a>[ **!wdfdmatransaction**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-wdfkd-wdfdmatransaction)  
-    转储有关给定的事务对象的信息。
-
- 
+    <a href="" id="-wdfdmatransaction"></a>[**!wdfdmatransaction**](../debugger/-wdfkd-wdfdmatransaction.md)  
+    转储有关给定事务对象的信息。
 
  
-
-
-
-
 

@@ -4,12 +4,12 @@ description: Windows 支持通过使用 UpdateCapsule 函数处理的驱动程�
 ms.assetid: 9F0D22FB-3C83-4F90-8E24-2205EEF9D5F7
 ms.date: 05/26/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 6fac600e06540d5cf2b19d4cad08bc5cce26358a
-ms.sourcegitcommit: d9a9925f790271f4ca2c8377d551d96e8d1e62c7
+ms.openlocfilehash: 63f78db62e3417ba682ccf984394800b780dc15c
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88850268"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89189911"
 ---
 # <a name="windows-uefi-firmware-update-platform"></a>Windows UEFI 固件更新平台
 
@@ -30,7 +30,7 @@ UEFI 固件更新平台指南适用于正在构建运行 Windows 的硬件平台
 
 Microsoft 强烈建议运行 Windows 10 移动版的设备应使用二进制更新过程更新 UEFI 固件。 运行 Windows 10 移动版的设备只能在不能使用二进制更新过程的情况下使用基于 UpdateCapsule 的过程。 例如，如果设备的分区布局阻止 UEFI 固件通过使用二进制更新包进行更新，则为。
 
-有关适用于 Windows 10 移动版的 spkg 包的详细信息，请参阅 [创建包](https://docs.microsoft.com/previous-versions/windows/hardware/packaging/dn756642(v=vs.85))。
+有关适用于 Windows 10 移动版的 spkg 包的详细信息，请参阅 [创建包](/previous-versions/windows/hardware/packaging/dn756642(v=vs.85))。
 
 ## <a name="overview-of-the-uefi-firmware-update-platform"></a>UEFI 固件更新平台概述
 
@@ -81,7 +81,7 @@ Microsoft 强烈建议运行 Windows 10 移动版的设备应使用二进制更�
 
     有关详细信息，请参阅 [ESRT 表定义](esrt-table-definition.md)。
 
-## <a name="in-this-section"></a>在本节中
+## <a name="in-this-section"></a>本节内容
 
 - [通过固件驱动程序包进行的系统和设备固件更新](system-and-device-firmware-updates-via-a-firmware-driver-package.md)
 

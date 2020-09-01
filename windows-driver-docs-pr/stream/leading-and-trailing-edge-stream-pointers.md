@@ -8,12 +8,12 @@ keywords:
 - 尾部边缘流指针 WDK AVStream
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: aebd11c4c4f3c7a3fda4a03b3075c237b98166d3
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: e988b27a3abcc200eb44d8486521a44811e2be01
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72843043"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89191255"
 ---
 # <a name="leading-and-trailing-edge-stream-pointers"></a>前导和尾随边缘流指针
 
@@ -21,11 +21,11 @@ ms.locfileid: "72843043"
 
 
 
-默认情况下，每个 AVStream 队列都包含一个*前导边缘*流指针。 当到达队列时，前导边缘指向新帧。 具体而言，前导边缘最初指向第一个帧进入队列，并不移动，直到微型驱动程序移动它。 AVStream 创建前导边缘，该边缘在队列的生存期内存在。 微型驱动程序可以使用 Microsoft 提供的功能来操纵领先的边缘。
+默认情况下，每个 AVStream 队列都包含一个 *前导边缘* 流指针。 当到达队列时，前导边缘指向新帧。 具体而言，前导边缘最初指向第一个帧进入队列，并不移动，直到微型驱动程序移动它。 AVStream 创建前导边缘，该边缘在队列的生存期内存在。 微型驱动程序可以使用 Microsoft 提供的功能来操纵领先的边缘。
 
 当新帧到达队列时，AVStream 会将前导边缘设置为指向此帧，前提是前导边缘尚未指向帧。
 
-若要获取指向前导边缘流指针的指针，微型驱动程序将调用[**KsPinGetLeadingEdgeStreamPointer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/nf-ks-kspingetleadingedgestreampointer)。
+若要获取指向前导边缘流指针的指针，微型驱动程序将调用 [**KsPinGetLeadingEdgeStreamPointer**](/windows-hardware/drivers/ddi/ks/nf-ks-kspingetleadingedgestreampointer)。
 
 在下表中汇总的两种情况下，微型驱动程序负责推动领先的边缘。
 
@@ -36,7 +36,7 @@ ms.locfileid: "72843043"
 </colgroup>
 <thead>
 <tr class="header">
-<th>情形</th>
+<th>场景</th>
 <th>AVStream 的行为</th>
 </tr>
 </thead>
@@ -54,17 +54,17 @@ ms.locfileid: "72843043"
 
  
 
-有关向前传递流指针的详细信息，请参阅[流指针简介](introduction-to-stream-pointers.md)。
+有关向前传递流指针的详细信息，请参阅 [流指针简介](introduction-to-stream-pointers.md) 。
 
 ### <a name="specifying-a-trailing-edge-stream-pointer"></a>指定尾随边缘流指针
 
-微型驱动程序可以指定队列具有尾随边缘流指针。 尾随边缘通常指示微型驱动程序的最早的帧。 若要指定尾随边缘，请将 "KSPIN\_" 标志设置为 "KSPIN" 的 "**标志**" 成员中\_DISTINCT\_尾部\_边缘标志， [ **\_EX**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-_kspin_descriptor_ex)结构。 然后，调用[**KsPinGetTrailingEdgeStreamPointer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/nf-ks-kspingettrailingedgestreampointer)以获取指向尾部边缘流指针的指针。
+微型驱动程序可以指定队列具有尾随边缘流指针。 尾随边缘通常指示微型驱动程序的最早的帧。 若要指定尾随边缘，请 \_ \_ \_ \_ 在相关[**KSPIN \_ 描述符 \_ EX**](/windows-hardware/drivers/ddi/ks/ns-ks-_kspin_descriptor_ex)结构的**Flags**成员中设置 KSPIN 标志 DISTINCT 尾边缘标志。 然后，调用 [**KsPinGetTrailingEdgeStreamPointer**](/windows-hardware/drivers/ddi/ks/nf-ks-kspingettrailingedgestreampointer) 以获取指向尾部边缘流指针的指针。
 
 当尾随边缘前进时，它以前指向的帧上的引用计数将降到零，并且帧完成。 如果帧是其 IRP 内包含的最后一个，则接收器 pin 会向调用方完成 IRP;源 pin 将 IRP 发送到它所连接到的 pin。
 
 ### <a name="maintaining-a-frame-window"></a>维护框架窗口
 
-由于[流指针简介](introduction-to-stream-pointers.md)中所述的帧引用计数规则，在取消之前，前导边缘和尾随边缘之间的帧将保留在队列中<em>，即使该帧未被流指针引用</em>也是如此。 因此，微型驱动程序可以使用前导和尾随边缘指针来维护多个连续帧的工作窗口。 例如，窗口中的帧可能等待处理或填充。
+由于 [流指针简介](introduction-to-stream-pointers.md)中所述的帧引用计数规则，在取消之前，前导边缘和尾随边缘之间的帧将保留在队列中<em>，即使该帧未被流指针引用</em>也是如此。 因此，微型驱动程序可以使用前导和尾随边缘指针来维护多个连续帧的工作窗口。 例如，窗口中的帧可能等待处理或填充。
 
 在下图中，最旧的帧位于底部。 新帧到达顶部。 每个帧中的数字是该帧的引用计数。 当流指针前进时，它们将在此关系图中上移。
 
@@ -72,14 +72,9 @@ ms.locfileid: "72843043"
 
 最左侧的队列显示微型驱动程序如何使用尾部边缘来创建工作帧集。 尽管没有流指针引用这些帧，但前导边缘和尾随边缘之间的每个帧都有一个引用计数。
 
-中间队列是[克隆流指针](cloning-stream-pointers.md)的示例。 该驱动程序重复克隆，然后将其前进到最先进，如[AVSTREAM DMA Services](avstream-dma-services.md)中的固定进程步骤中所述。
+中间队列是 [克隆流指针](cloning-stream-pointers.md)的示例。 该驱动程序重复克隆，然后将其前进到最先进，如 [AVSTREAM DMA Services](avstream-dma-services.md)中的固定进程步骤中所述。
 
 最右边的队列显示微型驱动程序如何使用流指针克隆来维护尾部边缘后面的帧的引用计数。
 
  
-
- 
-
-
-
 

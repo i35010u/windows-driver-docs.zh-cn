@@ -11,12 +11,12 @@ keywords:
 - 阻止 WDK WMI
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f128523fc91a06c62d7f7159a8a66e879eeda642
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: ef0ed280b0a0307fd6469dd3990332e88966337b
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72838468"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89190445"
 ---
 # <a name="registering-as-a-wmi-data-provider"></a>注册为 WMI 数据提供程序
 
@@ -28,14 +28,9 @@ ms.locfileid: "72838468"
 
 驱动程序在两个阶段中注册 WMI：
 
-1.  驱动程序调用[**IoWMIRegistrationControl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iowmiregistrationcontrol) ，其中包含 action WMIREG\_操作\_REGISTER，并向传递到驱动程序的[*AddDevice*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_add_device)例程的设备对象发送指针。
+1.  驱动程序调用 [**IoWMIRegistrationControl**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iowmiregistrationcontrol) ，其中包含操作 WMIREG \_ 操作 \_ 注册，以及一个指向传递给驱动程序的 [*AddDevice*](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_add_device) 例程的设备对象的指针。
 
-2.  该驱动程序处理[**IRP\_MN\_REGINFO**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-reginfo)或[**irp\_MN\_\_REGINFO**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-reginfo-ex) ，因为 WMI 发送此请求是为了响应驱动程序的**IoWMIRegistrationControl**调用。 IRP 的**数据路径**成员设置为 WMIREGISTER **，并将**设置为驱动程序的设备对象指针。 该驱动程序通过使用 wmi 库中所述的有关数据和事件块的注册信息向 WMI 提供注册[块，如使用 Wmi 库注册块](using-the-wmi-library-to-register-blocks.md)或处理**irp\_MN\_REGINFO**或**irp\_MN\_REGINFO\_EX**请求，如[处理 IRP\_MN\_REGINFO 和 IRP\_MN\_REGINFO\_Ex 到 Register 块](handling-irp-mn-reginfo-and-irp-mn-reginfo-ex-to-register-blocks.md)。
-
- 
+2.  驱动程序将处理 [**irp \_ MN \_ REGINFO**](./irp-mn-reginfo.md) 或 [**irp \_ MN \_ REGINFO \_ EX**](./irp-mn-reginfo-ex.md) 请求，WMI 会发送该请求来响应驱动程序的 **IoWMIRegistrationControl** 调用。 IRP 的 **数据路径** 成员设置为 WMIREGISTER **，并将** 设置为驱动程序的设备对象指针。 该驱动程序通过使用 wmi 库中所述的有关数据和事件块的注册信息向 WMI 提供注册[块，如使用 Wmi 库注册块](using-the-wmi-library-to-register-blocks.md)中所述，或处理**irp \_ MN \_ REGINFO**或**irp \_ MN \_ REGINFO \_ ex** [请求。 \_ \_ \_ \_ \_ ](handling-irp-mn-reginfo-and-irp-mn-reginfo-ex-to-register-blocks.md)
 
  
-
-
-
 

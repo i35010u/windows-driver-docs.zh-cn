@@ -4,12 +4,12 @@ description: Hbaapi.mof 中的 WMI 类限定符定义
 ms.assetid: 9db543f1-f6ad-4735-8ba0-21476aa229ba
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 8c4ddf93ac8f53357fdc09180e9b8f3b9aae8b2d
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 2d7df1845fb428b8d0c61063114107b888223421
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386794"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89191613"
 ---
 # <a name="wmi-class-qualifier-definitions-in-hbaapimof"></a>Hbaapi.mof 中的 WMI 类限定符定义
 
@@ -17,25 +17,19 @@ ms.locfileid: "67386794"
 ## <span id="ddk_wmi_class_qualifier_definitions_in_hbaapi_mof_kr"></span><span id="DDK_WMI_CLASS_QUALIFIER_DEFINITIONS_IN_HBAAPI_MOF_KR"></span>
 
 
-由定义的 WMI 类限定符*Hbaapi.mof*文件如下所示：
+*Hbaapi*文件定义的 WMI 类限定符如下所示：
 
-[事件\_类型\_限定符](event-types-qualifiers.md)
+[事件 \_ 类型 \_ 限定符](event-types-qualifiers.md)
 
-[HBA\_BIND\_TYPE](hba-bind-type.md)
+[HBA \_ 绑定 \_ 类型](hba-bind-type.md)
 
-[HBA\_状态](hba-status.md)
+[HBA \_ 状态](hba-status.md)
 
-此部分所述的限定符之一到 WMI 类定义，它表示任何组，可以分配该字段中的数据字段的应用时预先确定的限定符中的定义中指示的整数值*Hbaapi.mof*。 因此此处所述的每个 WMI 类限定符类似于一个枚举器，它表示一组整数值，但 WMI 工具套件不会在生成中的枚举器声明*Hbapiwmi.h*对应于中的限定符*Hbaapi.mof*，也不会生成一系列的限定符值相对应的符号常量定义。
+如果本部分中描述的某个限定符应用于 WMI 类定义中的数据字段，则表示该字段可分配给 *Hbaapi*中的限定符定义中指示的任何预设整数值集。 因此此处所述的每个 WMI 类限定符都类似于一个枚举器，因为它表示一组整数值，但 WMI 工具套件不会在 *Hbapiwmi* 中生成与 *Hbaapi*中的限定符相对应的枚举器声明，也不会生成与限定符值相对应的一组符号常量定义。
 
-但是，通过包括*Hbaapi.h*驱动程序或应用程序可以使用一系列以期提供易于记忆的名称与定义的 WMI 类限定符关联的每个值定义的符号常量在中*Hbaapi.mof*。
+但是，通过包含 *Hbaapi* ，你的驱动程序或应用程序可以使用一组符号常量，这些常量用视图定义，以便为与在 *Hbaapi*中定义的 WMI 类限定符关联的每个值提供易于记住的名称。
 
-有关 WMI 类限定符的一般讨论，请参阅[WMI 类限定符](https://docs.microsoft.com/windows-hardware/drivers/kernel/wmi-class-qualifiers)。
-
- 
+有关 WMI 类限定符的一般讨论，请参阅 [Wmi 类限定符](../kernel/wmi-class-qualifiers.md)。
 
  
-
-
-
-
 

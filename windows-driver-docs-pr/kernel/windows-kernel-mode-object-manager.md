@@ -4,12 +4,12 @@ description: Windows 内核模式对象管理器
 ms.assetid: f10561a3-d831-4c13-9edf-be40fb1db403
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 984df7a548b7f2838ac86364410a5ba8cd82ad5a
-ms.sourcegitcommit: f5222e608f2853003175244505d5daa3465ac6b3
+ms.openlocfilehash: 3db9cc5101f8090ebafd583bb8841e3a46effe39
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88615081"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89191653"
 ---
 # <a name="windows-kernel-mode-object-manager"></a>Windows 内核模式对象管理器
 
@@ -56,14 +56,9 @@ Windows 有25多种类型的对象。 下面是几种类型：
 
 有关 Windows 中的对象的详细信息，请参阅 [管理内核对象](managing-kernel-objects.md)。
 
-向对象管理器提供直接接口的例程通常以字母 "**Ob**" 作为前缀;例如， **ObGetObjectSecurity**。 有关对象管理器例程的列表，请参阅 [对象管理器例程](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff557759(v=vs.85))。
+向对象管理器提供直接接口的例程通常以字母 "**Ob**" 作为前缀;例如， **ObGetObjectSecurity**。 有关对象管理器例程的列表，请参阅 [对象管理器例程](/previous-versions/windows/hardware/drivers/ff557759(v=vs.85))。
 
 请注意，Windows 使用对象作为资源的抽象。 但是，Windows 并不是面向对象的，它采用的是传统的 c + + 含义。 Windows 是 *基于对象*的。 有关 Windows 的基于对象的方法的详细信息，请参阅 [基于对象](object-based.md)。
 
  
-
- 
-
-
-
 

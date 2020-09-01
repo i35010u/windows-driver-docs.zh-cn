@@ -1,6 +1,6 @@
 ---
-title: KSPROPERTY\_TVAUDIO\_当前\_可用的\_模式
-description: KSPROPERTY\_TVAUDIO\_当前\_可用的\_模式属性检索设备可用的电视音频模式。 必须实现此属性。
+title: KSPROPERTY \_ TVAUDIO \_ 当前 \_ 可用 \_ 模式
+description: "\"KSPROPERTY \\_ TVAUDIO \\_ 当前 \\_ 可用 \\_ 模式\" 属性检索设备可用的电视音频模式。 必须实现此属性。"
 ms.assetid: 9c98771a-7a41-469d-a441-da5c1ac5a697
 keywords:
 - KSPROPERTY_TVAUDIO_CURRENTLY_AVAILABLE_MODES 流媒体设备
@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 30d6bd4ecda077a30a9f08184f90713247394ce7
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 744b6589d7bea1bb9e673827bbba31838c61154c
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72837895"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89190391"
 ---
-# <a name="ksproperty_tvaudio_currently_available_modes"></a>KSPROPERTY\_TVAUDIO\_当前\_可用的\_模式
+# <a name="ksproperty_tvaudio_currently_available_modes"></a>KSPROPERTY \_ TVAUDIO \_ 当前 \_ 可用 \_ 模式
 
 
-KSPROPERTY\_TVAUDIO\_当前\_可用的\_模式属性检索设备可用的电视音频模式。 必须实现此属性。
+"KSPROPERTY \_ TVAUDIO \_ 当前 \_ 可用 \_ 模式" 属性检索设备可用的电视音频模式。 必须实现此属性。
 
 ## <span id="ddk_ksproperty_tvaudio_currently_available_modes_ks"></span><span id="DDK_KSPROPERTY_TVAUDIO_CURRENTLY_AVAILABLE_MODES_KS"></span>
 
@@ -41,7 +41,7 @@ KSPROPERTY\_TVAUDIO\_当前\_可用的\_模式属性检索设备可用的电视�
 </colgroup>
 <thead>
 <tr class="header">
-<th>“获取”</th>
+<th>获取</th>
 <th>设置</th>
 <th>目标</th>
 <th>属性描述符类型</th>
@@ -50,10 +50,10 @@ KSPROPERTY\_TVAUDIO\_当前\_可用的\_模式属性检索设备可用的电视�
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>“是”</p></td>
-<td><p>无</p></td>
-<td><p>大头针</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_tvaudio_s" data-raw-source="[&lt;strong&gt;KSPROPERTY_TVAUDIO_S&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_tvaudio_s)"><strong>KSPROPERTY_TVAUDIO_S</strong></a></p></td>
+<td><p>是</p></td>
+<td><p>否</p></td>
+<td><p>Pin</p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_tvaudio_s" data-raw-source="[&lt;strong&gt;KSPROPERTY_TVAUDIO_S&lt;/strong&gt;](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_tvaudio_s)"><strong>KSPROPERTY_TVAUDIO_S</strong></a></p></td>
 <td><p>ULONG</p></td>
 </tr>
 </tbody>
@@ -61,12 +61,12 @@ KSPROPERTY\_TVAUDIO\_当前\_可用的\_模式属性检索设备可用的电视�
 
  
 
-属性值（操作数据）是一个 ULONG，指定当前可用的电视音频模式，如立体声或 mono 音频和多语言设置。
+ (操作数据) 的属性值是一个 ULONG，它指定当前可用的电视音频模式，如立体声或 mono 音频和多语言设置。
 
 <a name="remarks"></a>备注
 -------
 
-KSPROPERTY\_TVAUDIO\_S 结构的**Mode**成员指定音频模式。 它包含 KS\_TVAUDIO\_模式的按位 Or\_\* 标志，用于指示请求信息时设备支持的模式。
+KSPROPERTY **Mode** \_ TVAUDIO S 结构的 Mode 成员 \_ 指定音频模式。 它包含 KS \_ TVAUDIO 模式标志的按位 \_ or \_ \* ，用于指示请求信息时设备支持的模式。
 
 <a name="requirements"></a>要求
 ------------
@@ -79,7 +79,7 @@ KSPROPERTY\_TVAUDIO\_S 结构的**Mode**成员指定音频模式。 它包含 KS
 <tbody>
 <tr class="odd">
 <td><p>标头</p></td>
-<td>Ksmedia （包括 Ksmedia）</td>
+<td>Ksmedia (包含 Ksmedia) </td>
 </tr>
 </tbody>
 </table>
@@ -87,16 +87,9 @@ KSPROPERTY\_TVAUDIO\_S 结构的**Mode**成员指定音频模式。 它包含 KS
 ## <a name="see-also"></a>另请参阅
 
 
-[**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)
+[**KSPROPERTY**](/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)
 
-[**KSPROPERTY\_TVAUDIO\_S**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_tvaudio_s)
-
- 
+[**KSPROPERTY \_ TVAUDIO \_ S**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_tvaudio_s)
 
  
-
-
-
-
-
 

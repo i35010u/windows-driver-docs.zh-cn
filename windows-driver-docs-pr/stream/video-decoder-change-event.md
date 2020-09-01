@@ -3,23 +3,23 @@ title: 视频解码器更改事件
 description: 视频解码器更改事件
 ms.assetid: 94269541-49e5-4273-874a-c6c2643ec2ae
 keywords:
-- 视频解码器更改事件 WDK 视频捕获
+- 视频解码器更改了事件 WDK 视频捕获
 - 解码器更改事件 WDK 视频捕获
 - 事件 WDK 视频捕获
 - EVENTSETID_VIDEODECODER
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ef2407a7e299d62d89b3520cc84ee6d5d34423f7
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: ddf79687b426a80218ecde86a784d54fcefed882
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67385373"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89190353"
 ---
 # <a name="video-decoder-change-event"></a>视频解码器更改事件
 
 
-[EVENTSETID\_VIDEODECODER](https://docs.microsoft.com/windows-hardware/drivers/stream/eventsetid-videodecoder)事件集中包含更改的视频解码器事件。 下表描述了属于 EVENTSETID 事件\_VIDEODECODER 事件集。
+[EVENTSETID \_ VIDEODECODER](./eventsetid-videodecoder.md)事件集包含视频解码器 changed 事件。 下表描述了属于 EVENTSETID \_ VIDEODECODER 事件集的事件。
 
 <table>
 <colgroup>
@@ -29,13 +29,13 @@ ms.locfileid: "67385373"
 <thead>
 <tr class="header">
 <th>EVENTSETID_VIDEODECODER KS 事件</th>
-<th>事件描述</th>
+<th>事件说明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/stream/ksevent-videodecoder-changed" data-raw-source="[&lt;strong&gt;KSEVENT_VIDEODECODER_CHANGED&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/stream/ksevent-videodecoder-changed)"><strong>KSEVENT_VIDEODECODER_CHANGED</strong></a></p></td>
-<td><p>信号的对 DirectShow 视频解码器已更改，例如，由于选择的 SVideo 输入从复合的输入端口的端口。</p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/stream/ksevent-videodecoder-changed" data-raw-source="[&lt;strong&gt;KSEVENT_VIDEODECODER_CHANGED&lt;/strong&gt;](./ksevent-videodecoder-changed.md)"><strong>KSEVENT_VIDEODECODER_CHANGED</strong></a></p></td>
+<td><p>向 DirectShow 发出信号，指示视频解码器已更改，例如，由于从复合输入端口选择了 SVideo 输入端口。</p></td>
 </tr>
 </tbody>
 </table>
@@ -43,9 +43,4 @@ ms.locfileid: "67385373"
  
 
  
-
- 
-
-
-
 

@@ -8,26 +8,26 @@ keywords:
 - 示例代码 WDK USB 视频类，扩展单元插件 DLL
 ms.date: 06/19/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 0429260e9268cbea78517c667b04404f6c2ba53a
-ms.sourcegitcommit: f29360d62eb77b6ee875ce66483d5bc72785eede
+ms.openlocfilehash: 09b5c95e724f566a621ee31a882587eab14e17a7
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/19/2020
-ms.locfileid: "85111240"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89191234"
 ---
 # <a name="sample-extension-unit-plug-in-dll"></a>示例扩展单元 DLL
 
 本主题包含用于在 KS 属性集的顶层公开 COM API 的扩展单元插件 DLL 的示例代码。
 
-此示例定义了一个名为**CExtension**的类，该类派生自**CNodeControl**。 稍后还提供了**CNodeControl**类的实现。 **CNodeControl**派生自 Microsoft 提供的**IKsNodeControl**接口，该接口是在*Vidcap*中定义的。
+此示例定义了一个名为 **CExtension**的类，该类派生自 **CNodeControl**。 稍后还提供了 **CNodeControl** 类的实现。 **CNodeControl** 派生自 Microsoft 提供的 **IKsNodeControl** 接口，该接口是在 *Vidcap*中定义的。
 
-*Vidcap.ax*使用**IKsNodeControl**来通知扩展节点 ID 的插件，并为其提供**IKsControl**的实例。 具体而言，该插件通过对 CExtension 的调用来接收此信息 **：:p \_ ：** **:p CExtension 和 \_ KsControl**。 可以在本主题的**CNodeControl**中找到这些方法的可能实现。
+*Vidcap.ax* 使用 **IKsNodeControl** 来通知扩展节点 ID 的插件，并为其提供 **IKsControl**的实例。 具体而言，该插件通过对 CExtension 的调用来接收此信息 **：:p \_ ：** **:p CExtension 和 \_ KsControl**。 可以在本主题的 **CNodeControl**中找到这些方法的可能实现。
 
-*Vidcap*通过2月 2005 [directx Sdk](https://docs.microsoft.com/previous-versions/dn629515(v=msdn.10))出现在夏季 2004 directx sdk 中。 安装这些包时，必须安装其他内容才能获取*Vidcap*。
+*Vidcap* 通过2月 2005 [directx Sdk](/previous-versions/dn629515(v=msdn.10))出现在夏季 2004 directx sdk 中。 安装这些包时，必须安装其他内容才能获取 *Vidcap*。
 
-在 Windows Vista 和更高版本中， *Vidcap*作为 Microsoft Windows SDK 的一部分包含。
+在 Windows Vista 和更高版本中， *Vidcap* 作为 Microsoft Windows SDK 的一部分包含。
 
-在类头文件中包含以下代码，任意命名为*Xuproxy*：
+在类头文件中包含以下代码，任意命名为 *Xuproxy*：
 
 ```cpp
 #include <ks.h>
@@ -103,9 +103,9 @@ DEFINE_GUIDSTRUCT("XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX", \
    DEFINE_GUIDNAMED(PROPSETID_VIDCAP_EXTENSION_UNIT)
 ```
 
-在**CNodeControl**中实现**IKsNodeControl**中的两个虚拟方法。 然后，这些方法由**CExtension**类的实例继承。
+在**CNodeControl**中实现**IKsNodeControl**中的两个虚拟方法。 然后，这些方法由 **CExtension** 类的实例继承。
 
-以下代码位于任意名为*Xuproxy*的源文件中：
+以下代码位于任意名为 *Xuproxy*的源文件中：
 
 ```cpp
 STDMETHODIMP

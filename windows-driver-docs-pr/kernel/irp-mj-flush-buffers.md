@@ -6,17 +6,17 @@ ms.assetid: c1023999-0c80-4c09-a9ea-a9422184bba7
 keywords:
 - IRP_MJ_FLUSH_BUFFERS 内核模式驱动程序体系结构
 ms.localizationpriority: medium
-ms.openlocfilehash: 4aaa0a47ad4cd013883d5d1b988f026791bac342
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: cdae24b6ae2efe5cb125c27e25886ddf9641180b
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72838606"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89191361"
 ---
-# <a name="irp_mj_flush_buffers"></a>IRP\_MJ\_刷新\_缓冲区
+# <a name="irp_mj_flush_buffers"></a>IRP \_ MJ \_ 刷新 \_ 缓冲区
 
 
-对于包含数据的内部缓存的设备的驱动程序，维护数据的内部缓冲区的驱动程序必须在[*DispatchFlushBuffers*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch)例程中处理此请求。
+对于包含数据的内部缓存的设备的驱动程序，维护数据的内部缓冲区的驱动程序必须在 [*DispatchFlushBuffers*](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch) 例程中处理此请求。
 
 <a name="when-sent"></a>发送时间
 ---------
@@ -49,7 +49,7 @@ ms.locfileid: "72838606"
 <tbody>
 <tr class="odd">
 <td><p>标头</p></td>
-<td>Wdm .h （包括 Wdm、Ntddk 或 Ntifs）</td>
+<td>Wdm.h（包括 Wdm.h、Ntddk.h 或 Ntifs.h）</td>
 </tr>
 </tbody>
 </table>
@@ -57,12 +57,7 @@ ms.locfileid: "72838606"
 ## <a name="see-also"></a>另请参阅
 
 
-[*DispatchFlushBuffers*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch)
+[*DispatchFlushBuffers*](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch)
 
  
-
- 
-
-
-
 

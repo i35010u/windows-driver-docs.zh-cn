@@ -7,20 +7,20 @@ keywords:
 - IoIs32bitProcess
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5cf5a4facc4fdce8c17abcf749f130b41796003c
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 593a0c93f0fd75cf5a4877c7e1dc5bbe24b66c69
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72838390"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89190435"
 ---
-# <a name="technique-2-using-iois32bitprocess"></a>方法2：使用 IoIs32bitProcess
+# <a name="technique-2-using-iois32bitprocess"></a>方法 2：使用 IoIs32bitProcess
 
 
 
 
 
-在不可行的情况下，若要为来自32位和64位应用程序的 i/o 请求定义单独的 IOCTL 或 FSCTL 控制代码，则该驱动程序会将其保留给驱动程序，以确定哪种类型的应用程序发送了 i/o 请求。 64位版本的 Microsoft Windows 引入了一个新的内核模式例程[**IoIs32bitProcess**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iois32bitprocess)，它检测当前 i/o 请求是否源自32位用户模式进程。 其原型为：
+在不可行的情况下，若要为来自32位和64位应用程序的 i/o 请求定义单独的 IOCTL 或 FSCTL 控制代码，则该驱动程序会将其保留给驱动程序，以确定哪种类型的应用程序发送了 i/o 请求。 64位版本的 Microsoft Windows 引入了一个新的内核模式例程 [**IoIs32bitProcess**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iois32bitprocess)，它检测当前 i/o 请求是否源自32位用户模式进程。 其原型为：
 
 ```cpp
 BOOLEAN
@@ -31,7 +31,7 @@ BOOLEAN
 
 如果当前 i/o 请求的发起方为32位用户模式应用程序，则**IoIs32bitProcess**返回**TRUE** 。
 
-下面的代码示例演示如何使用**IoIs32bitProcess**：
+下面的代码示例演示如何使用 **IoIs32bitProcess**：
 
 ```cpp
 typedef UINT32 POINTER_32 PVOID32;
@@ -101,9 +101,4 @@ else
 ```
 
  
-
- 
-
-
-
 

@@ -6,12 +6,12 @@ keywords:
 - 输出流 WDK DVD 解码器
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5c6a6545857cceb4b747d30b19fef5ab2d55a60d
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 60e1464df559a35005406527c6d7ea25bba35870
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72823507"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89190385"
 ---
 # <a name="output-streams"></a>输出流
 
@@ -28,8 +28,8 @@ ms.locfileid: "72823507"
 </colgroup>
 <thead>
 <tr class="header">
-<th>属性</th>
-<th>Value</th>
+<th>Attribute</th>
+<th>值</th>
 </tr>
 </thead>
 <tbody>
@@ -54,9 +54,9 @@ ms.locfileid: "72823507"
 
  
 
-内核模式接口提供对视频端口扩展（VPE）设置的控制。 有关详细信息，请参阅[VideoPort 扩展背景](https://docs.microsoft.com/windows-hardware/drivers/display/video-port-extensions-background)。
+内核模式接口可控制视频端口扩展 (VPE) 设置。 有关详细信息，请参阅 [VideoPort 扩展背景](../display/video-port-extensions-background.md)。
 
-下表描述了 Dvd 使用的隐藏式字幕（CC）输出流媒体类型：
+下表描述了 Dvd 使用的隐藏字幕 (CC) 输出流媒体类型：
 
 <table>
 <colgroup>
@@ -65,8 +65,8 @@ ms.locfileid: "72823507"
 </colgroup>
 <thead>
 <tr class="header">
-<th>属性</th>
-<th>Value</th>
+<th>Attribute</th>
+<th>值</th>
 </tr>
 </thead>
 <tbody>
@@ -91,12 +91,7 @@ ms.locfileid: "72823507"
 
  
 
-必须在[**KSDATAFORMAT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksdataformat)结构的**SampleSize**成员中指定帧大小200（十进制）。 有关详细信息，请参阅[隐藏式字幕流](closed-captioning-streams.md)。
+必须指定[**KSDATAFORMAT**](/windows-hardware/drivers/ddi/ks/ns-ks-ksdataformat)结构的**SampleSize**成员中的帧大小 200 (decimal) 。 有关详细信息，请参阅 [隐藏式字幕流](closed-captioning-streams.md)。
 
  
-
- 
-
-
-
 

@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 320e85ab2c00c69c34b5ebc6458173c1ed8c4606
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 20728630cde512e7bb2499ca886a9750c465a291
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72842705"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89191120"
 ---
 # <a name="removeport-function"></a>RemovePort 函数
 
@@ -43,7 +43,7 @@ void RemovePort(
 一个全球名称，用于指示应从端口列表中删除的端口，这些端口的事件报告给 WMI 客户端。
 
 *HBAStatus*   
-返回时，包含操作的状态。 有关允许值及其说明的列表，请参阅[HBA\_状态](hba-status.md)。 微型端口驱动程序在[**RemovePort\_OUT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_removeport_out)结构的**HBAStatus**成员中返回此信息。
+返回时，包含操作的状态。 有关允许值及其说明的列表，请参阅 [HBA \_ 状态](hba-status.md)。 微型端口驱动程序在[**RemovePort \_ OUT**](/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_removeport_out)结构的**HBAStatus**成员中返回此信息。
 
 <a name="return-value"></a>返回值
 ------------
@@ -53,7 +53,7 @@ void RemovePort(
 <a name="remarks"></a>备注
 -------
 
-此 WMI 方法属于[MSFC\_EVENTCONTROL WMI 类](msfc-eventcontrol-wmi-class.md)。
+此 WMI 方法属于 [MSFC \_ EventControl WMI 类](msfc-eventcontrol-wmi-class.md)。
 
 <a name="requirements"></a>要求
 ------------
@@ -66,11 +66,11 @@ void RemovePort(
 <tbody>
 <tr class="odd">
 <td align="left"><p>目标平台</p></td>
-<td align="left">桌面设备</td>
+<td align="left">“桌面”</td>
 </tr>
 <tr class="even">
 <td align="left"><p>标头</p></td>
-<td align="left">Hbapiwmi （包括 Hbapiwmi、Hbaapi 或 Hbaapi）。</td>
+<td align="left"> (包含 Hbapiwmi、Hbaapi 或 Hbaapi 的 Hbapiwmi) </td>
 </tr>
 </tbody>
 </table>
@@ -78,16 +78,9 @@ void RemovePort(
 ## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
-[**RemovePort\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_removeport_in)
+[**RemovePort \_**](/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_removeport_in)
 
-[**RemovePort\_OUT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_removeport_out)
-
- 
+[**RemovePort \_**](/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_removeport_out)
 
  
-
-
-
-
-
 

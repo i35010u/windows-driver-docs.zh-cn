@@ -3,17 +3,17 @@ title: 支持具有不完整配置寄存器的电脑卡
 description: 支持具有不完整配置寄存器的电脑卡
 ms.assetid: 62bdb1e7-ca45-42e6-bdf5-c48fb3ddb3fc
 keywords:
-- 不完整的配置将 WDK 多功能设备注册
-- 系统提供多功能总线驱动程序 WDK
+- 不完整的配置注册 WDK 多功能设备
+- 系统提供的多功能总线驱动程序 WDK
 - mf.sys
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b31395f4e87edbe4336d52128dd93bea3086e1ff
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 130d76a9cd80fc75337e99a2a9efc3031e0477b8
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386377"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89190949"
 ---
 # <a name="supporting-pc-cards-that-have-incomplete-configuration-registers"></a>支持具有不完整配置寄存器的电脑卡
 
@@ -21,55 +21,55 @@ ms.locfileid: "67386377"
 
 
 
-如果多功能的 16 位 PC 卡设备不具有配置为每个函数的寄存器，此类设备的供应商可以使用系统提供多功能总线驱动程序 (mf.sys)，但必须提供各个函数的自定义的 INF 文件和支持。
+如果多功能16位 PC 卡设备没有适用于每个功能的配置寄存器，此类设备的供应商可以使用系统提供的多功能总线驱动程序 ( # A0) ，但必须提供自定义 INF 文件并支持单个功能。
 
-在基于 NT 的平台上的此类设备的供应商可以使用系统提供的以下组件：
+此类设备在基于 NT 的平台上的供应商可以使用以下系统提供的组件：
 
--   多功能设备的函数驱动程序。 （系统提供）
+-   多功能设备的函数驱动程序。  (系统提供的) 
 
-    自定义设备 INF 必须指定 mf.sys 作为设备的功能驱动程序。 然后，系统提供 mf.sys 驱动程序将枚举设备的功能。
+    设备的自定义 INF 必须指定 mf.sys 作为设备的函数驱动程序。 系统提供的 mf.sys 驱动程序将枚举设备的功能。
 
-    请参阅[使用 System-Supplied 多功能总线驱动程序](using-the-system-supplied-multifunction-bus-driver.md)有关使用系统提供 mf.sys 驱动程序详细信息。
+    有关使用系统提供的 mf.sys 驱动程序的详细信息，请参阅 [使用系统提供的多功能总线驱动程序](using-the-system-supplied-multifunction-bus-driver.md) 。
 
-此类设备的供应商必须提供以下信息：
+此类设备的供应商必须提供以下各项：
 
--   多功能设备的自定义 INF 文件。 （供应商提供）
+-   多功能设备的自定义 INF 文件。  (供应商提供的) 
 
-    供应商必须提供一个多功能的 INF 文件作为多功能总线驱动程序指定 mf.sys，指定的类"多功能"（使用其关联的 GUID 作为在定义 devguid.h)，并提供缺少的配置注册信息。 查看更多更高版本在本部分中的信息。
+    供应商必须提供将 mf.sys 指定为多功能总线驱动程序的多功能 INF 文件，指定类 "多功能" (及其关联 GUID （如 devguid) 中所定义），并提供缺少的配置寄存器信息。 请参阅本节后面部分的详细信息。
 
--   每个函数的设备的即插即用功能驱动程序。 （供应商提供）
+-   设备的每个功能的 PnP 函数驱动程序。  (供应商提供的) 
 
-    由于多功能总线驱动程序处理的多功能语义，功能的驱动程序可以是函数打包为单个设备时使用了相同驱动程序。
+    由于多功能总线驱动程序处理多功能语义，因此函数驱动程序可以是将函数打包为单个设备时使用的相同驱动程序。
 
--   用于设备的每个函数的 INF 文件。 （供应商提供）
+-   设备的每个功能的 INF 文件。  (供应商提供的) 
 
-    INF 文件可以是函数打包为单个设备时，将使用的相同文件。 INF 文件不需要任何特殊的多功能语义。
+    INF 文件可以是在将函数打包为单个设备时使用的相同文件。 INF 文件不需要任何特殊的多功能语义。
 
-在此类设备供应商提供的自定义 INF 必须指定：
+供应商提供的此类设备的自定义 INF 必须指定：
 
--   mf.sys 作为设备的服务。
+-   作为设备的服务 mf.sys。
 
-    请参阅[使用 System-Supplied 多功能总线驱动程序](using-the-system-supplied-multifunction-bus-driver.md)有关详细信息。
+    有关详细信息，请参阅 [使用系统提供的多功能总线驱动程序](using-the-system-supplied-multifunction-bus-driver.md) 。
 
 -   多功能设备的资源要求。
 
-    指定在资源需求[ **INF DDInstall.LogConfigOverride 部分**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-ddinstall-logconfigoverride-section)。
+    指定 [**INF DDInstall. LogConfigOverride 部分**](../install/inf-ddinstall-logconfigoverride-section.md)中的资源要求。
 
--   设备的每个函数的硬件 ID。
+-   设备的每个功能的硬件 ID。
 
-    指定在硬件 Id [ **INF DDInstall.HW 部分**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-ddinstall-hw-section)。
+    在 [**INF DDInstall 部分**](../install/inf-ddinstall-hw-section.md)中指定硬件 id。
 
--   资源的设备，用于标识每个子函数所需的父资源的每个函数映射。
+-   设备的每个函数的资源映射，标识每个子函数所需的父资源。
 
-    指定资源映射中 INF *DDInstall*。**HW**部分。 请参阅[创建资源将映射为多功能设备](creating-resource-maps-for-a-multifunction-device.md)有关创建资源的详细信息将映射。
+    在 INF *DDInstall*中指定资源映射。**HW** 部分。 有关创建资源映射的详细信息，请参阅 [创建多功能设备的资源图](creating-resource-maps-for-a-multifunction-device.md) 。
 
-INF 必须重新提出所指定的设备，因为 INF 中存在替代配置时，如果 PnP 管理器不使用该设备从任何设备资源要求的所有资源要求。
+INF 必须重述设备指定的所有资源要求，因为如果 INF 中存在替代配置，则 PnP 管理器不会使用设备提供的任何设备资源要求。
 
-对于此类设备，配置选项注册可以通过编程使用**PcCardConfig**类似编程单函数设备条目。 **PcCardConfig**条目包含适用于整个设备的信息。 **PcCardConfig**中记录条目[ **INF LogConfig 指令**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-logconfig-directive)。
+对于这种设备，可以使用 **PcCardConfig** 条目来编程配置选项 register，类似于对单功能设备进行编程。 **PcCardConfig**项包含适用于整个设备的信息。 **PcCardConfig**条目记录在[**INF LogConfig 指令**](../install/inf-logconfig-directive.md)中。
 
-指定时**PcCardConfig**多功能设备的格式项*ConfigIndex*为单函数设备定义的相同。 配置注册单函数 PC 卡包含一组资源在该设备的属性中定义的索引。 此指令还可以用于使用基于索引的格式的配置选项注册某些多功能设备。
+为多功能设备指定 **PcCardConfig** 条目时， *ConfigIndex* 的格式与为单功能设备定义的格式相同。 单功能 PC 卡的配置注册包含对该设备的属性中定义的一组资源的索引。 此指令还可用于使用配置选项注册的基于索引格式的某些设备设备。
 
-下面的示例显示了用于安装多功能设备作为其总线驱动程序使用 mf.sys 并具有不完整的配置寄存器的 INF 文件。
+下面的示例演示了一个 INF 文件，用于安装使用 mf.sys 作为其总线驱动程序的多功能设备，并且具有不完整的配置寄存器。
 
 ```cpp
 ; MFSupra.inf
@@ -151,12 +151,4 @@ M_Supra = "Supra"
 Supra1 = "Supra Dual 56K modem"
 ```
 
-INF，如以上副本 ID 和资源信息对注册表的子函数所示。 当枚举设备的子函数时，mf.sys 驱动程序从注册表检索的信息。
-
-
-
-
-
-
-
-
+类似于上面所示的 INF 将子函数的 ID 和资源信息复制到注册表。 mf.sys 驱动程序在枚举设备的子函数时，从注册表中检索信息。

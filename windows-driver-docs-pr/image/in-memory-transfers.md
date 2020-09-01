@@ -4,12 +4,12 @@ description: 内存中传输
 ms.assetid: 90238354-e47c-41c7-bb6b-6337f39f63f0
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 92daf150e4ad8698181938978c09d2917d3f2337
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: f3edf92feb3ae9aaee2b06b6793d66e54216e6eb
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67373527"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89190093"
 ---
 # <a name="in-memory-transfers"></a>内存中传输
 
@@ -17,22 +17,17 @@ ms.locfileid: "67373527"
 
 
 
-**请注意**  内存中传输适用于 Windows Vista 之前的操作系统。
+**注意**   内存中传输适用于 Windows Vista 之前的操作系统。
 
  
 
-*内存中数据传输*是图像 WIA 微型驱动程序中的数据处理到 WIA 服务已分配的内存缓冲区的传输。 始终启动数据传输的 WIA 应用程序确定的数据传输缓冲区的大小。 此数据传输缓冲区的大小不能为微型驱动程序定义中的值小于[ **WIA\_IPA\_缓冲区\_大小**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ipa-buffer-size)属性。
+*内存中数据传输*是指将数据从 wia 微型驱动程序传输到 wia 服务分配的内存缓冲区。 启动数据传输的 WIA 应用程序始终决定数据传输缓冲区的大小。 此数据传输缓冲区的大小不能小于微型驱动程序在 " [**WIA \_ IPA \_ buffer \_ size**](./wia-ipa-buffer-size.md) " 属性中定义的值。
 
-WIA 应用程序确定缓冲区大小后，它将请求 WIA 服务以开始数据传输。 WIA 服务然后会分配的内存缓冲区的请求的大小 （根据前面段落所述的约束） 和请求 WIA 微型驱动程序开始数据传输，并将数据放到所提供的缓冲区。 WIA 微型驱动程序的数据填充缓冲区，并将其返回到 WIA 服务，然后将数据返回到发出请求的 WIA 应用程序。 重复此过程，直到没有更多的数据传输。
+WIA 应用程序确定缓冲区大小后，会请求 WIA 服务开始数据传输。 然后，WIA 服务根据前面所述段落) 的约束分配所请求 (大小的内存缓冲区，并请求 WIA 微型驱动程序开始数据传输并将数据放置到提供的缓冲区中。 WIA 微型驱动程序用数据填充缓冲区，并将其返回给 WIA 服务，后者随后将数据返回到请求的 WIA 应用程序。 此过程将重复进行，直到没有更多的数据要传输。
 
-下图说明了映像的内存传输。
+下图演示了图像的内存传输。
 
-![说明图像内存传输的关系图](images/wia-imagedatamem.png)
-
- 
+![说明映像内存传输的示意图](images/wia-imagedatamem.png)
 
  
-
-
-
 

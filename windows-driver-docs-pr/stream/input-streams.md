@@ -13,12 +13,12 @@ keywords:
 - MPEG2 视频输入流 WDK DVD 解码器
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 427db085c4e0884aca43c14def259b757ad07e94
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 0b8c6eab2e29b2bac36b4a58dd127eb6971d298e
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72845568"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89189755"
 ---
 # <a name="input-streams"></a>输入流
 
@@ -26,9 +26,9 @@ ms.locfileid: "72845568"
 
 
 
-DVD 输入流作为加密 DVD 包的数组提供给微型驱动程序。 包是在 DVD 规范中定义的。 请注意，PACK 的 "系统时钟引用（SCR）" 字段设置为零，因为 Microsoft 的 DVD 体系结构使用 "主时钟" 模式进行音频和视频同步。 通常，DVD 解码器微型驱动程序的音频流提供主时钟。 有关详细信息，请参阅[主时钟](master-clock.md)。
+DVD 输入流作为加密 DVD 包的数组提供给微型驱动程序。 包是在 DVD 规范中定义的。 请注意，PACK 的系统时钟引用 (SCR) 字段设置为零，因为 Microsoft 的 DVD 体系结构使用 "主时钟" 模式进行音频和视频同步。 通常，DVD 解码器微型驱动程序的音频流提供主时钟。 有关详细信息，请参阅 [主时钟](master-clock.md)。
 
-DVD 数据流通过[**SRB\_写入\_数据**](https://docs.microsoft.com/windows-hardware/drivers/stream/srb-write-data)请求发送到微型驱动程序。 有关 SRB 请求的详细信息，请参阅[处理流请求块](handling-stream-request-blocks.md)和[Stream 类 SRB 引用](https://docs.microsoft.com/windows-hardware/drivers/stream/stream-class-srb-reference)。 硬件应支持散播/聚集 DMA，因为多个 DVD 包可能存在于单个请求数据包中。
+DVD 数据流通过 [**SRB \_ 写入 \_ 数据**](./srb-write-data.md) 请求发送到微型驱动程序。 有关 SRB 请求的详细信息，请参阅 [处理流请求块](handling-stream-request-blocks.md) 和 [Stream 类 SRB 引用](./stream-class-srb-reference.md)。 硬件应支持散播/聚集 DMA，因为多个 DVD 包可能存在于单个请求数据包中。
 
 下表描述了 DVD 电影使用的 MPEG2 视频输入流媒体类型：
 
@@ -39,8 +39,8 @@ DVD 数据流通过[**SRB\_写入\_数据**](https://docs.microsoft.com/windows-
 </colgroup>
 <thead>
 <tr class="header">
-<th>属性</th>
-<th>Value</th>
+<th>Attribute</th>
+<th>值</th>
 </tr>
 </thead>
 <tbody>
@@ -62,7 +62,7 @@ DVD 数据流通过[**SRB\_写入\_数据**](https://docs.microsoft.com/windows-
 <div>
  
 </div>
-（VIDEOINFO2 结构的超集。 还指示 MPEG 配置文件和级别。）</td>
+VIDEOINFO2 结构的 (超集。 还指示 MPEG 配置文件和级别。 ) </td>
 </tr>
 </tbody>
 </table>
@@ -78,8 +78,8 @@ DVD 数据流通过[**SRB\_写入\_数据**](https://docs.microsoft.com/windows-
 </colgroup>
 <thead>
 <tr class="header">
-<th>属性</th>
-<th>Value</th>
+<th>Attribute</th>
+<th>值</th>
 </tr>
 </thead>
 <tbody>
@@ -94,7 +94,7 @@ DVD 数据流通过[**SRB\_写入\_数据**](https://docs.microsoft.com/windows-
 <tr class="odd">
 <td><p>格式块说明符 GUID</p></td>
 <td><p>KSDATAFORMAT_SPECIFIER_WAVEFORMATEX</p>
-<p>（请注意，这应该会改变。）</p></td>
+<p> (请注意，此行为应发生变化。 ) </p></td>
 </tr>
 <tr class="even">
 <td><p>格式块结构</p></td>
@@ -103,7 +103,7 @@ DVD 数据流通过[**SRB\_写入\_数据**](https://docs.microsoft.com/windows-
  
 </div>
 WaveFormatEx 的超集
-<p>（超过两个通道。 下组合描述符。）</p></td>
+<p> (两个以上的通道。 下组合描述符。 ) </p></td>
 </tr>
 </tbody>
 </table>
@@ -119,8 +119,8 @@ WaveFormatEx 的超集
 </colgroup>
 <thead>
 <tr class="header">
-<th>属性</th>
-<th>Value</th>
+<th>Attribute</th>
+<th>值</th>
 </tr>
 </thead>
 <tbody>
@@ -154,8 +154,8 @@ WaveFormatEx 的超集
 </colgroup>
 <thead>
 <tr class="header">
-<th>属性</th>
-<th>Value</th>
+<th>Attribute</th>
+<th>值</th>
 </tr>
 </thead>
 <tbody>
@@ -170,7 +170,7 @@ WaveFormatEx 的超集
 <tr class="odd">
 <td><p>格式块说明符 GUID</p></td>
 <td><p>KSDATAFORMAT_SPECIFIER_WAVEFORMATEX</p>
-<p>（请注意，这应该会改变。）</p></td>
+<p> (请注意，此行为应发生变化。 ) </p></td>
 </tr>
 <tr class="even">
 <td><p>格式块结构</p></td>
@@ -179,7 +179,7 @@ WaveFormatEx 的超集
  
 </div>
 WaveFormatEx 的超集
-<p>（超过两个通道。 下组合描述符。）</p></td>
+<p> (两个以上的通道。 下组合描述符。 ) </p></td>
 </tr>
 </tbody>
 </table>
@@ -195,8 +195,8 @@ WaveFormatEx 的超集
 </colgroup>
 <thead>
 <tr class="header">
-<th>属性</th>
-<th>Value</th>
+<th>Attribute</th>
+<th>值</th>
 </tr>
 </thead>
 <tbody>
@@ -211,7 +211,7 @@ WaveFormatEx 的超集
 <tr class="odd">
 <td><p>格式块说明符 GUID</p></td>
 <td><p>KSDATAFORMAT_SPECIFIER_WAVEFORMATEX</p>
-<p>（请注意，这应该会改变。）</p></td>
+<p> (请注意，此行为应发生变化。 ) </p></td>
 </tr>
 <tr class="even">
 <td><p>格式块结构</p></td>
@@ -220,7 +220,7 @@ WaveFormatEx 的超集
  
 </div>
 WaveFormatEx 的超集
-<p>（超过两个通道。 下组合描述符。）</p></td>
+<p> (两个以上的通道。 下组合描述符。 ) </p></td>
 </tr>
 </tbody>
 </table>
@@ -236,8 +236,8 @@ WaveFormatEx 的超集
 </colgroup>
 <thead>
 <tr class="header">
-<th>属性</th>
-<th>Value</th>
+<th>Attribute</th>
+<th>值</th>
 </tr>
 </thead>
 <tbody>
@@ -266,16 +266,11 @@ WaveFormatEx 的超集
 
 Microsoft 提供的 DVD 导航器筛选器分析所有按钮和键盘信息，并且在任何给定时间只将一个突出显示的矩形向下传递到子画面解码器。 因此，将突出显示信息发送到解码器的频率比 DVD 流中显示的信息更多。 这不同于 DVD 规范。
 
-DVD 导航器/拆分器筛选器处理所有击键信息，并在每次按钮状态发生更改时发送新的突出显示信息。 信息一次仅描述一个按钮的一种模式。 它包括屏幕像素坐标中的显示矩形或子画面（如果存在）的显示。 [**KSPROPERTY\_SPHLI**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-_ksproperty_sphli)结构还包含颜色和对比度信息，但仅适用于当前所选按钮的当前状态。 格式是在 DVD 规范中定义的。
+DVD 导航器/拆分器筛选器处理所有击键信息，并在每次按钮状态发生更改时发送新的突出显示信息。 信息一次仅描述一个按钮的一种模式。 它包括屏幕像素坐标中的显示矩形或子画面（如果存在）的显示。 [**KSPROPERTY \_ SPHLI**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-_ksproperty_sphli)结构还包含颜色和对比度信息，但仅适用于当前所选按钮的当前状态。 格式是在 DVD 规范中定义的。
 
 突出显示信息以异步方式到达数据流。 DVD 解码器微型驱动程序必须使用突出显示开始和结束时间戳将突出显示信息关联到相关的子画面信息（如果有）。 如果 DVD 解码器微型驱动程序尚未收到请求的时间戳的任何子画面流信息，则解码器会假设突出显示信息是独立的，不适用于子画面。 在这种情况下，可以假设颜色和对比度信息的颜色完全相同。
 
-突出显示的信息包含开始和结束时间戳。 它们的单位与其他时间戳的单位相同，但有两个例外：0xFFFFFFFF 的开始时间戳表示突出显示属性在收到回执时有效，而在下一个高光之前，则为0xFFFFFFFF 的结束时间戳。收发.
+突出显示的信息包含开始和结束时间戳。 它们的单位与其他时间戳的单位相同，但有两个例外：0xFFFFFFFF 的开始时间戳表示突出显示属性在接收时有效，而在收到下一个突出显示之前，0xFFFFFFFF 的结束时间戳表示高光属性有效。
 
  
-
- 
-
-
-
 

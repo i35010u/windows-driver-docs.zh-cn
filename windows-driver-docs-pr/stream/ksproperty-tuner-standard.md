@@ -1,6 +1,6 @@
 ---
-title: KSPROPERTY\_调谐器\_标准
-description: KSPROPERTY\_调谐器\_标准属性检索当前的模拟视频标准。 必须实现此属性。
+title: KSPROPERTY \_ 调谐器 \_ 标准版
+description: KSPROPERTY \_ 调谐器 \_ 标准属性检索当前的模拟视频标准。 必须实现此属性。
 ms.assetid: b20dd01c-bd6b-4908-a3c4-eb2914eb54d0
 keywords:
 - KSPROPERTY_TUNER_STANDARD 流媒体设备
@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 78f1b26e286856f17d68145e0920b2eb371b8d86
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 7aa0fabb2a253c02c819062ff186d629abe66653
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72837900"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89191265"
 ---
-# <a name="ksproperty_tuner_standard"></a>KSPROPERTY\_调谐器\_标准
+# <a name="ksproperty_tuner_standard"></a>KSPROPERTY \_ 调谐器 \_ 标准版
 
 
-KSPROPERTY\_调谐器\_标准属性检索当前的模拟视频标准。 必须实现此属性。
+KSPROPERTY \_ 调谐器 \_ 标准属性检索当前的模拟视频标准。 必须实现此属性。
 
 ## <span id="ddk_ksproperty_tuner_standard_ks"></span><span id="DDK_KSPROPERTY_TUNER_STANDARD_KS"></span>
 
@@ -41,7 +41,7 @@ KSPROPERTY\_调谐器\_标准属性检索当前的模拟视频标准。 必须�
 </colgroup>
 <thead>
 <tr class="header">
-<th>“获取”</th>
+<th>获取</th>
 <th>设置</th>
 <th>目标</th>
 <th>属性描述符类型</th>
@@ -50,10 +50,10 @@ KSPROPERTY\_调谐器\_标准属性检索当前的模拟视频标准。 必须�
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>“是”</p></td>
-<td><p>无</p></td>
-<td><p>大头针</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_tuner_standard_s" data-raw-source="[&lt;strong&gt;KSPROPERTY_TUNER_STANDARD_S&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_tuner_standard_s)"><strong>KSPROPERTY_TUNER_STANDARD_S</strong></a></p></td>
+<td><p>是</p></td>
+<td><p>否</p></td>
+<td><p>Pin</p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_tuner_standard_s" data-raw-source="[&lt;strong&gt;KSPROPERTY_TUNER_STANDARD_S&lt;/strong&gt;](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_tuner_standard_s)"><strong>KSPROPERTY_TUNER_STANDARD_S</strong></a></p></td>
 <td><p>ULONG</p></td>
 </tr>
 </tbody>
@@ -61,16 +61,16 @@ KSPROPERTY\_调谐器\_标准属性检索当前的模拟视频标准。 必须�
 
  
 
-属性值（操作数据）是一个 ULONG，指定调谐器的优化标准。
+ (操作数据) 的属性值是一个 ULONG，用于指定调谐器的优化标准。
 
 <a name="remarks"></a>备注
 -------
 
-KSPROPERTY\_调谐器\_标准\_S 结构的**标准**成员指定了当前的模拟视频标准。
+KSPROPERTY 调谐器标准版结构的 **标准** 成员 \_ \_ \_ 指定当前的模拟视频标准。
 
-仅当当前模式\_调谐器\_模式\_TV 时，才使用此属性。
+仅当当前模式为 KSPROPERTY 调谐器模式时，才使用此属性 \_ \_ \_ 。
 
-可以按照多种不同的模拟电视标准（例如 NTSC、PAL 或 SECAM）来广播模拟电视信号。 客户端使用 KSPROPERTY\_调谐器\_模式\_CAP 属性来查询支持的标准，并使用 KSPROPERTY\_调谐器\_STANDARD 获取或设置电视调谐器设备的当前标准。
+可以按照多种不同的模拟电视标准（例如 NTSC、PAL 或 SECAM）来广播模拟电视信号。 客户端使用 KSPROPERTY \_ 调谐器 \_ MODE \_ cap 属性来查询支持的标准，并使用 KSPROPERTY \_ 调谐器 \_ 标准获取或设置电视调谐器设备的当前标准。
 
 <a name="requirements"></a>要求
 ------------
@@ -83,7 +83,7 @@ KSPROPERTY\_调谐器\_标准\_S 结构的**标准**成员指定了当前的模�
 <tbody>
 <tr class="odd">
 <td><p>标头</p></td>
-<td>Ksmedia （包括 Ksmedia）</td>
+<td>Ksmedia (包含 Ksmedia) </td>
 </tr>
 </tbody>
 </table>
@@ -91,18 +91,11 @@ KSPROPERTY\_调谐器\_标准\_S 结构的**标准**成员指定了当前的模�
 ## <a name="see-also"></a>另请参阅
 
 
-[**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)
+[**KSPROPERTY**](/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)
 
-[**KSPROPERTY\_调谐器\_标准\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_tuner_standard_s)
+[**KSPROPERTY \_ 调谐器 \_ 标准版 \_ S**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_tuner_standard_s)
 
-[**KSPROPERTY\_调谐器\_模式**](ksproperty-tuner-mode.md)
-
- 
+[**KSPROPERTY \_ 调谐器 \_ 模式**](ksproperty-tuner-mode.md)
 
  
-
-
-
-
-
 

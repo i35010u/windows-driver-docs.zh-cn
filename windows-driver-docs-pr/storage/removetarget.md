@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: ebab0c1eaae0936aaff6b04db55726cfd5976eb0
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: be599129c6ec12e94f33e8910e351b21e421e0c2
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72842701"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89191132"
 ---
 # <a name="removetarget-function"></a>RemoveTarget 函数
 
@@ -42,16 +42,16 @@ void RemoveTarget(
 ----------
 
 *HbaPortWWN*   
-一个64位世界名称（WWN），唯一标识应该从其事件报告给 WMI 客户端的端口列表中删除的本地端口。 有关全球名称的讨论，请参阅 T11 委员会*光纤通道 HBA API*规范。
+64位全球名称 (WWN) ，用于唯一标识应该从其事件报告给 WMI 客户端的端口列表中删除的本地端口。 有关全球名称的讨论，请参阅 T11 委员会 *光纤通道 HBA API* 规范。
 
 *DiscoveredPortWWN*   
 一个 WWN，指示远程发现的端口，应从其事件报告给 WMI 客户端的端口列表中删除该端口。
 
 *AllTargets*   
-要停止报告的事件。 如果此成员为零，则 WMI 提供程序客户端将停止报告与*DiscoveredPortWWN*指示的端口关联的事件。 如果此成员不为零，则 WMI 提供程序将停止报告所有关联的事件。
+要停止报告的事件。 如果此成员为零，则 WMI 提供程序客户端将停止报告与 *DiscoveredPortWWN*指示的端口关联的事件。 如果此成员不为零，则 WMI 提供程序将停止报告所有关联的事件。
 
 *HBAStatus*   
-返回时，包含操作的状态。 有关允许值及其说明的列表，请参阅[HBA\_状态](hba-status.md)。 微型端口驱动程序在[**RemoveTarget\_OUT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_removetarget_out)结构的**HBAStatus**成员中返回此信息。
+返回时，包含操作的状态。 有关允许值及其说明的列表，请参阅 [HBA \_ 状态](hba-status.md)。 微型端口驱动程序在[**RemoveTarget \_ OUT**](/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_removetarget_out)结构的**HBAStatus**成员中返回此信息。
 
 <a name="return-value"></a>返回值
 ------------
@@ -61,7 +61,7 @@ void RemoveTarget(
 <a name="remarks"></a>备注
 -------
 
-此 WMI 方法属于[MSFC\_EVENTCONTROL WMI 类](msfc-eventcontrol-wmi-class.md)。
+此 WMI 方法属于 [MSFC \_ EventControl WMI 类](msfc-eventcontrol-wmi-class.md)。
 
 <a name="requirements"></a>要求
 ------------
@@ -74,11 +74,11 @@ void RemoveTarget(
 <tbody>
 <tr class="odd">
 <td align="left"><p>目标平台</p></td>
-<td align="left">桌面设备</td>
+<td align="left">“桌面”</td>
 </tr>
 <tr class="even">
 <td align="left"><p>标头</p></td>
-<td align="left">Hbapiwmi （包括 Hbapiwmi、Hbaapi 或 Hbaapi）。</td>
+<td align="left"> (包含 Hbapiwmi、Hbaapi 或 Hbaapi 的 Hbapiwmi) </td>
 </tr>
 </tbody>
 </table>
@@ -86,16 +86,9 @@ void RemoveTarget(
 ## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
-[**RemoveTarget\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_removetarget_in)
+[**RemoveTarget \_**](/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_removetarget_in)
 
-[**RemoveTarget\_OUT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_removetarget_out)
-
- 
+[**RemoveTarget \_**](/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_removetarget_out)
 
  
-
-
-
-
-
 

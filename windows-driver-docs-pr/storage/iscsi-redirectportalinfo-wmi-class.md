@@ -1,20 +1,20 @@
 ---
-title: ISCSI\_RedirectPortalInfo WMI 类
-description: ISCSI\_RedirectPortalInfo WMI 类
+title: ISCSI \_ REDIRECTPORTALINFO WMI 类
+description: ISCSI \_ REDIRECTPORTALINFO WMI 类
 ms.assetid: 55730446-7c8b-4c9d-9473-f9bb6edd603e
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 143aaec79e33f9687bf14db4ce07c2c65fd328ea
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: a34603e6ed0254f1ecae7eca35d09c83edeb67d7
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72845381"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89190633"
 ---
-# <a name="iscsi_redirectportalinfo-wmi-class"></a>ISCSI\_RedirectPortalInfo WMI 类
+# <a name="iscsi_redirectportalinfo-wmi-class"></a>ISCSI \_ REDIRECTPORTALINFO WMI 类
 
 
-ISCSI\_RedirectPortalInfo WMI 类包含有关 iSCSI 门户集合的信息。 此类在*管理 mof*中定义为：
+ISCSI \_ REDIRECTPORTALINFO WMI 类包含有关 ISCSI 门户集合的信息。 此类在 *管理 mof*中定义为：
 
 ```cpp
 class ISCSI_RedirectPortalInfo
@@ -57,13 +57,7 @@ class ISCSI_RedirectPortalInfo
 };
 ```
 
-当 WMI 工具套件编译上述类定义时，它将生成[**ISCSI\_RedirectPortalInfo**](https://docs.microsoft.com/windows-hardware/drivers/ddi/iscsimgt/ns-iscsimgt-_iscsi_redirectportalinfo)数据结构。
+当 WMI 工具套件编译上述类定义时，它将生成 [**ISCSI \_ RedirectPortalInfo**](/windows-hardware/drivers/ddi/iscsimgt/ns-iscsimgt-_iscsi_redirectportalinfo) 数据结构。
 
  
-
- 
-
-
-
-
 

@@ -1,6 +1,6 @@
 ---
-title: KSPROPERTY\_BDA\_CA\_设置\_程序\_PID
-description: 客户端使用 KSPROPERTY\_BDA\_CA\_将\_程序\_PID 设置为在特定程序中设置数据包标识符的列表。
+title: KSPROPERTY \_ BDA \_ CA \_ SET \_ PROGRAM \_ PID
+description: 客户端使用 KSPROPERTY \_ BDA \_ CA \_ set \_ PROGRAM \_ pid 在特定程序中设置数据包标识符的列表。
 ms.assetid: 5cc049f7-df97-4739-8ec4-22ab646781a6
 keywords:
 - KSPROPERTY_BDA_CA_SET_PROGRAM_PIDS 流媒体设备
@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: dd6131bbc58139e9c0866d91d1ef032469938202
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: ee49a6260e59a93da18e1cec5db8bcd16035f6e2
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72842156"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89191785"
 ---
-# <a name="ksproperty_bda_ca_set_program_pids"></a>KSPROPERTY\_BDA\_CA\_设置\_程序\_PID
+# <a name="ksproperty_bda_ca_set_program_pids"></a>KSPROPERTY \_ BDA \_ CA \_ SET \_ PROGRAM \_ PID
 
 
-客户端使用 KSPROPERTY\_BDA\_CA\_将\_程序\_PID 设置为在特定程序中设置数据包标识符的列表。
+客户端使用 KSPROPERTY \_ BDA \_ CA \_ set \_ PROGRAM \_ pid 在特定程序中设置数据包标识符的列表。
 
 ## <span id="ddk_ksproperty_bda_ca_set_program_pids_ks"></span><span id="DDK_KSPROPERTY_BDA_CA_SET_PROGRAM_PIDS_KS"></span>
 
@@ -41,7 +41,7 @@ ms.locfileid: "72842156"
 </colgroup>
 <thead>
 <tr class="header">
-<th>“获取”</th>
+<th>获取</th>
 <th>设置</th>
 <th>目标</th>
 <th>属性描述符类型</th>
@@ -50,9 +50,9 @@ ms.locfileid: "72842156"
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>“是”</p></td>
-<td><p>“是”</p></td>
-<td><p>Filter</p></td>
+<td><p>是</p></td>
+<td><p>是</p></td>
+<td><p>筛选器</p></td>
 <td><p>KSP_NODE</p></td>
 <td><p>BDA_PROGRAM_PID_LIST</p></td>
 </tr>
@@ -64,7 +64,7 @@ ms.locfileid: "72842156"
 <a name="remarks"></a>备注
 -------
 
-BDA\_程序\_PID\_列表结构包含指定程序的数据包标识符的列表。
+BDA \_ PROGRAM \_ PID \_ 列表结构包含指定程序的数据包标识符的列表。
 
 <a name="requirements"></a>要求
 ------------
@@ -77,7 +77,7 @@ BDA\_程序\_PID\_列表结构包含指定程序的数据包标识符的列表�
 <tbody>
 <tr class="odd">
 <td><p>标头</p></td>
-<td>Bdamedia （包括 Bdamedia）</td>
+<td>Bdamedia (包含 Bdamedia) </td>
 </tr>
 </tbody>
 </table>
@@ -85,18 +85,11 @@ BDA\_程序\_PID\_列表结构包含指定程序的数据包标识符的列表�
 ## <a name="see-also"></a>另请参阅
 
 
-[**BDA\_程序\_PID\_列表**](https://docs.microsoft.com/windows-hardware/drivers/ddi/bdatypes/ns-bdatypes-_bda_program_pid_list)
+[**BDA \_ 程序 \_ PID \_ 列表**](/windows-hardware/drivers/ddi/bdatypes/ns-bdatypes-_bda_program_pid_list)
 
-[**KSEVENT\_BDA\_PROGRAM\_FLOW\_状态\_更改**](ksevent-bda-program-flow-status-changed.md)
+[**KSEVENT \_ BDA \_ 程序 \_ 流 \_ 状态 \_ 已更改**](ksevent-bda-program-flow-status-changed.md)
 
-[**KSP\_节点**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksp_node)
-
- 
+[**KSP \_ 节点**](/windows-hardware/drivers/ddi/ks/ns-ks-ksp_node)
 
  
-
-
-
-
-
 

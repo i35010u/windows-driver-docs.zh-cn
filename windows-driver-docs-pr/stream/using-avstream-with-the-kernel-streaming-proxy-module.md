@@ -11,12 +11,12 @@ keywords:
 - AVStream 内核流式处理代理 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ac2df22c14611ac2ab91b58ab36cf6c3bf042205
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 775733308013d2178ed1a6701e66a41c01d5bb70
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72842297"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89190137"
 ---
 # <a name="using-avstream-with-the-kernel-streaming-proxy-module"></a>将 AVStream 与内核流式处理代理模块配合使用
 
@@ -24,20 +24,15 @@ ms.locfileid: "72842297"
 
 
 
-内核模式筛选器通常通过[内核流式处理代理](https://docs.microsoft.com/windows-hardware/drivers/ddi/_stream/index)在用户模式下进行连接。 此代理使内核模式筛选器作为 DirectShow 筛选器显示在用户模式下。
+内核模式筛选器通常通过 [内核流式处理代理](/windows-hardware/drivers/ddi/_stream/index)在用户模式下进行连接。 此代理使内核模式筛选器作为 DirectShow 筛选器显示在用户模式下。
 
-使用此连接模式时，DirectShow 会通过将筛选器与*媒体类型*交叉来连接这些筛选器。 这些媒体类型是内核模式下的数据格式的 DirectShow 对应项。
+使用此连接模式时，DirectShow 会通过将筛选器与 *媒体类型*交叉来连接这些筛选器。 这些媒体类型是内核模式下的数据格式的 DirectShow 对应项。
 
-当 DirectShow 枚举内核模式 pin 上的媒体类型时，该 pin 上的相应数据范围与该 pin 的数据范围相交。 此交集产生数据格式，如[AVStream 中的数据范围交集](data-range-intersections-in-avstream.md)中所述。 代理将生成的数据格式转换为 DirectShow 媒体类型。
+当 DirectShow 枚举内核模式 pin 上的媒体类型时，该 pin 上的相应数据范围与该 pin 的数据范围相交。 此交集产生数据格式，如 [AVStream 中的数据范围交集](data-range-intersections-in-avstream.md)中所述。 代理将生成的数据格式转换为 DirectShow 媒体类型。
 
 与在内核模式中一样，代理会要求数据处理程序确定媒体类型是否可接受，或确定媒体类型是否是 pin 上数据范围的部分匹配项。 部分匹配指示在内核模式语义的上下文中，主要类型、subformat、说明符和所需属性匹配。 如果媒体类型是部分匹配，则连接将继续。
 
-在连接完成之前，AVStream 会调用微型驱动程序的[*AVStrMiniPinSetDataFormat*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/nc-ks-pfnkspinsetdataformat)调度，以通知微型驱动程序正在设置的数据格式。 此格式对应于已建议代理的 pin 的用户模式媒体类型。 AVStream 还提供已确定为该格式的部分匹配的数据范围。
+在连接完成之前，AVStream 会调用微型驱动程序的 [*AVStrMiniPinSetDataFormat*](/windows-hardware/drivers/ddi/ks/nc-ks-pfnkspinsetdataformat) 调度，以通知微型驱动程序正在设置的数据格式。 此格式对应于已建议代理的 pin 的用户模式媒体类型。 AVStream 还提供已确定为该格式的部分匹配的数据范围。
 
  
-
- 
-
-
-
 

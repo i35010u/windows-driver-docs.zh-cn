@@ -8,57 +8,51 @@ keywords:
 - 错误 WDK KMDF，框架对象创建
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e652cf8a8e26819952056657c13e69f9db214bba
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: e4253a7bc7c73c6342c2a7771ccb4ea688603eff
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72843122"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89191561"
 ---
 # <a name="framework-object-creation-errors"></a>框架对象创建错误
 
 
 当驱动程序尝试创建框架对象失败时，对象创建方法将返回指示失败类型的 NTSTATUS 值。
 
-如果驱动程序在[**WDF\_对象\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfobject/ns-wdfobject-_wdf_object_attributes)结构中指定了无效的信息，框架可以返回：
+如果驱动程序在 [**WDF \_ 对象 \_ 属性**](/windows-hardware/drivers/ddi/wdfobject/ns-wdfobject-_wdf_object_attributes) 结构中指定了无效的信息，框架可以返回：
 
-<a href="" id="status-wdf-object-attributes-invalid"></a>状态\_WDF\_对象\_属性\_无效  
+<a href="" id="status-wdf-object-attributes-invalid"></a>状态 \_ WDF \_ 对象 \_ 属性 \_ 无效  
 驱动程序指定了对象上下文名称，但上下文大小为零。
 
-驱动程序指定了上下文大小替代值，但未提供[**WDF\_对象\_context\_类型\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfobject/ns-wdfobject-_wdf_object_context_type_info)结构。
+驱动程序指定了上下文大小替代值，但未提供 [**WDF \_ 对象 \_ 上下文 \_ 类型 \_ 信息**](/windows-hardware/drivers/ddi/wdfobject/ns-wdfobject-_wdf_object_context_type_info) 结构。
 
-驱动程序在 WDF 中指定了**ContextSizeOverride**值\_对象\_属性小于 WDF\_对象的**CONTEXTSIZE**成员\_上下文\_类型\_信息结构。
+驱动程序在 WDF 对象特性中指定了**ContextSizeOverride**值 \_ \_ ，该对象小于**ContextSize** wdf \_ 对象 \_ 上下文 \_ 类型 \_ 信息结构的 ContextSize 成员。
 
-驱动程序在 WDF 中指定了**ExecutionLevel**值\_对象\_属性不在有效的值范围内。
+驱动程序在 WDF 对象属性中指定的 **ExecutionLevel** 值 \_ 不在 \_ 有效的值范围内。
 
-驱动程序在 WDF 中指定了**SynchronizationScope**值\_对象\_属性不在有效的值范围内。
+驱动程序在 WDF 对象属性中指定的 **SynchronizationScope** 值 \_ 不在 \_ 有效的值范围内。
 
-<a href="" id="status-wdf-parent-assignment-not-allowed"></a>状态\_WDF\_父\_分配\_不允许\_  
+<a href="" id="status-wdf-parent-assignment-not-allowed"></a>\_ \_ \_ \_ 不允许状态 WDF 父 \_ 分配  
 驱动程序尝试将父对象分配给对象，但框架不允许驱动程序将父对象分配到对象类型。
 
-<a href="" id="status-wdf-parent-already-assigned"></a>已\_分配\_父\_\_项状态  
+<a href="" id="status-wdf-parent-already-assigned"></a>状态 \_ WDF \_ 父项 \_ 已 \_ 被分配  
 驱动程序尝试将父对象分配给对象，但父对象已分配给该对象。
 
-<a href="" id="status-wdf-parent-is-self"></a>状态\_WDF\_父\_\_自身  
+<a href="" id="status-wdf-parent-is-self"></a>状态 \_ WDF \_ 父项 \_ 为 \_ SELF  
 驱动程序试图使对象成为其父对象。
 
-<a href="" id="status-wdf-synchronization-scope-invalid"></a>状态\_WDF\_同步\_范围\_无效  
-驱动程序指定了[**WDF\_同步\_范围**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfobject/ne-wdfobject-_wdf_synchronization_scope)类型的值对对象类型无效。
+<a href="" id="status-wdf-synchronization-scope-invalid"></a>状态 \_ WDF \_ 同步 \_ 范围 \_ 无效  
+驱动程序指定了 [**WDF \_ 同步 \_ 作用域**](/windows-hardware/drivers/ddi/wdfobject/ne-wdfobject-_wdf_synchronization_scope)类型的值，该值对于对象类型无效。
 
-<a href="" id="status-wdf-execution-level-invalid"></a>状态\_WDF\_执行\_级别\_无效  
-驱动程序指定了[**WDF\_执行\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfobject/ne-wdfobject-_wdf_execution_level)对对象类型无效的级别类型值。
+<a href="" id="status-wdf-execution-level-invalid"></a>状态 \_ WDF \_ 执行 \_ 级别 \_ 无效  
+驱动程序指定的 [**WDF \_ 执行 \_ 级别**](/windows-hardware/drivers/ddi/wdfobject/ne-wdfobject-_wdf_execution_level)类型值对对象类型无效。
 
-如果任何框架定义结构的**大小**成员与结构的实际大小都不匹配，则该框架可以返回状态\_信息\_长度\_不匹配。
+如果任何框架定义结构的 **大小** 成员与结构的实际大小都不匹配，则该框架可能返回状态 \_ 信息 \_ 长度 \_ 不匹配。
 
-如果框架无法为新对象分配内存，则它可能会返回状态\_\_资源不足。
+如果框架无法为新对象分配内存，则它可能会返回状态 \_ 资源不足的情况 \_ 。
 
-单独的对象创建方法可能还会返回其他[NTSTATUS 值](https://docs.microsoft.com/windows-hardware/drivers/kernel/ntstatus-values)。 有关每个创建方法的附加返回值的详细信息，请参阅该方法的参考页。
-
- 
+单独的对象创建方法可能还会返回其他 [NTSTATUS 值](https://docs.microsoft.com/windows-hardware/drivers/kernel/ntstatus-values)。 有关每个创建方法的附加返回值的详细信息，请参阅该方法的参考页。
 
  
-
-
-
-
 

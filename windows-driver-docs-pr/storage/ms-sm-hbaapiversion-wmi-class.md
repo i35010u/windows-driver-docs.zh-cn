@@ -1,22 +1,22 @@
 ---
-title: MS\_SM\_HbaApiVersion WMI 类
-description: MS\_SM\_HbaApiVersion WMI 类
+title: MS \_ SM \_ HbaApiVersion WMI 类
+description: MS \_ SM \_ HbaApiVersion WMI 类
 ms.assetid: 3d0591e5-ed95-4509-bd27-e122ac9186d2
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 506a8bf306764bbbbd10db0b163e3caf1696f43f
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: d9ac92c0af7f2fcc0ae1d96ef044489301cb1582
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386142"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89190625"
 ---
-# <a name="mssmhbaapiversion-wmi-class"></a>MS\_SM\_HbaApiVersion WMI 类
+# <a name="ms_sm_hbaapiversion-wmi-class"></a>MS \_ SM \_ HbaApiVersion WMI 类
 
 
-支持存储管理 API 的 HBA 微型端口驱动程序使用 MS\_SM\_HbaApiVersion 类可以报告当前 HBA API 版本。
+支持存储管理 API 的 HBA 微型端口驱动程序使用 MS \_ SM \_ HbaApiVersion 类报告当前 HBA API 版本。
 
-MS\_SM\_HbaApiVersion 类定义，如下所示在*Hbaapi.mof*:
+MS \_ SM \_ HbaApiVersion 类在 *Hbaapi*中定义如下：
 
 ```cpp
 class MS_SM_HbaApiVersion
@@ -27,17 +27,11 @@ class MS_SM_HbaApiVersion
 };
 ```
 
-此类定义编译时通过 WMI 工具套件，它会生成以下数据结构：
+当 WMI 工具套件编译此类定义时，它将生成以下数据结构：
 
-[**MS\_SM\_HbaApiVersion**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff563211(v=vs.85))
+[**MS \_ SM \_ HbaApiVersion**](/previous-versions/windows/hardware/drivers/ff563211(v=vs.85))
 
 没有与此 WMI 类相关联的方法。
 
  
-
- 
-
-
-
-
 

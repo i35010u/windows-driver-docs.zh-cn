@@ -4,42 +4,37 @@ description: 底片扫描仪的必需 WIA 子项属性
 ms.assetid: 3b12299a-0b01-492c-a79d-45ddc3c193bb
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7fb595c5bc326e9932116b495620ee091a8dd569
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 2e9f82f0ac493ca16d195bd250cbc45ecc2dfa94
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67376483"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89191503"
 ---
 # <a name="required-wia-child-item-properties-for-film-scanners"></a>底片扫描仪的必需 WIA 子项属性
 
 
-支持以下 WIA 属性需要 WIA 电影扫描程序子项：
+支持以下 WIA 属性需要 WIA 胶卷扫描器子项：
 
-[**WIA\_IPA\_DATATYPE**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ipa-datatype)
+[**WIA \_ IPA \_ 数据类型**](./wia-ipa-datatype.md)
 
-[**WIA\_IPA\_DEPTH**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ipa-depth)
+[**WIA \_ IPA \_ 深度**](./wia-ipa-depth.md)
 
-[**WIA\_IPA\_访问\_权限**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ipa-access-rights)
+[**WIA \_ IPA \_ 访问 \_ 权限**](./wia-ipa-access-rights.md)
 
-[**WIA\_IPA\_FULL\_ITEM\_NAME**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ipa-full-item-name)
+[**WIA \_ IPA \_ 完整 \_ 项 \_ 名称**](./wia-ipa-full-item-name.md)
 
-[**WIA\_IPA\_项\_类别**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ipa-item-category)
+[**WIA \_ IPA \_ 项 \_ 类别**](./wia-ipa-item-category.md)
 
-[**WIA\_IPA\_ITEM\_NAME**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ipa-item-name)
+[**WIA \_ IPA \_ 项 \_ 名称**](./wia-ipa-item-name.md)
 
-[**WIA\_IPS\_XEXTENT**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ips-xextent)
+[**WIA \_ IP \_ XEXTENT**](./wia-ips-xextent.md)
 
-[**WIA\_IPS\_XPOS**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ips-xpos)
+[**WIA \_ IP \_ XPOS**](./wia-ips-xpos.md)
 
-[**WIA\_IPS\_YEXTENT**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ips-yextent)
+[**WIA \_ IP \_ YEXTENT**](./wia-ips-yextent.md)
 
-[**WIA\_IPS\_YPOS**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ips-ypos)
-
- 
+[**WIA \_ IP \_ YPOS**](./wia-ips-ypos.md)
 
  
-
-
-
 

@@ -6,21 +6,21 @@ keywords:
 - AVStream 硬件编解码器支持 WDK，处理步幅
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b483577a30e0d6cacb9e73af6fb6e74f508d194f
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 3a69f553984b4ee3390f52406e13869f3a3d62a4
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72838778"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89190571"
 ---
 # <a name="handling-stride-in-avstream-codecs"></a>处理 AVStream 编解码器中的步幅
 
 
-当解码器连接到呈现器（如增强视频呈现器（EVR））或支持 Direct3D 的组件时，微型驱动程序会收到 D3D 缓冲区而不是系统内存缓冲区。
+当解码器连接到呈现器（如增强的视频呈现器） (EVR) 或支持 Direct3D 的组件时，微型驱动程序会收到 D3D 缓冲区而不是系统内存缓冲区。
 
 不同于系统内存缓冲区，在呈现之前必须将其复制到 D3D 面，而 D3D 缓冲区可以直接由呈现引擎显示。 因此，通过使用 D3D 缓冲区而不是系统内存缓冲区，微型驱动程序为每个缓冲区保存复制操作。
 
-当支持舍弃的微型驱动程序接收 D3D 缓冲区时，D3D 图面将被锁定，指向它的指针位于[**KSSTREAM\_标题**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksstream_header)中。**数据**。 如以下代码示例中所示，在[**KS\_帧\_INFO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagks_frame_info) EXTENSION to KSSTREAM\_标头中提供 surface 步幅信息：
+当支持舍弃的微型驱动程序收到 D3D 缓冲区时，D3D 图面将被锁定，指向它的指针位于 [**KSSTREAM \_ 标头**](/windows-hardware/drivers/ddi/ks/ns-ks-ksstream_header)中。**数据**。 在 KSSTREAM 标头的 [**KS \_ 帧 \_ 信息**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagks_frame_info) 扩展中提供 surface stride 信息 \_ ，如下面的代码示例所示：
 
 ```cpp
 typedef struct KS_FRAME_INFO {
@@ -44,16 +44,11 @@ typedef struct KS_FRAME_INFO {
 } KS_FRAME_INFO, *PKS_FRAME_INFO;
 ```
 
-微型驱动程序应使用[**KS\_BITMAPINFOHEADER**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagks_bitmapinfoheader)结构的**biWidth**成员作为表面宽度。
+微型驱动程序应使用[**KS \_ BITMAPINFOHEADER**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagks_bitmapinfoheader)结构的**biWidth**成员作为表面宽度。
 
-（[**KS\_VIDEOINFOHEADER**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagks_videoinfoheader)。**bmiHeader**的类型为 KS\_BITMAPINFOHEADER。 [**KS\_DATARANGE\_视频**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagks_datarange_video)。**VideoInfoHeader**的类型为 KS\_VideoInfoHeader。）
+ ([**KS \_ VIDEOINFOHEADER**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagks_videoinfoheader)。**bmiHeader** 的类型为 KS \_ BITMAPINFOHEADER。 [**KS \_DATARANGE \_ 视频**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagks_datarange_video)。**VideoInfoHeader** 的类型为 KS \_ VideoInfoHeader。 ) 
 
-如果 KS\_帧\_信息。**lSurfacePitch**有一个非零值，则微型驱动程序必须使用**lSurfacePitch**作为在相关 KSSTREAM\_标题中指定的缓冲区的宽度/步幅。 否则，输出图像会出现乱码。
-
- 
+如果是 KS \_ 帧 \_ 信息。**lSurfacePitch** 有一个非零值，则微型驱动程序必须使用 **lSurfacePitch** 作为相关 KSSTREAM 标头中指定的缓冲区的宽度/步幅 \_ 。 否则，输出图像会出现乱码。
 
  
-
-
-
 

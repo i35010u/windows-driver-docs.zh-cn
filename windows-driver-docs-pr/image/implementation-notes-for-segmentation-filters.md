@@ -4,12 +4,12 @@ description: 分段筛选器的实现说明
 ms.assetid: c4caf8dd-8108-4bc7-b02f-1e180fedb95f
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8b0c34623612289bcbd9f0c5b075a99ff6c24628
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: cf16aa98cdf822a039ed993a532bae23a9ef181d
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67373529"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89191905"
 ---
 # <a name="implementation-notes-for-segmentation-filters"></a>分段筛选器的实现说明
 
@@ -17,28 +17,23 @@ ms.locfileid: "67373529"
 
 
 
-请务必注意分段筛选器设置到它将创建每个子项的属性。 这些属性包括：[**WIA\_IPS\_XPOS**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ips-xpos)， [ **WIA\_IP\_YPOS**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ips-ypos)， [ **WIA\_IPS\_大 XEXTENT**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ips-xextent)，WIA\_IP\_YEXTENT，并可能[ **WIA\_IP\_反扭曲\_X** ](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ips-deskew-x)并[ **WIA\_IP\_反扭曲\_Y**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ips-deskew-y)。 这些属性值对应于在平台中，不传递到映像中的项的位置*pInputStream*参数。
+请务必注意，分段筛选器设置为其创建的每个子项的属性。 这些属性包括： [**wia \_ ip \_ XPOS**](./wia-ips-xpos.md)、 [**wia \_ ip \_ YPOS**](./wia-ips-ypos.md)、 [**wia \_ Ips \_ XEXTENT**](./wia-ips-xextent.md)、wia \_ ips \_ YEXTENT，以及可能的 [**wia \_ ip \_ 反扭曲 \_ X**](./wia-ips-deskew-x.md) 和 [**wia \_ ip \_ 抗扭反 \_ Y**](./wia-ips-deskew-y.md)。 这些属性值对应于平台上项的位置，而不是传递到 *pInputStream* 参数中的图像。
 
-因此，很重要分段筛选器密切注意 WIA\_IPS\_XPOS、 WIA\_IP\_YPOS，和[ **WIA\_IP\_旋转**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ips-rotation)传入的映像的属性。
+因此，分段筛选器必须密切注意所 \_ 传入映像的 wia ip \_ XPOS、wia \_ Ip \_ YPOS 和 [**wia \_ ip \_ 旋转**](./wia-ips-rotation.md) 属性，这一点非常重要。
 
-例如，假设应用程序执行一次预览扫描它在其中设置 WIA\_IPS\_XPOS = WIA\_IP\_YPOS 才会获取预览图像 （父） 项到 = 200。 然后它调用到分段筛选器以检测可能的子区域。 但是，在分段筛选器中使用的实际算法作用于传递给它的映像。 如果此算法检测到图像的左边的缘和 200 像素，向下的右角 150 像素的子区域到从图像的顶部，这实际上对应于位于一个点 （350，400） 上扫描程序。
+例如，假设应用程序进行预览扫描，在获取预览图像之前，应用程序会将 WIA \_ ip \_ XPOS = wia \_ ip \_ YPOS = 200 到 (父) 项。 然后，它调用分段筛选器来检测可能的子区域。 但是，分段筛选器中使用的实际算法作用于传入它的映像。 如果此算法检测到图像左边缘右侧为150像素，从图像顶部向下200像素，这实际上对应于扫描仪上 (350，400) 上的一个点。
 
-在下图中，外部的区域表示的扫描程序平板。 尽管该算法将查找区域的左上角的坐标为 （150，200） 值的分段的筛选器应设置到子项目 WIA\_IP\_XPOS 和 WIA\_IP\_YPOS 为 350 和 400。
+在下图中，外部区域表示扫描仪平台。 尽管该算法将查找要 (150，200) 的区域左上角的坐标，但分段筛选器应设置为 WIA \_ ip XPOS 和 wia ip YPOS 的子项目的值为 \_ \_ \_ 350 和400。
 
-![说明分段筛选器应用于的辊部分的关系图](images/art-segmentation3.png)
+![说明应用到部分影印的分段筛选器的关系图](images/art-segmentation3.png)
 
-例如，应用程序将显示以可视方式分段筛选器检测到的区域，如果它必须了解分段筛选器设置到平台中的位置相对应的坐标。 这意味着应用程序必须将平板坐标映射到的预览图像中的坐标。 在大多数情况下，但是，应用程序将执行预览扫描使用 WIA\_IPS\_XPOS = WIA\_IPS\_YPOS = 0 且没有旋转 ([**WIA\_IP\_旋转**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ips-rotation) = 纵向)。 如果是这样，则在平台的坐标和中的预览图像之间的直接映射。
+例如，如果应用程序将以可视方式显示分段筛选器检测到的区域，则必须注意，分段筛选器将设置与其在平板中的位置相对应的坐标。 这意味着应用程序必须将平板坐标映射到预览图像中的坐标。 但在大多数情况下，应用程序将使用 WIA \_ ip \_ XPOS = wia \_ ip \_ YPOS = 0 执行预览扫描，而不会旋转 ([**WIA \_ ip \_ 旋转**](./wia-ips-rotation.md) = 纵向) 。 如果是这种情况，则平台上的坐标与预览图像中的坐标之间存在直接的映射。
 
-分段的筛选器必须特别注意的另一个属性是旋转属性，WIA\_IP\_旋转，提供该驱动程序实现此属性。 例如假定时获取的预览图像，应用程序设置 WIA\_IP\_ROT180 的旋转。 在这种情况下传递到分段的筛选器的图像的左上角实际上对应于在平台的右下角。 因此，分段的筛选器必须映射到其坐标在平台应为旋转的图像中检测到它的每个子区域的坐标。 一旦分段筛选器执行了此映射，它可以设置 WIA\_IPS\_XPOS、 WIA\_IP\_YPOS 和其他属性值到子项目与 subimage 相对应。
+分段筛选器必须注意的另一个属性是 "WIA" 属性 "WIA \_ ip \_ 旋转"，提供驱动程序实现了此属性。 例如，假设在获取预览图像时，应用程序会将 WIA \_ ip \_ 旋转到 ROT180。 在这种情况下，传递给分段筛选器的图像的左上角实际上对应于平台的右下角。 因此，分段筛选器必须将它检测到的每个子区域的坐标映射到其平台上的坐标。 分段筛选器执行此映射后，可以将 WIA \_ ips \_ XPOS、wia \_ ip \_ YPOS 和其他属性值设置为与 subimage 相对应的子项。
 
-注意，在大多数情况下，WIA\_IPS\_XPOS 和 WIA\_IPS\_YPOS 将设置为零，并且 WIA\_IP\_旋转将设置为纵向。 但是，分段应能处理种情况下在其中它们未设置这些值。
+请注意，在大多数情况下，WIA \_ ips \_ XPOS 和 wia \_ ip \_ YPOS 将设置为零，wia \_ IPS \_ 旋转将设置为纵向。 但是，分段应该能够处理它们未设置为这些值的情况。
 
-另请注意，虽然应用程序可以在图像中传递给驱动程序已旋转分段筛选器，它必须不通过在其噪已经执行了图像中。
-
- 
+另请注意，应用程序可以将映像传递到已由驱动程序旋转的分段筛选器，而不能传入已经执行了 deskewing 的映像。
 
  
-
-
-
 

@@ -1,6 +1,6 @@
 ---
-title: KS\_AM\_速率\_MaxFullDataRate
-description: KS\_AM\_RATE\_MaxFullDataRate 属性检索最大值、完整数据速率和10000（十进制）。
+title: KS \_ AM \_ 速率 \_ MaxFullDataRate
+description: KS \_ AM \_ rate \_ MaxFullDataRate 属性检索最大值、完整数据速率和 10000 (decimal) 。
 ms.assetid: 2a331ecd-0b40-4dd9-90f0-7585cd36c41e
 keywords:
 - KS_AM_RATE_MaxFullDataRate 流媒体设备
@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 96bde05b1b909c9b17dd2b8c8b2a36a76808d4c9
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: ef545f56e8d29378335fa860b1408135959c42b8
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72843452"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89191427"
 ---
-# <a name="ks_am_rate_maxfulldatarate"></a>KS\_AM\_速率\_MaxFullDataRate
+# <a name="ks_am_rate_maxfulldatarate"></a>KS \_ AM \_ 速率 \_ MaxFullDataRate
 
 
-KS\_AM\_RATE\_MaxFullDataRate 属性检索最大值、完整数据速率和10000（十进制）。
+KS \_ AM \_ rate \_ MaxFullDataRate 属性检索最大值、完整数据速率和 10000 (decimal) 。
 
 ## <span id="ddk_ks_am_rate_maxfulldatarate_ks"></span><span id="DDK_KS_AM_RATE_MAXFULLDATARATE_KS"></span>
 
@@ -41,7 +41,7 @@ KS\_AM\_RATE\_MaxFullDataRate 属性检索最大值、完整数据速率和10000
 </colgroup>
 <thead>
 <tr class="header">
-<th>“获取”</th>
+<th>获取</th>
 <th>设置</th>
 <th>目标</th>
 <th>属性描述符类型</th>
@@ -50,10 +50,10 @@ KS\_AM\_RATE\_MaxFullDataRate 属性检索最大值、完整数据速率和10000
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>“是”</p></td>
-<td><p>无</p></td>
-<td><p>大头针</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)"><strong>KSPROPERTY</strong></a></p></td>
+<td><p>是</p></td>
+<td><p>否</p></td>
+<td><p>Pin</p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)"><strong>KSPROPERTY</strong></a></p></td>
 <td><p>KS_AM_MaxFullDataRate</p></td>
 </tr>
 </tbody>
@@ -61,7 +61,7 @@ KS\_AM\_RATE\_MaxFullDataRate 属性检索最大值、完整数据速率和10000
 
  
 
-属性值（操作数据）是一个 KS\_AM\_MaxFullDataRate （这是一个类型定义的 LONG 类型）。
+) 操作数据 (的属性值是一个 KS \_ AM \_ MaxFullDataRate (，它是一个类型定义的长) 。
 
 <a name="requirements"></a>要求
 ------------
@@ -74,16 +74,10 @@ KS\_AM\_RATE\_MaxFullDataRate 属性检索最大值、完整数据速率和10000
 <tbody>
 <tr class="odd">
 <td><p>标头</p></td>
-<td>Ksmedia （包括 Ksmedia）</td>
+<td>Ksmedia (包含 Ksmedia) </td>
 </tr>
 </tbody>
 </table>
 
  
-
- 
-
-
-
-
 

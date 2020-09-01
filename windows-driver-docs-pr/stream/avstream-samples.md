@@ -7,20 +7,20 @@ keywords:
 - 示例微型驱动程序 WDK AVStream
 ms.date: 06/16/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: bb939ed7be8c3d1272fdc53482d26abea2d21120
-ms.sourcegitcommit: 97a8d24b1b48602e4ccaa63a113f7c8cdb0c6df5
+ms.openlocfilehash: f85be5db225d9160b2852cdfdd9be87d1462d599
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/16/2020
-ms.locfileid: "84812443"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89192017"
 ---
 # <a name="avstream-samples"></a>AVStream 示例
 
-适用于 AVStream 微型驱动程序的源代码在 GitHub 上的 Windows 驱动程序工具包（WDK）示例中提供：
+示例 AVStream 微型驱动程序的源代码在 GitHub 上的 Windows 驱动程序工具包 (WDK) 示例中提供：
 
 | 示例 | 说明 |
 |--|--|
-| [AVStream 以筛选器为中心的模拟捕获驱动程序（Avssamp）](https://docs.microsoft.com/samples/microsoft/windows-driver-samples/avstream-filter-centric-simulated-capture-sample-driver-avssamp/) | 模拟硬件模拟块的以 pin 为中心的捕获驱动程序，演示如何通过 AVStream 实现 DMA。 |
-| [AVStream 模拟硬件示例驱动程序（AVSHwS）](https://docs.microsoft.com/samples/microsoft/windows-driver-samples/avstream-simulated-hardware-sample-driver-avshws/) | 以筛选为中心的捕获驱动程序，该驱动程序不会执行直接内存访问（DMA）。 |
+| [AVStream) 的以筛选器为中心的模拟捕获驱动程序 (Avssamp ](/samples/microsoft/windows-driver-samples/avstream-filter-centric-simulated-capture-sample-driver-avssamp/) | 模拟硬件模拟块的以 pin 为中心的捕获驱动程序，演示如何通过 AVStream 实现 DMA。 |
+| [AVStream 模拟硬件示例驱动程序 (AVSHwS) ](/samples/microsoft/windows-driver-samples/avstream-simulated-hardware-sample-driver-avshws/) | 以筛选为中心的捕获驱动程序，不 (DMA) 执行直接内存访问。 |
 
 这些示例演示了本文档中所述的许多概念，并为驱动程序开发人员的需求定制了这些示例。

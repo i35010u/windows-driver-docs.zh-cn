@@ -11,12 +11,12 @@ keywords:
 - 设备唤醒 ups WDK 电源管理
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 78e0836de1816ec7516f8479d17f58ee03e39b2d
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: b1545c428dac981405d2409508abfa9ddcae09ca
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72828363"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89191928"
 ---
 # <a name="determining-whether-a-device-can-wake-the-system"></a>确定设备是否可以唤醒系统
 
@@ -24,13 +24,13 @@ ms.locfileid: "72828363"
 
 
 
-某些设备（例如键盘、调制解调器和网卡）可以在设备睡眠状态下响应外部信号。 作为其电源管理技术的一部分，操作系统为此类设备提供了一种唤醒睡眠系统的方式，该系统可以还原其以前的上下文。 软件唤醒机制允许系统从除 S5 （**PowerSystemShutdown**）之外的任何状态唤醒，具体取决于系统和设备硬件和 BIOS 中的支持。 处于 S5 状态的系统必须始终重启。
+某些设备（例如键盘、调制解调器和网卡）可以在设备睡眠状态下响应外部信号。 作为其电源管理技术的一部分，操作系统为此类设备提供了一种唤醒睡眠系统的方式，该系统可以还原其以前的上下文。 软件唤醒机制允许系统从除 S5 (**PowerSystemShutdown**) 以外的任何状态唤醒，具体取决于系统和设备硬件和 BIOS 中的支持。 处于 S5 状态的系统必须始终重启。
 
 尽管操作系统旨在从任何中间睡眠状态唤醒，但具体的唤醒功能在不同的计算机和设备之间有所不同。 并非所有计算机都支持所有系统睡眠状态;因此，从某些状态唤醒的能力在某些计算机上无意义。
 
-同样，大多数设备既不支持所有设备电源状态（D0 到 D3），也不支持从其支持的所有设备电源状态中唤醒。
+同样，大多数设备既不支持通过 D3 (D0) 的所有设备电源状态，也不支持从其支持的所有设备电源状态唤醒。
 
-设备可以输入的睡眠状态以及支持唤醒的状态在总线驱动程序的枚举中进行了描述，并存储在[**设备\_功能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_device_capabilities)结构中。 下表列出了与等待/唤醒支持相关的此结构的成员。
+设备可以输入的睡眠状态以及它支持唤醒的状态在总线驱动程序的枚举中进行描述，并存储在 [**设备 \_ 功能**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_device_capabilities) 结构中。 下表列出了与等待/唤醒支持相关的此结构的成员。
 
 <table>
 <colgroup>
@@ -40,7 +40,7 @@ ms.locfileid: "72828363"
 <thead>
 <tr class="header">
 <th>成员</th>
-<th>描述</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>
@@ -74,29 +74,24 @@ ms.locfileid: "72828363"
 </tr>
 <tr class="even">
 <td><p><a href="systemwake.md" data-raw-source="[&lt;strong&gt;SystemWake&lt;/strong&gt;](systemwake.md)"><strong>SystemWake</strong></a></p></td>
-<td><p>指定可从中唤醒系统的最低系统电源状态（S0 到 S4）。</p></td>
+<td><p>指定最低系统电源状态 (S0 到 S4) 可以从中唤醒系统。</p></td>
 </tr>
 <tr class="odd">
 <td><p><a href="devicewake.md" data-raw-source="[&lt;strong&gt;DeviceWake&lt;/strong&gt;](devicewake.md)"><strong>DeviceWake</strong></a></p></td>
-<td><p>指定设备可唤醒的最小设备电源状态（D0 到 D3）。</p></td>
+<td><p>指定设备可唤醒的最小设备电源状态 (D0 到 D3) 。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-**DeviceWake**条目列出了设备可用于响应唤醒信号的最小设备电源状态。 值 PowerDeviceUnspecified 指示设备无法唤醒系统。 **SystemWake**条目列出了可从中唤醒系统的最低系统电源状态。 这些值基于父 devnode 的功能，驱动程序不应更改这些值。 有关详细信息，请参阅[报表设备功能](reporting-device-power-capabilities.md)。
+**DeviceWake**条目列出了设备可用于响应唤醒信号的最小设备电源状态。 值 PowerDeviceUnspecified 指示设备无法唤醒系统。 **SystemWake**条目列出了可从中唤醒系统的最低系统电源状态。 这些值基于父 devnode 的功能，驱动程序不应更改这些值。 有关详细信息，请参阅 [报表设备功能](reporting-device-power-capabilities.md)。
 
 通常，如果满足以下条件，设备可以唤醒系统：
 
--   设备处于电源状态等于或大于**DeviceWake**值。
+-   设备处于电源状态等于或大于 **DeviceWake** 值。
 
--   系统处于电源状态等于或大于**SystemWake**值。
-
- 
+-   系统处于电源状态等于或大于 **SystemWake** 值。
 
  
-
-
-
 

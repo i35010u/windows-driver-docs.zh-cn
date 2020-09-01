@@ -1,23 +1,23 @@
 ---
-title: 示例简单分段的筛选器
-description: 示例简单分段的筛选器
+title: 示例简单分段筛选器
+description: 示例简单分段筛选器
 ms.assetid: 9c77fea4-61d9-4bec-8d8d-35436d00c1ed
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: da1939dbb6d34f42dacb074aecfef0963b2377a0
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 17128a5ccbcf4bf9c6131b86d581f57002305903
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67385026"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89192085"
 ---
-# <a name="example-simple-segmentation-filter"></a>例如：简单的分段筛选器
+# <a name="example-simple-segmentation-filter"></a>示例：简单分段筛选器
 
 
 
 
 
-以下代码示例演示如何实现简单的分段筛选器。 在示例中的分段筛选器不使用[ **WIA\_IPS\_反扭曲\_X** ](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ips-deskew-x)并[ **WIA\_IP\_反扭曲\_Y** ](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ips-deskew-y)属性。 为清楚起见，省略了错误检查代码。
+下面的代码示例演示如何实现简单的分段筛选器。 该示例中的分段筛选器不使用 [**WIA \_ ip \_ 反扭曲 \_ X**](./wia-ips-deskew-x.md) 和 [**wia \_ ip \_ 反扭曲 \_ Y**](./wia-ips-deskew-y.md) 属性。 为清楚起见，已省略错误检查代码。
 
 ```cpp
 typedef struct _SUB_RECT
@@ -111,9 +111,4 @@ SegFilter::DetectRegions(IN IStream  *pInputStream,
 ```
 
  
-
- 
-
-
-
 

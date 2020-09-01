@@ -5,16 +5,16 @@ ms.assetid: 5428950c-9c28-411a-9ec0-b029ad311a00
 keywords:
 - 源注册 WDK 错误
 - 错误 WDK 内核
-- 注册错误消息源
+- 正在注册错误消息源
 - 注册表 WDK 错误日志
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ec9724a0588d10dae007381b30eb38aa85aa4458
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: e023a7a36a645e80429aed44dd740b59d0320af2
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67373477"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89191165"
 ---
 # <a name="registering-as-a-source-of-error-messages"></a>注册为错误消息的源
 
@@ -22,20 +22,15 @@ ms.locfileid: "67373477"
 
 
 
-驱动程序在注册表中注册错误消息的源。 驱动程序必须设置两个密钥下的**HKEY\_本地\_机\\系统\\CurrentControlSet\\Services\\EventLog\\系统\\** <em>DriverName</em>:
+驱动程序在注册表中注册错误消息源。 驱动程序必须在**HKEY \_ LOCAL \_ MACHINE \\ system \\ CurrentControlSet \\ service \\ EventLog \\ \\ system**<em>DriverName</em>下设置两个密钥：
 
-<a href="" id="eventmessagefile--reg-expand-sz-"></a>**EventMessageFile** (REG\_EXPAND\_SZ)  
-错误消息源之间用分号分隔的列表。 如果驱动程序使用标准错误类型，此列表必须包含 iologmsg.dll。 如果驱动程序将使用附加到驱动程序映像的错误消息，这必须包括驱动程序映像的名称。
+<a href="" id="eventmessagefile--reg-expand-sz-"></a>**EventMessageFile** (REG \_ 展开 \_ SZ)   
+用分号分隔的错误消息源的列表。 如果驱动程序使用标准错误类型，则此列表必须包括 iologmsg.dll。 如果驱动程序使用附加到驱动程序映像的错误消息，则必须包含驱动程序映像的名称。
 
-<a href="" id="typessupported--reg-dword-"></a>**TypesSupported** (REG\_DWORD)  
-可以记录可能的严重级别的位掩码。 驱动程序通常将此项设置为 7，以指示它们可能会记录所有严重级别。
+<a href="" id="typessupported--reg-dword-"></a>**TypesSupported** (REG \_ DWORD)   
+可以记录的可能严重级别的位掩码。 驱动程序通常将此设置为7，以指示它们可能会记录所有严重性级别。
 
-有关如何将驱动程序的 INF 文件中设置这些注册表项的说明，请参阅[**注册事件日志记录**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addservice-directive)。
-
- 
+有关如何从驱动程序的 INF 文件设置这些注册表项的说明，请参阅 [**注册事件日志记录**](../install/inf-addservice-directive.md)。
 
  
-
-
-
 

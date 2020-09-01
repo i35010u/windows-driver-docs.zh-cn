@@ -14,12 +14,12 @@ keywords:
 - 音频 WDK AVStream
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 937d816ee6ee5f10a17a6f6dae57a51c568972af
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 9e2f05c48288ad27f4503257b956dadc1a280f72
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72845282"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89191899"
 ---
 # <a name="avstream-minidrivers-design-guide"></a>AVStream 微型驱动程序设计指南
 
@@ -29,17 +29,17 @@ ms.locfileid: "72845282"
 
 本设计指南介绍如何设计控制流媒体设备的 AVStream 微型驱动程序。 这些主题有助于指导你完成设计各种设备和编码方案的高性能驱动程序的过程：
 
-[Windows 8.1 的新的 AVStream 接口](new-avstream-interfaces-for-windows-8-1.md)
+[Windows 8.1 的新 AVStream 接口](new-avstream-interfaces-for-windows-8-1.md)
 
-[适用于 Windows 8 的新 AVStream 接口](new-windows-8-ddis.md)
+[Windows 8 的新 AVStream 接口](new-windows-8-ddis.md)
 
 [编写 AVStream 微型驱动程序](writing-an-avstream-minidriver.md)
 
-[广播驱动程序体系结构驱动程序](https://docs.microsoft.com/windows-hardware/drivers/ddi/_stream/index)
+[广播驱动程序体系结构驱动程序](/windows-hardware/drivers/ddi/_stream/index)
 
 [编码器设备](encoder-devices.md)
 
-[AV/C 客户端驱动程序](https://docs.microsoft.com/windows-hardware/drivers/ddi/_stream/index)
+[AV/C 客户端驱动程序](/windows-hardware/drivers/ddi/_stream/index)
 
 [USB 视频类驱动程序](usb-video-class-driver.md)
 
@@ -50,9 +50,4 @@ ms.locfileid: "72845282"
 [在 AVStream 中使用硬件编解码器支持](hardware-codec-support-in-avstream.md)
 
  
-
- 
-
-
-
 

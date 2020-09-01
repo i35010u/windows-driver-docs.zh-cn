@@ -16,26 +16,26 @@ keywords:
 - 注册表 WDK 编码器
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 14b781f40bf5e1514701fd6e55c0af9c68b1e447
-ms.sourcegitcommit: b481c9513a9ea7f824ecabd1ae18876548032252
+ms.openlocfilehash: 50c29ac008e8acefe84e5e6019bb88849bbd75e2
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/17/2020
-ms.locfileid: "84879035"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89191823"
 ---
 # <a name="encoder-code-examples"></a>编码器代码示例
 
-下面的代码示例基于[AVStream 模拟硬件示例驱动程序（AVSHwS）](https://docs.microsoft.com/samples/microsoft/windows-driver-samples/avstream-simulated-hardware-sample-driver-avshws/)。 它们演示了以下内容：
+下面的代码示例基于 [AVStream 模拟硬件示例驱动程序 (AVSHwS) ](/samples/microsoft/windows-driver-samples/avstream-simulated-hardware-sample-driver-avshws/)。 它们演示了以下内容：
 
 - 如何指定编码器支持的比特率
 
 - 如何指定编码器支持的比特率编码模式
 
-- 如何在运行时指定编码器设备的*设备参数 \\ 功能*注册表项下的元数据值
+- 如何在运行时指定编码器设备的 *设备参数 \\ 功能* 注册表项下的元数据值
 
 ## <a name="implementing-supported-bit-rates"></a>实现支持的比特率
 
-下面的代码段演示如何实现对[ENCAPIPARAM \_ 比特率](https://docs.microsoft.com/windows-hardware/drivers/stream/encapiparam-bitrate)属性的支持。 使用[**KSPROPERTY \_ 单步 \_ 长**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksproperty_stepping_long)结构来指定400位/秒（bps）的单步执行粒度，使用 400-bps 下限和 4000000-bps 上限。
+下面的代码段演示如何实现对 [ENCAPIPARAM \_ 比特率](./encapiparam-bitrate.md) 属性的支持。 使用 [**KSPROPERTY \_ 单步执行 \_ 长**](/windows-hardware/drivers/ddi/ks/ns-ks-ksproperty_stepping_long) 结构指定400位/秒 (bps) ，其下限为 400-bps，上限为4000000。
 
 ```cpp
 const KSPROPERTY_STEPPING_LONG BitRateRanges [] = {
@@ -48,7 +48,7 @@ const KSPROPERTY_STEPPING_LONG BitRateRanges [] = {
 };
 ```
 
-如果通过右键单击工具（如 GraphEdit）中的筛选器来访问编码器筛选器的属性页，将看到使用这些值的**比特率**滑块条。
+如果通过右键单击工具（如 GraphEdit）中的筛选器来访问编码器筛选器的属性页，将看到使用这些值的 **比特率** 滑块条。
 
 接下来，在创建编码器筛选器的实例时，指定其默认编码比特率。 请注意，所使用的数据类型为 ULONG，对应于 ENCAPIPARAM 比特率属性所需的属性值类型 \_ 。 此值是在编码器的属性页中显示的默认编码 "比特率"：
 
@@ -119,7 +119,7 @@ DEFINE_KSPROPERTY_TABLE(ENCAPI_BitRate) {
 
 ## <a name="implementing-supported-encoding-bit-rate-modes"></a>实现支持的编码比特率模式
 
-下面的代码段演示如何实现对[ENCAPIPARAM \_ 比特率 \_ 模式](https://docs.microsoft.com/windows-hardware/drivers/stream/encapiparam-bitrate-mode)属性的支持。
+下面的代码段演示如何实现对 [ENCAPIPARAM \_ 比特率 \_ 模式](./encapiparam-bitrate-mode.md) 属性的支持。
 
 定义编码器支持的编码模式：
 
@@ -195,7 +195,7 @@ DEFINE_KSPROPERTY_TABLE(ENCAPI_BitRateMode) {
 > [!NOTE]
 > *Get*属性处理程序应返回编码比特率模式，*并且在使用*传入的传入值之前必须先测试该传入传入的值是否有效。
 
-然后，将属性集指定为[**KSFILTER \_ 描述符**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-_ksfilter_descriptor)结构的自动化表。
+然后，将属性集指定为 [**KSFILTER \_ 描述符**](/windows-hardware/drivers/ddi/ks/ns-ks-_ksfilter_descriptor) 结构的自动化表。
 
 ```cpp
 DEFINE_KSPROPERTY_SET_TABLE(PropertyTable) {
@@ -236,7 +236,7 @@ FilterDescriptor = {
 下面的代码示例演示如何在*Device Parameters*注册表项下创建*功能*注册表项，以及如何创建和指定*功能*项下的子项和值。 当驱动程序初始化时执行此代码。
 
 > [!NOTE]
-> 以下代码假设每个物理设备上存在单个硬件编码器。 如果你的硬件包含多个编码器，则必须循环访问**IoGetDeviceInterfaces**函数的调用中返回的列表，并为每个编码器注册功能。
+> 以下代码假设每个物理设备上存在单个硬件编码器。 如果你的硬件包含多个编码器，则必须循环访问 **IoGetDeviceInterfaces** 函数的调用中返回的列表，并为每个编码器注册功能。
 
 ```cpp
 /**************************************************************************
