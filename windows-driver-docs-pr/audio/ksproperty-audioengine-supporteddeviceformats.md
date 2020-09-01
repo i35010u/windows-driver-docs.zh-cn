@@ -1,6 +1,6 @@
 ---
-title: KSPROPERTY\_AUDIOENGINE\_SUPPORTEDDEVICEFORMATS
-description: KSPROPERTY\_AUDIOENGINE\_SUPPORTEDDEVICEFORMATS 属性请求检索硬件音频引擎支持的设备格式。
+title: KSPROPERTY \_ AUDIOENGINE \_ SUPPORTEDDEVICEFORMATS
+description: KSPROPERTY \_ AUDIOENGINE \_ SUPPORTEDDEVICEFORMATS 属性请求检索硬件音频引擎支持的设备格式。
 ms.assetid: BF602B17-09E2-4003-95F8-CB45605EFA09
 keywords:
 - KSPROPERTY_AUDIOENGINE_SUPPORTEDDEVICEFORMATS 音频设备
@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7c1d2504c08674769901398879ded64f47bdc284
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: afa0f43516458ed33261959b24c1c937f8bbe98e
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72830872"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89206895"
 ---
-# <a name="ksproperty_audioengine_supporteddeviceformats"></a>KSPROPERTY\_AUDIOENGINE\_SUPPORTEDDEVICEFORMATS
+# <a name="ksproperty_audioengine_supporteddeviceformats"></a>KSPROPERTY \_ AUDIOENGINE \_ SUPPORTEDDEVICEFORMATS
 
 
-**KSPROPERTY\_AUDIOENGINE\_SUPPORTEDDEVICEFORMATS**属性请求检索硬件音频引擎支持的设备格式。
+**KSPROPERTY \_ AUDIOENGINE \_ SUPPORTEDDEVICEFORMATS**属性请求检索硬件音频引擎支持的设备格式。
 
 ### <a name="span-idusage_summary_tablespanspan-idusage_summary_tablespanspan-idusage_summary_tablespanusage-summary-table"></a><span id="Usage_Summary_Table"></span><span id="usage_summary_table"></span><span id="USAGE_SUMMARY_TABLE"></span>使用情况摘要表
 
@@ -38,7 +38,7 @@ ms.locfileid: "72830872"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">“获取”</th>
+<th align="left">获取</th>
 <th align="left">设置</th>
 <th align="left">目标</th>
 <th align="left">属性描述符类型</th>
@@ -47,11 +47,11 @@ ms.locfileid: "72830872"
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>“是”</p></td>
-<td align="left"><p>无</p></td>
+<td align="left"><p>是</p></td>
+<td align="left"><p>否</p></td>
 <td align="left"><p>节点 via 筛选器</p></td>
 <td align="left"><p>KSP_NODE</p></td>
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksmultiple_item" data-raw-source="[&lt;strong&gt;KSMULTIPLE_ITEM&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksmultiple_item)"><strong>KSMULTIPLE_ITEM</strong></a>结构，后跟一系列<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksdataformat_waveformatex" data-raw-source="[&lt;strong&gt;KSDATAFORMAT_WAVEFORMATEX&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksdataformat_waveformatex)"><strong>KSDATAFORMAT_WAVEFORMATEX</strong></a>结构</p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksmultiple_item" data-raw-source="[&lt;strong&gt;KSMULTIPLE_ITEM&lt;/strong&gt;](/windows-hardware/drivers/ddi/ks/ns-ks-ksmultiple_item)"><strong>KSMULTIPLE_ITEM</strong></a>结构，后跟一系列<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksdataformat_waveformatex" data-raw-source="[&lt;strong&gt;KSDATAFORMAT_WAVEFORMATEX&lt;/strong&gt;](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksdataformat_waveformatex)"><strong>KSDATAFORMAT_WAVEFORMATEX</strong></a>结构</p></td>
 </tr>
 </tbody>
 </table>
@@ -60,7 +60,7 @@ ms.locfileid: "72830872"
 
 ### <a name="span-idreturn_valuespanspan-idreturn_valuespanspan-idreturn_valuespanreturn-value"></a><span id="Return_Value"></span><span id="return_value"></span><span id="RETURN_VALUE"></span>返回值
 
-**KSPROPERTY\_AUDIOENGINE\_SUPPORTEDDEVICEFORMATS**属性请求返回**状态\_SUCCESS** ，以指示已成功完成。 否则，请求将返回相应的错误状态代码。
+**KSPROPERTY \_ AUDIOENGINE \_ SUPPORTEDDEVICEFORMATS**属性请求返回**状态 \_ SUCCESS**以指示已成功完成。 否则，请求将返回相应的错误状态代码。
 
 <a name="requirements"></a>要求
 ------------
@@ -85,20 +85,13 @@ ms.locfileid: "72830872"
 ## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
-[**KSDATAFORMAT\_WAVEFORMATEX**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksdataformat_waveformatex)
+[**KSDATAFORMAT \_ WAVEFORMATEX**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksdataformat_waveformatex)
 
-[**KSMULTIPLE\_项**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksmultiple_item)
+[**KSMULTIPLE \_ 项**](/windows-hardware/drivers/ddi/ks/ns-ks-ksmultiple_item)
 
-[**KSPROPERTY\_AUDIOENGINE**](ksproperty-audioengine.md)
+[**KSPROPERTY \_ AUDIOENGINE**](ksproperty-audioengine.md)
 
-[**KSPROPERTY\_AUDIOENGINE\_VOLUMELEVEL**](ksproperty-audioengine-volumelevel.md)
-
- 
+[**KSPROPERTY \_ AUDIOENGINE \_ VOLUMELEVEL**](ksproperty-audioengine-volumelevel.md)
 
  
-
-
-
-
-
 

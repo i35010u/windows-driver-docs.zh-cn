@@ -12,17 +12,17 @@ keywords:
 - 错误源发现 WDK WHEA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c0bea3f2ed669be34924d20197658dee6b610cd4
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 7d4a6bbfa9e4201c9b99448ca78ce627b8845d13
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72837998"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89206141"
 ---
 # <a name="participating-in-error-source-discovery"></a>参与错误源发现
 
 
-若要参与错误源发现，PSHED 插件必须实现[*GetAllErrorSources*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nc-ntddk-pshed_pi_get_all_error_sources)回调函数。 参与错误源发现的 PSHED 插件还可以实现可选的[*GetErrorSourceInfo*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nc-ntddk-pshed_pi_get_error_source_info)回调函数。
+若要参与错误源发现，PSHED 插件必须实现 [*GetAllErrorSources*](/windows-hardware/drivers/ddi/ntddk/nc-ntddk-pshed_pi_get_all_error_sources) 回调函数。 参与错误源发现的 PSHED 插件还可以实现可选的 [*GetErrorSourceInfo*](/windows-hardware/drivers/ddi/ntddk/nc-ntddk-pshed_pi_get_error_source_info) 回调函数。
 
 下面的代码示例演示如何实现这些回调函数。
 
@@ -106,9 +106,4 @@ NTSTATUS
 参与错误源发现的 PSHED 插件在向操作系统[注册](registering-a-pshed-plug-in.md)自身时必须指定**PshedFADiscovery**标志。
 
  
-
- 
-
-
-
 

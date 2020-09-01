@@ -1,6 +1,6 @@
 ---
-title: KSPROPERTY\_连接\_ALLOCATORFRAMING\_EX
-description: AVStream 客户端使用 KSPROPERTY\_连接\_ALLOCATORFRAMING\_EX 属性来确定 pin 的帧需求。
+title: KSPROPERTY \_ 连接 \_ ALLOCATORFRAMING \_ EX
+description: AVStream 客户端使用 KSPROPERTY \_ 连接 \_ ALLOCATORFRAMING \_ EX 属性来确定 pin 的帧需求。
 ms.assetid: 7ff1462f-959b-413e-a888-bcf7d251edee
 keywords:
 - KSPROPERTY_CONNECTION_ALLOCATORFRAMING_EX 流媒体设备
@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ad41468c03ec8b8e1a0ff5b528ea41b191c8e707
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 16d3db77da4bdc7b63a8228a9e78e99bc9f8ec03
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72826831"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89192359"
 ---
-# <a name="ksproperty_connection_allocatorframing_ex"></a>KSPROPERTY\_连接\_ALLOCATORFRAMING\_EX
+# <a name="ksproperty_connection_allocatorframing_ex"></a>KSPROPERTY \_ 连接 \_ ALLOCATORFRAMING \_ EX
 
 
-AVStream 客户端使用 KSPROPERTY\_连接\_ALLOCATORFRAMING\_EX 属性来确定 pin 的帧需求。
+AVStream 客户端使用 KSPROPERTY \_ 连接 \_ ALLOCATORFRAMING \_ EX 属性来确定 pin 的帧需求。
 
 ## <span id="ddk_ksproperty_connection_allocatorframing_ex_ks"></span><span id="DDK_KSPROPERTY_CONNECTION_ALLOCATORFRAMING_EX_KS"></span>
 
@@ -41,7 +41,7 @@ AVStream 客户端使用 KSPROPERTY\_连接\_ALLOCATORFRAMING\_EX 属性来确�
 </colgroup>
 <thead>
 <tr class="header">
-<th>“获取”</th>
+<th>获取</th>
 <th>设置</th>
 <th>目标</th>
 <th>属性描述符类型</th>
@@ -50,11 +50,11 @@ AVStream 客户端使用 KSPROPERTY\_连接\_ALLOCATORFRAMING\_EX 属性来确�
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>“是”</p></td>
-<td><p>无</p></td>
-<td><p>大头针</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)"><strong>KSPROPERTY</strong></a></p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksallocator_framing_ex" data-raw-source="[&lt;strong&gt;KSALLOCATOR_FRAMING_EX&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksallocator_framing_ex)"><strong>KSALLOCATOR_FRAMING_EX</strong></a></p></td>
+<td><p>是</p></td>
+<td><p>否</p></td>
+<td><p>Pin</p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)"><strong>KSPROPERTY</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksallocator_framing_ex" data-raw-source="[&lt;strong&gt;KSALLOCATOR_FRAMING_EX&lt;/strong&gt;](/windows-hardware/drivers/ddi/ks/ns-ks-ksallocator_framing_ex)"><strong>KSALLOCATOR_FRAMING_EX</strong></a></p></td>
 </tr>
 </tbody>
 </table>
@@ -64,11 +64,11 @@ AVStream 客户端使用 KSPROPERTY\_连接\_ALLOCATORFRAMING\_EX 属性来确�
 <a name="remarks"></a>备注
 -------
 
-此属性返回[**KSALLOCATOR\_组帧\_EX**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksallocator_framing_ex)，其中描述了 AVStream pin 的组帧要求。
+此属性返回 [**KSALLOCATOR \_ 组帧， \_ 如**](/windows-hardware/drivers/ddi/ks/ns-ks-ksallocator_framing_ex)描述 AVStream pin 的组帧要求。
 
-在 stream 类下运行的微型驱动程序应使用[**KSPROPERTY\_连接\_ALLOCATORFRAMING**](ksproperty-connection-allocatorframing.md)。
+在 stream 类下运行的微型驱动程序应使用 [**KSPROPERTY \_ 连接 \_ ALLOCATORFRAMING**](ksproperty-connection-allocatorframing.md)。
 
-请参阅[KS 分配器](https://docs.microsoft.com/windows-hardware/drivers/stream/ks-allocators)。 和[AVStream 分配器](https://docs.microsoft.com/windows-hardware/drivers/stream/avstream-allocators)。
+请参阅 [KS 分配器](./ks-allocators.md)。 和 [AVStream 分配器](./avstream-allocators.md)。
 
 <a name="requirements"></a>要求
 ------------
@@ -81,7 +81,7 @@ AVStream 客户端使用 KSPROPERTY\_连接\_ALLOCATORFRAMING\_EX 属性来确�
 <tbody>
 <tr class="odd">
 <td><p>标头</p></td>
-<td>Ks （包含 Ks）</td>
+<td>Ks (包含 Ks .h) </td>
 </tr>
 </tbody>
 </table>
@@ -89,14 +89,7 @@ AVStream 客户端使用 KSPROPERTY\_连接\_ALLOCATORFRAMING\_EX 属性来确�
 ## <a name="see-also"></a>另请参阅
 
 
-[**KSALLOCATOR\_组帧\_EX**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksallocator_framing_ex)
+[**KSALLOCATOR \_ 组帧 \_ EX**](/windows-hardware/drivers/ddi/ks/ns-ks-ksallocator_framing_ex)
 
  
-
- 
-
-
-
-
-
 

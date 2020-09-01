@@ -1,6 +1,6 @@
 ---
-title: KSMETHOD\_BDA\_创建\_PIN\_工厂
-description: 客户端使用 KSMETHOD\_BDA\_创建\_PIN\_工厂创建用于筛选器的 pin 工厂。
+title: KSMETHOD \_ BDA \_ 创建 \_ PIN \_ 工厂
+description: 客户端使用 KSMETHOD \_ BDA \_ create \_ PIN \_ 工厂创建用于筛选器的 PIN 工厂。
 ms.assetid: ebc9dc1d-1b4b-40d3-82b5-f32d3781537c
 keywords:
 - KSMETHOD_BDA_CREATE_PIN_FACTORY 流媒体设备
@@ -14,24 +14,24 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5687a4d3cd8d8d58b488571ef5abed3cd9c7c6a1
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 675142937122a9a9e3a3d2858a20110417e76b93
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72842424"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89192179"
 ---
-# <a name="ksmethod_bda_create_pin_factory"></a>KSMETHOD\_BDA\_创建\_PIN\_工厂
+# <a name="ksmethod_bda_create_pin_factory"></a>KSMETHOD \_ BDA \_ 创建 \_ PIN \_ 工厂
 
 
-客户端使用 KSMETHOD\_BDA\_创建\_PIN\_工厂创建用于筛选器的 pin 工厂。
+客户端使用 KSMETHOD \_ BDA \_ create \_ PIN \_ 工厂创建用于筛选器的 PIN 工厂。
 
 ## <span id="ddk_ksmethod_bda_create_pin_factory_ks"></span><span id="DDK_KSMETHOD_BDA_CREATE_PIN_FACTORY_KS"></span>
 
 
 ### <a name="span-idspecifying_this_methodspanspan-idspecifying_this_methodspanspan-idspecifying_this_methodspanspecifying-this-method"></a><span id="Specifying_This_Method"></span><span id="specifying_this_method"></span><span id="SPECIFYING_THIS_METHOD"></span>指定此方法
 
-KSM\_PIN，并将**方法**成员的**Flags**成员设置为 KSMETHOD\_类型\_READ。
+KSM \_ PIN，并将**方法**成员的**FLAGS**成员设置为 KSMETHOD \_ 类型 \_ READ。
 
 ### <a name="span-idmethod_dataspanspan-idmethod_dataspanspan-idmethod_dataspanmethod-data"></a><span id="Method_Data"></span><span id="method_data"></span><span id="METHOD_DATA"></span>方法数据
 
@@ -48,24 +48,17 @@ ULONG，表示 pin 工厂的标识符。
 <tbody>
 <tr class="odd">
 <td><p>标头</p></td>
-<td>Bdamedia （包括 Bdamedia）</td>
+<td>Bdamedia (包含 Bdamedia) </td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
-[**BdaMethodCreatePin**](https://docs.microsoft.com/windows-hardware/drivers/ddi/bdasup/nf-bdasup-bdamethodcreatepin)
+[**BdaMethodCreatePin**](/windows-hardware/drivers/ddi/bdasup/nf-bdasup-bdamethodcreatepin)
 
-[**KSM\_PIN**](https://docs.microsoft.com/windows-hardware/drivers/ddi/bdasup/ns-bdasup-_ksm_pin)
-
- 
+[**KSM \_ PIN**](/windows-hardware/drivers/ddi/bdasup/ns-bdasup-_ksm_pin)
 
  
-
-
-
-
-
 

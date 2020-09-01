@@ -1,6 +1,6 @@
 ---
 title: usb3kd.urb
-description: Usb3kd. urb 扩展显示有关 USB 请求块（URB）的信息。
+description: Usb3kd. urb 扩展显示有关 USB 请求块 (URB) 的信息。
 ms.assetid: B4583F32-BBC9-4182-A403-9C43BBD9BA4F
 keywords:
 - usb3kd urb Windows 调试
@@ -12,17 +12,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 55f149cab615cf496ae91cb861c760b0db372fe0
-ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
+ms.openlocfilehash: 155080747a246958664fcb9dcb08a6334ddc9aed
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84534152"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89206835"
 ---
 # <a name="usb3kdurb"></a>!usb3kd.urb
 
 
-[**！ Usb3kd urb**](-usb3kd-device-info.md)扩展显示有关 USB 请求块（urb）的信息。
+[**！ Usb3kd urb**](-usb3kd-device-info.md) (urb) 显示有关 USB 请求块的信息。
 
 ```dbgcmd
 !usb3kd.urb UrbAddress
@@ -37,12 +37,12 @@ URB 的地址。
 ## <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 
-Usb3kd
+Usb3kd.dll
 
 <a name="examples"></a>示例
 --------
 
-下面的示例显示了在[**！ xhci \_ deviceslots**](-usb3kd-xhci-deviceslots.md)命令的输出中的 URB （0xfffffa8005a2cbe8）的地址。
+以下示例显示了在 [**！ xhci \_ deviceslots**](-usb3kd-xhci-deviceslots.md) 命令的输出中的 URB (0xfffffa8005a2cbe8) 的地址。
 
 ```dbgcmd
 3: kd> !xhci_deviceslots 0xfffffa800520d2d0
@@ -61,7 +61,7 @@ DeviceContextBase: VA 0xfffffa8005a64000 LA 0x116864000 !wdfcommonbuffer 0x57ffa
     ...
 ```
 
-下面的示例将 URB 的地址传递给 **！ usb3kd**命令。
+下面的示例将 URB 的地址传递给 **！ usb3kd** 命令。
 
 ```dbgcmd
 3: kd> !urb 0xfffffa8005a2cbe8
@@ -88,14 +88,7 @@ TransferBufferMDL:     0xfffffa8005848930
 
 [USB 3.0 扩展](usb-3-extensions.md)
 
-[通用串行总线（USB）驱动程序](https://docs.microsoft.com/windows-hardware/drivers/usbcon/)
+[ (USB) 驱动程序的通用串行总线](../usbcon/index.md)
 
  
-
- 
-
-
-
-
-
 

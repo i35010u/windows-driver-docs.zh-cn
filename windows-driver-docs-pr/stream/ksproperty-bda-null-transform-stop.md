@@ -1,6 +1,6 @@
 ---
-title: KSPROPERTY\_BDA\_NULL\_转换\_停止
-description: 客户端使用 KSPROPERTY\_BDA\_NULL\_转换\_停止，以便在使用 KSPROPERTY\_BDA\_NULL\_转换禁用该转换之前，重新启动该转换在信号上执行的转换\_开始属性。
+title: KSPROPERTY \_ BDA \_ NULL \_ 转换 \_ 停止
+description: 客户端使用 KSPROPERTY \_ bda \_ null \_ 转换停止，以便在 \_ 使用 KSPROPERTY \_ BDA \_ null \_ 转换 \_ 启动属性禁用该转换之前，重新启动该转换所执行的转换。
 ms.assetid: 4bf0bc50-8a08-4ded-b7e8-cf9a8191cc35
 keywords:
 - KSPROPERTY_BDA_NULL_TRANSFORM_STOP 流媒体设备
@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e98206dd8731c75d69076f0750943fdd9ab0ad09
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 52d5899d29fafffde9a23c61a59bd6ab3f65b17d
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72837617"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89192159"
 ---
-# <a name="ksproperty_bda_null_transform_stop"></a>KSPROPERTY\_BDA\_NULL\_转换\_停止
+# <a name="ksproperty_bda_null_transform_stop"></a>KSPROPERTY \_ BDA \_ NULL \_ 转换 \_ 停止
 
 
-客户端使用 KSPROPERTY\_BDA\_NULL\_转换\_停止，以便在使用 KSPROPERTY\_BDA\_NULL\_转换禁用该转换之前，重新启动该转换在信号上执行的转换\_开始属性。
+客户端使用 KSPROPERTY \_ bda \_ null \_ 转换停止，以便在 \_ 使用 KSPROPERTY \_ BDA \_ null \_ 转换 \_ 启动属性禁用该转换之前，重新启动该转换所执行的转换。
 
 ## <span id="ddk_ksproperty_bda_null_transform_stop_ks"></span><span id="DDK_KSPROPERTY_BDA_NULL_TRANSFORM_STOP_KS"></span>
 
@@ -41,7 +41,7 @@ ms.locfileid: "72837617"
 </colgroup>
 <thead>
 <tr class="header">
-<th>“获取”</th>
+<th>获取</th>
 <th>设置</th>
 <th>目标</th>
 <th>属性描述符类型</th>
@@ -50,9 +50,9 @@ ms.locfileid: "72837617"
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>无</p></td>
-<td><p>“是”</p></td>
-<td><p>Filter</p></td>
+<td><p>否</p></td>
+<td><p>是</p></td>
+<td><p>筛选器</p></td>
 <td><p>KSPROPERTY</p></td>
 <td><p>无</p></td>
 </tr>
@@ -72,7 +72,7 @@ ms.locfileid: "72837617"
 <tbody>
 <tr class="odd">
 <td><p>标头</p></td>
-<td>Bdamedia （包括 Bdamedia）</td>
+<td>Bdamedia (包含 Bdamedia) </td>
 </tr>
 </tbody>
 </table>
@@ -80,16 +80,9 @@ ms.locfileid: "72837617"
 ## <a name="see-also"></a>另请参阅
 
 
-[**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)
+[**KSPROPERTY**](/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)
 
-[**KSPROPERTY\_BDA\_NULL\_转换\_开始**](ksproperty-bda-null-transform-start.md)
-
- 
+[**KSPROPERTY \_ BDA \_ NULL \_ 转换 \_ 启动**](ksproperty-bda-null-transform-start.md)
 
  
-
-
-
-
-
 

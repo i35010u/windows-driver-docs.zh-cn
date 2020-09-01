@@ -1,48 +1,48 @@
 ---
 title: OID_WDI_TASK_SEND_AP_ASSOCIATION_RESPONSE
-description: OID_WDI_TASK_SEND_AP_ASSOCIATION_RESPONSE 请求 IHV 组件发送到对等设备最近发送的关联请求的关联响应。
+description: OID_WDI_TASK_SEND_AP_ASSOCIATION_RESPONSE 请求 IHV 组件将关联响应发送到最近发送了关联请求的对等设备。
 ms.assetid: 8d19b009-db81-4b5e-ac63-5e6c5ad9727d
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 OID_WDI_TASK_SEND_AP_ASSOCIATION_RESPONSE 网络驱动程序
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 4c6f44fa3797de1b41ea76f413328f3dd03ef0a6
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: b325912b56f7e13130c1e91f2ab251b7b2819c3e
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386212"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89205983"
 ---
-# <a name="oidwditasksendapassociationresponse"></a>OID\_WDI\_TASK\_SEND\_AP\_ASSOCIATION\_RESPONSE
+# <a name="oid_wdi_task_send_ap_association_response"></a>OID \_ WDI \_ TASK \_ 发送 \_ AP \_ 关联 \_ 响应
 
 
-OID\_WDI\_任务\_发送\_AP\_关联\_响应请求 IHV 组件发送到对等设备最近发送一个关联的关联响应请求。
+OID \_ WDI \_ TASK \_ 发送 \_ AP \_ 关联 \_ 响应请求 IHV 组件将关联响应发送到最近发送了关联请求的对等设备。
 
-| Object | 中止支持                                           | 默认优先级 （主机驱动程序策略） | 正常执行时间 （秒） |
+| 对象 | 支持中止                                           | 主机驱动程序策略 (默认优先级)  | 正常执行时间 (秒)  |
 |--------|---------------------------------------------------------|---------------------------------------|---------------------------------|
-| Port   | 是。 端口必须保持干净状态后中止。 | 3                                     | 1                               |
+| 端口   | 是。 中止后，端口必须处于干净状态。 | 3                                     | 1                               |
 
  
 
-如果发送由于任何原因失败，一个空[NDIS\_状态\_WDI\_指示\_发送\_AP\_关联\_响应\_完整](ndis-status-wdi-indication-send-ap-association-response-complete.md)会填充标头中包含的正确状态。
+如果由于任何原因而导致发送失败，则应为空 [NDIS \_ 状态 \_ WDI \_ 指示 \_ 发送 \_ AP \_ 关联 \_ 响应的 \_ 完成](ndis-status-wdi-indication-send-ap-association-response-complete.md) ，其状态应包括在填充的标头中。
 
 ## <a name="task-parameters"></a>任务参数
 
 
-| TLV                                                                                                      | 允许多个 TLV 实例 | 可选 | 描述                                                                                                      |
+| TLV                                                                                                      | 允许多个 TLV 实例 | 可选 | 说明                                                                                                      |
 |----------------------------------------------------------------------------------------------------------|--------------------------------|----------|------------------------------------------------------------------------------------------------------------------|
-| [**WDI\_TLV\_关联\_响应\_参数**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-association-response-parameters)      |                                |          | 关联响应参数。                                                                                 |
-| [**WDI\_TLV\_VENDOR\_SPECIFIC\_IE**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-vendor-specific-ie)                                |                                | X        | 端口必须将追加到关联响应 IE 向对等方适配器发送响应之前设置的更多 Ie。 |
-| [**WDI\_TLV\_传入\_关联\_请求\_信息**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-incoming-association-request-info) |                                |          | 传入关联请求有关的信息。                                                              |
-| [**WDI\_TLV\_WFD\_关联\_状态**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-wfd-association-status)                        |                                | X        | 要设置关联请求被拒绝时的状态值。                                                  |
+| [**WDI \_ TLV \_ 关联 \_ 响应 \_ 参数**](./wdi-tlv-association-response-parameters.md)      |                                |          | 关联响应参数。                                                                                 |
+| [**WDI \_ TLV \_ 供应商 \_ 特定 \_ IE**](./wdi-tlv-vendor-specific-ie.md)                                |                                | X        | 在将响应发送到对等适配器之前，端口必须附加到关联响应 IE 集的附加请求。 |
+| [**WDI \_ TLV \_ 传入 \_ 关联 \_ 请求 \_ 信息**](./wdi-tlv-incoming-association-request-info.md) |                                |          | 有关传入关联请求的信息。                                                              |
+| [**WDI \_ TLV \_ WFD \_ 关联 \_ 状态**](./wdi-tlv-wfd-association-status.md)                        |                                | X        | 拒绝关联请求时要设置的状态值。                                                  |
 
  
 
-## <a name="task-completion-indication"></a>指示任务完成
+## <a name="task-completion-indication"></a>任务完成指示
 
 
-[NDIS\_状态\_WDI\_指示\_发送\_AP\_关联\_响应\_完成](ndis-status-wdi-indication-send-ap-association-response-complete.md)
+[NDIS \_ 状态 \_ WDI \_ 指示 \_ 发送 \_ AP \_ 关联 \_ 响应 \_ 完成](ndis-status-wdi-indication-send-ap-association-response-complete.md)
 
 <a name="requirements"></a>要求
 ------------
@@ -62,16 +62,11 @@ OID\_WDI\_任务\_发送\_AP\_关联\_响应请求 IHV 组件发送到对等设�
 <td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
-<td><p>Header</p></td>
-<td>Dot11wdi.h</td>
+<td><p>标头</p></td>
+<td>Dot11wdi</td>
 </tr>
 </tbody>
 </table>
 
  
-
- 
-
-
-
 

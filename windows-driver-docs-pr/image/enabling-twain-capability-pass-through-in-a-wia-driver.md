@@ -4,12 +4,12 @@ description: 在 WIA 驱动程序中启用 TWAIN 功能传递
 ms.assetid: b2108109-9e41-481d-bc25-67327420faf9
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d1371c590edfce629bb67291d4bb486e54402d77
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 91567697ebb7500df15743952fd3cf41affc2ad7
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67385027"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89192287"
 ---
 # <a name="enabling-twain-capability-pass-through-in-a-wia-driver"></a>在 WIA 驱动程序中启用 TWAIN 功能传递
 
@@ -17,9 +17,9 @@ ms.locfileid: "67385027"
 
 
 
-若要启用对 TWAIN 功能传递的支持，请添加**WiaItemTypeTwainCapabilityPassThrough**标记，用于[ **WIA\_IPA\_项\_标志**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ipa-item-flags)根项上的属性。 头文件中定义此标志*wiatwcmp.h*。
+若要启用对 TWAIN 功能传递的支持，请将 **WiaItemTypeTwainCapabilityPassThrough** 标志添加到根项的 [**WIA \_ IPA \_ 项 \_ FLAGS**](./wia-ipa-item-flags.md) 属性中。 此标志在头文件 *wiatwcmp*中定义。
 
-下面的示例取自*wiascanr*示例 (包括在驱动程序开发工具包\[DDK\]) 并演示如何使用**WiaItemTypeTwainCapabilityPassThrough**标志)。
+下面的示例摘自驱动程序开发工具包 DDK 中包含的 *wiascanr* 示例 (\[ \] ，) 并演示了如何使用 **WiaItemTypeTwainCapabilityPassThrough** 标志) 。
 
 ```cpp
 // Initialize WIA_IPA_ITEM_FLAGS
@@ -44,9 +44,4 @@ ms.locfileid: "67385027"
 ```
 
  
-
- 
-
-
-
 

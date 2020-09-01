@@ -1,6 +1,6 @@
 ---
-title: KSPROPERTY\_CAMERACONTROL\_闪存\_属性
-description: 用户模式客户端使用此属性来获取或设置照相机的闪光控制特征。 此属性为可选项。
+title: KSPROPERTY \_ CAMERACONTROL \_ FLASH \_ 属性
+description: 用户模式客户端使用此属性来获取或设置照相机的闪光控制特征。 此属性是可选的。
 ms.assetid: 33B4B9DF-D3B4-4990-A625-D632F30284AA
 keywords:
 - KSPROPERTY_CAMERACONTROL_FLASH_PROPERTY 流媒体设备
@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 96ef2bef6193d5a84b39da0e353f0447605bd2ed
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 15c837ccaab1c6a74ad098f2df811b83ffa5b4b8
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72837552"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89192559"
 ---
-# <a name="ksproperty_cameracontrol_flash_property"></a>KSPROPERTY\_CAMERACONTROL\_闪存\_属性
+# <a name="ksproperty_cameracontrol_flash_property"></a>KSPROPERTY \_ CAMERACONTROL \_ FLASH \_ 属性
 
 
-用户模式客户端使用此属性来获取或设置照相机的闪光控制特征。 此属性为可选项。
+用户模式客户端使用此属性来获取或设置照相机的闪光控制特征。 此属性是可选的。
 
 ## <span id="ddk_ksproperty_cameracontrol_pan_ks"></span><span id="DDK_KSPROPERTY_CAMERACONTROL_PAN_KS"></span>
 
@@ -41,7 +41,7 @@ ms.locfileid: "72837552"
 </colgroup>
 <thead>
 <tr class="header">
-<th>“获取”</th>
+<th>获取</th>
 <th>设置</th>
 <th>目标</th>
 <th>属性描述符类型</th>
@@ -50,11 +50,11 @@ ms.locfileid: "72837552"
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>“是”</p></td>
-<td><p>“是”</p></td>
-<td><p>Filter</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)"><strong>KSPROPERTY</strong></a></p></td>
-<td><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_cameracontrol_flash_s" data-raw-source="[&lt;strong&gt;KSPROPERTY_CAMERACONTROL_FLASH_S&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_cameracontrol_flash_s)"><strong>KSPROPERTY_CAMERACONTROL_FLASH_S</strong></a></td>
+<td><p>是</p></td>
+<td><p>是</p></td>
+<td><p>筛选器</p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)"><strong>KSPROPERTY</strong></a></p></td>
+<td><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_cameracontrol_flash_s" data-raw-source="[&lt;strong&gt;KSPROPERTY_CAMERACONTROL_FLASH_S&lt;/strong&gt;](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_cameracontrol_flash_s)"><strong>KSPROPERTY_CAMERACONTROL_FLASH_S</strong></a></td>
 </tr>
 </tbody>
 </table>
@@ -64,7 +64,7 @@ ms.locfileid: "72837552"
 <a name="remarks"></a>备注
 -------
 
-属性 ID 为**KSPROPERTY\_CAMERACONTROL\_闪存\_属性\_ID**。
+属性 ID 为 **KSPROPERTY \_ CAMERACONTROL \_ FLASH \_ 属性 \_ id**。
 
 <a name="requirements"></a>要求
 ------------
@@ -77,7 +77,7 @@ ms.locfileid: "72837552"
 <tbody>
 <tr class="odd">
 <td><p>标头</p></td>
-<td>Ksmedia （包括 Ksmedia）</td>
+<td>Ksmedia (包含 Ksmedia) </td>
 </tr>
 </tbody>
 </table>
@@ -85,16 +85,9 @@ ms.locfileid: "72837552"
 ## <a name="see-also"></a>另请参阅
 
 
-[**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)
+[**KSPROPERTY**](/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)
 
-[**KSPROPERTY\_CAMERACONTROL\_闪存\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_cameracontrol_flash_s)
-
- 
+[**KSPROPERTY \_ CAMERACONTROL \_ FLASH \_ S**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_cameracontrol_flash_s)
 
  
-
-
-
-
-
 

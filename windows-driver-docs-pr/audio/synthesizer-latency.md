@@ -3,19 +3,19 @@ title: 合成器延迟
 description: 合成器延迟
 ms.assetid: a3134024-77b9-463b-959b-3c910f83014d
 keywords:
-- 合成器 WDK 音频，延迟
-- 延迟 WDK 音频，合成器
+- 合成 WDK 音频，延迟
+- 延迟 WDK 音频，合成
 - MIDI 消息延迟 WDK 音频
 - IReferenceClock 对象
-- 批接收器 WDK 音频，延迟时间
+- 波形接收器音频，延迟时间
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5736086704ba71904d9a0f01bd1c8fb8973de68c
-ms.sourcegitcommit: b25275c2662bfdbddd97718f47be9bd79e6f08df
+ms.openlocfilehash: a9bd8793e64719a4d5f4a715b5c4d3017fd6e8b7
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/13/2019
-ms.locfileid: "67866518"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89206677"
 ---
 # <a name="synthesizer-latency"></a>合成器延迟
 
@@ -23,24 +23,19 @@ ms.locfileid: "67866518"
 ## <span id="synthesizer_latency"></span><span id="SYNTHESIZER_LATENCY"></span>
 
 
-合成器计时的另一个注意事项是延迟，这是当前时间和下可以播放的第一个时间之间的差异。 MIDI 消息不能提交给合成器，并可以在当前的示例时呈现到输出缓冲区。 应给已放入了缓冲区，但不是尚未流式传输到 wave 输出设备的数据限额。
+合成器计时中的另一个注意事项是延迟，这是当前时间与便笺首次可以播放的时间之间的差异。 在当前采样时间，无法将 MIDI 消息提交到合成器并呈现到输出缓冲区。 应为已放入缓冲区中但尚未流式传输到波形输出设备的数据进行限制。
 
-批接收器因此应实现延迟时钟，即[ **IReferenceClock** ](https://docs.microsoft.com/windows/desktop/wmformat/ireferenceclock) （Microsoft Windows SDK 文档中所述） 的对象。 延迟时钟[ **IReferenceClock::GetTime** ](https://docs.microsoft.com/previous-versions//dd551385(v=vs.85))方法检索到该数据已写入到缓冲区，并将其转换来引用相对于主时钟时间的示例时间. 批接收器 does 参考和示例使用的时间之间的转换[ **IDirectMusicSynthSink::SampleToRefTime** ](https://docs.microsoft.com/windows/desktop/api/dmusics/nf-dmusics-idirectmusicsynthsink-sampletoreftime)并[ **IDirectMusicSynthSink::RefTimeToSample** ](https://docs.microsoft.com/windows/desktop/api/dmusics/nf-dmusics-idirectmusicsynthsink-reftimetosample)，因此在这种情况下，调用合成**IDirectMusicSynthSink::RefTimeToSample**来完成转换。
+因此，波形接收器应该实现延迟时钟，这是 (Microsoft Windows SDK 文档) 中所述的 [**IReferenceClock**](/windows/desktop/wmformat/ireferenceclock) 对象。 延迟时钟的 [**IReferenceClock：： GetTime**](/previous-versions//dd551385(v=vs.85)) 方法检索数据已写入缓冲区的采样时间，并将其转换为相对于主时钟的引用时间。 波形接收器在引用和采样时间之间进行转换， [**IDirectMusicSynthSink：： SampleToRefTime**](/windows/desktop/api/dmusics/nf-dmusics-idirectmusicsynthsink-sampletoreftime) 和 [**IDirectMusicSynthSink：： RefTimeToSample**](/windows/desktop/api/dmusics/nf-dmusics-idirectmusicsynthsink-reftimetosample)，因此在这种情况下，合成将调用 **IDirectMusicSynthSink：： RefTimeToSample** 来完成转换。
 
-所有管理批接收器滞后时间。 实现[ **IDirectMusicSynthSink::GetLatencyClock** ](https://docs.microsoft.com/windows/desktop/api/dmusics/nf-dmusics-idirectmusicsynthsink-getlatencyclock)方法应输出到延迟时钟指针和 this 指针又必须检索由[ **IDirectMusicSynth::GetLatencyClock**](https://docs.microsoft.com/windows/desktop/api/dmusics/nf-dmusics-idirectmusicsynth-getlatencyclock)。 应用程序使用延迟时钟来确定在其中可以排队 MIDI 消息时调用传递给合成器播放的时间最早的点[ **IDirectMusicSynth::PlayBuffer** ](https://docs.microsoft.com/windows/desktop/api/dmusics/nf-dmusics-idirectmusicsynth-playbuffer)方法。
+滞后时间由波形接收器管理。 你的 [**IDirectMusicSynthSink：： GetLatencyClock**](/windows/desktop/api/dmusics/nf-dmusics-idirectmusicsynthsink-getlatencyclock) 方法的实现应输出指向延迟时钟的指针，并且此指针必须依次通过 [**IDirectMusicSynth：： GetLatencyClock**](/windows/desktop/api/dmusics/nf-dmusics-idirectmusicsynth-getlatencyclock)检索。 应用程序通过调用 [**IDirectMusicSynth：:P laybuffer**](/windows/desktop/api/dmusics/nf-dmusics-idirectmusicsynth-playbuffer) 方法，使用延迟时间来确定 MIDI 消息在传递到合成器时可以排队等待的最早时间点。
 
-MIDI 消息的延迟的示例是在下图中所示。
+下图显示了 MIDI 消息延迟的示例。
 
-![说明的 midi 消息延迟时间的关系图](images/dmclock.png)
+![说明 midi 消息延迟的示意图](images/dmclock.png)
 
-在上图中，延迟时钟指向可在其中播放下 PCM 缓冲区循环的第一个位置。 请注意，主时钟在 22 时间单位，即其中，从当前播放的声音但 22 和 30 时间单位之间的空间已使用批数据填充，并且不再可以写入到的点。 因此，可以计划新的时间戳 MIDI 事件播放的第一个位置是 30 次。 因此，延迟时钟读取 30 个时间单位。
+在上图中，延迟时钟指向 PCM 缓冲区循环中的第一个位置，可以在其中播放注释。 请注意，主时钟的时间单位为22个，这是声音当前播放的点，但22到30个时间单位之间的空间已用波形数据填充，无法再写入。 因此，可以计划在第30次播放带有时间戳的新 MIDI 事件的第一个位置。 因此，延迟时钟会读取30个时间单位。
 
-消息可以这种延迟时间计划到 play 或后，任何时间。 因此，若要立即呈现的消息都标有放入合成器的输入缓冲区中之前的延迟时间 （而不是当前时间）。
-
- 
+可以计划在此延迟时间内或之后的任何时间播放消息。 因此，要立即呈现的消息将被标记为延迟时间 (当前时间) 置于合成器的输入缓冲区中。
 
  
-
-
-
 

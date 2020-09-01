@@ -4,22 +4,22 @@ description: ESC_TWAIN_PRIVATE_SUPPORTED_CAPS 转义码
 ms.assetid: 99b9f180-018b-47c4-ab8d-dc037e3f637a
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e20e2a41f4d32013dd212a43cdfda09d96cf6212
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: f6154d1798b948f11cc4fac5e58f0f03036a101f
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72840849"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89192959"
 ---
-# <a name="esc_twain_private_supported_caps-escape-code"></a>ESC\_TWAIN\_PRIVATE\_支持\_大写转义代码
+# <a name="esc_twain_private_supported_caps-escape-code"></a>ESC \_ TWAIN \_ 私有 \_ 支持的 \_ 大写转义代码
 
 
 
 
 
-为了确定支持 TWAIN 的私有功能，TWAIN 应用程序将通知 TWAIN 兼容层，然后将 ESC\_TWAIN\_PRIVATE\_支持的\_CAPS escape 代码发送到 WIA 驱动程序的[**IStiUSD：： escape**](https://docs.microsoft.com/windows-hardware/drivers/ddi/stiusd/nf-stiusd-istiusd-escape)方法。 以下**转义**方法的伪代码实现演示了应如何响应 ESC\_TWAIN\_PRIVATE\_支持的\_大写转义代码，以报告私有 TWAIN 支持功能。
+为了确定支持 TWAIN 的私有功能，TWAIN 应用程序将通知 TWAIN 兼容层，后者随后将 ESC \_ TWAIN \_ 支持的 \_ \_ 大写转义代码发送到 WIA 驱动程序的 [**IStiUSD：： escape**](/windows-hardware/drivers/ddi/stiusd/nf-stiusd-istiusd-escape) 方法。 以下 **转义** 方法的伪代码实现演示了如何响应 ESC \_ twain \_ 私有 \_ 支持的 \_ 大写转义代码，以报告私有 TWAIN 支持功能。
 
-**请注意**   此示例中的**转义**方法与[ESC\_TWAIN\_功能转义代码](esc-twain-capability-escape-code.md)中显示的方法相同，但每个示例的重点是不同的转义代码。
+**注意**   在此示例中， **Escape**方法与[ESC \_ TWAIN \_ 功能转义代码](esc-twain-capability-escape-code.md)中所示的方法相同，但每个示例的焦点都是不同的转义码。
 
  
 
@@ -173,9 +173,4 @@ STDMETHODIMP CWIADevice::Escape(STI_RAW_CONTROL_CODE EscapeFunction,
 ```
 
  
-
- 
-
-
-
 

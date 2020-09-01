@@ -4,109 +4,109 @@ description: 转发扩展
 ms.assetid: 7ABBB3F3-66F5-4651-8A5A-94940F3FD82D
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4dd9f25b9f008be49d7fb64b75b89f10a5e02187
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 3b6fd7c9d25d96b66ded17ba2c3bd628354a12d2
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67353338"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89206105"
 ---
 # <a name="forwarding-extensions"></a>转发扩展
 
 
-转发扩展已筛选的扩展，与相同的功能，但负责执行核心数据包转发和筛选的可扩展交换机的任务。 这些任务包括：
+转发扩展与筛选扩展具有相同的功能，但负责执行可扩展交换机的核心数据包转发和筛选任务。 这些任务包括以下内容：
 
 -   确定数据包的目标端口。
 
-    **请注意**  目标端口，并将数据包转发数据包是否 NVGRE 数据包，确定可扩展交换机的 HYPER-V 网络虚拟化 (HNV) 组件。 有关详细信息，请参阅[混合转发](hybrid-forwarding.md)。
+    **注意**   如果数据包为 NVGRE 数据包，则可扩展交换机的 Hyper-v 网络虚拟化 (HNV) 组件决定目标端口并转发数据包。 有关详细信息，请参阅 [混合转发](hybrid-forwarding.md)。
 
      
 
--   通过强制执行标准端口的策略，如安全、 配置文件或虚拟 LAN (VLAN) 策略筛选数据包。
+-   通过强制实施标准端口策略来筛选数据包，如安全性、配置文件或虚拟 LAN (VLAN) 策略。
 
-    **请注意**  可扩展交换机仍执行基于内置策略的筛选。 这些策略包括访问控制列表 (Acl) 和服务质量 (QoS)。
+    **注意**   可扩展交换机仍根据内置策略执行筛选。 这些策略包括 (Acl) 和服务质量 (QoS) 的访问控制列表。
 
      
 
-**请注意**  转发扩展未安装和启用了可扩展的交换机中，如果交换机确定数据包的目标端口以及筛选器基于标准的端口设置的数据包。
+**注意**   如果未在可扩展交换机中安装和启用转发扩展，则交换机会确定数据包的目标端口，并根据标准端口设置筛选数据包。
 
  
 
-在可扩展交换机扩展微型端口驱动程序中的出口和入口数据路径的分层立即转发扩展。 有关这些数据路径的详细信息，请参阅[HYPER-V 可扩展交换机数据路径](hyper-v-extensible-switch-data-path.md)。
+转发扩展在出口和入口数据路径的可扩展交换机扩展微型端口驱动程序的紧上方。 有关这些数据路径的详细信息，请参阅 [Hyper-v 可扩展交换机数据路径](hyper-v-extensible-switch-data-path.md)。
 
-转发扩展可以执行以下命令，并获得入口数据路径的数据包：
+转发扩展可对在入口数据路径上获取的数据包执行以下操作：
 
--   它可以筛选数据包流量和强制实施自定义和标准端口或切换通过可扩展交换机的数据包传递的策略。 当转发扩展筛选器中的入口数据路径的数据包时，则会应用基于源端口，以及该扩展将分配给该数据包的目标端口的筛选规则。
+-   它可以筛选数据包流量，并强制实施自定义和标准端口，或者通过可扩展交换机进行数据包传递的交换机策略。 当转发扩展筛选入站数据路径中的数据包时，它将基于源端口以及扩展分配给数据包的目标端口应用筛选规则。
 
-    由独立软件供应商 (ISV) 定义自定义策略。 标准策略由可扩展交换机接口定义。 通过 HYPER-V WMI 管理层管理属性设置为这些类型的策略。 使用这些属性设置的对象标识符 (OID) 请求通过配置转发扩展[OID\_交换机\_端口\_属性\_更新](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-port-property-update)并[OID\_交换机\_属性\_更新](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-property-update)。
+    自定义策略是由独立软件供应商 (ISV) 定义的。 标准策略由可扩展交换机接口定义。 这些类型的策略的属性设置通过 Hyper-v WMI 管理层进行管理。 通过对象标识符，使用以下属性设置来配置转发扩展： oid [ \_ 交换机 \_ 端口 \_ 属性 \_ 更新](./oid-switch-port-property-update.md) 和 [oid \_ 开关 \_ 属性 \_ 更新](./oid-switch-property-update.md) (oid) 请求。
 
-    可扩展交换机策略的详细信息，请参阅[管理的 HYPER-V 可扩展交换机策略](managing-hyper-v-extensible-switch-extensibility-policies.md)。
+    有关可扩展交换机策略的详细信息，请参阅 [管理 Hyper-v 可扩展交换机策略](managing-hyper-v-extensible-switch-extensibility-policies.md)。
 
--   它可以将新的、 已修改，或克隆数据包注入到入口数据路径。
+-   它可以将新的、经过修改的或克隆的数据包注入到入口数据路径中。
 
-    有关详细信息，请参阅[HYPER-V 可扩展交换机发送和接收操作](hyper-v-extensible-switch-send-and-receive-operations.md)。
+    有关详细信息，请参阅 [Hyper-v 可扩展交换机发送和接收操作](hyper-v-extensible-switch-send-and-receive-operations.md)。
 
--   它可以确定将数据包传递到一个或多个可扩展交换机目标端口。 这样，要将数据包传送的目标端口添加到可扩展交换机端口的转发扩展。
+-   它可以确定将数据包传递到一个或多个可扩展交换机目标端口。 这允许转发扩展添加目标端口，以便将数据包传递到可扩展交换机端口。
 
-    有关如何添加目标端口的详细信息，请参阅[添加可扩展交换机目标将数据转到数据包](adding-extensible-switch-destination-port-data-to-a-packet.md)。
+    有关如何添加目标端口的详细信息，请参阅 [将可扩展交换机目标端口数据添加到数据包](adding-extensible-switch-destination-port-data-to-a-packet.md)。
 
-转发扩展可以执行以下命令，并获得出口数据路径的数据包：
+转发扩展可对在出口数据路径上获取的数据包执行以下操作：
 
--   它可以筛选数据包流量和强制实施自定义和标准端口或切换通过可扩展交换机的数据包传递的策略。 转发扩展筛选器的出口数据路径中的数据包，它可以应用基于数据包的源或目标端口的筛选规则。
+-   它可以筛选数据包流量，并强制实施自定义和标准端口，或者通过可扩展交换机进行数据包传递的交换机策略。 当转发扩展筛选出口数据路径中的数据包时，它可以根据数据包的源或目标端口应用筛选规则。
 
--   它可以排除数据包传递到一个或多个可扩展交换机目标端口。 这允许要排除的数据包传递到可扩展的交换机端口的转发扩展。
+-   它可以排除数据包到一个或多个可扩展交换机目标端口的传送。 这允许转发扩展插件排除数据包到可扩展交换机端口的传送。
 
-    有关如何排除的数据包发送到可扩展交换机端口的详细信息，请参阅[可扩展交换机目标端口不包括数据包传递](excluding-packet-delivery-to-extensible-switch-destination-ports.md)。
+    有关如何将数据包传递到可扩展交换机端口的详细信息，请参阅 [排除数据包传递到可扩展交换机目标端口](excluding-packet-delivery-to-extensible-switch-destination-ports.md)。
 
-    **请注意**  转发扩展时处理出口数据路径上的数据包只能排除的数据包发送。 该扩展仅可以添加或修改的入口数据路径上的数据包的目标端口。
-
-     
-
--   它可以修改数据包数据。 如果转发扩展需要修改在包中的数据，必须先克隆该数据包之前它将分配端口的目标。 该数据包已分配的已修改和端口目标后，该扩展必须将修改后的数据包注入到出口数据路径。
-
-    有关详细信息，请参阅[克隆数据包流量](cloning-or-duplicating-packet-traffic.md)。
-
-除了检查 OID 请求和 NDIS 状态指示，转发扩展可以执行以下操作：
-
--   可以将注入到可扩展交换机控制路径的 Oid 或 NDIS 状态指示。 这样，要创建或修改 Oid 和状态指示，并将其转发到或从基础物理网络适配器的转发扩展。
-
-    例如，可扩展交换机外部网络适配器可以绑定到的 NDIS 多路复用器 (MUX) 中间驱动程序的虚拟微型端口边缘。 在主机上，MUX 中间驱动程序本身可以绑定到一个或多个物理网络的团队。 此配置称为*可扩展交换机团队*。
-
-    在此配置中，可扩展交换机扩展公开到可扩展交换机团队中每个网络适配器。 这样，转发扩展中要管理的配置和使用的团队中的单个网络适配器的可扩展交换机驱动程序堆栈。 例如，该扩展插件可以为负载平衡团队通过故障转移 (LBFO) 解决方案，通过将传出数据包转发到各个适配器提供支持。 此类扩展被称为*组合的提供程序*。
-
-    通过充当组合的提供程序，转发扩展可以创建或修改 OID 请求启用或禁用在团队中的适配器上的硬件能力。 组合的提供程序还可以创建或修改基于更改团队中的一个或多个适配器的 NDIS 状态指示。
-
-    有关组合提供程序的详细信息，请参阅[组合提供程序扩展](teaming-provider-extensions.md)。
-
--   它可以通过返回状态来禁止创建可扩展交换机端口或网络适配器连接\_数据\_不\_接受适用的可扩展交换机 Oid。 例如，转发扩展可通过返回状态否决的端口创建请求\_数据\_不\_时，驱动程序收到 OID 集请求的接受[OID\_交换机\_端口\_创建](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-port-create)。
-
-    **请注意**  转发扩展，请勿创建或删除端口或网络适配器连接。 可扩展交换机的协议边缘会发出通知有关创建或删除的端口或网络适配器连接的基础扩展的 Oid。 有关详细信息，请参阅[HYPER-V 可扩展交换机端口和网络适配器状态](hyper-v-extensible-switch-port-and-network-adapter-states.md)。
+    **注意**   转发扩展在处理出口数据路径上的数据包时，只能排除数据包传送。 扩展只能在入口数据路径上添加或修改数据包的目标端口。
 
      
 
--   有权添加或更新可扩展交换机或端口策略决策通过返回状态\_数据\_不\_接受适用的可扩展交换机 Oid。 例如，转发扩展有权添加端口策略决策通过返回状态\_数据\_不\_时，驱动程序收到 OID 集请求的接受[OID\_交换机\_端口\_属性\_添加](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-port-property-add)。
+-   它可以修改数据包数据。 如果转发扩展需要修改数据包中的数据，则必须先克隆数据包，然后再分配端口目标。 修改数据包并分配端口目标后，扩展必须将已修改的数据包注入传出数据路径。
 
-    有关可扩展交换机策略的详细信息，请参阅[管理的 HYPER-V 可扩展交换机策略](managing-hyper-v-extensible-switch-extensibility-policies.md)。
+    有关详细信息，请参阅 [克隆数据包通信](cloning-or-duplicating-packet-traffic.md)。
+
+除了检查 OID 请求和 NDIS 状态指示，转发扩展还可以执行以下操作：
+
+-   它可以将 Oid 或 NDIS 状态指示注入可扩展交换机控制路径。 这允许转发扩展创建或修改 Oid 和状态指示，并将其转发到基础物理网络适配器或从基础物理网络适配器转发它们。
+
+    例如，可扩展交换机外部网络适配器可以绑定到 NDIS 多路复用器 (MUX) 中间驱动程序的虚拟端口边缘。 MUX 中间驱动程序本身可以绑定到主机上一个或多个物理网络的团队。 此配置称为 *可扩展交换机团队*。
+
+    在此配置中，可扩展交换机扩展会公开给可扩展交换机团队中的每个网络适配器。 这允许可扩展交换机驱动程序堆栈中的转发扩展管理团队中单个网络适配器的配置和使用。 例如，扩展可以通过将传出数据包转发到各个适配器，为负载平衡故障转移 (LBFO) 解决方案提供支持。 此类扩展称为 *组合提供程序*。
+
+    转发扩展可通过充当分组提供程序来创建或修改 OID 请求，以在组中的适配器上启用或禁用硬件功能。 组合提供程序还可以根据组中一个或多个适配器的更改来创建或修改 NDIS 状态指示。
+
+    有关组合提供程序的详细信息，请参阅 [组合提供程序扩展](teaming-provider-extensions.md)。
+
+-   它通过返回 \_ \_ 适用的可扩展交换机 OID 的状态数据，可以拒绝创建可扩展交换机端口或网络适配器连接 \_ 。 例如， \_ \_ \_ 当驱动程序收到 [oid \_ 交换机 \_ 端口 \_ CREATE](./oid-switch-port-create.md)的 oid 设置请求时，转发扩展可以通过返回不被接受的状态数据来拒绝端口创建请求。
+
+    **注意**   转发扩展不会创建或删除端口或网络适配器连接。 可扩展交换机的协议边缘会发出 Oid，通知基础扩展有关创建或删除端口或网络适配器连接的信息。 有关详细信息，请参阅 [Hyper-v 可扩展交换机端口和网络适配器状态](hyper-v-extensible-switch-port-and-network-adapter-states.md)。
+
+     
+
+-   它通过返回 \_ \_ 适用的可扩展交换机 OID 的状态数据，可以拒绝添加或更新可扩展交换机或端口策略 \_ 。 例如， \_ \_ \_ 当驱动程序收到 [oid \_ 交换机 \_ 端口 \_ 属性 " \_ 添加](./oid-switch-port-property-add.md)" 的 oid 设置请求时，转发扩展可以通过返回不被接受的状态数据来拒绝端口策略的添加。
+
+    有关可扩展交换机策略的详细信息，请参阅 [管理 Hyper-v 可扩展交换机策略](managing-hyper-v-extensible-switch-extensibility-policies.md)。
 
 转发扩展具有以下要求：
 
--   转发扩展必须作为支持可扩展交换机接口的 NDIS 筛选器驱动程序开发。
+-   转发扩展必须开发为支持可扩展交换机接口的 NDIS 筛选器驱动程序。
 
-    有关筛选器驱动程序的详细信息，请参阅[NDIS 筛选器驱动程序](ndis-filter-drivers2.md)。
+    有关筛选器驱动程序的详细信息，请参阅 [NDIS 筛选器驱动程序](./roadmap-for-developing-ndis-filter-drivers.md)。
 
-    有关如何编写一个转发扩展的详细信息，请参阅[编写的 HYPER-V 可扩展交换机扩展](writing-hyper-v-extensible-switch-extensions.md)。
+    有关如何编写转发扩展的详细信息，请参阅 [编写 Hyper-v 可扩展交换机扩展](writing-hyper-v-extensible-switch-extensions.md)。
 
--   适用于转发扩展的 INF 文件必须为修改的筛选器驱动程序安装该扩展。 NDIS 监视筛选器驱动程序不能安装在可扩展交换机驱动程序堆栈。
+-   转发扩展的 INF 文件必须将扩展安装为修改筛选器驱动程序。 NDIS 监视筛选器驱动程序不能安装在可扩展交换机驱动程序堆栈中。
 
-    有关修改筛选器驱动程序的详细信息，请参阅[类型的筛选器驱动程序](types-of-filter-drivers.md)。
+    有关修改筛选器驱动程序的详细信息，请参阅 [筛选器驱动程序的类型](types-of-filter-drivers.md)。
 
-    修改筛选器驱动程序的 INF 要求的详细信息，请参阅[配置修改筛选器驱动程序 INF 文件](configuring-an-inf-file-for-a-modifying-filter-driver.md)。
+    有关修改筛选器驱动程序的 INF 要求的详细信息，请参阅 [配置修改筛选器驱动程序的 Inf 文件](configuring-an-inf-file-for-a-modifying-filter-driver.md)。
 
--   **FilterClass**值 INF 文件中的扩展必须设置为**ms\_切换\_向前**。 有关详细信息，请参阅[INF 的 HYPER-V 可扩展交换机扩展的要求](inf-requirements-for-hyper-v-extensions.md)。
+-   必须将扩展的 INF 文件中的 **FilterClass** 值设置为 **ms \_ 切换 \_ **。 有关详细信息，请参阅 [Hyper-v 可扩展交换机扩展的 INF 要求](inf-requirements-for-hyper-v-extensions.md)。
 
--   可以在可扩展交换机的每个实例的驱动程序堆栈中启用只有一个转发扩展。
+-   对于可扩展交换机的每个实例，驱动程序堆栈中只能启用一个转发扩展。
 
-有关可扩展交换机团队详细信息，请参阅[的物理网络适配器配置的类型](types-of-physical-network-adapter-configurations.md)。
+有关可扩展交换机团队的详细信息，请参阅 [物理网络适配器配置的类型](types-of-physical-network-adapter-configurations.md)。
 
 有关转发扩展的详细信息，请参阅以下页面：
 
@@ -116,18 +116,11 @@ ms.locfileid: "67353338"
 ## <a name="related-topics"></a>相关主题
 
 
-[将数据包转发到的 HYPER-V 可扩展交换机端口](forwarding-packets-to-hyper-v-extensible-switch-ports.md)
+[将数据包转发到 Hyper-V 可扩展交换机端口](forwarding-packets-to-hyper-v-extensible-switch-ports.md)
 
 [将数据包转发到物理网络适配器](forwarding-packets-to-physical-network-adapters.md)
 
-[HYPER-V 可扩展交换机的概述](overview-of-the-hyper-v-extensible-switch.md)
+[Hyper-V 可扩展交换机概述](overview-of-the-hyper-v-extensible-switch.md)
 
  
-
- 
-
-
-
-
-
 

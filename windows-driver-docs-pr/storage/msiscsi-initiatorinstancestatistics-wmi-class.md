@@ -1,27 +1,27 @@
 ---
-title: MSiSCSI\_InitiatorInstanceStatistics WMI 类
-description: MSiSCSI\_InitiatorInstanceStatistics WMI 类
+title: MSiSCSI \_ INITIATORINSTANCESTATISTICS WMI 类
+description: MSiSCSI \_ INITIATORINSTANCESTATISTICS WMI 类
 ms.assetid: 5cb20302-e3f9-40fe-b501-7c23d284c120
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 6ea5dc9ddf719a95620d992ddfe194400eaee723
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: d13bff1ab6e90ecd4b7d36f5e9171fe78e115c1a
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72845358"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89193179"
 ---
-# <a name="msiscsi_initiatorinstancestatistics-wmi-class"></a>MSiSCSI\_InitiatorInstanceStatistics WMI 类
+# <a name="msiscsi_initiatorinstancestatistics-wmi-class"></a>MSiSCSI \_ INITIATORINSTANCESTATISTICS WMI 类
 
 
 ## <span id="ddk_msiscsi_initiatorinstancestatistics_wmi_class_kr"></span><span id="DDK_MSISCSI_INITIATORINSTANCESTATISTICS_WMI_CLASS_KR"></span>
 
 
-MSiSCSI\_InitiatorInstanceStatistics WMI 类公开发起方统计信息。
+MSiSCSI \_ INITIATORINSTANCESTATISTICS WMI 类公开发起方统计信息。
 
-由于此类与存储微型端口驱动程序的特定实例相关联，因此微型端口驱动程序必须使用微型端口驱动程序管理的特定物理设备对象（PDO）的名称来注册该类。
+由于此类与存储微型端口驱动程序的特定实例相关联，因此微型端口驱动程序必须使用微型端口驱动程序管理 (PDO) 的特定物理设备对象的名称注册该类。
 
-MSiSCSI\_InitiatorInstanceStatistics 类是在*Iscsiprf*中定义的。
+MSiSCSI \_ InitiatorInstanceStatistics 类是在 *Iscsiprf*中定义的。
 
 ```cpp
 class MSiSCSI_InitiatorInstanceStatistics : Win32_PerfRawData {
@@ -63,13 +63,7 @@ class MSiSCSI_InitiatorInstanceStatistics : Win32_PerfRawData {
 };
 ```
 
-当 WMI 工具套件编译上述类定义时，它会生成[**MSiSCSI\_InitiatorInstanceStatistics**](https://docs.microsoft.com/windows-hardware/drivers/ddi/iscsiprf/ns-iscsiprf-_msiscsi_initiatorinstancestatistics)数据结构。
+当 WMI 工具套件编译上述类定义时，它会生成 [**MSiSCSI \_ InitiatorInstanceStatistics**](/windows-hardware/drivers/ddi/iscsiprf/ns-iscsiprf-_msiscsi_initiatorinstancestatistics) 数据结构。
 
  
-
- 
-
-
-
-
 

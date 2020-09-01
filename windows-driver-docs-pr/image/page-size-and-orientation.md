@@ -4,36 +4,31 @@ description: 页面大小和方向
 ms.assetid: f744a00c-8614-4488-9a29-d193a0c4268f
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a9db3ced9441b1b17af0316c68cab371409d2b9e
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: f4e9920210462ca1c00a5e7dd41ed4080ae0f580
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67374333"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89192607"
 ---
 # <a name="page-size-and-orientation"></a>页面大小和方向
 
 
-扫描程序设置页大小和方向是相互关联。 同时确定将扫描的页的大小。
+页面大小和方向的扫描程序设置是相互关联的。 两者均可确定要扫描的页面的大小。
 
-例如，页大小和扩展盘区使用的值 WIA\_PROP\_列表取决于有效的设置的 WIA\_IP\_ORIENTATION 属性。 因此，如果设备无法扫描具有 WIA 横向的文档\_页上\_A4 设置，WIA\_页面\_A4 不应出现在列表中的有效值为 WIA\_IP\_页\_大小属性时 WIA\_IP\_方向将设置为 LANSCAPE。
+例如，WIA 属性列表使用的页大小和范围值 \_ \_ 取决于 "wia ip 方向" 属性的有效设置 \_ \_ 。 因此，如果设备无法使用 WIA 页面 A4 设置扫描面向横向的 \_ 文档 \_ ， \_ \_ \_ \_ \_ 当 wia \_ ip \_ 方向设置为 LANSCAPE 时，wia 页 a4 不应出现在 "wia ip 页面大小" 属性的有效值列表中。
 
-值[ **WIA\_IPS\_方向**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ips-orientation)属性确定当前所选页面的方向。 [ **WIA\_IPS\_页\_高度**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ips-page-height)并[ **WIA\_IP\_页\_宽度**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ips-page-width)属性报告页面的尺寸，以英寸为单位的千分之几秒 (。 001)。 这些 height 和 width 属性必须包含等效于中的值的值[ **WIA\_IPS\_大 XEXTENT** ](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ips-xextent)并[ **WIA\_IPS\_YEXTENT**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ips-yextent)，它提供的信息以像素为单位的页面的尺寸。
+" [**WIA \_ IPS \_ 方向**](./wia-ips-orientation.md) " 属性的值确定当前所选页面的方向。 " [**Wia \_ ip \_ 页面 \_ 高度**](./wia-ips-page-height.md) " 和 " [**wia \_ ip \_ 页面 \_ 宽度**](./wia-ips-page-width.md) " 属性报告页面的尺寸，以英寸的分之几分之)  (。 这些 height 和 width 属性必须包含与 [**wia \_ ips \_ XEXTENT**](./wia-ips-xextent.md) 和 [**wia \_ ips \_ YEXTENT**](./wia-ips-yextent.md)中的值等效的值，这些值提供以像素为单位的页面尺寸。
 
-有关使用页大小和方向的详细信息，请参阅以下主题：
+有关使用页面大小和方向的详细信息，请参阅以下主题：
 
-[受支持的扫描程序纸张大小](supported-scanner-paper-sizes.md)
+[支持的扫描仪纸张大小](supported-scanner-paper-sizes.md)
 
-[自定义和自动页面大小](custom-and-auto-page-sizes.md)
+[自定义的和自动设置的页面大小](custom-and-auto-page-sizes.md)
 
 [页面方向](page-orientation.md)
 
-[扫描程序的页大小和方向的代码示例](page-size-and-orientation-code-examples.md)
+[扫描仪页面大小和方向代码示例](page-size-and-orientation-code-examples.md)
 
  
-
- 
-
-
-
 

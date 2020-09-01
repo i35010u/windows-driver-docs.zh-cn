@@ -4,21 +4,21 @@ description: NDIS 中间驱动程序指南
 ms.assetid: 773d9711-fdea-4541-bb0d-6b07b50892fc
 keywords:
 - 中间驱动程序 WDK 网络
-- 网络驱动程序 WDK, 中间驱动程序
-- NDIS WDK, 中间驱动程序
+- 网络驱动程序 WDK，中间驱动程序
+- NDIS WDK，中间驱动程序
 - NDIS 中间驱动程序 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ba6624c9fde2757958ffe46e2ac543fc9f15941f
-ms.sourcegitcommit: fec48fa5342d9cd4cd5ccc16aaa06e7c3d730112
+ms.openlocfilehash: 1e85c90e978cd01af33014b2bedb35c1a40e950d
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/17/2019
-ms.locfileid: "69565651"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89206407"
 ---
 # <a name="ndis-intermediate-drivers-guide"></a>NDIS 中间驱动程序指南
 
-顶层协议驱动程序和微型端口驱动程序之间的 NDIS 中间驱动程序接口。 可能需要中间驱动程序的一些应用程序包括:
+顶层协议驱动程序和微型端口驱动程序之间的 NDIS 中间驱动程序接口。 可能需要中间驱动程序的一些应用程序包括：
 
 -   旧传输驱动程序与管理传输驱动程序未知的媒体类型的微型端口驱动程序之间的媒体转换。
 
@@ -28,11 +28,11 @@ ms.locfileid: "69565651"
 
 -   监视和收集网络数据统计信息。
 
-在尝试编写中间驱动程序之前, 应阅读有关 NDIS 微型端口和协议驱动程序的信息。 有关 NDIS 微型端口驱动程序的详细信息, 请参阅[Ndis 微型端口驱动程序](ndis-miniport-drivers.md)。 有关 NDIS 协议驱动程序的详细信息, 请参阅[Ndis 协议驱动程序](ndis-protocol-drivers.md)。
+在尝试编写中间驱动程序之前，应阅读有关 NDIS 微型端口和协议驱动程序的信息。 有关 NDIS 微型端口驱动程序的详细信息，请参阅 [Ndis 微型端口驱动程序](ndis-miniport-drivers.md)。 有关 NDIS 协议驱动程序的详细信息，请参阅 [Ndis 协议驱动程序](./roadmap-for-developing-ndis-protocol-drivers.md)。
 
-以下部分介绍了中间驱动程序, 并说明了如何创建和安装此类驱动程序:
+以下部分介绍了中间驱动程序，并说明了如何创建和安装此类驱动程序：
 
-[用于开发 NDIS 中间驱动程序的路线图](roadmap-for-developing-ndis-intermediate-drivers.md)
+[NDIS 中间驱动程序的开发路线图](roadmap-for-developing-ndis-intermediate-drivers.md)
 
 [NDIS 中间驱动程序简介](introduction-to-ndis-intermediate-drivers.md)
 
@@ -43,10 +43,4 @@ ms.locfileid: "69565651"
 [安装中间驱动程序](installing-an-intermediate-driver.md)
 
  
-
- 
-
-
-
-
 

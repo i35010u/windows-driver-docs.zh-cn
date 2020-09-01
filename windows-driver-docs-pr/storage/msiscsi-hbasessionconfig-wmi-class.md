@@ -1,27 +1,27 @@
 ---
-title: MSiSCSI\_HBASessionConfig WMI 类
-description: MSiSCSI\_HBASessionConfig WMI 类
+title: MSiSCSI \_ HBASESSIONCONFIG WMI 类
+description: MSiSCSI \_ HBASESSIONCONFIG WMI 类
 ms.assetid: ef3ac7d0-be4a-457e-b837-a6434776dfc1
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 92774af8522de98193052e12d5ef73f593dbf22b
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 745d0a2e8fb52528bb5d33a443941ceff1588feb
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72845362"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89193183"
 ---
-# <a name="msiscsi_hbasessionconfig-wmi-class"></a>MSiSCSI\_HBASessionConfig WMI 类
+# <a name="msiscsi_hbasessionconfig-wmi-class"></a>MSiSCSI \_ HBASESSIONCONFIG WMI 类
 
 
 ## <span id="ddk_msiscsi_hbasessionconfig_wmi_class_kr"></span><span id="DDK_MSISCSI_HBASESSIONCONFIG_WMI_CLASS_KR"></span>
 
 
-管理应用程序可以使用 MSiSCSI\_HBASessionConfig WMI 类检索和设置存储微型端口驱动程序的特定实例用来与目标设备建立登录会话的默认配置选项。
+管理应用程序可以使用 MSiSCSI \_ HBASESSIONCONFIG WMI 类来检索和设置默认的配置选项，存储微型端口驱动程序的特定实例使用该选项来建立与目标设备的登录会话。
 
-由于此类与存储微型端口驱动程序的特定实例相关联，因此微型端口驱动程序必须使用微型端口驱动程序管理的特定物理设备对象（PDO）的名称来注册该类。
+由于此类与存储微型端口驱动程序的特定实例相关联，因此微型端口驱动程序必须使用微型端口驱动程序管理 (PDO) 的特定物理设备对象的名称注册该类。
 
-MSiSCSI\_HBASessionConfig 类在*管理 mof*中定义为如下。
+MSiSCSI \_ HBASessionConfig 类在 *管理 mof*中定义为如下。
 
 ```cpp
 class MSiSCSI_HBASessionConfig {
@@ -69,13 +69,7 @@ class MSiSCSI_HBASessionConfig {
 };
 ```
 
-当 WMI 工具套件编译上述类定义时，它会生成[**MSiSCSI\_HBASessionConfig**](https://docs.microsoft.com/windows-hardware/drivers/ddi/iscsimgt/ns-iscsimgt-_msiscsi_hbasessionconfig)数据结构。
+当 WMI 工具套件编译上述类定义时，它会生成 [**MSiSCSI \_ HBASessionConfig**](/windows-hardware/drivers/ddi/iscsimgt/ns-iscsimgt-_msiscsi_hbasessionconfig) 数据结构。
 
  
-
- 
-
-
-
-
 

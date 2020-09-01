@@ -6,17 +6,17 @@ keywords:
 - TDI 传输 WDK Winsock 内核
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fb4f82a3bc0315636a9172092a2579f31f05e73c
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: c7aea86c48ef59b0164d016b3983e5e41b4a1c75
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72842972"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89205925"
 ---
 # <a name="using-tdi-transports"></a>使用 TDI 传输
 
 
-Winsock 内核（WSK）子系统为使用[TDI](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff565094(v=vs.85))传输提供支持。 为了通过 WSK[网络编程接口（NPI）](network-programming-interface.md)使用 TDI 传输，WSK 应用程序必须将每个 tdi 传输所使用的每个 tdi 传输的地址族、套接字类型和协议的组合映射到每个 tdi 传输的关联设备名称。 WSK 应用程序使用[**WSK\_tdi\_DEVICENAME\_映射**](https://docs.microsoft.com/windows-hardware/drivers/network/wsk-tdi-devicename-mapping)客户端控制操作，将地址族、套接字类型和协议的组合映射到 TDI 传输的设备名称。
+Winsock 内核 (WSK) 子系统为使用 [TDI](/previous-versions/windows/hardware/network/ff565094(v=vs.85)) 传输提供支持。 为了通过 WSK [网络编程接口 (NPI) ](network-programming-interface.md)使用 TDI 传输，WSK 应用程序必须将每个 tdi 传输所使用的每个 tdi 传输的地址族、套接字类型和协议的组合映射到每个 tdi 传输的关联设备名称。 WSK 应用程序使用 [**WSK \_ TDI \_ DEVICENAME \_ 映射**](./wsk-tdi-devicename-mapping.md) 客户端控制操作，将地址族、套接字类型和协议的组合映射到 TDI 传输的设备名称。
 
 下面的代码示例演示 WSK 应用程序如何将地址族、套接字类型和协议的组合映射到 TDI 传输的设备名称。
 
@@ -68,15 +68,9 @@ NTSTATUS
 
 WSK 应用程序必须先将地址族、套接字类型和协议的组合映射到 TDI 传输的设备名称，然后再创建任何套接字。 在 WSK 应用程序成功将地址族、套接字类型和协议的组合映射到 TDI 传输的设备名称后，应用程序就可以创建使用映射的 TDI 传输的新套接字。
 
-**请注意**，在 Windows Vista 之后的 Microsoft windows 版本中不支持  TDI。 请改用[Windows 筛选平台](https://docs.microsoft.com/windows-hardware/drivers/ddi/_netvista/)或[Winsock 内核](https://docs.microsoft.com/windows-hardware/drivers/ddi/_netvista/)。
+**注意**   Windows Vista 之后的 Microsoft Windows 版本不支持 TDI。 请改用 [Windows 筛选平台](/windows-hardware/drivers/ddi/_netvista/) 或 [Winsock 内核](/windows-hardware/drivers/ddi/_netvista/) 。
 
  
 
  
-
- 
-
-
-
-
 

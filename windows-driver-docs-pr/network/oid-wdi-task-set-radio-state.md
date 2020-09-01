@@ -1,52 +1,52 @@
 ---
 title: OID_WDI_TASK_SET_RADIO_STATE
-description: OID_WDI_TASK_SET_RADIO_STATE 用于为适配器设置的 Wi-fi 无线电的状态。
+description: OID_WDI_TASK_SET_RADIO_STATE 用于设置适配器的 Wi-fi 无线电状态。
 ms.assetid: d7981df2-d3e5-49fd-8414-ca350775828b
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 OID_WDI_TASK_SET_RADIO_STATE 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 612104967d8c9034d4a66944c0fc5850ac5e1730
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: d34786ca8575ca47372980191f9a456880dd3689
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67387222"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89205975"
 ---
-# <a name="oidwditasksetradiostate"></a>OID\_WDI\_TASK\_SET\_RADIO\_STATE
+# <a name="oid_wdi_task_set_radio_state"></a>OID \_ WDI \_ 任务 \_ 集 \_ 无线电 \_ 状态
 
 
-OID\_WDI\_任务\_设置\_单选\_状态用于为适配器设置的 Wi-fi 无线电的状态。
+OID \_ WDI \_ 任务 \_ 集 \_ 无线电 \_ 状态用于设置适配器的 wi-fi 无线电状态。
 
-| Object  | 中止支持 | 默认优先级 （主机驱动程序策略） | 正常执行时间 （秒） |
+| 对象  | 支持中止 | 主机驱动程序策略 (默认优先级)  | 正常执行时间 (秒)  |
 |---------|---------------|---------------------------------------|---------------------------------|
 | 适配器 | 否            | 1                                     | 1                               |
 
  
 
-仅在断开连接活动完成后，必须完成该任务。
+只有在断开连接活动完成后，才能完成该任务。
 
-IHV 组件也可能会向主机发送未经请求的单选状态更改的迹象。
+IHV 组件还可以向主机发送有关无线电状态更改的未经请求的指示。
 
-主机关闭无线电之前，它断开连接所有对等节点，并停止任何正在运行的组所有者。 适配器不需要跨单选 OFF/ON 转换记住工作站/转到配置文件信息。
+在主机关闭收音机之前，它会断开所有对等节点的连接，并停止正在运行的任何组所有者。 适配器不应在无线电关/转换时记住工作站/转型配置文件信息。
 
 ## <a name="task-parameters"></a>任务参数
 
 
-| TLV                                                                               | 允许多个 TLV 实例 | 可选 | 描述                                                                                                           |
+| TLV                                                                               | 允许多个 TLV 实例 | 可选 | 说明                                                                                                           |
 |-----------------------------------------------------------------------------------|--------------------------------|----------|-----------------------------------------------------------------------------------------------------------------------|
-| [**WDI\_TLV\_RADIO\_STATE\_PARAMETERS**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-radio-state-parameters) |                                |          | 单选所需的状态。 如果此设置为 1，则启用单选。 如果此值设置为 0，单选处于关闭状态。 |
+| [**WDI \_ TLV \_ 无线电 \_ 状态 \_ 参数**](./wdi-tlv-radio-state-parameters.md) |                                |          | 广播的所需状态。 如果此设置为1，则启用无线电。 如果此设置为0，则关闭无线电。 |
 
  
 
-## <a name="task-completion-indication"></a>指示任务完成
+## <a name="task-completion-indication"></a>任务完成指示
 
 
-[NDIS\_STATUS\_WDI\_INDICATION\_SET\_RADIO\_STATE\_COMPLETE](ndis-status-wdi-indication-set-radio-state-complete.md)
+[NDIS \_ 状态 \_ WDI \_ 指示 \_ 设置的 \_ 无线电 \_ 状态已 \_ 完成](ndis-status-wdi-indication-set-radio-state-complete.md)
 ## <a name="unsolicited-indication"></a>未经请求的指示
 
 
-[NDIS\_状态\_WDI\_指示\_单选\_状态](ndis-status-wdi-indication-radio-status.md)此指示用于报告中的适配器的单选状态的更改。 这是发送软件无线电更改触发主机时，并由适配器检测到硬件单选状态发生变化时。
+[NDIS \_状态 \_ WDI \_ 指示 \_ 无线电 \_ 状态](ndis-status-wdi-indication-radio-status.md) 此指示用于报告适配器的无线电状态更改。 当主机触发软件无线电更改并且适配器检测到硬件无线电状态更改时，将同时发送此项。
 
 <a name="requirements"></a>要求
 ------------
@@ -66,16 +66,11 @@ IHV 组件也可能会向主机发送未经请求的单选状态更改的迹象�
 <td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
-<td><p>Header</p></td>
-<td>Dot11wdi.h</td>
+<td><p>标头</p></td>
+<td>Dot11wdi</td>
 </tr>
 </tbody>
 </table>
 
  
-
- 
-
-
-
 

@@ -6,12 +6,12 @@ keywords:
 - 总线驱动程序 WDK PnP
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2719ef400061892af5df236cd64880f87f25bac2
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 91e69d7fd0dde66021488412fb6f5344f5039312
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72838414"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89192585"
 ---
 # <a name="starting-a-device-in-a-bus-driver"></a>在总线驱动程序中启动设备
 
@@ -19,7 +19,7 @@ ms.locfileid: "72838414"
 
 
 
-总线驱动程序使用以下过程启动子设备（子*PDO*）： [](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch)
+总线驱动程序会启动子设备 (子 *PDO*) 并在其 [*DispatchPnP*](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch) 例程中使用如下所述的过程：
 
 1.  启动设备。
 
@@ -29,16 +29,11 @@ ms.locfileid: "72838414"
 
 2.  完成 IRP。
 
-    如果总线驱动程序的启动操作成功，则驱动程序将**Irp&gt;的 IoStatus**设置为 STATUS\_SUCCESS，并调用[**IOCOMPLETEREQUEST**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocompleterequest)以指定 IO\_不\_增量的优先级提升。 总线驱动程序从其*DispatchPnP*例程返回状态\_成功。
+    如果总线驱动程序的启动操作成功，则驱动程序将 **Irp- &gt; IoStatus** 设置为 status \_ SUCCESS，并调用 [**IoCompleteRequest**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iocompleterequest) 来指定 IO 无增量的优先级提升 \_ \_ 。 总线驱动程序 \_ 从其 *DispatchPnP* 例程返回状态 SUCCESS。
 
-    如果总线驱动程序在启动操作过程中遇到错误，则驱动程序会在 IRP 中设置错误状态，使用 IO\_调用**IoCompleteRequest** ，而不\_递增，并从其*DispatchPnP*例程返回错误。
+    如果总线驱动程序在启动操作过程中遇到错误，则驱动程序会在 IRP 中设置错误状态，使用 IO 无增量调用 **IoCompleteRequest** ， \_ \_ 并从其 *DispatchPnP* 例程返回错误。
 
-如果总线驱动程序需要一段时间才能启动设备，则可以将 IRP 标记为 "挂起"，并返回状态\_"挂起"。
-
- 
+如果总线驱动程序需要一段时间才能启动设备，则可以将 IRP 标记为 "挂起" 并返回 "挂起" 状态 \_ 。
 
  
-
-
-
 

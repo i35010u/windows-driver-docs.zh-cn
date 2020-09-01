@@ -1,6 +1,6 @@
 ---
-title: KSPROPERTY\_PIN\_GLOBALCINSTANCES
-description: 客户端使用 KSPROPERTY\_PIN\_GLOBALCINSTANCES 来确定 pin 工厂实例化的当前 pin 数量，以及此 PIN 工厂可以实例化的最大 pin 数量。 此属性为可选项。
+title: KSPROPERTY \_ PIN \_ GLOBALCINSTANCES
+description: 客户端使用 KSPROPERTY \_ pin \_ GLOBALCINSTANCES 来确定由 pin 工厂实例化的当前 pin 数量，以及此 PIN 工厂可以实例化的最大 pin 数。 此属性是可选的。
 ms.assetid: 888b8ddf-aa36-4e2f-a74c-ab4ee693bb36
 keywords:
 - KSPROPERTY_PIN_GLOBALCINSTANCES 流媒体设备
@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7b1c95334a1a667caf9c089a028c7d98c96d3a65
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 731cec328c050ae557bdcbb684481a999ea90f8f
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72838856"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89192511"
 ---
-# <a name="ksproperty_pin_globalcinstances"></a>KSPROPERTY\_PIN\_GLOBALCINSTANCES
+# <a name="ksproperty_pin_globalcinstances"></a>KSPROPERTY \_ PIN \_ GLOBALCINSTANCES
 
 
-客户端使用 KSPROPERTY\_PIN\_GLOBALCINSTANCES 来确定 pin 工厂实例化的当前 pin 数量，以及此 PIN 工厂可以实例化的最大 pin 数量。 此属性为可选项。
+客户端使用 KSPROPERTY \_ pin \_ GLOBALCINSTANCES 来确定由 pin 工厂实例化的当前 pin 数量，以及此 PIN 工厂可以实例化的最大 pin 数。 此属性是可选的。
 
 ## <span id="ddk_ksproperty_pin_globalcinstances_ks"></span><span id="DDK_KSPROPERTY_PIN_GLOBALCINSTANCES_KS"></span>
 
@@ -41,7 +41,7 @@ ms.locfileid: "72838856"
 </colgroup>
 <thead>
 <tr class="header">
-<th>“获取”</th>
+<th>获取</th>
 <th>设置</th>
 <th>目标</th>
 <th>属性描述符类型</th>
@@ -50,10 +50,10 @@ ms.locfileid: "72838856"
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>“是”</p></td>
-<td><p>无</p></td>
-<td><p>大头针</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksp_pin" data-raw-source="[&lt;strong&gt;KSP_PIN&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksp_pin)"><strong>KSP_PIN</strong></a></p></td>
+<td><p>是</p></td>
+<td><p>否</p></td>
+<td><p>Pin</p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksp_pin" data-raw-source="[&lt;strong&gt;KSP_PIN&lt;/strong&gt;](/windows-hardware/drivers/ddi/ks/ns-ks-ksp_pin)"><strong>KSP_PIN</strong></a></p></td>
 <td><p>KSPIN_CINSTANCES</p></td>
 </tr>
 </tbody>
@@ -64,9 +64,9 @@ ms.locfileid: "72838856"
 <a name="remarks"></a>备注
 -------
 
-使用 KSP\_PIN 指定此属性，其中**PinId**成员指定 pin 工厂。
+使用 KSP pin 指定此属性 \_ ，其中 **PinId** 成员指定 PIN 工厂。
 
-KSPIN\_CINSTANCES 是一种格式的数据结构：
+KSPIN \_ CINSTANCES 是一种格式的数据结构：
 
 ```cpp
 typedef struct {
@@ -75,17 +75,17 @@ typedef struct {
 } KSPIN_CINSTANCES;
 ```
 
-下面是 KSPIN\_CINSTANCES 结构的每个成员的说明。
+下面是 KSPIN CINSTANCES 结构的每个成员的说明 \_ 。
 
 <span id="PossibleCount"></span><span id="possiblecount"></span><span id="POSSIBLECOUNT"></span>**PossibleCount**  
-指定 pin 工厂在驱动程序上可以实例化的最大 pin 数，或者，如果没有最大值，则 KSINTANCE\_不确定。
+指定 pin 工厂在驱动程序上可以实例化的最大 pin 数，或者，如果没有最大值，则 KSINTANCE 不 \_ 确定。
 
 <span id="CurrentCount"></span><span id="currentcount"></span><span id="CURRENTCOUNT"></span>**CurrentCount**  
 指定 pin 工厂在驱动程序上实例化的当前 pin 数。
 
 类驱动程序不处理此属性;stream 微型驱动程序必须自行提供处理。
 
-KSPROPERTY\_引脚\_GLOBALCINSTANCES 指定所有实例的当前最大和最大实例数，超过筛选器的所有实例。 若要确定每个筛选器的值，请使用[**KSPROPERTY\_PIN\_CINSTANCES**](ksproperty-pin-cinstances.md)。
+KSPROPERTY \_ 引脚 \_ GLOBALCINSTANCES 指定筛选器的所有实例上的最新和最大实例数。 若要确定每个筛选器的值，请使用 [**KSPROPERTY \_ PIN \_ CINSTANCES**](ksproperty-pin-cinstances.md)。
 
 <a name="requirements"></a>要求
 ------------
@@ -98,7 +98,7 @@ KSPROPERTY\_引脚\_GLOBALCINSTANCES 指定所有实例的当前最大和最大�
 <tbody>
 <tr class="odd">
 <td><p>标头</p></td>
-<td>Ks （包含 Ks）</td>
+<td>Ks (包含 Ks .h) </td>
 </tr>
 </tbody>
 </table>
@@ -106,16 +106,9 @@ KSPROPERTY\_引脚\_GLOBALCINSTANCES 指定所有实例的当前最大和最大�
 ## <a name="see-also"></a>另请参阅
 
 
-[**KSP\_PIN**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksp_pin)
+[**KSP \_ PIN**](/windows-hardware/drivers/ddi/ks/ns-ks-ksp_pin)
 
-[**KSPROPERTY\_PIN\_CINSTANCES**](ksproperty-pin-cinstances.md)
-
- 
+[**KSPROPERTY \_ PIN \_ CINSTANCES**](ksproperty-pin-cinstances.md)
 
  
-
-
-
-
-
 

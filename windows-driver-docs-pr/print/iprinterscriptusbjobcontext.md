@@ -16,12 +16,12 @@ api_type:
 - COM
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 10b521ad8d1b50b75b9480cac14b6f920e2e12e8
-ms.sourcegitcommit: 17c1bbc5ea0bef3bbc87794b030a073f905dc942
+ms.openlocfilehash: b5f8d097d883e61bbd1410108f1c994b93c8a30f
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88802757"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89206699"
 ---
 # <a name="iprinterscriptusbjobcontext-interface"></a>IPrinterScriptUsbJobContext 接口
 
@@ -30,7 +30,7 @@ IPrinterScriptUsbJobContext 接口作为参数传递给 **startPrintJob** JavaSc
 <a name="members"></a>成员
 -------
 
-**IPrinterScriptUsbJobContext**接口继承自[**IUnknown**](https://docs.microsoft.com/windows/win32/api/unknwn/nn-unknwn-iunknown)接口。 **IPrinterScriptUsbJobContext** 还具有下列类型的成员：
+**IPrinterScriptUsbJobContext**接口继承自[**IUnknown**](/windows/win32/api/unknwn/nn-unknwn-iunknown)接口。 **IPrinterScriptUsbJobContext** 还具有下列类型的成员：
 
 -   [方法](#methods)
 
@@ -68,7 +68,7 @@ IPrinterScriptUsbJobContext 接口作为参数传递给 **startPrintJob** JavaSc
 </tr>
 <tr class="odd">
 <td><a href="iprinterscriptusbjobcontext-temporarystreams.md" data-raw-source="[&lt;strong&gt;TemporaryStreams&lt;/strong&gt;](iprinterscriptusbjobcontext-temporarystreams.md)"><strong>TemporaryStreams</strong></a></td>
-<td><p>返回可由 IHV JavaScript 函数为当前作业使用的永久性数据流的 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/printerextension/nn-printerextension-iprinterscriptablesequentialstream" data-raw-source="[IPrinterScriptableSequentialStream](https://docs.microsoft.com/windows-hardware/drivers/ddi/printerextension/nn-printerextension-iprinterscriptablesequentialstream)">IPrinterScriptableSequentialStream</a> 接口的数组。</p></td>
+<td><p>返回可由 IHV JavaScript 函数为当前作业使用的永久性数据流的 <a href="/windows-hardware/drivers/ddi/printerextension/nn-printerextension-iprinterscriptablesequentialstream" data-raw-source="[IPrinterScriptableSequentialStream](/windows-hardware/drivers/ddi/printerextension/nn-printerextension-iprinterscriptablesequentialstream)">IPrinterScriptableSequentialStream</a> 接口的数组。</p></td>
 </tr>
 </tbody>
 </table>

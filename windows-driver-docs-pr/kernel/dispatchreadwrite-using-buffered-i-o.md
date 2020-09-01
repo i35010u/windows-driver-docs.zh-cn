@@ -14,12 +14,12 @@ keywords:
 - I/o WDK 内核，已缓冲
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 38c70fdc899eed218af9897efad3a00c604a25e2
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 4a2591c603089e109d5f6b8b866bfe048d44cb4d
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72838724"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89192909"
 ---
 # <a name="dispatchreadwrite-using-buffered-io"></a>使用缓冲 I/O 执行 DispatchReadWrite
 
@@ -27,32 +27,27 @@ ms.locfileid: "72838724"
 
 
 
-为缓冲 i/o 设置其设备对象的任何最低级别设备驱动程序都通过将从其设备传输的数据返回到已锁定的系统空间缓冲区 **（位于 Irp-&gt;AssociatedIrp. SystemBuffer）** 来满足读取请求。 它通过将数据从同一缓冲区传输到其设备来满足写入请求。
+为缓冲 i/o 设置其设备对象的任何最低级别设备驱动程序都通过将从其设备传输的数据返回到已锁定的系统空间缓冲区 **（位于 Irp &gt;AssociatedIrp.SystemBuffer）** 来满足读取请求。 它通过将数据从同一缓冲区传输到其设备来满足写入请求。
 
-因此，此类设备驱动程序的*DispatchReadWrite*例程通常会在收到传输请求时执行以下操作：
+因此，此类设备驱动程序的 *DispatchReadWrite* 例程通常会在收到传输请求时执行以下操作：
 
-1.  调用[**IoGetCurrentIrpStackLocation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetcurrentirpstacklocation)并确定传输请求的方向。
+1.  调用 [**IoGetCurrentIrpStackLocation**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetcurrentirpstacklocation) 并确定传输请求的方向。
 
 2.  检查请求的参数的有效性。
 
-    -   对于读取请求，例程通常会检查驱动程序的*IoStackLocation*-&gt;**参数. 读取长度**值，以确定缓冲区是否足够大，可以接收从设备传输的数据。
+    -   对于读取请求，例程通常会检查驱动程序的*IoStackLocation* - &gt; **参数**，以确定缓冲区是否足够大以接收从设备传输的数据。
 
-        例如，系统键盘类驱动程序处理从 Win32 用户输入线程发出的读取请求。 此驱动程序定义了一个结构、键盘\_输入\_数据（在此类数据中，将从设备中存储击键，在任何给定时刻）将这些结构保存在内部环形缓冲区中，以便满足传入请求的要求。
+        例如，系统键盘类驱动程序处理从 Win32 用户输入线程发出的读取请求。 此驱动程序定义了一个结构、键盘 \_ 输入 \_ 数据（用于存储来自设备的键击），并且在任何给定时刻将这些结构保存在内部环形缓冲区中，以便满足传入请求的要求。
 
-    -   对于写入请求，例程通常会检查 AssociatedIrp 中的值，并检查 **&gt;Irp**下的数据，如有**必要，请**检查是否有效：也就是说，如果其设备仅接受结构化数据包，包含具有定义的值范围的成员。
+    -   对于写入请求，例程通常会检查 temBuffer 中的值，并检查** &gt;AssociatedIrp.SysIrp**下的数据，如**有必要，** 请检查是否存在有效性：也就是说，如果其设备仅接受包含具有定义的值范围的成员的结构化数据包，则为。
 
-3.  如果任何参数无效， *DispatchReadWrite*例程会立即完成 irp，如[完成 irp](completing-irps.md)中所述。 否则，例程会将 IRP 传递到，以供其他驱动程序例程进一步处理，如将[irp 向下传递到驱动程序堆栈](passing-irps-down-the-driver-stack.md)中所述。
+3.  如果任何参数无效， *DispatchReadWrite* 例程会立即完成 irp，如 [完成 irp](completing-irps.md)中所述。 否则，例程会将 IRP 传递到，以供其他驱动程序例程进一步处理，如将 [irp 向下传递到驱动程序堆栈](passing-irps-down-the-driver-stack.md)中所述。
 
 使用缓冲 i/o 的最低级别设备驱动程序通常必须通过读取或写入由请求的发起方指定的大小的数据来满足传输请求。 此类驱动程序很有可能定义传入或发送到其设备的数据的结构，并且可能会在内部缓存结构化数据，因为系统键盘类驱动程序。
 
-内部缓冲数据的驱动程序应支持[**irp\_MJ\_刷新\_缓冲区**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-flush-buffers)请求，还可以支持[**irp\_MJ\_关闭**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-shutdown)请求。
+内部缓冲数据的驱动程序应支持 [**irp \_ mj \_ 刷新 \_ 缓冲区**](./irp-mj-flush-buffers.md) 请求，还可以支持 [**irp \_ mj \_ 关闭**](./irp-mj-shutdown.md) 请求。
 
 链中的最高层驱动程序通常负责检查输入 IRP 的参数，然后将读取/写入请求传递到较低的驱动程序。 因此，许多较低级别的驱动程序可以假定读/写 IRP 中的 i/o 堆栈位置具有有效的参数。 如果链中的最低级别驱动程序知道数据传输的特定于设备的约束，则需要该驱动程序来检查其 i/o 堆栈位置中参数的有效性。
 
  
-
- 
-
-
-
 

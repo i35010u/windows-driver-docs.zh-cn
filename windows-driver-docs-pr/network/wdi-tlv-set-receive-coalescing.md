@@ -1,40 +1,40 @@
 ---
 title: WDI_TLV_SET_RECEIVE_COALESCING
-description: WDI_TLV_SET_RECEIVE_COALESCING 是包含接收的数据包合并参数 OID_WDI_SET_RECEIVE_COALESCING TLV。
+description: WDI_TLV_SET_RECEIVE_COALESCING 是包含收到的 OID_WDI_SET_RECEIVE_COALESCING 的数据包合并参数的 TLV。
 ms.assetid: 7937517E-79E5-4BF6-9C22-79E1D73CA97C
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 WDI_TLV_SET_RECEIVE_COALESCING 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: edb89f248316ee36d9b4c4031ad99ff28566d58d
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: ef69978c863b9aad7bae240ce0a129bd3d2b15d2
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67362787"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89206158"
 ---
-# <a name="wditlvsetreceivecoalescing"></a>WDI\_TLV\_SET\_RECEIVE\_COALESCING
+# <a name="wdi_tlv_set_receive_coalescing"></a>WDI \_ TLV \_ 设置 \_ 接收 \_ 合并
 
 
-WDI\_TLV\_设置\_接收\_COALESCING 是包含接收的数据包合并参数 TLV [OID\_WDI\_设置\_接收\_合并](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wdi-set-receive-coalescing)。
+WDI \_ tlv \_ 设置 \_ 接收 \_ 合并是一个 TLV，其中包含已接收的用于 [OID \_ WDI \_ 集 \_ 接收 \_ 合并](./oid-wdi-set-receive-coalescing.md)的数据包合并参数。
 
 ## <a name="tlv-type"></a>TLV 类型
 
 
 0x64
 
-## <a name="length"></a>长度
+## <a name="length"></a>Length
 
 
-所有的大小 （以字节为单位） 总和包含 TLVs。
+Sum (包含所有 TLVs 的大小的) 字节。
 
 ## <a name="values"></a>值
 
 
-| 在任务栏的搜索框中键入                                                                               | 允许多个 TLV 实例 | 可选 | 描述                                |
+| 类型                                                                               | 允许多个 TLV 实例 | 可选 | 说明                                |
 |------------------------------------------------------------------------------------|--------------------------------|----------|--------------------------------------------|
-| [**WDI\_TLV\_RECEIVE\_COALESCING\_CONFIG**](wdi-tlv-receive-coalescing-config.md) |                                |          | 指定合并筛选器配置。 |
-| [**WDI\_TLV\_RECEIVE\_FILTER\_FIELD**](wdi-tlv-receive-filter-field.md)           | X                              | X        | 指定的接收筛选器字段。          |
+| [**WDI \_ TLV \_ 接收 \_ 合并 \_ 配置**](wdi-tlv-receive-coalescing-config.md) |                                |          | 指定合并筛选器配置。 |
+| [**WDI \_ TLV \_ 接收 \_ 筛选器 \_ 字段**](wdi-tlv-receive-filter-field.md)           | X                              | X        | 指定接收筛选器字段。          |
 
  
 
@@ -56,16 +56,11 @@ WDI\_TLV\_设置\_接收\_COALESCING 是包含接收的数据包合并参数 TLV
 <td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
-<td><p>Header</p></td>
+<td><p>标头</p></td>
 <td>Wditypes.hpp</td>
 </tr>
 </tbody>
 </table>
 
  
-
- 
-
-
-
 

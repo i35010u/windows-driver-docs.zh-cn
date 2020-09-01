@@ -1,37 +1,37 @@
 ---
 title: NDIS_STATUS_WDI_INDICATION_TASK_OFFLOAD_CURRENT_CONFIG
-description: 微型端口驱动程序使用 NDIS_STATUS_WDI_INDICATION_TASK_OFFLOAD_CURRENT_CONFIG 以指示 TCP 中的更改时将卸载的硬件功能。
+description: 微型端口驱动程序使用 NDIS_STATUS_WDI_INDICATION_TASK_OFFLOAD_CURRENT_CONFIG 来表明硬件的 TCP 卸载功能发生变化。
 ms.assetid: 4E73F09A-965F-4F32-AFF7-FDF1E3B2853C
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 NDIS_STATUS_WDI_INDICATION_TASK_OFFLOAD_CURRENT_CONFIG 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 271e8e4eee97df291dde3239b32823b4087cb0ac
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: fe8e982650ee43caf36475ef22f956740d45fad4
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67375198"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89206063"
 ---
-# <a name="ndisstatuswdiindicationtaskoffloadcurrentconfig"></a>NDIS\_状态\_WDI\_指示\_任务\_卸载\_当前\_配置
+# <a name="ndis_status_wdi_indication_task_offload_current_config"></a>NDIS \_ 状态 \_ WDI \_ 指示 \_ 任务 \_ 卸载 \_ 当前 \_ 配置
 
 
-微型端口驱动程序使用 NDIS\_状态\_WDI\_指示\_任务\_卸载\_当前\_配置，以指示 TCP 中的更改时卸载功能硬件。
+微型端口驱动程序使用 NDIS \_ 状态 \_ WDI \_ 指示 \_ 任务 \_ 卸载 \_ 当前 \_ 配置，以指示硬件的 TCP 卸载功能发生更改的时间。
 
-| Object |
+| 对象 |
 |--------|
-| Port   |
+| 端口   |
 
  
 
-当更改 TCP 卸载功能的硬件，LE 将此未经请求的指示发送到下，用户设备，与新的 TCP/LSO 校验和功能。 使用值**NDIS\_卸载\_设置\_OFF**并**NDIS\_卸载\_设置\_ON** 中的成员[**WDI\_TLV\_TCP\_卸载\_功能**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-tcp-offload-capabilities)用于指示在更改卸载功能。 当 UE 向下发送[OID\_WDI\_设置\_TCP\_卸载\_参数](oid-wdi-set-tcp-offload-parameters.md)，LE 应更新的卸载功能，然后将发送此指示，以便OS 更新的最新的卸载功能信息。
+当硬件的 TCP 卸载功能发生变化时，LE 使用新的 TCP 校验和/LSO 功能向 UE 发送此未经请求的指示。 对于[**WDI \_ TLV \_ TCP \_ 卸载 \_ 功能**](./wdi-tlv-tcp-offload-capabilities.md)中的成员，使用 " **ndis \_ 卸载 \_ 集已 \_ 关闭**" 和** \_ "ndis 卸载 \_ 集 \_ ** " 的值，以指示卸载功能的更改。 当 UE 发送 [OID \_ WDI \_ 设置 \_ TCP \_ 卸载 \_ 参数](oid-wdi-set-tcp-offload-parameters.md)时，该 LE 应更新卸载功能，然后发送此指示，以便使用最新的卸载功能信息更新 OS。
 
-## <a name="payload-data"></a>有效负载数据
+## <a name="payload-data"></a>负载数据
 
 
-| 在任务栏的搜索框中键入                                                                                  | 允许多个 TLV 实例 | 可选 | 描述                                              |
+| 类型                                                                                  | 允许多个 TLV 实例 | 可选 | 说明                                              |
 |---------------------------------------------------------------------------------------|--------------------------------|----------|----------------------------------------------------------|
-| [**WDI\_TLV\_TCP\_卸载\_功能**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-tcp-offload-capabilities) |                                | X        | TCP/IP 校验和与大量发送卸载功能。 |
+| [**WDI \_ TLV \_ TCP \_ 卸载 \_ 功能**](./wdi-tlv-tcp-offload-capabilities.md) |                                | X        | TCP/IP 校验和和大型发送卸载功能。 |
 
  
 
@@ -53,21 +53,16 @@ ms.locfileid: "67375198"
 <td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
-<td><p>Header</p></td>
-<td>Dot11wdi.h</td>
+<td><p>标头</p></td>
+<td>Dot11wdi</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
-[OID\_WDI\_SET\_TCP\_OFFLOAD\_PARAMETERS](oid-wdi-set-tcp-offload-parameters.md)
-
- 
+[OID \_ WDI \_ 设置 \_ TCP \_ 卸载 \_ 参数](oid-wdi-set-tcp-offload-parameters.md)
 
  
-
-
-
 

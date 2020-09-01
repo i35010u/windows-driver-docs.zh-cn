@@ -1,6 +1,6 @@
 ---
-title: KSPROPERTY\_连接\_PROPOSEDATAFORMAT
-description: 客户端可以使用 KSPROPERTY\_连接\_PROPOSEDATAFORMAT 属性为连接建议新的数据格式。
+title: KSPROPERTY \_ 连接 \_ PROPOSEDATAFORMAT
+description: 客户端可以使用 KSPROPERTY \_ 连接 \_ PROPOSEDATAFORMAT 属性为连接建议新的数据格式。
 ms.assetid: f5bc7cd2-0033-4761-962b-33c82925134b
 keywords:
 - KSPROPERTY_CONNECTION_PROPOSEDATAFORMAT 流媒体设备
@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 46f00feeaf41cf15ce145b3deeafcffef7a4998d
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 55cf2b7e79a96a957eb70058eb16cfcd01d8f60e
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72826785"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89192855"
 ---
-# <a name="ksproperty_connection_proposedataformat"></a>KSPROPERTY\_连接\_PROPOSEDATAFORMAT
+# <a name="ksproperty_connection_proposedataformat"></a>KSPROPERTY \_ 连接 \_ PROPOSEDATAFORMAT
 
 
-客户端可以使用 KSPROPERTY\_连接\_PROPOSEDATAFORMAT 属性为连接建议新的数据格式。
+客户端可以使用 KSPROPERTY \_ 连接 \_ PROPOSEDATAFORMAT 属性为连接建议新的数据格式。
 
 ## <span id="ddk_ksproperty_connection_proposedataformat_ks"></span><span id="DDK_KSPROPERTY_CONNECTION_PROPOSEDATAFORMAT_KS"></span>
 
@@ -41,7 +41,7 @@ ms.locfileid: "72826785"
 </colgroup>
 <thead>
 <tr class="header">
-<th>“获取”</th>
+<th>获取</th>
 <th>设置</th>
 <th>目标</th>
 <th>属性描述符类型</th>
@@ -50,11 +50,11 @@ ms.locfileid: "72826785"
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>无</p></td>
-<td><p>“是”</p></td>
-<td><p>大头针</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)"><strong>KSPROPERTY</strong></a></p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksdataformat" data-raw-source="[&lt;strong&gt;KSDATAFORMAT&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksdataformat)"><strong>KSDATAFORMAT</strong></a></p></td>
+<td><p>否</p></td>
+<td><p>是</p></td>
+<td><p>Pin</p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)"><strong>KSPROPERTY</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksdataformat" data-raw-source="[&lt;strong&gt;KSDATAFORMAT&lt;/strong&gt;](/windows-hardware/drivers/ddi/ks/ns-ks-ksdataformat)"><strong>KSDATAFORMAT</strong></a></p></td>
 </tr>
 </tbody>
 </table>
@@ -64,11 +64,11 @@ ms.locfileid: "72826785"
 <a name="remarks"></a>备注
 -------
 
-此属性返回指定建议数据格式的[**KSDATAFORMAT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksdataformat) 。
+此属性返回指定建议数据格式的 [**KSDATAFORMAT**](/windows-hardware/drivers/ddi/ks/ns-ks-ksdataformat) 。
 
-如果可以将 pin 重置为建议的数据格式，则 KS 筛选器将返回状态\_成功; 否则返回错误代码。 请注意，此属性请求不会更改数据格式。 客户端使用[**KSPROPERTY\_连接\_DATAFORMAT**](ksproperty-connection-dataformat.md)来更改格式。
+\_如果可以将 pin 重置为建议的数据格式，则 KS 筛选器返回状态 "成功"; 否则返回错误代码。 请注意，此属性请求不会更改数据格式。 客户端使用 [**KSPROPERTY \_ 连接 \_ DATAFORMAT**](ksproperty-connection-dataformat.md) 来更改格式。
 
-另请参阅[KS 数据格式和数据区域](https://docs.microsoft.com/windows-hardware/drivers/stream/ks-data-formats-and-data-ranges)。
+另请参阅 [KS 数据格式和数据区域](./ks-data-formats-and-data-ranges.md)。
 
 <a name="requirements"></a>要求
 ------------
@@ -81,7 +81,7 @@ ms.locfileid: "72826785"
 <tbody>
 <tr class="odd">
 <td><p>标头</p></td>
-<td>Ks （包含 Ks）</td>
+<td>Ks (包含 Ks .h) </td>
 </tr>
 </tbody>
 </table>
@@ -89,16 +89,9 @@ ms.locfileid: "72826785"
 ## <a name="see-also"></a>另请参阅
 
 
-[**KSPROPERTY\_连接\_DATAFORMAT**](ksproperty-connection-dataformat.md)
+[**KSPROPERTY \_ 连接 \_ DATAFORMAT**](ksproperty-connection-dataformat.md)
 
-[*AVStrMiniPinSetDataFormat*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/nc-ks-pfnkspinsetdataformat)
-
- 
+[*AVStrMiniPinSetDataFormat*](/windows-hardware/drivers/ddi/ks/nc-ks-pfnkspinsetdataformat)
 
  
-
-
-
-
-
 

@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: b83fdef85c0607b36d569bdb5921fd12845d3f3a
-ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
+ms.openlocfilehash: 5b414af24ccb233911587e186315384c76ab40ff
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84534176"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89206601"
 ---
 # <a name="usb3kdhub_info"></a>！ usb3kd \_ 信息
 
@@ -32,17 +32,17 @@ ms.locfileid: "84534176"
 
 
 <span id="_______DeviceExtension______"></span><span id="_______deviceextension______"></span><span id="_______DEVICEEXTENSION______"></span>*DeviceExtension*   
-中心功能设备对象（FDO）的设备扩展的地址。
+中心功能设备对象的设备扩展的地址 (FDO) 。
 
 ## <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 
-Usb3kd
+Usb3kd.dll
 
 <a name="examples"></a>示例
 --------
 
-若要获取设备扩展的地址，请查看[**！ usb \_ 树**](-usb3kd-usb-tree.md)命令的输出。 在以下示例中，根集线器的设备扩展地址为0xfffffa8005ad92d0。
+若要获取设备扩展的地址，请查看 [**！ usb \_ 树**](-usb3kd-usb-tree.md) 命令的输出。 在以下示例中，根集线器的设备扩展地址为0xfffffa8005ad92d0。
 
 ```dbgcmd
 3: kd> !usb_tree
@@ -57,7 +57,7 @@ Topology
         ...
 ```
 
-现在可以将设备扩展的地址传递到 **！ hub \_ 信息**命令。
+现在可以将设备扩展的地址传递到 **！ hub \_ 信息** 命令。
 
 ```dbgcmd
 3: kd> !hub_info fffffa8005ad92d0 
@@ -104,14 +104,7 @@ Hub Event History:
 
 [**！ usb3kd \_ \_ fdo 中的信息 \_**](-usb3kd-hub-info-from-fdo.md)
 
-[通用串行总线（USB）驱动程序](https://docs.microsoft.com/windows-hardware/drivers/usbcon/)
+[ (USB) 驱动程序的通用串行总线](../usbcon/index.md)
 
  
-
- 
-
-
-
-
-
 

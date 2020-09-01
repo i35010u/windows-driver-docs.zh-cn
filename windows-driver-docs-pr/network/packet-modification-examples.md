@@ -6,12 +6,12 @@ keywords:
 - 数据包修改 WDK Windows 筛选平台
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e1826428de19e33cd868b53b245f847fcedbb7b4
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 4d5c752ba0093f59e3e9348e3a3de43eca0d7609
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72843708"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89206281"
 ---
 # <a name="packet-modification-examples"></a>数据包修改示例
 
@@ -403,7 +403,7 @@ Exit:
 }
 ```
 
-### <a href="" id="non-intrusive-out-of-band-inspection-from-incoming-transport-layer-and"></a>传入传输层和 ALE 接收/接受层之间的非干扰带外检查
+### <a name="non-intrusive-out-of-band-inspection-from-incoming-transport-layer-and-ale-receiveaccept-layers"></a><a href="" id="non-intrusive-out-of-band-inspection-from-incoming-transport-layer-and"></a>传入传输层和 ALE 接收/接受层之间的非干扰带外检查
 
 下面是检查过程的示例代码，用于查看数据包数据而无需对其进行更改。
 
@@ -775,16 +775,9 @@ Exit:
 ## <a name="related-topics"></a>相关主题
 
 
-[classifyFn](https://docs.microsoft.com/windows-hardware/drivers/ddi/_netvista/)
+[classifyFn](/windows-hardware/drivers/ddi/_netvista/)
 
 [标注类型](types-of-callouts.md)
 
  
-
- 
-
-
-
-
-
 

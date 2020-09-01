@@ -1,6 +1,6 @@
 ---
-title: KSPROPERTY\_BDA\_LNB\_LOF\_高\_带区
-description: 客户端使用 KSPROPERTY\_BDA\_LNB\_LOF\_高\_带，通知 RF 调谐器节点有关低噪音块（LNB）设备使用的本地震荡频率（LOF），以切换传入的带外 RF 的频率引发.
+title: KSPROPERTY \_ BDA \_ LNB \_ LOF \_ 高层 \_
+description: 客户端使用 KSPROPERTY \_ BDA \_ LNB \_ LOF \_ 高层 \_ 通知 RF 调谐器节点 (LOF) ， (LNB) 设备，以便转移传入的带外 RF 信号的频率，这是由低噪音块使用的本地震荡频率。
 ms.assetid: 77ee5ad8-330e-47a6-8fdb-6a4f9b3eef1d
 keywords:
 - KSPROPERTY_BDA_LNB_LOF_HIGH_BAND 流媒体设备
@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2927983b196fb2488d520c2676b12ebafd4dba04
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 1da14b1084c5f24a270a0118b977ec2ac3892e1d
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72845556"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89193033"
 ---
-# <a name="ksproperty_bda_lnb_lof_high_band"></a>KSPROPERTY\_BDA\_LNB\_LOF\_高\_带区
+# <a name="ksproperty_bda_lnb_lof_high_band"></a>KSPROPERTY \_ BDA \_ LNB \_ LOF \_ 高层 \_
 
 
-客户端使用 KSPROPERTY\_BDA\_LNB\_LOF\_高\_带，通知 RF 调谐器节点有关低噪音块（LNB）设备使用的本地震荡频率（LOF），以切换传入的带外 RF 的频率引发.
+客户端使用 KSPROPERTY \_ BDA \_ LNB \_ LOF \_ 高层 \_ 通知 RF 调谐器节点 (LOF) ， (LNB) 设备，以便转移传入的带外 RF 信号的频率，这是由低噪音块使用的本地震荡频率。
 
 ## <span id="ddk_ksproperty_bda_lnb_lof_high_band_ks"></span><span id="DDK_KSPROPERTY_BDA_LNB_LOF_HIGH_BAND_KS"></span>
 
@@ -41,7 +41,7 @@ ms.locfileid: "72845556"
 </colgroup>
 <thead>
 <tr class="header">
-<th>“获取”</th>
+<th>获取</th>
 <th>设置</th>
 <th>目标</th>
 <th>属性描述符类型</th>
@@ -50,9 +50,9 @@ ms.locfileid: "72845556"
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>“是”</p></td>
-<td><p>“是”</p></td>
-<td><p>Filter</p></td>
+<td><p>是</p></td>
+<td><p>是</p></td>
+<td><p>筛选器</p></td>
 <td><p>KSP_NODE</p></td>
 <td><p>ULONG</p></td>
 </tr>
@@ -64,7 +64,7 @@ ms.locfileid: "72845556"
 <a name="remarks"></a>备注
 -------
 
-KSP\_**节点的节点**标识指定 RF 调谐器节点的标识符。
+KSP **NodeId** \_ 节点的节点标识号指定了 RF 调谐器节点的标识符。
 
 属性值指定 LNB 用于带外信号的 LOF。
 
@@ -81,7 +81,7 @@ LNB 收集由卫星 dish 反射的射频信号，将 RF 信号的频率向下移
 <tbody>
 <tr class="odd">
 <td><p>标头</p></td>
-<td>Bdamedia （包括 Bdamedia）</td>
+<td>Bdamedia (包含 Bdamedia) </td>
 </tr>
 </tbody>
 </table>
@@ -89,14 +89,7 @@ LNB 收集由卫星 dish 反射的射频信号，将 RF 信号的频率向下移
 ## <a name="see-also"></a>另请参阅
 
 
-[**KSP\_节点**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksp_node)
+[**KSP \_ 节点**](/windows-hardware/drivers/ddi/ks/ns-ks-ksp_node)
 
  
-
- 
-
-
-
-
-
 

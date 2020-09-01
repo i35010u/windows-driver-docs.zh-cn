@@ -1,35 +1,35 @@
 ---
 title: NDIS_STATUS_WDI_INDICATION_TKIP_MIC_FAILURE
-description: 微型端口驱动程序使用 NDIS_STATUS_WDI_INDICATION_TKIP_MIC_FAILURE 来指示当接收的数据包已成功解密 TKIP 密码算法的失败消息完整性代码 (MIC) 验证。
+description: 微型端口驱动程序使用 NDIS_STATUS_WDI_INDICATION_TKIP_MIC_FAILURE 来指示收到的、由 TKIP 密码算法成功解密的数据包时，消息完整性代码无法 (MIC) 验证。
 ms.assetid: ab9d3109-72af-457e-9e65-456613cea32f
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 NDIS_STATUS_WDI_INDICATION_TKIP_MIC_FAILURE 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 135f8fcdefa4d66c1026a4df8abb8733d67f7cfe
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: b19753363a2d33a236227fb01366000f7628d2a6
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67375193"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89206413"
 ---
-# <a name="ndisstatuswdiindicationtkipmicfailure"></a>NDIS\_状态\_WDI\_指示\_TKIP\_MIC\_失败
+# <a name="ndis_status_wdi_indication_tkip_mic_failure"></a>NDIS \_ 状态 \_ WDI \_ 指示 \_ TKIP \_ MIC \_ 故障
 
 
-微型端口驱动程序使用 NDIS\_状态\_WDI\_指示\_TKIP\_MIC\_故障指示时接收的数据包已成功解密的 TKIP 密码算法消息完整性代码 (MIC) 验证失败。
+微型端口驱动程序使用 NDIS \_ 状态 \_ WDI \_ 指示 \_ tkip \_ MIC \_ 失败，以指示当 TKIP 密码算法成功解密接收到的数据包时，消息完整性代码无法 (MIC) 验证。
 
-| Object |
+| 对象 |
 |--------|
-| Port   |
+| 端口   |
 
  
 
-## <a name="payload-data"></a>有效负载数据
+## <a name="payload-data"></a>负载数据
 
 
-| 在任务栏的搜索框中键入                                                                             | 允许多个 TLV 实例 | 可选 | 描述                       |
+| 类型                                                                             | 允许多个 TLV 实例 | 可选 | 说明                       |
 |----------------------------------------------------------------------------------|--------------------------------|----------|-----------------------------------|
-| [**WDI\_TLV\_TKIP\_MIC\_FAILURE\_INFO**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-tkip-mic-failure-info) |                                |          | TKIP MIC 失败信息。 |
+| [**WDI \_ TLV \_ TKIP \_ MIC \_ 故障 \_ 信息**](./wdi-tlv-tkip-mic-failure-info.md) |                                |          | TKIP MIC 失败信息。 |
 
  
 
@@ -51,16 +51,11 @@ ms.locfileid: "67375193"
 <td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
-<td><p>Header</p></td>
-<td>Dot11wdi.h</td>
+<td><p>标头</p></td>
+<td>Dot11wdi</td>
 </tr>
 </tbody>
 </table>
 
  
-
- 
-
-
-
 

@@ -1,45 +1,45 @@
 ---
 title: OID_WDI_SET_RECEIVE_PACKET_FILTER
-description: OID_WDI_SET_RECEIVE_PACKET_FILTER 定义指示针对给定的虚拟化端口的数据包的位掩码筛选器。
+description: OID_WDI_SET_RECEIVE_PACKET_FILTER 为指定的虚拟化端口指定要显示的数据包的位掩码筛选器。
 ms.assetid: 180efda5-3ca2-40f8-89d1-098a53f33844
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 OID_WDI_SET_RECEIVE_PACKET_FILTER 网络驱动程序
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 71174eab83b2c0593cbd49dc2bf81b62731a6a6d
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: b56423d880cf770498e3826db15b118d0920bd80
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67359182"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89206299"
 ---
-# <a name="oidwdisetreceivepacketfilter"></a>OID\_WDI\_SET\_RECEIVE\_PACKET\_FILTER
+# <a name="oid_wdi_set_receive_packet_filter"></a>OID \_ WDI \_ SET \_ 接收 \_ 数据包 \_ 筛选器
 
 
-OID\_WDI\_设置\_接收\_数据包\_筛选器定义来指示给定的虚拟化端口的数据包的位掩码筛选器。
+OID \_ WDI \_ SET \_ 接收 \_ 数据包 \_ 筛选器定义一个位掩码筛选器，用于指示给定虚拟化端口的数据包。
 
-| 范围 | 设置与任务序列化 | 正常执行时间 （秒） |
+| 作用域 | 设置序列化任务 | 正常执行时间 (秒)  |
 |-------|--------------------------|---------------------------------|
-| Port  | 是                      | 1                               |
+| 端口  | 是                      | 1                               |
 
  
 
-如果设置，该端口应仅通知宿主的数据包匹配提供的筛选器。 这些筛选器是与提供给需要 802.11 筛选器类似[OID\_代\_当前\_数据包\_筛选器](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-current-packet-filter)。
+如果设置此项，则该端口只应通知与提供的筛选器匹配的数据包的主机。 这些筛选器类似于为 [OID 生成 \_ \_ 当前 \_ 数据包 \_ 筛选器](./oid-gen-current-packet-filter.md)提供的必需802.11 筛选器。
 
 ## <a name="set-property-parameters"></a>设置属性参数
 
 
-| TLV                                                                                   | 允许多个 TLV 实例 | 可选 | 描述                          |
+| TLV                                                                                   | 允许多个 TLV 实例 | 可选 | 说明                          |
 |---------------------------------------------------------------------------------------|--------------------------------|----------|--------------------------------------|
-| [**WDI\_TLV\_PACKET\_FILTER\_PARAMETERS**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-packet-filter-parameters) |                                |          | 数据包的位掩码筛选器。 |
+| [**WDI \_ TLV \_ 数据包 \_ 筛选器 \_ 参数**](./wdi-tlv-packet-filter-parameters.md) |                                |          | 数据包的位掩码筛选器。 |
 
  
 
 ## <a name="set-property-results"></a>设置属性结果
 
 
-没有其他数据。 标头中的数据就足够了。
+无其他数据。 标头中的数据足够了。
 
 <a name="requirements"></a>要求
 ------------
@@ -59,16 +59,11 @@ OID\_WDI\_设置\_接收\_数据包\_筛选器定义来指示给定的虚拟化�
 <td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
-<td><p>Header</p></td>
-<td>Dot11wdi.h</td>
+<td><p>标头</p></td>
+<td>Dot11wdi</td>
 </tr>
 </tbody>
 </table>
 
  
-
- 
-
-
-
 

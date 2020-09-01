@@ -10,12 +10,12 @@ keywords:
 - 内核流式处理模型 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4140f22667c92b4189ba07d54dc9cd9eddb1fe1b
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 9addab5a09e5f758da0a12953712f2eb23c27bff
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72845143"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89192781"
 ---
 # <a name="windows-2000-kernel-streaming-model-design-guide"></a>Windows 2000 内核流式处理模型设计指南
 
@@ -25,18 +25,13 @@ ms.locfileid: "72845143"
 
 以下部分介绍 Windows 2000 内核流式处理模型：
 
-[流式处理微型驱动程序](https://docs.microsoft.com/windows-hardware/drivers/ddi/_stream/index)
+[流微型驱动程序](/windows-hardware/drivers/ddi/_stream/index)
 
 [USBCAMD 微型驱动程序库](usbcamd-minidriver-library.md)
 
-[DVD 解码器微型驱动程序](https://docs.microsoft.com/windows-hardware/drivers/ddi/_stream/index)
+[DVD 解码器微型驱动程序](/windows-hardware/drivers/ddi/_stream/index)
 
 [内核流式处理](kernel-streaming.md)
 
  
-
- 
-
-
-
 

@@ -1,6 +1,6 @@
 ---
-title: KSPROPERTY\_AUDIOENGINE\_描述符
-description: 适用于卸载的硬件解决方案的音频驱动程序使用 KSPROPERTY\_AUDIOENGINE\_描述符来提供有关表示硬件音频引擎的节点的信息。
+title: KSPROPERTY \_ AUDIOENGINE \_ 描述符
+description: 适用于卸载的硬件解决方案的音频驱动程序使用 KSPROPERTY \_ AUDIOENGINE \_ 描述符来提供有关表示硬件音频引擎的节点的信息。
 ms.assetid: 1D912155-6DB2-4AFF-949F-47C19E47678C
 keywords:
 - KSPROPERTY_AUDIOENGINE_DESCRIPTOR 音频设备
@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: dda089f57de17500d99f01f6234ba3879edca45b
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: c6ee8f6043558ee13c5ee6b14c6398e811692522
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72832880"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89206924"
 ---
-# <a name="ksproperty_audioengine_descriptor"></a>KSPROPERTY\_AUDIOENGINE\_描述符
+# <a name="ksproperty_audioengine_descriptor"></a>KSPROPERTY \_ AUDIOENGINE \_ 描述符
 
 
-适用于卸载的硬件解决方案的音频驱动程序使用**KSPROPERTY\_AUDIOENGINE\_描述符**来提供有关表示硬件音频引擎的节点的信息。
+适用于卸载的硬件解决方案的音频驱动程序使用 **KSPROPERTY \_ AUDIOENGINE \_ 描述符** 来提供有关表示硬件音频引擎的节点的信息。
 
 ### <a name="span-idusage_summary_tablespanspan-idusage_summary_tablespanspan-idusage_summary_tablespanusage-summary-table"></a><span id="Usage_Summary_Table"></span><span id="usage_summary_table"></span><span id="USAGE_SUMMARY_TABLE"></span>使用情况摘要表
 
@@ -38,7 +38,7 @@ ms.locfileid: "72832880"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">“获取”</th>
+<th align="left">获取</th>
 <th align="left">设置</th>
 <th align="left">目标</th>
 <th align="left">属性描述符类型</th>
@@ -47,22 +47,22 @@ ms.locfileid: "72832880"
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>“是”</p></td>
-<td align="left"><p>无</p></td>
+<td align="left"><p>是</p></td>
+<td align="left"><p>否</p></td>
 <td align="left"><p>节点 via 筛选器</p></td>
 <td align="left"><p>KSP_NODE</p></td>
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-_tagksaudioengine_descriptor" data-raw-source="[&lt;strong&gt;KSAUDIOENGINE_DESCRIPTOR&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-_tagksaudioengine_descriptor)"><strong>KSAUDIOENGINE_DESCRIPTOR</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-_tagksaudioengine_descriptor" data-raw-source="[&lt;strong&gt;KSAUDIOENGINE_DESCRIPTOR&lt;/strong&gt;](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-_tagksaudioengine_descriptor)"><strong>KSAUDIOENGINE_DESCRIPTOR</strong></a></p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-属性值的类型为**KSAUDIOENGINE\_描述符**，它指示音频引擎节点的静态属性。
+属性值的类型为 **KSAUDIOENGINE， \_ ** 它指示音频引擎节点的静态属性。
 
 ### <a name="span-idreturn_valuespanspan-idreturn_valuespanspan-idreturn_valuespanreturn-value"></a><span id="Return_Value"></span><span id="return_value"></span><span id="RETURN_VALUE"></span>返回值
 
-**KSPROPERTY\_AUDIOENGINE\_描述符**属性请求返回**状态\_SUCCESS** ，以指示已成功完成。 否则，请求将返回相应的错误状态代码。
+**KSPROPERTY \_ AUDIOENGINE \_ 描述符**属性请求返回**状态 \_ SUCCESS** ，指示该请求已成功完成。 否则，请求将返回相应的错误状态代码。
 
 <a name="requirements"></a>要求
 ------------
@@ -87,16 +87,9 @@ ms.locfileid: "72832880"
 ## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
-[**KSAUDIOENGINE\_描述符**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-_tagksaudioengine_descriptor)
+[**KSAUDIOENGINE \_ 描述符**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-_tagksaudioengine_descriptor)
 
-[**KSPROPERTY\_AUDIOENGINE**](ksproperty-audioengine.md)
-
- 
+[**KSPROPERTY \_ AUDIOENGINE**](ksproperty-audioengine.md)
 
  
-
-
-
-
-
 

@@ -10,12 +10,12 @@ keywords:
 - GDL WDK，教程
 ms.date: 06/05/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 63afc03f3309c29c4a4e7438f1dba4432daaebc4
-ms.sourcegitcommit: a16fd2876383265b4ad336dea624e4b13fc13a1b
+ms.openlocfilehash: 6cf0099b50a326f2374367c5eeb0dc6350456a23
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88644017"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89205923"
 ---
 # <a name="gdl-tutorials"></a>GDL 教程
 
@@ -25,7 +25,7 @@ ms.locfileid: "88644017"
 
 > [!NOTE]
 > HCK 不适用于 Windows 10。
-> 如果要开发适用于 Windows 10 的硬件或驱动程序，则需要新的 [Windows 硬件实验室工具包 (](https://docs.microsoft.com/windows-hardware/test/hlk/windows-hardware-lab-kit) 用于 windows 10 的 HLK) 。
+> 如果要开发适用于 Windows 10 的硬件或驱动程序，则需要新的 [Windows 硬件实验室工具包 (](/windows-hardware/test/hlk/windows-hardware-lab-kit) 用于 windows 10 的 HLK) 。
 
 本节包括：
 

@@ -1,6 +1,6 @@
 ---
 title: Bug 检查 0xDA SYSTEM_PTE_MISUSE
-description: SYSTEM_PTE_MISUSE bug 检查的值为0x000000DA。 这表示已使用了一种不正确的方法来使用页表项（PTE）例程。
+description: SYSTEM_PTE_MISUSE bug 检查的值为0x000000DA。 这表明 (PTE) 例程的页表项已被错误地使用。
 ms.assetid: a9a9f3e9-39b7-4e4a-a326-2f510e0aaa99
 keywords:
 - Bug 检查 0xDA SYSTEM_PTE_MISUSE
@@ -13,23 +13,23 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 023727b030c7644f39bac5bf7173fcfe324a9a7f
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: db9c316eea49044aff1011ce57435b67c95cb792
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72827363"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89206577"
 ---
-# <a name="bug-check-0xda-system_pte_misuse"></a>Bug 检查0xDA：\_误用系统\_PTE
+# <a name="bug-check-0xda-system_pte_misuse"></a>Bug 检查0xDA：系统 \_ PTE 被 \_ 滥用
 
 
-系统\_PTE\_误用 bug 检查的值为0x000000DA。 这表示已使用了一种不正确的方法来使用页表项（PTE）例程。
+系统 \_ PTE \_ 滥用 bug 检查的值为0x000000DA。 这表明 (PTE) 例程的页表项已被错误地使用。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你是在使用计算机时收到蓝屏错误代码的客户，请参阅[排查蓝屏错误](https://www.windows.com/stopcode)。
+> 本主题面向程序员。 如果您是在使用计算机时收到蓝屏错误代码的客户，请参阅[蓝屏错误疑难解答](https://www.windows.com/stopcode)。
 
 
-## <a name="system_pte_misuse-parameters"></a>系统\_PTE\_误用参数
+## <a name="system_pte_misuse-parameters"></a>系统 \_ PTE \_ 盗用参数
 
 
 参数1指示违规类型。 其他参数的意义取决于参数1的值。
@@ -91,86 +91,86 @@ ms.locfileid: "72827363"
 <td align="left"><p>0x06</p></td>
 <td align="left"><p>驱动程序指定的 MDL</p></td>
 <td align="left"><p>驱动程序指定的虚拟地址</p></td>
-<td align="left"><p>要释放的映射数（由驱动程序指定）</p></td>
-<td align="left"><p>正在释放的 MDL 从未（或当前未）映射。</p></td>
+<td align="left"><p>驱动程序指定的可用 (映射数) </p></td>
+<td align="left"><p>正在释放的 MDL 从未 (或当前未) 映射。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x07</p></td>
 <td align="left"><p>初始映射</p></td>
 <td align="left"><p>映射的数目</p></td>
-<td align="left"><p>保留</p></td>
-<td align="left"><p>（仅限 Windows 2000）映射范围为双精度。</p></td>
+<td align="left"><p>预留</p></td>
+<td align="left"><p>仅) 映射范围为双分配 (Windows 2000。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x08</p></td>
 <td align="left"><p>初始映射</p></td>
 <td align="left"><p>调用方正在释放的映射数</p></td>
 <td align="left"><p>系统认为应释放的映射数</p></td>
-<td align="left"><p>（仅限 Windows 2000）调用方请求的映射数量不正确。</p></td>
+<td align="left"><p>仅) 调用方请求使用不正确的映射数 (Windows 2000。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x09</p></td>
 <td align="left"><p>初始映射</p></td>
 <td align="left"><p>调用方正在释放的映射数</p></td>
 <td align="left"><p>系统认为已经免费的映射索引</p></td>
-<td align="left"><p>（仅限 Windows 2000）调用方请求释放多个映射，但至少有一个映射未分配。</p></td>
+<td align="left"><p>仅) 调用方 (Windows 2000 请求释放多个映射，但至少有一个未分配。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x0A</p></td>
-<td align="left"><p><strong>1：</strong>该驱动程序在 MDL 中请求了 "失败时 bug 检查"。</p>
-<p><strong>0：</strong>该驱动程序未请求在 MDL 中出现 "失败时 bug 检查"。</p></td>
+<td align="left"><p><strong>1：</strong> 该驱动程序在 MDL 中请求了 "失败时 bug 检查"。</p>
+<p><strong>0：</strong> 该驱动程序未请求在 MDL 中出现 "失败时 bug 检查"。</p></td>
 <td align="left"><p>调用方分配的映射数</p></td>
 <td align="left"><p>请求的映射池的类型</p></td>
-<td align="left"><p>（仅限 Windows 2000）调用方请求分配零个映射。</p></td>
+<td align="left"><p>仅) 调用方请求分配零映射 (Windows 2000。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x0B</p></td>
 <td align="left"><p>损坏的映射</p></td>
 <td align="left"><p>调用方分配的映射数</p></td>
 <td align="left"><p>请求的映射池的类型</p></td>
-<td align="left"><p>（仅限 Windows 2000）此分配时，映射列表已损坏。 损坏的映射位于可能的最小映射地址下面。</p></td>
+<td align="left"><p>仅) 映射列表在此分配时已损坏 (Windows 2000。 损坏的映射位于可能的最小映射地址下面。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x0C</p></td>
 <td align="left"><p>损坏的映射</p></td>
 <td align="left"><p>调用方分配的映射数</p></td>
 <td align="left"><p>请求的映射池的类型</p></td>
-<td align="left"><p>（仅限 Windows 2000）此分配时，映射列表已损坏。 损坏的映射位于可能的最小映射地址之上。</p></td>
+<td align="left"><p>仅) 映射列表在此分配时已损坏 (Windows 2000。 损坏的映射位于可能的最小映射地址之上。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x0D</p></td>
 <td align="left"><p>初始映射</p></td>
 <td align="left"><p>调用方正在释放的映射数</p></td>
 <td align="left"><p>映射池的类型</p></td>
-<td align="left"><p>（仅限 Windows 2000）调用方正在尝试释放零映射。</p></td>
+<td align="left"><p>仅) 调用方尝试释放零映射 (Windows 2000。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x0E</p></td>
 <td align="left"><p>初始映射</p></td>
 <td align="left"><p>调用方正在释放的映射数</p></td>
 <td align="left"><p>映射池的类型</p></td>
-<td align="left"><p>（仅限 Windows 2000）调用方正在尝试释放映射，但保护映射已被覆盖。</p></td>
+<td align="left"><p>仅当调用方尝试释放映射时)  (Windows 2000，但防护映射已被覆盖。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x0F</p></td>
 <td align="left"><p>不存在的映射</p></td>
 <td align="left"><p>调用方尝试释放的映射数</p></td>
 <td align="left"><p>正在释放的映射池的类型</p></td>
-<td align="left"><p>（仅限 Windows 2000）调用方正在尝试释放不存在的映射。 不存在的映射位于可能的最小映射地址下面。</p></td>
+<td align="left"><p>仅) 调用方尝试释放不存在的映射时 (Windows 2000。 不存在的映射位于可能的最小映射地址下面。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x10</p></td>
 <td align="left"><p>不存在的映射</p></td>
 <td align="left"><p>调用方尝试释放的映射数</p></td>
 <td align="left"><p>正在释放的映射池的类型</p></td>
-<td align="left"><p>（仅限 Windows 2000）调用方正在尝试释放不存在的映射。 不存在的映射位于可能的最高映射地址之上。</p></td>
+<td align="left"><p>仅) 调用方尝试释放不存在的映射时 (Windows 2000。 不存在的映射位于可能的最高映射地址之上。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x11</p></td>
 <td align="left"><p>不存在的映射</p></td>
 <td align="left"><p>调用方尝试释放的映射数</p></td>
 <td align="left"><p>正在释放的映射池的类型</p></td>
-<td align="left"><p>（仅限 Windows 2000）调用方正在尝试释放不存在的映射。 映射地址空间的基础上不存在的映射。</p></td>
+<td align="left"><p>仅) 调用方尝试释放不存在的映射时 (Windows 2000。 映射地址空间的基础上不存在的映射。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x100</p></td>
@@ -190,7 +190,7 @@ ms.locfileid: "72827363"
 <td align="left"><p>0x102</p></td>
 <td align="left"><p>第一个映射地址</p></td>
 <td align="left"><p>调用方的标识标记</p></td>
-<td align="left"><p>保留</p></td>
+<td align="left"><p>预留</p></td>
 <td align="left"><p>调用方尝试释放的映射地址空间明显为空。</p></td>
 </tr>
 <tr class="odd">
@@ -198,8 +198,8 @@ ms.locfileid: "72827363"
 <td align="left"><p>无效映射的地址</p></td>
 <td align="left"><p>调用方的标识标记</p></td>
 <td align="left"><p>映射地址空间中的映射数</p></td>
-<td align="left"><p>调用方尝试释放的映射地址空间仍保留。 <strong><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-mmunmapreservedmapping" data-raw-source="[MmUnmapReservedMapping](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-mmunmapreservedmapping)">MmUnmapReservedMapping</a></strong></p>
-<p>必须在<strong><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-mmfreemappingaddress" data-raw-source="[MmFreeMappingAddress](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-mmfreemappingaddress)">MmFreeMappingAddress</a></strong>之前调用。</p></td>
+<td align="left"><p>调用方尝试释放的映射地址空间仍保留。 <strong><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-mmunmapreservedmapping" data-raw-source="[MmUnmapReservedMapping](/windows-hardware/drivers/ddi/wdm/nf-wdm-mmunmapreservedmapping)">MmUnmapReservedMapping</a></strong></p>
+<p>必须在 <strong><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-mmfreemappingaddress" data-raw-source="[MmFreeMappingAddress](/windows-hardware/drivers/ddi/wdm/nf-wdm-mmfreemappingaddress)">MmFreeMappingAddress</a></strong>之前调用。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x104</p></td>
@@ -212,7 +212,7 @@ ms.locfileid: "72827363"
 <td align="left"><p>0x105</p></td>
 <td align="left"><p>第一个映射地址</p></td>
 <td align="left"><p>调用方的标识标记</p></td>
-<td align="left"><p>保留</p></td>
+<td align="left"><p>预留</p></td>
 <td align="left"><p>调用方正在尝试将 MDL 映射到无效的映射地址空间。 调用方很可能指定了无效的地址。</p></td>
 </tr>
 <tr class="even">
@@ -220,7 +220,7 @@ ms.locfileid: "72827363"
 <td align="left"><p>第一个映射地址</p></td>
 <td align="left"><p>非空映射的地址</p></td>
 <td align="left"><p>最后一个映射地址</p></td>
-<td align="left"><p>调用方尝试将 MDL 映射到未正确保留的映射地址空间。 调用方应在调用<strong><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-mmmaplockedpageswithreservedmapping" data-raw-source="[MmMapLockedPagesWithReservedMapping](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-mmmaplockedpageswithreservedmapping)">MmMapLockedPagesWithReservedMapping</a></strong>之前调用<strong><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-mmunmapreservedmapping" data-raw-source="[MmUnmapReservedMapping](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-mmunmapreservedmapping)">MmUnmapReservedMapping</a></strong></p></td>
+<td align="left"><p>调用方尝试将 MDL 映射到未正确保留的映射地址空间。 调用方应在调用<strong><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-mmmaplockedpageswithreservedmapping" data-raw-source="[MmMapLockedPagesWithReservedMapping](/windows-hardware/drivers/ddi/wdm/nf-wdm-mmmaplockedpageswithreservedmapping)">MmMapLockedPagesWithReservedMapping</a></strong>之前调用<strong><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-mmunmapreservedmapping" data-raw-source="[MmUnmapReservedMapping](/windows-hardware/drivers/ddi/wdm/nf-wdm-mmunmapreservedmapping)">MmUnmapReservedMapping</a></strong></p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x108</p></td>
@@ -233,7 +233,7 @@ ms.locfileid: "72827363"
 <td align="left"><p>0x109</p></td>
 <td align="left"><p>第一个映射地址</p></td>
 <td align="left"><p>调用方的标识标记</p></td>
-<td align="left"><p>保留</p></td>
+<td align="left"><p>预留</p></td>
 <td align="left"><p>调用方正在尝试取消映射明显为空的已锁定虚拟地址空间。</p></td>
 </tr>
 <tr class="odd">
@@ -289,8 +289,8 @@ ms.locfileid: "72827363"
 <tr class="even">
 <td align="left"><p>0x302</p></td>
 <td align="left"><p>调用方尝试释放的地址。</p></td>
-<td align="left"><p>保留</p></td>
-<td align="left"><p>保留</p></td>
+<td align="left"><p>预留</p></td>
+<td align="left"><p>预留</p></td>
 <td align="left"><p>调用方正在尝试释放当前未映射的系统地址。</p></td>
 </tr>
 <tr class="odd">
@@ -341,9 +341,4 @@ ms.locfileid: "72827363"
 堆栈跟踪将标识导致错误的驱动程序。
 
  
-
- 
-
-
-
 

@@ -1,6 +1,6 @@
 ---
-title: KSPROPERTY\_CAMERACONTROL\_扩展\_缩放
-description: KSPROPERTY\_CAMERACONTROL\_扩展\_缩放用于控制数字缩放。
+title: KSPROPERTY \_ CAMERACONTROL \_ 扩展 \_ 缩放
+description: KSPROPERTY \_ CAMERACONTROL \_ 扩展 \_ 缩放用于控制数字缩放。
 ms.assetid: 93CFCBFC-69B3-4241-913F-94615599BE8E
 keywords:
 - KSPROPERTY_CAMERACONTROL_EXTENDED_ZOOM 流媒体设备
@@ -14,16 +14,16 @@ api_type:
 - HeaderDef
 ms.date: 09/11/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 195a54a2e13b5757479d3b3de034642fc7fc8540
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: adefc90e26419e4d53e4cedcf75e2a725c4d75a4
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72827431"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89192393"
 ---
-# <a name="ksproperty_cameracontrol_extended_zoom"></a>KSPROPERTY\_CAMERACONTROL\_扩展\_缩放
+# <a name="ksproperty_cameracontrol_extended_zoom"></a>KSPROPERTY \_ CAMERACONTROL \_ 扩展 \_ 缩放
 
-**KSPROPERTY\_CAMERACONTROL\_扩展\_缩放**用于控制数字缩放。 它在[**KSPROPERTY\_CAMERACONTROL\_扩展\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ne-ksmedia-ksproperty_cameracontrol_extended_property)枚举中定义，用于获取和设置缩放比率以及从驱动程序获取缩放范围。 在 Windows 10 中，此控件扩展为还支持平滑缩放。
+**KSPROPERTY \_CAMERACONTROL \_ 扩展 \_ 缩放** 用于控制数字缩放。 它在 [**KSPROPERTY \_ CAMERACONTROL \_ 扩展 \_ 属性**](/windows-hardware/drivers/ddi/ksmedia/ne-ksmedia-ksproperty_cameracontrol_extended_property) 枚举中定义，用于获取和设置缩放比率，并从驱动程序获取缩放范围。 在 Windows 10 中，此控件扩展为还支持平滑缩放。
 
 ## <a name="usage-summary-table"></a>使用情况摘要表
 
@@ -35,21 +35,21 @@ ms.locfileid: "72827431"
 </colgroup>
 <thead>
 <tr class="header">
-<th>范围</th>
-<th>控件</th>
-<th>在任务栏的搜索框中键入</th>
+<th>作用域</th>
+<th>控制</th>
+<th>类型</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td><p>版本 1</p></td>
-<td><p>Filter</p></td>
+<td><p>筛选器</p></td>
 <td><p>同步</p></td>
 </tr>
 </tbody>
 </table>
 
-以下标志可以放置在**KSCAMERA\_EXTENDEDPROP\_标头中。** 用于控制平滑缩放和直接缩放的标志字段。 默认值由驱动程序定义。
+以下标志可以放置在 **KSCAMERA \_ EXTENDEDPROP \_ 标头中。** 用于控制平滑缩放和直接缩放的标志字段。 默认值由驱动程序定义。
 
 ```cpp
 #define KSCAMERA_EXTENDEDPROP_ZOOM_DEFAULT  0x0000000000000000
@@ -57,7 +57,7 @@ ms.locfileid: "72827431"
 #define KSCAMERA_EXTENDEDPROP_ZOOM_SMOOTH   0x0000000000000002
 ```
 
-如果驱动程序支持此控件，则它必须支持**KSCAMERA\_EXTENDEDPROP\_ZOOM\_默认值**。
+如果驱动程序支持此控件，则它必须支持 **KSCAMERA \_ EXTENDEDPROP \_ ZOOM \_ 默认值**。
 
 如果驱动程序不支持数字缩放，驱动程序不应实现此控制。
 
@@ -70,7 +70,7 @@ ms.locfileid: "72827431"
 </colgroup>
 <thead>
 <tr class="header">
-<th>旗帜</th>
+<th>标志</th>
 <th>描述</th>
 </tr>
 </thead>
@@ -90,9 +90,9 @@ ms.locfileid: "72827431"
 </tbody>
 </table>
 
-对于每个**GET**调用，驱动程序必须根据当前配置或设置来报告允许的当前缩放范围。
+对于每个 **GET** 调用，驱动程序必须根据当前配置或设置来报告允许的当前缩放范围。
 
-下表包含了在使用**KSPROPERTY\_CAMERACONTROL\_扩展\_ZOOM**属性时， [**KSCAMERA\_EXTENDEDPROP\_标头**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)结构字段的说明和要求。
+下表包含使用**KSPROPERTY \_ CAMERACONTROL \_ 扩展 \_ 缩放**属性时[**KSCAMERA \_ EXTENDEDPROP \_ 标头**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)结构字段的说明和要求。
 
 <table>
 <colgroup>
@@ -102,7 +102,7 @@ ms.locfileid: "72827431"
 <thead>
 <tr class="header">
 <th>成员</th>
-<th>描述</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>
@@ -112,11 +112,11 @@ ms.locfileid: "72827431"
 </tr>
 <tr class="even">
 <td><p>PinId</p></td>
-<td><p>这必须是<strong>KSCAMERA_EXTENDEDPROP_FILTERSCOPE</strong> （0xffffffff），</p></td>
+<td><p>这必须 <strong>KSCAMERA_EXTENDEDPROP_FILTERSCOPE</strong> (0xffffffff) ，</p></td>
 </tr>
 <tr class="odd">
-<td><p>Size</p></td>
-<td><p>这必须是 sizeof （<strong>KSCAMERA_EXTENDEDPROP_HEADER</strong>） + Sizeof （<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_videoprocsetting" data-raw-source="[&lt;strong&gt;KSCAMERA_EXTENDEDPROP_VIDEOPROCSETTING&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_videoprocsetting)"><strong>KSCAMERA_EXTENDEDPROP_VIDEOPROCSETTING</strong></a>），</p></td>
+<td><p>大小</p></td>
+<td><p>这必须是 sizeof (<strong>KSCAMERA_EXTENDEDPROP_HEADER</strong>) + sizeof (<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_videoprocsetting" data-raw-source="[&lt;strong&gt;KSCAMERA_EXTENDEDPROP_VIDEOPROCSETTING&lt;/strong&gt;](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_videoprocsetting)"><strong>KSCAMERA_EXTENDEDPROP_VIDEOPROCSETTING</strong></a>) 。</p></td>
 </tr>
 <tr class="even">
 <td><p>结果</p></td>
@@ -133,7 +133,7 @@ ms.locfileid: "72827431"
 </tbody>
 </table>
 
-下表包含了**KSCAMERA\_EXTENDEDPROP\_VIDEOPROCSETTING**结构 **\_\_\_** 字段的说明和要求。
+下表包含**KSPROPERTY \_ CAMERACONTROL \_ 扩展 \_ 缩放**属性的**KSCAMERA \_ EXTENDEDPROP \_ VIDEOPROCSETTING**结构字段的说明和要求。
 
 <table>
 <colgroup>
@@ -143,7 +143,7 @@ ms.locfileid: "72827431"
 <thead>
 <tr class="header">
 <th>成员</th>
-<th>描述</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>
@@ -153,14 +153,14 @@ ms.locfileid: "72827431"
 </tr>
 <tr class="even">
 <td><p>最小/最大/步骤</p></td>
-<td><p>最小/最大/步骤包含 Q16 格式的相机驱动程序所支持的缩放比率的最小/最大/增量。 驱动程序必须为<strong>GET</strong>操作返回这些值。</p></td>
+<td><p>最小/最大/步骤包含 Q16 格式的相机驱动程序所支持的缩放比率的最小/最大/增量。 驱动程序必须为 <strong>GET</strong> 操作返回这些值。</p></td>
 </tr>
 <tr class="odd">
 <td><p>VideoProc</p></td>
-<td><p>对于<strong>SET</strong>操作，VideoProc 必须指定最小/最大值/步骤参数描述的范围内的缩放比例。 对于<strong>GET</strong>操作，驱动程序必须返回当前的缩放比例。</p></td>
+<td><p>对于 <strong>SET</strong> 操作，VideoProc 必须指定最小/最大值/步骤参数描述的范围内的缩放比例。 对于 <strong>GET</strong> 操作，驱动程序必须返回当前的缩放比例。</p></td>
 </tr>
 <tr class="even">
-<td><p>保留</p></td>
+<td><p>预留</p></td>
 <td><p>这是未使用的。 驱动程序必须忽略此情况。</p></td>
 </tr>
 </tbody>

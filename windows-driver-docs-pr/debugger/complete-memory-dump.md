@@ -7,12 +7,12 @@ keywords:
 - 完整内存转储
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fab36095a663f955fe30bfbe92d9a17c7760452c
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 52f329c3653cff6a8d3d3284d2252ae6cd4a3ba5
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72837821"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89206827"
 ---
 # <a name="complete-memory-dump"></a>完整内存转储
 
@@ -22,25 +22,18 @@ ms.locfileid: "72837821"
 
 *完全内存转储*是最大的内核模式转储文件。 此文件包含 Windows 使用的所有物理内存。 默认情况下，完全内存转储不包括平台固件使用的物理内存。
 
-从 Windows 8 开始，可以注册在完整内存转储过程中调用的[*BugCheckAddPagesCallback*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-kbugcheck_reason_callback_routine)例程。 *BugCheckAddPagesCallback*例程可以指定要添加到转储文件的特定于驱动程序的数据。 例如，这些附加数据可能包括未映射到虚拟内存中的系统地址范围的物理页面，但包含有助于调试驱动程序的信息。 *BugCheckAddPagesCallback*例程可能会向转储文件添加未映射的任何驱动程序拥有的物理页面，或映射到虚拟内存中的用户模式地址的任何驱动程序。
+从 Windows 8 开始，可以注册在完整内存转储过程中调用的 [*BugCheckAddPagesCallback*](/windows-hardware/drivers/ddi/wdm/nc-wdm-kbugcheck_reason_callback_routine) 例程。 *BugCheckAddPagesCallback*例程可以指定要添加到转储文件的特定于驱动程序的数据。 例如，这些附加数据可能包括未映射到虚拟内存中的系统地址范围的物理页面，但包含有助于调试驱动程序的信息。 *BugCheckAddPagesCallback*例程可能会向转储文件添加未映射的任何驱动程序拥有的物理页面，或映射到虚拟内存中的用户模式地址的任何驱动程序。
 
 此转储文件要求启动驱动器上的页面文件大小至少与主系统内存相同;它应该能够容纳大小等于整个 RAM 和 1 mb 的文件。
 
-默认情况下，将完整的内存转储文件写入% SystemRoot%\\dmp。
+默认情况下，将完整的内存转储文件写入% SystemRoot% \\ Memory。
 
-如果发生第二个 bug 检查并创建另一个完整内存转储（或核心内存转储），则将覆盖以前的文件。
+如果发生第二次错误检查，并创建了另一个完整的内存转储 (或内核内存转储) ，则将覆盖以前的文件。
 
 ## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
-[各种内核模式转储文件](varieties-of-kernel-mode-dump-files.md)
+[内核模式转储文件的种类](varieties-of-kernel-mode-dump-files.md)
 
  
-
- 
-
-
-
-
-
 

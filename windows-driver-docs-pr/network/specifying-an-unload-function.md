@@ -11,23 +11,23 @@ keywords:
 - 卸载函数 WDK Windows 筛选平台
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ab42a478ead3b77a2fc49b295322877f51b97670
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: ca491f9c414837d5d6e8c66f4e41f4abc01613b5
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72841873"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89205931"
 ---
 # <a name="specifying-an-unload-function"></a>指定卸载函数
 
 
 标注驱动程序必须提供 unload 函数。 当从系统中卸载标注驱动程序时，操作系统将调用此函数。 标注驱动程序的 unload 函数必须保证在从系统内存中卸载标注驱动程序之前，标注驱动程序的标注已从筛选器引擎中取消注册。 如果标注驱动程序未提供 unload 函数，则无法从系统中卸载该驱动程序。
 
-标注驱动程序如何指定卸载函数取决于标注驱动程序是基于 Windows 驱动模型（WDM）还是 Windows 驱动程序框架（WDF）。
+标注驱动程序如何指定卸载函数取决于标注驱动程序是否基于 Windows 驱动模型 (WDM) 或 Windows 驱动程序框架 (WDF) 。
 
 ### <a name="wdm-based-callout-drivers"></a>基于 WDM 的标注驱动程序
 
-如果标注驱动程序基于 WDM，则它会在其[**DriverEntry**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_initialize)函数中指定[**Unload**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_unload)函数。 例如：
+如果标注驱动程序基于 WDM，则它会在其[**DriverEntry**](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_initialize)函数中指定[**Unload**](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_unload)函数。 例如：
 
 ```C++
 VOID
@@ -52,7 +52,7 @@ NTSTATUS
 
 ### <a name="wdf-based-callout-drivers"></a>基于 WDF 的标注驱动程序
 
-如果标注驱动程序基于 WDF，则它会在其[**DriverEntry**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_initialize)函数中指定[*EvtDriverUnload*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdriver/nc-wdfdriver-evt_wdf_driver_unload)函数。 例如：
+如果标注驱动程序基于 WDF，则它会在其[**DriverEntry**](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_initialize)函数中指定[*EvtDriverUnload*](/windows-hardware/drivers/ddi/wdfdriver/nc-wdfdriver-evt_wdf_driver_unload)函数。 例如：
 
 ```C++
 VOID
@@ -97,13 +97,7 @@ NTSTATUS
 }
 ```
 
-有关如何实现注解驱动程序的 unload 功能的信息，请参阅[卸载标注驱动程序](unloading-a-callout-driver.md)。
+有关如何实现注解驱动程序的 unload 功能的信息，请参阅 [卸载标注驱动程序](unloading-a-callout-driver.md)。
 
  
-
- 
-
-
-
-
 

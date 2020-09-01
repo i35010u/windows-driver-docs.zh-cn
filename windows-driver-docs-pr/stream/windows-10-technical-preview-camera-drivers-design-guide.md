@@ -4,12 +4,12 @@ description: 适用于 Windows 10 的相机驱动程序接口已聚合到所有�
 ms.assetid: CB5EEDF2-650D-4CD3-A5DE-DF0D6F10B394
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4fe7b9f0a62a7a11818dcd43cd24452165402839
-ms.sourcegitcommit: d9a9925f790271f4ca2c8377d551d96e8d1e62c7
+ms.openlocfilehash: 33eeae132330cd87e3a35fd28584a10d26e11aa5
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88850270"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89192783"
 ---
 # <a name="universal-camera-driver-design-guide-for-windows-10"></a>适用于 Windows 10 的通用相机驱动程序设计指南
 
@@ -31,7 +31,7 @@ ms.locfileid: "88850270"
 
 ## <a name="build-a-universal-camera-driver"></a>构建通用照相机驱动程序
 
-通用照相机驱动程序是基于 [Windows 驱动模型](https://docs.microsoft.com/windows-hardware/drivers/kernel/introduction-to-wdm) (WDM) 构建的 AVStream 微型驱动程序。
+通用照相机驱动程序是基于 [Windows 驱动模型](../kernel/introduction-to-wdm.md) (WDM) 构建的 AVStream 微型驱动程序。
 
 有关详细信息，请参阅 [适用于 Windows 10 的通用照相机驱动程序模型参考](windows-10-technical-preview-camera-drivers-reference.md)中的以下部分：
 
@@ -44,6 +44,3 @@ ms.locfileid: "88850270"
 
 * [AVStream 概述](avstream-overview.md)
 * [编写 AVStream 微型驱动程序](writing-an-avstream-minidriver.md)
-
-
-

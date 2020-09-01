@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 0aed9349a815bf4b4eceb34bffb172cce543ab4e
-ms.sourcegitcommit: 8596782b07c8a71adf38fc2c2da68b75ba0a1259
+ms.openlocfilehash: c8a78a65eb32f1bfbc866166d970c95fd3843c51
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85593933"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89206871"
 ---
 # <a name="ndiskdndisevent"></a>!ndiskd.ndisevent
 
@@ -43,9 +43,9 @@ Ndiskd.dll
 
 ### <a name="examples"></a>示例
 
-若要查看网络适配器的事件日志输出，！ ndiskd 在[**！ ndiskd**](-ndiskd-netadapter.md)输出的 State 节中提供了一个指向它的链接。 这比从微型端口块查找事件日志句柄并使用它来运行 **！ ndiskd. ndisevent**扩展的手动方法更容易。
+若要查看网络适配器的事件日志输出，！ ndiskd 在 [**！ ndiskd**](-ndiskd-netadapter.md) 输出的 State 节中提供了一个指向它的链接。 这比从微型端口块查找事件日志句柄并使用它来运行 **！ ndiskd. ndisevent** 扩展的手动方法更容易。
 
-首先，输入不带参数的 **！ ndiskd**命令，以查看系统上的网络适配器和微型端口驱动程序列表。 在以下示例中，查找 Marvell AVASTAR 无线-AC 网络控制器 ffffc804b9e6f1a0 的句柄。
+首先，输入不带参数的 **！ ndiskd** 命令，以查看系统上的网络适配器和微型端口驱动程序列表。 在以下示例中，查找 Marvell AVASTAR 无线-AC 网络控制器 ffffc804b9e6f1a0 的句柄。
 
 ```console
 1: kd> !ndiskd.netadapter
@@ -66,7 +66,7 @@ Ndiskd.dll
     ffffc804aef695e0   ffffc804aed331a0    TAP-Windows Adapter V9
 ```
 
-现在，单击该 Get-netadapter 的链接，或输入 **！ ndiskd**命令查看其详细信息。 在 "状态" 部分中，查找 "设备 PnP" 字段右侧的 "显示状态历史记录" 链接。
+现在，单击该 Get-netadapter 的链接，或输入 **！ ndiskd** 命令查看其详细信息。 在 "状态" 部分中，查找 "设备 PnP" 字段右侧的 "显示状态历史记录" 链接。
 
 ```console
 1: kd> !ndiskd.netadapter ffffc804b9e6f1a0
@@ -137,7 +137,7 @@ MORE INFORMATION
     Diagnostic log
 ```
 
-现在，你可以单击 "显示状态历史记录" 链接或使用网络适配器的句柄来输入 **！ ndiskd**命令，该命令将显示此小型小型端口驱动程序的 PnP 事件日志。
+现在，你可以单击 "显示状态历史记录" 链接或使用网络适配器的句柄来输入 **！ ndiskd** 命令，该命令将显示此小型小型端口驱动程序的 PnP 事件日志。
 
 ```console
 1: kd> !ndiskd.netadapter ffffc804b9e6f1a0 -log
@@ -154,15 +154,15 @@ MINIPORT PM & PNP EVENTS
     Set a breakpoint on the next event
 ```
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
-[网络驱动程序设计指南](https://docs.microsoft.com/windows-hardware/drivers/network/index)
+[网络驱动程序设计指南](../network/index.md)
 
-[Windows Vista 和更高版本的网络引用](https://docs.microsoft.com/windows-hardware/drivers/ddi/_netvista/)
+[Windows Vista 和更高版本的网络引用](/windows-hardware/drivers/ddi/_netvista/)
 
 [调试网络堆栈](https://channel9.msdn.com/Shows/Defrag-Tools/Defrag-Tools-175-Debugging-the-Network-Stack)
 
-[**NDIS 扩展（Ndiskd.dll）**](ndis-extensions--ndiskd-dll-.md)
+[**NDIS 扩展 ( # A0) **](ndis-extensions--ndiskd-dll-.md)
 
 [**!ndiskd.help**](-ndiskd-help.md)
 

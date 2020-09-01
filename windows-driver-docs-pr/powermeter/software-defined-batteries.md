@@ -6,21 +6,21 @@ keywords:
 - SDB
 ms.date: 11/09/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2cc44dfff5e2fe72b95010538488ee3f0472d156
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 9f54c866374b06fdd1d54f67f41057916af5aeb2
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72829038"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89193243"
 ---
 # <a name="software-defined-battery"></a>软件定义的电池
 
 >[!NOTE]
-> 在商业发行之前会发生实质性修改的、与预发布产品相关的一些信息。 Microsoft 对于此处提供的信息不作任何明示或默示的担保。
+> 某些信息与预发布的产品相关，这些信息可能会在正式发布之前进行重大修改。 对于此处提供的信息，Microsoft 不作任何明示或暗示的担保。
 
 ## <a name="introduction"></a>简介
 
-本主题的目的是介绍软件定义电池（SDB），介绍 Windows SDB 体系结构，并详细介绍 Windows API 和此功能的 DDI 协定。 
+本主题的目的是介绍软件定义的电池 (SDB) ，介绍 Windows SDB 体系结构，并详细介绍 Windows API 和此功能的 DDI 协定。 
 
 本主题首先介绍了一个虚构的2个电池系统的简单生存期平衡 SDB 算法。 这后跟实现 SDB 算法所需的体系结构布局和 API 约定。
 
@@ -28,7 +28,7 @@ ms.locfileid: "72829038"
 
 - BattC-电量类驱动程序
 
-- CAD-充电仲裁驱动程序（CAD）是一个 Microsoft 驱动程序，可仲裁 USB 旧、USB 类型 C 和无线计费源之间的电力
+- CAD-计费仲裁驱动程序 (CAD) 是一种 Microsoft 驱动程序，可仲裁
 
 - 冷插拔电池-无法从系统中删除的电池，但不会出现限电或总断电的风险
 
@@ -43,11 +43,11 @@ ms.locfileid: "72829038"
 - 不可交换电池-未设计并且打算由最终用户删除的电池
 
 ## <a name="sdb-overview"></a>SDB 概述
-可在以下位置找到有关软件定义电池的 MSR 研究文档： [https://www.microsoft.com/research/wp-content/uploads/2016/02/multibattery_sosp2015.pdf](https://www.microsoft.com/research/wp-content/uploads/2016/02/multibattery_sosp2015.pdf)。 
+可在此处找到有关软件定义电池的 MSR 研究文档： [https://www.microsoft.com/research/wp-content/uploads/2016/02/multibattery_sosp2015.pdf](https://www.microsoft.com/research/wp-content/uploads/2016/02/multibattery_sosp2015.pdf) 。 
 
 本主题 reprises 介绍了本文中所述的观点，并向他们介绍了便携式计算机和其他移动设备中基于 productizing software 的电池寿命平衡功能。 
 
-假设有两个电池系统。 其中一个电池是不可移动电池，位于 SOC 旁边–我们来调用此*内部电池*。 另一电池是可热插拔的电池，位于可移动键盘旁边–我们来称这*外部电池*。 
+假设有两个电池系统。 其中一个电池是不可移动电池，位于 SOC 旁边–我们来调用此 *内部电池*。 另一电池是可热插拔的电池，位于可移动键盘旁边–我们来称这 *外部电池*。 
 
 *多电池系统*
 
@@ -57,26 +57,26 @@ ms.locfileid: "72829038"
 
 ## <a name="simple-age-balancing-sdb-algorithm"></a>简单的 Age 平衡 SDB 算法
 
-此算法称为 "*简单年龄平衡*"，因为它会尝试平衡电池寿命。 简单的 age 平衡算法会使系统更倾向于放电电量最少的电池。 如果电池的累计量较小，则不只会有更高的容量来保持电源，但在交付能力时通常更有效。 因此延长系统可以承受电池的时间。
+此算法称为 " *简单年龄平衡* "，因为它会尝试平衡电池寿命。 简单的 age 平衡算法会使系统更倾向于放电电量最少的电池。 如果电池的累计量较小，则不只会有更高的容量来保持电源，但在交付能力时通常更有效。 因此延长系统可以承受电池的时间。
 
 *简单的 Age 平衡 SDB 算法*
 
 ![简单的 Age 平衡 SDB 算法](images/powermeter-simple-age-balancing-algorithm.png)
 
-简单的 age 平衡算法背后的核心理念是，只需使用最小的电池周期计数，如以上流程图中的决策框（2）所示。 在此示例中，假设系统允许使用内部或外部电池。 但对于所有系统来说，这种情况并不适用。 其他系统可能不是很灵活，或者可能对电池的使用有电气限制。 在这种情况下，该算法需要最佳的老化平衡尝试。 例如，请考虑以下事项。  
+简单的 age 平衡算法背后的核心理念是，只需使用上图中的决策框 (2) 所描述的最小电池周期计数。 在此示例中，假设系统允许使用内部或外部电池。 但对于所有系统来说，这种情况并不适用。 其他系统可能不是很灵活，或者可能对电池的使用有电气限制。 在这种情况下，该算法需要最佳的老化平衡尝试。 例如，请考虑以下事项。  
 
-1. 不能以独占方式使用外部电池的系统（可能是因为外部电池只是一种补充的电源）。 此系统可通过同时在上述流程图中同时放电进程块（A）中的内部和外部电池来实现简单的 age 平衡算法。
+1. 无法以独占方式使用外部电池 (的系统可能是因为外部电池的设计目的只是补充电源) 。 此系统可以实现简单的时期平衡算法，方法是在上述流程图中同时同时放电进程块中的内部和外部电池 () 。
 
-2. 每次出现时都需要使用外部电池的系统（可能是由于与使可移动键盘保持开机而增加的额外功率绘图）：此系统可以同时实现简单的 age 平衡算法正在在上述流程图中同时处理进程块（B）中的内部和外部电池。
+2. 当存在时，需要使用外部电池的系统 (可能是由于与使可移动键盘保持开机) 相关联的附加功率消耗：此系统可通过同时在上述流程图中同时实现进程块 (B) 中的内部和外部电池来实现简单的 age 平衡算法。
 
-仅当内部和外部电池中有足够的费用运行系统时，才可以使用简单的 age 平衡算法，但决定框（1）描述了上述流程图中的此条件检查。 例如（再次回到假设的系统）如果外部电池不收取任何费用，则不存在电池电量平衡的作用域，并且决策框（1）将导致 "NO" 分支。
+仅当内部和外部电池中有足够的费用运行系统时，才可以使用简单的 age 平衡算法， (1) 在上述流程图中描述此条件检查。 例如 (再次回到假设的系统) 如果外部电池不收取任何费用，则不存在电池电量平衡的作用域，并且 (1) 将导致 "NO" 分支。
 
 当简单的年龄平衡算法未生效时，OEM 可以自由选择约束和条件，这种情况除外。 例如，OEM 可能会选择不在以下情况进行任何时期平衡：
 
 1.  SOC/处理器在高性能模式下运行
 2.  系统不稳定
 
-当未使用简单的生存期平衡算法时（由于上述一个或多个条件），逻辑将还原为 OEM 的专有电池使用策略，如以上流程图中的进程框（3）所示。 处理框（3）是指如果不支持 SDB，则 OEM 将会生效。
+如果由于) 上述流程图中的一个或多个条件而不 (使用简单时期平衡算法，则逻辑将恢复为 OEM 的专有电池使用政策，如以上流程图中的处理框 (3) 所示。 处理框 (3) 如果不支持 SDB，则 OEM 将会生效。
 
 
 ## <a name="span-idadapting-sdbspanspan-idadapting-sdbspanadapting-sdb-algorithm-for-use-with-hot-swappable-batteries"></a><span id="adapting-sdb"></span><span id="ADAPTING-SDB"></span>调整用于热插拔电池的 SDB 算法
@@ -89,15 +89,15 @@ ms.locfileid: "72829038"
 
 2.  与内部电池相比，外部电池已过时。
 
-在此系统上执行简单的 age 平衡算法时，它将尝试先消耗内部电池中存储的电量（基于条件 #1 和上面列出的 #2）。 当用户决定在一段时间后拔出外部电池时，这会导致用户体验不佳，因为当外部电池被分离时，一旦外部电池被占用就会大幅降低。
+在此系统上执行简单的 age 平衡算法时，它将尝试根据条件 #1 和上面列出的 #2) ，尝试消耗内部 (电池中存储的费用。 当用户决定在一段时间后拔出外部电池时，这会导致用户体验不佳，因为当外部电池被分离时，一旦外部电池被占用就会大幅降低。
 
 在非 SDB 系统上，通常不会出现此问题，因为在大多数情况下，在将内部电池投入使用之前，外部电池将耗尽。
 
 因此，在可能发生上述情况时，需要有选择地禁用简单的 age 平衡算法。 
 
-概括而言，每当用户预计使用系统长时间才能删除外部电池时，最好禁用 SDB 算法，并使用 OEM 电池使用策略（通常优先使用外部电池）恢复到。
+概括而言，每当用户预计使用系统长时间才能删除外部电池时，最好禁用 SDB 算法，并使用 OEM 电池使用策略还原为 (这通常会优先使用外部电池) 。
 
-Windows 计算电池可用性，并生成 "保留非热插拔电池" 提示。 当 SDB 算法使用此提示时，如以下流关系图中的决策框（X）所示。
+Windows 计算电池可用性，并生成 "保留非热插拔电池" 提示。 此提示由 SDB 算法使用时，如以下流关系图中的决策框 (X) 所示。
 
 *适用于热插拔电池的简单时期平衡 SDB 算法*
 
@@ -106,7 +106,7 @@ Windows 计算电池可用性，并生成 "保留非热插拔电池" 提示。 �
 
 ## <a name="span-idimplementing-sdbspanspan-idimplementing-sdbspanimplementing-sdb-algorithm-in-firmware"></a><span id="implementing-sdb"></span><span id="IMPLEMENTING-SDB"></span>在固件中实现 SDB 算法
 
-本部分描述系统固件中实现的完全电池放电控制逻辑。 这会在上述电池使用情况平衡逻辑上构建，以演示现有的多电池放电逻辑（标记在（Y）块中）如何与它合并在一起。
+本部分描述系统固件中实现的完全电池放电控制逻辑。 这是根据上述电池电量平衡逻辑来构建的，它演示了如何将现有的多电池放电逻辑 (标记 (Y) 块) 会合并在一起。
 
 请注意，这并不是 Oem 如何实现 SDB 算法的处方，而是本部分中介绍的用于阐释 SDB 行为的简单、假设多电池设备的综合示例。
 
@@ -129,11 +129,11 @@ Windows 计算电池可用性，并生成 "保留非热插拔电池" 提示。 �
 
 SDB 接口不会影响或影响 OEM 想要依赖 ACPI/CmBatt 机制或开发其专用微型端口。
 
-注意： Windows 会将所有[IOCTL_BATTERY_SET_INFORMATION](https://docs.microsoft.com/windows/desktop/Power/ioctl-battery-set-information)命令转发到系统上枚举的所有电池设备。
+注意： Windows 会将所有 [IOCTL_BATTERY_SET_INFORMATION](/windows/desktop/Power/ioctl-battery-set-information) 命令转发到系统上枚举的所有电池设备。
 
 ### <a name="hpmi"></a>HPMI
 
-硬件电源管理器接口（HPMI）是在电源堆栈中引入的新组件。
+硬件电源管理器接口 (HPMI) ，是电源堆栈中引入的新组件。
 
 HPMI 是 OEM/设备制造商开发和拥有的驱动程序。
 
@@ -177,13 +177,13 @@ HPMI 可以选择实现 SDB 算法，这将要求 HPMI 将收费/放电提示转
 
 2. SDB 算法是一种用于释放多个电池系统中已经实现的逻辑的扩展
 
-描述如何实现 SDB 算法的完整流程图模型，如在[固件中实现 Sdb 算法](#IMPLEMENTING-SDB)中所示。
+描述如何实现 SDB 算法的完整流程图模型，如在 [固件中实现 Sdb 算法](#IMPLEMENTING-SDB)中所示。
 
 
 
 ## <a name="interface-definitions"></a>接口定义
 
-引入了新的 HPMI 设备的设备接口类 GUID。 HPMI 设备必须将自身标识为实现[设备接口类](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)。 有关详细信息，请参阅在 WDK 中[使用设备接口](https://docs.microsoft.com/windows-hardware/drivers/wdf/using-device-interfaces)。
+引入了新的 HPMI 设备的设备接口类 GUID。 HPMI 设备必须将自身标识为实现 [设备接口类](../install/overview-of-device-interface-classes.md)。 有关详细信息，请参阅在 WDK 中 [使用设备接口](../wdf/using-device-interfaces.md) 。
 
 Windows 使用设备到达通知来查询和配置 HPMI 设备。
 
@@ -203,7 +203,7 @@ HPMI 应能够为多个同时执行的 IOCTL 调用服务。
 
 ### <a name="feature-discovery"></a>功能发现
 
-[IOCTL_HPMI_QUERY_CAPABILITIES](https://docs.microsoft.com/windows-hardware/drivers/ddi/hpmi/ni-hpmi-ioctl_hpmi_query_capabilities)用于发现 HPMI 支持的功能。 IOCTL_HPMI_QUERY_CAPABILITIES 是必需的 IOCTL。
+[IOCTL_HPMI_QUERY_CAPABILITIES](/windows-hardware/drivers/ddi/hpmi/ni-hpmi-ioctl_hpmi_query_capabilities) 用于发现 HPMI 支持的功能。 IOCTL_HPMI_QUERY_CAPABILITIES 是必需的 IOCTL。
 
 发现新的 HPMI 驱动程序实例之后，Windows 将发出此 IOCL 一次 HPMI。 
 
@@ -277,7 +277,7 @@ typedef struct _HPMI_QUERY_CAPABILITIES_RESPONSE {
 
 ### <a name="command-format"></a>命令格式
 
-Windows 通过[HPMI_QUERY_CAPABILITIES](https://docs.microsoft.com/windows-hardware/drivers/ddi/hpmi/ns-hpmi-_hpmi_query_capabilities)发出此 IOCTL。
+Windows 在 [HPMI_QUERY_CAPABILITIES](/windows-hardware/drivers/ddi/hpmi/ns-hpmi-_hpmi_query_capabilities)时会发出此 IOCTL。
 
 版本设置为 HPMI_QUERY_CAPABILITIES_VERSION_1。
 
@@ -286,18 +286,18 @@ Windows 通过[HPMI_QUERY_CAPABILITIES](https://docs.microsoft.com/windows-hardw
 
 HPMI 必须返回 STATUS_SUCCESS 代码。
 
-HPMI 通过设置[HPMI_QUERY_CAPABILITIES_RESPONSE](https://docs.microsoft.com/windows-hardware/drivers/ddi/hpmi/ns-hpmi-_hpmi_query_capabilities_response)结构中的以下值来做出响应：
+HPMI 通过在 [HPMI_QUERY_CAPABILITIES_RESPONSE](/windows-hardware/drivers/ddi/hpmi/ns-hpmi-_hpmi_query_capabilities_response) 结构中设置以下值来做出响应：
 
 - 版本设置为 HPMI_QUERY_CAPABILITIES_RESPONSE_VERSION_1
-- RequestService 设置为 HPMI_REQUEST_SERVICE_BATTERY_UTILIZATION_HINTS，以确保 HPMI 驱动程序接收[IOCTL_HPMI_BATTERY_UTILIZATION_HINT](https://docs.microsoft.com/windows-hardware/drivers/ddi/hpmi/ni-hpmi-ioctl_hpmi_battery_utilization_hint)。
-- SdbCapabilities 设置为 HPMI_CAPABILITY_SDB_OEM_SIMPLE_AGE_BALANCING，指示电池电量平衡支持。
+- RequestService 设置为 HPMI_REQUEST_SERVICE_BATTERY_UTILIZATION_HINTS，以确保 HPMI 驱动程序接收 [IOCTL_HPMI_BATTERY_UTILIZATION_HINT](/windows-hardware/drivers/ddi/hpmi/ni-hpmi-ioctl_hpmi_battery_utilization_hint)。
+- SdbCapabilities 设置为 "HPMI_CAPABILITY_SDB_OEM_SIMPLE_AGE_BALANCING"，指示电池电量平衡支持。
 
 
 #### <a name="battery-utilization"></a>电池利用率
 
-Windows [IOCTL_HPMI_BATTERY_UTILIZATION_HINT](https://docs.microsoft.com/windows-hardware/drivers/ddi/hpmi/ni-hpmi-ioctl_hpmi_battery_utilization_hint) HPMI 提供最新的电池使用提示。 IOCTL_HPMI_BATTERY_UTILIZATION_HINT 是必需的 IOCTL。
+Windows 问题 [IOCTL_HPMI_BATTERY_UTILIZATION_HINT](/windows-hardware/drivers/ddi/hpmi/ni-hpmi-ioctl_hpmi_battery_utilization_hint) HPMI，以提供最新的电池使用提示。 IOCTL_HPMI_BATTERY_UTILIZATION_HINT 是必需的 IOCTL。
 
-HPMI 可以利用 PreserveNonHotSwappableBatteries 提示，如[使用热插拔电池调整 SDB 算法](#ADAPTING-SDB)以节省内部电池。
+HPMI 可以利用 PreserveNonHotSwappableBatteries 提示，如 [使用热插拔电池调整 SDB 算法](#ADAPTING-SDB) 以节省内部电池。
 
 ```cpp
 //
@@ -376,9 +376,9 @@ typedef struct _HPMI_BATTERY_UTILIZATION_HINT {
 
 ### <a name="command-format"></a>命令格式 
 
-Windows 通过 HPMI_BATTERY_UTILIZATION_HINT 发出此 IOCTL。 版本设置为*HPMI_BATTERY_UTILIZATION_HINT_VERSION_1*。
+Windows 在 HPMI_BATTERY_UTILIZATION_HINT 时会发出此 IOCTL。 版本设置为 *HPMI_BATTERY_UTILIZATION_HINT_VERSION_1*。
 
-[HPMI_BATTERY_UTILIZATION_HINT](https://docs.microsoft.com/windows-hardware/drivers/ddi/hpmi/ns-hpmi-_hpmi_battery_utilization_hint)
+[HPMI_BATTERY_UTILIZATION_HINT](/windows-hardware/drivers/ddi/hpmi/ns-hpmi-_hpmi_battery_utilization_hint)
 
 PreserveNonHotSwappableBatteries 设置为以下值之一：
 
@@ -395,12 +395,9 @@ HPMI 必须返回 STATUS_SUCCESS 代码。
 
 ## <a name="sample-interface-contract"></a>示例接口协定
 
-请参阅[HMPI](https://docs.microsoft.com/windows-hardware/drivers/ddi/hpmi/index) ，了解此处所述的接口定义的完整（示例） API 约定。
+请参阅 [HMPI](/windows-hardware/drivers/ddi/hpmi/index) ，了解此处所述的接口定义的完整 (示例) API 约定。
 
 
 
 >[!NOTE]
 > 此文档的内容如有更改，恕不另行通知。
-
-
-

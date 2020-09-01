@@ -1,17 +1,17 @@
 ---
 title: OID_CO_TAPI_GET_CALL_DIAGNOSTICS
-description: 本主题介绍 OID_CO_TAPI_GET_CALL_DIAGNOSTICS 对象标识符（OID）。
+description: 本主题介绍) OID_CO_TAPI_GET_CALL_DIAGNOSTICS 对象标识符 (OID。
 ms.assetid: 5b0b1a96-9d66-4ee3-9b9a-3341ca3a4b5c
 keywords:
 - OID_CO_TAPI_GET_CALL_DIAGNOSTICS
 ms.date: 11/03/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 984bda7c7eace1c0999eab3b34a8dff241b9ec16
-ms.sourcegitcommit: 82a9be3b3584f991e5121f8f46a972e04185fa52
+ms.openlocfilehash: 5e133591b29980972788e789d010a93ff8168707
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85917528"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89206405"
 ---
 # <a name="oid_co_tapi_get_call_diagnostics"></a>OID_CO_TAPI_GET_CALL_DIAGNOSTICS
 
@@ -34,9 +34,9 @@ typedef struct _CO_TAPI_CALL_DIAGNOSTICS {
 此调用为传出呼叫。
 
 - **LINECALLORIGIN_INTERNAL**  
-呼叫传入并内部发出（例如，在同一 PBX 上）。
+调用是传入的，并在内部 (在同一 PBX 上，例如) 。
 
-- **LINECALLORIGIN_EXTERNAL**调用是传入的，并从外部发出。
+- **LINECALLORIGIN_EXTERNAL** 调用是传入的，并从外部发出。
 
 - **LINECALLORIGIN_UNKNOWN**  
 调用是传入的。 其源目前未知，但以后可能会被识别。
@@ -78,7 +78,7 @@ typedef struct _CO_TAPI_CALL_DIAGNOSTICS {
 调用已从另一个数字传输。 参与方标识符信息可以指示调用方是谁以及从何处传输呼叫。
 
 - **LINECALLREASON_REMINDER**  
-此呼叫是一个提醒（或 "回忆"），用户有可能长时间暂停或处于暂停状态。
+呼叫提醒 (或 "召回" ) 用户有可能长时间等待或处于暂停状态。
 
 - **LINECALLREASON_UNKNOWN**  
 调用的原因目前未知，但稍后可能会被识别。
@@ -87,9 +87,8 @@ typedef struct _CO_TAPI_CALL_DIAGNOSTICS {
 调用的原因不可用，稍后无法识别。
 
 **DiagInfo**  
-指定包含偏移量的[NDIS_VAR_DATA_DESC](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff559020(v=vs.85))结构，以及由调用管理器或 MCM 驱动程序提供的可选诊断信息的长度。 诊断信息的内容和格式由驱动程序确定。
+指定包含偏移量的 [NDIS_VAR_DATA_DESC](/previous-versions/windows/hardware/network/ff559020(v=vs.85)) 结构，以及由调用管理器或 MCM 驱动程序提供的可选诊断信息的长度。 诊断信息的内容和格式由驱动程序确定。
 
 ## <a name="requirements"></a>要求
 
-**版本**： Windows Vista 和更高版本的**标头**： Ntddndis （包括 Ndis .h）
-
+**版本**： Windows Vista 和更高版本的 **标头**： Ntddndis (包括 Ndis .h) 

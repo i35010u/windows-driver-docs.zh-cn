@@ -4,12 +4,12 @@ description: 图像应用程序对话框扩展
 ms.assetid: 4bb7d2f9-58c3-4cfa-aa6b-a4bd9335d2ac
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c4acad15fb0dba025294369216ba9e40b55d5c95
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 343642d3ca7181c7cff77e042d3d7e3289015292
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67363033"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89193087"
 ---
 # <a name="image-application-dialog-extensions"></a>图像应用程序对话框扩展
 
@@ -17,20 +17,15 @@ ms.locfileid: "67363033"
 
 
 
-有三种机制来扩展 WIA 映像应用程序对话框。 这些问题包括：
+有三种机制可用于扩展 WIA 图像应用程序对话框。 这些方法包括：
 
--   提供设备图标，以代替中其中一个图标需要显示设备的任何位置的系统提供的图标。 若要执行此操作，实现[ **IWiaUIExtension::GetDeviceIcon** ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff545075(v=vs.85))方法。
+-   在需要为设备显示图标的任何位置，提供一个用于替代系统提供的图标的设备图标。 为此，请实现 [**IWiaUIExtension：： GetDeviceIcon**](/previous-versions/windows/hardware/drivers/ff545075(v=vs.85)) 方法。
 
--   提供[属性页扩展](property-sheet-extensions.md)扩展系统提供的属性页中，当用户查看高级的设置或设备的属性或 Windows 通用 WIA 获取对话框中显示资源管理器。 若要执行此操作，实现**IShellExtInit**并**IShellPropSheetExt**接口 （请参阅 Microsoft Windows SDK 文档）。
+-   提供扩展系统提供的属性页的 [属性表扩展](property-sheet-extensions.md) ，当用户在公共 WIA 获取对话框或 Windows 资源管理器中查看设备的高级设置或属性时，将显示这些页。 为此，请实现 **IShellExtInit** 和 **IShellPropSheetExt** 接口 (参阅 Microsoft Windows SDK 文档) 。
 
--   提供了完整的调用的响应中显示的系统提供的对话框**IWiaItem::DeviceDlg** （请参阅 Windows SDK 文档）。 若要执行此操作，实现[ **IWiaUIExtension::DeviceDialog** ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff545069(v=vs.85))方法。
+-   为响应对 **IWiaItem：:D evicedlg** 的调用而显示的系统提供的对话框提供完全替换 (参见 Windows SDK 文档) 。 为此，请实现 [**IWiaUIExtension：:D evicedialog**](/previous-versions/windows/hardware/drivers/ff545069(v=vs.85)) 方法。
 
-本部分的其余部分包含有关其他信息[IWiaUIExtension COM 接口](iwiauiextension-com-interface.md)。
-
- 
+本部分的其余部分包含有关 [IWIAUIEXTENSION COM 接口](iwiauiextension-com-interface.md)的其他信息。
 
  
-
-
-
 

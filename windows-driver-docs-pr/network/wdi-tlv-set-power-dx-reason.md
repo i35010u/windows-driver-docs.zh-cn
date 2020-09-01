@@ -1,32 +1,32 @@
 ---
 title: WDI_TLV_SET_POWER_DX_REASON
-description: WDI_TLV_SET_POWER_DX_REASON 是 TLV 包含集 power Dx 的原因。
+description: WDI_TLV_SET_POWER_DX_REASON 是一种 TLV，其中包含设置的 POWER Dx 的原因。
 ms.assetid: 339F3461-3478-4C54-B6FB-9F5541859C76
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 WDI_TLV_SET_POWER_DX_REASON 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: b4bb49dc065fd0c2b26fff71e54e99bf9a1407f7
-ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
+ms.openlocfilehash: d9a415898bb874ab68a7cad3b49e85cbbd34d88f
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67391753"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89206155"
 ---
-# <a name="wditlvsetpowerdxreason"></a>WDI\_TLV\_SET\_POWER\_DX\_REASON
+# <a name="wdi_tlv_set_power_dx_reason"></a>WDI \_ TLV \_ 设置 \_ POWER \_ DX \_ 原因
 
 
-WDI\_TLV\_设置\_POWER\_DX\_原因是包含集 power Dx 原因 TLV。
+WDI \_ tlv \_ 设置 " \_ power \_ dx \_ 原因" 是包含设置的 power dx 原因的 tlv。
 
 ## <a name="tlv-type"></a>TLV 类型
 
 
 0x103
 
-## <a name="length"></a>长度
+## <a name="length"></a>Length
 
 
-UINT32 大小 （以字节为单位）。
+UINT32) 的大小 (以字节为单位）。
 
 ## <a name="values"></a>值
 
@@ -38,18 +38,18 @@ UINT32 大小 （以字节为单位）。
 </colgroup>
 <thead>
 <tr class="header">
-<th>在任务栏的搜索框中键入</th>
-<th>描述</th>
+<th>类型</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td>UINT32</td>
 <td>设置 power Dx 的原因。
-<p>有效值包括：</p>
+<p>有效值是：</p>
 <ul>
-<li><p>WDI_SET_POWER_DX_REASON_SELETIVE_SUSPEND (1)</p>
-<p>当设置此值时，则意味着唤醒上任何有趣的外部事件，而无需显式<a href="wdi-tlv-enable-wake-events.md" data-raw-source="[&lt;strong&gt;WDI_TLV_ENABLE_WAKE_EVENTS&lt;/strong&gt;](wdi-tlv-enable-wake-events.md)"> <strong>WDI_TLV_ENABLE_WAKE_EVENTS</strong></a>。 这是空闲的低能耗其中设备函数以透明方式向最终用户，就好像 D0 中一样。 请参阅<a href="https://docs.microsoft.com/windows-hardware/drivers/network/wdi-usb-remote-wake-sequence" data-raw-source="[WDI USB remote wake sequence](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-usb-remote-wake-sequence)">WDI USB 远程唤醒序列</a>有关详细信息。</p></li>
+<li><p>WDI_SET_POWER_DX_REASON_SELETIVE_SUSPEND (1) </p>
+<p>如果设置了此值，则表示在没有显式 <a href="wdi-tlv-enable-wake-events.md" data-raw-source="[&lt;strong&gt;WDI_TLV_ENABLE_WAKE_EVENTS&lt;/strong&gt;](wdi-tlv-enable-wake-events.md)"><strong>WDI_TLV_ENABLE_WAKE_EVENTS</strong></a>的任何感兴趣的外部事件上唤醒。 这是一种空闲的低功率，其中设备会以透明方式向最终用户公开。 有关详细信息，请参阅 <a href="/windows-hardware/drivers/network/wdi-usb-remote-wake-sequence" data-raw-source="[WDI USB remote wake sequence](/windows-hardware/drivers/network/wdi-usb-remote-wake-sequence)">WDI USB 远程唤醒序列</a> 。</p></li>
 </ul></td>
 </tr>
 </tbody>
@@ -75,16 +75,11 @@ UINT32 大小 （以字节为单位）。
 <td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
-<td><p>Header</p></td>
+<td><p>标头</p></td>
 <td>Wditypes.hpp</td>
 </tr>
 </tbody>
 </table>
 
  
-
- 
-
-
-
 

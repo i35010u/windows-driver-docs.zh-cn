@@ -4,12 +4,12 @@ description: WIA 驱动程序的安全问题
 ms.assetid: 5d8fc015-cbf5-43a3-8f65-3ebb17754417
 ms.date: 08/25/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 24f0c18280b35340b09743d2e12ca7922f216864
-ms.sourcegitcommit: d9a9925f790271f4ca2c8377d551d96e8d1e62c7
+ms.openlocfilehash: b0375a55a7cd4f559db3d30340447f4baf4827e0
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88850225"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89192945"
 ---
 # <a name="security-issues-for-wia-drivers"></a>WIA 驱动程序的安全问题
 
@@ -25,4 +25,4 @@ ms.locfileid: "88850225"
 
 [WIA 安全最佳做法](wia-security-best-practices.md)
 
-有关设备驱动程序安全的其他信息，请参阅 [创建安全设备安装](https://docs.microsoft.com/windows-hardware/drivers/install/creating-secure-device-installations)。
+有关设备驱动程序安全的其他信息，请参阅 [创建安全设备安装](../install/creating-secure-device-installations.md)。

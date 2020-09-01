@@ -1,22 +1,22 @@
 ---
-title: MSFC\_VirtualFibrePortAttributes WMI 类
-description: MSFC\_VirtualFibrePortAttributes WMI 类
+title: MSFC \_ VIRTUALFIBREPORTATTRIBUTES WMI 类
+description: MSFC \_ VIRTUALFIBREPORTATTRIBUTES WMI 类
 ms.assetid: D605D63F-0EBF-44C0-8ADE-729F2DE48487
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 34206f03a4fed727db95338b47d577eed4385164
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: dce0c1d542fdc1de3449a6207e4aef9a19dea105
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72845597"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89192655"
 ---
-# <a name="msfc_virtualfibreportattributes-wmi-class"></a>MSFC\_VirtualFibrePortAttributes WMI 类
+# <a name="msfc_virtualfibreportattributes-wmi-class"></a>MSFC \_ VIRTUALFIBREPORTATTRIBUTES WMI 类
 
 
-WMI 客户端使用 MSFC\_VirtualFibrePortAttributes 类检索虚拟端口的属性。
+WMI 客户端使用 MSFC \_ VirtualFibrePortAttributes 类检索虚拟端口的属性。
 
-*Npivwmi*中的 MSFC\_VirtualFibrePortAttributes 类定义如下：
+MSFC \_ VirtualFibrePortAttributes 类在 *Npivwmi*中定义如下：
 
 ```mof
 class MSFC_VirtualFibrePortAttributes  
@@ -46,15 +46,9 @@ class MSFC_VirtualFibrePortAttributes
 
 由 WMI 工具套件编译时，此类定义生成以下数据结构：
 
-[**MSFC\_VirtualFibrePortAttributes**](https://docs.microsoft.com/windows-hardware/drivers/ddi/npivwmi/ns-npivwmi-_msfc_virtualfibreportattributes)
+[**MSFC \_ VirtualFibrePortAttributes**](/windows-hardware/drivers/ddi/npivwmi/ns-npivwmi-_msfc_virtualfibreportattributes)
 
 没有与此 WMI 类相关联的方法。
 
  
-
- 
-
-
-
-
 

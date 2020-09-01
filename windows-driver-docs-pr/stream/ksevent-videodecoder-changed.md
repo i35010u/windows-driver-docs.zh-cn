@@ -1,6 +1,6 @@
 ---
-title: KSEVENT\_VIDEODECODER\_更改
-description: KSEVENT\_VIDEODECODER\_CHANGED 事件会在用户模式下传播从内核模式视频捕获微型驱动程序到 DirectShow 的操作，例如选择新的物理输入连接器。
+title: KSEVENT \_ VIDEODECODER \_ 已更改
+description: KSEVENT \_ VIDEODECODER \_ CHANGED 事件会在用户模式下传播从内核模式视频捕获微型驱动程序到 DirectShow 的操作，如选择新的物理输入连接器。
 ms.assetid: cb197233-fce3-4580-95d3-94605fd1f3e4
 keywords:
 - KSEVENT_VIDEODECODER_CHANGED 流媒体设备
@@ -12,17 +12,17 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 725a8c81a26d5bf070e061d7c9672a0661428f30
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 0de82ccea15a5bbf2a33103752d4b4f662d18ac1
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72838869"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89192405"
 ---
-# <a name="ksevent_videodecoder_changed"></a>KSEVENT\_VIDEODECODER\_更改
+# <a name="ksevent_videodecoder_changed"></a>KSEVENT \_ VIDEODECODER \_ 已更改
 
 
-KSEVENT\_VIDEODECODER\_CHANGED 事件会在用户模式下传播从内核模式视频捕获微型驱动程序到 DirectShow 的操作，例如选择新的物理输入连接器。
+KSEVENT \_ VIDEODECODER \_ CHANGED 事件会在用户模式下传播从内核模式视频捕获微型驱动程序到 DirectShow 的操作，如选择新的物理输入连接器。
 
 ## <span id="ddk_ksevent_videodecoder_changed_ks"></span><span id="DDK_KSEVENT_VIDEODECODER_CHANGED_KS"></span>
 
@@ -39,7 +39,7 @@ KSEVENT\_VIDEODECODER\_CHANGED 事件会在用户模式下传播从内核模式�
 </colgroup>
 <thead>
 <tr class="header">
-<th>“获取”</th>
+<th>获取</th>
 <th>设置</th>
 <th>目标</th>
 <th>事件描述符类型</th>
@@ -48,24 +48,18 @@ KSEVENT\_VIDEODECODER\_CHANGED 事件会在用户模式下传播从内核模式�
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>无</p></td>
-<td><p>“是”</p></td>
-<td><p>大头针</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-kse_node" data-raw-source="[&lt;strong&gt;KSE_NODE&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-kse_node)"><strong>KSE_NODE</strong></a></p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-kseventdata" data-raw-source="[&lt;strong&gt;KSEVENTDATA&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-kseventdata)"><strong>KSEVENTDATA</strong></a></p></td>
+<td><p>否</p></td>
+<td><p>是</p></td>
+<td><p>Pin</p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-kse_node" data-raw-source="[&lt;strong&gt;KSE_NODE&lt;/strong&gt;](/windows-hardware/drivers/ddi/ks/ns-ks-kse_node)"><strong>KSE_NODE</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-kseventdata" data-raw-source="[&lt;strong&gt;KSEVENTDATA&lt;/strong&gt;](/windows-hardware/drivers/ddi/ks/ns-ks-kseventdata)"><strong>KSEVENTDATA</strong></a></p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-有关 DirectShow 筛选器和 KsProxy 的详细信息，请参阅[内核流式处理代理](https://docs.microsoft.com/windows-hardware/drivers/ddi/_stream/index)。
+有关 DirectShow 筛选器和 KsProxy 的详细信息，请参阅 [内核流式处理代理](/windows-hardware/drivers/ddi/_stream/index)。
 
  
-
- 
-
-
-
-
 

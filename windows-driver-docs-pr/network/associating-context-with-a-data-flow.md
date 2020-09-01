@@ -9,19 +9,19 @@ keywords:
 - 将上下文与数据流 WDK Windows 筛选平台相关联
 ms.date: 01/14/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 59476e85f694924ef77aa5d3eb2475fa4ca08e63
-ms.sourcegitcommit: 05c2f94fa2fe77276ca7000c1ff8e1bbe7a67b6a
+ms.openlocfilehash: 4e381f400f4e1a4f90313dff1b1e0a894c7ff215
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/30/2020
-ms.locfileid: "76892192"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89206505"
 ---
 # <a name="associating-context-with-a-data-flow"></a>将上下文与数据流相关联
 
 
-对于在支持数据流的筛选层处理数据的标注，标注驱动程序可以将上下文与每个数据流相关联。 此类上下文对于筛选器引擎是不透明的。 标注的[classifyFn](https://docs.microsoft.com/windows-hardware/drivers/ddi/_netvista/) callout 函数可以使用此上下文保存特定于数据流的状态信息，以便下次由该数据流的筛选器引擎调用。 筛选器引擎通过*flowContext*参数将此上下文传递给标注的 classifyFn callout 函数。 如果没有上下文与数据流相关联，则*flowContext*参数为零。
+对于在支持数据流的筛选层处理数据的标注，标注驱动程序可以将上下文与每个数据流相关联。 此类上下文对于筛选器引擎是不透明的。 标注的 [classifyFn](/windows-hardware/drivers/ddi/_netvista/) callout 函数可以使用此上下文保存特定于数据流的状态信息，以便下次由该数据流的筛选器引擎调用。 筛选器引擎通过 *flowContext* 参数将此上下文传递给标注的 classifyFn callout 函数。 如果没有上下文与数据流相关联，则 *flowContext* 参数为零。
 
-若要将上下文与数据流相关联，标注的[classifyFn](https://docs.microsoft.com/windows-hardware/drivers/ddi/_netvista/) callout 函数会调用[**FwpsFlowAssociateContext0**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fwpsk/nf-fwpsk-fwpsflowassociatecontext0)函数。 例如：
+若要将上下文与数据流相关联，标注的 [classifyFn](/windows-hardware/drivers/ddi/_netvista/) callout 函数会调用 [**FwpsFlowAssociateContext0**](/windows-hardware/drivers/ddi/fwpsk/nf-fwpsk-fwpsflowassociatecontext0) 函数。 例如：
 
 ```cpp
 // Context structure to be associated with data flows
@@ -101,7 +101,7 @@ VOID NTAPI
 }
 ```
 
-如果某个上下文已与数据流相关联，则必须先删除该上下文，然后才能将新的上下文与数据流相关联。 若要从数据流中删除上下文，标注的[classifyFn](https://docs.microsoft.com/windows-hardware/drivers/ddi/_netvista/) callout 函数会调用[**FwpsFlowRemoveContext0**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fwpsk/nf-fwpsk-fwpsflowremovecontext0)函数。 例如：
+如果某个上下文已与数据流相关联，则必须先删除该上下文，然后才能将新的上下文与数据流相关联。 若要从数据流中删除上下文，标注的 [classifyFn](/windows-hardware/drivers/ddi/_netvista/) callout 函数会调用 [**FwpsFlowRemoveContext0**](/windows-hardware/drivers/ddi/fwpsk/nf-fwpsk-fwpsflowremovecontext0) 函数。 例如：
 
 ```C++
 // Context structure to be associated with data flows
@@ -172,4 +172,4 @@ VOID NTAPI
 }
 ```
 
-在前面的示例中， *calloutId*变量包含标注的运行时标识符。 当标注驱动程序向筛选器引擎注册标注时，运行时标识符是返回给标注驱动程序的同一标识符。
+在前面的示例中， *calloutId* 变量包含标注的运行时标识符。 当标注驱动程序向筛选器引擎注册标注时，运行时标识符是返回给标注驱动程序的同一标识符。

@@ -4,19 +4,19 @@ description: 获取函数实例对象
 ms.assetid: 2c750281-031b-4b9f-9012-3b341ebe1cd9
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 81a2e7c6b14454f71366fd53bcbdd73b5247f18f
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 1fb7f29558d0feb9d40dd957a62c589904bad4ec
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72840781"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89192723"
 ---
 # <a name="obtaining-a-function-instance-object"></a>获取函数实例对象
 
 
 WIA 微型驱动程序必须标识当前的硬件设备以及它正在其上运行的服务。 为了识别这些项，微型驱动程序将在运行时从函数发现服务获取函数实例对象，并读取设备属性。
 
-若要使用函数发现 COM 接口，微型驱动程序代码必须包含 Windows Vista SDK 中提供的*FunctionDiscovery*主头文件，如下面的示例所示。
+若要使用函数发现 COM 接口，微型驱动程序代码必须包含 Windows Vista SDK 中提供的 *FunctionDiscovery* 主头文件，如下面的示例所示。
 
 ```cpp
 //
@@ -25,7 +25,7 @@ WIA 微型驱动程序必须标识当前的硬件设备以及它正在其上运�
 #include <FunctionDiscovery.h>
 ```
 
-在初始化期间， [**IStiUSD：： Initialize**](https://docs.microsoft.com/windows-hardware/drivers/ddi/stiusd/nf-stiusd-istiusd-initialize)方法可能会发生这种情况，微型驱动程序应查询函数发现以获取代表硬件设备的相应函数实例对象。 若要完成此查询，请使用以下过程（以及相关的代码示例）：
+在初始化期间， [**IStiUSD：： Initialize**](/windows-hardware/drivers/ddi/stiusd/nf-stiusd-istiusd-initialize) 方法可能会发生这种情况，微型驱动程序应查询函数发现以获取代表硬件设备的相应函数实例对象。 若要完成此查询，请使用以下过程 (和关联的代码示例) ：
 
 ### <a name="step-1-create-the-function-discovery-object"></a>步骤1：创建函数发现对象
 
@@ -53,7 +53,7 @@ pFunctionDiscovery->CreateInstanceCollectionQuery(FCTN_CATEGORY_PNP,
    &pfiCollectionQuery);
 ```
 
-### <a href="" id="step-3--add-a-constraint-to-the-instance-collection-query-object-to-sp"></a>步骤3：将约束添加到实例集合查询对象，以指定 PNPX ID （使用 IStiDeviceControl：： GetMyDevicePortName 作为查询约束检索其值）
+### <a name="step-3-add-a-constraint-to-the-instance-collection-query-object-to-specify-the-pnpx-id-its-value-is-retrieved-with-istidevicecontrolgetmydeviceportname-as-the-query-constraint"></a><a href="" id="step-3--add-a-constraint-to-the-instance-collection-query-object-to-sp"></a>步骤3：将约束添加到实例集合查询对象，以指定 PNPX ID (其值是使用 IStiDeviceControl：： GetMyDevicePortName) 作为查询约束进行检索
 
 ```cpp
 PROPVARIANT PropVar = {0};
@@ -85,12 +85,7 @@ IFunctionInstance *pFunctionInstance;
 pfiCollection->Item(0, &m_pFunctionInstance);
 ```
 
-有关包含示例类（CWSDDevice）的声明的代码示例，请参阅[获取函数实例对象的代码示例](code-example-for-obtaining-a-function-instance-object.md)。
+有关包含示例类 (CWSDDevice) 的声明的代码示例，请参阅 [获取函数实例对象的代码示例](code-example-for-obtaining-a-function-instance-object.md)。
 
  
-
- 
-
-
-
 

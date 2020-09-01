@@ -10,17 +10,17 @@ keywords:
 - 硬件错误源 WDK WHEA，获取信息
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 80bc564e6ed5e86556756bea5490480997df10e6
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 90690fb37e80134903acf36faf128d4440d4ea8f
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72844421"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89206145"
 ---
 # <a name="getting-error-source-information-for-a-specific-error-source"></a>获取特定错误源的错误源信息
 
 
-用户模式应用程序可以通过调用[**WHEAErrorSourceMethods：： GetErrorSourceInfoRtn**](https://docs.microsoft.com/windows-hardware/drivers/ddi/_whea/)方法获取有关硬件平台支持的特定[错误源](hardware-errors-and-error-sources.md)的信息。 此方法返回描述指定错误源的[**WHEA\_错误\_源\_描述符**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/ns-ntddk-_whea_error_source_descriptor)结构。
+用户模式应用程序可以通过调用[**WHEAErrorSourceMethods：： GetErrorSourceInfoRtn**](/windows-hardware/drivers/ddi/_whea/)方法获取有关硬件平台支持的特定[错误源](hardware-errors-and-error-sources.md)的信息。 此方法返回描述指定错误源的 [**WHEA \_ 错误 \_ 源 \_ 说明符**](/windows-hardware/drivers/ddi/ntddk/ns-ntddk-_whea_error_source_descriptor) 结构。
 
 下面的代码示例演示如何获取特定错误源的错误源信息。
 
@@ -171,9 +171,4 @@ pOutParameters->Release();
 ```
 
  
-
- 
-
-
-
 

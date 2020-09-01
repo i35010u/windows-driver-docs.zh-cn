@@ -4,12 +4,12 @@ description: 本部分定义用于合并微型端口驱动程序中的 TCP/IP �
 ms.assetid: EC3C72EB-20A6-4D48-8E8C-F70EE4483193
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0c2de23b652e2d4a6eb179316fe73ee73ef36a19
-ms.sourcegitcommit: 67efcd26f7be8f50c92b141ccd14c9c68f4412d8
+ms.openlocfilehash: 9f4ab768fd42b1e976edb562f21cd39e27ebae6a
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88902615"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89206255"
 ---
 # <a name="rules-for-coalescing-tcpip-segments"></a>合并 TCP/IP 段的规则
 
@@ -106,7 +106,7 @@ TCP 时间戳选项是可以进行合法合并的唯一选项。 使用此选项
 >[!NOTE]
 >检查**SEG。** &gt; =  **H.TSval**必须使用类似于用于 TCP 序列号的232的模数算法来执行 TSval。 请参阅 [RFC 793](https://www.ietf.org/rfc/rfc793.txt)，第3.3 节。
 
-当指示合并段时，通过设置用于描述合并段的[**网络 \_ 缓冲区 \_ 列表**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)结构的**NetBufferListInfo**成员，必须将以下带外信息指示如下：
+当指示合并段时，通过设置用于描述合并段的[**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)结构的**NetBufferListInfo**成员，必须将以下带外信息指示如下：
 
 - 已合并的段数必须存储到**NetBufferListInfo** \[ **TcpRecvSegCoalesceInfo**中 \] 。**CoalescedSegCount**成员。 此数字仅表示已合并的数据段。 禁止纯确认合并，并且不能将窗口更新段计为此字段的一部分。
 
@@ -116,7 +116,7 @@ TCP 时间戳选项是可以进行合法合并的唯一选项。 使用此选项
 
 当且仅当**CoalescedSegCount**成员大于零时，才会解释**DupAckCount**和**RscTcpTimestampDelta**成员。 如果 **CoalescedSegCount** 为零，则会将段视为未合并的非 RSC 段。
 
-有关 **NetBufferListInfo** 成员内容的详细信息，请参阅 " [**ndis \_ 网络 \_ 缓冲区 \_ 列表 \_ 信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ne-ndis-_ndis_net_buffer_list_info) " 和 " [**ndis \_ RSC \_ NBL \_ info**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_rsc_nbl_info)"。
+有关 **NetBufferListInfo** 成员内容的详细信息，请参阅 " [**ndis \_ 网络 \_ 缓冲区 \_ 列表 \_ 信息**](/windows-hardware/drivers/ddi/ndis/ne-ndis-_ndis_net_buffer_list_info) " 和 " [**ndis \_ RSC \_ NBL \_ info**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_rsc_nbl_info)"。
 
 对于所有合并段，PSH 位应为运算。 换句话说，如果在任何单个段中设置了 PSH 位，微型端口驱动程序应在 SCU 中设置 PSH 位。
 

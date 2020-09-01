@@ -4,12 +4,12 @@ description: WS-Discovery 移动打印支持
 ms.assetid: 788E2A1C-FBE9-40CD-A3EB-14A2DE266A2C
 ms.date: 06/15/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: b053377542cba980c97f3cbb41ff9ec1838466b8
-ms.sourcegitcommit: 77c63789350cfc1dc740baaafdef64803d86217f
+ms.openlocfilehash: 6da8ee0c3aebd34ae626d3ce3d382ff93e04d96b
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/16/2020
-ms.locfileid: "84793743"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89205865"
 ---
 # <a name="ws-discovery-mobile-printing-support"></a>WS-Discovery 移动打印支持
 
@@ -80,4 +80,4 @@ ms.locfileid: "84793743"
 |--|--|
 | PNPX_DEVICECATEGORY_PRINTER_MOBILE<br><br>L "MobilePrinter" | MobilePrinter 类别<br><br>关键字：打印机 |
 
-有关如何将设备类别添加到 WS 发现元数据交换的详细信息，请参阅[pnp-x 规范](https://docs.microsoft.com/previous-versions/gg463082(v=msdn.10))。
+有关如何将设备类别添加到 WS 发现元数据交换的详细信息，请参阅 [pnp-x 规范](/previous-versions/gg463082(v=msdn.10))。

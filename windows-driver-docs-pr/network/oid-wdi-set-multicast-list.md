@@ -1,47 +1,47 @@
 ---
 title: OID_WDI_SET_MULTICAST_LIST
-description: OID_WDI_SET_MULTICAST_LIST 指定给定的端口的多播的地址列表。 此命令可以在任何时间设置。
+description: OID_WDI_SET_MULTICAST_LIST 指定给定端口的多播地址列表。 此命令可随时设置。
 ms.assetid: dee41a49-2be2-4364-877c-b2b3bf29e78d
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 OID_WDI_SET_MULTICAST_LIST 网络驱动程序
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: e75b6985c2ddb8def25b852cc2f1f4ac39fc4e71
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: fe69e20bd68de9babd77c962f224ea1d06c02d70
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67359215"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89206315"
 ---
-# <a name="oidwdisetmulticastlist"></a>OID\_WDI\_SET\_MULTICAST\_LIST
+# <a name="oid_wdi_set_multicast_list"></a>OID \_ WDI \_ SET \_ 多播 \_ 列表
 
 
-OID\_WDI\_设置\_多播\_列表指定给定的端口的多播的地址列表。 此命令可以在任何时间设置。
+OID \_ WDI \_ SET \_ 多播 \_ list 指定给定端口的多播地址列表。 此命令可随时设置。
 
-| 范围 | 设置与任务序列化 | 正常执行时间 （秒） |
+| 作用域 | 设置序列化任务 | 正常执行时间 (秒)  |
 |-------|--------------------------|---------------------------------|
-| Port  | 是                      | 1                               |
+| 端口  | 是                      | 1                               |
 
  
 
-如果列表的大小超过中指定的限制，IHV 组件仅应失败命令[ **WDI\_TLV\_接口\_特性**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-interface-attributes)。
+如果列表大小超过 [**WDI \_ TLV \_ INTERFACE \_ 属性**](./wdi-tlv-interface-attributes.md)中指定的限制，则 IHV 组件只应使命令失败。
 
-主机启用多路广播的数据包上端口使用筛选后[OID\_WDI\_设置\_接收\_数据包\_筛选器](oid-wdi-set-receive-packet-filter.md)，设备必须指示接收使用的端口到主机的多路广播列表中的地址相匹配的目标地址的多路广播的帧。 设备必须在处理过程的清除多播的列表[OID\_WDI\_任务\_DOT11\_重置](oid-wdi-task-dot11-reset.md)。 该命令发送与指定没有多播列表后，驱动程序必须清除其多播的列表。 在这种情况下，没有数据包应该指出了除非 OID\_WDI\_设置\_接收\_数据包\_筛选器具有 WDI\_数据包\_筛选器\_所有\_多播位集。
+主机使用 [OID \_ WDI \_ 设置 \_ 接收 \_ 数据包 \_ 筛选器](oid-wdi-set-receive-packet-filter.md)在端口上启用多播数据包筛选后，设备必须指示接收到的多播帧，其目标地址与端口的多播列表中的某个地址匹配。 在处理 [OID \_ WDI \_ 任务 \_ DOT11 \_ 重置](oid-wdi-task-dot11-reset.md)过程中，设备必须清除多播列表。 如果在未指定多播列表的情况下发送命令，驱动程序必须清除其多播列表。 在这种情况下，除非 OID \_ WDI \_ set \_ 接收 \_ 数据包 \_ 筛选器已设置了 WDI \_ 数据包 \_ 筛选器 \_ \_ ，否则不会指示数据包。
 
 ## <a name="set-property-parameters"></a>设置属性参数
 
 
-| TLV                                                              | 允许多个 TLV 实例 | 可选 | 描述                                                  |
+| TLV                                                              | 允许多个 TLV 实例 | 可选 | 说明                                                  |
 |------------------------------------------------------------------|--------------------------------|----------|--------------------------------------------------------------|
-| [**WDI\_TLV\_MULTICAST\_LIST**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-multicast-list) |                                | X        | 多播 MAC 地址列表。 列表不能为空。 |
+| [**WDI \_ TLV \_ 多播 \_ 列表**](./wdi-tlv-multicast-list.md) |                                | X        | 多播 MAC 地址的列表。 列表不得为空。 |
 
  
 
 ## <a name="set-property-results"></a>设置属性结果
 
 
-没有其他数据。 标头中的数据就足够了。
+无其他数据。 标头中的数据足够了。
 
 <a name="requirements"></a>要求
 ------------
@@ -61,16 +61,11 @@ OID\_WDI\_设置\_多播\_列表指定给定的端口的多播的地址列表。
 <td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
-<td><p>Header</p></td>
-<td>Dot11wdi.h</td>
+<td><p>标头</p></td>
+<td>Dot11wdi</td>
 </tr>
 </tbody>
 </table>
 
  
-
- 
-
-
-
 

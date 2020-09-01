@@ -3,21 +3,21 @@ title: SO_BROADCAST
 description: SO_BROADCAST
 ms.assetid: 24b93d4e-461d-44c3-b721-85cf41a1680a
 ms.date: 08/08/2017
-keywords: -从 Windows Vista 开始 SO_BROADCAST 网络驱动程序
+keywords: -从 Windows Vista 开始 SO_BROADCAST 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 75d6f4d46285faf2b5550dd97e578152d5cc2283
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 7bbcc4d8b6df13a86c2b03f3b9fe5fd3e065e10d
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72841890"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89205963"
 ---
-# <a name="so_broadcast"></a>\_广播
+# <a name="so_broadcast"></a>如此 \_ 广播
 
 
-\_广播套接字选项的状态确定是否可以通过数据报套接字传输广播消息。 此套接字选项仅适用于数据报套接字。
+SO \_ 广播套接字选项的状态确定是否可以通过数据报套接字传输广播消息。 此套接字选项仅适用于数据报套接字。
 
-若要设置此套接字选项的状态，WSK 应用程序需要使用以下参数调用[**WskControlSocket**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_control_socket)函数。
+若要设置此套接字选项的状态，WSK 应用程序需要使用以下参数调用 [**WskControlSocket**](/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_control_socket) 函数。
 
 <table>
 <colgroup>
@@ -27,7 +27,7 @@ ms.locfileid: "72841890"
 <thead>
 <tr class="header">
 <th>参数</th>
-<th>Value</th>
+<th>值</th>
 </tr>
 </thead>
 <tbody>
@@ -40,12 +40,12 @@ ms.locfileid: "72841890"
 <td><p>SO_BROADCAST</p></td>
 </tr>
 <tr class="odd">
-<td><p><em>调配</em></p></td>
+<td><p><em>级别</em></p></td>
 <td><p>SOL_SOCKET</p></td>
 </tr>
 <tr class="even">
 <td><p><em>InputSize</em></p></td>
-<td><p>sizeof （ULONG）</p></td>
+<td><p>sizeof (ULONG) </p></td>
 </tr>
 <tr class="odd">
 <td><p><em>InputBuffer</em></p></td>
@@ -59,18 +59,18 @@ ms.locfileid: "72841890"
 </tr>
 <tr class="odd">
 <td><p><em>OutputBuffer</em></p></td>
-<td><p>NULL</p></td>
+<td><p>Null</p></td>
 </tr>
 <tr class="even">
 <td><p><em>OutputSizeReturned</em></p></td>
-<td><p>NULL</p></td>
+<td><p>Null</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-若要检索此 socket 选项的状态，WSK 应用程序需要使用以下参数调用**WskControlSocket**函数。
+若要检索此 socket 选项的状态，WSK 应用程序需要使用以下参数调用 **WskControlSocket** 函数。
 
 <table>
 <colgroup>
@@ -80,7 +80,7 @@ ms.locfileid: "72841890"
 <thead>
 <tr class="header">
 <th>参数</th>
-<th>Value</th>
+<th>值</th>
 </tr>
 </thead>
 <tbody>
@@ -93,7 +93,7 @@ ms.locfileid: "72841890"
 <td><p>SO_BROADCAST</p></td>
 </tr>
 <tr class="odd">
-<td><p><em>调配</em></p></td>
+<td><p><em>级别</em></p></td>
 <td><p>SOL_SOCKET</p></td>
 </tr>
 <tr class="even">
@@ -102,11 +102,11 @@ ms.locfileid: "72841890"
 </tr>
 <tr class="odd">
 <td><p><em>InputBuffer</em></p></td>
-<td><p>NULL</p></td>
+<td><p>Null</p></td>
 </tr>
 <tr class="even">
 <td><p><em>OutputSize</em></p></td>
-<td><p>sizeof （ULONG）</p></td>
+<td><p>sizeof (ULONG) </p></td>
 </tr>
 <tr class="odd">
 <td><p><em>OutputBuffer</em></p></td>
@@ -116,14 +116,14 @@ ms.locfileid: "72841890"
 </tr>
 <tr class="even">
 <td><p><em>OutputSizeReturned</em></p></td>
-<td><p>NULL</p></td>
+<td><p>Null</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-调用**WskControlSocket**函数以设置或检索\_广播套接字选项的状态时，WSK 应用程序必须指定一个指向 IRP 的指针。
+WSK 应用程序在调用 **WskControlSocket** 函数时，必须指定一个指向 IRP 的指针，以便设置或检索 SO \_ 广播套接字选项的状态。
 
 此套接字选项的默认状态是不允许广播消息。
 
@@ -142,15 +142,10 @@ ms.locfileid: "72841890"
 </tr>
 <tr class="even">
 <td><p>标头</p></td>
-<td>Ws2def （包括 Wsk）</td>
+<td>Ws2def (包含 Wsk) </td>
 </tr>
 </tbody>
 </table>
 
  
-
- 
-
-
-
 

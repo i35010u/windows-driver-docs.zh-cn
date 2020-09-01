@@ -4,24 +4,19 @@ description: 页面方向
 ms.assetid: fb28863a-920a-4b26-a652-fb255622824f
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8f34fb489d86d42c68e4b9aeb0c4b3f875cc5abd
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 509cfff640f400cdbc474fb3fa447a4020f28a32
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67376533"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89192603"
 ---
 # <a name="page-orientation"></a>页面方向
 
 
-WIA 微型驱动程序必须确保 WIA\_IP\_ORIENTATION 属性同意与当前所选内容区域。 如果应用程序更改的值 WIA\_IP\_方向设为一个无效的当前所选的页面大小，微型驱动程序应更改 WIA 的值\_IP\_页\_到页面大小新的方向值支持的大小。
+WIA 微型驱动程序必须确保 WIA \_ IPS \_ 方向属性与当前的选择区域一致。 如果应用程序将 WIA ips 方向的值更改 \_ \_ 为对当前选定页面大小无效的方向，则微型驱动程序应将 "wia ip 页面大小" 的值更改 \_ \_ \_ 为新方向值所支持的页面大小。
 
-请注意，如果[ **WIA\_IPS\_方向**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ips-orientation)设置 LANSCAPE，将"翻转。"的范围设置为 例如，如果应用程序设置 WIA\_IPS\_页面\_WIA 的大小\_页\_A4，微型驱动程序应设置[ **WIA\_IP\_页\_宽度**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ips-page-width)到 11692 和[ **WIA\_IP\_页\_高度**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ips-page-height) 8267 到。 (微型驱动程序还应设置[ **WIA\_IPS\_大 XEXTENT** ](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ips-xextent)并[ **WIA\_IP\_YEXTENT**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ips-yextent)相应。)请注意，如果 WIA\_IPS\_页面\_大小设置为 WIA\_页\_自定义，方向设置不用于确定要扫描的页的区域维度。
-
- 
+请注意，如果 [**WIA \_ ip \_ 方向**](./wia-ips-orientation.md) 设置为 LANSCAPE，则区设置将为 "翻转"。 例如，如果应用程序将 WIA \_ ip \_ 页面大小设置 \_ 为 wia \_ 页面 \_ A4，则微型驱动程序应将 [**wia \_ ip \_ 页面 \_ 宽度**](./wia-ips-page-width.md) 设置为11692，将 [**wia \_ ip \_ 页面 \_ 高度**](./wia-ips-page-height.md) 设置为8267。  (微型驱动程序还应相应地设置 [**WIA \_ ip \_ XEXTENT**](./wia-ips-xextent.md) 和 [**Wia \_ ip \_ YEXTENT**](./wia-ips-yextent.md) 。 ) 请注意，如果 wia \_ ip \_ 页面 \_ 大小设置为 wia \_ 页面 \_ 自定义，则不会使用方向设置来确定要扫描的页面的范围维度。
 
  
-
-
-
 

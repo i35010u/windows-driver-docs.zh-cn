@@ -1,24 +1,24 @@
 ---
 title: WDI_TLV_AP_BAND_CHANNEL
-description: WDI_TLV_AP_BAND_CHANNEL 是 TLV，指定访问点外和通道信息。
+description: WDI_TLV_AP_BAND_CHANNEL 是一种 TLV，用于指定访问点带和通道信息。
 ms.assetid: 5659CFA1-7FA9-490D-83DE-A56A895602A0
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 WDI_TLV_AP_BAND_CHANNEL 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 2c6031d0c01206720563b9e8a9d8df2fccea37d4
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 57c8ea3ac6950ff3a4b5a1c425f2daecd73fe50b
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67353622"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89206179"
 ---
-# <a name="wditlvapbandchannel"></a>WDI\_TLV\_AP\_BAND\_CHANNEL
+# <a name="wdi_tlv_ap_band_channel"></a>WDI \_ TLV \_ AP \_ 频带 \_ 通道
 
 
-WDI\_TLV\_AP\_外\_通道是 TLV，指定访问点外和通道信息。
+WDI \_ tlv \_ AP \_ 带 \_ 通道是一个 tlv，用于指定访问点带和通道信息。
 
-**请注意**  此 TLV 添加 Windows 10，版本 1511，WDI 版本 1.0.10 中。
+**注意**   此 TLV 已添加到 Windows 10 版本1511，WDI 版本1.0.10 中。
 
  
 
@@ -27,18 +27,18 @@ WDI\_TLV\_AP\_外\_通道是 TLV，指定访问点外和通道信息。
 
 0x127
 
-## <a name="length"></a>长度
+## <a name="length"></a>Length
 
 
-所有的大小 （以字节为单位） 总和包含 TLVs。
+Sum (包含所有 TLVs 的大小的) 字节。
 
 ## <a name="values"></a>值
 
 
-| 在任务栏的搜索框中键入                                                               | 允许多个 TLV 实例 | 可选 | 描述                                                |
+| 类型                                                               | 允许多个 TLV 实例 | 可选 | 说明                                                |
 |--------------------------------------------------------------------|--------------------------------|----------|------------------------------------------------------------|
-| [**WDI\_TLV\_BANDID**](wdi-tlv-bandid.md)                         |                                |          | 指定的带区的标识符。                     |
-| [**WDI\_TLV\_CHANNEL\_INFO\_LIST**](wdi-tlv-channel-info-list.md) |                                | X        | 指定通道上启动的访问点的列表。 |
+| [**WDI \_ TLV \_ BANDID**](wdi-tlv-bandid.md)                         |                                |          | 指定带区的标识符。                     |
+| [**WDI \_ TLV \_ 通道 \_ 信息 \_ 列表**](wdi-tlv-channel-info-list.md) |                                | X        | 指定要在其上启动访问点的通道的列表。 |
 
  
 
@@ -60,21 +60,16 @@ WDI\_TLV\_AP\_外\_通道是 TLV，指定访问点外和通道信息。
 <td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
-<td><p>Header</p></td>
+<td><p>标头</p></td>
 <td>Wditypes.hpp</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
-[OID\_WDI\_TASK\_START\_AP](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wdi-task-start-ap)
-
- 
+[OID \_ WDI \_ 任务 \_ 启动 \_ AP](./oid-wdi-task-start-ap.md)
 
  
-
-
-
 

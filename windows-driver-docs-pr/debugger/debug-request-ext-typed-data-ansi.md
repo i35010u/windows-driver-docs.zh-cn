@@ -1,6 +1,6 @@
 ---
-title: 调试\_请求\_EXT\_类型\_数据\_ANSI
-description: 调试\_请求\_EXT\_类型\_数据\_ANSI
+title: 调试 \_ 请求 \_ EXT \_ 类型化 \_ 数据 \_ ANSI
+description: 调试 \_ 请求 \_ EXT \_ 类型化 \_ 数据 \_ ANSI
 ms.assetid: ac883bc8-3956-4bc3-a11e-b6e036305329
 keywords:
 - DEBUG_REQUEST_EXT_TYPED_DATA_ANSI Windows 调试
@@ -12,22 +12,22 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 676cb449a0804ef2e4395750923e711cd7e7346c
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: c7522b84b0f15b919404a69ff49814c7f14a40f8
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72837798"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89206111"
 ---
-# <a name="debug_request_ext_typed_data_ansi"></a>调试\_请求\_EXT\_类型\_数据\_ANSI
+# <a name="debug_request_ext_typed_data_ansi"></a>调试 \_ 请求 \_ EXT \_ 类型化 \_ 数据 \_ ANSI
 
 
-调试\_请求\_EXT\_类型\_数据\_ANSI[**请求**](request.md)操作执行各种不同的子操作，这些子操作有助于解释类型化数据。
+DEBUG \_ 请求 \_ EXT \_ 类型化的 \_ 数据 \_ ANSI [**请求**](request.md) 操作执行各种不同的子操作，有助于解释类型化数据。
 
-**Parameters**
+**参数**
 
 <span id="InBuffer"></span><span id="inbuffer"></span><span id="INBUFFER"></span>*InBuffer*  
-指定用于确定要执行的子操作的[ **\_数据结构的 EXT\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdbgexts/ns-wdbgexts-_ext_typed_data) 。 此扩展\_类型化\_数据结构包含该子操作的输入参数以及任何（可选）附加数据。 其他数据将包含在*InBuffer*中的 EXT\_类型\_数据结构之后。 *InBuffer*的大小是包含类型\_数据结构和其他数据的扩展\_的缓冲区的总大小。 有关此结构的详细信息，请参阅**EXT\_类型化的\_数据**，以及如何包含其他数据。
+指定用于确定要执行的子操作的 [**EXT \_ 类型化的 \_ 数据**](/windows-hardware/drivers/ddi/wdbgexts/ns-wdbgexts-_ext_typed_data) 结构。 此扩展 \_ 类型化 \_ 数据结构包含该子操作的输入参数以及任何 (可选) 其他数据。 其他数据将包含在 *InBuffer* 中的 EXT \_ 类型化 \_ 数据结构之后。 *InBuffer*的大小是包含 EXT \_ 类型化 \_ 数据结构和其他数据的缓冲区的总大小。 有关此结构的详细信息以及如何包含其他数据，请参阅 **EXT \_ 类型化 \_ 数据** 。
 
 支持以下子操作。
 
@@ -39,7 +39,7 @@ ms.locfileid: "72837798"
 <thead>
 <tr class="header">
 <th align="left">子操作</th>
-<th align="left">描述</th>
+<th align="left">说明</th>
 </tr>
 </thead>
 <tbody>
@@ -125,39 +125,32 @@ ms.locfileid: "72837798"
  
 
 <span id="OutBuffer"></span><span id="outbuffer"></span><span id="OUTBUFFER"></span>*OutBuffer*  
-接收包含输出参数和子操作的任何其他数据的[**类型\_数据结构的 EXT\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdbgexts/ns-wdbgexts-_ext_typed_data) 。 与*InBuffer*一样， *OutBuffer*的大小是包含\_数据结构和任何其他数据的扩展\_类型的总大小。
+接收包含输出参数和子操作的任何其他数据的 [**EXT \_ 类型化的 \_ 数据**](/windows-hardware/drivers/ddi/wdbgexts/ns-wdbgexts-_ext_typed_data) 结构。 与 *InBuffer*一样， *OutBuffer* 的大小是包含 EXT \_ 类型化 \_ 数据结构和任何其他数据的缓冲区的总大小。
 
-调试\_请求\_EXT\_类型\_数据\_ANSI 操作最初将*InBuffer*复制到*OutBuffer* ，然后修改就地*OutBuffer*的内容。 这意味着*OutBuffer*将用\_数据的 EXT\_的输入参数以及在*InBuffer*中提供的任何附加数据填充。 这也意味着*OutBuffer*的大小必须至少与*InBuffer*的大小相同。
+"调试" \_ 请求 \_ EXT \_ 类型化 \_ \_ 的数据 ANSI 操作最初会将 *InBuffer* 复制到 *OutBuffer* ，然后就地修改 *OutBuffer* 的内容。 这意味着将*OutBuffer*用 EXT \_ 类型化数据的输入参数 \_ 以及在*InBuffer*中提供的任何附加数据填充 OutBuffer。 这也意味着 *OutBuffer* 的大小必须至少与 *InBuffer*的大小相同。
 
 ### <a name="span-idreturn_valuespanspan-idreturn_valuespanspan-idreturn_valuespanreturn-value"></a><span id="Return_Value"></span><span id="return_value"></span><span id="RETURN_VALUE"></span>返回值
 
-<span id="S_OK"></span><span id="s_ok"></span>S\_确定  
+<span id="S_OK"></span><span id="s_ok"></span>S \_ 正常  
 操作成功。
 
-此方法还可以返回错误值。 有关更多详细信息，请参阅[**返回值**](https://docs.microsoft.com/windows-hardware/drivers/debugger/hresult-values)。
+此方法还可以返回错误值。 有关更多详细信息，请参阅 [**返回值**](./hresult-values.md) 。
 
 此操作返回的值还存储在*OutBuffer*的**Status**成员中。
 
 <a name="remarks"></a>备注
 -------
 
-调试\_请求所执行的子操作\_EXT\_类型\_数据\_ANSI[**请求**](request.md)操作由[**EXT\_类型化\_数据**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdbgexts/ns-wdbgexts-_ext_typed_data)结构的**操作**成员确定，它采用[**EXT\_TDOP**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdbgexts/ne-wdbgexts-_ext_tdop)枚举中的值。
+由调试 \_ 请求 \_ 扩展 \_ 类型化数据 ANSI 请求操作执行的子操作由 \_ \_ [**Ext \_ 类型化 \_ 数据**](/windows-hardware/drivers/ddi/wdbgexts/ns-wdbgexts-_ext_typed_data)结构的**操作**成员确定，该结构在[**ext \_ TDOP**](/windows-hardware/drivers/ddi/wdbgexts/ne-wdbgexts-_ext_tdop)枚举中采用值。 [**Request**](request.md)
 
 ## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
-[**EXT\_类型化\_数据**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdbgexts/ns-wdbgexts-_ext_typed_data)
+[**EXT \_ 类型化 \_ 数据**](/windows-hardware/drivers/ddi/wdbgexts/ns-wdbgexts-_ext_typed_data)
 
-[**EXT\_TDOP**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdbgexts/ne-wdbgexts-_ext_tdop)
+[**EXT \_ TDOP**](/windows-hardware/drivers/ddi/wdbgexts/ne-wdbgexts-_ext_tdop)
 
-[**需要**](request.md)
-
- 
+[**Request**](request.md)
 
  
-
-
-
-
-
 

@@ -3,44 +3,44 @@ title: OID_WWAN_VISIBLE_PROVIDERS
 description: OID_WWAN_VISIBLE_PROVIDERS 返回当前在 MB 设备范围内可见的网络提供程序列表。
 ms.assetid: 4dfd4477-6332-4163-8b3e-a1604b11d175
 ms.date: 08/08/2017
-keywords: -从 Windows Vista 开始 OID_WWAN_VISIBLE_PROVIDERS 网络驱动程序
+keywords: -从 Windows Vista 开始 OID_WWAN_VISIBLE_PROVIDERS 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: b061f28de86d13b47b7c5c8d74d63f467de36507
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: f308d3a5a6acd184b5971320119a704eff0c379d
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72843764"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89206295"
 ---
-# <a name="oid_wwan_visible_providers"></a>OID\_WWAN\_可见\_提供程序
+# <a name="oid_wwan_visible_providers"></a>OID \_ WWAN \_ 可见 \_ 提供程序
 
 
-OID\_WWAN\_可见\_提供程序返回当前在 MB 设备范围内可见的网络提供程序列表。
+OID \_ WWAN \_ 可见 \_ 提供程序返回当前在 MB 设备范围内可见的网络提供程序列表。
 
 不支持设置请求。
 
-微型端口驱动程序必须异步处理查询请求，最初返回 NDIS\_状态\_指示\_需要请求原始请求，稍后发送[**ndis\_状态\_WWAN\_可见\_提供程序**](ndis-status-wwan-visible-providers.md)状态通知，包含[**NDIS\_WWAN\_可见\_提供程序**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_visible_providers)结构，以便在完成查询请求时提供有关可见网络提供程序的信息。
+微型端口驱动程序必须异步处理查询请求，最初 \_ 返回 \_ \_ 原始请求所需的 ndis 状态指示，稍后发送 [**ndis \_ 状态 " \_ wwan 可见提供 \_ \_ 程序**](ndis-status-wwan-visible-providers.md) 状态通知"，其中包含 [**ndis \_ WWAN \_ 可见 \_ 提供**](/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_visible_providers) 程序的状态通知，以提供有关完成查询请求时可见网络提供程序的信息。
 
-*查询*请求指定 NDIS\_WWAN\_获取\_可见\_提供程序结构作为输入。 当 WWAN\_获取\_可见\_提供程序的**操作**成员设置为 WWAN 时\_获取\_显示\_提供程序\_所有微型端口都应返回所有可见的提供程序。 当 WWAN\_获取\_可见\_提供程序的**操作**成员设置为 WWAN 时\_获取\_可见\_提供程序\_多，微型端口应只返回可见的多运营商提供程序，这些提供程序可设置为 home 提供程序。
+*查询* 请求将 NDIS \_ WWAN \_ GET \_ VISIBLE \_ PROVIDERS 结构指定为输入。 如果将**Action** wwan \_ 获取可见提供程序中的操作成员 \_ \_ 设置为 wwan \_ 获取 \_ 可见提供程序，则 \_ \_ 所有微型端口都应返回所有可见的提供程序。 如果将**Action** wwan \_ 获取可见提供程序中的操作成员 \_ \_ 设置为 wwan \_ 获取 \_ 可见提供程序多， \_ \_ 微型端口应只返回可以设置为 home 提供程序的可见多运营商提供程序。
 
-设备返回的可见提供程序列表应为每个提供程序正确设置提供程序状态。 例如，应将多首选提供程序标记为 WWAN\_提供程序\_状态\_首选\_多，当前 home 提供程序（如果有任何标记为 WWAN\_提供程序\_状态\_HOME，当前已注册的提供程序（如果有）标记为 WWAN\_提供程序\_状态\_已注册。
+设备返回的可见提供程序列表应为每个提供程序正确设置提供程序状态。 例如，应将多首选提供程序标记为 WWAN \_ 提供程序 \_ 状态 \_ 首选 \_ 多，当前的 home 提供程序（如果有任何标记为 wwan \_ 提供程序 \_ 状态 \_ home），当前的已注册提供程序（如果有）应标记为 wwan \_ 提供程序 \_ 状态 \_ 。
 
-WWAN\_PROVIDER2 结构的**Rssi**和**ErrorRate**成员应设置为（如果可用）。
+WWAN PROVIDER2 结构的 **Rssi** 和 **ErrorRate** 成员 \_ 应设置为（如果可用）。
 
 <a name="remarks"></a>备注
 -------
 
-有关使用此 OID 的详细信息，请参阅[WWAN 提供程序操作](https://docs.microsoft.com/windows-hardware/drivers/network/mb-provider-operations)。
+有关使用此 OID 的详细信息，请参阅 [WWAN 提供程序操作](./mb-provider-operations.md)。
 
-当处理查询操作时，微型端口驱动程序可以访问订阅服务器标识模块（SIM 卡），但不应访问提供程序网络。
+当处理查询操作时，微型端口驱动程序可以 (SIM 卡) 访问订阅服务器标识模块，但不应访问提供程序网络。
 
-微型端口驱动程序应将**VisibleListHeader**成员设置为*WwanStructProvider*。
+微型端口驱动程序应将 **VisibleListHeader** 成员设置为 *WwanStructProvider*。
 
-对于基于 CDMA 的网络，如果首选漫游列表（PRL）中的任何网络当前可见，则微型端口驱动程序应该只返回 home 提供商。 对于基于 GSM 的网络，可见提供程序列表中可能会出现多个提供程序。
+对于基于 CDMA 的网络，微型端口驱动程序应仅返回 home 提供程序，如果首选漫游列表中的任何网络 (PRL) 当前都可见。 对于基于 GSM 的网络，可见提供程序列表中可能会出现多个提供程序。
 
-如果设备在连接时不支持对可见提供程序进行扫描，则应在 NDIS\_WWAN\_可见\_提供程序结构的**uStatus**成员中返回 WWAN\_状态\_繁忙错误值。
+如果设备在连接时不支持对可见提供程序进行扫描，则 \_ 应 \_ 在 NDIS **uStatus** \_ WWAN \_ 可见 \_ 提供程序结构的 uStatus 成员中返回 WWAN 状态繁忙错误值。
 
-在注册模式下，基于 GSM 和 CDMA 的设备必须支持扫描可见提供程序。 但是，无需使用微型端口驱动程序来支持扫描可见提供程序，同时数据包数据协议（PDP）上下文处于活动状态（例如，设备已连接到提供商的网络）。
+在注册模式下，基于 GSM 和 CDMA 的设备必须支持扫描可见提供程序。 但是，无需使用微型端口驱动程序来支持扫描可见提供程序，同时 (PDP) 上下文处于活动状态 (，例如，设备已连接到提供商的网络) 。
 
 <a name="requirements"></a>要求
 ------------
@@ -57,7 +57,7 @@ WWAN\_PROVIDER2 结构的**Rssi**和**ErrorRate**成员应设置为（如果可�
 </tr>
 <tr class="even">
 <td><p>标头</p></td>
-<td>Ntddndis （包括 Ndis .h）</td>
+<td>Ntddndis (包含 Ndis .h) </td>
 </tr>
 </tbody>
 </table>
@@ -65,16 +65,11 @@ WWAN\_PROVIDER2 结构的**Rssi**和**ErrorRate**成员应设置为（如果可�
 ## <a name="see-also"></a>另请参阅
 
 
-[**NDIS\_WWAN\_可见\_提供程序**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_visible_providers)
+[**NDIS \_ WWAN \_ 可见 \_ 提供程序**](/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_visible_providers)
 
-[ **\_WWAN\_可见\_提供程序的 NDIS\_状态**](ndis-status-wwan-visible-providers.md)
+[**NDIS \_ 状态 \_ WWAN \_ 可见 \_ 提供程序**](ndis-status-wwan-visible-providers.md)
 
-[WWAN 提供程序操作](https://docs.microsoft.com/windows-hardware/drivers/network/mb-provider-operations)
-
- 
+[WWAN 提供程序操作](./mb-provider-operations.md)
 
  
-
-
-
 

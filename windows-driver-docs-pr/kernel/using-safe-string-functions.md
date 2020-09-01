@@ -8,12 +8,12 @@ keywords:
 - 缓冲 WDK 安全字符串函数
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3633945ee0496d3df00835afb3eeff7483617149
-ms.sourcegitcommit: 17c1bbc5ea0bef3bbc87794b030a073f905dc942
+ms.openlocfilehash: 7e17f1b95b0eece4175c1a74edd13eb21751f0c9
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88802775"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89192457"
 ---
 # <a name="using-safe-string-functions"></a>使用安全字符串函数
 
@@ -31,13 +31,13 @@ ms.locfileid: "88802775"
 
 一组内核模式安全字符串函数包含以下两个子集：
 
--   [Unicode 和 ANSI 字符的安全字符串函数](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)
+-   [Unicode 和 ANSI 字符的安全字符串函数](/windows-hardware/drivers/ddi/index)
 
-    其中的每个函数都在支持双字节 Unicode 字符的 W 后缀版本中提供，并且支持单字节 ANSI 字符。 例如， [**RtlStringCbCatN**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlstringcbcatna)，它将两个字符串连接起来并限制附加字符串的长度，可用作 [**RtlStringCbCatNW**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlstringcbcatnw) 和 [**RtlStringCbCatNA**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntstrsafe//nf-ntstrsafe-rtlstringcbcatna)。
+    其中的每个函数都在支持双字节 Unicode 字符的 W 后缀版本中提供，并且支持单字节 ANSI 字符。 例如， [**RtlStringCbCatN**](/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlstringcbcatna)，它将两个字符串连接起来并限制附加字符串的长度，可用作 [**RtlStringCbCatNW**](/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlstringcbcatnw) 和 [**RtlStringCbCatNA**](/windows-hardware/drivers/ddi/ntstrsafe//nf-ntstrsafe-rtlstringcbcatna)。
 
--   [UNICODE 字符串结构的安全字符串函数 \_](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)
+-   [UNICODE 字符串结构的安全字符串函数 \_](/windows-hardware/drivers/ddi/index)
 
-    其中每个函数都接受 [**UNICODE \_ 字符串**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfwdm/ns-wudfwdm-_unicode_string) 结构作为输入或输出参数，或者两者都接受。 例如， [**RtlStringCbCopyUnicodeString**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlstringcbcopyunicodestring) 接受作为输入参数的结构， [**RtlUnicodeStringCopyString**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlunicodestringcopystring) 接受作为输出参数的结构， [**RtlUnicodeStringCopy**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlunicodestringcopy) 接受该结构作为输入和输出参数。
+    其中每个函数都接受 [**UNICODE \_ 字符串**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfwdm/ns-wudfwdm-_unicode_string) 结构作为输入或输出参数，或者两者都接受。 例如， [**RtlStringCbCopyUnicodeString**](/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlstringcbcopyunicodestring) 接受作为输入参数的结构， [**RtlUnicodeStringCopyString**](/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlunicodestringcopystring) 接受作为输出参数的结构， [**RtlUnicodeStringCopy**](/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlunicodestringcopy) 接受该结构作为输入和输出参数。
 
 内核模式安全字符串函数提供以下功能：
 
@@ -47,9 +47,9 @@ ms.locfileid: "88802775"
 
 -   所有安全字符串函数都将返回一个 NTSTATUS 值，其中只有一个可能成功的代码 (状态 \_ 成功) 。
 
--   大多数安全字符串函数在字节计数和字符计数版本中均可用。 例如， [**RtlStringCbCata**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlstringcbcata) 连接两个字节计数的字符串， [**RtlStringCchCata**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlstringcchcata) 将两个字符计数字符串连接起来。
+-   大多数安全字符串函数在字节计数和字符计数版本中均可用。 例如， [**RtlStringCbCata**](/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlstringcbcata) 连接两个字节计数的字符串， [**RtlStringCchCata**](/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlstringcchcata) 将两个字符计数字符串连接起来。
 
--   最安全的字符串函数以提供附加功能的扩展的 Ex 后缀版本提供。 例如， [**RtlStringCbCatExa**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlstringcbcatexa) 扩展了 [**RtlStringCbCata**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlstringcbcata)的功能。
+-   最安全的字符串函数以提供附加功能的扩展的 Ex 后缀版本提供。 例如， [**RtlStringCbCatExa**](/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlstringcbcatexa) 扩展了 [**RtlStringCbCata**](/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlstringcbcata)的功能。
 
 本节包括下列主题：
 
@@ -58,9 +58,4 @@ ms.locfileid: "88802775"
 [导入内核模式安全字符串函数](importing-kernel-mode-safe-string-functions.md)
 
  
-
- 
-
-
-
 

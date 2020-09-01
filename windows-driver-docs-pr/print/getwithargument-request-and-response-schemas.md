@@ -4,12 +4,12 @@ description: 下面是 GetWithArgument 请求架构和相应的响应架构定�
 ms.assetid: F68731BC-2907-4FA2-B5A4-0FAC0A9F663A
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fbc16419aeb0a032d12711a10eef37a74ef820b9
-ms.sourcegitcommit: ab64169b631da4db3f0b895600f1c38a22cb7e2e
+ms.openlocfilehash: 5a58109f5ab088c32e314ac52cb0bcd84d9afe8e
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75652989"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89205917"
 ---
 # <a name="getwithargument-request-and-response-schemas"></a>GetWithArgument 请求和响应架构
 
@@ -21,7 +21,7 @@ ms.locfileid: "75652989"
 
 GetWithArgument 请求用于查询打印机的一个或多个当前值。
 
-对此请求的响应位于以下[GetWithArgument 响应架构](#getwithargument-response-schema)部分。
+对此请求的响应位于以下 [GetWithArgument 响应架构](#getwithargument-response-schema)部分。
 
 ```xml
 <bidi:GetWithArgument xmlns:bidi='https://schemas.microsoft.com/windows/2005/03/printing/bidi'>
@@ -142,6 +142,6 @@ GetWithArgument 响应架构的正式定义
 
 [双向通信架构](bidirectional-communication-schema.md)  
 
-[SendRecvXMLStream](https://docs.microsoft.com/windows-hardware/drivers/ddi/bidispl/nf-bidispl-ibidispl2-sendrecvxmlstream)  
+[SendRecvXMLStream](/windows-hardware/drivers/ddi/bidispl/nf-bidispl-ibidispl2-sendrecvxmlstream)  
 
-[SendRecvXMLString](https://docs.microsoft.com/windows-hardware/drivers/ddi/bidispl/nf-bidispl-ibidispl2-sendrecvxmlstring)  
+[SendRecvXMLString](/windows-hardware/drivers/ddi/bidispl/nf-bidispl-ibidispl2-sendrecvxmlstring)

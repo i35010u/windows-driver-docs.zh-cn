@@ -4,32 +4,27 @@ description: DMA 编程技术
 ms.assetid: bdd8ffa4-8f09-41ed-b0f8-8edabbe65393
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: da41db80c79a48b7c55f7621b749a869f3f8c676
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 21c5d643098218fb9c44ce38e7b29d438071eb88
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63387184"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89192719"
 ---
 # <a name="dma-programming-techniques"></a>DMA 编程技术
 
 
-直接内存访问 (DMA) 是一种最基本的硬件技术的中央处理器 (CPU) 和特定的设备之间传输基于内存的数据。 计算机系统使用 DMA 控制器是处理内存传输，从而允许执行其他操作的 CPU 的中间设备。
+ (DMA) 的直接内存访问是在中央处理器 (CPU) 和特定设备之间传输基于内存的数据的最基本硬件方法之一。 计算机系统使用 DMA 控制器，该控制器是处理内存传输的中间设备，允许 CPU 执行其他操作。
 
-驱动程序可以使用 DMA 控制器直接传输基于内存的数据。 以下主题讨论 DMA 与 I/O 编程相关的问题。
+驱动程序可以使用 DMA 控制器直接传输基于内存的数据。 以下主题讨论了与 i/o 编程相关的 DMA 问题。
 
-驱动程序可以使用控制 DMA 的适配器对象。 有关适配器的对象的详细信息，请参阅[适配器对象和 DMA](adapter-objects-and-dma.md)。
+驱动程序可以使用适配器对象控制 DMA。 有关适配器对象的详细信息，请参阅 [适配器对象和 DMA](./introduction-to-adapter-objects.md)。
 
-当驱动程序系统内存，并且其设备之间传输数据时，可以在一个或多个处理器缓存和/或系统 DMA 控制器的缓存中缓存数据。 有关 DMA 和缓存的详细信息，请参阅[刷新缓存数据在 DMA 操作期间](flushing-cached-data-during-dma-operations.md)。
+当驱动程序在系统内存与其设备之间传输数据时，可以将数据缓存在一个或多个处理器缓存中，或者缓存到系统 DMA 控制器的缓存中。 有关 DMA 和缓存的详细信息，请参阅 [在 Dma 操作期间刷新缓存的数据](flushing-cached-data-during-dma-operations.md)。
 
-如果你需要在 DMA 将操作拆分为较小的区块，请参阅[拆分 DMA 传输请求](splitting-dma-transfer-requests.md)。
+如果需要将 DMA 操作拆分为较小的区块，请参阅 [拆分 Dma 传输请求](splitting-dma-transfer-requests.md)。
 
-可从 Windows 8 开始 DMA 操作接口的版本 3。 有关此接口的详细信息，请参阅[DMA 操作接口的版本 3](version-3-of-the-dma-operations-interface.md)。
-
- 
+从 Windows 8 开始，将提供 DMA 操作接口的第3版。 有关此接口的详细信息，请参阅 [DMA 操作接口的版本 3](version-3-of-the-dma-operations-interface.md)。
 
  
-
-
-
 

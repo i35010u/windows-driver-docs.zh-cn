@@ -3,25 +3,25 @@ title: OID_WWAN_ENUMERATE_DEVICE_SERVICE_COMMANDS
 description: OID_WWAN_ENUMERATE_DEVICE_SERVICE_COMMANDS 返回设备服务支持的命令的列表。NDIS_STATUS_WWAN_DEVICE_SERVICE_SUPPORTED_COMMANDS 状态通知，其中包含描述操作结果的 NDIS_WWAN_ENUMERATE_DEVICE_SERVICE_COMMANDS 结构。
 ms.assetid: 9888E4EC-D4BB-4BAC-B20B-DFA51005EEDA
 ms.date: 08/08/2017
-keywords: -从 Windows Vista 开始 OID_WWAN_ENUMERATE_DEVICE_SERVICE_COMMANDS 网络驱动程序
+keywords: -从 Windows Vista 开始 OID_WWAN_ENUMERATE_DEVICE_SERVICE_COMMANDS 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: a0122e4de6641c99a265d6c3e82d2a5980e0b76e
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: a47b2cda830bc2393eebc17c7fcfbd6eeb3ac566
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72843845"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89205969"
 ---
-# <a name="oid_wwan_enumerate_device_service_commands"></a>OID\_WWAN\_枚举\_设备\_服务\_命令
+# <a name="oid_wwan_enumerate_device_service_commands"></a>OID \_ WWAN \_ 枚举 \_ 设备 \_ 服务 \_ 命令
 
 
-OID\_WWAN\_枚举\_设备\_服务\_命令返回设备服务支持的命令列表。
+OID \_ WWAN \_ 枚举 \_ 设备 \_ 服务 \_ 命令返回设备服务支持的命令的列表。
 
 不支持设置请求。
 
-微型端口驱动程序必须异步处理查询请求，最初返回 NDIS\_状态\_指示\_需要请求原始请求，稍后将[**ndis\_状态\_WWAN\_设备发送\_服务\_支持\_命令**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-wwan-device-service-supported-commands)状态通知，其中包含[**NDIS\_WWAN\_枚举\_设备\_SERVICE\_命令**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_enumerate_device_service_commands)结构，用于描述操作的结果。
+微型端口驱动程序必须异步处理查询请求，最初 \_ 返回 \_ \_ 原始请求所需的 ndis 状态指示，稍后发送 [**ndis \_ 状态 \_ WWAN \_ 设备 \_ 服务 \_ 支持的 \_ 命令**](./ndis-status-wwan-device-service-supported-commands.md) 状态通知，其中包含描述操作结果的 [**ndis \_ WWAN \_ 枚举 \_ 设备 \_ 服务 \_ 命令**](/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_enumerate_device_service_commands) 结构。
 
-如果不支持指定的设备服务或操作，微型端口驱动程序应返回 NDIS\_状态\_不\_支持。
+如果微型端口驱动程序 \_ 不 \_ \_ 支持指定的设备服务或操作，则它应返回不受支持的 NDIS 状态。
 
 <a name="requirements"></a>要求
 ------------
@@ -38,7 +38,7 @@ OID\_WWAN\_枚举\_设备\_服务\_命令返回设备服务支持的命令列表
 </tr>
 <tr class="even">
 <td><p>标头</p></td>
-<td>Ntddndis （包括 Ndis .h）</td>
+<td>Ntddndis (包含 Ndis .h) </td>
 </tr>
 </tbody>
 </table>
@@ -46,14 +46,9 @@ OID\_WWAN\_枚举\_设备\_服务\_命令返回设备服务支持的命令列表
 ## <a name="see-also"></a>另请参阅
 
 
-[**NDIS\_状态\_WWAN\_设备\_服务\_支持的\_命令**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-wwan-device-service-supported-commands)
+[**NDIS \_ 状态 \_ WWAN \_ 设备 \_ 服务 \_ 支持的 \_ 命令**](./ndis-status-wwan-device-service-supported-commands.md)
 
-[**NDIS\_WWAN\_枚举\_设备\_服务\_命令**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_enumerate_device_service_commands)
-
- 
+[**NDIS \_ WWAN \_ 枚举 \_ 设备 \_ 服务 \_ 命令**](/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_enumerate_device_service_commands)
 
  
-
-
-
 

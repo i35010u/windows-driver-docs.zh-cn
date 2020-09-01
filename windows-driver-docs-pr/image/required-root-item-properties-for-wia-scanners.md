@@ -4,26 +4,21 @@ description: WIA 扫描仪的必需根项属性
 ms.assetid: 9eea80a3-a657-4ba1-8ea0-301fc799ada3
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ca0ba9d8be702f01f65864f0505403a25b1e41d1
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: eabeb736389a5f19a00d618bd454e546ed7284b6
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67374263"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89193085"
 ---
 # <a name="required-root-item-properties-for-wia-scanners"></a>WIA 扫描仪的必需根项属性
 
 
-WIA 项树中的根项需要对所有 WIA 扫描仪的支持以下属性：
+WIA 项树中的根项需要支持所有 WIA 扫描器的下列属性：
 
-[**WIA\_DPS\_文档\_处理\_功能**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-dps-document-handling-capabilities)
+[**WIA \_ DPS \_ 文档 \_ 处理 \_ 功能**](./wia-dps-document-handling-capabilities.md)
 
-[**WIA\_DPS\_文档\_处理\_状态**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-dps-document-handling-status)
-
- 
+[**WIA \_ DPS \_ 文档 \_ 处理 \_ 状态**](./wia-dps-document-handling-status.md)
 
  
-
-
-
 

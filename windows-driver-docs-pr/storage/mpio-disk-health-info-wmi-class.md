@@ -1,20 +1,20 @@
 ---
-title: MPIO\_磁盘\_运行状况\_信息 WMI 类
-description: MPIO\_磁盘\_运行状况\_信息 WMI 类
+title: MPIO \_ 磁盘 \_ 运行状况 \_ 信息 WMI 类
+description: MPIO \_ 磁盘 \_ 运行状况 \_ 信息 WMI 类
 ms.assetid: 5a3ca8be-8940-4ba4-9206-75d0c7c90d53
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 884804b867f4800c6357ce76874ab2685266febd
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 2b4673edcbbf326b5237796045152397a6707090
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72844978"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89193199"
 ---
-# <a name="mpio_disk_health_info-wmi-class"></a>MPIO\_磁盘\_运行状况\_信息 WMI 类
+# <a name="mpio_disk_health_info-wmi-class"></a>MPIO \_ 磁盘 \_ 运行状况 \_ 信息 WMI 类
 
 
-MPIO 驱动程序使用 MPIO\_磁盘\_HEALTH\_信息 WMI 类来报告它所管理的所有 MPIO 磁盘的运行状况统计信息。
+MPIO 驱动程序使用 MPIO \_ 磁盘 \_ 健康 \_ 信息 WMI 类来报告它所管理的所有 MPIO 磁盘的运行状况统计信息。
 
 ```cpp
 class MPIO_DISK_HEALTH_INFO
@@ -41,13 +41,7 @@ class MPIO_DISK_HEALTH_INFO
 };
 ```
 
-当 WMI 工具套件编译此类定义时，它将生成[**MPIO\_磁盘\_运行状况\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/mpiowmi/ns-mpiowmi-_mpio_disk_health_info)数据结构。 没有与此 WMI 类相关联的方法。
+当 WMI 工具套件编译此类定义时，它将生成 [**MPIO \_ 磁盘 \_ 健康 \_ 信息**](/windows-hardware/drivers/ddi/mpiowmi/ns-mpiowmi-_mpio_disk_health_info) 数据结构。 没有与此 WMI 类相关联的方法。
 
  
-
- 
-
-
-
-
 

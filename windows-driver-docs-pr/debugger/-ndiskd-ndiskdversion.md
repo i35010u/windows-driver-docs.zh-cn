@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 887ff00c3e2a277862de67aade636184358d489d
-ms.sourcegitcommit: 8596782b07c8a71adf38fc2c2da68b75ba0a1259
+ms.openlocfilehash: 9286d480a12906bc975223f5c3cca2b789195cf6
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85593927"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89206867"
 ---
 # <a name="ndiskdndiskdversion"></a>!ndiskd.ndiskdversion
 
@@ -49,14 +49,14 @@ Ndiskd.dll
     Debug NDISKD       Disabled
 ```
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
-[网络驱动程序设计指南](https://docs.microsoft.com/windows-hardware/drivers/network/index)
+[网络驱动程序设计指南](../network/index.md)
 
-[Windows Vista 和更高版本的网络引用](https://docs.microsoft.com/windows-hardware/drivers/ddi/_netvista/)
+[Windows Vista 和更高版本的网络引用](/windows-hardware/drivers/ddi/_netvista/)
 
 [调试网络堆栈](https://channel9.msdn.com/Shows/Defrag-Tools/Defrag-Tools-175-Debugging-the-Network-Stack)
 
-[**NDIS 扩展（Ndiskd.dll）**](ndis-extensions--ndiskd-dll-.md)
+[**NDIS 扩展 ( # A0) **](ndis-extensions--ndiskd-dll-.md)
 
 [**!ndiskd.help**](-ndiskd-help.md)

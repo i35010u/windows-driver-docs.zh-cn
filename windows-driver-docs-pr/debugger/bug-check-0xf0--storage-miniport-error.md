@@ -1,6 +1,6 @@
 ---
 title: Bug 检查 0xF0 STORAGE_MINIPORT_ERROR
-description: STORAGE_MINIPORT_ERROR bug 检查具有 0x00000F0 值。 它表示存储微型端口驱动程序无法完成 SRB 请求。
+description: STORAGE_MINIPORT_ERROR bug 检查的值为0x00000F0。 它表示存储微型端口驱动程序无法完成 SRB 请求。
 keywords:
 - Bug 检查 0xF0 STORAGE_MINIPORT_ERROR
 - STORAGE_MINIPORT_ERROR
@@ -12,26 +12,26 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 6dd3cda96f7fef8a76791edab8b825adad05f2f6
-ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
+ms.openlocfilehash: f60170ee227a41eb818b1555e866f4616dbac681
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67518761"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89206123"
 ---
-# <a name="bug-check-0xf0-storageminiporterror"></a>Bug 检查 0xF0：存储\_微型端口\_错误
+# <a name="bug-check-0xf0-storage_miniport_error"></a>Bug 检查0xF0：存储 \_ 微型端口 \_ 错误
 
-存储\_微型端口\_错误 bug 检查的值为 0x00000F0。 它表示存储微型端口驱动程序无法完成 SRB 请求。
+存储 \_ 微型端口 \_ 错误检查的值为0x00000F0。 它表示存储微型端口驱动程序无法完成 SRB 请求。
 
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://www.windows.com/stopcode)。
+> 本主题面向程序员。 如果您是在使用计算机时收到蓝屏错误代码的客户，请参阅[蓝屏错误疑难解答](https://www.windows.com/stopcode)。
 
  
 
-## <a name="storageminiporterror-parameters"></a>存储\_微型端口\_错误参数
+## <a name="storage_miniport_error-parameters"></a>存储 \_ 微型端口 \_ 错误参数
 
-|参数|描述|
+|参数|说明|
 |-------- |---------- |
 |1| 错误代码。 请参阅下面的值。|
 |2| 请参阅下面的值。|
@@ -66,21 +66,20 @@ ms.locfileid: "67518761"
 ## <a name="cause"></a>原因
 -----
 
-存储微型端口驱动程序中的 bug 的完成保持 SRB 请求。 请参阅上面列出的特定类型的失败的错误代码值。
+存储微型端口驱动程序中的 bug 保存了 SRB 请求，无法完成。 有关特定类型的故障，请参阅上面列出的错误代码值。
 
 
-## <a name="resolution"></a>分辨率
+## <a name="resolution"></a>解决方法
 -----
 
-[！ 分析](-analyze.md)调试扩展显示有关错误检查的信息，有助于在确定根本原因。 
+[！分析](-analyze.md)调试扩展显示有关 bug 检查的信息，可帮助确定根本原因。 
 
-返回参数 2 中的驱动程序名称应指向有问题的驱动程序。
+参数2中返回的驱动程序名称应指向有问题的驱动程序。
 
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 ----------
 
 [Bug 检查代码参考](bug-check-code-reference2.md)
 
-[Storport 的接口与 Storport 微型端口驱动程序](https://docs.microsoft.com/windows-hardware/drivers/storage/storport-s-interface-with-storport-miniport-drivers)
-
+[Storport 与 Storport 微型端口驱动程序的接口](../storage/storport-s-interface-with-storport-miniport-drivers.md)

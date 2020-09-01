@@ -1,6 +1,6 @@
 ---
-title: 使用标注对流数据进行深度检查
-description: 使用标注对流数据进行深度检查
+title: 使用标注进行流数据深度检测
+description: 使用标注进行流数据深度检测
 ms.assetid: 433d2d9a-c95e-4315-8678-8614791cd529
 keywords:
 - 分类标注 WDK Windows 筛选平台，深度检测
@@ -8,17 +8,17 @@ keywords:
 - 流式传输数据深层检查 WDK Windows 筛选平台
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0f3ab0281ebb3fe236196ce8947a0d422db860bf
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 90934765ea11d14f0f115cd92a6676e16995f65c
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72842997"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89206717"
 ---
-# <a name="using-a-callout-for-deep-inspection-of-stream-data"></a>使用标注对流数据进行深度检查
+# <a name="using-a-callout-for-deep-inspection-of-stream-data"></a>使用标注进行流数据深度检测
 
 
-当标注检查流数据时，它的[classifyFn](https://docs.microsoft.com/windows-hardware/drivers/ddi/_netvista/) callout 函数可以检查是否有固定数据字段、元数据字段和传递给它的原始流数据的任意组合，以及已存储到上下文中的相关数据带有筛选器或数据流的。
+当标注检查流数据时，它的 [classifyFn](/windows-hardware/drivers/ddi/_netvista/) callout 函数可以检查传递给它的固定数据字段的任何组合、元数据字段和传递给它的原始流数据，以及与筛选器或数据流关联的上下文中存储的所有相关数据。
 
 例如：
 
@@ -134,15 +134,9 @@ VOID NTAPI
 }
 ```
 
-*Filter-&gt;操作*中的值。类型确定标注的[classifyFn](https://docs.microsoft.com/windows-hardware/drivers/ddi/_netvista/) Callout 函数应在*classifyOut*参数指向的结构的**actionType**成员中返回的操作。 有关这些操作的详细信息，请参阅[**FWPS\_ACTION0**](https://docs.microsoft.com/windows/desktop/api/fwpstypes/ns-fwpstypes-fwps_action0_)结构。
+*Filter- &gt; action*中的值可确定标注的[classifyFn](/windows-hardware/drivers/ddi/_netvista/) callout 函数应在*ClassifyOut*参数指向的结构的**actionType**成员中返回的操作。 有关这些操作的详细信息，请参阅 [**FWPS \_ ACTION0**](/windows/desktop/api/fwpstypes/ns-fwpstypes-fwps_action0_) 结构。
 
-有关数据包和流数据检查的详细信息，请参阅[检查数据包和流数据](inspecting-packet-and-stream-data.md)。
-
- 
+有关数据包和流数据检查的详细信息，请参阅 [检查数据包和流数据](inspecting-packet-and-stream-data.md)。
 
  
-
-
-
-
 

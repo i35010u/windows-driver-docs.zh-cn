@@ -4,12 +4,12 @@ description: 常用属性、相机属性和扫描仪属性
 ms.assetid: 7d988a1b-4c2f-43f7-be09-a250d9ede35c
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8b0950e8d93d5ad3dbdebdeabdfd06b01aaaa1d4
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: ecef977d790610fce474c2e2b5576ca4af690b8f
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67375941"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89192957"
 ---
 # <a name="common-camera-and-scanner-properties"></a>常用属性、相机属性和扫描仪属性
 
@@ -17,9 +17,9 @@ ms.locfileid: "67375941"
 
 
 
-WIA 属性是设备 （根） 或 （子级） 的项的属性。 设备属性包含有关该设备，如制造商的名称、 设备和其类型 （扫描仪或照相机） 的说明信息。 项属性包含有关某个特定项，如时捕获，项的名称等信息。 设备属性由 WIA\_D 命名约定; 项属性由 WIA 标识\_我命名约定。
+WIA 属性是设备 (根) 或 (子) 项的特性。 设备属性包含有关设备的信息，如制造商的名称、设备说明，以及设备 (扫描仪或照相机) 的类型。 项属性包含特定项的相关信息，例如项的名称、捕获时间等。 设备属性由 WIA \_ D 命名约定标识; 项属性由 wia \_ I 命名约定标识。
 
-三个字母首字母缩略词中间 WIA 属性名称包含有关属性的类型的信息： 它是通用设备信息属性 (DIP)、 （DPA、 DPC 或分发点） 的设备属性或 item 属性 （IPA、 IPC 或 IP）。 设备和项属性可以是这两种类型的设备 （DPA 和 IPA） 通用的、 可以是特定于照相机 （DPC 或 IPC） 也可以是特定于扫描程序 （DPS 和 IP）。 下表列出了各种 WIA 属性类型，并提供了每种类型的示例。
+WIA 属性名称中间有三个字母的首字母缩写词，其中包含有关属性类型的信息： (DIP) 、设备属性 (DPA、DPC 或 DPS) ，或 (IPA、IPC 或 IPS) 的项目属性。 设备和项属性可以通用于两种类型的设备 (DPA 和 IPA) ，可以特定于相机 (DPC 或 IPC) ，也可以特定于扫描仪 (DPS 和 IP) 。 下表列出了各种 WIA 属性类型，并提供了每种类型的示例。
 
 <table>
 <colgroup>
@@ -36,49 +36,44 @@ WIA 属性是设备 （根） 或 （子级） 的项的属性。 设备属性�
 <tr class="odd">
 <td><p>WIA_DIP_<em>Xxx</em></p></td>
 <td><p>设备信息属性</p>
-<p>安装程序和安装信息普遍适用于扫描仪和照相机的设备。 WIA 服务提供了这些属性。 微型驱动程序不提供它们。</p></td>
+<p>扫描仪和照相机设备通用的设置和安装信息。 WIA 服务提供这些属性。 微型驱动程序不提供这些功能。</p></td>
 </tr>
 <tr class="even">
 <td><p>WIA_DPA_<em>Xxx</em></p></td>
 <td><p>设备属性，所有</p>
-<p>普遍适用于扫描仪和照相机的设备，例如连接状态和设备时间的信息。</p></td>
+<p>扫描仪和照相机设备共有的信息，例如连接状态和设备时间。</p></td>
 </tr>
 <tr class="odd">
 <td><p>WIA_IPA_<em>Xxx</em></p></td>
-<td><p>项属性，所有</p>
-<p>普遍适用于照相机和扫描仪的项，例如项的名称和图像的类型的信息。</p></td>
+<td><p>Item 属性，All</p>
+<p>照相机和扫描仪项共有的信息，如项的名称和图像的类型。</p></td>
 </tr>
 <tr class="even">
 <td><p>WIA_DPC_<em>Xxx</em></p></td>
-<td><p>设备属性照相机</p>
-<p>特定于照相机设备，如拍摄图片的数量的信息。</p></td>
+<td><p>设备属性，照相机</p>
+<p>照相机设备特定的信息，例如拍摄的图片数。</p></td>
 </tr>
 <tr class="odd">
 <td><p>WIA_IPC_<em>Xxx</em></p></td>
-<td><p>Item 属性照相机</p>
-<p>特定于照相机项，如缩略图图像的宽度和高度的信息。</p></td>
+<td><p>Item 属性，照相机</p>
+<p>特定于照相机项目的信息，例如缩略图图像的宽度和高度。</p></td>
 </tr>
 <tr class="even">
 <td><p>WIA_DPS_<em>Xxx</em></p></td>
-<td><p>设备属性，扫描程序</p>
-<p>特定于扫描程序设备，如平台大小的信息。</p></td>
+<td><p>设备属性，扫描器</p>
+<p>特定于扫描仪设备的信息，如床大小。</p></td>
 </tr>
 <tr class="odd">
 <td><p>WIA_IPS_<em>Xxx</em></p></td>
-<td><p>Item 属性，扫描程序</p>
-<p>它是特定于扫描程序项，例如水平和垂直分辨率的信息。</p></td>
+<td><p>项目属性，扫描器</p>
+<p>特定于扫描仪项目的信息，例如水平和垂直分辨率。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-请参阅[WIA 属性](https://docs.microsoft.com/windows-hardware/drivers/image/wia-properties)有关 WIA 常见、 特定于照相机的和特定于扫描程序的属性的完整列表。
+请参阅 [Wia Properties](./wia-properties.md) ，获取 wia 常见、特定于相机和特定于扫描仪的属性的完整列表。
 
  
-
- 
-
-
-
 

@@ -4,41 +4,35 @@ description: 内部网络适配器
 ms.assetid: 4E4B0EC9-8E4C-47FC-B608-EC6D18367A79
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c9f5794fd560088a6d5e696abcde45a3c4a50658
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: f81f4e87ff7ad69f38e435575ae258b0ca8a775d
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67354552"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89206755"
 ---
 # <a name="internal-network-adapters"></a>内部网络适配器
 
 
-内部网络适配器运行在 HYPER-V 父分区中管理操作系统中公开。 此类型的网络适配器提供对可扩展交换机的管理操作系统中运行的进程的访问。 这允许这些进程发送或接收通过可扩展交换机的数据包。
+内部网络适配器在 Hyper-v 父分区中运行的管理操作系统中公开。 此类型的网络适配器为在管理操作系统中运行的进程提供对可扩展交换机的访问。 这允许这些进程通过可扩展交换机发送或接收数据包。
 
-如果可扩展交换机配置为提供的内部网络适配器连接，在启动开关时，会发生以下步骤：
+如果将可扩展交换机配置为提供内部网络适配器连接，则在启动交换机时，将执行以下步骤：
 
-1.  可扩展交换机的协议边缘发出的一个对象标识符 (OID) 组请求[OID\_切换\_端口\_创建](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-port-create)向下可扩展交换机驱动程序堆栈。 此 OID 请求通知的基础的可扩展交换机扩展内部网络适配器创建端口
+1.  可扩展交换机的协议边缘 (OID 发出对象标识符) 设置 [oid \_ 交换机 \_ 端口 \_ 创建](./oid-switch-port-create.md) 可扩展交换机驱动程序堆栈的请求。 此 OID 请求通知底层可扩展交换机扩展：正在为内部网络适配器创建端口
 
-2.  可扩展交换机的协议边缘颁发的 OID 集请求[OID\_切换\_NIC\_创建](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-port-create)向下可扩展交换机驱动程序堆栈。 此 OID 请求通知的基础的可扩展交换机扩展先前创建的端口创建内部网络适配器的网络连接。
+2.  可扩展交换机的协议边缘发出 oid [ \_ 交换机 \_ NIC \_ ](./oid-switch-port-create.md) 的 oid 集请求，并按可扩展交换机驱动程序堆栈进行创建。 此 OID 请求通知底层的可扩展交换机扩展正在为先前创建的端口创建内部网络适配器的网络连接。
 
-3.  可扩展交换机的协议边缘颁发的 OID 集请求[OID\_切换\_NIC\_CONNECT](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-port-create)向下可扩展交换机驱动程序堆栈。 此 OID 请求通知的基础的可扩展交换机扩展的内部网络适配器的网络连接已连接并且正常运行。 此时，该扩展可以检查、 注入，并将数据包转发到已连接到内部网络适配器的端口。
+3.  可扩展交换机的协议边缘发出 oid [ \_ 交换机 \_ NIC \_ ](./oid-switch-port-create.md) 的 oid 集请求，并沿可扩展交换机驱动程序堆栈向下连接。 此 OID 请求通知底层的可扩展交换机扩展，内部网络适配器的网络连接已连接并且可操作。 此时，扩展可以检查并注入数据包，并将数据包转发到连接到内部网络适配器的端口。
 
-停止与内部网络适配器连接的可扩展交换机时，将执行以下步骤：
+当具有内部网络适配器连接的可扩展交换机停止时，将执行以下步骤：
 
-1.  可扩展交换机的协议边缘颁发的 OID 集请求[OID\_切换\_NIC\_断开连接](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-nic-disconnect)向下可扩展交换机驱动程序堆栈。 此 OID 请求通知到外部网络适配器的连接，则正在将调用的基础可扩展交换机扩展。
+1.  可扩展交换机的协议边缘发出 oid 交换机 NIC 的 OID 集请求断开可扩展交换机驱动程序堆栈的 [ \_ \_ \_ 连接](./oid-switch-nic-disconnect.md) 。 此 OID 请求通知底层的可扩展交换机扩展，指出与外部网络适配器的连接被破坏。
 
-2.  完成所有数据包流量和目标网络连接的 OID 请求后，可扩展交换机的协议边缘颁发的 OID 集请求[OID\_切换\_NIC\_删除](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-port-create)向下可扩展交换机驱动程序堆栈。 此 OID 请求通知的基础的可扩展交换机扩展，与外部网络适配器的连接已适当地销毁并删除。
+2.  在所有针对网络连接的数据包流量和 OID 请求都完成之后，可扩展交换机的协议边缘会发出 oid [ \_ 交换机 \_ NIC \_ ](./oid-switch-port-create.md) 的 oid 设置请求。 此 OID 请求通知底层的可扩展交换机扩展已正确地断开和删除与外部网络适配器的连接。
 
-3.  可扩展交换机的协议边缘颁发的 OID 集请求[OID\_切换\_端口\_拆卸](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-port-teardown)向下可扩展交换机驱动程序堆栈。 此 OID 请求通知所用的外部网络适配器连接的端口，则在将调用的基础可扩展交换机扩展。
+3.  可扩展交换机的协议边缘发出 oid [ \_ 交换机 \_ 端口 \_ 拆卸](./oid-switch-port-teardown.md) 的 oid 集请求，并向下扩展交换机驱动程序堆栈。 此 OID 请求通知底层的可扩展交换机扩展，此端口用于外部网络适配器连接。
 
-4.  可扩展交换机的协议边缘颁发的 OID 集请求[OID\_切换\_端口\_删除](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-port-delete)向下可扩展交换机驱动程序堆栈。 此 OID 请求通知的基础的可扩展交换机扩展用于内部网络适配器连接的端口已在拆解和删除。
-
- 
+4.  可扩展交换机的协议边缘向下扩展了 oid [ \_ 交换机 \_ 端口 \_ 删除](./oid-switch-port-delete.md) 扩展交换机驱动程序堆栈的请求。 此 OID 请求通知底层的可扩展交换机扩展，用于内部网络适配器连接的端口已被断开并被删除。
 
  
-
-
-
-
 

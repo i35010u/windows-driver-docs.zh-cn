@@ -8,12 +8,12 @@ keywords:
 - 非 RSS 接收处理 WDK RSS
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 176e41c7c2df6e5f68e7a6e7dd1799bd5120b40a
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 72baa6df0ab71bf044b0af4bd52b492105701514
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72842768"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89206079"
 ---
 # <a name="non-rss-receive-processing"></a>非 RSS 接收处理
 
@@ -39,25 +39,19 @@ ms.locfileid: "72842768"
 
     系统在一个中断周期中处理的接收的缓冲区可以与多个不同的网络连接关联。
 
-3.  NDIS 在系统确定的 CPU 上调用微型端口驱动程序的[*MiniportInterrupt*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_isr)函数（ISR）。
+3.  NDIS 在系统确定的 CPU (ISR) 上调用微型端口驱动程序的 [*MiniportInterrupt*](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_isr) 函数。
 
     理想情况下，ISR 应到繁忙 CPU 最忙。 但是，在某些系统中，系统会将 ISR 分配给可用 CPU 或与 NIC 关联的 CPU。
 
-4.  ISR 禁用中断，并请求 NDIS 对延迟的过程调用（DPC）进行排队以处理接收的数据。
+4.  ISR 禁用中断，并请求 NDIS 对延迟的过程调用排队 (DPC) 处理收到的数据。
 
-5.  NDIS 在当前 CPU 上调用[*MiniportInterruptDPC*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_interrupt_dpc)函数（DPC）。
+5.  NDIS 在当前 CPU (DPC) 上调用 [*MiniportInterruptDPC*](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_interrupt_dpc) 函数。
 
-6.  DPC 为所有接收的缓冲区生成接收描述符，并指示驱动程序堆栈上的数据。 有关详细信息，请参阅[接收网络数据](receiving-network-data.md)。
+6.  DPC 为所有接收的缓冲区生成接收描述符，并指示驱动程序堆栈上的数据。 有关详细信息，请参阅 [接收网络数据](receiving-network-data.md)。
 
     许多不同的连接可能有很多缓冲区，并且可能需要大量的处理才能完成。 可在其他 Cpu 上处理与后续中断周期关联的接收数据。 给定网络连接的发送处理也可以在不同的 CPU 上运行。
 
 7.  DPC 启用中断。 此中断周期已完成，进程将再次启动。
 
  
-
- 
-
-
-
-
 

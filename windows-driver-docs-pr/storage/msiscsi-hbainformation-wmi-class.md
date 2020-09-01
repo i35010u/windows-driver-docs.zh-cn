@@ -4,20 +4,20 @@ description: MSiSCSI \_ HBAINFORMATION WMI 类
 ms.assetid: 24c44f97-5ff3-46fa-a5bf-aa76f7f0d3f2
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 6f7daf125f456105ae9f299ce05ebeec1efce205
-ms.sourcegitcommit: df7d6565a4cd2659c46d5fd83ef04a1672c60dbf
+ms.openlocfilehash: 96e429504b1d2c96a8c9698b1ef5c5f3ddd72c92
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/26/2020
-ms.locfileid: "85382728"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89193181"
 ---
 # <a name="msiscsi_hbainformation-wmi-class"></a>MSiSCSI_HBAInformation WMI 类
 
 ISCSI 发起程序服务使用 MSiSCSI_HBAInformation WMI 类与适配器进行通信。 对于加载的微型端口驱动程序的每个实例，你应该具有此类的单独实例。
 
-由于此类与存储微型端口驱动程序的特定实例相关联，因此微型端口驱动程序必须使用微型端口驱动程序管理的特定物理设备对象（PDO）的名称来注册该类。
+由于此类与存储微型端口驱动程序的特定实例相关联，因此微型端口驱动程序必须使用微型端口驱动程序管理 (PDO) 的特定物理设备对象的名称注册该类。
 
-在*管理 mof*中，MSiSCSI_HBAInformation 类的定义如下。
+在 *管理 mof*中，MSiSCSI_HBAInformation 类的定义如下。
 
 ```cpp
 class MSiSCSI_HBAInformation {
@@ -149,4 +149,4 @@ class MSiSCSI_HBAInformation {
 };
 ```
 
-当 WMI 工具套件编译上述类定义时，它会生成[**MSiSCSI \_ HBAInformation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/iscsimgt/ns-iscsimgt-_msiscsi_hbainformation)数据结构。
+当 WMI 工具套件编译上述类定义时，它会生成 [**MSiSCSI \_ HBAInformation**](/windows-hardware/drivers/ddi/iscsimgt/ns-iscsimgt-_msiscsi_hbainformation) 数据结构。

@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: c758301f248f1e9dcee537b6fe2f9e6d463c3ea8
-ms.sourcegitcommit: 8596782b07c8a71adf38fc2c2da68b75ba0a1259
+ms.openlocfilehash: f6ccd36329ce091284fb26c4675ebea2cb4db8e8
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85593929"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89206859"
 ---
 # <a name="ndiskdndisref"></a>!ndiskd.ndisref
 
@@ -36,7 +36,7 @@ ms.locfileid: "85593929"
 标记的枚举类型。
 
 <span id="_______-stacks______"></span><span id="_______-STACKS______"></span>*-堆栈*   
-包括堆栈跟踪（如果可用）。
+包括 (可用的堆栈跟踪) 。
 
 <span id="_______-tag______"></span><span id="_______-TAG______"></span>*-tag*   
 限制显示单个标记。
@@ -50,7 +50,7 @@ Ndiskd.dll
 
 ### <a name="examples"></a>示例
 
-下面的示例将 NDIS 微型端口驱动程序的句柄传递给 **！ ndiskd ndisref**扩展，以显示该驱动程序的引用计数块。 首先，不使用参数运行[**！ ndiskd**](-ndiskd-minidriver.md) ，以查看系统上所有微型端口驱动程序的列表。 在下面的示例输出中，查找 kdnic 驱动程序 ffffdf801418d650 的句柄。
+下面的示例将 NDIS 微型端口驱动程序的句柄传递给 **！ ndiskd ndisref** 扩展，以显示该驱动程序的引用计数块。 首先，不使用参数运行 [**！ ndiskd**](-ndiskd-minidriver.md) ，以查看系统上所有微型端口驱动程序的列表。 在下面的示例输出中，查找 kdnic 驱动程序 ffffdf801418d650 的句柄。
 
 ```console
 3: kd> !ndiskd.minidriver
@@ -58,7 +58,7 @@ Ndiskd.dll
     ffffdf801418d650 - kdnic
 ```
 
-使用微型端口驱动程序的句柄输入 **！ ndiskd**命令，查看此微型端口驱动程序的引用计数块。 下面的示例将引用计数块 excised 的中间部分作为简洁。
+使用微型端口驱动程序的句柄输入 **！ ndiskd** 命令，查看此微型端口驱动程序的引用计数块。 下面的示例将引用计数块 excised 的中间部分作为简洁。
 
 ```console
 3: kd> !ndiskd.ndisref ffffdf801418d650
@@ -94,15 +94,15 @@ REFCOUNT BLOCK
     Include inactive tags
 ```
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
-[网络驱动程序设计指南](https://docs.microsoft.com/windows-hardware/drivers/network/index)
+[网络驱动程序设计指南](../network/index.md)
 
-[Windows Vista 和更高版本的网络引用](https://docs.microsoft.com/windows-hardware/drivers/ddi/_netvista/)
+[Windows Vista 和更高版本的网络引用](/windows-hardware/drivers/ddi/_netvista/)
 
 [调试网络堆栈](https://channel9.msdn.com/Shows/Defrag-Tools/Defrag-Tools-175-Debugging-the-Network-Stack)
 
-[**NDIS 扩展（Ndiskd.dll）**](ndis-extensions--ndiskd-dll-.md)
+[**NDIS 扩展 ( # A0) **](ndis-extensions--ndiskd-dll-.md)
 
 [**!ndiskd.help**](-ndiskd-help.md)
 

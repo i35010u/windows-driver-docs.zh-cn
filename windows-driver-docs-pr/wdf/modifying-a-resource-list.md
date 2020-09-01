@@ -8,33 +8,27 @@ keywords:
 - 资源列表 WDK KMDF，修改
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f6c491bdadc6f6cdb1984ad5471a507b0602f1b7
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 27925b79c8b6070c7d0f948db541513feeb7c4e9
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72843146"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89193103"
 ---
 # <a name="modifying-a-resource-list"></a>修改资源列表
 
 
-如果驱动程序提供了[*EvtDeviceFilterAddResourceRequirements*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdffdo/nc-wdffdo-evt_wdf_device_filter_resource_requirements)回调函数，它还必须提供[*EvtDeviceRemoveAddedResources*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdffdo/nc-wdffdo-evt_wdf_device_remove_added_resources)回调函数。 *EvtDeviceRemoveAddedResources*回调函数删除*EvtDeviceFilterAddResourceRequirements*回调函数添加的资源，以便总线驱动程序不会尝试使用它们。
+如果驱动程序提供了 [*EvtDeviceFilterAddResourceRequirements*](/windows-hardware/drivers/ddi/wdffdo/nc-wdffdo-evt_wdf_device_filter_resource_requirements) 回调函数，它还必须提供 [*EvtDeviceRemoveAddedResources*](/windows-hardware/drivers/ddi/wdffdo/nc-wdffdo-evt_wdf_device_remove_added_resources) 回调函数。 *EvtDeviceRemoveAddedResources*回调函数删除*EvtDeviceFilterAddResourceRequirements*回调函数添加的资源，以便总线驱动程序不会尝试使用它们。
 
 若要修改设备资源列表中的资源描述符，驱动程序应调用以下方法：
 
--   [**WdfCmResourceListGetCount**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfresource/nf-wdfresource-wdfcmresourcelistgetcount)，用于获取资源说明符的数目。
+-   [**WdfCmResourceListGetCount**](/windows-hardware/drivers/ddi/wdfresource/nf-wdfresource-wdfcmresourcelistgetcount)，用于获取资源说明符的数目。
 
--   [**WdfCmResourceListGetDescriptor**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfresource/nf-wdfresource-wdfcmresourcelistgetdescriptor)，用于获取对资源描述符的访问权限。
+-   [**WdfCmResourceListGetDescriptor**](/windows-hardware/drivers/ddi/wdfresource/nf-wdfresource-wdfcmresourcelistgetdescriptor)，用于获取对资源描述符的访问权限。
 
--   [**WdfCmResourceListRemove**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfresource/nf-wdfresource-wdfcmresourcelistremove)和[**WdfCmResourceListRemoveByDescriptor**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfresource/nf-wdfresource-wdfcmresourcelistremovebydescriptor)，用于删除资源描述符。
+-   [**WdfCmResourceListRemove**](/windows-hardware/drivers/ddi/wdfresource/nf-wdfresource-wdfcmresourcelistremove) 和 [**WdfCmResourceListRemoveByDescriptor**](/windows-hardware/drivers/ddi/wdfresource/nf-wdfresource-wdfcmresourcelistremovebydescriptor)，用于删除资源描述符。
 
-如果驱动程序删除资源，则它必须从[原始资源列表和已转换资源列表](raw-and-translated-resources.md)中将其删除。
-
- 
+如果驱动程序删除资源，则它必须从 [原始资源列表和已转换资源列表](raw-and-translated-resources.md)中将其删除。
 
  
-
-
-
-
 

@@ -12,12 +12,12 @@ keywords:
 - 错误源控制 WDK WHEA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d54ea2a58150d827086f50df2e9fafabcf15cd64
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 30eecc7296654d42fb7295896ddc8318467396df
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72844410"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89206153"
 ---
 # <a name="error-source-control"></a>错误源控件
 
@@ -32,16 +32,11 @@ PSHED 向操作系统公开一个接口，该接口允许 Windows 内核控制�
 
 -   设置与错误源关联的阈值参数。
 
-Windows 内核调用 PSHED 来配置错误源，以响应 WHEA 管理应用程序对错误源控制请求的响应。 PSHED 支持 PSHED 发现的标准错误源的错误源代码管理操作。 如果实现了参与[错误源发现](error-source-discovery.md)的 PSHED 插件，并向 PSHED 不支持的操作系统报告其他错误源，则 PSHED 插件还必须参与错误源控制以支持错误这些其他错误源的源代码管理操作。 PSHED 插件还可以选择参与错误源控制，以替代 PSHED 控制一个或多个标准错误源的方式。
+Windows 内核调用 PSHED 来配置错误源，以响应 WHEA 管理应用程序对错误源控制请求的响应。 PSHED 支持 PSHED 发现的标准错误源的错误源代码管理操作。 如果实现了参与 [错误源发现](error-source-discovery.md) 的 PSHED 插件，并向 PSHED 不支持的操作系统报告其他错误源，则 PSHED 插件还必须参与错误源控制，以支持这些其他错误源的错误源代码管理操作。 PSHED 插件还可以选择参与错误源控制，以替代 PSHED 控制一个或多个标准错误源的方式。
 
-有关如何实现参与错误源代码管理的 PSHED 插件的详细信息，请参阅[参与错误源控制](participating-in-error-source-control.md)。
+有关如何实现参与错误源代码管理的 PSHED 插件的详细信息，请参阅 [参与错误源控制](participating-in-error-source-control.md)。
 
-用户模式管理应用程序通过调用[WHEA 管理 API](https://docs.microsoft.com/windows-hardware/drivers/ddi/_whea/)来控制错误源。 有关如何实现 WHEA 管理应用程序的详细信息，请参阅[WHEA 管理应用程序](whea-management-applications.md)。
-
- 
+用户模式管理应用程序通过调用 [WHEA 管理 API](/windows-hardware/drivers/ddi/_whea/)来控制错误源。 有关如何实现 WHEA 管理应用程序的详细信息，请参阅 [WHEA 管理应用程序](whea-management-applications.md)。
 
  
-
-
-
 

@@ -15,12 +15,12 @@ api_type:
 - LibDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 7cc93093dc035af8611b0224d3c0b8197a3721cd
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 4d95f9a4fa21a20db7a94bc1a66f1e286c945559
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72837566"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89193203"
 ---
 # <a name="getportattributesbywwn-function"></a>GetPortAttributesByWWN 函数
 
@@ -41,14 +41,14 @@ void GetPortAttributesByWWN(
 <a name="parameters"></a>参数
 ----------
 
-*wwn\[8\]*    
-要查询其属性的端口的名称。 此信息将传送到结构中[**GetPortAttributesByWWN\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_getportattributesbywwn_in)的**wwn**成员的微型端口驱动程序。
+*wwn \[ 8\]*   
+要查询其属性的端口的名称。 此信息将传送到 GetPortAttributesByWWN 结构中的 **wwn** 成员的微型端口 [**驱动 \_ **](/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_getportattributesbywwn_in) 程序。
 
 *HBAStatus*   
-返回时，包含操作的状态。 有关允许值及其说明的列表，请参阅[HBA\_状态](hba-status.md)。 微型端口驱动程序在[**GetPortAttributesByWWN\_OUT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_getportattributesbywwn_out)结构的**HBAStatus**成员中返回此信息。
+返回时，包含操作的状态。 有关允许值及其说明的列表，请参阅 [HBA \_ 状态](hba-status.md)。 微型端口驱动程序在[**GetPortAttributesByWWN \_ OUT**](/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_getportattributesbywwn_out)结构的**HBAStatus**成员中返回此信息。
 
 *PortAttributes*   
-类型为[**MSFC\_HBAPortAttributesResults**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_msfc_hbaportattributesresults)的结构，可在其中返回发现的 FC\_端口的特性。 微型端口驱动程序在[**GetDiscoveredPortAttributes\_OUT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_getdiscoveredportattributes_out)结构的**PortAttributes**成员中返回此信息。
+[**MSFC \_ HBAPortAttributesResults**](/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_msfc_hbaportattributesresults)类型的结构，可在其中返回发现的 FC \_ 端口的特性。 微型端口驱动程序在[**GetDiscoveredPortAttributes \_ OUT**](/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_getdiscoveredportattributes_out)结构的**PortAttributes**成员中返回此信息。
 
 <a name="return-value"></a>返回值
 ------------
@@ -58,7 +58,7 @@ void GetPortAttributesByWWN(
 <a name="remarks"></a>备注
 -------
 
-此 WMI 方法属于[MSFC\_HBAADAPTERMETHODS WMI 类](msfc-hbaadaptermethods-wmi-class.md)。
+此 WMI 方法属于 [MSFC \_ HBAAdapterMethods WMI 类](msfc-hbaadaptermethods-wmi-class.md)。
 
 <a name="requirements"></a>要求
 ------------
@@ -71,14 +71,14 @@ void GetPortAttributesByWWN(
 <tbody>
 <tr class="odd">
 <td align="left"><p>目标平台</p></td>
-<td align="left">桌面设备</td>
+<td align="left">“桌面”</td>
 </tr>
 <tr class="even">
 <td align="left"><p>标头</p></td>
-<td align="left">Hbapiwmi （包括 Hbapiwmi、Hbaapi 或 Hbaapi）。</td>
+<td align="left"> (包含 Hbapiwmi、Hbaapi 或 Hbaapi 的 Hbapiwmi) </td>
 </tr>
 <tr class="odd">
-<td align="left"><p>Library</p></td>
+<td align="left"><p>库</p></td>
 <td align="left">Hbaapi</td>
 </tr>
 </tbody>
@@ -87,18 +87,11 @@ void GetPortAttributesByWWN(
 ## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
-[**GetPortAttributesByWWN\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_getportattributesbywwn_in)
+[**GetPortAttributesByWWN \_**](/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_getportattributesbywwn_in)
 
-[**GetPortAttributesByWWN\_OUT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_getportattributesbywwn_out)
+[**GetPortAttributesByWWN \_**](/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_getportattributesbywwn_out)
 
-[**MSFC\_HBAPortAttributesResults**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_msfc_hbaportattributesresults)
-
- 
+[**MSFC \_ HBAPortAttributesResults**](/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_msfc_hbaportattributesresults)
 
  
-
-
-
-
-
 

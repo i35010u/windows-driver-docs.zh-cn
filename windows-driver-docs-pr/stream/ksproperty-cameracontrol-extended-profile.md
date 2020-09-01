@@ -1,6 +1,6 @@
 ---
-title: KSPROPERTY\_CAMERACONTROL\_扩展\_配置文件
-description: KSPROPERTY\_CAMERACONTROL\_扩展\_配置文件用于允许捕获框架通知照相机驱动程序已选择哪个配置文件。 。
+title: KSPROPERTY \_ CAMERACONTROL \_ 扩展 \_ 配置文件
+description: KSPROPERTY \_ CAMERACONTROL \_ 扩展 \_ 配置文件用于允许捕获框架通知照相机驱动程序已选择哪个配置文件。 .
 ms.assetid: 15467152-E514-4DAA-9905-2804802291A5
 keywords:
 - KSPROPERTY_CAMERACONTROL_EXTENDED_PROFILE 流媒体设备
@@ -14,16 +14,16 @@ api_type:
 - HeaderDef
 ms.date: 09/11/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 4ff90b69dcaba0a6baccfd7698441d868b74820e
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 0b12c57da176a72d1120142559f04f905b746e4a
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72824007"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89192633"
 ---
-# <a name="ksproperty_cameracontrol_extended_profile"></a>KSPROPERTY\_CAMERACONTROL\_扩展\_配置文件
+# <a name="ksproperty_cameracontrol_extended_profile"></a>KSPROPERTY \_ CAMERACONTROL \_ 扩展 \_ 配置文件
 
-KSPROPERTY\_CAMERACONTROL\_扩展\_配置文件用于允许捕获框架通知照相机驱动程序已选择哪个配置文件。
+KSPROPERTY \_ CAMERACONTROL \_ 扩展 \_ 配置文件用于允许捕获框架通知照相机驱动程序已选择哪个配置文件。
 
 ## <a name="usage-summary-table"></a>使用情况摘要表
 
@@ -35,21 +35,21 @@ KSPROPERTY\_CAMERACONTROL\_扩展\_配置文件用于允许捕获框架通知照
 </colgroup>
 <thead>
 <tr class="header">
-<th>范围</th>
-<th>控件</th>
-<th>在任务栏的搜索框中键入</th>
+<th>作用域</th>
+<th>控制</th>
+<th>类型</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td><p>版本 1</p></td>
-<td><p>Filter</p></td>
+<td><p>筛选器</p></td>
 <td><p>异步，不可取消</p></td>
 </tr>
 </tbody>
 </table>
 
-下表包含使用控件时[**KSCAMERA\_EXTENDEDPROP\_标头**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)结构字段的说明和要求。
+下表包含使用控件时 [**KSCAMERA \_ EXTENDEDPROP \_ 标头**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header) 结构字段的说明和要求。
 
 <table>
 <colgroup>
@@ -59,7 +59,7 @@ KSPROPERTY\_CAMERACONTROL\_扩展\_配置文件用于允许捕获框架通知照
 <thead>
 <tr class="header">
 <th>成员</th>
-<th>描述</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>
@@ -69,11 +69,11 @@ KSPROPERTY\_CAMERACONTROL\_扩展\_配置文件用于允许捕获框架通知照
 </tr>
 <tr class="even">
 <td><p>PinId</p></td>
-<td><p>必须是 KSCAMERA_EXTENDEDPROP_FILTERSCOPE （0xFFFFFFFF）。</p></td>
+<td><p>必须 (0xFFFFFFFF) KSCAMERA_EXTENDEDPROP_FILTERSCOPE。</p></td>
 </tr>
 <tr class="odd">
-<td><p>Size</p></td>
-<td><p>这必须是 sizeof （KSCAMERA_EXTENDEDPROP_HEADER） + sizeof （KSCAMERA_EXTENDEDPROP_PROFILE）。</p></td>
+<td><p>大小</p></td>
+<td><p>这必须是 sizeof (KSCAMERA_EXTENDEDPROP_HEADER) + sizeof (KSCAMERA_EXTENDEDPROP_PROFILE) 。</p></td>
 </tr>
 <tr class="even">
 <td><p>结果</p></td>
@@ -81,11 +81,11 @@ KSPROPERTY\_CAMERACONTROL\_扩展\_配置文件用于允许捕获框架通知照
 </tr>
 <tr class="odd">
 <td><p>功能</p></td>
-<td><p>必须为 KSCAMERA_EXTENDEDPROP_CAPS_ASYNCCONTROL。 不支持任何其他模式。</p></td>
+<td><p>必须 KSCAMERA_EXTENDEDPROP_CAPS_ASYNCCONTROL。 不支持任何其他模式。</p></td>
 </tr>
 <tr class="even">
 <td><p>Flags</p></td>
-<td><p>这必须是0。</p></td>
+<td><p>此属性必须为 0。</p></td>
 </tr>
 </tbody>
 </table>

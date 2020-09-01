@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: a7abf79b9d58000e76d36f0a5aea5bb657d569b3
-ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
+ms.openlocfilehash: f97a7cbfc9ca79023d46fe03636540d2967b9346
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84534894"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89206833"
 ---
 # <a name="usb3kdxhci_commandring"></a>！ usb3kd. xhci \_ commandring
 
@@ -32,24 +32,24 @@ ms.locfileid: "84534894"
 
 
 <span id="_______DeviceExtension______"></span><span id="_______deviceextension______"></span><span id="_______DEVICEEXTENSION______"></span>*DeviceExtension*   
-主机控制器的功能设备对象的设备扩展的 AAddress （FDO）。
+主机控制器的功能设备对象的设备扩展的 AAddress (FDO) 。
 
 ## <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 
-Usb3kd
+Usb3kd.dll
 
-<a name="remarks"></a>注解
+<a name="remarks"></a>备注
 -------
 
-输出 **！ xhci \_ commandring**命令基于 USB 3.0 主机控制器驱动程序（UsbXhci .sys）维护的数据结构。 有关 usb 3.0 主机控制器驱动程序和 USB stack 中其他驱动程序的详细信息，请参阅[Usb 驱动程序堆栈体系结构](https://docs.microsoft.com/windows-hardware/drivers/usbcon/usb-3-0-driver-stack-architecture)。
+Output **！ xhci \_ commandring** 命令基于 USB 3.0 主机控制器驱动程序所维护的数据结构 ( # A0) 。 有关 usb 3.0 主机控制器驱动程序和 USB stack 中其他驱动程序的详细信息，请参阅 [Usb 驱动程序堆栈体系结构](../usbcon/usb-3-0-driver-stack-architecture.md)。
 
 命令环是 USB 3.0 主机控制器驱动程序使用的一种数据结构，用于将命令传递给主机控制器。
 
 <a name="examples"></a>示例
 --------
 
-若要获取设备扩展的地址，请查看[**！ xhci \_ dumpall**](-usb3kd-xhci-dumpall.md)命令的输出。 在以下示例中，设备扩展的地址为0xfffffa800536e2d0。
+若要获取设备扩展的地址，请查看 [**！ xhci \_ dumpall**](-usb3kd-xhci-dumpall.md) 命令的输出。 在以下示例中，设备扩展的地址为0xfffffa800536e2d0。
 
 ```dbgcmd
 3: kd> !xhci_dumpall
@@ -68,7 +68,7 @@ Usb3kd
     ...
 ```
 
-现在可以将设备扩展的地址传递给 **！ xhci \_ commandring**命令。
+现在可以将设备扩展的地址传递给 **！ xhci \_ commandring** 命令。
 
 ```dbgcmd
 3: kd> !xhci_commandring 0xfffffa800536e2d0
@@ -100,14 +100,7 @@ DequeueIndex: 24 EnqueueIndex: 24 CycleState: 0
 
 [**！ xhci \_ dumpall**](-usb3kd-xhci-dumpall.md)
 
-[通用串行总线（USB）驱动程序](https://docs.microsoft.com/windows-hardware/drivers/usbcon/)
+[ (USB) 驱动程序的通用串行总线](../usbcon/index.md)
 
  
-
- 
-
-
-
-
-
 

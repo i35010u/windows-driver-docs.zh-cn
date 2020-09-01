@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 15ee478076f0db2fa073f31464ace6e1c5cbd9f6
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 3365c0ed36d7793ecb4a668684ea1ba3a46f285b
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72826761"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89206603"
 ---
 # <a name="errlog"></a>!errlog
 
@@ -41,11 +41,11 @@ ms.locfileid: "72826761"
 <tbody>
 <tr class="odd">
 <td align="left"><p><strong>Windows 2000</strong></p></td>
-<td align="left"><p>Kdextx86</p></td>
+<td align="left"><p>Kdextx86.dll</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>Windows XP 和更高版本</strong></p></td>
-<td align="left"><p>Kdexts</p></td>
+<td align="left"><p><strong>Windows XP 及更高版本</strong></p></td>
+<td align="left"><p>Kdexts.dll</p></td>
 </tr>
 </tbody>
 </table>
@@ -54,22 +54,16 @@ ms.locfileid: "72826761"
 
 ### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>附加信息
 
-有关[**IoWriteErrorLogEntry**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-iowriteerrorlogentry)的信息，请参阅 Windows 驱动程序工具包（WDK）文档。
+有关 [**IoWriteErrorLogEntry**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-iowriteerrorlogentry)的信息，请参阅 Windows 驱动程序工具包 (WDK) 文档。
 
 <a name="remarks"></a>备注
 -------
 
-此命令显示有关 i/o 系统的错误日志中任何挂起事件的信息。 这些事件由对[**IoWriteErrorLogEntry**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-iowriteerrorlogentry)函数的调用排队等候写入系统的事件日志，以便**事件查看器**以后查看。
+此命令显示有关 i/o 系统的错误日志中任何挂起事件的信息。 这些事件由对 [**IoWriteErrorLogEntry**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-iowriteerrorlogentry) 函数的调用排队等候写入系统的事件日志，以便 **事件查看器**以后查看。
 
-仅显示由[**IoWriteErrorLogEntry**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-iowriteerrorlogentry)排队但未提交到错误日志的条目。
+仅显示由 [**IoWriteErrorLogEntry**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-iowriteerrorlogentry) 排队但未提交到错误日志的条目。
 
 此命令可在系统崩溃后用作诊断帮助，因为它会显示在系统停止之前无法提交到错误日志的挂起错误信息。
 
  
-
- 
-
-
-
-
 

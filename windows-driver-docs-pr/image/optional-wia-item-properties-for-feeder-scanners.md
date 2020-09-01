@@ -4,12 +4,12 @@ description: 送纸器扫描仪的可选 WIA 项属性
 ms.assetid: 2af138ea-c06d-4009-90e2-8a5c7d6242bb
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 15b7aebc9f36cba10bec98504092512824632214
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 1c28f711d2998a10e0c1bf7b06f0fdaf4fcf9020
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67376549"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89192619"
 ---
 # <a name="optional-wia-item-properties-for-feeder-scanners"></a>送纸器扫描仪的可选 WIA 项属性
 
@@ -17,42 +17,37 @@ ms.locfileid: "67376549"
 
 
 
-以下 WIA 属性都可以选择支持 WIA 送纸器扫描程序项：
+WIA 进纸器扫描器项可以选择支持以下 WIA 属性：
 
-[**WIA\_IPA\_FILENAME\_EXTENSION**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ipa-filename-extension)
+[**WIA \_ IPA \_ 文件 \_ 扩展名**](./wia-ipa-filename-extension.md)
 
-[**WIA\_IPA\_RAW\_BITS\_每\_通道**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ipa-raw-bits-per-channel)
+[**WIA \_ IPA \_ \_ \_ 每通道原始 \_ 位数**](./wia-ipa-raw-bits-per-channel.md)
 
-[**WIA\_IPS\_AUTO\_DESKEW**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ips-auto-deskew)
+[**WIA \_ IPS \_ 自动 \_ 反扭曲**](./wia-ips-auto-deskew.md)
 
-[**WIA\_IPS\_DESKEW\_X**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ips-deskew-x)
+[**WIA \_ IP \_ 反扭曲 \_ X**](./wia-ips-deskew-x.md)
 
-[**WIA\_IPS\_反扭曲\_Y**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ips-deskew-y)
+[**WIA \_ IP \_ 抗扭反 \_ Y**](./wia-ips-deskew-y.md)
 
-[**WIA\_IP\_方向**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ips-orientation)
+[**WIA \_ IP \_ 方向**](./wia-ips-orientation.md)
 
-[**WIA\_IP\_预览**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ips-preview)
+[**WIA \_ IP \_ 预览版**](./wia-ips-preview.md)
 
-[**WIA\_IPS\_预览\_类型**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ips-preview-type)
+[**WIA \_ IP \_ 预览 \_ 类型**](./wia-ips-preview-type.md)
 
-[**WIA\_IP\_旋转**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ips-rotation)
+[**WIA \_ IP \_ 轮换**](./wia-ips-rotation.md)
 
-[**WIA\_IPS\_显示\_预览\_控件**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ips-show-preview-control)
+[**WIA \_ IP \_ 显示 \_ 预览 \_ 控件**](./wia-ips-show-preview-control.md)
 
-[**WIA\_IPS\_支持\_子\_项\_创建**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ips-supports-child-item-creation)
+[**WIA \_ IP \_ 支持 \_ 子 \_ 项目 \_ 创建**](./wia-ips-supports-child-item-creation.md)
 
-[**WIA\_IP\_阈值**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ips-threshold)
+[**WIA \_ IP \_ 阈值**](./wia-ips-threshold.md)
 
-[**WIA\_IPS\_WARM\_UP\_TIME**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ips-warm-up-time)
+[**WIA \_ IP \_ 预热 \_ \_ 时间**](./wia-ips-warm-up-time.md)
 
-[**WIA\_IPS\_XSCALING**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ips-xscaling)
+[**WIA \_ IP \_ XSCALING**](./wia-ips-xscaling.md)
 
-[**WIA\_IPS\_YSCALING**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ips-yscaling)
-
- 
+[**WIA \_ IP \_ YSCALING**](./wia-ips-yscaling.md)
 
  
-
-
-
 
