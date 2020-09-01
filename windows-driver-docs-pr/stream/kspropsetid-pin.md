@@ -4,12 +4,12 @@ description: KSPROPSETID \_ Pin
 ms.assetid: a74a9cb2-2809-4e03-95da-71eeb5f079e9
 ms.date: 06/26/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 5775c3a892fcc869794b20caa85d0801b6b0f5ab
-ms.sourcegitcommit: 7a69c2e0abf91a57407b13a30faf24925f677970
+ms.openlocfilehash: 18f8c643ed003556f0d76f69a3d72b9a7ff748bf
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85829004"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89185317"
 ---
 # <a name="kspropsetid_pin"></a>KSPROPSETID \_ Pin
 
@@ -19,7 +19,7 @@ ms.locfileid: "85829004"
 
 客户端使用 KSPROPSETID \_ 引脚属性集中的属性来查询 KS 筛选器，以获取有关它所支持的每个 Pin 工厂的信息。
 
-[**KSPROPERTY \_ 引脚 \_ CTYPES**](ksproperty-pin-ctypes.md)属性指定 KS 筛选器支持多少个 PIN 工厂。 此属性集中的所有其他属性指定有关单个 pin 工厂的信息。 KS 筛选器按 ID （范围从零到 pin 工厂数减1）标识每个 pin 工厂。 客户端包括在颁发属性请求时所使用的[**KSP \_ pin**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksp_pin)结构内的 pin 工厂。
+[**KSPROPERTY \_ 引脚 \_ CTYPES**](ksproperty-pin-ctypes.md)属性指定 KS 筛选器支持多少个 PIN 工厂。 此属性集中的所有其他属性指定有关单个 pin 工厂的信息。 KS 筛选器按 ID （范围从零到 pin 工厂数减1）标识每个 pin 工厂。 客户端包括在颁发属性请求时所使用的 [**KSP \_ pin**](/windows-hardware/drivers/ddi/ks/ns-ks-ksp_pin) 结构内的 pin 工厂。
 
 KSPROPSETID \_ 引脚属性集包括：
 
@@ -58,10 +58,4 @@ KSPROPSETID \_ 引脚属性集包括：
 [**KSPROPERTY \_ PIN \_ PROPOSEDATAFORMAT2**](ksproperty-pin-proposedataformat2.md)
 
  
-
- 
-
-
-
-
 

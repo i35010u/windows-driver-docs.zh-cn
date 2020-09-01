@@ -1,6 +1,6 @@
 ---
-title: KSPROPERTY\_DROPPEDFRAMES\_当前
-description: KSPROPERTY\_删除\_帧\_当前属性动态检索捕获的帧数、丢弃的帧数和平均帧大小的视频捕获微型驱动程序。 必须实现此属性。
+title: KSPROPERTY \_ DROPPEDFRAMES \_ CURRENT
+description: "\"KSPROPERTY \\_ 删除 \\_ 帧\" \\_ 当前属性动态检索捕获的帧数、丢弃的帧数和平均帧大小的视频捕获微型驱动程序。 必须实现此属性。"
 ms.assetid: 43367858-4e3b-476e-aaa5-c9e665df8dc6
 keywords:
 - KSPROPERTY_DROPPEDFRAMES_CURRENT 流媒体设备
@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 61484c44b498cd4d27ab62269e54610cdd78d8a2
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 262a48ef4f4e103da05c8bd15c5df58eb6133521
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72843331"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89186571"
 ---
-# <a name="ksproperty_droppedframes_current"></a>KSPROPERTY\_DROPPEDFRAMES\_当前
+# <a name="ksproperty_droppedframes_current"></a>KSPROPERTY \_ DROPPEDFRAMES \_ CURRENT
 
 
-KSPROPERTY\_删除\_帧\_当前属性动态检索捕获的帧数、丢弃的帧数和平均帧大小的视频捕获微型驱动程序。 必须实现此属性。
+"KSPROPERTY \_ 删除 \_ 帧" \_ 当前属性动态检索捕获的帧数、丢弃的帧数和平均帧大小的视频捕获微型驱动程序。 必须实现此属性。
 
 ## <span id="ddk_ksproperty_droppedframes_current_ks"></span><span id="DDK_KSPROPERTY_DROPPEDFRAMES_CURRENT_KS"></span>
 
@@ -41,7 +41,7 @@ KSPROPERTY\_删除\_帧\_当前属性动态检索捕获的帧数、丢弃的帧�
 </colgroup>
 <thead>
 <tr class="header">
-<th>“获取”</th>
+<th>获取</th>
 <th>设置</th>
 <th>目标</th>
 <th>属性描述符类型</th>
@@ -50,18 +50,18 @@ KSPROPERTY\_删除\_帧\_当前属性动态检索捕获的帧数、丢弃的帧�
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>“是”</p></td>
-<td><p>无</p></td>
-<td><p>大头针</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_droppedframes_current_s" data-raw-source="[&lt;strong&gt;KSPROPERTY_DROPPEDFRAMES_CURRENT_S&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_droppedframes_current_s)"><strong>KSPROPERTY_DROPPEDFRAMES_CURRENT_S</strong></a></p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_droppedframes_current_s" data-raw-source="[&lt;strong&gt;KSPROPERTY_DROPPEDFRAMES_CURRENT_S&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_droppedframes_current_s)"><strong>KSPROPERTY_DROPPEDFRAMES_CURRENT_S</strong></a></p></td>
+<td><p>是</p></td>
+<td><p>否</p></td>
+<td><p>Pin</p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_droppedframes_current_s" data-raw-source="[&lt;strong&gt;KSPROPERTY_DROPPEDFRAMES_CURRENT_S&lt;/strong&gt;](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_droppedframes_current_s)"><strong>KSPROPERTY_DROPPEDFRAMES_CURRENT_S</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_droppedframes_current_s" data-raw-source="[&lt;strong&gt;KSPROPERTY_DROPPEDFRAMES_CURRENT_S&lt;/strong&gt;](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_droppedframes_current_s)"><strong>KSPROPERTY_DROPPEDFRAMES_CURRENT_S</strong></a></p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-属性值（操作数据）是 KSPROPERTY\_DROPPEDFRAMES\_当前\_的结构，该结构指定当前的图片号、丢弃的帧的计数以及捕获的帧的平均大小。
+ (操作数据) 的属性值是一个 KSPROPERTY \_ DROPPEDFRAMES \_ 当前的 \_ 结构，该结构指定当前的图片号、丢弃的帧的计数以及捕获的帧的平均大小。
 
 <a name="remarks"></a>备注
 -------
@@ -79,7 +79,7 @@ KSPROPERTY\_删除\_帧\_当前属性动态检索捕获的帧数、丢弃的帧�
 <tbody>
 <tr class="odd">
 <td><p>标头</p></td>
-<td>Ksmedia （包括 Ksmedia）</td>
+<td>Ksmedia (包含 Ksmedia) </td>
 </tr>
 </tbody>
 </table>
@@ -87,16 +87,9 @@ KSPROPERTY\_删除\_帧\_当前属性动态检索捕获的帧数、丢弃的帧�
 ## <a name="see-also"></a>另请参阅
 
 
-[**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)
+[**KSPROPERTY**](/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)
 
-[**KSPROPERTY\_DROPPEDFRAMES\_当前\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_droppedframes_current_s)
-
- 
+[**KSPROPERTY \_ DROPPEDFRAMES \_ 当前 \_ S**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_droppedframes_current_s)
 
  
-
-
-
-
-
 

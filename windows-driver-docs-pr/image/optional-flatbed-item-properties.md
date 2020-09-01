@@ -4,12 +4,12 @@ description: 可选平板项属性
 ms.assetid: 6a4a42f6-7a6e-49da-845b-a857c12c4cfd
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 20b01721e15515725a9dcac631ba3252087ea4b0
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 1f1d3d3caef5cf4cbabbb652a17f81c247fd0d28
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67376585"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89187063"
 ---
 # <a name="optional-flatbed-item-properties"></a>可选平板项属性
 
@@ -17,50 +17,45 @@ ms.locfileid: "67376585"
 
 
 
-WIA 平板扫描仪项都可以选择支持以下 WIA 属性：
+WIA 平板扫描仪项可以选择支持以下 WIA 属性：
 
-[**WIA\_DPS\_PAD\_颜色**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-dps-pad-color)
+[**WIA \_ DPS \_ PAD \_ 颜色**](./wia-dps-pad-color.md)
 
-[**WIA\_DPS\_PAGE\_SIZE**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-dps-page-size)
+[**WIA \_ DPS \_ 页面 \_ 大小**](./wia-dps-page-size.md)
 
-[**WIA\_IPS\_PAGE\_WIDTH**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ips-page-width)
+[**WIA \_ IP \_ 页面 \_ 宽度**](./wia-ips-page-width.md)
 
-[**WIA\_IPS\_PAGE\_HEIGHT**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ips-page-height)
+[**WIA \_ IP \_ 页面 \_ 高度**](./wia-ips-page-height.md)
 
-[**WIA\_IPA\_FILENAME\_EXTENSION**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ipa-filename-extension)
+[**WIA \_ IPA \_ 文件 \_ 扩展名**](./wia-ipa-filename-extension.md)
 
-[**WIA\_IPA\_RAW\_BITS\_每\_通道**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ipa-raw-bits-per-channel)
+[**WIA \_ IPA \_ \_ \_ 每通道原始 \_ 位数**](./wia-ipa-raw-bits-per-channel.md)
 
-[**WIA\_IPS\_AUTO\_DESKEW**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ips-auto-deskew)
+[**WIA \_ IPS \_ 自动 \_ 反扭曲**](./wia-ips-auto-deskew.md)
 
-[**WIA\_IPS\_DESKEW\_X**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ips-deskew-x)
+[**WIA \_ IP \_ 反扭曲 \_ X**](./wia-ips-deskew-x.md)
 
-[**WIA\_IPS\_反扭曲\_Y**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ips-deskew-y)
+[**WIA \_ IP \_ 抗扭反 \_ Y**](./wia-ips-deskew-y.md)
 
-[**WIA\_IPS\_PHOTOMETRIC\_INTERP**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ips-photometric-interp)
+[**WIA \_ IP \_ PHOTOMETRIC \_ INTERP**](./wia-ips-photometric-interp.md)
 
-[**WIA\_IP\_方向**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ips-orientation)
+[**WIA \_ IP \_ 方向**](./wia-ips-orientation.md)
 
-[**WIA\_IP\_旋转**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ips-rotation)
+[**WIA \_ IP \_ 轮换**](./wia-ips-rotation.md)
 
-[**WIA\_IP\_分段**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ips-segmentation)
+[**WIA \_ IPS \_ 分段**](./wia-ips-segmentation.md)
 
-[**WIA\_IPS\_显示\_预览\_控件**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ips-show-preview-control)
+[**WIA \_ IP \_ 显示 \_ 预览 \_ 控件**](./wia-ips-show-preview-control.md)
 
-[**WIA\_IPS\_支持\_子\_项\_创建**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ips-supports-child-item-creation)
+[**WIA \_ IP \_ 支持 \_ 子 \_ 项目 \_ 创建**](./wia-ips-supports-child-item-creation.md)
 
-[**WIA\_IP\_阈值**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ips-threshold)
+[**WIA \_ IP \_ 阈值**](./wia-ips-threshold.md)
 
-[**WIA\_IPS\_WARM\_UP\_TIME**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ips-warm-up-time)
+[**WIA \_ IP \_ 预热 \_ \_ 时间**](./wia-ips-warm-up-time.md)
 
-[**WIA\_IPS\_XSCALING**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ips-xscaling)
+[**WIA \_ IP \_ XSCALING**](./wia-ips-xscaling.md)
 
-[**WIA\_IPS\_YSCALING**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ips-yscaling)
-
- 
+[**WIA \_ IP \_ YSCALING**](./wia-ips-yscaling.md)
 
  
-
-
-
 

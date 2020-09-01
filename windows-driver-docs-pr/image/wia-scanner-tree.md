@@ -1,14 +1,15 @@
 ---
 title: WIA 扫描器树
-description: WIA 扫描器树提供有关根项（扫描程序）以及由照相机和扫描仪通用的属性组成的每个子项的信息。
+description: WIA 扫描器树提供有关根项 (扫描器) 的信息，以及由照相机和扫描仪通用的属性组成的每个子项的信息。
 ms.assetid: bd1452b9-1926-4dd6-b94c-e44f07573266
 ms.date: 07/06/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 19227961f3fa69808d3a27e42300946906e4b845
-ms.sourcegitcommit: 40d7d538756767d26bbda636589f614f85a6fab3
+ms.openlocfilehash: b61ed10dade4682c9ab0f07f1febfa72f88ea6b2
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/06/2020
-ms.locfileid: "86020082"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89186233"
 ---
 # <a name="wia-scanner-tree"></a>WIA 扫描器树
 
@@ -22,7 +23,7 @@ WIA 将上图中显示的扫描仪及其图像表示为项树，如下图所示�
 
 ![说明 wia 如何将扫描仪及其图像表示为项树的关系图](images/art-4.png)
 
-根项是扫描程序本身，由通用设备属性（照相机和扫描仪通用的属性）和扫描程序特定的设备属性组成。 同样，每个子项都包含照相机和扫描仪项所共有的属性，以及特定于扫描程序项的属性。
+根项是扫描程序本身，它包含 (照相机和扫描仪) 的通用设备属性和扫描仪特定的设备属性。 同样，每个子项都包含照相机和扫描仪项所共有的属性，以及特定于扫描程序项的属性。
 
 通过 WIA 服务，应用程序可以从扫描仪项请求以下内容：
 
@@ -34,12 +35,12 @@ WIA 将上图中显示的扫描仪及其图像表示为项树，如下图所示�
 
 在 Windows Me 和 Windows XP 中，直接位于根项的下方，典型的 scanner 对象具有单个项，即 scanner 项，表示设备的数据收集功能。 应用程序通过设置扫描程序项的属性来设置扫描。 当应用程序通过 WIA 服务从项请求数据时执行扫描。
 
-在 Windows Me 和 Windows XP 中，应用程序通常会期望平板扫描仪（包括带有自动文档送纸程序（ADFs）的扫描仪）由两个项（根项和一个子）表示。 所有数据传输都是从子项目中执行的。 驱动程序可以选择创建其他项以供其专用，并且可以将这些项设为传输功能。 （为此，请在对[**wiasCreateChildAppItem**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wiamdef/nf-wiamdef-wiascreatechildappitem)的调用中设置项类型标志的 WiaItemTypeTransfer 位。 此常量记录在 Microsoft Windows SDK 文档中。）但是，应用程序通常不知道这些私有项，也不知道如何处理它们。 对于带有 ADF 的扫描仪，在 Windows Me 或 Windows XP 中，可以通过将 WIA \_ DPS \_ 文档 \_ 处理 \_ *XXX*属性添加到扫描仪的根项而不是扫描程序的子项来公开和控制 adf 功能。 有关这些属性的详细信息，请参阅[WIA properties](https://docs.microsoft.com/windows-hardware/drivers/image/wia-properties)。 有关 Windows Vista 中带有 ADF 的扫描仪的信息，请参阅[WIA 进纸器扫描仪](wia-feeder-scanners.md)。
+在 Windows Me 和 Windows XP 中，应用程序通常需要平板扫描仪，其中包括具有自动文档送纸送 (ADFs) 的扫描程序，这些扫描程序由两个项目（一个根项和一个子节点）表示。 所有数据传输都是从子项目中执行的。 驱动程序可以选择创建其他项以供其专用，并且可以将这些项设为传输功能。  (，请在对 [**wiasCreateChildAppItem**](/windows-hardware/drivers/ddi/wiamdef/nf-wiamdef-wiascreatechildappitem)的调用中设置项类型标志的 WiaItemTypeTransfer 位。 此常量记录在 Microsoft Windows SDK 文档中。 ) 不过，应用程序通常不知道这些私有项，也不知道如何处理它们。 对于带有 ADF 的扫描仪，在 Windows Me 或 Windows XP 中，可以通过将 WIA \_ DPS \_ 文档 \_ 处理 \_ *XXX*属性添加到扫描仪的根项而不是扫描程序的子项来公开和控制 adf 功能。 有关这些属性的详细信息，请参阅 [WIA properties](./wia-properties.md)。 有关 Windows Vista 中带有 ADF 的扫描仪的信息，请参阅 [WIA 进纸器扫描仪](wia-feeder-scanners.md)。
 
-如果设备有平台和 ADF，并且可以进行双工扫描，在 Windows Me 或 Windows XP 中，驱动程序会将 " [**WIA \_ DPS \_ 文档 \_ 处理 \_ 功能**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-dps-document-handling-capabilities)" 属性报告为（源 &#x7c; 平面 &#x7c; DUP）。
+如果设备有平台和 ADF，并且可以进行双工扫描，在 Windows Me 或 Windows XP 中，驱动程序会将 " [**WIA \_ DPS \_ 文档 \_ 处理 \_ 功能**](./wia-dps-document-handling-capabilities.md) " 属性报告为 (源 &#x7c; 平面 &#x7c; DUP) 。
 
-请确保正确设置了[**WIA \_ DPS \_ 文档 \_ 处理 \_ **](https://docs.microsoft.com/windows-hardware/drivers/image/wia-dps-document-handling-select)的有效值。 请注意，在单个扫描作业中扫描的所有文档都将存在于项树中的单个子项中。 有关使用 ADF 和 Windows Vista 上的双面打印器的信息，请参阅[WIA 进纸器扫描仪](wia-feeder-scanners.md)。
+请确保正确设置了 [**WIA \_ DPS \_ 文档 \_ 处理 \_ **](./wia-dps-document-handling-select.md) 的有效值。 请注意，在单个扫描作业中扫描的所有文档都将存在于项树中的单个子项中。 有关使用 ADF 和 Windows Vista 上的双面打印器的信息，请参阅 [WIA 进纸器扫描仪](wia-feeder-scanners.md)。
 
-例如，假设应用程序要从 ADF 执行三页的双工扫描。 若要完成此操作，应用程序会将 "WIA \_ dps 文档处理" 的 " \_ 选择属性" 设置 \_ \_ 为 "（送纸器 &#x7c; 双工），并将" [**wia \_ dps \_ 页面**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-dps-pages)"属性设置为3。 如果应用程序首先要扫描页面的正面，则应将 "WIA \_ DPS \_ 文档 \_ 处理 \_ 选择属性" 设置为 "（进纸器 &#x7c; 双工 &#x7c; 前面" \_ 。 完成此操作后，应用程序应导航到从中请求数据传输的子项。 微型驱动程序会将 ADF 中第一页的正面报告为第1页，该页面的背面为第2页，而 ADF 中第二页的正面为页面3。
+例如，假设应用程序要从 ADF 执行三页的双工扫描。 若要完成此操作，应用程序会将 "WIA \_ dps \_ 文档 \_ 处理" \_ 选择属性设置为 (送纸器 &#x7c; 双工) ，并将 " [**WIA \_ DPS \_ 页面**](./wia-dps-pages.md) " 属性设置为3。 如果应用程序首先要扫描页面正面，则应将 "WIA \_ DPS \_ 文档 \_ 处理" \_ 选择属性设置为 " (进纸器 &#x7c; 双工 &#x7c; \_ 第一) 。 完成此操作后，应用程序应导航到从中请求数据传输的子项。 微型驱动程序会将 ADF 中第一页的正面报告为第1页，该页面的背面为第2页，而 ADF 中第二页的正面为页面3。
 
 请记住，如果设备有 ADF，则必须支持 ADF 属性。

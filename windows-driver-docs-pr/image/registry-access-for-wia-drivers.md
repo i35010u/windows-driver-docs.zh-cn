@@ -4,12 +4,12 @@ description: WIA 驱动程序的注册表访问权限
 ms.assetid: 0e0b7493-858b-4add-9e1d-fd71bae21b6e
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d8fb15acd8b99e02b2c3ee3c3fe7efb9f9bdc7cc
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 65a730f644105a82fea55e7460b8da3d87962f8e
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72840759"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89186227"
 ---
 # <a name="registry-access-for-wia-drivers"></a>WIA 驱动程序的注册表访问权限
 
@@ -17,13 +17,13 @@ ms.locfileid: "72840759"
 
 
 
-驱动程序开发人员应该知道他们需要访问的注册表项的权限。 许多注册表都可供驱动程序读取。 但是，WIA 驱动程序只应写入在[**IStiUSD：： Initialize**](https://docs.microsoft.com/windows-hardware/drivers/ddi/stiusd/nf-stiusd-istiusd-initialize)方法中传递给它们的注册表项。
+驱动程序开发人员应该知道他们需要访问的注册表项的权限。 许多注册表都可供驱动程序读取。 但是，WIA 驱动程序只应写入在 [**IStiUSD：： Initialize**](/windows-hardware/drivers/ddi/stiusd/nf-stiusd-istiusd-initialize) 方法中传递给它们的注册表项。
 
-虽然在 Windows XP 中可以写入到其他注册表项，但由于 WIA 服务在高特权**LocalSystem**帐户下运行，因此在 Microsoft Windows Server 2003 和更高版本中，这种情况下，不可能在低特权**LocalService**帐户下运行。
+虽然在 Windows XP 中可以写入到其他注册表项，但由于 WIA 服务在高特权 **LocalSystem** 帐户下运行，因此在 Microsoft Windows Server 2003 和更高版本中，这种情况下，不可能在低特权 **LocalService** 帐户下运行。
 
-驱动程序通常需要对其注册表项（ **IStiUSD：： Initialize**之外）的写入访问权限。 由于大多数驱动程序将数据存储在**DeviceData**子项中，因此可以轻松地打开**DeviceData**子项，并将句柄存储到打开的密钥，以备稍后使用。 仅当驱动程序不再需要此注册表项时，才应将其关闭。
+驱动程序通常需要对其注册表项（ **IStiUSD：： Initialize**之外）的写入访问权限。 由于大多数驱动程序将数据存储在 **DeviceData** 子项中，因此可以轻松地打开 **DeviceData** 子项，并将句柄存储到打开的密钥，以备稍后使用。 仅当驱动程序不再需要此注册表项时，才应将其关闭。
 
-下面的代码示例演示如何使用**DeviceData**注册表子项。
+下面的代码示例演示如何使用 **DeviceData** 注册表子项。
 
 ```cpp
 STDMETHODIMP CWIADevice::Initialize(
@@ -130,16 +130,11 @@ CWIADevice::~CWIADevice(void)
 }
 ```
 
-**DeviceData**注册表子项在 windows Me、windows XP 和更高版本上可用于对驱动程序进行读/写访问。 设备密钥本身（例如， **DeviceData**的父注册表项）可能会打开，也可能不会打开以供驱动程序写入访问，具体取决于操作系统版本。
+**DeviceData**注册表子项在 windows Me、windows XP 和更高版本上可用于对驱动程序进行读/写访问。 设备密钥本身 (例如，对 **DeviceData**) 的父注册表项可能会打开，也可能不打开，这取决于操作系统版本。
 
-**请注意**   驱动程序*必须*关闭不再需要时打开的任何注册表项，并且必须在卸载之前关闭所有注册表项。
-
- 
+**注意**   当不再需要驱动程序时，该驱动程序*必须*关闭它打开的任何注册表项，并且必须在卸载之前关闭所有注册表项。
 
  
 
  
-
-
-
 

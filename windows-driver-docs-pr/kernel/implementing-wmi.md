@@ -6,20 +6,20 @@ keywords:
 - WMI WDK 内核
 - Windows Management Instrumentation WDK 内核
 - 扩展 WDK WMI
-- 测量数据 WDK WMI
+- 度量数据 WDK WMI
 - 检测数据 WDK WMI
-- 用户模式下 WMI WDK
+- 用户模式 WMI WDK
 - WMI WDK 用户模式
 - Windows Management Instrumentation WDK 用户模式
-- 内核模式驱动程序 WDK WMI
+- 内核模式驱动程序 WDK、WMI
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 04acc37c917bf9cea64911c945d1599da081c227
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 40d8fa930dfb86e2fc814f73d442e535cd515994
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67369800"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89185403"
 ---
 # <a name="implementing-wmi"></a>实现 WMI
 
@@ -27,19 +27,19 @@ ms.locfileid: "67369800"
 
 
 
-本部分介绍 WDM 内核模式 Windows Management Instrumentation (WMI) 的扩展。 当将这些扩展添加到内核模式驱动程序时，您的驱动程序将成为 WMI 提供程序。 WMI 提供程序使度量和检测数据可供 WMI 使用者，如用户模式应用程序。
+本部分介绍 (WMI) extension 到 WDM 的内核模式 Windows Management Instrumentation。 将这些扩展添加到内核模式驱动程序时，驱动程序将成为 WMI 提供程序。 WMI 提供程序使度量和检测数据可用于 WMI 使用者，如用户模式应用程序。
 
-有关用户模式下 WMI API 的详细信息，请参阅[Windows Management Instrumentation](https://docs.microsoft.com/windows/desktop/WmiSdk/wmi-start-page) Windows SDK 中。
+有关用户模式 WMI API 的详细信息，请参阅 Windows SDK 中的 [Windows Management Instrumentation](/windows/desktop/WmiSdk/wmi-start-page) 。
 
-如果要实现基于 KMDF 驱动程序，请参阅[中基于框架的驱动程序支持 WMI](https://docs.microsoft.com/windows-hardware/drivers/wdf/supporting-wmi-in-kmdf-drivers)。
+如果要实现基于 KMDF 的驱动程序，请参阅 [基于框架的驱动程序中的支持 WMI](https://docs.microsoft.com/windows-hardware/drivers/wdf/supporting-wmi-in-kmdf-drivers)。
 
-本部分包括有关内核模式 WMI 的以下信息：
+本部分包括有关内核模式 WMI 的下列信息：
 
 [WMI 简介](introduction-to-wmi.md)
 
 [WMI 体系结构](wmi-architecture.md)
 
-[WMI 要求用于 WDM 驱动程序](wmi-requirements-for-wdm-drivers.md)
+[WDM 驱动程序的 WMI 要求](wmi-requirements-for-wdm-drivers.md)
 
 [WMI 数据和事件块的 MOF 语法](mof-syntax-for-wmi-data-and-event-blocks.md)
 
@@ -51,7 +51,7 @@ ms.locfileid: "67369800"
 
 [处理 WMI 请求](handling-wmi-requests.md)
 
-[发送的 WMI 事件](sending-wmi-events.md)
+[发送 WMI 事件](sending-wmi-events.md)
 
 [WMI 属性表](wmi-property-sheets.md)
 
@@ -59,12 +59,7 @@ ms.locfileid: "67369800"
 
 [WMI 事件跟踪](wmi-event-tracing.md)
 
-[测试和故障排除 WMI 驱动程序支持](testing-and-troubleshooting-wmi-driver-support.md)
+[测试 WMI 驱动程序支持及排查其问题](testing-and-troubleshooting-wmi-driver-support.md)
 
  
-
- 
-
-
-
 

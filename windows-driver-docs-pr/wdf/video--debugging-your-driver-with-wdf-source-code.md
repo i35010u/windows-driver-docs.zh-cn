@@ -1,21 +1,21 @@
 ---
 title: 视频调试带 WDF 源代码的驱动程序
-description: 本主题包含视频教程，该教程演示如何调试 Windows 驱动程序框架（WDF）驱动程序对 WDF 源代码具有完全访问权限。
+description: 本主题包含视频教程，该教程演示如何使用对 WDF 源代码的完全访问权限， (WDF) 驱动程序调试 Windows 驱动程序框架。
 Search.SourceType: Video
 ms.assetid: 735D71FC-0B35-4C79-8C0A-F3C762095C06
 ms.date: 05/07/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: d0e6196a03009c62caee5d4220c26f0188951507
-ms.sourcegitcommit: e2d27f19033482dece6350f3190ce073b1cd9f06
+ms.openlocfilehash: d83491034e41d8ca3450fa8244f7f3a0e4618e6d
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87479121"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89186055"
 ---
 # <a name="video-debugging-your-driver-with-wdf-source-code"></a>视频：使用 WDF 源代码调试驱动程序
 
 
-本主题包含视频教程，该教程演示如何调试 Windows 驱动程序框架（WDF）驱动程序对 WDF 源代码具有完全访问权限。 视频后面是视频后面的分步过程，用于方便引用。
+本主题包含视频教程，该教程演示如何使用对 WDF 源代码的完全访问权限， (WDF) 驱动程序调试 Windows 驱动程序框架。 视频后面是视频后面的分步过程，用于方便引用。
 
 
 >[!VIDEO https://www.microsoft.com/videoplayer/embed/2568bc8a-3f0b-4900-b659-aa5b22159f04]
@@ -24,7 +24,7 @@ WDF 源调试允许无需下载 WDF 源代码即可随意单步执行框架代�
 
 例如，如果你使用 WinDbg 在 Windows 10 计算机上调试 WDF 驱动程序，并且使用调用堆栈中的框架代码使调试器中断，则可以在 "调用堆栈" 视图中双击 WDF 帧，然后将自动下载并在匹配行中打开相关的 WDF 源文件。 然后，可以单步执行代码并设置断点。
 
-此功能适用于运行 Windows 10 公共版本、Technical Preview 版本10041或更高版本的目标系统。 这些生成具有 Microsoft 公共符号服务器上提供的 KMDF （Wdf01000.sys）和 UMDF （Wudfx02000.dll）的专用源索引符号文件。 WDF 代码的源级别调试仅适用于 WinDbg，不适用于 Visual Studio 调试器。
+此功能适用于运行 Windows 10 公共版本、Technical Preview 版本10041或更高版本的目标系统。 这些生成具有 KMDF 的专用源索引符号文件 ( # A0) 和 UMDF ( # A1) 在 Microsoft 公共符号服务器上可用。 WDF 代码的源级别调试仅适用于 WinDbg，不适用于 Visual Studio 调试器。
 
 ## <a name="quick-start"></a>快速启动
 
@@ -41,7 +41,7 @@ WDF 源调试允许无需下载 WDF 源代码即可随意单步执行框架代�
     Source search path is: SRV*
     ```
 
-3. 使用重新加载符号，并确认 Wdf01000.sys 的符号（或 UMDF 的 Wudfx02000.dll）已进行源索引。 如下面的 lmi 的输出中所示，Wdf01000.sys PDB 为源索引。 如果不是，请参阅下面的 WinDbg 设置部分。
+3. 使用重新加载符号，并确认 UMDF) 的 Wdf01000.sys 符号 (或 Wudfx02000.dll 为源索引。 如下面的 lmi 的输出中所示，Wdf01000.sys PDB 为源索引。 如果不是，请参阅下面的 WinDbg 设置部分。
 
     ```
     kd> .reload
@@ -54,7 +54,7 @@ WDF 源调试允许无需下载 WDF 源代码即可随意单步执行框架代�
     C:\...\Wdf01000.pdb\...\Wdf01000.pdb
     ```
 
-4. 现在已经完成了！ 单步执行 WDF 源代码的简单方法是在框架的 IRP 调度例程上设置一个断点，然后单步执行代码的其余部分。 由于 Windows 系统具有多个收件箱 KMDF 驱动程序，因此，WDF 始终会加载并运行，因此，将立即点击此断点（无需加载自己的驱动程序）。
+4. 现在已经完成了！ 单步执行 WDF 源代码的简单方法是在框架的 IRP 调度例程上设置一个断点，然后单步执行代码的其余部分。 由于 Windows 系统具有多个收件箱 KMDF 驱动程序，因此，WDF 始终会加载并运行，因此，在不需要加载您自己的驱动程序) 的情况下，将立即点击此断点 (。
 
     ```
     kd> bp Wdf01000!FxDevice::DispatchWithLock
@@ -72,7 +72,7 @@ WDF 源调试允许无需下载 WDF 源代码即可随意单步执行框架代�
 
 ### <a name="enable-source-mode-debugging"></a>启用源模式调试
 
-请确保已启用[源模式下的调试](https://docs.microsoft.com/windows-hardware/drivers/debugger/debugging-in-source-mode)。 打开 "调试" 菜单，确认已选中 "源" 模式。
+请确保已启用 [源模式下的调试](../debugger/debugging-in-source-mode.md) 。 打开 "调试" 菜单，确认已选中 "源" 模式。
 
 ### <a name="clear-stale-symbols-cache"></a>清除过时符号缓存
 
@@ -86,7 +86,7 @@ Load Report: private symbols & lines, not source indexed
 C:\...\Wdf01000.pdb\...\Wdf01000.pdb
 ```
 
-根据上面的负载报告，Wdf01000 未索引源。 这意味着本地 WinDbg 符号缓存已过时。 若要解决此问题，请从 WinDbg 中卸载 PDB，清除本地缓存（根据上面的！ lmi 输出，路径可能有所不同），并重新加载 PDB：
+根据上面的负载报告，Wdf01000 未索引源。 这意味着本地 WinDbg 符号缓存已过时。 若要解决此问题，请从 WinDbg 卸载 PDB，清除本地缓存 (你的路径可能因) 以上的！ lmi 输出而有所不同，并重新加载 PDB：
 
 ```cmd
 kd> .reload /u Wdf01000.sys

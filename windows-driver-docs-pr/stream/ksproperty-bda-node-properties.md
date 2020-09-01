@@ -1,6 +1,6 @@
 ---
-title: KSPROPERTY\_BDA\_NODE\_属性
-description: 客户端使用 KSPROPERTY\_BDA\_NODE\_属性来检索节点上支持的属性列表。
+title: KSPROPERTY \_ BDA \_ 节点 \_ 属性
+description: 客户端使用 KSPROPERTY \_ BDA \_ 节点 \_ 属性检索节点上支持的属性列表。
 ms.assetid: 36d37844-a69b-4f67-bb8f-e5445ba9a2cb
 keywords:
 - KSPROPERTY_BDA_NODE_PROPERTIES 流媒体设备
@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bf66aff787a4952b0704a8fa999a687da3c0e2d0
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: d62703a9fd6dc6068510c4528050c4799f082367
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72844346"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89186098"
 ---
-# <a name="ksproperty_bda_node_properties"></a>KSPROPERTY\_BDA\_NODE\_属性
+# <a name="ksproperty_bda_node_properties"></a>KSPROPERTY \_ BDA \_ 节点 \_ 属性
 
 
-客户端使用 KSPROPERTY\_BDA\_NODE\_属性来检索节点上支持的属性列表。
+客户端使用 KSPROPERTY \_ BDA \_ 节点 \_ 属性检索节点上支持的属性列表。
 
 ## <span id="ddk_ksproperty_bda_node_properties_ks"></span><span id="DDK_KSPROPERTY_BDA_NODE_PROPERTIES_KS"></span>
 
@@ -41,7 +41,7 @@ ms.locfileid: "72844346"
 </colgroup>
 <thead>
 <tr class="header">
-<th>“获取”</th>
+<th>获取</th>
 <th>设置</th>
 <th>目标</th>
 <th>属性描述符类型</th>
@@ -50,9 +50,9 @@ ms.locfileid: "72844346"
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>“是”</p></td>
-<td><p>无</p></td>
-<td><p>Filter</p></td>
+<td><p>是</p></td>
+<td><p>否</p></td>
+<td><p>筛选器</p></td>
 <td><p>KSPROPERTY</p></td>
 <td><p>Guid 列表</p></td>
 </tr>
@@ -79,7 +79,7 @@ ms.locfileid: "72844346"
 <tbody>
 <tr class="odd">
 <td><p>标头</p></td>
-<td>Bdamedia （包括 Bdamedia）</td>
+<td>Bdamedia (包含 Bdamedia) </td>
 </tr>
 </tbody>
 </table>
@@ -87,16 +87,9 @@ ms.locfileid: "72844346"
 ## <a name="see-also"></a>另请参阅
 
 
-[**BdaPropertyNodeProperties**](https://docs.microsoft.com/windows-hardware/drivers/ddi/bdasup/nf-bdasup-bdapropertynodeproperties)
+[**BdaPropertyNodeProperties**](/windows-hardware/drivers/ddi/bdasup/nf-bdasup-bdapropertynodeproperties)
 
-[**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)
-
- 
+[**KSPROPERTY**](/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)
 
  
-
-
-
-
-
 

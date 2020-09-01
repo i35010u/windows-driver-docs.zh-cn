@@ -3,17 +3,17 @@ title: 阻止 BDA 微型驱动程序威胁
 description: 阻止 BDA 微型驱动程序威胁
 ms.assetid: 090cd2fb-d35b-4c42-a90d-a0d567d4b93f
 keywords:
-- 广播驱动程序体系结构 WDK AVStream 安全性
-- BDA WDK AVStream 安全性
+- 广播驱动程序体系结构 WDK AVStream，安全性
+- BDA WDK AVStream，安全性
 - 安全 WDK BDA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7db8f493fbf0adf49442bb6d013a5436940aebfe
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 6b9d78087d1f64e429ba7e854a96047ca5ea0929
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67379077"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89186763"
 ---
 # <a name="preventing-bda-minidriver-threats"></a>阻止 BDA 微型驱动程序威胁
 
@@ -21,25 +21,20 @@ ms.locfileid: "67379077"
 
 
 
-可以是威胁[BDA 微型驱动程序中引入](introducing-threats-to-a-bda-minidriver.md)可以防止在以下方面：
+可以通过以下方式阻止可能 [引入到 BDA 微型驱动程序](introducing-threats-to-a-bda-minidriver.md) 中的威胁：
 
 <a href="" id="threats-in-the-signal-transport-stream"></a>信号传输流中的威胁  
-BDA 微型驱动程序不应将信号有效负载的内容，因为此类内容可以是破坏性。 BDA 微型驱动程序应仅集合负载的缓冲区，并将它们传递到下一个筛选器。
+BDA 微型驱动程序不应解释信号负载的内容，因为此类内容可能是破坏性的。 BDA 微型驱动程序只应组合负载缓冲区，并将其传递到下一个筛选器。
 
  
 
-如果 BDA 微型驱动程序解释有效负载，它们应仔细验证这些内容，分析此类内容从有效负载时。
+如果 BDA 微型驱动程序解释有效负载，则在分析有效负载中的此类内容时，应仔细验证其内容。
 
-<a href="" id="threats-from-special-purpose-ioctls"></a>特殊用途 Ioctl 的潜在威胁  
-BDA 微型驱动程序不应公开的接口连接到允许的总线、 内存或任何其他硬件的直接控制这些应用程序的应用程序。 因此，应从 BDA 微型驱动程序中删除所有特殊用途 Ioctl 的处理。 例如，此类 Ioctl 包括供应商创建调试 Ioctl。 若要处理此类 Ioctl，BDA 微型驱动程序会实现[ **IRP\_MJ\_设备\_控制**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-device-control)调度例程。
+<a href="" id="threats-from-special-purpose-ioctls"></a>来自特殊目的 IOCTLs 的威胁  
+BDA 微型驱动程序不应将接口公开给允许这些应用程序直接控制总线、内存或任何其他硬件的应用程序。 因此，应从 BDA 微型驱动程序中删除所有专用 IOCTLs 的处理。 例如，IOCTLs 包括供应商创建的调试 IOCTLs。 为了处理此类 IOCTLs，BDA 微型驱动程序将实现 [**IRP \_ MJ \_ 设备 \_ 控制**](../kernel/irp-mj-device-control.md) 调度例程。
 
-<a href="" id="threats-from-direct-wdm-dispatch-routines"></a>从直接 WDM 威胁调度例程  
-BDA 微型驱动程序不应提供 WDM 调度例程，跳过的内核流式处理 (KS) 类模型。 BDA 微型驱动程序应使用 KS 驱动程序的 AVStream 模块提供[调度](creating-dispatch-tables.md)并[自动化](defining-automation-tables.md)例程因为它还提供了安全检查。 若要提供直接 WDM 调度例程，BDA 微型驱动程序将实现的任何[IRP 主要函数代码](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-major-function-codes)。
-
- 
+<a href="" id="threats-from-direct-wdm-dispatch-routines"></a>直接 WDM 调度例程的威胁  
+BDA 微型驱动程序不应提供绕过内核流式处理 (KS) 类模型的 WDM 调度例程。 BDA 微型驱动程序应使用 KS 驱动程序的 AVStream 模块来提供 [调度](creating-dispatch-tables.md) 和 [自动化](defining-automation-tables.md) 例程，因为它还提供安全检查。 为了提供直接 WDM 调度例程，BDA 微型驱动程序将实现任何 [IRP 主要功能代码](../kernel/irp-major-function-codes.md)。
 
  
-
-
-
 

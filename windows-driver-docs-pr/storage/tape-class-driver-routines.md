@@ -8,17 +8,17 @@ keywords:
 - 存储支持例程
 ms.date: 10/08/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 4a5080c72ee90fb4c274992ff3b2d555d9a7f44f
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 422600ff7c77277f5a6dbcd8417418f6f39d562b
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72844449"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89185739"
 ---
 # <a name="tape-class-driver-routines"></a>磁带类驱动程序例程
 
 系统提供的磁带类驱动程序处理一般磁带操作，并为单个磁带 miniclass 驱动程序提供操作系统特定的支持。
 
-这些例程是在*minitape*中定义的。 有关磁带类驱动程序例程的列表，请参阅[minitape 标头](https://docs.microsoft.com/windows-hardware/drivers/ddi/minitape/)。
+这些例程是在 *minitape*中定义的。 有关磁带类驱动程序例程的列表，请参阅 [minitape 标头](/windows-hardware/drivers/ddi/minitape/) 。
 
-有关磁带微型端口驱动程序例程的列表，请参阅[磁带 Miniclass 驱动程序例程](tape-miniclass-driver-routines.md)。
+有关磁带微型端口驱动程序例程的列表，请参阅 [磁带 Miniclass 驱动程序例程](tape-miniclass-driver-routines.md)。

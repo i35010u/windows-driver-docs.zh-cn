@@ -15,12 +15,12 @@ keywords:
 - 清理调度例程 WDK 内核
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a8217625e32b3d0b19fcd3a7ffe3c243df5b7492
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 20fe4a97a7d4b961f9486f51a0c2e89d84dfead7
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72836894"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89185649"
 ---
 # <a name="dispatchcleanup-routines"></a>DispatchCleanup 例程
 
@@ -28,24 +28,19 @@ ms.locfileid: "72836894"
 
 
 
-驱动程序的[*DispatchCleanup*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch)例程为[**irp\_MJ\_清理**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-cleanup)I/o 函数代码处理 irp。
+驱动程序的 [*DispatchCleanup*](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch) 例程为 [**irp \_ MJ \_ 清理**](./irp-mj-cleanup.md) i/o 函数代码处理 irp。
 
-驱动程序可以使用*DispatchCleanup*例程来执行所有已关闭文件对象的句柄之后所需的任何清理操作。 请注意， *DispatchCleanup*是在关闭最终句柄的进程的进程上下文中调用的;此过程可能与最初打开句柄的进程不同。 （通常会发生这种差异，因为另一个进程使用**DuplicateHandle**用户模式例程来复制进程句柄。）必须在原始进程上下文中执行清理的驱动程序可以使用[**PsSetCreateProcessNotifyRoutine**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-pssetcreateprocessnotifyroutine)例程为此目的注册回调例程，但请记住，此类回调是一个有限的系统资源。
+驱动程序可以使用 *DispatchCleanup* 例程来执行所有已关闭文件对象的句柄之后所需的任何清理操作。 请注意， *DispatchCleanup* 是在关闭最终句柄的进程的进程上下文中调用的;此过程可能与最初打开句柄的进程不同。  (通常会发生这种差异，因为另一个进程使用 **DuplicateHandle** 用户模式例程来复制进程句柄。必须在原始进程上下文中执行清理的 ) 驱动程序可以使用 [**PsSetCreateProcessNotifyRoutine**](/windows-hardware/drivers/ddi/ntddk/nf-ntddk-pssetcreateprocessnotifyroutine) 例程为该目的注册回调例程，但请记住，此类回调是一个有限的系统资源。
 
-通常， *DispatchCleanup*例程必须通过对目标设备对象的设备队列（或驱动程序的内部队列）中的每个 irp 执行以下操作来处理**irp\_MJ\_清理**请求：和与文件对象关联：
+通常情况下， *DispatchCleanup* 例程必须处理 **irp \_ MJ \_ 清除** 请求，方法是对当前位于设备队列 (或驱动程序的) 中的每个 irp （对于目标设备对象）执行以下操作，并将其与 file 对象关联：
 
--   调用[**IoSetCancelRoutine**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iosetcancelroutine)将[*Cancel*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_cancel)例程指针设置为**NULL**。
+-   调用 [**IoSetCancelRoutine**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iosetcancelroutine) 将 [*Cancel*](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_cancel) 例程指针设置为 **NULL**。
 
--   如果已排队 IRP 的驱动程序 i/o 堆栈位置中指定的文件对象与 IRP\_MJ 的 i/o 堆栈位置中接收的文件对象匹配，则取消当前位于队列中的目标设备对象的所有 IRP **\_清理**请求。
+-   如果在排队 IRP 的驱动程序 i/o 堆栈位置中指定的文件对象与 **irp \_ MJ \_ 清除** 请求的 i/o 堆栈位置中所接收的文件对象匹配，则取消当前位于队列中的目标设备对象的所有 IRP。
 
--   调用[**IoCompleteRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocompleterequest)完成 IRP，并返回状态\_SUCCESS。
+-   调用 [**IoCompleteRequest**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iocompleterequest) 完成 IRP，并返回状态 " \_ 成功"。
 
-在处理**irp\_MJ\_清理**请求时，驱动程序可能会收到其他请求，如[**IRP\_\_\_** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-read) [](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-write)\_ 因此，必须解除分配资源的驱动程序还必须使用其他调度例程（如[*DispatchRead*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch)和[*DispatchWrite*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch)）同步其*DispatchCleanup*例程的执行。
-
- 
+处理 **irp \_ mj \_ 清除** 请求时，驱动程序可能会收到其他请求，如 [**IRP \_ mj \_ 读取**](./irp-mj-read.md) 或 [**irp \_ mj \_ 写入**](./irp-mj-write.md)。 因此，必须解除分配资源的驱动程序还必须使用其他调度例程（如[*DispatchRead*](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch)和[*DispatchWrite*](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch)）同步其*DispatchCleanup*例程的执行。
 
  
-
-
-
 

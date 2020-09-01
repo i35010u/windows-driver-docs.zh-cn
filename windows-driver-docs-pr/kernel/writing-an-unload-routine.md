@@ -16,12 +16,12 @@ keywords:
 - 重新加载 WDK 内核的驱动程序
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 289c7ed0c67ac74329eb9db8fd20d182a979e5b3
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: dc05fad7f57bf8dda46eed8aad5bb968a857562f
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72838290"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89184943"
 ---
 # <a name="writing-an-unload-routine"></a>编写 Unload 例程
 
@@ -29,20 +29,15 @@ ms.locfileid: "72838290"
 
 
 
-当系统运行时，任何可以替换、卸载和重新加载的驱动程序都必须具有[*卸载*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_unload)例程。 所有 WDM 驱动程序必须具有*卸载*例程。
+当系统运行时，任何可以替换、卸载和重新加载的驱动程序都必须具有 [*卸载*](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_unload) 例程。 所有 WDM 驱动程序必须具有 *卸载* 例程。
 
-尽管*卸载*例程对于非 WDM 驱动程序是可选的，但[驱动程序验证](https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier)器将无法提供*卸载*例程的任何驱动程序。
+尽管 *卸载* 例程对于非 WDM 驱动程序是可选的，但 [驱动程序验证](../devtest/driver-verifier.md) 器将无法提供 *卸载* 例程的任何驱动程序。
 
-本部分包含以下主题：
+本节包含下列主题：
 
-[卸载例程环境](unload-routine-environment.md)
+[Unload 例程环境](unload-routine-environment.md)
 
-[卸载例程功能](unload-routine-functionality.md)
-
- 
+[Unload 例程的功能](unload-routine-functionality.md)
 
  
-
-
-
 

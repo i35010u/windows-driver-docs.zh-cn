@@ -9,25 +9,19 @@ keywords:
 - IWDFMemory
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5fdee0c4a3d9c7a260afc9a428fa114802c55407
-ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
+ms.openlocfilehash: 2943028cc4ba3b869512a8891bc609acf03f4fe3
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/19/2019
-ms.locfileid: "75210761"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89187227"
 ---
 # <a name="framework-memory-object"></a>框架内存对象
 
 
 [!include[UMDF 1 Deprecation](../includes/umdf-1-deprecation.md)]
 
-通过[IWDFMemory](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-iwdfmemory)接口向驱动程序公开框架内存对象。 它提供对内存块的访问。
+通过 [IWDFMemory](/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-iwdfmemory) 接口向驱动程序公开框架内存对象。 它提供对内存块的访问。
 
  
-
- 
-
-
-
-
 

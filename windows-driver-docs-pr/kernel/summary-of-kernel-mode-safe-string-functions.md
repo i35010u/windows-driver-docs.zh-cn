@@ -6,12 +6,12 @@ keywords:
 - 安全字符串函数 WDK
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 333d6d54eae985508c8bc3360cc7a88b21b27319
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: de9a8bda033f68337f5a7a091837d45cdc2479e3
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72836223"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89186189"
 ---
 # <a name="summary-of-kernel-mode-safe-string-functions"></a>内核模式安全字符串函数摘要
 
@@ -19,7 +19,7 @@ ms.locfileid: "72836223"
 
 
 
-下表汇总了可用于内核模式驱动程序的安全字符串函数，并指示它们所替换的 C/C++语言运行库函数。 如果函数的名称包含**Cb**，则函数将字符串视为字节计数。 如果函数的名称包含**Cch**，则函数将字符串视为字符计数。
+下表汇总了可用于内核模式驱动程序的安全字符串函数，并指示它们所替换的 C/c + + 语言运行库函数。 如果函数的名称包含 **Cb**，则函数将字符串视为字节计数。 如果函数的名称包含 **Cch**，则函数将字符串视为字符计数。
 
 <table>
 <colgroup>
@@ -30,7 +30,7 @@ ms.locfileid: "72836223"
 <thead>
 <tr class="header">
 <th>函数</th>
-<th>用途</th>
+<th>目标</th>
 <th>代替</th>
 </tr>
 </thead>
@@ -38,40 +38,40 @@ ms.locfileid: "72836223"
 <tr class="odd">
 <td><p></p>
 <dl>
-<dt> <a href="" id="rtlstringcbcat"><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlstringcbcata" data-raw-source="[&lt;strong&gt;RtlStringCbCat&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlstringcbcata)"></a></a>RtlStringCbCat</dt>
+<dt><a href="" id="rtlstringcbcat"></a><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlstringcbcata" data-raw-source="[&lt;strong&gt;RtlStringCbCat&lt;/strong&gt;](/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlstringcbcata)"><strong>RtlStringCbCat</strong></a></dt>
 <dd>
 </dd>
-<dt> <a href="" id="rtlstringcbcatex"><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlstringcbcatexa" data-raw-source="[&lt;strong&gt;RtlStringCbCatEx&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlstringcbcatexa)"></a></a>RtlStringCbCatEx</dt>
+<dt><a href="" id="rtlstringcbcatex"></a><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlstringcbcatexa" data-raw-source="[&lt;strong&gt;RtlStringCbCatEx&lt;/strong&gt;](/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlstringcbcatexa)"><strong>RtlStringCbCatEx</strong></a></dt>
 <dd>
 </dd>
-<dt> <a href="" id="rtlstringcchcat"><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlstringcchcata" data-raw-source="[&lt;strong&gt;RtlStringCchCat&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlstringcchcata)"></a></a>RtlStringCchCat</dt>
+<dt><a href="" id="rtlstringcchcat"></a><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlstringcchcata" data-raw-source="[&lt;strong&gt;RtlStringCchCat&lt;/strong&gt;](/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlstringcchcata)"><strong>RtlStringCchCat</strong></a></dt>
 <dd>
 </dd>
-<dt> <a href="" id="rtlstringcchcatex"><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlstringcchcatexa" data-raw-source="[&lt;strong&gt;RtlStringCchCatEx&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlstringcchcatexa)"></a></a>RtlStringCchCatEx</dt>
+<dt><a href="" id="rtlstringcchcatex"></a><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlstringcchcatexa" data-raw-source="[&lt;strong&gt;RtlStringCchCatEx&lt;/strong&gt;](/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlstringcchcatexa)"><strong>RtlStringCchCatEx</strong></a></dt>
 <dd>
 </dd>
-<dt> <a href="" id="rtlunicodestringcat"><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlunicodestringcat" data-raw-source="[&lt;strong&gt;RtlUnicodeStringCat&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlunicodestringcat)"></a></a>RtlUnicodeStringCat</dt>
+<dt><a href="" id="rtlunicodestringcat"></a><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlunicodestringcat" data-raw-source="[&lt;strong&gt;RtlUnicodeStringCat&lt;/strong&gt;](/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlunicodestringcat)"><strong>RtlUnicodeStringCat</strong></a></dt>
 <dd>
 </dd>
-<dt> <a href="" id="rtlunicodestringcatex"><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlunicodestringcatex" data-raw-source="[&lt;strong&gt;RtlUnicodeStringCatEx&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlunicodestringcatex)"></a></a>RtlUnicodeStringCatEx</dt>
+<dt><a href="" id="rtlunicodestringcatex"></a><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlunicodestringcatex" data-raw-source="[&lt;strong&gt;RtlUnicodeStringCatEx&lt;/strong&gt;](/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlunicodestringcatex)"><strong>RtlUnicodeStringCatEx</strong></a></dt>
 <dd>
 </dd>
-<dt> <a href="" id="rtlunicodestringcatstring"><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlunicodestringcatstring" data-raw-source="[&lt;strong&gt;RtlUnicodeStringCatString&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlunicodestringcatstring)"></a></a>RtlUnicodeStringCatString</dt>
+<dt><a href="" id="rtlunicodestringcatstring"></a><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlunicodestringcatstring" data-raw-source="[&lt;strong&gt;RtlUnicodeStringCatString&lt;/strong&gt;](/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlunicodestringcatstring)"><strong>RtlUnicodeStringCatString</strong></a></dt>
 <dd>
 </dd>
-<dt> <a href="" id="rtlunicodestringcatstringex"><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlunicodestringcatstringex" data-raw-source="[&lt;strong&gt;RtlUnicodeStringCatStringEx&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlunicodestringcatstringex)"></a></a>RtlUnicodeStringCatStringEx</dt>
+<dt><a href="" id="rtlunicodestringcatstringex"></a><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlunicodestringcatstringex" data-raw-source="[&lt;strong&gt;RtlUnicodeStringCatStringEx&lt;/strong&gt;](/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlunicodestringcatstringex)"><strong>RtlUnicodeStringCatStringEx</strong></a></dt>
 <dd>
 </dd>
-<dt> <a href="" id="rtlunicodestringcbcatstringn"><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlunicodestringcbcatstringn" data-raw-source="[&lt;strong&gt;RtlUnicodeStringCbCatStringN&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlunicodestringcbcatstringn)"></a></a>RtlUnicodeStringCbCatStringN</dt>
+<dt><a href="" id="rtlunicodestringcbcatstringn"></a><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlunicodestringcbcatstringn" data-raw-source="[&lt;strong&gt;RtlUnicodeStringCbCatStringN&lt;/strong&gt;](/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlunicodestringcbcatstringn)"><strong>RtlUnicodeStringCbCatStringN</strong></a></dt>
 <dd>
 </dd>
-<dt> <a href="" id="rtlunicodestringcbcatstringnex"><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlunicodestringcbcatstringnex" data-raw-source="[&lt;strong&gt;RtlUnicodeStringCbCatStringNEx&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlunicodestringcbcatstringnex)"></a></a>RtlUnicodeStringCbCatStringNEx</dt>
+<dt><a href="" id="rtlunicodestringcbcatstringnex"></a><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlunicodestringcbcatstringnex" data-raw-source="[&lt;strong&gt;RtlUnicodeStringCbCatStringNEx&lt;/strong&gt;](/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlunicodestringcbcatstringnex)"><strong>RtlUnicodeStringCbCatStringNEx</strong></a></dt>
 <dd>
 </dd>
-<dt> <a href="" id="rtlunicodestringcchcatstringn"><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlunicodestringcchcatstringn" data-raw-source="[&lt;strong&gt;RtlUnicodeStringCchCatStringN&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlunicodestringcchcatstringn)"></a></a>RtlUnicodeStringCchCatStringN</dt>
+<dt><a href="" id="rtlunicodestringcchcatstringn"></a><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlunicodestringcchcatstringn" data-raw-source="[&lt;strong&gt;RtlUnicodeStringCchCatStringN&lt;/strong&gt;](/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlunicodestringcchcatstringn)"><strong>RtlUnicodeStringCchCatStringN</strong></a></dt>
 <dd>
 </dd>
-<dt> <a href="" id="rtlunicodestringcchcatstringnex"><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlunicodestringcchcatstringnex" data-raw-source="[&lt;strong&gt;RtlUnicodeStringCchCatStringNEx&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlunicodestringcchcatstringnex)"></a></a>RtlUnicodeStringCchCatStringNEx</dt>
+<dt><a href="" id="rtlunicodestringcchcatstringnex"></a><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlunicodestringcchcatstringnex" data-raw-source="[&lt;strong&gt;RtlUnicodeStringCchCatStringNEx&lt;/strong&gt;](/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlunicodestringcchcatstringnex)"><strong>RtlUnicodeStringCchCatStringNEx</strong></a></dt>
 <dd>
 </dd>
 </dl></td>
@@ -89,28 +89,28 @@ ms.locfileid: "72836223"
 <tr class="even">
 <td><p></p>
 <dl>
-<dt> <a href="" id="rtlstringcbcatn"><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlstringcbcatna" data-raw-source="[&lt;strong&gt;RtlStringCbCatN&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlstringcbcatna)"></a></a>RtlStringCbCatN</dt>
+<dt><a href="" id="rtlstringcbcatn"></a><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlstringcbcatna" data-raw-source="[&lt;strong&gt;RtlStringCbCatN&lt;/strong&gt;](/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlstringcbcatna)"><strong>RtlStringCbCatN</strong></a></dt>
 <dd>
 </dd>
-<dt> <a href="" id="rtlstringcbcatnex"><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlstringcbcatnexa" data-raw-source="[&lt;strong&gt;RtlStringCbCatNEx&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlstringcbcatnexa)"></a></a>RtlStringCbCatNEx</dt>
+<dt><a href="" id="rtlstringcbcatnex"></a><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlstringcbcatnexa" data-raw-source="[&lt;strong&gt;RtlStringCbCatNEx&lt;/strong&gt;](/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlstringcbcatnexa)"><strong>RtlStringCbCatNEx</strong></a></dt>
 <dd>
 </dd>
-<dt> <a href="" id="rtlstringcchcatn"><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlstringcchcatna" data-raw-source="[&lt;strong&gt;RtlStringCchCatN&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlstringcchcatna)"></a></a>RtlStringCchCatN</dt>
+<dt><a href="" id="rtlstringcchcatn"></a><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlstringcchcatna" data-raw-source="[&lt;strong&gt;RtlStringCchCatN&lt;/strong&gt;](/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlstringcchcatna)"><strong>RtlStringCchCatN</strong></a></dt>
 <dd>
 </dd>
-<dt> <a href="" id="rtlstringcchcatnex"><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlstringcchcatnexa" data-raw-source="[&lt;strong&gt;RtlStringCchCatNEx&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlstringcchcatnexa)"></a></a>RtlStringCchCatNEx</dt>
+<dt><a href="" id="rtlstringcchcatnex"></a><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlstringcchcatnexa" data-raw-source="[&lt;strong&gt;RtlStringCchCatNEx&lt;/strong&gt;](/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlstringcchcatnexa)"><strong>RtlStringCchCatNEx</strong></a></dt>
 <dd>
 </dd>
-<dt> <a href="" id="rtlunicodestringcbcatn"><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlunicodestringcbcatn" data-raw-source="[&lt;strong&gt;RtlUnicodeStringCbCatN&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlunicodestringcbcatn)"></a></a>RtlUnicodeStringCbCatN</dt>
+<dt><a href="" id="rtlunicodestringcbcatn"></a><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlunicodestringcbcatn" data-raw-source="[&lt;strong&gt;RtlUnicodeStringCbCatN&lt;/strong&gt;](/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlunicodestringcbcatn)"><strong>RtlUnicodeStringCbCatN</strong></a></dt>
 <dd>
 </dd>
-<dt> <a href="" id="rtlunicodestringcbcatnex"><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlunicodestringcbcatnex" data-raw-source="[&lt;strong&gt;RtlUnicodeStringCbCatNEx&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlunicodestringcbcatnex)"></a></a>RtlUnicodeStringCbCatNEx</dt>
+<dt><a href="" id="rtlunicodestringcbcatnex"></a><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlunicodestringcbcatnex" data-raw-source="[&lt;strong&gt;RtlUnicodeStringCbCatNEx&lt;/strong&gt;](/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlunicodestringcbcatnex)"><strong>RtlUnicodeStringCbCatNEx</strong></a></dt>
 <dd>
 </dd>
-<dt> <a href="" id="rtlunicodestringcchcatn"><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlunicodestringcchcatn" data-raw-source="[&lt;strong&gt;RtlUnicodeStringCchCatN&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlunicodestringcchcatn)"></a></a>RtlUnicodeStringCchCatN</dt>
+<dt><a href="" id="rtlunicodestringcchcatn"></a><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlunicodestringcchcatn" data-raw-source="[&lt;strong&gt;RtlUnicodeStringCchCatN&lt;/strong&gt;](/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlunicodestringcchcatn)"><strong>RtlUnicodeStringCchCatN</strong></a></dt>
 <dd>
 </dd>
-<dt> <a href="" id="rtlunicodestringcchcatnex"><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlunicodestringcchcatnex" data-raw-source="[&lt;strong&gt;RtlUnicodeStringCchCatNEx&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlunicodestringcchcatnex)"></a></a>RtlUnicodeStringCchCatNEx</dt>
+<dt><a href="" id="rtlunicodestringcchcatnex"></a><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlunicodestringcchcatnex" data-raw-source="[&lt;strong&gt;RtlUnicodeStringCchCatNEx&lt;/strong&gt;](/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlunicodestringcchcatnex)"><strong>RtlUnicodeStringCchCatNEx</strong></a></dt>
 <dd>
 </dd>
 </dl></td>
@@ -128,40 +128,40 @@ ms.locfileid: "72836223"
 <tr class="odd">
 <td><p></p>
 <dl>
-<dt> <a href="" id="rtlstringcbcopy"><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlstringcbcopya" data-raw-source="[&lt;strong&gt;RtlStringCbCopy&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlstringcbcopya)"></a></a>RtlStringCbCopy</dt>
+<dt><a href="" id="rtlstringcbcopy"></a><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlstringcbcopya" data-raw-source="[&lt;strong&gt;RtlStringCbCopy&lt;/strong&gt;](/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlstringcbcopya)"><strong>RtlStringCbCopy</strong></a></dt>
 <dd>
 </dd>
-<dt> <a href="" id="rtlstringcbcopyex"><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlstringcbcopyexa" data-raw-source="[&lt;strong&gt;RtlStringCbCopyEx&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlstringcbcopyexa)"></a></a>RtlStringCbCopyEx</dt>
+<dt><a href="" id="rtlstringcbcopyex"></a><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlstringcbcopyexa" data-raw-source="[&lt;strong&gt;RtlStringCbCopyEx&lt;/strong&gt;](/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlstringcbcopyexa)"><strong>RtlStringCbCopyEx</strong></a></dt>
 <dd>
 </dd>
-<dt> <a href="" id="rtlstringcbcopyunicodestring"><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlstringcbcopyunicodestring" data-raw-source="[&lt;strong&gt;RtlStringCbCopyUnicodeString&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlstringcbcopyunicodestring)"></a></a>RtlStringCbCopyUnicodeString</dt>
+<dt><a href="" id="rtlstringcbcopyunicodestring"></a><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlstringcbcopyunicodestring" data-raw-source="[&lt;strong&gt;RtlStringCbCopyUnicodeString&lt;/strong&gt;](/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlstringcbcopyunicodestring)"><strong>RtlStringCbCopyUnicodeString</strong></a></dt>
 <dd>
 </dd>
-<dt> <a href="" id="rtlstringcbcopyunicodestringex"><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlstringcbcopyunicodestringex" data-raw-source="[&lt;strong&gt;RtlStringCbCopyUnicodeStringEx&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlstringcbcopyunicodestringex)"></a></a>RtlStringCbCopyUnicodeStringEx</dt>
+<dt><a href="" id="rtlstringcbcopyunicodestringex"></a><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlstringcbcopyunicodestringex" data-raw-source="[&lt;strong&gt;RtlStringCbCopyUnicodeStringEx&lt;/strong&gt;](/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlstringcbcopyunicodestringex)"><strong>RtlStringCbCopyUnicodeStringEx</strong></a></dt>
 <dd>
 </dd>
-<dt> <a href="" id="rtlstringcchcopy"><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlstringcchcopya" data-raw-source="[&lt;strong&gt;RtlStringCchCopy&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlstringcchcopya)"></a></a>RtlStringCchCopy</dt>
+<dt><a href="" id="rtlstringcchcopy"></a><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlstringcchcopya" data-raw-source="[&lt;strong&gt;RtlStringCchCopy&lt;/strong&gt;](/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlstringcchcopya)"><strong>RtlStringCchCopy</strong></a></dt>
 <dd>
 </dd>
-<dt> <a href="" id="rtlstringcchcopyex"><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlstringcchcopyexa" data-raw-source="[&lt;strong&gt;RtlStringCchCopyEx&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlstringcchcopyexa)"></a></a>RtlStringCchCopyEx</dt>
+<dt><a href="" id="rtlstringcchcopyex"></a><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlstringcchcopyexa" data-raw-source="[&lt;strong&gt;RtlStringCchCopyEx&lt;/strong&gt;](/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlstringcchcopyexa)"><strong>RtlStringCchCopyEx</strong></a></dt>
 <dd>
 </dd>
-<dt> <a href="" id="rtlstringcchcopyunicodestring"><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlstringcchcopyunicodestring" data-raw-source="[&lt;strong&gt;RtlStringCchCopyUnicodeString&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlstringcchcopyunicodestring)"></a></a>RtlStringCchCopyUnicodeString</dt>
+<dt><a href="" id="rtlstringcchcopyunicodestring"></a><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlstringcchcopyunicodestring" data-raw-source="[&lt;strong&gt;RtlStringCchCopyUnicodeString&lt;/strong&gt;](/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlstringcchcopyunicodestring)"><strong>RtlStringCchCopyUnicodeString</strong></a></dt>
 <dd>
 </dd>
-<dt> <a href="" id="rtlstringcchcopyunicodestringex"><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlstringcchcopyunicodestringex" data-raw-source="[&lt;strong&gt;RtlStringCchCopyUnicodeStringEx&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlstringcchcopyunicodestringex)"></a></a>RtlStringCchCopyUnicodeStringEx</dt>
+<dt><a href="" id="rtlstringcchcopyunicodestringex"></a><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlstringcchcopyunicodestringex" data-raw-source="[&lt;strong&gt;RtlStringCchCopyUnicodeStringEx&lt;/strong&gt;](/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlstringcchcopyunicodestringex)"><strong>RtlStringCchCopyUnicodeStringEx</strong></a></dt>
 <dd>
 </dd>
-<dt> <a href="" id="rtlunicodestringcopy"><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlunicodestringcopy" data-raw-source="[&lt;strong&gt;RtlUnicodeStringCopy&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlunicodestringcopy)"></a></a>RtlUnicodeStringCopy</dt>
+<dt><a href="" id="rtlunicodestringcopy"></a><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlunicodestringcopy" data-raw-source="[&lt;strong&gt;RtlUnicodeStringCopy&lt;/strong&gt;](/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlunicodestringcopy)"><strong>RtlUnicodeStringCopy</strong></a></dt>
 <dd>
 </dd>
-<dt> <a href="" id="rtlunicodestringcopyex"><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlunicodestringcopyex" data-raw-source="[&lt;strong&gt;RtlUnicodeStringCopyEx&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlunicodestringcopyex)"></a></a>RtlUnicodeStringCopyEx</dt>
+<dt><a href="" id="rtlunicodestringcopyex"></a><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlunicodestringcopyex" data-raw-source="[&lt;strong&gt;RtlUnicodeStringCopyEx&lt;/strong&gt;](/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlunicodestringcopyex)"><strong>RtlUnicodeStringCopyEx</strong></a></dt>
 <dd>
 </dd>
-<dt> <a href="" id="rtlunicodestringcopystring"><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlunicodestringcopystring" data-raw-source="[&lt;strong&gt;RtlUnicodeStringCopyString&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlunicodestringcopystring)"></a></a>RtlUnicodeStringCopyString</dt>
+<dt><a href="" id="rtlunicodestringcopystring"></a><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlunicodestringcopystring" data-raw-source="[&lt;strong&gt;RtlUnicodeStringCopyString&lt;/strong&gt;](/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlunicodestringcopystring)"><strong>RtlUnicodeStringCopyString</strong></a></dt>
 <dd>
 </dd>
-<dt> <a href="" id="rtlunicodestringcopystringex"><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlunicodestringcopystringex" data-raw-source="[&lt;strong&gt;RtlUnicodeStringCopyStringEx&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlunicodestringcopystringex)"></a></a>RtlUnicodeStringCopyStringEx</dt>
+<dt><a href="" id="rtlunicodestringcopystringex"></a><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlunicodestringcopystringex" data-raw-source="[&lt;strong&gt;RtlUnicodeStringCopyStringEx&lt;/strong&gt;](/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlunicodestringcopystringex)"><strong>RtlUnicodeStringCopyStringEx</strong></a></dt>
 <dd>
 </dd>
 </dl></td>
@@ -179,40 +179,40 @@ ms.locfileid: "72836223"
 <tr class="even">
 <td><p></p>
 <dl>
-<dt> <a href="" id="rtlstringcbcopyn"><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlstringcbcopyna" data-raw-source="[&lt;strong&gt;RtlStringCbCopyN&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlstringcbcopyna)"></a></a>RtlStringCbCopyN</dt>
+<dt><a href="" id="rtlstringcbcopyn"></a><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlstringcbcopyna" data-raw-source="[&lt;strong&gt;RtlStringCbCopyN&lt;/strong&gt;](/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlstringcbcopyna)"><strong>RtlStringCbCopyN</strong></a></dt>
 <dd>
 </dd>
-<dt> <a href="" id="rtlstringcbcopynex"><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlstringcbcopynexa" data-raw-source="[&lt;strong&gt;RtlStringCbCopyNEx&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlstringcbcopynexa)"></a></a>RtlStringCbCopyNEx</dt>
+<dt><a href="" id="rtlstringcbcopynex"></a><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlstringcbcopynexa" data-raw-source="[&lt;strong&gt;RtlStringCbCopyNEx&lt;/strong&gt;](/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlstringcbcopynexa)"><strong>RtlStringCbCopyNEx</strong></a></dt>
 <dd>
 </dd>
-<dt> <a href="" id="rtlstringcchcopyn"><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlstringcchcopyna" data-raw-source="[&lt;strong&gt;RtlStringCchCopyN&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlstringcchcopyna)"></a></a>RtlStringCchCopyN</dt>
+<dt><a href="" id="rtlstringcchcopyn"></a><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlstringcchcopyna" data-raw-source="[&lt;strong&gt;RtlStringCchCopyN&lt;/strong&gt;](/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlstringcchcopyna)"><strong>RtlStringCchCopyN</strong></a></dt>
 <dd>
 </dd>
-<dt> <a href="" id="rtlstringcchcopynex"><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlstringcchcopynexa" data-raw-source="[&lt;strong&gt;RtlStringCchCopyNEx&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlstringcchcopynexa)"></a></a>RtlStringCchCopyNEx</dt>
+<dt><a href="" id="rtlstringcchcopynex"></a><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlstringcchcopynexa" data-raw-source="[&lt;strong&gt;RtlStringCchCopyNEx&lt;/strong&gt;](/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlstringcchcopynexa)"><strong>RtlStringCchCopyNEx</strong></a></dt>
 <dd>
 </dd>
-<dt> <a href="" id="rtlunicodestringcbcopyn"><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlunicodestringcbcopyn" data-raw-source="[&lt;strong&gt;RtlUnicodeStringCbCopyN&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlunicodestringcbcopyn)"></a></a>RtlUnicodeStringCbCopyN</dt>
+<dt><a href="" id="rtlunicodestringcbcopyn"></a><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlunicodestringcbcopyn" data-raw-source="[&lt;strong&gt;RtlUnicodeStringCbCopyN&lt;/strong&gt;](/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlunicodestringcbcopyn)"><strong>RtlUnicodeStringCbCopyN</strong></a></dt>
 <dd>
 </dd>
-<dt> <a href="" id="rtlunicodestringcbcopynex"><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlunicodestringcbcopynex" data-raw-source="[&lt;strong&gt;RtlUnicodeStringCbCopyNEx&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlunicodestringcbcopynex)"></a></a>RtlUnicodeStringCbCopyNEx</dt>
+<dt><a href="" id="rtlunicodestringcbcopynex"></a><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlunicodestringcbcopynex" data-raw-source="[&lt;strong&gt;RtlUnicodeStringCbCopyNEx&lt;/strong&gt;](/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlunicodestringcbcopynex)"><strong>RtlUnicodeStringCbCopyNEx</strong></a></dt>
 <dd>
 </dd>
-<dt> <a href="" id="rtlunicodestringcchcopyn"><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlunicodestringcchcopyn" data-raw-source="[&lt;strong&gt;RtlUnicodeStringCchCopyN&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlunicodestringcchcopyn)"></a></a>RtlUnicodeStringCchCopyN</dt>
+<dt><a href="" id="rtlunicodestringcchcopyn"></a><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlunicodestringcchcopyn" data-raw-source="[&lt;strong&gt;RtlUnicodeStringCchCopyN&lt;/strong&gt;](/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlunicodestringcchcopyn)"><strong>RtlUnicodeStringCchCopyN</strong></a></dt>
 <dd>
 </dd>
-<dt> <a href="" id="rtlunicodestringcchcopynex"><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlunicodestringcchcopynex" data-raw-source="[&lt;strong&gt;RtlUnicodeStringCchCopyNEx&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlunicodestringcchcopynex)"></a></a>RtlUnicodeStringCchCopyNEx</dt>
+<dt><a href="" id="rtlunicodestringcchcopynex"></a><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlunicodestringcchcopynex" data-raw-source="[&lt;strong&gt;RtlUnicodeStringCchCopyNEx&lt;/strong&gt;](/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlunicodestringcchcopynex)"><strong>RtlUnicodeStringCchCopyNEx</strong></a></dt>
 <dd>
 </dd>
-<dt> <a href="" id="rtlunicodestringcbcopystringn"><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlunicodestringcbcopystringn" data-raw-source="[&lt;strong&gt;RtlUnicodeStringCbCopyStringN&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlunicodestringcbcopystringn)"></a></a>RtlUnicodeStringCbCopyStringN</dt>
+<dt><a href="" id="rtlunicodestringcbcopystringn"></a><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlunicodestringcbcopystringn" data-raw-source="[&lt;strong&gt;RtlUnicodeStringCbCopyStringN&lt;/strong&gt;](/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlunicodestringcbcopystringn)"><strong>RtlUnicodeStringCbCopyStringN</strong></a></dt>
 <dd>
 </dd>
-<dt> <a href="" id="rtlunicodestringcbcopystringnex"><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlunicodestringcbcopystringnex" data-raw-source="[&lt;strong&gt;RtlUnicodeStringCbCopyStringNEx&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlunicodestringcbcopystringnex)"></a></a>RtlUnicodeStringCbCopyStringNEx</dt>
+<dt><a href="" id="rtlunicodestringcbcopystringnex"></a><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlunicodestringcbcopystringnex" data-raw-source="[&lt;strong&gt;RtlUnicodeStringCbCopyStringNEx&lt;/strong&gt;](/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlunicodestringcbcopystringnex)"><strong>RtlUnicodeStringCbCopyStringNEx</strong></a></dt>
 <dd>
 </dd>
-<dt> <a href="" id="rtlunicodestringcchcopystringn"><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlunicodestringcchcopystringn" data-raw-source="[&lt;strong&gt;RtlUnicodeStringCchCopyStringN&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlunicodestringcchcopystringn)"></a></a>RtlUnicodeStringCchCopyStringN</dt>
+<dt><a href="" id="rtlunicodestringcchcopystringn"></a><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlunicodestringcchcopystringn" data-raw-source="[&lt;strong&gt;RtlUnicodeStringCchCopyStringN&lt;/strong&gt;](/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlunicodestringcchcopystringn)"><strong>RtlUnicodeStringCchCopyStringN</strong></a></dt>
 <dd>
 </dd>
-<dt> <a href="" id="rtlunicodestringcchcopystringnex"><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlunicodestringcchcopystringnex" data-raw-source="[&lt;strong&gt;RtlUnicodeStringCchCopyStringNEx&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlunicodestringcchcopystringnex)"></a></a>RtlUnicodeStringCchCopyStringNEx</dt>
+<dt><a href="" id="rtlunicodestringcchcopystringnex"></a><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlunicodestringcchcopystringnex" data-raw-source="[&lt;strong&gt;RtlUnicodeStringCchCopyStringNEx&lt;/strong&gt;](/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlunicodestringcchcopystringnex)"><strong>RtlUnicodeStringCchCopyStringNEx</strong></a></dt>
 <dd>
 </dd>
 </dl></td>
@@ -230,16 +230,16 @@ ms.locfileid: "72836223"
 <tr class="odd">
 <td><p></p>
 <dl>
-<dt> <a href="" id="rtlstringcblength"><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlstringcblengtha" data-raw-source="[&lt;strong&gt;RtlStringCbLength&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlstringcblengtha)"></a></a>RtlStringCbLength</dt>
+<dt><a href="" id="rtlstringcblength"></a><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlstringcblengtha" data-raw-source="[&lt;strong&gt;RtlStringCbLength&lt;/strong&gt;](/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlstringcblengtha)"><strong>RtlStringCbLength</strong></a></dt>
 <dd>
 </dd>
-<dt> <a href="" id="rtlstringcchlength"><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlstringcchlengtha" data-raw-source="[&lt;strong&gt;RtlStringCchLength&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlstringcchlengtha)"></a></a>RtlStringCchLength</dt>
+<dt><a href="" id="rtlstringcchlength"></a><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlstringcchlengtha" data-raw-source="[&lt;strong&gt;RtlStringCchLength&lt;/strong&gt;](/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlstringcchlengtha)"><strong>RtlStringCchLength</strong></a></dt>
 <dd>
 </dd>
-<dt> <a href="" id="rtlunalignedstringcblength"><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlunalignedstringcblengthw" data-raw-source="[&lt;strong&gt;RtlUnalignedStringCbLength&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlunalignedstringcblengthw)"></a></a>RtlUnalignedStringCbLength</dt>
+<dt><a href="" id="rtlunalignedstringcblength"></a><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlunalignedstringcblengthw" data-raw-source="[&lt;strong&gt;RtlUnalignedStringCbLength&lt;/strong&gt;](/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlunalignedstringcblengthw)"><strong>RtlUnalignedStringCbLength</strong></a></dt>
 <dd>
 </dd>
-<dt> <a href="" id="rtlunalignedstringcchlength"><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlunalignedstringcchlengthw" data-raw-source="[&lt;strong&gt;RtlUnalignedStringCchLength&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlunalignedstringcchlengthw)"></a></a>RtlUnalignedStringCchLength</dt>
+<dt><a href="" id="rtlunalignedstringcchlength"></a><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlunalignedstringcchlengthw" data-raw-source="[&lt;strong&gt;RtlUnalignedStringCchLength&lt;/strong&gt;](/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlunalignedstringcchlengthw)"><strong>RtlUnalignedStringCchLength</strong></a></dt>
 <dd>
 </dd>
 </dl></td>
@@ -257,22 +257,22 @@ ms.locfileid: "72836223"
 <tr class="even">
 <td><p></p>
 <dl>
-<dt> <a href="" id="rtlstringcbprintf"><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlstringcbprintfa" data-raw-source="[&lt;strong&gt;RtlStringCbPrintf&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlstringcbprintfa)"></a></a>RtlStringCbPrintf</dt>
+<dt><a href="" id="rtlstringcbprintf"></a><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlstringcbprintfa" data-raw-source="[&lt;strong&gt;RtlStringCbPrintf&lt;/strong&gt;](/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlstringcbprintfa)"><strong>RtlStringCbPrintf</strong></a></dt>
 <dd>
 </dd>
-<dt> <a href="" id="rtlstringcbprintfex"><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlstringcbprintfexa" data-raw-source="[&lt;strong&gt;RtlStringCbPrintfEx&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlstringcbprintfexa)"></a></a>RtlStringCbPrintfEx</dt>
+<dt><a href="" id="rtlstringcbprintfex"></a><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlstringcbprintfexa" data-raw-source="[&lt;strong&gt;RtlStringCbPrintfEx&lt;/strong&gt;](/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlstringcbprintfexa)"><strong>RtlStringCbPrintfEx</strong></a></dt>
 <dd>
 </dd>
-<dt> <a href="" id="rtlstringcchprintf"><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlstringcchprintfa" data-raw-source="[&lt;strong&gt;RtlStringCchPrintf&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlstringcchprintfa)"></a></a>RtlStringCchPrintf</dt>
+<dt><a href="" id="rtlstringcchprintf"></a><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlstringcchprintfa" data-raw-source="[&lt;strong&gt;RtlStringCchPrintf&lt;/strong&gt;](/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlstringcchprintfa)"><strong>RtlStringCchPrintf</strong></a></dt>
 <dd>
 </dd>
-<dt> <a href="" id="rtlstringcchprintfex"><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlstringcchprintfexa" data-raw-source="[&lt;strong&gt;RtlStringCchPrintfEx&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlstringcchprintfexa)"></a></a>RtlStringCchPrintfEx</dt>
+<dt><a href="" id="rtlstringcchprintfex"></a><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlstringcchprintfexa" data-raw-source="[&lt;strong&gt;RtlStringCchPrintfEx&lt;/strong&gt;](/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlstringcchprintfexa)"><strong>RtlStringCchPrintfEx</strong></a></dt>
 <dd>
 </dd>
-<dt> <a href="" id="rtlunicodestringprintf"><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlunicodestringprintf" data-raw-source="[&lt;strong&gt;RtlUnicodeStringPrintf&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlunicodestringprintf)"></a></a>RtlUnicodeStringPrintf</dt>
+<dt><a href="" id="rtlunicodestringprintf"></a><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlunicodestringprintf" data-raw-source="[&lt;strong&gt;RtlUnicodeStringPrintf&lt;/strong&gt;](/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlunicodestringprintf)"><strong>RtlUnicodeStringPrintf</strong></a></dt>
 <dd>
 </dd>
-<dt> <a href="" id="rtlunicodestringprintfex"><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlunicodestringprintfex" data-raw-source="[&lt;strong&gt;RtlUnicodeStringPrintfEx&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlunicodestringprintfex)"></a></a>RtlUnicodeStringPrintfEx</dt>
+<dt><a href="" id="rtlunicodestringprintfex"></a><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlunicodestringprintfex" data-raw-source="[&lt;strong&gt;RtlUnicodeStringPrintfEx&lt;/strong&gt;](/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlunicodestringprintfex)"><strong>RtlUnicodeStringPrintfEx</strong></a></dt>
 <dd>
 </dd>
 </dl></td>
@@ -296,22 +296,22 @@ ms.locfileid: "72836223"
 <tr class="odd">
 <td><p></p>
 <dl>
-<dt> <a href="" id="rtlstringcbvprintf"><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlstringcbvprintfa" data-raw-source="[&lt;strong&gt;RtlStringCbVPrintf&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlstringcbvprintfa)"></a></a>RtlStringCbVPrintf</dt>
+<dt><a href="" id="rtlstringcbvprintf"></a><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlstringcbvprintfa" data-raw-source="[&lt;strong&gt;RtlStringCbVPrintf&lt;/strong&gt;](/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlstringcbvprintfa)"><strong>RtlStringCbVPrintf</strong></a></dt>
 <dd>
 </dd>
-<dt> <a href="" id="rtlstringcbvprintfex"><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlstringcbvprintfexa" data-raw-source="[&lt;strong&gt;RtlStringCbVPrintfEx&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlstringcbvprintfexa)"></a></a>RtlStringCbVPrintfEx</dt>
+<dt><a href="" id="rtlstringcbvprintfex"></a><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlstringcbvprintfexa" data-raw-source="[&lt;strong&gt;RtlStringCbVPrintfEx&lt;/strong&gt;](/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlstringcbvprintfexa)"><strong>RtlStringCbVPrintfEx</strong></a></dt>
 <dd>
 </dd>
-<dt> <a href="" id="rtlstringcchvprintf"><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlstringcchvprintfa" data-raw-source="[&lt;strong&gt;RtlStringCchVPrintf&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlstringcchvprintfa)"></a></a>RtlStringCchVPrintf</dt>
+<dt><a href="" id="rtlstringcchvprintf"></a><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlstringcchvprintfa" data-raw-source="[&lt;strong&gt;RtlStringCchVPrintf&lt;/strong&gt;](/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlstringcchvprintfa)"><strong>RtlStringCchVPrintf</strong></a></dt>
 <dd>
 </dd>
-<dt> <a href="" id="rtlstringcchvprintfex"><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlstringcchvprintfexa" data-raw-source="[&lt;strong&gt;RtlStringCchVPrintfEx&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlstringcchvprintfexa)"></a></a>RtlStringCchVPrintfEx</dt>
+<dt><a href="" id="rtlstringcchvprintfex"></a><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlstringcchvprintfexa" data-raw-source="[&lt;strong&gt;RtlStringCchVPrintfEx&lt;/strong&gt;](/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlstringcchvprintfexa)"><strong>RtlStringCchVPrintfEx</strong></a></dt>
 <dd>
 </dd>
-<dt> <a href="" id="rtlunicodestringvprintf"><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlunicodestringvprintf" data-raw-source="[&lt;strong&gt;RtlUnicodeStringVPrintf&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlunicodestringvprintf)"></a></a>RtlUnicodeStringVPrintf</dt>
+<dt><a href="" id="rtlunicodestringvprintf"></a><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlunicodestringvprintf" data-raw-source="[&lt;strong&gt;RtlUnicodeStringVPrintf&lt;/strong&gt;](/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlunicodestringvprintf)"><strong>RtlUnicodeStringVPrintf</strong></a></dt>
 <dd>
 </dd>
-<dt> <a href="" id="rtlunicodestringvprintfex"><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlunicodestringvprintfex" data-raw-source="[&lt;strong&gt;RtlUnicodeStringVPrintfEx&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlunicodestringvprintfex)"></a></a>RtlUnicodeStringVPrintfEx</dt>
+<dt><a href="" id="rtlunicodestringvprintfex"></a><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlunicodestringvprintfex" data-raw-source="[&lt;strong&gt;RtlUnicodeStringVPrintfEx&lt;/strong&gt;](/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlunicodestringvprintfex)"><strong>RtlUnicodeStringVPrintfEx</strong></a></dt>
 <dd>
 </dd>
 </dl></td>
@@ -335,20 +335,20 @@ ms.locfileid: "72836223"
 <tr class="even">
 <td><p></p>
 <dl>
-<dt> <a href="" id="rtlunicodestringinit"><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlunicodestringinit" data-raw-source="[&lt;strong&gt;RtlUnicodeStringInit&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlunicodestringinit)"></a></a>RtlUnicodeStringInit</dt>
+<dt><a href="" id="rtlunicodestringinit"></a><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlunicodestringinit" data-raw-source="[&lt;strong&gt;RtlUnicodeStringInit&lt;/strong&gt;](/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlunicodestringinit)"><strong>RtlUnicodeStringInit</strong></a></dt>
 <dd>
 </dd>
-<dt> <a href="" id="rtlunicodestringinitex"><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlunicodestringinitex" data-raw-source="[&lt;strong&gt;RtlUnicodeStringInitEx&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlunicodestringinitex)"></a></a>RtlUnicodeStringInitEx</dt>
+<dt><a href="" id="rtlunicodestringinitex"></a><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlunicodestringinitex" data-raw-source="[&lt;strong&gt;RtlUnicodeStringInitEx&lt;/strong&gt;](/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlunicodestringinitex)"><strong>RtlUnicodeStringInitEx</strong></a></dt>
 <dd>
 </dd>
-<dt> <a href="" id="rtlunicodestringvalidate"><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlunicodestringvalidate" data-raw-source="[&lt;strong&gt;RtlUnicodeStringValidate&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlunicodestringvalidate)"></a></a>RtlUnicodeStringValidate</dt>
+<dt><a href="" id="rtlunicodestringvalidate"></a><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlunicodestringvalidate" data-raw-source="[&lt;strong&gt;RtlUnicodeStringValidate&lt;/strong&gt;](/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlunicodestringvalidate)"><strong>RtlUnicodeStringValidate</strong></a></dt>
 <dd>
 </dd>
-<dt> <a href="" id="rtlunicodestringvalidateex"><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlunicodestringvalidateex" data-raw-source="[&lt;strong&gt;RtlUnicodeStringValidateEx&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlunicodestringvalidateex)"></a></a>RtlUnicodeStringValidateEx</dt>
+<dt><a href="" id="rtlunicodestringvalidateex"></a><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlunicodestringvalidateex" data-raw-source="[&lt;strong&gt;RtlUnicodeStringValidateEx&lt;/strong&gt;](/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlunicodestringvalidateex)"><strong>RtlUnicodeStringValidateEx</strong></a></dt>
 <dd>
 </dd>
 </dl></td>
-<td><p>初始化或验证<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfwdm/ns-wudfwdm-_unicode_string" data-raw-source="[&lt;strong&gt;UNICODE_STRING&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfwdm/ns-wudfwdm-_unicode_string)"><strong>UNICODE_STRING</strong></a>结构。</p></td>
+<td><p>初始化或验证 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfwdm/ns-wudfwdm-_unicode_string" data-raw-source="[&lt;strong&gt;UNICODE_STRING&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfwdm/ns-wudfwdm-_unicode_string)"><strong>UNICODE_STRING</strong></a> 结构。</p></td>
 <td><p>无</p></td>
 </tr>
 </tbody>
@@ -357,9 +357,4 @@ ms.locfileid: "72836223"
  
 
  
-
- 
-
-
-
 

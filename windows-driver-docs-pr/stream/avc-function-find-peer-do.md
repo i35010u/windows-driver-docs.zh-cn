@@ -1,6 +1,6 @@
 ---
-title: AVC\_函数\_查找\_对等\_DO
-description: AVC\_函数\_查找\_对等\_DO
+title: AVC \_ 函数 \_ 查找 \_ 对等方 \_
+description: AVC \_ 函数 \_ 查找 \_ 对等方 \_
 ms.assetid: a21dde69-f005-4782-97d9-095a57b2b1a5
 keywords:
 - AVC_FUNCTION_FIND_PEER_DO 流媒体设备
@@ -12,24 +12,24 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 07c47c7665a154c4c404567403c3ad6768795056
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 1e007b1a26911a42f241ec18699adca588717d2c
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72845160"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89186803"
 ---
-# <a name="avc_function_find_peer_do"></a>AVC\_函数\_查找\_对等\_DO
+# <a name="avc_function_find_peer_do"></a>AVC \_ 函数 \_ 查找 \_ 对等方 \_
 
 
 ## <span id="ddk_avc_function_find_peer_do_ks"></span><span id="DDK_AVC_FUNCTION_FIND_PEER_DO_KS"></span>
 
 
-**AVC\_函数\_FIND\_对等\_DO**函数代码查找非虚拟的*AVC*实例。
+**AVC \_ 函数 \_ FIND \_ 对等 \_ DO**函数代码查找非虚拟的*avc.sys*实例。
 
-### <a name="io-status-block"></a>I/O 状态块
+### <a name="io-status-block"></a>I/o 状态块
 
-如果成功，AV/C 协议驱动程序会将**Irp&gt;IoStatus**设置为 STATUS\_SUCCESS。
+如果成功，AV/C 协议驱动程序会将 **Irp &gt; IoStatus** 设置为状态 " \_ 成功"。
 
 可能的其他返回值包括：
 
@@ -41,13 +41,13 @@ ms.locfileid: "72845160"
 <thead>
 <tr class="header">
 <th>返回值</th>
-<th>描述</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td><p>STATUS_UNSUCCESSFUL</p></td>
-<td><p>找不到<em>avc</em>的非虚拟实例</p></td>
+<td><p>找不到 <em>avc.sys</em> 的非虚拟实例</p></td>
 </tr>
 <tr class="even">
 <td><p>STATUS_INVALID_GENERATION</p></td>
@@ -58,9 +58,9 @@ ms.locfileid: "72845160"
 
  
 
-### <a name="comments"></a>备注
+### <a name="comments"></a>注释
 
-此函数使用 AVC\_MULTIFUNC\_IRB 结构的**PeerLocator**成员，如下所示。
+此函数使用 AVC **PeerLocator** \_ MULTIFUNC IRB 结构的 PeerLocator 成员 \_ ，如下所示。
 
 ```cpp
 typedef struct _AVC_MULTIFUNC_IRB {
@@ -79,29 +79,23 @@ typedef struct _AVC_MULTIFUNC_IRB {
 
 ### <a name="requirements"></a>要求
 
-**标头：** 在*avc*中声明。 包括*avc*。
+**标头：** 在 *avc*中声明。 包括 *avc*。
 
-### <a name="avc_multifunc_irb-input"></a>AVC\_MULTIFUNC\_IRB 输入
+### <a name="avc_multifunc_irb-input"></a>AVC \_ MULTIFUNC \_ IRB 输入
 
-**常见问题解答**  
-此成员的**函数**submember 必须设置为**AVC\_函数\_FIND\_对等\_** 从 AVC\_函数枚举。
+**通用**  
+此成员的 **函数** submember 必须设置为 **AVC \_ 函数 \_ 查找 \_ 对 \_ 等** AVC \_ 函数枚举。
 
 <span id="PeerLocator"></span><span id="peerlocator"></span><span id="PEERLOCATOR"></span>**PeerLocator**  
-指定*avc*的非虚拟（对等）实例。
+指定 *avc.sys*的非虚拟 (对等) 实例。
 
-此函数根据其表示的设备的节点地址，查找非虚拟*avc*实例。 如果找不到实例，则 IRP 完成，状态状态\_不成功。 定位实例后，调用方可以通过对象提交任何 GUID\_AVC\_类设备接口请求。 完成后，调用方必须释放对此对象的引用（通过**ObDereferenceObject**）。
+此函数根据其表示的设备的节点地址，查找非虚拟的 *avc.sys* 实例。 如果找不到实例，则 IRP 完成，状态状态为 "不 \_ 成功"。 定位实例后，调用方可以通过对象提交任何 GUID \_ AVC \_ 类设备接口请求。 调用方必须释放对此对象的引用， (通过 **ObDereferenceObject**) 完成此操作。
 
-此函数代码可在 IRQL &lt;= 调度\_级别调用。
+可以在 IRQL &lt; = 调度级别调用此函数代码 \_ 。
 
 ### <a name="see-also"></a>另请参阅
 
-[**AVC\_MULTIFUNC\_IRB**](https://docs.microsoft.com/windows-hardware/drivers/ddi/avc/ns-avc-_avc_multifunc_irb)， [**AVC\_对等\_DO\_定位器**](https://docs.microsoft.com/windows-hardware/drivers/ddi/avc/ns-avc-_avc_peer_do_locator)， [**AVC\_函数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/avc/ne-avc-_tagavc_function)， [**ObDereferenceObject**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-obdereferenceobject)
+[**AVC \_MULTIFUNC \_ IRB**](/windows-hardware/drivers/ddi/avc/ns-avc-_avc_multifunc_irb)、 [**AVC \_ 对等方 \_ DO \_ 定位器**](/windows-hardware/drivers/ddi/avc/ns-avc-_avc_peer_do_locator)、 [**AVC \_ FUNCTION**](/windows-hardware/drivers/ddi/avc/ne-avc-_tagavc_function)、 [**ObDereferenceObject**](/windows-hardware/drivers/ddi/wdm/nf-wdm-obdereferenceobject)
 
  
-
- 
-
-
-
-
 

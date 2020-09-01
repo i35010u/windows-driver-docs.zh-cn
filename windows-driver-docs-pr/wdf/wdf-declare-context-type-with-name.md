@@ -1,24 +1,24 @@
 ---
 title: WDF_DECLARE_CONTEXT_TYPE_WITH_NAME 宏
-description: WDF_DECLARE_CONTEXT_TYPE_WITH_NAME 宏替换为驱动程序的特定于对象上下文空间的指定名称创建一个访问器方法。
+description: WDF_DECLARE_CONTEXT_TYPE_WITH_NAME 宏为驱动程序的对象特定上下文空间创建一个具有指定名称的访问器方法。
 ms.assetid: e5911bd2-6976-4a91-b9ba-befa7ec93103
 keywords:
 - WDF_DECLARE_CONTEXT_TYPE_WITH_NAME 宏
 ms.date: 08/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 266c7d6edd45efe2db07f665ebe7d237c32a7c8c
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 5332bb722b9256323030ba2b172f5974c67dce62
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67372128"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89185701"
 ---
-# <a name="wdfdeclarecontexttypewithname-macro"></a>WDF_DECLARE_CONTEXT_TYPE_WITH_NAME 宏
+# <a name="wdf_declare_context_type_with_name-macro"></a>WDF_DECLARE_CONTEXT_TYPE_WITH_NAME 宏
 
 
 \[适用于 KMDF 和 UMDF\]
 
-WDF_DECLARE_CONTEXT_TYPE_WITH_NAME 宏替换为驱动程序的特定于对象上下文空间的指定名称创建一个访问器方法。
+WDF_DECLARE_CONTEXT_TYPE_WITH_NAME 宏为驱动程序的对象特定上下文空间创建一个具有指定名称的访问器方法。
 
 <a name="syntax"></a>语法
 ------
@@ -30,29 +30,29 @@ void WDF_DECLARE_CONTEXT_TYPE_WITH_NAME(
 );
 ```
 
-<a name="parameters"></a>Parameters
+<a name="parameters"></a>参数
 ----------
 
 *_contexttype*   
-描述对象的上下文空间的内容的驱动程序定义的结构结构类型名称。
+驱动程序定义的结构的结构类型名称，该结构描述对象的上下文空间的内容。
 
 *_castingfunction*   
-C 语言的例程名称。 该宏将使用此名称作为对象的上下文空间创建的访问器方法的名称。
+C 语言例程名称。 宏使用此名称作为为对象的上下文空间创建的访问器方法的名称。
 
 <a name="return-value"></a>返回值
 ------------
 
-此宏不会返回一个值。
+此宏不返回值。
 
 <a name="remarks"></a>备注
 -------
 
-有关使用此宏的详细信息，请参阅[框架对象上下文空间](https://docs.microsoft.com/windows-hardware/drivers/wdf/framework-object-context-space)。
+有关使用此宏的详细信息，请参阅 [框架对象上下文空间](./framework-object-context-space.md)。
 
 <a name="examples"></a>示例
 --------
 
-下面的代码示例定义一个请求对象的上下文结构 (MY_REQUEST_CONTEXT)。 然后，该示例调用注册结构，并指定上下文访问器方法将为该 WDF_DECLARE_CONTEXT_TYPE_WITH_NAME 宏**RequestGetMyContext**。
+下面的代码示例定义请求对象的上下文结构 (MY_REQUEST_CONTEXT) 。 然后，该示例调用 WDF_DECLARE_CONTEXT_TYPE_WITH_NAME 宏来注册结构，并指定上下文访问器方法将命名为 **RequestGetMyContext**。
 
 ```cpp
 typedef struct _MY_REQUEST_CONTEXT {
@@ -63,7 +63,7 @@ typedef struct _MY_REQUEST_CONTEXT {
 WDF_DECLARE_CONTEXT_TYPE_WITH_NAME(MY_REQUEST_CONTEXT, RequestGetMyContext)
 ```
 
-下面的代码示例创建一个请求对象，然后使用**RequestGetMyContext**访问器方法来获取对象的上下文空间的指针。
+下面的代码示例创建一个请求对象，然后使用 **RequestGetMyContext** 访问器方法获取指向该对象的上下文空间的指针。
 
 ```cpp
 WDFREQUEST Request;
@@ -99,24 +99,24 @@ pMyContext = RequestGetMyContext(Request);
 <tbody>
 <tr class="odd">
 <td><p>目标平台</p></td>
-<td><a href="https://go.microsoft.com/fwlink/p/?linkid=531356" data-raw-source="[Universal](https://go.microsoft.com/fwlink/p/?linkid=531356)">世界</a></td>
+<td><a href="https://go.microsoft.com/fwlink/p/?linkid=531356" data-raw-source="[Universal](https://go.microsoft.com/fwlink/p/?linkid=531356)">通用</a></td>
 </tr>
 <tr class="even">
 <td><p>最低 KMDF 版本</p></td>
 <td><p>1.0</p></td>
 </tr>
 <tr class="odd">
-<td><p>最低 UMDF 版本</p></td>
+<td><p>最小 UMDF 版本</p></td>
 <td><p>2.0</p></td>
 </tr>
 <tr class="even">
-<td><p>Header</p></td>
-<td>Wdfobject.h （包括 Wdf.h）</td>
+<td><p>标头</p></td>
+<td>Wdfobject (包含 Wdf .h) </td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
 [**WdfObjectGetTypedContext**](wdfobjectgettypedcontext.md)
@@ -124,11 +124,4 @@ pMyContext = RequestGetMyContext(Request);
 [**WDF_DECLARE_CONTEXT_TYPE**](wdf-declare-context-type.md)
 
  
-
- 
-
-
-
-
-
 

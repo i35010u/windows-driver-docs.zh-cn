@@ -1,6 +1,6 @@
 ---
-title: KSPROPERTY\_VIDEOPROCAMP\_POWERLINE\_频率
-description: KSPROPERTY\_VIDEOPROCAMP\_POWERLINE\_FREQUENCY 属性指定本地电源线频率。 如果设备支持荧光灯环境的抗闪烁处理，则可能需要此频率。
+title: KSPROPERTY \_ VIDEOPROCAMP \_ POWERLINE \_ FREQUENCY
+description: KSPROPERTY \_ VIDEOPROCAMP \_ POWERLINE \_ frequency 属性指定本地电源线频率。 如果设备支持荧光灯环境的抗闪烁处理，则可能需要此频率。
 ms.assetid: 560bb16d-2a95-408f-b32c-fa2db1c94902
 keywords:
 - KSPROPERTY_VIDEOPROCAMP_POWERLINE_FREQUENCY 流媒体设备
@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 86462f270ef5a0454199aa968bb70c1cf0b18d99
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: ab0ff2fa8783bc3d96b409e7f4f943a8ebac51ed
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72845226"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89185347"
 ---
-# <a name="ksproperty_videoprocamp_powerline_frequency"></a>KSPROPERTY\_VIDEOPROCAMP\_POWERLINE\_频率
+# <a name="ksproperty_videoprocamp_powerline_frequency"></a>KSPROPERTY \_ VIDEOPROCAMP \_ POWERLINE \_ FREQUENCY
 
 
-KSPROPERTY\_VIDEOPROCAMP\_POWERLINE\_FREQUENCY 属性指定本地电源线频率。 如果设备支持荧光灯环境的抗闪烁处理，则可能需要此频率。
+KSPROPERTY \_ VIDEOPROCAMP \_ POWERLINE \_ frequency 属性指定本地电源线频率。 如果设备支持荧光灯环境的抗闪烁处理，则可能需要此频率。
 
 ## <span id="ddk_ksproperty_videoprocamp_powerline_frequency_ks"></span><span id="DDK_KSPROPERTY_VIDEOPROCAMP_POWERLINE_FREQUENCY_KS"></span>
 
@@ -41,7 +41,7 @@ KSPROPERTY\_VIDEOPROCAMP\_POWERLINE\_FREQUENCY 属性指定本地电源线频率
 </colgroup>
 <thead>
 <tr class="header">
-<th>“获取”</th>
+<th>获取</th>
 <th>设置</th>
 <th>目标</th>
 <th>属性描述符类型</th>
@@ -50,18 +50,18 @@ KSPROPERTY\_VIDEOPROCAMP\_POWERLINE\_FREQUENCY 属性指定本地电源线频率
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>“是”</p></td>
-<td><p>“是”</p></td>
+<td><p>是</p></td>
+<td><p>是</p></td>
 <td><p>筛选器或节点</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_videoprocamp_s" data-raw-source="[&lt;strong&gt;KSPROPERTY_VIDEOPROCAMP_S&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_videoprocamp_s)"><strong>KSPROPERTY_VIDEOPROCAMP_S</strong></a>或<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_videoprocamp_node_s" data-raw-source="[&lt;strong&gt;KSPROPERTY_VIDEOPROCAMP_NODE_S&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_videoprocamp_node_s)"> <strong>KSPROPERTY_VIDEOPROCAMP_NODE_S</strong></a></p></td>
-<td><p>漫长</p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_videoprocamp_s" data-raw-source="[&lt;strong&gt;KSPROPERTY_VIDEOPROCAMP_S&lt;/strong&gt;](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_videoprocamp_s)"><strong>KSPROPERTY_VIDEOPROCAMP_S</strong></a>或<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_videoprocamp_node_s" data-raw-source="[&lt;strong&gt;KSPROPERTY_VIDEOPROCAMP_NODE_S&lt;/strong&gt;](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_videoprocamp_node_s)"> <strong>KSPROPERTY_VIDEOPROCAMP_NODE_S</strong></a></p></td>
+<td><p>LONG</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-属性值（操作数据）是指定本地电源线频率的 LONG。 值指示照相机的当前电源线设置。
+ (操作数据) 的属性值是指定本地电源线频率的 LONG。 值指示照相机的当前电源线设置。
 
 <table>
 <colgroup>
@@ -70,7 +70,7 @@ KSPROPERTY\_VIDEOPROCAMP\_POWERLINE\_FREQUENCY 属性指定本地电源线频率
 </colgroup>
 <thead>
 <tr class="header">
-<th>Value</th>
+<th>值</th>
 <th>描述</th>
 </tr>
 </thead>
@@ -91,7 +91,7 @@ KSPROPERTY\_VIDEOPROCAMP\_POWERLINE\_FREQUENCY 属性指定本地电源线频率
 <td><p>3</p></td>
 <td><p>电源线频率由系统自动确定。</p>
 <div class="alert">
-<strong>请注意</strong>  自动属性值（3）在所有相机上都不可用（具体而言，UVC 1.1）。
+<strong>注意</strong>   自动属性值 (3) 在 (UVC) 1.1 的所有相机上都不可用。
 </div>
 <div>
  
@@ -105,9 +105,9 @@ KSPROPERTY\_VIDEOPROCAMP\_POWERLINE\_FREQUENCY 属性指定本地电源线频率
 <a name="remarks"></a>备注
 -------
 
-发出集请求时，客户端应提供 KSPROPERTY\_VIDEOPROCAMP\_NODE\_结构的**值**成员的上一个表中的值之一。
+发出集请求时，客户端应提供 KSPROPERTY VIDEOPROCAMP 节点的 **值** 成员的上一个表中的值之一 \_ \_ \_ 。
 
-发出 get 请求时，客户端将接收 KSPROPERTY\_VIDEOPROCAMP\_NODE\_结构的**值**成员的上表中的值之一。
+发出 get 请求时，客户端将接收 KSPROPERTY **Value** \_ VIDEOPROCAMP \_ 节点 S 结构的值成员中前一个表中的值之一 \_ 。
 
 <a name="requirements"></a>要求
 ------------
@@ -120,7 +120,7 @@ KSPROPERTY\_VIDEOPROCAMP\_POWERLINE\_FREQUENCY 属性指定本地电源线频率
 <tbody>
 <tr class="odd">
 <td><p>标头</p></td>
-<td>Ksmedia （包括 Ksmedia）</td>
+<td>Ksmedia (包含 Ksmedia) </td>
 </tr>
 </tbody>
 </table>
@@ -128,18 +128,11 @@ KSPROPERTY\_VIDEOPROCAMP\_POWERLINE\_FREQUENCY 属性指定本地电源线频率
 ## <a name="see-also"></a>另请参阅
 
 
-[**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)
+[**KSPROPERTY**](/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)
 
-[**KSPROPERTY\_VIDEOPROCAMP\_S**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_videoprocamp_s)
+[**KSPROPERTY \_ VIDEOPROCAMP \_ S**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_videoprocamp_s)
 
-[**PowerlineFrequency 枚举**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.PowerlineFrequency)
-
- 
+[**PowerlineFrequency 枚举**](/uwp/api/Windows.Media.Capture.PowerlineFrequency)
 
  
-
-
-
-
-
 

@@ -9,12 +9,12 @@ keywords:
 - set 方法 WDK KMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 29e2bfe3c28fbb987e00ad4e0c2c8bbc7045c921
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: d22c5edd1beb54642cf2730a0470ca47952625df
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72845137"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89186735"
 ---
 # <a name="framework-object-properties"></a>框架对象属性
 
@@ -24,17 +24,11 @@ ms.locfileid: "72845137"
 
 大多数框架对象都包含属性集。 属性表示可用于驱动程序的信息。 从驱动程序的角度来看，某些属性是只读的，而有些则是可读/写的。
 
-对于每个可读属性，框架定义一个 "get" 方法，驱动程序可调用该[方法](framework-object-methods.md)来检索属性的值。 每个 "get" 方法返回属性的当前值。
+对于每个可读属性，框架定义一个 "get" 方法，驱动程序可调用该 [方法](framework-object-methods.md) 来检索属性的值。 每个 "get" 方法返回属性的当前值。
 
 对于每个可写属性，框架定义一个 "set" 方法，驱动程序可调用该方法来修改属性的值。 驱动程序提供属性的新值作为 "set" 方法的输入参数。
 
-例如，框架设备对象定义了两个方法： [**WdfDeviceGetDeviceState**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdevicegetdevicestate)和[**WdfDeviceSetDeviceState**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdevicesetdevicestate)，驱动程序可调用该方法来获取或设置设备的即插即用（PnP）状态。
+例如，框架设备对象定义了两个方法： [**WdfDeviceGetDeviceState**](/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdevicegetdevicestate) 和 [**WdfDeviceSetDeviceState**](/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdevicesetdevicestate)，驱动程序可调用该方法来获取或设置设备即插即用 (PnP) 状态。
 
  
-
- 
-
-
-
-
 

@@ -4,88 +4,83 @@ description: Storport 微型端口驱动程序中的错误处理
 ms.assetid: 23ea8c36-56cf-45ae-a066-765d3a91b542
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4302a93969dffe0f83c66d979aae3d697cc51d99
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 8d2a47606f1c0a7258c8a6eba2275ee307d672e2
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72844554"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89186431"
 ---
 # <a name="error-handling-in-storport-miniport-drivers"></a>Storport 微型端口驱动程序中的错误处理
 
 
-每个 Storport 微型端口驱动程序必须通知系统端口驱动程序以下类型的 SCSI 错误。 应在**SrbStatus**成员中设置这些错误，然后驱动程序才能完成发生错误时正在处理的 SRB：
+每个 Storport 微型端口驱动程序必须通知系统端口驱动程序以下类型的 SCSI 错误。 应在 **SrbStatus** 成员中设置这些错误，然后驱动程序才能完成发生错误时正在处理的 SRB：
 
--   SRB\_状态\_错误（如果 HBA 返回非特定总线错误）
+-   \_ \_ 如果 HBA 返回非特定总线错误，则 (SRB 状态错误) 
 
--   SRB\_状态\_奇偶校验\_错误
+-   SRB \_ 状态 \_ 奇偶校验 \_ 错误
 
--   SRB\_状态\_意外\_总线\_免费
+-   SRB \_ 状态 \_ 意外的 \_ 总线 \_ 可用
 
--   SRB\_状态\_选择\_超时
+-   SRB \_ 状态 \_ 选择 \_ 超时
 
--   SRB\_状态\_命令\_超时
+-   SRB \_ 状态 \_ 命令 \_ 超时
 
--   已拒绝 SRB\_状态\_消息\_
+-   已 \_ 拒绝 SRB 状态 \_ 消息 \_
 
--   SRB\_状态\_无\_设备
+-   SRB \_ 状态 \_ 无 \_ 设备
 
--   SRB\_状态\_无\_HBA
+-   SRB \_ 状态 \_ 无 \_ HBA
 
--   SRB\_状态\_数据\_超限（也为不足返回）
+-   SRB \_ 状态 \_ 数据 \_ 超限 (也为不足) 返回
 
--   SRB\_状态\_阶段\_序列\_故障
+-   SRB \_ 状态 \_ 阶段 \_ 序列 \_ 失败
 
--   SRB\_状态\_繁忙（TID 繁忙）
+-   SRB \_ 状态 \_ (TID 繁忙) 
 
-对于数据不足，微型端口驱动程序必须更新 SRB 的**DataTransferLength** ，以指示实际传输的数据量。
+对于数据不足，微型端口驱动程序必须更新 SRB 的 **DataTransferLength** ，以指示实际传输的数据量。
 
-此外，小型端口驱动程序应使用以下准则来记录前面的一些错误，方法是将 SRB 传递到[**StorPortLogError**](https://docs.microsoft.com/windows-hardware/drivers/ddi/storport/nf-storport-storportlogerror)：
+此外，小型端口驱动程序应使用以下准则来记录前面的一些错误，方法是将 SRB 传递到 [**StorPortLogError**](/windows-hardware/drivers/ddi/storport/nf-storport-storportlogerror)：
 
-记录 SRB 的驱动程序编写器\_状态\_错误的错误消息。
+记录 SRB 状态错误的驱动程序编写器错误 \_ \_ 。
 
-对于 SRB\_状态始终记录错误\_奇偶校验\_错误。
+对于 SRB \_ 状态 \_ 奇偶校验错误始终记录错误 \_ 。
 
-始终记录 SRB\_状态的错误\_意外\_总线\_免费。
+对于 SRB 状态 "意外的 \_ \_ \_ 总线可用"，始终记录错误 \_ 。
 
-对于 SRB\_状态\_选择\_超时，始终记录错误。
+对于 SRB \_ 状态选择超时，始终记录错误 \_ \_ 。
 
-始终记录 SRB\_状态的错误\_命令\_超时。
+对于 SRB \_ 状态命令超时，始终记录错误 \_ \_ 。
 
-在发生溢出时，记录 SRB\_状态的错误\_数据\_超限，但不记录发生不足的情况。
+\_ \_ \_ 每当发生溢出但未发生不足时，记录 SRB 状态数据溢出的错误。
 
-对于 SRB\_状态应始终记录错误\_阶段\_序列\_失败。
+对于 SRB \_ 状态 \_ 阶段 \_ 序列失败，始终记录错误 \_ 。
 
-对于出现硬件错误\_繁忙\_状态，请始终记录错误。
+对于硬件错误，总是记录 SRB 状态的错误 \_ \_ 。
 
-若要记录错误，微型端口驱动程序使用以下系统定义的错误或警告代码之一调用[**StorPortLogError**](https://docs.microsoft.com/windows-hardware/drivers/ddi/storport/nf-storport-storportlogerror) ：
+若要记录错误，微型端口驱动程序使用以下系统定义的错误或警告代码之一调用 [**StorPortLogError**](/windows-hardware/drivers/ddi/storport/nf-storport-storportlogerror) ：
 
-SP\_总线\_奇偶校验\_错误映射到 SRB\_状态\_奇偶校验\_错误
+SP \_ 总线 \_ 奇偶校验 \_ 错误映射到 SRB \_ 状态 \_ 奇偶校验 \_ 错误
 
-SP\_意外\_断开连接（由目标逻辑单元）
+\_ \_ 目标逻辑单元 (的 SP 意外断开连接) 
 
-SP\_无效\_RESELECTION 映射到 SRB\_状态\_阶段\_序列\_失败或 SRB\_状态\_错误
+SP \_ 无效 \_ RESELECTION 映射到 SRB \_ 状态 \_ 阶段 \_ 序列 \_ 失败或 SRB \_ 状态 \_ 错误
 
-SP\_总线\_时间\_OUT 映射到 SRB\_状态\_选择\_超时
+SP \_ 总线 \_ 超时 \_ 映射到 SRB \_ 状态 \_ 选择 \_ 超时
 
-SP\_请求\_超时映射到 SRB\_状态\_命令\_超时
+SP \_ 请求 \_ 超时映射到 SRB \_ 状态 \_ 命令 \_ 超时
 
-SP\_协议\_错误映射到 SRB\_状态\_阶段\_选择\_失败，SRB\_状态\_意外\_总线\_可用或 SRB\_状态\_数据超限条件\_超限
+SP \_ 协议 \_ 错误映射到 SRB \_ 状态 \_ 阶段 \_ 选择 \_ 失败，SRB \_ 状态 \_ 意外 \_ \_ 的可用总线，或 \_ \_ \_ 针对超限情况 SRB 状态数据溢出
 
-SP\_内部\_适配器\_错误映射到 SRB\_状态\_错误
+SP \_ 内部 \_ 适配器 \_ 错误映射到 SRB \_ 状态 \_ 错误
 
-SP\_IRQ\_不\_响应（警告微型端口驱动程序已检测到 HBA 不再产生中断请求）
+SP \_ IRQ \_ 未 \_ 响应 (警告微型端口驱动程序已检测到 HBA 不再产生中断请求) 
 
-SP\_\_固件错误，固件为*固件*时\_错误）
+SP \_ 错误 \_ fw \_ 错误，其中 fw 是 *固件*) 
 
-SP\_错误\_固件\_警告
+SP \_ 错误 \_ FW \_ 警告
 
-[**StorPortLogError**](https://docs.microsoft.com/windows-hardware/drivers/ddi/storport/nf-storport-storportlogerror)分配错误日志数据包，对其进行设置，并在代表微型端口驱动程序的事件日志中记录 i/o 错误。 系统管理员或用户可以通过检查系统事件日志，并在必要时重新配置、修复或更换 HBA 来监视 HBA 的状况。
-
- 
+[**StorPortLogError**](/windows-hardware/drivers/ddi/storport/nf-storport-storportlogerror) 分配错误日志数据包，对其进行设置，并在代表微型端口驱动程序的事件日志中记录 i/o 错误。 系统管理员或用户可以通过检查系统事件日志，并在必要时重新配置、修复或更换 HBA 来监视 HBA 的状况。
 
  
-
-
-
 

@@ -9,16 +9,16 @@ keywords:
 - 唤醒功能 WDK 电源管理
 - 设备唤醒 ups WDK 电源管理
 - IRP_MN_WAIT_WAKE
-- 接收等待/唤醒 Irp
+- 正在接收等待/唤醒 Irp
 - 等待/唤醒 Irp WDK 电源管理，接收
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: dee40b223b5127136f23b8d83e9b25185f12ce80
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 2ec24fd70c64a36b354d2362865e17919cfbc003
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67378740"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89186221"
 ---
 # <a name="receiving-a-waitwake-irp"></a>接收等待/唤醒 IRP
 
@@ -26,14 +26,9 @@ ms.locfileid: "67378740"
 
 
 
-所有即插即用驱动程序必须准备好接收具有细微的 IRP 代码 power Irp [ **IRP\_MN\_等待\_唤醒**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-wait-wake)。 驱动程序处理等待/唤醒 IRP 的方式取决于其设备堆栈，它控制的设备和从其其设备支持唤醒的特定状态的类型中的位置。
+所有 PnP 驱动程序必须准备好接收具有次要 IRP 代码 [**irp \_ MN \_ 等待 \_ 唤醒**](./irp-mn-wait-wake.md)的电源 irp。 驱动程序处理等待/唤醒 IRP 的方式取决于其在设备堆栈中的位置、设备的类型 () 控制的类型，以及设备支持唤醒的特定状态。
 
-在本部分中的主题提供用于处理基于驱动程序的类型和其级别的等待/唤醒支持此 IRP 的指导原则。
-
- 
+本节中的主题提供了有关基于驱动程序类型及其等待/唤醒支持级别处理此 IRP 的指导原则。
 
  
-
-
-
 

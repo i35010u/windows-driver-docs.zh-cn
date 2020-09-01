@@ -13,12 +13,12 @@ keywords:
 - 关闭调度例程 WDK 内核
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d5ccca63f626ea18473555e8154f9de9a630c4df
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 6231a72436b33355f94b646dd3cd58ddee32d710
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72836362"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89185991"
 ---
 # <a name="separate-dispatchcreate-and-dispatchclose-routines"></a>独立的 DispatchCreate 和 DispatchClose 例程
 
@@ -26,26 +26,21 @@ ms.locfileid: "72836362"
 
 
 
-用于[**IRP\_mj**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-create)的驱动程序*调度*例程\_CREATE 和[**IRP\_MJ\_关闭**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-close)请求的执行操作可能不只是完成\_状态为 "成功" 的输入 IRP。 有关详细信息，请参阅[完成 irp](completing-irps.md)。
+对于[**IRP \_ mj \_ CREATE**](./irp-mj-create.md)和[**irp \_ mj \_ 关闭**](./irp-mj-close.md)请求，驱动程序的*调度*例程只需完成输入 IRP，状态为 " \_ 成功"。 有关详细信息，请参阅 [完成 irp](completing-irps.md)。
 
-用于**IRP\_mj**的另一个驱动程序*调度*例程\_创建和**IRP\_MJ\_关闭**请求可能会执行更多操作，具体取决于基础设备驱动程序或基础设备。 请考虑以下方案：
+用于**IRP \_ mj \_ CREATE**和**irp \_ mj \_ 关闭**请求的另一个驱动程序*调度*例程可能会执行更多操作，具体取决于基础设备驱动程序或基础设备。 请考虑以下方案：
 
-- 收到 create 请求后，类驱动程序可以初始化内部队列，并将[**IRP\_MJ 发送\_内部\_设备\_控制**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-internal-device-control)请求向下发送到请求设备配置的相应端口驱动程序对控制器端口的信息或独占访问权限。
+- 收到 create 请求后，类驱动程序可以初始化内部队列并将 [**IRP \_ MJ \_ 内部 \_ 设备 \_ 控制**](./irp-mj-internal-device-control.md) 请求发送到相应的端口驱动程序，该驱动程序请求设备配置信息或独占访问控制器端口。
 
-- **\_MJ\_"关闭**" 时，将显示对与目标设备对象相关联的文件对象的最后引用是否已被删除。 这意味着，已关闭文件对象的所有句柄，并已完成或取消所有未完成的 i/o 请求。
+- 如果收到 **IRP \_ MJ \_ 关闭** ，则表明已删除对与目标设备对象相关联的文件对象的最后一个引用。 这意味着，已关闭文件对象的所有句柄，并已完成或取消所有未完成的 i/o 请求。
 
-- 收到 create 请求后，不常使用的设备的驱动程序可能会调用[**MmLockPagableCodeSection**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-mmlockpagablecodesection) ，使其成为处理其他**IRP\_MJ\_* XXX*** 请求的一些驱动程序例程。 收到倒数 close 请求时，驱动程序可能会通过使此类驱动程序的设备对象的所有文件对象句柄都关闭后，使其可分页图像部分分页出去，来调用[**MmUnlockPagableImageSection**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-mmunlockpagableimagesection)以节省系统内存。
+- 收到 create 请求后，不常使用的设备的驱动程序可能会调用 [**MmLockPagableCodeSection**](/windows-hardware/drivers/ddi/wdm/nf-wdm-mmlockpagablecodesection) ，使其成为一些处理其他 **IRP \_ MJ \_ * XXX*** 请求的驱动程序例程。 收到倒数 close 请求时，驱动程序可能会调用 [**MmUnlockPagableImageSection**](/windows-hardware/drivers/ddi/wdm/nf-wdm-mmunlockpagableimagesection) ，通过使此类驱动程序的设备 (对象的所有文件对象句柄都已关闭) 关闭，来节省系统内存。
 
-某些驱动程序只为对称处理**IRP\_MJ\_关闭**请求，因为在受保护的子系统或更高级别的驱动程序打开其设备对象之后，较低级别的驱动程序的设备对象将不会关闭，直到系统本身将关闭。 例如，键盘和鼠标驱动程序设置的设备对象表示在系统运行时必须正常运行的物理设备，因此，这些驱动程序可能具有最小的对称[*DispatchClose*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch)例程，也可能已合并[*DispatchCreateClose*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch)例程。
+某些驱动程序只为对称处理 **IRP \_ MJ \_ 关闭** 请求，因为在受保护的子系统或更高级别的驱动程序打开其设备对象之后，较低级别的驱动程序的设备对象将不会关闭，直到系统自行关闭。 例如，键盘和鼠标驱动程序设置设备对象，这些对象表示在系统运行时必须正常运行的物理设备，因此，这些驱动程序可能具有用于对称的最小 [*DispatchClose*](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch) 例程，也可能是 [*DispatchCreateClose*](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch) 例程的组合。
 
-如果由较低级别驱动程序控制的设备必须可供系统继续运行，则通常不会调用驱动程序的*DispatchClose*例程。 例如，某些系统磁盘驱动程序没有*DispatchClose*例程，但这些驱动程序通常具有[*DispatchFlushBuffers*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch)和[*DispatchShutdown*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch)例程，用于完成系统之前的任何未完成的文件 i/o 操作关闭。
+如果由较低级别驱动程序控制的设备必须可供系统继续运行，则通常不会调用驱动程序的 *DispatchClose* 例程。 例如，某些系统磁盘驱动程序没有 *DispatchClose* 例程，但这些驱动程序通常具有 [*DispatchFlushBuffers*](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch) 和 [*DispatchShutdown*](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch) 例程，用于在系统关闭之前完成任何未完成的文件 i/o 操作。
 
-尽管可以实现单独的[*DRIVER_DISPATCH*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch)和*DispatchClose*例程，但驱动程序有时会使用[单个 DispatchCreateClose 例程](a-single-dispatchcreateclose-routine.md)来处理创建和关闭请求。
-
- 
+尽管可以实现单独的 [*DRIVER_DISPATCH*](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch) 和 *DispatchClose* 例程，但驱动程序有时会使用 [单个 DispatchCreateClose 例程](a-single-dispatchcreateclose-routine.md) 来处理创建和关闭请求。
 
  
-
-
-
 

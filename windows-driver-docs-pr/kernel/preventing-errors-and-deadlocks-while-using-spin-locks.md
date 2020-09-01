@@ -10,12 +10,12 @@ keywords:
 - 旋转锁定 WDK 内核
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3b6bf678bf8c2ccd05b50ef8e29b847bb819c634
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 3be9f660a1770f2501170681bf8ec367968c20d7
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72838497"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89184989"
 ---
 # <a name="preventing-errors-and-deadlocks-while-using-spin-locks"></a>使用自旋锁时防止错误和死锁
 
@@ -23,11 +23,11 @@ ms.locfileid: "72838497"
 
 
 
-尽管驱动程序例程持有自旋锁，但它在不关闭系统的情况下不会导致硬件例外或引发软件异常。 换句话说，驱动程序的 ISR 和驱动程序在对[**KeSynchronizeExecution**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kesynchronizeexecution)的调用中提供的任何*SynchCritSection*例程不得导致错误或陷阱（如页面错误或算术异常），并且无法引发软件异常。 调用[**KeAcquireSpinLock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-keacquirespinlock)或[**KeAcquireInStackQueuedSpinLock**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff551899(v=vs.85))的例程也不会导致硬件异常或引发软件异常，直到它释放了其 executive 旋转锁，并且不再以 IRQL = 调度\_调配.
+尽管驱动程序例程持有自旋锁，但它在不关闭系统的情况下不会导致硬件例外或引发软件异常。 换句话说，驱动程序的 ISR 和驱动程序在对[**KeSynchronizeExecution**](/windows-hardware/drivers/ddi/wdm/nf-wdm-kesynchronizeexecution)的调用中提供的任何*SynchCritSection*例程不得导致错误或陷阱（如页面错误或算术异常），并且无法引发软件异常。 调用 [**KeAcquireSpinLock**](/windows-hardware/drivers/ddi/wdm/nf-wdm-keacquirespinlock) 或 [**KeAcquireInStackQueuedSpinLock**](/previous-versions/windows/hardware/drivers/ff551899(v=vs.85)) 的例程也不会导致硬件异常或引发软件异常，直到它释放了其 executive 旋转锁，并且不再以 IRQL = 调度 \_ 级别运行。
 
 ### <a name="pageable-data-and-support-routines"></a>可分页的数据和支持例程
 
-持有自旋锁时，驱动程序不能调用访问可分页数据的例程。 请记住，当且仅当在与调度\_级别严格小于调度的情况下执行时，驱动程序可以调用访问可分页数据的某些支持例程。 此 IRQL 限制会阻止在持有自旋锁的情况下调用这些支持例程。 对于任何特定支持例程的 IRQL 要求，请参阅例程的参考页。
+持有自旋锁时，驱动程序不能调用访问可分页数据的例程。 请记住，当且仅当在严格小于调度级别的 IRQL 执行时，驱动程序可以调用访问可分页数据的某些支持例程 \_ 。 此 IRQL 限制会阻止在持有自旋锁的情况下调用这些支持例程。 对于任何特定支持例程的 IRQL 要求，请参阅例程的参考页。
 
 ### <a name="recursion"></a>递归
 
@@ -39,7 +39,7 @@ ms.locfileid: "72838497"
 
 -   当递归例程持有自旋锁时，如果递归可能导致死锁或可能导致调用方持有自旋锁的时间超过25微秒，则另一个驱动程序例程不得调用递归例程。
 
-有关递归驱动程序例程的详细信息，请参阅[使用内核堆栈](using-the-kernel-stack.md)。
+有关递归驱动程序例程的详细信息，请参阅 [使用内核堆栈](using-the-kernel-stack.md)。
 
 ### <a name="nested-spin-lock-acquisitions"></a>嵌套旋转锁获取
 
@@ -55,12 +55,7 @@ ms.locfileid: "72838497"
 
 一般情况下，应避免使用嵌套自旋锁来保护重叠子集或共享数据和资源的离散集。 考虑当驱动程序使用两个执行自旋锁来保护离散资源（例如一对可能由各种驱动程序例程单独设置并进行设置的计时器对象）时可能发生的情况。 该驱动程序会在 SMP 计算机中间歇性地死锁，每两个例程（每个例程包含一个旋转锁）尝试获取其他旋转锁。
 
-有关获取嵌套自旋锁的详细信息，请参阅[锁、死锁和同步](https://go.microsoft.com/fwlink/p/?linkid=57456 )。
+有关获取嵌套自旋锁的详细信息，请参阅 [锁、死锁和同步](https://go.microsoft.com/fwlink/p/?linkid=57456 )。
 
  
-
- 
-
-
-
 

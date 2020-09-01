@@ -4,49 +4,43 @@ description: 在框架外部处理 WDM IRP
 ms.assetid: 43e1df0c-c0d1-4d41-87de-9f8f5831fb19
 keywords:
 - WDM Irp WDK KMDF
-- WDM Irp WDK KMDF，framework 外部
+- WDM Irp WDK KMDF，框架外
 - Irp WDK KMDF
-- Irp WDK KMDF，framework 外部
-- I/O 请求数据包 WDK KMDF
+- KMDF-框架外的 Irp WDK
+- I/o 请求数据包 WDK KMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bf651b388619750becdf41961e1b4cc5e448091d
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: cfc6d923114b0f2cb126fc0999d844cbe736f02e
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67382846"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89187211"
 ---
 # <a name="handling-wdm-irps-outside-of-the-framework"></a>在框架外部处理 WDM IRP
 
 
 \[仅适用于 KMDF\]
 
-时 I/O 管理器提供对基于 framework 的驱动程序的 I/O 请求数据包 (IRP)，框架截获 IRP，然后进行以下项之一：
+当 i/o 管理器将 i/o 请求数据包 (IRP) 到基于框架的驱动程序时，框架会截获 IRP，然后执行下列操作之一：
 
--   处理 IRP。 例如，框架处理包含的 Irp [ **IRP\_MJ\_PNP** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-pnp)并[ **IRP\_MJ\_电源** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-power)主要 I/O 函数代码。 在处理这些 Irp，框架可以通过调用回调函数的驱动程序的事件通信与驱动程序。
+-   处理 IRP。 例如，框架处理包含 [**irp \_ mj \_ PNP**](../kernel/irp-mj-pnp.md) 和 [**irp \_ mj \_ POWER**](../kernel/irp-mj-power.md) 重大 i/o 函数代码的 irp。 处理这些 Irp 时，框架可能会通过调用驱动程序的事件回调函数与驱动程序通信。
 
--   为 IRP 创建一个框架请求对象，并将请求对象传递给驱动程序的 I/O 队列之一，以便该驱动程序可以接收它，通常在请求处理程序，并对其进行处理。 该框架将处理这种方式中的读取、 写入和设备 I/O 控制请求。
+-   为 IRP 创建框架请求对象，并将请求对象传递给驱动程序的一个 i/o 队列，以便驱动程序可以接收该对象（通常在请求处理程序中），并对其进行处理。 框架以这种方式处理读取、写入和设备 i/o 控制请求。
 
--   将 IRP 传递给下一个较低驱动程序 （如果您的驱动程序筛选器驱动程序） 或完成状态将 status 值 IRP\_无效\_设备\_因为 IRP 包含 I/O 请求 （如果您的驱动程序不是筛选器驱动程序）框架不支持的函数代码。
+-   如果你的驱动程序是筛选器驱动程序，则将 IRP 传递到下一个较低的驱动程序 (如果你的驱动程序是筛选器驱动程序) ，或如果你的驱动程序不是筛选器) 驱动程序，则以状态 "无效设备请求 (" 的状态值完成 IRP， \_ \_ \_ 因为 IRP 包含框架不支持的 i/o 函数代码。
 
-有时一个驱动程序必须处理框架不支持一个 I/O 函数代码。
+有时，驱动程序必须处理框架不支持的 i/o 函数代码。
 
-很少，驱动程序可能需要进行预处理 IRP，该框架将处理它，或该驱动程序可能需要后 framework postprocess IRP 和较低级别的驱动程序已完成处理之前。
+通常，驱动程序可能需要在框架处理 IRP 之前对其进行预处理，或者驱动程序在框架和低级驱动程序完成处理后可能需要 postprocess IRP。
 
-预处理的一部分，驱动程序可能需要将转发到特定的 I/O 队列 IRP。
+在预处理过程中，驱动程序可能需要将 IRP 转发到特定的 i/o 队列。
 
-以下主题介绍了这些情况下：
+以下主题介绍了这些情况：
 
--   [处理 IRP 框架不支持](handling-an-irp-that-the-framework-does-not-support.md)
--   [预处理和后处理 Irp](preprocessing-and-postprocessing-irps.md)
--   [调度到的 I/O 队列的 Irp](dispatching-irps-to-i-o-queues.md)
-
- 
+-   [处理框架不支持的 IRP](handling-an-irp-that-the-framework-does-not-support.md)
+-   [对 IRP 进行预处理和后处理](preprocessing-and-postprocessing-irps.md)
+-   [将 IRP 调度到 I/O 队列](dispatching-irps-to-i-o-queues.md)
 
  
-
-
-
-
 

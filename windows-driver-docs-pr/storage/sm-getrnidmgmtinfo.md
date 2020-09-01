@@ -1,6 +1,6 @@
 ---
-title: SM\_GetRNIDMgmtInfo 函数
-description: SM\_GetRNIDMgmtInfo WMI 方法检索与光纤通道适配器关联的 FC3 管理信息。
+title: SM \_ GetRNIDMgmtInfo 函数
+description: SM \_ GETRNIDMGMTINFO WMI 方法检索与光纤通道适配器关联的 FC3 管理信息。
 ms.assetid: 0d414701-6e60-4d9d-85ae-f82b742ee907
 keywords:
 - SM_GetRNIDMgmtInfo 函数存储设备
@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 69296d89c49a54f5a0e43cf8560af3bc5fe8d58c
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 8f6f2a944c66b84880e9495330e1e61344a05c3a
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72845482"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89186409"
 ---
-# <a name="sm_getrnidmgmtinfo-function"></a>SM\_GetRNIDMgmtInfo 函数
+# <a name="sm_getrnidmgmtinfo-function"></a>SM \_ GetRNIDMgmtInfo 函数
 
 
-SM\_GetRNIDMgmtInfo WMI 方法检索与光纤通道适配器关联的 FC3 管理信息。
+SM \_ GETRNIDMGMTINFO WMI 方法检索与光纤通道适配器关联的 FC3 管理信息。
 
 <a name="syntax"></a>语法
 ------
@@ -40,7 +40,7 @@ void SM_GetRNIDMgmtInfo(
 ----------
 
 *HBAStatus*   
-一个指示操作状态的 WMI 限定符值。 有关允许值及其说明的列表，请参阅[HBA\_状态](hba-status.md)。 微型端口驱动程序在 SM\_GetRNIDMgmtInfo\_OUT 结构的 HBAStatus 成员中返回此信息。
+一个指示操作状态的 WMI 限定符值。 有关允许值及其说明的列表，请参阅 [HBA \_ 状态](hba-status.md)。 微型端口驱动程序在 SM \_ GetRNIDMgmtInfo OUT 结构的 HBAStatus 成员中返回此信息 \_ 。
 
 *MgmtInfo*   
 HBAFC3MgmtInfo 类型的结构，用于保存与光纤通道适配器关联的 FC3 管理信息。
@@ -53,7 +53,7 @@ HBAFC3MgmtInfo 类型的结构，用于保存与光纤通道适配器关联的 F
 <a name="remarks"></a>备注
 -------
 
-此 WMI 方法属于 MS\_SM\_FabricAndDomainManagementMethods WMI 类。
+此 WMI 方法属于 MS \_ SM \_ FabricAndDomainManagementMethods WMI 类。
 
 <a name="requirements"></a>要求
 ------------
@@ -66,7 +66,7 @@ HBAFC3MgmtInfo 类型的结构，用于保存与光纤通道适配器关联的 F
 <tbody>
 <tr class="odd">
 <td align="left"><p>目标平台</p></td>
-<td align="left">桌面设备</td>
+<td align="left">“桌面”</td>
 </tr>
 <tr class="even">
 <td align="left"><p>标头</p></td>
@@ -78,16 +78,9 @@ HBAFC3MgmtInfo 类型的结构，用于保存与光纤通道适配器关联的 F
 ## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
-[HBA\_状态](hba-status.md)
+[HBA \_ 状态](hba-status.md)
 
-[**SM\_GetRNIDMgmtInfo\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_sm_getrnidmgmtinfo_out)
-
- 
+[**SM \_ GetRNIDMgmtInfo \_**](/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_sm_getrnidmgmtinfo_out)
 
  
-
-
-
-
-
 

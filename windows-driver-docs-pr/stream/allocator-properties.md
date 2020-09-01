@@ -7,17 +7,17 @@ keywords:
 - PROPSETID_ALLOCATOR_CONTROL
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9a3f5053e9951aca7b0d5d09e1b4529615d9d2ba
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: b1f229e27bf2c0ac3d9e51f21a7a8350c86a3d47
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386774"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89186859"
 ---
 # <a name="allocator-properties"></a>分配器属性
 
 
-[PROPSETID\_ALLOCATOR\_控制](https://docs.microsoft.com/windows-hardware/drivers/stream/propsetid-allocator-control)属性集包含与控制的分配和操作的视频端口图面相关的属性。 用户模式下的筛选器，例如覆盖 Mixer 中，使用 PROPSETID\_分配器\_控件。 下表描述了属性属于 PROPSETID\_分配器\_控件属性集。
+[PROPSETID \_ 分配器 \_ 控件](./propsetid-allocator-control.md)属性集包含与控制视频端口图面的分配和操作相关的属性。 用户模式筛选器，如覆盖混音器，使用 PROPSETID \_ 分配器 \_ 控件。 下表描述了属于 PROPSETID \_ 分配器 \_ 控件属性集的属性。
 
 <table>
 <colgroup>
@@ -32,20 +32,20 @@ ms.locfileid: "67386774"
 </thead>
 <tbody>
 <tr class="odd">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-allocator-control-honor-count" data-raw-source="[&lt;strong&gt;KSPROPERTY_ALLOCATOR_CONTROL_HONOR_COUNT&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-allocator-control-honor-count)"><strong>KSPROPERTY_ALLOCATOR_CONTROL_HONOR_COUNT</strong></a></p></td>
-<td><p>控制如何筛选器确定要分配的视频端口覆盖图面数。</p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-allocator-control-honor-count" data-raw-source="[&lt;strong&gt;KSPROPERTY_ALLOCATOR_CONTROL_HONOR_COUNT&lt;/strong&gt;](./ksproperty-allocator-control-honor-count.md)"><strong>KSPROPERTY_ALLOCATOR_CONTROL_HONOR_COUNT</strong></a></p></td>
+<td><p>控制筛选器如何确定要分配的视频端口覆盖面的数目。</p></td>
 </tr>
 <tr class="even">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-allocator-control-surface-size" data-raw-source="[&lt;strong&gt;KSPROPERTY_ALLOCATOR_CONTROL_SURFACE_SIZE&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-allocator-control-surface-size)"><strong>KSPROPERTY_ALLOCATOR_CONTROL_SURFACE_SIZE</strong></a></p></td>
-<td><p>控件的维度的视频端口覆盖面。</p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-allocator-control-surface-size" data-raw-source="[&lt;strong&gt;KSPROPERTY_ALLOCATOR_CONTROL_SURFACE_SIZE&lt;/strong&gt;](./ksproperty-allocator-control-surface-size.md)"><strong>KSPROPERTY_ALLOCATOR_CONTROL_SURFACE_SIZE</strong></a></p></td>
+<td><p>控制视频端口重叠图面的尺寸。</p></td>
 </tr>
 <tr class="odd">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-allocator-control-capture-caps" data-raw-source="[&lt;strong&gt;KSPROPERTY_ALLOCATOR_CONTROL_CAPTURE_CAPS&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-allocator-control-capture-caps)"><strong>KSPROPERTY_ALLOCATOR_CONTROL_CAPTURE_CAPS</strong></a></p></td>
-<td><p>介绍的视频端口的捕获功能。</p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-allocator-control-capture-caps" data-raw-source="[&lt;strong&gt;KSPROPERTY_ALLOCATOR_CONTROL_CAPTURE_CAPS&lt;/strong&gt;](./ksproperty-allocator-control-capture-caps.md)"><strong>KSPROPERTY_ALLOCATOR_CONTROL_CAPTURE_CAPS</strong></a></p></td>
+<td><p>描述视频端口的捕获功能。</p></td>
 </tr>
 <tr class="even">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-allocator-control-capture-interleave" data-raw-source="[&lt;strong&gt;KSPROPERTY_ALLOCATOR_CONTROL_CAPTURE_INTERLEAVE&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-allocator-control-capture-interleave)"><strong>KSPROPERTY_ALLOCATOR_CONTROL_CAPTURE_INTERLEAVE</strong></a></p></td>
-<td><p>返回在视频端口支持交错捕获。</p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-allocator-control-capture-interleave" data-raw-source="[&lt;strong&gt;KSPROPERTY_ALLOCATOR_CONTROL_CAPTURE_INTERLEAVE&lt;/strong&gt;](./ksproperty-allocator-control-capture-interleave.md)"><strong>KSPROPERTY_ALLOCATOR_CONTROL_CAPTURE_INTERLEAVE</strong></a></p></td>
+<td><p>如果视频端口支持交错捕获，则返回。</p></td>
 </tr>
 </tbody>
 </table>
@@ -53,9 +53,4 @@ ms.locfileid: "67386774"
  
 
  
-
- 
-
-
-
 

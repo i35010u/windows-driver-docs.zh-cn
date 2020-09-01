@@ -11,12 +11,12 @@ keywords:
 - 未能启动 WDK PnP
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 332a15b203efc5e357474696ac2f37d963ead42f
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 9d5a9516792fbb8963b6e48e1bc1d84f29b21718
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72836240"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89185501"
 ---
 # <a name="starting-a-device"></a>启动设备
 
@@ -24,15 +24,15 @@ ms.locfileid: "72836240"
 
 
 
-PnP 管理器发送[**IRP\_MN\_开始**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-start-device)向驱动程序\_设备请求，以启动新枚举的设备或重新启动已停止的、用于资源重新平衡的现有设备。
+PnP 管理器将 [**IRP \_ MN \_ 启动 \_ 设备**](./irp-mn-start-device.md) 请求发送到驱动程序，以启动新枚举的设备或重新启动已停止的、用于资源重新平衡的现有设备。
 
-函数和筛选器驱动程序必须设置一个[*IoCompletion*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-io_completion_routine)例程，传递**IRP\_MN\_** 在设备堆栈中\_设备请求，并推迟其启动操作，直到所有较低版本的驱动程序都已完成 IRP。 父总线驱动程序（设备堆栈中的底部驱动程序）必须是第一个要在设备上执行其启动操作的驱动程序，然后其他驱动程序才能访问设备。
+函数和筛选器驱动程序必须设置 [*IoCompletion*](/windows-hardware/drivers/ddi/wdm/nc-wdm-io_completion_routine) 例程，将 **IRP \_ MN \_ START \_ device** 请求按设备堆栈，并推迟其启动操作，直到所有较低版本的驱动程序都已完成 IRP。 父总线驱动程序（设备堆栈中的底部驱动程序）必须是第一个要在设备上执行其启动操作的驱动程序，然后其他驱动程序才能访问设备。
 
 若要确保启动操作的正确顺序，Windows 2000 和更高版本的 Windows 上的 PnP 管理器推迟公开设备接口，并阻止为设备创建请求，直到开始 IRP 成功。
 
-如果设备的驱动程序失败， **IRP\_MN\_启动\_设备**请求，则 PnP 管理器会将[**IRP\_MN 发送到设备堆栈\_删除\_设备**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-remove-device)请求（在 windows 2000 和更高版本的 windows 上）。 为响应此 IRP，设备的驱动程序将撤消其启动操作（如果已成功启动 IRP），撤消其[*AddDevice*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_add_device)操作，并脱离设备堆栈。 PnP 管理器将此类设备标记为 "启动失败"。
+如果设备的驱动程序无法通过 **irp \_ MN \_ 启动 \_ 设备** 请求，则 PnP 管理器会在 windows 2000 和更高版本的 windows) 上向设备堆栈 (发送 [**IRP \_ MN \_ 删除 \_ 设备**](./irp-mn-remove-device.md) 请求。 对于此 IRP，如果设备的驱动程序成功启动 IRP) 、撤消其 [*AddDevice*](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_add_device) 操作并从设备堆栈分离，则设备的驱动程序将撤消其启动操作 (。 PnP 管理器将此类设备标记为 "启动失败"。
 
-本部分包括以下主题：
+本部分涵盖了以下主题：
 
 [在函数驱动程序中启动设备](starting-a-device-in-a-function-driver.md)
 
@@ -40,12 +40,7 @@ PnP 管理器发送[**IRP\_MN\_开始**](https://docs.microsoft.com/windows-hard
 
 [在总线驱动程序中启动设备](starting-a-device-in-a-bus-driver.md)
 
-[用于启动设备的设计指南](design-guidelines-for-starting-devices.md)
+[启动设备的设计指导原则](design-guidelines-for-starting-devices.md)
 
  
-
- 
-
-
-
 

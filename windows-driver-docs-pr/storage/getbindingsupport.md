@@ -15,12 +15,12 @@ api_type:
 - LibDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 1cb462f87b521ca83e316ace0d68eec018371938
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: b490255c066c63b9c4afa9b4ef570342505f9967
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72837851"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89185449"
 ---
 # <a name="getbindingsupport-function"></a>GetBindingSupport 函数
 
@@ -41,14 +41,14 @@ void GetBindingSupport(
 <a name="parameters"></a>参数
 ----------
 
-*PortWWN\[8\]*    
+*PortWWN \[ 8\]*   
 一个全球名称，指示要检索其持久性绑定的端口。
 
 *HBAStatus*   
-返回时，包含操作的状态。 有关允许值及其说明的列表，请参阅[HBA\_状态](hba-status.md)。 微型端口驱动程序在[**GetBindingSupport\_OUT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_getbindingsupport_out)结构的**HBAStatus**成员中返回此信息。
+返回时，包含操作的状态。 有关允许值及其说明的列表，请参阅 [HBA \_ 状态](hba-status.md)。 微型端口驱动程序在[**GetBindingSupport \_ OUT**](/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_getbindingsupport_out)结构的**HBAStatus**成员中返回此信息。
 
 *BindType*   
-指示 HBA 及其微型端口驱动程序提供与永久性绑定相关的一组特定功能的位图。 有关此参数可以具有的值的列表，请参阅\_类型 WMI 类限定符[\_绑定 HBA](hba-bind-type.md)的说明。
+指示 HBA 及其微型端口驱动程序提供与永久性绑定相关的一组特定功能的位图。 有关此参数可以具有的值的列表，请参阅 [HBA \_ 绑定 \_ 类型](hba-bind-type.md) WMI 类限定符的说明。
 
 <a name="return-value"></a>返回值
 ------------
@@ -58,9 +58,9 @@ void GetBindingSupport(
 <a name="remarks"></a>备注
 -------
 
-此**GetBindingSupport**方法将返回当前启用的绑定功能，而[**GetBindingCapability**](getbindingcapability.md)方法指示该端口的绑定功能，而无需引用是否启用特定的绑定。
+此 **GetBindingSupport** 方法将返回当前启用的绑定功能，而 [**GetBindingCapability**](getbindingcapability.md) 方法指示该端口的绑定功能，而无需引用是否启用特定的绑定。
 
-此 WMI 方法属于[MSFC\_HBAFCPINFO WMI 类](msfc-hbafcpinfo-wmi-class.md)。
+此 WMI 方法属于 [MSFC \_ HBAFCPInfo WMI 类](msfc-hbafcpinfo-wmi-class.md)。
 
 <a name="requirements"></a>要求
 ------------
@@ -73,14 +73,14 @@ void GetBindingSupport(
 <tbody>
 <tr class="odd">
 <td align="left"><p>目标平台</p></td>
-<td align="left">桌面设备</td>
+<td align="left">“桌面”</td>
 </tr>
 <tr class="even">
 <td align="left"><p>标头</p></td>
-<td align="left">Hbapiwmi （包括 Hbapiwmi、Hbaapi 或 Hbaapi）。</td>
+<td align="left"> (包含 Hbapiwmi、Hbaapi 或 Hbaapi 的 Hbapiwmi) </td>
 </tr>
 <tr class="odd">
-<td align="left"><p>Library</p></td>
+<td align="left"><p>库</p></td>
 <td align="left">Hbaapi</td>
 </tr>
 </tbody>
@@ -93,16 +93,9 @@ void GetBindingSupport(
 
 [**GetBindingSupport**](getbindingsupport.md)
 
-[**GetBindingSupport\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_getbindingsupport_in)
+[**GetBindingSupport \_**](/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_getbindingsupport_in)
 
-[**GetBindingSupport\_OUT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_getbindingsupport_out)
-
- 
+[**GetBindingSupport \_**](/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_getbindingsupport_out)
 
  
-
-
-
-
-
 

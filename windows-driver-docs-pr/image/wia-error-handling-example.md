@@ -4,16 +4,16 @@ description: WIA 错误处理示例
 ms.assetid: 7dc4b15e-40db-4e64-be41-d6bcc44603c6
 ms.date: 05/29/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: faadb49f20285d799a11f7f2d0c74557dcf0834a
-ms.sourcegitcommit: 609c5731b2db4c17b9959082c4621c001e012db1
+ms.openlocfilehash: 7b2b7b3e5f4fe0d81873f9b5fe395642d3df7602
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/30/2020
-ms.locfileid: "84223534"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89185007"
 ---
 # <a name="wia-error-handling-example"></a>WIA 错误处理示例
 
-有关发送设备状态消息的驱动程序的示例，请参阅[Windows 图像获取（WIA）驱动](https://docs.microsoft.com/samples/microsoft/windows-driver-samples/windows-image-acquisition-wia-driver-samples)程序示例中的*扩展 WIA 2.0 怪物驱动程序*示例。 此示例演示如何实现简单的错误处理程序。
+有关发送设备状态消息的驱动程序的示例，请参阅[Windows 映像获取 (WIA) 驱动程序示例](/samples/microsoft/windows-driver-samples/windows-image-acquisition-wia-driver-samples)中的*扩展 WIA 2.0 怪物驱动程序*示例。 此示例演示如何实现简单的错误处理程序。
 
 ## <a name="example-error-handling-extension"></a>示例：错误处理扩展插件
 

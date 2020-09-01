@@ -8,12 +8,12 @@ keywords:
 - 处理 mutex WDK AVStream
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a430808e2602c2978caf33d3e892413d8a2fd7cd
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: f564ebe04c43a745e34abc061945c70120d71abf
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72823751"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89186761"
 ---
 # <a name="processing-mutex-in-avstream"></a>在 AVStream 中处理互斥
 
@@ -25,18 +25,13 @@ ms.locfileid: "72823751"
 
 与其他两种类型的 mutex 一样，处理互斥体不会以递归方式获取。 这意味着，如果微型驱动程序尝试在处理时获取处理互斥体，则会发生死锁。
 
-不要使用处理互斥体来在很长一段时间内挂起处理。 改为直接使用**KSGATE * Xxx*** 函数操作处理控制入口。
+不要使用处理互斥体来在很长一段时间内挂起处理。 改为直接使用 **KSGATE * Xxx*** 函数操作处理控制入口。
 
 已获取处理互斥体的线程以后不应尝试获取筛选器控件互斥体。
 
 若要操作处理互斥体，请使用以下函数：
 
-[**KsFilterAcquireProcessingMutex**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/nf-ks-ksfilteracquireprocessingmutex)、 [**KsPinAcquireProcessingMutex**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/nf-ks-kspinacquireprocessingmutex)、 [**KsFilterReleaseProcessingMutex**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/nf-ks-ksfilterreleaseprocessingmutex)、 [**KsPinReleaseProcessingMutex**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/nf-ks-kspinreleaseprocessingmutex)
+[**KsFilterAcquireProcessingMutex**](/windows-hardware/drivers/ddi/ks/nf-ks-ksfilteracquireprocessingmutex)、 [**KsPinAcquireProcessingMutex**](/windows-hardware/drivers/ddi/ks/nf-ks-kspinacquireprocessingmutex)、 [**KsFilterReleaseProcessingMutex**](/windows-hardware/drivers/ddi/ks/nf-ks-ksfilterreleaseprocessingmutex)、 [**KsPinReleaseProcessingMutex**](/windows-hardware/drivers/ddi/ks/nf-ks-kspinreleaseprocessingmutex)
 
  
-
- 
-
-
-
 

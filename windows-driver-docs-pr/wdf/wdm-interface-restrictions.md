@@ -9,12 +9,12 @@ keywords:
 - 基于框架的驱动程序 WDK KMDF，WDM
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: aa7ed080c118df0c0fb4974384207a9c9eae944c
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: d51262c98885d99bf918c9beabb7338b9fb34af6
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72842795"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89186235"
 ---
 # <a name="wdm-interface-restrictions"></a>WDM 接口限制
 
@@ -26,13 +26,7 @@ ms.locfileid: "72842795"
 
 如果你的基于框架的驱动程序访问 WDM 接口，你必须了解以下限制：
 
--   基于框架的驱动程序不得使用[**IRP**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_irp)结构的**DriverContext**成员，因为框架使用此成员。
+-   基于框架的驱动程序不得使用[**IRP**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_irp)结构的**DriverContext**成员，因为框架使用此成员。
 
  
-
- 
-
-
-
-
 

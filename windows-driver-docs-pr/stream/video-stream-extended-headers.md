@@ -9,19 +9,19 @@ keywords:
 - 标题 WDK 视频捕获
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 80ccc8d328ee007d901a5ec3bd155b42e3fc9f02
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: e1c9107795144493587dbfcccc361d8f72349431
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72843664"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89186259"
 ---
 # <a name="video-stream-extended-headers"></a>视频流扩展标头
 
 
 视频捕获微型驱动程序在其输出流中使用扩展的标头来提供有关流和当前帧内容的辅助信息。 例如，图像流标头提供有关当前帧号、丢弃的帧数和字段极性标志的信息。 每个帧完成后，微型驱动程序会在扩展的标头中填充有关捕获的帧的辅助信息。
 
-Stream 类视频捕获微型驱动程序通过将[**HW\_STREAM\_对象**](https://docs.microsoft.com/windows-hardware/drivers/ddi/strmini/ns-strmini-_hw_stream_object)结构的**StreamHeaderMediaSpecific**成员设置为**sizeof** ，来指示其为 pin 提供此附加信息的能力以下两个结构中的。
+Stream 类视频捕获微型驱动程序通过将[**HW \_ 流 \_ 对象**](/windows-hardware/drivers/ddi/strmini/ns-strmini-_hw_stream_object)结构的**StreamHeaderMediaSpecific**成员设置为以下两个结构中的**sizeof**之一，指示其为 pin 提供此附加信息的能力。
 
 <table>
 <colgroup>
@@ -31,16 +31,16 @@ Stream 类视频捕获微型驱动程序通过将[**HW\_STREAM\_对象**](https:
 <thead>
 <tr class="header">
 <th>结构名称</th>
-<th>用途</th>
+<th>目标</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagks_frame_info" data-raw-source="[&lt;strong&gt;KS_FRAME_INFO&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagks_frame_info)"><strong>KS_FRAME_INFO</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagks_frame_info" data-raw-source="[&lt;strong&gt;KS_FRAME_INFO&lt;/strong&gt;](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagks_frame_info)"><strong>KS_FRAME_INFO</strong></a></p></td>
 <td><p>帧计数、删除帧计数、字段极性标志和 DirectDraw 表面控点。</p></td>
 </tr>
 <tr class="even">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagks_vbi_frame_info" data-raw-source="[&lt;strong&gt;KS_VBI_FRAME_INFO&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagks_vbi_frame_info)"><strong>KS_VBI_FRAME_INFO</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagks_vbi_frame_info" data-raw-source="[&lt;strong&gt;KS_VBI_FRAME_INFO&lt;/strong&gt;](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagks_vbi_frame_info)"><strong>KS_VBI_FRAME_INFO</strong></a></p></td>
 <td><p>VBI 格式、频道更改信息、视频标准。</p></td>
 </tr>
 </tbody>
@@ -48,14 +48,9 @@ Stream 类视频捕获微型驱动程序通过将[**HW\_STREAM\_对象**](https:
 
  
 
-如果 Stream 类微型驱动程序未提供此附加信息，则它应将**StreamHeaderMediaSpecific**设置为零。
+如果 Stream 类微型驱动程序未提供此附加信息，则它应将 **StreamHeaderMediaSpecific** 设置为零。
 
-有关何时在**StreamHeaderMediaSpecific**中指定值的详细信息，请参阅[流类别](stream-categories.md)。
-
- 
+有关何时在 **StreamHeaderMediaSpecific**中指定值的详细信息，请参阅 [流类别](stream-categories.md)。
 
  
-
-
-
 

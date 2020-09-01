@@ -4,12 +4,12 @@ description: METransformHaveOutput 事件表示设备转换在其某个输出流
 ms.assetid: 1CD11A3C-8181-4AF2-9AB3-10B04668CF1C
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: aeabd12b66fa5e9a84bd95470ee24caeb047d2dc
-ms.sourcegitcommit: 17c1bbc5ea0bef3bbc87794b030a073f905dc942
+ms.openlocfilehash: add9408eea081f4e80f7f09bcc189685101836a5
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88802692"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89185577"
 ---
 # <a name="metransformhaveoutput"></a>METransformHaveOutput
 
@@ -35,13 +35,7 @@ ms.locfileid: "88802692"
 
 设备 MFT 会接收数组中 **MFT \_ 输出 \_ 数据 \_ 缓冲区** 结构的输出流总数。 它应填充具有适当值的结构成员。 在 DTM 回拨到设备 MFT 以检索示例之前，若要响应 **METransformHaveOutput** 消息，如果另一个示例可用于另一个流，则设备 mft 将继续并发送此 ProcessOutput 调用中的示例。 DTM 将再次调用 ProcessOutput，但此时，如果没有任何样本，设备 MFT 就可能只返回没有样本的调用。
 
-有关详细信息，请参阅 [**IMFDeviceTransform：:P rocessoutput**](https://docs.microsoft.com/windows/win32/api/mftransform/nf-mftransform-imfdevicetransform-processoutput)。
+有关详细信息，请参阅 [**IMFDeviceTransform：:P rocessoutput**](/windows/win32/api/mftransform/nf-mftransform-imfdevicetransform-processoutput)。
 
  
-
- 
-
-
-
-
 

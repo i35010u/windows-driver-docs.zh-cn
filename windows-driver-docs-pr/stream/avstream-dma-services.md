@@ -12,12 +12,12 @@ keywords:
 - AVStream DMA WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b306c6294911a4d943048d6784a7b4f7e6d00add
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 9139f65bccdb35b5ad0ed7151b6b46d00cdee670
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72840625"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89186633"
 ---
 # <a name="avstream-dma-services"></a>AVStream DMA 服务
 
@@ -25,14 +25,9 @@ ms.locfileid: "72840625"
 
 
 
-若要开发使用直接内存访问（DMA）的 AVStream 微型驱动程序，你可以直接在用户模式捕获缓冲区中执行标准 DMA，或者可以实现通用缓冲区 DMA。
+若要开发 (DMA) 使用直接内存访问的 AVStream 微型驱动程序，可以直接将标准 DMA 写入用户模式捕获缓冲区，也可以实现常见的缓冲区 DMA。
 
-这两种方法都需要驱动程序通过调用[**IoGetDmaAdapter**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetdmaadapter)来获取 DMA 适配器。
-
- 
+这两种方法都需要驱动程序通过调用 [**IoGetDmaAdapter**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetdmaadapter)来获取 DMA 适配器。
 
  
-
-
-
 

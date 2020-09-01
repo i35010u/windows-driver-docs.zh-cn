@@ -7,12 +7,12 @@ keywords:
 - 设备特定的空闲检测 WDK 电源管理
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6c34f90a462cce823f4f7d6b1d90c05cd1a16253
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 18bc07b0b3f6cecfd7a227b7ba5e6697c5cac11a
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72838510"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89187056"
 ---
 # <a name="performing-device-specific-idle-detection"></a>执行特定于设备的空闲检测
 
@@ -22,12 +22,7 @@ ms.locfileid: "72838510"
 
 根据特定于设备的条件，驱动程序可以执行其自己的空闲检测，而不是使用 power manager 的空闲检测例程。
 
-此类驱动程序应将其空闲设备置于对当前系统电源状态有效的最小睡眠状态。 为此，驱动程序将使用次要 IRP 代码 IRP 请求一个电源 IRP （[**PoRequestPowerIrp**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-porequestpowerirp)） [ **\_MN\_设置\_电源**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-set-power)，指定设备应转换为的设备电源状态。
+此类驱动程序应将其空闲设备置于对当前系统电源状态有效的最小睡眠状态。 为此，驱动程序将请求 power IRP ([**PoRequestPowerIrp**](/windows-hardware/drivers/ddi/wdm/nf-wdm-porequestpowerirp)) ，并使用次要 Irp 代码 [**IRP \_ MN \_ 设置 \_ 电源**](./irp-mn-set-power.md)，并指定设备应转换为的设备电源状态。
 
  
-
- 
-
-
-
 

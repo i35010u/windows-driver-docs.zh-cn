@@ -8,35 +8,35 @@ keywords:
 - 电源管理 WDK UMDF，电源策略所有权
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 69d840ba35d04a148a9ad18dda887615d500f8fb
-ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
+ms.openlocfilehash: cbde5b0c6b985dc8ce23842a2ced46fd04b102a9
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/19/2019
-ms.locfileid: "75210907"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89185711"
 ---
 # <a name="power-policy-ownership-in-umdf"></a>UMDF 中的电源策略所有权
 
 
 [!include[UMDF 1 Deprecation](../includes/umdf-1-deprecation.md)]
 
-对于每个设备，设备驱动程序的一个（且只有一个）必须是设备的*电源策略所有者*。 电源策略所有者确定设备的相应[设备电源状态](https://docs.microsoft.com/windows-hardware/drivers/kernel/device-power-states)，并在设备的电源状态发生变化时将请求发送到设备的驱动程序堆栈。
+对于每个设备，一个 (并且只有一个设备的驱动程序) 必须是设备的 *电源策略所有者*。 电源策略所有者确定设备的相应 [设备电源状态](../kernel/device-power-states.md) ，并在设备的电源状态发生变化时将请求发送到设备的驱动程序堆栈。
 
-基于框架的驱动程序不包含请求设备电源状态更改的代码，因为框架提供了该代码。 默认情况下，每当系统进入[系统休眠状态](https://docs.microsoft.com/windows-hardware/drivers/kernel/system-sleeping-states)时，框架会要求设备总线的驱动程序将设备电源状态降低到 D3。 （如果设备提供唤醒功能，则驱动程序可以更改默认行为，以便框架将设备的睡眠状态设置为 D1 或 D2。）当系统电源恢复到[工作（S0）状态](https://docs.microsoft.com/windows-hardware/drivers/kernel/system-working-state-s0)时，框架会请求总线驱动程序将设备还原到其工作（D0）状态。
+基于框架的驱动程序不包含请求设备电源状态更改的代码，因为框架提供了该代码。 默认情况下，每当系统进入 [系统休眠状态](../kernel/system-sleeping-states.md)时，框架会要求设备总线的驱动程序将设备电源状态降低到 D3。  (你的驱动程序可以更改默认行为，以便在设备提供唤醒功能的情况下，框架将设备的睡眠状态设置为 D1 或 D2。 ) 系统电源恢复到其 [工作 (S0) 状态](../kernel/system-working-state-s0.md)时，框架会请求总线驱动程序将设备还原到其工作 (D0) 状态。
 
 电源策略所有者还负责启用和禁用以下设备功能：
 
--   设备处于空闲状态且系统保持正常运行（S0）状态时，进入[低功耗（睡眠）状态](https://docs.microsoft.com/windows-hardware/drivers/kernel/device-sleeping-states)的能力
+-   设备处于空闲状态，并且系统仍处于正常工作状态 (S0) 状态时，设备能够进入[低功耗 (睡眠) 状态](../kernel/device-sleeping-states.md)
 
 -   设备在检测到外部事件时能够从睡眠状态唤醒
 
 -   设备在检测到外部事件时能够从系统睡眠状态唤醒整个系统
 
-如果你的设备支持这些空闲关机和系统唤醒功能，则电源策略所有者还可以支持该框架的[IPowerPolicyCallbackWakeFromS0](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-ipowerpolicycallbackwakefroms0)和[IPowerPolicyCallbackWakeFromSx](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-ipowerpolicycallbackwakefromsx)接口，这些接口定义一组电源策略事件回调函数。
+如果你的设备支持这些空闲关机和系统唤醒功能，则电源策略所有者还可以支持该框架的 [IPowerPolicyCallbackWakeFromS0](/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-ipowerpolicycallbackwakefroms0) 和 [IPowerPolicyCallbackWakeFromSx](/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-ipowerpolicycallbackwakefromsx) 接口，这些接口定义一组电源策略事件回调函数。
 
-默认情况下，基于 UMDF 的驱动程序不是电源策略所有者。 设备的内核模式功能驱动程序为默认电源策略所有者。 （如果没有内核模式功能驱动程序，并且总线驱动程序调用了[**WdfPdoInitAssignRawDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfpdo/nf-wdfpdo-wdfpdoinitassignrawdevice)，则总线驱动程序为电源策略所有者）。 如果希望基于 UMDF 的驱动程序成为驱动程序堆栈的电源策略所有者，驱动程序必须调用[**IWDFDeviceInitialize：： SetPowerPolicyOwnership**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdeviceinitialize-setpowerpolicyownership)，并且内核模式默认电源策略所有者必须调用[**WdfDeviceInitSetPowerPolicyOwnership**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceinitsetpowerpolicyownership)才能禁用所有权。
+默认情况下，基于 UMDF 的驱动程序不是电源策略所有者。 设备的内核模式功能驱动程序为默认电源策略所有者。  (如果没有内核模式功能驱动程序，并且总线驱动程序调用 [**WdfPdoInitAssignRawDevice**](/windows-hardware/drivers/ddi/wdfpdo/nf-wdfpdo-wdfpdoinitassignrawdevice)，则总线驱动程序为电源策略所有者) 。 如果希望基于 UMDF 的驱动程序成为驱动程序堆栈的电源策略所有者，驱动程序必须调用 [**IWDFDeviceInitialize：： SetPowerPolicyOwnership**](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdeviceinitialize-setpowerpolicyownership)，并且内核模式默认电源策略所有者必须调用 [**WdfDeviceInitSetPowerPolicyOwnership**](/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceinitsetpowerpolicyownership) 才能禁用所有权。
 
-此外，如果你要为 USB 设备提供基于 UMDF 的驱动程序，并且你希望驱动程序成为电源策略所有者，则驱动程序的 INF 文件必须包含用于在注册表中设置 WinUsbPowerPolicyOwnershipDisabled 值的[**Inf AddReg 指令**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addreg-directive)。 如果此 REG\_DWORD 大小的值设置为任何非零值，则它将禁用[WinUSB](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)驱动程序的能力作为设备的电源策略所有者。 AddReg 指令必须在[**INF DDInstall 节**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-ddinstall-hw-section)中，如下面的示例所示。
+此外，如果你要为 USB 设备提供基于 UMDF 的驱动程序，并且你希望驱动程序成为电源策略所有者，则驱动程序的 INF 文件必须包含用于在注册表中设置 WinUsbPowerPolicyOwnershipDisabled 值的 [**Inf AddReg 指令**](../install/inf-addreg-directive.md) 。 如果此 REG \_ DWORD 大小的值设置为任何非零值，则它将禁用 [WinUSB](/windows-hardware/drivers/ddi/index) 驱动程序的功能，使其成为设备的电源策略所有者。 AddReg 指令必须在 [**INF DDInstall 节**](../install/inf-ddinstall-hw-section.md)中，如下面的示例所示。
 
 ```cpp
 [MyDriver_Install.NT.hw]
@@ -60,13 +60,7 @@ HKR,,"WinUsbPowerPolicyOwnershipDisabled",0x00010001,1
 
 -   [支持基于 UMDF 的驱动程序中的系统唤醒](supporting-system-wake-up-in-umdf-drivers.md)
 
--   [在 UMDF 中控制设备空闲和唤醒行为的用户](user-control-of-device-idle-and-wake-behavior-in-umdf.md)
+-   [UMDF 中设备空闲和唤醒行为的用户控件](user-control-of-device-idle-and-wake-behavior-in-umdf.md)
 
  
-
- 
-
-
-
-
 

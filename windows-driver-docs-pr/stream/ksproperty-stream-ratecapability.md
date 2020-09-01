@@ -1,6 +1,6 @@
 ---
-title: KSPROPERTY\_STREAM\_RATECAPABILITY
-description: 使用 KSPROPERTY\_STREAM\_RATECAPABILITY 属性，图形管理器可以查询特定流的流中涉及的所有连接点（通过 KSPROPERTY\_PIN\_DATAROUTING）来实现其功能将请求的速率调整为公称费率。
+title: KSPROPERTY \_ 流 \_ RATECAPABILITY
+description: 使用 KSPROPERTY \_ STREAM \_ RATECAPABILITY 属性，图形管理器可以查询特定流的流中涉及的所有连接点， (通过 KSPROPERTY PIN DATAROUTING) 获取该流， \_ \_ 以便在将请求速率调整为名义速率时获得相应的功能。
 ms.assetid: 73e3bf4e-2815-4890-ba12-77fbe7a7c589
 keywords:
 - KSPROPERTY_STREAM_RATECAPABILITY 流媒体设备
@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d9afb3e1fe2cce5e2368a56aada07629dd9795b7
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 90c1264f164a2c468e2ff646dfa5f13d9070aeae
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72837940"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89187089"
 ---
-# <a name="ksproperty_stream_ratecapability"></a>KSPROPERTY\_STREAM\_RATECAPABILITY
+# <a name="ksproperty_stream_ratecapability"></a>KSPROPERTY \_ 流 \_ RATECAPABILITY
 
 
-使用 KSPROPERTY\_STREAM\_RATECAPABILITY 属性，图形管理器可以查询特定流的流中涉及的所有连接点（通过 KSPROPERTY\_PIN\_DATAROUTING）来实现其功能将请求的速率调整为公称费率。
+使用 KSPROPERTY \_ STREAM \_ RATECAPABILITY 属性，图形管理器可以查询特定流的流中涉及的所有连接点， (通过 KSPROPERTY PIN DATAROUTING) 获取该流， \_ \_ 以便在将请求速率调整为名义速率时获得相应的功能。
 
 ## <span id="ddk_ksproperty_stream_ratecapability_ks"></span><span id="DDK_KSPROPERTY_STREAM_RATECAPABILITY_KS"></span>
 
@@ -41,7 +41,7 @@ ms.locfileid: "72837940"
 </colgroup>
 <thead>
 <tr class="header">
-<th>“获取”</th>
+<th>获取</th>
 <th>设置</th>
 <th>目标</th>
 <th>属性描述符类型</th>
@@ -50,11 +50,11 @@ ms.locfileid: "72837940"
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>“是”</p></td>
-<td><p>无</p></td>
-<td><p>大头针</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksrate" data-raw-source="[&lt;strong&gt;KSRATE&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksrate)"><strong>KSRATE</strong></a></p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksrate_capability" data-raw-source="[&lt;strong&gt;KSRATE_CAPABILITY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksrate_capability)"><strong>KSRATE_CAPABILITY</strong></a></p></td>
+<td><p>是</p></td>
+<td><p>否</p></td>
+<td><p>Pin</p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksrate" data-raw-source="[&lt;strong&gt;KSRATE&lt;/strong&gt;](/windows-hardware/drivers/ddi/ks/ns-ks-ksrate)"><strong>KSRATE</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksrate_capability" data-raw-source="[&lt;strong&gt;KSRATE_CAPABILITY&lt;/strong&gt;](/windows-hardware/drivers/ddi/ks/ns-ks-ksrate_capability)"><strong>KSRATE_CAPABILITY</strong></a></p></td>
 </tr>
 </tbody>
 </table>
@@ -64,7 +64,7 @@ ms.locfileid: "72837940"
 <a name="remarks"></a>备注
 -------
 
-如果 pin 允许速率改变，或者界定闭合相关 pin 之间的接口不同并导致使用不同的时间戳格式，则应该实现 KSPROPERTY\_STREAM\_RATECAPABILITY。 属性还可用于转换一般时间戳格式，如跳过降级请求。
+\_ \_ 如果 pin 允许速率改变，或者界定闭合相关 pin 之间的接口不同并导致使用不同的时间戳格式，则应该实现 KSPROPERTY STREAM RATECAPABILITY。 属性还可用于转换一般时间戳格式，如跳过降级请求。
 
 通过重新采样或时间戳更改修改数据速率的 pin 支持属性。 所有速率更改都涉及请求费率，并确定特定的 pin 可以纠正该速率以获得标称1.0 速率的程度。 例如，请求视频播放速率为2.0 的 pin 表示请求呈现为视频剪辑的标称速率的两倍;速率为0.5 的速率请求表示半速渲染。
 
@@ -87,7 +87,7 @@ Pin 必须能够接受具有类似拓扑的任何 pin 所使用的接口标识�
 <tbody>
 <tr class="odd">
 <td><p>标头</p></td>
-<td>Ks （包含 Ks）</td>
+<td>Ks (包含 Ks .h) </td>
 </tr>
 </tbody>
 </table>
@@ -95,16 +95,9 @@ Pin 必须能够接受具有类似拓扑的任何 pin 所使用的接口标识�
 ## <a name="see-also"></a>另请参阅
 
 
-[**KSRATE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksrate)
+[**KSRATE**](/windows-hardware/drivers/ddi/ks/ns-ks-ksrate)
 
-[**KSRATE\_功能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksrate_capability)
-
- 
+[**KSRATE \_ 功能**](/windows-hardware/drivers/ddi/ks/ns-ks-ksrate_capability)
 
  
-
-
-
-
-
 

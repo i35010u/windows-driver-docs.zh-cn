@@ -9,12 +9,12 @@ keywords:
 - INF 文件 WDK AV/C 流式处理
 ms.date: 08/25/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 0346b8064c820ae411129c6bb23ed91bdd33d6a7
-ms.sourcegitcommit: d9a9925f790271f4ca2c8377d551d96e8d1e62c7
+ms.openlocfilehash: 2eab13c5002098ccfd9262e2886275126126c172
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88850248"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89186833"
 ---
 # <a name="avc-streaming-inf-example"></a>AV/C 流式处理 INF 示例
 
@@ -37,4 +37,4 @@ ServiceBinary = %12%\subunit.sys
 Dependencies  = AVCSTRM   ; loaded before subunit.sys
 ```
 
-有关设备安装文件的详细信息，请参阅 [Inf 文件部分](https://docs.microsoft.com/windows-hardware/drivers/install/inf-classinstall32-section) 和 [inf 文件指令](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addcomponent-directive)。
+有关设备安装文件的详细信息，请参阅 [Inf 文件部分](../install/inf-classinstall32-section.md) 和 [inf 文件指令](../install/inf-addcomponent-directive.md)。

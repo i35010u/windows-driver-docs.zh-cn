@@ -8,15 +8,15 @@ keywords:
 - KSPROPERTY_BDA_NODE_TYPES
 - KSPROPERTY_BDA_PIN_TYPES
 - KSPROPERTY_BDA_TEMPLATE_CONNECTIONS
-- 模板筛选器拓扑 WDK BDA
+- 模板筛选器拓扑，WDK BDA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f25c206f3a297f2a79f100b752ddc8ac100327e9
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 56057682f986365397b299a70e1b4310099f1daa
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67363325"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89185405"
 ---
 # <a name="determining-bda-device-topology"></a>确定 BDA 设备拓扑
 
@@ -24,27 +24,27 @@ ms.locfileid: "67363325"
 
 
 
-BDA 设备拓扑组成的节点，其中每个表示信号一些转换连接的网络。 节点可以在不同的筛选器之间任意分组。 此任意分组为硬件供应商提供了某些自由它们如何实现其硬件和驱动程序，以便与不同类型的网络在想要支持的网络提供程序以一般方式处理此类硬件和驱动程序。
+BDA 设备拓扑由已连接的节点网络组成，其中每个节点都代表信号上的某种转换。 节点可以任意分组到不同的筛选器中。 这种任意分组为硬件供应商提供了在实现其硬件和驱动程序的方式上的特定自由，使此类硬件和驱动程序以通用方式与他们希望支持的不同类型的网络的网络提供程序协同工作。
 
-若要运行此任意分组体系结构，为网络提供商必须能够进行方式来 （即，支持哪些类型的节点网络筛选器可以） 信号的哪种转换这些筛选器执行的查询筛选器。 筛选器基础 Ring 0 微型驱动程序传递给网络提供商通过其支持的节点的网络的图片[KSPROPSETID\_BdaTopology](https://docs.microsoft.com/windows-hardware/drivers/stream/kspropsetid-bdatopology)属性集。
+要使这一任意分组体系结构正常工作，网络提供程序必须能够查询筛选器执行哪些类型的转换，这些筛选器会对信号执行何种类型的转换 (即，筛选器可支持的节点网络类型) 。 用于筛选器的底层环0微型驱动程序通过 [KSPROPSETID \_ BdaTopology](./kspropsetid-bdatopology.md) 属性集将其支持的节点网络的图片传达给网络提供商。
 
-在确定筛选器的模板拓扑时，网络提供商循环访问节点类型的列表和 pin 类型，并查询每个节点和其功能的 pin。 网络提供程序使用的下列属性的 KSPROPSETID\_BdaTopology 以确定筛选器的模板拓扑：
+在确定筛选器的模板拓扑时，网络提供程序会循环访问节点类型和固定类型的列表，并在每个节点和固定其功能时进行查询。 网络提供程序使用 KSPROPSETID BdaTopology 的以下属性 \_ 来确定筛选器的模板拓扑：
 
--   KSPROPERTY\_BDA\_NODE\_TYPES
+-   KSPROPERTY \_ BDA \_ 节点 \_ 类型
 
-    节点类型表示可能功能节点中的筛选器。 KSPROPERTY\_BDA\_节点\_BDA 微型驱动程序筛选器实例的类型属性返回提供的所有节点类型的列表。 微型驱动程序将分配用于标识节点类型的任意值。 通常情况下，微型驱动程序使用的每个元素的索引的微型驱动程序的节点类型列表中的值为每个节点类型。 BDA 微型驱动程序将每个节点类型分配节点说明的 GUID。 为网络提供商目前支持的类型中定义的节点说明 Guid *bdamedia.h*。 此节点说明向网络提供商指示节点执行的操作。 在模板拓扑中，节点类型可以只出现一次。 但是，多个特定类型的节点可能具有相同的节点说明的 GUID。 这允许特定的信号转换发生在筛选器的拓扑中的多个位置同时允许要明确标识单个拓扑节点的网络提供程序。
+    节点类型表示筛选器中可能的功能节点。 "KSPROPERTY \_ BDA \_ 节点 \_ 类型" 属性返回一个列表，其中列出了 BDA 微型驱动程序的筛选器实例提供的所有节点类型。 微型驱动程序分配任意值来标识节点类型。 通常，微型驱动程序使用微型驱动程序的节点类型列表中每个元素的索引作为每个节点类型的值。 BDA 微型驱动程序将节点说明 GUID 分配给每个节点类型。 *Bdamedia*中定义了网络提供程序当前支持的节点类型的说明 guid。 此节点说明向网络提供商指示节点的功能。 在模板拓扑中，节点类型只能出现一次。 不过，特定类型的多个节点可能具有相同的节点说明 GUID。 这允许在筛选器拓扑中的多个位置进行特定信号转换，同时允许网络提供程序明确标识单个拓扑节点。
 
--   KSPROPERTY\_BDA\_PIN\_TYPES
+-   KSPROPERTY \_ BDA \_ 引脚 \_ 类型
 
-    Pin 类型表示可能的连接到关系图中的其他筛选器。 KSPROPERTY\_BDA\_PIN\_类型属性将返回所有可以创建筛选器的固定类型的列表。 在模板拓扑中，pin 类型可以只出现一次。
+    固定类型表示关系图中其他筛选器的可能连接。 KSPROPERTY \_ BDA \_ 引脚 \_ types 属性返回可以在筛选器上创建的所有 PIN 类型的列表。 在模板拓扑中，pin 类型只能出现一次。
 
--   KSPROPERTY\_BDA\_模板\_连接
+-   KSPROPERTY \_ BDA \_ 模板 \_ 连接
 
-    KSPROPERTY\_BDA\_模板\_连接属性将返回一个数组，表示节点类型与可以在筛选器配置 pin 类型之间的所有可能的连接。 请参阅[映射连接拓扑](mapping-connection-topology.md)有关详细信息。
+    KSPROPERTY \_ BDA \_ TEMPLATE \_ CONNECTIONS 属性返回一个数组，该数组表示可以在筛选器上配置的节点类型和固定类型之间的所有可能连接。 有关详细信息，请参阅 [映射连接拓扑](mapping-connection-topology.md) 。
 
-当首次创建筛选器实例并将其添加到图形时，它通常具有输入插针，但没有输出插针。 若要创建输出插针，网络提供商，首先使用 KSPROPSETID\_BdaTopology 属性以确定筛选器可以执行哪些操作。 这些属性，请从网络提供商确定哪些操作它要求筛选器来执行特定筛选器关系图。 然后，使用网络提供商[KSMETHODSETID\_BdaDeviceConfiguration](https://docs.microsoft.com/windows-hardware/drivers/stream/ksmethodsetid-bdadeviceconfiguration)方法设置为创建特定 pin 类型相匹配的输出插针，并创建内部拓扑，这是实际的硬件路径之间这些 pin 和输入插针。 请参阅[配置 BDA 筛选器](configuring-a-bda-filter.md)有关详细信息。
+首次创建筛选器实例并将其添加到关系图中时，它通常具有输入插针，但没有输出插针。 若要创建输出插针，网络提供程序首先使用 KSPROPSETID \_ BdaTopology 属性来确定筛选器可执行的操作。 通过这些属性，网络提供程序可确定需要筛选器对特定筛选器关系图执行的操作。 然后，网络提供程序使用 [KSMETHODSETID \_ BdaDeviceConfiguration](./ksmethodsetid-bdadeviceconfiguration.md) 方法集创建与特定 pin 类型匹配的输出插针，并创建内部拓扑（这是在这些针脚与输入插针之间的实际硬件路径）。 有关详细信息，请参阅 [配置 BDA 筛选器](configuring-a-bda-filter.md) 。
 
-下面的代码段演示如何定义导出的函数按 BDA 支持库作为调度例程的 KSPROPSETID\_BdaTopology 属性集：
+下面的代码段演示如何将由 "BDA 支持库" 导出的函数定义为 KSPROPSETID \_ BdaTopology 属性集的调度例程：
 
 ```cpp
 //
@@ -75,9 +75,4 @@ DEFINE_KSPROPERTY_TABLE(FilterTopologyProperties)
 ```
 
  
-
- 
-
-
-
 

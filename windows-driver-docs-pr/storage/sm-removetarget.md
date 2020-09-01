@@ -1,6 +1,6 @@
 ---
-title: SM\_RemoveTarget 函数
-description: SM\_RemoveTarget WMI 方法配置 WMI 提供程序，使其停止将与指示的目标关联的事件传递给 WMI 客户端。
+title: SM \_ RemoveTarget 函数
+description: SM \_ REMOVETARGET wmi 方法配置 wmi 提供程序，使其停止将与指示的目标关联的事件传递给 WMI 客户端。
 ms.assetid: 9be2a40c-299a-4d92-b9a2-ef60eb6d90e9
 keywords:
 - SM_RemoveTarget 函数存储设备
@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 7c1b05b21b799385f821fa961068c5dfbcf09562
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: a5ea021e624263de648e2b21d914215f0fd1f2b6
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72845471"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89186389"
 ---
-# <a name="sm_removetarget-function"></a>SM\_RemoveTarget 函数
+# <a name="sm_removetarget-function"></a>SM \_ RemoveTarget 函数
 
 
-SM\_RemoveTarget WMI 方法配置 WMI 提供程序，使其停止将与指示的目标关联的事件传递给 WMI 客户端。
+SM \_ REMOVETARGET wmi 方法配置 wmi 提供程序，使其停止将与指示的目标关联的事件传递给 WMI 客户端。
 
 <a name="syntax"></a>语法
 ------
@@ -42,16 +42,16 @@ void SM_RemoveTarget(
 ----------
 
 *HbaPortWWN*   
-一个64位世界名称（WWN），用于唯一标识应该从其事件报告给 WMI 客户端的端口列表中删除的本地端口。 有关全球名称的详细信息，请参阅 T11 委员会*光纤通道 HBA API*规范。
+64位全球名称 (WWN) ，用于唯一标识应该从其事件报告给 WMI 客户端的端口列表中删除的本地端口。 有关全球名称的详细信息，请参阅 T11 委员会 *光纤通道 HBA API* 规范。
 
 *DiscoveredPortWWN*   
-一个全球通用名称（WWN），用于指示应从其事件报告给 WMI 客户端的端口列表中删除的远程发现端口。
+全球名称 (WWN) ，它指示远程发现的端口，应从其事件报告给 WMI 客户端的端口列表中删除该端口。
 
 *AllTargets*   
 要停止报告的事件。 如果此成员为零，则 WMI 提供程序客户端将停止报告与 DiscoveredPortWWN 指示的端口关联的事件。 如果此成员为非零，则 WMI 提供程序将停止报告所有关联的事件。
 
 *HBAStatus*   
-操作的状态。 有关允许值及其说明的列表，请参阅[HBA\_状态](hba-status.md)。 微型端口驱动程序在 SM\_RemoveTarget\_OUT 结构的 HBAStatus 成员中返回此信息。
+操作的状态。 有关允许值及其说明的列表，请参阅 [HBA \_ 状态](hba-status.md)。 微型端口驱动程序在 SM \_ RemoveTarget OUT 结构的 HBAStatus 成员中返回此信息 \_ 。
 
 <a name="return-value"></a>返回值
 ------------
@@ -61,7 +61,7 @@ void SM_RemoveTarget(
 <a name="remarks"></a>备注
 -------
 
-此 WMI 方法属于 MS\_SM\_EventControl WMI 类。
+此 WMI 方法属于 MS \_ SM \_ EventControl WMI 类。
 
 <a name="requirements"></a>要求
 ------------
@@ -74,7 +74,7 @@ void SM_RemoveTarget(
 <tbody>
 <tr class="odd">
 <td align="left"><p>目标平台</p></td>
-<td align="left">桌面设备</td>
+<td align="left">“桌面”</td>
 </tr>
 <tr class="even">
 <td align="left"><p>标头</p></td>
@@ -86,18 +86,11 @@ void SM_RemoveTarget(
 ## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
-[HBA\_状态](hba-status.md)
+[HBA \_ 状态](hba-status.md)
 
-[**SM\_RemoveTarget\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_sm_removetarget_in)
+[**SM \_ RemoveTarget \_**](/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_sm_removetarget_in)
 
-[**SM\_RemoveTarget\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_sm_removetarget_out)
-
- 
+[**SM \_ RemoveTarget \_**](/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_sm_removetarget_out)
 
  
-
-
-
-
-
 

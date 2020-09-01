@@ -6,22 +6,22 @@ keywords:
 - 视频处理放大器属性 WDK 视频捕获
 - 放大属性 WDK 视频捕获
 - 饱和度 WDK 视频捕获
-- 对比度 WDK 视频捕获
-- hue WDK 视频捕获
+- WDK 视频捕获对比度
+- 色调 WDK 视频捕获
 - PROPSETID_VIDCAP_VIDEOPROCAMP
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cb01ffe1d21a54b6a3aa86b9771d341df1ae069d
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 5a266107c1d5b7b50ad1c275aa5510906ab2a277
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67385372"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89185069"
 ---
 # <a name="video-processing-amplifier-properties"></a>视频处理放大器属性
 
 
-[PROPSETID\_VIDCAP\_VIDEOPROCAMP](https://docs.microsoft.com/windows-hardware/drivers/stream/propsetid-vidcap-videoprocamp)属性集包含与视频处理放大，例如视频属性，包括色调，对比而言，和饱和度相关的属性。 下表介绍的属性属于 PROPSETID\_VIDCAP\_VIDOPROCAMP 属性集。
+[PROPSETID \_ VIDCAP \_ VIDEOPROCAMP](./propsetid-vidcap-videoprocamp.md)属性集包含与视频处理放大相关的属性，例如音频、对比度和饱和度。 下表描述了作为 PROPSETID \_ VIDCAP VIDOPROCAMP 属性集的一部分的属性 \_ 。
 
 <table>
 <colgroup>
@@ -36,60 +36,60 @@ ms.locfileid: "67385372"
 </thead>
 <tbody>
 <tr class="odd">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-videoprocamp-backlight-compensation" data-raw-source="[&lt;strong&gt;KSPROPERTY_VIDEOPROCAMP_BACKLIGHT_COMPENSATION&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-videoprocamp-backlight-compensation)"><strong>KSPROPERTY_VIDEOPROCAMP_BACKLIGHT_COMPENSATION</strong></a></p></td>
-<td><p>控制设置的照相机的背景光补偿。</p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-videoprocamp-backlight-compensation" data-raw-source="[&lt;strong&gt;KSPROPERTY_VIDEOPROCAMP_BACKLIGHT_COMPENSATION&lt;/strong&gt;](./ksproperty-videoprocamp-backlight-compensation.md)"><strong>KSPROPERTY_VIDEOPROCAMP_BACKLIGHT_COMPENSATION</strong></a></p></td>
+<td><p>控制照相机背景光补偿设置。</p></td>
 </tr>
 <tr class="even">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-videoprocamp-brightness" data-raw-source="[&lt;strong&gt;KSPROPERTY_VIDEOPROCAMP_BRIGHTNESS&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-videoprocamp-brightness)"><strong>KSPROPERTY_VIDEOPROCAMP_BRIGHTNESS</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-videoprocamp-brightness" data-raw-source="[&lt;strong&gt;KSPROPERTY_VIDEOPROCAMP_BRIGHTNESS&lt;/strong&gt;](./ksproperty-videoprocamp-brightness.md)"><strong>KSPROPERTY_VIDEOPROCAMP_BRIGHTNESS</strong></a></p></td>
 <td><p>控制照相机的亮度。</p></td>
 </tr>
 <tr class="odd">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-videoprocamp-colorenable" data-raw-source="[&lt;strong&gt;KSPROPERTY_VIDEOPROCAMP_COLORENABLE&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-videoprocamp-colorenable)"><strong>KSPROPERTY_VIDEOPROCAMP_COLORENABLE</strong></a></p></td>
-<td><p>控制启用照相机的颜色设置。</p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-videoprocamp-colorenable" data-raw-source="[&lt;strong&gt;KSPROPERTY_VIDEOPROCAMP_COLORENABLE&lt;/strong&gt;](./ksproperty-videoprocamp-colorenable.md)"><strong>KSPROPERTY_VIDEOPROCAMP_COLORENABLE</strong></a></p></td>
+<td><p>控制照相机的颜色启用设置。</p></td>
 </tr>
 <tr class="even">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-videoprocamp-contrast" data-raw-source="[&lt;strong&gt;KSPROPERTY_VIDEOPROCAMP_CONTRAST&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-videoprocamp-contrast)"><strong>KSPROPERTY_VIDEOPROCAMP_CONTRAST</strong></a></p></td>
-<td><p>控制设置的照相机的亮度。</p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-videoprocamp-contrast" data-raw-source="[&lt;strong&gt;KSPROPERTY_VIDEOPROCAMP_CONTRAST&lt;/strong&gt;](./ksproperty-videoprocamp-contrast.md)"><strong>KSPROPERTY_VIDEOPROCAMP_CONTRAST</strong></a></p></td>
+<td><p>控制照相机的亮度设置。</p></td>
 </tr>
 <tr class="odd">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-videoprocamp-gamma" data-raw-source="[&lt;strong&gt;KSPROPERTY_VIDEOPROCAMP_GAMMA&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-videoprocamp-gamma)"><strong>KSPROPERTY_VIDEOPROCAMP_GAMMA</strong></a></p></td>
-<td><p>控制设置的照相机的整个范围。</p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-videoprocamp-gamma" data-raw-source="[&lt;strong&gt;KSPROPERTY_VIDEOPROCAMP_GAMMA&lt;/strong&gt;](./ksproperty-videoprocamp-gamma.md)"><strong>KSPROPERTY_VIDEOPROCAMP_GAMMA</strong></a></p></td>
+<td><p>控制照相机的色域设置。</p></td>
 </tr>
 <tr class="even">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-videoprocamp-hue" data-raw-source="[&lt;strong&gt;KSPROPERTY_VIDEOPROCAMP_HUE&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-videoprocamp-hue)"><strong>KSPROPERTY_VIDEOPROCAMP_HUE</strong></a></p></td>
-<td><p>控制设置的照相机的色调。</p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-videoprocamp-hue" data-raw-source="[&lt;strong&gt;KSPROPERTY_VIDEOPROCAMP_HUE&lt;/strong&gt;](./ksproperty-videoprocamp-hue.md)"><strong>KSPROPERTY_VIDEOPROCAMP_HUE</strong></a></p></td>
+<td><p>控制照相机的色调设置。</p></td>
 </tr>
 <tr class="odd">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-videoprocamp-saturation" data-raw-source="[&lt;strong&gt;KSPROPERTY_VIDEOPROCAMP_SATURATION&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-videoprocamp-saturation)"><strong>KSPROPERTY_VIDEOPROCAMP_SATURATION</strong></a></p></td>
-<td><p>控制设置的照相机的色度。</p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-videoprocamp-saturation" data-raw-source="[&lt;strong&gt;KSPROPERTY_VIDEOPROCAMP_SATURATION&lt;/strong&gt;](./ksproperty-videoprocamp-saturation.md)"><strong>KSPROPERTY_VIDEOPROCAMP_SATURATION</strong></a></p></td>
+<td><p>控制照相机的色度设置。</p></td>
 </tr>
 <tr class="even">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-videoprocamp-sharpness" data-raw-source="[&lt;strong&gt;KSPROPERTY_VIDEOPROCAMP_SHARPNESS&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-videoprocamp-sharpness)"><strong>KSPROPERTY_VIDEOPROCAMP_SHARPNESS</strong></a></p></td>
-<td><p>控制设置的照相机的清晰度。</p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-videoprocamp-sharpness" data-raw-source="[&lt;strong&gt;KSPROPERTY_VIDEOPROCAMP_SHARPNESS&lt;/strong&gt;](./ksproperty-videoprocamp-sharpness.md)"><strong>KSPROPERTY_VIDEOPROCAMP_SHARPNESS</strong></a></p></td>
+<td><p>控制照相机的清晰度设置。</p></td>
 </tr>
 <tr class="odd">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-videoprocamp-whitebalance" data-raw-source="[&lt;strong&gt;KSPROPERTY_VIDEOPROCAMP_WHITEBALANCE&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-videoprocamp-whitebalance)"><strong>KSPROPERTY_VIDEOPROCAMP_WHITEBALANCE</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-videoprocamp-whitebalance" data-raw-source="[&lt;strong&gt;KSPROPERTY_VIDEOPROCAMP_WHITEBALANCE&lt;/strong&gt;](./ksproperty-videoprocamp-whitebalance.md)"><strong>KSPROPERTY_VIDEOPROCAMP_WHITEBALANCE</strong></a></p></td>
 <td><p>控制照相机的白平衡设置。</p></td>
 </tr>
 <tr class="even">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-videoprocamp-gain" data-raw-source="[&lt;strong&gt;KSPROPERTY_VIDEOPROCAMP_GAIN&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-videoprocamp-gain)"><strong>KSPROPERTY_VIDEOPROCAMP_GAIN</strong></a></p></td>
-<td><p>一个照相机的控件获取设置。</p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-videoprocamp-gain" data-raw-source="[&lt;strong&gt;KSPROPERTY_VIDEOPROCAMP_GAIN&lt;/strong&gt;](./ksproperty-videoprocamp-gain.md)"><strong>KSPROPERTY_VIDEOPROCAMP_GAIN</strong></a></p></td>
+<td><p>控制照相机的增益设置。</p></td>
 </tr>
 <tr class="odd">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-videoprocamp-digital-multiplier" data-raw-source="[&lt;strong&gt;KSPROPERTY_VIDEOPROCAMP_DIGITAL_MULTIPLIER&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-videoprocamp-digital-multiplier)"><strong>KSPROPERTY_VIDEOPROCAMP_DIGITAL_MULTIPLIER</strong></a></p></td>
-<td><p>控制照相机的数字的缩放倍数。</p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-videoprocamp-digital-multiplier" data-raw-source="[&lt;strong&gt;KSPROPERTY_VIDEOPROCAMP_DIGITAL_MULTIPLIER&lt;/strong&gt;](./ksproperty-videoprocamp-digital-multiplier.md)"><strong>KSPROPERTY_VIDEOPROCAMP_DIGITAL_MULTIPLIER</strong></a></p></td>
+<td><p>控制照相机的数字缩放乘数。</p></td>
 </tr>
 <tr class="even">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-videoprocamp-digital-multiplier-limit" data-raw-source="[&lt;strong&gt;KSPROPERTY_VIDEOPROCAMP_DIGITAL_MULTIPLIER_LIMIT&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-videoprocamp-digital-multiplier-limit)"><strong>KSPROPERTY_VIDEOPROCAMP_DIGITAL_MULTIPLIER_LIMIT</strong></a></p></td>
-<td><p>控制照相机的数字缩放的上限。</p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-videoprocamp-digital-multiplier-limit" data-raw-source="[&lt;strong&gt;KSPROPERTY_VIDEOPROCAMP_DIGITAL_MULTIPLIER_LIMIT&lt;/strong&gt;](./ksproperty-videoprocamp-digital-multiplier-limit.md)"><strong>KSPROPERTY_VIDEOPROCAMP_DIGITAL_MULTIPLIER_LIMIT</strong></a></p></td>
+<td><p>控制照相机数字缩放的上限。</p></td>
 </tr>
 <tr class="odd">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-videoprocamp-whitebalance-component" data-raw-source="[&lt;strong&gt;KSPROPERTY_VIDEOPROCAMP_WHITEBALANCE_COMPONENT&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-videoprocamp-whitebalance-component)"><strong>KSPROPERTY_VIDEOPROCAMP_WHITEBALANCE_COMPONENT</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-videoprocamp-whitebalance-component" data-raw-source="[&lt;strong&gt;KSPROPERTY_VIDEOPROCAMP_WHITEBALANCE_COMPONENT&lt;/strong&gt;](./ksproperty-videoprocamp-whitebalance-component.md)"><strong>KSPROPERTY_VIDEOPROCAMP_WHITEBALANCE_COMPONENT</strong></a></p></td>
 <td><p>控制照相机的白平衡设置。</p></td>
 </tr>
 <tr class="even">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-videoprocamp-powerline-frequency" data-raw-source="[&lt;strong&gt;KSPROPERTY_VIDEOPROCAMP_POWERLINE_FREQUENCY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-videoprocamp-powerline-frequency)"><strong>KSPROPERTY_VIDEOPROCAMP_POWERLINE_FREQUENCY</strong></a></p></td>
-<td><p>控制照相机的操作环境的 powerline 频率。</p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-videoprocamp-powerline-frequency" data-raw-source="[&lt;strong&gt;KSPROPERTY_VIDEOPROCAMP_POWERLINE_FREQUENCY&lt;/strong&gt;](./ksproperty-videoprocamp-powerline-frequency.md)"><strong>KSPROPERTY_VIDEOPROCAMP_POWERLINE_FREQUENCY</strong></a></p></td>
+<td><p>控制照相机操作环境的 powerline 频率。</p></td>
 </tr>
 </tbody>
 </table>
@@ -97,9 +97,4 @@ ms.locfileid: "67385372"
  
 
  
-
- 
-
-
-
 

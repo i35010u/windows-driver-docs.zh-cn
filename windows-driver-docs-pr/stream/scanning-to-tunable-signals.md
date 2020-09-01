@@ -3,43 +3,38 @@ title: 扫描到可调谐信号
 description: 扫描到可调谐信号
 ms.assetid: cc934079-5d00-42e0-a024-1b7548bb88e4
 keywords:
-- 扫描 WDK 视频捕获的信号
-- 扫描可优化信号 WDK 视频捕获
-- 可优化信号 WDK 视频捕获
+- 扫描 WDK 视频捕获信号
+- 扫描可调式信号音频捕获
+- 可调式信号音频捕获
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: dc89b92cfb080464f8f3a4722d477fe6fbe35a47
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: d4b06cba49ebd5df0d116c8410d5915d471f64ca
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67358424"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89186311"
 ---
 # <a name="scanning-to-tunable-signals"></a>扫描到可调谐信号
 
 
-**本部分仅适用于与 Microsoft Windows Vista 一起启动的操作系统。**
+**本部分仅适用于从 Microsoft Windows Vista 开始的操作系统。**
 
-信号扫描是广播沿电缆或天线的系统上的频率值的范围的锁定到下一个可优化信号 （增加或缩减） 过程。 有关操作系统前面比 Windows Vista 中，发出信号扫描很大程度上由软件驱动 ( *KsTvTune.ax*模块) 和基于扫描而不是基于频率的广播范围扫描的通道的已知的映射。 如果在 Windows Vista 运行 AVStream 微型驱动程序报告回信号扫描功能通过新的 Windows Vista 中的属性[PROPSETID\_调谐器](https://docs.microsoft.com/windows-hardware/drivers/stream/propsetid-tuner)属性集，调谐器筛选器 (*KsTvTune.ax*) 和更高版本的应用程序可以使用这些功能进行扫描。 如果该驱动程序不支持的新基于频率的扫描功能， *KsTvTune.ax*回退到以前的基于通道的扫描功能。
+信号扫描是指锁定到下一个可调式信号的过程， (按电缆或天线系统上的一系列频率值广播) 。 对于 Windows Vista 之前的操作系统，信号扫描主要由 *KsTvTune.ax*) 模块 (软件驱动，并基于扫描信道的已知地图，而不是对广播频谱进行基于频率的扫描。 如果在 Windows Vista 上运行的 AVStream 微型驱动程序在 [PROPSETID \_ 调谐器](./propsetid-tuner.md) 属性集中通过 windows vista 的新的 windows vista 属性报告了信号扫描功能，则调谐器筛选器 (*KsTvTune.ax*) 并且上述应用程序可以使用这些功能进行扫描。 如果驱动程序不支持新的基于频率的扫描功能， *KsTvTune.ax* 将回退到以前基于通道的扫描功能。
 
-调谐器筛选器和 AVStream 微型驱动程序可以通过使用来处理新的基于频率的扫描功能[硬件辅助扫描算法](hardware-assisted-scanning-algorithm.md)。
+调谐器筛选器和 AVStream 微型驱动程序可以通过使用 [硬件辅助扫描算法](hardware-assisted-scanning-algorithm.md)来处理新的基于频率的扫描功能。
 
-扫描完成时，微型驱动程序必须发出信号的事件句柄。 有关事件的操作流的信息，请参阅[事件机制和 Flow](event-mechanism-and-flow.md)。
+扫描完成后，微型驱动程序必须发出事件句柄的信号。 有关事件操作流的信息，请参阅 [事件机制和流](event-mechanism-and-flow.md)。
 
-为支持新的基于频率的扫描功能，微型驱动程序必须实现以下列表中的所需的属性并可以选择实现的其余属性和事件：
+若要支持新的基于频率的扫描功能，微型驱动程序必须实现以下列表中的必需属性，还可以选择实现其余属性和事件：
 
-[**KSPROPERTY\_调谐器\_扫描\_CAP** ](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-tuner-scan-caps) （必需）
+[**KSPROPERTY \_需要 (调谐器 \_ 扫描 \_ 端**](./ksproperty-tuner-scan-caps.md)) 
 
-[**KSPROPERTY\_调谐器\_扫描\_状态**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-tuner-scan-status) （可选）
+[**KSPROPERTY \_调谐器 \_ 扫描 \_ 状态**](./ksproperty-tuner-scan-status.md) (可选) 
 
-[**KSPROPERTY\_调谐器\_NETWORKTYPE\_扫描\_CAPS** ](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-tuner-networktype-scan-caps) （可选）
+[**KSPROPERTY \_调谐器 \_ NETWORKTYPE \_ SCAN \_ cap**](./ksproperty-tuner-networktype-scan-caps.md) (可选) 
 
-[**KSEVENT\_调谐器\_启动\_扫描**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksevent-tuner-initiate-scan) （可选）
-
- 
+[**KSEVENT \_调谐器 \_ 启动 \_ 扫描**](./ksevent-tuner-initiate-scan.md) (可选) 
 
  
-
-
-
 

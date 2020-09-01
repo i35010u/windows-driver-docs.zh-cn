@@ -9,16 +9,16 @@ keywords:
 - 注册表 WDK 流式处理微型驱动程序
 ms.date: 08/25/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: e137c8f7fe5db607c8310bd06ef0c3768badfa08
-ms.sourcegitcommit: d9a9925f790271f4ca2c8377d551d96e8d1e62c7
+ms.openlocfilehash: cfe4be6b90440230ce7dbfadb89d2e5172558a61
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88850229"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89186271"
 ---
 # <a name="stream-class-registry-values"></a>流类注册表值
 
-若要在 *Stream.sys*下安装微型驱动程序，供应商必须提供符合 inf 文件语法的设备特定 inf 文件，如 [inf 文件部分](https://docs.microsoft.com/windows-hardware/drivers/install/inf-classinstall32-section) 和 [inf 文件指令](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addcomponent-directive)中所述。 在此文件中，在 stream 类下运行的微型驱动程序可以在设备特定的 [**AddReg**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addreg-directive) 节中设置特殊的注册表值。 这些注册表项作为二进制指示器：将其设置为十六进制值01以启用该功能。
+若要在 *Stream.sys*下安装微型驱动程序，供应商必须提供符合 inf 文件语法的设备特定 inf 文件，如 [inf 文件部分](../install/inf-classinstall32-section.md) 和 [inf 文件指令](../install/inf-addcomponent-directive.md)中所述。 在此文件中，在 stream 类下运行的微型驱动程序可以在设备特定的 [**AddReg**](../install/inf-addreg-directive.md) 节中设置特殊的注册表值。 这些注册表项作为二进制指示器：将其设置为十六进制值01以启用该功能。
 
 Stream 类微型驱动程序可以使用以下注册表值：
 
@@ -38,7 +38,7 @@ Stream 类微型驱动程序可以使用以下注册表值：
 
 **DontSuspendIfStreamsAreRunning**
   
-此注册表变量在 Windows 2000 和更高版本的基于 NT 的操作系统中已过时。  (在此版本中，DirectShow 会侦听 power query，并使所有流在收到低功耗查询时暂停。 ) 应用程序仍可以通过调用 **SetThreadExecutionState**来通知系统正在使用它。 此例程在 Microsoft Windows SDK 文档中进行了介绍。 或者，驱动程序可以使用 [**PoSetSystemState**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-posetsystemstate)。
+此注册表变量在 Windows 2000 和更高版本的基于 NT 的操作系统中已过时。  (在此版本中，DirectShow 会侦听 power query，并使所有流在收到低功耗查询时暂停。 ) 应用程序仍可以通过调用 **SetThreadExecutionState**来通知系统正在使用它。 此例程在 Microsoft Windows SDK 文档中进行了介绍。 或者，驱动程序可以使用 [**PoSetSystemState**](/windows-hardware/drivers/ddi/wdm/nf-wdm-posetsystemstate)。
 
 **OkToHibernate**
   

@@ -11,24 +11,18 @@ keywords:
 - USB 设备 WDK UMDF，驱动程序型号
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 01c2533569d0f59ec9369942e82aa879ef27d12b
-ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
+ms.openlocfilehash: 6c3f7b07d20a3acb95ea6ae63e4c98a0ff058c85
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/19/2019
-ms.locfileid: "75210237"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89187073"
 ---
 # <a name="choosing-a-driver-model-for-a-usb-device"></a>为 USB 设备选择驱动程序模型
 
 [!include[UMDF 1 Deprecation](../includes/umdf-1-deprecation.md)]
 
-有关如何确定 USB 设备所需的驱动程序类型的信息，请参阅[选择用于开发 usb 客户端驱动](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)程序的驱动程序模型。
+有关如何确定 USB 设备所需的驱动程序类型的信息，请参阅 [选择用于开发 usb 客户端驱动](/windows-hardware/drivers/ddi/index)程序的驱动程序模型。
 
  
-
- 
-
-
-
-
 

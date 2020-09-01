@@ -1,6 +1,6 @@
 ---
-title: KSEVENT\_BDA\_CA\_模块\_UI\_请求
-description: 当接口数据可用于检索和显示给用户时，客户端将使用 KSEVENT\_BDA\_CA\_模块\_UI\_请求通知。
+title: KSEVENT \_ BDA \_ CA \_ 模块 \_ UI 已 \_ 请求
+description: '\_ \_ \_ \_ \_ 当接口数据可用于检索和向用户显示时，客户端使用 KSEVENT BDA CA 模块 UI 请求通知。'
 ms.assetid: c76bbe0d-7cc4-4594-b435-ad738ebbd141
 keywords:
 - KSEVENT_BDA_CA_MODULE_UI_REQUESTED 流媒体设备
@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 85382c1a11b3ef08b69fb513b25dacf66a38c745
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 1a6df605e3b206383c5846a95e01ceaeccf6757c
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72842501"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89185729"
 ---
-# <a name="ksevent_bda_ca_module_ui_requested"></a>KSEVENT\_BDA\_CA\_模块\_UI\_请求
+# <a name="ksevent_bda_ca_module_ui_requested"></a>KSEVENT \_ BDA \_ CA \_ 模块 \_ UI 已 \_ 请求
 
 
-当接口数据可用于检索和显示给用户时，客户端将使用 KSEVENT\_BDA\_CA\_模块\_UI\_请求通知。
+\_ \_ \_ \_ \_ 当接口数据可用于检索和向用户显示时，客户端使用 KSEVENT BDA CA 模块 UI 请求通知。
 
 ## <span id="ddk_ksevent_bda_ca_module_ui_requested_ks"></span><span id="DDK_KSEVENT_BDA_CA_MODULE_UI_REQUESTED_KS"></span>
 
@@ -48,7 +48,7 @@ KSEVENT
 <tbody>
 <tr class="odd">
 <td><p>标头</p></td>
-<td>Bdamedia （包括 Bdamedia）</td>
+<td>Bdamedia (包含 Bdamedia) </td>
 </tr>
 </tbody>
 </table>
@@ -56,18 +56,11 @@ KSEVENT
 ## <a name="see-also"></a>另请参阅
 
 
-[**KSEVENT**](https://docs.microsoft.com/previous-versions/ff561744(v=vs.85))
+[**KSEVENT**](/previous-versions/ff561744(v=vs.85))
 
-[**KSEVENTDATA**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-kseventdata)
+[**KSEVENTDATA**](/windows-hardware/drivers/ddi/ks/ns-ks-kseventdata)
 
-[**KSPROPERTY\_BDA\_CA\_模块\_UI**](ksproperty-bda-ca-module-ui.md)
-
- 
+[**KSPROPERTY \_ BDA \_ CA \_ 模块 \_ UI**](ksproperty-bda-ca-module-ui.md)
 
  
-
-
-
-
-
 

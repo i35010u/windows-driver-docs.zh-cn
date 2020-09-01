@@ -5,12 +5,12 @@ keywords:
 - GUID_DEVICE_RESET_INTERFACE_STANDARD
 ms.date: 11/14/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a0aafc9116f458a8e6e4c47a63af60f3e03ae645
-ms.sourcegitcommit: bba54f7ba385ee0b5bd4a2b8660486bc269cf02f
+ms.openlocfilehash: 98b53d3f1661f9b2eaa26d6757ddaa7313a4a154
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/21/2020
-ms.locfileid: "88712204"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89187143"
 ---
 # <a name="working-with-the-guid_device_reset_interface_standard"></a>使用 GUID_DEVICE_RESET_INTERFACE_STANDARD
 
@@ -172,5 +172,4 @@ ACPI!_DESCRIPTION_HEADER
 
 ## <a name="see-also"></a>另请参阅
 
-[_DEVICE_RESET_INTERFACE_STANDARD](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_device_reset_interface_standard) 
-
+[_DEVICE_RESET_INTERFACE_STANDARD](/windows-hardware/drivers/ddi/wdm/ns-wdm-_device_reset_interface_standard)

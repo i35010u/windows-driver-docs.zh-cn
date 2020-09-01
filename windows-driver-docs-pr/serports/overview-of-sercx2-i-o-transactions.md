@@ -4,19 +4,19 @@ description: SerCx2 通过向串行控制器驱动程序发出一个或多个 i/
 ms.assetid: 04DDFE53-4855-4029-BE1E-9D184B02A998
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f7bc02271ce2dbf6caa578b5aba2549a67394926
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: ddd770064516d31ea99b8cbba14f99a9d4e8c6f8
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72843052"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89186957"
 ---
 # <a name="overview-of-sercx2-io-transactions"></a>SerCx2 I/O 事务概述
 
 
 SerCx2 通过向串行控制器驱动程序发出一个或多个 i/o 事务来处理来自客户端的读取或写入请求。 此驱动程序将每个事务视为自包含的 i/o 操作，该操作在串行控制器和请求中的数据缓冲区之间传输数据。
 
-芯片（SoC）集成线路上的系统经常包括串行控制器（或 UARTs），以实现与其他集成线路（焊接到相同印刷板）的高速串行通信。 这些 Soc 上的处理器可以使用程控 i/o （PIO）直接将数据传入或传出这些串行控制器中的内存映射数据寄存器。 此外，这些 Soc 通常会提供高级 DMA 硬件，以便在串行控制器和内存之间移动数据。
+芯片上的系统 (SoC) 集成线路经常包括串行控制器 (或 UARTs) ，以便与焊接到相同印刷电路板的其他集成电路进行高速串行通信。 这些 Soc 上的处理器可以使用程控 i/o (PIO) 直接将数据传入或传出这些串行控制器中的内存映射数据寄存器。 此外，这些 Soc 通常会提供高级 DMA 硬件，以便在串行控制器和内存之间移动数据。
 
 PIO 对于短数据传输可能已足够，但使用 PIO 实现较高的数据速率传输会使处理器上的负担太大。 需要 DMA 才能从处理器卸载此类传输。
 
@@ -46,24 +46,19 @@ SerCx2 可以智能地决定是使用 PIO 还是 DMA 来满足读取或写入请
 ## <a name="breaking-a-read-or-write-request-into-multiple-transactions"></a>将读取或写入请求中断到多个事务中
 
 
-某些系统 DMA 控制器可能有一些限制，这些限制要求 SerCx2 将更长的读取或写入请求中断到两个或更多的 i/o 事务中。 例如，如果系统 DMA 控制器需要 DMA 传输在内存中甚至字节边界的情况下开始和结束，但读取请求中的数据缓冲区在奇字节边界开始和结束，则 SerCx2 可能使用 PIO 将第一个和最后一个字节传输到缓冲区和使用系统 DMA 传输第一个和最后一个字节之间的所有数据。 在此示例中，SerCx2 按显示的顺序向串行控制器驱动程序发出以下三个 i/o 事务：
+某些系统 DMA 控制器可能有一些限制，这些限制要求 SerCx2 将更长的读取或写入请求中断到两个或更多的 i/o 事务中。 例如，如果系统 DMA 控制器需要 DMA 传输在内存中甚至字节边界的情况下开始和结束，但读取请求中的数据缓冲区在奇字节边界开始和结束，则 SerCx2 可能使用 PIO 将第一个和最后一个字节传输到缓冲区，并使用系统 DMA 来传输第一个和最后一个字节之间的所有数据。 在此示例中，SerCx2 按显示的顺序向串行控制器驱动程序发出以下三个 i/o 事务：
 
 1.  第一个字节的 PIO 接收事务。
 2.  介于字节之间的系统 DMA 接收事务。
 3.  最后一个字节的 PIO 接收事务。
 
-同样，如果自定义数据传输机制可以在内存中的任意字节边界上启动和结束自定义传输事务，但写入请求中的缓冲区大小超过了自定义传输事务的最大传输长度，则 SerCx2 分区写入请求分为两个（或更多）自定义传输事务，每个事务都不超过最大传输长度。
+同样，如果自定义数据传输机制可以在内存中的任意字节边界上启动和结束自定义传输事务，但写入请求中的缓冲区大小超出了自定义传输事务的最大传输长度，则 SerCx2 会将写入请求分区为两个 (或更多) 自定义传输事务，其中每个事务都不超过最大传输长度。
 
 如果 SerCx2 需要将读取或写入请求拆分为两个或多个 i/o 事务，则串行控制器驱动程序可以安全地忽略这些事务与请求之间的关系。 SerCx2 序列化事务以保证按正确的顺序接收或传输数据。
 
 当串行控制器驱动程序注册一组回调函数以支持系统 DMA 事务或自定义事务时，驱动程序将提供参数值来描述将执行这些事务的硬件的功能。 例如，对于系统 DMA 事务，参数包括对齐要求，以及系统 DMA 控制器支持的最小和最大传输长度。 SerCx2 使用这些参数来决定是否将读取或写入请求作为 PIO 事务或系统 DMA 事务进行处理，以及是否将请求拆分为两个或多个 i/o 事务。
 
-但串行控制器可能有特殊的硬件功能，这些功能不能通过串行控制器驱动程序提供给 SerCx2 的参数来充分描述。 因此，驱动程序可能会访问与硬件相关的信息，使驱动程序能够做出更好的决策，而不是 SerCx2 有关如何将读取或写入请求分区到一个或多个 i/o 事务中。 作为选项，此类驱动程序可以实现[*EvtSerCx2SelectNextReceiveTransactionType*](https://docs.microsoft.com/windows-hardware/drivers/ddi/sercx/nc-sercx-evt_sercx2_select_next_receive_transaction_type)和[*EvtSerCx2SelectNextTransmitTransactionType*](https://docs.microsoft.com/windows-hardware/drivers/ddi/sercx/nc-sercx-evt_sercx2_select_next_transmit_transaction_type)事件回调函数。 如果实现了这些函数，SerCx2 将调用这些函数，以便让驱动程序决定要使用哪些 i/o 事务来满足读取或写入请求。
+但串行控制器可能有特殊的硬件功能，这些功能不能通过串行控制器驱动程序提供给 SerCx2 的参数来充分描述。 因此，驱动程序可能会访问与硬件相关的信息，使驱动程序能够做出更好的决策，而不是 SerCx2 有关如何将读取或写入请求分区到一个或多个 i/o 事务中。 作为选项，此类驱动程序可以实现 [*EvtSerCx2SelectNextReceiveTransactionType*](/windows-hardware/drivers/ddi/sercx/nc-sercx-evt_sercx2_select_next_receive_transaction_type) 和 [*EvtSerCx2SelectNextTransmitTransactionType*](/windows-hardware/drivers/ddi/sercx/nc-sercx-evt_sercx2_select_next_transmit_transaction_type) 事件回调函数。 如果实现了这些函数，SerCx2 将调用这些函数，以便让驱动程序决定要使用哪些 i/o 事务来满足读取或写入请求。
 
  
-
- 
-
-
-
 

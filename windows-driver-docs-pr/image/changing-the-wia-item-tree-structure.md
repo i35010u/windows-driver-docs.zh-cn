@@ -4,12 +4,12 @@ description: 更改 WIA 项树状结构
 ms.assetid: fa6c9d25-4435-43ee-a262-9e267b9a0a69
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c05966d83ee2c27e9c2ada3d87b59992e5b24e29
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: ea89988007d7f9d93b50b6f3eaef9f6cee130688
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72840874"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89186499"
 ---
 # <a name="changing-the-wia-item-tree-structure"></a>更改 WIA 项树状结构
 
@@ -19,11 +19,11 @@ ms.locfileid: "72840874"
 
 WIA 微型驱动程序可以随时更改 WIA 项树结构。 当微型驱动程序对 WIA 项树进行更改时，微型驱动程序必须通知 WIA 服务。 WIA 服务随后会通知所有已连接的 WIA 应用程序。 收到通知后，WIA 应用程序必须枚举 WIA 项树来确定任何更改的结果。
 
-微型驱动程序使用 WIA 服务实用工具函数[**wiasQueueEvent**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wiamdef/nf-wiamdef-wiasqueueevent)将树结构中的更改传达给 WIA 服务。 WIA 微型驱动程序只能将 IWiaMiniDrv 中报告的事件排队[ **：:D rvgetcapabilities**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvgetcapabilities)。 有关报告 WIA 事件的详细信息，请参阅[事件报告](event-reporting.md)。
+微型驱动程序使用 WIA 服务实用工具函数 [**wiasQueueEvent**](/windows-hardware/drivers/ddi/wiamdef/nf-wiamdef-wiasqueueevent)将树结构中的更改传达给 WIA 服务。 WIA 微型驱动程序只能将 IWiaMiniDrv 中报告的事件排队 [**：:D rvgetcapabilities**](/windows-hardware/drivers/ddi/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvgetcapabilities)。 有关报告 WIA 事件的详细信息，请参阅 [事件报告](event-reporting.md)。
 
 ### <a name="explanation-of-the-iwiaminidrvdrvdeleteitem-implementation"></a>IWiaMiniDrv：:d rvDeleteItem 实现的说明
 
-当 WIA 应用程序调用**IWiaItem：:D eleteitem**方法（在 Microsoft Windows SDK 文档中进行了描述）以删除 wia 项时，wia 服务将调用[**IWiaMiniDrv：:d rvdeleteitem**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvdeleteitem)方法。
+Wia 服务调用 [**IWiaMiniDrv：:D rvdeleteitem**](/windows-hardware/drivers/ddi/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvdeleteitem) 方法，当 WIA 应用程序调用 **IWiaItem：:D eleteitem** 方法时 (Microsoft Windows SDK 文档) 中所述，以删除 WIA 项。
 
 WIA 服务在调用此方法之前将验证以下内容：
 
@@ -104,9 +104,4 @@ HRESULT _stdcall CWIADevice::drvDeleteItem(BYTE *pWiasContext,
 ```
 
  
-
- 
-
-
-
 

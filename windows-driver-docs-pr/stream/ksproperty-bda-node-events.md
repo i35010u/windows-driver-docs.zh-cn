@@ -1,6 +1,6 @@
 ---
-title: KSPROPERTY\_BDA\_NODE\_事件
-description: 客户端使用 KSPROPERTY\_BDA\_NODE\_事件来检索节点上支持的事件列表。
+title: KSPROPERTY \_ BDA \_ 节点 \_ 事件
+description: 客户端使用 KSPROPERTY \_ BDA \_ 节点 \_ 事件检索节点上支持的事件列表。
 ms.assetid: 4923a88b-abb3-4608-95b3-b0e74eeadaa8
 keywords:
 - KSPROPERTY_BDA_NODE_EVENTS 流媒体设备
@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c704c4253ef1b5f979a418548dabbfa936b1639c
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: f7d47f48d5e0141152873abbb47da257ce367a47
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72833688"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89186137"
 ---
-# <a name="ksproperty_bda_node_events"></a>KSPROPERTY\_BDA\_NODE\_事件
+# <a name="ksproperty_bda_node_events"></a>KSPROPERTY \_ BDA \_ 节点 \_ 事件
 
 
-客户端使用 KSPROPERTY\_BDA\_NODE\_事件来检索节点上支持的事件列表。
+客户端使用 KSPROPERTY \_ BDA \_ 节点 \_ 事件检索节点上支持的事件列表。
 
 ## <span id="ddk_ksproperty_bda_node_events_ks"></span><span id="DDK_KSPROPERTY_BDA_NODE_EVENTS_KS"></span>
 
@@ -41,7 +41,7 @@ ms.locfileid: "72833688"
 </colgroup>
 <thead>
 <tr class="header">
-<th>“获取”</th>
+<th>获取</th>
 <th>设置</th>
 <th>目标</th>
 <th>属性描述符类型</th>
@@ -50,9 +50,9 @@ ms.locfileid: "72833688"
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>“是”</p></td>
-<td><p>无</p></td>
-<td><p>Filter</p></td>
+<td><p>是</p></td>
+<td><p>否</p></td>
+<td><p>筛选器</p></td>
 <td><p>KSPROPERTY</p></td>
 <td><p>Guid 列表</p></td>
 </tr>
@@ -79,7 +79,7 @@ ms.locfileid: "72833688"
 <tbody>
 <tr class="odd">
 <td><p>标头</p></td>
-<td>Bdamedia （包括 Bdamedia）</td>
+<td>Bdamedia (包含 Bdamedia) </td>
 </tr>
 </tbody>
 </table>
@@ -87,16 +87,9 @@ ms.locfileid: "72833688"
 ## <a name="see-also"></a>另请参阅
 
 
-[**BdaPropertyNodeEvents**](https://docs.microsoft.com/windows-hardware/drivers/ddi/bdasup/nf-bdasup-bdapropertynodeevents)
+[**BdaPropertyNodeEvents**](/windows-hardware/drivers/ddi/bdasup/nf-bdasup-bdapropertynodeevents)
 
-[**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)
-
- 
+[**KSPROPERTY**](/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)
 
  
-
-
-
-
-
 

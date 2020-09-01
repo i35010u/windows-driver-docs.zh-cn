@@ -4,12 +4,12 @@ description: ACPI 5.0 规范定义了许多用于表示和控制典型平台功�
 ms.assetid: 10BD17C9-E8FE-41E0-BD8C-E622B60E6BB6
 ms.date: 08/25/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 0d94d954abf4889bd5bee555fca5f9a5cd6997ef
-ms.sourcegitcommit: d9a9925f790271f4ca2c8377d551d96e8d1e62c7
+ms.openlocfilehash: e979f56d0f4f7ce3fe0bfe503786ece86cfc84eb
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88850283"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89186053"
 ---
 # <a name="acpi-defined-devices"></a>ACPI 定义的设备
 
@@ -25,7 +25,7 @@ ms.locfileid: "88850283"
 
 此设备描述、配置和报告平台电池的状态。 有关详细信息，请参阅 [ACPI 5.0 规范](https://uefi.org/specifications)中的10.2 节 "控制方法电池"。 用于 SoC 平台上的控制方法电池实现使用在 ACPI 5.0 规范中的5.6.5，"GPIO 终止的 ACPI 事件" 部分中所述的 GPIO 信号 ACPI 事件机制。 可以通过使用 GPIO 或 SPB OpRegions 操作的方法来访问电池和充电硬件，如 ACPI 5.0 规范的5.5.2.4.4 和5.5.2.4.5 部分中所述。
 
-有关 Windows 中的电池管理的详细信息，请参阅 [Windows 电源和电池子系统要求](https://docs.microsoft.com/windows-hardware/design/component-guidelines/windows-power-and-battery-subsystem-requirements)。
+有关 Windows 中的电池管理的详细信息，请参阅 [Windows 电源和电池子系统要求](/windows-hardware/design/component-guidelines/windows-power-and-battery-subsystem-requirements)。
 
 ### <a name="battery-device-specific-method-_dsm"></a> (DSM) 的特定于电池的设备方法 \_
 
@@ -48,7 +48,7 @@ ACPI 5.0 定义了可选的基于方法的时间和警报设备的操作和定�
 
 ### <a name="thermal-management-in-windows"></a>Windows 中的热管理
 
-Windows 热量管理模型基于 ACPI 的热区概念。 这是一个合作固件/OS/驱动程序模型，可通过定义完善的接口，从中央热量管理组件抽象传感器和冷却设备。 有关详细信息，请参阅 [Windows 中的热管理](https://docs.microsoft.com/windows-hardware/design/device-experiences/thermal-management-in-windows)。
+Windows 热量管理模型基于 ACPI 的热区概念。 这是一个合作固件/OS/驱动程序模型，可通过定义完善的接口，从中央热量管理组件抽象传感器和冷却设备。 有关详细信息，请参阅 [Windows 中的热管理](/windows-hardware/design/device-experiences/thermal-management-in-windows)。
 
 ### <a name="acpi-thermal-zones"></a>ACPI 热量区域
 

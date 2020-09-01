@@ -7,12 +7,12 @@ keywords:
 - 示例驱动程序 WDK 内核模式
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 66c41f15c1baf14e98b7b1457de82b44d74a7506
-ms.sourcegitcommit: 958a5ced83856df22627c06eb42c9524dd547906
+ms.openlocfilehash: ca84d3ddff0af71eecbb23c8e3bc5563be517aae
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83235438"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89185119"
 ---
 # <a name="sample-kernel-mode-drivers"></a>示例内核模式驱动程序
 
@@ -20,7 +20,7 @@ WDK 提供各种示例内核模式驱动程序。 安装 WDK 后， `src\general
 
 [**DCHU**](https://github.com/Microsoft/Windows-driver-samples/tree/master/general/DCHU)
 
-应用 DCH[设计原则](../develop/getting-started-with-windows-drivers.md)（声明性、组件化和硬件支持应用 [HSA]）。  可以将其用作自己的 Windows 驱动程序包的模型。
+ (声明性、组件化和硬件支持应用 [HSA] ) 应用 DCH [设计原则](../develop/getting-started-with-windows-drivers.md) 。  可以将其用作自己的 Windows 驱动程序包的模型。
 
 [**PLX9x5x**](https://github.com/Microsoft/Windows-driver-samples/tree/master/general/PLX9x5x)
 
@@ -40,13 +40,13 @@ WDK 提供各种示例内核模式驱动程序。 安装 WDK 后， `src\general
 
 [**取消**](https://github.com/Microsoft/Windows-driver-samples/tree/master/general/cancel)  
 
-演示如何使用[取消安全 IRP 队列](cancel-safe-irp-queues.md)。
+演示如何使用 [取消安全 IRP 队列](cancel-safe-irp-queues.md)。
 
-[**传回**](https://github.com/Microsoft/Windows-driver-samples/tree/master/general/echo)
+[echo](https://github.com/Microsoft/Windows-driver-samples/tree/master/general/echo)
 
 [**引发**](https://github.com/Microsoft/Windows-driver-samples/tree/master/general/event)  
 
-演示当应用程序请求通知时，内核模式驱动程序可用于向应用程序通知硬件事件的技术。 一种方法使用[事件对象](event-objects.md)，另一种方法依赖于在事件发生之前对通知请求进行[排队](queuing-and-dequeuing-irps.md)。
+演示当应用程序请求通知时，内核模式驱动程序可用于向应用程序通知硬件事件的技术。 一种方法使用 [事件对象](event-objects.md) ，另一种方法依赖于在事件发生之前对通知请求进行 [排队](queuing-and-dequeuing-irps.md) 。
 
 [**filehistory**](https://github.com/Microsoft/Windows-driver-samples/tree/master/general/filehistory)
 
@@ -62,7 +62,7 @@ ObCallback 示例驱动程序演示如何使用注册的回调来实现进程保
 
 [**pcidrv**](https://github.com/Microsoft/Windows-driver-samples/tree/master/general/pcidrv)
 
-此示例演示如何为 PCI 设备编写 KMDF 驱动程序。 此示例适用于基于 Intel 82557/82558 的 PCI 以太网适配器（10/100）和 Intel 兼容机。
+此示例演示如何为 PCI 设备编写 KMDF 驱动程序。 此示例适用于基于 Intel 82557/82558 的 PCI 以太网适配器 (10/100) 和 Intel 兼容机。
 
 [**perfcounters/kcs**](https://github.com/Microsoft/Windows-driver-samples/tree/master/general/perfcounters/kcs)
 
@@ -74,17 +74,17 @@ RegFltr 示例演示如何编写注册表筛选器驱动程序。
 
 [**吐司炉**](https://github.com/Microsoft/Windows-driver-samples/tree/master/general/toaster)  
 
-提供一组符合[Windows 驱动模型](windows-driver-model.md)（WDM）的驱动程序的示例代码。 此示例还包括示例安装软件。
+提供一组符合 [Windows 驱动模型](windows-driver-model.md) (WDM) 的驱动程序的示例代码。 此示例还包括示例安装软件。
 
 [**tracedrv**](https://github.com/Microsoft/Windows-driver-samples/tree/master/general/tracing/tracedriver)  
 
-演示如何使用[WPP 软件跟踪](https://docs.microsoft.com/windows-hardware/drivers/devtest/wpp-software-tracing)。
+演示如何使用 [WPP 软件跟踪](../devtest/wpp-software-tracing.md)。
 
 [**UMDF 驱动程序主干示例**](https://github.com/Microsoft/Windows-driver-samples/tree/master/general/umdfSkeleton)
 
 此示例演示如何使用用户模式驱动程序框架的第1版来编写最小的驱动程序。
 
-[**HID 设备的 FIREFLY KMDF 筛选器驱动程序**](https://github.com/Microsoft/Windows-driver-samples/tree/master/hid/firefly)除了说明如何编写筛选器驱动程序外，此示例还演示如何使用远程 i/o 目标接口以内核模式打开 HID 集合，并发送 IOCTL 请求来设置和获取功能报告，以及应用程序如何使用 WMI 接口将命令发送到筛选器驱动程序。
+[**HID 设备的 FIREFLY KMDF 筛选器驱动程序**](https://github.com/Microsoft/Windows-driver-samples/tree/master/hid/firefly) 除了说明如何编写筛选器驱动程序外，此示例还演示如何使用远程 i/o 目标接口以内核模式打开 HID 集合，并发送 IOCTL 请求来设置和获取功能报告，以及应用程序如何使用 WMI 接口将命令发送到筛选器驱动程序。
 
 目录的其他子目录 `\src` 包含用于各种硬件类型的内核模式驱动程序的示例代码。
 

@@ -8,12 +8,12 @@ keywords:
 - 设备属性表 WDK WMI
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8be259a3af64e5c3df1e2af8527d82cf53cbe350
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 31823adc5fcee227bd09175c485eb56fb78171ab
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67383795"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89187019"
 ---
 # <a name="wmi-property-sheets"></a>WMI 属性表
 
@@ -21,16 +21,11 @@ ms.locfileid: "67383795"
 
 
 
-用户友好的驱动程序使用户能够控制通过其设置其**设备管理器**属性表。 请参阅[使用设备管理器](https://docs.microsoft.com/windows-hardware/drivers/install/using-device-manager)有关设备管理器的说明。
+用户友好的驱动程序允许用户通过其 **设备管理器** 属性表来控制其设置。 有关设备管理器的说明，请参阅 [使用设备管理器](../install/using-device-manager.md) 。
 
-驱动程序可以自动公开它们在属性页实现通过使用任何 WMI 类[WMI 通用的属性页提供程序](wmi-generic-property-page-provider.md)。
+驱动程序可以使用 [wmi 通用属性页提供程序](wmi-generic-property-page-provider.md)在其属性表上自动公开其实现的所有 WMI 类。
 
-可以在驱动程序上启用某些控件**电源管理**选项卡**设备管理器**通过支持某些特定的 WMI 类 Guid 的属性表。 请参阅[WMI 和电源管理选项卡](wmi-and-the-power-management-tab.md)有关详细信息。
-
- 
+驱动程序可以通过支持特定的 WMI 类 Guid 来启用**设备管理器**属性表的 "**电源管理**" 选项卡上的某些控件。 有关详细信息，请参阅 [WMI 和电源管理选项卡](wmi-and-the-power-management-tab.md) 。
 
  
-
-
-
 

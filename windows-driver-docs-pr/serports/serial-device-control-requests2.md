@@ -8,18 +8,18 @@ keywords:
 - 串行驱动程序 WDK，设备控制请求
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 605032f179573fdba04303027f5ee87c5ed41767
-ms.sourcegitcommit: ba3199328ea5d80119eafc399dc989e11e7ae1d6
+ms.openlocfilehash: b55d3762dcdd77720391a971128b8d0987df6cb4
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74863025"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89185483"
 ---
 # <a name="serial-device-control-requests"></a>串行设备控制请求
 
 串行提供设备控制请求来控制支持 16550 UART 兼容接口的串行设备的操作。
 
-串行支持**IOCTL\_串行\_XXX**请求，客户端可以使用这些请求来执行以下任务：
+串行支持客户端可用于执行以下任务的 **IOCTL \_ 串行 \_ XXX** 请求：
 
 - 获取和设置控制寄存器和控制信号。
 
@@ -41,14 +41,14 @@ ms.locfileid: "74863025"
 
 - 获取设备的属性。
 
-串行支持**IOCTL\_串行\_内部\_XXX**请求，可信内核模式客户端可以使用这些请求来执行以下任务：
+串行支持受信任的内核模式客户端可用于执行以下任务的 **IOCTL \_ 串行 \_ 内部 \_ XXX** 请求：
 
 - 设置设备上的基本设置并还原以前的设置。
 
 - 禁用和启用设备的等待/唤醒操作。
 
-有关[COM 端口](configuration-of-com-ports.md)的高级操作的详细信息，请参阅 Microsoft Windows SDK 中 Windows 基础服务支持的通信资源的相关信息。
+有关 [COM 端口](configuration-of-com-ports.md)的高级操作的详细信息，请参阅 Microsoft Windows SDK 中 Windows 基础服务支持的通信资源的相关信息。
 
-有关串行 i/o 请求的详细信息，请参阅[串行端口](https://docs.microsoft.com/windows-hardware/drivers/ddi/_serports/)参考主题。
+有关串行 i/o 请求的详细信息，请参阅 [串行端口](/windows-hardware/drivers/ddi/_serports/) 参考主题。
 
-若要详细了解 IOCTL\_串行\_XXX 和 IOCTL\_串行\_内部\_XXX 请求，请参阅[ntddser](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddser/)标头。
+有关 IOCTL \_ 串行 \_ XXX 和 ioctl \_ 串行内部 XXX 请求的详细信息， \_ \_ 请参阅 [ntddser](/windows-hardware/drivers/ddi/ntddser/) 标头。

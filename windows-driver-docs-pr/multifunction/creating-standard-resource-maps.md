@@ -3,15 +3,15 @@ title: 创建标准资源映射
 description: 创建标准资源映射
 ms.assetid: 97d95481-5290-41d3-a6e6-7cc142d4c2e8
 keywords:
-- 标准版资源映射 WDK 多功能设备
+- 标准资源映射 WDK 多功能设备
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d17c69a1fe374023d1d9ab2a2107e37d04c1b20f
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 547d6e03ba257f947cafb47fad85cf7f93fc1076
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386384"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89186443"
 ---
 # <a name="creating-standard-resource-maps"></a>创建标准资源映射
 
@@ -19,7 +19,7 @@ ms.locfileid: "67386384"
 
 
 
-如果包含的多功能设备 INF [ **INF DDInstall.LogConfigOverride 部分**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-ddinstall-logconfigoverride-section)，父资源是通过隐式编号的 00 *nn*出现在 INF*日志配置节*部分 (请参阅[ **INF LogConfig 指令**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-logconfig-directive))。 例如，考虑使用以下 INF 多功能 PC 卡*DDInstall*。**LogConfigOverride**部分：
+如果多功能设备的 INF 包含[**Inf DDInstall. LogConfigOverride 部分**](../install/inf-ddinstall-logconfigoverride-section.md)，则父资源在 inf 的*日志配置-节*部分中显示时，将隐式编号为00到*Nn* ， (参见[**inf LogConfig 指令**](../install/inf-logconfig-directive.md)) 。 例如，请考虑使用以下 INF *DDInstall*的多功能电脑卡。**LogConfigOverride** 部分：
 
 ```cpp
 [DDInstall.LogConfigOverride]
@@ -33,9 +33,9 @@ MemConfig=4000@0-FFFFFFFF%FFFFC000    ; resource 03
 PcCardConfig=41:100000(W)             ; resource 04
 ```
 
-在此示例中的设备有五个资源，这是通过 04 编号的 00。 如果有多个*DDInstall*。**LogConfigOverride**部分中，必须在每个部分中的顺序列出的资源。
+在此示例中，设备包含5个资源，编号为00到04。 如果有多个 *DDInstall*。**LogConfigOverride** 部分，资源必须在每个部分中按相同顺序列出。
 
-如果一个子函数 (Child0000) 要求上面列出的第一个和第三个资源，将为此子资源映射：00,02. 如果另一个子函数 (Child00001) 要求所有五个资源，则会在其资源映射：00,01,02,03,04. 在此示例中，资源 00 (**IoConfig = 2f8 2ff**) 和 02 (**IRQConfig = 3、 4、 5、 7、 9、 10、 11**) 共享。 这些资源映射会 INF 中，如下所示指定：
+如果 (Child0000 的一个子函数) 需要上面列出的第一个和第三个资源，则该子级的资源映射将为：00，02。 如果 (Child00001 的另一个子函数) 需要全部五个资源，则其资源映射将为：00、01、02、03、04。 在此示例中，资源 00 (**IoConfig = 2f8-2ff**) 和 02 (**IRQConfig = 3、4、5、7、9、10、11**) 共享。 这些资源映射将在 INF 中指定，如下所示：
 
 ```cpp
 [DDInstall.RegHW]
@@ -46,14 +46,9 @@ HKR,Child0001,HardwareID,,child0001-hardware-ID
 HKR,Child0001,ResourceMap,1,00,01,02,03,04        ; map for Child0001
 ```
 
-"1"的以下**ResourceMap**参数指定的注册表项是 REG\_二进制数据类型。 后面"1"的数字是资源的映射值。
+**Windows.applicationmodel.resources.core.resourcemap**参数后的 "1" 指定注册表项为 REG \_ BINARY 数据类型。 "1" 后面的数字是资源映射值。
 
-如果有任何*DDInstall*。**LogConfigOverride** INF 中的部分，父资源的资源要求通过为基础的总线驱动程序构造的顺序进行编号。 对于 PC 卡总线驱动程序会报告此订单中的资源：IRQ、 I/O 端口、 内存地址。 有关多个 I/O 和内存要求，这些编号在卡上的元组的顺序相同。 其他总线驱动程序可能还会列出其他订单中的资源。
-
- 
+如果没有 *DDInstall*。**LogConfigOverride** 在 INF 中，父资源按照基础总线驱动程序构建资源需求的顺序进行编号。 对于 PC 卡，总线驱动程序按以下顺序报告资源： IRQ、i/o 端口和内存地址。 对于多个 i/o 和内存需求，它们按与卡上的元组相同的顺序进行编号。 其他总线驱动程序可能会按其他顺序列出资源。
 
  
-
-
-
 

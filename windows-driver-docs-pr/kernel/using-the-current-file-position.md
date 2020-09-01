@@ -12,12 +12,12 @@ keywords:
 - 文件位置 WDK 内核
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5b08b7ac9bc1bdc6d0fcf0aad254dd8b0017eac1
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 25434d841706bcd70741274f005fddab5dd0caca
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72835865"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89185597"
 ---
 # <a name="using-the-current-file-position"></a>使用当前文件位置
 
@@ -29,16 +29,11 @@ ms.locfileid: "72835865"
 
 默认情况下，i/o 管理器不会保留当前文件位置指针。 此默认值提供了效率，因为正确维护当前文件位置需要 i/o 管理器对文件对象上的每个读写操作进行同步。
 
-若要创建具有关联的当前文件位置指针的句柄，请在*DesiredAccess*参数中指定对[**ZwCreateFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ntcreatefile)、 [**IoCreateFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocreatefile)或[**ZwOpenFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ntopenfile)的同步访问权限，并将文件\_同步\_IO\_警报或文件\_同步\_IO\_*CreateOptions*或*OpenOptions*参数中的 NONALERT。 请确保不要同时指定文件\_追加\_数据访问权限。
+若要创建具有关联的当前文件位置指针的句柄，请在 *DesiredAccess* 参数中指定对 [**ZwCreateFile**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ntcreatefile)、 [**IoCreateFile**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iocreatefile)或 [**ZwOpenFile**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ntopenfile)的同步访问权限，并在 \_ \_ \_ \_ \_ \_ *NONALERT* 或 *CreateOptions* 参数中指定 "同步 io 警报" 或 "文件同步 io OpenOptions"。 请确保不要同时指定文件 \_ 追加 \_ 数据访问权限。
 
-[**ZwReadFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ntreadfile)和[**ZwWriteFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ntwritefile)会自动更新当前的文件位置指针，使其指向的内容不受操作影响的数据的影响。 例如，如果从字节偏移量101开始读取20个字节，则**ZwReadFile**会将当前文件位置更新为121。
+[**ZwReadFile**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ntreadfile) 和 [**ZwWriteFile**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ntwritefile) 会自动更新当前的文件位置指针，使其指向的内容不受操作影响的数据的影响。 例如，如果从字节偏移量101开始读取20个字节，则 **ZwReadFile** 会将当前文件位置更新为121。
 
-您可以通过分别调用[**ZwQueryInformationFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ntqueryinformationfile)或[**ZwSetInformationFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ntsetinformationfile)来检查或更改当前文件位置。 在任一情况下，请将*FileInformationClass*参数设置为**FilePositionInformation**。
-
- 
+您可以通过分别调用 [**ZwQueryInformationFile**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ntqueryinformationfile) 或 [**ZwSetInformationFile**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ntsetinformationfile)来检查或更改当前文件位置。 在任一情况下，请将 *FileInformationClass* 参数设置为 **FilePositionInformation**。
 
  
-
-
-
 

@@ -1,6 +1,6 @@
 ---
-title: KSPROPERTY\_CAMERACONTROL\_扩展\_OIS
-description: KSPROPERTY\_CAMERACONTROL\_扩展\_OIS 是一个属性 ID，用于在驱动程序上控制光学图像稳定性（OIS）。
+title: KSPROPERTY \_ CAMERACONTROL \_ 扩展 \_ OIS
+description: KSPROPERTY \_ CAMERACONTROL \_ EXTENDED \_ OIS 是一个属性 ID，用于控制驱动程序上 (OIS) 的视觉图像稳定性。
 ms.assetid: CF4F1283-1517-4F93-8554-FBD4B068A655
 keywords:
 - KSPROPERTY_CAMERACONTROL_EXTENDED_OIS 流媒体设备
@@ -14,16 +14,16 @@ api_type:
 - HeaderDef
 ms.date: 09/11/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 51f26d1ba657d335bc5b58510549ad06827836a8
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: a632cdfcce2d71a67289a09d739d4fecad0a9254
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72841595"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89186591"
 ---
-# <a name="ksproperty_cameracontrol_extended_ois"></a>KSPROPERTY\_CAMERACONTROL\_扩展\_OIS
+# <a name="ksproperty_cameracontrol_extended_ois"></a>KSPROPERTY \_ CAMERACONTROL \_ 扩展 \_ OIS
 
-**KSPROPERTY\_CAMERACONTROL\_扩展\_OIS**是一个属性 ID，用于在驱动程序上控制光学图像稳定性（OIS）。
+**KSPROPERTY \_CAMERACONTROL \_ 扩展 \_ OIS** 是一个属性 ID，用于控制驱动程序上 (OIS) 的视觉图像稳定性。
 
 ## <a name="usage-summary-table"></a>使用情况摘要表
 
@@ -35,21 +35,21 @@ ms.locfileid: "72841595"
 </colgroup>
 <thead>
 <tr class="header">
-<th>范围</th>
-<th>控件</th>
-<th>在任务栏的搜索框中键入</th>
+<th>作用域</th>
+<th>控制</th>
+<th>类型</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td><p>版本 1</p></td>
-<td><p>Filter</p></td>
+<td><p>筛选器</p></td>
 <td><p>同步</p></td>
 </tr>
 </tbody>
 </table>
 
-以下标志可以放置在**KSCAMERA\_EXTENDEDPROP\_标头中。** 用于控制光学图像稳定性的标志字段。 如果支持自动，则默认值应为 AUTO; 否则为。
+以下标志可以放置在 **KSCAMERA \_ EXTENDEDPROP \_ 标头中。** 用于控制光学图像稳定性的标志字段。 如果支持自动，则默认值应为 AUTO; 否则为。
 
 ```cpp
 #define KSCAMERA_EXTENDEDPROP_OIS_OFF   0x0000000000000000
@@ -57,11 +57,11 @@ ms.locfileid: "72841595"
 #define KSCAMERA_EXTENDEDPROP_OIS_AUTO  0x0000000000000002 
 ```
 
-如果驱动程序支持此控件，则它必须支持\_的 OIS\_，并关闭 OIS。
+如果驱动程序支持此控件，则它必须支持 OIS \_ ON 和 OIS \_ OFF。
 
 如果驱动程序不支持光学图像稳定性，驱动程序不应实现此控制。
 
-当视频或照片 pin 处于 KSSTATE\_运行状态时，此控件的设置调用不起作用。 如果视频或照片 pin 处于运行状态并且返回状态\_无效\_设备\_状态，则驱动程序应拒绝收到的设置呼叫。 在 GET 调用中，驱动程序应返回 "标志" 字段中的当前设置。
+当视频或照片 pin 处于 KSSTATE 运行状态时，此控件的设置调用不起作用 \_ 。 如果视频或照片 pin 处于运行状态，并且返回状态 " \_ 设备状态无效"，则驱动程序应拒绝收到的设置呼叫 \_ \_ 。 在 GET 调用中，驱动程序应返回 "标志" 字段中的当前设置。
 
 下表介绍了标志功能。
 
@@ -72,7 +72,7 @@ ms.locfileid: "72841595"
 </colgroup>
 <thead>
 <tr class="header">
-<th>旗帜</th>
+<th>标志</th>
 <th>描述</th>
 </tr>
 </thead>
@@ -83,16 +83,16 @@ ms.locfileid: "72841595"
 </tr>
 <tr class="even">
 <td><p>KSCAMERA_EXTENDEDPROP_OIS_ON</p></td>
-<td><p>这是必需的功能。 指定时，驱动程序中会启用光学图像稳定性。 此标志与 OIS_AUTO 和 OIS_OFF 标志互相排斥。</p></td>
+<td><p>这是必需的功能。 指定时，驱动程序中会启用光学图像稳定性。 此标志与 OIS_AUTO 和 OIS_OFF 标志互斥。</p></td>
 </tr>
 <tr class="odd">
 <td><p>KSCAMERA_EXTENDEDPROP_OIS_AUTO</p></td>
-<td><p>此功能是可选的。 指定时，支持此类功能的驱动程序将确定是否应该打开或关闭光学图像稳定性。 此标志与 OIS_ON 和 OIS_OFF 标志互相排斥。</p></td>
+<td><p>此功能是可选的。 指定时，支持此类功能的驱动程序将确定是否应该打开或关闭光学图像稳定性。 此标志与 OIS_ON 和 OIS_OFF 标志互斥。</p></td>
 </tr>
 </tbody>
 </table>
 
-下表包含使用控件时[**KSCAMERA\_EXTENDEDPROP\_标头**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)结构字段的说明和要求。
+下表包含使用控件时 [**KSCAMERA \_ EXTENDEDPROP \_ 标头**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header) 结构字段的说明和要求。
 
 <table>
 <colgroup>
@@ -102,7 +102,7 @@ ms.locfileid: "72841595"
 <thead>
 <tr class="header">
 <th>成员</th>
-<th>描述</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>
@@ -112,11 +112,11 @@ ms.locfileid: "72841595"
 </tr>
 <tr class="even">
 <td><p>PinId</p></td>
-<td><p>这必须是 KSCAMERA_EXTENDEDPROP_FILTERSCOPE （0xFFFFFFFF）。</p></td>
+<td><p>这必须 (0xFFFFFFFF) KSCAMERA_EXTENDEDPROP_FILTERSCOPE。</p></td>
 </tr>
 <tr class="odd">
-<td><p>Size</p></td>
-<td><p>这必须是 sizeof （KSCAMERA_EXTENDEDPROP_HEADER） + sizeof （KSCAMERA_EXTENDEDPROP_VALUE）。</p></td>
+<td><p>大小</p></td>
+<td><p>这必须是 sizeof (KSCAMERA_EXTENDEDPROP_HEADER) + sizeof (KSCAMERA_EXTENDEDPROP_VALUE) 。</p></td>
 </tr>
 <tr class="even">
 <td><p>结果</p></td>
@@ -124,7 +124,7 @@ ms.locfileid: "72841595"
 </tr>
 <tr class="odd">
 <td><p>功能</p></td>
-<td><p>必须是前面定义的受支持的 KSCAMERA_EXTENDEDPROP_OIS_ * 标志的按位 "或"。</p></td>
+<td><p>必须是前面定义的受支持 KSCAMERA_EXTENDEDPROP_OIS_ * 标志的按位 "或"。</p></td>
 </tr>
 <tr class="even">
 <td><p>Flags</p></td>

@@ -11,12 +11,12 @@ keywords:
 - 自定义块 WDK WMI
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b897e9c695490eb93790a2ac00ff09154059960b
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: dbaa604f5e02af5b4197c5113074157321ecb39d
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72838638"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89187171"
 ---
 # <a name="implementing-custom-wmi-blocks"></a>实现自定义 WMI 块
 
@@ -24,13 +24,13 @@ ms.locfileid: "72838638"
 
 
 
-驱动程序可以实现公开设备特定检测的*自定义块*。 例如，可报告温度的磁盘驱动器的驱动程序可能会实现自定义事件块，该事件块在驱动器温度超出安全阈值时通知 WMI 客户端。
+驱动程序可以实现公开设备特定检测的 *自定义块* 。 例如，可报告温度的磁盘驱动器的驱动程序可能会实现自定义事件块，该事件块在驱动器温度超出安全阈值时通知 WMI 客户端。
 
 若要实现自定义块，请执行以下操作：
 
--   在其 MOF 文件中定义类，将 MOF 文件编译为资源，并在驱动程序中包含资源，如[发布 WMI 架构](publishing-a-wmi-schema.md)中所述。
+-   在其 MOF 文件中定义类，将 MOF 文件编译为资源，并在驱动程序中包含资源，如 [发布 WMI 架构](publishing-a-wmi-schema.md)中所述。
 
--   在[注册为 Wmi 数据提供程序](registering-as-a-wmi-data-provider.md)中所述，将块和驱动程序支持的其他标准和自定义块一起注册到 wmi。
+-   在 [注册为 Wmi 数据提供程序](registering-as-a-wmi-data-provider.md)中所述，将块和驱动程序支持的其他标准和自定义块一起注册到 wmi。
 
 -   处理所有 WMI 请求，这些请求在**参数.** 数据路径中指定驱动程序的设备对象指针，并处理**参数. wmi**[中的](handling-wmi-requests.md)标准块的 GUID。
 
@@ -52,20 +52,15 @@ ms.locfileid: "72838638"
 
 -   将事件块限制为最大大小1K 字节。
 
-    事件项应定义为小数据类型，因为整个[**WNODE\_事件**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wmistr/ns-wmistr-tagwnode_event_item)的注册表定义大小限制（起初，1k）\_包含生成的事件的项结构。 对于较大的通知，驱动程序可以发送[**WNODE\_事件\_引用**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wmistr/ns-wmistr-tagwnode_event_reference)结构，该结构指定数据块的单个实例，然后 WMI 会查询以获取实际事件。 但是，这会增加发生事件和通知之间的时间延迟。
+    事件项应定义为较小的数据类型，因为对于包含所生成事件的整个 [**WNODE \_ 事件 \_ 项**](/windows-hardware/drivers/ddi/wmistr/ns-wmistr-tagwnode_event_item) 结构， (最初的 1k) 。 对于较大的通知，驱动程序可以发送 [**WNODE \_ 事件 \_ 引用**](/windows-hardware/drivers/ddi/wmistr/ns-wmistr-tagwnode_event_reference) 结构，该结构指定数据块的单个实例，然后 WMI 会通过查询来获取实际事件。 但是，这会增加发生事件和通知之间的时间延迟。
 
 -   将固定大小的数据项置于数据块的开头，后跟任意可变大小的数据项。
 
     例如，具有三个 DWORD 数据项和一个可变长度字符串的数据块应该首先放入三个 Dword，然后放入字符串。 在块的开始处放置固定大小的数据项，将允许 WMI 客户端更轻松地提取它们。
 
--   考虑要访问驱动程序数据块的系统用户的类型。 系统为所有 WMI 类 Guid 提供默认安全描述符。 如果需要，可以在设备的 INF 文件中提供备用的安全描述符。 有关详细信息，请参阅[创建安全设备安装](https://docs.microsoft.com/windows-hardware/drivers/install/creating-secure-device-installations)。
+-   考虑要访问驱动程序数据块的系统用户的类型。 系统为所有 WMI 类 Guid 提供默认安全描述符。 如果需要，可以在设备的 INF 文件中提供备用的安全描述符。 有关详细信息，请参阅 [创建安全设备安装](../install/creating-secure-device-installations.md)。
 
 WMI 不支持版本控制，因此驱动程序编写器必须定义新的 MOF 类，并生成新的 GUID 来修改现有的自定义块。
 
  
-
- 
-
-
-
 

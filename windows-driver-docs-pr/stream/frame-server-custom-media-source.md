@@ -3,12 +3,12 @@ title: Frame Server 自定义媒体源
 description: 提供有关在框架服务器体系结构内实现自定义媒体源的信息。
 ms.date: 08/25/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: bc6e2cbc863558a64ce8c74ea8f308f27be6e430
-ms.sourcegitcommit: d9a9925f790271f4ca2c8377d551d96e8d1e62c7
+ms.openlocfilehash: cb98b0c63409c43c27f9bf154e1b7547ee777ed8
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88850213"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89186350"
 ---
 # <a name="frame-server-custom-media-source"></a>Frame Server 自定义媒体源
 
@@ -58,7 +58,7 @@ AV 流驱动程序方法的主要优点是： PnP 和电源管理/设备管理�
 
 - 支持 "照相机" 标准 PnP 枚举和发现。
 
-### <a name="security"></a>安全性
+### <a name="security"></a>安全
 
 框架服务器的自定义媒体源在安全性方面不同于一般自定义媒体源，如下所示：
 
@@ -76,7 +76,7 @@ AV 流驱动程序方法的主要优点是： PnP 和电源管理/设备管理�
 
 - 在 "照相机" 激活期间
 
-传感器组生成通常在设备安装和/或电源周期内完成。 考虑到这一点，我们强烈建议在创建自定义媒体源的过程中避免任何重要处理，并将任何此类活动推迟到 [IMFMediaSource：： Start](https://docs.microsoft.com/windows/win32/api/mfidl/nf-mfidl-imfmediasource-start) 函数。 传感器组生成将不会尝试启动自定义媒体源，只需查询各种可用的流/媒体类型和源/流属性信息。
+传感器组生成通常在设备安装和/或电源周期内完成。 考虑到这一点，我们强烈建议在创建自定义媒体源的过程中避免任何重要处理，并将任何此类活动推迟到 [IMFMediaSource：： Start](/windows/win32/api/mfidl/nf-mfidl-imfmediasource-start) 函数。 传感器组生成将不会尝试启动自定义媒体源，只需查询各种可用的流/媒体类型和源/流属性信息。
 
 ## <a name="stub-driver"></a>存根驱动程序
 
@@ -86,10 +86,10 @@ AV 流驱动程序方法的主要优点是： PnP 和电源管理/设备管理�
 
 驱动程序要求如下：
 
-- 将 "照相机" (" [KSCATEGORY_VIDEO_CAMERA](https://docs.microsoft.com/windows-hardware/drivers/install/kscategory-video-camera) " 类别下的自定义媒体源) 设备接口，以便可以对其进行枚举。
+- 将 "照相机" (" [KSCATEGORY_VIDEO_CAMERA](../install/kscategory-video-camera.md) " 类别下的自定义媒体源) 设备接口，以便可以对其进行枚举。
 
 > [!NOTE]
-> 若要允许传统的 DirectShow 应用程序进行枚举，驱动程序还需要在 [KSCATEGORY_VIDEO](https://docs.microsoft.com/windows-hardware/drivers/install/kscategory-video) 和 [KSCATEGORY_CAPTURE](https://docs.microsoft.com/windows-hardware/drivers/install/kscategory-capture)下进行注册。
+> 若要允许传统的 DirectShow 应用程序进行枚举，驱动程序还需要在 [KSCATEGORY_VIDEO](../install/kscategory-video.md) 和 [KSCATEGORY_CAPTURE](../install/kscategory-capture.md)下进行注册。
 
 - 在 "设备接口" 节点下添加一个注册表项， (在 "驱动程序 INF **DDInstall** " 部分中使用**AddReg**指令，) 声明自定义媒体源 COM 对象的共同 iopalisserverextension CLSID。 必须使用以下注册表值名称添加此项： **CustomCaptureSourceClsid**。
 
@@ -226,7 +226,7 @@ REG_EXPAND_SZ = 0x00020000
 
 上述自定义媒体源在 **KSCATEGORY \_ video**、 **KSCATEGORY \_ CAPTURE**和 **KSCATEGORY \_ 视频 \_ 相机** 下注册，以确保任何 UWP 和非 UWP 应用都可以发现 "相机" 以搜索标准 RGB 相机。
 
-如果自定义媒体源还公开非 RGB 流 (IR、深度等) 则还可以选择在 [KSCATEGORY_SENSOR_CAMERA](https://docs.microsoft.com/windows-hardware/drivers/install/kscategory-sensor-camera)下进行注册。
+如果自定义媒体源还公开非 RGB 流 (IR、深度等) 则还可以选择在 [KSCATEGORY_SENSOR_CAMERA](../install/kscategory-sensor-camera.md)下进行注册。
 
 > [!NOTE]
 > 大多数基于 USB 的网络摄像头将公开 YUY2 和 MJPG 格式。 由于此行为，许多旧的 DirectShow 应用程序都是通过假设 YUY2/MJPG 可用而编写的。 若要确保与此类应用程序的兼容性，建议在自定义媒体源中提供 YUY2 介质类型（如果需要旧版应用兼容性）。
@@ -235,7 +235,7 @@ REG_EXPAND_SZ = 0x00020000
 
 除 INF 外，驱动程序存根还必须注册并启用照相机设备接口。 这通常是在 **驱动程序 \_ 添加 \_ 设备** 操作过程中完成的。
 
-请参阅针对基于 WDM 的驱动程序的 [DRIVER_ADD_DEVICE](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_add_device) 回调函数和用于 UMDF/KMDF 驱动程序的 [WdfDriverCreate](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdriver/nf-wdfdriver-wdfdrivercreate) 函数。
+请参阅针对基于 WDM 的驱动程序的 [DRIVER_ADD_DEVICE](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_add_device) 回调函数和用于 UMDF/KMDF 驱动程序的 [WdfDriverCreate](/windows-hardware/drivers/ddi/wdfdriver/nf-wdfdriver-wdfdrivercreate) 函数。
 
 下面是用于处理此操作的 UMDF 驱动程序存根的代码段：
 
@@ -466,23 +466,23 @@ Return Value:
 
 这可确保应用程序通过 PnP Api 侦听设备的添加/删除操作获取正确的通知。 并确保无法枚举不再可用的源。
 
-有关 UMDF 和 KMDF 驱动程序，请参阅 [WdfDeviceSetDeviceState](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdevicesetdevicestate) 函数文档。
+有关 UMDF 和 KMDF 驱动程序，请参阅 [WdfDeviceSetDeviceState](/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdevicesetdevicestate) 函数文档。
 
-对于 WMD 驱动程序，请参阅 [IoSetDeviceInterfaceState](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iosetdeviceinterfacestate) 函数文档。
+对于 WMD 驱动程序，请参阅 [IoSetDeviceInterfaceState](/windows-hardware/drivers/ddi/wdm/nf-wdm-iosetdeviceinterfacestate) 函数文档。
 
 ## <a name="custom-media-source-dll"></a>自定义媒体源 DLL
 
 自定义媒体源是标准 inproc COM 服务器，必须实现以下接口：
 
-- [IMFMediaEventGenerator](https://docs.microsoft.com/windows/win32/api/mfobjects/nn-mfobjects-imfmediaeventgenerator)
+- [IMFMediaEventGenerator](/windows/win32/api/mfobjects/nn-mfobjects-imfmediaeventgenerator)
 
-- [IMFMediaSource](https://docs.microsoft.com/windows/win32/api/mfidl/nn-mfidl-imfmediasource)
+- [IMFMediaSource](/windows/win32/api/mfidl/nn-mfidl-imfmediasource)
 
-- [IMFMediaSourceEx](https://docs.microsoft.com/windows/win32/api/mfidl/nn-mfidl-imfmediasourceex)
+- [IMFMediaSourceEx](/windows/win32/api/mfidl/nn-mfidl-imfmediasourceex)
 
-- [IKsControl](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/nn-ks-ikscontrol)
+- [IKsControl](/windows-hardware/drivers/ddi/ks/nn-ks-ikscontrol)
 
-- [IMFGetService](https://docs.microsoft.com/windows/win32/api/mfidl/nn-mfidl-imfgetservice)
+- [IMFGetService](/windows/win32/api/mfidl/nn-mfidl-imfgetservice)
 
 > [!NOTE]
 > **IMFMediaSourceEx** 继承自 **IMFMediaSource** ， **IMFMediaSource** 继承自 **IMFMediaEventGenerator**。
@@ -491,14 +491,14 @@ Return Value:
 
 - **IMFMediaEventGenerator**
 
-- [IMFMediaStream](https://docs.microsoft.com/windows/win32/api/mfidl/nn-mfidl-imfmediastream)
+- [IMFMediaStream](/windows/win32/api/mfidl/nn-mfidl-imfmediastream)
 
 - **IMFMediaStream2**
 
 > [!NOTE]
 > **IMFMediaStream2** 继承自 **IMFMediaStream** ， **IMFMediaStream** 继承自 **IMFMediaEventGenerator**。
 
-请参阅 [编写自定义媒体源](https://docs.microsoft.com/windows/desktop/medfound/writing-a-custom-media-source) 文档，了解如何创建自定义媒体源。 本部分的其余部分将介绍在框架服务器框架内支持自定义媒体源所需的差异。
+请参阅 [编写自定义媒体源](/windows/desktop/medfound/writing-a-custom-media-source) 文档，了解如何创建自定义媒体源。 本部分的其余部分将介绍在框架服务器框架内支持自定义媒体源所需的差异。
 
 ### <a name="imfgetservice"></a>IMFGetService
 
@@ -535,9 +535,9 @@ SimpleMediaSource::GetService(
 
 ### <a name="imfmediaeventgenerator"></a>IMFMediaEventGenerator
 
-如上所示，源和源中的各个流都必须支持其自己的 [IMFMediaEventGenerator](https://docs.microsoft.com/windows/win32/api/mfobjects/nn-mfobjects-imfmediaeventgenerator) 接口。 来自源的整个 MF 管道数据和控制流通过事件生成器通过事件生成器进行管理，该事件生成器将发送特定的 [IMFMediaEvent](https://docs.microsoft.com/windows/win32/api/mfobjects/nn-mfobjects-imfmediaevent)。
+如上所示，源和源中的各个流都必须支持其自己的 [IMFMediaEventGenerator](/windows/win32/api/mfobjects/nn-mfobjects-imfmediaeventgenerator) 接口。 来自源的整个 MF 管道数据和控制流通过事件生成器通过事件生成器进行管理，该事件生成器将发送特定的 [IMFMediaEvent](/windows/win32/api/mfobjects/nn-mfobjects-imfmediaevent)。
 
-对于实现 IMFMediaEventGenerator，自定义媒体源必须使用 [MFCreateEventQueue](https://docs.microsoft.com/windows/win32/api/mfapi/nf-mfapi-mfcreateeventqueue) API 来创建 [IMFMediaEventQueue](https://docs.microsoft.com/windows/win32/api/mfobjects/nn-mfobjects-imfmediaeventqueue) ，并将 **IMFMediaEventGenerator** 的所有方法路由到 queue 对象：
+对于实现 IMFMediaEventGenerator，自定义媒体源必须使用 [MFCreateEventQueue](/windows/win32/api/mfapi/nf-mfapi-mfcreateeventqueue) API 来创建 [IMFMediaEventQueue](/windows/win32/api/mfobjects/nn-mfobjects-imfmediaeventqueue) ，并将 **IMFMediaEventGenerator** 的所有方法路由到 queue 对象：
 
 **IMFMediaEventGenerator** 具有以下方法：
 
@@ -634,19 +634,19 @@ SimpleMediaSource::QueueEvent(
 
 通过框架服务器框架支持的自定义媒体源不支持查找或暂停操作。 自定义媒体源不需要为这些操作提供支持，且不得发布 **MFSourceSeeked** 或 **MEStreamSeeked** 事件。
 
-[IMFMediaSource：:P ause](https://docs.microsoft.com/windows/win32/api/mfidl/nf-mfidl-imfmediasource-pause) 应返回 **mf \_ e \_ 无效 \_ 状态 \_ 转换** (或 **mf \_ e \_ 关机** （如果源已关闭) ）。
+[IMFMediaSource：:P ause](/windows/win32/api/mfidl/nf-mfidl-imfmediasource-pause) 应返回 **mf \_ e \_ 无效 \_ 状态 \_ 转换** (或 **mf \_ e \_ 关机** （如果源已关闭) ）。
 
 ### <a name="ikscontrol"></a>IKsControl
 
-[IKsControl](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/nn-ks-ikscontrol) 是所有相机相关控件的标准控制接口。 如果自定义媒体源实现了任何相机控制，则 **IKsControl** 接口就是管道路由控制 i/o 的方式。
+[IKsControl](/windows-hardware/drivers/ddi/ks/nn-ks-ikscontrol) 是所有相机相关控件的标准控制接口。 如果自定义媒体源实现了任何相机控制，则 **IKsControl** 接口就是管道路由控制 i/o 的方式。
 
 有关详细信息，请参阅下面的控件集文档主题：
 
-- [PROPSETID_VIDCAP_CAMERACONTROL](https://docs.microsoft.com/windows-hardware/drivers/stream/propsetid-vidcap-cameracontrol)
+- [PROPSETID_VIDCAP_CAMERACONTROL](./propsetid-vidcap-cameracontrol.md)
 
-- [PROPSETID_VIDCAP_VIDEOPROCAMP](https://docs.microsoft.com/windows-hardware/drivers/stream/propsetid-vidcap-videoprocamp)
+- [PROPSETID_VIDCAP_VIDEOPROCAMP](./propsetid-vidcap-videoprocamp.md)
 
-- [KSPROPERTYSETID_ExtendedCameraControl](https://docs.microsoft.com/windows-hardware/drivers/stream/kspropertysetid-extendedcameracontrol)
+- [KSPROPERTYSETID_ExtendedCameraControl](./kspropertysetid-extendedcameracontrol.md)
 
 这些控件是可选的，如果不支持，建议返回的错误代码为 **" \_ HRESULT \_ (\_ \_ 找不到 \_) 设置 **"。
 
@@ -699,7 +699,7 @@ IFACEMETHODIMP SimpleMediaSource::KsEvent(
 
 ### <a name="imfmediastream2"></a>IMFMediaStream2
 
-如[编写自定义媒体源](https://docs.microsoft.com/windows/desktop/medfound/writing-a-custom-media-source)中所述，通过在[IMFMediaSource：： Start](https://docs.microsoft.com/windows/win32/api/mfidl/nf-mfidl-imfmediasource-start)方法完成过程中发布到源事件队列的[MENewStream](https://docs.microsoft.com/windows/desktop/medfound/menewstream)媒体事件，可在自定义媒体源中为帧工作提供**IMFMediaStream2**接口：
+如[编写自定义媒体源](/windows/desktop/medfound/writing-a-custom-media-source)中所述，通过在[IMFMediaSource：： Start](/windows/win32/api/mfidl/nf-mfidl-imfmediasource-start)方法完成过程中发布到源事件队列的[MENewStream](/windows/desktop/medfound/menewstream)媒体事件，可在自定义媒体源中为帧工作提供**IMFMediaStream2**接口：
 
 ```cpp
 IFACEMETHODIMP
@@ -795,30 +795,30 @@ SimpleMediaSource::Start(
 }
 ```
 
-必须为通过 [IMFPresentationDescriptor](https://docs.microsoft.com/windows/win32/api/mfidl/nn-mfidl-imfpresentationdescriptor)选择的每个流执行此操作。
+必须为通过 [IMFPresentationDescriptor](/windows/win32/api/mfidl/nn-mfidl-imfpresentationdescriptor)选择的每个流执行此操作。
 
-对于包含视频流的自定义媒体源，不应发送 [MEEndOfStream](https://docs.microsoft.com/windows/desktop/medfound/meendofstream) 和 [MEEndOfPresentation](https://docs.microsoft.com/windows/desktop/medfound/meendofpresentation) 事件。
+对于包含视频流的自定义媒体源，不应发送 [MEEndOfStream](/windows/desktop/medfound/meendofstream) 和 [MEEndOfPresentation](/windows/desktop/medfound/meendofpresentation) 事件。
 
 ### <a name="stream-attributes"></a>流属性
 
-所有自定义媒体源流都必须将 [MF_DEVICESTREAM_STREAM_CATEGORY](https://docs.microsoft.com/windows/desktop/medfound/mf-devicestream-stream-category) 设置为 **PINNAME \_ 视频 \_ 捕获**。 **PINNAME \_自 \_ ** 定义媒体源不支持视频预览。
+所有自定义媒体源流都必须将 [MF_DEVICESTREAM_STREAM_CATEGORY](/windows/desktop/medfound/mf-devicestream-stream-category) 设置为 **PINNAME \_ 视频 \_ 捕获**。 **PINNAME \_自 \_ ** 定义媒体源不支持视频预览。
 
 > [!NOTE]
 > **PINNAME \_** 虽然支持，但不建议使用映像。 使用 **PINNAME \_ 映像** 公开流需要自定义媒体源来支持所有照片触发器控件。 有关更多详细信息，请参阅下面的 [照片流控制](#photo-stream-controls) 部分。
 
-[MF_DEVICESTREAM_STREAM_ID](https://docs.microsoft.com/windows/desktop/medfound/mf-devicestream-stream-id) 是所有流的必需属性。 它应该是从0开始的索引。 因此，第一个流的 ID 为0，第二个流的 id 为1，依此类推。
+[MF_DEVICESTREAM_STREAM_ID](/windows/desktop/medfound/mf-devicestream-stream-id) 是所有流的必需属性。 它应该是从0开始的索引。 因此，第一个流的 ID 为0，第二个流的 id 为1，依此类推。
 
 下面是流上建议的属性列表：
 
-- [MF_DEVICESTREAM_ATTRIBUTE_FRAMESOURCE_TYPES](https://docs.microsoft.com/windows/desktop/medfound/mf-devicestream-attribute-framesource-types)
+- [MF_DEVICESTREAM_ATTRIBUTE_FRAMESOURCE_TYPES](/windows/desktop/medfound/mf-devicestream-attribute-framesource-types)
 
-- [MF_DEVICESTREAM_FRAMESERVER_SHARED](https://docs.microsoft.com/windows/desktop/medfound/mf-devicestream-frameserver-shared)
+- [MF_DEVICESTREAM_FRAMESERVER_SHARED](/windows/desktop/medfound/mf-devicestream-frameserver-shared)
 
 #### <a name="mf_devicestream_attribute_framesource_types"></a>MF \_ DEVICESTREAM \_ 属性 \_ FRAMESOURCE \_ 类型
 
 **MF \_DEVICESTREAM \_ 属性 \_ FRAMESOURCE \_ 类型** 是一个 UINT32 属性，它是流类型的 bitmasked 值。 它可以设置为以下任一 (，而这些类型是一个位掩码标志，则建议在所有可能的) 时不会混合源类型：
 
-| 类型                         | Flag   | 描述                                      |
+| 类型                         | 标志   | 描述                                      |
 |------------------------------|--------|--------------------------------------------------|
 | MFFrameSourceTypes \_ 颜色    | 0x0001 | 标准 RGB 颜色流                        |
 | MFFrameSourceTypes \_ 红外 | 0x0002 | IR 流                                        |
@@ -836,27 +836,27 @@ SimpleMediaSource::Start(
 
 ### <a name="sample-allocation"></a>示例分配
 
-所有媒体帧必须以 [IMFSample](https://docs.microsoft.com/windows/win32/api/mfobjects/nn-mfobjects-imfsample)的形式生成。 自定义媒体源必须使用 [MFCreateSample](https://docs.microsoft.com/windows/win32/api/mfapi/nf-mfapi-mfcreatesample) 函数来分配 IMFSample 的实例，并使用 [AddBuffer](https://docs.microsoft.com/windows/win32/api/mfobjects/nf-mfobjects-imfsample-addbuffer) 方法添加媒体缓冲区。
+所有媒体帧必须以 [IMFSample](/windows/win32/api/mfobjects/nn-mfobjects-imfsample)的形式生成。 自定义媒体源必须使用 [MFCreateSample](/windows/win32/api/mfapi/nf-mfapi-mfcreatesample) 函数来分配 IMFSample 的实例，并使用 [AddBuffer](/windows/win32/api/mfobjects/nf-mfobjects-imfsample-addbuffer) 方法添加媒体缓冲区。
 
 每个 **IMFSample** 都必须设置示例时间和采样持续时间。 所有示例时间戳都必须基于 QPC time (QueryPerformanceCounter) 。
 
-建议在可能的情况下，自定义媒体源使用 [MFGetSystemTime](https://docs.microsoft.com/windows/win32/api/mfidl/nf-mfidl-mfgetsystemtime) 函数。 此函数是围绕 **QueryPerformanceCounter** 的包装器，将 QPC 刻度转换为100毫微秒。
+建议在可能的情况下，自定义媒体源使用 [MFGetSystemTime](/windows/win32/api/mfidl/nf-mfidl-mfgetsystemtime) 函数。 此函数是围绕 **QueryPerformanceCounter** 的包装器，将 QPC 刻度转换为100毫微秒。
 
 自定义媒体源可以使用内部时钟，但必须根据当前 QPC 将所有时间戳关联到100毫微秒单位。
 
 #### <a name="media-buffer"></a>媒体缓冲区
 
-添加到 **IMFSample** 中的所有媒体缓冲区必须使用标准 MF 缓冲区分配函数。 自定义媒体源不得实现其自己的 [IMFMediaBuffer](https://docs.microsoft.com/windows/win32/api/mfobjects/nn-mfobjects-imfmediabuffer) 接口或尝试直接分配媒体缓冲区 (例如，new/Malloc/VirtualAlloc 等）不能用于帧数据) 。
+添加到 **IMFSample** 中的所有媒体缓冲区必须使用标准 MF 缓冲区分配函数。 自定义媒体源不得实现其自己的 [IMFMediaBuffer](/windows/win32/api/mfobjects/nn-mfobjects-imfmediabuffer) 接口或尝试直接分配媒体缓冲区 (例如，new/Malloc/VirtualAlloc 等）不能用于帧数据) 。
 
 使用以下任何 Api 来分配媒体帧：
 
-- [MFCreateMemoryBuffer](https://docs.microsoft.com/windows/win32/api/mfapi/nf-mfapi-mfcreatememorybuffer)
+- [MFCreateMemoryBuffer](/windows/win32/api/mfapi/nf-mfapi-mfcreatememorybuffer)
 
-- [MFCreateAlignedMemoryBuffer](https://docs.microsoft.com/windows/win32/api/mfapi/nf-mfapi-mfcreatealignedmemorybuffer)
+- [MFCreateAlignedMemoryBuffer](/windows/win32/api/mfapi/nf-mfapi-mfcreatealignedmemorybuffer)
 
-- [MFCreate2DMediaBuffer](https://docs.microsoft.com/windows/win32/api/mfapi/nf-mfapi-mfcreate2dmediabuffer)
+- [MFCreate2DMediaBuffer](/windows/win32/api/mfapi/nf-mfapi-mfcreate2dmediabuffer)
 
-- [MFCreateDXGISurfaceBuffer](https://docs.microsoft.com/windows/win32/api/mfapi/nf-mfapi-mfcreatedxgisurfacebuffer)
+- [MFCreateDXGISurfaceBuffer](/windows/win32/api/mfapi/nf-mfapi-mfcreatedxgisurfacebuffer)
 
 **MFCreateMemoryBuffer** 和 **MFCreateAlignedMemoryBuffer** 应用于非步幅对齐媒体数据。 通常，这些是自定义子类型或压缩子类型 (例如 H264/HEVC/MJPG) 。
 
@@ -864,9 +864,9 @@ SimpleMediaSource::Start(
 
 若要使用 DX surface (执行 GPU 加速操作（如渲染和/或编码) ），应使用 **MFCreateDXGISurfaceBuffer** 。
 
-**MFCreateDXGISurfaceBuffer** 不会创建 DX 图面。 通过 [IMFMediaSourceEx：： SetD3DManager](https://docs.microsoft.com/windows/win32/api/mfidl/nf-mfidl-imfmediasourceex-setd3dmanager) 方法使用传入媒体源的 DXGI 管理器创建图面。
+**MFCreateDXGISurfaceBuffer** 不会创建 DX 图面。 通过 [IMFMediaSourceEx：： SetD3DManager](/windows/win32/api/mfidl/nf-mfidl-imfmediasourceex-setd3dmanager) 方法使用传入媒体源的 DXGI 管理器创建图面。
 
-[IMFDXGIDeviceManager：： OpenDeviceHandle](https://docs.microsoft.com/windows/win32/api/mfobjects/nf-mfobjects-imfdxgidevicemanager-opendevicehandle)将提供与所选 D3D 设备关联的句柄。 然后，可以使用[IMFDXGIDeviceManager：： GetVideoService](https://docs.microsoft.com/windows/win32/api/mfobjects/nf-mfobjects-imfdxgidevicemanager-getvideoservice)方法获取[ID3D11Device](https://docs.microsoft.com/windows/win32/api/d3d11/nn-d3d11-id3d11device)接口。
+[IMFDXGIDeviceManager：： OpenDeviceHandle](/windows/win32/api/mfobjects/nf-mfobjects-imfdxgidevicemanager-opendevicehandle)将提供与所选 D3D 设备关联的句柄。 然后，可以使用[IMFDXGIDeviceManager：： GetVideoService](/windows/win32/api/mfobjects/nf-mfobjects-imfdxgidevicemanager-getvideoservice)方法获取[ID3D11Device](/windows/win32/api/d3d11/nn-d3d11-id3d11device)接口。
 
 无论使用哪种类型的缓冲区，都必须通过媒体流**IMFMediaEventGenerator**上的**MEMediaSample**事件向管道提供创建的**IMFSample** 。
 
@@ -927,33 +927,33 @@ IFACEMETHODIMP
 
 例如，如果你有一个物理设备，除了它的非 AV 流驱动程序包外，还会安装一个 UMDF 存根驱动程序，并将多个这些物理设备附加到计算机，而 UMDF 驱动程序的每个实例都将获得唯一的符号链接名称，则自定义媒体源的激活路径将无法在创建时传达与自定义媒体源关联的符号链接名称。
 
-自定义媒体源可能会在自定义媒体源的属性存储 (通过[IMFMediaSourceEx：： GetSourceAttributes](https://docs.microsoft.com/windows/win32/api/mfidl/nf-mfidl-imfmediasourceex-getsourceattributes)) 方法从自定义媒体源返回的属性存储中查找标准[MF_DEVSOURCE_ATTRIBUTE_SOURCE_TYPE_VIDCAP_SYMBOLIC_LINK](https://docs.microsoft.com/windows/desktop/medfound/mf-devsource-attribute-source-type-vidcap-symbolic-link)属性，同时调用[IMFMediaSource：： Start](https://docs.microsoft.com/windows/win32/api/mfidl/nf-mfidl-imfmediasource-start) 。
+自定义媒体源可能会在自定义媒体源的属性存储 (通过[IMFMediaSourceEx：： GetSourceAttributes](/windows/win32/api/mfidl/nf-mfidl-imfmediasourceex-getsourceattributes)) 方法从自定义媒体源返回的属性存储中查找标准[MF_DEVSOURCE_ATTRIBUTE_SOURCE_TYPE_VIDCAP_SYMBOLIC_LINK](/windows/desktop/medfound/mf-devsource-attribute-source-type-vidcap-symbolic-link)属性，同时调用[IMFMediaSource：： Start](/windows/win32/api/mfidl/nf-mfidl-imfmediasource-start) 。
 
 但是，这可能会导致启动延迟较高，因为这会将 HW 资源采集延迟为开始时间，而不是创建/初始化时间。
 
-因此，在 Windows 10 版本1809中，自定义媒体源可以选择公开 [IMFActivate](https://docs.microsoft.com/windows/win32/api/mfobjects/nn-mfobjects-imfactivate) 接口。
+因此，在 Windows 10 版本1809中，自定义媒体源可以选择公开 [IMFActivate](/windows/win32/api/mfobjects/nn-mfobjects-imfactivate) 接口。
 
 > [!NOTE]
-> **IMFActivate** 继承自 [IMFAttributes](https://docs.microsoft.com/windows/win32/api/mfobjects/nn-mfobjects-imfattributes)。
+> **IMFActivate** 继承自 [IMFAttributes](/windows/win32/api/mfobjects/nn-mfobjects-imfattributes)。
 
 ### <a name="imfactivate"></a>IMFActivate
 
-如果自定义媒体源的 COM 服务器支持**IMFActivate**接口，则设备初始化信息将通过**IMFActivate**继承的**IMFAttributes**提供给 COM 服务器。 因此，在调用 [IMFActivate：： ActivateObject](https://docs.microsoft.com/windows/win32/api/mfobjects/nf-mfobjects-imfactivate-activateobject) 时， **IMFActivate** 的属性存储将包含 UMDF 存根驱动程序的符号链接名称，以及创建/初始化源时管道/应用程序提供的任何其他配置设置。
+如果自定义媒体源的 COM 服务器支持**IMFActivate**接口，则设备初始化信息将通过**IMFActivate**继承的**IMFAttributes**提供给 COM 服务器。 因此，在调用 [IMFActivate：： ActivateObject](/windows/win32/api/mfobjects/nf-mfobjects-imfactivate-activateobject) 时， **IMFActivate** 的属性存储将包含 UMDF 存根驱动程序的符号链接名称，以及创建/初始化源时管道/应用程序提供的任何其他配置设置。
 
 自定义媒体源应使用此方法调用来获取所需的任何硬件资源。
 
 > [!NOTE]
-> 如果硬件资源获取所用的时间超过200毫秒，则建议使用异步获取硬件资源。 激活自定义媒体源不应在硬件资源获取上阻止。 相反，应将 [IMFMediaSource：： Start](https://docs.microsoft.com/windows/win32/api/mfidl/nf-mfidl-imfmediasource-start) 操作序列化为硬件资源采集。
+> 如果硬件资源获取所用的时间超过200毫秒，则建议使用异步获取硬件资源。 激活自定义媒体源不应在硬件资源获取上阻止。 相反，应将 [IMFMediaSource：： Start](/windows/win32/api/mfidl/nf-mfidl-imfmediasource-start) 操作序列化为硬件资源采集。
 
-**IMFActivate**、 [DetachObject](https://docs.microsoft.com/windows/win32/api/mfobjects/nf-mfobjects-imfactivate-detachobject)和[ShutdownObject](https://docs.microsoft.com/windows/win32/api/mfobjects/nf-mfobjects-imfactivate-shutdownobject)公开的两个附加方法必须返回**E \_ NOTIMPL**。
+**IMFActivate**、 [DetachObject](/windows/win32/api/mfobjects/nf-mfobjects-imfactivate-detachobject)和[ShutdownObject](/windows/win32/api/mfobjects/nf-mfobjects-imfactivate-shutdownobject)公开的两个附加方法必须返回**E \_ NOTIMPL**。
 
-自定义媒体源可以选择在与[IMFMediaSource](https://docs.microsoft.com/windows/win32/api/mfidl/nn-mfidl-imfmediasource)相同的 COM 对象中实现**IMFActivate**和**IMFAttributes**接口。 如果已完成此操作，建议使用[IMFMediaSourceEx：： GetSourceAttributes](https://docs.microsoft.com/windows/win32/api/mfidl/nf-mfidl-imfmediasourceex-getsourceattributes)返回与**IMFActivate**中的相同**IMFAttributes**接口。
+自定义媒体源可以选择在与[IMFMediaSource](/windows/win32/api/mfidl/nn-mfidl-imfmediasource)相同的 COM 对象中实现**IMFActivate**和**IMFAttributes**接口。 如果已完成此操作，建议使用[IMFMediaSourceEx：： GetSourceAttributes](/windows/win32/api/mfidl/nf-mfidl-imfmediasourceex-getsourceattributes)返回与**IMFActivate**中的相同**IMFAttributes**接口。
 
 如果自定义媒体源未实现具有相同对象的 **IMFActivate** 和 **IMFAttributes** ，则自定义媒体源必须将 **IMFActivate** 属性存储上设置的所有属性复制到自定义媒体源的源属性存储中。
 
 ## <a name="encoded-camera-stream"></a>编码相机流
 
-自定义媒体源可能会 (HEVC 或 H264 基本流公开压缩媒体类型) 并且 OS 管道完全支持自定义媒体源上编码参数的源和配置， (编码参数通过 [ICodecAPI](https://docs.microsoft.com/windows/win32/api/strmif/nn-strmif-icodecapi)传递，后者路由为 [IKsControl：： KsProperty](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksproxy/nf-ksproxy-ikscontrol-ksproperty) 调用) ：
+自定义媒体源可能会 (HEVC 或 H264 基本流公开压缩媒体类型) 并且 OS 管道完全支持自定义媒体源上编码参数的源和配置， (编码参数通过 [ICodecAPI](/windows/win32/api/strmif/nn-strmif-icodecapi)传递，后者路由为 [IKsControl：： KsProperty](/windows-hardware/drivers/ddi/ksproxy/nf-ksproxy-ikscontrol-ksproperty) 调用) ：
 
 ```cpp
 // IKsControl methods
@@ -976,13 +976,13 @@ KSPROPERTY.Id = 0
 KSPROPERTY.Flags = (KSPROPERTY_TYPE_SET or KSPROPERTY_TYPE_GET)
 ```
 
-其中，编码器属性 GUID 是 [编解码器 API 属性](https://docs.microsoft.com/windows/desktop/DirectShow/codec-api-properties)中定义的可用属性列表。
+其中，编码器属性 GUID 是 [编解码器 API 属性](/windows/desktop/DirectShow/codec-api-properties)中定义的可用属性列表。
 
 编码器属性的有效负载将通过上面声明的**KsProperty**方法的*pPropertyData*字段传入。
 
 ### <a name="capture-engine-requirements"></a>捕获引擎要求
 
-尽管帧服务器完全支持编码的源，但客户端捕获引擎 (**IMFCaptureEngine**) ， [MediaCapture](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapture) 对象使用该引擎会给出其他要求：
+尽管帧服务器完全支持编码的源，但客户端捕获引擎 (**IMFCaptureEngine**) ， [MediaCapture](/uwp/api/windows.media.capture.mediacapture) 对象使用该引擎会给出其他要求：
 
 - 流必须全部编码 (HEVC 或 H264) 或此上下文 MJPG 中所有未压缩的 (被视为未压缩的) 。
 
@@ -993,9 +993,9 @@ KSPROPERTY.Flags = (KSPROPERTY_TYPE_SET or KSPROPERTY_TYPE_GET)
 
 ## <a name="camera-profiles-available-in-windows-10-version-1803-and-later"></a>在 Windows 10 版本1803及更高版本中，照相机配置文件 (可用) 
 
-照相机配置文件支持适用于自定义媒体源。 建议的机制是通过 **MF \_ DEVICEMFT \_ SENSORPROFILE \_ COLLECTION** 属性（ ([IMFMediaSourceEx：： GetSourceAttributes](https://docs.microsoft.com/windows/win32/api/mfidl/nf-mfidl-imfmediasourceex-getsourceattributes)) 的源属性发布配置文件。
+照相机配置文件支持适用于自定义媒体源。 建议的机制是通过 **MF \_ DEVICEMFT \_ SENSORPROFILE \_ COLLECTION** 属性（ ([IMFMediaSourceEx：： GetSourceAttributes](/windows/win32/api/mfidl/nf-mfidl-imfmediasourceex-getsourceattributes)) 的源属性发布配置文件。
 
-**MF \_ DEVICEMFT \_ SENSORPROFILE \_ COLLECTION**属性是[IMFSensorProfileCollection](https://docs.microsoft.com/windows/win32/api/mfidl/nn-mfidl-imfsensorprofilecollection)接口的**IUnknown** 。 可使用[MFCreateSensorProfileCollection](https://docs.microsoft.com/windows/win32/api/mfidl/nf-mfidl-mfcreatesensorprofilecollection)函数获取**IMFSensorProfileCollection** ：
+**MF \_ DEVICEMFT \_ SENSORPROFILE \_ COLLECTION**属性是[IMFSensorProfileCollection](/windows/win32/api/mfidl/nn-mfidl-imfsensorprofilecollection)接口的**IUnknown** 。 可使用[MFCreateSensorProfileCollection](/windows/win32/api/mfidl/nf-mfidl-mfcreatesensorprofilecollection)函数获取**IMFSensorProfileCollection** ：
 
 ```cpp
 IFACEMETHODIMP
@@ -1055,7 +1055,7 @@ SimpleMediaSource::GetSourceAttributes(
 
 如果自定义媒体源设计为支持 Windows Hello 面部识别，则建议发布面部身份验证配置文件。 人脸身份验证配置文件的要求如下：
 
-- 人脸身份验证 DDI 控件在单个 IR 流上必须受支持。 有关详细信息，请参阅 [KSPROPERTY_CAMERACONTROL_EXTENDED_FACEAUTH_MODE](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-cameracontrol-extended-faceauth-mode)。
+- 人脸身份验证 DDI 控件在单个 IR 流上必须受支持。 有关详细信息，请参阅 [KSPROPERTY_CAMERACONTROL_EXTENDED_FACEAUTH_MODE](./ksproperty-cameracontrol-extended-faceauth-mode.md)。
 
 - IR 流必须至少为 340 x 340，15 fps。 格式必须为 L8、NV12 或用 L8 压缩标记的 MJPG。
 
@@ -1067,6 +1067,6 @@ SimpleMediaSource::GetSourceAttributes(
 
 ## <a name="photo-stream-controls"></a>照片流控件
 
-如果通过将某个流的[MF \_ DEVICESTREAM \_ 流 \_ 类别](https://docs.microsoft.com/windows/desktop/medfound/mf-devicestream-stream-category) 标记为 **PINNAME \_ 映像**来公开独立照片流，则需要使用流类别为 **PINNAME \_ 视频 \_ 捕获** 的流 (例如，仅公开 **PINNAME \_ 映像** 的单个流不是有效的媒体源) 。
+如果通过将某个流的[MF \_ DEVICESTREAM \_ 流 \_ 类别](/windows/desktop/medfound/mf-devicestream-stream-category) 标记为 **PINNAME \_ 映像**来公开独立照片流，则需要使用流类别为 **PINNAME \_ 视频 \_ 捕获** 的流 (例如，仅公开 **PINNAME \_ 映像** 的单个流不是有效的媒体源) 。
 
-通过 **IKsControl**，必须支持 **PROPSETID \_ VIDCAP \_ VIDEOCONTROL** 属性集。 有关详细信息，请参阅 [视频控件属性](https://docs.microsoft.com/windows-hardware/drivers/stream/video-control-properties)。
+通过 **IKsControl**，必须支持 **PROPSETID \_ VIDCAP \_ VIDEOCONTROL** 属性集。 有关详细信息，请参阅 [视频控件属性](./video-control-properties.md)。

@@ -1,23 +1,23 @@
 ---
-title: CODECAPI\_SETALLDEFAULTS
-description: CODECAPI\_SETALLDEFAULTS
+title: CODECAPI \_ SETALLDEFAULTS
+description: CODECAPI \_ SETALLDEFAULTS
 ms.assetid: 6a50a75f-cbc5-487f-b2cd-34e89eb127a0
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c18ba4f9f5bf5b3f02da0c13f26a46171e47be37
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 1bc920bdfb167081303881632452b299eaf88b44
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72844723"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89186369"
 ---
-# <a name="codecapi_setalldefaults"></a>CODECAPI\_SETALLDEFAULTS
+# <a name="codecapi_setalldefaults"></a>CODECAPI \_ SETALLDEFAULTS
 
 
 ## <span id="ddk_codecapi_setalldefaults_ks"></span><span id="DDK_CODECAPI_SETALLDEFAULTS_KS"></span>
 
 
-CODECAPI\_SETALLDEFAULTS 属性用于将微型驱动程序的所有内部设置重置为其默认配置。
+CODECAPI \_ SETALLDEFAULTS 属性用于将微型驱动程序的所有内部设置重置为其默认配置。
 
 <table>
 <colgroup>
@@ -29,7 +29,7 @@ CODECAPI\_SETALLDEFAULTS 属性用于将微型驱动程序的所有内部设置�
 </colgroup>
 <thead>
 <tr class="header">
-<th>“获取”</th>
+<th>获取</th>
 <th>设置</th>
 <th>目标</th>
 <th>属性描述符类型</th>
@@ -38,9 +38,9 @@ CODECAPI\_SETALLDEFAULTS 属性用于将微型驱动程序的所有内部设置�
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>无</p></td>
-<td><p>“是”</p></td>
-<td><p>Filter</p></td>
+<td><p>否</p></td>
+<td><p>是</p></td>
+<td><p>筛选器</p></td>
 <td><p>KSPROPERTY</p></td>
 <td><p>不适用</p></td>
 </tr>
@@ -51,23 +51,17 @@ CODECAPI\_SETALLDEFAULTS 属性用于将微型驱动程序的所有内部设置�
 
 设置为此属性集的是一个触发器，设备应将其所有设置重置为默认值。
 
-### <a name="comments"></a>备注
+### <a name="comments"></a>注释
 
-设置此属性时，微型驱动程序应缓存[CODECAPI\_CURRENTCHANGELIST](codecapi-currentchangelist.md)的已更改参数的整个列表。
+设置此属性时，微型驱动程序应为 [CODECAPI \_ CURRENTCHANGELIST](codecapi-currentchangelist.md) 缓存已更改参数的整个列表。
 
 ### <a name="requirements"></a>要求
 
-**标头：** 在*ksmedia*中声明。 包括*ksmedia*。
+**标头：** 在 *ksmedia*中声明。 包括 *ksmedia*。
 
 ### <a name="see-also"></a>另请参阅
 
-[**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)
+[**KSPROPERTY**](/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)
 
  
-
- 
-
-
-
-
 
