@@ -1,46 +1,40 @@
 ---
-title: 在 IAMVideoAccelerator API DXVA 和运动补偿 DDI
+title: IAMVideoAccelerator API 中的 DXVA 和运动补偿 DDI
 description: DirectX VA 与 IAMVideoAccelerator API 和运动补偿 DDI 之间的关系
 ms.assetid: 8bfa198f-b29f-491f-8133-a1f3b41e0cbe
 keywords:
-- DirectX 视频加速 WDK Windows 2000 显示 IAMVideoAccelerator
-- 视频加速 WDK DirectX IAMVideoAccelerator
-- VA WDK DirectX IAMVideoAccelerator
+- DirectX 视频加速 WDK Windows 2000 显示，IAMVideoAccelerator
+- 视频加速 WDK DirectX，IAMVideoAccelerator
+- VA WDK DirectX，IAMVideoAccelerator
 - IAMVideoAcceleratorNotify
 - IAMVideoAccelerator
 - 视频混合呈现器 WDK DirectX VA
 - VMR WDK DirectX VA
-- 覆盖 mixer WDK DirectX VA
+- 覆盖混音器 WDK DirectX VA
 - OVM WDK DirectX VA
 ms.date: 12/06/2018
 ms.localizationpriority: medium
 ms.custom: seodec18
-ms.openlocfilehash: dbab28ff2c123f9cff6571c3ed85b16e03e3afc0
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 8444f61f47f36ee129e4f2f50611195978347647
+ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67353440"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89067448"
 ---
 # <a name="directx-va-relationship-to-iamvideoaccelerator-api-and-motion-compensation-ddi"></a>DirectX VA 与 IAMVideoAccelerator API 和运动补偿 DDI 之间的关系
 
-使用 DirectX VA **IAMVideoAcceleratorNotify**和**IAMVideoAccelerator**接口 （记录在 Microsoft Windows SDK） 中，并且[动作补偿 DDI](motion-compensation.md)若要指定的软件解码器之间交换的数据格式，呈现器 (VMR) 或覆盖 mixer (OVM) 混合视频和视频显示器驱动程序。 下图显示软件解码器、 VMR，和视频显示器驱动程序，这些接口的关系。
+DirectX VA 使用 Microsoft Windows SDK) 中所述的 **IAMVideoAcceleratorNotify** 和 **IAMVideoAccelerator** 接口 (， [以及用于指定](motion-compensation.md) 软件解码器、视频混合呈现器 (VMR) 或覆盖混音器 (OVM) 和视频显示器驱动程序之间交换的数据格式的数据的格式。 下图显示了这些接口与软件解码器、VMR 和视频显示器驱动程序之间的关系。
 
-![说明 directx va 数据流关系图](images/iamvideo.png)
+![阐释 directx va 数据流的图示](images/iamvideo.png)
 
-**IAMVideoAcceleratorNotify**接口检索或设置给定视频 accelerator GUID 的解压缩的缓冲区信息。
+**IAMVideoAcceleratorNotify**接口检索或设置给定视频加速器 GUID 的解压缩缓冲区信息。
 
-**IAMVideoAccelerator**接口使视频解码器筛选器可访问视频加速器的功能，并提供使用混合使用呈现器 (VMR) 或覆盖 mixer (OVM) 的视频的视频呈现。
+**IAMVideoAccelerator**接口允许视频解码器筛选器访问视频加速器的功能，并使用视频混合呈现器 (VMR) 或覆盖混音器 (OVM) 提供视频呈现。
 
-运动补偿 DDI 建立公共接口，以访问硬件加速功能，并支持跨供应商用户模式下的软件应用程序和加速功能之间的兼容性。 DDI 通知解码器视频加速对象正在使用、 启动和停止的帧缓冲区解码时指示的未压缩的图片格式的硬件支持，并通知需要使显示驱动程序呈现。 通过访问 DDI 的运动补偿[ **DD\_MOTIONCOMPCALLBACKS** ](https://docs.microsoft.com/windows/desktop/api/ddrawint/ns-ddrawint-dd_motioncompcallbacks)结构。
+运动补偿 DDI 建立了一个公共接口，用于访问硬件加速功能，并允许在用户模式软件应用程序和加速功能之间实现跨供应商的兼容性。 当使用视频加速对象时，DDI 会通知解码器，启动和停止帧缓冲区解码，指示硬件支持的未压缩图片格式，并通知需要呈现的 macroblocks 的显示驱动程序。 运动补偿 DDI 通过 [**DD \_ MOTIONCOMPCALLBACKS**](/windows/desktop/api/ddrawint/ns-ddrawint-dd_motioncompcallbacks) 结构访问。
 
-有关详细信息**IAMVideoAccelerator**并**IAMVideoAcceleratorNotify**接口，请参阅 Windows SDK 文档。 有关运动补偿 DDI 的详细信息，请参阅[运动补偿](motion-compensation.md)并[运动补偿回调](motion-compensation-callbacks.md)。
-
- 
+有关 **IAMVideoAccelerator** 和 **IAMVideoAcceleratorNotify** 接口的详细信息，请参阅 Windows SDK 文档。 有关运动补偿 DDI 的详细信息，请参阅 [运动补偿](motion-compensation.md) 和 [运动补偿回拨](motion-compensation-callbacks.md)。
 
  
-
-
-
-
 

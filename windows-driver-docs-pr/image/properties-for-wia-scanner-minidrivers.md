@@ -4,12 +4,12 @@ description: WIA 扫描程序微型驱动程序的属性
 ms.assetid: 9de8694a-0d19-4945-b0c1-a3c4bc71dad3
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a54c4888ebb3eff9a2951f22886d7852dcc35b03
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: bd38c76852664956fb9472f8e291a7a925cc2674
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67374319"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89183905"
 ---
 # <a name="properties-for-wia-scanner-minidrivers"></a>WIA 扫描程序微型驱动程序的属性
 
@@ -17,128 +17,123 @@ ms.locfileid: "67374319"
 
 
 
-以下列表包含所有是唯一的 WIA 扫描程序微型驱动程序的 WIA 属性。
+以下列表包含 WIA 扫描器微型驱动程序独有的所有 WIA 属性。
 
-### <a name="required-properties-on-scanner-root-items-microsoft-windows-xp-and-windows-me"></a>所需属性上扫描程序的根项 (Microsoft Windows XP 和 Windows Me)
-
-WIA 微型驱动程序提供以下属性：
-
-[**WIA\_DPS\_OPTICAL\_XRES**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-dps-optical-xres)
-
-[**WIA\_DPS\_光学\_YRES**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-dps-optical-yres)
-
-### <a name="optional-properties-on-scanner-root-items-windows-xp-and-windows-me"></a>扫描程序的可选属性根项 (Windows XP 和 Windows Me)
+### <a name="required-properties-on-scanner-root-items-microsoft-windows-xp-and-windows-me"></a>扫描仪根项 (Microsoft Windows XP 和 Windows Me) 的必需属性
 
 WIA 微型驱动程序提供以下属性：
 
-[**WIA\_DPS\_DITHER\_PATTERN\_DATA**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-dps-dither-pattern-data)
+[**WIA \_ DPS \_ 光纤 \_ XRES**](./wia-dps-optical-xres.md)
 
-[**WIA\_DPS\_DITHER\_SELECT**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-dps-dither-select)
+[**WIA \_ DPS \_ 光纤 \_ YRES**](./wia-dps-optical-yres.md)
 
-[**WIA\_DPS\_FILTER\_SELECT**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-dps-filter-select)
-
-[**WIA\_DPS\_MAX\_SCAN\_TIME**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-dps-max-scan-time)
-
-[**WIA\_DPS\_PAD\_颜色**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-dps-pad-color)
-
-[**WIA\_DPS\_辊\_颜色**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-dps-platen-color)
-
-[**WIA\_DPS\_显示\_预览\_控件**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-dps-show-preview-control)
-
-### <a name="required-properties-on-scanner-child-items-able-to-transfer-data"></a>在扫描程序的子项目能够将数据传输所需的属性
+### <a name="optional-properties-on-scanner-root-items-windows-xp-and-windows-me"></a> (Windows XP 和 Windows Me 上扫描程序根项的可选属性) 
 
 WIA 微型驱动程序提供以下属性：
 
-[**WIA\_IP\_亮度**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ips-brightness)
+[**WIA \_ DPS \_ 抖动 \_ 模式 \_ 数据**](./wia-dps-dither-pattern-data.md)
 
-[**WIA\_IPS\_CONTRAST**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ips-contrast)
+[**WIA \_ DPS \_ 仿色 \_ 选择**](./wia-dps-dither-select.md)
 
-[**WIA\_IPS\_CUR\_INTENT**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ips-cur-intent)
+[**WIA \_ DPS \_ 筛选器 \_ 选择**](./wia-dps-filter-select.md)
 
-[**WIA\_IPS\_PHOTOMETRIC\_INTERP**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ips-photometric-interp)
+[**WIA \_ DPS \_ 最长 \_ 扫描 \_ 时间**](./wia-dps-max-scan-time.md)
 
-[**WIA\_IPS\_XEXTENT**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ips-xextent)
+[**WIA \_ DPS \_ PAD \_ 颜色**](./wia-dps-pad-color.md)
 
-[**WIA\_IPS\_XPOS**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ips-xpos)
+[**WIA \_ DPS \_ 影印 \_ 颜色**](./wia-dps-platen-color.md)
 
-[**WIA\_IPS\_XRES**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ips-xres)
+[**WIA \_ DPS \_ 显示 \_ 预览 \_ 控件**](./wia-dps-show-preview-control.md)
 
-[**WIA\_IPS\_YEXTENT**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ips-yextent)
-
-[**WIA\_IPS\_YPOS**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ips-ypos)
-
-[**WIA\_IPS\_YRES**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ips-yres)
-
-### <a name="optional-properties-on-scanner-child-items-able-to-transfer-data"></a>扫描程序的子项目能够将数据传输的可选属性
+### <a name="required-properties-on-scanner-child-items-able-to-transfer-data"></a>扫描仪子项目上的必需属性可以传输数据
 
 WIA 微型驱动程序提供以下属性：
 
-[**WIA\_DPS\_PAGE\_HEIGHT**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-dps-page-height)
+[**WIA \_ IPS \_ 亮度**](./wia-ips-brightness.md)
 
-[**WIA\_DPS\_PAGE\_SIZE**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-dps-page-size)
+[**WIA \_ IP \_ 对比**](./wia-ips-contrast.md)
 
-[**WIA\_DPS\_PAGE\_WIDTH**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-dps-page-width)
+[**WIA \_ IP \_ 当前 \_ 意向**](./wia-ips-cur-intent.md)
 
-[**WIA\_IPS\_INVERT**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ips-invert)
+[**WIA \_ IP \_ PHOTOMETRIC \_ INTERP**](./wia-ips-photometric-interp.md)
 
-[**WIA\_IPS\_MIRROR**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ips-mirror)
+[**WIA \_ IP \_ XEXTENT**](./wia-ips-xextent.md)
 
-[**WIA\_IP\_方向**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ips-orientation)
+[**WIA \_ IP \_ XPOS**](./wia-ips-xpos.md)
 
-[**WIA\_IP\_旋转**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ips-rotation)
+[**WIA \_ IP \_ XRES**](./wia-ips-xres.md)
 
-[**WIA\_IP\_阈值**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ips-threshold)
+[**WIA \_ IP \_ YEXTENT**](./wia-ips-yextent.md)
 
-[**WIA\_IPS\_WARM\_UP\_TIME**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ips-warm-up-time)
+[**WIA \_ IP \_ YPOS**](./wia-ips-ypos.md)
 
-### <a name="required-properties-on-flatbed-scanner-root-items-windows-xp-and-windows-me"></a>所需属性上平板扫描仪根项 (Windows XP 和 Windows Me)
+[**WIA \_ IP \_ YRES**](./wia-ips-yres.md)
 
-WIA 微型驱动程序提供以下属性：
-
-[**WIA\_DPS\_水平\_平台\_注册**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-dps-horizontal-bed-registration)
-
-[**WIA\_DPS\_水平\_平台\_大小**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-dps-horizontal-bed-size)
-
-[**WIA\_DPS\_预览**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-dps-preview)
-
-[**WIA\_DPS\_垂直\_平台\_注册**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-dps-vertical-bed-registration)
-
-[**WIA\_DPS\_VERTICAL\_BED\_SIZE**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-dps-vertical-bed-size)
-
-### <a name="required-properties-on-document-feeder-scanner-root-items-windows-xp-and-windows-me"></a>所需属性文档送纸器扫描程序的根项 (Windows XP 和 Windows Me)
+### <a name="optional-properties-on-scanner-child-items-able-to-transfer-data"></a>扫描器子项目上的可选属性，可以传输数据
 
 WIA 微型驱动程序提供以下属性：
 
-[**WIA\_DPS\_文档\_处理\_功能**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-dps-document-handling-capabilities)
+[**WIA \_ DPS \_ 页面 \_ 高度**](./wia-dps-page-height.md)
 
-[**WIA\_DPS\_文档\_处理\_选择**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-dps-document-handling-select)
+[**WIA \_ DPS \_ 页面 \_ 大小**](./wia-dps-page-size.md)
 
-[**WIA\_DPS\_文档\_处理\_状态**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-dps-document-handling-status)
+[**WIA \_ DPS \_ 页面 \_ 宽度**](./wia-dps-page-width.md)
 
-[**WIA\_DPS\_HORIZONTAL\_SHEET\_FEED\_SIZE**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-dps-horizontal-sheet-feed-size)
+[**WIA \_ IP \_ 反转**](./wia-ips-invert.md)
 
-[**WIA\_DPS\_MIN\_HORIZONTAL\_SHEET\_FEED\_SIZE**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-dps-min-horizontal-sheet-feed-size)
+[**WIA \_ IP \_ 镜像**](./wia-ips-mirror.md)
 
-[**WIA\_DPS\_MIN\_VERTICAL\_SHEET\_FEED\_SIZE**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-dps-min-vertical-sheet-feed-size)
+[**WIA \_ IP \_ 方向**](./wia-ips-orientation.md)
 
-[**WIA\_DPS\_PAGES**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-dps-pages)
+[**WIA \_ IP \_ 轮换**](./wia-ips-rotation.md)
 
-[**WIA\_DPS\_表\_送纸器\_注册**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-dps-sheet-feeder-registration)
+[**WIA \_ IP \_ 阈值**](./wia-ips-threshold.md)
 
-[**WIA\_DPS\_VERTICAL\_SHEET\_FEED\_SIZE**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-dps-vertical-sheet-feed-size)
+[**WIA \_ IP \_ 预热 \_ \_ 时间**](./wia-ips-warm-up-time.md)
 
-### <a name="properties-on-transparency-scanner-root-items-windows-xp-and-windows-me"></a>透明度扫描程序的属性根项 (Windows XP 和 Windows Me)
+### <a name="required-properties-on-flatbed-scanner-root-items-windows-xp-and-windows-me"></a>平台扫描仪根项 (Windows XP 和 Windows Me) 的必需属性
 
 WIA 微型驱动程序提供以下属性：
 
-[**WIA\_DPS\_透明度**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-dps-transparency)
+[**WIA \_ DPS \_ 横向 \_ 平台 \_ 注册**](./wia-dps-horizontal-bed-registration.md)
 
-[**WIA\_DPS\_TRANSPARENCY\_SELECT**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-dps-transparency-select)
+[**WIA \_ DPS \_ 横向 \_ 床 \_ 大小**](./wia-dps-horizontal-bed-size.md)
+
+[**WIA \_ DPS \_ 预览版**](./wia-dps-preview.md)
+
+[**WIA \_ DPS \_ 垂直 \_ 平台 \_ 注册**](./wia-dps-vertical-bed-registration.md)
+
+[**WIA \_ DPS \_ 垂直 \_ 床 \_ 大小**](./wia-dps-vertical-bed-size.md)
+
+### <a name="required-properties-on-document-feeder-scanner-root-items-windows-xp-and-windows-me"></a>文档送纸器扫描器根项 (Windows XP 和 Windows Me) 的必需属性
+
+WIA 微型驱动程序提供以下属性：
+
+[**WIA \_ DPS \_ 文档 \_ 处理 \_ 功能**](./wia-dps-document-handling-capabilities.md)
+
+[**WIA \_ DPS \_ 文档 \_ 处理 \_ 选择**](./wia-dps-document-handling-select.md)
+
+[**WIA \_ DPS \_ 文档 \_ 处理 \_ 状态**](./wia-dps-document-handling-status.md)
+
+[**WIA \_ DPS \_ 水平 \_ 工作 \_ 源 \_ 大小**](./wia-dps-horizontal-sheet-feed-size.md)
+
+[**WIA \_ DPS \_ 最小 \_ 水平 \_ 页面 \_ 源 \_ 大小**](./wia-dps-min-horizontal-sheet-feed-size.md)
+
+[**WIA \_ DPS \_ 最小 \_ 垂直 \_ 纸张 \_ 馈送 \_ 大小**](./wia-dps-min-vertical-sheet-feed-size.md)
+
+[**WIA \_ DPS \_ 页面**](./wia-dps-pages.md)
+
+[**WIA \_ DPS \_ SHEET \_ 送纸器 \_ 注册**](./wia-dps-sheet-feeder-registration.md)
+
+[**WIA \_ DPS \_ 垂直 \_ 工作 \_ 源 \_ 大小**](./wia-dps-vertical-sheet-feed-size.md)
+
+### <a name="properties-on-transparency-scanner-root-items-windows-xp-and-windows-me"></a> (Windows XP 和 Windows Me) 透明度扫描器根项的属性
+
+WIA 微型驱动程序提供以下属性：
+
+[**WIA \_ DPS \_ 透明度**](./wia-dps-transparency.md)
+
+[**WIA \_ DPS \_ 透明度 \_ 选择**](./wia-dps-transparency-select.md)
 
  
-
- 
-
-
-
 

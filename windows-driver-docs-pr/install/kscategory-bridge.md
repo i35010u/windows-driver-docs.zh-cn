@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 093c95e4dde6a98e8bcbbd194c3a80ab4ff00463
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: a226efdddf45335d0c2da862819755f562355845
+ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67355498"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89097263"
 ---
-# <a name="kscategorybridge"></a>KSCATEGORY_BRIDGE
+# <a name="kscategory_bridge"></a>KSCATEGORY_BRIDGE
 
 
-KSCATEGORY_BRIDGE[设备接口类](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)为定义[内核流式处理](https://docs.microsoft.com/windows-hardware/drivers/stream/streaming-minidrivers2)(KS) 支持软件接口 KS 子系统和另一个软件之间的功能类别组件。
+KSCATEGORY_BRIDGE [设备接口类](./overview-of-device-interface-classes.md) 是为 [内核流式处理](../stream/streaming-minidrivers2.md) (KS) 功能类别定义的，它支持 KS 子系统与其他软件组件之间的软件接口。
 
 <table>
 <colgroup>
@@ -33,7 +33,7 @@ KSCATEGORY_BRIDGE[设备接口类](https://docs.microsoft.com/windows-hardware/d
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">特性</th>
+<th align="left">Attribute</th>
 <th align="left">设置</th>
 </tr>
 </thead>
@@ -54,9 +54,9 @@ KSCATEGORY_BRIDGE[设备接口类](https://docs.microsoft.com/windows-hardware/d
 <a name="remarks"></a>备注
 -------
 
-KS 音频适配器设备驱动程序注册 KSCATEGORY_BRIDGE 向操作系统指示设备支持 KSCATEGORY_BRIDGE 功能分类的实例。
+适用于 KS 音频适配器设备的驱动程序将 KSCATEGORY_BRIDGE 的实例注册，以指示操作系统设备支持 KSCATEGORY_BRIDGE 功能类别。
 
-有关 KSCATEGORY_BRIDGE 功能类别的详细信息，请参阅[ **KSPROPERTY_TOPOLOGY_CATEGORIES**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-topology-categories)。
+有关 KSCATEGORY_BRIDGE 功能类别的详细信息，请参阅 [**KSPROPERTY_TOPOLOGY_CATEGORIES**](../stream/ksproperty-topology-categories.md)。
 
 <a name="requirements"></a>要求
 ------------
@@ -68,17 +68,11 @@ KS 音频适配器设备驱动程序注册 KSCATEGORY_BRIDGE 向操作系统指�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>Header</p></td>
-<td align="left">Ks.h （包括 Ks.h）</td>
+<td align="left"><p>标头</p></td>
+<td align="left">Ks (包含 Ks .h) </td>
 </tr>
 </tbody>
 </table>
 
  
-
- 
-
-
-
-
 

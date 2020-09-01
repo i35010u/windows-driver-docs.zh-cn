@@ -3,23 +3,23 @@ title: 安装筛选器驱动程序
 description: 安装筛选器驱动程序
 ms.assetid: 48ffa6db-3254-4108-b8bb-5884b9168a9d
 keywords:
-- 设备安装程序 WDK 设备安装，筛选器驱动程序
+- 设备设置 WDK 设备安装，筛选器驱动程序
 - 设备安装 WDK，筛选器驱动程序
 - 安装设备 WDK，筛选器驱动程序
 - 筛选器驱动程序 WDK 设备安装
-- 特定于设备的筛选器驱动程序 WDK 设备安装
+- 设备特定的筛选器驱动程序 WDK 设备安装
 - 类筛选器驱动程序 WDK 设备安装
 - SetupInstallFilesFromInfSection
 - UpperFilters
 - LowerFilters
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f6f8abfbfc3d2a4379bf8ed3c80de2f3db987ed5
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 9314a5bcd74a28a4b9cc8294a56be66204e85294
+ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67379466"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89097291"
 ---
 # <a name="installing-a-filter-driver"></a>安装筛选器驱动程序
 
@@ -27,11 +27,11 @@ ms.locfileid: "67379466"
 
 
 
-即插即用的筛选器驱动程序可以支持特定设备或所有设备安装程序类中，并可以将附加以下设备的功能驱动程序 （较低筛选器） 或更高版本设备的功能驱动程序 （上部筛选器）。 请参阅[WDM 驱动程序类型](https://docs.microsoft.com/windows-hardware/drivers/kernel/types-of-wdm-drivers)有关即插即用驱动程序层的详细信息。
+PnP 筛选器驱动程序可以支持特定设备或安装程序类中的所有设备，并可附加到设备的功能驱动程序 (更低的筛选器) 或高于设备的函数驱动程序 (上限筛选) 。 有关 PnP 驱动程序层的详细信息，请参阅 [WDM 驱动程序的类型](../kernel/types-of-wdm-drivers.md) 。
 
-### <a href="" id="ddk-installing-a-device-specific-filter-driver-dg"></a>安装特定于设备的筛选器驱动程序
+### <a name="installing-a-device-specific-filter-driver"></a><a href="" id="ddk-installing-a-device-specific-filter-driver-dg"></a>安装特定于设备的筛选器驱动程序
 
-若要注册的设备特定的筛选器驱动程序，创建注册表项，通过**AddReg**中的条目<em>DDInstall</em> **。HW**设备的 INF 文件部分。 对于特定于设备的上层筛选器，创建一个名为词条**上边的筛选程序**。 对于特定于设备的低层筛选器，创建一个名为词条**下边的筛选程序**。 例如，将安装以下 INF 摘录*cdaudio*作为上的上限筛选器*cdrom*驱动程序：
+若要注册特定于设备的筛选器驱动程序，请通过<em>DDInstall</em>中的**AddReg**项创建一个注册表项 **。** 设备 INF 文件的硬件部分。 对于特定于设备的筛选器，请创建名为 **UpperFilters**的条目。 对于特定于设备的低筛选器，请创建名为 **LowerFilters**的条目。 例如，以下 INF 摘录将 *cdaudio* 安装为 *cdrom* 驱动程序上的上限筛选器：
 
 ```cpp
 :
@@ -62,9 +62,9 @@ ServiceBinary  = %12%\cdaudio.sys
 :
 ```
 
-### <a href="" id="ddk-installing-a-class-filter-driver-dg"></a>安装类筛选器驱动程序
+### <a name="installing-a-class-filter-driver"></a><a href="" id="ddk-installing-a-class-filter-driver-dg"></a>安装类筛选器驱动程序
 
-若要安装类范围上限的或较低的筛选器安装必要的服务的设备安装程序类。 应用程序然后可以将此服务注册为正在上限-或较低的筛选器所需的设备安装程序类。 若要复制的服务二进制文件，该应用程序可以使用**SetupInstallFilesFromInfSection**。 若要安装的服务，该应用程序可以使用**SetupInstallServicesFromInfSection**。 若要注册服务作为上限和/或特定设备安装程序类的较低筛选器，在应用程序调用**SetupInstallFromInfSection**感兴趣的每个设备安装程序类，使用注册表项句柄是在检索从[ **SetupDiOpenClassRegKey** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdiopenclassregkey)有关*RelativeKeyRoot*参数。 例如，考虑以下 INF 部分：
+为安装所需的服务的设备安装程序类安装类范围内或较低级别的筛选器。 然后，应用程序可以将该服务注册为所需的设备安装程序类的上限筛选器或下限筛选器。 若要复制服务二进制文件，应用程序可以使用 **SetupInstallFilesFromInfSection**。 若要安装服务，应用程序可以使用 **SetupInstallServicesFromInfSection**。 若要将服务注册为特定设备安装程序类的上限和/或下限筛选器，应用程序将使用从[**SetupDiOpenClassRegKey**](/windows/desktop/api/setupapi/nf-setupapi-setupdiopenclassregkey)为*RelativeKeyRoot*参数检索到的注册表项句柄，为相关的每个设备安装程序类调用**SetupInstallFromInfSection** 。 例如，请考虑以下 INF 部分：
 
 ```cpp
 :
@@ -95,21 +95,15 @@ ServiceBinary = %12%\upperfilt.sys
 :
 ```
 
-设备安装应用程序，则应该：
+设备安装应用程序将：
 
-1.  调用**SetupInstallFilesFromInfSection**有关\[upperfilter_inst\]部分。
+1.  为**SetupInstallFilesFromInfSection** \[ Upperfilter_inst 节调用 SetupInstallFilesFromInfSection \] 。
 
-2.  调用**SetupInstallServicesFromInfSection**为\[upperfilter_inst。服务\]部分。
+2.  为**SetupInstallServicesFromInfSection** Upperfilter_inst 调用 SetupInstallServicesFromInfSection \[ 。服务 \] 部分。
 
-3.  调用**SetupInstallFromInfSection**有关\[upperfilter_inst\]部分中，一旦它想要注册的每个类键*upperfilt*服务。
+3.  **SetupInstallFromInfSection** \[ \] 对于 upperfilter_inst 节，为它要为其注册*upperfilt*服务的每个类键调用 SetupInstallFromInfSection。
 
-将指定每次调用**SPINST_REGISTRY**有关*标志*参数，以指示需要执行仅注册表修改。
-
- 
+每次调用都会为*Flags*参数指定**SPINST_REGISTRY** ，以指示只需执行注册表修改。
 
  
-
-
-
-
 

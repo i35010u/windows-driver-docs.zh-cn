@@ -1,6 +1,6 @@
 ---
 title: FSCTL_QUERY_FILE_LAYOUT 控制代码
-description: FSCTL\_QUERY\_文件\_布局控制代码检索文件系统卷的文件布局信息。
+description: FSCTL \_ 查询 \_ 文件 \_ 布局控制代码检索文件系统卷的文件布局信息。
 ms.assetid: C0094741-72C1-409C-89E6-BAD60A94EFD6
 keywords:
 - FSCTL_QUERY_FILE_LAYOUT 控制代码可安装的文件系统驱动程序
@@ -14,47 +14,47 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5f508626bfb7ca07c5ca5545a7329dee5af89ce5
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 5a816b58027782234608ffb9f00d8cd4be7b83d4
+ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72841291"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89067412"
 ---
-# <a name="fsctl_query_file_layout-control-code"></a>FSCTL\_查询\_文件\_布局控制代码
+# <a name="fsctl_query_file_layout-control-code"></a>FSCTL \_ 查询 \_ 文件 \_ 布局控制代码
 
 
-FSCTL\_QUERY\_文件\_布局控制代码检索文件系统卷的文件布局信息。 此请求的结果是文件布局信息项的集合。 返回的项的类型通过在查询中设置包含标志[ **\_文件\_布局\_输入**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_query_file_layout_input)结构进行控制。 您可以根据需要通过提供一组文件范围来限制布局信息的选择，来筛选结果。
+FSCTL \_ 查询 \_ 文件 \_ 布局控制代码检索文件系统卷的文件布局信息。 此请求的结果是文件布局信息项的集合。 返回的项的类型是通过在 [**查询 \_ 文件 \_ 布局 \_ 输入**](/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_query_file_layout_input) 结构中设置包含标志来控制的。 您可以根据需要通过提供一组文件范围来限制布局信息的选择，来筛选结果。
 
-若要执行此操作，请调用具有以下参数的[**FltFsControlFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltfscontrolfile)或[**ZwFsControlFile**](https://msdn.microsoft.com/library/windows/hardware/ff566462) 。
+若要执行此操作，请调用具有以下参数的 [**FltFsControlFile**](/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltfscontrolfile) 或 [**ZwFsControlFile**](/previous-versions/ff566462(v=vs.85)) 。
 
-**Parameters**
+**参数**
 
 <a href="" id="fileobject"></a>*FileObject*  
-仅[**FltFsControlFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltfscontrolfile) 。 文件系统卷的文件对象指针。 此参数是必需的，不能为**NULL**。
+仅[**FltFsControlFile**](/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltfscontrolfile) 。 文件系统卷的文件对象指针。 此参数是必需的，不能为 **NULL**。
 
 <a href="" id="filehandle"></a>*FileHandle*  
-仅[**ZwFsControlFile**](https://msdn.microsoft.com/library/windows/hardware/ff566462) 。 文件系统卷的文件句柄。 此参数是必需的，不能为**NULL**。
+仅[**ZwFsControlFile**](/previous-versions/ff566462(v=vs.85)) 。 文件系统卷的文件句柄。 此参数是必需的，不能为 **NULL**。
 
 <a href="" id="fscontrolcode"></a>*FsControlCode*  
-操作的控制代码。 对于此操作，请使用 FSCTL\_查询\_文件\_布局控制代码。
+操作的控制代码。 对于此操作，请使用 FSCTL \_ 查询 \_ 文件 \_ 布局控制代码。
 
 <a href="" id="inputbuffer"></a>*InputBuffer*  
-指向[ **\_文件\_布局\_输入**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_query_file_layout_input)结构的调用方分配的查询的指针。 此结构包含选择选项。 **查询\_文件\_布局\_输入**后，将包括可选的文件范围。
+一个指针，指向分配给调用方的 [**查询 \_ 文件 \_ 布局 \_ 输入**](/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_query_file_layout_input) 结构。 此结构包含选择选项。 可选文件的范围包括在 **查询 \_ 文件 \_ 布局 \_ 输入**之后。
 
 <a href="" id="inputbufferlength"></a>*InputBufferLength*  
-*InputBuffer*参数指向的缓冲区的大小（以字节为单位）。 *NumberOfPairs* &gt; 0 时， *InputBuffer*的大小必须至少为**sizeof**（查询\_文件\_LAYOUT\_INPUT） + （**sizeof**（*Filter*） \* （*NumberOfPairs* ））。 否则，将*InputBufferLength* = **sizeof**（查询\_文件\_布局\_输入）。
+*InputBuffer*参数指向的缓冲区的大小（以字节为单位）。 在 NumberOfPairs 0 时， *InputBuffer*的大小必须至少为**sizeof** (查询 \_ 文件 \_ 布局 \_ 输入) + (**Sizeof** (*Filter*)  () \* # A7 *NumberOfPairs* *NumberOfPairs* &gt; 。 否则，请将*InputBufferLength*  =  **sizeof** (QUERY \_ FILE \_ LAYOUT \_ INPUT) 。
 
 <a href="" id="outputbuffer"></a>*OutputBuffer*  
-指向[ **\_文件\_布局\_输出**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_query_file_layout_output)结构的调用方分配查询的指针。 这是此缓冲区中后面的文件布局条目的标头。
+指向分配给调用方的 [**查询 \_ 文件 \_ 布局 \_ 输出**](/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_query_file_layout_output) 结构的指针。 这是此缓冲区中后面的文件布局条目的标头。
 
 <a href="" id="outputbufferlength"></a>*OutputBufferLength*  
-*OutputBuffer*参数指向的缓冲区的大小（以字节为单位）。 *OutputBuffer*的大小必须足够大，以包含[**查询\_文件\_布局\_输出**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_query_file_layout_output)以及返回的文件布局和流布局结构。
+*OutputBuffer*参数指向的缓冲区的大小（以字节为单位）。 *OutputBuffer*的大小必须足够大，以包含[**查询 \_ 文件 \_ 布局 \_ 输出**](/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_query_file_layout_output)以及返回的文件布局和流布局结构。
 
 <a name="status-block"></a>状态块
 ------------
 
-[**FltFsControlFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltfscontrolfile)或[**ZwFsControlFile**](https://msdn.microsoft.com/library/windows/hardware/ff566462)返回状态\_SUCCESS 或适当的 NTSTATUS 值，如以下值之一：
+[**FltFsControlFile**](/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltfscontrolfile) 或 [**ZwFsControlFile**](/previous-versions/ff566462(v=vs.85)) 返回状态 \_ 成功或适当的 NTSTATUS 值，如以下值之一：
 
 <table>
 <colgroup>
@@ -64,7 +64,7 @@ FSCTL\_QUERY\_文件\_布局控制代码检索文件系统卷的文件布局信�
 <thead>
 <tr class="header">
 <th align="left">术语</th>
-<th align="left">描述</th>
+<th align="left">说明</th>
 </tr>
 </thead>
 <tbody>
@@ -96,9 +96,9 @@ FSCTL\_QUERY\_文件\_布局控制代码检索文件系统卷的文件布局信�
 <a name="remarks"></a>备注
 -------
 
-若要检索卷的所有布局条目，会多次发出 FSCTL\_QUERY\_FILE\_LAYOUT 请求，直到返回 **\_文件\_结束\_的状态**。 返回**状态\_"成功**" 时，调用方可以继续发送 FSCTL\_查询\_文件\_布局请求，以获取剩余的布局条目。
+若要检索卷的所有布局条目，请在 \_ \_ \_ 返回 ** \_ \_ \_ 文件的状态结尾** 之前多次发出 FSCTL 查询文件布局请求。 返回 **状态 \_ 成功** 后，调用方可以继续为 \_ \_ 其余布局条目发送 FSCTL 查询文件 \_ 布局请求。
 
-可以通过在查询的**Flags**成员[ **\_文件\_布局\_输入**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_query_file_layout_input)中包含**查询\_文件\_\_布局**，随时重新启动布局项的枚举。 此外，在 FSCTL\_查询\_文件\_布局返回 **\_文件\_结束\_的状态**之后，必须在下一个 FSCTL 中包含**查询\_** \_\___t_11_ 查询\_文件\_LAYOUT 请求以开始另一个布局条目枚举。
+可以通过在[**查询 \_ 文件 \_ 布局 \_ 输入**](/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_query_file_layout_input)的**Flags**成员中包含**查询 \_ 文件 \_ 布局 \_ 重新启动**标志，随时重新启动布局项的枚举。 此外，在 FSCTL \_ 查询 \_ 文件 \_ 布局返回了 ** \_ \_ \_ 文件的状态结尾**之后，必须在下一个 FSCTL 查询文件布局请求中包含 **查询 \_ 文件 \_ 布局 \_ 重新启动** 标志， \_ \_ \_ 才能开始另一个布局输入枚举。
 
 **ReFS：  **此代码不受支持。
 
@@ -117,28 +117,21 @@ FSCTL\_QUERY\_文件\_布局控制代码检索文件系统卷的文件布局信�
 </tr>
 <tr class="even">
 <td align="left"><p>标头</p></td>
-<td align="left">Ntifs （包括 Ntifs）</td>
+<td align="left">Ntifs (包含 Ntifs) </td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
-[**查询\_文件\_布局\_输入**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_query_file_layout_input)
+[**查询 \_ 文件 \_ 布局 \_ 输入**](/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_query_file_layout_input)
 
-[**查询\_文件\_布局\_输出**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_query_file_layout_output)
+[**查询 \_ 文件 \_ 布局 \_ 输出**](/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_query_file_layout_output)
 
-[**FltFsControlFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltfscontrolfile)
+[**FltFsControlFile**](/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltfscontrolfile)
 
-[**ZwFsControlFile**](https://msdn.microsoft.com/library/windows/hardware/ff566462)
-
- 
+[**ZwFsControlFile**](/previous-versions/ff566462(v=vs.85))
 
  
-
-
-
-
-
 

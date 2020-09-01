@@ -1,6 +1,6 @@
 ---
 title: CreateVirtualPort 方法
-description: CreateVirtualPort 方法创建的虚拟端口特定的全球通用端口名称 (WWPN)。
+description: CreateVirtualPort 方法将创建具有特定全球通用端口名称 (WWPN) 的虚拟端口。
 ms.assetid: B4274FB7-2850-4E17-ACDE-5592B0390E8B
 keywords:
 - CreateVirtualPort 方法存储设备
@@ -12,17 +12,17 @@ api_type:
 - COM
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: ddfd5c5b5a5fb7946ca56416a071301e5884dc52
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 863a78c27a84e47817c061c299513c0fbc437ac7
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67368319"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89184715"
 ---
 # <a name="createvirtualport-method"></a>CreateVirtualPort 方法
 
 
-**CreateVirtualPort**方法创建的虚拟端口特定的全球通用端口名称 (WWPN)。
+**CreateVirtualPort**方法将创建具有特定全球通用端口名称 (WWPN) 的虚拟端口。
 
 <a name="syntax"></a>语法
 ------
@@ -37,40 +37,33 @@ void CreateVirtualPort(
 );
 ```
 
-<a name="parameters"></a>Parameters
+<a name="parameters"></a>参数
 ----------
 
-*WWPN\[8\]*    
+*WWPN \[ 8\]*   
 要创建的虚拟端口的全球通用端口名称。
 
-*WWNN\[8\]*    
-要将与虚拟端口关联的全球通用节点名称。
+*WWNN \[ 8\]*   
+要与虚拟端口关联的全球通用节点名称。
 
-*Tag\[16\]*    
-虚拟端口标记标识符。
+*标记 \[ 16\]*   
+虚拟端口的标记标识符。
 
-*VirtualName\[64\]*    
+*VirtualName \[ 64\]*   
 虚拟端口的符号名称。
 
-*状态*   
-在返回时包含操作的状态。
+*状态值*   
+返回时，包含操作的状态。
 
 <a name="return-value"></a>返回值
 ------------
 
 不适用于 WMI 方法。
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
-[NPIV 状态代码](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/dn386176(v=vs.85))
-
- 
+[NPIV 状态代码](/previous-versions/windows/hardware/drivers/dn386176(v=vs.85))
 
  
-
-
-
-
-
 

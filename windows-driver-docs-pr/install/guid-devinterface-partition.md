@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 77d7b4c575ed8d69940dddeb77f24fe2eb615539
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: d04b633f1e9c10886050bcaf4c1fee29f934ba1e
+ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386425"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89096915"
 ---
-# <a name="guiddevinterfacepartition"></a>GUID_DEVINTERFACE_PARTITION
+# <a name="guid_devinterface_partition"></a>GUID_DEVINTERFACE_PARTITION
 
 
-GUID_DEVINTERFACE_PARTITION[设备接口类](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)为分区的设备定义。
+为分区设备定义了 GUID_DEVINTERFACE_PARTITION [设备接口类](./overview-of-device-interface-classes.md) 。
 
 <table>
 <colgroup>
@@ -33,7 +33,7 @@ GUID_DEVINTERFACE_PARTITION[设备接口类](https://docs.microsoft.com/windows-
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">特性</th>
+<th align="left">Attribute</th>
 <th align="left">设置</th>
 </tr>
 </thead>
@@ -54,9 +54,9 @@ GUID_DEVINTERFACE_PARTITION[设备接口类](https://docs.microsoft.com/windows-
 <a name="remarks"></a>备注
 -------
 
-系统提供[存储设备驱动程序](https://docs.microsoft.com/windows-hardware/drivers/storage/storage-drivers)注册的是子设备分区实例 GUID_DEVINTERFACE_PARTITION[存储设备](https://docs.microsoft.com/windows-hardware/drivers/storage/index)。
+系统提供的 [存储驱动程序](../storage/storage-drivers.md) 为作为 [存储设备](../storage/index.md)的子设备的分区注册 GUID_DEVINTERFACE_PARTITION 的实例。
 
-[**PartitionClassGuid** ](partitionclassguid.md) GUID_DEVINTERFACE_PARTITION 设备接口类的已过时标识符。 对于此类的新实例，请改为使用 GUID_DEVINTERFACE_PARTITION。
+[**PartitionClassGuid**](partitionclassguid.md) 是 GUID_DEVINTERFACE_PARTITION 设备接口类的过时标识符。 对于此类的新实例，请改用 GUID_DEVINTERFACE_PARTITION。
 
 <a name="requirements"></a>要求
 ------------
@@ -68,27 +68,20 @@ GUID_DEVINTERFACE_PARTITION[设备接口类](https://docs.microsoft.com/windows-
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>Version</p></td>
+<td align="left"><p>版本</p></td>
 <td align="left"><p>在 Microsoft Windows 2000 和更高版本的 Windows 中可用。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>Header</p></td>
-<td align="left">Ntddstor.h （包括 Ntddstor.h）</td>
+<td align="left"><p>标头</p></td>
+<td align="left">Ntddstor (包含 Ntddstor) </td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
 [**PartitionClassGuid**](partitionclassguid.md)
 
  
-
- 
-
-
-
-
-
 

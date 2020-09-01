@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 0f16e4bc030dc09e5e0270e14a569b50f5ccc93c
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: d445484ed6ee5bb0196b650ef10c02c0613674a0
+ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67379349"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89096987"
 ---
-# <a name="guiddevicememory"></a>GUID_DEVICE_MEMORY
+# <a name="guid_device_memory"></a>GUID_DEVICE_MEMORY
 
 
-GUID_DEVICE_MEMORY[设备接口类](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)的高级配置和电源接口 (ACPI) 内存设备定义。
+GUID_DEVICE_MEMORY [设备接口类](./overview-of-device-interface-classes.md) 定义 (ACPI) 内存设备的高级配置和电源接口。
 
 <table>
 <colgroup>
@@ -33,7 +33,7 @@ GUID_DEVICE_MEMORY[设备接口类](https://docs.microsoft.com/windows-hardware/
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">特性</th>
+<th align="left">Attribute</th>
 <th align="left">设置</th>
 </tr>
 </thead>
@@ -54,9 +54,9 @@ GUID_DEVICE_MEMORY[设备接口类](https://docs.microsoft.com/windows-hardware/
 <a name="remarks"></a>备注
 -------
 
-系统提供[ACPI 驱动程序](https://docs.microsoft.com/windows-hardware/drivers/kernel/acpi-driver)注册通知的操作系统和应用程序的 ACPI 内存设备是否存在此设备接口类的实例。
+系统提供的 [ACPI 驱动程序](../kernel/acpi-driver.md) 将注册此设备接口类的实例，通知操作系统和应用程序是否存在 ACPI 内存设备。
 
-了解如何提供 WDM[函数的驱动程序](https://docs.microsoft.com/windows-hardware/drivers/kernel/function-drivers)ACPI 的设备，请参阅[支持 ACPI 设备](https://docs.microsoft.com/windows-hardware/drivers/acpi/supporting-acpi-devices)。
+有关为 ACPI 设备提供 WDM [函数驱动程序](../kernel/function-drivers.md) 的信息，请参阅 [支持 acpi 设备](../acpi/supporting-acpi-devices.md)。
 
 <a name="requirements"></a>要求
 ------------
@@ -68,17 +68,11 @@ GUID_DEVICE_MEMORY[设备接口类](https://docs.microsoft.com/windows-hardware/
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>Header</p></td>
-<td align="left">Poclass.h （包括 Poclass.h）</td>
+<td align="left"><p>标头</p></td>
+<td align="left">Poclass (包含 Poclass) </td>
 </tr>
 </tbody>
 </table>
 
  
-
- 
-
-
-
-
 

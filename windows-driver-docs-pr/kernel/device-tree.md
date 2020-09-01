@@ -3,26 +3,26 @@ title: 设备树
 description: 设备树
 ms.assetid: 3220389a-06cc-4a43-8164-b785d1a16365
 keywords:
-- devnodes WDK 即插即用
-- 虚幻设备 WDK
+- devnodes WDK PnP
+- nonpresent 设备 WDK
+- PnP WDK 内核，设备树
 - 即插即用 WDK 内核，设备树
-- 插 WDK 内核，设备树
-- 删除关系 WDK 即插即用
-- 弹出关系 WDK 即插即用
-- 设备树 WDK 即插即用
-- 树 WDK 即插即用
-- 设备节点 WDK 即插即用
-- 子 WDK 即插即用设备
-- 层次结构 WDK 即插即用
-- WDK 即插即用的关系
+- 删除关系 WDK PnP
+- 弹出关系 WDK PnP
+- 设备树 WDK PnP
+- 树 WDK PnP
+- 设备节点 WDK PnP
+- 子设备 WDK PnP
+- 层次结构 WDK PnP
+- 关系 WDK PnP
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 58a2fd8e0044f23057831c2a5eda0d958cb2c9d4
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 1abe07ceafb37ea3bcffc2ee8272d992facb9caa
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67385008"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89184791"
 ---
 # <a name="device-tree"></a>设备树
 
@@ -30,30 +30,25 @@ ms.locfileid: "67385008"
 
 
 
-PnP 管理器维护跟踪系统中的设备的设备树。 下图显示了示例系统配置的设备树。
+PnP 管理器维护一个设备树，该树跟踪系统中的设备。 下图显示了一个示例系统配置的设备树。
 
-![示例即插即用设备树](images/devtree.png)
+![示例 pnp 设备树](images/devtree.png)
 
-设备树包含系统上存在的设备的相关信息。 PnP 管理器时在计算机启动时，使用驱动程序和其他组件中的信息和更新树，添加或删除设备时生成此树。
+设备树包含有关系统上的设备的信息。 在计算机启动时，PnP 管理器将生成此树，使用驱动程序和其他组件中的信息，在添加或删除设备时更新树。
 
-设备树的每个节点都称为一个设备节点中，或*devnode*。 Devnode 组成*设备对象*设备的驱动程序，以及由系统维护的内部信息。 因此，没有为每个 devnode*设备堆栈*。
+设备树的每个节点称为设备节点或 *devnode*。 Devnode 由设备的驱动程序的 *设备对象* 以及系统维护的内部信息组成。 因此，每个 *设备堆栈*都有一个 devnode。
 
-已要求总线驱动程序 PnP 管理器提供有关其子级的列表使用的设备[ **IRP\_MN\_查询\_设备\_关系**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-device-relations)请求。 总线驱动程序确定其根据其总线协议的子级的列表。 例如， [Windows ACPI 驱动程序](acpi-driver.md)、 Acpi.sys，看起来在 ACPI 名称空间，PCI 驱动程序查询 PCI 配置空间，和 USB 集线器驱动程序遵循 USB 总线协议。
+PnP 管理器使用 [**IRP \_ MN \_ 查询 \_ 设备 \_ 关系**](./irp-mn-query-device-relations.md) 请求来请求总线驱动程序的子设备列表。 总线驱动程序根据其总线协议确定子项列表。 例如， [WINDOWS acpi 驱动程序](acpi-driver.md)Acpi.sys 在 ACPI 命名空间中查找，pci 驱动程序查询 pci 配置空间，usb 集线器驱动程序遵循 usb 总线协议。
 
-设备树是分层的与表示为"子级"总线适配器、 控制器或其他的总线上的设备*总线设备*。 （总线设备为其他物理、 逻辑，或虚拟设备可以附加到任何设备。）您可以看到在设备树中使用设备管理器并选择视图选项，您可以通过连接来查看设备的设备的层次结构。
+设备树是分层的，总线上的设备表示为总线适配器、控制器或其他 *总线设备*的 "子级"。  (总线设备是指可以连接到其他物理、逻辑或虚拟设备的任何设备。 ) 你可以使用设备管理器在设备树中看到设备的层次结构，并选择允许你按连接查看设备的 "查看" 选项。
 
-设备树的层次结构反映了在其中的设备连接在计算机中的结构。 PnP 管理器使用此层次结构，如它所管理设备。 例如，如果用户请求时要拔出 USB 控制器从上一图中表示的计算机，即插即用管理器确定此操作会导致其他的三个设备，也被拔出设备树中 (USB 集线器、 游戏杆和照相机）。 当 PnP 管理器查询来确定它是否可以安全地删除控制器的 USB 控制器的驱动程序时，也会查询该控制器的后代 （中心、 游戏杆和照相机） 的驱动程序。
+设备树的层次结构反映了计算机中附加设备的结构。 PnP 管理器在管理设备时使用此层次结构。 例如，如果用户请求将 USB 控制器从上图所表示的计算机中拔出，则 PnP 管理器会从设备树确定，此操作会导致其他三个设备 (USB 集线器、操纵杆和摄像机) 。 当 PnP 管理器查询 USB 控制器的驱动程序以确定是否可以安全地删除控制器时，它还会将控制器后代的驱动程序 (集线器、操纵杆和相机) 。
 
-设备树是动态的。 添加和从计算机中删除设备时，（以及驱动程序） 的即插即用管理器维护系统上的设备当前的图片。
+设备树是动态的。 在将设备添加到计算机并将其从计算机中删除时，PnP 管理器 (与驱动程序一起) 维护系统上的设备的当前图片。
 
-除了设备树中表示的层次结构关系在计算机上的设备之间有其他关系。 其中包括*删除关系*并*弹出关系*。 请参阅的参考页[ **IRP\_MN\_查询\_设备\_关系**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-device-relations)有关详细信息。
+除了设备树中表示的层次结构关系外，计算机上的设备还存在其他关系。 其中包括 *删除关系* 和 *弹出关系*。 有关详细信息，请参阅 [**IRP \_ MN \_ 查询 \_ 设备 \_ 关系**](./irp-mn-query-device-relations.md) 的参考页。
 
-只不过总线设备配置的任何其子设备之前，不能进行任何假设生成设备树顺序。 例如，不应假定一个总线上的另一台设备之前配置的总线上的设备。
-
- 
+不能对设备树的生成顺序作出任何假设，只是在它的任何子设备之前配置了总线设备。 例如，不应假定总线上的一个设备在总线上的另一个设备之前配置。
 
  
-
-
-
 

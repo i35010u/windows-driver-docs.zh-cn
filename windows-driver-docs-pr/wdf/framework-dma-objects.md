@@ -13,12 +13,12 @@ keywords:
 - 事务对象 WDK KMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 33892679104e73c60c3e3a1e93dd5621ecf2a74b
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 639a304265bac147a21804d1239b655c02922076
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72843182"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89184047"
 ---
 # <a name="framework-dma-objects"></a>框架 DMA 对象
 
@@ -37,19 +37,13 @@ ms.locfileid: "72843182"
 框架的 DMA transaction 对象表示单个 DMA i/o 操作。 如果设备使用 DMA 执行请求的操作，则基于框架的驱动程序通常会为它收到的每个 i/o 请求创建 DMA transaction 对象。
 
 <a href="" id="common-buffer-object"></a>**通用缓冲区对象**  
-框架的通用缓冲区对象表示一种计算机内存区域，该区域由驱动程序和设备进行同时访问。 某些驱动程序在为 DMA 设备设置 i/o 操作时[使用公用缓冲区](using-common-buffers.md)。
+框架的通用缓冲区对象表示一种计算机内存区域，该区域由驱动程序和设备进行同时访问。 某些驱动程序在为 DMA 设备设置 i/o 操作时 [使用公用缓冲区](using-common-buffers.md) 。
 
 有关这些对象导出的接口的信息，请参阅：
 
-[框架 DMA 对象引用](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdmaenabler/)
+[框架 DMA 对象引用](/windows-hardware/drivers/ddi/wdfdmaenabler/)
 
-[Framework 公用缓冲区对象引用](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfcommonbuffer/)
-
- 
+[Framework 公用缓冲区对象引用](/windows-hardware/drivers/ddi/wdfcommonbuffer/)
 
  
-
-
-
-
 

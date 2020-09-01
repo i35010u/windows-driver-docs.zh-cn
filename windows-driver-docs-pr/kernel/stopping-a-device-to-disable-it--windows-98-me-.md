@@ -3,15 +3,15 @@ title: 停止设备以将其禁用 (Windows 98/Me)
 description: 停止设备以将其禁用 (Windows 98/Me)
 ms.assetid: 2fc42fe4-ad29-4a51-9560-74b568bcd129
 keywords:
-- 禁用即插即用设备
+- 禁用 PnP 设备
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: abff6de67a3135f704ead7fc06c25a6f8335a6f4
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: ded6e2fb17a07671e04e20d445c8a628e1a67213
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67382982"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89184735"
 ---
 # <a name="stopping-a-device-to-disable-it-windows-98me"></a>停止设备以将其禁用 (Windows 98/Me)
 
@@ -19,32 +19,27 @@ ms.locfileid: "67382982"
 
 
 
-在 Windows 98 上 / 我，即插即用 manager 问题 Irp 时停止设备管理器禁用的设备。 (Windows 2000 和更高版本的 Windows 问题[删除 Irp](removing-a-device.md)在此情况下)。
+在 Windows 98/Me 上，当设备管理器禁用设备时，PnP 管理器会发出停止 Irp。 Windows 2000 和更高版本的 Windows (在这种情况下 [删除 irp](removing-a-device.md)) 。
 
-PnP 管理器将停止 Irp 发送按以下顺序：
+PnP 管理器按以下顺序发送停止 Irp：
 
-1.  即插即用 manager 问题[ **IRP\_MN\_查询\_停止\_设备**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-stop-device)要求设备的驱动程序是否可以停用设备。
+1.  PnP 管理器发出 [**IRP \_ MN \_ 查询 \_ 停止 \_ 设备**](./irp-mn-query-stop-device.md) ，询问设备的驱动程序是否可以停止该设备。
 
-    如果设备堆栈中的所有驱动程序返回状态\_成功后，驱动程序已将设备置于 （停止挂起） 的状态从该设备可以快速停止。
+    如果设备堆栈中的所有驱动程序都返回状态 " \_ 成功"，则驱动程序会将设备置于状态 ("停止挂起") ，设备可以从该状态快速停止。
 
-    PnP 管理器查询根据需要禁用该设备的任意多个设备堆栈。
+    PnP 管理器根据需要查询任意数量的设备堆栈，以禁用该设备。
 
-2.  如果**IRP\_MN\_查询\_停止\_设备**成功，即插即用 manager 问题[ **IRP\_MN\_停止\_设备**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-stop-device)停用设备。
+2.  如果 **irp \_ MN \_ 查询 \_ 停止 \_ 设备** 成功，PnP 管理器会发出 [**IRP \_ MN \_ 停止 \_ 设备**](./irp-mn-stop-device.md) 以停止设备。
 
-    PnP 管理器将发送停止 IRP，仅当设备上一个查询停止 IRP 已成功完成。 在响应停止 IRP，驱动程序释放设备的硬件资源 （如其 I/O 端口） 和失败要求设备的访问权限的任何 Irp。
+    仅当已成功完成设备的前一个查询停止 IRP 时，PnP 管理器才会发送 "停止 IRP"。 为了响应停止 IRP，驱动程序会释放设备的硬件资源 (如其 i/o 端口) 并导致需要访问该设备的任何 Irp 失败。
 
-3.  如果**IRP\_MN\_查询\_停止\_设备**失败，即插即用管理器将发送[ **IRP\_MN\_取消\_停止\_设备**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-cancel-stop-device)取消查询。
+3.  如果 **IRP \_ MN \_ 查询 \_ 停止 \_ 设备** 失败，PnP 管理器将发送 [**IRP \_ MN \_ 取消 \_ 停止 \_ 设备**](./irp-mn-cancel-stop-device.md) 以取消查询。
 
-    以响应**IRP\_MN\_取消\_停止\_设备**，设备的驱动程序将设备恢复为已启动状态并继续处理 I/O 请求的设备。
+    为了响应 **IRP \_ MN \_ CANCEL \_ 停止 \_ 设备**，设备的驱动程序会将设备恢复到 "已启动" 状态，并继续处理设备的 i/o 请求。
 
-    如果堆栈中的一个驱动程序失败的请求，即插即用管理器取消设备堆栈查询停止。 当 PnP 管理器取消只是一个设备堆栈上的查询停止时，它会发送**IRP\_MN\_取消\_停止\_设备**请求，因为上面驱动程序连接的任何驱动程序失败查询中的停止挂起状态持有该设备。 当**IRP\_MN\_取消\_停止\_设备**成功，驱动程序返回了错误的设备已启动状态。
+    如果堆栈中的一个驱动程序未能请求，PnP 管理器将取消设备堆栈的查询停止。 当 PnP 管理器只取消一个设备堆栈上的查询停止时，它将发送 **IRP \_ MN \_ CANCEL \_ 停止 \_ 设备** 请求，因为附加到该驱动程序的驱动程序上的任何驱动程序都使该设备处于停止挂起状态。 当 **IRP \_ MN \_ CANCEL \_ 停止 \_ 设备** 成功时，驱动程序已将设备恢复为 "已启动" 状态。
 
-禁用设备后，其驱动程序无法排队传入 Irp，因为保证时可能会重新启用该设备。 因此，可能会丢失数据。
-
- 
+如果设备处于禁用状态，则其驱动程序无法将传入的 Irp 排队，因为无法保证设备的重新启用。 因此，数据可能会丢失。
 
  
-
-
-
 

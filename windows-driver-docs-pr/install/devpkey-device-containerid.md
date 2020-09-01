@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: f52406f42f44050afa4e1ee392ca3af29d07c70f
-ms.sourcegitcommit: e180a0670b0b78c30541755e6e030df249979f1e
+ms.openlocfilehash: 03eeef20627782ee639b8f21448dba280bd0c53d
+ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/16/2020
-ms.locfileid: "86418363"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89095971"
 ---
 # <a name="devpkey_device_containerid"></a>DEVPKEY_Device_ContainerId
 
 
-即插即用（PnP）管理器使用 DEVPKEY_Device_ContainerId 设备属性将一个或多个设备节点（*devnodes*）组合到表示物理设备实例的*设备容器*中。
+即插即用 (PnP) 管理器使用 DEVPKEY_Device_ContainerId 设备属性将一个或多个设备节点 (*devnodes*) 分组到表示物理设备实例的 *设备容器* 。
 
 <table>
 <colgroup>
@@ -33,8 +33,8 @@ ms.locfileid: "86418363"
 </colgroup>
 <thead>
 <tr>
-<th>属性</th>
-<th>Value</th>
+<th>Attribute</th>
+<th>值</th>
 </tr>
 </thead>
 <tbody>
@@ -62,17 +62,17 @@ ms.locfileid: "86418363"
 <a name="remarks"></a>备注
 -------
 
-从 Windows 7 开始，PnP 管理器使用设备容器及其标识符（*ContainerID*）对一个或多个*devnodes*进行分组，并将其归属到特定物理设备的每个实例。 设备实例的 ContainerID 通过 DEVPKEY_Device_ContainerId 设备属性进行引用。
+从 Windows 7 开始，PnP 管理器使用设备容器及其标识符 (*ContainerID*) 对源自并属于特定物理设备的每个实例的一个或多个 *devnodes* 进行分组。 设备实例的 ContainerID 通过 DEVPKEY_Device_ContainerId 设备属性进行引用。
 
 将源自一个设备实例的所有 devnodes 都分组到容器中时，将完成以下结果：
 
--   操作系统可以确定功能在源自物理设备的*devnodes*之间的关系。
+-   操作系统可以确定功能在源自物理设备的 *devnodes* 之间的关系。
 
 -   用户或应用程序是以设备为中心的设备视图（而不是传统的以函数为中心的视图）提供的。
 
-DEVPKEY_Device_ContainerId 可用于确定系统中*devnodes*的设备容器分组。 对于给定的 devnode，可以通过完成以下步骤来确定属于同一容器的所有 devnodes：
+DEVPKEY_Device_ContainerId 可用于确定系统中 *devnodes* 的设备容器分组。 对于给定的 devnode，可以通过完成以下步骤来确定属于同一容器的所有 devnodes：
 
--   调用 devnode 所属的设备容器的**SetupDiGetDeviceProperty**值。
+-   调用 devnode 所属的设备容器的 **SetupDiGetDeviceProperty** 值。
 
 -   枚举计算机上的所有 devnodes，并查询每个 devnode 的 DEVPKEY_Device_ContainerId。 与原始 devnode 的 ContainerId 值匹配的每个 ContainerId 值都属于同一容器。
 
@@ -80,7 +80,7 @@ DEVPKEY_Device_ContainerId 可用于确定系统中*devnodes*的设备容器分�
 
  
 
-有关 ContainerIDs 的详细信息，请参阅[容器 id](https://docs.microsoft.com/windows-hardware/drivers/install/container-ids)。
+有关 ContainerIDs 的详细信息，请参阅 [容器 id](./container-ids.md)。
 
 <a name="requirements"></a>要求
 ------------
@@ -97,24 +97,17 @@ DEVPKEY_Device_ContainerId 可用于确定系统中*devnodes*的设备容器分�
 </tr>
 <tr class="even">
 <td align="left"><p>标头</p></td>
-<td align="left">Devpkey （包括 Devpkey）</td>
+<td align="left">Devpkey (包含 Devpkey) </td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
-[容器 Id](https://docs.microsoft.com/windows-hardware/drivers/install/container-ids)
+[容器 ID](./container-ids.md)
 
-[**SetupDiGetDeviceProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)
-
- 
+[**SetupDiGetDeviceProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)
 
  
-
-
-
-
-
 

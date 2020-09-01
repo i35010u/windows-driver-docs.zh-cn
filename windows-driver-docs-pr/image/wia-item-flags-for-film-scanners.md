@@ -4,12 +4,12 @@ description: 底片扫描仪的 WIA 项标志
 ms.assetid: 50aad730-6897-488d-a9de-58ce24738c17
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f963b16c2d98554fd5304408fc1de2ac93f73252
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: f4ad85d720c4c847688b3923b6353399e6b3a5a7
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67383072"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89184467"
 ---
 # <a name="wia-item-flags-for-film-scanners"></a>底片扫描仪的 WIA 项标志
 
@@ -17,31 +17,26 @@ ms.locfileid: "67383072"
 
 
 
-本主题列出了所需的 WIA 项标志用于扫描程序电影项和扫描程序电影胶片的子项目 （即，帧）。 WIA 项标志及其定义的完整列表，请参阅[ **WIA\_IPA\_项\_标志**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ipa-item-flags)。
+本主题列出了扫描仪胶卷项的必需 WIA 项标志，以及 (的帧) 的扫描仪胶卷子项。 有关 WIA 项标志及其定义的完整列表，请参阅 [**wia \_ IPA \_ item \_ 标志**](./wia-ipa-item-flags.md)。
 
-### <a name="required-wia-item-flags-for-film-scanners"></a>所需 WIA 项标志电影扫描仪
+### <a name="required-wia-item-flags-for-film-scanners"></a>用于胶片扫描器的必需 WIA 项标志
 
-支持以下 WIA 项标志需要 WIA 电影扫描程序项：
+需要 WIA 胶片扫描器项来支持以下 WIA 项标志：
 
 <a href="" id="wiaitemtypeprogrammabledatasource"></a>**WiaItemTypeProgrammableDataSource**  
-WIA 项是可配置的并遵循一组预定义的配置规则基于[ **WIA\_IPA\_项\_类别**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ipa-item-category)属性。 需要此标志，因为扫描，扫描程序的一部分电影是可编程的。
+WIA 项是可配置的，并遵循一组基于 [**WIA \_ IPA \_ item \_ CATEGORY**](./wia-ipa-item-category.md) 属性的预定义配置规则。 此标志是必需的，因为扫描程序的胶片扫描部分是可编程的。
 
 <a href="" id="wiaitemtypetransfer"></a>**WiaItemTypeTransfer**  
-WIA 项可用来将数据传输。 需要此标志，因为扫描程序的电影胶片项可用于将数据传输。
+WIA 项可用于传输数据。 此标志是必需的，因为扫描仪的胶卷项可用于传输数据。
 
 <a href="" id="wiaitemtypefile"></a>**WiaItemTypeFile**  
-项是一个文件。 此标志所需**WiaItemTypeImage**标志。
+该项是一个文件。 **WiaItemTypeImage**标志需要此标志。
 
 <a href="" id="wiaitemtypeimage"></a>**WiaItemTypeImage**  
-映像的产品。 需要此标志，因为电影扫描程序报告的图像格式[ **WIA\_IPA\_格式**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ipa-format)属性值。 （WIA 情况需要，电影胶片扫描程序的所有项都支持至少一种图像格式）。WIA 目前要求 WiaImgFmt\_BMP 和 WiaImgFmt\_MEMORYBMP 图像格式支持。
+该项是一个图像。 需要此标志，因为胶片扫描器会报告 [**WIA \_ IPA \_ 格式**](./wia-ipa-format.md) 属性值的图像格式。  (WIA 要求所有胶片扫描器项至少支持一种图像格式。 ) WIA 当前要求 \_ 支持 WiaImgFmt BMP 和 WiaImgFmt \_ MEMORYBMP 图像格式。
 
 <a href="" id="wiaitemtypefolder"></a>**WiaItemTypeFolder**  
-项是文件夹。 若要允许单个帧的枚举子项目的根电影项目需要此标志。 （帧代表单个电影正在扫描的表面上的多个所选的区域。）扫描程序电影子项目 （帧）*不能*将此标志。
+该项是一个文件夹。 根胶卷项需要此标志，以允许枚举单个帧子项目。  (帧表示单个胶卷扫描图面上的多个选定区域。 ) 扫描器电影子项 (帧) *不能* 有此标志。
 
  
-
- 
-
-
-
 

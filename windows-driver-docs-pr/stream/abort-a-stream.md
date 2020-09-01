@@ -3,19 +3,19 @@ title: 中止流
 description: 中止流
 ms.assetid: 46c726b6-8553-4588-9be1-2cf7779efec5
 keywords:
-- Avcstrm.sys 流式处理筛选器驱动程序 WDK，正在中止流
+- Avcstrm.sys 流筛选器驱动程序 WDK，中止流
 - 中止流 WDK AV/C 流式处理
 - 停止流式处理 WDK AV/C 流式处理
 - 流中止 WDK AV/C 流式处理
-- 正在取消流
+- 取消流
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fe10de891ab4c5c18429655c53a93ad440d82d4b
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 4419ddb36cd0b4a418c5b919c555d6e140ed2582
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386782"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89184635"
 ---
 # <a name="abort-a-stream"></a>中止流
 
@@ -23,11 +23,11 @@ ms.locfileid: "67386782"
 
 
 
-子单元遇到特殊情况，例如设备删除或流数据 IOCTL 取消时应中止流式处理操作。 中止操作*请求*是同步的但不是中止完成。 接受和处理，则只有第一个中止流请求重复请求将被忽略，但返回带有状态\_成功。 AV/C 流式处理筛选器驱动程序*Avcstrm.sys，* 然后安排要中止流式处理的工作项。 当流传输中止时，它开始完成[ **AVCSTRM\_读取**](https://docs.microsoft.com/windows-hardware/drivers/stream/avcstrm-read)/[**AVCSTRM\_编写**](https://docs.microsoft.com/windows-hardware/drivers/stream/avcstrm-write)状态请求\_已取消。 流状态未更改与中止请求，并且数据流仍必须关闭清理并释放资源。
+当某个子单位遇到特殊条件时，如设备删除或流数据 IOCTL 取消时，应中止流式处理操作。 中止操作 *请求* 是同步的，但中止完成不是。 仅接受并处理第一个中止流请求;将忽略重复的请求，但会返回状态 " \_ 成功"。 AV/C 流式处理筛选器驱动程序 *Avcstrm.sys，* 然后计划一个工作项以中止流式处理。 当流中止时，它将开始完成[**AVCSTRM \_ READ**](./avcstrm-read.md) / [**AVCSTRM \_ WRITE**](./avcstrm-write.md)请求，状态为 "已 \_ 取消"。 流状态不会随中止请求而更改，必须关闭数据流才能清理和释放资源。
 
-在中止工作项例程中，C AV/流式处理将首先停止同步数据传输，但它不会影响流状态。 AV/C 流式处理然后经历附加的流数据队列来分离流缓冲区，并将其返回带有状态\_已取消。
+在 "中止工作项" 例程中，AV/C 流式处理将首先停止同步数据传输，但不会影响流状态。 然后，AV/C 流式处理会经历附加的流数据队列，以分离流缓冲区并返回状态为 "已取消" 的流 \_ 。
 
-若要发出此请求，AV/C 流式处理的请求初始化**AVCSTRM\_中止\_流式处理**请求和数据的流上下文。
+若要发出此请求，将使用 **AVCSTRM \_ 中止 \_ 流式处理** 请求和数据流上下文初始化 AV/C 流式处理请求。
 
 ```cpp
 INIT_AVCSTRM_HEADER(pAVCStrmReq, AVCSTRM_ABORT_STREAMING);
@@ -41,12 +41,7 @@ Status =
         );
 ```
 
-当中止的数据流时，它 （如果设备未被删除） 后，可继续其流状态重置为**KSSTATE\_停止**其客户端应用程序。
+当数据流中止时，如果未) 删除该设备的流状态，则可以将其恢复 (如果其客户端应用程序 ** \_ 停止了 KSSTATE** 。
 
  
-
- 
-
-
-
 

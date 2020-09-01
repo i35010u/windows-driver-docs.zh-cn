@@ -9,12 +9,12 @@ keywords:
 - 请求处理 WDK UMDF，操作流
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9cff476c6177d879e00438a1e57e6196e03cd47f
-ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
+ms.openlocfilehash: 8e5f1aece3888cfadd89b74d87d68a8d406a13a0
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/19/2019
-ms.locfileid: "75210875"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89184615"
 ---
 # <a name="operation-flow-with-single-device-stack"></a>使用单设备堆栈的操作流
 
@@ -25,19 +25,13 @@ ms.locfileid: "75210875"
 
 ![create file 后跟读取请求的 umdf 调用序列](images/umdfflow.gif)
 
-  **请注意**，应用程序启动的所有 i/o 都将通过内核模式路由，如 UMDF 部分的[体系结构](https://docs.microsoft.com/previous-versions/ff554461(v=vs.85))中所示，即使上图中没有显示这种情况，也是如此。
+**注意**   应用程序启动的所有 i/o 都是通过内核模式路由的，如 UMDF 部分的[体系结构](/previous-versions/ff554461(v=vs.85))中所示，即使上图中没有显示这种情况。
 
  
 
-仅当 UMDF 驱动程序需要与读取请求关联的文件的相关信息时，才会调用[**IWDFIoRequest：： GetCreateParameters**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiorequest-getcreateparameters)方法。 仅当 UMDF 驱动程序需要有关读取请求的详细信息时，才会调用[**IWDFIoRequest：： GetReadParameters**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiorequest-getreadparameters)方法。
+仅当 UMDF 驱动程序需要与读取请求关联的文件的相关信息时，才会调用 [**IWDFIoRequest：： GetCreateParameters**](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiorequest-getcreateparameters) 方法。 仅当 UMDF 驱动程序需要有关读取请求的详细信息时，才会调用 [**IWDFIoRequest：： GetReadParameters**](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiorequest-getreadparameters) 方法。
 
-如果在读取操作中不需要指定传输的字节数，则 UMDF 驱动程序可以调用[**IWDFIoRequest：： Complete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiorequest-complete)方法，而不是[**IWDFIoRequest：： CompleteWithInformation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiorequest-completewithinformation)方法。 UMDF 驱动程序将调用**complete**或**CompleteWithInformation**以指示读取操作完成;然后，应用程序可以访问读取数据。
-
- 
+如果在读取操作中不需要指定传输的字节数，则 UMDF 驱动程序可以调用 [**IWDFIoRequest：： Complete**](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiorequest-complete) 方法，而不是 [**IWDFIoRequest：： CompleteWithInformation**](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiorequest-completewithinformation) 方法。 UMDF 驱动程序将调用 **complete** 或 **CompleteWithInformation** 以指示读取操作完成;然后，应用程序可以访问读取数据。
 
  
-
-
-
-
 

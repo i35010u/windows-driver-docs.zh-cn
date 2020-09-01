@@ -4,25 +4,25 @@ description: 验证发布签名
 ms.assetid: 28ed3bb6-dc57-42f9-8bd5-7118619f3bf5
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a15b873d4be5f32ddbb9ec0441cb8f29f99ad6fc
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 18c3bd7b8034223e32ddd262177911d08c6807a4
+ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67380431"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89097225"
 ---
 # <a name="verifying-the-release-signature"></a>验证发布签名
 
 
-之后[驱动程序包](driver-packages.md)已发布签名[ **SignTool** ](https://docs.microsoft.com/windows-hardware/drivers/devtest/signtool)工具可用于验证的签名：
+[驱动程序包](driver-packages.md)经过版本签名后，可以使用[**SignTool**](../devtest/signtool.md)工具来验证的签名：
 
 -   驱动程序包中的单个文件。
 
--   内核模式二进制文件，例如已嵌入签名的驱动程序。
+-   已嵌入签名的内核模式二进制文件（如驱动程序）。
 
-本主题中的示例使用 Toastpkg 示例的二进制文件的 64 位版本*toaster.sys*。 在 WDK 安装目录中，此文件位于*src\\常规\\toaster\\toastpkg\\toastcd\\amd64*目录。
+本主题中的示例使用 Toastpkg.inf 示例二进制文件的64位版本 *toaster.sys*。 在 WDK 安装目录中，此文件位于 *src \\ general \\ toaster \\ toastpkg.inf \\ toastcd \\ amd64* 目录中。
 
-下面的示例验证的签名*toaster.sys*中*tstamd64.cat*版本签名[编录文件](catalog-files.md):
+下面的示例在*tstamd64.cat* release 签名[目录文件](catalog-files.md)中验证*toaster.sys*的签名：
 
 ```cpp
 Signtool verify /kp /v /c tstamd64.cat amd64\toaster.sys
@@ -30,29 +30,29 @@ Signtool verify /kp /v /c tstamd64.cat amd64\toaster.sys
 
 其中：
 
--   **验证**命令将配置 SignTool 验证中指定的签名[编录文件](catalog-files.md)(*tstamd64.cat*)。
+-   **Verify**命令将 SignTool 配置为验证指定[目录文件](catalog-files.md)中的签名 (*tstamd64.cat*) 。
 
--   **/Kp**选项配置 SignTool 要验证是否已满足内核策略。
+-   **/Kp**选项将 SignTool 配置为验证是否已满足内核策略。
 
--   **/V**选项配置 SignTool 打印执行消息和警告消息。
+-   **/V**选项将 SignTool 配置为打印执行和警告消息。
 
--   **/C**选项指定驱动程序包[编录文件](catalog-files.md)的已发布签名 (*tstamd64.cat*)。 如果你要验证数字签名的嵌入签名的驱动程序，不要使用此选项。
+-   **/C**选项指定已发布签名 (*tstamd64.cat*) 的驱动程序包的[目录文件](catalog-files.md)。 如果要验证嵌入签名的驱动程序的数字签名，请不要使用此选项。
 
--   *amd64\\toaster.sys*是要验证的文件的名称。
+-   *amd64 \\toaster.sys* 是要验证的文件的名称。
 
-在标记为"签名证书链"此命令的输出，应验证以下条件为真：
+在标记为 "签名证书链" 的此命令的输出下，应验证是否满足以下条件：
 
--   与 Microsoft 代码验证根发出内核策略的证书链的根目录。
+-   内核策略的证书链的根由 Microsoft 代码验证根颁发给和。
 
--   交叉证书中，类 3 公共主证书颁发机构颁发，也是由 Microsoft 代码验证根颁发的。
+-   颁发给类3公共主证书颁发机构的交叉证书也由 Microsoft 代码验证根颁发。
 
-对于签名的编录文件，默认验证码验证策略可以还验证签名上驱动程序包中的任何内核模式二进制文件。 这可确保该文件将显示登录用户模式下插安装对话框和 MMC 设备管理器管理单元。
+对于签名的目录文件，还可以在驱动程序包内的任何内核模式二进制文件中验证默认的 Authenticode 验证策略签名。 这可确保该文件在用户模式即插即用安装对话框和 MMC 设备管理器管理单元中显示为已签名。
 
-**请注意**  此示例仅用于验证的已发布签名[编录文件](catalog-files.md)和未嵌入的签名的内核模式二进制文件。
+**注意**   此示例仅用于验证已发布签名的[目录文件](catalog-files.md)，而不是嵌入签名的内核模式二进制文件。
 
  
 
-下面的示例验证的默认认证码验证策略*toaster.sys*中*tstamd64.cat*目录文件进行签名：
+以下示例在*tstamd64.cat*签名目录文件中验证*toaster.sys*的默认 Authenticode 验证策略：
 
 ```cpp
 Signtool verify /pa /v /c tstamd64.cat amd64\toaster.sys
@@ -60,31 +60,25 @@ Signtool verify /pa /v /c tstamd64.cat amd64\toaster.sys
 
 其中：
 
-- **验证**命令将配置 SignTool 将验证指定的文件中的签名<em>。</em>
+- **Verify**命令将 SignTool 配置为验证指定文件中的签名<em>。</em>
 
-- **/Pa**选项配置 SignTool 要验证是否已满足认证码验证策略。
+- **/Pa**选项将 SignTool 配置为验证是否已满足验证码验证策略。
 
-- **/V**选项配置 SignTool 打印执行消息和警告消息。
+- **/V**选项将 SignTool 配置为打印执行和警告消息。
 
-- **/C**选项指定驱动程序包[编录文件](catalog-files.md)的已发布签名 (*tstamd64.cat*)。
+- **/C**选项指定已发布签名 (*tstamd64.cat*) 的驱动程序包的[目录文件](catalog-files.md)。
 
-- *amd64\\toaster.sys*是要验证的文件的名称。
+- *amd64 \\toaster.sys* 是要验证的文件的名称。
 
-在标记为"签名证书链"此命令的输出，应确认且可由类 3 公共主证书颁发机构颁发的默认验证码证书链。
+在标记为 "签名证书链" 的此命令的输出下，你应验证是否向颁发了默认的 Authenticode 证书链，并由第3类公共主证书颁发机构颁发。
 
-您还可以通过执行以下步骤来验证数字签名的编录文件本身通过 Windows 资源管理器：
+还可以通过执行以下步骤，通过 Windows 资源管理器验证目录文件本身的数字签名：
 
--   右键单击[编录文件](catalog-files.md)，然后选择**属性**。
+-   右键单击该 [目录文件](catalog-files.md) ，然后选择 " **属性**"。
 
--   为进行数字签名的文件，该文件的**属性**对话框的具有一个额外**数字签名**选项卡上，在其上的签名、 时间戳和用于对文件进行签名的证书的详细信息显示。
+-   对于经过数字签名的文件，该文件的 " **属性** " 对话框将显示 "其他 **数字签名** " 选项卡，在该选项卡上会显示用于对文件进行签名的证书的签名、时间戳和详细信息。
 
-有关如何发布符号驱动程序包的详细信息，请参阅[版本签名驱动程序包](release-signing-driver-packages.md)并[验证目录文件的 SPC 签名](verifying-the-spc-signature-of-a-catalog-file.md)。
-
- 
+有关如何发布驱动程序包的详细信息，请参阅 [发布签名驱动程序包](release-signing-driver-packages.md) 和 [验证编录文件的 SPC 签名](verifying-the-spc-signature-of-a-catalog-file.md)。
 
  
-
-
-
-
 

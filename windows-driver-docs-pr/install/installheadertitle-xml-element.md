@@ -12,19 +12,19 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: dd3d1fa07d9182f26addda55e6e3f5ff02315fe4
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: dd03be147f0435ef81280adf851abd3cb0951076
+ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67370005"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89097297"
 ---
 # <a name="installheadertitle-xml-element"></a>installHeaderTitle XML 元素
 
 
-\[DIFx 已被弃用，有关详细信息，请参阅[DIFx 准则](https://docs.microsoft.com/windows-hardware/drivers/install/difx-guidelines)。\]
+\[DIFx 已弃用，有关详细信息，请参阅 [DIFx 指导原则](./difx-guidelines.md)。\]
 
-**InstallHeaderTitle** XML 元素自定义安装标头标题 DPInst 安装页上显示的粗体文本。
+**InstallHeaderTitle** XML 元素自定义 DPInst 安装页上显示的安装标题标题的粗体文本。
 
 ### <a name="element-tag"></a>元素标记
 
@@ -32,7 +32,7 @@ ms.locfileid: "67370005"
 <installHeaderTitle>
 ```
 
-### <a name="xml-attributes"></a>XML 特性
+### <a name="xml-attributes"></a>XML 属性
 
 无
 
@@ -46,14 +46,14 @@ ms.locfileid: "67370005"
 <tbody>
 <tr class="odd">
 <td align="left"><p><strong>父元素</strong></p></td>
-<td align="left"><p><a href="language-xml-element.md" data-raw-source="[&lt;strong&gt;language&lt;/strong&gt;](language-xml-element.md)"><strong>language</strong></a></p></td>
+<td align="left"><p><a href="language-xml-element.md" data-raw-source="[&lt;strong&gt;language&lt;/strong&gt;](language-xml-element.md)"><strong>语言</strong></a></p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>子元素</strong></p></td>
 <td align="left"><p>不允许</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><strong>数据的内容</strong></p></td>
+<td align="left"><p><strong>数据内容</strong></p></td>
 <td align="left"><p>自定义安装页的标题文本的字符串</p></td>
 </tr>
 <tr class="even">
@@ -65,9 +65,9 @@ ms.locfileid: "67370005"
 
  
 
-### <a href="" id="comments"></a>备注
+### <a name="remarks"></a><a href="" id="comments"></a>注释
 
-下面的代码示例演示**installHeaderTitle**自定义安装页的标题文本的元素。 指定自定义安装标头标题的文本所示粗体的字体样式。
+下面的代码示例演示一个自定义安装页的标题文本的 **installHeaderTitle** 元素。 指定自定义安装标题标题的文本以粗体显示。
 
 ```cpp
 <dpinst>
@@ -81,19 +81,12 @@ ms.locfileid: "67370005"
 </dpinst>
 ```
 
-如果**installHeaderTitle**元素未指定，DPInst 显示在默认安装页面上显示的默认标题文本。
+如果未指定 **installHeaderTitle** 元素，则 DPInst 将显示默认的安装页上显示的默认标题文本。
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
-[**language**](language-xml-element.md)
-
- 
+[**语言**](language-xml-element.md)
 
  
-
-
-
-
-
 

@@ -4,12 +4,12 @@ description: '本主题介绍打印通知，并演示 c # 版本的打印设置�
 ms.assetid: 39A06A8A-5603-44AB-8884-C12B8E2F1A45
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 556d414ddaf420bd0781463eccbbff780caa8e6e
-ms.sourcegitcommit: 17c1bbc5ea0bef3bbc87794b030a073f905dc942
+ms.openlocfilehash: 094815c1d939061a81d60553ea6ee6f71af233ee
+ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88802573"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89097183"
 ---
 # <a name="working-with-print-notifications-in-a-uwp-device-app"></a>在 UWP 设备应用中使用打印通知
 
@@ -27,7 +27,7 @@ ms.locfileid: "88802573"
 >[!NOTE]
 >打印机制造商必须在其 v4 打印驱动程序中实现双向和 DriverEvent XML 文件，才能在其 UWP 设备应用中使用打印通知。 有关详细信息，请参阅 [双向通信](https://go.microsoft.com/fwlink/p/?LinkId=317192)。
 
-如果发生 DriverEvent，并启动了 UWP 设备应用的后台任务，则该应用具有几个选项来执行此操作。 有关导致任务启动的流的更多详细信息，请参阅 [自定义 UI 的驱动程序支持](https://docs.microsoft.com/windows-hardware/drivers/print/driver-support-for-customized-ui)。
+如果发生 DriverEvent，并启动了 UWP 设备应用的后台任务，则该应用具有几个选项来执行此操作。 有关导致任务启动的流的更多详细信息，请参阅 [自定义 UI 的驱动程序支持](../print/driver-support-for-customized-ui.md)。
 
 后台任务可以选择：
 
@@ -120,7 +120,7 @@ ms.locfileid: "88802573"
 - [窗口大小和屏幕缩放的准则](https://go.microsoft.com/fwlink/p/?LinkId=311830)
 - [将窗口调整为高度和缩小布局的准则](https://go.microsoft.com/fwlink/p/?LinkId=311831)
 
-### <a name="best-practices"></a>最佳实践
+### <a name="best-practices"></a>最佳做法
 
 - **请勿在通知中包含操作词。** 在通知消息上，不要使用通知用户的文本推送、按或单击 "通知"。 用户已经了解，他们可以按 toast 来了解更多信息。 例如，只需编写 "打印机墨水不足，而不是" 打印机墨水不足。 按进行故障排除。
 
@@ -378,7 +378,7 @@ void DisplayBackgroundTaskTriggerDetails()
 
 6. 重新连接打印机，以便 Windows 在连接设备时读取更新的设备元数据。
 
-## <a name="troubleshooting"></a>疑难解答
+## <a name="troubleshooting"></a>故障排除
 
 ### <a name="issue-no-default-toast-notification-appears"></a>问题：未显示默认 toast 通知
 
@@ -388,7 +388,7 @@ void DisplayBackgroundTaskTriggerDetails()
 
 - **可能的原因：** 域策略已禁用 toast 通知。 离开域，然后重试。
 
-- **可能的原因：** 打印机未实现 DriverEvents。 检查 v4 驱动程序是否支持双向和 DriverEvents。 有关详细信息，请参阅 [自定义 UI 的驱动程序支持](https://docs.microsoft.com/windows-hardware/drivers/print/driver-support-for-customized-ui)。
+- **可能的原因：** 打印机未实现 DriverEvents。 检查 v4 驱动程序是否支持双向和 DriverEvents。 有关详细信息，请参阅 [自定义 UI 的驱动程序支持](../print/driver-support-for-customized-ui.md)。
 
 - **可能的原因：** 计算机在打印机队列中没有最近的作业。 请确保在屏幕右下角显示 "打印机" 图标。 否则，请发送另一个打印作业。
 
@@ -403,9 +403,9 @@ void DisplayBackgroundTaskTriggerDetails()
 
 ## <a name="related-topics"></a>相关主题
 
-[UWP 应用 (徽章概述) ](https://docs.microsoft.com/previous-versions/windows/apps/hh779719(v=win.10))
+[UWP 应用 (徽章概述) ](/previous-versions/windows/apps/hh779719(v=win.10))
 
-[ (UWP 应用的磁贴和磁贴通知概述) ](https://docs.microsoft.com/previous-versions/windows/apps/hh779724(v=win.10))
+[ (UWP 应用的磁贴和磁贴通知概述) ](/previous-versions/windows/apps/hh779724(v=win.10))
 
 [磁贴和徽章 (UWP 应用的指南和清单) ](https://go.microsoft.com/fwlink/p/?LinkId=317194)
 
@@ -413,7 +413,7 @@ void DisplayBackgroundTaskTriggerDetails()
 
 [ (UWP 应用的 toast 通知的指导原则和清单) ](https://go.microsoft.com/fwlink/p/?LinkId=317193)
 
-[自定义 UI 的驱动程序支持](https://docs.microsoft.com/windows-hardware/drivers/print/driver-support-for-customized-ui)
+[自定义 UI 的驱动程序支持](../print/driver-support-for-customized-ui.md)
 
 [开发 v4 打印驱动程序](https://go.microsoft.com/fwlink/p/?LinkId=314231)
 

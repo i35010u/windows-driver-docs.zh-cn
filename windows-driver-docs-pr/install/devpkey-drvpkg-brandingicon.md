@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 170ee952fb65d498426fcb1a66f8d73d67113310
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 1059f02d9c978057e06dd0762e3fcb5099fe8480
+ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67377289"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89095965"
 ---
-# <a name="devpkeydrvpkgbrandingicon"></a>DEVPKEY_DrvPkg_BrandingIcon
+# <a name="devpkey_drvpkg_brandingicon"></a>DEVPKEY_DrvPkg_BrandingIcon
 
 
-DEVPKEY_DrvPkg_BrandingIcon 设备属性表示将设备实例与供应商相关联的图标的列表。
+DEVPKEY_DrvPkg_BrandingIcon 设备属性表示将设备实例与供应商相关联的图标列表。
 
 <table>
 <colgroup>
@@ -41,11 +41,11 @@ DEVPKEY_DrvPkg_BrandingIcon 设备属性表示将设备实例与供应商相关�
 <td align="left"><p><a href="devprop-type-string-list.md" data-raw-source="[&lt;strong&gt;DEVPROP_TYPE_STRING_LIST&lt;/strong&gt;](devprop-type-string-list.md)"><strong>DEVPROP_TYPE_STRING_LIST</strong></a></p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><strong>属性访问</strong></p></td>
-<td align="left"><p>通过安装应用程序和安装程序的只读访问权限</p></td>
+<td align="left"><p><strong>和</strong></p></td>
+<td align="left"><p>安装应用程序和安装程序的只读访问</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>本地化？</strong></p></td>
+<td align="left"><p><strong>各种?</strong></p></td>
 <td align="left"><p>是</p></td>
 </tr>
 </tbody>
@@ -56,11 +56,11 @@ DEVPKEY_DrvPkg_BrandingIcon 设备属性表示将设备实例与供应商相关�
 <a name="remarks"></a>备注
 -------
 
-可以指定一个品牌图标，为.ico 文件或可执行文件内的资源。
+品牌图标可指定为 .ico 文件或可执行文件中的资源。
 
-图标列表的格式是所述的相同[ **DEVPKEY_DrvPkg_Icon** ](devpkey-drvpkg-icon.md)设备属性。
+图标列表的格式与 [**DEVPKEY_DrvPkg_Icon**](devpkey-drvpkg-icon.md) 设备属性所述的格式相同。
 
-可以设置的值由 DEVPKEY_DrvPkg_BrandingIcon [ **INF AddProperty 指令**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addproperty-directive)包含在[ **INF *DDInstall*部分**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-ddinstall-section)安装设备的 INF 文件。 可以通过调用检索的值 DEVPKEY_DrvPkg_BrandingIcon [ **SetupDiGetDeviceProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)。
+可以设置 AddProperty 的 DEVPKEY_DrvPkg_BrandingIcon 值，该 [**指令**](./inf-addproperty-directive.md) 包含在安装设备的 inf 文件的 [**inf *DDInstall* 部分**](./inf-ddinstall-section.md) 中。 可以通过调用 [**SetupDiGetDeviceProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)来检索 DEVPKEY_DrvPkg_BrandingIcon 的值。
 
 <a name="requirements"></a>要求
 ------------
@@ -72,33 +72,26 @@ DEVPKEY_DrvPkg_BrandingIcon 设备属性表示将设备实例与供应商相关�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>Version</p></td>
+<td align="left"><p>版本</p></td>
 <td align="left"><p>在 Windows Vista 和更高版本的 Windows 中可用。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>Header</p></td>
-<td align="left">Devpkey.h （包括 Devpkey.h）</td>
+<td align="left"><p>标头</p></td>
+<td align="left">Devpkey (包含 Devpkey) </td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
 [**DEVPKEY_DrvPkg_Icon**](devpkey-drvpkg-icon.md)
 
-[**INF AddProperty Directive**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addproperty-directive)
+[**INF AddProperty 指令**](./inf-addproperty-directive.md)
 
-[**INF *DDInstall*部分**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-ddinstall-section)
+[**INF *DDInstall* 部分**](./inf-ddinstall-section.md)
 
-[**SetupDiGetDeviceProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)
-
- 
+[**SetupDiGetDeviceProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)
 
  
-
-
-
-
-
 

@@ -3,18 +3,18 @@ title: 停止设备
 description: 停止设备
 ms.assetid: 65a47e7b-aabd-4b55-8fa6-c3482da1cc84
 keywords:
-- 停用该设备的即插即用 WDK 内核
-- 停用该设备的即插 WDK 内核
-- 停用该即插即用设备
-- 停止 Irp WDK 即插即用
+- PnP WDK 内核，停止设备
+- 即插即用 WDK 内核，停止设备
+- 停止 PnP 设备
+- 停止 Irp WDK PnP
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b8b77eb3f3efd71dad0bea08d7fa1125c4eb599b
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: adab12cf82023b58df8546ff774f3e31bc9ea716
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67382978"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89184721"
 ---
 # <a name="stopping-a-device"></a>停止设备
 
@@ -22,30 +22,25 @@ ms.locfileid: "67382978"
 
 
 
-PnP 管理器会提示停止在以下情况下的设备的驱动程序：
+PnP 管理器指示驱动程序在以下情况下停止设备：
 
--   若要重新平衡正在使用设备的硬件资源。 重新平衡时通常需要枚举新设备时，需要已在使用资源。
+-   重新平衡设备使用的硬件资源。 当枚举的新设备需要已使用的资源时，通常需要重新平衡。
 
--   若要禁用的设备管理器请求的响应中的设备 (Windows 98 / 只是我)。 Windows 2000 和更高版本的 Windows 发送这种情况下; 删除 Irp请参阅[了解当删除 Irp 将发出](understanding-when-remove-irps-are-issued.md)。
+-   若要禁用设备以响应设备管理器请求 (Windows 98/Me 只) 。 在这种情况下，windows 2000 和更高版本的 Windows 发送删除 Irp;请参阅 [了解何时发出删除 irp](understanding-when-remove-irps-are-issued.md)。
 
--   失败后[ **IRP\_MN\_启动\_设备**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-start-device)请求 (Windows 98 / 只是我)
+-   失败后， [**IRP \_ MN \_ 启动 \_ 设备**](./irp-mn-start-device.md) 请求 (仅限 Windows 98/Me) 
 
-本部分介绍以下主题：
+本部分涵盖了以下主题：
 
-[停止设备来重新平衡资源](stopping-a-device-to-rebalance-resources.md)
+[停止设备以重新平衡资源](stopping-a-device-to-rebalance-resources.md)
 
-[停止以禁用它的设备 (Windows 98 / 我)](stopping-a-device-to-disable-it--windows-98-me-.md)
+[停止设备以将其禁用 (Windows 98/Me)](stopping-a-device-to-disable-it--windows-98-me-.md)
 
-[停止后失败的启动设备 (Windows 98 / 我)](stopping-a-device-after-a-failed-start--windows-98-me-.md)
+[启动失败后停止设备 (Windows 98/Me)](stopping-a-device-after-a-failed-start--windows-98-me-.md)
 
-[处理停止 Irp (Windows 2000 及更高版本)](handling-stop-irps--windows-2000-and-later-.md)
+[处理停止 IRP（Windows 2000 和更高版本）](handling-stop-irps--windows-2000-and-later-.md)
 
-[处理停止 Irp (Windows 98 / 我)](handling-stop-irps--windows-98-me-.md)
-
- 
+[处理停止 IRP (Windows 98/Me)](handling-stop-irps--windows-98-me-.md)
 
  
-
-
-
 

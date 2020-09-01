@@ -4,46 +4,40 @@ description: UMDF 驱动程序的初级指南
 ms.assetid: 67EF6762-AA31-4D35-8EB3-04F9CD34C7D1
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3da3014f3ae3c8ea6e8c7cb59fec3b9db80c31af
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: b98220be055f47ca7f289318ee54033f68f00fcd
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67376179"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89184267"
 ---
 # <a name="session-zero-guidelines-for-umdf-drivers"></a>UMDF 驱动程序的初级指南
 
 
-从 Windows Vista 中，操作系统将隔离服务和运行后续会话 0，而应用程序中的系统进程、 更高版本带编号的会话。 由于 UMDF 主机进程 (WUDFHost.exe) 是一个在会话 0 中运行的系统进程，UMDF 驱动程序是独立于应用程序。 因此，开发您的驱动程序时必须使用以下准则：
+从 Windows Vista 开始，操作系统将隔离会话0中的服务和系统进程，而应用程序会在后续的编号较高的会话中运行。 因为 UMDF 主机进程 ( # A0) 是在会话0中运行的系统进程之一，所以，UMDF 驱动程序与应用程序隔离。 因此，在开发驱动程序时，必须使用以下准则：
 
--   不要创建一个用户界面 (UI) 元素，如对话框中，或依赖于用户输入。 用户未在会话 0 中运行，因为他或她永远不会看到用户界面，不能对其做出响应。
+-   请勿 (UI) 元素创建用户界面，如对话框，或依赖于用户输入。 由于用户未在会话0中运行，因此，他或她永远看不到该 UI，无法响应。
 
-    同样，不操作任何 UI 元素。 例如，UMDF 驱动程序不能在用户的会话中枚举 windows。
+    同样，不要操作任何 UI 元素。 例如，UMDF 驱动程序无法枚举用户会话中的 windows。
 
--   如果您的驱动程序必须与服务通信，使用远程过程调用 (RPC) 或命名的管道等的客户端/服务器机制。
--   在 Windows API 中调用函数时要格外小心。 某些函数可能操作的 UI 元素，或尝试访问用户的会话中的命名的对象。 请勿调用不会调用从用户模式服务的 Windows 函数。 作为一般规则，kernel32.dll，在导出的函数，但不是在 user32.dll 导出的函数，可以安全地调用 UMDF 驱动程序。
+-   如果你的驱动程序必须与服务进行通信，请使用客户端/服务器机制（如远程过程调用 (RPC) 或命名管道）。
+-   在 Windows API 中调用函数时请小心。 某些函数可能会处理 UI 元素或尝试访问用户会话中的命名对象。 不要调用不会从用户模式服务调用的 Windows 函数。 作为一般规则，UMDF 驱动程序可以安全地调用 kernel32.dll 中导出的函数，但不能调用 user32.dll 中导出的函数。
 
-    UMDF 驱动程序可能会调用 Windows 函数来执行以下任务：
+    UMDF 驱动程序可以调用 Windows 函数来执行以下任务：
 
-    -   驱动程序可能会在调用 **SetupDi * * * Xxx*函数来检索插设备属性。 例如， [UMDF 示例驱动程序用于 OSR USB Fx2 学习工具包](https://go.microsoft.com/fwlink/p/?linkid=256202)调用[ **SetupDiGetDeviceRegistryProperty** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdeviceregistrypropertya)检索设备的总线类型的 GUID。
-        **请注意**  UMDF 驱动程序不能安全地调用许多 **SetupDi * * * Xxx*函数，但它是安全地调用检索设备节点属性的函数。
-
-         
-
-    -   从手动队列中检索输入/输出请求的驱动程序可能会创建定期计时器轮询队列。 例如， [WudfVhidmini](https://go.microsoft.com/fwlink/p/?linkid=256226)示例将通过调用注册计时器回调例程[ **CreateThreadpoolTimer**](https://docs.microsoft.com/windows/desktop/api/threadpoolapiset/nf-threadpoolapiset-createthreadpooltimer)，然后通过调用设置定期计时器[ **SetThreadpoolTimer**](https://docs.microsoft.com/windows/desktop/api/threadpoolapiset/nf-threadpoolapiset-setthreadpooltimer)。
-        **请注意**  1.11 版中，从开始，UMDF 工作项中提供支持。 有关详细信息，请参阅[使用工作项](using-workitems.md)。
+    -   驱动程序可以调用 **SetupDi * * Xxx* 函数来检索即插即用设备属性。 例如， [OSR USB Fx2 学习工具包的 UMDF 示例驱动程序](https://go.microsoft.com/fwlink/p/?linkid=256202) 调用 [**SetupDiGetDeviceRegistryProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetdeviceregistrypropertya) 来检索设备总线类型的 GUID。
+        **注意**   UMDF 驱动程序无法安全地调用许多 **SetupDi * * Xxx*函数，但调用检索设备节点属性的函数是安全的。
 
          
 
-有关使用外部框架的系统服务的其他信息，请参阅 14 章 （"超出框架"） 的 Orwick，尾和专家 Smith。 *使用 Windows Driver Foundation 开发驱动程序*。 Redmond，WA:Microsoft Press，2007年。
+    -   从手动队列检索 i/o 请求的驱动程序可能会创建一个周期性计时器以轮询队列。 例如， [WudfVhidmini](https://go.microsoft.com/fwlink/p/?linkid=256226) 示例通过调用 [**CreateThreadpoolTimer**](/windows/desktop/api/threadpoolapiset/nf-threadpoolapiset-createthreadpooltimer)来注册计时器回调例程，然后通过调用 [**SetThreadpoolTimer**](/windows/desktop/api/threadpoolapiset/nf-threadpoolapiset-setthreadpooltimer)来设置一个周期性计时器。
+        **注意**   从版本1.11 开始，UMDF 提供对工作项的支持。 有关详细信息，请参阅 [使用工作项](using-workitems.md)。
 
-有关会话 0 隔离的其他信息，请参阅[服务和 Windows 中的驱动程序的影响的会话 0 隔离](https://go.microsoft.com/fwlink/p/?linkid=240132)。
+         
+
+有关在框架外使用系统服务的其他信息，请参阅 Orwick、、Smith 和人员 Smith ) 的 "框架" 之外的第14个 (。 *开发包含 Windows Driver Foundation 的驱动程序*。 华盛顿州雷蒙德市：微软出版社，2007。
+
+有关会话零隔离的其他信息，请参阅在 [Windows 中对服务和驱动程序进行会话0隔离的影响](https://go.microsoft.com/fwlink/p/?linkid=240132)。
 
  
-
- 
-
-
-
-
 

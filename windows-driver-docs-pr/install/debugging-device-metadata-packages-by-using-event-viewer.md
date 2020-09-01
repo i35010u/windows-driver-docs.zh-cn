@@ -4,135 +4,129 @@ description: 使用事件查看器调试设备元数据包
 ms.assetid: 168a9dd1-aab2-4497-a59d-b8fe52d8cde2
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e8c344aa0a8079cd50004f3b82e0fe25bf046021
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 32e832c3960ab012452b7843a98bb5aa826f15a8
+ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67353394"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89097145"
 ---
 # <a name="debugging-device-metadata-packages-by-using-event-viewer"></a>使用事件查看器调试设备元数据包
 
 
-从 Windows 7 开始，到的设备元数据包处理相关的事件的事件跟踪 Windows (ETW) 服务支持 DeviceMetadata/调试通道。
+从 Windows 7 开始，Windows (ETW) 服务的事件跟踪支持与设备元数据包处理相关的事件的 DeviceMetadata/调试通道。
 
-DeviceMetadata/调试通道存储错误以及在下载或的设备元数据包处理期间发生的信息性事件。 此通道还将提供有关检测和查询设备的其他状态的元数据中的包的警告和信息性事件存储[设备元数据存储区](device-metadata-store.md)。
+DeviceMetadata/调试通道存储在下载或处理设备元数据包期间发生的错误和信息性事件。 此通道还存储警告和信息性事件，这些事件提供有关检测和查询设备元数据 [存储](device-metadata-store.md)中的设备元数据包的附加状态。
 
 ### <a name="viewing-device-metadatadebug-etw-events-through-event-viewer"></a>通过事件查看器查看设备元数据/调试 ETW 事件
 
-有关设备元数据包，以查看记录的事件使用事件查看器。 请按照下列步骤来查看这些事件的事件查看器中打开 DeviceMetadata/调试 ETW 通道：
+您可以使用事件查看器查看为设备元数据包记录的事件。 请按照以下步骤在事件查看器中打开 DeviceMetadata/Debug ETW 通道，查看这些事件：
 
-1.  上**启动**菜单中，右键单击**计算机**，然后单击**管理**。
+1.  在 " **开始** " 菜单上，右键单击 " **计算机**"，然后单击 " **管理**"。
 
-2.  展开**系统工具**节点。
+2.  展开 " **系统工具** " 节点。
 
-3.  展开，然后单击**事件查看器**节点。
+3.  展开，然后单击 " **事件查看器** " 节点。
 
-4.  上**视图**菜单上，单击**显示分析和调试日志**。
+4.  在 " **视图** " 菜单上，单击 " **显示分析和调试日志**"。
 
-5.  展开**应用程序和服务日志**节点。
+5.  展开 " **应用程序和服务日志** " 节点。
 
-6.  展开**Microsoft**节点。
+6.  展开 " **Microsoft** " 节点。
 
-7.  展开**Windows**节点。
+7.  展开 " **Windows** " 节点。
 
-8.  展开**UserPnP**节点。
+8.  展开 " **UserPnP** " 节点。
 
-9.  单击**DeviceMetadata/调试**节点。
+9.  单击 " **DeviceMetadata"/"调试** " 节点。
 
-    **请注意**  必须首先启用上 DeviceMetadata/调试 ETW 通道可以接收和查看事件日志记录。 若要执行此操作，右键单击**DeviceMetadata/Debug**节点，然后选择**属性**。 然后，单击**启用日志**。
+    **注意**   必须先在 DeviceMetadata/Debug ETW 通道上启用日志记录才能接收和查看事件。 为此，请右键单击 " **DeviceMetadata"/"调试** " 节点，然后选择 " **属性**"。 然后单击 " **启用日志**"。
 
      
 
 ### <a name="device-metadatadebug-etw-events"></a>设备元数据/调试 ETW 事件
 
-操作系统在下载或设备元数据包的处理过程中记录以下错误、 警告和信息性事件：
+在下载或处理设备元数据包期间，操作系统会记录以下错误、警告和信息性事件：
 
-<a href="" id="event-id--7900-error--device-metadata-package-error"></a>事件 ID:7900 错误：设备元数据包错误  
-使用设备元数据包的组件之一检测到错误。
+<a href="" id="event-id--7900-error--device-metadata-package-error"></a>事件 ID：7900错误：设备元数据包错误  
+检测到设备元数据包的组件之一出现错误。
 
 此事件日志消息包含以下信息：
 
--   错误，其中包括说明错误的源的说明。 错误源是[设备元数据存储区](device-metadata-store.md)或[设备元数据缓存](device-metadata-cache.md)。
+-   错误的说明，其中包括错误源的说明。 错误源为 [设备元数据存储](device-metadata-store.md) 或 [设备元数据缓存](device-metadata-cache.md)。
 
 -   设备元数据包的名称。
 
--   特定于应用程序的错误代码。 有关这些错误代码的详细信息，请参阅[设备元数据错误代码](device-metadata-error-codes.md)。
+-   应用程序特定的错误代码。 有关这些错误代码的详细信息，请参阅 [设备元数据错误代码](device-metadata-error-codes.md)。
 
 -   Win32 错误代码。
 
-<a href="" id="event-id--7901-information--device-metadata-package-downloaded-from-wmis-"></a>事件 ID:7901 信息：从 WMIS 下载设备元数据包。  
-设备元数据包从下载[Windows 元数据和 Internet 服务](windows-metadata-and-internet-services.md)(WMIS) 通过[设备元数据检索客户端](device-metadata-retrieval-client.md)(DMRC)，该组件从包中提取和将保存在[设备元数据缓存](device-metadata-cache.md)。
+<a href="" id="event-id--7901-information--device-metadata-package-downloaded-from-wmis-"></a>事件 ID：7901信息：从 WMIS 下载的设备元数据包。  
+设备元数据包是从 [Windows 元数据和 Internet 服务](windows-metadata-and-internet-services.md) (WMIS) 的设备元数据 [检索客户](device-metadata-retrieval-client.md))  (端下载的，它从包中提取组件并将它们保存在 [设备元数据缓存](device-metadata-cache.md)中。
 
 此事件日志消息包含以下信息：
 
 -   事件的说明。
 
--   打开包装后的设备元数据包中的位置[设备元数据缓存](device-metadata-cache.md)。
+-   [设备元数据缓存](device-metadata-cache.md)中解压缩设备元数据包的位置。
 
 -   设备元数据包的名称。
 
-<a href="" id="event-id--7902-error--device-metadata-package-not-signed--"></a>事件 ID:7902 错误：未签名的设备元数据包。   
-已安装的设备元数据包不由签名[Windows Quality Online Services (Winqual)](https://go.microsoft.com/fwlink/p/?linkid=62651)。
+<a href="" id="event-id--7902-error--device-metadata-package-not-signed--"></a>事件 ID：7902错误：设备元数据包未签名。   
+已安装的设备元数据包不是由 [Windows Quality Online Services (Winqual) ](https://go.microsoft.com/fwlink/p/?linkid=62651)签名的。
 
-**请注意**  仅当从 WMIS 下载时验证设备元数据包的签名。
+**注意**   仅当从 WMIS 下载设备元数据包时，才会验证该签名。
 
  
 
 此事件日志消息包含以下信息：
 
--   错误的说明。
+-   对错误的说明。
 
 -   设备元数据包的名称。
 
--   特定于应用程序的错误代码。 有关这些错误代码的详细信息，请参阅[设备元数据错误代码](device-metadata-error-codes.md)。
+-   应用程序特定的错误代码。 有关这些错误代码的详细信息，请参阅 [设备元数据错误代码](device-metadata-error-codes.md)。
 
 -   Win32 错误代码。
 
-<a href="" id="event-id--7950-information--new-device-metadata-package-discovered-in-the-local-metadata-store-"></a>事件 ID:7950 信息：在本地元数据存储区中发现新设备元数据包。  
-Dmrc 如何检测到新设备元数据包安装在本地计算机。
+<a href="" id="event-id--7950-information--new-device-metadata-package-discovered-in-the-local-metadata-store-"></a>事件 ID：7950信息：本地元数据存储中发现的新设备元数据包。  
+DMRC 检测到安装在本地计算机上的新设备元数据包。
 
 此事件日志消息包含以下信息：
 
 -   事件的说明。
 
--   设备元数据包，为源[设备元数据存储区](device-metadata-store.md)或[设备元数据缓存](device-metadata-cache.md)。
+-   设备元数据包的源，即 [设备元数据存储区](device-metadata-store.md) 或 [设备元数据缓存](device-metadata-cache.md)。
 
 -   设备元数据包的名称。
 
-<a href="" id="event-id--7951-information--query-for-metadata-packages-in-progress-"></a>事件 ID:7951 信息：查询正在进行中的元数据程序包。  
-Dmrc 如何查询安装特定设备的设备元数据包。
+<a href="" id="event-id--7951-information--query-for-metadata-packages-in-progress-"></a>事件 ID：7951信息：正在查询元包。  
+DMRC 查询特定设备的已安装设备元数据包。
 
 此事件日志消息包含以下信息：
 
 -   事件的说明。
 
--   设备查找密钥，如设备的硬件 ID 或模型 id。 有关详细信息，请参阅[ **HardwareID** ](https://docs.microsoft.com/previous-versions/windows/hardware/metadata/ff546114(v=vs.85))并[ **ModelID**](https://docs.microsoft.com/previous-versions/windows/hardware/metadata/ff549295(v=vs.85))。
+-   设备查找密钥，如设备的硬件 ID 或型号 ID。 有关详细信息，请参阅 [**HardwareID**](/previous-versions/windows/hardware/metadata/ff546114(v=vs.85)) 和 [**ModelID**](/previous-versions/windows/hardware/metadata/ff549295(v=vs.85))。
 
-    **请注意**  硬件的列表 Id 作为参数传递时，仅限最具体的硬件 ID 将记录。
+    **注意**   当硬件 Id 列表作为参数传递时，仅记录最特定的硬件 ID。
 
      
 
-<a href="" id="event-id--7952-warning--network-related-errors-"></a>事件 ID:7952 警告：与网络相关的错误。  
-Dmrc 如何从 WMIS 打包的设备元数据下载期间遇到网络错误。
+<a href="" id="event-id--7952-warning--network-related-errors-"></a>事件 ID：7952警告：网络相关错误。  
+DMRC 在下载从 WMIS 打包的设备元数据时遇到网络错误。
 
-**请注意**  网络不可用时，不会生成此警告。
+**注意**   网络不可用时，不会生成此警告。
 
  
 
 此事件日志消息包含以下信息：
 
--   错误的详细的说明。
+-   该错误的详细说明。
 
--   特定于应用程序的错误代码。 有关这些错误代码的详细信息，请参阅[设备元数据错误代码](device-metadata-error-codes.md)。
+-   应用程序特定的错误代码。 有关这些错误代码的详细信息，请参阅 [设备元数据错误代码](device-metadata-error-codes.md)。
 
--   网络错误时的 HTTP 状态代码。
-
- 
+-   出现网络错误时的 HTTP 状态代码。
 
  
-
-
-
-
 

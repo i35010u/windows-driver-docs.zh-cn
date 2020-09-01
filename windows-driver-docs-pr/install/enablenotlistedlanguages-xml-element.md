@@ -1,6 +1,6 @@
 ---
 title: enableNotListedLanguages XML 元素
-description: EnableNotListedLanguages XML 元素是空元素，用于 enableNotListedLanguages 标志设置为 ON，将配置 DPInst 若要启用的所有受支持的语言 XML 元素 DPInst.xml 文件中未显式启用的语言。
+description: EnableNotListedLanguages XML 元素是一个空元素，该元素将 enableNotListedLanguages 标志设置为 ON，这将配置 DPInst，以启用 DPInst.xml 文件中的语言 XML 元素未显式启用的所有受支持的语言。
 ms.assetid: 7584b222-71b0-4532-84be-3444a4a7003b
 keywords:
 - enableNotListedLanguages XML 元素设备和驱动程序安装
@@ -12,19 +12,19 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 0882c2449bf3fe070642464c548187653148ab14
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: d59da5a4163daa3f250a2b93ea7bb2b82b6dfa92
+ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67375009"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89096059"
 ---
 # <a name="enablenotlistedlanguages-xml-element"></a>enableNotListedLanguages XML 元素
 
 
-\[DIFx 已被弃用，有关详细信息，请参阅[DIFx 准则](https://docs.microsoft.com/windows-hardware/drivers/install/difx-guidelines)。\]
+\[DIFx 已弃用，有关详细信息，请参阅 [DIFx 指导原则](./difx-guidelines.md)。\]
 
-**EnableNotListedLanguages** XML 元素为空元素，用于设置**enableNotListedLanguages**标志为 ON，将配置 DPInst 若要启用的所有不受支持语言通过显式启用[**语言**](language-xml-element.md)中的 XML 元素*DPInst.xml*文件。
+**EnableNotListedLanguages** XML 元素是一个空元素，该元素将**enableNotListedLanguages**标志设置为 ON，这将配置 DPInst，以启用*DPInst.xml*文件中的[**语言**](language-xml-element.md)XML 元素未显式启用的所有受支持的语言。
 
 ### <a name="element-tag"></a>元素标记
 
@@ -32,7 +32,7 @@ ms.locfileid: "67375009"
 <enableNotListedLanguages>
 ```
 
-### <a name="xml-attributes"></a>XML 特性
+### <a name="xml-attributes"></a>XML 属性
 
 无
 
@@ -53,7 +53,7 @@ ms.locfileid: "67375009"
 <td align="left"><p>不允许</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><strong>数据的内容</strong></p></td>
+<td align="left"><p><strong>数据内容</strong></p></td>
 <td align="left"><p>不允许</p></td>
 </tr>
 <tr class="even">
@@ -65,11 +65,11 @@ ms.locfileid: "67375009"
 
  
 
-### <a href="" id="comments"></a>备注
+### <a name="remarks"></a><a href="" id="comments"></a>注释
 
-默认情况下，所有的 DPInst 支持的语言均启用如果*DPInst.xml*文件不包含任何**语言**元素。 但是，如果*DPInst.xml*文件包含**语言**元素，只能通过显式指定的语言**语言**之外的元素及其所有隐式禁用了其他语言。 若要启用的所有隐式禁用了语言，请设置**enableNotListedLanguages**通过包括标志为 ON **enableNotListedLanguages**元素的子元素作为**dpinst** XML 元素，或使用 **/el** 命令行开关。
+默认情况下，如果 *DPInst.xml* 文件不包含任何 **语言** 元素，则会启用所有支持 DPInst 的语言。 但是，如果 *DPInst.xml* 文件包含 **语言** 元素，则只会启用 **语言** 元素显式指定的语言，并隐式禁用所有其他语言。 若要启用隐式禁用的所有语言，请将**enableNotListedLanguages**元素包含为**dpinst** XML 元素的子元素，或使用 **/el**命令行开关，将**enableNotListedLanguages**标志设置为 ON   。
 
-下面的代码示例演示**enableNotListedLanguages**元素。
+下面的代码示例演示了 **enableNotListedLanguages** 元素。
 
 ```cpp
 <dpinst>
@@ -79,17 +79,10 @@ ms.locfileid: "67375009"
 </dpinst>
 ```
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
 [**dpinst**](dpinst-xml-element.md)
 
  
-
- 
-
-
-
-
-
 

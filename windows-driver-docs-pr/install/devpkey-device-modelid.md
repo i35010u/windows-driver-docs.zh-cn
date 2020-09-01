@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 46f9f69fa92b05c10b87d95afa70913af6005607
-ms.sourcegitcommit: e180a0670b0b78c30541755e6e030df249979f1e
+ms.openlocfilehash: 335a46c332e2e44e089eeda90423db5a9378f521
+ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/16/2020
-ms.locfileid: "86418519"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89096809"
 ---
 # <a name="devpkey_device_modelid"></a>DEVPKEY_Device_ModelId
 
 
-DEVPKEY_Device_ModelId 设备属性将设备与[设备元数据包](https://docs.microsoft.com/windows-hardware/drivers/install/device-metadata-packages)匹配。
+DEVPKEY_Device_ModelId 设备属性将设备与 [设备元数据包](https://docs.microsoft.com/windows-hardware/drivers/install/device-metadata-packages)匹配。
 
 <table>
 <colgroup>
@@ -33,8 +33,8 @@ DEVPKEY_Device_ModelId 设备属性将设备与[设备元数据包](https://docs
 </colgroup>
 <thead>
 <tr>
-<th>属性</th>
-<th>Value</th>
+<th>Attribute</th>
+<th>值</th>
 </tr>
 </thead>
 <tbody>
@@ -62,11 +62,11 @@ DEVPKEY_Device_ModelId 设备属性将设备与[设备元数据包](https://docs
 <a name="remarks"></a>备注
 -------
 
-DEVPKEY_Device_ModelId 设备属性为 Ihv 和 Oem 提供唯一标识共享相同制造商和型号的设备的支持。 通过使用模型标识符（ModelID），Oem 和 Ihv 可以将其分发到自己的品牌设备元数据包的设备模型相匹配。
+DEVPKEY_Device_ModelId 设备属性为 Ihv 和 Oem 提供唯一标识共享相同制造商和型号的设备的支持。 通过使用模型标识符 (ModelID) ，Oem 和 Ihv 可以将其分发到其自己的品牌设备元数据包的设备模型相匹配。
 
-DEVPKEY_Device_ModelId 设备属性包含设备元数据包中[**ModelId**](https://docs.microsoft.com/previous-versions/windows/hardware/metadata/ff549295(v=vs.85)) XML 元素的值。 安装设备后，将使用设备报告的 ModelID GUID 值填充此 PKEY。
+DEVPKEY_Device_ModelId 设备属性包含设备元数据包中 [**ModelId**](/previous-versions/windows/hardware/metadata/ff549295(v=vs.85)) XML 元素的值。 安装设备后，将使用设备报告的 ModelID GUID 值填充此 PKEY。
 
-有关详细信息，请参阅[设备元数据包](https://docs.microsoft.com/windows-hardware/drivers/install/device-metadata-packages)。
+有关详细信息，请参阅 [设备元数据包](https://docs.microsoft.com/windows-hardware/drivers/install/device-metadata-packages)。
 
 <a name="requirements"></a>要求
 ------------
@@ -83,26 +83,19 @@ DEVPKEY_Device_ModelId 设备属性包含设备元数据包中[**ModelId**](http
 </tr>
 <tr class="even">
 <td align="left"><p>标头</p></td>
-<td align="left">Devpkey （包括 Devpkey）</td>
+<td align="left">Devpkey (包含 Devpkey) </td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
 [设备元数据包](https://docs.microsoft.com/windows-hardware/drivers/install/device-metadata-packages)
 
-[**ModelID**](https://docs.microsoft.com/previous-versions/windows/hardware/metadata/ff549295(v=vs.85))
+[**ModelID**](/previous-versions/windows/hardware/metadata/ff549295(v=vs.85))
 
-[**SetupDiGetDeviceProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)
-
- 
+[**SetupDiGetDeviceProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)
 
  
-
-
-
-
-
 

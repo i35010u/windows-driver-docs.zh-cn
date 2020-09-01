@@ -4,12 +4,12 @@ description: 此信息介绍如何获取和使用 Microsoft Windows 的代码签
 ms.assetid: 0A1364BF-04DA-4F1C-803A-18FE2A5EF390
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9d4743a90bf287af3c360900ee573095c30ecf17
-ms.sourcegitcommit: 7a7e61b4147a4aa86bf820fd0b0c7681fe17e544
+ms.openlocfilehash: c41a54a4393ccf3589b2bf593d14eafa206a3d45
+ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89056955"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89095983"
 ---
 # <a name="cross-certificates-for-kernel-mode-code-signing"></a>用于内核模式代码签名的交叉证书
 
@@ -17,10 +17,10 @@ ms.locfileid: "89056955"
 此信息介绍如何获取和使用 Microsoft Windows 的代码签名内核模式二进制文件的交叉证书。
 
 > [!NOTE]
-> 请查看 Microsoft 安全公告 ([2880823](https://docs.microsoft.com/security-updates/SecurityAdvisories/2016/2880823)) "弃用适用于 Microsoft 根证书计划的 Sha-1 哈希算法"，其中描述了在年1月 1 2016 日之后，Microsoft 将不再允许根证书颁发机构使用 sha-1 哈希算法颁发 x.509 证书的策略更改。
+> 请查看 Microsoft 安全公告 ([2880823](/security-updates/SecurityAdvisories/2016/2880823)) "弃用适用于 Microsoft 根证书计划的 Sha-1 哈希算法"，其中描述了在年1月 1 2016 日之后，Microsoft 将不再允许根证书颁发机构使用 sha-1 哈希算法颁发 x.509 证书的策略更改。
 
 > [!NOTE]
-> [Microsoft 受信任的根程序](https://docs.microsoft.com/security/trusted-root/program-requirements)不再支持具有内核模式签名功能的根证书。 有关详细信息，请参阅 [弃用软件发行者证书、商业发布证书和商业测试证书](deprecation-of-software-publisher-certificates-and-commercial-release-certificates.md)。
+> [Microsoft 受信任的根程序](/security/trusted-root/program-requirements)不再支持具有内核模式签名功能的根证书。 有关详细信息，请参阅 [弃用软件发行者证书、商业发布证书和商业测试证书](deprecation-of-software-publisher-certificates-and-commercial-release-certificates.md)。
 
 ## <a name="cross-certificates-overview"></a>交叉证书概述
 
@@ -102,10 +102,4 @@ Microsoft 为每个 CA 提供了一个特定的交叉证书，用于为代码签
 | Starfield 2 类证书颁发机构                    | f8 fc 7f 3c dd 51 76 ad d2 7c f9 7f 73 96 59 09 46 6d 9a-z 22 | 2023/08/27    | [下载](https://go.microsoft.com/fwlink/p/?linkid=321792) |
 | UTN-USERFirst-Object                                         | ae 1e 25 26 01 30 a3 0b 1b c2 20 29 35 65 3b e5 a7 23 | 2023/08/15    | [下载](https://go.microsoft.com/fwlink/p/?linkid=321793) |
  
-
- 
-
-
-
-
 

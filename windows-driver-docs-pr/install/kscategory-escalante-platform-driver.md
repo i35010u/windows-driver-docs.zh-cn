@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 579d2f22854c12a7d4bc833d18120b6a822a7213
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: dadac2d059fc0193ab7ab3c050c6e4c9a822f739
+ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67365478"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89097243"
 ---
-# <a name="kscategoryescalanteplatformdriver"></a>KSCATEGORY_ESCALANTE_PLATFORM_DRIVER
+# <a name="kscategory_escalante_platform_driver"></a>KSCATEGORY_ESCALANTE_PLATFORM_DRIVER
 
 
-KSCATEGORY_ESCALANTE_PLATFORM_DRIVER[设备接口类](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)已过时。 对于新的设备不使用。
+KSCATEGORY_ESCALANTE_PLATFORM_DRIVER [设备接口类](./overview-of-device-interface-classes.md) 已过时。 不要使用新设备。
 
 <table>
 <colgroup>
@@ -33,7 +33,7 @@ KSCATEGORY_ESCALANTE_PLATFORM_DRIVER[设备接口类](https://docs.microsoft.com
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">特性</th>
+<th align="left">Attribute</th>
 <th align="left">设置</th>
 </tr>
 </thead>
@@ -61,17 +61,11 @@ KSCATEGORY_ESCALANTE_PLATFORM_DRIVER[设备接口类](https://docs.microsoft.com
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>Header</p></td>
-<td align="left">Ksmedia.h （包括 Ksmedia.h）</td>
+<td align="left"><p>标头</p></td>
+<td align="left">Ksmedia (包含 Ksmedia) </td>
 </tr>
 </tbody>
 </table>
 
  
-
- 
-
-
-
-
 

@@ -9,18 +9,18 @@ keywords:
 - 硬件
 ms.date: 08/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: abb1d978df939262f8846f9ef2b92c0908e37a09
-ms.sourcegitcommit: 17c1bbc5ea0bef3bbc87794b030a073f905dc942
+ms.openlocfilehash: 356f69db3478036405d01e6bbdac35db57b7d4e6
+ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88802493"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89097381"
 ---
 # <a name="hardware-support-app-hsa-steps-for-app-developers"></a>硬件支持应用 (HSA) ：适用于应用开发人员的步骤
 
-本主题介绍如何将设备特定的应用程序与驱动程序或 [RPC (远程过程调用) ](https://docs.microsoft.com/windows/desktop/Rpc/rpc-start-page) 终结点相关联。  采用这种方式配对时，应用被称为硬件支持应用 (HSA) 。  可以通过 Microsoft Store 分发和更新硬件支持应用。
+本主题介绍如何将设备特定的应用程序与驱动程序或 [RPC (远程过程调用) ](/windows/desktop/Rpc/rpc-start-page) 终结点相关联。  采用这种方式配对时，应用被称为硬件支持应用 (HSA) 。  可以通过 Microsoft Store 分发和更新硬件支持应用。
 
-使用 [通用 Windows 平台 (UWP) 应用](https://docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide) 或桌面 (Win32) 应用开始。  如果你想要使用桌面应用，请使用 [桌面桥](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-root) 创建 Windows 应用包，你可以将其上传到应用商店。
+使用 [通用 Windows 平台 (UWP) 应用](/windows/uwp/get-started/universal-application-platform-guide) 或桌面 (Win32) 应用开始。  如果你想要使用桌面应用，请使用 [桌面桥](/windows/uwp/porting/desktop-to-uwp-root) 创建 Windows 应用包，你可以将其上传到应用商店。
 
 此页介绍了 UWP 应用的过程，但在 Win32 选项中的步骤是类似的。
 
@@ -36,13 +36,13 @@ ms.locfileid: "88802493"
 
 需要 Microsoft Store 上的开发人员帐户。 硬件伙伴需要不同于其硬件伙伴帐户的 Microsoft Store 帐户。 在后续步骤中创作应用程序清单和设备元数据时，需要发布者名称。 创建存储配置文件后，还可以为应用保留一个名称。
 
-若要创建 Microsoft Store 帐户，请参阅 [UWP 应用注册页](https://go.microsoft.com/fwlink/p/?LinkId=302197)。 有关详细信息，请参阅 [打开开发人员帐户](https://docs.microsoft.com/windows/uwp/publish/opening-a-developer-account)。
+若要创建 Microsoft Store 帐户，请参阅 [UWP 应用注册页](https://go.microsoft.com/fwlink/p/?LinkId=302197)。 有关详细信息，请参阅 [打开开发人员帐户](/windows/uwp/publish/opening-a-developer-account)。
 
 ## <a name="choosing-a-programming-language-for-the-app"></a>为应用程序选择编程语言
 
-如果你的应用程序将与驱动程序通信，则可以使用 [Windows. Custom](https://docs.microsoft.com/uwp/api/windows.devices.custom)，它是 WinRT API 的一部分，因此在 JavaScript、c # 和 c + + 中可用。
+如果你的应用程序将与驱动程序通信，则可以使用 [Windows. Custom](/uwp/api/windows.devices.custom)，它是 WinRT API 的一部分，因此在 JavaScript、c # 和 c + + 中可用。
 
-如果你的应用程序将与 NT 服务通信，则需要使用 RPC Api。  由于 RPC Api 是不能在 WinRT 中使用的 Win32 Api，因此需要使用 c + +，或使用 .NET 互操作 (PInvoke) 来包装 RPC 调用。  有关详细信息，请参阅 [从托管代码调用本机函数](https://docs.microsoft.com/cpp/dotnet/calling-native-functions-from-managed-code)。
+如果你的应用程序将与 NT 服务通信，则需要使用 RPC Api。  由于 RPC Api 是不能在 WinRT 中使用的 Win32 Api，因此需要使用 c + +，或使用 .NET 互操作 (PInvoke) 来包装 RPC 调用。  有关详细信息，请参阅 [从托管代码调用本机函数](/cpp/dotnet/calling-native-functions-from-managed-code)。
 
 ## <a name="contact-the-custom-capability-owner"></a>与自定义功能所有者联系
 
@@ -63,7 +63,7 @@ ca9fc964db7e0c2938778f4559946833e7a8cfde0f3eaa07650766d4764e86c4
 
 功能所有者使用此信息生成 [签名的自定义功能描述符](hardware-support-app--hsa--steps-for-driver-developers.md#sccd-xml-schema) 文件，并将此文件发送给应用开发人员。
 
-应用开发人员可以继续使用开发人员模式开发自定义功能，同时等待功能所有者批准请求。 例如，在 [开发人员模式下](https://docs.microsoft.com/windows/uwp/get-started/enable-your-device-for-development)，在台式计算机上的 SCCD 中使用以下内容：
+应用开发人员可以继续使用开发人员模式开发自定义功能，同时等待功能所有者批准请求。 例如，在 [开发人员模式下](/windows/uwp/get-started/enable-your-device-for-development)，在台式计算机上的 SCCD 中使用以下内容：
 
 - SCCD 中的目录条目。
 
@@ -79,7 +79,7 @@ ca9fc964db7e0c2938778f4559946833e7a8cfde0f3eaa07650766d4764e86c4
 
 ## <a name="add-a-custom-capability-to-the-app-package-manifest"></a>将自定义功能添加到应用程序包清单
 
-接下来，将 [应用程序包清单](https://docs.microsoft.com/uwp/schemas/appxpackage/appx-package-manifest) 源文件 (`Package.appxmanifest`) 修改为包含功能属性。
+接下来，将 [应用程序包清单](/uwp/schemas/appxpackage/appx-package-manifest) 源文件 (`Package.appxmanifest`) 修改为包含功能属性。
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -107,7 +107,7 @@ ca9fc964db7e0c2938778f4559946833e7a8cfde0f3eaa07650766d4764e86c4
 
 ## <a name="install-the-app"></a>安装应用程序
 
-若要使用自定义功能预安装 UWP 应用，请使用 [DISM-部署映像服务和管理](https://docs.microsoft.com/windows-hardware/manufacture/desktop/dism---deployment-image-servicing-and-management-technical-reference-for-windows)。
+若要使用自定义功能预安装 UWP 应用，请使用 [DISM-部署映像服务和管理](/windows-hardware/manufacture/desktop/dism---deployment-image-servicing-and-management-technical-reference-for-windows)。
 
 ## <a name="troubleshooting"></a>疑难解答
 
@@ -125,7 +125,7 @@ ca9fc964db7e0c2938778f4559946833e7a8cfde0f3eaa07650766d4764e86c4
 
 [硬件支持应用 (HSA) ：驱动程序开发人员的步骤](hardware-support-app--hsa--steps-for-driver-developers.md)
 
-[启用设备进行开发](https://docs.microsoft.com/windows/uwp/get-started/enable-your-device-for-development)
+[启用设备进行开发](/windows/uwp/get-started/enable-your-device-for-development)
 
 [自定义功能示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CustomCapability)
 
@@ -133,6 +133,6 @@ ca9fc964db7e0c2938778f4559946833e7a8cfde0f3eaa07650766d4764e86c4
 
 [将驱动程序与通用 Windows 平台 (UWP) 应用配对](../install/pairing-app-and-driver-versions.md)
 
-[通用 Windows 平台简介](https://docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide)
+[通用 Windows 平台简介](/windows/uwp/get-started/universal-application-platform-guide)
 
-[通用 Windows 平台 (UWP)](https://docs.microsoft.com/windows/uwp/design/basics/design-and-ui-intro)
+[通用 Windows 平台 (UWP)](/windows/uwp/design/basics/design-and-ui-intro)

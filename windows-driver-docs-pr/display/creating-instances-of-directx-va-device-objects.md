@@ -3,15 +3,15 @@ title: 创建 DirectX VA 设备对象的实例
 description: 创建 DirectX VA 设备对象的实例
 ms.assetid: af98ab63-33bb-4294-a902-695ea278654e
 keywords:
-- DirectX 视频加速 WDK Windows 2000 显示中，创建实例
+- DirectX 视频加速 WDK Windows 2000 显示，创建实例
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 475a2eb2ec75dda7e2f19fb86a817e5706021f2e
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: bc64c0890839bfe2fce88b7d3923e3974a9dc08b
+ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67370195"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89067446"
 ---
 # <a name="creating-instances-of-directx-va-device-objects"></a>创建 DirectX VA 设备对象的实例
 
@@ -19,7 +19,7 @@ ms.locfileid: "67370195"
 ## <span id="ddk_creating_instances_of_directx_va_device_objects_gg"></span><span id="DDK_CREATING_INSTANCES_OF_DIRECTX_VA_DEVICE_OBJECTS_GG"></span>
 
 
-下面的示例代码用于创建设备对象的 DirectX VA 的实例。 此代码是实现[ *DdMoCompCreate* ](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_mocompcb_create)回调函数。 **CreateMoComp**的成员[ **DD\_MOTIONCOMPCALLBACKS** ](https://docs.microsoft.com/windows/desktop/api/ddrawint/ns-ddrawint-dd_motioncompcallbacks)结构指向回调函数。
+使用以下示例代码创建 DirectX VA 设备对象的实例。 此代码是 [*DdMoCompCreate*](/windows/desktop/api/ddrawint/nc-ddrawint-pdd_mocompcb_create) 回调函数的实现。 [**DD \_ MOTIONCOMPCALLBACKS**](/windows/desktop/api/ddrawint/ns-ddrawint-dd_motioncompcallbacks)结构的**CreateMoComp**成员指向回调函数。
 
 ```cpp
 // Determine that the passed in GUID is valid. 
@@ -145,10 +145,4 @@ DWORD APIENTRY
 ```
 
  
-
- 
-
-
-
-
 

@@ -12,19 +12,19 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: b13908ba80e41fb9c5a1b7b0431c147e13a0aa32
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 8c354e6d5d6cd6e4011fb5fdd82c1d3d6db5de48
+ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67375285"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89096167"
 ---
 # <a name="dpinsttitle-xml-element"></a>dpinstTitle XML 元素
 
 
-\[DIFx 已被弃用，有关详细信息，请参阅[DIFx 准则](https://docs.microsoft.com/windows-hardware/drivers/install/difx-guidelines)。\]
+\[DIFx 已弃用，有关详细信息，请参阅 [DIFx 指导原则](./difx-guidelines.md)。\]
 
-**DpinstTitle** XML 元素自定义的所有 DPInst 向导页面的标题栏显示的文本。
+**DpinstTitle** XML 元素自定义显示在所有 DPInst 向导页面的标题栏中的文本。
 
 ### <a name="element-tag"></a>元素标记
 
@@ -32,7 +32,7 @@ ms.locfileid: "67375285"
 <dpinstTitle>
 ```
 
-### <a name="xml-attributes"></a>XML 特性
+### <a name="xml-attributes"></a>XML 属性
 
 无
 
@@ -46,14 +46,14 @@ ms.locfileid: "67375285"
 <tbody>
 <tr class="odd">
 <td align="left"><p><strong>父元素</strong></p></td>
-<td align="left"><p><a href="language-xml-element.md" data-raw-source="[&lt;strong&gt;language&lt;/strong&gt;](language-xml-element.md)"><strong>language</strong></a></p></td>
+<td align="left"><p><a href="language-xml-element.md" data-raw-source="[&lt;strong&gt;language&lt;/strong&gt;](language-xml-element.md)"><strong>语言</strong></a></p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>子元素</strong></p></td>
 <td align="left"><p>不允许</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><strong>数据的内容</strong></p></td>
+<td align="left"><p><strong>数据内容</strong></p></td>
 <td align="left"><p>自定义所有向导页上的标题栏文本的字符串</p></td>
 </tr>
 <tr class="even">
@@ -65,9 +65,9 @@ ms.locfileid: "67375285"
 
  
 
-### <a href="" id="comments"></a>备注
+### <a name="remarks"></a><a href="" id="comments"></a>注释
 
-下面的代码示例的**dpinstTitle**元素自定义标题栏文本。 指定自定义的 DPInst 标题的文本所示粗体的字体样式。
+下面的代码示例 **dpinstTitle** 元素自定义标题栏文本。 指定自定义 DPInst 标题的文本以粗体显示。
 
 ```cpp
 <dpinst>
@@ -81,19 +81,12 @@ ms.locfileid: "67375285"
 </dpinst>
 ```
 
-如果**dpinstTitle**元素未指定，DPInst 显示默认的欢迎页上显示的默认标题栏文本。
+如果未指定 **dpinstTitle** 元素，则 DPInst 将显示默认的 "欢迎使用" 页上显示的默认标题栏文本。
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
-[**language**](language-xml-element.md)
-
- 
+[**语言**](language-xml-element.md)
 
  
-
-
-
-
-
 

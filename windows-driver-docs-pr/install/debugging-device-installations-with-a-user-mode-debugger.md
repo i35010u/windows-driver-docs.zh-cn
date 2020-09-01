@@ -4,45 +4,45 @@ description: 使用用户模式调试程序调试设备安装
 ms.assetid: 34427afb-3303-44ec-a3a7-72f247c5506d
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4f7f0d2fb6c2bd951543f7d462ee0b27d8561c70
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 60b598798519d55b344f4f3da516dce81ac0ffc4
+ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67356290"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89095977"
 ---
 # <a name="debugging-device-installations-with-a-user-mode-debugger"></a>使用用户模式调试程序调试设备安装
 
 
-Windows vista 中，从开始，当插即用 (PnP) 管理器检测到系统中的新设备时，在操作系统启动设备安装主机进程 (*DrvInst.exe*) 若要搜索并安装设备的驱动程序。
+从 Windows Vista 开始，当即插即用 (PnP) manager 在系统中检测到新设备时，操作系统将启动设备安装主机进程 (*DrvInst.exe*) 搜索并安装设备驱动程序。
 
-调试用户模式设备安装主机进程的最有效方法是使用用户模式下调试程序，如 WinDbg 或 Visual Studio。 因为*DrvInst.exe*进程会正常情况下完成而无需任何用户交互、 Microsoft Windows Vista 和更高版本的 Windows，以允许开发人员添加了支持[驱动程序包](driver-packages.md)处理设备安装的核心阶段之前附加调试器。
+调试用户模式设备安装主机进程的最有效方法是使用用户模式调试器，如 WinDbg 或 Visual Studio。 由于 *DrvInst.exe* 进程通常在无需任何用户交互的情况下完成，因此 Microsoft 添加了对 windows Vista 和更高版本的 windows 的支持，以便在处理设备安装的核心阶段之前， [驱动程序包](driver-packages.md) 的开发人员能够附加调试器。
 
-有关用户模式调试程序和其他调试工具的详细信息，请参阅[Windows 调试](https://docs.microsoft.com/windows-hardware/drivers/debugger/index)。
+有关用户模式调试器和其他调试工具的详细信息，请参阅 [Windows 调试](../debugger/index.md)。
 
-**DebugInstall**注册表值指定的调试支持系统启用的设备安装的类型。 有关此注册表值的详细信息，请参阅[启用支持调试设备安装](enabling-support-for-debugging-device-installations.md)。
+**DebugInstall**注册表值指定在系统上启用的设备安装调试支持的类型。 有关此注册表值的详细信息，请参阅 [启用对调试设备安装的支持](enabling-support-for-debugging-device-installations.md)。
 
-当**DebugInstall**注册表值设置为 2， *DrvInst.exe*将等待用户模式的调试程序附加到其进程中，再继续安装。 附加调试器后，该过程将中断调试器本身。 应附加调试程序，并将其配置，以便它不会启动其自身初始断点正在调试的目标系统中。
+如果将 **DebugInstall** 注册表值设置为2，则在继续安装之前， *DrvInst.exe* 将等待用户模式调试器附加到其进程。 附加调试器后，进程将中断调试器本身。 应附加和配置调试器，以便它不会在要调试的目标系统中启动自己的初始断点。
 
-例如，调试器可以附加到*DrvInst.exe*按名称：
+例如，调试程序可以按名称附加到 *DrvInst.exe* ：
 
 ```cpp
 C:\>C:\Debuggers\WinDbg.exe -g -pn DrvInst.exe
 ```
 
-或者，如果调试程序附加到目标系统中，将显示以下的调试信息：
+或者，如果将调试器附加到目标系统，将显示以下调试信息：
 
 ```cpp
 DRVINST.EXE: Waiting for debugger on Process ID = 3556 ......
 ```
 
-这使调试器附加到*DrvInst.exe*进程通过其唯一的进程 ID:
+这允许将调试器附加到 *DrvInst.exe* 进程，方法是使用其唯一的进程 ID：
 
 ```cpp
 C:\>C:\Debuggers\WinDbg.exe -g -p 3556
 ```
 
-在用户模式后调试程序附加到*DrvInst.exe*过程中，该过程将中断到调试器：
+将用户模式调试器附加到 *DrvInst.exe* 进程后，该进程将中断调试器：
 
 ```cpp
 Debugger detected!
@@ -60,9 +60,9 @@ ntdll!DbgBreakPoint:
 .  0id: d48attachname: E:\Windows\system32\DrvInst.exe
 ```
 
-因为尚未处理的设备安装的核心阶段，任何类安装程序或辅助安装程序的设备使用的 Dll 尚未加载。
+由于尚未处理设备安装的核心阶段，因此尚未加载用于该设备的任何类安装程序或共同安装程序 Dll。
 
-如果针对某个断点的模块和函数名称事先已知的可以使用"bu"调试器命令为无法解析断点设置该名称。 下面的代码示例演示如何设置的主入口点 (CoInstallerProc) 无法解析的断点的*MyCoinst.dll*共同安装程序：
+如果事先知道断点的模块和函数名称，则可以使用 "bu" 调试器命令将该名称设置为无法解析的断点。 下面的代码示例演示如何为 *MyCoinst.dll* 联安装程序 (CoInstallerProc) 的主入口点设置未解析的断点：
 
 ```cpp
 0:000> bu mycoinst!CoInstallerProc
@@ -70,7 +70,7 @@ ntdll!DbgBreakPoint:
  0 eu             0001 (0001) (mycoinst!CoInstallerProc)
 ```
 
-当*MyCoinst.dll*共同安装程序已加载并且达到断点：
+当加载 *MyCoinst.dll* 联安装程序并到达断点时：
 
 ```cpp
 Breakpoint 0 hit
@@ -83,17 +83,17 @@ mycoinst!CoInstallerProc:
  0 e 5bcf54f1     0001 (0001)  0:**** mycoinst!CoInstallerProc
 ```
 
-类安装程序或辅助安装程序 DLL，分别将会加载或卸载时从应不预测*DrvInst.exe*过程。 但是，即使在卸载模块，将保持使用"bu"设置断点。
+类安装程序或共同安装程序 DLL 不应预测何时将从 *DrvInst.exe* 进程中加载或卸载。 但是，即使卸载模块，使用 "bu" 设置的断点仍将保留。
 
-或者， *DrvInst.exe*进程可能允许执行直到其中一个特定的类的安装程序或通过设置该 DLL 的调试程序异常的 load 事件中，共同安装程序 DLL 被加载到进程：
+或者，可以通过为该 DLL 的 load 事件设置调试器异常，来执行 *DrvInst.exe* 过程，以将特定的类安装程序或共同安装程序 DLL 加载到进程中：
 
 ```cpp
 0:000> sxe ld mycoinst.dll
 ```
 
-0:000&gt; g
+0:000 &gt; g
 
-加载该模块后，可以在 DLL 内设置断点。 例如：
+加载模块后，可以在 DLL 中设置断点。 例如：
 
 ```cpp
 ModLoad: 5bcf0000 5bd05000   C:\WINDOWS\system32\mycoinst.dll
@@ -120,17 +120,11 @@ mycoinst!CoInstallerProc:
 0:000> 
 ```
 
-为无法解析的断点 (bu) 设置了断点，因为帐户会保留设置，即使在卸载模块。
+由于断点已设置为未解析的断点 (bu) ，即使模块已卸载，它仍将保持设置。
 
-默认值才能完成安装过程的时间段为 5 分钟。 如果在给定的时间段内未完成该过程，系统将认为进程挂起 （已停止响应），并且安装过程已被终止。
+完成安装过程的默认时间段为5分钟。 如果该进程未在给定的时间段内完成，系统会假定进程挂起 (停止响应) ，并且安装过程将终止。
 
-如果设备安装过程中将用户模式下调试程序附加到目标系统中，系统不会强制此超时时间。 这允许[驱动程序包](driver-packages.md)调试安装过程所需的开发人员需花费时间。
-
- 
+如果在设备安装过程中将用户模式调试器附加到目标系统，则系统不会强制执行此超时期限。 这使得 [驱动程序包](driver-packages.md) 开发人员可以花费时间来调试安装过程。
 
  
-
-
-
-
 

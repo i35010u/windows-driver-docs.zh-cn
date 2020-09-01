@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 5952e676bf68fb821d9b9ef745ec82c4d1dd02eb
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: adc09d8cf65195f8628b551fa2c856847b22804d
+ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67384252"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89097257"
 ---
-# <a name="kscategoryclock"></a>KSCATEGORY_CLOCK
+# <a name="kscategory_clock"></a>KSCATEGORY_CLOCK
 
 
-KSCATEGORY_CLOCK[设备接口类](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)为定义[内核流式处理](https://docs.microsoft.com/windows-hardware/drivers/stream/streaming-minidrivers2)时钟设备 (KS) 功能类别。
+为时钟设备的[内核流式处理](../stream/streaming-minidrivers2.md) (KS) 功能类别定义 KSCATEGORY_CLOCK[设备接口类](./overview-of-device-interface-classes.md)。
 
 <table>
 <colgroup>
@@ -33,7 +33,7 @@ KSCATEGORY_CLOCK[设备接口类](https://docs.microsoft.com/windows-hardware/dr
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">特性</th>
+<th align="left">Attribute</th>
 <th align="left">设置</th>
 </tr>
 </thead>
@@ -54,9 +54,9 @@ KSCATEGORY_CLOCK[设备接口类](https://docs.microsoft.com/windows-hardware/dr
 <a name="remarks"></a>备注
 -------
 
-KS 设备的驱动程序注册 KSCATEGORY_CLOCK 向操作系统指示设备支持 KSCATEGORY_CLOCK 功能分类的实例。
+KS 设备的驱动程序将注册 KSCATEGORY_CLOCK 的实例，以向操作系统指示设备支持 KSCATEGORY_CLOCK 功能类别。
 
-有关流式处理时钟的内核的详细信息，请参阅[KS 微型驱动程序体系结构](https://docs.microsoft.com/windows-hardware/drivers/stream/ks-minidriver-architecture)， [KS 时钟](https://docs.microsoft.com/windows-hardware/drivers/stream/ks-clocks)，并[AVStream 时钟](https://docs.microsoft.com/windows-hardware/drivers/stream/avstream-clocks)。
+有关内核流式处理时钟的详细信息，请参阅 [Ks 微型驱动程序体系结构](../stream/ks-minidriver-architecture.md)、 [Ks 时钟](../stream/ks-clocks.md)和 [AVStream 时钟](../stream/avstream-clocks.md)。
 
 <a name="requirements"></a>要求
 ------------
@@ -68,17 +68,11 @@ KS 设备的驱动程序注册 KSCATEGORY_CLOCK 向操作系统指示设备支�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>Header</p></td>
-<td align="left">Ks.h （包括 Ks.h）</td>
+<td align="left"><p>标头</p></td>
+<td align="left">Ks (包含 Ks .h) </td>
 </tr>
 </tbody>
 </table>
 
  
-
- 
-
-
-
-
 

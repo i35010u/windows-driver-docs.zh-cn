@@ -8,21 +8,21 @@ keywords:
 - 检查测试签名
 - 测试签名 WDK
 - 验证测试证书 WDK
-- 驱动程序文件的测试签名 WDK
+- 驱动程序文件测试签名 WDK
 - 测试签名驱动程序包 WDK，驱动程序文件
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8a0eb47889fef17c2a4084622cb08a368a88e455
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 36439ad89e1f2d595d6b51e8d6a555f64b89aed6
+ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67380419"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89097217"
 ---
 # <a name="verifying-the-signature-of-a-test-signed-driver-file"></a>验证已进行测试签名的驱动程序文件的签名
 
 
-若要验证的测试签名的驱动程序文件中嵌入，请使用以下[ **SignTool** ](https://docs.microsoft.com/windows-hardware/drivers/devtest/signtool)命令：
+若要验证嵌入驱动程序文件的测试签名，请使用以下 [**SignTool**](../devtest/signtool.md) 命令：
 
 ```cpp
 SignTool verify /v /pa DriverFileName.sys
@@ -30,27 +30,21 @@ SignTool verify /v /pa DriverFileName.sys
 
 其中：
 
--   **验证**命令将配置 SignTool 验证签名的驱动程序文件中嵌入*DriverFileName.sys。*
+-   **Verify**命令将 SignTool 配置为验证嵌入驱动程序文件DriverFileName.sys 中的签名 *。*
 
--   **/V**选项配置 SignTool 要打印的执行和警告消息。
+-   **/V**选项将 SignTool 配置为打印执行和警告消息。
 
--   **/Pa**选项配置 SignTool 验证中嵌入签名*DriverFileName.sys*符合即插即用设备安装签名要求。
+-   **/Pa**选项可将 SignTool 配置为验证*DriverFileName.sys*中嵌入的签名是否符合 PnP 设备安装签名要求。
 
--   *DriverFileName.sys*是驱动程序文件的名称。
+-   *DriverFileName.sys* 是驱动程序文件的名称。
 
-请注意，SignTool**验证**命令未显式指定用于签名的驱动程序文件的测试证书。 若要成功验证操作，您必须首先安装中的测试证书[受信任的根证书颁发机构证书存储区](trusted-root-certification-authorities-certificate-store.md)用于验证签名的本地计算机。 有关如何在本地计算机的受信任的根证书颁发机构证书存储中安装测试证书的详细信息，请参阅[测试计算机上安装测试证书](installing-a-test-certificate-on-a-test-computer.md)。 安装过程是签名的计算机和一台测试计算机上相同。
+请注意，SignTool **verify** 命令不会显式指定用于对驱动程序文件进行签名的测试证书。 要使验证操作成功，您必须首先在本地计算机的 " [受信任的根证书颁发机构" 证书存储](trusted-root-certification-authorities-certificate-store.md) 中安装测试证书，该证书用于验证签名。 有关如何在本地计算机的 "受信任的根证书颁发机构" 证书存储中安装测试证书的详细信息，请参阅 [在测试计算机上安装测试证书](installing-a-test-certificate-on-a-test-computer.md)。 在签名计算机和测试计算机上，安装过程是相同的。
 
-例如，以下命令验证中的嵌入的签名*Toaster.sys*，后者位于*amd64*在其中运行命令的目录下的子目录。
+例如，下面的命令验证 *Toaster.sys*中嵌入的签名，该签名位于运行命令的目录下的 *amd64* 子目录中。
 
 ```cpp
 SignTool verify /v /pa amd64\toaster.sys
 ```
 
  
-
- 
-
-
-
-
 

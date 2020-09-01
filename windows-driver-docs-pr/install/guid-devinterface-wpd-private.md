@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 69478fb8cf5a752ca320191dc9dd2388582a8ff8
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: ba189fd2b06626cd3a2d8b4dda137602b1dbea60
+ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67383844"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89096873"
 ---
-# <a name="guiddevinterfacewpdprivate"></a>GUID_DEVINTERFACE_WPD_PRIVATE
+# <a name="guid_devinterface_wpd_private"></a>GUID_DEVINTERFACE_WPD_PRIVATE
 
 
-GUID_DEVINTERFACE_WPD_PRIVATE[设备接口类](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)为专用化定义[Windows 便携设备](https://go.microsoft.com/fwlink/p/?linkid=106527)(WPD)。
+GUID_DEVINTERFACE_WPD_PRIVATE [设备接口类](./overview-of-device-interface-classes.md) 定义 (WPD) 专用 [Windows 便携式设备](https://go.microsoft.com/fwlink/p/?linkid=106527) 。
 
 <table>
 <colgroup>
@@ -33,7 +33,7 @@ GUID_DEVINTERFACE_WPD_PRIVATE[设备接口类](https://docs.microsoft.com/window
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">特性</th>
+<th align="left">Attribute</th>
 <th align="left">设置</th>
 </tr>
 </thead>
@@ -54,11 +54,11 @@ GUID_DEVINTERFACE_WPD_PRIVATE[设备接口类](https://docs.microsoft.com/window
 <a name="remarks"></a>备注
 -------
 
-GUID_DEVINTERFACE_WPD_PRIVATE 应仅为使用的自定义 WPD 应用程序的专用设备。 泛型 WPD 驱动程序和客户端的 WPD 设备不应使用此设备接口类的实例。
+GUID_DEVINTERFACE_WPD_PRIVATE 应仅用于自定义 WPD 应用程序使用的专用设备。 WPD 设备的通用 WPD 驱动程序和客户端不应使用此设备接口类的实例。
 
-自定义应用程序可以枚举注册的调用此接口的专用设备**IPortableDeviceManager::GetPrivateDevices** （Windows SDK 中所述）。
+自定义应用程序可以通过调用 Windows SDK) 中记录的 **IPortableDeviceManager：： GetPrivateDevices** (来枚举注册此接口的专用设备。
 
-有关通用 WPD 设备的设备接口类的信息，请参阅[ **GUID_DEVINTERFACE_WPD**](guid-devinterface-wpd.md)。
+有关通用 WPD 设备的设备接口类的信息，请参阅 [**GUID_DEVINTERFACE_WPD**](guid-devinterface-wpd.md)。
 
 <a name="requirements"></a>要求
 ------------
@@ -70,27 +70,20 @@ GUID_DEVINTERFACE_WPD_PRIVATE 应仅为使用的自定义 WPD 应用程序的专
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>Version</p></td>
-<td align="left"><p>在 Windows Vista、 Windows XP 和更高版本的 Windows 中可用。</p></td>
+<td align="left"><p>版本</p></td>
+<td align="left"><p>在 windows Vista、Windows XP 和更高版本的 Windows 中可用。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>Header</p></td>
-<td align="left">Portabledevice.h （包括 Portabledevice.h）</td>
+<td align="left"><p>标头</p></td>
+<td align="left">Portabledevice (包含 Portabledevice) </td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
 [**GUID_DEVINTERFACE_WPD**](guid-devinterface-wpd.md)
 
  
-
- 
-
-
-
-
-
 

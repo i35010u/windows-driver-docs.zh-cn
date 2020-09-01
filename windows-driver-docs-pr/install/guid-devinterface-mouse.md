@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 21aad2e859829bde99d11b142cc30f81b1f2d35e
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: f8efeebf3e3d5c029557354493d460ff5f7d6dd9
+ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67375267"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89096943"
 ---
-# <a name="guiddevinterfacemouse"></a>GUID_DEVINTERFACE_MOUSE
+# <a name="guid_devinterface_mouse"></a>GUID_DEVINTERFACE_MOUSE
 
 
-GUID_DEVINTERFACE_MOUSE[设备接口类](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)定义适用于鼠标设备。
+为鼠标设备定义 GUID_DEVINTERFACE_MOUSE [设备接口类](./overview-of-device-interface-classes.md) 。
 
 <table>
 <colgroup>
@@ -33,7 +33,7 @@ GUID_DEVINTERFACE_MOUSE[设备接口类](https://docs.microsoft.com/windows-hard
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">特性</th>
+<th align="left">Attribute</th>
 <th align="left">设置</th>
 </tr>
 </thead>
@@ -54,15 +54,15 @@ GUID_DEVINTERFACE_MOUSE[设备接口类](https://docs.microsoft.com/windows-hard
 <a name="remarks"></a>备注
 -------
 
-鼠标设备的驱动程序注册通知的操作系统和应用程序的鼠标设备存在此设备接口类的实例。
+鼠标设备的驱动程序注册此设备接口类的实例，通知操作系统和应用程序是否存在鼠标设备。
 
-系统提供[鼠标类驱动程序](../hid/keyboard-and-mouse-class-drivers.md)注册此鼠标设备的设备接口类的实例。 通过使用鼠标类驱动程序支持的 I/O 接口中访问此设备接口类的实例。
+系统提供的 [鼠标类驱动程序](../hid/keyboard-and-mouse-class-drivers.md) 为鼠标设备注册此设备接口类的实例。 使用鼠标类驱动程序所支持的 i/o 接口访问此设备接口类的实例。
 
-有关支持鼠标设备的常规信息，请参阅[HID 体系结构](https://docs.microsoft.com/previous-versions/jj126193(v=vs.85))并[Kbdclass 和 Mouclass 驱动程序的功能](../hid/keyboard-and-mouse-class-drivers.md)。
+有关支持鼠标设备的常规信息，请参阅[Kbdclass 和 Mouclass 驱动程序](../hid/keyboard-and-mouse-class-drivers.md)的[HID 体系结构](/previous-versions/jj126193(v=vs.85))和功能。
 
-WDK 包含系统提供鼠标类驱动程序的示例代码。 鼠标类驱动程序将使用已过时的标识符[ **GUID_CLASS_MOUSE** ](guid-class-mouse.md)若要注册此实例[设备安装程序类](https://docs.microsoft.com/windows-hardware/drivers/install/device-setup-classes)。
+WDK 包含系统提供的鼠标类驱动程序的示例代码。 鼠标类驱动程序使用过时的标识符 [**GUID_CLASS_MOUSE**](guid-class-mouse.md) 来注册此 [设备安装程序类](./overview-of-device-setup-classes.md)的实例。
 
-有关键盘的设备的设备接口类的信息，请参阅[ **GUID_DEVINTERFACE_KEYBOARD**](guid-devinterface-keyboard.md)。
+有关键盘设备的设备接口类的信息，请参阅 [**GUID_DEVINTERFACE_KEYBOARD**](guid-devinterface-keyboard.md)。
 
 <a name="requirements"></a>要求
 ------------
@@ -74,17 +74,17 @@ WDK 包含系统提供鼠标类驱动程序的示例代码。 鼠标类驱动程
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>Version</p></td>
+<td align="left"><p>版本</p></td>
 <td align="left"><p>在 Microsoft Windows 2000 和更高版本的 Windows 中可用。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>Header</p></td>
-<td align="left">Ntddmou.h （包括 Ntddmou.h）</td>
+<td align="left"><p>标头</p></td>
+<td align="left">Ntddmou (包含 Ntddmou) </td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
 [**GUID_CLASS_MOUSE**](guid-class-mouse.md)
@@ -92,11 +92,4 @@ WDK 包含系统提供鼠标类驱动程序的示例代码。 鼠标类驱动程
 [**GUID_DEVINTERFACE_KEYBOARD**](guid-devinterface-keyboard.md)
 
  
-
- 
-
-
-
-
-
 

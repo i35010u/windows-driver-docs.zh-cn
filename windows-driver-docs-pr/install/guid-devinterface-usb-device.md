@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: f7d2d1c7a27d3e021db02bbb495a05874efd58a0
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 91d3f2a3d5b40548feeaedae3136f8b97e7137a9
+ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67353790"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89096899"
 ---
-# <a name="guiddevinterfaceusbdevice"></a>GUID_DEVINTERFACE_USB_DEVICE
+# <a name="guid_devinterface_usb_device"></a>GUID_DEVINTERFACE_USB_DEVICE
 
 
-GUID_DEVINTERFACE_USB_DEVICE[设备接口类](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)为定义[USB 设备](https://docs.microsoft.com/windows-hardware/drivers/)，附加到的 USB 集线器。
+为连接到 USB 集线器的[usb 设备](../index.yml)定义 GUID_DEVINTERFACE_USB_DEVICE[设备接口类](./overview-of-device-interface-classes.md)。
 
 <table>
 <colgroup>
@@ -33,7 +33,7 @@ GUID_DEVINTERFACE_USB_DEVICE[设备接口类](https://docs.microsoft.com/windows
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">特性</th>
+<th align="left">Attribute</th>
 <th align="left">设置</th>
 </tr>
 </thead>
@@ -54,11 +54,11 @@ GUID_DEVINTERFACE_USB_DEVICE[设备接口类](https://docs.microsoft.com/windows
 <a name="remarks"></a>备注
 -------
 
-在系统提供的 USB 集线器驱动程序注册 GUID_DEVINTERFACE_USB_DEVICE 通知系统和应用程序连接到的 USB 集线器的 USB 设备的状态的实例。
+系统提供的 USB 集线器驱动程序将注册 GUID_DEVINTERFACE_USB_DEVICE 的实例，以通知系统和应用程序是否存在连接到 USB 集线器的 USB 设备。
 
-Microsoft Windows Driver Kit (WDK) 包括[USBVIEW 示例应用程序](https://go.microsoft.com/fwlink/p/?linkid=256205)。 USBVIEW 示例使用已过时的标识符[ **GUID_CLASS_USB_DEVICE** ](guid-class-usb-device.md)注册此设备接口类的实例到达接收通知。
+Microsoft Windows 驱动程序工具包 (WDK) 包含 [USBVIEW 示例应用程序](https://go.microsoft.com/fwlink/p/?linkid=256205)。 USBVIEW 示例使用过时的标识符 [**GUID_CLASS_USB_DEVICE**](guid-class-usb-device.md) 来注册，以获得此设备接口类的实例到达时的通知。
 
-包括通过使用 DEFINE_GUID 宏，声明一个 GUID 的所有标头之前，必须包含 initguid.h。
+必须包含 initguid.h，然后才能包含使用 DEFINE_GUID 宏声明 GUID 的任何标头。
 
 <a name="requirements"></a>要求
 ------------
@@ -70,13 +70,13 @@ Microsoft Windows Driver Kit (WDK) 包括[USBVIEW 示例应用程序](https://go
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>Header</p></td>
-<td align="left">Usbiodef.h (包括 Usbiodef.h，initguid.h)</td>
+<td align="left"><p>标头</p></td>
+<td align="left">Usbiodef (包含 Usbiodef，initguid.h) </td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
 [**GUID_CLASS_USB_DEVICE**](guid-class-usb-device.md)
@@ -86,11 +86,4 @@ Microsoft Windows Driver Kit (WDK) 包括[USBVIEW 示例应用程序](https://go
 [**GUID_DEVINTERFACE_USB_HUB**](guid-devinterface-usb-hub.md)
 
  
-
- 
-
-
-
-
-
 

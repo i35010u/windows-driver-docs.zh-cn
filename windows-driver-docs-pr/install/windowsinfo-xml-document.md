@@ -4,33 +4,27 @@ description: WindowsInfo XML 文档
 ms.assetid: 8004d165-46c5-4bf4-849d-ba83205b9f54
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8c82e9b27cafd05599f97ae38d36d7a1492e7698
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 1c3ae032a7ea8d83f491bb7c5cdfd277f43cde18
+ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67363505"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89097075"
 ---
 # <a name="windowsinfo-xml-document"></a>WindowsInfo XML 文档
 
 
-本文档包含用于指定显示执行的操作，操作系统的设备元数据包中指定的设备数据。 这些操作包括以下各项：
+此文档包含的数据指定操作系统对设备元数据包中的指定设备执行的显示操作。 这些操作包括下列各项：
 
--   是否[设备图标](device-icon-file.md)当设备进入断开连接状态，例如当用户删除设备时显示。 此操作指定的[ **ShowDeviceInDisconnectedState** ](https://docs.microsoft.com/previous-versions/windows/hardware/metadata/ff552242(v=vs.85)) WindowsInfo XML 文档内的 XML 元素。
+-   当设备处于断开连接状态时（例如，当用户删除设备时）是否显示 [设备图标](device-icon-file.md) 。 此操作由 WindowsInfo XML 文档中的 [**ShowDeviceInDisconnectedState**](/previous-versions/windows/hardware/metadata/ff552242(v=vs.85)) XML 元素指定。
 
--   是否 Device Stage 用户界面出现当设备从断开连接的状态转换到已连接的状态，例如当用户插入设备中。 此操作指定的[ **LaunchDeviceStageOnDeviceConnect** ](https://docs.microsoft.com/previous-versions/windows/hardware/metadata/ff548633(v=vs.85)) WindowsInfo XML 文档内的 XML 元素。
+-   当设备从断开连接状态过渡到已连接状态时（例如，当用户插入设备时）是否显示设备暂存用户界面。 此操作由 WindowsInfo XML 文档中的 [**LaunchDeviceStageOnDeviceConnect**](/previous-versions/windows/hardware/metadata/ff548633(v=vs.85)) XML 元素指定。
 
--   当用户双击是否启动 Device Stage 用户界面[设备图标](device-icon-file.md)任一设备和打印机用户界面中或在 Windows 资源管理器中显示。 此操作指定的[ **LaunchDeviceStageFromExplorer** ](https://docs.microsoft.com/previous-versions/windows/hardware/metadata/ff548629(v=vs.85)) WindowsInfo XML 文档内的 XML 元素。
+-   当用户双击出现在 "设备和打印机" 用户界面或 Windows 资源管理器中的 [设备图标](device-icon-file.md) 时，是否启动设备暂存用户界面。 此操作由 WindowsInfo XML 文档中的 [**LaunchDeviceStageFromExplorer**](/previous-versions/windows/hardware/metadata/ff548629(v=vs.85)) XML 元素指定。
 
-每个设备元数据包必须包含一个 WindowsInfo XML 文档。 文档的名称必须是*WindowsInfo.xml*。
+每个设备元数据包必须只包含一个 WindowsInfo XML 文档。 文档的名称必须 *WindowsInfo.xml*。
 
-WindowsInfo XML 文档中的数据会基于设置格式[WindowsInfo XML 架构](https://docs.microsoft.com/previous-versions/windows/hardware/metadata/ff553992(v=vs.85))。
-
- 
+WindowsInfo XML 文档中的数据基于 [WINDOWSINFO Xml 架构](/previous-versions/windows/hardware/metadata/ff553992(v=vs.85))进行格式设置。
 
  
-
-
-
-
 

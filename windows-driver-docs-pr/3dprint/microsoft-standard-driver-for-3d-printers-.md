@@ -4,12 +4,12 @@ description: 用于3D 打印机的 Microsoft 标准驱动程序使开发人员�
 ms.assetid: DAFC5B26-09BA-483C-B964-1DA96E77765F
 ms.date: 05/18/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 1e0daf596f9417895fb604312ab61eea11d04293
-ms.sourcegitcommit: 32f42241991d57032e5d39ee9f2a3ab4a66ae396
+ms.openlocfilehash: 1cc425f3d91d2bcb184917f7a877787b87a6d00c
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/18/2020
-ms.locfileid: "83553334"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89184515"
 ---
 # <a name="getting-started-guide---microsoft-standard-driver-for-3d-printers"></a>入门指南-适用于3D 打印机的 Microsoft 标准驱动程序
 
@@ -17,11 +17,11 @@ ms.locfileid: "83553334"
 
 ## <a name="introduction"></a>简介
 
-Microsoft 标准版驱动程序免除了从独立硬件供应商（Ihv）编写自己的驱动程序的负担，使其3D 打印机与 Windows 10 兼容。 可识别 Microsoft OS 描述符的 Windows 版本使用控制请求来检索信息，并使用它来安装和配置设备，而无需任何用户交互。
+Microsoft 标准版驱动程序免除了从独立的硬件供应商 (Ihv 编写自己的驱动程序的负担，) 希望其3D 打印机与 Windows 10 兼容。 可识别 Microsoft OS 描述符的 Windows 版本使用控制请求来检索信息，并使用它来安装和配置设备，而无需任何用户交互。
 
 在 Windows 10 上运行3D 打印机的一般过程包括以下步骤：
 
-1. **兼容 ID**。 独立硬件供应商（IHV）必须在打印机的固件中包含 "3D 打印" 兼容 ID。 这允许将设备识别为3D 打印机。
+1. **兼容 ID**。 独立硬件供应商 (IHV) 必须在打印机的固件中包含 "3D Print" 兼容 ID。 这允许将设备识别为3D 打印机。
 
 2. **标准驱动程序**。 设备接通电源后，Windows 更新会下载3D 打印标准版驱动程序，并将当前设备检测为使用默认配置的3D 打印机。
 
@@ -31,17 +31,17 @@ Microsoft 标准版驱动程序免除了从独立硬件供应商（Ihv）编写�
 
 在以下部分中，我们将使用具体的示例来演示其中的每个步骤。
 
-有关详细信息，请参阅[MICROSOFT OS 描述符](https://docs.microsoft.com/previous-versions/gg463179(v=msdn.10))。
+有关详细信息，请参阅 [MICROSOFT OS 描述符](/previous-versions/gg463179(v=msdn.10))。
 
 ## <a name="compatible-id"></a>兼容 ID
 
-若要指定当前使用3D 打印机的 Windows 操作系统，则必须使用正确的兼容 ID。 Microsoft [OS 描述符](https://docs.microsoft.com/previous-versions/gg463179(v=msdn.10))中提供了 MICROSOFT 兼容 ID 列表。
+若要指定当前使用3D 打印机的 Windows 操作系统，则必须使用正确的兼容 ID。 Microsoft [OS 描述符](/previous-versions/gg463179(v=msdn.10))中提供了 MICROSOFT 兼容 ID 列表。
 
 三维打印机的兼容 ID 如下表中所示：
 
 | 兼容 ID | 与子兼容的 ID | 说明 |
 | --- | --- | --- |
-| "3DPRINT"<br><br>（0x33 0x44 0x50 0x52 0x49 0x4E 0x54 0x00） | 变化不定 | MS3DPRINT G-代码打印机 |
+| "3DPRINT"<br><br> (0x33 0x44 0x50 0x52 0x49 0x4E 0x54 0x00)  | 多种多样 | MS3DPRINT G-代码打印机 |
 
 在3D 打印机固件中包含的头文件中，IHV 必须指定兼容的 ID，如下所示：
 
@@ -81,20 +81,20 @@ static const uint8_t PROGMEM ms3dprint_descriptor[40] = {
 
 对于此特定配置，Ihv 可以编译其固件并闪存设备。 然后，当设备接通电源时，3D 打印标准驱动程序将自动从 Windows 更新下载。
 
-在此阶段，打印机使用的是标准驱动程序默认配置，默认配置使用的参数在 \\ 文件 StandardGCode 中的文件夹% SYSTEMROOT% System32 MS3DPrint 中可访问 \\ 。 此外，开发人员可以选择使用不同的基础配置，在同一文件夹% SYSTEMROOT% System32 MS3DPrint 中提供了一个基本配置列表 \\ \\ 。 随着新的3D 打印机在市场上出现，此列表会定期填充新的配置。
+在此阶段，打印机使用的是标准驱动程序默认配置，默认配置使用的参数在文件 StandardGCode.xml 中的文件夹% SYSTEMROOT% \\ System32 MS3DPrint 中可访问 \\ 。 此外，开发人员可以选择使用不同的基础配置，在同一文件夹% SYSTEMROOT% System32 MS3DPrint 中提供了一个基本配置列表 \\ \\ 。 随着新的3D 打印机在市场上出现，此列表会定期填充新的配置。
 
 ## <a name="extended-properties-os-feature-descriptor"></a>扩展属性 OS 功能描述符
 
 如上一节所述，Ihv 有权访问多个基本配置。 这样做的优点是可以将必须存储在打印机闪存中的信息量降到最低。 开发人员可以检查提供的基本配置，并选择最靠近其打印机的基本配置。 在此示例中，我们将选择 SD 卡基本配置，并用以下参数替代某些属性：
 
-| parameters | Value |
+| parameters | 值 |
 | --- | --- |
 | Job3DOutputAreaWidth | 250000 |
 | Job3DOutputAreaDepth | 260000 |
 | Job3DOutputAreaHeight | 270000 |
 | Filamentdiameter | 2850 |
 
-有关这些参数的详细信息，请参阅[3D 打印 SDK （MSI 下载）](https://go.microsoft.com/fwlink/p/?LinkId=394375)文档中的*MS3DPrint 标准 G 代码驱动程序 .docx*文档。
+有关这些参数的详细信息，请参阅[ (MSI 下载) ](https://go.microsoft.com/fwlink/p/?LinkId=394375)文档中的*MS3DPrint 标准 G 代码 Driver.docx*文档。
 
 若要指定要使用的基本配置以及要重写的参数，开发人员必须通过扩展属性 OS 功能描述符来指定它，如下所示：
 
@@ -136,7 +136,7 @@ static const uint8_t PROGMEM ms3dprint_properties_descriptor[] = {
 };
 ```
 
-有关扩展属性 OS 功能描述符的信息位于*os \_ Desc Ext 属性 \_ \_ .doc*文件中。 有关详细信息，请参阅[MICROSOFT OS 描述符](https://docs.microsoft.com/previous-versions/gg463179(v=msdn.10))。
+有关扩展属性 OS 功能描述符的信息位于 *操作系统 \_ Desc \_ Ext \_Prop.doc* 文件中。 有关详细信息，请参阅 [MICROSOFT OS 描述符](/previous-versions/gg463179(v=msdn.10)) 。
 
 ## <a name="verifying-the-print-capabilities"></a>验证打印功能
 
@@ -144,13 +144,13 @@ static const uint8_t PROGMEM ms3dprint_properties_descriptor[] = {
 
 ![安装兼容3d 打印机 ](images/installing-compatible-3d-printer.png)
 
-IHV 会将设备的 VID/PID 更改为其自身，这一点非常重要。 永远不要使用其他现有设备的供应商 ID （VID）或产品 ID （PID），因为操作系统将不能正确检测设备，因为 VID 和 PID 优先于操作系统描述符。
+IHV 会将设备的 VID/PID 更改为其自身，这一点非常重要。 永远不要使用供应商 ID (VID) 或其他现有设备的产品 ID (PID) ，因为操作系统将不能正确检测设备，因为 VID 和 PID 优先于操作系统描述符。
 
-如果设备已正确安装，则设备应在 "**设备和打印机**" 中列出。
+如果设备已正确安装，则设备应在 " **设备和打印机**" 中列出。
 
 ![“设备和打印机”](images/devices-and-printers-3d.png)
 
-在**设备管理器**中，可以验证匹配的设备 id 和兼容 id。
+在 **设备管理器**中，可以验证匹配的设备 id 和兼容 id。
 
 ![“设备管理器”](images/device-manager-3d.png)
 
@@ -158,11 +158,11 @@ IHV 会将设备的 VID/PID 更改为其自身，这一点非常重要。 永远
 
 ![设备管理器详细信息选项卡兼容 id](images/device-manager-details2-3d.png)
 
-可以通过访问**HKEY \_ 本地 \_ 计算机 \\ 系统 \\ CurrentControlSet \\ 枚举 \\ USB**上的注册表来获取 USB 驱动程序属性。
+可以通过访问 **HKEY \_ 本地 \_ 计算机 \\ 系统 \\ CurrentControlSet \\ 枚举 \\ USB**上的注册表来获取 USB 驱动程序属性。
 
 ![在 usb 注册表中编辑多字符串值](images/usb-registry-3d.png)
 
-可以通过访问**HKEY \_ LOCAL \_ MACHINE \\ SYSTEM \\ CurrentControlSet \\ Control \\ 打印 \\ 打印机**上的注册表来获取3d 打印驱动程序的属性。
+可以通过访问 **HKEY \_ LOCAL \_ MACHINE \\ SYSTEM \\ CurrentControlSet \\ Control \\ 打印 \\ 打印机**上的注册表来获取3d 打印驱动程序的属性。
 
 ![在注册表中查看3d 打印驱动程序属性](images/printers-registry-3d.png)
 
@@ -172,10 +172,10 @@ IHV 会将设备的 VID/PID 更改为其自身，这一点非常重要。 永远
 
 [Windows 中的3D 打印](https://www.microsoft.com/3d-print/windows-3d-printing)
 
-[3D 打印 SDK （MSI 下载）](https://go.microsoft.com/fwlink/p/?LinkId=394375)
+[ (MSI 下载) 的3D 打印 SDK ](https://go.microsoft.com/fwlink/p/?LinkId=394375)
 
-[Microsoft OS 描述符](https://docs.microsoft.com/previous-versions/gg463179(v=msdn.10))
+[Microsoft OS 描述符](/previous-versions/gg463179(v=msdn.10))
 
 [USB 2.0 规范](https://www.usb.org/documents)
 
-你还可以在[请求3D 打印问题](https://go.microsoft.com/fwlink/p/?LinkId=534751)（）时联系 Microsoft 3d 打印团队 ask3dprint@microsoft.com 。
+还可以联系 Microsoft 3D 印刷团队，请求)  (的 [三维打印问题](https://go.microsoft.com/fwlink/p/?LinkId=534751) ask3dprint@microsoft.com 。

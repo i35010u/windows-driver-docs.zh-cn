@@ -11,12 +11,12 @@ keywords:
 - 跨证书 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c7263b5bd94fed1de28dd2a2f668ce691a6c73ff
-ms.sourcegitcommit: bba54f7ba385ee0b5bd4a2b8660486bc269cf02f
+ms.openlocfilehash: 84cdd278cf87b72d7dad128fb2121dc268f16a80
+ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/21/2020
-ms.locfileid: "88712208"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89097089"
 ---
 # <a name="software-publisher-certificate"></a>软件发行者证书
 
@@ -34,7 +34,7 @@ ms.locfileid: "88712208"
 
 发布者不必使用 [驱动程序包](driver-packages.md)分发交叉证书。 交叉证书包含在驱动程序包的 [目录文件](catalog-files.md) 的数字签名或嵌入到驱动程序文件中的签名。 安装驱动程序包的用户无需执行任何其他配置步骤，因为使用了交叉证书。
 
-有关提供 SPCs 的证书颁发机构的列表，以及有关交叉证书的详细信息，请参阅用于 [内核模式代码签名的交叉证书](https://docs.microsoft.com/windows-hardware/drivers/install/cross-certificates-for-kernel-mode-code-signing)。 按照证书颁发机构的网站上的说明，了解如何在要签署驱动程序的计算机上获取和安装 SPC 及相应的交叉证书。 此外，还必须将 SPC 信息添加到对驱动程序进行签名的本地计算机的 "个人" 证书存储中。 有关此要求的信息，请参阅在 [个人证书存储中安装 SPC 信息](#installing-spc-information-in-the-personal-certificate-store)。
+有关提供 SPCs 的证书颁发机构的列表，以及有关交叉证书的详细信息，请参阅用于 [内核模式代码签名的交叉证书](./cross-certificates-for-kernel-mode-code-signing.md)。 按照证书颁发机构的网站上的说明，了解如何在要签署驱动程序的计算机上获取和安装 SPC 及相应的交叉证书。 此外，还必须将 SPC 信息添加到对驱动程序进行签名的本地计算机的 "个人" 证书存储中。 有关此要求的信息，请参阅在 [个人证书存储中安装 SPC 信息](#installing-spc-information-in-the-personal-certificate-store)。
 
 ## <a name="installing-spc-information-in-the-personal-certificate-store"></a>在个人证书存储中安装 SPC 信息
 
@@ -52,7 +52,7 @@ CA 可能会颁发包含所需证书信息的 *.pfx* 文件。 如果是这样�
 
 来创建。*pfx* 文件，请按照以下说明进行操作：
 
--   若要将 *pvk* 文件和 *.spc* 文件转换为 *.pfx* 文件，请在命令提示符处使用以下 [**Pvk2Pfx**](https://docs.microsoft.com/windows-hardware/drivers/devtest/pvk2pfx) 命令：
+-   若要将 *pvk* 文件和 *.spc* 文件转换为 *.pfx* 文件，请在命令提示符处使用以下 [**Pvk2Pfx**](../devtest/pvk2pfx.md) 命令：
 
     ```cpp
     Pvk2Pfx -pvk mypvkfile.pvk -pi mypvkpassword -spc myspcfile.spc -pfx mypfxfile.pfx -po pfxpassword -f
@@ -64,7 +64,7 @@ CA 可能会颁发包含所需证书信息的 *.pfx* 文件。 如果是这样�
     Pvk2Pfx -pvk mypvkfile.pvk -pi mypvkpassword -spc mycerfile.cer -pfx mypfxfile.pfx -po pfxpassword -f
     ```
 
-下面介绍了 [**Pvk2Pfx**](https://docs.microsoft.com/windows-hardware/drivers/devtest/pvk2pfx) 命令中使用的参数：
+下面介绍了 [**Pvk2Pfx**](../devtest/pvk2pfx.md) 命令中使用的参数：
 
 -   **-Pvk**  *mypvkfile. pvk*参数指定*pvk*文件。
 
@@ -85,11 +85,5 @@ CA 可能会颁发包含所需证书信息的 *.pfx* 文件。 如果是这样�
 1.  在 Windows 资源管理器中找到 *.pfx* 文件，选择并按住 (或右键单击文件) ，然后选择 "打开" 以打开证书导入向导。
 
 2.  按照证书导入向导中的步骤将代码签名证书导入到个人证书存储区中。
-
-
- 
-
-
-
 
 

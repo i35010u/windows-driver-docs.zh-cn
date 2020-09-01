@@ -4,12 +4,12 @@ description: Windows 64 位版本要求在内核模式（包括驱动程序）�
 ms.assetid: 52F309E4-9553-456B-BBD6-217318FC7222
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e3a455e5a3925bae3ada65264c0541c00ba01d4a
-ms.sourcegitcommit: 67efcd26f7be8f50c92b141ccd14c9c68f4412d8
+ms.openlocfilehash: 9b6fa1721dfb0584c02b2ce69f875390cacec7fb
+ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88902538"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89097095"
 ---
 # <a name="test-signing"></a>测试签名
 
@@ -49,7 +49,7 @@ bcdedit -debug on
 
 ### <a name="signing-computer"></a>正在为计算机签名
 
-此计算机用于对 Windows Vista 和更高版本的 Windows 的驱动程序包进行测试签名。 此计算机必须运行 Windows XP SP2 或更高版本的 Windows。 为了使用 [驱动程序签名工具](https://docs.microsoft.com/windows-hardware/drivers/devtest/tools-for-signing-drivers)，此计算机必须安装 windows Vista 和更高版本的 Windows 驱动程序工具包 (WDK) 。 这也可以是开发计算机。
+此计算机用于对 Windows Vista 和更高版本的 Windows 的驱动程序包进行测试签名。 此计算机必须运行 Windows XP SP2 或更高版本的 Windows。 为了使用 [驱动程序签名工具](../devtest/tools-for-signing-drivers.md)，此计算机必须安装 windows Vista 和更高版本的 Windows 驱动程序工具包 (WDK) 。 这也可以是开发计算机。
 
 ### <a name="test-computer"></a>测试计算机
 
@@ -101,7 +101,7 @@ bcdedit -debug on
 
    - **-Ss**选项指定包含测试证书 (*PrivateCertStore*) 的证书存储的名称。
 
-   - **-N CN =** option 指定证书的名称，Contoso.com (Test) 。 此名称与 [**SignTool**](https://docs.microsoft.com/windows-hardware/drivers/devtest/signtool) 工具一起用于标识证书。
+   - **-N CN =** option 指定证书的名称，Contoso.com (Test) 。 此名称与 [**SignTool**](../devtest/signtool.md) 工具一起用于标识证书。
 
    - *ContosoTest* 是包含测试证书的副本的文件名，Contoso.com (测试) 。 证书文件用于将证书添加到 "受信任的根证书颁发机构" 证书存储和 "受信任的发布者" 证书存储中。
 
@@ -272,7 +272,7 @@ tstamd64.cat 指定将进行数字签名的目录文件的名称。 如前面所
     CertMgr.exe /add CertificateFileName.cer /s /r localMachine trustedpublisher
     ```
 
-    其中 (*从* [**certmgr.msc**](https://docs.microsoft.com/windows-hardware/drivers/devtest/certmgr)) 摘录：
+    其中 (*从* [**certmgr.msc**](../devtest/certmgr.md)) 摘录：
 
     /add CertificateName
 

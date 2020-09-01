@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 14f150a1affa917061dfb303d937828a134b24b2
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 695e6e51483814a2a98faa8243a46abcbcb5e0d2
+ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386434"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89096949"
 ---
-# <a name="guiddevinterfacemediumchanger"></a>GUID_DEVINTERFACE_MEDIUMCHANGER
+# <a name="guid_devinterface_mediumchanger"></a>GUID_DEVINTERFACE_MEDIUMCHANGER
 
 
-GUID_DEVINTERFACE_MEDIUMCHANGER[设备接口类](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)为介质转换器的设备定义。
+为中型转换器设备定义 GUID_DEVINTERFACE_MEDIUMCHANGER [设备接口类](./overview-of-device-interface-classes.md) 。
 
 <table>
 <colgroup>
@@ -33,7 +33,7 @@ GUID_DEVINTERFACE_MEDIUMCHANGER[设备接口类](https://docs.microsoft.com/wind
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">特性</th>
+<th align="left">Attribute</th>
 <th align="left">设置</th>
 </tr>
 </thead>
@@ -54,9 +54,9 @@ GUID_DEVINTERFACE_MEDIUMCHANGER[设备接口类](https://docs.microsoft.com/wind
 <a name="remarks"></a>备注
 -------
 
-系统提供中型[更换器驱动程序](https://docs.microsoft.com/windows-hardware/drivers/storage/changer-drivers)注册 GUID_DEVINTERFACE_MEDIUMCHANGER 通知操作系统和应用程序的媒体更换器设备是否存在的实例。
+系统提供的媒体 [更换器驱动程序](../storage/changer-drivers.md) 将注册一个 GUID_DEVINTERFACE_MEDIUMCHANGER 实例，以通知操作系统和应用程序是否存在中型转换器设备。
 
-有关存储驱动程序的详细信息，请参阅[存储设备驱动程序](https://docs.microsoft.com/windows-hardware/drivers/storage/storage-drivers)。
+有关存储驱动程序的详细信息，请参阅 [存储驱动程序](../storage/storage-drivers.md)。
 
 <a name="requirements"></a>要求
 ------------
@@ -68,23 +68,16 @@ GUID_DEVINTERFACE_MEDIUMCHANGER[设备接口类](https://docs.microsoft.com/wind
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>Header</p></td>
-<td align="left">Ntddstor.h （包括 Ntddstor.h）</td>
+<td align="left"><p>标头</p></td>
+<td align="left">Ntddstor (包含 Ntddstor) </td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
 [**MediumChangerClassGuid**](mediumchangerclassguid.md)
 
  
-
- 
-
-
-
-
-
 

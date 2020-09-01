@@ -4,12 +4,12 @@ description: 安装 PTP 相机
 ms.assetid: bf18a245-1344-47f1-83bc-3c369627bcdf
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d3b05221eb1d8d2e4d9e828fd6de84c5fb4cfdc9
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 8fd79d6b04025251246abc44dea6235cd10d82b0
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67378945"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89184469"
 ---
 # <a name="installing-a-ptp-camera"></a>安装 PTP 相机
 
@@ -17,15 +17,15 @@ ms.locfileid: "67378945"
 
 
 
-如果您的照相机支持 PTP，您需要做是若要获取其安装为 WIA 的设备将设备插入。 Microsoft PTP WIA 微型驱动程序将完成其余部分。
+如果照相机支持 PTP，只需插入设备即可将其作为 WIA 设备安装。 Microsoft PTP WIA 微型驱动程序将执行其余操作。
 
-如果必须添加件或你想要添加到 PTP 摄像机的扩展，您需要创建一个 INF 文件。
+如果你有想要添加到 PTP 相机的附加或扩展，则需要创建一个 INF 文件。
 
-请注意，INF 文件包含从部分*sti.inf*。 这样，Microsoft 使将来的更新*sti.inf*时需要而不会影响您的 INF 文件。
+请注意，INF 文件包含 *sti*中的部分。 这允许 Microsoft 在需要时再对 *sti* 进行更新，而不会影响你的 inf 文件。
 
-USB 设备处理组已分配类 ID 0x06:sp 静止图像照相机。 在将来的 Windows 版本中，Microsoft 将发布为为此类 ID 加载 PTP 驱动程序的 INF 文件*兼容 ID*匹配。 这意味着供应商仍可以寄送包含的 INF 文件加载自定义驱动程序*硬件 ID*。 Windows 安装程序将更高的优先级上匹配的硬件 ID 比匹配类 id。 如果在 Windows 中不提供硬件 id 的 INF 文件，供应商驱动程序不会自动加载。 但是，CD 自动运行程序可以调用[ **UpdateDriverForPlugAndPlayDevices** ](https://docs.microsoft.com/windows/desktop/api/newdev/nf-newdev-updatedriverforplugandplaydevicesa)轻松地更新供应商驱动程序。
+USB 设备工作组已为静止图像照相机分配类 ID 0x06。 在将来的 Windows 版本中，Microsoft 将提供一个 INF 文件，用于加载此类 ID 的 PTP 驱动程序作为 *兼容的 id* 匹配项。 这意味着，供应商仍可以通过交付包含 *硬件 ID*的 INF 文件来加载自定义驱动程序。 Windows installer 的优先级比匹配类 ID 时的硬件 ID 更高。 如果 Windows 中未随附带有硬件 ID 的 INF 文件，则不会自动加载供应商驱动程序。 但是，CD 的自动运行程序可以调用 [**UpdateDriverForPlugAndPlayDevices**](/windows/desktop/api/newdev/nf-newdev-updatedriverforplugandplaydevicesa) 来轻松更新供应商驱动程序。
 
-PTP 照相机的示例 INF 文件：
+PTP 相机的示例 INF 文件：
 
 ```INF
 ; PTPCAMERA.INF  -- PTP Camera setup file
@@ -83,9 +83,4 @@ PTP.Disconnected="PTP Camera Disconnected"
 ```
 
  
-
- 
-
-
-
 

@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 6c6508d21385a5ea8f5d2a60c0e45e6fb1b5adff
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: e4b1ce213093d435a46a794e6dbc763dd56dbd51
+ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67377296"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89095969"
 ---
-# <a name="devpkeydrvpkgicon"></a>DEVPKEY_DrvPkg_Icon
+# <a name="devpkey_drvpkg_icon"></a>DEVPKEY_DrvPkg_Icon
 
 
-DEVPKEY_DrvPkg_Icon 设备属性表示 Windows 用来直观地表示设备实例设备图标的列表。
+DEVPKEY_DrvPkg_Icon 设备属性表示 Windows 用于直观表示设备实例的设备图标列表。
 
 <table>
 <colgroup>
@@ -41,11 +41,11 @@ DEVPKEY_DrvPkg_Icon 设备属性表示 Windows 用来直观地表示设备实例
 <td align="left"><p><a href="devprop-type-string-list.md" data-raw-source="[&lt;strong&gt;DEVPROP_TYPE_STRING_LIST&lt;/strong&gt;](devprop-type-string-list.md)"><strong>DEVPROP_TYPE_STRING_LIST</strong></a></p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><strong>属性访问</strong></p></td>
-<td align="left"><p>通过安装应用程序和安装程序的只读访问权限</p></td>
+<td align="left"><p><strong>和</strong></p></td>
+<td align="left"><p>安装应用程序和安装程序的只读访问</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>本地化？</strong></p></td>
+<td align="left"><p><strong>各种?</strong></p></td>
 <td align="left"><p>是</p></td>
 </tr>
 </tbody>
@@ -56,35 +56,35 @@ DEVPKEY_DrvPkg_Icon 设备属性表示 Windows 用来直观地表示设备实例
 <a name="remarks"></a>备注
 -------
 
-由一个图标文件的路径指定列表中的每个图标 (\*.ico) 或对可执行文件中的图标资源的引用。
+列表中的每个图标都通过图标文件 (\*) 或对可执行文件中的图标资源的引用来指定。
 
-在列表中的第一个图标用作默认值。 可提供其他图标，提供设备的不同的可视表示形式。 Windows 包含允许用户选择其图标 Windows 将显示一个用户界面。 例如，Microsoft DiscoveryCam 530 现已推出蓝色、 绿色和红色。 Microsoft 提供了每种颜色的图标。 Windows 默认情况下使用蓝色图标，因为它是列表中的第一个。 但是，Windows 用户还可以选择绿色图标或红色图标。
+将使用列表中的第一个图标作为默认值。 可以提供其他图标来提供设备的不同视觉表示形式。 Windows 包括一个用户界面，该用户界面允许用户选择显示哪个图标窗口。 例如，Microsoft DiscoveryCam 530 以蓝色、绿色和红色提供。 Microsoft 为每种颜色提供了一个图标。 默认情况下，Windows 使用蓝色图标，因为它是列表中的第一个。 但是，Windows 用户也可以选择绿色图标或红色图标。
 
-图标列表是 NULL 分隔图标说明符的列表。 图标说明符是一个图标文件路径 (\*.ico) 或一个图标资源说明符，按如下所示：
+图标列表是一个以 NULL 分隔的图标说明符列表。 图标说明符可以是图标文件的路径 (\* .ico) 或图标资源说明符，如下所示：
 
--   图标文件的路径的格式*DirectoryPath\\filename.ico。*
+-   图标文件的路径格式为 *DirectoryPath \\ 。*
 
--   图标资源说明符具有以下条目：
+-   图标资源说明符包含以下项：
 
     ```cpp
     @executable-file-path,resource-identifier
     ```
 
-    图标资源说明符的第一个字符是 at 符号 (@) 后跟可执行文件的路径 (  *\*.exe*或 *\*.dll*文件) 后, 跟一个逗号分隔符 （，）然后*资源标识符*条目。
+    图标资源说明符的第一个字符是 at 符号 ( @ ) ，后跟 (* \* .exe*或* \* .dll*文件) 的可执行文件的路径，后跟逗号分隔符 (、) ，然后是*资源标识符*项。
 
-例如，图标说明符"@shell32.dll，-30"表示可执行文件"shell32.dll"和"-30"的资源标识符。
+例如，图标说明符 " @shell32.dll ，-30" 表示可执行文件 "shell32.dll" 和资源标识符 "-30"。
 
-资源标识符必须是整数值，它对应于可执行文件内的资源，如下所示：
+资源标识符必须是与可执行文件中的资源对应的整数值，如下所示：
 
--   如果提供的标识符为负，Windows 将使用在其标识符等于提供的标识符的绝对值的可执行文件中的资源。
+-   如果提供的标识符为负数，则 Windows 将使用其标识符等于提供的标识符的绝对值的可执行文件中的资源。
 
--   如果提供的标识符为零，Windows 将使用在其标识符 execuable 文件中具有的最小值的可执行文件中的资源。
+-   如果提供的标识符为零，Windows 将使用 execuable 文件中其标识符值最低的可执行文件中的资源。
 
--   如果提供的标识符为正，例如，值*n*，Windows 在其标识符是 n + 1 中的最低值的可执行文件的可执行文件中使用的资源。 例如，如果的值*n*为 1，Windows 使用其标识符中的可执行文件具有第二低的值的资源。
+-   如果提供的标识符为正（例如，值为 *n*），则 Windows 将使用该可执行文件中的资源，该文件的标识符为可执行文件中的 n + 1 最小值。 例如，如果 *n* 的值为1，则 Windows 将使用其标识符在可执行文件中的第二个最低值的资源。
 
-可以设置的值由 DEVPKEY_DrvPkg_Icon [ **INF AddProperty 指令**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addproperty-directive)包含在[ **INF *DDInstall*部分** ](https://docs.microsoft.com/windows-hardware/drivers/install/inf-ddinstall-section)的安装设备的 INF 文件。 可以通过调用检索的值 DEVPKEY_DrvPkg_Icon [ **SetupDiGetDeviceProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)。
+可以设置 AddProperty 的 DEVPKEY_DrvPkg_Icon 值，该 [**指令**](./inf-addproperty-directive.md) 包含在安装设备的 inf 文件的 [**inf *DDInstall* 部分**](./inf-ddinstall-section.md) 中。 可以通过调用 [**SetupDiGetDeviceProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)来检索 DEVPKEY_DrvPkg_Icon 的值。
 
-下面是举例说明如何使用 INF **AddProperty**指令 INF 安装的设备设置 DEVPKEY_DrvPkg_Icon *DDInstall*部分"SampleDDInstallSection":
+下面的示例演示如何使用 INF **AddProperty** 指令为 INF *DDInstall* 部分为 "SampleDDInstallSection" 安装的设备设置 DEVPKEY_DrvPkg_Icon：
 
 ```cpp
 [SampleDDinstallSection]
@@ -107,31 +107,24 @@ DeviceIcon,,,,"SomeResource.dll,-2","SomeIcon.icon"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>Version</p></td>
+<td align="left"><p>版本</p></td>
 <td align="left"><p>在 Windows Vista 和更高版本的 Windows 中可用。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>Header</p></td>
-<td align="left">Devpkey.h （包括 Devpkey.h）</td>
+<td align="left"><p>标头</p></td>
+<td align="left">Devpkey (包含 Devpkey) </td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
-[**INF AddProperty Directive**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addproperty-directive)
+[**INF AddProperty 指令**](./inf-addproperty-directive.md)
 
-[**INF *DDInstall*部分**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-ddinstall-section)
+[**INF *DDInstall* 部分**](./inf-ddinstall-section.md)
 
-[**SetupDiGetDeviceProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)
-
- 
+[**SetupDiGetDeviceProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)
 
  
-
-
-
-
-
 

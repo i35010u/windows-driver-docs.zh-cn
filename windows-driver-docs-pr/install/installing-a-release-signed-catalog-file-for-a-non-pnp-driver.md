@@ -4,33 +4,27 @@ description: 安装适用于非 PnP 驱动程序且已进行发布签名的目�
 ms.assetid: a67f3b71-b7a6-4712-a76f-b3b412a149c2
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 74e981c1d628b9ab6caf5470b644a65e0ee87265
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 1795be50539473b4dcc6fde8c1726e79bccd7ff9
+ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67370949"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89097283"
 ---
 # <a name="installing-a-release-signed-catalog-file-for-a-non-pnp-driver"></a>安装适用于非 PnP 驱动程序且已进行发布签名的目录文件
 
 
-若要符合[内核模式代码签署策略](kernel-mode-code-signing-policy--windows-vista-and-later-.md)的 64 位版本的 Windows Vista 和更高版本的 Windows，非启动，非 PnP 内核模式驱动程序必须具有嵌入的版本签名或已发布签名[编录文件](catalog-files.md)安装在系统组件和驱动程序数据库中。 此外，如果使用版本签名的目录文件进行身份验证的用户模式驱动程序或 32 位非 PnP 内核模式驱动程序，Windows 代码签名策略要求的编录文件安装在系统组件和驱动程序数据库中。 即插即用设备安装会自动安装驱动程序数据库中的即插即用驱动程序的目录文件。 但是，对于非 PnP 驱动程序安装的非 PnP 驱动程序的安装应用程序必须安装目录文件驱动程序数据库中。
+若要符合64位版本的 Windows Vista 和更高版本的 Windows 的 [内核模式代码签名策略](kernel-mode-code-signing-policy--windows-vista-and-later-.md) ，非启动、非 PnP 内核模式驱动程序必须具有嵌入的版本签名或安装在系统组件和驱动程序数据库中的已发布签名的 [目录文件](catalog-files.md) 。 此外，如果使用发布签名目录文件对用户模式驱动程序或32位非 PnP 内核模式驱动程序进行身份验证，则 Windows 代码签名策略要求在系统组件和驱动程序数据库中安装目录文件。 PnP 设备安装会在驱动程序数据库中自动安装 PnP 驱动程序的编录文件。 但是，对于非 PnP 驱动程序，安装非 PnP 驱动程序的安装应用程序必须在驱动程序数据库中安装目录文件。
 
-若要安装到公共非 PnP 驱动程序一起发布的目录文件，可再发行组件安装应用程序应使用[CryptCATAdminAddCatalog](https://go.microsoft.com/fwlink/p/?linkid=104926)加密函数，如中所述[安装通过使用 CryptCATAdminAddCatalog 目录文件](installing-a-catalog-file-by-using-cryptcatadminaddcatalog.md)。
+若要为发布到公共的非 PnP 驱动程序安装目录文件，可再发行安装应用程序应使用 [CryptCATAdminAddCatalog](https://go.microsoft.com/fwlink/p/?linkid=104926) 加密功能，如 [使用 CryptCATAdminAddCatalog 安装目录文件](installing-a-catalog-file-by-using-cryptcatadminaddcatalog.md)中所述。
 
-**请注意**  一般情况下，不能使用可再发行组件安装应用程序[ **SignTool** ](https://docs.microsoft.com/windows-hardware/drivers/devtest/signtool)工具安装目录文件，因为 SignTool 不是可再发行组件的工具.
-
- 
-
-**提示**  使用嵌入式的签名是通常会更简单、 更高效比使用签名的编录文件。 有关使用嵌入式的签名与签名的编录文件的优缺点的详细信息，请参阅[测试签名驱动程序](https://docs.microsoft.com/windows-hardware/drivers)。
+**注意**   通常，可再发行安装应用程序不能使用[**SignTool**](../devtest/signtool.md)工具来安装目录文件，因为 SignTool 不是可再发行的工具。
 
  
+
+**提示**   使用嵌入的签名通常比使用已签名的目录文件更简单、更有效。 有关使用嵌入的签名与签名的目录文件的优点和缺点的详细信息，请参阅对 [驱动程序进行测试签名](/windows-hardware/drivers)。
 
  
 
  
-
-
-
-
 

@@ -4,37 +4,31 @@ description: 访问设备实例属性
 ms.assetid: b571201a-e765-45d0-993b-5855041b4697
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8a03fe0ddebf2ec762a05cfd7b2fef63ba4dc745
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 4818862ca589bd9a43e0f096d63f0988ea52a25d
+ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67359239"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89096203"
 ---
 # <a name="accessing-device-instance-properties"></a>访问设备实例属性
 
 
-在 Windows Vista 和更高版本的 Windows 中，应用程序和安装程序可以访问[设备实例属性](https://docs.microsoft.com/previous-versions/ff541334(v=vs.85))通过调用以下安装程序 Api 函数：
+在 Windows Vista 和更高版本的 Windows 中，应用程序和安装程序可以通过调用以下 Setupapi.log 函数来访问 [设备实例属性](/previous-versions/ff541334(v=vs.85)) ：
 
--   [**SetupDiGetDevicePropertyKeys**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertykeys)
+-   [**SetupDiGetDevicePropertyKeys**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertykeys)
 
-    **SetupDiGetDevicePropertyKeys**函数检索标识当前为设备实例设置的设备属性的设备属性键的数组。 有关如何确定哪些属性设置的设备的信息，请参阅[确定该属性设置为设备实例](determining-which-properties-are-set-for-a-device-instance.md)。
+    **SetupDiGetDevicePropertyKeys**函数检索设备属性键的数组，这些键标识当前为设备实例设置的设备属性。 有关如何确定为设备设置的属性的信息，请参阅 [确定为设备实例设置的属性](determining-which-properties-are-set-for-a-device-instance.md)。
 
--   [**SetupDiGetDeviceProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)
+-   [**SetupDiGetDeviceProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)
 
     **SetupDiGetDeviceProperty**函数[检索为设备实例设置的设备属性](retrieving-a-device-instance-property-value.md)。
 
--   [**SetupDiSetDeviceProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdisetdevicepropertyw)
+-   [**SetupDiSetDeviceProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdisetdevicepropertyw)
 
-    **SetupDiSetDeviceProperty**函数[设置的设备实例的设备属性](setting-a-device-instance-property-value.md)。
+    **SetupDiSetDeviceProperty**函数[为设备实例设置设备属性](setting-a-device-instance-property-value.md)。
 
-有关如何访问设备属性对 Windows Server 2003、 Windows XP 和 Windows 2000 上的信息，请参阅[使用 SetupAPI 和设备的属性的配置管理器](using-setupapi-and-configuration-manager-to-access-device-properties.md)。
-
- 
+有关如何在 Windows Server 2003、Windows XP 和 Windows 2000 上访问设备属性的信息，请参阅 [使用 setupapi.log 和 Configuration Manager 访问设备属性](using-setupapi-and-configuration-manager-to-access-device-properties.md)。
 
  
-
-
-
-
 

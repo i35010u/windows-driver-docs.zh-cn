@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: d9b01577a878ea1162d70d7911e59ddf5497eb7b
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 67064e4ced6fe4f3b44636e9c82afbb7b7d026c2
+ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67385912"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89097259"
 ---
-# <a name="kscategorycommunicationstransform"></a>KSCATEGORY_COMMUNICATIONSTRANSFORM
+# <a name="kscategory_communicationstransform"></a>KSCATEGORY_COMMUNICATIONSTRANSFORM
 
 
-KSCATEGORY_COMMUNICATIONSTRANSFORM[设备接口类](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)为定义[内核流式处理](https://docs.microsoft.com/windows-hardware/drivers/stream/streaming-minidrivers2)通信转换设备 (KS) 功能类别。
+为通信转换设备的[内核流式处理](../stream/streaming-minidrivers2.md) (KS) 功能类别定义 KSCATEGORY_COMMUNICATIONSTRANSFORM[设备接口类](./overview-of-device-interface-classes.md)。
 
 <table>
 <colgroup>
@@ -33,7 +33,7 @@ KSCATEGORY_COMMUNICATIONSTRANSFORM[设备接口类](https://docs.microsoft.com/w
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">特性</th>
+<th align="left">Attribute</th>
 <th align="left">设置</th>
 </tr>
 </thead>
@@ -54,9 +54,9 @@ KSCATEGORY_COMMUNICATIONSTRANSFORM[设备接口类](https://docs.microsoft.com/w
 <a name="remarks"></a>备注
 -------
 
-KS 设备的驱动程序注册 KSCATEGORY_COMMUNICATIONSTRANSFORM 向操作系统指示设备支持 KSCATEGORY_COMMUNICATIONSTRANSFORM 功能分类的实例。
+KS 设备的驱动程序将注册 KSCATEGORY_COMMUNICATIONSTRANSFORM 的实例，以向操作系统指示设备支持 KSCATEGORY_COMMUNICATIONSTRANSFORM 功能类别。
 
-KSCATEGORY_COMMUNICATIONSTRANSFORM 功能类别是之一[ **KSPROPERTY_TOPOLOGY_CATEGORIES**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-topology-categories)。
+KSCATEGORY_COMMUNICATIONSTRANSFORM 功能类别是 [**KSPROPERTY_TOPOLOGY_CATEGORIES**](../stream/ksproperty-topology-categories.md)之一。
 
 <a name="requirements"></a>要求
 ------------
@@ -68,23 +68,16 @@ KSCATEGORY_COMMUNICATIONSTRANSFORM 功能类别是之一[ **KSPROPERTY_TOPOLOGY_
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>Header</p></td>
-<td align="left">Ks.h （包括 Ks.h）</td>
+<td align="left"><p>标头</p></td>
+<td align="left">Ks (包含 Ks .h) </td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
-[**KSPROPERTY_TOPOLOGY_CATEGORIES**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-topology-categories)
-
- 
+[**KSPROPERTY_TOPOLOGY_CATEGORIES**](../stream/ksproperty-topology-categories.md)
 
  
-
-
-
-
-
 

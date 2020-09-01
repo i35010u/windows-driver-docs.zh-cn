@@ -1,49 +1,49 @@
 ---
-title: 共同安装程序中的代码示例完成安装操作
-description: 共同安装程序中的代码示例完成安装操作
+title: 代码示例完成-在共同安装程序中安装操作
+description: 代码示例完成-在共同安装程序中安装操作
 ms.assetid: 57d41fec-cedb-436e-858e-c010a8bd6506
 keywords:
-- 完成安装操作 WDK 设备安装
-- 共同安装程序 WDK 设备安装，完成安装操作
+- 完成-安装操作 WDK 设备安装
+- 共同安装程序 WDK 设备安装，完成-安装操作
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1d794683369b75c008e95195d9b08ebeae7e7aa0
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 69c2f35e46540f33094609d767fff3bb32d50e27
+ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67375318"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89096063"
 ---
 # <a name="code-example-finish-install-actions-in-a-co-installer"></a>代码示例：辅助安装程序中的 Finish-Install 操作
 
 
-在此示例中，辅助安装程序执行下列操作来支持各种操作，完成安装：
+在此示例中，共同安装程序将执行以下操作以支持完成安装操作：
 
--   当辅助安装程序收到[ **DIF_NEWDEVICEWIZARD_FINISHINSTALL** ](https://docs.microsoft.com/windows-hardware/drivers/install/dif-newdevicewizard-finishinstall)请求时，它将调用安装程序提供的函数*FinishInstallActionsNeeded*到确定是否有要执行的完成安装操作。 (有关代码*FinishInstallActionsNeeded*函数未显示在此示例中)。
+-   当共同安装程序收到 [**DIF_NEWDEVICEWIZARD_FINISHINSTALL**](./dif-newdevicewizard-finishinstall.md) 请求时，它会调用安装程序提供的函数 *FinishInstallActionsNeeded* ，以确定是否有完成安装操作。  (此示例中未显示 *FinishInstallActionsNeeded* 函数的代码) 。
 
-    如果*FinishInstallActionsNeeded*返回**TRUE**，辅助安装程序调用[ **SetupDiGetDeviceInstallParams** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdeviceinstallparamsa)检索设备安装参数的设备，然后调用[ **SetupDiSetDeviceInstallParams** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdisetdeviceinstallparamsa)若要设置**FlagsEx** 成员[ **SP_DEVINSTALL_PARAMS** ](https://docs.microsoft.com/windows/desktop/api/setupapi/ns-setupapi-_sp_devinstall_params_a)设备 DI_FLAGSEX_FINISHINSTALL_ACTION 标志的结构。 设置此标志会导致 Windows 发送[ **DIF_FINISHINSTALL_ACTION** ](https://docs.microsoft.com/windows-hardware/drivers/install/dif-finishinstall-action)到所有类安装程序、 类共同安装程序，并在此安装中涉及的设备共同安装程序的请求设备。 此请求将发送后所有安装操作，完成安装操作，除非已完成。
+    如果*FinishInstallActionsNeeded*返回**TRUE**，则共同安装程序将调用[**SetupDiGetDeviceInstallParams**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetdeviceinstallparamsa)来检索设备的设备安装参数，然后调用[**SetupDiSetDeviceInstallParams**](/windows/desktop/api/setupapi/nf-setupapi-setupdisetdeviceinstallparamsa)来设置具有 DI_FLAGSEX_FINISHINSTALL_ACTION 标志的设备的[**SP_DEVINSTALL_PARAMS**](/windows/desktop/api/setupapi/ns-setupapi-_sp_devinstall_params_a)结构的**FlagsEx**成员。 通过设置此标志，Windows 将向所有类安装程序、类共同安装程序和安装此设备的设备共同安装程序发送 [**DIF_FINISHINSTALL_ACTION**](./dif-finishinstall-action.md) 请求。 此请求将在所有安装操作完成后发送（完成安装操作除外）。
 
--   当辅助安装程序收到 DIF_FINISHINSTALL_ACTION 请求时，辅助安装程序将再次调用*FinishInstallActionsNeeded*以确定是否它具有要执行的完成安装操作，并且，如果是这样，执行完成安装操作。 辅助安装程序会通知用户完成安装操作是在进度和完成安装操作完成，然后从处理 DIF_FINISHINSTALL_ACTION 请求返回的等待。
+-   当共同安装程序收到 DIF_FINISHINSTALL_ACTION 请求时，共同安装程序将再次调用 *FinishInstallActionsNeeded* ，以确定它是否有完成安装操作，如果是，则执行完成安装操作。 共同安装程序向用户通知完成安装操作正在进行，并等待完成安装操作完成，然后再从处理 DIF_FINISHINSTALL_ACTION 请求。
 
--   如果完成安装操作都成功时，辅助安装程序将通知的用户的完成安装成功的操作。
+-   如果完成安装操作成功，则共同安装程序会通知用户已成功完成安装操作。
 
--   如果完成安装操作所需系统重新启动以完成完成安装操作，辅助安装程序调用 SetupDiGetDeviceInstallParams 检索设备的设备安装参数，然后调用若要设置的 SetupDiSetDeviceInstallParams**标志**DI_NEEDREBOOT 标志与设备的 SP_DEVINSTALL_PARAMS 结构的成员。 安装程序还通知用户，则需要重新启动系统。
+-   如果完成安装操作需要系统重新启动才能完成完成安装操作，则共同安装程序会调用 SetupDiGetDeviceInstallParams 来检索设备的设备安装参数，然后调用 SetupDiSetDeviceInstallParams 为设备的 **标志** SP_DEVINSTALL_PARAMS 成员设置 DI_NEEDREBOOT 标志。 安装程序还会通知用户需要重新启动系统。
 
--   如果在完成安装操作失败并完成安装操作应尝试再次枚举设备时，辅助安装程序将通知这种情况下的用户下一次。
+-   如果完成安装操作失败，并且在下次枚举设备时应再次尝试完成安装操作，则共同安装程序会将此情况的用户通知给用户。
 
-    **请注意**  开始 Windows 8 中的完成安装操作只运行一次。 Windows 将不再自动运行它，尤其是不是下一步时间设备枚举因为这是未完成安装操作运行时。
-
-     
-
--   如果完成安装操作失败，而且辅助安装程序确定，无法成功完成安装操作，辅助安装程序将通知这种情况下的用户。
-
--   默认情况下，辅助安装程序 NO_ERROR 在响应中返回到 DIF_FINISHINSTALL_ACTION 请求成功完成安装操作，或完成安装操作失败，并共同安装程序确定不应为完成安装操作再次尝试。 共同安装程序将返回 Win32 错误代码仅在完成安装操作失败并完成安装操作应在下一步中的管理员上下文枚举设备时再试。
-
-    **请注意**  开始 Windows 8 中的完成安装操作只运行一次。 Windows 将不再自动运行它，尤其是不是下一步时间设备枚举因为这是未完成安装操作运行时。
+    **注意**   从 Windows 8 开始，"完成-安装" 操作只运行一次。 Windows 不会再次自动运行它，特别是在下次枚举设备时不会自动运行，因为这不是在运行时执行的。
 
      
 
-下面的辅助安装程序的代码示例显示实现完成安装操作的辅助安装程序代码的基本结构：
+-   如果完成安装操作失败，并且共同安装程序确定完成安装操作无法成功，则共同安装程序会向用户通知这种情况。
+
+-   默认情况下，如果完成安装操作已成功，则共同安装程序将返回 NO_ERROR 以响应 DIF_FINISHINSTALL_ACTION 请求; 如果完成安装操作失败，并且共同安装程序确定不应再次尝试完成安装操作，则返回。 仅当完成安装操作失败，并且在下一次在管理员上下文中枚举设备时应再次尝试完成安装操作时，共同安装程序才返回 Win32 错误代码。
+
+    **注意**   从 Windows 8 开始，"完成-安装" 操作只运行一次。 Windows 不会再次自动运行它，特别是在下次枚举设备时不会自动运行，因为这不是在运行时执行的。
+
+     
+
+以下共同安装程序代码示例显示了实现完成安装操作的共同安装程序代码的基本结构：
 
 ```cpp
 DWORD CALLBACK
@@ -118,10 +118,4 @@ SampleCoInstaller(
 ```
 
  
-
- 
-
-
-
-
 

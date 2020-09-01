@@ -4,15 +4,15 @@ description: 从显示驱动程序调用 COPP DDI
 ms.assetid: d91d8a62-f212-4ae7-be61-b973d6495880
 keywords:
 - 调用 COPP DDI WDK DirectX VA
-- COPP WDK DirectX VA，从显示驱动程序中调用
+- COPP WDK DirectX VA，从显示器驱动程序调用
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 81b3a94fef0d0b783318be91958e3ac854e9f248
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 78e02371da9ccb46f5a94178274fcb78c2394a5b
+ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67384610"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89067470"
 ---
 # <a name="calling-the-copp-ddi-from-the-display-driver"></a>从显示驱动程序调用 COPP DDI
 
@@ -20,11 +20,11 @@ ms.locfileid: "67384610"
 ## <span id="ddk_calling_the_copp_ddi_from_the_display_driver_gg"></span><span id="DDK_CALLING_THE_COPP_DDI_FROM_THE_DISPLAY_DRIVER_GG"></span>
 
 
-本部分仅适用于 Windows Server 2003 SP1 和更高版本，和 Windows XP SP2 及更高版本。
+本部分仅适用于 Windows Server 2003 SP1 及更高版本以及 Windows XP SP2 及更高版本。
 
-显示驱动程序将启动对视频的微型端口驱动程序的调用[COPP DDI](sample-functions-for-copp.md)通过使用 COPP I/O 控制 (IOCTL) 请求。 显示驱动程序调用[ **EngDeviceIoControl** ](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-engdeviceiocontrol)函数通过使用 COPP IOCTL 将同步的 COPP 请求发送到的微型端口驱动程序。 图形设备接口 (GDI) 使用输入和输出的单独缓冲区以将请求传递到 I/O 子系统。 I/O 子系统将请求路由到通过使用微型端口驱动程序处理请求的视频端口。
+显示驱动程序通过使用 COPP i/o 控件 (IOCTL) 请求，启动对视频微型端口驱动程序的 [COPP DDI](sample-functions-for-copp.md) 的调用。 显示驱动程序通过使用 COPP IOCTL 将同步 COPP 请求发送到视频微型端口驱动程序来调用 [**EngDeviceIoControl**](/windows/desktop/api/winddi/nf-winddi-engdeviceiocontrol) 函数。 图形设备接口 (GDI) 对输入和输出使用单个缓冲区来将请求传递到 i/o 子系统。 I/o 子系统将请求路由到视频端口，此端口使用视频微型端口驱动程序处理请求。
 
-下面的示例数据结构和 Ioctl 可以用于显示驱动程序和视频的微型端口驱动程序之间传输 COPP 信息。 驱动程序可以是使用的数据结构和 Ioctl 或创建新的根据需要。
+下面的示例数据结构和 IOCTLs 可用于在显示器驱动程序和视频微型端口驱动程序之间传输 COPP 信息。 根据需要，驱动程序可以使用数据结构和 IOCTLs 或创建新的结构。
 
 ```cpp
 typedef struct {
@@ -49,13 +49,7 @@ typedef struct {
         CTL_CODE(FILE_DEVICE_VIDEO, 2196, METHOD_BUFFERED, FILE_ANY_ACCESS)
 ```
 
-如果不使用前面 Ioctl，则可以定义中所述格式必须自己专用 Ioctl[定义的 I/O 控制代码](https://docs.microsoft.com/windows-hardware/drivers/kernel/defining-i-o-control-codes)。
+如果未使用上述 IOCTLs，则可以定义自己的专用 IOCTLs，这必须按 [定义 I/o 控制代码](../kernel/defining-i-o-control-codes.md)中所述进行格式设置。
 
  
-
- 
-
-
-
-
 

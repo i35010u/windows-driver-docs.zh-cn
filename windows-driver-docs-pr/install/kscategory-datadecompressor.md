@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 8f48389862715402ab944f96cd5efff469440c20
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 0afb57c060c7b80d96650edb33ddc7e2354fbfa6
+ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67385900"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89097251"
 ---
-# <a name="kscategorydatadecompressor"></a>KSCATEGORY_DATADECOMPRESSOR
+# <a name="kscategory_datadecompressor"></a>KSCATEGORY_DATADECOMPRESSOR
 
 
-KSCATEGORY_DATADECOMPRESSOR[设备接口类](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)为定义[内核流式处理](https://docs.microsoft.com/windows-hardware/drivers/stream/streaming-minidrivers2)解压缩的数据流的 (KS) 功能类别。
+KSCATEGORY_DATADECOMPRESSOR [设备接口类](./overview-of-device-interface-classes.md) 是为解压数据流 (KS) 功能类别定义的 [内核流式处理](../stream/streaming-minidrivers2.md) 的。
 
 <table>
 <colgroup>
@@ -33,7 +33,7 @@ KSCATEGORY_DATADECOMPRESSOR[设备接口类](https://docs.microsoft.com/windows-
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">特性</th>
+<th align="left">Attribute</th>
 <th align="left">设置</th>
 </tr>
 </thead>
@@ -54,11 +54,11 @@ KSCATEGORY_DATADECOMPRESSOR[设备接口类](https://docs.microsoft.com/windows-
 <a name="remarks"></a>备注
 -------
 
-KS 设备的驱动程序注册 KSCATEGORY_DATADECOMPRESSOR 向操作系统指示设备支持 KSCATEGORY_DATADECOMPRESSOR 功能分类的实例。
+KS 设备的驱动程序将注册 KSCATEGORY_DATADECOMPRESSOR 的实例，以向操作系统指示设备支持 KSCATEGORY_DATADECOMPRESSOR 功能类别。
 
-KSCATEGORY_DATADECOMPRESSOR 功能类别是之一[ **KSPROPERTY_TOPOLOGY_CATEGORIES**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-topology-categories)。
+KSCATEGORY_DATADECOMPRESSOR 功能类别是 [**KSPROPERTY_TOPOLOGY_CATEGORIES**](../stream/ksproperty-topology-categories.md)之一。
 
-有关为压缩数据流的 KS 功能类别定义的设备接口类的信息，请参阅[ **KSCATEGORY_DATACOMPRESSOR**](kscategory-datacompressor.md)。
+有关为用于压缩数据流的 KS 功能类别定义的设备接口类的信息，请参阅 [**KSCATEGORY_DATACOMPRESSOR**](kscategory-datacompressor.md)。
 
 <a name="requirements"></a>要求
 ------------
@@ -70,25 +70,18 @@ KSCATEGORY_DATADECOMPRESSOR 功能类别是之一[ **KSPROPERTY_TOPOLOGY_CATEGOR
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>Header</p></td>
-<td align="left">Ks.h （包括 Ks.h）</td>
+<td align="left"><p>标头</p></td>
+<td align="left">Ks (包含 Ks .h) </td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
 [**KSCATEGORY_DATACOMPRESSOR**](kscategory-datacompressor.md)
 
-[**KSPROPERTY_TOPOLOGY_CATEGORIES**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-topology-categories)
+[**KSPROPERTY_TOPOLOGY_CATEGORIES**](../stream/ksproperty-topology-categories.md)
 
  
-
- 
-
-
-
-
-
 

@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: ed24e5dc8272ef54bb8a6a2ea41962755eafc27c
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 82ed7e1f60e4a2bf3d46486407d38c61f05f2153
+ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67384789"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89096853"
 ---
-# <a name="guidiovolumedeviceinterface"></a>GUID_IO_VOLUME_DEVICE_INTERFACE
+# <a name="guid_io_volume_device_interface"></a>GUID_IO_VOLUME_DEVICE_INTERFACE
 
 
-GUID_IO_VOLUME_DEVICE_INTERFACE[设备接口类](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)为卷设备定义。
+为卷设备定义 GUID_IO_VOLUME_DEVICE_INTERFACE [设备接口类](./overview-of-device-interface-classes.md) 。
 
 <table>
 <colgroup>
@@ -33,7 +33,7 @@ GUID_IO_VOLUME_DEVICE_INTERFACE[设备接口类](https://docs.microsoft.com/wind
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">特性</th>
+<th align="left">Attribute</th>
 <th align="left">设置</th>
 </tr>
 </thead>
@@ -54,7 +54,7 @@ GUID_IO_VOLUME_DEVICE_INTERFACE[设备接口类](https://docs.microsoft.com/wind
 <a name="remarks"></a>备注
 -------
 
-此设备接口类的 GUID_IO_VOLUME_DEVICE_INTERFACE 标识符是其别名[ **GUID_DEVINTERFACE_VOLUME** ](guid-devinterface-volume.md)设备接口类。
+此设备接口类的 GUID_IO_VOLUME_DEVICE_INTERFACE 标识符是 [**GUID_DEVINTERFACE_VOLUME**](guid-devinterface-volume.md) 设备接口类的别名。
 
 <a name="requirements"></a>要求
 ------------
@@ -66,23 +66,16 @@ GUID_IO_VOLUME_DEVICE_INTERFACE[设备接口类](https://docs.microsoft.com/wind
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>Header</p></td>
-<td align="left">Ioevent.h （包括 Ioevent.h）</td>
+<td align="left"><p>标头</p></td>
+<td align="left">Ioevent (包含 Ioevent) </td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
 [**GUID_DEVINTERFACE_VOLUME**](guid-devinterface-volume.md)
 
  
-
- 
-
-
-
-
-
 

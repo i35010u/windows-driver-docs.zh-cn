@@ -4,51 +4,45 @@ description: 通过类安装程序和辅助安装程序修改注册表项
 ms.assetid: A7F41F97-5E06-41d8-B80F-DDBC41A62BB3
 keywords:
 - 注册表 WDK 设备安装，修改注册表项
-- 注册表 WDK 设备安装，修改注册表项类安装程序
+- 注册表 WDK 设备安装，修改注册表项，类安装程序
 - 注册表 WDK 设备安装，修改注册表项，共同安装程序
 - 类安装程序 WDK 设备安装，修改注册表项
 - 共同安装程序 WDK 设备安装，修改注册表项
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: af2e82c214157888f735c1df6e3c819f82116742
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 7fe3f721b05779e4919746d38a5180d0bd4fdded
+ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67377657"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89097363"
 ---
 # <a name="modifying-registry-keys-by-class-installers-and-co-installers"></a>通过类安装程序和辅助安装程序修改注册表项
 
 
-**请注意**  通用或移动设备的驱动程序包中不支持在本部分中所述的功能。 请参阅[使用通用 INF 文件](using-a-universal-inf-file.md)。
+**注意**   通用或移动驱动程序包不支持本部分中介绍的功能。 请参阅 [使用通用 INF 文件](using-a-universal-inf-file.md)。
 
  
 
-在某些情况下除外*类的安装程序*并*共同安装程序*不应使用标准注册表函数来创建、 更改或删除注册表项。 在大多数情况下，修改注册表项应仅使用指令都将置于[INF 文件](overview-of-inf-files.md)。 这些指令的详细信息，请参阅[INF 指令摘要](summary-of-inf-directives.md)。
+除非在某些情况下， *类安装* 程序和 *共同安装程序* 不应使用标准注册表函数来创建、更改或删除注册表项。 在大多数情况下，只能使用放在 [INF 文件](overview-of-inf-files.md)中的指令来修改注册表项。 有关这些指令的详细信息，请参阅 [INF 指令摘要](summary-of-inf-directives.md)。
 
-以下是此规则的例外情况：
+下面是此规则的例外情况：
 
--   在必要时，安装程序类和共同安装程序可以使用标准注册表函数修改中的注册表项**HKLM\\软件**子树。
+-   必要时，类安装程序和共同安装程序可以使用标准注册表功能修改 **HKLM \\ 软件** 子树中的注册表项。
 
-    **请注意**  我们强烈建议安装程序类共同安装程序，作为内设备的条目保存自定义设备属性*软件密钥*。
+    **注意**   我们强烈建议类安装程序和共同安装程序将自定义设备属性保存为设备的*软件密钥*中的条目。
 
      
 
--   安装程序类和共同安装程序有权修改项的子项中**HKLM\\系统\\CurrentControlSet\\控制\\CoDeviceInstallers**注册表项。
+-   允许类安装程序和共同安装程序修改 **HKLM \\ System \\ CurrentControlSet \\ Control \\ CoDeviceInstallers** 注册表项中的子项。
 
-以下指导原则后应执行以安全地修改注册表项类安装程序或共同安装程序：
+应遵循以下准则，以安全地修改类安装程序或共同安装程序的注册表项：
 
--   安装程序类和共同安装程序必须首先使用[ **SetupDiCreateDevRegKey** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdicreatedevregkeya)或[ **SetupDiOpenDevRegKey** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdiopendevregkey)若要打开的句柄将修改注册表项。 打开句柄后，安装程序类和共同安装程序可以使用标准注册表函数修改注册表项。
+-   类安装程序和共同安装程序必须首先使用 [**SetupDiCreateDevRegKey**](/windows/desktop/api/setupapi/nf-setupapi-setupdicreatedevregkeya) 或 [**SetupDiOpenDevRegKey**](/windows/desktop/api/setupapi/nf-setupapi-setupdiopendevregkey) 来打开要修改的注册表项的句柄。 打开句柄后，类安装程序和共同安装程序可以使用标准注册表函数来修改注册表项。
 
--   不能使用安装程序类和共同安装程序**SetupDiDeleteDevRegKey**或*硬件密钥*设备。 有关详细信息，请参阅[删除设备的注册表项](deleting-the-registry-keys-of-a-device.md)。
+-   类安装程序和共同安装程序不得对设备使用 **SetupDiDeleteDevRegKey** 或 *硬件密钥* 。 有关详细信息，请参阅 [删除设备的注册表项](deleting-the-registry-keys-of-a-device.md)。
 
-有关标准注册表函数的详细信息，请参阅[注册表函数](https://go.microsoft.com/fwlink/p/?linkid=194529)。
-
- 
+有关标准注册表函数的详细信息，请参阅 [注册表函数](https://go.microsoft.com/fwlink/p/?linkid=194529)。
 
  
-
-
-
-
 

@@ -4,12 +4,12 @@ description: 驱动程序安装必须使用现有的工具进行联机和脱机�
 ms.assetid: B00B4361-B531-4D28-A521-0F8B3B48CEA4
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5cfff0b6fa5eb5d67bbc9594ff4ed3b6e1dab465
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 5dc4a729f3dfb595cfb9752f5d428c9de41214a7
+ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72828819"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89096169"
 ---
 # <a name="elam-driver-requirements"></a>ELAM 驱动程序要求
 
@@ -19,7 +19,7 @@ ms.locfileid: "72828819"
 ## <a name="am-driver-installation"></a>AM 驱动程序安装
 
 
-为了确保驱动程序安装兼容性，ELAM 驱动程序将自身作为启动启动驱动程序播发，这类似于所有其他启动启动驱动程序。 INF 将启动类型设置为 SERVICE_BOOT_START （0），这表示驱动程序应由启动加载程序加载并在内核初始化期间初始化。 ELAM 驱动程序将其组播发为 "预先启动"。 此组中的驱动程序的早期启动行为将在 Windows 中实现，如下一节中所述。
+为了确保驱动程序安装兼容性，ELAM 驱动程序将自身作为启动启动驱动程序播发，这类似于所有其他启动启动驱动程序。 INF 将启动类型设置为 SERVICE_BOOT_START (0) ，这表示驱动程序应由启动加载程序加载并在内核初始化期间初始化。 ELAM 驱动程序将其组播发为 "预先启动"。 此组中的驱动程序的早期启动行为将在 Windows 中实现，如下一节中所述。
 
 下面是 ELAM 驱动程序 INF 的驱动程序安装部分的示例。
 
@@ -33,15 +33,15 @@ ErrorControl   = 3       ; SERVICE_ERROR_CRITICAL
 LoadOrderGroup = “Early-Launch”
 ```
 
-由于 AM 驱动程序不拥有任何设备，因此需要将 AM 驱动程序安装为旧式驱动程序，以便仅将驱动程序作为服务添加到注册表中。 （如果将 AM 驱动程序作为普通 PNP 驱动程序安装，则会将其添加到注册表的 enum 部分，因此将具有 PDO 引用，这将导致卸载驱动程序时出现不需要的行为。）
+由于 AM 驱动程序不拥有任何设备，因此需要将 AM 驱动程序安装为旧式驱动程序，以便仅将驱动程序作为服务添加到注册表中。  (如果将 AM 驱动程序作为普通 PNP 驱动程序安装，则会将其添加到注册表的 enum 部分，因此将具有 PDO 引用，这将导致卸载驱动程序时出现不需要的行为。 ) 
 
-还需要在 INF 文件中包含 ELAM 驱动程序的[SignatureAttributes 部分](inf-signatureattributes-section.md)。 
+还需要在 INF 文件中包含 ELAM 驱动程序的 [SignatureAttributes 部分](inf-signatureattributes-section.md) 。 
 
 ## <a name="backup-driver-installation"></a>备份驱动程序安装
 
 若要在 ELAM 驱动程序无意中损坏的情况下提供一种恢复机制，ELAM 安装程序还会在备份位置安装该驱动程序的副本。 这将允许 WinRE 检索干净副本并恢复安装。
 
-安装程序从存储在中的**BackupPath**密钥读取备份文件位置
+安装程序从存储在中的 **BackupPath** 密钥读取备份文件位置
 
 ```cpp
 HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\EarlyLaunch
@@ -69,26 +69,26 @@ PnP 使用策略和 AM 驱动程序提供的分类来决定是否初始化每个
 
 > [!NOTE]
 > 在系统启动之前，对 ELAM 注册表配置单元所做的任何更改都将被丢弃。
-> 因此，ELAM 驱动程序应使用 Windows 的标准事件跟踪（ETW）日志记录，而不是写入注册表。
+> 因此，ELAM 驱动程序应使用 Windows (ETW 的标准事件跟踪) 日志记录，而不是写入注册表。
 
 这些回调在 ELAM 驱动程序的生存期内有效，并且在卸载驱动程序时将被注销。 有关详细信息，请参阅：
 
-* [**CmRegisterCallbackEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-cmregistercallbackex)
-* [**CmRegisterCallback**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-cmregistercallback)
-* [**CmUnRegisterCallback**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-cmunregistercallback)
+* [**CmRegisterCallbackEx**](/windows-hardware/drivers/ddi/wdm/nf-wdm-cmregistercallbackex)
+* [**CmRegisterCallback**](/windows-hardware/drivers/ddi/wdm/nf-wdm-cmregistercallback)
+* [**CmUnRegisterCallback**](/windows-hardware/drivers/ddi/wdm/nf-wdm-cmunregistercallback)
 
 ### <a name="boot-driver-callbacks"></a>启动驱动程序回调
 
-使用[**IoRegisterBootDriverCallback**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-ioregisterbootdrivercallback)和[**IoUnRegisterBootDriverCallback**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-iounregisterbootdrivercallback)注册和注销[*BOOT_DRIVER_CALLBACK_FUNCTION*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nc-ntddk-boot_driver_callback_function)。
+使用 [**IoRegisterBootDriverCallback**](/windows-hardware/drivers/ddi/ntddk/nf-ntddk-ioregisterbootdrivercallback) 和 [**IoUnRegisterBootDriverCallback**](/windows-hardware/drivers/ddi/ntddk/nf-ntddk-iounregisterbootdrivercallback) 注册和注销 [*BOOT_DRIVER_CALLBACK_FUNCTION*](/windows-hardware/drivers/ddi/ntddk/nc-ntddk-boot_driver_callback_function)。
 
 此回调提供从 Windows 到 ELAM 驱动程序的状态更新，包括所有启动启动驱动程序都已初始化并且回调功能不再正常工作。
 
 ### <a name="callback-type"></a>回调类型
 
-[**BDCB_CALLBACK_TYPE 枚举**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/ne-ntddk-_bdcb_callback_type)描述了两种类型的回调：
+[**BDCB_CALLBACK_TYPE 枚举**](/windows-hardware/drivers/ddi/ntddk/ne-ntddk-_bdcb_callback_type)描述了两种类型的回调：
 
--   向 ELAM 驱动程序提供状态更新的回调（BdCbStatusUpdate）
--   AM 驱动程序使用的回调，用于在初始化启动驱动程序和依赖 Dll 之前对其映像进行分类（BdCbInitializeImage）
+-   向 ELAM 驱动程序提供状态更新的回调 (BdCbStatusUpdate) 
+-   AM 驱动程序使用的回调在初始化启动驱动程序和依赖 Dll 之前对其映像进行分类 (BdCbInitializeImage) 
 
 这两个回调类型具有唯一的上下文结构，它们提供特定于回调的附加信息。
 
@@ -102,7 +102,7 @@ PnP 使用策略和 AM 驱动程序提供的分类来决定是否初始化每个
 
 ## <a name="malware-signatures"></a>恶意软件签名
 
-恶意软件签名数据由 AM ISV 决定，但至少应包含一个批准的驱动程序哈希列表。 签名数据存储在 Winload.exe 所加载的 HKLM 下新的 "早期启动驱动程序" 配置单元中。 每个 AM 驱动程序都有一个唯一键，用于存储其签名二进制大型对象（BLOB）。 注册表路径和密钥的格式如下：
+恶意软件签名数据由 AM ISV 决定，但至少应包含一个批准的驱动程序哈希列表。 签名数据存储在 Winload.exe 所加载的 HKLM 下新的 "早期启动驱动程序" 配置单元中。 每个 AM 驱动程序都有一个唯一密钥，用来将其签名二进制大型对象存储 (BLOB) 。 注册表路径和密钥的格式如下：
 
 ```cpp
 HKLM\ELAM\<VendorName>\
@@ -115,12 +115,12 @@ HKLM\ELAM\<VendorName>\
 -   策略
 -   Config
 
-ELAM 配置单元在使用后将通过早期启动反恶意软件以提高性能。 如果用户模式服务要更新签名数据，则应将该配置文件的文件位置 \\Windows\\System32\\config\\ELAM。 例如，可以生成一个 UUID，将其转换为字符串，并将其用作装载 hive 的唯一键。
+ELAM 配置单元在使用后将通过早期启动反恶意软件以提高性能。 如果用户模式服务要更新签名数据，则应从文件位置 \\ Windows \\ System32 \\ config ELAM 装载 hive 文件 \\ 。 例如，可以生成一个 UUID，将其转换为字符串，并将其用作装载 hive 的唯一键。
 这些数据 Blob 的存储和检索格式将留给 ISV，但必须对签名数据进行签名，以便 AM 驱动程序可以验证数据的完整性。
 
 **验证恶意软件签名**
 
-验证恶意软件签名数据完整性的方法留给每个 AM ISV。 [CNG 加密基元函数](https://docs.microsoft.com/windows/desktop/SecCNG/cng-cryptographic-primitive-functions)可用于帮助验证恶意软件签名数据上的数字签名和证书。
+验证恶意软件签名数据完整性的方法留给每个 AM ISV。 [CNG 加密基元函数](/windows/desktop/SecCNG/cng-cryptographic-primitive-functions)可用于帮助验证恶意软件签名数据上的数字签名和证书。
 
 **恶意软件签名失败**
 
@@ -147,8 +147,8 @@ ELAM 配置单元在使用后将通过早期启动反恶意软件以提高性能
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>方案</p></td>
-<td align="left"><p>Start Time</p></td>
+<td align="left"><p>方案 (s) </p></td>
+<td align="left"><p>开始时间</p></td>
 <td align="left"><p>结束时间</p></td>
 <td align="left"><p>上限</p></td>
 </tr>
@@ -165,9 +165,9 @@ ELAM 配置单元在使用后将通过早期启动反恶意软件以提高性能
 <td align="left"><p>50 ms</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>占用空间（驱动程序 + 内存中的配置数据）</p></td>
-<td align="left"><p>N/A</p></td>
-<td align="left"><p>N/A</p></td>
+<td align="left"><p>内存中的内存占用 (驱动程序 + 配置数据) </p></td>
+<td align="left"><p>空值</p></td>
+<td align="left"><p>空值</p></td>
 <td align="left"><p>128kB</p></td>
 </tr>
 </tbody>
@@ -200,6 +200,6 @@ PNP_INITIALIZE_BAD_DRIVERS 0x7
 ## <a name="elam-and-measured-boot"></a>ELAM 和度量启动
 
 
-如果 ELAM 驱动程序检测到策略冲突（例如 rootkit），则它应立即调用[**Tbsi_Revoke_Attestation**](https://docs.microsoft.com/windows/desktop/api/tbs/nf-tbs-tbsi_revoke_attestation) ，使指示系统处于良好状态的 PCRs 失效。 如果度量启动有问题（例如系统上没有 TPM），该函数将返回错误。
+如果 ELAM 驱动程序检测到策略冲突 (rootkit，如) ，则它应立即调用 [**Tbsi_Revoke_Attestation**](/windows/desktop/api/tbs/nf-tbs-tbsi_revoke_attestation) ，使指示系统处于良好状态的 PCRs 无效。 如果度量启动有问题（例如系统上没有 TPM），该函数将返回错误。
 
-可从内核模式调用**Tbsi_Revoke_Attestation** 。 它通过未指定的值扩展 PCR [12]，并递增 TPM 中的事件计数器。 这两个操作都是必需的，因此，从此处开始创建的所有引号中的信任会断开。 因此，经过度量的启动日志不会反映 tpm 的当前状态，这是 TPM 通电后的剩余时间，远程系统将无法在系统的安全状态下形成信任。
+**Tbsi_Revoke_Attestation** 可从内核模式调用。 它通过未指定的值扩展 PCR [12]，并递增 TPM 中的事件计数器。 这两个操作都是必需的，因此，从此处开始创建的所有引号中的信任会断开。 因此，经过度量的启动日志不会反映 tpm 的当前状态，这是 TPM 通电后的剩余时间，远程系统将无法在系统的安全状态下形成信任。

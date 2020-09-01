@@ -1,72 +1,66 @@
 ---
-title: UWP 设备应用程序的第 6 步提交设备元数据
-description: 本主题介绍如何将提交到 Windows 开发人员中心硬件仪表板 UWP 设备应用的设备元数据。
+title: 步骤6提交 UWP 设备应用的设备元数据
+description: 本主题介绍如何向 Windows 开发人员中心硬件仪表板提交 UWP 设备应用的设备元数据。
 ms.assetid: 5A4A371E-42A2-43C8-A496-CC3C38C17182
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 576d0ee6446b767730c6dfb8afcde3a7d8f0ebad
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 93f7f0ba76659c8ed5bc9bd2c9956576d9568708
+ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67369346"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89097401"
 ---
-# <a name="step-6-submit-device-metadata-for-your-uwp-device-app"></a>步骤 6：提交设备元数据为 UWP 设备应用
+# <a name="step-6-submit-device-metadata-for-your-uwp-device-app"></a>步骤6：提交 UWP 设备应用的设备元数据
 
 
-![设备应用工作流，步骤 6](images/6-device-app-workflow.png)
+![设备应用工作流，步骤6](images/6-device-app-workflow.png)
 
-本主题介绍如何将提交到 Windows 开发人员中心硬件仪表板 UWP 设备应用的设备元数据。
+本主题介绍如何向 Windows 开发人员中心硬件仪表板提交 UWP 设备应用的设备元数据。
 
-UWP 设备应用程序是一种特殊的设备制造商创建作为其内部或外围设备的配套的 UWP 应用。 使用设备元数据，设备应用程序可以运行特权的操作，并在插入设备时，自动安装。 有关 UWP 的设备应用程序的详细信息，请参阅[满足 UWP 设备应用](meet-uwp-device-apps.md)。
+UWP 设备应用是一种特殊类型的 UWP 应用，设备制造商可以创建它来充当其内部或外围设备。 通过使用设备元数据，设备应用可以运行特权操作并在设备接通电源时自动安装。 有关 UWP 设备应用的详细信息，请参阅 " [满足 uwp 设备应用](meet-uwp-device-apps.md)"。
 
-**请注意**  本主题是分步系列的一部分。 请参阅[构建循序渐进的 UWP 设备应用程序](build-a-uwp-device-app-step-by-step.md)引入。
+**注意**   本主题是分步序列的一部分。 有关简介，请参阅 [构建 UWP 设备应用循序渐进](build-a-uwp-device-app-step-by-step.md) 。
 
  
 
-## <a name="span-idbeforeyoubeginspanspan-idbeforeyoubeginspanspan-idbeforeyoubeginspanbefore-you-begin"></a><span id="Before_you_begin"></span><span id="before_you_begin"></span><span id="BEFORE_YOU_BEGIN"></span>开始之前的准备工作
+## <a name="span-idbefore_you_beginspanspan-idbefore_you_beginspanspan-idbefore_you_beginspanbefore-you-begin"></a><span id="Before_you_begin"></span><span id="before_you_begin"></span><span id="BEFORE_YOU_BEGIN"></span>开始之前
 
 
-有两种方法来提交您对硬件仪表板的设备元数据包：
+可以通过两种方式将设备元数据包提交到硬件仪表板：
 
--   您可以提交.devicemanifest ms 文件单独向硬件仪表板。
--   可以打包多个.devicemanifest ms 文件并将其提交到大容量提交包为硬件仪表板。 可以使用创建大容量提交包**设备元数据创建向导**。
+-   可以将 devicemanifest-ms 文件逐个提交到硬件仪表板。
+-   可以将多个 devicemanifest 文件打包在一起，并将其作为大容量提交包提交给硬件仪表板。 您可以使用 **设备元数据创作向导**来创建大容量提交包。
 
-这两种方式需要文件进行签名，然后将它们提交到硬件仪表板。 您可以执行此操作通过使用**数字签名向导**。 若要打开**数字签名向导**从**设备元数据创建向导**，单击**工具**，然后单击**签名向导**.
+这两种方法都要求在将文件提交到硬件仪表板之前对文件进行签名。 可以使用 **数字签名向导**来执行此操作。 若要从**设备元数据创作向导**打开**数字签名向导**，请单击 "**工具**"，然后单击 "**签名向导**"。
 
-## <a name="span-idcreatingabulksubmissionpackagespanspan-idcreatingabulksubmissionpackagespanspan-idcreatingabulksubmissionpackagespancreating-a-bulk-submission-package"></a><span id="Creating_a_bulk_submission_package"></span><span id="creating_a_bulk_submission_package"></span><span id="CREATING_A_BULK_SUBMISSION_PACKAGE"></span>创建大容量提交包
+## <a name="span-idcreating_a_bulk_submission_packagespanspan-idcreating_a_bulk_submission_packagespanspan-idcreating_a_bulk_submission_packagespancreating-a-bulk-submission-package"></a><span id="Creating_a_bulk_submission_package"></span><span id="creating_a_bulk_submission_package"></span><span id="CREATING_A_BULK_SUBMISSION_PACKAGE"></span>创建批量提交包
 
 
-可以使用**大容量包向导**以创建可以立即提交到硬件仪表板的多个 devicemanifest ms 文件的大容量提交包。 您使用**设备元数据创建向导**以打开**大容量包向导**。
+你可以使用 **批量包向导** 来创建大容量提交包，以便一次将多个 devicemanifest-ms 文件提交到硬件仪表板。 您可以使用 **设备元数据创作向导** 打开 **大容量包向导**。
 
-**若要创建大容量提交包**
+**创建批量提交包**
 
-1.  在中**设备元数据创建向导**，单击**工具**，然后单击**创建大容量包**。
-2.  在中**大容量包向导**，为每个.devicemanifest ms 文件，执行以下操作：
-    -   单击**添加元数据包**。
-    -   浏览到.devicemanifest ms 文件，然后依次**确定**。
+1.  在 **设备元数据创作向导**中，单击 " **工具**"，然后单击 " **创建大容量包**"。
+2.  在 **批量包向导**中，为每个 devicemanifest 文件执行以下操作：
+    -   单击 " **添加元数据包**"。
+    -   浏览到 "devicemanifest" 文件，然后单击 **"确定"**。
 
-3.  选择**预览版**应在预览模式下提交每个.devicemanifest ms 文件旁边的复选框。
-4.  已添加的所有.devicemanifest ms 文件后，单击**下一步**。
-5.  上**指定的设备体验信息**页上，添加以下：
-    -   **遇到名称**应该是在由你的公司已提交的其他体验名称是唯一的名称。
-    -   **限定**指示如果硬件提交与此提交相关联。 如果相关联的硬件提交，请选择**此设备具有相关联的硬件或未分类的提交**。
-    -   **徽标提交 Id**应包括硬件仪表板提交 Id。
-    -   **更新体验**如果之前已提交的体验，则应选择。
+3.  选中应在预览模式下提交的每个 devicemanifest 文件旁边的 " **预览** " 复选框。
+4.  添加所有 devicemanifest-ms 文件后，单击 " **下一步**"。
+5.  在 " **指定设备体验信息** " 页上，添加以下内容：
+    -   **体验名称** 应为在公司提交的其他体验名称中唯一的名称。
+    -   "**限定**" 指示是否将硬件提交与此提交相关联。 如果有关联的硬件提交，请选择 " **此设备有关联的硬件或未分类的提交**"。
+    -   **徽标提交 id** 应该包含硬件仪表板提交 id。
+    -   如果已提交经验，则应选择 "**更新体验**"。
 
-    **请注意**  提交设备元数据为 UWP 设备应用之前必须经过认证设备。
+    **注意**   必须先认证设备，然后才能提交 UWP 设备应用的设备元数据。
 
      
 
-6.  上**准备大容量包提交**页上，单击**启动签名向导**以启动**数字签名向导**，用于进行数字签名在大容量提交包。
+6.  在 " **准备批量包以提交** " 页上，单击 " **启动签名向导** " 以启动 " **数字签名向导**"，该向导用于对大容量提交包进行数字签名。
 
-提交设备元数据包到硬件仪表板的详细信息，请参阅[设备元数据](https://docs.microsoft.com/windows-hardware/drivers/dashboard/)。
-
- 
+有关将设备元数据包提交到硬件仪表板的详细信息，请参阅 [设备元数据](../dashboard/index.yml)。
 
  
-
-
-
-
 

@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 74000222144b0ab67228acd80643163e4e607c65
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 38316a89a8c430f970b1875ea7cd9be79cf0d589
+ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67380979"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89096995"
 ---
-# <a name="guiddevicebattery"></a>GUID_DEVICE_BATTERY
+# <a name="guid_device_battery"></a>GUID_DEVICE_BATTERY
 
 
-GUID_DEVICE_BATTERY[设备接口类](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)为定义[电池设备](https://docs.microsoft.com/windows-hardware/drivers/battery/index)。
+为[电池设备](../battery/index.md)定义 GUID_DEVICE_BATTERY[设备接口类](./overview-of-device-interface-classes.md)。
 
 <table>
 <colgroup>
@@ -33,7 +33,7 @@ GUID_DEVICE_BATTERY[设备接口类](https://docs.microsoft.com/windows-hardware
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">特性</th>
+<th align="left">Attribute</th>
 <th align="left">设置</th>
 </tr>
 </thead>
@@ -54,9 +54,9 @@ GUID_DEVICE_BATTERY[设备接口类](https://docs.microsoft.com/windows-hardware
 <a name="remarks"></a>备注
 -------
 
-系统提供[电池类驱动程序](https://docs.microsoft.com/windows-hardware/drivers/battery/battery-class-driver-functionality)注册此设备接口电池设备类代表电池 miniclass 驱动程序的实例。
+系统提供的 [电池类驱动程序](../battery/battery-class-driver-functionality.md) 代表电池 miniclass 驱动程序为电池设备注册此设备接口类的实例。
 
-有关电池设备和驱动程序的信息，请参阅[系统电池管理的概述](https://docs.microsoft.com/windows-hardware/drivers/battery/overview-of-system-battery-management)。
+有关电池设备和驱动程序的信息，请参阅 [系统电池管理概述](../battery/overview-of-system-battery-management.md)。
 
 <a name="requirements"></a>要求
 ------------
@@ -68,17 +68,11 @@ GUID_DEVICE_BATTERY[设备接口类](https://docs.microsoft.com/windows-hardware
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>Header</p></td>
-<td align="left">Batclass.h （包括 Batclass.h）</td>
+<td align="left"><p>标头</p></td>
+<td align="left">Batclass (包含 Batclass) </td>
 </tr>
 </tbody>
 </table>
 
  
-
- 
-
-
-
-
 

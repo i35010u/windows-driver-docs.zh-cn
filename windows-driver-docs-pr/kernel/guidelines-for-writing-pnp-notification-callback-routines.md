@@ -7,12 +7,12 @@ keywords:
 - 回调例程 WDK PnP
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c81087181efaf7b6df073b494c4f22dc8adbef51
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: e446cbb4e02832ff549e3c61ccf92d1f71fac308
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72836675"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89183872"
 ---
 # <a name="guidelines-for-writing-pnp-notification-callback-routines"></a>有关编写 PnP 通知回调例程的指导原则
 
@@ -20,7 +20,7 @@ ms.locfileid: "72836675"
 
 
 
-PnP 管理器以 IRQL = 被动\_级别调用通知回调例程。
+PnP 管理器以 IRQL = 被动级别调用通知回调例程 \_ 。
 
 若要确保 PnP 子系统的平稳运行，PnP 通知回调例程必须遵循以下准则：
 
@@ -30,7 +30,7 @@ PnP 管理器以 IRQL = 被动\_级别调用通知回调例程。
 
     在通知回调期间调用此类例程可能会导致系统死锁。
 
-    例如，驱动程序不能在通知回调例程中调用[**IoReportTargetDeviceChange**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioreporttargetdevicechange) 。 改为调用[**IoReportTargetDeviceChangeAsynchronous**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioreporttargetdevicechangeasynchronous) 。
+    例如，驱动程序不能在通知回调例程中调用 [**IoReportTargetDeviceChange**](/windows-hardware/drivers/ddi/wdm/nf-wdm-ioreporttargetdevicechange) 。 改为调用 [**IoReportTargetDeviceChangeAsynchronous**](/windows-hardware/drivers/ddi/wdm/nf-wdm-ioreporttargetdevicechangeasynchronous) 。
 
 3.  对于未显式失败的任何事件，通知回调例程应返回 success。
 
@@ -41,9 +41,4 @@ PnP 管理器以 IRQL = 被动\_级别调用通知回调例程。
 4.  通知回调例程应为页面代码。
 
  
-
- 
-
-
-
 

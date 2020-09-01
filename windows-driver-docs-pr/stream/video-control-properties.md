@@ -8,17 +8,17 @@ keywords:
 - PROPSETID_VIDCAP_VIDEOCONTROL
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d86bca4979673244c4c10305fc96ce3b50abe419
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 768355d6f512a74750799b345757f47cbee3c222
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67385378"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89184331"
 ---
 # <a name="video-control-properties"></a>视频控件属性
 
 
-[PROPSETID\_VIDCAP\_VIDEOCONTROL](https://docs.microsoft.com/windows-hardware/drivers/stream/propsetid-vidcap-videocontrol)属性集包含控件和功能的视频硬件相关的属性，如可用的帧速率的硬件可以捕获在和当视频图像的方向。 下表介绍的属性属于 PROPSETID\_VIDCAP\_VIDEOCONTROL 属性集。
+[PROPSETID \_ VIDCAP \_ VIDEOCONTROL](./propsetid-vidcap-videocontrol.md)属性集包含与视频硬件的控制和功能相关的属性，如硬件可以捕获的可用帧速率和视频图像的方向。 下表描述了作为 PROPSETID \_ VIDCAP VIDEOCONTROL 属性集的一部分的属性 \_ 。
 
 <table>
 <colgroup>
@@ -33,20 +33,20 @@ ms.locfileid: "67385378"
 </thead>
 <tbody>
 <tr class="odd">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-videocontrol-caps" data-raw-source="[&lt;strong&gt;KSPROPERTY_VIDEOCONTROL_CAPS&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-videocontrol-caps)"><strong>KSPROPERTY_VIDEOCONTROL_CAPS</strong></a></p></td>
-<td><p>返回有关视频流，如图像方向和触发的视频帧的流中获取的功能信息。</p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-videocontrol-caps" data-raw-source="[&lt;strong&gt;KSPROPERTY_VIDEOCONTROL_CAPS&lt;/strong&gt;](./ksproperty-videocontrol-caps.md)"><strong>KSPROPERTY_VIDEOCONTROL_CAPS</strong></a></p></td>
+<td><p>返回有关视频流功能的信息，如图像方向和从流中触发视频帧。</p></td>
 </tr>
 <tr class="even">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-videocontrol-actual-frame-rate" data-raw-source="[&lt;strong&gt;KSPROPERTY_VIDEOCONTROL_ACTUAL_FRAME_RATE&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-videocontrol-actual-frame-rate)"><strong>KSPROPERTY_VIDEOCONTROL_ACTUAL_FRAME_RATE</strong></a></p></td>
-<td><p>返回实际帧速率为其硬件流式处理特定 pin 的视频。</p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-videocontrol-actual-frame-rate" data-raw-source="[&lt;strong&gt;KSPROPERTY_VIDEOCONTROL_ACTUAL_FRAME_RATE&lt;/strong&gt;](./ksproperty-videocontrol-actual-frame-rate.md)"><strong>KSPROPERTY_VIDEOCONTROL_ACTUAL_FRAME_RATE</strong></a></p></td>
+<td><p>返回硬件正在流式传输特定 pin 的视频的实际帧速率。</p></td>
 </tr>
 <tr class="odd">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-videocontrol-frame-rates" data-raw-source="[&lt;strong&gt;KSPROPERTY_VIDEOCONTROL_FRAME_RATES&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-videocontrol-frame-rates)"><strong>KSPROPERTY_VIDEOCONTROL_FRAME_RATES</strong></a></p></td>
-<td><p>返回设备可以流式传输的可用帧速率的数字视频，网址。</p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-videocontrol-frame-rates" data-raw-source="[&lt;strong&gt;KSPROPERTY_VIDEOCONTROL_FRAME_RATES&lt;/strong&gt;](./ksproperty-videocontrol-frame-rates.md)"><strong>KSPROPERTY_VIDEOCONTROL_FRAME_RATES</strong></a></p></td>
+<td><p>返回设备可用于传输视频的可用帧速率的数目。</p></td>
 </tr>
 <tr class="even">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-videocontrol-mode" data-raw-source="[&lt;strong&gt;KSPROPERTY_VIDEOCONTROL_MODE&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-videocontrol-mode)"><strong>KSPROPERTY_VIDEOCONTROL_MODE</strong></a></p></td>
-<td><p>控制视频流，如翻转和触发的视频帧的流中获取图像的模式。</p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-videocontrol-mode" data-raw-source="[&lt;strong&gt;KSPROPERTY_VIDEOCONTROL_MODE&lt;/strong&gt;](./ksproperty-videocontrol-mode.md)"><strong>KSPROPERTY_VIDEOCONTROL_MODE</strong></a></p></td>
+<td><p>控制视频流的模式，例如图像翻转和触发从流中获取视频帧。</p></td>
 </tr>
 </tbody>
 </table>
@@ -54,9 +54,4 @@ ms.locfileid: "67385378"
  
 
  
-
- 
-
-
-
 

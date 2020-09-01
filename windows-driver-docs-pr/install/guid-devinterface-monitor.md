@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: e3e99c9633f287d2c01958c7ed750dd386179202
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 4cb8b71e06ed04df6b7d0da119348cf9a39b8c32
+ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67375255"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89096945"
 ---
-# <a name="guiddevinterfacemonitor"></a>GUID_DEVINTERFACE_MONITOR
+# <a name="guid_devinterface_monitor"></a>GUID_DEVINTERFACE_MONITOR
 
 
-GUID_DEVINTERFACE_MONITOR[设备接口类](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)为定义[监视设备](https://docs.microsoft.com/windows-hardware/drivers/display/monitor-drivers)。
+为[监视设备](../display/monitor-drivers.md)定义 GUID_DEVINTERFACE_MONITOR[设备接口类](./overview-of-device-interface-classes.md)。
 
 <table>
 <colgroup>
@@ -33,7 +33,7 @@ GUID_DEVINTERFACE_MONITOR[设备接口类](https://docs.microsoft.com/windows-ha
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">特性</th>
+<th align="left">Attribute</th>
 <th align="left">设置</th>
 </tr>
 </thead>
@@ -54,9 +54,9 @@ GUID_DEVINTERFACE_MONITOR[设备接口类](https://docs.microsoft.com/windows-ha
 <a name="remarks"></a>备注
 -------
 
-Windows 操作系统中配置每个监视器中注册设备接口。
+Windows 为操作系统中配置的每个监视器注册一个设备接口。
 
-有关显示适配器和监视器的信息，请参阅[显示设备设计指南](https://docs.microsoft.com/windows-hardware/drivers/display/index)并[显示器驱动程序](https://docs.microsoft.com/windows-hardware/drivers/display/monitor-drivers)。
+有关显示适配器和监视器的信息，请参阅 [显示设备设计指南](../display/index.md) 和 [监视驱动程序](../display/monitor-drivers.md)。
 
 <a name="requirements"></a>要求
 ------------
@@ -68,17 +68,11 @@ Windows 操作系统中配置每个监视器中注册设备接口。
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>Header</p></td>
-<td align="left">Ntddvdeo.h （包括 Ntddvdeo.h）</td>
+<td align="left"><p>标头</p></td>
+<td align="left">Ntddvdeo (包含 Ntddvdeo) </td>
 </tr>
 </tbody>
 </table>
 
  
-
- 
-
-
-
-
 

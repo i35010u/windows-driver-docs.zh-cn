@@ -14,22 +14,22 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 05bcecbd8741639ddaa215da3bf846186f1f859e
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: f5d21414ff0174b398b88f5ef8ec3ed62c7283fe
+ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67385272"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89097155"
 ---
 # <a name="cdromclassguid"></a>CdRomClassGuid
 
 
-CdRomClassGuid 是已过时标识符[设备接口类](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)cd-rom[存储设备](https://docs.microsoft.com/windows-hardware/drivers/storage/index)。 从 Microsoft Windows 2000 开始，使用[ **GUID_DEVINTERFACE_CDROM** ](guid-devinterface-cdrom.md)此类的新实例的类标识符。
+CdRomClassGuid 是 cd-rom[存储设备](../storage/index.md)的[设备接口类](./overview-of-device-interface-classes.md)的过时标识符。 从 Microsoft Windows 2000 开始，使用此类的新实例 [**GUID_DEVINTERFACE_CDROM**](guid-devinterface-cdrom.md) 类标识符。
 
 <a name="remarks"></a>备注
 -------
 
-存储[示例](https://go.microsoft.com/fwlink/p/?LinkId=618052)WDK 中包括[CDROM 类驱动程序](https://go.microsoft.com/fwlink/p/?linkid=256093)示例并[Addfilter 存储筛选器工具](https://go.microsoft.com/fwlink/p/?linkid=256076)。 CDROM 类驱动程序示例使用 CdRomClassGuid 注册 GUID_DEVINTERFACE_CDROM 设备接口类的实例。 示例 Addfilter 应用程序使用 CdRomClassGuid 枚举 GUID_DEVINTERFACE_CDROM 设备接口类的实例。
+WDK 中的存储 [示例](https://go.microsoft.com/fwlink/p/?LinkId=618052) 包括 [CDROM 类驱动程序](https://go.microsoft.com/fwlink/p/?linkid=256093) 示例和 [Addfilter 存储筛选器工具](https://go.microsoft.com/fwlink/p/?linkid=256076)。 CDROM 类驱动程序示例使用 CdRomClassGuid 来注册 GUID_DEVINTERFACE_CDROM 设备接口类的实例。 示例 Addfilter 应用程序使用 CdRomClassGuid 来枚举 GUID_DEVINTERFACE_CDROM 设备接口类的实例。
 
 <a name="requirements"></a>要求
 ------------
@@ -41,27 +41,20 @@ CdRomClassGuid 是已过时标识符[设备接口类](https://docs.microsoft.com
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>Version</p></td>
-<td align="left"><p>已过时。 从 Windows 2000 开始，请改用 GUID_DEVINTERFACE_CDROM。</p></td>
+<td align="left"><p>版本</p></td>
+<td align="left"><p>已过时。 从 Windows 2000 开始，改用 GUID_DEVINTERFACE_CDROM。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>Header</p></td>
-<td align="left">Ntddstor.h （包括 Ntddstor.h）</td>
+<td align="left"><p>标头</p></td>
+<td align="left">Ntddstor (包含 Ntddstor) </td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
 [**GUID_DEVINTERFACE_CDROM**](guid-devinterface-cdrom.md)
 
  
-
- 
-
-
-
-
-
 

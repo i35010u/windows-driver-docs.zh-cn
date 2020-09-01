@@ -4,25 +4,25 @@ description: SendDownStreamIrp 函数
 ms.assetid: 09a06041-5b26-4796-b9b8-d7d27321d955
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 899f65d78d2e4b05a8eba84d44e082b1f75c9b17
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 11524754e57b35b510dd2a7ee2b957309162b317
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72831468"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89184815"
 ---
 # <a name="senddownstreamirp-function"></a>SendDownStreamIrp 函数
 
 
-本主题中提供的 `SendDownStreamIrp` 函数的代码示例演示如何实现将同步 IOCTL 请求发送到 ACPI 驱动程序的驱动程序提供的函数。 `SendDownStreamIrp` 函数可用于发送[**ioctl\_acpi\_EVAL\_方法**](https://docs.microsoft.com/windows-hardware/drivers/ddi/acpiioct/ni-acpiioct-ioctl_acpi_eval_method)请求、 [**ioctl\_acpi\_EVAL\_方法\_EX**](https://docs.microsoft.com/windows-hardware/drivers/ddi/acpiioct/ni-acpiioct-ioctl_acpi_eval_method_ex)请求或[**ioctl\_acpi\_ENUM\_子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/acpiioct/ni-acpiioct-ioctl_acpi_enum_children)请求。
+`SendDownStreamIrp`本主题中提供的函数的代码示例演示如何实现将同步 IOCTL 请求发送到 ACPI 驱动程序的驱动程序提供的函数。 `SendDownStreamIrp`函数可用于发送[**ioctl \_ acpi \_ Eval \_ 方法**](/windows-hardware/drivers/ddi/acpiioct/ni-acpiioct-ioctl_acpi_eval_method)请求、 [**Ioctl \_ acpi \_ eval \_ 方法 \_ EX**](/windows-hardware/drivers/ddi/acpiioct/ni-acpiioct-ioctl_acpi_eval_method_ex)请求或[**ioctl \_ acpi \_ 枚举 \_ 子**](/windows-hardware/drivers/ddi/acpiioct/ni-acpiioct-ioctl_acpi_enum_children)请求。
 
-本部分中包含的 `SendDownStreamIrp` 函数的代码示例将执行以下操作序列：
+`SendDownStreamIrp`本部分中包含的函数的示例代码执行以下操作序列：
 
 -   创建事件对象。
 
--   调用[**IoBuildDeviceIoControlRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iobuilddeviceiocontrolrequest)创建 IOCTL 请求。
+-   调用 [**IoBuildDeviceIoControlRequest**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iobuilddeviceiocontrolrequest) 创建 IOCTL 请求。
 
--   调用[**IoCallDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocalldriver)以发送 IOCTL 请求。
+-   调用 [**IoCallDriver**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iocalldriver) 以发送 IOCTL 请求。
 
 -   等待 ACPI 驱动程序通知事件对象，这表示请求已完成。
 
@@ -102,9 +102,4 @@ Return Value:
 ```
 
  
-
- 
-
-
-
 

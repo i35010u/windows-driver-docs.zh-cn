@@ -4,56 +4,51 @@ description: 扫描仪存储的可选 WIA 子项属性
 ms.assetid: 3683e5ed-0a0a-479f-90ed-8d0d17833260
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ed1ef7df210892eb30a2f9d540172ee935054def
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: b5fee286e5907bc707cbe7000a6ca208d7e9f12a
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67376558"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89184807"
 ---
 # <a name="optional-wia-child-item-properties-for-scanner-storage"></a>扫描仪存储的可选 WIA 子项属性
 
 
-WIA 扫描程序存储子 （文件） 项目都可以选择支持以下 WIA 属性：
+WIA 扫描器存储子 (文件) 项可以选择支持以下 WIA 属性：
 
-[**WIA\_IPA\_FILENAME\_EXTENSION**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ipa-filename-extension)
+[**WIA \_ IPA \_ 文件 \_ 扩展名**](./wia-ipa-filename-extension.md)
 
-[**WIA\_IPA\_ITEM\_SIZE**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ipa-item-size)
+[**WIA \_ IPA \_ 项 \_ 大小**](./wia-ipa-item-size.md)
 
-WIA 扫描程序存储子 （文件） 项目可以根据需要支持以下 WIA 属性，但仅图像文件：
+WIA 扫描器 storage (文件) 项可以选择支持以下 WIA 属性，但仅适用于图像文件：
 
-[**WIA\_IPA\_访问\_权限**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ipa-access-rights)
+[**WIA \_ IPA \_ 访问 \_ 权限**](./wia-ipa-access-rights.md)
 
-[**WIA\_IPA\_BITS\_每\_通道**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ipa-bits-per-channel)
+[**WIA \_ \_ \_ 每通道 IPA 位数 \_**](./wia-ipa-bits-per-channel.md)
 
-[**WIA\_IPA\_CHANNELS\_PER\_PIXEL**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ipa-channels-per-pixel)
+[**WIA \_ IPA \_ \_ 每像素通道数 \_**](./wia-ipa-channels-per-pixel.md)
 
-[**WIA\_IPA\_压缩**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ipa-compression)
+[**WIA \_ IPA \_ 压缩**](./wia-ipa-compression.md)
 
-[**WIA\_IPA\_DATATYPE**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ipa-datatype)
+[**WIA \_ IPA \_ 数据类型**](./wia-ipa-datatype.md)
 
-[**WIA\_IPA\_DEPTH**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ipa-depth)
+[**WIA \_ IPA \_ 深度**](./wia-ipa-depth.md)
 
-[**WIA\_IPA\_格式**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ipa-format)
+[**WIA \_ IPA \_ 格式**](./wia-ipa-format.md)
 
-[**WIA\_IPA\_RAW\_BITS\_每\_通道**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ipa-raw-bits-per-channel)
+[**WIA \_ IPA \_ \_ \_ 每通道原始 \_ 位数**](./wia-ipa-raw-bits-per-channel.md)
 
-[**WIA\_IPA\_TYMED**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ipa-tymed)
+[**WIA \_ IPA \_ TYMED**](./wia-ipa-tymed.md)
 
-[**WIA\_IPS\_PHOTOMETRIC\_INTERP**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ips-photometric-interp)
+[**WIA \_ IP \_ PHOTOMETRIC \_ INTERP**](./wia-ips-photometric-interp.md)
 
-[**WIA\_IPS\_XEXTENT**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ips-xextent)
+[**WIA \_ IP \_ XEXTENT**](./wia-ips-xextent.md)
 
-[**WIA\_IPS\_XRES**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ips-xres)
+[**WIA \_ IP \_ XRES**](./wia-ips-xres.md)
 
-[**WIA\_IPS\_YEXTENT**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ips-yextent)
+[**WIA \_ IP \_ YEXTENT**](./wia-ips-yextent.md)
 
-[**WIA\_IPS\_YRES**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ips-yres)
-
- 
+[**WIA \_ IP \_ YRES**](./wia-ips-yres.md)
 
  
-
-
-
 

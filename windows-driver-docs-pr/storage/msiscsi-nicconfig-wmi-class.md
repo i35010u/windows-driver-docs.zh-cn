@@ -1,27 +1,27 @@
 ---
-title: MSiSCSI\_NICConfig WMI 类
-description: MSiSCSI\_NICConfig WMI 类
+title: MSiSCSI \_ NICCONFIG WMI 类
+description: MSiSCSI \_ NICCONFIG WMI 类
 ms.assetid: 9b7a466d-a9bb-41c5-8f38-e5baf21e863a
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 1893b7a4731cf1d84325acf3db56149b8dcf841d
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 398e8e5ce8863670c2350dc90e67dc8b9bd3fbad
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72845341"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89184389"
 ---
-# <a name="msiscsi_nicconfig-wmi-class"></a>MSiSCSI\_NICConfig WMI 类
+# <a name="msiscsi_nicconfig-wmi-class"></a>MSiSCSI \_ NICCONFIG WMI 类
 
 
 ## <span id="ddk_msiscsi_nicconfig_wmi_class_kr"></span><span id="DDK_MSISCSI_NICCONFIG_WMI_CLASS_KR"></span>
 
 
-MSiSCSI\_NICConfig WMI 类描述网络接口卡（NIC）端口。
+MSiSCSI \_ NICCONFIG WMI 类描述网络接口卡 (NIC) 端口。
 
-HBA 发起程序的微型端口驱动程序必须为 HBA 上的每个端口创建一个 MSiSCSI\_NICConfig 类的实例。
+HBA 发起程序的微型端口驱动程序必须 \_ 为 hba 上的每个端口创建一个 MSiSCSI NICConfig 类的实例。
 
-MSiSCSI\_NICConfig 类是在*配置*中定义的。
+MSiSCSI \_ NICConfig 类是在 *配置*中定义的。
 
 ```cpp
 class MSiSCSI_NICConfig {
@@ -50,13 +50,7 @@ class MSiSCSI_NICConfig {
 };
 ```
 
-当 WMI 工具套件编译上述类定义时，它会生成[**MSiSCSI\_NICConfig**](https://docs.microsoft.com/windows-hardware/drivers/ddi/iscsicfg/ns-iscsicfg-_msiscsi_nicconfig)数据结构。
+当 WMI 工具套件编译上述类定义时，它会生成 [**MSiSCSI \_ NICConfig**](/windows-hardware/drivers/ddi/iscsicfg/ns-iscsicfg-_msiscsi_nicconfig) 数据结构。
 
  
-
- 
-
-
-
-
 

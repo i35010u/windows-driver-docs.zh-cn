@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: caf066b2379f540fdad0a17bf5e27f4fc7c9e540
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 9c5e5dacc20a7e5d63d2344dda3533156491ed40
+ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72828740"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89097271"
 ---
 # <a name="kscategory_bda_network_provider"></a>KSCATEGORY_BDA_NETWORK_PROVIDER
 
 
-KSCATEGORY_BDA_NETWORK_PROVIDER[设备接口类](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)是为[广播驱动程序体系结构](https://docs.microsoft.com/windows-hardware/drivers/ddi/_stream/index)（BDA）中的网络提供程序的[内核流式处理](https://docs.microsoft.com/windows-hardware/drivers/stream/streaming-minidrivers2)（KS）功能类别定义的。
+KSCATEGORY_BDA_NETWORK_PROVIDER[设备接口类](./overview-of-device-interface-classes.md)是为[广播驱动程序体系结构](/windows-hardware/drivers/ddi/_stream/index)中的网络提供[程序 (KS](../stream/streaming-minidrivers2.md)) 功能类别定义的， (BDA) 。
 
 <table>
 <colgroup>
@@ -33,7 +33,7 @@ KSCATEGORY_BDA_NETWORK_PROVIDER[设备接口类](https://docs.microsoft.com/wind
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">属性</th>
+<th align="left">Attribute</th>
 <th align="left">设置</th>
 </tr>
 </thead>
@@ -54,9 +54,9 @@ KSCATEGORY_BDA_NETWORK_PROVIDER[设备接口类](https://docs.microsoft.com/wind
 <a name="remarks"></a>备注
 -------
 
-用于 BDA 设备的驱动程序注册 KSCATEGORY_BDA_NETWORK_PROVIDER 的实例，以向操作系统指示设备支持的是 BDA 网络提供程序筛选器。
+用于 BDA 设备的驱动程序将注册 KSCATEGORY_BDA_NETWORK_PROVIDER 的实例，以指示操作系统设备支持的是 BDA 网络提供程序筛选器。
 
-有关详细信息，请参阅[BDA 筛选器类别 guid](https://docs.microsoft.com/windows-hardware/drivers/stream/bda-filter-category-guids)。
+有关详细信息，请参阅 [BDA 筛选器类别 guid](../stream/bda-filter-category-guids.md)。
 
 <a name="requirements"></a>要求
 ------------
@@ -73,16 +73,10 @@ KSCATEGORY_BDA_NETWORK_PROVIDER[设备接口类](https://docs.microsoft.com/wind
 </tr>
 <tr class="even">
 <td align="left"><p>标头</p></td>
-<td align="left">Bdamedia （包括 Bdamedia）</td>
+<td align="left">Bdamedia (包含 Bdamedia) </td>
 </tr>
 </tbody>
 </table>
 
  
-
- 
-
-
-
-
 

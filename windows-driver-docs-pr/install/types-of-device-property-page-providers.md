@@ -4,51 +4,45 @@ description: 设备属性页提供程序的类型
 ms.assetid: b467543e-6907-44e5-b407-637cad7f6d78
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: af1afea7fd441c22586a56ed4570b33fc5e984c4
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 221449bfbde6c09946b2a3a4343a8b7c1601474c
+ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67370925"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89097351"
 ---
 # <a name="types-of-device-property-page-providers"></a>设备属性页提供程序的类型
 
 
-可以使用以下类型的属性页提供程序来提供自定义设备属性页：
+您可以使用以下类型的属性页提供程序来提供自定义设备属性页：
 
--   **安装程序类和共同安装程序。**
+-   **类安装程序和共同安装程序。**
 
-    一个[共同安装程序](writing-a-co-installer.md)通过支持可以提供一个或多个自定义设备属性页[ **DIF_ADDPROPERTYPAGE_ADVANCED** ](https://docs.microsoft.com/windows-hardware/drivers/install/dif-addpropertypage-advanced)设备安装函数 (DIF) 代码。 当安装程序，用于提供属性页句柄**DIF_ADDPROPERTYPAGE_ADVANCED**请求，它设置为属性页对话框过程的地址。
+    [共同安装程序](writing-a-co-installer.md)可以通过支持[**DIF_ADDPROPERTYPAGE_ADVANCED**](./dif-addpropertypage-advanced.md)设备安装功能 (DIF) 代码提供一个或多个自定义设备属性页。 当提供属性页的安装程序处理 **DIF_ADDPROPERTYPAGE_ADVANCED** 请求时，它会为属性页设置对话框过程的地址。
 
-    共同安装程序的 Toaster 示例 Windows Driver Kit (WDK) 中支持这种类型的设备属性页提供程序。 该文件位于*src\\常规\\toaster\\classinstaller* WDK 的子目录。
+    Windows 驱动程序工具包 (WDK) 中 Toaster 示例的一部分的共同安装程序支持这种类型的设备属性页提供程序。 它位于 WDK 的 *src \\ general \\ toaster \\ classinstaller* 子目录中。
 
-    有关此类型的提供程序要求的详细信息，请参阅[设备属性页提供程序 （共同安装程序） 的特定要求](specific-requirements-for-device-property-page-providers--class-instal.md)。
+    有关此类提供程序的要求的详细信息，请参阅 [设备属性页提供程序的特定要求 (共同安装程序) ](specific-requirements-for-device-property-page-providers--class-instal.md)。
 
-    **请注意**  虽然可以编写自定义设备的属性页提供的类安装程序，但它是通常最好提供此功能在共同安装程序，以及其他特定于设备或设备类特定功能。
+    **注意**   尽管可以编写提供自定义设备属性页的类安装程序，但通常更好的做法是在共同安装程序中提供此功能，以及其他特定于设备或特定于设备的功能。
 
      
 
 -   **属性页扩展 DLL。**
 
-    提供了一个或多个自定义设备属性页的 DLL 被称为*属性页扩展 DLL*。 这种类型的提供程序通过实现来支持自定义属性页**AddPropSheetPageProc、 ExtensionPropSheetPageProc**，和其他属性表回调函数。 有关这些函数的详细信息，请参阅 Microsoft Windows 软件开发工具包 (SDK) for Windows 7 和.NET Framework 4.0 的文档。
+    提供一个或多个自定义设备属性页的 DLL 称为 *属性页扩展 DLL*。 这种类型的提供程序通过实现 **AddPropSheetPageProc、ExtensionPropSheetPageProc**和其他属性表回调函数支持自定义属性页。 有关这些函数的详细信息，请参阅适用于 Windows 7 的 Microsoft Windows 软件开发工具包 (SDK) 和 .NET Framework 4.0 文档。
 
-    此类型提供程序的安装通过指定**EnumPropPages32**中的条目*添加注册表部分*的[ **INF AddReg 指令**](inf-addreg-directive.md). 中指定此指令[ **INF *DDInstall*部分**](inf-ddinstall-section.md)。
+    这种类型的提供程序是通过在[**INF AddReg 指令**](inf-addreg-directive.md)的 "*添加注册表" 部分*中指定**EnumPropPages32**项安装的。 此指令在 [**INF *DDInstall* 部分**](inf-ddinstall-section.md)中指定。
 
-    AC97 示例音频驱动程序支持此类型的设备属性页提供程序。 该文件位于*src\\音频\\ac97* WDK 的子目录。
+    AC97 示例音频驱动程序支持这种类型的设备属性页提供程序。 它位于 WDK 的 *src \\ 音频 \\ ac97* 子目录中。
 
-    有关此类型的提供程序要求的详细信息，请参阅[设备属性页提供程序 (属性页扩展 Dll) 的特定要求](specific-requirements-for-device-property-page-providers--property-pag.md)。
+    有关此类提供程序的要求的详细信息，请参阅 [) 的设备属性页提供程序 (的特定要求 ](specific-requirements-for-device-property-page-providers--property-pag.md)。
 
-    **请注意**  除非你[驱动程序包](driver-packages.md)需要类安装程序或辅助安装程序支持自定义设备属性页，通过使用属性页扩展 DLL 效率更高。
+    **注意**   除非您的[驱动程序包](driver-packages.md)需要类安装程序或共同安装程序，否则通过使用属性页扩展 DLL，更有效地支持自定义设备属性页。
 
      
 
-所有类型的设备属性页提供程序必须都遵循中所述的准则[设备属性页提供程序的常规要求](general-requirements-for-device-property-page-providers.md)。
+所有类型的设备属性页提供程序必须遵循 [设备属性页提供程序一般要求](general-requirements-for-device-property-page-providers.md)中所述的指导原则。
 
  
-
- 
-
-
-
-
 

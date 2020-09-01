@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: f7d2a6e95e3105dd679c8afe400ec4e9f80e005c
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 51990e535f8ed1fecaa9c592d8bd10f21e1da63f
+ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386432"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89096919"
 ---
-# <a name="guiddevinterfaceparclass"></a>GUID_DEVINTERFACE_PARCLASS
+# <a name="guid_devinterface_parclass"></a>GUID_DEVINTERFACE_PARCLASS
 
 
-GUID_DEVINTERFACE_PARCLASS[设备接口类](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)定义为附加到的设备[并行端口](https://docs.microsoft.com/previous-versions/ff544263(v=vs.85))。
+为附加到[并行端口](/previous-versions/ff544263(v=vs.85))的设备定义 GUID_DEVINTERFACE_PARCLASS[设备接口类](./overview-of-device-interface-classes.md)。
 
 <table>
 <colgroup>
@@ -33,7 +33,7 @@ GUID_DEVINTERFACE_PARCLASS[设备接口类](https://docs.microsoft.com/windows-h
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">特性</th>
+<th align="left">Attribute</th>
 <th align="left">设置</th>
 </tr>
 </thead>
@@ -54,15 +54,15 @@ GUID_DEVINTERFACE_PARCLASS[设备接口类](https://docs.microsoft.com/windows-h
 <a name="remarks"></a>备注
 -------
 
-并行连接到并行端口的设备驱动程序注册 GUID_DEVINTERFACE_PARCLASS 通知操作系统和应用程序的并行设备存在的实例。
+连接到并行端口的并行设备的驱动程序将注册 GUID_DEVINTERFACE_PARCLASS 的实例，以通知操作系统和存在并行设备的应用程序。
 
-并行端口的系统提供的总线驱动程序创建每个硬件设备连接到并行端口将此设备接口类的实例。
+系统提供的并行端口总线驱动程序为附加到并行端口的每个硬件设备创建此设备接口类的实例。
 
-有关并行的设备和驱动程序的信息，请参阅[并行设备设计指南](https://docs.microsoft.com/previous-versions/ff544263(v=vs.85))。
+有关并行设备和驱动程序的信息，请参阅 [并行设备设计指南](/previous-versions/ff544263(v=vs.85))。
 
-有关并行端口设备接口类的信息，请参阅[ **GUID_DEVINTERFACE_PARALLEL**](guid-devinterface-parallel.md)。
+有关并行端口的设备接口类的信息，请参阅 [**GUID_DEVINTERFACE_PARALLEL**](guid-devinterface-parallel.md)。
 
-[**GUID_PARCLASS_DEVICE** ](guid-parclass-device.md)对于此类的新实例，而是使用 GUID_DEVINTERFACE_PARCLASS 是此设备接口类; 的已过时标识符。
+[**GUID_PARCLASS_DEVICE**](guid-parclass-device.md) 是此设备接口类的过时标识符;对于此类的新实例，请改用 GUID_DEVINTERFACE_PARCLASS。
 
 <a name="requirements"></a>要求
 ------------
@@ -74,17 +74,17 @@ GUID_DEVINTERFACE_PARCLASS[设备接口类](https://docs.microsoft.com/windows-h
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>Version</p></td>
+<td align="left"><p>版本</p></td>
 <td align="left"><p>在 Microsoft Windows 2000 和更高版本的 Windows 中可用。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>Header</p></td>
-<td align="left">Ntddpar.h （包括 Ntddpar.h）</td>
+<td align="left"><p>标头</p></td>
+<td align="left">Ntddpar (包含 Ntddpar) </td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
 [**GUID_DEVINTERFACE_PARALLEL**](guid-devinterface-parallel.md)
@@ -92,11 +92,4 @@ GUID_DEVINTERFACE_PARCLASS[设备接口类](https://docs.microsoft.com/windows-h
 [**GUID_PARCLASS_DEVICE**](guid-parclass-device.md)
 
  
-
- 
-
-
-
-
-
 

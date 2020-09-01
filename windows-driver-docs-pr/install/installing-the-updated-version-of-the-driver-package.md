@@ -4,49 +4,43 @@ description: 安装驱动程序包的已更新版本
 ms.assetid: c2138956-a036-410d-b34e-b7b6efbcbace
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 155dfb43fab14e7c2ae856d7fd0abe212f23bf0b
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: ea2b36b222ed1b90edd4b173f72836b5c35cce56
+ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67370952"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89097369"
 ---
 # <a name="installing-the-updated-version-of-the-driver-package"></a>安装驱动程序包的已更新版本
 
 
-检查完[同样将 Windows 配置为排名驱动程序签名](configuring-windows-to-rank-driver-signatures-equally.md)，可以在目标系统上安装收件箱驱动程序的专用版本。 若要安装专用生成，请完成以下步骤：
+[将 Windows 配置为按比例排列驱动程序签名](configuring-windows-to-rank-driver-signatures-equally.md)后，可以在目标系统上安装收件箱驱动程序的专用生成。 若要安装专用生成，请完成以下步骤：
 
-1.  添加[驱动程序包](driver-packages.md)向驱动程序存储通过使用[PnPUtil](https://docs.microsoft.com/windows-hardware/drivers/devtest/pnputil) Windows Vista 和更高版本的 Windows 中提供的实用工具。 例如：
+1.  使用 Windows Vista 和更高版本的 Windows 中提供的[PnPUtil](../devtest/pnputil.md)实用程序，将[驱动程序包](driver-packages.md)添加到驱动程序存储区。 例如：
 
     ```cpp
     pnputil.exe -a  sample.inf
     ```
 
-2.  使用 DevCon Remove 命令删除的设备或设备类的情况下更新的驱动程序包安装。 通过全部或部分指定设备或设备类[硬件 ID](hardware-ids.md)，[兼容 ID](compatible-ids.md)，或设备的设备实例 ID。 例如：
+2.  使用 DevCon Remove 命令删除已更新的驱动程序包安装的设备或设备类。 设备或设备类是通过设备的全部或部分 [硬件 ID](hardware-ids.md)、 [兼容 ID](compatible-ids.md)或设备实例 ID 指定的。 例如：
 
     ```cpp
     devcon remove "PCI\VEN_8086&DEV_7110"
     ```
 
-    重新启动系统后，重新安装设备时，会自动加载新的驱动程序。 若要让 DevCon 自动重新启动系统，添加条件的重新启动参数 ( **/r**) 到 remove 命令。
+    重新启动系统后重新安装设备后，会自动加载新的驱动程序。 若要让 DevCon 自动重新启动系统，请将 (**/r**) 的条件重新启动参数添加到 "删除" 命令。
 
-    **请注意**   [DevCon](https://docs.microsoft.com/windows-hardware/drivers/devtest/devcon) WDK 中提供了工具。 有关其命令的详细信息，请参阅[DevCon 命令](https://docs.microsoft.com/windows-hardware/drivers/devtest/devcon-general-commands)。
+    **注意**   在 WDK 中提供了[DevCon](../devtest/devcon.md)工具。 有关其命令的详细信息，请参阅 [DevCon 命令](../devtest/devcon-general-commands.md)。
 
      
 
-DevCon Remove 命令的替代方法是更新[驱动程序包](driver-packages.md)通过使用以下值之一：
+DevCon Remove 命令的替代方法是使用以下命令之一更新 [驱动程序包](driver-packages.md) ：
 
--   若要执行"更新驱动程序"操作在设备上的设备管理器。
+-   设备管理器在设备上执行 "更新驱动程序" 操作。
 
-    在设备管理器窗口中，右键单击设备的名称或图标并选择**属性**。 在中**属性**窗口中，单击驱动程序选项卡，然后单击**更新驱动程序**按钮。
+    在设备管理器窗口中，右键单击设备的名称或图标，然后选择 " **属性**"。 在 " **属性** " 窗口中，单击 "驱动程序" 选项卡，然后单击 " **更新驱动程序** " 按钮。
 
--   DevCon Update 命令。 有关此命令的详细信息，请参阅[ **DevCon 命令**](https://docs.microsoft.com/windows-hardware/drivers/devtest/devcon-general-commands)。
-
- 
+-   DevCon Update 命令。 有关此命令的详细信息，请参阅 [**DevCon 命令**](../devtest/devcon-general-commands.md)。
 
  
-
-
-
-
 

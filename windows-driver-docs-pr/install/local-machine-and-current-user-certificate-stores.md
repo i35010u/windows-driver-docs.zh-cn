@@ -4,12 +4,12 @@ description: 本地计算机和当前用户证书存储
 ms.assetid: b7362f2e-c8ff-42e4-9edc-df4b9967df29
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2e6551bb13f2cdfdb4ed53b882a17638f961506a
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 62e9024541b99c8a4a94102d85888cc6a6aa1af4
+ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67377671"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89097233"
 ---
 # <a name="local-machine-and-current-user-certificate-stores"></a>本地计算机和当前用户证书存储
 
@@ -18,28 +18,22 @@ ms.locfileid: "67377671"
 
 * 本地计算机证书存储
 
-    这种类型的证书存储区是计算机的本地和适用的计算机上的所有用户。 此证书存储区位于在注册表中 HKEY_LOCAL_MACHINE 根下。
+    这种类型的证书存储是计算机的本地证书存储，并且对于计算机上的所有用户都是全局性的。 此证书存储位于注册表中 HKEY_LOCAL_MACHINE 根下。
 
-* 当前用户证书存储区
+* 当前用户证书存储
 
-    这种类型的证书存储是本地的计算机上的用户帐户。 此证书存储区位于在 HKEY_CURRENT_USER 根目录下的注册表中。
+    此类型的证书存储区是计算机上用户帐户的本地证书。 此证书存储位于注册表中 HKEY_CURRENT_USER 根下。
 
-有关特定注册表的证书存储位置，请参阅[系统存储位置](https://docs.microsoft.com/windows/desktop/seccrypto/system-store-locations)。
+有关证书存储的特定注册表位置，请参阅 [系统存储位置](/windows/desktop/seccrypto/system-store-locations)。
 
-请注意，所有当前用户的证书存储*除非当前用户/个人存储区*继承本地计算机证书存储的内容。 例如，如果将证书添加到本地计算机[受信任的根证书颁发机构证书存储区](trusted-root-certification-authorities-certificate-store.md)，所有当前用户 （具有更高版本需要注意的地方） 也受信任的根证书颁发机构证书存储。包含证书。
+请注意，当前 *用户/个人存储区之外* 的所有当前用户证书存储都将继承本地计算机证书存储的内容。 例如，如果将证书添加到本地计算机的 " [受信任的根证书颁发机构" 证书存储](trusted-root-certification-authorities-certificate-store.md)中，则所有当前用户受信任的根证书颁发机构证书存储 (，并附带上述注意事项) 也包含证书。
 
 >[!NOTE]
->驱动程序签名验证在插即用 (PnP) 安装过程中需要该根和验证码证书，包括[测试证书](test-certificates.md)，位于本地计算机证书存储中。
+>即插即用 (PnP) 安装期间的驱动程序签名验证要求根证书和 Authenticode 证书（包括 [测试证书](./makecert-test-certificate.md)）位于本地计算机证书存储中。
 
  
 
-有关如何添加或从系统证书存储中删除证书的详细信息，请参阅[ **CertMgr**](https://docs.microsoft.com/windows-hardware/drivers/devtest/certmgr)。
+有关如何在系统证书存储中添加或删除证书的详细信息，请参阅 [**certmgr.msc**](../devtest/certmgr.md)。
 
  
-
- 
-
-
-
-
 

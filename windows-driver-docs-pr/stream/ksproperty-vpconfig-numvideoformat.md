@@ -1,6 +1,6 @@
 ---
-title: KSPROPERTY\_VPCONFIG\_NUMVIDEOFORMAT
-description: KSPROPERTY\_VPCONFIG\_NUMVIDEOFORMAT 属性获取受支持像素格式的最大数目。
+title: KSPROPERTY \_ VPCONFIG \_ NUMVIDEOFORMAT
+description: KSPROPERTY \_ VPCONFIG \_ NUMVIDEOFORMAT 属性获取受支持像素格式的最大数目。
 ms.assetid: aa081e46-1992-43db-b287-220e3869902a
 keywords:
 - KSPROPERTY_VPCONFIG_NUMVIDEOFORMAT 流媒体设备
@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3c5a689d64d9f39b84d731e678d078ea6d9a985f
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 706dad3710f3c6033ec90c03d12239b571a05651
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72842805"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89183953"
 ---
-# <a name="ksproperty_vpconfig_numvideoformat"></a>KSPROPERTY\_VPCONFIG\_NUMVIDEOFORMAT
+# <a name="ksproperty_vpconfig_numvideoformat"></a>KSPROPERTY \_ VPCONFIG \_ NUMVIDEOFORMAT
 
 
-KSPROPERTY\_VPCONFIG\_NUMVIDEOFORMAT 属性获取受支持像素格式的最大数目。
+KSPROPERTY \_ VPCONFIG \_ NUMVIDEOFORMAT 属性获取受支持像素格式的最大数目。
 
 ## <span id="ddk_ksproperty_vpconfig_numvideoformat_ks"></span><span id="DDK_KSPROPERTY_VPCONFIG_NUMVIDEOFORMAT_KS"></span>
 
@@ -41,7 +41,7 @@ KSPROPERTY\_VPCONFIG\_NUMVIDEOFORMAT 属性获取受支持像素格式的最大�
 </colgroup>
 <thead>
 <tr class="header">
-<th>“获取”</th>
+<th>获取</th>
 <th>设置</th>
 <th>目标</th>
 <th>属性描述符类型</th>
@@ -50,10 +50,10 @@ KSPROPERTY\_VPCONFIG\_NUMVIDEOFORMAT 属性获取受支持像素格式的最大�
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>“是”</p></td>
-<td><p>无</p></td>
-<td><p>大头针</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)"><strong>KSPROPERTY</strong></a></p></td>
+<td><p>是</p></td>
+<td><p>否</p></td>
+<td><p>Pin</p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)"><strong>KSPROPERTY</strong></a></p></td>
 <td><p>DWORD</p></td>
 </tr>
 </tbody>
@@ -61,7 +61,7 @@ KSPROPERTY\_VPCONFIG\_NUMVIDEOFORMAT 属性获取受支持像素格式的最大�
 
  
 
-属性值（操作数据）是一个 DWORD，用于指定最大像素格式数。
+) 操作数据 (的属性值是一个 DWORD，用于指定最大像素格式数。
 
 <a name="requirements"></a>要求
 ------------
@@ -74,7 +74,7 @@ KSPROPERTY\_VPCONFIG\_NUMVIDEOFORMAT 属性获取受支持像素格式的最大�
 <tbody>
 <tr class="odd">
 <td><p>标头</p></td>
-<td>Ksmedia （包括 Ksmedia）</td>
+<td>Ksmedia (包含 Ksmedia) </td>
 </tr>
 </tbody>
 </table>
@@ -82,14 +82,7 @@ KSPROPERTY\_VPCONFIG\_NUMVIDEOFORMAT 属性获取受支持像素格式的最大�
 ## <a name="see-also"></a>另请参阅
 
 
-[**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)
+[**KSPROPERTY**](/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)
 
  
-
- 
-
-
-
-
-
 

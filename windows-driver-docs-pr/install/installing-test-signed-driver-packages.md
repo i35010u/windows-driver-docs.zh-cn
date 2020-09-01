@@ -3,50 +3,44 @@ title: 安装已进行测试签名的驱动程序包
 description: 安装已进行测试签名的驱动程序包
 ms.assetid: 6abbe51c-0fdf-465f-b1f2-d48e593a4f0e
 keywords:
-- 测试签名驱动程序 WDK，安装测试签名驱动程序包
-- 驱动程序签名 WDK、 驱动程序包
-- 签署驱动程序 WDK、 驱动程序包
-- 数字签名 WDK、 驱动程序包
-- WDK、 驱动程序包签名
-- 驱动程序数据包数字签名 WDK
-- 数据包数字签名 WDK
-- 测试签名驱动程序 WDK、 驱动程序包
-- 安装测试签名的驱动程序包 WDK
+- 测试签名驱动程序 WDK，安装测试签名的驱动程序包
+- 驱动程序签名 WDK，驱动程序包
+- 对驱动程序进行签名 WDK，驱动程序包
+- 数字签名 WDK，驱动程序包
+- 签名 WDK，驱动程序包
+- 驱动程序包数字签名 WDK
+- 包数字签名 WDK
+- 测试签名驱动程序 WDK，驱动程序包
+- 安装测试签名驱动程序包 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ec819f268b48609a7d1529d033da5857f1d06349
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 074abe6e21342f8ceac474a031618faa42b483fa
+ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63360029"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89097371"
 ---
 # <a name="installing-test-signed-driver-packages"></a>安装已进行测试签名的驱动程序包
 
 
-从 Windows Vista，测试签名开始[驱动程序包](driver-packages.md)应安装并加载无需用户交互，如果满足以下条件：
+从 Windows Vista 开始，如果满足以下条件，则测试签名的 [驱动程序包](driver-packages.md) 应在无需用户交互的情况下进行安装和加载：
 
--   驱动程序包符合通用要求的 Windows Vista 和更高版本的 Windows。
+-   驱动程序包符合 Windows Vista 和更高版本的 Windows 的一般要求。
 
--   驱动程序包进行签名和验证签名，如中所述[测试签名驱动程序包](test-signing-driver-packages.md)。
+-   驱动程序包已签名，并验证签名，如 [测试签名驱动程序包](test-signing-driver-packages.md)中所述。
 
--   驱动程序包不会更改后对其进行签名。
+-   驱动程序包在签名后不会更改。
 
--   已用于签署驱动程序包的测试证书正确安装的测试计算机上，如中所述[测试计算机上安装测试证书](installing-a-test-certificate-on-a-test-computer.md)。
+-   在测试计算机上正确安装了用于对驱动程序包进行签名的测试证书，如在 [测试计算机上安装测试证书](installing-a-test-certificate-on-a-test-computer.md)中所述。
 
--   如果非 PnP 驱动程序包含一个已签名[编录文件](catalog-files.md)而不是嵌入式签名，将安装驱动程序的安装应用程序已安装的编录文件系统目录根目录中中所述[安装适用于非 PnP 驱动程序测试签名目录文件](installing-a-test-signed-catalog-file-for-a-non-pnp-driver.md)。
+-   如果非 PnP 驱动程序具有已签名的 [目录文件](catalog-files.md) 而不是嵌入的签名，则安装该驱动程序的安装应用程序已将目录文件安装在系统目录根目录中，如 [安装非 PnP 驱动程序的测试签名目录文件](installing-a-test-signed-catalog-file-for-a-non-pnp-driver.md)中所述。
 
--   在测试计算机上启用测试签名。 有关详细信息，请参阅[TESTSIGNING 启动配置选项](the-testsigning-boot-configuration-option.md)。
+-   在测试计算机上启用测试签名。 有关详细信息，请参阅 [TESTSIGNING Boot Configuration 选项](the-testsigning-boot-configuration-option.md)。
 
-有关如何安装测试签名驱动程序包的概述，请参阅[测试计算机上安装 Test-Signed 驱动程序包](installing-a-test-signed-driver-package-on-the-test-computer.md)。
+有关如何安装测试签名驱动程序包的概述，请参阅 [在测试计算机上安装测试签名的驱动程序包](installing-a-test-signed-driver-package-on-the-test-computer.md)。
 
-有关如何解决安装问题的详细信息，请参阅[疑难解答安装和已签名的驱动程序包的负载问题](troubleshooting-install-and-load-problems-with-signed-driver-packages.md)。
-
- 
+有关如何解决安装问题的详细信息，请参阅 [排查签名驱动程序包的安装和加载问题](./detecting-driver-load-errors.md)。
 
  
-
-
-
-
 

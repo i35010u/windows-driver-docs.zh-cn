@@ -5,12 +5,12 @@ ms.assetid: d4b8a964-f843-4960-9077-46746af27a61
 ms.date: 08/27/2020
 ms.localizationpriority: medium
 ms.custom: contperfq1
-ms.openlocfilehash: 5aa9bea204b025946b8c3ec888258424c398eca4
-ms.sourcegitcommit: c4483d7b55a39aac0baf18dc1aa2aa4d6c8a2db9
+ms.openlocfilehash: 75ea826de2d7c1b5ade71f952a9d67ccc70b4242
+ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88992028"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89097317"
 ---
 # <a name="class-and-classguid-entries-for-inf-version-section"></a>INF 版本部分的类和 ClassGuid 条目  
 
@@ -63,7 +63,7 @@ ClassGuid = {4d36e968-e325-11ce-bfc1-08002be10318}
 **扩展 INF**  
 类 = 扩展  
 ClassGuid = {e2f84ce7-8efa-411c-aa69-97454ca4cb57}  
- (Windows 10 及更高版本的 Windows) 此类包括需要自定义的所有设备。 有关更多详细信息，请参阅 [使用扩展 INF 文件](https://docs.microsoft.com/windows-hardware/drivers/install/using-an-extension-inf-file)。  
+ (Windows 10 及更高版本的 Windows) 此类包括需要自定义的所有设备。 有关更多详细信息，请参阅 [使用扩展 INF 文件](./using-an-extension-inf-file.md)。  
   
 <a href="" id="floppy-disk-controllers-"></a>**软盘控制器**  
 类 = FDC  
@@ -83,7 +83,7 @@ ClassGuid = {4d36e96a-e325-11ce-bfc1-08002be10318}
 **人体学接口设备 (HID) **  
 类 = HIDClass  
 ClassGuid = {745a17a0-74d3-11d0-b6fe-00a0c90f57da}  
-此类包括由系统提供的 [HID 类驱动程序](https://docs.microsoft.com/previous-versions/jj126193(v=vs.85))操作的交互式输入设备。 这包括符合使用 HID 微型驱动程序的 [USB HID 标准](../hid/hid-over-usb.md) 和非 usb 设备的 usb 设备。 有关详细信息，请参阅 [HIDClass 设备安装程序类](../hid/minidriver-operations.md)。  (另请参阅此列表后面的键盘或鼠标类。 )   
+此类包括由系统提供的 [HID 类驱动程序](/previous-versions/jj126193(v=vs.85))操作的交互式输入设备。 这包括符合使用 HID 微型驱动程序的 [USB HID 标准](../hid/hid-over-usb.md) 和非 usb 设备的 usb 设备。 有关详细信息，请参阅 [HIDClass 设备安装程序类](../hid/minidriver-operations.md)。  (另请参阅此列表后面的键盘或鼠标类。 )   
   
 **IEEE 1284.4 设备**  
 类 = Dot4  
@@ -145,7 +145,7 @@ ClassGuid = {4d36e970-e325-11ce-bfc1-08002be10318}
 <a href="" id="modem-"></a>**R**  
 类 = 调制解调器  
 ClassGuid = {4d36e96d-e325-11ce-bfc1-08002be10318}  
-此类包括调制解调器设备或 *软件调制解调器*。 这些设备会在调制解调器设备和设备驱动程序之间拆分功能。 有关调制解调器 INF 文件和 Microsoft Windows 驱动模型 (WDM) 调制解调器设备的详细信息，请参阅 [调制解调器 Inf 文件概述](https://docs.microsoft.com/previous-versions/windows/hardware/modem/ff542559(v=vs.85)) 和 [添加 WDM 调制解调器支持](https://docs.microsoft.com/previous-versions/windows/hardware/modem/ff541218(v=vs.85))。  
+此类包括调制解调器设备或 *软件调制解调器*。 这些设备会在调制解调器设备和设备驱动程序之间拆分功能。 有关调制解调器 INF 文件和 Microsoft Windows 驱动模型 (WDM) 调制解调器设备的详细信息，请参阅 [调制解调器 Inf 文件概述](/previous-versions/windows/hardware/modem/ff542559(v=vs.85)) 和 [添加 WDM 调制解调器支持](/previous-versions/windows/hardware/modem/ff541218(v=vs.85))。  
   
 <a href="" id="monitor-"></a>**监控器**  
 类 = 监视器  
@@ -175,7 +175,7 @@ ClassGuid = {50906cb8-ba12-11d1-bf5d-0000f805f530}
 <a href="" id="network-adapter-"></a>**网络适配器**  
 类 = Net  
 ClassGuid = {4d36e972-e325-11ce-bfc1-08002be10318}  
-此类包含网络适配器驱动程序。  这些驱动程序必须调用 [**NdisMRegisterMiniportDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismregisterminiportdriver) 或 [**NetAdapterCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/netadapter/nf-netadapter-netadaptercreate)。  不使用 NDIS 或 Get-netadapter 的驱动程序应使用不同的安装程序类。
+此类包含网络适配器驱动程序。  这些驱动程序必须调用 [**NdisMRegisterMiniportDriver**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismregisterminiportdriver) 或 [**NetAdapterCreate**](/windows-hardware/drivers/ddi/netadapter/nf-netadapter-netadaptercreate)。  不使用 NDIS 或 Get-netadapter 的驱动程序应使用不同的安装程序类。
   
 <a href="" id="network-client-"></a>**网络客户端**  
 类 = NetClient  
@@ -244,7 +244,7 @@ ClassGuid = {50dd5230-ba8a-11d1-bf5d-0000f805f530}
 **软件组件**  
 类 = SoftwareComponent  
 ClassGuid = {5c4c3332-344d-483c-8739-259e934c9cc8}  
- (Windows 10 1703 版及更高版本的 Windows) 此类包括用于封装软件组件的虚拟子设备。 有关更多详细信息，请参阅 [使用 INF 文件添加软件组件](https://docs.microsoft.com/windows-hardware/drivers/install/adding-software-components-with-an-inf-file)。  
+ (Windows 10 1703 版及更高版本的 Windows) 此类包括用于封装软件组件的虚拟子设备。 有关更多详细信息，请参阅 [使用 INF 文件添加软件组件](./using-a-component-inf-file.md)。  
   
 <a href="" id="storage-volumes-"></a>**存储卷**  
 类 = 卷  
@@ -288,7 +288,6 @@ ClassGuid = {997b5d8d-c442-4f2e-baf3-9c8e671e9e21}
    
   
 
-  
   
   
   

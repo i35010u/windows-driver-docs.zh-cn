@@ -4,35 +4,35 @@ description: 写入错误或警告日志条目
 ms.assetid: 80393368-7430-46ca-a53e-c94b7e8acfa0
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b561f3e9d26b96fec0f7d5f70e136e1c1fe2437b
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 678199add77f59a1911f0f281bb02ba13bcb1721
+ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67363497"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89097067"
 ---
 # <a name="writing-an-error-or-warning-log-entry"></a>写入错误或警告日志条目
 
 
-下面的示例演示如何应用程序通常可能调用[ **SetupWriteTextLog** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupwritetextlog)编写错误或警告中的条目[SetupAPI 文本日志](setupapi-text-logs.md)。 但是，如果事件是与特定于安装程序 Api 的错误或 Win32 错误相关联，则应用程序可以调用[ **SetupWriteTextLogError** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupwritetextlogerror)相反。 **SetupWriteTextLogError**便于进行日志记录和解释这些类型的错误有关的信息。
+下面的示例演示应用程序通常如何调用 [**SetupWriteTextLog**](/windows/desktop/api/setupapi/nf-setupapi-setupwritetextlog) ，以便在 [setupapi.log 文本日志](setupapi-text-logs.md)中写入错误或警告条目。 但是，如果事件与 Setupapi.log 特定的错误或 Win32 错误相关联，则应用程序可以改为调用 [**SetupWriteTextLogError**](/windows/desktop/api/setupapi/nf-setupapi-setupwritetextlogerror) 。 **SetupWriteTextLogError** 便于记录和解释有关这些类型的错误的信息。
 
-有关调用信息**SetupWriteTextLog**若要记录一条错误消息，请参阅[日志记录一条错误消息](#logging-an-error-message)以及有关调用**SetupWriteTextLog**到日志一条警告消息，请参阅[日志记录一条警告消息](#logging-a-warning-message)。
+有关调用 **SetupWriteTextLog** 记录错误消息的信息，请参阅 [记录错误消息](#logging-an-error-message) 和有关调用 **SetupWriteTextLog** 以记录警告消息的信息，请参阅 [记录警告消息](#logging-a-warning-message)。
 
-### <a href="" id="logging-an-error-message"></a> 日志记录一条错误消息
+### <a name="logging-an-error-message"></a><a href="" id="logging-an-error-message"></a> 记录错误消息
 
-在此示例中，应用程序调用[ **SetupWriteTextLog**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupwritetextlog)，提供以下参数值：
+在此示例中，应用程序调用 [**SetupWriteTextLog**](/windows/desktop/api/setupapi/nf-setupapi-setupwritetextlog)，并提供以下参数值：
 
--   *LogToken*设置为一个日志令牌值，该值可以通过调用获得[ **SetupGetThreadLogToken** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupgetthreadlogtoken)或者是系统定义的日志之一中所述的令牌值[登录令牌](log-tokens.md)。
+-   *LogToken* 设置为一个日志令牌值，该值可以通过调用 [**SetupGetThreadLogToken**](/windows/desktop/api/setupapi/nf-setupapi-setupgetthreadlogtoken) 获取，也可以是 [日志](log-tokens.md)令牌中描述的系统定义的日志令牌值之一。
 
--   *类别*设置为 TXTLOG_VENDOR，指示该日志条目由供应商提供的应用程序。 事件类别中所述[启用文本日志的事件类别](enabling-event-categories-for-a-text-log.md)。
+-   "*类别*" 设置为 "TXTLOG_VENDOR"，指示日志条目由供应商提供的应用程序发出。 事件类别在 [启用文本日志的事件类别](enabling-event-categories-for-a-text-log.md)中进行了介绍。
 
--   *标志*设置为按位或的 TXTLOG_ERROR 和 TXTLOG_TIMESTAMP。 在此示例中，不会更改缩进深度和当前的缩进深度之前被设置为五个等宽字体的文本空间。 有关如何更改缩进深度信息，请参阅[写入缩进日志条目](writing-indented-log-entries.md)。 事件级别中所述[事件级别设置为文本日志](setting-the-event-level-for-a-text-log.md)主题。
+-   *Flags* 设置为 TXTLOG_ERROR 和 TXTLOG_TIMESTAMP 的按位 "或"。 在此示例中，不更改缩进深度，当前缩进深度之前设置为五个等宽文本空间。 有关如何更改缩进深度的信息，请参阅 [写入缩进的日志条目](writing-indented-log-entries.md)。 " [设置文本日志的事件级别](setting-the-event-level-for-a-text-log.md) " 主题中介绍了事件级别。
 
--   *MessageStr*设置为文本 （"应用程序错误 (%d)"）。
+-   *MessageStr* 设置为 "应用程序错误 (% d) " )  ( 文本。
 
--   以逗号分隔列表提供了变量的错误代码。
+-   逗号分隔的列表提供变量错误代码。
 
-下面的代码调用[ **SetupWriteTextLog** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupwritetextlog)编写此示例中的日志项：
+下面的代码调用 [**SetupWriteTextLog**](/windows/desktop/api/setupapi/nf-setupapi-setupwritetextlog) 为此示例编写日志条目：
 
 ```cpp
 //The LogToken value was previously returned by call to
@@ -44,29 +44,23 @@ DWORD ErrorCode = 1111; // An error code value
 SetupWriteTextLog(LogToken, Category, Flags, TEXT("Application Error (%d)"),ErrorCode);
 ```
 
-如果 TXTLOG_VENDOR 事件类别，并为文本日志设置 TXTLOG_ERROR 事件级别，此代码会在将按如下所示设置格式的文本日志中创建一个条目：
+如果启用了 TXTLOG_VENDOR 事件类别并且为文本日志设置了 TXTLOG_ERROR 事件级别，则此代码将在文本日志中创建一个条目，格式如下：
 
 ```cpp
 !!!  2005/02/13 22:06:28.109:    :  Application error (1111) 
 ```
 
-*Entry_prefix*字段"!!! -指示日志条目是一条错误消息。
+*Entry_prefix*字段 "!!! "指示日志条目是一条错误消息。
 
-### <a href="" id="logging-a-warning-message"></a> 日志记录一条警告消息
+### <a name="logging-a-warning-message"></a><a href="" id="logging-a-warning-message"></a> 记录警告消息
 
-日志记录一条警告消息是几乎与日志记录一条错误消息。 不同之处是事件级别的设置。 设置*标志*而不是 TXTLOG_ERROR TXTLOG_WARNING 到。 如果**SetupWriteTextLog**调用中所述[日志记录一条错误消息](#logging-an-error-message)，只不过*标志*设置为按位或的 TXTLOG_WARNING 和 TXTLOG_TIMESTAMP， [**SetupWriteTextLog** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupwritetextlog)应编写以下日志条目：
+记录警告消息与记录错误消息几乎完全相同。 不同之处在于事件级别的设置。 将 *标志* 设置为 TXTLOG_WARNING 而不是 TXTLOG_ERROR。 如果按[记录错误消息](#logging-an-error-message)中所述方式调用**SetupWriteTextLog** ，则除了*Flags*设置为 TXTLOG_WARNING 和 TXTLOG_TIMESTAMP 的按位 "或"， [**SetupWriteTextLog**](/windows/desktop/api/setupapi/nf-setupapi-setupwritetextlog)将写入以下日志条目：
 
 ```cpp
 !  2005/02/13 22:06:28.109:    :  Application error (1111) 
 ```
 
-*Entry_prefix*日志条目的字段是"！ "，指示这是一条警告消息，而不是"!!! "，指示一条错误消息。
+日志条目的 " *entry_prefix* " 字段为 "！ "，它指示这是一条警告消息，而不是"!!! "，它将指示一条错误消息。
 
  
-
- 
-
-
-
-
 

@@ -12,19 +12,19 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: edb22f63126d47282e89d5c1a1c37d90b9457fd8
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 550185b03742245f785ffdf3bf3dc6e8f0cc5a90
+ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67380394"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89097215"
 ---
 # <a name="watermarkpath-xml-element"></a>watermarkPath XML 元素
 
 
-\[DIFx 已被弃用，有关详细信息，请参阅[DIFx 准则](https://docs.microsoft.com/windows-hardware/drivers/install/difx-guidelines)。\]
+\[DIFx 已弃用，有关详细信息，请参阅 [DIFx 指导原则](./difx-guidelines.md)。\]
 
-**WatermarkPath**元素指定 DPInst 左侧和右侧的 DPInst 欢迎页和 DPInst 完成页显示的自定义水印位图的源文件。
+**WatermarkPath**元素指定自定义水印位图的源文件，该位图 DPInst 显示在 DPInst 欢迎页和 DPInst 完成页的左侧。
 
 ### <a name="element-tag"></a>元素标记
 
@@ -32,7 +32,7 @@ ms.locfileid: "67380394"
 <watermarkPath>
 ```
 
-### <a name="xml-attributes"></a>XML 特性
+### <a name="xml-attributes"></a>XML 属性
 
 无
 
@@ -46,15 +46,15 @@ ms.locfileid: "67380394"
 <tbody>
 <tr class="odd">
 <td align="left"><p><strong>父元素</strong></p></td>
-<td align="left"><p><a href="dpinst-xml-element.md" data-raw-source="[&lt;strong&gt;dpinst&lt;/strong&gt;](dpinst-xml-element.md)"><strong>dpinst</strong> </a>或<a href="language-xml-element.md" data-raw-source="[&lt;strong&gt;language&lt;/strong&gt;](language-xml-element.md)"><strong>语言</strong></a></p></td>
+<td align="left"><p><a href="dpinst-xml-element.md" data-raw-source="[&lt;strong&gt;dpinst&lt;/strong&gt;](dpinst-xml-element.md)"><strong>dpinst</strong></a>或<a href="language-xml-element.md" data-raw-source="[&lt;strong&gt;language&lt;/strong&gt;](language-xml-element.md)"> <strong>language</strong></a></p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>子元素</strong></p></td>
 <td align="left"><p>不允许</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><strong>数据的内容</strong></p></td>
-<td align="left"><p>指定包含水印位图 DPInst 左侧和右侧的欢迎页和完成页上显示的文件的名称的字符串。 水印文件必须位于 DPInst 根目录下，这是包含 DPInst 可执行文件的目录 (<em>DPInst.exe</em>)，或在 DPInst 根目录下的子目录中。 如果水印位图文件的子目录中，指定是相对于 DPInst 根目录的完全限定的文件名。</p></td>
+<td align="left"><p><strong>数据内容</strong></p></td>
+<td align="left"><p>指定文件的名称的字符串，该文件包含一个 DPInst 在欢迎页左侧显示的水印位图和一个完成页。 水印文件必须位于 DPInst 根目录中，该目录包含 DPInst 可执行文件 (<em>DPInst.exe</em>) ，或位于 DPInst 根目录下的子目录中。 如果水印位图文件位于子目录中，请指定一个相对于 DPInst 根目录的完全限定文件名。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>重复的子元素</strong></p></td>
@@ -65,11 +65,11 @@ ms.locfileid: "67380394"
 
  
 
-### <a href="" id="comments"></a>备注
+### <a name="remarks"></a><a href="" id="comments"></a>注释
 
-一个**watermarkPath**自定义，但未进行本地化，如果它是子元素的元素**dpinst**元素。 一个**watermarkPath**元素是自定义的如果它是子元素的已本地化**语言**元素。
+如果 **watermarkPath** 元素是 **dpinst** 元素的子元素，则对其进行自定义，但不本地化。 如果 **watermarkPath** 元素为 **language** 元素的子元素，则自定义并本地化该元素。
 
-下面的代码示例演示**watermarkPath**指定的元素*数据\\Watermark.bmp*作为 DPInst 显示在左侧和右侧的水印位图的源欢迎使用日期和完成页。 指定自定义水印位图文件的文本所示粗体的字体样式。
+下面的代码示例演示了一个 **watermarkPath** 元素，该元素指定 * \\Watermark.bmp* 为 DPInst 在欢迎页和完成页左侧显示的水印位图的源的数据。 指定自定义水印位图文件的文本以粗体显示。
 
 ```cpp
 <dpinst>
@@ -79,21 +79,14 @@ ms.locfileid: "67380394"
 </dpinst>
 ```
 
-如果**watermarkPath**元素未指定，DPInst 将使用默认水印。
+如果未指定 **watermarkPath** 元素，则 DPInst 将使用默认水印。
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
 [**dpinst**](dpinst-xml-element.md)
 
-[**language**](language-xml-element.md)
+[**语言**](language-xml-element.md)
 
  
-
- 
-
-
-
-
-
 

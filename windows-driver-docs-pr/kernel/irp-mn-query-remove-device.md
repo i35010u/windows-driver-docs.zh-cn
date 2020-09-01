@@ -6,14 +6,14 @@ ms.assetid: 95ec9ed8-014f-4d01-bed7-3aeb29cd9e73
 keywords:
 - IRP_MN_QUERY_REMOVE_DEVICE 内核模式驱动程序体系结构
 ms.localizationpriority: medium
-ms.openlocfilehash: 60ee3539877e440b40533b3a97fe0510bbeedaaa
-ms.sourcegitcommit: 7681ac46c42782602bd3449d61f7ed4870ef3ba7
+ms.openlocfilehash: 0d1855eaabfd8a8ab38de5e0fc5403fcda47c9a5
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82922600"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89184249"
 ---
-# <a name="irp_mn_query_remove_device"></a>IRP\_MN\_查询\_删除\_设备
+# <a name="irp_mn_query_remove_device"></a>IRP \_ MN \_ 查询 \_ 删除 \_ 设备
 
 
 所有 PnP 驱动程序都必须处理此 IRP。
@@ -25,29 +25,29 @@ ms.locfileid: "82922600"
 <a name="major-code"></a>主要代码
 ----------
 
-[**IRP\_MJ\_PNP**](irp-mj-pnp.md)
+[**IRP \_ MJ \_ PNP**](irp-mj-pnp.md)
 
 <a name="when-sent"></a>发送时间
 ---------
 
-PnP 管理器发送此 IRP，以通知驱动程序要从计算机中删除设备，并查询是否可以在不中断计算机的情况下删除设备。 如果用户请求更新设备的驱动程序，PnP 管理器还会发送此 IRP。
+PnP 管理器发送此 IRP，以通知驱动程序要从计算机中删除设备，并查询是否可以在不中断计算机的情况下删除设备。 如果用户请求更新设备的驱动程序 () ，PnP 管理器还会发送此 IRP。
 
-PnP 管理器在系统线程的上下文中\_以 IRQL 被动级别发送此 IRP。
+PnP 管理器在 \_ 系统线程的上下文中以 IRQL 被动级别发送此 IRP。
 
 ## <a name="input-parameters"></a>输入参数
 
 
-None
+无
 
 ## <a name="output-parameters"></a>输出参数
 
 
-None
+无
 
 ## <a name="io-status-block"></a>I/o 状态块
 
 
-驱动程序将**Irp-&gt;IOSTATUS**设置为状态\_"成功"，或设置为适当的错误状态\_，如状态 "未成功"。
+驱动程序将 **Irp- &gt; IoStatus** 设置为状态 " \_ 成功"，或设置为适当的错误状态，如状态 "未 \_ 成功"。
 
 <a name="operation"></a>操作
 ---------
@@ -56,7 +56,7 @@ None
 
 为了响应此 IRP，驱动程序指示是否可以在不中断计算机的情况下删除设备。
 
-有关处理此 IRP 的详细信息，请参阅[处理 irp\_MN\_查询\_删除\_设备请求](https://docs.microsoft.com/windows-hardware/drivers/kernel/handling-an-irp-mn-query-remove-device-request)。 有关支持设备删除的一般信息，请参阅[删除设备](https://docs.microsoft.com/windows-hardware/drivers/kernel/removing-a-device)。
+有关处理此 IRP 的详细信息，请参阅 [处理 irp \_ MN \_ 查询 \_ 删除 \_ 设备请求](./handling-an-irp-mn-query-remove-device-request.md)。 有关支持设备删除的一般信息，请参阅 [删除设备](https://docs.microsoft.com/windows-hardware/drivers/kernel/removing-a-device)。
 
 **正在发送此 IRP**
 
@@ -81,16 +81,11 @@ None
 ## <a name="see-also"></a>另请参阅
 
 
-[**IRP\_MN\_取消\_删除\_设备**](irp-mn-cancel-remove-device.md)
+[**IRP \_ MN \_ 取消 \_ 删除 \_ 设备**](irp-mn-cancel-remove-device.md)
 
-[**IRP\_MN\_设备\_使用\_通知**](irp-mn-device-usage-notification.md)
+[**IRP \_ MN \_ 设备 \_ 使用 \_ 通知**](irp-mn-device-usage-notification.md)
 
-[**IRP\_MN\_删除\_设备**](irp-mn-remove-device.md)
-
- 
+[**IRP \_ MN \_ 删除 \_ 设备**](irp-mn-remove-device.md)
 
  
-
-
-
 

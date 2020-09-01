@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 61ed32f33e8b6671a50090a3899b5234778b874d
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: bdac331cfd2a3d27f36e60346bfa515bff1f880b
+ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67385274"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89097239"
 ---
-# <a name="kscategoryvideo"></a>KSCATEGORY_VIDEO
+# <a name="kscategory_video"></a>KSCATEGORY_VIDEO
 
 
-KSCATEGORY_VIDEO[设备接口类](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)为定义[内核流式处理](https://docs.microsoft.com/windows-hardware/drivers/stream/streaming-minidrivers2)视频设备 (KS) 功能类别。
+为视频设备的[内核流式处理](../stream/streaming-minidrivers2.md) (KS) 功能类别定义 KSCATEGORY_VIDEO[设备接口类](./overview-of-device-interface-classes.md)。
 
 <table>
 <colgroup>
@@ -33,7 +33,7 @@ KSCATEGORY_VIDEO[设备接口类](https://docs.microsoft.com/windows-hardware/dr
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">特性</th>
+<th align="left">Attribute</th>
 <th align="left">设置</th>
 </tr>
 </thead>
@@ -54,15 +54,15 @@ KSCATEGORY_VIDEO[设备接口类](https://docs.microsoft.com/windows-hardware/dr
 <a name="remarks"></a>备注
 -------
 
-KS 视频设备的驱动程序注册 KSCATEGORY_VIDEO 向操作系统指示设备支持 KSCATEGORY_VIDEO 功能分类的实例。
+适用于 KS 视频设备的驱动程序将 KSCATEGORY_VIDEO 的实例注册，以向操作系统指示设备支持 KSCATEGORY_VIDEO 功能类别。
 
-有关如何在一个 INF 文件中注册此功能的类别的示例，请参阅*Bdan.inf* INF 文件，包括中的软件调谐器示例*src/swtuner/algtuner* WDK 的目录。
+有关如何在 INF 文件中注册此功能类别的示例，请参阅 WDK 的*src/swtuner/algtuner*目录中的软件调谐器示例附带的*Bdan* inf 文件。
 
-有关此功能的类别的详细信息，请参阅[提供 UVC INF 文件](https://docs.microsoft.com/windows-hardware/drivers/stream/providing-a-uvc-inf-file)。
+有关此功能类别的详细信息，请参阅 [提供 UVC INF 文件](../stream/providing-a-uvc-inf-file.md)。
 
-有关视频设备的常规信息，请参阅[视频捕获设备](https://docs.microsoft.com/windows-hardware/drivers/stream/video-capture-devices)。
+有关视频设备的常规信息，请参阅 [视频捕获设备](../stream/video-capture-devices.md)。
 
-有关视频设备其他设备接口类的信息，请参阅[ **KSCATEGORY_TVAUDIO** ](kscategory-tvaudio.md)并[ **KSCATEGORY_TVTUNER** ](kscategory-tvtuner.md).
+有关视频设备的其他设备接口类的信息，请参阅 [**KSCATEGORY_TVAUDIO**](kscategory-tvaudio.md) 和 [**KSCATEGORY_TVTUNER**](kscategory-tvtuner.md)。
 
 <a name="requirements"></a>要求
 ------------
@@ -74,13 +74,13 @@ KS 视频设备的驱动程序注册 KSCATEGORY_VIDEO 向操作系统指示设�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>Header</p></td>
-<td align="left">Ksmedia.h （包括 Ksmedia.h）</td>
+<td align="left"><p>标头</p></td>
+<td align="left">Ksmedia (包含 Ksmedia) </td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
 [**KSCATEGORY_TVAUDIO**](kscategory-tvaudio.md)
@@ -88,11 +88,4 @@ KS 视频设备的驱动程序注册 KSCATEGORY_VIDEO 向操作系统指示设�
 [**KSCATEGORY_TVTUNER**](kscategory-tvtuner.md)
 
  
-
- 
-
-
-
-
-
 

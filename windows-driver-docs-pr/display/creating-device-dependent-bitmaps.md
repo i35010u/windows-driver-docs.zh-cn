@@ -3,48 +3,42 @@ title: 创建设备相关的位图
 description: 创建设备相关的位图
 ms.assetid: da53a8bf-5991-4abb-81f1-2d3a7cb0ff90
 keywords:
-- GDI WDK Windows 2000 显示位图
-- 图形驱动程序 WDK Windows 2000 显示位图
+- GDI WDK Windows 2000 显示，位图
+- 图形驱动程序 WDK Windows 2000 显示，位图
 - 绘制 WDK GDI，位图
-- WDK GDI 位图
+- 位图 WDK GDI
 - 特定于设备的位图 WDK GDI
 - DDB WDK GDI
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cfd90e9ca335c39dace4fad0413eb7a239311a52
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: fccf3d4dd25ac8c2bb348918feddbc52fe19f3e4
+ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67370200"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89067450"
 ---
 # <a name="creating-device-dependent-bitmaps"></a>创建设备相关的位图
 
 
 ## <span id="ddk_creating_device_dependent_bitmaps_gg"></span><span id="DDK_CREATING_DEVICE_DEPENDENT_BITMAPS_GG"></span>
 
-驱动程序时应用程序请求的位图的创建，可以创建和管理[ *DDB* ](https://docs.microsoft.com/windows/desktop/gdi/device-dependent-bitmaps)通过支持[ **DrvCreateDeviceBitmap** ](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvcreatedevicebitmap)函数。 当此类驱动程序创建位图时，它可以采用任何格式存储位图。 驱动程序会检查所传递的参数，并为位图提供至少多少位每像素的请求。
+当应用程序请求创建位图时，驱动程序可以通过支持[**DrvCreateDeviceBitmap**](/windows/desktop/api/winddi/nf-winddi-drvcreatedevicebitmap)函数来创建和管理[*DDB*](/windows/desktop/gdi/device-dependent-bitmaps) 。 此类驱动程序创建位图后，可以将位图存储为任何格式。 驱动程序将检查传递的参数，并为所请求的每像素位数提供至少位数。
 
 > [!NOTE]
-> 图形驱动程序可以通过支持中的位图来提高性能[*屏幕外内存*](video-present-network-terminology.md#off_screen_memory)和通过绘制位图使用硬件。 此示例，请参阅**Permedia**显示驱动程序示例。
+> 图形驱动程序可以通过在 [*屏幕内存*](video-present-network-terminology.md#off_screen_memory) 中支持位图并使用硬件绘制位图来提高性能。 有关此示例的示例，请参阅 **Permedia** 显示驱动程序示例。
 
 
 > [!NOTE]
-> Microsoft Windows Driver Kit (WDK) 不包含 3Dlabs Permedia2 (*3dlabs.htm*) 和 3Dlabs Permedia3 (*Perm3.htm*) 示例显示器驱动程序。 你可以获取这些示例驱动程序从 Windows Server 2003 SP1 驱动程序开发工具包 (DDK)，可以从 DDK-WDHC 网站的 Windows 驱动程序开发工具包页面下载。
+> Microsoft Windows 驱动程序工具包 (WDK) 不包含 3Dlabs Permedia2 (*3dlabs.htm*) 和 3Dlabs * Permedia3 (Perm3.htm) 示例 * 显示驱动程序。 你可以从 Windows Server 2003 SP1 驱动程序开发工具包中获取这些示例驱动程序 (DDK) ，你可以从 WDHC 网站的 "Windows 驱动程序开发工具包" 页下载。
 
-内**DrvCreateDeviceBitmap**，该驱动程序调用 GDI 服务[ **EngCreateDeviceBitmap** ](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-engcreatedevicebitmap)要具有 GDI 创建设备位图的句柄。
+在 **DrvCreateDeviceBitmap**中，驱动程序调用 Gdi 服务 [**ENGCREATEDEVICEBITMAP**](/windows/desktop/api/winddi/nf-winddi-engcreatedevicebitmap) ，使 gdi 为设备位图创建句柄。
 
-如果该驱动程序支持**DrvCreateDeviceBitmap**，它创建 DDB、 定义其格式，并返回的句柄。 该驱动程序控制存储位图，然后在何种格式。 该驱动程序应支持其设备图面最匹配的颜色格式。
+如果驱动程序支持 **DrvCreateDeviceBitmap**，它将创建一个 DDB，定义其格式，并向其返回一个句柄。 驱动程序控制位图的存储位置和格式。 驱动程序应支持与设备表面最接近的颜色格式。
 
-创建后将不确定位图的内容。 如果驱动程序将返回**NULL**，它不创建和管理位图; 相反，GDI 执行这些任务。
+创建后，位图的内容是不确定的。 如果驱动程序返回 **NULL**，则它不会创建并管理位图;GDI 将执行这些任务。
 
-如果该驱动程序创建位图，它还必须能够通过实现将其删除[ **DrvDeleteDeviceBitmap** ](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvdeletedevicebitmap)函数。
-
- 
+如果驱动程序创建位图，它还必须能够通过实现 [**DrvDeleteDeviceBitmap**](/windows/desktop/api/winddi/nf-winddi-drvdeletedevicebitmap) 函数来删除它们。
 
  
-
-
-
-
 

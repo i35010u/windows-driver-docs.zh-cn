@@ -4,12 +4,12 @@ description: 安装版本签名驱动程序与在测试签名中安装、卸载�
 ms.assetid: 36624611-1FE6-4B88-B785-44D6A81F61FF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ecb256046e81836f67101cbc242dc992b8f17b59
-ms.sourcegitcommit: 72535665bb80c28ee09331844cd0e15da8084e19
+ms.openlocfilehash: c282d633e828a71d15e49f229e210d2bb7f4a036
+ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88623502"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89097205"
 ---
 # <a name="troubleshooting-driver-signing-installation"></a>排查驱动程序签名安装问题
 
@@ -34,7 +34,7 @@ ms.locfileid: "88623502"
 
 如果再次安装了驱动程序，或者如果出于任何原因删除了驱动程序，则选中该复选框将不再在计算机上显示此对话框。
 
-**注意**   系统会根据用于对目录进行签名的 SPC 验证发行者信息是否准确。 如果发布服务器信任级别是未知的，则对于 Contoso .com，系统将显示该对话框。 要继续安装，用户必须选择 "安装"。 有关信任和驱动程序安装的详细信息，请参阅 [代码签名最佳做法](https://docs.microsoft.com/previous-versions/windows/hardware/design/dn653556(v=vs.85))。
+**注意**   系统会根据用于对目录进行签名的 SPC 验证发行者信息是否准确。 如果发布服务器信任级别是未知的，则对于 Contoso .com，系统将显示该对话框。 要继续安装，用户必须选择 "安装"。 有关信任和驱动程序安装的详细信息，请参阅 [代码签名最佳做法](/previous-versions/windows/hardware/design/dn653556(v=vs.85))。
 
  
 
@@ -199,10 +199,4 @@ flq:           {_commit_file_queue} 14:54:56.711
 [附录4：驱动程序签名问题](appendix-4--driver-signing-issues.md)中介绍了几个额外的已知驱动程序签名问题。
 
  
-
- 
-
-
-
-
 

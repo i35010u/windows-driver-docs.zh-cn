@@ -4,12 +4,12 @@ description: 存储和传输缩略图数据
 ms.assetid: 4c27f93f-859e-42e3-95ea-9bfd8d0329d6
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6f335c71319863582f9477e1c619a075cfcc6217
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 657a232b77adbbc8291efa87a8eb54401df70839
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67358240"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89184801"
 ---
 # <a name="storing-and-transferring-thumbnail-data"></a>存储和传输缩略图数据
 
@@ -17,23 +17,18 @@ ms.locfileid: "67358240"
 
 
 
-由三个 WIA 属性控制 WIA 缩略图的信息：[**WIA\_IPC\_缩略图**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ipc-thumbnail)， [ **WIA\_IPC\_缩略图\_宽度**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ipc-thumbnail-width)，和[ **WIA\_IPC\_缩略图\_高度**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ipc-thumbnail-height)。 在 Windows Me，并在 Windows XP 及更高版本，缩略图的数据是 24 位每像素只有。
+WIA 缩略图信息由三个 WIA 属性控制： [**WIA \_ ipc \_ 缩略图**](./wia-ipc-thumbnail.md)、 [**wia \_ ipc \_ 缩略图 \_ 宽度**](./wia-ipc-thumbnail-width.md)和 [**WIA \_ ipc \_ 缩略图 \_ 高度**](./wia-ipc-thumbnail-height.md)。 在 Windows Me 和 Windows XP 及更高版本中，缩略图数据仅为24位/像素。
 
-<a href="" id="wia-ipc-thumbnail"></a>WIA\_IPC\_缩略图  
-属性包含缩略图 RGB 格式数据，使用每像素 24 位和 32 位边界上对齐。
+<a href="" id="wia-ipc-thumbnail"></a>WIA \_ IPC \_ 缩略图  
+属性包含 RGB 格式的缩略图数据，其中每像素24位，并在32位边界上对齐。
 
-<a href="" id="wia-ipc-thumb-width"></a>WIA\_IPC\_THUMB\_宽度  
-属性包含缩略图宽度，以像素为单位。
+<a href="" id="wia-ipc-thumb-width"></a>WIA \_ IPC \_ 拇指 \_ 宽度  
+属性包含缩略图的宽度（以像素为单位）。
 
-<a href="" id="wia-ipc-thumbnail-height"></a>WIA\_IPC\_缩略图\_高度  
-属性包含缩略图高度，以像素为单位。
+<a href="" id="wia-ipc-thumbnail-height"></a>WIA \_ IPC \_ 缩略图 \_ 高度  
+属性包含缩略图的高度（以像素为单位）。
 
-应用程序读取 WIA\_IPC\_THUMB\_宽度和 WIA\_IPC\_THUMB\_高度属性创建属性 BITMAPINFOHEADER 结构 （在 Microsoft 中所述Windows SDK 文档）。 然后，应用程序读取 WIA\_IPC\_缩略图的实际数据的缩略图属性。 缩略图的数据应该是未压缩，32 位边界上对齐 24 位 / 像素数据。
-
- 
+应用程序将读取 "WIA \_ ipc \_ 拇指宽度" 和 " \_ wia \_ ipc \_ thumb \_ 高度" 属性，以创建 Microsoft Windows SDK 文档)  (描述的属性 BITMAPINFOHEADER 结构。 然后，应用程序将读取 \_ 实际缩略图数据的 WIA IPC \_ 缩略图属性。 缩略图数据应为非压缩缩略图，每像素数据在32位边界上对齐。
 
  
-
-
-
 

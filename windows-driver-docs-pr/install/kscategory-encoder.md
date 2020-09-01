@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: fc49bb97a74d836df57a69d85740c29f29956cfc
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: b7a800895f86bc6e9c52ff11bb6f13aa250e5874
+ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67374217"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89097245"
 ---
-# <a name="kscategoryencoder"></a>KSCATEGORY_ENCODER
+# <a name="kscategory_encoder"></a>KSCATEGORY_ENCODER
 
 
-KSCATEGORY_ENCODER[设备接口类](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)为定义[内核流式处理](https://docs.microsoft.com/windows-hardware/drivers/stream/streaming-minidrivers2)(KS) 对数据进行编码的功能类别。
+KSCATEGORY_ENCODER [设备接口类](./overview-of-device-interface-classes.md) 是为 [内核流式处理](../stream/streaming-minidrivers2.md) (KS) 功能类别定义的，用于对数据进行编码。
 
 <table>
 <colgroup>
@@ -33,7 +33,7 @@ KSCATEGORY_ENCODER[设备接口类](https://docs.microsoft.com/windows-hardware/
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">特性</th>
+<th align="left">Attribute</th>
 <th align="left">设置</th>
 </tr>
 </thead>
@@ -54,11 +54,11 @@ KSCATEGORY_ENCODER[设备接口类](https://docs.microsoft.com/windows-hardware/
 <a name="remarks"></a>备注
 -------
 
-KS 设备的驱动程序注册 KSCATEGORY_ENCODER 向操作系统指示设备支持 KSCATEGORY_ENCODER 功能分类的实例。
+KS 设备的驱动程序将注册 KSCATEGORY_ENCODER 的实例，以向操作系统指示设备支持 KSCATEGORY_ENCODER 功能类别。
 
-有关如何在一个 INF 文件中注册此功能的类别的示例，请参阅*Bdan.inf* INF 文件，包括中的软件调谐器示例*src/swtuner/algtuner* WDK 的目录。
+有关如何在 INF 文件中注册此功能类别的示例，请参阅 WDK 的*src/swtuner/algtuner*目录中的软件调谐器示例附带的*Bdan* inf 文件。
 
-有关编码器的信息，请参阅[编码器设备](https://docs.microsoft.com/windows-hardware/drivers/stream/encoder-devices)并[编码器安装和注册](https://docs.microsoft.com/windows-hardware/drivers/stream/encoder-installation-and-registration)。
+有关编码器的信息，请参阅 [编码器设备](../stream/encoder-devices.md) 和 [编码器安装和注册](../stream/encoder-installation-and-registration.md)。
 
 <a name="requirements"></a>要求
 ------------
@@ -70,21 +70,15 @@ KS 设备的驱动程序注册 KSCATEGORY_ENCODER 向操作系统指示设备支
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>Version</p></td>
-<td align="left"><p>在 Windows Vista、 Windows Server 2003、 Windows XP Service Pack 1 (SP1) 和更高版本的 Windows 中可用。</p></td>
+<td align="left"><p>版本</p></td>
+<td align="left"><p>在 Windows Vista、Windows Server 2003、Windows XP Service Pack 1 (SP1) 和更高版本的 Windows 中可用。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>Header</p></td>
-<td align="left">Ksmedia.h （包括 Ksmedia.h）</td>
+<td align="left"><p>标头</p></td>
+<td align="left">Ksmedia (包含 Ksmedia) </td>
 </tr>
 </tbody>
 </table>
 
  
-
- 
-
-
-
-
 

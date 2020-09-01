@@ -4,21 +4,21 @@ description: 为总线安装新的设备安装程序类
 ms.assetid: a94899b6-02e0-4181-bb14-5552806a8c9e
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 663fb8f1155aaa98c567d3d98673192d1927aee9
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e4cb7d054acc129618f36a698281a62e054b23df
+ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63364975"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89097287"
 ---
 # <a name="installing-a-new-device-setup-class-for-a-bus"></a>为总线安装新的设备安装程序类
 
 
-如果新总线支持的功能有很大区别属于现有的设备提供的功能的设备[设备安装程序类](device-setup-classes.md)，应安装新的设备安装程序类为总线。 有关可帮助您确定是否要安装新的设备安装程序类的详细信息，请参阅[创建新的设备安装程序类](creating-a-new-device-setup-class.md)。
+如果新总线支持的设备的功能明显不同于属于现有 [设备安装程序类](./overview-of-device-setup-classes.md)的设备提供的功能，则应为总线安装新的设备安装程序类。 有关帮助您确定是否安装新设备安装程序类的详细信息，请参阅 [创建新的设备安装程序类](creating-a-new-device-setup-class.md)。
 
-若要安装新的设备安装程序类为总线，在中设置相关的指令[ **INF 版本部分**](inf-version-section.md)，包括[ **INF ClassInstall32 部分**](inf-classinstall32-section.md)，并包含其他部分中，根据需要 INF Class32 部分引用的。
+若要为总线安装新的设备安装程序类，请在 [**Inf 版本部分**](inf-version-section.md)中设置相关指令，包括 [**inf ClassInstall32 部分**](inf-classinstall32-section.md)，并根据需要包括 inf Class32 部分引用的其他部分。
 
-以下带批注的示例说明了您需要包含要安装的基本 INF 文件条目[设备安装程序类](device-setup-classes.md)。 有关可能的配置设置的设备安装程序类的信息，请参阅[ **INF ClassInstall32 部分**](inf-classinstall32-section.md)。
+以下带批注的示例说明了安装 [设备安装程序类](./overview-of-device-setup-classes.md)需要包含的基本 INF 文件条目。 有关设备安装程序类的可能的配置设置的信息，请参阅 [**INF ClassInstall32 部分**](inf-classinstall32-section.md)。
 
 ```cpp
 [Version]
@@ -52,10 +52,4 @@ AbcSuperBus="Abc Corporation Super Bus Controller"
 ```
 
  
-
- 
-
-
-
-
 

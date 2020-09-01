@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: e8374b9a01e61e13da9b06482156b710f7cadf42
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 909c526c1e683e59701bf765d4268b423acfa756
+ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72840635"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89096931"
 ---
 # <a name="guid_devinterface_opm"></a>GUID_DEVINTERFACE_OPM
 
 
-为显示适配器驱动程序定义 GUID_DEVINTERFACE_OPM[设备接口类](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)，该驱动程序在[Windows Vista 显示器驱动程序模型](https://docs.microsoft.com/windows-hardware/drivers/display/windows-vista-display-driver-model-design-guide)的上下文中运行，并支持监视子设备的输出保护管理（OPM）。
+为显示适配器驱动程序定义 GUID_DEVINTERFACE_OPM [设备接口类](./overview-of-device-interface-classes.md) ，该驱动程序在 [Windows Vista 显示器驱动程序模型](../display/windows-vista-display-driver-model-design-guide.md) 的上下文中运行，并且支持输出保护管理 (OPM) 监视子设备。
 
 <table>
 <colgroup>
@@ -33,7 +33,7 @@ ms.locfileid: "72840635"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">属性</th>
+<th align="left">Attribute</th>
 <th align="left">设置</th>
 </tr>
 </thead>
@@ -56,9 +56,9 @@ ms.locfileid: "72840635"
 
 驱动程序将注册此设备接口类的实例，通知操作系统和应用程序是否存在 OPM 设备接口。
 
-如果显示微型端口驱动程序支持此[设备安装程序类](https://docs.microsoft.com/windows-hardware/drivers/install/device-setup-classes)的直接调用 OPM 接口，则内核模式组件可以通过调用微型端口驱动程序的[**DxgkDdiQueryInterface**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dispmprt/nc-dispmprt-dxgkddi_query_interface)函数并提供GUID_DEVINTERFACE_OPM 指定接口类型。
+如果显示微型端口驱动程序支持此 [设备安装程序类](./overview-of-device-setup-classes.md)的直接调用 OPM 接口，则内核模式组件可以通过调用微型端口驱动程序的 [**DxgkDdiQueryInterface**](/windows-hardware/drivers/ddi/dispmprt/nc-dispmprt-dxgkddi_query_interface) 函数并提供 GUID_DEVINTERFACE_OPM 来指定接口类型，从而检索直接调用接口。
 
-有关 OPM 的信息，请参阅[支持输出保护管理器](https://docs.microsoft.com/windows-hardware/drivers/display/supporting-output-protection-manager)。
+有关 OPM 的信息，请参阅 [支持输出保护管理器](../display/supporting-output-protection-manager.md)。
 
 <a name="requirements"></a>要求
 ------------
@@ -75,16 +75,10 @@ ms.locfileid: "72840635"
 </tr>
 <tr class="even">
 <td align="left"><p>标头</p></td>
-<td align="left">Dispmprt （包括 Dispmprt）</td>
+<td align="left">Dispmprt (包含 Dispmprt) </td>
 </tr>
 </tbody>
 </table>
 
  
-
- 
-
-
-
-
 

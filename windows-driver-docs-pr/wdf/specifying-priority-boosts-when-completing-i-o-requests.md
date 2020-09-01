@@ -7,19 +7,19 @@ keywords:
 - 优先级提升 WDK KMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ef8c985cb71473b0a5298eb5d55df1fe9fd93675
-ms.sourcegitcommit: 958a5ced83856df22627c06eb42c9524dd547906
+ms.openlocfilehash: f081332fd63a541f180a9d7a50e3987519f66881
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83235431"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89184273"
 ---
 # <a name="specifying-priority-boosts-when-completing-io-requests"></a>完成 I/O 请求时指定优先级提升
 
 
-当驱动程序完成 i/o 请求时，它可以调用[**WdfRequestCompleteWithPriorityBoost**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestcompletewithpriorityboost)来指定一个值，系统使用该值来提升请求 i/o 操作的线程的运行时优先级。
+当驱动程序完成 i/o 请求时，它可以调用 [**WdfRequestCompleteWithPriorityBoost**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestcompletewithpriorityboost) 来指定一个值，系统使用该值来提升请求 i/o 操作的线程的运行时优先级。
 
-如果驱动程序调用[**WdfRequestComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestcomplete)或[**WdfRequestCompleteWithInformation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestcompletewithinformation)而不是[**WdfRequestCompleteWithPriorityBoost**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestcompletewithpriorityboost)，则框架将使用基于设备类型的默认优先级提升值。 下表列出了框架使用的默认优先级提升值。 在*Wdm .h*中定义了设备类型和优先级提升常数。
+如果驱动程序调用 [**WdfRequestComplete**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestcomplete) 或 [**WdfRequestCompleteWithInformation**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestcompletewithinformation) 而不是 [**WdfRequestCompleteWithPriorityBoost**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestcompletewithpriorityboost)，则框架将使用基于设备类型的默认优先级提升值。 下表列出了框架使用的默认优先级提升值。 在 *Wdm .h*中定义了设备类型和优先级提升常数。
 
 |设备类型|默认优先级提升|
 |--- |--- |
@@ -87,10 +87,4 @@ ms.locfileid: "83235431"
  
 
  
-
- 
-
-
-
-
 

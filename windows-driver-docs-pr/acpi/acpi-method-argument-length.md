@@ -6,17 +6,17 @@ keywords:
 - ACPI_METHOD_ARGUMENT_LENGTH 宏 ACPI 设备
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9c12ba630f51ae906db73937c91da531c00fddfd
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 67a9ca5aedad567d53997edc5e82c88bafa6fb20
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72824067"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89184861"
 ---
-# <a name="acpi_method_argument_length-macro"></a>ACPI\_方法\_参数\_长度宏
+# <a name="acpi_method_argument_length-macro"></a>ACPI \_ 方法 \_ 自变量 \_ 长度宏
 
 
-ACPI\_方法\_参数\_LENGTH 宏以字节为单位计算包含指定大小的数据（以字节为单位）的可变长度[**ACPI\_\_方法**](https://docs.microsoft.com/windows-hardware/drivers/ddi/acpiioct/ns-acpiioct-_acpi_method_argument_v1)的大小（以字节为单位）。
+ACPI \_ 方法 \_ 自 \_ 变量 length 宏计算包含指定大小的数据（以字节为单位）的可变长度 [**ACPI \_ 方法 \_ 参数**](/windows-hardware/drivers/ddi/acpiioct/ns-acpiioct-_acpi_method_argument_v1) 结构的大小（以字节为单位）。
 
 <a name="syntax"></a>语法
 ------
@@ -31,17 +31,17 @@ void ACPI_METHOD_ARGUMENT_LENGTH(
 ----------
 
 *DataLength*   
-ACPI\_方法的**数据**数组中数据的大小（以字节为单位）\_参数结构。
+ACPI **Data** \_ 方法参数结构的数据数组中数据的大小（以字节为单位） \_ 。
 
 <a name="return-value"></a>返回值
 ------------
 
-可变长度 ACPI\_方法\_参数结构的大小（以字节为单位），该**数据**数组的大小为*DataLength*。
+可变长度 ACPI 方法参数结构的大小（以字节为单位）， \_ \_ 该方法可包含大小为*DataLength*的**数据**数组。
 
 <a name="remarks"></a>备注
 -------
 
-驱动程序可以使用此宏来计算可变长度 ACPI\_方法的所需大小（以字节为单位），该\_方法可包含指定大小的**数据**数组（以字节为单位）。
+驱动程序可以使用此宏来计算可变长度 ACPI 方法参数结构的所需大小（以字节为单位）， \_ \_ 该方法可以包含指定大小的 **数据** 数组（以字节为单位）。
 
 <a name="requirements"></a>要求
 ------------
@@ -54,11 +54,11 @@ ACPI\_方法的**数据**数组中数据的大小（以字节为单位）\_参�
 <tbody>
 <tr>
 <td><p>目标平台</p></td>
-<td>桌面设备</td>
+<td>“桌面”</td>
 </tr>
 <tr>
 <td><p>标头</p></td>
-<td>Acpiioct （包括 Acpiioct）</td>
+<td>Acpiioct (包含 Acpiioct) </td>
 </tr>
 </tbody>
 </table>
@@ -66,12 +66,7 @@ ACPI\_方法的**数据**数组中数据的大小（以字节为单位）\_参�
 ## <a name="see-also"></a>另请参阅
 
 
-[**ACPI\_方法\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/acpiioct/ns-acpiioct-_acpi_method_argument_v1)
+[**ACPI \_ 方法 \_ 参数**](/windows-hardware/drivers/ddi/acpiioct/ns-acpiioct-_acpi_method_argument_v1)
 
  
-
- 
-
-
-
 

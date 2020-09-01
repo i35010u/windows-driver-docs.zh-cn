@@ -1,33 +1,27 @@
 ---
 title: 设备 ID
-description: 设备 ID 是一个字符串，报告的设备的枚举器。 设备具有只有一个设备 id。 设备 ID 具有相同的格式为硬件 id。
+description: 设备 ID 是设备的枚举器报告的字符串。 设备只有一个设备 ID。 设备 ID 与硬件 ID 的格式相同。
 ms.assetid: a71b64bc-319e-4133-810b-7fd417cf0af8
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 565b64f9f27540cf0468b98847bc44300d4b8c00
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 652845ea629753d1f1fbf3ad68f3c098c7722890
+ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67387134"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89097023"
 ---
 # <a name="device-id"></a>设备 ID
 
 
-设备 ID 是一个字符串，由设备的报告*枚举器*。 设备具有只有一个设备 id。 设备 ID 已与相同的格式[硬件 ID](hardware-ids.md)。
+设备 ID 是设备的 *枚举器*报告的字符串。 设备只有一个设备 ID。 设备 ID 与 [硬件 id](hardware-ids.md)的格式相同。
 
 
 
 
-插即用 (PnP) 管理器使用设备 ID 来为设备的枚举器创建一个用于设备注册表项下的子项。
+即插即用 (PnP) 管理器使用设备 ID 在设备枚举器的注册表项下为设备创建子项。
 
-若要获取设备 ID，请使用[ **IRP_MN_QUERY_ID** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-id)请求并设置**Parameters.QueryId.IdType**字段**BusQueryDeviceID**。
-
- 
+若要获取设备 ID，请使用 [**IRP_MN_QUERY_ID**](../kernel/irp-mn-query-id.md) 请求，并将 **IdType** 字段设置为 **BusQueryDeviceID**。
 
  
-
-
-
-
 

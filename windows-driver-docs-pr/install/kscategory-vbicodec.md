@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 6477b7e7c12fbcd1a5f1f16840d46ec386935358
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: f51b03232f9ba15fb2407335ccc167d84073c8b7
+ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67385541"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89097237"
 ---
-# <a name="kscategoryvbicodec"></a>KSCATEGORY_VBICODEC
+# <a name="kscategory_vbicodec"></a>KSCATEGORY_VBICODEC
 
 
-KSCATEGORY_VBICODEC[设备接口类](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)为定义[内核流式处理](https://docs.microsoft.com/windows-hardware/drivers/stream/streaming-minidrivers2)(KS) 功能的视频的遮蔽间隔 (VBI) 编解码器设备类别。
+KSCATEGORY_VBICODEC [设备接口类](./overview-of-device-interface-classes.md) 定义为 (KS) 功能类别的 [核心流式传输](../stream/streaming-minidrivers2.md) 间隔， (VBI) 编解码器设备。
 
 <table>
 <colgroup>
@@ -33,7 +33,7 @@ KSCATEGORY_VBICODEC[设备接口类](https://docs.microsoft.com/windows-hardware
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">特性</th>
+<th align="left">Attribute</th>
 <th align="left">设置</th>
 </tr>
 </thead>
@@ -54,11 +54,11 @@ KSCATEGORY_VBICODEC[设备接口类](https://docs.microsoft.com/windows-hardware
 <a name="remarks"></a>备注
 -------
 
-KS 设备的驱动程序注册 KSCATEGORY_VBICODEC 向操作系统指示设备支持 KSCATEGORY_VBICODEC 功能分类的实例。
+KS 设备的驱动程序将注册 KSCATEGORY_VBICODEC 的实例，以向操作系统指示设备支持 KSCATEGORY_VBICODEC 功能类别。
 
-有关视频设备的常规信息，请参阅[视频捕获设备](https://docs.microsoft.com/windows-hardware/drivers/stream/video-capture-devices)。
+有关视频设备的常规信息，请参阅 [视频捕获设备](../stream/video-capture-devices.md)。
 
-有关视频消隐功能的详细信息，请参阅[流式处理视频捕获设备中的数据](https://docs.microsoft.com/windows-hardware/drivers/stream/streaming-data-from-a-video-capture-device)并[VBI 类别](https://docs.microsoft.com/windows-hardware/drivers/stream/vbi-category)。
+有关视频遮蔽的详细信息，请参阅 [从视频捕获设备流式传输数据](../stream/streaming-data-from-a-video-capture-device.md) 和 [VBI 类别](../stream/vbi-category.md)。
 
 <a name="requirements"></a>要求
 ------------
@@ -70,23 +70,16 @@ KS 设备的驱动程序注册 KSCATEGORY_VBICODEC 向操作系统指示设备�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>Header</p></td>
-<td align="left">Ksmedia.h （包括 Ksmedia.h）</td>
+<td align="left"><p>标头</p></td>
+<td align="left">Ksmedia (包含 Ksmedia) </td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
 [**KSCATEGORY_VIDEO**](kscategory-video.md)
 
  
-
- 
-
-
-
-
-
 

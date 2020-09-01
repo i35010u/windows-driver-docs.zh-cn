@@ -14,22 +14,22 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 4665933e136bc24970c7c2e2c1b75e4c0a0d2d8c
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 08867b3c86fac84481ef8dbdf210a27ba07645cf
+ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67355504"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89097003"
 ---
-# <a name="guidclassusbhub"></a>GUID_CLASS_USBHUB
+# <a name="guid_class_usbhub"></a>GUID_CLASS_USBHUB
 
 
-GUID_CLASS_USBHUB 是已过时标识符[设备接口类](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)有关[USB](https://docs.microsoft.com/windows-hardware/drivers/) hub 设备。 从 Microsoft Windows 2000 开始，使用[ **GUID_DEVINTERFACE_USB_HUB** ](guid-devinterface-usb-hub.md)此类的新实例的类标识符。
+GUID_CLASS_USBHUB 是[USB](../index.yml)集线器设备的[设备接口类](./overview-of-device-interface-classes.md)的过时标识符。 从 Microsoft Windows 2000 开始，使用此类的新实例 [**GUID_DEVINTERFACE_USB_HUB**](guid-devinterface-usb-hub.md) 类标识符。
 
 <a name="remarks"></a>备注
 -------
 
-Microsoft Windows Driver Kit (WDK) 包括[USBVIEW 示例应用程序](https://go.microsoft.com/fwlink/p/?linkid=256205)。 USBVIEW 示例使用 GUID_CLASS_USBHUB GUID_CLASS_USBHUB 设备接口类的实例是否存在收到通知。
+Microsoft Windows 驱动程序工具包 (WDK) 包含 [USBVIEW 示例应用程序](https://go.microsoft.com/fwlink/p/?linkid=256205)。 如果存在 GUID_CLASS_USBHUB 设备接口类的实例，则 USBVIEW 示例使用 GUID_CLASS_USBHUB 进行通知。
 
 <a name="requirements"></a>要求
 ------------
@@ -41,27 +41,20 @@ Microsoft Windows Driver Kit (WDK) 包括[USBVIEW 示例应用程序](https://go
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>Version</p></td>
-<td align="left"><p>已过时。 从 Windows 2000 开始，请改用 GUID_DEVINTERFACE_USB_HUB。</p></td>
+<td align="left"><p>版本</p></td>
+<td align="left"><p>已过时。 从 Windows 2000 开始，改用 GUID_DEVINTERFACE_USB_HUB。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>Header</p></td>
-<td align="left">Usbiodef.h （包括 Usbiodef.h）</td>
+<td align="left"><p>标头</p></td>
+<td align="left">Usbiodef (包含 Usbiodef) </td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
 [**GUID_DEVINTERFACE_USB_HUB**](guid-devinterface-usb-hub.md)
 
  
-
- 
-
-
-
-
-
 

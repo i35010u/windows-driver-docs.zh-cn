@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: c8b835c7274b31514326abc311284ebf12911ca9
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: e47416e8a77a9b4c19b07b9f6a73cb0f0afb1a6b
+ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67385540"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89097341"
 ---
-# <a name="kscategoryvpmux"></a>KSCATEGORY_VPMUX
+# <a name="kscategory_vpmux"></a>KSCATEGORY_VPMUX
 
 
-KSCATEGORY_VPMUX[设备接口类](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)为定义[内核流式处理](https://docs.microsoft.com/windows-hardware/drivers/stream/streaming-minidrivers2)(KS) 支持视频的多路复用的功能类别。
+为支持视频多路复用的[内核流式处理](../stream/streaming-minidrivers2.md) (KS) 功能类别定义 KSCATEGORY_VPMUX[设备接口类](./overview-of-device-interface-classes.md)。
 
 <table>
 <colgroup>
@@ -33,7 +33,7 @@ KSCATEGORY_VPMUX[设备接口类](https://docs.microsoft.com/windows-hardware/dr
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">特性</th>
+<th align="left">Attribute</th>
 <th align="left">设置</th>
 </tr>
 </thead>
@@ -54,11 +54,11 @@ KSCATEGORY_VPMUX[设备接口类](https://docs.microsoft.com/windows-hardware/dr
 <a name="remarks"></a>备注
 -------
 
-KS 设备的驱动程序注册 KSCATEGORY_VPMUX 向操作系统指示设备支持 KSCATEGORY_VPMUX 功能分类的实例。
+KS 设备的驱动程序将注册 KSCATEGORY_VPMUX 的实例，以向操作系统指示设备支持 KSCATEGORY_VPMUX 功能类别。
 
-有关视频设备的常规信息，请参阅[视频捕获设备](https://docs.microsoft.com/windows-hardware/drivers/stream/video-capture-devices)。
+有关视频设备的常规信息，请参阅 [视频捕获设备](../stream/video-capture-devices.md)。
 
-有关视频设备的设备接口类的信息，请参阅[ **KSCATEGORY_VIDEO**](kscategory-video.md)。
+有关视频设备的设备接口类的信息，请参阅 [**KSCATEGORY_VIDEO**](kscategory-video.md)。
 
 <a name="requirements"></a>要求
 ------------
@@ -70,23 +70,16 @@ KS 设备的驱动程序注册 KSCATEGORY_VPMUX 向操作系统指示设备支�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>Header</p></td>
-<td align="left">Ks.h （包括 Ks.h）</td>
+<td align="left"><p>标头</p></td>
+<td align="left">Ks (包含 Ks .h) </td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
 [**KSCATEGORY_VIDEO**](kscategory-video.md)
 
  
-
- 
-
-
-
-
-
 

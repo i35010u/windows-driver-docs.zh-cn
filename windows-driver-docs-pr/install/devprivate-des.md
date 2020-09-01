@@ -12,27 +12,21 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 14586b50ed9a927164a4eb55dc4db72d40329c0b
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: bd2e611f4f5259ff7623811c8487460ce9e01dec
+ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67376804"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89097377"
 ---
-# <a name="devprivatedes"></a>DEVPRIVATE_DES
+# <a name="devprivate_des"></a>DEVPRIVATE_DES
 
 
-**请注意**  此结构是仅供内部使用。
-
- 
-
-DEVPRIVATE_DES 结构用于指定资源的列表或了描述的设备实例专用的特定于设备的资源使用情况的资源要求列表。 有关资源的列表和资源要求列表的详细信息，请参阅[硬件资源](https://docs.microsoft.com/windows-hardware/drivers/kernel/hardware-resources)。
+**注意**   此结构仅供内部使用。
 
  
 
+DEVPRIVATE_DES 结构用于指定资源列表或资源需求列表，该列表描述设备实例的专用于设备的专用资源使用情况。 有关资源列表和资源要求列表的详细信息，请参阅 [硬件资源](../kernel/hardware-resources.md)。
+
  
-
-
-
-
 

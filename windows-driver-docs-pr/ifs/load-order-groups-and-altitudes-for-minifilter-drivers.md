@@ -9,12 +9,12 @@ keywords:
 - 驱动程序启动类型 WDK 文件系统
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1a511a319fbbbc5c24379c210d6741b6e258c5a3
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: c92ebab2f2e757f3d778d6d9f8dd99c6cdf9b9bd
+ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72841140"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89067396"
 ---
 # <a name="load-order-groups-and-altitudes-for-minifilter-drivers"></a>微筛选器驱动程序的加载顺序组和等级
 
@@ -23,13 +23,13 @@ Windows 为在系统启动时加载的文件系统筛选器驱动程序和微筛
 
 旧文件系统筛选器驱动程序只能附加到现有文件系统驱动程序堆栈的顶部，并且不能附加在堆栈中间。 因此，驱动程序和加载顺序组的启动类型对旧式文件系统筛选器驱动程序很重要，因为以前的筛选器驱动程序加载后，它可以附加到文件系统驱动程序堆栈上。
 
-首先基于驱动程序的启动类型加载驱动程序，这表示启动系统的阶段。 有关启动类型的详细信息，请参阅[确定驱动程序加载时间的内容](what-determines-when-a-driver-is-loaded.md)中的 "驱动程序启动类型"。 指定启动类型 "服务\_启动\_启动" 的所有文件系统筛选器驱动程序和微微筛选器驱动程序在启动\_系统\_启动或服务\_自动\_"启动" 的驱动程序之前加载。 启动类型由用于安装微筛选器驱动程序的 INF 文件的 ServiceInstall 部分中的**StartType**项指定。 在每个 "开始" 类型类别中，"加载顺序" 组确定何时加载文件系统筛选器驱动程序和微筛选器驱动程序。
+首先基于驱动程序的启动类型加载驱动程序，这表示启动系统的阶段。 有关启动类型的详细信息，请参阅 [确定驱动程序加载时间的内容](what-determines-when-a-driver-is-loaded.md)中的 "驱动程序启动类型"。 指定启动类型 "服务启动启动" 的所有文件系统筛选器驱动程序和微筛选器驱动程序 \_ \_ 将在启动类型为 "服务 \_ 系统 \_ 启动" 或 "服务 \_ 自动 \_ 启动" 的驱动程序之前加载。 启动类型由用于安装微筛选器驱动程序的 INF 文件的 ServiceInstall 部分中的 **StartType** 项指定。 在每个 "开始" 类型类别中，"加载顺序" 组确定何时加载文件系统筛选器驱动程序和微筛选器驱动程序。
 
-可随时加载微筛选器驱动程序。 对于与旧式文件系统筛选器驱动程序的互操作性，筛选器驱动程序仍需要加载顺序组的概念。 每个微微筛选器驱动程序必须具有名为*海拔*的唯一标识符。 当加载微筛选器驱动程序时，微筛选器驱动程序的高度定义其相对于 i/o 堆栈中其他微筛选器驱动程序的位置。 海拔高度是被解释为十进制数的无限精度字符串。 如果微筛选器驱动程序的数字高度较低，则会将一个具有较大数值的微筛选器驱动程序加载到其下的 i/o 堆栈中。
+可随时加载微筛选器驱动程序。 对于与旧式文件系统筛选器驱动程序的互操作性，筛选器驱动程序仍需要加载顺序组的概念。 每个微微筛选器驱动程序必须具有名为 *海拔*的唯一标识符。 当加载微筛选器驱动程序时，微筛选器驱动程序的高度定义其相对于 i/o 堆栈中其他微筛选器驱动程序的位置。 海拔高度是被解释为十进制数的无限精度字符串。 如果微筛选器驱动程序的数字高度较低，则会将一个具有较大数值的微筛选器驱动程序加载到其下的 i/o 堆栈中。
 
-每个加载顺序组都有一组已定义的高度。 向微筛选器驱动程序分配的高度由 Microsoft 管理。 若要请求微筛选器驱动程序的海拔高度，请发送电子邮件到 <fsfcomm@microsoft.com> 要求分配一个。
+每个加载顺序组都有一组已定义的高度。 向微筛选器驱动程序分配的高度由 Microsoft 管理。 若要请求微筛选器驱动程序的海拔高度，请发送电子邮件， <fsfcomm@microsoft.com> 要求分配一个。
 
-微筛选器驱动程序必须指定一个代表加载顺序组的海拔范围值。 微筛选器驱动程序的海拔值在用于安装微筛选器驱动程序的 INF 文件中的字符串部分的实例定义中指定。 还可以通过调用[**FLT\_注册**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_registration)结构中的[**InstanceSetupCallback**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nc-fltkernel-pflt_instance_setup_callback)例程来指定实例定义。 可以为微筛选器驱动程序定义多个实例和高度。 这些实例定义适用于所有卷。
+微筛选器驱动程序必须指定一个代表加载顺序组的海拔范围值。 微筛选器驱动程序的海拔值在用于安装微筛选器驱动程序的 INF 文件中的字符串部分的实例定义中指定。 还可以在对[**FLT \_ 注册**](/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_registration)结构中的[**InstanceSetupCallback**](/windows-hardware/drivers/ddi/fltkernel/nc-fltkernel-pflt_instance_setup_callback)例程的调用中指定实例定义。 可以为微筛选器驱动程序定义多个实例和高度。 这些实例定义适用于所有卷。
 
 以下有关启动类型和加载顺序组的规则确定何时将加载微筛选器驱动程序：
 
@@ -39,7 +39,7 @@ Windows 为在系统启动时加载的文件系统筛选器驱动程序和微筛
 
 -   如果文件系统筛选器驱动程序或微筛选器驱动程序未指定加载顺序组，则会将其加载到指定了加载顺序组的同一启动类型的所有其他驱动程序之后。
 
-下表列出了用于微筛选器驱动程序的系统定义的负载顺序组和海拔范围。 对于每个加载顺序组，"加载顺序组" 列包含应在微筛选器的 INF 文件的 ServiceInstall 部分的**LoadOrderGroup**项中为该组指定的值。 海拔范围列包含特定加载顺序组的海拔范围。 微筛选器驱动程序必须在适当的负载顺序组或组中请求 Microsoft 的海拔分配。
+下表列出了用于微筛选器驱动程序的系统定义的负载顺序组和海拔范围。 对于每个加载顺序组，"加载顺序组" 列包含应在微筛选器的 INF 文件的 ServiceInstall 部分的 **LoadOrderGroup** 项中为该组指定的值。 海拔范围列包含特定加载顺序组的海拔范围。 微筛选器驱动程序必须在适当的负载顺序组或组中请求 Microsoft 的海拔分配。
 
 请注意，"加载顺序组" 和 "高度" 范围将在堆栈上列出，这与它们的加载顺序相反。
 
@@ -53,12 +53,12 @@ Windows 为在系统启动时加载的文件系统筛选器驱动程序和微筛
 <tr class="header">
 <th align="left">加载顺序组</th>
 <th align="left">海拔范围</th>
-<th align="left">描述</th>
+<th align="left">说明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>Filter</p></td>
+<td align="left"><p>“筛选器”</p></td>
 <td align="left"><p>420000-429999</p></td>
 <td align="left"><p>此组与 Windows 2000 及更早版本上提供的筛选器加载顺序组相同。 此组最后加载，因此从文件系统中最远附加。</p></td>
 </tr>
@@ -105,7 +105,7 @@ Windows 为在系统启动时加载的文件系统筛选器驱动程序和微筛
 <tr class="even">
 <td align="left"><p>FSFilter 系统恢复</p></td>
 <td align="left"><p>220000-229999</p></td>
-<td align="left"><p>此组包括执行操作以维护操作系统完整性的筛选器驱动程序，如系统还原（SR）筛选器。</p></td>
+<td align="left"><p>此组包括执行操作以维护操作系统完整性的筛选器驱动程序，如系统还原 (SR) filter。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>FSFilter 群集文件系统</p></td>
@@ -136,7 +136,7 @@ Windows 为在系统启动时加载的文件系统筛选器驱动程序和微筛
 <tr class="even">
 <td align="left"><p>FSFilter 虚拟化</p></td>
 <td align="left"><p>130000-139999</p></td>
-<td align="left"><p>此组包含虚拟化文件路径的筛选器驱动程序，如 Windows Vista 中添加的授权最少的用户（LUA）筛选器驱动程序。</p>
+<td align="left"><p>此组包括用于虚拟化文件路径的筛选器驱动程序，如 Windows Vista 中添加的 (LUA) 筛选器驱动程序的最低授权用户。</p>
 <p>此加载组在 Windows Vista 和更高版本的操作系统上可用。</p></td>
 </tr>
 <tr class="odd">
@@ -152,7 +152,7 @@ Windows 为在系统启动时加载的文件系统筛选器驱动程序和微筛
 <tr class="odd">
 <td align="left"><p>FSFilter Security 不得不一直</p></td>
 <td align="left"><p>80000-89999</p></td>
-<td align="left"><p>此组包括应用锁定和增强的访问控制列表（Acl）的筛选器驱动程序。</p></td>
+<td align="left"><p>此组包括筛选器驱动程序，用于将锁定和增强的访问控制列表 (Acl) 。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>FSFilter 复制保护</p></td>
@@ -167,12 +167,12 @@ Windows 为在系统启动时加载的文件系统筛选器驱动程序和微筛
 <tr class="even">
 <td align="left"><p>FSFilter 系统</p></td>
 <td align="left"><p>20000-29999</p></td>
-<td align="left"><p>保留供内部使用。</p></td>
+<td align="left"><p>保留以供内部使用。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>FSFilter 基础结构</p></td>
 <td align="left"></td>
-<td align="left"><p>保留供内部使用。 此组首先加载，因此附加最接近文件系统。</p></td>
+<td align="left"><p>保留以供内部使用。 此组首先加载，因此附加最接近文件系统。</p></td>
 </tr>
 </tbody>
 </table>
@@ -180,9 +180,4 @@ Windows 为在系统启动时加载的文件系统筛选器驱动程序和微筛
  
 
  
-
- 
-
-
-
 

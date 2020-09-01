@@ -3,12 +3,12 @@ title: 3D 打印合作伙伴加入指南
 description: 本主题介绍如何实现 Windows 更新上发布的3D 打印机驱动程序。
 ms.date: 08/25/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 1124d71df4ddd258e13e8ee9ffdaee98af097464
-ms.sourcegitcommit: d9a9925f790271f4ca2c8377d551d96e8d1e62c7
+ms.openlocfilehash: 98879c46c74b3165475fe30447199532c5279a43
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88850197"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89184133"
 ---
 # <a name="3d-print-partner-onboarding-guide"></a>3D 打印合作伙伴加入指南
 
@@ -96,4 +96,4 @@ Windows 10 上的即插即用3D 打印机是通过 Windows 更新上发布的一
 
 1. 发布和分发驱动程序
 
-    - 按照 [Windows 合作伙伴中心](https://docs.microsoft.com/windows-hardware/drivers/dashboard) 主题中的指导进行操作以发布驱动程序。
+    - 按照 [Windows 合作伙伴中心](../dashboard/index.yml) 主题中的指导进行操作以发布驱动程序。

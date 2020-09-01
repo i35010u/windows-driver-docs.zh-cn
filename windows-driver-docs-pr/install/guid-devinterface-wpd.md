@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 87aaf3b24965a375613190dc426bed37f9f9bd85
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: d7d58d1faa80e4e4641ac3030cdb8d6952baf8cc
+ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67384796"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89096871"
 ---
-# <a name="guiddevinterfacewpd"></a>GUID_DEVINTERFACE_WPD
+# <a name="guid_devinterface_wpd"></a>GUID_DEVINTERFACE_WPD
 
 
-GUID_DEVINTERFACE_WPD[设备接口类](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)为定义[Windows 便携设备](https://go.microsoft.com/fwlink/p/?linkid=106527)(WPD)。
+GUID_DEVINTERFACE_WPD [设备接口类](./overview-of-device-interface-classes.md) 是 (WPD) 的 [Windows 便携设备](https://go.microsoft.com/fwlink/p/?linkid=106527) 定义的。
 
 <table>
 <colgroup>
@@ -33,7 +33,7 @@ GUID_DEVINTERFACE_WPD[设备接口类](https://docs.microsoft.com/windows-hardwa
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">特性</th>
+<th align="left">Attribute</th>
 <th align="left">设置</th>
 </tr>
 </thead>
@@ -54,15 +54,15 @@ GUID_DEVINTERFACE_WPD[设备接口类](https://docs.microsoft.com/windows-hardwa
 <a name="remarks"></a>备注
 -------
 
-支持 WPD 设备驱动程序接口 (DDI) 的设备驱动程序注册 GUID_DEVINTERFACE_WPD WPD 设备存在所通知的操作系统和应用程序的实例。
+适用于设备的驱动程序，这些设备支持 WPD 设备驱动程序接口 (DDI) 注册 GUID_DEVINTERFACE_WPD 的实例，通知操作系统和 WPD 设备存在的应用程序。
 
-WPD 类扩展组件注册使用 WPD 类扩展的 WPD 驱动程序此设备接口的实例。
+WPD 类扩展组件为使用 WPD 类扩展的 WPD 驱动程序注册此设备接口的实例。
 
-使用 WPD 设备的客户端应注册此设备接口类的实例到达接收通知。
+使用 WPD 设备的客户端应注册，通知此设备接口类的实例到达。
 
-客户端可以枚举 WPD 设备要注册此接口通过调用**IPortableDeviceManager::GetDevices** （Windows SDK 中所述）。
+客户端可以通过调用 Windows SDK) 中记录的 **IPortableDeviceManager：： GetDevices** (来枚举注册此接口的 WPD 设备。
 
-有关专用 WPD 设备的设备接口类的信息，请参阅[ **GUID_DEVINTERFACE_WPD_PRIVATE**](guid-devinterface-wpd-private.md)。
+有关专用 WPD 设备的设备接口类的信息，请参阅 [**GUID_DEVINTERFACE_WPD_PRIVATE**](guid-devinterface-wpd-private.md)。
 
 <a name="requirements"></a>要求
 ------------
@@ -74,27 +74,20 @@ WPD 类扩展组件注册使用 WPD 类扩展的 WPD 驱动程序此设备接口
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>Version</p></td>
-<td align="left"><p>在 Windows Vista、 Windows XP 和更高版本的 Windows 中可用。</p></td>
+<td align="left"><p>版本</p></td>
+<td align="left"><p>在 windows Vista、Windows XP 和更高版本的 Windows 中可用。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>Header</p></td>
-<td align="left">Portabledevice.h （包括 Portabledevice.h）</td>
+<td align="left"><p>标头</p></td>
+<td align="left">Portabledevice (包含 Portabledevice) </td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
 [**GUID_DEVINTERFACE_WPD_PRIVATE**](guid-devinterface-wpd-private.md)
 
  
-
- 
-
-
-
-
-
 

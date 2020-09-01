@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: b16972d6c10d39e5b7e51f6b76edc2d5066bdf6d
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 20bd641d9bbe33c0db65f5dfe0471defb6453bf0
+ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67366713"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89096015"
 ---
-# <a name="kscategoryrender"></a>KSCATEGORY_RENDER
+# <a name="kscategory_render"></a>KSCATEGORY_RENDER
 
 
-KSCATEGORY_RENDER[设备接口类](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)为定义[内核流式处理](https://docs.microsoft.com/windows-hardware/drivers/stream/streaming-minidrivers2)(KS) 呈现批和 MIDI 数据流的功能类别。
+KSCATEGORY_RENDER [设备接口类](./overview-of-device-interface-classes.md) 是为 [内核流式处理](../stream/streaming-minidrivers2.md) (KS) 功能类别定义的，用于呈现波形和 MIDI 数据流。
 
 <table>
 <colgroup>
@@ -33,7 +33,7 @@ KSCATEGORY_RENDER[设备接口类](https://docs.microsoft.com/windows-hardware/d
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">特性</th>
+<th align="left">Attribute</th>
 <th align="left">设置</th>
 </tr>
 </thead>
@@ -54,11 +54,11 @@ KSCATEGORY_RENDER[设备接口类](https://docs.microsoft.com/windows-hardware/d
 <a name="remarks"></a>备注
 -------
 
-KS 音频适配器设备驱动程序注册 KSCATEGORY_RENDER 以指示设备支持 KSCATEGORY_RENDER 功能分类的实例。
+适用于 KS 音频适配器设备的驱动程序注册 KSCATEGORY_RENDER 的实例，以指示设备支持 KSCATEGORY_RENDER 功能类别。
 
-有关如何在一个 INF 文件中注册此功能的类别的信息，请参阅 INF 文件*Ac97smpl.inf*随[AC'97 示例驱动程序](https://go.microsoft.com/fwlink/p/?linkid=256075)WDK 中。
+有关如何在 INF 文件中注册此功能类别的信息，请参阅在 WDK 中随附[AC ' 97 示例驱动程序](https://go.microsoft.com/fwlink/p/?linkid=256075)的 Inf 文件*Ac97smpl。*
 
-有关设备的音频的适配器的接口类的信息，请参阅[音频适配器安装设备接口](https://docs.microsoft.com/windows-hardware/drivers/audio/installing-device-interfaces-for-an-audio-adapter)并[ **KSPROPERTY_TOPOLOGY_CATEGORIES**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-topology-categories)。
+有关音频适配器的设备接口类的信息，请参阅 [安装音频适配器的设备接口](../audio/installing-device-interfaces-for-an-audio-adapter.md) 和 [**KSPROPERTY_TOPOLOGY_CATEGORIES**](../stream/ksproperty-topology-categories.md)。
 
 <a name="requirements"></a>要求
 ------------
@@ -70,17 +70,11 @@ KS 音频适配器设备驱动程序注册 KSCATEGORY_RENDER 以指示设备支�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>Header</p></td>
-<td align="left">Ks.h （包括 Ks.h）</td>
+<td align="left"><p>标头</p></td>
+<td align="left">Ks (包含 Ks .h) </td>
 </tr>
 </tbody>
 </table>
 
  
-
- 
-
-
-
-
 

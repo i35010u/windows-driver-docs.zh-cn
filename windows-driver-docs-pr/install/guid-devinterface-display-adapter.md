@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 6dc071e9305791526340b4e9d2c35abad3c262e7
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: c4a41b086c7157184cefc7633014b35f3853e409
+ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67372705"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89097199"
 ---
-# <a name="guiddevinterfacedisplayadapter"></a>GUID_DEVINTERFACE_DISPLAY_ADAPTER
+# <a name="guid_devinterface_display_adapter"></a>GUID_DEVINTERFACE_DISPLAY_ADAPTER
 
 
-GUID_DEVINTERFACE_DISPLAY_ADAPTER[设备接口类](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)为受支持的显示视图以显示适配器定义。
+为显示适配器支持的显示视图定义 GUID_DEVINTERFACE_DISPLAY_ADAPTER [设备接口类](./overview-of-device-interface-classes.md) 。
 
 <table>
 <colgroup>
@@ -33,7 +33,7 @@ GUID_DEVINTERFACE_DISPLAY_ADAPTER[设备接口类](https://docs.microsoft.com/wi
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">特性</th>
+<th align="left">Attribute</th>
 <th align="left">设置</th>
 </tr>
 </thead>
@@ -54,11 +54,11 @@ GUID_DEVINTERFACE_DISPLAY_ADAPTER[设备接口类](https://docs.microsoft.com/wi
 <a name="remarks"></a>备注
 -------
 
-系统提供显示器驱动程序注册此设备接口类，以通知操作系统和应用程序的显示视图状态的实例。
+系统提供的显示驱动程序将注册此设备接口类的实例，以通知操作系统和应用程序是否存在显示视图。
 
-显示设备的信息，请参阅[Windows Vista 显示器驱动程序模型](https://docs.microsoft.com/windows-hardware/drivers/display/windows-vista-display-driver-model-design-guide)并[Windows 2000 显示器驱动程序模型](https://docs.microsoft.com/windows-hardware/drivers/display/windows-2000-display-driver-model-design-guide)。
+有关显示设备的信息，请参阅 [Windows Vista 显示驱动程序模型](../display/windows-vista-display-driver-model-design-guide.md) 和 [Windows 2000 显示驱动程序模型](../display/windows-2000-display-driver-model-design-guide.md)。
 
-有关显示适配器的设备接口类的信息，请参阅[ **GUID_DISPLAY_DEVICE_ARRIVAL**](guid-display-device-arrival.md)。
+有关显示适配器的设备接口类的信息，请参阅 [**GUID_DISPLAY_DEVICE_ARRIVAL**](guid-display-device-arrival.md)。
 
 <a name="requirements"></a>要求
 ------------
@@ -70,23 +70,16 @@ GUID_DEVINTERFACE_DISPLAY_ADAPTER[设备接口类](https://docs.microsoft.com/wi
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>Header</p></td>
-<td align="left">Ntddvdeo.h （包括 Ntddvdeo.h）</td>
+<td align="left"><p>标头</p></td>
+<td align="left">Ntddvdeo (包含 Ntddvdeo) </td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
 [**GUID_DISPLAY_DEVICE_ARRIVAL**](guid-display-device-arrival.md)
 
  
-
- 
-
-
-
-
-
 

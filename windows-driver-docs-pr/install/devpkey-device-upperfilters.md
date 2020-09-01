@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: df1ea3bb901e6c51f080ed14bac14837b1fa5091
-ms.sourcegitcommit: e180a0670b0b78c30541755e6e030df249979f1e
+ms.openlocfilehash: d75450446fe60960c197d55abf0f4d89dda9078a
+ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/16/2020
-ms.locfileid: "86418487"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89096173"
 ---
 # <a name="devpkey_device_upperfilters"></a>DEVPKEY_Device_UpperFilters
 
@@ -33,8 +33,8 @@ DEVPKEY_Device_UpperFilters 设备属性表示为设备实例安装的顶级筛�
 </colgroup>
 <thead>
 <tr>
-<th>属性</th>
-<th>Value</th>
+<th>Attribute</th>
+<th>值</th>
 </tr>
 </thead>
 <tbody>
@@ -66,29 +66,22 @@ DEVPKEY_Device_UpperFilters 设备属性表示为设备实例安装的顶级筛�
 <a name="remarks"></a>备注
 -------
 
-为设备安装上层设备筛选器驱动程序时，将设置 DEVPKEY_Device_UpperFilters 属性的值。 有关如何安装设备筛选器驱动程序的详细信息，请参阅[安装筛选器驱动程序](https://docs.microsoft.com/windows-hardware/drivers/install/installing-a-filter-driver)。
+为设备安装上层设备筛选器驱动程序时，将设置 DEVPKEY_Device_UpperFilters 属性的值。 有关如何安装设备筛选器驱动程序的详细信息，请参阅 [安装筛选器驱动程序](./installing-a-filter-driver.md)。
 
-可以调用[**SetupDiGetDeviceProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)和**SetupDiGetDeviceProperty**检索和设置 DEVPKEY_Device_UpperFilters 的值。
+可以调用 [**SetupDiGetDeviceProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw) 和 **SetupDiGetDeviceProperty** 检索和设置 DEVPKEY_Device_UpperFilters 的值。
 
-Windows Server 2003、Windows XP 和 Windows 2000 支持此属性，但不支持 DEVPKEY_Device_UpperFilters 属性键。 相反，你可以使用相应的 SPDRP_UPPERFILTERS 标识符来访问这些早期版本的 Windows 上的属性值。 有关如何在这些早期版本的 Windows 上访问此属性值的信息，请参阅[SPDRP_Xxx 属性访问设备实例](https://docs.microsoft.com/windows-hardware/drivers/install/accessing-device-instance-spdrp-xxx-properties)。
+Windows Server 2003、Windows XP 和 Windows 2000 支持此属性，但不支持 DEVPKEY_Device_UpperFilters 属性键。 相反，你可以使用相应的 SPDRP_UPPERFILTERS 标识符来访问这些早期版本的 Windows 上的属性值。 有关如何在这些早期版本的 Windows 上访问此属性值的信息，请参阅 [SPDRP_Xxx 属性访问设备实例](./accessing-device-instance-spdrp-xxx-properties.md)。
 
 <a name="requirements"></a>要求
 ------------
 
-**版本**： windows Vista 和更高版本的 windows**头**： Devpkey （包括 Devpkey）
+**版本**： windows Vista 和更高版本的 windows **标题**： Devpkey (包含 Devpkey) 
 
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
-[**SetupDiGetDeviceProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)
-
- 
+[**SetupDiGetDeviceProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)
 
  
-
-
-
-
-
 

@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 8b9afac2662c6f043bdc6ba1ff605473e8260e38
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 3f2caf8e9b682e4287c3f8adc135969af8e3b228
+ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72837446"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89097265"
 ---
 # <a name="kscategory_bda_transport_information"></a>KSCATEGORY_BDA_TRANSPORT_INFORMATION
 
 
-在[广播驱动程序体系结构](https://docs.microsoft.com/windows-hardware/drivers/ddi/_stream/index)（BDA）中，为传输信息筛选器（.tif）的[内核流式处理](https://docs.microsoft.com/windows-hardware/drivers/stream/streaming-minidrivers2)（KS）功能类别定义了 KSCATEGORY_BDA_TRANSPORT_INFORMATION[设备接口类](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)。
+在[广播驱动程序体系结构) BDA (的广播驱动程序体系结构](/windows-hardware/drivers/ddi/_stream/index)中，为[内核流式处理](../stream/streaming-minidrivers2.md) (KS) 功能 (类别定义 KSCATEGORY_BDA_TRANSPORT_INFORMATION[设备接口类](./overview-of-device-interface-classes.md)。
 
 <table>
 <colgroup>
@@ -33,7 +33,7 @@ ms.locfileid: "72837446"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">属性</th>
+<th align="left">Attribute</th>
 <th align="left">设置</th>
 </tr>
 </thead>
@@ -54,9 +54,9 @@ ms.locfileid: "72837446"
 <a name="remarks"></a>备注
 -------
 
-用于 BDA 设备的驱动程序注册 KSCATEGORY_BDA_TRANSPORT_INFORMATION 的实例，以向操作系统指明设备支持的是 BDA 传输信息筛选器。
+用于 BDA 设备的驱动程序将注册 KSCATEGORY_BDA_TRANSPORT_INFORMATION 的实例，以向操作系统指明设备支持的是 BDA 传输信息筛选器。
 
-有关 BDA 传输信息筛选器的 KS 功能类别的详细信息，请参阅[Bda 筛选器类别 guid](https://docs.microsoft.com/windows-hardware/drivers/stream/bda-filter-category-guids)。
+有关 BDA 传输信息筛选器的 KS 功能类别的详细信息，请参阅 [Bda 筛选器类别 guid](../stream/bda-filter-category-guids.md)。
 
 <a name="requirements"></a>要求
 ------------
@@ -73,16 +73,10 @@ ms.locfileid: "72837446"
 </tr>
 <tr class="even">
 <td align="left"><p>标头</p></td>
-<td align="left">Bdamedia （包括 Bdamedia）</td>
+<td align="left">Bdamedia (包含 Bdamedia) </td>
 </tr>
 </tbody>
 </table>
 
  
-
- 
-
-
-
-
 

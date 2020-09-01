@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: d62c0266e5673b8d9b8bec98080a49bd2e46bfeb
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 7f920434b8c41491b30a262637684191d57f71f2
+ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67377274"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89095957"
 ---
-# <a name="devpkeydrvpkgmodel"></a>DEVPKEY_DrvPkg_Model
+# <a name="devpkey_drvpkg_model"></a>DEVPKEY_DrvPkg_Model
 
 
-DEVPKEY_DrvPkg_Model 设备[驱动程序包](https://docs.microsoft.com/windows-hardware/drivers/install/driver-packages)属性表示的模型名称的设备实例。
+DEVPKEY_DrvPkg_Model 设备 [驱动程序包](./driver-packages.md) 属性表示设备实例的模型名称。
 
 <table>
 <colgroup>
@@ -41,11 +41,11 @@ DEVPKEY_DrvPkg_Model 设备[驱动程序包](https://docs.microsoft.com/windows-
 <td align="left"><p><a href="devprop-type-string.md" data-raw-source="[&lt;strong&gt;DEVPROP_TYPE_STRING&lt;/strong&gt;](devprop-type-string.md)"><strong>DEVPROP_TYPE_STRING</strong></a></p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><strong>属性访问</strong></p></td>
-<td align="left"><p>通过安装应用程序和安装程序的只读访问权限</p></td>
+<td align="left"><p><strong>和</strong></p></td>
+<td align="left"><p>安装应用程序和安装程序的只读访问</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>本地化？</strong></p></td>
+<td align="left"><p><strong>各种?</strong></p></td>
 <td align="left"><p>是</p></td>
 </tr>
 </tbody>
@@ -56,9 +56,9 @@ DEVPKEY_DrvPkg_Model 设备[驱动程序包](https://docs.microsoft.com/windows-
 <a name="remarks"></a>备注
 -------
 
-可以设置的值由 DEVPKEY_DrvPkg_Model [ **INF AddProperty 指令**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addproperty-directive)包含在[ **INF *DDInstall*部分** ](https://docs.microsoft.com/windows-hardware/drivers/install/inf-ddinstall-section)的安装设备的 INF 文件。 可以通过调用检索 DEVPKEY_DrvPkg_Model 属性的值[ **SetupDiGetDeviceProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)。
+可以设置 AddProperty 的 DEVPKEY_DrvPkg_Model 值，该 [**指令**](./inf-addproperty-directive.md) 包含在安装设备的 inf 文件的 [**inf *DDInstall* 部分**](./inf-ddinstall-section.md) 中。 可以通过调用 [**SetupDiGetDeviceProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)来检索 DEVPKEY_DrvPkg_Model 属性的值。
 
-下面是举例说明如何使用 INF **AddProperty**指令以将设备 INF 安装 DEVPKEY_DrvPkg_Model 的值设置*DDInstall*部分"SampleDDInstallSection":
+下面的示例演示如何使用 INF **AddProperty** 指令为 INF *DDInstall* 部分为 "SampleDDInstallSection" 安装的设备设置 DEVPKEY_DrvPkg_Model 值：
 
 ```cpp
 [SampleDDinstallSection]
@@ -81,31 +81,24 @@ DeviceModel,,,,"DSC-530"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>Version</p></td>
+<td align="left"><p>版本</p></td>
 <td align="left"><p>在 Windows Vista 和更高版本的 Windows 中可用。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>Header</p></td>
-<td align="left">Devpkey.h （包括 Devpkey.h）</td>
+<td align="left"><p>标头</p></td>
+<td align="left">Devpkey (包含 Devpkey) </td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
-[**INF AddProperty 指令**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addproperty-directive)
+[**INF AddProperty 指令**](./inf-addproperty-directive.md)
 
-[**INF *DDInstall*部分**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-ddinstall-section)
+[**INF *DDInstall* 部分**](./inf-ddinstall-section.md)
 
-[**SetupDiGetDeviceProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)
-
- 
+[**SetupDiGetDeviceProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)
 
  
-
-
-
-
-
 

@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 9b92f88c737d337ff710341cfe3c4a7ea19ff336
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 025668c9db09b589f84ffd17a0a1f3a206ceba1a
+ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67372740"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89096217"
 ---
-# <a name="guiddevinterfacecomport"></a>GUID_DEVINTERFACE_COMPORT
+# <a name="guid_devinterface_comport"></a>GUID_DEVINTERFACE_COMPORT
 
 
-GUID_DEVINTERFACE_COMPORT[设备接口类](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)为定义[COM 端口](https://docs.microsoft.com/previous-versions/ff546485(v=vs.85))。
+为[COM 端口](/previous-versions/ff546485(v=vs.85))定义 GUID_DEVINTERFACE_COMPORT[设备接口类](./overview-of-device-interface-classes.md)。
 
 <table>
 <colgroup>
@@ -33,7 +33,7 @@ GUID_DEVINTERFACE_COMPORT[设备接口类](https://docs.microsoft.com/windows-ha
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">特性</th>
+<th align="left">Attribute</th>
 <th align="left">设置</th>
 </tr>
 </thead>
@@ -54,17 +54,17 @@ GUID_DEVINTERFACE_COMPORT[设备接口类](https://docs.microsoft.com/windows-ha
 <a name="remarks"></a>备注
 -------
 
-串行端口的驱动程序注册通知的操作系统和应用程序的 COM 端口存在此设备接口类的实例。
+串行端口驱动程序注册此设备接口类的实例，通知操作系统和应用程序是否存在 COM 端口。
 
-串行端口的系统提供的函数驱动程序注册此设备接口类的实例[串行端口](https://docs.microsoft.com/previous-versions/ff547451(v=vs.85))。
+系统提供的串行端口函数驱动程序为 [串行端口](/previous-versions/ff547451(v=vs.85))注册此设备接口类的实例。
 
-下面的示例 （Github 上） 注册为串行端口的此类的实例：
+以下示例 (Github 上) 为串行端口注册此类的实例：
 
 -   [串行示例](https://go.microsoft.com/fwlink/p/?LinkId=617962)
--   [虚拟串行驱动程序示例](https://go.microsoft.com/fwlink/p/?LinkId=617963)(UMDF 1.0)
--   [虚拟 serial2 驱动程序示例](https://go.microsoft.com/fwlink/p/?LinkId=722209)(KMDF)
+-   [虚拟串行驱动程序示例](https://go.microsoft.com/fwlink/p/?LinkId=617963) (UMDF 1.0) 
+-   [Virtual serial2 driver 示例](https://go.microsoft.com/fwlink/p/?LinkId=722209) (KMDF) 
 
-[**GUID_CLASS_COMPORT** ](guid-class-comport.md)对于此类的新实例，而是使用 GUID_DEVINTERFACE_COMPORT 是此设备接口类; 的已过时标识符。
+[**GUID_CLASS_COMPORT**](guid-class-comport.md) 是此设备接口类的过时标识符;对于此类的新实例，请改用 GUID_DEVINTERFACE_COMPORT。
 
 <a name="requirements"></a>要求
 ------------
@@ -76,27 +76,20 @@ GUID_DEVINTERFACE_COMPORT[设备接口类](https://docs.microsoft.com/windows-ha
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>Version</p></td>
+<td align="left"><p>版本</p></td>
 <td align="left"><p>在 Microsoft Windows 2000 和更高版本的 Windows 中可用。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>Header</p></td>
-<td align="left">Ntddser.h （包括 Ntddser.h）</td>
+<td align="left"><p>标头</p></td>
+<td align="left">Ntddser (包含 Ntddser) </td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
 [**GUID_CLASS_COMPORT**](guid-class-comport.md)
 
  
-
- 
-
-
-
-
-
 

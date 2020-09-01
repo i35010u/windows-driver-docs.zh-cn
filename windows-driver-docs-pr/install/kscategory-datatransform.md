@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 667ff7084f384b4c886eab494df38c4cf57109c6
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 6d505e6cba7cde8a5c5aa89bedf090a77aa1a1e9
+ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67385901"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89097249"
 ---
-# <a name="kscategorydatatransform"></a>KSCATEGORY_DATATRANSFORM
+# <a name="kscategory_datatransform"></a>KSCATEGORY_DATATRANSFORM
 
 
-KSCATEGORY_DATATRANSFORM[设备接口类](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)为定义[内核流式处理](https://docs.microsoft.com/windows-hardware/drivers/stream/streaming-minidrivers2)(KS) 转换的音频数据流量的功能类别。
+为转换音频数据流的[内核流式处理](../stream/streaming-minidrivers2.md) (KS) 功能类别定义 KSCATEGORY_DATATRANSFORM[设备接口类](./overview-of-device-interface-classes.md)。
 
 <table>
 <colgroup>
@@ -33,7 +33,7 @@ KSCATEGORY_DATATRANSFORM[设备接口类](https://docs.microsoft.com/windows-har
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">特性</th>
+<th align="left">Attribute</th>
 <th align="left">设置</th>
 </tr>
 </thead>
@@ -54,11 +54,11 @@ KSCATEGORY_DATATRANSFORM[设备接口类](https://docs.microsoft.com/windows-har
 <a name="remarks"></a>备注
 -------
 
-KS 设备的驱动程序注册 KSCATEGORY_DATATRANSFORM 向操作系统指示设备支持 KSCATEGORY_DATATRANSFORM 功能分类的实例。
+KS 设备的驱动程序将注册 KSCATEGORY_DATATRANSFORM 的实例，以向操作系统指示设备支持 KSCATEGORY_DATATRANSFORM 功能类别。
 
-有关如何在一个 INF 文件中注册此功能的类别的示例，请参阅*Ddksynth.inf*软件合成器示例中包含的 INF 文件*src\\音频\\ddksynth* WDK 的目录。
+有关如何在 INF 文件中注册此功能类别的示例，请参阅 WDK 的*src \\ 音频 \\ Ddksynth*目录中的软件合成器示例附带的*Ddksynth* inf 文件。
 
-有关此功能的类别的详细信息，请参阅[音频适配器安装设备接口](https://docs.microsoft.com/windows-hardware/drivers/audio/installing-device-interfaces-for-an-audio-adapter)， [ **KSPROPERTY_TOPOLOGY_CATEGORIES**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-topology-categories)，以及[GFX 要求筛选器工厂](https://docs.microsoft.com/windows-hardware/drivers/audio/requirements-for-a-gfx-filter-factory)。
+有关此功能类别的详细信息，请参阅 [安装音频适配器的设备接口](../audio/installing-device-interfaces-for-an-audio-adapter.md)、 [**KSPROPERTY_TOPOLOGY_CATEGORIES**](../stream/ksproperty-topology-categories.md)以及 [GFX 筛选器工厂的要求](../audio/index.md)。
 
 <a name="requirements"></a>要求
 ------------
@@ -70,17 +70,11 @@ KS 设备的驱动程序注册 KSCATEGORY_DATATRANSFORM 向操作系统指示设
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>Header</p></td>
-<td align="left">Ks.h （包括 Ks.h）</td>
+<td align="left"><p>标头</p></td>
+<td align="left">Ks (包含 Ks .h) </td>
 </tr>
 </tbody>
 </table>
 
  
-
- 
-
-
-
-
 

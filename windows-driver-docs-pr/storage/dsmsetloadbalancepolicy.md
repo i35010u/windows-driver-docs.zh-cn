@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: c061b110b87b368bf5fbfca16e3d5489f9851049
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: e521c2c2fb4e78d9a14e2d154b87e4426bd53d56
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72844558"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89184707"
 ---
 # <a name="dsmsetloadbalancepolicy-function"></a>DsmSetLoadBalancePolicy 函数
 
@@ -40,9 +40,9 @@ void DsmSetLoadBalancePolicy(
 ----------
 
 *LoadBalancePolicy*   
-[**DsmSetLoadBalancePolicy\_OUT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/mpiodisk/ns-mpiodisk-_dsmsetloadbalancepolicy_out)结构。
+[**DsmSetLoadBalancePolicy \_ OUT**](/windows-hardware/drivers/ddi/mpiodisk/ns-mpiodisk-_dsmsetloadbalancepolicy_out)结构。
 
-*状态*   
+*状态值*   
 操作的状态。
 
 <a name="return-value"></a>返回值
@@ -53,7 +53,7 @@ void DsmSetLoadBalancePolicy(
 <a name="remarks"></a>备注
 -------
 
-此 WMI 方法属于[DSM\_LB\_操作](dsm-lb-operations-wmi-class.md)WMI 类。
+此 WMI 方法属于 [DSM \_ LB \_ 操作](dsm-lb-operations-wmi-class.md) WMI 类。
 
 <a name="requirements"></a>要求
 ------------
@@ -66,20 +66,14 @@ void DsmSetLoadBalancePolicy(
 <tbody>
 <tr class="odd">
 <td align="left"><p>目标平台</p></td>
-<td align="left">桌面设备</td>
+<td align="left">“桌面”</td>
 </tr>
 <tr class="even">
 <td align="left"><p>标头</p></td>
-<td align="left">MPIOdisk （包括 MPIOdisk）</td>
+<td align="left">MPIOdisk (包含 MPIOdisk) </td>
 </tr>
 </tbody>
 </table>
 
  
-
- 
-
-
-
-
 

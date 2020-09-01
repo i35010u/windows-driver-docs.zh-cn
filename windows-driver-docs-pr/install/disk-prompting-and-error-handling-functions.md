@@ -3,20 +3,20 @@ title: 磁盘提示和错误处理函数
 description: 磁盘提示和错误处理函数
 ms.assetid: e1afeeb3-02f0-4570-9910-f948646f07bf
 keywords:
-- 安装程序 Api 函数 WDK，磁盘提示
-- 安装程序 Api 函数 WDK、 错误处理
-- 错误 WDK SetupAPI
-- 提示 WDK SetupAPI 的磁盘
-- 提示磁盘插入 WDK SetupAPI
-- 提示 WDK SetupAPI 媒体
+- Setupapi.log 函数 WDK，磁盘提示
+- Setupapi.log 函数 WDK，错误处理
+- 错误 WDK Setupapi.log
+- 磁盘提示 WDK Setupapi.log
+- 提示磁盘插入 WDK Setupapi.log
+- 媒体提示 WDK Setupapi.log
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 30a874724506eeb43fc78cd08b1b9cde79f39e5c
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 18393707d551bd0ad6bd7992067b8d5daeda156f
+ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67375324"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89096053"
 ---
 # <a name="disk-prompting-and-error-handling-functions"></a>磁盘提示和错误处理函数
 
@@ -24,9 +24,9 @@ ms.locfileid: "67375324"
 
 
 
-可以使用常规的安装程序函数来提示用户插入新的介质，或者处理在复制文件时引发的错误重命名，或删除。
+您可以使用常规安装程序功能来提示用户插入新媒体，或处理在复制、重命名或删除文件时出现的错误。
 
-下表列出了对话框提供用于请求安装介质和报告错误的函数。 有关详细的功能描述，请参阅 Microsoft Windows SDK 文档。
+下表列出了一些函数，这些函数提供用于请求安装介质和报告错误的对话框。 有关详细的函数说明，请参阅 Microsoft Windows SDK 文档。
 
 <table>
 <colgroup>
@@ -36,24 +36,24 @@ ms.locfileid: "67375324"
 <thead>
 <tr class="header">
 <th align="left">函数</th>
-<th align="left">描述</th>
+<th align="left">说明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupcopyerrora" data-raw-source="[&lt;strong&gt;SetupCopyError&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupcopyerrora)"><strong>SetupCopyError</strong></a></p></td>
-<td align="left"><p>生成一个对话框，通知复制错误的用户。</p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupcopyerrora" data-raw-source="[&lt;strong&gt;SetupCopyError&lt;/strong&gt;](/windows/desktop/api/setupapi/nf-setupapi-setupcopyerrora)"><strong>SetupCopyError</strong></a></p></td>
+<td align="left"><p>生成一个对话框，通知用户出现复制错误。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdeleteerrora" data-raw-source="[&lt;strong&gt;SetupDeleteError&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdeleteerrora)"><strong>SetupDeleteError</strong></a></p></td>
-<td align="left"><p>生成一个对话框，通知用户删除错误。</p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdeleteerrora" data-raw-source="[&lt;strong&gt;SetupDeleteError&lt;/strong&gt;](/windows/desktop/api/setupapi/nf-setupapi-setupdeleteerrora)"><strong>SetupDeleteError</strong></a></p></td>
+<td align="left"><p>生成一个对话框，该对话框将通知用户删除错误。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setuppromptfordiska" data-raw-source="[&lt;strong&gt;SetupPromptForDisk&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setuppromptfordiska)"><strong>SetupPromptForDisk</strong></a></p></td>
-<td align="left"><p>生成一个对话框，提示用户输入了安装介质或源的文件位置。</p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setuppromptfordiska" data-raw-source="[&lt;strong&gt;SetupPromptForDisk&lt;/strong&gt;](/windows/desktop/api/setupapi/nf-setupapi-setuppromptfordiska)"><strong>SetupPromptForDisk</strong></a></p></td>
+<td align="left"><p>生成一个对话框，提示用户输入安装介质或源文件位置。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setuprenameerrora" data-raw-source="[&lt;strong&gt;SetupRenameError&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setuprenameerrora)"><strong>SetupRenameError</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setuprenameerrora" data-raw-source="[&lt;strong&gt;SetupRenameError&lt;/strong&gt;](/windows/desktop/api/setupapi/nf-setupapi-setuprenameerrora)"><strong>SetupRenameError</strong></a></p></td>
 <td align="left"><p>生成一个对话框，通知用户重命名错误。</p></td>
 </tr>
 </tbody>
@@ -62,10 +62,4 @@ ms.locfileid: "67375324"
  
 
  
-
- 
-
-
-
-
 

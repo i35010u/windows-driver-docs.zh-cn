@@ -14,21 +14,21 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: b891cfe32185e853af382f0d7a5f47fa729a7cca
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: d35973f2de4de9255d90c7045e7bb1ae444597a8
+ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67373504"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89097353"
 ---
-# <a name="difallowinstall"></a>DIF_ALLOW_INSTALL
+# <a name="dif_allow_install"></a>DIF_ALLOW_INSTALL
 
 
-DIF_ALLOW_INSTALL 请求会为设备的安装程序要求 Windows 可以继续进行安装该设备。
+DIF_ALLOW_INSTALL 请求要求设备安装程序是否可以继续安装设备。
 
 ### <a name="when-sent"></a>发送时间
 
-后选择设备，但在安装设备之前的驱动程序。
+选择设备驱动程序之后，在安装设备之前。
 
 ### <a name="who-handles"></a>谁处理
 
@@ -58,15 +58,15 @@ DIF_ALLOW_INSTALL 请求会为设备的安装程序要求 Windows 可以继续�
 ### <a name="installer-input"></a>安装程序输入
 
 <a href="" id="deviceinfoset"></a>*DeviceInfoSet*  
-提供的句柄[设备信息集](https://docs.microsoft.com/windows-hardware/drivers/install/device-information-sets)，其中包含该设备。
+提供包含设备的 [设备信息集](./device-information-sets.md) 的句柄。
 
 <a href="" id="deviceinfodata"></a>*DeviceInfoData*  
-提供一个指向[ **SP_DEVINFO_DATA** ](https://docs.microsoft.com/windows/desktop/api/setupapi/ns-setupapi-_sp_devinfo_data)标识设备中设备的信息集的结构。
+提供一个指向 [**SP_DEVINFO_DATA**](/windows/desktop/api/setupapi/ns-setupapi-_sp_devinfo_data) 结构的指针，该结构在设备信息集中标识设备。
 
 <a href="" id="device-installation-parameters-"></a>设备安装参数   
-设备安装参数 ([**SP_DEVINSTALL_PARAMS**](https://docs.microsoft.com/windows/desktop/api/setupapi/ns-setupapi-_sp_devinstall_params_a)) 与关联*DeviceInfoData*。
+与*DeviceInfoData*关联的设备安装参数 ([**SP_DEVINSTALL_PARAMS**](/windows/desktop/api/setupapi/ns-setupapi-_sp_devinstall_params_a)) 。
 
-<a href="" id="class-installation-parameters"></a>类的安装参数  
+<a href="" id="class-installation-parameters"></a>类安装参数  
 无
 
 ### <a name="installer-output"></a>安装程序输出
@@ -75,33 +75,33 @@ DIF_ALLOW_INSTALL 请求会为设备的安装程序要求 Windows 可以继续�
 
 ### <a name="installer-return-value"></a>安装程序返回值
 
-辅助安装程序可以返回 NO_ERROR 或 Win32 错误。 辅助安装程序不应返回 ERROR_DI_POSTPROCESSING_REQUIRED 此 DIF 请求。
+共同安装程序可能返回 NO_ERROR 或 Win32 错误。 对于此 DIF 请求，共同安装程序不应返回 ERROR_DI_POSTPROCESSING_REQUIRED。
 
 类安装程序通常返回 ERROR_DI_DO_DEFAULT 或 Win32 错误代码。
 
-典型的 Win32 错误代码，此差异请求包括 ERROR_DI_DONT_INSTALL 和 ERROR_NON_WINDOWS_NT_DRIVER。
+此 DIF 请求的典型 Win32 错误代码包括 ERROR_DI_DONT_INSTALL 和 ERROR_NON_WINDOWS_NT_DRIVER。
 
-**请注意**  类安装程序和共同安装程序应不 freturn ERROR_REQUIRES_INTERACTIVE_WINDOWSTATION，因为这将导致设备安装失败。 如果设备安装需要用户交互，类安装程序并共同安装程序应支持[完成安装操作](https://docs.microsoft.com/windows-hardware/drivers/install/finish-install-actions--windows-vista-and-later-)。
+**注意**   类安装程序和共同安装程序不应 freturn ERROR_REQUIRES_INTERACTIVE_WINDOWSTATION 因为这会导致设备安装失败。 如果设备安装需要用户交互，则类安装程序和共同安装程序应支持 " [完成-安装" 操作](./finish-install-actions--windows-vista-and-later-.md)。
 
  
 
-### <a name="default-dif-code-handler"></a>默认 DIF 代码处理程序
+### <a name="default-dif-code-handler"></a>默认的 DIF 代码处理程序
 
 无
 
 ### <a name="installer-operation"></a>安装程序操作
 
-在对 DIF_ALLOW_INSTALL 请求响应安装程序确认 Windows 是否可以安装该设备。
+为响应 DIF_ALLOW_INSTALL 请求，安装程序将确认 Windows 是否可以安装该设备。
 
-如果确定 （例如，如果该驱动程序是一个基于 NT 的操作系统将无法正常工作的 Windows 9 x 限驱动程序） 所选驱动程序是不正确或它将确定所选驱动程序已知有 bug，安装程序可能会失败此请求。
+如果安装程序确定所选的驱动程序不正确 (例如，如果该驱动程序是仅限 Windows 9x 的驱动程序，将无法在基于 NT 的操作系统上正常运行，则安装程序可能会失败此请求) 或确定所选的驱动程序是否存在 bug。
 
-如果设备安装参数设置了 DI_QUIETINSTALL 标志和安装程序必须在设备安装过程中显示 UI，安装程序可能会失败此请求。 但是，此失败是罕见，因为安装程序通常提供响应 DIF_NEWDEVICEWIZARD_FINISHINSTALL 请求任何 UI 页。 在这种情况下，UI 不会阻止安装程序成功 DIF_ALLOW_INSTALL 请求为其设置 quiet 标志。 但是，如果安装程序不能限制其用户界面，以完成安装情况下，安装程序必须此 DIF 请求如果 DI_QUIETINSTALL 标志设置失败。 安装程序可能具有此限制，例如，如果它调用供应商提供的代码显示 UI。
+如果在设备安装参数中设置了 DI_QUIETINSTALL 标志，并且安装程序必须在设备安装过程中显示 UI，则安装程序可能会导致此请求失败。 但是，这种故障很少见，因为安装程序通常可以提供任何 UI 页来响应 DIF_NEWDEVICEWIZARD_FINISHINSTALL 请求。 在这种情况下，UI 不会阻止安装程序成功执行为其设置了 quiet 标志的 DIF_ALLOW_INSTALL 请求。 但是，如果安装程序无法将其 UI 限制为完成安装用例，则在设置了 DI_QUIETINSTALL 标志的情况下，安装程序必须失败此 DIF 请求。 例如，如果某个安装程序调用了由供应商提供的显示 UI 的代码，则可能会有此限制。
 
-如果安装程序失败此 DIF 请求，Windows 将停止安装。
+如果安装程序未能通过此 DIF 请求，则 Windows 将停止安装。
 
-如果此 DIF 请求失败的安装程序和设备的安装参数中未设置 DI_QUIETINSTALL，安装程序应显示一个对话框，并显示消息，解释了为什么不在安装设备。
+如果安装程序未能通过此 DIF 请求并 DI_QUIETINSTALL 未在设备安装参数中设置，则安装程序应显示一个对话框，其中包含一条说明设备未安装的原因的消息。
 
-有关差异代码的详细信息，请参阅[处理 DIF 代码](https://docs.microsoft.com/windows-hardware/drivers/install/handling-dif-codes)。
+有关 DIF 代码的详细信息，请参阅 [处理 Dif 代码](./handling-dif-codes.md)。
 
 <a name="requirements"></a>要求
 ------------
@@ -113,29 +113,22 @@ DIF_ALLOW_INSTALL 请求会为设备的安装程序要求 Windows 可以继续�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>Version</p></td>
-<td align="left"><p>Microsoft Windows 2000 和更高版本的 Windows 支持。</p></td>
+<td align="left"><p>版本</p></td>
+<td align="left"><p>在 Microsoft Windows 2000 和更高版本的 Windows 中受支持。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>Header</p></td>
-<td align="left">Setupapi.h （包括 Setupapi.h）</td>
+<td align="left"><p>标头</p></td>
+<td align="left">Setupapi.log (包含 Setupapi.log) </td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
-[**SP_DEVINFO_DATA**](https://docs.microsoft.com/windows/desktop/api/setupapi/ns-setupapi-_sp_devinfo_data)
+[**SP_DEVINFO_DATA**](/windows/desktop/api/setupapi/ns-setupapi-_sp_devinfo_data)
 
-[**SP_DEVINSTALL_PARAMS**](https://docs.microsoft.com/windows/desktop/api/setupapi/ns-setupapi-_sp_devinstall_params_a)
-
- 
+[**SP_DEVINSTALL_PARAMS**](/windows/desktop/api/setupapi/ns-setupapi-_sp_devinstall_params_a)
 
  
-
-
-
-
-
 

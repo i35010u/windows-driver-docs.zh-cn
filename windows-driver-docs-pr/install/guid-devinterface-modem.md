@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: fed786df7d85d8553e89606112e07d8e8d5eb93c
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: b846ba7223b16e69c9e5a39bc2f04c256fb414bc
+ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67375281"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89096016"
 ---
-# <a name="guiddevinterfacemodem"></a>GUID_DEVINTERFACE_MODEM
+# <a name="guid_devinterface_modem"></a>GUID_DEVINTERFACE_MODEM
 
 
-GUID_DEVINTERFACE_MODEM[设备接口类](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)为定义[调制解调器设备](https://docs.microsoft.com/previous-versions/windows/hardware/modem/ff542573(v=vs.85))。
+为[调制解调器设备](/previous-versions/windows/hardware/modem/ff542573(v=vs.85))定义 GUID_DEVINTERFACE_MODEM[设备接口类](./overview-of-device-interface-classes.md)。
 
 <table>
 <colgroup>
@@ -33,7 +33,7 @@ GUID_DEVINTERFACE_MODEM[设备接口类](https://docs.microsoft.com/windows-hard
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">特性</th>
+<th align="left">Attribute</th>
 <th align="left">设置</th>
 </tr>
 </thead>
@@ -54,9 +54,9 @@ GUID_DEVINTERFACE_MODEM[设备接口类](https://docs.microsoft.com/windows-hard
 <a name="remarks"></a>备注
 -------
 
-调制解调器设备的驱动程序注册通知的操作系统和应用程序的调制解调器设备存在此设备接口类的实例。
+调制解调器设备的驱动程序注册此设备接口类的实例，通知操作系统和应用程序是否存在调制解调器设备。
 
-在 GUID_DEVINTERFACE_MODEM *Ntddmodm.h*仅当 INITGUID 和 DEFINE_GUID 宏的正确版本之前的包含定义正确定义*Ntddmodm.h*。 中定义 DEFINE_GUID 宏*Guiddef.h*。 若要确保正确定义 INITGUID、 DEFINE_GUID 和 GUID_DEVINTERFACE_MODEM，包括头文件中的以下代码：
+仅当 INITGUID.H 和 DEFINE_GUID 宏的正确版本在包含*Ntddmodm*之前定义时，才会正确定义*Ntddmodm*中的 GUID_DEVINTERFACE_MODEM。 DEFINE_GUID 宏是在 *Guiddef*中定义的。 若要确保正确定义 INITGUID.H、DEFINE_GUID 和 GUID_DEVINTERFACE_MODEM，请在头文件中包含以下代码：
 
 ```cpp
 #ifndef INITGUID
@@ -71,11 +71,11 @@ GUID_DEVINTERFACE_MODEM[设备接口类](https://docs.microsoft.com/windows-hard
 ...
 ```
 
-有关调制解调器设备的信息，请参阅[调制解调器设备设计指南](https://docs.microsoft.com/previous-versions/windows/hardware/modem/ff542476(v=vs.85))。
+有关调制解调器设备的信息，请参阅 [调制解调器设备设计指南](/previous-versions/windows/hardware/modem/ff542476(v=vs.85))。
 
-使用此设备接口类的示例，请参阅[FakeModem-Unimodem 控制器无调制解调器示例驱动程序](https://go.microsoft.com/fwlink/p/?linkid=256110)WDK 中提供的示例。
+有关使用此设备接口类的示例，请参阅 WDK 中提供的 [FakeModem-Unimodem 无控制器驱动程序](https://go.microsoft.com/fwlink/p/?linkid=256110) 示例。
 
-[**GUID_CLASS_MODEM** ](guid-class-modem.md)对于此类的新实例，而是使用 GUID_DEVINTERFACE_MODEM 是此设备接口类; 的已过时标识符。
+[**GUID_CLASS_MODEM**](guid-class-modem.md) 是此设备接口类的过时标识符;对于此类的新实例，请改用 GUID_DEVINTERFACE_MODEM。
 
 <a name="requirements"></a>要求
 ------------
@@ -87,27 +87,20 @@ GUID_DEVINTERFACE_MODEM[设备接口类](https://docs.microsoft.com/windows-hard
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>Version</p></td>
+<td align="left"><p>版本</p></td>
 <td align="left"><p>在 Microsoft Windows 2000 和更高版本的 Windows 中可用。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>Header</p></td>
-<td align="left">Ntddmodm.h （包括 Ntddmodm.h）</td>
+<td align="left"><p>标头</p></td>
+<td align="left">Ntddmodm (包含 Ntddmodm) </td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
 [**GUID_CLASS_MODEM**](guid-class-modem.md)
 
  
-
- 
-
-
-
-
-
 

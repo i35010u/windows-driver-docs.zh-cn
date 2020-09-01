@@ -1,6 +1,6 @@
 ---
-title: SM\_SendRLS 函数
-description: SM\_SendRLS WMI 方法通过指定的本地端口发送读取链接状态（RLS）。 此 RLS 将发送到指定的远程端口，以检索与远程端口关联的链接错误状态块。
+title: SM \_ SendRLS 函数
+description: SM \_ SENDRLS WMI 方法 (RLS) 通过指定的本地端口发送读取链接状态。 此 RLS 将发送到指定的远程端口，以检索与远程端口关联的链接错误状态块。
 ms.assetid: 4498edde-1249-43b8-b581-37e24f8bd2d3
 keywords:
 - SM_SendRLS 函数存储设备
@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 3d779aeb2d2c17ae6f44ff87a891925c2e2c6123
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 3f606608657247b278ee81cb6c6d4a7bfeece327
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72845460"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89183831"
 ---
-# <a name="sm_sendrls-function"></a>SM\_SendRLS 函数
+# <a name="sm_sendrls-function"></a>SM \_ SendRLS 函数
 
 
-SM\_SendRLS WMI 方法通过指定的本地端口发送读取链接状态（RLS）。 此 RLS 将发送到指定的远程端口，以检索与远程端口关联的链接错误状态块。
+SM \_ SENDRLS WMI 方法 (RLS) 通过指定的本地端口发送读取链接状态。 此 RLS 将发送到指定的远程端口，以检索与远程端口关联的链接错误状态块。
 
 <a name="syntax"></a>语法
 ------
@@ -45,25 +45,25 @@ void SM_SendRLS(
 ----------
 
 *HbaPortWWN*   
-用于发送 RLS 命令的本地端口的全球名称（WWN）。 此信息将传送到 SM\_\_SendRLS 的 HbaPortWWN 成员中的微型端口驱动程序。
+用于发送 RLS 命令的本地端口的全球名称 (WWN) 。 此信息将传送到 SM SendRLS 结构中的 HbaPortWWN 成员的微型端口驱动程序 \_ \_ 。
 
 *DestWWN*   
-目标端口的全球名称（WWN）。 此信息将传送到 SM\_\_SendRLS 的 DestWWN 成员中的微型端口驱动程序。
+针对目标端口 (WWN) 的全球名称。 此信息将传送到 SM SendRLS 结构中的 DestWWN 成员的微型端口驱动程序 \_ \_ 。
 
 *InRespBufferMaxSize*   
 响应缓冲区的最大大小（以字节为单位）。
 
 *HBAStatus*   
-操作的状态。 有关允许值及其说明的列表，请参阅[HBA\_状态](hba-status.md)。 微型端口驱动程序在 SM\_SendRLS\_OUT 结构的 HBAStatus 成员中返回此信息。
+操作的状态。 有关允许值及其说明的列表，请参阅 [HBA \_ 状态](hba-status.md)。 微型端口驱动程序在 SM \_ SendRLS OUT 结构的 HBAStatus 成员中返回此信息 \_ 。
 
 *TotalRespBufferSize*   
-RLS 命令的结果的大小（以字节为单位）。 微型端口驱动程序在 SM\_SendRLS\_OUT 结构的 TotalRespBufferSize 成员中返回此信息。
+RLS 命令的结果的大小（以字节为单位）。 微型端口驱动程序在 SM \_ SendRLS OUT 结构的 TotalRespBufferSize 成员中返回此信息 \_ 。
 
 *OutRespBufferSize*   
-实际检索到的数据的大小（以字节为单位）。 微型端口驱动程序在 SM\_SendRLS\_OUT 结构的 OutRespBufferSize 成员中返回此信息。
+实际检索到的数据的大小（以字节为单位）。 微型端口驱动程序在 SM \_ SendRLS OUT 结构的 OutRespBufferSize 成员中返回此信息 \_ 。
 
 *RespBuffer*   
-RLS 命令的结果。 微型端口驱动程序在 SM\_SendRLS\_OUT 结构的 RespBuffer 成员中返回此信息。
+RLS 命令的结果。 微型端口驱动程序在 SM \_ SendRLS OUT 结构的 RespBuffer 成员中返回此信息 \_ 。
 
 <a name="return-value"></a>返回值
 ------------
@@ -73,7 +73,7 @@ RLS 命令的结果。 微型端口驱动程序在 SM\_SendRLS\_OUT 结构的 Re
 <a name="remarks"></a>备注
 -------
 
-此 WMI 方法属于 MS\_SM\_FabricAndDomainManagementMethods WMI 类。
+此 WMI 方法属于 MS \_ SM \_ FabricAndDomainManagementMethods WMI 类。
 
 <a name="requirements"></a>要求
 ------------
@@ -86,7 +86,7 @@ RLS 命令的结果。 微型端口驱动程序在 SM\_SendRLS\_OUT 结构的 Re
 <tbody>
 <tr class="odd">
 <td align="left"><p>目标平台</p></td>
-<td align="left">桌面设备</td>
+<td align="left">“桌面”</td>
 </tr>
 <tr class="even">
 <td align="left"><p>标头</p></td>
@@ -98,16 +98,9 @@ RLS 命令的结果。 微型端口驱动程序在 SM\_SendRLS\_OUT 结构的 Re
 ## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
-[HBA\_状态](hba-status.md)
+[HBA \_ 状态](hba-status.md)
 
-[**SM\_SendRLS\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_sm_sendrls_out)
-
- 
+[**SM \_ SendRLS \_**](/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_sm_sendrls_out)
 
  
-
-
-
-
-
 

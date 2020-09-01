@@ -4,80 +4,75 @@ description: 底片扫描仪的可选 WIA 子项属性
 ms.assetid: 85364b59-e0a8-4a82-bc89-6f160609f35d
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0a648cbaba512b6dc4e62d4a5226279fe393e217
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 1c4837cba78d6b97f3268565af7331c6a4579a1b
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67376568"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89184811"
 ---
 # <a name="optional-wia-child-item-properties-for-film-scanners"></a>底片扫描仪的可选 WIA 子项属性
 
 
-WIA 电影扫描程序子项目 （可选） 可以支持以下 WIA 属性：
+WIA 胶片扫描器子项可以选择支持以下 WIA 属性：
 
-[**WIA\_IPA\_BITS\_每\_通道**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ipa-bits-per-channel)
+[**WIA \_ \_ \_ 每通道 IPA 位数 \_**](./wia-ipa-bits-per-channel.md)
 
-[**WIA\_IPA\_压缩**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ipa-compression)
+[**WIA \_ IPA \_ 压缩**](./wia-ipa-compression.md)
 
-[**WIA\_IPA\_CHANNELS\_PER\_PIXEL**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ipa-channels-per-pixel)
+[**WIA \_ IPA \_ \_ 每像素通道数 \_**](./wia-ipa-channels-per-pixel.md)
 
-[**WIA\_IPA\_FILENAME\_EXTENSION**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ipa-filename-extension)
+[**WIA \_ IPA \_ 文件 \_ 扩展名**](./wia-ipa-filename-extension.md)
 
-[**WIA\_IPA\_格式**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ipa-format)
+[**WIA \_ IPA \_ 格式**](./wia-ipa-format.md)
 
-[**WIA\_IPA\_PREFERRED\_FORMAT**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ipa-preferred-format)
+[**WIA \_ IPA \_ 首选 \_ 格式**](./wia-ipa-preferred-format.md)
 
-[**WIA\_IPA\_RAW\_BITS\_每\_通道**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ipa-raw-bits-per-channel)
+[**WIA \_ IPA \_ \_ \_ 每通道原始 \_ 位数**](./wia-ipa-raw-bits-per-channel.md)
 
-[**WIA\_IPA\_TYMED**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ipa-tymed)
+[**WIA \_ IPA \_ TYMED**](./wia-ipa-tymed.md)
 
-[**WIA\_IPS\_AUTO\_DESKEW**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ips-auto-deskew)
+[**WIA \_ IPS \_ 自动 \_ 反扭曲**](./wia-ips-auto-deskew.md)
 
-[**WIA\_IP\_亮度**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ips-brightness)
+[**WIA \_ IPS \_ 亮度**](./wia-ips-brightness.md)
 
-[**WIA\_IPS\_CONTRAST**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ips-contrast)
+[**WIA \_ IP \_ 对比**](./wia-ips-contrast.md)
 
-[**WIA\_IPS\_CUR\_INTENT**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ips-cur-intent)
+[**WIA \_ IP \_ 当前 \_ 意向**](./wia-ips-cur-intent.md)
 
-[**WIA\_IPS\_DESKEW\_X**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ips-deskew-x)
+[**WIA \_ IP \_ 反扭曲 \_ X**](./wia-ips-deskew-x.md)
 
-[**WIA\_IPS\_反扭曲\_Y**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ips-deskew-y)
+[**WIA \_ IP \_ 抗扭反 \_ Y**](./wia-ips-deskew-y.md)
 
-[**WIA\_IPS\_MAX\_HORIZONTAL\_SIZE**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ips-max-horizontal-size)
+[**WIA \_ IPS \_ 最大 \_ 水平 \_ 大小**](./wia-ips-max-horizontal-size.md)
 
-[**WIA\_IPS\_MAX\_VERTICAL\_SIZE**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ips-max-vertical-size)
+[**WIA \_ IPS \_ 最大 \_ 垂直 \_ 大小**](./wia-ips-max-vertical-size.md)
 
-[**WIA\_IPS\_MIN\_HORIZONTAL\_SIZE**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ips-min-horizontal-size)
+[**WIA \_ IPS \_ 最小 \_ 水平 \_ 大小**](./wia-ips-min-horizontal-size.md)
 
-[**WIA\_IPS\_MIN\_VERTICAL\_SIZE**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ips-min-vertical-size)
+[**WIA \_ IPS \_ 最小 \_ 垂直 \_ 大小**](./wia-ips-min-vertical-size.md)
 
-[**WIA\_IPS\_OPTICAL\_XRES**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ips-optical-xres)
+[**WIA \_ IP \_ 光纤 \_ XRES**](./wia-ips-optical-xres.md)
 
-[**WIA\_IPS\_OPTICAL\_YRES**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ips-optical-yres)
+[**WIA \_ IP \_ 光纤 \_ YRES**](./wia-ips-optical-yres.md)
 
-[**WIA\_IPS\_PHOTOMETRIC\_INTERP**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ips-photometric-interp)
+[**WIA \_ IP \_ PHOTOMETRIC \_ INTERP**](./wia-ips-photometric-interp.md)
 
-[**WIA\_IP\_预览**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ips-preview)
+[**WIA \_ IP \_ 预览版**](./wia-ips-preview.md)
 
-[**WIA\_IPS\_预览\_类型**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ips-preview-type)
+[**WIA \_ IP \_ 预览 \_ 类型**](./wia-ips-preview-type.md)
 
-[**WIA\_IP\_阈值**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ips-threshold)
+[**WIA \_ IP \_ 阈值**](./wia-ips-threshold.md)
 
-[**WIA\_IPS\_WARM\_UP\_TIME**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ips-warm-up-time)
+[**WIA \_ IP \_ 预热 \_ \_ 时间**](./wia-ips-warm-up-time.md)
 
-[**WIA\_IPS\_XRES**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ips-xres)
+[**WIA \_ IP \_ XRES**](./wia-ips-xres.md)
 
-[**WIA\_IPS\_XSCALING**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ips-xscaling)
+[**WIA \_ IP \_ XSCALING**](./wia-ips-xscaling.md)
 
-[**WIA\_IPS\_YRES**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ips-yres)
+[**WIA \_ IP \_ YRES**](./wia-ips-yres.md)
 
-[**WIA\_IPS\_YSCALING**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ips-yscaling)
-
- 
+[**WIA \_ IP \_ YSCALING**](./wia-ips-yscaling.md)
 
  
-
-
-
 

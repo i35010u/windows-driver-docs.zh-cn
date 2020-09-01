@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 1fdea47391934c145f50a21d8ec1bec8bbdbd1dc
-ms.sourcegitcommit: e180a0670b0b78c30541755e6e030df249979f1e
+ms.openlocfilehash: 577ee61636fdf428e0430c96ec59daf9baf11bf7
+ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/16/2020
-ms.locfileid: "86418518"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89096159"
 ---
 # <a name="devpkey_deviceclass_classcoinstallers"></a>DEVPKEY_DeviceClass_ClassCoInstallers
 
 
-DEVPKEY_DeviceClass_ClassCoInstallers 设备属性表示为[设备安装程序类](https://docs.microsoft.com/windows-hardware/drivers/install/device-setup-classes)安装的类共同安装程序的列表。
+DEVPKEY_DeviceClass_ClassCoInstallers 设备属性表示为 [设备安装程序类](./overview-of-device-setup-classes.md)安装的类共同安装程序的列表。
 
 <table>
 <colgroup>
@@ -33,8 +33,8 @@ DEVPKEY_DeviceClass_ClassCoInstallers 设备属性表示为[设备安装程序�
 </colgroup>
 <thead>
 <tr>
-<th>属性</th>
-<th>Value</th>
+<th>Attribute</th>
+<th>值</th>
 </tr>
 </thead>
 <tbody>
@@ -72,35 +72,28 @@ DEVPKEY_DeviceClass_ClassCoInstallers 设备属性表示为[设备安装程序�
 
 类共同安装程序列表中的每个类安装程序都由其 DLL 和入口点标识。
 
-有关如何安装类共同安装程序的信息，请参阅[注册类共同安装程序](https://docs.microsoft.com/windows-hardware/drivers/install/registering-a-class-co-installer)。
+有关如何安装类共同安装程序的信息，请参阅 [注册类共同安装程序](./registering-a-class-co-installer.md)。
 
-可以通过调用[**SetupDiGetClassProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetclasspropertyw)或[**SetupDiGetClassPropertyEx**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetclasspropertyexw)来检索 DEVPKEY_DeviceClass_ClassCoInstallers 的值。 可以通过调用[**SetupDiSetClassProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdisetclasspropertyw)或[**SetupDiSetClassPropertyEx**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdisetclasspropertyexw)来设置 DEVPKEY_DeviceClass_ClassCoInstallers。
+可以通过调用 [**SetupDiGetClassProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetclasspropertyw) 或 [**SetupDiGetClassPropertyEx**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetclasspropertyexw)来检索 DEVPKEY_DeviceClass_ClassCoInstallers 的值。 可以通过调用 [**SetupDiSetClassProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdisetclasspropertyw) 或 [**SetupDiSetClassPropertyEx**](/windows/desktop/api/setupapi/nf-setupapi-setupdisetclasspropertyexw)来设置 DEVPKEY_DeviceClass_ClassCoInstallers。
 
-Windows Server 2003、Windows XP 和 Windows 2000 支持此属性，但不支持 DEVPKEY_DeviceClass_ClassCoInstallers 属性键。 有关如何访问这些早期版本的 Windows 上相应信息的信息，请参阅[访问设备安装程序类的共同安装程序注册表项值](https://docs.microsoft.com/windows-hardware/drivers/install/accessing-the-co-installers-registry-entry-value-of-a-device-setup-cla)。
+Windows Server 2003、Windows XP 和 Windows 2000 支持此属性，但不支持 DEVPKEY_DeviceClass_ClassCoInstallers 属性键。 有关如何访问这些早期版本的 Windows 上相应信息的信息，请参阅 [访问设备安装程序类的共同安装程序注册表项值](./accessing-the-co-installers-registry-entry-value-of-a-device-setup-cla.md)。
 
 <a name="requirements"></a>要求
 ------------
 
-**版本**： windows Vista 和更高版本的 windows**头**： Devpkey （包括 Devpkey）
+**版本**： windows Vista 和更高版本的 windows **标题**： Devpkey (包含 Devpkey) 
 
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
-[**SetupDiGetClassProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetclasspropertyw)
+[**SetupDiGetClassProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetclasspropertyw)
 
-[**SetupDiGetClassPropertyEx**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetclasspropertyexw)
+[**SetupDiGetClassPropertyEx**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetclasspropertyexw)
 
-[**SetupDiSetClassProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdisetclasspropertyw)
+[**SetupDiSetClassProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdisetclasspropertyw)
 
-[**SetupDiSetClassPropertyEx**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdisetclasspropertyexw)
-
- 
+[**SetupDiSetClassPropertyEx**](/windows/desktop/api/setupapi/nf-setupapi-setupdisetclasspropertyexw)
 
  
-
-
-
-
-
 

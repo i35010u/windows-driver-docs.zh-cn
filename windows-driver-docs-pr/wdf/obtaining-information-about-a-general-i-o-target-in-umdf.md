@@ -7,12 +7,12 @@ keywords:
 - 状态信息 WDK i/o 目标
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 62398f46235f45c14acf3c1c4f720630a8a48307
-ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
+ms.openlocfilehash: 0e66206f1d6a4f021d3f389adbcf29f34627d28a
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/19/2019
-ms.locfileid: "75208913"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89184621"
 ---
 # <a name="obtaining-information-about-a-general-io-target-in-umdf"></a>在 UMDF 中获取有关常规 I/O 目标的信息
 
@@ -21,20 +21,14 @@ ms.locfileid: "75208913"
 
 若要获取有关 i/o 目标的信息，UMDF 驱动程序可以调用 i/o 目标对象定义的以下方法：
 
-<a href="" id="iwdfiotarget--gettargetfile"></a>[**IWDFIoTarget::GetTargetFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiotarget-gettargetfile)  
+<a href="" id="iwdfiotarget--gettargetfile"></a>[**IWDFIoTarget::GetTargetFile**](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiotarget-gettargetfile)  
 返回与 i/o 目标相关联的框架文件对象。
 
-<a href="" id="iwdfiotargetstatemanagement--getstate"></a>[**IWDFIoTargetStateManagement：： GetState**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiotargetstatemanagement-getstate)  
+<a href="" id="iwdfiotargetstatemanagement--getstate"></a>[**IWDFIoTargetStateManagement：： GetState**](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiotargetstatemanagement-getstate)  
 返回本地 i/o 目标的状态信息。
 
-<a href="" id="iwdfremotetarget--getstate"></a>[**IWDFRemoteTarget：： GetState**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfremotetarget-getstate)  
+<a href="" id="iwdfremotetarget--getstate"></a>[**IWDFRemoteTarget：： GetState**](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfremotetarget-getstate)  
 返回远程 i/o 目标的状态信息。
 
  
-
- 
-
-
-
-
 

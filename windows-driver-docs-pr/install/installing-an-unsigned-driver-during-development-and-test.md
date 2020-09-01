@@ -14,12 +14,12 @@ keywords:
 - F8 密钥 WDK drvier 签名
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e0c9c39399555161334f098dae456bf40fa86680
-ms.sourcegitcommit: bba54f7ba385ee0b5bd4a2b8660486bc269cf02f
+ms.openlocfilehash: b964a20d5e172ba7565e8bfe54927904abc7e148
+ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/21/2020
-ms.locfileid: "88712212"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89096011"
 ---
 # <a name="installing-an-unsigned-driver-during-development-and-test"></a>在开发和测试期间安装未签名驱动程序
 
@@ -50,7 +50,7 @@ bcdedit -debug on
 HKLM\SYSTEM\CurrentControlSet\Control\CI\DebugFlags
 ```
 
-此注册表值的类型为 [REG_DWORD](https://docs.microsoft.com/windows/desktop/SysInfo/registry-value-types)，可以根据一个或多个以下标志的按位 "或" 指定值：
+此注册表值的类型为 [REG_DWORD](/windows/desktop/SysInfo/registry-value-types)，可以根据一个或多个以下标志的按位 "或" 指定值：
 
 <a href="" id="0x00000001"></a>**0x00000001**  
 此标志值将内核配置为在驱动程序未签名时中断到调试器。 然后，开发人员或测试人员可以通过在调试器提示符下输入 **g** 来选择加载未签名的驱动程序。
@@ -65,10 +65,4 @@ HKLM\SYSTEM\CurrentControlSet\Control\CI\DebugFlags
  
 
  
-
- 
-
-
-
-
 

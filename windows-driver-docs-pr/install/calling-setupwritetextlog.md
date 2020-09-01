@@ -4,47 +4,41 @@ description: 调用 SetupWriteTextLog
 ms.assetid: a07118ae-bef6-4d01-94d9-98587cbff863
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f773a992c586959a5c2e976132b8e1b03e0665f3
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: cf159295a4cba6c569accffca4699fddf54a9e4a
+ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67385282"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89097181"
 ---
 # <a name="calling-setupwritetextlog"></a>调用 SetupWriteTextLog
 
 
-[**SetupWriteTextLog** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupwritetextlog)添加到安装事件的相关信息与单个条目[SetupAPI 文本日志](setupapi-text-logs.md)。
+[**SetupWriteTextLog**](/windows/desktop/api/setupapi/nf-setupapi-setupwritetextlog) 将包含有关安装事件的信息的单个条目添加到 [setupapi.log 文本日志](setupapi-text-logs.md)中。
 
-如中所述[格式的文本日志部分正文](format-of-a-text-log-section-body.md)，日志条目的格式包含以下字段：
+如 [文本日志节正文的格式](format-of-a-text-log-section-body.md)中所述，日志条目的格式由以下字段组成：
 
 ```cpp
 entry_prefix time_stamp event_category indentation formatted_message
 ```
 
-若要调用**SetupWriteTextLog**，应用程序提供以下信息：
+若要调用 **SetupWriteTextLog**，应用程序提供以下信息：
 
--   通过调用获取了文本日志中的某个部分的日志标记[ **SetupGetThreadLogToken**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupgetthreadlogtoken)，或其中一个系统定义[登录令牌](log-tokens.md)。 如果日志标记为与文本日志部分中，相关联**SetupWriteTextLog**在该部分中写入该日志条目。 否则为**SetupWriteTextLog**将日志条目添加到不包含文本日志部分中的日志的一部分。 此外，无论**SetupWriteTextLog**写入日志项，以及哪些文本日志**SetupWriteTextLog**写入条目，取决于系统定义的日志标记值。
+-   文本日志中某节的日志标记，该标记是通过调用 [**SetupGetThreadLogToken**](/windows/desktop/api/setupapi/nf-setupapi-setupgetthreadlogtoken)或某个系统定义的 [日志令牌](log-tokens.md)获取的。 如果日志令牌与文本日志部分关联，则 **SetupWriteTextLog** 会在该部分写入日志项。 否则， **SetupWriteTextLog** 会将日志条目添加到不包含在文本日志节中的日志部分。 此外， **SetupWriteTextLog** 是否会写入日志条目，以及是否将条目写入到哪个文本日志 **SetupWriteTextLog** ，具体取决于系统定义的日志令牌值。
 
-    有关日志令牌的详细信息，请参阅[设置和获取日志标记线程](setting-and-getting-a-log-token-for-a-thread.md)。
+    有关日志令牌的详细信息，请参阅 [设置和获取线程的日志令牌](setting-and-getting-a-log-token-for-a-thread.md)。
 
--   一个事件类别中所述[启用文本日志的事件类别](enabling-event-categories-for-a-text-log.md)。 如果文本日志中，为启用了该条目的事件类别[ **SetupWriteTextLog** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupwritetextlog)将项添加到文本日志; 否则为**SetupWriteTextLog**不会写入文本日志条目。
+-   为 [文本日志启用事件类别](enabling-event-categories-for-a-text-log.md)中描述的一种事件类别。 如果为文本日志启用了项的事件类别，则 [**SetupWriteTextLog**](/windows/desktop/api/setupapi/nf-setupapi-setupwritetextlog) 会将该项添加到文本日志中;否则， **SetupWriteTextLog** 不会将条目写入文本日志。
 
--   一个标志值，它是指定的事件级别、 缩进深度，以及是否包括时间戳的系统定义的常量的按位 OR。 事件级别中所述[事件级别设置为文本日志](setting-the-event-level-for-a-text-log.md)。 如果事件级别设置为文本日志将是大于或等于该注册表项，事件的事件级别**SetupWriteTextLog**将日志条目写入到文本日志中; 否则为**SetupWriteTextLog**不会写入日志文本日志条目。 通过使用缩进，可以排列格式化的消息来使一个部分中的信息更轻松地阅读和理解。 有关详细信息，请参阅[写入缩进日志条目](writing-indented-log-entries.md)。
+-   一个标志值，它是系统定义的常量的按位 "或"，用于指定事件级别、缩进深度以及是否包含时间戳。 [设置文本日志的事件级别](setting-the-event-level-for-a-text-log.md)中介绍了事件级别。 如果为文本日志设置的事件级别大于或等于该条目的事件级别，则 **SetupWriteTextLog** 会将日志条目写入文本日志;否则， **SetupWriteTextLog** 不会将日志条目写入文本日志。 通过使用缩进，可以排列经过格式的消息，使节中的信息更易于阅读和理解。 有关详细信息，请参阅 [写入缩进的日志条目](writing-indented-log-entries.md)。
 
--   一个**printf**-兼容的格式字符串设置格式的消息和格式字符串之后的逗号分隔的变量列表。
+-   一个 **printf**兼容的格式字符串，用于对消息和格式字符串之后的以逗号分隔的变量列表进行格式设置。
 
--   逗号分隔的变量，其值设置格式的列表**printf**-兼容的格式字符串。
+-   以逗号分隔的变量列表，其值由 **printf**兼容的格式字符串进行格式设置。
 
-有关如何调用示例[ **SetupWriteTextLog** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupwritetextlog)若要记录不是错误或警告的事件有关的信息，请参阅[写入信息日志条目](writing-an-information-log-entry.md)。
+有关如何调用 [**SetupWriteTextLog**](/windows/desktop/api/setupapi/nf-setupapi-setupwritetextlog) 来记录不是错误或警告事件的信息的示例，请参阅 [编写信息日志条目](writing-an-information-log-entry.md)。
 
-有关如何调用示例**SetupWriteTextLog**若要记录有关错误或警告的信息，请参阅[编写错误或警告日志条目](writing-an-error-or-warning-log-entry.md)。
-
- 
+有关如何调用 **SetupWriteTextLog** 来记录有关错误或警告的信息，请参阅 [编写错误或警告日志条目](writing-an-error-or-warning-log-entry.md)。
 
  
-
-
-
-
 

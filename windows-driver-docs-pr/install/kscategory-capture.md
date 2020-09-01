@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 05370a49f25847204c1b9648ea5b44ddb3a6ae58
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: f96c8202d81dd4750ae58c48ae97bbeb314e4195
+ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67384254"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89097261"
 ---
-# <a name="kscategorycapture"></a>KSCATEGORY_CAPTURE
+# <a name="kscategory_capture"></a>KSCATEGORY_CAPTURE
 
 
-KSCATEGORY_CAPTURE[设备接口类](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)为定义[内核流式处理](https://docs.microsoft.com/windows-hardware/drivers/stream/streaming-minidrivers2)(KS) 捕获批或 MIDI 数据流的功能类别。
+KSCATEGORY_CAPTURE [设备接口类](./overview-of-device-interface-classes.md) 是为 [内核流式处理](../stream/streaming-minidrivers2.md) (KS) 功能类别定义的，该类别捕获 wave 或 MIDI 数据流。
 
 <table>
 <colgroup>
@@ -33,7 +33,7 @@ KSCATEGORY_CAPTURE[设备接口类](https://docs.microsoft.com/windows-hardware/
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">特性</th>
+<th align="left">Attribute</th>
 <th align="left">设置</th>
 </tr>
 </thead>
@@ -54,11 +54,11 @@ KSCATEGORY_CAPTURE[设备接口类](https://docs.microsoft.com/windows-hardware/
 <a name="remarks"></a>备注
 -------
 
-KS 设备的驱动程序注册 KSCATEGORY_CAPTURE 以指示设备支持 KSCATEGORY_CAPTURE 功能分类的实例。
+KS 设备的驱动程序将注册 KSCATEGORY_CAPTURE 的实例，以指示设备支持 KSCATEGORY_CAPTURE 功能类别。
 
-有关如何在一个 INF 文件中注册此功能的类别的信息，请参阅*Ac97smpl.inf*附带的 INF 文件[AC'97 示例驱动程序](https://go.microsoft.com/fwlink/p/?linkid=256075)WDK 中提供的。
+有关如何在 INF 文件中注册此功能类别的信息，请参阅 *Ac97smpl* inf 文件，该文件包含在 WDK 中提供的 [交流电 "97 示例驱动程序](https://go.microsoft.com/fwlink/p/?linkid=256075) " 中。
 
-有关设备的音频的适配器的接口类的信息，请参阅[音频适配器安装设备接口](https://docs.microsoft.com/windows-hardware/drivers/audio/installing-device-interfaces-for-an-audio-adapter)。
+有关音频适配器的设备接口类的信息，请参阅 [安装音频适配器的设备接口](../audio/installing-device-interfaces-for-an-audio-adapter.md)。
 
 <a name="requirements"></a>要求
 ------------
@@ -70,17 +70,11 @@ KS 设备的驱动程序注册 KSCATEGORY_CAPTURE 以指示设备支持 KSCATEGO
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>Header</p></td>
-<td align="left">Ks.h （包括 Ks.h）</td>
+<td align="left"><p>标头</p></td>
+<td align="left">Ks (包含 Ks .h) </td>
 </tr>
 </tbody>
 </table>
 
  
-
- 
-
-
-
-
 

@@ -6,17 +6,17 @@ keywords:
 - ACPI_METHOD_NEXT_ARGUMENT 宏 ACPI 设备
 ms.date: 10/12/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 47c41af603a78680f38c1da856d3e4e7a5c2fb6b
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: a78bcd3377346f1a75e221699f577da6920f43d3
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72824063"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89184501"
 ---
-# <a name="acpi_method_next_argument-macro"></a>ACPI\_方法\_下一个\_参数宏
+# <a name="acpi_method_next_argument-macro"></a>ACPI \_ 方法 \_ 下一个 \_ 参数宏
 
 
-ACPI\_方法\_下一个\_参数结构在 ACPI\_方法\_参数结构的数组中返回指向下一个[**acpi\_方法**](https://docs.microsoft.com/windows-hardware/drivers/ddi/acpiioct/ns-acpiioct-_acpi_method_argument_v1)的指针。\_
+ACPI \_ 方法 \_ NEXT \_ 参数结构返回一个指针，指向 acpi 方法参数结构数组中的下一个 [**acpi \_ 方法 \_ 自变量**](/windows-hardware/drivers/ddi/acpiioct/ns-acpiioct-_acpi_method_argument_v1) 结构 \_ \_ 。
 
 <a name="syntax"></a>语法
 ------
@@ -30,18 +30,18 @@ ACPI\_方法\_下一个\_参数结构在 ACPI\_方法\_参数结构的数组中�
 <a name="parameters"></a>参数
 ----------
 
-*参数*   
-指向 ACPI\_方法的指针\_ACPI\_方法的数组中的参数结构\_参数结构。
+*实际*   
+一个指针，指向 ACPI 方法参数结构 \_ \_ 数组中的 acpi 方法参数结构 \_ \_ 。
 
 <a name="return-value"></a>返回值
 ------------
 
-指向下一个 ACPI\_方法的指针\_ACPI\_方法的数组中的参数结构\_参数结构。
+一个指针，指向 \_ \_ acpi \_ 方法参数结构数组中的下一个 acpi 方法参数结构 \_ 。
 
 <a name="remarks"></a>备注
 -------
 
-给定一个指向 ACPI\_方法的指针\_此类结构数组中的参数结构，驱动程序可以使用此宏来计算指向数组中下一个结构的指针（如果存在）。
+给定一个指向 \_ \_ 此类结构数组中的 ACPI 方法自变量结构的指针，驱动程序可以使用此宏来计算指向数组中下一个结构的指针（如果存在）。
 
 <a name="requirements"></a>要求
 ------------
@@ -54,11 +54,11 @@ ACPI\_方法\_下一个\_参数结构在 ACPI\_方法\_参数结构的数组中�
 <tbody>
 <tr>
 <td><p>目标平台</p></td>
-<td>桌面设备</td>
+<td>“桌面”</td>
 </tr>
 <tr>
 <td><p>标头</p></td>
-<td>Acpiioct （包括 Acpiioct）</td>
+<td>Acpiioct (包含 Acpiioct) </td>
 </tr>
 </tbody>
 </table>
@@ -66,4 +66,4 @@ ACPI\_方法\_下一个\_参数结构在 ACPI\_方法\_参数结构的数组中�
 ## <a name="see-also"></a>另请参阅
 
 
-[**ACPI\_方法\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/acpiioct/ns-acpiioct-_acpi_method_argument_v1)
+[**ACPI \_ 方法 \_ 参数**](/windows-hardware/drivers/ddi/acpiioct/ns-acpiioct-_acpi_method_argument_v1)

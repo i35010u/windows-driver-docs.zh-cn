@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: ed4ac5d10ebfe13172c9b482020ec78e7a4da1ae
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: c284f3284692303ae3466a8f0ff327ce53af7cac
+ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386423"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89096891"
 ---
-# <a name="guiddevinterfaceusbhostcontroller"></a>GUID_DEVINTERFACE_USB_HOST_CONTROLLER
+# <a name="guid_devinterface_usb_host_controller"></a>GUID_DEVINTERFACE_USB_HOST_CONTROLLER
 
 
-GUID_DEVINTERFACE_USB_HOST_CONTROLLER[设备接口类](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)为定义[USB](https://docs.microsoft.com/windows-hardware/drivers/)托管控制器设备。
+为[USB](../index.yml)主机控制器设备定义 GUID_DEVINTERFACE_USB_HOST_CONTROLLER[设备接口类](./overview-of-device-interface-classes.md)。
 
 <table>
 <colgroup>
@@ -33,7 +33,7 @@ GUID_DEVINTERFACE_USB_HOST_CONTROLLER[设备接口类](https://docs.microsoft.co
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">特性</th>
+<th align="left">Attribute</th>
 <th align="left">设置</th>
 </tr>
 </thead>
@@ -54,11 +54,11 @@ GUID_DEVINTERFACE_USB_HOST_CONTROLLER[设备接口类](https://docs.microsoft.co
 <a name="remarks"></a>备注
 -------
 
-USB 主控制器的系统提供的端口驱动程序注册的 GUID_DEVINTERFACE_USB_HOST_CONTROLLER 通知操作系统和应用程序存在 USB 主控制器的实例。
+系统提供的 USB 主机控制器端口驱动程序将注册 GUID_DEVINTERFACE_USB_HOST_CONTROLLER 的实例，以通知操作系统和存在 USB 主机控制器的应用程序。
 
-Microsoft Windows Driver Kit (WDK) 包括[USBVIEW 示例应用程序](https://go.microsoft.com/fwlink/p/?linkid=256205)。 使用已过时的标识符，USBVIEW [ **GUID_CLASS_USB_HOST_CONTROLLER** ](guid-class-usb-host-controller.md)枚举此设备接口类的实例。
+Microsoft Windows 驱动程序工具包 (WDK) 包含 [USBVIEW 示例应用程序](https://go.microsoft.com/fwlink/p/?linkid=256205)。 USBVIEW 使用已过时的标识符 [**GUID_CLASS_USB_HOST_CONTROLLER**](guid-class-usb-host-controller.md) 来枚举此设备接口类的实例。
 
-包括通过使用 DEFINE_GUID 宏，声明一个 GUID 的所有标头之前，必须包含 initguid.h。
+必须包含 initguid.h，然后才能包含使用 DEFINE_GUID 宏声明 GUID 的任何标头。
 
 <a name="requirements"></a>要求
 ------------
@@ -70,13 +70,13 @@ Microsoft Windows Driver Kit (WDK) 包括[USBVIEW 示例应用程序](https://go
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>Header</p></td>
-<td align="left">Usbiodef.h (包括 Usbiodef.h，initguid.h)</td>
+<td align="left"><p>标头</p></td>
+<td align="left">Usbiodef (包含 Usbiodef，initguid.h) </td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
 [**GUID_CLASS_USB_HOST_CONTROLLER**](guid-class-usb-host-controller.md)
@@ -86,11 +86,4 @@ Microsoft Windows Driver Kit (WDK) 包括[USBVIEW 示例应用程序](https://go
 [**GUID_DEVINTERFACE_USB_HUB**](guid-devinterface-usb-hub.md)
 
  
-
- 
-
-
-
-
-
 

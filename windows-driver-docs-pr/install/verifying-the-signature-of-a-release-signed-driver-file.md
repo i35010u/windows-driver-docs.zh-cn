@@ -4,17 +4,17 @@ description: 验证已进行发布签名的驱动程序文件的签名
 ms.assetid: 70876389-6493-4c16-8a82-ca72fc23325c
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a96c2fc31034c5fe8876b8fc130bc2d3b928f231
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: b6125b08024fa4bbe9016fa46b373bf926aeffa4
+ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67380437"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89097221"
 ---
 # <a name="verifying-the-signature-of-a-release-signed-driver-file"></a>验证已进行发布签名的驱动程序文件的签名
 
 
-若要验证创建的驱动程序文件中的嵌入式的签名[软件发布者证书 (SPC)](software-publisher-certificate.md)，使用以下[ **SignTool** ](https://docs.microsoft.com/windows-hardware/drivers/devtest/signtool)命令：
+若要验证由软件发行者证书创建的驱动程序文件中的嵌入签名 [ (SPC) ](software-publisher-certificate.md)，请使用以下 [**SignTool**](../devtest/signtool.md) 命令：
 
 ```cpp
 SignTool verify /v /kp DriverFileName.sys
@@ -22,25 +22,19 @@ SignTool verify /v /kp DriverFileName.sys
 
 其中：
 
--   **验证**命令将配置 SignTool 验证签名的驱动程序文件中嵌入*DriverFileName.sys。*
+-   **Verify**命令将 SignTool 配置为验证嵌入驱动程序文件DriverFileName.sys 中的签名 *。*
 
--   **/V**选项配置 SignTool 打印执行消息和警告消息。
+-   **/V**选项将 SignTool 配置为打印执行和警告消息。
 
--   **/Kp**选项配置 SignTool 验证中嵌入签名*DriverFileName.sys*符合[内核模式代码签署策略](kernel-mode-code-signing-policy--windows-vista-and-later-.md)和[PnP 设备安装签名要求](pnp-device-installation-signing-requirements--windows-vista-and-later-.md)适用于 Windows Vista 和更高版本的 Windows。
+-   **/Kp**选项将 SignTool 配置为验证嵌入到*DriverFileName.sys*中的签名是否符合[内核模式代码签名策略](kernel-mode-code-signing-policy--windows-vista-and-later-.md)和 windows Vista 和更高版本的 windows 的[PnP 设备安装签名要求](pnp-device-installation-signing-requirements--windows-vista-and-later-.md)。
 
--   *DriverFileName.sys*是驱动程序文件的名称。
+-   *DriverFileName.sys* 是驱动程序文件的名称。
 
-例如，以下命令验证*Toaster.sys*具有有效的嵌入的签名。 在此示例中，T*oaster.sys*处于*amd64*在其中运行命令的目录下的子目录。
+例如，下面的命令验证 *Toaster.sys* 是否具有有效的嵌入签名。 在此示例中，T*oaster.sys* 位于运行命令的目录下的 *amd64* 子目录中。
 
 ```cpp
 SignTool verify /kp amd64\toaster.sys
 ```
 
  
-
- 
-
-
-
-
 

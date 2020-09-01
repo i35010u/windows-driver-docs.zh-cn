@@ -8,17 +8,17 @@ keywords:
 - 视频捕获事件 WDK AVStream
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7108bfa1d57e219c5fbf97e1fdb10498d1027250
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 7582e21f0437d1664b1dfd68064b84554ee6e68b
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67385382"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89184361"
 ---
 # <a name="video-capture-events"></a>视频捕获事件
 
 
-[KSEVENTSETID\_VIDCAPNotify](https://docs.microsoft.com/windows-hardware/drivers/stream/kseventsetid-vidcapnotify)事件集中包含与调谐器事件相关的事件。 下表描述了属于 KSEVENTSETID 事件\_VIDCAPNotify 事件集。
+[KSEVENTSETID \_ VIDCAPNotify](./kseventsetid-vidcapnotify.md)事件集包含与调谐器事件相关的事件。 下表描述了属于 KSEVENTSETID \_ VIDCAPNotify 事件集的事件。
 
 <table>
 <colgroup>
@@ -28,21 +28,21 @@ ms.locfileid: "67385382"
 <thead>
 <tr class="header">
 <th>KSEVENTSETID_VIDCAPNotify KS 事件</th>
-<th>事件描述</th>
+<th>事件说明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/stream/ksevent-vidcaptosti-ext-trigger" data-raw-source="[&lt;strong&gt;KSEVENT_VIDCAPTOSTI_EXT_TRIGGER&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/stream/ksevent-vidcaptosti-ext-trigger)"><strong>KSEVENT_VIDCAPTOSTI_EXT_TRIGGER</strong></a></p></td>
-<td><p>已注册客户端触发视频捕获设备上的按钮时通知。</p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/stream/ksevent-vidcaptosti-ext-trigger" data-raw-source="[&lt;strong&gt;KSEVENT_VIDCAPTOSTI_EXT_TRIGGER&lt;/strong&gt;](./ksevent-vidcaptosti-ext-trigger.md)"><strong>KSEVENT_VIDCAPTOSTI_EXT_TRIGGER</strong></a></p></td>
+<td><p>当触发视频捕获设备上的按钮时，向已注册的客户端发出信号。</p></td>
 </tr>
 <tr class="even">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/stream/ksevent-vidcap-auto-update" data-raw-source="[&lt;strong&gt;KSEVENT_VIDCAP_AUTO_UPDATE&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/stream/ksevent-vidcap-auto-update)"><strong>KSEVENT_VIDCAP_AUTO_UPDATE</strong></a></p></td>
-<td><p>已注册客户端属性值更改时通知。</p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/stream/ksevent-vidcap-auto-update" data-raw-source="[&lt;strong&gt;KSEVENT_VIDCAP_AUTO_UPDATE&lt;/strong&gt;](./ksevent-vidcap-auto-update.md)"><strong>KSEVENT_VIDCAP_AUTO_UPDATE</strong></a></p></td>
+<td><p>当属性值更改时向注册的客户端发出信号。</p></td>
 </tr>
 <tr class="odd">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/stream/ksevent-vidcap-search" data-raw-source="[&lt;strong&gt;KSEVENT_VIDCAP_SEARCH&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/stream/ksevent-vidcap-search)"><strong>KSEVENT_VIDCAP_SEARCH</strong></a></p></td>
-<td><p>已注册客户端搜索完成时通知。</p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/stream/ksevent-vidcap-search" data-raw-source="[&lt;strong&gt;KSEVENT_VIDCAP_SEARCH&lt;/strong&gt;](./ksevent-vidcap-search.md)"><strong>KSEVENT_VIDCAP_SEARCH</strong></a></p></td>
+<td><p>搜索完成时向注册的客户端发出信号。</p></td>
 </tr>
 </tbody>
 </table>
@@ -50,9 +50,4 @@ ms.locfileid: "67385382"
  
 
  
-
- 
-
-
-
 

@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: c5085d3603e278cd5b85145532d327d2078abfc2
-ms.sourcegitcommit: e180a0670b0b78c30541755e6e030df249979f1e
+ms.openlocfilehash: 573d0569643ec217a95acf698aba8a0991cf364d
+ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/16/2020
-ms.locfileid: "86418557"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89096807"
 ---
 # <a name="devpkey_device_noconnectsound"></a>DEVPKEY_Device_NoConnectSound
 
@@ -33,8 +33,8 @@ DEVPKEY_Device_NoConnectSound 设备属性表示一个布尔值，该值指示�
 </colgroup>
 <thead>
 <tr>
-<th>属性</th>
-<th>Value</th>
+<th>Attribute</th>
+<th>值</th>
 </tr>
 </thead>
 <tbody>
@@ -64,31 +64,24 @@ DEVPKEY_Device_NoConnectSound 设备属性表示一个布尔值，该值指示�
 
 DEVPKEY_Device_NoConnectSound 的值设置为 DEVPROP_TRUE 以取消播放声音。 否则，属性的值将设置为 DEVPROP_FALSE。
 
-DEVPKEY_Device_NoConnectSound 属性通常由设备 INF 文件中的[**Inf AddProperty 指令**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addproperty-directive)设置。
+DEVPKEY_Device_NoConnectSound 属性通常由设备 INF 文件中的 [**Inf AddProperty 指令**](./inf-addproperty-directive.md) 设置。
 
-可以调用[**SetupDiGetDeviceProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)或[**SetupDiSetDeviceProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdisetdevicepropertyw)来检索或设置 DEVPKEY_Device_NoConnectSound 的值。
+可以调用 [**SetupDiGetDeviceProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw) 或 [**SetupDiSetDeviceProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdisetdevicepropertyw) 来检索或设置 DEVPKEY_Device_NoConnectSound 的值。
 
 Windows Server 2003、Windows XP 和 Windows 2000 不支持此属性。
 
 <a name="requirements"></a>要求
 ------------
 
-**版本**： windows Vista 和更高版本的 windows**头**： Devpkey （包括 Devpkey）
+**版本**： windows Vista 和更高版本的 windows **标题**： Devpkey (包含 Devpkey) 
 
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
-[**INF AddProperty 指令**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addproperty-directive)
+[**INF AddProperty 指令**](./inf-addproperty-directive.md)
 
-[**SetupDiGetDeviceProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)
-
- 
+[**SetupDiGetDeviceProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)
 
  
-
-
-
-
-
 

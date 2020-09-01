@@ -3,31 +3,31 @@ title: 强制的目标与连接的目标
 description: 强制的目标与连接的目标
 ms.assetid: 690e585b-3c90-4373-844d-42afe033b59b
 keywords:
-- 连接显示 WDK Windows 7 显示 CCD 概念，强制与连接的目标
-- 连接显示 WDK Windows Server 2008 R2 显示 CCD 概念，强制与连接的目标
-- 配置显示 WDK Windows 7 显示 CCD 概念，强制与连接的目标
-- 配置显示 WDK Windows Server 2008 R2 显示 CCD 概念，强制与连接的目标
-- CCD 概念 WDK Windows 7 显示，强制与连接的目标
-- CCD 概念 WDK Windows Server 2008 R2 显示，强制与连接的目标
-- 强制与连接的目标 WDK Windows 7 显示
-- 强制与连接的目标 WDK Windows Server 2008 R2 显示
-- 强制的目标 WDK Windows 7 显示与连接
-- 强制的目标 WDK Windows Server 2008 R2 显示与连接
+- 连接显示 WDK Windows 7 显示、CCD 概念、强制与连接的目标
+- 正在连接显示 WDK Windows Server 2008 R2 显示、CCD 的概念、强制与连接的目标
+- 配置显示 WDK Windows 7 显示、CCD 概念、强制与连接的目标
+- 配置显示 WDK Windows Server 2008 R2 显示、CCD 概念、强制与连接的目标
+- CCD 概念 WDK Windows 7 显示、强制与连接的目标
+- CCD 概念 WDK Windows Server 2008 R2 显示、强制与连接的目标
+- 强制的与连接的目标 WDK Windows 7 显示
+- 强制的与连接的目标 WDK Windows Server 2008 R2 显示
+- 连接与强制目标 WDK Windows 7 显示
+- 连接与强制目标 WDK Windows Server 2008 R2 显示
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2122e8c67ac3b2f498d5995b83bb7cc540442dd2
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: d01cc75bffce3a15a0f8f43609bd80419171c055
+ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67385951"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89067434"
 ---
 # <a name="forced-versus-connected-targets"></a>强制的目标与连接的目标
 
 
-本部分仅适用于 Windows 7 及更高版本、 和 Windows Server 2008 R2 和更高版本的 Windows 操作系统。
+本部分仅适用于 Windows 7 和更高版本，以及 windows Server 2008 R2 及更高版本的 Windows 操作系统。
 
-CCD Api 引入已连接的监视器和 forceable 目标的概念。 监视器已连接到目标，如果 GPU 可检测的状态的监视器，这是监视器和目标的物理属性。 目标是 forceable 如果 GPU 可以发送带目标显示信号，即使 GPU 无法检测到已连接的监视器。 所有模拟的目标类型被视为 forceable，并且所有数字目标不会考虑 forceable。 下表介绍连接和强制状态的组合路径处于活动状态且未处于活动状态时。
+CCD Api 介绍连接的监视器和 forceable 目标的概念。 如果 GPU 能够检测到监视器的状态（这是监视器和目标的物理属性），则监视器将连接到该目标。 如果 GPU 即使 GPU 无法检测到连接的监视器也能将显示信号发送出目标，则目标为 forceable。 所有模拟目标类型都被视为 forceable，并且所有数字目标都不被视为 forceable。 下表描述了在路径处于活动状态且不处于活动状态时已连接状态和强制状态的组合。
 
 <table>
 <colgroup>
@@ -38,67 +38,67 @@ CCD Api 引入已连接的监视器和 forceable 目标的概念。 监视器已
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">路径活动状态</th>
+<th align="left">路径-活动状态</th>
 <th align="left">路径强制状态</th>
-<th align="left">监视连接状态</th>
+<th align="left">监视器-连接状态</th>
 <th align="left">结果</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>活跃</p></td>
-<td align="left"><p>强制</p></td>
-<td align="left"><p>已连接</p></td>
-<td align="left"><p>启用目标的输出，因为监视器连接和处于活动状态。</p></td>
+<td align="left"><p>活动</p></td>
+<td align="left"><p>Forced</p></td>
+<td align="left"><p>连续</p></td>
+<td align="left"><p>由于监视器已连接并且处于活动状态，因此已启用目标输出。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>活跃</p></td>
-<td align="left"><p>强制</p></td>
+<td align="left"><p>活动</p></td>
+<td align="left"><p>Forced</p></td>
 <td align="left"><p>未连接</p></td>
-<td align="left"><p>目标输出已启用了与路径正在强制和处于活动状态。</p></td>
+<td align="left"><p>启用目标输出，因为路径是强制的，并且处于活动状态。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>活跃</p></td>
-<td align="left"><p>不强制执行</p></td>
-<td align="left"><p>已连接</p></td>
-<td align="left"><p>启用目标的输出，因为监视器连接和处于活动状态。</p></td>
+<td align="left"><p>活动</p></td>
+<td align="left"><p>未强制</p></td>
+<td align="left"><p>连续</p></td>
+<td align="left"><p>由于监视器已连接并且处于活动状态，因此已启用目标输出。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>活跃</p></td>
-<td align="left"><p>不强制执行</p></td>
+<td align="left"><p>活动</p></td>
+<td align="left"><p>未强制</p></td>
 <td align="left"><p>未连接</p></td>
-<td align="left"><p>无法设置路径，因为不强制和监视器不建立连接。</p></td>
+<td align="left"><p>无法设置路径，因为它不是强制的，并且未连接监视器。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>未处于活动状态</p></td>
-<td align="left"><p>强制</p></td>
-<td align="left"><p>已连接</p></td>
-<td align="left"><p>可以启用目标的输出，因为正在强制和连接监视器。</p></td>
+<td align="left"><p>不活动</p></td>
+<td align="left"><p>Forced</p></td>
+<td align="left"><p>连续</p></td>
+<td align="left"><p>可以启用目标输出，因为它是强制的，并且已连接监视器。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>未处于活动状态</p></td>
-<td align="left"><p>强制</p></td>
+<td align="left"><p>不活动</p></td>
+<td align="left"><p>Forced</p></td>
 <td align="left"><p>未连接</p></td>
-<td align="left"><p>可以启用目标的输出，因为正在强制。</p></td>
+<td align="left"><p>目标输出可以启用，因为它是强制的。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>未处于活动状态</p></td>
-<td align="left"><p>不强制执行</p></td>
-<td align="left"><p>已连接</p></td>
-<td align="left"><p>可以启用目标的输出，因为连接监视器。</p></td>
+<td align="left"><p>不活动</p></td>
+<td align="left"><p>未强制</p></td>
+<td align="left"><p>连续</p></td>
+<td align="left"><p>可以启用目标输出，因为已连接监视器。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>未处于活动状态</p></td>
-<td align="left"><p>不强制执行</p></td>
+<td align="left"><p>不活动</p></td>
+<td align="left"><p>未强制</p></td>
 <td align="left"><p>未连接</p></td>
-<td align="left"><p>不能启用目标的输出，因为监视器未连接，且不强制执行路径。</p></td>
+<td align="left"><p>无法启用目标输出，因为未连接监视器，并且路径不是强制的。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-下表介绍了几种类型的可能的强制状态的每个路径。
+下表描述了每个路径的几种可能的强制状态。
 
 <table>
 <colgroup>
@@ -107,22 +107,22 @@ CCD Api 引入已连接的监视器和 forceable 目标的概念。 监视器已
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">强制的状态</th>
+<th align="left">强制状态</th>
 <th align="left">含义</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left"><p>正常强制</p></td>
-<td align="left"><p>这强制状态后 power 转换，重新启动后，将会丢失或强制的状态处于关闭状态。</p></td>
+<td align="left"><p>当电源转换、重新启动或强制状态关闭后，此强制状态将丢失。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>路径持久性</p></td>
-<td align="left"><p>这强制状态重新启动后会丢失。 Microsoft Win32 <strong>ChangeDisplaySettingsEx</strong>函数在即使其路径中的这些监视器的目标始终会销毁所有路径保存监视器<strong>ChangeDisplaySettingsEx</strong>调用。 如果调用方调用<a href="https://docs.microsoft.com/windows/desktop/api/winuser/nf-winuser-setdisplayconfig" data-raw-source="[&lt;strong&gt;SetDisplayConfig&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/winuser/nf-winuser-setdisplayconfig)"> <strong>SetDisplayConfig</strong> </a> CCD 函数中设置的 SDC_USE_SUPPLIED_DISPLAY_CONFIG 或 SDC_TOPOLOGY_SUPPLIED 标志<em>标志</em>参数，则<strong>SetDisplayConfig</strong>将删除保留在路径的监视器。 如果在新的拓扑不包括此监视器处于的路径。 中的所有其他 SDC_TOPOLOGY_XXX 标志指定调用方<em>标志</em>参数， <strong>SetDisplayConfig</strong>中删除保留在路径的监视器，除非调用方还指定 SDC_PATH_PERSIST_新的拓扑结构中处于活动状态 IF_REQUIRED 标志和路径。</p></td>
+<td align="left"><p>路径-持久</p></td>
+<td align="left"><p>重新启动后，此强制状态将丢失。 即使路径中的监视器是<strong>ChangeDisplaySettingsEx</strong>调用的目标，Microsoft Win32 <strong>ChangeDisplaySettingsEx</strong>函数也始终销毁所有路径保存的监视器。 如果调用方使用<em>Flags</em>参数中设置的 SDC_USE_SUPPLIED_DISPLAY_CONFIG 或 SDC_TOPOLOGY_SUPPLIED 标志来调用<a href="https://docs.microsoft.com/windows/desktop/api/winuser/nf-winuser-setdisplayconfig" data-raw-source="[&lt;strong&gt;SetDisplayConfig&lt;/strong&gt;](/windows/desktop/api/winuser/nf-winuser-setdisplayconfig)"><strong>SetDisplayConfig</strong></a> CCD 函数，则如果新拓扑不包括监视器所在的路径，则<strong>SetDisplayConfig</strong>将删除路径保存的监视器。 对于调用方在 <em>flags</em> 参数中指定的所有其他 SDC_TOPOLOGY_XXX 标志，除非调用方还指定了 SDC_PATH_PERSIST_IF_REQUIRED 标志，并且路径在新拓扑中处于活动状态，否则， <strong>SetDisplayConfig</strong> 将删除路径持久监视器。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>启动持久性</p></td>
-<td align="left"><p>这强制状态只会丢失时处于关闭状态。 在系统重新启动后，此状态是持久性的。</p></td>
+<td align="left"><p>引导持久</p></td>
+<td align="left"><p>此强制状态仅在关闭时丢失。 此状态在系统重启之间保持不变。</p></td>
 </tr>
 </tbody>
 </table>
@@ -130,10 +130,4 @@ CCD Api 引入已连接的监视器和 forceable 目标的概念。 监视器已
  
 
  
-
- 
-
-
-
-
 

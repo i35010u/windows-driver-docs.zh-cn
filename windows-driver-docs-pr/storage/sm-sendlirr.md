@@ -1,6 +1,6 @@
 ---
-title: SM\_SendLIRR 函数
-description: SM\_SendLIRR WMI 方法通过指定的本地端口向指定的远程端口发送链接事件记录注册（LIRR）命令。
+title: SM \_ SendLIRR 函数
+description: SM \_ SENDLIRR WMI 方法通过指定的本地端口向指定的远程端口发送链接事件记录注册 (LIRR) 命令。
 ms.assetid: 52564ec3-4a42-4df0-b89f-2a8415404172
 keywords:
 - SM_SendLIRR 函数存储设备
@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 0231e283b74e88a692be2d2194bb4def07f77322
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 2b3e8998358bf89e20682b09ae51822c0a1e67f8
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72845461"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89183827"
 ---
-# <a name="sm_sendlirr-function"></a>SM\_SendLIRR 函数
+# <a name="sm_sendlirr-function"></a>SM \_ SendLIRR 函数
 
 
-SM\_SendLIRR WMI 方法通过指定的本地端口向指定的远程端口发送链接事件记录注册（LIRR）命令。
+SM \_ SENDLIRR WMI 方法通过指定的本地端口向指定的远程端口发送链接事件记录注册 (LIRR) 命令。
 
 <a name="syntax"></a>语法
 ------
@@ -47,31 +47,31 @@ void SM_SendLIRR(
 ----------
 
 *SourceWWN*   
-用于发送 LIRR 命令的本地端口的全球名称（WWN）。 此信息将传送到 SM\_\_SendLIRR 的 SourceWWN 成员中的微型端口驱动程序。
+用于发送 LIRR 命令的本地端口的全球名称 (WWN) 。 此信息将传送到 SM SendLIRR 结构中的 SourceWWN 成员的微型端口驱动程序 \_ \_ 。
 
 *DestWWN*   
-目标端口的全球名称（WWN）。 此信息将传送到 SM\_\_SendLIRR 的 DestWWN 成员中的微型端口驱动程序。
+针对目标端口 (WWN) 的全球名称。 此信息将传送到 SM SendLIRR 结构中的 DestWWN 成员的微型端口驱动程序 \_ \_ 。
 
-*函数*   
-标识要执行的注册函数的代码。 有关可分配给此成员的值的说明，请参阅 T11 委员会光纤通道组帧和信号规范。 此信息将传送到 SM\_SendLIRR\_在结构中的功能成员的微型端口驱动程序中。
+*才能*   
+标识要执行的注册函数的代码。 有关可分配给此成员的值的说明，请参阅 T11 委员会光纤通道组帧和信号规范。 此信息将传送到 SM SendLIRR 的函数成员的微型端口驱动程序 \_ \_ 。
 
-*类型*   
-请求其链接信息的设备类型。 有关可分配给此成员的值的说明，请参阅 T11 委员会*光纤通道组帧和信号*规范。 此信息将传送到 SM\_SendLIRR\_在结构中的功能成员的微型端口驱动程序中。
+*类别*   
+请求其链接信息的设备类型。 有关可分配给此成员的值的说明，请参阅 T11 委员会 *光纤通道组帧和信号* 规范。 此信息将传送到 SM SendLIRR 的函数成员的微型端口驱动程序 \_ \_ 。
 
 *InRespBufferMaxSize*   
 响应缓冲区的最大大小（以字节为单位）。
 
 *HBAStatus*   
-操作的状态。 有关允许值及其说明的列表，请参阅[HBA\_状态](hba-status.md)。 微型端口驱动程序在 SM\_SendLIRR\_OUT 结构的 HBAStatus 成员中返回此信息。
+操作的状态。 有关允许值及其说明的列表，请参阅 [HBA \_ 状态](hba-status.md)。 微型端口驱动程序在 SM \_ SendLIRR OUT 结构的 HBAStatus 成员中返回此信息 \_ 。
 
 *TotalRespBufferSize*   
-LIRR 命令的结果的大小（以字节为单位）。 微型端口驱动程序在 SM\_SendLIRR\_OUT 结构的 TotalRespBufferSize 成员中返回此信息。
+LIRR 命令的结果的大小（以字节为单位）。 微型端口驱动程序在 SM \_ SendLIRR OUT 结构的 TotalRespBufferSize 成员中返回此信息 \_ 。
 
 *OutRespBufferSize*   
-实际检索到的数据的大小（以字节为单位）。 微型端口驱动程序在 SM\_SendLIRR\_OUT 结构的 OutRespBufferSize 成员中返回此信息。
+实际检索到的数据的大小（以字节为单位）。 微型端口驱动程序在 SM \_ SendLIRR OUT 结构的 OutRespBufferSize 成员中返回此信息 \_ 。
 
 *RespBuffer*   
-LIRR 命令的结果。 微型端口驱动程序在 SM\_SendLIRR\_OUT 结构的 RespBuffer 成员中返回此信息。
+LIRR 命令的结果。 微型端口驱动程序在 SM \_ SendLIRR OUT 结构的 RespBuffer 成员中返回此信息 \_ 。
 
 <a name="return-value"></a>返回值
 ------------
@@ -81,7 +81,7 @@ LIRR 命令的结果。 微型端口驱动程序在 SM\_SendLIRR\_OUT 结构的 
 <a name="remarks"></a>备注
 -------
 
-此 WMI 方法属于 MS\_SM\_FabricAndDomainManagementMethods WMI 类。
+此 WMI 方法属于 MS \_ SM \_ FabricAndDomainManagementMethods WMI 类。
 
 <a name="requirements"></a>要求
 ------------
@@ -94,7 +94,7 @@ LIRR 命令的结果。 微型端口驱动程序在 SM\_SendLIRR\_OUT 结构的 
 <tbody>
 <tr class="odd">
 <td align="left"><p>目标平台</p></td>
-<td align="left">桌面设备</td>
+<td align="left">“桌面”</td>
 </tr>
 <tr class="even">
 <td align="left"><p>标头</p></td>
@@ -106,16 +106,9 @@ LIRR 命令的结果。 微型端口驱动程序在 SM\_SendLIRR\_OUT 结构的 
 ## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
-[HBA\_状态](hba-status.md)
+[HBA \_ 状态](hba-status.md)
 
-[**SM\_SendLIRR\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_sm_sendlirr_out)
-
- 
+[**SM \_ SendLIRR \_**](/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_sm_sendlirr_out)
 
  
-
-
-
-
-
 

@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 262c3c24e75ace510ae0da5030392c5494c83c75
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 4fd75f590ca933d8df9c9f30150163ec4b7f4e71
+ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67355159"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89096869"
 ---
-# <a name="guiddevinterfacewriteoncedisk"></a>GUID_DEVINTERFACE_WRITEONCEDISK
+# <a name="guid_devinterface_writeoncedisk"></a>GUID_DEVINTERFACE_WRITEONCEDISK
 
 
-GUID_DEVINTERFACE_WRITEONCEDISK[设备接口类](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)写为定义的一次磁盘设备。
+为一次性写入磁盘设备定义了 GUID_DEVINTERFACE_WRITEONCEDISK [设备接口类](./overview-of-device-interface-classes.md) 。
 
 <table>
 <colgroup>
@@ -33,7 +33,7 @@ GUID_DEVINTERFACE_WRITEONCEDISK[设备接口类](https://docs.microsoft.com/wind
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">特性</th>
+<th align="left">Attribute</th>
 <th align="left">设置</th>
 </tr>
 </thead>
@@ -54,9 +54,9 @@ GUID_DEVINTERFACE_WRITEONCEDISK[设备接口类](https://docs.microsoft.com/wind
 <a name="remarks"></a>备注
 -------
 
-系统提供[存储设备驱动程序](https://docs.microsoft.com/windows-hardware/drivers/storage/storage-drivers)注册 GUID_DEVINTERFACE_WRITEONCEDISK 通知操作系统和应用程序的写入是否存在实例-一次磁盘，如 CD。
+系统提供的 [存储驱动程序](../storage/storage-drivers.md) 将 GUID_DEVINTERFACE_WRITEONCEDISK 的实例注册，通知操作系统和应用程序是否存在写入一次写入的磁盘，例如 cd-r。
 
-[**WriteOnceDiskClassGuid** ](writeoncediskclassguid.md) GUID_DEVINTERFACE_WRITEONCEDISK 设备接口类的已过时标识符。 对于此类的新实例，请改为使用 GUID_DEVINTERFACE_WRITEONCEDISK。
+[**WriteOnceDiskClassGuid**](writeoncediskclassguid.md) 是 GUID_DEVINTERFACE_WRITEONCEDISK 设备接口类的过时标识符。 对于此类的新实例，请改用 GUID_DEVINTERFACE_WRITEONCEDISK。
 
 <a name="requirements"></a>要求
 ------------
@@ -68,27 +68,20 @@ GUID_DEVINTERFACE_WRITEONCEDISK[设备接口类](https://docs.microsoft.com/wind
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>Version</p></td>
+<td align="left"><p>版本</p></td>
 <td align="left"><p>在 Microsoft Windows 2000 和更高版本的 Windows 中可用。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>Header</p></td>
-<td align="left">Ntddstor.h （包括 Ntddstor.h）</td>
+<td align="left"><p>标头</p></td>
+<td align="left">Ntddstor (包含 Ntddstor) </td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
 [**WriteOnceDiskClassGuid**](writeoncediskclassguid.md)
 
  
-
- 
-
-
-
-
-
 

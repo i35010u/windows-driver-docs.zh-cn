@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: b4d5f6c8bbea6dc8dd859a4e134968b9f2122aa6
-ms.sourcegitcommit: e180a0670b0b78c30541755e6e030df249979f1e
+ms.openlocfilehash: f93495a0f3c7b8375e26b6abf9e2985c50b63659
+ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/16/2020
-ms.locfileid: "86418235"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89095967"
 ---
 # <a name="devpkey_deviceinterface_restricted"></a>DEVPKEY_DeviceInterface_Restricted
 
@@ -33,8 +33,8 @@ DEVPKEY_DeviceInterface_Restricted 设备接口属性指示其所在的设备接
 </colgroup>
 <thead>
 <tr>
-<th>属性</th>
-<th>Value</th>
+<th>Attribute</th>
+<th>值</th>
 </tr>
 </thead>
 <tbody>
@@ -62,7 +62,7 @@ DEVPKEY_DeviceInterface_Restricted 设备接口属性指示其所在的设备接
 <a name="remarks"></a>备注
 -------
 
-可以调用[**SetupDiGetDeviceInterfaceProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdeviceinterfacepropertyw)来检索 DEVPKEY_DeviceInterface_Restricted 的值。
+可以调用 [**SetupDiGetDeviceInterfaceProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetdeviceinterfacepropertyw) 来检索 DEVPKEY_DeviceInterface_Restricted 的值。
 
 <a name="requirements"></a>要求
 ------------
@@ -79,22 +79,15 @@ DEVPKEY_DeviceInterface_Restricted 设备接口属性指示其所在的设备接
 </tr>
 <tr class="even">
 <td align="left"><p>标头</p></td>
-<td align="left">Devpkey （包括 Devpkey）</td>
+<td align="left">Devpkey (包含 Devpkey) </td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
-[**SetupDiGetDeviceInterfaceProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdeviceinterfacepropertyw)
-
- 
+[**SetupDiGetDeviceInterfaceProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetdeviceinterfacepropertyw)
 
  
-
-
-
-
-
 

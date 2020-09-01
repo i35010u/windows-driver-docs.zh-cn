@@ -3,46 +3,40 @@ title: 日志令牌
 description: 日志令牌
 ms.assetid: f666d457-eb0a-4482-a8ac-e2921ab8c5a9
 keywords:
-- 记录令牌 WDK SetupAPI
-- 文本日志 WDK SetupAPI，日志令牌
-- 部分 WDK SetupAPI 日志记录
-- 识别的文本日志部分
-- SetupAPI 日志记录 WDK Windows Vista 中，日志令牌
+- 日志令牌 WDK Setupapi.log
+- 文本日志 WDK Setupapi.log，日志令牌
+- 节 WDK Setupapi.log 日志记录
+- 标识文本日志节
+- Setupapi.log 日志记录 WDK Windows Vista，日志令牌
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 377078b8fae6b2127b82f6c0d6999e3a4d99281e
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 8b187af43e217e94d99f3d69206ba23aa9d56519
+ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67377683"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89097355"
 ---
 # <a name="log-tokens"></a>日志令牌
 
 
-使用 SetupAPI 文本日志记录*登录令牌*写入条目[SetupAPI 文本日志](setupapi-text-logs.md)。
+Setupapi.log 文本日志记录使用 *日志令牌* 在 [setupapi.log 文本日志](setupapi-text-logs.md)中写入条目。
 
-类安装程序或辅助安装程序必须使用返回的日志令牌[ **SetupGetThreadLogToken** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupgetthreadlogtoken)写入日志条目[文本日志部分](format-of-a-text-log-section.md)的已建立通过调用安装程序的安装程序 Api 安装操作。 SetupAPI 文本日志记录还提供了系统定义的日志令牌，安装应用程序可用于编写不是文本日志部分的一部分的日志条目。
+类安装程序或共同安装程序必须使用由 [**SetupGetThreadLogToken**](/windows/desktop/api/setupapi/nf-setupapi-setupgetthreadlogtoken) 返回的日志令牌来写入 [文本日志节](format-of-a-text-log-section.md) 中的日志项，该部分由调用安装程序的 setupapi.log 安装操作建立。 Setupapi.log 文本日志记录还提供系统定义的日志令牌，安装应用程序可以使用这些令牌来写入不属于文本日志部分的日志项。
 
-通过 SetupAPI 文本日志记录提供了以下系统定义的日志标记：
+Setupapi.log 文本日志记录提供以下系统定义的日志令牌：
 
 <a href="" id="logtoken-unspecified"></a>LOGTOKEN_UNSPECIFIED  
-表示不是未指定的文本日志部分的一部分[文本日志部分](format-of-a-text-log-section.md)。 默认情况下[SetupAPI 日志记录功能](https://docs.microsoft.com/previous-versions/ff550878(v=vs.85))应用程序安装文本日志中写入一个日志条目，如果指定此令牌的值。
+表示不属于 [文本日志部分](format-of-a-text-log-section.md)的未指定文本日志部分。 默认情况下，如果指定了此标记值， [setupapi.log 日志记录函数](/previous-versions/ff550878(v=vs.85)) 将在应用程序安装文本日志中写入日志项。
 
 <a href="" id="logtoken-no-log"></a>LOGTOKEN_NO_LOG  
-表示 null 的日志。 SetupAPI 日志记录功能不写入日志条目如果指定此令牌的值。
+表示空日志。 如果指定了此标记值，Setupapi.log 日志记录函数将不会写入日志项。
 
 <a href="" id="logtoken-setupapi-applog"></a>LOGTOKEN_SETUPAPI_APPLOG  
-表示应用程序文本日志的部分 (*SetupAPI.app.log)* ，它不是属于文本日志部分。 [SetupAPI 日志记录功能](https://docs.microsoft.com/previous-versions/ff550878(v=vs.85))应用程序安装文本日志中写入日志项，如果指定此令牌的值。
+表示应用程序文本日志 (不属于文本日志部分的 *setupapi.log) * 部分。 如果指定了此标记值， [setupapi.log 日志记录函数](/previous-versions/ff550878(v=vs.85)) 将在应用程序安装文本日志中写入日志条目。
 
 <a href="" id="logtoken-setupapi-devlog"></a>LOGTOKEN_SETUPAPI_DEVLOG  
-表示的一部分的设备安装文本日志 (*SetupAPI.dev.log)* ，它不是属于文本日志部分。 如果指定此令牌的值来 SetupAPI 日志记录功能在设备安装文本日志中写入日志项。
+表示不属于文本日志部分的设备安装文本日志 (*setupapi.log) * 的一部分。 如果指定了此标记值，Setupapi.log 日志记录函数将在设备安装文本日志中写入日志条目。
 
  
-
- 
-
-
-
-
 

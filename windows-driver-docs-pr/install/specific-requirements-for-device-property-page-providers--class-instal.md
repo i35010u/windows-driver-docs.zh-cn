@@ -1,5 +1,5 @@
 ---
-title: 设备属性页提供程序 （共同安装程序） 的要求
+title: '设备属性页提供程序的要求 (共同安装程序) '
 description: 设备属性页提供程序（辅助安装程序）的特定要求
 ms.assetid: b57beaed-5e5f-499e-b973-532f33b7fb99
 keywords:
@@ -9,12 +9,12 @@ keywords:
 - DIF_ADDPROPERTYPAGE_ADVANCED
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 969c786ab427c18ba75381f0fc56e2b6014211d0
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: f19968915c99902664dc66c0ec56330102b6d7b0
+ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67385891"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89097087"
 ---
 # <a name="specific-requirements-for-device-property-page-providers-co-installers"></a>设备属性页提供程序（辅助安装程序）的特定要求
 
@@ -22,19 +22,13 @@ ms.locfileid: "67385891"
 
 
 
-一个[共同安装程序](writing-a-co-installer.md)，提供了一个或多个自定义设备属性页必须处理[ **DIF_ADDPROPERTYPAGE_ADVANCED** ](https://docs.microsoft.com/windows-hardware/drivers/install/dif-addpropertypage-advanced)设备安装函数 (DIF) 代码。 当用户单击时，设备管理器将发出此请求**属性**设备在设备管理器或控制面板中的选项卡。
+提供一个或多个自定义设备属性页的 [共同安装程序](writing-a-co-installer.md) 必须处理 [**DIF_ADDPROPERTYPAGE_ADVANCED**](./dif-addpropertypage-advanced.md) 设备安装函数 (DIF) 代码。 当用户在 "设备管理器" 或 "控制面板" 中单击设备的 " **属性** " 选项卡时，设备管理器发出此请求。
 
-以响应此请求，安装程序提供了有关每个自定义属性页的信息、 创建页，并将已创建的页添加到设备的动态属性页的列表。 安装程序初始化并返回请求的类安装参数的 SP_ADDPROPERTYPAGE_DATA 结构通过执行此操作。
+作为对此请求的响应，安装程序提供有关其每个自定义属性页的信息，创建页面，并将创建的页添加到设备的动态属性页列表中。 安装程序通过初始化并返回请求的类安装参数的 SP_ADDPROPERTYPAGE_DATA 结构来实现此功能。
 
-如果用户更改任何属性，设备管理器发送[ **DIF_PROPERTYCHANGE** ](https://docs.microsoft.com/windows-hardware/drivers/install/dif-propertychange) DIF 代码向安装程序安装程序通过调用来设置新的参数后[ **SetupDiSetDeviceInstallParams**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdisetdeviceinstallparamsa)。
+如果用户更改了任何属性，则在安装程序通过调用[**SetupDiSetDeviceInstallParams**](/windows/desktop/api/setupapi/nf-setupapi-setupdisetdeviceinstallparamsa)设置新参数之后设备管理器向安装程序发送[**DIF_PROPERTYCHANGE**](./dif-propertychange.md)的 DIF 代码。
 
-有关如何创建自定义设备属性页的详细信息[共同安装程序](writing-a-co-installer.md)，请参阅[设备属性页提供程序的常规要求](general-requirements-for-device-property-page-providers.md)。
-
- 
+有关如何通过 [共同安装程序](writing-a-co-installer.md)创建自定义设备属性页的详细信息，请参阅 [设备属性页提供程序的一般要求](general-requirements-for-device-property-page-providers.md)。
 
  
-
-
-
-
 

@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 66cff35c114507e9a4cf6e59040b553f664a1408
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 79e27a298e8e6b664f655e275bfd04d3f60e8da0
+ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67375243"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89096913"
 ---
-# <a name="guiddevinterfacesideshow"></a>GUID_DEVINTERFACE_SIDESHOW
+# <a name="guid_devinterface_sideshow"></a>GUID_DEVINTERFACE_SIDESHOW
 
 
-GUID_DEVINTERFACE_SIDESHOW[设备接口类](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)为定义[Windows SideShow 设备](https://docs.microsoft.com/windows-hardware/drivers/)。
+为[Windows 边栏显示设备](../index.yml)定义 GUID_DEVINTERFACE_SIDESHOW[设备接口类](./overview-of-device-interface-classes.md)。
 
 <table>
 <colgroup>
@@ -33,7 +33,7 @@ GUID_DEVINTERFACE_SIDESHOW[设备接口类](https://docs.microsoft.com/windows-h
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">特性</th>
+<th align="left">Attribute</th>
 <th align="left">设置</th>
 </tr>
 </thead>
@@ -54,7 +54,7 @@ GUID_DEVINTERFACE_SIDESHOW[设备接口类](https://docs.microsoft.com/windows-h
 <a name="remarks"></a>备注
 -------
 
-Windows 边栏显示兼容设备的驱动程序注册的 GUID_DEVINTERFACE_SIDESHOW 通知系统和应用程序存在 Windows SideShow 设备的实例。
+适用于 Windows 边栏显示兼容设备的驱动程序将注册 GUID_DEVINTERFACE_SIDESHOW 的实例，以通知系统和应用程序是否存在 Windows 边栏显示设备。
 
 <a name="requirements"></a>要求
 ------------
@@ -66,21 +66,15 @@ Windows 边栏显示兼容设备的驱动程序注册的 GUID_DEVINTERFACE_SIDES
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>Version</p></td>
+<td align="left"><p>版本</p></td>
 <td align="left"><p>在 Windows Vista 和更高版本的 Microsoft Windows 操作系统中可用。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>Header</p></td>
-<td align="left">WindowsSideShowDriverEvents.h （包括 WindowsSideShowDriverEvents.h）</td>
+<td align="left"><p>标头</p></td>
+<td align="left">WindowsSideShowDriverEvents (包含 WindowsSideShowDriverEvents) </td>
 </tr>
 </tbody>
 </table>
 
  
-
- 
-
-
-
-
 

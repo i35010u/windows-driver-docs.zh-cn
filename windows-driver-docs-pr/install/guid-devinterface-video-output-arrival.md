@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 8981b27deefb3262d83cedc21879a1a3e8ec5b17
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 03688841c632b4d884fcea749b4196f20b0ba873
+ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386415"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89096881"
 ---
-# <a name="guiddevinterfacevideooutputarrival"></a>GUID_DEVINTERFACE_VIDEO_OUTPUT_ARRIVAL
+# <a name="guid_devinterface_video_output_arrival"></a>GUID_DEVINTERFACE_VIDEO_OUTPUT_ARRIVAL
 
 
-GUID_DEVINTERFACE_VIDEO_OUTPUT_ARRIVAL[设备接口类](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)定义的子设备[显示设备](https://docs.microsoft.com/windows-hardware/drivers/display/index)。
+为[显示设备](../display/index.md)的子设备定义 GUID_DEVINTERFACE_VIDEO_OUTPUT_ARRIVAL[设备接口类](./overview-of-device-interface-classes.md)。
 
 <table>
 <colgroup>
@@ -33,7 +33,7 @@ GUID_DEVINTERFACE_VIDEO_OUTPUT_ARRIVAL[设备接口类](https://docs.microsoft.c
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">特性</th>
+<th align="left">Attribute</th>
 <th align="left">设置</th>
 </tr>
 </thead>
@@ -56,9 +56,9 @@ GUID_DEVINTERFACE_VIDEO_OUTPUT_ARRIVAL[设备接口类](https://docs.microsoft.c
 
 此 Windows 操作系统不使用此设备接口类。
 
-显示设备的信息，请参阅[Windows Vista 显示器驱动程序模型](https://docs.microsoft.com/windows-hardware/drivers/display/windows-vista-display-driver-model-design-guide)并[Windows 2000 显示器驱动程序模型](https://docs.microsoft.com/windows-hardware/drivers/display/windows-2000-display-driver-model-design-guide)。
+有关显示设备的信息，请参阅 [Windows Vista 显示驱动程序模型](../display/windows-vista-display-driver-model-design-guide.md) 和 [Windows 2000 显示驱动程序模型](../display/windows-2000-display-driver-model-design-guide.md)。
 
-有关显示适配器的设备接口类的信息，请参阅[ **GUID_DISPLAY_DEVICE_ARRIVAL**](guid-display-device-arrival.md)。
+有关显示适配器的设备接口类的信息，请参阅 [**GUID_DISPLAY_DEVICE_ARRIVAL**](guid-display-device-arrival.md)。
 
 <a name="requirements"></a>要求
 ------------
@@ -70,23 +70,16 @@ GUID_DEVINTERFACE_VIDEO_OUTPUT_ARRIVAL[设备接口类](https://docs.microsoft.c
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>Header</p></td>
-<td align="left">Ntddvdeo.h （包括 Ntddvdeo.h）</td>
+<td align="left"><p>标头</p></td>
+<td align="left">Ntddvdeo (包含 Ntddvdeo) </td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
 [**GUID_DISPLAY_DEVICE_ARRIVAL**](guid-display-device-arrival.md)
 
  
-
- 
-
-
-
-
-
 

@@ -8,12 +8,12 @@ keywords:
 - WDM Irp WDK KMDF，不支持
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 520878652f5e5fad65476c6ea266b0e816292b61
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 031f91669d454e6941c9a4a82bd444771c034824
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72844430"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89183943"
 ---
 # <a name="handling-an-irp-that-the-framework-does-not-support"></a>处理框架不支持的 IRP
 
@@ -22,37 +22,31 @@ ms.locfileid: "72844430"
 
 此框架不支持具有以下主要 IRP 代码的 i/o 请求：
 
--   IRP\_MJ\_创建\_MAILSLOT
--   IRP\_MJ\_创建名为\_管道的\_
--   IRP\_MJ\_设备\_更改
--   [**IRP\_MJ\_DIRECTORY\_控件**](https://docs.microsoft.com/windows-hardware/drivers/ifs/irp-mj-directory-control)
--   [**IRP\_MJ\_文件\_系统\_控件**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-file-system-control)
--   [**IRP\_MJ\_刷新\_缓冲区**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-flush-buffers)
--   [**IRP\_MJ\_锁定\_控件**](https://docs.microsoft.com/windows-hardware/drivers/ifs/irp-mj-lock-control)
--   [**IRP\_MJ\_QUERY\_EA**](https://docs.microsoft.com/windows-hardware/drivers/ifs/irp-mj-query-ea)
--   [**IRP\_MJ\_查询\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ifs/irp-mj-query-information)
--   [**IRP\_MJ\_QUERY\_配额**](https://docs.microsoft.com/windows-hardware/drivers/ifs/irp-mj-query-quota)
--   [**IRP\_MJ\_QUERY\_安全性**](https://docs.microsoft.com/windows-hardware/drivers/ifs/irp-mj-query-security)
--   [**IRP\_MJ\_查询\_卷\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ifs/irp-mj-query-volume-information)
--   [**IRP\_MJ\_集\_EA**](https://docs.microsoft.com/windows-hardware/drivers/ifs/irp-mj-set-ea)
--   [**IRP\_MJ\_集\_信息**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-set-information)
--   [**IRP\_MJ\_集\_配额**](https://docs.microsoft.com/windows-hardware/drivers/ifs/irp-mj-set-quota)
--   [**IRP\_MJ\_集\_安全性**](https://docs.microsoft.com/windows-hardware/drivers/ifs/irp-mj-set-security)
--   [**IRP\_MJ\_设置\_卷\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ifs/irp-mj-set-volume-information)
+-   IRP \_ MJ \_ CREATE \_ MAILSLOT
+-   IRP \_ MJ \_ 创建 \_ 命名 \_ 管道
+-   IRP \_ MJ \_ 设备 \_ 更改
+-   [**IRP \_ MJ \_ 目录 \_ 控件**](../ifs/irp-mj-directory-control.md)
+-   [**IRP \_ MJ \_ 文件 \_ 系统 \_ 控制**](../kernel/irp-mj-file-system-control.md)
+-   [**IRP \_ MJ \_ 刷新 \_ 缓冲区**](../kernel/irp-mj-flush-buffers.md)
+-   [**IRP \_ MJ \_ 锁定 \_ 控制**](../ifs/irp-mj-lock-control.md)
+-   [**IRP \_ MJ \_ 查询 \_ EA**](../ifs/irp-mj-query-ea.md)
+-   [**IRP \_ MJ \_ 查询 \_ 信息**](../ifs/irp-mj-query-information.md)
+-   [**IRP \_ MJ \_ 查询 \_ 配额**](../ifs/irp-mj-query-quota.md)
+-   [**IRP \_ MJ \_ 查询 \_ 安全性**](../ifs/irp-mj-query-security.md)
+-   [**IRP \_ MJ \_ 查询 \_ 卷 \_ 信息**](../ifs/irp-mj-query-volume-information.md)
+-   [**IRP \_ MJ \_ 设置 \_ EA**](../ifs/irp-mj-set-ea.md)
+-   [**IRP \_ MJ \_ 设置 \_ 信息**](../kernel/irp-mj-set-information.md)
+-   [**IRP \_ MJ \_ 设置 \_ 配额**](../ifs/irp-mj-set-quota.md)
+-   [**IRP \_ MJ \_ 设置 \_ 安全性**](../ifs/irp-mj-set-security.md)
+-   [**IRP \_ MJ \_ 设置 \_ 卷 \_ 信息**](../ifs/irp-mj-set-volume-information.md)
 
-如果框架收到的 IRP 包含其中一个 i/o 函数代码，则该框架不处理 IRP。 如果你的驱动程序是筛选器驱动程序，则该框架会将 IRP 传递到驱动程序堆栈中的下一个较低版本的驱动程序。 如果你的驱动程序不是筛选器驱动程序，则框架将调用[**IoCompleteRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocompleterequest)来完成 IRP，状态值为 "\_无效\_设备\_请求"。
+如果框架收到的 IRP 包含其中一个 i/o 函数代码，则该框架不处理 IRP。 如果你的驱动程序是筛选器驱动程序，则该框架会将 IRP 传递到驱动程序堆栈中的下一个较低版本的驱动程序。 如果驱动程序不是筛选器驱动程序，框架将调用 [**IoCompleteRequest**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iocompleterequest) 来完成 IRP，使其状态值为 "状态 \_ 无效的 \_ 设备请求" \_ 。
 
-如果你的驱动程序必须处理包含这些 i/o 函数代码中的任何一个的 Irp，则驱动程序必须调用[**WdfDeviceInitAssignWdmIrpPreprocessCallback**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceinitassignwdmirppreprocesscallback) ，以便为 i/o 函数代码注册[*EvtDeviceWdmIrpPreprocess*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdfdevice_wdm_irp_preprocess)事件回调函数。
+如果你的驱动程序必须处理包含这些 i/o 函数代码中的任何一个的 Irp，则驱动程序必须调用 [**WdfDeviceInitAssignWdmIrpPreprocessCallback**](/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceinitassignwdmirppreprocesscallback) ，以便为 i/o 函数代码注册 [*EvtDeviceWdmIrpPreprocess*](/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdfdevice_wdm_irp_preprocess) 事件回调函数。
 
-当驱动程序收到一个 IRP，其中包含驱动程序已为其注册了[*EvtDeviceWdmIrpPreprocess*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdfdevice_wdm_irp_preprocess)回调函数的 i/o 函数代码时，框架会将 IRP 传递到回调函数。 然后，回调函数必须遵循[用于处理 irp 的 WDM 规则](https://docs.microsoft.com/windows-hardware/drivers/kernel/handling-irps)来处理 irp。 驱动程序必须调用[**IoCompleteRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocompleterequest)来完成 irp，或者必须调用[**IoCallDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocalldriver)将 irp 传递到下一个较低的驱动程序。
+当驱动程序收到一个 IRP，其中包含驱动程序已为其注册了 [*EvtDeviceWdmIrpPreprocess*](/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdfdevice_wdm_irp_preprocess) 回调函数的 i/o 函数代码时，框架会将 IRP 传递到回调函数。 然后，回调函数必须遵循 [用于处理 irp 的 WDM 规则](../kernel/handling-irps.md)来处理 irp。 驱动程序必须调用 [**IoCompleteRequest**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iocompleterequest) 来完成 irp，或者必须调用 [**IoCallDriver**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iocalldriver) 将 irp 传递到下一个较低的驱动程序。
 
-有关处理框架不支持的 IRP 的[*EvtDeviceWdmIrpPreprocess*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdfdevice_wdm_irp_preprocess)回调函数的示例，请参阅[串行](sample-kmdf-drivers.md)示例驱动程序。
-
- 
+有关处理框架不支持的 IRP 的 [*EvtDeviceWdmIrpPreprocess*](/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdfdevice_wdm_irp_preprocess) 回调函数的示例，请参阅 [串行](sample-kmdf-drivers.md) 示例驱动程序。
 
  
-
-
-
-
 

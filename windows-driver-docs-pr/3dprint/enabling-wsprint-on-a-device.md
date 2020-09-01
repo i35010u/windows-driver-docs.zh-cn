@@ -3,12 +3,12 @@ title: 在设备上启用 WSPrint 2.0
 description: 使用这些设置在设备上启用 WSPrint 2。0
 ms.date: 05/18/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 7933eaa830eb90df3a23ece3950ce8473f19e253
-ms.sourcegitcommit: cbcb712a9f1f62c7d67e1b98097a0d8d24bd0c71
+ms.openlocfilehash: 7114ae0440e5cb69203eac3e5cc9679718ea794c
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83769351"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89184543"
 ---
 # <a name="enable-wsprint-20-on-a-device"></a>在设备上启用 WSPrint 2.0
 
@@ -64,11 +64,11 @@ WSDPRINT\MS3DCompatE2D2
 
 1. CreatePrintJob2 –打印提交
 
-1. GetPrintDeviceResources –允许检索 .Resx 中的本地化资源（多部分传出响应）
+1. GetPrintDeviceResources –允许在 ResX (多部分传出响应中检索本地化资源) 
 
-1. GetPrintDeviceCapabilities-允许检索打印设备功能（多部分传出响应）
+1. GetPrintDeviceCapabilities-允许 (多部分传出响应检索打印设备功能) 
 
-1. GetBidiSchemaExtensions-允许检索双向架构扩展（多部分传出响应）
+1. GetBidiSchemaExtensions-允许检索双向架构扩展 (多部分传出响应) 
 
 1. CancelJob –作业取消
 
@@ -80,10 +80,10 @@ WSDPRINT\MS3DCompatE2D2
 
 1. GetJobElements –获取作业状态
 
-1. SendDocument –实际打印数据（多部分传入请求）
+1. SendDocument –实际打印数据 (多部分传入请求) 
 
 有关 WSPrint 2.0 的详细信息，请参阅以下资源：
 
-[在用于打印的设备上实现 Web 服务](https://docs.microsoft.com/windows-hardware/design/whitepapers/implementing-web-services-on-devices-for-printing)
+[在用于打印的设备上实现 Web 服务](/windows-hardware/design/whitepapers/implementing-web-services-on-devices-for-printing)
 
-[WSPrint 2.0 规范](https://docs.microsoft.com/windows-hardware/design/whitepapers/implementing-web-services-on-devices-for-printing#file-downloads)
+[WSPrint 2.0 规范](/windows-hardware/design/whitepapers/implementing-web-services-on-devices-for-printing#file-downloads)
