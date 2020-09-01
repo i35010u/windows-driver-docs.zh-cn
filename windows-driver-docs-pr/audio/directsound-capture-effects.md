@@ -3,20 +3,20 @@ title: DirectSound 捕获效果
 description: DirectSound 捕获效果
 ms.assetid: 5dcadcea-0b6a-447d-828d-a7f256f97088
 keywords:
-- DirectSound WDK 音频捕获效果
-- 回声取消 WDK 音频
-- 干扰抑制 WDK 音频
+- DirectSound WDK 音频，捕获效果
+- 回声抵消乐曲音频
+- 干扰声音频
 - AEC WDK 音频
 - 捕获效果 WDK 音频
 - 全双工应用程序 WDK 音频
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1c2146e41b43ca6fbaadc28fe5ec12e595fb5449
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 15bc004dc5713a3150e1688ca4f518b8b75a00a9
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67360139"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89208109"
 ---
 # <a name="directsound-capture-effects"></a>DirectSound 捕获效果
 
@@ -24,15 +24,15 @@ ms.locfileid: "67360139"
 ## <span id="directsound_capture_effects"></span><span id="DIRECTSOUND_CAPTURE_EFFECTS"></span>
 
 
-DirectSound 8 添加了用于启用和控制音频捕获过程的第三方效果一些新功能。 这和更高版本的 DirectSound 支持以下两个捕获影响：
+DirectSound 8 添加了一些新功能，用于启用和控制音频捕获过程中的第三方效果。 此版本和更高版本的 DirectSound 支持以下两个捕获效果：
 
--   回声抵消 (AEC)
+-   ) 的声音回声取消 (
 
--   干扰抑制 (NS)
+-   NS)  (噪音抑制
 
-在全双工音频应用程序如电话会议，回显正通过演讲者的输出的呈现器流中提取的麦克风，会生成捕获流。 描述特性中的空间或其他物理环境声音的反射之后, 全双工系统使用 AEC 来监视呈现流来抵消此函数添加到捕获流回显。 通过使用 NS 检测干扰峰值和从流中删除，系统可以进一步提高捕获流的质量。
+在全双工音频应用程序（如电话会议）中，将在生成捕获流的麦克风中选取要通过扬声器输出的呈现流的回声。 在房间或其他物理环境中描述声音反射后，全双工系统将使用 AEC 监视呈现流，以取消它添加到捕获流中的回显。 系统可以通过使用 NS 检测噪音峰值，并从流中删除，从而进一步提高捕获流的质量。
 
-全双工 DirectSound 应用程序可以使用**IDirectSoundCaptureFXAec**并**IDirectSoundCaptureFXNoiseSuppress**接口来控制 AEC 和 NS 效果。 **IDirectSoundCaptureBuffer::GetObjectInPath**方法检索指向与这些接口的对象的指针。 **DirectSoundFullDuplexCreate**函数创建**IDirectSoundCaptureBuffer**对象，并在调用方传递给此函数的参数包括 DSCEFFECTDESC 结构的数组。 该数组指定要启用捕获缓冲区中的效果。 **GuidDSCFXClass**数组中每个结构成员包含指定有效的 GUID:AEC 或 NS。 每个 GUID DirectSound 名称下的表，以及相同的 GUID 值 KS 名称所示。 有关详细信息，请参阅 DirectX 8.0 SDK 文档。
+全双工 DirectSound 应用程序可以使用 **IDirectSoundCaptureFXAec** 和 **IDirectSoundCaptureFXNoiseSuppress** 接口来控制 AEC 和 NS 的影响。 **IDirectSoundCaptureBuffer：： GetObjectInPath**方法用这些接口检索指向对象的指针。 **DirectSoundFullDuplexCreate**函数将创建**IDirectSoundCaptureBuffer**对象，并且调用方传递给此函数的参数包括一个 DSCEFFECTDESC 结构数组。 数组指定在捕获缓冲区中启用的效果。 数组中每个结构的 **guidDSCFXClass** 成员包含一个指定效果的 GUID： AEC 或 NS。 下表显示了每个 GUID 的 DirectSound 名称，以及同一 GUID 值的 KS 名称。 有关详细信息，请参阅 DirectX 8.0 SDK 文档。
 
 <table>
 <colgroup>
@@ -48,29 +48,24 @@ DirectSound 8 添加了用于启用和控制音频捕获过程的第三方效果
 <tbody>
 <tr class="odd">
 <td align="left"><p>GUID_DSCFX_CLASS_AEC</p></td>
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/audio/ksnodetype-acoustic-echo-cancel" data-raw-source="[&lt;strong&gt;KSNODETYPE_ACOUSTIC_ECHO_CANCEL&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/audio/ksnodetype-acoustic-echo-cancel)"><strong>KSNODETYPE_ACOUSTIC_ECHO_CANCEL</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/audio/ksnodetype-acoustic-echo-cancel" data-raw-source="[&lt;strong&gt;KSNODETYPE_ACOUSTIC_ECHO_CANCEL&lt;/strong&gt;](./ksnodetype-acoustic-echo-cancel.md)"><strong>KSNODETYPE_ACOUSTIC_ECHO_CANCEL</strong></a></p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>GUID_DSCFX_CLASS_NS</p></td>
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/audio/ksnodetype-noise-suppress" data-raw-source="[&lt;strong&gt;KSNODETYPE_NOISE_SUPPRESS&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/audio/ksnodetype-noise-suppress)"><strong>KSNODETYPE_NOISE_SUPPRESS</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/audio/ksnodetype-noise-suppress" data-raw-source="[&lt;strong&gt;KSNODETYPE_NOISE_SUPPRESS&lt;/strong&gt;](./ksnodetype-noise-suppress.md)"><strong>KSNODETYPE_NOISE_SUPPRESS</strong></a></p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-在 Microsoft Windows XP 及更高版本，可以公开到 DirectSound 应用程序的音频设备的硬件加速捕获效果。 此外，AEC 系统筛选器 (Aec.sys) 提供 AEC 和 NS 效果的软件的模拟。
+在 Microsoft Windows XP 和更高版本中，你可以向 DirectSound 应用程序公开音频设备的硬件加速捕获效果。 此外，AEC 系统筛选器 ( # A0) 提供 AEC 和 NS 影响的软件模拟。
 
-在本部分的其余部分讨论了这些主题：
+本部分的其余部分讨论了这些主题：
 
 [公开硬件加速捕获效果](exposing-hardware-accelerated-capture-effects.md)
 
 [AEC 系统筛选器](aec-system-filter.md)
 
  
-
- 
-
-
-
 

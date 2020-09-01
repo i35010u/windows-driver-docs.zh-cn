@@ -4,47 +4,41 @@ description: 数据包数据服务移交
 ms.assetid: 33cb68ac-42db-4bb0-8855-a8575e6e6331
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6f846c3fd269132c891b4a99592642ddc8fd662a
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: edb17f582cec67f387dcd203186d98e2bc3ce664
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67376428"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89207845"
 ---
 # <a name="packet-data-service-handoffs"></a>数据包数据服务移交
 
 
-下图显示了微型端口驱动程序数据包服务之间不同基于 GSM 的技术，如 GPRS、 EDGE、 UMTS、 HSDPA 或 TD SCDMA，移动或移动之间不同基于 CDMA 的技术，如 1xRTT，EV-不要时应遵循的步骤或 EV-不要 RevA。 以粗体显示的标签是 OID 标识符或事务流控制，并在常规文本的标签是 OID 结构中的重要标志。
+下图显示了当数据包服务在不同的基于 GSM 的技术（如 GPRS、EDGE、UMTS、HSDPA 或 TD SCDMA）之间移动时，微型端口驱动程序应遵循的步骤，或在不同 CDMA 的技术之间移动（如1xRTT、EV 或 EV-DO RevA）。 粗体标签是 OID 标识符或事务流控制，而常规文本中的标签是 OID 结构中的重要标志。
 
-![说明时数据包服务之间不同的基于 gsm 的技术移动微型端口驱动程序应遵循的步骤的关系图](images/wwanpacketdataservicehandoff.png)
+![说明包服务在不同的基于 gsm 的技术之间移动时应遵循的步骤的示意图](images/wwanpacketdataservicehandoff.png)
 
-请注意，除非在切换过程中发生更改的 IP 地址，MB 服务处理切换事件以透明方式而不会中断现有连接。 但是，微型端口驱动程序必须仍通知 MB 服务的媒体断开连接事件，当且仅当 IP 地址发生更改。
+请注意，除非 IP 地址在移交过程中发生更改，否则，MB 服务将透明地处理移交事件，而不会中断现有连接。 但是，如果且仅当 IP 地址发生变化时，微型端口驱动程序仍必须通知 MB 服务有关媒体断开连接事件的信息。
 
-微型端口驱动程序和他们管理的 MB 设备应该能够处理第 2 层切换不同的无线接口之间自动，产生 MB 服务和其他叠加应用程序的最小影响。 唯一可能的影响是对可能会导致从技术移交的 IP 地址的更改。 在这种情况下，微型端口驱动程序应重新建立之前向 MB 服务报告数据包服务更改 MB 连接。 不会实现 DHCP 功能的微型端口驱动程序应使用[IP 帮助程序](ip-helper.md)关联[函数](https://docs.microsoft.com/windows-hardware/drivers/network/ip-helper)。 确实实现了 DHCP 功能的微型端口驱动程序不需要使用 IP 帮助程序函数，如以下关系图中所示。
+微型端口驱动程序和他们管理的 MB 设备应该能够自动处理不同无线接口之间的第2层切换，对 MB 服务和其他覆盖应用程序的影响最小。 唯一的影响可能是对技术移交可能导致的 IP 地址的更改。 在这种情况下，微型端口驱动程序应重新建立 MB 连接，然后将数据包服务更改报告给 MB 服务。 不实现 DHCP 功能的微型端口驱动程序应使用 [IP 帮助](ip-helper.md) 程序和关联的 [功能](./ip-helper.md)。 以下关系图中所示，无需使用 IP Helper 函数即可实现 DHCP 功能的微型端口驱动程序。
 
-若要将数据包数据服务提交，使用以下过程：
+若要交付数据包数据服务，请使用以下过程：
 
-1.  微型端口驱动程序发送[ **NDIS\_状态\_WWAN\_数据包\_服务**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-wwan-packet-service)到 MB 服务。
+1.  微型端口驱动程序将 [**NDIS \_ 状态 \_ WWAN \_ 数据包 \_ 服务**](./ndis-status-wwan-packet-service.md) 发送到 MB 服务。
 
-2.  微型端口驱动程序将发送 NDIS\_WWAN\_链接\_MB 服务的状态。
+2.  微型端口驱动程序将 NDIS \_ WWAN \_ 链接状态发送 \_ 到 MB 服务。
 
-3.  微型端口驱动程序发送[ **NDIS\_状态\_WWAN\_数据包\_服务**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-wwan-packet-service)到 MB 服务。
+3.  微型端口驱动程序将 [**NDIS \_ 状态 \_ WWAN \_ 数据包 \_ 服务**](./ndis-status-wwan-packet-service.md) 发送到 MB 服务。
 
-4.  微型端口驱动程序调用[ **DeleteUnicastIpAddressEntry** ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff546370(v=vs.85))与旧的 IP 地址的帮助器函数
+4.  微型端口驱动程序调用具有旧 IP 地址的 [**DeleteUnicastIpAddressEntry**](/previous-versions/windows/hardware/drivers/ff546370(v=vs.85)) helper 函数
 
-5.  微型端口驱动程序调用[ **CreateUnicastIpAddressEntry** ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff546227(v=vs.85))使用新的 IP 地址的帮助器函数
+5.  微型端口驱动程序调用 [**CreateUnicastIpAddressEntry**](/previous-versions/windows/hardware/drivers/ff546227(v=vs.85)) helper 函数和新的 IP 地址
 
-6.  微型端口驱动程序发送[ **NDIS\_状态\_链接\_状态**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-link-state)到 MB 服务。
+6.  微型端口驱动程序将 [**NDIS \_ 状态 \_ 链接 \_ 状态**](./ndis-status-link-state.md) 发送到 MB 服务。
 
-7.  微型端口驱动程序发送[ **NDIS\_状态\_链接\_状态**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-link-state)到 MB 服务。
+7.  微型端口驱动程序将 [**NDIS \_ 状态 \_ 链接 \_ 状态**](./ndis-status-link-state.md) 发送到 MB 服务。
 
-8.  微型端口驱动程序发送[ **NDIS\_状态\_WWAN\_数据包\_服务**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-wwan-packet-service)到 MB 服务。
-
- 
+8.  微型端口驱动程序将 [**NDIS \_ 状态 \_ WWAN \_ 数据包 \_ 服务**](./ndis-status-wwan-packet-service.md) 发送到 MB 服务。
 
  
-
-
-
-
 

@@ -4,12 +4,12 @@ description: 信号强度指示语义
 ms.assetid: d28476f8-d567-4fe0-9cb9-4a78d8b0e05b
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0031acac5897c77cb4ba0072fcdc7875d0ea04aa
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: dd15d62560c3dcfec7bc81ce71b4aad0bee89520
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72841918"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89207781"
 ---
 # <a name="signal-strength-indication-semantics"></a>信号强度指示语义
 
@@ -20,29 +20,23 @@ ms.locfileid: "72841918"
 
 若要更新信号强度指示，请使用以下过程：
 
-1.  微型端口驱动程序将[**NDIS\_WWAN\_信号\_状态**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_signal_state)发送到 MB 服务。
+1.  微型端口驱动程序将 [**NDIS \_ WWAN \_ 信号 \_ 状态**](/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_signal_state) 发送到 MB 服务。
 
-2.  MB 服务将[OID\_WWAN\_信号\_状态](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wwan-signal-state)发送到微型端口驱动程序。 微型端口驱动程序使用临时确认（NDIS\_状态\_指示\_必需的）来响应它已接收请求，并将在将来发送包含请求信息的通知。
+2.  MB 服务将 [OID \_ WWAN \_ 信号 \_ 状态](./oid-wwan-signal-state.md) 发送到微型端口驱动程序。 微型端口驱动程序使用临时确认响应 (需要的 NDIS \_ 状态 \_ 指示 \_) 它已收到请求，并将在将来发送包含所需信息的通知。
 
-3.  微型端口驱动程序将 NDIS\_状态\_WWAN\_成功发送到 MB 服务。
+3.  微型端口驱动程序将 NDIS \_ 状态 \_ WWAN 成功发送 \_ 到 MB 服务。
 
-4.  微型端口驱动程序将[**NDIS\_WWAN\_信号\_状态**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_signal_state)发送到 MB 服务。
+4.  微型端口驱动程序将 [**NDIS \_ WWAN \_ 信号 \_ 状态**](/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_signal_state) 发送到 MB 服务。
 
-5.  MB 服务将[OID\_WWAN\_信号\_状态](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wwan-signal-state)发送到微型端口驱动程序。 微型端口驱动程序使用临时确认（NDIS\_状态\_指示\_必需的）来响应它已接收请求，并将在将来发送包含请求信息的通知。
+5.  MB 服务将 [OID \_ WWAN \_ 信号 \_ 状态](./oid-wwan-signal-state.md) 发送到微型端口驱动程序。 微型端口驱动程序使用临时确认响应 (需要的 NDIS \_ 状态 \_ 指示 \_) 它已收到请求，并将在将来发送包含所需信息的通知。
 
-6.  微型端口驱动程序将 NDIS\_状态\_WWAN\_成功发送到 MB 服务。
+6.  微型端口驱动程序将 NDIS \_ 状态 \_ WWAN 成功发送 \_ 到 MB 服务。
 
-7.  MB 服务将[OID\_WWAN\_信号\_状态](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wwan-signal-state)发送到微型端口驱动程序。 微型端口驱动程序使用临时确认（NDIS\_状态\_指示\_必需的）来响应它已接收请求，并将在将来发送包含请求信息的通知。
+7.  MB 服务将 [OID \_ WWAN \_ 信号 \_ 状态](./oid-wwan-signal-state.md) 发送到微型端口驱动程序。 微型端口驱动程序使用临时确认响应 (需要的 NDIS \_ 状态 \_ 指示 \_) 它已收到请求，并将在将来发送包含所需信息的通知。
 
-8.  微型端口驱动程序将 NDIS\_状态\_WWAN\_成功发送到 MB 服务。
+8.  微型端口驱动程序将 NDIS \_ 状态 \_ WWAN 成功发送 \_ 到 MB 服务。
 
-9.  微型端口驱动程序将[**NDIS\_WWAN\_信号\_状态**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_signal_state)发送到 MB 服务。
-
- 
+9.  微型端口驱动程序将 [**NDIS \_ WWAN \_ 信号 \_ 状态**](/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_signal_state) 发送到 MB 服务。
 
  
-
-
-
-
 

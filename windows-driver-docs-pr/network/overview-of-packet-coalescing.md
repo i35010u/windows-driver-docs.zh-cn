@@ -4,19 +4,19 @@ description: 数据包合并概述
 ms.assetid: E406E89C-247B-4DCB-B309-B742BF0A27E9
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 11484f48a4687719c9ca2553d983791aa5483e99
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: cb173bd28302de021a7c40df7de9522563aecb9f
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72843727"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89207867"
 ---
 # <a name="overview-of-packet-coalescing"></a>数据包合并概述
 
 
-某些 IP 版本4（IPv4）和 IP 版本6（IPv6）网络协议涉及将数据包传输到广播或多播地址。 这些数据包由 IPv4/IPv6 子网中的多个主机接收。 在大多数情况下，接收这些数据包的主机不会对这些数据包执行任何操作。 因此，接收到这些不需要的多播或广播数据包会导致不必要的处理和电源消耗发生在接收主机内。
+某些 IP 版本 4 (IPv4) 和 IP 版本 6 (IPv6) 网络协议涉及将数据包传输到广播或多播地址。 这些数据包由 IPv4/IPv6 子网中的多个主机接收。 在大多数情况下，接收这些数据包的主机不会对这些数据包执行任何操作。 因此，接收到这些不需要的多播或广播数据包会导致不必要的处理和电源消耗发生在接收主机内。
 
-例如，主机 A 在 IPv6 子网上发送多播链路本地多播名称解析（LLMNR）请求以解析主机 B 的名称。 除了主机 A 之外，子网中的所有主机都将接收此 LLMNR 请求。 除了主机 B 以外，在其他主机上运行的 TCP/IP 协议堆栈会检查数据包，并确定数据包并非适用于该数据包。 因此，协议堆栈拒绝数据包，并调用[**NdisReturnNetBufferLists**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisreturnnetbufferlists)将数据包返回给微型端口驱动程序。
+例如，主机 A 向 IPv6 子网上的 LLMNR) 请求发送多播链路本地多播名称解析 (，以解析主机 B 的名称。 除了主机 A 之外，子网中的所有主机都将接收此 LLMNR 请求。 除了主机 B 以外，在其他主机上运行的 TCP/IP 协议堆栈会检查数据包，并确定数据包并非适用于该数据包。 因此，协议堆栈拒绝数据包，并调用 [**NdisReturnNetBufferLists**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisreturnnetbufferlists) 将数据包返回给微型端口驱动程序。
 
 从 NDIS 6.30 开始，网络适配器可支持 NDIS 数据包合并。 通过对随机广播或多播数据包的合并减少接收中断数，系统上的处理开销和功率消耗明显降低。
 
@@ -24,9 +24,9 @@ ms.locfileid: "72843727"
 
 1.  过量驱动程序，如 TCP/IP 协议堆栈，定义用于屏幕广播和多播数据包的 NDIS 接收筛选器。 过量驱动程序将这些筛选器下载到支持数据包合并的底层微型端口驱动程序。 下载后，微型端口驱动程序将网络适配器配置为具有数据包合并接收筛选器。
 
-    有关这些筛选器的详细信息，请参阅[数据包合并接收筛选器](packet-coalescing-receive-filters.md)。
+    有关这些筛选器的详细信息，请参阅 [数据包合并接收筛选器](packet-coalescing-receive-filters.md)。
 
-2.  在网络适配器上缓存或*合并*与接收筛选器匹配的接收数据包。 适配器不会为合并的数据包生成接收中断。 而是在另一个硬件事件发生时，适配器将中断主机。
+2.  在网络适配器上缓存或 *合并*与接收筛选器匹配的接收数据包。 适配器不会为合并的数据包生成接收中断。 而是在另一个硬件事件发生时，适配器将中断主机。
 
     生成此中断后，适配器必须指示带有中断的接收事件。 这允许网络适配器处理网络适配器接收的合并的数据包。
 
@@ -40,10 +40,10 @@ ms.locfileid: "72843727"
 
     -   发生了另一个中断事件，如发送完成事件。
 
-    有关此过程的详细信息，请参阅[处理包合并接收筛选器](handling-packet-coalescing-receive-filters.md)。
+    有关此过程的详细信息，请参阅 [处理包合并接收筛选器](handling-packet-coalescing-receive-filters.md)。
 
 以下几点适用于由 NDIS 支持数据包合并：
 
--   对于分配给物理网络适配器的默认 NDIS 端口（端口0）上接收的数据包，NDIS 支持数据包合并。 NDIS 不支持分配给虚拟网络适配器的 NDIS 端口上的数据包合并。 有关详细信息，请参阅[NDIS 端口](ndis-ports.md)。
+-   NDIS 支持 (端口 0) 分配给物理网络适配器的默认 NDIS 端口接收数据包合并。 NDIS 不支持分配给虚拟网络适配器的 NDIS 端口上的数据包合并。 有关详细信息，请参阅 [NDIS 端口](ndis-ports.md)。
 
--   对于在网络适配器默认接收队列中接收的数据包，NDIS 支持数据包合并。 此接收队列具有 NDIS\_默认\_接收\_队列\_ID 的标识符。
+-   对于在网络适配器默认接收队列中接收的数据包，NDIS 支持数据包合并。 此接收队列具有 NDIS \_ 默认 \_ 接收 \_ 队列 ID 的标识符 \_ 。

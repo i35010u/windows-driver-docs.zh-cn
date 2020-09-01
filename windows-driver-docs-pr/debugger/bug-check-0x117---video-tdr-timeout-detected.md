@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 84b4232f138258f4f9ce9dbd86382019753b6590
-ms.sourcegitcommit: f610410e1500f0b0a4ca008b52679688ab51033d
+ms.openlocfilehash: 90a84d2cea228d44892774bd5a11e59e98594288
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/15/2020
-ms.locfileid: "88253097"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89207651"
 ---
 # <a name="bug-check-0x117-video_tdr_timeout_detected"></a>Bug 检查0x117： \_ \_ 检测到视频 TDR 超时 \_
 
@@ -26,7 +26,7 @@ ms.locfileid: "88253097"
 \_检测到的视频 TDR \_ 超时 \_ bug 检查的值为0x00000117。 这表示显示驱动程序未能及时响应。
 
 > [!IMPORTANT]
-> 本主题适用于程序员。 如果你是在使用计算机时收到蓝屏错误代码的客户，请参阅 [排查蓝屏错误](https://www.windows.com/stopcode)。
+> 本主题面向程序员。 如果您是在使用计算机时收到蓝屏错误代码的客户，请参阅[蓝屏错误疑难解答](https://www.windows.com/stopcode)。
 
 
 ## <a name="video_tdr_timeout_detected-parameters"></a>视频 \_ TDR \_ \_ 检测到超时参数
@@ -40,7 +40,7 @@ ms.locfileid: "88253097"
 <thead>
 <tr class="header">
 <th align="left">参数</th>
-<th align="left">描述</th>
+<th align="left">说明</th>
 </tr>
 </thead>
 <tbody>
@@ -70,11 +70,11 @@ ms.locfileid: "88253097"
 
 当系统在处理最终用户命令或操作时出现完全冻结或挂起时，图形中会出现常见的稳定性问题。 通常，GPU 是繁忙的处理密集型图形操作，通常在游戏播放期间。 不会进行屏幕更新，用户假定其系统已冻结。 用户通常会等待几秒钟，并按下 "电源" 按钮重新启动系统。 Windows 将尝试检测这些问题挂起情况并动态恢复响应式桌面。
 
-此检测和恢复过程称为超时检测和恢复 (TDR) 。 默认超时为2秒。 在视频卡的 TDR 过程中，操作系统的 GPU 计划程序调用显示微型端口驱动程序的 [*DxgkDdiResetFromTimeout*](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_resetfromtimeout) 函数来重新初始化驱动程序并重置 GPU。
+此检测和恢复过程称为超时检测和恢复 (TDR) 。 默认超时为2秒。 在视频卡的 TDR 过程中，操作系统的 GPU 计划程序调用显示微型端口驱动程序的 [*DxgkDdiResetFromTimeout*](/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_resetfromtimeout) 函数来重新初始化驱动程序并重置 GPU。
 
 如果恢复过程成功，将显示一条消息，指示 "显示驱动程序已停止响应并已恢复"。
 
-有关详细信息，请参阅超时检测和恢复 (TDR) ，Windows 8 中的 [TDR 注册表项](https://docs.microsoft.com/windows-hardware/drivers/display/tdr-registry-keys) 和 [TDR 更改](https://docs.microsoft.com/windows-hardware/drivers/display/tdr-changes-in-windows-8) ，这些更改位于 [windows 显示驱动程序模型 (WDDM) 的调试提示 ](https://docs.microsoft.com/windows-hardware/drivers/display/debugging-tips-for-the-windows-vista-display-driver-model)中。
+有关详细信息，请参阅超时检测和恢复 (TDR) ，Windows 8 中的 [TDR 注册表项](../display/tdr-registry-keys.md) 和 [TDR 更改](../display/tdr-changes-in-windows-8.md) ，这些更改位于 [windows 显示驱动程序模型 (WDDM) 的调试提示 ](https://docs.microsoft.com/windows-hardware/drivers/display/debugging-tips-for-the-windows-vista-display-driver-model)中。
 
 <a name="resolution"></a>解决方法
 ----------
@@ -204,7 +204,7 @@ BUGCHECK_P2: ffffffff9a02381e
 
     可以通过在启动时按功能键来提供安全模式，例如 F8。 请参阅制造商提供的有关特定启动选项的信息。
 
--   运行 Windows 内存诊断工具来测试内存。 在 "控制面板" 搜索框中键入 "内存"，然后选择 " **诊断计算机的内存问题**"。运行测试后，使用事件查看器查看系统日志下的结果。 查找 " *MemoryDiagnostics* " 项，查看结果。
+-   运行 Windows 内存诊断工具来测试内存。 在 "控制面板" 搜索框中键入 "内存"，然后选择 " **诊断计算机的内存问题**"。运行测试后，使用事件查看器查看系统日志下的结果。 查找“内存诊断结果”条目以查看结果  。
 
 -   你可以尝试运行系统制造商提供的硬件诊断。
 
@@ -218,9 +218,4 @@ BUGCHECK_P2: ffffffff9a02381e
 有关硬件设备实现 TDR 时必须满足的要求的信息，请参阅设备上的 WHCK 文档 *.。。TDRResiliency*。
 
  
-
- 
-
-
-
 

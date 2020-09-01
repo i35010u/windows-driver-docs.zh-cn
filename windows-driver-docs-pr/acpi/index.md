@@ -6,12 +6,12 @@ ms.date: 05/19/2020
 ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
-ms.openlocfilehash: 6d3158015414be80695b162743b7a07439ef4e09
-ms.sourcegitcommit: d9a9925f790271f4ca2c8377d551d96e8d1e62c7
+ms.openlocfilehash: 1977785d59fe31d1192c08adab8fef9199d5039b
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88850217"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89184507"
 ---
 # <a name="acpi-design-guide"></a>ACPI 设计指南
 
@@ -24,9 +24,9 @@ ACPI 设备是由[高级配置和电源接口 (ACPI) 规范](https://uefi.org/sp
 | 部分 | 说明 |
 | --- | --- |
 | [支持 ACPI 设备](supporting-acpi-devices.md) | 介绍了如何使用 Windows 驱动模型 (WDM) 功能驱动程序增强 ACPI 设备的功能。 |
-| [评估 ACPI 控制方法](evaluating-acpi-control-methods.md) | 介绍了符合[内核模式驱动程序框架 (KMDF)](https://docs.microsoft.com/windows-hardware/drivers/kernel)、[用户模式驱动程序框架 (UMDF)](https://docs.microsoft.com/windows-hardware/drivers/wdf/getting-started-with-umdf-version-2) 或 [Windows 驱动模型 (WDM)](https://docs.microsoft.com/windows-hardware/drivers/kernel/introduction-to-wdm) 的要求的设备驱动程序如何评估 ACPI 控制方法。 |
+| [评估 ACPI 控制方法](evaluating-acpi-control-methods.md) | 介绍了符合[内核模式驱动程序框架 (KMDF)](../kernel/index.md)、[用户模式驱动程序框架 (UMDF)](../wdf/getting-started-with-umdf-version-2.md) 或 [Windows 驱动模型 (WDM)](../kernel/introduction-to-wdm.md) 的要求的设备驱动程序如何评估 ACPI 控制方法。 |
 | [如何使用 _OSI 识别 ACPI 中的 Windows 版本](winacpi-osi.md) | 提供了用来识别主机操作系统的 ACPI 源语言 (ASL) 操作系统接口级别 (\_OSI) 方法的信息。 |
 
 ## <a name="related-sections"></a>相关章节
 
-- [ACPI DDI 参考](https://docs.microsoft.com/windows-hardware/drivers/ddi/_acpi)
+- [ACPI DDI 参考](/windows-hardware/drivers/ddi/_acpi)

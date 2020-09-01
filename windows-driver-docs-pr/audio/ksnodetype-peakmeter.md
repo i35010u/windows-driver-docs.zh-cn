@@ -1,6 +1,6 @@
 ---
-title: KSNODETYPE\_PEAKMETER
-description: KSNODETYPE\_PEAKMETER
+title: KSNODETYPE \_ PEAKMETER
+description: KSNODETYPE \_ PEAKMETER
 ms.assetid: 11c886eb-dd63-44dd-9bca-dd19a8dd6948
 keywords:
 - KSNODETYPE_PEAKMETER 音频设备
@@ -12,28 +12,28 @@ api_type:
 - NA
 ms.date: 04/21/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 8ab731f662f2efaa2785bc9bcbd8d609b7993aa9
-ms.sourcegitcommit: 8f27122409dea11ef0635afbbe5788a648066a1a
+ms.openlocfilehash: f34d86c0fb4c63847fadf3426257303a687d8f3a
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "81772738"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89207003"
 ---
-# <a name="ksnodetype_peakmeter"></a>KSNODETYPE\_PEAKMETER
+# <a name="ksnodetype_peakmeter"></a>KSNODETYPE \_ PEAKMETER
 
 ## <span id="ddk_ksnodetype_peakmeter_ks"></span><span id="DDK_KSNODETYPE_PEAKMETER_KS"></span>
 
-**KSNODETYPE\_PEAKMETER**节点表示硬件 PEAKMETER。 KS peakmeter 节点有一个输入插针和一个输出插针，这两个 pin 共享相同的数据格式。
+**KSNODETYPE \_ PEAKMETER**节点表示硬件 PEAKMETER。 KS peakmeter 节点有一个输入插针和一个输出插针，这两个 pin 共享相同的数据格式。
 
-当 peakmeter 重置为零时，KS peakmeter 内部记录音频信号的最大值。 在 IOCTL\_KS\_属性请求之后，peakmeter 会自动将自身重置为零，以获取[**KSPROPERTY\_音频\_PEAKMETER2**](ksproperty-audio-peakmeter2.md)属性。
+当 peakmeter 重置为零时，KS peakmeter 内部记录音频信号的最大值。 在 IOCTL KS 属性请求之后，peakmeter 会自动将自身重置为零， \_ \_ 以获取 [**KSPROPERTY \_ 音频 \_ PEAKMETER2**](ksproperty-audio-peakmeter2.md) 属性。
 
 Peakmeter 需要硬件支持。 软件 peakmeter 是不可行的，这是因为适配器驱动程序无法访问出现在与播放通道混合的行输入、麦克风或其他输入上的信号。
 
-Microsoft 建议使 peakmeter 节点成为流在筛选器中传递的最终节点。 在呈现流上，音频适配器通常在主输出[**KSNODETYPE\_静音**](ksnodetype-mute.md)节点或[**KSNODETYPE\_卷**](ksnodetype-volume.md)节点之后连接 peakmeter 节点。 同样的方法适用于捕获流或筛选器合并了 peakmeter 节点的任何其他流。
+Microsoft 建议使 peakmeter 节点成为流在筛选器中传递的最终节点。 在呈现流上，音频适配器通常在主输出 [**KSNODETYPE \_ 静音**](ksnodetype-mute.md) 节点或 [**KSNODETYPE \_ 卷**](ksnodetype-volume.md) 节点之后连接 peakmeter 节点。 同样的方法适用于捕获流或筛选器合并了 peakmeter 节点的任何其他流。
 
-音频适配器应将 peakmeter 节点命名为 KSAUDFNAME\_peakmeter。
+音频适配器应将 peakmeter 节点命名为 KSAUDFNAME \_ peakmeter。
 
-Peakmeter 节点应为下表中显示的属性标志（请参阅[**KSPROPERTY**](https://docs.microsoft.com/previous-versions/ff564262(v=vs.85))）提供属性处理程序。
+Peakmeter 节点应为属性标志提供属性处理程序 (参阅下表中显示的 [**KSPROPERTY**](/previous-versions/ff564262(v=vs.85))) 。
 
 <table>
 <colgroup>
@@ -72,7 +72,7 @@ Peakmeter 节点还应支持下表中的属性。
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">属性名称</th>
+<th align="left">属性名</th>
 <th align="left">说明</th>
 </tr>
 </thead>

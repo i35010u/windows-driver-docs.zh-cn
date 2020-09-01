@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 82bb10b26d035fdafea0d57e8cd6832dd54eb090
-ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
+ms.openlocfilehash: 5d6db47cb7b36f9df307c2ee387aa32731614d72
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84534902"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89208757"
 ---
 # <a name="usb3kddevice_info"></a>！ usb3kd \_ 信息
 
@@ -37,17 +37,17 @@ ms.locfileid: "84534902"
 ## <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 
-Usb3kd
+Usb3kd.dll
 
-<a name="remarks"></a>注解
+<a name="remarks"></a>备注
 -------
 
-**！设备 \_ 信息**和[**！ ucx \_ 设备**](-usb3kd-ucx-device.md)都显示设备的相关信息，但显示的信息不同。 **！设备 \_ 信息**的输出来自 usb 3.0 集线器驱动程序的位置，而 **！ ucx \_ 设备**的输出来自 usb 主机控制器扩展驱动程序的位置。 例如， **！设备 \_ 信息**输出包含有关配置和接口描述符的信息， **！ ucx \_ 设备**输出包含有关终结点的信息。
+**！设备 \_ 信息** 和 [**！ ucx \_ 设备**](-usb3kd-ucx-device.md) 都显示设备的相关信息，但显示的信息不同。 **！设备 \_ 信息**的输出来自 usb 3.0 集线器驱动程序的位置，而 **！ ucx \_ 设备**的输出来自 usb 主机控制器扩展驱动程序的位置。 例如， **！设备 \_ 信息** 输出包含有关配置和接口描述符的信息， **！ ucx \_ 设备** 输出包含有关终结点的信息。
 
 <a name="examples"></a>示例
 --------
 
-可以通过查看[**！ usb \_ 树**](-usb3kd-usb-tree.md)命令的输出来获取设备上下文结构的地址。 在下面的示例中，设备上下文结构的地址为0xfffffa8005abd0c0。
+可以通过查看 [**！ usb \_ 树**](-usb3kd-usb-tree.md) 命令的输出来获取设备上下文结构的地址。 在下面的示例中，设备上下文结构的地址为0xfffffa8005abd0c0。
 
 ```dbgcmd
 3: kd> !usb_tree
@@ -70,7 +70,7 @@ Topology
     ...
 ```
 
-现在可以将设备上下文的地址传递到 **！设备 \_ 信息**命令。
+现在可以将设备上下文的地址传递到 **！设备 \_ 信息** 命令。
 
 ```dbgcmd
 3: kd> !device_info 0xfffffa8005abd0c0
@@ -115,14 +115,7 @@ Device Event History:
 
 [**！ usb3kd \_ \_ 来自 pdo 的设备 \_ 信息**](-usb3kd-device-info-from-pdo.md)
 
-[通用串行总线（USB）驱动程序](https://docs.microsoft.com/windows-hardware/drivers/usbcon/)
+[ (USB) 驱动程序的通用串行总线](../usbcon/index.md)
 
  
-
- 
-
-
-
-
-
 

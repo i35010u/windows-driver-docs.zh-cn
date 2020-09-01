@@ -6,12 +6,12 @@ keywords:
 - DirectMusic WDK 音频，流数据格式
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d3fee9fdb2a64abf6aeb0b586c7359e409057aef
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: f315e9280f9b12a3166ff952cbed682c512b1df5
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72833520"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89208123"
 ---
 # <a name="directmusic-stream-data-format"></a>DirectMusic 流数据格式
 
@@ -19,7 +19,7 @@ ms.locfileid: "72833520"
 ## <span id="directmusic_stream_data_format"></span><span id="DIRECTMUSIC_STREAM_DATA_FORMAT"></span>
 
 
-此示例使用[**KSDATAFORMAT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksdataformat)结构来描述 DirectMusic 流的数据格式。
+此示例使用 [**KSDATAFORMAT**](/windows-hardware/drivers/ddi/ks/ns-ks-ksdataformat) 结构来描述 DirectMusic 流的数据格式。
 
 ```cpp
   DataFormat.FormatSize  = sizeof(KSDATAFORMAT);
@@ -32,9 +32,4 @@ ms.locfileid: "72833520"
 ```
 
  
-
- 
-
-
-
 

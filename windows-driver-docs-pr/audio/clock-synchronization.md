@@ -3,25 +3,25 @@ title: 时钟同步
 description: 时钟同步
 ms.assetid: dc0071b0-a22c-4bb5-90ea-a69e5dcdba6f
 keywords:
-- 合成器 WDK 音频、 时钟同步
-- 时钟 WDK 音频同步
-- 延迟 WDK 音频、 时钟
+- 合成 WDK 音频，时钟同步
+- 时钟 WDK 音频，同步
+- 延迟 WDK 音频，时钟
 - 时间 WDK 音频
 - 引用时钟 WDK 音频
 - 示例时钟 WDK 音频
-- 批接收器 WDK 音频、 时钟同步
-- 偏移量时间 WDK 音频
+- 波形接收器音频，时钟同步
+- 偏移时间 WDK 音频
 - 主时钟 WDK 音频，同步
-- 阶段锁定循环 WDK 音频
+- 阶段锁定的循环 WDK 音频
 - 同步 WDK 音频
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d3b735e62aa6a56df79fa71d65d7b02a03e111a2
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 20ffd5b9c8a6830da6f428a7f0167e1620941583
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67355605"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89208217"
 ---
 # <a name="clock-synchronization"></a>时钟同步
 
@@ -29,38 +29,33 @@ ms.locfileid: "67355605"
 ## <span id="clock_synchronization"></span><span id="CLOCK_SYNCHRONIZATION"></span>
 
 
-若要执行的批接收器的关键任务是解析引用时钟和水晶重新排列，示例时钟之间的时间偏移。 做到这一点与阶段锁定循环的软件等效项。
+波形接收器的一项关键任务就是解决时钟与 crystals 之间的时间偏差。 它通过与阶段锁定的循环等效的软件来实现此操作。
 
-跟踪的缓冲区它可以将写入到下一步中哪些示例数的批接收器。 因此即使它知道它位于，例如，示例 20，批接收器仍需要检查 master 的时钟，以获得引用时间。 它具有大约每隔 20 毫秒被唤醒，并要求提供当前时间主时钟的线程。 当前时间 （以毫秒为单位） 是 420，例如，主时钟可能会返回报告。
+波形接收器跟踪缓冲区中可向下写入的示例数。 因此，即使它知道它已打开（例如，示例20），波形接收器仍需要检查主时钟以获取引用时间。 它有一个线程，该线程大约每20毫秒唤醒一次，并向当前时间请求主时钟。 例如，主时钟可能会报告当前时间 (以毫秒为单位) 为420。
 
-批接收器还维护延迟时钟，其中显示了根据主时钟的当前时间的示例时间之间的偏移量。 它使用此信息来计算预期主时钟时间，并将此与实际主时钟阅读，请参阅是否两个时钟有偏差分开进行比较。
+波形接收器还会保持延迟时钟，这会根据主时钟和采样时间显示当前时间之间的偏移量。 它使用此信息来计算预期的主时钟时间，并将其与实际的主时钟读取进行比较，以查看两个时钟是否已偏移。
 
-批接收器使用阶段锁定循环来调整采样时间。 在检查时偏差，批接收器不调整的整个数量，因为读数中包含的一些抖动。 相反，它将示例时钟移动由入 master 时钟的距离的某些部分。 这样一来，批接收器保持大致保持同步时平滑处理，从而解决抖动错误。它还采用这一次，并将其转换为相对于主时钟延迟时钟时间。 这非常重要，因为该应用程序可能需要知道其中合成器呈现任何位置。
+波形接收器使用相位锁定循环来调整示例时间。 检查偏移量时，波形接收器不会按整个量进行调整，因为读数包含一定的抖动。 相反，它会将示例时钟移动到与主时钟接近的某个部分。 通过这种方式，wave 接收器平滑了抖动错误，同时保持大致同步。它还需要此时间，并将其转换为相对于主时钟的延迟时钟时间。 这一点很重要，因为应用程序可能需要知道合成器在任何位置呈现的位置。
 
-延迟时钟告诉应用程序将在其中可以计划新便笺播放的最早时间。 主时钟时间加上偏移量，表示合成器的延迟，延迟时钟时间。 这种延迟表示从应用程序提交新便笺合成器实际玩便笺的时间要播放的时间短的延迟时间。 在任何时刻，该应用程序可以计划下为播放在或更高版本比-但不是能早于-当前延迟时钟时间。
+延迟时钟会向应用程序通知最早的时间，可以安排新便笺的播放时间。 延迟时钟时间是主时钟时间加上表示合成器滞后时间的偏移量。 此延迟表示应用程序提交要播放到合成器实际播放便笺的时间的最小延迟时间。 无论何时，应用程序都可以计划在或晚于--但不早于--当前延迟时钟时间播放的便笺。
 
-例如，如果当前在时 420 是主时钟并且该应用程序下，其目的是尽可能快地播放，延迟时钟会指示它可以播放注意的最早时间。 如果软件合成器具有 100 毫秒的延迟，在时间 520 进行下一次它可以播放便笺。
+例如，如果主时钟当前处于时间420，并且应用程序有一个要尽快运行的注释，则延迟时钟会将便笺通知给它最早的播放时间。 如果软件合成器的延迟为100毫秒，则下一次它可以在时间520运行。
 
-假设事件进行标记，以便在时间 520 引用时播放。 合成器通过向下的说明呈现为示例和示例及时执行所有计算来实现其工作。 因此，它需要知道 520 引用时间的示例时间的转换。 在用户模式下，批接收器提供合成器使用的两个函数：
+假设某个事件被标记为在引用时间520时播放。 合成器通过将注释向下呈示为样本并在采样时执行其所有计算来完成工作。 因此，它需要知道引用时间520在采样时转换为。 在用户模式下，波形接收器提供两个合成使用的函数：
 
-[**IDirectMusicSynthSink::SampleToRefTime**](https://docs.microsoft.com/windows/desktop/api/dmusics/nf-dmusics-idirectmusicsynthsink-sampletoreftime)
+[**IDirectMusicSynthSink::SampleToRefTime**](/windows/desktop/api/dmusics/nf-dmusics-idirectmusicsynthsink-sampletoreftime)
 
-[**IDirectMusicSynthSink::RefTimeToSample**](https://docs.microsoft.com/windows/desktop/api/dmusics/nf-dmusics-idirectmusicsynthsink-reftimetosample)
+[**IDirectMusicSynthSink::RefTimeToSample**](/windows/desktop/api/dmusics/nf-dmusics-idirectmusicsynthsink-reftimetosample)
 
-若要执行转换在这种情况下，合成器调用**IDirectMusicSynthSink::RefTimeToSample**批接收器上。
+若要在这种情况下执行转换，合成会在波形接收器上调用 **IDirectMusicSynthSink：： RefTimeToSample** 。
 
-然后批接收器并发回采样时间 (例如，600)。 在示例时 600 获取呈现问题的说明。 然后，当合成[ **IDirectMusicSynth::Render** ](https://docs.microsoft.com/windows/desktop/api/dmusics/nf-dmusics-idirectmusicsynth-render)批接收器来呈现的下一部分 （例如，从示例时间 600 到 800） 的流调用方法，请注意呈现到在示例时 600 的缓冲区。
+然后，波形接收器回 (例如 600) 的采样时间。 相关注释在采样时600。 然后，当该 [**IDirectMusicSynth：： Render**](/windows/desktop/api/dmusics/nf-dmusics-idirectmusicsynth-render) 方法获取由波形接收器调用以呈现流的下一部分时 (例如，从采样时间600到 800) ，该注释将在采样600时呈现到缓冲区中。
 
-**请注意**  采样时间保留为 64 位数字，以避免滚动更新。 （DWORD 值滚动 27 小时内。）
-
- 
-
-总之，合成器执行其内部的所有数学示例时间并批接收器都执行转换为示例时间从引用时间，反之亦然。 批接收器还管理同步主制并提供延迟信息。 隐藏批接收器中的此功能使得编写更容易合成器。
+**注意**   示例时间保留为64位数字，以避免滚动更新。  (DWORD 值滚动27小时。 ) 
 
  
 
+概括而言，合成会在样本时间内完成其所有的内部数学计算，而波形接收器会从引用时间转换到样本时间，反之亦然。 波形接收器还管理与主时钟的同步，并提供滞后时间信息。 在 wave 接收器中隐藏此功能可以更轻松地编写合成合成。
+
  
-
-
-
 

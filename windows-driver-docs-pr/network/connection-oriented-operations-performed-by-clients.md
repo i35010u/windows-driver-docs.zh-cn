@@ -4,15 +4,15 @@ description: 客户端执行的面向连接的操作
 ms.assetid: 342f534e-d203-4823-a4d8-a8a51b7ff0bd
 keywords:
 - 面向连接的客户端 WDK
-- 客户端操作 WDK 的 CoNDIS
+- 客户端操作 WDK CoNDIS
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 51f6d6b0820d31deb0a1ef0594c96634e90428f8
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: d5df88bfbfbd968d7efd8807f88bd5f656fed58e
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67374957"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89207989"
 ---
 # <a name="connection-oriented-operations-performed-by-clients"></a>客户端执行的面向连接的操作
 
@@ -22,61 +22,55 @@ ms.locfileid: "67374957"
 
 面向连接的客户端：
 
--   **打开和关闭的地址族。**
+-   **打开并关闭地址族。**
 
-    在接收到通知从 NDIS 呼叫管理器或 MCM 驱动程序已注册的地址族，面向连接的驱动程序可以[打开该地址族](registering-and-opening-an-address-family.md)呼叫管理器或 MCM 驱动程序。 客户端然后可以使用提供的呼叫管理器或 MCM 驱动程序的调用管理器服务。 客户端发布本身与呼叫管理器或 MCM 驱动程序之间的关联[关闭的地址族](closing-an-address-family.md)。
+    在从 NDIS 接收到呼叫管理器或 MCM 驱动程序已注册地址族的通知时，面向连接的驱动程序可以使用呼叫管理器或 MCM 驱动程序 [打开该地址系列](registering-and-opening-an-address-family.md) 。 然后，客户端可以使用呼叫管理器或 MCM 驱动程序提供的呼叫管理器服务。 客户端通过 [关闭地址族](closing-an-address-family.md)，释放自身与调用管理器或 MCM 驱动程序之间的关联。
 
--   **进行注册和注销 SAPs。**
+-   **注册并注销 Sap。**
 
-    打开后的地址族与呼叫管理器或 MCM 驱动程序，面向连接的客户端可以[注册一个或多个 SAPs](registering-a-sap.md)呼叫管理器或 MCM 驱动程序。 呼叫管理器或 MCM 驱动程序将然后指示向客户端发送到已注册的 SAPs 的任何传入调用。 客户端版本的 SAP[取消注册 SAP](deregistering-a-sap.md)。
+    使用呼叫管理器或 MCM 驱动程序打开地址族后，面向连接的客户端可以使用呼叫管理器或 MCM 驱动程序 [注册一个或多个 sap](registering-a-sap.md) 。 然后，调用管理器或 MCM 驱动程序向客户端指明发送到注册的 Sap 的任何传入呼叫。 客户端通过 [注销 sap](deregistering-a-sap.md)来释放 sap。
 
 -   **添加和删除 Pvc。**
 
-    操作员手动配置或可永久 VC (PVC) 时，可以监视面向连接的客户端。 在此操作的响应，客户端可以请求将 PVC 添加到配置 Pvc 其列表，或从这类列表中删除 PVC 的呼叫管理器或 MCM 驱动程序 (请参阅[OID\_共同\_添加\_PVC](https://docs.microsoft.com/windows-hardware/drivers/network/oid-co-add-pvc)并[OID\_CO\_删除\_PVC](https://docs.microsoft.com/windows-hardware/drivers/network/oid-co-delete-pvc))。
+    面向连接的客户端可以在操作员手动配置或取消配置永久 VC (PVC) 时进行监视。 为响应此类操作，客户端可以请求调用管理器或 MCM 驱动程序将 PVC 添加到其已配置的 Pvc 列表，或从此类列表中删除 PVC (参阅 [OID \_ co \_ Add \_ pvc](./oid-co-add-pvc.md) and [oid \_ co \_ delete \_ pvc](./oid-co-delete-pvc.md)) 。
 
--   **使传出调用。**
+-   **发出传出呼叫。**
 
-    传出调用前，客户端必须启动[VC 创建](creating-a-vc.md)调用。 然后可以通过客户端[发起传出呼叫](making-a-call.md)。 若要使多点到点调用，客户端指定参与方时进行调用。
+    发出传出呼叫之前，客户端必须启动为该调用 [创建 VC](creating-a-vc.md) 。 然后，客户端可以 [发出传出呼叫](making-a-call.md)。 若要进行点对多点调用，客户端在进行调用时指定参与方。
 
--   **添加到参与方或从多点到点调用删除参与方。**
+-   **在点到 multipoint 调用中添加或删除参与方。**
 
-    客户端可以[添加到多点到点调用的参与方](adding-a-party-to-a-multipoint-call.md)并[点 multipoint 调用删除参与方](dropping-a-party-from-a-multipoint-call.md)。 客户端还可以响应传入[请求以停止点 multipoint 调用方](incoming-request-to-drop-a-party-from-a-multipoint-call.md)。
+    客户端可以向 [点到 multipoint 呼叫添加参与](adding-a-party-to-a-multipoint-call.md) 方，并 [从点到 multipoint 调用中删除参与方](dropping-a-party-from-a-multipoint-call.md)。 客户端还可以响应 [从点到 multipoint 调用中删除参与方](incoming-request-to-drop-a-party-from-a-multipoint-call.md)的传入请求。
 
--   **接受或拒绝的传入呼叫。**
+-   **接受或拒绝传入呼叫。**
 
-    客户端可以[接受或拒绝的传入呼叫](indicating-an-incoming-call.md)，将发送给 SAP 客户端之前注册的呼叫管理器或 MCM 驱动程序。
+    客户端可以 [接受或拒绝](indicating-an-incoming-call.md) 寻址到客户端以前使用调用管理器或 MCM 驱动程序注册的 SAP 的传入呼叫。
 
--   **有关 active VC 协商调用参数。**
+-   **协商活动 VC 的调用参数。**
 
-    具体取决于所允许的信号协议，客户端可以协商 active VC 调用参数。 客户端可以[请求的服务质量 (QoS) 中更改](client-initiated-request-to-change-call-parameters.md)并对要更改活动 VC QoS 的传入请求作出响应。 客户端还可以响应[从远程方的请求以更改调用 QoS](incoming-request-to-change-call-parameters.md)。
+    根据信号协议允许的内容，客户端可以协商活动 VC 的调用参数。 客户端 (QoS) 并响应传入请求以更改活动 VC 的 QoS，从而 [请求更改服务质量 ](client-initiated-request-to-change-call-parameters.md) 。 客户端还可以响应 [远程方的请求，以更改呼叫的 QoS](incoming-request-to-change-call-parameters.md)。
 
 -   **发送和接收数据包。**
 
-    客户端可以发送数据包通过面向连接的微型端口驱动程序或 MCM 驱动程序。 客户端还可以接收通过面向连接的微型端口驱动程序或 MCM 驱动程序的数据包。
+    客户端可以通过面向连接的微型端口驱动程序或 MCM 驱动程序来发送数据包。 客户端还可以通过面向连接的微型端口驱动程序或 MCM 驱动程序接收数据包。
 
--   **启动删除的 VC。**
+-   **启动删除 VC。**
 
-    客户端可以启动[VC 删除](deleting-a-vc.md)创建它。
+    客户端可以启动它创建 [的 VC 的删除](deleting-a-vc.md) 。
 
--   **启动关闭的调用。**
+-   **启动调用的细分。**
 
-    客户端可以[发起传出呼叫关闭](client-initiated-request-to-close-a-call.md)做它接受的传入呼叫。
+    客户端可以对它发出的 [传出呼叫](client-initiated-request-to-close-a-call.md) 或它接受的传入呼叫启动分离。
 
 -   **查询或设置信息。**
 
-    客户端可以查询或设置由绑定的呼叫管理器或 MCM 驱动程序的调用管理器部分维护的信息。 客户端还可以响应[查询，并设置](querying-or-setting-information.md)从绑定的呼叫管理器或 MCM 驱动程序。
+    客户端可以查询或设置由绑定调用管理器或 MCM 驱动程序的调用管理器部分维护的信息。 客户端还可以响应绑定调用管理器或 MCM 驱动程序的 [查询和集](querying-or-setting-information.md) 。
 
-    此外，客户端可以查询或设置由绑定的微型端口驱动程序或绑定的 MCM 驱动程序的微型端口驱动程序部分维护的信息。
+    此外，客户端可以查询或设置绑定的微型端口驱动程序或绑定 MCM 驱动程序的微型端口驱动程序部分所维护的信息。
 
 -   **Inputsminiport 驱动程序状态指示。**
 
-    客户端可以输入[所表示的面向连接的微型端口驱动程序状态](indicating-miniport-driver-status.md)或 MCM 驱动程序。
+    客户端可以输入 [由面向连接的微型端口驱动程序](indicating-miniport-driver-status.md) 或 MCM 驱动程序指示的状态。
 
  
-
- 
-
-
-
-
 

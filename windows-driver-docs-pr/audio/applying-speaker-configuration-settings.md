@@ -6,12 +6,12 @@ keywords:
 - 扬声器失败-配置请求 WDK 音频
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2022ced30808f69de3af2aa86fd607da771cf377
-ms.sourcegitcommit: f610410e1500f0b0a4ca008b52679688ab51033d
+ms.openlocfilehash: 8941b762ccbdd7385ee9b33d2f59f8ab4623f4e7
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/15/2020
-ms.locfileid: "88252947"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89208367"
 ---
 # <a name="applying-speaker-configuration-settings"></a>应用 Speaker-Configuration 设置
 
@@ -39,7 +39,7 @@ DirectSound 将跟踪其当前的扬声器配置设置，并在每次创建新�
 
 此时，你应该会看到 "扬声器设置" 旁边的标签 **设置** ，你可以从中进行选择。
 
-DirectSound 使用 [**KSPROPERTY \_ 音频 \_ 通道 \_ 配置**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-audio-channel-config) 设置属性请求将演讲者配置信息发送到3d 节点或 DAC 节点 (在音频筛选器关系图中) [**KSNODETYPE \_ 3d \_ 效果**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksnodetype-3d-effects) 或 [**KSNODETYPE \_ DAC**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksnodetype-dac) 。 对于3D 节点，属性请求的目标实际上是 (3D 流对象) 的固定节点。 对于 DAC 节点，目标是包含 DAC 节点的筛选器对象。 无论是哪种情况，演讲者配置设置都是全局性的，并影响音频设备整体。 随后运行的所有音频应用程序都将受新设置的限制，直到 DirectSound 再次更改设置。
+DirectSound 使用 [**KSPROPERTY \_ 音频 \_ 通道 \_ 配置**](./ksproperty-audio-channel-config.md) 设置属性请求将演讲者配置信息发送到3d 节点或 DAC 节点 (在音频筛选器关系图中) [**KSNODETYPE \_ 3d \_ 效果**](./ksnodetype-3d-effects.md) 或 [**KSNODETYPE \_ DAC**](./ksnodetype-dac.md) 。 对于3D 节点，属性请求的目标实际上是 (3D 流对象) 的固定节点。 对于 DAC 节点，目标是包含 DAC 节点的筛选器对象。 无论是哪种情况，演讲者配置设置都是全局性的，并影响音频设备整体。 随后运行的所有音频应用程序都将受新设置的限制，直到 DirectSound 再次更改设置。
 
 请注意，只有 Windows Me 附带的 DirectSound 版本以及 Windows XP 及更高版本，将发言人配置属性请求发送到 DAC 节点-DirectSound 的早期版本不支持此功能。 但是，所有版本的 DirectSound 将这些请求发送到3D 节点。
 
@@ -66,9 +66,4 @@ DirectSound 使用 [**KSPROPERTY \_ 音频 \_ 通道 \_ 配置**](https://docs.m
 安装音频设备后、扬声器配置出错时，DirectSound 扬声器配置会立即默认为立体声。
 
  
-
- 
-
-
-
 

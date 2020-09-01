@@ -1,15 +1,15 @@
 ---
-title: E （Windows 调试器术语表）
+title: 'E (Windows 调试器词汇表) '
 description: 词汇表页-E
 ms.assetid: 1e32bd40-8c77-4c6b-913c-6ec26707ed36
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9770fea32f1285457f6327c58080e105382b4bdb
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: af34d7eca3a721315dc1b1fdfa312bfc24ee7123
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72837762"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89207645"
 ---
 # <a name="e"></a>E
 
@@ -27,7 +27,7 @@ ms.locfileid: "72837762"
 影响在目标中发生事件后调试器引擎如何进行的规则的集合。 事件筛选器有三种类型：特定事件筛选器、特定异常筛选器和任意异常筛选器。
 
 <span id="event_callback_objects"></span><span id="EVENT_CALLBACK_OBJECTS"></span>**事件回调对象**  
-已向客户端注册的[IDebugEventCallbacks](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nn-dbgeng-idebugeventcallbacks)接口的实例。 每当发生事件时，引擎都会通知事件回调。
+已向客户端注册的 [IDebugEventCallbacks](/windows-hardware/drivers/ddi/dbgeng/nn-dbgeng-idebugeventcallbacks) 接口的实例。 每当发生事件时，引擎都会通知事件回调。
 
 <span id="event_callbacks"></span><span id="EVENT_CALLBACKS"></span>**事件回调**  
 请参阅事件回调对象。
@@ -62,10 +62,4 @@ ms.locfileid: "72837762"
 请参阅调试器扩展。
 
  
-
- 
-
-
-
-
 

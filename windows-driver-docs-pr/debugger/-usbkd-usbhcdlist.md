@@ -1,6 +1,6 @@
 ---
 title: usbkd.usbhcdlist
-description: Usbkd. usbhcdlist 命令显示有关 USB 端口驱动程序（Usbport）表示的所有 USB 主机控制器的信息。
+description: 'Usbkd. usbhcdlist 命令显示有关 USB 端口驱动程序所表示的所有 USB 主机控制器 ( # A0) 的信息。'
 ms.assetid: 877A6361-0DB9-4089-AF85-BABFBED8C440
 keywords:
 - usbkd usbhcdlist Windows 调试
@@ -12,17 +12,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 0386e8e89780cd874a507cfa87e7256f29d518b8
-ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
+ms.openlocfilehash: 1834739465243254b144e936c82c4b984f93b07a
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84534696"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89207999"
 ---
 # <a name="usbkdusbhcdlist"></a>!usbkd.usbhcdlist
 
 
-[**！ Usbkd. usbhcdlist**](-usbkd-usbhcdlist.md)命令显示有关 usb 端口驱动程序（Usbport）表示的所有 usb 主机控制器的信息。 有关 USB 端口驱动程序和关联的微型端口驱动程序的信息，请参阅[Windows 中的 usb 主机端驱动程序](https://docs.microsoft.com/windows-hardware/drivers/usbcon/usb-3-0-driver-stack-architecture)。
+[**！ Usbkd usbhcdlist**](-usbkd-usbhcdlist.md)命令显示有关 usb 端口驱动程序所表示的所有 usb 主机控制器 ( # A0) 的信息。 有关 USB 端口驱动程序和关联的微型端口驱动程序的信息，请参阅 [Windows 中的 usb 主机端驱动程序](../usbcon/usb-3-0-driver-stack-architecture.md)。
 
 ```dbgcmd
 !usbkd.usbhcdlist
@@ -31,12 +31,12 @@ ms.locfileid: "84534696"
 ## <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 
-Usbkd
+Usbkd.dll
 
 <a name="examples"></a>示例
 --------
 
-下面是[**！ usbhcdlist**](-usbkd-usbhcdlist.md)的输出部分的示例。
+下面是 [**！ usbhcdlist**](-usbkd-usbhcdlist.md)的输出部分的示例。
 
 ```dbgcmd
 0: kd> !usbkd.usbhcdlist
@@ -69,14 +69,7 @@ MINIPORT List @ fffff80001e5bbd0
 
 [USB 2.0 调试器扩展](usb-2-0-extensions.md)
 
-[通用串行总线（USB）驱动程序](https://docs.microsoft.com/windows-hardware/drivers/usbcon/)
+[ (USB) 驱动程序的通用串行总线](../usbcon/index.md)
 
  
-
- 
-
-
-
-
-
 

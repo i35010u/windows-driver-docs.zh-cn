@@ -1,6 +1,6 @@
 ---
-title: KSPROPERTY\_SYSAUDIO\_DEVICE\_INSTANCE
-description: KSPROPERTY\_SYSAUDIO\_设备\_实例属性指定虚拟的音频设备的当前实例。
+title: KSPROPERTY \_ SYSAUDIO \_ 设备 \_ 实例
+description: KSPROPERTY \_ SYSAUDIO \_ 设备 \_ 实例属性指定虚拟音频设备的当前实例。
 ms.assetid: 67cdc1ec-c696-454f-a3cc-1b50418c4056
 keywords:
 - KSPROPERTY_SYSAUDIO_DEVICE_INSTANCE 音频设备
@@ -14,22 +14,22 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d61c1abc32e6755d15df484c4ecc41e14ce30d0a
-ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
+ms.openlocfilehash: 6c5860e2f8c9e596c53f3e1062233dfbb8df241c
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67391609"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89208913"
 ---
-# <a name="kspropertysysaudiodeviceinstance"></a>KSPROPERTY\_SYSAUDIO\_DEVICE\_INSTANCE
+# <a name="ksproperty_sysaudio_device_instance"></a>KSPROPERTY \_ SYSAUDIO \_ 设备 \_ 实例
 
 
-KSPROPERTY\_SYSAUDIO\_设备\_实例属性指定虚拟的音频设备的当前实例。
+KSPROPERTY \_ SYSAUDIO \_ 设备 \_ 实例属性指定虚拟音频设备的当前实例。
 
 ## <span id="ddk_ksproperty_sysaudio_device_instance_ks"></span><span id="DDK_KSPROPERTY_SYSAUDIO_DEVICE_INSTANCE_KS"></span>
 
 
-### <a name="span-idusagesummarytablespanspan-idusagesummarytablespanspan-idusagesummarytablespanusage-summary-table"></a><span id="Usage_Summary_Table"></span><span id="usage_summary_table"></span><span id="USAGE_SUMMARY_TABLE"></span>使用率摘要表
+### <a name="span-idusage_summary_tablespanspan-idusage_summary_tablespanspan-idusage_summary_tablespanusage-summary-table"></a><span id="Usage_Summary_Table"></span><span id="usage_summary_table"></span><span id="USAGE_SUMMARY_TABLE"></span>使用情况摘要表
 
 <table>
 <colgroup>
@@ -41,7 +41,7 @@ KSPROPERTY\_SYSAUDIO\_设备\_实例属性指定虚拟的音频设备的当前�
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Get</th>
+<th align="left">获取</th>
 <th align="left">设置</th>
 <th align="left">目标</th>
 <th align="left">属性描述符类型</th>
@@ -52,8 +52,8 @@ KSPROPERTY\_SYSAUDIO\_设备\_实例属性指定虚拟的音频设备的当前�
 <tr class="odd">
 <td align="left"><p>是</p></td>
 <td align="left"><p>是</p></td>
-<td align="left"><p>Filter</p></td>
-<td align="left"><p><a href="https://docs.microsoft.com/previous-versions/ff564262(v=vs.85)" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/ff564262(v=vs.85))"><strong>KSPROPERTY</strong></a></p></td>
+<td align="left"><p>筛选器</p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/previous-versions/ff564262(v=vs.85)" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](/previous-versions/ff564262(v=vs.85))"><strong>KSPROPERTY</strong></a></p></td>
 <td align="left"><p>ULONG</p></td>
 </tr>
 </tbody>
@@ -61,20 +61,20 @@ KSPROPERTY\_SYSAUDIO\_设备\_实例属性指定虚拟的音频设备的当前�
 
  
 
-属性值 （操作数据） 是类型为 ULONG，指定虚拟的音频设备的设备 ID。 如果枚举 SysAudio *n*音频的虚拟设备 (请参阅[ **KSPROPERTY\_SYSAUDIO\_设备\_计数**](ksproperty-sysaudio-device-count.md))，然后有效设备 Id 的范围是从 0 到*n*-1。
+ (操作数据) 的属性值为 ULONG 类型，并指定虚拟音频设备的设备 ID。 如果 SysAudio 枚举 *n* 个虚拟音频设备 (参阅 [**KSPROPERTY \_ SysAudio \_ 设备 \_ 计数**](ksproperty-sysaudio-device-count.md)) ，则有效的设备 id 范围介于0到 *n*-1 之间。
 
-### <a name="span-idreturnvaluespanspan-idreturnvaluespanspan-idreturnvaluespanreturn-value"></a><span id="Return_Value"></span><span id="return_value"></span><span id="RETURN_VALUE"></span>返回值
+### <a name="span-idreturn_valuespanspan-idreturn_valuespanspan-idreturn_valuespanreturn-value"></a><span id="Return_Value"></span><span id="return_value"></span><span id="RETURN_VALUE"></span>返回值
 
-KSPROPERTY\_SYSAUDIO\_设备\_实例属性请求将返回状态\_成功以指示已成功完成。 否则，请求将返回相应的错误状态代码。
+KSPROPERTY \_ SYSAUDIO \_ 设备 \_ 实例属性请求返回状态 " \_ 成功" 以指示已成功完成。 否则，请求将返回相应的错误状态代码。
 
 <a name="remarks"></a>备注
 -------
 
-KSPROPERTY\_SYSAUDIO\_设备\_实例设置属性请求打开指定的属性值中包含的设备 ID 的虚拟音频设备。 若要打开的最后一个设备称为当前设备。
+KSPROPERTY \_ SYSAUDIO \_ 设备 \_ 实例集-属性请求打开由属性值中包含的设备 ID 指定的虚拟音频设备。 最后一个要打开的设备称为 "当前设备"。
 
-对于某些 SysAudio 属性，可以标识由空设备 ID 为-1 而不是有效的设备 ID 在范围 0 到当前设备*n*-1，其中*n*是可用的虚拟音频设备的数目。 这些属性包括[ **KSPROPERTY\_SYSAUDIO\_设备\_接口\_名称**](ksproperty-sysaudio-device-interface-name.md)并[ **KSPROPERTY\_SYSAUDIO\_设备\_友好\_名称**](ksproperty-sysaudio-device-friendly-name.md)。
+某些 SysAudio 属性允许使用空设备 ID-1 （而不是0到 *n*-1 范围内的有效设备 id）来标识当前设备，其中 *n* 是可用虚拟音频设备的数目。 这些属性包括 [**KSPROPERTY \_ SYSAUDIO \_ 设备 \_ 接口 \_ 名称**](ksproperty-sysaudio-device-interface-name.md) 和 [**KSPROPERTY \_ SYSAUDIO \_ 设备 \_ 友好 \_ 名称**](ksproperty-sysaudio-device-friendly-name.md)。
 
-获取属性的请求检索的设备 ID （上一次打开） 的当前虚拟音频设备。
+Get 属性请求检索当前 (的设备 ID，) 虚拟音频设备上一次打开。
 
 <a name="requirements"></a>要求
 ------------
@@ -86,29 +86,22 @@ KSPROPERTY\_SYSAUDIO\_设备\_实例设置属性请求打开指定的属性值�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>Header</p></td>
-<td align="left">Ksmedia.h （包括 Ksmedia.h）</td>
+<td align="left"><p>标头</p></td>
+<td align="left">Ksmedia (包含 Ksmedia) </td>
 </tr>
 </tbody>
 </table>
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
-[**KSPROPERTY**](https://docs.microsoft.com/previous-versions/ff564262(v=vs.85))
+[**KSPROPERTY**](/previous-versions/ff564262(v=vs.85))
 
-[**KSPROPERTY\_SYSAUDIO\_DEVICE\_COUNT**](ksproperty-sysaudio-device-count.md)
+[**KSPROPERTY \_ SYSAUDIO \_ 设备 \_ 计数**](ksproperty-sysaudio-device-count.md)
 
-[**KSPROPERTY\_SYSAUDIO\_DEVICE\_INTERFACE\_NAME**](ksproperty-sysaudio-device-interface-name.md)
+[**KSPROPERTY \_ SYSAUDIO \_ 设备 \_ 接口 \_ 名称**](ksproperty-sysaudio-device-interface-name.md)
 
-[**KSPROPERTY\_SYSAUDIO\_DEVICE\_FRIENDLY\_NAME**](ksproperty-sysaudio-device-friendly-name.md)
-
- 
+[**KSPROPERTY \_ SYSAUDIO \_ 设备 \_ 友好 \_ 名称**](ksproperty-sysaudio-device-friendly-name.md)
 
  
-
-
-
-
-
 

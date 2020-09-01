@@ -6,12 +6,12 @@ keywords:
 - DirectMusic WDK 音频，流数据范围
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8138c0512d78d59aff47210b22fad2bee1bf8928
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 350a51c35361a5ccb42563c7acd39a71a4afe430
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72833505"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89208117"
 ---
 # <a name="directmusic-stream-data-range"></a>DirectMusic 流数据范围
 
@@ -19,7 +19,7 @@ ms.locfileid: "72833505"
 ## <span id="directmusic_stream_data_range"></span><span id="DIRECTMUSIC_STREAM_DATA_RANGE"></span>
 
 
-此示例使用[**KSDATARANGE\_音乐**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksdatarange_music)结构来描述 DirectMusic 流的数据范围。
+此示例使用 [**KSDATARANGE \_ 音乐**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksdatarange_music) 结构来描述 DirectMusic 流的数据范围。
 
 ```cpp
   DataRange.FormatSize  = sizeof(KSDATARANGE_MUSIC);
@@ -36,9 +36,4 @@ ms.locfileid: "72833505"
 ```
 
  
-
- 
-
-
-
 

@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 1862c782a3c2c6f83ef2e60921c25645880d4421
-ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
+ms.openlocfilehash: b59e69f5c78e6321900a630c8fe60b757771303d
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84534690"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89207361"
 ---
 # <a name="usbkdusbhubs"></a>!usbkd.usbhubs
 
@@ -43,17 +43,17 @@ ms.locfileid: "84534690"
 显示外部中心。
 
 <span id="_____________v"></span><span id="_____________V"></span>**v**  
-输出为 verbose。 例如， **！ usbhubs rv**显示有关所有根集线器的详细输出。
+输出为 verbose。 例如， **！ usbhubs rv** 显示有关所有根集线器的详细输出。
 
 ## <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 
-Usbkd
+Usbkd.dll
 
 <a name="examples"></a>示例
 --------
 
-下面是 **！ usbhubs**命令的详细输出示例。
+下面是 **！ usbhubs** 命令的详细输出示例。
 
 ```dbgcmd
 0: kd> !usbkd.usbhubs rv
@@ -114,14 +114,7 @@ On Host Controller (0x8086, 0x2937)
 
 [USB 2.0 调试器扩展](usb-2-0-extensions.md)
 
-[通用串行总线（USB）驱动程序](https://docs.microsoft.com/windows-hardware/drivers/usbcon/)
+[ (USB) 驱动程序的通用串行总线](../usbcon/index.md)
 
  
-
- 
-
-
-
-
-
 

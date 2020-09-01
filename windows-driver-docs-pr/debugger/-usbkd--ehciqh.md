@@ -12,17 +12,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: d8ca31c3ceca5482e3806af9433c8e33b577253b
-ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
+ms.openlocfilehash: 209e0d6dd6580b43d4d7d1780c588f9a60a4ff9a
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84534880"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89207679"
 ---
 # <a name="usbkd_ehciqh"></a>！ usbkd。 \_ehciqh
 
 
-**！ Usbkd。 \_ehciqh**命令显示 usbehci 中的信息 **！ \_HCD \_ QUEUEHEAD \_ 描述符**结构。 使用此命令可以显示有关异步终结点（即控件和大容量终结点）的信息。
+**！ Usbkd。 \_ehciqh**命令显示 usbehci 中的信息 **！ \_HCD \_ QUEUEHEAD \_ 描述符**结构。 使用此命令显示 (的异步终结点的相关信息，) 控制和批量终结点。
 
 ```dbgcmd
 !usbkd._ehciqh StructAddr
@@ -32,26 +32,19 @@ ms.locfileid: "84534880"
 
 
 <span id="_______StructAddr______"></span><span id="_______structaddr______"></span><span id="_______STRUCTADDR______"></span>*StructAddr*   
-Usbehci 的地址 **！ \_HCD \_ QUEUEHEAD \_ 描述符**结构。
+Usbehci 的地址 **！ \_HCD \_ QUEUEHEAD \_ 描述符** 结构。
 
 ## <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 
-Usbkd
+Usbkd.dll
 
 ## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
 [USB 2.0 调试器扩展](usb-2-0-extensions.md)
 
-[通用串行总线（USB）驱动程序](https://docs.microsoft.com/windows-hardware/drivers/usbcon/)
+[ (USB) 驱动程序的通用串行总线](../usbcon/index.md)
 
  
-
- 
-
-
-
-
-
 

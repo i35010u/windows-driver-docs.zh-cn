@@ -3,17 +3,17 @@ title: 网络 INF 文件中的 ControlFlags 节
 description: 网络 INF 文件中的 ControlFlags 节
 ms.assetid: 384e56e3-8a64-4b47-ae9c-e9973733c7e7
 keywords:
-- INF 文件 WDK 网络，ControlFlags 部分
-- 可使用网络 INF 文件 WDK，ControlFlags 部分
+- INF 文件 WDK network，ControlFlags 部分
+- 网络 INF 文件 WDK，ControlFlags 部分
 - ControlFlags 部分 WDK 网络
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 65cdae07b06b1b4edfa8d2eacf85c25fa280024f
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 177031cd2ebc478d012d13c2e853a452485b6220
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67374943"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89207962"
 ---
 # <a name="controlflags-section-in-a-network-inf-file"></a>网络 INF 文件中的 ControlFlags 节
 
@@ -21,25 +21,19 @@ ms.locfileid: "67374943"
 
 
 
-一个**ControlFlags**网络 INF 文件中的部分基于泛型[ **INF ControlFlags 部分**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-controlflags-section)。
+网络 INF 文件中的 **ControlFlags** 部分基于通用 [**INF ControlFlags 部分**](../install/inf-controlflags-section.md)。
 
-**ControlFlags**网络 INF 文件中的部分通常具有一个或多个**ExcludeFromSelect**条目。 每个**ExcludeFromSelect**条目指定将不会显示给最终用户手动安装过程中选择的网络组件。
+网络 INF 文件中的 **ControlFlags** 部分通常包含一个或多个 **ExcludeFromSelect** 条目。 每个 **ExcludeFromSelect** 条目指定一个网络组件，该组件不会在手动安装过程中作为选项显示给最终用户。
 
-**ControlFlags**网络 INF 文件中的部分必须包含**ExcludeFromSelect**项，为每个插适配器的安装，并且应添加任何软件组件以编程方式而不是手动用户。
+网络 INF 文件中的 **ControlFlags** 部分必须包含用于安装的每个即插即用适配器的 **ExcludeFromSelect** 条目，以及应以编程方式而不是由用户手动添加的任何软件组件。
 
-不符合即插的适配器必须由用户手动添加，并因此不应列出在*ControlFlags*部分。 例如，非即插即用 ISA 适配器和 EISA 适配器必须手动添加用户。 请注意，Windows XP 和更高版本操作系统不支持非即插即用 ISA 适配器和 EISA 适配器。
+与即插即用不兼容的适配器必须由用户手动添加，因此不应在 *ControlFlags* 节中列出。 例如，用户必须手动添加非 PnP ISA 适配器和 EISA 适配器。 请注意，Windows XP 和更高版本的操作系统不支持非 PnP ISA 适配器和 EISA 适配器。
 
-**请注意**   **ExcludeFromSelect**条目执行不同的功能比 NCF\_HIDDEN 值**特征**中的条目*DDInstall*部分。 有关详细信息，请参阅[DDInstall 部分](ddinstall-section-in-a-network-inf-file.md)。
-
- 
-
-**ExcludeFromSelect**条目可防止适配器或软件组件列出**安装选择组件**对话框。 适配器或组件，但是，仍然可以列在**连接**对话框。 NCF\_HIDDEN 值阻止适配器或组件显示的用户界面中，任何部分中包括**连接**对话框。
+**注意**   **ExcludeFromSelect**项执行的功能与 \_ *DDInstall*节中的 "**特性**" 项的 NCF 隐藏值不同。 有关详细信息，请参阅 [DDInstall 部分](ddinstall-section-in-a-network-inf-file.md)。
 
  
 
+**ExcludeFromSelect**条目阻止在 "**选择要安装的组件**" 对话框中列出适配器或软件组件。 但是，适配器或组件仍可以在 " **连接** " 对话框中列出。 NCF \_ 隐藏值可防止适配器或组件显示在用户界面的任何部分（包括 " **连接** " 对话框）中。
+
  
-
-
-
-
 

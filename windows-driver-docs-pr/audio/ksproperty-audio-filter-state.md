@@ -1,6 +1,6 @@
 ---
-title: KSPROPERTY\_AUDIO\_FILTER\_STATE
-description: KSPROPERTY\_音频\_筛选器\_STATE 属性用来查询 GFX 筛选器集，它支持的属性列表。 中的属性集 Guid 数组的形式检索列表。
+title: KSPROPERTY \_ 音频 \_ 筛选器 \_ 状态
+description: KSPROPERTY \_ 音频 \_ 筛选器 \_ 状态属性用于查询 GFX 筛选器，以获取它支持的属性集的列表。 列表以属性集 Guid 数组的形式进行检索。
 ms.assetid: e0a3bce7-d321-445c-866c-78502b5ea887
 keywords:
 - KSPROPERTY_AUDIO_FILTER_STATE 音频设备
@@ -14,22 +14,22 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2a8134711ba56c98b4fb2bf7af5aca6161cd3378
-ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
+ms.openlocfilehash: ab528430074ed8bbd776a40703f0d81ef519a1ab
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67391486"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89208985"
 ---
-# <a name="kspropertyaudiofilterstate"></a>KSPROPERTY\_AUDIO\_FILTER\_STATE
+# <a name="ksproperty_audio_filter_state"></a>KSPROPERTY \_ 音频 \_ 筛选器 \_ 状态
 
 
-KSPROPERTY\_音频\_筛选器\_STATE 属性用来查询 GFX 筛选器集，它支持的属性列表。 中的属性集 Guid 数组的形式检索列表。
+KSPROPERTY \_ 音频 \_ 筛选器 \_ 状态属性用于查询 GFX 筛选器，以获取它支持的属性集的列表。 列表以属性集 Guid 数组的形式进行检索。
 
 ## <span id="ddk_ksproperty_audio_filter_state_ks"></span><span id="DDK_KSPROPERTY_AUDIO_FILTER_STATE_KS"></span>
 
 
-### <a name="span-idusagesummarytablespanspan-idusagesummarytablespanspan-idusagesummarytablespanusage-summary-table"></a><span id="Usage_Summary_Table"></span><span id="usage_summary_table"></span><span id="USAGE_SUMMARY_TABLE"></span>使用率摘要表
+### <a name="span-idusage_summary_tablespanspan-idusage_summary_tablespanspan-idusage_summary_tablespanusage-summary-table"></a><span id="Usage_Summary_Table"></span><span id="usage_summary_table"></span><span id="USAGE_SUMMARY_TABLE"></span>使用情况摘要表
 
 <table>
 <colgroup>
@@ -41,7 +41,7 @@ KSPROPERTY\_音频\_筛选器\_STATE 属性用来查询 GFX 筛选器集，它�
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Get</th>
+<th align="left">获取</th>
 <th align="left">设置</th>
 <th align="left">目标</th>
 <th align="left">属性描述符类型</th>
@@ -52,27 +52,27 @@ KSPROPERTY\_音频\_筛选器\_STATE 属性用来查询 GFX 筛选器集，它�
 <tr class="odd">
 <td align="left"><p>是</p></td>
 <td align="left"><p>否</p></td>
-<td align="left"><p>Filter</p></td>
-<td align="left"><p><a href="https://docs.microsoft.com/previous-versions/ff564262(v=vs.85)" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/ff564262(v=vs.85))"><strong>KSPROPERTY</strong></a></p></td>
-<td align="left"><p>Guid 的数组</p></td>
+<td align="left"><p>筛选器</p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/previous-versions/ff564262(v=vs.85)" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](/previous-versions/ff564262(v=vs.85))"><strong>KSPROPERTY</strong></a></p></td>
+<td align="left"><p>Guid 数组</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-属性数据 （操作数据） 是 Guid 的数组。 数组中的每个 GUID 指定某个属性设置筛选器支持。
+ (操作数据) 的属性数据是一个 Guid 数组。 数组中的每个 GUID 指定筛选器支持的属性集。
 
-### <a name="span-idreturnvaluespanspan-idreturnvaluespanspan-idreturnvaluespanreturn-value"></a><span id="Return_Value"></span><span id="return_value"></span><span id="RETURN_VALUE"></span>返回值
+### <a name="span-idreturn_valuespanspan-idreturn_valuespanspan-idreturn_valuespanreturn-value"></a><span id="Return_Value"></span><span id="return_value"></span><span id="RETURN_VALUE"></span>返回值
 
-KSPROPERTY\_音频\_筛选器\_状态属性请求将返回状态\_成功以指示已成功完成。 否则，请求将返回相应的错误状态代码。
+KSPROPERTY \_ 音频 \_ 筛选器 \_ 状态属性请求返回状态 " \_ 成功" 以指示已成功完成。 否则，请求将返回相应的错误状态代码。
 
 <a name="remarks"></a>备注
 -------
 
-此属性返回的 Guid 的数组的大小取决于该筛选器支持的属性集的数量。 检索数组之前, 客户端首先查询该属性的 GUID 数组的大小，通过发送 KSPROPERTY 的微型端口驱动程序的属性处理程序\_音频\_筛选器\_状态获取属性请求使用长度为零属性值的缓冲区。 返回所需的缓冲区大小和状态的状态代码响应处理程序\_缓冲区\_溢出。 有关详细信息，请参阅[音频属性处理程序](https://docs.microsoft.com/windows-hardware/drivers/audio/audio-property-handlers)。
+此属性返回的 Guid 数组的大小取决于筛选器支持的属性集数。 在检索该数组之前，客户端首先会通过使用长度为零的属性值缓冲区发送微型端口驱动程序的属性处理程序 KSPROPERTY 的 \_ 音频 \_ 筛选器 \_ 状态 get 属性请求，来查询属性的 GUID 数组的大小。 处理程序通过返回所需的缓冲区大小和状态代码状态缓冲区溢出来做出响应 \_ \_ 。 有关详细信息，请参阅 [音频属性处理程序](./audio-property-handlers.md)。
 
-使用 Guid 的数组从 KSPROPERTY\_音频\_筛选器\_状态获取属性请求时，操作系统可以按顺序询问每个属性集内的属性。 此信息使操作系统在实例化筛选器时，时间还原 GFX 筛选器对象的状态以及在筛选器被销毁时保存 GFX 筛选器对象的状态。 当保存或还原 GFX 筛选器的状态时，操作系统将序列化的属性中每个属性集，其请求中所述[KS 属性](https://docs.microsoft.com/windows-hardware/drivers/stream/ks-properties)。 保存和还原 GFX 筛选器的状态的目的是要保留用户对筛选器的设置，所做的任何更改并使设置在连续的实例化的筛选器。 .
+使用 KSPROPERTY \_ 音频 \_ 筛选器 \_ 状态 get-属性请求中的 guid 数组，操作系统可以按顺序询问每个属性集中的属性。 使用此信息，操作系统可以在实例化筛选器时还原 GFX 筛选器对象的状态，还可以在筛选器销毁时保存 GFX 筛选器对象的状态。 保存或还原 GFX 筛选器的状态时，操作系统会按照 [KS 属性](../stream/ks-properties.md)中所述，对每个属性集中的属性的请求进行序列化。 保存和还原 GFX 筛选器状态的目的是保留用户对筛选器设置所做的任何更改，并使设置在筛选器的连续实例化后保持不变。 .
 
 <a name="requirements"></a>要求
 ------------
@@ -84,23 +84,16 @@ KSPROPERTY\_音频\_筛选器\_状态属性请求将返回状态\_成功以指�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>Header</p></td>
-<td align="left">Ksmedia.h （包括 Ksmedia.h）</td>
+<td align="left"><p>标头</p></td>
+<td align="left">Ksmedia (包含 Ksmedia) </td>
 </tr>
 </tbody>
 </table>
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
-[**KSPROPERTY**](https://docs.microsoft.com/previous-versions/ff564262(v=vs.85))
-
- 
+[**KSPROPERTY**](/previous-versions/ff564262(v=vs.85))
 
  
-
-
-
-
-
 

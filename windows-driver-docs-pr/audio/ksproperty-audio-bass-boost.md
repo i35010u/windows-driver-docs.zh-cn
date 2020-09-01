@@ -1,6 +1,6 @@
 ---
-title: KSPROPERTY\_音频\_低音\_提高
-description: KSPROPERTY\_音频\_低音\_提升属性启用和禁用低音节点中通道的低音提升（KSNODETYPE\_声调）。
+title: KSPROPERTY \_ 音频 \_ 低音 \_
+description: KSPROPERTY \_ 音频 \_ 低音 \_ 增强属性启用和禁用低音节点中通道的低音提升 (KSNODETYPE \_ 音) 。
 ms.assetid: aa54b88b-e251-4d16-9ced-842fec569914
 keywords:
 - KSPROPERTY_AUDIO_BASS_BOOST 音频设备
@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 925cdbb2481eb6c4366b5a942ba671f6686f47f0
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: f50e4c768811ad914c399670b9f1afa343578a43
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72833048"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89206993"
 ---
-# <a name="ksproperty_audio_bass_boost"></a>KSPROPERTY\_音频\_低音\_提高
+# <a name="ksproperty_audio_bass_boost"></a>KSPROPERTY \_ 音频 \_ 低音 \_
 
 
-KSPROPERTY\_音频\_低音\_提升属性启用和禁用低音节点中通道的低音提升（[**KSNODETYPE\_声调**](ksnodetype-tone.md)）。
+KSPROPERTY \_ 音频 \_ 低音 \_ 增强属性启用和禁用低音节点中通道的低音提升 ([**KSNODETYPE \_ 音**](ksnodetype-tone.md)) 。
 
 ## <span id="ddk_ksproperty_audio_bass_boost_ks"></span><span id="DDK_KSPROPERTY_AUDIO_BASS_BOOST_KS"></span>
 
@@ -41,7 +41,7 @@ KSPROPERTY\_音频\_低音\_提升属性启用和禁用低音节点中通道的�
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">“获取”</th>
+<th align="left">获取</th>
 <th align="left">设置</th>
 <th align="left">目标</th>
 <th align="left">属性描述符类型</th>
@@ -50,27 +50,27 @@ KSPROPERTY\_音频\_低音\_提升属性启用和禁用低音节点中通道的�
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>“是”</p></td>
-<td align="left"><p>“是”</p></td>
-<td align="left"><p>Filter</p></td>
-<td align="left"><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksnodeproperty_audio_channel" data-raw-source="[&lt;strong&gt;KSNODEPROPERTY_AUDIO_CHANNEL&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksnodeproperty_audio_channel)"><strong>KSNODEPROPERTY_AUDIO_CHANNEL</strong></a></td>
-<td align="left"><p>型</p></td>
+<td align="left"><p>是</p></td>
+<td align="left"><p>是</p></td>
+<td align="left"><p>筛选器</p></td>
+<td align="left"><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksnodeproperty_audio_channel" data-raw-source="[&lt;strong&gt;KSNODEPROPERTY_AUDIO_CHANNEL&lt;/strong&gt;](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksnodeproperty_audio_channel)"><strong>KSNODEPROPERTY_AUDIO_CHANNEL</strong></a></td>
+<td align="left"><p>BOOL</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-属性值（操作数据）的类型为 BOOL，指示是否打开或关闭低音提升。 如果值为**TRUE** ，则表示为指定的通道启用低音提升。 **FALSE**指示它已关闭。
+ (操作数据) 的属性值为 BOOL 类型，指示是否打开或关闭低音提升。 如果值为 **TRUE** ，则表示为指定的通道启用低音提升。 **FALSE** 指示它已关闭。
 
 ### <a name="span-idreturn_valuespanspan-idreturn_valuespanspan-idreturn_valuespanreturn-value"></a><span id="Return_Value"></span><span id="return_value"></span><span id="RETURN_VALUE"></span>返回值
 
-KSPROPERTY\_音频\_低音\_提升属性请求返回状态\_"成功" 以指示已成功完成。 否则，请求将返回相应的错误状态代码。
+KSPROPERTY \_ 音频 \_ 低音 \_ 增强属性请求返回状态 " \_ 成功" 以指示已成功完成。 否则，请求将返回相应的错误状态代码。
 
 <a name="remarks"></a>备注
 -------
 
-声调节点可以支持用于控制高音级别、中端级别、低音级别和低音增强的属性。 有关详细信息，请参阅[**KSNODETYPE\_声调**](ksnodetype-tone.md)。
+声调节点可以支持用于控制高音级别、中端级别、低音级别和低音增强的属性。 有关详细信息，请参阅 [**KSNODETYPE \_ 声调**](ksnodetype-tone.md)。
 
 <a name="requirements"></a>要求
 ------------
@@ -83,7 +83,7 @@ KSPROPERTY\_音频\_低音\_提升属性请求返回状态\_"成功" 以指示�
 <tbody>
 <tr class="odd">
 <td align="left"><p>标头</p></td>
-<td align="left">Ksmedia （包括 Ksmedia）</td>
+<td align="left">Ksmedia (包含 Ksmedia) </td>
 </tr>
 </tbody>
 </table>
@@ -91,16 +91,9 @@ KSPROPERTY\_音频\_低音\_提升属性请求返回状态\_"成功" 以指示�
 ## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
-[**KSNODEPROPERTY\_音频\_频道**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksnodeproperty_audio_channel)
+[**KSNODEPROPERTY \_ 音频 \_ 通道**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksnodeproperty_audio_channel)
 
-[**KSNODETYPE\_音**](ksnodetype-tone.md)
-
- 
+[**KSNODETYPE \_ 音**](ksnodetype-tone.md)
 
  
-
-
-
-
-
 

@@ -3,20 +3,20 @@ title: 指定来电的参数
 description: 指定来电的参数
 ms.assetid: f1436c05-f475-454c-b68f-e387821834d4
 keywords:
-- WAN 的 CoNDIS 驱动程序 WDK 网络连接、 传入调用
-- WDK WAN，传入呼叫的电话服务
-- CoNDIS TAPI WDK 网络连接、 传入调用
-- 流式处理 WDK networing，传入呼叫语音
-- WDK 的 CoNDIS WAN 的传入呼叫
-- 调用 WDK 的 CoNDIS WAN
+- CoNDIS WAN 驱动程序 WDK 网络，传入呼叫
+- telephonic services WDK WAN，传入呼叫
+- CoNDIS TAPI WDK 网络，传入呼叫
+- 语音流 WDK networing，传入呼叫
+- 呼入 CoNDIS WAN
+- 调用 WDK CoNDIS WAN
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 32e80d8a27e3860d054c959d18cec9bfaac4f716
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 237beceeb18e417ee37016c08ee5aabbe0549db6
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67383628"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89207217"
 ---
 # <a name="specifying-parameters-for-an-incoming-call"></a>指定来电的参数
 
@@ -24,17 +24,17 @@ ms.locfileid: "67383628"
 
 
 
-时，该值指示的传入呼叫**Ndis (M) CmDispatchIncomingCall**，呼叫管理器或支持语音的流式处理的 MCM 必须指定以下值中的[**共同\_调用\_管理器\_参数**](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff545381(v=vs.85))结构：
+当使用 **Ndis (M) CmDispatchIncomingCall**指示传入调用时，支持语音流的调用管理器或 MCM 必须在 [**共同 \_ 调用 \_ 管理器 \_ 参数**](/previous-versions/windows/hardware/network/ff545381(v=vs.85)) 结构中指定以下值：
 
--   最大传输 SDU 大小 (CallMgrParameters-&gt;Transmit.MaxSduSize)
+-   最大传输 SDU 大小 (CallMgrParameters &gt; MaxSduSize) 
 
--   最大接收 SDU 大小 (CallMgrParameters-&gt;Receive.MaxSduSize)
+-   最大接收 SDU 大小 (CallMgrParameters &gt; MaxSduSize) 
 
-此外，调用管理器或 MCM 必须指定以下值的行中\_调用\_信息结构：
+此外，呼叫管理器或 MCM 必须在行 \_ 调用信息结构中指定以下值 \_ ：
 
 -   **ulMediaMode**
 
-    此字段应包含 LINEMEDIAMODE\_AUTOMATEDVOICE，映射到 TAPIMEDIAMODE\_音频 TAPI 3.0 中。
+    此字段应包含 \_ 映射到 TAPI 3.0 TAPIMEDIAMODE 音频的 LINEMEDIAMODE AUTOMATEDVOICE \_ 。
 
 -   **ulCallerIDFlags**
 
@@ -60,17 +60,11 @@ ms.locfileid: "67383628"
 
 -   **ulCalledIDAddressType**
 
-呼叫管理器或支持共同以外的地址族的 MCM\_地址\_系列\_TAPI\_代理指定的前面行\_调用\_信息成员时响应[OID\_共同\_TAPI\_TRANSLATE\_NDIS\_CALLPARAMS](https://docs.microsoft.com/windows-hardware/drivers/network/oid-co-tapi-translate-ndis-callparams)查询。
+如果呼叫管理器或 MCM 支持除 CO address 系列 TAPI 代理之外的地址族，则在 \_ \_ \_ \_ \_ \_ 响应 [OID \_ CO \_ tapi \_ 转换 \_ NDIS \_ CALLPARAMS](./oid-co-tapi-translate-ndis-callparams.md) 查询时，将指定前面的行调用信息成员。
 
-呼叫管理器或支持产生的 CO MCM\_地址\_系列\_TAPI\_代理系列指定的上述行\_调用\_信息中的特定于媒体的一部分的成员CO\_调用\_MANAGER\_参数结构，它提供给**Ndis (M) CmDispatchIncomingCall**。
+呼叫管理器或支持 CO \_ ADDRESS \_ 系列 \_ TAPI 代理系列的 MCM 指定了在 \_ \_ \_ \_ \_ \_ 其提供给 **Ndis (M) CmDispatchIncomingCall**的共同调用管理器参数结构的媒体特定部分中列出的行调用信息成员。
 
-有关在行中的成员的说明\_调用\_信息结构，请参阅 Microsoft Windows SDK 文档中的 LINECALLINFO 结构。
-
- 
+有关行调用信息结构中成员的说明 \_ \_ ，请参阅 Microsoft Windows SDK 文档中的 LINECALLINFO 结构。
 
  
-
-
-
-
 

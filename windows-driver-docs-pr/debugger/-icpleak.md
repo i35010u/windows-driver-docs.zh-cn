@@ -1,9 +1,9 @@
 ---
 title: icpleak
-description: Icpleak 扩展将检查所有 I/O 完成对象具有的最大排队的条目数的对象的系统中。
+description: Icpleak 扩展在系统中检查包含最多已排队条目的对象的所有 i/o 完成对象。
 ms.assetid: 8644a41a-44da-47bc-94ef-5024bb457c7d
 keywords:
-- I/O 完成
+- I/o 完成
 - icpleak Windows 调试
 ms.date: 05/23/2017
 topic_type:
@@ -13,29 +13,29 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: b01e620cbe6609cf14dbddd469a1bd56a9c21ec0
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 223d0a4905a3802ade7ba524019aed6c27db2a6a
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67362487"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89207374"
 ---
 # <a name="icpleak"></a>!icpleak
 
 
-**！ Icpleak**扩展插件将检查所有 I/O 完成对象具有的最大排队的条目数的对象的系统中。
+**！ Icpleak** extension 检查系统中具有最大排队条目数的对象的所有 i/o 完成对象。
 
 ```dbgcmd
 !icpleak [HandleFlag]
 ```
 
-## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>参数
+## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>Parameters
 
 
-<span id="_______HandleFlag______"></span><span id="_______handleflag______"></span><span id="_______HANDLEFLAG______"></span> *HandleFlag*   
-如果设置此标志，显示内容还包括具有最大数量的已排队的项的对象的句柄的所有进程。
+<span id="_______HandleFlag______"></span><span id="_______handleflag______"></span><span id="_______HANDLEFLAG______"></span>*HandleFlag*   
+如果设置了此标志，则显示内容还包括所有进程，其中包含具有最多已排队条目的对象的句柄。
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 <table>
 <colgroup>
@@ -45,10 +45,10 @@ ms.locfileid: "67362487"
 <tbody>
 <tr class="odd">
 <td align="left"><p><strong>Windows 2000</strong></p></td>
-<td align="left"><p>不可用</p></td>
+<td align="left"><p>Unavailable</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>Windows XP 及更高版本</strong></p></td>
+<td align="left"><p><strong>Windows XP 及更高版本</strong></p></td>
 <td align="left"><p>Kdexts.dll</p></td>
 </tr>
 </tbody>
@@ -56,24 +56,18 @@ ms.locfileid: "67362487"
 
  
 
-### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>其他信息
+### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>附加信息
 
-有关 I/O 完成端口的信息，请参阅*Microsoft Windows Internals*由 Mark Russinovich 和 David solomon 合著。 
+有关 i/o 完成端口的信息，请参阅 Russinovich 和 David 的 *Microsoft Windows 内部机制* 。 
 
 <a name="remarks"></a>备注
 -------
 
-此扩展时，I/O 完成池中没有泄漏。 一个过程通过调用分配 I/O 完成数据包时，可能发生 I/O 完成池泄漏[ **PostQueuedCompletionStatus**](https://docs.microsoft.com/windows/desktop/FileIO/postqueuedcompletionstatus)，但不是调用[ **GetQueuedCompletionStatus** ](https://docs.microsoft.com/windows/desktop/api/ioapiset/nf-ioapiset-getqueuedcompletionstatus)来释放它们，或者当进程正在排队完成条目的端口，但没有线程检索条目。 若要检测运行泄漏[ **！ poolused** ](-poolused.md)扩展以及检查 ICP 值池标记。 如果池使用的 ICP 标记非常重要，可能发生泄漏。
+当 i/o 完成池中存在泄漏时，此扩展很有用。 如果进程通过调用 [**postqueuedcompletionstatus 期间**](/windows/desktop/FileIO/postqueuedcompletionstatus)来分配 i/o 完成数据包，但未调用 [**GetQueuedCompletionStatus**](/windows/desktop/api/ioapiset/nf-ioapiset-getqueuedcompletionstatus) 来释放它们，或者进程正在将完成项排队到端口，但没有线程检索这些项，则可能会发生 i/o 完成池溢出。 若要检测泄漏，请运行 [**！ poolused**](-poolused.md) extension 并检查 ICP pool 标记的值。 如果用于 ICP 标记的池使用非常重要，则可能会发生泄露。
 
-此扩展仅适用于系统维护类型列表。 如果*HandleFlag*设置和系统有多的进程，此扩展将会很长时间才能运行。
+此扩展仅适用于系统维护类型列表的情况。 如果设置了 *HandleFlag* 并且系统有多个进程，则此扩展将需要较长时间才能运行。
 
-可以随时停止通过按 CTRL + BREAK （在 WinDbg) 或 CTRL + C （中 KD)。
-
- 
+您可以通过在 WinDbg) 中按 CTRL + BREAK (或在 KD) 中按 CTRL + C (随时停止。
 
  
-
-
-
-
 

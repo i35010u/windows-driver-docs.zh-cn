@@ -1,6 +1,6 @@
 ---
-title: KSPROPERTY\_音频\_延迟
-description: KSPROPERTY\_音频\_滞后时间属性用于报告与流关联的延迟（或音频缓冲量）。
+title: KSPROPERTY \_ 音频 \_ 延迟
+description: "\"KSPROPERTY \\_ 音频 \\_ 延迟\" 属性用于报告与流关联的 (或音频缓冲) 数量的延迟。"
 ms.assetid: d155e3a5-e3e6-4381-9bbe-2a16b0be47b3
 keywords:
 - KSPROPERTY_AUDIO_LATENCY 音频设备
@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7657fc24ebd8a12afc2046c62d5ff7806f787e78
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 77f240f97662f5c0b9f0f24c65785e5d6c0b4011
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72833019"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89208981"
 ---
-# <a name="ksproperty_audio_latency"></a>KSPROPERTY\_音频\_延迟
+# <a name="ksproperty_audio_latency"></a>KSPROPERTY \_ 音频 \_ 延迟
 
 
-KSPROPERTY\_音频\_滞后时间属性用于报告与流关联的延迟（或音频缓冲量）。
+"KSPROPERTY \_ 音频 \_ 延迟" 属性用于报告与流关联的 (或音频缓冲) 数量的延迟。
 
 ## <span id="ddk_ksproperty_audio_latency_ks"></span><span id="DDK_KSPROPERTY_AUDIO_LATENCY_KS"></span>
 
@@ -41,7 +41,7 @@ KSPROPERTY\_音频\_滞后时间属性用于报告与流关联的延迟（或音
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">“获取”</th>
+<th align="left">获取</th>
 <th align="left">设置</th>
 <th align="left">目标</th>
 <th align="left">属性描述符类型</th>
@@ -50,27 +50,27 @@ KSPROPERTY\_音频\_滞后时间属性用于报告与流关联的延迟（或音
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>“是”</p></td>
-<td align="left"><p>无</p></td>
-<td align="left"><p>大头针</p></td>
-<td align="left"><p><a href="https://docs.microsoft.com/previous-versions/ff564262(v=vs.85)" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/ff564262(v=vs.85))"><strong>KSPROPERTY</strong></a></p></td>
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-kstime" data-raw-source="[&lt;strong&gt;KSTIME&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-kstime)"><strong>KSTIME</strong></a></p></td>
+<td align="left"><p>是</p></td>
+<td align="left"><p>否</p></td>
+<td align="left"><p>Pin</p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/previous-versions/ff564262(v=vs.85)" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](/previous-versions/ff564262(v=vs.85))"><strong>KSPROPERTY</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-kstime" data-raw-source="[&lt;strong&gt;KSTIME&lt;/strong&gt;](/windows-hardware/drivers/ddi/ks/ns-ks-kstime)"><strong>KSTIME</strong></a></p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-属性值（操作数据）是指定流滞后时间的 KSTIME 类型的结构。
+ (操作数据) 的属性值是指定流滞后时间的 KSTIME 类型的结构。
 
 ### <a name="span-idreturn_valuespanspan-idreturn_valuespanspan-idreturn_valuespanreturn-value"></a><span id="Return_Value"></span><span id="return_value"></span><span id="RETURN_VALUE"></span>返回值
 
-KSPROPERTY\_音频\_延迟属性请求返回状态\_SUCCESS，以指示已成功完成。 否则，请求将返回相应的错误状态代码。
+KSPROPERTY \_ 音频 \_ 延迟属性请求返回状态 " \_ 成功" 以指示它已成功完成。 否则，请求将返回相应的错误状态代码。
 
 <a name="remarks"></a>备注
 -------
 
-此属性用于查询 AEC 筛选器上的 pin 的流延迟。 有关详细信息，请参阅[公开硬件加速捕获效果](https://docs.microsoft.com/windows-hardware/drivers/audio/exposing-hardware-accelerated-capture-effects)。
+此属性用于查询 AEC 筛选器上的 pin 的流延迟。 有关详细信息，请参阅 [公开硬件加速捕获效果](./exposing-hardware-accelerated-capture-effects.md)。
 
 <a name="requirements"></a>要求
 ------------
@@ -83,7 +83,7 @@ KSPROPERTY\_音频\_延迟属性请求返回状态\_SUCCESS，以指示已成功
 <tbody>
 <tr class="odd">
 <td align="left"><p>标头</p></td>
-<td align="left">Ksmedia （包括 Ksmedia）</td>
+<td align="left">Ksmedia (包含 Ksmedia) </td>
 </tr>
 </tbody>
 </table>
@@ -91,16 +91,9 @@ KSPROPERTY\_音频\_延迟属性请求返回状态\_SUCCESS，以指示已成功
 ## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
-[**KSPROPERTY**](https://docs.microsoft.com/previous-versions/ff564262(v=vs.85))
+[**KSPROPERTY**](/previous-versions/ff564262(v=vs.85))
 
-[**KSTIME**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-kstime)
-
- 
+[**KSTIME**](/windows-hardware/drivers/ddi/ks/ns-ks-kstime)
 
  
-
-
-
-
-
 

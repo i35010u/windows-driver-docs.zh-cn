@@ -16,12 +16,12 @@ ms.date: 08/25/2020
 ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
-ms.openlocfilehash: e9ef77ef6360135b463599dabb9a2ef72a377e56
-ms.sourcegitcommit: d9a9925f790271f4ca2c8377d551d96e8d1e62c7
+ms.openlocfilehash: cd62de583293cd9f6d12744c8d59add3cff3a807
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88850192"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89186439"
 ---
 # <a name="multifunction-device-driver-design-guide"></a>多功能设备驱动程序设计指南
 
@@ -51,7 +51,7 @@ ms.locfileid: "88850192"
 
 如果设备不遵循其总线的标准，则除了适用于设备功能的功能驱动程序和 INF 文件，可能还需要提供在功能上等效于 mf.sys 的驱动程序。
 
-若要安装多功能设备，通常需提供一个适用于设备的基础 INF 文件，另外再提供一个适用于设备的每个功能的 INF 文件。 基础 INF 文件通常复制适用于设备的各个功能的 INF 文件。 若要了解如何完成此任务，请参阅[复制 INF](https://docs.microsoft.com/windows-hardware/drivers/install/copying-inf-files)。
+若要安装多功能设备，通常需提供一个适用于设备的基础 INF 文件，另外再提供一个适用于设备的每个功能的 INF 文件。 基础 INF 文件通常复制适用于设备的各个功能的 INF 文件。 若要了解如何完成此任务，请参阅[复制 INF](../install/copying-inf-files.md)。
 
 以下部分介绍各类多功能设备的驱动程序和安装要求：
 
@@ -65,6 +65,6 @@ ms.locfileid: "88850192"
 
 [为多功能设备创建资源映射](creating-resource-maps-for-a-multifunction-device.md)
 
-有关 INF 文件语法的信息，请参阅 [INF 文件节和指令](https://docs.microsoft.com/windows-hardware/drivers/install/inf-classinstall32-section)及 [INF 文件指令](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addcomponent-directive)。
+有关 INF 文件语法的信息，请参阅 [INF 文件节和指令](../install/inf-classinstall32-section.md)及 [INF 文件指令](../install/inf-addcomponent-directive.md)。
 
-Windows 驱动程序工具包 (WDK) 包括一个单独的部分，介绍如何支持[多功能音频设备](https://docs.microsoft.com/windows-hardware/drivers/audio/multifunction-audio-devices)。
+Windows 驱动程序工具包 (WDK) 包括一个单独的部分，介绍如何支持[多功能音频设备](../audio/multifunction-audio-devices.md)。

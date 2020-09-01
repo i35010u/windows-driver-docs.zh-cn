@@ -12,17 +12,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 7d23cfc4122f62d3dcd5f74f5ecd2b71d9511815
-ms.sourcegitcommit: f610410e1500f0b0a4ca008b52679688ab51033d
+ms.openlocfilehash: f6d7ddc4b3401f5592267cd69289adeeffd79828
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/15/2020
-ms.locfileid: "88253049"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89207649"
 ---
 # <a name="dx-display-debugger-object-model-expression"></a>dx（显示调试器对象模型表达式）
 
 
-**Dx**命令显示使用 NatVis 扩展模型的 c + + 表达式。 有关 NatVis 的详细信息，请参阅 [创建本机对象的自定义视图](https://docs.microsoft.com/visualstudio/debugger/create-custom-views-of-native-objects?view=vs-2015)。
+**Dx**命令显示使用 NatVis 扩展模型的 c + + 表达式。 有关 NatVis 的详细信息，请参阅 [创建本机对象的自定义视图](/visualstudio/debugger/create-custom-views-of-native-objects?view=vs-2015)。
 
 ```dbgcmd
 dx [-g|-gc #][-c #][-n|-v]-r[#] Expression[,<FormatSpecifier> ]
@@ -371,10 +371,3 @@ LINQ 语法可以与调试器对象结合使用来搜索和操作数据。 LINQ 
 [JavaScript 扩展中的本机调试器对象](native-objects-in-javascript-extensions.md) 
 
 ---
-
-
-
-
-
-
-

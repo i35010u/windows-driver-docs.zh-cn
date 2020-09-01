@@ -11,12 +11,12 @@ keywords:
 - 波形格式标记 WDK 音频
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b75f60c7fa13485279c47fbe2f9d53dcc6d1c14d
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 019247482fbdb3dfeaecdae4cb63a0ceb2d25281
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72833588"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89208197"
 ---
 # <a name="converting-between-format-tags-and-subformat-guids"></a>在格式标记与子格式 GUID 之间进行转换
 
@@ -24,9 +24,9 @@ ms.locfileid: "72833588"
 ## <span id="converting_between_format_tags_and_subformat_guids"></span><span id="CONVERTING_BETWEEN_FORMAT_TAGS_AND_SUBFORMAT_GUIDS"></span>
 
 
-处理非 PCM 波浪\_格式\_可扩展格式的准则类似于波形格式标记指定的非 PCM 格式的规则。 具体而言，一种 WAVE\_格式\_可扩展格式应具有与 PCM 格式的工厂不同的 pin 工厂，并且它需要自己的数据范围交集处理程序。
+处理非 PCM 波浪 \_ 格式的 \_ 可扩展格式的准则类似于波形格式标记指定的非 pcm 格式的规则。 具体而言，波形 \_ 格式的 \_ 可扩展格式应该具有独立于 PCM 格式的工厂的 pin 工厂，并且它需要自己的数据范围交集处理程序。
 
-波形\_格式\_可扩展格式的音频格式由[**KSDATAFORMAT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksdataformat)结构的**SubFormat**成员中的 GUID 指定。 每个已注册的波形格式标记都有相应的 subformat GUID，它是在 Ksmedia 中定义\_WAVEFORMATEX\_GUID 宏生成的。 例如，对应于波形\_格式\_杜比\_E-AC3\_SPDIF 标记的 GUID 定义为定义\_WAVEFORMATEX\_GUID （波形\_格式\_杜\_E-AC3\_SPDIF）。
+波形 \_ 格式可扩展格式的音频格式 \_ 由[**KSDATAFORMAT**](/windows-hardware/drivers/ddi/ks/ns-ks-ksdataformat)结构的**SubFormat**成员中的 GUID 指定。 每个已注册的波形格式标记都有相应的 subformat GUID，它是由 \_ Ksmedia 中的 DEFINE WAVEFORMATEX \_ guid 宏生成的。 例如，波形 \_ 格式 \_ 杜比 \_ e-ac3 spdif 标记对应的 GUID \_ 定义为定义 \_ WAVEFORMATEX \_ GUID (WAVE \_ 格式 \_ 杜 \_ e-ac3 \_ SPDIF) 。
 
 此 Ksmedia 中的代码片段演示了如何将新的 GUID 定义为 autoinitialized 静态变量：
 
@@ -58,7 +58,7 @@ Ksmedia 中的这些宏在 wave 格式标记与其关联 Guid 之间转换：
 #define EXTRACT_WAVEFORMATEX_ID(Guid)(USHORT)((Guid)->Data1)
 ```
 
-下面的示例代码结合了这些技术来创建基于波形格式标记的 subformat GUID\_格式\_E-AC3\_SPDIF，其值为0x0092：
+下面的示例代码结合了这些技术来创建基于波形格式标记波格式的 subformat GUID \_ \_ \_ ，e-ac3 SPDIF 的值为0x0092：
 
 ```cpp
 #define STATIC_KSDATAFORMAT_SUBTYPE_DOLBY_AC3_SPDIF \
@@ -78,9 +78,4 @@ if (IS_VALID_WAVEFORMATEX_GUID(aWaveFormatExGuidPtr)) {
 ```
 
  
-
- 
-
-
-
 

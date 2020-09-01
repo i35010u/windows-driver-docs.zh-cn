@@ -3,25 +3,25 @@ title: 默认的音频音量设置
 description: 默认的音频音量设置
 ms.assetid: 5d694aa2-5a47-44c5-92d5-ec8c4885820f
 keywords:
-- 音频适配器 WDK、 音量设置
-- 适配器驱动程序 WDK 音频音量设置
-- 端口类音频适配器 WDK、 音量设置
-- 默认的卷设置
-- WDK 的音频的音量设置
+- 音频适配器 WDK，音量设置
+- 适配器驱动程序 WDK 音频，音量设置
+- 端口类音频适配器 WDK，音量设置
+- 默认卷设置
+- 音频音量设置 WDK
 - 主音量滑块 WDK 音频
-- 卷滑块 WDK 音频
+- 音量滑块 WDK 音频
 - 声音级别设置 WDK 音频
-- 主机卷设置 WDK 音频
-- 默认的主机卷设置
-- 整卷滑块 WDK 音频
+- 主-卷设置 WDK 音频
+- 默认主-批量设置
+- 全卷滑块 WDK 音频
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 14b908666d2a161af257db02fb87e7023734c02f
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 55ac616ed50d588f6df18a7042041c9a0ad0aa90
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67359074"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89208153"
 ---
 # <a name="default-audio-volume-settings"></a>默认的音频音量设置
 
@@ -29,24 +29,24 @@ ms.locfileid: "67359074"
 ## <span id="default_audio_volume_settings"></span><span id="DEFAULT_AUDIO_VOLUME_SETTINGS"></span>
 
 
-SndVol 程序 (请参阅[任务栏和 SndVol32](systray-and-sndvol32.md)) 显示一组的卷滑块。 滑块指示各种音频设备和应用程序，如演讲者和系统声音的音量级别设置。 没有为每个音频输出和输入，一个终结点的卷和每个应用程序的应用程序卷。 音频驱动程序可以仅控制其自己的终结点卷，通过 KSPROPERTY\_音频\_VOLUMELEVEL。 如果该驱动程序不会显式初始化这些卷设置在安装时，操作系统将选择其自己对这些设置的默认值。 选择操作系统的默认值不同时，跨所有 Windows 版本中，和供应商可能需要执行帐户，以确保音量级别设置既不太高，也不太低紧跟其后的驱动程序安装到这些差异。
+SndVol 程序 (参阅 " [托盘和 SndVol32](systray-and-sndvol32.md) ") 显示一组音量滑杆。 滑块指示各种音频设备和应用程序（如扬声器和系统声音）的卷级别设置。 每个音频输出和输入都有一个终结点卷，每个应用程序都有一个应用程序卷。 音频驱动程序通过 KSPROPERTY 音频 VOLUMELEVEL 仅控制其自己的终结点 \_ 卷 \_ 。 如果驱动程序在安装时未显式初始化这些卷设置，操作系统将为这些设置选择自己的默认值。 操作系统选择的默认值在所有 Windows 版本中都不相同，并且供应商可能需要考虑到这些差异，以确保在安装驱动程序后，卷级别的设置既不太高，也不会过低。
 
-作为一般规则，如果音频适配器驱动器一组具有自己的物理卷控制的模拟扬声器 INF 文件不应设置默认音量级别过低。 否则，用户可能会尝试通过增加而不是增加声卡上的主卷扬声器的音量补偿。 增强的信号强度弱的结果是降低音频质量。
+一般规则是，如果音频适配器驱动一组具有其自己的物理音量控制的模拟扬声器，则 INF 文件不应将默认音量级别设置得过低。 否则，用户可能会尝试通过提高扬声器的音量而不是在声卡上增加主音量来进行补偿。 低信号级别的放大的结果是音频质量的损失。
 
-如果音频适配器没有硬件放大器，请参阅[软件卷控件支持](software-volume-control-support.md)提供软件支持的信息。
+如果音频适配器没有硬件放大器，请参阅 [软件音量控制支持](software-volume-control-support.md) ，了解有关提供的软件支持的信息。
 
-**请注意**  如果硬件放大器，则驱动程序设置的范围和默认值通过级别[ **KSPROPERTY\_音频\_VOLUMELEVEL** ](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-audio-volumelevel)内核流式处理属性。 如果不是硬件放大器，则 Windows 将创建一个软件卷控件 APO。
-如果没有物理卷旋钮的发言人可用集合，它应在显示 Windows 为 HID 控件。 这将为卷同样正常向上和向下按钮的键盘; 上的卷Windows 会看到卷旋钮打开，并将卷计划控制相应地 （无论它是一个硬件或软件卷）。
-
- 
-
-理想情况下，如果一套 active 扬声器附带在同一个框中的音频的适配器卡，在工厂应调整卷旋钮演讲者最适用于适配器的默认卷设置的位置上。 如果音频适配器不具有物理卷控件旋钮，请参阅[软件卷控件支持](https://docs.microsoft.com/windows-hardware/drivers/audio/software-volume-control-support)主题，了解有关通过 Windows 提供的软件支持的信息。
-
-**请注意**  如果音频硬件公开硬件卷控件 （如卷旋钮），则驱动程序设置的范围和默认值通过级别[ **KSPROPERTY\_音频\_VOLUMELEVEL** ](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-audio-volumelevel)内核流式处理的属性。
+**注意**   如果有硬件放大器，则驱动程序将通过[**KSPROPERTY \_ 音频 \_ VOLUMELEVEL**](./ksproperty-audio-volumelevel.md)内核流式处理属性设置范围和默认级别。 如果没有硬件放大器，Windows 将创建软件音量控制 APO。
+如果活动的扬声器集上有一个物理卷旋钮，则它应作为 HID 控件出现在 Windows 中。 此功能类似于键盘上的 "音量调出" 和 "音量减小" 按钮;Windows 将看到卷旋钮轮变成，并将相应地对音量控制进行编程 (不管是硬件还是软件卷。 ) 
 
  
 
-下表显示的卷范围和默认音频的音量级别中的不同版本的 Windows。
+理想情况下，如果一组活动扬声器随附在音频适配器卡的同一个框中，则工厂应将扬声器的音量旋钮调整到最适合使用适配器的默认音量设置的位置。 如果音频适配器没有物理音量控制旋钮，请参阅 [软件音量控制支持](./software-volume-control-support.md) 主题，了解有关 Windows 提供的软件支持的信息。
+
+**注意**   如果音频硬件 (如卷旋钮) 中显示硬件卷控制，则驱动程序将通过[**KSPROPERTY \_ audio \_ VOLUMELEVEL**](./ksproperty-audio-volumelevel.md)内核流式处理属性设置范围和默认级别。
+
+ 
+
+下表显示了不同版本的 Windows 中音频的卷范围和默认卷级别。
 
 <table>
 <colgroup>
@@ -58,29 +58,29 @@ SndVol 程序 (请参阅[任务栏和 SndVol32](systray-and-sndvol32.md)) 显示
 <tr class="header">
 <th align="left">Windows 版本</th>
 <th align="left">麦克风默认值</th>
-<th align="left">非-麦克风 * 默认值</th>
+<th align="left">非麦克风 * 默认值</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left">Windows Vista SP1</td>
-<td align="left"><p>默认级别：0.0db</p>
-<p>卷范围：-192.0 dB ~ + 12.0dB</p></td>
-<td align="left"><p>默认级别：0.0db</p>
+<td align="left"><p>默认级别： 0.0 db</p>
+<p>卷范围：-192.0 dB ~ + 12.0 dB</p></td>
+<td align="left"><p>默认级别： 0.0 db</p>
 <p>卷范围：-192.0 dB ~ 0dB</p></td>
 </tr>
 <tr class="even">
-<td align="left">Windows 7</td>
-<td align="left"><p>默认级别: + 30.0dB</p>
-<p>卷范围：-192 dB ~ +30.0 dB</p></td>
-<td align="left"><p>默认级别：0 dB</p>
+<td align="left">Windows 7</td>
+<td align="left"><p>默认级别： + 30.0 dB</p>
+<p>卷范围：-192 dB ~ + 30.0 dB</p></td>
+<td align="left"><p>默认级别： 0 dB</p>
 <p>卷范围：-192 dB ~ 0 dB</p></td>
 </tr>
 <tr class="odd">
 <td align="left">Windows 8</td>
-<td align="left"><p>默认级别：0.0 dB</p>
+<td align="left"><p>默认级别： 0.0 dB</p>
 <p>卷范围：-96 dB ~ + 30 dB</p></td>
-<td align="left"><p>默认级别：0.0 dB</p>
+<td align="left"><p>默认级别： 0.0 dB</p>
 <p>卷范围：-96 dB ~ 0 dB</p></td>
 </tr>
 </tbody>
@@ -88,11 +88,8 @@ SndVol 程序 (请参阅[任务栏和 SndVol32](systray-and-sndvol32.md)) 显示
 
  
 
-\*术语非-麦克风描述所有播放设备和非麦克风录音设备。
-有关由 Windows 应用程序中的软件卷滑块物理卷滑块的操作特征的信息，请参阅[Audio-Tapered 音量控件](https://docs.microsoft.com/windows/desktop/CoreAudio/audio-tapered-volume-controls)。
+\*非麦克风这一术语描述了所有播放设备和录制设备而不是麦克风。
+有关 Windows 应用程序中的 "软件音量" 滑块所表示的物理音量滑杆的操作特征的信息，请参阅 " [音频-锥形音量控制](/windows/desktop/CoreAudio/audio-tapered-volume-controls)"。
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
-[自定义默认音频音量设置](customizing-default-audio-volume-settings.md)  
-
-
-
+## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
+[自定义默认音频音量设置](customizing-default-audio-volume-settings.md)

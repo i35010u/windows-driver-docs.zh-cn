@@ -6,38 +6,33 @@ keywords:
 - OpenPrinter
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0247bdd77782ed2832d510a716c039942218cf84
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: b8173e7001e4bd4d5bb77c0f5e7d152043056907
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72843058"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89207735"
 ---
 # <a name="openprinter"></a>OpenPrinter
 
 
-打开打印队列（通过使用 `OpenPrinter` 函数）时，将加载打印驱动程序，并按以下顺序调用[IPrintTicketProvider 接口](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff554375(v=vs.85))的以下方法：
+使用函数)  (打开打印队列时，将 `OpenPrinter` 加载打印驱动程序，并按以下顺序调用 [IPrintTicketProvider 接口](/previous-versions/windows/hardware/drivers/ff554375(v=vs.85)) 的以下方法：
 
-1.  [**IPrintTicketProvider::GetSupportedVersions**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff554371(v=vs.85))
+1.  [**IPrintTicketProvider::GetSupportedVersions**](/previous-versions/windows/hardware/drivers/ff554371(v=vs.85))
 
-2.  [**IPrintTicketProvider::BindPrinter**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff554354(v=vs.85))
+2.  [**IPrintTicketProvider::BindPrinter**](/previous-versions/windows/hardware/drivers/ff554354(v=vs.85))
 
-3.  [**IPrintTicketProvider::QueryDeviceNamespace**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff554378(v=vs.85))
+3.  [**IPrintTicketProvider::QueryDeviceNamespace**](/previous-versions/windows/hardware/drivers/ff554378(v=vs.85))
 
-Unidrv 或 PScript5 打印驱动程序中的**IPrintTicketProvider**接口的方法调用驱动程序所承载的每个插件的**IPrintOemPrintTicketProvider**方法。 下图和列表显示了在调用 `OpenPrinter` 时如何进行这些调用。
+Unidrv 或 PScript5 打印驱动程序中的 **IPrintTicketProvider** 接口的方法调用驱动程序所承载的每个插件的 **IPrintOemPrintTicketProvider** 方法。 下图和列表显示了调用时如何进行这些调用 `OpenPrinter` 。
 
 ![说明 openprinter 调用序列的关系图](images/ptpcopen-uml.gif)
 
-1.  对于每个插件，请调用[**IPrintOemPrintTicketProvider：： GetSupportedVersions**](https://docs.microsoft.com/windows-hardware/drivers/ddi/prcomoem/nf-prcomoem-iprintoemprintticketprovider-getsupportedversions)。
+1.  对于每个插件，请调用 [**IPrintOemPrintTicketProvider：： GetSupportedVersions**](/windows-hardware/drivers/ddi/prcomoem/nf-prcomoem-iprintoemprintticketprovider-getsupportedversions)。
 
-2.  对于每个插件，请调用[**IPrintOemPrintTicketProvider：： BindPrinter**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff553151(v=vs.85))。
+2.  对于每个插件，请调用 [**IPrintOemPrintTicketProvider：： BindPrinter**](/previous-versions/windows/hardware/drivers/ff553151(v=vs.85))。
 
-3.  对于每个插件，请调用[**IPrintOemPrintTicketProvider：： QueryDeviceDefaultNamespace**](https://docs.microsoft.com/windows-hardware/drivers/ddi/prcomoem/nf-prcomoem-iprintoemprintticketprovider-querydevicedefaultnamespace)。
-
- 
+3.  对于每个插件，请调用 [**IPrintOemPrintTicketProvider：： QueryDeviceDefaultNamespace**](/windows-hardware/drivers/ddi/prcomoem/nf-prcomoem-iprintoemprintticketprovider-querydevicedefaultnamespace)。
 
  
-
-
-
 

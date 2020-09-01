@@ -10,12 +10,12 @@ keywords:
 - 同步 WDK MSI-X
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: edfd8ab179f6ca60e18aedb4aa6b369224308e33
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 78e7ca83159814c4df73a630fe8392287f674348
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72841787"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89207157"
 ---
 # <a name="synchronizing-with-an-msi-interrupt"></a>与 MSI 中断同步
 
@@ -23,13 +23,7 @@ ms.locfileid: "72841787"
 
 
 
-如果微型端口驱动程序的[*MiniportMessageInterrupt*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_message_interrupt)函数共享资源（例如网络接口卡（NIC）寄存器或状态变量），而另一个*MiniportXxx*函数运行在较低的 IRQL 下，另一个*MiniportXxx*函数必须调用[**NdisMSynchronizeWithInterruptEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismsynchronizewithinterruptex)函数。 此调用可确保微型端口驱动程序的[**MiniportSynchronizeMessageInterrupt**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_synchronize_interrupt)函数以同步且多处理器安全的方式访问共享资源。
+如果微型端口驱动程序的 [*MiniportMessageInterrupt*](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_message_interrupt) 函数共享资源（例如网络接口卡 (NIC) 寄存器或状态变量），并且另一个 *MiniportXxx* 函数以较低的 IRQL 运行，则其他 *MiniportXxx* 函数必须调用 [**NdisMSynchronizeWithInterruptEx**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismsynchronizewithinterruptex) 函数。 此调用可确保微型端口驱动程序的 [**MiniportSynchronizeMessageInterrupt**](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_synchronize_interrupt) 函数以同步且多处理器安全的方式访问共享资源。
 
  
-
- 
-
-
-
-
 

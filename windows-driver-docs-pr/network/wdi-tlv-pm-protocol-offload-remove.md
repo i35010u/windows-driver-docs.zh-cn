@@ -1,39 +1,39 @@
 ---
 title: WDI_TLV_PM_PROTOCOL_OFFLOAD_REMOVE
-description: WDI_TLV_PM_PROTOCOL_OFFLOAD_REMOVE 是包含协议 TLV 卸载与 OID_WDI_SET_REMOVE_PM_PROTOCOL_OFFLOAD 移除 ID。
+description: WDI_TLV_PM_PROTOCOL_OFFLOAD_REMOVE 是一个 TLV，其中包含要在 OID_WDI_SET_REMOVE_PM_PROTOCOL_OFFLOAD 中删除的协议卸载 ID。
 ms.assetid: BD74C9F7-6370-41D5-841F-6949D7748E30
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 WDI_TLV_PM_PROTOCOL_OFFLOAD_REMOVE 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 678febff425947dcb1ad8be194b15892bd16820a
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: c9841c102a79065f0f0e9fe962b02f96a1dc3577
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67373847"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89207767"
 ---
-# <a name="wditlvpmprotocoloffloadremove"></a>WDI\_TLV\_PM\_PROTOCOL\_OFFLOAD\_REMOVE
+# <a name="wdi_tlv_pm_protocol_offload_remove"></a>WDI \_ TLV \_ PM \_ 协议 \_ 卸载 \_ 删除
 
 
-WDI\_TLV\_PM\_协议\_卸载\_删除是包含要删除的协议卸载 ID TLV [OID\_WDI\_集\_删除\_PM\_协议\_卸载](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wdi-set-remove-pm-protocol-offload)。
+WDI \_ tlv \_ PM \_ 协议 \_ 卸载 \_ 删除是一个 TLV，其中包含要删除的包含的协议卸载 [ID \_ \_ \_ \_ \_ \_ ](./oid-wdi-set-remove-pm-protocol-offload.md)。
 
 ## <a name="tlv-type"></a>TLV 类型
 
 
 0x6C
 
-## <a name="length"></a>长度
+## <a name="length"></a>Length
 
 
-UINT32 大小 （以字节为单位）。
+UINT32) 的大小 (以字节为单位）。
 
 ## <a name="values"></a>值
 
 
-| 在任务栏的搜索框中键入   | 描述                        |
+| 类型   | 说明                        |
 |--------|------------------------------------|
-| UINT32 | 指定协议卸载 id。 |
+| UINT32 | 指定协议卸载 ID。 |
 
  
 
@@ -55,16 +55,11 @@ UINT32 大小 （以字节为单位）。
 <td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
-<td><p>Header</p></td>
+<td><p>标头</p></td>
 <td>Wditypes.hpp</td>
 </tr>
 </tbody>
 </table>
 
  
-
- 
-
-
-
 

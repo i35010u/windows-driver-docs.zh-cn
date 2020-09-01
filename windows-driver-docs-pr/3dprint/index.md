@@ -6,12 +6,12 @@ ms.date: 05/18/2020
 ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
-ms.openlocfilehash: 834051b52d53dd696c35e20b435fb3951744f483
-ms.sourcegitcommit: 32f42241991d57032e5d39ee9f2a3ab4a66ae396
+ms.openlocfilehash: a5566620e8dc99b9871f2a512fd0d55c85d60695
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/18/2020
-ms.locfileid: "83553328"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89184545"
 ---
 # <a name="3d-printer-driver-design-guide"></a>3D 打印机驱动程序设计指南
 
@@ -63,4 +63,4 @@ Windows 10 中的 3D 打印提供了以下功能：
 
 ## <a name="related-sections"></a>相关章节
 
-- [打印 DDI 参考](https://docs.microsoft.com/windows-hardware/drivers/ddi/_print)
+- [打印 DDI 参考](/windows-hardware/drivers/ddi/_print)

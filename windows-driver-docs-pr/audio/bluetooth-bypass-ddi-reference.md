@@ -1,25 +1,22 @@
 ---
 title: 蓝牙旁路 DDI 参考
-description: 蓝牙绕过设备驱动程序接口 (DDI) 引用是一组的显示结构和 Ioctl 引入了 Windows 8.1 为蓝牙免提的配置文件 (HFP) 驱动程序提供支持的主题。
+description: 蓝牙旁路设备驱动程序界面 (DDI) 参考是一组主题，其中显示了 Windows 8.1 引入的结构和 IOCTLs，以提供对蓝牙免提配置文件 (HFP) 驱动程序的支持。
 ms.assetid: 70ED2FC9-A644-4C72-8208-3D4AB83B7AC0
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d0c4ba71f4f98b92e62ae27d798e4976f36eb061
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: a4f6e87b645f28d982a60769e4940d7f6ccf3843
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67355615"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89208231"
 ---
 # <a name="bluetooth-bypass-ddi-reference"></a>蓝牙旁路 DDI 参考
 
 
-蓝牙绕过设备驱动程序接口 (DDI) 引用是一组的显示结构和 Ioctl 引入了 Windows 8.1 为蓝牙免提的配置文件 (HFP) 驱动程序提供支持的主题。
+蓝牙旁路设备驱动程序界面 (DDI) 参考是一组主题，其中显示了 Windows 8.1 引入的结构和 IOCTLs，以提供对蓝牙免提配置文件 (HFP) 驱动程序的支持。
 
-有关 DDI 成员的详细信息，请参阅[蓝牙 HFP DDI 引用](https://docs.microsoft.com/windows-hardware/drivers/audio/bluetooth-hfp-ddi-reference)。
+有关 DDI 成员的详细信息，请参阅 [蓝牙 HFP DDI Reference](./bluetooth-hfp-ddi-reference.md)。
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
-[理论上的操作](theory-of-operation.md)  
-
-
-
+## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
+[操作理论](theory-of-operation.md)

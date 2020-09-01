@@ -4,12 +4,12 @@ description: 驱动程序声明每个设备支持的音频信号处理模式。
 ms.assetid: 104275F8-2302-484B-B673-7448CAA1F793
 ms.date: 05/14/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 98dbebc5f03a59f110ebb1210efaf8b60be0465c
-ms.sourcegitcommit: f610410e1500f0b0a4ca008b52679688ab51033d
+ms.openlocfilehash: e851b3c4f40658862b29463e488c84fec8b33859
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/15/2020
-ms.locfileid: "88252949"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89208249"
 ---
 # <a name="audio-signal-processing-modes"></a>音频信号处理模式
 
@@ -19,7 +19,7 @@ ms.locfileid: "88252949"
 
 应用程序)  (选定的音频类别映射到 (驱动程序) 定义的音频模式。 Windows 定义了七种音频信号处理模式。 Oem 和 Ihv 可以确定要实现的模式。 建议 Ihv/Oem 利用新模式来添加音频效果，以优化音频信号以提供最佳用户体验。 下表汇总了这些模式。
 
-|“模式”|呈现/捕获|描述|
+|“模式”|呈现/捕获|说明|
 |----|----|----|
 |原始|两者|Raw 模式指定不应对流应用任何信号处理。 应用程序可以请求完全不动并执行其自己的信号处理的原始流。|
 |默认|两者|此模式定义默认音频处理。|
@@ -45,7 +45,7 @@ ms.locfileid: "88252949"
 
 为了通知系统有关音频流的使用情况，应用程序可以选择使用特定的音频流类别标记流。 应用程序可以在创建音频流后使用任意音频 Api 设置音频类别。 在 Windows 10 中，有九个音频流类别。
 
-|Category|描述|
+|类别|说明|
 |----|----|
 | 电影          | 带有对话框 (的电影、视频替换 ForegroundOnlyMedia)                                               |
 | 媒体          | Media 播放 (的默认类别替换 BackgroundCapableMedia)                                  |
@@ -119,7 +119,7 @@ Oem 定义将用于每个模式的影响。 Windows 定义了十七种类型的�
 
 无论音频硬件配置如何，应用程序都应请求最佳的音频效果处理。 例如，将流标记为通信后，Windows 会使 Windows 知道暂停背景音乐。
 
-有关静态音频流类别的详细信息，请参阅 [AudioCategory 枚举](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.AudioCategory) 和 [AudioCategory 属性](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MediaElement#Windows_UI_Xaml_Controls_MediaElement_AudioCategory)。
+有关静态音频流类别的详细信息，请参阅 [AudioCategory 枚举](/uwp/api/Windows.UI.Xaml.Media.AudioCategory) 和 [AudioCategory 属性](/uwp/api/Windows.UI.Xaml.Controls.MediaElement#Windows_UI_Xaml_Controls_MediaElement_AudioCategory)。
 
 ## <a name="clsids-for-system-effects"></a>系统效果的 Clsid
 
@@ -143,13 +143,13 @@ DEFINE_GUIDSTRUCT("E1F89EB5-5F46-419B-967B-FF6770B98401", KSATTRIBUTEID_AUDIOSIG
 #define KSATTRIBUTEID_AUDIOSIGNALPROCESSING_MODE DEFINE_GUIDNAMED(KSATTRIBUTEID_AUDIOSIGNALPROCESSING_MODE)
 ```
 
-KSATTRIBUTEID \_ AUDIOSIGNALPROCESSING \_ 模式用于模式感知驱动程序和包含[**KSATTRIBUTE \_ 列表**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksattribute_list)的[**KSDATARANGE**](https://docs.microsoft.com/previous-versions/ff561658(v=vs.85))结构。 此列表中的单个元素为 [**KSATTRIBUTE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksattribute)。 **KSATTRIBUTE**结构的属性成员设置为 KSATTRIBUTEID \_ AUDIOSIGNALPROCESSING \_ 模式。
+KSATTRIBUTEID \_ AUDIOSIGNALPROCESSING \_ 模式用于模式感知驱动程序和包含[**KSATTRIBUTE \_ 列表**](/windows-hardware/drivers/ddi/ks/ns-ks-ksattribute_list)的[**KSDATARANGE**](/previous-versions/ff561658(v=vs.85))结构。 此列表中的单个元素为 [**KSATTRIBUTE**](/windows-hardware/drivers/ddi/ks/ns-ks-ksattribute)。 **KSATTRIBUTE**结构的属性成员设置为 KSATTRIBUTEID \_ AUDIOSIGNALPROCESSING \_ 模式。
 
 ## <a name="audio-effects"></a>音频效果
 
 以下音频效果可用于 Windows 10。
 
-|音频效果|描述|
+|音频效果|说明|
 |----|----|
 |) 的声音回声取消 (|声音回声取消 (AEC) 在音频流中已经存在后，通过删除回声来改善音频质量。|
 |NS)  (噪音抑制|噪音抑制 (NS) 会在音频流中出现干扰，如 humming 和蜂鸣。|

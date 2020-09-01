@@ -3,24 +3,24 @@ title: DLS 下载支持
 description: DLS 下载支持
 ms.assetid: be080b53-0a9d-47fc-b07b-88052efdf9a8
 keywords:
-- 可下载的声音 WDK 音频
-- DirectMusic 自定义呈现 WDK 音频、 可下载声音
-- 在用户模式 WDK 音频、 可下载声音中的自定义呈现
+- 可下载声音乐曲音频
+- DirectMusic 自定义渲染声音频，可下载声音
+- 用户模式下的自定义呈现声音频，可下载声音
 - DLS WDK 音频
-- 乐器声音 WDK 音频
-- MIDI 注意消息转换
-- MIDI 注意转换 WDK 音频
-- 用户模式下 synths WDK 音频、 可下载声音
-- 自定义 synths WDK 音频、 可下载声音
-- 合成器 WDK 音频、 可下载声音
+- 检测声音声音频
+- 转换 MIDI 注释消息
+- MIDI 便笺转换 WDK 音频
+- 用户模式 synths WDK 音频，可下载声音
+- 自定义 synths WDK 音频，可下载声音
+- 合成 WDK 音频，可下载声音
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: dc16fdf73e9c72529a847cdd74d796b58e96fd3e
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 6a3a799b85ec54874abdbfbf5bbfb28b557ba560
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67360123"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89208089"
 ---
 # <a name="dls-download-support"></a>DLS 下载支持
 
@@ -28,34 +28,29 @@ ms.locfileid: "67360123"
 ## <span id="custom_dls"></span><span id="CUSTOM_DLS"></span>
 
 
-如果你正在编写你自己合成器，您还必须可下载声音 (DL) 提供支持，以便应用程序可以将 MIDI 注意消息转换为特定乐器的声音。 具体而言，应实现你[ **IDirectMusicSynth::Download** ](https://docs.microsoft.com/windows/desktop/api/dmusics/nf-dmusics-idirectmusicsynth-download)方法，以便它可以检测批和清晰表述数据下载到合成器。 此方法应接受原始数据 （通常是从集合文件），并将其存储在可由呈现引擎的窗体。
+如果你正在编写自己的合成器，则还必须为 (DLS) 的可下载声音提供支持，使应用程序能够将 MIDI 注释消息转换为特定乐器声音。 具体而言，你应该实现 [**IDirectMusicSynth：:D o) **](/windows/desktop/api/dmusics/nf-dmusics-idirectmusicsynth-download) 方法，以便它可以将检测波和 articulation 数据下载到合成器。 此方法应接受 (通常来自集合文件的原始数据) 并将其存储在可供呈现引擎使用的窗体中。
 
-DirectMusic DLS 数据下载到驱动程序时，按照多个 DirectMusic 结构定义的数据缓冲区格式。 下载的数据开头为两个结构：
+当 DirectMusic 将 DLS 数据下载到驱动程序时，将根据几个 DirectMusic 结构定义数据缓冲区的格式。 下载的数据以两个结构开始：
 
-<span id="DMUS_DOWNLOADINFO"></span><span id="dmus_downloadinfo"></span>DMU\_DOWNLOADINFO  
-固定大小标头描述正在下载的信息。
+<span id="DMUS_DOWNLOADINFO"></span><span id="dmus_downloadinfo"></span>DMU \_ DOWNLOADINFO  
+描述要下载的信息的固定大小的标头。
 
-<span id="DMUS_OFFSETTABLE"></span><span id="dmus_offsettable"></span>DMU\_OFFSETTABLE  
-一个偏移量的表，遵循标头并描述了各种块内下载的数据的信息的偏移量。
+<span id="DMUS_OFFSETTABLE"></span><span id="dmus_offsettable"></span>DMU \_ OFFSETTABLE  
+在标头之后的偏移表，用于描述已下载数据中各种信息块的偏移量。
 
-后面偏移的表使用的是实际数据，可以开始与以下组件之一：
+下面的偏移表是实际数据，可以从以下任一值开始：
 
-<span id="DMUS_INSTRUMENT"></span><span id="dmus_instrument"></span>DMU\_检测  
-一个描述 DLS 检测的结构。
+<span id="DMUS_INSTRUMENT"></span><span id="dmus_instrument"></span>DMU \_ 仪器  
+描述 DLS 检测的结构。
 
-<span id="DMUS_WAVEDATA"></span><span id="dmus_wavedata"></span>DMU\_WAVEDATA  
-包含大量 PCM 格式的批数据的结构。
+<span id="DMUS_WAVEDATA"></span><span id="dmus_wavedata"></span>DMU \_ WAVEDATA  
+一个结构，其中包含 PCM 格式的波形数据块。
 
-有关这些数据结构和用于下载检测和波形数据的数据格式的详细信息，请参阅 DirectMusic 低级别 DLS Microsoft Windows SDK 文档中的讨论。
+若要详细了解这些数据结构以及用于下载检测和波形数据的数据格式，请参阅 Microsoft Windows SDK 文档中的 DirectMusic 低级别 DL 讨论。
 
-DLS 数据格式是在内核和用户模式中相同的。
+在内核模式和用户模式下，DLS 数据格式是相同的。
 
-[KSPROPSETID\_合成\_Dls](https://docs.microsoft.com/windows-hardware/drivers/audio/kspropsetid-synth-dls)属性集包含用于下载 DLS 示例和 instruments 到 DirectMusic 合成器的属性。 设置此属性可用于下载 DLS 级别 1 和 2 DLS 级数据。 仅 DLS 级别 1 和 2 之间的已下载的数据更改的格式。
-
- 
+[KSPROPSETID \_ 合成器 \_ Dls](./kspropsetid-synth-dls.md)属性集包含用于将 Dls 示例和乐器下载到 DirectMusic 合成器的属性。 此属性集可用于下载 DLS Level 1 和 DLS Level 2 数据。 只有已下载数据的格式在 DL 级别1和2之间发生更改。
 
  
-
-
-
 

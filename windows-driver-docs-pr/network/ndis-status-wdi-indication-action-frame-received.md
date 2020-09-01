@@ -1,37 +1,37 @@
 ---
 title: NDIS_STATUS_WDI_INDICATION_ACTION_FRAME_RECEIVED
-description: 微型端口驱动程序使用 NDIS_STATUS_WDI_INDICATION_ACTION_FRAME_RECEIVED 来指示已收到操作帧。
+description: 微型端口驱动程序使用 NDIS_STATUS_WDI_INDICATION_ACTION_FRAME_RECEIVED 指示已收到操作帧。
 ms.assetid: C1F6EB50-C11F-428F-BF51-5C89A59CBF76
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 NDIS_STATUS_WDI_INDICATION_ACTION_FRAME_RECEIVED 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 436a98f43fbb5e91aa736d5ff3b490cb8704aa04
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 1b6737d497d364bacaeb9684354029715da8b5ef
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67382204"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89207443"
 ---
-# <a name="ndisstatuswdiindicationactionframereceived"></a>NDIS\_状态\_WDI\_指示\_操作\_帧\_接收时间
+# <a name="ndis_status_wdi_indication_action_frame_received"></a>\_ \_ 已收到 NDIS 状态 WDI \_ 指示 \_ 操作 \_ 帧 \_
 
 
-微型端口驱动程序使用 NDIS\_状态\_WDI\_指示\_操作\_帧\_接收时间以指示已收到操作帧。
+微型端口驱动程序 \_ 使用 \_ 已接收的 NDIS 状态 WDI \_ 指示 \_ 操作帧，指示已 \_ \_ 收到操作帧。
 
-| Object |
+| 对象 |
 |--------|
-| Port   |
+| 端口   |
 
  
 
-## <a name="payload-data"></a>有效负载数据
+## <a name="payload-data"></a>负载数据
 
 
-| 在任务栏的搜索框中键入                                                                               | 允许多个 TLV 实例 | 可选 | 描述                                               |
+| 类型                                                                               | 允许多个 TLV 实例 | 可选 | 说明                                               |
 |------------------------------------------------------------------------------------|--------------------------------|----------|-----------------------------------------------------------|
-| [**WDI\_TLV\_BSSID**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-bssid)                                      |                                |          | 源的 BSSID。                                  |
-| [**WDI\_TLV\_BSS\_条目\_通道\_信息**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-bss-entry-channel-info) |                                |          | BSS 项的逻辑的通道数量和带区 ID。 |
-| [**WDI\_TLV\_操作\_帧\_正文**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-action-frame-body)            |                                |          | 传入操作帧正文。                           |
+| [**WDI \_ TLV \_ BSSID**](./wdi-tlv-bssid.md)                                      |                                |          | 源的 BSSID。                                  |
+| [**WDI \_ TLV \_ BSS \_ 条目 \_ 通道 \_ 信息**](./wdi-tlv-bss-entry-channel-info.md) |                                |          | BSS 条目的逻辑通道号和带区 ID。 |
+| [**WDI \_ TLV \_ 操作 \_ 框架 \_ 正文**](./wdi-tlv-action-frame-body.md)            |                                |          | 传入操作框架正文。                           |
 
  
 
@@ -53,21 +53,16 @@ ms.locfileid: "67382204"
 <td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
-<td><p>Header</p></td>
-<td>Dot11wdi.h</td>
+<td><p>标头</p></td>
+<td>Dot11wdi</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
-[OID\_WDI\_设置\_播发\_信息](oid-wdi-set-advertisement-information.md)
-
- 
+[OID \_ WDI \_ 设置 \_ 播发 \_ 信息](oid-wdi-set-advertisement-information.md)
 
  
-
-
-
 

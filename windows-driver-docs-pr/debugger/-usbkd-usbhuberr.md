@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: be0b24214a99f780b30b355fa51ffac7388b30a9
-ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
+ms.openlocfilehash: 6f4dfd68341471f7c9fa1abc6371f55665a43b93
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84534856"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89207371"
 ---
 # <a name="usbkdusbhuberr"></a>!usbkd.usbhuberr
 
@@ -32,17 +32,17 @@ ms.locfileid: "84534856"
 
 
 <span id="_______StructAddr______"></span><span id="_______structaddr______"></span><span id="_______STRUCTADDR______"></span>*StructAddr*   
-Usbhub 的地址 **！ \_中心 \_ 异常 \_ 记录**结构。
+Usbhub 的地址 **！ \_中心 \_ 异常 \_ 记录** 结构。
 
 ## <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 
-Usbkd
+Usbkd.dll
 
 <a name="examples"></a>示例
 --------
 
-下面是查找 usbhub 地址的一种方法 **！ \_中心 \_ 异常 \_ 记录**。 首先输入[**！ usbkd. usb2tree**](-usbkd-usb2tree.md)。
+下面是查找 usbhub 地址的一种方法 **！ \_中心 \_ 异常 \_ 记录**。 首先输入 [**！ usbkd. usb2tree**](-usbkd-usb2tree.md)。
 
 ```dbgcmd
 0: kd> !usbkd.usb2tree
@@ -63,7 +63,7 @@ Usbkd
 ...
 ```
 
-在上面的输出中， `ffffe000011f71a0` 是中心功能设备对象（FDO）的设备扩展的地址。 将设备扩展的地址传递给[**！ usbkd. usbhubext**](-usbkd-usbhubext.md)。
+在上面的输出中， `ffffe000011f71a0` 是中心 (FDO) 的功能设备对象的设备扩展的地址。 将设备扩展的地址传递给 [**！ usbkd. usbhubext**](-usbkd-usbhubext.md)。
 
 ```dbgcmd
 0: kd> !usbkd.usbhubext ffffe000011f71a0
@@ -89,14 +89,7 @@ ExceptionList: !usblist ffffe000011f8498, EL [Empty]
 
 [USB 2.0 调试器扩展](usb-2-0-extensions.md)
 
-[通用串行总线（USB）驱动程序](https://docs.microsoft.com/windows-hardware/drivers/usbcon/)
+[ (USB) 驱动程序的通用串行总线](../usbcon/index.md)
 
  
-
- 
-
-
-
-
-
 

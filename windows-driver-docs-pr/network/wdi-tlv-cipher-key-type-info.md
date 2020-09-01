@@ -1,42 +1,42 @@
 ---
 title: WDI_TLV_CIPHER_KEY_TYPE_INFO
-description: WDI_TLV_CIPHER_KEY_TYPE_INFO 是一个 TLV，其中包含 OID_WDI_SET_ADD_CIPHER_KEYS 和 OID_WDI_SET_DELETE_CIPHER_KEYS 的密码密钥类型信息。
+description: WDI_TLV_CIPHER_KEY_TYPE_INFO 是包含 OID_WDI_SET_ADD_CIPHER_KEYS 和 OID_WDI_SET_DELETE_CIPHER_KEYS 的密码密钥类型信息的 TLV。
 ms.assetid: 1168D53D-A837-4E3F-8E31-FB86CF866BA3
 ms.date: 07/18/2017
 keywords:
-- WDI_TLV_CIPHER_KEY_TYPE_INFO 从 Windows Vista 开始的网络驱动程序
+- 从 Windows Vista 开始 WDI_TLV_CIPHER_KEY_TYPE_INFO 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: f6fe3691a85a81ad8eaca6f111973f9aa20b0f5e
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 006ca5592ef0739812738be71de1d40a0e6863c9
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72843394"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89208511"
 ---
-# <a name="wdi_tlv_cipher_key_type_info"></a>WDI\_TLV\_密码\_密钥\_类型\_信息
+# <a name="wdi_tlv_cipher_key_type_info"></a>WDI \_ TLV \_ 密码 \_ 密钥 \_ 类型 \_ 信息
 
 
-WDI\_TLV\_密码\_密钥\_类型\_信息是一个 TLV，其中包含 OID 的密码密钥类型信息[\_WDI\_](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wdi-set-add-cipher-keys)\_\_\_@no__ [t_12_ WDI\_设置\_删除\_密码\_键](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wdi-set-delete-cipher-keys)。
+WDI \_ tlv \_ 密码 \_ 密钥 \_ 类型 \_ 信息是一个 TLV，其中包含 OID 的密码密钥类型信息 [ \_ WDI \_ 设置 \_ 添加 \_ 密码 \_ 密钥](./oid-wdi-set-add-cipher-keys.md) 和 [oid \_ WDI \_ 设置 \_ 删除 \_ 密码 \_ 密钥](./oid-wdi-set-delete-cipher-keys.md)。
 
 ## <a name="tlv-type"></a>TLV 类型
 
 
 0x4E
 
-## <a name="length"></a>长度
+## <a name="length"></a>Length
 
 
-所有包含的元素的大小的总和（以字节为单位）。
+Sum (所有包含的元素的大小) 。
 
 ## <a name="values"></a>值
 
 
-| 在任务栏的搜索框中键入                                                                 | 描述                                                                                                                                                                                                                                                                                     |
+| 类型                                                                 | 说明                                                                                                                                                                                                                                                                                     |
 |----------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [**WDI\_密码\_算法**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wditypes/ne-wditypes-_wdi_cipher_algorithm)          | 指定使用密钥的密码算法。                                                                                                                                                                                                                                               |
-| [**WDI\_密码\_密钥\_方向**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wditypes/ne-wditypes-_wdi_cipher_key_direction) | 指定密钥应仅用于传输、仅接收还是用于传输。                                                                                                                                                                                                              |
+| [**WDI \_ 密码 \_ 算法**](/windows-hardware/drivers/ddi/wditypes/ne-wditypes-_wdi_cipher_algorithm)          | 指定使用密钥的密码算法。                                                                                                                                                                                                                                               |
+| [**WDI \_ 密码 \_ 键 \_ 方向**](/windows-hardware/drivers/ddi/wditypes/ne-wditypes-_wdi_cipher_key_direction) | 指定密钥应仅用于传输、仅接收还是用于传输。                                                                                                                                                                                                              |
 | UINT8                                                                | 指定端口是否应在漫游时删除密钥。 如果将此值设置为0，则当端口从 BSS 网络断开连接或连接到 BSS 网络时，必须删除该密钥。 如果此值设置为1，则应删除显式删除或重置请求上的键。 |
-| [**WDI\_密码\_密钥\_类型**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wditypes/ne-wditypes-_wdi_cipher_key_type)           | 指定要发布的密钥的类型。                                                                                                                                                                                                                                                      |
+| [**WDI \_ 密码 \_ 键 \_ 类型**](/windows-hardware/drivers/ddi/wditypes/ne-wditypes-_wdi_cipher_key_type)           | 指定要发布的密钥的类型。                                                                                                                                                                                                                                                      |
 
  
 
@@ -51,7 +51,7 @@ WDI\_TLV\_密码\_密钥\_类型\_信息是一个 TLV，其中包含 OID 的密�
 <tbody>
 <tr class="odd">
 <td><p>最低受支持的客户端</p></td>
-<td><p>Windows 10</p></td>
+<td><p>Windows 10</p></td>
 </tr>
 <tr class="even">
 <td><p>最低受支持的服务器</p></td>
@@ -65,9 +65,4 @@ WDI\_TLV\_密码\_密钥\_类型\_信息是一个 TLV，其中包含 OID 的密�
 </table>
 
  
-
- 
-
-
-
 

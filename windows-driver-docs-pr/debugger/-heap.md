@@ -14,12 +14,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 9e151c52e873472effaed6183b1947f598a0caf4
-ms.sourcegitcommit: f610410e1500f0b0a4ca008b52679688ab51033d
+ms.openlocfilehash: d9ed016d6550f9c8d8bf140788f5e2167b98debd
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/15/2020
-ms.locfileid: "88252873"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89207373"
 ---
 # <a name="heap"></a>!heap
 
@@ -430,7 +430,7 @@ Ext.dll Exts.dll</td>
 
 [示例12：使用页堆验证查找 Bug](example-12---using-page-heap-verification-to-find-a-bug.md)
 
-有关使用堆内存处理记录器的信息，请参阅 [示例11：启动专用跟踪会话](https://docs.microsoft.com/windows-hardware/drivers/devtest/example-11--starting-a-private-trace-session)
+有关使用堆内存处理记录器的信息，请参阅 [示例11：启动专用跟踪会话](../devtest/example-11--starting-a-private-trace-session.md)
 
 <a name="remarks"></a>备注
 -------

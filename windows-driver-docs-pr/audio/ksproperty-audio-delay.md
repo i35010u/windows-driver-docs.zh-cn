@@ -1,6 +1,6 @@
 ---
-title: KSPROPERTY\_音频\_延迟
-description: KSPROPERTY\_音频\_延迟属性指示延迟节点（KSNODETYPE\_延迟）引入指定通道的时间延迟。
+title: KSPROPERTY \_ 音频 \_ 延迟
+description: "\"KSPROPERTY \\_ 音频 \\_ 延迟\" 属性表示延迟节点 (KSNODETYPE \\_ 延迟) 引入指定通道的时间延迟。"
 ms.assetid: ac260b83-1d7c-49d7-b325-ea0f21646d39
 keywords:
 - KSPROPERTY_AUDIO_DELAY 音频设备
@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fbe571e03dddf41d261407484de98ea9ad353c6f
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: f6d852590c8faa823374034f2f5879597383eec1
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72831048"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89208989"
 ---
-# <a name="ksproperty_audio_delay"></a>KSPROPERTY\_音频\_延迟
+# <a name="ksproperty_audio_delay"></a>KSPROPERTY \_ 音频 \_ 延迟
 
 
-KSPROPERTY\_音频\_延迟属性指示延迟节点（[**KSNODETYPE\_延迟**](ksnodetype-delay.md)）引入指定通道的时间延迟。
+"KSPROPERTY \_ 音频 \_ 延迟" 属性表示延迟节点 ([**KSNODETYPE \_ 延迟**](ksnodetype-delay.md)) 引入指定通道的时间延迟。
 
 ## <span id="ddk_ksproperty_audio_delay_ks"></span><span id="DDK_KSPROPERTY_AUDIO_DELAY_KS"></span>
 
@@ -41,7 +41,7 @@ KSPROPERTY\_音频\_延迟属性指示延迟节点（[**KSNODETYPE\_延迟**](ks
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">“获取”</th>
+<th align="left">获取</th>
 <th align="left">设置</th>
 <th align="left">目标</th>
 <th align="left">属性描述符类型</th>
@@ -50,22 +50,22 @@ KSPROPERTY\_音频\_延迟属性指示延迟节点（[**KSNODETYPE\_延迟**](ks
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>“是”</p></td>
-<td align="left"><p>“是”</p></td>
-<td align="left"><p>Filter</p></td>
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksnodeproperty_audio_channel" data-raw-source="[&lt;strong&gt;KSNODEPROPERTY_AUDIO_CHANNEL&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksnodeproperty_audio_channel)"><strong>KSNODEPROPERTY_AUDIO_CHANNEL</strong></a></p></td>
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-kstime" data-raw-source="[&lt;strong&gt;KSTIME&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-kstime)"><strong>KSTIME</strong></a></p></td>
+<td align="left"><p>是</p></td>
+<td align="left"><p>是</p></td>
+<td align="left"><p>筛选器</p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksnodeproperty_audio_channel" data-raw-source="[&lt;strong&gt;KSNODEPROPERTY_AUDIO_CHANNEL&lt;/strong&gt;](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksnodeproperty_audio_channel)"><strong>KSNODEPROPERTY_AUDIO_CHANNEL</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-kstime" data-raw-source="[&lt;strong&gt;KSTIME&lt;/strong&gt;](/windows-hardware/drivers/ddi/ks/ns-ks-kstime)"><strong>KSTIME</strong></a></p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-属性值（操作数据）是 KSTIME 类型的结构，它指定了滞后时间。
+ (操作数据) 的属性值是 KSTIME 类型的结构，它指定了滞后时间。
 
 ### <a name="span-idreturn_valuespanspan-idreturn_valuespanspan-idreturn_valuespanreturn-value"></a><span id="Return_Value"></span><span id="return_value"></span><span id="RETURN_VALUE"></span>返回值
 
-KSPROPERTY\_音频\_延迟属性请求返回状态\_SUCCESS，指示已成功完成。 否则，请求将返回相应的错误状态代码。
+KSPROPERTY \_ 音频 \_ 延迟属性请求返回状态 " \_ 成功" 以指示它已成功完成。 否则，请求将返回相应的错误状态代码。
 
 <a name="requirements"></a>要求
 ------------
@@ -78,7 +78,7 @@ KSPROPERTY\_音频\_延迟属性请求返回状态\_SUCCESS，指示已成功完
 <tbody>
 <tr class="odd">
 <td align="left"><p>标头</p></td>
-<td align="left">Ksmedia （包括 Ksmedia）</td>
+<td align="left">Ksmedia (包含 Ksmedia) </td>
 </tr>
 </tbody>
 </table>
@@ -86,18 +86,11 @@ KSPROPERTY\_音频\_延迟属性请求返回状态\_SUCCESS，指示已成功完
 ## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
-[**KSNODEPROPERTY\_音频\_频道**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksnodeproperty_audio_channel)
+[**KSNODEPROPERTY \_ 音频 \_ 通道**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksnodeproperty_audio_channel)
 
-[**KSTIME**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-kstime)
+[**KSTIME**](/windows-hardware/drivers/ddi/ks/ns-ks-kstime)
 
-[**KSNODETYPE\_延迟**](ksnodetype-delay.md)
-
- 
+[**KSNODETYPE \_ 延迟**](ksnodetype-delay.md)
 
  
-
-
-
-
-
 

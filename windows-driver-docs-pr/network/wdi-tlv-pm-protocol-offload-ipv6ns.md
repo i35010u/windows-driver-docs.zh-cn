@@ -4,41 +4,41 @@ description: WDI_TLV_PM_PROTOCOL_OFFLOAD_IPv6NS 是包含 IPv6 NS 协议卸载�
 ms.assetid: 0385449B-82C6-44B4-BBD3-A708ADE54AC4
 ms.date: 07/18/2017
 keywords:
-- WDI_TLV_PM_PROTOCOL_OFFLOAD_IPv6NS 从 Windows Vista 开始的网络驱动程序
+- 从 Windows Vista 开始 WDI_TLV_PM_PROTOCOL_OFFLOAD_IPv6NS 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 31985e9d5806147395d08a4aaf29c37f1ae9985d
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 31c9dc50878ddedb463130a92240fa33eee9f341
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72838011"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89207765"
 ---
-# <a name="wdi_tlv_pm_protocol_offload_ipv6ns"></a>WDI\_TLV\_PM\_协议\_卸载\_IPv6NS
+# <a name="wdi_tlv_pm_protocol_offload_ipv6ns"></a>WDI \_ TLV \_ PM \_ 协议 \_ 卸载 \_ IPv6NS
 
 
-WDI\_TLV\_PM\_协议\_卸载\_IPv6NS 是包含 IPv6 NS 协议卸载参数的 TLV。
+WDI \_ tlv \_ PM \_ 协议 \_ 卸载 \_ IPv6NS 是包含 IPv6 NS 协议卸载参数的 tlv。
 
 ## <a name="tlv-type"></a>TLV 类型
 
 
 0x62
 
-## <a name="length"></a>长度
+## <a name="length"></a>Length
 
 
-所有包含的元素的大小的总和（以字节为单位）。
+Sum (所有包含的元素的大小) 。
 
 ## <a name="values"></a>值
 
 
-| 在任务栏的搜索框中键入                                              | 描述                                                                                                                                                                                                                                                                                                                                                                                                    |
+| 类型                                              | 说明                                                                                                                                                                                                                                                                                                                                                                                                    |
 |---------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | UINT32                                            | 指定协议卸载 ID。 这是操作系统提供的用于标识卸载协议的值。 在 OS 向下发送添加请求或完成对过量驱动程序的请求之前，操作系统会将 ProtocolOffloadId 设置为在网络适配器上的协议卸载之间唯一的值。                                                                                                    |
-| UINT8\[16\]                                       | 指定要与 NS 消息的 IPv6 标头中的 "源地址" 字段匹配的可选 IPv6 地址。 如果传入 NS 消息的源地址值与此 IPv6 地址相匹配，则当网络适配器处于低功耗状态时，它会发送邻居播发（NA）消息。 如果此值设置为零，则网络适配器应响应来自任何远程 IPv6 地址的 NS 消息。 |
-| UINT8\[16\]                                       | 指定请求的节点 IPv6 地址。                                                                                                                                                                                                                                                                                                                                                                     |
-| UINT8\[16\]                                       | 指定一个或两个 IPv6 地址以匹配传入 NS 消息的目标地址字段。 如果只有一个地址，则该地址存储在目标地址1中，目标地址2用零填充。 如果其中一个地址与传入 NS 消息的 "目标地址" 字段相匹配，则该网络适配器会在响应中发送一条 NA 消息。                                               |
-| UINT8\[16\]                                       | 请参阅目标地址1的说明。                                                                                                                                                                                                                                                                                                                                                                           |
-| [**WDI\_MAC\_地址**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dot11wdi/ns-dot11wdi-_wdi_mac_address) | 指定网络适配器必须用于其生成的 NA 消息的 "目标链路层地址（TLLA）" 字段的 MAC 地址。 但是，它应该使用网络适配器的当前 MAC 地址作为 MAC 标头中的源地址。                                                                                                                                                 |
+| UINT8 \[ 16\]                                       | 指定要与 NS 消息的 IPv6 标头中的 "源地址" 字段匹配的可选 IPv6 地址。 如果传入的 NS 消息具有与此 IPv6 地址相匹配的源地址值，网络适配器将在处于低功耗状态 (NA) 消息时发送邻居播发。 如果此值设置为零，则网络适配器应响应来自任何远程 IPv6 地址的 NS 消息。 |
+| UINT8 \[ 16\]                                       | 指定请求的节点 IPv6 地址。                                                                                                                                                                                                                                                                                                                                                                     |
+| UINT8 \[ 16\]                                       | 指定一个或两个 IPv6 地址以匹配传入 NS 消息的目标地址字段。 如果只有一个地址，则该地址存储在目标地址1中，目标地址2用零填充。 如果其中一个地址与传入 NS 消息的 "目标地址" 字段相匹配，则该网络适配器会在响应中发送一条 NA 消息。                                               |
+| UINT8 \[ 16\]                                       | 请参阅目标地址1的说明。                                                                                                                                                                                                                                                                                                                                                                           |
+| [**WDI \_ MAC \_ 地址**](/windows-hardware/drivers/ddi/dot11wdi/ns-dot11wdi-_wdi_mac_address) | 指定网络适配器必须用于其生成的 NA 消息 (TLLA) "字段的目标链路层地址的 MAC 地址。 但是，它应该使用网络适配器的当前 MAC 地址作为 MAC 标头中的源地址。                                                                                                                                                 |
 
  
 
@@ -53,7 +53,7 @@ WDI\_TLV\_PM\_协议\_卸载\_IPv6NS 是包含 IPv6 NS 协议卸载参数的 TLV
 <tbody>
 <tr class="odd">
 <td><p>最低受支持的客户端</p></td>
-<td><p>Windows 10</p></td>
+<td><p>Windows 10</p></td>
 </tr>
 <tr class="even">
 <td><p>最低受支持的服务器</p></td>
@@ -67,9 +67,4 @@ WDI\_TLV\_PM\_协议\_卸载\_IPv6NS 是包含 IPv6 NS 协议卸载参数的 TLV
 </table>
 
  
-
- 
-
-
-
 

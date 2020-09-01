@@ -1,6 +1,6 @@
 ---
 title: usbkd.usbhcdlistlogs
-description: Usbkd. usbhcdlistlogs 命令显示与 USB 端口驱动程序（Usbport）和调试日志关联的所有功能设备对象（FDOs）的列表。
+description: 'Usbkd. usbhcdlistlogs 命令显示与 USB 端口驱动程序关联的所有功能设备对象 (FDOs) 的列表 ( # A0) 和调试日志。'
 ms.assetid: C86646D3-7B39-4C8C-9FDA-FD07AA7A880A
 keywords:
 - usbkd usbhcdlistlogs Windows 调试
@@ -12,17 +12,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 9b9d5aea4ae0528ed5683d95d3c2d95d865c16fe
-ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
+ms.openlocfilehash: c53aa2ff1710df7e78c1693de1dd843bc734f8fe
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84534012"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89207997"
 ---
 # <a name="usbkdusbhcdlistlogs"></a>!usbkd.usbhcdlistlogs
 
 
-**！ Usbkd. usbhcdlistlogs**命令显示与 USB 端口驱动程序（Usbport）关联的所有功能设备对象（FDOs）的列表。 该命令还显示所有 EHCI 主机控制器的完整调试日志。
+**！ Usbkd usbhcdlistlogs**命令显示与 USB 端口驱动程序关联的所有功能设备对象 (FDOs) 的列表 ( # A0) 。 该命令还显示所有 EHCI 主机控制器的完整调试日志。
 
 ```dbgcmd
 !usbkd.usbhcdlistlogs
@@ -31,12 +31,12 @@ ms.locfileid: "84534012"
 ## <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 
-Usbkd
+Usbkd.dll
 
 <a name="examples"></a>示例
 --------
 
-此示例显示 **！ usbhcdlistlogs**命令输出的一部分。
+此示例显示 **！ usbhcdlistlogs** 命令输出的一部分。
 
 ```dbgcmd
 0: kd> !usbkd.usbhcdlistlogs
@@ -76,14 +76,7 @@ LOG@: ffffe00001ca11b8
 
 [USB 2.0 调试器扩展](usb-2-0-extensions.md)
 
-[通用串行总线（USB）驱动程序](https://docs.microsoft.com/windows-hardware/drivers/usbcon/)
+[ (USB) 驱动程序的通用串行总线](../usbcon/index.md)
 
  
-
- 
-
-
-
-
-
 

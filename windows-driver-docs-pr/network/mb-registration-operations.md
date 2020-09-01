@@ -4,23 +4,17 @@ description: MB 注册操作
 ms.assetid: b894dab6-5e38-43f9-adbd-376a25346029
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2edf7b949efa65186fd1469f9f4ae7a7f7dd090d
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 459ff53d628aca1ffed795ba821f496224aaef0d
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67374024"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89207279"
 ---
 # <a name="mb-registration-operations"></a>MB 注册操作
 
 
-微型端口驱动程序使用[OID\_WWAN\_注册\_状态](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wwan-register-state)若要处理两者*查询*并*设置*注册操作。 例如，这些操作可能要使用网络提供程序注册、 查询与提供程序的网络设备的注册状态和注册状态更改时发送通知。
+微型端口驱动程序使用 [OID \_ WWAN \_ 注册 \_ 状态](./oid-wwan-register-state.md) 处理 *查询* 和 *设置* 注册操作。 例如，这些操作可能是注册到网络提供商、使用提供商的网络查询设备的注册状态，以及在注册状态更改时发送通知。
 
  
-
- 
-
-
-
-
 

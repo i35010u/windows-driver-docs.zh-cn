@@ -4,84 +4,79 @@ description: 开发 WaveRT 微型端口驱动程序
 ms.assetid: d2d37c9e-fbfb-4bf3-bd7d-c8e19070a3f1
 ms.date: 07/03/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 69a306e135dbb22291e22f162f5bdde79085403f
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 20d23e086fe4d54fb8b14603a172b6098e82d09c
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67359071"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89208149"
 ---
 # <a name="developing-a-wavert-miniport-driver"></a>开发 WaveRT 微型端口驱动程序
 
 
-本主题提供的软件和您决定开发您自己 WaveRT 微型端口驱动程序时必须考虑的与硬件相关的点。
+本主题介绍在决定开发自己的 WaveRT 微型端口驱动程序时必须考虑的软件和硬件相关的要点。
 
-Microsoft 已开发出一套硬件设计准则[通用音频体系结构 (UAA)](https://download.microsoft.com/download/9/c/5/9c5b2167-8017-4bae-9fde-d599bac8184a/UAA_Guidelines.doc)和指导原则合并建议 WaveRT 音频设备的功能。 UAA 准则严格基于由 Intel 开发的高清晰度 (HD) 音频规范。
+Microsoft 制定了一套适用于 [通用音频体系结构 ](https://download.microsoft.com/download/9/c/5/9c5b2167-8017-4bae-9fde-d599bac8184a/UAA_Guidelines.doc) 的硬件设计准则 (UAA) ，准则结合了我们建议用于 WaveRT 音频设备的功能。 UAA 准则与 Intel 开发 (HD) 音频规范的高清晰度密切相关。
 
-Windows Vista 和更高版本的 Windows 操作系统提供的 UAA 兼容的音频设备 HD 音频驱动程序。 因此如果 UAA 符合您的音频设备，你不必开发自己 WaveRT 微型端口驱动程序。 但对于某些专有，非 UAA 硬件功能的音频设备，必须开发自己的 WaveRT 微型端口驱动程序以支持的专有功能。
+Windows Vista 和更高版本的 Windows 操作系统为 UAA 兼容音频设备提供了 HD 音频驱动程序。 如果音频设备符合 UAA，则不必开发自己的 WaveRT 微型端口驱动程序。 但对于具有一些专有的非 UAA 硬件功能的音频设备，必须开发自己的 WaveRT 微型端口驱动程序来支持专用功能。
 
-为了帮助您开发自己 WaveRT 微型端口驱动程序，我们建议首先查看示例适配器驱动程序，然后查看 WaveRT 友好 UAA 功能。
+为了帮助你开发自己的 WaveRT 微型端口驱动程序，我们建议你先查看示例适配器驱动程序，然后查看 WaveRT 友好的 UAA 功能。
 
-### <a name="span-idthesampleadapterdriverspanspan-idthesampleadapterdriverspanthe-sample-adapter-driver"></a><span id="the_sample_adapter_driver"></span><span id="THE_SAMPLE_ADAPTER_DRIVER"></span>示例适配器驱动程序
+### <a name="span-idthe_sample_adapter_driverspanspan-idthe_sample_adapter_driverspanthe-sample-adapter-driver"></a><span id="the_sample_adapter_driver"></span><span id="THE_SAMPLE_ADAPTER_DRIVER"></span>示例适配器驱动程序
 
-有关示例驱动程序的信息，请参阅[示例音频驱动程序](sample-audio-drivers.md)。
+有关示例驱动程序的信息，请参阅 [示例音频驱动程序](sample-audio-drivers.md)。
 
-### <a name="span-idthewavertfriendlyfeaturesspanspan-idthewavertfriendlyfeaturesspanthe-wavert-friendly-features"></a><span id="the_wavert_friendly_features"></span><span id="THE_WAVERT_FRIENDLY_FEATURES"></span>WaveRT 友好的特性
+### <a name="span-idthe_wavert_friendly_featuresspanspan-idthe_wavert_friendly_featuresspanthe-wavert-friendly-features"></a><span id="the_wavert_friendly_features"></span><span id="THE_WAVERT_FRIENDLY_FEATURES"></span>WaveRT 友好的功能
 
-查看示例适配器驱动程序并开始设计 WaveRT 微型端口驱动程序后，您必须验证它支持以下软件和硬件功能。 因此，然后生成该微型端口驱动程序将成为与系统提供 WaveRT 端口驱动程序和 Windows Vista 的操作模式兼容[音频引擎](exploring-the-windows-vista-audio-engine.md)。
+查看示例适配器驱动程序并开始设计 WaveRT 微型端口驱动程序之后，必须验证它是否支持以下软件和硬件功能。 因此，生成的微型端口驱动程序会与系统提供的 WaveRT 端口驱动程序和 Windows Vista [音频引擎](exploring-the-windows-vista-audio-engine.md)的操作模式兼容。
 
--   **低的硬件的滞后时间。** WaveRT 微型端口驱动程序必须提供的全部功能的实现[ **IMiniportWaveRTStream::GetHWLatency** ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff536747(v=vs.85))方法。 此方法是可支持所需[ **KSPROPERTY\_RTAUDIO\_HWLATENCY** ](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-rtaudio-hwlatency)属性。
+-   **低硬件延迟。** WaveRT 微型端口驱动程序必须提供 [**IMiniportWaveRTStream：： GetHWLatency**](/previous-versions/windows/hardware/drivers/ff536747(v=vs.85)) 方法的完全功能实现。 此方法对于支持 [**KSPROPERTY \_ RTAUDIO \_ HWLATENCY**](./ksproperty-rtaudio-hwlatency.md) 属性是必需的。
 
--   **FIFO 中断。** WaveRT 微型端口驱动程序必须自动生成中断 FIFO 溢出和不足何时发生。 音频设备和驱动程序软件上运行测试时，此功能允许音频流中的故障检测。 如果没有硬件支持 （换而言之，FIFO 中断） 不方便、 可靠存在方法用于获取故障的信息。
+-   **FIFO 中断。** WaveRT 微型端口驱动程序必须在 FIFO 溢出和不足发生时自动生成中断。 当你在音频设备和驱动程序软件上运行测试时，此功能允许检测音频流中的故障。 如果没有硬件支持 (换言之，FIFO 中断) ，不存在用于获取问题信息的便利和可靠方法。
 
--   **散播-聚集 DMA 和缓冲区循环。** 如果您的微型端口驱动程序支持具有散播-聚集的功能的 DMA 控制器，它允许数据移入和移出循环缓冲区而无需干预从微型端口驱动程序。
+-   **散播-聚集 DMA 和缓冲区循环。** 当微型端口驱动程序支持具有分散收集功能的 DMA 控制器时，它允许将数据移入和移出循环缓冲，而无需通过微型端口驱动程序进行干预。
 
-    时微型端口驱动程序支持 DMA 控制器可以执行缓冲区循环，DMA 控制器可以自动将回绕到的缓冲区开始后到达具有读取缓冲区的末尾或写操作。 它可以从您的微型端口驱动程序执行环绕而无需干预。
+    当微型端口驱动程序支持可执行缓冲区循环的 DMA 控制器时，DMA 控制器可以在到达缓冲区末尾后，通过读取或写入操作自动换行到缓冲区的开头。 它可以执行环绕，无需通过微型端口驱动程序进行干预。
 
-    请注意 WaveRT 端口驱动程序支持都不能在执行散播-聚集传输或自动缓冲区循环的现有硬件设计。
+    请注意，WaveRT 端口驱动程序支持无法执行分散收集传输或自动缓冲区循环的现有硬件设计。
 
-    如果音频设备缺少散播-聚集功能，WaveRT 微型端口驱动程序必须首先分配循环缓冲区在内存中物理上连续的页面组成。 微型端口驱动程序然后使用 helper 函数在 WaveRT 端口驱动程序中执行数据传输和自动缓冲区循环。 缺点是系统的，随着越来越多地形成碎片非分页的内存池，分配的连续的物理内存的大块的请求是系统的更有可能会失败。 散播-聚集功能的设备不受内存碎片。
+    如果音频设备缺少分散收集功能，则 WaveRT 微型端口驱动程序必须首先分配由内存中物理上连续的页组成的循环缓冲区。 然后，微型端口驱动程序使用 WaveRT 端口驱动程序中的 helper 函数来执行数据传输和自动缓冲区循环。 缺点是，由于系统的非分页内存池变得越来越多，请求分配大的连续物理内存块更有可能失败。 具有分散收集功能的设备不受内存碎片影响。
 
-    DMA 通道达到循环缓冲区的末尾时，将音频设备不能自动执行缓冲区循环，如果 WaveRT 微型端口驱动程序必须介入并配置通道开始的缓冲区开始处的数据传输。
+    如果当 DMA 通道到达循环缓冲的末尾时，音频设备无法自动执行缓冲区循环，则 WaveRT 微型端口驱动程序必须干预并配置通道，以开始在缓冲区开头传输数据。
 
--   **位置注册。** 新设计的硬件实现程序应包括每个 DMA 通道位置注册。 位置注册指示当前缓冲区的字节偏移量从一开始为循环缓冲区的位置。 读取位置注册为零的缓冲区开始处。 当位置注册达到循环缓冲区的末尾时，它会自动将绕回到缓冲区 （重置为零） 的开头和仍将继续作为缓冲区位置前移的递增。
+-   **位置寄存器。** 对于新设计，硬件实施人员应为每个 DMA 通道包含位置寄存器。 位置寄存器将当前缓冲区位置指示为相对于循环缓冲区开始的字节偏移量。 位置寄存器读取在缓冲区的开头处为零。 当位置寄存器到达循环缓冲区的末尾时，它会自动换行到缓冲区的开头 (重置为零) 并随着缓冲区位置的向前继续递增。
 
-    位置寄存器可以映射到的虚拟内存，以便客户端可以直接读取寄存器。
+    位置寄存器可以映射到虚拟内存，以便客户端可以直接读取寄存器。
 
-    理想情况下，位置寄存器应指示了通过数字模拟和模拟到数字转换器 （Dac 和 ADCs） 的音频设备的当前移动的示例的缓冲区位置。
+    理想情况下，位置寄存器应指示当前通过数字到模拟和模拟到数字转换器进行移动的样本的缓冲区位置 (音频设备的 Dac 和 ADCs) 。
 
-    但是，此信息可能不能直接从数字和模拟功能划分为单独的总线控制器和编码器/解码器 （编码解码器） 的芯片音频芯片集。 通常情况下，位置寄存器位于总线控制器芯片，并且每个注册指示控制器是写入还是读取编解码器的音频数据的位置。
+    但是，此信息可能不能直接从音频芯片提供，它将数字和模拟功能分割为单独的总线控制器和编码器/解码器 (编解码器) 芯片。 通常，位置寄存器位于总线控制器芯片中，每个寄存器指示控制器写入或读取编解码器的音频数据的位置。
 
-    从这种类型的位置获取读取后注册、 客户端可以估计的示例通过 Dac 或 ADCs 通过增加或减少通过编解码器的延迟要移动的当前位置。 客户端获取从的编解码器延迟**KSPROPERTY\_RTAUDIO\_HWLATENCY**属性请求。 出于此原因，WaveRT 微型端口驱动程序必须准确地报告的编解码器延迟时端口驱动程序调用**IMiniportWaveRTStream::GetHardwareLatency**方法以这种类型的属性请求的响应。
+    获取此类型的位置寄存器的读取后，客户端可以通过对编解码器添加或减去延迟来估算正在通过 Dac 或 ADCs 移动的样本的当前位置。 客户端从 **KSPROPERTY \_ RTAUDIO \_ HWLATENCY** 属性请求中获取编解码器延迟。 出于此原因，当端口驱动程序调用 **IMiniportWaveRTStream：： GetHardwareLatency** 方法以响应此类型的属性请求时，WaveRT 微型端口驱动程序必须准确地报告编解码器延迟。
 
-    请注意 WaveRT 端口驱动程序支持现有的硬件设计缺少位置寄存器的。 WaveRT 微型端口驱动程序必须具有此限制的设备，故障对调用[ **IMiniportWaveRTStream::GetPositionRegister** ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff536752(v=vs.85))方法通过返回**状态\_不\_支持**错误代码，这会强制端口驱动程序故障[ **KSPROPERTY\_RTAUDIO\_POSITIONREGISTER** ](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-rtaudio-positionregister)属性的请求。 在这种情况下，客户端必须获取通过当前位置[ **KSPROPERTY\_音频\_位置**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-audio-position)属性，这会导致用户模式之间的转换的开销和内核模式下，每个位置读取。
+    请注意，WaveRT 端口驱动程序支持缺少位置寄存器的现有硬件设计。 对于具有此限制的设备，WaveRT 微型端口驱动程序必须通过返回 " ** \_ 不 \_ 受支持的状态**" 错误代码来调用[**IMiniportWaveRTStream：： GetPositionRegister**](/previous-versions/windows/hardware/drivers/ff536752(v=vs.85))方法，这会强制端口驱动程序对[**KSPROPERTY \_ RTAUDIO \_ POSITIONREGISTER**](./ksproperty-rtaudio-positionregister.md)属性请求失败。 在这种情况下，客户端必须通过 [**KSPROPERTY \_ 音频 \_ 位置**](./ksproperty-audio-position.md) 属性获取当前位置，这会在每次读取位置导致用户模式和内核模式间转换的开销。
 
--   **时钟寄存器。** 时钟注册是可选的但有用的硬件功能 WaveRT 兼容音频设备。 音频应用程序可以使用时钟注册同步在两个或多个独立音频设备具有单独的和不同步硬件时钟的音频流。 而无需时钟寄存器中，应用程序是无法检测和补偿之间的硬件时钟偏差。
+-   **时钟寄存器。** 时钟寄存器是 WaveRT 兼容音频设备的可选但有用的硬件功能。 音频应用程序可以使用时钟寄存器在两个或更多独立音频设备中同步音频流，这些设备具有不同且不同步的硬件时钟。 如果没有时钟寄存器，应用程序将无法检测硬件时钟之间的偏差并对其进行补偿。
 
-    音频硬件使用时钟通过数字模拟或模拟到数字转换器的音频数据的示例时钟应派生自递增的时钟寄存器的内部时钟。 时钟寄存器是异步示例时钟方面的速率递增属于同步不使用，不应公开。
+    音频硬件用于通过数字到模拟或模拟到数字转换器来时钟音频数据的示例时钟应派生自时钟寄存器的内部时钟。 以异步方式对样本时钟进行增量递增的时钟寄存器不用于同步，不应公开。
 
-    类似于位置寄存器，时钟注册可以映射到的虚拟内存，以便客户端可以直接读取注册。
+    类似于位置寄存器，时钟寄存器可以映射到虚拟内存，以便客户端可以直接读取注册。
 
--   **音频处理对象。** 设计良好的 WaveRT 微型端口驱动程序必须永远不会涉及将音频设备循环缓冲区中的音频数据。 硬件应由进行设计，以便直接之间的客户端和音频硬件而无需干预的音频数据流动的音频驱动程序软件。 但是，Windows Vista 支持两种类型的执行软件处理的音频数据，而不违反此规则的音频处理对象 (Apo):
+-   **音频处理对象。** 设计良好的 WaveRT 微型端口驱动程序决不能触摸音频设备的循环缓冲区中的音频数据。 应设计硬件，使音频数据直接在客户端和音频硬件之间流动，无需通过音频驱动程序软件进行干预。 但是，Windows Vista 支持两种类型的音频处理对象， (在不违反此规则的情况下执行软件处理音频数据的) ：
 
-    -   本地效果 (LFX) a p o s
+    -   LFX)  (的本地效果
 
-        LFX 不执行并不特定于特定的音频设备的通用音频处理功能 （例如，均衡）。 LFX APO 流添加到全局组合之前处理从应用程序的音频流。
+        LFX 是执行一般音频处理功能 (例如，不特定于特定音频设备的均衡) 。 在将流添加到全局混合之前，LFX APO 会处理应用程序中的音频流。
 
-    -   全局效果 (GFX) a p o s
+    -   GFX)  (全局效果
 
-        GFX 不执行特定于硬件的处理的音频流。 GFX APO 绑定到特定的音频设备，通过安装设备的 INF 文件。 GFX APO 的效果是全局的因为它会影响所播放的音频设备的全局组合。
+        GFX 是对音频流执行特定于硬件的处理。 GFX APO 通过安装设备的 INF 文件绑定到特定音频设备。 GFX APO 的作用是全局性的，因为它会影响通过音频设备播放的全局混合。
     
-    是用户模式系统组件，它负责从所有音频的应用程序的音频流混合为音频引擎执行全局混合使用。 通常情况下，此音频引擎是直接与通过循环缓冲区 WaveRT 音频设备交换数据的客户端。
+    全局混合由音频引擎执行，音频引擎是负责混合来自所有音频应用程序的音频流的用户模式系统组件。 通常，音频引擎是通过循环缓冲区直接与 WaveRT 音频设备交换数据的客户端。
 
-    当用户启用 LFX APO 时，音频系统将 APO 插入到其中一个输入流到音频引擎。 当用户启用 GFX APO 时，系统会将该 APO 插入到输出流从音频引擎。 有关 LFX 和 GFX a p o s 和音频引擎的详细信息，请参阅[探究 Windows Vista 音频引擎](exploring-the-windows-vista-audio-engine.md)主题。
+    当用户启用 LFX APO 时，音频系统会将 APO 插入到音频引擎的一个输入流中。 当用户启用 GFX APO 时，系统会将该 APO 从音频引擎插入到输出流中。 有关 LFX 和 GFX 的详细信息，请参阅 [探索 Windows Vista 音频引擎](exploring-the-windows-vista-audio-engine.md) 主题。
 
-    不是只适用于共享模式音频流可用。 排他模式流的应用程序直接与 WaveRT 硬件设备的整个循环缓冲区，交换数据和任何其他组件可以触摸的缓冲区中的数据。
-
- 
+    仅可用于共享模式的音频流。 对于独占模式流，应用程序通过循环缓冲区直接与 WaveRT 硬件设备交换数据，而其他组件不能触摸缓冲中的数据。
 
  
-
-
-
 

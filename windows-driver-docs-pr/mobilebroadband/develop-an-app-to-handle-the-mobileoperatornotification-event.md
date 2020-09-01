@@ -4,67 +4,67 @@ description: 开发用于处理 MobileOperatorNotification 事件的应用
 ms.assetid: 3c483888-8ec4-4270-af3e-ef1efc995171
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: da84f8dbc982eb1a011e75e16c1a1867fa969b7a
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 9aeda344d81e23f84dfa106a47908e22d34a0cd1
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67381507"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89207631"
 ---
 # <a name="develop-an-app-to-handle-the-mobileoperatornotification-event"></a>开发用于处理 MobileOperatorNotification 事件的应用
 
 
-本主题说明如何开发移动宽带应用程序处理[MobileOperatorNotification](mobile-operator-notification-event-technical-details.md)事件。
+本主题介绍如何开发用于处理 [MobileOperatorNotification](mobile-operator-notification-event-technical-details.md) 事件的移动宽带应用。
 
--   [最佳做法](#bp)
+-   [最佳实践](#bp)
 
--   [步骤 1：后台任务协定声明](#stepone)
+-   [步骤1：后台任务协定声明](#stepone)
 
--   [步骤 2：后台任务处理程序](#steptwo)
+-   [步骤2：后台任务处理程序](#steptwo)
 
--   [步骤 3：处理激活事件](#stepthree)
+-   [步骤3：处理激活事件](#stepthree)
 
--   [步骤 4：处理后台任务完成处理程序](#stepfour)
+-   [步骤4：处理后台任务完成处理程序](#stepfour)
 
--   [疑难解答](#ts)
+-   [故障排除](#ts)
 
 -   [示例 backgroundtask.js 文件](#samp)
 
 ## <a name="span-idbpspanspan-idbpspanbest-practices"></a><span id="bp"></span><span id="BP"></span>最佳做法
 
 
-对于后台事件处理，应使用以下最佳实践：
+对于后台事件处理，应使用以下最佳做法：
 
--   不注册的后台事件不能对其执行操作。 处理这些事件将不必要地占用应用配额。
+-   不要注册无法执行操作的后台事件。 处理这些事件将不必要地使用应用配额。
 
--   不要在后台事件收到执行大量的处理。
+-   请勿在收到后台事件时执行大量处理。
 
--   请考虑将延迟到下一次处理应用程序启动。
+-   考虑将处理推迟到下一次启动应用程序时。
 
--   请考虑显示 toast 通知和更新磁贴对背景事件作出响应。 移动宽带应用可以处理后台事件有效负载。
+-   考虑显示 toast 通知并更新磁贴以响应后台事件。 移动宽带应用可以处理后台事件负载。
 
-后台任务的详细信息，请参阅[后台任务简介](https://go.microsoft.com/fwlink/p/?linkid=313924)。
+有关后台任务的详细信息，请参阅 [后台任务简介](https://go.microsoft.com/fwlink/p/?linkid=313924)。
 
-## <a name="span-idsteponespanspan-idsteponespanstep-1-background-task-contract-declaration"></a><span id="stepone"></span><span id="STEPONE"></span>步骤 1:后台任务协定声明
+## <a name="span-idsteponespanspan-idsteponespanstep-1-background-task-contract-declaration"></a><span id="stepone"></span><span id="STEPONE"></span>步骤1：后台任务协定声明
 
 
-为识别由移动宽带应用提供的后台任务体验的 Windows，应用必须声明提供对系统功能的扩展。
+为了使 Windows 能够识别移动宽带应用提供的后台任务体验，应用程序必须声明它提供的是系统功能的扩展。
 
-若要在 Visual Studio 项目的 package.appxmanifest 文件中进行声明，执行以下步骤：
+若要在 Visual Studio 项目的 appxmanifest.xml 文件中进行声明，请执行以下步骤：
 
-**若要声明的后台任务协定**
+**声明后台任务协定**
 
-1.  在中**解决方案资源管理器**，双击你的项目的 package.appxmanifest 文件。
+1.  在 **解决方案资源管理器**中，双击项目的 appxmanifest.xml 文件。
 
-2.  上**声明**选项卡上，从**可用声明**，选择**后台任务**，然后单击**添加**。
+2.  在 " **声明** " 选项卡上的 " **可用声明**" 中，选择 " **后台任务** "，然后单击 " **添加**"。
 
-3.  下**属性**标题下方，输入以下应用信息：
+3.  在 " **属性** " 标题下，输入以下应用信息：
 
-    -   在中**起始页**框下**应用设置**，为移动宽带应用使用 JavaScript 和 HTML，输入处理的应用中的后台任务的文件名称 (例如， **backgroundtask.js**)。
+    -   在 "**应用设置**" 下的 "**起始页**" 框中，对于使用 JavaScript 和 HTML 的移动宽带应用，请输入用于处理应用中的后台任务的文件名 (例如**backgroundtask.js**) 。
 
-    -   下**支持的任务类型**标题下方，单击**系统事件**复选框。
+    -   在 " **支持的任务类型** " 标题下，单击 " **系统事件** " 复选框。
 
-如果操作无误，您应类似于以下的扩展元素 package.appxmanifest 文件中。
+如果正确完成此操作，则应在 appxmanifest.xml 文件中包含如下所示的扩展元素。
 
 ``` syntax
 <Extension Category="windows.backgroundTasks" StartPage="backgroundtask.js">
@@ -74,14 +74,14 @@ ms.locfileid: "67381507"
 </Extension>
 ```
 
-## <a name="span-idsteptwospanspan-idsteptwospanstep-2-background-task-handler"></a><span id="steptwo"></span><span id="STEPTWO"></span>步骤 2:后台任务处理程序
+## <a name="span-idsteptwospanspan-idsteptwospanstep-2-background-task-handler"></a><span id="steptwo"></span><span id="STEPTWO"></span>步骤2：后台任务处理程序
 
 
-如果您的应用程序提供移动运营商通知，声明中，它必须提供后台任务激活的处理程序。 该处理程序将获得移动运营商网络帐户 ID 和事件数据从[ **Windows.Networking.NetworkOperators.NetworkOperatorNotificationEventDetails**](https://docs.microsoft.com/uwp/api/Windows.Networking.NetworkOperators.NetworkOperatorNotificationEventDetails)。
+如果你的应用程序提供移动运营商通知声明，则它必须为后台任务激活提供处理程序。 处理程序将从 [**windows.networking.networkoperators**](/uwp/api/Windows.Networking.NetworkOperators.NetworkOperatorNotificationEventDetails)中获取移动运营商网络帐户 ID 和事件数据。
 
-由于唯一支持的后台任务的 UI **Toast**，后台任务处理程序可以显示 Toast 或保存[ **NetworkOperatorNotificationEventDetails** ](https://docs.microsoft.com/uwp/api/Windows.Networking.NetworkOperators.NetworkOperatorNotificationEventDetails)到本地存储。
+由于后台任务支持的唯一 UI 是 **toast**，因此后台任务处理程序可以显示 toast 或将 [**NetworkOperatorNotificationEventDetails**](/uwp/api/Windows.Networking.NetworkOperators.NetworkOperatorNotificationEventDetails) 保存到本地存储中。
 
-下面的代码示例演示了专为运行时收到新管理 SMS 通知的后台任务。
+下面的代码示例演示了一个设计为在收到新的管理短信通知时运行的后台任务。
 
 **C#**
 
@@ -205,23 +205,23 @@ close();
     }
 ```
 
-### <a name="span-idshowtileandtoastnotificationsspanspan-idshowtileandtoastnotificationsspanspan-idshowtileandtoastnotificationsspanshow-tile-and-toast-notifications"></a><span id="Show_tile_and_toast_notifications"></span><span id="show_tile_and_toast_notifications"></span><span id="SHOW_TILE_AND_TOAST_NOTIFICATIONS"></span>显示磁贴和 toast 通知
+### <a name="span-idshow_tile_and_toast_notificationsspanspan-idshow_tile_and_toast_notificationsspanspan-idshow_tile_and_toast_notificationsspanshow-tile-and-toast-notifications"></a><span id="Show_tile_and_toast_notifications"></span><span id="show_tile_and_toast_notifications"></span><span id="SHOW_TILE_AND_TOAST_NOTIFICATIONS"></span>显示磁贴和 toast 通知
 
-我们建议你显示这两个 toast 并在你的移动宽带应用磁贴通知，因为用户可能会遗漏由于暂时性本质的 toast 通知。 适用于 toast 通知和磁贴更新体验的设计指南，请参阅[设计用户体验的移动宽带应用](designing-the-user-experience-of-a-mobile-broadband-app.md)。
+建议你在移动宽带应用中显示 toast 和磁贴通知，因为用户可能会因为其暂时性性质而错过 toast 通知。 有关 toast 通知和磁贴更新体验设计指南，请参阅 [设计移动宽带应用的用户体验](designing-the-user-experience-of-a-mobile-broadband-app.md)。
 
-**若要启用的 toast 通知**
+**启用 toast 通知**
 
-1.  在中**解决方案资源管理器**，双击你的项目的 package.appxmanifest 文件。
+1.  在 **解决方案资源管理器**中，双击项目的 appxmanifest.xml 文件。
 
-2.  上**应用程序 UI**选项卡上，在**通知**标题时，设置**支持 toast 通知**到**是**。
+2.  在 " **应用程序 UI** " 选项卡的 " **通知** " 标题下，将 " **支持 Toast** " 设置为 **"是"**。
 
-如果操作无误，您应类似于以下的扩展元素 package.appxmanifest 文件中。
+如果正确完成此操作，则应在 appxmanifest.xml 文件中包含如下所示的扩展元素。
 
 ``` syntax
 <VisualElements … ToastCapable="true"… />
 ```
 
-下面的代码演示如何在后台任务句柄中显示一条 toast 通知：
+下面的代码演示如何在后台任务句柄中显示 toast 通知：
 
 **JavaScript**
 
@@ -243,9 +243,9 @@ function showToast(title, body) {
     }
 ```
 
-### <a name="span-idgetsmstextmessagespanspan-idgetsmstextmessagespanspan-idgetsmstextmessagespanget-sms-text-message"></a><span id="Get_SMS_text_message"></span><span id="get_sms_text_message"></span><span id="GET_SMS_TEXT_MESSAGE"></span>获取短信
+### <a name="span-idget_sms_text_messagespanspan-idget_sms_text_messagespanspan-idget_sms_text_messagespanget-sms-text-message"></a><span id="Get_SMS_text_message"></span><span id="get_sms_text_message"></span><span id="GET_SMS_TEXT_MESSAGE"></span>获取短信消息
 
-如果由传入的 SMS 消息触发后台任务，后台任务详细信息将在其有效负载中附带的 SMS 对象。
+如果后台任务是由传入 SMS 消息触发的，则后台任务详细信息会在其负载中携带 SMS 对象。
 
 **JavaScript**
 
@@ -273,9 +273,9 @@ function showToast(title, body) {
         }
 ```
 
-### <a name="span-iduselocalstoragespanspan-iduselocalstoragespanspan-iduselocalstoragespanuse-local-storage"></a><span id="Use_local_storage"></span><span id="use_local_storage"></span><span id="USE_LOCAL_STORAGE"></span>使用本地存储
+### <a name="span-iduse_local_storagespanspan-iduse_local_storagespanspan-iduse_local_storagespanuse-local-storage"></a><span id="Use_local_storage"></span><span id="use_local_storage"></span><span id="USE_LOCAL_STORAGE"></span>使用本地存储
 
-后台任务可以使用本地存储来保存从后台事件中，获取消息，以便应用可以使用该信息更高版本。
+后台任务可以使用本地存储来保存从后台事件获取的消息，使应用可以在以后使用该信息。
 
 **JavaScript**
 
@@ -297,7 +297,7 @@ function showToast(title, body) {
     settings.values[keyMessage] = details.message;
 ```
 
-下面的代码演示如何检索存储的应用程序中的后台任务处理程序的消息：
+下面的代码演示如何检索应用程序中后台任务处理程序存储的消息：
 
 **JavaScript**
 
@@ -307,12 +307,12 @@ var settings = Windows.Storage.ApplicationData.current.localSettings;
     var operatorMessage = settings.values[keyMessage];
 ```
 
-## <a name="span-idstepthreespanspan-idstepthreespanstep-3-handle-the-activation-event"></a><span id="stepthree"></span><span id="STEPTHREE"></span>步骤 3:处理激活事件
+## <a name="span-idstepthreespanspan-idstepthreespanstep-3-handle-the-activation-event"></a><span id="stepthree"></span><span id="STEPTHREE"></span>步骤3：处理激活事件
 
 
-如果 toast 设置参数，它将被传递到应用程序通过**detail.arguments**。
+如果 toast 设置了参数，它将通过 **详细信息**传递给应用。
 
-在 JavaScript 中或C#，则处理[ **WinJS.Application.onactivated** ](https://docs.microsoft.com/previous-versions/windows/apps/br212679(v=win.10))事件，然后检查传递给事件处理程序的事件参数。 从 toast 激活传递事件参数的类型[ **Windows.UI.WebUI.WebUILaunchActivatedEventArgs**](https://docs.microsoft.com/uwp/api/Windows.UI.WebUI.WebUILaunchActivatedEventArgs)。 如果事件参数的**detail.kind**属性是[ **Windows.ApplicationModel.Activation.ctivationKind**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Activation.ActivationKind)。**启动**，应用程序提供启动体验或通知体验，具体取决于事件参数的**detail.argument**属性设置为**null**.
+在 JavaScript 或 c # 中，可以处理 [**onactivated**](/previous-versions/windows/apps/br212679(v=win.10)) 事件，然后检查传递到事件处理程序的事件参数。 从 toast 激活会传递类型为 [**WebUI. WebUILaunchActivatedEventArgs**](/uwp/api/Windows.UI.WebUI.WebUILaunchActivatedEventArgs)的事件参数。 如果事件参数的 **详细信息** 为 [**windows.applicationmodel.resources.core. ctivationKind**](/uwp/api/Windows.ApplicationModel.Activation.ActivationKind)。**启动**时，应用程序提供启动体验或通知体验，具体取决于事件参数的 **详细信息。 argument** 属性是否设置为 **null**。
 
 **JavaScript**
 
@@ -335,12 +335,12 @@ function activated(eventArgs)
 }
 ```
 
-## <a name="span-idstepfourspanspan-idstepfourspanstep-4-handle-background-task-completion-handlers"></a><span id="stepfour"></span><span id="STEPFOUR"></span>步骤 4:处理后台任务完成处理程序
+## <a name="span-idstepfourspanspan-idstepfourspanstep-4-handle-background-task-completion-handlers"></a><span id="stepfour"></span><span id="STEPFOUR"></span>步骤4：处理后台任务完成处理程序
 
 
-前台应用程序还可以注册完成处理程序的后台任务完成时收到通知。 完成状态或在发生任何异常**运行**的后台任务的方法传递到完成处理程序在前台应用程序中。 如果应用挂起的任务完成时，它接收完成通知恢复应用程序的下一次。 如果应用已处于**Terminated**状态中时，它不接收完成通知。 如果后台任务需要保留已成功运行的信息，它必须通过使用状态管理器或另一种方法，例如当它返回到该应用可以读取文件中保存信息**运行**状态。
+前台应用还可以注册在后台任务完成时通知完成处理程序。 完成状态或在后台任务的 **Run** 方法中发生的任何异常将传递到前台应用程序中的完成处理程序。 如果在任务完成时该应用程序被挂起，则它会在下次恢复应用程序时收到完成通知。 如果应用处于 **终止** 状态，则不会接收到完成通知。 如果后台任务需要保留已成功运行的信息，则它必须通过使用状态管理器或其他方法（例如，应用程序在返回到 **运行** 状态时可以读取的文件）来保存信息。
 
-**重要**  尽管移动运营商后台事件已由应用到系统自动注册，但应用仍需要运行至少一次，以注册到后台完成或正在进行处理。
+**重要提示**   尽管移动运营商背景事件由系统自动注册到应用程序，但应用程序仍需要至少运行一次，才能注册到后台完成或进度处理程序。
 
  
 
@@ -424,61 +424,61 @@ function CompleteHandler(task) {
 ## <a name="span-idtsspanspan-idtsspantroubleshooting"></a><span id="ts"></span><span id="TS"></span>故障排除
 
 
-使用这些部分来帮助解决可能出现的问题。
+使用这些部分可帮助解决可能出现的问题。
 
-### <a name="span-idtriggermetadataparsingtoregisterbackgroundtasksspanspan-idtriggermetadataparsingtoregisterbackgroundtasksspanspan-idtriggermetadataparsingtoregisterbackgroundtasksspantrigger-metadata-parsing-to-register-background-tasks"></a><span id="Trigger_metadata_parsing_to_register_background_tasks"></span><span id="trigger_metadata_parsing_to_register_background_tasks"></span><span id="TRIGGER_METADATA_PARSING_TO_REGISTER_BACKGROUND_TASKS"></span>触发器元数据分析注册后台任务
+### <a name="span-idtrigger_metadata_parsing_to_register_background_tasksspanspan-idtrigger_metadata_parsing_to_register_background_tasksspanspan-idtrigger_metadata_parsing_to_register_background_tasksspantrigger-metadata-parsing-to-register-background-tasks"></a><span id="Trigger_metadata_parsing_to_register_background_tasks"></span><span id="trigger_metadata_parsing_to_register_background_tasks"></span><span id="TRIGGER_METADATA_PARSING_TO_REGISTER_BACKGROUND_TASKS"></span>触发元数据分析以注册后台任务
 
-对于用户，当连接移动宽带设备，Windows 8、 Windows 8.1 和 Windows 10 自动安装的移动宽带应用和关联的服务元数据和寄存器的后台任务的服务元数据中定义的。 但是，在 Windows 8.1 应用程序不会自动固定到开始屏幕。
+对于用户，如果连接了移动宽带设备，Windows 8、Windows 8.1 和 Windows 10 会自动安装移动宽带应用和关联的服务元数据，并注册在服务元数据中定义的后台任务。 但是，在 Windows 8.1 中，应用程序不会自动固定到 "开始" 屏幕。
 
-分析服务元数据并通过按注册后台任务的 Windows 8、 Windows 8.1 和 Windows 10 开发人员可以手动触发**F5**密钥 (或右键单击并选择**刷新**) 在**设备和打印机**窗口在桌面上。 通过分析的服务元数据的后台任务注册成功仅当应用程序部署。
+开发人员可以通过按**F5**键 (或右键单击并在桌面上的 "**设备和打印机**" 窗口中选择 "**刷新**) ，手动触发 windows 8、Windows 8.1 和 windows 10 来分析服务元数据并注册后台任务。 仅当部署了应用时，通过服务元数据分析的后台任务注册才会成功。
 
-### <a name="span-idverifythatbackgroundtasksarecorrectlyregisteredspanspan-idverifythatbackgroundtasksarecorrectlyregisteredspanspan-idverifythatbackgroundtasksarecorrectlyregisteredspanverify-that-background-tasks-are-correctly-registered"></a><span id="Verify_that_background_tasks_are_correctly_registered_"></span><span id="verify_that_background_tasks_are_correctly_registered_"></span><span id="VERIFY_THAT_BACKGROUND_TASKS_ARE_CORRECTLY_REGISTERED_"></span>验证正确注册后台任务
+### <a name="span-idverify_that_background_tasks_are_correctly_registered_spanspan-idverify_that_background_tasks_are_correctly_registered_spanspan-idverify_that_background_tasks_are_correctly_registered_spanverify-that-background-tasks-are-correctly-registered"></a><span id="Verify_that_background_tasks_are_correctly_registered_"></span><span id="verify_that_background_tasks_are_correctly_registered_"></span><span id="VERIFY_THAT_BACKGROUND_TASKS_ARE_CORRECTLY_REGISTERED_"></span>验证是否正确注册了后台任务
 
-开发人员可以验证设备安装程序管理器 (DSM) 正确具有通过查看下的事件日志分析服务元数据**应用程序和服务日志\\Microsoft\\Windows\\DeviceSetupManager**。
-
-1.  打开事件查看器。
-
-2.  上**菜单**选项卡上，选择**视图**，然后单击**显示分析和调试日志**。
-
-3.  浏览到**应用程序和服务日志\\Microsoft\\Windows\\DeviceSetupManager**。
-
-感兴趣的事件包括事件 ID 为 220，该值指示 DSM 已成功注册的后台任务[MobileOperatorNotification](mobile-operator-notification-event-technical-details.md)事件，以及指示元数据中找到的任何错误的事件 ID 7900包。
-
-### <a name="span-idverifythatprovisioningmetadataissuccessfullyappliedspanspan-idverifythatprovisioningmetadataissuccessfullyappliedspanspan-idverifythatprovisioningmetadataissuccessfullyappliedspanverify-that-provisioning-metadata-is-successfully-applied"></a><span id="Verify_that_provisioning_metadata_is_successfully_applied"></span><span id="verify_that_provisioning_metadata_is_successfully_applied"></span><span id="VERIFY_THAT_PROVISIONING_METADATA_IS_SUCCESSFULLY_APPLIED"></span>验证已成功应用预配的元数据
-
-当应用预配的元数据，验证是否[ **ProvisionFromXmlDocumentResults.AllElementsProvisioned** ](https://docs.microsoft.com/uwp/api/Windows.Networking.NetworkOperators.ProvisionFromXmlDocumentResults#Windows_Networking_NetworkOperators_ProvisionFromXmlDocumentResults_AllElementsProvisioned)为 true。 如果没有，检查有关错误的更多详细信息的 ProvisionResultsXml。 常见的移动宽带错误包括：
-
--   在 PC 中的 SIM 和预配文件之间不匹配 (配置文件失败，出现错误\_不\_找到)。
-
--   预配文件中的 CarrierId 和体验元数据中的服务数字之间不匹配。
-
-### <a name="span-idverifythatbackgroundtasksarebeingrunbythesystemeventbrokerspanspan-idverifythatbackgroundtasksarebeingrunbythesystemeventbrokerspanspan-idverifythatbackgroundtasksarebeingrunbythesystemeventbrokerspanverify-that-background-tasks-are-being-run-by-the-system-event-broker"></a><span id="Verify_that_background_tasks_are_being_run_by_the_System_Event_Broker"></span><span id="verify_that_background_tasks_are_being_run_by_the_system_event_broker"></span><span id="VERIFY_THAT_BACKGROUND_TASKS_ARE_BEING_RUN_BY_THE_SYSTEM_EVENT_BROKER"></span>验证系统事件代理正在运行后台任务
-
-你可以验证 Windows 是否正在生成[MobileOperatorNotification](mobile-operator-notification-event-technical-details.md)事件和事件代理由通过检查事件查看器，运行应用的后台任务。 这些事件的日志记录默认处于关闭状态，并且可以启用通过执行以下步骤：
+开发人员可以通过查看 **应用程序和服务日志 \\ Microsoft \\ Windows \\ DeviceSetupManager**下的事件日志来验证 (DSM) 是否已正确分析了服务元数据。
 
 1.  打开事件查看器。
 
-2.  上**菜单**选项卡上，选择**视图**，然后单击**显示分析和调试日志**。
+2.  在 " **菜单** " 选项卡上，选择 " **视图**"，然后单击 " **显示分析和调试日志**"。
 
-3.  浏览到**应用程序和服务日志\\Microsoft\\Windows\\BackgroundTaskInfrastructure**。
+3.  浏览到 **应用程序和服务日志 \\ Microsoft \\ Windows \\ DeviceSetupManager**。
 
-4.  右键单击**诊断日志**，然后选择**启用日志**。
+相关事件包括事件 ID 220，该事件 ID 为，指示 DSM 已成功为 [MobileOperatorNotification](mobile-operator-notification-event-technical-details.md) 事件注册了后台任务，事件 id 7900 指示了在元数据包中发现的任何错误。
 
-成功执行的后台任务启用日志后，生成的事件**事件 ID = 1**具有以下说明："后台任务的入口点的实例&lt;背景\_任务\_命名空间\_名称&gt;。&lt;背景\_任务\_类\_名称&gt;，并且已在会话 1 中创建和给定的 ID 名称 MobileOperatorNotificationHandler {11111111-1111-1111-1111-111111111111}。"
+### <a name="span-idverify_that_provisioning_metadata_is_successfully_appliedspanspan-idverify_that_provisioning_metadata_is_successfully_appliedspanspan-idverify_that_provisioning_metadata_is_successfully_appliedspanverify-that-provisioning-metadata-is-successfully-applied"></a><span id="Verify_that_provisioning_metadata_is_successfully_applied"></span><span id="verify_that_provisioning_metadata_is_successfully_applied"></span><span id="VERIFY_THAT_PROVISIONING_METADATA_IS_SUCCESSFULLY_APPLIED"></span>验证是否已成功应用设置元数据
 
-如果不运行后台任务时，首先验证后台任务在服务元数据中指定的名称与您的包的 AppXManifest.xml 文件中的名称匹配。 验证后部署该应用程序，分析服务元数据将触发并插入移动宽带设备。
+应用预配元数据时，验证 [**ProvisionFromXmlDocumentResults. AllElementsProvisioned**](/uwp/api/Windows.Networking.NetworkOperators.ProvisionFromXmlDocumentResults#Windows_Networking_NetworkOperators_ProvisionFromXmlDocumentResults_AllElementsProvisioned) 是否为 true。 如果没有，请检查 ProvisionResultsXml 以获取有关错误的更多详细信息。 常见的移动宽带错误包括：
 
-### <a name="span-idverifythatwindowsreceivessmsandussdnotificationsspanspan-idverifythatwindowsreceivessmsandussdnotificationsspanspan-idverifythatwindowsreceivessmsandussdnotificationsspanverify-that-windows-receives-sms-and-ussd-notifications"></a><span id="Verify_that_Windows_receives_SMS_and_USSD_notifications"></span><span id="verify_that_windows_receives_sms_and_ussd_notifications"></span><span id="VERIFY_THAT_WINDOWS_RECEIVES_SMS_AND_USSD_NOTIFICATIONS"></span>验证 Windows 接收短信和 USSD 通知
+-   PC 和预配文件 (配置文件中的 SIM 不匹配， \_ \_) 中找不到错误。
 
-你可以验证 Windows 通过检查事件查看器中的 SmsRouter 事件接收短信和 USSD 的通知。
+-   预配文件中的 CarrierId 与体验元数据中的服务号不匹配。
 
-在事件查看器下**应用程序和服务日志\\Microsoft\\Windows\\移动宽带体验 SmsRouter\\Microsoft Windows SMSRouter**，条目如"SMSRouter 收到短信运算符通知消息"和"SMSRouter 收到短信"。 下**应用程序和服务日志\\Microsoft\\Windows\\移动宽带体验 SmsApi\\SMSApi**有条目，例如"应用程序：Microsoft.SDKSamples.SmsSendReceive 上移动宽带设备发送短信： {11111111-1111-1111-1111-111111111111}"。
+### <a name="span-idverify_that_background_tasks_are_being_run_by_the_system_event_brokerspanspan-idverify_that_background_tasks_are_being_run_by_the_system_event_brokerspanspan-idverify_that_background_tasks_are_being_run_by_the_system_event_brokerspanverify-that-background-tasks-are-being-run-by-the-system-event-broker"></a><span id="Verify_that_background_tasks_are_being_run_by_the_System_Event_Broker"></span><span id="verify_that_background_tasks_are_being_run_by_the_system_event_broker"></span><span id="VERIFY_THAT_BACKGROUND_TASKS_ARE_BEING_RUN_BY_THE_SYSTEM_EVENT_BROKER"></span>验证系统事件代理是否正在运行后台任务
 
-### <a name="span-idreceivedsmsmessagesarenotdetectedasoperatornotificationsspanspan-idreceivedsmsmessagesarenotdetectedasoperatornotificationsspanspan-idreceivedsmsmessagesarenotdetectedasoperatornotificationsspanreceived-sms-messages-are-not-detected-as-operator-notifications"></a><span id="Received_SMS_messages_are_not_detected_as_operator_notifications"></span><span id="received_sms_messages_are_not_detected_as_operator_notifications"></span><span id="RECEIVED_SMS_MESSAGES_ARE_NOT_DETECTED_AS_OPERATOR_NOTIFICATIONS"></span>接收的 SMS 消息不被检测为运营商通知
+可以通过检查事件查看器来验证 Windows 是否正在生成 [MobileOperatorNotification](mobile-operator-notification-event-technical-details.md) 事件，以及事件代理是否正在运行应用的后台任务。 这些事件的日志记录在默认情况下是关闭的，可以通过执行以下步骤来启用：
 
-如果收到的短信被检测为不运营商通知，请验证管理帐户预配的元数据中的短信通知的自定义筛选规则。 有关预配的元数据的详细信息，请参阅[帐户预配](account-provisioning.md)。
+1.  打开事件查看器。
 
-具体而言，如果帐户预配的元数据指定发件人的电话号码，验证的数字格式指定与匹配的接收的消息中通过使用 SMS Api。 若要验证这正确匹配，暂时更改到的模式 **\[ ^ \] \\** * 来匹配来自该发件人的所有消息。
+2.  在 " **菜单** " 选项卡上，选择 " **视图**"，然后单击 " **显示分析和调试日志**"。
+
+3.  浏览到 **应用程序和服务日志 \\ Microsoft \\ Windows \\ BackgroundTaskInfrastructure**。
+
+4.  右键单击 " **诊断日志** "，然后选择 " **启用日志**"。
+
+启用日志后，成功执行后台任务会导致事件**ID = 1**的事件，该事件具有以下描述： "具有入口点 &lt; 后台 \_ 任务 \_ 命名空间 \_ 名称的 &gt; 后台任务实例。 &lt;\_ \_ \_ &gt; 已在会话1中创建了后台任务类名称和名称 MobileOperatorNotificationHandler，并给定了 ID {11111111-1111-1111-1111-111111111111} "。
+
+如果未运行后台任务，请首先验证服务元数据中指定的后台任务的名称是否与包的 AppXManifest.xml 文件中的名称匹配。 验证在部署应用程序后，将触发分析服务元数据并插入移动宽带设备。
+
+### <a name="span-idverify_that_windows_receives_sms_and_ussd_notificationsspanspan-idverify_that_windows_receives_sms_and_ussd_notificationsspanspan-idverify_that_windows_receives_sms_and_ussd_notificationsspanverify-that-windows-receives-sms-and-ussd-notifications"></a><span id="Verify_that_Windows_receives_SMS_and_USSD_notifications"></span><span id="verify_that_windows_receives_sms_and_ussd_notifications"></span><span id="VERIFY_THAT_WINDOWS_RECEIVES_SMS_AND_USSD_NOTIFICATIONS"></span>验证 Windows 是否收到短信和 USSD 通知
+
+可以通过在事件查看器中检查 SmsRouter 事件来验证 Windows 是否正在接收短信和 USSD 通知。
+
+在事件查看器中，在 " **应用程序和服务日志" 下， \\ microsoft \\ Windows \\ Mobile-宽带-smsrouter-smsrouter \\ microsoft-** smsrouter，是诸如 "smsrouter 接收到 SMS 操作员通知消息" 和 "smsrouter 收到短信" 之类的条目。 在 **应用程序和服务日志下， \\ Microsoft \\ Windows \\ Mobile-宽带-SmsApi \\ SmsApi** 是一些条目，例如 "App： SDKSamples SmsSendReceive 在移动宽带设备上发送短信： {11111111-1111-1111-1111-111111111111} "。
+
+### <a name="span-idreceived_sms_messages_are_not_detected_as_operator_notificationsspanspan-idreceived_sms_messages_are_not_detected_as_operator_notificationsspanspan-idreceived_sms_messages_are_not_detected_as_operator_notificationsspanreceived-sms-messages-are-not-detected-as-operator-notifications"></a><span id="Received_SMS_messages_are_not_detected_as_operator_notifications"></span><span id="received_sms_messages_are_not_detected_as_operator_notifications"></span><span id="RECEIVED_SMS_MESSAGES_ARE_NOT_DETECTED_AS_OPERATOR_NOTIFICATIONS"></span>未检测到收到的短信消息作为操作员通知
+
+如果未检测到接收到的 SMS 作为操作员通知，请在帐户设置元数据中验证管理短信通知的自定义筛选规则。 有关设置元数据的详细信息，请参阅 [帐户预配](account-provisioning.md)。
+
+特别是，如果帐户预配元数据指定了发送方电话号码，则验证指定的数字格式是否与使用 SMS Api 接收的消息中的格式匹配。 若要验证此是否正确匹配，请暂时将模式更改为 **\[^\]\\** *，以匹配来自此发件人的所有消息。
 
 ## <a name="span-idsampspanspan-idsampspansample-backgroundtaskjs-file"></a><span id="samp"></span><span id="SAMP"></span>示例 backgroundtask.js 文件
 
@@ -608,7 +608,7 @@ function CompleteHandler(task) {
 })();
 ```
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
+## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
 [启用移动运营商通知和系统事件](enabling-mobile-operator-notifications-and-system-events.md)
@@ -616,11 +616,4 @@ function CompleteHandler(task) {
 [创建和配置 Internet 共享体验](creating-and-configuring-internet-sharing-experiences.md)
 
  
-
- 
-
-
-
-
-
 

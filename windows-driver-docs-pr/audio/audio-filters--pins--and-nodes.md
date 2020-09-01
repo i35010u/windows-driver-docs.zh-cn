@@ -9,15 +9,15 @@ keywords:
 - 音频驱动程序 WDK，pin
 - WDM 音频驱动程序 WDK，节点
 - 音频驱动程序 WDK，节点
-- 筛选器 WDK 音频
+- 筛选 WDK 音频
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 59d24d6a79619703afa2f2d3e0cb13b475f014fb
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: e6a098199e3f39cbf2e819e85af38d8d055fa113
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67355690"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89208341"
 ---
 # <a name="audio-filters-pins-and-nodes"></a>音频筛选器、引脚和节点
 
@@ -25,42 +25,37 @@ ms.locfileid: "67355690"
 ## <span id="audio_filters_pins_and_nodes"></span><span id="AUDIO_FILTERS_PINS_AND_NODES"></span>
 
 
-Microsoft Windows 驱动程序模型 (WDM) 适配器驱动程序将作为筛选器工厂，其中每个可以创建一个或多个筛选器实例的集合公开其音频硬件。 流式处理 (KS) 筛选器对象是内核可以封装执行某种类型的数字处理的波形音频数据，以流式传输通过筛选器的音频硬件函数。 例如，可能会执行筛选器，呈现或合成一个流，或它可能会向流中添加混响。
+Microsoft Windows 驱动模型 (WDM) 适配器驱动程序将其音频硬件公开为一组筛选器工厂，其中每个工厂都可以创建一个或多个筛选器实例。 内核流式传输 (KS) filter 对象可以封装音频硬件功能，该功能可对通过筛选器进行流式处理的声波音频数据执行某种类型的数字处理。 例如，筛选器可能会对流进行呈现或合成操作，也可能会将回响添加到流中。
 
-筛选器实例公开 pin 工厂，其中每个可以创建一个或多个 pin 实例。 这些引脚可连接到其他筛选器来生成筛选器图形的 pin。 若要音频筛选器图形的一部分，筛选器必须具有一个或多个 pin 实例。
+筛选器实例公开 pin 工厂，其中每个工厂都可以创建一个或多个 pin 实例。 这些 pin 可以连接到其他筛选器的 pin，以生成筛选器关系图。 若要成为音频筛选器关系图的一部分，筛选器必须有一个或多个固定实例。
 
-Pin 表示通过该数据流进入或退出该筛选器的输入或输出的连接点。 每个插针指定数据格式，它可以支持，并且仅具有兼容的格式的流可以流过 pin 的范围。
+Pin 表示数据流进入或退出筛选器时所用的输入或输出连接点。 每个 pin 均指定它可以支持的数据格式范围，并且只有具有兼容格式的流可以流过该 pin。
 
-用于 WDM 音频设备的筛选器公开其内部形式的节点和连接拓扑。
+WDM 音频设备的筛选器以节点和连接的形式公开其内部拓扑。
 
-拓扑节点位于通过筛选器的数据路径上。 一个节点表示的控件在筛选器内的点。 每个节点以逻辑方式封装模块化块的筛选器的功能，并对通过节点的数据流执行数字信号处理。 节点可能表示音量控制，例如，可以在软件控制下进行调整。
+拓扑节点位于通过筛选器传递的数据路径上。 节点表示筛选器中的控制点。 每个节点都以逻辑方式封装筛选器功能的模块化块，并对通过节点的数据流执行数字信号处理。 节点可能表示可以在 "软件控制" 下调整的音量控件。
 
-筛选器对象还指定了不同的 pin 和节点之间的连接。 在这些连接中隐式是通过筛选器的每个数据路径上的节点的顺序。
+Filter 对象还指定了其不同的 pin 与节点之间的连接。 这些连接中的隐式是通过筛选器沿每个数据路径对节点进行排序。
 
-本部分提供的筛选器、 pin 和特定于 WDM 音频驱动程序的节点的功能。 论述了以下主题：
+本部分介绍特定于 WDM 音频驱动程序的筛选器、pin 和节点的功能。 本文讨论了以下主题：
 
 [音频筛选器](audio-filters.md)
 
 [筛选器工厂](filter-factories.md)
 
-[Pin 工厂](pin-factories.md)
+[引脚工厂](pin-factories.md)
 
 [节点和连接](nodes-and-connections.md)
 
-[音频筛选器关系图](audio-filter-graphs.md)
+[音频筛选器图](audio-filter-graphs.md)
 
-[批筛选器](wave-filters.md)
+[滤波器](wave-filters.md)
 
 [MIDI 和 DirectMusic 筛选器](midi-and-directmusic-filters.md)
 
 [拓扑筛选器](topology-filters.md)
 
-内核流式处理筛选器、 pin 和节点，请参阅更多常规讨论[KS 微型驱动程序体系结构](https://docs.microsoft.com/windows-hardware/drivers/stream/ks-minidriver-architecture)。
+有关内核流式处理筛选器、pin 和节点的更多常规讨论，请参阅 [KS 微型驱动程序体系结构](../stream/ks-minidriver-architecture.md)。
 
  
-
- 
-
-
-
 

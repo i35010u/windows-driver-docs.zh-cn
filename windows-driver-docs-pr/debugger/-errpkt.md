@@ -1,6 +1,6 @@
 ---
 title: errpkt
-description: Errpkt 扩展显示 Windows 硬件错误体系结构（WHEA）硬件错误数据包的内容。
+description: Errpkt 扩展显示 Windows 硬件错误体系结构 (WHEA) 硬件错误数据包的内容。
 ms.assetid: cf4b1dfa-3b15-45d4-b5e2-1da7cdbca350
 keywords:
 - errpkt Windows 调试
@@ -12,17 +12,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 4e9fbcc06b5cd8db3d3cc14c19640c00ef92be9e
-ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
+ms.openlocfilehash: 3e208ab0c41ddcc0cf0fc2a4debb864ea812fee9
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84534838"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89208761"
 ---
 # <a name="errpkt"></a>!errpkt
 
 
-**！ Errpkt**扩展显示 Windows 硬件错误体系结构（WHEA）硬件错误数据包的内容。
+**！ Errpkt**扩展显示 Windows 硬件错误体系结构 (WHEA) 硬件错误数据包的内容。
 
 ```dbgcmd
 !errpkt Address 
@@ -56,7 +56,7 @@ ms.locfileid: "84534838"
 </tr>
 <tr class="even">
 <td align="left"><p><strong>Windows Vista 及更高版本</strong></p></td>
-<td align="left"><p>Kdexts</p></td>
+<td align="left"><p>Kdexts.dll</p></td>
 </tr>
 </tbody>
 </table>
@@ -67,12 +67,12 @@ ms.locfileid: "84534838"
 
 ### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>附加信息
 
-[**！ Whea**](-whea.md)和[**！ errrec**](-errrec.md)扩展可用于显示其他 whea 信息。 有关 WHEA 的常规信息，请参阅 Windows 驱动程序工具包（WDK）文档中的[Windows 硬件错误体系结构（WHEA）](https://docs.microsoft.com/windows-hardware/drivers/whea/) 。
+[**！ Whea**](-whea.md)和[**！ errrec**](-errrec.md)扩展可用于显示其他 whea 信息。 有关 WHEA 的常规信息，请参阅 Windows 驱动程序工具包中的 [Windows 硬件错误体系结构 (WHEA) ](../whea/index.md) (WDK) 文档。
 
-<a name="remarks"></a>注解
+<a name="remarks"></a>备注
 -------
 
-下面的示例演示 **！ errpkt**扩展名的输出：
+下面的示例演示 **！ errpkt** 扩展名的输出：
 
 ```dbgcmd
 3: kd> !errpkt fffffa8007cf44da 
@@ -103,10 +103,4 @@ Bank Number      : 0
 ```
 
  
-
- 
-
-
-
-
 

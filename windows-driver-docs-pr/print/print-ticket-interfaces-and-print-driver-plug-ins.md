@@ -7,17 +7,17 @@ keywords:
 - IPrintOemPrintTicketProvider
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1fd64f326e84703f805fcb6dc76063bc4457bb53
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: f107e984cf1e660011f6b6adced30458edac64ac
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72842341"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89207103"
 ---
 # <a name="print-ticket-interfaces-and-print-driver-plug-ins"></a>打印票证接口和打印驱动程序插件
 
 
-本部分介绍[IPrintTicketProvider 接口](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff554375(v=vs.85))和[IPrintOemPrintTicketProvider 接口](https://docs.microsoft.com/windows-hardware/drivers/ddi/prcomoem/nn-prcomoem-iprintoemprintticketprovider)如何处理 Unidrv 和 PScript5 打印驱动程序及其插件以及调用的应用程序级函数的上下文它们.
+本部分介绍 [IPrintTicketProvider 接口](/previous-versions/windows/hardware/drivers/ff554375(v=vs.85)) 和 [IPrintOemPrintTicketProvider 接口](/windows-hardware/drivers/ddi/prcomoem/nn-prcomoem-iprintoemprintticketprovider) 如何处理 Unidrv 和 PScript5 打印驱动程序及其插件以及调用它们的应用程序级函数的上下文。
 
 本部分介绍以下 Microsoft Win32 函数的上下文：
 
@@ -30,9 +30,4 @@ ms.locfileid: "72842341"
 [ValidatePrintTicket](validateprintticket.md)
 
  
-
- 
-
-
-
 

@@ -1,33 +1,30 @@
 ---
 title: 音频终结点容器 ID
-description: 音频的终结点容器 ID 本主题将讨论可靠的方式可用来获取与蓝牙音频设备关联的音频终结点的容器 ID。
+description: 音频终结点容器 ID 主题讨论了可用于获取与蓝牙音频设备关联的音频终结点的容器 ID 的可靠方法。
 ms.assetid: 82A852FF-688C-496A-AFF1-C68B0CC1756A
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3860db8dd4138f14a63487b880dcf34bfeb52d7a
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: fbc76b664f9d68caca4a52bc5c1b50e851f7db5b
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67355702"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89208329"
 ---
 # <a name="audio-endpoint-container-id"></a>音频终结点容器 ID
 
 
-音频的终结点容器 ID 本主题将讨论可靠的方式可用来获取与蓝牙音频设备关联的音频终结点的容器 ID。
+音频终结点容器 ID 主题讨论了可用于获取与蓝牙音频设备关联的音频终结点的容器 ID 的可靠方法。
 
-音频的终结点生成器使用枚举算法来确定容器的音频终结点的 Id，然后将这些 Id 存储为 MMDEVAPI 终结点属性存储中的属性。 在某些情况下，终结点生成器使用的逻辑不充足，可以应对蓝牙 I2S 设计音频终结点公开的音频驱动程序的容器 ID 由另一个枚举器的蓝牙枚举器。
+音频终结点生成器使用枚举算法来确定音频终结点的容器 Id，然后将这些 Id 存储为 MMDEVAPI 终结点属性存储中的属性。 在某些情况下，终结点生成器使用的逻辑不足以处理蓝牙 I2S 设计，其中音频驱动程序所公开的音频终结点的容器 ID 由其他枚举器-蓝牙枚举器决定。
 
-涉及的 Bluetooth I2S 设计，使用其自己的蓝牙枚举此种情况很少见。 但无论如何，您可以开发音频驱动程序以便为此类方案提供支持。 在这种情况下，音频驱动程序的终结点可以支持新的容器 ID 属性。 新的属性[ **KSPROPERTY\_JACK\_CONTAINERID** ](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-jack-containerid)并且已添加到现有[KSPROPSETID\_Jack](https://docs.microsoft.com/windows-hardware/drivers/audio/kspropsetid-jack)设置属性。 值为 GUID，它是容器 id。 的数据类型
+此方案涉及到使用其自己的蓝牙枚举器的蓝牙 I2S 设计。 但无论如何，你都可以开发音频驱动程序以提供对此类方案的支持。 在这种情况下，你的音频驱动程序可以为终结点支持新的容器 ID 属性。 新属性为 [**KSPROPERTY \_ 插座 \_ CONTAINERID**](./ksproperty-jack-containerid.md) ，并已添加到现有的 [KSPROPSETID \_ 插座](./kspropsetid-jack.md) 属性集。 该值是一个 GUID，它是容器 ID 的数据类型。
 
-音频驱动程序支持**KSPROPERTY\_JACK\_CONTAINERID**，当且仅当，它可以可靠地获取正确的容器 ID 通过其他方式;例如，从蓝牙枚举器。
+音频驱动程序支持 **KSPROPERTY 的 \_ 插孔 \_ CONTAINERID**，如果且仅当使用时，它可以通过其他方式可靠地获取正确的容器 ID;例如，从蓝牙枚举器。
 
-如果音频驱动程序支持**KSPROPERTY\_JACK\_CONTAINERID**属性，音频系统读取此属性的值从驱动程序，然后存储的值作为容器 ID 设置为音频终结点。
+如果音频驱动程序支持 **KSPROPERTY \_ 插座 \_ CONTAINERID** 属性，则音频系统将从驱动程序中读取此属性的值，然后将该值存储为音频终结点的容器 ID。
 
-有关容器 Id 以及在上一部分中所述的算法的详细信息，请参阅[容器 ID](https://docs.microsoft.com/windows-hardware/drivers/install/container-ids)并[音频终结点生成器算法](audio-endpoint-builder-algorithm.md)。
+有关容器 Id 和前面部分中提到的算法的详细信息，请参阅 [容器 id](../install/container-ids.md) 和 [音频终结点生成器算法](audio-endpoint-builder-algorithm.md)。
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
-[理论上的操作](theory-of-operation.md)  
-
-
-
+## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
+[操作理论](theory-of-operation.md)

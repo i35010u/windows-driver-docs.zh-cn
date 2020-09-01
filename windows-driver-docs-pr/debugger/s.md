@@ -1,5 +1,5 @@
 ---
-title: S （Windows 调试器术语表）
+title: 'S (Windows 调试器词汇表) '
 description: 词汇表页-S
 ms.assetid: 94cbf33b-e975-49eb-a266-774798955a48
 keywords:
@@ -7,12 +7,12 @@ keywords:
 - 挂起的进程
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 73c307d82851059f40c72c9d05a23c46b2bdb415
-ms.sourcegitcommit: 48c4b6d3a504583d2f588ed892a4a281d4b58301
+ms.openlocfilehash: e1d384bf0990053202368ac1c7ebd70ca10e601e
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70387040"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89207985"
 ---
 # <a name="s"></a>S
 
@@ -20,7 +20,7 @@ ms.locfileid: "70387040"
 <span id="scope"></span><span id="SCOPE"></span>**内**  
 定义局部变量的上下文。 作用域包含三个组件：堆栈帧、当前指令和寄存器上下文。
 
-有时称为 "*本地上下文*" 或 "*词法范围*"。
+有时称为 " *本地上下文* " 或 " *词法范围*"。
 
 <span id="second_chance_exception"></span><span id="SECOND_CHANCE_EXCEPTION"></span>**第二次异常**  
 处理异常的第二个机会。 仅在第一次机会未处理异常的情况下才提供此机会。
@@ -29,10 +29,10 @@ ms.locfileid: "70387040"
 充当主机的调试器引擎的实例。 智能客户端连接到进程服务器。 或 KD 连接服务器。
 
 <span id="specific_exception_filter"></span><span id="SPECIFIC_EXCEPTION_FILTER"></span>**特定异常筛选器**  
-异常的事件筛选器，其中引擎具有内置筛选器。 大多数特定的异常筛选器都是指特定类型的异常（由异常代码标识），但默认异常筛选器还限定为特定异常筛选器。
+异常的事件筛选器，其中引擎具有内置筛选器。 大多数特定的异常筛选器都是指由异常代码)  (标识的特定类型的异常，但默认异常筛选器也限定为特定的异常筛选器。
 
 <span id="specific_event_filter"></span><span id="SPECIFIC_EVENT_FILTER"></span>**特定事件筛选器**  
-不是异常的事件的事件筛选器。 特定的事件筛选器在[**调试\_筛选器\_XXX**](https://docs.microsoft.com/windows-hardware/drivers/debugger/debug-filter-xxx)中列出。
+不是异常的事件的事件筛选器。 特定的事件筛选器在 [**调试 \_ 筛选器 \_ XXX**](./debug-filter-xxx.md)中列出。
 
 <span id="specific_filter"></span><span id="SPECIFIC_FILTER"></span>**特定筛选器**  
 事件的事件筛选器，其中引擎具有内置筛选器。
@@ -62,9 +62,9 @@ ms.locfileid: "70387040"
 如果已阻止其执行，则会挂起目标、进程或线程。
 
 <span id="symbol"></span><span id="SYMBOL"></span>**代号**  
-调试信息的单位，在调试会话中提供有关目标的解释性信息。 符号的示例包括变量（本地和全局）、函数、类型和函数条目。 有关符号的信息可以包括名称、类型（如果适用）以及存储它的地址或 regisgter，以及任何父或子符号。 此信息存储在符号文件中，并且通常不在模块本身中提供。
+调试信息的单位，在调试会话中提供有关目标的解释性信息。 符号的示例包括 (本地和全局) 、函数、类型和函数项的变量。 有关符号的信息可以包括名称、在适用的) 中键入 (，以及存储该名称的地址或 regisgter，以及所有父或子符号。 此信息存储在符号文件中，并且通常不在模块本身中提供。
 
-当符号文件不可用时，调试器引擎可以合成某些符号（例如，导出的符号），但这些符号通常仅提供最少的信息。
+当符号文件不可用时，调试器引擎可以合成某些符号 (例如，) 导出符号，但这些符号通常仅提供最少的信息。
 
 <span id="symbol_file"></span><span id="SYMBOL_FILE"></span>**符号文件**  
 构建应用程序、库、驱动程序或操作系统时创建的补充文件。 符号文件所包含的数据在运行二进制文件时实际上并不需要，但在调试过程中非常有用。
@@ -85,10 +85,4 @@ ms.locfileid: "70387040"
 请参阅 bug 检查。
 
  
-
- 
-
-
-
-
 

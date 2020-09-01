@@ -8,12 +8,12 @@ keywords:
 - ECHO
 ms.date: 07/20/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: a31ee22caec31e8c9ea45e4f35f53b947f30ffb8
-ms.sourcegitcommit: f610410e1500f0b0a4ca008b52679688ab51033d
+ms.openlocfilehash: 2710d3030912959f3a5e4fe20d113261ec160eb1
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/15/2020
-ms.locfileid: "88252971"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89208767"
 ---
 # <a name="debug-windows-drivers---step-by-step-lab-echo-kernel-mode"></a>调试 Windows 驱动程序 - 分步实验室（Echo 内核模式）
 
@@ -86,7 +86,7 @@ ms.locfileid: "88252971"
 
 ![使用双箭头连接的两台电脑](images/debuglab-image-targethostdrawing1.png)
 
-若要使用内核模式应用程序并使用 WinDbg，建议使用 KDNET over 以太网传输。 有关如何使用以太网传输协议的信息，请参阅 [使用 WinDbg (内核模式) 入门 ](getting-started-with-windbg--kernel-mode-.md)。 有关设置目标计算机的详细信息，请参阅 [为手动驱动程序部署准备计算机](https://docs.microsoft.com/windows-hardware/drivers) 和 [自动设置 KDNET 网络内核调试](setting-up-a-network-debugging-connection-automatically.md)。
+若要使用内核模式应用程序并使用 WinDbg，建议使用 KDNET over 以太网传输。 有关如何使用以太网传输协议的信息，请参阅 [使用 WinDbg (内核模式) 入门 ](getting-started-with-windbg--kernel-mode-.md)。 有关设置目标计算机的详细信息，请参阅 [为手动驱动程序部署准备计算机](/windows-hardware/drivers) 和 [自动设置 KDNET 网络内核调试](setting-up-a-network-debugging-connection-automatically.md)。
 
 ### <a name="span-idconfigure__kernel_mode_debugging_using_ethernetspanspan-idconfigure__kernel_mode_debugging_using_ethernetspanspan-idconfigure__kernel_mode_debugging_using_ethernetspanconfigure-kernelmode-debugging-using-ethernet"></a><span id="Configure__kernel_mode_debugging_using_ethernet"></span><span id="configure__kernel_mode_debugging_using_ethernet"></span><span id="CONFIGURE__KERNEL_MODE_DEBUGGING_USING_ETHERNET"></span>使用以太网配置内核-模式调试
 
@@ -405,14 +405,14 @@ Unable to enumerate user-mode unloaded modules, Win32 error 0n30
 
     该文件夹应包含以下文件：
 
-    | 文件     | 描述                                                                       |
+    | 文件     | 说明                                                                       |
     |----------|-----------------------------------------------------------------------------------|
     | Echo.sys | 驱动程序文件。                                                                  |
     | 回显 .inf |  (INF) 包含安装驱动程序所需的信息的信息。 |
 
     此外，还生成 echoapp.exe 文件，该文件应位于以下位置： *C： \\ DriverSamples \\ 常规 \\ echo \\ kmdf \\ exe \\ x64 \\ 调试*
 
-    | 文件        | 描述                                                                       |
+    | 文件        | 说明                                                                       |
     |-------------|-----------------------------------------------------------------------------------|
     | EchoApp.exe | 与 echo.sys 驱动程序通信的命令提示符可执行文件测试文件。 |     
 
@@ -745,7 +745,7 @@ set ENABLE_OPTIMIZER=0
 
 ![包含大约20个节点的设备节点树](images/debuglab-image-device-node-tree.png)
 
-**注意**  有关更复杂的驱动程序堆栈的详细信息，请参阅 [驱动程序堆栈](https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/driver-stacks) 和 [设备节点和设备堆栈](https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/device-nodes-and-device-stacks)。
+**注意**  有关更复杂的驱动程序堆栈的详细信息，请参阅 [驱动程序堆栈](../gettingstarted/driver-stacks.md) 和 [设备节点和设备堆栈](../gettingstarted/device-nodes-and-device-stacks.md)。
 
 ## <a name="span-idworkingwithbreakpointsspanspan-idworkingwithbreakpointsspanspan-idworkingwithbreakpointsspansection-7-working-with-breakpoints-and-source-code"></a><span id="WorkingWithBreakpoints"></span><span id="workingwithbreakpoints"></span><span id="WORKINGWITHBREAKPOINTS"></span>第7部分：使用断点和源代码
 
@@ -849,11 +849,11 @@ set ENABLE_OPTIMIZER=0
 
 11. **&lt;-在主机系统上**
 
-    如果启用了驱动程序，则应激发 [*AddDevice*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_add_device) 调试断点，并且应停止目标系统上的驱动程序代码的执行。 命中断点时，应在 *AddDevice* 例程开始时停止执行。 调试命令输出将显示 "命中断点 1"。
+    如果启用了驱动程序，则应激发 [*AddDevice*](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_add_device) 调试断点，并且应停止目标系统上的驱动程序代码的执行。 命中断点时，应在 *AddDevice* 例程开始时停止执行。 调试命令输出将显示 "命中断点 1"。
 
     ![显示示例代码局部变量和命令窗口的 windbg](images/debuglab-image-breakpoint-echo-deviceadd.png)
 
-12. 键入 **p** 命令或按 F10 逐行逐行执行代码，直到到达 [*AddDevice*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_add_device) 例程的以下结尾。 将突出显示大括号字符 "}"。
+12. 键入 **p** 命令或按 F10 逐行逐行执行代码，直到到达 [*AddDevice*](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_add_device) 例程的以下结尾。 将突出显示大括号字符 "}"。
 
     ![显示 adddevice 例程开头突出显示的大括号字符的代码窗口](images/debuglab-image-breakpoint-end-deviceadd.png)
 
@@ -912,7 +912,7 @@ ba <access> <size> <address> {options}
 <thead>
 <tr class="header">
 <th align="left">选项</th>
-<th align="left">描述</th>
+<th align="left">说明</th>
 </tr>
 </thead>
 <tbody>
@@ -968,7 +968,7 @@ ba r 4 0x0003f7bf0
 
 *在第8节中，您将显示有关变量和调用堆栈的信息。*
 
-此实验室假设你使用前面所述的过程在 [*AddDevice*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_add_device) 例程处停止。 若要在此处查看输出显示内容，请根据需要重复上述步骤。
+此实验室假设你使用前面所述的过程在 [*AddDevice*](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_add_device) 例程处停止。 若要在此处查看输出显示内容，请根据需要重复上述步骤。
 
 **&lt;-在主机系统上**
 
@@ -1511,13 +1511,3 @@ OSR <https://www.osr.com/>
 [专业调试方法](specialized-debugging-techniques.md)
 
 [Windows 调试入门](getting-started-with-windows-debugging.md)
-
-
-
-
-
-
-
-
-
-

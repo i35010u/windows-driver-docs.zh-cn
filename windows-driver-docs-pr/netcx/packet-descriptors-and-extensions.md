@@ -7,12 +7,12 @@ keywords:
 ms.date: 11/04/2019
 ms.localizationpriority: medium
 ms.custom: Vib
-ms.openlocfilehash: 19470692809a031d05c0d1b0eed8461ca53dba23
-ms.sourcegitcommit: 174e6f03c1f4945f262d49d1ae2112ef2e13581f
+ms.openlocfilehash: 1109f7d3941443646447a85393d5b787a0baea40
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88217782"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89208747"
 ---
 # <a name="packet-descriptors-and-extensions"></a>数据包描述符和扩展
 
@@ -22,9 +22,9 @@ ms.locfileid: "88217782"
 - 一个或多个片段说明符
 - 零个或多个数据包扩展 
 
-数据包的 *核心描述符* 是 [**NET_PACKET**](https://docs.microsoft.com/windows-hardware/drivers/ddi/packet/ns-packet-_net_packet) 结构。 它仅包含适用于所有数据包的最基本的元数据，例如给定包的组帧布局和数据包的第一个段描述符的索引。   
+数据包的 *核心描述符* 是 [**NET_PACKET**](/windows-hardware/drivers/ddi/packet/ns-packet-_net_packet) 结构。 它仅包含适用于所有数据包的最基本的元数据，例如给定包的组帧布局和数据包的第一个段描述符的索引。   
 
-每个数据包还必须有一个或多个 *片段描述符*或 [**NET_FRAGMENT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fragment/ns-fragment-_net_fragment) 结构，它们描述数据包数据所在的系统内存中的位置。
+每个数据包还必须有一个或多个 *片段描述符*或 [**NET_FRAGMENT**](/windows-hardware/drivers/ddi/fragment/ns-fragment-_net_fragment) 结构，它们描述数据包数据所在的系统内存中的位置。
 
 *扩展名* 是可选的，可为特定于方案的功能保留每个数据包或每个片段的元数据。 例如，数据包扩展可以保存校验和的卸载信息、 (LSO) 的大量发送卸载以及接收段合并 (RSC) ，也可以保存特定于应用程序的详细信息。 片段扩展可以保存虚拟地址信息、逻辑 DMA 地址信息或片段的其他信息。
 
@@ -94,7 +94,7 @@ ms.locfileid: "88217782"
 
 ### <a name="getting-packet-extensions-at-runtime"></a>在运行时获取数据包扩展
 
-在队列上下文中存储了扩展偏移量后，只要需要扩展中的信息，就可以使用它们。 例如，你可以在将描述符编程到传输队列的硬件时调用 [**NetExtensionGetPacketChecksum**](https://docs.microsoft.com/windows-hardware/drivers/ddi/checksum/nf-checksum-netextensiongetpacketchecksum) 方法：
+在队列上下文中存储了扩展偏移量后，只要需要扩展中的信息，就可以使用它们。 例如，你可以在将描述符编程到传输队列的硬件时调用 [**NetExtensionGetPacketChecksum**](/windows-hardware/drivers/ddi/checksum/nf-checksum-netextensiongetpacketchecksum) 方法：
 
 ```C++
     // Get the extension offset from the device context
@@ -121,20 +121,20 @@ ms.locfileid: "88217782"
 
 NetAdapterCx 提供已知包扩展常量的定义。
 
-| 常数 | 定义 |
+| 返回的常量 | 定义 |
 | --- | --- |
 | NET_PACKET_EXTENSION_INVALID_OFFSET | 防止偏移大小无效。 |
 | NET_PACKET_EXTENSION_CHECKSUM_NAME NET_PACKET_EXTENSION_CHECKSUM_VERSION_1| 校验和数据包扩展的名称和版本。 |
 | NET_PACKET_EXTENSION_LSO_NAME NET_PACKET_EXTENSION_LSO_VERSION_1 | 大规模发送卸载 (LSO) 数据包扩展的名称和版本。 |
 | NET_PACKET_EXTENSION_RSC_NAME NET_PACKET_EXTENSION_RSC_VERSION_1 | 接收段的名称和版本合并 (RSC) 数据包扩展。 |
 
-此外，NetAdapterCx 还提供了三种帮助器方法，它们充当 [**NetExtensionGetData**](https://docs.microsoft.com/windows-hardware/drivers/ddi/extension/nf-extension-netextensiongetdata) 方法的包装器。 其中每个方法都返回指向适当结构类型的指针。
+此外，NetAdapterCx 还提供了三种帮助器方法，它们充当 [**NetExtensionGetData**](/windows-hardware/drivers/ddi/extension/nf-extension-netextensiongetdata) 方法的包装器。 其中每个方法都返回指向适当结构类型的指针。
 
 | 方法 | 结构 |
 | --- | --- |
-| [**NetExtensionGetPacketChecksum**](https://docs.microsoft.com/windows-hardware/drivers/ddi/checksum/nf-checksum-netextensiongetpacketchecksum) | [**NET_PACKET_CHECKSUM**](https://docs.microsoft.com/windows-hardware/drivers/ddi/checksumtypes/ns-checksumtypes-_net_packet_checksum) |
-| [**NetExtensionGetLso**](https://docs.microsoft.com/windows-hardware/drivers/ddi/lso/nf-lso-netextensiongetpacketlso) | [**NET_PACKET_LSO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/lsotypes/ns-lsotypes-_net_packet_lso)
-| [**NetExtensionGetPacketRsc**](https://docs.microsoft.com/windows-hardware/drivers/ddi/rsc/nf-rsc-netextensiongetpacketrsc) | [**NET_PACKET_RSC**](https://docs.microsoft.com/windows-hardware/drivers/ddi/rsctypes/ns-rsctypes-_net_packet_rsc) |
+| [**NetExtensionGetPacketChecksum**](/windows-hardware/drivers/ddi/checksum/nf-checksum-netextensiongetpacketchecksum) | [**NET_PACKET_CHECKSUM**](/windows-hardware/drivers/ddi/checksumtypes/ns-checksumtypes-_net_packet_checksum) |
+| [**NetExtensionGetLso**](/windows-hardware/drivers/ddi/lso/nf-lso-netextensiongetpacketlso) | [**NET_PACKET_LSO**](/windows-hardware/drivers/ddi/lsotypes/ns-lsotypes-_net_packet_lso)
+| [**NetExtensionGetPacketRsc**](/windows-hardware/drivers/ddi/rsc/nf-rsc-netextensiongetpacketrsc) | [**NET_PACKET_RSC**](/windows-hardware/drivers/ddi/rsctypes/ns-rsctypes-_net_packet_rsc) |
 
 ## <a name="using-fragment-extensions"></a>使用片段扩展
 
@@ -153,7 +153,7 @@ NetAdapterCx 通过解释驱动程序的表示功能来自动注册大多数片�
 
 NetAdapterCx 提供已知片段扩展常量的定义。
 
-| 常数 | 定义 |
+| 返回的常量 | 定义 |
 | --- | --- |
 | NET_FRAGMENT_EXTENSION_DATA_BUFFER_NAME NET_FRAGMENT_EXTENSION_DATA_BUFFER_VERSION_1 | 数据缓冲区片段扩展的名称和版本。 |
 | NET_FRAGMENT_EXTENSION_LOGICAL_ADDRESS_NAME NET_FRAGMENT_EXTENSION_LOGICAL_ADDRESS_VERSION_1 | 逻辑地址片段扩展的名称和版本。 |

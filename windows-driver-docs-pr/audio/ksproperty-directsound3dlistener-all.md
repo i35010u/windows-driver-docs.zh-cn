@@ -1,6 +1,6 @@
 ---
-title: KSPROPERTY\_DIRECTSOUND3DLISTENER\_
-description: KSPROPERTY\_DIRECTSOUND3DLISTENER\_ALL 属性用于设置或获取指定侦听器 ID 的所有 DirectSound 3D 侦听器属性。
+title: KSPROPERTY \_ DIRECTSOUND3DLISTENER \_ ALL
+description: KSPROPERTY \_ DIRECTSOUND3DLISTENER \_ all 属性用于设置或获取指定侦听器 ID 的所有 DirectSound 3d 侦听器属性。
 ms.assetid: cdf98ed6-cd8e-480c-b766-c348f41919ef
 keywords:
 - KSPROPERTY_DIRECTSOUND3DLISTENER_ALL 音频设备
@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 041310316c2e72a64327c0340d26e80a00e07791
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: c254e5dc2670c244d1eb28e7c9cb2e69ce3466c1
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72830810"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89208933"
 ---
-# <a name="ksproperty_directsound3dlistener_all"></a>KSPROPERTY\_DIRECTSOUND3DLISTENER\_
+# <a name="ksproperty_directsound3dlistener_all"></a>KSPROPERTY \_ DIRECTSOUND3DLISTENER \_ ALL
 
 
-KSPROPERTY\_DIRECTSOUND3DLISTENER\_ALL 属性用于设置或获取指定侦听器 ID 的所有 DirectSound 3D 侦听器属性。
+KSPROPERTY \_ DIRECTSOUND3DLISTENER \_ all 属性用于设置或获取指定侦听器 ID 的所有 DirectSound 3d 侦听器属性。
 
 ## <span id="ddk_ksproperty_directsound3dlistener_all_ks"></span><span id="DDK_KSPROPERTY_DIRECTSOUND3DLISTENER_ALL_KS"></span>
 
@@ -41,7 +41,7 @@ KSPROPERTY\_DIRECTSOUND3DLISTENER\_ALL 属性用于设置或获取指定侦听�
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">“获取”</th>
+<th align="left">获取</th>
 <th align="left">设置</th>
 <th align="left">目标</th>
 <th align="left">属性描述符类型</th>
@@ -50,27 +50,27 @@ KSPROPERTY\_DIRECTSOUND3DLISTENER\_ALL 属性用于设置或获取指定侦听�
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>“是”</p></td>
-<td align="left"><p>“是”</p></td>
-<td align="left"><p>大头针</p></td>
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksnodeproperty" data-raw-source="[&lt;strong&gt;KSNODEPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksnodeproperty)"><strong>KSNODEPROPERTY</strong></a></p></td>
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksds3d_listener_all" data-raw-source="[&lt;strong&gt;KSDS3D_LISTENER_ALL&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksds3d_listener_all)"><strong>KSDS3D_LISTENER_ALL</strong></a></p></td>
+<td align="left"><p>是</p></td>
+<td align="left"><p>是</p></td>
+<td align="left"><p>Pin</p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksnodeproperty" data-raw-source="[&lt;strong&gt;KSNODEPROPERTY&lt;/strong&gt;](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksnodeproperty)"><strong>KSNODEPROPERTY</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksds3d_listener_all" data-raw-source="[&lt;strong&gt;KSDS3D_LISTENER_ALL&lt;/strong&gt;](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksds3d_listener_all)"><strong>KSDS3D_LISTENER_ALL</strong></a></p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-属性值（操作数据）是 KSDS3D\_侦听器类型的结构\_所有指定3D 侦听器的所有属性。 此结构类似于 DS3DBUFFER 结构，如 Microsoft Windows SDK 文档中所述。
+ (操作数据) 的属性值是一个 KSDS3D 侦听器类型的 \_ 结构 \_ ，该结构指定3d 侦听器的所有属性。 此结构类似于 DS3DBUFFER 结构，如 Microsoft Windows SDK 文档中所述。
 
 ### <a name="span-idreturn_valuespanspan-idreturn_valuespanspan-idreturn_valuespanreturn-value"></a><span id="Return_Value"></span><span id="return_value"></span><span id="RETURN_VALUE"></span>返回值
 
-KSPROPERTY\_DIRECTSOUND3DLISTENER\_所有属性请求均返回状态\_SUCCESS，以指示已成功完成。 否则，请求将返回相应的错误状态代码。
+KSPROPERTY \_ DIRECTSOUND3DLISTENER \_ ALL 属性请求返回状态 \_ SUCCESS 以指示该请求已成功完成。 否则，请求将返回相应的错误状态代码。
 
 <a name="remarks"></a>备注
 -------
 
-DirectSound 使用此属性实现**IDirectSound3DBuffer：： GetAllParameters**和**IDirectSound3DBuffer：： SetAllParameters**方法，如 Windows SDK 文档中所述。
+DirectSound 使用此属性实现 **IDirectSound3DBuffer：： GetAllParameters** 和 **IDirectSound3DBuffer：： SetAllParameters** 方法，如 Windows SDK 文档中所述。
 
 <a name="requirements"></a>要求
 ------------
@@ -83,7 +83,7 @@ DirectSound 使用此属性实现**IDirectSound3DBuffer：： GetAllParameters**
 <tbody>
 <tr class="odd">
 <td align="left"><p>标头</p></td>
-<td align="left">Ksmedia （包括 Ksmedia）</td>
+<td align="left">Ksmedia (包含 Ksmedia) </td>
 </tr>
 </tbody>
 </table>
@@ -91,16 +91,9 @@ DirectSound 使用此属性实现**IDirectSound3DBuffer：： GetAllParameters**
 ## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
-[**KSNODEPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksnodeproperty)
+[**KSNODEPROPERTY**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksnodeproperty)
 
-[**KSDS3D\_侦听器\_全部**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksds3d_listener_all)
-
- 
+[**\_全部 KSDS3D 侦听器 \_**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksds3d_listener_all)
 
  
-
-
-
-
-
 

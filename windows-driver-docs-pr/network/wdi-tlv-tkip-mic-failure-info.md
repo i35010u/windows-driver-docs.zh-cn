@@ -4,38 +4,38 @@ description: WDI_TLV_TKIP_MIC_FAILURE_INFO 是包含 TKIP-MIC 故障信息的 TL
 ms.assetid: BBF168BE-6223-4C54-AFF5-17878D07EFBD
 ms.date: 07/18/2017
 keywords:
-- WDI_TLV_TKIP_MIC_FAILURE_INFO 从 Windows Vista 开始的网络驱动程序
+- 从 Windows Vista 开始 WDI_TLV_TKIP_MIC_FAILURE_INFO 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 0c1734d4dcc6f702bc19107a6a0bdaef1a05a981
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: d2463848febc49402677925bec5ee41cf6565a77
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72841723"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89208469"
 ---
-# <a name="wdi_tlv_tkip_mic_failure_info"></a>WDI\_TLV\_TKIP\_MIC\_故障\_信息
+# <a name="wdi_tlv_tkip_mic_failure_info"></a>WDI \_ TLV \_ TKIP \_ MIC \_ 故障 \_ 信息
 
 
-WDI\_TLV\_TKIP\_MIC\_故障\_INFO 是包含 TKIP-MIC 故障信息的 TLV。
+WDI \_ tlv \_ TKIP \_ mic \_ 故障信息 \_ 是包含 TKIP-MIC 故障信息的 tlv。
 
 ## <a name="tlv-type"></a>TLV 类型
 
 
 0x57
 
-## <a name="length"></a>长度
+## <a name="length"></a>Length
 
 
-所有包含的元素的大小的总和（以字节为单位）。
+Sum (所有包含的元素的大小) 。
 
 ## <a name="values"></a>值
 
 
-| 在任务栏的搜索框中键入                                              | 描述                                                                                                                                                                                                                                              |
+| 类型                                              | 说明                                                                                                                                                                                                                                              |
 |---------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | UINT8                                             | 指定哪个密码密钥类型检测到 TKIP-MIC 发生故障。 如果该值为1，则会通过默认密码密钥检测到 TKIP-MIC 故障。 如果此值为0，则通过密钥映射密码密钥检测到 TKIP-MIC 故障。 |
 | UINT32                                            | 指定默认键数组中的密码键的索引。 有效值范围为0到3。                                                                                                                                                   |
-| [**WDI\_MAC\_地址**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dot11wdi/ns-dot11wdi-_wdi_mac_address) | 指定传输失败麦克风验证的数据包的对等节点的 MAC 地址。                                                                                                                                                          |
+| [**WDI \_ MAC \_ 地址**](/windows-hardware/drivers/ddi/dot11wdi/ns-dot11wdi-_wdi_mac_address) | 指定传输失败麦克风验证的数据包的对等节点的 MAC 地址。                                                                                                                                                          |
 
  
 
@@ -50,7 +50,7 @@ WDI\_TLV\_TKIP\_MIC\_故障\_INFO 是包含 TKIP-MIC 故障信息的 TLV。
 <tbody>
 <tr class="odd">
 <td><p>最低受支持的客户端</p></td>
-<td><p>Windows 10</p></td>
+<td><p>Windows 10</p></td>
 </tr>
 <tr class="even">
 <td><p>最低受支持的服务器</p></td>
@@ -64,9 +64,4 @@ WDI\_TLV\_TKIP\_MIC\_故障\_INFO 是包含 TKIP-MIC 故障信息的 TLV。
 </table>
 
  
-
- 
-
-
-
 

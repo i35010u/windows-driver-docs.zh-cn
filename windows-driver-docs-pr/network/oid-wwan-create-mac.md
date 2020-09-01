@@ -1,30 +1,30 @@
 ---
 title: OID_WWAN_CREATE_MAC
-description: OID_WWAN_CREATE_MAC 请求微型端口驱动程序创建新的 NDIS 端口。
+description: OID_WWAN_CREATE_MAC 要求微型端口驱动程序创建新的 NDIS 端口。
 ms.assetid: 4EF98858-86CD-409B-BE41-E57B24158609
 ms.date: 08/08/2017
-keywords: -从 Windows Vista 开始 OID_WWAN_CREATE_MAC 网络驱动程序
+keywords: -从 Windows Vista 开始 OID_WWAN_CREATE_MAC 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: f32d589fa027b401361f2a3d7de66b9fa550e0c3
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: ce764086a083935b8a57bc7d84f29bcae1f05b10
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72843868"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89207429"
 ---
-# <a name="oid_wwan_create_mac"></a>OID\_WWAN\_创建\_MAC
+# <a name="oid_wwan_create_mac"></a>OID \_ WWAN \_ CREATE \_ MAC
 
 
-OID\_WWAN\_创建\_MAC 请求微型端口驱动程序来创建新的 NDIS 端口。 将在此新 NDIS 端口上发送针对额外 PDP 上下文的上下文激活请求。
+OID \_ WWAN \_ CREATE \_ MAC 请求微型端口驱动程序来创建新的 NDIS 端口。 将在此新 NDIS 端口上发送针对额外 PDP 上下文的上下文激活请求。
 
-微型端口驱动程序必须异步处理设置请求，最初返回 NDIS\_状态\_指示\_需要请求原始请求，稍后用[**NDIS\_WWAN\_MAC 来完成请求\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_mac_info)结构，指示与端口关联的 NDIS 端口号和 MAC 地址。
+微型端口驱动程序必须异步处理设置请求，最初 \_ 返回 \_ \_ 原始请求所需的 ndis 状态指示，稍后用 [**ndis \_ WWAN \_ MAC \_ 信息**](/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_mac_info) 结构来完成请求，该结构指示与端口关联的 ndis 端口号和 MAC 地址。
 
 不支持查询请求。
 
 <a name="remarks"></a>备注
 -------
 
-小型端口驱动程序必须处理请求以异步方式创建（激活）新的 NDIS 端口，以防止死锁。
+微型端口驱动程序必须处理请求以创建 (激活) 新的 NDIS 端口，以防止死锁。
 
 <a name="requirements"></a>要求
 ------------
@@ -41,7 +41,7 @@ OID\_WWAN\_创建\_MAC 请求微型端口驱动程序来创建新的 NDIS 端口
 </tr>
 <tr class="even">
 <td><p>标头</p></td>
-<td>Ntddndis （包括 Ndis .h）</td>
+<td>Ntddndis (包含 Ndis .h) </td>
 </tr>
 </tbody>
 </table>
@@ -49,14 +49,9 @@ OID\_WWAN\_创建\_MAC 请求微型端口驱动程序来创建新的 NDIS 端口
 ## <a name="see-also"></a>另请参阅
 
 
-[**NDIS\_WWAN\_MAC\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_mac_info)
+[**NDIS \_ WWAN \_ MAC \_ 信息**](/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_mac_info)
 
-[OID\_WWAN\_删除\_MAC](oid-wwan-delete-mac.md)
-
- 
+[OID \_ WWAN \_ 删除 \_ MAC](oid-wwan-delete-mac.md)
 
  
-
-
-
 

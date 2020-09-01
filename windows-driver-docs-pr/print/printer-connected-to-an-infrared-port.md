@@ -4,15 +4,15 @@ description: 连接到红外端口的打印机
 ms.assetid: 8545cf66-9b5c-41e8-82e0-e0edd75ad41b
 keywords:
 - 红外端口 WDK 打印机
-- 红外端口 WDK 打印机
+- IR 端口 WDK 打印机
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6c8fa5091cdaafcf25f28b685ce69ead29318a0e
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 71a8cfb937630ecc54d9e02b2586a6c93fa9b65e
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67380665"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89207085"
 ---
 # <a name="printer-connected-to-an-infrared-port"></a>连接到红外端口的打印机
 
@@ -20,9 +20,9 @@ ms.locfileid: "67380665"
 
 
 
-通过红外线 (IR) 端口连接的打印机不支持使用 1284年设备字符串的插。 对于使用红外线 （ir） 端口的计算机，一个服务不断轮询的设备。 当 IR Plug and Play 打印机范围内，在枚举下面创建一个 PDO\\根\\与*设备 ID*窗体 HWP*nnnn*。 *硬件 ID*的*devnode*有单个条目的窗体 HWP*nnnn*。
+通过红外 (IR) 端口连接的打印机不支持使用1284设备字符串的即插即用。 对于带有 IR 端口的计算机，服务会持续轮询设备。 当在范围内引入 IR 即插即用打印机时，将在 "枚举根" 下创建一个 PDO，其 \\ \\ *设备 ID* 格式为 "HWP*nnnn*"。 *Devnode*的*硬件 ID*包含一个 HWP*nnnn*格式的条目。
 
-[ **INF 制造商部分**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-manufacturer-section)通过 LPT 和红外端口支持插的打印机的条目应显示如下所示：
+支持通过 LPT 和 IR 端口即插即用的打印机的 [**INF 制造商部分**](../install/inf-manufacturer-section.md) 条目应如下所示：
 
 ```cpp
  
@@ -31,9 +31,4 @@ ms.locfileid: "67380665"
 ```
 
  
-
- 
-
-
-
 

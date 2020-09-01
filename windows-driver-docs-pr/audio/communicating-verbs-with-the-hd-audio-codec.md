@@ -4,29 +4,29 @@ description: 将谓词与 HD 音频编解码器通信
 ms.assetid: d93013fa-5b09-4616-bc71-5d3838337717
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 724d4265ae5a4b63d1b8ffb22566bb265fefdbd0
-ms.sourcegitcommit: 98930ca95b9adbb6e5e472f89e91ab084e67e31d
+ms.openlocfilehash: 1262770ff562ebdf7da698adab7a0ba35f471613
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82925605"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89208215"
 ---
 # <a name="communicating-verbs-with-the-hd-audio-codec"></a>将谓词与 HD 音频编解码器通信
 
 
-当你\_为\_音频适配器定义声音拓扑时，Hdau pin 配置工具将使用 ioctl AZALIABUS SENDVERBS ioctl。 请勿将此 IOCTL 用于其他目的。 提供有关 IOCTL\_AZALIABUS\_SENDVERBS 的此信息以记录其设计和实现。 Windows 7 Hdaudio 音频类驱动程序支持此 IOCTL。
+\_ \_ 当你为音频适配器定义声音拓扑时，Hdau.exe 固定配置工具将使用 ioctl AZALIABUS SENDVERBS ioctl。 请勿将此 IOCTL 用于其他目的。 提供有关 IOCTL AZALIABUS SENDVERBS 的此信息 \_ \_ 以记录其设计和实现。 Windows 7 Hdaudio.sys 音频类驱动程序支持此 IOCTL。
 
-高清晰度（HD）音频编解码器能够接收和响应动词。 这些动词和这些动词的编解码器的响应记录为[高清音频规范](https://www.intel.com/content/www/us/en/products/docs/chipsets/high-definition-audio.html)的一部分。
+高清晰度 (HD) 音频编解码器能够接收和响应动词。 这些动词和这些动词的编解码器的响应记录为 [高清音频规范](https://www.intel.com/content/www/us/en/products/docs/chipsets/high-definition-audio.html)的一部分。
 
-在 windows 7 和更高版本的 Windows 操作系统中，HD audio 类驱动程序使用 IOCTL\_AZALIABUS\_SENDVERBS ioctl 与音频编解码器通信。 定义\_了\_IOCTL AZALIABUS SENDVERBS，如以下示例中所示：
+在 windows 7 和更高版本的 Windows 操作系统中，HD audio 类驱动程序使用 IOCTL \_ AZALIABUS \_ SENDVERBS ioctl 与音频编解码器通信。 定义了 IOCTL \_ AZALIABUS \_ SENDVERBS，如以下示例中所示：
 
 ```cpp
 #define IOCTL_AZALIABUS_SENDVERBS CTL_CODE(FILE_DEVICE_UNKNOWN, 1, METHOD_BUFFERED, FILE_ANY_ACCESS)
 ```
 
-\_有关文件设备\_未知、缓存方法\_和文件\_任何\_访问的详细信息，请参阅 Windows SDK 中的 Devioctl 标头文件。
+有关文件 \_ 设备 \_ 未知、 \_ 缓存方法和文件任何访问的详细 \_ 信息 \_ ，请参阅 Windows SDK 中的 Devioctl 标头文件。
 
-若要启动与音频编解码器的通信，类驱动程序需要调用具有以下参数的[DeviceIoControl](https://docs.microsoft.com/windows/win32/api/ioapiset/nf-ioapiset-deviceiocontrol)函数。
+若要启动与音频编解码器的通信，类驱动程序需要调用具有以下参数的 [DeviceIoControl](/windows/win32/api/ioapiset/nf-ioapiset-deviceiocontrol) 函数。
 
 ```cpp
 BOOL DeviceIoControl(
@@ -41,9 +41,9 @@ BOOL DeviceIoControl(
 );
 ```
 
-如果对[**DeviceIoControl**](https://docs.microsoft.com/windows/desktop/api/ioapiset/nf-ioapiset-deviceiocontrol)的调用成功，它将返回一个非零值。 如果调用失败或挂起（不立即处理），则**DeviceIoControl**将返回零值。 类驱动程序可以调用[GetLastError](https://docs.microsoft.com/windows/win32/api/errhandlingapi/nf-errhandlingapi-getlasterror)以获取更详细的错误消息。
+如果对 [**DeviceIoControl**](/windows/desktop/api/ioapiset/nf-ioapiset-deviceiocontrol) 的调用成功，它将返回一个非零值。 如果调用失败或挂起 (未立即处理) ，则 **DeviceIoControl** 将返回一个零值。 类驱动程序可以调用 [GetLastError](/windows/win32/api/errhandlingapi/nf-errhandlingapi-getlasterror) 以获取更详细的错误消息。
 
-当音频驱动程序必须更改 pin 配置默认值时，它可以\_使用\_IOCTL AZALIABUS SENDVERBS 来发送和接收设置，并从音频编解码器获取动词。 如果与音频编解码器的通信与 pin 配置无关，则音频编解码器仅响应 Get 谓词。
+当音频驱动程序必须更改 pin 配置默认值时，它可以使用 IOCTL \_ AZALIABUS \_ SENDVERBS 来发送和接收设置，并从音频编解码器获取动词。 如果与音频编解码器的通信与 pin 配置无关，则音频编解码器仅响应 Get 谓词。
 
 下面的示例演示一个函数，该函数采用 AzCorbeEntry 结构和句柄作为参数，并从编解码器返回 AzRirbResponse。
 
@@ -77,7 +77,7 @@ BOOL rc = DeviceIoControl(handle, IOCTL_AZALIABUS_SENDVERBS, &c, sizeof(c), &r, 
 
 在下面的示例中定义了前面的代码示例中使用的数据类型和结构：
 
-### <a name="span-idazcorbentryspanspan-idazcorbentryspan-azcorbentry"></a><span id="azcorbentry"></span><span id="AZCORBENTRY"></span>AzCorbEntry
+### <a name="span-idazcorbentryspanspan-idazcorbentryspan-azcorbentry"></a><span id="azcorbentry"></span><span id="AZCORBENTRY"></span> AzCorbEntry
 
 ```cpp
 struct AzCorbEntry
@@ -100,7 +100,7 @@ struct AzCorbEntry
 };
 ```
 
-### <a name="span-idazrirbentryspanspan-idazrirbentryspan-azrirbentry"></a><span id="azrirbentry"></span><span id="AZRIRBENTRY"></span>AzRirbEntry
+### <a name="span-idazrirbentryspanspan-idazrirbentryspan-azrirbentry"></a><span id="azrirbentry"></span><span id="AZRIRBENTRY"></span> AzRirbEntry
 
 ```cpp
 struct AzRirbEntry
@@ -139,7 +139,7 @@ struct AzRirbEntry
 
 以下两个结构与动词传输 IOCTL 一起使用，以便在音频驱动程序和 HD 音频编解码器之间启用命令和响应传输。
 
-### <a name="span-idusermodecodeccommandpacketspanspan-idusermodecodeccommandpacketspan-usermodecodeccommandpacket"></a><span id="usermodecodeccommandpacket"></span><span id="USERMODECODECCOMMANDPACKET"></span>UserModeCodecCommandPacket
+### <a name="span-idusermodecodeccommandpacketspanspan-idusermodecodeccommandpacketspan-usermodecodeccommandpacket"></a><span id="usermodecodeccommandpacket"></span><span id="USERMODECODECCOMMANDPACKET"></span> UserModeCodecCommandPacket
 
 ```cpp
 typedef struct _UserModeCodecCommandPacket
@@ -149,7 +149,7 @@ typedef struct _UserModeCodecCommandPacket
 } UserModeCodecCommandPacket;
 ```
 
-### <a name="span-idusermodecodecresponsepacketspanspan-idusermodecodecresponsepacketspan-usermodecodecresponsepacket"></a><span id="usermodecodecresponsepacket"></span><span id="USERMODECODECRESPONSEPACKET"></span>UserModeCodecResponsePacket
+### <a name="span-idusermodecodecresponsepacketspanspan-idusermodecodecresponsepacketspan-usermodecodecresponsepacket"></a><span id="usermodecodecresponsepacket"></span><span id="USERMODECODECRESPONSEPACKET"></span> UserModeCodecResponsePacket
 
 ```cpp
 typedef struct _UserModeCodecResponsePacket
@@ -161,9 +161,4 @@ typedef struct _UserModeCodecResponsePacket
 ```
 
  
-
- 
-
-
-
 

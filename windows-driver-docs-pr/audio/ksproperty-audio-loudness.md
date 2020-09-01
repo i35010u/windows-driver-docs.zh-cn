@@ -1,6 +1,6 @@
 ---
-title: KSPROPERTY\_音频\_响度
-description: KSPROPERTY\_音频\_响度属性指定是否为响度节点（KSNODETYPE\_响度）中的通道启用或禁用响度（整体动态范围和低音提升）。
+title: KSPROPERTY \_ 音频 \_ 响度
+description: KSPROPERTY \_ AUDIO \_ 响度属性指定是否为响度节点 (KSNODETYPE 响度) 中的通道启用或禁用响度 (总体动态范围和低音提升) \_ 。
 ms.assetid: bc567e98-8a04-44f0-9ddf-7b71abf659a5
 keywords:
 - KSPROPERTY_AUDIO_LOUDNESS 音频设备
@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2d776a7a5d5876e92c51923f27044b236e875842
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 5341e4a2a1ecbeda7b4d649543603ef4e5171ab0
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72833018"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89206959"
 ---
-# <a name="ksproperty_audio_loudness"></a>KSPROPERTY\_音频\_响度
+# <a name="ksproperty_audio_loudness"></a>KSPROPERTY \_ 音频 \_ 响度
 
 
-KSPROPERTY\_音频\_响度属性指定是否为响度节点（[**KSNODETYPE\_响度**](ksnodetype-loudness.md)）中的通道启用或禁用响度（整体动态范围和低音提升）。
+KSPROPERTY \_ AUDIO \_ 响度属性指定是否为响度节点 ([**KSNODETYPE \_ 响度**](ksnodetype-loudness.md)) 中的通道启用或禁用响度 (总体动态范围和低音提升) 。
 
 ## <span id="ddk_ksproperty_audio_loudness_ks"></span><span id="DDK_KSPROPERTY_AUDIO_LOUDNESS_KS"></span>
 
@@ -41,7 +41,7 @@ KSPROPERTY\_音频\_响度属性指定是否为响度节点（[**KSNODETYPE\_响
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">“获取”</th>
+<th align="left">获取</th>
 <th align="left">设置</th>
 <th align="left">目标</th>
 <th align="left">属性描述符类型</th>
@@ -50,22 +50,22 @@ KSPROPERTY\_音频\_响度属性指定是否为响度节点（[**KSNODETYPE\_响
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>“是”</p></td>
-<td align="left"><p>“是”</p></td>
-<td align="left"><p>Filter</p></td>
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksnodeproperty_audio_channel" data-raw-source="[&lt;strong&gt;KSNODEPROPERTY_AUDIO_CHANNEL&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksnodeproperty_audio_channel)"><strong>KSNODEPROPERTY_AUDIO_CHANNEL</strong></a></p></td>
-<td align="left"><p>型</p></td>
+<td align="left"><p>是</p></td>
+<td align="left"><p>是</p></td>
+<td align="left"><p>筛选器</p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksnodeproperty_audio_channel" data-raw-source="[&lt;strong&gt;KSNODEPROPERTY_AUDIO_CHANNEL&lt;/strong&gt;](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksnodeproperty_audio_channel)"><strong>KSNODEPROPERTY_AUDIO_CHANNEL</strong></a></p></td>
+<td align="left"><p>BOOL</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-属性值（操作数据）的类型为 BOOL，并指定响度是打开还是关闭。 如果值**为 TRUE** ，则表示响度为 on。 **FALSE**指示它已关闭。
+ (操作数据) 的属性值为 BOOL 类型，指定是否打开或关闭响度。 如果值 **为 TRUE** ，则表示响度为 on。 **FALSE** 指示它已关闭。
 
 ### <a name="span-idreturn_valuespanspan-idreturn_valuespanspan-idreturn_valuespanreturn-value"></a><span id="Return_Value"></span><span id="return_value"></span><span id="RETURN_VALUE"></span>返回值
 
-KSPROPERTY\_音频\_响度属性请求返回状态\_SUCCESS，以指示已成功完成。 否则，请求将返回相应的错误状态代码。
+KSPROPERTY \_ 音频 \_ 响度属性请求返回状态 " \_ 成功" 以指示它已成功完成。 否则，请求将返回相应的错误状态代码。
 
 <a name="requirements"></a>要求
 ------------
@@ -78,7 +78,7 @@ KSPROPERTY\_音频\_响度属性请求返回状态\_SUCCESS，以指示已成功
 <tbody>
 <tr class="odd">
 <td align="left"><p>标头</p></td>
-<td align="left">Ksmedia （包括 Ksmedia）</td>
+<td align="left">Ksmedia (包含 Ksmedia) </td>
 </tr>
 </tbody>
 </table>
@@ -86,16 +86,9 @@ KSPROPERTY\_音频\_响度属性请求返回状态\_SUCCESS，以指示已成功
 ## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
-[**KSNODEPROPERTY\_音频\_频道**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksnodeproperty_audio_channel)
+[**KSNODEPROPERTY \_ 音频 \_ 通道**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksnodeproperty_audio_channel)
 
-[**KSNODETYPE\_响度**](ksnodetype-loudness.md)
-
- 
+[**KSNODETYPE \_ 响度**](ksnodetype-loudness.md)
 
  
-
-
-
-
-
 

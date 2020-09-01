@@ -8,23 +8,23 @@ keywords:
 - 卸载驱动程序 WDK Windows 筛选平台
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b4ed875a75a53a0c4767258212f3e966ffdcdbcb
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: baf0a2db3c0e6eb77da488e6ebd930aff0da7a3d
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72843016"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89208545"
 ---
 # <a name="unloading-a-callout-driver"></a>卸载标注驱动程序
 
 
-若要卸载标注驱动程序，操作系统将调用标注驱动程序的 unload 函数。 有关如何指定标注驱动程序的 unload 函数的详细信息，请参阅[指定卸载函数](specifying-an-unload-function.md)。
+若要卸载标注驱动程序，操作系统将调用标注驱动程序的 unload 函数。 有关如何指定标注驱动程序的 unload 函数的详细信息，请参阅 [指定卸载函数](specifying-an-unload-function.md)。
 
-标注驱动程序的 unload 函数可保证在从系统内存中卸载标注驱动程序之前，不会从筛选器引擎中注销标注驱动程序的标注。 标注驱动程序调用[**FwpsCalloutUnregisterById0**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fwpsk/nf-fwpsk-fwpscalloutunregisterbyid0)函数或[**FwpsCalloutUnregisterByKey0**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fwpsk/nf-fwpsk-fwpscalloutunregisterbykey0)函数从筛选器引擎中注销标注。 标注驱动程序不能从其卸载函数返回，直到它成功地从筛选器引擎中注销其所有标注。
+标注驱动程序的 unload 函数可保证在从系统内存中卸载标注驱动程序之前，不会从筛选器引擎中注销标注驱动程序的标注。 标注驱动程序调用 [**FwpsCalloutUnregisterById0**](/windows-hardware/drivers/ddi/fwpsk/nf-fwpsk-fwpscalloutunregisterbyid0) 函数或 [**FwpsCalloutUnregisterByKey0**](/windows-hardware/drivers/ddi/fwpsk/nf-fwpsk-fwpscalloutunregisterbykey0) 函数从筛选器引擎中注销标注。 标注驱动程序不能从其卸载函数返回，直到它成功地从筛选器引擎中注销其所有标注。
 
-标注驱动程序从筛选器引擎中注销其所有标注后，必须先删除它在最初注册其标注之前创建的设备对象。 基于 Windows 驱动模型（WDM）的标注驱动程序将调用[**IoDeleteDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iodeletedevice)函数来删除设备对象。 基于 Windows 驱动程序框架（WDF）的标注驱动程序将调用[**WdfObjectDelete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfobject/nf-wdfobject-wdfobjectdelete)函数来删除框架设备对象。
+标注驱动程序从筛选器引擎中注销其所有标注后，必须先删除它在最初注册其标注之前创建的设备对象。 基于 Windows 驱动模型 (WDM) 的标注驱动程序将调用 [**IoDeleteDevice**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iodeletedevice) 函数来删除设备对象。 基于 Windows 驱动程序框架 (WDF) 的标注驱动程序将调用 [**WdfObjectDelete**](/windows-hardware/drivers/ddi/wdfobject/nf-wdfobject-wdfobjectdelete) 函数来删除框架设备对象。
 
-标注驱动程序还必须销毁先前通过调用[**FwpsInjectionHandleDestroy0**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fwpsk/nf-fwpsk-fwpsinjectionhandledestroy0)函数创建的任何数据包注入句柄，然后再从其 unload 函数返回。
+标注驱动程序还必须销毁先前通过调用 [**FwpsInjectionHandleDestroy0**](/windows-hardware/drivers/ddi/fwpsk/nf-fwpsk-fwpsinjectionhandledestroy0) 函数创建的任何数据包注入句柄，然后再从其 unload 函数返回。
 
 例如：
 
@@ -118,10 +118,4 @@ VOID
 ```
 
  
-
- 
-
-
-
-
 

@@ -1,6 +1,6 @@
 ---
-title: KSPROPERTY\_AEC\_干扰\_填充\_启用
-description: KSPROPERTY\_AEC\_杂色\_FILL\_ENABLE 属性用于启用和禁用背景杂色填充。 这是 AEC 节点的一个可选属性（KSNODETYPE\_声音\_回音\_"取消"）。
+title: KSPROPERTY \_ AEC \_ 干扰 \_ 填充 \_ 启用
+description: KSPROPERTY \_ AEC \_ 干扰 " \_ 启用" \_ 属性用于启用和禁用背景杂色填充。 这是 AEC 节点的一个可选属性， (KSNODETYPE \_ \_ 的声音回声 \_ 取消) 。
 ms.assetid: 7c0ed4ba-d25e-42b5-b213-fbe74040a453
 keywords:
 - KSPROPERTY_AEC_NOISE_FILL_ENABLE 音频设备
@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5123a84d26766142f9dbb90afe5b602921fe08c1
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 88001888e72233cfb70c235b2c05bcbbdbedda88
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72831135"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89208999"
 ---
-# <a name="ksproperty_aec_noise_fill_enable"></a>KSPROPERTY\_AEC\_干扰\_填充\_启用
+# <a name="ksproperty_aec_noise_fill_enable"></a>KSPROPERTY \_ AEC \_ 干扰 \_ 填充 \_ 启用
 
 
-KSPROPERTY\_AEC\_杂色\_FILL\_ENABLE 属性用于启用和禁用背景杂色填充。 这是 AEC 节点的一个可选属性（[**KSNODETYPE\_声音\_回音\_"取消**](ksnodetype-acoustic-echo-cancel.md)"）。
+KSPROPERTY \_ AEC \_ 干扰 " \_ 启用" \_ 属性用于启用和禁用背景杂色填充。 这是 AEC 节点的一个可选属性， ([**KSNODETYPE 的 \_ 声音 \_ 回声 \_ 取消**](ksnodetype-acoustic-echo-cancel.md)) 。
 
 ## <span id="ddk_ksproperty_aec_noise_fill_enable_ks"></span><span id="DDK_KSPROPERTY_AEC_NOISE_FILL_ENABLE_KS"></span>
 
@@ -41,7 +41,7 @@ KSPROPERTY\_AEC\_杂色\_FILL\_ENABLE 属性用于启用和禁用背景杂色填
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">“获取”</th>
+<th align="left">获取</th>
 <th align="left">设置</th>
 <th align="left">目标</th>
 <th align="left">属性描述符类型</th>
@@ -50,22 +50,22 @@ KSPROPERTY\_AEC\_杂色\_FILL\_ENABLE 属性用于启用和禁用背景杂色填
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>“是”</p></td>
-<td align="left"><p>“是”</p></td>
-<td align="left"><p>大头针</p></td>
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksnodeproperty" data-raw-source="[&lt;strong&gt;KSNODEPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksnodeproperty)"><strong>KSNODEPROPERTY</strong></a></p></td>
-<td align="left"><p>型</p></td>
+<td align="left"><p>是</p></td>
+<td align="left"><p>是</p></td>
+<td align="left"><p>Pin</p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksnodeproperty" data-raw-source="[&lt;strong&gt;KSNODEPROPERTY&lt;/strong&gt;](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksnodeproperty)"><strong>KSNODEPROPERTY</strong></a></p></td>
+<td align="left"><p>BOOL</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-属性值（操作数据）的类型为 BOOL。 将此值设置为**TRUE**可启用背景杂色填充。 启用后，节点会将背景噪音插入捕获流中。 将此值设置为**FALSE**可禁用背景杂色填充。
+操作数据) 的属性值 (为 BOOL 类型。 将此值设置为 **TRUE** 可启用背景杂色填充。 启用后，节点会将背景噪音插入捕获流中。 将此值设置为 **FALSE** 可禁用背景杂色填充。
 
 ### <a name="span-idreturn_valuespanspan-idreturn_valuespanspan-idreturn_valuespanreturn-value"></a><span id="Return_Value"></span><span id="return_value"></span><span id="RETURN_VALUE"></span>返回值
 
-KSPROPERTY\_AEC\_噪声\_FILL\_ENABLE 属性请求返回状态\_SUCCESS 以指示已成功完成。 否则，请求将返回相应的错误状态代码。
+KSPROPERTY \_ AEC \_ 干扰 \_ \_ 启用属性请求返回状态 " \_ 成功" 以指示已成功完成。 否则，请求将返回相应的错误状态代码。
 
 <a name="remarks"></a>备注
 -------
@@ -85,7 +85,7 @@ AEC 节点会在捕获流中插入背景舒适的噪音，以避免在完全回�
 <tbody>
 <tr class="odd">
 <td align="left"><p>标头</p></td>
-<td align="left">Ksmedia （包括 Ksmedia）</td>
+<td align="left">Ksmedia (包含 Ksmedia) </td>
 </tr>
 </tbody>
 </table>
@@ -93,16 +93,9 @@ AEC 节点会在捕获流中插入背景舒适的噪音，以避免在完全回�
 ## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
-[**KSNODEPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksnodeproperty)
+[**KSNODEPROPERTY**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksnodeproperty)
 
-[**KSNODETYPE\_声音\_回音\_取消**](ksnodetype-acoustic-echo-cancel.md)
-
- 
+[**KSNODETYPE \_ 回声 \_ \_ 取消**](ksnodetype-acoustic-echo-cancel.md)
 
  
-
-
-
-
-
 

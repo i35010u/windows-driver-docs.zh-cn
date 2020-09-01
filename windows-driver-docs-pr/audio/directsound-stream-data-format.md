@@ -6,12 +6,12 @@ keywords:
 - DirectSound WDK 音频，流数据格式
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 295a791b9d625b9e8a710743ff2df23bcd949e75
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 45c7c63353fcd44d90e884284893818c64e634c2
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72833496"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89208097"
 ---
 # <a name="directsound-stream-data-format"></a>DirectSound 流数据格式
 
@@ -19,7 +19,7 @@ ms.locfileid: "72833496"
 ## <span id="directsound_stream_data_format"></span><span id="DIRECTSOUND_STREAM_DATA_FORMAT"></span>
 
 
-此示例使用[**KSDATAFORMAT\_DSOUND**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksdataformat_dsound)结构来描述 DirectSound 流的数据格式。
+此示例使用 [**KSDATAFORMAT \_ DSOUND**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksdataformat_dsound) 结构来描述 DirectSound 流的数据格式。
 
 ```cpp
   DataFormat.FormatSize  = sizeof(KSDATAFORMAT_DSOUND);
@@ -41,9 +41,4 @@ ms.locfileid: "72833496"
 ```
 
  
-
- 
-
-
-
 

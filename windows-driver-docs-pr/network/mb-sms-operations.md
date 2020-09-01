@@ -4,21 +4,21 @@ description: MB SMS 操作
 ms.assetid: 9a21495c-ec3d-4277-b880-dbf5b081814a
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3ca8ac9c17bab9d39c653de8da6fc64aedd39c6f
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: e477bc955cb26f1a1e7dbec11cb13833f9c2393e
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72844269"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89207259"
 ---
 # <a name="mb-sms-operations"></a>MB SMS 操作
 
 
-本主题介绍使用 MB 设备的短消息服务（SMS）功能配置、读取/接收、发送和删除消息的操作。
+本主题介绍使用短消息服务 (SMS) MB 设备的功能配置、读取/接收、发送和删除消息的操作。
 
-SMS 支持是必需的。 微型端口驱动程序必须设置其支持的相应发送和接收短信功能标志，这些标志在处理[OID\_wwan\_设备](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wwan-device-caps)在 WWAN\_设备的**WwanSmsCaps**成员中\_cap 查询请求时提供支持[ **\_上限**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wwan/ns-wwan-_wwan_device_caps)结构。 如果微型端口驱动程序不支持短信，它们应该指定 WWAN\_SMS\_CAP\_NONE，并为所有 SMS 相关的 Oid 返回 WWAN\_状态\_SMS\_未知\_错误。
+SMS 支持是必需的。 小型端口驱动程序必须在[**WWAN \_ 设备 \_ Cap**](/windows-hardware/drivers/ddi/wwan/ns-wwan-_wwan_device_caps)结构的**WwanSmsCaps**成员中处理[OID \_ WWAN \_ 设备 \_ cap](./oid-wwan-device-caps.md)查询请求时设置相应的发送和接收短信功能标志。 如果微型端口驱动程序不支持短信，它们应该指定 WWAN \_ sms \_ cap \_ NONE， \_ 并 \_ \_ \_ 为所有 SMS 相关 oid 返回 wwan 状态 "sms 未知错误"。
 
-小型端口驱动程序只应在 OID\_WWAN 后处理 SMS 操作[\_READY\_信息](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wwan-ready-info)返回**WwanReadyStateInitialize**作为设备就绪状态。 小型端口驱动程序应该只在设备注册到提供商网络（尽管不一定是数据服务注册）后才处理某些 SMS 操作，如发送短信。
+小型端口驱动程序只应在 [OID \_ WWAN \_ 就绪 \_ 信息](./oid-wwan-ready-info.md) 返回 **WwanReadyStateInitialize** 作为设备就绪状态后处理 SMS 操作。 仅当设备在提供程序网络上注册后，小型端口驱动程序才应处理某些 SMS 操作，如发送 SMS 消息 (但不一定) 的数据服务注册。
 
 MB 服务不区分设备中提供的不同消息存储区。 因此，微型端口驱动程序必须处理所有消息存储，并使用虚拟索引访问单个虚拟消息存储区。 例如，如果设备有三个消息存储，则微型端口驱动程序必须整体处理所有这些消息，并将它们作为单个消息存储显示到服务中。
 
@@ -34,13 +34,7 @@ MB 驱动程序模型支持以下 SMS 操作：
 
 建议使用微型端口驱动程序来支持 SMS 配置、读取、发送和删除操作，以及向用户通知设备收到的任何新 SMS 消息。
 
-有关 SMS 操作的详细信息，请参阅[oid\_wwan\_sms\_配置](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wwan-sms-configuration)、 [oid\_WWAN\_sms\_读取](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wwan-sms-read)、 [oid\_wwan\_sms\_发送](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wwan-sms-send)， [Oid\_wwan\_sms\_DELETE](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wwan-sms-delete)和[oid\_WWAN\_sms\_状态](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wwan-sms-status)。
+有关 SMS 操作的详细信息，请 [参阅 \_ oid \_ wwan sms \_ 配置](./oid-wwan-sms-configuration.md)、 [oid \_ wwan \_ sms \_ 读取](./oid-wwan-sms-read.md)、 [oid \_ wwan \_ sms \_ 发送](./oid-wwan-sms-send.md)、 [oid \_ wwan \_ sms \_ 删除](./oid-wwan-sms-delete.md)和 [OID \_ wwan \_ sms \_ 状态](./oid-wwan-sms-status.md)。
 
  
-
- 
-
-
-
-
 

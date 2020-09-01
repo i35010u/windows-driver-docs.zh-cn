@@ -14,12 +14,12 @@ keywords:
 - 性能电源模式 WDK 音频
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f9042e8bb5a27b05b5986a2571323f99ade4ded8
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 29b5a536b258e8a9f73d1c9faf138a3ca0161ce2
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72831369"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89208353"
 ---
 # <a name="audio-device-class-inactivity-timer-implementation"></a>音频设备类不活动计时器实现
 
@@ -27,7 +27,7 @@ ms.locfileid: "72831369"
 ## <span id="audio_device_class_inactivity_timer_implementation"></span><span id="AUDIO_DEVICE_CLASS_INACTIVITY_TIMER_IMPLEMENTATION"></span>
 
 
-在 Windows Server 2003 SP1、Windows XP SP2 及更高版本中，PortCls 系统驱动程序利用系统的电源空闲检测功能来为其音频客户端实现不活动的计时器。 PortCls 程序在初始化时将两个超时值和所需的空闲电源状态写入计时器。 PortCls 监视设备的任何访问（如 i/o 和属性访问），并有效地重置每个访问的计时器计数。 如果计时器超时，则系统请求 power IRP 将设备置于所需的空闲状态。 设备处于空闲状态后，PortCls 会在新的访问活动发生时对设备进行备份。
+在 Windows Server 2003 SP1、Windows XP SP2 及更高版本中，PortCls 系统驱动程序利用系统的电源空闲检测功能来为其音频客户端实现不活动的计时器。 PortCls 程序在初始化时将两个超时值和所需的空闲电源状态写入计时器。 PortCls 监视 (例如，i/o 和属性访问) 设备的任何访问权限，并有效地重置每个访问的计时器计数。 如果计时器超时，则系统请求 power IRP 将设备置于所需的空闲状态。 设备处于空闲状态后，PortCls 会在新的访问活动发生时对设备进行备份。
 
 PortCls 包含空闲超时和空闲电源状态的硬编码默认值。 硬件供应商可以选择通过将其自己的值写入系统注册表中特定于驱动程序的密钥来替代默认值。 通过这种方式，供应商可以选择最适合其设备的电源空闲参数值。
 
@@ -41,7 +41,7 @@ PortCls 包含空闲超时和空闲电源状态的硬编码默认值。 硬件�
     \HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\xxxx\yyyy\PowerSettings\ConservationIdleTime
     ```
 
-    请注意， *xxxx*表示媒体类 guid （请参阅[系统提供的设备安装程序类](https://docs.microsoft.com/previous-versions/ff553419(v=vs.85))）， *yyyy*表示 media 类 guid 下的驱动程序子项的名称。 键的值指定超时间隔（秒）。
+    请注意， *xxxx* 表示 MEDIA 类 GUID (参阅 [系统提供的设备安装程序类](/previous-versions/ff553419(v=vs.85))) ， *yyyy* 表示 media 类 GUID 下驱动程序子项的名称。 键的值指定超时间隔（秒）。
 
 -   *PerformanceIdleTime*
 
@@ -51,25 +51,25 @@ PortCls 包含空闲超时和空闲电源状态的硬编码默认值。 硬件�
     \HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\xxxx\yyyy\PowerSettings\PerformanceIdleTime
     ```
 
-    同样， *xxxx*表示 MEDIA 类 GUID， *yyyy*表示驱动程序子项的名称。 键的值指定超时间隔（秒）。
+    同样， *xxxx* 表示 MEDIA 类 GUID， *yyyy* 表示驱动程序子项的名称。 键的值指定超时间隔（秒）。
 
 -   *IdlePowerState*
 
-    此参数指定空闲超时期限到期后设备将置于的电源状态。 此参数的默认值为0，对应于设备电源状态 D0 （完全电源）。 硬件供应商可以通过将 DWORD 值写入下列特定于驱动程序的注册表项来替代默认值：
+    此参数指定空闲超时期限到期后设备将置于的电源状态。 此参数的默认值为0，对应于设备电源状态 D0 (完全电源) 。 硬件供应商可以通过将 DWORD 值写入下列特定于驱动程序的注册表项来替代默认值：
 
     ```inf
     \HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\xxxx\yyyy\PowerSettings\IdlePowerState
     ```
 
-    同样， *xxxx*表示 MEDIA 类 GUID， *yyyy*表示驱动程序子项的名称。 放置在键中的值应为0、1、2或3，分别对应于设备电源状态 D0、D1、D2 或 D3。
+    同样， *xxxx* 表示 MEDIA 类 GUID， *yyyy* 表示驱动程序子项的名称。 放置在键中的值应为0、1、2或3，分别对应于设备电源状态 D0、D1、D2 或 D3。
 
 只有设备安装 INF 文件创建了这三个空闲的注册表项。 在配置电源空闲计时器之前，PortCls 会尝试从注册表中检索驱动程序特定的 power idle 参数。 PortCls 使用默认值来代替在注册表中找不到的任何电源空闲参数。 如前所述，默认的 power idle 参数值禁用空闲计时器。
 
-有关指定*ConservationIdleTime*、 *PerformanceIdleTime*和*IdlePowerState*参数的详细信息，请参阅[**PoRegisterDeviceForIdleDetection**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-poregisterdeviceforidledetection)中最后三个调用参数的定义。
+有关指定 *ConservationIdleTime*、 *PerformanceIdleTime*和 *IdlePowerState* 参数的详细信息，请参阅 [**PoRegisterDeviceForIdleDetection**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-poregisterdeviceforidledetection)中最后三个调用参数的定义。
 
-### <a name="span-idexamplespanspan-idexamplespan-example"></a><span id="example"></span><span id="EXAMPLE"></span>实例
+### <a name="span-idexamplespanspan-idexamplespan-example"></a><span id="example"></span><span id="EXAMPLE"></span> 示例
 
-例如，硬件供应商可能想要为音频设备指定以下电源空闲参数： *ConservationIdleTime* = 0x0000001e （30秒）、 *PerformanceIdleTime* = 0x0000012c （300秒）和*IdlePowerState* =0x00000003 （设备电源状态 D3）。 若要启用这些设置，设备安装文件可以包含包含以下指令的[**INF AddReg 部分**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addreg-directive)：
+例如，硬件供应商可能想要为音频设备指定以下电源空闲参数： *ConservationIdleTime* = 0x0000001e (30 秒) ， *PerformanceIdleTime* = 0x0000012c (300 秒) ， *IdlePowerState* = 0x00000003 (设备电源状态 D3) 。 若要启用这些设置，设备安装文件可以包含包含以下指令的 [**INF AddReg 部分**](../install/inf-addreg-directive.md) ：
 
 ```inf
 [MyAudioDevice.AddReg]
@@ -84,12 +84,7 @@ HKR 表示注册表中驱动程序的根密钥：
 \HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\xxxx\yyyy
 ```
 
-同样， *xxxx*表示 MEDIA 类 GUID， *yyyy*表示驱动程序子项的名称。 相对于根密钥的路径名称指定**PowerSettings**子项。
+同样， *xxxx* 表示 MEDIA 类 GUID， *yyyy* 表示驱动程序子项的名称。 相对于根密钥的路径名称指定 **PowerSettings** 子项。
 
  
-
- 
-
-
-
 

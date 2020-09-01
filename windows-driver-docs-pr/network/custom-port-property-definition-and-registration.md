@@ -4,25 +4,25 @@ description: 自定义端口属性定义和注册
 ms.assetid: 55FCA402-191B-4DC9-A126-77AA15183E90
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d032747f9a5ffe047505dfc274334d856bcbef23
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 680731bfb4dc29dbc601cc8433097fe305203c04
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67364958"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89207611"
 ---
 # <a name="custom-port-property-definition-and-registration"></a>自定义端口属性定义和注册
 
 
-HYPER-V 可扩展交换机端口策略的自定义属性定义使用的托管的对象格式 (MOF) 类定义来注册使用 WMI 管理层。 除了定义的自定义端口属性特性的结构成员、 MOF 类还必须包含以下：
+Hyper-v 可扩展交换机端口策略的自定义属性定义通过使用 (MOF) 类定义的托管对象格式注册到 WMI 管理层。 除了定义自定义端口属性的属性的结构成员以外，MOF 类还必须包含以下内容：
 
--   唯一标识自定义端口属性 UUID。
+-   用于唯一标识自定义端口属性的 UUID。
 
--   用于唯一标识此可扩展交换机扩展的 GUID。 此 GUID 声明为**ExtensionId**限定符 MOF 的类，并且必须匹配的值**NetCfgInstanceId**扩展的 INF 文件中声明的项。
+-   唯一标识可扩展交换机扩展的 GUID。 此 GUID 声明为 MOF 类的 **ExtensionId** 限定符，并且必须与扩展的 INF 文件中声明的 **NetCfgInstanceId** 条目的值匹配。
 
--   描述性类名称字符串。 必须在字符串中包含的供应商的名称。
+-   描述性类名字符串。 供应商的名称必须包括在字符串中。
 
-下面演示可扩展交换机端口策略的自定义属性的 MOF 类的示例。
+下面显示了可扩展交换机端口策略的自定义属性的 MOF 类的示例。
 
 ```C++
 #pragma namespace("\\\\.\\root\\virtualization\\v2")
@@ -58,9 +58,9 @@ class Fabrikam_PortCustomSettingData : Msvm_EthernetSwitchPortFeatureSettingData
 };
 ```
 
-使用 MOF 编译器 (Mofcomp.exe)，可将端口策略的自定义属性的 MOF 类注册公共信息模型 (CIM) 存储库中。 注册后，可以通过 PowerShell cmdlet 和基于 WMI 的应用程序配置 MOF 类。
+端口策略的自定义属性的 MOF 类通过使用 MOF 编译器 ( # A0) 在通用信息模型中注册 (CIM) 存储库。 注册后，MOF 类可通过 PowerShell cmdlet 和基于 WMI 的应用程序进行配置。
 
-下面的示例演示必须输入要注册文件的命令 (Fabrikam\_PortCustomSettingData.mof)，其中包含的 MOF 类的自定义端口属性。
+下面的示例演示了必须输入的命令，以注册 \_ 包含自定义端口属性的 mof 类 (Fabrikam PortCustomSettingData) 的文件。
 
 ```PowerShell
 net stop vmms
@@ -68,9 +68,9 @@ mofcomp -N:root\virtualization\v2 Fabrikam_PortCustomSettingData.mof
 net start vmms
 ```
 
-有关如何使用 MOF 编译器的详细信息，请参阅[编译的驱动程序的 MOF 文件](https://docs.microsoft.com/windows-hardware/drivers/kernel/compiling-a-driver-s-mof-file)。
+有关如何使用 MOF 编译器的详细信息，请参阅 [编译驱动程序的 MOF 文件](../kernel/compiling-a-driver-s-mof-file.md)。
 
-下面的示例演示如何配置示例功能。 在此示例中，Fabrikam\_PortCustomSettingData MOF 类用于配置名为"TestVm"HYPER-V 分区中的端口。
+下面的示例演示如何配置示例功能。 在此示例中，Fabrikam \_ PORTCUSTOMSETTINGDATA MOF 类用于从名为 "TestVm" 的 hyper-v 分区配置端口。
 
 ```PowerShell
 # Retrieve the template object for the custom configuration. We know the ID already so
@@ -146,13 +146,7 @@ SettingIntA      : 100
 SettingIntB      : 9999
 ```
 
-有关详细信息如何可扩展交换机扩展管理端口策略，请参阅[管理端口策略](managing-port-policies.md)。
+有关可扩展交换机扩展如何管理端口策略的详细信息，请参阅 [管理端口策略](managing-port-policies.md)。
 
  
-
- 
-
-
-
-
 

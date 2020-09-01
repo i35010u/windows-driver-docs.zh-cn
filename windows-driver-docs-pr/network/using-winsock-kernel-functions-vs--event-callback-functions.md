@@ -12,17 +12,17 @@ keywords:
 - 事件回调函数 WDK Winsock 内核
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: dff14c922cd564294d5dee0639258bb0ba6152fc
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 07f9e269c4b34560abd9f9d28f6ff65e520c3335
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72842962"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89208523"
 ---
 # <a name="using-winsock-kernel-functions-vs-event-callback-functions"></a>使用 Winsock 内核函数与事件回调函数
 
 
-对于某些套接字操作，Winsock 内核（WSK）应用程序可以调用套接字的 WSK 函数之一来执行操作，或者在与操作相关联的[事件](winsock-kernel-events.md)发生时，在 WSK 子系统调用的套接字上实现和启用事件回调函数。 例如，在面向连接的套接字上接收数据时，WSK 应用程序可以调用套接字的[**WskReceive**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_receive)函数，或在套接字上实现和启用[*WskReceiveEvent*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_receive_event)事件回调函数。 WSK 应用程序的要求规定了应用程序应该使用哪种方法。 WSK 文档中提供了有关如何使用这两种方法的示例。
+对于某些套接字操作，Winsock 内核 (WSK) 应用程序可以调用某个套接字的 WSK 函数来执行操作，或者在与操作关联的 [事件](winsock-kernel-events.md) 发生时 WSK 子系统调用的套接字上实现和启用事件回调函数。 例如，在面向连接的套接字上接收数据时，WSK 应用程序可以调用套接字的 [**WskReceive**](/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_receive) 函数，或在套接字上实现和启用 [*WskReceiveEvent*](/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_receive_event) 事件回调函数。 WSK 应用程序的要求规定了应用程序应该使用哪种方法。 WSK 文档中提供了有关如何使用这两种方法的示例。
 
 下面的列表总结了每种方法的一些要点。
 
@@ -30,11 +30,11 @@ ms.locfileid: "72842962"
 
 -   WSK 应用程序驱动套接字操作，这意味着 WSK 应用程序控制何时发生套接字操作。 这可以简化 WSK 应用程序所需的同步。
 
--   WSK 应用程序为套接字函数提供 Irp。 这些 Irp 会按 WSK 子系统排队，直到套接字操作完成。 有关将 Irp 用于 WSK 函数的详细信息，请参阅将[irp 与 Winsock 内核函数结合使用](using-irps-with-winsock-kernel-functions.md)。
+-   WSK 应用程序为套接字函数提供 Irp。 这些 Irp 会按 WSK 子系统排队，直到套接字操作完成。 有关将 Irp 用于 WSK 函数的详细信息，请参阅将 [irp 与 Winsock 内核函数结合使用](using-irps-with-winsock-kernel-functions.md)。
 
 -   WSK 应用程序可通过等待 WSK 子系统完成每个操作的 IRP 来执行阻塞套接字操作。
 
--   WSK 应用程序可能需要在某些情况下使多个套接字操作排队，以确保面向连接的套接字上的高性能数据传输，以防传入的数据报在数据报套接字上被丢弃，或防止正在侦听插槽上丢弃的传入连接。
+-   WSK 应用程序可能需要在某些情况下使多个套接字操作排队，以确保面向连接的套接字上的高性能数据传输，以防传入的数据报在数据报套接字上被丢弃，或防止在侦听套接字上丢弃传入的连接。
 
 -   WSK 应用程序提供数据传输操作的数据缓冲区。 这减少了可能需要复制数据的次数。 但是，如果 WSK 应用程序将多个数据传输操作排入队列，则该应用程序必须为每个排队数据传输操作的 WSK 子系统提供数据缓冲区。 因此，WSK 应用程序可能需要额外的内存资源。
 
@@ -48,15 +48,9 @@ ms.locfileid: "72842962"
 
 -   WSK 子系统提供数据缓冲区用于数据传输操作。 WSK 应用程序必须立即或在合理的时间内将这些数据缓冲区释放回 WSK 子系统，以便 WSK 子系统不会用尽内存资源。 因此，WSK 应用程序可能需要将数据从 WSK 子系统拥有的数据缓冲区复制到其自己的数据缓冲区。
 
-**请注意**，  以上列表并不一定详尽。 选择哪种方法是特定 WSK 应用程序的最佳选择时，可能需要考虑其他一些事项。
+**注意**   上述列表并不一定详尽。 选择哪种方法是特定 WSK 应用程序的最佳选择时，可能需要考虑其他一些事项。
 
  
 
  
-
- 
-
-
-
-
 

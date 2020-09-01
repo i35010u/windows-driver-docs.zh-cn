@@ -3,18 +3,18 @@ title: MB SAR 平台支持
 description: MB SAR 平台支持
 ms.date: 05/06/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: d604c45320edca15ab45d15bdca157cc35126cf2
-ms.sourcegitcommit: a0e6830b125a86ac0a0da308d5bf0091e968b787
+ms.openlocfilehash: 2b79e21785fbcc522f70cdbde041bfaf28e62c30
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86557792"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89207267"
 ---
 # <a name="mb-sar-platform-support"></a>MB SAR 平台支持
 
 ## <a name="overview"></a>概述
 
-传统上，Oem 已经实现了特定的吸收率（SAR）专用解决方案。 这要求 OEM 实现仅在其用户模式驱动程序（UMDF）和调制解调器之间确定的设备服务命令，或者要求内核模式组件直接与调制解调器交互。 某些 Oem 甚至可能会有混合解决方案，在此解决方案中，它们同时具有 UMDF 和内核模式的调制解调器组件。 随着收音机辐射认知的增加，将用于通过 SAR 命令的 OEM 软件组件的接口标准化可带来以下好处：
+传统上，Oem 已经实现了特定的特定汇率 (SAR) 的专用解决方案。 这要求 OEM 实现设备服务命令，该命令仅在其用户模式驱动程序 (UMDF) 与调制解调器之间进行标识，或者需要内核模式组件直接与调制解调器交互。 某些 Oem 甚至可能会有混合解决方案，在此解决方案中，它们同时具有 UMDF 和内核模式的调制解调器组件。 随着收音机辐射认知的增加，将用于通过 SAR 命令的 OEM 软件组件的接口标准化可带来以下好处：
 
 1.  Oem 可以向用户模式组件移动并使系统更稳定，因为用户模式中的错误与内核模式相比不是致命的。
 2.  Windows 提供了平台标准接口，并减少了 Oem 的专有实现。
@@ -25,7 +25,7 @@ ms.locfileid: "86557792"
 通过添加两个新的 Oid 和 Cid，支持此功能。 对于实现 MBIM 的 IHV 合作伙伴，只需支持 CID 版本。
 
 > [!NOTE]
-> 本主题定义了用于 IHV 合作伙伴在其调制解调器设备驱动程序中实现 SAR 平台支持的接口。 如果正在寻找有关自定义设备的 SAR 映射表的信息，请参阅[自定义特定的吸收率（SAR）映射表](https://docs.microsoft.com/windows-hardware/customize/desktop/customize-sar-mapping-table)。
+> 本主题定义了用于 IHV 合作伙伴在其调制解调器设备驱动程序中实现 SAR 平台支持的接口。 如果正在寻找有关自定义设备的 SAR 映射表的信息，请参阅 [自定义特定的吸收率 (SAR) 映射表](/windows-hardware/customize/desktop/customize-sar-mapping-table)。
 
 ## <a name="mb-interface-update-for-sar-platform-support"></a>SAR 平台支持的 MB 接口更新
 
@@ -66,7 +66,7 @@ MBIM_COMMAND_MSG 上的 InformationBuffer 包含 MBIM_MS_SAR_CONFIG。 MBIM_MS_S
 
 ### <a name="parameters"></a>参数
 
-| Operation | 设置 | 查询 | 通知 |
+| 操作 | 设置 | 查询 | 通知 |
 | --- | --- | --- | --- |
 | 命令 | MBIM_MS_SET_SAR_CONFIG | 不适用 | 不适用 |
 | 响应 | MBIM_MS_SAR_CONFIG | MBIM_MS_SAR_CONFIG | 不适用 |
@@ -85,9 +85,9 @@ InformationBuffer 应为 NULL，而 InformationBufferLength 应为零。
 | --- | --- | --- | --- | --- |
 | 0 | 4 | SARMode | MBIM_MS_SAR_CONTROL_MODE | 有关详细信息，请参阅 MBIM_MS_SAR_CONTROL_MODE 表。 |
 | 4 | 4 | SARBackOffStatus | MBIM_MS_SAR_BACKOFF_STATE | 有关详细信息，请参阅 MBIM_MS_SAR_BACKOFF_STATE 表。  如果 MBIM_MS_SAR_CONTROL_MODE 设置为设备控制的，则 OS 将无法设置此字段。 |
-| 8 | 4 | Elementcount 多于（EC） | UINT32 | DataBuffer 中后面的 MBIM_MS_SAR_CONFIG 结构的计数。 |
-| 12 | 8 * EC | SARConfigStatusRefList | OL_PAIR_LIST | 该对的第一个元素为4字节的偏移量，该偏移量是从此 MBIM_MS_SET_SAR_CONFIG 结构的开始（偏移量0）计算到 MBIM_MS_SAR_CONFIG_STATE 结构的。 有关详细信息，请参阅 MBIM_MS_SAR_CONFIG_STATE 表。 对的第二个元素是指向相应 MBIM_MS_SAR_CONFIG_STATE 结构的指针的大小为4字节。 |
-| 12 + （8 * EC） |  | DataBuffer | DATABUFFER | MBIM_MS_SAR_CONFIG_STATE 结构的数组。 |
+| 8 | 4 | Elementcount 多于 (EC)  | UINT32 | DataBuffer 中后面的 MBIM_MS_SAR_CONFIG 结构的计数。 |
+| 12 | 8 * EC | SARConfigStatusRefList | OL_PAIR_LIST | 该对的第一个元素为4字节的偏移量，该偏移量是从该 MBIM_MS_SET_SAR_CONFIG 结构的开头 (偏移量 0) 计算到 MBIM_MS_SAR_CONFIG_STATE 结构。 有关详细信息，请参阅 MBIM_MS_SAR_CONFIG_STATE 表。 对的第二个元素是指向相应 MBIM_MS_SAR_CONFIG_STATE 结构的指针的大小为4字节。 |
+| 12 + (8 * EC)  |  | DataBuffer | DATABUFFER | MBIM_MS_SAR_CONFIG_STATE 结构的数组。 |
 
 前面的表中使用了以下结构。
 
@@ -107,23 +107,23 @@ MBIM_MS_SAR_BACKOFF_STATE 描述 SAR 返回的状态。
 
 MBIM_MS_SAR_CONFIG_STATE 描述了针对天线的 SAR 回退可能的状态。
 
-| Offset | 大小 | 字段 | 类型 | 描述 |
+| Offset | 大小 | 字段 | 类型 | 说明 |
 | --- | --- | --- | --- | --- |
-| 0 | 4 | SARAntennaIndex | UINT32 | 与此表中的**SARBackOffIndex**字段相对应的天线索引。 它对应于天线号，并留给 OEM 实现为设备上的每个天线编制索引。 任何索引对于此值都有效。 如果在*set*命令中将此值设置为**0xffffffff** ，则应将**SARBackOffIndex**应用于所有天线。 如果此值设置为 " **0xffffffff** "，则表示**SARBackOffIndex**应用于所有天线。 |
+| 0 | 4 | SARAntennaIndex | UINT32 | 与此表中的 **SARBackOffIndex** 字段相对应的天线索引。 它对应于天线号，并留给 OEM 实现为设备上的每个天线编制索引。 任何索引对于此值都有效。 如果在*set*命令中将此值设置为**0xffffffff** ，则应将**SARBackOffIndex**应用于所有天线。 如果此值设置为 " **0xffffffff** "，则表示 **SARBackOffIndex** 应用于所有天线。 |
 | 4 | 4 | SARBAckOffIndex | UINT32 | 对应于由 OEM 或调制解调器供应商定义的后端表的 "后退" 索引。 该表包含单独的带区和关联的后向外参数。 |
 
 #### <a name="response"></a>响应
 
 以下 MBIM_MS_SAR_CONFIG 结构应在 InformationBuffer 中使用。 MBIM_MS_SAR_CONFIG 指定 SAR 的配置。
 
-| Offset | 大小 | 字段 | 类型 | 描述 |
+| Offset | 大小 | 字段 | 类型 | 说明 |
 | --- | --- | --- | --- | --- |
 | 0 | 4 | SARMode | MBIM_MS_SAR_MODE | 有关详细信息，请参阅 MBIM_MS_SAR_CONTROL_MODE 表。 |
 | 4 | 4 | SARBackOffStatus | MBIM_MS_SAR_BACKOFF_STATE | 有关详细信息，请参阅 MBIM_MS_SAR_BACKOFF_STATE 表。 |
 | 8 | 4 | SARWifiIntegration | MBIM_MS_SAR_ WIFI_HARDWARE_INTEGRATION | 有关详细信息，请参阅 MBIM_MS_SAR_HARDWARE_WIFI_INTEGRATION 表。 这表示设备的 Wi-fi 和移动电话 SAR 在硬件层上集成，并且设备将自动调整两个收音机的 SAR 控件。 |
-| 12 | 4 | Elementcount 多于（EC） | UINT32 | DataBuffer 中后面的 MBIM_MS_SAR_CONFIG_STATE 结构的计数。 |
-| 16 | 8 * EC | SARConfigStatusRefList | OL_PAIR_LIST | 该对的第一个元素为4字节的偏移量，该偏移量是从该 MBIM_MS_SAR_CONFIG 结构的开始（偏移量0）计算到 MBIM_MS_SAR_CONFIG_STATE 结构的。 有关详细信息，请参阅 MBIM_MS_SAR_CONFIG_STATE 表。 对的第二个元素是指向相应 MBIM_MS_SAR_CONFIG_STATE 结构的指针的大小为4字节。 |
-| 16 + （8 * EC） |  | DataBuffer | DATABUFFER | MBIM_MS_SAR_CONFIG_STATE 结构的数组。 |
+| 12 | 4 | Elementcount 多于 (EC)  | UINT32 | DataBuffer 中后面的 MBIM_MS_SAR_CONFIG_STATE 结构的计数。 |
+| 16 | 8 * EC | SARConfigStatusRefList | OL_PAIR_LIST | 该对的第一个元素为4字节的偏移量，该偏移量是从该 MBIM_MS_SAR_CONFIG 结构的开头 (偏移量 0) 计算到 MBIM_MS_SAR_CONFIG_STATE 结构。 有关详细信息，请参阅 MBIM_MS_SAR_CONFIG_STATE 表。 对的第二个元素是指向相应 MBIM_MS_SAR_CONFIG_STATE 结构的指针的大小为4字节。 |
+| 16 + (8 * EC)  |  | DataBuffer | DATABUFFER | MBIM_MS_SAR_CONFIG_STATE 结构的数组。 |
 
 上表中使用了以下 MBIM_MS_SAR_HARDWARE_WIFI_INTEGRATION 结构。 它指定 Wi-fi 和蜂窝设备是否在硬件级别集成。
 
@@ -169,11 +169,11 @@ MBIM_COMMAND_MSG 上的 InformationBuffer 包含 MBIM_MS_SET_TRANSMISSION_STATUS
 
 #### <a name="unsolicited-events"></a>未经请求的事件
 
-未经请求的事件包含 MBIM_MS_TRANSMISSION_STATUS_INFO 并在发生活动的无线（OTA）通道发生更改时发送。 例如，如果调制解调器开始上传数据包数据，则需要在使用网络数据通道时设置上行通道，以便能够上传有效负载。 这会触发向操作系统提供通知。
+未经请求的事件包含 MBIM_MS_TRANSMISSION_STATUS_INFO，并在更改活动的无线 (OTA) 通道时发送。 例如，如果调制解调器开始上传数据包数据，则需要在使用网络数据通道时设置上行通道，以便能够上传有效负载。 这会触发向操作系统提供通知。
 
 ### <a name="parameters"></a>参数
 
-| Operation | 设置 | 查询 | 通知 |
+| 操作 | 设置 | 查询 | 通知 |
 | --- | --- | --- | --- |
 | 命令 | MBIM_MS_SET_TRANSMISSION_STATUS | 不适用 | 不适用 |
 | 响应 | MBIM_MS_TRANSMISSION_STATUS_INFO | MBIM_MS_TRANSMISSION_STATUS_INFO | MBIM_MS_TRANSMISSION_STATUS_INFO |
@@ -188,7 +188,7 @@ MBIM_COMMAND_MSG 上的 InformationBuffer 包含 MBIM_MS_SET_TRANSMISSION_STATUS
 
 以下 MBIM_MS_SET_TRANSMISSION_STATUS 结构应在 InformationBuffer 中使用。
 
-| Offset | 大小 | 字段 | 类型 | 描述 |
+| Offset | 大小 | 字段 | 类型 | 说明 |
 | --- | --- | --- | --- | --- |
 | 0 | 4 | ChannelNotification | MBIM_MS_TRANSMISSION_STATUS_NOTIFICATION | 有关详细信息，请参阅 MBIM_MS_TRANSMISSION_STATUS_NOTIFICATION 表。 |
 | 4 | 4 | HysteresisTimer | UINT32 | 用于确定何时将 MBIMMsTransmissionStateInactive 发送到主机的滞后指示器。 此值是调制解调器在向主机发送 OFF 指示器之前视为连续无传输活动的计时器。 此计时器应以秒为单位进行设置，范围介于1秒到5秒之间。 |
@@ -204,7 +204,7 @@ MBIM_COMMAND_MSG 上的 InformationBuffer 包含 MBIM_MS_SET_TRANSMISSION_STATUS
 
 以下 MBIM_MS_TRANSMISSION_STATUS_INFO 结构用于响应。
 
-| Offset | 大小 | 字段 | 类型 | 描述 |
+| Offset | 大小 | 字段 | 类型 | 说明 |
 | --- | --- | --- | --- | --- |
 | 0 | 4 | ChannelNotification | MBIM_MS_TRANSMISSION_STATUS_NOTIFICATION | 有关详细信息，请参阅 MBIM_MS_TRANSMISSION_STATUS_NOTIFICATION 表。 |
 | 4 | 4 | TransmissionStatus | MBIM_MS_TRANSMISSION_STATUS | 有关详细信息，请参阅 MBIM_MS_TRANSMISSION_STATUS 表。 这表明调制解调器每5秒钟是否有 TX 流量。 |
@@ -212,7 +212,7 @@ MBIM_COMMAND_MSG 上的 InformationBuffer 包含 MBIM_MS_SET_TRANSMISSION_STATUS
 
 上表中使用了以下 MBIM_MS_TRANSMISSION_STATUS 结构。 它指示调制解调器每5秒钟是否有 TX 流量。
 
-| 类型 | 值 | 描述 |
+| 类型 | 值 | 说明 |
 | --- | --- | --- |
 | MBIMMsTransmissionStateInactive | 0 | 对于最后的 HysteresisTimer 值，调制解调器不会主动传输数据，无需任何持续传输。 |
 | MBIMMsTransmissionStateActive | 1 | 调制解调器正在主动传输数据。 |
@@ -231,5 +231,3 @@ MBIM_COMMAND_MSG 上的 InformationBuffer 包含 MBIM_MS_SET_TRANSMISSION_STATUS
 | MBIM_STATUS_NO_DEVICE_SUPPORT | 设备不支持此命令。 |
 | MBIM_STATUS_INVALID_PARAMETERS | 由于参数无效，操作失败。 |
 | MBIM_STATUS_OPERATION_NOT_ALLOWED | 操作失败，因为不允许该操作。 |
-
-

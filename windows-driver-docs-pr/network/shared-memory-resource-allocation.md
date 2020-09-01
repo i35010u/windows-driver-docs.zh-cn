@@ -4,12 +4,12 @@ description: 共享内存资源分配
 ms.assetid: cf030a0f-1202-4d10-b9a1-58d031345678
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8d3a77bbd9bfa88a1abaf9aba165bd6e1ac9725b
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 3c2737f7333a64dae7d2c1c8ed2743ac48b046a2
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72841923"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89207787"
 ---
 # <a name="shared-memory-resource-allocation"></a>共享内存资源分配
 
@@ -17,11 +17,11 @@ ms.locfileid: "72841923"
 
 
 
-若要为 VM 队列分配共享内存资源，微型端口驱动程序将调用[**NdisAllocateSharedMemory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisallocatesharedmemory)函数。 例如，微型端口驱动程序在收到[OID\_接收\_筛选器时分配共享内存，\_队列\_分配\_完整](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-queue-allocation-complete)OID。 此外，小型端口驱动程序可以在网络适配器初始化期间为默认队列分配共享内存。 有关分配队列的详细信息，请参阅[分配 VM 队列](allocating-a-vm-queue.md)。
+若要为 VM 队列分配共享内存资源，微型端口驱动程序将调用 [**NdisAllocateSharedMemory**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisallocatesharedmemory) 函数。 例如，微型端口驱动程序在收到 [oid \_ 接收 \_ 筛选器 \_ 队列 \_ 分配 \_ 完成](./oid-receive-filter-queue-allocation-complete.md) oid 时，分配共享内存。 此外，小型端口驱动程序可以在网络适配器初始化期间为默认队列分配共享内存。 有关分配队列的详细信息，请参阅 [分配 VM 队列](allocating-a-vm-queue.md)。
 
-在释放队列之前，微型端口驱动程序可以为队列分配更多内存。 有关释放队列的详细信息，请参阅[释放 VM 队列](freeing-a-vm-queue.md)。
+在释放队列之前，微型端口驱动程序可以为队列分配更多内存。 有关释放队列的详细信息，请参阅 [释放 VM 队列](freeing-a-vm-queue.md)。
 
-[**NDIS\_shared\_MEMORY\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_shared_memory_parameters)结构指定共享内存分配请求的共享内存参数。 微型端口驱动程序将此结构传递给[**NdisAllocateSharedMemory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisallocatesharedmemory)函数。 NDIS 将此结构传递给[**NetAllocateSharedMemory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-allocate_shared_memory_handler)函数（即，分配\_共享\_内存\_处理程序入口点）。
+[**NDIS \_ shared \_ memory \_ 参数**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_shared_memory_parameters)结构指定共享内存分配请求的共享内存参数。 微型端口驱动程序将此结构传递给 [**NdisAllocateSharedMemory**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisallocatesharedmemory) 函数。 NDIS 将此结构传递给 [**NetAllocateSharedMemory**](/windows-hardware/drivers/ddi/ndis/nc-ndis-allocate_shared_memory_handler) 函数 (即，分配 \_ 共享 \_ 内存 \_ 处理程序入口点) 。
 
 当微型端口驱动程序分配共享内存时，它会指定以下内容：
 
@@ -29,13 +29,13 @@ ms.locfileid: "72841923"
 
 -   共享内存长度。
 
--   共享内存的使用方式。 例如，如果共享内存将用于接收缓冲区，则微型端口驱动程序将指定**NdisSharedMemoryUsageReceive** 。
+-   共享内存的使用方式。 例如，如果共享内存将用于接收缓冲区，则微型端口驱动程序将指定 **NdisSharedMemoryUsageReceive** 。
 
-如果在**Flags**成员中未设置 NDIS\_共享\_MEM\_参数\_CONTIGOUS 标志，则可以在非连续内存中包含的分散收集列表中指定共享内存。
+如果在 \_ \_ \_ Flags 成员中未设置 NDIS SHARED MEM PARAMETERS \_ CONTIGOUS 标志**Flags** ，则可以在非连续内存中包含的分散收集列表中指定共享内存。
 
-[**NDIS\_共享\_内存\_使用情况**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ne-ndis-_ndis_shared_memory_usage)枚举指定共享内存的使用方式。 NDIS\_共享\_内存\_使用情况枚举是在[**ndis\_shared\_内存\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_shared_memory_parameters)和[**NDIS\_散点\_收集\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_scatter_gather_list_parameters)构造. 有关 VMQ 中的共享内存参数接收数据缓冲区的信息，请参阅[接收缓冲区中的共享内存](shared-memory-in-receive-buffers.md)。
+[**NDIS \_ shared \_ memory \_ 用量**](/windows-hardware/drivers/ddi/ndis/ne-ndis-_ndis_shared_memory_usage)枚举指定如何使用共享内存。 Ndis shared \_ memory \_ \_ 用量枚举用于 [**ndis \_ shared \_ memory \_ 参数**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_shared_memory_parameters) 和 [**ndis \_ 散播 \_ 聚集 \_ 列表 \_ 参数**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_scatter_gather_list_parameters) 结构。 有关 VMQ 中的共享内存参数接收数据缓冲区的信息，请参阅 [接收缓冲区中的共享内存](shared-memory-in-receive-buffers.md)。
 
-[**NdisAllocateSharedMemory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisallocatesharedmemory)函数向调用方提供以下内容：
+[**NdisAllocateSharedMemory**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisallocatesharedmemory)函数向调用方提供以下内容：
 
 -   已分配内存的虚拟地址。
 
@@ -45,13 +45,7 @@ ms.locfileid: "72841923"
 
 -   分配句柄-用于在以后标识内存。
 
-微型端口驱动程序调用[**NdisFreeSharedMemory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfreesharedmemory)函数来释放队列的共享内存。 如果微型端口驱动程序为非默认队列分配了共享内存，则它将释放 OID 上下文中的共享内存[\_接收\_筛选器\_](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-free-queue)在释放队列时使用\_队列 OID。 微型端口驱动程序在[*MiniportHaltEx*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_halt)函数的上下文中为默认队列分配的共享内存可用。
+微型端口驱动程序调用 [**NdisFreeSharedMemory**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfreesharedmemory) 函数来释放队列的共享内存。 如果微型端口驱动程序为非默认队列分配了共享内存，则它将在释放队列时在 [oid \_ 接收 \_ 筛选器 \_ \_ ](./oid-receive-filter-free-queue.md) 的上下文中释放共享内存。 微型端口驱动程序在 [*MiniportHaltEx*](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_halt) 函数的上下文中为默认队列分配的共享内存可用。
 
  
-
- 
-
-
-
-
 

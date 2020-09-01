@@ -7,12 +7,12 @@ keywords:
 - 自定义音频属性集 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6edf4f21c81d608ea48c0a8c4f35992f1af1ce83
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 66243803244aebba030a6751a24caeaf015ae8ee
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72831231"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89208027"
 ---
 # <a name="exposing-custom-audio-property-sets"></a>公开自定义音频属性集
 
@@ -20,9 +20,9 @@ ms.locfileid: "72831231"
 ## <span id="exposing_custom_audio_property_sets"></span><span id="EXPOSING_CUSTOM_AUDIO_PROPERTY_SETS"></span>
 
 
-DirectSound 支持使用声卡上的自定义属性，并为此目的提供了**IKsPropertySet**接口。
+DirectSound 支持使用声卡上的自定义属性，并为此目的提供了 **IKsPropertySet** 接口。
 
-**请注意**   头文件 Dsound 和 Ksproxy 定义类似但不兼容的**IKsPropertySet**接口版本。 DirectSound 应用程序应使用 Dsound 中定义的版本。 **IKsPropertySet**的 DirectSound 版本在 Microsoft Windows SDK 文档的 DirectSound 参考页中定义。 有关 KSProxy 版本，请参阅[IKsPropertySet](https://docs.microsoft.com/windows-hardware/drivers/ddi/dsound/nn-dsound-ikspropertyset)。
+**注意**   标头文件 Dsound 和 Ksproxy 定义**IKsPropertySet**接口的类似但不兼容版本。 DirectSound 应用程序应使用 Dsound 中定义的版本。 **IKsPropertySet**的 DirectSound 版本在 Microsoft Windows SDK 文档的 DirectSound 参考页中定义。 有关 KSProxy 版本，请参阅 [IKsPropertySet](/windows-hardware/drivers/ddi/dsound/nn-dsound-ikspropertyset)。
 
  
 
@@ -30,34 +30,29 @@ DirectSound 支持使用声卡上的自定义属性，并为此目的提供了**
 
 例如，若要在 Windows 2000 中启用自定义音频属性集：
 
-1.  在 "控制面板" 中，双击 "**声音和多媒体**" 图标（或只需运行 mmsys）。
+1.  在 "控制面板" 中，双击 " **声音和多媒体** " 图标 (或只需 mmsys.cpl) 运行。
 
-2.  在 "**音频**" 选项卡上，在 "**声音播放**" 列表中选择合适的首选设备。
+2.  在 " **音频** " 选项卡上，在 " **声音播放** " 列表中选择合适的首选设备。
 
 3.  单击“高级”按钮。
 
-4.  在 "**性能**" 选项卡上，将 "**硬件加速**" 滑块滑动到 "**完全**"。
+4.  在 " **性能** " 选项卡上，将 " **硬件加速** " 滑块滑动到 " **完全**"。
 
-5.  单击 **“应用”** 。
+5.  单击“应用” 。
 
 DirectSound 现已启用，可将自定义属性集传递给驱动程序。
 
-"**硬件加速**" 滑块上有四个设置：
+" **硬件加速** " 滑块上有四个设置：
 
 -   **无**
 
--   **空白**
+-   **基本**
 
 -   **标准**
 
--   **达到**
+-   **完整**
 
-仅当滑块设置为 "**完整**" 时，才会启用自定义属性集。 有关详细信息，请参阅[DirectSound 硬件加速和 SRC 滑杆](directsound-hardware-acceleration-and-src-sliders.md)。
-
- 
+仅当滑块设置为 " **完整**" 时，才会启用自定义属性集。 有关详细信息，请参阅 [DirectSound 硬件加速和 SRC 滑杆](directsound-hardware-acceleration-and-src-sliders.md)。
 
  
-
-
-
 

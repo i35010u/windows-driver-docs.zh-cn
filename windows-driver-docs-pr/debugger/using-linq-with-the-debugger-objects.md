@@ -5,12 +5,12 @@ keywords:
 - 将 LINQ 与调试器对象配合使用
 ms.date: 04/12/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: fa448225db76d322f62cd068c3726baff27d92f0
-ms.sourcegitcommit: 17c1bbc5ea0bef3bbc87794b030a073f905dc942
+ms.openlocfilehash: 8e3148514fd7695df7407ae377af9b9dd40ec3ef
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88802801"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89207335"
 ---
 # <a name="using-linq-with-the-debugger-objects"></a>将 LINQ 与调试器对象配合使用
 
@@ -18,9 +18,9 @@ LINQ 语法可以与调试器对象结合使用来搜索和操作数据。 将 L
 
 调试器对象投影到以 "调试器" 为根的命名空间中。 进程、模块、线程、堆栈、堆栈帧和局部变量均可在 LINQ 查询中使用。
 
-LINQ 在概念上类似于用于查询数据库 (SQL) 的结构化查询语言。 可以使用多个 LINQ 方法搜索、筛选和分析调试数据。 使用 LINQ c # 方法语法。 有关 LINQ 和 LINQ c # 语法的详细信息，请参阅 [在 c # 中通过 LINQ 入门](https://docs.microsoft.com/dotnet/csharp/programming-guide/concepts/linq/getting-started-with-linq)
+LINQ 在概念上类似于用于查询数据库 (SQL) 的结构化查询语言。 可以使用多个 LINQ 方法搜索、筛选和分析调试数据。 使用 LINQ c # 方法语法。 有关 LINQ 和 LINQ c # 语法的详细信息，请参阅 [在 c # 中通过 LINQ 入门](/dotnet/csharp/programming-guide/concepts/linq/getting-started-with-linq)
 
-调试器支持中使用的 LINQ 使用 LINQ 的 "方法语法"，而不是 "查询语法"。 可以在 [LINQ (语言集成查询) ](https://docs.microsoft.com/dotnet/csharp/programming-guide/concepts/linq/query-syntax-and-method-syntax-in-linq)中找到有关不同之处的更多详细信息。
+调试器支持中使用的 LINQ 使用 LINQ 的 "方法语法"，而不是 "查询语法"。 可以在 [LINQ (语言集成查询) ](/dotnet/csharp/programming-guide/concepts/linq/query-syntax-and-method-syntax-in-linq)中找到有关不同之处的更多详细信息。
 
 LINQ 命令（如下所示）可与调试器对象一起使用。 All、。Any、。计数、。首先，。平展，。GroupBy，。Last。OrderBy，。OrderByDescending、。选择 "与"。其中. 这些方法) c # LINQ 方法形式 (尽可能严格地遵循这些方法。
 
@@ -337,7 +337,7 @@ kd> dx -r1 @$curprocess.Threads
 
 ## <a name="user-defined-variables---anonymous-types"></a>用户定义的变量-匿名类型
 
-动态对象的创建是使用 c # 匿名类型语法 (new {...}) 。 有关详细信息，请参阅关于匿名类型的详细信息，请参阅 [c # 编程指南中的匿名类型 () ](https://docs.microsoft.com/dotnet/articles/csharp/programming-guide/classes-and-structs/anonymous-types)。 此示例创建一个具有整数和字符串值的匿名类型。
+动态对象的创建是使用 c # 匿名类型语法 (new {...}) 。 有关详细信息，请参阅关于匿名类型的详细信息，请参阅 [c # 编程指南中的匿名类型 () ](/dotnet/articles/csharp/programming-guide/classes-and-structs/anonymous-types)。 此示例创建一个具有整数和字符串值的匿名类型。
 
 ```dbgcmd
 kd> dx -r1 new { MyInt = 42, MyString = "Hello World" }
@@ -565,7 +565,7 @@ Take 方法
 
 除了直接投影到字符串对象的方法之外，任何本身具有字符串转换的对象都具有以下方法，并将其投影到该方法，使其可供使用：
 
-**.ToDisplayString ( ) **：返回对象的字符串转换。 这是将在对象的 dx 调用中显示的字符串转换。 可以提供格式设置说明符来设置 ToDisplayString 的输出格式。 有关详细信息，请参阅 [Visual Studio 调试器中 c + + 的格式说明符](https://docs.microsoft.com/visualstudio/debugger/format-specifiers-in-cpp?view=vs-2019)
+**.ToDisplayString ( ) **：返回对象的字符串转换。 这是将在对象的 dx 调用中显示的字符串转换。 可以提供格式设置说明符来设置 ToDisplayString 的输出格式。 有关详细信息，请参阅 [Visual Studio 调试器中 c + + 的格式说明符](/visualstudio/debugger/format-specifiers-in-cpp?view=vs-2019)
 
 
 
@@ -862,7 +862,7 @@ dx -r1 @$cursession.Devices.DeviceTree.Flatten(n => n.Children).Where(n => (n.De
 </table>
 
 
-有关 CapabilityFlags 的详细信息，请参阅 [**设备 \_ 功能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_device_capabilities)。
+有关 CapabilityFlags 的详细信息，请参阅 [**设备 \_ 功能**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_device_capabilities)。
 
 
 ## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅
@@ -874,10 +874,3 @@ dx -r1 @$cursession.Devices.DeviceTree.Flatten(n => n.Children).Where(n => (n.De
 [JavaScript 扩展中的本机调试器对象](native-objects-in-javascript-extensions.md) 
 
 ---
-
-
-
-
-
-
-

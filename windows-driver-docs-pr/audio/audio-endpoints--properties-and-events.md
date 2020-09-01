@@ -9,23 +9,23 @@ keywords:
 - 端口驱动程序 WDK 音频，事件
 - 适配器驱动程序 WDK 音频，事件
 - 适配器驱动程序 WDK 音频，属性
-- 音频属性 WDK，有关音频属性
-- 有关音频事件的音频事件 WDK，
+- 音频属性 WDK，关于音频属性
+- 音频事件 WDK，关于音频事件
 - WDM 音频属性 WDK
 - WDM 音频事件 WDK
-- WDM 音频属性 WDK，有关音频属性
+- WDM 音频属性 WDK，关于音频属性
 - KS 属性 WDK 音频
 - KS 事件 WDK 音频
 - 属性 WDK 音频
-- pin WDK 音频
+- 锁定 WDK 音频
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c43919ff22e8025b3aeb3feba6a21a4315be8298
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 369475358455bab13f7b18962495425ae5108e05
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67355698"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89208327"
 ---
 # <a name="audio-endpoints-properties-and-events"></a>音频终结点、属性和事件
 
@@ -33,98 +33,93 @@ ms.locfileid: "67355698"
 ## <span id="audio_properties_and_events"></span><span id="AUDIO_PROPERTIES_AND_EVENTS"></span>
 
 
-PortCls 系统驱动程序支持的内部函数中所述的操作子集[KS 属性、 事件和方法](https://docs.microsoft.com/windows-hardware/drivers/stream/ks-properties--events--and-methods)。
+PortCls 系统驱动程序支持 [KS 属性、事件和方法](../stream/ks-properties--events--and-methods.md)中所述的内部操作的子集。
 
-Portcls.sys 中的端口驱动程序支持的属性和事件通过提供的某些属性和事件的请求处理程序，并且其他请求转发到微型端口驱动程序的处理程序。
+Portcls.sys 中的端口驱动程序通过为某些属性和事件请求提供处理程序，并将其他请求转发给微型端口驱动程序的处理程序，来支持属性和事件。
 
-WaveCyclic、 WavePci、 MIDI 和 Dmu 端口驱动程序的当前实现提供以下信息：
+WaveCyclic、WavePci、MIDI 和 Dmu 端口驱动程序的当前实现提供以下各项：
 
--   支持的筛选器和其 pin 和节点属性
+-   对筛选器及其 pin 和节点的属性的支持
 
--   支持为插针和节点上的事件而不是筛选器上的事件
+-   支持引脚和节点上的事件，但不支持筛选器上的事件
 
-客户端可以指定筛选器或 pin 实例的句柄作为属性或事件请求的目标。 节点属性或事件的请求指定除了筛选器或 pin 的句柄的节点 ID。 有关详细信息，请参阅[筛选器、 Pin 和节点属性](filter--pin--and-node-properties.md)。
+客户端可以指定筛选器或 pin 实例的句柄，作为属性或事件请求的目标。 节点属性或事件的请求除了指定筛选器或固定句柄外，还指定节点 ID。 有关详细信息，请参阅 [筛选器、固定和节点属性](filter--pin--and-node-properties.md)。
 
-拓扑端口驱动程序提供以下功能：
+拓扑端口驱动程序提供以下内容：
 
--   对筛选器和它的节点上的属性的支持
+-   支持筛选器及其节点上的属性
 
--   对节点上的事件的支持
+-   支持节点上的事件
 
-拓扑筛选器上的针表示永久存在，因此无法进行实例化或删除的硬编码连接。
+拓扑筛选器上的 pin 表示永久存在并且无法实例化或删除的硬编码连接。
 
-无端口驱动程序是筛选器或其 pin 和节点上的方法提供支持。 端口驱动程序永远不会处理方法的请求，并且它们不会转发到微型端口驱动程序用于处理这些请求。
+端口驱动程序都不提供对筛选器或其 pin 和节点上的方法的支持。 端口驱动程序从不处理方法请求，它们永远不会将这些请求转发给微型端口驱动程序进行处理。
 
-音频适配器驱动程序支持某些或所有以下标准属性集：
+音频适配器驱动程序支持以下部分或全部标准属性集：
 
-[KSPROPSETID\_AC3](https://docs.microsoft.com/windows-hardware/drivers/audio/kspropsetid-ac3)
+[KSPROPSETID \_ e-ac3](./kspropsetid-ac3.md)
 
-[KSPROPSETID\_声学\_Echo\_取消](https://docs.microsoft.com/windows-hardware/drivers/audio/kspropsetid-acoustic-echo-cancel)
+[KSPROPSETID \_ 回声 \_ \_ 取消](./kspropsetid-acoustic-echo-cancel.md)
 
-[KSPROPSETID\_Audio](https://docs.microsoft.com/windows-hardware/drivers/audio/kspropsetid-audio)
+[KSPROPSETID \_ 音频](./kspropsetid-audio.md)
 
-[KSPROPSETID\_DirectSound3DBuffer](https://docs.microsoft.com/windows-hardware/drivers/audio/kspropsetid-directsound3dbuffer)
+[KSPROPSETID \_ DirectSound3DBuffer](./kspropsetid-directsound3dbuffer.md)
 
-[KSPROPSETID\_DirectSound3DListener](https://docs.microsoft.com/windows-hardware/drivers/audio/kspropsetid-directsound3dlistener)
+[KSPROPSETID \_ DirectSound3DListener](./kspropsetid-directsound3dlistener.md)
 
-[KSPROPSETID\_DrmAudioStream](https://docs.microsoft.com/windows-hardware/drivers/audio/kspropsetid-drmaudiostream)
+[KSPROPSETID \_ DrmAudioStream](./kspropsetid-drmaudiostream.md)
 
-[KSPROPSETID\_General](https://docs.microsoft.com/windows-hardware/drivers/stream/kspropsetid-general)
+[KSPROPSETID \_ 常规](../stream/kspropsetid-general.md)
 
-[KSPROPSETID\_Hrtf3d](https://docs.microsoft.com/windows-hardware/drivers/audio/kspropsetid-hrtf3d)
+[KSPROPSETID \_ Hrtf3d](./kspropsetid-hrtf3d.md)
 
-[KSPROPSETID\_插孔](https://docs.microsoft.com/windows-hardware/drivers/audio/kspropsetid-jack)
+[KSPROPSETID \_ 插座](./kspropsetid-jack.md)
 
-[KSPROPSETID\_Pin](https://docs.microsoft.com/windows-hardware/drivers/stream/kspropsetid-pin)
+[KSPROPSETID \_ Pin](../stream/kspropsetid-pin.md)
 
-[KSPROPSETID\_合成器](https://docs.microsoft.com/windows-hardware/drivers/audio/kspropsetid-synth)
+[KSPROPSETID \_ 合成](./kspropsetid-synth.md)
 
-[KSPROPSETID\_合成器\_Dls](https://docs.microsoft.com/windows-hardware/drivers/audio/kspropsetid-synth-dls)
+[KSPROPSETID \_ 合成 \_ dl](./kspropsetid-synth-dls.md)
 
-[KSPROPSETID\_TopologyNode](https://docs.microsoft.com/windows-hardware/drivers/audio/kspropsetid-topologynode)
+[KSPROPSETID \_ TopologyNode](./kspropsetid-topologynode.md)
 
-所有的音频驱动程序支持**KSPROPSETID\_音频**属性集。
+所有音频驱动程序均支持 **KSPROPSETID \_ audio** 属性集。
 
-一些音频适配器驱动程序支持以下事件组：
+某些音频适配器驱动程序支持以下事件集：
 
-[KSEVENTSETID\_AudioControlChange](https://docs.microsoft.com/windows-hardware/drivers/audio/kseventsetid-audiocontrolchange)
+[KSEVENTSETID \_ AudioControlChange](./kseventsetid-audiocontrolchange.md)
 
-此外，音频适配器驱动程序是免费提供的其他属性集的标头文件 Ksmedia.h 中定义的属性处理程序。 驱动程序还可以定义并支持其自己的自定义属性和事件集，但知道有关自定义属性或事件的应用程序将能够使用它。
+此外，可以为头文件 Ksmedia 中定义的其他属性集免费提供音频适配器驱动程序。 驱动程序还可以定义和支持自己的自定义属性和事件集，但只有知道自定义属性或事件的应用程序才能使用它。
 
-本部分介绍特定于音频的属性和事件。 它包含以下主题：
+本节讨论特定于音频的属性和事件。 本节包含以下主题：
 
 [音频属性请求](audio-property-requests.md)
 
-[筛选器、 Pin 和节点属性](filter--pin--and-node-properties.md)
+[筛选器、引脚和节点属性](filter--pin--and-node-properties.md)
 
 [音频属性处理程序](audio-property-handlers.md)
 
-[基本支持查询的音频属性](basic-support-queries-for-audio-properties.md)
+[音频属性的基本支持查询](basic-support-queries-for-audio-properties.md)
 
-[音频的终结点生成器算法](audio-endpoint-builder-algorithm.md)
+[音频终结点生成器算法](audio-endpoint-builder-algorithm.md)
 
-[动态子注册和注销](dynamic-subdeviceregistration-and-unregistration.md)
+[动态子设备注册和注销](dynamic-subdeviceregistration-and-unregistration.md)
 
-[公开多渠道的节点](exposing-multichannel-nodes.md)
+[公开多声道节点](exposing-multichannel-nodes.md)
 
-[Pin Category 属性](pin-category-property.md)
+[引脚类别属性](pin-category-property.md)
 
-[音频端点设备的友好名称](friendly-names-for-audio-endpoint-devices.md)
+[音频终结点设备的友好名称](friendly-names-for-audio-endpoint-devices.md)
 
 [音频位置属性](audio-position-property.md)
 
-[固定数据区域和交集属性](pin-data-range-and-intersection-properties.md)
+[引脚数据范围和交集属性](pin-data-range-and-intersection-properties.md)
 
-[Jack Description 属性](jack-description-property.md)
+[插孔说明属性](jack-description-property.md)
 
-[麦克风阵列 Geometry 属性](microphone-array-geometry-property.md)
+[麦克风阵列几何属性](microphone-array-geometry-property.md)
 
 [硬件事件](hardware-events.md)
 
  
-
- 
-
-
-
 

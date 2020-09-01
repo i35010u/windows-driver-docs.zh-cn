@@ -1,6 +1,6 @@
 ---
-title: KSPROPERTY\_TOPOLOGYNODE\_启用
-description: KSPROPERTY\_TOPOLOGYNODE\_ENABLE 属性用于在已生成的拓扑中打开或关闭拓扑节点。
+title: KSPROPERTY \_ TOPOLOGYNODE \_ ENABLE
+description: KSPROPERTY \_ TOPOLOGYNODE \_ ENABLE 属性用于在已生成的拓扑中打开或关闭拓扑节点。
 ms.assetid: 6b9f7a92-97dc-476b-962a-40ccf1987154
 keywords:
 - KSPROPERTY_TOPOLOGYNODE_ENABLE 音频设备
@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 63edfc77bd25a68c2c6b7e4d3dacc15346ca7286
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: be7fce0c49873a94d1ae3bff75dddb1793f1091f
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72830476"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89208863"
 ---
-# <a name="ksproperty_topologynode_enable"></a>KSPROPERTY\_TOPOLOGYNODE\_启用
+# <a name="ksproperty_topologynode_enable"></a>KSPROPERTY \_ TOPOLOGYNODE \_ ENABLE
 
 
-KSPROPERTY\_TOPOLOGYNODE\_ENABLE 属性用于在已生成的拓扑中打开或关闭拓扑节点。
+KSPROPERTY \_ TOPOLOGYNODE \_ ENABLE 属性用于在已生成的拓扑中打开或关闭拓扑节点。
 
 ## <span id="ddk_ksproperty_topologynode_enable_ks"></span><span id="DDK_KSPROPERTY_TOPOLOGYNODE_ENABLE_KS"></span>
 
@@ -41,7 +41,7 @@ KSPROPERTY\_TOPOLOGYNODE\_ENABLE 属性用于在已生成的拓扑中打开或�
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">“获取”</th>
+<th align="left">获取</th>
 <th align="left">设置</th>
 <th align="left">目标</th>
 <th align="left">属性描述符类型</th>
@@ -50,29 +50,29 @@ KSPROPERTY\_TOPOLOGYNODE\_ENABLE 属性用于在已生成的拓扑中打开或�
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>“是”</p></td>
-<td align="left"><p>“是”</p></td>
-<td align="left"><p>Filter</p></td>
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksnodeproperty" data-raw-source="[&lt;strong&gt;KSNODEPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksnodeproperty)"><strong>KSNODEPROPERTY</strong></a></p></td>
-<td align="left"><p>型</p></td>
+<td align="left"><p>是</p></td>
+<td align="left"><p>是</p></td>
+<td align="left"><p>筛选器</p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksnodeproperty" data-raw-source="[&lt;strong&gt;KSNODEPROPERTY&lt;/strong&gt;](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksnodeproperty)"><strong>KSNODEPROPERTY</strong></a></p></td>
+<td align="left"><p>BOOL</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-属性值（操作数据）的类型为 BOOL，并指定该节点是打开还是关闭。 如果值为**TRUE** ，则表示该节点处于打开状态。 **FALSE**指示节点处于关闭状态。
+操作数据) 的属性值 (为 BOOL 类型，并指定该节点是打开还是关闭。 如果值为 **TRUE** ，则表示该节点处于打开状态。 **FALSE** 指示节点处于关闭状态。
 
 ### <a name="span-idreturn_valuespanspan-idreturn_valuespanspan-idreturn_valuespanreturn-value"></a><span id="Return_Value"></span><span id="return_value"></span><span id="RETURN_VALUE"></span>返回值
 
-KSPROPERTY\_TOPOLOGYNODE\_ENABLE 属性请求返回状态\_SUCCESS，以指示已成功完成。 否则，请求将返回相应的错误状态代码。
+KSPROPERTY \_ TOPOLOGYNODE \_ ENABLE 属性请求返回状态 \_ SUCCESS 以指示已成功完成。 否则，请求将返回相应的错误状态代码。
 
 <a name="remarks"></a>备注
 -------
 
 启用已启用的节点或禁用已禁用的节点不起作用，但不应将其视为错误。
 
-禁用节点会关闭该节点在通过该节点的流上执行的转换。 对于 AEC、AGC 或干扰关闭节点（[**KSNODETYPE\_声音\_回显\_"取消**](ksnodetype-acoustic-echo-cancel.md)"、" [**KSNODETYPE\_AGC**](ksnodetype-agc.md)" 或 " [**KSNODETYPE\_不显示干扰**](ksnodetype-noise-suppress.md)"，例如禁用的节点在直通模式下操作（即，它在流从节点的输入插针流到其输出插针时，不对其执行任何操作）。
+禁用节点会关闭该节点在通过该节点的流上执行的转换。 对于 AEC、AGC 或干扰关闭节点 ([**KSNODETYPE 声 \_ \_ 回声 \_ CANCEL**](ksnodetype-acoustic-echo-cancel.md)、 [**KSNODETYPE \_ AGC**](ksnodetype-agc.md)或 [**KSNODETYPE \_ 噪音 \_ **](ksnodetype-noise-suppress.md) 取消) ，例如，禁用的节点在传递模式下操作 (也就是说，它在流从节点的输入插针流动到其输出插针) 时不对该流执行任何操作。
 
 <a name="requirements"></a>要求
 ------------
@@ -85,7 +85,7 @@ KSPROPERTY\_TOPOLOGYNODE\_ENABLE 属性请求返回状态\_SUCCESS，以指示�
 <tbody>
 <tr class="odd">
 <td align="left"><p>标头</p></td>
-<td align="left">Ksmedia （包括 Ksmedia）</td>
+<td align="left">Ksmedia (包含 Ksmedia) </td>
 </tr>
 </tbody>
 </table>
@@ -93,20 +93,13 @@ KSPROPERTY\_TOPOLOGYNODE\_ENABLE 属性请求返回状态\_SUCCESS，以指示�
 ## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
-[**KSNODEPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksnodeproperty)
+[**KSNODEPROPERTY**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksnodeproperty)
 
-[**KSNODETYPE\_声音\_回音\_取消**](ksnodetype-acoustic-echo-cancel.md)
+[**KSNODETYPE \_ 回声 \_ \_ 取消**](ksnodetype-acoustic-echo-cancel.md)
 
-[**KSNODETYPE\_AGC**](ksnodetype-agc.md)
+[**KSNODETYPE \_ AGC**](ksnodetype-agc.md)
 
-[**KSNODETYPE\_\_禁止显示**](ksnodetype-noise-suppress.md)
-
- 
+[**KSNODETYPE \_ 干扰 \_**](ksnodetype-noise-suppress.md)
 
  
-
-
-
-
-
 

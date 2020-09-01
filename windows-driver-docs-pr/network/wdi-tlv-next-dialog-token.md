@@ -1,39 +1,39 @@
 ---
 title: WDI_TLV_NEXT_DIALOG_TOKEN
-description: WDI_TLV_NEXT_DIALOG_TOKEN 是包含对话框标记以在下一步操作框架中使用 TLV。
+description: WDI_TLV_NEXT_DIALOG_TOKEN 是一个 TLV，其中包含要在下一个操作框中使用的对话框标记。
 ms.assetid: B11331CB-50D3-4A3B-93A5-359ABD918E70
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 WDI_TLV_NEXT_DIALOG_TOKEN 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 00eeab719c061efbeac7278d0c985d7bbd6c7427
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 86609b015ad4fdc5507f923b284285a629f36142
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67385718"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89207771"
 ---
-# <a name="wditlvnextdialogtoken"></a>WDI\_TLV\_NEXT\_DIALOG\_TOKEN
+# <a name="wdi_tlv_next_dialog_token"></a>WDI \_ TLV \_ 下一个 \_ 对话框 \_ 令牌
 
 
-WDI\_TLV\_下一步\_对话框\_令牌是包含对话框标记以在下一步操作框架中使用 TLV。
+WDI \_ tlv \_ 下一个 \_ 对话框 \_ 令牌是一个 tlv，其中包含要在下一个操作框架中使用的对话框令牌。
 
 ## <a name="tlv-type"></a>TLV 类型
 
 
 0xE1
 
-## <a name="length"></a>长度
+## <a name="length"></a>Length
 
 
-超出 UINT8 的大小 （以字节为单位）。
+UINT8 的大小 (以字节为单位) 。
 
 ## <a name="values"></a>值
 
 
-| 在任务栏的搜索框中键入  | 描述                                           |
+| 类型  | 说明                                           |
 |-------|-------------------------------------------------------|
-| UINT8 | 要在下一步操作框架中使用的对话框标记。 |
+| UINT8 | 要在下一个操作框中使用的对话框标记。 |
 
  
 
@@ -55,21 +55,16 @@ WDI\_TLV\_下一步\_对话框\_令牌是包含对话框标记以在下一步操
 <td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
-<td><p>Header</p></td>
+<td><p>标头</p></td>
 <td>Wditypes.hpp</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
-[OID\_WDI\_GET\_NEXT\_ACTION\_FRAME\_DIALOG\_TOKEN](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wdi-get-next-action-frame-dialog-token)
-
- 
+[OID \_ WDI \_ 获取 \_ 下一个 \_ 操作 \_ 框架 \_ 对话框 \_ 令牌](./oid-wdi-get-next-action-frame-dialog-token.md)
 
  
-
-
-
 

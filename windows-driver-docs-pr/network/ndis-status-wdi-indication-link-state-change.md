@@ -4,22 +4,22 @@ description: 微型端口驱动程序使用 NDIS_STATUS_WDI_INDICATION_LINK_STAT
 ms.assetid: 5a8fbe41-d063-4d34-beb8-92ceeb1d97a2
 ms.date: 07/18/2017
 keywords:
-- NDIS_STATUS_WDI_INDICATION_LINK_STATE_CHANGE 从 Windows Vista 开始的网络驱动程序
+- 从 Windows Vista 开始 NDIS_STATUS_WDI_INDICATION_LINK_STATE_CHANGE 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: a4a3416109e63b64fbc9c5fc65d9d35d4382deed
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 79a857901fccb5c879e8efec23806c19e04dd8b2
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72844427"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89207435"
 ---
-# <a name="ndis_status_wdi_indication_link_state_change"></a>NDIS\_状态\_WDI\_指示\_链接\_状态\_更改
+# <a name="ndis_status_wdi_indication_link_state_change"></a>NDIS \_ 状态 \_ WDI \_ 指示 \_ 链接 \_ 状态 \_ 更改
 
 
-小型端口驱动程序使用 NDIS\_状态\_WDI\_指示\_链接\_状态\_更改为指示以下任何情况：
+微型端口驱动程序使用 NDIS \_ 状态 \_ WDI \_ 指示 \_ 链接 \_ 状态 \_ 更改来指示以下任何情况：
 
 -   链接速度发生变化。
--   链接质量的变化超出了阈值。 如果 "连接质量提示" 设置为 "\_\_WDI"，则阈值为1，\_低\_延迟（在[**WDI\_连接\_quality\_提示**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wditypes/ne-wditypes-_wdi_connection_quality_hint)中定义）。 否则，阈值为5。
+-   链接质量的变化超出了阈值。 如果 "连接质量提示" 设置为 "WDI \_ 连接质量 \_ \_ 低 \_ 延迟 (在 [**WDI \_ 连接 \_ 质量 \_ 提示**](/windows-hardware/drivers/ddi/wditypes/ne-wditypes-_wdi_connection_quality_hint)) 中定义，则阈值为1。 否则，阈值为5。
 
 | 对象 |
 |--------|
@@ -34,9 +34,9 @@ ms.locfileid: "72844427"
 ## <a name="payload-data"></a>负载数据
 
 
-| 在任务栏的搜索框中键入                                                                                           | 允许多个 TLV 实例 | 可选 | 描述                       |
+| 类型                                                                                           | 允许多个 TLV 实例 | 可选 | 说明                       |
 |------------------------------------------------------------------------------------------------|--------------------------------|----------|-----------------------------------|
-| [**WDI\_TLV\_LINK\_状态\_更改\_参数**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-link-state-change-parameters) |                                |          | 链接状态更改参数。 |
+| [**WDI \_ TLV \_ 链接 \_ 状态 \_ 更改 \_ 参数**](./wdi-tlv-link-state-change-parameters.md) |                                |          | 链接状态更改参数。 |
 
  
 
@@ -51,7 +51,7 @@ ms.locfileid: "72844427"
 <tbody>
 <tr class="odd">
 <td><p>最低受支持的客户端</p></td>
-<td><p>Windows 10</p></td>
+<td><p>Windows 10</p></td>
 </tr>
 <tr class="even">
 <td><p>最低受支持的服务器</p></td>
@@ -65,9 +65,4 @@ ms.locfileid: "72844427"
 </table>
 
  
-
- 
-
-
-
 

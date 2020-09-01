@@ -1,36 +1,36 @@
 ---
 title: OID_GEN_INTERFACE_INFO
-description: 为查询，使用 OID_GEN_INTERFACE_INFO OID 来获取网络接口的当前状态和统计信息。
+description: 作为查询，使用 OID_GEN_INTERFACE_INFO OID 获取网络接口的当前状态和统计信息。
 ms.assetid: fa1dd52f-7cf6-4e95-af15-02ae65fcb872
 ms.date: 08/08/2017
-keywords: -从 Windows Vista 开始 OID_GEN_INTERFACE_INFO 网络驱动程序
+keywords: -从 Windows Vista 开始 OID_GEN_INTERFACE_INFO 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 0215e658f9401ff6b735634cf7c0002de32fa995
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: a8f81adeaabf30e9fb391c5c4fdf6e6def97f945
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67369099"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89208651"
 ---
-# <a name="oidgeninterfaceinfo"></a>OID\_GEN\_接口\_信息
+# <a name="oid_gen_interface_info"></a>OID \_ 代 \_ 接口 \_ 信息
 
 
-为查询，使用 OID\_GEN\_接口\_信息 OID，若要获取网络接口的当前状态和统计信息。
+作为查询，使用 OID \_ GEN \_ 接口 \_ 信息 OID 获取网络接口的当前状态和统计信息。
 
 **版本信息**
 
-<a href="" id="windows-vista-and-later"></a>Windows Vista 及更高版本  
+<a href="" id="windows-vista-and-later"></a>Windows Vista 和更高版本  
 支持。
 
 <a href="" id="ndis-6-0-and-later-miniport-drivers"></a>NDIS 6.0 和更高版本的微型端口驱动程序  
-未请求。 NDIS 接口提供程序仅。
+未请求。 仅适用于 NDIS 接口提供程序。
 
 <a name="remarks"></a>备注
 -------
 
-仅[NDIS 网络接口](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-network-interfaces2)提供程序，因此不微型端口驱动程序或筛选器驱动程序必须支持此 OID 作为 OID 的请求。
+只有 [NDIS 网络接口](./ndis-network-interfaces2.md) 提供程序（因此不是微型端口驱动程序或筛选器驱动程序）才能支持此 OID 作为 oid 请求。
 
-如果查询成功，接口提供程序返回 NDIS\_状态\_成功和查询的结果是[ **NDIS\_接口\_信息**](https://docs.microsoft.com/windows/desktop/api/ifdef/ns-ifdef-_ndis_interface_information)结构。 此结构包含接口的生存期内更改的信息。
+如果查询成功，接口提供程序将返回 NDIS \_ 状态 \_ 成功，查询的结果为 [**ndis \_ 接口 \_ 信息**](/windows/desktop/api/ifdef/ns-ifdef-_ndis_interface_information) 结构。 此结构包含在接口的生存期内发生更改的信息。
 
 <a name="requirements"></a>要求
 ------------
@@ -42,23 +42,18 @@ ms.locfileid: "67369099"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Header</p></td>
-<td>Ntddndis.h （包括 Ndis.h）</td>
+<td><p>标头</p></td>
+<td>Ntddndis (包含 Ndis .h) </td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
-[**NDIS\_接口\_信息**](https://docs.microsoft.com/windows/desktop/api/ifdef/ns-ifdef-_ndis_interface_information)
+[**NDIS \_ 接口 \_ 信息**](/windows/desktop/api/ifdef/ns-ifdef-_ndis_interface_information)
 
-[NDIS 网络接口 Oid](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-network-interface-oids)
-
- 
+[NDIS 网络接口 Oid](./ndis-network-interface-oids.md)
 
  
-
-
-
 

@@ -4,12 +4,12 @@ description: 使用 Microsoft Visual Studio 2017 中的驱动程序开发向导�
 ms.assetid: 6E50CD69-D385-4724-B6B1-85D42EFFC6F0
 ms.date: 02/25/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 38226e4556406cf79a27deb8b0a823f5557cd0e9
-ms.sourcegitcommit: 7a7e61b4147a4aa86bf820fd0b0c7681fe17e544
+ms.openlocfilehash: fed702d6b19aeba8c911097f8a6d7fa8ac214266
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89056967"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89208435"
 ---
 # <a name="building-a-basic-v4-printer-driver"></a>生成基本的 v4 打印机驱动程序
 
@@ -292,4 +292,4 @@ DiskName="MyV4PrintDriver Installation Disk"
 有关 v4 打印机驱动程序的 INF 文件的详细信息，请参阅 [V4 驱动程序 inf](v4-driver-inf.md)。
 
 > [!NOTE]
-> 除了上表中的文件，还请注意， *MyV4PrintDriver Render Filter* 文件夹已创建。 这是渲染筛选器项目模板，它为构建 XPS 渲染筛选器和 XPS 筛选器管道配置文件提供了良好的基础。 有关 XPS 呈现筛选器的详细信息，请参阅 [XPSDrv Render Module](xpsdrv-render-module.md)，若要查看 xps 呈现筛选器的示例，请参阅 [Xps 光栅化筛选器服务](https://docs.microsoft.com/samples/microsoft/windows-driver-samples/xps-rasterization-filter-service-sample/) 示例。
+> 除了上表中的文件，还请注意， *MyV4PrintDriver Render Filter* 文件夹已创建。 这是渲染筛选器项目模板，它为构建 XPS 渲染筛选器和 XPS 筛选器管道配置文件提供了良好的基础。 有关 XPS 呈现筛选器的详细信息，请参阅 [XPSDrv Render Module](xpsdrv-render-module.md)，若要查看 xps 呈现筛选器的示例，请参阅 [Xps 光栅化筛选器服务](/samples/microsoft/windows-driver-samples/xps-rasterization-filter-service-sample/) 示例。

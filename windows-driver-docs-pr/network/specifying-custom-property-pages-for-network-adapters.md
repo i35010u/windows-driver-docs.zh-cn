@@ -3,17 +3,17 @@ title: 指定网络适配器的自定义属性页
 description: 指定网络适配器的自定义属性页
 ms.assetid: c9d54e9b-3d11-46d1-9c24-86a802c64a7a
 keywords:
-- 添加注册表部分 WDK 网络连接、 自定义属性页
+- 添加-注册表-WDK 网络，自定义属性页
 - 自定义属性页 WDK 网络
 - 属性页 WDK 网络
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6043429a91c093cc8e4b019e2196d9e0f8203124
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: a238eeedf3bb1ad31121c61995fb411b5162d8b0
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67383638"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89207409"
 ---
 # <a name="specifying-custom-property-pages-for-network-adapters"></a>指定网络适配器的自定义属性页
 
@@ -21,34 +21,28 @@ ms.locfileid: "67383638"
 
 
 
-如果**高级**属性页并不适用于显示网络组件 （适配器） 的配置选择，您可以创建一个或多个自定义属性页。
+如果 " **高级** " 属性页不适合用于显示网络组件 (适配器) 的配置选项，则可以创建一个或多个自定义属性页。
 
-**若要创建自定义属性页**
+**创建自定义属性页**
 
-1.  创建 Microsoft Win32 属性页。 然后，创建属性表扩展插件提供的 DLL *AddPropSheetPageProc*并*ExtensionPropSheetPageProc*回调函数。 有关详细信息，请参阅 Windows 2000 平台 SDK。
+1.  创建 Microsoft Win32 属性页。 然后创建提供 *AddPropSheetPageProc* 和 *ExtensionPropSheetPageProc* 回调函数的属性表扩展 DLL。 有关详细信息，请参阅 Windows 2000 平台 SDK。
 
-2.  使用*添加注册表部分*引用**DDInstall**部分，了解要添加的适配器**EnumPropPages32**密钥与该适配器的实例键。 **EnumPropPages32**密钥都有两个 REG\_SZ 值： 将导出的 DLL 的名称*ExtensionPropSheetPageProc*函数和名称*ExtensionPropSheetPageProc*函数。 以下是一种*添加注册表部分*，它将**EnumPropPages32**密钥：
+2.  使用适配器的**DDInstall**部分引用的 "*添加注册表" 部分*，将**EnumPropPages32**项添加到适配器的实例键。 **EnumPropPages32**键具有两个 REG \_ SZ 值：导出*ExtensionPropSheetPageProc*函数的 DLL 的名称和*ExtensionPropSheetPageProc*函数的名称。 下面是添加**EnumPropPages32**项的 "*添加注册表" 部分*的示例：
 
     ```INF
     HKR, EnumPropPages32, 0, "DLL name, ExtensionPropSheetPageProc function name"
     ```
 
-3.  在适配器的 INF 文件，包括**CopyFiles**部分中，将属性表扩展 DLL 复制到 Windows\\System32 目录。 有关详细信息**CopyFiles**部分中，请参阅[INF 文件的部分和指令](https://docs.microsoft.com/windows-hardware/drivers/install/inf-file-sections-and-directives)。
+3.  在适配器的 INF 文件中，包含将属性表扩展 DLL 复制到 Windows System32 目录的 **CopyFiles** 部分 \\ 。 有关 **CopyFiles** 部分的详细信息，请参阅 [INF 文件部分和指令](../install/index.md)。
 
-4.  在中**DDInstall**部分对于适配器，指定 NCF\_HAS\_作为一个 UI**特征**值以指示适配器支持用户界面。 有关详细信息，请参阅[DDInstall 部分](ddinstall-section-in-a-network-inf-file.md)。
+4.  在适配器的 " **DDInstall** " 部分中，指定 \_ \_ "NCF" 将 UI 作为 **特性** 值之一，指示适配器支持用户界面。 有关详细信息，请参阅 [DDInstall 部分](ddinstall-section-in-a-network-inf-file.md)。
 
-5.  用户将变更应用到属性页后，属性表扩展 DLL 必须着：
-    -   调用**SetupDiGetDeviceInstallParams**
-    -   设置 DI\_FLAGSEX\_PROPCHANGE\_挂起中 SP 标志\_DEVINSTALL\_PARAMS 结构提供的**SetupDiGetDeviceInstallParams**
-    -   将传递更新的 SP\_DEVINSTALL\_结构 PARAMS **SetupDiSetDeviceInstallParams**。
+5.  用户将更改应用到属性页后，必须执行以下操作：
+    -   调用 **SetupDiGetDeviceInstallParams**
+    -   \_ \_ \_ 在 \_ \_ **SetupDiGetDeviceInstallParams**提供的 SP DEVINSTALL 参数结构中设置 DI FLAGSEX PROPCHANGE 挂起标志
+    -   将更新的 SP \_ DEVINSTALL \_ PARAMS 结构传递到 **SetupDiSetDeviceInstallParams**。
 
-        这会重新加载该驱动程序，以便它可以读取已更改的参数值。
-
- 
+        这会重新加载驱动程序，以便它可以读取更改的参数值。
 
  
-
-
-
-
 

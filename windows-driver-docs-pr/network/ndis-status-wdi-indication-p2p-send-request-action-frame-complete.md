@@ -1,35 +1,35 @@
 ---
 title: NDIS_STATUS_WDI_INDICATION_P2P_SEND_REQUEST_ACTION_FRAME_COMPLETE
-description: 微型端口驱动程序使用 NDIS_STATUS_WDI_INDICATION_P2P_SEND_REQUEST_ACTION_FRAME_COMPLETE 指示由 OID_WDI_TASK_P2P_SEND_REQUEST_ACTION_FRAME 发送的请求操作框架有关的信息。
+description: 微型端口驱动程序使用 NDIS_STATUS_WDI_INDICATION_P2P_SEND_REQUEST_ACTION_FRAME_COMPLETE 来指示有关 OID_WDI_TASK_P2P_SEND_REQUEST_ACTION_FRAME 发送的请求操作框的信息。
 ms.assetid: 4c67b512-456f-48ed-bd1c-71a32bcf85f0
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 NDIS_STATUS_WDI_INDICATION_P2P_SEND_REQUEST_ACTION_FRAME_COMPLETE 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 819ff6dae18268ec47b15f90b6d91cf4c4dc99af
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: c6607c5119ed0722c0805c10ce9eca168f998d03
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67353330"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89207205"
 ---
-# <a name="ndisstatuswdiindicationp2psendrequestactionframecomplete"></a>NDIS\_状态\_WDI\_指示\_P2P\_发送\_请求\_操作\_帧\_完成
+# <a name="ndis_status_wdi_indication_p2p_send_request_action_frame_complete"></a>NDIS \_ 状态 \_ WDI \_ 指示 \_ P2P \_ 发送 \_ 请求 \_ 操作 \_ 帧 \_ 完成
 
 
-微型端口驱动程序使用 NDIS\_状态\_WDI\_指示\_P2P\_发送\_请求\_操作\_帧\_完成以指示有关发送的请求操作帧的信息[OID\_WDI\_任务\_P2P\_发送\_请求\_操作\_帧](oid-wdi-task-p2p-send-request-action-frame.md).
+微型端口驱动程序使用 NDIS \_ 状态 \_ WDI \_ 指示 \_ P2P \_ 发送 \_ 请求 \_ 操作 \_ 帧 \_ 完成，以指示由 [OID \_ WDI \_ 任务 \_ P2P \_ 发送 \_ 请求 \_ 操作 \_ 框架](oid-wdi-task-p2p-send-request-action-frame.md)发送的请求操作帧的相关信息。
 
-| Object |
+| 对象 |
 |--------|
-| Port   |
+| 端口   |
 
  
 
-## <a name="payload-data"></a>有效负载数据
+## <a name="payload-data"></a>负载数据
 
 
-| 在任务栏的搜索框中键入                                                                                                       | 允许多个 TLV 实例 | 可选                                            | 描述                                                           |
+| 类型                                                                                                       | 允许多个 TLV 实例 | 可选                                            | 说明                                                           |
 |------------------------------------------------------------------------------------------------------------|--------------------------------|-----------------------------------------------------|-----------------------------------------------------------------------|
-| [**WDI\_TLV\_P2P\_SEND\_ACTION\_FRAME\_RESULT**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-p2p-send-action-frame-result-parameters) |                                | 此绑定的 TLV 处于仅需要状态是否成功。 | 有关对等方发送的请求操作帧的信息。 |
+| [**WDI \_ TLV \_ P2P \_ 发送 \_ 操作 \_ 帧 \_ 结果**](./wdi-tlv-p2p-send-action-frame-result-parameters.md) |                                | 仅当状态为 "成功" 时才需要此 TLV。 | 有关发送到对等方的请求操作帧的信息。 |
 
  
 
@@ -51,16 +51,11 @@ ms.locfileid: "67353330"
 <td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
-<td><p>Header</p></td>
-<td>Dot11wdi.h</td>
+<td><p>标头</p></td>
+<td>Dot11wdi</td>
 </tr>
 </tbody>
 </table>
 
  
-
- 
-
-
-
 

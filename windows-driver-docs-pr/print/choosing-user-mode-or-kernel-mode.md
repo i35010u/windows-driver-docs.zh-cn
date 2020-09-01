@@ -9,12 +9,12 @@ keywords:
 - 内核模式执行 WDK 打印机图形
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 40035a787242a7e37e4855b68b9bafc2c0f01931
-ms.sourcegitcommit: 17c1bbc5ea0bef3bbc87794b030a073f905dc942
+ms.openlocfilehash: d4d7905c56496ff8960e8df60f278769a6859763
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88802649"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89208431"
 ---
 # <a name="choosing-user-mode-or-kernel-mode"></a>选择用户模式或内核模式
 
@@ -75,7 +75,7 @@ ms.locfileid: "88802649"
 
 ### <a name="using-the-graphics-ddi-in-user-mode"></a>在用户模式下使用图形 DDI
 
-用户模式打印机图形 DLL 并不局限于调用 [GDI 支持服务](https://docs.microsoft.com/windows-hardware/drivers/display/gdi-support-services) 和其他 Eng 的图形 DDI 回调函数。 但是，有一些必须遵循的规则：
+用户模式打印机图形 DLL 并不局限于调用 [GDI 支持服务](../display/gdi-support-services.md) 和其他 Eng 的图形 DDI 回调函数。 但是，有一些必须遵循的规则：
 
 -   与内核模式图形 Dll 一样，用户模式图形 Dll 必须调用图形 DDIs 来创建或修改绘图图面。 这些回调函数是 GDI 支持服务，不允许调用这些绘图函数的 Win32 等效项。
 
@@ -83,19 +83,19 @@ ms.locfileid: "88802649"
 
 -   用户模式 Dll 不能调用下面的 Eng 前缀图形 DDI 函数列表：
 
-    [**EngCreatePath**](https://docs.microsoft.com/windows/win32/api/winddi/nf-winddi-engcreatepath)
+    [**EngCreatePath**](/windows/win32/api/winddi/nf-winddi-engcreatepath)
 
-    [**EngGetType1FontList**](https://docs.microsoft.com/windows/win32/api/winddi/nf-winddi-enggettype1fontlist)
+    [**EngGetType1FontList**](/windows/win32/api/winddi/nf-winddi-enggettype1fontlist)
 
-    [**EngMapModule**](https://docs.microsoft.com/windows/win32/api/winddi/nf-winddi-engmapmodule)
+    [**EngMapModule**](/windows/win32/api/winddi/nf-winddi-engmapmodule)
 
-    [**EngDebugBreak**](https://docs.microsoft.com/windows/win32/api/winddi/nf-winddi-engdebugbreak)
+    [**EngDebugBreak**](/windows/win32/api/winddi/nf-winddi-engdebugbreak)
 
--   用户模式打印机图形 Dll 可以继续对 [GDI 浮点服务](https://docs.microsoft.com/windows-hardware/drivers/display/gdi-floating-point-services)使用图形 DDI 函数。
+-   用户模式打印机图形 Dll 可以继续对 [GDI 浮点服务](../display/gdi-floating-point-services.md)使用图形 DDI 函数。
 
 ### <a name="converting-an-existing-printer-graphics-dll-to-user-mode"></a>将现有打印机图形 DLL 转换为用户模式
 
-如果你之前开发了在内核模式下执行的打印机图形 DLL，则可以将该 DLL 转换为用户模式执行。 若要进行转换，只需将 [**DrvQueryDriverInfo**](https://docs.microsoft.com/windows/win32/api/winddi/nf-winddi-drvquerydriverinfo) 函数添加到 DLL，然后按照 [生成打印机图形 DLL](building-a-printer-graphics-dll.md)的规则。
+如果你之前开发了在内核模式下执行的打印机图形 DLL，则可以将该 DLL 转换为用户模式执行。 若要进行转换，只需将 [**DrvQueryDriverInfo**](/windows/win32/api/winddi/nf-winddi-drvquerydriverinfo) 函数添加到 DLL，然后按照 [生成打印机图形 DLL](building-a-printer-graphics-dll.md)的规则。
 
 ### <a name="creating-a-new-printer-graphics-dll-in-user-mode"></a>在用户模式下创建新的打印机图形 DLL
 
@@ -251,14 +251,9 @@ ms.locfileid: "88802649"
 
 <!-- -->
 
--   对于创建或修改绘图服务的函数，新驱动程序必须继续调用 [GDI 支持服务](https://docs.microsoft.com/windows-hardware/drivers/display/gdi-support-services) ，而不是其 Win32 等效项。
+-   对于创建或修改绘图服务的函数，新驱动程序必须继续调用 [GDI 支持服务](../display/gdi-support-services.md) ，而不是其 Win32 等效项。
 
--   您可以使用 FLOAT 数据类型，而不是对 [GDI 浮点服务](https://docs.microsoft.com/windows-hardware/drivers/display/gdi-floating-point-services)使用图形 DDI 函数。
-
- 
+-   您可以使用 FLOAT 数据类型，而不是对 [GDI 浮点服务](../display/gdi-floating-point-services.md)使用图形 DDI 函数。
 
  
-
-
-
 

@@ -3,17 +3,17 @@ title: 网络升级过程的 GUI 模式阶段
 description: 网络升级过程的 GUI 模式阶段
 ms.assetid: 35c382aa-5905-4a22-b9fa-b876d1373b94
 keywords:
-- 网络组件升级，WDK 阶段
+- 网络组件升级 WDK，阶段
 - 升级网络组件 WDK，阶段
 - GUI 模式阶段 WDK 网络
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e1f6d62756c2b5d4f2a302684d2cfbcd387b5355
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: baa8b7fad2e39602bfbefec4484384ae83db34ea
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67382750"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89207591"
 ---
 # <a name="gui-mode-phase-of-the-network-upgrade-process"></a>网络升级过程的 GUI 模式阶段
 
@@ -21,37 +21,31 @@ ms.locfileid: "67382750"
 
 
 
-**请注意**  供应商提供网络升级不支持在 Microsoft Windows XP (SP1 和更高版本)，Microsoft Windows Server 2003 和更高版本操作系统。
+**注意**   Microsoft Windows XP (SP1 及更高版本) 、Microsoft Windows Server 2003 和更高版本的操作系统不支持供应商提供的网络升级。
 
  
 
-在系统上安装 Windows 2000 或更高版本的操作系统之前，NetSetup 读取 Winnt32 阶段期间写入应答文件的特定于网络的信息。
+在系统上安装 Windows 2000 或更高版本的操作系统之前，NetSetup 将读取在 Winnt32.exe 阶段写入 AnswerFile 的特定于网络的信息。
 
-如果网络迁移 DLL 编写[ **InfToRunBeforeInstall** ](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff559059(v=vs.85))到组件的关键*OEM 部分*应答文件，在 NetSetup 查找的 INF 文件和由指定的部分密钥和进程在本部分中的 INF 指令。 本节通常包含**AddReg**， **DelReg**， **AddService**，或者**DelService**指令。
+如果网络迁移 DLL 在 AnswerFile 中将 [**InfToRunBeforeInstall**](/previous-versions/windows/hardware/network/ff559059(v=vs.85)) 键写入组件的 *OEM 部分* ，则 NetSetup 将查找密钥指定的 inf 文件和部分，并处理本部分中的 inf 指令。 此部分通常包含 **AddReg**、 **DelReg**、 **AddService**或 **DelService** 指令。
 
-安装了 Windows 2000 或更高版本操作系统后，NetSetup 安装在系统中，检测到每个网络组件使用指定的组件的 Windows 2000 或更高版本的 INF 文件中的组件的默认参数值。 然后，NetSetup 安装应答文件中列出的网络组件。
+安装 Windows 2000 或更高版本的操作系统后，NetSetup 将使用为组件的 Windows 2000 或更高版本 INF 文件中的组件指定的默认参数值安装系统中检测到的每个网络组件。 然后，NetSetup 安装 AnswerFile 中列出的网络组件。
 
-如果某个网络组件*OEM 部分*应答文件中包含[OemDllToLoad](examining-the-answerfile.md)键，NetSetup 加载网络迁移 DLL 如果 DLL 不是已加载，然后调用 DLL 的[**PostUpgradeInitialize** ](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff562410(v=vs.85))函数。 **PostUpgradeInitialize**函数提供的 DLL 使用初始化其自身的信息的 DLL。 NetSetup 然后调用的 DLL [ **DoPostUpgradeProcessing** ](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff545629(v=vs.85))函数一次为每个网络组件由 DLL 升级。 **DoPostUpgradeProcessing**可以显示用户界面，允许用户指定的组件的参数值。 **DoPostUpgradeProcessing**向注册表写入任何用户指定的参数值。
+如果 AnswerFile 中的网络组件的 *OEM 部分* 包含 [OemDllToLoad](examining-the-answerfile.md) 键，则 NetSetup 将加载网络迁移 dll （如果尚未加载 dll），然后调用 dll 的 [**PostUpgradeInitialize**](/previous-versions/windows/hardware/network/ff562410(v=vs.85)) 函数。 **PostUpgradeInitialize**函数为 DLL 提供 dll 用来初始化自身的信息。 然后，NetSetup 将为每个要由 DLL 升级的网络组件调用一次 DLL 的 [**DoPostUpgradeProcessing**](/previous-versions/windows/hardware/network/ff545629(v=vs.85)) 函数。 **DoPostUpgradeProcessing** 可以显示一个用户界面，该用户界面允许用户指定组件的参数值。 **DoPostUpgradeProcessing** 将任何用户指定的参数值写入注册表。
 
-如果网络适配器的微型端口驱动程序需要在升级之前，适配器的实例 ID，它可能会要求在升级后，适配器的实例 ID。 网络迁移，可以调用 DLL [ **HrGetInstanceGuidOfPreNT5NetCardInstance** ](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff546613(v=vs.85))从其**DoPostUpgradeProcessing**函数来获取 Windows 2000 或更高版本网络适配器实例的 GUID。
+如果网络适配器的微型端口驱动程序需要适配器的实例 ID 才能进行升级，则在升级后可能需要适配器的实例 ID。 网络迁移 DLL 可从其**DoPostUpgradeProcessing**函数调用[**HrGetInstanceGuidOfPreNT5NetCardInstance**](/previous-versions/windows/hardware/network/ff546613(v=vs.85)) ，以获取网络适配器的 Windows 2000 或更高版本的实例 GUID。
 
-NetSetup 启动已安装的网络协议、 客户端和服务。
+NetSetup 启动安装的网络协议、客户端和服务。
 
-NetSetup 处理中的条目**标识**的应答文件，尝试将系统连接到工作组或域中该部分指定的部分。
+NetSetup 处理 AnswerFile 的 **标识** 部分中的条目，并尝试将系统连接到该部分中指定的工作组或域。
 
-如果正在升级系统中包含的任何异步适配器，安装程序将调用异步类安装程序，它将升级每个异步适配器，如下所示：
+如果正在升级的系统包含任何异步适配器，则安装程序将调用 Async class 安装程序，该程序将按如下所示升级每个异步适配器：
 
--   Async 类安装程序应答文件中查找异步适配器的 OEM 部分。
+-   Async 类安装程序将在 AnswerFile 中查找异步适配器的 OEM 部分。
 
--   从异步适配器的 OEM 部分中，异步类安装程序的适配器读取的升级前的参数值。 这些参数值是由网络迁移 DLL 适配器升级 Winnt32 阶段编写的。
+-   在异步适配器的 OEM 部分，异步类安装程序读取适配器的 preupgrade 参数值。 这些参数值是在升级的 Winnt32.exe 阶段，由适配器的网络迁移 DLL 编写的。
 
--   Async 类安装程序在 Windows 2000 或更高版本的注册表中写入适配器的升级前的参数值。
-
- 
+-   Async 类安装程序将适配器的 preupgrade 参数值写入 Windows 2000 或更高版本的注册表。
 
  
-
-
-
-
 

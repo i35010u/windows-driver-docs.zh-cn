@@ -9,12 +9,12 @@ keywords:
 - 打印入场券 WDK，基于 GDI 的打印驱动程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 80b23e943dcfa2f70e65b58f24eeff765d521945
-ms.sourcegitcommit: 17c1bbc5ea0bef3bbc87794b030a073f905dc942
+ms.openlocfilehash: bea6109fe87c31295059f0b79465e66ef567f060
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88802437"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89207105"
 ---
 # <a name="print-ticket-compatibility-with-win-32-applications"></a>打印票证与 Win 32 应用程序的兼容性
 
@@ -22,7 +22,7 @@ ms.locfileid: "88802437"
 在基于 Microsoft Win32 的应用程序和基于 GDI 的打印驱动程序中使用打印票证时，必须考虑以下兼容性方案：
 
 <a href="" id="win32-based-applications-that-are-printing-to-xpsdrv-print-drivers"></a>将打印到 XPSDrv 打印驱动程序的基于 Win32 的应用程序  
-当无法识别打印票证文档的基于 Win32 的应用程序打印到 XPSDrv 打印驱动程序时，"GDI 到 XPS 转换" 模块将从基于 Win32 的应用程序所做的 DDI 调用创建一个 XPS 假脱机文件。 Windows Vista 打印支持还可以创建基于 Win32 应用程序使用的 DEVMODE 结构的打印票证，并将其插入到为文档创建的 XPS 假脱机文件中。 GDI 到 XPS 转换只能转换 DEVMODE 结构的公共部分。 该转换使用适当的 XML 二进制编码将私有 DEVMODE 作为 (BLOB) 的二进制大型对象嵌入打印票证。 可以从 DEVMODEW 票证转换中的打印票证将二进制 BLOB 还原到 [**DEVMODEW**](https://docs.microsoft.com/windows/win32/api/wingdi/ns-wingdi-devmodew) 结构的私有部分。
+当无法识别打印票证文档的基于 Win32 的应用程序打印到 XPSDrv 打印驱动程序时，"GDI 到 XPS 转换" 模块将从基于 Win32 的应用程序所做的 DDI 调用创建一个 XPS 假脱机文件。 Windows Vista 打印支持还可以创建基于 Win32 应用程序使用的 DEVMODE 结构的打印票证，并将其插入到为文档创建的 XPS 假脱机文件中。 GDI 到 XPS 转换只能转换 DEVMODE 结构的公共部分。 该转换使用适当的 XML 二进制编码将私有 DEVMODE 作为 (BLOB) 的二进制大型对象嵌入打印票证。 可以从 DEVMODEW 票证转换中的打印票证将二进制 BLOB 还原到 [**DEVMODEW**](/windows/win32/api/wingdi/ns-wingdi-devmodew) 结构的私有部分。
 
 对于 XPSDrv 打印驱动程序，从基于 Win32 的应用程序发送的文档与从 Windows Presentation Foundation (WPF) 应用程序发送的文档并不不同，因为这两个文档以 XPS 假脱机文件格式进行后台处理。
 
@@ -32,9 +32,4 @@ ms.locfileid: "88802437"
 对于 GDI 打印驱动程序，来自 WPF 应用程序的打印作业与 Win32 应用程序发送的打印作业不同。
 
  
-
- 
-
-
-
 

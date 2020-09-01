@@ -6,17 +6,17 @@ keywords:
 - QueryDeviceNamespace
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 27c2a49de895530c78ff7cb7cf42109d2944a036
-ms.sourcegitcommit: ab64169b631da4db3f0b895600f1c38a22cb7e2e
+ms.openlocfilehash: bc5b9a41ee4a848e6c96a55128b401bdab750c3f
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75652848"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89207071"
 ---
 # <a name="querydevicenamespace"></a>QueryDeviceNamespace
 
 
-[**IPrintTicketProvider：： QueryDeviceNamespace**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff554378(v=vs.85))例程提供一个默认命名空间，如果该命名空间需要从专用命名空间中放置一个功能或选项，则该命名空间转换将使用该命名空间。
+[**IPrintTicketProvider：： QueryDeviceNamespace**](/previous-versions/windows/hardware/drivers/ff554378(v=vs.85))例程提供一个默认命名空间，如果该命名空间需要从专用命名空间中放置一个功能或选项，则该命名空间转换将使用该命名空间。
 
 下面的示例代码演示如何实现此方法。
 
@@ -36,9 +36,4 @@ CPrintTicketProvider::QueryDeviceNamespace(BSTR *pDefaultNamespace)
 ```
 
  
-
- 
-
-
-
 

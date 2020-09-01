@@ -1,6 +1,6 @@
 ---
-title: KSNODETYPE\_声学\_ECHO\_取消
-description: KSNODETYPE\_声学\_ECHO\_取消
+title: KSNODETYPE \_ 回声 \_ \_ 取消
+description: KSNODETYPE \_ 回声 \_ \_ 取消
 ms.assetid: 5f70b9ad-d569-404a-bf6d-01be689e2d56
 keywords:
 - KSNODETYPE_ACOUSTIC_ECHO_CANCEL 音频设备
@@ -12,22 +12,22 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a3f4986473e7b3a335072957f839d36ec25c4614
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 9056cc8456e0639354554b5ed6ae8de1ec225e47
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67360644"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89207033"
 ---
-# <a name="ksnodetypeacousticechocancel"></a>KSNODETYPE\_声学\_ECHO\_取消
+# <a name="ksnodetype_acoustic_echo_cancel"></a>KSNODETYPE \_ 回声 \_ \_ 取消
 
 
 ## <span id="ddk_ksnodetype_acoustic_echo_cancel_ks"></span><span id="DDK_KSNODETYPE_ACOUSTIC_ECHO_CANCEL_KS"></span>
 
 
-KSNODETYPE\_声学\_ECHO\_取消节点表示的 AEC （回声抵消） 控件。 AEC 节点具有两个输入流的连接和两个输出流。 一个输入/输出对用于捕获流和其他输入/输出对用于呈现流。 捕获输出和呈现输入流具有相同的格式。 捕获输入和呈现输出流可以具有不同数目的通道和不同抽样率。 但是，在典型的实现中，两个流具有相同的采样率或组合，例如 16 kHz 和 48khz 或 11.025 kHz 和 44.1 kHz，速率中的一个示例是一个整数，另一个的多个。
+KSNODETYPE 的 " \_ 回声" \_ \_ 取消节点表示) 控制的 AEC (声音回声取消。 AEC 节点具有两个输入流和两个输出流的连接。 一个输入/输出对用于捕获流，另一个输入/输出对用于呈现流。 捕获输出和呈现输入流具有相同的格式。 捕获输入和呈现输出流可以有不同数量的通道和不同的采样速率。 但是，在典型实现中，两个流具有相同的采样率或组合，例如 16 kHz 和 48 kHz 或 11.025 kHz 和 44.1 kHz，其中一个采样速率是另一个的整数倍。
 
-AEC 节点应号其逻辑插针，具有 pin Id 标头文件 Ksmedia.h，从下表中所示。
+AEC 节点应使用标头文件 Ksmedia 中的 pin Id 对其逻辑 pin 进行编号，如下表所示。
 
 <table>
 <colgroup>
@@ -43,56 +43,50 @@ AEC 节点应号其逻辑插针，具有 pin Id 标头文件 Ksmedia.h，从下�
 <tbody>
 <tr class="odd">
 <td align="left"><p>KSNODEPIN_AEC_RENDER_IN</p></td>
-<td align="left"><p>为呈现的流式传输接收器 pin （节点输入）。</p></td>
+<td align="left"><p>接收器 pin (用于呈现流的节点输入) 。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>KSNODEPIN_AEC_RENDER_OUT</p></td>
-<td align="left"><p>源 pin 码 （节点输出） 以进行呈现流。</p></td>
+<td align="left"><p>呈现流 (节点输出) 的源 pin。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>KSNODEPIN_AEC_CAPTURE_IN</p></td>
-<td align="left"><p>接收器为捕获的流的 pin （节点输入）。</p></td>
+<td align="left"><p>接收器 pin (用于捕获流的节点输入) 。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>KSNODEPIN_AEC_CAPTURE_OUT</p></td>
-<td align="left"><p>为捕获的流的源 pin （节点输出）。</p></td>
+<td align="left"><p>捕获流 (节点输出) 的源 pin。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-请注意上, 表中的针逻辑引脚的节点上，这些信息仅用于指定连接到筛选器内部，而不是外部的插针上筛选器，用于连接到其他筛选器。 有关详细信息，请参阅[ **PCCONNECTION\_描述符**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff537688(v=vs.85))。
+请注意，上表中的 pin 是节点上的逻辑引脚，它们专用于指定筛选器的内部连接，而不是用于连接到其他筛选器的筛选器的外部 pin。 有关详细信息，请参阅 [**PCCONNECTION \_ 描述符**](/previous-versions/windows/hardware/drivers/ff537688(v=vs.85))。
 
-有关如何筛选器包含 AEC 节点可以为全双工 DirectSound 应用程序提供支持的信息，请参阅[DirectSound 捕获效果](https://docs.microsoft.com/windows-hardware/drivers/audio/directsound-capture-effects)。
+有关包含 AEC 节点的筛选器如何为全双工 DirectSound 应用程序提供支持的信息，请参阅 [DirectSound 捕获效果](./directsound-capture-effects.md)。
 
-当创建筛选器包含 AEC 节点或节点重置时，节点最初配置为在直通模式下操作。
+当创建包含 AEC 节点的筛选器或重置节点时，该节点最初配置为在传递模式下运行。
 
-KSNODETYPE\_声学\_ECHO\_取消节点应以启用硬件加速支持以下属性：
+\_ \_ \_ 若要启用硬件加速，KSNODETYPE 的 "声音回声" 取消节点应支持以下属性：
 
-[**KSPROPERTY\_AUDIO\_CPU\_RESOURCES**](ksproperty-audio-cpu-resources.md)
+[**KSPROPERTY \_ 音频 \_ CPU \_ 资源**](ksproperty-audio-cpu-resources.md)
 
-[**KSPROPERTY\_音频\_算法\_实例**](ksproperty-audio-algorithm-instance.md)
+[**KSPROPERTY \_ 音频 \_ 算法 \_ 实例**](ksproperty-audio-algorithm-instance.md)
 
-[**KSPROPERTY\_TOPOLOGYNODE\_启用**](ksproperty-topologynode-enable.md)
+[**KSPROPERTY \_ TOPOLOGYNODE \_ ENABLE**](ksproperty-topologynode-enable.md)
 
-[**KSPROPERTY\_TOPOLOGYNODE\_重置**](ksproperty-topologynode-reset.md)
+[**KSPROPERTY \_ TOPOLOGYNODE \_ 重置**](ksproperty-topologynode-reset.md)
 
-KSPROPERTY\_TOPOLOGYNODE\_启用属性用于启用和禁用 AEC 节点。 禁用时，该节点的同类直通模式;即，它允许通过无需修改节点的呈现和捕获流。
+KSPROPERTY \_ TOPOLOGYNODE \_ enable 属性用于启用和禁用 AEC 节点。 如果禁用，节点将在直通模式下运行;也就是说，它允许在不进行修改的情况下，将呈现和捕获流传递到节点。
 
-KSNODETYPE\_声学\_ECHO\_取消节点还可以以提供更多控制和监视功能支持以下可选属性：
+KSNODETYPE 的 \_ \_ "声音回声 \_ " 取消节点还可以支持以下可选属性，以便提供其他控制和监视功能：
 
-[**KSPROPERTY\_AEC\_模式**](ksproperty-aec-mode.md)
+[**KSPROPERTY \_ AEC \_ 模式**](ksproperty-aec-mode.md)
 
-[**KSPROPERTY\_AEC\_NOISE\_FILL\_ENABLE**](ksproperty-aec-noise-fill-enable.md)
+[**KSPROPERTY \_ AEC \_ 干扰 \_ 填充 \_ 启用**](ksproperty-aec-noise-fill-enable.md)
 
-[**KSPROPERTY\_AEC\_状态**](ksproperty-aec-status.md)
-
- 
+[**KSPROPERTY \_ AEC \_ 状态**](ksproperty-aec-status.md)
 
  
-
-
-
-
 

@@ -11,12 +11,12 @@ keywords:
 - 调用 WDK CoNDIS WAN
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5008ed9100247ddb6e342aa62580765d2a2a12ab
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 714a464ed67b7b0c4ed2d39f9d4bd07d09438461
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72841871"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89207195"
 ---
 # <a name="specifying-parameters-for-an-outgoing-call"></a>指定呼出通话的参数
 
@@ -24,21 +24,15 @@ ms.locfileid: "72841871"
 
 
 
-发出传出呼叫时，支持语音流的呼叫管理器或 MCM 必须在[**CO\_调用\_manager\_参数**](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff545381(v=vs.85))结构中提供以下值：
+发出传出呼叫时，支持语音 [**流的呼叫 \_ \_ \_ **](/previous-versions/windows/hardware/network/ff545381(v=vs.85)) 管理器或 MCM 必须提供以下值：
 
--   最大传输 SDU 大小（CallMgrParameters-&gt;MaxSduSize）
+-   最大传输 SDU 大小 (CallMgrParameters &gt; MaxSduSize) 
 
--   最大接收 SDU 大小（CallMgrParameters-&gt;MaxSduSize）
+-   最大接收 SDU 大小 (CallMgrParameters &gt; MaxSduSize) 
 
-如果呼叫管理器或 MCM 支持除 CO\_ADDRESS\_家族以外的地址族，\_TAPI\_代理会在将 TAPI 调用参数转换为 NDIS 调用参数以响应 OID 的查询[\_CO\_TAPI\_转换\_TAPI\_CALLPARAMS](https://docs.microsoft.com/windows-hardware/drivers/network/oid-co-tapi-translate-tapi-callparams)。
+如果呼叫管理器或 MCM 支持除 CO 地址族以外的地址族，则在将 \_ \_ \_ \_ tapi 调用参数转换为 NDIS 调用参数以响应 [OID \_ 联合 \_ tapi \_ 转换 \_ TAPI \_ CALLPARAMS](./oid-co-tapi-translate-tapi-callparams.md)的查询时，将填充这些值。
 
-支持 CO\_地址\_系列的呼叫管理器或 MCM 系列\_TAPI\_代理系列将这些值写入[**ProtocolCmMakeCall**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-protocol_cm_make_call)的上下文中的 co\_才能. 请注意，传递给*ProtocolCmMakeCall*函数的最大 SDU 大小不正确。 *ProtocolCmMakeCall*函数必须用正确的值覆盖不正确的值。
-
- 
+支持 CO ADDRESS 系列 TAPI 代理系列的呼叫管理器或 MCM 将 \_ \_ \_ \_ 这些值写入 \_ \_ \_ 其 [**ProtocolCmMakeCall**](/windows-hardware/drivers/ddi/ndis/nc-ndis-protocol_cm_make_call) 函数上下文中的共同调用管理器参数结构。 请注意，传递给 *ProtocolCmMakeCall* 函数的最大 SDU 大小不正确。 *ProtocolCmMakeCall*函数必须用正确的值覆盖不正确的值。
 
  
-
-
-
-
 

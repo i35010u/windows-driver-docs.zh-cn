@@ -8,19 +8,19 @@ keywords:
 - PoolMon，查找内存泄漏
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 04ff18c4aacb890050383e581365d24f3d3d9ae2
-ms.sourcegitcommit: 17c1bbc5ea0bef3bbc87794b030a073f905dc942
+ms.openlocfilehash: b5697c8bfa0a707ed84e0e2ca0c90d006c106bb0
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88802795"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89207337"
 ---
 # <a name="using-poolmon-to-find-a-kernel-mode-memory-leak"></a>使用 PoolMon 查找内核模式内存泄漏
 
 
 如果怀疑存在内核模式内存泄漏，确定与该泄漏关联的池标记的最简单方法是使用 PoolMon 工具。
 
-PoolMon ( # A0) 按池标记名称监视池内存使用情况。 此工具包含在 Windows 驱动程序工具包 (WDK) 中。 有关完整说明，请参阅 WDK 文档中的 [PoolMon](https://docs.microsoft.com/windows-hardware/drivers/devtest/poolmon) 。
+PoolMon ( # A0) 按池标记名称监视池内存使用情况。 此工具包含在 Windows 驱动程序工具包 (WDK) 中。 有关完整说明，请参阅 WDK 文档中的 [PoolMon](../devtest/poolmon.md) 。
 
 ### <a name="span-idenable_pool_tagging__windows_2000_and_windows_xp_spanspan-idenable_pool_tagging__windows_2000_and_windows_xp_spanenable-pool-tagging-windows-2000-and-windows-xp"></a><span id="enable_pool_tagging__windows_2000_and_windows_xp_"></span><span id="ENABLE_POOL_TAGGING__WINDOWS_2000_AND_WINDOWS_XP_"></span>启用 (Windows 2000 和 Windows XP 的池标记) 
 
@@ -125,10 +125,4 @@ PoolMon 具有根据各种条件对输出进行排序的命令键。 按下与�
 确定与该泄漏关联的池标记后，这可能会显示你需要了解的有关泄露的全部信息。 如果需要确定分配例程的哪个特定实例导致了泄漏，请参阅 [使用内核调试器查找内核模式的内存泄漏](using-the-kernel-debugger-to-find-a-kernel-mode-memory-leak.md)。
 
  
-
- 
-
-
-
-
 

@@ -9,17 +9,17 @@ ms.date: 06/16/2017
 ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
-ms.openlocfilehash: cf31a5dd983bd0154c7094e9cfdfdcf70df3f52f
-ms.sourcegitcommit: 4801d5c3767daf77743dd0f4016116ecaf54cd55
+ms.openlocfilehash: c1150f043810c1296799265c63df805cc048ab88
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87838451"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89189355"
 ---
 # <a name="kernel-mode-driver-architecture-design-guide"></a>内核模式驱动程序体系结构设计指南
 
 >[!NOTE]
->有关你的驱动程序可以实现或调用的编程接口的详细信息，请参阅[内核模式驱动程序参考](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)。
+>有关你的驱动程序可以实现或调用的编程接口的详细信息，请参阅[内核模式驱动程序参考](/windows-hardware/drivers/ddi/index)。
 
 本部分提供了一般概念来帮助你了解内核模式编程，并介绍了内核编程的特定技术。 有关 Windows 驱动程序的总体概述，请参阅 [Windows 驱动程序入门](../develop/getting-started-with-windows-drivers.md)，其中提供了 Windows 组件的总体概述，列出了 Windows 中使用的设备驱动程序的类型，讨论了 Windows 设备驱动程序的目标，并讨论了工具包中包括的泛型示例设备驱动程序。
 

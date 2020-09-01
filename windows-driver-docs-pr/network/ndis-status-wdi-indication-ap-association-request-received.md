@@ -1,35 +1,35 @@
 ---
 title: NDIS_STATUS_WDI_INDICATION_AP_ASSOCIATION_REQUEST_RECEIVED
-description: 微型端口驱动程序使用 NDIS_STATUS_WDI_INDICATION_AP_ASSOCIATION_REQUEST_RECEIVED 来指示已为操作 Wi-Fi Direct 组所有者中接收的 Wi-fi 关联请求帧。
+description: 微型端口驱动程序使用 NDIS_STATUS_WDI_INDICATION_AP_ASSOCIATION_REQUEST_RECEIVED，以指示为操作 Wi-fi Direct 组所有者接收了 Wi-fi 关联请求帧。
 ms.assetid: c207ada5-39fd-4326-9b62-4844d3bb01af
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 NDIS_STATUS_WDI_INDICATION_AP_ASSOCIATION_REQUEST_RECEIVED 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: f02be039bb15e3eb46de568a6b0a0b166fc9178f
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 048f81bd6846cdfc44b2f5b540c1c005d86248b9
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67382180"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89207441"
 ---
-# <a name="ndisstatuswdiindicationapassociationrequestreceived"></a>NDIS\_STATUS\_WDI\_INDICATION\_AP\_ASSOCIATION\_REQUEST\_RECEIVED
+# <a name="ndis_status_wdi_indication_ap_association_request_received"></a>\_ \_ 已收到 NDIS 状态 WDI \_ 指示 \_ AP \_ 关联 \_ 请求 \_
 
 
-微型端口驱动程序使用 NDIS\_状态\_WDI\_指示\_AP\_关联\_请求\_接收时间以指示已 Wi-fi 关联请求帧接收到的操作 Wi-Fi Direct 组所有者。 主机可能会发出[OID\_WDI\_任务\_发送\_AP\_关联\_响应](oid-wdi-task-send-ap-association-response.md)此请求。
+微型端口驱动程序 \_ 使用 \_ \_ 已接收的 NDIS 状态 WDI 指示 \_ AP \_ 关联 \_ 请求 \_ ，以指示为操作 Wi-fi Direct 组所有者接收了 wi-fi 关联请求帧。 主机可能会为此请求发出 [OID \_ WDI \_ TASK \_ 发送 \_ AP \_ 关联 \_ 响应](oid-wdi-task-send-ap-association-response.md) 。
 
-| Object |
+| 对象 |
 |--------|
-| Port   |
+| 端口   |
 
  
 
-## <a name="payload-data"></a>有效负载数据
+## <a name="payload-data"></a>负载数据
 
 
-| 在任务栏的搜索框中键入                                                                                                     | 允许多个 TLV 实例 | 可选 | 描述                                   |
+| 类型                                                                                                     | 允许多个 TLV 实例 | 可选 | 说明                                   |
 |----------------------------------------------------------------------------------------------------------|--------------------------------|----------|-----------------------------------------------|
-| [**WDI\_TLV\_传入\_关联\_请求\_信息**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-incoming-association-request-info) |                                |          | 传入的请求关联信息。 |
+| [**WDI \_ TLV \_ 传入 \_ 关联 \_ 请求 \_ 信息**](./wdi-tlv-incoming-association-request-info.md) |                                |          | 传入关联请求信息。 |
 
  
 
@@ -51,16 +51,11 @@ ms.locfileid: "67382180"
 <td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
-<td><p>Header</p></td>
-<td>Dot11wdi.h</td>
+<td><p>标头</p></td>
+<td>Dot11wdi</td>
 </tr>
 </tbody>
 </table>
 
  
-
- 
-
-
-
 

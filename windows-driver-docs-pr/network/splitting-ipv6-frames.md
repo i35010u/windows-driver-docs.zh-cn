@@ -7,12 +7,12 @@ keywords:
 - IPv6 帧 WDK 标头-数据拆分
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7527df846b70113243a764ded53ca42bbd153300
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: df452a308724102bf7dabd00f1ede8faf0698d0d
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72841861"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89207153"
 ---
 # <a name="splitting-ipv6-frames"></a>拆分 IPv6 帧
 
@@ -24,21 +24,15 @@ ms.locfileid: "72841861"
 
 支持 ipv6 以太网帧的 IPv6 扩展标头是可选的。 NIC 可支持某些 IPv6 选项，而不支持其他的选项。 NIC 不得拆分包含不支持的 IPv6 扩展标头的 IPv6 帧。 拆分框架的标头部分必须包含整个 IPv6 标头和所有 IPv6 扩展标头。
 
-NIC 还可以支持分段 IPv6 帧的标头数据拆分。 有关分段 IPv4 帧的详细信息，请参阅[拆分分段的 IP 帧](splitting-fragmented-ip-frames.md)。
+NIC 还可以支持分段 IPv6 帧的标头数据拆分。 有关分段 IPv4 帧的详细信息，请参阅 [拆分分段的 IP 帧](splitting-fragmented-ip-frames.md)。
 
-**请注意**，  支持 IPv4 选项（一个 IPv6 扩展标头或 TCP 选项，用于标头数据要求），这意味着 NIC 识别元素的能力，确定其长度，将其包含在标头 MDL 中，并找到其端和帧中下一个元素的开头。
-
- 
-
-如果标头-数据拆分提供程序拆分 IPv6 帧，则指定的[**NET\_缓冲区\_列表**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)结构必须具有 NDIS\_NBL\_标志\_在**NblFlags**成员中设置\_IPv6 标志。 有关在 NET\_缓冲区\_列表结构中设置标头数据拆分标志的完整信息，请参阅[设置 net\_缓冲区\_列表信息](setting-net-buffer-list-information.md)。
-
-其他以太网帧特征确定如何拆分 IPv6 帧。 如果帧有碎片，请参阅[拆分分段的 IP 帧](splitting-fragmented-ip-frames.md)。 如果帧包含 TCP 信息，请参阅[在 TCP 负载处拆分帧](splitting-frames-at-the-tcp-payload.md)。 如果帧包含 UDP 信息，请参阅[在 UDP 负载处拆分帧](splitting-frames-at-the-udp-payload.md)。 对于所有其他情况，请参阅[拆分除 TCP 和 UDP 以外的帧](splitting-frames-other-than-tcp-and-udp.md)。
+**注意**   出于标头数据要求的目的，支持 IPv4 选项、IPv6 扩展标头或 TCP 选项，这意味着 NIC 识别元素的能力，确定元素的长度，将其包含在标头 MDL 中，并找到其端和帧中下一个元素的开头。
 
  
 
+如果标头-数据拆分提供程序拆分 IPv6 帧，则指定的 [**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list) 结构必须将 NDIS \_ NBL \_ 标志 \_ \_ 设置为 **NblFlags** 成员中的 IPv6 标志。 有关在 NET buffer 列表结构中设置标头数据拆分标志的完整信息 \_ \_ ，请参阅 [设置网络 \_ 缓冲区 \_ 列表信息](setting-net-buffer-list-information.md)。
+
+其他以太网帧特征确定如何拆分 IPv6 帧。 如果帧有碎片，请参阅 [拆分分段的 IP 帧](splitting-fragmented-ip-frames.md)。 如果帧包含 TCP 信息，请参阅 [在 TCP 负载处拆分帧](splitting-frames-at-the-tcp-payload.md)。 如果帧包含 UDP 信息，请参阅 [在 UDP 负载处拆分帧](splitting-frames-at-the-udp-payload.md)。 对于所有其他情况，请参阅 [拆分除 TCP 和 UDP 以外的帧](splitting-frames-other-than-tcp-and-udp.md)。
+
  
-
-
-
-
 

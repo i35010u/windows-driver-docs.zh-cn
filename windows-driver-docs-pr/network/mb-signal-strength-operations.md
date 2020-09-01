@@ -4,29 +4,23 @@ description: MB 信号强度操作
 ms.assetid: 489299d0-29c5-4885-ae68-f3d0f42bd201
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0e6b75721da71014893494f338ebbb4c7859148d
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: d290648bf18ffded0e1d5af3c86fa9dba151d994
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67374011"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89207261"
 ---
 # <a name="mb-signal-strength-operations"></a>MB 信号强度操作
 
 
-本主题介绍报表信号强度的操作。
+本主题介绍用于报告信号强度的操作。
 
-这些操作需要访问网络提供商，但不是访问用户识别模块 （SIM 卡）。
+这些操作需要访问网络提供程序，而不是 (SIM 卡) 的订阅服务器标识模块。
 
-请注意，对于基于 GSM 的设备，微型端口驱动程序应发送信号强度通知仅后微型端口驱动程序已成功向网络提供商注册。 对于基于 CDMA 的设备，微型端口驱动程序可以发送信号强度通知之前微型端口驱动程序已成功向网络提供商注册。
+请注意，在基于 GSM 的设备情况下，微型端口驱动程序只应在已成功向网络提供商注册了微型端口驱动程序后发送信号强度通知。 对于基于 CDMA 的设备，微型端口驱动程序可以在微型端口驱动程序成功注册到网络提供程序之前发送信号强度通知。
 
-信号强度操作的详细信息，请参阅[OID\_WWAN\_信号\_状态](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wwan-signal-state)。
-
- 
+有关信号强度操作的详细信息，请参阅 [OID \_ WWAN \_ 信号 \_ 状态](./oid-wwan-signal-state.md)。
 
  
-
-
-
-
 

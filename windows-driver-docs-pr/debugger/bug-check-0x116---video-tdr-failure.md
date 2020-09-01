@@ -14,12 +14,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 83443d8c2a12f31c65fa255f25c514a5da544383
-ms.sourcegitcommit: f610410e1500f0b0a4ca008b52679688ab51033d
+ms.openlocfilehash: 8b84a1f98a5a1b0a650b92b0f36c8dfac156d112
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/15/2020
-ms.locfileid: "88253105"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89207653"
 ---
 # <a name="bug-check-0x116-video_tdr_failure"></a>Bug 检查0x116：视频 \_ TDR \_ 失败
 
@@ -27,7 +27,7 @@ ms.locfileid: "88253105"
 视频 \_ TDR \_ 失败 bug 检查的值为0x00000116。 这表示试图重置显示驱动程序并从超时恢复失败。
 
 > [!IMPORTANT]
-> 本主题适用于程序员。 如果你是在使用计算机时收到蓝屏错误代码的客户，请参阅 [排查蓝屏错误](https://www.windows.com/stopcode)。
+> 本主题面向程序员。 如果您是在使用计算机时收到蓝屏错误代码的客户，请参阅[蓝屏错误疑难解答](https://www.windows.com/stopcode)。
 
 
 ## <a name="video_tdr_failure-parameters"></a>视频 \_ TDR \_ 失败参数
@@ -41,7 +41,7 @@ ms.locfileid: "88253105"
 <thead>
 <tr class="header">
 <th align="left">参数</th>
-<th align="left">描述</th>
+<th align="left">说明</th>
 </tr>
 </thead>
 <tbody>
@@ -71,15 +71,15 @@ ms.locfileid: "88253105"
 
 当系统在处理最终用户命令或操作时出现完全冻结或挂起时，图形中会出现常见的稳定性问题。 通常，GPU 是繁忙的处理密集型图形操作，通常在游戏播放期间。 不会进行屏幕更新，用户假定其系统已冻结。 用户通常会等待几秒钟，并按下 "电源" 按钮重新启动系统。 Windows 将尝试检测这些问题挂起情况并动态恢复响应式桌面。
 
-此检测和恢复过程称为超时检测和恢复 (TDR) 。 默认超时为2秒。 在视频卡的 TDR 过程中，操作系统的 GPU 计划程序调用显示微型端口驱动程序的 [*DxgkDdiResetFromTimeout*](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_resetfromtimeout) 函数来重新初始化驱动程序并重置 GPU。
+此检测和恢复过程称为超时检测和恢复 (TDR) 。 默认超时为2秒。 在视频卡的 TDR 过程中，操作系统的 GPU 计划程序调用显示微型端口驱动程序的 [*DxgkDdiResetFromTimeout*](/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_resetfromtimeout) 函数来重新初始化驱动程序并重置 GPU。
 
-在此过程中，操作系统会通知驱动程序不要访问硬件或内存，并为当前正在运行的线程提供一小段时间来完成。 如果线程未在超时内完成，系统 bug 将检查 0x116 VIDEO \_ TDR \_ 失败。 有关详细信息，请参阅 [线程同步和 TDR](https://docs.microsoft.com/windows-hardware/drivers/display/thread-synchronization-and-tdr)。
+在此过程中，操作系统会通知驱动程序不要访问硬件或内存，并为当前正在运行的线程提供一小段时间来完成。 如果线程未在超时内完成，系统 bug 将检查 0x116 VIDEO \_ TDR \_ 失败。 有关详细信息，请参阅 [线程同步和 TDR](../display/thread-synchronization-and-tdr.md)。
 
 \_如果在很短的时间内出现大量 TDR 事件，系统还可能会错误地检查视频 TDR \_ 故障，这种情况下，在一分钟内默认超过五个 tdr。
 
 如果恢复过程成功，将显示一条消息，指示 "显示驱动程序已停止响应并已恢复"。
 
-有关详细信息，请参阅超时检测和恢复 (TDR) ，Windows 8 中的 [TDR 注册表项](https://docs.microsoft.com/windows-hardware/drivers/display/tdr-registry-keys) 和 [TDR 更改](https://docs.microsoft.com/windows-hardware/drivers/display/tdr-changes-in-windows-8) ，这些更改位于 [windows 显示驱动程序模型 (WDDM) 的调试提示 ](https://docs.microsoft.com/windows-hardware/drivers/display/debugging-tips-for-the-windows-vista-display-driver-model)中。
+有关详细信息，请参阅超时检测和恢复 (TDR) ，Windows 8 中的 [TDR 注册表项](../display/tdr-registry-keys.md) 和 [TDR 更改](../display/tdr-changes-in-windows-8.md) ，这些更改位于 [windows 显示驱动程序模型 (WDDM) 的调试提示 ](https://docs.microsoft.com/windows-hardware/drivers/display/debugging-tips-for-the-windows-vista-display-driver-model)中。
 
 <a name="resolution"></a>解决方法
 ----------
@@ -218,7 +218,7 @@ fffff801`6470c14b cc              int     3
 
     可以通过在启动时按功能键来提供安全模式，例如 F8。 请参阅制造商提供的有关特定启动选项的信息。
 
--   运行 Windows 内存诊断工具来测试内存。 在 "控制面板" 搜索框中键入 "内存"，然后选择 " **诊断计算机的内存问题**"。运行测试后，使用事件查看器查看系统日志下的结果。 查找 " *MemoryDiagnostics* " 项，查看结果。
+-   运行 Windows 内存诊断工具来测试内存。 在 "控制面板" 搜索框中键入 "内存"，然后选择 " **诊断计算机的内存问题**"。运行测试后，使用事件查看器查看系统日志下的结果。 查找“内存诊断结果”条目以查看结果  。
 
 -   你可以尝试运行系统制造商提供的硬件诊断。
 
@@ -230,11 +230,3 @@ fffff801`6470c14b cc              int     3
 **硬件认证要求**
 
 有关硬件设备实现 TDR 时必须满足的要求的信息，请参阅设备上的 WHCK 文档 *.。。TDRResiliency*。
-
-
-
-
-
-
-
-

@@ -1,6 +1,6 @@
 ---
-title: KSPROPERTY\_DIRECTSOUND3DLISTENER\_方向
-description: KSPROPERTY\_DIRECTSOUND3DLISTENER\_方向属性指定3D 侦听器的方向。
+title: KSPROPERTY \_ DIRECTSOUND3DLISTENER \_ 方向
+description: KSPROPERTY \_ DIRECTSOUND3DLISTENER \_ 方向属性指定3d 侦听器的方向。
 ms.assetid: 324b0def-e989-4dd1-9266-17d018dd512c
 keywords:
 - KSPROPERTY_DIRECTSOUND3DLISTENER_ORIENTATION 音频设备
@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 13388615d98d033af75eb6cdeab58026e27e175a
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: dce0ea9bb40203cfe91775b642d75ab7ef8ef757
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72832809"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89208917"
 ---
-# <a name="ksproperty_directsound3dlistener_orientation"></a>KSPROPERTY\_DIRECTSOUND3DLISTENER\_方向
+# <a name="ksproperty_directsound3dlistener_orientation"></a>KSPROPERTY \_ DIRECTSOUND3DLISTENER \_ 方向
 
 
-KSPROPERTY\_DIRECTSOUND3DLISTENER\_方向属性指定3D 侦听器的方向。
+KSPROPERTY \_ DIRECTSOUND3DLISTENER \_ 方向属性指定3d 侦听器的方向。
 
 ## <span id="ddk_ksproperty_directsound3dlistener_orientation_ks"></span><span id="DDK_KSPROPERTY_DIRECTSOUND3DLISTENER_ORIENTATION_KS"></span>
 
@@ -41,7 +41,7 @@ KSPROPERTY\_DIRECTSOUND3DLISTENER\_方向属性指定3D 侦听器的方向。
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">“获取”</th>
+<th align="left">获取</th>
 <th align="left">设置</th>
 <th align="left">目标</th>
 <th align="left">属性描述符类型</th>
@@ -50,27 +50,27 @@ KSPROPERTY\_DIRECTSOUND3DLISTENER\_方向属性指定3D 侦听器的方向。
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>“是”</p></td>
-<td align="left"><p>“是”</p></td>
-<td align="left"><p>大头针</p></td>
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksnodeproperty" data-raw-source="[&lt;strong&gt;KSNODEPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksnodeproperty)"><strong>KSNODEPROPERTY</strong></a></p></td>
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksds3d_listener_orientation" data-raw-source="[&lt;strong&gt;KSDS3D_LISTENER_ORIENTATION&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksds3d_listener_orientation)"><strong>KSDS3D_LISTENER_ORIENTATION</strong></a></p></td>
+<td align="left"><p>是</p></td>
+<td align="left"><p>是</p></td>
+<td align="left"><p>Pin</p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksnodeproperty" data-raw-source="[&lt;strong&gt;KSNODEPROPERTY&lt;/strong&gt;](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksnodeproperty)"><strong>KSNODEPROPERTY</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksds3d_listener_orientation" data-raw-source="[&lt;strong&gt;KSDS3D_LISTENER_ORIENTATION&lt;/strong&gt;](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksds3d_listener_orientation)"><strong>KSDS3D_LISTENER_ORIENTATION</strong></a></p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-属性值（操作数据）是指定侦听器方向的 KSDS3D\_侦听器\_方向的结构。
+ (操作数据) 的属性值是 \_ 指定侦听器方向的 KSDS3D 侦听器方向类型的结构 \_ 。
 
 ### <a name="span-idreturn_valuespanspan-idreturn_valuespanspan-idreturn_valuespanreturn-value"></a><span id="Return_Value"></span><span id="return_value"></span><span id="RETURN_VALUE"></span>返回值
 
-KSPROPERTY\_DIRECTSOUND3DLISTENER\_方向属性请求返回状态\_SUCCESS，指示该请求已成功完成。 否则，请求将返回相应的错误状态代码。
+KSPROPERTY \_ DIRECTSOUND3DLISTENER \_ 方向属性请求返回状态 " \_ 成功" 以指示该请求已成功完成。 否则，请求将返回相应的错误状态代码。
 
 <a name="remarks"></a>备注
 -------
 
-DirectSound 使用此属性实现**IDirectSound3DListener：： GetOrientation**和**IDirectSound3DListener：： SetOrientation**方法，如 Microsoft Windows SDK 文档中所述。
+DirectSound 使用此属性实现 **IDirectSound3DListener：： GetOrientation** 和 **IDirectSound3DListener：： SetOrientation** 方法，如 Microsoft Windows SDK 文档中所述。
 
 <a name="requirements"></a>要求
 ------------
@@ -83,7 +83,7 @@ DirectSound 使用此属性实现**IDirectSound3DListener：： GetOrientation**
 <tbody>
 <tr class="odd">
 <td align="left"><p>标头</p></td>
-<td align="left">Ksmedia （包括 Ksmedia）</td>
+<td align="left">Ksmedia (包含 Ksmedia) </td>
 </tr>
 </tbody>
 </table>
@@ -91,16 +91,9 @@ DirectSound 使用此属性实现**IDirectSound3DListener：： GetOrientation**
 ## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
-[**KSNODEPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksnodeproperty)
+[**KSNODEPROPERTY**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksnodeproperty)
 
-[**KSDS3D\_侦听器\_方向**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksds3d_listener_orientation)
-
- 
+[**KSDS3D \_ 侦听器 \_ 方向**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksds3d_listener_orientation)
 
  
-
-
-
-
-
 

@@ -1,5 +1,5 @@
 ---
-title: 创建设备对象（Windows 筛选平台）
+title: " (Windows 筛选平台创建设备对象) "
 description: 创建设备对象
 ms.assetid: 9474e080-b2c3-4c1b-af19-bf269d1c94d4
 keywords:
@@ -11,21 +11,21 @@ keywords:
 - 基于 WDF 的标注驱动程序 WDK Windows 筛选平台
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 88c511695e98662d629345d336c0ee57c3d9e9b2
-ms.sourcegitcommit: 53565c07d980307b079a6accf541fd221e623142
+ms.openlocfilehash: 444955ca385346b3a0ef9e1066fceac444a9fc89
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86972154"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89207953"
 ---
-# <a name="creating-a-device-object-windows-filtering-platform"></a>创建设备对象（Windows 筛选平台）
+# <a name="creating-a-device-object-windows-filtering-platform"></a> (Windows 筛选平台创建设备对象) 
 
 
-标注驱动程序必须先创建一个设备对象，然后才能使用筛选器引擎注册其标注。 标注驱动程序如何创建设备对象取决于标注驱动程序是基于 Windows 驱动模型（WDM）还是 Windows 驱动程序框架（WDF）。
+标注驱动程序必须先创建一个设备对象，然后才能使用筛选器引擎注册其标注。 标注驱动程序如何创建设备对象取决于标注驱动程序是基于 Windows 驱动模型 (WDM) 还是 Windows 驱动程序框架 (WDF) 。
 
 ### <a name="wdm-based-callout-drivers"></a>基于 WDM 的标注驱动程序
 
-如果标注驱动程序基于 WDM，它会通过调用[**IoCreateDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocreatedevice)函数来创建设备对象。 例如：
+如果标注驱动程序基于 WDM，它会通过调用 [**IoCreateDevice**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iocreatedevice) 函数来创建设备对象。 例如：
 
 ```C++
 PDEVICE_OBJECT deviceObject;
@@ -60,7 +60,7 @@ NTSTATUS
 
 ### <a name="wdf-based-callout-drivers"></a>基于 WDF 的标注驱动程序
 
-如果标注驱动程序基于 WDF，它会通过调用[**WdfDeviceCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdevicecreate)函数来创建框架设备对象。 若要使用筛选器引擎注册其标注，基于 WDF 的标注驱动程序必须获取一个指针，该指针指向与框架设备对象相关联的 WDM 设备对象。 基于 WDF 的标注驱动程序通过调用[**WdfDeviceWdmGetDeviceObject**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdevicewdmgetdeviceobject)函数获取指向此 WDM 设备对象的指针。 例如：
+如果标注驱动程序基于 WDF，它会通过调用 [**WdfDeviceCreate**](/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdevicecreate) 函数来创建框架设备对象。 若要使用筛选器引擎注册其标注，基于 WDF 的标注驱动程序必须获取一个指针，该指针指向与框架设备对象相关联的 WDM 设备对象。 基于 WDF 的标注驱动程序通过调用 [**WdfDeviceWdmGetDeviceObject**](/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdevicewdmgetdeviceobject) 函数获取指向此 WDM 设备对象的指针。 例如：
 
 ```C++
 WDFDEVICE wdfDevice;
@@ -119,10 +119,4 @@ NTSTATUS
 ```
 
  
-
- 
-
-
-
-
 

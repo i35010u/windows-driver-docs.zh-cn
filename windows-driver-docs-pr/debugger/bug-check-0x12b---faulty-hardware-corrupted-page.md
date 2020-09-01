@@ -13,19 +13,19 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 2f671ffa6b464c001d86c8ed30e261dce325f7e1
-ms.sourcegitcommit: f610410e1500f0b0a4ca008b52679688ab51033d
+ms.openlocfilehash: 30ef030d04d55f199ab1d956a751f407dd370bed
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/15/2020
-ms.locfileid: "88252961"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89208739"
 ---
 # <a name="bug-check-0x12b-faulty_hardware_corrupted_page"></a>Bug 检查0x12B：出错的 \_ 硬件 \_ 损坏 \_ 页
 
 错误的 \_ 硬件 \_ 损坏 \_ 页面 bug 检查的值为0x0000012B。 此 bug 检查表明 Windows 内存管理器检测到损坏，损坏可能仅由使用物理寻址访问内存的组件引起。  
 
 > [!IMPORTANT]
-> 本主题适用于程序员。 如果你是在使用计算机时收到蓝屏错误代码的客户，请参阅 [排查蓝屏错误](https://www.windows.com/stopcode)。
+> 本主题面向程序员。 如果您是在使用计算机时收到蓝屏错误代码的客户，请参阅[蓝屏错误疑难解答](https://www.windows.com/stopcode)。
 
 
 ## <a name="faulty_hardware_corrupted_page-parameters"></a>错误的 \_ 硬件 \_ 损坏 \_ 页面参数
@@ -49,7 +49,7 @@ ms.locfileid: "88252961"
 <thead>
 <tr class="header">
 <th align="left">参数</th>
-<th align="left">描述</th>
+<th align="left">说明</th>
 </tr>
 </thead>
 <tbody>
@@ -85,7 +85,7 @@ ms.locfileid: "88252961"
 <thead>
 <tr class="header">
 <th align="left">参数</th>
-<th align="left">描述</th>
+<th align="left">说明</th>
 </tr>
 </thead>
 <tbody>
@@ -120,20 +120,20 @@ ms.locfileid: "88252961"
 
 注意：压缩的存储管理器可以检测是否损坏是由单一位错误引起的，并自动更正此情况，而不引发 bug 检查。 如果损坏不是由单一位错误引起的，则压缩的存储管理器会报告此错误检测。
 
-有关 Windows 内存管理器和内存压缩的详细信息，请参阅 [Windows 内部版本第7版](https://docs.microsoft.com/sysinternals/learn/windows-internals) ，Pavel Yosifovich，标记 Russinovich，David，David，Alex Ionescu。
+有关 Windows 内存管理器和内存压缩的详细信息，请参阅 [Windows 内部版本第7版](/sysinternals/learn/windows-internals) ，Pavel Yosifovich，标记 Russinovich，David，David，Alex Ionescu。
 
 ## <a name="resolution"></a>解决方法
 -----
 
 **Windows 内存诊断工具**
 
-若要调查此 bug 检查是否是由 RAM 硬件故障引起的，请运行 Windows 内存诊断工具。 在 "控制面板" 搜索框中键入 "内存"，然后选择 " *诊断计算机的内存问题*"。运行测试后，使用事件查看器查看系统日志下的结果。 查找 " *MemoryDiagnostics* " 项，查看结果。
+若要调查此 bug 检查是否是由 RAM 硬件故障引起的，请运行 Windows 内存诊断工具。 在 "控制面板" 搜索框中键入 "内存"，然后选择 " *诊断计算机的内存问题*"。运行测试后，使用事件查看器查看系统日志下的结果。 查找“内存诊断结果”条目以查看结果  。
 
 ## <a name="see-also"></a>另请参阅
 ----------
 
 [Bug 检查代码参考](bug-check-code-reference2.md)
 
-[Windows 内核模式内存管理器](https://docs.microsoft.com/windows-hardware/drivers/kernel/windows-kernel-mode-memory-manager)
+[Windows 内核模式内存管理器](../kernel/windows-kernel-mode-memory-manager.md)
 
 [内存压缩的第9频道视频](https://channel9.msdn.com/Blogs/Seth-Juarez/Memory-Compression-in-Windows-10-RTM)

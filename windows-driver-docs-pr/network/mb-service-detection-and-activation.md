@@ -4,39 +4,33 @@ description: MB 服务检测和激活
 ms.assetid: 7c53528b-722d-44a1-9eac-ee1fe89f21f3
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a551ef9d08a4086c5e2c68c43516ebbbe25357ed
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 8232b66253b47ae97eff36c13bda9b4d1b7b8111
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67374015"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89207265"
 ---
 # <a name="mb-service-detection-and-activation"></a>MB 服务检测和激活
 
 
-本主题介绍的过程来检测的 MB 设备是否必须激活，其服务以及如何获取对提供程序的网络访问权限。
+本主题介绍了检测 MB 设备是否必须激活服务的过程，以及如何获取访问接口网络的访问权限。
 
 ### <a name="service-activation-detection"></a>服务激活检测
 
-微型端口驱动程序可以确定是否必须在两种方法中执行服务激活：
+微型端口驱动程序可以通过以下两种方式来确定它们是否必须执行服务激活：
 
--   对于基于 CDMA 的设备，在北美或其他位置中的未使用 U RIM，应该有一个标志以指示激活状态在设备上。 微型端口驱动程序应该能够在初始化期间检测到激活状态，而无需联系提供程序网络。 微型端口驱动程序应自动执行服务激活，当设备首次连接到家庭网络无线。 激活完成后，微型端口驱动程序应清除标志，以便它们不需要执行再次激活服务。
+-   对于基于 CDMA 的设备，在北美或未使用 U 边缘的其他位置中，在设备上应有一个标志来指示激活状态。 小型端口驱动程序应能够在初始化期间检测激活状态，而无需联系提供程序网络。 当设备首次连接到家庭网络时，微型端口驱动程序应自动执行服务激活。 完成激活后，微型端口驱动程序应该清除标志，这样它们就不需要再次执行服务激活。
 
-    微型端口驱动程序通过发送，MB 服务告知服务激活进度[ **NDIS\_状态\_WWAN\_准备\_信息**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-wwan-ready-info)在 MB 设备初始化过程中的通知。 或者，若要确定服务激活状态，该服务可能会发送[OID\_WWAN\_准备\_信息](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wwan-ready-info)微型端口驱动程序的查询请求。 在这两种情况下，初始的就绪状态应**WwanReadyStateNotActivated**。 服务已激活后，微型端口驱动程序应继续初始化过程，并为设备就绪状态更改通知服务。
+    微型端口驱动程序通过在 MB 设备初始化期间发送 [**NDIS \_ 状态 \_ WWAN \_ 就绪 \_ 信息**](./ndis-status-wwan-ready-info.md) 通知来通知 MB 服务的服务激活进度。 或者，若要确定服务激活状态，该服务可能会向微型端口驱动程序发送 [OID \_ WWAN \_ 就绪 \_ 信息](./oid-wwan-ready-info.md) 查询请求。 在这两种情况下，初始就绪状态应为 **WwanReadyStateNotActivated**。 激活服务后，微型端口驱动程序应恢复初始化过程，并在设备就绪状态发生更改时通知服务。
 
--   对于基于 GSM 的设备，没有任何常规方法来检测设备是否必须激活其服务。 微型端口驱动程序可以实现自己专有的方法，特定于其运营商，以执行服务检测和激活。
+-   对于基于 GSM 的设备，没有用于检测是否必须激活设备服务的一般方法。 微型端口驱动程序可以实现其自己的专用方法（特定于其运营商）来执行服务检测和激活。
 
 ### <a name="mb-service-activation"></a>MB 服务激活
 
-服务激活是指激活 MB 服务订阅，以便设备能够提供程序的网络访问权限的过程。 MB 服务未配备有服务激活逻辑，因为必须由微型端口驱动程序和/或第三方软件执行的确切的激活过程，因为实际激活过程从移动电话技术而异，通常是自定义为不同的提供程序网络。 服务激活可以自动，或手动或这两者的组合。 微型端口驱动程序应只需执行的每个新订阅的服务激活一次。
+服务激活是指激活 MB 服务订阅的过程，以便设备可以访问提供程序的网络。 MB 服务未配备服务激活逻辑，因为完全激活过程必须由微型端口驱动程序和/或第三方软件执行，因为实际激活过程因蜂窝技术而异，通常针对不同的提供商网络进行自定义。 服务激活可以是自动、手动或二者的组合。 小型端口驱动程序应该只需要为每个新订阅执行一次服务激活。
 
-有关服务检测和激活的详细信息，请参阅[OID\_WWAN\_服务\_激活](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wwan-service-activation)。
-
- 
+有关服务检测和激活的详细信息，请参阅 [OID \_ WWAN \_ 服务 \_ 激活](./oid-wwan-service-activation.md)。
 
  
-
-
-
-
 

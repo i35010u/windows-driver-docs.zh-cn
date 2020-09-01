@@ -1,6 +1,6 @@
 ---
-title: KSPROPERTY\_音频\_通道\_配置
-description: KSPROPERTY\_音频\_通道\_CONFIG 属性指定节点输出的音频流中的通道的实际空间位置。
+title: KSPROPERTY \_ 音频 \_ 通道 \_ 配置
+description: KSPROPERTY \_ 音频 \_ 通道 \_ CONFIG 属性指定节点输出的音频流中的通道的实际空间位置。
 ms.assetid: 5ce9bf4a-c84e-4d7e-8e75-896c88ec1a72
 keywords:
 - KSPROPERTY_AUDIO_CHANNEL_CONFIG 音频设备
@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 33015cf6c88cedc5f025d281cddc6a498c056232
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 56c939b6747dcce2b376d8f72cc44027f60e1a09
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72831069"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89206973"
 ---
-# <a name="ksproperty_audio_channel_config"></a>KSPROPERTY\_音频\_通道\_配置
+# <a name="ksproperty_audio_channel_config"></a>KSPROPERTY \_ 音频 \_ 通道 \_ 配置
 
 
-KSPROPERTY\_音频\_通道\_CONFIG 属性指定节点输出的音频流中的通道的实际空间位置。
+KSPROPERTY \_ 音频 \_ 通道 \_ CONFIG 属性指定节点输出的音频流中的通道的实际空间位置。
 
 ## <span id="ddk_ksproperty_audio_channel_config_ks"></span><span id="DDK_KSPROPERTY_AUDIO_CHANNEL_CONFIG_KS"></span>
 
@@ -41,7 +41,7 @@ KSPROPERTY\_音频\_通道\_CONFIG 属性指定节点输出的音频流中的通
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">“获取”</th>
+<th align="left">获取</th>
 <th align="left">设置</th>
 <th align="left">目标</th>
 <th align="left">属性描述符类型</th>
@@ -50,33 +50,33 @@ KSPROPERTY\_音频\_通道\_CONFIG 属性指定节点输出的音频流中的通
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>“是”</p></td>
-<td align="left"><p>“是”</p></td>
+<td align="left"><p>是</p></td>
+<td align="left"><p>是</p></td>
 <td align="left"><p>筛选器/Pin</p></td>
-<td align="left"><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksnodeproperty" data-raw-source="[&lt;strong&gt;KSNODEPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksnodeproperty)"><strong>KSNODEPROPERTY</strong></a></td>
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksaudio_channel_config" data-raw-source="[&lt;strong&gt;KSAUDIO_CHANNEL_CONFIG&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksaudio_channel_config)"><strong>KSAUDIO_CHANNEL_CONFIG</strong></a></p></td>
+<td align="left"><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksnodeproperty" data-raw-source="[&lt;strong&gt;KSNODEPROPERTY&lt;/strong&gt;](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksnodeproperty)"><strong>KSNODEPROPERTY</strong></a></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksaudio_channel_config" data-raw-source="[&lt;strong&gt;KSAUDIO_CHANNEL_CONFIG&lt;/strong&gt;](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksaudio_channel_config)"><strong>KSAUDIO_CHANNEL_CONFIG</strong></a></p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-属性值（操作数据）是 KSAUDIO\_通道\_CONFIG 类型的结构。 此结构指定输出流中包含的通道，并将这些通道分配给扬声器。
+ (operation data) 的属性值是 KSAUDIO 信道 CONFIG 类型的 \_ 结构 \_ 。 此结构指定输出流中包含的通道，并将这些通道分配给扬声器。
 
 ### <a name="span-idreturn_valuespanspan-idreturn_valuespanspan-idreturn_valuespanreturn-value"></a><span id="Return_Value"></span><span id="return_value"></span><span id="RETURN_VALUE"></span>返回值
 
-KSPROPERTY\_音频\_通道\_CONFIG 属性请求返回状态\_"成功" 以指示已成功完成。 否则，请求将返回相应的错误状态代码。
+KSPROPERTY \_ 音频 \_ 通道 \_ CONFIG 属性请求返回状态 " \_ 成功" 以指示已成功完成。 否则，请求将返回相应的错误状态代码。
 
 <a name="remarks"></a>备注
 -------
 
-当用作 DAC 节点（[**KSNODETYPE\_dac**](ksnodetype-dac.md)）或3d 节点（[**KSNODETYPE\_3d\_效果**](ksnodetype-3d-effects.md)）的属性时，KSPROPERTY\_音频\_通道\_CONFIG 属性指定 DirectSound 发言人configuration. 对于立体声扬声器配置，此属性与[**KSPROPERTY\_音频\_立体声\_扬声器\_GEOMETRY**](ksproperty-audio-stereo-speaker-geometry.md)属性一起使用，可区分耳机和多个立体声扬声器配置. 有关扬声器配置的详细信息，请参阅[DirectSound 演讲者-配置设置](https://docs.microsoft.com/windows-hardware/drivers/audio/directsound-speaker-configuration-settings)。
+用作 DAC 节点的属性时 ([**KSNODETYPE \_ DAC**](ksnodetype-dac.md)) 或3D 节点 ([**KSNODETYPE \_ 三维 \_ 效果**](ksnodetype-3d-effects.md)) ，则 KSPROPERTY \_ 音频 \_ 通道 \_ CONFIG 属性指定 DirectSound 发言人配置。 对于立体声扬声器配置，此属性与 [**KSPROPERTY \_ 音频 \_ 立体声 \_ 扬声器 \_ 几何**](ksproperty-audio-stereo-speaker-geometry.md) 属性结合使用，可区分耳机和几个立体声扬声器配置。 有关扬声器配置的详细信息，请参阅 [DirectSound 演讲者-配置设置](./directsound-speaker-configuration-settings.md)。
 
-DirectSound 还使用 KSPROPERTY\_音频\_通道\_CONFIG 属性在 "平移" 节点上查询其通道配置。 Pan 节点是混音器 pin 上的第二个卷节点（[**KSNODETYPE\_卷**](ksnodetype-volume.md)），满足[DirectSound 的节点顺序要求](https://docs.microsoft.com/windows-hardware/drivers/audio/directsound-node-ordering-requirements)。 **IDirectSoundBuffer：： SetPan**方法的 DirectSound 实现（如 Microsoft Windows SDK 文档中所述）使用平移节点的[**KSPROPERTY\_AUDIO\_VOLUMELEVEL**](ksproperty-audio-volumelevel.md)属性来控制平移。
+DirectSound 还使用 KSPROPERTY \_ 音频 \_ 通道 \_ CONFIG 属性在 "平移" 节点上查询其通道配置。 "平移节点" 是第二个卷节点 ([**KSNODETYPE \_ volume**](ksnodetype-volume.md)) ，它满足 [DirectSound 节点顺序要求](./directsound-node-ordering-requirements.md)。 Microsoft Windows SDK 文档中所述的 **IDirectSoundBuffer：： SetPan** 方法的 DirectSound 实现 () 使用平移节点的 [**KSPROPERTY \_ 音频 \_ VOLUMELEVEL**](ksproperty-audio-volumelevel.md) 属性来控制平移。
 
-DirectSound 将 KSPROPERTY\_音频\_通道\_CONFIG 视为 DAC 节点上的筛选器属性，并将作为卷和3D 节点上的固定属性。
+DirectSound 将 KSPROPERTY \_ AUDIO \_ 信道 \_ CONFIG 视为 DAC 节点上的筛选器属性，并将作为卷和3d 节点上的固定属性。
 
-客户端还使用此属性来选择[**KSNODETYPE\_PROLOGIC\_解码器**](ksnodetype-prologic-decoder.md)节点输出的流的格式。
+客户端还使用此属性来选择 [**KSNODETYPE \_ PROLOGIC \_ 解码器**](ksnodetype-prologic-decoder.md) 节点输出流的格式。
 
 <a name="requirements"></a>要求
 ------------
@@ -89,7 +89,7 @@ DirectSound 将 KSPROPERTY\_音频\_通道\_CONFIG 视为 DAC 节点上的筛选
 <tbody>
 <tr class="odd">
 <td align="left"><p>标头</p></td>
-<td align="left">Ksmedia （包括 Ksmedia）</td>
+<td align="left">Ksmedia (包含 Ksmedia) </td>
 </tr>
 </tbody>
 </table>
@@ -97,28 +97,21 @@ DirectSound 将 KSPROPERTY\_音频\_通道\_CONFIG 视为 DAC 节点上的筛选
 ## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
-[**KSNODEPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksnodeproperty)
+[**KSNODEPROPERTY**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksnodeproperty)
 
-[**KSAUDIO\_通道\_配置**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksaudio_channel_config)
+[**KSAUDIO \_ 通道 \_ 配置**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksaudio_channel_config)
 
-[**KSNODETYPE\_DAC**](ksnodetype-dac.md)
+[**KSNODETYPE \_ DAC**](ksnodetype-dac.md)
 
-[**KSNODETYPE\_3D\_效果**](ksnodetype-3d-effects.md)
+[**KSNODETYPE \_ 三维 \_ 效果**](ksnodetype-3d-effects.md)
 
-[**KSNODETYPE\_卷**](ksnodetype-volume.md)
+[**KSNODETYPE \_ 卷**](ksnodetype-volume.md)
 
-[**KSNODETYPE\_PROLOGIC\_解码器**](ksnodetype-prologic-decoder.md)
+[**KSNODETYPE \_ PROLOGIC \_ 解码器**](ksnodetype-prologic-decoder.md)
 
-[**KSPROPERTY\_音频\_立体声\_扬声器\_几何**](ksproperty-audio-stereo-speaker-geometry.md)
+[**KSPROPERTY \_ 音频 \_ 立体声 \_ 扬声器 \_ 几何**](ksproperty-audio-stereo-speaker-geometry.md)
 
-[**KSPROPERTY\_音频\_VOLUMELEVEL**](ksproperty-audio-volumelevel.md)
-
- 
+[**KSPROPERTY \_ 音频 \_ VOLUMELEVEL**](ksproperty-audio-volumelevel.md)
 
  
-
-
-
-
-
 

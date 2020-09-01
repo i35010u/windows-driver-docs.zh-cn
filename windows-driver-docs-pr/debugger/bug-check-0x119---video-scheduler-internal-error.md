@@ -13,19 +13,19 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: d3432d07a66d36e5cd6c01552924e5b9b2cea37d
-ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
+ms.openlocfilehash: 76446b162408df2adba9393e85f63529e66bda69
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84534662"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89207647"
 ---
 # <a name="bug-check-0x119-video_scheduler_internal_error"></a>Bug 检查0x119：视频 \_ 计划程序 \_ 内部 \_ 错误
 
 视频 \_ 计划程序 \_ 内部 \_ 错误检查的值为0x00000119。 这表示视频计划程序检测到严重冲突。
 
 > [!IMPORTANT]
-> 本主题适用于程序员。 如果你是在使用计算机时收到蓝屏错误代码的客户，请参阅[排查蓝屏错误](https://www.windows.com/stopcode)。
+> 本主题面向程序员。 如果您是在使用计算机时收到蓝屏错误代码的客户，请参阅[蓝屏错误疑难解答](https://www.windows.com/stopcode)。
 
 ## <a name="video_scheduler_internal_error-parameters"></a>视频 \_ 计划程序 \_ 内部 \_ 错误参数
 
@@ -51,12 +51,12 @@ ms.locfileid: "84534662"
 
 有关详细信息，请参阅：
 
-[处理命令和 DMA 缓冲区](https://docs.microsoft.com/windows-hardware/drivers/display/handling-command-and-dma-buffers)
+[处理命令和 DMA 缓冲区](../display/handling-command-and-dma-buffers.md)
 
-[提交命令缓冲区](https://docs.microsoft.com/windows-hardware/drivers/display/submitting-a-command-buffer)
+[提交命令缓冲区](../display/submitting-a-command-buffer.md)
 
-[提供围栏标识符](https://docs.microsoft.com/windows-hardware/drivers/display/supplying-fence-identifiers)
+[提供围栏标识符](../display/supplying-fence-identifiers.md)
 
 [GPU 计划程序类](https://docs.microsoft.com/windows-hardware/drivers/display/gpu-scheduler-class)
 
-[视频内存的直接交替](https://docs.microsoft.com/windows-hardware/drivers/display/direct-flip-of-video-memory)
+[视频内存的直接交替](../display/direct-flip-of-video-memory.md)

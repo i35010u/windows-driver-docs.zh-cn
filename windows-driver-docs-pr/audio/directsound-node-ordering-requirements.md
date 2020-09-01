@@ -3,22 +3,22 @@ title: DirectSound 节点排序要求
 description: DirectSound 节点排序要求
 ms.assetid: baca55f5-c669-4bd2-82b5-3985030864f2
 keywords:
-- 硬件加速 WDK DirectSound，节点排序要求
-- 节点排序要求 WDK DirectSound
-- 节点链接 WDK DirectSound
-- SUM 节点 WDK DirectSound
+- 硬件加速 WDK DirectSound，节点顺序要求
+- 节点顺序要求 WDK DirectSound
+- 节点链 WDK DirectSound
+- SUM 节点 DirectSound
 - 3D 混合 WDK 音频
 - 2D 混合 WDK 音频
-- 软件模拟三维处理 WDK 音频
+- 软件模拟3D 处理 WDK 音频
 - supermixer 节点 WDK 音频
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e719fd4a0a8e033b43db3f29233b074ea5195056
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: d75f928efc3de9dc4c8ca9031ca840d433f2c4ed
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67360136"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89208111"
 ---
 # <a name="directsound-node-ordering-requirements"></a>DirectSound 节点排序要求
 
@@ -26,46 +26,41 @@ ms.locfileid: "67360136"
 ## <span id="directsound_node_ordering_requirements"></span><span id="DIRECTSOUND_NODE_ORDERING_REQUIREMENTS"></span>
 
 
-DirectSound 2D 或 3D mixer pin 应包含以下一系列节点的节点链：
+DirectSound 2D 或3D 合成器 pin 应具有包含以下节点序列的节点链：
 
--   卷节点 (请参阅[ **KSNODETYPE\_卷**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksnodetype-volume)。)
+-   卷节点 (参阅 [**KSNODETYPE \_ VOLUME**](./ksnodetype-volume.md)。 ) 
 
--   3D 节点 （此节点是可选的。 请参阅[ **KSNODETYPE\_3D\_效果**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksnodetype-3d-effects)。)
+-   3D 节点 (此节点是可选的。 请参阅 [**KSNODETYPE \_ 三维 \_ 效果**](./ksnodetype-3d-effects.md)。 ) 
 
--   Supermixer 节点 (请参阅[ **KSNODETYPE\_SUPERMIX**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksnodetype-supermix)。)
+-   Supermixer 节点 (参阅 [**KSNODETYPE \_ SUPERMIX**](./ksnodetype-supermix.md)。 ) 
 
--   卷节点 （适用于平移效果）
+-   用于平移效果的卷节点 () 
 
--   SRC 节点 (请参阅[ **KSNODETYPE\_SRC**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksnodetype-src)。)
+-   SRC 节点 (参阅 [**KSNODETYPE \_ SRC**](./ksnodetype-src.md)。 ) 
 
--   SUM 节点 (请参阅[ **KSNODETYPE\_SUM**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksnodetype-sum)。)
+-   SUM 节点 (参阅 [**KSNODETYPE \_ SUM**](./ksnodetype-sum.md)。 ) 
 
-此列表中的节点显示的数据固定到流式处理出现的顺序。 其他节点可以交错而不会导致问题，前提保留上述顺序这些节点之间。
+此列表中的节点按数据流式传输到 pin 中的顺序出现。 其他节点可以在这些节点之间交错，而不会导致问题，前提是上述顺序已保留。
 
-2D pin 要求在上一列表中，除 3D 节点，这是可选的所有节点。 3D pin 需要在列表中，包括 3D 节点的所有节点。
+二维 pin 需要上一列表中的所有节点，3D 节点除外，这是可选的。 三维 pin 需要列表中的所有节点，包括3D 节点。
 
-SRC （采样率转换） 节点应有的总和节点。 虽然这不是一项要求 SRC 和 SUM 节点通常相邻。 **IDirectSoundBuffer::SetFrequency**方法 （请参阅 Microsoft Windows SDK 文档） perturbs SRC 节点重新采样速率。
+SRC (采样率转换) 节点应位于 SUM 节点之前。 尽管这不是必需的，但 SRC 和 SUM 节点通常是相邻的。 **IDirectSoundBuffer：： SetFrequency**方法 (参阅 Microsoft Windows SDK 文档) perturbs SRC 节点的重新采样速率。
 
-包含唯一的 SRC 和 SUM 节点混音器足以满足管理的系统驱动程序，如 SWMidi 和 Redbook 的流混合 (请参阅[SWMidi 系统驱动程序](kernel-mode-wdm-audio-components.md#swmidi_system_driver)并[Redbook 系统驱动程序](kernel-mode-wdm-audio-components.md#redbook_system_driver))，但此外，DirectSound 需要两个卷节点和 supermixer 节点位于 SUM 节点。 DirectSound 发送批量更改所得**IDirectSoundBuffer::SetVolume**对第一个卷节点和平移效果从发送调用**IDirectSoundBuffer::SetPan**对第二个调用卷节点。
+仅包含 SRC 和 SUM 节点的混音器足以用于混合由系统驱动程序（例如 SWMidi 和 Redbook）管理的流 (参阅 [SWMidi 系统驱动](kernel-mode-wdm-audio-components.md#swmidi_system_driver) 程序和 [Redbook 系统驱动程序](kernel-mode-wdm-audio-components.md#redbook_system_driver)) ，但 DirectSound 还要求两个卷节点和 supermixer 节点位于 SUM 节点之前。 DirectSound 会将 **IDirectSoundBuffer：： SetVolume** 调用产生的卷更改发送到第一个卷节点，并将 **IDirectSoundBuffer：： SetPan** 调用的平移效果发送到第二个卷节点。
 
-DirectSound 可以通过使用生成三维效果的 2D 插针**SetVolume**， **SetPan**，并**SetFrequency**调用，以控制的卷和 SRC 节点：
+DirectSound 可以通过使用 **SetVolume**、 **SetPan**和 **SetFrequency** 调用来控制卷和 SRC 节点，从而在二维引脚上生成三维效果：
 
--   **SetVolume**调用可以模拟的距离的声音源从侦听器中的更改。
+-   **SetVolume** 调用可以模拟声音源与侦听器之间的变化。
 
--   **SetPan**调用可以模拟方向相对于侦听器的声音源中的更改。
+-   **SetPan** 调用可以模拟相对于侦听器的声音源的变化。
 
--   **SetFrequency**调用可以模拟 Doppler 效果和 HRTFs （head 相关传输函数）。
+-   **SetFrequency** 调用可以模拟 Doppler 效果和 HRTFs (头相关传输函数) 。
 
-Supermixer 节点是十字条矩阵 M 输入的通道连接到 N 的输出渠道，其中 N 应等于的中设备的最终输出流的通道数。
+Supermixer 节点是将 M 输入通道连接到 N 个输出通道的一种纵横比矩阵，其中 N 应等于设备最终输出流中的通道数。
 
-管理硬件加速的 3D 效果所需的可选 3D 节点 (请参阅[WDM 音频中支持三维 DirectSound 加速](supporting-3d-directsound-acceleration-in-wdm-audio.md))，但不是需要的软件模拟三维处理。 大多数现有的实现将放置在 SRC 节点之前和 supermixer 节点中，第一个卷节点之间的 3D 节点但可使用其他配置。
+需要可选的3D 节点来管理硬件加速三维效果 (参阅 [在 WDM 音频) 中支持 3D DirectSound 加速](supporting-3d-directsound-acceleration-in-wdm-audio.md) ，但不需要进行软件模拟3d 处理。 大多数现有的实现将3D 节点放在 SRC 节点之前以及第一个卷节点和 supermixer 节点之间，但可以进行其他配置。
 
-输入的流到三维节点通常包含一条通道。 DirectSound 8.0 及更高版本，则可以使用三维效果创建 mono PCM 缓冲区。 早期版本的 DirectSound，但是，支持具有 mono 和立体声输入流，3D 节点和驱动程序应支持这两个以确保与较旧的应用程序兼容性。
-
- 
+三维节点的输入流通常包含单个通道。 在 DirectSound 8.0 和更高版本中，仅可以通过三维效果创建 mono PCM 缓冲区。 但是，早期版本的 DirectSound 支持带有 mono 和立体声输入流的3D 节点，并且驱动程序应同时支持这两者，以确保与较旧的应用程序兼容。
 
  
-
-
-
 
