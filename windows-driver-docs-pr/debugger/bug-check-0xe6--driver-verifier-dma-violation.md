@@ -13,23 +13,23 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: d94e775611b7b0e1baf0726954c9f6906caeb441
-ms.sourcegitcommit: 1d531bf9d02653fdf9ad728126d68b8acb86182e
+ms.openlocfilehash: ee96819efb33ce1bfa6eefa56ffd57f150c5188e
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87402276"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89217386"
 ---
 # <a name="bug-check-0xe6-driver_verifier_dma_violation"></a>Bug 检查0xE6：驱动程序 \_ 验证程序 \_ DMA \_ 冲突
 
 
-驱动程序 \_ 验证程序 \_ DMA \_ 冲突 bug 检查的值为0x000000E6。 这是所有驱动程序验证程序**DMA 验证**冲突的 bug 检查代码。
+驱动程序 \_ 验证程序 \_ DMA \_ 冲突 bug 检查的值为0x000000E6。 这是所有驱动程序验证程序 **DMA 验证** 冲突的 bug 检查代码。
 
 > [!IMPORTANT]
-> 本主题适用于程序员。 如果你是在使用计算机时收到蓝屏错误代码的客户，请参阅[排查蓝屏错误](https://www.windows.com/stopcode)。
+> 本主题面向程序员。 如果您是在使用计算机时收到蓝屏错误代码的客户，请参阅[蓝屏错误疑难解答](https://www.windows.com/stopcode)。
 
 > [!NOTE]
-> 未启用驱动程序验证程序时，可以观察到 E6 的主要错误检查代码。 如果你遇到此代码，但未启用驱动程序验证程序，请参阅[DMA 验证](https://docs.microsoft.com/windows-hardware/drivers/devtest/dma-verification)页。 
+> 未启用驱动程序验证程序时，可以观察到 E6 的主要错误检查代码。 如果你遇到此代码，但未启用驱动程序验证程序，请参阅 [DMA 验证](../devtest/dma-verification.md) 页。 
 
 ## <a name="driver_verifier_dma_violation-parameters"></a>驱动程序 \_ 验证程序 \_ DMA \_ 冲突参数
 
@@ -118,7 +118,7 @@ ms.locfileid: "87402276"
 </tr>
 <tr class="even">
 <td align="left"><p>0x0B</p></td>
-<td align="left"><p>驱动程序同时分配了过多的适配器通道（每个适配器只允许一个适配器通道。）</p>
+<td align="left"><p>驱动程序同时分配了过多的适配器通道 (每个适配器只允许一个适配器通道。 ) </p>
 <p>参数 2-未完成的适配器通道。</p>
 </td>
 </tr>
@@ -235,7 +235,7 @@ ms.locfileid: "87402276"
 </tr>
 <tr class="odd">
 <td align="left"><p>0x1E</p></td>
-<td align="left"><p>称为<strong>HalGetAdapter</strong>的驱动程序。 此函数已过时-必须改用<strong>IoGetDmaAdapter</strong> 。</p></td>
+<td align="left"><p>称为 <strong>HalGetAdapter</strong>的驱动程序。 此函数已过时-必须改用 <strong>IoGetDmaAdapter</strong> 。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x1F</p></td>
@@ -301,8 +301,8 @@ ms.locfileid: "87402276"
 <td align="left"><p>0x26</p></td>
 <td align="left"><p>IOMMU 检测到 DMA 冲突。 </p>
 <p>参数 2-出错设备的设备对象。</p>
-<p>参数 3-错误信息（通常是错误的物理地址）。</p>
-<p>参数 4-错误类型（特定于硬件）。</p></td>
+<p>参数 3-错误信息 (通常是错误的物理地址) 。</p>
+<p>参数 4-错误类型 (硬件特定) 。</p></td>
 </tr>
 </tbody>
 </table>
@@ -321,12 +321,7 @@ ms.locfileid: "87402276"
 
 如果您是驱动程序编写者，请使用通过此 bug 检查获取的信息来修复代码中的 bug。
 
-有关驱动程序验证程序的详细信息，请参阅[驱动程序验证](https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier)器。
+有关驱动程序验证程序的详细信息，请参阅 [驱动程序验证](../devtest/driver-verifier.md)器。
 
  
-
- 
-
-
-
 

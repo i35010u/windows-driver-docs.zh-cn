@@ -1,6 +1,6 @@
 ---
 title: blackboxscm
-description: Blackboxscmextension 显示服务控制管理器 (scm) 第二个启动数据。
+description: Blackboxscmextension 显示服务控制管理器 (scm) 辅助启动数据。
 keywords:
 - blackboxscm Windows 调试
 ms.author: windowsdriverdev
@@ -14,16 +14,16 @@ api_name:
 - blackboxscm
 api_type:
 - NA
-ms.openlocfilehash: 0d2a99ce3a08828104582a8604e709653b26f336
-ms.sourcegitcommit: b25275c2662bfdbddd97718f47be9bd79e6f08df
+ms.openlocfilehash: 9c737f94d983532024230c8310d8abb45b7f11ff
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/13/2019
-ms.locfileid: "67866498"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89217104"
 ---
 # <a name="blackboxscm"></a>!blackboxscm
 
-**！ Blackboxscm**扩展可用时在内核模式转储文件中显示信息从服务控制管理器 (SCM)。 该扩展将显示具有未完成的服务控制请求的任何服务的名称。    从内核模式转储时检测的错误发生，以及可能始终无法保存中缓存的数据检索的信息。
+当 **blackboxscm** 扩展在内核模式转储文件中可用时，它会显示服务控制管理器 (SCM) 的信息。 该扩展将显示具有未完成的服务控制请求的任何服务的名称。    从内核模式转储中的缓存数据中检索信息，该转储是在检测到错误时保存的，并且可能并非始终可用。
 
 
 语法
@@ -37,19 +37,19 @@ ms.locfileid: "67866498"
 *无*   
 
 
-## <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+## <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 ext.dll
 
 
-## <a name="span-idremarksspanremarks"></a><span id="Remarks"></span>备注
+## <a name="span-idremarksspanremarks"></a><span id="Remarks"></span>注释
 
-命令调度到的特定服务的 LPHANDLER_FUNCTION_EX 回调函数。  
-如有序地关闭或重新启动计算机，可以延迟 SERVICE_CONTROL_SHUTDOWN 或 SERVICE_CONTROL_PRESHUTDOWN，请求数。
+命令已分派给特定服务的 LPHANDLER_FUNCTION_EX 回调函数。  
+未完成的请求（如 SERVICE_CONTROL_SHUTDOWN 或 SERVICE_CONTROL_PRESHUTDOWN）可能会延迟计算机的有序关闭或重新启动。
 
 ### <a name="example-command-output"></a>示例命令输出 
 
-在多个转储文件，将返回单个服务。
+在许多转储文件中，只返回一个服务。
 
 ```dbgcmd
 2: kd> !ext.blackboxscm
@@ -57,26 +57,24 @@ ext.dll
     Code: 15
 ```
 
-返回的数据提供有关两个字段的信息。
+返回的数据提供两个字段的相关信息。
 
-*名称*-在转储发生时处于活动状态的服务的名称。
+*名称* -发生转储时处于活动状态的服务的名称。
 
-*代码*-dwControl 这是未完成的十进制值
+*Code* -未完成的 DwControl 的十进制值
 
-在此示例中，代码 15 （或 0x0000000F） 被指 SERVICE_CONTROL_PRESHUTDOWN。
+在此示例中，代码 15 (或 0x0000000F) 定义为 SERVICE_CONTROL_PRESHUTDOWN。
 
 
 ### <a name="multiple-services"></a>多个服务
 
-列出了多个服务，只列出的第一个服务时通常要进行失败分析感兴趣。  这是因为 SCM （服务控制管理器） 等待按顺序完成这些请求，因此，只有第一个服务实际接收到控制请求。
+如果列出了多个服务，则只有列出的第一项服务通常对失败分析感兴趣。  这是因为 SCM (服务控制管理器) 按顺序等待这些请求的完成，因此只有第一个服务实际接收了控制请求。
 
-有关 SCM 详细信息，请参阅[服务控制管理器](https://docs.microsoft.com/windows/desktop/Services/service-control-manager)。
+有关 SCM 的详细信息，请参阅 [服务控制管理器](/windows/desktop/Services/service-control-manager)。
 
 
-### <a name="span-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span>其他信息
+### <a name="span-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span>附加信息
 
-定义在 winsvc.h dwControl 值并将其记录为参数[LPHANDLER_FUNCTION_EX 回调函数](https://docs.microsoft.com/windows/desktop/api/winsvc/nc-winsvc-lphandler_function_ex#parameters)。
+dwControl 值在 winsvc 中定义，并记录为 [LPHANDLER_FUNCTION_EX 回调函数](/windows/desktop/api/winsvc/nc-winsvc-lphandler_function_ex#parameters)的参数。
 
  
-
-

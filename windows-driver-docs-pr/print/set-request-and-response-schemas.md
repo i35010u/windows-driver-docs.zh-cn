@@ -4,12 +4,12 @@ description: 下面列出了设置请求架构和相应的响应架构定义以�
 ms.assetid: 88E7F06C-3232-48C3-A0D6-2BEFF4ABA188
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 53c1b87b5da29438077e6dc92f0b55ae602ca221
-ms.sourcegitcommit: ab64169b631da4db3f0b895600f1c38a22cb7e2e
+ms.openlocfilehash: aeafe08dcd6617322b6ee5d48662f491b5c18d20
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75652959"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89217432"
 ---
 # <a name="set-request-and-response-schemas"></a>设置请求和响应架构
 
@@ -118,6 +118,6 @@ Set 请求用于将值写入打印机属性。
 
 [双向通信架构](bidirectional-communication-schema.md)  
 
-[SendRecvXMLStream](https://docs.microsoft.com/windows-hardware/drivers/ddi/bidispl/nf-bidispl-ibidispl2-sendrecvxmlstream)  
+[SendRecvXMLStream](/windows-hardware/drivers/ddi/bidispl/nf-bidispl-ibidispl2-sendrecvxmlstream)  
 
-[SendRecvXMLString](https://docs.microsoft.com/windows-hardware/drivers/ddi/bidispl/nf-bidispl-ibidispl2-sendrecvxmlstring)  
+[SendRecvXMLString](/windows-hardware/drivers/ddi/bidispl/nf-bidispl-ibidispl2-sendrecvxmlstring)

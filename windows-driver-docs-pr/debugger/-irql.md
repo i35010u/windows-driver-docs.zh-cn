@@ -14,17 +14,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 9d8cc9dcd2d30f6e378189d7168d6812f97542df
-ms.sourcegitcommit: bb3b62a57ba3aea4a0adeefd2d81993367b7b334
+ms.openlocfilehash: c0d3d9c441a3a241942e0179f326baf59792ea75
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88148451"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89217082"
 ---
 # <a name="irql"></a>!irql
 
 
-在调试程序中断之前，在目标计算机上的处理器上，% **irql**扩展显示处理器的中断请求级别 (irql) 。
+在调试程序中断之前，在目标计算机上的处理器上，% **irql** 扩展显示处理器的中断请求级别 (irql) 。
 
 ```dbgcmd
 !irql [Processor] 
@@ -51,7 +51,7 @@ ms.locfileid: "88148451"
 <td align="left"><p>Unavailable</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>Windows XP</strong></p></td>
+<td align="left"><p><strong>Windows XP</strong></p></td>
 <td align="left"><p>Unavailable</p></td>
 </tr>
 <tr class="odd">
@@ -65,14 +65,14 @@ ms.locfileid: "88148451"
 
 ### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>附加信息
 
-有关 IRQLs 的信息，请参阅 Windows 驱动程序工具包 (WDK) 文档和*Microsoft Windows 内部机制*，Mark Russinovich 和 David 所罗门群岛。
+有关 IRQLs 的信息，请参阅 Windows 驱动程序工具包 (WDK) 文档和 *Microsoft Windows 内部机制* ，Mark Russinovich 和 David 所罗门群岛。
 
 <a name="remarks"></a>备注
 -------
 
 当目标计算机中断到调试器时，将更改 IRQL，但在调试器中断之前有效的 IRQL 会被保存。 **！ Irql**扩展显示保存的 irql。
 
-同样，当发生 bug 检查并创建故障转储文件时，保存在崩溃转储文件中的 IRQL 是在 bug 检查之前立即发生的，而不是执行[**KeBugCheckEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kebugcheckex)例程时的 irql。
+同样，当发生 bug 检查并创建故障转储文件时，保存在崩溃转储文件中的 IRQL 是在 bug 检查之前立即发生的，而不是执行 [**KeBugCheckEx**](/windows-hardware/drivers/ddi/wdm/nf-wdm-kebugcheckex) 例程时的 irql。
 
 在这两种情况下，当前 IRQL 会引发到调度 \_ 级别，但 x86 体系结构除外。 因此，如果发生多个此类事件，则显示的 IRQL 还会成为调度 \_ 级别，使其在调试时毫无用处。
 
@@ -100,10 +100,4 @@ Debugger saved IRQL for processor 0x0 -- 12 (SYNCH_LEVEL) [Synchronization level
 ```
 
  
-
- 
-
-
-
-
 

@@ -3,16 +3,16 @@ title: 安装 PCL XL 微型驱动程序
 description: 安装 PCL XL 微型驱动程序
 ms.assetid: 88e4e1a0-8adb-4f40-abeb-a4da761ca4ee
 keywords:
-- PCL XL 矢量图形 WDK Unidrv，安装微型驱动程序
+- PCL XL vector graphics WDK Unidrv，安装微型驱动程序
 - 微型驱动程序 WDK PCL XL
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 47ff106c645c7c4bac80bde397f2e927f5dc5977
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 6decb82ebfc32f8aa4bf9bab4ea54417d779cc65
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67385974"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89217153"
 ---
 # <a name="installing-a-pcl-xl-minidriver"></a>安装 PCL XL 微型驱动程序
 
@@ -20,14 +20,14 @@ ms.locfileid: "67385974"
 
 
 
-Ntprint.inf 中 Windows XP 及更高版本，具有以下\[PCLXL。OEM\]部分：
+在 Windows XP 和更高版本中，ntprint.inf 具有以下 \[ PCLXL。OEM \] 部分：
 
 ```cpp
 [PCLXL.OEM]
 CopyFiles=PCLXL,@PCL5ERES.DLL
 ```
 
-[ **INF CopyFiles 指令**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-copyfiles-directive)将所有中列出的文件复制\[PCLXL\]部分中，以及 pcl5eres.dll 的默认目标目录。 \[PCLXL\]部分也将出现在 ntprint.inf 并列出了要复制的文件。
+[**INF CopyFiles 指令**](../install/inf-copyfiles-directive.md)将 PCLXL 节中列出的所有文件以及 \[ \] pcl5eres.dll 复制到默认目标目录。 \[PCLXL \] 节还显示在 ntprint.inf 中，并列出要复制的文件。
 
 ```cpp
 [PCLXL]
@@ -38,9 +38,9 @@ PJL.GPD
 P6DISP.GPD
 ```
 
-Pclxl.dll 包含 PCL XL *UFMs*和各种资源字符串。 本部分中列出的其他 GPDs 是 PCL XL (PCL 6) 的支持文件。
+Pclxl.dll 包含 PCL XL *UFMs* 和各种资源字符串。 本节中列出的其他 GPDs 为 PCL XL (PCL-6) 支持文件。
 
-若要安装 PCL XL 打印机微型驱动程序，OEM 应添加特定于打印机的 INF 部分如下所示。 Ntprint.inf 之前，将加载此 INF。
+若要安装 PCL XL printer 微型驱动程序，OEM 应在打印机特定的 INF 中添加类似于以下内容的部分。 此 INF 在 ntprint.inf 之前加载。
 
 ```cpp
 [P6SAMPLE.GPD]
@@ -51,14 +51,9 @@ Include=NTPRINT.INF
 Needs=UNIDRV.OEM,TTFSUB.OEM,PCLXL.OEM
 ```
 
-在前面部分中， **CopyFiles** OEM 的 GPD 文件 (在此示例中名为 p6sample.gpd) 复制的第一行中的指令。 与关联的条目**DataSection**指令的第二行中 (请参阅[打印机 INF 文件的数据部分](printer-inf-file-data-sections.md)并[打印机 INF 文件安装的部分](printer-inf-file-install-sections.md)) 是指\[UNIDRV\_数据\]ntprint.inf 中的部分。 **DataFile**第三行中的指令指定了该 p6sample.gpd 是与此打印机微型驱动程序相关联的数据文件。 第四行将会导致 ntprint.inf 要包含。 中的三个条目**需要**指令的第五个行，请参阅在 ntprint.inf 中的名称同为部分。 这样，要获取其 driver.cab 中加载的文件的访问权限的 INF 文件。
+在前面的部分中，第一行中的 **CopyFiles** 指令将) 此示例中名为 P6SAMPLE 的 OEM 的 GPD 文件复制 (。 与第二行中的 **DataSection** 指令关联的条目 (参阅 " [打印机 inf 文件数据" 部分](printer-inf-file-data-sections.md) 和 " [打印机 inf 文件安装" 部分](printer-inf-file-install-sections.md)) 引用 ntprint.inf 中的 " \[ UNIDRV Data" \_ \] 部分。 第三行中 **的数据文件指令指定** p6sample 是与此 printer 微型驱动程序关联的数据文件。 第四行使 ntprint.inf 包含在内。 第五行的 **需求** 指令中的三个条目引用了 ntprint.inf 中同名的部分。 这会使 INF 文件能够访问 driver.cab 中加载的文件。
 
-有关使用的其他信息**CopyFiles**指令对于打印机安装，请参阅[打印机 INF 文件 CopyFiles 部分](printer-inf-file-copyfiles-sections.md)。
-
- 
+有关使用 **CopyFiles** 指令进行打印机安装的其他信息，请参阅 [Printer INF File CopyFiles 部分](printer-inf-file-copyfiles-sections.md)。
 
  
-
-
-
 

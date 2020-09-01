@@ -3,17 +3,17 @@ title: 不在用户界面中显示的关键字
 description: 不在用户界面中显示的关键字
 ms.assetid: 0d2aeaa3-4e47-413b-907f-5e70b34f0725
 keywords:
-- 安装关键字 WDK 网络、 不可见
-- 非可见关键字 WDK DNIS 微型端口
-- 隐藏的关键字 WDK DNIS 微型端口
+- 安装关键字 WDK 网络，不可见
+- 不可见的关键字 WDK DNIS 微型端口
+- 隐藏关键字 WDK DNIS 微型端口
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3f10ff63889c73f288064e35a59a66d8126aa09f
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: b7e17730fcd6992a622c9bf398b82981430560a2
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67356244"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89215600"
 ---
 # <a name="keywords-not-displayed-in-the-user-interface"></a>不在用户界面中显示的关键字
 
@@ -21,30 +21,24 @@ ms.locfileid: "67356244"
 
 
 
-NDIS 6.0 和更高版本的 NDIS 网络设备的微型端口驱动程序提供一些标准化的关键字。 这些标准化的关键字出现在 INF 文件但不是在用户界面。
+Ndis 6.0 和更高版本的 NDIS 为网络设备的微型端口驱动程序提供了一些标准化关键字。 这些标准化关键字显示在 INF 文件中，而不是在用户界面中显示。
 
-以下列表中描述了这些常见的关键字。 有关特定关键字的详细信息，搜索 WDK 文档中的关键字。
+下面的列表中介绍了这些常规关键字。 有关特定关键字的详细信息，请在 WDK 文档中搜索关键字。
 
-<a href="" id="-iftype"></a> **\*IfType**  
-设备的 NDIS 接口类型。 有关 NDIS 接口类型的详细信息，请参阅[NDIS 接口类型](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-interface-types)。
+<a href="" id="-iftype"></a>**\*IfType**  
+设备的 NDIS 接口类型。 有关 NDIS 接口类型的详细信息，请参阅 [Ndis 接口类型](./ndis-interface-types.md)。
 
-<a href="" id="-mediatype"></a> **\*MediaType**  
-设备的媒体类型。 有关微型端口适配器的媒体类型的详细信息，请参阅[OID\_代\_媒体\_支持](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-media-supported)。
+<a href="" id="-mediatype"></a>**\*MediaType**  
+设备的媒体类型。 有关微型端口适配器的媒体类型的详细信息，请参阅 [ \_ \_ \_ 支持 OID 生成媒体](./oid-gen-media-supported.md)。
 
-<a href="" id="-physicalmediatype"></a> **\*PhysicalMediaType**  
-物理媒体类型的设备。 有关微型端口适配器的物理媒体类型的详细信息，请参阅[OID\_代\_物理\_中等](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-physical-medium)。
+<a href="" id="-physicalmediatype"></a>**\*PhysicalMediaType**  
+设备的物理媒体类型。 有关微型端口适配器的物理媒体类型的详细信息，请参阅 [OID \_ GEN \_ 物理 \_ 介质](./oid-gen-physical-medium.md)。
 
-<a href="" id="-ndisdevicetype-------"></a> **\*NdisDeviceType**   
-设备的类型。 默认值为零，表示连接到网络的标准网络设备。 设置 **\*NdisDeviceType**到 NDIS\_设备\_类型\_终结点 (1) 如果此设备是终结点设备，而不是连接到网络的真实网络接口。 例如，您必须指定 NDIS\_设备\_类型\_使用的网络基础结构与本地计算机系统进行通信，但不是提供到外部连接的智能手机等设备的终结点网络。 但是，必须 **\*不\*** 将此关键字设置为 NDIS_DEVICE_TYPE_ENDPOINT 为虚拟适配器，如 VPN 接口，因为它们提供到外部网络的连接。
+<a href="" id="-ndisdevicetype-------"></a>**\*NdisDeviceType**   
+设备的类型。 默认值为零，表示连接到网络的标准网络设备。 ** \* ** \_ \_ \_ 如果此设备是终结点设备，并且不是连接到网络的真正网络接口，请将 NdisDeviceType 设置为 NDIS 设备类型终结点 (1) 。 例如，你必须 \_ \_ \_ 为设备（例如智能手机）指定 NDIS 设备类型终结点，以便使用网络基础结构与本地计算机系统通信，但不提供与外部网络的连接。 但是， ** \* 不 \* **能将此关键字设置为虚拟适配器（如 VPN 接口）的 NDIS_DEVICE_TYPE_ENDPOINT，因为它们提供了与外部网络的连接。
 
-**请注意**  Windows Vista 会自动识别并监视一台计算机连接到的网络。 如果 NDIS\_设备\_类型\_设置终结点标志，该设备的终结点设备且不是与真实的外部网络的连接。 因此，Windows 将在它识别到网络时忽略终结点设备。 Network Awareness Api 指示该设备不会连接到网络计算机。 对于最终用户在此情况下，网络和共享中心以及通知区域中的网络图标不会显示为已连接的 NDIS 终结点设备。 但是，在网络连接文件夹中显示了连接。
+**注意**   Windows Vista 自动标识和监视计算机连接到的网络。 如果设置了 NDIS \_ 设备 \_ 类型 \_ 终结点标志，则设备是终结点设备，并且不与真正的外部网络建立连接。 因此，Windows 在识别网络时将忽略终结点设备。 网络感知 Api 表明设备不将计算机连接到网络。 对于这种情况下的最终用户而言，通知区域中的 "网络和共享中心" 和 "网络" 图标不会将 NDIS 终结点设备显示为已连接。 不过，连接显示在 "网络连接" 文件夹中。
 
 
  
-
- 
-
-
-
-
 

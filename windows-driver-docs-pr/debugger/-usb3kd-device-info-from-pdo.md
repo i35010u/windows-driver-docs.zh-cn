@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 645fe27ebbe8557f54c763e878eda1b71f747a12
-ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
+ms.openlocfilehash: 3e671d6247941c7ab38856586c9a821663870026
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84534904"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89216298"
 ---
 # <a name="usb3kddevice_info_from_pdo"></a>！ usb3kd \_ \_ 来自 pdo 的设备 \_ 信息
 
@@ -32,22 +32,22 @@ ms.locfileid: "84534904"
 
 
 <span id="_______DeviceObject______"></span><span id="_______deviceobject______"></span><span id="_______DEVICEOBJECT______"></span>*DeviceObject*   
-USB 设备或集线器的物理设备对象（PDO）的地址。
+USB 设备或集线器 (PDO) 的物理设备对象的地址。
 
 ## <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 
-Usb3kd
+Usb3kd.dll
 
-<a name="remarks"></a>注解
+<a name="remarks"></a>备注
 -------
 
-**！ \_ \_ 来自 \_ pdo**和[**！ ucx \_ 设备**](-usb3kd-ucx-device.md)的设备信息均显示有关设备的信息，但显示的信息不同。 ** \_ \_ 来自 \_ pdo 的！设备信息**的输出来自于 usb 3.0 集线器驱动程序的观点， **！ ucx \_ 设备**的输出来自 usb 主机控制器扩展驱动程序的观点。 例如， ** \_ \_ 来自 \_ pdo 输出的！设备信息**包含有关配置和接口描述符的信息， **！ ucx \_ 设备**输出包含有关终结点的信息。
+**！ \_ \_ 来自 \_ pdo** 和 [**！ ucx \_ 设备**](-usb3kd-ucx-device.md) 的设备信息均显示有关设备的信息，但显示的信息不同。 ** \_ \_ 来自 \_ pdo 的！设备信息**的输出来自于 usb 3.0 集线器驱动程序的观点， **！ ucx \_ 设备**的输出来自 usb 主机控制器扩展驱动程序的观点。 例如， ** \_ \_ 来自 \_ pdo 输出的！设备信息** 包含有关配置和接口描述符的信息， **！ ucx \_ 设备** 输出包含有关终结点的信息。
 
 <a name="examples"></a>示例
 --------
 
-可以从[**！ usb \_ 树**](-usb3kd-usb-tree.md)的输出或其他各种调试器命令获取 PDO 的地址。 例如， [**！ devnode**](-devnode.md)命令显示 PDOs 的地址。 在下面的示例中，USBSTOR 设备节点是 USBHUB3 节点的直接子节点。 USBSTOR 节点的 PDO 地址为0xfffffa80059c3800。
+可以从 [**！ usb \_ 树**](-usb3kd-usb-tree.md) 的输出或其他各种调试器命令获取 PDO 的地址。 例如， [**！ devnode**](-devnode.md) 命令显示 PDOs 的地址。 在下面的示例中，USBSTOR 设备节点是 USBHUB3 节点的直接子节点。 USBSTOR 节点的 PDO 地址为0xfffffa80059c3800。
 
 ```dbgcmd
 3: kd> !devnode 0 1 usbhub3
@@ -112,7 +112,7 @@ Device Event History:
     ...
 ```
 
-下面的示例演示了[**！ usb \_ 树**](-usb3kd-usb-tree.md)命令的一些输出。 可以查看其中一个子设备节点的 PDO 地址作为[**！ devstack**](-devstack.md)命令的参数。 （**！ devstack fffffa80059c3800**）
+下面的示例演示了 [**！ usb \_ 树**](-usb3kd-usb-tree.md) 命令的一些输出。 可以查看其中一个子设备节点的 PDO 地址作为 [**！ devstack**](-devstack.md) 命令的参数。  (**！ devstack fffffa80059c3800**) 
 
 ```dbgcmd
 3: kd> !usb_tree
@@ -144,14 +144,7 @@ Topology
 
 [**！ usb3kd \_ 信息**](-usb3kd-device-info.md)
 
-[通用串行总线（USB）驱动程序](https://docs.microsoft.com/windows-hardware/drivers/usbcon/)
+[ (USB) 驱动程序的通用串行总线](../usbcon/index.md)
 
  
-
- 
-
-
-
-
-
 

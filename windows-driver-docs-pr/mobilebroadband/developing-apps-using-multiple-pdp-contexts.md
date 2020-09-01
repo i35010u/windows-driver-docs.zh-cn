@@ -4,12 +4,12 @@ description: 使用多个 PDP 上下文开发应用
 ms.assetid: 6a977a69-397d-4922-890d-1810dd54dff4
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bfcfc5571b469cf452d3c10fa130d36bd851cf7e
-ms.sourcegitcommit: 67efcd26f7be8f50c92b141ccd14c9c68f4412d8
+ms.openlocfilehash: cc204ce5a67446406008dd81d58047091c3a0ca6
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88902650"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89217372"
 ---
 # <a name="developing-apps-using-multiple-pdp-contexts"></a>使用多个 PDP 上下文开发应用
 
@@ -43,7 +43,7 @@ ms.locfileid: "88902650"
 
 UWP mobile 宽带应用可以利用多个 PDP 上下文来激活特殊的 PDP 上下文并指定路由数据流量的规则。 这些应用可以为特定目标或所有数据流量创建规则。
 
-当移动宽带应用需要与网络交换数据时，它会检查可用网络和连接的网络。 如果移动宽带应用对于这些网络中的任何一种都有特殊规则，它将使用连接管理器 API 来打开特殊的 PDP 上下文。 如果此连接成功，则 PDP 上下文会为此连接提供路由规则并使用网络 Api 传输数据。 如果移动宽带应用收到 [**NetworkStatusChanged**](https://docs.microsoft.com/uwp/api/Windows.Networking.Connectivity.NetworkInformation#Windows_Networking_Connectivity_NetworkInformation_NetworkStatusChanged) 事件，以查看是否有任何连接已更改以及是否需要为新连接打开 PDP 上下文，则应该重复此操作。
+当移动宽带应用需要与网络交换数据时，它会检查可用网络和连接的网络。 如果移动宽带应用对于这些网络中的任何一种都有特殊规则，它将使用连接管理器 API 来打开特殊的 PDP 上下文。 如果此连接成功，则 PDP 上下文会为此连接提供路由规则并使用网络 Api 传输数据。 如果移动宽带应用收到 [**NetworkStatusChanged**](/uwp/api/Windows.Networking.Connectivity.NetworkInformation#Windows_Networking_Connectivity_NetworkInformation_NetworkStatusChanged) 事件，以查看是否有任何连接已更改以及是否需要为新连接打开 PDP 上下文，则应该重复此操作。
 
 ![图 2](images/mb-pdp-fig2.jpg)
 
@@ -53,16 +53,16 @@ UWP mobile 宽带应用可以利用多个 PDP 上下文来激活特殊的 PDP �
 
 ### <a name="http-based-apis"></a>基于 HTTP 的 Api
 
-基于 HTTP 的 Api，如[**XMLHTTPRequest**](https://docs.microsoft.com/previous-versions/windows/apps/br229787(v=win.10)) [**、**](https://docs.microsoft.com/uwp/api/Windows.Web.Syndication) [IXHR2](https://docs.microsoft.com/previous-versions/windows/desktop/ixhr2/ixmlhttprequest2-portal)、 [**AtomPub**](https://docs.microsoft.com/uwp/api/Windows.Web.AtomPub)和基于 windows HTTP 协议的 api （如 JQuery 和[**windows**](https://docs.microsoft.com/uwp/api/Windows.Web.Http)），不能绑定到特定的接口，也不能绑定到特定的接口。 对于这些 Api，Windows 使用策略来处理将数据路由到特殊的 PDP 上下文。 激活特殊的 PDP 上下文后，应用可根据目标和特殊的 PDP 上下文指定路由规则。 目标可以是域名或 IP 地址，如 video.fabrikam.com、contoso.com 或123.23.34.333。 指定路由规则后，如果应用使用上述任何 HTTP Api 来传输数据，则 Windows 将基于路由规则将数据发送到特殊的 PDP 上下文。 应用传输完数据后，应该断开特殊的 PDP 上下文的连接，并删除路由策略。
+基于 HTTP 的 Api，如[**XMLHTTPRequest**](/previous-versions/windows/apps/br229787(v=win.10)) [**、**](/uwp/api/Windows.Web.Syndication) [IXHR2](/previous-versions/windows/desktop/ixhr2/ixmlhttprequest2-portal)、 [**AtomPub**](/uwp/api/Windows.Web.AtomPub)和基于 windows HTTP 协议的 api （如 JQuery 和[**windows**](/uwp/api/Windows.Web.Http)），不能绑定到特定的接口，也不能绑定到特定的接口。 对于这些 Api，Windows 使用策略来处理将数据路由到特殊的 PDP 上下文。 激活特殊的 PDP 上下文后，应用可根据目标和特殊的 PDP 上下文指定路由规则。 目标可以是域名或 IP 地址，如 video.fabrikam.com、contoso.com 或123.23.34.333。 指定路由规则后，如果应用使用上述任何 HTTP Api 来传输数据，则 Windows 将基于路由规则将数据发送到特殊的 PDP 上下文。 应用传输完数据后，应该断开特殊的 PDP 上下文的连接，并删除路由策略。
 
 >[!NOTE]
->[**后台传输 api**](https://docs.microsoft.com/uwp/api/Windows.Networking.BackgroundTransfer) 和 [HTTP 客户端 (c # ) api](https://docs.microsoft.com/previous-versions/visualstudio/hh193681(v=vs.118)) 不能使用路由策略。
+>[**后台传输 api**](/uwp/api/Windows.Networking.BackgroundTransfer) 和 [HTTP 客户端 (c # ) api](/previous-versions/visualstudio/hh193681(v=vs.118)) 不能使用路由策略。
 
 ![图 3](images/mb-pdp-fig4.jpg)
 
 ### <a name="socket-based-apis"></a>基于套接字的 Api
 
-[**Windows.**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets) socket 命名空间中提供的基于套接字的 api （例如 TCP、UDP 和流套接字）提供绑定到特定接口的机制。 应用使用套接字 Api 时，应绑定到特定的接口，以便将数据路由到特殊的 PDP 上下文。 激活特殊的 PDP 上下文后， [**AcquireConnectionAsync**](https://docs.microsoft.com/uwp/api/Windows.Networking.Connectivity.ConnectivityManager#Windows_Networking_Connectivity_ConnectivityManager_AcquireConnectionAsync_Windows_Networking_Connectivity_CellularApnContext_) API 将向应用提供接口信息。 它可以使用此信息绑定到特定的接口并开始传输数据。
+[**Windows.**](/uwp/api/Windows.Networking.Sockets) socket 命名空间中提供的基于套接字的 api （例如 TCP、UDP 和流套接字）提供绑定到特定接口的机制。 应用使用套接字 Api 时，应绑定到特定的接口，以便将数据路由到特殊的 PDP 上下文。 激活特殊的 PDP 上下文后， [**AcquireConnectionAsync**](/uwp/api/Windows.Networking.Connectivity.ConnectivityManager#Windows_Networking_Connectivity_ConnectivityManager_AcquireConnectionAsync_Windows_Networking_Connectivity_CellularApnContext_) API 将向应用提供接口信息。 它可以使用此信息绑定到特定的接口并开始传输数据。
 
 ![图 4](images/mb-pdp-fig3.jpg)
 
@@ -70,13 +70,13 @@ UWP mobile 宽带应用可以利用多个 PDP 上下文来激活特殊的 PDP �
 
 Windows 8.1 和 Windows 10 添加了以下 Api 以支持多个 PDP 上下文：
 
-- [**CellularApnContext**](https://docs.microsoft.com/uwp/api/Windows.Networking.Connectivity.CellularApnContext) 此类包含用于指定网络上的访问点的属性。 **CellularApnContext**对象与[**AcquireConnectionAsync**](https://docs.microsoft.com/uwp/api/Windows.Networking.Connectivity.ConnectivityManager#Windows_Networking_Connectivity_ConnectivityManager_AcquireConnectionAsync_Windows_Networking_Connectivity_CellularApnContext_)调用一起传递，以建立与特定访问点的连接。
+- [**CellularApnContext**](/uwp/api/Windows.Networking.Connectivity.CellularApnContext) 此类包含用于指定网络上的访问点的属性。 **CellularApnContext**对象与[**AcquireConnectionAsync**](/uwp/api/Windows.Networking.Connectivity.ConnectivityManager#Windows_Networking_Connectivity_ConnectivityManager_AcquireConnectionAsync_Windows_Networking_Connectivity_CellularApnContext_)调用一起传递，以建立与特定访问点的连接。
 
-- [**ConnectivityManager：： AcquireConnectionAsync**](https://docs.microsoft.com/uwp/api/Windows.Networking.Connectivity.ConnectivityManager#Windows_Networking_Connectivity_ConnectivityManager_AcquireConnectionAsync_Windows_Networking_Connectivity_CellularApnContext_) 此 API 为指定接入点名称激活新连接 (APN) 或 PDP 上下文。 此异步方法允许应用使用适当的配置信息请求连接到特定 APN 或 PDP 上下文。 激活专用接入点后，它将显示为 Windows 和应用的新虚拟接口。
+- [**ConnectivityManager：： AcquireConnectionAsync**](/uwp/api/Windows.Networking.Connectivity.ConnectivityManager#Windows_Networking_Connectivity_ConnectivityManager_AcquireConnectionAsync_Windows_Networking_Connectivity_CellularApnContext_) 此 API 为指定接入点名称激活新连接 (APN) 或 PDP 上下文。 此异步方法允许应用使用适当的配置信息请求连接到特定 APN 或 PDP 上下文。 激活专用接入点后，它将显示为 Windows 和应用的新虚拟接口。
 
-- [**ConnectivityManager：： AddHttpRoutePolicy**](https://docs.microsoft.com/uwp/api/Windows.Networking.Connectivity.ConnectivityManager#Windows_Networking_Connectivity_ConnectivityManager_AddHttpRoutePolicy_Windows_Networking_Connectivity_RoutePolicy_) 此方法添加一个策略，该策略将由 HTTP stack 通信用来将数据路由到特殊的 PDP 上下文。 应用可以基于目标指定策略，例如域名和 IP 地址，以及特殊的 PDP 上下文配置文件。 应用创建策略后，Windows HTTP stack 使用策略将数据路由到特殊的 PDP 上下文。
+- [**ConnectivityManager：： AddHttpRoutePolicy**](/uwp/api/Windows.Networking.Connectivity.ConnectivityManager#Windows_Networking_Connectivity_ConnectivityManager_AddHttpRoutePolicy_Windows_Networking_Connectivity_RoutePolicy_) 此方法添加一个策略，该策略将由 HTTP stack 通信用来将数据路由到特殊的 PDP 上下文。 应用可以基于目标指定策略，例如域名和 IP 地址，以及特殊的 PDP 上下文配置文件。 应用创建策略后，Windows HTTP stack 使用策略将数据路由到特殊的 PDP 上下文。
 
-- [**ConnectivityManager：： RemoveHttpRoutePolicy**](https://docs.microsoft.com/uwp/api/Windows.Networking.Connectivity.ConnectivityManager#Windows_Networking_Connectivity_ConnectivityManager_RemoveHttpRoutePolicy_Windows_Networking_Connectivity_RoutePolicy_) 此方法删除以前添加的 HTTP 路由策略。
+- [**ConnectivityManager：： RemoveHttpRoutePolicy**](/uwp/api/Windows.Networking.Connectivity.ConnectivityManager#Windows_Networking_Connectivity_ConnectivityManager_RemoveHttpRoutePolicy_Windows_Networking_Connectivity_RoutePolicy_) 此方法删除以前添加的 HTTP 路由策略。
 
 下面的代码演示如何将这些 Api 用于基于 HTTP 的数据传输：
 
@@ -170,7 +170,7 @@ socket.close();
 currentConnectionSession.close();
 ```
 
-您的应用程序必须处理 [**NetworkStatusChanged**](https://docs.microsoft.com/uwp/api/Windows.Networking.Connectivity.NetworkInformation#Windows_Networking_Connectivity_NetworkInformation_NetworkStatusChanged) 事件，才能处理特殊的 PDP 上下文连接上的任何网络转换。
+您的应用程序必须处理 [**NetworkStatusChanged**](/uwp/api/Windows.Networking.Connectivity.NetworkInformation#Windows_Networking_Connectivity_NetworkInformation_NetworkStatusChanged) 事件，才能处理特殊的 PDP 上下文连接上的任何网络转换。
 
 ### <a name="scenario-premium-mobile-broadband-app-provides-free-data-access-using-special-apn"></a>方案：高级移动宽带应用使用特殊 APN 提供免费数据访问
 
@@ -524,7 +524,7 @@ foreach (var connectionProfile in connectionProfiles)
 
 ![流式处理应用工作流](images/mb-pdp-fig6.jpg)
 
-您可以基于[WinInet](https://docs.microsoft.com/windows/desktop/WinInet/portal) Api 使用[播放机框架](https://archive.codeplex.com/?p=playerframework)或其他视频框架。
+您可以基于[WinInet](/windows/desktop/WinInet/portal) Api 使用[播放机框架](https://archive.codeplex.com/?p=playerframework)或其他视频框架。
 
 ## <a name="instantgo"></a>InstantGo
 
@@ -548,7 +548,7 @@ InstantGo 支持以下方案：
 
 - 播放背景音频和音乐
 
-有关 InstantGo 的详细信息，请参阅 [InstantGo 简介](https://docs.microsoft.com/windows-hardware/design/device-experiences/modern-standby)。
+有关 InstantGo 的详细信息，请参阅 [InstantGo 简介](/windows-hardware/design/device-experiences/modern-standby)。
 
 你的移动宽带应用可以使用特殊的 PDP 上下文来实现其中某些 InstantGo 方案。 如果因超出范围而断开连接，则需要使用以下逻辑重新连接到特殊的 PDP 上下文。 设备进入连接待机电源状态后，在10分钟后，Windows 会断开与特殊 PDP 上下文的所有连接，应用程序必须再次请求连接。
 
@@ -558,13 +558,13 @@ InstantGo 支持以下方案：
 
 ### <a name="audio-streaming-in-background"></a>后台音频流
 
-音频流式处理应用程序可以通过使用特殊的 PDP 上下文，在后台和处于连接状态的待机电源状态中播放音频。 有关如何在后台播放音频的详细信息，请参阅 [如何在后台播放音频](https://docs.microsoft.com/previous-versions/windows/apps/hh700367(v=win.10))。
+音频流式处理应用程序可以通过使用特殊的 PDP 上下文，在后台和处于连接状态的待机电源状态中播放音频。 有关如何在后台播放音频的详细信息，请参阅 [如何在后台播放音频](/previous-versions/windows/apps/hh700367(v=win.10))。
 
 ### <a name="real-time-communication-apps"></a>实时通信应用
 
 实时通信应用（如 VoIP 或聊天应用）可以在特殊的 PDP 上下文上收到唤醒触发器。 唤醒触发器允许在任何时间（包括系统处于连接待机电源状态时）触发应用。 有关如何启用唤醒触发器的详细信息，请参阅 [后台网络](https://www.microsoft.com/download/details.aspx?id=28999)。
 
-若要启用此方案，移动宽带设备应支持针对特殊 PDP 上下文的唤醒筛选器，如 [移动宽带接口模型 (MBIM) 规范](https://docs.microsoft.com/windows-hardware/drivers/network/mb-interface-model)中所述。
+若要启用此方案，移动宽带设备应支持针对特殊 PDP 上下文的唤醒筛选器，如 [移动宽带接口模型 (MBIM) 规范](../network/mb-interface-model.md)中所述。
 
 ## <a name="mobile-broadband-devices"></a>移动宽带设备
 

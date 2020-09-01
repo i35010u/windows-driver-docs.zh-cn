@@ -1,40 +1,40 @@
 ---
 title: WDI_TLV_DISASSOCIATION_INDICATION_PARAMETERS
-description: WDI_TLV_DISASSOCIATION_INDICATION_PARAMETERS 是一个 TLV，其中包含 NDIS_STATUS_WDI_INDICATION_DISASSOCIATION 的解除其指示参数。
+description: WDI_TLV_DISASSOCIATION_INDICATION_PARAMETERS 是包含 NDIS_STATUS_WDI_INDICATION_DISASSOCIATION 的解除对应参数的 TLV。
 ms.assetid: AD799DAA-B89D-4015-8DC5-53057C4DA43E
 ms.date: 07/18/2017
 keywords:
-- WDI_TLV_DISASSOCIATION_INDICATION_PARAMETERS 从 Windows Vista 开始的网络驱动程序
+- 从 Windows Vista 开始 WDI_TLV_DISASSOCIATION_INDICATION_PARAMETERS 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: d1bdd2e7f2b3350da6be78c9d92c2449ba0d016b
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 7b6fe5d996b77fb93741b48a60f12cf23f1362a6
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72834139"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89217231"
 ---
-# <a name="wdi_tlv_disassociation_indication_parameters"></a>WDI\_TLV\_解除\_指示\_参数
+# <a name="wdi_tlv_disassociation_indication_parameters"></a>WDI \_ TLV \_ 解除 \_ 指示 \_ 参数
 
 
-WDI\_TLV\_解除\_指示\_参数是一个 TLV，其中包含 NDIS 的解除指示参数\_[状态\_WDI\_指示\_](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-wdi-indication-disassociation)解除。
+WDI \_ tlv \_ 解除 \_ \_ 对应的参数是一个 Tlv，其中包含 [NDIS \_ 状态 \_ WDI \_ 指示 \_ ](./ndis-status-wdi-indication-disassociation.md)解除与的解除对应的解除指示参数。
 
 ## <a name="tlv-type"></a>TLV 类型
 
 
 0xBC
 
-## <a name="length"></a>长度
+## <a name="length"></a>Length
 
 
-所有包含的元素的大小的总和（以字节为单位）。
+Sum (所有包含的元素的大小) 。
 
 ## <a name="values"></a>值
 
 
-| 在任务栏的搜索框中键入                                                         | 描述                                                                |
+| 类型                                                         | 说明                                                                |
 |--------------------------------------------------------------|----------------------------------------------------------------------------|
-| [**WDI\_MAC\_地址**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dot11wdi/ns-dot11wdi-_wdi_mac_address)            | 与解除关联的指示关联的对等方的 MAC 地址。 |
-| [**WDI\_ASSOC\_状态**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wditypes/ne-wditypes-_wdi_assoc_status)（UINT32） | 解除解除的指示的触发器。                             |
+| [**WDI \_ MAC \_ 地址**](/windows-hardware/drivers/ddi/dot11wdi/ns-dot11wdi-_wdi_mac_address)            | 与解除关联的指示关联的对等方的 MAC 地址。 |
+| [**WDI \_ASSOC \_ 状态**](/windows-hardware/drivers/ddi/wditypes/ne-wditypes-_wdi_assoc_status) (UINT32)  | 解除解除的指示的触发器。                             |
 
  
 
@@ -49,7 +49,7 @@ WDI\_TLV\_解除\_指示\_参数是一个 TLV，其中包含 NDIS 的解除指�
 <tbody>
 <tr class="odd">
 <td><p>最低受支持的客户端</p></td>
-<td><p>Windows 10</p></td>
+<td><p>Windows 10</p></td>
 </tr>
 <tr class="even">
 <td><p>最低受支持的服务器</p></td>
@@ -63,9 +63,4 @@ WDI\_TLV\_解除\_指示\_参数是一个 TLV，其中包含 NDIS 的解除指�
 </table>
 
  
-
- 
-
-
-
 

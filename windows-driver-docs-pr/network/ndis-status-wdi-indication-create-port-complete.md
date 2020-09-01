@@ -6,30 +6,30 @@ ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 NDIS_STATUS_WDI_INDICATION_CREATE_PORT_COMPLETE 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 6467a26a4318bc1ca6a5e78940eb385c1e7c9dfe
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: c9491a355f7034ffca6aacaa6b9e0f622fb88e84
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67382910"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89215508"
 ---
-# <a name="ndisstatuswdiindicationcreateportcomplete"></a>NDIS\_状态\_WDI\_指示\_创建\_端口\_完成
+# <a name="ndis_status_wdi_indication_create_port_complete"></a>NDIS \_ 状态 \_ WDI \_ 指示 \_ 创建 \_ 端口 \_ 完成
 
 
-微型端口驱动程序使用 NDIS\_状态\_WDI\_指示\_创建\_端口\_完成以指示完成[OID\_WDI\_任务\_创建\_端口](oid-wdi-task-create-port.md)。
+微型端口驱动程序使用 NDIS \_ 状态 \_ WDI \_ 指示 \_ 创建 \_ 端口 \_ 完成，以指示已完成 [OID \_ WDI \_ 任务 \_ 创建 \_ 端口](oid-wdi-task-create-port.md)。
 
-| Object |
+| 对象 |
 |--------|
-| Port   |
+| 端口   |
 
  
 
-## <a name="payload-data"></a>有效负载数据
+## <a name="payload-data"></a>负载数据
 
 
-| 在任务栏的搜索框中键入                                                               | 允许多个 TLV 实例 | 可选 | 描述                         |
+| 类型                                                               | 允许多个 TLV 实例 | 可选 | 说明                         |
 |--------------------------------------------------------------------|--------------------------------|----------|-------------------------------------|
-| [**WDI\_TLV\_PORT\_ATTRIBUTES**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-port-attributes) |                                |          | 创建端口的属性。 |
+| [**WDI \_ TLV \_ 端口 \_ 属性**](./wdi-tlv-port-attributes.md) |                                |          | 所创建端口的属性。 |
 
  
 
@@ -51,16 +51,11 @@ ms.locfileid: "67382910"
 <td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
-<td><p>Header</p></td>
-<td>Dot11wdi.h</td>
+<td><p>标头</p></td>
+<td>Dot11wdi</td>
 </tr>
 </tbody>
 </table>
 
  
-
- 
-
-
-
 

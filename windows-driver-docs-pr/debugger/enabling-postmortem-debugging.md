@@ -5,12 +5,12 @@ ms.assetid: ae116b60-fed2-4e1d-98a8-9fe83f460c50
 keywords: 调试. 调试，Windbg，事后调试，实时调试，JIT 调试，AeDebug 注册表项
 ms.date: 09/17/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 66978e922da8f8b0699038359d0b1bf3d80dd9b2
-ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
+ms.openlocfilehash: 11f14ca8bae8ea2bbeaa06269dc9beb1cb219043
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84534370"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89216716"
 ---
 # <a name="enabling-postmortem-debugging"></a>启用事后调试
 
@@ -20,7 +20,7 @@ ms.locfileid: "84534370"
 
 **异常和断点**
 
-最常见的应用程序错误称为 "异常"。 其中包括访问冲突、被零除错误、数字溢出、CLR 异常以及许多其他类型的错误。 应用程序还可能导致断点中断。 当 Windows 无法运行应用程序时（例如，无法加载必需的模块时）或遇到断点时，会发生这些错误。 断点可以由调试器插入到代码中，也可以通过[**DebugBreak**](https://docs.microsoft.com/windows/desktop/api/debugapi/nf-debugapi-debugbreak)等函数进行调用。
+最常见的应用程序错误称为 "异常"。 其中包括访问冲突、被零除错误、数字溢出、CLR 异常以及许多其他类型的错误。 应用程序还可能导致断点中断。 当 Windows 无法运行应用程序 (例如，无法加载所需的模块时) 或遇到断点时，会出现这种情况。 断点可以由调试器插入到代码中，也可以通过 [**DebugBreak**](/windows/desktop/api/debugapi/nf-debugapi-debugbreak)等函数进行调用。
 
 **异常处理程序优先顺序**
 
@@ -28,23 +28,23 @@ Windows 根据配置值以及哪些调试程序处于活动状态，以各种方
 
 1.  如果用户模式调试器当前已附加到出错进程，则所有错误都将导致目标中断此调试器。
 
-    只要附加了用户模式调试器，就不会使用其他错误处理方法，即使使用的是[**gn （"未处理异常"）**](gn--gn--go-with-exception-not-handled-.md)命令也是如此。
+    只要附加了用户模式调试器，就不会再使用其他错误处理方法--即使 [**gn (未处理异常) **](gn--gn--go-with-exception-not-handled-.md) 命令。
 
-2.  如果没有附加用户模式调试器，并且执行代码具有其自己的异常处理例程（例如， **try 除外**），则此异常处理例程将尝试处理错误。
+2.  如果没有附加用户模式调试器，并且执行代码具有其自己的异常处理例程 (例如， **try-except**) ，则此异常处理例程将尝试处理错误。
 
 3.  如果没有附加用户模式调试器，并且 Windows 具有开放内核调试连接，并且错误是断点中断，则 Windows 将尝试联系内核调试器。
 
-    在 Windows 启动过程中，必须打开内核调试连接。 如果希望防止用户模式中断进入内核调试器，可以将 KDbgCtrl 实用工具与 **-du**参数一起使用。 有关如何配置内核调试连接以及如何使用 KDbgCtrl 的详细信息，请参阅[获取调试设置](getting-set-up-for-debugging.md)。
+    在 Windows 启动过程中，必须打开内核调试连接。 如果希望防止用户模式中断进入内核调试器，可以将 KDbgCtrl 实用工具与 **-du** 参数一起使用。 有关如何配置内核调试连接以及如何使用 KDbgCtrl 的详细信息，请参阅 [获取调试设置](getting-set-up-for-debugging.md)。
 
-    在内核调试器中，您可以使用[**gh （已处理异常）**](gh--go-with-exception-handled-.md)来忽略错误并继续运行目标。 可以使用[**gn （"未处理异常"）**](gn--gn--go-with-exception-not-handled-.md)绕过内核调试器并继续执行步骤4。
+    在内核调试器中，您可以使用 [**gh () 处理异常 **](gh--go-with-exception-handled-.md) ，以忽略错误并继续运行目标。 您可以使用 [**gn ("未处理异常") **](gn--gn--go-with-exception-not-handled-.md) ，绕过内核调试器并继续执行步骤4。
 
-4.  如果步骤1、2和3中的条件不适用，Windows 将激活在 AeDebug 注册表值中配置的调试工具。 在此情况下，可以提前选择任何程序作为工具使用。 选择的程序称为*事后调试器*。
+4.  如果步骤1、2和3中的条件不适用，Windows 将激活在 AeDebug 注册表值中配置的调试工具。 在此情况下，可以提前选择任何程序作为工具使用。 选择的程序称为 *事后调试器*。
 
-5.  如果步骤1、2和3中的条件不适用，并且没有已注册的事后调试器，Windows 错误报告（WER）将显示一条消息，并在有任何可用的情况下提供解决方案。 如果在注册表中设置了适当的值，则 WER 还会写入内存转储文件。 有关详细信息，请参阅[使用 WER](https://docs.microsoft.com/windows/win32/wer/using-wer)和[收集用户模式转储](https://docs.microsoft.com/windows/win32/wer/collecting-user-mode-dumps)。
+5.  如果步骤1、2和3中的条件不适用，并且未注册事后调试器，则 Windows 错误报告 (WER) 会显示一条消息，并在有任何可用的情况下提供解决方案。 如果在注册表中设置了适当的值，则 WER 还会写入内存转储文件。 有关详细信息，请参阅 [使用 WER](/windows/win32/wer/using-wer) 和 [收集用户模式转储](/windows/win32/wer/collecting-user-mode-dumps)。
 
 **DebugBreak 函数**
 
-如果已安装事后调试器，可以通过调用**DebugBreak**函数从用户模式应用程序中有意中断到调试器。
+如果已安装事后调试器，可以通过调用 **DebugBreak** 函数从用户模式应用程序中有意中断到调试器。
 
 ## <a name="span-idspecifying_a_postmortem_debuggerspanspan-idspecifying_a_postmortem_debuggerspanspan-idspecifying_a_postmortem_debuggerspanspecifying-a-postmortem-debugger"></a><span id="Specifying_a_Postmortem_Debugger"></span><span id="specifying_a_postmortem_debugger"></span><span id="SPECIFYING_A_POSTMORTEM_DEBUGGER"></span>指定事后调试器
 
@@ -53,13 +53,13 @@ Windows 根据配置值以及哪些调试程序处于活动状态，以各种方
 
 **Post 事后调试器注册表项**
 
-Windows 错误报告（WER）使用在 AeDebug 注册表项中设置的值创建事后调试进程。
+Windows 错误报告 (WER) 使用在 AeDebug 注册表项中设置的值创建事后调试进程。
 
 **HKLM** \\**软件** \\**Microsoft** \\**WINDOWS NT** \\**CurrentVersion** \\**AeDebug**
 
-有两个重要的主注册表值： "*调试器*" 和 "*自动*"。*调试器*注册表值指定事后调试器的命令行。 *自动*注册表值指定是自动启动事后调试器，还是首先显示确认消息框。
+有两个重要的主注册表值： " *调试器* " 和 " *自动*"。 *调试器* 注册表值指定事后调试器的命令行。 *自动*注册表值指定是自动启动事后调试器，还是首先显示确认消息框。
 
-<span id="Debugger__REG_SZ_"></span><span id="debugger__reg_sz_"></span><span id="DEBUGGER__REG_SZ_"></span>**调试器（REG \_ SZ）**  
+<span id="Debugger__REG_SZ_"></span><span id="debugger__reg_sz_"></span><span id="DEBUGGER__REG_SZ_"></span>**调试器 (REG \_ SZ) **  
 
 此 REG \_ SZ 值指定将处理事后调试的调试器。
 
@@ -67,30 +67,30 @@ Windows 错误报告（WER）使用在 AeDebug 注册表项中设置的值创建
 
 命令行是通过包含3个参数的 printf 样式调用从调试器字符串生成的。 尽管顺序是固定的，但不需要使用任何或所有可用参数。
 
-DWORD （% ld）-目标进程的进程 ID。
+DWORD (% ld) -目标进程的进程 ID。
 
-DWORD （% ld）-事件句柄重复到事后调试器进程。 如果事后调试器发出事件信号，则 WER 将继续目标进程，而不会等待事后调试器终止。 只有在问题得到解决后，才应发出事件信号。 如果事后调试器在终止时未发出事件的信号，则 WER 会继续收集有关目标进程的信息。
+DWORD (% ld) 事件句柄重复到事后调试进程。 如果事后调试器发出事件信号，则 WER 将继续目标进程，而不会等待事后调试器终止。 只有在问题得到解决后，才应发出事件信号。 如果事后调试器在终止时未发出事件的信号，则 WER 会继续收集有关目标进程的信息。
 
-void \* （% p）- \_ \_ 在目标进程的地址空间中分配的 JIT 调试信息结构的地址。 结构包含其他异常信息和上下文。
+void \* (% p) - \_ \_ 在目标进程的地址空间中分配的 JIT 调试信息结构的地址。 结构包含其他异常信息和上下文。
 
-<span id="Auto__REG_SZ_"></span><span id="auto__reg_sz_"></span><span id="AUTO__REG_SZ_"></span>**自动（REG \_ SZ）** 此 REG \_SZ 值始终是**0**或**1**。
+<span id="Auto__REG_SZ_"></span><span id="auto__reg_sz_"></span><span id="AUTO__REG_SZ_"></span>**自动 (REG \_SZ) ** 此 REG \_ SZ 值始终是 **0** 或 **1**。
 
-如果 "**自动**" 设置为**0**，则在开始调试调试过程之前，将显示确认消息框。
+如果 " **自动** " 设置为 **0**，则在开始调试调试过程之前，将显示确认消息框。
 
-如果 "**自动**" 设置为**1**，则会立即创建 "事后调试程序"。
+如果 " **自动** " 设置为 **1**，则会立即创建 "事后调试程序"。
 
 手动编辑注册表时，请特别小心，因为对注册表所做的更改可能不允许 Windows 启动。
 
 **示例命令行用法**
 
-许多事后调试程序使用命令行，其中包括-p 和-e 开关，以指示参数是 PID 和事件（分别为）。 例如，通过安装 WinDbg，会 `windbg.exe -I` 创建以下值：
+许多事后调试程序使用命令行（包括-p 和-e 开关）来指示参数分别是 PID 和事件 () 。 例如，通过安装 WinDbg，会 `windbg.exe -I` 创建以下值：
 
 ```console
 Debugger = "<Path>\WinDbg -p %ld -e %ld -g"
 Auto = 1
 ```
 
-可以灵活地使用 WER% ld% ld% p 参数。 例如， 不需要在 WER 参数前后指定任何开关。 例如，使用安装[Windows Sysinternals ProcDump](https://docs.microsoft.com/sysinternals/downloads/procdump)会 `procdump.exe -i` 创建以下值，而不会在 WER% ld% ld% p 参数之间切换：
+可以灵活地使用 WER% ld% ld% p 参数。 例如， 不需要在 WER 参数前后指定任何开关。 例如，使用安装 [Windows Sysinternals ProcDump](/sysinternals/downloads/procdump) 会 `procdump.exe -i` 创建以下值，而不会在 WER% ld% ld% p 参数之间切换：
 
 ```console
 Debugger = "<Path>\procdump.exe" -accepteula -j "c:\Dumps" %ld %ld %p
@@ -99,7 +99,7 @@ Auto = 1
 
 **32和64位调试器**
 
-在64位平台上，调试程序（REG \_ sz）和 Auto （reg \_ sz）注册表值是分别为64位和32位应用程序定义的。 其他 Windows on Windows （WOW）键用于存储32位应用程序 post 事后调试值。
+在64位平台上，调试器 (REG \_ sz) 和 Auto (reg \_ sz) 注册表值分别为64位和32位应用程序定义。 Windows 上的其他 Windows (WOW) 键用于存储32位应用程序 post 事后调试值。
 
 **HKLM** \\**软件** \\**Wow6432Node** \\**Microsoft** \\**WINDOWS NT** \\**CurrentVersion** \\**AeDebug**
 
@@ -142,7 +142,7 @@ Windows 调试器的调试工具都支持将设置为事后调试器。 安装�
 
 **WinDbg**
 
-若要将事后调试器设置为 WinDbg，请运行 `windbg -I` 。 （ `I` 必须大写。）此命令在使用后将显示成功或失败消息。 若要使用32和64位应用程序，请对64和32调试器运行命令。
+若要将事后调试器设置为 WinDbg，请运行 `windbg -I` 。  (`I` 必须大写。 ) 此命令在使用后将显示成功或失败消息。 若要使用32和64位应用程序，请对64和32调试器运行命令。
 
 ```console
 C:\Program Files (x86)\Windows Kits\10\Debuggers\x64\windbg.exe –I
@@ -160,24 +160,24 @@ Auto = 1
 
 如前文所述，-p 和-e 参数传递了进程 ID 和事件。
 
-**-G**将 g （走）命令传递给 WinDbg，并继续从当前指令执行。
+**-G**将 g (中转) 命令传递给 WinDbg，并继续执行当前指令。
 
-**注意**   传递 g （走）命令时出现重大问题。 此方法的问题是，异常并不总是重复，这通常是由于在重新启动代码时不再存在的暂时情况。 有关此问题的详细信息，请参阅[**jdinfo （使用 JIT \_ 调试 \_ 信息）**](-jdinfo--use-jit-debug-info-.md)。
+**注意**   传递 g (中转) 命令时出现重大问题。 此方法的问题是，异常并不总是重复，这通常是由于在重新启动代码时不再存在的暂时情况。 有关此问题的详细信息，请参阅 [**。 jdinfo (使用 JIT \_ 调试 \_ 信息) **](-jdinfo--use-jit-debug-info-.md)。
 
-若要避免此问题，请使用 jdinfo 或/j.。 此方法允许调试器位于相关代码失败的上下文中。 有关详细信息，请参阅本主题后面的[实时（JIT）调试](#jit)。
+若要避免此问题，请使用 jdinfo 或/j.。 此方法允许调试器位于相关代码失败的上下文中。 有关详细信息，请参阅本主题后面的实时 [ (JIT) 调试](#jit) 。
 
  
 
 **CDB**
 
-若要将事后调试器设置为 CDB，请运行**cdb-iae** （install AeDebug）或**cdb-iaec** *KeyString* （install AeDebug with Command）。
+若要将事后调试器设置为 CDB，请运行 **cdb-iae** (Install AeDebug) 或 **CDB-Iaec** *KeyString* (install AeDebug with Command) 。
 
 ```console
 C:\Program Files (x86)\Windows Kits\10\Debuggers\x64\cdb.exe -iae
 C:\Program Files (x86)\Windows Kits\10\Debuggers\x86\cdb.exe -iae
 ```
 
-使用 **-iaec**参数时， *KeyString*指定要追加到命令行末尾的字符串，该命令行用于启动事后调试调试器。 如果*KeyString*包含空格，则必须用引号将其引起来。
+使用 **-iaec** 参数时， *KeyString* 指定要追加到命令行末尾的字符串，该命令行用于启动事后调试调试器。 如果 *KeyString* 包含空格，则必须用引号将其引起来。
 
 ```console
 C:\Program Files (x86)\Windows Kits\10\Debuggers\x64\cdb.exe -iaec [KeyString]
@@ -188,14 +188,14 @@ C:\Program Files (x86)\Windows Kits\10\Debuggers\x86\cdb.exe -iaec [KeyString]
 
 **NTSD**
 
-若要将事后调试器设置为 NTSD，请运行**iae** （install AeDebug）或**ntsd-iaec** *KeyString* （install AeDebug with Command）。
+若要将事后调试器设置为 NTSD，请运行 **ntsd-iae** (install AeDebug) 或 **NTSD Iaec** *KeyString* (install AeDebug with Command) 。
 
 ```console
 C:\Program Files (x86)\Windows Kits\10\Debuggers\x64\ntsd.exe -iae
 C:\Program Files (x86)\Windows Kits\10\Debuggers\x86\ntsd.exe -iae
 ```
 
-使用 **-iaec**参数时， *KeyString*指定要追加到命令行末尾的字符串，该命令行用于启动事后调试调试器。 如果*KeyString*包含空格，则必须用引号将其引起来。
+使用 **-iaec** 参数时， *KeyString* 指定要追加到命令行末尾的字符串，该命令行用于启动事后调试调试器。 如果 *KeyString* 包含空格，则必须用引号将其引起来。
 
 ```console
 C:\Program Files (x86)\Windows Kits\10\Debuggers\x64\ntsd.exe -iaec [KeyString]
@@ -220,9 +220,9 @@ Debugger = "C:\WINDOWS\system32\vsjitdebugger.exe" -p %ld -e %ld
 
 ### <a name="span-idwindow_sysinternals_procdumpspanspan-idwindow_sysinternals_procdumpspanspan-idwindow_sysinternals_procdumpspanwindow-sysinternals-procdump"></a><span id="Window_Sysinternals_ProcDump"></span><span id="window_sysinternals_procdump"></span><span id="WINDOW_SYSINTERNALS_PROCDUMP"></span>Window Sysinternals ProcDump
 
-Windows Sysinternals ProcDump 实用程序还可用于事后转储捕获。 有关使用和下载 ProcDump 的详细信息，请参阅[ProcDump](https://docs.microsoft.com/sysinternals/downloads/procdump)。
+Windows Sysinternals ProcDump 实用程序还可用于事后转储捕获。 有关使用和下载 ProcDump 的详细信息，请参阅 [ProcDump](/sysinternals/downloads/procdump)。
 
-与[**dump**](-dump--create-dump-file-.md) WinDbg 命令一样，ProcDump 能够以非交互方式捕获崩溃转储。 捕获可能出现在任何 Windows 系统会话中。
+与 [**dump**](-dump--create-dump-file-.md) WinDbg 命令一样，ProcDump 能够以非交互方式捕获崩溃转储。 捕获可能出现在任何 Windows 系统会话中。
 
 当转储文件捕获完成时，ProcDump 将退出，然后，WER 会报告失败，错误过程将终止。
 
@@ -240,11 +240,11 @@ Windows Sysinternals ProcDump 实用程序还可用于事后转储捕获。 有�
 Debugger = <Path>\ProcDump.exe -accepteula -j "<DumpFolder>" %ld %ld %p
 ```
 
-ProcDump 使用所有3个参数-PID、事件和 JIT \_ 调试 \_ 信息。 有关 JIT \_ 调试信息参数的详细信息 \_ ，请参阅下面的[实时（JIT）调试](#jit)。
+ProcDump 使用所有3个参数-PID、事件和 JIT \_ 调试 \_ 信息。 有关 JIT \_ 调试信息参数的详细信息 \_ ，请参阅下面的实时 [ (JIT) 调试](#jit) 。
 
-在没有大小选项集的情况下，捕获的转储大小默认为迷你（进程/线程/句柄/模块/地址空间），具有-mp 集的小型增强（迷你 plus MEM \_ 专用页面），或具有-mA 集的完全（所有内存等效于 "/mA"）。
+捕获的转储大小默认为迷你 (进程/线程/句柄/模块/地址空间) ，无需大小的选项集，小型增强 (小型加 \_ 内存专用页) 使用-mp 集，或完全 (与-mA 集 ) 的所有内存等效于 "/mA"。
 
-对于具有足够驱动器空间的系统，建议使用完整的（-ma）捕获。
+对于驱动器空间充足的系统，建议使用完全 () 捕获。
 
 使用带有-i 选项的-ma 指定所有内存捕获。 还可以提供转储文件的路径。
 
@@ -252,15 +252,15 @@ ProcDump 使用所有3个参数-PID、事件和 JIT \_ 调试 \_ 信息。 有�
 <Path>\procdump.exe -ma -i c:\Dumps
 ```
 
-对于驱动器空间有限的系统，建议使用小型增强（-mp）捕获。
+对于驱动器空间有限的系统，建议使用小型增强 ( mp) 捕获。
 
 ```console
 <Path>\procdump.exe -mp -i c:\Dumps
 ```
 
-要将转储文件保存到的文件夹是可选的。 默认值为当前文件夹。 应使用与用于 C： Windows Temp 相同或更好的 ACL 来保护文件夹 \\ \\ 。有关管理与文件夹相关的安全性的详细信息，请参阅[事后调试过程中的安全性](security-during-postmortem-debugging.md)。
+要将转储文件保存到的文件夹是可选的。 默认值为当前文件夹。 应使用与用于 C： Windows Temp 相同或更好的 ACL 来保护文件夹 \\ \\ 。有关管理与文件夹相关的安全性的详细信息，请参阅 [事后调试过程中的安全性](security-during-postmortem-debugging.md)。
 
-若要将 ProcDump 卸载为事后调试器，并还原以前的设置，请使用-u （Uninstall）选项。
+若要将 ProcDump 卸载为事后调试器，并还原以前的设置，请使用-u (卸载) 选项。
 
 ```console
 <Path>\procdump.exe -u
@@ -270,25 +270,25 @@ ProcDump 使用所有3个参数-PID、事件和 JIT \_ 调试 \_ 信息。 有�
 
 ProcDump 是一个 "打包" 的可执行文件，其中包含应用程序的32位和64位版本，这同样适用于32位和64位。 当 ProcDump 运行时，如果运行的版本不匹配目标进程，它将自动切换版本。
 
-## <a name="span-idjitspanspan-idjitspan-just-in-time-jit-debugging"></a><span id="JIT"></span><span id="jit"></span>实时（JIT）调试
+## <a name="span-idjitspanspan-idjitspan-just-in-time-jit-debugging"></a><span id="JIT"></span><span id="jit"></span> 实时 (JIT) 调试
 
 
 **设置出错应用程序的上下文**
 
-如前文所述，使用 JIT \_ 调试信息参数将上下文设置为导致崩溃的异常非常有必要 \_ 。 有关此内容的详细信息，请参阅[**jdinfo （使用 JIT \_ 调试 \_ 信息）**](-jdinfo--use-jit-debug-info-.md)。
+如前文所述，使用 JIT \_ 调试信息参数将上下文设置为导致崩溃的异常非常有必要 \_ 。 有关此内容的详细信息，请参阅 [**。 jdinfo (使用 JIT \_ 调试 \_ 信息) **](-jdinfo--use-jit-debug-info-.md)。
 
 **Windows 调试工具**
 
-此示例演示如何编辑注册表以运行初始命令（-c），该命令使用. jdinfo &lt; address &gt; 命令显示其他异常信息，并将上下文更改为异常的位置（类似于使用 ecxr 时，将上下文设置为 "异常" 记录）。
+此示例显示了如何编辑注册表以运行 (-c) 的初始命令，该命令使用. jdinfo &lt; address &gt; 命令显示其他异常信息，并将上下文更改为异常的位置 (类似于使用 ecxr。将上下文设置为异常记录) 。
 
 ```console
 Debugger = "<Path>\windbg.exe -p %ld -e %ld -c ".jdinfo 0x%p"
 Auto = 1
 ```
 
-% P 参数是 \_ \_ 目标进程的地址空间中的 JIT 调试信息结构的地址。 % P 参数使用0x 预先追加，以便将其解释为十六进制值。 有关详细信息，请参阅[**jdinfo （使用 JIT \_ 调试 \_ 信息）**](-jdinfo--use-jit-debug-info-.md)。
+% P 参数是 \_ \_ 目标进程的地址空间中的 JIT 调试信息结构的地址。 % P 参数使用0x 预先追加，以便将其解释为十六进制值。 有关详细信息，请参阅 [**。 jdinfo (使用 JIT \_ 调试 \_ 信息) **](-jdinfo--use-jit-debug-info-.md)。
 
-若要调试32和64位应用的混合，请配置32和64位注册表项（如上所述），将正确的路径设置为64位和32位 WinDbg 的位置。
+若要调试32和64位应用的组合，请配置 (以上所述) 的32和64位注册表项，并将正确的路径设置为64位和 32 WinDbg.exe 的位置。
 
 **使用转储创建转储文件**
 
@@ -298,9 +298,9 @@ Auto = 1
 <Path>\windbg.exe -p %ld -e %ld -c ".dump /j %p /u <DumpPath>\AeDebug.dmp; qd"
 ```
 
-使用/u 选项生成唯一的文件名，以允许自动创建多个转储文件。 有关选项的详细信息，请参阅[**。 dump （创建转储文件）**](-dump--create-dump-file-.md)。
+使用/u 选项生成唯一的文件名，以允许自动创建多个转储文件。 有关选项的详细信息，请参阅 [**。 dump (创建转储文件) **](-dump--create-dump-file-.md)。
 
-创建的转储会将 JITDEBUG \_ 信息数据存储为默认的异常上下文。 请使用 .exr-1 显示异常记录和 ecxr，以设置上下文，而不是使用 jdinfo 查看异常信息和设置上下文。 有关详细信息，请参阅[**.exr （显示异常记录）**](-exr--display-exception-record-.md)和[**Ecxr （显示异常上下文记录）**](-ecxr--display-exception-context-record-.md)。
+创建的转储会将 JITDEBUG \_ 信息数据存储为默认的异常上下文。 请使用 .exr-1 显示异常记录和 ecxr，以设置上下文，而不是使用 jdinfo 查看异常信息和设置上下文。 有关详细信息，请参阅 [**。 .exr (显示异常记录) **](-exr--display-exception-record-.md) 和 [**. Ecxr () 显示异常上下文记录 **](-ecxr--display-exception-context-record-.md)。
 
 **Windows 错误报告-q/qd**
 
@@ -308,9 +308,9 @@ Auto = 1
 
 如果在关闭调试器之前使用 qd 分离调试会话，则 WER 将报告失败。
 
-如果使用 q 停止调试会话（或在调试器关闭时没有分离），则 WER 不会报告失败。
+如果使用 q (退出调试会话，或者如果在未分离) 的情况下关闭调试器，则 WER 不会报告失败。
 
-将 *; q*或 *; qd*追加到命令字符串的末尾，以调用所需的行为。
+将 *; q* 或 *; qd* 追加到命令字符串的末尾，以调用所需的行为。
 
 例如，若要允许 WER 在 CDB 捕获转储后报告失败，请配置此命令字符串。
 
@@ -327,13 +327,7 @@ Auto = 1
 ## <a name="span-idsecurity_vulnerabilitiesspanspan-idsecurity_vulnerabilitiesspansecurity-vulnerabilities"></a><span id="security_vulnerabilities"></span><span id="SECURITY_VULNERABILITIES"></span>安全漏洞
 
 
-如果考虑在与他人共享的计算机上启用事后调试，请参阅[事后调试过程中的安全性](security-during-postmortem-debugging.md)。
+如果考虑在与他人共享的计算机上启用事后调试，请参阅 [事后调试过程中的安全性](security-during-postmortem-debugging.md)。
 
  
-
- 
-
-
-
-
 

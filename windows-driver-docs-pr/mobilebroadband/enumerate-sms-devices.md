@@ -4,23 +4,23 @@ description: 枚举短信设备
 ms.assetid: d0d57a4f-df83-4f3b-b7b4-417ad4e11350
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ce34411624b6ee9b972b8d2160084463ba2b18d9
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: afe2b3b75d707d015a4c8a90af335c5df112c8af
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67381485"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89216620"
 ---
 # <a name="enumerate-sms-devices"></a>枚举短信设备
 
 
-移动宽带短信平台提供的功能来获取第一个支持短信的移动宽带设备，或者获取所有支持短信的移动宽带设备的列表。 下面的示例代码显示了实例化的 SMS 对象，与默认短信设备和与特定设备。
+移动宽带 SMS 平台提供了获取第一个支持 SMS 的移动宽带设备的功能，或获取所有支持 SMS 的移动宽带设备的列表。 下面的示例代码演示如何使用默认的 SMS 设备和特定设备来实例化 SMS 对象。
 
-**请注意**  使用应用中的C#或C++在 Windows 8、 Windows 8.1 或 Windows 10 中，第一个利用[ **SmsDevice** ](https://docs.microsoft.com/uwp/api/Windows.Devices.Sms.SmsDevice)对象调用[ **GetDefaultAsync** ](https://docs.microsoft.com/uwp/api/Windows.Devices.Sms.SmsDevice#Windows_Devices_Sms_SmsDevice_GetDefaultAsync)或[ **FromIdAsync** ](https://docs.microsoft.com/uwp/api/Windows.Devices.Sms.SmsDevice#Windows_Devices_Sms_SmsDevice_FromIdAsync_System_String_)应为 STA 线程上。 来自 MTA 线程的调用可能导致未定义的行为。
+**注意**   在 Windows 8、Windows 8.1 或 Windows 10 中使用 c # 或 c + + 的应用程序中，第一次使用[**SmsDevice**](/uwp/api/Windows.Devices.Sms.SmsDevice)对象调用[**GetDefaultAsync**](/uwp/api/Windows.Devices.Sms.SmsDevice#Windows_Devices_Sms_SmsDevice_GetDefaultAsync)或[**FROMIDASYNC**](/uwp/api/Windows.Devices.Sms.SmsDevice#Windows_Devices_Sms_SmsDevice_FromIdAsync_System_String_)时，应在 STA 线程上。 MTA 线程中的调用可能会导致未定义的行为。
 
  
 
-**若要使用默认短信设备的 JavaScript 代码示例**
+**使用默认 SMS 设备的 JavaScript 代码示例**
 
 ``` syntax
 var smsDevice = new Windows.Devices.Sms.SmsDevice.getDefault();
@@ -36,7 +36,7 @@ catch (err)
 }
 ```
 
-**若要枚举所有短信设备的 JavaScript 代码示例**
+**用于枚举所有 SMS 设备的 JavaScript 代码示例**
 
 ``` syntax
 Windows.Devices.Enumeration.DeviceInformation.findAllAsync(Windows.Devices.Sms.SmsDevice.getDeviceSelector()).then(function (smsdevices) 
@@ -54,12 +54,12 @@ Windows.Devices.Enumeration.DeviceInformation.findAllAsync(Windows.Devices.Sms.S
 }
 ```
 
-## <a name="span-iddetecterrspanspan-iddetecterrspandetect-sms-device-access-errors"></a><span id="detecterr"></span><span id="DETECTERR"></span>检测到 SMS 设备访问错误
+## <a name="span-iddetecterrspanspan-iddetecterrspandetect-sms-device-access-errors"></a><span id="detecterr"></span><span id="DETECTERR"></span>检测 SMS 设备访问错误
 
 
-你可以检测到如果枚举短信设备失败，因为该应用程序不能访问到短信。 如果用户显式拒绝应用的访问权限或设备元数据未授予应用的访问权限，则可以发生这种情况。
+你可以检测到枚举 SMS 设备是否失败，因为该应用无法访问 SMS。 如果用户显式拒绝对应用的访问，或者设备元数据未获得对应用的访问权限，则会发生这种情况。
 
-**若要检测的短信设备访问错误的 JavaScript 代码示例**
+**用于检测 SMS 设备访问错误的 JavaScript 代码示例**
 
 ``` syntax
 Windows.Devices.Enumeration.DeviceInformation.findAllAsync(Windows.Devices.Sms.SmsDevice.getDeviceSelector()).then(function (smsdevices)
@@ -102,17 +102,10 @@ function hex(nmb)
 }
 ```
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
+## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
-[开发 SMS 应用程序](developing-sms-apps.md)
-
- 
+[开发短信应用](developing-sms-apps.md)
 
  
-
-
-
-
-
 

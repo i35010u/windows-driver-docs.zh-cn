@@ -4,12 +4,12 @@ description: 下面是 EnumSchema 请求架构和相应的响应架构定义以�
 ms.assetid: 031FA2EA-A33B-409C-82FD-B4FE9D0A2E93
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 798cc4d66e12e7627ca9747f55eb3c543b4e8075
-ms.sourcegitcommit: ab64169b631da4db3f0b895600f1c38a22cb7e2e
+ms.openlocfilehash: cf559dce58fbb70ae093016580ccd7ecbe03430c
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75652799"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89217197"
 ---
 # <a name="enumschema-request-and-response-schemas"></a>EnumSchema 请求和响应架构
 
@@ -45,7 +45,7 @@ EnumSchema 请求架构的正式定义
 ## <a name="the-enumschema-response-schema"></a>EnumSchema 响应架构
 
 
-EnumSchema 响应具有每个属性的 &lt;架构&gt; 元素。
+EnumSchema 响应的 &lt; 每个属性都有一个 Schema &gt; 元素。
 
 在此示例中，打印机只有几个可访问的属性。
 
@@ -88,9 +88,6 @@ EnumSchema 响应架构的正式定义
 
 [双向通信架构](bidirectional-communication-schema.md)  
 
-[SendRecvXMLStream](https://docs.microsoft.com/windows-hardware/drivers/ddi/bidispl/nf-bidispl-ibidispl2-sendrecvxmlstream)  
+[SendRecvXMLStream](/windows-hardware/drivers/ddi/bidispl/nf-bidispl-ibidispl2-sendrecvxmlstream)  
 
-[SendRecvXMLString](https://docs.microsoft.com/windows-hardware/drivers/ddi/bidispl/nf-bidispl-ibidispl2-sendrecvxmlstring)  
-
-
-
+[SendRecvXMLString](/windows-hardware/drivers/ddi/bidispl/nf-bidispl-ibidispl2-sendrecvxmlstring)

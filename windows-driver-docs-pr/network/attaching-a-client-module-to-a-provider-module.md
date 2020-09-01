@@ -12,31 +12,31 @@ keywords:
 - NmrClientAttachProvider
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 80289c05dce52ae84dc6ca572622286231481e43
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: e9bc220f1b3a84a5caeee598bd41cc2612c12029
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72838230"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89215996"
 ---
 # <a name="attaching-a-client-module-to-a-provider-module"></a>将客户端模块附加到提供程序模块
 
 
-在将客户端模块注册到网络模块注册机构（NMR）后，NMR 将调用客户端模块的[*ClientAttachProvider*](https://docs.microsoft.com/windows-hardware/drivers/ddi/netioddk/nc-netioddk-npi_client_attach_provider_fn)回调函数，一次针对注册为同一[网络编程提供程序的每个提供程序模块](network-programming-interface.md)已将客户端模块注册为客户端的接口（NPI）。
+向网络模块注册机构注册 (NMR) 后，NMR 将调用客户端模块的 [*ClientAttachProvider*](/windows-hardware/drivers/ddi/netioddk/nc-netioddk-npi_client_attach_provider_fn) 回调函数，一次针对注册为同一网络编程接口的提供者的每个提供程序模块， [ (NPI) ](network-programming-interface.md) 客户端模块已将其注册为客户端模块。
 
-每当新的提供程序模块注册为客户端模块已注册为客户端的同一 NPI 的提供程序时，NMR 还会调用客户端模块的[*ClientAttachProvider*](https://docs.microsoft.com/windows-hardware/drivers/ddi/netioddk/nc-netioddk-npi_client_attach_provider_fn)回调函数。
+每当新的提供程序模块注册为客户端模块已注册为客户端的同一 NPI 的提供程序时，NMR 还会调用客户端模块的 [*ClientAttachProvider*](/windows-hardware/drivers/ddi/netioddk/nc-netioddk-npi_client_attach_provider_fn) 回调函数。
 
-当 NMR 调用特定提供程序模块的客户端模块的[*ClientAttachProvider*](https://docs.microsoft.com/windows-hardware/drivers/ddi/netioddk/nc-netioddk-npi_client_attach_provider_fn)回调函数时，它将在*ProviderRegistrationInstance*参数中传递一个指向[**NPI\_注册\_实例的指针**](https://docs.microsoft.com/windows-hardware/drivers/ddi/netioddk/ns-netioddk-_npi_registration_instance)与提供程序模块关联的结构。 客户端模块的*ClientAttachProvider*回调函数可以使用提供程序模块的**NPI\_注册\_实例**结构中的数据，以及[**NPI\_MODULEID**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff568813(v=vs.85))结构和由提供程序模块的 NPI 的**ModuleId**和**NpiSpecificCharacteristics**成员指向的特定于 NPI 的提供程序特征结构 **\_注册\_实例**结构，以确定它是否将附加到提供程序模块。
+当 NMR 调用特定提供程序模块的客户端模块的 [*ClientAttachProvider*](/windows-hardware/drivers/ddi/netioddk/nc-netioddk-npi_client_attach_provider_fn) 回调函数时，它将在 *ProviderRegistrationInstance* 参数中传递一个指针，该指针指向与提供程序模块关联的 [**NPI \_ 注册 \_ 实例**](/windows-hardware/drivers/ddi/netioddk/ns-netioddk-_npi_registration_instance) 结构。 客户端模块的*ClientAttachProvider*回调函数可以使用提供程序模块的**NPI \_ 注册 \_ 实例**结构中的数据，以及[**NPI \_ MODULEID**](/previous-versions/windows/hardware/drivers/ff568813(v=vs.85))结构中的数据，以及由提供程序模块的**NPI \_ 注册 \_ 实例****结构的 MODULEID 和** **NpiSpecificCharacteristics**成员所指向的 NPI 特定提供程序特征结构，以确定它是否会附加到提供程序模块。
 
-如果客户端模块确定它将附加到提供程序模块，则客户端模块的[*ClientAttachProvider*](https://docs.microsoft.com/windows-hardware/drivers/ddi/netioddk/nc-netioddk-npi_client_attach_provider_fn)回调函数将向提供程序模块分配附件的绑定上下文结构，然后调用[**NmrClientAttachProvider**](https://docs.microsoft.com/windows-hardware/drivers/ddi/netioddk/nf-netioddk-nmrclientattachprovider)函数继续执行附件操作。 在这种情况下，客户端模块的*ClientAttachProvider*回调函数必须返回**NmrClientAttachProvider**函数返回的状态代码。
+如果客户端模块确定它将附加到提供程序模块，则客户端模块的 [*ClientAttachProvider*](/windows-hardware/drivers/ddi/netioddk/nc-netioddk-npi_client_attach_provider_fn) 回调函数将向提供程序模块分配附件的绑定上下文结构，然后调用 [**NmrClientAttachProvider**](/windows-hardware/drivers/ddi/netioddk/nf-netioddk-nmrclientattachprovider) 函数以继续执行附件过程。 在这种情况下，客户端模块的 *ClientAttachProvider* 回调函数必须返回 **NmrClientAttachProvider** 函数返回的状态代码。
 
-如果[**NmrClientAttachProvider**](https://docs.microsoft.com/windows-hardware/drivers/ddi/netioddk/nf-netioddk-nmrclientattachprovider)返回\_成功状态，则客户端模块和提供程序模块已成功相互连接。 在这种情况下，当 NMR 称为客户端模块的*ClientAttachProvider*时，客户端模块的[*ClientAttachProvider*](https://docs.microsoft.com/windows-hardware/drivers/ddi/netioddk/nc-netioddk-npi_client_attach_provider_fn)回调函数必须保存 NMR 传入*NmrBindingHandle*参数的绑定句柄回调函数。 客户端模块的*ClientAttachProvider*回调函数还必须将指向提供程序绑定上下文和提供程序调度表的指针保存在客户端模块传递到 NmrClientAttachProvider 的变量中。 *ProviderBindingContext*和*ProviderDispatch*参数中的函数。 通常，客户端模块会将此数据保存到提供程序模块的附件的绑定上下文中。
+如果 [**NmrClientAttachProvider**](/windows-hardware/drivers/ddi/netioddk/nf-netioddk-nmrclientattachprovider) 返回状态 " \_ 成功"，则客户端模块和提供程序模块已成功彼此连接。 在这种情况下，当 NMR 调用客户端模块的*ClientAttachProvider*回调函数时，客户端模块的[*ClientAttachProvider*](/windows-hardware/drivers/ddi/netioddk/nc-netioddk-npi_client_attach_provider_fn)回调函数必须保存 NMR 传入*NmrBindingHandle*参数的绑定句柄。 客户端模块的*ClientAttachProvider*回调函数还必须将指向提供程序绑定上下文和提供程序调度表的指针保存在客户端模块传递到*ProviderBindingContext*和*ProviderDispatch*参数中的**NmrClientAttachProvider**函数的变量中。 通常，客户端模块会将此数据保存到提供程序模块的附件的绑定上下文中。
 
-如果[**NmrClientAttachProvider**](https://docs.microsoft.com/windows-hardware/drivers/ddi/netioddk/nf-netioddk-nmrclientattachprovider)未返回状态\_成功，则客户端模块的[*ClientAttachProvider*](https://docs.microsoft.com/windows-hardware/drivers/ddi/netioddk/nc-netioddk-npi_client_attach_provider_fn)回调函数应清除并释放它在调用**NmrClientAttachProvider**之前分配的所有资源.
+如果 [**NmrClientAttachProvider**](/windows-hardware/drivers/ddi/netioddk/nf-netioddk-nmrclientattachprovider) 未返回状态 \_ "成功"，则客户端模块的 [*ClientAttachProvider*](/windows-hardware/drivers/ddi/netioddk/nc-netioddk-npi_client_attach_provider_fn) 回调函数应清除并释放它在调用 **NmrClientAttachProvider**之前分配的所有资源。
 
-如果客户端模块确定它不会附加到提供程序模块，则客户端模块的[*ClientAttachProvider*](https://docs.microsoft.com/windows-hardware/drivers/ddi/netioddk/nc-netioddk-npi_client_attach_provider_fn)回调函数必须返回状态\_NOINTERFACE。
+如果客户端模块确定它不会附加到提供程序模块，则客户端模块的 [*ClientAttachProvider*](/windows-hardware/drivers/ddi/netioddk/nc-netioddk-npi_client_attach_provider_fn) 回调函数必须返回 STATUS \_ NOINTERFACE。
 
-例如，假设 "EXNPI" 网络编程接口（NPI）在头文件 Exnpi 中定义以下内容：
+例如，假设 "EXNPI" 网络编程接口 (NPI) 在头文件 Exnpi 中定义以下内容：
 
 ```C++
 // EXNPI provider characteristics structure
@@ -185,10 +185,4 @@ NTSTATUS
 ```
 
  
-
- 
-
-
-
-
 

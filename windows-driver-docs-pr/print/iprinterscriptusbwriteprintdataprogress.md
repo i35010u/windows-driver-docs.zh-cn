@@ -16,12 +16,12 @@ api_type:
 - COM
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a1f25089e01e36b29b5799e3e2cb98eef5b829c3
-ms.sourcegitcommit: 17c1bbc5ea0bef3bbc87794b030a073f905dc942
+ms.openlocfilehash: ea97f08ef37fec791cb8056d51cab5407adda024
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88802720"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89217122"
 ---
 # <a name="iprinterscriptusbwriteprintdataprogress-interface"></a>IPrinterScriptUsbWritePrintDataProgress 接口
 
@@ -30,7 +30,7 @@ IPrinterScriptUsbWritePrintDataProgress 接口作为参数传递到 **writePrint
 <a name="members"></a>成员
 -------
 
-**IPrinterScriptUsbWritePrintDataProgress**接口继承自[**IUnknown**](https://docs.microsoft.com/windows/win32/api/unknwn/nn-unknwn-iunknown)接口。 **IPrinterScriptUsbWritePrintDataProgress** 还具有下列类型的成员：
+**IPrinterScriptUsbWritePrintDataProgress**接口继承自[**IUnknown**](/windows/win32/api/unknwn/nn-unknwn-iunknown)接口。 **IPrinterScriptUsbWritePrintDataProgress** 还具有下列类型的成员：
 
 -   [方法](#methods)
 

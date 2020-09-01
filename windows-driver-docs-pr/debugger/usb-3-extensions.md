@@ -4,32 +4,32 @@ description: 本部分介绍了 USB 3.0 调试程序扩展命令。
 ms.assetid: 7CE2B9F8-50EF-41C0-B306-B7B7A6DA1636
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f9765e2d4d45df8ff4d2b362d9b06943cba41481
-ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
+ms.openlocfilehash: a8a7c344a314fdb35bdbb57b83f9bc69392204eb
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84533832"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89215692"
 ---
 # <a name="usb-30-extensions"></a>USB 3.0 扩展
 
-本部分介绍了 USB 3.0 调试程序扩展命令。 这些命令显示 USB 3.0 堆栈中由三个驱动程序维护的数据结构中的信息： USB 3.0 集线器驱动程序、USB 主机控制器扩展驱动程序和 USB 3.0 主机控制器驱动程序。 有关这三个驱动程序的详细信息，请参阅[Windows 中的 USB 主机端驱动程序](https://docs.microsoft.com/windows-hardware/drivers/usbcon/usb-3-0-driver-stack-architecture)。 有关 USB 3.0 堆栈中的驱动程序所使用的数据结构的说明，请参阅[usb 3.0 数据结构](usb-3-0-data-structures.md)和[Windows 8 视频中 usb 调试创新](https://channel9.msdn.com/Events/BUILD/BUILD2011/HW-258P)的第2部分。
+本部分介绍了 USB 3.0 调试程序扩展命令。 这些命令显示 USB 3.0 堆栈中由三个驱动程序维护的数据结构中的信息： USB 3.0 集线器驱动程序、USB 主机控制器扩展驱动程序和 USB 3.0 主机控制器驱动程序。 有关这三个驱动程序的详细信息，请参阅 [Windows 中的 USB 主机端驱动程序](../usbcon/usb-3-0-driver-stack-architecture.md)。 有关 USB 3.0 堆栈中的驱动程序所使用的数据结构的说明，请参阅 [usb 3.0 数据结构](usb-3-0-data-structures.md) 和 [Windows 8 视频中 usb 调试创新](https://channel9.msdn.com/Events/BUILD/BUILD2011/HW-258P) 的第2部分。
 
-USB 3.0 调试程序扩展命令是在 Usb3kd 中实现的。 若要加载 Usb3kd 命令，请在调试器中输入**Usb3kd** 。
+USB 3.0 调试程序扩展命令在 Usb3kd.dll 中实现。 若要加载 Usb3kd 命令，请输入调试程序中的 **load usb3kd.dll** 。
 
-## <a name="span-idusb-3-treespan-usb-30-tree"></a><span id="usb-3-tree"></span>USB 3.0 树
+## <a name="span-idusb-3-treespan-usb-30-tree"></a><span id="usb-3-tree"></span> USB 3.0 树
 
 USB 3.0 树包含所有 USB 3.0 主机控制器以及连接到 USB 3.0 主机控制器的所有集线器和设备。 下图显示了一个 USB 3.0 树的示例。
 
 ![usb 3.0 树显示混合了 usb 3.0 和 usb 2.0 设备根和控制器](images/usb3tree01.png)
 
-图中所示的树有两个 USB 3.0 主机控制器。 请注意，图中所示的每个设备并不是 USB 3.0 设备。 但显示的所有设备（包括集线器）都是 USB 3.0 树的一部分，因为每个设备都位于一个源自 USB 3.0 主机控制器的分支上。
+图中所示的树有两个 USB 3.0 主机控制器。 请注意，图中所示的每个设备并不是 USB 3.0 设备。 但 (包括集线器) 所示的所有设备都是 USB 3.0 树的一部分，因为每个设备都在源自 USB 3.0 主机控制器的分支上。
 
 可以将该关系图视为两个树，每个树对应一个主机控制器。 但是，当我们使用术语 " *usb 3.0" 树*时，我们将引用所有 USB 3.0 主机控制器及其连接的集线器和设备的集合。
 
 ## <a name="getting-started-with-usb-30-debugging"></a>USB 3.0 调试入门
 
-若要开始调试 USB 3.0 问题，请输入[**！ usb \_ tree**](-usb3kd-usb-tree.md)命令。 **！ Usb \_ tree**命令显示可用于调查主机控制器、集线器、端口、设备、终结点和 usb 3.0 树的其他元素的命令和地址列表。
+若要开始调试 USB 3.0 问题，请输入 [**！ usb \_ tree**](-usb3kd-usb-tree.md) 命令。 **！ Usb \_ tree**命令显示可用于调查主机控制器、集线器、端口、设备、终结点和 usb 3.0 树的其他元素的命令和地址列表。
 
 ## <a name="hub-commands"></a>中心命令
 

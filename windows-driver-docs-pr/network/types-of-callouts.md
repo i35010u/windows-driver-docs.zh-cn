@@ -7,12 +7,12 @@ keywords:
 - 标注类型 WDK Windows 筛选平台
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ca6f4829515cd5852b740c0f0118b7e2f043426a
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: bf31a743b059623dc6952c14562851c6d050892c
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72841772"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89215785"
 ---
 # <a name="types-of-callouts"></a>标注类型
 
@@ -20,51 +20,45 @@ ms.locfileid: "72841772"
 以下类型的标注可与 WFP 一起使用：
 
 <a href="" id="inline-inspection-callout-------"></a>**内联检查标注**   
-这种类型的标注始终返回 **.fwp\_操作\_** 从[*CLASSIFYFN*](https://docs.microsoft.com/windows-hardware/drivers/ddi/fwpsk/nc-fwpsk-fwps_callout_classify_fn0)函数继续执行，并且不会以任何方式修改网络流量。 收集网络统计信息的标注就是这种类型的标注的示例。
+此类型的标注始终从[*classifyFn*](/windows-hardware/drivers/ddi/fwpsk/nc-fwpsk-fwps_callout_classify_fn0)函数返回 **.fwp \_ 操作 \_ ** ，并且不会以任何方式修改网络流量。 收集网络统计信息的标注就是这种类型的标注的示例。
 
-对于这种类型的标注，筛选器操作类型（由[**FWPS\_ACTION0**](https://docs.microsoft.com/windows/desktop/api/fwpstypes/ns-fwpstypes-fwps_action0_)结构的**type**成员指定）应设置为 **.fwp\_操作\_标注\_检查**。
+对于这种类型的标注， [** (的 \_ 筛选**](/windows/desktop/api/fwpstypes/ns-fwpstypes-fwps_action0_)器操作类型) 应设置为 " **.fwp \_ 操作 \_ 标注 \_ 检查** **"** 。
 
-<a href="" id="out-of-band-inspection-callout-------"></a>带外**检查标注**   
-此类型的标注不会修改网络流量。 相反，它会通过 "挂起" 所指示的数据来推迟在*classifyFn*函数之外完成的所有检查，然后使用其中一个[数据包注入函数](packet-injection-functions.md)将挂起的数据重新 reinjecting 到 tcp/ip 堆栈中。 "挂起" 是通过首先克隆所指示的数据来实现的，然后从*classifyFn*函数返回 **.fwp\_操作\_块**，该函数的**FWPS\_将\_OUT\_标志\_吸收**位集。
+<a href="" id="out-of-band-inspection-callout-------"></a>**带外检查标注**   
+此类型的标注不会修改网络流量。 相反，它会通过 "挂起" 所指示的数据来推迟在 *classifyFn* 函数之外完成的所有检查，然后使用其中一个 [数据包注入函数](packet-injection-functions.md)将挂起的数据重新 reinjecting 到 tcp/ip 堆栈中。 "挂起" 是通过首先克隆所指示的数据来实现的，然后从*classifyFn*函数返回包含 FWPS 的 "已**分类" 标记 " \_ \_ \_ \_ 吸收**位集" 的 **.fwp \_ 操作 \_ 块**。
 
-<a href="" id="inline-modification-callout-------"></a>**内联修改标注**   
-这种类型的标注将首先创建所指示的数据的克隆，然后修改克隆，最后将修改后的克隆从*classifyFn*函数注入回 tcp/ip 堆栈，从而修改网络流量。 这种类型的标注还会从*classifyFn*函数返回 **\_块的 .fwp\_操作**，该函数的**FWPS\_将\_OUT\_标志\_吸收**位集。
+<a href="" id="inline-modification-callout-------"></a>**内嵌修改标注**   
+这种类型的标注将首先创建所指示的数据的克隆，然后修改克隆，最后将修改后的克隆从 *classifyFn* 函数注入回 tcp/ip 堆栈，从而修改网络流量。 此类型的标注还会从*classifyFn*函数返回包含 FWPS 的已** \_ 分类 \_ \_ \_ 标志**的 **.fwp \_ 操作 \_ 块**。
 
-此类型的标注的筛选器操作类型应设置为 " **\_操作"\_标注\_终止**的 ".fwp"。
+此类型的标注的筛选器操作类型应设置为 "正在终止" 的 " **.Fwp \_ 操作 \_ 标注 \_ **"。
 
-<a href="" id="out-of-band-modification-callout-------"></a>带外**修改标注**   
-此类型的标注首先通过使用[**FwpsReferenceNetBufferList0**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fwpsk/nf-fwpsk-fwpsreferencenetbufferlist0)函数（该函数将*intentToModify*参数设置为**TRUE**）来引用指示的数据包。 然后，标注会返回 **\_操作的\_块的 .fwp** ， **\_将\_OUT\_标志\_吸收**从*classifyFn*函数中进行设置。 当数据包准备好在*classifyFn*外进行修改时，标注将克隆引用的数据包（一旦克隆，就可以对其进行取消引用。） 然后，标注会修改克隆，并将修改后的数据包注入回 TCP/IP 堆栈中。
+<a href="" id="out-of-band-modification-callout-------"></a>**带外修改标注**   
+此类型的标注首先通过使用 [**FwpsReferenceNetBufferList0**](/windows-hardware/drivers/ddi/fwpsk/nf-fwpsk-fwpsreferencenetbufferlist0) 函数（该函数将 *intentToModify* 参数设置为 **TRUE**）来引用指示的数据包。 然后，该标注返回带 FWPS 的已扩展** \_ 操作 \_ 块**，并通过*classifyFn*函数** \_ \_ \_ \_ 吸收**位集。 当数据包准备好在 *classifyFn*外进行修改时，该标注将在克隆后克隆所引用的数据包 (，然后可以) 取消引用原始数据包。 然后，标注会修改克隆，并将修改后的数据包注入回 TCP/IP 堆栈中。
 
-此类型的标注的筛选器操作类型应设置为 " **\_操作"\_标注\_终止**的 ".fwp"。
+此类型的标注的筛选器操作类型应设置为 "正在终止" 的 " **.Fwp \_ 操作 \_ 标注 \_ **"。
 
 <a href="" id="redirection-callout"></a>**重定向标注**  
-有关此类型标注的详细信息，请参阅[使用 Bind 或 Connect 重定向](using-bind-or-connect-redirection.md)。
+有关此类型标注的详细信息，请参阅 [使用 Bind 或 Connect 重定向](using-bind-or-connect-redirection.md)。
 
 重定向标注的类型有两种：
 
 -   使用绑定重定向标注，标注驱动程序可以修改套接字的本地地址和本地端口。
 -   连接重定向标注允许标注驱动程序修改连接的远程地址和远程端口。
 
-此类型的标注的筛选器操作类型应设置为 " **\_操作\_允许**" 的 ".fwp"。
+此类型的标注的筛选器操作类型应设置为 " **.Fwp \_ 操作 \_ 允许**"。
 
-有关 FWPS 的详细信息，请[ **\_** ](https://docs.microsoft.com/windows/desktop/api/fwpstypes/ns-fwpstypes-fwps_classify_out0_)参阅 **\_\_吸收\_\_分类**\_ 此标志在任何 WFP 丢弃层上无效。 使用 FWPS\_\_的 **\_块返回 .fwp 操作** **分类\_OUT\_标志**从*classifyFn*函数设置\_吸收标志，这样一来，数据包将不会到达任何 WFP 丢弃层，也不会导致生成审核事件。
+有关 FWPS 的详细 **信息 \_ ， \_ \_ \_ **请参阅 [**FWPS \_ 分类 \_ OUT0**](/windows/desktop/api/fwpstypes/ns-fwpstypes-fwps_classify_out0_)。 此标志在任何 WFP 丢弃层上无效。 通过*classifyFn*函数中的**FWPS " \_ 分类 \_ \_ 标志" \_ 吸收**标志来返回带区的 **.fwp \_ 操作 \_ 块**会使数据包无提示地被丢弃，这样，数据包将不会到达任何 WFP 丢弃层，也不会导致生成审核事件。
 
-尽管可以修改克隆的网络缓冲区列表，例如，通过添加或删除 net buffer 或 MDLs，或者两者都必须在调用[**FwpsFreeCloneNetBufferList0**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fwpsk/nf-fwpsk-fwpsfreeclonenetbufferlist0)函数之前撤销此类修改。
+尽管可以修改克隆的网络缓冲区列表，例如，通过添加或删除 net buffer 或 MDLs，或者两者都必须在调用 [**FwpsFreeCloneNetBufferList0**](/windows-hardware/drivers/ddi/fwpsk/nf-fwpsk-fwpsfreeclonenetbufferlist0) 函数之前撤销此类修改。
 
-为了与执行数据包检查、数据包修改或连接重定向的其他标注共存，在使用 reference/clone-reinject 机制挂起数据包之前，标注必须 "硬"-删除原始数据包，方法是\_：在*classifyFn*函数返回的[**FWPS\_分类\_OUT0**](https://docs.microsoft.com/windows/desktop/api/fwpstypes/ns-fwpstypes-fwps_classify_out0_)结构的**权限**成员中 **\_操作\_写入**标志。 如果在调用*classifyFn*时设置了**FWPS\_RIGHT\_操作\_写入**标志，这意味着包可以挂起并在以后重新插入文本或修改），则标注不得挂起指示，不应更改当前操作类型;它必须等待较高的标注来注入可能修改的克隆。
+为了与执行数据包检查、数据包修改或连接重定向的其他标注共存，在使用 reference/clone-reinject 机制挂起数据包之前，标注必须 "硬"-通过在*classifyFn*函数返回的[**FWPS \_ 分类 \_ OUT0**](/windows/desktop/api/fwpstypes/ns-fwpstypes-fwps_classify_out0_)结构的**权限**成员中清除**FWPS \_ 右 \_ 操作 \_ 写入**标志来删除原始数据包。 如果在调用*classifyFn*时设置了**FWPS \_ 右 \_ 操作 \_ 写入**标志 (这意味着包可以挂起并在以后重新插入文本或修改) ，则标注不得挂起指示，不应更改当前操作类型; 并且它必须等待较高的标注来注入可能修改的克隆。
 
-**\_FWPS\_操作\_写入**标志应在每个标注 pends 分类时设置。 标注驱动程序应 **\_操作\_写入**标志来测试\_FWPS，以检查标注的权限以返回操作。 如果未设置此标志，则标注仍可返回 **.fwp\_操作\_阻止**操作，以否决前一个标注返回的**允许的\_操作\_允许**的操作。 在[使用标注进行深层检查](using-a-callout-for-deep-inspection.md)的示例中，如果未设置标志，则函数将退出。
+只要标注 pends 分类，就应设置 **FWPS \_ 权限 \_ 操作 \_ 写入** 标志。 标注驱动程序应测试 **FWPS \_ 权限 \_ 操作 \_ 写入** 标志，以检查标注的权限以返回操作。 如果未设置此标志，则标注仍可返回 **.Fwp \_ 操作 \_ 阻止** 操作，以便否决先前标注返回的 **允许的 .fwp \_ 操作 \_ 允许** 操作。 在 [使用标注进行深层检查](using-a-callout-for-deep-inspection.md)的示例中，如果未设置标志，则函数将退出。
 
-[**FwpsPendOperation0**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fwpsk/nf-fwpsk-fwpspendoperation0)函数用于挂起源自**FWPM\_层的包\_ALE\_资源\_分配\_** <em>XXX</em>、 **FWPM\_层\_ALE\_AUTH\_侦听\_** <em>xxx</em>或**FWPM\_层\_ALE\_authentication\_连接\_** <em>XXX</em> [管理筛选层](https://docs.microsoft.com/windows-hardware/drivers/network/management-filtering-layer-identifiers)。
+[**FwpsPendOperation0**](/windows-hardware/drivers/ddi/fwpsk/nf-fwpsk-fwpspendoperation0)函数用于挂起来自**FWPM \_ 层 \_ ale \_ 资源 \_ \_ 分配**<em>xxx</em>、 **FWPM \_ 层 \_ ale \_ 身份验证 \_ 侦听 \_ **<em>xxx</em>或**FWPM \_ 层 ale authentication authentication \_ \_ \_ CONNECT \_ **<em>xxx</em> [管理筛选层](./management-filtering-layer-identifiers.md)的数据包。
 
-[**FwpsPendClassify0**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fwpsk/nf-fwpsk-fwpspendclassify0)函数用于从以下[运行时筛选层](https://docs.microsoft.com/windows-hardware/drivers/network/run-time-filtering-layer-identifiers)暂挂包：
+[**FwpsPendClassify0**](/windows-hardware/drivers/ddi/fwpsk/nf-fwpsk-fwpspendclassify0)函数用于从以下[运行时筛选层](./run-time-filtering-layer-identifiers.md)暂挂包：
 
-FWPS\_层\_ALE\_终结点\_关闭\_V4 FWPS\_层\_ALE\_终结点\_关闭\_V6 FWPS\_层\_ALE\_连接\_重定向\_V4 FWPS\_层\_ALE\_连接\_\_ALE\_BIND\_重定向\_V6\_\_\_\_\_\_\_
+FWPS \_ 层 \_ ale \_ 终结点 \_ 关闭 \_ V4 FWPS \_ 层 \_ ale \_ 终结点 \_ 关闭 \_ V6 FWPS \_ 层 \_ ALE \_ 连接 \_ 重定向 \_ V4 FWPS \_ 层 \_ ale \_ connect \_ 重定向 \_ V6 FWPS \_ 层 \_ ale \_ 绑定 \_ 重定向 \_ V4 FWPS \_ \_ \_ \_ \_
  
-
- 
-
-
-
-
 

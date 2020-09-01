@@ -1,27 +1,27 @@
 ---
 title: OID_WWAN_USSD
-description: OID_WWAN_USSD 将非结构化补充服务数据（USSD）请求发送到基础 MB 设备。
+description: OID_WWAN_USSD 将非结构化补充服务数据 (USSD) 请求发送到基础 MB 设备。
 ms.assetid: 9DFAAABD-8213-4B83-8FE8-1EC2BB9F735B
 ms.date: 08/08/2017
-keywords: -从 Windows Vista 开始 OID_WWAN_USSD 网络驱动程序
+keywords: -从 Windows Vista 开始 OID_WWAN_USSD 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 822ebc8f8ea000704c2a5ba85634cd494b32e93e
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 47699c8cf5f1c8447c7aa4ad861b3547824f96b3
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72843766"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89217243"
 ---
-# <a name="oid_wwan_ussd"></a>OID\_WWAN\_USSD
+# <a name="oid_wwan_ussd"></a>OID \_ WWAN \_ USSD
 
 
-OID\_WWAN\_USSD 将非结构化补充服务数据（USSD）请求发送到基础 MB 设备。
+OID \_ WWAN \_ USSD 将非结构化补充服务数据 (USSD) 请求发送到基础 MB 设备。
 
 不支持查询请求。
 
-微型端口驱动程序必须异步处理设置请求，最初返回 NDIS\_状态\_指示\_需要原始请求，稍后将[ndis\_状态\_WWAN\_USSD](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-wwan-ussd)状态通知，其中包含初始 USSD 请求在完成该事务时的状态。
+微型端口驱动程序必须异步处理设置请求，最初 \_ 返回 \_ \_ 原始请求所需的 ndis 状态指示，稍后发送 [NDIS \_ 状态 \_ WWAN \_ USSD](./ndis-status-wwan-ussd.md) 状态通知，其中包含初始 USSD 请求在完成该事务时的状态。
 
-如果以前的请求仍在进行，则 Windows 不会将\_WWAN\_USSD 请求的 OID 发送到微型端口驱动程序，但通过设置[WWAN\_USSD\_请求](https://docs.microsoft.com/windows-hardware/drivers/ddi/wwan/ns-wwan-_wwan_ussd_request)**来取消挂起的操作除外。** 向*WwanUssdRequestCancel*请求的 RequestType 成员。
+\_ \_ 如果以前的请求仍在进行，则 Windows 不会将 OID WWAN USSD 请求发送到微型端口驱动程序，而是通过将请求的[WWAN \_ USSD \_ 请求](/windows-hardware/drivers/ddi/wwan/ns-wwan-_wwan_ussd_request) **RequestType**成员设置为*WwanUssdRequestCancel*来取消挂起的操作。
 
 当请求被取消时，微型端口驱动程序必须响应取消的请求和取消请求。
 
@@ -40,7 +40,7 @@ OID\_WWAN\_USSD 将非结构化补充服务数据（USSD）请求发送到基础
 </tr>
 <tr class="even">
 <td><p>标头</p></td>
-<td>Ntddndis （包括 Ndis .h）</td>
+<td>Ntddndis (包含 Ndis .h) </td>
 </tr>
 </tbody>
 </table>
@@ -48,14 +48,9 @@ OID\_WWAN\_USSD 将非结构化补充服务数据（USSD）请求发送到基础
 ## <a name="see-also"></a>另请参阅
 
 
-[WWAN\_USSD\_NDIS\_状态](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-wwan-ussd)
+[NDIS \_ 状态 \_ WWAN \_ USSD](./ndis-status-wwan-ussd.md)
 
-[WWAN\_USSD\_请求](https://docs.microsoft.com/windows-hardware/drivers/ddi/wwan/ns-wwan-_wwan_ussd_request)
-
- 
+[WWAN \_ USSD \_ 请求](/windows-hardware/drivers/ddi/wwan/ns-wwan-_wwan_ussd_request)
 
  
-
-
-
 

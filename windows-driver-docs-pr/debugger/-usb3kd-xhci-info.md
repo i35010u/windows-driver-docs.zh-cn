@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 1def7d692ba420c23fe1194b835962c58ac425d6
-ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
+ms.openlocfilehash: d0945ac040fc925e4cb1c026d20b52dcb5cdd3d8
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84534111"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89216288"
 ---
 # <a name="usb3kdxhci_info"></a>！ usb3kd xhci \_ info
 
@@ -32,22 +32,22 @@ ms.locfileid: "84534111"
 
 
 <span id="_______DeviceExtension______"></span><span id="_______deviceextension______"></span><span id="_______DEVICEEXTENSION______"></span>*DeviceExtension*   
-主机控制器的功能设备对象的设备扩展（FDO）的地址。
+主机控制器的功能设备对象的设备扩展的地址 (FDO) 。
 
 ## <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 
-Usb3kd
+Usb3kd.dll
 
-<a name="remarks"></a>注解
+<a name="remarks"></a>备注
 -------
 
-输出 **！ usb3kd. xhci \_ info**命令基于 USB 3.0 主机控制器驱动程序（UsbXhci .sys）维护的数据结构。 有关 usb 3.0 主机控制器驱动程序和 USB 堆栈中其他驱动程序的详细信息，请参阅[Windows 中的 usb 主机端驱动程序](https://docs.microsoft.com/windows-hardware/drivers/usbcon/usb-3-0-driver-stack-architecture)。
+输出 **！ usb3kd. xhci \_ info** 命令基于 USB 3.0 主机控制器驱动程序所维护的数据结构 ( # A0) 。 有关 usb 3.0 主机控制器驱动程序和 USB 堆栈中其他驱动程序的详细信息，请参阅 [Windows 中的 usb 主机端驱动程序](../usbcon/usb-3-0-driver-stack-architecture.md)。
 
 <a name="examples"></a>示例
 --------
 
-可以从[**！ xhci \_ dumpall**](-usb3kd-xhci-dumpall.md)命令或其他各种调试器命令获取设备扩展的地址。 例如， [**！ devstack**](-devstack.md)命令显示设备扩展的地址。 在下面的示例中，主机控制器的 FDO 的设备扩展的地址为 fffffa800536e2d0。
+可以从 [**！ xhci \_ dumpall**](-usb3kd-xhci-dumpall.md) 命令或其他各种调试器命令获取设备扩展的地址。 例如， [**！ devstack**](-devstack.md) 命令显示设备扩展的地址。 在下面的示例中，主机控制器的 FDO 的设备扩展的地址为 fffffa800536e2d0。
 
 ```dbgcmd
 3: kd> !devnode 0 1 usbxhci
@@ -65,7 +65,7 @@ DevNode 0xfffffa8003df3010 for PDO 0xfffffa8003dd5870
 ...
 ```
 
-现在可以将设备扩展的地址传递到 **！ xhci \_ info**命令。
+现在可以将设备扩展的地址传递到 **！ xhci \_ info** 命令。
 
 ```dbgcmd
 3: kd> !xhci_info 0xfffffa80`0536e2d0
@@ -94,14 +94,7 @@ DevNode 0xfffffa8003df3010 for PDO 0xfffffa8003dd5870
 
 [**！ xhci \_ dumpall**](-usb3kd-xhci-dumpall.md)
 
-[通用串行总线（USB）驱动程序](https://docs.microsoft.com/windows-hardware/drivers/usbcon/)
+[ (USB) 驱动程序的通用串行总线](../usbcon/index.md)
 
  
-
- 
-
-
-
-
-
 

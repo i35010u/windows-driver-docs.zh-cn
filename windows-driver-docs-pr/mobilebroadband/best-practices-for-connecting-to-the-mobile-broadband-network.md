@@ -4,39 +4,32 @@ description: 连接到移动宽带网络的最佳做法
 ms.assetid: 6106d026-1c5f-4990-8ef2-467c1a77a38e
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cfe730a408b7dc61089d1aff6c0305330189d882
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 9b4934fc1559ed49959227bf5c642d2e1816f1cf
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67364999"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89216238"
 ---
 # <a name="best-practices-for-connecting-to-the-mobile-broadband-network"></a>连接到移动宽带网络的最佳做法
 
 
-活动连接到移动宽带网络可以是不必要消耗电池寿命和帐户数据配额。 我们建议使用仔细判断来确定连接是否是必需的。
+与移动宽带网络建立活动连接可能不必要地消耗电池寿命和帐户数据配额。 建议使用仔细判断来确定是否需要连接。
 
-使用移动宽带网络连接有关的以下最佳实践：
+请使用以下有关连接到移动宽带网络的最佳实践：
 
--   不使用预配代理&lt;*激活*&gt;指令。 这些指令仅适用于特定情况下在激活后。
+-   不要使用预配代理的 &lt; *激活* &gt; 指令。 这些指令仅用于激活后的特定情况。
 
--   使用移动宽带 API 建立临时连接。 此 API 提供连接操作结果和断开连接的简单方法。
+-   使用移动宽带 API 建立临时连接。 此 API 提供连接操作结果和一种简单的断开连接方式。
 
--   将连接生存期保持最小。
+-   保持最小连接生存期。
 
--   只要这些信息可通过 Internet 连接的接口使用的连接。 您可以通过使用观察可用性[ **NetworkInformation** ](https://docs.microsoft.com/uwp/api/Windows.Networking.Connectivity.NetworkInformation) API。
+-   使用连接到 Internet 的接口时，可以使用连接。 可以通过使用 [**System.net.networkinformation**](/uwp/api/Windows.Networking.Connectivity.NetworkInformation) API 来观察可用性。
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
+## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
-[使用移动宽带 Windows 运行时 API 的最佳实践](best-practices-for-using-mobile-broadband-windows-runtime-api.md)
-
- 
+[使用移动宽带 Windows 运行时 API 的最佳做法](best-practices-for-using-mobile-broadband-windows-runtime-api.md)
 
  
-
-
-
-
-
 

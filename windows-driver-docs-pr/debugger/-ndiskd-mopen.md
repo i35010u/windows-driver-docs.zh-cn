@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 0f3faa99ca2ba7c41faff3fa6aa05805f47c5697
-ms.sourcegitcommit: 8596782b07c8a71adf38fc2c2da68b75ba0a1259
+ms.openlocfilehash: 1c88d4c5b74d303311a4e10c8ec56dee8a7a6fd5
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85593937"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89216764"
 ---
 # <a name="ndiskdmopen"></a>!ndiskd.mopen
 
@@ -74,7 +74,7 @@ Open ffff8083e504c770
   Protocol: ffff8083e19bfc10 - TCPIP6
 ```
 
-现在，你可以单击该句柄或使用句柄输入 **！ ndiskd**命令，该命令使你可以查看有关该打开的绑定的更多详细信息，如其数据路径状态和接收路径信息。
+现在，你可以单击该句柄或使用句柄输入 **！ ndiskd** 命令，该命令使你可以查看有关该打开的绑定的更多详细信息，如其数据路径状态和接收路径信息。
 
 ```console
 3: kd> !ndiskd.mopen ffff8083e56b8110
@@ -101,14 +101,14 @@ RECEIVE PATH
     Frame Type(s)      0x86dd
 ```
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
-[网络驱动程序设计指南](https://docs.microsoft.com/windows-hardware/drivers/network/index)
+[网络驱动程序设计指南](../network/index.md)
 
-[Windows Vista 和更高版本的网络引用](https://docs.microsoft.com/windows-hardware/drivers/ddi/_netvista/)
+[Windows Vista 和更高版本的网络引用](/windows-hardware/drivers/ddi/_netvista/)
 
 [调试网络堆栈](https://channel9.msdn.com/Shows/Defrag-Tools/Defrag-Tools-175-Debugging-the-Network-Stack)
 
-[**NDIS 扩展（Ndiskd.dll）**](ndis-extensions--ndiskd-dll-.md)
+[**NDIS 扩展 ( # A0) **](ndis-extensions--ndiskd-dll-.md)
 
 [**!ndiskd.help**](-ndiskd-help.md)

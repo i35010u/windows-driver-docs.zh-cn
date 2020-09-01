@@ -1,6 +1,6 @@
 ---
 title: ndiskd.nbllog
-description: Ndiskd. nbllog 扩展显示系统上所有 NBL （NET_BUFFER_LIST）活动的日志。
+description: Ndiskd. nbllog 扩展显示系统上所有 NBL (NET_BUFFER_LIST) 活动的日志。
 ms.assetid: 59CB6B60-E0B3-435E-A6F6-82A715E87C69
 keywords:
 - ndiskd nbllog Windows 调试
@@ -12,17 +12,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 836ec3f84eff5ab53b8b012b2313a2813d2b6909
-ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
+ms.openlocfilehash: b9d984024176fa5fc634d4d7f4bfd9797bb07acf
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84534206"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89216762"
 ---
 # <a name="ndiskdnbllog"></a>!ndiskd.nbllog
 
 
-**！ Ndiskd nbllog**扩展显示系统上所有 NBL （[**NET \_ BUFFER \_ LIST**](https://docs.microsoft.com/windows-hardware/drivers/network/net-buffer-list-structure)）活动的日志。
+**！ Ndiskd nbllog**扩展显示系统上所有 NBL ([**NET \_ BUFFER \_ LIST**](../network/net-buffer-list-structure.md)) 活动的日志。
 
 ```console
 !ndiskd.nbllog [-stacks] 
@@ -36,9 +36,9 @@ ms.locfileid: "84534206"
 
 ### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
-Ndiskd
+Ndiskd.dll
 
-<a name="remarks"></a>注解
+<a name="remarks"></a>备注
 -------
 
 **重要提示**   
@@ -63,12 +63,12 @@ Ndiskd
 
  
 
-NBL 日志显示系统上的网络流量。 [**！ ndiskd netreport**](-ndiskd-netreport.md)分析 NBL 跟踪日志以直观地显示此网络流量。 因此，如果未启用 NBL 跟踪， **！ ndiskd**会显示此信息。
+NBL 日志显示系统上的网络流量。 [**！ ndiskd netreport**](-ndiskd-netreport.md) 分析 NBL 跟踪日志以直观地显示此网络流量。 因此，如果未启用 NBL 跟踪， **！ ndiskd** 会显示此信息。
 
 <a name="examples"></a>示例
 --------
 
-在目标调试对象计算机上启用 NBL 跟踪后，输入 **！ ndiskd nbllog**命令，查看系统上所有 NBL 流量的日志。 如以下示例中所示，运行不带参数的 **！ ndiskd**会将输出限制为200个事件，通过使用 *-force*选项重新运行命令，可以绕过这些事件。 为了简洁起见，此示例中的输出的中间 excised。
+在目标调试对象计算机上启用 NBL 跟踪后，输入 **！ ndiskd nbllog** 命令，查看系统上所有 NBL 流量的日志。 如以下示例中所示，运行不带参数的 **！ ndiskd** 会将输出限制为200个事件，通过使用 *-force* 选项重新运行命令，可以绕过这些事件。 为了简洁起见，此示例中的输出的中间 excised。
 
 ```console
 0: kd> !ndiskd.nbllog
@@ -102,30 +102,23 @@ NBL 日志显示系统上的网络流量。 [**！ ndiskd netreport**](-ndiskd-n
     Rerun with the '-force' option to bypass this limit.
 ```
 
-有关如何解释 **！ ndiskd. nbllog**的结果的更详细说明，请参阅 "NDIS 博客上的[！ ndiskd。](https://docs.microsoft.com/archive/blogs/ndis/ndiskd-nbl-log)
+有关如何解释 **！ ndiskd. nbllog**的结果的更详细说明，请参阅 "NDIS 博客上的[！ ndiskd。](/archive/blogs/ndis/ndiskd-nbl-log)
 
 ## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅
 
-[网络驱动程序设计指南](https://docs.microsoft.com/windows-hardware/drivers/network/index)
+[网络驱动程序设计指南](../network/index.md)
 
-[Windows Vista 和更高版本的网络引用](https://docs.microsoft.com/windows-hardware/drivers/ddi/_netvista/)
+[Windows Vista 和更高版本的网络引用](/windows-hardware/drivers/ddi/_netvista/)
 
 [调试网络堆栈](https://channel9.msdn.com/Shows/Defrag-Tools/Defrag-Tools-175-Debugging-the-Network-Stack)
 
-[**NDIS 扩展（Ndiskd）**](ndis-extensions--ndiskd-dll-.md)
+[**NDIS 扩展 ( # A0) **](ndis-extensions--ndiskd-dll-.md)
 
 [**!ndiskd.help**](-ndiskd-help.md)
 
-[**网络 \_ 缓冲区 \_ 列表**](https://docs.microsoft.com/windows-hardware/drivers/network/net-buffer-list-structure)
+[**网络 \_ 缓冲区 \_ 列表**](../network/net-buffer-list-structure.md)
 
-[！ ndiskd nbl-log](https://docs.microsoft.com/archive/blogs/ndis/ndiskd-nbl-log)
-
- 
+[！ ndiskd nbl-log](/archive/blogs/ndis/ndiskd-nbl-log)
 
  
-
-
-
-
-
 

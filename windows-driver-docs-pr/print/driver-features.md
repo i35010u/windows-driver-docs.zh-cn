@@ -4,12 +4,12 @@ description: 驱动程序功能
 ms.assetid: 56efebda-970f-4885-9c5f-1eac97aecfdd
 ms.date: 01/30/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 55104c73a6d77947298d69ea78d649495b96fcf1
-ms.sourcegitcommit: 17c1bbc5ea0bef3bbc87794b030a073f905dc942
+ms.openlocfilehash: 688e38a52fc3d3b82037914968ab1e3b7258bc62
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88802411"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89217765"
 ---
 # <a name="driver-features"></a>驱动程序功能
 
@@ -238,7 +238,7 @@ ms.locfileid: "88802411"
     如果支持此功能，则将此功能的选项设置为 "False" 将导致对以下 EMF 相关功能的更改：
 
     1. 如果 **% PagePerSheet** 是 "手册"，则将其更改为 "1"。
-    2. 如果 "逐份打印" 设置为 "True" (可以直接在[**DEVMODEW**](https://docs.microsoft.com/windows/win32/api/wingdi/ns-wingdi-devmodew)结构的公共部分中设置，也可以通过在 " ** \* 逐份打印**") 功能上调用**SetOptions**来设置，但排序功能当前不可用，则 collate 将设置为 "False"。
+    2. 如果 "逐份打印" 设置为 "True" (可以直接在[**DEVMODEW**](/windows/win32/api/wingdi/ns-wingdi-devmodew)结构的公共部分中设置，也可以通过在 " ** \* 逐份打印**") 功能上调用**SetOptions**来设置，但排序功能当前不可用，则 collate 将设置为 "False"。
     3. 如果 **% PageOrder** 与打印机的当前输出顺序设置相反，则 **% PageOrder** 将反转到打印机的值。
 
 4. 仅当启用了后台处理程序 EMF 假脱机功能时，才支持此功能。
@@ -274,7 +274,7 @@ ms.locfileid: "88802411"
         </thead>
         <tbody>
         <tr class="odd">
-        <td><p>Archive</p></td>
+        <td><p>存档</p></td>
         <td><p>是</p></td>
         <td><p>否</p></td>
         </tr>

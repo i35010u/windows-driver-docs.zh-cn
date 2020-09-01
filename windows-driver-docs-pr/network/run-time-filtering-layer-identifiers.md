@@ -6,16 +6,16 @@ keywords:
 - 运行时筛选层标识符网络驱动程序
 ms.date: 11/08/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5d98acb6b657525316fab19450fcc875b6c80925
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 682b0e92f9a1707de00e7363acdc4d4e709c6785
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72841992"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89217483"
 ---
 # <a name="run-time-filtering-layer-identifiers"></a>运行时筛选层标识符
 
-运行时筛选层标识符由内核模式标注驱动程序使用，每个标识符都用本地唯一标识符（[LUID](https://docs.microsoft.com/windows-hardware/drivers/ddi/igpupvdev/ns-igpupvdev-_luid)）表示，后者的大小为64位。 这些标识符是在 Fwpsk 中定义的 FWPS_BUILTIN_LAYERS 枚举中的常量值。 这些标识符定义如下：
+运行时筛选层标识符由内核模式标注驱动程序使用，每个标识符由本地唯一标识符 ([LUID](/windows-hardware/drivers/ddi/igpupvdev/ns-igpupvdev-_luid)) （大小为64位）。 这些标识符是 Fwpsk 中定义的 FWPS_BUILTIN_LAYERS 枚举中的常量值。 这些标识符定义如下：
 
 > [!NOTE]
 > 运行时层标识符结尾的 V4 和 V6 后缀指示该层是位于 IPv4 网络堆栈中还是位于 IPv6 网络堆栈中。
@@ -52,14 +52,14 @@ ms.locfileid: "72841992"
 | <p>FWPS_LAYER_ALE_FLOW_ESTABLISHED_V4_DISCARD</p><p>FWPS_LAYER_ALE_FLOW_ESTABLISHED_V6_DISCARD</p> | 当已建立的 TCP 连接在流建立的层上被丢弃时，以及在流建立的层上已放弃授权的非 TCP 流量时，此筛选层允许处理。 |
 | <p>FWPS_LAYER_RESERVED1_V4</p><p>FWPS_LAYER_RESERVED1_V6</p> | 此筛选层不受支持。 |
 | <p>FWPS_LAYER_NAME_RESOLUTION_CACHE_V4</p><p>FWPS_LAYER_NAME_RESOLUTION_CACHE_V6</p> | 此筛选层允许查询系统最近解析的名称。 |
-| <p>FWPS_LAYER_ALE_RESOURCE_RELEASE_V4</p><p>FWPS_LAYER_ALE_RESOURCE_RELEASE_V6</p> | 此筛选层用作回收任何 ALE_RESOURCE_ASSIGNMENT 层中的标注驱动程序所分配资源的机会。 |
-| <p>FWPS_LAYER_ALE_ENDPOINT_CLOSURE_V4</p><p>FWPS_LAYER_ALE_ENDPOINT_CLOSURE_V6</p> | 使用此筛选层可以回收任何 ALE_AUTH_CONNECT 或 ALE_AUTH_RECV_ACCEPT 层中的标注驱动程序所分配的资源。 |
+| <p>FWPS_LAYER_ALE_RESOURCE_RELEASE_V4</p><p>FWPS_LAYER_ALE_RESOURCE_RELEASE_V6</p> | 此筛选层用于回收由任意 ALE_RESOURCE_ASSIGNMENT 层中的标注驱动程序所分配的资源。 |
+| <p>FWPS_LAYER_ALE_ENDPOINT_CLOSURE_V4</p><p>FWPS_LAYER_ALE_ENDPOINT_CLOSURE_V6</p> | 此筛选层用于回收 ALE_AUTH_CONNECT 或 ALE_AUTH_RECV_ACCEPT 层中的标注驱动程序所分配的资源。 |
 | <p>FWPS_LAYER_ALE_CONNECT_REDIRECT_V4</p><p>FWPS_LAYER_ALE_CONNECT_REDIRECT_V6</p> | 此筛选层允许将连接请求重定向到另一个 IPV4/IPV6 地址和 TCP/UDP 端口。 |
 | <p>FWPS_LAYER_ALE_BIND_REDIRECT_V4</p><p>FWPS_LAYER_ALE_BIND_REDIRECT_V6</p> | 此筛选层允许将绑定请求重定向到不同的本地 IPV4/IPV6 地址和/或本地 TCP/UDP 端口。 |
-| FWPS_LAYER_INBOUND_MAC_FRAME_ETHERNET | 此筛选层允许在入站下限（到 NDIS 协议驱动程序）层检查 MAC 帧数据。 **注意**：仅在 Windows 8 和更高版本上可用。 |
-| FWPS_LAYER_OUTBOUND_MAC_FRAME_ETHERNET | 此筛选层允许在出站上限（到 NDIS 协议驱动程序）层检查 MAC 帧数据。 **注意**：仅在 Windows 8 和更高版本上可用。 |
-| FWPS_LAYER_INBOUND_MAC_FRAME_NATIVE | 此筛选层允许在入站下限（到 NDIS 微型端口驱动程序）层检查 MAC 帧数据。 **注意**：仅在 Windows 8 和更高版本上可用。 |
-| FWPS_LAYER_OUTBOUND_MAC_FRAME_NATIVE | 此筛选层允许检查出站下下限（到 NDIS 微型端口驱动程序）层的 MAC 帧数据。 **注意**：仅在 Windows 8 和更高版本上可用。 |
+| FWPS_LAYER_INBOUND_MAC_FRAME_ETHERNET | 此筛选层允许将入站下限 (的 MAC 帧数据检查到 NDIS 协议驱动程序) 层。 **注意**：仅在 Windows 8 和更高版本上可用。 |
+| FWPS_LAYER_OUTBOUND_MAC_FRAME_ETHERNET | 此筛选层允许将出站上限 (的 MAC 帧数据检查到 NDIS 协议驱动程序) 层。 **注意**：仅在 Windows 8 和更高版本上可用。 |
+| FWPS_LAYER_INBOUND_MAC_FRAME_NATIVE | 此筛选层允许将入站下限 (的 MAC 帧数据检查到 NDIS 微型端口驱动程序) 层。 **注意**：仅在 Windows 8 和更高版本上可用。 |
+| FWPS_LAYER_OUTBOUND_MAC_FRAME_NATIVE | 此筛选层允许将出站下 (的 MAC 帧数据检查到 NDIS 微型端口驱动程序) 层。 **注意**：仅在 Windows 8 和更高版本上可用。 |
 | FWPS_LAYER_INGRESS_VSWITCH_ETHERNET | 此筛选层允许检查 Hyper-v 可扩展交换机的入口802.3 数据。 **注意**：仅在 Windows 8 和更高版本上可用。 |
 | FWPS_LAYER_EGRESS_VSWITCH_ETHERNET | 此筛选层允许检查 Hyper-v 可扩展交换机的出口802.3 数据。 **注意**：仅在 Windows 8 和更高版本上可用。 |
 | <p>FWPS_LAYER_INGRESS_VSWITCH_TRANSPORT_V4</p><p>FWPS_LAYER_INGRESS_VSWITCH_TRANSPORT_V6</p> | 此筛选层允许检查 Hyper-v 可扩展交换机的入口传输数据。 **注意**：仅在 Windows 8 和更高版本上可用。 |
@@ -75,5 +75,4 @@ ms.locfileid: "72841992"
 | FWPS_LAYER_RPC_PROXY_IF | 此筛选层允许检查用于 RpcProxy 连接的接口。 这是用户模式筛选层。 |
 | FWPS_LAYER_KM_AUTHORIZATION | 此筛选层允许授权建立安全关联。 |
 
-每个运行时层标识符都具有关联的运行时数据字段标识符，该标识符表示一组常量值。 这些数据字段标识符在 Fwpsk 中声明为 FWPS_FIELDS_XXX 枚举。 有关详细信息，请参阅[数据字段标识符](https://docs.microsoft.com/windows-hardware/drivers/network/data-field-identifiers)。
-
+每个运行时层标识符都具有关联的运行时数据字段标识符，该标识符表示一组常量值。 这些数据字段标识符在 Fwpsk 中声明为 FWPS_FIELDS_XXX 枚举。 有关详细信息，请参阅 [数据字段标识符](./data-field-identifiers.md)。

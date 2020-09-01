@@ -12,18 +12,18 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 794adb5dcd1ea347ad2fd08b54cac1e8f41dcb20
-ms.sourcegitcommit: 8596782b07c8a71adf38fc2c2da68b75ba0a1259
+ms.openlocfilehash: 3bf85177d4cee8d2c062e7d1cedfe543d5a7fc8f
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85593943"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89216770"
 ---
 # <a name="ndiskdinterfaces"></a>!ndiskd.interfaces
 
 **！ Ndiskd**扩展显示有关网络接口的信息。 如果运行不带参数的扩展，！ ndiskd 将显示所有网络接口的列表。
 
-有关网络接口的详细信息，请参阅[NDIS 网络接口](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-network-interfaces2)。
+有关网络接口的详细信息，请参阅 [NDIS 网络接口](../network/ndis-network-interfaces2.md)。
 
 ```console
 !ndiskd.interfaces -handle <x> [-luid <x>]
@@ -35,7 +35,7 @@ ms.locfileid: "85593943"
 网络接口的可选句柄。
 
 <span id="_______-luid______"></span><span id="_______-LUID______"></span>*-luid*   
-网络接口的[NetLuid](https://docs.microsoft.com/windows-hardware/drivers/network/net-luid-value) （网络本地唯一标识符）。
+[NetLuid](../network/net-luid-value.md) (网络接口的本地唯一标识符) 。
 
 ### <a name="dll"></a>DLL
 
@@ -43,7 +43,7 @@ Ndiskd.dll
 
 ### <a name="examples"></a>示例
 
-运行不带参数的 **！ ndiskd**扩展，以查看系统上所有网络接口的列表。 在此示例中，查找 Intel （R）82579LM 千兆网络连接接口。 它的句柄为 ffffdf80139f8a20。
+运行不带参数的 **！ ndiskd** 扩展，以查看系统上所有网络接口的列表。 在此示例中，查找 Intel (R) 82579LM 千兆网络连接接口。 它的句柄为 ffffdf80139f8a20。
 
 ```console
 1: kd> !ndiskd.interfaces
@@ -67,7 +67,7 @@ Ndiskd.dll
     ffffdf80139fba20 - Teredo Tunneling Pseudo-Interface
 ```
 
-通过单击接口的句柄或输入 **！ ndiskd**命令，你可以查看有关该接口的详细信息，包括其标识符信息及其当前状态。 在此示例中，可以看到 Intel （R）82579LM 千兆网络连接是一个以太网连接（其 ifAlias），并且它的连接处于 MediaConnectUnknown 状态（因为它已保留供 Windows 内核调试器使用）。
+通过单击接口的句柄或输入 **！ ndiskd** 命令，你可以查看有关该接口的详细信息，包括其标识符信息及其当前状态。 在此示例中，你可以看到 Intel (R) 82579LM 千兆网络连接是 (其 ifAlias) 的以太网连接，并且它的连接 (处于 MediaConnectUnknown 状态，因为它已保留供 Windows 内核调试器) 使用。
 
 ```console
 1: kd> !ndiskd.interfaces ffffdf80139f8a20
@@ -117,18 +117,18 @@ STATE
     Refer to RFC 2863 for definitions of many of these terms
 ```
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
-[网络驱动程序设计指南](https://docs.microsoft.com/windows-hardware/drivers/network/index)
+[网络驱动程序设计指南](../network/index.md)
 
-[Windows Vista 和更高版本的网络引用](https://docs.microsoft.com/windows-hardware/drivers/ddi/_netvista/)
+[Windows Vista 和更高版本的网络引用](/windows-hardware/drivers/ddi/_netvista/)
 
 [调试网络堆栈](https://channel9.msdn.com/Shows/Defrag-Tools/Defrag-Tools-175-Debugging-the-Network-Stack)
 
-[**NDIS 扩展（Ndiskd.dll）**](ndis-extensions--ndiskd-dll-.md)
+[**NDIS 扩展 ( # A0) **](ndis-extensions--ndiskd-dll-.md)
 
 [**!ndiskd.help**](-ndiskd-help.md)
 
-[NDIS 网络接口](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-network-interfaces2)
+[NDIS 网络接口](../network/ndis-network-interfaces2.md)
 
-[NET \_ LUID 值](https://docs.microsoft.com/windows-hardware/drivers/network/net-luid-value)
+[NET \_ LUID 值](../network/net-luid-value.md)

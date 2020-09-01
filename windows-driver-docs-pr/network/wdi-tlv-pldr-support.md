@@ -1,24 +1,24 @@
 ---
 title: WDI_TLV_PLDR_SUPPORT
-description: WDI_TLV_PLDR_SUPPORT 是 TLV，指定是否支持 PLDR （平台级别重置）。
+description: WDI_TLV_PLDR_SUPPORT 是一种 TLV，用于指定是否支持 PLDR (平台级别重置) 。
 ms.assetid: BC1BE1A7-AA2D-4D11-A75A-EC0143343F33
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 WDI_TLV_PLDR_SUPPORT 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 295ccd496becfbd8158c30071bb12c220351cf39
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 4e1ebec8721e1e4bcc17fa4ef1c7306158cd5826
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67380739"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89217201"
 ---
-# <a name="wditlvpldrsupport"></a>WDI\_TLV\_PLDR\_支持
+# <a name="wdi_tlv_pldr_support"></a>WDI \_ TLV \_ PLDR \_ 支持
 
 
-WDI\_TLV\_PLDR\_支持是 TLV，指定是否支持 PLDR （平台级别重置）。
+WDI \_ tlv \_ PLDR \_ 支持是一个 tlv，用于指定是否支持 PLDR (平台级别重置) 。
 
-**请注意**  此 TLV 添加 Windows 10，版本 1511，WDI 版本 1.0.10 中。
+**注意**   此 TLV 已添加到 Windows 10 版本1511，WDI 版本1.0.10 中。
 
  
 
@@ -27,17 +27,17 @@ WDI\_TLV\_PLDR\_支持是 TLV，指定是否支持 PLDR （平台级别重置）
 
 0x11A
 
-## <a name="length"></a>长度
+## <a name="length"></a>Length
 
 
-超出 UINT8 的大小 （以字节为单位）。
+UINT8 的大小 (以字节为单位) 。
 
 ## <a name="values"></a>值
 
 
-| 在任务栏的搜索框中键入  | 描述                                                                                                                                                                                                                       |
+| 类型  | 说明                                                                                                                                                                                                                       |
 |-------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| UINT8 | 指定是否支持 PLDR。 如果设备或总线不支持重置功能 （通常通过查询的 ACPI 或 PCI 方法），此值设置为 0。 一个非零值指定支持重置功能。 |
+| UINT8 | 指定是否支持 PLDR。 如果设备或总线不支持重置功能，则此值设置为0， (通常通过查询 ACPI 或 PCI 方法) 。 非零值指定支持重置功能。 |
 
  
 
@@ -59,21 +59,16 @@ WDI\_TLV\_PLDR\_支持是 TLV，指定是否支持 PLDR （平台级别重置）
 <td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
-<td><p>Header</p></td>
+<td><p>标头</p></td>
 <td>Wditypes.hpp</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
-[PLDR](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-pldr-and-fldr)
-
- 
+[PLDR](./wdi-pldr-and-fldr.md)
 
  
-
-
-
 

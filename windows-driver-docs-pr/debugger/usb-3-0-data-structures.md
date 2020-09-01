@@ -4,18 +4,18 @@ description: 本主题介绍 USB 3.0 主机控制器驱动程序使用的数据�
 ms.assetid: 39BD7413-48A5-4199-BA8E-D2A77E4D23F1
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a9a5893da22ddbcb113a94af61681a18bb364934
-ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
+ms.openlocfilehash: 796991bd4a053321bf6055564668df1988997b7e
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84533836"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89215698"
 ---
 # <a name="usb-30-data-structures"></a>USB 3.0 数据结构
 
-本主题介绍 USB 3.0 主机控制器驱动程序使用的数据结构。 了解这些数据结构可帮助你有效地使用[USB 3.0](usb-3-extensions.md)和[RCDRKD](rcdrkd-extensions.md)调试器扩展命令。 此处提供的数据结构具有与[USB 3.0 规范](https://www.usb.org/documents)一致的名称。 熟悉 USB 3.0 规范将进一步增强使用扩展命令调试 USB 3.0 驱动程序的能力。
+本主题介绍 USB 3.0 主机控制器驱动程序使用的数据结构。 了解这些数据结构可帮助你有效地使用 [USB 3.0](usb-3-extensions.md) 和 [RCDRKD](rcdrkd-extensions.md) 调试器扩展命令。 此处提供的数据结构具有与 [USB 3.0 规范](https://www.usb.org/documents)一致的名称。 熟悉 USB 3.0 规范将进一步增强使用扩展命令调试 USB 3.0 驱动程序的能力。
 
-USB 3.0 主机控制器驱动程序是 USB 3.0 核心驱动程序堆栈的一部分。 有关详细信息，请参阅[USB 驱动程序堆栈体系结构](https://docs.microsoft.com/windows-hardware/drivers/usbcon/usb-3-0-driver-stack-architecture)。
+USB 3.0 主机控制器驱动程序是 USB 3.0 核心驱动程序堆栈的一部分。 有关详细信息，请参阅 [USB 驱动程序堆栈体系结构](../usbcon/usb-3-0-driver-stack-architecture.md)。
 
 每个 USB 3.0 主机控制器最多可包含255个设备，每个设备最多可以有31个终结点。 下图显示了一些表示一个主机控制器和连接的设备的数据结构。
 
@@ -49,13 +49,13 @@ Doorbell 寄存器数组是一组 Doorbell 寄存器，每个连接到该主机�
 
 ## <a name="transfer-ring"></a>传输振铃
 
-每个终结点具有一个或多个传输环。 传输环是传输请求块（TRBs）的数组。 每个 TRB 都指向一个连续数据块（最多 64 KB），该数据块将作为一个单元在硬件和内存之间传输。
+每个终结点具有一个或多个传输环。 传输环是 (TRBs) 的传输请求块的数组。 每个 TRB 都指向一个连续数据块 (多达 64 KB) ，将作为一个单元在硬件和内存之间传输。
 
-当 USB 3.0 核心堆栈接收到来自 USB 客户端驱动程序的传输请求时，它将标识传输的终结点上下文，然后将传输请求中断到一个或多个传输描述符（TDs）中。 每个 TD 都包含一个或多个 TRBs。
+当 USB 3.0 核心堆栈接收到来自 USB 客户端驱动程序的传输请求时，它将标识传输的终结点上下文，然后将传输请求中断到 (TDs) 的一个或多个传输描述符中。 每个 TD 都包含一个或多个 TRBs。
 
 ## <a name="endpoint-context"></a>终结点上下文
 
-终结点上下文结构保存单个终结点的上下文信息。 它还具有取消**排队**和**排队**的成员，这些成员用于跟踪硬件使用 TRBs 的位置以及软件添加 TRBs 的位置。
+终结点上下文结构保存单个终结点的上下文信息。 它还具有取消 **排队** 和 **排队** 的成员，这些成员用于跟踪硬件使用 TRBs 的位置以及软件添加 TRBs 的位置。
 
 ## <a name="related-topics"></a>相关主题
 

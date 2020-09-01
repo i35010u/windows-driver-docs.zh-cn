@@ -1,37 +1,37 @@
 ---
 title: OID_WDI_TASK_P2P_DISCOVER
-description: OID_WDI_TASK_P2P_DISCOVER 颁发给设备执行 Wi-Fi Direct 发现。
+description: 将 OID_WDI_TASK_P2P_DISCOVER 颁发给设备，以执行 Wi-fi 直接发现。
 ms.assetid: 9425a8d1-af68-488c-8a1e-a9b759f102cc
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 OID_WDI_TASK_P2P_DISCOVER 网络驱动程序
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 4bf74806fe5597255e91f727c0ee05732199a3f2
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 7ce130c0eaba2f2ef5fce2872543f490c9e85729
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67387235"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89216145"
 ---
-# <a name="oidwditaskp2pdiscover"></a>OID\_WDI\_TASK\_P2P\_DISCOVER
+# <a name="oid_wdi_task_p2p_discover"></a>OID \_ WDI \_ 任务 \_ P2P \_ 发现
 
 
-OID\_WDI\_任务\_P2P\_发现颁发给设备执行 Wi-Fi Direct 发现。
+已将 OID \_ WDI \_ 任务 \_ P2P \_ 发现发送到设备，以便执行 wi-fi 直接发现。
 
-| Object | 中止支持                                           | 默认优先级 （主机驱动程序策略） | 正常执行时间 （秒） |
+| 对象 | 支持中止                                           | 主机驱动程序策略 (默认优先级)  | 正常执行时间 (秒)  |
 |--------|---------------------------------------------------------|---------------------------------------|---------------------------------|
-| Port   | 是。 端口必须保持干净状态后中止。 | 6                                     | 15                              |
+| 端口   | 是。 中止后，端口必须处于干净状态。 | 6                                     | 15                              |
 
  
 
-该命令包含属性的定义是一组特定的 Wi-Fi Direct 设备要搜索或通配符发现。
+此命令包含一些属性，这些属性定义要搜索的一组特定 Wi-fi Direct 设备，或通配符发现。
 
-Wi-Fi Direct 发现是从标准的 Wi-fi 扫描互相排斥。 运行此任务时，应不会无需"直接-"SSID 或特定的转 SSID 发送广播的探测请求。 这些探测请求还必须包括所有必要 Wi-Fi Direct 导致浏览器。
+Wi-fi 直接发现与标准 Wi-fi 扫描相互排斥。 此任务正在运行时，不应发送广播探测请求，不应使用 "DIRECT" SSID 或特定的中转 SSID。 这些探测请求还必须包含所有必需的 Wi-fi Direct。
 
-主机可能有不到设备的任务参数的一部分提供的搜索条件。 主机可能会使用任务中止机制，它具有与所需的条件相匹配，因此很重要，设备可以快速中止 Wi-Fi Direct 发现任务以免降低方案的性能。
+主机可能包含未作为任务参数的一部分提供给设备的搜索条件。 如果主机已满足所需的条件，则它可能会使用任务中止机制，因此，设备可以快速中止 Wi-fi 直接发现任务，以免降低方案性能。
 
-当完成任务后 （通常情况下或者由于中止） 时，该端口应为处于良好状态，这样，可以在该端口上发出另一个发现请求。
+如果任务已完成， (正常或由于中止) ，则端口应处于良好状态，以便可以在该端口上发出另一个发现请求。
 
 ## <a name="task-parameters"></a>任务参数
 
@@ -48,79 +48,79 @@ Wi-Fi Direct 发现是从标准的 Wi-fi 扫描互相排斥。 运行此任务�
 <th>TLV</th>
 <th>允许多个 TLV 实例</th>
 <th>可选</th>
-<th>描述</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><a href="https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-p2p-discover-mode" data-raw-source="[&lt;strong&gt;WDI_TLV_P2P_DISCOVER_MODE&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-p2p-discover-mode)"><strong>WDI_TLV_P2P_DISCOVER_MODE</strong></a></td>
+<td><a href="https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-p2p-discover-mode" data-raw-source="[&lt;strong&gt;WDI_TLV_P2P_DISCOVER_MODE&lt;/strong&gt;](./wdi-tlv-p2p-discover-mode.md)"><strong>WDI_TLV_P2P_DISCOVER_MODE</strong></a></td>
 <td></td>
 <td></td>
-<td>发现模式的信息，例如扫描类型、 计数和扫描之间的时间。</td>
+<td>发现模式信息，如扫描类型、计数和扫描之间的时间。</td>
 </tr>
 <tr class="even">
-<td><a href="https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-scan-dwell-time" data-raw-source="[&lt;strong&gt;WDI_TLV_SCAN_DWELL_TIME&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-scan-dwell-time)"><strong>WDI_TLV_SCAN_DWELL_TIME</strong></a></td>
+<td><a href="https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-scan-dwell-time" data-raw-source="[&lt;strong&gt;WDI_TLV_SCAN_DWELL_TIME&lt;/strong&gt;](./wdi-tlv-scan-dwell-time.md)"><strong>WDI_TLV_SCAN_DWELL_TIME</strong></a></td>
 <td></td>
 <td></td>
 <td>正在扫描停留时间设置。</td>
 </tr>
 <tr class="odd">
-<td><a href="https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-p2p-discovery-channel-settings" data-raw-source="[&lt;strong&gt;WDI_TLV_P2P_DISCOVERY _CHANNEL_SETTINGS&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-p2p-discovery-channel-settings)"><strong>WDI_TLV_P2P_DISCOVERY _CHANNEL_SETTINGS</strong></a></td>
+<td><a href="https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-p2p-discovery-channel-settings" data-raw-source="[&lt;strong&gt;WDI_TLV_P2P_DISCOVERY _CHANNEL_SETTINGS&lt;/strong&gt;](./wdi-tlv-p2p-discovery-channel-settings.md)"><strong>WDI_TLV_P2P_DISCOVERY _CHANNEL_SETTINGS</strong></a></td>
 <td>X</td>
 <td>X</td>
-<td>扫描持续时间和要扫描的频道的列表。 如果指定，侦听设置重写 WDI_TLV_SCAN_DWELL_TIME 中指定的。 如果此列表为空，该端口必须扫描所有受支持的通道，并使用 WDI_TLV_SCAN_DWELL_TIME 中的侦听设置。</td>
+<td>扫描持续时间和要扫描的频道列表。 指定时，侦听设置将覆盖 WDI_TLV_SCAN_DWELL_TIME 中指定的设置。 如果此列表为空，则端口必须扫描所有支持的通道，并使用 WDI_TLV_SCAN_DWELL_TIME 中的 "侦听" 设置。</td>
 </tr>
 <tr class="even">
-<td><a href="https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-ssid" data-raw-source="[&lt;strong&gt;WDI_TLV_SSID&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-ssid)"><strong>WDI_TLV_SSID</strong></a></td>
+<td><a href="https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-ssid" data-raw-source="[&lt;strong&gt;WDI_TLV_SSID&lt;/strong&gt;](./wdi-tlv-ssid.md)"><strong>WDI_TLV_SSID</strong></a></td>
 <td>X</td>
 <td>X</td>
-<td>端口应扫描的 Ssid 列表。 此列表中可以有多个 Ssid 和其中一个可以是通配符。 执行操作时的通道上的 active 扫描，端口必须为列表中每个 SSID 发送探测请求。 如果此列表为空，该端口必须扫描的所有 Ssid。</td>
+<td>端口应扫描的 Ssid 列表。 此列表中可以有多个 Ssid，其中一个可以是通配符。 在通道上执行活动扫描时，端口必须为列表中的每个 SSID 发送探测请求。 如果此列表为空，则该端口必须扫描所有 Ssid。</td>
 </tr>
 <tr class="odd">
-<td><a href="https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-p2p-service-name-hash" data-raw-source="[&lt;strong&gt;WDI_TLV_P2P_SERVICE_NAME_HASH&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-p2p-service-name-hash)"><strong>WDI_TLV_P2P_SERVICE_NAME_HASH</strong></a></td>
+<td><a href="https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-p2p-service-name-hash" data-raw-source="[&lt;strong&gt;WDI_TLV_P2P_SERVICE_NAME_HASH&lt;/strong&gt;](./wdi-tlv-p2p-service-name-hash.md)"><strong>WDI_TLV_P2P_SERVICE_NAME_HASH</strong></a></td>
 <td>X</td>
 <td>X</td>
-<td>要查询的服务哈希名称的列表。 如果指定 WDI_P2P_SERVICE_DISCOVERY_TYPE_SERVICE_NAME_ONLY 或 WDI_P2P_SERVICE_DISCOVERY_TYPE_ASP2_SERVICE_NAME_ONLY 被必需。</td>
+<td>要查询的服务哈希名称的列表。 如果指定 WDI_P2P_SERVICE_DISCOVERY_TYPE_SERVICE_NAME_ONLY 或 WDI_P2P_SERVICE_DISCOVERY_TYPE_ASP2_SERVICE_NAME_ONLY，则为必需。</td>
 </tr>
 <tr class="even">
-<td><a href="https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-vendor-specific-ie" data-raw-source="[&lt;strong&gt;WDI_TLV_VENDOR_SPECIFIC_IE&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-vendor-specific-ie)"><strong>WDI_TLV_VENDOR_SPECIFIC_IE</strong></a></td>
+<td><a href="https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-vendor-specific-ie" data-raw-source="[&lt;strong&gt;WDI_TLV_VENDOR_SPECIFIC_IE&lt;/strong&gt;](./wdi-tlv-vendor-specific-ie.md)"><strong>WDI_TLV_VENDOR_SPECIFIC_IE</strong></a></td>
 <td></td>
 <td>X</td>
-<td>必须包括在由端口发送的探测请求的一个或多个 Ie。 这些导致浏览器不用于被动扫描。</td>
+<td>必须包含在端口发送的探测请求中的一个或多个传入。 它们不用于被动扫描。</td>
 </tr>
 <tr class="odd">
-<td><a href="https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-p2p-service-information-discovery-entry" data-raw-source="[&lt;strong&gt;WDI_TLV_P2P_SERVICE_INFORMATION_DISCOVERY_ENTRY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-p2p-service-information-discovery-entry)"><strong>WDI_TLV_P2P_SERVICE_INFORMATION_DISCOVERY_ENTRY</strong></a></td>
+<td><a href="https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-p2p-service-information-discovery-entry" data-raw-source="[&lt;strong&gt;WDI_TLV_P2P_SERVICE_INFORMATION_DISCOVERY_ENTRY&lt;/strong&gt;](./wdi-tlv-p2p-service-information-discovery-entry.md)"><strong>WDI_TLV_P2P_SERVICE_INFORMATION_DISCOVERY_ENTRY</strong></a></td>
 <td>X</td>
 <td>X</td>
-<td>服务信息发现项要查询的可选列表。 如果指定 WDI_P2P_SERVICE_DISCOVERY_TYPE_SERVICE_INFORMATION，这是必需的。 该驱动程序应通过使用服务名称哈希的探测请求/响应执行 P2P 服务发现。 对于每个包含服务的信息的服务条目，该驱动程序应执行 ANQP 查询请求/响应来查询服务的信息。</td>
+<td>要查询的服务信息发现条目的可选列表。 如果指定 WDI_P2P_SERVICE_DISCOVERY_TYPE_SERVICE_INFORMATION，则这是必需的。 驱动程序应使用服务名称哈希通过探测请求/响应来执行 P2P 服务发现。 对于包含服务信息的每个服务项，驱动程序应执行 ANQP 查询请求/响应来查询服务信息。</td>
 </tr>
 <tr class="even">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-p2p-asp2-service-information-discovery-entry" data-raw-source="[&lt;strong&gt;WDI_TLV_P2P_ASP2_SERVICE_INFORMATION_DISCOVERY_ENTRY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-p2p-asp2-service-information-discovery-entry)"><strong>WDI_TLV_P2P_ASP2_SERVICE_INFORMATION_DISCOVERY_ENTRY</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-p2p-asp2-service-information-discovery-entry" data-raw-source="[&lt;strong&gt;WDI_TLV_P2P_ASP2_SERVICE_INFORMATION_DISCOVERY_ENTRY&lt;/strong&gt;](./wdi-tlv-p2p-asp2-service-information-discovery-entry.md)"><strong>WDI_TLV_P2P_ASP2_SERVICE_INFORMATION_DISCOVERY_ENTRY</strong></a></p></td>
 <td>X</td>
 <td><p>X</p></td>
-<td><p>在 Windows 10，版本 1607，WDI 版本 1.0.21 中添加。</p>
-<p>ASP2 服务信息发现项要查询的可选列表。 如果指定 WDI_P2P_SERVICE_DISCOVERY_TYPE_ASP2_SERVICE_INFORMATION，这是必需的。 该驱动程序应通过使用服务名称哈希的探测请求/响应执行 P2P 服务发现。 对于每个包含服务的信息的服务条目，该驱动程序应执行 ANQP 查询请求/响应来查询服务的信息。</p></td>
+<td><p>已在 Windows 10 版本1607、WDI 版本1.0.21 中添加。</p>
+<p>要查询的 ASP2 服务信息发现条目的可选列表。 如果指定 WDI_P2P_SERVICE_DISCOVERY_TYPE_ASP2_SERVICE_INFORMATION，则这是必需的。 驱动程序应使用服务名称哈希通过探测请求/响应来执行 P2P 服务发现。 对于包含服务信息的每个服务项，驱动程序应执行 ANQP 查询请求/响应来查询服务信息。</p></td>
 </tr>
 <tr class="odd">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-p2p-include-listen-channel" data-raw-source="[&lt;strong&gt;WDI_TLV_P2P_INCLUDE_LISTEN_CHANNEL&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-p2p-include-listen-channel)"><strong>WDI_TLV_P2P_INCLUDE_LISTEN_CHANNEL</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-p2p-include-listen-channel" data-raw-source="[&lt;strong&gt;WDI_TLV_P2P_INCLUDE_LISTEN_CHANNEL&lt;/strong&gt;](./wdi-tlv-p2p-include-listen-channel.md)"><strong>WDI_TLV_P2P_INCLUDE_LISTEN_CHANNEL</strong></a></p></td>
 <td></td>
 <td><p>X</p></td>
-<td><p>在 Windows 10，版本 1607，WDI 版本 1.0.21 中添加。</p>
-<p>指定的探测请求是否应包含在发现期间的侦听通道属性。</p></td>
+<td><p>已在 Windows 10 版本1607、WDI 版本1.0.21 中添加。</p>
+<p>指定在发现过程中，探测请求是否应包括侦听通道属性。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-## <a name="task-completion-indication"></a>指示任务完成
+## <a name="task-completion-indication"></a>任务完成指示
 
 
-[NDIS\_状态\_WDI\_指示\_P2P\_发现\_完成](ndis-status-wdi-indication-p2p-discovery-complete.md)
+[NDIS \_ 状态 \_ WDI \_ 指示 \_ P2P \_ 发现 \_ 完成](ndis-status-wdi-indication-p2p-discovery-complete.md)
 ## <a name="unsolicited-indication"></a>未经请求的指示
 
 
-[NDIS\_状态\_WDI\_指示\_BSS\_条目\_列表](ndis-status-wdi-indication-bss-entry-list.md)
+[NDIS \_ 状态 \_ WDI \_ 指示 \_ BSS \_ 条目 \_ 列表](ndis-status-wdi-indication-bss-entry-list.md)
 
 <a name="requirements"></a>要求
 ------------
@@ -140,16 +140,11 @@ Wi-Fi Direct 发现是从标准的 Wi-fi 扫描互相排斥。 运行此任务�
 <td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
-<td><p>Header</p></td>
-<td>Dot11wdi.h</td>
+<td><p>标头</p></td>
+<td>Dot11wdi</td>
 </tr>
 </tbody>
 </table>
 
  
-
- 
-
-
-
 

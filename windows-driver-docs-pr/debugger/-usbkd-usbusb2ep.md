@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 7d05a661eebec928addc75f5ac71f666db2c61a9
-ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
+ms.openlocfilehash: 09ec03e2ec8292050e1eacae4168c026d2e6450e
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84533978"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89217919"
 ---
 # <a name="usbkdusbusb2ep"></a>!usbkd.usbusb2ep
 
@@ -32,26 +32,19 @@ ms.locfileid: "84533978"
 
 
 <span id="_______StructAddr______"></span><span id="_______structaddr______"></span><span id="_______STRUCTADDR______"></span>*StructAddr*   
-Usbport 的地址 **！ \_USB2 \_ 企业**结构。 获取 usbport 的地址 **！ \_USB2 \_ EP**结构，请使用[**！ usbkd**](-usbkd-usb2.md)。
+Usbport 的地址 **！ \_USB2 \_ 企业** 结构。 获取 usbport 的地址 **！ \_USB2 \_ EP** 结构，请使用 [**！ usbkd**](-usbkd-usb2.md)。
 
 ## <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 
-Usbkd
+Usbkd.dll
 
 ## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
 [USB 2.0 调试器扩展](usb-2-0-extensions.md)
 
-[通用串行总线（USB）驱动程序](https://docs.microsoft.com/windows-hardware/drivers/usbcon/)
+[ (USB) 驱动程序的通用串行总线](../usbcon/index.md)
 
  
-
- 
-
-
-
-
-
 

@@ -1,25 +1,25 @@
 ---
 title: HS_SIM_IDENTITY 结构
-description: HS_SIM_IDENTITY 结构包含 SIM EAP-SIM 或 EAP-AKA 身份验证所需的标识信息。
+description: HS_SIM_IDENTITY 结构包含 EAP SIM 或 EAP 身份验证所需的 SIM 识别信息。
 ms.assetid: b45fac33-79de-4006-9dcb-95725be11ec1
 keywords:
-- HS_SIM_IDENTITY 结构与 Windows Vista 一起启动的网络驱动程序
-- PHS_SIM_IDENTITY 结构指针与 Windows Vista 一起启动的网络驱动程序
+- 从 Windows Vista 开始 HS_SIM_IDENTITY 结构网络驱动程序
+- 从 Windows Vista 开始 PHS_SIM_IDENTITY 结构指针网络驱动程序
 ms.date: 07/31/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8a3feb99c6b88f1e384d010ca5d2957132bdc938
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 2a6c7dc778dd2c5bfb5c174a0647c8d049f27eb9
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67364055"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89216192"
 ---
-# <a name="hssimidentity-structure"></a>HS\_SIM\_IDENTITY 结构
+# <a name="hs_sim_identity-structure"></a>HS \_ SIM \_ 标识结构
 
 [!include[Wi-Fi Hotspot Offloading deprecation](wi-fi-hotspot-offloading-deprecation.md)]
 
 
-**HS\_SIM\_标识**结构包含 SIM EAP-SIM 或 EAP-AKA 身份验证所需的标识信息。
+**HS \_ sim \_ 标识**结构包含 eap sim 或 eap 身份验证所需的 SIM 识别信息。
 
 <a name="syntax"></a>语法
 ------
@@ -39,27 +39,27 @@ typedef struct _HS_SIM_IDENTITY {
 -------
 
 **SimType**  
-Sim 卡的类型、 是否 GSM 或 CDMA，或 none。 如果网络 GSM， **dwMNC**和**dwMCC**将定义两个字段，而对于 CDMA **dwSID**并**dwNID**两个字段必须定义。
+SIM 的类型，无论是 GSM 还是 CDMA，都不是。 如果网络是 GSM，则会定义 **dwMNC** 和 **dwMCC** 字段对，而对于 CDMA，必须定义 **dwSID** 和 **dwNID** 字段对。
 
 **dwMNC**  
-如果 SIM GSM 类型，使用。
+如果 SIM 为 GSM 类型，则使用。
 
-GSM 网络移动电话网络代码 （mnc)。
+移动网络代码 (GSM 网络的 MNC) 。
 
 **dwMCC**  
-如果 SIM GSM 类型，使用。
+如果 SIM 为 GSM 类型，则使用。
 
-GSM 网络移动的国家/地区代码 (MCC)。
+移动国家/地区代码 (对 GSM 网络的 MCC) 。
 
 **dwNID**  
-如果 SIM CDMA 类型，使用。
+如果 SIM 是 CDMA 类型，则使用。
 
-网络标识数 (NID) 的 CDMA 网络。
+CDMA 网络的网络标识号 (NID) 。
 
 **dwSID**  
-如果 SIM CDMA 类型，使用。
+如果 SIM 是 CDMA 类型，则使用。
 
-系统标识号 (SID) 的 CDMA 网络。
+CDMA 网络的系统标识号 (SID) 。
 
 **dwEapMethods**  
 EAP 身份验证方法。
@@ -74,21 +74,16 @@ EAP 身份验证方法。
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Header</p></td>
-<td>Hotspotoffloadplugin.h （包括 Hotspotoffloadplugin.h）</td>
+<td><p>标头</p></td>
+<td>Hotspotoffloadplugin (包含 Hotspotoffloadplugin) </td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
-[可扩展的身份验证协议](https://docs.microsoft.com/previous-versions/windows/desktop/eap/eap-start-page)
-
- 
+[可扩展身份验证协议](/previous-versions/windows/desktop/eap/eap-start-page)
 
  
-
-
-
 

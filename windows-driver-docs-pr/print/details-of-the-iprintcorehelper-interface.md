@@ -6,12 +6,12 @@ keywords:
 - IPrintCoreHelper
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b1b8ffe88f99813f6b0fb0784928be296323be83
-ms.sourcegitcommit: 17c1bbc5ea0bef3bbc87794b030a073f905dc942
+ms.openlocfilehash: 50e8fac30f0cca77a2a8db63f9f03d06fa309918
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88802595"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89216376"
 ---
 # <a name="details-of-the-iprintcorehelper-interface"></a>IPrintCoreHelper 接口详细信息
 
@@ -20,7 +20,7 @@ ms.locfileid: "88802595"
 
 -   **IPrintCoreHelper**接口没有**QuerySimulatedCapabilities**方法。 相反， **IPrintCoreHelper** 接口以明确定义且可识别的方式将模拟功能映射到功能和选项的常规列表。
 
--   在 **IPrintCoreHelper** 接口中，要求调用方传入 [**DEVMODEW**](https://docs.microsoft.com/windows/win32/api/wingdi/ns-wingdi-devmodew) 结构而不是 [**OEMUIOBJ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/printoem/ns-printoem-_oemuiobj) 结构。
+-   在 **IPrintCoreHelper** 接口中，要求调用方传入 [**DEVMODEW**](/windows/win32/api/wingdi/ns-wingdi-devmodew) 结构而不是 [**OEMUIOBJ**](/windows-hardware/drivers/ddi/printoem/ns-printoem-_oemuiobj) 结构。
 
 如果使用 **IPrintCoreHelper** 接口或从它继承的接口，应考虑以下几点：
 
@@ -37,9 +37,4 @@ ms.locfileid: "88802595"
 [IPrintCoreHelperPS 接口详细信息](details-of-the-iprintcorehelperps-interface.md)
 
  
-
- 
-
-
-
 

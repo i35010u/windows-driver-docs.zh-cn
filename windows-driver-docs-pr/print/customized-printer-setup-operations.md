@@ -7,12 +7,12 @@ keywords:
 - INF 文件 WDK 打印，自定义安装操作
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 055ca8e4b038249a403148767b6f003a39e20db3
-ms.sourcegitcommit: d9a9925f790271f4ca2c8377d551d96e8d1e62c7
+ms.openlocfilehash: 79f5c378d13ba3e98b082c5c4a435093c6898102
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88850280"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89216818"
 ---
 # <a name="customized-printer-setup-operations"></a>自定义的打印机安装操作
 
@@ -27,7 +27,7 @@ ms.locfileid: "88850280"
 
 如果驱动程序的级别为0x8000 或更大，则安装程序也会停止服务器端安装。 当具有管理权限的用户登录时，安装可以继续，此时安装程序将重新启动设备安装作为客户端安装。 对于排名为0x1000 或更大的驱动程序，并且不是，因此，硬件 ID 匹配，安装程序会在新的设备 DLL 中启动 "发现新硬件" 向导，该向导会提示用户安装驱动程序。
 
-如果签名的驱动程序的 INF 文件包含 **VendorSetup** 项，并且驱动程序的排名小于0x1000，则安装程序不会启动 "发现新硬件" 向导。 有关详细信息，请参阅 [设备安装组件](https://docs.microsoft.com/previous-versions/ff541277(v=vs.85)) 和 [安装程序选择驱动程序的方式](https://docs.microsoft.com/windows-hardware/drivers/install/how-windows-selects-a-driver-for-a-device)。
+如果签名的驱动程序的 INF 文件包含 **VendorSetup** 项，并且驱动程序的排名小于0x1000，则安装程序不会启动 "发现新硬件" 向导。 有关详细信息，请参阅 [设备安装组件](/previous-versions/ff541277(v=vs.85)) 和 [安装程序选择驱动程序的方式](../install/how-windows-selects-a-driver-for-a-device.md)。
 
 **VendorSetup**条目的格式如下所示：
 

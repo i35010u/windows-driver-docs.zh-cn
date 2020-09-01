@@ -1,34 +1,34 @@
 ---
-title: WDI_TLV_LSO_V1_CAPABILITIES （0xCC）
-description: WDI_TLV_LSO_V1_CAPABILITIES 是包含大量 Send 卸载 V1 功能的 TLV。
+title: 'WDI_TLV_LSO_V1_CAPABILITIES (0xCC) '
+description: WDI_TLV_LSO_V1_CAPABILITIES 是包含大量发送卸载 V1 功能的 TLV。
 ms.assetid: 22C5778A-F551-4931-A19C-7AA399221B3D
 ms.date: 07/18/2017
 keywords:
-- WDI_TLV_LSO_V1_CAPABILITIES （0xCC）从 Windows Vista 开始的网络驱动程序
+- 从 Windows Vista 开始 WDI_TLV_LSO_V1_CAPABILITIES (0xCC) 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 5d4724e07e305fb4d370d437948876992afabc2c
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: f7836b82be4dd45f411d4258a79d29c00961769c
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72842463"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89216078"
 ---
-# <a name="wdi_tlv_lso_v1_capabilities-0xcc"></a>WDI\_TLV\_LSO\_V1\_功能（0xCC）
+# <a name="wdi_tlv_lso_v1_capabilities-0xcc"></a>WDI \_ TLV \_ LSO \_ V1 \_ 功能 (0xCC) 
 
 
-WDI\_TLV\_LSO\_V1\_功能是包含大型发送卸载 V1 功能的 TLV。
+WDI \_ tlv \_ LSO \_ v1 \_ 功能是包含大量 Send 卸载 V1 功能的 tlv。
 
-功能值以[**NDIS\_TCP\_IP\_校验和\_卸载**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_tcp_ip_checksum_offload)的形式报告。 使用 NDIS\_卸载\_不\_受支持，并且通过[OID\_WDI\_获取\_适配器\_功能](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wdi-get-adapter-capabilities)时，支持 NDIS\_卸载\_。
+将按 [**NDIS \_ TCP \_ IP \_ 校验和 \_ 卸载**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_tcp_ip_checksum_offload)中所述报告功能值。 使用 \_ \_ 不 \_ 受支持的 ndis 卸载，并 \_ \_ 在通过 [OID \_ WDI \_ 获取 \_ 适配器 \_ 功能](./oid-wdi-get-adapter-capabilities.md)指示功能时支持 ndis 卸载。
 
 ## <a name="tlv-type"></a>TLV 类型
 
 
 0xCC
 
-## <a name="length"></a>长度
+## <a name="length"></a>Length
 
 
-所有包含的元素的大小的总和（以字节为单位）。
+Sum (所有包含的元素的大小) 。
 
 ## <a name="values"></a>值
 
@@ -40,14 +40,14 @@ WDI\_TLV\_LSO\_V1\_功能是包含大型发送卸载 V1 功能的 TLV。
 </colgroup>
 <thead>
 <tr class="header">
-<th>在任务栏的搜索框中键入</th>
-<th>描述</th>
+<th>类型</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td>UINT32</td>
-<td>封装类型。 有效值包括：
+<td>封装类型。 有效值是：
 <ul>
 <li>WDI_ENCAPSULATION_IEEE_802_11</li>
 </ul></td>
@@ -84,7 +84,7 @@ WDI\_TLV\_LSO\_V1\_功能是包含大型发送卸载 V1 功能的 TLV。
 <tbody>
 <tr class="odd">
 <td><p>最低受支持的客户端</p></td>
-<td><p>Windows 10</p></td>
+<td><p>Windows 10</p></td>
 </tr>
 <tr class="even">
 <td><p>最低受支持的服务器</p></td>
@@ -98,9 +98,4 @@ WDI\_TLV\_LSO\_V1\_功能是包含大型发送卸载 V1 功能的 TLV。
 </table>
 
  
-
- 
-
-
-
 

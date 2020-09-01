@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 3dfba9d71ea58d2761dba52c099a42e970213193
-ms.sourcegitcommit: 8596782b07c8a71adf38fc2c2da68b75ba0a1259
+ms.openlocfilehash: 25431c83498442faf57570e3abded547e0763c15
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85593949"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89216778"
 ---
 # <a name="ndiskdfilterdriver"></a>!ndiskd.filterdriver
 
@@ -44,7 +44,7 @@ Ndiskd.dll
 
 ### <a name="examples"></a>示例
 
-不带参数的**ndiskd！ filterdriver** ，以查看系统上所有筛选器驱动程序的列表。 在下面的示例中，查找虚拟 WiFi 筛选器驱动程序，该驱动程序的句柄为 ffffbc064cc83be0。
+不带参数的 **ndiskd！ filterdriver** ，以查看系统上所有筛选器驱动程序的列表。 在下面的示例中，查找虚拟 WiFi 筛选器驱动程序，该驱动程序的句柄为 ffffbc064cc83be0。
 
 ```console
 0: kd> !ndiskd.filterdriver
@@ -55,7 +55,7 @@ Ndiskd.dll
     ffffbc064cb59b00 - WFP 802.3 MAC Layer LightWeight Filter
 ```
 
-通过单击上一个示例中的筛选器驱动程序句柄，或使用它在命令窗口中输入 **！ ndiskd**命令，你可以获取有关该筛选器驱动程序的更多详细信息。 例如，在这种情况下，此筛选器驱动程序没有筛选器模块。
+通过单击上一个示例中的筛选器驱动程序句柄，或使用它在命令窗口中输入 **！ ndiskd** 命令，你可以获取有关该筛选器驱动程序的更多详细信息。 例如，在这种情况下，此筛选器驱动程序没有筛选器模块。
 
 ```console
 0: kd> !ndiskd.filterdriver ffffbc064cc83be0
@@ -107,14 +107,14 @@ HANDLERS
     StatusHandler                          fffff80787d877c0  bp
 ```
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
-[网络驱动程序设计指南](https://docs.microsoft.com/windows-hardware/drivers/network/index)
+[网络驱动程序设计指南](../network/index.md)
 
-[Windows Vista 和更高版本的网络引用](https://docs.microsoft.com/windows-hardware/drivers/ddi/_netvista/)
+[Windows Vista 和更高版本的网络引用](/windows-hardware/drivers/ddi/_netvista/)
 
 [调试网络堆栈](https://channel9.msdn.com/Shows/Defrag-Tools/Defrag-Tools-175-Debugging-the-Network-Stack)
 
-[**NDIS 扩展（Ndiskd.dll）**](ndis-extensions--ndiskd-dll-.md)
+[**NDIS 扩展 ( # A0) **](ndis-extensions--ndiskd-dll-.md)
 
 [**!ndiskd.help**](-ndiskd-help.md)

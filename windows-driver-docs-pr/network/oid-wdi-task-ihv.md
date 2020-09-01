@@ -7,39 +7,39 @@ keywords:
 - 从 Windows Vista 开始 OID_WDI_TASK_IHV 网络驱动程序
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: c41f1f68bdaa39bc0c2d57d499cbc007767cac73
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 05f8707a3f9ccc72f7edab5bd48f5aa42dfb01bb
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67387238"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89216148"
 ---
-# <a name="oidwditaskihv"></a>OID\_WDI\_TASK\_IHV
+# <a name="oid_wdi_task_ihv"></a>OID \_ WDI \_ 任务 \_ IHV
 
 
-OID\_WDI\_任务\_IHV 用于启动 IHV 启动的任务。
+OID \_ WDI \_ 任务 \_ IHV 用于启动 IHV 启动的任务。
 
-| Object | 中止支持                                           | 默认优先级 （主机驱动程序策略）       | 正常执行时间 （秒） |
+| 对象 | 支持中止                                           | 主机驱动程序策略 (默认优先级)        | 正常执行时间 (秒)  |
 |--------|---------------------------------------------------------|---------------------------------------------|---------------------------------|
-| Port   | 是。 端口必须保持干净状态后中止。 | 优先级取决于 IHV 请求设置。 | 10                              |
+| 端口   | 是。 中止后，端口必须处于干净状态。 | 优先级取决于 IHV 请求的设置。 | 10                              |
 
  
 
-由发送启动任务[NDIS\_状态\_WDI\_指示\_IHV\_任务\_请求](ndis-status-wdi-indication-ihv-task-request.md)，并已根据的值请求的 IHV。
+任务由发送 [NDIS \_ 状态 \_ WDI \_ 指示 \_ ihv \_ 任务 \_ 请求](ndis-status-wdi-indication-ihv-task-request.md)启动，并根据 IHV 请求的值确定优先级。
 
 ## <a name="task-parameters"></a>任务参数
 
 
-| TLV                                                                                  | 允许多个 TLV 实例 | 可选 | 描述                                                                                                                                                                   |
+| TLV                                                                                  | 允许多个 TLV 实例 | 可选 | 说明                                                                                                                                                                   |
 |--------------------------------------------------------------------------------------|--------------------------------|----------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [**WDI\_TLV\_IHV\_TASK\_DEVICE\_CONTEXT**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-ihv-task-device-context) |                                | X        | IHV 组件提供的上下文数据。 这从转发[NDIS\_状态\_WDI\_指示\_IHV\_任务\_请求](ndis-status-wdi-indication-ihv-task-request.md)。 |
+| [**WDI \_ TLV \_ IHV \_ 任务 \_ 设备 \_ 上下文**](./wdi-tlv-ihv-task-device-context.md) |                                | X        | IHV 组件提供的上下文数据。 这将从 [NDIS \_ STATUS \_ WDI \_ 指示 \_ IHV \_ 任务 \_ 请求](ndis-status-wdi-indication-ihv-task-request.md)转发。 |
 
  
 
-## <a name="task-completion-indication"></a>指示任务完成
+## <a name="task-completion-indication"></a>任务完成指示
 
 
-[NDIS\_状态\_WDI\_指示\_IHV\_任务\_完成](ndis-status-wdi-indication-ihv-task-complete.md)
+[NDIS \_ 状态 \_ WDI \_ 指示 \_ IHV \_ 任务 \_ 完成](ndis-status-wdi-indication-ihv-task-complete.md)
 
 <a name="requirements"></a>要求
 ------------
@@ -59,16 +59,11 @@ OID\_WDI\_任务\_IHV 用于启动 IHV 启动的任务。
 <td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
-<td><p>Header</p></td>
-<td>Dot11wdi.h</td>
+<td><p>标头</p></td>
+<td>Dot11wdi</td>
 </tr>
 </tbody>
 </table>
 
  
-
- 
-
-
-
 

@@ -12,27 +12,27 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 0e065c3f4576fe301895a1a950c601c9219db904
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: adac744f780505e513c2ae00b479a4cde4503c11
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72826723"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89217106"
 ---
 # <a name="ioctldecode"></a>!ioctldecode
 
 
-**！ Ioctldecode** extension 显示给定 IOCTL 代码指定的*设备类型*、*所需访问权限*、*函数代码*和*传输类型*。 有关 IOCTL 控制代码的详细信息，请参阅[定义 I/o 控制代码](https://docs.microsoft.com/windows-hardware/drivers/kernel/defining-i-o-control-codes)。
+**！ Ioctldecode** extension 显示给定 IOCTL 代码指定的*设备类型*、*所需访问权限*、*函数代码*和*传输类型*。 有关 IOCTL 控制代码的详细信息，请参阅 [定义 I/o 控制代码](../kernel/defining-i-o-control-codes.md)。
 
 ```dbgcmd
 !ioctldecode IoctlCode 
 ```
 
-## <a name="span-idddk__ioresdes_dbgspanspan-idddk__ioresdes_dbgspanparameters"></a><span id="ddk__ioresdes_dbg"></span><span id="DDK__IORESDES_DBG"></span>Parameters
+## <a name="span-idddk__ioresdes_dbgspanspan-idddk__ioresdes_dbgspanparameters"></a><span id="ddk__ioresdes_dbg"></span><span id="DDK__IORESDES_DBG"></span>参数
 
 
 <span id="_______IoctlCode______"></span><span id="_______ioctlcode______"></span><span id="_______IOCTLCODE______"></span>*IoctlCode*   
-指定十六进制 IOCTL 代码。 [ **！ Irp**](-irp.md)命令在其输出中显示 IOCTL 代码。
+指定十六进制 IOCTL 代码。 [**！ Irp**](-irp.md)命令在其输出中显示 IOCTL 代码。
 
 ### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
@@ -42,7 +42,7 @@ ms.locfileid: "72826723"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>Kdexts</p></td>
+<td align="left"><p>Kdexts.dll</p></td>
 </tr>
 </tbody>
 </table>
@@ -51,9 +51,9 @@ ms.locfileid: "72826723"
 
 ### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>附加信息
 
-若要查看有关 IOCTL 的信息，我们首先找到相关的 IRP。 可以使用[ **！ irpfind**](-irpfind.md)命令查找相关的 irp。
+若要查看有关 IOCTL 的信息，我们首先找到相关的 IRP。 可以使用 [**！ irpfind**](-irpfind.md) 命令查找相关的 irp。
 
-使用[ **！ irp**](-irp.md)命令显示有关 irp 的信息。
+使用 [**！ irp**](-irp.md) 命令显示有关 irp 的信息。
 
 ```dbgcmd
 0: kd> !irp ffffd581a6c6cd30
@@ -86,7 +86,7 @@ No Mdl: No System Buffer: Thread 00000000:  Irp stack trace.
                                                 Args: ffffd581a6c61a50 00000000 0x220003 00000000
 ```
 
-显示的第三个参数（在本例中为*0x220003*）是 IOCTL 代码。 使用 IOCTL 代码显示有关 IOCTL 的信息，在本例中为[**ioctl\_内部\_USB\_提交\_URB**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbioctl/ni-usbioctl-ioctl_internal_usb_submit_urb)。
+显示的第三个参数（在本例中为 *0x220003*）是 IOCTL 代码。 使用 IOCTL 代码显示有关 IOCTL 的信息，在本例中为 [**ioctl \_ 内部 \_ USB \_ SUBMIT \_ URB**](/windows-hardware/drivers/ddi/usbioctl/ni-usbioctl-ioctl_internal_usb_submit_urb)。
 
 ```dbgcmd
 0: kd> !ioctldecode 0x220003
@@ -114,17 +114,11 @@ Function       : 0x33
 
 尽管未标识 IOCTL，但会显示有关 IOCTL 字段的信息。
 
-请注意，只有公共定义的 IOCTLs 的子集才能由 **！ ioctldecode**命令标识。
+请注意，只有公共定义的 IOCTLs 的子集才能由 **！ ioctldecode** 命令标识。
 
-有关 IOCTLs 的详细信息，请参阅[I/o 控制代码简介](https://docs.microsoft.com/windows-hardware/drivers/kernel/introduction-to-i-o-control-codes)。
+有关 IOCTLs 的详细信息，请参阅 [I/o 控制代码简介](../kernel/introduction-to-i-o-control-codes.md)。
 
-有关 Irp 和 IOCTLs 的更多常规信息，请参阅*Windows 内部机制*，方法为 Russinovich，David 为所罗门群岛和 Alex Ionescu。
-
- 
+有关 Irp 和 IOCTLs 的更多常规信息，请参阅 *Windows 内部机制* ，方法为 Russinovich，David 为所罗门群岛和 Alex Ionescu。
 
  
-
-
-
-
 

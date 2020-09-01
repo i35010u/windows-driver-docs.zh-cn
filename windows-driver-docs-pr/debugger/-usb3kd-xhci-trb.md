@@ -1,6 +1,6 @@
 ---
 title: usb3kd xhci_trb
-description: Xhci_trb usb3kd 扩展显示 USB 3.0 主机控制器使用的一个或多个传输请求块（TRBs）
+description: 'Xhci_trb usb3kd 扩展显示 USB 3.0 主机控制器使用的一个或多个传输请求块 (TRBs) '
 ms.assetid: 6EC90908-320E-4908-BE53-1AD01A81B140
 keywords:
 - usb3kd xhci_trb Windows 调试
@@ -12,17 +12,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 60ffcd92318d85827366001e83fc6d2cab3b9699
-ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
+ms.openlocfilehash: e74f6d02a3977ad0341a8a957f29cdb84b19ea9c
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84534098"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89216262"
 ---
 # <a name="usb3kdxhci_trb"></a>！ usb3kd. xhci \_ trb
 
 
-[**！ Usb3kd. xhci \_ trb**](-usb3kd-device-info.md)扩展显示 USB 3.0 主机控制器使用的一个或多个传输请求块（TRBs）
+[**！ Usb3kd. xhci \_ trb**](-usb3kd-device-info.md)扩展显示 USB 3.0 主机控制器使用的一个或多个传输请求块 (TRBs) 
 
 ```dbgcmd
 !usb3kd.xhci_trb VirtualAddress Count
@@ -39,25 +39,25 @@ TRB 的虚拟地址。
 TRB 的物理地址。
 
 <span id="_______Count______"></span><span id="_______count______"></span><span id="_______COUNT______"></span>*计数*   
-要显示的连续 TRBs 数，从*VirtualAddress*或*PhysicalAddress*开始。
+要显示的连续 TRBs 数，从 *VirtualAddress* 或 *PhysicalAddress*开始。
 
-<span id="_______1______"></span>2   
+<span id="_______1______"></span> 2   
 指定该地址是一个物理地址。
 
 ## <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 
-Usb3kd
+Usb3kd.dll
 
 <a name="remarks"></a>备注
 -------
 
-输出[**！ xhci \_ trb**](-usb3kd-device-info.md)命令基于 USB 3.0 主机控制器驱动程序（UsbXhci .sys）维护的数据结构。 有关 usb 3.0 主机控制器驱动程序和 USB 堆栈中其他驱动程序的详细信息，请参阅[Windows 中的 usb 主机端驱动程序](https://docs.microsoft.com/windows-hardware/drivers/usbcon/usb-3-0-driver-stack-architecture)。
+Output [**！ xhci \_ trb**](-usb3kd-device-info.md) 命令基于 USB 3.0 主机控制器驱动程序所维护的数据结构 ( # A0) 。 有关 usb 3.0 主机控制器驱动程序和 USB 堆栈中其他驱动程序的详细信息，请参阅 [Windows 中的 usb 主机端驱动程序](../usbcon/usb-3-0-driver-stack-architecture.md)。
 
 <a name="examples"></a>示例
 --------
 
-在下面的示例中， **0x844d7c00**是 TRB 的虚拟地址。 **1**是计数，它指定要显示的连续 TRBs 的数目。
+在下面的示例中， **0x844d7c00** 是 TRB 的虚拟地址。 **1**是计数，它指定要显示的连续 TRBs 的数目。
 
 ```dbgcmd
 0: kd> !xhci_trb 0x844d7c00 1
@@ -65,7 +65,7 @@ Usb3kd
         [  0] ISOCH        0x844d7c00 CycleBit 1 IOC 0 CH 1 BEI 0 InterrupterTarget 1 TransferLength  2688 TDSize  0 TBC 0 TLBPC 2 Frame 0x3D2
 ```
 
-在下面的示例中， **0x0dced7c00**是 TRB 的物理地址。 **4**是计数，它指定要显示的连续 TRBs 的数目。 **1**指定地址为物理地址。
+在下面的示例中， **0x0dced7c00** 是 TRB 的物理地址。 **4**是计数，它指定要显示的连续 TRBs 的数目。 **1**指定地址为物理地址。
 
 ```dbgcmd
 0: kd> !xhci_trb 0x0dced7c00 4 1
@@ -83,14 +83,7 @@ Usb3kd
 
 [**！ xhci \_ dumpall**](-usb3kd-xhci-dumpall.md)
 
-[通用串行总线（USB）驱动程序](https://docs.microsoft.com/windows-hardware/drivers/usbcon/)
+[ (USB) 驱动程序的通用串行总线](../usbcon/index.md)
 
  
-
- 
-
-
-
-
-
 

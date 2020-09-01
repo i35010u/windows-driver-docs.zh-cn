@@ -3,50 +3,44 @@ title: 安装 SymProxy
 description: 安装 SymProxy
 ms.assetid: 63633de7-d254-415d-bf06-c0e81bd03e74
 keywords:
-- SymProxy 安装
+- SymProxy，安装
 ms.date: 03/12/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 378343416a1cc61c49b4353a97794154ccd58f0e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c6dd0cf6482859cc70869e434079e54245c5dc09
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63371646"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89216660"
 ---
 # <a name="installing-symproxy"></a>安装 SymProxy
 
 
-## <a name="span-idsummaryofinstallationtasksspanspan-idsummaryofinstallationtasksspanspan-idsummaryofinstallationtasksspansummary-of-installation-tasks"></a><span id="Summary_of_installation_tasks"></span><span id="summary_of_installation_tasks"></span><span id="SUMMARY_OF_INSTALLATION_TASKS"></span>安装任务的摘要
+## <a name="span-idsummary_of_installation_tasksspanspan-idsummary_of_installation_tasksspanspan-idsummary_of_installation_tasksspansummary-of-installation-tasks"></a><span id="Summary_of_installation_tasks"></span><span id="summary_of_installation_tasks"></span><span id="SUMMARY_OF_INSTALLATION_TASKS"></span>安装任务摘要
 
 
-下面概述了用于安装和配置 SymProxy 的任务。
+下面总结了用于安装和配置 SymProxy 的任务。
 
--   SymProxy 文件需要复制到 %WINDIR%\\system32\\iis inetsrv 文件夹。 下面将讨论此任务。
+-   需要将 SymProxy 文件复制到 IIS 的% WINDIR% \\ system32 \\ inetsrv 文件夹。 此任务如下所述。
 
--   需要为 SymProxy 配置注册表。 有关详细信息请参阅[配置注册表](configuring-the-registry.md)。
+-   需要为 SymProxy 配置注册表。 有关详细信息，请参阅 [配置注册表](configuring-the-registry.md)。
 
--   清单需要注册为性能计数器和 ETW 事件和事件日志需要进行配置。
+-   需要将清单注册为性能计数器和 ETW 事件，并且需要配置事件日志。
 
--   需要配置 IIS。 有关详细信息，请参阅[选择网络安全凭据](choosing-network-security-credentials.md)并[配置 IIS 以实现 SymProxy](configuring-iis-for-symproxy.md)。
+-   需要配置 IIS。 有关详细信息，请参阅 [选择网络安全凭据](choosing-network-security-credentials.md) 和 [为 SymProxy 配置 IIS](configuring-iis-for-symproxy.md)。
 
-可以使用 Install.cmd 文件自动完成这些步骤。 有关详细信息，请参阅[SymProxy Automated Installation](symproxy-automated-installation.md)。
+可以使用 Install .cmd 文件自动执行这些步骤。 有关详细信息，请参阅 [SymProxy 自动安装](symproxy-automated-installation.md)。
 
-## <a name="span-idcopythesymproxyfilestoiisspanspan-idcopythesymproxyfilestoiisspanspan-idcopythesymproxyfilestoiisspancopy-the-symproxy-files-to-iis"></a><span id="Copy_the_SymProxy_files_to_IIS"></span><span id="copy_the_symproxy_files_to_iis"></span><span id="COPY_THE_SYMPROXY_FILES_TO_IIS"></span>将 SymProxy 文件复制到 IIS
+## <a name="span-idcopy_the_symproxy_files_to_iisspanspan-idcopy_the_symproxy_files_to_iisspanspan-idcopy_the_symproxy_files_to_iisspancopy-the-symproxy-files-to-iis"></a><span id="Copy_the_SymProxy_files_to_IIS"></span><span id="copy_the_symproxy_files_to_iis"></span><span id="COPY_THE_SYMPROXY_FILES_TO_IIS"></span>将 SymProxy 文件复制到 IIS
 
 
-SymProxy 文件包含在 Windows 驱动程序工具包调试器目录中。 例如，这是 Windows 10 套件的 64 位文件的位置。 C:\\Program Files (x86)\\Windows 工具包\\10\\调试器\\x64\\symproxy。
+SymProxy 文件包含在 Windows 驱动程序工具包的 "调试程序" 目录中。 例如，这是适用于 Windows 10 工具包的64位文件的位置。 C： \\ Program Files (x86) \\ Windows 工具包 \\ 10 \\ 调试器 \\ x64 \\ symproxy。
 
-若要在服务器上安装 SymProxy，复制 symproxy.dll、 symsrv.dll 和 symproxy.man 到 %WINDIR%\\system32\\inetsrv。
+若要在服务器上安装 SymProxy，请将 symproxy.dll、symsrv.dll 和 SymProxy 复制到% WINDIR% \\ system32 \\ inetsrv。
 
-为了防止访问 Microsoft 符号存储区中可能会出现的问题，创建空白文件，名为 %WINDIR%\\system32\\inetsrv\\symsrv.yes。 此文件的内容并不重要。 当存在 symsrv.yes 文件时，它会自动接受 EULA 以供 Microsoft 公共符号存储区。
+若要防止在访问 Microsoft 符号存储时出现问题，请创建名为% WINDIR% \\ system32 inetsrv symsrv 的空白 \\ 文件 \\ 。 此文件的内容并不重要。 如果存在 symsrv 文件，它会自动接受 Microsoft 公共符号存储的 EULA。
 
-请注意，通常情况下随一起安装的 IIS 和 Windows server 如"Baltimore CyberTrust Root"用于对上游提供程序的 HTTPS/TLS 通信，它们必须位于受信任的根证书存储 SymProxy 的计算机上正在运行。 有关 SSL 问题疑难解答的一般信息，请参阅[故障排除 SSL 相关问题 （服务器证书）](https://docs.microsoft.com/iis/troubleshoot/security-issues/troubleshooting-ssl-related-issues-server-certificate)。
-
- 
+请注意，通常与 IIS 和 Windows server 一起安装的证书（如 "巴尔的摩 CyberTrust Root"）用于与上游提供程序的 HTTPS/TLS 通信，它们需要位于运行 SymProxy 的计算机上的受信任根存储区中。 有关解决 SSL 问题的常规信息，请参阅 [排查 ssl 相关问题 (服务器证书) ](/iis/troubleshoot/security-issues/troubleshooting-ssl-related-issues-server-certificate)。
 
  
-
-
-
-
 

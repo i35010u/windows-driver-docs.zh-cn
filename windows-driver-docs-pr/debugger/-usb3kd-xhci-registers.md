@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 1956bd608ffa8446f64149bfd502d0b8eafe1cf8
-ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
+ms.openlocfilehash: 5f29e77ea1e3fcf0f3f410c71c9a31a7bdfae23c
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84534888"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89216284"
 ---
 # <a name="usb3kdxhci_registers"></a>！ usb3kd xhci \_ 注册
 
@@ -32,22 +32,22 @@ ms.locfileid: "84534888"
 
 
 <span id="_______DeviceExtension______"></span><span id="_______deviceextension______"></span><span id="_______DEVICEEXTENSION______"></span>*DeviceExtension*   
-主机控制器的功能设备对象的设备扩展（FDO）的地址。
+主机控制器的功能设备对象的设备扩展的地址 (FDO) 。
 
 ## <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 
-Usb3kd
+Usb3kd.dll
 
-<a name="remarks"></a>注解
+<a name="remarks"></a>备注
 -------
 
-**Xhci \_ 寄存器**命令的输出基于 USB 3.0 主机控制器驱动程序（UsbXhci .sys）维护的数据结构。 有关 usb 3.0 主机控制器驱动程序和 USB 堆栈中其他驱动程序的详细信息，请参阅[Windows 中的 usb 主机端驱动程序](https://docs.microsoft.com/windows-hardware/drivers/usbcon/usb-3-0-driver-stack-architecture)。
+输出 **！ xhci \_ 注册** 命令基于 USB 3.0 主机控制器驱动程序所维护的数据结构 ( # A0) 。 有关 usb 3.0 主机控制器驱动程序和 USB 堆栈中其他驱动程序的详细信息，请参阅 [Windows 中的 usb 主机端驱动程序](../usbcon/usb-3-0-driver-stack-architecture.md)。
 
 <a name="examples"></a>示例
 --------
 
-若要获取设备扩展的地址，请查看[**！ xhci \_ dumpall**](-usb3kd-xhci-dumpall.md)命令的输出。 在以下示例中，设备扩展的地址为0xfffffa800536e2d0。
+若要获取设备扩展的地址，请查看 [**！ xhci \_ dumpall**](-usb3kd-xhci-dumpall.md) 命令的输出。 在以下示例中，设备扩展的地址为0xfffffa800536e2d0。
 
 ```dbgcmd
 3: kd> !xhci_dumpall
@@ -65,7 +65,7 @@ Usb3kd
     ...
 ```
 
-现在可以将设备扩展的地址传递给 **！ xhci \_ 注册**命令。
+现在可以将设备扩展的地址传递给 **！ xhci \_ 注册** 命令。
 
 ```dbgcmd
 3: kd> !xhci_registers 0xfffffa800536e2d0
@@ -113,14 +113,7 @@ Usb3kd
 
 [**！ xhci \_ dumpall**](-usb3kd-xhci-dumpall.md)
 
-[通用串行总线（USB）驱动程序](https://docs.microsoft.com/windows-hardware/drivers/usbcon/)
+[ (USB) 驱动程序的通用串行总线](../usbcon/index.md)
 
  
-
- 
-
-
-
-
-
 

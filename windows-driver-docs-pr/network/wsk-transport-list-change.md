@@ -4,21 +4,21 @@ description: WSK_TRANSPORT_LIST_CHANGE
 ms.assetid: 3b12d692-467c-4d31-bd2a-bb6e34d87fde
 ms.date: 07/18/2017
 keywords:
-- WSK_TRANSPORT_LIST_CHANGE 从 Windows Vista 开始的网络驱动程序
+- 从 Windows Vista 开始 WSK_TRANSPORT_LIST_CHANGE 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: abb30fc471c3035dd93fc27a11f6405c44c948aa
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: c25399bfc09649acd0e98fe23b8a6d217816a3c8
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72844418"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89216072"
 ---
-# <a name="wsk_transport_list_change"></a>WSK\_传输\_列表\_更改
+# <a name="wsk_transport_list_change"></a>WSK \_ 传输 \_ 列表 \_ 更改
 
 
-WSK 应用程序使用 WSK\_传输\_列表\_更改客户端控制操作，以便在可用网络传输列表发生更改时接收通知。
+WSK 应用程序使用 WSK \_ 传输 \_ 列表 \_ 更改客户端控制操作，以便在可用网络传输列表发生更改时接收通知。
 
-若要在可用网络传输列表发生更改时接收通知，WSK 应用程序需要使用以下参数调用[**WskControlClient**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_control_client)函数。
+若要在可用网络传输列表发生更改时接收通知，WSK 应用程序需要使用以下参数调用 [**WskControlClient**](/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_control_client) 函数。
 
 <table>
 <colgroup>
@@ -28,7 +28,7 @@ WSK 应用程序使用 WSK\_传输\_列表\_更改客户端控制操作，以便
 <thead>
 <tr class="header">
 <th>参数</th>
-<th>Value</th>
+<th>值</th>
 </tr>
 </thead>
 <tbody>
@@ -42,7 +42,7 @@ WSK 应用程序使用 WSK\_传输\_列表\_更改客户端控制操作，以便
 </tr>
 <tr class="odd">
 <td><p><em>InputBuffer</em></p></td>
-<td><p>NULL</p></td>
+<td><p>Null</p></td>
 </tr>
 <tr class="even">
 <td><p><em>OutputSize</em></p></td>
@@ -50,11 +50,11 @@ WSK 应用程序使用 WSK\_传输\_列表\_更改客户端控制操作，以便
 </tr>
 <tr class="odd">
 <td><p><em>OutputBuffer</em></p></td>
-<td><p>NULL</p></td>
+<td><p>Null</p></td>
 </tr>
 <tr class="even">
 <td><p><em>OutputSizeReturned</em></p></td>
-<td><p>NULL</p></td>
+<td><p>Null</p></td>
 </tr>
 <tr class="odd">
 <td><p><em>Irp</em></p></td>
@@ -65,7 +65,7 @@ WSK 应用程序使用 WSK\_传输\_列表\_更改客户端控制操作，以便
 
 此客户端控制操作需要 IRP。
 
-如果 WSK 应用程序调用[**WskDeregister**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/nf-wsk-wskderegister)将其自身从 WSK 子系统分离，则 WSK 子系统将取消任何挂起的 irp。
+如果 WSK 应用程序调用 [**WskDeregister**](/windows-hardware/drivers/ddi/wsk/nf-wsk-wskderegister) 将其自身从 WSK 子系统分离，则 WSK 子系统将取消任何挂起的 irp。
 
 <a name="requirements"></a>要求
 ------------
@@ -82,15 +82,10 @@ WSK 应用程序使用 WSK\_传输\_列表\_更改客户端控制操作，以便
 </tr>
 <tr class="even">
 <td><p>标头</p></td>
-<td>Wsk （包括 Wsk）</td>
+<td>Wsk (包含 Wsk) </td>
 </tr>
 </tbody>
 </table>
 
  
-
- 
-
-
-
 

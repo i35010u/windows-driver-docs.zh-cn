@@ -1,52 +1,52 @@
 ---
 title: OID_WDI_TASK_SEND_RESPONSE_ACTION_FRAME
-description: OID_WDI_TASK_SEND_RESPONSE_ACTION_FRAME 请求 IHV 组件发送的响应操作帧。
+description: OID_WDI_TASK_SEND_RESPONSE_ACTION_FRAME IHV 组件发送响应操作帧的请求。
 ms.assetid: DA2FF006-BA81-48B9-8AAD-694818E78AEF
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 OID_WDI_TASK_SEND_RESPONSE_ACTION_FRAME 网络驱动程序
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: f05257da5bda2ea345898376b93c4f97d37fb275
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: f9af1a967dcb83ec5deb22805fe208f77d3838ac
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67387223"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89217249"
 ---
-# <a name="oidwditasksendresponseactionframe"></a>OID\_WDI\_TASK\_SEND\_RESPONSE\_ACTION\_FRAME
+# <a name="oid_wdi_task_send_response_action_frame"></a>OID \_ WDI \_ TASK \_ 发送 \_ 响应 \_ 操作 \_ 帧
 
 
-OID\_WDI\_任务\_发送\_响应\_操作\_帧请求 IHV 组件发送的响应操作帧。
+OID \_ WDI \_ TASK \_ 发送 \_ 响应 \_ 操作 \_ 帧请求 IHV 组件发送响应操作帧。
 
-| Object | 中止支持                                           | 默认优先级 （主机驱动程序策略） | 正常执行时间 （秒） |
+| 对象 | 支持中止                                           | 主机驱动程序策略 (默认优先级)  | 正常执行时间 (秒)  |
 |--------|---------------------------------------------------------|---------------------------------------|---------------------------------|
-| Port   | 是。 端口必须保持干净状态后中止。 | 3                                     | 5                               |
+| 端口   | 是。 中止后，端口必须处于干净状态。 | 3                                     | 5                               |
 
  
 
-此任务是时间敏感，必须在接收此数据包的 100 毫秒内提供服务。
+此任务区分时间，必须在收到此数据包的100毫秒内提供服务。
 
-最大超时时间尚未过期，而该端口应重试将在帧发送到指定的通道上的远程设备。
+当最大超时未过期时，端口应重试将帧发送到指定通道上的远程设备。
 
-任务已完成或者本地设备从远程设备操作帧发送接收确认时，在超时到期，或主机中止操作。 同一个通道停留时间过期后，设备可能表示任务完成。
+当本地设备接收到发送的操作帧的确认、超时过期或主机中止操作时，任务完成。 在同一通道停留时间到期后，设备可能会指示任务完成。
 
-主机可能会决定中止此操作并继续/重试操作帧 exchange，因此，必须在设备是能够快速中止此操作。
+主机可能决定中止此操作并继续/重试操作帧交换，因此设备必须能够快速中止此操作。
 
 ## <a name="task-parameters"></a>任务参数
 
 
-| TLV                                                                                                               | 允许多个 TLV 实例 | 可选 | 描述                                      |
+| TLV                                                                                                               | 允许多个 TLV 实例 | 可选 | 说明                                      |
 |-------------------------------------------------------------------------------------------------------------------|--------------------------------|----------|--------------------------------------------------|
-| [**WDI\_TLV\_SEND\_ACTION\_FRAME\_RESPONSE\_PARAMETERS**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-send-action-frame-response-parameters) |                                |          | 发送操作帧响应参数。 |
-| [**WDI\_TLV\_操作\_帧\_正文**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-action-frame-body)                                           |                                |          | 操作帧正文中。                           |
+| [**WDI \_ TLV \_ 发送 \_ 操作 \_ 帧 \_ 响应 \_ 参数**](./wdi-tlv-send-action-frame-response-parameters.md) |                                |          | 用于发送操作帧响应的参数。 |
+| [**WDI \_ TLV \_ 操作 \_ 框架 \_ 正文**](./wdi-tlv-action-frame-body.md)                                           |                                |          | 操作框架正文。                           |
 
  
 
-## <a name="task-completion-indication"></a>指示任务完成
+## <a name="task-completion-indication"></a>任务完成指示
 
 
-[NDIS\_状态\_WDI\_指示\_发送\_响应\_操作\_帧\_完成](ndis-status-wdi-indication-send-response-action-frame-complete.md)
+[NDIS \_ 状态 \_ WDI \_ 指示 \_ 发送 \_ 响应 \_ 操作 \_ 帧 \_ 完成](ndis-status-wdi-indication-send-response-action-frame-complete.md)
 
 <a name="requirements"></a>要求
 ------------
@@ -66,16 +66,11 @@ OID\_WDI\_任务\_发送\_响应\_操作\_帧请求 IHV 组件发送的响应操
 <td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
-<td><p>Header</p></td>
-<td>Dot11wdi.h</td>
+<td><p>标头</p></td>
+<td>Dot11wdi</td>
 </tr>
 </tbody>
 </table>
 
  
-
- 
-
-
-
 

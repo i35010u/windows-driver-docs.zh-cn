@@ -6,24 +6,19 @@ keywords:
 - GetPrintCapabilities
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d2c50be04253a076c730986ec24ceca8fdb563d9
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 8a19f01085a58ea252b1f7f0de03e40d21b30f2f
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67369001"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89217739"
 ---
 # <a name="getprintcapabilities"></a>GetPrintCapabilities
 
 
-[ **IPrintTicketProvider::GetPrintCapabilities** ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff554365(v=vs.85))例程必须返回有效的 PrintCapabilities 文档。 对于基本实现，文档可以非常简单但打印驱动程序不能在不公开 PrintCapabilities 文档中的打印票证支持任何功能。 打印票证支持添加到您的打印驱动程序时，将需要返回到此例程，并将这些功能添加到 PrintCapabilities 文档。
+[**IPrintTicketProvider：： GetPrintCapabilities**](/previous-versions/windows/hardware/drivers/ff554365(v=vs.85))例程必须返回有效的 PrintCapabilities 文档。 对于基本实现，文档可能非常简单，但打印驱动程序不支持 PrintCapabilities 文档中未公开的打印票证中的任何功能。 将打印票证支持添加到打印驱动程序时，需要返回到此例程，并将这些功能添加到 PrintCapabilities 文档中。
 
-即使对于 DEVMODE PrintTicket 转换通过系统提供的功能，系统不提供任何默认 PrintCapabilities 文档。 打印驱动程序必须创建并返回相应的 PrintCapabilities 文档。
-
- 
+即使系统通过 DEVMODE 到 PrintTicket 转换来提供的功能，系统也不提供任何默认的 PrintCapabilities 文档。 打印驱动程序必须创建并返回相应的 PrintCapabilities 文档。
 
  
-
-
-
 

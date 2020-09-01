@@ -1,11 +1,11 @@
 ---
 title: .cordll（控制 CLR 调试）
-description: Cordll 命令控制托管代码调试和 Microsoft .NET 公共语言运行时（CLR）。
+description: Cordll 命令控制托管代码调试和 (CLR) Microsoft .NET 公共语言运行时。
 ms.assetid: d46965b3-4f20-4e25-82e6-79e7fb9b4838
 keywords:
-- Control CLR 调试（. cordll）命令
-- CLR （公共语言运行时）
-- 。 cordll （控件 CLR 调试） Windows 调试
+- 控制 CLR 调试 ( cordll) 命令
+- 'CLR (公共语言运行时) '
+- cordll (控制 CLR 调试) Windows 调试
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -14,16 +14,16 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 174b7bea404ef5240d74d16f5403cd60ac1e28e4
-ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
+ms.openlocfilehash: 7fd076ce4a35071479adc0353f280a7b09ab65fa
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84534238"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89215722"
 ---
 # <a name="cordll-control-clr-debugging"></a>.cordll（控制 CLR 调试）
 
-**Cordll**命令控制托管代码调试和 Microsoft .NET 公共语言运行时（CLR）。
+**Cordll**命令控制托管代码调试和 (CLR) Microsoft .NET 公共语言运行时。
 
 ```dbgsyntax
 .cordll [Options]
@@ -34,10 +34,10 @@ ms.locfileid: "84534238"
 <span id="_______Options______"></span><span id="_______options______"></span><span id="_______OPTIONS______"></span>*选项*   
 以下一个或多个选项：
 
-<span id="-l___lower-case_L_"></span><span id="-l___lower-case_l_"></span><span id="-L___LOWER-CASE_L_"></span>**-l** （小写 l）  
+<span id="-l___lower-case_L_"></span><span id="-l___lower-case_l_"></span><span id="-L___LOWER-CASE_L_"></span>**-l** (小写 l)   
 加载 CLR 调试模块。
 
-<span id="-I_Module___upper-case_i__"></span><span id="-i_module___upper-case_i__"></span><span id="-I_MODULE___UPPER-CASE_I__"></span>**-I**  **** *模块*（大写 i）   
+<span id="-I_Module___upper-case_i__"></span><span id="-i_module___upper-case_i__"></span><span id="-I_MODULE___UPPER-CASE_I__"></span>**-I**  **** *模块* (大写 i)    
 指定要调试的 CLR 模块的名称或基址。 有关详细信息，请参阅“备注”。
 
 <span id="-u"></span><span id="-U"></span>**-u**  
@@ -59,10 +59,10 @@ ms.locfileid: "84534238"
 指定 CLR 调试模块的目录路径。
 
 <span id="-se"></span><span id="-SE"></span>**-se**  
-使用 CLR 调试模块 mscordacwks 的短名称启用。
+使用 CLR 调试模块的短名称启用，mscordacwks.dll。
 
 <span id="-sd"></span><span id="-SD"></span>**-sd**  
-禁用使用 CLR 调试模块 mscordacwks 的短名称。 相反，调试器使用 CLR 调试模块的长名称 mscordacwks \_ &lt; &gt; 。 如果你担心不匹配，则关闭短名称用法可使你避免使用本地 CLR。
+禁用使用 CLR 调试模块的短名称，mscordacwks.dll。 相反，调试器使用 CLR 调试模块的长名称 mscordacwks \_ &lt; &gt; 。 如果你担心不匹配，则关闭短名称用法可使你避免使用本地 CLR。
 
 <span id="-ve"></span><span id="-VE"></span>**-ve**  
 打开 CLR 模块加载的详细模式。
@@ -95,28 +95,28 @@ ms.locfileid: "84534238"
 
  
 
-<a name="remarks"></a>注解
+<a name="remarks"></a>备注
 -------
 
-若要调试托管应用程序，调试器必须加载与应用程序已加载的 CLR 相对应的数据访问组件（DAC）。 但是，在某些情况下，应用程序会加载多个 CLR。 在这种情况下，可以使用**I**参数指定调试器应加载的 DAC。 CLR 的版本2命名为 Mscorwks.dll，并且 CLR 的版本4命名为 Clr。 下面的示例演示如何指定调试器应为版本2（mscorwks.dll）加载 DAC。
+若要调试托管应用程序，调试器必须加载与应用程序已加载的 CLR)  (DAC 的数据访问组件。 但是，在某些情况下，应用程序会加载多个 CLR。 在这种情况下，可以使用 **I** 参数指定调试器应加载的 DAC。 CLR 的版本2命名为 Mscorwks.dll，而 CLR 的版本4命名为 Clr.dll。 下面的示例演示如何指定调试器应为版本 2 (mscorwks.dll) 加载 DAC。
 
 ```dbgcmd
 .cordll -I mscorwks -lp c:\dacFolder
 ```
 
-如果省略**I**参数，则默认情况下，调试器使用版本4。 例如，以下两个命令是等效的。
+如果省略 **I** 参数，则默认情况下，调试器使用版本4。 例如，以下两个命令是等效的。
 
 ```dbgcmd
 .cordll -lp c:\dacFolder
 .cordll -I clr -lp c:\dacFolder
 ```
 
-Sos 是用于调试托管代码的组件。 当前版本的 Windows 调试工具不包括任何版本的 sos。 有关如何获取 sos 的信息，请参阅[使用 Windows 调试器调试托管代码](debugging-managed-code.md)中*的获取 sos 调试扩展（sos）* 。
+Sos.dll 是用于调试托管代码的组件。 当前版本的 Windows 调试工具不包括任何 sos.dll 版本。 有关如何获取 sos.dll 的信息，请参阅[使用 Windows 调试器调试托管代码](debugging-managed-code.md)中* ( # A1) 获取 SOS 调试扩展*。
 
-内核模式调试支持**cordll**命令。 但是，除非在中分页了所需的内存，否则此命令可能不起作用。
+内核模式调试支持 **cordll** 命令。 但是，除非在中分页了所需的内存，否则此命令可能不起作用。
 
 ## <a name="see-also"></a>另请参阅
 
 [使用 Windows 调试器调试托管代码](debugging-managed-code.md)
 
-[SOS 调试扩展](https://docs.microsoft.com/dotnet/framework/tools/sos-dll-sos-debugging-extension)
+[SOS 调试扩展](/dotnet/framework/tools/sos-dll-sos-debugging-extension)

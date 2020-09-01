@@ -3,17 +3,17 @@ title: 使用 UDP 封装的 ESP 数据包遍历 NAT 和 NAPT
 description: 使用 UDP 封装的 ESP 数据包遍历 NAT 和 NAPT
 ms.assetid: 9bfd6a7c-2c24-419e-b82d-ef6ef8fe1fa5
 keywords:
-- UDP 封装的 ESP 数据包 WDK IPsec 卸载、 transversing Nat 和 NAPTs
+- UDP 封装的 ESP 数据包 WDK IPsec 卸载，transversing Nat 和 NAPTs
 - 网络地址转换器 WDK IPsec 卸载
 - 网络地址端口转换器 WDK IPsec 卸载
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1f8bc04aa31a8c1cc08607571dff3c3937045111
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: c693348f9c27edb7ecf801998178a10fc6140759
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67368453"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89215789"
 ---
 # <a name="traversing-nats-and-napts-with-udp-encapsulated-esp-packets"></a>使用 UDP 封装的 ESP 数据包遍历 NAT 和 NAPT
 
@@ -22,37 +22,31 @@ ms.locfileid: "67368453"
 
 
 
-网络地址转换器 (Nat) 和网络地址端口转换器 (NAPTs) 将转换多个专用网络地址转换一个路由的 IP 公共地址，反之亦然，从而允许多个系统共享单个 IP 地址。 在这种方式，Nat 和 NAPTs 有助于缓解的路由的 IPv4 地址不足。
+网络地址转换器 (Nat) 和网络地址端口转换器 (NAPTs) 将多个专用网络地址转换为一个路由 IP 公用地址，反之亦然，从而允许多个系统共享单个 IP 地址。 通过这种方式，Nat 和 NAPTs 有助于缓解路由 IPv4 地址的不足。
 
-但是，Nat 和 NAPTs 可能导致问题的 Internet 协议安全性 (IPsec)。 由于 Nat 和 NAPTs 修改数据包的 IP 标头，它们会导致受保护的 AH 数据包校验和验证失败。 NAPTs 修改 TCP 和 UDP 端口，不能修改的 ESP 保护的数据包加密的 TCP 标头中的端口。
+但是，Nat 和 NAPTs 可能 (IPsec) 导致 Internet 协议安全问题。 由于 Nat 和 NAPTs 修改了数据包的 IP 标头，因此它们会导致受 AH 保护的数据包的校验和验证失败。 用于修改 TCP 和 UDP 端口的 NAPTs 无法修改受 ESP 保护的数据包的加密 TCP 标头中的端口。
 
-UDP 封装可解决此问题。 在实践中，仅用于 ESP 数据包的 UDP 封装。 NAT 或 NAPT 可以修改的 UDP 封装 ESP 数据包而不需要重大 ESP 身份验证并正在知难而退由 ESP 加密的加密的 IP 和 UDP 标头。 ESP 数据包的 UDP 封装的详细说明，请参阅[UDP 封装的 NAT 理由通过 IPsec](https://go.microsoft.com/fwlink/p/?linkid=9856)。
+UDP 封装解决了此问题。 实际上，UDP 封装仅用于 ESP 数据包。 NAT 或 NAPT 可以修改 UDP 封装的 ESP 包的未加密的 IP 和 UDP 标头，而不会中断 ESP 身份验证，也不会通过 ESP 加密来 stymied。 有关 ESP 数据包的 UDP 封装的详细说明，请参阅 [Udp 封装的 IPsec OVER NAT 理由](https://go.microsoft.com/fwlink/p/?linkid=9856)。
 
-Microsoft 支持上端口 4500 ESP 数据包的 UDP 封装。 IKE 对等机端口 500 上的启动协商后，检测支持 NAT 遍历和检测在路径上的 NAT 或 NAPT，它们可以"浮动"IKE 和 UDP ESP 通信传输到端口 4500 协商。 有关此协商的详细信息，请参阅[协商的 NAT 遍历在 IKE 中](https://go.microsoft.com/fwlink/p/?linkid=9857)。
+Microsoft 支持端口4500上的 ESP 数据包的 UDP 封装。 IKE 对等节点在端口500上启动协商后，检测对 NAT 遍历的支持，并按路径检测 NAT 或 NAPT，它们可以协商到端口4500的 "float" IKE 和 UDP-ESP 流量。 有关此协商的详细信息，请参阅 [IKE 中的 NAT 遍历协商](https://go.microsoft.com/fwlink/p/?linkid=9857)。
 
-浮点到端口 4500 为 NAT 遍历提供以下优势：
+为 NAT 遍历浮动到端口4500具有以下优势：
 
--   它会绕过"ipsec"Nat 或 NAPTs 中断端口 500 UDP ESP 封装。
+-   它会绕过在端口500上打破 UDP ESP 封装的 "IPsec 感知" Nat 或 NAPTs。
 
--   它可以提高性能。 ESP 数据包的 UDP 封装端口 4500 比端口 500 上会更有效。 有关详细信息，请参阅[UDP ESP 封装类型](udp-esp-encapsulation-types.md)。
+-   它提高了性能。 与端口500相比，ESP 数据包的 UDP 封装在端口4500上更有效。 有关详细信息，请参阅 [UDP-ESP 封装类型](udp-esp-encapsulation-types.md)。
 
-若要支持 UDP ESP 封装，微型端口驱动程序或 NIC （或两者） 必须：
+若要支持 UDP ESP 封装，可以使用微型端口驱动程序或 NIC (或二者) ：
 
--   能够处理在接收路径中，ESP 数据包中所述[接收路径中卸载 IPsec 任务](offloading-ipsec-tasks-in-the-receive-path.md)。
+-   如在接收路径中 [卸载 IPsec 任务](offloading-ipsec-tasks-in-the-receive-path.md)中所述，可以在接收路径中处理 ESP 数据包。
 
--   维护分析器条目的列表。 分析器条目包含 NIC 分析一个或多个安全关联 (Sa) 上的传入 UDP ESP 数据包所需的信息。 有关分析程序的条目的详细信息，请参阅[UDP ESP SAs 和分析器条目](udp-esp-sas-and-parser-entries.md)。
+-   维护分析器条目的列表。 分析器条目包含 NIC 需要解析 (SAs) 上的一个或多个安全关联上的传入 UDP ESP 数据包的信息。 有关分析器条目的详细信息，请参阅 [UDP-ESP SAs 和分析器条目](udp-esp-sas-and-parser-entries.md)。
 
--   维护一份 SAs，以便传输已卸载到 nic。
+-   维护传输已卸载到 NIC 的 SAs 列表。
 
--   支持以下 Oid:
-    -   [OID\_TCP\_TASK\_IPSEC\_ADD\_UDPESP\_SA](https://docs.microsoft.com/windows-hardware/drivers/network/oid-tcp-task-ipsec-add-udpesp-sa)
-    -   [OID\_TCP\_TASK\_IPSEC\_DELETE\_UDPESP\_SA](https://docs.microsoft.com/windows-hardware/drivers/network/oid-tcp-task-ipsec-delete-udpesp-sa)
-
- 
+-   支持以下 Oid：
+    -   [OID \_ TCP \_ 任务 \_ IPSEC \_ ADD \_ UDPESP \_ SA](./oid-tcp-task-ipsec-add-udpesp-sa.md)
+    -   [OID \_ TCP \_ 任务 \_ IPSEC \_ DELETE \_ UDPESP \_ SA](./oid-tcp-task-ipsec-delete-udpesp-sa.md)
 
  
-
-
-
-
 

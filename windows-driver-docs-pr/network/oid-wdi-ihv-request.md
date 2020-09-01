@@ -1,46 +1,46 @@
 ---
 title: OID_WDI_IHV_REQUEST
-description: OID_WDI_IHV_REQUEST 用于转发 IHV 扩展性模块已发送到微型端口的信息。
+description: OID_WDI_IHV_REQUEST 用于转发 IHV 扩展性模块已发送到小型端口的信息。
 ms.assetid: d5639def-ddde-4972-b331-46c0f768d155
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 OID_WDI_IHV_REQUEST 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 6c1a559c619cfe80261ae9677829bbb8f6ab089b
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 06571ab709af749f121bdfcade188bfb2b399ebb
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67387263"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89215835"
 ---
-# <a name="oidwdiihvrequest"></a>OID\_WDI\_IHV\_请求
+# <a name="oid_wdi_ihv_request"></a>OID \_ WDI \_ IHV \_ 请求
 
 
-OID\_WDI\_IHV\_请求用于转发 IHV 扩展性模块已发送到微型端口的信息。
+OID \_ WDI \_ ihv \_ 请求用于转发 IHV 扩展性模块已发送到小型端口的信息。
 
-| 范围 | 设置与任务序列化 | 正常执行时间 （秒） |
+| 作用域 | 设置序列化任务 | 正常执行时间 (秒)  |
 |-------|--------------------------|---------------------------------|
-| Port  | 否                       | 1                               |
+| 端口  | 否                       | 1                               |
 
  
 
-此命令不会用任何任务序列化。 使用其他属性和与 M1-M3 的一项任务，则会序列化。
+此命令不会与任何任务一起序列化。 它使用其他属性和任务的 M1-M3 进行序列化。
 
 ## <a name="command-parameter"></a>命令参数
 
 
-| TLV                                                  | 允许多个 TLV 实例 | 可选 | 描述                                        |
+| TLV                                                  | 允许多个 TLV 实例 | 可选 | 说明                                        |
 |------------------------------------------------------|--------------------------------|----------|----------------------------------------------------|
-| [**WDI\_TLV\_IHV\_DATA**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-ihv-data) |                                | X        | IHV 扩展性模块中的信息。 |
+| [**WDI \_ TLV \_ IHV \_ 数据**](./wdi-tlv-ihv-data.md) |                                | X        | 来自 IHV 扩展性模块的信息。 |
 
  
 
 ## <a name="response-result"></a>响应结果
 
 
-| TLV                                                  | 允许多个 TLV 实例 | 可选 | 描述                                                                                                                 |
+| TLV                                                  | 允许多个 TLV 实例 | 可选 | 说明                                                                                                                 |
 |------------------------------------------------------|--------------------------------|----------|-----------------------------------------------------------------------------------------------------------------------------|
-| [**WDI\_TLV\_IHV\_DATA**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-ihv-data) |                                | X        | 要发送到 IHV 扩展性模块的响应。 数据值将作为转发-为 IHV 扩展性模块。 |
+| [**WDI \_ TLV \_ IHV \_ 数据**](./wdi-tlv-ihv-data.md) |                                | X        | 要发送到 IHV 扩展性模块的响应。 数据值将按原样转发到 IHV 扩展模块。 |
 
  
 
@@ -62,16 +62,11 @@ OID\_WDI\_IHV\_请求用于转发 IHV 扩展性模块已发送到微型端口的
 <td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
-<td><p>Header</p></td>
-<td>Dot11wdi.h</td>
+<td><p>标头</p></td>
+<td>Dot11wdi</td>
 </tr>
 </tbody>
 </table>
 
  
-
- 
-
-
-
 

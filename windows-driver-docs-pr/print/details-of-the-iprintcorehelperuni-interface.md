@@ -6,26 +6,21 @@ keywords:
 - IPrintCoreHelperUni
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5a4a997a061a75e46653cc8ad62d2c34e7623539
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 079447e75c94d61548a461a0a694f87c43c2ed09
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72829016"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89216372"
 ---
 # <a name="details-of-the-iprintcorehelperuni-interface"></a>IPrintCoreHelperUni 接口详细信息
 
 
-**IPrintCoreHelperUni**接口是由提供并在 Unidrv UI 和呈现模块中实现的帮助器接口的版本。 除了基**IPrintCoreHelper**接口的所有方法， **IPrintCoreHelperUni**接口还包含以下方法，这些方法提供对 GDL 快照的访问权限：
+**IPrintCoreHelperUni**接口是由提供并在 Unidrv UI 和呈现模块中实现的帮助器接口的版本。 除了基 **IPrintCoreHelper** 接口的所有方法， **IPrintCoreHelperUni** 接口还包含以下方法，这些方法提供对 GDL 快照的访问权限：
 
--   [**IPrintCoreHelperUni::CreateDefaultGDLSnapshot**](https://docs.microsoft.com/windows-hardware/drivers/ddi/prcomoem/nf-prcomoem-iprintcorehelperuni-createdefaultgdlsnapshot)
+-   [**IPrintCoreHelperUni::CreateDefaultGDLSnapshot**](/windows-hardware/drivers/ddi/prcomoem/nf-prcomoem-iprintcorehelperuni-createdefaultgdlsnapshot)
 
--   [**IPrintCoreHelperUni::CreateGDLSnapshot**](https://docs.microsoft.com/windows-hardware/drivers/ddi/prcomoem/nf-prcomoem-iprintcorehelperuni-creategdlsnapshot)
-
- 
+-   [**IPrintCoreHelperUni::CreateGDLSnapshot**](/windows-hardware/drivers/ddi/prcomoem/nf-prcomoem-iprintcorehelperuni-creategdlsnapshot)
 
  
-
-
-
 

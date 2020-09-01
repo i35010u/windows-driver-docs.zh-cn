@@ -4,12 +4,12 @@ description: 可以使用 Microsoft Visual Studio 通过 1394 (火线) 电缆设
 ms.assetid: 07784500-83F1-4927-998F-7CEEEADAA2B0
 ms.date: 04/10/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 1576c77048a28d1ac2305e28be836dc9fabb9449
-ms.sourcegitcommit: 67efcd26f7be8f50c92b141ccd14c9c68f4412d8
+ms.openlocfilehash: 9f7b313b5d3a45f02d66fd3c12e536f8643d6848
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88902620"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89216024"
 ---
 # <a name="setting-up-kernel-mode-debugging-over-a-1394-cable-in-visual-studio"></a>在 Visual Studio 中设置通过 1394 线缆进行的内核模式调试
 
@@ -28,7 +28,7 @@ ms.locfileid: "88902620"
 
 
 1.  将1394电缆连接到在主机和目标计算机上选择进行调试的1394控制器。
-2.  按照为 [驱动程序部署设置计算机和测试 (WDK 8.1) ](https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/provision-a-target-computer-wdk-8-1)中所述，开始配置主机和目标计算机。
+2.  按照为 [驱动程序部署设置计算机和测试 (WDK 8.1) ](../gettingstarted/provision-a-target-computer-wdk-8-1.md)中所述，开始配置主机和目标计算机。
 3.  在主计算机上，在 Visual Studio 的 "计算机配置" 对话框中，选择 " **设置计算机" 并选择 "调试器设置**"。
 4.  对于 " **连接类型**"，请选择 " **火线**"。
 
@@ -117,11 +117,4 @@ busparams               4.0.0
 [在 Visual Studio 中设置内核模式调试](setting-up-kernel-mode-debugging-in-visual-studio.md)
 
  
-
- 
-
-
-
-
-
 

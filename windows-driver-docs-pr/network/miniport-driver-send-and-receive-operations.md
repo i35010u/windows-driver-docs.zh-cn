@@ -11,12 +11,12 @@ keywords:
 - 接收数据 WDK 网络
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: db3e70c1201ab6e293b1b473b6e15caa91ec9313
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 39af3a3c9ad2ab72098d0d4e3ac9d7763d8db6f8
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72844237"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89215562"
 ---
 # <a name="miniport-driver-send-and-receive-operations"></a>微型端口驱动程序发送和接收操作
 
@@ -24,9 +24,9 @@ ms.locfileid: "72844237"
 
 
 
-微型端口驱动程序处理来自过量驱动程序的发送请求，并产生接收指示。 在单个函数调用中，NDIS 微型端口驱动程序可以指示链接列表，其中包含多个接收到的[**NET\_缓冲区\_列表**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)结构。 微型端口驱动程序可以处理多个 net\_\_缓冲区的列表的发送请求，这些请求具有多个 net [ **\_缓冲**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer)结构，每个网络\_缓冲区\_列表结构。
+微型端口驱动程序处理来自过量驱动程序的发送请求，并产生接收指示。 在单个函数调用中，NDIS 微型端口驱动程序可以指示链接列表，其中包含多个接收的 [**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list) 结构。 微型端口驱动程序可以处理多个网络缓冲区列表结构的列表的发送请求 \_ \_ ，其中每个网络缓冲区列表结构上具有多个 [**网络 \_ 缓冲区**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer) 结构 \_ \_ 。
 
-微型端口驱动程序必须管理接收缓冲池。 大多数微型端口驱动程序会创建池，这些池使用每个 NET\_缓冲区\_列表结构预分配单个网络\_缓冲区结构。
+微型端口驱动程序必须管理接收缓冲池。 大多数微型端口驱动程序创建 \_ 使用每个网络 \_ 缓冲区列表结构预分配单个网络缓冲区结构的池 \_ 。
 
 以下主题提供了有关微型端口驱动程序缓冲区管理、发送操作和接收操作的详细信息：
 
@@ -36,13 +36,7 @@ ms.locfileid: "72844237"
 
 [在微型端口驱动程序中取消发送请求](canceling-a-send-request-in-a-miniport-driver.md)
 
-[指示从微型端口驱动程序接收的数据](indicating-received-data-from-a-miniport-driver.md)
+[指示已从微型端口驱动程序收到数据](indicating-received-data-from-a-miniport-driver.md)
 
  
-
- 
-
-
-
-
 

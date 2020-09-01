@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: c1323dd2421891b344e9f32df9eba3a001cf1cbe
-ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
+ms.openlocfilehash: ddd33bcce854344644375c6e529a47140f23e6e5
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84534870"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89216738"
 ---
 # <a name="usbkdurbfunc"></a>!usbkd.urbfunc
 
@@ -37,7 +37,7 @@ URB 函数代码的十六进制值。 这些代码是在 usb 中定义的。
 ## <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 
-Usbkd
+Usbkd.dll
 
 <a name="examples"></a>示例
 --------
@@ -55,14 +55,7 @@ URB_FUNCTION_ISOCH_TRANSFER (0xA)
 
 [USB 2.0 调试器扩展](usb-2-0-extensions.md)
 
-[通用串行总线（USB）驱动程序](https://docs.microsoft.com/windows-hardware/drivers/usbcon/)
+[ (USB) 驱动程序的通用串行总线](../usbcon/index.md)
 
  
-
- 
-
-
-
-
-
 

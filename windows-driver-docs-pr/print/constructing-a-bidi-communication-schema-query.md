@@ -7,27 +7,27 @@ keywords:
 - 双向通信架构 WDK 打印
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f14581e557728897d1d7cdfa5e43962271a598df
-ms.sourcegitcommit: ab64169b631da4db3f0b895600f1c38a22cb7e2e
+ms.openlocfilehash: c878e55763c7f3005282b68a515435215252309d
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75652856"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89217807"
 ---
 # <a name="constructing-a-bidi-communication-schema-query"></a>构造双向通信架构查询
 
 
 构造双向通信架构查询时，请记住以下三个要点：
 
-1.  查询必须以 `Printer` 属性开始，该属性前面必须有一个反斜杠字符（`\`）。
+1.  查询必须以 `Printer` 属性开头，其前面必须加上一个反斜杠字符 (`\`) 。
 
-2.  查询中的所有属性必须用句点字符（`.`）分隔。
+2.  查询中的任何属性必须用句点字符分隔 (`.`) 。
 
-3.  如果查询包含一个值，则该值必须通过冒号（`:`）与其父属性隔开。
+3.  如果查询包含一个值，则该值必须由冒号 () 与其父属性分隔开 `:` 。
 
-### <a href="" id="example-request-and-response"></a>示例请求和响应
+### <a name="example-request-and-response"></a><a href="" id="example-request-and-response"></a> 示例请求和响应
 
-下面是[双向通信接口](https://docs.microsoft.com/windows-hardware/drivers/ddi/_print/index)所需的 XML 查询和响应格式的示例，尤其是 IBidiSpl2 COM 接口。 第一个示例是包含两个架构的请求。 第一个架构确定是否安装了双面打印单元。 第二个架构确定与硬盘相关联的值。
+下面是 [双向通信接口](/windows-hardware/drivers/ddi/_print/index)所需的 XML 查询和响应格式的示例，尤其是 IBidiSpl2 COM 接口。 第一个示例是包含两个架构的请求。 第一个架构确定是否安装了双面打印单元。 第二个架构确定与硬盘相关联的值。
 
 ```cpp
 <bidi:Get xmlns:bidi="https://schemas.microsoft.com/windows/2005/03/printing/bidi">
@@ -59,7 +59,7 @@ ms.locfileid: "75652856"
 </bidi:Get>
 ```
 
-### <a href="" id="additional-query-examples"></a>其他查询示例
+### <a name="additional-query-examples"></a><a href="" id="additional-query-examples"></a> 其他查询示例
 
 下面是典型任务和关联查询的列表：
 
@@ -83,7 +83,7 @@ ms.locfileid: "75652856"
 \Printer.Layout.InputBins.Tray1:Installed
 ```
 
-<a href="" id="determine-the-level-of-black-toner-identified-by--name--blk3e-"></a>确定 \[名称\] Blk3E 标识的黑色碳粉水平。  
+<a href="" id="determine-the-level-of-black-toner-identified-by--name--blk3e-"></a>确定由 Name Blk3E 标识的黑色碳粉 \[ 量 \] 。  
 ```cpp
 \Printer.Consumables.Blk3E:Level
 ```
@@ -94,9 +94,4 @@ ms.locfileid: "75652856"
 ```
 
  
-
- 
-
-
-
 

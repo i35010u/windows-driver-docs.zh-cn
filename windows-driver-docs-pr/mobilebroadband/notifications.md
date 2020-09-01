@@ -4,40 +4,33 @@ description: 通知
 ms.assetid: 55292cae-9255-4dae-9f60-93ce22253e60
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3812a8004840cf5a18ab9d017ae79a4dca91a8e7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 11dae23205e6b0f7a447434bbfcfd3d4988702a1
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63375735"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89217838"
 ---
 # <a name="notifications"></a>通知
 
 
-你可以保留用户通过如计划激活状态、 接近数据上限和当前漫游服务通知的通知。 Windows 支持短信、 USSD 和 Windows 通知服务等触发通知到的现有通道。
+你可以通过服务通知来阻止你的用户，如计划激活状态、接近数据上限，以及当前漫游。 Windows 支持现有的通道，如 SMS、USSD 和 Windows 通知服务，以触发通知。
 
-移动宽带应用应传达通过 toast 通知向用户的时间关键事件，无论用户是在另一个应用中，**启动**屏幕上，或在桌面上。
+无论用户是在另一个应用中、在 " **开始** " 屏幕上，还是在桌面上，你的移动宽带应用都应该通过 toast 通知向用户传达时间关键事件。
 
 ![toast 通知](images/mb-fig3-toast.png)
 
-您的应用程序可以接收到进程 SMS 后台事件或 USSD 通知。 有关与移动宽带应用程序相关联的后台通知的信息，请参阅下的这些 API 页面[Windows.ApplicationModel.Background](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background)命名空间：
+您的应用程序可以接收后台事件来处理 SMS 或 USSD 通知。 有关与移动宽带应用相关联的背景通知的信息，请参阅 [windows.applicationmodel.resources.core](/uwp/api/windows.applicationmodel.background) 命名空间下的这些 API 页面：
 
-- [MobileBroadbandDeviceServiceNotificationTrigger](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.mobilebroadbanddeviceservicenotificationtrigger)
-- [MobileBroadbandPcoDataChangeTrigger](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.mobilebroadbandpcodatachangetrigger)
-- [NetworkOperatorNotificationTrigger](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.networkoperatornotificationtrigger)
-- [SmsMessageReceivedTrigger](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.smsmessagereceivedtrigger)
+- [MobileBroadbandDeviceServiceNotificationTrigger](/uwp/api/windows.applicationmodel.background.mobilebroadbanddeviceservicenotificationtrigger)
+- [MobileBroadbandPcoDataChangeTrigger](/uwp/api/windows.applicationmodel.background.mobilebroadbandpcodatachangetrigger)
+- [NetworkOperatorNotificationTrigger](/uwp/api/windows.applicationmodel.background.networkoperatornotificationtrigger)
+- [SmsMessageReceivedTrigger](/uwp/api/windows.applicationmodel.background.smsmessagereceivedtrigger)
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
+## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
-[移动宽带应用方案](mobile-broadband-app-scenarios.md)
-
- 
+[移动宽带应用方案](./account-management.md)
 
  
-
-
-
-
-
 

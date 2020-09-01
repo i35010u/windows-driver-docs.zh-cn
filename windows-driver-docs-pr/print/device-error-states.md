@@ -10,12 +10,12 @@ keywords:
 - 热插拔总线 WDK 打印机
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fb66c6da75a75c6cae25fdc1a3e90f57dab71c05
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 1f958a61c73cd9090ec99399d84e86da9f50d2a0
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72828993"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89216062"
 ---
 # <a name="device-error-states"></a>设备错误状态
 
@@ -48,16 +48,11 @@ ms.locfileid: "72828993"
 
 -   **断开**
     -   当打印机进入脱机状态时，验证打印作业是否保留在作业队列中，直到设备准备好进行打印。 然后，该作业应成功完成。
-    -   在打印作业期间和之前，拔下打印机的电源。 确认打印机重新获取该域作业队列并再次开始打印。 请参阅[电源管理](power-management.md)中的更多详细信息。
+    -   在打印作业期间和之前，拔下打印机的电源。 确认打印机重新获取该域作业队列并再次开始打印。 请参阅 [电源管理](power-management.md)中的更多详细信息。
 -   **热插拔总线错误**
-    -   连接设备后，请卸载并加载设备堆栈（例如， [USB 驱动程序堆栈](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)）。 卸载堆栈之前、期间和之后发送打印作业。 例如，在连接 USB 设备的情况下，卸载设备连接到的 USB 根集线器或主机控制器。
+    -   连接设备后，卸载并加载设备堆栈 (例如， [USB 驱动程序堆栈](/windows-hardware/drivers/ddi/index)) 。 卸载堆栈之前、期间和之后发送打印作业。 例如，在连接 USB 设备的情况下，卸载设备连接到的 USB 根集线器或主机控制器。
     -   测试卸载并加载具有和不包含打印作业的设备堆栈。 验证是否可以取消、恢复和重新启动该作业。
     -   重载设备堆栈以允许打印作业正常恢复。
 
  
-
- 
-
-
-
 

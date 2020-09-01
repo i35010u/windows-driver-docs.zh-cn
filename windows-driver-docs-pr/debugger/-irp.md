@@ -1,6 +1,6 @@
 ---
 title: irp 扩展命令
-description: Irp 扩展显示有关 i/o 请求数据包（IRP）的信息。
+description: Irp 扩展显示有关 i/o 请求数据包 (IRP) 的信息。
 ms.assetid: 2260255d-813b-4b89-8dbe-6ce7e5596ccf
 keywords:
 - IRP
@@ -15,30 +15,30 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 9ce7587c842bf269e91cb941d2cab478f7317f55
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 156fee361c9033ecef5b39c06796dcd0e15c4e2b
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72837602"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89217102"
 ---
 # <a name="irp"></a>!irp
 
 
-**！ Irp**扩展显示有关 i/o 请求数据包（irp）的信息。
+**！ Irp**扩展显示有关 i/o 请求数据包 (irp) 的信息。
 
 ```dbgcmd
 !irp Address [Detail] 
 ```
 
-## <a name="span-idddk__irp_dbgspanspan-idddk__irp_dbgspanparameters"></a><span id="ddk__irp_dbg"></span><span id="DDK__IRP_DBG"></span>Parameters
+## <a name="span-idddk__irp_dbgspanspan-idddk__irp_dbgspanparameters"></a><span id="ddk__irp_dbg"></span><span id="DDK__IRP_DBG"></span>参数
 
 
-<span id="_______Address______"></span><span id="_______address______"></span><span id="_______ADDRESS______"></span>*Address*   
+<span id="_______Address______"></span><span id="_______address______"></span><span id="_______ADDRESS______"></span>*地址*   
 指定 IRP 的十六进制地址。
 
 <span id="_______Detail______"></span><span id="_______detail______"></span><span id="_______DETAIL______"></span>*详细信息*   
-如果此参数包含在任何值中（例如1），则输出将包括 IRP 的状态、其内存描述符列表（MDL）的地址、其所属线程和其所有 i/o 堆栈的堆栈信息，以及 IRP 的每个堆栈位置的相关信息。，包括主要函数代码和次要函数代码的十六进制版本。 如果省略此参数，则输出将只包含信息的摘要。
+如果此参数包含在任何值中（例如1），则输出将包括 IRP 的状态、其内存描述符列表的地址 (MDL) 、其拥有的线程和其所有 i/o 堆栈的堆栈信息，以及 IRP 的每个堆栈位置的相关信息，其中包括主要函数代码和次要函数代码的十六进制版本。 如果省略此参数，则输出将只包含信息的摘要。
 
 ### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
@@ -49,8 +49,8 @@ ms.locfileid: "72837602"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p><strong>Windows XP 和更高版本</strong></p></td>
-<td align="left"><p>Kdexts</p></td>
+<td align="left"><p><strong>Windows XP 及更高版本</strong></p></td>
+<td align="left"><p>Kdexts.dll</p></td>
 </tr>
 </tbody>
 </table>
@@ -59,9 +59,9 @@ ms.locfileid: "72837602"
 
 ### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>附加信息
 
-请参阅[即插即用调试](plug-and-play-debugging.md)和调试此扩展命令应用程序的[中断风暴](debugging-an-interrupt-storm.md)。 有关 Irp 的信息，请参阅 Windows 驱动程序工具包（WDK）文档和*Microsoft Windows 内部*Russinovich，并将其标记为 "" 和 "David"。 有关主要和次要函数代码的详细信息，请参阅 Windows 驱动程序工具包（WDK）文档。
+请参阅 [即插即用调试](plug-and-play-debugging.md) 和调试此扩展命令应用程序的 [中断风暴](debugging-an-interrupt-storm.md) 。 有关 Irp 的信息，请参阅 Windows 驱动程序工具包 (WDK) 文档和 *Microsoft Windows 内部机制* ，Mark Russinovich 和 David 所罗门群岛。 有关主要和次要函数代码的详细信息，请参阅 Windows 驱动程序工具包 (WDK) 文档。
 
-本主题介绍 IRP 结构[**irp**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_irp)。
+本主题介绍 IRP 结构 [**irp**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_irp)。
 
 有关对 IRP 结构（包括返回的参数）进行解码的详细信息，请参阅以下资源。
 
@@ -83,7 +83,7 @@ ms.locfileid: "72837602"
 <span id="________Cancel"></span><span id="________cancel"></span><span id="________CANCEL"></span>**取消**  
 指示如果尝试取消 IRP，将调用完成例程。
 
-这三种情况的任意组合都可能出现，并且如果满足显示的任何条件，则将调用完成例程。 适当的值列在有关每个堆栈位置的信息的第一行的末尾，紧跟在**完成上下文**项之后。
+这三种情况的任意组合都可能出现，并且如果满足显示的任何条件，则将调用完成例程。 适当的值列在有关每个堆栈位置的信息的第一行的末尾，紧跟在 **完成上下文** 项之后。
 
 下面是适用于 Windows 10 的此扩展的输出示例：
 
@@ -102,9 +102,9 @@ Irp is active with 2 stacks 1 is current (= 0xac598e38)
             Args: 00000000 00000000 0x00110008 00000000
 ```
 
-从 Windows 10 开始，将显示 IRP 的主要和次要代码文本，例如，"IRP\_MJ\_文件\_系统\_控制" 代码值还以十六进制显示，在本例中为 "（d）"。
+从 Windows 10 开始，将显示 IRP 的主要和次要代码文本，例如，"IRP \_ MJ \_ 文件 \_ 系统 \_ 控制" 此代码值还以十六进制显示，在本例中为 " (d) "。
 
-输出中显示的第三个参数是 IOCTL 代码。 使用[ **！ ioctldecode**](-ioctldecode.md)命令显示有关 IOCTL 的信息。
+输出中显示的第三个参数是 IOCTL 代码。 使用 [**！ ioctldecode**](-ioctldecode.md) 命令显示有关 IOCTL 的信息。
 
 下面是来自 Windows Vista 的此扩展的输出示例。
 
@@ -139,7 +139,7 @@ Irp is active with 8 stacks 5 is current (= 0x831f4b00)
                         Args: 00007000 00000000 00018400 00000000
 ```
 
-请注意，驱动程序名称旁边的完成例程是在该堆栈位置上设置的，它是由驱动程序在下面的行中设置的。 在前面的示例中， **Ntfs ！ NtfsMasterIrpSyncCompletionRoutine** 由设置 **\\文件系统\\Ntfs**。 **Ntfs！ NtfsMasterIrpSyncCompletionRoutine**， **847eeed0-829E2ba8**以上的**完成上下文**项指示完成例程的地址以及将传递到**Ntfs！ NtfsMasterIrpSyncCompletionRoutine**的上下文。 从这里可以看到， **Ntfs！ NtfsMasterIrpSyncCompletionRoutine**的地址为**847eeed0**，并且在调用时将传递给此例程的上下文为**829e2ba8**。
+请注意，驱动程序名称旁边的完成例程是在该堆栈位置上设置的，它是由驱动程序在下面的行中设置的。 在前面的示例中， **ntfs！ NtfsMasterIrpSyncCompletionRoutine**由** \\ FileSystem \\ ntfs**设置。 **Ntfs！ NtfsMasterIrpSyncCompletionRoutine**， **847eeed0-829E2ba8**以上的**完成上下文**项指示完成例程的地址以及将传递到**Ntfs！ NtfsMasterIrpSyncCompletionRoutine**的上下文。 从这里可以看到， **Ntfs！ NtfsMasterIrpSyncCompletionRoutine** 的地址为 **847eeed0**，并且在调用时将传递给此例程的上下文为 **829e2ba8**。
 
 **IRP 主要功能代码**
 
@@ -513,18 +513,11 @@ SCSI 次要函数代码如下所示：
 ## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
-[**IRP**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_irp)
+[**IRP**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_irp)
 
-[ **!irpfind**](-irpfind.md)
+[**!irpfind**](-irpfind.md)
 
-[ **!ioctldecode**](-ioctldecode.md)
-
- 
+[**!ioctldecode**](-ioctldecode.md)
 
  
-
-
-
-
-
 

@@ -9,16 +9,16 @@ keywords:
 - 异步通知 WDK XP
 ms.date: 06/01/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: b28c037a64b1f1591dcfc05d208f18ff4b97d3d4
-ms.sourcegitcommit: f0e54ea159d168a77643bf2e098d6b90e92b528c
+ms.openlocfilehash: 6202ca1c78f2d6bb759c413b069a38fd3607a4f1
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/05/2020
-ms.locfileid: "84455565"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89216498"
 ---
 # <a name="asynchronous-notifications-in-print-filters"></a>打印筛选器中的异步通知
 
-打印筛选器管道的异步通知功能非常类似于应用程序打印后台处理程序中支持的异步通知。 打印后台处理程序中提供的[**RouterCreatePrintAsyncNotificationChannel**](https://docs.microsoft.com/windows-hardware/drivers/ddi/prnasntp/nf-prnasntp-routercreateprintasyncnotificationchannel)函数对于打印筛选器不可用。 打印筛选器必须使用[IPrintClassObjectFactory](https://docs.microsoft.com/windows-hardware/drivers/ddi/filterpipeline/nn-filterpipeline-iprintclassobjectfactory)接口来创建 IPrintAsyncNotify 对象。
+打印筛选器管道的异步通知功能非常类似于应用程序打印后台处理程序中支持的异步通知。 打印后台处理程序中提供的 [**RouterCreatePrintAsyncNotificationChannel**](/windows-hardware/drivers/ddi/prnasntp/nf-prnasntp-routercreateprintasyncnotificationchannel) 函数对于打印筛选器不可用。 打印筛选器必须使用 [IPrintClassObjectFactory](/windows-hardware/drivers/ddi/filterpipeline/nn-filterpipeline-iprintclassobjectfactory) 接口来创建 IPrintAsyncNotify 对象。
 
 本主题介绍如何在打印筛选器中使用异步通知功能。
 
@@ -27,7 +27,7 @@ ms.locfileid: "84455565"
 
 ## <a name="iprintclassobjectfactory"></a>IPrintClassObjectFactory
 
-[IPrintClassObjectFactory](https://docs.microsoft.com/windows-hardware/drivers/ddi/filterpipeline/nn-filterpipeline-iprintclassobjectfactory)接口提供对通知接口的访问。 下面的代码示例演示了筛选器如何从属性包获取此接口。
+[IPrintClassObjectFactory](/windows-hardware/drivers/ddi/filterpipeline/nn-filterpipeline-iprintclassobjectfactory)接口提供对通知接口的访问。 下面的代码示例演示了筛选器如何从属性包获取此接口。
 
 ```cpp
 // This interface is defined as a private member variable in the filter class
@@ -103,9 +103,9 @@ if (SUCCEEDED(hr))
 }
 ```
 
-在上面的代码示例中，变量 `pIAsyncCallback` 是指向调用方的[IPrintAsyncNotifyCallback](https://docs.microsoft.com/windows/win32/api/prnasnot/nn-prnasnot-iprintasyncnotifycallback)接口实现的指针。
+在上面的代码示例中，变量 `pIAsyncCallback` 是指向调用方的 [IPrintAsyncNotifyCallback](/windows/win32/api/prnasnot/nn-prnasnot-iprintasyncnotifycallback) 接口实现的指针。
 
-在某些情况下，在完成双向通知通道后，必须释放双向通知通道。 为此，请在[IPrintAsyncNotifyChannel](https://docs.microsoft.com/windows/win32/api/prnasnot/nn-prnasnot-iprintasyncnotifychannel)上调用[Release](https://docs.microsoft.com/windows/win32/api/prnasnot/nn-prnasnot-iprintasyncnotifychanne)方法。 有关何时发布通道的信息，请参阅[通知通道](notification-channel.md)。
+在某些情况下，在完成双向通知通道后，必须释放双向通知通道。 为此，请在[IPrintAsyncNotifyChannel](/windows/win32/api/prnasnot/nn-prnasnot-iprintasyncnotifychannel)上调用[Release](/windows/win32/api/prnasnot/nn-prnasnot-iprintasyncnotifychanne)方法。 有关何时发布通道的信息，请参阅 [通知通道](notification-channel.md)。
 
 ## <a name="impersonation-and-notification"></a>模拟和通知
 

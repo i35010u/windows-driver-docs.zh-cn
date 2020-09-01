@@ -4,12 +4,12 @@ description: 获取 VMQ 信息
 ms.assetid: e851b656-ef59-42e7-b734-17ce9830096a
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1ea9d407739e4d17a8105bc6eb653caeb579b90b
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: f418042f64095deda660170cc3e6a4b1ce9a79f7
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67354499"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89217545"
 ---
 # <a name="obtaining-vmq-information"></a>获取 VMQ 信息
 
@@ -17,31 +17,25 @@ ms.locfileid: "67354499"
 
 
 
-VMQ 接口包含 OID 请求和允许过量驱动程序和应用程序可以获取基础 VMQ 配置信息的 WMI Guid。
+VMQ 接口包含 OID 请求和 WMI Guid，它们允许过量的驱动程序和应用程序获取有关底层 VMQ 配置的信息。
 
-[OID\_接收\_筛选器\_ENUM\_队列](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-enum-queues)枚举上的网络适配器分配的队列。 有关枚举队列的详细信息，请参阅[枚举已分配队列](enumerating-the-allocated-queues.md)。
+[OID \_接收 \_ 筛选器 \_ 枚举 \_ 队列](./oid-receive-filter-enum-queues.md) 枚举在网络适配器上分配的队列。 有关枚举队列的详细信息，请参阅 [枚举已分配队列](enumerating-the-allocated-queues.md)。
 
-作为方法 OID 请求，过量驱动程序可以使用[OID\_接收\_筛选器\_队列\_参数](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-queue-parameters)OID，若要获取特定队列的参数设置。 有关获取队列参数设置的详细信息，请参阅[Obtaining 和更新虚拟机队列参数](obtaining-and-updating-vm-queue-parameters.md)。
+作为方法 OID 请求，过量驱动程序可以使用 [oid \_ 接收 \_ 筛选器 \_ 队列 \_ 参数](./oid-receive-filter-queue-parameters.md) OID 来获取特定队列的参数设置。 有关获取队列参数设置的详细信息，请参阅 [获取和更新 VM 队列参数](obtaining-and-updating-vm-queue-parameters.md)。
 
-[OID\_接收\_筛选器\_ENUM\_筛选器](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-enum-filters)枚举特定队列分配的筛选器。 有关枚举在队列设置的筛选器的详细信息，请参阅[VMQ 的枚举筛选器](enumerating-filters-on-a-vmq.md)。
+[OID \_接收 \_ 筛选器 \_ 枚举 \_ 筛选器](./oid-receive-filter-enum-filters.md) 枚举分配给特定队列的筛选器。 有关枚举在队列中设置的筛选器的详细信息，请参阅 [枚举 VMQ 上的筛选器](enumerating-filters-on-a-vmq.md)。
 
-作为方法 OID 请求，过量驱动程序可以使用[OID\_接收\_筛选器\_参数](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-parameters)OID，若要获取筛选器的参数设置。 有关获取筛选器参数设置的详细信息，请参阅[Obtaining 和更新虚拟机队列参数](obtaining-and-updating-vm-queue-parameters.md)。
+作为方法 OID 请求，过量驱动程序可以使用 [oid \_ 接收 \_ 筛选器 \_ 参数](./oid-receive-filter-parameters.md) oid 来获取筛选器的参数设置。 有关获取筛选器参数设置的详细信息，请参阅 [获取和更新 VM 队列参数](obtaining-and-updating-vm-queue-parameters.md)。
 
-过量驱动程序和应用程序可以发出以下 OID 查询请求以获取 VMQ 功能。
+过量驱动程序和应用程序可以发出以下 OID 查询请求，以获取 VMQ 功能。
 
-[OID\_RECEIVE\_FILTER\_HARDWARE\_CAPABILITIES](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-hardware-capabilities)
+[OID \_ 接收 \_ 筛选器 \_ 硬件 \_ 功能](./oid-receive-filter-hardware-capabilities.md)
 
-[OID\_RECEIVE\_FILTER\_CURRENT\_CAPABILITIES](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-current-capabilities)
+[OID \_ 接收 \_ 筛选器 \_ 当前 \_ 功能](./oid-receive-filter-current-capabilities.md)
 
-[OID\_接收\_筛选器\_GLOBAL\_参数](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-global-parameters)
+[OID \_ 接收 \_ 筛选器 \_ 全局 \_ 参数](./oid-receive-filter-global-parameters.md)
 
-有关获取 VMQ 功能的详细信息，请参阅[确定网络适配器的 VMQ 功能](determining-the-vmq-capabilities-of-a-network-adapter.md)。
-
- 
+有关获取 VMQ 功能的详细信息，请参阅 [确定网络适配器的 Vmq 功能](determining-the-vmq-capabilities-of-a-network-adapter.md)。
 
  
-
-
-
-
 

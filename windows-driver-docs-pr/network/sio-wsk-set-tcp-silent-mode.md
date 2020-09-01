@@ -6,59 +6,59 @@ ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 SIO_WSK_SET_TCP_SILENT_MODE 控制代码网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 834f248203b403a85776d04fdc6fab64db6d58cc
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: c5b698f03e0b8f360c013e166540b20afe9f2076
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72841892"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89216584"
 ---
-# <a name="sio_wsk_set_tcp_silent_mode-control-code"></a>SIO\_WSK\_设置\_TCP\_缄默\_模式控制代码
+# <a name="sio_wsk_set_tcp_silent_mode-control-code"></a>SIO \_ WSK \_ 设置 \_ TCP \_ 静默 \_ 模式控制代码
 
 
-**SIO\_WSK\_集\_tcp\_无提示\_模式**套接字 i/o 控制操作允许 WSK 客户端启用 TCP 连接上的静默模式。
+**SIO \_ WSK \_ 设置 \_ tcp \_ 静默 \_ 模式**套接字 i/o 控制操作允许 WSK 客户端启用 TCP 连接上的静默模式。
 
 在静默模式下，TCP 连接不会在网络上发送任何数据或控制数据包。 此套接字 i/o 控制操作仅适用于连接的 TCP 套接字。 它在环回时不受支持。
 
-若要执行此操作，请调用具有以下参数的[**WskControlSocket**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_control_socket)函数。
+若要执行此操作，请调用具有以下参数的 [**WskControlSocket**](/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_control_socket) 函数。
 
 <a name="parameters"></a>参数
 ----------
 
-\[中的*RequestType*\]  
-使用**WskIoctl**进行此操作。
+*RequestType* \[中\]  
+使用 **WskIoctl** 进行此操作。
 
-\] 中的*ControlCode* \[  
-操作的控制代码。 使用**SIO\_WSK\_将\_TCP\_为此操作设置为无提示\_模式**。
+*ControlCode* \[中\]  
+操作的控制代码。 对于此操作，请使用 **SIO \_ WSK \_ 设置 \_ TCP \_ 静默 \_ 模式** 。
 
-*级别*   
+*调配*   
 此操作使用零。
 
-\] 中的*InputSize* \[  
+*InputSize* \[中\]  
 此操作使用零。
 
-\] 中的*InputBuffer* \[  
-对于此操作，请使用**NULL** 。
+*InputBuffer* \[中\]  
+对于此操作，请使用 **NULL** 。
 
-*OutputSize* \[out\]  
+*OutputSize* \[弄\]  
 此操作使用零。
 
-\] 中的*OutputBuffer* \[  
-对于此操作，请使用**NULL** 。
+*OutputBuffer* \[中\]  
+对于此操作，请使用 **NULL** 。
 
-*OutputSizeReturned* \[out\]  
-对于此操作，请使用**NULL** 。
+*OutputSizeReturned* \[弄\]  
+对于此操作，请使用 **NULL** 。
 
 <a name="remarks"></a>备注
 -------
 
-调用[**WskControlSocket**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_control_socket)函数以启用静默模式时，WSK 应用程序必须指定一个指向 IRP 的指针。
+调用 [**WskControlSocket**](/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_control_socket) 函数以启用静默模式时，WSK 应用程序必须指定一个指向 IRP 的指针。
 
-在调用[**WskControlSocket**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_control_socket)以启用静默模式之前，WSK 应用程序必须确保没有挂起的发送或断开连接请求。
+在调用 [**WskControlSocket**](/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_control_socket) 以启用静默模式之前，WSK 应用程序必须确保没有挂起的发送或断开连接请求。
 
-启用静默模式时， [**WskControlSocket**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_control_socket)将返回 **\_成功状态**。 一旦启用了静默模式，发送和断开连接请求将失败，**状态\_无效\_设备\_状态**，并且所有接收的控制或数据包将以静默方式丢弃。
+启用静默模式时， [**WskControlSocket**](/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_control_socket)将返回**状态 " \_ 成功**"。 一旦启用了静默模式，发送和断开连接的请求将失败，并且状态为 " ** \_ \_ 设备 \_ 状态无效** "，所有接收的控件或数据包将以静默方式丢弃。
 
-此套接字上唯一有效的操作是[**WskCloseSocket**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_close_socket)。
+此套接字上唯一有效的操作是 [**WskCloseSocket**](/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_close_socket)。
 
 <a name="requirements"></a>要求
 ------------
@@ -75,7 +75,7 @@ ms.locfileid: "72841892"
 </tr>
 <tr class="even">
 <td><p>标头</p></td>
-<td>Wsk （包括 Wsk）</td>
+<td>Wsk (包含 Wsk) </td>
 </tr>
 </tbody>
 </table>
@@ -83,14 +83,9 @@ ms.locfileid: "72841892"
 ## <a name="see-also"></a>另请参阅
 
 
-[**WskCloseSocket**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_close_socket)
+[**WskCloseSocket**](/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_close_socket)
 
-[**WskControlSocket**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_control_socket)
-
- 
+[**WskControlSocket**](/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_control_socket)
 
  
-
-
-
 

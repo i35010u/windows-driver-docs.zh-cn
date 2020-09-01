@@ -1,24 +1,24 @@
 ---
 title: WDI_TLV_SUPPORTED_GUIDS
-description: WDI_TLV_SUPPORTED_GUIDS 是包含受支持的 NDIS GUID TLV。
+description: WDI_TLV_SUPPORTED_GUIDS 是包含受支持的 NDIS GUID 的 TLV。
 ms.assetid: 957645EE-A6E3-402E-B18B-B2E7C73D6F6B
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 WDI_TLV_SUPPORTED_GUIDS 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 5935be389a74715f9ecf00275dcf968d247bffa3
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 51dfc98fb664fafd398d5d95e61f035a0e188358
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386208"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89216076"
 ---
-# <a name="wditlvsupportedguids"></a>WDI\_TLV\_支持\_GUID
+# <a name="wdi_tlv_supported_guids"></a>WDI \_ TLV \_ 支持的 \_ GUID
 
 
-WDI\_TLV\_支持\_GUID 是包含受支持的 NDIS GUID TLV。
+WDI \_ tlv \_ 支持的 \_ guid 是包含受支持的 NDIS GUID 的 tlv。
 
-**请注意**  此 TLV 添加 Windows 10，版本 1607，WDI 版本 1.0.21 中。
+**注意**   此 TLV 已添加到 Windows 10 版本1607，WDI 版本1.0.21 中。
 
  
 
@@ -27,17 +27,17 @@ WDI\_TLV\_支持\_GUID 是包含受支持的 NDIS GUID TLV。
 
 0x130
 
-## <a name="length"></a>长度
+## <a name="length"></a>Length
 
 
-大小 （以字节为单位） [NDIS\_GUID](https://docs.microsoft.com/windows-hardware/drivers/network/filling-in-an-ndis-guid-structure)结构。
+[NDIS \_ GUID](./filling-in-an-ndis-guid-structure.md)结构) 大小 (以字节为单位）。
 
 ## <a name="values"></a>值
 
 
-| 在任务栏的搜索框中键入       | 描述            |
+| 类型       | 说明            |
 |------------|------------------------|
-| NDIS\_GUID | 支持的 NDIS GUID。 |
+| NDIS \_ GUID | 支持的 NDIS GUID。 |
 
  
 
@@ -59,21 +59,16 @@ WDI\_TLV\_支持\_GUID 是包含受支持的 NDIS GUID TLV。
 <td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
-<td><p>Header</p></td>
+<td><p>标头</p></td>
 <td>Wditypes.hpp</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
-[OID\_WDI\_获取\_适配器\_功能](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wdi-get-adapter-capabilities)
-
- 
+[OID \_ WDI \_ 获取 \_ 适配器 \_ 功能](./oid-wdi-get-adapter-capabilities.md)
 
  
-
-
-
 

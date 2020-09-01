@@ -7,12 +7,12 @@ keywords:
 - 直接 OID 请求路径 WDK 网络
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9e695ed4cda6e926479416ea64b187d2e388d59a
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 2f2a58bc5e86c1c361cabc4f940208fe273f5070
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386574"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89217646"
 ---
 # <a name="direct-oid-request-interface-in-ndis-61"></a>NDIS 6.1 中的直接 OID 请求接口
 
@@ -20,25 +20,25 @@ ms.locfileid: "67386574"
 
 
 
-NDIS NDIS 6.1 和更高版本的驱动程序提供直接的 OID 请求接口。 *直接 OID 请求路径*支持查询或频繁设置的 OID 请求。 例如，IPsec 卸载版本 2 (IPsecOV2) 接口提供了[OID\_TCP\_任务\_IPSEC\_卸载\_V2\_添加\_SA](https://docs.microsoft.com/windows-hardware/drivers/network/oid-tcp-task-ipsec-offload-v2-add-sa)直接 OID 请求的 OID。
+NDIS 为 NDIS 6.1 和更高版本的驱动程序提供直接 OID 请求接口。 *直接 OID 请求路径*支持经常查询或设置的 OID 请求。 例如，IPsec 卸载版本 2 (IPsecOV2) 接口为 [OID \_ TCP \_ 任务 \_ IPsec \_ 卸载 \_ V2 \_ 添加 \_ ](./oid-tcp-task-ipsec-offload-v2-add-sa.md) 了用于直接 OID 请求的 SA OID。
 
-直接 OID 请求接口是可选的 NDIS 驱动程序。 若要支持直接的 OID 路径，驱动程序提供入口点，并提供 NDIS **Ndis * Xxx*** 的协议、 筛选和微型端口驱动程序函数。
+直接 OID 请求接口对于 NDIS 驱动程序是可选的。 为了支持直接 OID 路径，驱动程序提供入口点，NDIS 为协议、筛选器和微型端口驱动程序提供 **ndis * Xxx*** 函数。
 
-**请注意**  NDIS 支持特定 Oid 与 direct 的 OID 请求接口一起使用。 若要确定您的驱动程序是否可以直接 Oid 界面中使用 OID，请参阅 OID 引用页中的说明。
+**注意**   NDIS 支持用于直接 OID 请求接口的特定 Oid。 若要确定驱动程序是否可以在直接 Oid 接口中使用 OID，请参阅 "OID 引用" 页中的说明。
 
  
 
-对于 NDIS 6.1，使用直接的 OID 请求接口的唯一接口是 IPsecOV2。 有关 IPsecOV2 详细信息，请参阅[IPsec 任务卸载版本 2 中 NDIS 6.1](ipsec-task-offload-version-2-in-ndis-6-1.md)。
+对于 NDIS 6.1，使用直接 OID 请求接口的唯一接口为 IPsecOV2。 有关 IPsecOV2 的详细信息，请参阅 [NDIS 6.1 中的 IPsec 任务卸载版本 2](ipsec-task-offload-version-2-in-ndis-6-1.md)。
 
-有关 NDIS 6.1 驱动程序中的 Windows Server 2008 和 Windows Vista Service Pack 1 (SP1) 操作系统，可以使用与直接 OID 请求接口仅以下 Oid:
+对于带有 Service Pack 1 (SP1) 操作系统的 Windows Server 2008 和 Windows Vista 中的 NDIS 6.1 驱动程序，只能在直接 OID 请求接口中使用以下 Oid：
 
--   [OID\_TCP\_TASK\_IPSEC\_OFFLOAD\_V2\_ADD\_SA](https://docs.microsoft.com/windows-hardware/drivers/network/oid-tcp-task-ipsec-offload-v2-add-sa)
+-   [OID \_ TCP \_ 任务 \_ IPSEC \_ 卸载 \_ V2 \_ 添加 \_ SA](./oid-tcp-task-ipsec-offload-v2-add-sa.md)
 
--   [OID\_TCP\_TASK\_IPSEC\_OFFLOAD\_V2\_DELETE\_SA](https://docs.microsoft.com/windows-hardware/drivers/network/oid-tcp-task-ipsec-offload-v2-delete-sa)
+-   [OID \_ TCP \_ 任务 \_ IPSEC \_ 卸载 \_ V2 \_ DELETE \_ SA](./oid-tcp-task-ipsec-offload-v2-delete-sa.md)
 
--   [OID\_TCP\_TASK\_IPSEC\_OFFLOAD\_V2\_UPDATE\_SA](https://docs.microsoft.com/windows-hardware/drivers/network/oid-tcp-task-ipsec-offload-v2-update-sa)
+-   [OID \_ TCP \_ 任务 \_ IPSEC \_ 卸载 \_ V2 \_ 更新 \_ SA](./oid-tcp-task-ipsec-offload-v2-update-sa.md)
 
-微型端口驱动程序和筛选器驱动程序必须能够处理不会序列化的直接 OID 请求。 与标准的 OID 请求接口，不同 NDIS 不序列化与使用直接的 OID 接口或使用标准的 OID 请求接口发送其他请求直接 OID 请求。 此外，微型端口驱动程序和筛选器驱动程序必须能够处理直接 OID 请求在 IRQL &lt;= 调度\_级别。
+微型端口驱动程序和筛选器驱动程序必须能够处理未序列化的直接 OID 请求。 与标准 OID 请求接口不同，NDIS 不会将直接 OID 请求与通过直接 OID 接口或标准 OID 请求接口发送的其他请求进行序列化。 此外，微型端口驱动程序和筛选器驱动程序必须能够以 IRQL = 调度级别处理直接 OID 请求 &lt; \_ 。
 
 有关如何在驱动程序中实现直接 OID 接口的详细信息，请参阅以下主题：
 
@@ -46,13 +46,7 @@ NDIS NDIS 6.1 和更高版本的驱动程序提供直接的 OID 请求接口。 
 
 -   [协议驱动程序 OID 请求](protocol-driver-oid-requests.md)
 
--   [筛选模块 OID 请求](filter-module-oid-requests.md)
+-   [筛选器模块 OID 请求](filter-module-oid-requests.md)
 
  
-
- 
-
-
-
-
 

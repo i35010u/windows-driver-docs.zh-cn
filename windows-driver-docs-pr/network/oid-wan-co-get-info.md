@@ -1,21 +1,21 @@
 ---
 title: OID_WAN_CO_GET_INFO
-description: OID_WAN_CO_GET_INFO OID 请求微型端口驱动程序，以返回应用于其 NIC 上的所有虚拟连接 (VCs) 的信息 按如下所示定义 NDIS_WAN_CO_INFO 结构中返回此信息。
+description: OID_WAN_CO_GET_INFO OID 请求微型端口驱动程序返回适用于其 NIC 上 (VCs) 所有虚拟连接的信息。 此信息以 NDIS_WAN_CO_INFO 结构返回，如下所示。
 ms.assetid: c97130a5-68e1-4c69-a5a5-9781ea59af0c
 ms.date: 08/08/2017
-keywords: -从 Windows Vista 开始 OID_WAN_CO_GET_INFO 网络驱动程序
+keywords: -从 Windows Vista 开始 OID_WAN_CO_GET_INFO 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: fafc2b348d074a94505dca885aef8100c8387341
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: ce0d75d2d455ac5248bbfa7f3307b1d91dbaf080
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67353686"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89216994"
 ---
-# <a name="oidwancogetinfo"></a>OID\_WAN\_共同\_获取\_信息
+# <a name="oid_wan_co_get_info"></a>OID \_ WAN \_ CO \_ 获取 \_ 信息
 
 
-OID\_WAN\_共同\_获取\_信息 OID 请求微型端口驱动程序，以返回应用于其 NIC 上的所有虚拟连接 (VCs) 的信息 此信息返回在 NDIS\_WAN\_共同\_定义，如下所示的信息结构。
+OID \_ WAN \_ CO \_ 获取 \_ 信息 OID 请求微型端口驱动程序返回适用于其 NIC 上 (VCs) 的所有虚拟连接的信息。 此信息将在 NDIS \_ WAN \_ CO \_ 信息结构中返回，如下所示。
 
 ```ManagedCPlusPlus
     typedef struct _NDIS_WAN_CO_INFO {
@@ -29,102 +29,102 @@ OID\_WAN\_共同\_获取\_信息 OID 请求微型端口驱动程序，以返回�
 
 
 
-此结构的成员包含下列信息：
+此结构的成员包含以下信息：
 
-<a href="" id="maxframesize"></a>**MaxFrameSize**  
-指定任何网络数据包的微型端口驱动程序可以发送和接收的最大帧大小。 此值应排除微型端口驱动程序自己的分帧开销和/或 PPP HDLC 开销。 通常，此值为约 1500年。
+<a href="" id="maxframesize"></a>**Messagingfactorysettings.amqptransportsettings.maxframesize**  
+指定微型端口驱动程序可发送和接收的任何网络包的最大帧大小。 此值应排除微型端口驱动程序自身的组帧开销和/或 PPP HDLC 开销。 此值通常约为1500。
 
-但是，所有的 CoNDIS WAN 的微型端口驱动程序应使用内部**MaxFrameSize** ，它是 32 个字节超出此 OID 它们返回的值。 例如，返回此 OID 1500 CoNDIS WAN 微型端口驱动程序在内部会接受并发送最多 1532年。 将来的桥接和其他协议，可以轻松地支持这样的微型端口驱动程序。
+但是，所有 CoNDIS WAN 微型端口驱动程序应使用比它们为此 OID 返回的值大32字节的内部 **messagingfactorysettings.amqptransportsettings.maxframesize** 。 例如，为此 OID 返回1500的 CoNDIS WAN 微型端口驱动程序在内部接受并发送到1532。 此类微型端口驱动程序可以随时支持未来的桥接和其他协议。
 
 <a href="" id="maxsendwindow"></a>**MaxSendWindow**  
-VC 上指定的最大未完成的 CoNDIS WAN 微型端口驱动程序可以处理的数据包数。 此成员必须设置为至少一个。
+指定 CoNDIS WAN 微型端口驱动程序可以在 VC 上处理的未完成数据包的最大数量。 此成员必须设置为至少一个。
 
-NDISWAN 驱动程序使用此成员的值作为其提交中的数据包数量将请求发送到微型端口驱动程序的限制*MiniportCoSendPackets*函数之前 NDISWAN 保留发送的数据包。 这些数据包进行排队，直到微型端口驱动程序完成未完成发送。 微型端口驱动程序可以调整此值，动态和 VC 每个使用**SendWindow**中的成员[ **WAN\_CO\_LINKPARAMS** ](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff565819(v=vs.85))结构的微型端口驱动程序将传递给[ **NdisMCoIndicateStatus**](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff553458(v=vs.85))。 NDISWAN 使用当前**SendWindow**与未完成发送其上限的值。 如果微型端口驱动程序设置**SendWindow** NDISWAN 必须为零，停止将数据包发送有关特定 VC。 也就是说，微型端口驱动程序指定发送窗口为实际上关闭的情况下，其中，，指定其无法接受来自 NDISWAN 任何数据包。
+NDISWAN 驱动程序使用此成员的值来限制在 NDISWAN 保留发送数据包之前，它在向微型端口驱动程序的 *MiniportCoSendPackets* 函数发送请求时所提交的数据包数。 这些数据包将排队等候，直到微型端口驱动程序完成未完成的发送。 微型端口驱动程序可以使用微型端口驱动程序传递给[**NdisMCoIndicateStatus**](/previous-versions/windows/hardware/network/ff553458(v=vs.85))的[**WAN \_ CO \_ LINKPARAMS**](/previous-versions/windows/hardware/network/ff565819(v=vs.85))结构中的**SendWindow**成员，以动态方式和每个 VC 来调整此值。 NDISWAN 使用当前 **SendWindow** 值作为其未处理发送的限制。 如果微型端口驱动程序将 **SendWindow** 设置为零，则 NDISWAN 必须停止发送特定 VC 的数据包。 也就是说，微型端口驱动程序指定 "发送" 窗口已关闭，这实际上指定它不能接受来自 NDISWAN 的任何数据包。
 
-因为 CoNDIS WAN 的微型端口驱动程序必须在内部，队列数据包的值**MaxSendWindow**理论上是**max**(ULONG)。 但是，此驱动程序确定该值应反映 NIC 的链接速度或硬件功能 例如，如果微型端口驱动程序的 NIC 始终具有至少四个数据包的空间，微型端口驱动程序集**MaxSendWindow**至 4，以便为任何传入数据包*MiniportCoSendPackets*可以放置在立即在硬件中。
+由于 CoNDIS WAN 微型端口驱动程序必须在内部将数据包排队，因此 **MaxSendWindow** 的值理论上 **最大** ( ULONG) 。 但是，此驱动程序确定的值应反映 NIC 的链接速度或硬件功能。 例如，如果微型端口驱动程序的 NIC 始终具有至少四个数据包的空间，则微型端口驱动程序会将 **MaxSendWindow** 设置为4，以便可以将任何传入的 *MiniportCoSendPackets* 包立即放在硬件上。
 
 <a href="" id="framingbits"></a>**FramingBits**  
-一个 32 位值，该值指定指定的分帧微型端口驱动程序支持的类型的位掩码。 微型端口驱动程序可以指定以下值，使用二进制或运算符的组合：
+一个32位值，指定一个指定微型端口驱动程序支持的组帧类型的位掩码。 微型端口驱动程序可以使用二进制或运算符指定下列值的组合：
 
-<a href="" id="ras-framing"></a>RAS\_FRAMING  
-仅当微型端口驱动程序可以检测到较旧的 RAS 组帧设置。 仅旧版的驱动程序支持早期 RAS 组帧设置此标志。
+<a href="" id="ras-framing"></a>RAS \_ 组帧  
+仅当微型端口驱动程序可以检测到较旧的 RAS 帧时设置。 仅支持早期 RAS 帧的旧驱动程序设置此标志。
 
-<a href="" id="ras-compression"></a>RAS\_压缩  
-仅当微型端口驱动程序支持的较旧的 RAS 压缩方案设置。
+<a href="" id="ras-compression"></a>RAS \_ 压缩  
+仅当微型端口驱动程序支持较旧的 RAS 压缩方案时才进行设置。
 
-<a href="" id="ppp-framing"></a>PPP\_组帧  
-应始终设置。 指示微型端口驱动程序可以检测并对其介质类型的支持 PPP 帧。
+<a href="" id="ppp-framing"></a>PPP \_ 组帧  
+应始终设置。 指示微型端口驱动程序可以检测并支持其媒体类型的 PPP 帧。
 
-<a href="" id="ppp-compress-address-control"></a>PPP\_压缩\_地址\_控件  
-如果微型端口驱动程序支持 PPP 地址和控件字段压缩，设置。
+<a href="" id="ppp-compress-address-control"></a>PPP \_ 压缩 \_ 地址 \_ 控制  
+设置微型端口驱动程序是否支持 PPP 地址和控制字段压缩。
 
-如果此 LCP 选项进行协商，NDISWAN 将删除的地址和控件的字段。 某些 WAN 的介质类型，如 X.25，不支持此选项。
+如果协商了此 LCP 选项，NDISWAN 将删除地址和控制字段。 某些 WAN 中型类型（如 .25）不支持此选项。
 
-<a href="" id="ppp-compress-protocol-field"></a>PPP\_压缩\_协议\_字段  
-如果微型端口驱动程序支持 PPP 协议字段压缩，设置。
+<a href="" id="ppp-compress-protocol-field"></a>PPP \_ 压缩 \_ 协议 \_ 字段  
+设置微型端口驱动程序是否支持 PPP 协议字段压缩。
 
-NDISWAN 将从协议字段时此 LCP 选项进行协商，适用于删除 1 个字节。
+如果此 LCP 选项已协商，NDISWAN 将从 "协议" 字段中删除一个字节。
 
-<a href="" id="ppp-accm-supported"></a>PPP\_ACCM\_支持  
-如果该微型端口驱动程序支持异步控件字符映射，设置。 此位才有效的异步媒体，如调制解调器。 如果设置此位**DesiredACCM**成员都应有效。
+<a href="" id="ppp-accm-supported"></a>\_支持 PPP ACCM \_  
+设置微型端口驱动程序是否支持异步控制字符映射。 此位仅适用于异步媒体，如调制解调器。 如果设置此位， **DesiredACCM** 成员应是有效的。
 
-<a href="" id="ppp-multilink-framing"></a>PPP\_多链路\_组帧  
-如果微型端口驱动程序支持多个链接组帧 IETF RFC 1717 中指定，设置。
+<a href="" id="ppp-multilink-framing"></a>PPP \_ 多链路 \_ 帧  
+如果微型端口驱动程序支持在 IETF RFC 1717 中指定的多链路帧，则设置。
 
-<a href="" id="ppp-short-sequence-hdr-format"></a>PPP\_短\_序列\_HDR\_格式  
-如果微型端口驱动程序支持多个链接组帧 IETF RFC 1717 中指定的标头格式，设置。
+<a href="" id="ppp-short-sequence-hdr-format"></a>PPP \_ 短 \_ 序列 \_ HDR \_ 格式  
+如果微型端口驱动程序支持在 IETF RFC 1717 中指定的多链路帧的标头格式，则设置。
 
-<a href="" id="slip-framing"></a>SLIP\_组帧  
-如果微型端口驱动程序可检测到并支持单组帧 （仅限异步微型端口驱动程序），设置。
+<a href="" id="slip-framing"></a>单 \_ 组帧  
+设置微型端口驱动程序是否可以检测并支持 SLIP 组帧 (仅) 的异步微型端口驱动程序。
 
-<a href="" id="slip-vj-compression"></a>SLIP\_VJ\_压缩  
-如果微型端口驱动程序可以支持单 Van Jacobsen TCP/IP 标头压缩，设置。 NDISWAN 支持滑动\_VJ\_压缩 （使用 16 个插槽）。 异步支持单分帧的媒体 （串行微型端口驱动程序） 应设置此位。
+<a href="" id="slip-vj-compression"></a>SLIP \_ VJ \_ 压缩  
+设置微型端口驱动程序是否可以支持 Van Jacobsen TCP/IP 标头压缩。 NDISWAN 支持 \_ \_) 有16个槽的 (的滑动 VJ 压缩。 支持单组帧的异步媒体 (串行微型端口驱动程序) 应设置此位。
 
-异步媒体不需要编写任何代码，以支持 VJ 标头压缩。 它将负责 NDISWAN。
+异步媒体无需编写任何代码即可支持 VJ 标头压缩。 NDISWAN 将负责处理。
 
-<a href="" id="slip-vj-autodetect"></a>SLIP\_VJ\_AUTODETECT  
-如果微型端口驱动程序可以自动检测对名单 Van Jacobsen TCP/IP 标头压缩，设置。 NDISWAN 将自动检测 VJ 标头压缩。 如果它们支持单组帧异步媒体 （串行微型端口驱动程序） 应设置此位。
+<a href="" id="slip-vj-autodetect"></a>SLIP \_ VJ 自动 \_ 检测  
+设置微型端口驱动程序是否可以自动检测 Van Jacobsen TCP/IP 标头压缩。 NDISWAN 将自动检测 VJ 标头压缩。 异步媒体 (串行微型端口驱动程序) 如果支持单组帧，则应设置此位。
 
-<a href="" id="tapi-provider"></a>TAPI\_提供程序  
-如果该微型端口驱动程序支持 TAPI 服务提供程序 Oid，设置。 设置此位，除非 TAPI OID 调用不会给微型端口驱动程序。
+<a href="" id="tapi-provider"></a>TAPI \_ 提供程序  
+设置微型端口驱动程序是否支持 TAPI 服务提供程序 Oid。 除非设置了此位，否则不会对微型端口驱动程序调用 TAPI OID。
 
-<a href="" id="media-nrz-encoding"></a>媒体\_NRZ\_编码  
-如果该微型端口驱动程序支持 NRZ 编码，例如 ISDN 某些媒体类型的 PPP 默认，设置。 此值保留供将来使用。
+<a href="" id="media-nrz-encoding"></a>媒体 \_ NRZ \_ 编码  
+设置微型端口驱动程序是否支持 NRZ 编码，某些媒体类型（例如 ISDN）的 PPP 默认值。 保留此值供将来使用。
 
-<a href="" id="media-nrzi-encoding"></a>媒体\_NRZI\_编码  
-如果微型端口驱动程序支持 NRZI 编码，设置。 此值保留供将来使用。
+<a href="" id="media-nrzi-encoding"></a>媒体 \_ NRZI \_ 编码  
+设置微型端口驱动程序是否支持 NRZI 编码。 保留此值供将来使用。
 
-<a href="" id="media-nlpid"></a>MEDIA\_NLPID  
-如果具有微型端口驱动程序，并且可以在其帧中设置 NLPID，设置。 此值保留供将来使用。
+<a href="" id="media-nlpid"></a>媒体 \_ NLPID  
+如果微型端口驱动程序具有并且可以在其框架中设置 NLPID，则设置。 保留此值供将来使用。
 
-<a href="" id="rfc-1356-framing"></a>RFC\_1356\_FRAMING  
-如果微型端口驱动程序支持 IETF RFC 1356 X.25 和 ISDN 组帧，设置。 此值保留供将来使用。
+<a href="" id="rfc-1356-framing"></a>RFC \_ 1356 \_ 帧  
+如果微型端口驱动程序支持 IETF RFC 1356 和 ISDN 组帧，则设置。 保留此值供将来使用。
 
-<a href="" id="rfc-1483-framing"></a>RFC\_1483\_FRAMING  
-如果该微型端口驱动程序支持 IETF RFC 1483 ATM 适配层 5 封装，设置。 此值保留供将来使用。
+<a href="" id="rfc-1483-framing"></a>RFC \_ 1483 \_ 帧  
+设置微型端口驱动程序是否支持 IETF RFC 1483 ATM 适配第5层封装。 保留此值供将来使用。
 
-<a href="" id="rfc-1490-framing"></a>RFC\_1490\_FRAMING  
-如果该微型端口驱动程序支持 IETF RFC 1490 帧中继组帧，设置。 此值保留供将来使用。
+<a href="" id="rfc-1490-framing"></a>RFC \_ 1490 \_ 帧  
+如果微型端口驱动程序支持 IETF RFC 1490 帧中继帧，则设置。 保留此值供将来使用。
 
-<a href="" id="nbf-preserve-mac-address"></a>NBF\_PRESERVE\_MAC\_ADDRESS  
-设置如果微型端口驱动程序支持 IETF 组帧草稿中指定"PPP NETBIOS 帧控制协议 (NBFCP)。"
+<a href="" id="nbf-preserve-mac-address"></a>NBF \_ 保留 \_ MAC \_ 地址  
+设置微型端口驱动程序是否支持草稿 "PPP NETBIOS 帧控制协议 (NBFCP) " 中指定的 IETF 帧。
 
-<a href="" id="shiva-framing"></a>SHIVA\_FRAMING  
-由 NBF 取代\_保留\_MAC\_地址。
+<a href="" id="shiva-framing"></a>SHIVA \_ 组帧  
+由 NBF 取代 \_ \_ MAC \_ 地址。
 
-<a href="" id="pass-through-mode"></a>传递\_THROUGH\_模式  
-如果微型端口驱动程序执行其自己的分帧，设置。 如果设置此标志，NDISWAN 传递未解释的和未修改的帧。
+<a href="" id="pass-through-mode"></a>传递 \_ \_ 模式  
+设置微型端口驱动程序是否执行其自己的帧。 如果设置了此标志，NDISWAN 将通过未解释和未修改的帧。
 
-微型端口驱动程序必须在默认 PPP 帧模式，直到每个微型端口驱动程序收到[OID\_WAN\_共同\_设置\_链接\_信息](oid-wan-co-set-link-info.md)请求。 微型端口驱动程序必须自动检测其声明，以便支持任何帧。
+微型端口驱动程序必须处于默认的 PPP 组帧模式，直到每个小型端口驱动程序都收到 [OID \_ WAN \_ CO \_ 集 \_ 链接 \_ 信息](oid-wan-co-set-link-info.md) 请求。 微型端口驱动程序必须自动检测它声明支持的任何帧。
 
-例如，支持旧 RAS 分帧的微型端口驱动程序必须自动检测来自 PPP 帧的 RAS 框架设计。 如果微型端口驱动程序检测到非默认的组帧方案，该微型端口驱动程序应自动切换到新检测到的帧其组帧。
+例如，支持旧 RAS 帧的微型端口驱动程序必须自动检测 PPP 帧中的 RAS 帧。 如果微型端口驱动程序检测到默认情况以外的组帧方案，则该微型端口驱动程序应自动将其帧切换到新检测到的帧中。
 
-具有的后续查询[OID\_WAN\_共同\_获取\_链接\_信息](oid-wan-co-get-link-info.md)应指示检测到的帧。 如果尚未检测到任何帧， **FramingBits**应为零中返回的 NDIS\_WAN\_共同\_获取\_链接\_信息的信息。
+带有 [OID \_ WAN \_ CO \_ 获取 \_ 链接 \_ 信息](oid-wan-co-get-link-info.md) 的后续查询应指示检测到的帧。 如果尚未检测到帧，则返回**FramingBits**的 NDIS \_ WAN \_ CO \_ 获取 \_ 链接 \_ 信息信息中的 FramingBits 应为零。
 
-如果使用 OID 随后调用 WAN 微型端口驱动程序\_WAN\_共同\_设置\_链接\_中的信息**FramingBits**成员为零，微型端口驱动程序应尝试自动检测时接收的每个帧的帧。
+如果随后在 \_ \_ FramingBits 成员为零的 OID wan CO 集链接信息中调用 WAN 微型端口驱动程序 \_ \_ \_ ，则微型端口驱动程序应尝试在每个帧接收时自动检测组帧。 **FramingBits**
 
 <a href="" id="desiredaccm"></a>**DesiredACCM**  
-异步控件字符映射表进行协商。 此成员是仅适用于异步媒体类型。
+对异步控制字符映射进行协商。 此成员仅适用于异步媒体类型。
 
 <a name="requirements"></a>要求
 ------------
@@ -136,31 +136,23 @@ NDISWAN 将从协议字段时此 LCP 选项进行协商，适用于删除 1 个�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Version</p></td>
-<td><p>支持 Windows Vista 中的 NDIS 6.0 和 NDIS 5.1 驱动程序。 支持 NDIS 5.1 在 Windows XP 中的驱动程序。</p></td>
+<td><p>版本</p></td>
+<td><p>支持 Windows Vista 中的 NDIS 6.0 和 NDIS 5.1 驱动程序。 Windows XP 中的 NDIS 5.1 驱动程序支持。</p></td>
 </tr>
 <tr class="even">
-<td><p>Header</p></td>
-<td>Ntddndis.h （包括 Ndis.h）</td>
+<td><p>标头</p></td>
+<td>Ntddndis (包含 Ndis .h) </td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
-[**NdisMCoIndicateStatus**](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff553458(v=vs.85))
+[**NdisMCoIndicateStatus**](/previous-versions/windows/hardware/network/ff553458(v=vs.85))
 
-[OID\_WAN\_CO\_GET\_LINK\_INFO](oid-wan-co-get-link-info.md)
+[OID \_ WAN \_ CO \_ 获取 \_ 链接 \_ 信息](oid-wan-co-get-link-info.md)
 
-[OID\_WAN\_CO\_SET\_LINK\_INFO](oid-wan-co-set-link-info.md)
+[OID \_ WAN \_ CO \_ 集 \_ 链接 \_ 信息](oid-wan-co-set-link-info.md)
 
-[**WAN\_CO\_LINKPARAMS**](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff565819(v=vs.85))
-
-
-
-
-
-
-
-
+[**WAN \_ CO \_ LINKPARAMS**](/previous-versions/windows/hardware/network/ff565819(v=vs.85))

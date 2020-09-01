@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: dbc3e3e9610c15a62a73a0384563ca7088a470c0
-ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
+ms.openlocfilehash: ba8faedb383b2f4312fb4e1adb29a78f168f724f
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84534680"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89217931"
 ---
 # <a name="usbkdusbportmdportlog"></a>!usbkd.usbportmdportlog
 
@@ -31,12 +31,12 @@ ms.locfileid: "84534680"
 ## <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 
-Usbkd
+Usbkd.dll
 
-<a name="remarks"></a>注解
+<a name="remarks"></a>备注
 -------
 
-仅当调试因[**Bug 检查0xFE： BUGCODE \_ USB \_ 驱动程序**](bug-check-0xfe--bugcode-usb-driver.md)而生成的故障转储文件时，才使用此命令。
+仅当调试因 [**Bug 检查0xFE： BUGCODE \_ USB \_ 驱动程序**](bug-check-0xfe--bugcode-usb-driver.md)而生成的故障转储文件时，才使用此命令。
 
 <a name="examples"></a>示例
 --------
@@ -112,14 +112,7 @@ Minidump USBPORT DEBUG_LOG buffer size 32768, entries 1024, index 400
 
 [USB 2.0 调试器扩展](usb-2-0-extensions.md)
 
-[通用串行总线（USB）驱动程序](https://docs.microsoft.com/windows-hardware/drivers/usbcon/)
+[ (USB) 驱动程序的通用串行总线](../usbcon/index.md)
 
  
-
- 
-
-
-
-
-
 

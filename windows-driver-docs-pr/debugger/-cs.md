@@ -1,6 +1,6 @@
 ---
 title: cs
-description: Cs 扩展插件都会显示一个或多个关键部分或整个关键部分树。
+description: Cs 扩展显示一个或多个关键部分或整个关键部分树。
 ms.assetid: 767ad508-013b-4cf7-808d-38ff64418879
 keywords:
 - cs Windows 调试
@@ -12,17 +12,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: d93c1dcfd4111aa57a977b2befb99f1da4b197c8
-ms.sourcegitcommit: a70dcf63a439d278ae0194733d9fa2adfe496c89
+ms.openlocfilehash: 4a87d50f1bc945e2dd387c6b37bc02ad5bde044a
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/07/2019
-ms.locfileid: "66813552"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89216780"
 ---
 # <a name="cs"></a>!cs
 
 
-**！ Cs**扩展插件都会显示一个或多个关键部分或整个关键部分树。
+**！ Cs**扩展显示一个或多个关键部分或整个关键部分树。
 
 ```dbgsyntax
 !cs [-s] [-l] [-o] 
@@ -33,21 +33,21 @@ ms.locfileid: "66813552"
 !cs -? 
 ```
 
-## <a name="parameters"></a>Parameters
+## <a name="parameters"></a>参数
 
-参数 | 描述
+参数 | 说明
 |---------|-------------|
-**-s**  | 显示每个关键部分初始化堆栈跟踪，如果此信息可用。
-**-l**  |显示仅锁定关键部分。
-**-o**   |将显示为任何锁定的关键部分所显示的所有者的堆栈。
-*地址* |指定要显示的关键部分的地址。 如果省略此参数，调试器将显示当前进程中的所有关键部分。
-*StartAddress*   | 指定要搜索的关键节的地址范围的起始时间。
-*EndAddress*   | 指定要搜索的关键节的地址范围的结束。
+**-s**  | 如果此信息可用，则显示每个关键节的初始化堆栈跟踪。
+**-l**  |仅显示锁定的关键部分。
+**-o**   |显示所显示的任何锁定关键部分的所有者堆栈。
+*Address* |指定要显示的关键部分的地址。 如果省略此参数，则调试器将显示当前进程中的所有关键部分。
+*StartAddress*   | 指定要在关键部分中搜索的地址范围的起始位置。
+*EndAddress*   | 指定要在关键部分中搜索的地址范围的结尾。
 **-d**    | 显示与 DebugInfo 相关联的关键部分。
 *InfoAddress*   | 指定 DebugInfo 的地址。
-**-t**    | 显示关键部分树。 可以使用之前 **-t**选项，你必须激活[应用程序验证工具](https://docs.microsoft.com/windows-hardware/drivers/devtest/application-verifier)目标进程然后选择**检查锁使用**选项。
-*TreeAddress*    | 指定的关键部分树的根的地址。 如果省略此参数或指定为零，调试器会显示当前进程的关键部分树。
-**-?**    | 显示此扩展中的一些帮助文本[调试器命令窗口](debugger-command-window.md)。
+**-t**    | 显示临界区树。 必须先激活目标进程[应用程序验证工具](../devtest/application-verifier.md)，然后选择 "**检查锁使用情况**" 选项，然后才能使用 **-t**选项。
+*TreeAddress*    | 指定临界区树的根地址。 如果省略此参数或指定零，则调试器将显示当前进程的关键部分树。
+**-?**    | 在 [调试器命令窗口](debugger-command-window.md)中显示此扩展的一些帮助文本。
 
 ### <a name="dll"></a>DLL
 
@@ -56,13 +56,13 @@ Exts.dll
 
 ### <a name="additional-information"></a>其他信息
 
-有关其他命令和扩展，可以显示关键部分的信息，请参阅[显示关键节](displaying-a-critical-section.md)。 有关临界区的详细信息，请参阅 Microsoft Windows SDK 文档，Windows Driver Kit (WDK) 文档，并*Microsoft Windows Internals*由 Mark Russinovich 和 David solomon 合著。 
+有关可显示关键部分信息的其他命令和扩展，请参阅 [显示关键部分](displaying-a-critical-section.md)。 有关关键部分的详细信息，请参阅 "Microsoft Windows SDK 文档"、"Windows 驱动程序工具包" (WDK) 文档和 *Microsoft Windows 内部* 的 "标记 Russinovich" 和 "David"。 
 
 #### <a name="remarks"></a>备注
 
-**！ Cs**扩展需要完整的符号 （包括类型信息），正在调试的进程和 Ntdll.dll 的。 如果您没有 Ntdll.dll 的符号，请参阅[安装 Windows 符号文件](installing-windows-symbol-files.md)。
+**！ Cs**扩展需要完整符号 (包括要调试的进程的类型信息) 和 Ntdll.dll。 如果没有 Ntdll.dll 的符号，请参阅 [安装 Windows 符号文件](installing-windows-symbol-files.md)。
 
-下面的示例演示如何使用 **！ cs**。 以下命令显示有关的信息关键部分地址 0x7803B0F8 处，并显示其初始化堆栈跟踪。
+下面的示例演示如何使用 **！ cs**。 下面的命令显示有关地址0x7803B0F8 的关键部分的信息并显示其初始化堆栈跟踪。
 
 ```dbgcmd
 0:001> !cs -s 0x7803B0F8
@@ -80,7 +80,7 @@ Stack trace for DebugInfo = 0x6A262080:
 0x6A20DCE1: ntdll!LdrpInitializeProcess+0xAE5
 ```
 
-下面的命令显示有关其 DebugInfo 位于地址 0x6A262080 的关键部分的信息。
+以下命令显示有关其 DebugInfo 位于 address 0x6A262080 的临界区的信息。
 
 ```dbgcmd
 0:001> !cs -d 0x6A262080
@@ -91,7 +91,7 @@ LockSemaphore      = 0x0
 SpinCount          = 0x0
 ```
 
-下面的命令显示当前进程中的所有活动的关键部分有关的信息。
+以下命令显示有关当前进程中的所有活动关键部分的信息。
 
 ```dbgcmd
 ## 0:001> !cs
@@ -129,7 +129,7 @@ LockSemaphore      = 0x0
 ...
 ```
 
-以下命令显示的关键部分树。
+以下命令显示临界区树。
 
 ```dbgcmd
 0:001> !cs -t
@@ -155,27 +155,21 @@ Level     Node       CS    Debug  InitThr EnterThr  WaitThr TryEnThr LeaveThr En
  3 00bb0d70 77c2da08 008fcfe0      4c8        0        0        0        0        0        0
 ```
 
-以下各项显示在此 **！ cs-t**显示：
+此项中显示了以下各项： **cs-t** 显示：
 
--   **InitThr**是初始化 CS 的线程的线程 ID。
+-   **InitThr** 是初始化 CS 的线程的线程 ID。
 
--   **EnterThr**的调用的线程 id **EnterCriticalSection**上次的时间。
+-   **EnterThr** 是上次调用 **EnterCriticalSection** 的线程的 ID。
 
--   **WaitThr**找到关键部分，另一个线程的线程 ID 拥有和等待的时间它最后一次。
+-   **WaitThr** 是一个线程的 ID，该 ID 找到了另一个线程最后一次拥有并等待的关键部分。
 
--   **TryEnThr**的调用的线程 id **TryEnterCriticalSection**上次的时间。
+-   **TryEnThr** 是上次调用 **TryEnterCriticalSection** 的线程的 ID。
 
--   **LeaveThr**的调用的线程 id **LeaveCriticalSection**上次时间
+-   **LeaveThr** 是上次调用 **LeaveCriticalSection** 的线程的 ID
 
--   **EnterCnt**是的计数**EnterCriticalSection**。
+-   **EnterCnt** 是 **EnterCriticalSection**的计数。
 
--   **WaitCnt**是争用计数。
-
-
-
- 
-
-
+-   **WaitCnt** 是争用计数。
 
 
 

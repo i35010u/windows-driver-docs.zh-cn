@@ -1,6 +1,6 @@
 ---
-title: '\_XXX 调试\_格式'
-description: WriteDumpFile2 和 WriteDumpFileWide 使用 DEBUG_FORMAT_XXX 位标志来确定故障转储文件的格式，对于用户模式小型转储，还使用它们来确定要包含在文件中的信息。
+title: 调试 \_ 格式 \_ XXX
+description: WriteDumpFile2 和 WriteDumpFileWide 使用 DEBUG_FORMAT_XXX 位标志来确定崩溃转储文件的格式，对于用户模式小型转储，还使用该标志来确定要包含在文件中的信息。
 ms.date: 08/20/2018
 topic_type:
 - apiref
@@ -11,23 +11,23 @@ api_location:
 api_type:
 - HeaderDef
 ms.localizationpriority: medium
-ms.openlocfilehash: 60aa527199b5fe2b395200fdf2dd8b059e7794e9
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 0c0062d4dca7265d1012a4089c8b2d831a2ff8ee
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72837793"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89217086"
 ---
-# <a name="debug_format_xxx"></a>\_XXX 调试\_格式
+# <a name="debug_format_xxx"></a>调试 \_ 格式 \_ XXX
 
-WriteDumpFile2 和 WriteDumpFileWide 使用 DEBUG_FORMAT_XXX 位标志来确定故障转储文件的格式，对于用户模式小型转储，还使用它们来确定要包含在文件中的信息。
+WriteDumpFile2 和 WriteDumpFileWide 使用 DEBUG_FORMAT_XXX 位标志来确定崩溃转储文件的格式，对于用户模式小型转储，还使用该标志来确定要包含在文件中的信息。
 
 以下位标志适用于所有故障转储文件。
 
 <table>
 <tr>
-<th>Value</th>
-<th>描述</th>
+<th>值</th>
+<th>说明</th>
 </tr>
 <tr>
 <td>
@@ -63,8 +63,8 @@ WriteDumpFile2 和 WriteDumpFileWide 使用 DEBUG_FORMAT_XXX 位标志来确定�
 <p>对于用户模式小型转储，还可以包含以下位标志。</p>
 <table>
 <tr>
-<th>Value</th>
-<th>描述</th>
+<th>值</th>
+<th>说明</th>
 </tr>
 <tr>
 <td>
@@ -119,7 +119,7 @@ WriteDumpFile2 和 WriteDumpFileWide 使用 DEBUG_FORMAT_XXX 位标志来确定�
 <p>DEBUG_FORMAT_USER_SMALL_FILTER_PATHS</p>
 </td>
 <td>
-<p>删除模块路径，仅保留模块名称。  这对于通过隐藏目录结构（可能包含用户的名称）来保护隐私非常有用。</p>
+<p>删除模块路径，仅保留模块名称。  这对于通过隐藏可能包含用户名)  (的目录结构来保护隐私非常有用。</p>
 </td>
 </tr>
 <tr>
@@ -135,7 +135,7 @@ WriteDumpFile2 和 WriteDumpFileWide 使用 DEBUG_FORMAT_XXX 位标志来确定�
 <p>DEBUG_FORMAT_USER_SMALL_PROCESS_THREAD_DATA</p>
 </td>
 <td>
-<p>添加进程环境块（PEB）和线程环境块（TEB）。  此标志可用于为线程和进程提供 Windows 系统信息。</p>
+<p>添加进程环境块 (PEB) 和线程环境块 (TEB) 。  此标志可用于为线程和进程提供 Windows 系统信息。</p>
 </td>
 </tr>
 <tr>
@@ -153,11 +153,11 @@ WriteDumpFile2 和 WriteDumpFileWide 使用 DEBUG_FORMAT_XXX 位标志来确定�
 <td>
 <p>
 <dl>
-<dt>防止在小型转储中包含隐私敏感数据。 目前，由于正在设置以下标志，此标志将从已添加的小型转储数据中排除：</dt>
+<dt>防止在小型转储中包含隐私敏感数据。 目前，由于设置了以下标志，此标志将从已添加的小型转储数据中排除：</dt>
 <dt>DEBUG_FORMAT_USER_SMALL_PROCESS_THREAD_DATA、</dt>
 <dt>DEBUG_FORMAT_USER_SMALL_FULL_MEMORY、</dt>
-<dt>DEBUG_FORMAT_USER_SMALL_INDIRECT_MEMORY、</dt>
-<dt>DEBUG_FORMAT_USER_SMALL_PRIVATE_READ_WRITE_MEMORY</dt>
+<dt>DEBUG_FORMAT_USER_SMALL_INDIRECT_MEMORY</dt>
+<dt>DEBUG_FORMAT_USER_SMALL_PRIVATE_READ_WRITE_MEMORY。</dt>
 </dl>
 </p>
 </td>
@@ -167,7 +167,7 @@ WriteDumpFile2 和 WriteDumpFileWide 使用 DEBUG_FORMAT_XXX 位标志来确定�
 <p>DEBUG_FORMAT_USER_SMALL_FULL_MEMORY_INFO</p>
 </td>
 <td>
-<p>添加所有基本内存信息。  这是<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugdataspaces2-queryvirtual" data-raw-source="[IDebugDataSpaces2::QueryVirtual method](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugdataspaces2-queryvirtual)">IDebugDataSpaces2：： QueryVirtual 方法</a>返回的信息。  包括所有内存的信息，而不只是有效的内存，这允许调试器从小型转储构造完整的虚拟内存布局。</p>
+<p>添加所有基本内存信息。  这是 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugdataspaces2-queryvirtual" data-raw-source="[IDebugDataSpaces2::QueryVirtual method](/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugdataspaces2-queryvirtual)">IDebugDataSpaces2：： QueryVirtual 方法</a>返回的信息。  包括所有内存的信息，而不只是有效的内存，这允许调试器从小型转储构造完整的虚拟内存布局。</p>
 </td>
 </tr>
 <tr>
@@ -201,13 +201,7 @@ WriteDumpFile2 和 WriteDumpFileWide 使用 DEBUG_FORMAT_XXX 位标志来确定�
 <tbody>
 <tr class="odd">
 <td align="left"><p>标头</p></td>
-<td align="left">DbgEng （包括 DbgEng）</td>
+<td align="left">DbgEng (包含 DbgEng) </td>
 </tr>
 </tbody>
 </table>
- 
-
-
-
-
-

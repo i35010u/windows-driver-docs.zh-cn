@@ -1,6 +1,6 @@
 ---
 title: usb3kd xhci_transferring
-description: Xhci_transferring usb3kd 扩展显示一个传输环（由 USB 3.0 主机控制器使用），直到它检测到循环位更改。
+description: Xhci_transferring usb3kd 扩展显示 USB 3.0 主机控制器) 使用的传输环形 (，直到它检测到循环位更改。
 ms.assetid: BCF6DEF0-FB58-4FE6-88AD-BF778E00F052
 keywords:
 - usb3kd xhci_transferring Windows 调试
@@ -12,17 +12,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 3875fa7074ee6f8296fe14fa35ac54f5b31a3516
-ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
+ms.openlocfilehash: faa7493c84595f6f2fdc820b7ac11407eaa6a94a
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84534886"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89216264"
 ---
 # <a name="usb3kdxhci_transferring"></a>！ usb3kd xhci 正在 \_ 传输
 
 
-[**！ Usb3kd \_ 传输**](-usb3kd-device-info.md)扩展显示一个传输环（由 USB 3.0 主机控制器使用），直到它检测到循环位更改。
+[**！ Usb3kd \_ 传输**](-usb3kd-device-info.md)扩展显示 USB 3.0 主机控制器) 使用的传输 (环，直到它检测到循环位更改。
 
 ```dbgcmd
 !usb3kd.xhci_transferring VirtualAddress
@@ -38,25 +38,25 @@ ms.locfileid: "84534886"
 <span id="_______PhysicalAddress______"></span><span id="_______physicaladdress______"></span><span id="_______PHYSICALADDRESS______"></span>*PhysicalAddress*   
 传输环状的物理地址。
 
-<span id="_______1______"></span>2   
+<span id="_______1______"></span> 2   
 指定该地址是一个物理地址。
 
 ## <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 
-Usb3kd
+Usb3kd.dll
 
 <a name="remarks"></a>备注
 -------
 
-**！ Xhci \_ 传输**命令的输出基于 USB 3.0 主机控制器驱动程序（UsbXhci .sys）维护的数据结构。 有关 usb 3.0 主机控制器驱动程序和 USB 堆栈中其他驱动程序的详细信息，请参阅[Windows 中的 usb 主机端驱动程序](https://docs.microsoft.com/windows-hardware/drivers/usbcon/usb-3-0-driver-stack-architecture)。
+**！ Xhci \_ 传输**命令的输出基于 USB 3.0 主机控制器驱动程序所维护的数据结构 ( # A0) 。 有关 usb 3.0 主机控制器驱动程序和 USB 堆栈中其他驱动程序的详细信息，请参阅 [Windows 中的 usb 主机端驱动程序](../usbcon/usb-3-0-driver-stack-architecture.md)。
 
-传输环是 USB 3.0 主机控制器驱动程序用来维护传输请求块（TRBs）列表的结构。 此命令获取传输环的虚拟或物理地址，但显示 TRBs 的物理地址。 这样做是为了使命令能够正确遍历链接 TRBs。
+传输环是 USB 3.0 主机控制器驱动程序使用的结构，用于维护传输请求块 (TRBs) 的列表。 此命令获取传输环的虚拟或物理地址，但显示 TRBs 的物理地址。 这样做是为了使命令能够正确遍历链接 TRBs。
 
 <a name="examples"></a>示例
 --------
 
-若要获取传输环的地址，请查看[**！ xhci \_ deviceslots**](-usb3kd-xhci-deviceslots.md)命令的输出。 在下面的示例中，传输环的虚拟地址为0xfffffa8005b2fe00。
+若要获取传输环的地址，请查看 [**！ xhci \_ deviceslots**](-usb3kd-xhci-deviceslots.md) 命令的输出。 在下面的示例中，传输环的虚拟地址为0xfffffa8005b2fe00。
 
 ```dbgcmd
 3: kd> !usb3kd.xhci_deviceslots 0xfffffa800523a2d0
@@ -84,7 +84,7 @@ DeviceContextBase: VA 0xfffffa8005a41000 LA 0x116841000 !wdfcommonbuffer 0x57ffa
                 [0] dt _TRANSFER_DATA 0xfffffa8005b961b0 !urb 0xfffffa8005b52be8 !wdfrequest 0x57ffa469fd8 TransferState_Pending
 ```
 
-现在可以将传输环的地址传递到 **！ xhci \_ 传输**命令。
+现在可以将传输环的地址传递到 **！ xhci \_ 传输** 命令。
 
 ```dbgcmd
 kd> !xhci_transferring 0xfffffa8005b2fe00
@@ -104,14 +104,7 @@ kd> !xhci_transferring 0xfffffa8005b2fe00
 
 [**！ xhci \_ dumpall**](-usb3kd-xhci-dumpall.md)
 
-[通用串行总线（USB）驱动程序](https://docs.microsoft.com/windows-hardware/drivers/usbcon/)
+[ (USB) 驱动程序的通用串行总线](../usbcon/index.md)
 
  
-
- 
-
-
-
-
-
 

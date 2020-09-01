@@ -1,32 +1,32 @@
 ---
 title: WDI_TLV_PHY_STATISTICS
-description: WDI_TLV_PHY_STATISTICS 是一个 TLV，其中包含 OID_WDI_GET_STATISTICS 的每个 PHY 统计信息。
+description: WDI_TLV_PHY_STATISTICS 是包含 OID_WDI_GET_STATISTICS 的每 PHY 统计信息的 TLV。
 ms.assetid: 2F27FF4E-54AC-4518-AEB0-3518FBC8BE0F
 ms.date: 07/18/2017
 keywords:
-- WDI_TLV_PHY_STATISTICS 从 Windows Vista 开始的网络驱动程序
+- 从 Windows Vista 开始 WDI_TLV_PHY_STATISTICS 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: e2fb5ee4f611ca6f0a9c0a8863ce4edf23d74902
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 0cf08bfb4e881cbdf1406ce7af64832b29adb5c7
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72844807"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89217825"
 ---
-# <a name="wdi_tlv_phy_statistics"></a>WDI\_TLV\_PHY\_统计信息
+# <a name="wdi_tlv_phy_statistics"></a>WDI \_ TLV \_ PHY \_ 统计信息
 
 
-WDI\_TLV\_PHY\_统计信息是一个 TLV，其中包含 OID 的每个 PHY 统计信息[\_WDI\_获取\_统计信息](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wdi-get-statistics)。
+WDI \_ tlv \_ PHY \_ 统计信息是一个 tlv，其中包含 [OID \_ WDI \_ 获取 \_ 统计](./oid-wdi-get-statistics.md)信息的每个 PHY 统计信息。
 
 ## <a name="tlv-type"></a>TLV 类型
 
 
 0xA7
 
-## <a name="length"></a>长度
+## <a name="length"></a>Length
 
 
-所有包含的元素的大小的总和（以字节为单位）。
+Sum (所有包含的元素的大小) 。
 
 ## <a name="values"></a>值
 
@@ -38,13 +38,13 @@ WDI\_TLV\_PHY\_统计信息是一个 TLV，其中包含 OID 的每个 PHY 统计
 </colgroup>
 <thead>
 <tr class="header">
-<th>在任务栏的搜索框中键入</th>
-<th>描述</th>
+<th>类型</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wditypes/ne-wditypes-_wdi_phy_type" data-raw-source="[&lt;strong&gt;WDI_PHY_TYPE&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wditypes/ne-wditypes-_wdi_phy_type)"><strong>WDI_PHY_TYPE</strong></a></td>
+<td><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wditypes/ne-wditypes-_wdi_phy_type" data-raw-source="[&lt;strong&gt;WDI_PHY_TYPE&lt;/strong&gt;](/windows-hardware/drivers/ddi/wditypes/ne-wditypes-_wdi_phy_type)"><strong>WDI_PHY_TYPE</strong></a></td>
 <td>此 PHY 的类型。</td>
 </tr>
 <tr class="even">
@@ -78,7 +78,7 @@ WDI\_TLV\_PHY\_统计信息是一个 TLV，其中包含 OID 的每个 PHY 统计
 </tr>
 <tr class="odd">
 <td>UINT64</td>
-<td>802.11 工作站收到响应发送（RTS）帧的明文发送（CTS）帧的次数。 如果每个端口无法维护此情况，则可以按通道进行维护。</td>
+<td>802.11 工作站接收到发送 (CTS) 帧以响应发送 (RTS) 帧的请求的次数。 如果每个端口无法维护此情况，则可以按通道进行维护。</td>
 </tr>
 <tr class="even">
 <td>UINT64</td>
@@ -86,12 +86,12 @@ WDI\_TLV\_PHY\_统计信息是一个 TLV，其中包含 OID 的每个 PHY 统计
 </tr>
 <tr class="odd">
 <td>UINT64</td>
-<td>802.11 工作站预期和未收到确认（ACK）帧的次数。 如果每个端口无法维护此情况，则可以按通道进行维护。</td>
+<td>802.11 工作站预期和未收到确认 (ACK) 帧的次数。 如果每个端口无法维护此情况，则可以按通道进行维护。</td>
 </tr>
 <tr class="even">
 <td>UINT64</td>
 <td>802.11 工作站成功接收的 MSDU 数据包和 MMPDU 帧的数量。
-<p>对于 MSDU 数据包，端口必须为收到 MPDU 片段并通过帧检查序列（FCS）验证和重播检测的每个数据包递增此计数器。 无论接收到的 MSDU 数据包或 MPDU 片段是否无法通过 MAC 层密码解密，端口都必须递增此成员。</p></td>
+<p>对于 MSDU 数据包，端口必须为收到 MPDU 片段的每个数据包递增此计数器，并 (FCS) 验证和重播检测。 无论接收到的 MSDU 数据包或 MPDU 片段是否无法通过 MAC 层密码解密，端口都必须递增此成员。</p></td>
 </tr>
 <tr class="odd">
 <td>UINT64</td>
@@ -138,7 +138,7 @@ WDI\_TLV\_PHY\_统计信息是一个 TLV，其中包含 OID 的每个 PHY 统计
 <tbody>
 <tr class="odd">
 <td><p>最低受支持的客户端</p></td>
-<td><p>Windows 10</p></td>
+<td><p>Windows 10</p></td>
 </tr>
 <tr class="even">
 <td><p>最低受支持的服务器</p></td>
@@ -152,9 +152,4 @@ WDI\_TLV\_PHY\_统计信息是一个 TLV，其中包含 OID 的每个 PHY 统计
 </table>
 
  
-
- 
-
-
-
 

@@ -4,55 +4,49 @@ description: SR-IOV VF 故障转移和实时迁移支持
 ms.assetid: 93D6EFC7-B701-4D10-8114-FA437E80096B
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f5166be41a6ba05ab1c35f35ddd949ee8685ee28
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: dfe967b9581ce926bab92fcc51465178ac77ba6d
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67377008"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89216594"
 ---
 # <a name="sr-iov-vf-failover-and-live-migration-support"></a>SR-IOV VF 故障转移和实时迁移支持
 
 
-启动 HYPER-V 子分区后，网络流量将通过综合数据路径。 如果物理网络适配器支持单根 I/O 虚拟化 (SR-IOV) 接口，它可以启用一个或多个 PCI Express (PCIe) 虚函数 (VFs)。 每个 VF 可以附加到 HYPER-V 子分区。 在此情况下，通过硬件优化网络流量的流动[SR-IOV VF 数据路径](sr-iov-vf-data-path.md)。
+Hyper-v 子分区开始后，网络流量将流经合成数据路径。 如果物理网络适配器支持 (SR-IOV) 接口的单个根 i/o 虚拟化，则它可以启用一个或多个 PCI Express (PCIe) 虚拟函数 (VFs) 。 每个 VF 都可以附加到 Hyper-v 子分区。 发生这种情况时，网络流量将流经硬件优化 [SR-IOV VF 数据路径](sr-iov-vf-data-path.md)。
 
-建立 VF 数据路径之后，可以还原到的网络流量[综合数据路径](sr-iov-vf-data-path.md)如果任意下列条件为 true:
+建立 VF 数据路径后，如果满足以下任一条件，则网络流量可以恢复为 [合成数据路径](sr-iov-vf-data-path.md) ：
 
--   VF 已附加到 HYPER-V 子分区，但将变为已分离。 例如，虚拟化堆栈无法分离 VF 从一个子分区并将其附加到另一个子分区。 这可能不是基础的 SR-IOV 网络适配器上有 VF 资源运行的更多的 HYPER-V 子分区时。
+-   VF 已附加到 Hyper-v 子分区，但会被分离。 例如，虚拟化堆栈可以将 VF 与一个子分区分离，并将其附加到另一个子分区。 如果正在运行的 Hyper-v 子分区比基础 SR-IOV 网络适配器上的 VF 资源多，则可能会发生这种情况。
 
-    故障转移到的综合数据路径 VF 数据路径中的过程被称为*VF 故障转移*。
+    从 VF 数据路径故障转移到综合数据路径的过程称为 " *vf 故障转移*"。
 
--   HYPER-V 子分区的实时迁移到另一台主机。
+-   Hyper-v 子分区正在实时迁移到另一台主机。
 
-下图显示了支持 SR-IOV 网络适配器上的各种数据路径。
+下图显示了通过 SR-IOV 网络适配器支持的各种数据路径。
 
-![堆栈图示下方管理父分区进行通信使用子分区与通信的虚拟机总线 sr-iov 适配器\#通信使用的虚拟机来宾操作系统 1 包含总线，此外子分区\#2 通信时使用到的 sr-iov 适配器 vf 微型端口](images/sriovdatapaths.png)
+![在管理父分区下显示 sr-iov 适配器的堆栈关系图，此管理父分区下的通信与 \# 包含使用 vm 总线通信的来宾操作系统的子分区1，而子分区 \# 2 则使用 vf 微型端口与 sr-iov 适配器进行通信](images/sriovdatapaths.png)
 
-NetVSC 公开绑定到 VF 微型端口驱动程序以支持 VF 数据路径的虚拟机 (VM) 网络适配器。 在转换为的综合数据路径，期间 VF 删除网络适配器是正常如有可能从来宾操作系统。 如果不能正常和时间出删除 VF，它将是意外删除。 然后暂停 VF 微型端口驱动程序，以及网络虚拟服务客户端 (NetVSC) 是从 VF 微型端口驱动程序未绑定。
+Netvsc.sys 公开 (VM) 网络适配器的虚拟机，该虚拟机绑定到 VF 微型端口驱动程序以支持 VF 数据路径。 在转换为合成数据路径的过程中，如果可能，从来宾操作系统中删除 VF 网络适配器。 如果无法正常删除 VF 并超时，则会将其意外删除。 然后，将停止 VF 微型端口驱动程序，并且网络虚拟服务客户端 (Netvsc.sys) 从 VF 微型端口驱动程序中解除绑定。
 
-VF 和综合数据路径之间的转换的数据包丢失最少会出现，并且可以防止 TCP 连接丢失。 为综合数据路径转换已完成之前，虚拟化堆栈将按照以下步骤：
+VF 与综合数据路径之间的转换会导致数据包的最小丢失，并防止丢失 TCP 连接。 在到综合数据路径的转换完成之前，虚拟化堆栈执行以下步骤：
 
-1.  虚拟化堆栈将 VM 网络适配器的媒体访问控制 (MAC) 和虚拟 LAN (VLAN) 的筛选器移到附加到 PCIe 物理函数 (PF) 的默认虚拟端口 (VPort)。 VM 网络适配器的子分区在来宾操作系统中公开。
+1.  虚拟化堆栈将 VM 网络适配器的媒体访问控制 (MAC) 和虚拟 LAN (VLAN) 筛选器移动到连接到 PCIe 物理函数 (PF) 的默认虚拟端口 (VPort) 。 VM 网络适配器在子分区的来宾操作系统中公开。
 
-    筛选器移动到默认 VPort 后，综合数据路径是完全可操作的网络流量与来宾操作系统中运行的网络组件。 PF 微型端口驱动程序指示默认 PF VPort 综合数据路径用于指示将数据包用于来宾操作系统上的接收的数据包。 同样，从来宾操作系统的所有传输的数据包是通过综合数据路径路由，并且通过默认 PF VPort 传输。
+    将筛选器移动到默认的 VPort 后，合成数据路径对于进出来宾操作系统中运行的网络组件的网络流量完全正常运行。 PF 微型端口驱动程序指示默认 PF VPort 上收到的数据包，该数据包使用综合数据路径指示到来宾操作系统的数据包。 同样，从来宾操作系统传输的所有数据包都将通过综合数据路径进行路由，并通过默认 PF VPort 传输。
 
-    有关 VPorts 详细信息，请参阅[虚拟端口 (VPorts)](virtual-ports--vports-.md)。
+    有关 VPorts 的详细信息，请参阅 [虚拟端口 (VPorts) ](virtual-ports--vports-.md)。
 
-2.  虚拟化堆栈中删除通过发出的对象标识符 (OID) 组请求附加到 VF VPort [OID\_NIC\_交换机\_删除\_VPORT](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-delete-vport)到 PF微型端口驱动程序。 微型端口驱动程序，释放与 VPort 关联任何硬件和软件资源并完成 OID 请求。
+2.  虚拟化堆栈通过发出对象标识符 (OID 来删除附加到 VF 的 VPort) 将 [oid \_ NIC \_ SWITCH \_ DELETE \_ VPort](./oid-nic-switch-delete-vport.md) 请求发送到 PF 微型端口驱动程序。 微型端口驱动程序释放与 VPort 关联的任何硬件和软件资源并完成 OID 请求。
 
-    有关详细信息，请参阅[删除虚拟端口](deleting-a-virtual-port.md)。
+    有关详细信息，请参阅 [删除虚拟端口](deleting-a-virtual-port.md)。
 
-3.  虚拟化堆栈请求 PCIe 函数级别重置 (FLR) 的 VF 之前释放其资源。 通过发出的 OID 集请求的堆栈实现这[OID\_SRIOV\_重置\_VF](https://docs.microsoft.com/windows-hardware/drivers/network/oid-sriov-reset-vf)到 PF 微型端口驱动程序。 FLR VF SR-IOV 网络适配器上引入静止状态，并为 VF 清除任何挂起的中断事件。
+3.  在释放虚拟化堆栈的资源之前，该虚拟化堆栈会请求 FLR 的一个 PCIe 函数级别重置 () 。 堆栈通过向 PF 微型端口驱动程序发出 [oid \_ SRIOV \_ RESET \_ VF](./oid-sriov-reset-vf.md)的 oid 集请求来实现此功能。 FLR 将 SR-IOV 网络适配器上的 VF 引入静态状态，并清除 VF 的任何挂起的中断事件。
 
-4.  虚拟化堆栈 VF 已被重置后，通过发出 OID 集请求的请求的 VF 资源释放[OID\_NIC\_交换机\_免费\_VF](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-free-vf)到 PF微型端口驱动程序。 这将导致微型端口驱动程序，以释放与 VF 相关联的硬件资源。
+4.  重置 VF 后，虚拟化堆栈会通过向 PF 微型端口驱动程序发出 [oid \_ NIC \_ 交换机 \_ 免费 \_ VF](./oid-nic-switch-free-vf.md) 的 OID 集请求来请求释放 VF 资源。 这会导致微型端口驱动程序释放与 VF 关联的硬件资源。
 
-有关此过程的详细信息，请参阅[虚拟函数拆卸序列](virtual-function-teardown-sequence.md)。
-
- 
+有关此过程的详细信息，请参阅 [虚拟函数拆卸序列](virtual-function-teardown-sequence.md)。
 
  
-
-
-
-
 

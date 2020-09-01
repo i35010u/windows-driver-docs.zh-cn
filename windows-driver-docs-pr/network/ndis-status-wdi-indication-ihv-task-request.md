@@ -4,19 +4,19 @@ description: 微型端口驱动程序使用 NDIS_STATUS_WDI_INDICATION_IHV_TASK_
 ms.assetid: E123F957-574F-4C78-B366-76E886018503
 ms.date: 07/18/2017
 keywords:
-- NDIS_STATUS_WDI_INDICATION_IHV_TASK_REQUEST 从 Windows Vista 开始的网络驱动程序
+- 从 Windows Vista 开始 NDIS_STATUS_WDI_INDICATION_IHV_TASK_REQUEST 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 151e2a75cca57edbde7a60a7149042d40bda910b
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 2321d0cd404099cc4b24449dbcc89e83e53b59b0
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72843462"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89217021"
 ---
-# <a name="ndis_status_wdi_indication_ihv_task_request"></a>NDIS\_状态\_WDI\_指示\_IHV\_TASK\_请求
+# <a name="ndis_status_wdi_indication_ihv_task_request"></a>NDIS \_ 状态 \_ WDI \_ 指示 \_ IHV \_ 任务 \_ 请求
 
 
-微型端口驱动程序使用 NDIS\_状态\_WDI\_指示\_IHV\_TASK\_请求，请求 Microsoft 组件将 IHV 任务排队。
+微型端口驱动程序使用 NDIS \_ STATUS \_ WDI \_ 指示 \_ ihv \_ 任务 \_ 请求来请求 Microsoft 组件将 IHV 任务排队。
 
 | 对象 |
 |--------|
@@ -27,10 +27,10 @@ ms.locfileid: "72843462"
 ## <a name="payload-data"></a>负载数据
 
 
-| 在任务栏的搜索框中键入                                                                                         | 允许多个 TLV 实例 | 可选 | 描述                                                                                                                                  |
+| 类型                                                                                         | 允许多个 TLV 实例 | 可选 | 说明                                                                                                                                  |
 |----------------------------------------------------------------------------------------------|--------------------------------|----------|----------------------------------------------------------------------------------------------------------------------------------------------|
-| [**WDI\_TLV\_IHV\_任务\_请求\_参数**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-ihv-task-request-parameters) |                                |          | IHV 请求此任务的优先级。 有关有效值，请参阅[**WDI\_IHV\_任务\_优先级**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wditypes/ne-wditypes-_wdi_ihv_task_priority)枚举。 |
-| [**WDI\_TLV\_IHV\_任务\_设备\_上下文**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-ihv-task-device-context)         |                                | X        | 由 IHV 提供的上下文信息转发到[OID\_WDI\_TASK\_IHV](oid-wdi-task-ihv.md)。                                       |
+| [**WDI \_ TLV \_ IHV \_ 任务 \_ 请求 \_ 参数**](./wdi-tlv-ihv-task-request-parameters.md) |                                |          | IHV 请求此任务的优先级。 有关有效值，请参阅 [**WDI \_ IHV \_ 任务 \_ 优先级**](/windows-hardware/drivers/ddi/wditypes/ne-wditypes-_wdi_ihv_task_priority) 枚举。 |
+| [**WDI \_ TLV \_ IHV \_ 任务 \_ 设备 \_ 上下文**](./wdi-tlv-ihv-task-device-context.md)         |                                | X        | IHV 提供的、转发到 [OID \_ WDI \_ 任务 \_ IHV](oid-wdi-task-ihv.md)的上下文信息。                                       |
 
  
 
@@ -45,7 +45,7 @@ ms.locfileid: "72843462"
 <tbody>
 <tr class="odd">
 <td><p>最低受支持的客户端</p></td>
-<td><p>Windows 10</p></td>
+<td><p>Windows 10</p></td>
 </tr>
 <tr class="even">
 <td><p>最低受支持的服务器</p></td>
@@ -61,12 +61,7 @@ ms.locfileid: "72843462"
 ## <a name="see-also"></a>另请参阅
 
 
-[OID\_WDI\_任务\_IHV](oid-wdi-task-ihv.md)
+[OID \_ WDI \_ 任务 \_ IHV](oid-wdi-task-ihv.md)
 
  
-
- 
-
-
-
 

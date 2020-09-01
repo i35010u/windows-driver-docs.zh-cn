@@ -4,20 +4,20 @@ description: 本部分介绍了 USB 2.0 调试程序扩展命令。 这些命令
 ms.assetid: 42A78738-CE0D-42EA-9E3D-04CDC2060266
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 95e4888ff5af72e4778213adc1d69b3a325f2830
-ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
+ms.openlocfilehash: 491f61ab730ec76033d021eb228100fe41f3db0d
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84533831"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89215718"
 ---
 # <a name="usb-20-extensions"></a>USB 2.0 扩展
 
-本部分介绍了 USB 2.0 调试程序扩展命令。 这些命令显示由 USB 2.0 驱动程序堆栈中的驱动程序所维护的数据结构的信息。 有关这三个驱动程序的详细信息，请参阅[Windows 中的 USB 主机端驱动程序](https://docs.microsoft.com/windows-hardware/drivers/usbcon/usb-3-0-driver-stack-architecture)。
+本部分介绍了 USB 2.0 调试程序扩展命令。 这些命令显示由 USB 2.0 驱动程序堆栈中的驱动程序所维护的数据结构的信息。 有关这三个驱动程序的详细信息，请参阅 [Windows 中的 USB 主机端驱动程序](../usbcon/usb-3-0-driver-stack-architecture.md)。
 
-USB 2.0 调试程序扩展命令是在 Usbkd 中实现的。 若要加载 Usbkd 命令，请在调试器中输入**Usbkd** 。
+USB 2.0 调试程序扩展命令在 Usbkd.dll 中实现。 若要加载 Usbkd 命令，请输入调试程序中的 **load usbkd.dll** 。
 
-## <a name="span-idusb-2-treespan-usb-20-tree"></a><span id="usb-2-tree"></span>USB 2.0 树
+## <a name="span-idusb-2-treespan-usb-20-tree"></a><span id="usb-2-tree"></span> USB 2.0 树
 
 USB 2.0 树包含代表 EHCI 主机控制器设备上执行单元的设备节点，以及表示集线器和连接设备的子节点。 此图显示了一个 USB 2.0 树的示例。
 
@@ -30,7 +30,7 @@ USB 2.0 树包含代表 EHCI 主机控制器设备上执行单元的设备节点
 ## <a name="getting-started-with-usb-20-debugging"></a>USB 2.0 调试入门
 
 
-若要开始调试 USB 2.0 问题，请输入[**！ usb2tree**](-usbkd-usb2tree.md)命令。 **！ Usb2tree**命令显示可用于调查主机控制器、集线器、端口、设备、终结点和 USB 2.0 树的其他元素的命令和地址列表。
+若要开始调试 USB 2.0 问题，请输入 [**！ usb2tree**](-usbkd-usb2tree.md) 命令。 **！ Usb2tree**命令显示可用于调查主机控制器、集线器、端口、设备、终结点和 USB 2.0 树的其他元素的命令和地址列表。
 
 ## <a name="in-this-section"></a>本节内容
 

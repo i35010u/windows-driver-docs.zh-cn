@@ -1,35 +1,35 @@
 ---
 title: NDIS_STATUS_WDI_INDICATION_IHV_EVENT
-description: 微型端口驱动程序使用 NDIS_STATUS_WDI_INDICATION_IHV_EVENT IHV 特定信息传递给 IHV 扩展性模块。
+description: 微型端口驱动程序使用 NDIS_STATUS_WDI_INDICATION_IHV_EVENT 将 IHV 特定信息传递到 IHV 扩展性模块。
 ms.assetid: 767f15cd-456f-4d91-9b78-58f8f8b7a465
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 NDIS_STATUS_WDI_INDICATION_IHV_EVENT 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 545d309c79dffabcdc90e19b4a333ea2bf56d6fa
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 5235f6403e7235e9b632e00c4135466d5f398646
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67354956"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89217020"
 ---
-# <a name="ndisstatuswdiindicationihvevent"></a>NDIS\_状态\_WDI\_指示\_IHV\_事件
+# <a name="ndis_status_wdi_indication_ihv_event"></a>NDIS \_ 状态 \_ WDI \_ 指示 \_ IHV \_ 事件
 
 
-微型端口驱动程序使用 NDIS\_状态\_WDI\_指示\_IHV\_事件将传递给 IHV 扩展性模块 IHV 特定信息。
+微型端口驱动程序使用 NDIS \_ STATUS \_ WDI \_ 指示 \_ ihv \_ 事件将 IHV 特定信息传递到 ihv 扩展性模块。
 
-| Object |
+| 对象 |
 |--------|
-| Port   |
+| 端口   |
 
  
 
-## <a name="payload-data"></a>有效负载数据
+## <a name="payload-data"></a>负载数据
 
 
-| 在任务栏的搜索框中键入                                                 | 允许多个 TLV 实例 | 可选 | 描述                                           |
+| 类型                                                 | 允许多个 TLV 实例 | 可选 | 说明                                           |
 |------------------------------------------------------|--------------------------------|----------|-------------------------------------------------------|
-| [**WDI\_TLV\_IHV\_DATA**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-ihv-data) |                                | X        | 要发送到 IHV 扩展性模块的事件。 |
+| [**WDI \_ TLV \_ IHV \_ 数据**](./wdi-tlv-ihv-data.md) |                                | X        | 要发送到 IHV 扩展性模块的事件。 |
 
  
 
@@ -51,16 +51,11 @@ ms.locfileid: "67354956"
 <td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
-<td><p>Header</p></td>
-<td>Dot11wdi.h</td>
+<td><p>标头</p></td>
+<td>Dot11wdi</td>
 </tr>
 </tbody>
 </table>
 
  
-
- 
-
-
-
 

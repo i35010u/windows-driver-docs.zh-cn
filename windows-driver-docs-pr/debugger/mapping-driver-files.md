@@ -11,12 +11,12 @@ keywords:
 - 启动驱动程序替换
 ms.date: 05/13/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 94ddef41317ce364f8ab9bd0fcff50ad185533d8
-ms.sourcegitcommit: bb3b62a57ba3aea4a0adeefd2d81993367b7b334
+ms.openlocfilehash: 9f5b224163df80d0775ae963fbd62b0fe5130f69
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88148506"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89217366"
 ---
 # <a name="mapping-driver-files"></a>映射驱动程序文件
 
@@ -127,7 +127,7 @@ map
 bcdedit -bootdebug on
 ```
 
-有关详细信息，请参阅 [BCDEdit Options Reference](https://docs.microsoft.com/windows-hardware/drivers/devtest/bcd-boot-options-reference)。
+有关详细信息，请参阅 [BCDEdit Options Reference](../devtest/bcd-boot-options-reference.md)。
 
 如果内核调试器退出，则不会再进行驱动程序替换。 但是，已替换的任何驱动程序都不会还原为其旧的二进制文件，因为驱动程序文件实际上被覆盖。
 

@@ -3,29 +3,29 @@ title: XPSDrv 安装
 description: XPSDrv 安装
 ms.assetid: 0b5ef114-2862-46f9-bd32-ae09fa4e6a92
 keywords:
-- XPSDrv 的打印机驱动程序 WDK，安装
-- INF 文件 WDK 打印，XPSDrv 的打印机驱动程序
+- XPSDrv 打印机驱动程序 WDK，安装
+- INF 文件 WDK 打印，XPSDrv 打印机驱动程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f07e5d2bb94f4c66f4990c87dcbc50dc72e0c7a7
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 84dec8ad715ce7f45958f5abea15f82291e39f5e
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67382555"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89216322"
 ---
 # <a name="xpsdrv-installation"></a>XPSDrv 安装
 
 
-若要安装正确的后台处理程序，XPSDrv 驱动程序必须包括以下：
+为正确安装后台处理程序，XPSDrv 驱动程序必须包括以下各项：
 
--   [ **CopyFiles** ](https://docs.microsoft.com/windows-hardware/drivers/install/inf-copyfiles-directive)指令所属的驱动程序 INF 文件必须引用[筛选器管道配置文件](filter-pipeline-configuration-file.md)。
+-   驱动程序 INF 文件的 [**CopyFiles**](../install/inf-copyfiles-directive.md) 指令必须引用 [筛选器管道配置文件](filter-pipeline-configuration-file.md)。
 
--   需求指令必须引用 Xpsdrv.oem。 有关需求指令的详细信息，请参阅[ **INF DDInstall 部分**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-ddinstall-section)并[Inf 的源媒体](https://docs.microsoft.com/windows-hardware/drivers/install/source-media-for-inf-files)。
+-   需要指令必须引用 Xpsdrv. oem。 有关 "需要" 指令的详细信息，请参阅 [**Inf DDInstall 部分**](../install/inf-ddinstall-section.md) 和 Inf [源媒体](../install/source-media-for-inf-files.md)。
 
--   如果配置模块基于 Unidrv，需求指令必须引用 Unidrv.oem 和 Xpsgpd.oem。 同样，如果 XPSDrv 驱动程序配置模块基于 PScript5，需求指令必须引用 Pscript.oem 和 Xpsppd.oem。
+-   如果配置模块基于 Unidrv，则需要指令必须引用 Unidrv 和 Xpsgpd。 同样，如果 XPSDrv 驱动程序配置模块基于 PScript5，则需要指令必须引用 Pscript 和 Xpsppd。
 
-下面的代码示例说明了上述更改的 INF 文件。
+下面的代码示例阐释了前面更改的 INF 文件。
 
 ```cpp
 [Version]
@@ -58,9 +58,4 @@ xdsmpl-pipelineconfig.xml
 ```
 
  
-
- 
-
-
-
 

@@ -4,12 +4,12 @@ description: WDI IHV 微型端口驱动程序可以访问 NDIS 和 KMDF 提供�
 ms.assetid: 08996045-674B-465D-8880-088320770D2C
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 18a45fbe5e3c2229e66039f1767ddb1de9464093
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 26a4f133287844398b49eccfb3a36ce6ddc6b3ca
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72842916"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89216898"
 ---
 # <a name="wdi-ndis-interface-restrictions"></a>WDI NDIS 接口限制
 
@@ -18,17 +18,11 @@ WDI IHV 微型端口驱动程序可以访问 NDIS 和 KMDF 提供的所有功能
 
 WDI IHV 微型端口驱动程序需要注意有关 NDIS 接口的以下限制。
 
-函数 | 限制 | 其他 
+函数 | 限制 | 替代方法 
 ---|---|--- 
-[**NdisMRegisterMiniportDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismregisterminiportdriver) | 不允许 |  [**NdisMRegisterWdiMiniportDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dot11wdi/nf-dot11wdi-ndismregisterwdiminiportdriver) 
-[**NdisMDeregisterMiniportDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismderegisterminiportdriver) | 不允许 |  [**NdisMDeregisterWdiMiniportDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dot11wdi/nf-dot11wdi-ndismderegisterwdiminiportdriver) 
-[**NdisMSetMiniportAttributes**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismsetminiportattributes) | 不允许的**MiniportAttributes**类型：<br />[ **\_适配器\_注册\_特性的 NDIS\_微型端口**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_miniport_adapter_registration_attributes)<br />[**NDIS\_微型端口\_适配器\_常规\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_miniport_adapter_general_attributes)<br />[**NDIS\_微型端口\_适配器\_本机\_802\_11\_属性**](https://docs.microsoft.com/previous-versions/windows/hardware/wireless/ff565926(v=vs.85)) | 无。 这些使用 WDI 命令进行查询。 
-[**NdisMIndicateReceiveNetBufferLists**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismindicatereceivenetbufferlists) | 不允许 | 用于指示接收的数据包的 WDI 数据路径接收处理程序。 
-[**NdisMSendNetBufferListsComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismsendnetbufferlistscomplete) | 不允许 | 用于完成发送的数据包的 WDI 数据路径发送处理程序。
-
- 
-
-
-
-
+[**NdisMRegisterMiniportDriver**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismregisterminiportdriver) | 已禁止 |  [**NdisMRegisterWdiMiniportDriver**](/windows-hardware/drivers/ddi/dot11wdi/nf-dot11wdi-ndismregisterwdiminiportdriver) 
+[**NdisMDeregisterMiniportDriver**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismderegisterminiportdriver) | 已禁止 |  [**NdisMDeregisterWdiMiniportDriver**](/windows-hardware/drivers/ddi/dot11wdi/nf-dot11wdi-ndismderegisterwdiminiportdriver) 
+[**NdisMSetMiniportAttributes**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismsetminiportattributes) | 不允许的 **MiniportAttributes** 类型：<br />[**NDIS \_ 微型端口 \_ 适配器 \_ 注册 \_ 属性**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_miniport_adapter_registration_attributes)<br />[**NDIS \_ 微型端口 \_ 适配器 \_ 常规 \_ 属性**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_miniport_adapter_general_attributes)<br />[**NDIS \_ 微型端口 \_ 适配器 \_ 本机 \_ 802 \_ 11 \_ 属性**](/previous-versions/windows/hardware/wireless/ff565926(v=vs.85)) | 无。 这些使用 WDI 命令进行查询。 
+[**NdisMIndicateReceiveNetBufferLists**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismindicatereceivenetbufferlists) | 已禁止 | 用于指示接收的数据包的 WDI 数据路径接收处理程序。 
+[**NdisMSendNetBufferListsComplete**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismsendnetbufferlistscomplete) | 已禁止 | 用于完成发送的数据包的 WDI 数据路径发送处理程序。
 

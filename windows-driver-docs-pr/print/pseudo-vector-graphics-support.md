@@ -8,12 +8,12 @@ keywords:
 - nonvector 图形设备 WDK Unidrv
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f9d21ad450b11bfed449b1db79d53f86b6879191
-ms.sourcegitcommit: 17c1bbc5ea0bef3bbc87794b030a073f905dc942
+ms.openlocfilehash: b6968e96485fdfcd3ed092c532c15c6f5f83569c
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88802533"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89216324"
 ---
 # <a name="pseudo-vector-graphics-support"></a>伪矢量图形支持
 
@@ -25,7 +25,7 @@ ms.locfileid: "88802533"
 
 若要从此功能中受益，nonvector 图形设备的微型驱动程序仅需支持 CmdRectBlackFill 命令。 当打印机属性页的 "**高级**" 选项卡中的 "**打印优化**" 功能关闭时，将禁用此功能。
 
-Pseudovector graphics 功能可截获对 [**DrvBitBlt**](https://docs.microsoft.com/windows/win32/api/winddi/nf-winddi-drvbitblt)、 [**DrvStrokePath**](https://docs.microsoft.com/windows/win32/api/winddi/nf-winddi-drvstrokepath)和 [**DrvLineTo**](https://docs.microsoft.com/windows/win32/api/winddi/nf-winddi-drvlineto)的调用，以确定是否要绘制实心黑色矩形或垂直或水平线条。 当 Unidrv 识别出要绘制为一个 (的有效矩形时，该图形将绘制为一个纯黑色的图形，并且不使用当前目标位) 的 ROP，而是将其存储在矩形数组中，而不是在图面上绘制。
+Pseudovector graphics 功能可截获对 [**DrvBitBlt**](/windows/win32/api/winddi/nf-winddi-drvbitblt)、 [**DrvStrokePath**](/windows/win32/api/winddi/nf-winddi-drvstrokepath)和 [**DrvLineTo**](/windows/win32/api/winddi/nf-winddi-drvlineto)的调用，以确定是否要绘制实心黑色矩形或垂直或水平线条。 当 Unidrv 识别出要绘制为一个 (的有效矩形时，该图形将绘制为一个纯黑色的图形，并且不使用当前目标位) 的 ROP，而是将其存储在矩形数组中，而不是在图面上绘制。
 
 Pseudovector graphics 功能最困难的方面是避免由必须在以前绘制的对象之上绘制的对象导致的 z 顺序问题。 顶部的对象可能需要清除或覆盖部分黑色矩形。 如果已将黑色矩形下载到设备，则在系统表面以后绘制的对象可能不会正确绘制。
 
@@ -38,9 +38,4 @@ Pseudovector graphics 功能最困难的方面是避免由必须在以前绘制�
 在某些情况下，pseudovector graphics 功能可能会改变 z 顺序，特别是在将文本直接下载到设备时，并且具有复杂剪辑的后续对象必须与该文本交互。
 
  
-
- 
-
-
-
 

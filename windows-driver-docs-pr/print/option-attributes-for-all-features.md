@@ -4,12 +4,12 @@ description: 所有功能的选项属性
 ms.assetid: 0d269fdf-f4a1-431a-9f07-044289b9f0fa
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4b980d1a091135d1455a162edcba7be0a9c5cdbf
-ms.sourcegitcommit: 17c1bbc5ea0bef3bbc87794b030a073f905dc942
+ms.openlocfilehash: 3a868ab8d5bfea1c347d8eb78ab2eab19d4111dc
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88802445"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89216362"
 ---
 # <a name="option-attributes-for-all-features"></a>所有功能的选项属性
 
@@ -70,7 +70,7 @@ ms.locfileid: "88802445"
 </tr>
 <tr class="odd">
 <td><p></em><strong>OptionID</strong></p></td>
-<td><p>数值，表示 Unidrv 存储在打印机的 <a href="https://docs.microsoft.com/windows/win32/api/wingdi/ns-wingdi-devmodew" data-raw-source="[&lt;strong&gt;DEVMODEW&lt;/strong&gt;](https://docs.microsoft.com/windows/win32/api/wingdi/ns-wingdi-devmodew)"><strong>DEVMODEW</strong></a> 结构中的唯一选项标识符。 仅用于 PaperSize、InputSlot、半色调和媒体的功能。 值分别存储在 DEVMODE 结构的 <strong>dmPaperSize</strong>、 <strong>dmDefaultSource</strong>、 <strong>dmDitherType</strong>或 <strong>dmMediaType</strong> 成员中。</p></td>
+<td><p>数值，表示 Unidrv 存储在打印机的 <a href="https://docs.microsoft.com/windows/win32/api/wingdi/ns-wingdi-devmodew" data-raw-source="[&lt;strong&gt;DEVMODEW&lt;/strong&gt;](/windows/win32/api/wingdi/ns-wingdi-devmodew)"><strong>DEVMODEW</strong></a> 结构中的唯一选项标识符。 仅用于 PaperSize、InputSlot、半色调和媒体的功能。 值分别存储在 DEVMODE 结构的 <strong>dmPaperSize</strong>、 <strong>dmDefaultSource</strong>、 <strong>dmDitherType</strong>或 <strong>dmMediaType</strong> 成员中。</p></td>
 <td><p>可选。 如果未指定，Unidrv 将 (256) 指定标识符值 &gt; 。 若要避免与 Unidrv 分配的标识符冲突，指定的值必须大于512。</p></td>
 </tr>
 <tr class="even">
@@ -98,9 +98,4 @@ ms.locfileid: "88802445"
 有关示例，请参阅 [示例 GPD 文件](sample-gpd-files.md)。
 
  
-
- 
-
-
-
 

@@ -10,12 +10,12 @@ keywords:
 - 打印机驱动程序 WDK，体系结构
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 17333849b2f44dfd6cc4f5a46501a86f6ba6bee5
-ms.sourcegitcommit: 17c1bbc5ea0bef3bbc87794b030a073f905dc942
+ms.openlocfilehash: 52b37c265d82161419c2c07293a7fbc83aa396d3
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88802755"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89216346"
 ---
 # <a name="printer-driver-architecture"></a>打印机驱动程序体系结构
 
@@ -25,7 +25,7 @@ ms.locfileid: "88802755"
 
 打印作业由应用程序通过调用 Microsoft Win32 GDI 或在 Windows Vista 中 Windows Presentation Foundation (WPF) 函数创建。 Win32 函数以 EMF 形式处理应用程序数据，或者它们可以立即呈现每个文档页的可打印图像。 WPF 以 XPS 假脱机文件的形式处理应用程序数据。
 
-在 Windows Vista 之前，应用程序使用 [**DEVMODEW**](https://docs.microsoft.com/windows/win32/api/wingdi/ns-wingdi-devmodew) 结构将打印机设置传达给打印机。 在 Windows Vista 中，打印票证和打印功能技术将打印机设置进行通信，以便在打印机和应用程序之间更兼容打印机设置。
+在 Windows Vista 之前，应用程序使用 [**DEVMODEW**](/windows/win32/api/wingdi/ns-wingdi-devmodew) 结构将打印机设置传达给打印机。 在 Windows Vista 中，打印票证和打印功能技术将打印机设置进行通信，以便在打印机和应用程序之间更兼容打印机设置。
 
 图像呈现，无论是立即执行还是在打印处理过程中，都在打印驱动程序中执行：
 
@@ -66,9 +66,4 @@ Windows 2000 和更高版本的打印机驱动程序由一组 [打印机驱动�
 [编写 64 位打印机驱动程序](writing-64-bit-printer-drivers.md)
 
  
-
- 
-
-
-
 

@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: ebfa930c07a75f0c1ab6b010f6af82bc4733f658
-ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
+ms.openlocfilehash: f3af4e1d26bb40b002b4965f97993af40faaf747
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84534674"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89217929"
 ---
 # <a name="usbkdusbtx"></a>!usbkd.usbtx
 
@@ -32,17 +32,17 @@ ms.locfileid: "84534674"
 
 
 <span id="_______StructAddr______"></span><span id="_______structaddr______"></span><span id="_______STRUCTADDR______"></span>*StructAddr*   
-Usbport 的地址 **！ \_HCD \_ 传输 \_ 上下文**结构。 若要获取 USB 主机控制器的传输列表，请使用[**！ usbkd. usbhcdext**](-usbkd-usbhcdext.md)命令。
+Usbport 的地址 **！ \_HCD \_ 传输 \_ 上下文** 结构。 若要获取 USB 主机控制器的传输列表，请使用 [**！ usbkd. usbhcdext**](-usbkd-usbhcdext.md) 命令。
 
 ## <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 
-Usbkd
+Usbkd.dll
 
 <a name="examples"></a>示例
 --------
 
-下面是查找 usbport 地址的一种方法 **！ \_HCD \_ 传输 \_ 上下文**结构。 首先输入[**！ usbkd. usb2tree**](-usbkd-usb2tree.md)。
+下面是查找 usbport 地址的一种方法 **！ \_HCD \_ 传输 \_ 上下文** 结构。 首先输入 [**！ usbkd. usb2tree**](-usbkd-usb2tree.md)。
 
 ```dbgcmd
 0: kd> !usbkd.usb2tree
@@ -51,9 +51,9 @@ Usbkd
 ...
 ```
 
-在上面的输出中，FDO 的设备扩展的地址显示为[DML](debugger-markup-language-commands.md) command **！ uhci \_ info ffffe00001c8f1a0**的参数。
+在上面的输出中，FDO 的设备扩展的地址显示为 [DML](debugger-markup-language-commands.md) command **！ uhci \_ info ffffe00001c8f1a0**的参数。
 
-单击 DML 命令或将设备扩展的地址传递给[**！ usbhcdext**](-usbkd-usbhcdext.md)以获取传输列表。
+单击 DML 命令或将设备扩展的地址传递给 [**！ usbhcdext**](-usbkd-usbhcdext.md) 以获取传输列表。
 
 ```dbgcmd
 0: kd> !usbkd.usbhcdext ffffe00001c8f1a0
@@ -102,14 +102,7 @@ NumberOfElements = 1
 
 [USB 2.0 调试器扩展](usb-2-0-extensions.md)
 
-[通用串行总线（USB）驱动程序](https://docs.microsoft.com/windows-hardware/drivers/usbcon/)
+[ (USB) 驱动程序的通用串行总线](../usbcon/index.md)
 
  
-
- 
-
-
-
-
-
 

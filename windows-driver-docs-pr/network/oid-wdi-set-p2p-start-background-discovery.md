@@ -1,64 +1,64 @@
 ---
 title: OID_WDI_SET_P2P_START_BACKGROUND_DISCOVERY
-description: OID_WDI_SET_P2P_START_BACKGROUND_DISCOVERY 指示要在后台定期执行 Wi-Fi Direct 发现的适配器
+description: OID_WDI_SET_P2P_START_BACKGROUND_DISCOVERY 指示适配器在后台定期执行 Wi-fi 直接发现
 ms.assetid: DF58B71D-7D45-4E0D-963F-A70471363DF5
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 OID_WDI_SET_P2P_START_BACKGROUND_DISCOVERY 网络驱动程序
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: a62c2b90748b8903c21024851e89b68061e51b5d
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 58601a60e1fd095d7ba6f7aa1bf437957aa1064f
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67359186"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89215821"
 ---
-# <a name="oidwdisetp2pstartbackgrounddiscovery"></a>OID\_WDI\_设置\_P2P\_启动\_背景\_发现
+# <a name="oid_wdi_set_p2p_start_background_discovery"></a>OID \_ WDI \_ 设置 \_ P2P \_ 开始 \_ 后台 \_ 发现
 
 
-OID\_WDI\_设置\_P2P\_启动\_背景\_发现指示要在后台定期执行 Wi-Fi Direct 发现的适配器
+OID \_ WDI \_ 设置 \_ P2P \_ 开始 \_ 后台 \_ 发现指示适配器在后台定期执行 wi-fi 直接发现
 
-| 范围 | 设置与任务序列化 | 正常执行时间 （秒） | 影响数据吞吐量/延迟 |
+| 作用域 | 设置序列化任务 | 正常执行时间 (秒)  | 影响数据吞吐量/延迟 |
 |-------|--------------------------|---------------------------------|---------------------------------|
-| Port  | 否                       | 1                               | 是                             |
+| 端口  | 否                       | 1                               | 是                             |
 
  
 
-适配器需要扫描按固定间隔的指定的通道，并在找到可以被检测到设备的可见性超时 （通常为 5 分钟） 内的设备。 行为是类似于常规的 Wi-Fi Direct 发现扫描 (中定义[OID\_WDI\_任务\_P2P\_发现](oid-wdi-task-p2p-discover.md))，但它不是时间密集型和适配器可能计划在某个时间点更高版本扫描。 适配器必须执行每个设备的可见性超时内至少一次扫描。 如果设备的可见性超时值为 0，适配器应继续扫描定期使用其自己的周期时间。 如果发现或扫描任务请求时，在此期间，适配器应挂起任务的持续时间内的后台发现，然后继续任务完成。 设备应在完成后台扫描，请发送[NDIS\_状态\_WDI\_指示\_P2P\_发现\_完成](ndis-status-wdi-indication-p2p-discovery-complete.md)（具有事务 ID 等于 0) 指示若要使操作系统知道它已完成一次扫描。 每次完成后台扫描时，适配器必须发送此指示。
+适配器需要按固定的时间间隔扫描指定的通道，并且能够查找设备可见性超时内可发现的设备， (通常为5分钟) 。 此行为类似于 [OID \_ WDI \_ 任务 \_ P2P \_ 探索](oid-wdi-task-p2p-discover.md)) 中定义的常规 wi-fi 直接发现扫描 (，但它不是时间限制的，并且适配器可能会在以后的某个时间点计划扫描。 适配器必须在每个设备的可见性超时内执行至少一次扫描。 如果设备可见性超时值为0，则适配器应继续使用其自己的周期时间定期扫描。 如果在这段时间内发出了发现或扫描任务请求，则适配器应在任务持续期间挂起后台发现，并在任务完成时继续执行。 完成后台扫描后，设备应发送 [NDIS \_ 状态 \_ WDI \_ 指示 \_ P2P \_ DISCOVERY \_ 完成](ndis-status-wdi-indication-p2p-discovery-complete.md) 指示 (并且事务 ID 等于 0) ，以使操作系统知道它已完成扫描。 每次完成后台扫描时，适配器都必须发送此指示。
 
-如果提供的通道列表，则适配器应仅扫描对指定的通道。 否则，它应扫描的所有通道。 如果固件中发生来发现设备指定通道之外，它应仍发送到操作系统的信息。
+如果提供了通道列表，则适配器只应扫描指定的通道。 否则，它应扫描所有通道。 如果固件在指定的通道之外发现设备，则仍应将信息发送到操作系统。
 
-当侦听持续时间和通道 ([**WDI\_TLV\_P2P\_发现\_通道\_设置**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-p2p-discovery-channel-settings)) 指定，则它们将引用到远程设备的侦听时间。 根据侦听持续时间和通道的所有值，适配器需要拿出一个计划以最高效的方式扫描请求的通道。 操作系统也可指定侦听持续时间和通道的多个实例。 在这种情况下，适配器应首先提出了这些条目将侦听的持续时间和通道列表的值为非零的扫描计划。 然后，适配器应在以下情况下使用默认值：
+如果指定了侦听持续时间和通道 ([**WDI \_ TLV \_ \_ 发现 \_ 通道 \_ 设置**](./wdi-tlv-p2p-discovery-channel-settings.md)) ，则它们表示远程设备的侦听时间。 根据侦听持续时间和通道的所有值，适配器需要以最有效的方式来扫描请求的通道。 操作系统还可以指定多个侦听持续时间和通道实例。 在这种情况下，适配器应该首先为具有非零值 "侦听时间" 和 "频道列表" 的条目提供扫描计划。 然后，在以下情况下，适配器应使用默认值：
 
-1.  如果侦听持续时间为 0，则适配器应指定通道使用默认的扫描时间。
-2.  如果通道列表为空，适配器应扫描中的所有使用该带区的指定的侦听和周期时间带内通道。 扫描时间不会应用到任何具有单独的通道侦听由操作系统指定的持续时间。
+1.  如果侦听持续时间为0，则适配器应为指定的通道使用默认扫描时间。
+2.  如果 "通道列表" 为空，则适配器应使用为该带区指定的侦听和循环时间扫描这些通道中的所有通道。 扫描时间不适用于具有操作系统指定的单独侦听持续时间的任何通道。
 
-适配器 D0 NIC 时，指示对特定服务的名称的探测请求的响应[NDIS\_状态\_WDI\_指示\_BSS\_条目\_列表](ndis-status-wdi-indication-bss-entry-list.md)通知到操作系统。 WDI 缓存对于更高的层服务，OS 的响应信息，并会根据需要通知他们。
+如果 NIC 为 D0，适配器将指示对特定服务名称的探测请求的响应 () 为 [NDIS \_ 状态 \_ WDI \_ 指示 \_ BSS \_ \_ 列表](ndis-status-wdi-indication-bss-entry-list.md) 通知到操作系统。 WDI 缓存更高层服务的操作系统的响应信息，并根据需要进行通知。
 
-D2 NIC 时，它将挂起后台发现，直到它回到 D0。
+当 NIC 在 D2 中时，它会挂起后台发现，直到它恢复到 D0 状态。
 
 ## <a name="set-property-parameters"></a>设置属性参数
 
 
-| TLV                                                                                                | 允许多个 TLV 实例 | 可选 | 描述                                                                                                                         |
+| TLV                                                                                                | 允许多个 TLV 实例 | 可选 | 说明                                                                                                                         |
 |----------------------------------------------------------------------------------------------------|--------------------------------|----------|-------------------------------------------------------------------------------------------------------------------------------------|
-| [**WDI\_TLV\_P2P\_背景\_DISCOVER\_模式**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-p2p-background-discover-mode)     |                                |          | Wi-Fi Direct 背景发现模式的参数。                                                                                   |
-| [**WDI\_TLV\_P2P\_发现\_通道\_设置**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-p2p-discovery-channel-settings) | X                              | X        | 建议的列表可扫描的通道。                                                                                               |
-| [**WDI\_TLV\_P2P\_DEVICE\_FILTER\_LIST**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-p2p-device-filter-list)                 |                                | X        | 发现 Wi-Fi Direct 设备和组所有者能够在 Wi-Fi Direct 设备期间搜索的列表。                                    |
-| [**WDI\_TLV\_P2P\_SERVICE\_NAME\_HASH**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-p2p-service-name-hash)                   | X                              | X        | 要查询的服务哈希名称的列表。 如果这是必需 WDI\_P2P\_服务\_发现\_类型\_服务\_名称\_只指定了。 |
-| [**WDI\_TLV\_VENDOR\_SPECIFIC\_IE**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-vendor-specific-ie)                          |                                | X        | 必须包括在由端口发送的探测请求的一个或多个 Ie。                                                       |
+| [**WDI \_ TLV \_ P2P \_ 后台 \_ 发现 \_ 模式**](./wdi-tlv-p2p-background-discover-mode.md)     |                                |          | Wi-fi Direct 后台发现模式参数。                                                                                   |
+| [**WDI \_ TLV \_ P2P \_ 发现 \_ 通道 \_ 设置**](./wdi-tlv-p2p-discovery-channel-settings.md) | X                              | X        | 要扫描的建议通道的列表。                                                                                               |
+| [**WDI \_ TLV \_ P2P \_ 设备 \_ 筛选器 \_ 列表**](./wdi-tlv-p2p-device-filter-list.md)                 |                                | X        | 在 Wi-fi Direct 设备发现期间要搜索的 Wi-fi Direct 设备和组所有者列表。                                    |
+| [**WDI \_ TLV \_ P2P \_ 服务 \_ 名称 \_ 哈希**](./wdi-tlv-p2p-service-name-hash.md)                   | X                              | X        | 要查询的服务哈希名称的列表。 如果 \_ \_ \_ \_ \_ \_ \_ 仅指定了 WDI P2P 服务发现类型服务名称，则这是必需的。 |
+| [**WDI \_ TLV \_ 供应商 \_ 特定 \_ IE**](./wdi-tlv-vendor-specific-ie.md)                          |                                | X        | 必须包含在端口发送的探测请求中的一个或多个传入。                                                       |
 
  
 
 ## <a name="set-property-results"></a>设置属性结果
 
 
-没有其他数据。 标头中的数据就足够了。
+无其他数据。 标头中的数据足够了。
 ## <a name="unsolicited-indication"></a>未经请求的指示
 
 
-[NDIS\_状态\_WDI\_指示\_BSS\_条目\_列表](ndis-status-wdi-indication-bss-entry-list.md)
+[NDIS \_ 状态 \_ WDI \_ 指示 \_ BSS \_ 条目 \_ 列表](ndis-status-wdi-indication-bss-entry-list.md)
 
 <a name="requirements"></a>要求
 ------------
@@ -78,16 +78,11 @@ D2 NIC 时，它将挂起后台发现，直到它回到 D0。
 <td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
-<td><p>Header</p></td>
-<td>Dot11wdi.h</td>
+<td><p>标头</p></td>
+<td>Dot11wdi</td>
 </tr>
 </tbody>
 </table>
 
  
-
- 
-
-
-
 

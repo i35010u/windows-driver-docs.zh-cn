@@ -1,6 +1,6 @@
 ---
-title: DEBUG\_OUTCTL\_XXX
-description: 调试\_OUTCTL\_XXX 常量用于输出控制。 常量构成一个位字段，指定将输出发送到何处的当前策略。 位域被划分为两个部分。
+title: 调试 \_ OUTCTL \_ XXX
+description: DEBUG \_ OUTCTL \_ XXX 常量用于输出控制。 常量构成一个位域，该字段指定发送输出的目标的当前策略。 位域分为两部分。
 ms.assetid: 94d3416a-082e-488b-adc2-8b837bb1c1cb
 ms.date: 12/07/2017
 keywords:
@@ -14,22 +14,22 @@ api_location:
 api_type:
 - HeaderDef
 ms.localizationpriority: medium
-ms.openlocfilehash: 5ef36199c42beacf0eca61f8d55a90633e9240b4
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: ccced609ccad014ffb55c42a595835fad2a58b98
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67361441"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89216032"
 ---
-# <a name="debugoutctlxxx"></a>DEBUG\_OUTCTL\_XXX
+# <a name="debug_outctl_xxx"></a>调试 \_ OUTCTL \_ XXX
 
 
-调试\_OUTCTL\_*XXX*常量用于输出控制。 常量构成一个位字段，指定将输出发送到何处的当前策略。 位域被划分为两个部分。
+DEBUG \_ OUTCTL \_ *XXX*常量用于输出控制。 常量构成一个位域，该字段指定发送输出的目标的当前策略。 位域分为两部分。
 
 ## <span id="ddk_debug_outctl_xxx_dbx"></span><span id="DDK_DEBUG_OUTCTL_XXX_DBX"></span>
 
 
-较低的位必须正好是以下值之一。
+较低位必须是下列值之一。
 
 <table>
 <colgroup>
@@ -39,13 +39,13 @@ ms.locfileid: "67361441"
 <thead>
 <tr class="header">
 <th align="left">值</th>
-<th align="left">描述</th>
+<th align="left">说明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left"><p>DEBUG_OUTCTL_THIS_CLIENT</p></td>
-<td align="left"><p>通过此客户端调用的方法由生成输出将只发送到此客户端<a href="https://docs.microsoft.com/windows-hardware/drivers/debugger/using-input-and-output#output-callbacks" data-raw-source="[output callbacks](https://docs.microsoft.com/windows-hardware/drivers/debugger/using-input-and-output#output-callbacks)">输出回调</a>。</p></td>
+<td align="left"><p>由该客户端调用的方法生成的输出将仅发送到此客户端的 <a href="https://docs.microsoft.com/windows-hardware/drivers/debugger/using-input-and-output#output-callbacks" data-raw-source="[output callbacks](./using-input-and-output.md#output-callbacks)">输出回调</a>。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>DEBUG_OUTCTL_ALL_CLIENTS</p></td>
@@ -53,22 +53,22 @@ ms.locfileid: "67361441"
 </tr>
 <tr class="odd">
 <td align="left"><p>DEBUG_OUTCTL_ALL_OTHER_CLIENTS</p></td>
-<td align="left"><p>输出将发送到所有客户端 （到生成输出的客户端除外）。</p></td>
+<td align="left"><p>输出将发送到 (除了生成输出) 的客户端之外的所有客户端。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>DEBUG_OUTCTL_IGNORE</p></td>
-<td align="left"><p>输出将被立即放弃并不会记录或发送到回调。</p></td>
+<td align="left"><p>输出将立即被丢弃，且不会被记录或发送到回调。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>DEBUG_OUTCTL_LOG_ONLY</p></td>
-<td align="left"><p>输出将记录，但不是会发送到回调。</p></td>
+<td align="left"><p>将记录输出，但不会将其发送到回调。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-位域的更高版本位可能包含以下值。
+位域的更高位可能包含以下值。
 
 <table>
 <colgroup>
@@ -78,32 +78,32 @@ ms.locfileid: "67361441"
 <thead>
 <tr class="header">
 <th align="left">值</th>
-<th align="left">描述</th>
+<th align="left">说明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left"><p>DEBUG_OUTCTL_NOT_LOGGED</p></td>
-<td align="left"><p>不要将输出放在从此客户端全局日志文件中。</p></td>
+<td align="left"><p>不要将此客户端的输出放入全局日志文件中。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>DEBUG_OUTCTL_OVERRIDE_MASK</p></td>
-<td align="left"><p>将输出发送到客户端而不考虑客户端的输出掩码是否允许它。</p></td>
+<td align="left"><p>无论客户端的输出掩码是否允许，都将输出发送到客户端。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>DEBUG_OUTCTL_DML</p></td>
-<td align="left"><p>对于支持调试器标记语言 (DML) 的输出，DML 格式发送输出。</p></td>
+<td align="left"><p>对于支持调试器标记语言 (DML) 的输出，将以 DML 格式发送输出。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-若要创建一个有效的输出控件位字段，采用从第一个表，以及从第二个表中的零个或多个值的一个值，并使用按位 OR 运算符合并它们。
+若要创建有效的输出控件位字段，请从第一个表中提取一个值，并在第二个表中使用零个或更多值，并使用按位 "或" 运算符合并它们。
 
-输出控制位域的默认值为 DEBUG\_OUTCTL\_所有\_客户端。
+输出控件位字段的默认值为 DEBUG \_ OUTCTL \_ 所有 \_ 客户端。
 
-作为创建您自己输出控制位域的替代方法，可以使用以下值之一。
+作为创建自己的输出控件位字段的替代方法，可以使用以下值之一。
 
 <table>
 <colgroup>
@@ -112,22 +112,22 @@ ms.locfileid: "67361441"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">ReplTest1</th>
-<th align="left">描述</th>
+<th align="left">值</th>
+<th align="left">说明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left"><p>DEBUG_OUTCTL_AMBIENT_DML</p></td>
-<td align="left"><p>将新的输出控制设置为与当前的输出控件相同的值，并指定的输出将以 DML 格式。</p></td>
+<td align="left"><p>将新的输出控件设置为与当前输出控件相同的值，并指定输出将为 DML 格式。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>DEBUG_OUTCTL_AMBIENT_TEXT</p></td>
-<td align="left"><p>将新的输出控制设置为与当前的输出控件相同的值，并指定的输出将以文本格式。</p></td>
+<td align="left"><p>将新的输出控件设置为与当前输出控件相同的值，并指定输出将为文本格式。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>DEBUG_OUTCTL_AMBIENT</p></td>
-<td align="left"><p>传递 DEBUG_OUTCTL_AMBIENT_TEXT 相同。</p></td>
+<td align="left"><p>与 DEBUG_OUTCTL_AMBIENT_TEXT 相同。</p></td>
 </tr>
 </tbody>
 </table>
@@ -144,17 +144,11 @@ ms.locfileid: "67361441"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>Header</p></td>
-<td align="left">DbgEng.h （包括 DbgEng.h）</td>
+<td align="left"><p>标头</p></td>
+<td align="left">DbgEng (包含 DbgEng) </td>
 </tr>
 </tbody>
 </table>
 
  
-
- 
-
-
-
-
 

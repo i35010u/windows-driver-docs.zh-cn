@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: ad2fc33e2c763bdff36450f3d59f9f4fc19bef8c
-ms.sourcegitcommit: 8596782b07c8a71adf38fc2c2da68b75ba0a1259
+ms.openlocfilehash: fa6f9606df8c01bf0da63ea8272d966bf2c878de
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85593939"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89216768"
 ---
 # <a name="ndiskdminidriver"></a>!ndiskd.minidriver
 
@@ -50,7 +50,7 @@ Ndiskd.dll
 
 ## <a name="examples"></a>示例
 
-输入不带参数的 **！ ndiskd**命令，以获取系统上所有活动的 NDIS 微型端口驱动程序的列表。 在下面的示例中，查找 kdnic 适配器的句柄 ffffd20d12dec020
+输入不带参数的 **！ ndiskd** 命令，以获取系统上所有活动的 NDIS 微型端口驱动程序的列表。 在下面的示例中，查找 kdnic 适配器的句柄 ffffd20d12dec020
 
 ```console
 1: kd> !ndiskd.minidriver -basic
@@ -58,7 +58,7 @@ Ndiskd.dll
     ffffd20d12dec020 - kdnic
 ```
 
-使用 kdnic 适配器的句柄，你现在可以单击该句柄或输入 **！ ndiskd**命令来查看隧道微型端口驱动程序的详细信息，以及与之关联的微型端口列表。
+使用 kdnic 适配器的句柄，你现在可以单击该句柄或输入 **！ ndiskd** 命令来查看隧道微型端口驱动程序的详细信息，以及与之关联的微型端口列表。
 
 ```console
 1: kd> !ndiskd.minidriver ffffd20d12dec020
@@ -86,14 +86,14 @@ MINIPORTS
     Device objects
 ```
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
-[网络驱动程序设计指南](https://docs.microsoft.com/windows-hardware/drivers/network/index)
+[网络驱动程序设计指南](../network/index.md)
 
-[Windows Vista 和更高版本的网络引用](https://docs.microsoft.com/windows-hardware/drivers/ddi/_netvista/)
+[Windows Vista 和更高版本的网络引用](/windows-hardware/drivers/ddi/_netvista/)
 
 [调试网络堆栈](https://channel9.msdn.com/Shows/Defrag-Tools/Defrag-Tools-175-Debugging-the-Network-Stack)
 
-[**NDIS 扩展（Ndiskd.dll）**](ndis-extensions--ndiskd-dll-.md)
+[**NDIS 扩展 ( # A0) **](ndis-extensions--ndiskd-dll-.md)
 
 [**!ndiskd.help**](-ndiskd-help.md)

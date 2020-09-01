@@ -1,105 +1,105 @@
 ---
 title: NDIS_STATUS_SWITCH_PORT_REMOVE_VF
-description: NDIS_STATUS_SWITCH_PORT_REMOVE_VF 状态指示由 Hyper-v 可扩展交换机转发扩展颁发，用于删除虚拟机（VM）网络适配器与 PCI Express （PCIe）虚拟功能（VF）之间的绑定。
+description: NDIS_STATUS_SWITCH_PORT_REMOVE_VF 状态指示是由 Hyper-v 可扩展交换机转发扩展颁发的，用于删除虚拟机 (VM) 网络适配器与 PCI Express (PCIe) 虚拟函数 (VF) 之间的绑定。
 ms.assetid: D6A52183-C9C6-4F0B-9E25-6C5C16CBEFFE
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 NDIS_STATUS_SWITCH_PORT_REMOVE_VF 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 548e390ce33177a7cf21484c973bf1d24be194a7
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: cdb51529d85b47fb124120c61799cd1bacfbad95
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72843511"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89215524"
 ---
-# <a name="ndis_status_switch_port_remove_vf"></a>NDIS\_状态\_交换机\_端口\_删除\_VF
+# <a name="ndis_status_switch_port_remove_vf"></a>NDIS \_ 状态 \_ 切换 \_ 端口 \_ 删除 \_ VF
 
 
-**NDIS\_状态\_交换机\_端口\_删除\_VF**状态指示由 hyper-v 可扩展交换机转发扩展颁发，以删除虚拟机（VM）网络适配器与 PCI Express （PCIe）虚拟功能（VF）之间的绑定。 VF 由支持单根 i/o 虚拟化（SR-IOV）接口的底层物理网络适配器公开和支持。
+**NDIS \_ 状态 \_ 交换机 \_ 端口 \_ 删除 \_ VF**状态指示是由 hyper-v 可扩展交换机转发扩展颁发的，用于删除虚拟机 (VM) 网络适配器与 PCI EXPRESS (PCIe) 虚函数 (VF) 之间的绑定。 VF 由支持单个根 i/o 虚拟化的基础物理网络适配器公开和支持 (SR-IOV) 接口。
 
-为了发出**NDIS\_状态\_交换机\_端口\_删除\_VF**状态指示，转发扩展必须在[**NDIS\_交换机**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_switch_nic_status_indication)中封装指示\_NIC\_状态\_指示结构，并发出[**ndis\_状态\_交换机\_** ](ndis-status-switch-nic-status.md)状态指示。\_
+为了发出 **ndis \_ 状态 \_ 切换端口，请 \_ \_ 删除 \_ VF** 状态指示，转发扩展必须将指示封装在 [**NDIS \_ 交换机 \_ nic \_ 状态 \_ 指示**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_switch_nic_status_indication) 结构中，并发出 [**ndis \_ 状态 \_ 切换 \_ nic \_ 状态**](ndis-status-switch-nic-status.md) 状态指示。
 
-有关此过程的详细信息，请参阅[ **\_交换机\_端口发出 NDIS\_状态的准则\_删除\_VF**状态指示](#issuing)。
+有关此过程的详细信息，请参阅 [发出 **NDIS \_ 状态 \_ 交换机端口的 \_ 准则 \_ 删除 \_ VF** 状态指示](#issuing)。
 
 <a name="remarks"></a>备注
 -------
 
-PCIe VF 由支持 SR-IOV 接口的基础物理适配器创建和分配。 创建后，虚拟化堆栈会将 VF 附加或*分配*到 hyper-v 子分区。 在此分区中运行的来宾操作系统将公开一个虚拟机（VM）网络适配器，该适配器绑定到基础 SR-IOV 物理适配器的 VF。
+PCIe VF 由支持 SR-IOV 接口的基础物理适配器创建和分配。 创建后，虚拟化堆栈会将 VF 附加或 *分配*到 hyper-v 子分区。 在此分区中运行的来宾操作系统将公开一个 (VM) 网络适配器的虚拟机，该虚拟机绑定到基础 SR-IOV 物理适配器的 VF。
 
-分配虚拟和物理网络适配器后，会直接在 VF 与 VM 网络适配器之间路由数据包。 但是，因为可扩展交换机不涉及数据包传递，所以可扩展交换机端口策略不会应用于这些数据包。 这包括访问控制列表（Acl）和服务质量（QoS）的端口策略。
+分配虚拟和物理网络适配器后，会直接在 VF 与 VM 网络适配器之间路由数据包。 但是，因为可扩展交换机不涉及数据包传递，所以可扩展交换机端口策略不会应用于这些数据包。 这包括访问控制列表 (Acl) 和服务质量 (QoS) 的端口策略。
 
-可扩展的交换机转发扩展可以通过发出**NDIS\_状态\_交换机\_端口**来删除将 vf 分配给子分区，\_删除\_VF 状态指示。 此指示会导致数据包通过可扩展交换机端口发送，而不是直接在 VM 网络适配器和基础 SR-IOV 物理适配器的 VF 之间传输。 这允许将可扩展交换机端口策略应用到通过可扩展交换机端口接收或发送的数据包。
+可扩展的交换机转发扩展可以通过发出 **NDIS \_ 状态 \_ 切换 \_ 端口 \_ 删除 \_ VF** 状态指示来删除将 VF 分配给子分区。 此指示会导致数据包通过可扩展交换机端口发送，而不是直接在 VM 网络适配器和基础 SR-IOV 物理适配器的 VF 之间传输。 这允许将可扩展交换机端口策略应用到通过可扩展交换机端口接收或发送的数据包。
 
-当转发扩展使**NDIS\_状态\_交换机\_端口\_删除\_VF**状态指示，它将指定 VM 网络适配器连接到的可扩展交换机端口。
+当转发扩展使 **NDIS \_ 状态 \_ 切换 \_ 端口 \_ 删除 \_ VF** 状态指示时，它将指定 VM 网络适配器连接到的可扩展交换机端口。
 
-有关可扩展交换机转发扩展的详细信息，请参阅[转发扩展](https://docs.microsoft.com/windows-hardware/drivers/network/forwarding-extensions)。
+有关可扩展交换机转发扩展的详细信息，请参阅 [转发扩展](./forwarding-extensions.md)。
 
-### <a href="" id="issuing"></a>\_交换机\_端口发出 NDIS\_状态的准则\_删除\_VF 状态指示
+### <a name="guidelines-for-issuing-an-ndis_status_switch_port_remove_vf-status-indication"></a><a href="" id="issuing"></a>有关发出 NDIS \_ 状态 \_ 交换机端口的 \_ 准则 \_ 删除 \_ VF 状态指示
 
-为了 **\_状态\_交换机\_端口发出 NDIS，\_删除\_VF**状态指示，转发扩展必须执行以下步骤：
+为了发出 **NDIS \_ 状态 \_ 切换端口，请 \_ \_ 删除 \_ VF** 状态指示，转发扩展必须执行以下步骤：
 
-1.  转发扩展插件为**ndis\_\_状态**初始化[**ndis\_状态\_指示**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_status_indication)结构，\_\_\_删除 VF 指示。 对于这一指示，转发扩展会将**NDIS\_状态**的以下成员设置\_指示结构：
+1.  转发扩展插件为**ndis \_ 状态 \_ 切换 \_ 端口 \_ \_ **初始化[**ndis \_ 状态 \_ 指示**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_status_indication)结构，并删除 VF 指示。 对于这一指示，转发扩展会设置以下 **NDIS \_ 状态 \_ 指示** 结构的成员：
 
-    -   必须将**StatusCode**成员设置为**NDIS\_状态\_交换机\_端口\_删除\_VF**。
+    -   **StatusCode**成员必须设置为**NDIS \_ 状态 \_ 切换 \_ 端口 \_ 删除 \_ VF**。
 
     -   **StatusBuffer**成员必须设置为**NULL**。
 
     -   **StatusBufferSize**必须设置为零。
 
-2.  转发扩展插件[ **\_NIC\_状态\_指示结构初始化 NDIS\_交换机**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_switch_nic_status_indication)。 为了删除 VF 分配，转发扩展必须按以下方式设置成员：
+2.  转发扩展插件初始化 [**NDIS \_ 交换机 \_ NIC \_ 状态 \_ 指示**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_switch_nic_status_indication) 结构。 为了删除 VF 分配，转发扩展必须按以下方式设置成员：
 
     -   **DestinationPortId**成员必须设置为 VM 网络适配器连接到的可扩展交换机端口的标识符。
 
     -   **DestinationNicIndex**成员必须设置为连接到指定端口的 VM 网络适配器的索引值。
 
-    -   必须将**SourcePortId**成员设置为**NDIS\_交换机\_默认\_端口\_ID**。
+    -   **SourcePortId**成员必须设置为**NDIS \_ 交换机 \_ 默认 \_ 端口 \_ ID**。
 
-    -   必须将**SourceNicIndex**成员设置为**NDIS\_交换机\_默认\_NIC\_索引**。
+    -   **SourceNicIndex**成员必须设置为**NDIS \_ SWITCH \_ DEFAULT \_ NIC \_ INDEX**。
 
-    -   必须将**StatusIndication**成员设置为 NDIS\_状态的[**ndis\_状态\_指示**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_status_indication)结构的地址 **\_SWITCH\_端口\_删除\_VF**指示。
+    -   **StatusIndication**成员必须设置为 ndis 状态交换机端口的[**ndis \_ 状态 \_ 指示**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_status_indication)结构的地址，并** \_ \_ \_ \_ 删除 \_ VF**指示。
 
-3.  转发扩展插件会\_将 ndis 的[**ndis\_状态\_指示**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_status_indication)结构初始化为[ **\_NIC\_状态\_指示**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_switch_nic_status_indication)指示。 对于此指示，转发扩展会将**NDIS\_状态**的以下成员设置\_指示结构：
+3.  转发扩展插件为[**ndis \_ 交换机 \_ NIC \_ 状态 \_ 指示**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_switch_nic_status_indication)指示初始化[**ndis \_ 状态 \_ 指示**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_status_indication)结构。 对于此指示，转发扩展会设置以下 **NDIS \_ 状态 \_ 指示** 结构的成员：
 
-    -   必须将**StatusCode**成员设置为[**NDIS\_状态\_交换机\_NIC\_状态**](ndis-status-switch-nic-status.md)。
+    -   **StatusCode**成员必须设置为[**NDIS \_ 状态 \_ 切换 \_ NIC \_ 状态**](ndis-status-switch-nic-status.md)。
 
-    -   必须将**StatusBuffer**成员设置为[**NDIS\_交换机\_NIC\_状态\_指示**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_switch_nic_status_indication)结构的地址。
+    -   **StatusBuffer**成员必须设置为[**NDIS \_ 交换机 \_ NIC \_ 状态 \_ 指示**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_switch_nic_status_indication)结构的地址。
 
-    -   必须将**StatusBufferSize**设置为[**ndis\_交换机\_NIC**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_switch_nic_status_indication)的长度（以字节为单位）\_状态\_指示结构，ndis **\_状态** [ **\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_status_indication)\_\_\_\_\_
+    -   必须将**StatusBufferSize**设置为[**ndis \_ 交换机 \_ NIC \_ 状态 \_ 指示**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_switch_nic_status_indication)结构的长度（以字节为单位），并将**ndis \_ 状态交换机端口的 \_ \_ \_ \_ ** [**ndis \_ 状态 \_ 指示**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_status_indication)结构删除 VF 指示。
 
-4.  转发扩展必须调用[*ReferenceSwitchNic*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-ndis_switch_reference_switch_nic)来递增 VM 网络适配器的引用计数器。 如果*ReferenceSwitchNic*未完成，NDIS\_状态\_成功，则转发扩展不能转发状态指示。
+4.  转发扩展必须调用 [*ReferenceSwitchNic*](/windows-hardware/drivers/ddi/ndis/nc-ndis-ndis_switch_reference_switch_nic) 来递增 VM 网络适配器的引用计数器。 如果 *ReferenceSwitchNic* 未在 NDIS \_ 状态成功完成 \_ ，则转发扩展不能转发状态指示。
 
-    **请注意**  转发扩展是否已收到[OID\_交换机\_NIC\_断开](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-nic-disconnect)VM 适配器的断开设置请求，它不得调用[*ReferenceSwitchNic*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-ndis_switch_reference_switch_nic) ，也不能转发状态指示。
+    **注意**   如果转发扩展插件已接收到 VM 适配器的[OID \_ 交换机 \_ NIC \_ 断开连接](./oid-switch-nic-disconnect.md)设置请求，则它不能调用[*ReferenceSwitchNic*](/windows-hardware/drivers/ddi/ndis/nc-ndis-ndis_switch_reference_switch_nic) ，也不能转发状态指示。
 
      
 
-5.  转发扩展插件调用[**NdisFIndicateStatus**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfindicatestatus) ，将[**NDIS\_状态\_指示**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_status_indication)转发到可扩展交换机驱动程序堆栈中的过量扩展。 当转发扩展插件调用此函数时，它会将*StatusIndication*参数设置为指向 NDIS\_状态的指针的指针 **\_状态\_指示**结构， [ **\_交换机\_\_状态**](ndis-status-switch-nic-status.md)指示。
+5.  转发扩展插件调用 [**NdisFIndicateStatus**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfindicatestatus) 将 [**NDIS \_ 状态 \_ 指示**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_status_indication) 转发到可扩展交换机驱动程序堆栈中的过量扩展。 当转发扩展插件调用此函数时，它会将*StatusIndication*参数设置为指向 ndis [** \_ 状态 \_ 切换 \_ NIC \_ 状态**](ndis-status-switch-nic-status.md)指示的**ndis \_ 状态 \_ 指示**结构的指针。
 
-6.  [**NdisFIndicateStatus**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfindicatestatus)返回后，转发扩展必须调用[*DEREFERENCESWITCHNIC*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-ndis_switch_dereference_switch_nic)来减小 VM 网络适配器的引用计数器。
+6.  [**NdisFIndicateStatus**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfindicatestatus)返回后，转发扩展必须调用[*DEREFERENCESWITCHNIC*](/windows-hardware/drivers/ddi/ndis/nc-ndis-ndis_switch_dereference_switch_nic)来减小 VM 网络适配器的引用计数器。
 
-**请注意**  转发扩展必须遵循转发扩展要删除的每个 VF 分配的前面的步骤。
+**注意**   对于正在删除转发扩展的每个 VF 分配，转发扩展必须遵循前面的步骤。
 
  
 
-有关转发扩展转发状态指示的详细信息，请参阅[筛选模块状态指示](https://docs.microsoft.com/windows-hardware/drivers/network/filter-module-status-indications)。
+有关转发扩展转发状态指示的详细信息，请参阅 [筛选模块状态指示](./filter-module-status-indications.md)。
 
 ### <a name="guidelines-for-determining-vf-assignments"></a>确定 VF 分配的准则
 
-转发扩展插件可以通过发出 oid [\_SWITCH\_NIC\_数组](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-nic-array)的 oid 查询请求来枚举虚拟网络适配器的当前 VF 分配。 此请求返回[**ndis\_交换机\_nic\_数组**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_nic_array)结构，该结构包含一组[**ndis\_switch\_nic\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_nic_parameters)结构。 每个**NDIS\_交换机\_NIC\_参数**结构指定在以下环境之一中公开的网络适配器的参数：
+转发扩展插件可以通过发出 [oid \_ 交换机 \_ NIC \_ 数组](./oid-switch-nic-array.md)的 oid 查询请求来枚举虚拟网络适配器的当前 VF 分配。 此请求返回 [**ndis \_ 交换机 \_ nic \_ 数组**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_nic_array) 结构，其中包含 [**ndis \_ 交换机 \_ nic \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_nic_parameters) 结构的数组。 每个 **NDIS \_ 交换机 \_ NIC \_ 参数** 结构指定在以下环境之一中公开的网络适配器的参数：
 
 -   在 Hyper-v 父分区中运行的管理操作系统。
 
-    在此操作系统中公开的网络适配器使用[**NDIS\_交换机\_NIC\_类型**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ne-ntddndis-_ndis_switch_nic_type)枚举值指定为**NdisSwitchNicTypeExternal**或**NdisSwitchNicTypeInternal**。
+    在此操作系统中公开的网络适配器使用 [**NDIS \_ 交换机 \_ NIC \_ 类型**](/windows-hardware/drivers/ddi/ntddndis/ne-ntddndis-_ndis_switch_nic_type) 枚举值 **NdisSwitchNicTypeExternal** 或 **NdisSwitchNicTypeInternal**来指定。
 
 -   在 Hyper-v 子分区中运行的来宾操作系统。
 
-    在此操作系统中公开的网络适配器使用[**NDIS\_交换机\_NIC\_类型**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ne-ntddndis-_ndis_switch_nic_type)枚举值指定为**NdisSwitchNicTypeSynthetic**或**NdisSwitchNicTypeEmulated**。
+    在此操作系统中公开的网络适配器使用 [**NDIS \_ 交换机 \_ NIC \_ 类型**](/windows-hardware/drivers/ddi/ntddndis/ne-ntddndis-_ndis_switch_nic_type) 枚举值 **NdisSwitchNicTypeSynthetic** 或 **NdisSwitchNicTypeEmulated**来指定。
 
-如果[oid\_SWITCH\_NIC\_数组](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-nic-array)的 oid 查询请求完成且状态为 NDIS\_状态\_成功，则转发扩展可以通过检查返回的数组中的每个[**NDIS\_nic\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_nic_parameters)结构来确定 VF 分配。\_ 如果 Ndis\_交换机的**VFAssigned**成员 **\_nic\_参数**结构设置为 " **TRUE**"，则将与**NDIS\_\_交换机**对应的网络适配器分配给 VF。\_
+如果 [oid \_ 交换机 \_ NIC \_ 阵列](./oid-switch-nic-array.md) 的 oid 查询请求完成并且状态为 NDIS \_ 状态 \_ 成功，则转发扩展可以通过检查返回的数组中的每个 [**NDIS \_ 交换机 \_ NIC \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_nic_parameters) 结构来确定 VF 分配。 如果**ndis \_ 交换机 \_ nic \_ 参数**结构的**VFAssigned**成员设置为**TRUE**，则将与**ndis \_ 交换机 \_ nic \_ 参数**结构相对应的网络适配器分配给 VF。
 
-转发扩展可以通过发出**NDIS\_状态\_交换机\_端口来删除分配，\_删除\_VF**状态指示。 在这种情况下，转发扩展必须将 Ndis\_交换机的**DestinationPortId**成员设置[ **\_nic\_状态\_指示**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_switch_nic_status_indication)设置为[**ndis\_Switch\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_nic_parameters)结构的**PortId**成员的值。\_
+转发扩展可以通过发出 **NDIS \_ 状态 \_ 切换 \_ 端口 \_ 删除 \_ VF** 状态指示来删除分配。 在这种情况下，转发扩展必须将[**ndis \_ 交换机 \_ nic \_ 状态 \_ 指示**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_switch_nic_status_indication)的**DestinationPortId**成员设置为[**ndis \_ 交换机 \_ nic \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_nic_parameters)结构的**PortId**成员的值。
 
-若要详细了解如何发出**ndis\_状态\_交换机\_端口\_删除\_VF**状态指示，请参阅[有关发出**NDIS\_状态的准则\_交换机\_端口\_删除\_VF**状态指示](#issuing)。
+若要详细了解如何发出 **ndis \_ 状态 \_ 交换机端口， \_ 请 \_ 删除 \_ vf** 状态指示，请参阅 [有关发出 **Ndis \_ 状态交换机端口的准则 \_ \_ \_ 删除 \_ vf** 状态指示](#issuing)。
 
 <a name="requirements"></a>要求
 ------------
@@ -116,7 +116,7 @@ PCIe VF 由支持 SR-IOV 接口的基础物理适配器创建和分配。 创建
 </tr>
 <tr class="even">
 <td><p>标头</p></td>
-<td>Ndis .h （包括 Ndis .h）</td>
+<td> (包含 Ndis .h) </td>
 </tr>
 </tbody>
 </table>
@@ -125,24 +125,19 @@ PCIe VF 由支持 SR-IOV 接口的基础物理适配器创建和分配。 创建
 
 
 ****
-[**NdisFIndicateStatus**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfindicatestatus)
+[**NdisFIndicateStatus**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfindicatestatus)
 
-[**NDIS\_状态\_指示**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_status_indication)
+[**NDIS \_ 状态 \_ 指示**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_status_indication)
 
-[**NDIS\_状态\_交换机\_NIC\_状态**](ndis-status-switch-nic-status.md)
+[**NDIS \_ 状态 \_ 切换 \_ NIC \_ 状态**](ndis-status-switch-nic-status.md)
 
-[**NDIS\_交换机\_NIC\_数组**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_nic_array)
+[**NDIS \_ 交换机 \_ NIC \_ 阵列**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_nic_array)
 
-[ **\_NIC\_参数的 NDIS\_交换机**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_nic_parameters)
+[**NDIS \_ 交换机 \_ NIC \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_nic_parameters)
 
-[**NDIS\_交换机\_NIC\_类型**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ne-ntddndis-_ndis_switch_nic_type)
+[**NDIS \_ 交换机 \_ NIC \_ 类型**](/windows-hardware/drivers/ddi/ntddndis/ne-ntddndis-_ndis_switch_nic_type)
 
-[OID\_交换机\_NIC\_数组](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-nic-array)
-
- 
+[OID \_ 交换机 \_ NIC \_ 阵列](./oid-switch-nic-array.md)
 
  
-
-
-
 

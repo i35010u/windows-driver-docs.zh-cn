@@ -1,39 +1,39 @@
 ---
 title: OID_WDI_TCP_RSC_STATISTICS
-description: OID_WDI_TCP_RSC_STATISTICS 是查询硬件的 RSC 统计信息的 get 命令。
+description: OID_WDI_TCP_RSC_STATISTICS 是一种用于查询硬件的 RSC 统计信息的 get 命令。
 ms.assetid: 9079DD03-597D-4B6D-8515-ECF5DAC2A41A
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 OID_WDI_TCP_RSC_STATISTICS 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 846685e243184bacd5875080ece94f4062d3bb3f
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: fb3635c8b0999b97dd8afa3674574ae8b9abff54
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67362881"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89217245"
 ---
-# <a name="oidwditcprscstatistics"></a>OID\_WDI\_TCP\_RSC\_STATISTICS
+# <a name="oid_wdi_tcp_rsc_statistics"></a>OID \_ WDI \_ TCP \_ RSC \_ 统计信息
 
 
-OID\_WDI\_TCP\_RSC\_统计信息是一个 get 命令，查询硬件的 RSC 统计信息。
+OID \_ WDI \_ TCP \_ RSC \_ statistics 是查询硬件的 RSC 统计信息的 get 命令。
 
-| 范围 | 设置与任务序列化 | 正常执行时间 （秒） |
+| 作用域 | 设置序列化任务 | 正常执行时间 (秒)  |
 |-------|--------------------------|---------------------------------|
-| Port  | 否                       | 1                               |
+| 端口  | 否                       | 1                               |
 
  
 
 ## <a name="get-property-parameters"></a>获取属性参数
 
 
-任何其他参数。 标头中的数据就足够了。
-## <a name="get-property-results"></a>获取属性的结果
+无其他参数。 标头中的数据足够了。
+## <a name="get-property-results"></a>获取属性结果
 
 
-| TLV                                                                                              | 允许多个 TLV 实例 | 可选 | 描述                         |
+| TLV                                                                                              | 允许多个 TLV 实例 | 可选 | 说明                         |
 |--------------------------------------------------------------------------------------------------|--------------------------------|----------|-------------------------------------|
-| [**WDI\_TLV\_TCP\_RSC\_STATISTICS\_PARAMETERS**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-tcp-rsc-statistics-parameters) |                                |          | TCP RSC 的硬件的统计信息。 |
+| [**WDI \_ TLV \_ TCP \_ RSC \_ STATISTICS \_ 参数**](./wdi-tlv-tcp-rsc-statistics-parameters.md) |                                |          | 硬件的 TCP RSC 统计信息。 |
 
  
 
@@ -55,16 +55,11 @@ OID\_WDI\_TCP\_RSC\_统计信息是一个 get 命令，查询硬件的 RSC 统�
 <td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
-<td><p>Header</p></td>
-<td>Dot11wdi.h</td>
+<td><p>标头</p></td>
+<td>Dot11wdi</td>
 </tr>
 </tbody>
 </table>
 
  
-
- 
-
-
-
 

@@ -4,35 +4,29 @@ description: 接收远程 NDIS QoS 参数
 ms.assetid: 775FA8D7-ECF7-4F94-8958-C51D74243C3A
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ef347f6e870a70272aeb533c15a4a4369aed2d91
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 1b49d2423a3fc605d46f74ca5e24f2cb87a4b57d
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67385418"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89216934"
 ---
 # <a name="receiving-remote-ndis-qos-parameters"></a>接收远程 NDIS QoS 参数
 
 
-远程 NDIS 服务质量 (QoS) 参数是指那些来自通过数据链接的网络适配器连接到远程对等方。 微型端口驱动程序将发现这些参数通过 IEEE 802.1Qaz 由指定的数据中心桥接交换 (DCBX) 协议草案标准。
+远程 NDIS 服务质量 (QoS) 参数是从网络适配器通过数据链路上的网络适配器连接到的远程对等机接收的参数。 微型端口驱动程序通过数据中心桥接 Exchange (DCBX) 由 IEEE 802.1 Qaz 草案标准指定的协议来发现这些参数。
 
-该驱动程序必须遵循这些准则以管理远程 QoS 参数：
+驱动程序必须遵循以下准则来管理远程 QoS 参数：
 
--   微型端口驱动程序必须发出[ **NDIS\_状态\_QOS\_远程\_参数\_更改**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-qos-remote-parameters-change)状态指示时其远程 NDIS QoS 参数既接收来自对等方第一次或更高版本更改。 此过程的详细信息，请参阅[对远程 NDIS QoS 参数，该值指示更改](indicating-changes-to-the-remote-ndis-qos-parameters.md)。
+-   小型端口驱动程序必须在第一次从对等方接收或更改其远程 NDIS QoS 参数时发出 [**NDIS \_ 状态 \_ QOS \_ 远程 \_ 参数 " \_ 更改**](./ndis-status-qos-remote-parameters-change.md) 状态指示"。 有关此过程的详细信息，请参阅 [指示对远程 NDIS QoS 参数所做的更改](indicating-changes-to-the-remote-ndis-qos-parameters.md)。
 
--   微型端口驱动程序可以使用远程 NDIS QoS 参数以在网络适配器上启用了本地数据中心桥接交换 (DCBX) 愿意状态时才解析其操作的 NDIS QoS 参数。 微型端口驱动程序也可以解决基于由独立硬件供应商 (IHV) 定义的任何专有 QoS 设置其操作的 QoS 参数。
+-   仅当本地数据中心桥接 Exchange (DCBX) 在网络适配器上启用了 "愿意" 状态时，微型端口驱动程序才可以使用远程 NDIS QoS 参数来解析其操作 NDIS QoS 参数。 微型端口驱动程序还可以根据独立硬件供应商 (IHV) 定义的任何专有 QoS 设置来解析其操作 QoS 参数。
 
-    有关此过程的详细信息，请参阅[解析操作的 NDIS QoS 参数](resolving-operational-ndis-qos-parameters.md)。
+    有关此过程的详细信息，请参阅 [解析操作 NDIS QoS 参数](resolving-operational-ndis-qos-parameters.md)。
 
-    有关本地 DCBX 愿意状态，请参阅[管理本地 DCBX 愿意状态](managing-the-local-dcbx-willing-state.md)。
+    有关本地 DCBX 适用状态的详细信息，请参阅 [管理本地 DCBX 适用的状态](managing-the-local-dcbx-willing-state.md)。
 
-NDIS QoS 参数的详细信息，请参阅[NDIS QoS 参数的概述](overview-of-ndis-qos-parameters.md)。
-
- 
+有关 NDIS QoS 参数的详细信息，请参阅 " [Ndis Qos 参数概述](overview-of-ndis-qos-parameters.md)"。
 
  
-
-
-
-
 

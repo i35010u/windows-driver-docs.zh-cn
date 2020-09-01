@@ -3,17 +3,17 @@ title: 打印机 INF 文件的 Install 节
 description: 打印机 INF 文件的 Install 节
 ms.assetid: fb544271-1f0f-4bbd-b0a7-88dc89cc8186
 keywords:
-- INF 文件 WDK 打印，请安装部分
+- INF 文件 WDK 打印，安装部分
 - 安装部分 WDK 打印机
 - 部分 WDK 打印机
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 41dab3bc7450df891d7b6e712895e74d3921241b
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 93e6795e9df48962ad07350abc08b345dff67d0e
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67356038"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89216327"
 ---
 # <a name="printer-inf-file-install-sections"></a>打印机 INF 文件的 Install 节
 
@@ -21,41 +21,41 @@ ms.locfileid: "67356038"
 
 
 
-Windows NT 4.0 和上一个供应商提供给客户的微型驱动程序还提供一份相应 Microsoft 打印机驱动程序，从 Microsoft 获取的客户。
+对于 Windows NT 4.0 及更早版本，向客户提供微型驱动程序的供应商还向客户提供了从 Microsoft 获得的相应 Microsoft 打印机驱动程序的副本。
 
-通常，Windows 2000 和更高版本，供应商不能分发其微型驱动程序以及 Microsoft 的打印机驱动程序。 相反，每个供应商提供了安装供应商的文件，并调用 Microsoft 的打印机 INF 文件，Ntprint.inf，安装适当的打印机驱动程序组件的 INF 文件。
+通常，对于 Windows 2000 及更高版本，供应商不会将 Microsoft 的打印机驱动程序与微型驱动程序一起分发。 相反，每个供应商提供一个 INF 文件来安装供应商的文件，然后调用 Microsoft 的打印机 INF 文件 Ntprint.inf，该文件又会安装相应的打印机驱动程序组件。
 
-**请注意**   Microsoft 定期发布的打印机驱动程序的更新的版本。需要仅在更新版本中可用的功能的微型驱动程序可能需要额外的步骤。 有关详细信息，请参阅[使用更新的核心打印驱动程序](using-updated-core-print-drivers.md)。
+**注意**   Microsoft 会定期发布其打印机驱动程序的更新版本。只需要在更新版本中使用的功能的微型驱动程序可能需要额外的步骤。 有关详细信息，请参阅 [使用更新的核心打印驱动程序](using-updated-core-print-drivers.md)。
 
  
 
-Microsoft 的打印机 INF 文件，Ntprint.inf，包含以下[ **INF DDInstall 部分**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-ddinstall-section)供应商 INF 文件，可以引用的：
+Microsoft 的打印机 INF 文件（Ntprint.inf）包含以下 [**INF DDInstall 部分**](../install/inf-ddinstall-section.md) ，可供供应商 INF 文件引用：
 
--   \[PSCRIPT.OEM\]
+-   \[PSCRIPT.原始\]
 
-    安装 Microsoft Postscript 打印机驱动程序 (Pscript)。
+     (Pscript) 安装 Microsoft Postscript 打印机驱动程序。
 
--   \[UNIDRV.OEM\]
+-   \[UNIDRV.原始\]
 
-    安装 Microsoft 通用打印机驱动程序 (Unidrv)。
+     (Unidrv) 安装 Microsoft 通用打印机驱动程序。
 
--   \[UNIDRV\_BIDI.OEM\]
+-   \[UNIDRV \_ 双向。原始\]
 
-    安装 Microsoft 通用打印机驱动程序和 Pjlmon.dll，*语言监视器*的支持打印机作业语言 (PJL)，并提供 PJL 打印机的双向通信。
+    安装 Microsoft 通用打印机驱动程序和 Pjlmon.dll，支持打印机作业语言的 *语言监视器* (PJL) ，并为 PJL 打印机提供双向通信。
 
--   \[TTFSUB.OEM\]
+-   \[TTFSUB.原始\]
 
-    安装 Ttfsub.gpd，其中包含使用 Windows Driver Kit (WDK) 中，包含一组\*TTFS 常见 TrueType 字体替换功能，可用于支持 Unidrv 的打印机的条目。
+    安装 Ttfsub gpd，它随 Windows 驱动程序工具包 (WDK) 提供，并包含一组 \* 用于常见 TrueType 字体替换的 TTFS 条目，可用于 Unidrv 支持的打印机。
 
--   \[sRGBPROFILE.OEM\]
+-   \[sRGBPROFILE\]
 
     安装系统的 sRGB 颜色配置文件。
 
--   \[区域设置。OEM\]
+-   \[本地.原始\]
 
-    安装 Locale.gpd，其中包含区域设置标识符。 (请参阅[引用的区域设置](referencing-locales.md)。)
+    安装 gpd，其中包含区域设置标识符。  (参阅 [引用区域设置](referencing-locales.md)。 ) 
 
-若要从您的 INF 文件中引用这些安装部分，该文件必须使用 Include，并且需要指令，如下面的示例中所示：
+若要从 INF 文件中引用这些安装部分，文件必须使用 Include 和需求指令，如以下示例中所示：
 
 ```cpp
 [Manufacturer]
@@ -74,9 +74,4 @@ Needs=TTFSUB.OEM,UNIDRV_BIDI.OEM  ; Install Unidrv, TrueType subs,
 ```
 
  
-
- 
-
-
-
 

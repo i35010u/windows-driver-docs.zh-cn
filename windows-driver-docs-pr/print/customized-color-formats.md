@@ -9,12 +9,12 @@ keywords:
 - Unidrv WDK 打印
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6f2125aa3e39e8a9382d8b01b65e378f08d1c5bb
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 5d48d094ed6abf41377e033288ef5e0bdd340050
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72842847"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89217777"
 ---
 # <a name="customized-color-formats"></a>自定义的颜色格式
 
@@ -22,16 +22,11 @@ ms.locfileid: "72842847"
 
 
 
-Unidrv 支持多种颜色格式，这些颜色格式在[处理颜色格式](handling-color-formats.md)中列出。 对于这些格式，Unidrv 将 GDI 位图转换为正确的格式，然后将其发送到打印机。 如果打印机接受 Unidrv 不支持的格式，则必须提供实现[**IPrintOemUni：： ImageProcessing**](https://docs.microsoft.com/windows-hardware/drivers/ddi/prcomoem/nf-prcomoem-iprintoemuni-imageprocessing)方法的呈现插件。
+Unidrv 支持多种颜色格式，这些颜色格式在 [处理颜色格式](handling-color-formats.md)中列出。 对于这些格式，Unidrv 将 GDI 位图转换为正确的格式，然后将其发送到打印机。 如果打印机接受 Unidrv 不支持的格式，则必须提供实现 [**IPrintOemUni：： ImageProcessing**](/windows-hardware/drivers/ddi/prcomoem/nf-prcomoem-iprintoemuni-imageprocessing) 方法的呈现插件。
 
-如果实现[**IPrintOemUni：： ImageProcessing**](https://docs.microsoft.com/windows-hardware/drivers/ddi/prcomoem/nf-prcomoem-iprintoemuni-imageprocessing)，并且用户选择了 Unidrv 无法处理的颜色格式（ColorMode 选项），则在每次将 GDI 位图数据的缓冲区准备好进行打印时，Unidrv 将调用方法并传递位图的地址作为输入参数。 方法必须将位图转换为指定的格式、执行[自定义的半色调](customized-halftoning.md)操作（如有必要），并调用[**IPrintOemDriverUni：:D rvwritespoolbuf**](https://docs.microsoft.com/windows-hardware/drivers/ddi/prcomoem/nf-prcomoem-iprintoemdriveruni-drvwritespoolbuf)方法将修改后的位图发送到打印后台处理程序。 它还必须调用[**IPrintOemDriverUni：:D rvxmoveto**](https://docs.microsoft.com/windows-hardware/drivers/ddi/prcomoem/nf-prcomoem-iprintoemdriveruni-drvxmoveto)和[**IPrintOemDriverUni：:D rvymoveto**](https://docs.microsoft.com/windows-hardware/drivers/ddi/prcomoem/nf-prcomoem-iprintoemdriveruni-drvymoveto)方法来更新游标位置。 有关这些操作的详细信息，请参阅**IPrintOemUni：： ImageProcessing**的说明。
+如果实现 [**IPrintOemUni：： ImageProcessing**](/windows-hardware/drivers/ddi/prcomoem/nf-prcomoem-iprintoemuni-imageprocessing)，并且用户选择了一个颜色格式 (ColorMode 选项) 该 Unidrv 无法处理，则每次 GDI 位图数据的缓冲区都可以进行打印时，Unidrv 将调用方法，并将该位图的地址作为输入参数传递。 方法必须将位图转换为指定的格式、执行 [自定义的半色调](customized-halftoning.md) 操作（如有必要），并调用 [**IPrintOemDriverUni：:D rvwritespoolbuf**](/windows-hardware/drivers/ddi/prcomoem/nf-prcomoem-iprintoemdriveruni-drvwritespoolbuf) 方法将修改后的位图发送到打印后台处理程序。 它还必须调用 [**IPrintOemDriverUni：:D rvxmoveto**](/windows-hardware/drivers/ddi/prcomoem/nf-prcomoem-iprintoemdriveruni-drvxmoveto) 和 [**IPrintOemDriverUni：:D rvymoveto**](/windows-hardware/drivers/ddi/prcomoem/nf-prcomoem-iprintoemdriveruni-drvymoveto) 方法来更新游标位置。 有关这些操作的详细信息，请参阅 **IPrintOemUni：： ImageProcessing**的说明。
 
-如果呈现插件实现[**IPrintOemUni：： ImageProcessing**](https://docs.microsoft.com/windows-hardware/drivers/ddi/prcomoem/nf-prcomoem-iprintoemuni-imageprocessing)，它还可以实现[**IPrintOemUni：： MemoryUsage**](https://docs.microsoft.com/windows-hardware/drivers/ddi/prcomoem/nf-prcomoem-iprintoemuni-memoryusage)。
-
- 
+如果呈现插件实现 [**IPrintOemUni：： ImageProcessing**](/windows-hardware/drivers/ddi/prcomoem/nf-prcomoem-iprintoemuni-imageprocessing)，它还可以实现 [**IPrintOemUni：： MemoryUsage**](/windows-hardware/drivers/ddi/prcomoem/nf-prcomoem-iprintoemuni-memoryusage)。
 
  
-
-
-
 

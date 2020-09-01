@@ -11,12 +11,12 @@ keywords:
 - 用户界面 WDK 打印
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4ec8fb3b84cfc9f18225767b75e7282b7b79d259
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 9287205e8fd1d9b9d21ab891f04910f83878e861
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72838032"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89216800"
 ---
 # <a name="displaying-a-ui-in-operating-systems-prior-to-windows-vista"></a>在 Windows Vista 以前的操作系统中显示 UI
 
@@ -32,16 +32,11 @@ ms.locfileid: "72838032"
 
     Windows Vista 之前的操作系统版本中的异步通知调用失败。
 
--   使用[**SplPromptUIInUsersSession**](https://docs.microsoft.com/windows-hardware/drivers/ddi/winsplp/nf-winsplp-splpromptuiinuserssession)函数显示简单对话框。
+-   使用 [**SplPromptUIInUsersSession**](/windows-hardware/drivers/ddi/winsplp/nf-winsplp-splpromptuiinuserssession) 函数显示简单对话框。
 
 -   通过编写状态监视器显示复杂的用户界面元素。
 
-    状态监视器是 IHV 开发和用户安装的应用程序。 由于状态监视器在用户的上下文中以用户的凭据运行，因此状态监视器可随时显示 UI 元素。 状态监视器可以使用双向通信或使用 TCPMON Xcv 接口与后台处理程序通信。 有关信息，请参阅[添加双向通信](adding-bidirectional-communication.md)和[TCPMON Xcv 接口](tcpmon-xcv-interface.md)。
+    状态监视器是 IHV 开发和用户安装的应用程序。 由于状态监视器在用户的上下文中以用户的凭据运行，因此状态监视器可随时显示 UI 元素。 状态监视器可以使用双向通信或使用 TCPMON Xcv 接口与后台处理程序通信。 有关信息，请参阅 [添加双向通信](adding-bidirectional-communication.md) 和 [TCPMON Xcv 接口](tcpmon-xcv-interface.md)。
 
  
-
- 
-
-
-
 

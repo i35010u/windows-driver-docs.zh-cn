@@ -8,41 +8,39 @@ keywords:
 ms.assetid: A66B5AC6-9EAF-4234-8614-0EBF179B3DDE
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c64435cb711e73954592ae619b74cdb588b81439
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 4191404b7c299ae39a968c8a4dfbc64b6ec189e8
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72844362"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89215544"
 ---
 # <a name="ndis-network-interface-oids"></a>NDIS 网络接口 OID
 
-NDIS 网络接口对象标识符（Oid）提供了有关支持 MIB （[RFC 2863](overview-of-ndis-network-interfaces.md)）的网络接口的信息。
+ (Oid 的 NDIS 网络接口对象标识符) 提供有关支持 MIB ([RFC 2863](overview-of-ndis-network-interfaces.md)) 的网络接口的信息。
 
 NDIS 接口提供程序必须支持这些 Oid。 未注册接口提供程序的驱动程序不应支持本节中的 Oid。
 
-NDIS 调用[ProviderQueryObject](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-if_query_object)函数来发出查询请求，以获取接口提供程序的信息。 此函数的*ObjectId*参数包含对象标识符。 接口提供程序在调用[NdisIfRegisterProvider](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisifregisterprovider)函数以注册为接口提供程序时注册了*ProviderQueryObject* 。
+NDIS 调用 [ProviderQueryObject](/windows-hardware/drivers/ddi/ndis/nc-ndis-if_query_object) 函数来发出查询请求，以获取接口提供程序的信息。 此函数的 *ObjectId* 参数包含对象标识符。 接口提供程序在调用[NdisIfRegisterProvider](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisifregisterprovider)函数以注册为接口提供程序时注册了*ProviderQueryObject* 。
 
-*ProviderQueryObject*函数的*ProviderIfContext*参数处的句柄标识网络接口。 此句柄是在接口提供程序调用[NdisIfRegisterInterface](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisifregisterinterface)函数以注册接口时提供给 NDIS 的。 *ProviderQueryObject*函数的*POUTPUTBUFFER*参数包含 OID 请求的结果。
+*ProviderQueryObject*函数的*ProviderIfContext*参数处的句柄标识网络接口。 此句柄是在接口提供程序调用 [NdisIfRegisterInterface](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisifregisterinterface) 函数以注册接口时提供给 NDIS 的。 *ProviderQueryObject*函数的*POUTPUTBUFFER*参数包含 OID 请求的结果。
 
-有关 NDIS 网络接口 Oid 的详细信息，请参阅[ndis 6.0 网络接口](ndis-network-interfaces2.md)。
+有关 NDIS 网络接口 Oid 的详细信息，请参阅 [ndis 6.0 网络接口](ndis-network-interfaces2.md)。
 
 本部分介绍以下 NDIS 网络接口 Oid：
 
-- [OID_GEN_ALIAS](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-alias) 
-- [OID_GEN_ADMIN_STATUS](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-admin-status) 
-- [OID_GEN_OPERATIONAL_STATUS](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-operational-status) 
-- [OID_GEN_PROMISCUOUS_MODE](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-promiscuous-mode) 
-- [OID_GEN_XMIT_LINK_SPEED](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-xmit-link-speed) 
-- [OID_GEN_RCV_LINK_SPEED](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-rcv-link-speed) 
-- [OID_GEN_UNKNOWN_PROTOS](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-unknown-protos) 
-- [OID_GEN_DISCONTINUITY_TIME](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-discontinuity-time) 
-- [OID_GEN_LAST_CHANGE](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-last-change) 
-- [OID_GEN_INTERFACE_INFO](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-interface-info) 
-- [OID_GEN_MEDIA_CONNECT_STATUS_EX](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-media-connect-status-ex) 
-- [OID_GEN_LINK_SPEED_EX](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-link-speed-ex) 
-- [OID_GEN_MEDIA_DUPLEX_STATE](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-media-duplex-state) 
-- [OID_TUNNEL_INTERFACE_RELEASE_OID](https://docs.microsoft.com/windows-hardware/drivers/network/oid-tunnel-interface-release-oid) 
-- [OID_TUNNEL_INTERFACE_SET_OID](https://docs.microsoft.com/windows-hardware/drivers/network/oid-tunnel-interface-set-oid) 
-
-
+- [OID_GEN_ALIAS](./oid-gen-alias.md) 
+- [OID_GEN_ADMIN_STATUS](./oid-gen-admin-status.md) 
+- [OID_GEN_OPERATIONAL_STATUS](./oid-gen-operational-status.md) 
+- [OID_GEN_PROMISCUOUS_MODE](./oid-gen-promiscuous-mode.md) 
+- [OID_GEN_XMIT_LINK_SPEED](./oid-gen-xmit-link-speed.md) 
+- [OID_GEN_RCV_LINK_SPEED](./oid-gen-rcv-link-speed.md) 
+- [OID_GEN_UNKNOWN_PROTOS](./oid-gen-unknown-protos.md) 
+- [OID_GEN_DISCONTINUITY_TIME](./oid-gen-discontinuity-time.md) 
+- [OID_GEN_LAST_CHANGE](./oid-gen-last-change.md) 
+- [OID_GEN_INTERFACE_INFO](./oid-gen-interface-info.md) 
+- [OID_GEN_MEDIA_CONNECT_STATUS_EX](./oid-gen-media-connect-status-ex.md) 
+- [OID_GEN_LINK_SPEED_EX](./oid-gen-link-speed-ex.md) 
+- [OID_GEN_MEDIA_DUPLEX_STATE](./oid-gen-media-duplex-state.md) 
+- [OID_TUNNEL_INTERFACE_RELEASE_OID](./oid-tunnel-interface-release-oid.md) 
+- [OID_TUNNEL_INTERFACE_SET_OID](./oid-tunnel-interface-set-oid.md)

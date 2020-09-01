@@ -4,21 +4,21 @@ description: 从 VF 微型端口驱动程序进行反向通道通信
 ms.assetid: B7208199-1308-4EF1-A03B-237A283563C4
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0c43e84c96d4c0052eae26ee05b6e88986c97a21
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 34a941ad9df63ec4242dd1ea209712219afb02a5
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72835281"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89215962"
 ---
 # <a name="backchannel-communication-from-a-vf-miniport-driver"></a>从 VF 微型端口驱动程序进行反向通道通信
 
 
-PCI Express （PCIe）虚拟功能（VF）的微型端口驱动程序与 PCIe 物理函数（PF）的微型端口驱动程序通信，以便从 VF 配置块读取或写入数据。
+PCI Express (PCIe) 虚函数 (VF 的微型端口驱动程序) 与 PCIe 物理功能的微型端口驱动程序通信 (PF) 从 VF 配置块读取或写入数据。
 
-VF 配置块用于 backchannel 和 VF 微型端口驱动程序之间的通信。 独立硬件供应商（IHV）可以为设备定义一个或多个 VF 配置块。 每个 VF 配置块都有一个 IHV 定义的格式、长度和块 ID。 例如，IHV 可以定义一个可用于 VF 微型端口驱动程序的媒体访问控制（MAC）地址的 VF 配置块。 其他 VF 配置块可用于当前 VF 和虚拟端口（VPort）配置。
+VF 配置块用于 backchannel 和 VF 微型端口驱动程序之间的通信。 独立硬件供应商 (IHV) 可以定义设备的一个或多个 VF 配置块。 每个 VF 配置块都有一个 IHV 定义的格式、长度和块 ID。 例如，IHV 可以定义一个 VF 配置块，该配置块可用于媒体访问控制 (MAC) 地址的 VF 微型端口驱动程序。 其他 VF 配置块可用于当前 VF 和虚拟端口 (VPort) 配置。
 
-**请注意**，每个 VF 配置块中  的数据仅供 PF 和 VF 微型端口驱动程序使用。 此数据的格式和内容对于 Windows 操作系统的组件是不透明的。
+**注意**   每个 VF 配置块中的数据仅用于 PF 和 VF 微型端口驱动程序。 此数据的格式和内容对于 Windows 操作系统的组件是不透明的。
 
  
 
@@ -26,29 +26,23 @@ IHV 为每个 VF 配置块分配一个唯一标识符。 这允许 VF 微型端�
 
 VF 微型端口驱动程序通过以下功能，在指定的 VF 配置块上启动读取或写入操作：
 
--   [**NdisMReadConfigBlock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismreadconfigblock)，用于从指定的 VF 配置块读取数据。 当 VF 微型端口驱动程序调用此函数时，它指定要读取的数据的块标识符和长度。 驱动程序还会传递指向包含所请求数据的缓冲区的指针。
+-   [**NdisMReadConfigBlock**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismreadconfigblock)，用于从指定的 VF 配置块读取数据。 当 VF 微型端口驱动程序调用此函数时，它指定要读取的数据的块标识符和长度。 驱动程序还会传递指向包含所请求数据的缓冲区的指针。
 
--   [**NdisMWriteConfigBlock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismreadconfigblock)，它将数据写入指定的 VF 配置块。 当 VF 微型端口驱动程序调用此函数时，它指定要写入的数据的块标识符和长度。 驱动程序还传递指向要从中写入数据的缓冲区的指针。
+-   [**NdisMWriteConfigBlock**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismreadconfigblock)，它将数据写入指定的 VF 配置块。 当 VF 微型端口驱动程序调用此函数时，它指定要写入的数据的块标识符和长度。 驱动程序还传递指向要从中写入数据的缓冲区的指针。
 
 PF 微型端口驱动程序通过以下方式管理对指定的 VF 配置块的访问：
 
--   当 VF 微型端口驱动程序调用[**NdisMReadConfigBlock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismreadconfigblock)时，NDIS 发出 OID 的对象标识符（oid）方法请求[\_SRIOV\_读取\_VF\_CONFIG\_块](https://docs.microsoft.com/windows-hardware/drivers/network/oid-sriov-read-vf-config-block)发送到 PF 微型端口驱动程序。 此 OID 请求包含函数调用中由 VF 微型端口驱动程序传递的参数数据。
+-   当 VF 微型端口驱动程序调用 [**NdisMReadConfigBlock**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismreadconfigblock)时，NDIS)  (oid 发出对象标识符，将 [oid \_ SRIOV \_ \_ \_ \_ ](./oid-sriov-read-vf-config-block.md) 的方法请求发送到 PF 微型端口驱动程序。 此 OID 请求包含函数调用中由 VF 微型端口驱动程序传递的参数数据。
 
-    当驱动程序完成 OID 请求时，PF 微型端口驱动程序将执行读取操作并返回所请求的数据。 完成 OID 请求后，NDIS 将从对[**NdisMReadConfigBlock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismreadconfigblock)的调用返回。
+    当驱动程序完成 OID 请求时，PF 微型端口驱动程序将执行读取操作并返回所请求的数据。 完成 OID 请求后，NDIS 将从对 [**NdisMReadConfigBlock**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismreadconfigblock)的调用返回。
 
--   当 VF 微型端口驱动程序调用[**NdisMWriteConfigBlock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismreadconfigblock)时，NDIS 会发出 OID\_SRIOV 的 oid 方法请求， [\_将\_VF\_配置\_块写入](https://docs.microsoft.com/windows-hardware/drivers/network/oid-sriov-write-vf-config-block)到 PF 微型端口驱动程序。 此 OID 请求包含函数调用中由 VF 微型端口驱动程序传递的参数数据。
+-   当 VF 微型端口驱动程序调用 [**NdisMWriteConfigBlock**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismreadconfigblock)时，NDIS 向 PF 小型端口驱动程序发出 [oid \_ SRIOV \_ 写入 \_ VF \_ CONFIG \_ 块](./oid-sriov-write-vf-config-block.md) 的 oid 方法请求。 此 OID 请求包含函数调用中由 VF 微型端口驱动程序传递的参数数据。
 
-    PF 微型端口驱动程序执行写入操作并完成 OID 请求。 完成 OID 请求后，NDIS 将从对[**NdisMWriteConfigBlock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismreadconfigblock)的调用返回。
+    PF 微型端口驱动程序执行写入操作并完成 OID 请求。 完成 OID 请求后，NDIS 将从对 [**NdisMWriteConfigBlock**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismreadconfigblock)的调用返回。
 
 下图显示了通过 SR-IOV backchannel 接口读取和写入 VF 配置块所涉及的过程。
 
 ![图像显示了在 vf 微型端口驱动程序、ndis 和 pf 微型端口驱动程序之间移动的各种配置块](images/sriov-vf-backchannel.png)
 
  
-
- 
-
-
-
-
 

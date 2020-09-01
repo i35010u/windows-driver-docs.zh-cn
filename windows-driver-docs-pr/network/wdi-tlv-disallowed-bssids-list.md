@@ -1,39 +1,39 @@
 ---
 title: WDI_TLV_DISALLOWED_BSSIDS_LIST
-description: WDI_TLV_DISALLOWED_BSSIDS_LIST 是一个 TLV，其中包含不允许用于关联的 BSSIDs 列表。
+description: WDI_TLV_DISALLOWED_BSSIDS_LIST 是一种 TLV，其中包含不允许用于关联的 BSSIDs 的列表。
 ms.assetid: A65A6C05-C4E1-4880-BF83-48B62D0C2FD3
 ms.date: 07/18/2017
 keywords:
-- WDI_TLV_DISALLOWED_BSSIDS_LIST 从 Windows Vista 开始的网络驱动程序
+- 从 Windows Vista 开始 WDI_TLV_DISALLOWED_BSSIDS_LIST 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: ab7d7620654f29833e98dcee413c3a5f17dbd727
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 73208f8f1f461fb3899c69886d949a1ac33ec6e6
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72834147"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89216807"
 ---
-# <a name="wdi_tlv_disallowed_bssids_list"></a>WDI\_TLV\_不允许\_BSSIDS\_列表
+# <a name="wdi_tlv_disallowed_bssids_list"></a>WDI \_ TLV 不 \_ 允许 \_ BSSIDS \_ 列表
 
 
-WDI\_TLV\_不允许\_BSSIDS\_列表是一个 TLV，其中包含不允许用于关联的 BSSIDs 列表。
+WDI \_ tlv 不 \_ 允许 \_ BSSIDS \_ 列表是一个 TLV，其中包含不允许用于关联的 BSSIDS 列表。
 
 ## <a name="tlv-type"></a>TLV 类型
 
 
 0xC3
 
-## <a name="length"></a>长度
+## <a name="length"></a>Length
 
 
-WDI 数组的大小（以字节为单位） [ **\_MAC\_地址**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dot11wdi/ns-dot11wdi-_wdi_mac_address)结构。 数组必须包含1个或多个结构。
+[**WDI \_ MAC \_ 地址**](/windows-hardware/drivers/ddi/dot11wdi/ns-dot11wdi-_wdi_mac_address)结构数组的大小 (以字节为单位) 。 数组必须包含1个或多个结构。
 
 ## <a name="values"></a>值
 
 
-| 在任务栏的搜索框中键入                                                  | 描述                                                                                                                                               |
+| 类型                                                  | 说明                                                                                                                                               |
 |-------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [**WDI\_MAC\_地址**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dot11wdi/ns-dot11wdi-_wdi_mac_address)\[\] | 不允许用于关联的 BSSIDs 的列表。 如果指定此项，则适配器不得关联到不在此列表中的任何 AP |
+| [**WDI \_ MAC \_ 地址**](/windows-hardware/drivers/ddi/dot11wdi/ns-dot11wdi-_wdi_mac_address)\[\] | 不允许用于关联的 BSSIDs 的列表。 如果指定此项，则适配器不得关联到不在此列表中的任何 AP |
 
  
 
@@ -48,7 +48,7 @@ WDI 数组的大小（以字节为单位） [ **\_MAC\_地址**](https://docs.mi
 <tbody>
 <tr class="odd">
 <td><p>最低受支持的客户端</p></td>
-<td><p>Windows 10</p></td>
+<td><p>Windows 10</p></td>
 </tr>
 <tr class="even">
 <td><p>最低受支持的服务器</p></td>
@@ -62,9 +62,4 @@ WDI 数组的大小（以字节为单位） [ **\_MAC\_地址**](https://docs.mi
 </table>
 
  
-
- 
-
-
-
 

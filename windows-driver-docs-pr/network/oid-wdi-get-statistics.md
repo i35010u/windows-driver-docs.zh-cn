@@ -1,42 +1,42 @@
 ---
 title: OID_WDI_GET_STATISTICS
-description: OID_WDI_GET_STATISTICS 请求 IHV 组件返回 MAC 和物理层统计信息。
+description: OID_WDI_GET_STATISTICS 请求 IHV 组件返回 MAC 和 PHY 层统计信息。
 ms.assetid: 55c36869-ce85-42fe-877b-07aefb669b56
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 OID_WDI_GET_STATISTICS 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: c141b531a070cac0f892077061caaaa1f742ca62
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: f407ec33f6c5c695b3f6cefcce4434edd21b15ca
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67387266"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89215839"
 ---
-# <a name="oidwdigetstatistics"></a>OID\_WDI\_GET\_STATISTICS
+# <a name="oid_wdi_get_statistics"></a>OID \_ WDI \_ 获取 \_ 统计信息
 
 
-OID\_WDI\_获取\_统计信息请求 IHV 组件返回 MAC 和物理层的统计信息。
+OID \_ WDI \_ 获取 \_ IHV 组件返回 MAC 和 PHY 层统计信息请求的统计信息。
 
-| 范围 | 设置与任务序列化 | 正常执行时间 （秒） |
+| 作用域 | 设置序列化任务 | 正常执行时间 (秒)  |
 |-------|--------------------------|---------------------------------|
-| Port  | 不支持 set 语句        | 1                               |
+| 端口  | 不支持的设置        | 1                               |
 
  
 
-MAC 统计信息必须所有维护每个端口。 除非被免除，还必须给每个端口维护物理统计信息。 如果每个端口 （如允许的例外） 不能维护物理统计信息，可以每个"通道"维护统计信息 （可组合在同一个通道上运行的两个端口的物理统计信息）。
+MAC 统计信息必须全部按端口维护。 还必须按端口维护 PHY 统计信息，除非免除。 如果在免除) 允许的情况下按端口 (维护 PHY 统计信息，则可以按 "通道" 来维护统计信息，在同一通道上操作的两个端口的每个端口都可以进行维护)  (。
 
 ## <a name="get-property-parameters"></a>获取属性参数
 
 
-任何其他参数。 标头中的数据就足够了。
-## <a name="get-property-results"></a>获取属性的结果
+无其他参数。 标头中的数据足够了。
+## <a name="get-property-results"></a>获取属性结果
 
 
-| TLV                                                              | 允许多个 TLV 实例 | 可选 | 描述              |
+| TLV                                                              | 允许多个 TLV 实例 | 可选 | 说明              |
 |------------------------------------------------------------------|--------------------------------|----------|--------------------------|
-| [**WDI\_TLV\_MAC\_STATISTICS**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-mac-statistics) | X                              |          | 每个对等的 MAC 统计信息。 |
-| [**WDI\_TLV\_PHY\_STATISTICS**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-phy-statistics) | X                              |          | 每个端口的物理统计信息。 |
+| [**WDI \_ TLV \_ MAC \_ 统计信息**](./wdi-tlv-mac-statistics.md) | X                              |          | 每对等 MAC 统计信息。 |
+| [**WDI \_ TLV \_ PHY \_ 统计信息**](./wdi-tlv-phy-statistics.md) | X                              |          | 每端口 PHY 统计信息。 |
 
  
 
@@ -58,16 +58,11 @@ MAC 统计信息必须所有维护每个端口。 除非被免除，还必须给
 <td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
-<td><p>Header</p></td>
-<td>Dot11wdi.h</td>
+<td><p>标头</p></td>
+<td>Dot11wdi</td>
 </tr>
 </tbody>
 </table>
 
  
-
- 
-
-
-
 

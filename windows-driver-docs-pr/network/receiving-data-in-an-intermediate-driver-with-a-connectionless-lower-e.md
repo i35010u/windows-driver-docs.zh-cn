@@ -7,12 +7,12 @@ keywords:
 - NDIS 中间驱动程序 WDK，接收操作
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 00cfa34adc8f1f8d724747f069371c3eb6762558
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 0c11d625492cfa1466d24eb6cc883a80eea3ef1f
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72844850"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89216958"
 ---
 # <a name="receiving-data-in-an-intermediate-driver-with-a-connectionless-lower-edge"></a>在包含无连接下边缘的中间驱动程序中接收数据
 
@@ -20,17 +20,11 @@ ms.locfileid: "72844850"
 
 
 
-具有无连接下限的中间驱动程序必须具有[**ProtocolReceiveNetBufferLists**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-protocol_receive_net_buffer_lists)函数才能接收网络数据。
+具有无连接下限的中间驱动程序必须具有 [**ProtocolReceiveNetBufferLists**](/windows-hardware/drivers/ddi/ndis/nc-ndis-protocol_receive_net_buffer_lists) 函数才能接收网络数据。
 
-基础无连接微型端口驱动程序调用**NdisMIndicateReceiveNetBufferLists**，并将一个或多个[**NET\_缓冲区**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)的链接列表传递\_列表结构，并将指定结构的所有权放弃为更高级别驱动程序。 当更高级别的驱动程序使用数据时，它们会将 NET\_缓冲区\_列表结构（及其指定资源）返回到微型端口驱动程序。
+基础无连接微型端口驱动程序调用 **NdisMIndicateReceiveNetBufferLists**，将一个或多个 [**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list) 结构的链接列表传递到更高级别的驱动程序，将所指示的结构的所有权放弃。 当更高级别的驱动程序使用数据时，它们会将网络 \_ 缓冲区 \_ 列表结构返回 (和它们指定的资源) 到微型端口驱动程序。
 
-有关使用无连接的下边缘在中间驱动程序中接收数据的详细信息，请参阅[协议驱动程序发送和接收操作](protocol-driver-send-and-receive-operations.md)。
-
- 
+有关使用无连接的下边缘在中间驱动程序中接收数据的详细信息，请参阅 [协议驱动程序发送和接收操作](protocol-driver-send-and-receive-operations.md)。
 
  
-
-
-
-
 

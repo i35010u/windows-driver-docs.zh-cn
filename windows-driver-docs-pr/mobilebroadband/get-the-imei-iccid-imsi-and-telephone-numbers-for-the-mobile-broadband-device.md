@@ -1,20 +1,20 @@
 ---
-title: 获取的 MB 设备的 IMEI、 ICCID、 IMSI 和电话号码
-description: 获取移动宽带设备 IMEI、 ICCID、 IMSI 和电话号码
+title: 获取用于 MB 设备的 IMEI、ICCID、IMSI 和电话号码
+description: 获取移动宽带设备的 IMEI、ICCID、IMSI 和电话号码
 ms.assetid: b604d08c-7e6f-4dad-9e1d-3f24a0da5760
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4fc18008347d3c4257079311954f62724860f20c
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 0e5de2df0a82ca033624a578004d08903fdd12d6
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56524305"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89216618"
 ---
-# <a name="get-the-imei-iccid-imsi-and-telephone-numbers-for-the-mobile-broadband-device"></a>获取移动宽带设备 IMEI、 ICCID、 IMSI 和电话号码
+# <a name="get-the-imei-iccid-imsi-and-telephone-numbers-for-the-mobile-broadband-device"></a>获取移动宽带设备的 IMEI、ICCID、IMSI 和电话号码
 
 
-以下属性是可用于当前的网络设备的帐户：
+以下属性可用于此帐户的当前网络设备：
 
 <table>
 <colgroup>
@@ -24,7 +24,7 @@ ms.locfileid: "56524305"
 <thead>
 <tr class="header">
 <th>值</th>
-<th>MobileBroadbandDeviceInformation 若要使用的属性</th>
+<th>要使用的 MobileBroadbandDeviceInformation 的属性</th>
 </tr>
 </thead>
 <tbody>
@@ -41,7 +41,7 @@ ms.locfileid: "56524305"
 <td><p>SubscriberId</p></td>
 </tr>
 <tr class="even">
-<td><p>最小值</p></td>
+<td><p>MIN</p></td>
 <td><p>SubscriberId</p></td>
 </tr>
 <tr class="odd">
@@ -54,7 +54,7 @@ ms.locfileid: "56524305"
 </tr>
 <tr class="odd">
 <td><p>电话号码</p></td>
-<td><p>TelephoneNumbers （只有网络注册后）</p></td>
+<td><p>TelephoneNumbers (仅在网络注册之后可用) </p></td>
 </tr>
 </tbody>
 </table>
@@ -65,17 +65,10 @@ ms.locfileid: "56524305"
 account.currentDeviceInformation.mobileEquipmentId
 ```
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关的主题
+## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
-[移动宽带 Windows 运行时 Api 的常见任务](common-tasks-for-mobile-broadband-windows-runtime-apis.md)
-
- 
+[移动宽带 Windows 运行时 API 的常见任务](./create-a-mobilebroadbandaccount-object.md)
 
  
-
-
-
-
-
 

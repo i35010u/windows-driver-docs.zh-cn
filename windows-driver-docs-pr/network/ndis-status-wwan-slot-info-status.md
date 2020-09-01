@@ -1,26 +1,26 @@
 ---
 title: NDIS_STATUS_WWAN_SLOT_INFO
-description: 微型端口驱动程序使用 NDIS_STATUS_WWAN_SLOT_INFO 通知来通知 MB 服务完成了以前的 OID_WWAN_SLOT_INFO 查询请求。
+description: 微型端口驱动程序使用 NDIS_STATUS_WWAN_SLOT_INFO 通知来通知 MB 服务完成了上一个 OID_WWAN_SLOT_INFO 查询请求。
 ms.assetid: FA1E16E4-56A3-4401-875F-D75DD01FE75D
 ms.date: 07/18/2017
 keywords:
-- NDIS_STATUS_WWAN_SLOT_INFO 从 Windows Vista 开始的网络驱动程序
+- 从 Windows Vista 开始 NDIS_STATUS_WWAN_SLOT_INFO 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: ce116993d1b9a7ad29896672edac33c87edfcb2d
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 7ce3cf2a2fe20f4c90fc60f46c5a29a55136c591
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72844640"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89217276"
 ---
-# <a name="ndis_status_wwan_slot_info"></a>\_WWAN\_槽\_信息的 NDIS\_状态
+# <a name="ndis_status_wwan_slot_info"></a>NDIS \_ 状态 \_ WWAN \_ 槽 \_ 信息
 
 
-微型端口驱动程序使用**NDIS\_状态\_WWAN\_槽\_信息**通知来通知 MB 服务完成以前的[OID\_WWAN\_槽\_INFO](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wwan-slot-info-status)查询请求。
+微型端口驱动程序使用 **NDIS \_ 状态 \_ wwan \_ 槽 \_ 信息** 通知来通知 MB 服务完成了上一个 [OID \_ WWAN \_ 槽 \_ 信息](./oid-wwan-slot-info-status.md) 查询请求。
 
-小型端口驱动程序可以将**NDIS\_状态\_WWAN\_槽\_信息**通知发送到插槽/卡状态发生更改时的未经请求的事件。
+当槽/插卡状态发生变化时，微型端口驱动程序可以将 **NDIS \_ 状态 \_ WWAN \_ 槽 \_ 信息** 通知发送为未经请求的事件。
 
-此通知使用[**NDIS\_WWAN\_槽\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_slot_info)结构。
+此通知使用 [**NDIS \_ WWAN \_ 槽 \_ 信息**](/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_slot_info) 结构。
 
 <a name="requirements"></a>要求
 ------------
@@ -45,14 +45,9 @@ ms.locfileid: "72844640"
 ## <a name="see-also"></a>另请参阅
 
 
-[OID\_WWAN\_槽\_信息](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wwan-slot-info-status)
+[OID \_ WWAN \_ 槽 \_ 信息](./oid-wwan-slot-info-status.md)
 
-[**NDIS\_WWAN\_槽\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_slot_info)
-
- 
+[**NDIS \_ WWAN \_ 槽 \_ 信息**](/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_slot_info)
 
  
-
-
-
 

@@ -11,12 +11,12 @@ keywords:
 - Unidrv WDK 打印
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5c243056b874d0fdb6fc2af9b1885b77dcbf11b6
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: d14c903c4a5b1cc538b20ab658fe30ab27c42be8
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72833834"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89216368"
 ---
 # <a name="filtering-raster-data"></a>筛选光栅数据
 
@@ -24,14 +24,9 @@ ms.locfileid: "72833834"
 
 
 
-如果要在后台处理扫描行数据流之前提供其自定义的后处理，可以在[呈现插件](rendering-plug-ins.md)中实现[**IPrintOemUni：： FilterGraphics**](https://docs.microsoft.com/windows-hardware/drivers/ddi/prcomoem/nf-prcomoem-iprintoemuni-filtergraphics)方法来执行此操作。 没有与此 Unidrv 功能关联的 GPD 文件项。
+如果要在后台处理扫描行数据流之前提供其自定义的后处理，可以在[呈现插件](rendering-plug-ins.md)中实现[**IPrintOemUni：： FilterGraphics**](/windows-hardware/drivers/ddi/prcomoem/nf-prcomoem-iprintoemuni-filtergraphics)方法来执行此操作。 没有与此 Unidrv 功能关联的 GPD 文件项。
 
-有关详细信息，请参阅[自定义数据流筛选](customized-data-stream-filtering.md)。
-
- 
+有关详细信息，请参阅 [自定义数据流筛选](customized-data-stream-filtering.md)。
 
  
-
-
-
 

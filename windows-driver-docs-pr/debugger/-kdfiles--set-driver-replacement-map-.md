@@ -14,12 +14,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 9c0ce79da0903f46e0323af8b2b125d2ed7fce66
-ms.sourcegitcommit: bb3b62a57ba3aea4a0adeefd2d81993367b7b334
+ms.openlocfilehash: 6498d7920ce6eb0875bca0f1f18923a0735dd8ea
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88148432"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89217704"
 ---
 # <a name="kdfiles-set-driver-replacement-map"></a>.kdfiles（设置驱动程序替换映射）
 
@@ -122,7 +122,7 @@ Windows 版本2004中添加了用户模式文件替换。 此支持允许将以�
 
 请注意，不能替换已在使用磁盘文件等中的限制。在最初加载多个系统 Dll 后，不能轻松地对其进行热插拔，因此预设了 gflags + ksl 选项，并在启动时使用 kdfiles 来替换任何用户模式的二进制文件。
 
-有关启用启动调试的详细信息，请参阅 [BCDEdit/bootdebug](https://docs.microsoft.com/windows-hardware/drivers/devtest/bcdedit--bootdebug)。
+有关启用启动调试的详细信息，请参阅 [BCDEdit/bootdebug](../devtest/bcdedit--bootdebug.md)。
 
 建议使用高速/低延迟 KD transport KDNET 来最大程度地降低系统性能影响。
 
@@ -143,10 +143,4 @@ Windows 版本2004中添加了用户模式文件替换。 此支持允许将以�
 </table>
 
  
-
- 
-
-
-
-
 

@@ -16,12 +16,12 @@ api_type:
 - COM
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d8581aa17e04a8db23ae4a1b0ee195789a4067f0
-ms.sourcegitcommit: 17c1bbc5ea0bef3bbc87794b030a073f905dc942
+ms.openlocfilehash: 8bf16113db3441f950e805b3a39d927d64c2f909
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88802449"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89217151"
 ---
 # <a name="iprinterscriptusbjobcontextreturncodes-interface"></a>IPrinterScriptUsbJobContextReturnCodes 接口
 
@@ -32,7 +32,7 @@ IPrinterScriptUsbJobContextReturnCodes 接口表示 IHV 为其 JavaScript 函数
 <a name="members"></a>成员
 -------
 
-**IPrinterScriptUsbJobContextReturnCodes**接口继承自[**IUnknown**](https://docs.microsoft.com/windows/win32/api/unknwn/nn-unknwn-iunknown)接口。 **IPrinterScriptUsbJobContextReturnCodes** 还具有下列类型的成员：
+**IPrinterScriptUsbJobContextReturnCodes**接口继承自[**IUnknown**](/windows/win32/api/unknwn/nn-unknwn-iunknown)接口。 **IPrinterScriptUsbJobContextReturnCodes** 还具有下列类型的成员：
 
 -   [方法](#methods)
 
@@ -61,11 +61,11 @@ IPrinterScriptUsbJobContextReturnCodes 接口表示 IHV 为其 JavaScript 函数
 <td><p>返回值 "3"，通知 USBMon 设备通信通道目前不接受数据。</p></td>
 </tr>
 <tr class="odd">
-<td><a href="iprinterscriptusbjobcontextreturncodes-failure.md" data-raw-source="[&lt;strong&gt;Failure&lt;/strong&gt;](iprinterscriptusbjobcontextreturncodes-failure.md)"><strong>否则</strong></a></td>
+<td><a href="iprinterscriptusbjobcontextreturncodes-failure.md" data-raw-source="[&lt;strong&gt;Failure&lt;/strong&gt;](iprinterscriptusbjobcontextreturncodes-failure.md)"><strong>失败</strong></a></td>
 <td><p>返回值 "1"，通知 USBMon 方法调用失败。</p></td>
 </tr>
 <tr class="even">
-<td><a href="iprinterscriptusbjobcontextreturncodes-retry.md" data-raw-source="[&lt;strong&gt;Retry&lt;/strong&gt;](iprinterscriptusbjobcontextreturncodes-retry.md)"><strong>后</strong></a></td>
+<td><a href="iprinterscriptusbjobcontextreturncodes-retry.md" data-raw-source="[&lt;strong&gt;Retry&lt;/strong&gt;](iprinterscriptusbjobcontextreturncodes-retry.md)"><strong>重试</strong></a></td>
 <td><p>返回值 "2"，通知 USBMon 方法调用成功，同时完成更多的工作。</p></td>
 </tr>
 <tr class="odd">

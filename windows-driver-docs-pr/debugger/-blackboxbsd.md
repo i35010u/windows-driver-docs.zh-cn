@@ -1,6 +1,6 @@
 ---
 title: blackboxbsd
-description: Blackboxbsd 扩展显示的第二个启动信息启动状态数据 (BSD)。
+description: Blackboxbsd 扩展显示启动状态数据 (BSD) 的辅助启动信息。
 keywords:
 - blackboxbsd Windows 调试
 ms.author: windowsdriverdev
@@ -14,16 +14,16 @@ api_name:
 - blackboxbsd
 api_type:
 - NA
-ms.openlocfilehash: 7e877e718858133e836b2408cd38d31c68fb264a
-ms.sourcegitcommit: b25275c2662bfdbddd97718f47be9bd79e6f08df
+ms.openlocfilehash: 321b777c3783d71ca12f17851efa2fa1228a6f26
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/13/2019
-ms.locfileid: "67866516"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89217419"
 ---
 # <a name="blackboxbsd"></a>!blackboxbsd
 
-**！ Blackboxbsd**内核模式转储文件中为可用时，扩展将显示缓存的启动状态数据 (BSD) 信息。   从内核模式转储时检测的错误发生，以及可能始终无法保存中缓存的数据检索的信息。
+当 **blackboxbsd** 扩展在内核模式转储文件中可用时，它会在 BSD) 信息 (显示缓存的启动状态数据。   从内核模式转储中的缓存数据中检索信息，该转储是在检测到错误时保存的，并且可能并非始终可用。
 
 语法
 
@@ -35,14 +35,14 @@ ms.locfileid: "67866516"
 *无*   
 
 
-## <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+## <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 ext.dll
 
 
-## <a name="span-idremarksspanremarks"></a><span id="Remarks"></span>备注
+## <a name="span-idremarksspanremarks"></a><span id="Remarks"></span>注释
 
-驱动程序开发人员可以将第二个启动信息添加到转储文件。 驱动程序开发人员 （和操作系统） 可以决定何时将此信息添加到转储文件。 这意味着不是所有内核模式转储文件将都包含第二个启动信息。 有关详细信息，请参阅[编写 Bug 检查原因回调例程](https://docs.microsoft.com/windows-hardware/drivers/kernel/writing-a-bug-check-callback-routine)。
+驱动程序开发人员可以将辅助启动信息添加到转储文件。 驱动程序开发人员 (和 OS) 可以决定何时将此信息添加到转储文件。 这意味着，并非所有内核模式转储文件都包含辅助启动信息。 有关详细信息，请参阅 [编写 Bug 检查原因回调例程](../kernel/writing-a-bug-check-callback-routine.md)。
 
 ### <a name="example-command-output"></a>示例命令输出
 
@@ -101,8 +101,3 @@ Power button transition latest checkpoint sequence number: 77
 ```
 
  
-
-
-
-
-

@@ -1,6 +1,6 @@
 ---
 title: whea
-description: Whea 扩展显示顶级 Windows 硬件错误体系结构（WHEA）信息。
+description: Whea 扩展显示顶级 Windows 硬件错误体系结构 (WHEA) 信息。
 ms.assetid: 5d621507-74e7-4a43-8600-88dca29e461d
 keywords:
 - whea Windows 调试
@@ -12,17 +12,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 68358e86bc93dc6a13ba64924638accac2b02d40
-ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
+ms.openlocfilehash: 31059c33e36e96c7c6ab866b9bffd93e68db1c5a
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84533972"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89217416"
 ---
 # <a name="whea"></a>!whea
 
 
-**！ Whea** extension 显示顶级 Windows 硬件错误体系结构（whea）信息。
+**！ Whea** extension 显示顶级 Windows 硬件错误体系结构 (whea) 信息。
 
 ```dbgcmd
 !whea 
@@ -53,7 +53,7 @@ ms.locfileid: "84533972"
 </tr>
 <tr class="even">
 <td align="left"><p><strong>Windows Vista 及更高版本</strong></p></td>
-<td align="left"><p>Kdexts</p></td>
+<td align="left"><p>Kdexts.dll</p></td>
 </tr>
 </tbody>
 </table>
@@ -64,12 +64,12 @@ ms.locfileid: "84533972"
 
 ### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>附加信息
 
-[**！ Errrec**](-errrec.md)和[**！ errpkt**](-errpkt.md)扩展可用于显示其他 WHEA 信息。 有关 WHEA 的常规信息，请参阅 Windows 驱动程序工具包（WDK）文档中的[Windows 硬件错误体系结构（WHEA）](https://docs.microsoft.com/windows-hardware/drivers/whea/) 。
+[**！ Errrec**](-errrec.md)和[**！ errpkt**](-errpkt.md)扩展可用于显示其他 WHEA 信息。 有关 WHEA 的常规信息，请参阅 Windows 驱动程序工具包中的 [Windows 硬件错误体系结构 (WHEA) ](../whea/index.md) (WDK) 文档。
 
-<a name="remarks"></a>注解
+<a name="remarks"></a>备注
 -------
 
-下面的示例演示 **！ whea**扩展的（截断）输出：
+下面的示例演示 **！ whea** 扩展的 (截断) 输出：
 
 ```dbgcmd
 3: kd> !whea 
@@ -166,10 +166,4 @@ Error Source 3 @ fffffa8007d0dbc0
 ```
 
  
-
- 
-
-
-
-
 

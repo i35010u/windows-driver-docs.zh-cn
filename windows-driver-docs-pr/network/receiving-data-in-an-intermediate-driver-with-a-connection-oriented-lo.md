@@ -7,12 +7,12 @@ keywords:
 - NDIS 中间驱动程序 WDK，接收操作
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cb707412114ecb42922c65bbb504288726df213a
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: c8458e183025dc9e64f9d18cf2be55bfbc92bde1
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72844852"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89216960"
 ---
 # <a name="receiving-data-in-an-intermediate-driver-with-a-connection-oriented-lower-edge"></a>在包含面向连接的下边缘的中间驱动程序中接收数据
 
@@ -20,17 +20,11 @@ ms.locfileid: "72844852"
 
 
 
-如果中间驱动程序在面向连接的微型端口驱动程序之上，NDIS 会调用中间驱动程序的[**ProtocolCoReceiveNetBufferLists**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-protocol_co_receive_net_buffer_lists)函数来指示收到的数据。
+如果中间驱动程序在面向连接的微型端口驱动程序之上，NDIS 会调用中间驱动程序的 [**ProtocolCoReceiveNetBufferLists**](/windows-hardware/drivers/ddi/ndis/nc-ndis-protocol_co_receive_net_buffer_lists) 函数来指示收到的数据。
 
-面向连接的基础微型端口驱动程序通过调用[**NdisMCoIndicateReceiveNetBufferLists**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismcoindicatereceivenetbufferlists)来指示网络数据，并将一个或多个[**NET\_缓冲区**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)的链接列表传递\_列表结构。
+面向连接的基础微型端口驱动程序通过调用 [**NdisMCoIndicateReceiveNetBufferLists**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismcoindicatereceivenetbufferlists)来指示网络数据，并传递一个或多个 [**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list) 结构的链接列表。
 
-有关使用面向连接的下边缘在中间驱动程序中接收数据的详细信息，请参阅[面向连接的操作](connection-oriented-operations.md)。
-
- 
+有关使用面向连接的下边缘在中间驱动程序中接收数据的详细信息，请参阅 [面向连接的操作](connection-oriented-operations.md)。
 
  
-
-
-
-
 

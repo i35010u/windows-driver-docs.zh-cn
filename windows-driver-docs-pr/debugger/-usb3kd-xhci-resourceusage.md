@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 7d4a096ee259ceec28a3d72babc726782a91543f
-ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
+ms.openlocfilehash: 1ee1d6966e85a77eb3d55d93de68077c70b75fa4
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84534110"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89216266"
 ---
 # <a name="usb3kdxhci_resourceusage"></a>！ usb3kd. xhci \_ resourceusage
 
@@ -32,22 +32,22 @@ ms.locfileid: "84534110"
 
 
 <span id="_______DeviceExtension______"></span><span id="_______deviceextension______"></span><span id="_______DEVICEEXTENSION______"></span>*DeviceExtension*   
-主机控制器的功能设备对象的设备扩展（FDO）的地址。
+主机控制器的功能设备对象的设备扩展的地址 (FDO) 。
 
 ## <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 
-Usb3kd
+Usb3kd.dll
 
-<a name="remarks"></a>注解
+<a name="remarks"></a>备注
 -------
 
-输出 **！ xhci \_ resourceusage**命令基于 USB 3.0 主机控制器驱动程序（UsbXhci .sys）维护的数据结构。 有关 usb 3.0 主机控制器驱动程序和 USB 堆栈中其他驱动程序的详细信息，请参阅[Windows 中的 usb 主机端驱动程序](https://docs.microsoft.com//windows-hardware/drivers/usbcon/usb-3-0-driver-stack-architecture)。
+Output **！ xhci \_ resourceusage** 命令基于 USB 3.0 主机控制器驱动程序所维护的数据结构 ( # A0) 。 有关 usb 3.0 主机控制器驱动程序和 USB 堆栈中其他驱动程序的详细信息，请参阅 [Windows 中的 usb 主机端驱动程序](//windows-hardware/drivers/usbcon/usb-3-0-driver-stack-architecture)。
 
 <a name="examples"></a>示例
 --------
 
-若要获取设备扩展的地址，请查看[**！ xhci \_ dumpall**](-usb3kd-xhci-dumpall.md)命令的输出。 在以下示例中，设备扩展的地址为0xfffffa800536e2d0。
+若要获取设备扩展的地址，请查看 [**！ xhci \_ dumpall**](-usb3kd-xhci-dumpall.md) 命令的输出。 在以下示例中，设备扩展的地址为0xfffffa800536e2d0。
 
 ```dbgcmd
 3: kd> !xhci_dumpall
@@ -69,7 +69,7 @@ Usb3kd
     ...
 ```
 
-现在可以将设备扩展的地址传递给 **！ xhci \_ resourceusage**命令。
+现在可以将设备扩展的地址传递给 **！ xhci \_ resourceusage** 命令。
 
 ```dbgcmd
  3: kd> !xhci_resourceusage 0xfffffa800536e2d0
@@ -96,14 +96,7 @@ Usb3kd
 
 [**！ xhci \_ dumpall**](-usb3kd-xhci-dumpall.md)
 
-[通用串行总线（USB）驱动程序](https://docs.microsoft.com/windows-hardware/drivers/usbcon/)
+[ (USB) 驱动程序的通用串行总线](../usbcon/index.md)
 
  
-
- 
-
-
-
-
-
 

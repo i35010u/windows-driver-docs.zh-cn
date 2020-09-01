@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 0612c1ba5c5d33a7665f8163071c1a599c172907
-ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
+ms.openlocfilehash: 4249943606ff40e29ec5c0d21f28b84b3279e364
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84534884"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89216258"
 ---
 # <a name="usbkd_ehcidd"></a>！ usbkd。 \_ehcidd
 
@@ -32,17 +32,17 @@ ms.locfileid: "84534884"
 
 
 <span id="_______StructAddr______"></span><span id="_______structaddr______"></span><span id="_______STRUCTADDR______"></span>*StructAddr*   
-Usbehci 的地址 **！ \_设备 \_ 数据**结构。 查找 usbehci 的地址 **！ \_设备 \_ 数据**结构，请使用[**！ usbhcdext**](-usbkd-usbhcdext.md)或[**！ usbhcdlist**](-usbkd-usbhcdlist.md)。
+Usbehci 的地址 **！ \_设备 \_ 数据** 结构。 查找 usbehci 的地址 **！ \_设备 \_ 数据** 结构，请使用 [**！ usbhcdext**](-usbkd-usbhcdext.md) 或 [**！ usbhcdlist**](-usbkd-usbhcdlist.md)。
 
 ## <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 
-Usbkd
+Usbkd.dll
 
 <a name="examples"></a>示例
 --------
 
-下面是获取 usbehci 的地址的一种方法 **！ \_设备 \_ 数据**结构。 首先输入[**！ usbkd. usbhcdlist**](-usbkd-usbhcdlist.md)。
+下面是获取 usbehci 的地址的一种方法 **！ \_设备 \_ 数据** 结构。 首先输入 [**！ usbkd. usbhcdlist**](-usbkd-usbhcdlist.md)。
 
 ```dbgcmd
 0: kd> !usbkd.usbhcdlist
@@ -85,14 +85,7 @@ AsyncQueueHead ffffd00021cf5000 !_ehciqh ffffd00021cf5000
 
 [USB 2.0 调试器扩展](usb-2-0-extensions.md)
 
-[通用串行总线（USB）驱动程序](https://docs.microsoft.com/windows-hardware/drivers/usbcon/)
+[ (USB) 驱动程序的通用串行总线](../usbcon/index.md)
 
  
-
- 
-
-
-
-
-
 

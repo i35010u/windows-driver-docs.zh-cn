@@ -4,12 +4,12 @@ description: 多数据包消息
 ms.assetid: 58979799-4618-43b9-a6dc-0635f6ade9b3
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b441642ac3f61e53e156e504c9c06178bb380419
-ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
+ms.openlocfilehash: b22a35dd97337c6a5b9ffdceb2f7cadf5cf66bb3
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67393084"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89217034"
 ---
 # <a name="multipacket-messages"></a>多数据包消息
 
@@ -17,13 +17,13 @@ ms.locfileid: "67393084"
 
 
 
-多个[**远程\_NDIS\_数据包\_MSG** ](https://docs.microsoft.com/previous-versions/ff570635(v=vs.85))可能在单个传输，在任一方向发送消息。 通过串联多个构成 multipacket 消息**远程\_NDIS\_数据包\_MSG**元素。 此类传输的最大长度受到*MaxTransferSize*参数中传递[**远程\_NDIS\_初始化\_MSG**](https://docs.microsoft.com/previous-versions/ff570624(v=vs.85))和响应消息。 主机还会限制它捆绑到单次转让到的消息数*MaxPacketsPerMessage*中的设备返回参数[**远程\_NDIS\_初始化\_CMPLT** ](https://docs.microsoft.com/previous-versions/ff570621(v=vs.85))响应消息。
+在任一方向，都可以通过单个传输发送多个 [**远程 \_ NDIS \_ 数据包 \_ **](/previous-versions/ff570635(v=vs.85)) 消息消息。 Multipacket 消息通过连接多个 **远程 \_ NDIS \_ 数据包 \_ 消息** 元素形成。 此类传输的最大长度由[**远程 \_ NDIS \_ INITIALIZE \_ **](/previous-versions/ff570624(v=vs.85))消息和响应消息中传递的*MaxTransferSize*参数控制。 宿主还会将其捆绑的消息数限制为单一传输到设备在[**远程 \_ NDIS \_ INITIALIZE \_ CMPLT**](/previous-versions/ff570621(v=vs.85))响应消息中返回的*MaxPacketsPerMessage*参数。
 
-从单个数据包消息用例的区别在于*MessageLength*字段中每个[**远程\_NDIS\_数据包\_MSG** ](https://docs.microsoft.com/previous-versions/ff570635(v=vs.85))标头包括某些附加的填充字节。 这些填充字节添加到所有除最后一个**远程\_NDIS\_数据包\_MSG**这样的后续远程\_NDIS\_数据包\_消息从相应字节边界处开始。 对于从设备发送到主机的消息，此填充应该产生的每个远程\_NDIS\_数据包\_消息开始的字节偏移量，它是从 multipacket 消息开始的 8 字节的倍数。 当主机将 multipacket 消息发送到设备时，将遵守*PacketAlignmentFactor*中的设备指定[**远程\_NDIS\_初始化\_CMPLT** ](https://docs.microsoft.com/previous-versions/ff570621(v=vs.85))响应消息。
+与单数据包消息的不同之处在于，每个[**远程 \_ NDIS \_ 数据包 \_ **](/previous-versions/ff570635(v=vs.85))消息标头中的*MessageLength*字段都包含一些额外的填充字节。 这些填充字节将添加到除最后一个 **远程 \_ ndis \_ 数据包 \_ 消息** 以外的所有字符，以使后续远程 \_ ndis \_ 数据包 \_ 消息在适当的字节边界处启动。 对于从设备发送到主机的消息，这种填充应该会导致每个远程 \_ NDIS \_ 数据包消息从 \_ multipacket 消息开头开始的字节偏移量开始的字节偏移量。 当主机向设备发送 multipacket 消息时，它将遵循[**远程 \_ NDIS \_ INITIALIZE \_ CMPLT**](/previous-versions/ff570621(v=vs.85))响应消息中设备指定的*PacketAlignmentFactor* 。
 
-请注意，既不组合 multipacket 消息，也不数的长度[**远程\_NDIS\_数据包\_MSG** ](https://docs.microsoft.com/previous-versions/ff570635(v=vs.85))给定组合消息中的元素显式任何远程 NDIS 中定义的字段。 合并后的长度是隐式总线特定于传输机制中，主机或设备必须遍历*MessageLength*组合的消息，以确定的数的字段结合使用的消息。
+请注意，不会在任何远程 NDIS 定义的字段中显式指定组合消息中的 multipacket 消息和 [**远程 \_ ndis \_ 数据包 \_ 消息**](/previous-versions/ff570635(v=vs.85)) 元素数的组合长度。 组合长度在特定于总线的传输机制中是隐式的，主机或设备必须遍历组合消息的 *MessageLength* 字段，以确定组合消息的数量。
 
-下表是由组成的两个远程 multipacket 消息的示例\_NDIS\_数据包\_消息数，从主机到设备发送。 期间[**远程\_NDIS\_初始化\_MSG** ](https://docs.microsoft.com/previous-versions/ff570624(v=vs.85))交换设备请求*PacketAlignmentFactor*为 3 (沿一个 8 字节边界对齐）。
+下表是 multipacket 消息的一个示例，它由两个 \_ \_ \_ 从主机发送到设备的远程 NDIS 数据包消息组成。 在 [**远程 \_ NDIS \_ 初始化 \_ 消息**](/previous-versions/ff570624(v=vs.85)) 交换期间，设备请求的 *PacketAlignmentFactor* 为 3 (沿8字节边界) 对齐。
 
 <table>
 <colgroup>
@@ -34,10 +34,10 @@ ms.locfileid: "67393084"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">偏移量</th>
+<th align="left">Offset</th>
 <th align="left">大小</th>
 <th align="left">字段</th>
-<th align="left">ReplTest1</th>
+<th align="left">值</th>
 </tr>
 </thead>
 <tbody>
@@ -51,12 +51,12 @@ ms.locfileid: "67393084"
 <td align="left"><p>4</p></td>
 <td align="left"><p>4</p></td>
 <td align="left"><p>MessageLength</p></td>
-<td align="left"><p>72 （包括 2 个填充字节; 请参阅下文）</p></td>
+<td align="left"><p>72 (包括2个填充字节;请参阅下面的) </p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>8</p></td>
 <td align="left"><p>4</p></td>
-<td align="left"><p>DataOffset</p></td>
+<td align="left"><p>数据偏移量</p></td>
 <td align="left"><p>36</p></td>
 </tr>
 <tr class="even">
@@ -104,25 +104,25 @@ ms.locfileid: "67393084"
 <tr class="odd">
 <td align="left"><p>40</p></td>
 <td align="left"><p>4</p></td>
-<td align="left"><p>保留</p></td>
+<td align="left"><p>预留</p></td>
 <td align="left"><p>0</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>44</p></td>
 <td align="left"><p>26</p></td>
-<td align="left"><p>有效负载 （数据）</p></td>
-<td align="left"><p>某些网络 26 个字节的长度的数据</p></td>
+<td align="left"><p>负载 (数据) </p></td>
+<td align="left"><p>某些网络数据的长度为26个字节</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>70</p></td>
 <td align="left"><p>2</p></td>
 <td align="left"><p>填充</p></td>
-<td align="left"><p>并不重要-未使用</p></td>
+<td align="left"><p>不重要-未使用</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>72</p></td>
 <td align="left"><p>4</p></td>
-<td align="left"><p>MessageType (开始的第二个<a href="https://docs.microsoft.com/previous-versions/ff570635(v=vs.85)" data-raw-source="[&lt;strong&gt;REMOTE_NDIS_PACKET_MSG&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/ff570635(v=vs.85))"> <strong>REMOTE_NDIS_PACKET_MSG</strong></a>)</p></td>
+<td align="left"><p>MessageType (第二个 <a href="https://docs.microsoft.com/previous-versions/ff570635(v=vs.85)" data-raw-source="[&lt;strong&gt;REMOTE_NDIS_PACKET_MSG&lt;/strong&gt;](/previous-versions/ff570635(v=vs.85))"><strong>REMOTE_NDIS_PACKET_MSG</strong></a> 的开头) </p></td>
 <td align="left"><p>0x1</p></td>
 </tr>
 <tr class="odd">
@@ -134,7 +134,7 @@ ms.locfileid: "67393084"
 <tr class="even">
 <td align="left"><p>80</p></td>
 <td align="left"><p>4</p></td>
-<td align="left"><p>DataOffset</p></td>
+<td align="left"><p>数据偏移量</p></td>
 <td align="left"><p>36</p></td>
 </tr>
 <tr class="odd">
@@ -182,14 +182,14 @@ ms.locfileid: "67393084"
 <tr class="even">
 <td align="left"><p>112</p></td>
 <td align="left"><p>4</p></td>
-<td align="left"><p>保留</p></td>
+<td align="left"><p>预留</p></td>
 <td align="left"><p>0</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>116</p></td>
 <td align="left"><p>16</p></td>
-<td align="left"><p>有效负载 （数据）</p></td>
-<td align="left"><p>某些网络 16 个字节的长度的数据</p></td>
+<td align="left"><p>负载 (数据) </p></td>
+<td align="left"><p>长度为16个字节的网络数据</p></td>
 </tr>
 </tbody>
 </table>
@@ -197,10 +197,4 @@ ms.locfileid: "67393084"
  
 
  
-
- 
-
-
-
-
 

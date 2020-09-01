@@ -1,6 +1,6 @@
 ---
 title: ndiskd.nbpool
-description: Ndiskd. nbpool 扩展显示 NET_BUFFER （NB）池的相关信息。
+description: Ndiskd. nbpool 扩展显示 NET_BUFFER (NB) 池的相关信息。
 ms.assetid: 4FCD48B7-C469-4057-A279-20522B00E80B
 keywords:
 - ndiskd nbpool Windows 调试
@@ -12,17 +12,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 73a23317652e33db9420e46a18bb8ab92cfddaf3
-ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
+ms.openlocfilehash: 172429372cffbfe6df4a774080f936983ec53d28
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84534200"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89216756"
 ---
 # <a name="ndiskdnbpool"></a>!ndiskd.nbpool
 
 
-**！ Ndiskd nbpool**扩展显示有关[**网络 \_ 缓冲区**](https://docs.microsoft.com/windows-hardware/drivers/network/net-buffer-structure)（NB）池的信息。 如果运行不带参数的此扩展，！ ndiskd 将显示系统中所有已分配的 NB 池的列表。
+**！ Ndiskd nbpool**扩展显示 (NB) 池的[**网络 \_ 缓冲区**](../network/net-buffer-structure.md)的相关信息。 如果运行不带参数的此扩展，！ ndiskd 将显示系统中所有已分配的 NB 池的列表。
 
 ```console
 !ndiskd.nbpool [-handle <x>] [-allocations] [-find <str>] [-findva <x>] [-findpa <x>] 
@@ -48,12 +48,12 @@ NB 池的句柄。
 
 ### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
-Ndiskd
+Ndiskd.dll
 
 <a name="examples"></a>示例
 --------
 
-输入不带参数的 **！ ndiskd**命令，以查看所有已分配的 NB 池的列表。 在此示例中，查找 Netio 服务使用 Nnbf 标记分配的 NB 池。 它的句柄为 ffffdf801308ca40。
+输入不带参数的 **！ ndiskd** 命令，以查看所有已分配的 NB 池的列表。 在此示例中，查找 Netio 服务使用 Nnbf 标记分配的 NB 池。 它的句柄为 ffffdf801308ca40。
 
 ```console
 2: kd> !ndiskd.nbpool
@@ -65,7 +65,7 @@ Ndiskd
     ffffdf80131cba40   NDnd                ndis!DriverEntry+615
 ```
 
-单击 NB 池的句柄，或输入 **！ ndiskd**命令以检查其详细信息。
+单击 NB 池的句柄，或输入 **！ ndiskd** 命令以检查其详细信息。
 
 ```console
 2: kd> !ndiskd.nbpool ffffdf801308ca40
@@ -85,7 +85,7 @@ NB POOL
     All allocated NBs
 ```
 
-若要浏览此 NB 池中包含的 NBs，请单击底部的 "所有已分配的 NBs" 链接。 另外，还可以输入 **！ ndiskd-分配**命令。 如以下示例中所示，此 NB 池包含1024多个 NBs，因此！ ndiskd 提前退出。 可以使用-force 选项来解决此限制，并查看此 NB 池中的所有 NBs。
+若要浏览此 NB 池中包含的 NBs，请单击底部的 "所有已分配的 NBs" 链接。 另外，还可以输入 **！ ndiskd-分配** 命令。 如以下示例中所示，此 NB 池包含1024多个 NBs，因此！ ndiskd 提前退出。 可以使用-force 选项来解决此限制，并查看此 NB 池中的所有 NBs。
 
 ```console
 2: kd> !ndiskd.nbpool ffffdf801308ca40 -allocations
@@ -138,24 +138,17 @@ ALL ALLOCATED NBs
 ## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
-[网络驱动程序设计指南](https://docs.microsoft.com/windows-hardware/drivers/network/index)
+[网络驱动程序设计指南](../network/index.md)
 
-[Windows Vista 和更高版本的网络引用](https://docs.microsoft.com/windows-hardware/drivers/ddi/_netvista/)
+[Windows Vista 和更高版本的网络引用](/windows-hardware/drivers/ddi/_netvista/)
 
 [调试网络堆栈](https://channel9.msdn.com/Shows/Defrag-Tools/Defrag-Tools-175-Debugging-the-Network-Stack)
 
-[**NDIS 扩展（Ndiskd）**](ndis-extensions--ndiskd-dll-.md)
+[**NDIS 扩展 ( # A0) **](ndis-extensions--ndiskd-dll-.md)
 
 [**!ndiskd.help**](-ndiskd-help.md)
 
-[**网络 \_ 缓冲区**](https://docs.microsoft.com/windows-hardware/drivers/network/net-buffer-structure)
+[**网络 \_ 缓冲区**](../network/net-buffer-structure.md)
 
  
-
- 
-
-
-
-
-
 

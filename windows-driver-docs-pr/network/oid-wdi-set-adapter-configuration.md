@@ -1,25 +1,25 @@
 ---
 title: OID_WDI_SET_ADAPTER_CONFIGURATION
-description: OID_WDI_SET_ADAPTER_CONFIGURATION 配置适配器。 它是一个可选属性，并且只能在创建的任何端口之前发送。
+description: OID_WDI_SET_ADAPTER_CONFIGURATION 配置适配器。 它是一个可选属性，只能在创建任何端口之前发送。
 ms.assetid: d1c37943-4755-4b9e-ab9c-9378aeca9c03
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 OID_WDI_SET_ADAPTER_CONFIGURATION 网络驱动程序
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 1112df89631a285995f18809b58c6db70202911f
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 35e1f3871532fe8b58bf36f3ebb050cedf33b579
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67387262"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89215846"
 ---
-# <a name="oidwdisetadapterconfiguration"></a>OID\_WDI\_SET\_ADAPTER\_CONFIGURATION
+# <a name="oid_wdi_set_adapter_configuration"></a>OID \_ WDI \_ 设置 \_ 适配器 \_ 配置
 
 
-OID\_WDI\_设置\_适配器\_配置配置的适配器。 它是一个可选属性，并且只能在创建的任何端口之前发送。
+OID \_ WDI \_ SET \_ 适配器 \_ 配置配置适配器。 它是一个可选属性，只能在创建任何端口之前发送。
 
-| 范围   | 设置与任务序列化 | 正常执行时间 （秒） |
+| 作用域   | 设置序列化任务 | 正常执行时间 (秒)  |
 |---------|--------------------------|---------------------------------|
 | 适配器 | 是                      | 1                               |
 
@@ -40,51 +40,51 @@ OID\_WDI\_设置\_适配器\_配置配置的适配器。 它是一个可选属�
 <th>TLV</th>
 <th>允许多个 TLV 实例</th>
 <th>可选</th>
-<th>描述</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><a href="https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-configured-mac-address" data-raw-source="[&lt;strong&gt;WDI_TLV_CONFIGURED_MAC_ADDRESS&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-configured-mac-address)"><strong>WDI_TLV_CONFIGURED_MAC_ADDRESS</strong></a></td>
+<td><a href="https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-configured-mac-address" data-raw-source="[&lt;strong&gt;WDI_TLV_CONFIGURED_MAC_ADDRESS&lt;/strong&gt;](./wdi-tlv-configured-mac-address.md)"><strong>WDI_TLV_CONFIGURED_MAC_ADDRESS</strong></a></td>
 <td></td>
 <td>X</td>
 <td>MAC 地址。</td>
 </tr>
 <tr class="even">
-<td><a href="https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-unreachable-detection-threshold" data-raw-source="[&lt;strong&gt;WDI_TLV_UNREACHABLE_DETECTION_THRESHOLD&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-unreachable-detection-threshold)"><strong>WDI_TLV_UNREACHABLE_DETECTION_THRESHOLD</strong></a></td>
+<td><a href="https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-unreachable-detection-threshold" data-raw-source="[&lt;strong&gt;WDI_TLV_UNREACHABLE_DETECTION_THRESHOLD&lt;/strong&gt;](./wdi-tlv-unreachable-detection-threshold.md)"><strong>WDI_TLV_UNREACHABLE_DETECTION_THRESHOLD</strong></a></td>
 <td></td>
 <td>X</td>
 <td>无法访问检测阈值。</td>
 </tr>
 <tr class="odd">
-<td><a href="https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-p2p-go-internal-reset-policy" data-raw-source="[&lt;strong&gt;WDI_TLV_P2P_GO_INTERNAL_RESET_POLICY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-p2p-go-internal-reset-policy)"><strong>WDI_TLV_P2P_GO_INTERNAL_RESET_POLICY</strong></a></td>
+<td><a href="https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-p2p-go-internal-reset-policy" data-raw-source="[&lt;strong&gt;WDI_TLV_P2P_GO_INTERNAL_RESET_POLICY&lt;/strong&gt;](./wdi-tlv-p2p-go-internal-reset-policy.md)"><strong>WDI_TLV_P2P_GO_INTERNAL_RESET_POLICY</strong></a></td>
 <td></td>
 <td>X</td>
-<td>固件用于运行后 Wi-Fi Direct 转重置通道选择策略是停止/重新启动。</td>
+<td>Wi-fi Direct Reset 重置后，固件用于选择操作通道的策略已停止/重新启动。</td>
 </tr>
 <tr class="even">
-<td><a href="https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-band-id-list" data-raw-source="[&lt;strong&gt;WDI_TLV_BAND_ID_LIST&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-band-id-list)"><strong>WDI_TLV_BAND_ID_LIST</strong></a></td>
+<td><a href="https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-band-id-list" data-raw-source="[&lt;strong&gt;WDI_TLV_BAND_ID_LIST&lt;/strong&gt;](./wdi-tlv-band-id-list.md)"><strong>WDI_TLV_BAND_ID_LIST</strong></a></td>
 <td></td>
 <td>X</td>
-<td>带区 Id 的列表。</td>
+<td>带区 Id 列表。</td>
 </tr>
 <tr class="odd">
-<td><a href="https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-link-quality-bar-map" data-raw-source="[&lt;strong&gt;WDI_TLV_LINK_QUALITY_BAR_MAP&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-link-quality-bar-map)"><strong>WDI_TLV_LINK_QUALITY_BAR_MAP</strong></a></td>
+<td><a href="https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-link-quality-bar-map" data-raw-source="[&lt;strong&gt;WDI_TLV_LINK_QUALITY_BAR_MAP&lt;/strong&gt;](./wdi-tlv-link-quality-bar-map.md)"><strong>WDI_TLV_LINK_QUALITY_BAR_MAP</strong></a></td>
 <td></td>
 <td></td>
-<td>为 Wi-fi 信号强度图条的信号质量的映射。 此字段应忽略由适配器和它应使用中指定的行为<a href="ndis-status-wdi-indication-link-state-change.md" data-raw-source="[NDIS_STATUS_WDI_INDICATION_LINK_STATE_CHANGE](ndis-status-wdi-indication-link-state-change.md)">NDIS_STATUS_WDI_INDICATION_LINK_STATE_CHANGE</a>进行链接质量通知。</td>
+<td>将信号质量映射到 Wi-fi 信号强度条。 此字段应由适配器忽略，并且应使用 <a href="ndis-status-wdi-indication-link-state-change.md" data-raw-source="[NDIS_STATUS_WDI_INDICATION_LINK_STATE_CHANGE](ndis-status-wdi-indication-link-state-change.md)">NDIS_STATUS_WDI_INDICATION_LINK_STATE_CHANGE</a> 中指定的行为来执行链接质量通知。</td>
 </tr>
 <tr class="even">
-<td><a href="https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-adapter-nlo-scan-mode" data-raw-source="[&lt;strong&gt;WDI_TLV_ADAPTER_NLO_SCAN_MODE&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-adapter-nlo-scan-mode)"><strong>WDI_TLV_ADAPTER_NLO_SCAN_MODE</strong></a></td>
+<td><a href="https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-adapter-nlo-scan-mode" data-raw-source="[&lt;strong&gt;WDI_TLV_ADAPTER_NLO_SCAN_MODE&lt;/strong&gt;](./wdi-tlv-adapter-nlo-scan-mode.md)"><strong>WDI_TLV_ADAPTER_NLO_SCAN_MODE</strong></a></td>
 <td></td>
 <td>X</td>
-<td>指示是否应在主动或被动模式下执行 NLO 扫描。</td>
+<td>指示应在主动还是被动模式下执行 NLO 扫描。</td>
 </tr>
 <tr class="odd">
-<td><a href="https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-pldr-support" data-raw-source="[&lt;strong&gt;WDI_TLV_PLDR_SUPPORT&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-pldr-support)"><strong>WDI_TLV_PLDR_SUPPORT</strong></a></td>
+<td><a href="https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-pldr-support" data-raw-source="[&lt;strong&gt;WDI_TLV_PLDR_SUPPORT&lt;/strong&gt;](./wdi-tlv-pldr-support.md)"><strong>WDI_TLV_PLDR_SUPPORT</strong></a></td>
 <td></td>
 <td></td>
-<td>在 Windows 10 版本 1511，WDI 版本 1.0.10 中添加。
+<td>已在 Windows 10 版本1511、WDI 版本1.0.10 中添加。
 <p>指定是否支持 PLDR。</p></td>
 </tr>
 </tbody>
@@ -95,7 +95,7 @@ OID\_WDI\_设置\_适配器\_配置配置的适配器。 它是一个可选属�
 ## <a name="set-property-results"></a>设置属性结果
 
 
-没有其他数据。 标头中的数据就足够了。
+无其他数据。 标头中的数据足够了。
 
 <a name="requirements"></a>要求
 ------------
@@ -115,16 +115,11 @@ OID\_WDI\_设置\_适配器\_配置配置的适配器。 它是一个可选属�
 <td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
-<td><p>Header</p></td>
-<td>Dot11wdi.h</td>
+<td><p>标头</p></td>
+<td>Dot11wdi</td>
 </tr>
 </tbody>
 </table>
 
  
-
- 
-
-
-
 
