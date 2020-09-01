@@ -1,43 +1,43 @@
 ---
 title: WDI_TLV_P2P_DISCOVERED_SERVICE_ENTRY
-description: WDI_TLV_P2P_DISCOVERED_SERVICE_ENTRY 是包含发现的服务条目的 TLV。
+description: WDI_TLV_P2P_DISCOVERED_SERVICE_ENTRY 是包含发现的服务项的 TLV。
 ms.assetid: B8D453FF-49CA-4106-97DA-008893760E92
 ms.date: 07/18/2017
 keywords:
-- WDI_TLV_P2P_DISCOVERED_SERVICE_ENTRY 从 Windows Vista 开始的网络驱动程序
+- 从 Windows Vista 开始 WDI_TLV_P2P_DISCOVERED_SERVICE_ENTRY 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 1723107597ab9127e073e4685357126be1103fd9
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 86c6c39efb9cf5a2754cda2cd432c72b78366ca0
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72840448"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89211511"
 ---
-# <a name="wdi_tlv_p2p_discovered_service_entry"></a>WDI\_TLV\_P2P\_发现\_服务\_条目
+# <a name="wdi_tlv_p2p_discovered_service_entry"></a>WDI \_ TLV \_ P2P \_ 发现的 \_ 服务 \_ 条目
 
 
-已发现的 WDI\_TLV\_P2P\_\_服务\_项是包含发现的服务项的 TLV。
+WDI \_ tlv \_ P2P \_ 发现的 \_ 服务 \_ 条目是包含发现的服务条目的 tlv。
 
 ## <a name="tlv-type"></a>TLV 类型
 
 
 0x112
 
-## <a name="length"></a>长度
+## <a name="length"></a>Length
 
 
-所有包含的 TLVs 的大小的总和（以字节为单位）。
+Sum (包含所有 TLVs 的大小的) 字节。
 
 ## <a name="values"></a>值
 
 
-| 在任务栏的搜索框中键入                                                                           | 允许多个 TLV 实例 | 可选 | 描述                                                                                                                                                               |
+| 类型                                                                           | 允许多个 TLV 实例 | 可选 | 说明                                                                                                                                                               |
 |--------------------------------------------------------------------------------|--------------------------------|----------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [**WDI\_TLV\_P2P\_服务\_名称**](wdi-tlv-p2p-service-name.md)               |                                |          | 服务的名称，采用 UTF-8，最大为255字节。                                                                                                                       |
-| [**WDI\_TLV\_P2P\_服务\_信息**](wdi-tlv-p2p-service-information.md) |                                | X        | 服务的服务信息。                                                                                                                                  |
-| [**WDI\_TLV\_P2P\_服务\_状态**](wdi-tlv-p2p-service-status.md)           |                                |          | 服务的服务状态。                                                                                                                                        |
-| [**WDI\_TLV\_P2P\_播发\_ID**](wdi-tlv-p2p-advertisement-id.md)       |                                |          | 唯一标识服务实例的 ID。                                                                                                                      |
-| [**WDI\_TLV\_P2P\_CONFIG\_方法**](wdi-tlv-p2p-config-methods.md)           |                                |          | WDI 中定义的配置方法[ **\_WPS\_配置\_方法**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wditypes/ne-wditypes-_wdi_wps_configuration_method)。 只有 PinDisplay、PinKeypad 和 WFDS 适用。 |
+| [**WDI \_ TLV \_ P2P \_ 服务 \_ 名称**](wdi-tlv-p2p-service-name.md)               |                                |          | 服务的名称，采用 UTF-8，最大为255字节。                                                                                                                       |
+| [**WDI \_ TLV \_ P2P \_ 服务 \_ 信息**](wdi-tlv-p2p-service-information.md) |                                | X        | 服务的服务信息。                                                                                                                                  |
+| [**WDI \_ TLV \_ P2P \_ 服务 \_ 状态**](wdi-tlv-p2p-service-status.md)           |                                |          | 服务的服务状态。                                                                                                                                        |
+| [**WDI \_ TLV \_ P2P \_ 播发 \_ ID**](wdi-tlv-p2p-advertisement-id.md)       |                                |          | 唯一标识服务实例的 ID。                                                                                                                      |
+| [**WDI \_ TLV \_ P2P \_ CONFIG \_ 方法**](wdi-tlv-p2p-config-methods.md)           |                                |          | [**WDI \_ WPS \_ 配置 \_ 方法**](/windows-hardware/drivers/ddi/wditypes/ne-wditypes-_wdi_wps_configuration_method)中定义的配置方法。 只有 PinDisplay、PinKeypad 和 WFDS 适用。 |
 
  
 
@@ -52,7 +52,7 @@ ms.locfileid: "72840448"
 <tbody>
 <tr class="odd">
 <td><p>最低受支持的客户端</p></td>
-<td><p>Windows 10</p></td>
+<td><p>Windows 10</p></td>
 </tr>
 <tr class="even">
 <td><p>最低受支持的服务器</p></td>
@@ -66,9 +66,4 @@ ms.locfileid: "72840448"
 </table>
 
  
-
- 
-
-
-
 

@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: ccd75c0c06a92ce0d01058119c52198c324c4fc8
-ms.sourcegitcommit: 8596782b07c8a71adf38fc2c2da68b75ba0a1259
+ms.openlocfilehash: 75b9f404085fd1ca832798411aad2f266a20682b
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85593920"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89211291"
 ---
 # <a name="ndiskdnetadapter"></a>!ndiskd.netadapter
 
@@ -42,7 +42,7 @@ NDIS 小型端口的句柄。
 显示有关微型端口的摘要信息。
 
 <span id="_______-diag______"></span><span id="_______-DIAG______"></span>*-诊断*   
-显示自动诊断警报（如果有）。
+显示自动诊断警报 (是否有任何) 。
 
 <span id="_______-state______"></span><span id="_______-STATE______"></span>*-state*   
 显示微型端口的当前状态。
@@ -72,10 +72,10 @@ NDIS 小型端口的句柄。
 显示选择性挂起状态。
 
 <span id="_______-aoac______"></span><span id="_______-AOAC______"></span>*-aoac*   
-显示 AOAC （连接待机）状态。
+显示 AOAC (连接待机) 状态。
 
 <span id="_______-wol______"></span><span id="_______-WOL______"></span>*-wol*   
-显示 LAN 唤醒（WoL）配置。
+显示 LAN 唤醒 (WoL) 配置。
 
 <span id="_______-protocoloffloads______"></span><span id="_______-PROTOCOLOFFLOADS______"></span>*-protocoloffloads*   
 显示活动电源管理协议卸载。
@@ -123,13 +123,13 @@ NDIS 小型端口的句柄。
 显示 NIC 交换机。
 
 <span id="_______-iov______"></span><span id="_______-IOV______"></span>*-*   
-显示 SR-IOV （单根 i/o 虚拟化）功能。
+显示 SR-IOV (单根 i/o 虚拟化) 功能。
 
 <span id="_______-vfs______"></span><span id="_______-VFS______"></span>*-vfs*   
-显示 SR-IOV VFs （虚拟筛选器）。
+显示 SR-IOV VFs (虚拟筛选器) 。
 
 <span id="_______-vports______"></span><span id="_______-VPORTS______"></span>*-vports*   
-显示 Vports （虚拟端口）。
+显示 Vports (虚拟端口) 。
 
 <span id="_______-ifrtrace______"></span><span id="_______-IFRTRACE______"></span>*-ifrtrace*   
 显示正在进行的记录器跟踪。
@@ -143,7 +143,7 @@ Ndiskd.dll
 
 ### <a name="examples"></a>示例
 
-通过运行不带参数的 **！ ndiskd** ，你可以获取系统上所有网络适配器的列表及其关联的微型端口驱动程序。 在此示例输出中，查找 "Microsoft 内核调试" 网络适配器，其句柄为 ffffdf80140c71a0。 有关内核调试网络适配器用途的详细信息，请参阅 NDIS 博客上[的通过网络进行内核调试](https://docs.microsoft.com/archive/blogs/ndis/kernel-debugging-over-the-network)。
+通过运行不带参数的 **！ ndiskd** ，你可以获取系统上所有网络适配器的列表及其关联的微型端口驱动程序。 在此示例输出中，查找 "Microsoft 内核调试" 网络适配器，其句柄为 ffffdf80140c71a0。 有关内核调试网络适配器用途的详细信息，请参阅 NDIS 博客上 [的通过网络进行内核调试](/archive/blogs/ndis/kernel-debugging-over-the-network) 。
 
 ```console
 3: kd> !ndiskd.netadapter
@@ -232,7 +232,7 @@ MORE INFORMATION
     Diagnostic log
 ```
 
-例如，使用 **！ ndiskd**作为进一步调试的开始位置，单击报表底部的 "驱动程序处理程序" 链接可查看此网络适配器的微型端口驱动程序的所有已注册驱动程序回调处理程序的列表。 在下面的示例中，单击链接会导致！ ndiskd 与此网络适配器的微型端口驱动程序的句柄一起运行[**！ ndiskd。**](-ndiskd-minidriver.md) 微型端口驱动程序是 kdnic 4.2 及其句柄 ffffdf801418d650。
+例如，使用 **！ ndiskd** 作为进一步调试的开始位置，单击报表底部的 "驱动程序处理程序" 链接可查看此网络适配器的微型端口驱动程序的所有已注册驱动程序回调处理程序的列表。 在下面的示例中，单击链接会导致！ ndiskd 与此网络适配器的微型端口驱动程序的句柄一起运行[**！ ndiskd。**](-ndiskd-minidriver.md) 微型端口驱动程序是 kdnic 4.2 及其句柄 ffffdf801418d650。
 
 ```console
 3: kd> !ndiskd.minidriver ffffdf801418d650 -handlers
@@ -265,18 +265,18 @@ HANDLERS
 
 你现在可以单击每个处理程序右侧的 "最佳实践" 链接，以在该处理程序上设置一个断点来调试特定的问题。 例如，如果数据路径中存在挂起，你可以调查驱动程序的 SendNetBufferListsHandler 或 ReturnNetBufferListsHandler。
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
-[网络驱动程序设计指南](https://docs.microsoft.com/windows-hardware/drivers/network/index)
+[网络驱动程序设计指南](../network/index.md)
 
-[Windows Vista 和更高版本的网络引用](https://docs.microsoft.com/windows-hardware/drivers/ddi/_netvista/)
+[Windows Vista 和更高版本的网络引用](/windows-hardware/drivers/ddi/_netvista/)
 
 [调试网络堆栈](https://channel9.msdn.com/Shows/Defrag-Tools/Defrag-Tools-175-Debugging-the-Network-Stack)
 
-[**NDIS 扩展（Ndiskd.dll）**](ndis-extensions--ndiskd-dll-.md)
+[**NDIS 扩展 ( # A0) **](ndis-extensions--ndiskd-dll-.md)
 
 [**!ndiskd.help**](-ndiskd-help.md)
 
-[通过网络进行内核调试](https://docs.microsoft.com/archive/blogs/ndis/kernel-debugging-over-the-network)
+[通过网络进行内核调试](/archive/blogs/ndis/kernel-debugging-over-the-network)
 
 [**!ndiskd.minidriver**](-ndiskd-minidriver.md)

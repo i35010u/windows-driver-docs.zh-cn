@@ -13,18 +13,18 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 4d9b66499f4c8b4e939c16aa7d8f15186bc957a1
-ms.sourcegitcommit: 8596782b07c8a71adf38fc2c2da68b75ba0a1259
+ms.openlocfilehash: b233f8db878ac9d9e0d3a3d532048e6ec88f8eb2
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85593911"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89211285"
 ---
 # <a name="ndiskdnetrb"></a>!ndiskd.netrb
 
-**！ Ndiskd netrb**扩展显示有关[网络 \_ 环形 \_ 缓冲区](https://docs.microsoft.com/windows-hardware/drivers/netcx/net-ring-buffer)结构的信息。
+**！ Ndiskd netrb**扩展显示有关[网络 \_ 环形 \_ 缓冲区](/windows-hardware/drivers/ddi/ring/ns-ring-_net_ring)结构的信息。
 
-有关网络适配器 WDF 类扩展（NetAdapterCx）的详细信息，请参阅[网络适配器 Wdf 类扩展（Cx）](https://docs.microsoft.com/windows-hardware/drivers/netcx)。
+有关网络适配器 WDF 类扩展的详细信息 (NetAdapterCx) ，请参阅 [网络适配器 Wdf Class extension (Cx) ](../netcx/index.md)。
 
 ```console
 !ndiskd.netrb -handle <x> [-basic] [-dump] [-elementtype <str>] 
@@ -50,17 +50,17 @@ Ndiskd.dll
 
 ### <a name="examples"></a>示例
 
-**注意**   若[Summary of Objects](https://docs.microsoft.com/windows-hardware/drivers/netcx/summary-of-objects)要查看 \_ \_ 与 NetAdapterCx 中的其他对象之间的网络环形缓冲对象关系的关系图，请参阅对象的摘要。
+**注意**   若[Summary of Objects](../netcx/summary-of-netadaptercx-objects.md)要查看 \_ \_ 与 NetAdapterCx 中的其他对象之间的网络环形缓冲对象关系的关系图，请参阅对象的摘要。
 
 若要获取网络环形缓冲区的句柄 \_ \_ ，请执行以下步骤：
 
-1. 运行[**！ ndiskd. get-netadapter**](-ndiskd-netadapter.md)扩展。
+1. 运行 [**！ ndiskd. get-netadapter**](-ndiskd-netadapter.md) 扩展。
 2. 单击安装了 NetAdapterCx 驱动程序的 Get-netadapter 的句柄。
-3. 单击 Get-netadapter 的 GET-NETADAPTER 对象右侧的 "详细信息" 链接，以运行[**！ ndiskd. cxadapter**](-ndiskd-cxadapter.md)扩展。
+3. 单击 Get-netadapter 的 GET-NETADAPTER 对象右侧的 "详细信息" 链接，以运行 [**！ ndiskd. cxadapter**](-ndiskd-cxadapter.md) 扩展。
 4. 输入包含 *-数据路径*参数的 **！ cxadapter**命令，以查看 get-netadapter 的数据路径队列。
 5. 单击其中一个数据路径队列的句柄。
 
-有关此过程中步骤1-4 的详细信息，请参阅 **！ ndiskd. cxadapter**主题中的示例。 有关此过程的步骤5的详细信息，请参阅《 [**！ ndiskd. netqueue**](-ndiskd-netqueue.md)主题中的示例。
+有关此过程中步骤1-4 的详细信息，请参阅 **！ ndiskd. cxadapter** 主题中的示例。 有关此过程的步骤5的详细信息，请参阅《 [**！ ndiskd. netqueue**](-ndiskd-netqueue.md) 主题中的示例。
 在下面的示例中，查找此 NETTXQUEUE 的环形缓冲区 ffffd1022d000000 的句柄。
 
 ```console
@@ -77,7 +77,7 @@ Ndiskd.dll
     EvtQueueCancel                         fffff800341598d8   RtEthSample+98d8
 ```
 
-通过单击环形缓冲区的句柄，或在命令行上输入 **！ ndiskd**命令，可以查看此网络环形缓冲区的详细信息 \_ ，包括该网络环形 \_ 缓冲区包含多少元素以及其开始和结束索引的地址。
+通过单击环形缓冲区的句柄，或在命令行上输入 **！ ndiskd** 命令，可以查看此网络环形缓冲区的详细信息 \_ ，包括该网络环形 \_ 缓冲区包含多少元素以及其开始和结束索引的地址。
 
 ```console
 0: kd> !ndiskd.netrb ffffd1022d000000
@@ -95,7 +95,7 @@ Ndiskd.dll
     List all elements
 ```
 
-若要查看此网络 \_ 环形 \_ 缓冲区的元素，请单击其详细信息底部的 "列出所有元素" 链接，或在命令行上输入 **！ ndiskd**命令。 下面的示例为简洁起见，excised 了中间元素。
+若要查看此网络 \_ 环形 \_ 缓冲区的元素，请单击其详细信息底部的 "列出所有元素" 链接，或在命令行上输入 **！ ndiskd** 命令。 下面的示例为简洁起见，excised 了中间元素。
 
 ```console
 0: kd> !ndiskd.netrb ffffd1022d000000 -dump
@@ -116,23 +116,23 @@ Ndiskd.dll
     [07f] ffffd1022d003fc0 - NET_PACKET
 ```
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
-[网络驱动程序设计指南](https://docs.microsoft.com/windows-hardware/drivers/network/index)
+[网络驱动程序设计指南](../network/index.md)
 
-[Windows Vista 和更高版本的网络引用](https://docs.microsoft.com/windows-hardware/drivers/ddi/_netvista/)
+[Windows Vista 和更高版本的网络引用](/windows-hardware/drivers/ddi/_netvista/)
 
 [调试网络堆栈](https://channel9.msdn.com/Shows/Defrag-Tools/Defrag-Tools-175-Debugging-the-Network-Stack)
 
-[**NDIS 扩展（Ndiskd.dll）**](ndis-extensions--ndiskd-dll-.md)
+[**NDIS 扩展 ( # A0) **](ndis-extensions--ndiskd-dll-.md)
 
 [**!ndiskd.help**](-ndiskd-help.md)
 
-[网络适配器 WDF 类扩展（Cx）](https://docs.microsoft.com/windows-hardware/drivers/netcx)
+[网络适配器 WDF 类扩展 (Cx) ](../netcx/index.md)
 
-[对象摘要](https://docs.microsoft.com/windows-hardware/drivers/netcx/summary-of-objects)
+[对象摘要](../netcx/summary-of-netadaptercx-objects.md)
 
-[网络 \_ 环形 \_ 缓冲区](https://docs.microsoft.com/windows-hardware/drivers/netcx/net-ring-buffer)
+[网络 \_ 环形 \_ 缓冲区](/windows-hardware/drivers/ddi/ring/ns-ring-_net_ring)
 
 [**!ndiskd.netadapter**](-ndiskd-netadapter.md)
 

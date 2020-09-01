@@ -4,31 +4,31 @@ description: 本主题提供的动手练习将帮助你开始使用 WinDbg 作�
 ms.assetid: 1B61591F-0D48-4FBD-B242-68BB90D27FAF
 ms.date: 06/02/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 2a2ea99d6be59ed31ad8b9fb46c7ddd00c8dae06
-ms.sourcegitcommit: 0e83928aac8f171980e94b67f9291468e6e68093
+ms.openlocfilehash: 0524a7d6b36158ffac9c3a0951e168dd54d9e43e
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84336392"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89211827"
 ---
 # <a name="getting-started-with-windbg-kernel-mode"></a>WinDbg 入门（内核模式）
 
-WinDbg 是 Windows 调试工具中包含的内核模式和用户模式调试器。 在这里，我们将提供实践练习，帮助你开始使用 WinDbg 作为内核模式调试器。
+WinDbg 是包含在 Windows 调试工具中的内核模式和用户模式调试器。 在这里，我们将提供实践练习，帮助你开始使用 WinDbg 作为内核模式调试器。
 
-有关如何获取 Windows 调试工具的信息，请参阅[适用于 windows 的调试工具（WinDbg、KD、CDB、NTSD）](index.md)。 安装调试工具后，找到64位（x64）和32位（x86）版本的工具的安装目录。 例如：
+有关如何获取 Windows 调试工具的信息，请参见 [Windows 调试工具（WinDbg、KD、CDB、NTSD）](index.md)。 安装调试工具后，找到 64 位 (x64) 和 32 位 (x86) 版本工具的安装目录。 例如：
 
 - C:\\Program Files (x86)\\Windows Kits\\10\\Debuggers\\x64
-- C： \\ Program Files （x86） \\ Windows 工具包 \\ 10 \\ 调试器 \\ x86
+- C:\\Program Files (x86)\\Windows Kits\\10\\Debuggers\\x86
 
 ## <a name="set-up-a-kernel-mode-debugging"></a>设置内核模式调试
 
-内核模式调试环境通常具有两台计算机：*主计算机*和*目标计算机*。 调试程序在主计算机  上运行，所调试的代码在目标计算机  上运行。 主机和目标由调试电缆进行连接。
+内核模式调试环境通常具有两台计算机： *主计算机* 和 *目标计算机*。 调试程序在主计算机  上运行，所调试的代码在目标计算机  上运行。 主机和目标由调试电缆进行连接。
 
 Windows 调试器支持以下类型的缆线用于调试：
 
 - 以太网
 - USB 2.0/USB 3。0
-- 串行（也称为空调制解调器）
+- 串行 (也称为空调制解调器) 
 
 为实现速度和可靠性，建议结合使用以太网和本地网络中心。 此图说明了已连接以便通过以太网电缆进行调试的主机和目标计算机。
 
@@ -38,11 +38,11 @@ Windows 的较早版本的另一个选项是使用 USB 或串行电缆等直接�
 
 ![带有调试电缆的主机和目标示意图](images/configfortest02.png)
 
-有关如何设置主机和目标计算机的详细信息，请参阅[手动设置内核模式调试](setting-up-kernel-mode-debugging-in-windbg--cdb--or-ntsd.md)。
+有关如何设置主机和目标计算机的详细信息，请参阅 [手动设置内核模式调试](setting-up-kernel-mode-debugging-in-windbg--cdb--or-ntsd.md)。
 
 ### <a name="virtual-machine---vms"></a>虚拟机-Vm
 
-有关将调试程序连接到 Hyper-v 虚拟机的信息，请参阅[设置虚拟机的网络调试-KDNET](setting-up-network-debugging-of-a-virtual-machine-host.md)。
+有关将调试程序连接到 Hyper-v 虚拟机的信息，请参阅 [设置虚拟机的网络调试-KDNET](setting-up-network-debugging-of-a-virtual-machine-host.md)。
 
 ## <a name="establish-a-kernel-mode-debugging-session"></a>建立内核模式调试会话
 
@@ -56,9 +56,9 @@ Windows 的较早版本的另一个选项是使用 USB 或串行电缆等直接�
 2. 在 WinDbg 的 "**帮助**" 菜单中选择 "**内容**"。 这会打开调试器文档 CHM 文件。 [调试工具（适用于 Windows](index.md)）中也提供了调试器文档。
 3. 建立内核模式调试会话时，WinDbg 可能会自动中断目标计算机。 如果 WinDbg 尚未在中出现，请从 "**调试**" 菜单中选择 "**中断**"。
 
-4. 在 "WinDbg" 窗口底部附近的命令行中，输入以下命令：
+4. 在 WinDbg 窗口底部的命令行中，输入以下命令：
 
-   [**。 sympath srv\***](-sympath--set-symbol-path-.md)
+   [**.sympath srv\***](-sympath--set-symbol-path-.md)
 
    输出类似于以下内容：
 
@@ -67,9 +67,9 @@ Windows 的较早版本的另一个选项是使用 USB 或串行电缆等直接�
    Expanded Symbol search path is: cache*;SRV*https://msdl.microsoft.com/download/symbols
    ```
 
-   符号搜索路径指示 WinDbg 查找符号（PDB）文件的位置。 调试器需要符号文件来获取有关代码模块的信息（函数名、变量名和 like）。
+   符号搜索路径指示 WinDbg 查找符号 (PDB) 文件的位置。 调试器需要符号文件来获取有关代码模块的信息（函数名、变量名等）。
 
-   输入此命令，该命令会告诉 WinDbg 完成符号文件的初始查找和加载：
+   输入此命令，它会通知 WinDbg 进行符号文件的初始查找和加载：
 
    [**.reload**](-reload--reload-module-.md)
 
@@ -130,7 +130,7 @@ Windows 的较早版本的另一个选项是使用 USB 或串行电缆等直接�
    ...
    ```
 
-10. 输入以下命令，在**MmCreateProcessAddressSpace**放置断点：
+10. 输入以下命令，在 **MmCreateProcessAddressSpace**放置断点：
 
     [**bu nt！MmCreateProcessAddressSpace**](bp--bu--bm--set-breakpoint-.md)
 
@@ -146,13 +146,13 @@ Windows 的较早版本的另一个选项是使用 USB 或串行电缆等直接�
     0 e fffff800`02e03904     0001 (0001) nt!MmCreateProcessAddressSpace
     ```
 
-    输入[**g**](g--go-.md)允许目标计算机运行。
+    输入 [**g**](g--go-.md) 允许目标计算机运行。
 
-11. 如果目标计算机不立即进入调试器，请在目标计算机上执行几项操作（例如，打开记事本）。 调用**MmCreateProcessAddressSpace**时，目标计算机将中断到调试器。 若要查看堆栈跟踪，请输入以下命令：
+11. 如果目标计算机不立即进入调试器，请在目标计算机上执行一些操作 (例如，打开记事本) 。 调用 **MmCreateProcessAddressSpace** 时，目标计算机将中断到调试器。 若要查看堆栈跟踪，请输入以下命令：
 
     [**.reload**](-reload--reload-module-.md)
 
-    [**温度**](k--kb--kc--kd--kp--kp--kv--display-stack-backtrace-.md)
+    [**k**](k--kb--kc--kd--kp--kp--kv--display-stack-backtrace-.md)
 
     输出类似于以下内容：
 
@@ -167,15 +167,15 @@ Windows 的较早版本的另一个选项是使用 USB 或串行电缆等直接�
     000000d7`4167fbe0 00000000`00000000 ntdll!RtlUserThreadStart+0x1d
     ```
 
-12. 在 "**视图**" 菜单上，选择 "**反汇编**"。
+12. 在 " **视图** " 菜单上，选择 " **反汇编**"。
 
-    在 "**调试**" 菜单上，选择 "**逐过程**" （或按**F10**）。 在观看 "反汇编" 窗口时，多次输入步骤命令。
+    在 " **调试** " 菜单上，选择 " **逐过程** " (或按 **F10**) 。 在观看 "反汇编" 窗口时，多次输入步骤命令。
 
 13. 输入以下命令以清除断点：
 
-    [**连续性\***](bc--breakpoint-clear-.md)
+    [**连续性 \***](bc--breakpoint-clear-.md)
 
-    输入[**g**](g--go-.md)允许目标计算机运行。 通过选择 "**调试**" 菜单中的 "**中断**" 或按**CTRL break**再次中断。
+    输入 [**g**](g--go-.md) 允许目标计算机运行。 通过选择 "**调试**" 菜单中的 "**中断**" 或按**CTRL break**再次中断。
 
 14. 若要查看所有进程的列表，请输入以下命令：
 
@@ -320,7 +320,7 @@ Windows 的较早版本的另一个选项是使用 USB 或串行电缆等直接�
     ...
     ```
 
-20. [**！ Devnode 0 1**](-devnode.md)的输出显示节点的物理设备对象（PDO）的地址。 复制物理设备对象（PDO）的地址，然后输入以下命令：
+20. [**！ Devnode 0 1**](-devnode.md)的输出显示节点 (PDO) 的物理设备对象的地址。 将物理设备对象的地址复制 (PDO) ，然后输入以下命令：
 
     [**！ devstack** *PdoAddress*](-devstack.md)
 
@@ -334,7 +334,7 @@ Windows 的较早版本的另一个选项是使用 USB 或串行电缆等直接�
       ffffe00001156e50  \Driver\ACPI       ffffe000010d8bf0  
     ```
 
-21. 若要获取有关驱动程序 disk .sys 的信息，请输入以下命令：
+21. 若要获取有关驱动程序 disk.sys 的信息，请输入以下命令：
 
     [**！ drvobj disk 2**](-drvobj.md)
 
@@ -364,11 +364,11 @@ Windows 的较早版本的另一个选项是使用 USB 或串行电缆等直接�
 
     输入 g 允许目标计算机运行。
 
-    如果目标计算机不立即进入调试器，请在目标计算机上执行几项操作（例如，打开记事本并保存文件）。 调用**ClassGlobalDispatch**时，目标计算机将中断到调试器。 若要查看堆栈跟踪，请输入以下命令：
+    如果目标计算机不立即进入调试器，请在目标计算机上执行一些操作 (例如，打开记事本并保存) 的文件。 调用 **ClassGlobalDispatch** 时，目标计算机将中断到调试器。 若要查看堆栈跟踪，请输入以下命令：
 
     [**.reload**](-reload--reload-module-.md)
 
-    [**温度**](k--kb--kc--kd--kp--kp--kv--display-stack-backtrace-.md)
+    [**k**](k--kb--kc--kd--kp--kp--kv--display-stack-backtrace-.md)
 
     输出类似于以下内容：
 
@@ -391,21 +391,21 @@ Windows 的较早版本的另一个选项是使用 USB 或串行电缆等直接�
 
 ## <a name="summary-of-commands"></a>命令摘要
 
-- "**帮助**" 菜单上的 "**内容**" 命令
+- “帮助”菜单上的“内容”命令
 - [.sympath（设置符号路径）](-sympath--set-symbol-path-.md)
 - [.reload（重新加载模块）](-reload--reload-module-.md)
 - [x（检查符号）](x--examine-symbols-.md)
 - [g（转到）](g--go-.md)
 - [dt（显示类型）](dt--display-type-.md)
-- "**调试**" 菜单上的 "**中断**" 命令
+- 在“调试”菜单上“中断”命令
 - [lm（列出已加载的模块）](lm--list-loaded-modules-.md)
-- [k （显示 Stack Backtrace）](k--kb--kc--kd--kp--kp--kv--display-stack-backtrace-.md)
-- [bu （设置断点）](bp--bu--bm--set-breakpoint-.md)
+- [k（显示堆栈回溯）](k--kb--kc--kd--kp--kp--kv--display-stack-backtrace-.md)
+- [bu（设置断点）](bp--bu--bm--set-breakpoint-.md)
 - [bl（断点列表）](bl--breakpoint-list-.md)
 - [bc（断点清除）](bc--breakpoint-clear-.md)
-- "**调试**" 菜单上的 "**单步**执行" 命令（**F11**）
+- “调试”菜单上的“单步调试”命令 (F11)
 - [！进程](-process.md)
-- [！ thread](-thread.md)
+- [!thread](-thread.md)
 - [!devnode](-devnode.md)
 - [!devstack](-devstack.md)
 - [!drvobj](-drvobj.md)
@@ -417,10 +417,10 @@ Windows 的较早版本的另一个选项是使用 USB 或串行电缆等直接�
 
 [自动设置 KDNET 网络内核调试](setting-up-a-network-debugging-connection-automatically.md)
 
-[调试器操作](debugger-operation-win8.md)
+[调试程序操作](debugger-operation-win8.md)
 
 [调试方法](debugging-techniques.md)
 
-[Windows 调试工具（WinDbg、KD、CDB、NTSD）](https://docs.microsoft.com/windows-hardware/drivers/debugger/)
+[Windows 调试工具（WinDbg、KD、CDB、NTSD）](./index.md)
 
 [使用 WinDbg 预览版进行调试](debugging-using-windbg-preview.md)

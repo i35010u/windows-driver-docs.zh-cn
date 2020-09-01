@@ -6,12 +6,12 @@ keywords:
 - EngExtCpp 扩展，客户端对象
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f7ef7dad95b4541eaed2a824aaaf329e1ad88d49
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 376ad7ec4782f32087c53c63c062e21fcb6bb8c8
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72837826"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89212247"
 ---
 # <a name="client-objects-and-the-engine"></a>客户端对象和引擎
 
@@ -19,7 +19,7 @@ ms.locfileid: "72837826"
 ## <span id="ddk_using_clients_and_the_engine_dbx"></span><span id="DDK_USING_CLIENTS_AND_THE_ENGINE_DBX"></span>
 
 
-EngExtCpp 扩展通过客户端对象与[调试器引擎](introduction.md#debugger-engine)进行交互。 指向客户端对象的接口指针可通过[**ExtExtension**](https://msdn.microsoft.com/library/windows/hardware/ff543981)基类的成员用于扩展。 以下成员提供对第一个版本的引擎 API 接口的访问权限。
+EngExtCpp 扩展通过客户端对象与 [调试器引擎](introduction.md#debugger-engine) 进行交互。 指向客户端对象的接口指针可通过 [**ExtExtension**](/previous-versions/ff543981(v=vs.85)) 基类的成员用于扩展。 以下成员提供对第一个版本的引擎 API 接口的访问权限。
 
 <table>
 <colgroup>
@@ -34,31 +34,31 @@ EngExtCpp 扩展通过客户端对象与[调试器引擎](introduction.md#debugg
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nn-dbgeng-idebugadvanced" data-raw-source="[IDebugAdvanced](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nn-dbgeng-idebugadvanced)">IDebugAdvanced</a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nn-dbgeng-idebugadvanced" data-raw-source="[IDebugAdvanced](/windows-hardware/drivers/ddi/dbgeng/nn-dbgeng-idebugadvanced)">IDebugAdvanced</a></p></td>
 <td align="left"><p><strong>m_Advanced</strong></p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nn-dbgeng-idebugclient" data-raw-source="[IDebugClient](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nn-dbgeng-idebugclient)">IDebugClient</a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nn-dbgeng-idebugclient" data-raw-source="[IDebugClient](/windows-hardware/drivers/ddi/dbgeng/nn-dbgeng-idebugclient)">IDebugClient</a></p></td>
 <td align="left"><p><strong>m_Client</strong></p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nn-dbgeng-idebugcontrol" data-raw-source="[IDebugControl](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nn-dbgeng-idebugcontrol)">IDebugControl</a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nn-dbgeng-idebugcontrol" data-raw-source="[IDebugControl](/windows-hardware/drivers/ddi/dbgeng/nn-dbgeng-idebugcontrol)">IDebugControl</a></p></td>
 <td align="left"><p><strong>m_Control</strong></p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nn-dbgeng-idebugdataspaces" data-raw-source="[IDebugDataSpaces](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nn-dbgeng-idebugdataspaces)">IDebugDataSpaces</a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nn-dbgeng-idebugdataspaces" data-raw-source="[IDebugDataSpaces](/windows-hardware/drivers/ddi/dbgeng/nn-dbgeng-idebugdataspaces)">IDebugDataSpaces</a></p></td>
 <td align="left"><p><strong>m_Data</strong></p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nn-dbgeng-idebugregisters" data-raw-source="[IDebugRegisters](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nn-dbgeng-idebugregisters)">IDebugRegisters</a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nn-dbgeng-idebugregisters" data-raw-source="[IDebugRegisters](/windows-hardware/drivers/ddi/dbgeng/nn-dbgeng-idebugregisters)">IDebugRegisters</a></p></td>
 <td align="left"><p><strong>m_Registers</strong></p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nn-dbgeng-idebugsymbols" data-raw-source="[IDebugSymbols](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nn-dbgeng-idebugsymbols)">IDebugSymbols</a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nn-dbgeng-idebugsymbols" data-raw-source="[IDebugSymbols](/windows-hardware/drivers/ddi/dbgeng/nn-dbgeng-idebugsymbols)">IDebugSymbols</a></p></td>
 <td align="left"><p><strong>m_Symbols</strong></p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nn-dbgeng-idebugsystemobjects" data-raw-source="[IDebugSystemObjects](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nn-dbgeng-idebugsystemobjects)">IDebugSystemObjects</a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nn-dbgeng-idebugsystemobjects" data-raw-source="[IDebugSystemObjects](/windows-hardware/drivers/ddi/dbgeng/nn-dbgeng-idebugsystemobjects)">IDebugSystemObjects</a></p></td>
 <td align="left"><p><strong>m_System</strong></p></td>
 </tr>
 </tbody>
@@ -157,17 +157,11 @@ EngExtCpp 扩展通过客户端对象与[调试器引擎](introduction.md#debugg
 
  
 
-每次使用扩展库执行扩展命令或设置输出的结构的格式时，都会对这些表中的成员进行初始化。 任务完成后，这些成员未初始化。 因此，扩展不应缓存这些成员的值，而应直接使用**ExtExtension**成员。
+每次使用扩展库执行扩展命令或设置输出的结构的格式时，都会对这些表中的成员进行初始化。 任务完成后，这些成员未初始化。 因此，扩展不应缓存这些成员的值，而应直接使用 **ExtExtension** 成员。
 
-扩展库还可以使用方法[**IDebugClient：： CreateClient**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugclient5-createclient)或函数[**DebugCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-debugcreate)或[**DebugConnect**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-debugconnect)创建自己的客户端对象。
+扩展库还可以使用方法 [**IDebugClient：： CreateClient**](/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugclient5-createclient) 或函数 [**DebugCreate**](/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-debugcreate) 或 [**DebugConnect**](/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-debugconnect)创建自己的客户端对象。
 
-有关客户端对象的概述，请参阅[客户端对象](client-objects.md)。
-
- 
+有关客户端对象的概述，请参阅 [客户端对象](client-objects.md)。
 
  
-
-
-
-
 

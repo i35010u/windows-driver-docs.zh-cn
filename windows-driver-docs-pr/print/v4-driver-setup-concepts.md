@@ -4,12 +4,12 @@ description: V4 打印驱动程序模型使用新的设置模型来改善用户�
 ms.assetid: C1DF5496-14CF-4BF4-B85C-AF1A691C7AF2
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c550830ab211b64b876bcf9ad4bba835d0607005
-ms.sourcegitcommit: ab64169b631da4db3f0b895600f1c38a22cb7e2e
+ms.openlocfilehash: d4fdb53f99081628fc590228382735925bd324e2
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75652858"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89211919"
 ---
 # <a name="v4-driver-setup-concepts"></a>V4 驱动程序安装的概念
 
@@ -27,37 +27,37 @@ V4 打印驱动程序直接从驱动程序存储区运行，这消除了文件�
 
 设备应在其1284ID 字符串中包含 CompatibleIDs。 如果现有的打印类驱动程序支持设备，则打印驱动程序应使用该 CompatibleID，否则我们建议使用以下格式。
 
-1284\_CID\_&lt;制造商标识符&gt;\_&lt;PDL 标识符&gt;设备家族标识符
+1284 \_ CID \_ &lt; 制造商标识符 &gt; \_ &lt; PDL 标识符 &gt; \_ 设备系列标识符
 
-例如： 1284\_CID\_FA\_PCL5e\_激光器
+例如： 1284 \_ CID \_ FA \_ PCL5e \_ 激光器
 
 如果已在现有设备中实现 CompatibleIDs，则打印驱动程序应继续使用这些 CompatibleIDs。
 
-在基于 TCP/IP 的打印设备的安装中不使用 CompatibleIDs。 因此，用户将需要仅使用驱动程序的名称来标识适当的驱动程序。 如果使用打印类驱动程序，我们建议制造商在其网站上提供打印类驱动程序所支持的任何设备的兼容性列表。 有关如何在硬件中实现 CompatibleIDs 的详细信息，包括规则和限制的完整列表，请参阅[如何在打印设备中实现兼容 id](https://docs.microsoft.com/previous-versions/windows/hardware/design/dn613942(v=vs.85))。
+在基于 TCP/IP 的打印设备的安装中不使用 CompatibleIDs。 因此，用户将需要仅使用驱动程序的名称来标识适当的驱动程序。 如果使用打印类驱动程序，我们建议制造商在其网站上提供打印类驱动程序所支持的任何设备的兼容性列表。 有关如何在硬件中实现 CompatibleIDs 的详细信息，包括规则和限制的完整列表，请参阅 [如何在打印设备中实现兼容 id](/previous-versions/windows/hardware/design/dn613942(v=vs.85))。
 
-Microsoft 支持一些标准 CompatibleIDs，以便支持多个特定于制造商的（标准）打印类驱动程序。 下表显示了这些标准 CompatibleIDs 及其关联的 PDL 文件类型。
+Microsoft 支持一些标准 CompatibleIDs，以便支持多个与制造商无关 (标准) 打印类驱动程序。 下表显示了这些标准 CompatibleIDs 及其关联的 PDL 文件类型。
 
 | PDL 文件类型      | 标准 CompatibleID |
 |--------------------|-----------------------|
-| XPS                | 1284\_CID\_MS\_XPS    |
-| OpenXPS （ECMA-388） | 1284\_CID\_MS\_.OXPS   |
-| PCL6               | 1284\_CID\_MS\_PCL6   |
-| PS                 | 1284\_CID\_MS\_PS     |
+| XPS                | 1284 \_ CID \_ MS \_ xp    |
+| OpenXPS (ECMA-388)  | 1284 \_ CID \_ MS \_ .oxps   |
+| PCL6               | 1284 \_ CID \_ MS \_ PCL6   |
+| PS                 | 1284 \_ CID \_ MS \_ PS     |
 
  
 
 这些标准打印类驱动程序仅支持一小部分功能，因此选择使用这些类驱动程序的制造商应该使用双向来添加更具体的纸张大小和配置。 下表显示了标准打印类驱动程序支持的功能和关联选项。
 
-| 功能    | “选项”           |
+| 功能    | 选项           |
 |------------|-------------------|
 | 纸张大小 | Letter、A4        |
-| 分辨率 | 300dpi, 600dpi    |
+| 解决方法 | 300dpi, 600dpi    |
 | 介质类型 | 普通纸       |
 | N 个向上       | 1，2，4，6，9，16 |
 
  
 
-**PrinterDriverID**。 PrinterDriverID 是一个新的标识符，用于确定驱动程序之间的兼容性，以及驱动程序与打印机扩展之间的兼容性。 例如，如果服务器上的驱动程序在其清单文件中指定了 PrinterDriverID 并共享了驱动程序，则连接到此打印机的客户端将搜索本地驱动程序存储区，并为指定同一 PrinterDriverID 的驱动程序 Windows 更新其驱动程序 INF。 如果找到匹配项，将使用该驱动程序建立连接。 客户端计算机不使用驱动程序名称筛选匹配结果。
+**PrinterDriverID**。 PrinterDriverID 是一个新的标识符，用于确定驱动程序之间的兼容性，以及驱动程序与打印机扩展之间的兼容性。 例如，如果服务器上的驱动程序在其清单文件中指定了 PrinterDriverID，并共享了驱动程序，则连接到此打印机的客户端将搜索本地驱动程序存储区，并为驱动程序 Windows 更新，该驱动程序在其驱动程序 INF 中指定相同的 PrinterDriverID。 如果找到匹配项，将使用该驱动程序建立连接。 客户端计算机不使用驱动程序名称筛选匹配结果。
 
 对于所有兼容的驱动程序，必须按以下方式指定 PrinterDriverID：
 
@@ -69,7 +69,7 @@ Microsoft 支持一些标准 CompatibleIDs，以便支持多个特定于制造�
 
 -   支持相同的 PDL
 
--   使用相同类型的配置文件（GPD 或 PPD）
+-    (GPD 或 PPD) 使用相同类型的配置文件
 
 -   能够呈现在服务器驱动程序的 GPD、PPD 和/或约束 JS 文件中指定的任何功能或选项
 
@@ -92,9 +92,9 @@ Microsoft 支持一些标准 CompatibleIDs，以便支持多个特定于制造�
 
 2. 如果该驱动程序是 v4 打印驱动程序，Windows 将使用双向查询该设备。
 
-a. 如果指定 \\DeviceInfo： FriendlyName，则将其用作新的队列名称。
+a. 如果 \\ 指定了 DeviceInfo： FriendlyName，则将其用作新的队列名称。
 
-b. 否则，Windows 将查询 \\DeviceInfo：制造商 \\： ModelName。
+b. 否则，Windows 将查询 \\ DeviceInfo： Manufacturer， \\ DeviceInfo： ModelName。
 
 i. 如果同时指定两者，则 Windows 会将它们连接到 "Manufacturer ModelName"。
 
@@ -110,14 +110,14 @@ i. 如果同时指定两者，则 Windows 会将它们连接到 "制造商型号
 
 ii. 如果其中只有一个失败，则 Windows 将使用另一个键的值作为队列名称。
 
-**"添加打印机向导"** 。 驱动程序名称将继续是用户在 "**添加打印机向导**" 中选择驱动程序的唯一标识符。 基于 TCP/IP 的设备应实现[端口监视器 MIB （PWG 5107.1-2005）](https://www.pwg.org/standards.html)以支持 tcp/ip 自动检测。 使用硬件 ID （HWID）映射添加到打印类驱动程序的现有设备可能还会使用特定于设备的模型名称。
+**"添加打印机向导"**。 驱动程序名称将继续是用户在 " **添加打印机向导**" 中选择驱动程序的唯一标识符。 基于 TCP/IP 的设备应实现 [端口监视器 MIB (PWG 5107.1-2005) ](https://www.pwg.org/standards.html) ，以支持 tcp/ip 自动检测。 使用硬件 ID (HWID) 映射添加到打印类驱动程序的现有设备可能还会使用特定于设备的模型名称。
 
 ## <a name="changing-ports-and-dealing-with-printer-devnodes"></a>更改端口和处理 Printer Devnodes
 
 
-为了提供一致的 UI 体验，所有打印队列均提供了一个软件设备节点（devnode）。 这是在 UI 中发现打印机的方式，它允许以与即插即用（PnP）打印机相同的方式枚举和访问虚拟打印机、与共享打印机的连接以及网络打印机。 适用于物理 PnP 打印机的软件 devnodes 将从已触发队列创建的 PnP devnode 继承属性。
+为了提供一致的 UI 体验，所有打印队列都提供了一个软件设备节点 (devnode) 。 这是在 UI 中发现打印机的方式，它允许以与即插即用 (PnP) 打印机相同的方式枚举和访问虚拟打印机、与共享打印机的连接和网络打印机。 适用于物理 PnP 打印机的软件 devnodes 将从已触发队列创建的 PnP devnode 继承属性。
 
-当两个不同的对象相关时，UI 会将 devnodes 分组为设备容器。 这种分组允许多功能打印机（MFP）在 "**设备和打印机**" 文件夹中显示为一个图标。 MFP 中所有函数的容器 ID 必须相同，才能使函数全部显示在相同图标下。 这是为 PnP 设备自动完成的。
+当两个不同的对象相关时，UI 会将 devnodes 分组为设备容器。 这种分组功能使多功能打印机 (MFP) 在 " **设备和打印机** " 文件夹中显示为一个图标。 MFP 中所有函数的容器 ID 必须相同，才能使函数全部显示在相同图标下。 这是为 PnP 设备自动完成的。
 
 更改与队列关联的端口将更改与队列的 devnode 关联的容器 ID。 这将导致队列不再与物理设备的其余 PnP 对象在同一设备容器下进行分组。 操作系统中的信息不足，无法正确清理队列和 PnP 对象之间的分离情况。 在某些情况下，这是用户的实际意图。 只有更改端口名称的用户或应用程序才会知道预期的结果，而是由用户/应用程序清理在更改队列端口后留下的任何混乱的状态。 下面是两个示例情况，其中说明了如何正确清理。
 
@@ -127,26 +127,26 @@ a. 预期– "设备和打印机" 文件夹中只有一个 "设备"。
 
 b. 解决方案-IT 管理员从 "设备和打印机" 文件夹中删除 WSD PnP devnode。
 
-2. IHV 设置软件– IHV 安装驱动程序和自定义端口监视器（在 v4 中不允许使用自定义端口监视器，但相同的 devnode 处理适用于 v3 驱动程序）。 IHV 将打印队列的 USB 端口更改为设备制造商创建的端口。
+2. IHV 设置软件– IHV 安装驱动程序和自定义端口监视器 (不允许在 v4 中使用自定义端口监视器，但相同的 devnode 处理适用于 v3 驱动程序) 。 IHV 将打印队列的 USB 端口更改为设备制造商创建的端口。
 
 a. 预期– "设备和打印机" 文件夹中只有一个 "设备"。
 
-b. 解决方案 \#1-仍需 PnP devnode：安装程序将更改队列 devnode 的容器 ID，使其与 PnP 对象匹配。
+b. 解决方案 \# 1-仍需 PnP devnode：安装程序更改队列 devnode 的容器 ID 以与 PnP 对象匹配。
 
-c. 解决方案 \#2 – PnP devnode 是无关的：安装程序删除原始 PnP 设备。
+c. 解决方案 \# 2-PnP devnode 是无关的：安装程序删除原始 PnP 设备。
 
 **驱动程序排名**。 V4 打印驱动程序的引入不会修改即插即用排名行为。 设备接通电源时，将选择具有最高分数的可用驱动程序。 如果所选的驱动程序是打印类驱动程序，并且在 Windows 更新站点上有更好的排名和匹配的驱动程序，则在用户下一次下载 Windows 更新时，将自动替换所选的驱动程序。
 
-有关驱动程序排名的详细信息，请参阅[Windows 如何对驱动程序](https://docs.microsoft.com/windows-hardware/drivers/install/how-setup-ranks-drivers--windows-vista-and-later-)进行排名。
+有关驱动程序排名的详细信息，请参阅 [Windows 如何对驱动程序](../install/how-setup-ranks-drivers--windows-vista-and-later-.md)进行排名。
 
 ## <a name="driver-setup-best-practices"></a>驱动程序设置最佳方案
 
 
-**打包**。 V4 打印驱动程序不使用这些**要求**，并**包括**INF 文件指令或核心驱动程序技术来处理共享文件。 因此，v4 打印驱动程序必须是独立的，只有几个例外。
+**打包**。 V4 打印驱动程序不使用这些 **要求** ，并 **包括** INF 文件指令或核心驱动程序技术来处理共享文件。 因此，v4 打印驱动程序必须是独立的，只有几个例外。
 
-V4 打印驱动程序可能会继续依赖于 Windows 提供的常见文件。 其中包括 Ntprint.inf 或 NTPrint4 中的文件。 驱动程序可以通过在 v4 清单文件中指定**RequiredFiles**指令来包含这些文件。
+V4 打印驱动程序可能会继续依赖于 Windows 提供的常见文件。 其中包括 Ntprint.inf 或 NTPrint4 中的文件。 驱动程序可以通过在 v4 清单文件中指定 **RequiredFiles** 指令来包含这些文件。
 
-如果存在为你的设备或 PDL 提供基本呈现功能的现有打印类驱动程序，则还存在一种机制，用于通过使用**RequiredClass**指令来依赖类驱动程序。 此指令会使 Windows 使用 v4 打印驱动程序和所需的打印类驱动程序中的文件构建驱动程序。 合并了 GPD 和 PPD 文件，其中最具体的文件优先于不太具体的文件。 下图说明了用于合并 GPD/PPD 文件的逻辑，还包括从双向获取的增强驱动程序配置文件。 其他驱动程序文件（如 JavaScript 约束）不会合并到驱动程序包中。
+如果存在为你的设备或 PDL 提供基本呈现功能的现有打印类驱动程序，则还存在一种机制，用于通过使用 **RequiredClass** 指令来依赖类驱动程序。 此指令会使 Windows 使用 v4 打印驱动程序和所需的打印类驱动程序中的文件构建驱动程序。 合并了 GPD 和 PPD 文件，其中最具体的文件优先于不太具体的文件。 下图说明了用于合并 GPD/PPD 文件的逻辑，还包括从双向获取的增强驱动程序配置文件。 其他驱动程序文件（如 JavaScript 约束）不会合并到驱动程序包中。
 
 ![gpd/ppd 文件合并逻辑](images/gpd-ppdmergelogic.png)
 
@@ -156,34 +156,31 @@ V4 打印驱动程序
 
 1. V4 打印驱动程序 Inf 必须定义两种不同类型的模型行：
 
-a. HardwareID 行： "Driver name" = INSTALL\_节，busenumerator\\HardwareID
+a. HardwareID 行： "Driver name" = INSTALL \_ SECTION，busenumerator \\ HardwareID
 
-b. PrinterDriverID 行： "Driver name" = INSTALL\_节，{GUID}
+b. PrinterDriverID 行： "Driver name" = INSTALL \_ SECTION，{GUID}
 
 2. V4 打印驱动程序 Inf 必须在单独的行上定义特定于总线的 HardwareIDs：
 
-a. "Driver name" = INSTALL\_部分，WSDPRINT\\HardwareID
+a. "Driver name" = INSTALL \_ 部分，WSDPRINT \\ HardwareID
 
-b. "Driver name" = INSTALL\_部分，USBPRINT\\HardwareID
+b. "Driver name" = INSTALL \_ 部分，USBPRINT \\ HardwareID
 
-c. "Driver name" = INSTALL\_部分，LPTENUM\\HardwareID
+c. "Driver name" = INSTALL \_ 部分，LPTENUM \\ HardwareID
 
 打印类驱动程序
 
 1. 打印类驱动程序 Inf 必须定义三种不同类型的模型行：
 
-a. HardwareID 行： "Driver name" = INSTALL\_节，HardwareID
+a. HardwareID 行： "Driver name" = INSTALL \_ SECTION，HardwareID
 
-b. PrinterDriverID 行： "Driver name" = INSTALL\_节，{GUID}
+b. PrinterDriverID 行： "Driver name" = INSTALL \_ SECTION，{GUID}
 
-c. CompatibleID 行： "打印类驱动程序名称" = 安装\_部分，，1284\_CID\_CompatID
+c. CompatibleID 行： "打印类驱动程序名称" = INSTALL \_ 部分，，1284 \_ CID \_ CompatID
 
-2. 打印类驱动程序 Inf 不得定义任何总线枚举器（例如，WSDPRINT\)
+2. 打印类驱动程序 Inf 不得定义任何总线枚举器 (例如 WSDPRINT\)
 
 ## <a name="related-topics"></a>相关主题
-[如何在打印设备中实现兼容 Id](https://docs.microsoft.com/previous-versions/windows/hardware/design/dn613942(v=vs.85))  
-[Windows 排名驱动程序的方式](https://docs.microsoft.com/windows-hardware/drivers/install/how-setup-ranks-drivers--windows-vista-and-later-)  
-[端口监视器 MIB （PWG 5107.1-2005）](https://www.pwg.org/standards.html)  
-
-
-
+[如何在打印设备中实现兼容 Id](/previous-versions/windows/hardware/design/dn613942(v=vs.85))  
+[Windows 如何对驱动程序分级](../install/how-setup-ranks-drivers--windows-vista-and-later-.md)  
+[端口监视器 MIB (PWG 5107.1-2005) ](https://www.pwg.org/standards.html)

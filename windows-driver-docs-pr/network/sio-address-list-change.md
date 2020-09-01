@@ -3,21 +3,21 @@ title: SIO_ADDRESS_LIST_CHANGE
 description: SIO_ADDRESS_LIST_CHANGE
 ms.assetid: d451208d-c850-4f2f-9ee0-d34139454ed4
 ms.date: 08/08/2017
-keywords: -从 Windows Vista 开始 SIO_ADDRESS_LIST_CHANGE 网络驱动程序
+keywords: -从 Windows Vista 开始 SIO_ADDRESS_LIST_CHANGE 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 92425311277c269c3e14008fc3a28adc7cca202d
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 8d742b89369f89017818527b9aa40dfec3c5f742
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72841917"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89212795"
 ---
-# <a name="sio_address_list_change"></a>SIO\_地址\_列表\_更改
+# <a name="sio_address_list_change"></a>SIO \_ 地址 \_ 列表 \_ 更改
 
 
-当套接字地址族的本地传输地址列表发生变化时，SIO\_地址\_列表\_更改套接字 i/o 控制操作会通知 WSK 应用程序。 此套接字 i/o 控制操作适用于所有套接字类型。
+\_ \_ \_ 当套接字地址族的本地传输地址列表发生变化时，SIO 地址列表更改套接字 i/o 控制操作会通知 WSK 应用程序。 此套接字 i/o 控制操作适用于所有套接字类型。
 
-若要在已更改套接字地址系列的本地传输地址列表时收到通知，WSK 应用程序使用以下参数调用[**WskControlSocket**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_control_socket)函数。
+若要在已更改套接字地址系列的本地传输地址列表时收到通知，WSK 应用程序使用以下参数调用 [**WskControlSocket**](/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_control_socket) 函数。
 
 <table>
 <colgroup>
@@ -27,7 +27,7 @@ ms.locfileid: "72841917"
 <thead>
 <tr class="header">
 <th>参数</th>
-<th>Value</th>
+<th>值</th>
 </tr>
 </thead>
 <tbody>
@@ -40,7 +40,7 @@ ms.locfileid: "72841917"
 <td><p>SIO_ADDRESS_LIST_CHANGE</p></td>
 </tr>
 <tr class="odd">
-<td><p><em>调配</em></p></td>
+<td><p><em>级别</em></p></td>
 <td><p>0</p></td>
 </tr>
 <tr class="even">
@@ -49,7 +49,7 @@ ms.locfileid: "72841917"
 </tr>
 <tr class="odd">
 <td><p><em>InputBuffer</em></p></td>
-<td><p>NULL</p></td>
+<td><p>Null</p></td>
 </tr>
 <tr class="even">
 <td><p><em>OutputSize</em></p></td>
@@ -57,16 +57,16 @@ ms.locfileid: "72841917"
 </tr>
 <tr class="odd">
 <td><p><em>OutputBuffer</em></p></td>
-<td><p>NULL</p></td>
+<td><p>Null</p></td>
 </tr>
 <tr class="even">
 <td><p><em>OutputSizeReturned</em></p></td>
-<td><p>NULL</p></td>
+<td><p>Null</p></td>
 </tr>
 </tbody>
 </table>
 
-在调用**WskControlSocket**函数时，WSK 应用程序必须指定一个指向 IRP 的指针，以通知对套接字地址系列的本地传输地址列表的更改。 WSK 子系统将 IRP 排队并返回状态\_"挂起"。 如果对套接字地址系列的本地传输地址列表进行了更改，则 WSK 子系统完成 IRP。 调用 IRP 的完成例程后，WSK 应用程序可使用[**SIO\_地址\_列表\_查询**](sio-address-list-query.md)套接字 i/o 控制操作，查询套接字地址系列的本地传输地址的新列表。
+在调用 **WskControlSocket** 函数时，WSK 应用程序必须指定一个指向 IRP 的指针，以通知对套接字地址系列的本地传输地址列表的更改。 WSK 子系统将为 IRP 排队，并返回 "挂起" 状态 \_ 。 如果对套接字地址系列的本地传输地址列表进行了更改，则 WSK 子系统完成 IRP。 调用 IRP 的完成例程后，WSK 应用程序可以使用 [**SIO \_ 地址 \_ 列表 \_ 查询**](sio-address-list-query.md) 套接字 i/o 控制操作来查询套接字地址系列的新本地传输地址列表。
 
 <a name="requirements"></a>要求
 ------------
@@ -83,15 +83,10 @@ ms.locfileid: "72841917"
 </tr>
 <tr class="even">
 <td><p>标头</p></td>
-<td>Ws2def （包括 Wsk）</td>
+<td>Ws2def (包含 Wsk) </td>
 </tr>
 </tbody>
 </table>
 
  
-
- 
-
-
-
 

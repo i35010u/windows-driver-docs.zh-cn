@@ -1,39 +1,39 @@
 ---
 title: WDI_TLV_CIPHER_KEY_ID
-description: WDI_TLV_CIPHER_KEY_ID 是包含一种密码 TLV OID_WDI_SET_ADD_CIPHER_KEYS 和 OID_WDI_SET_DELETE_CIPHER_KEYS 密钥 ID。
+description: WDI_TLV_CIPHER_KEY_ID 是一个 TLV，其中包含 OID_WDI_SET_ADD_CIPHER_KEYS 和 OID_WDI_SET_DELETE_CIPHER_KEYS 的密码密钥 ID。
 ms.assetid: 24076B2A-FAC2-4509-9F1C-7F2AF57883CF
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 WDI_TLV_CIPHER_KEY_ID 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 3d359e762aeca4351a855b151d3891a4eb9b60cc
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: edfd3a86075635f2572f641120789d8f664065be
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67387188"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89212307"
 ---
-# <a name="wditlvcipherkeyid"></a>WDI\_TLV\_CIPHER\_KEY\_ID
+# <a name="wdi_tlv_cipher_key_id"></a>WDI \_ TLV \_ 密码 \_ 密钥 \_ ID
 
 
-WDI\_TLV\_密码\_密钥\_ID 是包含一种密码 TLV 密钥的 ID [OID\_WDI\_设置\_添加\_密码\_密钥](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wdi-set-add-cipher-keys)并[OID\_WDI\_设置\_删除\_密码\_密钥](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wdi-set-delete-cipher-keys)。
+WDI \_ tlv \_ 密码 \_ 密钥 \_ id 是一个 TLV，其中包含 OID 的密码密钥 id " [ \_ WDI" 设置 " \_ \_ 添加 \_ 密码 \_ 密钥](./oid-wdi-set-add-cipher-keys.md) " 和 " [oid \_ WDI \_ 集 \_ 删除 \_ 密码 \_ 密钥](./oid-wdi-set-delete-cipher-keys.md)"。
 
 ## <a name="tlv-type"></a>TLV 类型
 
 
 0x4D
 
-## <a name="length"></a>长度
+## <a name="length"></a>Length
 
 
-UINT32 大小 （以字节为单位）。
+UINT32) 的大小 (以字节为单位）。
 
 ## <a name="values"></a>值
 
 
-| 在任务栏的搜索框中键入   | 描述                  |
+| 类型   | 说明                  |
 |--------|------------------------------|
-| UINT32 | 指定密码密钥 id。 |
+| UINT32 | 指定密码密钥 ID。 |
 
  
 
@@ -55,16 +55,11 @@ UINT32 大小 （以字节为单位）。
 <td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
-<td><p>Header</p></td>
+<td><p>标头</p></td>
 <td>Wditypes.hpp</td>
 </tr>
 </tbody>
 </table>
 
  
-
- 
-
-
-
 

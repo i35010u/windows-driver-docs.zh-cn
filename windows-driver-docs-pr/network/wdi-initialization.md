@@ -4,12 +4,12 @@ description: 本主题介绍开机后的 Wi-fi 设备初始化。
 ms.assetid: EDF04E40-C278-42CE-8E17-F5AB0C1651EF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4cdab5af2eb22c89f84cdaba76fdba2b8c78d152
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 227d4b3c8778e9f1e04906b555d2e102aea8c290
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72842923"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89211551"
 ---
 # <a name="wi-fi-device-initialization"></a>Wi-fi 设备初始化
 
@@ -18,15 +18,9 @@ ms.locfileid: "72842923"
 
 ![wdi 初始化序列](images/wdi-initialization-sequence.png)
 
-1.  IHV 组件负责在适配器启动时将固件下载到适配器。 下载固件的确切机制是依赖于总线的。 此操作在[*MiniportWdiOpenAdapter*](https://docs.microsoft.com/windows-hardware/drivers/ddi/dot11wdi/nc-dot11wdi-miniport_wdi_open_adapter)调用的上下文中完成。 这是一个异步操作。 宿主负责确保在向其发送更多命令之前，适配器已完全初始化并准备好处理命令。 确切的机制依赖于互连。
-2.  初始化适配器后，主机将在适配器中查询各种 Wi-fi 属性、设置属性并创建端口（Mac）作为微型端口初始化的一部分。
+1.  IHV 组件负责在适配器启动时将固件下载到适配器。 下载固件的确切机制是依赖于总线的。 此操作在 [*MiniportWdiOpenAdapter*](/windows-hardware/drivers/ddi/dot11wdi/nc-dot11wdi-miniport_wdi_open_adapter) 调用的上下文中完成。 这是一个异步操作。 宿主负责确保在向其发送更多命令之前，适配器已完全初始化并准备好处理命令。 确切的机制依赖于互连。
+2.  初始化适配器后，该主机将在适配器中查询各种 Wi-fi 属性、设置属性，并 (Mac) 创建端口，作为小型端口初始化的一部分。
 3.  创建并初始化端口后，适配器可以接收任务和属性命令。
 
  
-
- 
-
-
-
-
 

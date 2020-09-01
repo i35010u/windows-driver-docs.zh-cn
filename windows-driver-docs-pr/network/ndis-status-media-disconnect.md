@@ -1,31 +1,31 @@
 ---
 title: NDIS_STATUS_MEDIA_DISCONNECT
-description: NDIS_STATUS_MEDIA_DISCONNECT 状态指示的网络连接的状态已从连接到断开连接。
+description: NDIS_STATUS_MEDIA_DISCONNECT 状态表示网络连接的状态已从 "连接" 更改为 "已断开连接"。
 ms.assetid: 490853ca-c849-4b2b-9639-4be670616101
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 NDIS_STATUS_MEDIA_DISCONNECT 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 39889b36bcb6fdd91b61095979f6c6b7cb87c94a
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 8d8e788b3d53e4c30c27b7c6241869e6ede65f6d
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67368579"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89211733"
 ---
-# <a name="ndisstatusmediadisconnect"></a>NDIS\_状态\_媒体\_断开连接
+# <a name="ndis_status_media_disconnect"></a>NDIS \_ 状态 \_ 媒体 \_ 断开连接
 
 
-NDIS\_状态\_媒体\_断开连接状态指示的网络连接的状态已更改从已连接到断开连接。 例如，网络设备失去连接，因为它不在范围内 （适用于无线设备） 或用户断开设备的网络电缆。
+NDIS \_ 状态 \_ 媒体断开连接 \_ 状态表明网络连接的状态已从 "已连接" 更改为 "已断开连接"。 例如，网络设备丢失了连接，因为它超出了无线设备) 的范围 (，或者用户断开了设备的网络电缆。
 
 <a name="remarks"></a>备注
 -------
 
-NDIS 转换 NDIS\_状态\_媒体\_到断开连接状态指示[ **NDIS\_状态\_链接\_状态**](ndis-status-link-state.md)状态指示为过量 NDIS 6.0 驱动程序。
+\_ \_ \_ 对于过量的 ndis 6.0 驱动程序，ndis 将 ndis 状态媒体断开连接状态指示转换为[**ndis \_ 状态 \_ 链接 \_ 状态**](ndis-status-link-state.md)指示。
 
-NDIS 5。*x*和更早的微型端口驱动程序指示[ **NDIS\_状态\_媒体\_CONNECT** ](ndis-status-media-connect.md)时连接的状态还原。
+NDIS 5。*x* 和更早的微型端口驱动程序指示在连接还原时 [**NDIS \_ 状态 \_ 媒体 \_ 连接**](ndis-status-media-connect.md) 状态。
 
-详细了解 NDIS\_状态\_媒体\_断开连接，请参阅[，该值指示连接状态 (NDIS 5.1)](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff546856(v=vs.85))和[的 802.11 网络媒体状态指示](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff549301(v=vs.85)).
+有关 NDIS 状态媒体断开连接的详细信息 \_ \_ \_ ，请参阅 [指示连接状态 (NDIS 5.1) ](/previous-versions/windows/hardware/network/ff546856(v=vs.85)) ，以及 [802.11 网络的媒体状态指示](/previous-versions/windows/hardware/network/ff549301(v=vs.85))。
 
 <a name="requirements"></a>要求
 ------------
@@ -37,27 +37,22 @@ NDIS 5。*x*和更早的微型端口驱动程序指示[ **NDIS\_状态\_媒体\_
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Version</p></td>
-<td><p>不受支持 NDIS 6.0 及更高版本 (使用<a href="ndis-status-link-state.md" data-raw-source="[&lt;strong&gt;NDIS_STATUS_LINK_STATE&lt;/strong&gt;](ndis-status-link-state.md)"> <strong>NDIS_STATUS_LINK_STATE</strong> </a>相反)。 仅支持 Windows Vista 和 Windows XP 中的 NDIS 5.1 驱动程序。</p></td>
+<td><p>版本</p></td>
+<td><p>在 NDIS 6.0 和更高版本中不受支持 (改用 <a href="ndis-status-link-state.md" data-raw-source="[&lt;strong&gt;NDIS_STATUS_LINK_STATE&lt;/strong&gt;](ndis-status-link-state.md)"><strong>NDIS_STATUS_LINK_STATE</strong></a>) 。 只有 Windows Vista 和 Windows XP 中的 NDIS 5.1 驱动程序支持。</p></td>
 </tr>
 <tr class="even">
-<td><p>Header</p></td>
-<td>Ndis.h （包括 Ndis.h）</td>
+<td><p>标头</p></td>
+<td> (包含 Ndis .h) </td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
-[**NDIS\_STATUS\_LINK\_STATE**](ndis-status-link-state.md)
+[**NDIS \_ 状态 \_ 链接 \_ 状态**](ndis-status-link-state.md)
 
-[**NDIS\_状态\_媒体\_连接**](ndis-status-media-connect.md)
-
- 
+[**NDIS \_ 状态 \_ 媒体 \_ 连接**](ndis-status-media-connect.md)
 
  
-
-
-
 

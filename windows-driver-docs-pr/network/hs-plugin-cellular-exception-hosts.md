@@ -1,25 +1,25 @@
 ---
 title: HS_PLUGIN_CELLULAR_EXCEPTION_HOSTS 结构
-description: HS_PLUGIN_CELLULAR_EXCEPTION_HOSTS 结构包含该插件要求仅在身份验证过程，通过移动电话的持有者要连接的主机的列表。
+description: HS_PLUGIN_CELLULAR_EXCEPTION_HOSTS 结构包含在身份验证过程中，插件只需通过蜂窝持有者连接的主机列表。
 ms.assetid: cc7ad05b-d03b-463a-9d22-1982aee882e8
 keywords:
-- HS_PLUGIN_CELLULAR_EXCEPTION_HOSTS 结构与 Windows Vista 一起启动的网络驱动程序
-- PHS_PLUGIN_CELLULAR_EXCEPTION_HOSTS 结构指针与 Windows Vista 一起启动的网络驱动程序
+- 从 Windows Vista 开始 HS_PLUGIN_CELLULAR_EXCEPTION_HOSTS 结构网络驱动程序
+- 从 Windows Vista 开始 PHS_PLUGIN_CELLULAR_EXCEPTION_HOSTS 结构指针网络驱动程序
 ms.date: 07/31/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bb3c47df78b984ea70990ce97e121944788b2aba
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 769e4c8d3dcda5acfb0e4f589b494ae70baa4359
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67368611"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89212441"
 ---
-# <a name="hsplugincellularexceptionhosts-structure"></a>HS\_插件\_移动电话\_异常\_主机结构
+# <a name="hs_plugin_cellular_exception_hosts-structure"></a>HS \_ 插件 \_ 手机网络 \_ 异常 \_ 托管结构
 
 [!include[Wi-Fi Hotspot Offloading deprecation](wi-fi-hotspot-offloading-deprecation.md)]
 
 
-**HS\_插件\_移动电话\_异常\_主机**结构包含的主机插件所需的用于通过移动电话持有者仅在连接列表身份验证过程。 这是可以请求通过该插件的可选功能。 有关详细信息，请参阅[ **HS\_插件\_查询\_移动电话\_异常\_主机**](hs-plugin-query-cellular-exception-hosts.md)。
+**HS \_ 插件 \_ 手机网络 \_ 例外 \_ 主机**结构包含在身份验证过程中，该插件只需通过蜂窝持有者连接的主机列表。 这是可由插件请求的可选功能。 有关详细信息，请参阅 [**HS \_ 插件 \_ 查询 \_ 手机网络 \_ 异常 \_ 主机**](hs-plugin-query-cellular-exception-hosts.md)。
 
 <a name="syntax"></a>语法
 ------
@@ -36,17 +36,17 @@ typedef struct _HS_PLUGIN_CELLULAR_EXCEPTION_HOSTS {
 -------
 
 **dwCount**  
-指向主机名列表中的数字**pExceptions**。
+**PExceptions**所指向的列表中的主机名数。
 
 **pExceptions**  
-仅当使用 MIDL 使用。 唯一的大小为 (dwCount)。
+如果使用了 MIDL，则使用。 唯一，大小是 (dwCount) 。
 
-指向主机名的列表的指针。
+指向主机名列表的指针。
 
 **pExceptions**  
-使用 MIDL 未被使用。
+如果未使用 MIDL，则使用。
 
-指向主机名的列表的指针。
+指向主机名列表的指针。
 
 <a name="requirements"></a>要求
 ------------
@@ -58,23 +58,18 @@ typedef struct _HS_PLUGIN_CELLULAR_EXCEPTION_HOSTS {
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Header</p></td>
-<td>Hotspotoffloadplugin.h （包括 Hotspotoffloadplugin.h）</td>
+<td><p>标头</p></td>
+<td>Hotspotoffloadplugin (包含 Hotspotoffloadplugin) </td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
-[**HS\_插件\_查询\_移动电话\_异常\_主机**](hs-plugin-query-cellular-exception-hosts.md)
+[**HS \_ 插件 \_ 查询 \_ 手机网络 \_ 异常 \_ 主机**](hs-plugin-query-cellular-exception-hosts.md)
 
-[Microsoft 接口定义语言](https://docs.microsoft.com/windows/desktop/Midl/midl-start-page)
-
- 
+[Microsoft 接口定义语言](/windows/desktop/Midl/midl-start-page)
 
  
-
-
-
 

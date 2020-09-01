@@ -10,12 +10,12 @@ keywords:
 - 正在停止虚拟微型端口
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 69bb4dcaf9641ba7ad130037e0a489bf54da81f2
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 3a0d5b8d85a4f33895f6fcf1b5ae71c6d81a8c83
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72842118"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89211772"
 ---
 # <a name="halting-a-virtual-miniport"></a>停止虚拟微型端口
 
@@ -23,17 +23,11 @@ ms.locfileid: "72842118"
 
 
 
-如果 NDIS 中间驱动程序调用[**NdisIMDeinitializeDeviceInstance**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisimdeinitializedeviceinstance)函数，ndis 将为受影响的虚拟小型端口调用[*MiniportHaltEx*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_halt)函数。 中间驱动程序通常从其[*ProtocolUnbindAdapterEx*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-protocol_unbind_adapter_ex)函数调用**NdisIMDeInitializeDeviceInstance** 。
+如果 NDIS 中间驱动程序调用 [**NdisIMDeinitializeDeviceInstance**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisimdeinitializedeviceinstance) 函数，ndis 将为受影响的虚拟小型端口调用 [*MiniportHaltEx*](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_halt) 函数。 中间驱动程序通常从其[*ProtocolUnbindAdapterEx*](/windows-hardware/drivers/ddi/ndis/nc-ndis-protocol_unbind_adapter_ex)函数调用**NdisIMDeInitializeDeviceInstance** 。
 
-NDIS 将*HaltAction*参数设置为**NdisHaltDeviceInstanceDeInitialized** ，以指示 NDIS 正在停止适配器，以响应对**NdisIMDeInitializeDeviceInstance**函数的中间驱动程序调用。
+NDIS 将 *HaltAction* 参数设置为 **NdisHaltDeviceInstanceDeInitialized** ，以指示 NDIS 正在停止适配器，以响应对 **NdisIMDeInitializeDeviceInstance** 函数的中间驱动程序调用。
 
-中间驱动程序的[*MiniportHaltEx*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_halt)函数必须释放与虚拟小型端口关联的所有驱动程序分配的资源。
-
- 
+中间驱动程序的 [*MiniportHaltEx*](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_halt) 函数必须释放与虚拟小型端口关联的所有驱动程序分配的资源。
 
  
-
-
-
-
 

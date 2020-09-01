@@ -4,12 +4,12 @@ description: V4 打印机驱动程序模型的呈现体系结构与 XPSDrv 体�
 ms.assetid: 132BB5D5-426C-4449-8562-B5E43E331858
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0097f44af4762f9c2f068e5040edd2b84d74acf9
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 04a3f0a7d68b1049971b22ccfb3860d883190d17
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72843611"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89211921"
 ---
 # <a name="v4-printer-driver-rendering-architecture"></a>V4 打印机驱动程序渲染体系结构
 
@@ -28,7 +28,7 @@ V4 打印机驱动程序模型的呈现体系结构与 XPSDrv 体系结构相同
 ## <a name="print-filter-pipeline-configuration-file"></a>打印筛选器管道配置文件
 
 
-打印筛选器管道配置文件的格式不相同。 建议的命名约定： vv&lt;PDL&gt;-pipelineconfig，其中 vv 是制造商代码的占位符。 示例 fapcl6-pipelineconfig。 所有打印筛选器管道配置文件都必须以– pipelineconfig 结尾，才能与打印 XPS 的 Windows 桌面应用程序兼容。
+打印筛选器管道配置文件的格式不相同。 建议的命名约定： vv &lt; PDL &gt;-pipelineconfig.xml，其中 vv 是制造商代码的占位符。 示例 fapcl6-pipelineconfig.xml。 所有打印筛选器管道配置文件都必须以– pipelineconfig.xml 结尾，才能与打印 XPS 的 Windows 桌面应用程序兼容。
 
 ## <a name="ihv-rendering-filter"></a>IHV 呈现筛选器
 
@@ -41,8 +41,8 @@ V4 打印机驱动程序模型的呈现体系结构与 XPSDrv 体系结构相同
 **建议的输出类型：** IPrintWriteStream.
 完成此筛选器后，设备 PDL 应作为流输出。
 
-**建议的命名约定：** 使用 vv&lt;PDL&gt;.dll。
-其中，vv 是制造商代码的占位符。 示例：用于 Fabrikam 提供的 PostScript 呈现器的 faps。
+**建议的命名约定：** 使用 vv &lt; PDL &gt; .dll。
+其中，vv 是制造商代码的占位符。 示例：为 Fabrikam 提供的 PostScript 呈现器 faps.dll。
 
 在没有任何呈现筛选器的情况下，可能会支持能够将 XPS 作为 PDL 使用的设备。 但是，某些设备可能需要 Printticket，它们无法与 Microsoft 标准 UI 一起使用。 在这些情况下，Microsoft 建议你应在 XPS 呈现筛选器中转换为与设备兼容的 PrintTicket。 这可确保与标准用户界面和设备的兼容性最佳。
 
@@ -60,11 +60,8 @@ IHV 功能筛选器支持处理多个功能，例如，对多个功能进行预�
 ## <a name="color-management"></a>颜色管理
 
 
-V4 打印驱动程序支持颜色管理。 驱动程序应包括[Windows 颜色系统](https://docs.microsoft.com/windows-hardware/drivers/ddi/_print/index)（WCS）兼容颜色配置文件或国际颜色联合会（ICC）颜色配置文件。 V4 打印驱动程序还可以对特定于设备的颜色表使用驱动程序属性包。
+V4 打印驱动程序支持颜色管理。 驱动程序应包括 [Windows 颜色系统](/windows-hardware/drivers/ddi/_print/index) (WCS) 兼容颜色配置文件或国际颜色协会 (ICC) 颜色配置文件。 V4 打印驱动程序还可以对特定于设备的颜色表使用驱动程序属性包。
 
 ## <a name="related-topics"></a>相关主题
-[V4 打印机驱动程序呈现](v4-driver-rendering.md)  
-[Windows 颜色系统](https://docs.microsoft.com/windows-hardware/drivers/ddi/_print/index)  
-
-
-
+[V4 打印机驱动程序渲染](v4-driver-rendering.md)  
+[Windows 颜色系统](/windows-hardware/drivers/ddi/_print/index)

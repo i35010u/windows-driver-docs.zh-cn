@@ -1,47 +1,47 @@
 ---
 title: WDI_TLV_SET_CIPHER_KEY_INFO
-description: WDI_TLV_SET_CIPHER_KEY_INFO 是包含密码密钥映射的密钥信息 OID_WDI_SET_ADD_CIPHER_KEYS TLV。
+description: WDI_TLV_SET_CIPHER_KEY_INFO 是一种 TLV，其中包含 OID_WDI_SET_ADD_CIPHER_KEYS 的密码密钥映射关键信息。
 ms.assetid: 6352284A-73CD-4B15-A057-80D0C8518CD5
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 WDI_TLV_SET_CIPHER_KEY_INFO 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 3ac92b441083f133307f09eafbbe81d14409a9d9
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 53fc44038057b810948fd84b76102bb71bdb0423
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67362817"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89212683"
 ---
-# <a name="wditlvsetcipherkeyinfo"></a>WDI\_TLV\_SET\_CIPHER\_KEY\_INFO
+# <a name="wdi_tlv_set_cipher_key_info"></a>WDI \_ TLV \_ 设置 \_ 密码 \_ 密钥 \_ 信息
 
 
-WDI\_TLV\_设置\_密码\_密钥\_信息是包含密码的密钥映射键信息 TLV [OID\_WDI\_设置\_添加\_密码\_密钥](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wdi-set-add-cipher-keys)。
+WDI \_ tlv \_ 设置 \_ 密码 \_ 密钥 \_ 信息是一个 TLV，其中包含 OID 的密码密钥映射关键信息 [ \_ WDI \_ 设置 \_ 添加 \_ 密码 \_ 密钥](./oid-wdi-set-add-cipher-keys.md)。
 
 ## <a name="tlv-type"></a>TLV 类型
 
 
 0x52
 
-## <a name="length"></a>长度
+## <a name="length"></a>Length
 
 
-所有的大小 （以字节为单位） 总和包含 TLVs。
+Sum (包含所有 TLVs 的大小的) 字节。
 
 ## <a name="values"></a>值
 
 
-| 在任务栏的搜索框中键入                                                                                                 | 允许多个 TLV 实例 | 可选 | 描述                                                                                                                                                                                                                                                                                                                                                       |
+| 类型                                                                                                 | 允许多个 TLV 实例 | 可选 | 说明                                                                                                                                                                                                                                                                                                                                                       |
 |------------------------------------------------------------------------------------------------------|--------------------------------|----------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [**WDI\_TLV\_对等方\_MAC\_地址**](wdi-tlv-peer-mac-address.md)                                     |                                | X        | 指定此密钥与之关联的对等方的 MAC 地址。 如果不存在，则假设这是默认密钥。 在至少一个对等的 MAC 地址或密码密钥 ID 必须存在。 此字段必须的存在时的密钥类型设置为 WDI\_密码\_密钥\_类型\_PAIRWISE\_键，并且可能的存在时的密钥类型设置为 WDI\_密码\_密钥\_类型\_组\_密钥。 |
-| [**WDI\_TLV\_CIPHER\_KEY\_ID**](wdi-tlv-cipher-key-id.md)                                           |                                | X        | 指定此加密密钥的 ID。 在至少一个对等的 MAC 地址或密码密钥 ID 必须存在。 此字段不需要的成对密钥。                                                                                                                                                                                                            |
-| [**WDI\_TLV\_CIPHER\_KEY\_TYPE\_INFO**](wdi-tlv-cipher-key-type-info.md)                            |                                |          | 指定的密码密钥类型信息。                                                                                                                                                                                                                                                                                                                        |
-| [**WDI\_TLV\_CIPHER\_KEY\_RECEIVE\_SEQUENCE\_COUNT**](wdi-tlv-cipher-key-receive-sequence-count.md) |                                | X        | 指定初始 48 位值的数据包数 (PN)，用于进行重播保护。 这是可选的密码算法是否 WDI\_密码\_ALGO\_WEP40、 WDI\_密码\_ALGO\_WEP104 或 WDI\_密码\_ALGO\_WEP。                                                                                                                                        |
-| [**WDI\_TLV\_CIPHER\_KEY\_CCMP\_KEY**](wdi-tlv-cipher-key-ccmp-key.md)                              |                                | X        | 指定的密码算法的 CCMP 数据。 这只会出现，如果密码算法是 WDI\_密码\_ALGO\_CCMP。                                                                                                                                                                                                                                            |
-| [**WDI\_TLV\_密码\_密钥\_TKIP\_信息**](wdi-tlv-cipher-key-tkip-info.md)                            |                                | X        | 指定 TKIP 信息。 这只会出现，如果密码算法是 WDI\_密码\_ALGO\_TKIP。                                                                                                                                                                                                                                                          |
-| [**WDI\_TLV\_CIPHER\_KEY\_BIP\_KEY**](wdi-tlv-cipher-key-bip-key.md)                                |                                | X        | 指定 BIP 键。 这只会出现，如果密码算法是 WDI\_密码\_ALGO\_BIP。                                                                                                                                                                                                                                                                    |
-| [**WDI\_TLV\_CIPHER\_KEY\_WEP\_KEY**](wdi-tlv-cipher-key-wep-key.md)                                |                                | X        | 指定的 WEP 密钥。 这只会出现，如果密码算法是 WDI\_密码\_ALGO\_WEP40、 WDI\_密码\_ALGO\_WEP104 或 WDI\_密码\_ALGO\_WEP。                                                                                                                                                                                                            |
-| [**WDI\_TLV\_CIPHER\_KEY\_IHV\_KEY**](wdi-tlv-cipher-key-ihv-key.md)                                |                                | X        | 指定 IHV 密码密钥。 如果这是仅存在[ **WDI\_TLV\_密码\_密钥\_类型\_信息**](wdi-tlv-cipher-key-type-info.md)处于范围内 WDI\_密码\_ALGO\_IHV\_启动到 WDI\_密码\_ALGO\_IHV\_结束。                                                                                                                                                     |
+| [**WDI \_ TLV \_ 对等 \_ MAC \_ 地址**](wdi-tlv-peer-mac-address.md)                                     |                                | X        | 指定与此密钥关联的对等节点的 MAC 地址。 如果不存在，则假定这是默认键。 至少必须存在一个对等 MAC 地址或密码密钥 ID。 当键类型设置为 WDI \_ 密码 \_ 键类型成对键时，必须存在此字段 \_ \_ \_ ，并且当键类型设置为 WDI \_ 密码 \_ 键 \_ 类型 \_ 组 \_ 键时，可以存在此字段。 |
+| [**WDI \_ TLV \_ 密码 \_ 密钥 \_ ID**](wdi-tlv-cipher-key-id.md)                                           |                                | X        | 指定此密码密钥的 ID。 至少必须存在一个对等 MAC 地址或密码密钥 ID。 对于成对键，此字段不是必需的。                                                                                                                                                                                                            |
+| [**WDI \_ TLV \_ 密码 \_ 密钥 \_ 类型 \_ 信息**](wdi-tlv-cipher-key-type-info.md)                            |                                |          | 指定密码密钥类型信息。                                                                                                                                                                                                                                                                                                                        |
+| [**WDI \_ TLV \_ 密码 \_ 密钥 \_ 接收 \_ 序列 \_ 计数**](wdi-tlv-cipher-key-receive-sequence-count.md) |                                | X        | 指定 (PN) 的数据包编号的初始48位值，用于重放保护。 如果密码算法为 WDI \_ 密码 \_ 算法 \_ WEP40、WDI \_ 密码 \_ 算法 \_ WEP104 或 WDI \_ 密码 \_ 算法 \_ WEP，则这是可选的。                                                                                                                                        |
+| [**WDI \_ TLV \_ 密码 \_ 密钥 \_ CCMP 报头 \_ 密钥**](wdi-tlv-cipher-key-ccmp-key.md)                              |                                | X        | 指定 CCMP 报头密码算法密钥数据。 仅当密码算法为 WDI \_ cipher 算法 ccmp 报头时，才会出现这种情况 \_ \_ 。                                                                                                                                                                                                                                            |
+| [**WDI \_ TLV \_ 密码 \_ 密钥 \_ TKIP \_ 信息**](wdi-tlv-cipher-key-tkip-info.md)                            |                                | X        | 指定 TKIP 信息。 仅当密码算法为 WDI \_ cipher 算法 TKIP 时才会出现这种情况 \_ \_ 。                                                                                                                                                                                                                                                          |
+| [**WDI \_ TLV \_ 密码 \_ 密钥 \_ BIP \_ 密钥**](wdi-tlv-cipher-key-bip-key.md)                                |                                | X        | 指定 BIP 键。 仅当密码算法为 WDI \_ cipher 算法 BIP 时，才会出现这种情况 \_ \_ 。                                                                                                                                                                                                                                                                    |
+| [**WDI \_ TLV \_ 密码 \_ 密钥 \_ WEP \_ 密钥**](wdi-tlv-cipher-key-wep-key.md)                                |                                | X        | 指定 WEP 密钥。 仅当密码算法为 WDI \_ cipher \_ 算法 \_ WEP40、WDI \_ 密码 \_ 算法 \_ WEP104 或 WDI \_ 密码 \_ 算法 \_ WEP 时才会出现这种情况。                                                                                                                                                                                                            |
+| [**WDI \_ TLV \_ 密码 \_ 密钥 \_ IHV \_ 密钥**](wdi-tlv-cipher-key-ihv-key.md)                                |                                | X        | 指定 IHV 密码密钥。 仅当 [**WDI \_ TLV \_ 密码 \_ 密钥 \_ 类型 \_ 信息**](wdi-tlv-cipher-key-type-info.md) 在 WDI \_ cipher \_ 算法 \_ ihv \_ 开始到 WDI \_ 密码 \_ 算法 \_ ihv \_ 结束范围内时才会出现这种情况。                                                                                                                                                     |
 
  
 
@@ -63,16 +63,11 @@ WDI\_TLV\_设置\_密码\_密钥\_信息是包含密码的密钥映射键信息 
 <td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
-<td><p>Header</p></td>
+<td><p>标头</p></td>
 <td>Wditypes.hpp</td>
 </tr>
 </tbody>
 </table>
 
  
-
- 
-
-
-
 

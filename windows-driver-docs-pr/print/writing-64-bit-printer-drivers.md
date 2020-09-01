@@ -7,16 +7,16 @@ keywords:
 - 64位 WDK 打印机
 ms.date: 08/25/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: cf731292ae5a10a34a5511dda4921bc75348dd58
-ms.sourcegitcommit: d9a9925f790271f4ca2c8377d551d96e8d1e62c7
+ms.openlocfilehash: 1b5696bbfaef794d78bdd123b780acf6b276c72d
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88850292"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89211857"
 ---
 # <a name="writing-64-bit-printer-drivers"></a>写 64 位打印机驱动程序
 
-如果你编写的是64位驱动程序或编写可编译为在32位和64位系统上运行的驱动程序，请遵循将 [驱动程序移植到64位 Windows](https://docs.microsoft.com/windows-hardware/drivers/kernel/porting-your-driver-to-64-bit-windows)中的64位移植指导原则。 本主题介绍编写64位打印机驱动程序时可能遇到的一些限制和问题。
+如果你编写的是64位驱动程序或编写可编译为在32位和64位系统上运行的驱动程序，请遵循将 [驱动程序移植到64位 Windows](../kernel/porting-your-driver-to-64-bit-windows.md)中的64位移植指导原则。 本主题介绍编写64位打印机驱动程序时可能遇到的一些限制和问题。
 
 有关使用修饰来识别64位体系结构的详细信息，请参阅以下主题：
 
@@ -34,7 +34,7 @@ ms.locfileid: "88850292"
 
 相反，将指针强制转换为类型 DWORD \_ ptr 或 ULONG \_ ptr。 类型为 DWORD \_ ptr 或 ULONG ptr 的无符号整数 \_ 始终足够大以存储整个指针，无论代码是针对32位计算机还是64位计算机编译的。
 
-例如， [**OEMCUIPPARAM**](https://docs.microsoft.com/windows-hardware/drivers/ddi/printoem/ns-printoem-_oemcuipparam) 结构中的 pDrvOptItems 指针字段的类型为 ULONG \_ PTR。 下面的代码示例演示了将64位指针值复制到此字段时不会执行的操作。
+例如， [**OEMCUIPPARAM**](/windows-hardware/drivers/ddi/printoem/ns-printoem-_oemcuipparam) 结构中的 pDrvOptItems 指针字段的类型为 ULONG \_ PTR。 下面的代码示例演示了将64位指针值复制到此字段时不会执行的操作。
 
 ```cpp
 PUSERDATA pData;
@@ -70,4 +70,4 @@ ulSlotPhysAddr[0] = PtrToUlong(pulPhysHWBuffer) + HW_BUFFER_SIZE;  // correct
 ulSlotPhysAddr
 ```
 
-可能表示仅32位长而不是64位的硬件寄存器的值。 有关在指针和整数类型之间进行转换的所有新的 Win64 helper 函数的列表，请参阅 [新的数据类型](https://docs.microsoft.com/windows-hardware/drivers/kernel/the-new-data-types)。
+可能表示仅32位长而不是64位的硬件寄存器的值。 有关在指针和整数类型之间进行转换的所有新的 Win64 helper 函数的列表，请参阅 [新的数据类型](../kernel/the-new-data-types.md)。

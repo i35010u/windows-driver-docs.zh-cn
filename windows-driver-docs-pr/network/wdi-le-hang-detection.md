@@ -1,74 +1,67 @@
 ---
 title: LE 挂起检测
-description: 本部分介绍在 WDI LE 挂起检测
+description: 本部分介绍 WDI 中的 LE 挂起检测
 ms.assetid: 9C0BB4B8-184A-4C1A-8B47-C30C8318AEEB
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 20f1394815cd92f83a924e15bdd808b1f9c7474c
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 6ba9c1869ed577ec7be205e152ed90726a86a703
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67387216"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89211541"
 ---
 # <a name="le-hang-detection"></a>LE 挂起检测
 
 
-某些固件具有可以检测到固件挂起监视计时器。 一些 IHV 驱动程序 (LE) 具有逻辑来检测固件都没有建立向前推进。 UE 允许 LE 以指示这种情况。
+某些固件具有可检测到固件挂起的监视器计时器。  (LE) 的一些 IHV 驱动程序具有逻辑来检测固件是否不会进行转发。 该 UE 允许 LE 指明此类条件。
 
-指示应在适配器端口上 (例如，portid = 0xFFFF)。 指示默认情况下触发 LE 若要执行完全重置恢复过程-调用诊断、 收集调试信息，并请求 PLDR。
+指示应位于适配器端口 (例如，portid = 0xFFFF) 。 默认情况下，指示会触发 LE 执行完整的重置恢复过程，调用诊断，收集调试信息，并请求 PLDR。
 
-LE 或固件监视计时器检测到固件停止时，从 UE 期望很，如下所示。
+当 LE 或固件监视程序计时器检测到固件停止时，UE 的期望如下所示。
 
-1.  如果在 D0，
-    1.  指示 LE [NDIS\_状态\_WDI\_指示\_固件\_STALLED](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-wdi-indication-firmware-stalled)。
-    2.  在从指示返回时，LE 返回 （如果有） 已停止的 WDI 命令。
-    3.  UE 启动重置恢复 (RR) 过程。
+1.  如果为 D0，
+    1.  该 LE 指示 [NDIS \_ 状态 \_ WDI \_ 指示 \_ 固件已 \_ 停止](./ndis-status-wdi-indication-firmware-stalled.md)。
+    2.  在从指示返回时，LE 返回 (如果任何) 停止 WDI 命令。
+    3.  UE) 过程开始重置恢复 (RR。
 
-2.  如果在 Dx，才会发生此与检测到的固件停滞。
+2.  如果在 Dx 中，这种情况只能在固件检测到延迟时进行。
     1.  固件引发唤醒中断。
-    2.  在接收到 D0 命令，指示唤醒原因的固件停止的原因。
-    3.  返回 D0 WDI OID 后, LE 指示[NDIS\_状态\_WDI\_指示\_固件\_STALLED](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-wdi-indication-firmware-stalled)。
-    4.  完成 D0 中的过程：1a、 1b 和 1c。
+    2.  收到 D0 命令后，指示固件停止的原因的唤醒原因。
+    3.  返回 D0 WDI OID 后，LE 指示 [NDIS \_ 状态 \_ WDI \_ 指示 \_ 固件 \_ 停止](./ndis-status-wdi-indication-firmware-stalled.md)。
+    4.  以 D0：1a、1b 和1c 的形式完成该过程。
 
 ![wdi le 挂起检测](images/wdi-le-hang-detection-flow.png)
 
-## <a name="hang-detection-in-dx"></a>挂起检测 Dx 中
+## <a name="hang-detection-in-dx"></a>Dx 中的挂起检测
 
 
-很可能固件停止 Dx 中的进度。 在这种情况下，Dx 是 D3Hot PCIe nic 和 USB 和 SDIO D2。 NIC 的知识来唤醒和预期自主，维护访问点关联，也可以扫描 NLO 如果未关联。
+此固件可能会在 Dx 停止进度。 在这种情况下，Dx D3Hot 用于 PCIe NIC，D2 适用于 USB 和 SDIO。 NIC 有权唤醒，并应自主维护访问点关联，或扫描 NLO （如果没有关联）。
 
-Dx NIC 时，由于总线可能是在关闭状态被阻塞到该主机通信。 因此，LE 不能够检测到已停止的固件。 固件本身已检测的条件并引发唤醒行 （如果唤醒一部分代码是仍保持活动状态） 将堆栈到 D0 间接通过 ACPI 或总线完成、 NDIS 等待\_唤醒\_irp。 因此，NDIS D0 设置到 nic。
+如果 NIC 位于 Dx，则会阻止与主机的通信，因为总线可能处于关机状态。 因此，该 LE 无法检测到停止固件。 如果代码的唤醒部分仍处于活动状态，则固件本身必须检测条件并引发唤醒行 () 将堆栈通过 ACPI 或总线正在完成的方式间接引入 D0，NDIS 等待 \_ 唤醒 \_ irp。 因此，NDIS 会将 D0 设置为 NIC。
 
-固件断言唤醒为此类情况。 LE 应指示固件停滞唤醒原因。 唤醒原因**WDI\_唤醒\_原因\_代码\_固件\_STALLED**定义为与其他唤醒原因枚举。
+固件断言会唤醒此类条件。 该 LE 应指示固件延迟的唤醒原因。 唤醒原因 **WDI \_ 唤醒 \_ 原因 \_ 代码 \_ 固件 \_ 停止** 定义为具有其他唤醒原因的枚举。
 
-对于重置恢复，以便在此方案中，至少两个部分的固件必须仍正常工作。
+若要在此方案中使用重置恢复，至少有两部分固件仍可正常工作。
 
 1.  挂起检测代码。
-2.  要断言唤醒中断的代码。
+2.  用于断言唤醒中断的代码。
 
-如果缺乏两者中任何一个，在主机端不知道如果固件将停止，RR，不会发生。 这种情况下不是设计目标的一部分。
+如果没有任何一个，则主机端不知道固件是否已停止，并且不会发生 RR。 此方案不是设计目标的一部分。
 
-![在 dx wdi 挂起检测](images/wdi-hang-detection-dx.png)
+![dx 中的 wdi 挂起检测](images/wdi-hang-detection-dx.png)
 
 ## <a name="os-module-triggered-reset-recovery"></a>OS 模块触发重置恢复
 
 
-这是信息性 ihv。 除了 UE 和 LE 检测到挂起，其他操作系统组件可能检测到挂起和/或触发 UE 调用重置恢复过程。 目前，Windows 10 中的用户模式 wlansvc 组件可能会请求重置恢复到 UE 时它检测 Internet 连接的连接并随后将失去访问而无需一段时间的解除关联的 DNS 服务器的能力。 将来，Microsoft 可能会发现其他用例附加到触发器重置的恢复，以增强最终用户体验。
+这是针对 Ihv 的信息。 除了检测到 UE 和 LE 挂起以外，其他 OS 组件还可能检测到挂起，并/或触发 UE 来调用重置恢复过程。 目前，Windows 10 中的 user mode wlansvc 组件在检测到与 Internet 连接的连接后，可能会请求将重置恢复到 UE，并在一段时间内失去对 DNS 服务器的访问权限。 将来，Microsoft 可能会发现触发重置恢复以增强最终用户体验的其他案例。
 
 ## <a name="related-topics"></a>相关主题
 
 
-[NDIS\_状态\_WDI\_指示\_固件\_STALLED](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-wdi-indication-firmware-stalled)
+[NDIS \_ 状态 \_ WDI \_ 指示 \_ 固件 \_ 停止](./ndis-status-wdi-indication-firmware-stalled.md)
 
-[**WDI\_TLV\_INDICATION\_WAKE\_REASON**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-indication-wake-reason)
-
- 
+[**WDI \_ TLV \_ 指示 \_ 唤醒 \_ 原因**](./wdi-tlv-indication-wake-reason.md)
 
  
-
-
-
-
-
 

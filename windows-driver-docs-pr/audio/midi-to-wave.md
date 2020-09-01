@@ -3,23 +3,23 @@ title: MIDI 到 Wave
 description: MIDI 到 Wave
 ms.assetid: 0c69ce48-ded0-44b8-9d34-20decb75058e
 keywords:
-- 合成器 WDK 音频、 MIDI 批转换
-- MIDI 批转换 WDK 音频
-- 批流 WDK 音频
-- 自定义 synths WDK 音频、 MIDI 批转换
-- 用户模式下 synths WDK 音频、 MIDI 批转换
-- 转换为批的 MIDI
-- DirectMusic WDK 音频、 MIDI 批转换
-- 在用户模式 WDK 音频、 MIDI 批转换的自定义呈现
-- DirectMusic 自定义呈现 WDK 音频、 MIDI 批转换
+- 合成 WDK 音频，MIDI 到 wave 转换
+- MIDI 到 wave 转换 WDK 音频
+- 波形流 WDK 音频
+- 自定义 synths WDK 音频，MIDI 到 wave 转换
+- 用户模式 synths WDK 音频，MIDI 到 wave 转换
+- 将 MIDI 转换为波形
+- DirectMusic WDK 音频，MIDI 到 wave 转换
+- 用户模式下的自定义呈现 WDK 音频，MIDI 到 wave 转换
+- DirectMusic 自定义呈现 WDK 音频，MIDI 到 wave 转换
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b861dd4ac2c7ad1cd3c6c316d92b9d62415a6b60
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: e02e62d4ef41e69e59ecd4b8e272ab4185d75f7f
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67355352"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89211381"
 ---
 # <a name="midi-to-wave"></a>MIDI 到 Wave
 
@@ -31,22 +31,17 @@ ms.locfileid: "67355352"
 
 -   获取 MIDI 消息
 
--   混合到波形音频流的呈现的说明
+-   将渲染的注释混合到波形音频流
 
-本部分详述了通常如何做到这一点在用户模式下，尽管概念实质上是在内核模式中相同。 请参阅[内核模式下的硬件加速 DDI](kernel-mode-hardware-acceleration-ddi.md)有关如何执行同样的内核模式微型端口驱动程序的详细信息。
+本节详细介绍了如何在用户模式下完成此操作，尽管概念在内核模式中本质上是相同的。 有关如何使用内核模式微型端口驱动程序执行相同操作的详细信息，请参阅 [内核模式硬件加速 DDI](kernel-mode-hardware-acceleration-ddi.md) 。
 
-在用户模式下，应用程序调用[ **IDirectMusicSynth::PlayBuffer** ](https://docs.microsoft.com/windows/desktop/api/dmusics/nf-dmusics-idirectmusicsynth-playbuffer)时它已准备好播放 MIDI 消息。 应用程序负责调用**PlayBuffer**及时和时间戳缓冲区正确，采用[合成器延迟](synthesizer-latency.md)到帐户。 此方法的实现检索等待消息，并将其存储在基于引用时间随缓冲区传递一个时间戳的内部格式。
+在用户模式下，应用程序会在具有可供播放的 MIDI 消息时调用 [**IDirectMusicSynth：:P laybuffer**](/windows/desktop/api/dmusics/nf-dmusics-idirectmusicsynth-playbuffer) 。 应用程序负责及时调用 **PlayBuffer** ，并正确地记下缓冲区的时间，从而考虑到 [合成器滞后](synthesizer-latency.md) 时间。 此方法的实现会检索正在等待的消息，并将其存储为内部格式，该格式使用基于与缓冲区传入的引用时间的时间进行标记。
 
-批接收器调用[ **IDirectMusicSynth::Render** ](https://docs.microsoft.com/windows/desktop/api/dmusics/nf-dmusics-idirectmusicsynth-render)每当它已准备好接收数据。 例如，如果对已呈现数据的目标是 DirectSound 辅助缓冲区的实现[ **IDirectMusicSynthSink::Activate** ](https://docs.microsoft.com/windows/desktop/api/dmusics/nf-dmusics-idirectmusicsynthsink-activate)可能设置了线程等待 DirectSound**PlayBuffer**通知。 DirectSound DirectSound 缓冲区需要的数据，当通知线程，这又会调用**呈现**，并传入一个指向**IDirectSoundBuffer** （Microsoft Windows SDK 中所述的对象文档） 和的数量和位置的示例的呈现。
+每当波形接收器准备好接收数据时，就会调用 [**IDirectMusicSynth：： Render**](/windows/desktop/api/dmusics/nf-dmusics-idirectmusicsynth-render) 。 例如，如果呈现的数据的目标是 DirectSound 的辅助缓冲区，则 [**IDirectMusicSynthSink：： Activate**](/windows/desktop/api/dmusics/nf-dmusics-idirectmusicsynthsink-activate) 的实现可能会设置一个线程，该线程将等待 DirectSound **PlayBuffer** 通知。 当 DirectSound 缓冲区需要数据时，DirectSound 会通知线程，该线程又调用了 **Render**，并传入指向 **IDirectSoundBuffer** 对象的指针 (在 Microsoft Windows SDK 文档) 以及要呈现的样本的数量和位置。
 
-DirectSound 缓冲区为圆形。 由于自动换行发生在缓冲区的末尾，可能会拆分成两部分的几乎相连区域必须考虑在内。 批接收器通常会通过调用处理拆分**呈现**两次，一次的每一部分 DirectSound 的锁定部分缓冲，以便**呈现**方法仅有要处理的连续块内存。 批接收器调用**IDirectSoundBuffer::Lock**对 DirectSound 缓冲区寻求缓冲区内的区域的写入权限。 例如，如果批接收器调用**锁**然后开始从缓冲区末尾的 1 千字节的数据的 2 千字节，在调用锁定缓冲区和缓冲区的开头处开始的另一个 1 千字节结束之前，最后一个 1 千字节。 在这种情况下，**锁**实际返回的两个指针和对应的长度，一起描述缓冲区已锁定的区域。 保证每个指针指向内存的连续块。
+DirectSound 缓冲区是循环的。 由于环绕发生在缓冲区的末尾，因此必须将几乎连续区域拆分为两个部分。 通常，波形接收器通过两次调用 **Render** 来处理拆分，一次针对 DirectSound 缓冲区的锁定部分的每个部分，因此 **Render** 方法只需要处理连续的内存块。 波形接收器调用 DirectSound 缓冲区上的 **IDirectSoundBuffer：： Lock** 来请求对缓冲区内某个区域的写入权限。 例如，如果波形接收器在从缓冲区末尾开始 1 kb 的 2 kb 的数据上调用 **锁** ，则调用会将最后 1 kb 锁定到缓冲区的末尾，并从缓冲区的开头开始另一个 1 kb。 在这种情况下， **Lock** 实际上返回两个指针和相应的长度，它们共同描述锁定的缓冲区区域。 每个指针都一定指向连续的内存块。
 
-实现**呈现**方法负责确定在响应中检索的 MIDI 消息中必须做什么**PlayBuffer**。 从*dwLength*参数值的连续调用**呈现**，该方法可以跟踪的采样时间和当前的呈现时间是有效的邮件执行操作。 注意在消息处理时，可以在内部存储并再次呈现在每次传递通过方法直到收到相应 note off 消息说明。
-
- 
+**Render**方法的实现负责确定必须执行哪些操作才能响应**PlayBuffer**中检索到的 MIDI 消息。 从连续调用到**Render**的*dwLength*参数值，方法可以跟踪采样时间，并对当前呈现期间内有效的消息执行操作。 处理注释消息时，可以在内部存储注释并在每次通过方法时再次呈现注释，直到收到相应的附注消息。
 
  
-
-
-
 

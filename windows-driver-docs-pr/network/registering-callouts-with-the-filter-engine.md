@@ -9,17 +9,17 @@ keywords:
 - 注册标注 WDK Windows 筛选平台
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 34f70e1e059a685845fbcbd394cd55a808cd9927
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: bc64928542df427f8b26a4762db913c01f7e1717
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72842081"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89212011"
 ---
 # <a name="registering-callouts-with-the-filter-engine"></a>将标注注册到筛选器引擎
 
 
-标注驱动程序创建设备对象后，它可以使用筛选器引擎注册其标注。 标注驱动程序可以随时使用筛选器引擎注册其标注，即使筛选器引擎当前未运行也是如此。 若要使用筛选器引擎注册标注，标注驱动程序将调用[**FwpsCalloutRegister0**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fwpsk/nf-fwpsk-fwpscalloutregister0)函数。 例如：
+标注驱动程序创建设备对象后，它可以使用筛选器引擎注册其标注。 标注驱动程序可以随时使用筛选器引擎注册其标注，即使筛选器引擎当前未运行也是如此。 若要使用筛选器引擎注册标注，标注驱动程序将调用 [**FwpsCalloutRegister0**](/windows-hardware/drivers/ddi/fwpsk/nf-fwpsk-fwpscalloutregister0) 函数。 例如：
 
 ```C++
 // Prototypes for the callout's callout functions
@@ -84,21 +84,14 @@ NTSTATUS
 }
 ```
 
-如果对[**FwpsCalloutRegister0**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fwpsk/nf-fwpsk-fwpscalloutregister0)函数的调用成功，则最后一个参数指向的变量将包含该标注的运行时标识符。 此运行时标识符对应于为标注键指定的 GUID。
+如果对 [**FwpsCalloutRegister0**](/windows-hardware/drivers/ddi/fwpsk/nf-fwpsk-fwpscalloutregister0) 函数的调用成功，则最后一个参数指向的变量将包含该标注的运行时标识符。 此运行时标识符对应于为标注键指定的 GUID。
 
-单个标注驱动程序可以实现多个标注。 如果标注驱动程序实现了多个标注，则它会对每个标注调用[**FwpsCalloutRegister0**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fwpsk/nf-fwpsk-fwpscalloutregister0)函数，以便为每个标注注册筛选器引擎。
+单个标注驱动程序可以实现多个标注。 如果标注驱动程序实现了多个标注，则它会对每个标注调用 [**FwpsCalloutRegister0**](/windows-hardware/drivers/ddi/fwpsk/nf-fwpsk-fwpscalloutregister0) 函数，以便为每个标注注册筛选器引擎。
 
 ## <a name="related-topics"></a>相关主题
 
 
-[classifyFn](https://docs.microsoft.com/windows-hardware/drivers/ddi/_netvista/)
+[classifyFn](/windows-hardware/drivers/ddi/_netvista/)
 
  
-
- 
-
-
-
-
-
 

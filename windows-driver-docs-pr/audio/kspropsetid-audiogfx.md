@@ -1,39 +1,33 @@
 ---
-title: KSPROPSETID\_AudioGfx
-description: KSPROPSETID\_AudioGfx
+title: KSPROPSETID \_ AudioGfx
+description: KSPROPSETID \_ AudioGfx
 ms.assetid: f872a5bb-6ab5-4f1e-b81b-86ba744b2d6e
 keywords:
 - KSPROPSETID_AudioGfx
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5c0515e19bab81b74793c25095735b2b68447e09
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 9210682dc8e6930494fc9a36a9bd92c975d1ed07
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67354320"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89211473"
 ---
-# <a name="kspropsetidaudiogfx"></a>KSPROPSETID\_AudioGfx
+# <a name="kspropsetid_audiogfx"></a>KSPROPSETID \_ AudioGfx
 
 
 ## <span id="ddk_kspropsetid_audiogfx_ks"></span><span id="DDK_KSPROPSETID_AUDIOGFX_KS"></span>
 
 
-`KSPROPSETID_AudioGfx`属性集用来通知 GFX 筛选器的设备用于呈现和捕获的音频设备的 Id。 以 null 结尾的 Unicode 字符串的窗体中指定 ID 的设备 (请参阅[设备标识字符串](https://docs.microsoft.com/windows-hardware/drivers/install/device-identification-strings))。
+`KSPROPSETID_AudioGfx`属性集用于通知 GFX 筛选器，这些筛选器用于呈现和捕获音频设备的设备 id。 以 null 终止的 Unicode 字符串形式指定了设备 ID (参阅) 的 [设备标识字符串](../install/device-identification-strings.md) 。
 
-在此集中的属性项由 KSPROPERTY\_AUDIOGFX 枚举值。
+此集中的属性项由 KSPROPERTY \_ AUDIOGFX 枚举值指定。
 
-以下属性属于`KSPROPSETID_AudioGfx`属性集：
+以下属性是属性集的一部分 `KSPROPSETID_AudioGfx` ：
 
-[**KSPROPERTY\_AUDIOGFX\_CAPTURETARGETDEVICEID**](ksproperty-audiogfx-capturetargetdeviceid.md)
+[**KSPROPERTY \_ AUDIOGFX \_ CAPTURETARGETDEVICEID**](ksproperty-audiogfx-capturetargetdeviceid.md)
 
-[**KSPROPERTY\_AUDIOGFX\_RENDERTARGETDEVICEID**](ksproperty-audiogfx-rendertargetdeviceid.md)
-
- 
+[**KSPROPERTY \_ AUDIOGFX \_ RENDERTARGETDEVICEID**](ksproperty-audiogfx-rendertargetdeviceid.md)
 
  
-
-
-
-
 

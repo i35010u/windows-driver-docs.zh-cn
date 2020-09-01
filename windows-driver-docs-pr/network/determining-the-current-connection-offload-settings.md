@@ -3,16 +3,16 @@ title: 确定当前的连接卸载设置
 description: 确定当前的连接卸载设置
 ms.assetid: aca377ae-c56b-4f84-8165-4b084bfa9938
 keywords:
-- 连接将卸载 WDK TCP/IP 传输，当前设置
-- 当前连接的卸载的设置 WDK TCP/IP 卸载
+- 连接卸载 WDK TCP/IP 传输，当前设置
+- 当前连接卸载设置 WDK TCP/IP 卸载
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c2b11a46fa7702715d332ded4994644ac21770f7
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: bc015bd0900bfea28b4471f18f2e59a3f989db1d
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67353353"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89212935"
 ---
 # <a name="determining-the-current-connection-offload-settings"></a>确定当前的连接卸载设置
 
@@ -20,15 +20,9 @@ ms.locfileid: "67353353"
 
 
 
-协议驱动程序可以获取连接卸载服务使用的对象标识符 (OID) 请求。
+协议驱动程序可以使用对象标识符 (OID) 请求获取连接卸载服务。
 
-若要获取当前连接的网络接口卡 (NIC) 的卸载设置，协议驱动程序可以查询[OID\_TCP\_连接\_卸载\_参数](https://docs.microsoft.com/windows-hardware/drivers/network/oid-tcp-connection-offload-parameters)OID。
-
- 
+若要获取网络接口卡的当前连接卸载设置 (NIC) ，协议驱动程序可以查询 [oid \_ TCP \_ 连接 \_ 卸载 \_ 参数](./oid-tcp-connection-offload-parameters.md) OID。
 
  
-
-
-
-
 

@@ -12,16 +12,16 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: b9ec2838ea485a2cf5e344e6ead4b7886d748084
-ms.sourcegitcommit: 8596782b07c8a71adf38fc2c2da68b75ba0a1259
+ms.openlocfilehash: eb9cf483edaa82665d9647dc7394052e5cb813ab
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85593917"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89211305"
 ---
 # <a name="ndiskdnetreport"></a>!ndiskd.netreport
 
-**！ Ndiskd netreport**扩展生成整个网络堆栈的视觉报表。 报表 **！ ndiskd**将生成一个 HTML 文件，它将为你显示指向其位置的链接。 该 HTML 文件包含有关网络堆栈的详细信息，因此，如果需要共享它进行分析，可以通过电子邮件发送该文件，而无需发送大型故障转储文件。
+**！ Ndiskd netreport**扩展生成整个网络堆栈的视觉报表。 报表 **！ ndiskd** 将生成一个 HTML 文件，它将为你显示指向其位置的链接。 该 HTML 文件包含有关网络堆栈的详细信息，因此，如果需要共享它进行分析，可以通过电子邮件发送该文件，而无需发送大型故障转储文件。
 
 ```console
 !ndiskd.netreport [-outputpath <str>] [-jsononly] 
@@ -41,7 +41,7 @@ Ndiskd.dll
 
 ### <a name="examples"></a>示例
 
-运行 **！ ndiskd. netreport**扩展以绘制网络堆栈的方框关系图。
+运行 **！ ndiskd. netreport** 扩展以绘制网络堆栈的方框关系图。
 
 ```console
 1: kd> !ndiskd.netreport
@@ -61,7 +61,7 @@ NETWORK STACK REPORT
 
 ![故障转储中的网络调试报告](images/!ndiskd-netreport-crashdump.png)
 
-作为比较，下图显示了从活动系统而不是故障转储文件生成的网络报表。 请注意，在 HTML 页的底部有另外两个选项显示 "显示数据流" 和 "模拟数据包"，并且在报表顶部有一个 "数据流" 的第四个选项卡。 出现这些选项是因为调试对象计算机启用了 NBL 跟踪，这允许 **！ ndiskd**分析 NBL 跟踪日志以直观地显示信息。 如果未打开 NBL 跟踪，则不会显示这些选项。 有关 NBL 跟踪和 NBL 日志的详细信息，请参阅[**！ ndiskd. nbllog**](-ndiskd-nbllog.md)。
+作为比较，下图显示了从活动系统而不是故障转储文件生成的网络报表。 请注意，在 HTML 页的底部有另外两个选项显示 "显示数据流" 和 "模拟数据包"，并且在报表顶部有一个 "数据流" 的第四个选项卡。 出现这些选项是因为调试对象计算机启用了 NBL 跟踪，这允许 **！ ndiskd** 分析 NBL 跟踪日志以直观地显示信息。 如果未打开 NBL 跟踪，则不会显示这些选项。 有关 NBL 跟踪和 NBL 日志的详细信息，请参阅 [**！ ndiskd. nbllog**](-ndiskd-nbllog.md)。
 
 通过选中 "显示数据流" 框，可以看到数据流动的路径。 通过选中 "模拟包" 框，您可以看到在数据流路径中上下移动的动画圆圈。 每个圆圈表示一个网络数据包。
 
@@ -69,9 +69,9 @@ NETWORK STACK REPORT
 
 此第二个示例来自活动系统，另外还显示了第一个示例中使用故障转储文件的另一个不同之处。 第二个示例中的目标调试对象计算机已设置为通过网络进行内核调试，因此你可以在堆栈上看到网络适配器，数据流是 Microsoft 内核调试网络适配器。 除非在调试对象计算机上启用了内核调试，否则此适配器通常处于隐藏状态。 事实上，内核调试网络适配器已经为调试会话保留了计算机的以太网适配器，因此流量通过以太网流动。
 
-能够直观显示网络堆栈并查看流量的流动位置，可以快速确定问题所在的位置。 这对于虚拟交换机或服务器特别有用，其网络图比前面的示例更复杂。 例如，在使用 NIC 组合的 Windows Server 上，你可以查看多个网络堆栈是否相互交叉以平衡流量负载，并确定某个堆栈底部是否存在影响另一堆栈的问题。 若要查看显示此的网络调试报表的示例，请参阅[调试网络堆栈](https://channel9.msdn.com/Shows/Defrag-Tools/Defrag-Tools-175-Debugging-the-Network-Stack)。 有关 NIC 组合的详细信息，请参阅[对网络子系统性能使用 NIC 组合](https://docs.microsoft.com/previous-versions/dn567652(v=vs.85))。
+能够直观显示网络堆栈并查看流量的流动位置，可以快速确定问题所在的位置。 这对于虚拟交换机或服务器特别有用，其网络图比前面的示例更复杂。 例如，在使用 NIC 组合的 Windows Server 上，你可以查看多个网络堆栈是否相互交叉以平衡流量负载，并确定某个堆栈底部是否存在影响另一堆栈的问题。 若要查看显示此的网络调试报表的示例，请参阅 [调试网络堆栈](https://channel9.msdn.com/Shows/Defrag-Tools/Defrag-Tools-175-Debugging-the-Network-Stack)。 有关 NIC 组合的详细信息，请参阅 [对网络子系统性能使用 NIC 组合](/previous-versions/dn567652(v=vs.85))。
 
-**！ ndiskd**在页面顶部还有其他选项卡，用于系统、摘要和数据流（如果适用）。 这些选项卡包含有关网络堆栈状态的更多有用信息。 下图显示了 "摘要" 选项卡下的 "网络接口" 选项卡。此选项卡中的表使你可以查看有关系统中网络接口的名称和标识符的详细信息。
+**！ ndiskd** 如果适用) ，还会在页面顶部还有其他选项卡供系统、汇总和数据流 (。 这些选项卡包含有关网络堆栈状态的更多有用信息。 下图显示了 "摘要" 选项卡下的 "网络接口" 选项卡。此选项卡中的表使你可以查看有关系统中网络接口的名称和标识符的详细信息。
 
 ![网络调试报表网络接口](images/!ndiskd-netreport-activesystem-networkinterfaces.png)
 
@@ -79,18 +79,18 @@ NETWORK STACK REPORT
 
 ![网络调试报表数据流](images/!ndiskd-netreport-activesystem-dataflows.png)
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
-[网络驱动程序设计指南](https://docs.microsoft.com/windows-hardware/drivers/network/index)
+[网络驱动程序设计指南](../network/index.md)
 
-[Windows Vista 和更高版本的网络引用](https://docs.microsoft.com/windows-hardware/drivers/ddi/_netvista/)
+[Windows Vista 和更高版本的网络引用](/windows-hardware/drivers/ddi/_netvista/)
 
 [调试网络堆栈](https://channel9.msdn.com/Shows/Defrag-Tools/Defrag-Tools-175-Debugging-the-Network-Stack)
 
-[**NDIS 扩展（Ndiskd.dll）**](ndis-extensions--ndiskd-dll-.md)
+[**NDIS 扩展 ( # A0) **](ndis-extensions--ndiskd-dll-.md)
 
 [**!ndiskd.help**](-ndiskd-help.md)
 
 [**!ndiskd.nbllog**](-ndiskd-nbllog.md)
 
-[对网络子系统性能使用 NIC 组合](https://docs.microsoft.com/previous-versions/dn567652(v=vs.85))
+[对网络子系统性能使用 NIC 组合](/previous-versions/dn567652(v=vs.85))

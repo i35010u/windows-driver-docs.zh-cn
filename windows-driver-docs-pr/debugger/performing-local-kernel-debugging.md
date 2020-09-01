@@ -9,12 +9,12 @@ keywords:
 - LiveKD 工具
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3d61498fda2e524e3ad95562e70de3789fbfdd02
-ms.sourcegitcommit: f610410e1500f0b0a4ca008b52679688ab51033d
+ms.openlocfilehash: 47008d3e9d7b9ee5591efbab30535dd6b9358e48
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/15/2020
-ms.locfileid: "88253117"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89212234"
 ---
 # <a name="local-kernel-mode-debugging"></a>本地内核模式调试
 
@@ -81,13 +81,7 @@ ms.locfileid: "88253117"
 
 LiveKD 工具模拟本地内核调试。 此工具创建内核内存的 "快照" 转储文件，而不会在创建此快照时实际停止内核。  (因此，快照实际上可能并不显示计算机的单个即时状态。 ) 
 
-LiveKD 不是 Windows 包调试工具的一部分。 可以从 Windows Sysinternals 站点下载 [LiveKd](https://docs.microsoft.com/sysinternals/downloads/livekd) 。
+LiveKD 不是 Windows 包调试工具的一部分。 可以从 Windows Sysinternals 站点下载 [LiveKd](/sysinternals/downloads/livekd) 。
 
  
-
- 
-
-
-
-
 

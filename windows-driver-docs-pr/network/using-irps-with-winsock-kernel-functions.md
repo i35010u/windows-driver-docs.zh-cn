@@ -9,37 +9,37 @@ keywords:
 - 函数 WDK Winsock 内核
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 47ebaecaf7d4d476dbf6fcd88fed531cb0872104
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 2489c7d0c6bec6a7a722a93f75a1e99c66039397
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72842992"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89211574"
 ---
 # <a name="using-irps-with-winsock-kernel-functions"></a>将 IRP 与 Winsock 内核函数配合使用
 
 
-Winsock 内核（WSK）[网络编程接口（NPI）](network-programming-interface.md)使用 irp 来完成网络 i/o 操作的异步操作。 每个 WSK 函数都采用一个指向 IRP 的指针作为参数。 当 WSK 函数执行的操作完成后，WSK 子系统完成 IRP。
+Winsock 内核 (WSK) [网络编程接口 (NPI) ](network-programming-interface.md) 使用 irp 来完成网络 i/o 操作的异步完成。 每个 WSK 函数都采用一个指向 IRP 的指针作为参数。 当 WSK 函数执行的操作完成后，WSK 子系统完成 IRP。
 
 WSK 应用程序用来传递到 WSK 函数的 IRP 可以通过下列方式之一进行。
 
--   WSK 应用程序通过调用[**IoAllocateIrp**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioallocateirp)函数分配 IRP。 在这种情况下，WSK 应用程序必须至少为一个 i/o 堆栈位置分配 IRP。
+-   WSK 应用程序通过调用 [**IoAllocateIrp**](/windows-hardware/drivers/ddi/wdm/nf-wdm-ioallocateirp) 函数分配 IRP。 在这种情况下，WSK 应用程序必须至少为一个 i/o 堆栈位置分配 IRP。
 
--   WSK 应用程序重复使用以前分配的已完成 IRP。 在这种情况下，WSK 必须调用[**IoReuseIrp**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioreuseirp)函数以重新初始化 IRP。
+-   WSK 应用程序重复使用以前分配的已完成 IRP。 在这种情况下，WSK 必须调用 [**IoReuseIrp**](/windows-hardware/drivers/ddi/wdm/nf-wdm-ioreuseirp) 函数以重新初始化 IRP。
 
 -   WSK 应用程序使用由较高级别的驱动程序或 i/o 管理器向下传递给它的 IRP。 在这种情况下，IRP 必须至少有一个可供 WSK 子系统使用的剩余 i/o 堆栈位置。
 
-当 WSK 应用程序具有用于调用 WSK 函数的 IRP 后，它可以设置一个[**IoCompletion**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-io_completion_routine)例程，以便在由 WSK 子系统完成 irp 后调用 irp。 WSK 应用程序通过调用[**IoSetCompletionRoutine**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iosetcompletionroutine)函数为 IRP 设置**IoCompletion**例程。 **IoCompletion**例程是必需的，也可以是可选的，具体取决于 IRP 的生成方式。
+当 WSK 应用程序具有用于调用 WSK 函数的 IRP 后，它可以设置一个 [**IoCompletion**](/windows-hardware/drivers/ddi/wdm/nc-wdm-io_completion_routine) 例程，以便在由 WSK 子系统完成 irp 后调用 irp。 WSK 应用程序通过调用[**IoSetCompletionRoutine**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iosetcompletionroutine)函数为 IRP 设置**IoCompletion**例程。 **IoCompletion**例程是必需的，也可以是可选的，具体取决于 IRP 的生成方式。
 
--   如果 WSK 应用程序分配了 IRP，或重用了之前分配的 IRP，则在调用 WSK 函数之前，必须为 IRP 设置**IoCompletion**例程。 在这种情况下，WSK 应用程序必须为传递到**IoSetCompletionRoutine**函数的*InvokeOnSuccess*、 *InvokeOnError*和*InvokeOnCancel*参数指定**TRUE** ，以确保始终调用**IoCompletion**例程。 而且，为 IRP 设置的**IoCompletion**例程必须始终返回状态\_更多\_处理\_需要终止 IRP 的完成处理。 如果在调用**IoCompletion**例程后使用 IRP 完成了 WSK 应用程序，则它应调用[**IoFreeIrp**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iofreeirp)函数以释放 IRP，然后再从**IoCompletion**例程返回。 如果 WSK 应用程序没有释放 IRP，则它可以重复使用 IRP 来调用另一个 WSK 函数。
+-   如果 WSK 应用程序分配了 IRP，或重用了之前分配的 IRP，则在调用 WSK 函数之前，必须为 IRP 设置 **IoCompletion** 例程。 在这种情况下，WSK 应用程序必须为传递到**IoSetCompletionRoutine**函数的*InvokeOnSuccess*、 *InvokeOnError*和*InvokeOnCancel*参数指定**TRUE** ，以确保始终调用**IoCompletion**例程。 而且，为 IRP 设置的 **IoCompletion** 例程必须始终返回状态， \_ \_ \_ 以便终止完成 IRP 的处理。 如果在调用 **IoCompletion** 例程后使用 IRP 完成了 WSK 应用程序，则它应调用 [**IoFreeIrp**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iofreeirp) 函数以释放 IRP，然后再从 **IoCompletion** 例程返回。 如果 WSK 应用程序没有释放 IRP，则它可以重复使用 IRP 来调用另一个 WSK 函数。
 
--   如果 WSK 应用程序使用由较高的级别驱动程序或 i/o 管理器向下传递给它的 IRP，则应在调用 WSK 函数之前为 IRP 设置**IoCompletion**例程，前提是 WSK 函数执行的操作已完成时必须收到通知。 如果 WSK 应用程序未为 IRP 设置**IoCompletion**例程，则完成 irp 后，irp 将按正常的 irp 完成处理方式传递回更高级别的驱动程序或 i/o 管理器。 如果 WSK 应用程序为 IRP 设置了**IoCompletion**例程，则**IoCompletion**例程可以返回状态\_成功或状态\_需要更多\_处理\_。 如果**IoCompletion**例程返回状态\_成功，则 IRP 完成处理将继续正常进行。 如果**IoCompletion**例程返回状态\_\_需要更多的\_处理，则 WSK 应用程序必须在完成处理 WSK 函数执行的操作的结果后调用[**IOCOMPLETEREQUEST**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocompleterequest)来完成 IRP。 WSK 应用程序绝不应释放由较高级别的驱动程序或 i/o 管理器向下传递给它的 IRP。
+-   如果 WSK 应用程序使用由较高的级别驱动程序或 i/o 管理器向下传递给它的 IRP，则应在调用 WSK 函数之前为 IRP 设置 **IoCompletion** 例程，前提是 WSK 函数执行的操作已完成时必须收到通知。 如果 WSK 应用程序未为 IRP 设置 **IoCompletion** 例程，则完成 irp 后，irp 将按正常的 irp 完成处理方式传递回更高级别的驱动程序或 i/o 管理器。 如果 WSK 应用程序为 IRP 设置了 **IoCompletion** 例程，则 **IoCompletion** 例程可能会返回 "成功" 或 " \_ 状态" \_ 需要更多的 \_ 处理 \_ 。 如果 **IoCompletion** 例程返回状态 \_ SUCCESS，则 IRP 完成处理会正常继续。 如果 **IoCompletion** 例程返回 \_ \_ "需要更多的状态处理" \_ ，则 WSK 应用程序必须在处理完由 WSK 函数执行的操作的结果后调用 [**IoCompleteRequest**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iocompleterequest) ，才能完成 IRP。 WSK 应用程序绝不应释放由较高级别的驱动程序或 i/o 管理器向下传递给它的 IRP。
 
-**请注意**  如果 WSK 应用程序为 irp 设置一个**IoCompletion**例程，该例程由较高的级别驱动程序或 i/o 管理器向下传递给它，则**IoCompletion**例程必须检查 IRP 的**PendingReturned**成员，如果**也**成员为**TRUE**，则调用[**PendingReturned**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iomarkirppending)函数。 有关详细信息，请参阅[实现 IoCompletion 例程](https://docs.microsoft.com/windows-hardware/drivers/kernel/implementing-an-iocompletion-routine)。
+**注意**   如果 WSK 应用程序为 IRP 设置了**IoCompletion**例程，而该 IRP 由较高级别的驱动程序或 i/o 管理器向下传递给它，则**IoCompletion**例程必须检查 IRP 的**PendingReturned**成员，如果**也**成员为**TRUE**，则调用[**PendingReturned**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iomarkirppending)函数。 有关详细信息，请参阅 [实现 IoCompletion 例程](../kernel/implementing-an-iocompletion-routine.md)。
 
  
 
-WSK 应用程序不会初始化它传递给 WSK 函数的 Irp，而不是设置**IoCompletion**例程。 当 WSK 应用程序将 IRP 传递到 WSK 函数时，WSK 子系统代表应用程序设置下一个 i/o 堆栈位置。
+WSK 应用程序不会初始化它传递给 WSK 函数的 Irp，而不是设置 **IoCompletion** 例程。 当 WSK 应用程序将 IRP 传递到 WSK 函数时，WSK 子系统代表应用程序设置下一个 i/o 堆栈位置。
 
 下面的代码示例演示了在套接字上执行接收操作时，WSK 应用程序如何分配并使用 IRP。
 
@@ -238,13 +238,7 @@ NTSTATUS
 }
 ```
 
-有关使用 Irp 的详细信息，请参阅[处理 irp](https://docs.microsoft.com/windows-hardware/drivers/kernel/handling-irps)。
+有关使用 Irp 的详细信息，请参阅 [处理 irp](../kernel/handling-irps.md)。
 
  
-
- 
-
-
-
-
 

@@ -3,25 +3,25 @@ title: OID_WWAN_DEVICE_SERVICE_SESSION
 description: OID_WWAN_DEVICE_SERVICE_SESSION 指示微型端口驱动程序打开或关闭设备服务会话。NDIS_STATUS_WWAN_DEVICE_SERVICE_SESSION 状态通知，其中包含描述操作结果的 NDIS_WWAN_SET_DEVICE_SERVICE_SESSION 结构。
 ms.assetid: 32D4EDE3-4782-4C54-95B8-83DE7E63C4F8
 ms.date: 08/08/2017
-keywords: -从 Windows Vista 开始 OID_WWAN_DEVICE_SERVICE_SESSION 网络驱动程序
+keywords: -从 Windows Vista 开始 OID_WWAN_DEVICE_SERVICE_SESSION 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: c14bb312773365fc1000a1edf5c6a2f404261277
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: e5e3f659ef97cffc295829c203aabdf927c2a632
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72843852"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89212119"
 ---
-# <a name="oid_wwan_device_service_session"></a>OID\_WWAN\_设备\_服务\_会话
+# <a name="oid_wwan_device_service_session"></a>OID \_ WWAN \_ 设备 \_ 服务 \_ 会话
 
 
-OID\_WWAN\_设备\_服务\_会话定向微型端口驱动程序以打开或关闭设备服务会话。
+OID \_ WWAN \_ 设备 \_ 服务 \_ 会话定向微型端口驱动程序以打开或关闭设备服务会话。
 
 不支持查询请求。
 
-微型端口驱动程序必须异步处理设置请求，最初返回 NDIS\_状态\_指示\_需要原始请求，稍后将[**ndis\_状态\_WWAN\_设备发送\_服务\_会话**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-wwan-device-service-session)状态通知，其中包含一个[**NDIS\_WWAN\_集\_设备\_服务\_会话**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_device_set_service_session)结构，该结构描述操作的结果。
+微型端口驱动程序必须异步处理设置请求，最初 \_ 返回 \_ \_ 原始请求所需的 ndis 状态指示，稍后发送 [**ndis \_ 状态 \_ WWAN \_ 设备 \_ 服务 \_ 会话**](./ndis-status-wwan-device-service-session.md) 状态通知，其中包含描述操作结果的 [**ndis \_ WWAN \_ 集 \_ 设备 \_ 服务 \_ 会话**](/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_device_set_service_session) 结构。
 
-如果不支持指定的设备服务或操作，微型端口驱动程序应返回 NDIS\_状态\_不\_支持。
+如果微型端口驱动程序 \_ 不 \_ \_ 支持指定的设备服务或操作，则它应返回不受支持的 NDIS 状态。
 
 <a name="requirements"></a>要求
 ------------
@@ -38,7 +38,7 @@ OID\_WWAN\_设备\_服务\_会话定向微型端口驱动程序以打开或关�
 </tr>
 <tr class="even">
 <td><p>标头</p></td>
-<td>Ntddndis （包括 Ndis .h）</td>
+<td>Ntddndis (包含 Ndis .h) </td>
 </tr>
 </tbody>
 </table>
@@ -46,14 +46,9 @@ OID\_WWAN\_设备\_服务\_会话定向微型端口驱动程序以打开或关�
 ## <a name="see-also"></a>另请参阅
 
 
-[**NDIS\_WWAN\_集\_设备\_服务\_会话**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_device_set_service_session)
+[**NDIS \_ WWAN \_ 设置 \_ 设备 \_ 服务 \_ 会话**](/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_device_set_service_session)
 
-[ **\_WWAN\_设备\_SERVICE\_会话的 NDIS\_状态**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-wwan-device-service-session)
-
- 
+[**NDIS \_ 状态 \_ WWAN \_ 设备 \_ 服务 \_ 会话**](./ndis-status-wwan-device-service-session.md)
 
  
-
-
-
 

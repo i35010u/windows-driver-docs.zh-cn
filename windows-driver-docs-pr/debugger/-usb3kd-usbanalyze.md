@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: d3a86b4ba4380ff1b4f7ea006b319068d221beba
-ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
+ms.openlocfilehash: 686007165ce30fefe2a8294c41ffdb0bbbebb5ab
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84534146"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89212267"
 ---
 # <a name="usb3kdusbanalyze"></a>!usb3kd.usbanalyze
 
@@ -37,23 +37,16 @@ ms.locfileid: "84534146"
 ## <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 
-Usb3kd
+Usb3kd.dll
 
 ## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
 [USB 3.0 扩展](usb-3-extensions.md)
 
-[通用串行总线（USB）驱动程序](https://docs.microsoft.com/windows-hardware/drivers/usbcon/)
+[ (USB) 驱动程序的通用串行总线](../usbcon/index.md)
 
 [**BUGCODE \_ USB3 \_ 驱动程序**](bug-check-0x144--bugcode-usb3-driver.md)
 
  
-
- 
-
-
-
-
-
 

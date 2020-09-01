@@ -3,15 +3,15 @@ title: 专有的 Speaker-Configuration 实用程序
 description: 专有的 Speaker-Configuration 实用程序
 ms.assetid: d04b8c1b-13c6-422f-b13a-909f7074ac75
 keywords:
-- 专有扬声器配置实用程序 WDK 音频
+- 专用发言人-配置实用工具 WDK 音频
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 28f5190c13ad3a5445aad6d93f24168d749e8482
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: e1cd0813ff39e5c7c83a918bf3fd36f2669900bd
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67362530"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89211345"
 ---
 # <a name="proprietary-speaker-configuration-utilities"></a>专有的 Speaker-Configuration 实用程序
 
@@ -19,30 +19,25 @@ ms.locfileid: "67362530"
 ## <span id="proprietary_speaker_configuration_utilities"></span><span id="PROPRIETARY_SPEAKER_CONFIGURATION_UTILITIES"></span>
 
 
-**请注意**  此信息适用于 Windows XP 和早期版本的操作系统。 从 Windows Vista 开始**IDirectSound::GetSpeakerConfig**并**IDirectSound::SetSpeakerConfig**已弃用。
+**注意**   此信息适用于 Windows XP 及更早版本的操作系统。 从 Windows Vista 开始， **IDirectSound：： GetSpeakerConfig** 和 **IDirectSound：： SetSpeakerConfig** 已弃用。
 
  
 
-硬件供应商偶尔提供专用的扬声器配置实用程序用于替代在控制面板的演讲者对话框其音频驱动程序。 此类实用程序有潜在问题： 他们有时无法通知更改的 Windows 的专有方式更改扬声器配置。 如果在专有实用程序中的设置不匹配那些在控制面板中，这可能导致不良用户体验。 如果你认为你的设备需要一个专用的实用程序，应采取以下步骤以将与 Windows 集成实用程序：
+硬件供应商有时会提供要与音频驱动程序一起使用的专用发言人配置实用程序，以代替控制面板中的 "扬声器" 对话框。 此类实用工具有一个潜在的问题：有时以无法通知 Windows 的专有方式更改扬声器配置。 如果专有实用工具中的设置与 "控制面板" 中的设置不匹配，这可能会导致用户体验不佳。 如果你认为你的设备需要专用实用程序，则应执行以下步骤，将你的实用工具与 Windows 集成：
 
-1.  在您支持的驱动程序中实现 DAC 节点[ **KSPROPERTY\_音频\_通道\_CONFIG** ](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-audio-channel-config)属性。 通过此节点中，Windows 会通知立即通过控制面板中的用户所做的更改的驱动程序。
+1.  在支持 [**KSPROPERTY \_ 音频 \_ 通道 \_ CONFIG**](./ksproperty-audio-channel-config.md) 属性的驱动程序中实现 DAC 节点。 通过此节点，Windows 会向驱动程序通知用户在 "控制面板" 中所做的更改。
 
-2.  设计配置实用程序，以通过调用 DirectSound 方法来管理扬声器配置**GetSpeakerConfig**并**SetSpeakerConfig**。
+2.  通过调用 DirectSound 方法 **GetSpeakerConfig** 和 **SetSpeakerConfig**设计配置实用工具来管理扬声器配置。
 
-**SetSpeakerConfig**调用通知实用程序对做的更改扬声器配置 DirectSound （和 Windows）。 此外，应调用实用程序的初始化代码**GetSpeakerConfig**来确定用户是否已更改通过控制面板的任何设置。 如果是这样，该实用程序应反映这些更改在其用户界面中。
+**SetSpeakerConfig**调用通知 DirectSound (和 Windows) 你的实用工具对扬声器配置所做的更改。 此外，实用工具的初始化代码应调用 **GetSpeakerConfig** 来确定用户是否已通过控制面板更改了任何设置。 如果是这样，则实用程序应在其用户界面中反映这些更改。
 
-如果你的设备支持多渠道具有不精确的 Windows 等效项的格式，配置实用程序应执行以下操作：
+如果你的设备支持没有精确的 Windows 等效项的多通道格式，则配置实用工具应执行以下操作：
 
--   更改为没有精确 Windows 等效项的演讲者配置时，调用**SetSpeakerConfig**与最接近 Windows 等效项。 这是进行任何专有调用所需配置的驱动程序的补充。
+-   当更改为没有精确 Windows 等效项的扬声器配置时，请使用最接近的 Windows 等效项调用 **SetSpeakerConfig** 。 这是对配置驱动程序所需的任何专有调用的补充。
 
--   更改为具有精确 Windows 等效项的演讲者配置时，调用**SetSpeakerConfig**若要更新的演讲者模式。
+-   更改为具有精确的 Windows 等效项的发言人配置时，请调用 **SetSpeakerConfig** 来更新扬声器模式。
 
-如果使 Windows 设备的功能的更好地识别，DirectSound 可以启用它无法否则启用某些功能 （例如，多渠道三维平移）。
-
- 
+如果使 Windows 更容易识别设备的功能，则 DirectSound 可以启用某些功能，否则无法启用 (例如，多通道3D 平移) 。
 
  
-
-
-
 

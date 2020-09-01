@@ -6,12 +6,12 @@ ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
 ms.localizationpriority: medium
-ms.openlocfilehash: 5392ff238b143da4c38f801b9ed2cb74f9c7bd9d
-ms.sourcegitcommit: 6d930ed810124ade8e29a617c7abcd399113696f
+ms.openlocfilehash: cb200fbdb0f4a27bd7cee9540e422bc8979d4827
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "76256685"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89212585"
 ---
 # <a name="windbg-preview---command-line-startup-options"></a>WinDbg 预览版 - 命令行启动选项
 
@@ -19,7 +19,7 @@ ms.locfileid: "76256685"
 
 ## <a name="starting-windbg-preview"></a>正在启动 WinDbg 预览版
 
-安装 WinDbg Preview 后，WinDbgX 可从任何目录位置运行。
+安装 WinDbg Preview 后，可以从任何目录位置运行 WinDbgX.exe。
 
 ## <a name="command-line-startup-options"></a>命令行启动选项
 
@@ -31,21 +31,21 @@ WinDbgX [options]
 
 **常规选项**
 
-|     选项      |                                                                          描述                                                                          |
+|     选项      |                                                                          说明                                                                          |
 |-----------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| -c *"command"*  | 附加调试器后执行命令行。 此命令必须用引号引起来。 可以用分号分隔多个命令。 |
+| -c  *"command"*  | 附加调试器后执行命令行。 此命令必须用引号引起来。 可以用分号分隔多个命令。 |
 | -v               | 在调试器中启用详细输出。                                                            |
-| -T*标题*       | 设置窗口标题。                                                                     |
-| -徽标*日志文件*  | 日志打开。 开始将信息记录到日志文件。 如果该文件存在，它将被覆盖。                                |
-| -loga*日志文件*  | 日志追加。 开始将信息记录到日志文件。 如果该文件存在，则会将其追加到。                               |
+| -T *标题*       | 设置窗口标题。                                                                     |
+| -徽标 *日志文件*  | 日志打开。 开始将信息记录到日志文件。 如果该文件存在，它将被覆盖。                                |
+| -loga *日志文件*  | 日志追加。 开始将信息记录到日志文件。 如果该文件存在，则会将其追加到。                               |
 | -e *EventHandle* | 在目标中出现下一个异常之后，用给定句柄向事件发出信号。                                         |
 |       -?         |  显示可用的命令摘要。                                                           |
 
 **内核选项**
 
-|       选项       |                                                                      描述                                                                      |
+|       选项       |                                                                      说明                                                                      |
 |--------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------|
-| -k \[ConnectType\] | 启动内核调试会话。  如果使用 **-k**而没有任何*ConnectType*选项，则它必须是命令行中的最后一个条目。 |
+| -k \[ ConnectType\] | 启动内核调试会话。  如果使用 **-k** 而没有任何 *ConnectType* 选项，则它必须是命令行中的最后一个条目。 |
 |        -kqm        | 在安静模式下启动 KD。                                                                |
 |        -kl         | 在调试器所在的同一台计算机上启动内核调试会话。                                         |
 | -kx *ExdiOptions*  | 使用 EXDI 驱动程序启动内核调试会话。                                                |
@@ -53,9 +53,9 @@ WinDbgX [options]
 
 **用户模式选项**
 
-选项 | 描述
+选项 | 说明
 |------ | -----------|
--o | 调试由目标应用程序启动的所有进程（子进程）。 
+-o | 调试由目标应用程序启动的所有进程)  (子进程。 
 -g | 忽略目标应用程序中的初始断点。 
 -G |忽略目标应用程序中的最终断点。 
 -pv | 指定调试器应附加到目标进程 noninvasively。
@@ -64,11 +64,11 @@ WinDbgX [options]
 
 **目标选项**
 
-| 选项                     |                 描述                                                                                                                                  |
+| 选项                     |                 说明                                                                                                                                  |
 |----------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| -remote *ClientTransport*  | 连接到已在运行的调试服务器。 有关可能的*ClientTransport*值的说明，请参阅[激活调试客户端](activating-a-debugging-client.md)。 使用此参数时，该参数必须是命令行中的第一个参数。 |
-| -server *ServerTransport*  | 创建可由其他调试器访问的调试服务器。 有关可能的*ServerTransport*值的说明，请参阅[激活调试服务器](activating-a-debugging-server.md)。              |
-| -premote *SmartClientTransport*   | 创建智能客户端，并连接到已在运行的进程服务器。 有关可能的 SmartClientTransport 值的说明，请参阅[激活智能客户端](activating-a-smart-client.md)。 |
+| -remote *ClientTransport*  | 连接到已在运行的调试服务器。 有关可能的 *ClientTransport* 值的说明，请参阅 [激活调试客户端](activating-a-debugging-client.md)。 使用此参数时，该参数必须是命令行中的第一个参数。 |
+| -server *ServerTransport*  | 创建可由其他调试器访问的调试服务器。 有关可能的 *ServerTransport* 值的说明，请参阅 [激活调试服务器](activating-a-debugging-server.md)。              |
+| -premote *SmartClientTransport*   | 创建智能客户端，并连接到已在运行的进程服务器。 有关可能的 SmartClientTransport 值的说明，请参阅 [激活智能客户端](activating-a-smart-client.md)。 |
 | -p *PID*               | 指定要调试的十进制进程 ID。                                                                                                              |
 | -tid *tid*             | 指定在启动调试会话时要恢复的线程的线程 ID。                                                                      |
 | -psn *ServiceName*     | 指定要调试的进程中包含的服务的名称。 这用于调试已经在运行的进程。                           |
@@ -77,64 +77,64 @@ WinDbgX [options]
 | -debugArch x86 或 amd64    | 重写自动检测行为并为调试器设置目标位数。                                                                           |
 | -loadSession           | 加载已保存的会话配置文件。                                                                                                                      |
 | -setupFirewallRules    | 在本地系统上配置所需的防火墙规则，以允许使用 KDNET 进行内核调试。                                                                         |
-| -openPrivateDumpByHandle*句柄* | *仅限 Microsoft 内部使用*。 指定要调试的故障转储文件的句柄。                                                                 |
+| -openPrivateDumpByHandle *句柄* | *仅限 Microsoft 内部使用*。 指定要调试的故障转储文件的句柄。                                                                 |
 | -benchmarkStartup      | *仅限 Microsoft 内部使用*。 运行启动基准并将结果追加到文件。                                                                                                    |
 
 **符号选项**
 
-选项 | 描述
+选项 | 说明
 |------ | -----------|
--y *SymbolPath* | 指定要使用的符号路径。 使用分号（ **;** ）分隔多个路径。 如果路径包含空格，则应该用引号将其引起来。 有关详细信息和更改此路径的其他方式，请参阅[符号路径](symbol-path.md)。
+-y *SymbolPath* | 指定要使用的符号路径。 使用分号 (**;**) 分隔多个路径。 如果路径包含空格，则应该用引号将其引起来。 有关详细信息和更改此路径的其他方式，请参阅 [符号路径](symbol-path.md)。
 -n              | 干扰符号加载。 从符号处理程序启用详细输出。
 -i *ImagePath*  | 设置要使用的图像搜索路径。
 -sdce           | 使调试器在符号加载过程中显示 "文件访问错误" 消息。
 -ses            | 使调试器对所有符号文件执行严格的评估，并忽略任何有问题的符号。
 -sicv           | 使符号处理程序忽略 CV 记录
 -问题           | 导致调试器忽略符号路径和可执行图像路径环境变量。
--snc            | 使调试器关闭C++转换。
+-snc            | 使调试器关闭 c + + 转换。
 -snul           | 为非限定名称禁用自动符号加载。
 -sup            | 使符号处理程序在每个符号搜索过程中搜索公共符号表
 -sflags         | 同时设置所有符号处理程序选项。
 
 **源路径选项**
 
- 选项   | 描述
+ 选项   | 说明
 |-------- | -----------|
 -srcpath  | 指定要在调试服务器上使用的源路径。
 -lsrcpath | 指定要在本地客户端上使用的源路径。
 
-如果你在本地调试器会话中，srcpath 和 lsrcpath 实际上是相同的（"服务器" 是你的本地会话）。 对于远程调试，你可能需要将这些值设置为不同的值 situtations。 有关远程调试的详细信息，请参阅[远程调试](remote-debugging.md)。
+如果你处于本地调试器会话中，则 srcpath 和 lsrcpath 的 (实际上相同你的 "服务器" 是你的本地会话) 。 对于远程调试，你可能需要将这些值设置为不同的值 situtations。 有关远程调试的详细信息，请参阅 [远程调试](remote-debugging.md)。
 
 **异常处理**
 
-选项 | 描述
+选项 | 说明
 |------ | -----------|
--x   |   仅对访问冲突异常启用第二次处理。
--xe*异常*  |   为指定的异常启用第一次异常处理。
--xd*异常* |   为指定的异常启用第二次异常处理。
--xn*异常* |   对于给定的异常，禁用第一次和第二次处理，并仅在控制台上显示一条消息。
--xi*异常* |   完全忽略给定的异常，禁用第一次和第二次处理，而不将任何内容输出到控制台。
+-X   |   仅对访问冲突异常启用第二次处理。
+-xe *异常*  |   为指定的异常启用第一次异常处理。
+-xd *异常* |   为指定的异常启用第二次异常处理。
+-xn *异常* |   对于给定的异常，禁用第一次和第二次处理，并仅在控制台上显示一条消息。
+-xi *异常* |   完全忽略给定的异常，禁用第一次和第二次处理，而不将任何内容输出到控制台。
 
-有关可以指定的异常的列表，请参阅[事件定义和默认值](https://docs.microsoft.com/windows-hardware/drivers/debugger/controlling-exceptions-and-events#event-definitions-and-defaults)。
+有关可以指定的异常的列表，请参阅 [事件定义和默认值](./controlling-exceptions-and-events.md#event-definitions-and-defaults)。
 
 **Post 事后**
 
-选项  | 描述
+选项  | 说明
 |------ | -----------|
 -I     | 将 WinDbg Preview 设置为系统的默认事后调试器。
 -为    | 以无提示方式将 WinDbg Preview 设置为系统的默认事后调试器，只报告错误。
 
 **弃用的选项**
 
-选项 | 描述
+选项 | 说明
 |------ | -----------|
--Q   | 不推荐使用的命令行选项。
+-S   | 不推荐使用的命令行选项。
 -QY  | 不推荐使用的命令行选项。
 -QS  | 不推荐使用的命令行选项。
 -QSY | 不推荐使用的命令行选项。
 -WX  | 不推荐使用的命令行选项。
 
-有关启动参数的常规信息，请参阅[WinDbg 命令行选项](windbg-command-line-options.md)。
+有关启动参数的常规信息，请参阅 [WinDbg 命令行选项](windbg-command-line-options.md)。
 
 您可以使用-？ 列出支持的命令行选项。
 
@@ -142,4 +142,4 @@ WinDbgX [options]
 
 ## <a name="see-also"></a>另请参阅
 
-[使用 WinDbg Preview 进行调试](debugging-using-windbg-preview.md)
+[使用 WinDbg 预览版进行调试](debugging-using-windbg-preview.md)

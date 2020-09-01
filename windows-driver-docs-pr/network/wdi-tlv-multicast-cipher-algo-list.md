@@ -1,39 +1,39 @@
 ---
 title: WDI_TLV_MULTICAST_CIPHER_ALGO_LIST
-description: WDI_TLV_MULTICAST_CIPHER_ALGO_LIST 是一个 TLV，其中包含多播密码算法的列表。
+description: WDI_TLV_MULTICAST_CIPHER_ALGO_LIST 是包含多播密码算法列表的 TLV。
 ms.assetid: 55CDD295-6BDA-4F3A-B01F-FC9D5FB38355
 ms.date: 07/18/2017
 keywords:
-- WDI_TLV_MULTICAST_CIPHER_ALGO_LIST 从 Windows Vista 开始的网络驱动程序
+- 从 Windows Vista 开始 WDI_TLV_MULTICAST_CIPHER_ALGO_LIST 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: aae75b2ca8f73b478d14d475939ab6ca259f2f26
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 76c6bd2263e47ec572d1933d86f69481c16b6329
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72842879"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89212699"
 ---
-# <a name="wdi_tlv_multicast_cipher_algo_list"></a>WDI\_TLV\_多播\_密码\_算法\_列表
+# <a name="wdi_tlv_multicast_cipher_algo_list"></a>WDI \_ TLV \_ 多播 \_ 密码 \_ 算法 \_ 列表
 
 
-WDI\_TLV\_多播\_密码\_算法\_列表是包含多播密码算法列表的 TLV。
+WDI \_ tlv \_ 多播 \_ 密码 \_ 算法 \_ 列表是包含多播密码算法列表的 tlv。
 
 ## <a name="tlv-type"></a>TLV 类型
 
 
 0x3D
 
-## <a name="length"></a>长度
+## <a name="length"></a>Length
 
 
-WDI 数组的大小（以字节为单位） [ **\_密码\_算法**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wditypes/ne-wditypes-_wdi_cipher_algorithm)结构。 数组必须包含1个或多个元素。
+[**WDI \_ 密码 \_ 算法**](/windows-hardware/drivers/ddi/wditypes/ne-wditypes-_wdi_cipher_algorithm)结构数组的大小 (以字节为单位) 。 数组必须包含1个或多个元素。
 
 ## <a name="values"></a>值
 
 
-| 在任务栏的搜索框中键入                                                            | 描述                              |
+| 类型                                                            | 说明                              |
 |-----------------------------------------------------------------|------------------------------------------|
-| [**WDI\_密码\_算法**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wditypes/ne-wditypes-_wdi_cipher_algorithm)\[\] | 多播密码算法的数组。 |
+| [**WDI \_ 密码 \_ 算法**](/windows-hardware/drivers/ddi/wditypes/ne-wditypes-_wdi_cipher_algorithm)\[\] | 多播密码算法的数组。 |
 
  
 
@@ -48,7 +48,7 @@ WDI 数组的大小（以字节为单位） [ **\_密码\_算法**](https://docs
 <tbody>
 <tr class="odd">
 <td><p>最低受支持的客户端</p></td>
-<td><p>Windows 10</p></td>
+<td><p>Windows 10</p></td>
 </tr>
 <tr class="even">
 <td><p>最低受支持的服务器</p></td>
@@ -62,9 +62,4 @@ WDI 数组的大小（以字节为单位） [ **\_密码\_算法**](https://docs
 </table>
 
  
-
- 
-
-
-
 

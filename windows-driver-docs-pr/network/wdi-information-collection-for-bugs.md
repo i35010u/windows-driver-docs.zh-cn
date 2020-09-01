@@ -1,86 +1,80 @@
 ---
-title: WDI 信息收集的 bug
-description: 在任何重要的软件中的 bug 是不可避免的。
+title: WDI 信息收集 bug
+description: 任何不重要的软件中的 bug 都是不可避免的。
 ms.assetid: 551CA7DD-EB1A-41FB-A3D7-472DA7020B51
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3d29048e376f6c0faa5e8d5497125c327eb71c1d
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 3d7300b1c96a1548bf597cce950e896f7220d51d
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67374713"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89211547"
 ---
-# <a name="wdi-information-collection-for-bugs"></a>WDI 信息收集的 bug
+# <a name="wdi-information-collection-for-bugs"></a>WDI 信息收集 bug
 
 
-在任何重要的软件中的 bug 是不可避免的。 在驱动程序开发阶段，bug 和调试活动都将是这项工作的重要组成部分。 Bug 可能需要联合公司工作，因为它们可以是在操作系统、 WDI UE 或 WDI LE。 若要收集相关的信息来快速缩小根本原因至关重要。 若要收集的信息根据性质的 bug 的变化很大。 重现的 bug，因此可以收集更多的信息的迭代有时有必要，但很重要，以减少最大程度地这些迭代。 下面首先是一些规则。
+任何不重要的软件中的 bug 都是不可避免的。 在驱动程序开发阶段，bug 和调试活动应为工作的一个不重要部分。 Bug 可能需要公司内工作，因为它们可以在操作系统、WDI UE 或 WDI LE 中。 收集相关信息以快速缩小根本原因，这一点非常重要。 收集的信息因错误性质而异。 有时需要重复重现 bug 的重现以收集进一步的信息，但这对于尽可能多地减少迭代至关重要。 下面是一些从开始的规则。
 
-## <a name="os-crash-without-kernel-debugger-attached"></a>而无需内核调试程序附加的 OS 崩溃
-
-
-操作系统生成故障转储。 有不同类型的故障转储，如小型转储和完全转储。 微型转储很小，而是通常只适用于会审。 到了的问题的根本原因，顺序完全转储几乎始终是必需的。 建议在驱动程序开发期间启用完全转储和自承载阶段。 若要启用完全转储：
-
-1.  从桌面上，右键单击**此电脑**，然后选择**属性**。
-2.  上**高级**选项卡上，转到**启动和恢复**部分，并单击**设置...** 按钮。
-3.  在中**写入调试信息**部分中，选择**内核内存转储**(而非**自动内存转储**)。
-
-当操作系统崩溃发生时，在 %windir%处生成内存转储文件\\memory.dmp。
-## <a name="os-crash-with-kernel-debugger-attached"></a>使用内核调试程序附加的 OS 崩溃
+## <a name="os-crash-without-kernel-debugger-attached"></a>未连接内核调试器的操作系统崩溃
 
 
-开发人员或 QA 应具有内核调试程序附加在可能的情况。 内核调试程序可以快速区分到底出在哪儿和方向进行进一步调查。 Kd 命令[ **！ 分析**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-analyze) – v 作为第一个命令运行后的 bug 检查非常有用。 此命令将指向崩溃发生的模块，在发生崩溃的原因 （错误检查代码） 中的位置。
+操作系统生成故障转储。 有不同类型的故障转储，如微型转储和完全转储。 虽然小型转储非常小，但通常仅适用于会审。 为了根本引起问题，几乎总是需要完全转储。 建议在驱动程序开发和自承载阶段启用完全转储。 启用完全转储：
+
+1.  在桌面上右键单击 **此电脑** ，然后选择 " **属性**"。
+2.  在 " **高级** " 选项卡上，打开 " **启动和恢复** " 部分，然后单击 " **设置 ...** " 按钮。
+3.  在 " **写入调试信息** " 部分中，选择 " **内核内存转储** " (，而不是) 的 " **自动内存转储** "。
+
+当操作系统发生崩溃时，将在% windir% 内存 dmp 生成内存转储文件 \\ 。
+## <a name="os-crash-with-kernel-debugger-attached"></a>连接内核调试器时出现操作系统崩溃
+
+
+如果可能，开发人员或 QA 应连接内核调试。 内核调试器可以快速判断出错误的原因以及要进一步调查的方向。 Kd 命令 "[**！分析**](../debugger/-analyze.md) – v" 可用作 bug 检查后运行的第一个命令。 此命令指向某个模块内发生崩溃的位置，以及导致崩溃 (bug 检查代码) 的位置。
 
 ## <a name="when-reset-recovery-is-invoked"></a>调用重置恢复时
 
 
-WDI 的重置恢复功能构建调用重置恢复时收集实时内核转储的功能。 核心转储使开发人员能够调查根本原因事后。 转储收集 %windir%下的实时内核\\LiveKernelDumps。
+如果调用重置恢复，WDI 的重置恢复功能将生成收集实时内核转储的能力。 内核转储使开发人员能够调查根本原因事后的根本原因。 实时内核转储在% windir% LiveKernelDumps 下收集 \\ 。
 
 ### <a name="reset-recovery-triggers"></a>重置恢复触发器
 
-下面列出了当前的重置恢复触发器。 可能在将来添加更多触发器。
+下面列出了当前的重置恢复触发器。 将来可能会添加更多触发器。
 
--   UE 检测到 WDI 命令 (M3) 发送到 LE 的超时。
--   UE 检测到 WDI 任务 (M4) 发送到 LE 的超时。
--   LE 检测，并指示固件挂起。
--   用户模式下请求重置恢复。 这是当前仅为 internet 连接丢失。 当 NIC 连接并且已建立 internet 连接时，wlansvc 启动 internet 丢失状态机。 如果 internet 连接丢失，重新在 35 秒内未获得 wlansvc 请求 WDI 开始重置恢复。 35 秒超时将来会发生变化。
+-   UE) 发送到 LE (M3 检测到 WDI 命令超时。
+-   UE) 发送到 LE (的 M4 检测到 WDI 任务的超时。
+-   该 LE 检测并指示固件挂起。
+-   用户模式请求重置恢复。 此情况目前仅用于丢失 internet 连接。 如果 NIC 已连接并且具有 internet 连接，wlansvc 将启动 internet 丢失状态机。 如果 internet 连接丢失且在35秒内未重新获得，wlansvc 将请求 WDI 启动重置恢复。 35秒超时可能会在将来发生变化。
 
 ### <a name="events-for-reset-recovery-triggers"></a>重置恢复触发器的事件
 
-WDI 调用 NDIS 接收重置恢复触发器时到系统事件日志中记录错误事件。 该事件处于 LE 名称，该 ID 是 5002。 最后两个 dword 值是\[TriggerType、 ActiveWdiCommand\]。 下面列出了当前的触发器类型。
+WDI 调用 NDIS 将错误事件记录到系统事件日志（在收到重置恢复触发器时）。 事件在 LE 名称中，ID 为5002。 最后两个 Dword 为 \[ TriggerType、ActiveWdiCommand \] 。 下面列出了当前的触发器类型。
 
--   命令\_计时器\_运行 (1)
--   任务\_计时器\_已用 (2)
--   重置\_恢复\_OID\_请求 (3)
--   重置\_恢复\_固件\_STALLED (4)
+-   命令 \_ 计时器已 \_ 运行 (1) 
+-   任务 \_ 计时器已 \_ 用 (2) 
+-   重置 \_ 恢复 \_ OID \_ 请求 (3) 
+-   重置 \_ 恢复 \_ 固件 \_ 停止 (4) 
 
-ActiveWdiCommand 可能为 0 （无活动命令），如果触发器类型重置\_恢复\_OID\_请求或重置\_恢复\_固件\_STALLED。
+如果触发器类型为 RESET \_ 恢复 \_ OID \_ 请求或重置 \_ 恢复 \_ 固件 \_ 停止，ActiveWdiCommand 可能为 0 (没有活动的命令) 。
 
-这是屏幕截图显示 system.evtx eventvwr 示例视图。 触发器类型为 3，并且没有任何活动命令。
+此屏幕截图是显示系统 .evtx 的 eventvwr.msc 的一个示例视图。 触发器类型为3，并且没有活动的命令。
 
-![wdi 事件日志的屏幕截图](images/wdi-event-log-screenshot.png)
+![wdi 事件日志屏幕快照](images/wdi-event-log-screenshot.png)
 
-## <a name="when-wi-fi-malfunctions"></a>当 Wi-fi 工作不正常
-
-
-如果没有任何故障，但 Wi-fi 不无法按预期运行，收集和分析跟踪日志。 若要查看此问题仅限于 WDI UE 和 LE，wlan\_dbg 跟踪应包括在内，以查看上下文的操作系统事件。 Wlan\_dbg 包含需要操作系统私有符号的 WPP 事件。 应保留原始 etl 跟踪，并将其包含在通信。
-
-## <a name="connected-standby-issues"></a>连接待机状态问题
+## <a name="when-wi-fi-malfunctions"></a>Wi-fi 故障时
 
 
-有时，Wi-fi NIC 不会为低能耗 (设备\_电源\_状态\_Dx)。 其他情况下，设备被唤醒频繁。 SleepStudy 报表是在第一个级别会审中有所帮助。 SleepStudy 事件将始终启用，但如果 CS 会话时间超过 10 分钟，才收集。 事件也是持久性 （例如，您可以检查研究总结）。 若要生成 SleepStudy，在管理员命令提示符中运行以下命令行。
+如果没有崩溃但 Wi-fi 未按预期工作，请收集和分析跟踪日志。 若要查看问题是否局限于 WDI UE and LE， \_ 应包含 wlan dbg 跟踪来查看上下文的操作系统事件。 Wlan \_ dbg 包含需要操作系统专用符号的 WPP 事件。 原始 etl 跟踪应该保留并包含在通信中。
+
+## <a name="connected-standby-issues"></a>连接待机问题
+
+
+有时，Wi-fi NIC 不会转向低功耗 (设备 \_ 电源 \_ 状态 \_ Dx) 。 其他情况下，设备会频繁唤醒。 SleepStudy 报表有助于第一级会审。 SleepStudy 事件始终为 on，但仅当 CS 会话超过10分钟时才收集。 这些事件也是持久性 (例如，您可以检查研究总结) 。 若要生成 SleepStudy，请在管理员命令提示符下运行以下命令行。
 
 ```CMD
 Powercfg /SleepStudy
 ```
 
-生成一个名为 SleepStudy report.html 的报表文件。 它应打开外部 %windiir%\\系统。 报表会详细列出哪些模块保持系统的带非常低功耗状态 (DRIPS)。 它还可以进一步可以分解的组件够 Wi-fi NIC （带 Dx)。
+生成名为 SleepStudy-report.html 的报告文件。 它应该在% windiir% 系统之外打开 \\ 。 该报告分解哪些模块将系统的电源状态降低为非常低， (DRIPS) 。 此外，它还可以进一步细分哪些组件将 Wi-fi NIC 保持 () 。
 
  
-
- 
-
-
-
-
 

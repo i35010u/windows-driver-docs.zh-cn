@@ -11,17 +11,17 @@ keywords:
 - 目标连接 WDK Winsock 内核
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 361908d2e31a633fd4436d09c1c874499b5ba04d
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: d5080da6f440fb26803bfd0e74459972aa1a7b2d
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72834886"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89212517"
 ---
 # <a name="disconnecting-a-socket-from-a-destination"></a>断开套接字与目标的连接
 
 
-当 Winsock 内核（WSK）应用程序完成通过建立的套接字连接发送和接收数据时，它可以断开面向连接的套接字与连接到的远程传输地址的连接。 WSK 应用程序通过调用[**WskDisconnect**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_disconnect)函数将套接字与远程传输地址断开连接。 WSK 应用程序可以执行*异常断开连接*或插座的*正常断开连接*。 有关异常断开连接与正常断开连接之间的差异的详细信息，请参阅**WskDisconnect**。
+当 Winsock 内核 (WSK) 应用程序完成通过建立的套接字连接发送和接收数据时，它可以断开面向连接的套接字与连接到的远程传输地址的连接。 WSK 应用程序通过调用 [**WskDisconnect**](/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_disconnect) 函数将套接字与远程传输地址断开连接。 WSK 应用程序可以执行 *异常断开连接* 或插座的 *正常断开连接* 。 有关异常断开连接与正常断开连接之间的差异的详细信息，请参阅 **WskDisconnect**。
 
 下面的代码示例演示 WSK 应用程序如何将面向连接的套接字与远程传输地址正确断开连接。
 
@@ -123,15 +123,9 @@ NTSTATUS
 }
 ```
 
-如果 WSK 应用程序执行套接字的正常断开连接，则在通过将指向[**WSK\_BUF**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/ns-wsk-_wsk_buf)结构的指针传递到[**WskDisconnect**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_disconnect)函数之前，应用程序可以将数据的最终缓冲区发送到远程传输地址。
+如果 WSK 应用程序执行套接字的正常断开连接，则在通过将指向 [**WSK \_ BUF**](/windows-hardware/drivers/ddi/wsk/ns-wsk-_wsk_buf) 结构的指针传递到 [**WskDisconnect**](/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_disconnect) 函数之前，应用程序可以将数据的最终缓冲区发送到远程传输地址。
 
-如果 WSK 应用程序关闭面向连接的套接字，而不先将套接字从其连接到的远程传输地址断开连接，则在关闭套接字之前，WSK 子系统会自动执行套接字的异常断开连接。 有关关闭套接字的详细信息，请参阅[关闭套接字](closing-a-socket.md)。
-
- 
+如果 WSK 应用程序关闭面向连接的套接字，而不先将套接字从其连接到的远程传输地址断开连接，则在关闭套接字之前，WSK 子系统会自动执行套接字的异常断开连接。 有关关闭套接字的详细信息，请参阅 [关闭套接字](closing-a-socket.md)。
 
  
-
-
-
-
 

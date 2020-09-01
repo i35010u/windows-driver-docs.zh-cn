@@ -8,17 +8,17 @@ keywords:
 - Windows 硬件错误体系结构 WDK，注入
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 678b063cacf101422fa90aaaef336c27747ae60a
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: c1faf71c3c400fefb3e55103c2470d5630509691
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72844400"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89213077"
 ---
 # <a name="injecting-a-hardware-error"></a>注入硬件错误
 
 
-用户模式应用程序可以通过调用[**WHEAErrorInjectionMethods：： InjectError**](https://docs.microsoft.com/windows-hardware/drivers/ddi/_whea/)方法将硬件错误注入硬件平台。 应用程序将硬件错误注入硬件平台，以测试和验证系统的硬件错误处理功能。
+用户模式应用程序可以通过调用 [**WHEAErrorInjectionMethods：： InjectError**](/windows-hardware/drivers/ddi/_whea/) 方法将硬件错误注入硬件平台。 应用程序将硬件错误注入硬件平台，以测试和验证系统的硬件错误处理功能。
 
 下面的代码示例演示如何注入硬件错误。
 
@@ -164,9 +164,4 @@ pOutParameters->Release();
 ```
 
  
-
- 
-
-
-
 

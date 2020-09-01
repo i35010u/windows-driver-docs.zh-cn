@@ -7,20 +7,20 @@ keywords:
 ms.date: 11/01/2019
 ms.localizationpriority: medium
 ms.custom: Vib
-ms.openlocfilehash: 7b04db5d637196a9d40387610afe7c0ff1dad785
-ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
+ms.openlocfilehash: 432e6de2d9e884c2c33aa4c957ad97cfd2bf7b96
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/19/2019
-ms.locfileid: "75210795"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89212207"
 ---
 # <a name="canceling-network-data-with-net-rings"></a>使用网环取消网络数据
 
-NetAdapterCx 客户端驱动程序在框架为数据包队列调用其[*EvtPacketQueueCancel*](https://docs.microsoft.com/windows-hardware/drivers/ddi/netpacketqueue/nc-netpacketqueue-evt_packet_queue_cancel)回调函数时，取消网络数据。 在此回调中，客户端驱动程序将在框架删除数据包队列之前执行所需的任何处理。
+NetAdapterCx 客户端驱动程序在框架为数据包队列调用其 [*EvtPacketQueueCancel*](/windows-hardware/drivers/ddi/netpacketqueue/nc-netpacketqueue-evt_packet_queue_cancel) 回调函数时，取消网络数据。 在此回调中，客户端驱动程序将在框架删除数据包队列之前执行所需的任何处理。
 
 ### <a name="canceling-a-transmit-queue"></a>取消传输队列
 
-在传输队列的*EvtPacketQueueCancel*回调函数中，你有机会完成所有未完成的传输包。 与接收队列不同的是，您不需要这样做。 如果保留未完成的数据包，NetAdapterCx 将为传输队列调用[*EvtPacketQueueAdvance*](https://docs.microsoft.com/windows-hardware/drivers/ddi/netpacketqueue/nc-netpacketqueue-evt_packet_queue_advance) ，在此过程中，你可以在常规操作过程中处理它们。
+在传输队列的 *EvtPacketQueueCancel* 回调函数中，你有机会完成所有未完成的传输包。 与接收队列不同的是，您不需要这样做。 如果保留未完成的数据包，NetAdapterCx 将为传输队列调用 [*EvtPacketQueueAdvance*](/windows-hardware/drivers/ddi/netpacketqueue/nc-netpacketqueue-evt_packet_queue_advance) ，在此过程中，你可以在常规操作过程中处理它们。
 
 如果硬件支持取消正在进行的传输，还应将网络环的 post 数据包迭代器前移到所有已取消的数据包。 这可能类似于以下示例：
 
@@ -53,12 +53,12 @@ MyEvtTxQueueCancel(
 
 ### <a name="canceling-a-receive-queue"></a>取消接收队列
 
-在接收队列的*EvtPacketQueueCancel*回调函数中，必须完成所有未完成的接收数据包。 如果不返回所有数据包，则操作系统不会删除队列，NetAdapterCx 停止为队列调用回调。 
+在接收队列的 *EvtPacketQueueCancel* 回调函数中，必须完成所有未完成的接收数据包。 如果不返回所有数据包，则操作系统不会删除队列，NetAdapterCx 停止为队列调用回调。 
 
 若要返回数据包，你应该首先尝试指示在禁用接收路径时可能已指出的任何接收，然后将所有数据包都设置为忽略，并将所有片段返回到操作系统。 这可能类似于下面的代码示例。
 
 > [!NOTE]
-> 此示例提供了指示接收的详细信息。 有关接收数据的代码示例，请参阅[接收网络数据和净环](receiving-network-data-with-net-rings.md)。
+> 此示例提供了指示接收的详细信息。 有关接收数据的代码示例，请参阅 [接收网络数据和净环](receiving-network-data-with-net-rings.md)。
 
 ```C++
 void

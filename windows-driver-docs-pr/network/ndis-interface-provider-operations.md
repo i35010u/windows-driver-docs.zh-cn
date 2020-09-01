@@ -8,12 +8,12 @@ keywords:
 - 接口提供程序 WDk 网络接口
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0b00e6d204951aebb8471c11e49b396ac5e7cf5d
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: cb201131b284a5e9276167c12d4b8e2d7485aef1
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67385511"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89212155"
 ---
 # <a name="ndis-interface-provider-operations"></a>NDIS 接口提供程序操作
 
@@ -21,31 +21,25 @@ ms.locfileid: "67385511"
 
 
 
-所有的 NDIS 驱动程序可以将注册为接口提供程序。 每当一个驱动程序 （或 NDIS 代理接口提供程序） 检测到新的接口，已引入到计算机，它会分配[ **NET\_LUID** ](https://docs.microsoft.com/windows/desktop/api/ifdef/ns-ifdef-net_luid_lh)索引，注册接口，并保留关联的 NET\_LUID 持久存储 （如注册表） 中的值。 以下列表描述了几个示例的新接口可以引入到计算机的方式：
+所有 NDIS 驱动程序都可以注册为接口提供程序。 每当驱动程序 (或 NDIS 代理接口提供程序) 检测到要引入到计算机的新接口时，它都会分配 [**NET \_ LUID**](/windows/desktop/api/ifdef/ns-ifdef-net_luid_lh) 索引，注册接口，并将关联的 NET \_ luid 值保留在持久性存储中 (如注册表) 。 以下列表描述了如何将新接口引入计算机的几个示例：
 
--   可以安装的网络适配器，中间驱动程序的虚拟适配器或物理适配器。 在这种情况下，NDIS 代理接口提供程序管理接口。
+-   安装网络适配器，无论是用于中间驱动程序的虚拟适配器还是物理适配器。 在这种情况下，NDIS 代理接口提供程序管理接口。
 
--   将附加筛选器模块。 在这种情况下，NDIS 代理接口提供程序管理接口。
+-   附加筛选器模块。 在这种情况下，NDIS 代理接口提供程序管理接口。
 
--   MUX 中间驱动程序的内部绑定。 MUX 中间驱动程序应实现 NDIS 提供程序服务来处理这种情况下，因为内部接口看不到 NDIS。
+-   MUX 中间驱动程序内部绑定。 MUX 中间驱动程序应该实现 NDIS 提供程序服务来处理这种情况，因为内部接口对 NDIS 不可见。
 
-计算机随后重新启动时，接口提供程序不应分配一个新[ **NET\_LUID** ](https://docs.microsoft.com/windows/desktop/api/ifdef/ns-ifdef-net_luid_lh)为同一接口的接口是持久的; 如果相反，该接口提供程序应使用以前存储的 NET\_要注册的相同接口的 LUID 值。 此外，即使该接口不是永久性的接口提供程序必须释放 NET\_LUID 索引计算机电源故障时。 因此，接口提供程序应存储 NET\_持久存储 （例如，注册表） 中的 LUID。
+当计算机重新启动时，如果接口是持久的，则接口提供程序不应为同一接口分配新的 [**net \_ luid**](/windows/desktop/api/ifdef/ns-ifdef-net_luid_lh) ; 相反，接口提供程序应使用之前存储的 net \_ luid 值注册同一接口。 此外，即使接口不是持久的，接口提供程序也必须释放 NET \_ LUID 索引（如果存在计算机电源故障）。 因此，接口提供程序应将 NET \_ LUID 存储在持久性存储中 (例如，注册表) 。
 
-如果接口提供程序检测到一个接口，正在关闭，它应取消注册，该接口。
+如果接口提供程序检测到接口正在关闭，则它应取消注册接口。
 
-**请注意**  NDIS 代理提供程序注销微型端口适配器的接口，它们都会被卸载并分离时筛选模块时。
-
- 
-
-如果检测到的接口提供完全删除接口 （例如，NDIS 代理提供程序通知正在卸载的微型端口适配器），接口提供程序注销该接口，并释放 NET\_LUID 的索引。 NDIS 代理提供程序也会释放 NET\_LUID 索引时分离筛选器模块。
-
-在运行时接口提供程序处理接口的已注册的 OID 的请求。 NDIS 代理接口提供程序可能会向基础驱动程序，以获取接口的信息发出 OID 的请求。
+**注意**   当卸载微型端口适配器时，NDIS 代理提供程序注销接口，并在分离时筛选模块。
 
  
 
+如果接口提供程序检测到已完全删除某个接口 (例如，NDIS 代理提供程序将收到) 卸载微型端口适配器的通知，接口提供程序会注销接口并释放 NET \_ LUID 索引。 当分离筛选器模块时，NDIS 代理提供程序还会释放 NET \_ LUID 索引。
+
+在运行时，接口提供程序为其注册的接口处理 OID 请求。 NDIS 代理接口提供程序可能会向底层驱动程序发出 OID 请求，以获取接口信息。
+
  
-
-
-
-
 

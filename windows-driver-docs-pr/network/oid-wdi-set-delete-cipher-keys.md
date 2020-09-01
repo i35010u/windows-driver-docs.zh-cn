@@ -7,37 +7,37 @@ keywords:
 - 从 Windows Vista 开始 OID_WDI_SET_DELETE_CIPHER_KEYS 网络驱动程序
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 26c506035d61731c2aa5d75b87cf23761e52d60a
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 30f9f4c8fb7e5d6aeeda0e348824605de7ecf80a
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67387254"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89212115"
 ---
-# <a name="oidwdisetdeletecipherkeys"></a>OID\_WDI\_SET\_DELETE\_CIPHER\_KEYS
+# <a name="oid_wdi_set_delete_cipher_keys"></a>OID \_ WDI \_ 设置 \_ 删除 \_ 密码 \_ 密钥
 
 
-OID\_WDI\_设置\_删除\_密码\_密钥删除密码设备的密码密钥表中的密钥。
+OID \_ WDI \_ 设置 \_ 删除 \_ 密码 \_ 密钥从设备的密码密钥表中删除密码密钥。
 
-| 范围 | 设置与任务序列化 | 正常执行时间 （秒） |
+| 作用域 | 设置序列化任务 | 正常执行时间 (秒)  |
 |-------|--------------------------|---------------------------------|
-| Port  | 是                      | 1                               |
+| 端口  | 是                      | 1                               |
 
  
 
 ## <a name="set-property-parameters"></a>设置属性参数
 
 
-| TLV                                                                                | 允许多个 TLV 实例 | 可选 | 描述                                                |
+| TLV                                                                                | 允许多个 TLV 实例 | 可选 | 说明                                                |
 |------------------------------------------------------------------------------------|--------------------------------|----------|------------------------------------------------------------|
-| [**WDI\_TLV\_DELETE\_CIPHER\_KEY\_INFO**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-delete-cipher-key-info) | X                              |          | 若要从设备的密钥表中删除密码密钥。 |
+| [**WDI \_ TLV \_ 删除 \_ 密码 \_ 密钥 \_ 信息**](./wdi-tlv-delete-cipher-key-info.md) | X                              |          | 要从设备的键表中删除的密码密钥。 |
 
  
 
 ## <a name="set-property-results"></a>设置属性结果
 
 
-没有其他数据。 标头中的数据就足够了。
+无其他数据。 标头中的数据足够了。
 
 <a name="requirements"></a>要求
 ------------
@@ -57,21 +57,16 @@ OID\_WDI\_设置\_删除\_密码\_密钥删除密码设备的密码密钥表中�
 <td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
-<td><p>Header</p></td>
-<td>Dot11wdi.h</td>
+<td><p>标头</p></td>
+<td>Dot11wdi</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
-[OID\_WDI\_SET\_ADD\_CIPHER\_KEYS](oid-wdi-set-add-cipher-keys.md)
-
- 
+[OID \_ WDI \_ 设置 \_ 添加 \_ 密码 \_ 密钥](oid-wdi-set-add-cipher-keys.md)
 
  
-
-
-
 

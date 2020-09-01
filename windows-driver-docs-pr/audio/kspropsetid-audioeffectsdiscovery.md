@@ -1,24 +1,24 @@
 ---
-title: KSPROPSETID\_AudioEffectsDiscovery
-description: KSPROPSETID\_AudioEffectsDiscovery 属性集实现通过使用 Microsoft 的泛型代理音频处理对象 (APO) 的音频设备驱动程序。
+title: KSPROPSETID \_ AudioEffectsDiscovery
+description: KSPROPSETID \_ AudioEffectsDiscovery 属性集由使用 Microsoft 的通用代理音频处理对象 (APO) 的音频设备驱动程序实现。
 ms.assetid: 68229885-1446-4BF0-B4E1-96A777006567
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 752ef27db4769a13239a2f9d782a46ed515833de
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: dde9ee5e6a8887b244c012815d49f3fe248f4f89
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67358721"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89211479"
 ---
-# <a name="kspropsetidaudioeffectsdiscovery"></a>KSPROPSETID\_AudioEffectsDiscovery
+# <a name="kspropsetid_audioeffectsdiscovery"></a>KSPROPSETID \_ AudioEffectsDiscovery
 
 
-**KSPROPSETID\_AudioEffectsDiscovery**属性集实现通过使用 Microsoft 的泛型代理音频处理对象 (APO) 的音频设备驱动程序。
+**KSPROPSETID \_ AudioEffectsDiscovery**属性集由使用 Microsoft 的通用代理音频处理对象 (APO) 的音频设备驱动程序实现。
 
-**KSPROPSETID\_AudioEffectsDiscovery**是可用于 Windows 8.1 和更高版本的 Windows 操作系统。
+**KSPROPSETID \_** Windows 操作系统 Windows 8.1 和更高版本中提供了 AudioEffectsDiscovery。
 
-*MsApoFxProxy.h*标头文件定义**KSPROPSETID\_AudioEffectsDiscovery**属性设置，如下所示：
+*MsApoFxProxy*头文件定义**KSPROPSETID \_ AudioEffectsDiscovery**属性集，如下所示：
 
 ``` syntax
 #define STATIC_KSPROPSETID_AudioEffectsDiscovery\  
@@ -27,17 +27,11 @@ DEFINE_GUIDSTRUCT("0B217A72-16B8-4A4D-BDED-F9D6BBEDCD8F", KSPROPSETID_AudioEffec
 #define KSPROPSETID_AudioEffectsDiscovery DEFINE_GUIDNAMED(KSPROPSETID_AudioEffectsDiscovery)
 ```
 
-**KSPROPSETID\_AudioEffectsDiscovery**属性集包含以下 KS 属性。
+**KSPROPSETID \_ AudioEffectsDiscovery**属性集包含以下 KS 属性。
 
-[**KSPROPERTY\_AUDIOEFFECTSDISCOVERY\_EFFECTSLIST**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/dn457706(v=vs.85))
+[**KSPROPERTY \_ AUDIOEFFECTSDISCOVERY \_ EFFECTSLIST**](/previous-versions/windows/hardware/drivers/dn457706(v=vs.85))
 
-此属性的名称中定义[ **KSPROPERTY\_AUDIOEFFECTSDISCOVERY** ](https://docs.microsoft.com/windows/desktop/api/msapofxproxy/ne-msapofxproxy-ksproperty_audioeffectsdiscovery)枚举。
-
- 
+此属性名称是在 [**KSPROPERTY \_ AUDIOEFFECTSDISCOVERY**](/windows/desktop/api/msapofxproxy/ne-msapofxproxy-ksproperty_audioeffectsdiscovery) 枚举中定义的。
 
  
-
-
-
-
 

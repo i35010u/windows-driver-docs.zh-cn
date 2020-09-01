@@ -1,26 +1,26 @@
 ---
 title: NDIS_STATUS_WWAN_DEVICE_SERVICE_SUPPORTED_COMMANDS
-description: 微型端口驱动程序使用 NDIS_STATUS_WWAN_DEVICE_SERVICE_SUPPORTED_COMMANDS 通知报告 OID_WWAN_ENUMERATE_DEVICE_SERVICE_COMMANDS 查询的完成。NDIS_WWAN_DEVICE_SERVICE_SUPPORTED_COMMANDS 结构。
+description: 微型端口驱动程序使用 NDIS_STATUS_WWAN_DEVICE_SERVICE_SUPPORTED_COMMANDS 通知报告 OID_WWAN_ENUMERATE_DEVICE_SERVICE_COMMANDS 的查询的完成。NDIS_WWAN_DEVICE_SERVICE_SUPPORTED_COMMANDS 结构。
 ms.assetid: 3EFEFB4B-6B13-44D7-8788-140B90103A93
 ms.date: 07/18/2017
 keywords:
-- NDIS_STATUS_WWAN_DEVICE_SERVICE_SUPPORTED_COMMANDS 从 Windows Vista 开始的网络驱动程序
+- 从 Windows Vista 开始 NDIS_STATUS_WWAN_DEVICE_SERVICE_SUPPORTED_COMMANDS 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: f4af6c66ea19541b61da16a89869f840eef98cc2
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 7201114ddf6bca8bfd9b6057ef396e0cdfa8e627
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72843032"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89212866"
 ---
-# <a name="ndis_status_wwan_device_service_supported_commands"></a>NDIS\_状态\_WWAN\_设备\_服务\_支持的\_命令
+# <a name="ndis_status_wwan_device_service_supported_commands"></a>NDIS \_ 状态 \_ WWAN \_ 设备 \_ 服务 \_ 支持的 \_ 命令
 
 
-微型端口驱动程序使用 NDIS\_状态\_WWAN\_设备\_服务\_支持的\_命令通知，以报告对[OID\_WWAN\_枚举\_设备的查询的完成\_SERVICE\_命令](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wwan-enumerate-device-service-commands)。
+微型端口驱动程序使用 NDIS \_ 状态 \_ wwan \_ 设备 \_ 服务支持的 \_ \_ 命令通知报告 [OID \_ WWAN \_ 枚举 \_ 设备 \_ 服务 \_ 命令](./oid-wwan-enumerate-device-service-commands.md)的完成。
 
 微型端口驱动程序无法使用此通知发送未经请求的事件。
 
-此通知使用[**NDIS\_WWAN\_设备\_服务\_支持的\_命令**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_device_service_supported_commands)结构。
+此通知使用 [**NDIS \_ WWAN \_ 设备 \_ 服务支持的 \_ \_ 命令**](/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_device_service_supported_commands) 结构。
 
 <a name="requirements"></a>要求
 ------------
@@ -45,14 +45,9 @@ ms.locfileid: "72843032"
 ## <a name="see-also"></a>另请参阅
 
 
-[OID\_WWAN\_枚举\_设备\_服务\_命令](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wwan-enumerate-device-service-commands)
+[OID \_ WWAN \_ 枚举 \_ 设备 \_ 服务 \_ 命令](./oid-wwan-enumerate-device-service-commands.md)
 
-[**NDIS\_WWAN\_设备\_服务\_支持的\_命令**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_device_service_supported_commands)
-
- 
+[**NDIS \_ WWAN \_ 设备 \_ 服务 \_ 支持的 \_ 命令**](/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_device_service_supported_commands)
 
  
-
-
-
 

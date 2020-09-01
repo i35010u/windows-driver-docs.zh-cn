@@ -8,12 +8,12 @@ keywords:
 - 通过以太网 visual studio 调试
 ms.date: 05/16/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 7cdf60e5102e4a06d550088d3bce67e0188781c3
-ms.sourcegitcommit: 67efcd26f7be8f50c92b141ccd14c9c68f4412d8
+ms.openlocfilehash: 99a4bc0e295993e879a952bca90369bd812435c2
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88902498"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89212217"
 ---
 # <a name="setting-up-kernel-mode-debugging-over-a-network-cable-in-visual-studio"></a>在 Visual Studio 中设置通过网线进行的内核模式调试
 
@@ -43,7 +43,7 @@ ms.locfileid: "88902498"
 
 
 1.  使用和适当的网络电缆将目标计算机的网络适配器连接到网络集线器或交换机。 将主计算机的网络适配器连接到网络集线器，或使用标准电缆或无线连接进行切换。
-2.  按照为 [驱动程序部署设置计算机和测试 (WDK 8.1) ](https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/provision-a-target-computer-wdk-8-1)中所述，开始配置主机和目标计算机。
+2.  按照为 [驱动程序部署设置计算机和测试 (WDK 8.1) ](../gettingstarted/provision-a-target-computer-wdk-8-1.md)中所述，开始配置主机和目标计算机。
 3.  在主计算机上，在 Visual Studio 的 "计算机配置" 对话框中，选择 " **设置计算机"，然后选择 "调试器设置**"。
 4.  对于 " **连接类型**"，请选择 " **网络**"。
 
@@ -142,8 +142,8 @@ busparams               0.29.7
 
 1.  在主计算机上，在 Visual Studio 的“驱动程序”  菜单中，选择“测试”&gt;“配置计算机”  。
 2.  选择测试计算机的名称，然后单击 " **下一步**"。
-3.  选择 " **设置计算机" 并选择 "调试器设置**"。 单击“下一步”。
-4.  对于 " **端口号**"，请输入网络管理员允许的范围内的数字。 单击“下一步”。
+3.  选择 " **设置计算机" 并选择 "调试器设置**"。 单击“配置目录分区”  。
+4.  对于 " **端口号**"，请输入网络管理员允许的范围内的数字。 单击“配置目录分区”  。
 5.  重新配置过程将花费几分钟时间，并自动重启目标计算机。 完成此过程后，单击 " **下一步** " 和 " **完成**"。
 
 ### <a name="specify-busparams"></a>指定 busparams
@@ -166,11 +166,4 @@ busparams               0.29.7
 [Windows 8 中的网络内核调试支持的以太网 NIC](supported-ethernet-nics-for-network-kernel-debugging-in-windows-8.md)
 
  
-
- 
-
-
-
-
-
 

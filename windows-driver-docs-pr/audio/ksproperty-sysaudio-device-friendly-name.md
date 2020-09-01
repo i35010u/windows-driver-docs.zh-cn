@@ -1,6 +1,6 @@
 ---
-title: KSPROPERTY\_SYSAUDIO\_DEVICE\_FRIENDLY\_NAME
-description: KSPROPERTY\_SYSAUDIO\_设备\_友好\_名称属性检索包含虚拟的音频设备的友好名称的 Unicode 字符串。
+title: KSPROPERTY \_ SYSAUDIO \_ 设备 \_ 友好 \_ 名称
+description: KSPROPERTY \_ SYSAUDIO \_ 设备 \_ 友好 \_ 名称属性检索包含虚拟音频设备友好名称的 Unicode 字符串。
 ms.assetid: 14e23bb3-f0af-486f-8e34-fe27b2db2849
 keywords:
 - KSPROPERTY_SYSAUDIO_DEVICE_FRIENDLY_NAME 音频设备
@@ -14,22 +14,22 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f939950cbfdb9ea471847276ee83bf73da08d60f
-ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
+ms.openlocfilehash: 4f49bcbb693e8d9e7f520e575fb8162800b4c109
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67391613"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89211485"
 ---
-# <a name="kspropertysysaudiodevicefriendlyname"></a>KSPROPERTY\_SYSAUDIO\_DEVICE\_FRIENDLY\_NAME
+# <a name="ksproperty_sysaudio_device_friendly_name"></a>KSPROPERTY \_ SYSAUDIO \_ 设备 \_ 友好 \_ 名称
 
 
-KSPROPERTY\_SYSAUDIO\_设备\_友好\_名称属性检索包含虚拟的音频设备的友好名称的 Unicode 字符串。
+KSPROPERTY \_ SYSAUDIO \_ 设备 \_ 友好 \_ 名称属性检索包含虚拟音频设备友好名称的 Unicode 字符串。
 
 ## <span id="ddk_ksproperty_sysaudio_device_friendly_name_ks"></span><span id="DDK_KSPROPERTY_SYSAUDIO_DEVICE_FRIENDLY_NAME_KS"></span>
 
 
-### <a name="span-idusagesummarytablespanspan-idusagesummarytablespanspan-idusagesummarytablespanusage-summary-table"></a><span id="Usage_Summary_Table"></span><span id="usage_summary_table"></span><span id="USAGE_SUMMARY_TABLE"></span>使用率摘要表
+### <a name="span-idusage_summary_tablespanspan-idusage_summary_tablespanspan-idusage_summary_tablespanusage-summary-table"></a><span id="Usage_Summary_Table"></span><span id="usage_summary_table"></span><span id="USAGE_SUMMARY_TABLE"></span>使用情况摘要表
 
 <table>
 <colgroup>
@@ -41,7 +41,7 @@ KSPROPERTY\_SYSAUDIO\_设备\_友好\_名称属性检索包含虚拟的音频设
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Get</th>
+<th align="left">获取</th>
 <th align="left">设置</th>
 <th align="left">目标</th>
 <th align="left">属性描述符类型</th>
@@ -52,8 +52,8 @@ KSPROPERTY\_SYSAUDIO\_设备\_友好\_名称属性检索包含虚拟的音频设
 <tr class="odd">
 <td align="left"><p>是</p></td>
 <td align="left"><p>否</p></td>
-<td align="left"><p>Filter</p></td>
-<td align="left"><p><a href="https://docs.microsoft.com/previous-versions/ff564262(v=vs.85)" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/ff564262(v=vs.85))"><strong>KSPROPERTY</strong></a>+ ULONG</p></td>
+<td align="left"><p>筛选器</p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/previous-versions/ff564262(v=vs.85)" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](/previous-versions/ff564262(v=vs.85))"><strong>KSPROPERTY</strong></a>+ ULONG</p></td>
 <td align="left"><p>LPWSTR</p></td>
 </tr>
 </tbody>
@@ -61,13 +61,13 @@ KSPROPERTY\_SYSAUDIO\_设备\_友好\_名称属性检索包含虚拟的音频设
 
  
 
-属性描述符 （实例数据） 包含后, 跟一个包含标识虚拟的音频设备的设备 ID 的 ULONG 变量的 KSPROPERTY 结构。 如果枚举 SysAudio *n*音频的虚拟设备 (请参阅[ **KSPROPERTY\_SYSAUDIO\_设备\_计数**](ksproperty-sysaudio-device-count.md))，然后有效设备 Id 的范围是从 0 到*n*-1。 此外，设备 ID 值为-1 可以是用来指示当前的设备，这最后一个虚拟的音频设备打开[ **KSPROPERTY\_SYSAUDIO\_设备\_实例**](ksproperty-sysaudio-device-instance.md)或[ **KSPROPERTY\_SYSAUDIO\_实例\_信息**](ksproperty-sysaudio-instance-info.md)集属性请求。
+属性描述符 (实例数据) 包含一个 KSPROPERTY 结构，后跟一个 ULONG 变量，其中包含用于标识虚拟音频设备的设备 ID。 如果 SysAudio 枚举 *n* 个虚拟音频设备 (参阅 [**KSPROPERTY \_ SysAudio \_ 设备 \_ 计数**](ksproperty-sysaudio-device-count.md)) ，则有效的设备 id 范围介于0到 *n*-1 之间。 此外，设备 ID 值-1 可用于指示当前设备，这是由 [**KSPROPERTY \_ SYSAUDIO \_ 设备 \_ 实例**](ksproperty-sysaudio-device-instance.md) 或 [**KSPROPERTY \_ SYSAUDIO \_ 实例 \_ 信息**](ksproperty-sysaudio-instance-info.md)集请求打开的最后一个虚拟音频设备。
 
-（操作数据） 的属性值是指向以 null 结尾的 Unicode 字符的字符串，它包含设备的友好名称。
+) 操作数据 (的属性值是一个指针，指向以 null 结尾的 Unicode 字符字符串，其中包含设备的友好名称。
 
-### <a name="span-idreturnvaluespanspan-idreturnvaluespanspan-idreturnvaluespanreturn-value"></a><span id="Return_Value"></span><span id="return_value"></span><span id="RETURN_VALUE"></span>返回值
+### <a name="span-idreturn_valuespanspan-idreturn_valuespanspan-idreturn_valuespanreturn-value"></a><span id="Return_Value"></span><span id="return_value"></span><span id="RETURN_VALUE"></span>返回值
 
-KSPROPERTY\_SYSAUDIO\_设备\_友好\_名称属性请求将返回状态\_成功以指示已成功完成。 否则，请求将返回相应的错误状态代码。
+KSPROPERTY \_ SYSAUDIO \_ 设备 \_ 友好 \_ 名称属性请求返回状态 " \_ 成功" 以指示它已成功完成。 否则，请求将返回相应的错误状态代码。
 
 <a name="requirements"></a>要求
 ------------
@@ -79,29 +79,22 @@ KSPROPERTY\_SYSAUDIO\_设备\_友好\_名称属性请求将返回状态\_成功�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>Header</p></td>
-<td align="left">Ksmedia.h （包括 Ksmedia.h）</td>
+<td align="left"><p>标头</p></td>
+<td align="left">Ksmedia (包含 Ksmedia) </td>
 </tr>
 </tbody>
 </table>
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
-[**KSPROPERTY**](https://docs.microsoft.com/previous-versions/ff564262(v=vs.85))
+[**KSPROPERTY**](/previous-versions/ff564262(v=vs.85))
 
-[**KSPROPERTY\_SYSAUDIO\_DEVICE\_COUNT**](ksproperty-sysaudio-device-count.md)
+[**KSPROPERTY \_ SYSAUDIO \_ 设备 \_ 计数**](ksproperty-sysaudio-device-count.md)
 
-[**KSPROPERTY\_SYSAUDIO\_设备\_实例**](ksproperty-sysaudio-device-instance.md)
+[**KSPROPERTY \_ SYSAUDIO \_ 设备 \_ 实例**](ksproperty-sysaudio-device-instance.md)
 
-[**KSPROPERTY\_SYSAUDIO\_实例\_信息**](ksproperty-sysaudio-instance-info.md)
-
- 
+[**KSPROPERTY \_ SYSAUDIO \_ 实例 \_ 信息**](ksproperty-sysaudio-instance-info.md)
 
  
-
-
-
-
-
 

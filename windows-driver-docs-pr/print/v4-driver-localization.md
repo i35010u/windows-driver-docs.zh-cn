@@ -4,19 +4,19 @@ description: Windows 8 提供了标准的本地化显示字符串，以支持打
 ms.assetid: 5C587AF2-C51E-4728-A214-7FC1F8A6E445
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 22d4d5c24d481953c0e07ddc209d2986cf5a5117
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 67a17656659e67e6649fe42b9afb1224af973dc3
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72844196"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89211933"
 ---
 # <a name="v4-printer-driver-localization"></a>V4 打印机驱动程序本地化
 
 
 Windows 8 提供了标准的本地化显示字符串，以支持打印机扩展和 UWP 设备应用程序的开发。
 
-这些标准的本地化显示字符串通过新的[**IPrintSchemaCapabilities**](https://docs.microsoft.com/windows-hardware/drivers/ddi/printerextension/nn-printerextension-iprintschemacapabilities)对象提供，用于支持某些功能及其关联的标准选项。 下表显示了 Windows 8 可以用其标准显示字符串本地化的功能：
+这些标准的本地化显示字符串通过新的 [**IPrintSchemaCapabilities**](/windows-hardware/drivers/ddi/printerextension/nn-printerextension-iprintschemacapabilities) 对象提供，用于支持某些功能及其关联的标准选项。 下表显示了 Windows 8 可以用其标准显示字符串本地化的功能：
 
 <table>
 <colgroup>
@@ -51,11 +51,11 @@ Windows 8 提供了标准的本地化显示字符串，以支持打印机扩展�
 <td>PageOutputColor</td>
 </tr>
 <tr class="even">
-<td>Orientation</td>
+<td>方向</td>
 <td>PageOrientation</td>
 </tr>
 <tr class="odd">
-<td>N 向上</td>
+<td>N 个向上</td>
 <td>JobNUpAllDocumentsContiguously</td>
 </tr>
 <tr class="even">
@@ -96,11 +96,11 @@ Windows 8 提供了标准的本地化显示字符串，以支持打印机扩展�
 
 在不同的用户界面和 Api 上，显示名称有所不同。 使用以下三个流程图查看给定方案的预期本地化行为的概述。
 
-以下流程图显示了 UWP 应用中的预期本地化行为以及对象的[**IPrintSchemaFeature**](https://docs.microsoft.com/windows-hardware/drivers/ddi/printerextension/nn-printerextension-iprintschemafeature)和[**IPrintSchemaOption**](https://docs.microsoft.com/windows-hardware/drivers/ddi/printerextension/nn-printerextension-iprintschemaoption)系列。
+以下流程图显示了 UWP 应用中的预期本地化行为以及对象的 [**IPrintSchemaFeature**](/windows-hardware/drivers/ddi/printerextension/nn-printerextension-iprintschemafeature) 和 [**IPrintSchemaOption**](/windows-hardware/drivers/ddi/printerextension/nn-printerextension-iprintschemaoption) 系列。
 
 ![适用于 Windows apps、iprintschemafeature 或 iprintschemaoption 的本地化行为流程图](images/locstringmodern.png)
 
-以下流程图显示了**PrintCapabilities** XML 文档中的预期本地化行为。
+以下流程图显示了 **PrintCapabilities** XML 文档中的预期本地化行为。
 
 ![printcapabilities xml 文档的本地化行为流程图](images/locstringpcap.png)
 
@@ -118,25 +118,25 @@ Windows 8 提供了标准的本地化显示字符串，以支持打印机扩展�
 <thead>
 <tr class="header">
 <th>文件类型</th>
-<th>说明</th>
+<th>Instructions</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td>GPD</td>
 <td><ul>
-<li><p>为 GPD 功能或选项指定 <strong><em>名称</strong> 条目。</p></li>
-<li><p>不要指定<strong></em>rcNameID</strong> "项。</p></li>
-<li>对于以下功能/选项，还必须指定 <strong><em>PrintSchemaKeywordMap</strong> 将 GPD 功能或选项映射到相应的打印架构定义的功能或选项，除非将它们指定为<a href="standard-features.md" data-raw-source="[Standard Features](standard-features.md)">标准功能</a>. 若要查看演示如何使用<strong></em>PrintSchemaKeywordMap</strong>映射功能的示例，请参阅<a href="gpd-ppd-based-feature-description-changes.md" data-raw-source="[GPD/PPD-Based Feature Description Changes](gpd-ppd-based-feature-description-changes.md)">GPD/基于 PPD 的功能说明更改</a>。
+<li><p>指定 <strong> <em> </strong> GPD 功能或选项的 Name 项。</p></li>
+<li><p>不要指定<strong> </em> rcNameID</strong>项。</p></li>
+<li>对于以下功能/选项，还必须指定 PrintSchemaKeywordMap， <strong> <em> </strong> 以将 GPD 功能或选项映射到相应的打印架构定义的功能或选项，除非将它们指定为<a href="standard-features.md" data-raw-source="[Standard Features](standard-features.md)">标准功能</a>。 若要查看演示如何使用<strong> </em> PrintSchemaKeywordMap</strong>映射功能的示例，请参阅<a href="gpd-ppd-based-feature-description-changes.md" data-raw-source="[GPD/PPD-Based Feature Description Changes](gpd-ppd-based-feature-description-changes.md)">GPD/基于 PPD 的功能说明更改</a>。
 o JobHolePunch，DocumentHolePunch o JobStapleAllDocuments，DocumentStaple o JobBindAllDocuments，DocumentBinding o PageOutputQuality o PageMediaType</li>
-<li><p>对于 "N 向上"，请不要在选项值上使用 <strong><em>PrintSchemaKeywordMap</strong>。</p></li>
+<li><p>对于 "N 向上"，请不要 <strong> <em> </strong> 对选项值使用 PrintSchemaKeywordMap。</p></li>
 </ul></td>
 </tr>
 <tr class="even">
 <td>信息库</td>
 <td><ul>
-<li><p>使用<strong></em>PrintSchemaKeywordMap</strong>将 PPD 功能或选项映射到相应的打印架构定义的功能或选项。 若要查看演示如何使用 <strong><em>PrintSchemaKeywordMap</strong> 映射功能的示例，请参阅<a href="gpd-ppd-based-feature-description-changes.md" data-raw-source="[GPD/PPD-Based Feature Description Changes](gpd-ppd-based-feature-description-changes.md)">GPD/基于 PPD 的功能说明更改</a>。</p></li>
-<li><p>对于 "N 向上"，请不要对选项值使用<strong></em>PrintSchemaKeywordMap</strong> 。</p></li>
+<li><p>使用<strong> </em> PRINTSCHEMAKEYWORDMAP</strong>将 PPD 功能或选项映射到相应的打印架构定义的功能或选项。 若要查看演示如何使用 <strong> <em> PrintSchemaKeywordMap </strong> 映射功能的示例，请参阅<a href="gpd-ppd-based-feature-description-changes.md" data-raw-source="[GPD/PPD-Based Feature Description Changes](gpd-ppd-based-feature-description-changes.md)">GPD/基于 PPD 的功能说明更改</a>。</p></li>
+<li><p>对于 "N 向上"，请不要对选项值使用<strong> </em> PrintSchemaKeywordMap</strong> 。</p></li>
 </ul></td>
 </tr>
 </tbody>
@@ -149,11 +149,8 @@ o JobHolePunch，DocumentHolePunch o JobStapleAllDocuments，DocumentStaple o Jo
 基于 PPD 的驱动程序不支持资源 Dll。 因此，可能需要提供多个 PPD 文件。 Microsoft 建议使用 PPD 配置文件的 v4 打印驱动程序应使用本主题中所述的方法在每个区域设置中包含一个 PPD 文件。
 
 ## <a name="related-topics"></a>相关主题
-[**IPrintSchemaCapabilities**](https://docs.microsoft.com/windows-hardware/drivers/ddi/printerextension/nn-printerextension-iprintschemacapabilities)  
-[**IPrintSchemaFeature**](https://docs.microsoft.com/windows-hardware/drivers/ddi/printerextension/nn-printerextension-iprintschemafeature)  
-[**IPrintSchemaOption**](https://docs.microsoft.com/windows-hardware/drivers/ddi/printerextension/nn-printerextension-iprintschemaoption)  
+[**IPrintSchemaCapabilities**](/windows-hardware/drivers/ddi/printerextension/nn-printerextension-iprintschemacapabilities)  
+[**IPrintSchemaFeature**](/windows-hardware/drivers/ddi/printerextension/nn-printerextension-iprintschemafeature)  
+[**IPrintSchemaOption**](/windows-hardware/drivers/ddi/printerextension/nn-printerextension-iprintschemaoption)  
 [基于 GPD/PPD 的功能说明更改](gpd-ppd-based-feature-description-changes.md)  
-[标准功能](standard-features.md)  
-
-
-
+[标准功能](standard-features.md)

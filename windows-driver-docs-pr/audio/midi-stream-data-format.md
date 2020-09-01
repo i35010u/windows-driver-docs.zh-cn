@@ -6,12 +6,12 @@ keywords:
 - MIDI 流数据格式 WDK 音频
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: efa099d63939f97a382df9dbc4b392bf6e5a19d0
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 2a83e61b2ae0dc6aba078bbf9f884f0506f471d2
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72830356"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89211401"
 ---
 # <a name="midi-stream-data-format"></a>MIDI 流数据格式
 
@@ -19,7 +19,7 @@ ms.locfileid: "72830356"
 ## <span id="midi_stream_data_format"></span><span id="MIDI_STREAM_DATA_FORMAT"></span>
 
 
-此示例使用[**KSDATAFORMAT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksdataformat)结构来描述 MIDI 流的数据格式。
+此示例使用 [**KSDATAFORMAT**](/windows-hardware/drivers/ddi/ks/ns-ks-ksdataformat) 结构来描述 MIDI 流的数据格式。
 
 ```cpp
   DataFormat.FormatSize  = sizeof(KSDATAFORMAT);
@@ -32,9 +32,4 @@ ms.locfileid: "72830356"
 ```
 
  
-
- 
-
-
-
 

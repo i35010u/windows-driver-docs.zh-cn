@@ -1,49 +1,49 @@
 ---
 title: WDI_TLV_CONNECT_BSS_ENTRY
-description: WDI_TLV_CONNECT_BSS_ENTRY 是一个 TLV，其中包含候选连接 BSS 条目的列表。
+description: WDI_TLV_CONNECT_BSS_ENTRY 是包含候选连接 BSS 条目列表的 TLV。
 ms.assetid: 0D74B2DE-9224-4FDF-8EA8-B22CEC0B5F26
 ms.date: 07/18/2017
 keywords:
-- WDI_TLV_CONNECT_BSS_ENTRY 从 Windows Vista 开始的网络驱动程序
+- 从 Windows Vista 开始 WDI_TLV_CONNECT_BSS_ENTRY 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 7ea2332b18377c8f467096d56ca28d98e32c93d7
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 7efcc84fc81b3213e36e587082b9dfaeb2f4c726
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72843390"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89212721"
 ---
-# <a name="wdi_tlv_connect_bss_entry"></a>WDI\_TLV\_连接\_BSS\_条目
+# <a name="wdi_tlv_connect_bss_entry"></a>WDI \_ TLV \_ 连接 \_ BSS \_ 条目
 
 
-WDI\_TLV\_连接\_BSS\_条目是包含候选连接 BSS 条目列表的 TLV。
+WDI \_ tlv \_ 连接 \_ bss \_ 项是一个 TLV，其中包含候选连接 BSS 条目的列表。
 
 ## <a name="tlv-type"></a>TLV 类型
 
 
-0x34 赋
+0x34
 
-## <a name="length"></a>长度
+## <a name="length"></a>Length
 
 
-所有包含的 TLVs 的大小的总和（以字节为单位）。
+Sum (包含所有 TLVs 的大小的) 字节。
 
 ## <a name="values"></a>值
 
 
-| 在任务栏的搜索框中键入                                                                                        | 允许多个 TLV 实例 | 可选 | 描述                                                                                                                                                   |
+| 类型                                                                                        | 允许多个 TLV 实例 | 可选 | 说明                                                                                                                                                   |
 |---------------------------------------------------------------------------------------------|--------------------------------|----------|---------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [**WDI\_TLV\_BSSID**](wdi-tlv-bssid.md)                                                    |                                |          | BSS 的 BSSID。                                                                                                                                         |
-| [**WDI\_TLV\_探测\_响应\_帧**](wdi-tlv-probe-response-frame.md)                    |                                | X        | 探测响应帧。 如果未收到探测响应，则为空。                                                                        |
-| [**WDI\_TLV\_信标\_帧**](wdi-tlv-beacon-frame.md)                                     |                                | X        | 信号框架。 如果未收到信号，则为空。                                                                                        |
-| [**WDI\_TLV\_BSS\_条目\_信号\_信息**](wdi-tlv-bss-entry-signal-info.md)                 |                                |          | 此 BSS 条目的信号信息。                                                                                                                    |
-| [**WDI\_TLV\_BSS\_条目\_通道\_信息**](wdi-tlv-bss-entry-channel-info.md)               |                                |          | 此 BSS 条目的通道信息。                                                                                                                   |
-| [**WDI\_TLV\_BSS\_条目\_设备\_上下文**](wdi-tlv-bss-entry-device-context.md)           |                                | X        | IHV 提供有关此对等方的上下文数据。                                                                                                                |
-| [**WDI\_TLV\_PMKID**](wdi-tlv-pmkid.md)                                                    |                                | X        | 此 BSS 条目的16字节 PMKID 值。                                                                                                                   |
-| [**WDI\_TLV\_额外\_关联\_请求\_** ](wdi-tlv-extra-association-request-ies.md) |                                | X        | 要包含在此 BSSID 的（re）关联请求帧中的 IE。 如果存在，则除了常见的 IE 外，还应包括此项。                  |
-| [**WDI\_TLV\_FT\_初始\_ASSOC\_参数**](wdi-tlv-ft-initial-assoc-parameters.md)     |                                | X        | 初始移动域关联参数。                                                                                                           |
-| [**WDI\_TLV\_FT\_REASSOC\_参数**](wdi-tlv-ft-reassoc-parameters.md)                  |                                | X        | Fast 转换参数（MDIE、R0KH、PMKR0Name、SNonce）。 这仅用于快速转换（不是在初始移动域关联期间）。 |
-| [**WDI\_TLV\_BSS\_选择\_参数**](wdi-tlv-bss-selection-parameters.md)            |                                | X        | [**WDI\_bss\_选择\_标志**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wditypes/ne-wditypes-_wdi_bss_selection_flags)，这些标志提供主机用于 BSS 选择的信息。                               |
+| [**WDI \_ TLV \_ BSSID**](wdi-tlv-bssid.md)                                                    |                                |          | BSS 的 BSSID。                                                                                                                                         |
+| [**WDI \_ TLV \_ 探测 \_ 响应 \_ 帧**](wdi-tlv-probe-response-frame.md)                    |                                | X        | 探测响应帧。 如果未收到探测响应，则为空。                                                                        |
+| [**WDI \_ TLV \_ 信标 \_ 帧**](wdi-tlv-beacon-frame.md)                                     |                                | X        | 信号框架。 如果未收到信号，则为空。                                                                                        |
+| [**WDI \_ TLV \_ BSS \_ 输入 \_ 信号 \_ 信息**](wdi-tlv-bss-entry-signal-info.md)                 |                                |          | 此 BSS 条目的信号信息。                                                                                                                    |
+| [**WDI \_ TLV \_ BSS \_ 条目 \_ 通道 \_ 信息**](wdi-tlv-bss-entry-channel-info.md)               |                                |          | 此 BSS 条目的通道信息。                                                                                                                   |
+| [**WDI \_ TLV \_ BSS \_ 条目 \_ 设备 \_ 上下文**](wdi-tlv-bss-entry-device-context.md)           |                                | X        | IHV 提供有关此对等方的上下文数据。                                                                                                                |
+| [**WDI \_ TLV \_ PMKID**](wdi-tlv-pmkid.md)                                                    |                                | X        | 此 BSS 条目的16字节 PMKID 值。                                                                                                                   |
+| [**WDI \_ TLV \_ 额外 \_ 关联 \_ 请求 \_**](wdi-tlv-extra-association-request-ies.md) |                                | X        | 要包含在 (中的 IE) 此 BSSID 的关联请求框架。 如果存在，则除了常见的 IE 外，还应包括此项。                  |
+| [**WDI \_ TLV \_ FT \_ 初始 \_ ASSOC \_ 参数**](wdi-tlv-ft-initial-assoc-parameters.md)     |                                | X        | 初始移动域关联参数。                                                                                                           |
+| [**WDI \_ TLV \_ FT \_ REASSOC \_ 参数**](wdi-tlv-ft-reassoc-parameters.md)                  |                                | X        | Fast 转换参数 (MDIE，R0KH，PMKR0Name，SNonce) 。 这仅适用于快速转换 (在初始移动域关联) 期间。 |
+| [**WDI \_ TLV \_ TLV \_ 选择 \_ 参数**](wdi-tlv-bss-selection-parameters.md)            |                                | X        | [**WDI \_提供 \_ \_ **](/windows-hardware/drivers/ddi/wditypes/ne-wditypes-_wdi_bss_selection_flags) 主机用于 BSS 选择的信息的 BSS 选择标志。                               |
 
  
 
@@ -58,7 +58,7 @@ WDI\_TLV\_连接\_BSS\_条目是包含候选连接 BSS 条目列表的 TLV。
 <tbody>
 <tr class="odd">
 <td><p>最低受支持的客户端</p></td>
-<td><p>Windows 10</p></td>
+<td><p>Windows 10</p></td>
 </tr>
 <tr class="even">
 <td><p>最低受支持的服务器</p></td>
@@ -72,9 +72,4 @@ WDI\_TLV\_连接\_BSS\_条目是包含候选连接 BSS 条目列表的 TLV。
 </table>
 
  
-
- 
-
-
-
 

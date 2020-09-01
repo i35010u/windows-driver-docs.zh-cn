@@ -4,36 +4,36 @@ description: WDI_TLV_P2P_SEND_ACTION_FRAME_RESULT_PARAMETERS 是包含 Wi-fi Dir
 ms.assetid: A0B234F2-081B-4027-9B42-76401F600707
 ms.date: 07/18/2017
 keywords:
-- WDI_TLV_P2P_SEND_ACTION_FRAME_RESULT_PARAMETERS 从 Windows Vista 开始的网络驱动程序
+- 从 Windows Vista 开始 WDI_TLV_P2P_SEND_ACTION_FRAME_RESULT_PARAMETERS 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 76290f15188154225c5704cc6a2dacf6f81ee785
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 34eca40d04ba46e76eaf7f5b96805e967e262e52
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72845124"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89211493"
 ---
-# <a name="wdi_tlv_p2p_send_action_frame_result_parameters"></a>WDI\_TLV\_P2P\_发送\_操作\_帧\_结果\_参数
+# <a name="wdi_tlv_p2p_send_action_frame_result_parameters"></a>WDI \_ TLV \_ P2P \_ 发送 \_ 操作 \_ 帧 \_ 结果 \_ 参数
 
 
-WDI\_TLV\_P2P\_发送\_操作\_帧\_结果\_参数是包含 Wi-fi 直接发送操作帧结果参数的 TLV。
+WDI \_ TLV \_ P2P \_ 发送 \_ 操作 \_ 帧 \_ 结果 \_ 参数是包含 wi-fi DIRECT send action 帧结果参数的 TLV。
 
 ## <a name="tlv-type"></a>TLV 类型
 
 
 0xAE
 
-## <a name="length"></a>长度
+## <a name="length"></a>Length
 
 
-所有包含的元素的大小的总和（以字节为单位）。
+Sum (所有包含的元素的大小) 。
 
 ## <a name="values"></a>值
 
 
-| 在任务栏的搜索框中键入                                              | 描述                                           |
+| 类型                                              | 说明                                           |
 |---------------------------------------------------|-------------------------------------------------------|
-| [**WDI\_MAC\_地址**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dot11wdi/ns-dot11wdi-_wdi_mac_address) | 目标 Wi-fi Direct 设备的设备地址。 |
+| [**WDI \_ MAC \_ 地址**](/windows-hardware/drivers/ddi/dot11wdi/ns-dot11wdi-_wdi_mac_address) | 目标 Wi-fi Direct 设备的设备地址。 |
 | UINT8                                             | 此事务的 Wi-fi Direct 对话框令牌。   |
 
  
@@ -49,7 +49,7 @@ WDI\_TLV\_P2P\_发送\_操作\_帧\_结果\_参数是包含 Wi-fi 直接发送�
 <tbody>
 <tr class="odd">
 <td><p>最低受支持的客户端</p></td>
-<td><p>Windows 10</p></td>
+<td><p>Windows 10</p></td>
 </tr>
 <tr class="even">
 <td><p>最低受支持的服务器</p></td>
@@ -63,9 +63,4 @@ WDI\_TLV\_P2P\_发送\_操作\_帧\_结果\_参数是包含 Wi-fi 直接发送�
 </table>
 
  
-
- 
-
-
-
 

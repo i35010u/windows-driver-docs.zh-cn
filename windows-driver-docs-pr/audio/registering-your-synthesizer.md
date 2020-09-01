@@ -3,20 +3,20 @@ title: 注册合成器
 description: 注册合成器
 ms.assetid: c8cb30ba-97ca-49ee-a6ef-2938a0ab780e
 keywords:
-- DirectMusic 自定义呈现 WDK 音频，合成器
-- 在用户模式 WDK 音频，合成器的自定义呈现
-- 合成器 WDK 音频，注册
-- 注册合成器
-- 用户模式下 synths WDK 音频，合成器注册
+- DirectMusic 自定义呈现 WDK 音频，合成
+- 用户模式下的自定义呈现 WDK 音频，合成
+- 合成 WDK 音频，注册
+- 注册合成
+- 用户模式 synths WDK 音频，合成器注册
 - 自定义 synths WDK 音频，合成器注册
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4e6035a67c5be95d35f635b9d6547317a15c4f02
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 92689280fcf4f5983d4b118b99e60649c5422b50
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67362519"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89211331"
 ---
 # <a name="registering-your-synthesizer"></a>注册合成器
 
@@ -24,17 +24,17 @@ ms.locfileid: "67362519"
 ## <span id="registering_your_synthesizer"></span><span id="REGISTERING_YOUR_SYNTHESIZER"></span>
 
 
-创建软件合成器后，它必须添加到系统注册表，这样就可用于应用程序作为可枚举的 DirectMusic 端口。 当安装程序调用 DLL 的[ **DllRegisterServer** ](https://docs.microsoft.com/windows/desktop/api/olectl/nf-olectl-dllregisterserver) COM 函数以告知 DLL 以将自身注册为 COM 对象，该函数可以注册合成器也。 若要执行此操作，函数条目向列表中添加的可用软件合成器通过在以下路径中创建一个键：
+创建软件合成器后，必须将其添加到系统注册表中，以便应用程序可用作可枚举的 DirectMusic 端口。 当安装程序调用 DLL 的 [**DllRegisterServer**](/windows/desktop/api/olectl/nf-olectl-dllregisterserver) COM 函数通知 dll 将自身注册为 COM 对象时，该函数也可注册合成器。 为此，该函数通过在以下路径中创建一个项来向可用软件合成程序列表添加条目：
 
 ```inf
   HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\DirectMusic\SoftwareSynths
 ```
 
-标头文件 dmusicc.hdefines 常量 REGSTR\_路径\_SOFTWARESYNTHS 来表示此路径。
+标头文件 dmusicc. hdefines 常量 REGSTR \_ path \_ SOFTWARESYNTHS 表示此路径。
 
-使用合成器 COM 对象的类标识符命名的密钥。 在密钥中的字符串字段称为"Description"具有名称合成器。
+键的命名方式为合成器 COM 对象的类标识符。 键中的是一个名为 "Description" 的字符串字段，其名称为合成器的名称。
 
-下面的代码示例显示了一个函数`RegisterSynth`，可以从调用**DllRegisterServer**注册合成器：
+下面的示例代码演示了一个函数， `RegisterSynth` 可以从 **DllRegisterServer** 调用该函数以注册合成器：
 
 ```cpp
   const char cszSynthRegRoot[] = REGSTR_PATH_SOFTWARESYNTHS "\\";
@@ -81,12 +81,7 @@ ms.locfileid: "67362519"
   }
 ```
 
-`CLSIDToStr` 是本地定义将 CLSID 值转换为字符字符串的函数 （不在前面的代码示例所示）。 它是类似于[ **StringFromCLSID** ](https://docs.microsoft.com/windows/desktop/api/combaseapi/nf-combaseapi-stringfromclsid) Microsoft Windows SDK 文档中所述的函数。
+`CLSIDToStr` 是一个本地定义的函数 (未显示在前面的代码示例中，) 该函数将 CLSID 值转换为字符串。 它类似于 Microsoft Windows SDK 文档中所述的 [**StringFromCLSID**](/windows/desktop/api/combaseapi/nf-combaseapi-stringfromclsid) 函数。
 
  
-
- 
-
-
-
 

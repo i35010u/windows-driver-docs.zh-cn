@@ -6,23 +6,23 @@ keywords:
 - 常规统计信息 Oid 面向连接的小型端口驱动程序
 ms.date: 11/02/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: aed8bc72c73eb155179e2dc3ab187aac1356430a
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 48f760e9fef408e9c05e0dacb077dcfd35962e6e
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72842187"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89212445"
 ---
 # <a name="general-statistics-oids-for-connection-oriented-miniport-drivers"></a>面向连接的微型端口驱动程序的常规统计信息 OID
 
 下表总结了用于获取或设置面向连接的微型端口驱动程序和/或其 Nic 的常规统计特征的 Oid。
 
 > [!TIP] 
-> 面向连接的微型端口驱动程序在其[MiniportCoOidRequest](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_co_oid_request)回调函数中处理此类请求。
+> 面向连接的微型端口驱动程序在其 [MiniportCoOidRequest](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_co_oid_request) 回调函数中处理此类请求。
 
 在此表中，M 指示 OID 是必需的，而 O 指示它是可选的。
 
-| 长度 | 查询 | 设置 | 名称 |
+| Length | 查询 | 设置 | 名称 |
 | --- | --- | --- | --- |
 | 4或8 | O |   | [OID_GEN_CO_BYTES_RCV](oid-gen-co-bytes-rcv.md) |
 | 4或8 | O |   | [OID_GEN_CO_BYTES_XMIT](oid-gen-co-bytes-xmit.md) |
@@ -51,4 +51,3 @@ ms.locfileid: "72842187"
 此类微型端口驱动程序还可以支持64位计数器，用于其他统计信息 Oid，如指示传输或接收错误的 Oid。
 
 Windows XP 和更高版本中提供了对64位计数器的系统支持。
-

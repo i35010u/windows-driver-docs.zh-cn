@@ -9,30 +9,30 @@ keywords:
 - INF 文件 WDK Windows 筛选平台
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 585b153026c899a02da817315f43b1613d404746
-ms.sourcegitcommit: 0e0dc5f080df541cbb13b87a49c5eb88f757d4b7
+ms.openlocfilehash: 29b89f20dc28458f2594a78cbb509deb7dc8454d
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/28/2019
-ms.locfileid: "72987836"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89212392"
 ---
 # <a name="inf-files-for-callout-drivers"></a>标注驱动程序的 INF 文件
 
-Windows 筛选平台标注驱动程序由安装信息文件（INF）文件安装。 标注驱动程序的 INF 文件仅包含以下 INF 文件部分：
+Windows 筛选平台标注驱动程序由安装信息文件 (INF) 文件安装。 标注驱动程序的 INF 文件仅包含以下 INF 文件部分：
 
-[**INF 版本部分**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-version-section)
+[**INF Version 节**](../install/inf-version-section.md)
 
-[**INF SourceDisksNames 部分**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-sourcedisksnames-section)
+[**INF SourceDisksNames 节**](../install/inf-sourcedisksnames-section.md)
 
-[**INF SourceDisksFiles 部分**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-sourcedisksfiles-section)
+[**INF SourceDisksFiles 节**](../install/inf-sourcedisksfiles-section.md)
 
-[**INF DestinationDirs 部分**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-destinationdirs-section)
+[**INF DestinationDirs 节**](../install/inf-destinationdirs-section.md)
 
-[**INF DefaultInstall 部分**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-defaultinstall-section)
+[**INF DefaultInstall 节**](../install/inf-defaultinstall-section.md)
 
-[**INF DefaultInstall 部分**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-defaultinstall-services-section)
+[**INF DefaultInstall.Services 节**](../install/inf-defaultinstall-services-section.md)
 
-[**INF 字符串部分**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-strings-section)
+[**INF Strings 节**](../install/inf-strings-section.md)
 
 例如：
 

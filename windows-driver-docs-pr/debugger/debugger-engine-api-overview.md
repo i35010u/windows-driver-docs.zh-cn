@@ -6,12 +6,12 @@ keywords:
 - 调试器引擎 API，概述
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 25a3754cffd481507e310815fb5eea6f97510fea
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 411fd2a59420cefd26c85e9d5598a2e19d2b1d73
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72837776"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89211195"
 ---
 # <a name="debugger-engine-api-overview"></a>调试器引擎 API 概述
 
@@ -19,7 +19,7 @@ ms.locfileid: "72837776"
 ## <span id="ddk_debugger_engine_overview_dbx"></span><span id="DDK_DEBUGGER_ENGINE_OVERVIEW_DBX"></span>
 
 
-本部分包括：
+本节包括：
 
 [与引擎交互](interacting-with-the-engine.md)
 
@@ -45,19 +45,13 @@ ms.locfileid: "72837776"
 
 [目标状态](target-state.md)
 
-[调用 Extension 和 Extension 函数](calling-extensions-and-extension-functions.md)
+[调用扩展和扩展函数](calling-extensions-and-extension-functions.md)
 
-[组装和反汇编说明](assembling-and-disassembling-instructions.md)
+[汇编和反汇编指令](assembling-and-disassembling-instructions.md)
 
-**重要**  IDebug\* 接口（如 COM like）不是正确的 com api，如[**IDebugEventCallbacks**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nn-dbgeng-idebugeventcallbacks)接口。 从托管代码调用这些接口是不受支持的方案。 当通过托管代码调用这些接口时，会导致系统不稳定的问题，例如垃圾回收和线程所有权。
-
- 
+**重要提示**   IDebug \* 接口（如 COM like）不是正确的 Com api，如[**IDebugEventCallbacks**](/windows-hardware/drivers/ddi/dbgeng/nn-dbgeng-idebugeventcallbacks)接口。 从托管代码调用这些接口是不受支持的方案。 当通过托管代码调用这些接口时，会导致系统不稳定的问题，例如垃圾回收和线程所有权。
 
  
 
  
-
-
-
-
 

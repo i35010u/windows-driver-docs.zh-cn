@@ -4,36 +4,36 @@ description: WDI_TLV_P2P_LISTEN_STATE 是包含 Wi-fi Direct 侦听状态的 TLV
 ms.assetid: 66BDF96A-2B9D-4188-AFC8-465786924B47
 ms.date: 07/18/2017
 keywords:
-- WDI_TLV_P2P_LISTEN_STATE 从 Windows Vista 开始的网络驱动程序
+- 从 Windows Vista 开始 WDI_TLV_P2P_LISTEN_STATE 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 428f0ee295da7c987346a3e34a539ee2d9e535f4
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: b9224f7a80160ef21000d6f2fbf998be463f5f23
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72842461"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89211499"
 ---
-# <a name="wdi_tlv_p2p_listen_state"></a>WDI\_TLV\_P2P\_侦听\_状态
+# <a name="wdi_tlv_p2p_listen_state"></a>WDI \_ TLV \_ P2P \_ 侦听 \_ 状态
 
 
-WDI\_TLV\_P2P\_侦听\_状态是包含 Wi-fi Direct 侦听状态的 TLV。
+WDI \_ tlv \_ P2P \_ 侦听 \_ 状态是包含 wi-fi DIRECT 侦听状态的 tlv。
 
 ## <a name="tlv-type"></a>TLV 类型
 
 
 0x81
 
-## <a name="length"></a>长度
+## <a name="length"></a>Length
 
 
-所有包含的元素的大小的总和（以字节为单位）。
+Sum (所有包含的元素的大小) 。
 
 ## <a name="values"></a>值
 
 
-| 在任务栏的搜索框中键入                                                         | 描述                            |
+| 类型                                                         | 说明                            |
 |--------------------------------------------------------------|----------------------------------------|
-| [**WDI\_P2P\_侦听\_状态**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wditypes/ne-wditypes-_wdi_p2p_listen_state) | 所需的 Wi-fi Direct 侦听状态。 |
+| [**WDI \_ P2P \_ 侦听 \_ 状态**](/windows-hardware/drivers/ddi/wditypes/ne-wditypes-_wdi_p2p_listen_state) | 所需的 Wi-fi Direct 侦听状态。 |
 
  
 
@@ -48,7 +48,7 @@ WDI\_TLV\_P2P\_侦听\_状态是包含 Wi-fi Direct 侦听状态的 TLV。
 <tbody>
 <tr class="odd">
 <td><p>最低受支持的客户端</p></td>
-<td><p>Windows 10</p></td>
+<td><p>Windows 10</p></td>
 </tr>
 <tr class="even">
 <td><p>最低受支持的服务器</p></td>
@@ -62,9 +62,4 @@ WDI\_TLV\_P2P\_侦听\_状态是包含 Wi-fi Direct 侦听状态的 TLV。
 </table>
 
  
-
- 
-
-
-
 

@@ -4,12 +4,12 @@ description: 下面是 Get 请求架构和相应的响应架构定义以及每�
 ms.assetid: 48980220-4DD6-4785-AAC1-850F8FBE49EC
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 37a04b5a64e5b08bb0540619d09553623414a7a3
-ms.sourcegitcommit: ab64169b631da4db3f0b895600f1c38a22cb7e2e
+ms.openlocfilehash: 230b81e62b4d90d4cd9532e33b53c895dd487aad
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75652991"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89212299"
 ---
 # <a name="get-request-and-response-schemas"></a>获取请求和响应架构
 
@@ -19,7 +19,7 @@ ms.locfileid: "75652991"
 
 Get 请求和响应用于查询打印机的一个或多个当前值。
 
-在此示例中，有三个查询。 第一个查询指向特定的双向通信架构值，第二个查询用于定义子树的双向通信架构属性。 第三个错误是：双向通信架构中没有 &lt;Foo&gt; 属性。 （对此请求的响应位于[获取响应架构](#the-get-response-schema)的下一节中。）
+在此示例中，有三个查询。 第一个查询指向特定的双向通信架构值，第二个查询用于定义子树的双向通信架构属性。 第三个错误是： &lt; &gt; 双向通信架构中没有 Foo 属性。  (对此请求的响应位于 [获取响应架构](#the-get-response-schema)的下一节中。 ) 
 
 ```xml
 <bidi:Get xmlns:bidi="https://schemas.microsoft.com/windows/2005/03/printing/bidi">
@@ -139,6 +139,6 @@ Get 请求架构的正式定义
 
 [双向通信架构](bidirectional-communication-schema.md)  
 
-[SendRecvXMLStream](https://docs.microsoft.com/windows-hardware/drivers/ddi/bidispl/nf-bidispl-ibidispl2-sendrecvxmlstream)  
+[SendRecvXMLStream](/windows-hardware/drivers/ddi/bidispl/nf-bidispl-ibidispl2-sendrecvxmlstream)  
 
-[SendRecvXMLString](https://docs.microsoft.com/windows-hardware/drivers/ddi/bidispl/nf-bidispl-ibidispl2-sendrecvxmlstring)  
+[SendRecvXMLString](/windows-hardware/drivers/ddi/bidispl/nf-bidispl-ibidispl2-sendrecvxmlstring)

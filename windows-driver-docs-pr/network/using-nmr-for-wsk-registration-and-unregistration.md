@@ -9,31 +9,25 @@ keywords:
 - 注销 Winsock 内核应用程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e8952003d5f6c3a6eed3e155b0d0e19dd742ce45
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 5cbcf8ac80c621b7606cfc0bb4b9b25869dd3484
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72842977"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89211559"
 ---
 # <a name="using-nmr-for-wsk-registration-and-unregistration"></a>使用 NMR 注册和取消注册 WSK
 
 
-[注册 Winsock 内核应用程序](registering-a-winsock-kernel-application.md)和取消[注册 Winsock 内核应用程序](unregistering-a-winsock-kernel-application.md)部分说明了 WSK 应用程序如何使用[WSK 注册函数](https://docs.microsoft.com/windows-hardware/drivers/ddi/_netvista/)附加到 WSK 子系统并从其分离。 但是，WSK 还可以通过使用[网络模块注册器（NMR）](network-module-registrar2.md)附加到 WSK 子系统。
+[注册 Winsock 内核应用程序](registering-a-winsock-kernel-application.md)和取消[注册 Winsock 内核应用程序](unregistering-a-winsock-kernel-application.md)部分说明了 WSK 应用程序如何使用[WSK 注册函数](/windows-hardware/drivers/ddi/_netvista/)附加到 WSK 子系统并从其分离。 但是，WSK 还可以通过使用 [网络模块注册器 (NMR) ](network-module-registrar2.md)附加到 WSK 子系统。
 
-WSK 应用程序可通过使用以下部分中的过程，将 NMR 注册为 WSK[网络编程接口（NPI）](network-programming-interface.md)的客户端：
+WSK 应用程序可以通过使用以下部分中的过程，将 NMR 作为 WSK 网络编程接口的客户端注册 [ (NPI) ](network-programming-interface.md) ：
 
 -   [初始化 NMR 数据结构](initializing-nmr-data-structures.md)
 -   [将 WSK 客户端附加到 WSK 子系统](attaching-the-wsk-client-to-the-wsk-subsystem.md)
--   [注销并卸载 WSK 客户端](unregistering-and-unloading-the-wsk-client.md)
+-   [取消注册和卸载 WSK 客户端](unregistering-and-unloading-the-wsk-client.md)
 
-使用[**WskRegister**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/nf-wsk-wskregister)和[**WskDeregister**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/nf-wsk-wskderegister)函数是注册和注销 WSK 应用程序的首选方法。 [网络模块注册机构](network-module-registrar2.md)仍可提供兼容性。
-
- 
+使用 [**WskRegister**](/windows-hardware/drivers/ddi/wsk/nf-wsk-wskregister) 和 [**WskDeregister**](/windows-hardware/drivers/ddi/wsk/nf-wsk-wskderegister) 函数是注册和注销 WSK 应用程序的首选方法。 [网络模块注册机构](network-module-registrar2.md)仍可提供兼容性。
 
  
-
-
-
-
 

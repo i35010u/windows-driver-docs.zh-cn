@@ -4,57 +4,51 @@ description: 枚举网络适配器上的虚拟端口
 ms.assetid: 437C3356-4CC7-4128-9E61-FD01157F4FD9
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fb889837882d83edc26e7b47fedc3b8e7ed9dd9a
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 06701942d6bad9570818358af5f9f9c021b7cab3
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72834768"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89212499"
 ---
 # <a name="enumerating-virtual-ports-on-a-network-adapter"></a>枚举网络适配器上的虚拟端口
 
 
-过量驱动程序或用户应用程序可以在支持单一根 i/o 虚拟化（SR-IOV）的网络适配器的 NIC 交换机上获取所有虚拟端口（VPorts）的列表。 驱动程序或应用程序发出 OID\_NIC 的对象标识符（OID）方法请求[\_交换机\_枚举\_VPORTS](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-enum-vports)以获取此列表。
+覆盖驱动程序或用户应用程序可以在支持单一根 i/o 虚拟化 (SR-IOV) 的网络适配器的 NIC 交换机上获取 (VPorts) 的所有虚拟端口的列表。 驱动程序或应用程序发出对象标识符 (oid [ \_ NIC \_ 交换机 \_ 枚举 \_ VPORTS](./oid-nic-switch-enum-vports.md) 的 oid) 方法请求来获取此列表。
 
-成功从此 OID 查询请求返回后， [**NDIS\_OID\_请求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的**InformationBuffer**成员包含指向缓冲区的指针，该缓冲区包含以下内容：
+成功从此 OID 查询请求返回后， [**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的**InformationBuffer**成员包含指向缓冲区的指针，该缓冲区包含以下内容：
 
--   [**NDIS\_NIC\_交换机\_VPORT\_信息\_数组**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vport_info_array)结构，该结构定义数组中的元素数目。
+-   用于定义数组中的元素数的 [**NDIS \_ NIC \_ 交换机 \_ VPORT \_ INFO \_ 数组**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vport_info_array) 结构。
 
--   [**NDIS\_NIC 的数组\_交换机\_VPORT\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vport_info)结构。 其中每个结构都包含有关网络适配器的 NIC 交换机上的 VPort 的信息。
+-   [**NDIS \_ NIC \_ 交换机 \_ VPORT \_ 信息**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vport_info)结构的数组。 其中每个结构都包含有关网络适配器的 NIC 交换机上的 VPort 的信息。
 
-    **注意**  如果未在网络适配器上创建 VPorts，则驱动程序会将 NDIS\_\_NIC 的**NumElements**成员设置[ **\_VPORT\_info\_数组**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vport_info_array)结构设置为零，且不会返回[**ndis\_NIC\_交换机\_VPORT\_info**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vport_info)结构。
-
-     
-
-在上层的驱动程序或用户应用程序[\_交换机\_枚举\_VPORTS 请求发出\_OID](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-enum-vports)之前，它必须初始化[**NDIS\_nic\_交换机\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vport_info_array)与请求一起传递\_\_的数组结构。 在初始化 NDIS\_NIC 时，驱动程序或应用程序必须遵循以下准则 **\_交换机\_VPORT\_信息\_数组**结构：
-
--   如果在**Flags**成员中设置\_特定\_交换机标志上的 NDIS\_NIC\_交换机\_VPORT\_信息\_数组\_枚举\_，则会为指定 NIC 交换机上创建的所有 VPorts 返回信息。 NIC 交换机由该结构的**SwitchId**成员指定。
-
-    **注意**  从 Windows Server 2012 开始，sr-iov 接口仅支持网络适配器上的一个 NIC 交换机。 此开关称为*默认 NIC 交换机*，由 NDIS\_默认\_交换机\_ID 标识符引用。 不管**flags**成员中设置了哪些标志，都必须将**SwitchId**成员设置为 NDIS\_默认\_交换机\_ID。
+    **注意**   如果未在网络适配器上创建 VPorts，则驱动程序会将[**ndis \_ nic \_ 交换机 \_ VPORT \_ INFO \_ 数组**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vport_info_array)结构的**NumElements**成员设置为零，且不会返回[**ndis \_ nic \_ 交换机 \_ VPORT \_ INFO**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vport_info)结构。
 
      
 
--   如果在**Flags**成员中设置\_特定\_函数标志上的 NDIS\_NIC\_交换机\_VPORT\_信息\_ARRAY\_枚举\_，则将返回连接到网络适配器上指定 PCI Express （PCIe）物理功能（PF）或虚拟功能（VF）的所有 VPorts 的信息。 PF 或 VF 由该结构的**AttachedFunctionId**成员指定。
+在过量的驱动程序或用户应用程序发出 [OID \_ nic \_ switch \_ ENUM \_ VPORTS](./oid-nic-switch-enum-vports.md) 请求之前，它必须初始化与请求一起传递的 [**NDIS \_ nic \_ 交换机 \_ VPORT \_ INFO \_ 数组**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vport_info_array) 结构。 当初始化 **NDIS \_ NIC \_ 交换机 \_ VPORT \_ INFO \_ 数组** 结构时，驱动程序或应用程序必须遵循以下准则：
 
-    如果**AttachedFunctionId**成员设置为 NDIS\_PF\_函数\_ID，则返回所有 VPorts 的信息。 这包括附加到 PF 的默认 VPort。 如果**AttachedFunctionId**成员设置为有效的 VF 标识符，则将返回附加到指定 VF 的所有 VPorts 的信息。
+-   如果在 \_ \_ \_ \_ \_ \_ Flags 成员中设置了特定交换机标志上的 NDIS NIC 交换机 VPORT INFO ARRAY ENUM \_ \_ ，则 \_ 会为指定 NIC 交换机上创建的所有 VPorts 返回信息。 **Flags** NIC 交换机由该结构的 **SwitchId** 成员指定。
 
-    **注意**  从 Windows Server 2012 开始，只能将一个非默认的 VPort 附加到 VF。 但是，可以将多个 VPorts （包括默认的 VPort）附加到 PF。
+    **注意**   从 Windows Server 2012 开始，SR-IOV 接口仅支持网络适配器上的一个 NIC 交换机。 此开关称为 *默认 NIC 交换机*，由 NDIS \_ 默认 \_ 交换机 \_ ID 标识符引用。 不管 **flags** 成员中设置了哪些标志，都必须将 **SwitchId** 成员设置为 NDIS \_ 默认 \_ 交换机 \_ ID。
 
      
 
--   如果**Flags**成员设置为零，则将返回连接到网络适配器上的 PF 或 VF 的所有 VPorts 的信息。 在这种情况下，将忽略**SwitchId**和**AttachedFunctionId**的值。
+-   如果在 \_ \_ \_ \_ \_ Flags 成员中设置了特定函数标志上的 "NDIS NIC 交换机 VPORT 信息数组 \_ 枚举"，则 \_ \_ \_ 会为附加到指定 PCI Express (PCIe) 物理函数 (PF) 或虚拟函数 (网络适配器上的虚拟功能) 虚拟功能的所有 VPorts 返回信息。 **Flags** PF 或 VF 由该结构的 **AttachedFunctionId** 成员指定。
 
-NDIS 为微型端口驱动程序[\_枚举\_VPORTS 请求处理 OID\_NIC\_开关](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-enum-vports)。 NDIS 从检查以下源中返回的数据的内部缓存返回信息：
+    如果将 **AttachedFunctionId** 成员设置为 NDIS \_ PF \_ 函数 \_ ID，则将返回所有 VPorts 的信息。 这包括附加到 PF 的默认 VPort。 如果 **AttachedFunctionId** 成员设置为有效的 VF 标识符，则将返回附加到指定 VF 的所有 VPorts 的信息。
 
--   Oid [\_NIC\_交换机\_CREATE\_VPORT](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-create-vport)的 oid 方法请求。
+    **注意**   从 Windows Server 2012 开始，只能向 VF 附加一个非默认的 VPort。 但是，多个 VPorts (包括默认 VPort) 可以附加到 PF。
 
--   OID [\_NIC\_SWITCH\_VPORT\_参数设置 oid](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-vport-parameters)请求。
+     
+
+-   如果 **Flags** 成员设置为零，则将返回连接到网络适配器上的 PF 或 VF 的所有 VPorts 的信息。 在这种情况下，将忽略 **SwitchId** 和 **AttachedFunctionId** 的值。
+
+NDIS 为微型端口驱动程序处理 [OID \_ NIC \_ 交换机 \_ 枚举 \_ VPORTS](./oid-nic-switch-enum-vports.md) 请求。 NDIS 从检查以下源中返回的数据的内部缓存返回信息：
+
+-   [Oid \_ NIC \_ 交换器 \_ CREATE \_ VPORT](./oid-nic-switch-create-vport.md)的 oid 方法请求。
+
+-   OID 设置 [oid \_ NIC \_ SWITCH \_ VPORT \_ 参数](./oid-nic-switch-vport-parameters.md)的请求。
 
  
-
- 
-
-
-
-
 

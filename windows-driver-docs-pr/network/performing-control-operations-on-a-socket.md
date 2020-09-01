@@ -8,21 +8,21 @@ keywords:
 - 控制操作 WDK Winsock 内核
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f7f64863a2ace8c4dac3859222a08e2ce6a17215
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 06c12bb734ed317c28f8ceaac79721733d7b879a
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72843688"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89212093"
 ---
 # <a name="performing-control-operations-on-a-socket"></a>针对套接字执行控制操作
 
 
-Winsock 内核（WSK）应用程序成功创建套接字后，它可以在套接字上执行控制操作。 可对套接字执行的控制操作包括设置和检索套接字选项和执行套接字 IOCTL 操作。
+Winsock 内核 (WSK) 应用程序成功创建套接字后，它可以在套接字上执行控制操作。 可对套接字执行的控制操作包括设置和检索套接字选项和执行套接字 IOCTL 操作。
 
-WSK 应用程序通过调用[**WskControlSocket**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_control_socket)函数在套接字上执行控制操作。 **WskControlSocket**函数由套接字提供程序调度结构的**WskControlSocket**成员指向。 套接字的提供程序调度结构由 WSK 子系统在创建套接字期间返回的套接字对象结构（ [**WSK\_套接字**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/ns-wsk-_wsk_socket)）的**调度**成员指向。
+WSK 应用程序通过调用 [**WskControlSocket**](/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_control_socket) 函数在套接字上执行控制操作。 **WskControlSocket**函数由套接字提供程序调度结构的**WskControlSocket**成员指向。 套接字的提供程序调度结构由套接字对象结构的 **调度** 成员指向， ( [**WSK \_ 套**](/windows-hardware/drivers/ddi/wsk/ns-wsk-_wsk_socket) 接字) 在创建套接字期间由 WSK 子系统返回。
 
-下面的代码示例演示 WSK 应用程序如何在数据报套接字上设置[**SO\_EXCLUSIVEADDRUSE**](https://docs.microsoft.com/windows-hardware/drivers/network/so-exclusiveaddruse)套接字选项。
+下面的代码示例演示 WSK 应用程序如何在数据报套接字上设置 [**SO \_ EXCLUSIVEADDRUSE**](./so-exclusiveaddruse.md) 套接字选项。
 
 ```C++
 // Prototype for the control socket IoCompletion routine
@@ -133,9 +133,9 @@ NTSTATUS
 }
 ```
 
-有关每个受支持的套接字选项的详细信息，请参阅[**WSK 套接字选项**](https://docs.microsoft.com/windows-hardware/drivers/network/wsk-socket-options)。
+有关每个受支持的套接字选项的详细信息，请参阅 [**WSK 套接字选项**](https://docs.microsoft.com/windows-hardware/drivers/network/wsk-socket-options)。
 
-下面的代码示例演示 WSK 应用程序如何\_在数据报套接字上[ **\_远程\_地址**](https://docs.microsoft.com/windows-hardware/drivers/network/sio-wsk-set-remote-address)套接字 IOCTL 操作来执行 SIO\_WSK。
+下面的代码示例演示 WSK 应用程序如何在数据报套接字上执行 [**SIO \_ WSK \_ SET \_ REMOTE \_ ADDRESS**](./sio-wsk-set-remote-address.md) socket IOCTL 操作。
 
 ```C++
 // Prototype for the control socket IoCompletion routine
@@ -243,13 +243,7 @@ NTSTATUS
 }
 ```
 
-有关每个受支持的套接字 IOCTL 操作的详细信息，请参阅[WSK 套接字 Ioctl 操作](https://docs.microsoft.com/windows-hardware/drivers/network/wsk-socket-ioctl-operations)。
+有关每个受支持的套接字 IOCTL 操作的详细信息，请参阅 [WSK 套接字 Ioctl 操作](https://docs.microsoft.com/windows-hardware/drivers/network/wsk-socket-ioctl-operations)。
 
  
-
- 
-
-
-
-
 

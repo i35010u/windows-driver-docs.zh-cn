@@ -5,12 +5,12 @@ ms.assetid: 6BF2E800-90A0-48FC-B702-5AD4EC318A35
 keywords: 同步 OID 请求接口，同步 OID 调用，WDK 同步 Oid，同步 OID 请求
 ms.date: 09/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1787e8ba74dba5f2e69674cd9272c33e601670d1
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: fc78631d11ed6654b0b2e468b0cec2f10e466bdc
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72841782"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89212749"
 ---
 # <a name="synchronous-oid-request-interface-in-ndis-680"></a>NDIS 6.80 中的同步 OID 请求接口
 
@@ -20,26 +20,26 @@ Windows 网络驱动程序使用 OID 请求，在 NDIS 绑定堆栈中发送控�
 
 ## <a name="comparison-to-regular-and-direct-oid-requests"></a>与常规和直接 OID 请求的比较
 
-对于同步 OID 请求，调用的有效负载（OID 本身）与常规和直接 OID 请求完全相同。 唯一的区别在于调用本身。 因此，所有三种类型的*oid 都是相同的;* 仅有*不同*之处。
+对于同步 OID 请求， (OID 本身的调用负载) 与常规和直接 OID 请求完全相同。 唯一的区别在于调用本身。 因此，所有三种类型的 *oid 都是相同的;* 仅有 *不同* 之处。
 
 下表描述了常规 Oid、直接 Oid 和同步 Oid 之间的差异。
 
 | | 常规 OID | 直接 OID | 同步 OID |
 | --- | --- | --- | --- |
-| 有效负载 | [NDIS_OID_REQUEST](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request) | NDIS_OID_REQUEST | NDIS_OID_REQUEST |
+| 有效负载 | [NDIS_OID_REQUEST](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request) | NDIS_OID_REQUEST | NDIS_OID_REQUEST |
 | OID 类型 | Stats、Query、Set、Method | Stats、Query、Set、Method | Stats、Query、Set、Method |
 | 可以通过 | 协议，筛选器 | 协议，筛选器 | 协议，筛选器 |
 | 可以通过 | 微型端口，筛选器 | 微型端口，筛选器 | 微型端口，筛选器 |
-| 筛选器可以修改 | “是” | “是” | “是” |
-| NDIS 分配内存 | 对于每个筛选器（OID 克隆） | 对于每个筛选器（OID 克隆） | 仅当大量筛选器（调用上下文）时 |
-| 可以挂起 | “是” | “是” | 无 |
-| 可以阻止 | “是” | 无 | 无 |
+| 筛选器可以修改 | 是 | 是 | 是 |
+| NDIS 分配内存 | 对于每个筛选器 (OID clone)  | 对于每个筛选器 (OID clone)  | 仅当 (调用上下文的筛选器数量异常时)  |
+| 可以挂起 | 是 | 是 | 否 |
+| 可以阻止 | 是 | 否 | 否 |
 | IRQL | = = 被动 | \<= 调度 | \<= 调度 |
-| [由 NDIS 序列化](miniport-adapter-oid-request-serialization.md) | “是” | 无 | 无 |
-| 调用筛选器 | 式 | 式 | 反复 |
-| 筛选器克隆 OID | “是” | “是” | 无 |
+| [由 NDIS 序列化](miniport-adapter-oid-request-serialization.md) | 是 | 否 | 否 |
+| 调用筛选器 | Recursively | Recursively | 反复 |
+| 筛选器克隆 OID | 是 | 是 | 否 |
 
-## <a name="filtering"></a>筛选
+## <a name="filtering"></a>Filtering
 
 与其他两种 OID 调用一样，筛选器驱动程序可以在同步调用中完全控制 OID 请求。 筛选器驱动程序可以观察、截获、修改和颁发同步 Oid。 不过，为了提高效率，同步 OID 的机制略有不同。
 
@@ -59,7 +59,7 @@ Windows 网络驱动程序使用 OID 请求，在 NDIS 绑定堆栈中发送控�
 
 ![典型的 OID 路径源自筛选器](images/synchronous_oids_oid_path_filter_originated.png "典型的 OID 路径源自筛选器")
 
-所有 OID 请求都具有此基本流程：更高的驱动程序（协议或筛选器驱动程序）发出请求，驱动程序（微型端口或筛选器驱动程序）完成了请求。
+所有 OID 请求都具有此基本流程：更高的驱动程序 (协议或筛选器驱动程序) 发出请求，并 (微型端口或筛选器驱动程序) 完成该驱动程序。
 
 ### <a name="how-regular-and-direct-oid-requests-work"></a>常规和直接 OID 请求的工作方式
 
@@ -69,10 +69,10 @@ Windows 网络驱动程序使用 OID 请求，在 NDIS 绑定堆栈中发送控�
 
 如果安装了足够的筛选器，则将强制 NDIS 分配新的线程堆栈，使递归更深层。
 
-NDIS 将[NDIS_OID_REQUEST](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构视为只对堆栈中的单个跃点有效。 如果筛选器驱动程序要将请求传递给下一个较低的驱动程序（这就是大多数 Oid 的情况），则筛选器驱动程序*必须*插入数个数十行的样板代码以克隆 OID 请求。 此样板有几个问题：
+NDIS 将 [NDIS_OID_REQUEST](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request) 结构视为只对堆栈中的单个跃点有效。 如果筛选器驱动程序要将请求向下传递到下一个较低的驱动程序 (这是大多数 Oid) 的情况，则筛选器驱动程序 *必须* 插入数个数十行的样板代码以克隆 OID 请求。 此样板有几个问题：
 
 1. 它强制内存分配克隆 OID。 命中内存池的速度很慢，因而无法保证 OID 请求的转发进度。
-2. 由于所有筛选器驱动程序都将 NDIS_OID_REQUEST 的内容复制到另一个，因此 OID 结构设计必须在一段时间内保持不变。
+2. 由于所有筛选器驱动程序都将一 NDIS_OID_REQUEST 的内容复制到另一，因此 OID 结构设计必须保持不变。
 3. 需要如此多的样本来掩盖筛选器实际执行的操作。
 
 ### <a name="the-filtering-model-for-synchronous-oid-requests"></a>同步 OID 请求的筛选模型
@@ -147,7 +147,7 @@ NDIS 每次调用为每个筛选器保存一个 PVOID。 NDIS 试探性地在堆
 
 #### <a name="reduced-boilerplate"></a>样本减少
 
-请考虑[示例样板上用于处理常规或直接 OID 请求](example-boilerplate-for-handling-regular-or-direct-oid-requests.md)的样本。 该代码只是注册 OID 处理程序的输入成本。 如果您想要颁发自己的 Oid，则必须再添加十二行样板。 对于同步 Oid，无需额外的复杂操作来处理异步完成。 因此，您可以大致了解这种样板。
+请考虑 [示例样板上用于处理常规或直接 OID 请求](example-boilerplate-for-handling-regular-or-direct-oid-requests.md)的样本。 该代码只是注册 OID 处理程序的输入成本。 如果您想要颁发自己的 Oid，则必须再添加十二行样板。 对于同步 Oid，无需额外的复杂操作来处理异步完成。 因此，您可以大致了解这种样板。
 
 下面是使用同步 Oid 的最小颁发处理程序：
 
@@ -182,13 +182,13 @@ MyFilterSynchronousOidRequestComplete(
 status = NdisFSynchronousOidRequest(binding->NdisBindingHandle, &oid);
 ```
 
-与此相反，需要发出常规或直接 OID 的筛选器驱动程序必须设置一个异步完成处理程序，并实现一些代码，以便将其自己的 OID 完成与刚刚克隆的 Oid 的完成区分开来。 下面是[有关发出常规 OID 请求的示例样板](example-boilerplate-for-issuing-a-regular-oid-request.md)的示例。
+与此相反，需要发出常规或直接 OID 的筛选器驱动程序必须设置一个异步完成处理程序，并实现一些代码，以便将其自己的 OID 完成与刚刚克隆的 Oid 的完成区分开来。 下面是 [有关发出常规 OID 请求的示例样板](example-boilerplate-for-issuing-a-regular-oid-request.md)的示例。
 
 ## <a name="interoperability"></a>互操作性
 
-尽管常规的、直接的和同步调用样式均使用相同的数据结构，但管道并不会跳到小型小型中的同一处理程序。 此外，某些 Oid 不能用于某些管道。 例如， [OID_PNP_SET_POWER](oid-pnp-set-power.md)需要小心同步，并经常强制微型端口发出阻止调用。 这使得在直接 OID 回调中难以处理它，并阻止其在同步 OID 回调中使用。 
+尽管常规的、直接的和同步调用样式均使用相同的数据结构，但管道并不会跳到小型小型中的同一处理程序。 此外，某些 Oid 不能用于某些管道。 例如， [OID_PNP_SET_POWER](oid-pnp-set-power.md) 需要小心同步，并经常强制微型端口发出阻止调用。 这使得在直接 OID 回调中难以处理它，并阻止其在同步 OID 回调中使用。 
 
-因此，与直接 OID 请求一样，同步 OID 调用只能与 Oid 的子集一起使用。 在 Windows 10 版本1709中，同步 OID 路径仅支持[接收方缩放版本2（RSSv2）](receive-side-scaling-version-2-rssv2-.md)中使用的[OID_GEN_RSS_SET_INDIRECTION_TABLE_ENTRIES](oid-gen-rss-set-indirection-table-entries.md) OID。
+因此，与直接 OID 请求一样，同步 OID 调用只能与 Oid 的子集一起使用。 在 Windows 10 版本1709中，同步 OID 路径仅支持在[接收方缩放版本 2](receive-side-scaling-version-2-rssv2-.md)中使用的[OID_GEN_RSS_SET_INDIRECTION_TABLE_ENTRIES](oid-gen-rss-set-indirection-table-entries.md) OID (RSSv2) 。
 
 ## <a name="implementing-synchronous-oid-requests"></a>实现同步 OID 请求
 
@@ -197,4 +197,3 @@ status = NdisFSynchronousOidRequest(binding->NdisBindingHandle, &oid);
 - [微型端口适配器 OID 请求](miniport-adapter-oid-requests.md)
 - [筛选器模块 OID 请求](filter-module-oid-requests.md)
 - [协议驱动程序 OID 请求](protocol-driver-oid-requests.md)
-

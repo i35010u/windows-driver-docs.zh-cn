@@ -1,81 +1,81 @@
 ---
-title: 实现多个无线访问技术的 IHV 指导
-description: 本主题提供有关在 Windows 中实现对多个无线接入技术 (RAT) 和多个运算符的支持信息。
+title: 用于实现多种无线访问技术的 IHV 指南
+description: 本主题提供有关在 Windows 中 (RAT) 和多个操作员实现多个无线电访问技术支持的信息。
 ms.assetid: 17BB2478-F98D-4AE6-A62D-F65E2E1DCDFF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ca47c1e4342b47541140f5c908f8226ee33097f5
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 1b2582e74848aecb83e4143fcb6215ace7778518
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386542"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89212905"
 ---
 # <a name="ihv-guidance-for-implementing-multimode-and-multicarrier-capable-mb-devices"></a>有关实施多模多载波 MB 设备的 IHV 指导
 
 
-本主题提供有关在 Windows 中实现对多个无线接入技术 (RAT) 和多个运算符的支持信息。 它可以补充[USB NCM 移动宽带接口模型 (MBIM) V1.0 规范](https://go.microsoft.com/fwlink/p/?linkid=320791)，概述了用于支持多模式的运营商情形所需的 Cid。
+本主题提供有关在 Windows 中 (RAT) 和多个操作员实现多个无线电访问技术支持的信息。 它补充了 [USB NCM Mobile 宽带接口模型 (MBIM) 1.0 版规范](https://go.microsoft.com/fwlink/p/?linkid=320791) ，其中概述了支持多模式多方案所需的 cid。
 
 本主题中的信息适用于：
 
 -   Windows 8
 
-## <a name="supporting-multimode-devices-with-firmware-switching"></a>支持多模式设备用固件切换
+## <a name="supporting-multimode-devices-with-firmware-switching"></a>支持通过固件切换的多模式设备
 
 
-本主题提供有关在 Windows 中实现对多个无线接入技术 (RAT) 和多个运算符的支持 Ihv 指导。 下面提供了在规范的相关度最高部分的简短摘要。
+本主题向 Ihv 提供有关在 Windows 中实现对多个无线电访问技术 (RAT) 和多个操作员的支持的准则。 下面提供了该规范最相关部分的简短摘要。
 
-可以将多模式网络具有多个来自于老鼠或移动电话的类。 运营商的设备都能以支持在同一设备中的多个网络提供程序。 其中一个支持多个网络可以是多模式网络。
+多模式网络具有多个 Rat 或手机网络类。 多设备能够支持同一设备内的多个网络提供商。 支持的众多网络之一可以是多模式网络。
 
-在本文档中的多个位置是必需的运营商设备报告运营商的提供程序为的 CID 处理部分必须在组可以作为主提供程序。 本部分介绍如何确定是否可为家庭的提供程序设置提供程序。 为家庭的提供程序设置提供程序的功能可能取决于许多因素会与设备相关如不可见，拥有固件支持提供程序，并让 SIM 或同等身份才能注册提供程序。 可能有其他因素。 设备应确保报告为可设置家庭提供程序之前满足运营商的提供程序的设备要求
+在本文档的很多位置，必须将多设备报告的多提供程序设置为 CID 处理的一部分，才能将其设置为 home 提供程序。 本部分介绍如何确定提供程序是否可作为 home 提供程序进行设置。 将提供程序设置为 home 提供程序的功能可能取决于许多因素，这些因素是设备相关的，它们具有提供程序的固件支持，并具有 SIM 或等效于向提供程序注册。 可能有其他因素。 设备应确保满足多提供程序的设备要求，然后再将其报告为可设置的主提供程序
 
-## <a name="1041-cidmbimdevicecaps"></a>10.4.1 CID\_MBIM\_DEVICE\_CAPS
-
-
-支持的设备将报告多个受支持移动电话网络中的类 bmCellularClass MBIM\_设备\_CAPS 作为中的指定表 10 月 13 日的规范。 它还会报告对通过 MBIM MBIMCtrlCapsMultiCarrier 掩码的多个运营商的支持\_CTRL\_CAP （表 10 月 13 日）。
-
-单运营商多模式设备必须类似 GSM 的设备。 此类设备必须未设置任何 CDMA 相关的功能在其 MBIM\_设备\_CAPS\_信息。
-
-## <a name="1046-cidmbimhomeprovider"></a>10.4.6 CID\_MBIM\_主页\_提供程序
+## <a name="1041-cid_mbim_device_caps"></a>10.4.1 CID \_ MBIM \_ 设备 \_ cap
 
 
-可以设置家庭的提供程序中指定的那样**10.3.6.4。**
+支持的设备将报告 \_ 规范的表10-13 中指定的 bmCellularClass 中的多个受支持的手机网络类 \_ 。 它还将通过 MBIM \_ CTRL + \_ (表 10-13) 中的 MBIMCtrlCapsMultiCarrier 掩码来报告对多个运营商的支持。
 
-## <a name="1048-cidmbimvisibleproviders"></a>10.4.8 CID\_MBIM\_VISIBLE\_提供程序
+单运营商多模式设备的行为必须与 GSM 设备类似。 此类设备不得在其 MBIM \_ 设备 cap 信息中设置任何 CDMA 相关的功能 \_ \_ 。
 
-
-可见的提供程序 CID 包含指定是否应为主机的操作字段：
-
-1.  值 0，其中设备会在当前主提供程序的上下文中执行完全扫描。
-2.  值 1，其中设备正被查询来查找可为家庭的提供程序设置可见的运营商提供程序。 设备可以选择实现此目的通过完全扫描、 部分进行扫描或静态列表。 多首选提供程序应标记为 MBIM\_提供程序\_状态\_首选\_中可见的提供程序结果中指定为表 10 34 规范的多。
-
-当设备将报告可见运营商的提供程序基于位置的信息的静态列表时，通过编程使用 CID\_MBIM\_位置\_信息，该列表应只包含提供程序对该位置有效。 作为上述规则的扩展，设备不应报告当前已注册的提供程序，则表示其 MCC （移动国家/地区代码） 的位置不同于当前编程设备中的位置时。
-
-## <a name="1049-cidmbimregisterstate"></a>10.4.9 CID\_MBIM\_注册\_状态
+## <a name="1046-cid_mbim_home_provider"></a>10.4.6 CID \_ MBIM \_ HOME \_ 提供程序
 
 
-设备将指示当前的移动电话类使用 MBIM dwCurrentCellularClass 字段\_注册\_规范的状态表 10-48。
+可以按10.3.6.4 中的指定设置 home 提供程序 **。**
 
-## <a name="10430-cidmbimdeviceservices"></a>10.4.30 CID\_MBIM\_DEVICE\_SERVICES
-
-
-运营商的设备所需报告 UUID\_（如下所述） 的多设备服务在响应针对此 CID。
-
-单运营商可以将多模式设备都不需要报表 UUID\_运营商的设备服务在响应针对此 CID。
-
-## <a name="10439-cidmbimmulticarrierproviders"></a>10.4.39 CID\_MBIM\_多\_提供程序
+## <a name="1048-cid_mbim_visible_providers"></a>10.4.8 CID \_ MBIM \_ 可见 \_ 提供程序
 
 
-设备使用此 CID 来报告当前和以前添加的首选运营商的提供程序。 当设备支持 MBIMCtrlCapsMultiCarrier，才支持此 CID。 当主机设置运营商的首选提供程序时，它不是所需的提供程序是可为家庭的提供程序设置。 但列表是由主机查询后，设备应仅返回运营商可作为主提供程序设置的首选提供程序。
+Visible 提供程序 CID 包含一个操作字段，该操作字段指定宿主是否应为：
 
-下图提供了在切换设备从其当前模式，基于 host 所指定的位置提示所涉及的步骤的序列图。 操作需要使用设备服务来获取或设置从设备的其他信息如下所述。 一个特定的要求是，设备应确保主机有机会从之前写入一样在总线设备恢复挂起的通知。 在关系图还指定的时间限制和各种操作的性能预期。
+1.  值0，其中设备在当前主提供程序的上下文中执行完全扫描。
+2.  值1：正在查询设备以查找可作为 home 提供程序设置的可见多提供程序。 设备可以选择通过完全扫描、部分扫描或静态列表来实现此目的。 在规范的表10-34 中指定的可见提供程序结果中，应将多首选提供程序标记为 MBIM \_ 提供程序 \_ 状态 \_ 首选 \_ 多。
 
-![在切换设备从其当前模式，基于 host 所指定的位置提示所涉及的步骤。](images/cid-mbim-multicarrier-providers.png)
+当设备报告基于位置信息的可见多提供程序的静态列表（使用 CID MBIM 位置信息编程）时 \_ \_ \_ ，该列表应仅包含对该位置有效的提供程序。 作为上述规则的扩展，如果其 MCC (Mobile 国家/地区代码) 的位置与当前在设备中编程的位置不同，则设备不会报告当前注册的提供程序。
 
-## <a name="multi-carrier-device-service"></a>多运营商设备服务
+## <a name="1049-cid_mbim_register_state"></a>10.4.9 CID \_ MBIM \_ 寄存器 \_ 状态
 
 
-IHV 设备会实现并报告以下设备服务 CID 进行查询时\_MBIM\_设备\_服务。 在部分 10.1 NCM MBIM 规范中定义现有的已知服务。 它被扩展它来定义以下服务。
+设备使用 \_ 规范的表10-48 中 "MBIM" 注册状态的 "dwCurrentCellularClass" 字段指示当前蜂窝类类 \_ 。
+
+## <a name="10430-cid_mbim_device_services"></a>10.4.30 CID \_ MBIM \_ 设备 \_ 服务
+
+
+需要多设备 \_ 在) 设备服务中报告 UUID 多 (来响应此 CID。
+
+单载体多模式设备无需报告 UUID \_ 多设备服务来响应此 CID。
+
+## <a name="10439-cid_mbim_multicarrier_providers"></a>10.4.39 CID \_ MBIM \_ 多 \_ 提供程序
+
+
+设备使用此 CID 来报告当前和之前添加的首选多提供程序。 当设备支持 MBIMCtrlCapsMultiCarrier 时，支持此 CID。 当主机设置多首选提供程序时，不需要提供程序作为 home 提供程序的设置。 但当主机查询列表时，设备应该只返回可设置为 home 提供程序的多首选提供程序。
+
+下图提供了根据主机指定的位置提示从当前模式切换设备所涉及步骤的序列图。 此操作需要使用下面所述的设备服务从设备获取/设置其他信息。 一个具体的要求是，设备应确保主机有机会在设备离开总线之前从设备恢复挂起的通知。 该关系图还指定了各种操作的时间范围和性能预期。
+
+![基于主机指定的位置提示从当前模式切换设备所涉及的步骤。](images/cid-mbim-multicarrier-providers.png)
+
+## <a name="multi-carrier-device-service"></a>多载波设备服务
+
+
+当 CID \_ MBIM 设备服务进行查询时，IHV 设备将实现并报告以下设备服务 \_ \_ 。 现有的已知服务在第10.1 节的 NCM MBIM 规范中定义。 它已扩展为定义以下服务。
 
 <table>
 <colgroup>
@@ -94,14 +94,14 @@ IHV 设备会实现并报告以下设备服务 CID 进行查询时\_MBIM\_设备
 <tr class="odd">
 <td align="left"><p>多运营商</p></td>
 <td align="left"><p>UUID_MULTICARRIER</p></td>
-<td align="left"><p>8b569648- 628d-4653-9b9f- 1025404424e1</p></td>
+<td align="left"><p>8b569648-628d-copy to-9b9f-1025404424e1</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-具体而言，以下 Cid 定义的 UUID\_运营商的设备服务。
+具体而言，以下 Cid 是为 UUID \_ 多设备服务定义的。
 
 <table>
 <colgroup>
@@ -120,7 +120,7 @@ IHV 设备会实现并报告以下设备服务 CID 进行查询时\_MBIM\_设备
 <th align="left">命令代码</th>
 <th align="left">查询</th>
 <th align="left">设置</th>
-<th align="left">Event</th>
+<th align="left">事件</th>
 <th align="left">设置 InformationBuffer 有效负载</th>
 <th align="left">查询 InformationBuffer 有效负载</th>
 <th align="left">完成 InformationBuffer 有效负载</th>
@@ -133,8 +133,8 @@ IHV 设备会实现并报告以下设备服务 CID 进行查询时\_MBIM\_设备
 <td align="left"><p>Y</p></td>
 <td align="left"><p>N</p></td>
 <td align="left"><p>N</p></td>
-<td align="left"><p>不可用</p></td>
-<td align="left"><p>不可用</p></td>
+<td align="left"><p>空值</p></td>
+<td align="left"><p>空值</p></td>
 <td align="left"><p>MBIM_MULTICARRIER_CAPABILITIES</p></td>
 </tr>
 <tr class="even">
@@ -144,7 +144,7 @@ IHV 设备会实现并报告以下设备服务 CID 进行查询时\_MBIM\_设备
 <td align="left"><p>Y</p></td>
 <td align="left"><p>N</p></td>
 <td align="left"><p>MBIM_LOCATION_INFO</p></td>
-<td align="left"><p>不可用</p></td>
+<td align="left"><p>空值</p></td>
 <td align="left"><p>MBIM_LOCATION_INFO</p></td>
 </tr>
 <tr class="odd">
@@ -153,7 +153,7 @@ IHV 设备会实现并报告以下设备服务 CID 进行查询时\_MBIM\_设备
 <td align="left"><p>Y</p></td>
 <td align="left"><p>N</p></td>
 <td align="left"><p>N</p></td>
-<td align="left"><p>不可用</p></td>
+<td align="left"><p>空值</p></td>
 <td align="left"><p>UUID</p></td>
 <td align="left"><p>MBIM_MULTICARRIERMODE_CURRENT_CID_LIST</p></td>
 </tr>
@@ -162,16 +162,16 @@ IHV 设备会实现并报告以下设备服务 CID 进行查询时\_MBIM\_设备
 
  
 
-## <a name="cidmbimmulticarriercapabilities"></a>CID\_MBIM\_多\_功能
+## <a name="cid_mbim_multicarrier_capabilities"></a>CID \_ MBIM \_ 多 \_ 功能
 
 
-该命令返回信息 MB 设备的多运营商功能。 要求固件重新启动，并相应地设备删除/到达设备应将主机提供使用适当的标志来使宿主能够提供适当的用户体验的提示。
+此命令返回有关 MB 设备的多运营商功能的信息。 需要重新启动固件并相应地进行设备删除/到达的设备应使用适当的标志为主机提供提示，以使主机能够提供适当的用户体验。
 
-查询 = **InformationBuffer 上 MBIM\_命令\_未使用的消息。MBIM\_多\_InformationBuffer MBIM 中返回的功能\_命令\_完成**
+查询 = ** \_ 未使用 MBIM 命令消息上的 InformationBuffer \_ 。\_ \_ InformationBuffer MBIM 命令中返回的 MBIM 多功能已 \_ \_ 完成**
 
-设置 =**不受支持**
+Set = **不受支持**
 
-未经请求的事件 =**不受支持**
+主动事件 = **不受支持**
 
 <table>
 <colgroup>
@@ -189,13 +189,13 @@ IHV 设备会实现并报告以下设备服务 CID 进行查询时\_MBIM\_设备
 <tbody>
 <tr class="odd">
 <td align="left"><p>MBIM_MC_FLAGS_STATIC_SCAN</p></td>
-<td align="left"><p>1h</p></td>
-<td align="left"><p>指示为可见的提供程序在扫描结果中报告的结果不会获得完全的网络扫描中。 结果可能来自一个硬编码列表。</p></td>
+<td align="left"><p>1小时</p></td>
+<td align="left"><p>指示为扫描结果中的可见提供程序报告的结果无法从完全网络扫描获得。 可能会从硬编码列表中获取结果。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>MBIM_MC_FLAGS_¬¬FW_REQUIRES_REBOOT</p></td>
-<td align="left"><p>2h</p></td>
-<td align="left"><p>指示设备需要支持周期和重启切换固件。</p></td>
+<td align="left"><p>MBIM_MC_FLAGS_ FW_REQUIRES_REBOOT</p></td>
+<td align="left"><p>下半年</p></td>
+<td align="left"><p>指示设备需要通电周期，并重新启动以切换固件。</p></td>
 </tr>
 </tbody>
 </table>
@@ -211,10 +211,10 @@ IHV 设备会实现并报告以下设备服务 CID 进行查询时\_MBIM\_设备
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">偏移量</th>
+<th align="left">Offset</th>
 <th align="left">大小</th>
 <th align="left">字段</th>
-<th align="left">描述</th>
+<th align="left">说明</th>
 </tr>
 </thead>
 <tbody>
@@ -222,25 +222,25 @@ IHV 设备会实现并报告以下设备服务 CID 进行查询时\_MBIM\_设备
 <td align="left"><p>0</p></td>
 <td align="left"><p>4</p></td>
 <td align="left"><p>dwCapabilities</p></td>
-<td align="left"><p>返回从 MBIM_MULTICARRIER_FLAGS 功能</p></td>
+<td align="left"><p>返回 MBIM_MULTICARRIER_FLAGS 的功能</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-## <a name="cidmbimlocationinfo"></a>CID\_MBIM\_位置\_信息
+## <a name="cid_mbim_location_info"></a>CID \_ MBIM \_ 位置 \_ 信息
 
 
-使用命令来设置/查询当前的位置信息的主机。 如果需要静态 （没有物理扫描） 到与当前用户位置相关的可见提供程序列表进行筛选，这是适用于设备。
+命令用于设置/查询主机的当前位置信息。 如果设备需要筛选静态 (的列表，而不) 可见提供程序与当前用户位置相关的提供程序，则此方法非常有用。
 
-查询 = **InformationBuffer 上 MBIM\_命令\_未使用的消息。MBIM\_位置\_InformationBuffer MBIM 中返回的信息\_命令\_完成**
+查询 = ** \_ 未使用 MBIM 命令消息上的 InformationBuffer \_ 。已 \_ \_ \_ \_ 完成 InformationBuffer MBIM 命令中返回的 MBIM 位置信息**
 
-设置 = **InformationBuffer 上 MBIM\_命令\_MSG 包含 MBIM\_位置\_信息**
+Set = **InformationBuffer ON MBIM \_ 命令 \_ MSG 包含 MBIM \_ LOCATION \_ INFO**
 
-未经请求的事件 =**不受支持**
+主动事件 = **不受支持**
 
-Host 所指定的国家/地区代码将基于地理位置 GEOID 可用在 Windows 上。 有关详细信息，请参阅[表的地理位置 (Windows)](https://docs.microsoft.com/windows/desktop/Intl/table-of-geographical-locations)。
+主机指定的国家/地区代码将基于 Windows 上可用的地理位置 GEOID。 有关详细信息，请参阅 [ (Windows) 的地理位置表 ](/windows/desktop/Intl/table-of-geographical-locations)。
 
 <table>
 <colgroup>
@@ -251,10 +251,10 @@ Host 所指定的国家/地区代码将基于地理位置 GEOID 可用在 Window
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">偏移量</th>
+<th align="left">Offset</th>
 <th align="left">大小</th>
 <th align="left">字段</th>
-<th align="left">描述</th>
+<th align="left">说明</th>
 </tr>
 </thead>
 <tbody>
@@ -269,16 +269,16 @@ Host 所指定的国家/地区代码将基于地理位置 GEOID 可用在 Window
 
  
 
-## <a name="cidmbimmulticarriercurrentcidlist"></a>CID\_MBIM\_多\_当前\_CID\_列表
+## <a name="cid_mbim_multicarrier_current_cid_list"></a>CID \_ MBIM \_ 多 \_ 当前 \_ CID \_ 列表
 
 
-此命令用于查询当前应通过设备服务的 Cid。
+此命令用于查询设备服务当前所用的 Cid。
 
-查询 = **InformationBuffer 上 MBIM\_命令\_MSG 是设备服务 UUID。MBIM\_MULTICARRIERMODE\_当前\_CID\_InformationBuffer MBIM 中返回列表\_命令\_完成**
+Query = **MBIM \_ 命令消息的 InformationBuffer \_ 是设备服务的 UUID。MBIM \_ MULTICARRIERMODE \_ \_ \_ 在 InformationBuffer MBIM 命令中返回的当前 CID 列表已 \_ \_ 完成**
 
-设置 =**不受支持**
+Set = **不受支持**
 
-未经请求的事件 =**不受支持**
+主动事件 = **不受支持**
 
 <table>
 <colgroup>
@@ -290,11 +290,11 @@ Host 所指定的国家/地区代码将基于地理位置 GEOID 可用在 Window
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">偏移量</th>
+<th align="left">Offset</th>
 <th align="left">大小</th>
 <th align="left">字段</th>
-<th align="left">在任务栏的搜索框中键入</th>
-<th align="left">描述</th>
+<th align="left">类型</th>
+<th align="left">说明</th>
 </tr>
 </thead>
 <tbody>
@@ -303,14 +303,14 @@ Host 所指定的国家/地区代码将基于地理位置 GEOID 可用在 Window
 <td align="left"><p>4</p></td>
 <td align="left"><p>CidCount</p></td>
 <td align="left"><p>UINT32</p></td>
-<td align="left"><p>此设备的服务支持的 Cid 的数。</p></td>
+<td align="left"><p>此设备服务支持的 Cid 数。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>4</p></td>
 <td align="left"><p></p></td>
 <td align="left"><p>DataBuffer</p></td>
 <td align="left"><p>DATABUFFER</p></td>
-<td align="left"><p>CidList:此设备的服务支持的 Cid 的列表。 必须在此列表中的条目的 CID 计数数。 每个 CID 是 UINT32 类型。</p></td>
+<td align="left"><p>CidList：此设备服务支持的 Cid 列表。 此列表中的条目数必须为 CID 计数。 每个 CID 都是 UINT32 类型。</p></td>
 </tr>
 </tbody>
 </table>
@@ -318,10 +318,4 @@ Host 所指定的国家/地区代码将基于地理位置 GEOID 可用在 Window
  
 
  
-
- 
-
-
-
-
 

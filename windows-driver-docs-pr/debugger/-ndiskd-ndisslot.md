@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: c4fa2bd992156e6d2e8bc40550d68f763d84527c
-ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
+ms.openlocfilehash: ed39ecf8603ef7af4569df870932913f5eef9d80
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84534916"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89211309"
 ---
 # <a name="ndiskdndisslot"></a>!ndiskd.ndisslot
 
@@ -43,12 +43,12 @@ ms.locfileid: "84534916"
 
 ### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
-Ndiskd
+Ndiskd.dll
 
 <a name="examples"></a>示例
 --------
 
-运行不带参数的 **！ ndiskd ndisslot**扩展，以查看所有每处理器槽变量的列表。 为了简洁起见，下面的示例输出已 excised 列表的中间部分。
+运行不带参数的 **！ ndiskd ndisslot** 扩展，以查看所有每处理器槽变量的列表。 为了简洁起见，下面的示例输出已 excised 列表的中间部分。
 
 ```console
 1: kd> !ndiskd.ndisslot
@@ -99,22 +99,15 @@ Ndiskd
 ## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
-[网络驱动程序设计指南](https://docs.microsoft.com/windows-hardware/drivers/network/index)
+[网络驱动程序设计指南](../network/index.md)
 
-[Windows Vista 和更高版本的网络引用](https://docs.microsoft.com/windows-hardware/drivers/ddi/_netvista/)
+[Windows Vista 和更高版本的网络引用](/windows-hardware/drivers/ddi/_netvista/)
 
 [调试网络堆栈](https://channel9.msdn.com/Shows/Defrag-Tools/Defrag-Tools-175-Debugging-the-Network-Stack)
 
-[**NDIS 扩展（Ndiskd）**](ndis-extensions--ndiskd-dll-.md)
+[**NDIS 扩展 ( # A0) **](ndis-extensions--ndiskd-dll-.md)
 
 [**!ndiskd.help**](-ndiskd-help.md)
 
  
-
- 
-
-
-
-
-
 

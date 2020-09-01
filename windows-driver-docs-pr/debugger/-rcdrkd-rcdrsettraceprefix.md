@@ -1,9 +1,9 @@
 ---
 title: rcdrkd.rcdrsettraceprefix
-description: Rcdrkd.rcdrsettraceprefix 扩展设置的跟踪消息前缀。
+description: Rcdrkd. rcdrsettraceprefix 扩展设置跟踪消息前缀。
 ms.assetid: BFA987B8-7013-4112-A674-064ED59741C0
 keywords:
-- rcdrkd.rcdrsettraceprefix Windows 调试
+- rcdrkd rcdrsettraceprefix Windows 调试
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,29 +12,29 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 8408d0382459b635096ef1e51dec0589223e962f
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 4e310baaa8536c1043f820fd652d8b588e8c97cc
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67359791"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89212289"
 ---
 # <a name="rcdrkdrcdrsettraceprefix"></a>!rcdrkd.rcdrsettraceprefix
 
 
-**！ Rcdrkd.rcdrsettraceprefix**扩展设置的跟踪消息前缀。
+**！ Rcdrkd rcdrsettraceprefix**扩展设置跟踪消息前缀。
 
 ```dbgcmd
 !rcdrkd.rcdrsettraceprefix TracePrefixString 
 ```
 
-## <a name="span-idddkdevobjdbgspanspan-idddkdevobjdbgspanparameters"></a><span id="ddk__devobj_dbg"></span><span id="DDK__DEVOBJ_DBG"></span>参数
+## <a name="span-idddk__devobj_dbgspanspan-idddk__devobj_dbgspanparameters"></a><span id="ddk__devobj_dbg"></span><span id="DDK__DEVOBJ_DBG"></span>参数
 
 
-<span id="_______TracePrefixString______"></span><span id="_______traceprefixstring______"></span><span id="_______TRACEPREFIXSTRING______"></span> *TracePrefixString*   
-跟踪消息前缀字符串。
+<span id="_______TracePrefixString______"></span><span id="_______traceprefixstring______"></span><span id="_______TRACEPREFIXSTRING______"></span>*TracePrefixString*   
+跟踪消息的前缀字符串。
 
-## <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+## <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 
 Rcdrkd.dll
@@ -42,12 +42,12 @@ Rcdrkd.dll
 <a name="remarks"></a>备注
 -------
 
-录制器日志中的每个消息都有一个可以控制由指定的跟踪消息前缀字符串的前缀。 有关详细信息，请参阅[跟踪消息前缀](https://docs.microsoft.com/windows-hardware/drivers/devtest/trace-message-prefix)。
+记录器日志中的每条消息都有前缀，可以通过指定跟踪消息前缀字符串来控制。 有关详细信息，请参阅 [跟踪消息前缀](../devtest/trace-message-prefix.md)。
 
 <a name="examples"></a>示例
 --------
 
-在以下示例中，跟踪消息前缀是最初 **%7 ！ u ！: %！FUNC ！-** . 参数 **%7 ！ u ！** 指定前缀，包括消息序列号。 参数 **%！FUNC ！** 指定前缀，包括生成消息的函数的名称。 此示例调用 **！ rcdrsettraceprefix**若要更改的前缀字符串 **%7 ！ u ！** 。 在此之后，显示日志包括消息序列号，但不包括函数名称。
+在下面的示例中，跟踪消息前缀最初为 **%7！ u！：%！求!-** . 参数 **%7！ u！** 指定前缀包括消息序列号。 参数 **%！FUNC！** 指定前缀包含生成消息的函数的名称。 该示例调用 **！ rcdrsettraceprefix** 将前缀字符串更改为 **%7！ u！**。 之后，日志显示包含消息序列号，但不包括函数名称。
 
 ```dbgcmd
 0: kd> !rcdrlogdump USBXHCI -a 0xfffffa8010737b60
@@ -75,17 +75,10 @@ Trying to extract TMF information from - C:\ProgramData\dbg\sym\usbxhci.pdb\D4C8
 ---- end of log ----
 ```
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
 [RCDRKD 扩展](rcdrkd-extensions.md)
 
  
-
- 
-
-
-
-
-
 

@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 3f818f3f66c88c0a9e814e73e8630ff20aa3b29c
-ms.sourcegitcommit: 67efcd26f7be8f50c92b141ccd14c9c68f4412d8
+ms.openlocfilehash: 37652b5bcbe70d01e0a7498ae4ab8ad41a814199
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88902416"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89212233"
 ---
 # <a name="plmdebug"></a>PLMDebug
 
@@ -91,7 +91,7 @@ plmdebug /activateBgTask "{TaskID}"
 
 调用任何 "挂起"、"继续" 或 "终止" 函数之前，必须先调用 **plmdebug/enableDebug** 。
 
-PLMDebug 工具调用 [IPackageDebugSettings 接口](https://docs.microsoft.com/windows/win32/api/shobjidl_core/nn-shobjidl_core-ipackagedebugsettings)的方法。 利用此接口，你可以对应用程序的流程生命周期管理进行手动控制。 通过此接口 (，因此通过此工具) ，你可以挂起、恢复和终止 Windows 应用程序。 请注意， [IPackageDebugSettings 接口](https://docs.microsoft.com/windows/win32/api/shobjidl_core/nn-shobjidl_core-ipackagedebugsettings) 的方法适用于整个包。 挂起、继续和终止会影响包中当前正在运行的所有应用。
+PLMDebug 工具调用 [IPackageDebugSettings 接口](/windows/win32/api/shobjidl_core/nn-shobjidl_core-ipackagedebugsettings)的方法。 利用此接口，你可以对应用程序的流程生命周期管理进行手动控制。 通过此接口 (，因此通过此工具) ，你可以挂起、恢复和终止 Windows 应用程序。 请注意， [IPackageDebugSettings 接口](/windows/win32/api/shobjidl_core/nn-shobjidl_core-ipackagedebugsettings) 的方法适用于整个包。 挂起、继续和终止会影响包中当前正在运行的所有应用。
 
 <a name="examples"></a>示例
 --------
@@ -185,8 +185,8 @@ SampleTask : {50DB0363-D722-4E23-A18F-1EF49B226CC3}
 
 **plmdebug/activatebgtask "{50DB0363-D722-4E23-A18F-1EF49B226CC3}"**
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
-[在 Visual Studio 中调试 UWP 应用时如何触发挂起、继续和后台事件](https://docs.microsoft.com/visualstudio/debugger/how-to-trigger-suspend-resume-and-background-events-for-windows-store-apps-in-visual-studio)
+[在 Visual Studio 中调试 UWP 应用时如何触发挂起、继续和后台事件](/visualstudio/debugger/how-to-trigger-suspend-resume-and-background-events-for-windows-store-apps-in-visual-studio)
 
 [Windows 调试工具中包含的工具](extra-tools.md)

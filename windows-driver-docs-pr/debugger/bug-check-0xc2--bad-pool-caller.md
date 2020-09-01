@@ -13,19 +13,19 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: dbf827c0b9006ef3554baaa0b4445298de968f32
-ms.sourcegitcommit: f610410e1500f0b0a4ca008b52679688ab51033d
+ms.openlocfilehash: 1bfa17164d602c29ab6010d02795aaa79c692a82
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/15/2020
-ms.locfileid: "88252851"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89213045"
 ---
 # <a name="bug-check-0xc2-bad_pool_caller"></a>Bug 检查0xC2：错误的 \_ 池 \_ 调用方
 
 错误 \_ 的池 \_ 调用方 bug 检查的值为0x000000C2。 这表示当前线程发出错误的池请求。
 
 > [!IMPORTANT]
-> 本主题适用于程序员。 如果你是在使用计算机时收到蓝屏错误代码的客户，请参阅 [排查蓝屏错误](https://www.windows.com/stopcode)。
+> 本主题面向程序员。 如果您是在使用计算机时收到蓝屏错误代码的客户，请参阅[蓝屏错误疑难解答](https://www.windows.com/stopcode)。
 
 ## <a name="bad_pool_caller-parameters"></a>错误的 \_ 池 \_ 调用方参数
 
@@ -67,14 +67,14 @@ ms.locfileid: "88252851"
 </tr>
 <tr class="odd">
 <td align="left"><p>0x06</p></td>
-<td align="left"><p>保留</p></td>
+<td align="left"><p>预留</p></td>
 <td align="left"><p>指向池标头的指针</p></td>
 <td align="left"><p>池标头内容</p></td>
 <td align="left"><p>当前线程尝试释放已释放的池。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x07</p></td>
-<td align="left"><p>保留</p></td>
+<td align="left"><p>预留</p></td>
 <td align="left"><p>池标头内容</p></td>
 <td align="left"><p>正在释放的池块的地址</p></td>
 <td align="left"><p>当前线程尝试释放已释放的池。</p></td>
@@ -135,7 +135,7 @@ ms.locfileid: "88252851"
 <tr class="even">
 <td align="left"><p>0x44</p></td>
 <td align="left"><p>开始地址</p></td>
-<td align="left"><p>保留</p></td>
+<td align="left"><p>预留</p></td>
 <td align="left"><p>0</p></td>
 <td align="left"><p>当前线程尝试释放未分配的非分页池地址。</p></td>
 </tr>
@@ -156,8 +156,8 @@ ms.locfileid: "88252851"
 <tr class="odd">
 <td align="left"><p>0x48</p></td>
 <td align="left"><p>开始地址</p></td>
-<td align="left"><p>保留</p></td>
-<td align="left"><p>保留</p></td>
+<td align="left"><p>预留</p></td>
+<td align="left"><p>预留</p></td>
 <td align="left"><p>当前线程尝试释放未分配的分页池地址。</p></td>
 </tr>
 <tr class="even">
@@ -216,8 +216,8 @@ ms.locfileid: "88252851"
 </tr>
 <tr class="odd">
 <td align="left"><p>0x41286</p></td>
-<td align="left"><p>保留</p></td>
-<td align="left"><p>保留</p></td>
+<td align="left"><p>预留</p></td>
+<td align="left"><p>预留</p></td>
 <td align="left"><p>页面中页面缓冲池起始处的起始偏移量</p></td>
 <td align="left"><p>当前线程尝试在分配过程中释放分页池地址。</p></td>
 </tr>
@@ -236,8 +236,8 @@ ms.locfileid: "88252851"
 
 **驱动程序验证程序**
 
-驱动程序验证程序是一种实时运行的工具，用于检查驱动程序的行为。 如果发现驱动程序代码执行过程中出现错误，它会主动创建一个例外，以允许进一步审查驱动程序代码的一部分。 驱动程序验证器管理器内置于 Windows 中，在所有 Windows Pc 上都可用。 若要启动驱动程序验证器管理器，请在命令提示符处键入 *Verifer* 。 你可以配置要验证的驱动程序。 验证驱动程序的代码会在运行时增加开销，因此请尝试并尽可能多地验证驱动程序。 有关详细信息，请参阅 [Driver Verifier](https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier)。
+驱动程序验证程序是一个实时运行的工具，用于检查驱动程序的行为。 如果发现驱动程序代码执行过程中出现错误，它会主动创建一个例外，以允许进一步审查驱动程序代码的一部分。 驱动程序验证程序管理器内置于 Windows 中，可在所有 Windows PC 上使用。 若要启动驱动程序验证器管理器，请在命令提示符处键入 *Verifer* 。 你可以配置要验证的驱动程序。 验证驱动程序的代码在运行时会增加开销，因此请尝试验证尽可能少的驱动程序。 有关详细信息，请参阅[驱动程序验证程序](../devtest/driver-verifier.md)。
 
 **Windows 内存诊断**
 
-具体而言，对于内存池损坏的情况，请运行 Windows 内存诊断工具，尝试将物理内存作为一个原因进行隔离。 在 "控制面板" 搜索框中键入 "内存"，然后选择 " **诊断计算机的内存问题**"。运行测试后，使用事件查看器查看系统日志下的结果。 查找 " *MemoryDiagnostics* " 项，查看结果。
+具体而言，对于内存池损坏的情况，请运行 Windows 内存诊断工具，尝试将物理内存作为一个原因进行隔离。 在 "控制面板" 搜索框中键入 "内存"，然后选择 " **诊断计算机的内存问题**"。运行测试后，使用事件查看器查看系统日志下的结果。 查找“内存诊断结果”条目以查看结果  。

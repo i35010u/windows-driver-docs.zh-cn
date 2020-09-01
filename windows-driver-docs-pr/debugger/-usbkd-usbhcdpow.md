@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 31e996f7ccb1dd4a8754ce96285746524158ca43
-ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
+ms.openlocfilehash: 827409f4096c89b6db12d7a8253e505e144d5399
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84534860"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89212259"
 ---
 # <a name="usbkdusbhcdpow"></a>!usbkd.usbhcdpow
 
@@ -34,18 +34,18 @@ ms.locfileid: "84534860"
 <span id="_______DeviceExtension______"></span><span id="_______deviceextension______"></span><span id="_______DEVICEEXTENSION______"></span>*DeviceExtension*   
 以下项之一的地址：
 
--   USB 主机控制器的功能设备对象（FDO）的设备扩展。
--   用于物理设备对象（PDO） USB 根集线器的设备扩展。
+-   功能设备对象的设备扩展 (USB 主机控制器的 FDO) 。
+-    (PDO) USB 根集线器的物理设备对象的设备扩展。
 
 ## <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 
-Usbkd
+Usbkd.dll
 
 <a name="examples"></a>示例
 --------
 
-下面是一种查找 EHCI 主机控制器的 FDO 的设备扩展地址的方法。 首先输入[**！ usbkd. usb2tree**](-usbkd-usb2tree.md)。
+下面是一种查找 EHCI 主机控制器的 FDO 的设备扩展地址的方法。 首先输入 [**！ usbkd. usb2tree**](-usbkd-usb2tree.md)。
 
 ```dbgcmd
 0: kd> !usbkd.usb2tree
@@ -55,9 +55,9 @@ Usbkd
      ...
 ```
 
-在上面的输出中，FDO 的设备扩展的地址显示为[DML](debugger-markup-language-commands.md)命令 **！ ehci \_ info ffffe00001ca11a0**的参数。
+在上面的输出中，FDO 的设备扩展的地址显示为 [DML](debugger-markup-language-commands.md) 命令 **！ ehci \_ info ffffe00001ca11a0**的参数。
 
-现在，将设备扩展的地址传递给 **！ usbhcdpow**命令。
+现在，将设备扩展的地址传递给 **！ usbhcdpow** 命令。
 
 ```dbgcmd
 0: kd> !usbkd.usbhcdpow ffffe00001ca11a0
@@ -78,7 +78,7 @@ dt USBPORT!_FDO_EXTENSION ffffe00001ca15a0
 [07] FdoPwrEv_Rh_Wake                   FdoPwr_WaitSx                      FdoPwr_WaitSx                        dt:25481267 ms
 ```
 
-下面是一种查找根集线器 PDO 的设备扩展地址的方法。 首先输入[**！ usbkd. usb2tree**](-usbkd-usb2tree.md)。
+下面是一种查找根集线器 PDO 的设备扩展地址的方法。 首先输入 [**！ usbkd. usb2tree**](-usbkd-usb2tree.md)。
 
 ```dbgcmd
 0: kd> !usbkd.usb2tree
@@ -89,7 +89,7 @@ dt USBPORT!_FDO_EXTENSION ffffe00001ca15a0
         ...
 ```
 
-在上面的输出中，可以看到根集线器的 FDO 地址，该地址显示为命令 **！ devstack ffffe00002320050**的参数。 使用[**！ devstack**](-devstack.md)命令查找 pdo 的地址和 pdo 设备扩展。
+在上面的输出中，可以看到根集线器的 FDO 地址，该地址显示为命令 **！ devstack ffffe00002320050**的参数。 使用 [**！ devstack**](-devstack.md) 命令查找 pdo 的地址和 pdo 设备扩展。
 
 ```dbgcmd
 0: kd> !kdexts.devstack ffffe00002320050
@@ -101,7 +101,7 @@ dt USBPORT!_FDO_EXTENSION ffffe00001ca15a0
 
 在上面的输出中，可以看到根集线器的 PDO 的设备扩展地址是 `ffffe0000213c1a0` 。
 
-现在，将设备扩展的地址传递给 **！ usbhcdpow**命令。
+现在，将设备扩展的地址传递给 **！ usbhcdpow** 命令。
 
 ```dbgcmd
 0: kd> !usbkd.usbhcdpow ffffe0000213c1a0
@@ -120,14 +120,7 @@ dt USBPORT!_FDO_EXTENSION ffffe0000213c5a0
 
 [USB 2.0 调试器扩展](usb-2-0-extensions.md)
 
-[通用串行总线（USB）驱动程序](https://docs.microsoft.com/windows-hardware/drivers/usbcon/)
+[ (USB) 驱动程序的通用串行总线](../usbcon/index.md)
 
  
-
- 
-
-
-
-
-
 

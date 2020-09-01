@@ -10,23 +10,23 @@ keywords:
 - SIO_WSK_REGISTER_EXTENSION
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 239551ec06e469d25ae0d3dcea43f1931ea35159
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 35249843415608567b0dd97b6da6072db70106f8
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72842095"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89212039"
 ---
 # <a name="registering-an-extension-interface"></a>注册扩展接口
 
 
-Winsock 内核（WSK）应用程序成功创建套接字后，它可以为 WSK 子系统支持的一个或多个[扩展接口](winsock-kernel-extension-interfaces.md)注册该套接字。 WSK 应用程序通过检查 WSK 子系统返回给应用程序的[**WSK\_提供程序\_调度**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/ns-wsk-_wsk_provider_dispatch)结构的**版本**成员，确定 WSK 子系统支持的扩展接口集。在附件时。
+Winsock 内核 (WSK) 应用程序成功创建套接字后，它可以为 WSK 子系统支持的一个或多个 [扩展接口](winsock-kernel-extension-interfaces.md) 注册该套接字。 WSK 应用程序通过检查在附件中 WSK 子系统返回给应用程序的[**WSK \_ 提供程序 \_ 调度**](/windows-hardware/drivers/ddi/wsk/ns-wsk-_wsk_provider_dispatch)结构的**版本**成员，来确定 WSK 子系统支持哪组扩展接口。
 
 每个扩展接口都由与 WSK NPI 无关的 NPI 定义。 但请注意，扩展接口的 NPIs 不支持 NPI 特定的特征。
 
-WSK 应用程序通过执行[**SIO\_WSK\_** ](https://docs.microsoft.com/windows-hardware/drivers/network/sio-wsk-register-extension)在套接字上注册\_扩展套接字 IOCTL 操作来注册扩展接口。 有关执行套接字 IOCTL 操作的详细信息，请参阅[在套接字上执行控制操作](performing-control-operations-on-a-socket.md)。
+WSK 应用程序通过对套接字执行 [**SIO \_ WSK \_ REGISTER \_ extension**](./sio-wsk-register-extension.md) socket IOCTL 操作来注册扩展接口。 有关执行套接字 IOCTL 操作的详细信息，请参阅 [在套接字上执行控制操作](performing-control-operations-on-a-socket.md)。
 
-如果 WSK 应用程序尝试为 WSK 子系统不支持的扩展接口注册套接字，则 SIO\_WSK\_REGISTER\_扩展套接字 IOCTL 操作将返回\_\_不受支持的状态。
+如果 WSK 应用程序尝试为 WSK 子系统不支持的扩展接口注册套接字，则 SIO \_ WSK \_ register \_ EXTENSION 套接字 IOCTL 操作将返回 \_ 不 \_ 受支持的状态。
 
 例如，假设扩展接口定义为，如下面的代码示例中所示。
 
@@ -124,10 +124,4 @@ NTSTATUS
 WSK 应用程序在套接字基础上注册扩展接口。
 
  
-
- 
-
-
-
-
 

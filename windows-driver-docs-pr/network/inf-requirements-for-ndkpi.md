@@ -1,30 +1,30 @@
 ---
 title: NDKPI 的 INF 要求
-description: 支持 Network Direct 内核 (NDK) 的微型端口驱动程序的 INF 文件必须满足以下要求。
+description: 支持网络直接内核 (NDK) 的微型端口驱动程序的 INF 文件必须满足以下要求。
 ms.assetid: 1399CEB8-82A5-4F91-833E-66FC5A5663C7
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9af6f2d4c554b07f8f9d454b37bfeab1c0cb1e69
-ms.sourcegitcommit: 791a4bb1463c8c623464a79daf0253396852fbbb
+ms.openlocfilehash: dc96cbde91cf0b206445a16367948f1efdc557b4
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "67156964"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89212389"
 ---
 # <a name="inf-requirements-for-ndkpi"></a>NDKPI 的 INF 要求
 
 
-支持 Network Direct 内核 (NDK) 的微型端口驱动程序的 INF 文件必须满足以下要求。
+支持网络直接内核 (NDK) 的微型端口驱动程序的 INF 文件必须满足以下要求。
 
--   微型端口驱动程序的 INF 文件必须指定 Windows 组件，以发现和使用驱动程序提供服务的支持 NDK 微型端口适配器的 NDIS 范围的上界值为"ndis5"。 指定此值，如下所示：
+-   小型端口驱动程序的 INF 文件必须指定一个 NDIS 上限范围值 "ndis5"，才能让 Windows 组件发现和使用由驱动程序提供服务的支持 NDK 的微型端口适配器。 此值的指定方式如下：
 
     ```INF
     HKR, Ndi\Interfaces, UpperRange, 0, "ndis5"
     ```
 
--   INF 文件必须指定 **\*NetworkDirect**关键字值，如下所示。 安装该驱动程序后，管理员可以更新 **\*NetworkDirect**中的关键字值**高级**适配器属性页。 
+-   INF 文件必须按如下所示指定** \* NetworkDirect**关键字值。 安装驱动程序后，管理员可以在适配器的 "**高级**" 属性页中更新 " ** \* NetworkDirect**关键字" 值。 
 
-    **请注意**中进行更改后的微型端口驱动程序将自动重启**高级**适配器属性页。
+    **注意**   在适配器的 " **高级** " 属性页中进行更改后，会自动重新启动微型端口驱动程序。
 
     ```INF
     HKR, Ndi\Params\*NetworkDirect,        ParamDesc,  0, "NetworkDirect Functionality"
@@ -34,11 +34,11 @@ ms.locfileid: "67156964"
     HKR, Ndi\Params\*NetworkDirect\enum,   "1",        0, "Enabled"
     ```
 
--   INF 文件必须指定 **\*NetworkDirectTechnology**关键字值，如下所示。 安装该驱动程序后，管理员可以更新 **\*NetworkDirectTechnology**中的关键字值**高级**适配器属性页。 枚举是互斥的这意味着选择某一 NetworkDirectTechnology 值排除其他所有。  这允许为平台定义严格设备行为。  
--   设备必须 express 支持的传输。  传输值是标识符映射到 WDK **NDK_RDMA_TECHNOLOGY**。  重新定义标识符被禁止。
--   具有多个并发的传输协议的设备的行为是未定义。  设备**必须**指定传输类型。
+-   INF 文件必须按如下所示指定** \* NetworkDirectTechnology**关键字值。 安装驱动程序后，管理员可以在适配器的 "**高级**" 属性页中更新** \* NetworkDirectTechnology**关键字值。 枚举是互斥的，也就是说，NetworkDirectTechnology 值的选择不包括所有其他值。  这允许平台定义严格的设备行为。  
+-   设备必须仅表示支持的传输。  传输值是映射到 WDK **NDK_RDMA_TECHNOLOGY**的标识符。  禁止重定义标识符。
+-   具有多个并发传输的设备的行为是不确定的。  设备 **必须** 指定传输类型。
 
-    **请注意**中进行更改后的微型端口驱动程序将自动重启**高级**适配器属性页。
+    **注意**   在适配器的 " **高级** " 属性页中进行更改后，会自动重新启动微型端口驱动程序。
 
     ```INF
     HKR, Ndi\Params\*NetworkDirectTechnology,        ParamDesc,  0,  "NetworkDirect Technology"
@@ -51,13 +51,12 @@ ms.locfileid: "67156964"
     HKR, Ndi\Params\*NetworkDirectTechnology,        Optional,   0,  "0"
     ```
 
-    有关高级属性的详细信息，请参阅[的高级属性页指定配置参数](specifying-configuration-parameters-for-the-advanced-properties-page.md)。
+    有关高级属性的详细信息，请参阅 [指定高级属性页的配置参数](specifying-configuration-parameters-for-the-advanced-properties-page.md)。
 
-    有关使用标准化的 INF 关键字的详细信息，请参阅[为网络设备的标准化 INF 关键字](standardized-inf-keywords-for-network-devices.md)。
+    有关使用标准 INF 关键字的详细信息，请参阅 [网络设备的标准化 INF 关键字](standardized-inf-keywords-for-network-devices.md)。
 
 ## <a name="related-topics"></a>相关主题
 
 
-[网络直接内核提供程序接口 (NDKPI)](network-direct-kernel-programming-interface--ndkpi-.md)
+[网络直接内核提供程序接口 (NDKPI)](./overview-of-network-direct-kernel-provider-interface--ndkpi-.md)
 
- 

@@ -6,17 +6,17 @@ keywords:
 - 内核流调试，视频流停止，处理延迟
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 088a6a8f5dcb069b0d64ed73ce717aab4fa483df
-ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
+ms.openlocfilehash: 768cb0ad03b4e6e74c792fe4765353e95c4dce17
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84534780"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89211179"
 ---
 # <a name="debugging-a-processing-stall"></a>调试处理停滞问题
 
 
-首先查找相关的 pin。 在假设的情况下，相关视频捕获 pin 具有地址**8160DDE0**，因此，我们在此地址上使用[**！ ks**](-ks-dump.md) extension 命令来获取更多详细信息：
+首先查找相关的 pin。 在假设的情况下，相关视频捕获 pin 具有地址 **8160DDE0**，因此，我们在此地址上使用 [**！ ks**](-ks-dump.md) extension 命令来获取更多详细信息：
 
 ```dbgcmd
 kd> !ks.dump 8160DDE0 7
@@ -30,7 +30,7 @@ Pin object 8160DDE0 [CKsPin = 8160DD50]
         And Gate Count           1
 ```
 
-首先，确定 pin 是否处于适当的状态，以及处理 mutex 是否正在由另一个线程持有。 在这种情况下，pin 状态为**KSSTATE \_ RUN**，因为它应该是，并且不会保留处理互斥体，因此我们接下来使用[**！ dumpqueue**](-ks-dumpqueue.md)扩展来确定是否有可用的帧：
+首先，确定 pin 是否处于适当的状态，以及处理 mutex 是否正在由另一个线程持有。 在这种情况下，pin 状态为 **KSSTATE \_ RUN**，因为它应该是，并且不会保留处理互斥体，因此我们接下来使用 [**！ dumpqueue**](-ks-dumpqueue.md) 扩展来确定是否有可用的帧：
 
 ```dbgcmd
 kd> !ks.dumpqueue 8160DDE0 7
@@ -57,15 +57,15 @@ Queue 8172D5D8:
 ...<this part of display not shown>...
 ```
 
-在上面的 **！ dumpqueue**输出的部分显示中，我们看到有5个帧正在等待或可用。 这些帧是位于前导边缘之前还是之后？ 在**dumpqueue**显示中，框架始终按从最旧到最新的顺序列出。 前导边缘的框架标头与列出的第一个帧的帧标题匹配，即最早的帧。 因此，所有可用帧都在前导边缘之前。
+在上面的 **！ dumpqueue** 输出的部分显示中，我们看到有5个帧正在等待或可用。 这些帧是位于前导边缘之前还是之后？ 在 **dumpqueue** 显示中，框架始终按从最旧到最新的顺序列出。 前导边缘的框架标头与列出的第一个帧的帧标题匹配，即最早的帧。 因此，所有可用帧都在前导边缘之前。
 
-如果不是这种情况，而是所有的帧都在前导边缘之后，并且由于克隆指针而产生了引用计数，则问题很可能是由硬件或驱动程序的硬件编程引起的。 请确保硬件发出缓冲区信号完成（检查中断和 Dpc），并确定驱动程序是否正确响应这些通知（例如，在缓冲区完成时删除克隆）。
+如果不是这种情况，而是所有的帧都在前导边缘之后，并且由于克隆指针而产生了引用计数，则问题很可能是由硬件或驱动程序的硬件编程引起的。 请确保硬件正在向缓冲区发出信号， (检查中断和 Dpc) 并确定驱动程序是否已通过在缓冲区完成时删除克隆来 (相应的通知，例如) 。
 
 例如，如我们的示例中所述，所有帧都在领先的边缘，问题几乎肯定是软件问题。 可以通过查看 pin 和门获取详细信息。
 
 ### <a name="span-idinterpreting_the_and_gatespanspan-idinterpreting_the_and_gatespaninterpreting-the-and-gate"></a><span id="interpreting_the_and_gate"></span><span id="INTERPRETING_THE_AND_GATE"></span>解释和门
 
-Pin 的和门控件处理。 如果入口计数为1，则可能发生处理。 使用 **！ ks**扩展名获取和入口的当前状态：
+Pin 的和门控件处理。 如果入口计数为1，则可能发生处理。 使用 **！ ks** 扩展名获取和入口的当前状态：
 
 ```dbgcmd
 kd> !ks.dump 8160DDE0 7
@@ -83,13 +83,7 @@ Pin object 8160DDE0 [CKsPin = 8160DD50]
 
 -   进程调度错误地返回了 "挂起" 状态 \_ 。
 
--   数据可用性事例缺少[KsPinAttemptProcessing](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/nf-ks-kspinattemptprocessing)调用。
+-   数据可用性事例缺少 [KsPinAttemptProcessing](/windows-hardware/drivers/ddi/ks/nf-ks-kspinattemptprocessing) 调用。
 
  
-
- 
-
-
-
-
 

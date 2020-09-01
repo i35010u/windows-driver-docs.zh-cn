@@ -8,12 +8,12 @@ keywords:
 - 哈希 WDK RSS
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c7603cb30b39da21b605d1be6bd5d1cb8a3fa584
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 34c86f66053b54087d1447435b39450ce7d7a537
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72842007"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89211593"
 ---
 # <a name="rss-hashing-functions"></a>RSS 哈希函数
 
@@ -22,7 +22,7 @@ ms.locfileid: "72842007"
 
 NIC 或其微型端口驱动程序使用 RSS 哈希函数来计算 RSS 哈希值。
 
-过量驱动程序设置哈希类型、函数和表以将连接分配给 Cpu。 有关详细信息，请参阅[RSS 配置](rss-configuration.md)。
+过量驱动程序设置哈希类型、函数和表以将连接分配给 Cpu。 有关详细信息，请参阅 [RSS 配置](rss-configuration.md)。
 
 哈希函数可以是下列项之一：
 
@@ -32,25 +32,25 @@ NIC 或其微型端口驱动程序使用 RSS 哈希函数来计算 RSS 哈希值
 - **NdisHashFunctionReserved3**
 
 >[!NOTE]
-> 目前， **NdisHashFunctionToeplitz**是可用于微型端口驱动程序的唯一哈希函数。 其他哈希函数是为 NDIS 预留的。 
+> 目前， **NdisHashFunctionToeplitz** 是可用于微型端口驱动程序的唯一哈希函数。 其他哈希函数是为 NDIS 预留的。 
 
-小型端口驱动程序应在驱动程序指示接收到的数据之前，确定它在每个[**NET\_缓冲区**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)中使用的哈希函数和值\_列表结构。 有关详细信息，请参阅[指示 RSS 接收数据](indicating-rss-receive-data.md)。
+微型端口驱动程序应标识在驱动程序指示接收的数据之前，它在每个 [**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list) 结构中所使用的哈希函数和值。 有关详细信息，请参阅 [指示 RSS 接收数据](indicating-rss-receive-data.md)。
 
 ## <a name="examples"></a>示例
 
-以下四个伪代码示例显示了如何计算**NdisHashFunctionToeplitz**哈希值。 这些示例表示可用于**NdisHashFunctionToeplitz**的四种可能的哈希类型。 有关哈希类型的详细信息，请参阅[RSS 哈希类型](rss-hashing-types.md)。
+以下四个伪代码示例显示了如何计算 **NdisHashFunctionToeplitz** 哈希值。 这些示例表示可用于 **NdisHashFunctionToeplitz**的四种可能的哈希类型。 有关哈希类型的详细信息，请参阅 [RSS 哈希类型](rss-hashing-types.md)。
 
 若要简化示例，需要一个用于处理输入字节流的通用算法。 在后面的四个示例中定义字节流的特定格式。
 
-过量驱动程序提供微型端口驱动程序的密钥（K），以便在哈希计算中使用。 密钥长度为40字节（320位）。 有关密钥的详细信息，请参阅[RSS 配置](rss-configuration.md)。
+过量驱动程序提供 (K) 到微型端口驱动程序的密钥，以便在哈希计算中使用。 密钥为40字节 (320 位) 长。 有关密钥的详细信息，请参阅 [RSS 配置](rss-configuration.md)。
 
-给定包含*n*个字节的输入数组，字节流定义如下：
+给定包含 *n* 个字节的输入数组，字节流定义如下：
 
 ```c++
 input[0] input[1] input[2] ... input[n-1]
 ```
 
-最左侧的字节是输入\[0\]，输入\[0\] 的最高有效位是最左侧的位。 最右侧的字节是输入\[n-1\]，输入\[n-1\] 的最小有效位是右端。
+最左侧的字节为输入 \[ 0 \] ，输入0的最高有效位是最左侧的位 \[ \] 。 最右侧的字节是输入 \[ n-1 \] ，输入 n-1 的最小有效位 \[ \] 是最右端。
 
 给定前面的定义，用于处理常规输入字节流的伪代码定义如下：
 
@@ -67,7 +67,7 @@ shift K left 1 bit position
 return result
 ```
 
-伪代码包含 @n-m格式的条目。 这些条目标识 TCP 数据包中每个元素的字节范围。
+伪代码包含窗体的条目 @n-m 。 这些条目标识 TCP 数据包中每个元素的字节范围。
 
 ### <a name="example-hash-calculation-for-ipv4-with-the-tcp-header"></a>带有 TCP 标头的 IPv4 的示例哈希计算
 
@@ -106,10 +106,4 @@ Result = ComputeHash(Input, 32)
 ```
 
  
-
- 
-
-
-
-
 

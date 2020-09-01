@@ -6,12 +6,12 @@ ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
 ms.localizationpriority: medium
-ms.openlocfilehash: 5bf91f884697a50ff9941173f0605fcaa388923b
-ms.sourcegitcommit: 17c1bbc5ea0bef3bbc87794b030a073f905dc942
+ms.openlocfilehash: b5ea0de9f12c5afeb46f1837dbe3b80d0c2d85b4
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88802505"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89211837"
 ---
 # <a name="windbg-preview---whats-new"></a>WinDbg 预览版 - 新增功能
 
@@ -97,7 +97,7 @@ ms.locfileid: "88802505"
 
 ## <a name="10190830002"></a>1.0.1908.30002
 
-**对 TTD 的改进调用对象**  - [调用查询](https://docs.microsoft.com/windows-hardware/drivers/debugger/time-travel-debugging-calls-objects)现在包括参数名称、类型和值。 当跨函数调用的跟踪进行查询时，可以获取完全类型的参数及其值，以便于按参数对结果进行筛选。
+**对 TTD 的改进调用对象**  - [调用查询](./time-travel-debugging-calls-objects.md)现在包括参数名称、类型和值。 当跨函数调用的跟踪进行查询时，可以获取完全类型的参数及其值，以便于按参数对结果进行筛选。
 
 **支持 Open Enclave** -WinDbg Preview 现在可以调试打开的 ENCLAVE (OE) 应用程序。有关详细信息，请参阅 [打开 Enclave 调试](open-enclave-debugging.md)) 。
 
@@ -115,7 +115,7 @@ ms.locfileid: "88802505"
 * 在没有任何参数的情况下运行 "dx" 现在会显示根命名空间，以便更轻松 browsability。
 * 现在可以通过 "设置" 菜单修改默认符号和源缓存位置。
 * 提高了对记录 512 AVX (记录的支持（AVX-512）将导致比正常的慢) 。
-* 已启用 [脱机许可](https://docs.microsoft.com/windows/uwp/publish/organizational-licensing#allowing-disconnected-offline-licensing)。
+* 已启用 [脱机许可](/windows/uwp/publish/organizational-licensing#allowing-disconnected-offline-licensing)。
 
 ## <a name="10190512001"></a>1.0.1905.12001
 
@@ -156,7 +156,7 @@ ms.locfileid: "88802505"
 
 此版本包含这些更新。
 
-**调试器数据模型 c + + 标头** -有一个新的 c + + 标头 DbgModel，作为 Windows SDK 的一部分包含，用于通过 c + + 扩展调试器数据模型。 有关详细信息，请查看 [调试器数据模型 c + + 概述](https://docs.microsoft.com/windows-hardware/drivers/debugger/data-model-cpp-overview)。 此版本包含一个新扩展，它向调试器数据模型添加一些更多 "API 样式" 功能，可通过 "dx" 命令、JavaScript 和新的 DbgModel 标头进行访问。 此扩展插件将数据模型扩展为包含有关通过 [调试](https://docs.microsoft.com/windows-hardware/drivers/debugger/dbgmodel-namespace-code) 程序中的程序集和代码执行的知识，并通过调试程序. [FileSystem 命名](https://docs.microsoft.com/windows-hardware/drivers/debugger/dbgmodel-namespace-file-system)空间和本地文件系统。
+**调试器数据模型 c + + 标头** -有一个新的 c + + 标头 DbgModel，作为 Windows SDK 的一部分包含，用于通过 c + + 扩展调试器数据模型。 有关详细信息，请查看 [调试器数据模型 c + + 概述](./data-model-cpp-overview.md)。 此版本包含一个新扩展，它向调试器数据模型添加一些更多 "API 样式" 功能，可通过 "dx" 命令、JavaScript 和新的 DbgModel 标头进行访问。 此扩展插件将数据模型扩展为包含有关通过 [调试](./dbgmodel-namespace-code.md) 程序中的程序集和代码执行的知识，并通过调试程序. [FileSystem 命名](./dbgmodel-namespace-file-system.md)空间和本地文件系统。
 
 **合成类型扩展** 使用这一新的 API 扩展，我们在 GitHub 存储库中提供了一个新示例 https://github.com/Microsoft/WinDbg-Samples/tree/master/SyntheticTypes 。 此 JavaScript 扩展读取基本 C 头文件，并定义标头中定义的结构和联合的综合类型信息。 然后，可以通过 dx 命令查看内存结构，就像您有一个具有这些类型的类型信息的 PDB 一样。
 
@@ -346,6 +346,6 @@ API 版本1.1 中的更改包括：
 
 ## <a name="see-also"></a>另请参阅
 
-[WinDbg 预览版–安装](windbg-install-preview.md)
+[WinDbg 预览版 - 安装](windbg-install-preview.md)
 
 [WinDbg 预览版 - 命令行启动选项](windbg-command-line-preview.md)

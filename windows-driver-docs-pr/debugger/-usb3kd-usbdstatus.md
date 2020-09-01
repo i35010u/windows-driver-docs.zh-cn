@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 84903b3200c021be75214d2d0307d6bd28bb3d57
-ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
+ms.openlocfilehash: aa6ddf453d1f363bad6f877ac8289f91af719d5c
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84534896"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89212263"
 ---
 # <a name="usb3kdusbdstatus"></a>!usb3kd.usbdstatus
 
@@ -37,9 +37,9 @@ USBD 状态代码的数值。
 ## <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 
-Usb3kd
+Usb3kd.dll
 
-<a name="remarks"></a>注解
+<a name="remarks"></a>备注
 -------
 
 USBD 状态代码在中定义。
@@ -47,7 +47,7 @@ USBD 状态代码在中定义。
 <a name="examples"></a>示例
 --------
 
-下面的示例将数值0x80000200 传递给 **！ usbdstatus**命令。 该命令返回状态代码的名称，USBD \_ status \_ \_ URB \_ 函数无效。
+下面的示例将数值0x80000200 传递给 **！ usbdstatus** 命令。 该命令返回状态代码的名称，USBD \_ status \_ \_ URB \_ 函数无效。
 
 ```dbgcmd
 3: kd> !usbdstatus 0x80000200
@@ -59,14 +59,7 @@ USBD_STATUS_INVALID_URB_FUNCTION (0x80000200)
 
 [USB 3.0 扩展](usb-3-extensions.md)
 
-[通用串行总线（USB）驱动程序](https://docs.microsoft.com/windows-hardware/drivers/usbcon/)
+[ (USB) 驱动程序的通用串行总线](../usbcon/index.md)
 
  
-
- 
-
-
-
-
-
 

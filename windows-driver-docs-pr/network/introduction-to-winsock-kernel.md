@@ -7,29 +7,23 @@ keywords:
 - WSK WDK 网络，关于 Winsock 内核
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 66885083bb4b17f954984f8f87870ba6221400af
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: d13f655dfc074f1d5a5445f0ba7c09f57bf964e2
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72844159"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89212893"
 ---
 # <a name="introduction-to-winsock-kernel"></a>Winsock 内核简介
 
 
-Winsock 内核（WSK）是一种内核模式[网络编程接口（NPI）](network-programming-interface.md)。 使用 WSK，内核模式软件模块可以使用用户模式 Winsock2 支持的相同套接字编程概念执行网络 i/o 操作。 WSK NPI 支持熟悉的套接字操作，如套接字创建、绑定、连接建立和数据传输（发送和接收）。 然而，虽然 WSK NPI 支持与用户模式 Winsock2 的大部分相同的套接字编程概念，但它是一个全新的、不同的接口，它具有独特的特性（如使用 Irp 和事件回调的异步 i/o）来提高性能。
+Winsock 内核 (WSK) 是 [ (NPI) 的内核模式网络编程接口 ](network-programming-interface.md)。 使用 WSK，内核模式软件模块可以使用用户模式 Winsock2 支持的相同套接字编程概念执行网络 i/o 操作。 WSK NPI 支持熟悉的套接字操作，例如套接字创建、绑定、连接建立和数据传输 (发送和接收) 。 然而，虽然 WSK NPI 支持与用户模式 Winsock2 的大部分相同的套接字编程概念，但它是一个全新的、不同的接口，它具有独特的特性（如使用 Irp 和事件回调的异步 i/o）来提高性能。
 
-面向 Windows Vista 和更高版本 Microsoft Windows 的内核模式网络模块应该使用 WSK，而不是[TDI](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff565094(v=vs.85)) ，因为 WSK 提供改进的性能和编程。 筛选器驱动程序应在 Windows Vista 上实现[Windows 筛选平台](introduction-to-windows-filtering-platform-callout-drivers.md)，而 TDI 客户端应实现 WSK。
+面向 Windows Vista 和更高版本 Microsoft Windows 的内核模式网络模块应该使用 WSK，而不是 [TDI](/previous-versions/windows/hardware/network/ff565094(v=vs.85)) ，因为 WSK 提供改进的性能和编程。 筛选器驱动程序应在 Windows Vista 上实现 [Windows 筛选平台](introduction-to-windows-filtering-platform-callout-drivers.md) ，而 TDI 客户端应实现 WSK。
 
-**请注意**，在 Windows Vista 之后的 Microsoft windows 版本中不支持  TDI。 请改用[Windows 筛选平台](windows-filtering-platform-callout-drivers2.md)或[Winsock 内核](https://docs.microsoft.com/windows-hardware/drivers/ddi/_netvista/)。
-
- 
+**注意**   Windows Vista 之后的 Microsoft Windows 版本不支持 TDI。 请改用 [Windows 筛选平台](windows-filtering-platform-callout-drivers2.md) 或 [Winsock 内核](/windows-hardware/drivers/ddi/_netvista/) 。
 
  
 
  
-
-
-
-
 

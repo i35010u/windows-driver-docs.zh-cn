@@ -1,32 +1,32 @@
 ---
 title: 调试器数据模型函数别名
-description: 函数别名是调试器的用户可以访问调试器扩展中定义的功能的快速唯一短名称。
+description: 函数别名是一个快速唯一的短名称，调试器的用户可以在其中访问调试器扩展中定义的功能。
 keywords:
 - 调试器数据模型函数别名
 ms.date: 03/21/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c04dcac55ffd45c03742252a279d6f1ed3a7bc69
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 372ce2f9383dd837a4169206eb2f2f35d34b958c
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63368539"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89211203"
 ---
 # <a name="debugger-data-model-function-aliases"></a>调试器数据模型函数别名
 
-函数别名是唯一的短名称调试器的用户可以访问调试器扩展中定义的功能 (编写的C++或 JavaScript 等一些脚本编写环境)。 此短名称获取与数据模型函数对象 （可实现 IModelMethod 对象） 相关联。 该函数采用任意数量的参数并返回单个值。 调用的函数别名并做了什么的效果的值依赖于如何调用函数别名和哪些主机调试器调用中。 
+函数别名是一个唯一的短名称，通过该名称，调试器的用户可以访问调试器扩展中定义的功能， (是使用 c + + 编写的还是某些脚本环境（如 JavaScript) ）。 此短名称与 (实现 IModelMethod) 的对象的数据模型函数对象相关联。 该函数采用任意数量的参数，并返回单个值。 调用函数别名以及使用该值完成的效果取决于调用函数别名的方式，以及在其中调用函数别名的宿主调试器。 
 
-本主题假定读者熟悉的调试器对象模型和 JavaScript。 与 JavaScript 一起使用调试器对象的信息，请参阅[JavaScript 扩展中的本机调试器对象](native-objects-in-javascript-extensions.md)。
+本主题假定读者熟悉调试器对象模型和 JavaScript。 有关将调试器对象与 JavaScript 一起使用的信息，请参阅 [Javascript 扩展中的本机调试器对象](native-objects-in-javascript-extensions.md)。
 
-一些示例如下所示使用 dx 命令中的使用 dx 命令中，有关详细信息，请参阅[dx （显示调试器对象模型表达式）](dx--display-visualizer-variables-.md)。 除了使用 LINQ 中所述[使用调试器对象与 LINQ](https://docs.microsoft.com/windows-hardware/drivers/debugger/using-linq-with-the-debugger-objects)。
+此处显示的一些示例使用 dx 命令，有关使用 dx 命令的详细信息，请参阅 [dx (显示调试器对象模型表达式) ](dx--display-visualizer-variables-.md)。 此外，还使用了 LINQ，其中介绍了如何将 [Linq 与调试器对象结合使用](./using-linq-with-the-debugger-objects.md)。
 
 
 
-## <a name="using-function-alias-as-extension-commands"></a>使用作为扩展命令别名的函数
+## <a name="using-function-alias-as-extension-commands"></a>使用函数别名作为扩展命令
 
-可以调用在 WinDbg 预览版中创建的所有函数别名，就像调试扩展 **！** "身份"命令。 如果该函数不采用任何参数，只需调用 ！ aliasName 将导致要调用的函数以及要显示的结果值。 作为示例 （使用 JavaScript 扩展创建）
+在 WinDbg Preview 中创建的所有函数别名都可以调用，就像它们是调试扩展 **！** "感叹号" 命令。 如果函数不采用参数，只需调用！ aliasName 将导致调用函数并显示结果值。  (使用 JavaScript 扩展性创建的示例) 
 
-例如，此函数提供了两个常量值*pi*并*e*。
+例如，此函数提供了两个常量值： *pi* 和 *e*。
 
 ```cpp
 function __constants()
@@ -40,7 +40,7 @@ function initializeScript()
 }
 ```
 
-调用的函数别名的结果如下所示。 
+调用函数别名的结果如下所示。 
 
 ```dbgcmd
 0:000> !constants
@@ -49,7 +49,7 @@ function initializeScript()
     description      : Archimedes' pi and Euler's number e
 ```
 
-将自动生成 DML 链接到复杂的对象。 单击上面所示 math_constants 将产生以下输出。 
+将自动生成指向复杂对象的 DML 链接。 单击上面显示的 math_constants 将生成以下输出。 
 
 ```dbgcmd
 0:000> dx -r1 @$constants().math_constants
@@ -59,7 +59,7 @@ function initializeScript()
 ```
 
 
-如果函数具有参数，它们可以提供后函数别名命令本身。 请注意，在函数别名命令后出现的任何内容被视为一个表达式，这种情况下计算。 文本字符串不直接传递到函数。 对于单个自变量表达式，它可以来自后函数别名命令本身。 对于多个自变量，它们应该是用圆括号括起来，就好像函数调用下一个示例中所示。
+如果函数具有参数，则可以在函数别名命令本身之后提供。 请注意，函数别名命令后的一切都被视为表达式，并按这样的方式进行计算。 文本字符串不会直接传递到函数。 对于单个自变量表达式，它可以出现在函数别名命令本身之后。 对于多个自变量，应将其作为函数调用，如下面的示例中所示。
 
 
 ```cpp
@@ -80,7 +80,7 @@ function initializeScript()
 }
 ```
 
-可以调用这两个函数，如下所示。
+可以按如下所示调用这两个函数。
 
 ```dbgcmd
 0:000> !neg 42
@@ -91,9 +91,9 @@ function initializeScript()
 ```
 
 
-## <a name="function-alias-use-with-the-dx-expression-evaluator"></a>函数别名与 dx 表达式计算器，请使用
+## <a name="function-alias-use-with-the-dx-expression-evaluator"></a>用于 dx 表达式计算器的函数别名
 
-除了调试扩展 **！** "身份"命令调用别名函数的语法，所有与函数别名关联的名称都直接提供 dx 表达式计算器时加*@$* 如下所示。  
+除了调试扩展外 **！** 用于调用别名函数的 "感叹号" 命令语法，在按如下所示为前缀的情况下，与函数别名关联的所有名称将直接在 dx 表达式计算器中可用 *@$* 。  
 
 ```dbgcmd
 0:000> dx @$neg(42)
@@ -106,9 +106,9 @@ function initializeScript()
 
 ## <a name="function-alias-design-considerations"></a>函数别名设计注意事项
 
-函数别名永远不应在绝大部分数据中的哪些功能公开模型扩展的唯一方式。 数据模型扩展 (比如在C++或 JavaScript) 应几乎始终包括它所公开的类型或其他调试程序的概念与关联的数据。 与进程相关联的所有操作应都是 Debugger.Models.Process 或该对象的一个子命名空间下。 函数别名可在方便的入门到 （或转换） 可能需要相当长的时间的查询的数据。 
+函数别名绝不应是公开绝大部分数据模型扩展中的功能的唯一方法。 数据模型扩展 (在 c + + 或 JavaScript) ，几乎总是应始终包含与类型或其他调试器概念关联的数据。 与进程关联的任务应该位于该对象的 "调试程序" 或子命名空间下。 函数别名可以方便地 (或转换可能需要更长时间查询的) 数据。 
 
-作为内核模式示例中，以下查询将即插即用设备树，并平展到一个简单的设备的平面列表： 
+作为内核模式示例，以下查询采用 PnP 设备树，并将其平展到简单的简单设备列表中： 
 
 ```dbgcmd
 0: kd> dx @$cursession.Devices.DeviceTree.Flatten(n => n.Children),5
@@ -121,7 +121,7 @@ function initializeScript()
     [...]     
 ```
 
-此 JavaScript 代码演示如何可以实现此作为函数别名。 
+此 JavaScript 代码显示了如何以函数别名的形式实现此功能。 
 
 ```dbgcmd
 function __flatDevices()
@@ -135,7 +135,7 @@ function initializeScript()
 }
 ```
 
-然后可以作为调试扩展命令调用的函数别名。 
+然后，可以将函数别名称为调试扩展命令。 
 
 ```dbgcmd
 0: kd> !devices
@@ -150,7 +150,7 @@ function initializeScript()
     ...
 ```
 
-使用函数别名的优势之一是，它可以是进一步优化使用 dx 语法。 在此示例中，where 子句添加要查找的设备节点，包含"硬盘"。
+使用函数别名的优点之一是可以使用 dx 语法进一步改进。 在此示例中，添加了一个 where 子句来查找包含 "硬盘" 的设备节点。
 
 ```dbgcmd
 0: kd> dx @$devices().Where(n => n.InstancePath.Contains("Harddisk"))
@@ -164,27 +164,27 @@ function initializeScript()
 ```
 
 
-使用功能的别名-，可以使用如下所示的 LINQ 命令。所有。任何。计数。首先。平展。GroupBy。最后。OrderBy。OrderByDescending。选择、 和。在何处。 这些方法便遵循 （尽可能） C# LINQ 方法窗体。 有关详细信息请参阅[使用调试器对象与 LINQ](https://docs.microsoft.com/windows-hardware/drivers/debugger/using-linq-with-the-debugger-objects)。
+LINQ 命令（如下所示）可用于功能别名。All、。Any、。计数、。首先，。平展，。GroupBy，。Last。OrderBy，。OrderByDescending、。选择 "与"。其中. 这些方法) c # LINQ 方法形式 (尽可能严格地遵循这些方法。 有关详细信息，请参阅 [将 LINQ 与调试器对象配合使用](./using-linq-with-the-debugger-objects.md)。
 
 
 
 **网格显示**
 
-与其他 dx 命令，可以右键单击命令后执行该和单击"显示为网格"，或添加"-g"命令来获取结果的网格视图。 然后可以单击任何列进行排序，例如 InstancePath 上。
+与其他 dx 命令一样，你可以在命令执行之后右键单击该命令，然后单击 "显示为网格" 或将 "-g" 添加到命令以获取结果的网格视图。 然后，可以单击任何要排序的列，例如在 InstancePath 上。
 
 ```dbgcmd
 0: kd> dx -g @$devices().OrderBy(obj => obj.@"InstancePath")
 ```
 
-![函数别名网格排序的输出显示行调试器对象。](images/debugger-objects-function-alias.png) 
+![调试器对象函数显示已排序行的别名网格输出](images/debugger-objects-function-alias.png) 
 
 
 
 ## <a name="process-threads-example"></a>进程线程示例
 
-调试器对象被投影到一个命名空间根节点的"调试器"。 进程、 模块、 线程、 堆栈、 堆栈帧和本地变量都可用于 LINQ 查询。
+调试器对象投影到以 "调试器" 为根的命名空间中。 进程、模块、线程、堆栈、堆栈帧和局部变量均可在 LINQ 查询中使用。
 
-JavaScript 此示例演示如何显示当前会话的进程的线程计数：
+此示例 JavaScript 演示如何显示当前会话进程的线程计数：
 
 ```dbgcmd
 function __Processes()
@@ -197,7 +197,7 @@ function initializeScript()
     return [new host.functionAlias(__Processes, "Processes")];
 }
 ```
-这将显示的示例将输出与 ！进程函数别名。
+这会显示带有！处理函数别名。
 
 
 ```dbgcmd
@@ -219,7 +219,7 @@ function initializeScript()
 
 ...    
 ```
-显示在此示例中具有最大线程数的前 5 个进程。
+在此示例中，显示最大线程数最多的前5个进程。
 
 ```dbgcmd
 0: kd> dx -r1 @$Processes().OrderByDescending(p =>p.ThreadCount),5
@@ -234,20 +234,14 @@ function initializeScript()
 
 
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅
 
-[dx （显示调试器对象模型表达式）](dx--display-visualizer-variables-.md)
+[dx（显示调试器对象模型表达式）](dx--display-visualizer-variables-.md)
 
-[使用 LINQ 与调试器对象](using-linq-with-the-debugger-objects.md)
+[将 LINQ 与调试器对象配合使用](using-linq-with-the-debugger-objects.md)
 
 [NatVis 中的本机调试器对象](native-debugger-objects-in-natvis.md)
 
-[中 JavaScript 扩展本机调试器对象](native-objects-in-javascript-extensions.md) 
+[JavaScript 扩展中的本机调试器对象](native-objects-in-javascript-extensions.md) 
 
 ---
-
-
-
-
-
-

@@ -1,6 +1,6 @@
 ---
 title: Bug 检查 0x14B SOC_SUBSYSTEM_FAILURE
-description: SOC_SUBSYSTEM_FAILURE bug 检查的值为0x0000014B。 这表明芯片（SoC）子系统上的系统中发生了不可恢复的错误。
+description: SOC_SUBSYSTEM_FAILURE bug 检查的值为0x0000014B。 这表明芯片 (SoC) 子系统上的系统中发生了不可恢复的错误。
 ms.assetid: CC42D634-90CE-43F1-8552-E5DE711D2117
 keywords:
 - Bug 检查 0x14B SOC_SUBSYSTEM_FAILURE
@@ -13,23 +13,23 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 50b51c398a54d1f2ca19ebe0c22c9d3d4735c9cc
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 7790b91e71f51486a85dd6f23207ddbf7e768c29
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72827240"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89211821"
 ---
-# <a name="bug-check-0x14b-soc_subsystem_failure"></a>Bug 检查0x14B： SOC\_子系统\_故障
+# <a name="bug-check-0x14b-soc_subsystem_failure"></a>Bug 检查0x14B： SOC \_ 子系统 \_ 故障
 
 
-SOC\_子系统\_失败 bug 检查的值为0x0000014B。 这表明芯片（SoC）子系统上的系统中发生了不可恢复的错误。
+SOC \_ 子系统 \_ 失败 bug 检查的值为0x0000014B。 这表明芯片 (SoC) 子系统上的系统中发生了不可恢复的错误。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你是在使用计算机时收到蓝屏错误代码的客户，请参阅[排查蓝屏错误](https://www.windows.com/stopcode)。
+> 本主题面向程序员。 如果您是在使用计算机时收到蓝屏错误代码的客户，请参阅[蓝屏错误疑难解答](https://www.windows.com/stopcode)。
 
 
-## <a name="bug-check-0x14b-soc_subsystem_failure-parameters"></a>Bug 检查 0x14B SOC\_子系统\_故障参数
+## <a name="bug-check-0x14b-soc_subsystem_failure-parameters"></a>Bug 检查 0x14B SOC \_ 子系统 \_ 故障参数
 
 
 <table>
@@ -40,13 +40,13 @@ SOC\_子系统\_失败 bug 检查的值为0x0000014B。 这表明芯片（SoC）
 <thead>
 <tr class="header">
 <th align="left">参数</th>
-<th align="left">描述</th>
+<th align="left">说明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left"><p>1</p></td>
-<td align="left"><p><strong><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/ns-ntddk-_soc_subsystem_failure_details" data-raw-source="[SOC_SUBSYSTEM_FAILURE_DETAILS](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/ns-ntddk-_soc_subsystem_failure_details)">SOC_SUBSYSTEM_FAILURE_DETAILS</a></strong>结构的地址。</p></td>
+<td align="left"><p><strong><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/ns-ntddk-_soc_subsystem_failure_details" data-raw-source="[SOC_SUBSYSTEM_FAILURE_DETAILS](/windows-hardware/drivers/ddi/ntddk/ns-ntddk-_soc_subsystem_failure_details)">SOC_SUBSYSTEM_FAILURE_DETAILS</a></strong>结构的地址。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>2</p></td>
@@ -65,10 +65,10 @@ SOC\_子系统\_失败 bug 检查的值为0x0000014B。 这表明芯片（SoC）
 
  
 
-<a name="resolution"></a>分辨率
+<a name="resolution"></a>解决方法
 ----------
 
-[ **！分析**](-analyze.md)调试扩展显示有关 bug 检查的信息，可帮助确定根本原因。
+[**！分析**](-analyze.md)调试扩展显示有关 bug 检查的信息，可帮助确定根本原因。
 
 ```dbgcmd
 2: kd> !analyze -v
@@ -87,7 +87,7 @@ Arg3: 00000000, Reserved
 Arg4: a126c000, (Optional) address to vendor supplied general purpose data block.
 ```
 
-使用提供的 nt！SOC\_子系统\_故障\_详细信息结构，使用 dt 命令和 Arg1 提供的地址转储故障数据。
+使用提供的 nt！SOC \_ 子系统 \_ 故障 \_ 详细信息结构，使用 Dt 命令和 Arg1 提供的地址转储故障数据。
 
 ```dbgcmd
 2: kd> dt nt!SOC_SUBSYSTEM_FAILURE_DETAILS 9aa8d630
@@ -100,13 +100,13 @@ Arg4: a126c000, (Optional) address to vendor supplied general purpose data block
 
 使用 SoC 供应商进一步分析数据，包括可选供应商提供的常规用途数据块。
 
-你可能想要使用[**k、kb、glm-kc-qnw、kd、kp、kp、kv （显示堆栈 Backtrace）** ](k--kb--kc--kd--kp--kp--kv--display-stack-backtrace-.md)命令检查堆栈跟踪。 可以指定处理器编号来检查所有处理器上的堆栈。
+你可能想要使用 [**k、kb、glm-kc-qnw、kd、kp、kp、kv (显示 Stack Backtrace) **](k--kb--kc--kd--kp--kp--kv--display-stack-backtrace-.md) 命令来检查堆栈跟踪。 可以指定处理器编号来检查所有处理器上的堆栈。
 
 你还可以在代码中设置一个断点，使其导致此 stop 代码，并尝试单步执行出错的代码。
 
 有关详细信息，请参阅以下主题：
 
-[使用 Windows 调试器（WinDbg）进行故障转储分析](crash-dump-files.md)
+[使用 Windows 调试器 (WinDbg) 进行故障转储分析](crash-dump-files.md)
 
 如果你不具备使用 Windows 调试器来处理此问题，则可以使用一些基本的故障排除技术。
 
@@ -116,7 +116,7 @@ Arg4: a126c000, (Optional) address to vendor supplied general purpose data block
 
 -   你可以尝试运行系统制造商提供的硬件诊断。
 
--   有关其他常规疑难解答信息，请参阅[**蓝屏数据**](blue-screen-data.md)。
+-   有关其他常规疑难解答信息，请参阅 [**蓝屏数据**](blue-screen-data.md)。
 
 <a name="requirements"></a>要求
 ------------
@@ -139,9 +139,4 @@ Arg4: a126c000, (Optional) address to vendor supplied general purpose data block
 </table>
 
  
-
- 
-
-
-
 

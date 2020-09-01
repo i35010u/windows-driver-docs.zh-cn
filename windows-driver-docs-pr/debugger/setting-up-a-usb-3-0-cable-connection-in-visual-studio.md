@@ -4,12 +4,12 @@ description: 你可以使用 Microsoft Visual Studio 通过 USB 3.0 电缆设置
 ms.assetid: F8DD0475-13CE-464A-A491-AEFA962A96DB
 ms.date: 04/10/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: f3e2976780120218e4c43e5f02526c9f47d2a766
-ms.sourcegitcommit: 67efcd26f7be8f50c92b141ccd14c9c68f4412d8
+ms.openlocfilehash: 0402a0ded58820141bbbcd7134dd306fac29392b
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88902563"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89212589"
 ---
 # <a name="setting-up-kernel-mode-debugging-over-a-usb-30-cable-in-visual-studio"></a>在 Visual Studio 中设置通过 USB 3.0 线缆进行的内核模式调试
 
@@ -66,7 +66,7 @@ ms.locfileid: "88902563"
 ## <a name="span-idconfiguring_the_host_and_target_computersspanspan-idconfiguring_the_host_and_target_computersspanspan-idconfiguring_the_host_and_target_computersspanconfiguring-the-host-and-target-computers"></a><span id="Configuring_the_host_and_target_computers"></span><span id="configuring_the_host_and_target_computers"></span><span id="CONFIGURING_THE_HOST_AND_TARGET_COMPUTERS"></span>配置主机和目标计算机
 
 
-1.  按照为 [驱动程序部署设置计算机和测试 (WDK 8.1) ](https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/provision-a-target-computer-wdk-8-1)中所述，开始配置主机和目标计算机。
+1.  按照为 [驱动程序部署设置计算机和测试 (WDK 8.1) ](../gettingstarted/provision-a-target-computer-wdk-8-1.md)中所述，开始配置主机和目标计算机。
 2.  在主计算机上，在 Visual Studio 的 "计算机配置" 对话框中，选择 " **设置计算机"，然后选择 "调试器设置**"。
 3.  对于 " **连接类型**"，请选择 " **USB**"。
 
@@ -152,11 +152,4 @@ busparams               48.0.0
 [在 Visual Studio 中设置内核模式调试](setting-up-kernel-mode-debugging-in-visual-studio.md)
 
  
-
- 
-
-
-
-
-
 

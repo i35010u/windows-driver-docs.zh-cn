@@ -4,29 +4,29 @@ description: WDI_TLV_DATAPATH_CAPABILITIES 是包含数据路径功能的 TLV。
 ms.assetid: 7B545858-56A2-4655-91D5-37CA4EB61E1E
 ms.date: 07/18/2017
 keywords:
-- WDI_TLV_DATAPATH_CAPABILITIES 从 Windows Vista 开始的网络驱动程序
+- 从 Windows Vista 开始 WDI_TLV_DATAPATH_CAPABILITIES 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 2120ebfc5bf9fc9d93ae75f0e4a97eae3ca40598
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: bb869e33087fb492e4677d1a91fc36c09d2843cc
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72844502"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89211515"
 ---
-# <a name="wdi_tlv_datapath_capabilities"></a>WDI\_TLV\_数据路径\_功能
+# <a name="wdi_tlv_datapath_capabilities"></a>WDI \_ TLV \_ 数据路径 \_ 功能
 
 
-WDI\_TLV\_数据路径\_功能是包含数据路径功能的 TLV。
+WDI \_ tlv \_ 数据路径 \_ 功能是包含数据路径功能的 tlv。
 
 ## <a name="tlv-type"></a>TLV 类型
 
 
 0xB9
 
-## <a name="length"></a>长度
+## <a name="length"></a>Length
 
 
-所有包含的元素的大小的总和（以字节为单位）。
+Sum (所有包含的元素的大小) 。
 
 ## <a name="values"></a>值
 
@@ -38,13 +38,13 @@ WDI\_TLV\_数据路径\_功能是包含数据路径功能的 TLV。
 </colgroup>
 <thead>
 <tr class="header">
-<th>在任务栏的搜索框中键入</th>
-<th>描述</th>
+<th>类型</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/dot11wdi/ne-dot11wdi-_wdi_interconnect_type" data-raw-source="[&lt;strong&gt;WDI_INTERCONNECT_TYPE&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/dot11wdi/ne-dot11wdi-_wdi_interconnect_type)"><strong>WDI_INTERCONNECT_TYPE</strong></a> （UINT32）</td>
+<td><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/dot11wdi/ne-dot11wdi-_wdi_interconnect_type" data-raw-source="[&lt;strong&gt;WDI_INTERCONNECT_TYPE&lt;/strong&gt;](/windows-hardware/drivers/ddi/dot11wdi/ne-dot11wdi-_wdi_interconnect_type)"><strong>WDI_INTERCONNECT_TYPE</strong></a> (UINT32) </td>
 <td>互连类型。</td>
 </tr>
 <tr class="even">
@@ -102,7 +102,7 @@ WDI\_TLV\_数据路径\_功能是包含数据路径功能的 TLV。
 <tbody>
 <tr class="odd">
 <td><p>最低受支持的客户端</p></td>
-<td><p>Windows 10</p></td>
+<td><p>Windows 10</p></td>
 </tr>
 <tr class="even">
 <td><p>最低受支持的服务器</p></td>
@@ -116,9 +116,4 @@ WDI\_TLV\_数据路径\_功能是包含数据路径功能的 TLV。
 </table>
 
  
-
- 
-
-
-
 

@@ -12,18 +12,18 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 86533586029cc633d0cdf873862389060ba7e720
-ms.sourcegitcommit: 8596782b07c8a71adf38fc2c2da68b75ba0a1259
+ms.openlocfilehash: d178b54b276f34372eb0638f4114c59335c6b18d
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85600928"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89211299"
 ---
 # <a name="ndiskdnetring"></a>!ndiskd.netring
 
-**！ Ndiskd netring**扩展显示有关[网络 \_ 环](https://docs.microsoft.com/windows-hardware/drivers/ddi/ring/ns-ring-_net_ring)结构的信息。
+**！ Ndiskd netring**扩展显示有关[网络 \_ 环](/windows-hardware/drivers/ddi/ring/ns-ring-_net_ring)结构的信息。
 
-有关网络适配器 WDF 类扩展（NetAdapterCx）的详细信息，请参阅[网络适配器 Wdf 类扩展（Cx）](https://docs.microsoft.com/windows-hardware/drivers/netcx)和网络[环简介](https://docs.microsoft.com/windows-hardware/drivers/netcx/introduction-to-net-rings)。
+有关网络适配器 WDF 类扩展的详细信息 (NetAdapterCx) ，请参阅 [网络适配器 Wdf 类扩展 (Cx) ](../netcx/index.md) 和 [网络环简介](../netcx/introduction-to-net-rings.md)。
 
 ```console
 !ndiskd.netring -handle <x> [-basic] [-dump]
@@ -46,21 +46,21 @@ Ndiskd.dll
 
 ### <a name="examples"></a>示例
 
-**注意**   请参阅[对象摘要](https://docs.microsoft.com/windows-hardware/drivers/netcx/summary-of-objects)，以查看说明网络 \_ 数据包对象与 NetAdapterCx 中的其他对象的关系的关系图。
+**注意**   请参阅[对象摘要](../netcx/summary-of-netadaptercx-objects.md)，以查看说明网络 \_ 数据包对象与 NetAdapterCx 中的其他对象的关系的关系图。
 
 若要获取网络数据包的句柄 \_ ，请执行以下步骤：
 
-1. 运行[**！ ndiskd. get-netadapter**](-ndiskd-netadapter.md)扩展。
+1. 运行 [**！ ndiskd. get-netadapter**](-ndiskd-netadapter.md) 扩展。
 2. 单击安装了 NetAdapterCx 驱动程序的 Get-netadapter 的句柄。
-3. 单击 Get-netadapter 的 GET-NETADAPTER 对象右侧的 "详细信息" 链接，以运行[**！ ndiskd. cxadapter**](-ndiskd-cxadapter.md)扩展。
+3. 单击 Get-netadapter 的 GET-NETADAPTER 对象右侧的 "详细信息" 链接，以运行 [**！ ndiskd. cxadapter**](-ndiskd-cxadapter.md) 扩展。
 4. 输入包含 *-数据路径*参数的 **！ cxadapter**命令，以查看 get-netadapter 的数据路径队列。
 5. 单击其中一个数据路径队列的句柄。
 6. 单击该数据路径队列的环形缓冲区的句柄。 待定-这是否适用于 netring？
 7. 单击环形缓冲区详细信息底部的 "列出所有元素" 链接，查看其包含的元素。 TBD TBD 待定
-8. 单击 "网络 \_ 环（托收？）对象" TBD。
-有关此过程中步骤1-4 的详细信息，请参阅 **！ ndiskd. cxadapter**主题中的示例。 有关此过程的步骤5的详细信息，请参阅《 [**！ ndiskd. netqueue**](-ndiskd-netqueue.md)主题中的示例。 有关此过程中步骤6-7 的详细信息，请参阅[**！ ndiskd. netrb**](-ndiskd-netrb.md)主题中的示例。 TBD 待定  
+8. 单击 "网络 \_ 振铃 (集合" ) 对象 TBD。
+有关此过程中步骤1-4 的详细信息，请参阅 **！ ndiskd. cxadapter** 主题中的示例。 有关此过程的步骤5的详细信息，请参阅《 [**！ ndiskd. netqueue**](-ndiskd-netqueue.md) 主题中的示例。 有关此过程中步骤6-7 的详细信息，请参阅 [**！ ndiskd. netrb**](-ndiskd-netrb.md) 主题中的示例。 TBD 待定  
 
-在下面的示例中，使用[**！ ndiskd. cxadapter**](-ndiskd-cxadapter.md)扩展查找 TBD。
+在下面的示例中，使用 [**！ ndiskd. cxadapter**](-ndiskd-cxadapter.md) 扩展查找 TBD。
 
 ```console
 0: kd> !ndiskd.cxdapter 
@@ -101,23 +101,23 @@ TBD
 
 ```
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
-[网络驱动程序设计指南](https://docs.microsoft.com/windows-hardware/drivers/network/index)
+[网络驱动程序设计指南](../network/index.md)
 
-[Windows Vista 和更高版本的网络引用](https://docs.microsoft.com/windows-hardware/drivers/ddi/_netvista/)
+[Windows Vista 和更高版本的网络引用](/windows-hardware/drivers/ddi/_netvista/)
 
 [调试网络堆栈](https://channel9.msdn.com/Shows/Defrag-Tools/Defrag-Tools-175-Debugging-the-Network-Stack)
 
-[**NDIS 扩展（Ndiskd.dll）**](ndis-extensions--ndiskd-dll-.md)
+[**NDIS 扩展 ( # A0) **](ndis-extensions--ndiskd-dll-.md)
 
 [**!ndiskd.help**](-ndiskd-help.md)
 
-[网络适配器 WDF 类扩展（Cx）](https://docs.microsoft.com/windows-hardware/drivers/netcx)
+[网络适配器 WDF 类扩展 (Cx) ](../netcx/index.md)
 
-[对象摘要](https://docs.microsoft.com/windows-hardware/drivers/netcx/summary-of-objects)
+[对象摘要](../netcx/summary-of-netadaptercx-objects.md)
 
-[网络 \_ 环](https://docs.microsoft.com/windows-hardware/drivers/ddi/ring/ns-ring-_net_ring)
+[网络 \_ 环](/windows-hardware/drivers/ddi/ring/ns-ring-_net_ring)
 
 [**!ndiskd.netadapter**](-ndiskd-netadapter.md)
 

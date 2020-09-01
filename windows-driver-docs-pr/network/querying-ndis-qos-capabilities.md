@@ -4,31 +4,25 @@ description: 查询 NDIS QoS 功能
 ms.assetid: 00A2EFCD-CD90-446C-B588-EC66E3E730B2
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e3af0c60c0937146a40d78f165d8c1be11648a77
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: ad547c0d6121d3f71a3129a87f2f19268755dde3
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67385424"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89212073"
 ---
 # <a name="querying-ndis-qos-capabilities"></a>查询 NDIS QoS 功能
 
 
-过量协议和筛选器驱动程序可以按以下方式来查询网络适配器的 NDIS 服务质量 (QoS) 功能：
+使用过量协议和筛选器驱动程序，可以按以下方式查询网络适配器的 NDIS 服务 (QoS) 功能：
 
--   基础驱动程序可以查询通过对象标识符 (OID) 查询请求的网络适配器支持的硬件 NDIS QoS 功能[OID\_QOS\_硬件\_功能](https://docs.microsoft.com/windows-hardware/drivers/network/oid-qos-hardware-capabilities)。
+-   过量驱动程序可以通过对象 (标识符查询网络适配器支持的硬件 NDIS QoS 功能，) [oid \_ qos \_ 硬件 \_ 功能](./oid-qos-hardware-capabilities.md)的查询请求。
 
--   基础驱动程序可以查询通过 OID 查询请求的网络适配器当前已启用的硬件 NDIS QoS 功能[OID\_QOS\_当前\_功能](https://docs.microsoft.com/windows-hardware/drivers/network/oid-qos-current-capabilities)。
+-   过量驱动程序可以通过 oid [ \_ qos \_ 当前 \_ 功能](./oid-qos-current-capabilities.md)的 oid 查询请求来查询当前在网络适配器上启用的硬件 NDIS QoS 功能。
 
-NDIS 处理微型端口驱动程序这些 OID 请求。 当微型端口驱动程序在网络适配器初始化期间注册的硬件和当前已启用的网络适配器的 NDIS QoS 功能时，NDIS 缓存此信息。 NDIS 然后返回此数据时它处理来自基础驱动程序的 OID 请求。
+NDIS 处理这些 OID 请求以获得微型端口驱动程序。 当微型端口驱动程序在网络适配器初始化期间为网络适配器注册硬件和当前启用的 NDIS QoS 功能时，NDIS 会缓存此信息。 然后，NDIS 在处理来自过量驱动程序的 OID 请求时返回此数据。
 
-有关如何微型端口驱动程序注册的 NDIS QoS 功能的详细信息，请参阅[注册的 NDIS QoS 功能](registering-ndis-qos-capabilities.md)。
-
- 
+有关微型端口驱动程序如何注册 NDIS QoS 功能的详细信息，请参阅 [注册 Ndis Qos 功能](registering-ndis-qos-capabilities.md)。
 
  
-
-
-
-
 

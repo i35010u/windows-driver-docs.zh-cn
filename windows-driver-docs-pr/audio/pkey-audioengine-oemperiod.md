@@ -1,22 +1,22 @@
 ---
-title: PKEY\_AudioEngine\_OEMPeriod
-description: PKEY\_AudioEngine\_OEMPeriod
+title: PKEY \_ AudioEngine \_ OEMPeriod
+description: PKEY \_ AudioEngine \_ OEMPeriod
 ms.assetid: e0cefdbf-7016-4609-a898-592a40b5d430
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 61e88a2bd55e5249e995d2a261337c134dddc1d6
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 62cb549069f7d7591e810eed50567487962c9b18
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67362577"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89211353"
 ---
-# <a name="pkeyaudioengineoemperiod"></a>PKEY\_AudioEngine\_OEMPeriod
+# <a name="pkey_audioengine_oemperiod"></a>PKEY \_ AudioEngine \_ OEMPeriod
 
 
-音频引擎运行在 Windows 预先确定的间隔称为*周期*的音频引擎。 在 Windows 7 和更高版本的 Windows 中，音频引擎默认情况下运行周期的 10 毫秒。 在 Windows 7 中，您可以使用一个 INF 文件和新的注册表项**主键\_AudioEngine\_OEMPeriod**、 自定义音频设备驱动程序的周期。 这是每个终结点设置。
+Windows 音频引擎按预定的时间间隔运行，这称为音频引擎的 *周期* 。 在 windows 7 和更高版本的 Windows 中，默认情况下，音频引擎运行时的周期为10ms。 在 Windows 7 中，你可以使用一个 INF 文件和一个新的注册表项 **PKEY \_ AudioEngine \_ OEMPeriod**来自定义你的音频设备驱动程序的周期。 这是每个终结点的设置。
 
-以下内容摘自一个 INF 文件演示如何使用[ **INF AddReg 指令**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addreg-directive)自定义音频设备驱动程序的周期。
+INF 文件中的以下摘录演示了如何使用 [**Inf AddReg 指令**](../install/inf-addreg-directive.md) 来自定义音频设备驱动程序的周期。
 
 ```inf
 [Version]
@@ -52,19 +52,13 @@ PKEY_AudioEngine_OEMPeriod = "{E4870E26-3CC5-4CD2-BA46-CA0A9A70ED04},6"
 REG_BINARY          = "0x00000001"
 ```
 
-周期被指定为 VT\_BLOB。 和有效周期范围为 50000-90000 (5 9ms) 甚至 10000 HNSTIME 单元边界 （例如，50000、 60000、 70000、 80000 或 90000） 上。
+周期被指定为 VT \_ BLOB。 有效周期范围为 50000-90000 (9ms) ，甚至 10000 HNSTIME 单元边界， (例如50000、60000、70000、80000或 90000) 。
 
-在前面的摘录中从 INF 文件中，以下 REG\_二进制数据提供自定义项：
+在前面摘录的 INF 文件中，提供以下 REG \_ 二进制数据进行自定义：
 
-8 毫秒的周期表示为 80000 HNSTIME 单位。 以十六进制表示法中，此值表示为 0x013880 中。 该十六进制值编写一次的四位 （半字节），最低有效位与第一次，结果时 80,38,01。 这是作为注册表提供的值\_二进制数据类型。
+8ms 的周期以 HNSTIME 单位表示为80000。 在十六进制表示法中，此值表示为0x013880。 当此十六进制值一次写入 (半字节) 的四位时，将首先包含最低有效位，结果为80，38，01。 这是作为 REG BINARY 数据类型提供的值 \_ 。
 
-周期被指定为 VT\_BLOB 数据类型。 这被表示十进制值为 65。 以十六进制格式 65 为由值 41 和前面的 INF 文件摘录显示了 REG\_41 其第一个值的二进制数据序列。
-
- 
+周期指定为 VT \_ BLOB 数据类型。 这由十进制值65表示。 在十六进制格式65中，值为41，前面的 INF 文件摘录显示了 \_ 具有第一个值41的 REG BINARY 数据序列。
 
  
-
-
-
-
 

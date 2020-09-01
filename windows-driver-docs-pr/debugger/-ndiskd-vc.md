@@ -1,6 +1,6 @@
 ---
 title: ndiskd.vc
-description: Ndiskd.vc 扩展显示面向连接的（CoNDIS）虚拟连接（VC）。
+description: Ndiskd.vc 扩展在 (VC) ) 虚拟连接中显示面向连接的 (。
 ms.assetid: 8F172026-3FBC-4686-A3A4-F54F1A0D08E5
 keywords:
 - ndiskd.vc Windows 调试
@@ -12,16 +12,16 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 1227c1386889ee98332a6c037b0a71459896fb9a
-ms.sourcegitcommit: 8596782b07c8a71adf38fc2c2da68b75ba0a1259
+ms.openlocfilehash: cfa81ae1b519bf2d27aeb15c6b3fe82861579380
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85593907"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89211257"
 ---
 # <a name="ndiskdvc"></a>!ndiskd.vc
 
-**！ Ndiskd.vc** Extension 显示面向连接的（CoNDIS）虚拟连接（vc）。
+**！ Ndiskd.vc** extension 显示了面向连接的 (CoNDIS) 虚拟连接 (vc) 。
 
 ```console
 !ndiskd.vc -handle <x>
@@ -38,13 +38,13 @@ Ndiskd.dll
 
 ### <a name="remarks"></a>备注
 
-有关 CoNDIS 的详细信息，请参阅[面向连接的 NDIS](https://docs.microsoft.com/windows-hardware/drivers/network/connection-oriented-ndis)。
+有关 CoNDIS 的详细信息，请参阅 [面向连接的 NDIS](../network/connection-oriented-ndis.md)。
 
-有关 CoNDIS 虚拟连接的详细信息，请参阅[虚拟连接](https://docs.microsoft.com/windows-hardware/drivers/network/virtual-connections)。
+有关 CoNDIS 虚拟连接的详细信息，请参阅 [虚拟连接](../network/virtual-connections.md)。
 
 ### <a name="examples"></a>示例
 
-CoNDIS 在某些情况下使用，例如连接到 VPN，因此，如果系统中的微型端口驱动程序已创建并激活 CoNDIS 虚拟连接，则运行 **！ ndiskd.vc**将不会显示结果。 以下示例显示了连接到 VPN 网络的计算机的结果。 首先，运行不带参数的[**！ get-netadapter**](-ndiskd-netadapter.md)扩展，以查看系统上的微型端口和微型端口驱动程序的列表 ndiskd。 在下面的输出中，查找 Marvell AVASTAR 无线-AC 网络控制器网络适配器的微型端口驱动程序。 它的句柄为 ffffc804af2e3710。
+CoNDIS 在某些情况下使用，例如连接到 VPN，因此，如果系统中的微型端口驱动程序已创建并激活 CoNDIS 虚拟连接，则运行 **！ ndiskd.vc** 将不会显示结果。 以下示例显示了连接到 VPN 网络的计算机的结果。 首先，运行不带参数的 [**！ get-netadapter**](-ndiskd-netadapter.md) 扩展，以查看系统上的微型端口和微型端口驱动程序的列表 ndiskd。 在下面的输出中，查找 Marvell AVASTAR 无线-AC 网络控制器网络适配器的微型端口驱动程序。 它的句柄为 ffffc804af2e3710。
 
 ```console
 1: kd> !ndiskd.netadapter
@@ -65,7 +65,7 @@ CoNDIS 在某些情况下使用，例如连接到 VPN，因此，如果系统中
     ffffc804aef695e0   ffffc804aed331a0    TAP-Windows Adapter V9
 ```
 
-接下来，使用微型端口驱动程序的句柄输入 **！ ndiskd.vc**命令，以查看由该微型端口驱动程序打开的虚拟连接。
+接下来，使用微型端口驱动程序的句柄输入 **！ ndiskd.vc** 命令，以查看由该微型端口驱动程序打开的虚拟连接。
 
 ```console
 1: kd> !ndiskd.vc ffffc804af2e3710
@@ -91,20 +91,20 @@ VIRTUAL CALL
     Client Context     00003206
 ```
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
-[网络驱动程序设计指南](https://docs.microsoft.com/windows-hardware/drivers/network/index)
+[网络驱动程序设计指南](../network/index.md)
 
-[Windows Vista 和更高版本的网络引用](https://docs.microsoft.com/windows-hardware/drivers/ddi/_netvista/)
+[Windows Vista 和更高版本的网络引用](/windows-hardware/drivers/ddi/_netvista/)
 
 [调试网络堆栈](https://channel9.msdn.com/Shows/Defrag-Tools/Defrag-Tools-175-Debugging-the-Network-Stack)
 
-[**NDIS 扩展（Ndiskd.dll）**](ndis-extensions--ndiskd-dll-.md)
+[**NDIS 扩展 ( # A0) **](ndis-extensions--ndiskd-dll-.md)
 
 [**!ndiskd.help**](-ndiskd-help.md)
 
-[面向连接的 NDIS](https://docs.microsoft.com/windows-hardware/drivers/network/connection-oriented-ndis)
+[面向连接的 NDIS](../network/connection-oriented-ndis.md)
 
-[虚拟连接](https://docs.microsoft.com/windows-hardware/drivers/network/virtual-connections)
+[虚拟连接](../network/virtual-connections.md)
 
 [**!ndiskd.netadapter**](-ndiskd-netadapter.md)

@@ -8,12 +8,12 @@ keywords:
 - SYSVAD
 ms.date: 07/20/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 252642ff0df273f7f014955085c5aa807dcb0acd
-ms.sourcegitcommit: f610410e1500f0b0a4ca008b52679688ab51033d
+ms.openlocfilehash: 8df72df31b7f2644c290d24b30b98f4091abc1cc
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/15/2020
-ms.locfileid: "88253089"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89211207"
 ---
 # <a name="span-iddebuggerdebug_universal_drivers__kernel-mode_spandebug-drivers---step-by-step-lab-sysvad-kernel-mode"></a><span id="debugger.debug_universal_drivers__kernel-mode_"></span>调试驱动程序-逐步骤实验室 (Sysvad 内核模式) 
 
@@ -39,7 +39,7 @@ WinDbg 可以单步执行源代码、设置断点、查看变量 (包括 c + + �
 -   适用于 Windows 10 的 windows 驱动程序工具包 (WDK) 
 -   适用于 Windows 10 的示例 Sysvad 音频驱动程序
 
-有关下载和安装 WDK 的信息，请参阅 [ (WDK) 下载 Windows 驱动程序工具包 ](https://docs.microsoft.com/windows-hardware/drivers/download-the-wdk)。
+有关下载和安装 WDK 的信息，请参阅 [ (WDK) 下载 Windows 驱动程序工具包 ](../download-the-wdk.md)。
 
 ## <a name="span-idsysvad_debugging_walkthrough_overviewspansysvad-debugging-walkthrough"></a><span id="sysvad_debugging_walkthrough_overview"></span>Sysvad 调试演练
 
@@ -79,7 +79,7 @@ WinDbg 可以单步执行源代码、设置断点、查看变量 (包括 c + + �
 
 ![使用双箭头连接的两台电脑](images/debuglab-image-targethostdrawing1.png)
 
-若要使用内核模式应用程序并使用 WinDbg，建议使用 KDNET over 以太网传输。 有关如何使用以太网传输协议的信息，请参阅 [使用 WinDbg (内核模式) 入门 ](getting-started-with-windbg--kernel-mode-.md)。 有关设置目标计算机的详细信息，请参阅 [为手动驱动程序部署准备计算机](https://docs.microsoft.com/windows-hardware/drivers) 和 [自动设置 KDNET 网络内核调试](setting-up-a-network-debugging-connection-automatically.md)。
+若要使用内核模式应用程序并使用 WinDbg，建议使用 KDNET over 以太网传输。 有关如何使用以太网传输协议的信息，请参阅 [使用 WinDbg (内核模式) 入门 ](getting-started-with-windbg--kernel-mode-.md)。 有关设置目标计算机的详细信息，请参阅 [为手动驱动程序部署准备计算机](/windows-hardware/drivers) 和 [自动设置 KDNET 网络内核调试](setting-up-a-network-debugging-connection-automatically.md)。
 
 ### <a name="span-idconfigure__kernel_mode_debugging_using_ethernetspanconfigure-kernelmode-debugging-using-ethernet"></a><span id="configure__kernel_mode_debugging_using_ethernet"></span>使用以太网配置内核-模式调试
 
@@ -758,7 +758,7 @@ Type “.hh dbgerr005” for details.
 
 ![包含大约20个节点的设备节点树](images/debuglab-image-device-node-tree.png)
 
-**注意**   有关更复杂的驱动程序堆栈的详细信息，请参阅[驱动程序堆栈](https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/driver-stacks)和[设备节点和设备堆栈](https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/device-nodes-and-device-stacks)。
+**注意**   有关更复杂的驱动程序堆栈的详细信息，请参阅[驱动程序堆栈](../gettingstarted/driver-stacks.md)和[设备节点和设备堆栈](../gettingstarted/device-nodes-and-device-stacks.md)。
 
  
 
@@ -907,7 +907,7 @@ ba <access> <size> <address> {options}
 <thead>
 <tr class="header">
 <th align="left">选项</th>
-<th align="left">描述</th>
+<th align="left">说明</th>
 </tr>
 </thead>
 <tbody>
@@ -2001,8 +2001,8 @@ fffff803`bb757020 cc              int     3
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Command</th>
-<th align="left">描述</th>
+<th align="left">命令</th>
+<th align="left">说明</th>
 </tr>
 </thead>
 <tbody>
@@ -2110,10 +2110,4 @@ OSR <https://www.osr.com/>
 ## <a name="see-also"></a>另请参阅
 
 [Windows 调试入门](getting-started-with-windows-debugging.md) 
-
- 
-
-
-
-
 

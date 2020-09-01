@@ -12,18 +12,18 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: aa7453ba2ed638851b64c60ce5d97a957453c2a0
-ms.sourcegitcommit: 8596782b07c8a71adf38fc2c2da68b75ba0a1259
+ms.openlocfilehash: 2d3e05fdf8fc4bad999972dba1c10458b93e4b9b
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85593915"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89211289"
 ---
 # <a name="ndiskdnetqueue"></a>!ndiskd.netqueue
 
 **！ Ndiskd netqueue**扩展显示有关 NETTXQUEUE 或 NETRXQUEUE 对象的信息。
 
-有关网络适配器 WDF 类扩展（NetAdapterCx）的详细信息，请参阅[网络适配器 Wdf 类扩展（Cx）](https://docs.microsoft.com/windows-hardware/drivers/netcx)。
+有关网络适配器 WDF 类扩展的详细信息 (NetAdapterCx) ，请参阅 [网络适配器 Wdf Class extension (Cx) ](../netcx/index.md)。
 
 ```console
 !ndiskd.netqueue -handle <x> [-basic]
@@ -43,16 +43,16 @@ Ndiskd.dll
 
 ### <a name="examples"></a>示例
 
-**注意**   若要查看说明 NETTXQUEUE 和 NETRXQUEUE 对象与 NetAdapterCx 中其他对象的关系的关系图，请参阅[对象的摘要](https://docs.microsoft.com/windows-hardware/drivers/netcx/summary-of-objects)。
+**注意**   若要查看说明 NETTXQUEUE 和 NETRXQUEUE 对象与 NetAdapterCx 中其他对象的关系的关系图，请参阅[对象的摘要](../netcx/summary-of-netadaptercx-objects.md)。
 
 若要获取 NETTXQUEUE 或 NETRXQUEUE 的句柄，请执行以下步骤：
 
-1. 运行[**！ ndiskd. get-netadapter**](-ndiskd-netadapter.md)扩展。
+1. 运行 [**！ ndiskd. get-netadapter**](-ndiskd-netadapter.md) 扩展。
 2. 单击安装了 NetAdapterCx 驱动程序的 Get-netadapter 的句柄。
-3. 单击 Get-netadapter 的 GET-NETADAPTER 对象右侧的 "详细信息" 链接，以运行[**！ ndiskd. cxadapter**](-ndiskd-cxadapter.md)扩展。
+3. 单击 Get-netadapter 的 GET-NETADAPTER 对象右侧的 "详细信息" 链接，以运行 [**！ ndiskd. cxadapter**](-ndiskd-cxadapter.md) 扩展。
 4. 输入包含 *-数据路径*参数的 **！ cxadapter**命令，以查看 get-netadapter 的数据路径队列。
 
-有关此过程的详细信息，请参阅 **！ ndiskd. cxadapter**主题中的示例。
+有关此过程的详细信息，请参阅 **！ ndiskd. cxadapter** 主题中的示例。
 在下面的示例中，查找此 GET-NETADAPTER 的 NETTXQUEUE，ffffd1022f512700 的句柄。
 
 ```console
@@ -76,7 +76,7 @@ DATAPATH QUEUES
     NETRXQUEUE         ffffd1022cc7b0d0
 ```
 
-通过单击 NETTXQUEUE 的句柄或在命令行中输入 **！ ndiskd**命令，你可以查看此队列的详细信息，包括其伴生 WDF 对象的句柄、其环形缓冲区的句柄和其已注册回调的函数指针。
+通过单击 NETTXQUEUE 的句柄或在命令行中输入 **！ ndiskd** 命令，你可以查看此队列的详细信息，包括其伴生 WDF 对象的句柄、其环形缓冲区的句柄和其已注册回调的函数指针。
 
 ```console
 0: kd> !ndiskd.netqueue ffffd1022f512700
@@ -92,21 +92,21 @@ DATAPATH QUEUES
     EvtQueueCancel                         fffff800341598d8   RtEthSample+98d8
 ```
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
-[网络驱动程序设计指南](https://docs.microsoft.com/windows-hardware/drivers/network/index)
+[网络驱动程序设计指南](../network/index.md)
 
-[Windows Vista 和更高版本的网络引用](https://docs.microsoft.com/windows-hardware/drivers/ddi/_netvista/)
+[Windows Vista 和更高版本的网络引用](/windows-hardware/drivers/ddi/_netvista/)
 
 [调试网络堆栈](https://channel9.msdn.com/Shows/Defrag-Tools/Defrag-Tools-175-Debugging-the-Network-Stack)
 
-[**NDIS 扩展（Ndiskd.dll）**](ndis-extensions--ndiskd-dll-.md)
+[**NDIS 扩展 ( # A0) **](ndis-extensions--ndiskd-dll-.md)
 
 [**!ndiskd.help**](-ndiskd-help.md)
 
-[网络适配器 WDF 类扩展（Cx）](https://docs.microsoft.com/windows-hardware/drivers/netcx)
+[网络适配器 WDF 类扩展 (Cx) ](../netcx/index.md)
 
-[对象摘要](https://docs.microsoft.com/windows-hardware/drivers/netcx/summary-of-objects)
+[对象摘要](../netcx/summary-of-netadaptercx-objects.md)
 
 [**!ndiskd.netadapter**](-ndiskd-netadapter.md)
 

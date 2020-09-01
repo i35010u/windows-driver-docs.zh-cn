@@ -4,21 +4,21 @@ description: 微型端口驱动程序使用 NDIS_STATUS_WWAN_IP_ADDRESS_STATE �
 ms.assetid: 98E4028D-AD75-4F12-ADA4-41725253166F
 ms.date: 07/18/2017
 keywords:
-- NDIS_STATUS_WWAN_IP_ADDRESS_STATE 从 Windows Vista 开始的网络驱动程序
+- 从 Windows Vista 开始 NDIS_STATUS_WWAN_IP_ADDRESS_STATE 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: c547aec60bd2c0334db6d282bc2f66fc3a16095a
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 568fe0275517f5e1eae56325b0d630fe1ace0a4f
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72843026"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89212845"
 ---
-# <a name="ndis_status_wwan_ip_address_state"></a>\_WWAN\_IP\_地址\_状态的 NDIS\_状态
+# <a name="ndis_status_wwan_ip_address_state"></a>NDIS \_ 状态 \_ WWAN \_ IP \_ 地址 \_ 状态
 
 
-小型端口驱动程序使用 NDIS\_状态\_WWAN\_IP\_地址\_状态通知来通知 MB 服务有关 IP 配置的更改的额外 PDP 上下文。
+微型端口驱动程序使用 NDIS \_ 状态 \_ WWAN \_ IP \_ 地址 \_ 状态通知来通知 MB 服务有关 IP 配置的更改的额外 PDP 上下文。
 
-此通知使用[**NDIS\_WWAN\_IP\_地址\_状态**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_ip_address_state)结构。
+此通知使用 [**NDIS \_ WWAN \_ IP \_ 地址 \_ 状态**](/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_ip_address_state) 结构。
 
 <a name="remarks"></a>备注
 -------
@@ -42,7 +42,7 @@ ms.locfileid: "72843026"
 </tr>
 <tr class="even">
 <td><p>标头</p></td>
-<td>Ndis .h （包括 Ndis .h）</td>
+<td> (包含 Ndis .h) </td>
 </tr>
 </tbody>
 </table>
@@ -50,12 +50,7 @@ ms.locfileid: "72843026"
 ## <a name="see-also"></a>另请参阅
 
 
-[**NDIS\_WWAN\_IP\_地址\_状态**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_ip_address_state)
+[**NDIS \_ WWAN \_ IP \_ 地址 \_ 状态**](/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_ip_address_state)
 
  
-
- 
-
-
-
 

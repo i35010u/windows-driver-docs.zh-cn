@@ -5,12 +5,12 @@ ms.assetid: 58d36a1e-cda2-42aa-9563-96df2f7319b2
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 AF_INET6 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 142902974f1210337bfb57df62206c1aff404e24
-ms.sourcegitcommit: 57b649e59a2be2055413982035d89bc85e3e425d
+ms.openlocfilehash: 28f8f525db3663b2bff419685eecf88d1d10c6d9
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/22/2020
-ms.locfileid: "85133281"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89212977"
 ---
 # <a name="af_inet6"></a>AF \_ INET6
 
@@ -19,7 +19,7 @@ AF \_ INET6 address 系列是 IPv6 的地址族。
 
 ### <a name="socket-address-structure"></a>套接字地址结构
 
-IPv6 传输地址是使用[**SOCKADDR \_ IN6**](https://docs.microsoft.com/windows/win32/api/ws2ipdef/ns-ws2ipdef-sockaddr_in6_lh)结构指定的。
+IPv6 传输地址是使用 [**SOCKADDR \_ IN6**](/windows/win32/api/ws2ipdef/ns-ws2ipdef-sockaddr_in6_lh) 结构指定的。
 
 ### <a name="socket-types"></a>套接字类型
 
@@ -34,7 +34,7 @@ IPv6 支持以下套接字类型：
 <a href="" id="sock-raw"></a>SOCK \_ RAW  
 支持对传输协议的原始访问。
 
-当 WSK 应用程序调用[**WskSocket**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_socket)函数或[**WskSocketConnect**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_socket_connect)函数来创建新的套接字时，它指定套接字类型。
+当 WSK 应用程序调用 [**WskSocket**](/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_socket) 函数或 [**WskSocketConnect**](/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_socket_connect) 函数来创建新的套接字时，它指定套接字类型。
 
 ### <a name="protocols"></a>协议
 
@@ -129,13 +129,13 @@ IPv6 目标选项
 
 使用原始套接字支持其他协议。
 
-WSK 应用程序在调用[**WskSocket**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_socket)函数或[**WskSocketConnect**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_socket_connect)函数来创建新的套接字时指定协议。
+WSK 应用程序在调用 [**WskSocket**](/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_socket) 函数或 [**WskSocketConnect**](/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_socket_connect) 函数来创建新的套接字时指定协议。
 
-当 WSK 应用程序调用[**WskControlSocket**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_control_socket)函数设置或检索传输协议级别或网络协议级别套接字选项时，它还指定协议（作为*Level*参数）。
+当 WSK 应用程序调用[**WskControlSocket**](/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_control_socket)函数来设置或检索传输协议级别或网络协议级别套接字选项时，它还将协议 (指定为*Level*参数) 。
 
 ### <a name="combinations"></a>各种
 
-对于每个 WSK[套接字类别](https://docs.microsoft.com/windows-hardware/drivers/network/winsock-kernel-socket-categories)，IPv6 支持以下套接字类型和协议的组合：
+对于每个 WSK [套接字类别](./winsock-kernel-socket-categories.md)，IPv6 支持以下套接字类型和协议的组合：
 
 基本套接 SOCK \_ STREAM + IPPROTO \_ TCP SOCK \_ DGRAM + IPPROTO \_ UDP SOCK \_ RAW + IPPROTO \_ *XXX*侦听套接字 SOCK \_ STREAM + IPPROTO \_ TCP
 
@@ -156,15 +156,10 @@ WSK 应用程序在调用[**WskSocket**](https://docs.microsoft.com/windows-hard
 </tr>
 <tr class="even">
 <td><p>标头</p></td>
-<td>Ws2def （包括 Wsk）</td>
+<td>Ws2def (包含 Wsk) </td>
 </tr>
 </tbody>
 </table>
 
  
-
- 
-
-
-
 

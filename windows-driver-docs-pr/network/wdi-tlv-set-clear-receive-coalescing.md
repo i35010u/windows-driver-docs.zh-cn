@@ -1,37 +1,37 @@
 ---
 title: WDI_TLV_SET_CLEAR_RECEIVE_COALESCING
-description: WDI_TLV_SET_CLEAR_RECEIVE_COALESCING 是 TLV OID_WDI_SET_CLEAR_RECEIVE_COALESCING 包含筛选器 ID。
+description: WDI_TLV_SET_CLEAR_RECEIVE_COALESCING 为 TLV，其中包含 OID_WDI_SET_CLEAR_RECEIVE_COALESCING 的筛选器 ID。
 ms.assetid: 4AF7A1A4-A1B4-48AD-9989-B9E317F93459
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 WDI_TLV_SET_CLEAR_RECEIVE_COALESCING 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 8e87b85be1b6698c6fc8859be4b4d4c4857df244
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 4f9eeadf33f002df1aafea19b6efd241e710f16d
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67362813"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89212673"
 ---
-# <a name="wditlvsetclearreceivecoalescing"></a>WDI\_TLV\_SET\_CLEAR\_RECEIVE\_COALESCING
+# <a name="wdi_tlv_set_clear_receive_coalescing"></a>WDI \_ TLV \_ 设置 \_ 清除 \_ 接收 \_ 合并
 
 
-WDI\_TLV\_设置\_清除\_接收\_COALESCING 是包含的筛选器 ID TLV [OID\_WDI\_设置\_清除\_接收\_COALESCING](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wdi-set-clear-receive-coalescing)。
+WDI \_ tlv \_ 设置 \_ 清除 \_ 接收 \_ 合并是一个 TLV，其中包含 [OID \_ WDI \_ SET \_ CLEAR \_ RECEIVE \_ 合并](./oid-wdi-set-clear-receive-coalescing.md)的筛选器 ID。
 
 ## <a name="tlv-type"></a>TLV 类型
 
 
 0x9B
 
-## <a name="length"></a>长度
+## <a name="length"></a>Length
 
 
-UINT32 大小 （以字节为单位）。
+UINT32) 的大小 (以字节为单位）。
 
 ## <a name="values"></a>值
 
 
-| 在任务栏的搜索框中键入   | 描述           |
+| 类型   | 说明           |
 |--------|-----------------------|
 | UINT32 | 筛选器的 ID。 |
 
@@ -55,16 +55,11 @@ UINT32 大小 （以字节为单位）。
 <td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
-<td><p>Header</p></td>
+<td><p>标头</p></td>
 <td>Wditypes.hpp</td>
 </tr>
 </tbody>
 </table>
 
  
-
- 
-
-
-
 

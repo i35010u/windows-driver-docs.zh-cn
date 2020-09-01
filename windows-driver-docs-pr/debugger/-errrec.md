@@ -1,6 +1,6 @@
 ---
 title: errrec
-description: Errrec 扩展显示 Windows 硬件错误体系结构（WHEA）错误记录的内容。
+description: Errrec 扩展显示 Windows 硬件错误体系结构 (WHEA) 错误记录的内容。
 ms.assetid: 372e4700-0cd7-468d-98e8-b0ead4ebc92f
 keywords:
 - errrec Windows 调试
@@ -12,17 +12,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: ef3e272f68bb29fa8851f6f82123653ff54000a1
-ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
+ms.openlocfilehash: 03ca88fda94ba2dcb707ef987339dfd757e58fde
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84534836"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89211849"
 ---
 # <a name="errrec"></a>!errrec
 
 
-**！ Errrec**扩展显示 Windows 硬件错误体系结构（WHEA）错误记录的内容。
+**！ Errrec**扩展显示 Windows 硬件错误体系结构 (WHEA) 错误记录的内容。
 
 ```dbgcmd
 !errrec Address 
@@ -56,7 +56,7 @@ ms.locfileid: "84534836"
 </tr>
 <tr class="even">
 <td align="left"><p><strong>Windows Vista 及更高版本</strong></p></td>
-<td align="left"><p>Kdexts</p></td>
+<td align="left"><p>Kdexts.dll</p></td>
 </tr>
 </tbody>
 </table>
@@ -67,12 +67,12 @@ ms.locfileid: "84534836"
 
 ### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>附加信息
 
-[**！ Whea**](-whea.md)和[**！ errpkt**](-errpkt.md)扩展可用于显示其他 whea 信息。 有关 WHEA 的常规信息，请参阅 Windows 驱动程序工具包（WDK）文档中的[Windows 硬件错误体系结构（WHEA）](https://docs.microsoft.com/windows-hardware/drivers/whea/) 。
+[**！ Whea**](-whea.md)和[**！ errpkt**](-errpkt.md)扩展可用于显示其他 whea 信息。 有关 WHEA 的常规信息，请参阅 Windows 驱动程序工具包中的 [Windows 硬件错误体系结构 (WHEA) ](../whea/index.md) (WDK) 文档。
 
-<a name="remarks"></a>注解
+<a name="remarks"></a>备注
 -------
 
-下面的示例演示如何使用[**！ whea**](-whea.md)扩展来获取错误记录的地址，然后可以通过 **！ errrec**扩展显示此记录的内容：
+下面的示例演示如何使用 [**！ whea**](-whea.md) 扩展来获取错误记录的地址，然后可以通过 **！ errrec** 扩展显示此记录的内容：
 
 ```dbgcmd
 3: kd> !whea 
@@ -162,10 +162,4 @@ Bank Number      : 0
 ```
 
  
-
- 
-
-
-
-
 
