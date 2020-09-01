@@ -9,12 +9,12 @@ keywords:
 - 目录控制 WDK 文件系统
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c1296c259ae0025c3c2df858ac99e35cf4aae48d
-ms.sourcegitcommit: df50dc10210c124f2c7fb173d6e4fb796f56e5bd
+ms.openlocfilehash: b27ccfafbc49ebcc9b1014bfba663bd6fc77d29d
+ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86949725"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89065016"
 ---
 # <a name="security-checks-on-irp_mj_directory_control"></a>IRP_MJ_DIRECTORY_CONTROL 上的安全检查
 
@@ -22,15 +22,15 @@ ms.locfileid: "86949725"
 
 通过文件系统运行库支持目录更改通知，文件系统允许文件系统指定一个回调函数，以便在返回目录更改通知之前执行遍历检查。 此回调函数使用大量参数。 出于安全考虑，以下三个参数非常重要：
 
-- *NotifyContext*是更改通知处于活动状态的目录的上下文。 这将是传递给对[**FsRtlNotifyFullChangeDirectory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-_fsrtl_advanced_fcb_header-fsrtlnotifyfullchangedirectory)的调用的*FsContext*参数。
+- *NotifyContext* 是更改通知处于活动状态的目录的上下文。 这将是传递给对[**FsRtlNotifyFullChangeDirectory**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-_fsrtl_advanced_fcb_header-fsrtlnotifyfullchangedirectory)的调用的*FsContext*参数。
 
-- *TargetContext*是已更改的文件的上下文。 这将是文件系统在调用[**fsrtlnotifyfilterreportchange 并且**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-_fsrtl_advanced_fcb_header-fsrtlnotifyfilterreportchange)时传递的*TargetContext*参数。
+- *TargetContext* 是已更改的文件的上下文。 这将是文件系统在调用[**fsrtlnotifyfilterreportchange 并且**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-_fsrtl_advanced_fcb_header-fsrtlnotifyfilterreportchange)时传递的*TargetContext*参数。
 
-- *SubjectContext*是请求目录更改通知的线程的安全上下文。 这是文件系统在对**FsRtlNotifyFullChangeDirectory**进行目录更改通知调用时捕获的主题安全上下文。
+- *SubjectContext* 是请求目录更改通知的线程的安全上下文。 这是文件系统在对 **FsRtlNotifyFullChangeDirectory**进行目录更改通知调用时捕获的主题安全上下文。
 
 发生更改时，文件系统会向文件系统运行时库指出这一点。 文件系统运行时库将调用文件系统提供的回调函数，以验证是否可以向调用方提供有关更改的信息。 请注意，如果调用方需要检查，则文件系统只需注册回调函数。 如果调用方未启用 SeChangeNotifyPrivilege （如调用方的安全令牌中的 TOKEN_HAS_TRAVERSE_PRIVILEGE 所示），则会出现这种情况。
 
-在回调函数内，文件系统必须执行从*NotifyContext*参数指定的目录到由*TargetContext*参数指定的已更改文件的遍历检查。 下面的示例例程执行此类检查。
+在回调函数内，文件系统必须执行从 *NotifyContext* 参数指定的目录到由 *TargetContext* 参数指定的已更改文件的遍历检查。 下面的示例例程执行此类检查。
 
 ```cpp
 BOOLEAN
@@ -114,4 +114,4 @@ FsdNotifyTraverseCheck (
 }
 ```
 
-对于缓存安全信息或具有不同的数据结构以跟踪文件和目录的文件系统（例如，使用结构跟踪文件和目录之间的链接的文件），此例程可能会有很大的不同。 在此示例中，不会考虑支持链接的文件系统，因为尝试简化示例。
+对于缓存安全信息或具有不同的数据结构以跟踪文件和目录的文件系统，此例程可能会有很大的差别 (例如，使用结构跟踪文件和目录之间的链接的文件) 。 在此示例中，不会考虑支持链接的文件系统，因为尝试简化示例。

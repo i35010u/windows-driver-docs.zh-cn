@@ -15,17 +15,17 @@ api_type:
 - UserDefined
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a2c86c1dc3caacebaf233602f96254716488a371
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 898811b7045a8fd272b3a38a5d0e16f0f5f124c4
+ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72841073"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89067382"
 ---
 # <a name="mrxsetsdinfo-routine"></a>MRxSetSdInfo 例程
 
 
-[RDBSS](https://docs.microsoft.com/windows-hardware/drivers/ifs/the-rdbss-driver-and-library)调用*MRxSetSdInfo*例程来请求网络小型重定向程序设置文件系统对象的安全描述符信息。
+[RDBSS](./the-rdbss-driver-and-library.md)调用*MRxSetSdInfo*例程来请求网络小型重定向程序设置文件系统对象的安全描述符信息。
 
 <a name="syntax"></a>语法
 ------
@@ -39,16 +39,16 @@ NTSTATUS MRxSetSdInfo(
 { ... }
 ```
 
-<a name="parameters"></a>参数
+<a name="parameters"></a>parameters
 ----------
 
-*RxContext* \[in，out\]  
-指向 RX\_上下文结构的指针。 此参数包含请求操作的 IRP。
+*RxContext* \[in、out\]  
+指向 RX \_ 上下文结构的指针。 此参数包含请求操作的 IRP。
 
 <a name="return-value"></a>返回值
 ------------
 
-*MRxSetSdInfo*返回成功的状态\_成功或使用适当的 NTSTATUS 值，如以下之一：
+*MRxSetSdInfo* 返回成功的状态 \_ 成功或适当的 NTSTATUS 值，如以下之一：
 
 <table>
 <colgroup>
@@ -106,13 +106,13 @@ NTSTATUS MRxSetSdInfo(
 <a name="remarks"></a>备注
 -------
 
-RDBSS 发出对*MRxSetSdInfo*的调用，以响应接收[**IRP\_MJ\_集\_安全**](irp-mj-set-security.md)请求。
+RDBSS 发出对 *MRxSetSdInfo* 的调用，以响应接收 [**IRP \_ MJ \_ SET \_ 安全**](irp-mj-set-security.md) 请求。
 
-在调用*MRxSetSdInfo*之前，RDBSS 会修改 RX\_由*RxContext*参数指向的上下文结构：
+在调用 *MRxSetSdInfo*之前，RDBSS 会修改 \_ *RXCONTEXT* 参数指向的 RX 上下文结构中的以下成员：
 
-**SecurityInformation**成员设置为**IrpSp&gt;SetSecurity. SecurityInformation**。
+**SetSecurity. SecurityInformation**成员设置为**IrpSp-SetSecurity. &gt; SecurityInformation**。
 
-**SecurityDescriptor**成员设置为**IrpSp&gt;SetSecurity. SecurityDescriptor**。
+**SetSecurity. SecurityDescriptor**成员设置为**IrpSp-SetSecurity. &gt; SecurityDescriptor**。
 
 <a name="requirements"></a>要求
 ------------
@@ -125,11 +125,11 @@ RDBSS 发出对*MRxSetSdInfo*的调用，以响应接收[**IRP\_MJ\_集\_安全*
 <tbody>
 <tr class="odd">
 <td align="left"><p>目标平台</p></td>
-<td align="left">桌面</td>
+<td align="left">桌面型</td>
 </tr>
 <tr class="even">
 <td align="left"><p>标头</p></td>
-<td align="left">Mrx （包括 Mrx）</td>
+<td align="left">Mrx (包含 Mrx) </td>
 </tr>
 </tbody>
 </table>
@@ -137,7 +137,7 @@ RDBSS 发出对*MRxSetSdInfo*的调用，以响应接收[**IRP\_MJ\_集\_安全*
 ## <a name="see-also"></a>另请参阅
 
 
-[**MRxIsValidDirectory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_chkdir_calldown)
+[**MRxIsValidDirectory**](/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_chkdir_calldown)
 
 [**MRxQueryDirectory**](mrxquerydirectory.md)
 
@@ -162,11 +162,4 @@ RDBSS 发出对*MRxSetSdInfo*的调用，以响应接收[**IRP\_MJ\_集\_安全*
 [**MRxSetVolumeInfo**](mrxsetvolumeinfo.md)
 
  
-
- 
-
-
-
-
-
 

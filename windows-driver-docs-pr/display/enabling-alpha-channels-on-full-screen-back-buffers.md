@@ -3,19 +3,19 @@ title: 在全屏后端缓冲区中启用 Alpha 通道
 description: 在全屏后端缓冲区中启用 Alpha 通道
 ms.assetid: 9d922464-fb1b-459b-9363-61afff7c51e3
 keywords:
-- DirectX 8.0 发行说明 WDK Windows 2000 显示，alpha 通道上的全屏后台缓冲区
-- 翻转链 WDK DirectX 8.0
-- 主翻转链 WDK DirectX 8.0
-- 全屏幕翻转链 WDK DirectX 8.0
-- alpha 通道 WDK DirectX 8.0
+- DirectX 8.0 发行说明 WDK Windows 2000 显示，全屏幕后台缓冲区上的 alpha 通道
+- 翻转链 WDK DirectX 8。0
+- 主翻转链 WDK DirectX 8。0
+- 全屏翻转链 WDK DirectX 8。0
+- alpha 通道 WDK DirectX 8。0
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bd06402e11b1e90d78297882c220ae407da938c4
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 755d2fc0535792a861c0f5f52146a4dc4712b1f6
+ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67385612"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89065872"
 ---
 # <a name="enabling-alpha-channels-on-full-screen-back-buffers"></a>在全屏后端缓冲区中启用 Alpha 通道
 
@@ -23,23 +23,17 @@ ms.locfileid: "67385612"
 ## <span id="ddk_enabling_alpha_channels_on_full_screen_back_buffers_gg"></span><span id="DDK_ENABLING_ALPHA_CHANNELS_ON_FULL_SCREEN_BACK_BUFFERS_GG"></span>
 
 
-DirectDraw DDI 中，在主翻转链创建具有任何内部函数的像素格式。 因此，在此链中的图面显示模式的像素格式对其执行。 例如，在 32bpp 模式下创建一个主翻转链将采用 D3DFMT\_X8R8G8B8 格式。
+在 DirectDraw DDI 中，主翻转链的创建没有内部像素格式。 因此，此链中的表面采用显示模式的像素格式。 例如，在32bpp 模式下创建的主翻转链采用 D3DFMT \_ X8R8G8B8 格式。
 
-对于许多的全屏应用程序创建此类链。 因为链的后台缓冲区有无 alpha 通道，D3DRS\_ALPHABLENDENABLE 呈现状态和效果不佳定义目标应用层协议的相关联的 blend 呈现状态。 DirectX 8.1 引入了一项新功能 Direct3D 运行时用来通知应用程序的请求使用 alpha 通道的像素格式的这些图面中创建应用层的全屏幕翻转链的驱动程序。
+此类链是为许多全屏应用程序创建的。 由于链的后台缓冲区没有 alpha 通道，因此 D3DRS \_ ALPHABLENDENABLE 呈现状态和目标图面的关联混合呈现状态定义不佳。 DirectX 8.1 引入了一项新功能，Direct3D 运行时使用此功能来通知应用程序请求的驱动程序，以在这些图面的像素格式中创建带有 alpha 通道的图面的全屏翻转链。
 
-若要指示此功能的支持，该驱动程序必须设置 D3DCAPS3\_ALPHA\_全屏\_翻转\_或者\_丢弃位 (在中定义*d3d8caps.h*文件) 中**Caps3** D3DCAPS8 结构中的成员。 该驱动程序在响应中返回 D3DCAPS8 结构**GetDriverInfo2**查询中所述[报告 DirectX 8.0 样式 Direct3D 功能](reporting-directx-8-0-style-direct3d-capabilities.md)。 此查询的支持中所述[支持 GetDriverInfo2](supporting-getdriverinfo2.md)。
+若要指明此功能的支持，驱动程序必须将 D3DCAPS3 \_ ALPHA \_ 全屏 \_ 翻转 \_ 或 \_ 放弃在 D3DCAPS8 结构的**Caps3**成员) 中定义的位 (。 *d3d8caps.h* 驱动程序将返回 D3DCAPS8 结构来响应 **GetDriverInfo2** 查询，如 [报告 DirectX 8.0 样式 Direct3D 功能](reporting-directx-8-0-style-direct3d-capabilities.md)中所述。 支持 [GetDriverInfo2](supporting-getdriverinfo2.md)中介绍了此查询的支持。
 
-确定支持此功能后，该驱动程序可以接收[ *DdCreateSurface* ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff549263(v=vs.85))调用 DDSCAPS2\_ENABLEALPHACHANNEL (中定义*ddraw.h*文件) 中设置位**dwCaps2**的成员[ **DDSCAPS2** ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff550292(v=vs.85))结构。 此位仅设置以创建主翻转链的一部分或独立的后台缓冲区上的图面。
+确定对此功能的支持之后，驱动程序可以接收[*DdCreateSurface*](/previous-versions/windows/hardware/drivers/ff549263(v=vs.85))调用，其中 DDSCAPS2 \_ ENABLEALPHACHANNEL (在[**dwCaps2**](/previous-versions/windows/hardware/drivers/ff550292(v=vs.85))结构的**DDSCAPS2**成员中设置的*ddraw*) 文件中定义。 此位仅被设置为创建属于主翻转链或独立后台缓冲区的图面。
 
-如果该驱动程序检测到此位，该驱动程序确定图面采用不显示模式的格式，但在显示模式下的格式和 alpha。 例如，在 32bpp 模式下，此类面应授予 D3DFMT\_A8R8G8B8 格式。
+如果驱动程序检测到这种情况，则驱动程序将确定表面不是显示模式的格式，而是显示模式的格式加 alpha。 例如，在32bpp 模式下，应为此类面提供 D3DFMT \_ A8R8G8B8 格式。
 
-在 Windows XP 和更高版本上和在 Windows 2000 操作系统版本中，将安装的 DirectX 8.1 运行时提供了此功能。
-
- 
+此功能在 Windows XP 及更高版本以及安装了 DirectX 8.1 运行时的 Windows 2000 操作系统版本上可用。
 
  
-
-
-
-
 

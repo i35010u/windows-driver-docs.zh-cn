@@ -3,15 +3,15 @@ title: 混合内存分配
 description: 混合内存分配
 ms.assetid: 171efa48-bd1e-4545-a5c2-0b3ad4383448
 keywords:
-- 混合的内存分配 WDK DirectDraw
+- 混合内存分配 WDK DirectDraw
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 28d18dbd68e7daf9eaa5c743d73cef2dccaea644
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: e002328d37e16dc34f71ab7e49f3857a6a93a7cc
+ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67382298"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89066028"
 ---
 # <a name="mixed-memory-allocation"></a>混合内存分配
 
@@ -19,15 +19,15 @@ ms.locfileid: "67382298"
 ## <span id="ddk_mixed_memory_allocation_gg"></span><span id="DDK_MIXED_MEMORY_ALLOCATION_GG"></span>
 
 
-线性和矩形内存堆可以进行混合和匹配以任何方式，如果硬件支持。 例如，如果前台缓冲区已固定的间距，支持 DirectDraw 的驱动程序可以分配右侧矩形堆。
+如果硬件支持线性和矩形内存堆，则可以通过任何方式对其进行混合和匹配。 例如，如果前台缓冲区具有固定的跨度，则支持 DirectDraw 的驱动程序可以在其右侧分配矩形堆。
 
-下图中所示，如果保留足够内存以主面下方，可以向用于后台缓冲区的线性堆进行这一领域。
+如下图所示，如果有足够的内存保持在主图面下面，则可以将此区域变成可用于后台缓冲区的线性堆。
 
-![关系图演示如何混合的内存分配](images/ddfig6.png)
+![说明混合内存分配的关系图](images/ddfig6.png)
 
-上图显示了线性一部分主要面 (堆 1) 下的内存和矩形一部分由主图面 (堆 2) 右侧的 DirectDraw 回收的内存。
+上图显示了在主图面下面 (堆 1) 的线性内存，以及由 DirectDraw 从主表面 (堆 2) 右侧回收的矩形内存块。
 
-下面的伪代码演示如何[ **VIDEOMEMORY** ](https://docs.microsoft.com/windows/desktop/api/ddrawint/ns-ddrawint-_videomemory)结构混合的线性和矩形的内存的设置：
+下面的伪代码演示如何为混合的线性和矩形内存设置 [**VIDEOMEMORY**](/windows/desktop/api/ddrawint/ns-ddrawint-_videomemory) 结构：
 
 ```cpp
 /*
@@ -42,9 +42,9 @@ static VIDEOMEMORY vidMem [] =
 };
 ```
 
-可以在此实例中分配的显示内存的两个方面。 主图面的概念的右侧区域是一定矩形，将由 VIDMEM\_ISRECTANGULAR 标志。 从概念上讲以下主表面区域可以是线性的并且由 VIDMEM\_ISLINEAR 标志。
+在此实例中，可以分配两个显示内存区域。 主图面的概念右侧的区域一定是矩形，并由 VIDMEM \_ ISRECTANGULAR 标志指示。 主要表面下面的区域可以是线性的，由 VIDMEM \_ ISLINEAR 标志指示。
 
-下面的伪代码演示如何混合使用线性和矩形设置堆的内存：
+以下伪代码显示了如何设置混合的线性和矩形内存堆：
 
 ```cpp
 /*
@@ -86,15 +86,9 @@ static VIDEOMEMORY vidMem [] =
     vidMem[1].ddsCaps.dwCaps = 0;  // surface has no use restrictions
 ```
 
-通过确定起点和终点的主图面，下面的暂存区域设置线性内存堆为由**fpStart**并**fpEnd**成员的线性[ **VIDEOMEMORY** ](https://docs.microsoft.com/windows/desktop/api/ddrawint/ns-ddrawint-_videomemory)结构 (<strong>vidMem\[</strong>0<strong>\]</strong>)。 矩形部分设置使用的起始点，由**fpStart**矩形 VIDEOMEMORY 结构中的成员 (<strong>vidMem\[</strong>1 <strong>\]</strong>)，宽度，由**dwWidth**成员和高度，指示**dwHeight**成员的主图面。 间距 ( **dwPitch**成员) 可以设置的矩形部分之前，必须计算。 这是与矩形的上一示例中，相同间距是而不是第一个 VIDEOMEMORY 结构的第二个元素的这种情况下除外。 每个新堆需要新的 VIDEOMEMORY 结构。
+通过确定由线性[**VIDEOMEMORY**](/windows/desktop/api/ddrawint/ns-ddrawint-_videomemory)结构的 " **fpStart** " 和 " **fpEnd** " 成员指示的 "线性内存堆" 的起点和终点来设置线性内存堆 (<strong> \[ vidMem</strong>0 <strong>\]</strong>) 。 矩形块是使用起点设置的，由矩形 VIDEOMEMORY 结构的**fpStart**成员指示 (<strong> \[ vidMem</strong>1 <strong>\]</strong>) ，width，由**dwWidth**成员指示，高度由主图面的**dwHeight**成员指示。 在设置矩形部分之前，必须先计算 **dwPitch** 成员)  (间距。 这与上一个矩形示例相同，不同之处在于，这种情况下，螺距是 VIDEOMEMORY 结构的第二个元素，而不是第一个元素。 每个新堆都需要一个新的 VIDEOMEMORY 结构。
 
-在某些情况下，翻转注册可以处理仅 256 KB 边界。 在这些情况下，小型堆可以使用的缓存中的下边框和后台缓冲区，允许后台缓冲区，以从 256 KB 边界开始的开始之间的空白区域。 此示例中未显示，但它可以通过向 VIDEOMEMORY 结构中添加另一个元素并设置刚超出缓存的起始点和之前的 256 KB 边界的结束位置的实现。 此类堆应标记为 DDSCAPS\_后台缓冲区，因此它可以跳过，当堆管理器查找后台缓冲区。 此后台缓冲区堆 （一个对齐） 也将标记与 DDSCAPS\_OFFSCREENPLAIN 以防止使用该堆，直到没有其他内存在普通的屏外表面其他堆中提供子画面和纹理。
-
- 
+在某些情况下，反向寄存器只能处理 256 KB 边界。 在这些情况下，小堆可以占用缓存底部与后台缓冲区开头之间的空间，以允许后台缓冲区在 256 KB 边界处开始。 此示例并未显示，但可以通过将另一个元素添加到 VIDEOMEMORY 结构，并将起点设置为紧靠超过 256 KB 边界之前的缓存和结束点来实现。 此类堆应使用 DDSCAPS 后台缓冲区进行标记， \_ 以便在堆管理器查找后台缓冲区时可以跳过它。 此后台缓冲区堆 (一个对齐的) 也将标记为 DDSCAPS \_ OFFSCREENPLAIN，以防止子画面和纹理使用此堆，直到其他堆中没有可用于屏幕上的无格式表面的其他内存为止。
 
  
-
-
-
-
 

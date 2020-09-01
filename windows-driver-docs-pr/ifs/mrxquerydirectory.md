@@ -15,17 +15,17 @@ api_type:
 - UserDefined
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ef35dd5a37265c13b45a73a6c6964064d87216ec
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 53ea4870fe520df09c8ad4f9e46a817c95005e70
+ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72841093"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89066136"
 ---
 # <a name="mrxquerydirectory-routine"></a>MRxQueryDirectory 例程
 
 
-[RDBSS](https://docs.microsoft.com/windows-hardware/drivers/ifs/the-rdbss-driver-and-library)调用*MRxQueryDirectory*例程来请求一个有关文件目录的网络微重定向程序查询信息。
+[RDBSS](./the-rdbss-driver-and-library.md)调用*MRxQueryDirectory*例程来请求一个有关文件目录的网络微重定向程序查询信息。
 
 <a name="syntax"></a>语法
 ------
@@ -39,16 +39,16 @@ NTSTATUS MRxQueryDirectory(
 { ... }
 ```
 
-<a name="parameters"></a>参数
+<a name="parameters"></a>parameters
 ----------
 
-*RxContext* \[in，out\]  
-指向 RX\_上下文结构的指针。 此参数包含请求操作的 IRP。
+*RxContext* \[in、out\]  
+指向 RX \_ 上下文结构的指针。 此参数包含请求操作的 IRP。
 
 <a name="return-value"></a>返回值
 ------------
 
-*MRxQueryDirectory*返回成功的状态\_成功或使用适当的 NTSTATUS 值，如以下之一：
+*MRxQueryDirectory* 返回成功的状态 \_ 成功或适当的 NTSTATUS 值，如以下之一：
 
 <table>
 <colgroup>
@@ -98,27 +98,27 @@ NTSTATUS MRxQueryDirectory(
 <a name="remarks"></a>备注
 -------
 
-在调用*MRxQueryDirectory*之前，RDBSS 会修改 RX\_由*RxContext*参数指向的上下文结构：
+在调用 *MRxQueryDirectory*之前，RDBSS 会修改 \_ *RXCONTEXT* 参数指向的 RX 上下文结构中的以下成员：
 
-**FileInformationClass**成员设置为**IrpSp-&gt;QueryDirectory. FileInformationClass**。
+**FileInformationClass**成员设置为**IrpSp- &gt; QueryDirectory. FileInformationClass**。
 
 **信息. Buffer**成员设置为 i/o 请求数据包中的用户缓冲区。 如果需要，此缓冲区已被 RDBSS 锁定。
 
-**LengthRemaining**成员设置为**IrpSp-&gt;QueryDirectory**。
+**LengthRemaining**成员设置为**IrpSp &gt; 参数. QueryDirectory**。
 
-**FileIndex**成员设置为**IrpSp&gt;QueryDirectory. FileIndex**。
+**QueryDirectory. FileIndex**成员设置为**IrpSp-QueryDirectory. &gt; FileIndex**。
 
-如果**IrpSp&gt;标志**具有 SL\_RESTART\_扫描位，则将**QueryDirectory**成员设置为非零值。
+如果**QueryDirectory.RestartScan** IrpSp 在上具有 SL ** &gt; ** \_ RESTART \_ 扫描位，则 RestartScan 成员将设置为非零值。
 
-如果**IrpSp&gt;标志**具有 SL\_返回上\_单一\_项位，则将**QueryDirectory**成员设置为非零值。
+如果**QueryDirectory.ReturnSingleEntry** **IrpSp &gt; ** \_ \_ \_ 在上返回单比 bit，则 ReturnSingleEntry 成员将设置为非零值。
 
-如果**IrpSp&gt;标志**的\_索引\_指定的位，则将**QueryDirectory**成员设置为非零值。
+如果** &gt; IrpSp**在上指定了 SL 索引，则**QueryDirectory IndexSpecified**成员将设置为非零值 \_ \_ 。
 
-如果关联 FOBX 的**UnicodeQueryTemplate**成员为**NULL** ，并且 FOBX 的**FLAGS**成员没有 FOBX\_标志\_匹配\_所有位，则将**QueryDirectory**成员设置为非零。
+如果关联的 FOBX 的**UnicodeQueryTemplate**成员为 NULL，并且 FOBX 的**Flags**成员不具有 tialQuery **NULL**中的**QueryDirectory.InitialQuery** \_ \_ 所有位的 FOBX 标志，则将QueryDirectory.Ini此成员设置为非零值 \_ 。
 
-对于通配符查询（"\*。例如\*"，RDBSS 会将关联的 FOBX 的**UnicodeQueryTemplate**成员设置为通过的通配符查询。
+对于通配符查询 ( " \* . \* "，如) ，RDBSS 会将关联的 FOBX 的 **UnicodeQueryTemplate** 成员设置为通过的通配符查询。
 
-如果 RX\_上下文结构的**PostRequest**成员在从*MRxQueryDirectory*返回时为**TRUE** ，则 RDBSS 将调用[**RxFsdPostRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/rxprocs/nf-rxprocs-rxfsdpostrequest)将 RX\_上下文结构传递到辅助队列，以供文件系统进程（FSP）处理。
+如果 RX 上下文结构的**PostRequest**成员 \_ 在从*MRxQueryDirectory*返回时为**TRUE** ，则 RDBSS 将调用[**RxFsdPostRequest**](/windows-hardware/drivers/ddi/rxprocs/nf-rxprocs-rxfsdpostrequest)将 RX \_ 上下文结构传递到辅助队列，以供文件系统进程 (FSP) 进行处理。
 
 <a name="requirements"></a>要求
 ------------
@@ -131,11 +131,11 @@ NTSTATUS MRxQueryDirectory(
 <tbody>
 <tr class="odd">
 <td align="left"><p>目标平台</p></td>
-<td align="left">桌面设备</td>
+<td align="left">桌面型</td>
 </tr>
 <tr class="even">
 <td align="left"><p>标头</p></td>
-<td align="left">Mrx （包括 Mrx）</td>
+<td align="left">Mrx (包含 Mrx) </td>
 </tr>
 </tbody>
 </table>
@@ -143,7 +143,7 @@ NTSTATUS MRxQueryDirectory(
 ## <a name="see-also"></a>另请参阅
 
 
-[**MRxIsValidDirectory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_chkdir_calldown)
+[**MRxIsValidDirectory**](/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_chkdir_calldown)
 
 [**MRxQueryEaInfo**](mrxqueryeainfo.md)
 
@@ -167,14 +167,7 @@ NTSTATUS MRxQueryDirectory(
 
 [**MRxSetVolumeInfo**](mrxsetvolumeinfo.md)
 
-[**RxFsdPostRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/rxprocs/nf-rxprocs-rxfsdpostrequest)
+[**RxFsdPostRequest**](/windows-hardware/drivers/ddi/rxprocs/nf-rxprocs-rxfsdpostrequest)
 
  
-
- 
-
-
-
-
-
 

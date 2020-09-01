@@ -6,16 +6,16 @@ keywords:
 - GDI WDK Windows 2000 显示，呈现引擎
 - 图形驱动程序 WDK Windows 2000 显示，呈现引擎
 - 绘制 WDK GDI，呈现引擎
-- 呈现引擎 WDK GDI
+- 渲染引擎 WDK GDI
 - PDEV WDK GDI
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 507c77f87ddd0e2852d1647ba0b1d0355b550ea6
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: e6fc967c97d4018a11659f407e487ba0711d9974
+ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67375799"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89065850"
 ---
 # <a name="gdi-as-a-rendering-engine"></a>用作渲染引擎的 GDI
 
@@ -23,15 +23,9 @@ ms.locfileid: "67375799"
 ## <span id="ddk_gdi_as_a_rendering_engine_gg"></span><span id="DDK_GDI_AS_A_RENDERING_ENGINE_GG"></span>
 
 
-对于呈现操作，该驱动程序必须首先启用*面*每个*PDEV*已启用的结构。 PDEV 是物理设备的逻辑表示形式。 如果硬件可设置为标准格式 GDI 位图，GDI 可以用于执行部分或全部绘制到的位图图面。 此外可以处理 GDI 高级[半色调](gdi-halftoning-capabilities.md)。
+对于呈现操作，驱动程序必须首先为启用的每个*PDEV*结构启用一个*表面*。 PDEV 是物理设备的逻辑表示形式。 如果可以将硬件设置为 GDI 标准格式的位图，则可以使用 GDI 将部分或全部绘图用于位图图面。 GDI 还可以处理高级 [半色调](gdi-halftoning-capabilities.md)。
 
-有关启用信息*PDEVs*和图面，是指[ **DrvEnablePDEV** ](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvenablepdev)并[ **DrvEnableSurface**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvenablesurface)函数。
-
- 
+有关启用 *PDEVs* 和表面的信息，请参阅 [**DrvEnablePDEV**](/windows/desktop/api/winddi/nf-winddi-drvenablepdev) 和 [**DrvEnableSurface**](/windows/desktop/api/winddi/nf-winddi-drvenablesurface) 函数。
 
  
-
-
-
-
 

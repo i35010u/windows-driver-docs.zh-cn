@@ -3,19 +3,19 @@ title: 处理 COPP 设备丢失
 description: 处理 COPP 设备丢失
 ms.assetid: 7e74b249-34be-44cc-a022-ba6574f2f841
 keywords:
-- 复制保护 WDK COPP，丢失的设备
-- 视频复制保护 WDK COPP，丢失的设备
-- COPP WDK DirectX va，因此丢失的设备
-- 受保护视频 WDK COPP，丢失的设备
+- 复制保护 WDK COPP，设备丢失
+- 视频复制保护 WDK COPP，设备丢失
+- COPP WDK DirectX VA，设备丢失
+- 受保护的视频 WDK COPP，设备丢失
 - 丢失的 COPP 设备 WDK DirectX VA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: eccd54f38b813751c2438c4a25a97ba94ab172de
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 817eb16947f818eb56c93011407f7bed43029345
+ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67369839"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89065610"
 ---
 # <a name="handling-the-loss-of-a-copp-device"></a>处理 COPP 设备丢失
 
@@ -23,35 +23,29 @@ ms.locfileid: "67369839"
 ## <span id="ddk_handling_the_loss_of_a_copp_device_gg"></span><span id="DDK_HANDLING_THE_LOSS_OF_A_COPP_DEVICE_GG"></span>
 
 
-**本部分仅适用于 Windows Server 2003 SP1 和更高版本，和 Windows XP SP2 及更高版本。**
+**本部分仅适用于 Windows Server 2003 SP1 及更高版本以及 Windows XP SP2 及更高版本。**
 
-设置为受保护模式的视频会话必须处理导致 DirectX VA COPP 设备与视频会话相关联的析构的方案。 以下方案启动显示器驱动程序调用[ *DdMoCompDestroy* ](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_mocompcb_destroy)回调函数时可能是视频会话认证的输出连接器上的内容保护已启用：
+设置为 "保护模式" 的视频会话必须处理导致 DirectX VA COPP 设备（与视频会话相关）的破坏的情况。 以下方案启动对显示驱动程序的 [*DdMoCompDestroy*](/windows/desktop/api/ddrawint/nc-ddrawint-pdd_mocompcb_destroy) 回调函数的调用，同时可能会启用视频会话的经过认证的输出连接器上的内容保护：
 
 -   更改显示模式
 
--   附加或分离从 Windows 桌面监视器
+-   从 Windows 桌面附加或分离监视器
 
--   输入的全屏命令提示符窗口
+-   输入全屏 "命令提示符" 窗口
 
--   启动任何 DirectDraw 或 Direct3D 的排他模式应用程序
+-   启动任何 DirectDraw 或 Direct3D 专用模式应用程序
 
 -   执行快速用户切换
 
 -   锁定工作站或按 CTRL + ALT + DELETE
 
--   通过使用远程桌面连接到工作站附加
+-   使用远程桌面连接连接到工作站
 
--   进入节能模式-例如，挂起或休眠状态
+-   进入节能模式-例如，"挂起" 或 "休眠"
 
--   应用程序意外终止-例如，通过页面错误
+-   意外终止应用程序--例如，通过页错误
 
-如果在前面的方案之一时发生输出内容保护为视频会话启用之后，显示驱动程序*DdMoCompDestroy*函数应启动微型端口驱动程序的调用[ *COPPCloseVideoSession* ](https://docs.microsoft.com/windows-hardware/drivers/display/coppclosevideosession)函数以减少 COPP 设备的当前本地保护级别计数将全局保护级别计数。 然后，微型端口驱动程序应检查修改后的全局保护级别，并调整相应地应用于输出连接器的保护级别。
-
- 
+如果在启用视频会话的 "输出内容保护" 时出现上述情况之一，则显示驱动程序的 *DdMoCompDestroy* 函数应启动对视频微型端口驱动程序的 [*COPPCloseVideoSession*](./coppclosevideosession.md) 函数的调用，以根据 COPP 设备的当前本地保护级别计数来减小全局保护级别计数。 然后，视频微型端口驱动程序应检查修改后的全局保护级别，并相应地调整应用到输出连接器的保护级别。
 
  
-
-
-
-
 

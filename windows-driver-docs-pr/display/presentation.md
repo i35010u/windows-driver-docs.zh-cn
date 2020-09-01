@@ -3,20 +3,20 @@ title: 呈现
 description: 呈现
 ms.assetid: 23a01b5b-0654-4c43-ac96-a75810fa20df
 keywords:
-- DirectX 8.0 发行说明 WDK Windows 2000 显示、 演示文稿
-- 演示文稿 WDK DirectX 8.0
-- 呈现结果可见 WDK DirectX 8.0
-- 可见结果 WDK DirectX 8.0
+- DirectX 8.0 发行说明 WDK Windows 2000 显示，演示
+- 演示文稿 WDK DirectX 8。0
+- 呈现结果可见 WDK DirectX 8。0
+- 可见结果 WDK DirectX 8。0
 - DDLT_PRESENTATION
 - DDBLT_LAST_PRESENTATION
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 563fabb561e7ee9f1048f7c6044542446f32a53d
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 338b0a96e0e1f35f20d829ca1c41e60085b7cb29
+ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67369281"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89066450"
 ---
 # <a name="presentation"></a>呈现
 
@@ -24,21 +24,15 @@ ms.locfileid: "67369281"
 ## <span id="ddk_presentation_gg"></span><span id="DDK_PRESENTATION_GG"></span>
 
 
-DirectX 8.0 规范"演示文稿"（或进行呈现对用户可见的结果） 的概念在 API 中。 以前，这被完成在全屏幕模式下翻页，或在窗口模式下的平面闪。 应用程序使用的新**存在**API 来执行 full 屏幕翻转或开窗模式平面闪。 但是，此机制是尚未公开 DDI 级别。 运行时只需将映射**存在**API 为[ *DdFlip* ](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_surfcb_flip)或者[ *DdBlt* ](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_surfcb_blt) DDI 条目具体取决于应用程序模式的点。
+DirectX 8.0 将 "演示" (的概念正规化，或使用户在 API 中) 可见。 以前，此操作是通过在全屏幕模式下进行页面翻转或按窗口模式 blitting 来完成的。 应用程序使用新的 **现有** API 来执行全屏翻转或窗口模式 blitting。 但是，此机制尚未在 DDI 级别公开。 运行时只需将 **当前** API 映射到 [*DdFlip*](/windows/desktop/api/ddrawint/nc-ddrawint-pdd_surfcb_flip) 或 [*DdBlt*](/windows/desktop/api/ddrawint/nc-ddrawint-pdd_surfcb_blt) DDI 入口点，具体取决于应用程序模式。
 
-DirectX 8.0 已添加的作为传递给驱动程序的通知时 blt 操作实际上是两个新 DirectDraw blt 标志的一部分**存在**，并因此将标记框架边界。 这些新标志才有 DDBLT\_演示文稿和 DDBLT\_最后一个\_演示文稿。 需要两个标志是因为剪辑可能会导致单个**存在**调用调用驱动程序中的多个 blt 操作。 在此情况下，所有调用为 blts**存在**操作具有 DDBLT\_演示文稿标志设置。 但是，用于执行仅序列的最后一个 blt**存在**具有 DDBLT\_最后一个\_演示文稿位集。 因此，如果 blt 用于实现**存在**调用时，该驱动程序会看到与 DDBLT 的零个或多个 blts\_演示文稿设置与这两个 DDLT 恰好一个 blt 后跟位\_演示文稿和 DDBLT\_最后一个\_演示文稿的位组。 应用程序永远不会设置这些标志。 只有运行时被允许传递到 blt 的这些标志。 此外，这些标志仅传递给驱动程序支持 DirectX 8.0 DDI 中。
+DirectX 8.0 添加了两个新的 DirectDraw blt 标志，这些标志将作为通知出现在 blt 操作实际上是 **存在** 的一部分，因此会标记帧边界。 这些新标志是 DDBLT \_ 演示文稿和 DDBLT \_ 上一次 \_ 演示。 需要两个标志，因为剪辑可能会导致在驱动程序中调用多个 blt 操作的单个 **现有** 调用。 在这种情况下，由于 **当前** 操作而调用的所有 blts 都 \_ 将设置 DDBLT 表示标志。 但是，只有用于执行 **现有** 序列的最终 blt 才会 \_ 设置 DDBLT 上一次 \_ 显示位。 因此，如果使用 blt 实现了一个 **当前** 调用，则驱动程序会看到零个或多个 blts，并在其中 \_ 刚好有一个 blt 同时设置了 DDLT \_ 表示和 DDBLT \_ 最后一个 \_ 表示位。 应用程序永远不会设置这些标志。 仅允许运行时将这些标志传递到 blt。 此外，这些标志仅传递到支持 DirectX 8.0 DDI 的驱动程序。
 
-该驱动程序只允许队列最多三个框架。 如果驱动程序发现与 DDBLT blt 调用\_演示文稿集和它已有三个 DDBLT\_上次\_演示文稿 blts 排队它时不能与 DDERR 调用\_WASSTILLDRAWING。 运行时重试直到具有足够清空队列。
+该驱动程序只允许排队最多三个帧。 如果驱动程序发现 blt 调用带有 DDBLT \_ 演示集，并且它已经有三个 DDBLT， \_ 最后一个 \_ 表示 blts 排队，则必须通过 DDERR WASSTILLDRAWING 使调用失败 \_ 。 运行时将重试，直到队列充分耗尽。
 
-如果该驱动程序不能有效地确定何时 DDBLT\_最后一个\_队列中的演示文稿 blt 已停用，则该驱动程序必须不队列帧根本。 DDBLT\_上次\_演示文稿是否会导致此类驱动程序，以返回 DDERR\_WASSTILLDRAWING 快捷键直到全部完成，就像应用程序已调用完全**锁**上源之前调用的图面**Blt**。
+如果驱动程序无法有效地确定 \_ 队列中 DDBLT 最后一次 blt 的时间 \_ 已停用，则驱动程序必须根本不会对帧进行排队。 DDBLT \_ 最后一次 \_ 演示应该导致此类驱动程序返回 DDERR \_ WASSTILLDRAWING，直到快捷键完全完成，就像在调用**Blt**之前，应用程序已在源图面上调用**锁**。
 
-最后，对于多个窗口的应用程序同时运行，驱动程序应计算基于源的每个 blt，而不是主要的演示文稿 blts，即允许驱动程序进行排队三个帧 / 窗口/呈现器目标。 这会导致更好的性能。
-
- 
+最后，对于同时运行的多个开窗应用程序，驱动程序应基于每个 blt 的源（而不是主应用程序）对 blts 进行计数，也就是说，允许驱动程序将每个窗口/呈现器目标的三个帧排队。 这将提高性能。
 
  
-
-
-
-
 

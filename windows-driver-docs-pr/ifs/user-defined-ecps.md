@@ -4,22 +4,17 @@ description: 用户定义的 ECP
 ms.assetid: 8589259b-2b21-44f1-bf69-c6792ee5541f
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cd0b33855e553bcd8c75f12b758e0ae3bdc3e4f4
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 49b136505bd94da8ec1aabce5dd17eaef75e43fc
+ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67380307"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89065916"
 ---
 # <a name="user-defined-ecps"></a>用户定义的 ECP
 
 
-若要定义自己 ECP，定义用于标识你 ECP 和描述你 ECP 的上下文结构的 GUID。 有关如何定义 Guid 并使用这些驱动程序代码中的信息，请参阅[驱动程序中使用 Guid](https://docs.microsoft.com/windows-hardware/drivers/kernel/using-guids-in-drivers)。
+若要定义自己的 ECP，请定义一个 GUID 来标识 ECP，并定义描述 ECP 的上下文结构。 有关如何在驱动程序代码中定义 Guid 和使用它们的信息，请参阅在 [驱动程序中使用 guid](../kernel/using-guids-in-drivers.md)。
 
  
-
- 
-
-
-
 

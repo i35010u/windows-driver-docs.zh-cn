@@ -4,29 +4,29 @@ description: 本主题介绍防病毒产品在 Windows 容器中运行时可使�
 ms.assetid: 101BC08B-EE63-4468-8B12-C8C8B0E99FC5
 ms.date: 03/06/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: cb32050e0171207446f461cdbf31d24d1c0d8092
-ms.sourcegitcommit: 5e5f3491e29f99b11a12b45da870043e0e92ddc5
+ms.openlocfilehash: bce8bc15fae2580dea1a1b27c7934bbe7bf8b66b
+ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86949031"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89065410"
 ---
 # <a name="anti-virus-optimization-for-windows-containers"></a>用于 Windows 容器的防病毒优化
 
 **此页上的信息适用于：**
 - Windows 10 版本1607及更高版本
 - Windows Server 2016 及更高版本
-- 主机上运行的防病毒（AV）产品
+- 在主机上运行的防病毒 (AV) 产品
 
 本主题介绍 AV 产品可用于避免对 Windows 容器文件的冗余扫描，并帮助改进容器启动时间的优化。
 
 ## <a name="container-overview"></a>容器概述
 
-Windows 容器功能旨在简化应用程序的分发和部署。 有关详细信息，请参阅[Windows 容器](https://docs.microsoft.com/virtualization/windowscontainers/about/about_overview)简介。
+Windows 容器功能旨在简化应用程序的分发和部署。 有关详细信息，请参阅 [Windows 容器](/virtualization/windowscontainers/about/about_overview)简介。
 
 从任意数量的包层构造容器。 Windows 基本操作系统包构成第一层。
 
-每个容器都有一个独立的卷，它表示该容器的系统卷。 容器隔离筛选器（*wcifs.sys*）可将包层的虚拟覆盖到此容器卷上。 使用占位符（重新分析点）实现覆盖。 该卷在容器第一次访问 overlain 路径之前带有占位符。 占位符文件的读取被定向到后备包文件。 通过这种方式，多个容器卷可以访问相同的基础包文件数据流。
+每个容器都有一个独立的卷，它表示该容器的系统卷。 容器隔离筛选器 (*wcifs.sys*) 可将包层的虚拟覆盖置于此容器卷上。 使用占位符 (重新分析点) 来实现覆盖。 该卷在容器第一次访问 overlain 路径之前带有占位符。 占位符文件的读取被定向到后备包文件。 通过这种方式，多个容器卷可以访问相同的基础包文件数据流。
 
 如果容器修改文件，隔离筛选器将执行写入时复制，并将占位符替换为包文件的内容。 这会将 "链接" 拆分为该特定容器的包文件。
 
@@ -42,7 +42,7 @@ AV 筛选器确实具有容器系统卷上所有操作的完整视图。 它会�
 
 ## <a name="recommended-approach"></a>推荐的方法
 
-为了避免在容器上进行冗余扫描，建议 AV 产品按如下所述修改其行为。 这取决于 AV 产品，为其客户确定此方法的风险/回报权益。 有关详细信息，请参阅本页底部的**权益和风险**部分。
+为了避免在容器上进行冗余扫描，建议 AV 产品按如下所述修改其行为。 这取决于 AV 产品，为其客户确定此方法的风险/回报权益。 有关详细信息，请参阅本页底部的 **权益和风险** 部分。
 
 ### <a name="1-package-install"></a>1. 包安装
 
@@ -52,30 +52,30 @@ AV 筛选器确实具有容器系统卷上所有操作的完整视图。 它会�
 
 对于容器卷的实时扫描，AVs 应以避免冗余的方式进行扫描。 占位符文件需要特别注意。 容器修改的文件或在容器中创建的新文件不会重定向，因此不需要进行冗余扫描。
 
-为了避免冗余扫描，AV 过滤器首先需要识别这些卷上的容器卷和占位符。 由于各种原因，AV 过滤器无直接的方法来查询卷是否为容器卷，或者给定文件是否为占位符文件。 隔离筛选器出于应用程序兼容性原因隐藏了占位符重新分析点（某些应用程序意识到访问重新分析点时的行为不正确）。 此外，在容器运行时，卷只是容器卷。 容器可能已停止，卷可能仍在重新装入。 相反，在预创建中，AV 筛选器必须查询文件对象，以确定是否在容器的上下文中打开它。 然后，可以将和 ECP 附加到创建，并在创建完成时接收占位符状态。
+为了避免冗余扫描，AV 过滤器首先需要识别这些卷上的容器卷和占位符。 由于各种原因，AV 过滤器无直接的方法来查询卷是否为容器卷，或者给定文件是否为占位符文件。 隔离筛选器出于应用程序兼容性原因隐藏了占位符重新分析点， (某些应用程序在知道它们访问重新分析点) 时，它们的行为不正确。 此外，在容器运行时，卷只是容器卷。 容器可能已停止，卷可能仍在重新装入。 相反，在预创建中，AV 筛选器必须查询文件对象，以确定是否在容器的上下文中打开它。 然后，可以将和 ECP 附加到创建，并在创建完成时接收占位符状态。
 
 AV 产品中需要进行以下更改：
 
-- **在容器卷上预先创建的过程中，将 ECP 附加到将接收占位符信息的创建 CallbackData。** 可以通过使用**IoGetSiloParameters**从 fileobject 中查询接收器参数来识别这些创建。 请注意，筛选器必须在**WCIFS_REDIRECTION_ECP_CONTEXT**结构中指定大小。 如果已确认 ECP，则所有其他字段均设置为 out。
+- **在容器卷上预先创建的过程中，将 ECP 附加到将接收占位符信息的创建 CallbackData。** 可以通过使用 **IoGetSiloParameters**从 fileobject 中查询接收器参数来识别这些创建。 请注意，筛选器必须在 **WCIFS_REDIRECTION_ECP_CONTEXT** 结构中指定大小。 如果已确认 ECP，则所有其他字段均设置为 out。
 
-- **在 "创建后" 中，如果已确认 ECP，请检查 ECP 重定向标志。** 标志将指示是从包层还是从临时根（新文件或已修改的文件）为打开的服务。 标志还会指示包层是否已注册以及它是否为远程。
+- **在 "创建后" 中，如果已确认 ECP，请检查 ECP 重定向标志。** 标志将指示是从包层还是从暂存盘 (新文件或已修改的文件) 进行打开。 标志还会指示包层是否已注册以及它是否为远程。
 
-  - *对于从远程层提供服务的打开*，AV 应跳过扫描文件。 重定向标志表明这一点：`WCIFS_REDIRECTION_FLAGS_CREATE_SERVICED_FROM_LAYER && WCIFS_REDIRECTION_FLAGS_CREATE_SERVICED_FROM_REMOTE_LAYER`
+  - *对于从远程层提供服务的打开*，AV 应跳过扫描文件。 重定向标志表明这一点： `WCIFS_REDIRECTION_FLAGS_CREATE_SERVICED_FROM_LAYER && WCIFS_REDIRECTION_FLAGS_CREATE_SERVICED_FROM_REMOTE_LAYER`
 
     可以假定远程层已在远程主机上进行扫描。 Hyper-v 容器包与托管容器的实用工具 VM 远程。 当实用工具 VM 通过 SMB 环回对这些包进行访问时，它们将在 Hyper-v 主机上正常扫描。
 
     由于 VolumeGUID 和 FileId 不适用于远程，因此将不会设置这些字段。
 
-  - *对于从已注册层提供服务的打开*，AV 应跳过扫描文件。 重定向标志表明这一点：`WCIFS_REDIRECTION_FLAGS_CREATE_SERVICED_FROM_LAYER &&  WCIFS_REDIRECTION_FLAGS_CREATE_SERVICED_FROM_REGISTERED_LAYER`
+  - *对于从已注册层提供服务的打开*，AV 应跳过扫描文件。 重定向标志表明这一点： `WCIFS_REDIRECTION_FLAGS_CREATE_SERVICED_FROM_LAYER &&  WCIFS_REDIRECTION_FLAGS_CREATE_SERVICED_FROM_REGISTERED_LAYER`
 
     包安装期间和签名更新之后，应以异步方式扫描已注册的层。
 
     >[!NOTE]
     > 将来，系统可能不会标识已注册的层。 在这种情况下，必须对本地层文件进行单独标识，如最后一个项目符号中所述。
 
-  - *对于从本地包层提供服务的打开*，AV 应使用所提供的层文件的 VolumeGUID 和 FileId 来确定是否需要扫描该文件。 这可能需要 AV 构建按卷 GUID 和 FileId 索引的扫描文件的缓存。 重定向标志表明这一点：`WCIFS_REDIRECTION_FLAGS_CREATE_SERVICED_FROM_LAYER`
+  - *对于从本地包层提供服务的打开*，AV 应使用所提供的层文件的 VolumeGUID 和 FileId 来确定是否需要扫描该文件。 这可能需要 AV 构建按卷 GUID 和 FileId 索引的扫描文件的缓存。 重定向标志表明这一点： `WCIFS_REDIRECTION_FLAGS_CREATE_SERVICED_FROM_LAYER`
 
-  - *对于暂存位置中的新文件/修改后的文件*，AV 产品应该扫描文件并执行其常规的修正。 重定向标志表明这一点：`WCIFS_REDIRECTION_FLAGS_CREATE_SERVICED_FROM_SCRATCH`
+  - *对于暂存位置中的新文件/修改后的文件*，AV 产品应该扫描文件并执行其常规的修正。 重定向标志表明这一点： `WCIFS_REDIRECTION_FLAGS_CREATE_SERVICED_FROM_SCRATCH`
 
     由于在这种情况下没有层文件，因此将不设置 VolumeGUID 和 FileId。
 
@@ -93,9 +93,9 @@ AV 产品中需要进行以下更改：
 
 为 AV 产品使用这些新的优化时，请考虑以下好处和风险。
 
-### <a name="benefits"></a>优势
+### <a name="benefits"></a>优点
 
-- 不影响容器的开始或执行时间（即使是第一个容器）。
+- 即使第一个容器) ，也不会影响容器的开始或执行时间 (。
 - 避免在多个容器中扫描相同的内容。
 - 适用于 Windows Server 容器。 对于 Hyper-v 容器，这适用于包，但需要额外的工作来运行容器。
 

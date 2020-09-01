@@ -1,6 +1,6 @@
 ---
 title: FSCTL_GET_BOOT_AREA_INFO 控制代码
-description: FSCTL\_获取\_BOOT\_区域\_信息控制代码检索卷的启动扇区的位置。
+description: FSCTL \_ 获取 \_ 启动 \_ 区域 \_ 信息控制代码检索卷的启动扇区的位置。
 ms.assetid: 0e842609-65f9-4a61-ab7f-f525650dfd14
 keywords:
 - FSCTL_GET_BOOT_AREA_INFO 控制代码可安装的文件系统驱动程序
@@ -14,41 +14,41 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: eb2be7ba2e923b6c8f09ada2c44b8fa1bbd0e5c4
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: e5b3156fe342a4240c953fd6392dcaee8ac470b3
+ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72841313"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89065592"
 ---
-# <a name="fsctl_get_boot_area_info-control-code"></a>FSCTL\_获取\_BOOT\_区域\_信息控制代码
+# <a name="fsctl_get_boot_area_info-control-code"></a>FSCTL \_ 获取 \_ 启动 \_ 区域 \_ 信息控制代码
 
 
-**FSCTL\_获取\_boot\_区域\_信息**控制代码检索卷的启动扇区的位置。
+**FSCTL \_ 获取 \_ 启动 \_ 区域 \_ 信息**控制代码检索卷的启动扇区的位置。
 
-若要执行此操作，请调用具有以下参数的[**FltFsControlFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltfscontrolfile)函数或[**ZwFsControlFile**](https://msdn.microsoft.com/library/windows/hardware/ff566462)函数。
+若要执行此操作，请调用具有以下参数的 [**FltFsControlFile**](/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltfscontrolfile) 函数或 [**ZwFsControlFile**](/previous-versions/ff566462(v=vs.85)) 函数。
 
 **参数**
 
 <a href="" id="fileobject"></a>*FileObject*  
-仅[**FltFsControlFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltfscontrolfile) 。 FSCTL\_获取的卷的文件对象指针 **\_BOOT\_区域\_信息**将检索启动信息。 此参数是必需的，不能为**NULL**。
+仅[**FltFsControlFile**](/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltfscontrolfile) 。 **FSCTL \_ 获取 \_ 启动 \_ 区域 \_ 信息**的卷的文件对象指针将检索启动信息。 此参数是必需的，不能为 **NULL**。
 
 <a href="" id="filehandle"></a>*FileHandle*  
-仅[**ZwFsControlFile**](https://msdn.microsoft.com/library/windows/hardware/ff566462) 。 **FSCTL\_获取\_boot\_区域\_信息**的卷的文件句柄将检索启动信息。 此参数是必需的，不能为**NULL**。
+仅[**ZwFsControlFile**](/previous-versions/ff566462(v=vs.85)) 。 卷的文件句柄， **FSCTL \_ 获取 \_ 启动 \_ 区域 \_ 信息** 将检索启动信息。 此参数是必需的，不能为 **NULL**。
 
-必须使用 SE\_管理\_卷\_名称访问权限打开此句柄。 有关详细信息，请参阅[文件安全性和访问权限](https://docs.microsoft.com/windows/desktop/FileIO/file-security-and-access-rights)。
+必须使用 SE \_ 管理 \_ 卷 \_ 名访问权限打开此句柄。 有关详细信息，请参阅 [文件安全性和访问权限](/windows/desktop/FileIO/file-security-and-access-rights)。
 
 <a href="" id="fscontrolcode"></a>*FsControlCode*  
-操作的控制代码。 使用**FSCTL\_获取此操作的\_BOOT\_区域\_信息**。
+操作的控制代码。 使用 **FSCTL 获取此操作的 \_ \_ 启动 \_ 区域 \_ 信息** 。
 
 <a href="" id="inputbuffer"></a>*InputBuffer*  
-不与此操作一起使用。 设置为**NULL**。
+不与此操作一起使用。 设置为 **NULL**。
 
 <a href="" id="inputbufferlength"></a>*InputBufferLength*  
 不与此操作一起使用。 设置为零。
 
 <a href="" id="outputbuffer"></a>*OutputBuffer*  
-指向[**启动\_区域的指针\_INFO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_boot_area_info)结构，它接收卷的启动扇区的位置。
+指向 [**启动 \_ 区域 \_ 信息**](/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_boot_area_info) 结构的指针，该结构接收卷的启动扇区的位置。
 
 <a href="" id="outputbufferlength"></a>*OutputBufferLength*  
 输出缓冲区的大小（以字节为单位）。
@@ -56,7 +56,7 @@ ms.locfileid: "72841313"
 <a name="status-block"></a>状态块
 ------------
 
-[**FltFsControlFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltfscontrolfile)或[**ZwFsControlFile**](https://msdn.microsoft.com/library/windows/hardware/ff566462)返回相应的 NTSTATUS 值，如下所示：
+[**FltFsControlFile**](/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltfscontrolfile) 或 [**ZwFsControlFile**](/previous-versions/ff566462(v=vs.85)) 返回相应的 NTSTATUS 值，如下所示：
 
 <table>
 <colgroup>
@@ -65,14 +65,14 @@ ms.locfileid: "72841313"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">条款</th>
+<th align="left">术语</th>
 <th align="left">说明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left"><p><strong>STATUS_SUCCESS</strong></p></td>
-<td align="left"><p>操作成功。 OutputBuffer 包含指向<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_boot_area_info" data-raw-source="[&lt;strong&gt;BOOT_AREA_INFO&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_boot_area_info)"><strong>BOOT_AREA_INFO</strong></a>结构的指针。</p></td>
+<td align="left"><p>操作成功。 OutputBuffer 包含指向 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_boot_area_info" data-raw-source="[&lt;strong&gt;BOOT_AREA_INFO&lt;/strong&gt;](/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_boot_area_info)"><strong>BOOT_AREA_INFO</strong></a> 结构的指针。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>STATUS_INVALID_PARAMETER</strong></p></td>
@@ -84,7 +84,7 @@ ms.locfileid: "72841313"
 </tr>
 <tr class="even">
 <td align="left"><p><strong>STATUS_ACCESS_DENIED</strong></p></td>
-<td align="left"><p>用户不具有 SE_MANAGE_VOLUME 访问权限。</p></td>
+<td align="left"><p>用户没有 SE_MANAGE_VOLUME 的访问权限。</p></td>
 </tr>
 </tbody>
 </table>
@@ -94,7 +94,7 @@ ms.locfileid: "72841313"
 <a name="remarks"></a>备注
 -------
 
-**FSCTL\_获取\_BOOT\_区域\_信息**控制代码可在 FastFAT 和 exFAT 设备上使用。 此功能支持为闪存驱动器等设备使用 BitLocker。
+**FSCTL \_可以在 FastFAT 和 exFAT 设备上使用 "获取 \_ 启动 \_ 区域 \_ 信息** " 控制代码。 此功能支持为闪存驱动器等设备使用 BitLocker。
 
 <a name="requirements"></a>要求
 ------------
@@ -119,14 +119,7 @@ ms.locfileid: "72841313"
 ## <a name="see-also"></a>另请参阅
 
 
-[**DeviceIoControl**](https://docs.microsoft.com/windows/desktop/api/ioapiset/nf-ioapiset-deviceiocontrol)
+[**DeviceIoControl**](/windows/desktop/api/ioapiset/nf-ioapiset-deviceiocontrol)
 
  
-
- 
-
-
-
-
-
 

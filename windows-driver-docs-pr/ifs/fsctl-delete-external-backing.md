@@ -1,6 +1,6 @@
 ---
 title: FSCTL_DELETE_EXTERNAL_BACKING 控制代码
-description: FSCTL\_DELETE\_外部\_后备控制代码删除文件与外部支持提供商（包括 Windows 映像格式（WIM）提供程序或压缩文件提供程序）的关联。
+description: FSCTL \_ 删除 \_ 外部 \_ 后备控制代码会删除文件与外部支持提供程序的关联，包括 Windows 映像格式 (WIM) 提供程序或压缩文件提供程序。
 ms.assetid: 5C150899-6BCA-49EB-AEEB-0CBEC7BE60BA
 keywords:
 - FSCTL_DELETE_EXTERNAL_BACKING 控制代码可安装的文件系统驱动程序
@@ -14,50 +14,50 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6a2072c3a3efd9ecf93f418a4e49bfc2caee5956
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: bc899d471d281f6f9ab32a656f8038464cbd3171
+ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72841324"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89065288"
 ---
-# <a name="fsctl_delete_external_backing-control-code"></a>FSCTL\_删除\_外部\_后备控制代码
+# <a name="fsctl_delete_external_backing-control-code"></a>FSCTL \_ 删除 \_ 外部 \_ 后备控制代码
 
 
-**FSCTL\_DELETE\_外部\_后备**控制代码删除文件与外部支持提供商（包括 Windows 映像格式（WIM）提供程序或压缩文件提供程序）的关联。 作为此操作的结果，将读取、解压缩并写入到文件中的已备份文件的全部内容。
+**FSCTL \_ 删除 \_ 外部 \_ 后备**控制代码会删除文件与外部支持提供程序的关联，包括 Windows 映像格式 (WIM) 提供程序或压缩文件提供程序。 作为此操作的结果，将读取、解压缩并写入到文件中的已备份文件的全部内容。
 
-若要执行此操作，请调用具有以下参数的[**FltFsControlFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltfscontrolfile)或[**ZwFsControlFile**](https://msdn.microsoft.com/library/windows/hardware/ff566462) 。
+若要执行此操作，请调用具有以下参数的 [**FltFsControlFile**](/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltfscontrolfile) 或 [**ZwFsControlFile**](/previous-versions/ff566462(v=vs.85)) 。
 
-**Parameters**
+**参数**
 
 <a href="" id="instance--in-"></a>*实例 \[\]*  
-仅[**FltFsControlFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltfscontrolfile) 。 调用方的不透明实例指针。 此参数是必需的，不能为 NULL。
+仅[**FltFsControlFile**](/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltfscontrolfile) 。 调用方的不透明实例指针。 此参数是必需的，不能为 NULL。
 
-<a href="" id="fileobject--in-"></a>*FileObject \[\]*  
-仅[**FltFsControlFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltfscontrolfile) 。 要为其删除后备关联的文件的文件指针对象。 此参数是必需的，不能为 NULL。
+<a href="" id="fileobject--in-"></a>*FileObject \[ in\]*  
+仅[**FltFsControlFile**](/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltfscontrolfile) 。 要为其删除后备关联的文件的文件指针对象。 此参数是必需的，不能为 NULL。
 
-<a href="" id="filehandle--in-"></a> *\]中的 FileHandle \[*  
-仅[**ZwFsControlFile**](https://msdn.microsoft.com/library/windows/hardware/ff566462) 。 要为其删除后备关联的文件的句柄。 此参数是必需的，不能为 NULL。
+<a href="" id="filehandle--in-"></a>*FileHandle \[\]*  
+仅[**ZwFsControlFile**](/previous-versions/ff566462(v=vs.85)) 。 要为其删除后备关联的文件的句柄。 此参数是必需的，不能为 NULL。
 
-<a href="" id="fscontrolcode--in-"></a> *\]中的 FsControlCode \[*  
-操作的控制代码。 使用**FSCTL\_删除\_外部\_** 为此操作提供支持。
+<a href="" id="fscontrolcode--in-"></a>*FsControlCode \[\]*  
+操作的控制代码。 使用 **FSCTL 删除此操作的 \_ \_ 外部 \_ 支持** 。
 
 <a href="" id="inputbuffer"></a>*InputBuffer*  
 无。 设置为 NULL。
 
-<a href="" id="inputbufferlength--in-"></a> *\]中的 InputBufferLength \[*  
+<a href="" id="inputbufferlength--in-"></a>*InputBufferLength \[\]*  
 设置为0。
 
-<a href="" id="outputbuffer--out-"></a>*OutputBuffer \[out\]*  
+<a href="" id="outputbuffer--out-"></a>*OutputBuffer \[\]*  
 无。 设置为 NULL。
 
-<a href="" id="outputbufferlength--out-"></a>*OutputBufferLength \[out\]*  
+<a href="" id="outputbufferlength--out-"></a>*OutputBufferLength \[\]*  
 设置为0。
 
 <a name="status-block"></a>状态块
 ------------
 
-如果操作成功，则[**FltFsControlFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltfscontrolfile)或[**ZwFsControlFile**](https://msdn.microsoft.com/library/windows/hardware/ff566462)返回状态\_成功。 否则，相应的函数可能会返回以下 NTSTATUS 值之一。
+如果操作成功，则[**FltFsControlFile**](/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltfscontrolfile)或[**ZwFsControlFile**](/previous-versions/ff566462(v=vs.85))返回状态 \_ SUCCESS。 否则，相应的函数可能会返回以下 NTSTATUS 值之一。
 
 <table>
 <colgroup>
@@ -67,7 +67,7 @@ ms.locfileid: "72841324"
 <thead>
 <tr class="header">
 <th align="left">术语</th>
-<th align="left">描述</th>
+<th align="left">说明</th>
 </tr>
 </thead>
 <tbody>
@@ -108,7 +108,7 @@ ms.locfileid: "72841324"
 </tr>
 <tr class="even">
 <td align="left"><p>标头</p></td>
-<td align="left">Ntifs （包括 Ntifs 或 Fltkernel）</td>
+<td align="left">Ntifs (包含 Ntifs 或 Fltkernel) </td>
 </tr>
 </tbody>
 </table>
@@ -116,18 +116,11 @@ ms.locfileid: "72841324"
 ## <a name="see-also"></a>另请参阅
 
 
-[**FltFsControlFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltfscontrolfile)
+[**FltFsControlFile**](/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltfscontrolfile)
 
-[**ZwFsControlFile**](https://msdn.microsoft.com/library/windows/hardware/ff566462)
+[**ZwFsControlFile**](/previous-versions/ff566462(v=vs.85))
 
-[**FSCTL\_设置\_外部\_后备**](fsctl-set-external-backing.md)
-
- 
+[**FSCTL \_ 设置 \_ 外部 \_ 支持**](fsctl-set-external-backing.md)
 
  
-
-
-
-
-
 

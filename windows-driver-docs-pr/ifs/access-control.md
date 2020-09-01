@@ -10,12 +10,12 @@ keywords:
 - 检查安全性
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f40be2d65b141524f1aed5c567ca0f0d14e8ede8
-ms.sourcegitcommit: df50dc10210c124f2c7fb173d6e4fb796f56e5bd
+ms.openlocfilehash: 83479adf592748087011db9cb15f5fb12f6e0d9e
+ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86949741"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89066256"
 ---
 # <a name="access-control-in-a-driver"></a>驱动程序中的访问控制
 
@@ -23,14 +23,14 @@ ms.locfileid: "86949741"
 
 实现其自己的安全策略的驱动程序可以依赖标准 Windows Api 来帮助管理安全访问。 在这种情况下，驱动程序将管理安全描述符的存储，并负责调用安全引用监视器例程来验证安全性。 其中包括多个例程，如下所示：
 
-- [**SeAccessCheck**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-seaccesscheck)-此例程比较安全描述符和调用方的安全凭据。
+- [**SeAccessCheck**](/windows-hardware/drivers/ddi/wdm/nf-wdm-seaccesscheck)-此例程比较安全描述符和调用方的安全凭据。
 
-- [**SePrivilegeCheck**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-seprivilegecheck)--此例程确定是否为调用方启用了给定的权限。
+- [**SePrivilegeCheck**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-seprivilegecheck)--此例程确定是否为调用方启用了给定的权限。
 
-- [**SeSinglePrivilegeCheck**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-sesingleprivilegecheck)--此例程确定是否为调用方启用了特定权限。
+- [**SeSinglePrivilegeCheck**](/windows-hardware/drivers/ddi/ntddk/nf-ntddk-sesingleprivilegecheck)--此例程确定是否为调用方启用了特定权限。
 
-- [**SeAuditingFileOrGlobalEvents**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-seauditingfileorglobalevents)--此例程指示系统是否已启用审核。
+- [**SeAuditingFileOrGlobalEvents**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-seauditingfileorglobalevents)--此例程指示系统是否已启用审核。
 
-- [**SeOpenObjectAuditAlarm**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-seopenobjectauditalarm)--此例程审核打开对象事件。
+- [**SeOpenObjectAuditAlarm**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-seopenobjectauditalarm)--此例程审核打开对象事件。
 
 此列表不完整，但它描述了许多可在驱动程序中用来执行访问验证的关键功能。

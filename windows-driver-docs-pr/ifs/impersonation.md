@@ -8,12 +8,12 @@ keywords:
 - 模拟 WDK 文件系统
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0e7ec8a6d06b6487c135b49f515eab9afa3226a3
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 013416a8a04af053e38ba084046d2012a8214968
+ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72841207"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89065944"
 ---
 # <a name="impersonation"></a>模拟
 
@@ -25,21 +25,21 @@ ms.locfileid: "72841207"
 
 模拟所需的关键例程包括：
 
--   [**PsImpersonateClient**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-psimpersonateclient) [**SeImpersonateClientEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-seimpersonateclientex)--启动模拟。 除非指示特定的线程，否则将在当前线程上下文中执行模拟。
+-   [**PsImpersonateClient**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-psimpersonateclient) [**SeImpersonateClientEx**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-seimpersonateclientex)--启动模拟。 除非指示特定的线程，否则将在当前线程上下文中执行模拟。
 
 -   **PsRevertToSelf**--在当前线程上下文中终止模拟。
 
--   [**PsReferencePrimaryToken**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-psreferenceprimarytoken)--保留对指定进程的主（进程）令牌的引用。 此函数可用于捕获系统上任何进程的标记。
+-   [**PsReferencePrimaryToken**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-psreferenceprimarytoken)--在主 (进程中保存对指定进程) 标记的引用。 此函数可用于捕获系统上任何进程的标记。
 
--   [**PsDereferencePrimaryToken**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-psdereferenceprimarytoken)--释放对以前引用的主要令牌的引用。
+-   [**PsDereferencePrimaryToken**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-psdereferenceprimarytoken)--释放对以前引用的主要令牌的引用。
 
--   [**SeCreateClientSecurityFromSubjectContext**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-secreateclientsecurityfromsubjectcontext)--返回一个客户端安全上下文，该上下文可用于从主题上下文模拟（例如，在**IRP\_MJ\_创建**处理期间提供给 FSD。
+-   [**SeCreateClientSecurityFromSubjectContext**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-secreateclientsecurityfromsubjectcontext)--返回一个客户端安全上下文，该上下文适用于在 **IRP \_ MJ \_ 创建** 处理期间提供给 FSD 的使用者上下文模拟 (，例如) 。
 
--   [**SeCreateClientSecurity**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-secreateclientsecurity)--基于系统上的现有线程的安全凭据创建客户端安全上下文。
+-   [**SeCreateClientSecurity**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-secreateclientsecurity)--基于系统上的现有线程的安全凭据创建客户端安全上下文。
 
--   **ImpersonateSecurityContext**--模拟 ksecdd （内核安全服务）中的安全上下文。
+-   **ImpersonateSecurityContext**--在内核安全服务 ksecdd.sys 中模拟安全上下文。
 
--   **RevertSecurityContext**--在 ksecdd 中终止模拟，即内核安全服务。
+-   **RevertSecurityContext**--在内核安全服务 ksecdd.sys 中终止模拟。
 
 模拟是实现的直接顺序。 下面的代码示例演示了基本模拟：
 
@@ -115,9 +115,4 @@ NTSTATUS PerformSpecialTask(IN PFSD_CONTEXT Context)
 文件系统开发人员可以使用此模拟代码的许多变体，但这提供了一种基本的方法说明。
 
  
-
- 
-
-
-
 

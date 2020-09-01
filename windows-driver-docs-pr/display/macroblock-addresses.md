@@ -6,12 +6,12 @@ keywords:
 - macroblocks WDK DirectX VA，地址
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3e25691e4dd9255ba11ff8aba10d2f5acbc6bea1
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 9636943ce54aa9850acf577f456d81817ecf5399
+ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72840593"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89065750"
 ---
 # <a name="macroblock-addresses"></a>宏块地址
 
@@ -19,7 +19,7 @@ ms.locfileid: "72840593"
 ## <span id="ddk_macroblock_addresses_gg"></span><span id="DDK_MACROBLOCK_ADDRESSES_GG"></span>
 
 
-宏块地址是图片内宏块的位置（以光栅扫描顺序排列）。 图片中的宏块的水平和垂直位置是使用指定图片的宽度和高度（由**wPicWidthInMBminus1**和**wPicHeightInMBminus1**成员定义）从宏块地址确定的。[**DXVA\_PictureParameters**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_pictureparameters)结构。 下面是宏块地址的一些示例。
+宏块地址是图片内宏块的位置（以光栅扫描顺序排列）。 图片中的宏块的水平和垂直位置是使用图片的指定宽度和高度（由[**DXVA \_ PictureParameters**](/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_pictureparameters)结构的**wPicWidthInMBminus1**和**wPicHeightInMBminus1**成员定义）来确定的。 下面是宏块地址的一些示例。
 
 <table>
 <colgroup>
@@ -35,7 +35,7 @@ ms.locfileid: "72840593"
 <tbody>
 <tr class="odd">
 <td align="left"><p>左上角</p></td>
-<td align="left"><p>无</p></td>
+<td align="left"><p>零</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>右上方</p></td>
@@ -43,11 +43,11 @@ ms.locfileid: "72840593"
 </tr>
 <tr class="odd">
 <td align="left"><p>左下角</p></td>
-<td align="left"><p><strong>wPicHeightInMBminus1</strong> x （<strong>wPicWidthInMBminus1</strong> + 1)</p></td>
+<td align="left"><p><strong>wPicHeightInMBminus1</strong> x (<strong>wPicWidthInMBminus1</strong> + 1)</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>右下</p></td>
-<td align="left"><p>（<strong>wPicHeightInMBminus1</strong> + 1) x （<strong>wPicWidthInMBminus1</strong> + 1) - 1</p></td>
+<td align="left"><p> (<strong>wPicHeightInMBminus1</strong> + 1) x (<strong>wPicWidthInMBminus1</strong> + 1) - 1</p></td>
 </tr>
 </tbody>
 </table>
@@ -55,10 +55,4 @@ ms.locfileid: "72840593"
  
 
  
-
- 
-
-
-
-
 

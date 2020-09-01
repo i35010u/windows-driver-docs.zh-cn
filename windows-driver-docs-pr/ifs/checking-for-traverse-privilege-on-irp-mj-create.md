@@ -4,28 +4,28 @@ description: 检查 IRP_MJ_CREATE 上的遍历特权
 ms.assetid: 9ba743d6-8e78-4f9a-9cb8-cb98f734c290
 keywords:
 - IRP_MJ_CREATE
-- 遍历 WDK 的文件系统权限
-- 安全检查 WDK 的文件系统，IRP_MJ_CREATE
-- WDK 的文件系统权限
-- WDK 的文件系统路径
-- 通用安全检查 WDK 的文件系统
+- 遍历特权 WDK 文件系统
+- 安全检查 WDK 文件系统，IRP_MJ_CREATE
+- 权限 WDK 文件系统
+- 路径 WDK 文件系统
+- 一般安全检查 WDK 文件系统
 - SeChangeNotifyPrivilege
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0a059177cf75eb3c1236b954ae12f6efc3bed262
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 749715617d9f2a75ed04f72e6c095ed8873f8304
+ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67379001"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89065344"
 ---
-# <a name="checking-for-traverse-privilege-on-irpmjcreate"></a>检查遍历特权 IRP\_MJ\_创建
+# <a name="checking-for-traverse-privilege-on-irp_mj_create"></a>检查 IRP \_ MJ CREATE 的遍历特权 \_
 
 
 ## <span id="ddk_checking_for_traverse_privilege_on_irp_mj_create_if"></span><span id="DDK_CHECKING_FOR_TRAVERSE_PRIVILEGE_ON_IRP_MJ_CREATE_IF"></span>
 
 
-主要关心的问题之一[ **IRP\_MJ\_创建**](https://docs.microsoft.com/windows-hardware/drivers/ifs/irp-mj-create)检查是，调用方是否有遍历权限 （调用方没有访问该对象的路径的权限）。 由于大多数调用方有遍历权限，通常在文件系统中完成的第一个检查之一检查遍历权限：
+[**IRP \_ MJ \_ 创建**](./irp-mj-create.md)检查的主要问题之一是调用方是否具有遍历特权 (调用方是否有权访问对象) 的路径。 由于大多数调用方具有遍历权限，因此在文件系统中执行的第一个检查通常是检查遍历特权：
 
 ```cpp
     BOOLEAN traverseCheck = 
@@ -33,7 +33,7 @@ ms.locfileid: "67379001"
             & TOKEN_HAS_TRAVERSE_PRIVILEGE);
 ```
 
-请注意，遍历特权检查依赖于从 I/O 管理器传递到文件系统的状态信息。 此信息取决于调用方是否持有 SeChangeNotifyPrivilege。 如果调用方不持有此特权，必须在每个目录上完成的遍历检查。 在下面的遍历检查的示例是使用通用例程完成，通常用于大多数安全检查：
+请注意，遍历特权检查依赖于从 i/o 管理器传递到文件系统的状态信息。 此信息取决于调用方是否包含 SeChangeNotifyPrivilege。 如果调用方不具有此权限，则必须对每个目录执行遍历检查。 在下面的示例中，遍历检查使用一般例程完成，通常用于大多数安全检查：
 
 {
 
@@ -96,22 +96,17 @@ ms.locfileid: "67379001"
 }
 ```
 
-此函数执行的常规安全检查。 此函数必须应对在此过程中的以下问题：
+此函数执行常规安全检查。 此函数必须处理以下问题：
 
--   它必须指定要用于检查正确的安全描述符。
+-   它必须指定要用于检查的正确的安全描述符。
 
--   应用程序必须通过沿 （这些是执行该操作的实体的凭据） 的安全上下文。
+-   它必须通过安全上下文传递 (这些是执行) 操作的实体的凭据。
 
--   它必须更新基于安全检查的结果的访问状态。
+-   它必须根据安全检查的结果更新访问状态。
 
--   它必须考虑到了最大值\_允许选项 （请参阅 ntifs.h 包括 WDK 包含详细信息的文件）。 最大值\_允许选项指定的文件系统应设置为文件系统允许的最大可能访问权限的访问权限 （读取/写入/删除，例如）。 应用程序很少使用的最大\_允许选项，因为 FASTFAT 文件系统上不支持此选项。 因为最大值\_允许选项位不是一个 FASTFAT 文件系统可以识别访问位，它会拒绝对给定文件的访问请求。 尝试使用最大打开 FASTFAT 卷上的文件的应用程序\_允许选项集找到的请求会失败。 有关详细信息，请参阅**FatCheckFileAccess** Acchksup.c 源文件的 WDK 包含 FASTFAT 示例代码中的函数。
+-   它必须考虑到 "允许的最大值" \_ 选项 (有关详细信息) ，请参阅 WDK 包含的 ntifs 包含文件。 "允许的最大值" \_ 选项指定文件系统应将访问权限设置为文件系统 (读取/写入/删除允许的最大可能访问权限，例如) 。 很少有应用程序使用 "最大 \_ 允许" 选项，因为 FASTFAT 文件系统不支持此选项。 由于允许的最大 \_ 选项位不是 FASTFAT 文件系统识别的访问位之一，因此它将拒绝对给定文件的访问请求。 尝试使用 "允许的最大值" 选项集在 FASTFAT 卷上打开文件的应用程序 \_ 将发现请求失败。 有关详细信息，请参阅 WDK 包含的 FASTFAT 示例代码的 Acchksup 源文件中的 **FatCheckFileAccess** 函数。
 
-请注意，进行简单遍历检查，请求的访问将是文件\_遍历和安全描述符将该目录的调用方尝试遍历时，不从原始 IRP所请求的访问通过\_MJ\_创建 IRP。
-
- 
+请注意，对于简单遍历检查，请求的访问将是文件 \_ 遍历，而安全描述符应是调用方尝试遍历的目录的安全描述符，而不是从原始 IRP \_ MJ CREATE IRP 请求的访问权限 \_ 。
 
  
-
-
-
 

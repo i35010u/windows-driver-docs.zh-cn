@@ -3,18 +3,18 @@ title: 扩展堆限制
 description: 扩展堆限制
 ms.assetid: 4f907768-670a-4ce5-b2d7-7af27baf80da
 keywords:
-- 绘图图面上的扩展的功能 WDK DirectDraw，堆
-- DirectDraw 扩展表面功能 WDK Windows 2000 显示堆
-- 扩展表面功能 WDK DirectDraw 堆
+- 绘制扩展 surface 功能 WDK DirectDraw，堆
+- DirectDraw 扩展 surface 功能 WDK Windows 2000 显示，堆
+- 扩展 surface 功能 WDK DirectDraw，堆
 - 堆 WDK DirectDraw
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 42fb397188771c3b9fa1e73f3b5731180769e25c
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 1a8ad86e71453acd83b9eb6c9fea04ad799d7d64
+ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67381873"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89065634"
 ---
 # <a name="extended-heap-restrictions"></a>扩展堆限制
 
@@ -22,9 +22,9 @@ ms.locfileid: "67381873"
 ## <span id="ddk_extended_heap_restrictions_gg"></span><span id="DDK_EXTENDED_HEAP_RESTRICTIONS_GG"></span>
 
 
-[ **DD\_MORESURFACECAPS** ](https://docs.microsoft.com/windows/desktop/api/ddrawint/ns-ddrawint-_dd_moresurfacecaps)结构是大小可变。 它始终都有**ddsCapsMore**成员，但它可能包含零个或更多**ddsExtendedHeapRestrictions**条目。 如果该驱动程序响应 GUID\_DDMoreSurfaceCaps 查询，它应返回 DD\_MORESURFACECAPS 结构，其中包含任意数量**ddsExtendedHeapRestrictions**返回作为它的项的显示内存在堆[ **DD\_HALINFO** ](https://docs.microsoft.com/windows/desktop/api/ddrawint/ns-ddrawint-_dd_halinfo)结构 (DirectDraw 可保证 GUID\_DDMoreSurfaceCaps 查询发出后的驱动程序报告 DD\_HALINFO。)
+[**DD \_ MORESURFACECAPS**](/windows/desktop/api/ddrawint/ns-ddrawint-_dd_moresurfacecaps)结构的大小是可变的。 它始终具有 **ddsCapsMore** 成员，但它可能有零个或多个 **ddsExtendedHeapRestrictions** 条目。 如果驱动程序响应 GUID \_ DDMoreSurfaceCaps 查询，则它应返回一个 dd \_ MORESURFACECAPS 结构，该结构包含的 **ddsExtendedHeapRestrictions** 条目数量与 [**dd \_ HALINFO**](/windows/desktop/api/ddrawint/ns-ddrawint-_dd_halinfo) 结构中的显示内存堆相同 (DirectDraw 保证在 \_ 驱动程序报告 dd DDMoreSurfaceCaps 后执行 GUID HALINFO 查询 \_ 。 ) 
 
-该驱动程序还应填充在合适**dwSize** DD 中的值\_MORESURFACECAPS 结构。 值**dwSize**以这种方式计算：
+驱动程序还应在 DD MORESURFACECAPS 结构中填写适当的 **dwSize** 值 \_ 。 按以下方式计算 **dwSize** 的值：
 
 ```cpp
 DDMORESURFACECAPS.dwSize = 
@@ -33,15 +33,9 @@ DDMORESURFACECAPS.dwSize =
         * sizeof(DDSCAPSEX)*2 );
 ```
 
-请注意该减去 1 的值从**dwNumHeaps**是所需帐户这一事实， [ **DD\_MORESURFACECAPS** ](https://docs.microsoft.com/windows/desktop/api/ddrawint/ns-ddrawint-_dd_moresurfacecaps)结构具有**ddsExtendedHeapRestrictions**是一个元素的数组的成员。 只有那些后第一个数组元素 (即，从<strong>ddsExtendedHeapRestrictions\[</strong>1<strong>\]</strong>上) 应在计算 DD的总大小计\_MORESURFACECAPS 结构。
+请注意，必须从 **dwNumHeaps** 的值中减去1，才能考虑 [**DD \_ MORESURFACECAPS**](/windows/desktop/api/ddrawint/ns-ddrawint-_dd_moresurfacecaps) 结构具有作为单元素数组的 **ddsExtendedHeapRestrictions** 成员这一事实。 只有第一个 (后面的数组元素（从) 中<strong>的 \[ ddsExtendedHeapRestrictions</strong>1 开始）才能 <strong>\]</strong> 计算 DD MORESURFACECAPS 结构的总大小 \_ 。
 
-**DdsCapsEx**并**ddsCapsExAlt**成员它们完全等同于**ddsCaps**并**ddsCapsAlt** 数组的成员[**VIDEOMEMORY** ](https://docs.microsoft.com/windows/desktop/api/ddrawint/ns-ddrawint-_videomemory)中返回的结构**pvmList**隶属[ **VIDEOMEMORYINFO** ](https://docs.microsoft.com/windows/desktop/api/ddrawint/ns-ddrawint-_videomemoryinfo)结构，它包含的成员作为[ **DD\_HALINFO** ](https://docs.microsoft.com/windows/desktop/api/ddrawint/ns-ddrawint-_dd_halinfo)结构。 在中设置任何位**ddsCapsEx**意味着与该图面，位集不能放置在该堆中。 在中设置任何位**ddsCapsExAlt**成员意味着，不能在图面放在该堆。 首次分配图面，DirectDraw 通过所有堆时，如果发现任何堆中的任何功能位用于**ddsCaps**表面的 DDSCAPS 位 VIDEOMEMORY 结构匹配的成员，它会分配该堆中的图面。 如果此阶段中不找到任何此类堆，则 DirectDraw 使检查但相同的 pass **ddsCapsEx**字段。 如果此阶段中未能找到任何堆，则不能在任何堆中创建在图面。
-
- 
+**DdsCapsEx**和**ddsCapsExAlt**成员与[**VIDEOMEMORY 结构的**](/windows/desktop/api/ddrawint/ns-ddrawint-_videomemoryinfo) **pvmList**成员中返回的[**VIDEOMEMORYINFO**](/windows/desktop/api/ddrawint/ns-ddrawint-_videomemory)结构数组的**ddsCaps**和**ddsCapsAlt**成员完全相似，后者包含为[**DD \_ HALINFO**](/windows/desktop/api/ddrawint/ns-ddrawint-_dd_halinfo)结构的成员。 在 **ddsCapsEx** 中设置的任何位都是指具有该位集的图面不得放置在该堆中。 **DdsCapsExAlt**成员中设置的任何位均表示该曲面不能放置在此堆中。 分配表面时，DirectDraw 首先传递所有堆，如果它找到了 VIDEOMEMORY 结构的 **ddsCaps** 成员中没有功能位与图面的 ddsCaps 位匹配的任何堆，则将在该堆中分配该图面。 如果此传递未找到此类堆，则 DirectDraw 将进行相同的传递，但会检查 **ddsCapsEx** 字段。 如果此传递无法找到任何堆，则无法在任何堆中创建该图面。
 
  
-
-
-
-
 

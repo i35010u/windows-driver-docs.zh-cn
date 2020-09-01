@@ -3,39 +3,33 @@ title: 模式信息与路径信息之间的关系
 description: 模式信息与路径信息之间的关系
 ms.assetid: 214717dd-1c01-4daf-9296-586299668d3a
 keywords:
-- 连接显示 WDK Windows 7 的显示器、 CCD 概念、 模式和路径信息
-- 连接显示 WDK Windows Server 2008 R2 显示、 CCD 概念、 模式和路径的信息
-- 配置显示 WDK Windows 7 的显示器、 CCD 概念、 模式和路径信息
-- 配置显示 WDK Windows Server 2008 R2 显示、 CCD 概念、 模式和路径的信息
-- CCD 概念 WDK Windows 7 显示、 模式和路径信息
-- CCD 概念 WDK Windows Server 2008 R2 显示、 模式和路径信息
+- 连接显示 WDK Windows 7 显示、CCD 概念、模式和路径信息
+- 正在连接显示 WDK Windows Server 2008 R2 显示、CCD 的概念、模式和路径信息
+- 配置显示 WDK Windows 7 显示、CCD 概念、模式和路径信息
+- 配置显示 WDK Windows Server 2008 R2 显示、CCD 概念、模式和路径信息
+- CCD 概念 WDK Windows 7 显示、模式和路径信息
+- CCD 概念 WDK Windows Server 2008 R2 显示、模式和路径信息
 - 模式和路径信息 WDK Windows 7 显示
 - 模式和路径信息 WDK Windows Server 2008 R2 显示
-- WDK Windows 7 显示的路径和模式信息
-- WDK Windows Server 2008 R2 显示的路径和模式信息
+- 路径和模式信息 WDK Windows 7 显示
+- 路径和模式信息 WDK Windows Server 2008 R2 显示
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3618bfce50b5fc39191566b05ba9ea00cdf7527f
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 9ef35542e94124442b74444ba37df2e3b8416b2c
+ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386449"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89064644"
 ---
 # <a name="relationship-of-mode-information-to-path-information"></a>模式信息与路径信息之间的关系
 
 
-本部分仅适用于 Windows 7 及更高版本、 和 Windows Server 2008 R2 和更高版本的 Windows 操作系统。
+本部分仅适用于 Windows 7 和更高版本，以及 windows Server 2008 R2 及更高版本的 Windows 操作系统。
 
-[ **QueryDisplayConfig** ](https://docs.microsoft.com/windows/desktop/api/winuser/nf-winuser-querydisplayconfig) CCD 函数始终返回路径信息和特定显示配置的源和目标模式信息。 下图显示了示例的源和目标模式信息与路径信息的方式。 在此示例中，QDC\_所有\_路径标志传递给*标志*对的调用中的参数**QueryDisplayConfig**。
+[**QueryDisplayConfig**](/windows/desktop/api/winuser/nf-winuser-querydisplayconfig) CCD 函数始终返回特定显示配置的路径信息以及源和目标模式信息。 下图显示了源和目标模式信息如何与路径信息相关的示例。 在此示例中，在 \_ \_ 调用**QUERYDISPLAYCONFIG**时，QDC 所有路径标记传递到*Flags*参数。
 
-![说明的路径信息的模式信息的关系的关系图](images/displayconfigpathandmode.png)
-
- 
+![说明模式信息与路径信息的关系的关系图](images/displayconfigpathandmode.png)
 
  
-
-
-
-
 

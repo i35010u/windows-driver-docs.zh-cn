@@ -3,18 +3,18 @@ title: 创建驱动程序端图面结构
 description: 创建驱动程序端图面结构
 ms.assetid: d5e2e6ee-8853-4a17-b1c6-48c75474b2b7
 keywords:
-- 上下文 WDK Direct3D，驱动程序端图面上结构
-- 驱动程序端面结构 WDK Direct3D
+- 上下文 WDK Direct3D，驱动程序端表面结构
+- 驱动程序端表面结构 WDK Direct3D
 - D3dCreateSurfaceEx
-- WDK DirectDraw，驱动程序端结构的图面
+- 表面 WDK DirectDraw，驱动程序端结构
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b3782f52d3fcca7a1b8cae772791d5ff48ba5a81
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: af957acb08c4d8f6f9097e3f1fa5f21e0c90c647
+ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67370207"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89067334"
 ---
 # <a name="creating-driver-side-surface-structures"></a>创建驱动程序端图面结构
 
@@ -22,21 +22,15 @@ ms.locfileid: "67370207"
 ## <span id="ddk_creating_driver_side_surface_structures_gg"></span><span id="DDK_CREATING_DRIVER_SIDE_SURFACE_STRUCTURES_GG"></span>
 
 
-DirectDraw 运行时调用的驱动程序[ **D3dCreateSurfaceEx** ](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_createsurfaceex)后已调用的入口点[ *DdCreateSurface* ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff549263(v=vs.85))条目点和分配的内存图面。 运行时调用*D3dCreateSurfaceEx*仅对于使用 DDSCAPS 标记这些图面\_纹理、 DDSCAPS\_EXECUTEBUFFER、 DDSCAPS\_3DDEVICE，或 DDSCAPS\_ZBUFFER 标志。
+DirectDraw 运行时在调用了[*DdCreateSurface*](/previous-versions/windows/hardware/drivers/ff549263(v=vs.85))入口点并为其分配的内存后调用驱动程序的[**D3dCreateSurfaceEx**](/windows/desktop/api/ddrawint/nc-ddrawint-pdd_createsurfaceex)入口点。 运行时仅*D3dCreateSurfaceEx*对用 DDSCAPS \_ 纹理、DDSCAPS \_ EXECUTEBUFFER、DDSCAPS \_ 3DDEVICE 或 DDSCAPS \_ ZBUFFER 标志标记的图面调用 D3dCreateSurfaceEx。
 
-然后再调用[ **D3dCreateSurfaceEx**](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_createsurfaceex)，运行时将一个整数值分配为句柄在图面。 此值存储在**dwSurfaceHandle** DDRAWI 成员\_DDSURFACE\_更多结构 (如指向**lpSurfMore** DDRAWI 成员\_DDSURFACE\_LCL 结构)。 请参阅[ **DD\_面\_详细**](https://docs.microsoft.com/windows/desktop/api/ddrawint/ns-ddrawint-_dd_surface_more)并[ **DD\_面\_本地**](https://docs.microsoft.com/windows/desktop/api/ddrawint/ns-ddrawint-_dd_surface_local)，这是别名 DDRAWI\_DDSURFACE\_更和 DDRAWI\_DDSURFACE\_LCL 结构。
+在调用 [**D3dCreateSurfaceEx**](/windows/desktop/api/ddrawint/nc-ddrawint-pdd_createsurfaceex)之前，运行时会将整数值指定为图面的句柄。 此值存储在 DDRAWI DDSURFACE 结构 (的**dwSurfaceHandle**成员中， \_ \_ 由 DDRAWI **lpSurfMore** \_ DDSURFACE LCL 结构) 的 lpSurfMore 成员指向 \_ 。 请参阅 [**dd \_ surface \_ 更多**](/windows/desktop/api/ddrawint/ns-ddrawint-_dd_surface_more) 和 [**dd \_ surface \_ LOCAL**](/windows/desktop/api/ddrawint/ns-ddrawint-_dd_surface_local)，这是 DDRAWI DDSURFACE 的别名 \_ \_ 和 DDRAWI \_ DDSURFACE \_ LCL 结构。
 
-这些整数值 1 开始，并保留越小越好。 （零是有保证的图面上的句柄值无效。）目的是驱动程序可以为其自身结构保留的指针的数组。 一旦收到一个句柄 (时*D3dCreateSurfaceEx*调用)，超过数组末尾，它可以重新分配数组并继续。 Direct3D 运行时没有句柄将值传递给驱动程序之前向驱动程序通过显示该句柄*D3dCreateSurfaceEx*。 但是，该驱动程序应该足够可靠，为句柄值超出范围或已释放句柄表中的槽的引用 (即为其句柄[ *DdDestroySurface* ](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_surfcb_destroysurface)已调用）。 请注意，由于零是有保证的无效值，句柄表中的零个项可以重复使用用于其他目的。 *Perm3*示例驱动程序使用的零个项来存储数组的当前长度。
+这些整数值从1开始，并尽可能小。  (零是为表面控点保证的无效值。 ) 目的在于驱动程序可以将指针数组保存到其自身的结构中。 当 *D3dCreateSurfaceEx* 被称为数组末尾) 之外时，它会 (立即重新分配数组，然后继续。 Direct3D 运行时通过 *D3dCreateSurfaceEx*将句柄显示给驱动程序之前，不会将句柄值传递给驱动程序。 但是，驱动程序应足够强大，以便处理超出范围的值，或引用句柄表中已被释放的 DdDestroySurface 的槽， (是已为其) 调用了[*DdDestroySurface*](/windows/desktop/api/ddrawint/nc-ddrawint-pdd_surfcb_destroysurface)的句柄。 请注意，由于零是一个保证无效的值，因此句柄表中的零项可重复用于其他目的。 *Perm3*示例驱动程序使用零项来存储数组的当前长度。
 
-**请注意**   Microsoft Windows Driver Kit (WDK) 不包含 3Dlabs Permedia3 示例显示器驱动程序 (*Perm3.h*)。 你可以获取从 Windows Server 2003 SP1 驱动程序开发工具包 (DDK)，可以从 DDK-WDHC 网站的 Windows 驱动程序开发工具包页面下载此示例驱动程序。
-
- 
+**注意**   Microsoft Windows 驱动程序工具包 (WDK) 不包含*Perm3*)  (的 3Dlabs Permedia3 示例显示驱动程序。 你可以从 Windows Server 2003 SP1 驱动程序开发工具包获取此示例驱动程序 (DDK) ，你可以从 WDHC 网站的 "Windows 驱动程序开发工具包" 页下载该驱动程序。
 
  
 
  
-
-
-
-
 

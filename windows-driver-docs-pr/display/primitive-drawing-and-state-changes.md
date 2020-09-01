@@ -10,12 +10,12 @@ keywords:
 - D3dDrawPrimitives2
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3a015433ab537a58efd550139dbb1895c94d9851
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 163d677f23685ad9f81df8a765c3a840c6be7f65
+ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72829702"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89066452"
 ---
 # <a name="primitive-drawing-and-state-changes"></a>基元绘制和状态更改
 
@@ -23,7 +23,7 @@ ms.locfileid: "72829702"
 ## <span id="ddk_primitive_drawing_and_state_changes_gg"></span><span id="DDK_PRIMITIVE_DRAWING_AND_STATE_CHANGES_GG"></span>
 
 
-所有 Microsoft Direct3D 图形基元和状态更改都将传递到命令和顶点缓冲区中的[**D3dDrawPrimitives2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dhal/nc-d3dhal-lpd3dhal_drawprimitives2cb)回调。 驱动程序必须分析这些缓冲区并处理所有绘图和状态更改请求。
+所有 Microsoft Direct3D 图形基元和状态更改都将传递到命令和顶点缓冲区中的 [**D3dDrawPrimitives2**](/windows-hardware/drivers/ddi/d3dhal/nc-d3dhal-lpd3dhal_drawprimitives2cb) 回调。 驱动程序必须分析这些缓冲区并处理所有绘图和状态更改请求。
 
 以下部分介绍了命令和顶点缓冲区的布局，并说明了驱动程序应如何处理它们：
 
@@ -36,10 +36,4 @@ ms.locfileid: "72829702"
 [加速状态管理](accelerated-state-management.md)
 
  
-
- 
-
-
-
-
 

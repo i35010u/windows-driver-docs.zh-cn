@@ -6,12 +6,12 @@ keywords:
 - macroblocks WDK DirectX VA，通用命令结构
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fa77e27bb9078f8ead49294ee1177f854522b3e4
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: cd89397e833bd63136de0ce82bf183255b56c3e4
+ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72839694"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89065450"
 ---
 # <a name="first-part-of-macroblock-control-command-structure"></a>宏块控制命令结构的第一部分
 
@@ -29,7 +29,7 @@ ms.locfileid: "72839694"
 <thead>
 <tr class="header">
 <th align="left">成员</th>
-<th align="left">描述</th>
+<th align="left">说明</th>
 </tr>
 </thead>
 <tbody>
@@ -43,9 +43,9 @@ ms.locfileid: "72839694"
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>dwMB_SNL</strong></p></td>
-<td align="left"><p>包含两个字段<em>MBskipsFollowing</em> （在上面的8位中）和<em>MBdataLocation</em> （在较低的24位）。</p>
-<p><em>MBskipsFollowing</em>指定要在当前宏块之后生成的已跳过 macroblocks 的数目。</p>
-<p><em>MBdataLocation</em>是 IDCT 残留差异块数据缓冲区的索引，指示当前宏块的块的剩余差值数据的位置。</p></td>
+<td align="left"><p>包含两个字段， <em>MBskipsFollowing</em> (在) 较低的8位 <em>， (在</em> 低24位) 中的。</p>
+<p><em>MBskipsFollowing</em> 指定要在当前宏块之后生成的已跳过 macroblocks 的数目。</p>
+<p><em>MBdataLocation</em> 是 IDCT 残留差异块数据缓冲区的索引，指示当前宏块的块的剩余差值数据的位置。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>wPatternCode</strong></p></td>
@@ -74,7 +74,7 @@ ms.locfileid: "72839694"
 <tbody>
 <tr class="odd">
 <td align="left"><p>左上角</p></td>
-<td align="left"><p>无</p></td>
+<td align="left"><p>零</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>右上方</p></td>
@@ -82,22 +82,22 @@ ms.locfileid: "72839694"
 </tr>
 <tr class="odd">
 <td align="left"><p>左下角</p></td>
-<td align="left"><p><strong>wPicHeightInMBminus1</strong> x （<strong>wPicWidthInMBminus1</strong>+ 1）</p></td>
+<td align="left"><p><strong>wPicHeightInMBminus1</strong> x (<strong>wPicWidthInMBminus1</strong>+ 1) </p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>右下</p></td>
-<td align="left"><p>（<strong>wPicHeightInMBminus1</strong>+ 1） x （<strong>wPicWidthInMBminus1</strong>+ 1）-1</p></td>
+<td align="left"><p> (<strong>wPicHeightInMBminus1</strong>+ 1) x (<strong>wPicWidthInMBminus1</strong>+ 1) -1</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-**WPicWidthInMBminus1**和**WPicHeightInMBminus1**地址是[**DXVA\_PictureParameters**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_pictureparameters)结构的成员。
+**WPicWidthInMBminus1**和**WPicHeightInMBminus1**地址是[**DXVA \_ PictureParameters**](/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_pictureparameters)结构的成员。
 
 ### <a name="span-idwmbtypespanspan-idwmbtypespanspan-idwmbtypespanwmbtype"></a><span id="wMBtype"></span><span id="wmbtype"></span><span id="WMBTYPE"></span>wMBtype
 
-**WMBtype**结构成员指定正在处理的宏块类型。 此成员包含一组定义 macroblocks 和运动向量处理方式的位。 **BPic4MVallowed**、 **bPicScanMethod**、 **bPicBackwardPrediction**、 **BPicStructure**和**bPicScanFixed**地址是[**DXVA\_PictureParameters**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_pictureparameters)结构的成员。 **BConfigHostInverseScan**地址是[**DXVA\_ConfigPictureDecode**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_configpicturedecode)结构的成员。
+**WMBtype**结构成员指定正在处理的宏块类型。 此成员包含一组定义 macroblocks 和运动向量处理方式的位。 **BPic4MVallowed**、 **bPicScanMethod**、 **bPicBackwardPrediction**、 **bPicStructure**和**bPicScanFixed**地址都是[**DXVA \_ PictureParameters**](/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_pictureparameters)结构的成员。 **BConfigHostInverseScan**地址是[**DXVA \_ ConfigPictureDecode**](/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_configpicturedecode)结构的成员。
 
 <table>
 <colgroup>
@@ -106,15 +106,15 @@ ms.locfileid: "72839694"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">位</th>
-<th align="left">描述</th>
+<th align="left">Bits</th>
+<th align="left">说明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left"><p>15到12</p></td>
-<td align="left"><p>通过<em>MvertFieldSel</em>_0 （第12位） <em>MvertFieldSel_3</em> （位15，最重要）</p>
-<p>为稍后在宏块控件命令中发送的相应运动向量指定垂直字段选择，如下表所示。 对于带有帧图片结构（例如，261和 .H）的基于帧的动画，这些位必须全部为零。 <em>MvertFieldSel_0、MvertFieldSel_1、MvertFieldSel_2</em>和<em>MvertFieldSel_3</em>中的位对应于 mpeg-2 第6.3.17.2 部分中的 motion_vertical_field_select [r] [s] 位。</p></td>
+<td align="left"><p><em>MvertFieldSel_3</em> (位15，) 到 <em>MvertFieldSel</em>_0)  (</p>
+<p>为稍后在宏块控件命令中发送的相应运动向量指定垂直字段选择，如下表所示。 对于带有帧图片结构的基于帧的运动 (例如，对于261和) ，这些位必须均为零。 <em>MvertFieldSel_0、MvertFieldSel_1、MvertFieldSel_2</em>和<em>MvertFieldSel_3</em>中的位对应于 mpeg-2 第6.3.17.2 部分中的 motion_vertical_field_select [r] [s] 位。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>11</p></td>
@@ -123,25 +123,25 @@ ms.locfileid: "72839694"
 <tr class="odd">
 <td align="left"><p>10</p></td>
 <td align="left"><p><em>HostResidDiff</em></p>
-<p>指定是否发送空间域残留差异解码块，或是否为当前宏块的脱离主机 IDCT 发送转换系数。 如果<strong>bConfigResidDiffHost</strong>为零，则必须为零。 如果<strong>bConfigResidDiffAccelerator</strong>为零，则必须为1。</p></td>
+<p>指定是否发送空间域残留差异解码块，或是否为当前宏块的脱离主机 IDCT 发送转换系数。 如果 <strong>bConfigResidDiffHost</strong> 为零，则必须为零。 如果 <strong>bConfigResidDiffAccelerator</strong> 为零，则必须为1。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>9和8</p></td>
 <td align="left"><p><em>MotionType</em></p>
-<p>指定图片中的运动类型。 例如，对于具有帧图片结构的基于帧的动画（如261），位9必须为1，位8必须为零。</p>
-<p>如果在 mpeg-2 位流中存在 MPEG-2 视频标准的6.3.17.1 和表6-17 和6-18，则使用这些位直接对应于使用该<em>frame_motion_type</em>或<em>field_motion_type</em>位。 此表后面会进一步说明这些位的使用情况。</p></td>
+<p>指定图片中的运动类型。 例如，对于带有帧图片结构的基于帧的动画 (如 261) 中，位9必须为1，位8必须为零。</p>
+<p>如果在 mpeg-2 位流中存在 MPEG-2 视频标准的6.3.17.1 和表6-17 和6-18，则使用这些位直接对应于使用该 <em>frame_motion_type</em> 或 <em>field_motion_type</em> 位。 此表后面会进一步说明这些位的使用情况。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>7和6</p></td>
 <td align="left"><p><em>MBscanMethod</em></p>
-<p>指定宏块扫描方法。 如果<strong>bPicScanFixed</strong>为1，则此必须等于<strong>bPicScanMethod</strong> 。 如果<em>HostResidDiff</em>为1，则此变量没有任何意义，并且应将这些位设置为零。</p>
-<p>如果<strong>bConfigHostInverseScan</strong>为零，则<em>MBscanMethod</em>必须是下列值之一：</p>
+<p>指定宏块扫描方法。 如果<strong>bPicScanFixed</strong>为1，则此必须等于<strong>bPicScanMethod</strong> 。 如果 <em>HostResidDiff</em> 为1，则此变量没有任何意义，并且应将这些位设置为零。</p>
+<p>如果 <strong>bConfigHostInverseScan</strong> 为零，则 <em>MBscanMethod</em> 必须是下列值之一：</p>
 <ul>
-<li><p>位6为零，而位7对于中值扫描为零（MPEG-2 图7-2）</p></li>
-<li><p>第6位为1，第7位为零7-3 （用于备用垂直扫描）</p></li>
-<li><p>第6位为零，第7位为1（对于备用水平扫描）（.H 图 i. 第2部分）</p></li>
+<li><p>第6位为零，而位7为零（用于中值扫描） (MPEG-2 图 7-2) </p></li>
+<li><p>第6位为1，第7位为零（对于垂直扫描 7-3 (）为零) </p></li>
+<li><p>第6位为零，第7位为1，适用于备用水平扫描 (.H 图 I. 2 部分 a) </p></li>
 </ul>
-<p>如果<strong>bConfigHostInverseScan</strong>为1，则<em>MBscanMethod</em>必须等于以下值：</p>
+<p>如果 <strong>bConfigHostInverseScan</strong> 为1，则 <em>MBscanMethod</em> 必须等于以下值：</p>
 <ul>
 <li><p>第6位为1，第7位为1，表示具有绝对系数地址的任意扫描。</p></li>
 </ul></td>
@@ -150,12 +150,12 @@ ms.locfileid: "72839694"
 <td align="left"><p>5</p></td>
 <td align="left"><p><em>FieldResidual</em></p>
 <p>指示残留差异块是否使用 MPEG-2 中指定的 IDCT 结构字段。</p>
-<p>如果<strong>bPicStructure</strong>为1或2，则此标志必须为1。 如果 MPEG-2 语法中的<em>frame_pred_frame_DCT</em>标志为1，则在用于 mpeg-2 时，此标志必须为零。 如果宏块存在<em>dct_type</em> ，则此标志在用于 mpeg-2 语法时必须等于 mpeg-2 语法的<em>dct_type</em>元素。</p></td>
+<p>如果 <strong>bPicStructure</strong> 为1或2，则此标志必须为1。 如果 MPEG-2 语法中的 <em>frame_pred_frame_DCT</em> 标志为1，则在用于 mpeg-2 时，此标志必须为零。 如果宏块存在<em>dct_type</em> ，则此标志在用于 mpeg-2 语法时必须等于 mpeg-2 语法的<em>dct_type</em>元素。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>4</p></td>
 <td align="left"><p><em>H261LoopFilter</em></p>
-<p>指定当前宏块预测的261循环筛选器（261的节3.2.3）是否处于活动状态。 261循环筛选器是一种可分离的1/4、1/2、1/4 筛选器，可在水平和垂直方向上应用到261宏块中的所有六个块，只不过其中一个点击会落在块之外的块边缘除外。 在这种情况下，筛选器将更改为具有系数0，1，0。 在二维筛选器进程的输出中保留完全算术精度，并将其舍入到8位整数（向上舍入的半整数或更高值）。</p></td>
+<p>指定261循环筛选器 (节3.2.3 的 261) 对于当前宏块预测是否处于活动状态。 261循环筛选器是一种可分离的1/4、1/2、1/4 筛选器，可在水平和垂直方向上应用到261宏块中的所有六个块，只不过其中一个点击会落在块之外的块边缘除外。 在这种情况下，筛选器将更改为具有系数0，1，0。 在二维筛选器过程的输出中，将保留完全算术精度，并将其舍入到8位整数 (将) 向上舍入的半整数或更高的值。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>3</p></td>
@@ -165,51 +165,51 @@ ms.locfileid: "72839694"
 <tr class="odd">
 <td align="left"><p>2</p></td>
 <td align="left"><p><em>MotionBackward</em></p>
-<p>此变量用于在 MPEG-2 中的相应<em>macroblock_motion_backward</em>参数中指定。 如果 DXVA_PictureParameters 结构的<strong>bPicBackwardPrediction</strong>成员为零，则<em>MotionBackward</em>必须为零。</p></td>
+<p>此变量用于在 MPEG-2 中的相应 <em>macroblock_motion_backward</em> 参数中指定。 如果 DXVA_PictureParameters 结构的 <strong>bPicBackwardPrediction</strong> 成员为零，则 <em>MotionBackward</em> 必须为零。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>1</p></td>
 <td align="left"><p><em>MotionForward</em></p>
-<p>对于 MPEG-2 中的相应<em>macroblock_motion_forward</em> ，将使用此变量。 此表后面的文本中进一步说明了使用此位。</p></td>
+<p>对于 MPEG-2 中的相应 <em>macroblock_motion_forward</em> ，将使用此变量。 此表后面的文本中进一步说明了使用此位。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0</p></td>
 <td align="left"><p><em>IntraMacroblock</em></p>
 <p>指示宏块被编码为内部，并且没有用于当前宏块的运动矢量。</p>
-<p>此变量对应于 MPEG-2 中的<em>macroblock_intra</em>变量。 此表后面的文本中进一步说明了使用此位。</p></td>
+<p>此变量对应于 MPEG-2 中的 <em>macroblock_intra</em> 变量。 此表后面的文本中进一步说明了使用此位。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-如果 macroblocks 是预先编码的，则它们具有关联的运动矢量值。 这些值基于是否将 macroblocks 用于字段编码或框架编码图片而生成。 任何实现都应该正确地考虑每个使用的宏块类型（尤其是对于字段结构化图片或双重主要运动），这一点非常重要。
+如果 macroblocks 是预先编码的，则它们具有关联的运动矢量值。 这些值基于是否将 macroblocks 用于字段编码或框架编码图片而生成。 任何实现都应正确地考虑每个使用的宏块类型 (尤其是对于字段结构化图片或双重质数运动) 。
 
-本部分中的以下两个表说明了*IntraMacroblock*、 *MotionForward*、 *MotionBackward*、 *MotionType*、 *MvertFieldSel*和**MVector**的有效组合。 **MVector**包含运动向量的水平和垂直分量。 其余的变量和标志指定运动矢量运算。 这取决于处理的宏块类型，以及是否将 macroblocks 用于框架编码或字段编码图片。
+本部分中的以下两个表说明了 *IntraMacroblock*、 *MotionForward*、 *MotionBackward*、 *MotionType*、 *MvertFieldSel*和 **MVector** 的有效组合。 **MVector** 包含运动向量的水平和垂直分量。 其余的变量和标志指定运动矢量运算。 这取决于处理的宏块类型，以及是否将 macroblocks 用于框架编码或字段编码图片。
 
-下面的表（在此部分中）中显示的值在以下情况下发生：
+此部分中 (的下表中显示的值) 在下列情况下发生：
 
--   *H261LoopFilter*、 *Motion4MV*和**bPicOBMC**为零。
+-   *H261LoopFilter*、 *Motion4MV*和 **bPicOBMC** 为零。
 
--   除非**bPicStructure**为2（底部字段），否则*PicCurrentField*标志为零。 在这种情况下， *PicCurrentField*为1。
+-   除非**bPicStructure**为 2 (底部字段) ，否则*PicCurrentField*标志为零。 在这种情况下， *PicCurrentField* 为1。
 
-**MVector**是[**DXVA\_MBctrl\_p\_HostResidDiff\_1**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_mbctrl_p_hostresiddiff_1)和[**DXVA\_MBctrl\_P\_OffHostIDCT\_1**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_mbctrl_p_offhostidct_1)结构的成员。 *IntraMacroblock*、 *MotionForward*、 *MotionBackward*、 *MotionType*、 *MvertFieldSel*、 *H261LoopFilter*和*Motion4MV*标志和变量都包含在位域\_WMBtype\_P\_DXVA\_1 和 MBctrl\_HostResidDiff\_P\_DXVA\_1**结构的 MBctrl 成员中**。 **bPicOBMC**是[**DXVA\_PictureParameters**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_pictureparameters)结构的成员。 *PicCurrentField*标志派生自 DXVA\_PictureParameters 的**bPicStructure**成员。
+**MVector** 是 [**DXVA \_ MBctrl \_ p \_ HostResidDiff \_ 1**](/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_mbctrl_p_hostresiddiff_1) 和 [**DXVA \_ MBctrl \_ p \_ OffHostIDCT \_ 1**](/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_mbctrl_p_offhostidct_1) 结构的成员。 *IntraMacroblock*、 *MotionForward*、 *MotionBackward*、 *MotionType*、 *MvertFieldSel*、 *H261LoopFilter*和*MOTION4MV*标志和变量都包含在位域**wMBtype** \_ wMBtype \_ p \_ DXVA \_ 1 和 MBctrl \_ HostResidDiff \_ p \_ DXVA \_ 1 结构的 MBctrl 成员中。 **bPicOBMC** 是 [**DXVA \_ PictureParameters**](/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_pictureparameters) 结构的成员。 *PicCurrentField*标志派生自 DXVA PictureParameters 的**bPicStructure**成员 \_ 。
 
 查看本部分中的下表时，请注意以下事项：
 
--   在多个位置，MPEG-2 变量名称*PMV*用于指示运动向量的值。 此表示法用于区分 MPEG-2 中定义的*PMV*变量（在帧坐标中定义），以及可能处于字段坐标中的运动向量（换言之，分辨率为半垂直）。 在所有情况下， *PMV*都指的是由当前运动向量值（在 Mpeg-2 视频部分7.6.3.1 中指定）更新的*PMV*的值。
+-   在多个位置，MPEG-2 变量名称 *PMV* 用于指示运动向量的值。 此表示法用于区分 MPEG-2 （在帧坐标中定义）中定义的 *PMV* 变量，还可以区分以半垂直分辨率) 在字段坐标 (的运动矢量。 在所有情况下， *PMV* 都是指在 (按 Mpeg-2 视频部分 7.6.3.1) 中指定的当前运动向量值更新 *后 PMV* 的值。
 
--   在7.6.3.6 部分的中找到矢量 "\[2\]\[0\] 和矢量"\[3\]\[0\] 的定义。 显示的左 **-** 移动操作指示将垂直组件修改为帧坐标。
+-   \[ \] \[ \] \[ \] \[ \] 在7.6.3.6 节中找到矢量 "2 0 和 vector" 3 0 的定义。 显示的左 **-** 移操作指示将垂直组件修改为帧坐标。
 
--   在 "无运动" 事例（0，0，0）中，宏块参数使用零值运动向量模拟向前预测宏块（0，1，0）。 （另请参阅 MPEG-2 部分7.6.3.5。）
+-   在 "无运动" 事例中 (0，0，0) ，宏块参数将使用零值运动向量来模拟前向预测宏块 (0，1，0) 。  (另请参阅 MPEG-2 部分7.6.3.5。 ) 
 
--   在单引号中为*MotionType*显示的值为二进制表示形式（第一个数字表示第9位，第二个值用于位8）。
+-   用单引号显示的 *MotionType* 的值为二进制表示形式， (第一个数字是第一个数字，第二个值用于位 8) 。
 
 -   第一个表中的左移运算符仅适用于显示的第二个值。
 
 ### <a name="span-idframe-structured_picturesspanspan-idframe-structured_picturesspanspan-idframe-structured_picturesspanframe-structured-pictures"></a><span id="Frame-Structured_Pictures"></span><span id="frame-structured_pictures"></span><span id="FRAME-STRUCTURED_PICTURES"></span>框架结构化图片
 
-下表显示了框架结构化图片的元素设置的有效组合（当[**DXVA\_PictureParameters**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_pictureparameters)结构的**bPicStructure**成员等于3时）。
+下表显示了在[**DXVA \_ PictureParameters**](/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_pictureparameters)结构的**bPicStructure**成员等于 3) 时 (框架结构化图片的元素设置的有效组合。
 
 <table>
 <colgroup>
@@ -223,17 +223,17 @@ ms.locfileid: "72839694"
 <thead>
 <tr class="header">
 <th align="left">IntraMacroblock, MotionForward, MotionBackward</th>
-<th align="left">MotionType （表示取决于图片类型）</th>
-<th align="left">MVector [0] MvertFieldSel_0 （1st，dir1）</th>
-<th align="left">MVector [1] MvertFieldSel_1 （1st，dir2）</th>
-<th align="left">MVector [2] MvertFieldSel_2 （dir1）</th>
-<th align="left">MVector [3] MvertFieldSel_3 （dir2）</th>
+<th align="left">MotionType (意义取决于图片类型) </th>
+<th align="left">MVector [0] MvertFieldSel_0 (1，dir1) </th>
+<th align="left">MVector [1] MvertFieldSel_1 (1，dir2) </th>
+<th align="left">MVector [2] MvertFieldSel_2 (第二个，dir1) </th>
+<th align="left">MVector [3] MvertFieldSel_3 (第二、dir2) </th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>1，0，0（内部）</p></td>
-<td align="left"><p>"00" （内部）</p></td>
+<td align="left"><p>1，0，0 () </p></td>
+<td align="left"><p>"00" (内部) </p></td>
 <td align="left"><p>-</p>
 <p>-</p></td>
 <td align="left"><p>-</p>
@@ -244,8 +244,8 @@ ms.locfileid: "72839694"
 <p>-</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>0，0，0（无运动）</p></td>
-<td align="left"><p>"10" （无运动）</p></td>
+<td align="left"><p>0，0，0 (无运动) </p></td>
+<td align="left"><p>"10" (无运动) </p></td>
 <td align="left"><p>0</p>
 <p>-</p></td>
 <td align="left"><p>-</p>
@@ -257,7 +257,7 @@ ms.locfileid: "72839694"
 </tr>
 <tr class="odd">
 <td align="left"><p>0，1，0</p></td>
-<td align="left"><p>"10" （框架 MC）</p></td>
+<td align="left"><p>"10" (帧 MC) </p></td>
 <td align="left"><p>PMV [0] [0]</p>
 <p>-</p></td>
 <td align="left"><p>-</p>
@@ -269,7 +269,7 @@ ms.locfileid: "72839694"
 </tr>
 <tr class="even">
 <td align="left"><p>0，0，1</p></td>
-<td align="left"><p>"10" （框架 MC）</p></td>
+<td align="left"><p>"10" (帧 MC) </p></td>
 <td align="left"><p>-</p>
 <p>-</p></td>
 <td align="left"><p>PMV [0] [1]</p>
@@ -281,7 +281,7 @@ ms.locfileid: "72839694"
 </tr>
 <tr class="odd">
 <td align="left"><p>0、1、1</p></td>
-<td align="left"><p>"10" （框架 MC）</p></td>
+<td align="left"><p>"10" (帧 MC) </p></td>
 <td align="left"><p>PMV [0] [0]</p>
 <p>-</p></td>
 <td align="left"><p>PMV [0] [1]</p>
@@ -293,7 +293,7 @@ ms.locfileid: "72839694"
 </tr>
 <tr class="even">
 <td align="left"><p>0，1，0</p></td>
-<td align="left"><p>"01" （字段 MC）</p></td>
+<td align="left"><p>"01" (字段 MC) </p></td>
 <td align="left"><p>PMV [0] [0]</p>
 <p>sel [0] [0]</p></td>
 <td align="left"><p>-</p>
@@ -305,7 +305,7 @@ ms.locfileid: "72839694"
 </tr>
 <tr class="odd">
 <td align="left"><p>0，0，1</p></td>
-<td align="left"><p>"01" （字段 MC）</p></td>
+<td align="left"><p>"01" (字段 MC) </p></td>
 <td align="left"><p>-</p>
 <p>-</p></td>
 <td align="left"><p>PMV [0] [1]</p>
@@ -317,7 +317,7 @@ ms.locfileid: "72839694"
 </tr>
 <tr class="even">
 <td align="left"><p>0、1、1</p></td>
-<td align="left"><p>"01" （字段 MC）</p></td>
+<td align="left"><p>"01" (字段 MC) </p></td>
 <td align="left"><p>PMV [0] [0]</p>
 <p>sel [0] [0]</p></td>
 <td align="left"><p>PMV [0] [1]</p>
@@ -329,18 +329,18 @@ ms.locfileid: "72839694"
 </tr>
 <tr class="odd">
 <td align="left"><p>0，1，0</p></td>
-<td align="left"><p>"11" （双重质数）</p></td>
+<td align="left"><p>"11" (双重质数) </p></td>
 <td align="left"><p>PMV [0] [0]</p>
 <div>
  
 </div>
-<p>0（顶部）</p></td>
+<p>0 (top) </p></td>
 <td align="left"><p>vector "[2] [0] [0]，</p>
 <div>
  
 </div>
-vector "[2] [0] [1]&lt;&lt;1
-<p>1（底部）</p></td>
+vector "[2] [0] [1] &lt; &lt; 1
+<p>1 (底部) </p></td>
 <td align="left"><p>PMV [0] [0]</p>
 <div>
  
@@ -350,7 +350,7 @@ vector "[2] [0] [1]&lt;&lt;1
 <div>
  
 </div>
-vector "[3] [0] [1]&lt;&lt;1
+vector "[3] [0] [1] &lt; &lt; 1
 <p>0</p></td>
 </tr>
 </tbody>
@@ -360,7 +360,7 @@ vector "[3] [0] [1]&lt;&lt;1
 
 ### <a name="span-idfield-structured_picturesspanspan-idfield-structured_picturesspanspan-idfield-structured_picturesspanfield-structured-pictures"></a><span id="Field-Structured_Pictures"></span><span id="field-structured_pictures"></span><span id="FIELD-STRUCTURED_PICTURES"></span>字段结构化图片
 
-下表显示了字段结构化图片的元素设置的有效组合（当[**DXVA\_PictureParameters**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_pictureparameters)结构的**bPicStructure**成员等于1或2时）。
+下表显示了当[**DXVA \_ PictureParameters**](/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_pictureparameters)结构的**bPicStructure**成员等于1或 2) 时，字段结构化图片的元素设置的有效组合 (。
 
 <table>
 <colgroup>
@@ -374,17 +374,17 @@ vector "[3] [0] [1]&lt;&lt;1
 <thead>
 <tr class="header">
 <th align="left">IntraMacroblock, MotionForward, MotionBackward</th>
-<th align="left">MotionType （表示取决于图片类型）</th>
-<th align="left">MVector [0] MvertFieldSel_0 （1st，dir1）</th>
-<th align="left">MVector [1] MvertFieldSel_1 （1st，dir2）</th>
-<th align="left">MVector [2] MvertFieldSel_2 （dir1）</th>
-<th align="left">MVector [3] MvertFieldSel_3 （dir2）</th>
+<th align="left">MotionType (意义取决于图片类型) </th>
+<th align="left">MVector [0] MvertFieldSel_0 (1，dir1) </th>
+<th align="left">MVector [1] MvertFieldSel_1 (1，dir2) </th>
+<th align="left">MVector [2] MvertFieldSel_2 (第二个，dir1) </th>
+<th align="left">MVector [3] MvertFieldSel_3 (第二、dir2) </th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>1，0，0（内部）</p></td>
-<td align="left"><p>"00" （内部）</p></td>
+<td align="left"><p>1，0，0 () </p></td>
+<td align="left"><p>"00" (内部) </p></td>
 <td align="left"><p>-</p>
 <p>-</p></td>
 <td align="left"><p>-</p>
@@ -395,8 +395,8 @@ vector "[3] [0] [1]&lt;&lt;1
 <p>-</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>0，0，0（无运动）</p></td>
-<td align="left"><p>"01" （无运动）</p></td>
+<td align="left"><p>0，0，0 (无运动) </p></td>
+<td align="left"><p>"01" (无运动) </p></td>
 <td align="left"><p>0</p>
 <p><em>PicCurrentField</em></p></td>
 <td align="left"><p>-</p>
@@ -408,7 +408,7 @@ vector "[3] [0] [1]&lt;&lt;1
 </tr>
 <tr class="odd">
 <td align="left"><p>0，1，0</p></td>
-<td align="left"><p>"01" （字段 MC）</p></td>
+<td align="left"><p>"01" (字段 MC) </p></td>
 <td align="left"><p>PMV [0] [0]</p>
 <p>sel [0] [0]</p></td>
 <td align="left"><p>-</p>
@@ -420,7 +420,7 @@ vector "[3] [0] [1]&lt;&lt;1
 </tr>
 <tr class="even">
 <td align="left"><p>0，0，1</p></td>
-<td align="left"><p>"01" （字段 MC）</p></td>
+<td align="left"><p>"01" (字段 MC) </p></td>
 <td align="left"><p>-</p>
 <p>-</p></td>
 <td align="left"><p>PMV [0] [1]</p>
@@ -432,7 +432,7 @@ vector "[3] [0] [1]&lt;&lt;1
 </tr>
 <tr class="odd">
 <td align="left"><p>0、1、1</p></td>
-<td align="left"><p>"01" （字段 MC）</p></td>
+<td align="left"><p>"01" (字段 MC) </p></td>
 <td align="left"><p>PMV [0] [0]</p>
 <p>sel [0] [0]</p></td>
 <td align="left"><p>PMV [0] [1]</p>
@@ -444,7 +444,7 @@ vector "[3] [0] [1]&lt;&lt;1
 </tr>
 <tr class="even">
 <td align="left"><p>0，1，0</p></td>
-<td align="left"><p>"10" （16x8 MC）</p></td>
+<td align="left"><p>"10" (16x8 MC) </p></td>
 <td align="left"><p>PMV [0] [0]</p>
 <p>sel [0] [0]</p></td>
 <td align="left"><p>-</p>
@@ -456,7 +456,7 @@ vector "[3] [0] [1]&lt;&lt;1
 </tr>
 <tr class="odd">
 <td align="left"><p>0，0，1</p></td>
-<td align="left"><p>"10" （16x8 MC）</p></td>
+<td align="left"><p>"10" (16x8 MC) </p></td>
 <td align="left"><p>-</p>
 <p>-</p></td>
 <td align="left"><p>PMV [0] [1]</p>
@@ -468,7 +468,7 @@ vector "[3] [0] [1]&lt;&lt;1
 </tr>
 <tr class="even">
 <td align="left"><p>0、1、1</p></td>
-<td align="left"><p>"10" （16x8 MC）</p></td>
+<td align="left"><p>"10" (16x8 MC) </p></td>
 <td align="left"><p>PMV [0] [0]</p>
 <p>sel [0] [0]</p></td>
 <td align="left"><p>PMV [0] [1]</p>
@@ -480,7 +480,7 @@ vector "[3] [0] [1]&lt;&lt;1
 </tr>
 <tr class="odd">
 <td align="left"><p>0，1，0</p></td>
-<td align="left"><p>"11" （双重质数）</p></td>
+<td align="left"><p>"11" (双重质数) </p></td>
 <td align="left"><p>PMV [0] [0]</p>
 <p><em>PicCurrentField</em></p></td>
 <td align="left"><p>vector "[2] [0]</p>
@@ -507,7 +507,7 @@ vector "[3] [0] [1]&lt;&lt;1
 <thead>
 <tr class="header">
 <th align="left">值</th>
-<th align="left">描述</th>
+<th align="left">说明</th>
 </tr>
 </thead>
 <tbody>
@@ -515,41 +515,35 @@ vector "[3] [0] [1]&lt;&lt;1
 <td align="left"><p><em>H261LoopFilter</em> = 1</p>
 <p><strong>bPicOBMC</strong> = 0</p>
 <p><em>Motion4MV</em> = 0</p></td>
-<td align="left"><p>指示在<strong>MVector</strong>[0] 中发送一个向前运动向量，并且261循环筛选器对于宏块中的正向预测是活动的。</p>
+<td align="left"><p>指示在 <strong>MVector</strong>[0] 中发送一个向前运动向量，并且261循环筛选器对于宏块中的正向预测是活动的。</p>
 <p>在这种情况下， <em>MotionForward</em>必须为1，并且<em>IntraMacroblock</em>和<em>MotionBackward</em>必须都为零。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>bPicOBMC</strong> = 0</p>
 <p><em>Motion4MV</em> = 1</p></td>
-<td align="left"><p>指示在<strong>MVector</strong>[0] 到<strong>MVector</strong>[3] 之间发送四个前进运动向量。 在这种情况下， <em>MotionForward</em>必须为1，而<em>IntraMacroblock</em>必须为零。</p>
-<p>如果<em>MotionBackward</em>为1，则在<strong>MVector</strong>[4] 中发送向后预测的第五个运动向量。</p></td>
+<td align="left"><p>指示在 <strong>MVector</strong>[0] 到 <strong>MVector</strong>[3] 之间发送四个前进运动向量。 在这种情况下， <em>MotionForward</em>必须为1，而<em>IntraMacroblock</em>必须为零。</p>
+<p>如果 <em>MotionBackward</em> 为1，则在 <strong>MVector</strong>[4] 中发送向后预测的第五个运动向量。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong><em>bPicOBMC</em></strong> = 1</p>
 <p><em>Motion4MV</em> = 0</p></td>
-<td align="left"><p>指示将在<strong>MVector</strong>[0] 到<strong>MVector</strong>[9] 中发送10个前进运动向量，以指定 OBMC 动作，并且前四个运动向量的值都相等。</p>
-<p>如果<em>MotionBackward</em>为1，则将为<strong>MVector</strong>[10] 中的向后预测发送第11个运动矢量。</p></td>
+<td align="left"><p>指示将在 <strong>MVector</strong>[0] 到 <strong>MVector</strong>[9] 中发送10个前进运动向量，以指定 OBMC 动作，并且前四个运动向量的值都相等。</p>
+<p>如果 <em>MotionBackward</em> 为1，则将为 <strong>MVector</strong>[10] 中的向后预测发送第11个运动矢量。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>bPicOBMC</strong> = 1</p>
 <p><em>Motion4MV</em> = 1</p></td>
-<td align="left"><p>指示将在<strong>MVector</strong>[0] 到<strong>MVector</strong>[9] 中发送10个前进运动向量，以指定 OBMC 运动，并且前四个此类运动向量的值可能不同。</p>
-<p>如果<em>MotionBackward</em>为1，则将为<strong>MVector</strong>[10] 中的向后预测发送第11个运动矢量。</p></td>
+<td align="left"><p>指示将在 <strong>MVector</strong>[0] 到 <strong>MVector</strong>[9] 中发送10个前进运动向量，以指定 OBMC 运动，并且前四个此类运动向量的值可能不同。</p>
+<p>如果 <em>MotionBackward</em> 为1，则将为 <strong>MVector</strong>[10] 中的向后预测发送第11个运动矢量。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-**请注意**   平均运算符对于 mpeg-2 是相同的（（s1 + s2 + 1）&gt;&gt;1），用于 MPEG-2、mpeg-2 半样本预测筛选、双向平均和双向双向相同的奇偶校验。 在右移位之前，H-p 双向平均运算符不会增加 + 1 的偏移量。 [**DXVA\_PictureParameters**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_pictureparameters)的**bBidirectionalAveragingMode**成员确定使用这些方法中的哪一种。
+**注意**   Average 运算符 ( # B1 s1 + s2 + 1) &gt; &gt; 1) 用于 MPEG-2、mpeg-2 半样本预测筛选、双向平均和双质数与组合的双质数相同。 在右移位之前，H-p 双向平均运算符不会增加 + 1 的偏移量。 [**DXVA \_ PictureParameters**](/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_pictureparameters)的**bBidirectionalAveragingMode**成员确定使用哪些方法。
 
  
 
  
-
- 
-
-
-
-
 

@@ -10,12 +10,12 @@ keywords:
 - 设备对象 i/o 请求 WDK 文件系统
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: db370e568d32fff6a1cd5b220557ee2e14ac3dac
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 8503782bc784937db73febc78f3f1b285266f93f
+ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72841401"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89065064"
 ---
 # <a name="filter-device-object-attached-to-a-volume"></a>附加到卷的筛选器设备对象
 
@@ -29,51 +29,51 @@ ms.locfileid: "72841401"
 
 附加到卷上方的筛选器设备对象通常会收到以下类型的 i/o 请求：
 
-[**IRP\_MJ\_清除**](https://docs.microsoft.com/windows-hardware/drivers/ifs/irp-mj-cleanup)
+[**IRP \_ MJ \_ 清除**](./irp-mj-cleanup.md)
 
-[**IRP\_MJ\_关闭**](https://docs.microsoft.com/windows-hardware/drivers/ifs/irp-mj-close)
+[**IRP \_ MJ \_ 关闭**](./irp-mj-close.md)
 
-[**IRP\_MJ\_创建**](https://docs.microsoft.com/windows-hardware/drivers/ifs/irp-mj-create)
+[**IRP \_ MJ \_ 创建**](./irp-mj-create.md)
 
-[**IRP\_MJ\_设备\_控件**](https://docs.microsoft.com/windows-hardware/drivers/ifs/irp-mj-device-control)
+[**IRP \_ MJ \_ 设备 \_ 控制**](./irp-mj-device-control.md)
 
-[**IRP\_MJ\_DIRECTORY\_控件**](https://docs.microsoft.com/windows-hardware/drivers/ifs/irp-mj-directory-control)
+[**IRP \_ MJ \_ 目录 \_ 控件**](./irp-mj-directory-control.md)
 
-[**IRP\_MJ\_文件\_系统\_控件**](https://docs.microsoft.com/windows-hardware/drivers/ifs/irp-mj-file-system-control)
+[**IRP \_ MJ \_ 文件 \_ 系统 \_ 控制**](./irp-mj-file-system-control.md)
 
-[**IRP\_MJ\_刷新\_缓冲区**](https://docs.microsoft.com/windows-hardware/drivers/ifs/irp-mj-flush-buffers)
+[**IRP \_ MJ \_ 刷新 \_ 缓冲区**](./irp-mj-flush-buffers.md)
 
-[**IRP\_MJ\_内部\_设备\_控制**](https://docs.microsoft.com/windows-hardware/drivers/ifs/irp-mj-internal-device-control)
+[**IRP \_ MJ \_ 内部 \_ 设备 \_ 控制**](./irp-mj-internal-device-control.md)
 
-[**IRP\_MJ\_锁定\_控件**](https://docs.microsoft.com/windows-hardware/drivers/ifs/irp-mj-lock-control)
+[**IRP \_ MJ \_ 锁定 \_ 控制**](./irp-mj-lock-control.md)
 
-[**IRP\_MJ\_PNP**](https://docs.microsoft.com/windows-hardware/drivers/ifs/irp-mj-pnp)
+[**IRP \_ MJ \_ PNP**](./irp-mj-pnp.md)
 
-[**IRP\_MJ\_QUERY\_EA**](https://docs.microsoft.com/windows-hardware/drivers/ifs/irp-mj-query-ea)
+[**IRP \_ MJ \_ 查询 \_ EA**](./irp-mj-query-ea.md)
 
-[**IRP\_MJ\_查询\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ifs/irp-mj-query-information)
+[**IRP \_ MJ \_ 查询 \_ 信息**](./irp-mj-query-information.md)
 
-[**IRP\_MJ\_QUERY\_配额**](https://docs.microsoft.com/windows-hardware/drivers/ifs/irp-mj-query-quota)
+[**IRP \_ MJ \_ 查询 \_ 配额**](./irp-mj-query-quota.md)
 
-[**IRP\_MJ\_QUERY\_安全性**](https://docs.microsoft.com/windows-hardware/drivers/ifs/irp-mj-query-security)
+[**IRP \_ MJ \_ 查询 \_ 安全性**](./irp-mj-query-security.md)
 
-[**IRP\_MJ\_查询\_卷\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ifs/irp-mj-query-volume-information)
+[**IRP \_ MJ \_ 查询 \_ 卷 \_ 信息**](./irp-mj-query-volume-information.md)
 
-[**IRP\_MJ\_读取**](https://docs.microsoft.com/windows-hardware/drivers/ifs/irp-mj-read)
+[**IRP \_ MJ \_ 读取**](./irp-mj-read.md)
 
-[**IRP\_MJ\_集\_EA**](https://docs.microsoft.com/windows-hardware/drivers/ifs/irp-mj-set-ea)
+[**IRP \_ MJ \_ 设置 \_ EA**](./irp-mj-set-ea.md)
 
-[**IRP\_MJ\_集\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ifs/irp-mj-set-information)
+[**IRP \_ MJ \_ 设置 \_ 信息**](./irp-mj-set-information.md)
 
-[**IRP\_MJ\_集\_配额**](https://docs.microsoft.com/windows-hardware/drivers/ifs/irp-mj-set-quota)
+[**IRP \_ MJ \_ 设置 \_ 配额**](./irp-mj-set-quota.md)
 
-[**IRP\_MJ\_集\_安全性**](https://docs.microsoft.com/windows-hardware/drivers/ifs/irp-mj-set-security)
+[**IRP \_ MJ \_ 设置 \_ 安全性**](./irp-mj-set-security.md)
 
-[**IRP\_MJ\_设置\_卷\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ifs/irp-mj-set-volume-information)
+[**IRP \_ MJ \_ 设置 \_ 卷 \_ 信息**](./irp-mj-set-volume-information.md)
 
-[**IRP\_MJ\_关闭**](https://docs.microsoft.com/windows-hardware/drivers/ifs/irp-mj-shutdown)
+[**IRP \_ MJ \_ 关闭**](./irp-mj-shutdown.md)
 
-[**IRP\_MJ\_写入**](https://docs.microsoft.com/windows-hardware/drivers/ifs/irp-mj-write)
+[**IRP \_ MJ \_ 写入**](./irp-mj-write.md)
 
 **FastIoCheckIfPossible**
 
@@ -117,9 +117,9 @@ ms.locfileid: "72841401"
 
 **PrepareMdlWrite**
 
-默认情况下，文件系统筛选器设备对象（附加到卷）需要将所有无法识别或不需要的 Irp 传递到驱动程序堆栈上的下一个较低版本的驱动程序。 此外，它们必须实现**FastIoDetachDevice**。
+默认情况下，文件系统筛选器设备对象（附加到卷）需要将所有无法识别或不需要的 Irp 传递到驱动程序堆栈上的下一个较低版本的驱动程序。 此外，它们必须实现 **FastIoDetachDevice**。
 
-**注意**   在 MICROSOFT Windows XP 和更高版本上，以下快速 i/o 回调例程已过时，不应由文件系统筛选器驱动程序使用： **AcquireForCcFlush**
+**注意**   在 Microsoft Windows XP 和更高版本中，以下快速 i/o 回调例程已过时，不应由文件系统筛选器驱动程序使用： **AcquireForCcFlush**
 
 **AcquireFileForNtCreateSection**
 
@@ -131,14 +131,9 @@ ms.locfileid: "72841401"
 
 **ReleaseForModWrite**
 
-有关详细信息，请参阅[**FsRtlRegisterFileSystemFilterCallbacks**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-fsrtlregisterfilesystemfiltercallbacks)的参考条目。
+有关详细信息，请参阅 [**FsRtlRegisterFileSystemFilterCallbacks**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-fsrtlregisterfilesystemfiltercallbacks)的参考条目。
 
  
 
  
-
- 
-
-
-
 

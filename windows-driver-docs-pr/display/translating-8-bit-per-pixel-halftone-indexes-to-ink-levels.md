@@ -3,22 +3,22 @@ title: 将每像素 8 位半色调索引转换为墨位
 description: 将每像素 8 位半色调索引转换为墨位
 ms.assetid: 5859b379-4e03-4cd8-836d-9a0b068b47c0
 keywords:
-- GDI WDK Windows 2000 显示、 半色调
-- 图形驱动程序 WDK Windows 2000 显示、 半色调
-- 绘制 WDK GDI、 半色调
+- GDI WDK Windows 2000 显示，半色调
+- 图形驱动程序 WDK Windows 2000 显示，半色调
+- 绘制 WDK GDI，半色调
 - 半色调 WDK GDI
-- 每像素 8 位 CMY 掩码模式 WDK GDI
+- 8位每像素 CMY 掩码模式 WDK GDI
 - GenerateInkLevels
 - INKLEVELS
-- 转换每像素 8 位半色调索引 WDK GDI
+- 转换每像素8位半色调索引 WDK GDI
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 123914bda2dd9cb04dc62b8879c5e33532dcb3e6
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: c7f84896e019548bb2e7ab80a6320b5acbe13aa1
+ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67353426"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89067192"
 ---
 # <a name="translating-8-bit-per-pixel-halftone-indexes-to-ink-levels"></a>将每像素 8 位半色调索引转换为墨位
 
@@ -26,11 +26,11 @@ ms.locfileid: "67353426"
 ## <span id="ddk_translating_8_bit_per_pixel_halftone_indexes_to_ink_levels_gg"></span><span id="DDK_TRANSLATING_8_BIT_PER_PIXEL_HALFTONE_INDEXES_TO_INK_LEVELS_GG"></span>
 
 
-**GenerateInkLevels**如下所示的函数提供了如何转换到的墨水量的每像素 8 位半色调索引的一个示例。 这些索引包含在 CMY 模式和 CMY\_反转模式调色板的 GDI [ **HT\_Get8BPPMaskPalette** ](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-ht_get8bppmaskpalette)函数以返回其*pPaletteEntry*参数。 **GenerateInkLevels**生成 INKLEVELS 结构的一个 256 元素的数组。
+此处所示的 **GenerateInkLevels** 函数提供了一个示例，说明如何将每像素8位半色调索引转换为墨迹级别。 这些索引包含在 CMY 模式和 CMY \_ 反转模式调色板中，GDI 的 [**HT \_ Get8BPPMaskPalette**](/windows/desktop/api/winddi/nf-winddi-ht_get8bppmaskpalette) 函数在其 *pPaletteEntry* 参数中返回。 **GenerateInkLevels** 生成 INKLEVELS 结构的256元素数组。
 
-此函数可用于生成 Windows 2000 CMY 模式或 post-Windows 2000 CMY\_结模式转换表。 此函数还可用于生成 Windows 2000 CMY 模式 CMY332 反向映射索引表。 （CMY332 使用三位的蓝绿色和洋红和黄色的两位。）当*CMYMask*值为 3 到 255 范围内，该函数的调用方可以使用此表来映射 post-Windows 2000 CMY\_结索引的当前现有的 Windows 2000 CMY 索引到驱动程序。
+此函数可用于生成 Windows 2000 CMY 模式或 Windows 2000 CMY \_ 反转模式转换表。 此函数还可用于生成 Windows 2000 CMY 模式 CMY332 反向映射索引表。  (CMY332 使用三位，分别用于青色和洋红色，两位表示黄色 ) 。当 *CMYMask* 值介于3到255的范围内时，该函数的调用方可以使用此表将 WINDOWS 2000 CMY \_ 倒转索引映射到当前现有驱动程序的 windows 2000 CMY 索引。
 
-### <a name="span-idinklevelsstructurespanspan-idinklevelsstructurespaninklevels-structure"></a><span id="inklevels_structure"></span><span id="INKLEVELS_STRUCTURE"></span>INKLEVELS 结构
+### <a name="span-idinklevels_structurespanspan-idinklevels_structurespaninklevels-structure"></a><span id="inklevels_structure"></span><span id="INKLEVELS_STRUCTURE"></span>INKLEVELS 结构
 
 ```cpp
 typedef struct _INKLEVELS {
@@ -41,11 +41,11 @@ typedef struct _INKLEVELS {
 } INKLEVELS, *PINKLEVELS;
 ```
 
-### <a name="span-idexamplegenerateinklevelsfunctionspanspan-idexamplegenerateinklevelsfunctionspanexample-generateinklevels-function"></a><span id="example_generateinklevels_function"></span><span id="EXAMPLE_GENERATEINKLEVELS_FUNCTION"></span>示例 GenerateInkLevels 函数
+### <a name="span-idexample_generateinklevels_functionspanspan-idexample_generateinklevels_functionspanexample-generateinklevels-function"></a><span id="example_generateinklevels_function"></span><span id="EXAMPLE_GENERATEINKLEVELS_FUNCTION"></span>GenerateInkLevels 函数示例
 
-**GenerateInkLevels**函数计算基于中的值的 INKLEVELS 结构的每像素 8 位转换表*CMYMask*和*CMYInverted 参数*. 此函数将生成一个有效 INKLEVELS 转换表*CMYMask* 0 到 255 的范围中的值。
+**GenerateInkLevels**函数根据*CMYMask*和*CMYInverted 参数*中的值计算 INKLEVELS 结构的8位每像素转换表。 此函数为介于0到255范围内的有效 *CMYMask* 值生成 INKLEVELS 转换表。
 
-当调用此函数时， *pInkLevels*参数必须指向有效内存位置的 256 INKLEVELS 条目。 如果该函数将返回 **，则返回 TRUE**，然后*pInkLevels*可用于将每像素 8 位索引的墨水量，或将映射到较旧的 CMY332 索引。 如果使用调用函数*CMYMask*设置为无效值 （介于 3 到 255 的值在其中任何青色、 洋红色、 或黄色级别为零），该函数将返回**FALSE**。
+调用此函数时， *pInkLevels* 参数必须指向 256 INKLEVELS 条目的有效内存位置。 如果函数返回 **TRUE**，则可以使用 *pInkLevels* 将每像素8位索引转换为墨迹级别，或映射到较旧的 CMY332 索引。 如果调用函数时将 *CMYMask* 设置为无效值 (从3到255的值，其中任何蓝绿色、品红或黄色级别为零) ，则函数返回 **FALSE**。
 
 ```cpp
 BOOL
@@ -253,10 +253,4 @@ GenerateInkLevels(
 ```
 
  
-
- 
-
-
-
-
 

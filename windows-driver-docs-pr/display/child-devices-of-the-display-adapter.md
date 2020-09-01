@@ -9,25 +9,25 @@ keywords:
 - 显示适配器子设备 WDK 视频呈现网络
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2956e6a8976206d0b128a4125b80b9657e618f3f
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: cbe606b2fade72f74f7c1313cb562b4964ee17ba
+ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72839056"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89064920"
 ---
 # <a name="child-devices-of-the-display-adapter"></a>显示适配器的子设备
 
 
 显示适配器的子设备是显示适配器上的一个设备，由显示微型端口驱动程序枚举为子项。 显示适配器的所有子设备都在板上;连接到显示适配器的监视器和其他外部设备不被视为子设备。
 
-显示微型端口驱动程序的[**DxgkDdiQueryChildRelations**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dispmprt/nc-dispmprt-dxgkddi_query_child_relations)函数负责枚举显示适配器的子设备。 在枚举过程中，显示微型端口驱动程序将每个子设备指定一个类型和热插拔检测（HPD）感知值。 该类型是[**DXGK\_子\_设备\_类型**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dispmprt/ne-dispmprt-_dxgk_child_device_type)枚举器之一：
+显示微型端口驱动程序的 [**DxgkDdiQueryChildRelations**](/windows-hardware/drivers/ddi/dispmprt/nc-dispmprt-dxgkddi_query_child_relations) 函数负责枚举显示适配器的子设备。 在枚举过程中，显示微型端口驱动程序为每个子设备指定一个类型和热插拔检测 (HPD) 感知值。 该类型是 [**DXGK \_ 子 \_ 设备 \_ 类型**](/windows-hardware/drivers/ddi/dispmprt/ne-dispmprt-_dxgk_child_device_type) 枚举器之一：
 
 -   **TypeVideoOutput**
 
 -   **TypeOther**
 
-HPD 感知值是[**DXGK\_子\_设备\_HPD\_感知**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmdt/ne-d3dkmdt-_dxgk_child_device_hpd_awareness)枚举器之一：
+HPD 感知值为 [**DXGK \_ 子 \_ 设备 \_ HPD \_ 感知**](/windows-hardware/drivers/ddi/d3dkmdt/ne-d3dkmdt-_dxgk_child_device_hpd_awareness) 枚举器之一：
 
 -   **HpdAwarenessAlwaysConnected**
 
@@ -96,7 +96,7 @@ HPD 感知值是[**DXGK\_子\_设备\_HPD\_感知**](https://docs.microsoft.com/
 </tr>
 <tr class="even">
 <td align="left"><p>间断</p></td>
-<td align="left"><p>当外部显示设备连接到或与子设备断开连接时，系统会发出通知。 （当盖子打开并在盖子关闭时断开连接时，便携式计算机上的 "显示" 面板被视为已连接。）</p></td>
+<td align="left"><p>当外部显示设备连接到或与子设备断开连接时，系统会发出通知。 计算机上的 "显示" 面板 (在盖子打开并断开盖子时断开连接时被视为已连接。 ) </p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>轮询</p></td>
@@ -108,10 +108,4 @@ HPD 感知值是[**DXGK\_子\_设备\_HPD\_感知**](https://docs.microsoft.com/
  
 
  
-
- 
-
-
-
-
 

@@ -5,18 +5,18 @@ ms.assetid: f5208b6a-00b0-446e-82f7-eb26082ed9a5
 keywords:
 - 监视 INF 文件部分 WDK Windows 2000 显示
 - INF 文件 WDK Windows 2000 显示
-- INF 编写器定义的各节 WDK Windows 2000 显示
+- INF Windows 2000 显示的 INF 写入方定义的部分
 - DDInstall 部分 WDK Windows 2000 显示
-- 模型部分 WDK Windows 2000 显示
+- "\"模型\" 部分 WDK Windows 2000 显示"
 - SourceDisksFiles 部分 WDK Windows 2000 显示
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cf7d9179dbfccab44e2d94d6ae639688c3abd303
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: f8e642e7ae46afe641dfd416625562b21a114153
+ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67379855"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89066024"
 ---
 # <a name="monitor-inf-file-sections"></a>监视 INF 文件节
 
@@ -24,26 +24,26 @@ ms.locfileid: "67379855"
 ## <span id="ddk_monitor_inf_file_sections_gg"></span><span id="DDK_MONITOR_INF_FILE_SECTIONS_GG"></span>
 
 
-监视器必须安装在基于 NT 的操作系统使用 INF 文件。 Windows Driver Kit (WDK) 提供了示例监视器 INF 文件*monsamp.inf*，是应使用作为模板来为你的监视器生成的 INF 文件。 不能使用*geninf.exe*工具中所述[创建图形 INF 文件](creating-graphics-inf-files.md)生成监视器 INF。
+必须使用 INF 文件在基于 NT 的操作系统上安装监视器。 Windows 驱动程序工具包 (WDK) 提供一个示例监视器 INF 文件 *monsamp*，您应将该文件用作模板，以便为您的监视器生成 INF 文件。 不能使用[创建图形 Inf 文件](creating-graphics-inf-files.md)中介绍的*geninf.exe*工具来生成监视器 inf。
 
-本主题的其余部分上的某些部分中的注释*monsamp.inf*的监视器 INF 编写器特别感兴趣的是。 INF 文件有关的更多常规信息，请参阅[INF 文件的部分和指令](https://docs.microsoft.com/windows-hardware/drivers/install/inf-file-sections-and-directives)。
+本主题的其余部分将对 *monsamp* 中特定于监视 inf 编写器感兴趣的部分进行评论。 有关 INF 文件的更多常规信息，请参阅 [Inf 文件部分和指令](https://docs.microsoft.com/windows-hardware/drivers/install/inf-file-sections-and-directives)。
 
-INF 文件还可用于替代监视器扩展显示标识数据 (EDID)。 请参阅[重写使用 INF 监视器 EDIDs](overriding-monitor-edids.md)。
+你还可以使用 INF 文件来替代监视 (EDID) 的扩展显示标识数据。 请参阅 [使用 INF 替代监视器 edid](overriding-monitor-edids.md)。
 
-### <a name="span-idsourcedisksfilessectionspanspan-idsourcedisksfilessectionspanspan-idsourcedisksfilessectionspansourcedisksfiles-section"></a><span id="SourceDisksFiles_Section"></span><span id="sourcedisksfiles_section"></span><span id="SOURCEDISKSFILES_SECTION"></span>SourceDisksFiles 部分
+### <a name="span-idsourcedisksfiles_sectionspanspan-idsourcedisksfiles_sectionspanspan-idsourcedisksfiles_sectionspansourcedisksfiles-section"></a><span id="SourceDisksFiles_Section"></span><span id="sourcedisksfiles_section"></span><span id="SOURCEDISKSFILES_SECTION"></span>SourceDisksFiles 部分
 
-必须在监视安装过程中复制的文件应置于 **\[SourceDisksFiles\]** 部分。 下面的示例标识。*icm*分发磁盘 1 上的文件。
+在监视器安装过程中必须复制的文件应放置在** \[ SourceDisksFiles \] **节中。 下面的示例标识一个。分发磁盘1上的*icm* 文件。
 
 ```inf
 [SourceDisksFiles]
 profile1.icm=1
 ```
 
-有关更多常规信息，请参阅[ **INF SourceDisksFiles 部分**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-sourcedisksfiles-section)。 请参阅[监视配置文件](monitor-profiles.md)有关颜色管理和配置文件的详细信息。
+有关更多常规信息，请参阅 [**INF SourceDisksFiles 部分**](../install/inf-sourcedisksfiles-section.md)。 有关颜色管理和配置文件的详细信息，请参阅 [监视配置文件](monitor-profiles.md) 。
 
-### <a name="span-idmodelssectionspanspan-idmodelssectionspanspan-idmodelssectionspanmodels-section"></a><span id="Models_Section"></span><span id="models_section"></span><span id="MODELS_SECTION"></span>模型部分
+### <a name="span-idmodels_sectionspanspan-idmodels_sectionspanspan-idmodels_sectionspanmodels-section"></a><span id="Models_Section"></span><span id="models_section"></span><span id="MODELS_SECTION"></span>模型部分
 
-有关给定制造商支持每个模型的信息应置于*模型*部分。 下面的示例标识由 ACME 生产的两个模型：
+有关给定制造商支持的每个模型的信息应放置在 " *模型* " 部分中。 下面的示例标识由 ACME 制造的两个模型：
 
 ```inf
 [ACME]
@@ -51,19 +51,19 @@ profile1.icm=1
 %ACME-5678%=ACME-5678.Install, Monitor\MON34CD
 ```
 
-每个模型表示由单个线条。 每个行包含三个元素：
+每个模型由单个行表示。 每行包含三个元素：
 
--   模型名称-例如， **%%acme-1234年**是一个标记，用于表示实际模型名称 (这将显示在**字符串**部分)。
+-   模型名称--例如， **% ACME-1234%** 是一个标记，它表示将在) 的 **字符串** 部分显示的实际模型名称 (。
 
--   链接到后续*DDInstall*部分-例如， **ACME 1234。安装**有一个指向后续 **\[ACME 1234。安装\]** 部分。
+-   链接到后续的*DDInstall*部分，例如**ACME-1234。安装**是指向后续** \[ ACME-1234 的链接。安装 \] **部分。
 
--   硬件标识-例如，表达式**监视器\\MON12AB**出现在设备的组合的设备类 （监视器） 和设备标识 (MON12AB) *EDID*.
+-   硬件标识--例如，表达式 **监视器 \\ MON12AB** 将设备类 (监视器) 和设备标识 (MON12AB) 与设备 *EDID*中显示的相同。
 
-有关更多常规信息，请参阅[ **INF 模型部分**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-models-section)。
+有关更多常规信息，请参阅 [**INF 模型部分**](../install/inf-models-section.md)。
 
-### <a name="span-idddinstallsectionspanspan-idddinstallsectionspanspan-idddinstallsectionspanddinstall-section"></a><span id="DDInstall_Section"></span><span id="ddinstall_section"></span><span id="DDINSTALL_SECTION"></span>DDInstall 部分
+### <a name="span-idddinstall_sectionspanspan-idddinstall_sectionspanspan-idddinstall_sectionspanddinstall-section"></a><span id="DDInstall_Section"></span><span id="ddinstall_section"></span><span id="DDINSTALL_SECTION"></span>DDInstall 部分
 
-*DDInstall*部分提供有关安装指定的设备时要执行的操作向驱动程序的信息。 本部分中的每一行提供链接或为不同 INF 编写器定义的分区的更高版本出现在 INF 文件的链接。 下面的示例演示*DDInstall* ACME 1234 模型的部分：
+*DDInstall*部分为驱动程序提供有关在安装指定设备时要执行的操作的信息。 本部分中的每行都提供一个链接，或指向 INF 文件中稍后显示的不同 INF 编写器定义的部分的链接。 下面的示例显示了 ACME-1234 模型的 *DDInstall* 部分：
 
 ```inf
 [ACME-1234.Install]
@@ -72,19 +72,19 @@ AddReg=ACME-1234.AddReg, 1280, DPMS
 CopyFiles=ACME-1234.CopyFiles
 ```
 
--   [**DelReg** ](https://docs.microsoft.com/windows-hardware/drivers/install/inf-delreg-directive)指令-提供了指向**DEL\_当前\_REG**部分中，它详细说明了要删除的注册表项。
+-   [**DelReg**](../install/inf-delreg-directive.md) 指令-提供指向 **DEL \_ 当前 \_ REG** 部分的链接，该链接详细说明了要删除的注册表项。
 
--   [**AddReg** ](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addreg-directive)指令-提供了三个部分的链接的注册表中详细介绍要添加的键。 这些章节**ACME 1234。AddReg**， **1280年**，和**DPMS**。
+-   [**AddReg**](../install/inf-addreg-directive.md) 指令-提供指向三个部分的链接，其中包含要添加的注册表项。 这些部分为 **ACME-1234。AddReg**、 **1280**和 **DPMS**。
 
--   [**CopyFiles** ](https://docs.microsoft.com/windows-hardware/drivers/install/inf-copyfiles-directive)指令-提供了指向**ACME 1234。CopyFiles**部分中，它指定要从分发磁盘或磁盘复制的文件。
+-   [**CopyFiles**](../install/inf-copyfiles-directive.md) 指令-提供指向 **ACME-1234 的链接。CopyFiles** 部分，指定要从分发磁盘复制的文件。
 
-有关更多常规信息，请参阅[ **INF DDInstall 部分**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-ddinstall-section)。
+有关更多常规信息，请参阅 [**INF DDInstall 部分**](../install/inf-ddinstall-section.md)。
 
-### <a name="span-idinfwriter-definedsectionsspanspan-idinfwriter-definedsectionsspanspan-idinfwriter-definedsectionsspaninf-writer-defined-sections"></a><span id="INF_Writer-Defined_Sections"></span><span id="inf_writer-defined_sections"></span><span id="INF_WRITER-DEFINED_SECTIONS"></span>INF 编写器定义部分
+### <a name="span-idinf_writer-defined_sectionsspanspan-idinf_writer-defined_sectionsspanspan-idinf_writer-defined_sectionsspaninf-writer-defined-sections"></a><span id="INF_Writer-Defined_Sections"></span><span id="inf_writer-defined_sections"></span><span id="INF_WRITER-DEFINED_SECTIONS"></span>INF 作者定义的部分
 
-INF 编写器定义的部分可以具有任何名称，前提是该 INF 文件中唯一。 这些部分所指向的其他部分中的指令。 以下项目符号项讨论的某些 INF 编写器定义部分从*monsamp.inf*:
+INF 写入方定义的节可以具有任何名称，前提是它在 INF 文件中是唯一的。 这些部分由其他部分中的指令指向。 以下项目符号项讨论了 *monsamp*中的某些 inf 编写器定义的部分：
 
--   **DEL\_当前\_REG**部分-标识其值将被删除的四个注册表项：**模式**， **MaxResolution**， **DPMS**，并且**ICMProfile**。 将后续部分中的新值与相应地更新这些密钥。
+-   **DEL \_当前 \_ 注册** 部分-标识要删除其值的四个注册表项： **模式**、 **MaxResolution**、 **DPMS**和 **ICMProfile**。 后续部分中的新值会相应地更新这些密钥。
 
     ```inf
     [DEL_CURRENT_REG]
@@ -94,39 +94,39 @@ INF 编写器定义的部分可以具有任何名称，前提是该 INF 文件�
     HKR,,ICMProfile
     ```
 
--   **1280**部分-更新**MaxResolution**到显示的字符串值的注册表项。
+-   **1280** 部分--将 **MaxResolution** 注册表项更新为显示的字符串值。
 
     ```inf
     [1280]
     HKR,,MaxResolution,,"1280, 1024"
     ```
 
--   **DPMS**部分-更新**DPMS**为 1 (TRUE) 的注册表项。 对于不支持电源管理的监视器，以下行应改为设**DPMS**密钥值为 0 (FALSE)。
+-   **DPMS** 节--将 **DPMS** 注册表项更新为 1 (TRUE) 。 对于不支持电源管理的监视器，以下行应将 **DPMS** 键值设置为 0 (FALSE) 。
 
     ```inf
     [DPMS]
     HKR,,DPMS,,1
     ```
 
--   **AddReg**)。 因此，**模式**EDID 或 EDID 解释存在问题时，才应使用 INF 键值。
+-   **AddReg**) 。 因此，只有当 EDID 或 EDID 解释中存在问题时，才应使用 **模式** 密钥 INF 值。
 
-    为每个子**模式**密钥指定分辨率，并且可以包含用来指定特定时间或时间范围的最多九个值。 对于每个子项的名称解析必须是两个整数值-宽度和高度-用逗号分隔的组合。 从名为特定的计时**1>** 到**Mode9**。 命名必须是连续的。 字符串值允许水平和垂直同步波作为单个值或范围，其中一个范围指定为最小值，必须指定的频率后跟短划线 （-） 后, 跟最大值。 当前仅作为整数，其后面忽略小数位的任何数字解释频率值。 字符串允许水平和垂直同步脉冲指定的极性。 但是，当前忽略这些极性值。 每个字符串中需要最大水平同步的脉冲值。 例如，下面的演示，对于每个子项的字符串，用方括号括起来的信息是可选的：
+    **模式**键的每个子项指定一个分辨率，并且最多可以包含9个用于指定特定计时或计时范围的值。 每个子项名称的解析必须是两个整数值的组合：宽度和高度，用逗号分隔。 具体的时间从 **Mode1** 到 **Mode9**。 命名必须是连续的。 字符串值允许将水平和垂直同步脉冲的频率指定为单个值或范围，其中，范围指定为最小值，后跟一个短划线 (-) ，后跟最大值。 Frequency 值当前仅被解释为整数，该整数后面的任何数字都将被忽略。 字符串允许指定水平和垂直同步脉冲的极性。 但是，这些极性值当前被忽略。 每个字符串中只有最大水平同步脉冲值是必需的。 例如，下面显示了对于每个子字符串，方括号中的信息是可选的：
 
     ```inf
     [{MinHSync}-]{MaxHSync}[,{MinVSync}-{MaxVSynx}] 
     ```
 
-    因此，每个子项的字符串可以指定而无需垂直同步范围。 但是，不建议指定一个子项的字符串，而无需垂直同步范围。
+    因此，可以在没有垂直同步范围的情况下指定每个子字符串。 但是，不建议指定没有垂直同步范围的子字符串。
 
-    下面的设置的第一行 **"模式\\1280,1024"** 子项显示的字符串值。 在同一行还标识此子项的值名称**模式 1**。 第一对字符串以下中的数字**模式 1**子项指定的水平的同步频率的范围单位为 KHz。 此字符串中的数字的下一步对指定垂直同步频率，的范围中 Hz。 在第二个行中， **PreferredMode**注册表项设置为在随附的字符串中显示的值。 在字符串中的值用于为首选的屏幕模式中像素和屏幕刷新频率，设置水平和垂直分辨率，赫兹 (Hz) 中。 仅水平滚动条和垂直分辨率值中所需**PreferredMode**字符串。 例如，下面显示了，对于**PreferredMode**用方括号括起来的信息是可选的字符串：
+    下面的第一行将 **"模式 \\ 1280，1024"** 子项设置为显示的字符串值。 同一行还标识了此子项的值名称 **Mode1**。 **Mode1**子项后面的字符串中的第一对数字以 KHz 为水平指定了水平同步频率范围。 此字符串中的下一对数字指定垂直同步频率的范围，以 Hz 为赫兹。 在第二行中， **PreferredMode** 注册表项设置为伴随字符串中显示的值。 字符串中的值用于设置水平和垂直分辨率（以像素为单位）和屏幕刷新率（赫兹 (Hz) ，适用于首选屏幕模式）。 在 **PreferredMode** 字符串中，只需要水平和垂直解析值。 例如，以下内容显示，对于 **PreferredMode** 字符串，方括号中的信息是可选的：
 
     ```inf
     {Width},{Height}[,{Frequency}]
     ```
 
-    因此，可以不以频率指定首选的模式。 但是，建议不要指定不带频率为首选的模式。
+    因此，无需频率即可指定首选模式。 但是，不建议指定没有频率的首选模式。
 
-    第三个行集**ICMProfile**密钥对的字符串值 **"profile1.icm"** 。
+    第三行将 **ICMProfile** 键设置为字符串值 **"profile1"**。
 
     ```inf
     [ACME-1234.AddReg]
@@ -135,5 +135,4 @@ INF 编写器定义的部分可以具有任何名称，前提是该 INF 文件�
     HKR,,ICMProfile,0,"profile1.icm"
     ```
 
-    对于满足 sRGB 规范，这是首选，监视器需要没有监视器的配置文件。
-
+    对于满足 sRGB 规范的监视器（首选），无需监视器配置文件。

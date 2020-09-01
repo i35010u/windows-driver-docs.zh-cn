@@ -7,12 +7,12 @@ keywords:
 - 状态块仿真 WDK 显示
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1dfcd3252c13f26298dd7a9b0bcd0ef8f93c0569
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 9be00b289ff7465d6880e37e3f2c118e93bfe8f8
+ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72839708"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89065874"
 ---
 # <a name="emulating-state-blocks"></a>模拟状态块
 
@@ -26,15 +26,9 @@ ValueType : REG_DWORD
 ValueData : 1 for D3D runtime emulation of stateblocks, 0 for driver implementation (default).
 ```
 
-**请注意**   将注册表配置为启用 Direct3D 运行时对状态块的仿真后，运行时不会调用用户模式显示驱动程序的[**StateSet**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_stateset)函数来设置任何状态块信息。
+**注意**   将注册表配置为启用 Direct3D 运行时对状态块的模拟后，运行时不会调用用户模式显示驱动程序的[**StateSet**](/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_stateset)函数来设置任何状态块信息。
 
  
 
  
-
- 
-
-
-
-
 

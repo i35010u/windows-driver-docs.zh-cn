@@ -13,12 +13,12 @@ keywords:
 - 定期触发 WDK RDBSS
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3891d198a2dcc05650b99d96d57f1cfb2ee15258
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 2b145cc8aa391d75325d9e45406b26dc19617300
+ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72840950"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89065920"
 ---
 # <a name="timer-and-worker-thread-management"></a>计时器和工作线程管理
 
@@ -32,7 +32,7 @@ RDBSS 为工作线程管理提供了多个计时器例程。 这些服务是为�
 
 -   一次性通知
 
-计时器与设备对象和工作线程例程相关联。 当计时器过期时，将调用作为输入参数传递到初始**RxPostOneShotTimerRequest**或**RxPostRecurrentTimerRequest**例程的工作线程例程。
+计时器与设备对象和工作线程例程相关联。 当计时器过期时，将调用作为输入参数传递到初始 **RxPostOneShotTimerRequest** 或 **RxPostRecurrentTimerRequest** 例程的工作线程例程。
 
 包含以下 RDBSS 计时器例程。
 
@@ -43,21 +43,21 @@ RDBSS 为工作线程管理提供了多个计时器例程。 这些服务是为�
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">例程</th>
-<th align="left">描述</th>
+<th align="left">例程所返回的值</th>
+<th align="left">说明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/rxtimer/nf-rxtimer-rxcanceltimerrequest" data-raw-source="[&lt;strong&gt;RxCancelTimerRequest&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/rxtimer/nf-rxtimer-rxcanceltimerrequest)"><strong>RxCancelTimerRequest</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/rxtimer/nf-rxtimer-rxcanceltimerrequest" data-raw-source="[&lt;strong&gt;RxCancelTimerRequest&lt;/strong&gt;](/windows-hardware/drivers/ddi/rxtimer/nf-rxtimer-rxcanceltimerrequest)"><strong>RxCancelTimerRequest</strong></a></p></td>
 <td align="left"><p>此例程取消计时器请求。 要取消的请求由指向例程和上下文参数的指针标识。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/rxtimer/nf-rxtimer-rxpostoneshottimerrequest" data-raw-source="[&lt;strong&gt;RxPostOneShotTimerRequest&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/rxtimer/nf-rxtimer-rxpostoneshottimerrequest)"><strong>RxPostOneShotTimerRequest</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/rxtimer/nf-rxtimer-rxpostoneshottimerrequest" data-raw-source="[&lt;strong&gt;RxPostOneShotTimerRequest&lt;/strong&gt;](/windows-hardware/drivers/ddi/rxtimer/nf-rxtimer-rxpostoneshottimerrequest)"><strong>RxPostOneShotTimerRequest</strong></a></p></td>
 <td align="left"><p>驱动程序使用此例程来初始化一次拍摄计时器请求。 当计时器过期时，传递给此例程的工作线程例程将被调用一次。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/rxtimer/nf-rxtimer-rxpostrecurrenttimerrequest" data-raw-source="[&lt;strong&gt;RxPostRecurrentTimerRequest&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/rxtimer/nf-rxtimer-rxpostrecurrenttimerrequest)"><strong>RxPostRecurrentTimerRequest</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/rxtimer/nf-rxtimer-rxpostrecurrenttimerrequest" data-raw-source="[&lt;strong&gt;RxPostRecurrentTimerRequest&lt;/strong&gt;](/windows-hardware/drivers/ddi/rxtimer/nf-rxtimer-rxpostrecurrenttimerrequest)"><strong>RxPostRecurrentTimerRequest</strong></a></p></td>
 <td align="left"><p>此例程初始化重复性计时器请求。 当重复性计时器根据此例程的输入参数触发时，传递给此例程的工作线程例程会定期调用。</p></td>
 </tr>
 </tbody>
@@ -66,9 +66,4 @@ RDBSS 为工作线程管理提供了多个计时器例程。 这些服务是为�
  
 
  
-
- 
-
-
-
 

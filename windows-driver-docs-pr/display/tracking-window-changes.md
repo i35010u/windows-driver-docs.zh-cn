@@ -3,22 +3,22 @@ title: 跟踪窗口变化
 description: 跟踪窗口变化
 ms.assetid: 76539ee8-439a-4c6a-b16a-3998e341f954
 keywords:
-- 显示驱动程序 WDK Windows 2000 中，窗口的更改
+- 显示驱动程序 WDK Windows 2000，窗口更改
 - 窗口更改跟踪 WDK Windows 2000 显示
 - WNDOBJ
-- 显示客户端区域更改 WDK Windows 2000
-- 显示可见的客户端区域 WDK Windows 2000
-- 大小 WDK Windows 2000 的屏幕
-- 位置 WDK Windows 2000 时，显示
+- 客户端区域更改 WDK Windows 2000 显示
+- 可见客户端区域，WDK Windows 2000 显示
+- size WDK Windows 2000 显示
+- 定位 WDK Windows 2000 显示器
 - 跟踪窗口更改 WDK Windows 2000 显示
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9d8ad5b8bd7c906c3e390cfb44d7297eb6a62bf2
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 0141b28725bb9d9267575b3a77058ecbe3855f82
+ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67353427"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89067194"
 ---
 # <a name="tracking-window-changes"></a>跟踪窗口变化
 
@@ -26,13 +26,13 @@ ms.locfileid: "67353427"
 ## <span id="ddk_tracking_window_changes_gg"></span><span id="DDK_TRACKING_WINDOW_CHANGES_GG"></span>
 
 
-更改为一个窗口，其中包括一个在[多监视器系统](multiple-monitor-support-in-the-display-driver.md)，可以通过将设备驱动程序通过跟踪[ **WNDOBJ**](https://docs.microsoft.com/windows/desktop/api/winddi/ns-winddi-_wndobj)。 WNDOBJ 是包含有关位置、 大小和窗口的可见客户端区域的信息的驱动程序级别窗口对象。 也就是说，通过创建对应于应用程序窗口 WNDOBJ，驱动程序可以跟踪大小、 位置和该窗口中的客户端区域更改。
+设备驱动程序可以通过[**WNDOBJ**](/windows/desktop/api/winddi/ns-winddi-_wndobj)跟踪对窗口（包括[多监视器系统](multiple-monitor-support-in-the-display-driver.md)中的窗口）所做的更改。 WNDOBJ 是驱动程序级别的窗口对象，其中包含有关窗口的位置、大小和可见客户端区域的信息。 也就是说，通过创建对应于应用程序窗口的 WNDOBJ，驱动程序可以在该窗口中跟踪大小、位置和客户端区域更改。
 
-应用程序使用 Win32 API 来访问**WNDOBJ\_安装程序**由设备驱动程序实现的功能。 通过 Win32 获得访问权限后**ExtEscape**函数。 GDI 将传递到设备驱动程序与此转义调用[ **DrvEscape**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvescape)，实现的设备驱动程序与**WNDOBJ\_安装**值*iEsc*。
+应用程序使用 Win32 API 访问设备驱动程序实现的 **WNDOBJ \_ 安装程序** 功能。 通过 Win32 **ExtEscape** 函数获取访问权限。 GDI 将此转义调用传递到 [**DrvEscape**](/windows/desktop/api/winddi/nf-winddi-drvescape)的设备驱动程序，由设备驱动程序实现，并使用 **WNDOBJ \_ 安装** 程序的值 *iEsc*。
 
-应用程序调用<strong>ExtEscape (</strong>hdc，WNDOBJ\_安装程序... **)** ，并将句柄传递到应用程序创建窗口 (由**CreateWindow**或某些等效 Win32 函数) 通过驱动程序将输入缓冲区。 如果该驱动程序将跟踪的窗口，则会调用[ **EngCreateWnd**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-engcreatewnd)的上下文中**ExtEscape**调用，以创建给定窗口的 WNDOBJ 结构。 从该点开始，对该窗口的任何更改会将向下传递给驱动程序。
+应用程序调用 <strong>ExtEscape (</strong>HDC，WNDOBJ \_ 安装程序,.。。**) ** ，并将句柄传递到应用程序创建的窗口 (由 **CreateWindow** 或) 通过输入缓冲区向驱动程序创建的等效 Win32 函数创建。 如果驱动程序要跟踪窗口，它将在**ExtEscape**调用的上下文中调用[**EngCreateWnd**](/windows/desktop/api/winddi/nf-winddi-engcreatewnd)，以为给定的窗口创建 WNDOBJ 结构。 从此时开始，对此窗口所做的任何更改都将向下传递到该驱动程序。
 
-该驱动程序应处理**ExtEscape**调用的方式如下所示：
+驱动程序应按照与下面类似的方式处理 **ExtEscape** 调用：
 
 ```cpp
 ULONG DrvEscape(
@@ -66,21 +66,12 @@ ULONG DrvEscape(
 }
 ```
 
-创建窗口对象的过程包括锁定特殊窗口资源，因此[ **EngCreateWnd** ](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-engcreatewnd)应仅在上下文中调用**WNDOBJ\_安装**中转义[ **DrvEscape** ](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvescape)或[ **DrvSetPixelFormat**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvsetpixelformat)。
+创建窗口对象涉及锁定特殊窗口资源，因此，只应在[**DrvEscape**](/windows/desktop/api/winddi/nf-winddi-drvescape)或[**DrvSetPixelFormat**](/windows/desktop/api/winddi/nf-winddi-drvsetpixelformat)中的**WNDOBJ \_ 安装程序**转义的上下文中调用[**EngCreateWnd**](/windows/desktop/api/winddi/nf-winddi-engcreatewnd) 。
 
-**EngCreateWnd**函数支持多个驱动程序的窗口跟踪。 通过**EngCreateWnd**，每个驱动程序标识其自身 GDI 是对相应的窗口中的更改调用的回调例程。 例如，此功能允许实时视频驱动程序，以跟踪更改的 OpenGL 驱动程序 OpenGL windows 跟踪更改的同时实时视频 windows。
+**EngCreateWnd**函数支持多个驱动程序的窗口跟踪。 通过 **EngCreateWnd**，每个驱动程序都标识自己的回调例程，GDI 将为相应的窗口调用更改。 例如，使用此功能可以在 OpenGL 驱动程序跟踪对 OpenGL windows 的更改时，使用实时视频驱动程序来跟踪实时视频窗口的更改。
 
-GDI 将回调到具有最新的窗口状态，如果新驱动程序[ **WNDOBJ** ](https://docs.microsoft.com/windows/desktop/api/winddi/ns-winddi-_wndobj)中创建*DrvSetPixelFormat*或**ExtEscape**. GDI 将还回调到驱动程序时由 WNDOBJ 引用窗口被破坏。
+如果在*DrvSetPixelFormat*或**ExtEscape**中创建了新的[**WNDOBJ**](/windows/desktop/api/winddi/ns-winddi-_wndobj) ，则 GDI 将回发到具有最新窗口状态的驱动程序。 当 WNDOBJ 引用的窗口被销毁时，GDI 还会回叫驱动程序。
 
-作为快捷键，驱动程序可以访问的公共成员[ **WNDOBJ** ](https://docs.microsoft.com/windows/desktop/api/winddi/ns-winddi-_wndobj)结构。
+作为加速器，驱动程序可以访问 [**WNDOBJ**](/windows/desktop/api/winddi/ns-winddi-_wndobj) 结构的公共成员。
 
-跟踪窗口中更改涉及三个回调函数提供，以支持 WNDOBJ 结构的使用。 可见的客户端区域可能会通过调用枚举[ **WNDOBJ\_cEnumStart** ](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-wndobj_cenumstart)并[ **WNDOBJ\_bEnum** ](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-wndobj_benum)回调函数。 驱动程序可能会将其自己的数据与 WNDOBJ 关联通过调用[ **WNDOBJ\_vSetConsumer** ](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-wndobj_vsetconsumer)回调函数。
-
-
-
-
-
-
-
-
-
+跟踪窗口更改涉及使用提供的三个回调函数来支持 WNDOBJ 结构。 可以通过调用 [**WNDOBJ \_ CEnumStart**](/windows/desktop/api/winddi/nf-winddi-wndobj_cenumstart) 和 [**WNDOBJ \_ bEnum**](/windows/desktop/api/winddi/nf-winddi-wndobj_benum) 回调函数来枚举可见客户端区域。 驱动程序可以通过调用 [**WNDOBJ \_ vSetConsumer**](/windows/desktop/api/winddi/nf-winddi-wndobj_vsetconsumer) 回调函数，将其自己的数据与 WNDOBJ 关联。

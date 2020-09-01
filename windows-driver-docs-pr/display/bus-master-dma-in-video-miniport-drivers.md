@@ -12,12 +12,12 @@ keywords:
 - 基于数据包的 DMA WDK 视频微型端口，概述
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6992915d543f886e4ba23d7a2355078a6262d7a9
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: eafa3c789b7ba461bf1f395399756c0f8479c312
+ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72839822"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89065286"
 ---
 # <a name="bus-master-dma-in-video-miniport-drivers"></a>视频微型端口驱动程序中的总线主控 DMA
 
@@ -33,27 +33,21 @@ ms.locfileid: "72839822"
 
 -   **常见缓冲区 DMA**
 
-    在公用缓冲区 DMA 中，在（因此，公共到）之间共享缓冲区，并由主机和设备用于重复 DMA 操作。 某些驱动程序使用公用缓冲区 DMA 将驱动程序操作的数据（如一系列命令）上传到图形引擎。 公用缓冲区是连续的，并且始终可由设备和主机 CPU 访问。
+    在公用缓冲区 DMA 中，缓冲区在 (因此（共有) ，并由主机和设备用于重复 DMA 操作）之间共享。 某些驱动程序使用公用缓冲区 DMA 将驱动程序操作的数据（如一系列命令）上传到图形引擎。 公用缓冲区是连续的，并且始终可由设备和主机 CPU 访问。
 
     常见的缓冲区是宝贵的系统资源。 为了获得更好的整体驱动程序和系统性能，驱动程序应尽可能经济地使用公用缓冲区 DMA。
 
 根据总线主适配器的性质，某些微型端口驱动程序以独占方式使用基于数据包的 DMA，而另一些则使用公用缓冲区 DMA。
 
-无论使用哪种类型的 DMA，微型端口驱动程序都应调用[**VideoPortGetDmaAdapter**](https://docs.microsoft.com/windows-hardware/drivers/ddi/video/nf-video-videoportgetdmaadapter) ，以获取指向[**VP\_DMA\_适配器**](https://docs.microsoft.com/previous-versions/ff570570(v=vs.85))结构的指针，并将其用于后续的 DMA 函数调用。 如果不再需要继续 DMA 操作，微型端口驱动程序应调用[**VideoPortPutDmaAdapter**](https://docs.microsoft.com/windows-hardware/drivers/ddi/video/nf-video-videoportputdmaadapter)来放弃适配器对象。
+无论使用哪种类型的 DMA，微型端口驱动程序都应调用 [**VideoPortGetDmaAdapter**](/windows-hardware/drivers/ddi/video/nf-video-videoportgetdmaadapter) ，以获取指向 [**VP \_ dma \_ 适配器**](/previous-versions/ff570570(v=vs.85)) 结构的指针，并将其用于后续的 dma 函数调用。 如果不再需要继续 DMA 操作，微型端口驱动程序应调用 [**VideoPortPutDmaAdapter**](/windows-hardware/drivers/ddi/video/nf-video-videoportputdmaadapter) 来放弃适配器对象。
 
 以下小节介绍了如何使用视频端口驱动程序提供的基于数据包和常见的缓冲区 DMA 支持。
 
-[基于数据包的总线主机 DMA](packet-based-bus-master-dma.md)
+[基于数据包的总线主控 DMA](packet-based-bus-master-dma.md)
 
-[公用缓冲区总线主机 DMA](common-buffer-bus-master-dma.md)
+[公用缓冲区总线主控 DMA](common-buffer-bus-master-dma.md)
 
-[使用 DMA 时要考虑的要点](points-to-consider-when-using-dma.md)
-
- 
+[使用 DMA 时需要注意的要点](points-to-consider-when-using-dma.md)
 
  
-
-
-
-
 

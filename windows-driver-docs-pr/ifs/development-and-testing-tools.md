@@ -10,12 +10,12 @@ keywords:
 - 验证程序实用工具
 ms.date: 08/21/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 77b56f7b166a3a2c666244c9d027c72fbf98903e
-ms.sourcegitcommit: 17c1bbc5ea0bef3bbc87794b030a073f905dc942
+ms.openlocfilehash: 3896a8c941f7435c8924a1abead86039af54b716
+ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88802461"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89065248"
 ---
 # <a name="development-and-testing-tools"></a>开发和测试工具
 
@@ -27,13 +27,13 @@ ms.locfileid: "88802461"
 
 ## <a name="fsutilexe-command"></a>Fsutil.exe 命令
 
-[*Fsutil.exe*](https://docs.microsoft.com/windows-server/administration/windows-commands/fsutil-file)程序是系统提供的命令行实用程序，用于对文件执行各种操作。 开发人员可以键入， ```fsutil file layout foo.md``` 以美观的方式打印文件的所有详细信息，如属性、时间戳、流等。
+[*Fsutil.exe*](/windows-server/administration/windows-commands/fsutil-file)程序是系统提供的命令行实用程序，用于对文件执行各种操作。 开发人员可以键入， ```fsutil file layout foo.md``` 以美观的方式打印文件的所有详细信息，如属性、时间戳、流等。
 
 ## <a name="fltkd-debugger-extension"></a>！ fltkd 调试器扩展
 
-[Windows 调试](https://docs.microsoft.com/windows-hardware/drivers/debugger/index)工具中提供了！ fltkd 调试器扩展。 常用命令包括以下内容：
+[Windows 调试](../debugger/index.md)工具中提供了！ fltkd 调试器扩展。 常用命令包括以下内容：
 
-| 命令 | 说明 |
+| Command | 说明 |
 | ------- | ----------- |
 | **!cbd** | 筛选器管理器等效于！ irp |
 | **！筛选器** | 列出有关指定筛选器的详细信息 |
@@ -47,7 +47,7 @@ ms.locfileid: "88802461"
 
 ## <a name="filter-verifier"></a>筛选器验证程序
 
-筛选器验证[程序是驱动程序验证](https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier)器中的一个[i/o 验证](https://docs.microsoft.com/windows-hardware/drivers/devtest/i-o-verification)选项，用于验证筛选器管理器功能的微筛选器驱动程序使用情况。 筛选器验证程序与筛选器管理器一起安装。 开发人员应始终启用驱动程序验证程序和筛选器验证程序，开发微筛选器驱动程序。
+筛选器验证[程序是驱动程序验证](../devtest/driver-verifier.md)器中的一个[i/o 验证](../devtest/i-o-verification.md)选项，用于验证筛选器管理器功能的微筛选器驱动程序使用情况。 筛选器验证程序与筛选器管理器一起安装。 开发人员应始终启用驱动程序验证程序和筛选器验证程序，开发微筛选器驱动程序。
 
 要使用筛选器验证程序，请在驱动程序验证程序中指定微筛选器驱动程序的名称并启用 i/o 验证选项 (*Verifier.exe*) 。 当微筛选器驱动程序向筛选器管理器注册时，将开始验证。
 

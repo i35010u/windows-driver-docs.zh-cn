@@ -10,12 +10,12 @@ keywords:
 - 众所周知的标识符 WDK 文件系统
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a340e5283e0abb6f023938035542d688c6f54816
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 22a789c09ddaf8028fdf584cf650c90dea841669
+ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72840971"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89065930"
 ---
 # <a name="security-identifier"></a>安全标识符
 
@@ -33,27 +33,27 @@ Windows 将安全标识符用作权威性值，以区分不同的安全实体。
 
 这些函数包括：
 
--   [**SecMakeSPN**](https://msdn.microsoft.com/library/windows/hardware/ff556584)-创建可在与特定安全服务提供程序通信时使用的服务提供程序名称字符串。
+-   [**SecMakeSPN**](/previous-versions/ff556584(v=vs.85))-创建可在与特定安全服务提供程序通信时使用的服务提供程序名称字符串。
 
--   [**SecMakeSPNEx**](https://msdn.microsoft.com/library/windows/hardware/ff556585)— **SecMakeSPN**的扩充版本。 此功能在 Microsoft Windows XP 和更高版本的 Windows 上可用。
+-   [**SecMakeSPNEx**](/previous-versions/ff556585(v=vs.85))— **SecMakeSPN**的扩充版本。 此功能在 Microsoft Windows XP 和更高版本的 Windows 上可用。
 
--   [**SecMakeSPNEx2**](https://msdn.microsoft.com/library/windows/hardware/ff556592)— **SecMakeSPNEx**的扩充版本。 此功能在 Windows Vista、Windows Server 2008 和更高版本的 Windows 上可用。
+-   [**SecMakeSPNEx2**](/previous-versions/ff556592(v=vs.85))— **SecMakeSPNEx**的扩充版本。 此功能在 Windows Vista、Windows Server 2008 和更高版本的 Windows 上可用。
 
--   [**SecLookupAccountSid**](https://msdn.microsoft.com/library/windows/hardware/ff556579)—给定 SID 后，此例程将返回帐户名称。 此功能在 Windows XP 和更高版本上可用。
+-   [**SecLookupAccountSid**](/previous-versions/ff556579(v=vs.85))—给定 SID 后，此例程将返回帐户名称。 此功能在 Windows XP 和更高版本上可用。
 
--   [**SecLookupAccountName**](https://msdn.microsoft.com/library/windows/hardware/ff554795)—在给定帐户名称的情况下，此例程将检索 SID。 此功能在 Windows XP 和更高版本上可用。
+-   [**SecLookupAccountName**](/previous-versions/ff554795(v=vs.85))—在给定帐户名称的情况下，此例程将检索 SID。 此功能在 Windows XP 和更高版本上可用。
 
--   [**SecLookupWellKnownSid**](https://msdn.microsoft.com/library/windows/hardware/ff556582)—如果给定一个已知的 sid 类型，此例程将返回正确的 sid。 此功能在 Windows Server 2003 及更高版本中可用。
+-   [**SecLookupWellKnownSid**](/previous-versions/ff556582(v=vs.85))—如果给定一个已知的 sid 类型，此例程将返回正确的 sid。 此功能在 Windows Server 2003 及更高版本中可用。
 
 此外，任何内核驱动程序都可以使用以下标准运行时库例程创建 SID：
 
--   [**RtlInitializeSid**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-rtlinitializesid)-初始化新 SID 的缓冲区。
+-   [**RtlInitializeSid**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-rtlinitializesid)-初始化新 SID 的缓冲区。
 
--   [**RtlLengthSid**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-rtllengthsid)-确定存储在给定缓冲区中的 SID 大小。
+-   [**RtlLengthSid**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-rtllengthsid)-确定存储在给定缓冲区中的 SID 大小。
 
--   [**RtlValidSid**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-rtlvalidsid)-确定给定的 SID 缓冲区是否为有效的格式化缓冲区。
+-   [**RtlValidSid**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-rtlvalidsid)-确定给定的 SID 缓冲区是否为有效的格式化缓冲区。
 
-请注意， **RtlLengthSid**和**RtlValidSid**假设存在8字节的固定标头。 因此，在调用这些函数之前，驱动程序应该检查 SID 标头的最小长度。
+请注意， **RtlLengthSid** 和 **RtlValidSid** 假设存在8字节的固定标头。 因此，在调用这些函数之前，驱动程序应该检查 SID 标头的最小长度。
 
 尽管有多个 RTL 函数，但这些是构造 SID 时所需的主要功能。
 
@@ -89,9 +89,9 @@ Windows 将安全标识符用作权威性值，以区分不同的安全实体。
 }
 ```
 
-请注意，也可以使用 Windows Server 2003 中引入的更简单的函数**SecLookupWellKnownSid**来完成此操作。
+请注意，也可以使用 Windows Server 2003 中引入的更简单的函数 **SecLookupWellKnownSid** 来完成此操作。
 
-下面的代码示例演示如何使用**SecLookupWellKnownSid**函数为 "local system" 实体创建 SID：
+下面的代码示例演示如何使用 **SecLookupWellKnownSid** 函数为 "local system" 实体创建 SID：
 
 ```cpp
 {
@@ -114,9 +114,4 @@ Windows 将安全标识符用作权威性值，以区分不同的安全实体。
 虽然这两种方法都是有效的，但这两种方法是首选的。 请注意，这些代码示例使用本地缓冲区来存储 SID。 在当前调用上下文外部不能使用这些缓冲区。 如果需要持久性 SID 缓冲区，应从池内存中分配缓冲区。
 
  
-
- 
-
-
-
 

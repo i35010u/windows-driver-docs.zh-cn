@@ -4,20 +4,20 @@ description: 间接显示驱动程序模型旨在提供简单的用户模式驱�
 ms.assetid: E2E64500-5F99-42A7-8945-B496026EA142
 ms.date: 07/17/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 162732b980b5970b90459ccd53f4d1d97ffc1d29
-ms.sourcegitcommit: 0d89fc46058efb2ebc6ed9bd8f638c3f8cc1a678
+ms.openlocfilehash: b6fa5c91ff7afbb419c9910e0fff2cddd3642608
+ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/18/2020
-ms.locfileid: "86459209"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89064772"
 ---
 # <a name="indirect-display-driver-model-overview"></a>间接显示驱动程序模型概述
 
-间接显示驱动程序（IDD）模型旨在提供简单的用户模式驱动程序模型，以支持未连接到传统 GPU 显示输出的监视器。 例如，通过 USB 连接到电脑的转换器连接了常规（VGA、DVI、HDMI、DP 等）监视器。
+间接显示驱动程序 (IDD) 型号旨在提供简单的用户模式驱动程序模型，以支持未连接到传统 GPU 显示输出的监视器。 例如，通过 USB 连接到电脑并连接到它的常规 (VGA、DVI、HDMI、DP 等) 的转换器。
 
 ## <a name="idd-implementation"></a>IDD 实现
 
-IDD 实现为[UMDF](/windows-hardware/drivers/wdf/getting-started-with-umdf-version-2)类扩展。 IDD 是开发人员提供的用于设备的 UMDF 驱动程序，它使用[IddCx](/windows-hardware/drivers/ddi/iddcx/) （间接显示驱动程序类扩展）公开的功能与 windows 图形子系统交互。
+IDD 实现为 [UMDF](../wdf/getting-started-with-umdf-version-2.md) 类扩展。 IDD 是开发人员提供的用于设备的 UMDF 驱动程序，使用由 [IddCx](/windows-hardware/drivers/ddi/iddcx/) 提供的功能 (间接显示驱动程序类扩展) 与 windows 图形子系统交互。
 
 ![UMDF 体系结构内的间接显示驱动程序](images/idd_umdf_arch.png)
 
@@ -32,7 +32,7 @@ IDD 实现为[UMDF](/windows-hardware/drivers/wdf/getting-started-with-umdf-vers
 * 支持其他显示功能，如硬件鼠标光标、伽玛、I2C 通信和受保护的内容
 * 处理要显示在监视器上的桌面映像
 
-IDD 在[会话 0](/windows-hardware/drivers/wdf/session-zero-guidelines-for-umdf-drivers)中运行，无需在用户会话中运行任何组件，因此任何驱动程序不稳定都不会影响整个系统的稳定性。
+IDD 在 [会话 0](../wdf/session-zero-guidelines-for-umdf-drivers.md) 中运行，无需在用户会话中运行任何组件，因此任何驱动程序不稳定都不会影响整个系统的稳定性。
 
 ## <a name="user-mode-model"></a>用户模式模型
 
@@ -40,7 +40,7 @@ IDD 是仅限用户模式的模型，不支持内核模式组件。 因此，该
 
 > [!NOTE]
 >
-> IDD 应该构建为[通用 windows 驱动程序](/windows-hardware/drivers/gettingstarted/writing-a-umdf-driver-based-on-a-template)，以便它可以在多个 windows 平台上使用。
+> IDD 应该构建为 [通用 windows 驱动程序](../gettingstarted/writing-a-umdf-driver-based-on-a-template.md) ，以便它可以在多个 windows 平台上使用。
 
 在生成时，UMDF IDD 会声明生成它的 IddCx 的版本，并确保在加载驱动程序时加载正确版本的 IddCx。
 
@@ -49,6 +49,6 @@ IDD 是仅限用户模式的模型，不支持内核模式组件。 因此，该
 [IddCx 对象](iddcx-objects.md)  
 [调试](indirect-display-debugging.md)
 
-## <a name="sample-code"></a>示例代码
+## <a name="sample-code"></a>代码示例
 
-Microsoft 在[Windows 驱动程序示例 GitHub](https://github.com/microsoft/Windows-driver-samples/tree/master/video/IndirectDisplay)上提供了一个示例 IDD 实现。 此示例演示如何连接监视器、如何响应模式集，以及如何接收帧。
+Microsoft 在 [Windows 驱动程序示例 GitHub](https://github.com/microsoft/Windows-driver-samples/tree/master/video/IndirectDisplay)上提供了一个示例 IDD 实现。 此示例演示如何连接监视器、如何响应模式集，以及如何接收帧。

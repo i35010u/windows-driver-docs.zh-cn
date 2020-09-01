@@ -8,29 +8,24 @@ keywords:
 - 复制 RegistryPath 字符串
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 890dfcfa26e341939dad8b60e7796c93264f2762
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 73c010593a799d43594995e64bddcc6f00c4a4aa
+ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72841517"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89066284"
 ---
-# <a name="optional-saving-a-copy-of-the-registry-path-string"></a>\[可选\] 保存注册表路径字符串的副本
+# <a name="optional-saving-a-copy-of-the-registry-path-string"></a>\[可选 \] 保存注册表路径字符串的副本
 
 
 ## <span id="ddk_saving_a_copy_of_the_registry_path_string_if"></span><span id="DDK_SAVING_A_COPY_OF_THE_REGISTRY_PATH_STRING_IF"></span>
 
 
-**请注意**   仅当筛选器驱动程序在**DriverEntry**例程返回后需要使用注册表路径时，此步骤才是必需的。
+**注意**   只有筛选器驱动程序在**DriverEntry**例程返回后需要使用注册表路径时，此步骤才是必需的。
 
  
 
-保存作为输入传递给**DriverEntry**的*RegistryPath*字符串的副本。 此参数指向一个计数的 Unicode 字符串，指定驱动程序的注册表项的路径 **\\注册表\\机\\系统\\CurrentControlSet\\Services\\** <em>DriverName</em>，其中*DriverName*是驱动程序的名称。 如果稍后需要*RegistryPath*字符串，则**DriverEntry**必须保存该字符串的副本，而不只是指向它的指针，因为在**DriverEntry**例程返回后指针不再有效。 可以使用[**RtlCopyUnicodeString**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-rtlcopyunicodestring)例程将*RegistryPath*源字符串复制到目标字符串。
+保存作为输入传递给**DriverEntry**的*RegistryPath*字符串的副本。 此参数指向一个计数的 Unicode 字符串，该字符串指定驱动程序的注册表项（ ** \\ 注册表 \\ 计算机 \\ System \\ CurrentControlSet \\ Services \\ **<em>DriverName</em>）的路径，其中*DriverName*是驱动程序的名称。 如果稍后需要 *RegistryPath* 字符串，则 **DriverEntry** 必须保存该字符串的副本，而不只是指向它的指针，因为在 **DriverEntry** 例程返回后指针不再有效。 可以使用 [**RtlCopyUnicodeString**](/windows-hardware/drivers/ddi/wdm/nf-wdm-rtlcopyunicodestring) 例程将 *RegistryPath* 源字符串复制到目标字符串。
 
  
-
- 
-
-
-
 

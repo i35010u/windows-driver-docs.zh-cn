@@ -7,60 +7,55 @@ keywords:
 - V_NET_ROOT 结构 WDK RDBSS
 - 映射共享
 - 数据结构 WDK 文件系统
-- RDBSS WDK 的文件系统、 连接和文件结构
-- 重定向驱动器缓冲子系统 WDK 的文件系统、 连接和文件结构
+- RDBSS WDK 文件系统、连接和文件结构
+- 重定向的驱动器缓冲子系统 WDK 文件系统、连接和文件结构
 - 连接结构 WDK RDBSS
 - 文件结构 WDK RDBSS
 - 结构 WDK RDBSS
-- WDK RDBSS 的连接信息
+- 连接信息 WDK RDBSS
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b5b502f794a7214028576d9cb2b45a694839f63f
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: a8fdd338ae73c2245c041b758742ba218d2b768c
+ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67383850"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89065924"
 ---
-# <a name="the-vnetroot-structure"></a>V\_NET\_根结构
+# <a name="the-v_net_root-structure"></a>\_.Net \_ 根结构
 
 
 ## <span id="ddk_the_v_net_root_structure_if"></span><span id="DDK_THE_V_NET_ROOT_STRUCTURE_IF"></span>
 
 
-V\_NET\_根结构提供了映射到共享 （例如，用户驱动器映射的根目录下的相关联的共享点的点） 的机制。 V\_NET\_根名称可以是采用以下格式之一：
+\_.Net \_ 根结构提供了一种映射到共享 (的机制，例如，指向关联共享点根下的用户驱动器映射) 。 \_NET \_ ROOT name 可以采用以下格式之一：
 
 ```cpp
 \server\share\d1\d2
 \;m:\server\share\d1\d2
 ```
 
-名称的格式取决于是否存在本地设备 （"x:"，例如） 与此 V\_NET\_根结构。 在本地驱动器映射的情况下 (d1\\d2，例如)，本地驱动器映射到每台上获取前缀[ **CreateFile** ](https://docs.microsoft.com/windows/desktop/api/fileapi/nf-fileapi-createfilea)打开上此 V\_NET\_根结构。
+名称的格式取决于是否存在 ( "X：" 的本地设备，例如) 与此 \_ .Net \_ 根结构关联的。 如果本地驱动器映射 (d1 \\ d2，例如) ，则本地驱动器映射将作为此[**CreateFile**](/windows/desktop/api/fileapi/nf-fileapi-createfilea) \_ .net 根结构上打开的每个 CreateFile 的前缀 \_ 。
 
-V\_NET\_根结构还用于提供备用凭据。 对于这种 V 目的\_NET\_根结构是将备用凭据传播到 NET\_根作为默认值。 为实现此目的，必须没有其他引用。
+\_.Net \_ 根结构还用于提供备用凭据。 这种类型的 \_ .Net 根结构的用途 \_ 是将备用凭据作为默认凭据传播到 NET \_ root。 为此，必须没有其他引用。
 
-将出现的 v 形\_NET\_根结构由 RDBSS 维护于每个网络\_根。 每个 V\_NET\_根结构有几个元素中常见的其他 RDBSS 结构，和元素，是唯一的一个 V\_NET\_根结构。 管理 V RDBSS 例程\_NET\_根结构只能修改以下元素：
+.Net 根结构的列表 \_ \_ 由 RDBSS 为每个 NET \_ root 维护。 每个 \_ .Net \_ 根结构都有几个与其他 RDBSS 结构共有的元素，以及对 \_ .net 根结构唯一的元素 \_ 。 管理 \_ .Net 根结构的 RDBSS 例程 \_ 仅修改以下元素：
 
 -   签名和引用计数
 
--   一个指向关联 NET\_根结构和链接
+-   指向关联的网络 \_ 根结构和链接的指针
 
--   表查找 （前缀） 的名称信息
+-   表查找 (前缀) 的名称信息
 
--   名称的前缀添加到任何名称用户会看到 (这是用于模拟 NET\_未映射的实际 NET 根目录下的根结构\_根结构)
+-   要添加到用户看到的任何名称的前缀的名称 (此值用于模拟 \_ 未映射到实际网络根结构的根的网络根结构 \_) 
 
-V 进行收尾工作\_NET\_根结构由两部分组成：
+\_.Net \_ 根结构的完成由两部分组成：
 
-1.  销毁所有 SRV 与关联的\_打开结构
+1.  销毁与所有 SRV \_ 开放式结构的关联
 
 2.  释放内存
 
-可能会有这两个操作和 V 中的字段之间延迟\_NET\_根结构可防止第一步重复出现。
+这两个操作之间可能存在延迟，而 .Net 根结构中的字段 \_ 会 \_ 阻止复制第一步。
 
  
-
- 
-
-
-
 

@@ -11,12 +11,12 @@ keywords:
 - 事件 WDK，另请参阅事件
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 37525f66392af208c7e7495693a2a4b841a6bd53
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: a0ff2f9566f10e937075d81bbe1702e9ed44bdca
+ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72841485"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89065382"
 ---
 # <a name="auditing"></a>审核
 
@@ -30,16 +30,11 @@ Windows 中的审核系统提供了一种机制，用于跟踪特定的安全事
 
 审核的关键例程包括：
 
--   [**SeAuditingFileEvents**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-seauditingfileevents)-此例程确定是否已在系统上启用文件审核;这是一种全局策略检查，用于确定是否应执行完整审核检查。 引入此例程是为了优化安全系统操作。
+-   [**SeAuditingFileEvents**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-seauditingfileevents)-此例程确定是否已在系统上启用文件审核;这是一种全局策略检查，用于确定是否应执行完整审核检查。 引入此例程是为了优化安全系统操作。
 
--   [**SeOpenObjectAuditAlarm**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-seopenobjectauditalarm)-此例程在 Windows 系统中执行主要审核操作（审核尝试打开对象）。 请注意，尝试访问已审核的对象，而不是对对象的访问是成功还是失败。
+-   [**SeOpenObjectAuditAlarm**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-seopenobjectauditalarm)-此例程在 Windows 系统中执行主要审核操作， (审核尝试打开对象) 。 请注意，尝试访问已审核的对象，而不是对对象的访问是成功还是失败。
 
-无需审核。 WDK 的 IFS 部分中没有任何示例文件系统（例如 FAT 或 CDFS）实现审核。 但是，从安全角度来看，审核非常重要，因为它允许管理员监视系统的安全行为。
-
- 
+无需审核。 没有 (FAT 或 CDFS 的示例文件系统，例如，在 WDK 的 IFS 部分中) 实现审核。 但是，从安全角度来看，审核非常重要，因为它允许管理员监视系统的安全行为。
 
  
-
-
-
 

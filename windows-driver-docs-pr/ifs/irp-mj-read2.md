@@ -4,16 +4,16 @@ description: 检查 IRP_MJ_READ 操作的 Oplock 状态
 ms.assetid: 9b4d1ba9-0838-44f1-8328-f60bfb3910ee
 ms.date: 11/25/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: de28ee85404764aa586b12a2e80b8b14d65990e7
-ms.sourcegitcommit: 79ff84ffc2faa5fdb3294e1fb5791f6a0ea7ef50
+ms.openlocfilehash: 9c68c370df0ae075d991847d0cdd86dfee5a293f
+ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/26/2019
-ms.locfileid: "74543046"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89065008"
 ---
 # <a name="checking-the-oplock-state-of-an-irp_mj_read-operation"></a>检查 IRP_MJ_READ 操作的 Oplock 状态
 
-读取*流*时，将应用以下[oplock 中断](https://docs.microsoft.com/windows-hardware/drivers/ifs/breaking-oplocks)条件。 如果 TxF 事务处理读取器执行读取，则不会执行此检查，因为事务处理读取器会排除编写器（即，持有 oplock 的编写器根本不能存在）。
+读取*流*时，将应用以下[oplock 中断](./breaking-oplocks.md)条件。 如果 TxF 事务处理读取器执行读取，则不会执行此检查，因为事务读取器会排除编写器 (也就是说，持有 oplock 的编写器不能出现在所有) 上。
 
 ### <a name="conditions-for-level-2-filter-read-and-read-handle-request-types"></a>级别2、筛选、读取和读取句柄请求类型的条件
 

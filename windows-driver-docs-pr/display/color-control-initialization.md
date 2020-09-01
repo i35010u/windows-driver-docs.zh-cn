@@ -6,18 +6,18 @@ keywords:
 - 绘制 WDK DirectDraw，颜色控件初始化
 - DirectDraw WDK Windows 2000 显示，颜色控件初始化
 - 颜色控制初始化 WDK DirectDraw
-- 初始化 DirectDraw 颜色控件
+- 初始化 DirectDraw 颜色控制
 - DdControlColor
 - 亮度 WDK DirectDraw
 - 亮度 WDK DirectDraw
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8aa72adef70158452deef271bcd4dcf9e442f44c
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 72ada1341b2d93924c0f5d64cc359570de9db99a
+ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67370692"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89066054"
 ---
 # <a name="color-control-initialization"></a>颜色控制初始化
 
@@ -25,19 +25,13 @@ ms.locfileid: "67370692"
 ## <span id="ddk_color_control_initialization_gg"></span><span id="DDK_COLOR_CONTROL_INITIALIZATION_GG"></span>
 
 
-驱动程序的[ *DdControlColor* ](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_colorcb_colorcontrol)函数控制的覆盖层和/或主表面的亮度/亮度控件。 若要启用颜色的控件功能，Microsoft DirectDraw HAL 必须执行以下操作在初始化时：
+驱动程序的 [*DdControlColor*](/windows/desktop/api/ddrawint/nc-ddrawint-pdd_colorcb_colorcontrol) 函数控制叠加和/或主图面的亮度/亮度控件。 若要启用颜色控制功能，Microsoft DirectDraw HAL 必须在初始化时执行以下操作：
 
--   如果覆盖和/或主表面包含颜色的控件，设置 DDCAPS2\_COLORCONTROLOVERLAY 和/或 DDCAPS2\_COLORCONTROLPRIMAY 标志中**dwCaps2**的成员[ **DDCORECAPS** ](https://docs.microsoft.com/windows/desktop/api/ddrawi/ns-ddrawi-_ddcorecaps)中嵌入的结构[ **DD\_HALINFO** ](https://docs.microsoft.com/windows/desktop/api/ddrawint/ns-ddrawint-_dd_halinfo)结构。
+-   如果覆盖面和/或主表面包含颜色控件，请 \_ \_ 在嵌入在[**DD \_ DwCaps2**](/windows/desktop/api/ddrawint/ns-ddrawint-_dd_halinfo)结构中的[**DDCORECAPS**](/windows/desktop/api/ddrawi/ns-ddrawi-_ddcorecaps)结构的**HALINFO**成员中设置 DDCAPS2 COLORCONTROLOVERLAY 和/或 DDCAPS2 COLORCONTROLPRIMAY 标志。
 
--   该驱动程序必须 DD 中指定一个函数\_HALINFO 结构 DirectDraw 可以调用以获取其他信息。 这中所述[ **DdGetDriverInfo**](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_getdriverinfo)。
+-   驱动程序必须在 DD HALINFO 结构中指定一个函数 \_ ，该函数用于获取其他信息。 [**DdGetDriverInfo**](/windows/desktop/api/ddrawint/nc-ddrawint-pdd_getdriverinfo)中对此进行了介绍。
 
--   [ **DdGetDriverInfo** ](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_getdriverinfo)回调必须调用具有 GUID\_ColorControlCallbacks GUID 指定。 该驱动程序必须填写[ **DD\_COLORCONTROLCALLBACKS** ](https://docs.microsoft.com/windows/desktop/api/ddrawint/ns-ddrawint-_dd_colorcontrolcallbacks)结构相应的驱动程序的回调和标志设置，然后将复制到此结构**lpvData**输入结构中的成员。
-
- 
+-   必须用指定的 GUID ColorControlCallbacks GUID 调用 [**DdGetDriverInfo**](/windows/desktop/api/ddrawint/nc-ddrawint-pdd_getdriverinfo) 回调 \_ 。 驱动程序必须使用适当的驱动程序回调和 flags 集填充 [**DD \_ COLORCONTROLCALLBACKS**](/windows/desktop/api/ddrawint/ns-ddrawint-_dd_colorcontrolcallbacks) 结构，然后将该结构复制到输入结构的 **lpvData** 成员。
 
  
-
-
-
-
 

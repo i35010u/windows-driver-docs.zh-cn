@@ -1,28 +1,28 @@
 ---
-title: 安全\_描述符\_控制
-description: 安全\_描述符\_控制
+title: 安全 \_ 描述符 \_ 控件
+description: 安全 \_ 描述符 \_ 控件
 ms.assetid: 6a7fe617-156d-4eb0-83f7-df78104acbde
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9e20fa2d61b7a6e15986a7409c31d289cfd8aaa9
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: baf8cb9256e68cafb59a73c95fed03af1c304dd2
+ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72840973"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89067358"
 ---
-# <a name="security_descriptor_control"></a>安全\_描述符\_控制
+# <a name="security_descriptor_control"></a>安全 \_ 描述符 \_ 控件
 
 
-**安全\_描述符\_控件**类型是一组位标志，用于限定[**安全\_描述符**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff556610(v=vs.85))结构或其组件的含义。 每个安全描述符都有一个**控件**成员，该成员将**安全\_说明符存储\_控制**位。
+**安全 \_ 描述符 \_ 控件**类型是一组限制[**安全 \_ 描述符**](/previous-versions/windows/hardware/drivers/ff556610(v=vs.85))结构或其组件含义的位标志。 每个安全描述符都有一个存储**安全 \_ 描述符 \_ 控制**位的**控件**成员。
 
-安全\_描述符\_控制
+安全 \_ 描述符 \_ 控件
 
 ``` syntax
 typedef USHORT SECURITY_DESCRIPTOR_CONTROL, *PSECURITY_DESCRIPTOR_CONTROL;
 ```
 
-控制值可以包含以下**安全\_描述符的组合\_控制**位标志：
+控制值可以包括以下 **安全 \_ 描述符 \_ 控件** 位标志的组合：
 
 <table>
 <colgroup>
@@ -31,14 +31,14 @@ typedef USHORT SECURITY_DESCRIPTOR_CONTROL, *PSECURITY_DESCRIPTOR_CONTROL;
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Value</th>
+<th align="left">值</th>
 <th align="left">含义</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left"><p>SE_DACL_AUTO_INHERIT_REQ</p></td>
-<td align="left"><p>请求受安全描述符保护的对象的提供程序自动将 DACL 传播到现有子对象。 如果访问接口支持自动继承，则它会将 DACL 传播到任何现有子对象，并设置对象的安全说明符及其子对象的 SE_DACL_AUTO_INHERITED 位。</p></td>
+<td align="left"><p>请求受安全描述符保护的对象的提供程序自动将 DACL 传播到现有子对象。 如果访问接口支持自动继承，则会将 DACL 传播到任何现有子对象，并设置该对象及其子对象的安全说明符中的 SE_DACL_AUTO_INHERITED 位。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>SE_DACL_AUTO_INHERITED</p></td>
@@ -50,13 +50,13 @@ typedef USHORT SECURITY_DESCRIPTOR_CONTROL, *PSECURITY_DESCRIPTOR_CONTROL;
 <td align="left"><p>SE_DACL_DEFAULTED</p></td>
 <td align="left"><p>指示具有默认 DACL 的安全描述符。 例如，如果对象的创建者未指定 DACL，则对象从创建者的访问令牌接收默认的 DACL。 对于 ACE 继承，此标志可能会影响系统对 DACL 的处理方式。 如果未设置 SE_DACL_PRESENT 标志，系统将忽略此标志。</p>
 <p>此标志用于确定如何计算对象上的最终 DACL，并使其不会以物理方式存储在安全对象的安全描述符控件中。</p>
-<p>若要设置此标志，请使用<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-rtlsetdaclsecuritydescriptor" data-raw-source="[&lt;strong&gt;RtlSetDaclSecurityDescriptor&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-rtlsetdaclsecuritydescriptor)"><strong>RtlSetDaclSecurityDescriptor</strong></a>。</p></td>
+<p>若要设置此标志，请使用 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-rtlsetdaclsecuritydescriptor" data-raw-source="[&lt;strong&gt;RtlSetDaclSecurityDescriptor&lt;/strong&gt;](/windows-hardware/drivers/ddi/wdm/nf-wdm-rtlsetdaclsecuritydescriptor)"><strong>RtlSetDaclSecurityDescriptor</strong></a>。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>SE_DACL_PRESENT</p></td>
-<td align="left"><p>指示具有 DACL 的安全描述符。 如果未设置此标志，或者如果设置了此标志并且 DACL 为<strong>NULL</strong>，则安全描述符允许所有人都具有完全访问权限。</p>
+<td align="left"><p>指示具有 DACL 的安全描述符。 如果未设置此标志，或者如果设置了此标志并且 DACL 为 <strong>NULL</strong>，则安全描述符允许所有人都具有完全访问权限。</p>
 <p>此标志用于保存由调用方指定的安全信息，直到安全描述符与安全对象关联。 安全描述符与某个安全对象关联后，将始终在安全描述符控件中设置 SE_DACL_PRESENT 标志。</p>
-<p>若要设置此标志，请使用<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-rtlsetdaclsecuritydescriptor" data-raw-source="[&lt;strong&gt;RtlSetDaclSecurityDescriptor&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-rtlsetdaclsecuritydescriptor)"><strong>RtlSetDaclSecurityDescriptor</strong></a>。</p></td>
+<p>若要设置此标志，请使用 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-rtlsetdaclsecuritydescriptor" data-raw-source="[&lt;strong&gt;RtlSetDaclSecurityDescriptor&lt;/strong&gt;](/windows-hardware/drivers/ddi/wdm/nf-wdm-rtlsetdaclsecuritydescriptor)"><strong>RtlSetDaclSecurityDescriptor</strong></a>。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>SE_DACL_PROTECTED</p></td>
@@ -72,11 +72,11 @@ typedef USHORT SECURITY_DESCRIPTOR_CONTROL, *PSECURITY_DESCRIPTOR_CONTROL;
 </tr>
 <tr class="even">
 <td align="left"><p>SE_OWNER_DEFAULTED</p></td>
-<td align="left"><p>默认机制，而不是安全描述符的原始提供程序，提供安全描述符的所有者安全标识符（SID）。 若要设置此标志，请使用<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-rtlsetownersecuritydescriptor" data-raw-source="[&lt;strong&gt;RtlSetOwnerSecurityDescriptor&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-rtlsetownersecuritydescriptor)"><strong>RtlSetOwnerSecurityDescriptor</strong></a>。</p></td>
+<td align="left"><p>默认机制，而不是安全描述符的原始提供程序（提供安全描述符的所有者安全标识符） (SID) 。 若要设置此标志，请使用 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-rtlsetownersecuritydescriptor" data-raw-source="[&lt;strong&gt;RtlSetOwnerSecurityDescriptor&lt;/strong&gt;](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-rtlsetownersecuritydescriptor)"><strong>RtlSetOwnerSecurityDescriptor</strong></a>。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>SE_RM_CONTROL_VALID</p></td>
-<td align="left"><p>指示安全描述符中的资源控制管理器位有效。 资源管理器控制位是<a href="https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff556610(v=vs.85)" data-raw-source="[&lt;strong&gt;SECURITY_DESCRIPTOR&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff556610(v=vs.85))"><strong>SECURITY_DESCRIPTOR</strong></a>结构的<strong>Sbz1</strong>成员中的八位，其中包含特定于访问结构的资源管理器的信息。 （有关详细信息，请参阅适用于 Windows 7 的 Microsoft Windows 软件开发工具包（SDK）和 .NET Framework 4.0 文档。）</p></td>
+<td align="left"><p>指示安全描述符中的资源控制管理器位有效。 资源管理器控制位是<a href="https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff556610(v=vs.85)" data-raw-source="[&lt;strong&gt;SECURITY_DESCRIPTOR&lt;/strong&gt;](/previous-versions/windows/hardware/drivers/ff556610(v=vs.85))"><strong>SECURITY_DESCRIPTOR</strong></a>结构的<strong>Sbz1</strong>成员中的八位，其中包含特定于访问结构的资源管理器的信息。  (有关详细信息，请参阅适用于 Windows 7 的 Microsoft Windows 软件开发工具包 (SDK) 和 .NET Framework 4.0 文档。 ) </p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>SE_SACL_AUTO_INHERIT_REQ</p></td>
@@ -105,7 +105,7 @@ typedef USHORT SECURITY_DESCRIPTOR_CONTROL, *PSECURITY_DESCRIPTOR_CONTROL;
 </tr>
 <tr class="even">
 <td align="left"><p>SE_SERVER_SECURITY</p></td>
-<td align="left"><p>请求受安全描述符保护的对象的提供程序，该安全描述符的 ACL 应基于输入 ACL 的服务器 ACL，而不考虑其源（显式或默认）。 这是通过将所有 GRANT Ace 替换为授予当前服务器的复合 Ace 来完成的。 仅当使用者正在模拟时，此标志才有意义。</p></td>
+<td align="left"><p>请求受安全描述符保护的对象的提供程序，该安全描述符的 ACL 应基于输入 ACL，而不考虑其源 (显式还是默认情况下) 。 这是通过将所有 GRANT Ace 替换为授予当前服务器的复合 Ace 来完成的。 仅当使用者正在模拟时，此标志才有意义。</p></td>
 </tr>
 </tbody>
 </table>
@@ -115,27 +115,20 @@ typedef USHORT SECURITY_DESCRIPTOR_CONTROL, *PSECURITY_DESCRIPTOR_CONTROL;
 ## <a name="requirements"></a>要求
 
 
-ntifs （包括 ntifs）
+ntifs (包含 ntifs) 
 
 ## <a name="related-topics"></a>相关主题
 
 
-[**张**](ace.md)
+[**ACE**](ace.md)
 
-[**ACL**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_acl)
+[**ACL**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_acl)
 
-[**RtlSetDaclSecurityDescriptor**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-rtlsetdaclsecuritydescriptor)
+[**RtlSetDaclSecurityDescriptor**](/windows-hardware/drivers/ddi/wdm/nf-wdm-rtlsetdaclsecuritydescriptor)
 
-[**RtlSetOwnerSecurityDescriptor**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-rtlsetownersecuritydescriptor)
+[**RtlSetOwnerSecurityDescriptor**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-rtlsetownersecuritydescriptor)
 
-[**安全\_描述符**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff556610(v=vs.85))
-
- 
+[**安全 \_ 描述符**](/previous-versions/windows/hardware/drivers/ff556610(v=vs.85))
 
  
-
-
-
-
-
 

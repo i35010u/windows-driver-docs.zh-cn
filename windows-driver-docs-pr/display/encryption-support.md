@@ -10,12 +10,12 @@ keywords:
 - 加密 WDK DirectX VA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fe5243f7c23db8ab9a16b914be54faa2f4bd77e8
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 52da6e77b5e2c7c7149d669a8136389cd0fdd230
+ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72838952"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89065464"
 ---
 # <a name="encryption-support"></a>加密支持
 
@@ -33,7 +33,7 @@ ms.locfileid: "72838952"
 
 为了使主机解码器使用加密，必须确定加速器支持的加密类型。 有关加速器支持的加密类型的信息包含在作为视频加速器格式 Guid 提供给主机的加密类型 Guid 列表中。 有关视频加速器格式 Guid 的详细信息，请参阅 Microsoft Windows SDK 文档。
 
-**请注意**   所有 DirectX VA 加速器都必须能够在不使用加密的情况下运行。 支持不加密，因此不需要声明，并且不能在视频加速器格式 GUID 列表中发送 DXVA\_NoEncrypt "无加密" GUID。
+**注意**   所有 DirectX VA 加速器都必须能够在不使用加密的情况下运行。 支持不加密，因此不需要声明，也不能 \_ 在视频加速器格式 guid 列表中发送 DXVA NoEncrypt "no encryption" guid。
 
  
 
@@ -47,13 +47,7 @@ ms.locfileid: "72838952"
 
 要传递所需的加密初始化参数的主机和快捷键之间交换的每个数据集都必须以加密协议类型 GUID 为前缀。 此 GUID 将一种类型的加密的数据从另一种类型的数据中区分开来。 这是必需的，因为一种类型的加密可用于一个 DirectX VA 缓冲区，另一种类型的加密可用于另一个 DirectX VA 缓冲区。
 
-[**DXVA\_EncryptProtocolHeader**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_encryptprotocolheader)结构用于指示正在使用加密协议以及所使用的加密类型。
+[**DXVA \_ EncryptProtocolHeader**](/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_encryptprotocolheader)结构用于指示正在使用加密协议以及所使用的加密类型。
 
  
-
- 
-
-
-
-
 

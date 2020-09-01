@@ -8,31 +8,25 @@ keywords:
 - DXGI_FORMAT_R10G10B10_XR_BIAS_A2_UNORM WDK Windows 7 显示
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5ad036b530d8443c05fd4de31ee01976a12d26d5
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: bf86af5461020f6fd97b65508a8d5c501d1b5884
+ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72838974"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89065468"
 ---
-# <a name="dxgi_format_r10g10b10_xr_bias_a2_unorm"></a>DXGI\_格式\_R10G10B10\_XR\_偏移\_A2\_UNORM
+# <a name="dxgi_format_r10g10b10_xr_bias_a2_unorm"></a>DXGI \_ FORMAT \_ R10G10B10 \_ XR \_ 偏向 \_ A2 \_ UNORM
 
 
 本部分仅适用于 Windows 7 及更高版本的操作系统。
 
-DXGI\_格式\_R10G10B10\_XR\_偏向\_A2\_UNORM 格式要求应用程序知道与格式相关的数据的偏向特性。 正如以下各节中的转换规则所示，着色器必须了解 XR\_偏差，并且必须对读取或写入到 DXGI\_格式的任何数据执行自己的偏移，并对其进行缩放\_R10G10B10\_XR\_偏向\_A2\_UNORM 格式。
+DXGI \_ format \_ R10G10B10 \_ XR \_ 偏向 \_ A2 \_ UNORM FORMAT 要求应用程序注意与格式相关的数据的偏向特性。 正如以下各节中的转换规则所示，着色器必须知道 XR 偏量， \_ 并且必须对从读取或写入到 DXGI 格式的任何数据进行缩放 \_ \_ R10G10B10 \_ XR \_ 偏向 \_ A2 \_ UNORM 格式。
 
 扫描硬件必须能够应用偏向和缩放。
 
-DXGI\_格式\_R10G10B10\_XR\_偏移\_A2\_UNORM 格式仅具有 "在位布局中显示扫描"、"CPU 锁定" 和 "强制转换" 资源特性。 因此，若要呈现到资源，应用程序通常会创建格式为 DXGI\_格式的呈现目标视图\_R10G10B10A2\_\*。
+DXGI \_ FORMAT \_ R10G10B10 \_ XR \_ 偏向 \_ A2 \_ UNORM FORMAT 仅具有显示扫描、CPU 锁定和在位布局中强制转换的资源特性。 因此，应用程序通常会创建一个格式为 DXGI 格式 R10G10B10A2 的呈现目标视图 \_ \_ \_ \* 。
 
-若要获得完整功能，显示器微型端口驱动程序必须支持 XR\_偏向格式的显示格式。 已将新的 D3DDDIFMT\_A2B10G10R10\_XR\_偏向值添加到[**D3DDDIFORMAT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dukmdt/ne-d3dukmdt-_d3dddiformat)枚举中，以便 XR\_偏向支持。
-
- 
+若要获得完整功能，显示的微型端口驱动程序必须支持 XR \_ 偏向作为显示格式。 已将新的 D3DDDIFMT \_ A2B10G10R10 \_ XR \_ 偏量值添加到 [**D3DDDIFORMAT**](/windows-hardware/drivers/ddi/d3dukmdt/ne-d3dukmdt-_d3dddiformat) 枚举，以获得 XR \_ 偏向支持。
 
  
-
-
-
-
 

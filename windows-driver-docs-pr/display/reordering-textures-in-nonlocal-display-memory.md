@@ -3,23 +3,23 @@ title: 将非本地显示内存中的纹理重新排序
 description: 将非本地显示内存中的纹理重新排序
 ms.assetid: b4b4c478-7034-4ff9-8cb2-f86baffd89f7
 keywords:
-- 显示内存 WDK DirectDraw，纹理的重新排序
-- 非本地显示内存 WDK DirectDraw，纹理的重新排序
-- AGP WDK DirectDraw，纹理的重新排序
-- 绘制 AGP 支持 WDK DirectDraw，纹理的重新排序
-- DirectDraw AGP 支持 WDK Windows 2000 显示，纹理的重新排序
-- 内存 WDK DirectDraw AGP，纹理的重新排序
-- 纹理 WDK DirectDraw 的重新排序
+- 显示内存 WDK DirectDraw，重新排序纹理
+- 非本地显示内存 WDK DirectDraw，重新排序纹理
+- AGP WDK DirectDraw，重新排序纹理
+- 绘制 AGP 支持 WDK DirectDraw，重新排序纹理
+- DirectDraw AGP 支持 WDK Windows 2000 显示，重新排序纹理
+- 内存 WDK DirectDraw AGP，重新排序纹理
+- 重新排序纹理 WDK DirectDraw
 - DDCAPS2_SYSTONONLOCAL_AS_SYSTOLOCAL
-- 纹理 WDK DirectDraw 重新排序
+- 纹理 WDK DirectDraw，重新排序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2aa00b6d62d35b903117d0420a3cb49fbb329cd5
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 212df9c0d811585f5df5420b9c938dc36a10af6f
+ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67376130"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89066004"
 ---
 # <a name="reordering-textures-in-nonlocal-display-memory"></a>将非本地显示内存中的纹理重新排序
 
@@ -27,19 +27,13 @@ ms.locfileid: "67376130"
 ## <span id="ddk_reordering_textures_in_nonlocal_display_memory_gg"></span><span id="DDK_REORDERING_TEXTURES_IN_NONLOCAL_DISPLAY_MEMORY_GG"></span>
 
 
-有特殊的情况下，驱动程序编写器可能需要重新排序 AGP 内存，以允许更有效的纹理管理中的纹理。 DDCAPS2\_SYSTONONLOCAL\_AS\_SYSTOLOCAL 标志指示该驱动程序可以从备份到非本地使用的完全为指定的上限的视频内存的图面 （系统内存复制的图面） 支持 blts备份到本地的视频内存 blts 图面上的内存。
+在某些特殊情况下，驱动程序编写器可能需要在 AGP 内存中重新排序纹理，以允许更有效的纹理管理。 DDCAPS2 \_ SYSTONONLOCAL \_ AS \_ SYSTOLOCAL 标志发出的信号表明驱动程序可支持 blts 从 (系统内存副本的表面) 到非本地视频内存（使用为本地视频内存 blts 指定的所有相同 cap）。
 
-DDCAPS2\_SYSTONONLOCAL\_AS\_SYSTOLOCAL 标志是有效的仅当 DDCAPS2\_NONLOCALVIDMEMCAPS 标志设置。 如果 DDCAPS2\_SYSTONONLOCAL\_AS\_SYSTOLOCAL 是设置，那么 DDCAPS\_CANBLTSYSMEM 标志必须设置驱动程序和所有相关的后备图面上 blt caps 必须正确。 DDCAPS2\_SYSTONONLOCAL\_AS\_SYSTOLOCAL 表示 DDCAPS blt 上限也适用于备份到非本地的视频内存 blts 面上的视频内存的后备面。 例如， **dwSVBCaps**， **dwSVBCKeyCaps**， **dwSVBFXCaps**，以及**dwSVBRops**成员[ **DDCORECAPS** ](https://docs.microsoft.com/windows/desktop/api/ddrawi/ns-ddrawi-_ddcorecaps)假定结构正确填充。 从后备面任何 blt 匹配这些 caps 位的非本地内存传递给驱动程序。
+\_ \_ \_ 仅当设置 DDCAPS2 NONLOCALVIDMEMCAPS 标志时，DDCAPS2 SYSTONONLOCAL AS SYSTOLOCAL 标志才有效 \_ 。 如果 \_ \_ 设置了 DDCAPS2 SYSTONONLOCAL AS \_ SYSTOLOCAL，则 \_ 驱动程序必须设置 DDCAPS CANBLTSYSMEM 标志，并且所有关联的后备 surface blt cap 必须正确。 DDCAPS2 \_ SYSTONONLOCAL \_ AS \_ SYSTOLOCAL 表示 surface TO 视频 memory DDCAPS blt cap 还适用于后备面到非本地视频内存 blts。 例如，假定[**DDCORECAPS**](/windows/desktop/api/ddrawi/ns-ddrawi-_ddcorecaps)结构的**dwSVBCaps**、 **dwSVBCKeyCaps**、 **dwSVBFXCaps**和**dwSVBRops**成员正确填充。 从后备 surface 到非本地内存的任何 blt 都将传递给驱动程序。
 
-**请注意**  此功能旨在使驱动程序本身为纹理的有效重新排序。 这是*不*意味着两者硬件可以写入 AGP 内存。 目前不支持直接写入 AGP 内存的硬件。
-
- 
+**注意**   此功能旨在使驱动程序本身能够有效地对纹理进行排序。 这并 *不* 意味着可以将硬件写入 AGP 内存。 当前不支持将硬件直接写入 AGP 内存。
 
  
 
  
-
-
-
-
 

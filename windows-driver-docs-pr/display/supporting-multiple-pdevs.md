@@ -3,18 +3,18 @@ title: 支持多个 PDEV
 description: 支持多个 PDEV
 ms.assetid: e06fe2da-b677-4649-bf7a-09a8f2ddfc6b
 keywords:
-- 显示驱动程序 WDK Windows 2000 中，桌面管理
-- 桌面管理 WDK Windows 2000 显示
-- 多个 PDEVs WDK Windows 2000 显示
-- PDEV WDK Windows 2000 显示
+- 显示驱动程序 WDK Windows 2000，桌面管理
+- 桌面管理 WDK Windows 2000 显示器
+- 多 PDEVs WDK Windows 2000 显示器
+- PDEV WDK Windows 2000 显示器
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ecc155ef6ffd804c01c7a9aecce9e36d3b8c93b3
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: aae210829e21d833b2f2e3c10690efbea67d593a
+ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67380543"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89064588"
 ---
 # <a name="supporting-multiple-pdevs"></a>支持多个 PDEV
 
@@ -22,79 +22,73 @@ ms.locfileid: "67380543"
 ## <span id="ddk_supporting_multiple_pdevs_gg"></span><span id="DDK_SUPPORTING_MULTIPLE_PDEVS_GG"></span>
 
 
-本部分介绍如何应用程序可以创建新 PDEV 时当前 PDEV 仍处于加载状态。 控制面板中的显示计划要求显示驱动程序支持启用其他 PDEVs，因为它是应用程序可以使用新的桌面中创建新 PDEV。 具体而言，最终用户可以单击显示图标以运行测试上更改到大小、 颜色数与此类元素，并刷新屏幕的频率。 显示程序创建新的桌面动态，若要测试的显示模式更改。
+本部分说明在仍加载当前 PDEV 时，应用程序如何创建新的 PDEV。 控制面板的显示程序要求显示驱动程序支持其他 PDEVs，因为应用程序可以使用新桌面创建新的 PDEV。 具体来说，最终用户可以单击 "显示" 图标来对此类元素的更改运行测试，如屏幕的大小、颜色数和刷新速率。 显示程序会动态地创建一个新桌面，以测试显示的模式更改。
 
-当用户单击显示图标，以请求模式更改时，GDI 将执行以下步骤。 这些步骤假定没有活动的 Direct3D、 WNDOBJ 或 DRIVEROBJ 对象所拥有的当前驱动程序实例。
+当用户单击显示图标请求模式更改时，GDI 会执行以下步骤。 以下步骤假定当前的驱动程序实例没有活动的 Direct3D、WNDOBJ 或 DRIVEROBJ 对象。
 
-1.  临时禁用当前 PDEV
-    -   调用[ **DrvAssertMode** ](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvassertmode) （旧 PDEV 实例）。 调用了使用**FALSE**如果微型端口驱动程序将负责控制，且**TRUE**如果应使用 PDEV。
+1.  暂时禁用当前 PDEV
+    -   )  (旧的 PDEV 实例调用 [**DrvAssertMode**](/windows/desktop/api/winddi/nf-winddi-drvassertmode) 。 如果微型端口驱动程序需要控制，则使用 **FALSE** 进行调用; 如果应使用 PDEV，则使用 **TRUE** 。
 
-2.  加载新的驱动程序 （如果所需的新 PDEV 实例）
-    -   调用[ **DrvEnableDriver** ](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvenabledriver) （新驱动程序实例）。
+2.  如果新的 PDEV 实例需要，加载新的驱动程序 () 
+    -   )  (新的驱动程序实例调用 [**DrvEnableDriver**](/windows/desktop/api/winddi/nf-winddi-drvenabledriver) 。
 
-3.  创建新 PDEV
-    -   调用[ **DrvEnablePDEV** ](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvenablepdev) （新 PDEV 实例）。
-    -   调用[ **DrvCompletePDEV** ](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvcompletepdev) （新 PDEV 实例）。
-    -   调用[ **DrvEnableSurface** ](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvenablesurface) （新 PDEV 实例）。
+3.  创建新的 PDEV
+    -   )  (新的 PDEV 实例上调用 [**DrvEnablePDEV**](/windows/desktop/api/winddi/nf-winddi-drvenablepdev) 。
+    -   )  (新的 PDEV 实例上调用 [**DrvCompletePDEV**](/windows/desktop/api/winddi/nf-winddi-drvcompletepdev) 。
+    -   )  (新的 PDEV 实例上调用 [**DrvEnableSurface**](/windows/desktop/api/winddi/nf-winddi-drvenablesurface) 。
 
-4.  获取 DirectDraw 信息 （如果 DirectDraw 连接驱动程序）。 第二次调用到[ **DrvGetDirectDrawInfo** ](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvgetdirectdrawinfo)仅当第一次调用成功进行。
-    -   调用*DrvGetDirectDrawInfo* （新 PDEV 实例）。
-    -   调用*DrvGetDirectDrawInfo* （新 PDEV 实例）。
+4.  如果 DirectDraw 由驱动程序) 挂钩，则获取 DirectDraw 信息 (。 仅当第一次调用成功时才调用 [**DrvGetDirectDrawInfo**](/windows/desktop/api/winddi/nf-winddi-drvgetdirectdrawinfo) 。
+    -   )  (新的 PDEV 实例上调用 *DrvGetDirectDrawInfo* 。
+    -   )  (新的 PDEV 实例上调用 *DrvGetDirectDrawInfo* 。
 
-5.  启用 DirectDraw (如果驱动程序和对上一个调用挂钩*DrvGetDirectDrawInfo*成功)。
-    -   调用[ **DrvEnableDirectDraw** ](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvenabledirectdraw) （新 PDEV 实例）。
+5.  启用 DirectDraw (如果由驱动程序挂钩，并对 *DrvGetDirectDrawInfo* 的以前的调用成功) 。
+    -   )  (新的 PDEV 实例上调用 [**DrvEnableDirectDraw**](/windows/desktop/api/winddi/nf-winddi-drvenabledirectdraw) 。
 
-6.  将旧 PDEV 状态复制到新 PDEV 实例 （如果这两个实例都使用相同的驱动程序，并由驱动程序挂接 DirectDraw）。
-    -   调用[ **DrvResetPDEV**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvresetpdev)。
+6.  如果两个实例都使用相同的驱动程序，并且 DirectDraw 由驱动程序) 挂钩，则将旧的 PDEV 状态复制到新的 PDEV 实例 (。
+    -   调用 [**DrvResetPDEV**](/windows/desktop/api/winddi/nf-winddi-drvresetpdev)。
 
-7.  通知其新 HDEV 关联的每个驱动程序实例。 首次调用[ **DrvCompletePDEV** ](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvcompletepdev)通知新的驱动程序实例; 第二次调用通知旧驱动程序实例。
+7.  通知每个驱动程序实例的新 HDEV 关联。 对 [**DrvCompletePDEV**](/windows/desktop/api/winddi/nf-winddi-drvcompletepdev) 的第一次调用将通知新的驱动程序实例;第二次调用会通知旧的驱动程序实例。
 
-    -   调用*DrvCompletePDEV* （新 PDEV 实例）。
-    -   调用*DrvCompletePDEV* （旧 PDEV 实例）。
+    -   )  (新的 PDEV 实例上调用 *DrvCompletePDEV* 。
+    -   )  (旧的 PDEV 实例调用 *DrvCompletePDEV* 。
 
-    驱动程序应使用新的 HDEV 值需要 HDEV 任何回调到 GDI 中。
+    驱动程序应在需要 HDEV 的 GDI 的任何回调中使用新的 HDEV 值。
 
-8.  禁用 DirectDraw （如果驱动程序和 DirectDraw 连接处于活动状态）。
-    -   调用[ **DrvDisableDirectDraw** ](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvdisabledirectdraw) （旧 PDEV 实例）。
+8.  如果由驱动程序挂钩，并且 DirectDraw 为活动) ，则禁用 DirectDraw (。
+    -   )  (旧的 PDEV 实例调用 [**DrvDisableDirectDraw**](/windows/desktop/api/winddi/nf-winddi-drvdisabledirectdraw) 。
 
 9.  禁用图面。
-    -   调用[ **DrvDisableSurface** ](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvdisablesurface) （旧 PDEV 实例）。
+    -   )  (旧的 PDEV 实例调用 [**DrvDisableSurface**](/windows/desktop/api/winddi/nf-winddi-drvdisablesurface) 。
 
 10. 禁用 PDEV。
-    -   调用[ **DrvDisablePDEV** ](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvdisablepdev) （旧 PDEV 实例）。
+    -   )  (旧的 PDEV 实例调用 [**DrvDisablePDEV**](/windows/desktop/api/winddi/nf-winddi-drvdisablepdev) 。
 
-在此示例中，GDI 暂时禁用当前 PDEV 当用户单击应用，然后创建第二个 PDEV 相匹配的对话框中的显示模式选项。 用户在测试模式下显示屏幕上查看位图后，第二个 PDEV 销毁并显示程序将还原原始 PDEV 适用于桌面。 请注意不能还原为原始显示设置，系统会变为不可用，如果设置了与硬件和驱动程序不兼容。
+在此示例中，当用户单击 "应用" 时，GDI 会暂时禁用当前 PDEV，然后创建与对话框中的显示模式选项匹配的第二个 PDEV。 用户在测试模式下的显示屏幕上查看位图后，第二个 PDEV 将被销毁，并且显示程序会还原桌面的原始 PDEV。 请注意，如果设置与硬件和驱动程序不兼容，则不能恢复回原始显示设置，系统将无法使用。
 
-如果该驱动程序的当前实例拥有 Direct3D、 WNDOBJ 或 DRIVEROBJ 对象，以前的模式下更改序列的驱动程序的视图发生更改，如下所示 （请注意，在 Windows 2000 及更高版本，DirectDraw 始终启用后初始化该驱动程序）：
+如果驱动程序的当前实例拥有 Direct3D、WNDOBJ 或 DRIVEROBJ 对象，则上一模式更改序列的驱动程序视图将按如下方式更改 (请注意，在 Windows 2000 和更高版本中，一旦初始化驱动程序，将始终启用 DirectDraw) ：
 
--   析构的所属的驱动程序实例将被延迟。 具体而言，到第二次调用[ **DrvCompletePDEV** ](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvcompletepdev)第 7 步，在步骤 8，和步骤 9 将不会出现在模式更改的时间。 因此，旧的驱动程序实例禁用对的调用由于[ **DrvAssertMode**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvassertmode)(**FALSE**) 中的步骤 1，并保留，直到任一系统将执行一种模式改回为原始的模式，或直到引用实例的所有对象被都销毁。
+-   将延迟对所属驱动程序实例的析构。 具体而言，在模式发生更改时，第二次调用步骤7、步骤8和步骤9中的 [**DrvCompletePDEV**](/windows/desktop/api/winddi/nf-winddi-drvcompletepdev) 不会出现。 因此，旧的驱动程序实例因调用 [**DrvAssertMode**](/windows/desktop/api/winddi/nf-winddi-drvassertmode) (**FALSE**) 在步骤1中被禁用，并将保留，直到系统将模式更改回原始模式，或直到引用该实例的所有对象都被销毁。
 
--   如果引用的对象被销毁之前，系统会恢复到原始模式下，将重新恢复原始的驱动程序实例。 也就是说，步骤 2 到 5 不会发生，并且原始的驱动程序实例将重新启用通过调用*DrvAssertMode*(**TRUE**) （请参阅步骤 1）。
+-   如果系统在销毁引用对象之前恢复到原始模式，则原始驱动程序实例将为复活。 也就是说，不会执行步骤2到步骤5，并通过调用 *DrvAssertMode* (**TRUE**) 重新启用原始驱动程序实例 (参见步骤 1) 。
 
--   如果系统不会恢复回原始模式在所有引用之前对象将被破坏，则驱动程序实例将销毁的最后一个引用对象时销毁。 第二次调用，即*DrvCompletePDEV*第 7 步，在步骤 8，并在最后一个引用对象被销毁 （例如，当所有拥有的进程将终止） 时间发生步骤 9。
+-   如果在销毁所有引用对象之前，系统不会恢复为原始模式，则在销毁最终的引用对象时，将销毁驱动程序实例。 也就是说，当最后一个引用对象被销毁时，将在步骤7、步骤8和步骤9中对 *DrvCompletePDEV* 进行第二次调用 (例如，当所有拥有的进程都) 终止时。
 
-这是可以调用 Direct3D 或 OpenGL 的驱动程序以在任何时候销毁处于非活动状态的驱动程序实例。 可以调用这些驱动程序，即使该驱动程序的另一个实例当前处于活动状态，或该驱动程序是在全屏幕 MS-DOS 模式下，或另一个驱动程序拥有完全 （如 VGA 驱动程序） 的硬件。 因此， [ **DrvDisableDirectDraw**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvdisabledirectdraw)， [ **DrvDisableSurface**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvdisablesurface)，并[ **DrvDisablePDEV** ](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvdisablepdev)例程 （请参见步骤 8-10） 的驱动程序不能假定设备已在图形模式下并且他们自己拥有独占访问权限。 作为一般规则，驱动程序不应控制其视频硬件中的其*DrvDisableXxx*例程除非他们知道其实例当前处于活动状态 (从上一个记住状态[ **DrvAssertMode** ](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvassertmode)调用)。
+这意味着，可以随时调用 Direct3D 或 OpenGL 驱动程序来销毁非活动驱动程序实例。 即使驱动程序的另一个实例当前处于活动状态，或如果驱动程序处于全屏 MS-DOS 模式，或者其他驱动程序完全 (（例如 VGA 驱动程序) ），也可以调用这些驱动程序。 因此， [**DrvDisableDirectDraw**](/windows/desktop/api/winddi/nf-winddi-drvdisabledirectdraw)、 [**DrvDisableSurface**](/windows/desktop/api/winddi/nf-winddi-drvdisablesurface)和 [**DrvDisablePDEV**](/windows/desktop/api/winddi/nf-winddi-drvdisablepdev) 例程 (查看驱动程序的步骤 8-10) 不会假定设备处于图形模式并且它们拥有独占访问权限。 通常情况下，驱动程序不应在其 *DrvDisableXxx* 例程中操作其视频硬件，除非他们知道其实例当前处于活动状态 (通过记住最后一次 [**DrvAssertMode**](/windows/desktop/api/winddi/nf-winddi-drvassertmode) 调用中的状态) 。
 
-**请注意**   PDEV 是私有的驱动程序和包含的所有信息和表示关联的物理设备的数据。 若要创建多个 PDEVs，图形驱动程序必须满足这两个以下要求：
-1.  驱动程序必须使用全局变量而不是取消引用 PDEV 结构的成员。 如果未使用全局变量，也可能包含或指向随机数据时创建新 PDEV，或还原的旧其中一个。 必须将所有状态信息都保存在 PDEV。 PDEV 始终传递给任何图形操作，因此用于获取或设置全局数据。
+**注意**   PDEV 专用于驱动程序，包含表示关联的物理设备的所有信息和数据。 若要创建多个 PDEVs，图形驱动程序必须满足以下两个要求：
+1.  驱动程序不得使用全局变量，而不能取消引用 PDEV 结构的成员。 如果使用全局变量，则在创建新的 PDEV 或还原新的时，它们可能包含或指向随机数据。 所有状态信息都必须保存在 PDEV 中。 PDEV 始终传递到任何图形操作，因此用于获取或设置全局数据。
 
-2.  [ **DrvDisableSurface**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvdisablesurface)， [ **DrvDisablePDEV**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvdisablepdev)，并[ **DrvDisableDriver**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvdisabledriver)例程必须实现图形驱动程序中，以便应用程序可以创建和销毁其他 PDEVs，并在某些情况下加载多个驱动程序。
-
- 
-
-**请注意**  如果驱动程序的版本号为 1.0，GDI 将不会调用要创建第二个 PDEV 的驱动程序。 中返回该驱动程序的版本号[ **DRVENABLEDATA**](https://docs.microsoft.com/windows/desktop/api/winddi/ns-winddi-tagdrvenabledata)。
+2.  必须在图形驱动程序中实现 [**DrvDisableSurface**](/windows/desktop/api/winddi/nf-winddi-drvdisablesurface)、 [**DrvDisablePDEV**](/windows/desktop/api/winddi/nf-winddi-drvdisablepdev)和 [**DrvDisableDriver**](/windows/desktop/api/winddi/nf-winddi-drvdisabledriver) 例程，以便应用程序可以创建和销毁其他 PDEVs，在某些情况下会加载多个驱动程序。
 
  
 
-**请注意**  有时，显示程序的测试将不显示位图使用比当前加载的驱动程序的不同驱动程序。 例如，如果系统正在 16 色模式下使用 VGA 驱动程序和测试与 VGA64K 64k 颜色模式显示驱动程序，VGA64K 驱动程序会动态加载和卸载测试完成后。
+**注意**   如果驱动程序的版本号为1.0，则 GDI 不会调用驱动程序来创建第二个 PDEV。 在 [**DRVENABLEDATA**](/windows/desktop/api/winddi/ns-winddi-tagdrvenabledata)中返回驱动程序的版本号。
 
  
+
+**注意**   有时，显示程序的测试位图将使用与当前加载的驱动程序不同的驱动程序来显示。 例如，如果系统在带有 VGA 驱动程序的16色模式下运行，并使用 VGA64K 显示驱动程序测试64K 彩色模式，则在测试完成后，将动态加载 VGA64K 驱动程序并将其卸载。
 
  
 
  
-
-
-
-
 

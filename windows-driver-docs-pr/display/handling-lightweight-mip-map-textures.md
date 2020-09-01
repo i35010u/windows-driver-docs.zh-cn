@@ -3,16 +3,16 @@ title: 处理轻量 MIP 贴图纹理
 description: 处理轻量 MIP 贴图纹理
 ms.assetid: f541b046-2937-428c-ab98-eb1020728e04
 keywords:
-- MIP 映射纹理 WDK DirectX 9.0 中，轻量
-- 轻型 MIP 贴图纹理 WDK DirectX 9.0
+- MIP map 纹理 WDK DirectX 9.0，轻型
+- 轻型 MIP map 纹理 WDK DirectX 9。0
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ce1f698c80014aaa56c4ea4a212569d8ae8bf2d8
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: de8866216af3fa66ae107363c41f67fe14a04c59
+ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67372937"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89064792"
 ---
 # <a name="handling-lightweight-mip-map-textures"></a>处理轻量 MIP 贴图纹理
 
@@ -20,34 +20,28 @@ ms.locfileid: "67372937"
 ## <span id="ddk_handling_lightweight_mip_map_textures_gg"></span><span id="DDK_HANDLING_LIGHTWEIGHT_MIP_MAP_TEXTURES_GG"></span>
 
 
-因为轻型 MIP 贴图纹理 MIP 子级别是隐式的但没有相应的 DirectDraw 图面上结构 ([**DD\_面\_本地**](https://docs.microsoft.com/windows/desktop/api/ddrawint/ns-ddrawint-_dd_surface_local)， [**DD\_图面\_GLOBAL** ](https://docs.microsoft.com/windows/desktop/api/ddrawint/ns-ddrawint-_dd_surface_global)并[ **DD\_面\_详细**](https://docs.microsoft.com/windows/desktop/api/ddrawint/ns-ddrawint-_dd_surface_more))、如果 MIP 贴图纹理是轻量级的这样可以避免创建不必要的驱动程序图面上结构，以节省内存，可以确定 DirectX 9.0 版本驱动程序。 若要确定是否 MIP 贴图纹理是轻量，该驱动程序将验证是否 DDSCAPS3\_LIGHTWEIGHTMIPMAP 位**dwCaps3** DDSCAPSEX 的成员 ([**DDSCAPS2** ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff550292(v=vs.85)))设置纹理图面的结构。
+由于轻型 MIP 映射纹理的 MIP 子级别是隐式的，并且没有 ([**DD surface \_ \_ LOCAL**](/windows/desktop/api/ddrawint/ns-ddrawint-_dd_surface_local)、 [**dd \_ surface \_ GLOBAL**](/windows/desktop/api/ddrawint/ns-ddrawint-_dd_surface_global) 和 [**dd \_ Surface \_ **](/windows/desktop/api/ddrawint/ns-ddrawint-_dd_surface_more)) 的相应 DirectDraw 面结构，因此，DirectX 9.0 版本驱动程序可以确定 MIP 地图的纹理是否是轻型的，从而避免创建不必要的驱动程序 surface 结构来节省内存。 若要确定 MIP 地图纹理是否为轻型纹理，驱动程序将验证是否 \_ 设置了纹理图面的 DDSCAPSEX ([**DDSCAPS2**](/previous-versions/windows/hardware/drivers/ff550292(v=vs.85))) 结构的**DWCAPS3**成员中的 DDSCAPS3 LIGHTWEIGHTMIPMAP 位。
 
-请注意，DirectX 9.0 中的所有 MIP 贴图纹理轻型默认情况下。
+请注意，DirectX 9.0 中的所有 MIP map 纹理默认情况下均为轻型。
 
-DirectX 9.0 版本驱动程序处理轻量和重量级选手 MIP 贴图纹理时遵循下列规则：
+在处理轻型和重型 MIP 地图纹理时，DirectX 9.0 版本驱动程序将遵循以下规则：
 
--   DirectX 9.0 和更高版本的驱动程序可以接收 D3DDP2OP\_TEXBLT 操作代码在其中源 MIP 贴图纹理是重量级和目标 MIP 贴图纹理是轻型，反之亦然。 当然，该驱动程序还可以接收 D3DDP2OP\_TEXBLT 源和目标 MIP 贴图纹理程。
+-   DirectX 9.0 和更高版本的驱动程序可以接收 D3DDP2OP \_ TEXBLT 操作代码，其中源 mip 地图纹理为重型，目标 mip 地图纹理为轻型，反之亦然。 当然，驱动程序还可以接收 \_ 源和目标 MIP 地图纹理均为轻型的 D3DDP2OP TEXBLT。
 
--   由于系统内存轻型 MIP 贴图纹理会消耗仅内存的单个图面，整个 MIP 映射是对顶级图面中的驱动程序可见。 驱动程序永远不会是执行直接从系统内存轻型 MIP 贴图纹理的纹理操作所必需的。 MIP 贴图纹理只能是 D3DDP2OP 源\_TEXBLT。
+-   由于系统内存轻型 MIP 地图纹理仅消耗单个内存面，因此整个 MIP 地图对于顶级表面中的驱动程序可见。 驱动程序从不需要直接从系统内存轻型 MIP 地图纹理执行纹理操作。 此类 MIP 地图纹理只能是 D3DDP2OP TEXBLT 的源 \_ 。
 
--   以下 MIP 贴图的纹理必须是重量级，因为锁和直接写入视频或[AGP](agp-support.md)对应于每个子级的内存而言，可能有此类纹理：
+-   下面的 MIP 映射纹理必须为重型，因为与此类纹理相对应的对视频或 [AGP](agp-support.md) 内存的锁定和直接写入可能如下：
 
     -   呈现器目标
     -   深度模具
     -   动态
-    -   格式化的供应商
+    -   供应商格式
 
-    因此，完整图面上的数据结构是要求每个子级。
+    因此，每个子级都需要完整的表面数据结构。
 
--   由于视频或 AGP 内存轻型 MIP 贴图纹理永远不会锁定或如引用的其他 DDIs [ *DdBlt*](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_surfcb_blt)，该驱动程序确定 MIP 贴图纹理的子项位置。 因此，完整的图面 (显式**fpVidmem**的成员[ **DD\_图面\_全局**](https://docs.microsoft.com/windows/desktop/api/ddrawint/ns-ddrawint-_dd_surface_global)结构) 的此类子级别MIP 贴图纹理不是必需的。
+-   由于视频或 AGP 内存轻型 MIP 地图纹理永远不会被锁定或被其他 DDIs （如 [*DdBlt*](/windows/desktop/api/ddrawint/nc-ddrawint-pdd_surfcb_blt)）所引用，因此，驱动程序将确定此类 MIP 地图纹理的子级位置。 因此，无需为此类 MIP 地图纹理的子级别 (显式 **fpVidmem** 成员提供 [**DD \_ SURFACE \_ 全局**](/windows/desktop/api/ddrawint/ns-ddrawint-_dd_surface_global) 结构) 。
 
--   管理驱动程序的轻型 MIP 贴图纹理也限制为单个图面，并且必须使用完全相同的布局的 Direct3D 使用轻量 MIP 贴图纹理的系统内存。 请注意，这有任何负面影响 （而不是实现成本），因为相应的居民 (视频和 AGP) MIP 贴图纹理可以有其自己的特定于实现的布局。
-
- 
+-   驱动程序托管的轻型 MIP 地图纹理还限制为单个表面，并且必须使用 Direct3D 与系统内存轻型 MIP 地图纹理一起使用的相同布局。 请注意，这不会影响 (除了实现成本) ，因为相应的居民 (视频和 AGP) MIP 地图纹理可以具有其自己的特定于实现的布局。
 
  
-
-
-
-
 

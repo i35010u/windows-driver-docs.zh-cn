@@ -15,17 +15,17 @@ api_type:
 - UserDefined
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b8b4d2b12d52c667eb3caf818ec4dbe0dbd6176e
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 28f64fc23d3bee382910c6540fab0345d18501d5
+ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72841067"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89066118"
 ---
 # <a name="mrxstop-routine"></a>MRxStop 例程
 
 
-[RDBSS](https://docs.microsoft.com/windows-hardware/drivers/ifs/the-rdbss-driver-and-library)调用*MRxStop*例程来停止网络小型重定向程序。
+[RDBSS](./the-rdbss-driver-and-library.md)调用*MRxStop*例程来停止网络小型重定向程序。
 
 <a name="syntax"></a>语法
 ------
@@ -40,19 +40,19 @@ NTSTATUS MRxStop(
 { ... }
 ```
 
-<a name="parameters"></a>参数
+<a name="parameters"></a>parameters
 ----------
 
-*RxContext* \[in，out\]  
-指向 RX\_上下文结构的指针。 此参数包含请求网络小型重定向器停止的 IRP。
+*RxContext* \[in、out\]  
+指向 RX \_ 上下文结构的指针。 此参数包含请求网络小型重定向器停止的 IRP。
 
-*RxDeviceObject* \[in，out\]  
-指向 RDBSS\_设备的指针\_此网络小型重定向程序的对象结构。
+*RxDeviceObject* \[in、out\]  
+指向 \_ \_ 此网络小型重定向程序的 RDBSS 设备对象结构的指针。
 
 <a name="return-value"></a>返回值
 ------------
 
-*MRxStop*返回成功的状态\_成功或使用适当的 NTSTATUS 值，如以下之一：
+*MRxStop* 返回成功的状态 \_ 成功或适当的 NTSTATUS 值，如以下之一：
 
 <table>
 <colgroup>
@@ -82,23 +82,23 @@ NTSTATUS MRxStop(
 <a name="remarks"></a>备注
 -------
 
-*MRxStop*从 RDBSS 角度停止并取消网络微型重定向程序。 停止网络小型重定向程序可能需要释放内存分配和其他系统资源。
+*MRxStop* 从 RDBSS 角度停止并取消网络微型重定向程序。 停止网络小型重定向程序可能需要释放内存分配和其他系统资源。
 
-在调用*MRxStop*之前，RDBSS 会修改以下值：
+在调用 *MRxStop*之前，RDBSS 会修改以下值：
 
-*RxContext*指向的 RX\_上下文结构中的**MajorFunction**成员设置为 IRP 的主要功能。
+RxContext 指向的 RX 上下文结构中的**MajorFunction**成员 \_ 设置*RxContext*为 IRP 的主要功能。
 
-如果是用于停止网络小型重定向器的 RXCONTEXT 请求，则*FsCtl*指向的 RX\_上下文结构中的**ParamsFor. FsCtl. FsControlCode**成员设置为 IRP 的 FSTCL 代码。
+如果是用于停止网络小型重定向器的 RXCONTEXT 请求，则 FsCtl 指向的 RX 上下文结构中的**LowIoContext. ParamsFor. FsCtl. FsControlCode**成员 \_ 设置为 IRP 的 FSTCL 代码。 *RxContext*
 
-*RxDeviceObject*所指向的 RDBSS\_设备\_对象结构的**StartStopContext**成员设置为 RDBSS\_停止\_\_进度
+RxDeviceObject **StartStopContext.State**指向的 RDBSS \_ 设备对象结构的 StartStopContext 成员 \_ 设置为 "RDBSS *RxDeviceObject* \_ 停止正在 \_ \_ 进行"
 
-*RxDeviceObject*所指向的 RDBSS\_设备\_对象结构的**pStopContext**成员设置为*RxContext*参数。
+RxDeviceObject 指向的 RDBSS 设备对象结构的**StartStopContext. pStopContext**成员 \_ \_ 设置为*RxDeviceObject* *RxContext*参数。
 
-*MRxStop*由 RDBSS 从[**RxStopMinirdr**](https://docs.microsoft.com/windows-hardware/drivers/ddi/mrx/nf-mrx-rxstopminirdr)例程调用。
+*MRxStop* 由 RDBSS 从 [**RxStopMinirdr**](/windows-hardware/drivers/ddi/mrx/nf-mrx-rxstopminirdr) 例程调用。
 
-如果*MRxStop*返回 STATUS\_SUCCESS，则例程成功。 任何其他返回值都表示在停止网络小型重定向程序时出错。
+如果 *MRxStop* 返回状态 \_ SUCCESS，则例程成功。 任何其他返回值都表示在停止网络小型重定向程序时出错。
 
-如果*MRxStop*返回 STATUS\_SUCCESS，则 RDBSS 会将 RDBSS 的状态设置为 RDBSS\_可。 此状态存储在*RxDeviceObject*指向的 RDBSS\_设备\_对象结构的 StartStopContext 成员中 **。**
+如果 *MRxStop* 返回 STATUS \_ SUCCESS，则 RDBSS 会将 RDBSS 的状态设置为 RDBSS 可恢复 \_ 。 此状态存储在 RxDeviceObject 指向**StartStopContext.State**的 RDBSS \_ 设备 \_ 对象结构*RxDeviceObject*的 StartStopContext 成员中。
 
 通常，网络小型重定向器会保持一个内部变量，指示网络小型重定向程序是否已启动。 例如，网络小型重定向程序可能会跟踪停止、启动的时间，以及启动操作或停止操作正在进行的时间。
 
@@ -113,11 +113,11 @@ NTSTATUS MRxStop(
 <tbody>
 <tr class="odd">
 <td align="left"><p>目标平台</p></td>
-<td align="left">桌面</td>
+<td align="left">桌面型</td>
 </tr>
 <tr class="even">
 <td align="left"><p>标头</p></td>
-<td align="left">Mrx （包括 Mrx）</td>
+<td align="left">Mrx (包含 Mrx) </td>
 </tr>
 </tbody>
 </table>
@@ -127,16 +127,9 @@ NTSTATUS MRxStop(
 
 [**MRxDevFcbXXXControlFile**](mrxdevfcbxxxcontrolfile.md)
 
-[**MrxStart**](https://docs.microsoft.com/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_calldown_ctx)
+[**MrxStart**](/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_calldown_ctx)
 
-[**RxStopMinirdr**](https://docs.microsoft.com/windows-hardware/drivers/ddi/mrx/nf-mrx-rxstopminirdr)
-
- 
+[**RxStopMinirdr**](/windows-hardware/drivers/ddi/mrx/nf-mrx-rxstopminirdr)
 
  
-
-
-
-
-
 

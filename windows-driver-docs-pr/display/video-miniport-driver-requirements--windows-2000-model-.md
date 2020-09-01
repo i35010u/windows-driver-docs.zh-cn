@@ -6,12 +6,12 @@ keywords:
 - 视频微型端口驱动程序 WDK Windows 2000，要求
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e73bb2e37f5de95f25707bed6cd2e3ca164b6ae0
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 3771910256907c2ac2407fb766b7fa540114494e
+ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72825288"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89066302"
 ---
 # <a name="video-miniport-driver-requirements-windows-2000-model"></a>视频微型端口驱动程序要求（Windows 2000 模型）
 
@@ -25,9 +25,9 @@ ms.locfileid: "72825288"
 
     微型端口驱动程序由单个二进制文件组成。 微型端口驱动程序的主要用途是检测、初始化和配置同一类型的一个或多个图形适配器。
 
--   **小型小型驱动程序只能** ***videoprt *** 导出调用。
+-   **小型小型驱动程序只能使调用导出**  ***videoprt.sys *。**
 
-    微型端口驱动程序只能调用由系统提供的视频端口驱动程序导出的那些函数。 （已导出的视频端口函数在[视频端口驱动程序函数](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)后面的参考页上列出。）驱动程序编写器还可以使用以下操作来确定微型端口驱动程序调用的函数：
+    微型端口驱动程序只能调用由系统提供的视频端口驱动程序导出的那些函数。  (导出的视频端口函数在 [视频端口驱动程序函数](/windows-hardware/drivers/ddi/index)后面的参考页面上列出。 ) 驱动程序编写者还可以使用以下内容来确定微型端口驱动程序调用的函数：
 
     ```cpp
     link -dump -imports my_driver.sys
@@ -40,10 +40,4 @@ ms.locfileid: "72825288"
     默认情况下，必须禁用平移。 只有通过控制面板请求微型端口驱动程序时，才应启用该驱动程序。 默认情况下，Oem 可以启用平移作为其预安装的一部分。
 
  
-
- 
-
-
-
-
 

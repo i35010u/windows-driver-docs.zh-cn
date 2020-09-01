@@ -7,23 +7,23 @@ keywords:
 - 注册表 WDK 显示中的硬件信息
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c2e1243c267de96605b8f6dbdaec2cb6e290b5c9
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 29bbf383ccc71796b4f083881424bab314371645
+ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72829636"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89067270"
 ---
 # <a name="registering-hardware-information"></a>注册硬件信息
 
 
-若要向用户显示有用的信息并帮助调试，显示微型端口驱动程序必须在注册表中设置某些硬件信息。 显示微型端口驱动程序必须设置芯片类型、数字到模拟转换器（DAC）类型、内存大小（的适配器）和标识适配器的字符串。 此信息显示在 "控制面板" 的 "**显示**应用程序" 中。 通常，驱动程序将此信息设置为其[**DxgkDdiAddDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dispmprt/nc-dispmprt-dxgkddi_add_device)函数。
+若要向用户显示有用的信息并帮助调试，显示微型端口驱动程序必须在注册表中设置某些硬件信息。 显示微型端口驱动程序必须设置芯片类型、数字到模拟转换器 (DAC) 类型、内存大小 () 适配器以及用于标识适配器的字符串。 此信息显示在 "控制面板" 的 " **显示** 应用程序" 中。 通常，驱动程序将此信息设置为其 [**DxgkDdiAddDevice**](/windows-hardware/drivers/ddi/dispmprt/nc-dispmprt-dxgkddi_add_device) 函数。
 
 若要设置此信息，驱动程序：
 
-1.  调用**IoOpenDeviceRegistryKey**来存储特定于驱动程序的信息。 在此调用中，驱动程序会在*DevInstKeyType*参数中指定 PLUGPLAY\_REGKEY\_驱动程序标志，并在 DesiredAccess 中指定\_设置\_值、密钥\_写入或密钥\_所有\_访问值参数。
+1.  调用 **IoOpenDeviceRegistryKey** 来存储特定于驱动程序的信息。 在此调用中，驱动程序在 \_ \_ *DevInstKeyType*参数中指定 PLUGPLAY REGKEY 驱动程序标志，并 \_ 在 \_ DesiredAccess 参数中指定密钥集值、键 \_ 写入或键 \_ 所有 \_ 访问值。 *DesiredAccess*
 
-2.  多次调用[**ZwSetValueKey**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-zwsetvaluekey)函数，以设置每种类型的硬件信息。 在每次调用中，驱动程序在*KeyHandle*参数中指定从**IoOpenDeviceRegistryKey**获取的软件密钥句柄。
+2.  多次调用 [**ZwSetValueKey**](/windows-hardware/drivers/ddi/wdm/nf-wdm-zwsetvaluekey) 函数，以设置每种类型的硬件信息。 在每次调用中，驱动程序在 *KeyHandle* 参数中指定从 **IoOpenDeviceRegistryKey**获取的软件密钥句柄。
 
     下表描述了驱动程序必须注册的信息，并提供了**ZwSetValueKey**的*ValueName*和*Data*参数的详细信息：
 
@@ -36,8 +36,8 @@ ms.locfileid: "72829636"
     <thead>
     <tr class="header">
     <th align="left">输入信息</th>
-    <th align="left"><em>ValueName</em>参数</th>
-    <th align="left"><em>Data</em>参数</th>
+    <th align="left"><em>ValueName</em> 参数</th>
+    <th align="left"><em>Data</em> 参数</th>
     </tr>
     </thead>
     <tbody>
@@ -49,7 +49,7 @@ ms.locfileid: "72829636"
     <tr class="even">
     <td align="left"><p>DAC 类型</p></td>
     <td align="left"><p>HardwareInformation. DacType</p></td>
-    <td align="left"><p>以 Null 结尾的字符串，其中包含 DAC 名称或标识符（ID）</p></td>
+    <td align="left"><p>以 Null 结尾的字符串，其中包含 DAC 名称或标识符 (ID) </p></td>
     </tr>
     <tr class="odd">
     <td align="left"><p>内存大小</p></td>
@@ -72,10 +72,4 @@ ms.locfileid: "72829636"
      
 
  
-
- 
-
-
-
-
 

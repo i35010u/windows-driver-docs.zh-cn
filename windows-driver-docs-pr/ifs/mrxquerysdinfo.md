@@ -15,17 +15,17 @@ api_type:
 - UserDefined
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6a207efdd43553fd209f4c991ccb9bde7be30d74
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 3dc50b2c07c89d959ff959a9d763e6ff32730af1
+ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72841085"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89065534"
 ---
 # <a name="mrxquerysdinfo-routine"></a>MRxQuerySdInfo 例程
 
 
-*MRxQuerySdInfo*例程由[RDBSS](https://docs.microsoft.com/windows-hardware/drivers/ifs/the-rdbss-driver-and-library)调用，以请求网络小型重定向程序查询有关文件系统对象的安全描述符信息。
+*MRxQuerySdInfo*例程由[RDBSS](./the-rdbss-driver-and-library.md)调用，以请求网络小型重定向程序查询有关文件系统对象的安全描述符信息。
 
 <a name="syntax"></a>语法
 ------
@@ -39,16 +39,16 @@ NTSTATUS MRxQuerySdInfo(
 { ... }
 ```
 
-<a name="parameters"></a>参数
+<a name="parameters"></a>parameters
 ----------
 
-*RxContext* \[in，out\]  
-指向 RX\_上下文结构的指针。 此参数包含请求操作的 IRP。
+*RxContext* \[in、out\]  
+指向 RX \_ 上下文结构的指针。 此参数包含请求操作的 IRP。
 
 <a name="return-value"></a>返回值
 ------------
 
-*MRxQuerySdInfo*返回成功的状态\_成功或使用适当的 NTSTATUS 值，如以下之一：
+*MRxQuerySdInfo* 返回成功的状态 \_ 成功或适当的 NTSTATUS 值，如以下之一：
 
 <table>
 <colgroup>
@@ -69,12 +69,12 @@ NTSTATUS MRxQuerySdInfo(
 <tr class="even">
 <td align="left"><strong>STATUS_BUFFER_OVERFLOW</strong></td>
 <td align="left"><p>用于接收安全描述符信息的缓冲区太小。</p>
-<p>应将此返回值视为成功，并且应尽可能多的有效数据返回到由<em>RxContext</em>参数指向的 RX_CONTEXT 结构的<strong>信息. Buffer</strong>成员中。</p></td>
+<p>应将此返回值视为成功，并尽可能多地在<em>RxContext</em>参数指向的 RX_CONTEXT 结构的<strong>信息. Buffer</strong>成员中返回尽可能多的数据。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><strong>STATUS_BUFFER_TOO_SMALL</strong></td>
 <td align="left"><p>缓冲区太小，无法接收请求的数据。</p>
-<p>如果返回此值，则<em>RxContext</em>参数指向的 RX_CONTEXT 结构的<strong>InformationToReturn</strong>成员应设置为预期缓冲区的最小大小，以便调用成功。</p></td>
+<p>如果返回此值，则应将<em>RxContext</em>参数指向的 RX_CONTEXT 结构的<strong>InformationToReturn</strong>成员设置为预期缓冲区的最小大小，以便调用成功。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><strong>STATUS_CONNECTION_DISCONNECTED</strong></td>
@@ -116,17 +116,17 @@ NTSTATUS MRxQuerySdInfo(
 <a name="remarks"></a>备注
 -------
 
-RDBSS 发出对*MRxQuerySdInfo*的调用，以响应接收[**IRP\_\_MJ\_安全**](irp-mj-query-security.md)请求。
+RDBSS 发出对 *MRxQuerySdInfo* 的调用，以响应接收 [**IRP \_ MJ \_ 查询 \_ 安全**](irp-mj-query-security.md) 请求。
 
-在调用*MRxQuerySdInfo*之前，RDBSS 会修改 RX\_由*RxContext*参数指向的上下文结构：
+在调用 *MRxQuerySdInfo*之前，RDBSS 会修改 \_ *RXCONTEXT* 参数指向的 RX 上下文结构中的以下成员：
 
-**SecurityInformation**成员设置为**IrpSp&gt;QuerySecurity. SecurityInformation**。
+**QuerySecurity. SecurityInformation**成员设置为**IrpSp-QuerySecurity. &gt; SecurityInformation**。
 
 **信息. Buffer**成员设置为 i/o 请求数据包中的用户缓冲区。 如果需要，此缓冲区已被 RDBSS 锁定。
 
-**LengthRemaining**成员设置为**IrpSp-&gt;QuerySecurity**。
+**LengthRemaining**成员设置为**IrpSp &gt; 参数. QuerySecurity**。
 
-成功时，网络小型重定向程序应将 RX\_上下文结构的**InformationToReturn**成员设置为返回的安全信息的长度。 如果对*MRxQuerySdInfo*的调用成功，则 RDBSS 会将 IRP 的**IoStatus**成员设置为 RX\_上下文的**InformationToReturn**成员。
+成功时，网络小型重定向程序应将 RX 上下文结构的 **InformationToReturn** 成员设置 \_ 为返回的安全信息的长度。 如果对 *MRxQuerySdInfo* 的调用成功，则 RDBSS 会将 IRP 的 **IoStatus** 成员设置为 RX 上下文的 **InformationToReturn** 成员 \_ 。
 
 <a name="requirements"></a>要求
 ------------
@@ -139,19 +139,19 @@ RDBSS 发出对*MRxQuerySdInfo*的调用，以响应接收[**IRP\_\_MJ\_安全**
 <tbody>
 <tr class="odd">
 <td align="left"><p>目标平台</p></td>
-<td align="left">桌面</td>
+<td align="left">桌面型</td>
 </tr>
 <tr class="even">
 <td align="left"><p>标头</p></td>
-<td align="left">Mrx （包括 Mrx）</td>
+<td align="left">Mrx (包含 Mrx) </td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
-[**MRxIsValidDirectory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_chkdir_calldown)
+[**MRxIsValidDirectory**](/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_chkdir_calldown)
 
 [**MRxQueryDirectory**](mrxquerydirectory.md)
 
@@ -176,11 +176,4 @@ RDBSS 发出对*MRxQuerySdInfo*的调用，以响应接收[**IRP\_\_MJ\_安全**
 [**MRxSetVolumeInfo**](mrxsetvolumeinfo.md)
 
  
-
- 
-
-
-
-
-
 

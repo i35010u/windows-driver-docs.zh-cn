@@ -4,8 +4,8 @@ description: 字体规格函数
 ms.assetid: 22d88765-bde5-4f1b-b106-9396868d6fb3
 keywords:
 - 字体 WDK 图形，指标函数
-- GDI WDK Windows 2000 显示、 字体、 度量值的函数
-- 图形驱动程序 WDK Windows 2000 显示，字体，指标函数
+- GDI WDK Windows 2000 显示，字体，指标函数
+- 图形驱动程序 WDK Windows 2000 显示，字体，指标功能
 - DrvQueryFontData
 - DrvQueryFontTree
 - DrvFree
@@ -14,16 +14,16 @@ keywords:
 - IFIMETRICS
 - 光栅字体 WDK 图形
 - 名义空间坐标系统 WDK 图形
-- 大小 WDK 字体
-- 指标函数 WDK 字体
+- 调整 WDK 字体大小
+- 度量值函数 WDK 字体
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 88f286b6f640d596aa2c607747f636dfa7eaac30
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 052af03ba48da2529088a07aefe88672d5b8f141
+ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67363744"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89065440"
 ---
 # <a name="font-metric-functions"></a>字体规格函数
 
@@ -31,13 +31,13 @@ ms.locfileid: "67363744"
 ## <span id="ddk_font_metric_functions_gg"></span><span id="DDK_FONT_METRIC_FUNCTIONS_GG"></span>
 
 
-如果驱动程序必须支持字体，它必须提供字体信息向通过 GDI [ **IFIMETRICS** ](https://docs.microsoft.com/windows/desktop/api/winddi/ns-winddi-_ifimetrics)结构。 没有单独的 IFIMETRICS 结构的每种字体。 大多数字段以 FWORDs，表示每个有符号的 16 位数量，在设计空间。 如果该字体为光栅字体，设计空间和设备空间是相同的字体单位等效于像素之间的距离。
+当驱动程序必须支持字体时，它必须通过 [**IFIMETRICS**](/windows/desktop/api/winddi/ns-winddi-_ifimetrics) 结构向 GDI 提供字体信息。 每个字体都有单独的 IFIMETRICS 结构。 大多数字段都以 FWORDs 表示，其中每个都有一个有符号的16位数量，位于设计空间。 如果字体是光栅字体，则设计空间和设备空间相同，字体单位相当于像素之间的距离。
 
-基本上，IFIMETRICS 结构是文本指标结构的图形 DDI 版本。 所有的距离是指字体设计器的名义上的坐标系统。 名义空间坐标系统是惯用右手的笛卡尔坐标系统，在其中 y 坐标会增加顶部附近的和向右增加的 x 坐标。
+基本上，IFIMETRICS 结构是文本度量结构的图形 DDI 版本。 所有距离都是指字体设计器的名义坐标系统。 "名义空间" 坐标系统是一个右笛卡尔坐标系统，其中 y 坐标增加到顶部，x 坐标向右增加。
 
-IFIMETRICS 结构旨在为可变长度。 放置与字体相关的字符字符串的长度没有限制。 它是常见的做法来存储紧跟 IFIMETRICS 结构的最后一个字段的字符串。
+IFIMETRICS 结构设计为具有可变长度。 对与字体关联的字符串的长度不施加限制。 常见的做法是在 IFIMETRICS 结构的最后一个字段之后存储字符串。
 
-提供了字体任何驱动程序必须支持[ **DrvQueryFont** ](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvqueryfont)函数。 该驱动程序还可以包含函数[ **DrvQueryFontData** ](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvqueryfontdata)来检索有关已实现的字体的信息。 在调用*DrvQueryFontData*，GDI 提供一个指针指向的标志符号或字距调整句柄数组。 该驱动程序返回有关关联的标志符号中信息 GDI [ **GLYPHDATA** ](https://docs.microsoft.com/windows/desktop/api/winddi/ns-winddi-_glyphdata)结构。 如果*DrvQueryFontData*已给定的字距调整句柄，它返回有关字距调整对形式的 Win32 POINTL 结构信息。 下表列出了字体指标函数。
+任何提供字体的驱动程序都必须支持 [**DrvQueryFont**](/windows/desktop/api/winddi/nf-winddi-drvqueryfont) 函数。 驱动程序还可以包括函数 [**DrvQueryFontData**](/windows/desktop/api/winddi/nf-winddi-drvqueryfontdata) ，以检索有关已实现字体的信息。 在对 *DrvQueryFontData*的调用中，GDI 提供指向标志符号或字偶间距调整句柄的数组的指针。 驱动程序返回有关 GDI [**GLYPHDATA**](/windows/desktop/api/winddi/ns-winddi-_glyphdata) 结构中的关联标志符号的信息。 如果已为 *DrvQueryFontData* 提供字偶间距调整控点，则它将返回有关以 Win32 POINTL 结构形式提供的字偶间距调整的信息。 下表列出了字体指标函数。
 
 <table>
 <colgroup>
@@ -47,54 +47,48 @@ IFIMETRICS 结构旨在为可变长度。 放置与字体相关的字符字符�
 <thead>
 <tr class="header">
 <th align="left">函数</th>
-<th align="left">描述</th>
+<th align="left">说明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvdestroyfont" data-raw-source="[&lt;strong&gt;DrvDestroyFont&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvdestroyfont)"><strong>DrvDestroyFont</strong></a></p></td>
-<td align="left"><p>该驱动程序可以释放它分配了所有的数据结构以便不再需要字体实现通知驱动程序。 GDI 调用此函数一次针对字体生成者，一次用于字体使用者。 可选-应支持，仅当该驱动程序必须释放已分配的资源。</p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvdestroyfont" data-raw-source="[&lt;strong&gt;DrvDestroyFont&lt;/strong&gt;](/windows/desktop/api/winddi/nf-winddi-drvdestroyfont)"><strong>DrvDestroyFont</strong></a></p></td>
+<td align="left"><p>通知驱动程序不再需要字体实现，以便驱动程序可以释放它所分配的任何数据结构。 对于字体制造者，GDI 将调用此函数一次，对字体使用者调用一次。 可选-仅当驱动程序必须释放已分配的资源时才支持。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvfree" data-raw-source="[&lt;strong&gt;DrvFree&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvfree)"><strong>DrvFree</strong></a></p></td>
-<td align="left"><p>告知驱动程序不再需要所指示的数据结构。 应实现可选-，仅当驱动程序的内存管理需要使用此信息。</p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvfree" data-raw-source="[&lt;strong&gt;DrvFree&lt;/strong&gt;](/windows/desktop/api/winddi/nf-winddi-drvfree)"><strong>DrvFree</strong></a></p></td>
+<td align="left"><p>通知驱动程序不再需要指示的数据结构。 可选-仅当驱动程序的内存管理需要此信息时才应实现。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvqueryfont" data-raw-source="[&lt;strong&gt;DrvQueryFont&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvqueryfont)"><strong>DrvQueryFont</strong></a></p></td>
-<td align="left"><p>返回一个指向<a href="https://docs.microsoft.com/windows/desktop/api/winddi/ns-winddi-_ifimetrics" data-raw-source="[&lt;strong&gt;IFIMETRICS&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/winddi/ns-winddi-_ifimetrics)"> <strong>IFIMETRICS</strong> </a>字体的结构。 所需的处理与字体的所有驱动程序。</p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvqueryfont" data-raw-source="[&lt;strong&gt;DrvQueryFont&lt;/strong&gt;](/windows/desktop/api/winddi/nf-winddi-drvqueryfont)"><strong>DrvQueryFont</strong></a></p></td>
+<td align="left"><p>返回一个指向字体的 <a href="https://docs.microsoft.com/windows/desktop/api/winddi/ns-winddi-_ifimetrics" data-raw-source="[&lt;strong&gt;IFIMETRICS&lt;/strong&gt;](/windows/desktop/api/winddi/ns-winddi-_ifimetrics)"><strong>IFIMETRICS</strong></a> 结构的指针。 处理字体的所有驱动程序所必需的。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvqueryfontdata" data-raw-source="[&lt;strong&gt;DrvQueryFontData&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvqueryfontdata)"><strong>DrvQueryFontData</strong></a></p></td>
-<td align="left"><p>返回有关已实现的字体的信息。 所需 (针对选定<em>iMode</em>值) 的处理与字体的所有驱动程序。</p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvqueryfontdata" data-raw-source="[&lt;strong&gt;DrvQueryFontData&lt;/strong&gt;](/windows/desktop/api/winddi/nf-winddi-drvqueryfontdata)"><strong>DrvQueryFontData</strong></a></p></td>
+<td align="left"><p>返回有关已实现字体的信息。 需要 (用于处理字体的所有驱动程序) 所选的 <em>iMode</em> 值。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvqueryfonttree" data-raw-source="[&lt;strong&gt;DrvQueryFontTree&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvqueryfonttree)"><strong>DrvQueryFontTree</strong></a></p></td>
-<td align="left"><p>返回指向为定义的结构映射从 Unicode 标志符号的句柄或字距调整对到字距调整句柄的映射。 所需的处理与字体的所有驱动程序。</p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvqueryfonttree" data-raw-source="[&lt;strong&gt;DrvQueryFontTree&lt;/strong&gt;](/windows/desktop/api/winddi/nf-winddi-drvqueryfonttree)"><strong>DrvQueryFontTree</strong></a></p></td>
+<td align="left"><p>返回指向结构的指针，这些结构定义从 Unicode 到标志符号句柄的映射或字偶间距对到字偶间距调整句柄的映射。 处理字体的所有驱动程序所必需的。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-该函数*DrvQueryFontTree*允许 GDI，若要获取指向定义以下项之一的树状结构的指针：
+函数 *DrvQueryFontTree* 允许 GDI 获取树结构的指针，这些结构定义以下内容之一：
 
--   从 Unicode 映射到字形句柄，包括象形文字变体 (GDI [ **FD\_GLYPHSET** ](https://docs.microsoft.com/windows/desktop/api/winddi/ns-winddi-_fd_glyphset)结构)
+-   从 Unicode 映射到标志符号句柄，包括 (GDI [**FD \_ GLYPHSET**](/windows/desktop/api/winddi/ns-winddi-_fd_glyphset) 结构的字形变体) 
 
--   映射的字距调整对到字距调整句柄 ([**FD\_KERNINGPAIR** ](https://docs.microsoft.com/windows/desktop/api/winddi/ns-winddi-_fd_kerningpair)结构)
+-   将字偶间距调整对映射到字偶间距调整图柄 ([**FD \_ KERNINGPAIR**](/windows/desktop/api/winddi/ns-winddi-_fd_kerningpair) 结构) 
 
-*DrvQueryFontTree*需要付出努力来生成所需的结构，因此驱动程序应尽可能预先计算这些文件。 在资源中或在文件中，可以存储结构。 如果在文件中存储结构，用于加载或读取它们的理想方法是调用[ **EngMapFontFile** ](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-engmapfontfile)函数，它指向的内存映射文件。 并不能获取该文件附加到交换文件，因为内存可提供必要时，这是比打开和读取的文件中更高效。
+*DrvQueryFontTree* 需要努力才能生成所需的结构，因此，如果可能，驱动程序应预先计算这些文件。 结构可以存储在资源中，也可以存储在文件中。 如果结构存储在文件中，则加载或读取它们的理想方法是调用 [**EngMapFontFile**](/windows/desktop/api/winddi/nf-winddi-engmapfontfile) 函数，该函数将文件映射到内存。 由于文件未添加到交换文件中，因此，如果需要，可以使用内存，这比在文件中打开和读取更有效。
 
-具体而言，驱动程序将返回中的标识符*pid*参数。 GDI 将其传递给[ **DrvFree** ](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvfree)函数，返回的指针时[ **FD\_GLYPHSET** ](https://docs.microsoft.com/windows/desktop/api/winddi/ns-winddi-_fd_glyphset)结构或数组[ **FD\_KERNINGPAIR** ](https://docs.microsoft.com/windows/desktop/api/winddi/ns-winddi-_fd_kerningpair)不再需要结构。 具体取决于如何在该驱动程序中管理内存*pid*可以标识结构，确定如何结构已分配，或根本不执行任何操作。
+具体而言，驱动程序将在 *pid* 参数中返回标识符。 当不再需要[**fd \_ GLYPHSET**](/windows/desktop/api/winddi/ns-winddi-_fd_glyphset)结构或[**fd \_ KERNINGPAIR**](/windows/desktop/api/winddi/ns-winddi-_fd_kerningpair)结构数组时，GDI 会将其传递到[**DrvFree**](/windows/desktop/api/winddi/nf-winddi-drvfree)函数，并返回指针。 根据驱动程序中管理内存的方式， *pid* 可以标识结构，确定结构的分配方式，或者根本不执行任何操作。
 
-[**DrvFree** ](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvfree)并[ **DrvDestroyFont** ](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvdestroyfont)是这两个可选函数。 GDI 调用*DrvFree*来通知该驱动程序不再需要指定的数据结构。 该驱动程序不需要实现它，除非它为结构分配内存并需要在相应的数据结构可以将其释放时得到通知。 例如，如果与关联的数据[ **FONTOBJ** ](https://docs.microsoft.com/windows/desktop/api/winddi/ns-winddi-_fontobj)结构，删除可能延迟到调用*DrvDestroyFont*，因此它不会为必需实现*DrvFree*。
+[**DrvFree**](/windows/desktop/api/winddi/nf-winddi-drvfree) 和 [**DrvDestroyFont**](/windows/desktop/api/winddi/nf-winddi-drvdestroyfont) 都是可选函数。 GDI 调用 *DrvFree* 来通知驱动程序，不再需要指定的数据结构。 该驱动程序无需实现它，除非它为结构分配内存，并且在可释放相应的数据结构时需要通知。 例如，如果数据与 [**FONTOBJ**](/windows/desktop/api/winddi/ns-winddi-_fontobj) 结构相关联，则删除可能会推迟到对 *DrvDestroyFont*的调用，因此不需要实现 *DrvFree*。
 
-*DrvDestroyFont*字体实现不再需要该驱动程序可以释放它分配了所有的数据结构以便将通知驱动程序。 GDI 调用此函数一次针对字体生成者，一次用于字体使用者。 仅当该驱动程序必须释放已分配的资源时销毁该字体实例应实现它。
-
- 
+*DrvDestroyFont* 通知驱动程序不再需要字体实现，以便驱动程序可以释放它所分配的任何数据结构。 对于字体制造者，GDI 将调用此函数一次，对字体使用者调用一次。 仅当该字体实例被销毁时，驱动程序必须释放已分配的资源。
 
  
-
-
-
-
 

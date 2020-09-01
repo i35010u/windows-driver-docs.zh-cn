@@ -9,12 +9,12 @@ keywords:
 - 显示驱动程序 WDK Windows 2000，关于显示器驱动程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d59efe3b707c041299b3993503da4c04129083ae
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 65149fa7a75db00bbaa2b3367bb295bb9577602a
+ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72838992"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89065644"
 ---
 # <a name="display-drivers-windows-2000-model"></a>显示驱动程序（Windows 2000 模型）
 
@@ -28,21 +28,15 @@ ms.locfileid: "72838992"
 
 -   GDI 接口-系统提供的、由显示驱动程序调用的帮助器例程，以简化驱动程序实现。
 
-本部分介绍与基于 NT 的操作系统显示驱动程序相关的关键概念，以及一些实现信息。 有关打印机驱动程序和显示驱动程序（如驱动程序初始化和终止）和图形输出等常见的图形驱动程序设计细节，请参阅[对图形驱动程序的 GDI 支持](gdi-support-for-graphics-drivers.md)和[使用图形 DDI](using-the-graphics-ddi.md) 。
+本部分介绍与基于 NT 的操作系统显示驱动程序相关的关键概念，以及一些实现信息。 有关打印机驱动程序和显示驱动程序（如驱动程序初始化和终止）和图形输出等常见的图形驱动程序设计细节，请参阅 [对图形驱动程序的 GDI 支持](gdi-support-for-graphics-drivers.md) 和 [使用图形 DDI](using-the-graphics-ddi.md) 。
 
 显示驱动程序编写器还可以实现以下 DDIs：
 
--   DirectDraw DDI-图形接口，允许供应商提供适用于 DirectDraw 的硬件加速。 有关详细信息，请参阅[DirectDraw](directdraw.md) 。
+-   DirectDraw DDI-图形接口，允许供应商提供适用于 DirectDraw 的硬件加速。 有关详细信息，请参阅 [DirectDraw](directdraw.md) 。
 
--   Direct3D DDI-三维图形界面，允许供应商提供 Direct3D 的硬件加速。 有关详细信息，请参阅[DIRECT3D DDI](direct3d.md) 。
+-   Direct3D DDI-三维图形界面，允许供应商提供 Direct3D 的硬件加速。 有关详细信息，请参阅 [DIRECT3D DDI](direct3d.md) 。
 
-有关图形 DDI 入口点和结构以及 GDI 服务函数和对象的完整说明，请参阅[Gdi 函数](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)。
-
- 
+有关图形 DDI 入口点和结构以及 GDI 服务函数和对象的完整说明，请参阅 [Gdi 函数](/windows-hardware/drivers/ddi/index)。
 
  
-
-
-
-
 

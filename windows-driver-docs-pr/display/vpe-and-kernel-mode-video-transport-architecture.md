@@ -10,12 +10,12 @@ keywords:
 - 视频捕获 WDK 视频传输内核模式
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 330a615d182c21eb0df322fd6ce4fcc2a80503fc
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 366b695032ab601d3014a1493f6e40f95acd895a
+ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72825263"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89066306"
 ---
 # <a name="vpe-and-kernel-mode-video-transport-architecture"></a>VPE 和内核模式视频传输体系结构
 
@@ -23,19 +23,19 @@ ms.locfileid: "72825263"
 ## <span id="ddk_vpe_and_kernel_mode_video_transport_architecture_gg"></span><span id="DDK_VPE_AND_KERNEL_MODE_VIDEO_TRANSPORT_ARCHITECTURE_GG"></span>
 
 
-本部分提供了有关 DirectX 5.0 及更高版本中视频端口扩展（VPE）和内核模式视频传输的 Windows 2000 和更高版本的详细信息。 内核模式视频传输的体系结构基于 Microsoft 添加为与设备无关的代码的新函数。 内核模式视频传输包含[**DxApi**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxapi/nf-dxapi-dxapi)函数，该函数作为 directdraw 的一部分、[视频微型端口驱动程序](video-miniport-drivers-in-the-windows-2000-display-driver-model.md)和作为 directdraw 的一部分提供的 COM 接口方法提供。
+本部分提供了有关在 DirectX 5.0 及更高版本中 (VPE) 和内核模式视频传输的视频端口扩展的 Windows 2000 和更高版本体系结构的一些详细信息。 内核模式视频传输的体系结构基于 Microsoft 添加为与设备无关的代码的新函数。 内核模式视频传输包含 [**DxApi**](/windows-hardware/drivers/ddi/dxapi/nf-dxapi-dxapi) 函数，该函数作为 directdraw 的一部分、 [视频微型端口驱动程序](video-miniport-drivers-in-the-windows-2000-display-driver-model.md)和作为 directdraw 的一部分提供的 COM 接口方法提供。
 
 ### <a name="span-idwindows_2000_and_laterspanspan-idwindows_2000_and_laterspanwindows-2000-and-later"></a><span id="windows_2000_and_later"></span><span id="WINDOWS_2000_AND_LATER"></span>Windows 2000 及更高版本
 
-在 Windows 2000 和更高版本中，如下图所示，DxApi 回调是[视频微型端口驱动程序](video-miniport-drivers-in-the-windows-2000-display-driver-model.md)的一部分。
+在 Windows 2000 和更高版本中，如下图所示，DxApi 回调是 [视频微型端口驱动程序](video-miniport-drivers-in-the-windows-2000-display-driver-model.md)的一部分。
 
 ![阐释 windows 2000 内核模式视频传输体系结构的关系图](images/ddfg011.png)
 
-有关 DxApi 回调的详细信息，请参阅[适用于 Windows 2000 和更高版本的 DxApi 微型端口驱动程序功能](dxapi-miniport-driver-functions-for-windows-2000-and-later.md)。
+有关 DxApi 回调的详细信息，请参阅 [适用于 Windows 2000 和更高版本的 DxApi 微型端口驱动程序功能](dxapi-miniport-driver-functions-for-windows-2000-and-later.md)。
 
-上图显示了与其他内核模式和用户模式组件（虚线表示内核转换）相关的内核模式视频传输体系结构。 在此体系结构中，DirectShow （或其他用户模式客户端）调用[IDirectDrawKernel](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)和[IDirectDrawSurfaceKernel](https://docs.microsoft.com/windows-hardware/drivers/ddi/index) DirectDraw COM 接口，以获取 DirectDraw 对象和 surface 对象的句柄。
+上图显示了与其他内核模式和用户模式组件相关的内核模式视频传输体系结构， (虚线表示内核转换) 。 在此体系结构中，DirectShow (或其他用户模式客户端) 调用 [IDirectDrawKernel](/windows-hardware/drivers/ddi/index) 和 [IDirectDrawSurfaceKernel](/windows-hardware/drivers/ddi/index) DirectDraw COM 接口，以获取 DirectDraw 对象和 surface 对象的句柄。
 
-**请注意**   此体系结构还支持在 MPEG 设备和 VGA 设备之间使用 PCI 总线进行数据流。
+**注意**   此体系结构还支持在 MPEG 设备和 VGA 设备之间使用 PCI 总线进行数据流。
 
  
 
@@ -44,10 +44,4 @@ ms.locfileid: "72825263"
 ![说明 windows 2000 视频传输中的句柄传递的关系图](images/ddfg012.png)
 
  
-
- 
-
-
-
-
 

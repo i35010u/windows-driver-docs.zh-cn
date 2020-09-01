@@ -7,12 +7,12 @@ keywords:
 - 图片解码设置 WDK DirectX VA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 75562285ee5566f8c6de178beadfdec7ecaea8c1
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 641f63be89625c0f60a2cf2614a5998489d4b198
+ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72825731"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89067228"
 ---
 # <a name="seventh-picture-decoding-configuration"></a>第七个图片解码配置
 
@@ -20,9 +20,9 @@ ms.locfileid: "72825731"
 ## <span id="ddk_seventh_picture_decoding_configuration_gg"></span><span id="DDK_SEVENTH_PICTURE_DECODING_CONFIGURATION_GG"></span>
 
 
-此集中的第七个配置仅为[**DXVA\_ConnectMode**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_connectmode)结构中指示[\_C](mpeg2-c.md)和[mpeg2\_D](mpeg2-d.md)受限配置文件定义。 在最小互操作集中，任何其他受限制的配置文件都不包括此配置。
+此集中的第七个配置仅为在[**DXVA \_ ConnectMode**](/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_connectmode)结构中指示的[mpeg2 \_ C](mpeg2-c.md)和[mpeg2 \_ D](mpeg2-d.md)限制配置文件定义。 在最小互操作集中，任何其他受限制的配置文件都不包括此配置。
 
-此配置（不是首选配置）的定义方式与[第一个图片解码配置](first-picture-decoding-configuration.md)相同，但以下情况例外。
+此配置 (这不是首选配置) 的定义方式与 [第一个图片解码配置](first-picture-decoding-configuration.md) 相同，但以下情况例外。
 
 <table>
 <colgroup>
@@ -38,7 +38,7 @@ ms.locfileid: "72825731"
 <tbody>
 <tr class="odd">
 <td align="left"><p><strong>bConfigResidDiffHost</strong></p></td>
-<td align="left"><p>无</p></td>
+<td align="left"><p>零</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>bConfigResidDiffAccelerator</strong></p></td>
@@ -54,10 +54,4 @@ ms.locfileid: "72825731"
  
 
  
-
- 
-
-
-
-
 

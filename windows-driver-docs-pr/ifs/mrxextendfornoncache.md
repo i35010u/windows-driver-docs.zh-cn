@@ -15,17 +15,17 @@ api_type:
 - UserDefined
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a04795dd28991dbff6802a7976dada38d8f42420
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: b7d441b7a68e156c07e54a4320a946d21b52fcef
+ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72841110"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89066144"
 ---
 # <a name="mrxextendfornoncache-routine"></a>MRxExtendForNonCache 例程
 
 
-*MRxExtendForNonCache*例程由[RDBSS](https://docs.microsoft.com/windows-hardware/drivers/ifs/the-rdbss-driver-and-library)调用，以请求当缓存管理器未缓存文件时，网络小型重定向程序会扩展文件。
+*MRxExtendForNonCache*例程由[RDBSS](./the-rdbss-driver-and-library.md)调用，以请求当缓存管理器未缓存文件时，网络小型重定向程序会扩展文件。
 
 <a name="syntax"></a>语法
 ------
@@ -41,33 +41,33 @@ ULONG MRxExtendForNonCache(
 { ... }
 ```
 
-<a name="parameters"></a>参数
+<a name="parameters"></a>parameters
 ----------
 
-*RxContext* \[in，out\]  
-指向 RX\_上下文结构的指针。 此参数包含请求操作的 IRP。
+*RxContext* \[in、out\]  
+指向 RX \_ 上下文结构的指针。 此参数包含请求操作的 IRP。
 
-*pNewFileSize* \[in，out\]  
-指向大型\_整数值的指针，该整数值指示新文件大小的字节数。
+*pNewFileSize* \[in、out\]  
+指向大 \_ 整数值的指针，指示新文件大小的字节计数。
 
-*pNewAllocationSize* \[out\]  
-一个指针，指向用于在[**MRxExtendForCache**](https://docs.microsoft.com/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_extendfile_calldown)返回时存储新分配大小的大\_整数。
+*pNewAllocationSize* \[弄\]  
+一个指针，指向 \_ 用于在 [**MRxExtendForCache**](/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_extendfile_calldown) 返回时存储新分配大小的大整数。
 
 <a name="return-value"></a>返回值
 ------------
 
-如果成功， *MRxExtendForNonCache*将返回状态\_成功或错误代码。
+*MRxExtendForNonCache* 返回成功状态 \_ 或失败时返回错误代码。
 
 <a name="remarks"></a>备注
 -------
 
-*MRxExtendForNonCache*处理网络请求，以扩展非缓存 i/o 的文件。
+*MRxExtendForNonCache* 处理网络请求，以扩展非缓存 i/o 的文件。
 
-在调用*MRxExtendForNonCache*之前，RDBSS 会修改 RX\_由*RxContext*参数指向的上下文结构：
+在调用 *MRxExtendForNonCache*之前，RDBSS 会修改 \_ *RXCONTEXT* 参数指向的 RX 上下文结构中的以下成员：
 
-**LowIoContext**设置为 LOWIO\_操作\_写入
+**LowIoContext** 设置为 LOWIO \_ OP \_ WRITE
 
-**LowIoContext**包含 LOWIO\_READWRITEFLAG\_扩展\_FILESIZE 位集
+**LowIoContext PARAMSFOR** LOWIO \_ READWRITEFLAG \_ 扩展 \_ FILESIZE 位集
 
 缓存文件或目录信息的网络微型重定向程序可能需要在扩展文件时使其缓存信息无效。
 
@@ -82,39 +82,39 @@ ULONG MRxExtendForNonCache(
 <tbody>
 <tr class="odd">
 <td align="left"><p>目标平台</p></td>
-<td align="left">桌面</td>
+<td align="left">桌面型</td>
 </tr>
 <tr class="even">
 <td align="left"><p>标头</p></td>
-<td align="left">Mrx （包括 Mrx）</td>
+<td align="left">Mrx (包含 Mrx) </td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
-[**MRxAreFilesAliased**](https://docs.microsoft.com/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_chkfcb_calldown)
+[**MRxAreFilesAliased**](/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_chkfcb_calldown)
 
-[**MRxCleanupFobx**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff549841(v=vs.85))
+[**MRxCleanupFobx**](/previous-versions/windows/hardware/drivers/ff549841(v=vs.85))
 
-[**MRxCloseSrvOpen**](https://docs.microsoft.com/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_calldown)
+[**MRxCloseSrvOpen**](/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_calldown)
 
 [**MRxCollapseOpen**](mrxcollapseopen.md)
 
 [**MRxCreate**](mrxcreate.md)
 
-[**MRxDeallocateForFcb**](https://docs.microsoft.com/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_deallocate_for_fcb)
+[**MRxDeallocateForFcb**](/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_deallocate_for_fcb)
 
-[**MRxDeallocateForFobx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_deallocate_for_fobx)
+[**MRxDeallocateForFobx**](/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_deallocate_for_fobx)
 
-[**MRxExtendForCache**](https://docs.microsoft.com/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_extendfile_calldown)
+[**MRxExtendForCache**](/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_extendfile_calldown)
 
 [**MRxFlush**](mrxflush.md)
 
-[**MRxForceClosed**](https://docs.microsoft.com/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_forceclosed_calldown)
+[**MRxForceClosed**](/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_forceclosed_calldown)
 
-[**MRxIsLockRealizable**](https://docs.microsoft.com/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_is_lock_realizable)
+[**MRxIsLockRealizable**](/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_is_lock_realizable)
 
 [**MRxShouldTryToCollapseThisOpen**](mrxshouldtrytocollapsethisopen.md)
 
@@ -123,11 +123,4 @@ ULONG MRxExtendForNonCache(
 [**MRxZeroExtend**](mrxzeroextend.md)
 
  
-
- 
-
-
-
-
-
 

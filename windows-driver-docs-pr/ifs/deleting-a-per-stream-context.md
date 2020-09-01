@@ -10,12 +10,12 @@ keywords:
 - 正在删除每个流的上下文
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 17d208588b510e872e6b4e4e867b5f00622a369d
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 92081cf28d639886ad3c610ca93e2bddd01cc67e
+ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72841443"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89065084"
 ---
 # <a name="deleting-a-per-stream-context"></a>删除按流上下文
 
@@ -25,30 +25,25 @@ ms.locfileid: "72841443"
 
 当不再需要与文件流关联的每个流上下文时，应将其删除。 可以通过以下两种方式之一删除流上下文：
 
--   当筛选器驱动程序调用[**FsRtlRemovePerStreamContext**](https://msdn.microsoft.com/library/windows/hardware/ff547238)时，手动。
+-   当筛选器驱动程序调用 [**FsRtlRemovePerStreamContext**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-fsrtlremoveperstreamcontext)时，手动。
 
--   当文件系统调用[**FsRtlTeardownPerStreamContexts**](https://msdn.microsoft.com/library/windows/hardware/ff547295)时，它会自动调用流上下文的[**FreeCallback**](https://msdn.microsoft.com/library/windows/hardware/ff547357)例程。
+-   当文件系统调用 [**FsRtlTeardownPerStreamContexts**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-fsrtlteardownperstreamcontexts)时，它会自动调用流上下文的 [**FreeCallback**](/previous-versions/ff547357(v=vs.85)) 例程。
 
 ### <a name="span-idwhen_the_filter_deletes_the_per-stream_contextspanspan-idwhen_the_filter_deletes_the_per-stream_contextspanspan-idwhen_the_filter_deletes_the_per-stream_contextspanwhen-the-filter-deletes-the-per-stream-context"></a><span id="When_the_Filter_Deletes_the_Per-Stream_Context"></span><span id="when_the_filter_deletes_the_per-stream_context"></span><span id="WHEN_THE_FILTER_DELETES_THE_PER-STREAM_CONTEXT"></span>当筛选器删除每个流的上下文时
 
-当文件流仍处于打开状态时，当筛选器驱动程序需要删除文件流的每个流的上下文时，它将首先调用[**FsRtlRemovePerStreamContext**](https://msdn.microsoft.com/library/windows/hardware/ff547238)以从与给定文件相关联的上下文的全局列表中删除该上下文。 在调用**FsRtlRemovePerStreamContext**之后，筛选器通常会释放上下文结构。
+当文件流仍处于打开状态时，当筛选器驱动程序需要删除文件流的每个流的上下文时，它将首先调用 [**FsRtlRemovePerStreamContext**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-fsrtlremoveperstreamcontext) 以从与给定文件相关联的上下文的全局列表中删除该上下文。 在调用 **FsRtlRemovePerStreamContext**之后，筛选器通常会释放上下文结构。
 
-**请注意**   筛选器驱动程序调用[**FsRtlInsertPerStreamContext**](https://msdn.microsoft.com/library/windows/hardware/ff546194)后，若要将每个流的上下文结构与文件流相关联，则在释放之前，它必须调用上下文的[**FsRtlRemovePerStreamContext**](https://msdn.microsoft.com/library/windows/hardware/ff547238) 。 否则，在关闭文件流时系统将会崩溃。
+**注意**   在筛选器驱动程序调用[**FsRtlInsertPerStreamContext**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-fsrtlinsertperstreamcontext)以将每个流的上下文结构与文件流相关联后，在释放它之前，它必须为上下文调用[**FsRtlRemovePerStreamContext**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-fsrtlremoveperstreamcontext) 。 否则，在关闭文件流时系统将会崩溃。
 
  
 
 ### <a name="span-idwhen_the_per-stream_context_s_freecallback_is_calledspanspan-idwhen_the_per-stream_context_s_freecallback_is_calledspanspan-idwhen_the_per-stream_context_s_freecallback_is_calledspanwhen-the-per-stream-contexts-freecallback-is-called"></a><span id="When_the_Per-Stream_Context_s_FreeCallback_Is_Called"></span><span id="when_the_per-stream_context_s_freecallback_is_called"></span><span id="WHEN_THE_PER-STREAM_CONTEXT_S_FREECALLBACK_IS_CALLED"></span>调用每个流上下文的 FreeCallback 时
 
-当文件流被关闭或删除时，文件系统会为文件流释放自己的流上下文。 此时，文件系统还将调用[**FsRtlTeardownPerStreamContexts**](https://msdn.microsoft.com/library/windows/hardware/ff547295)，后者又会调用为该文件流的上下文的全局列表中包含的所有每个流的上下文注册的[**FreeCallback**](https://msdn.microsoft.com/library/windows/hardware/ff547357)例程。 （当筛选器驱动程序调用[**FsRtlInitPerStreamContext**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-fsrtlinitperstreamcontext)来初始化每个流的上下文结构时，将注册**FreeCallback**例程。 有关详细信息，请参阅**FSRTL\_PER\_STREAM\_CONTEXT**。）
+当文件流被关闭或删除时，文件系统会为文件流释放自己的流上下文。 此时，文件系统还将调用 [**FsRtlTeardownPerStreamContexts**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-fsrtlteardownperstreamcontexts)，后者又会调用为该文件流的上下文的全局列表中包含的所有每个流的上下文注册的 [**FreeCallback**](/previous-versions/ff547357(v=vs.85)) 例程。  (当筛选器驱动程序调用[**FsRtlInitPerStreamContext**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-fsrtlinitperstreamcontext)来初始化每个流的上下文结构时，将注册**FreeCallback**例程。 有关详细信息，请参阅 **FSRTL \_ PER \_ STREAM \_ CONTEXT**。 ) 
 
-**请注意**   筛选器驱动程序调用[**FsRtlInsertPerStreamContext**](https://msdn.microsoft.com/library/windows/hardware/ff546194) ，以便将每个流的上下文结构与文件流相关联，则文件系统负责确保在不再存在对流的任何打开的引用时，将调用筛选器的每个流上下文的[**FreeCallback**](https://msdn.microsoft.com/library/windows/hardware/ff547357)例程。
-
- 
+**注意**   在筛选器驱动程序调用[**FsRtlInsertPerStreamContext**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-fsrtlinsertperstreamcontext)以将每个流的上下文结构与文件流相关联后，文件系统负责确保在不再存在对流的任何打开的引用时，将调用筛选器的每个流上下文的[**FreeCallback**](/previous-versions/ff547357(v=vs.85))例程。
 
  
 
  
-
-
-
 

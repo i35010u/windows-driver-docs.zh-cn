@@ -14,18 +14,18 @@ ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
 ms.localizationpriority: medium
-ms.openlocfilehash: ffcf4d661dfc762f89b3b9c52f6502b39a8ccf72
-ms.sourcegitcommit: 5953acfcf699397a708bcc360b9f2199115feb52
+ms.openlocfilehash: 0cf904dd1f37d4ce32e5333e754930ebf7300fc9
+ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/13/2020
-ms.locfileid: "86292870"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89064600"
 ---
 # <a name="edid-extension-for-head-mounted-and-specialized-monitors"></a>用于 head 装载和专用监视器的 EDID 扩展
 
 *显示制造商的规范*
 
-本文档提供有关如何在 HMD (Head 装入的显示) 或专用显示固件中实现[EDID](https://en.wikipedia.org/wiki/Extended_Display_Identification_Data) CTA (使用者技术关联) 扩展的指南，以便 windows 操作系统中的每一层都可以正确地处理。 在本文档中，术语 "显示" 和 "监视" 是同义词。
+本文档提供有关如何在 HMD (Head 装入的显示) 或专用显示固件中实现 [EDID](https://en.wikipedia.org/wiki/Extended_Display_Identification_Data) CTA (使用者技术关联) 扩展的指南，以便 windows 操作系统中的每一层都可以正确地处理。 在本文档中，术语 "显示" 和 "监视" 是同义词。
 
 如果没有此 EDID 扩展，HMDs 和专用显示器会出现以下问题：
 
@@ -34,16 +34,16 @@ ms.locfileid: "86292870"
 
 本文档中的规范需要两部分来解决上述问题：
 
-1. 显示中包含[EDID](https://en.wikipedia.org/wiki/Extended_Display_Identification_Data)的固件将被修改为包含[特定于供应商的数据块](https://en.wikipedia.org/wiki/Extended_Display_Identification_Data#EIA.2FCEA-861_extension_block)，以标识显示的特定于 Windows 的用例。
+1. 显示中包含 [EDID](https://en.wikipedia.org/wiki/Extended_Display_Identification_Data) 的固件将被修改为包含 [特定于供应商的数据块](https://en.wikipedia.org/wiki/Extended_Display_Identification_Data#EIA.2FCEA-861_extension_block) ，以标识显示的特定于 Windows 的用例。
 2. Windows 显示子系统将正确识别此文档中所述的特定于供应商的数据块，并适当地处理显示。 请注意，不同版本的 Windows 操作系统可能具有不同的行为，如下所示。
 
-1的组合。 和第 2 步 以上将从显示器第一次插入的那一刻起，产生正确的 Windows 行为。 特别是，HMDs 和某些专用显示器不会包含在常规的 Windows 桌面环境中，并可使用[Windows. display. Core](https://docs.microsoft.com/uwp/api/windows.devices.display.core) api 访问显示。
+1的组合。 和第 2 步 以上将从显示器第一次插入的那一刻起，产生正确的 Windows 行为。 特别是，HMDs 和某些专用显示器不会包含在常规的 Windows 桌面环境中，并可使用 [Windows. display. Core](/uwp/api/windows.devices.display.core) api 访问显示。
 
 视频电子标准关联 (VESA) 已在 DisplayId v2.0 中定义标准化字段，该字段提供了与本文档中定义的 VSDB 相同的信息的访问权限。  DisplayID v2.0 或更高版本是为 HMDs 传递此数据的首选机制，但是，如果设备由于其他原因必须使用 EDID，则应使用此 VSDB。
 
 ## <a name="vendor-specific-data-block-vsdb"></a>特定于供应商的数据块 (VSDB) 
 
-负责写入包含 EDID 的固件代码的参与方必须包含 CTA extension 块，并将 Microsoft 定义的供应商特定数据块 (VSDB) 中。  ([E-EDID](https://vesa.org/vesa-standards/standards-summaries/)) 中介绍了 "EDID 的 VESA 增强的扩展显示识别数据标准" 中所述的结构，请参阅版本1.4，版本 A，修订版本2，其中第2.2 节描述了扩展块。  CTA 的861系列文档中定义了 CTA 扩展块，这是一个用于未压缩的高速数字接口的 DTV 配置文件。  VSDBs 在撰写) 发布版本[CTA-861-G](https://standards.cta.tech/kwspub/published_docs/CTA-861-G-Preview.pdf) （包括 VSDB 相对于其他数据块的顺序）的最新 (部分中进行了介绍。
+负责写入包含 EDID 的固件代码的参与方必须包含 CTA extension 块，并将 Microsoft 定义的供应商特定数据块 (VSDB) 中。  ([E-EDID](https://vesa.org/vesa-standards/standards-summaries/)) 中介绍了 "EDID 的 VESA 增强的扩展显示识别数据标准" 中所述的结构，请参阅版本1.4，版本 A，修订版本2，其中第2.2 节描述了扩展块。  CTA 的861系列文档中定义了 CTA 扩展块，这是一个用于未压缩的高速数字接口的 DTV 配置文件。  VSDBs 在撰写) 发布版本 [CTA-861-G](https://standards.cta.tech/kwspub/published_docs/CTA-861-G-Preview.pdf) （包括 VSDB 相对于其他数据块的顺序）的最新 (部分中进行了介绍。
 
 VSDB 结构必须包含下表中所述的格式和值。
 
@@ -93,24 +93,24 @@ VSDB 结构必须包含下表中所述的格式和值。
 
 显示设备的主要用例：
 
-* 测试设备-`0x1`
-* 一般显示-`0x2`
-* 电视显示器-`0x3`
-* 桌面生产力显示-`0x4`
-* 桌面游戏显示器-`0x5`
-* 演示显示-`0x6`
-* 虚拟现实耳机-`0x7`
-* 扩充的现实-`0x8`
-* 视频墙壁显示-`0x10`
-* 医疗图像显示-`0x11`
-* 专用游戏显示器-`0x12`
-* 专用视频监视器显示器-`0x13`
-* 附件显示-`0x14`
+* 测试设备- `0x1`
+* 一般显示- `0x2`
+* 电视显示器- `0x3`
+* 桌面生产力显示- `0x4`
+* 桌面游戏显示器- `0x5`
+* 演示显示- `0x6`
+* 虚拟现实耳机- `0x7`
+* 扩充的现实- `0x8`
+* 视频墙壁显示- `0x10`
+* 医疗图像显示- `0x11`
+* 专用游戏显示器- `0x12`
+* 专用视频监视器显示器- `0x13`
+* 附件显示- `0x14`
 
 ### <a name="container-id-16-bytes"></a>容器 ID [16 字节]
 
 每个设备独有的16字节全局唯一标识符。 这是在工厂地面上烧录的标识符。
 
-## <a name="remarks"></a>注解
+## <a name="remarks"></a>备注
 
 请注意，为了保持与早期操作系统的最大兼容性，建议 HMDs 继续使用版本 `0x1` 和 `0x2` 此 EDID 扩展。 有关要用于 HMDs 的值，请参阅上一节。

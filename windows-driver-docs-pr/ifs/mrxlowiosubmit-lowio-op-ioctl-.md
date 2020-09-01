@@ -1,9 +1,9 @@
 ---
-title: MRxLowIOSubmit\ LOWIO\_OP\_IOCTL\ 例程
-description: MRxLowIOSubmit\ LOWIO\_OP\_RDBSS 网络微型重定向到发出 I/O 系统控制请求通过调用 IOCTL\ 例程。
+title: MRxLowIOSubmit \ LOWIO \_ OP \_ IOCTL \ 例程
+description: RDBSS 调用 MRxLowIOSubmit \ LOWIO \_ OP \_ IOCTL \ 例程向网络小型重定向程序发出 i/o 系统控制请求。
 ms.assetid: b416e2b4-6024-45ec-adf5-90743d417ad5
 keywords:
-- MRxLowIOSubmit LOWIO_OP_IOCTL 例程可安装文件系统驱动程序
+- MRxLowIOSubmit LOWIO_OP_IOCTL 日常可安装文件系统驱动程序
 - PMRX_CALLDOWN
 topic_type:
 - apiref
@@ -15,17 +15,17 @@ api_type:
 - UserDefined
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 70da29cda27ab0d4387c6bf5b0b273c0dcc8e032
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 684ba90cfff3e6f1af82ed58d5013527d79e5b01
+ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67363509"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89066140"
 ---
-# <a name="mrxlowiosubmitlowioopioctl-routine"></a>MRxLowIOSubmit\[LOWIO\_OP\_IOCTL\] routine
+# <a name="mrxlowiosubmitlowio_op_ioctl-routine"></a>MRxLowIOSubmit \[ LOWIO \_ OP \_ IOCTL \] 例程
 
 
-*MRxLowIOSubmit\[LOWIO\_OP\_IOCTL\]* 调用例程[RDBSS](https://docs.microsoft.com/windows-hardware/drivers/ifs/the-rdbss-driver-and-library) I/O 系统控制请求发出到网络最小-重定向程序。
+[RDBSS](./the-rdbss-driver-and-library.md)调用*MRxLowIOSubmit \[ LOWIO \_ OP \_ IOCTL \] *例程向网络小型重定向程序发出 i/o 系统控制请求。
 
 <a name="syntax"></a>语法
 ------
@@ -39,16 +39,16 @@ NTSTATUS MRxLowIOSubmit[LOWIO_OP_IOCTL](
 { ... }
 ```
 
-<a name="parameters"></a>Parameters
+<a name="parameters"></a>parameters
 ----------
 
-*RxContext* \[in、 out\]  
-指向 RX\_上下文结构。 此参数包含 IRP 请求该操作。
+*RxContext* \[in、out\]  
+指向 RX \_ 上下文结构的指针。 此参数包含请求操作的 IRP。
 
 <a name="return-value"></a>返回值
 ------------
 
-*MRxLowIOSubmit\[LOWIO\_OP\_IOCTL\]* 返回状态\_成功的成功或相应 NTSTATUS 值，如以下项之一：
+*MRxLowIOSubmit \[LOWIO \_ 操作 \_ IOCTL \] *返回成功的状态 \_ 或相应的 NTSTATUS 值，如以下之一：
 
 <table>
 <colgroup>
@@ -64,7 +64,7 @@ NTSTATUS MRxLowIOSubmit[LOWIO_OP_IOCTL](
 <tbody>
 <tr class="odd">
 <td align="left"><strong>STATUS_INSUFFICIENT_RESOURCES</strong></td>
-<td align="left"><p>没有资源不足，无法完成请求。</p></td>
+<td align="left"><p>资源不足，无法完成请求。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><strong>STATUS_INVALID_DEVICE_REQUEST</strong></td>
@@ -72,7 +72,7 @@ NTSTATUS MRxLowIOSubmit[LOWIO_OP_IOCTL](
 </tr>
 <tr class="odd">
 <td align="left"><strong>STATUS_INVALID_PARAMETER</strong></td>
-<td align="left"><p>在指定的参数无效<em>RxContext</em>。</p></td>
+<td align="left"><p>在 <em>RxContext</em>中指定了无效的参数。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><strong>STATUS_NOT_IMPLEMENTED</strong></td>
@@ -80,7 +80,7 @@ NTSTATUS MRxLowIOSubmit[LOWIO_OP_IOCTL](
 </tr>
 <tr class="odd">
 <td align="left"><strong>STATUS_NOT_SUPPORTED</strong></td>
-<td align="left"><p>指定了 IOCTL 不受网络微型重定向。</p></td>
+<td align="left"><p>网络小型重定向程序不支持指定的 IOCTL。</p></td>
 </tr>
 </tbody>
 </table>
@@ -90,25 +90,25 @@ NTSTATUS MRxLowIOSubmit[LOWIO_OP_IOCTL](
 <a name="remarks"></a>备注
 -------
 
-RDBSS 调用*MRxLowIOSubmit\[LOWIO\_OP\_IOCTL\]* 接收响应[ **IRP\_MJ\_设备\_控制**](irp-mj-device-control.md)或[ **IRP\_MJ\_内部\_设备\_控件**](irp-mj-internal-device-control.md)请求数。
+RDBSS 调用*MRxLowIOSubmit \[ LOWIO \_ OP \_ IOCTL \] * ，以响应接收[**IRP \_ mj \_ 设备 \_ 控制**](irp-mj-device-control.md)或[**IRP \_ mj \_ 内部 \_ 设备 \_ 控制**](irp-mj-internal-device-control.md)请求。
 
-然后再调用*MRxLowIOSubmit\[LOWIO\_OP\_IOCTL\]* ，RDBSS 修改 RX 中的以下成员\_上下文结构指向*RxContext*参数：
+在调用*MRxLowIOSubmit \[ LOWIO \_ OP \_ IOCTL \] *之前，RDBSS 会修改 RxContext 参数所指向的 RX 上下文结构中的以下成员 \_ ： *RxContext*
 
-**LowIoContext.Operation**成员设置为 LOWIO\_OP\_IOCTL。
+**LowIoContext**成员设置为 LOWIO \_ OP \_ IOCTL。
 
-**LowIoContext.ResourceThreadId**成员设置为启动 RDBSS 中的操作的进程线程。
+**LowIoContext. ResourceThreadId**成员设置为在 RDBSS 中启动操作的进程线程。
 
-**LowIoContext.ParamsFor.IoCtl.IoControlCode**成员设置为 IOCTL 控制代码。
+IoControlCode 成员设置为 IOCTL 控制代码。 **LowIoContext**
 
-**LowIoContext.ParamsFor.IoCtl.pInputBuffer**成员设置为输入缓冲区。
+**ParamsFor pInputBuffer**成员设置为输入缓冲区。 LowIoContext
 
-**LowIoContext.ParamsFor.IoCtl.InputBufferLength**成员设置为输入的缓冲区长度。
+**LowIoContext**成员设置为输入缓冲区的长度。
 
-**LowIoContext.ParamsFor.IoCtl.pOutputBuffer**成员设置为输出缓冲区。
+**ParamsFor pOutputBuffer**成员设置为输出缓冲区。 LowIoContext
 
-**LowIoContext.ParamsFor.IoCtl.OutputBufferLength**成员设置为输出缓冲区长度。
+**LowIoContext**成员设置为输出缓冲区的长度。
 
-虽然*MRxLowIOSubmit\[LOWIO\_OP\_IOCTL\]* 处理例程， **LowIoContext.ResourceThreadId** RX的成员\_保证上下文以指示启动了 RDBSS 中的操作的进程线程。 **LowIoContext.ResourceThreadId** RX 成员\_上下文可用于代表另一个线程释放输入的资源。 完成异步例程后，可以释放已获取从初始线程的输入的资源。
+在*MRxLowIOSubmit \[ LOWIO \_ OP \_ IOCTL \] *例程正在处理时，可保证 RX 上下文的**LowIoContext**成员 \_ 指示在 RDBSS 中启动操作的进程线程。 RX 上下文的 **LowIoContext. ResourceThreadId** 成员 \_ 可用于代表其他线程发布输入资源。 异步例程完成后，可以释放从初始线程获取的输入资源。
 
 <a name="requirements"></a>要求
 ------------
@@ -121,40 +121,33 @@ RDBSS 调用*MRxLowIOSubmit\[LOWIO\_OP\_IOCTL\]* 接收响应[ **IRP\_MJ\_设备
 <tbody>
 <tr class="odd">
 <td align="left"><p>目标平台</p></td>
-<td align="left">桌面设备</td>
+<td align="left">桌面型</td>
 </tr>
 <tr class="even">
-<td align="left"><p>Header</p></td>
-<td align="left">Mrx.h （包括 Mrx.h）</td>
+<td align="left"><p>标头</p></td>
+<td align="left">Mrx (包含 Mrx) </td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
-[**MRxLowIOSubmit\[LOWIO\_OP\_EXCLUSIVELOCK\]** ](mrxlowiosubmit-lowio-op-exclusivelock-.md)
+[**MRxLowIOSubmit \[ LOWIO \_ OP \_ EXCLUSIVELOCK\]**](mrxlowiosubmit-lowio-op-exclusivelock-.md)
 
-[**MRxLowIOSubmit\[LOWIO\_OP\_FSCTL\]** ](mrxlowiosubmit-lowio-op-fsctl-.md)
+[**MRxLowIOSubmit \[ LOWIO \_ OP \_ FSCTL\]**](mrxlowiosubmit-lowio-op-fsctl-.md)
 
-[**MRxLowIOSubmit\[LOWIO\_OP\_NOTIFY\_CHANGE\_DIRECTORY\]** ](mrxlowiosubmit-lowio-op-notify-change-directory-.md)
+[**MRxLowIOSubmit \[ LOWIO \_ OP \_ 通知 \_ 更改 \_ 目录\]**](mrxlowiosubmit-lowio-op-notify-change-directory-.md)
 
-[**MRxLowIOSubmit\[LOWIO\_OP\_READ\]** ](mrxlowiosubmit-lowio-op-read-.md)
+[**MRxLowIOSubmit \[ LOWIO \_ OP \_ READ\]**](mrxlowiosubmit-lowio-op-read-.md)
 
-[**MRxLowIOSubmit\[LOWIO\_OP\_SHAREDLOCK\]** ](mrxlowiosubmit-lowio-op-sharedlock-.md)
+[**MRxLowIOSubmit \[ LOWIO \_ OP \_ SHAREDLOCK\]**](mrxlowiosubmit-lowio-op-sharedlock-.md)
 
-[**MRxLowIOSubmit\[LOWIO\_OP\_UNLOCK\]** ](mrxlowiosubmit-lowio-op-unlock-.md)
+[**MRxLowIOSubmit \[ LOWIO \_ OP \_\]**](mrxlowiosubmit-lowio-op-unlock-.md)
 
-[**MRxLowIOSubmit\[LOWIO\_OP\_UNLOCK\_MULTIPLE\]** ](mrxlowiosubmit-lowio-op-unlock-multiple-.md)
+[**MRxLowIOSubmit \[ LOWIO \_ OP \_ UNLOCK \_ 多个\]**](mrxlowiosubmit-lowio-op-unlock-multiple-.md)
 
-[**MRxLowIOSubmit\[LOWIO\_OP\_WRITE\]** ](mrxlowiosubmit-lowio-op-write-.md)
-
- 
+[**MRxLowIOSubmit \[ LOWIO \_ OP \_ WRITE\]**](mrxlowiosubmit-lowio-op-write-.md)
 
  
-
-
-
-
-
 

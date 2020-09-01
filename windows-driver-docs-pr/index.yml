@@ -11,26 +11,26 @@ metadata:
   ms.date: 01/14/2020
   ms.localizationpriority: medium
   uhfHeaderId: MSDocsHeader-WinHW
-  ms.openlocfilehash: eb6655beaa3787844bdfb55c582cbac91c504204
-  ms.sourcegitcommit: 141a81f884c4951c6baa34b709ceee0d30caf3d0
+  ms.openlocfilehash: 7e9b23d537cf6fc61a8cfc814248a627a2a1be65
+  ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
   ms.translationtype: HT
   ms.contentlocale: zh-CN
-  ms.lasthandoff: 06/18/2020
-  ms.locfileid: "84978458"
+  ms.lasthandoff: 08/28/2020
+  ms.locfileid: "89066110"
 highlightedContent:
   items:
   - title: 获取 Windows 驱动程序工具包
     itemType: download
-    url: https://docs.microsoft.com/windows-hardware/drivers/download-the-wdk
+    url: ./download-the-wdk.md
   - title: 设备和驱动程序安装
     itemType: overview
-    url: https://docs.microsoft.com/windows-hardware/drivers/install/overview-of-device-and-driver-installation
+    url: ./install/overview-of-device-and-driver-installation.md
   - title: 加入预览体验计划
     itemType: overview
-    url: https://docs.microsoft.com/windows-insider
+    url: /windows-insider
   - title: 面向 Windows 开发人员的在线培训
     itemType: learn
-    url: https://docs.microsoft.com/learn/browse/?products=windows
+    url: /learn/browse/?products=windows
 conceptualContent:
   items:
   - title: 获取工具
@@ -39,120 +39,120 @@ conceptualContent:
       url: https://go.microsoft.com/fwlink/p/?LinkId=698539
       itemType: download
     - text: Windows 调试工具
-      url: https://docs.microsoft.com/windows-hardware/drivers/debugger/
+      url: ./debugger/index.md
       itemType: download
     - text: Windows 驱动程序示例
-      url: https://docs.microsoft.com/samples/browse/?products=windows-wdk
+      url: /samples/browse/?products=windows-wdk
       itemType: download
     - text: 安装预览版 WDK
-      url: https://docs.microsoft.com/windows-hardware/drivers/installing-preview-versions-wdk
+      url: ./installing-preview-versions-wdk.md
       itemType: overview
   - title: 调试
     links:
     - text: WinDbg 入门
-      url: https://docs.microsoft.com/windows-hardware/drivers/debugger/getting-started-with-windbg
+      url: ./debugger/getting-started-with-windbg.md
       itemType: get-started
     - text: 设置 KDNET 调试
-      url: https://docs.microsoft.com/windows-hardware/drivers/debugger/setting-up-a-network-debugging-connection-automatically
+      url: ./debugger/setting-up-a-network-debugging-connection-automatically.md
       itemType: overview
     - text: 下载 Windows 调试工具 - WinDbg
-      url: https://docs.microsoft.com/windows-hardware/drivers/debugger/debugger-download-tools
+      url: ./debugger/debugger-download-tools.md
       itemType: download
     - text: 调试 Windows 驱动程序
-      url: https://docs.microsoft.com/windows-hardware/drivers/debugger/debug-universal-drivers---step-by-step-lab--echo-kernel-mode-
+      url: ./debugger/debug-universal-drivers---step-by-step-lab--echo-kernel-mode-.md
       itemType: tutorial
   - title: API 参考
     links:
     - text: Windows 驱动程序 API 参考
-      url: https://docs.microsoft.com/windows-hardware/drivers/ddi/
+      url: /windows-hardware/drivers/ddi/
       itemType: reference
     - text: WDF API 参考
-      url: https://docs.microsoft.com/windows-hardware/drivers/ddi/_wdf
+      url: /windows-hardware/drivers/ddi/_wdf
       itemType: reference
     - text: 核心内核 API 参考
-      url: https://docs.microsoft.com/windows-hardware/drivers/ddi/_kernel
+      url: /windows-hardware/drivers/ddi/_kernel
       itemType: reference
   - title: 构建设备
     links:
     - text: Windows 10 入门
-      url: https://docs.microsoft.com/windows-hardware/get-started
+      url: /windows-hardware/get-started
       itemType: overview
     - text: 设计 Windows 10 设备
-      url: https://docs.microsoft.com/windows-hardware/design
+      url: /windows-hardware/design
       itemType: overview
     - text: 自定义
-      url: https://docs.microsoft.com/windows-hardware/customize
+      url: /windows-hardware/customize
       itemType: overview
     - text: 制造商
-      url: https://docs.microsoft.com/windows-hardware/manufacture
+      url: /windows-hardware/manufacture
       itemType: overview
     - text: 服务
-      url: https://docs.microsoft.com/windows-hardware/service
+      url: /windows-hardware/service
       itemType: overview
     - text: 测试性能和兼容性
-      url: https://docs.microsoft.com/windows-hardware/test
+      url: /windows-hardware/test
       itemType: overview
 tools:
   title: 驱动程序平台和框架
   items:
   - title: 内核/Windows 驱动程序模型
     imageSrc: https://docs.microsoft.com/media/logos/logo_windows.svg
-    url: https://docs.microsoft.com/windows-hardware/drivers/kernel
+    url: ./kernel/index.md
   - title: Windows 驱动程序框架
     imageSrc: https://docs.microsoft.com/media/logos/logo_windows.svg
-    url: https://docs.microsoft.com/windows-hardware/drivers/wdf
+    url: ./wdf/index.md
 additionalContent:
   sections:
   - title: 任务
     items:
     - title: 编写 Hello World Windows 驱动程序
       summary: 了解如何使用 KMDF 编写很小的 Windows 驱动程序。
-      url: https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/writing-a-very-small-kmdf--driver
+      url: ./gettingstarted/writing-a-very-small-kmdf--driver.md
     - title: Windows 驱动程序入门
       summary: 编写可以跨多个设备类型运行的单一驱动程序包。
-      url: https://docs.microsoft.com/windows-hardware/drivers/develop/getting-started-with-universal-drivers
+      url: ./develop/getting-started-with-windows-drivers.md
     - title: 添加启动项
       summary: 启动项是一组选项，用于为操作系统或可启动程序定义加载配置。
-      url: https://docs.microsoft.com/windows-hardware/drivers/devtest/adding-boot-entries
+      url: ./devtest/adding-boot-entries.md
     - title: 编辑启动选项
       summary: 了解如何自定义启动选项。
-      url: https://docs.microsoft.com/windows-hardware/drivers/devtest/editing-boot-options
+      url: ./devtest/editing-boot-options.md
     - title: 使用设备管理器卸载设备和驱动程序包
       summary: 设备管理器是一个控制面板应用程序，用于管理设备和驱动程序。
-      url: https://docs.microsoft.com/windows-hardware/drivers/install/using-device-manager-to-uninstall-devices-and-driver-packages
+      url: ./install/using-device-manager-to-uninstall-devices-and-driver-packages.md
     - title: 创建新的发货标签
       summary: 在 Microsoft 硬件API 中使用此方法创建新的发货标签。
-      url: https://docs.microsoft.com/windows-hardware/drivers/dashboard/create-a-new-shipping-label
+      url: ./dashboard/create-a-new-shipping-label.md
     - title: 管理发货标签
       summary: 了解如何管理用于 Windows 硬件仪表板提交的发货标签。
-      url: https://docs.microsoft.com/windows-hardware/drivers/dashboard/manage-shipping-labels
+      url: ./dashboard/manage-shipping-labels.md
     - title: 获取代码签名证书
       summary: 了解如何获取代码签名证书以保护数字信息。
-      url: https://docs.microsoft.com/windows-hardware/drivers/dashboard/get-a-code-signing-certificate
+      url: ./dashboard/get-a-code-signing-certificate.md
   - title: 资源
     items:
     - title: Windows 硬件合作伙伴中心
       summary: 了解如何轻松快捷地创建和管理系统和驱动程序提交。
-      url: https://docs.microsoft.com/windows-hardware/drivers/dashboard/
+      url: ./dashboard/index.yml
     - title: 驱动程序开发中的新增功能
       summary: 了解 Windows 10 中的最新驱动程序开发功能。
-      url: https://docs.microsoft.com/windows-hardware/drivers/what-s-new-in-driver-development
+      url: ./what-s-new-in-driver-development.md
     - title: 驱动程序技术概述
       summary: 开始了解特定 Windows 驱动程序模型，从蓝牙到 USB 等。
-      url: https://docs.microsoft.com/windows-hardware/drivers/device-and-driver-technologies
+      url: ./device-and-driver-technologies.md
     - title: Windows 符号程序包
       summary: 符号文件使调试代码更加容易。
-      url: https://docs.microsoft.com/windows-hardware/drivers/debugger/debugger-download-symbols
+      url: ./debugger/debugger-download-symbols.md
     - title: Bug 检查代码参考
       summary: 本部分包含常见 Bug 检查代码的说明，包括在蓝色 Bug 检查屏幕上通过错误代码显示的参数。
-      url: https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-code-reference2
+      url: ./debugger/bug-check-code-reference2.md
     - title: 驱动程序验证程序
       summary: 驱动程序验证程序监视 Windows 内核模式驱动程序和图形驱动程序，目的是检测可能损坏系统的非法函数调用或操作。
-      url: https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier
+      url: ./devtest/driver-verifier.md
     - title: Windows 设备控制台 (Devcon.exe)
       summary: DevCon 是一个命令行工具，用于显示运行 Windows 的计算机上的设备的详细信息。
-      url: https://docs.microsoft.com/windows-hardware/drivers/devtest/devcon
+      url: ./devtest/devcon.md
     - title: WinUSB (Winusb.sys)
       summary: 此部分介绍 Microsoft 为所有 USB 设备提供的通用 WinUSB 驱动程序 (Winusb.sys) 及其用户模式组件 (Winusb.dll)。
-      url: https://docs.microsoft.com/windows-hardware/drivers/usbcon/winusb
+      url: ./usbcon/winusb.md
   footer: '[@WindowsDocs在 Twitter 上](https://twitter.com/WindowsDocs) - [YouTube 上的 OneDevMinute](https://aka.ms/OneDevMinute) - [Windows 开发人员支持](https://developer.microsoft.com/windows/support) - [Stack Overflow](https://stackoverflow.com/questions/tagged/windows)'

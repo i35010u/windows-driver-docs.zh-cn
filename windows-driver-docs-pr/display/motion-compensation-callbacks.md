@@ -13,12 +13,12 @@ keywords:
 - 数字视频解码 WDK DirectDraw
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5aaa2a3313c503e02cc89f4f393b26eb42f6b1dc
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: ba37eefc353d620a57a4f1a9f5e1600687c3b21c
+ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72840557"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89066022"
 ---
 # <a name="motion-compensation-callbacks"></a>运动补偿回调
 
@@ -26,53 +26,47 @@ ms.locfileid: "72840557"
 ## <span id="ddk_motion_compensation_callbacks_gg"></span><span id="DDK_MOTION_COMPENSATION_CALLBACKS_GG"></span>
 
 
-[DirectX 视频加速](directx-video-acceleration.md)利用了 DirectDraw 驱动程序中提供的以下运动补偿回调函数来加速数字视频解码处理，并支持使用 alpha 混合作为 DVD 子画面支持
+[DirectX 视频加速](directx-video-acceleration.md) 利用了 DirectDraw 驱动程序中提供的以下运动补偿回调函数来加速数字视频解码处理，并支持使用 alpha 混合作为 DVD 子画面支持：
 
-[*DdMoCompBeginFrame*](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_mocompcb_beginframe)
+[*DdMoCompBeginFrame*](/windows/desktop/api/ddrawint/nc-ddrawint-pdd_mocompcb_beginframe)
 
-[*DdMoCompCreate*](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_mocompcb_create)
+[*DdMoCompCreate*](/windows/desktop/api/ddrawint/nc-ddrawint-pdd_mocompcb_create)
 
-[*DdMoCompDestroy*](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_mocompcb_destroy)
+[*DdMoCompDestroy*](/windows/desktop/api/ddrawint/nc-ddrawint-pdd_mocompcb_destroy)
 
-[*DdMoCompEndFrame*](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_mocompcb_endframe)
+[*DdMoCompEndFrame*](/windows/desktop/api/ddrawint/nc-ddrawint-pdd_mocompcb_endframe)
 
-[*DdMoCompGetBuffInfo*](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_mocompcb_getcompbuffinfo)
+[*DdMoCompGetBuffInfo*](/windows/desktop/api/ddrawint/nc-ddrawint-pdd_mocompcb_getcompbuffinfo)
 
-[*DdMoCompGetFormats*](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_mocompcb_getformats)
+[*DdMoCompGetFormats*](/windows/desktop/api/ddrawint/nc-ddrawint-pdd_mocompcb_getformats)
 
-[*DdMoCompGetGuids*](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_mocompcb_getguids)
+[*DdMoCompGetGuids*](/windows/desktop/api/ddrawint/nc-ddrawint-pdd_mocompcb_getguids)
 
-[*DdMoCompGetInternalInfo*](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_mocompcb_getinternalinfo)
+[*DdMoCompGetInternalInfo*](/windows/desktop/api/ddrawint/nc-ddrawint-pdd_mocompcb_getinternalinfo)
 
-[*DdMoCompQueryStatus*](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_mocompcb_querystatus)
+[*DdMoCompQueryStatus*](/windows/desktop/api/ddrawint/nc-ddrawint-pdd_mocompcb_querystatus)
 
-[*DdMoCompRender*](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_mocompcb_render)
+[*DdMoCompRender*](/windows/desktop/api/ddrawint/nc-ddrawint-pdd_mocompcb_render)
 
-运动补偿回调函数包含 DirectX 视频加速接口的设备驱动程序端。 运动补偿回调函数由[**DD\_MOTIONCOMPCALLBACKS**](https://docs.microsoft.com/windows/desktop/api/ddrawint/ns-ddrawint-dd_motioncompcallbacks)结构的成员指定。 以下步骤演示如何访问运动补偿回调函数：
+运动补偿回调函数包含 DirectX 视频加速接口的设备驱动程序端。 运动补偿回调函数由 [**DD \_ MOTIONCOMPCALLBACKS**](/windows/desktop/api/ddrawint/ns-ddrawint-dd_motioncompcallbacks) 结构的成员指定。 以下步骤演示如何访问运动补偿回调函数：
 
-1.  从**IAMVideoAccelerator：： GetVideoAcceleratorGUIDs**接收的 guid 来源于设备驱动程序的[*DdMoCompGetGuids*](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_mocompcb_getguids)。
+1.  从 **IAMVideoAccelerator：： GetVideoAcceleratorGUIDs** 接收的 guid 来源于设备驱动程序的 [*DdMoCompGetGuids*](/windows/desktop/api/ddrawint/nc-ddrawint-pdd_mocompcb_getguids)。
 
-2.  对下游输入插针的**IAMVideoAccelerator：： GetUncompFormatsSupported**的调用将从设备驱动程序的[*DdMoCompGetFormats*](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_mocompcb_getformats)返回数据。
+2.  对下游输入插针的 **IAMVideoAccelerator：： GetUncompFormatsSupported** 的调用将从设备驱动程序的 [*DdMoCompGetFormats*](/windows/desktop/api/ddrawint/nc-ddrawint-pdd_mocompcb_getformats)返回数据。
 
-3.  相关处理开始时，解码器的**IAMVideoAcceleratorNotify：： GetCreateVideoAcceleratorData**的输出插针中的[**DXVA\_ConnectMode**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_connectmode)数据结构被传递到设备驱动程序的[*DdMoCompCreate*](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_mocompcb_create)，它通知解码器有关视频加速对象的信息。
+3.  在相关处理开始时，解码器的**IAMVideoAcceleratorNotify：： GetCreateVideoAcceleratorData**的输出插针中的[**DXVA \_ ConnectMode**](/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_connectmode)数据结构会传递到设备驱动程序的[*DdMoCompCreate*](/windows/desktop/api/ddrawint/nc-ddrawint-pdd_mocompcb_create)，这将通知解码器有关视频加速对象的信息。
 
-4.  从**IAMVideoAccelerator：： GetCompBufferInfo**返回的数据源自设备驱动程序的[*DdMoCompGetBuffInfo*](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_mocompcb_getcompbuffinfo)。
+4.  从 **IAMVideoAccelerator：： GetCompBufferInfo** 返回的数据源自设备驱动程序的 [*DdMoCompGetBuffInfo*](/windows/desktop/api/ddrawint/nc-ddrawint-pdd_mocompcb_getcompbuffinfo)。
 
-5.  使用**IAMVideoAccelerator：： Execute**发送的缓冲区由设备驱动程序的[*DdMoCompRender*](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_mocompcb_render)接收。
+5.  使用 **IAMVideoAccelerator：： Execute** 发送的缓冲区由设备驱动程序的 [*DdMoCompRender*](/windows/desktop/api/ddrawint/nc-ddrawint-pdd_mocompcb_render)接收。
 
-6.  使用**IAMVideoAccelerator：： QueryRenderStatus**会调用设备驱动程序的[*DdMoCompQueryStatus*](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_mocompcb_querystatus)。 DDERR\_WASSTILLDRAWING 的返回*代码将被*主机解码器视为来自**IAMVideoAccelerator：： QueryRenderStatus**的 E\_的返回代码。
+6.  使用 **IAMVideoAccelerator：： QueryRenderStatus** 会调用设备驱动程序的 [*DdMoCompQueryStatus*](/windows/desktop/api/ddrawint/nc-ddrawint-pdd_mocompcb_querystatus)。 DDERR \_ WASSTILLDRAWING From *DdMoCompQueryStatus* 返回代码将被主机解码器视为 E \_ 挂自 **IAMVideoAccelerator：： QueryRenderStatus**的返回代码。
 
-7.  发送到**IAMVideoAccelerator：： BeginFrame**的数据由设备驱动程序的[*DdMoCompBeginFrame*](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_mocompcb_beginframe)接收。 需要从*DdMoCompBeginFrame*中获取 DDERR\_WASSTILLDRAWING 的返回代码，以使主机解码器在响应**IAMVideoAccelerator：： BeginFrame**时，为使 E\_处于挂起状态。
+7.  发送到 **IAMVideoAccelerator：： BeginFrame** 的数据由设备驱动程序的 [*DdMoCompBeginFrame*](/windows/desktop/api/ddrawint/nc-ddrawint-pdd_mocompcb_beginframe)接收。 需要在 DdMoCompBeginFrame 中使用 DDERR WASSTILLDRAWING 的返回代码，以 \_ 使*DdMoCompBeginFrame* \_ 主机解码器在响应**IAMVideoAccelerator：： BeginFrame**时查看 E 挂起。
 
-8.  发送到**IAMVideoAccelerator：： EndFrame**的数据由设备驱动程序的[*DdMoCompEndFrame*](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_mocompcb_endframe)接收。
+8.  发送到 **IAMVideoAccelerator：： EndFrame** 的数据由设备驱动程序的 [*DdMoCompEndFrame*](/windows/desktop/api/ddrawint/nc-ddrawint-pdd_mocompcb_endframe)接收。
 
-9.  在相关处理结束时，使用设备驱动程序的[*DdMoCompDestroy*](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_mocompcb_destroy)通知驱动程序当前的视频加速对象将不再可用，以便驱动程序可以执行任何必要的清理。
-
- 
+9.  在相关处理结束时，使用设备驱动程序的 [*DdMoCompDestroy*](/windows/desktop/api/ddrawint/nc-ddrawint-pdd_mocompcb_destroy) 通知驱动程序当前的视频加速对象将不再可用，以便驱动程序可以执行任何必要的清理。
 
  
-
-
-
-
 

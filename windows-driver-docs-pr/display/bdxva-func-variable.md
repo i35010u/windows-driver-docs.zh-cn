@@ -10,20 +10,20 @@ keywords:
 - bDXVA_Func 变量 WDK DirectX VA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b538fb2e2e9d7a276b9c264872e2b1af0c57d437
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: c3cf18e88e5d31ff70a34708676029ea825dd099
+ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72839068"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89064934"
 ---
-# <a name="bdxva_func-variable"></a>bDXVA\_Func 变量
+# <a name="bdxva_func-variable"></a>bDXVA \_ 函数函数
 
 
 ## <span id="ddk_bdxva_func_variable_gg"></span><span id="DDK_BDXVA_FUNC_VARIABLE_GG"></span>
 
 
-**BDXVA\_Func**变量是一个与 DirectX VA 操作相关联的8位值，如下所示。
+**BDXVA \_ Func**变量是一个与 DirectX VA 操作关联的8位值，如下所示。
 
 <table>
 <colgroup>
@@ -58,22 +58,16 @@ ms.locfileid: "72839068"
 
  
 
-**BDXVA\_Func**变量用于执行以下任务：
+**BDXVA \_ Func**变量用于执行以下任务：
 
--   探测和锁定特定 DirectX VA 功能的配置。 为此，可在**DXVA\_ConfigQueryOrReplyFlag**变量中包含**bDXVA\_Func** ，并在**DXVA\_ConfigQueryOrReplyFlag**变量中添加这些变量，这是因为在调用[*DwFunction*](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_mocompcb_render)时， [ **\_RENDERMOCOMPDATA**](https://docs.microsoft.com/windows/desktop/api/ddrawint/ns-ddrawint-_dd_rendermocompdata)结构的**DdMoCompRender**成员中发送这些变量。
+-   探测和锁定特定 DirectX VA 功能的配置。 这是通过以下方式实现的：在**DXVA \_ ConfigQueryOrReplyFlag**变量和**DXVA \_ ConfigQueryOrReplyFlag**变量中的**bDXVA \_ 函数**中发送这些变量时，在调用[*dwFunction*](/windows/desktop/api/ddrawint/nc-ddrawint-pdd_mocompcb_render)**的 RENDERMOCOMPDATA 成员中**发送这些变量。 [** \_ **](/windows/desktop/api/ddrawint/ns-ddrawint-_dd_rendermocompdata)
 
--   通过在以下结构的**dwFunction**成员中发送的 DXVA\_ConfigQueryOrReplyFlag 变量中包含**DXVA\_ConfigQueryOrReplyFlag**变量，指定与通过探测或 lock 命令传递的配置结构相关联的函数： [**DXVA\_ConfigPictureDecode**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_configpicturedecode)\_for [ **\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_configalphacombine) [**DXVA**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_configalphaload)alpha 混合组合
--   为特定的 DirectX VA 函数初始化加密协议，方法是包含在调用[*DdMoCompRender*](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_mocompcb_render)的**DXVA\_EncryptProtocolFunc**变量中，该变量在[**DD\_RENDERMOCOMPDATA**](https://docs.microsoft.com/windows/desktop/api/ddrawint/ns-ddrawint-_dd_rendermocompdata)结构的**dwFunction**成员中发送。
+-   通过在以下结构的**dwFunction**成员中发送的**DXVA \_ ConfigQueryOrReplyFlag**变量中包含 DXVA ConfigQueryOrReplyFlag 变量，指定与通过探测或 lock 命令传递的配置结构相关联的函数： [**DXVA \_ ConfigPictureDecode**](/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_configpicturedecode) for ** \_ ** ，用于 alpha 混合[**数据加载的 \_ **](/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_configalphacombine) [**DXVA ConfigAlphaLoad \_ **](/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_configalphaload)
+-   为特定的 DirectX VA 函数初始化加密协议，方法是包含在调用[*DdMoCompRender*](/windows/desktop/api/ddrawint/nc-ddrawint-pdd_mocompcb_render)的**dwFunction**成员中发送的**DXVA \_ EncryptProtocolFunc**变量中。 [** \_ **](/windows/desktop/api/ddrawint/ns-ddrawint-_dd_rendermocompdata)
 
--   通过包含在[**DXVA\_EncryptProtocolHeader**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_encryptprotocolheader)结构的**dwFunction**成员中，指定与加密协议关联的函数。
+-   通过包含在[**DXVA \_ EncryptProtocolHeader**](/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_encryptprotocolheader)结构的**dwFunction**成员中，指定与加密协议关联的函数。
 
--   通过在对[*DdMoCompRender*](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_mocompcb_render)的调用中包含[**DD\_RENDERMOCOMPDATA**](https://docs.microsoft.com/windows/desktop/api/ddrawint/ns-ddrawint-_dd_rendermocompdata)结构的**dwFunction**成员中的一系列**bDXVA\_Func**字节值，通知要执行的操作。 第一个**bDXVA\_Func**操作是在最重要的字节中指定的，下一个操作是在下一个最重要的字节中指定，依此类推。 不用于给操作发出信号的**dwFunction**中的剩余字节数设置为零。
-
- 
+-   通过在对[*DdMoCompRender*](/windows/desktop/api/ddrawint/nc-ddrawint-pdd_mocompcb_render)的调用中包含[**DD \_ RENDERMOCOMPDATA**](/windows/desktop/api/ddrawint/ns-ddrawint-_dd_rendermocompdata)结构的**DwFunction**成员中的一系列**bDXVA \_ Func**字节值，通知要执行的操作。 第一个 **bDXVA \_ Func** 操作是在最重要的字节中指定的，下一个操作是在下一个最重要的字节中指定的，依此类推。 不用于给操作发出信号的 **dwFunction** 中的剩余字节数设置为零。
 
  
-
-
-
-
 

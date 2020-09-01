@@ -4,7 +4,7 @@ description: 运动补偿
 ms.assetid: 3b5c91f9-6c22-4110-943a-5b833f32c014
 keywords:
 - 绘制 WDK DirectDraw，运动补偿
-- DirectDraw WDK Windows 2000 显示，运动补偿
+- DirectDraw WDK Windows 2000 显示，动作补偿
 - 运动补偿 WDK
 - 压缩的视频解码 WDK DirectDraw
 - 视频解码 WDK DirectDraw
@@ -12,12 +12,12 @@ keywords:
 - 数字视频解码 WDK DirectDraw
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a22949f5aec4c8fb7cb4a0d8b78f6c4f53a73f58
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: c78f38379be9f32aaf0292b8b7a283020a8111cc
+ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67372881"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89066020"
 ---
 # <a name="motion-compensation"></a>运动补偿
 
@@ -25,21 +25,15 @@ ms.locfileid: "67372881"
 ## <span id="ddk_motion_compensation_gg"></span><span id="DDK_MOTION_COMPENSATION_GG"></span>
 
 
-运动补偿是压缩数字视频解码过程的重要阶段使用的术语。 许多图形加速器设备提供某种类型的加速功能支持压缩的视频解码。 由于运动补偿过程是最常支持的视频解码部分，支持压缩的视频解码的设备驱动程序接口称为 DDI 的运动补偿。 除了运动补偿，某些设备可以执行 IDCT （反离散余弦值转换） 和软件视频解码器可用于加速解码过程其他硬件功能。 运动补偿 DDI 的灵活程度足以到句柄提供这些以及其他功能的设备。
+运动补偿是用于压缩数字视频解码过程的重要阶段的一项术语。 许多图形加速器设备都提供了一种加速功能，支持压缩的视频解码。 由于运动补偿过程是视频解码最常见的支持部分，因此，支持压缩视频解码的设备驱动程序接口称为运动补偿 DDI。 除了运动补偿，某些设备还可以执行 IDCT (反离散的余弦转换) 以及软件视频解码器可用于加速解码过程的其他硬件功能。 运动补偿 DDI 的灵活性足以处理同时提供这些其他功能的设备。
 
-对输入的数据和软件 MPEG 解码器是定义完善的。 如果解码器专为 mpeg-2，输入是以 mpeg-2 格式。 也定义解码器的输出。 它是未压缩的框架中以不同的格式。 但是，此期间软件解码器之间设置格式和显示设备不是定义完善的许多设备都需要其自己的专有数据格式。 因此，运动补偿设备驱动程序接口是灵活并且临时格式被描述为 Guid。 显示驱动程序报告表示它支持的功能的 Guid 和软件解码器选择最符合其要求的 GUID。
+已正确定义软件 MPEG 解码器的输入数据。 如果解码器是为 MPEG-2 设计的，则输入采用 MPEG-2 格式。 解码器的输出也是定义完善的。 它是采用各种格式的未压缩帧。 不过，软件解码器与显示设备之间的过渡格式定义不完善，有许多设备需要其自己的专有数据格式。 因此，运动补偿设备驱动程序接口非常灵活，并且临时格式被描述为 Guid。 显示驱动程序报告表示其支持的功能的 Guid，软件解码器选择最符合其要求的 GUID。
 
-若要启用运动补偿功能，该驱动程序必须执行以下步骤：
+若要启用动作补偿功能，驱动程序必须执行以下步骤：
 
--   实现[ **DdGetDriverInfo** ](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_getdriverinfo)函数，并设置**GetDriverInfo**隶属[ **DD\_HALINFO**](https://docs.microsoft.com/windows/desktop/api/ddrawint/ns-ddrawint-_dd_halinfo)结构，以指向此函数时[ **DrvGetDirectDrawInfo** ](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvgetdirectdrawinfo)调用。 在驱动程序*DdGetDriverInfo*函数必须分析 GUID\_MotionCompCallbacks GUID。
+-   在调用[**DrvGetDirectDrawInfo**](/windows/desktop/api/winddi/nf-winddi-drvgetdirectdrawinfo)时，实现[**DdGetDriverInfo**](/windows/desktop/api/ddrawint/nc-ddrawint-pdd_getdriverinfo)函数并将[**DD \_ HALINFO**](/windows/desktop/api/ddrawint/ns-ddrawint-_dd_halinfo)结构的**GetDriverInfo**成员设置为指向此函数。 驱动程序的 *DdGetDriverInfo* 函数必须分析 GUID \_ MotionCompCallbacks guid。
 
--   填写[ **DD\_MOTIONCOMPCALLBACKS** ](https://docs.microsoft.com/windows/desktop/api/ddrawint/ns-ddrawint-dd_motioncompcallbacks)用相应的驱动程序回调指针和回调类型标志时设置的结构*DdGetDriverInfo*函数调用使用 GUID\_MotionCompCallbacks GUID。 该驱动程序必须随后将此初始化的结构复制到 Microsoft DirectDraw 分配缓冲区所属**lpvData**的成员[ **DD\_GETDRIVERINFODATA**](https://docs.microsoft.com/windows/desktop/api/ddrawint/ns-ddrawint-_dd_getdriverinfodata)结构点，并返回到缓冲区中写入的字节数**dwActualSize**。
-
- 
+-   使用 GUID MOTIONCOMPCALLBACKS GUID 调用*DdGetDriverInfo*函数时，使用适当的驱动程序回调指针和回调类型标志来填充[**DD \_ MOTIONCOMPCALLBACKS**](/windows/desktop/api/ddrawint/ns-ddrawint-dd_motioncompcallbacks)结构 \_ 。 然后，该驱动程序必须将此初始化的结构复制到 Microsoft DirectDraw 分配的缓冲区，该缓冲区中[**DD \_ GETDRIVERINFODATA**](/windows/desktop/api/ddrawint/ns-ddrawint-_dd_getdriverinfodata)结构的**lpvData**成员指向的位置，并返回写入缓冲区的**dwActualSize**中的字节数。
 
  
-
-
-
-
 

@@ -1,9 +1,9 @@
 ---
-title: 读取预参数
-description: 预读的粒度和通过管线传输预读的预读的参数。
+title: 预读参数
+description: 预读粒度和管线预读参数。
 ms.assetid: ''
 keywords:
-- 预读的参数
+- 预读参数
 topic_type:
 - apiref
 api_name:
@@ -15,16 +15,16 @@ api_type:
 ms.author: eliotgra
 ms.date: 09/14/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 06d82e8441526d3f87d42c636599e8300bd0e160
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: e909d6a84af48f41caa21016a3b651a05029e57e
+ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67385142"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89067370"
 ---
-# <a name="readaheadparameters-structure"></a>READ_AHEAD_PARAMETERS 结构
+# <a name="read_ahead_parameters-structure"></a>READ_AHEAD_PARAMETERS 结构
 
-**READ_AHEAD_PARAMETERS**结构包含公开读取预参数。
+**READ_AHEAD_PARAMETERS**结构包含公开读取的预读参数。
 
 <a name="syntax"></a>语法
 ------
@@ -43,20 +43,20 @@ typedef struct _READ_AHEAD_PARAMETERS {
 <a name="members"></a>成员
 ----------
 
-*NodeByteSize* \[in\]  
-以字节为单位的节点的大小。
+*NodeByteSize* \[中\]  
+节点的大小（以字节为单位）。
 
-*粒度*\[中\]  
-读取 aheads 的粒度。 此值必须为 2 和大于或等于 PAGE_SIZE 偶数次幂
+*粒度* \[中\]  
+读取 aheads 的粒度。 此值必须是2的甚至大于或等于 PAGE_SIZE
 
-*PipelinedRequestSize* \[in\]  
-请求大小 （字节），以执行时要使用通过管道传输预读数。 每个读请求通过管道传递分解为较小**PipelinedRequestSize**调整大小的请求。 这通常用于通过并行执行而不是单个一个大型的多个请求增加的吞吐量。
+*PipelinedRequestSize* \[中\]  
+要在执行管道 aheads 时使用的请求大小（以字节为单位）。 管道中的每个预读请求会划分为较小的 **PipelinedRequestSize** 大小的请求。 这通常用于通过并行化多个 requets （而不是一个大）来增加吞吐量。
 
 > [!NOTE]
-> 由于向后兼容性，而如果该值为零，预读的每个请求将分解为两个。
+> 由于向后兼容性，如果此值为零，则每个预读请求都将分为两个。
 
-*ReadAheadGrowthPercentage* \[in\]  
-提前一个百分比表示的数据的已准备就绪的应用程序到目前为止读取的增长。 
+*ReadAheadGrowthPercentage* \[中\]  
+从目前为止，应用程序已准备就绪的数据百分比的增长。 
 
 
 <a name="remarks"></a>备注
@@ -75,19 +75,19 @@ typedef struct _READ_AHEAD_PARAMETERS {
 <tbody>
 <tr class="odd">
 <td align="left"><p>目标平台</p></td>
-<td align="left"><a href="https://go.microsoft.com/fwlink/p/?linkid=531356" data-raw-source="[Universal](https://go.microsoft.com/fwlink/p/?linkid=531356)">世界</a></td>
+<td align="left"><a href="https://go.microsoft.com/fwlink/p/?linkid=531356" data-raw-source="[Universal](https://go.microsoft.com/fwlink/p/?linkid=531356)">通用</a></td>
 </tr>
 <tr class="even">
-<td align="left"><p>Version</p></td>
-<td align="left"><p>在 Windows 8 和更高版本的 Windows 中可用。</p></td>
+<td align="left"><p>版本</p></td>
+<td align="left"><p>在 windows 8 和更高版本的 Windows 中可用。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>Header</p></td>
-<td align="left">Ntifs.h （包括 Ntifs.h）</td>
+<td align="left"><p>标头</p></td>
+<td align="left">Ntifs (包含 Ntifs) </td>
 </tr>
 <tr class="even">
-<td align="left"><p>Library</p></td>
-<td align="left">NtosKrnl.lib</td>
+<td align="left"><p>库</p></td>
+<td align="left">Ntoskrnl.exe</td>
 </tr>
 <tr class="odd">
 <td align="left"><p>DLL</p></td>
@@ -96,11 +96,11 @@ typedef struct _READ_AHEAD_PARAMETERS {
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
 [**CcSetReadAheadGranularityEx**](CcSetReadAheadGranularityEx.md)
 
-[**CcReadAhead**](https://docs.microsoft.com/previous-versions/ff539191(v=vs.85))
+[**CcReadAhead**](/previous-versions/ff539191(v=vs.85))
 
-[**CcScheduleReadAhead**](https://msdn.microsoft.com/library/windows/hardware/ff539200)
+[**CcScheduleReadAhead**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ccschedulereadahead)

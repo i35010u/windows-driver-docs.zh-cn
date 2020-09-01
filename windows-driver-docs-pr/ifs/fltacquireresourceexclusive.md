@@ -15,12 +15,12 @@ api_type:
 - LibDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 34663302454d325037bd1c34cfdea65fca5cf8e9
-ms.sourcegitcommit: 2f37e8de9759164804a3b1c7f5c9e497a607539b
+ms.openlocfilehash: 8c7d5fc73e4059883029228724293ea49e2ad84f
+ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/26/2020
-ms.locfileid: "83852126"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89065296"
 ---
 # <a name="fltacquireresourceexclusive-routine"></a>FltAcquireResourceExclusive 例程
 
@@ -36,11 +36,11 @@ VOID FltAcquireResourceExclusive(
 );
 ```
 
-<a name="parameters"></a>参数
+<a name="parameters"></a>parameters
 ----------
 
 *资源* \[in、out\]  
-指向不透明的 ERESOURCE 结构的指针。 此结构必须由调用方从非分页池分配，并通过调用[**ExInitializeResourceLite**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exinitializeresourcelite)或[**ExReinitializeResourceLite**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exreinitializeresourcelite)进行初始化。
+指向不透明的 ERESOURCE 结构的指针。 此结构必须由调用方从非分页池分配，并通过调用 [**ExInitializeResourceLite**](/windows-hardware/drivers/ddi/wdm/nf-wdm-exinitializeresourcelite) 或 [**ExReinitializeResourceLite**](/windows-hardware/drivers/ddi/wdm/nf-wdm-exreinitializeresourcelite)进行初始化。
 
 <a name="return-value"></a>返回值
 ------------
@@ -50,9 +50,9 @@ VOID FltAcquireResourceExclusive(
 <a name="remarks"></a>备注
 -------
 
-此例程在 Windows XP Service Pack 2 （SP2）、Windows Server 2003 Service Pack 1 （SP1）和更高版本的 windows 上可用。
+此例程在 Windows XP Service Pack 2 (SP2) 、带有 Service Pack 1 的 Windows Server 2003 (SP1) 和更高版本的 windows 上可用。
 
-**FltAcquireResourceExclusive**通过调用线程获取给定资源以进行独占访问。
+**FltAcquireResourceExclusive** 通过调用线程获取给定资源以进行独占访问。
 
 以下情况确定是否向调用方授予对给定资源的独占访问权限：
 
@@ -69,19 +69,19 @@ VOID FltAcquireResourceExclusive(
 
  
 
-**FltAcquireResourceExclusive**是用于禁用正常内核 APC 传递的[**ExAcquireResourceExclusiveLite**](https://msdn.microsoft.com/library/windows/hardware/ff544351)的包装。
+**FltAcquireResourceExclusive** 是用于禁用正常内核 APC 传递的 [**ExAcquireResourceExclusiveLite**](/previous-versions/ff544351(v=vs.85)) 的包装。
 
-因为**FltAcquireResourceExclusive**禁用正常内核 APC 传递，所以在调用**FltAcquireResourceExclusive**之前无需调用[**KeEnterCriticalRegion**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-keentercriticalregion)或[**FsRtlEnterFileSystem**](fsrtlenterfilesystem.md) 。
+因为**FltAcquireResourceExclusive**禁用正常内核 APC 传递，所以在调用**FltAcquireResourceExclusive**之前无需调用[**KeEnterCriticalRegion**](/windows-hardware/drivers/ddi/ntddk/nf-ntddk-keentercriticalregion)或[**FsRtlEnterFileSystem**](fsrtlenterfilesystem.md) 。
 
-若要在获取资源后释放资源，请调用[**FltReleaseResource**](fltreleaseresource.md)。 必须通过对**FltReleaseResource**的后续调用来匹配每个对**FltAcquireResourceExclusive**的成功调用。
+若要在获取资源后释放资源，请调用 [**FltReleaseResource**](fltreleaseresource.md)。 必须通过对**FltReleaseResource**的后续调用来匹配每个对**FltAcquireResourceExclusive**的成功调用。
 
-若要获取共享访问资源，请调用[**FltAcquireResourceShared**](fltacquireresourceshared.md)。
+若要获取共享访问资源，请调用 [**FltAcquireResourceShared**](fltacquireresourceshared.md)。
 
-若要从系统资源列表中删除资源，请调用[**ExDeleteResourceLite**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exdeleteresourcelite)。
+若要从系统资源列表中删除资源，请调用 [**ExDeleteResourceLite**](/windows-hardware/drivers/ddi/wdm/nf-wdm-exdeleteresourcelite)。
 
-若要初始化资源以供重用，请调用[**ExReinitializeResourceLite**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exreinitializeresourcelite)。
+若要初始化资源以供重用，请调用 [**ExReinitializeResourceLite**](/windows-hardware/drivers/ddi/wdm/nf-wdm-exreinitializeresourcelite)。
 
-有关 ERESOURCE 结构的详细信息，请参阅内核体系结构设计指南中的[ERESOURCE 例程简介](https://docs.microsoft.com/windows-hardware/drivers/kernel/introduction-to-eresource-routines)。
+有关 ERESOURCE 结构的详细信息，请参阅内核体系结构设计指南中的 [ERESOURCE 例程简介](../kernel/introduction-to-eresource-routines.md) 。
 
 <a name="requirements"></a>要求
 ------------
@@ -101,8 +101,8 @@ VOID FltAcquireResourceExclusive(
 <td align="left"><p>适用于所有 Windows 操作系统的 Windows XP SP2、Windows Server 2003 SP1 以及更高版本。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>Header</p></td>
-<td align="left">Fltkernel （包括 Fltkernel）</td>
+<td align="left"><p>标头</p></td>
+<td align="left">Fltkernel (包含 Fltkernel) </td>
 </tr>
 <tr class="even">
 <td align="left"><p>库</p></td>
@@ -118,13 +118,13 @@ VOID FltAcquireResourceExclusive(
 ## <a name="see-also"></a>另请参阅
 
 
-[**ExAcquireResourceExclusiveLite**](https://msdn.microsoft.com/library/windows/hardware/ff544351)
+[**ExAcquireResourceExclusiveLite**](/previous-versions/ff544351(v=vs.85))
 
-[**ExDeleteResourceLite**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exdeleteresourcelite)
+[**ExDeleteResourceLite**](/windows-hardware/drivers/ddi/wdm/nf-wdm-exdeleteresourcelite)
 
-[**ExInitializeResourceLite**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exinitializeresourcelite)
+[**ExInitializeResourceLite**](/windows-hardware/drivers/ddi/wdm/nf-wdm-exinitializeresourcelite)
 
-[**ExReinitializeResourceLite**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exreinitializeresourcelite)
+[**ExReinitializeResourceLite**](/windows-hardware/drivers/ddi/wdm/nf-wdm-exreinitializeresourcelite)
 
 [**FltAcquireResourceShared**](fltacquireresourceshared.md)
 
@@ -132,14 +132,7 @@ VOID FltAcquireResourceExclusive(
 
 [**FsRtlEnterFileSystem**](fsrtlenterfilesystem.md)
 
-[**KeEnterCriticalRegion**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-keentercriticalregion)
+[**KeEnterCriticalRegion**](/windows-hardware/drivers/ddi/ntddk/nf-ntddk-keentercriticalregion)
 
  
-
- 
-
-
-
-
-
 

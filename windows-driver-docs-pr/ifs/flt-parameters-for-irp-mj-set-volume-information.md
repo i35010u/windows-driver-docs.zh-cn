@@ -1,10 +1,10 @@
 ---
-title: FLT_PARAMETERS for IRP_MJ_SET_VOLUME_INFORMATION union
-description: 在 FLT 的 MajorFunction 字段\_IO\_参数\_操作的块结构时使用的联合组件是 IRP\_\_
+title: IRP_MJ_SET_VOLUME_INFORMATION 联合的 FLT_PARAMETERS
+description: 操作的 FLT \_ IO \_ 参数块结构的 MajorFunction 字段 \_ 为 IRP \_ MJ \_ 设置 \_ 卷 \_ 信息时使用的联合组件。
 ms.assetid: 316ce14c-02ea-45ab-8a2f-1b096f631d23
 keywords:
-- FLT_PARAMETERS for IRP_MJ_SET_VOLUME_INFORMATION union 可安装的文件系统驱动程序
-- FLT_PARAMETERS 可安装的可安装文件系统驱动程序
+- IRP_MJ_SET_VOLUME_INFORMATION 联合可安装文件系统驱动程序的 FLT_PARAMETERS
+- FLT_PARAMETERS 联合可安装文件系统驱动程序
 - PFLT_PARAMETERS 联合指针可安装的文件系统驱动程序
 topic_type:
 - apiref
@@ -16,17 +16,17 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7175be67e12802bd9a08ea2aaba870b97771b4f7
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: eed55d72571d70dcbb6cb9153c72827819816308
+ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72841342"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89065046"
 ---
-# <a name="flt_parameters-for-irp_mj_set_volume_information-union"></a>用于 IRP\_MJ\_集\_卷\_信息联合的 FLT\_参数
+# <a name="flt_parameters-for-irp_mj_set_volume_information-union"></a>\_IRP MJ 的 FLT \_ 参数 \_ 设置 \_ 卷 \_ 信息联合
 
 
-在 FLT 的**MajorFunction**字段[ **\_IO\_参数\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_io_parameter_block)操作的块结构时使用的联合组件是[**IRP\_\_** ](irp-mj-set-volume-information.md)
+操作的[**FLT \_ IO \_ 参数 \_ 块**](/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_io_parameter_block)结构的**MajorFunction**字段为[**IRP \_ MJ \_ 设置 \_ 卷 \_ 信息**](irp-mj-set-volume-information.md)时使用的联合组件。
 
 <a name="syntax"></a>语法
 ------
@@ -53,7 +53,7 @@ typedef union _FLT_PARAMETERS {
 **VolumeBuffer**缓冲区的长度（以字节为单位）。
 
 **FsInformationClass**  
-要为卷设置的信息的类型。 下列情况之一：
+要为卷设置的信息的类型。 下列类型作之一：
 
 <table>
 <colgroup>
@@ -62,22 +62,22 @@ typedef union _FLT_PARAMETERS {
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Value</th>
+<th align="left">值</th>
 <th align="left">含义</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left"><p><strong>FileFsControlInformation</strong></p></td>
-<td align="left"><p>设置卷的<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_file_fs_control_information" data-raw-source="[&lt;strong&gt;FILE_FS_CONTROL_INFORMATION&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_file_fs_control_information)"><strong>FILE_FS_CONTROL_INFORMATION</strong></a> 。</p></td>
+<td align="left"><p>为卷设置 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_file_fs_control_information" data-raw-source="[&lt;strong&gt;FILE_FS_CONTROL_INFORMATION&lt;/strong&gt;](/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_file_fs_control_information)"><strong>FILE_FS_CONTROL_INFORMATION</strong></a> 。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>FileFsLabelInformation</strong></p></td>
-<td align="left"><p>设置卷的<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/ns-ntddk-_file_fs_label_information" data-raw-source="[&lt;strong&gt;FILE_FS_LABEL_INFORMATION&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/ns-ntddk-_file_fs_label_information)"><strong>FILE_FS_LABEL_INFORMATION</strong></a> 。</p></td>
+<td align="left"><p>为卷设置 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/ns-ntddk-_file_fs_label_information" data-raw-source="[&lt;strong&gt;FILE_FS_LABEL_INFORMATION&lt;/strong&gt;](/windows-hardware/drivers/ddi/ntddk/ns-ntddk-_file_fs_label_information)"><strong>FILE_FS_LABEL_INFORMATION</strong></a> 。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>FileFsObjectIdInformation</strong></p></td>
-<td align="left"><p>设置卷的<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/ns-ntddk-_file_fs_objectid_information" data-raw-source="[&lt;strong&gt;FILE_FS_OBJECTID_INFORMATION&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/ns-ntddk-_file_fs_objectid_information)"><strong>FILE_FS_OBJECTID_INFORMATION</strong></a> 。</p></td>
+<td align="left"><p>为卷设置 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/ns-ntddk-_file_fs_objectid_information" data-raw-source="[&lt;strong&gt;FILE_FS_OBJECTID_INFORMATION&lt;/strong&gt;](/windows-hardware/drivers/ddi/ntddk/ns-ntddk-_file_fs_objectid_information)"><strong>FILE_FS_OBJECTID_INFORMATION</strong></a> 。</p></td>
 </tr>
 </tbody>
 </table>
@@ -90,9 +90,9 @@ typedef union _FLT_PARAMETERS {
 <a name="remarks"></a>备注
 -------
 
-[**IRP\_MJ\_集\_卷\_信息**](irp-mj-set-volume-information.md)操作的[**FLT\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_parameters)结构包含由回调数据表示的设置卷信息操作的参数（[**FLT\_回调\_数据**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_callback_data)）结构。 它包含在 FLT\_IO\_参数\_块结构。
+[**IRP \_ MJ \_ 集 \_ 卷 \_ 信息**](irp-mj-set-volume-information.md)操作的[**FLT \_ 参数**](/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_parameters)结构包含由回调数据表示的设置卷信息操作的参数) 结构中 ([**FLT \_ 回调 \_ 数据**](/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_callback_data)。 它包含在 FLT \_ IO \_ 参数 \_ 块结构中。
 
-IRP\_MJ\_集\_卷\_信息是基于 IRP 的操作。
+IRP \_ MJ \_ 设置 \_ 卷 \_ 信息是基于 IRP 的操作。
 
 <a name="requirements"></a>要求
 ------------
@@ -105,7 +105,7 @@ IRP\_MJ\_集\_卷\_信息是基于 IRP 的操作。
 <tbody>
 <tr class="odd">
 <td align="left"><p>标头</p></td>
-<td align="left">Fltkernel （包括 Fltkernel）</td>
+<td align="left">Fltkernel (包含 Fltkernel) </td>
 </tr>
 </tbody>
 </table>
@@ -113,34 +113,27 @@ IRP\_MJ\_集\_卷\_信息是基于 IRP 的操作。
 ## <a name="see-also"></a>另请参阅
 
 
-[**文件\_FS\_控制\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_file_fs_control_information)
+[**文件 \_ FS \_ 控制 \_ 信息**](/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_file_fs_control_information)
 
-[**文件\_FS\_标签\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/ns-ntddk-_file_fs_label_information)
+[**文件 \_ FS \_ 标签 \_ 信息**](/windows-hardware/drivers/ddi/ntddk/ns-ntddk-_file_fs_label_information)
 
-[**文件\_FS\_OBJECTID\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/ns-ntddk-_file_fs_objectid_information)
+[**文件 \_ FS \_ OBJECTID \_ 信息**](/windows-hardware/drivers/ddi/ntddk/ns-ntddk-_file_fs_objectid_information)
 
-[**FLT\_回调\_数据**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_callback_data)
+[**FLT \_ 回调 \_ 数据**](/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_callback_data)
 
-[**FLT\_IO\_参数\_块**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_io_parameter_block)
+[**FLT \_ IO \_ 参数 \_ 块**](/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_io_parameter_block)
 
-[**FLT\_\_FASTIO\_操作**](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)
+[**FLT \_ 是 \_ FASTIO \_ 操作**](/windows-hardware/drivers/ddi/index)
 
-[**FLT\_\_FS\_筛选器\_操作**](https://docs.microsoft.com/previous-versions/ff544648(v=vs.85))
+[**FLT \_ 为 \_ FS \_ 筛选器 \_ 操作**](/previous-versions/ff544648(v=vs.85))
 
-[**FLT\_\_IRP\_操作**](https://docs.microsoft.com/previous-versions/ff544654(v=vs.85))
+[**FLT \_ 是 \_ IRP \_ 操作**](/previous-versions/ff544654(v=vs.85))
 
-[**FLT\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_parameters)
+[**FLT \_ 参数**](/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_parameters)
 
-[**IRP\_MJ\_设置\_卷\_信息**](irp-mj-set-volume-information.md)
+[**IRP \_ MJ \_ 设置 \_ 卷 \_ 信息**](irp-mj-set-volume-information.md)
 
-[**ZwSetVolumeInformationFile**](https://msdn.microsoft.com/library/windows/hardware/ff567112)
-
- 
+[**ZwSetVolumeInformationFile**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-zwsetvolumeinformationfile)
 
  
-
-
-
-
-
 

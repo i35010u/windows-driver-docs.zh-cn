@@ -1,24 +1,24 @@
 ---
 title: 必需的 DXGI 格式
-description: 本主题介绍要求在用户模式显示驱动程序上的 Microsoft Direct3D 功能级别发生。
+description: 本主题介绍了 Microsoft Direct3D 功能级别在用户模式显示驱动程序上放置的要求。
 ms.assetid: 1CB419B9-DD5E-492F-AAAC-CFFFDE247F7F
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 62aed2dd826310e43360d65109e42ae260450640
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 6f600461a0aa2e9c547b8a01e131202a8e77d346
+ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67385666"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89066378"
 ---
 # <a name="required-dxgi-formats"></a>必需的 DXGI 格式
 
 
-本主题介绍要求在用户模式显示驱动程序上的 Microsoft Direct3D 功能级别发生。
+本主题介绍了 Microsoft Direct3D 功能级别在用户模式显示驱动程序上放置的要求。
 
-第一个表的第一个和第二个列显示了该驱动程序必须支持所有 Direct3D 格式类型。 第三列显示所有关联的常量值的 Direct3D [**D3D10\_格式\_支持**](https://docs.microsoft.com/windows/desktop/api/d3d10/ne-d3d10-d3d10_format_support)和/或[ **D3D11\_格式\_支持**](https://docs.microsoft.com/windows/desktop/api/d3d11/ne-d3d11-d3d11_format_support)驱动程序必须支持的枚举。 第四列显示的驱动程序必须支持每种格式的最小 Direct3D 功能级别。
+第一个表的第一列和第二列显示驱动程序必须支持的所有 Direct3D 格式类型。 第三列显示 Direct3D [**D3D10 \_ format \_ 支持**](/windows/desktop/api/d3d10/ne-d3d10-d3d10_format_support) 和/或 D3D11 格式的所有关联常量 [**值 \_ \_ 支持**](/windows/desktop/api/d3d11/ne-d3d11-d3d11_format_support) 驱动程序必须支持的枚举。 第四列显示驱动程序必须支持每种格式的最小 Direct3D 功能级别。
 
-第二个表显示了每个枚举值的 Direct3D 10Level 9 支持算法。
+第二个表显示每个枚举值的 Direct3D 10Level 9 支持算法。
 
 <table>
 <colgroup>
@@ -29,10 +29,10 @@ ms.locfileid: "67385666"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">D3D9 格式 （D3DDDIFMT_ * 和/或 D3DDECLTYPE<em></th>
-<th align="left">D3D10 + API 等效项 (DXGI_FORMAT_</em>)</th>
-<th align="left">所需的 D3D10_ 或 D3D11_ FORMAT_SUPPORT_ * 枚举值</th>
-<th align="left">所需的最低 Direct3D 级别</th>
+<th align="left">D3D9 格式 (D3DDDIFMT_ * 和/或 D3DDECLTYPE<em></th>
+<th align="left">D3D10 + API 等效 (DXGI_FORMAT_ </em>) </th>
+<th align="left">必需 D3D10_ 或 D3D11_ FORMAT_SUPPORT_ 的枚举值</th>
+<th align="left">所需的最小 Direct3D 级别</th>
 </tr>
 </thead>
 <tbody>
@@ -554,22 +554,22 @@ ms.locfileid: "67385666"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">所需的 D3D10_ 或 D3D11_ FORMAT_SUPPORT_ * 枚举值</th>
-<th align="left">在 Direct3D 10Level 支持算法 9</th>
+<th align="left">必需 D3D10_ 或 D3D11_ FORMAT_SUPPORT_ 的枚举值</th>
+<th align="left">Direct3D 10Level 9 中的支持算法</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left"><p>BACK_BUFFER_CAST</p></td>
-<td align="left"><p>假定对于支持显示任何格式，则返回 true。</p></td>
+<td align="left"><p>对于支持显示的任何格式，假定为 true。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>BLENDABLE</p></td>
-<td align="left"><p>没有 FORMATOP_NOALPHABLEND</p></td>
+<td align="left"><p>无 FORMATOP_NOALPHABLEND</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>CPU_LOCKABLE</p></td>
-<td align="left"><p>始终假定，则返回 true。</p></td>
+<td align="left"><p>假定值始终为 true。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>DISPLAY</p></td>
@@ -577,15 +577,15 @@ ms.locfileid: "67385666"
 </tr>
 <tr class="odd">
 <td align="left"><p>IA_VERTEX_BUFFER</p></td>
-<td align="left"><p>D3DDTCAPS_ * （参见备注。）</p></td>
+<td align="left"><p>D3DDTCAPS_ * (参阅注意。 ) </p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>MIP</p></td>
-<td align="left"><p>没有 FORMATOP_NOTEXCOORDWRAPNORMIP</p></td>
+<td align="left"><p>无 FORMATOP_NOTEXCOORDWRAPNORMIP</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>MIP_AUTOGEN</p></td>
-<td align="left"><p>（参见备注。）</p></td>
+<td align="left"><p> (参阅 Note。 ) </p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>RENDER_TARGET</p></td>
@@ -593,11 +593,11 @@ ms.locfileid: "67385666"
 </tr>
 <tr class="odd">
 <td align="left"><p>SHADER_LOAD</p></td>
-<td align="left"><p>假定对于非深度的所有格式。</p></td>
+<td align="left"><p>假定为所有非深度格式。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>SHADER_SAMPLE</p></td>
-<td align="left"><p>（参见备注。）</p></td>
+<td align="left"><p> (参阅 Note。 ) </p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>TEXTURE2D</p></td>
@@ -616,19 +616,13 @@ ms.locfileid: "67385666"
 
  
 
-**请注意**  它们进一步在 Direct3D 10Level 支持算法的要求的详细信息 9:
--   IA\_顶点\_缓冲区和/或 IA\_索引\_支持的软件是否存在任何 D3DDEVCAPS 顶点处理的缓冲区格式\_HWTRANSFORMANDLIGHT 功能。
--   此外可以从其深度模具格式推断 TEXTURE2D 格式。
--   为着色器\_示例格式，该驱动程序必须支持 FORMATOP\_纹理、 FORMATOP\_VOLUMETEXTURE 或 FORMATOP\_CUBETEXTURE，并且它必须报告 FORMATOP\_NOFILTER。
--   有关 MIP\_自动生成的格式，Direct3D 10Level 9 生成其自己的 mip 贴图，因此它需要 MIP，呈现\_目标，和 TEXTURE2D bits。
+**注意**   下面更详细地介绍了在 Direct3D 10Level 9 中支持算法的要求：
+-   \_ \_ \_ \_ 如果没有 D3DDEVCAPS HWTRANSFORMANDLIGHT 功能，则软件顶点处理支持 ia 顶点缓冲区和/或 ia 索引缓冲区格式 \_ 。
+-   还可以通过将 TEXTURE2D 格式推断为深度模具格式。
+-   对于着色器 \_ 示例格式，驱动程序必须支持 FORMATOP \_ 纹理、FORMATOP \_ VOLUMETEXTURE 或 FORMATOP \_ CUBETEXTURE，并且它不能报告 FORMATOP \_ NOFILTER。
+-   对于 MIP \_ AUTOGEN 格式，Direct3D 10Level 9 会生成自己的 mip 映射，因此它需要 mip、RENDER \_ TARGET 和 TEXTURE2D 位。
 
  
 
  
-
- 
-
-
-
-
 

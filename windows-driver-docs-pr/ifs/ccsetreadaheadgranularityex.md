@@ -1,6 +1,6 @@
 ---
 title: CcSetReadAheadGranularityEx 例程
-description: CcSetReadAheadGranularityEx 例程设置预读的粒度，并使管道的预读缓存文件。
+description: CcSetReadAheadGranularityEx 例程设置预读的粒度，并为缓存的文件启用管道预读。
 ms.assetid: D70C3397-CF37-46E5-BA84-819BC984665A
 keywords:
 - CcSetReadAheadGranularityEx 例程可安装文件系统驱动程序
@@ -14,17 +14,17 @@ api_type:
 - DllExport
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4592e8296fa9e5382ec7752f8eee75099ff57f85
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 4ef18a320f97633c9bf4353868d24806b6c52da6
+ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67364352"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89065352"
 ---
 # <a name="ccsetreadaheadgranularityex-routine"></a>CcSetReadAheadGranularityEx 例程
 
 
-**CcSetReadAheadGranularityEx**例程设置预读的粒度，并使管道的预读缓存文件。
+**CcSetReadAheadGranularityEx**例程设置预读的粒度，并为缓存的文件启用管道预读。
 
 <a name="syntax"></a>语法
 ------
@@ -36,14 +36,14 @@ VOID CcSetReadAheadGranularityEx(
 );
 ```
 
-<a name="parameters"></a>Parameters
+<a name="parameters"></a>parameters
 ----------
 
-*FileObject* \[in\]  
-指向文件对象的已缓存的文件的预读的粒度是设置。
+*FileObject* \[中\]  
+一个指针，指向要设置其预读粒度的缓存文件的文件对象。
 
-*ReadAheadParameters* \[in\]  
-指定读取预参数。 请参阅[READ_AHEAD_PARAMETERS](read-ahead-parameters.md)有关详细信息。
+*ReadAheadParameters* \[中\]  
+指定预读参数。 有关详细信息，请参阅 [READ_AHEAD_PARAMETERS](read-ahead-parameters.md) 。
 
 <a name="return-value"></a>返回值
 ------------
@@ -53,9 +53,9 @@ VOID CcSetReadAheadGranularityEx(
 <a name="remarks"></a>备注
 -------
 
-调用**CcSetReadAheadGranularityEx**将启用通过管线传输中的文件对象的预读请求*的文件对象*。 选择适当的值*PipelinedRequestSize*将除预读请求集成到较小的多个并行请求。 调用方**CcSetReadAheadGranularityEx**可以通过调整优化预读性能*PipelinedRequestSize*。
+调用 **CcSetReadAheadGranularityEx** 将为 *FileObject*中的文件对象启用管道预读请求。 为 *PipelinedRequestSize* 选择适当的值会将预读请求拆分为较小的多个并行请求。 **CcSetReadAheadGranularityEx**的调用方可以通过调整*PipelinedRequestSize*来优化预读性能。
 
-之后[ **CcInitializeCacheMap** ](https://msdn.microsoft.com/library/windows/hardware/ff539135)之前缓存文件，名为**CcSetReadAheadGranularityEx**称为缓存的文件，默认的预读粒度有关缓存的文件是否等于页\_大小。
+在调用 [**CcInitializeCacheMap**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ccinitializecachemap) 来缓存文件后，但在为缓存文件调用 **CcSetReadAheadGranularityEx** 之前，缓存文件的默认预读粒度等于页面 \_ 大小。
 
 <a name="requirements"></a>要求
 ------------
@@ -68,19 +68,19 @@ VOID CcSetReadAheadGranularityEx(
 <tbody>
 <tr class="odd">
 <td align="left"><p>目标平台</p></td>
-<td align="left"><a href="https://go.microsoft.com/fwlink/p/?linkid=531356" data-raw-source="[Universal](https://go.microsoft.com/fwlink/p/?linkid=531356)">世界</a></td>
+<td align="left"><a href="https://go.microsoft.com/fwlink/p/?linkid=531356" data-raw-source="[Universal](https://go.microsoft.com/fwlink/p/?linkid=531356)">通用</a></td>
 </tr>
 <tr class="even">
-<td align="left"><p>Version</p></td>
-<td align="left"><p>在 Windows 8 和更高版本的 Windows 中可用。</p></td>
+<td align="left"><p>版本</p></td>
+<td align="left"><p>在 windows 8 和更高版本的 Windows 中可用。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>Header</p></td>
-<td align="left">Ntifs.h （包括 Ntifs.h）</td>
+<td align="left"><p>标头</p></td>
+<td align="left">Ntifs (包含 Ntifs) </td>
 </tr>
 <tr class="even">
-<td align="left"><p>Library</p></td>
-<td align="left">NtosKrnl.lib</td>
+<td align="left"><p>库</p></td>
+<td align="left">Ntoskrnl.exe</td>
 </tr>
 <tr class="odd">
 <td align="left"><p>DLL</p></td>
@@ -89,23 +89,16 @@ VOID CcSetReadAheadGranularityEx(
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
-[**CcInitializeCacheMap**](https://msdn.microsoft.com/library/windows/hardware/ff539135)
+[**CcInitializeCacheMap**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ccinitializecachemap)
 
-[**CcReadAhead**](https://docs.microsoft.com/previous-versions/ff539191(v=vs.85))
+[**CcReadAhead**](/previous-versions/ff539191(v=vs.85))
 
-[**CcScheduleReadAhead**](https://msdn.microsoft.com/library/windows/hardware/ff539200)
+[**CcScheduleReadAhead**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ccschedulereadahead)
 
-[**CcSetAdditionalCacheAttributes**](https://msdn.microsoft.com/library/windows/hardware/ff539203)
-
- 
+[**CcSetAdditionalCacheAttributes**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ccsetadditionalcacheattributes)
 
  
-
-
-
-
-
 

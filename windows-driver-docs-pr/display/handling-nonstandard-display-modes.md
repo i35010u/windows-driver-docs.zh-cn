@@ -6,12 +6,12 @@ keywords:
 - 非标准显示模式 WDK DirectX 9.0，处理
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 07f25cfe1934bc763b498c9f4b5d06c8e8adef8c
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: e08bd7b1437e7441e1a4d2f7da5596d5e915789b
+ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72838910"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89064782"
 ---
 # <a name="handling-nonstandard-display-modes"></a>处理非标准显示模式
 
@@ -23,27 +23,21 @@ ms.locfileid: "72838910"
 
 -   与标准显示模式的行为相同的翻转、array.blit、锁定和解锁操作。
 
--   在 DirectX 主表面处于活动状态时对驱动程序的图形设备接口（GDI）函数的调用。
+-   在 DirectX 主表面处于活动状态时，对驱动程序的图形设备接口 (GDI) 函数的调用。
 
     在 DirectX 主处于活动状态时，驱动程序不应收到任何 GDI DDI 绘图调用。 但是，驱动程序应处理此类绘图，而不会导致操作系统崩溃。 驱动程序可以提供此情况的实现，通过立即返回 success 来忽略它，或使其失败。 请注意，来自 GDI 的数据基于 GDI 主表面格式。 因此，如果驱动程序提供了此情况的实现，则在将其绘制到 DirectX 主图面之前，它必须从 GDI 格式转换。
 
--   由于 GDI 无法访问非标准的显示格式，因此不能对 DirectX 主表面调用 GDI DDI *DrvDeriveSurface*函数。
+-   由于 GDI 无法访问非标准的显示格式，因此不能对 DirectX 主表面调用 GDI DDI *DrvDeriveSurface* 函数。
 
 -   在 DirectX 主图面处于活动状态时键入 "Ctl + Alt + Del"。
 
-    在发生任何 GDI 绘图之前，内核将标准主副本指定为对驱动程序的[*DdFlip*](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_surfcb_flip)函数的调用中的目标。 因此，在任何 GDI 绘图之前，驱动程序必须将显示设备编程为标准显示模式。 还将调用主图面的驱动程序的[*DdDestroySurface*](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_surfcb_destroysurface)函数。 请注意，驱动程序可能会放弃 DirectX 主图面的内容。
+    在发生任何 GDI 绘图之前，内核将标准主副本指定为对驱动程序的 [*DdFlip*](/windows/desktop/api/ddrawint/nc-ddrawint-pdd_surfcb_flip) 函数的调用中的目标。 因此，在任何 GDI 绘图之前，驱动程序必须将显示设备编程为标准显示模式。 还将调用主图面的驱动程序的 [*DdDestroySurface*](/windows/desktop/api/ddrawint/nc-ddrawint-pdd_surfcb_destroysurface) 函数。 请注意，驱动程序可能会放弃 DirectX 主图面的内容。
 
 -   窗口模式和非标准格式
 
-    使用 "表面格式" 的 "[针对2D 操作的报表支持](reporting-support-for-2d-operations-using-surface-formats.md)" 主题介绍了驱动程序如何指定它可以执行呈现并呈现与当前桌面不同的格式的图像。 此方案自然扩展以支持非标准格式;驱动程序必须只在[**DDPIXELFORMAT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-_ddpixelformat)结构的**dwOperations**成员中添加启用标志，才能获得格式。
+    使用 "表面格式" 的 " [针对2D 操作的报表支持](reporting-support-for-2d-operations-using-surface-formats.md) " 主题介绍了驱动程序如何指定它可以执行呈现并呈现与当前桌面不同的格式的图像。 此方案自然扩展以支持非标准格式;驱动程序必须只在[**DDPIXELFORMAT**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-_ddpixelformat)结构的**dwOperations**成员中添加启用标志，才能获得格式。
 
 专用格式和旧代码不能用于公开非标准桌面格式。
 
  
-
- 
-
-
-
-
 

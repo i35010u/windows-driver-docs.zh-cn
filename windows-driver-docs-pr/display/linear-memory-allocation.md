@@ -6,12 +6,12 @@ keywords:
 - 线性内存分配 WDK DirectDraw
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 156d7191d12fd6f25eca2953661fbab3fc84a577
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 9966bfef3d128a64e2a636a1c926a665de0d0413
+ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67372895"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89065812"
 ---
 # <a name="linear-memory-allocation"></a>线性内存分配
 
@@ -19,19 +19,19 @@ ms.locfileid: "67372895"
 ## <span id="ddk_linear_memory_allocation_gg"></span><span id="DDK_LINEAR_MEMORY_ALLOCATION_GG"></span>
 
 
-显示将内存视为*线性*每当，音调就可以更改以匹配的图面上的宽度，考虑到帐户对齐需求 （如在下图中所示）。 例如，如果 blitter 才命中 8 字节进步，并使用 31 像素子画面，需要进行调整以便对齐 8 字节边界上的下一行显示每个行。
+每当可以更改间距以匹配图面宽度时，显示内存将被视为 *线性* ，并考虑对齐要求 (如下图所示) 。 例如，如果 blitter 只能达到8字节的进步，并使用了31像素的动画，则每个显示的行都需要进行调整，以便在8字节边界上对齐下一行。
 
-像素深度，以字节为单位，乘以图面上的宽度，考虑到帐户的对齐要求取决于间距。 如果显示，跨 640 8 位像素，音调就为 640。 如果像素都是 16 位 （2 个字节） 并且 640 X 480 的屏幕中，则俯仰是 1280年 (640 \* 2)。 同样，640 宽、 32 位 （4 字节） 像素屏幕也有 2560年音调 (640 \* 4) 在线性显示内存中。
+音调是通过将像素深度（以字节为单位）与图面宽度相乘来确定的，其中考虑了对齐要求。 如果显示范围为 640 8 位像素，则音调为640。 如果像素为16位 (2 个字节) 并且存在 640 X 480 屏幕，则音调为 1280 (640 \* 2) 。 同样，640宽、32位 (4 个字节) 像素屏幕 \* 在线性显示内存中有 2560 (640 4) 。
 
-下图说明了具有一个主外围和一个暂存区域线性内存堆分配。
+下图说明了具有一个主表面和一个空闲区的线性内存堆分配。
 
-![说明线性内存堆分配的关系图](images/ddfig4.png)
+![阐释线性内存堆分配的关系图](images/ddfig4.png)
 
-指向主表面开头的指针是**fpPrimary**，属于[ **VIDEOMEMORYINFO** ](https://docs.microsoft.com/windows/desktop/api/ddrawint/ns-ddrawint-_videomemoryinfo)结构。 通过指示主表面和各种 Windows 缓存添加到此提供的暂存区域中，开头的指针的大小**fpStart**的成员[ **VIDEOMEMORY**](https://docs.microsoft.com/windows/desktop/api/ddrawint/ns-ddrawint-_videomemory)结构。 终结点，由**fpEnd**的成员**VIDEOMEMORY**结构，请通过添加减一的剩余内存的大小计算。
+指向主图面的开头的指针是 **fpPrimary**（ [**VIDEOMEMORYINFO**](/windows/desktop/api/ddrawint/ns-ddrawint-_videomemoryinfo) 结构的成员）。 主要表面和各种 Windows 缓存的大小将添加到此，以指定指向草稿区域开头的指针，由[**VIDEOMEMORY**](/windows/desktop/api/ddrawint/ns-ddrawint-_videomemory)结构的**fpStart**成员指示。 由**VIDEOMEMORY**结构的**fpEnd**成员指示的终结点是通过添加剩余内存的大小减一来计算的。
 
-[ **VIDEOMEMORY** ](https://docs.microsoft.com/windows/desktop/api/ddrawint/ns-ddrawint-_videomemory)结构保存管理显示内存堆的信息。 此示例中的数组具有只有一个元素**VIDEOMEMORY**因为只有一个堆结构。 VIDMEM\_ISLINEAR 中的标志**dwFlags**的成员**VIDEOMEMORY**结构，这表示为线性的内存。
+[**VIDEOMEMORY**](/windows/desktop/api/ddrawint/ns-ddrawint-_videomemory)结构包含管理显示内存堆的信息。 此示例在 **VIDEOMEMORY** 结构数组中只有一个元素，因为只有一个堆。 VIDMEM \_ ISLINEAR， **VIDEOMEMORY**结构的**dwFlags**成员中的标志将此标记表示为线性内存。
 
-下面的伪代码演示如何[ **VIDEOMEMORY** ](https://docs.microsoft.com/windows/desktop/api/ddrawint/ns-ddrawint-_videomemory)结构为线性内存设置：
+以下伪代码显示如何为线性内存设置 [**VIDEOMEMORY**](/windows/desktop/api/ddrawint/ns-ddrawint-_videomemory) 结构：
 
 ```cpp
 /*
@@ -43,7 +43,7 @@ static VIDEOMEMORY vidMem [] = {
 };/*
 ```
 
-下面的伪代码显示了如何线性内存堆设置：
+以下伪代码显示了如何设置线性内存堆：
 
 ```cpp
 /*
@@ -67,15 +67,9 @@ static VIDEOMEMORY vidMem [] = {
     vidMem[ 0 ].fpEnd = VideoHeapEnd;
 ```
 
-通过将 GDI 主表面的开头添加到主表面的大小和 Windows 画笔、 笔和 VDD 缓存的大小来计算的第一个可用的暂存区域开始。 使用结果的第一个元素中设置的起始点[ **VIDEOMEMORY** ](https://docs.microsoft.com/windows/desktop/api/ddrawint/ns-ddrawint-_videomemory)到暂存区域的开始处的结构。
+第一个可用草稿区域的开头是通过将 GDI 主图面的开头添加到主表面的大小以及 Windows 画笔、笔和 VDD 缓存的大小来计算的。 该结果用于将 [**VIDEOMEMORY**](/windows/desktop/api/ddrawint/ns-ddrawint-_videomemory) 结构的第一个元素中的起始点设置为空闲区的开头。
 
-通过将暂存区域的开头添加到暂存区域的大小和减去一个以使其包含找到的暂存区域的末尾。 使用结果时要设置的终结点的第一个 （且，在此情况下，仅） 元素[ **VIDEOMEMORY** ](https://docs.microsoft.com/windows/desktop/api/ddrawint/ns-ddrawint-_videomemory)到末尾的暂存区域的结构。 如果有多个堆，终结点设置为此堆和下一步堆结束这个后开始启动。
-
- 
+可以通过将草稿区域的开头添加到空闲区的大小来查找空闲区的结尾，并将其减去一，使其包含在内。 结果用于设置第一个 (的终点，在此示例中，仅将 [**VIDEOMEMORY**](/windows/desktop/api/ddrawint/ns-ddrawint-_videomemory) 结构的) 元素设置为草稿区域的结尾。 如果有多个堆，则终结点将设置为此堆的末尾，下一个堆将从该堆栈结束的位置开始。
 
  
-
-
-
-
 

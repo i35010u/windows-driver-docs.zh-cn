@@ -6,12 +6,12 @@ keywords:
 - INF 文件系统和安装步骤
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c45a8f8aace70bc9aed422e2918088a73efc4e1d
-ms.sourcegitcommit: 9e5a99dc75dfee3caa9a242adc0ed22ae4df9f29
+ms.openlocfilehash: 749bdd476c8e45e7b1a4ff6153bb74657e224f4c
+ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 08/28/2020
-ms.locfileid: "89043141"
+ms.locfileid: "89066102"
 ---
 # <a name="using-an-inf-file-to-install-a-file-system-filter-driver"></a>使用 INF 文件安装文件系统筛选器驱动程序
 
@@ -23,7 +23,7 @@ ms.locfileid: "89043141"
 
 ### <a name="span-idright-click_installspanspan-idright-click_installspanspan-idright-click_installspanright-click-install"></a><span id="Right-Click_Install"></span><span id="right-click_install"></span><span id="RIGHT-CLICK_INSTALL"></span>右键单击 "安装"
 
-若要执行 INF 文件的 [**DefaultInstall**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-defaultinstall-section) 和 [**DefaultInstall**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-defaultinstall-services-section) 部分，应执行以下操作：
+若要执行 INF 文件的 [**DefaultInstall**](../install/inf-defaultinstall-section.md) 和 [**DefaultInstall**](../install/inf-defaultinstall-services-section.md) 部分，应执行以下操作：
 
 1.  在 Windows 资源管理器中，选择并按住 (或右键单击) INF 文件名。 将显示一个快捷菜单。
 
@@ -45,7 +45,7 @@ RUNDLL32.EXE SETUPAPI.DLL,InstallHinfSection DefaultInstall 132 path-to-inf\infn
 
 ### <a name="span-idsetup_applicationspanspan-idsetup_applicationspanspan-idsetup_applicationspansetup-application"></a><span id="Setup_Application"></span><span id="setup_application"></span><span id="SETUP_APPLICATION"></span>安装应用程序
 
-[**InstallHinfSection**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-installhinfsectiona) 也可以从安装应用程序调用，如下面的代码示例所示：
+[**InstallHinfSection**](/windows/desktop/api/setupapi/nf-setupapi-installhinfsectiona) 也可以从安装应用程序调用，如下面的代码示例所示：
 
 ```cpp
 InstallHinfSection(NULL,NULL,TEXT("DefaultInstall 132 path-to-inf\infname.inf"),0); 
@@ -59,14 +59,9 @@ InstallHinfSection(NULL,NULL,TEXT("DefaultInstall 132 path-to-inf\infname.inf"),
 
     有关如何在 "添加或删除程序" 中列出应用程序的详细信息，请参阅 Windows SDK 文档的 "设置和系统管理" 部分中的 "删除应用程序"。
 
--   安装程序不应将驱动程序 INF 文件复制到 Windows INF 文件目录 (*% windir% \\ INF*) 。 Setupapi.log 会在 [**InstallHinfSection**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-installhinfsectiona) 调用中自动复制其中的文件。
+-   安装程序不应将驱动程序 INF 文件复制到 Windows INF 文件目录 (*% windir% \\ INF*) 。 Setupapi.log 会在 [**InstallHinfSection**](/windows/desktop/api/setupapi/nf-setupapi-installhinfsectiona) 调用中自动复制其中的文件。
 
-有关安装应用程序的详细信息，请参阅 [编写设备安装应用程序](https://docs.microsoft.com/windows-hardware/drivers/install/writing-a-device-installation-application)。
-
- 
+有关安装应用程序的详细信息，请参阅 [编写设备安装应用程序](../install/writing-a-device-installation-application.md)。
 
  
-
-
-
 
