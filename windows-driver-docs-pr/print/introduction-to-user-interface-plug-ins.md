@@ -7,12 +7,12 @@ keywords:
 - UI 插件 WDK 打印，关于用户界面插件
 ms.date: 08/25/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: d9dca259504cd6840e56f2ba8113bd8425e2fc4b
-ms.sourcegitcommit: d9a9925f790271f4ca2c8377d551d96e8d1e62c7
+ms.openlocfilehash: a2142b0e5427233877e898636c760b3a3f16f9f8
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88850211"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89213667"
 ---
 # <a name="introduction-to-user-interface-plug-ins"></a>用户界面插件简介
 
@@ -22,7 +22,7 @@ ms.locfileid: "88850211"
 
 UI 插件可以通过在属性表的 " **设备设置** " 页中添加、删除或替换选项来修改打印机属性表。 它还可以添加新页。 同样，插件可以通过在属性表的 **布局**、 **纸张/质量**和 **高级** 页中添加、删除或替换选项来修改文档属性表，也可以添加新页。
 
-如果使用的是 Windows Vista 中的 Unidrv，则可以在插件中实现 [**IPrintOemUI2：： HideStandardUI**](https://docs.microsoft.com/windows-hardware/drivers/ddi/prcomoem/nf-prcomoem-iprintoemui2-hidestandardui) 方法，以隐藏标准驱动程序提供的所有打印机配置属性页。 如果要为打印机提供完全自定义的打印机配置用户界面，则可以使用此方法。
+如果使用的是 Windows Vista 中的 Unidrv，则可以在插件中实现 [**IPrintOemUI2：： HideStandardUI**](/windows-hardware/drivers/ddi/prcomoem/nf-prcomoem-iprintoemui2-hidestandardui) 方法，以隐藏标准驱动程序提供的所有打印机配置属性页。 如果要为打印机提供完全自定义的打印机配置用户界面，则可以使用此方法。
 
 > [!IMPORTANT]
 > Windows 帮助 ( # A0) 是使用户能够查看 .hlp 文件的应用程序。 从 Windows Vista 开始，windows 帮助应用程序不作为 Windows 操作系统的一部分包含在内。 开发依赖于 .hlp 文件的应用程序的软件开发人员应将其文件转换为其他帮助格式，如 .chm、. hxs、.html 或 .xml 文件。 有关详细信息，请参阅 Windows 知识库文章中 [不再包含 Windows 帮助程序 ( # A0) ](https://support.microsoft.com/help/917607/feature-not-included-help-not-supported-error-opening-help-windows) 。

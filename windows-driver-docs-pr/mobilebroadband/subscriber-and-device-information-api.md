@@ -4,47 +4,40 @@ description: 订阅服务器和设备信息 API
 ms.assetid: 45d6c053-b64b-4768-8e79-a090dcdf346e
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3c0dc7fa9f3791956c27ca0829db7b0e8fda3184
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: a0bfd87c36348ee55be9acf55881d70d45b02c4a
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67357884"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89215286"
 ---
 # <a name="subscriber-and-device-information-api"></a>订阅服务器和设备信息 API
 
 
-订阅服务器和设备信息 API 提供了以下的订阅服务器和设备信息的移动宽带应用：
+订户和设备信息 API 向移动宽带应用提供以下订户和设备信息：
 
--   **设备名称**的设备的名称。
+-   **设备名称** 设备的名称。
 
--   **技术**GSM、 CDMA，以及类似的信息。
+-   **技术** GSM、CDMA 和类似的信息。
 
--   **订阅服务器和设备 ID**订阅服务器和设备标识信息 (IMSI，IMEI，电子序列号\[ESN\]，和类似信息)。
+-   **订阅服务器和设备 ID** 订户和设备标识信息 (IMSI、IMEI、电子序列号 \[ ESN \] 和类似信息) 。
 
--   **制造商**设备制造商联系。
+-   **制造商** 设备制造商。
 
--   **移动电话号码**与设备关联的移动电话号码。
+-   **移动电话号码** 与设备关联的移动电话号码。
 
--   **Sim 卡 ID**与 SIM ICCID 相关联。
+-   **SIM ID** 与 SIM 关联的 ICCID。
 
--   **设备功能**GSM 外类和 CDMA 外类等设备接口功能。
+-   **设备功能** 设备接口功能，如 GSM 波段类和 CDMA 波段类。
 
--   **固件和硬件版本**固件和硬件的版本。
+-   **固件和硬件版本** 固件和硬件版本。
 
-订阅服务器和设备信息 API 的详细信息，请参阅[ **Windows.Networking.NetworkOperators 命名空间**](https://docs.microsoft.com/uwp/api/Windows.Networking.NetworkOperators)。
+有关订阅服务器和设备信息 API 的详细信息，请参阅 [**windows.networking.networkoperators 命名空间**](/uwp/api/Windows.Networking.NetworkOperators)。
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
+## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
-[移动宽带 Windows 运行时 Api 的列表](list-of-mobile-broadband-windows-runtime-apis.md)
-
- 
+[移动宽带 Windows 运行时 API 的列表](list-of-mobile-broadband-windows-runtime-apis.md)
 
  
-
-
-
-
-
 

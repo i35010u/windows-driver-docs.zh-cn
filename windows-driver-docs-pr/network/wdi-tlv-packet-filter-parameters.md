@@ -1,39 +1,39 @@
 ---
 title: WDI_TLV_PACKET_FILTER_PARAMETERS
-description: WDI_TLV_PACKET_FILTER_PARAMETERS 是一个 TLV，其中包含 OID_WDI_SET_RECEIVE_PACKET_FILTER 的数据包筛选器参数。
+description: WDI_TLV_PACKET_FILTER_PARAMETERS 是包含 OID_WDI_SET_RECEIVE_PACKET_FILTER 的数据包筛选器参数的 TLV。
 ms.assetid: 5B26DA60-BC5D-4CC5-A620-C076CECF22C0
 ms.date: 07/18/2017
 keywords:
-- WDI_TLV_PACKET_FILTER_PARAMETERS 从 Windows Vista 开始的网络驱动程序
+- 从 Windows Vista 开始 WDI_TLV_PACKET_FILTER_PARAMETERS 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: ce40386c62c02bf00f302aaaeb14ac4e414fd86d
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: baa8387ef6ef853b44eace3e26497264bbeeeb9a
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72845152"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89214260"
 ---
-# <a name="wdi_tlv_packet_filter_parameters"></a>WDI\_TLV\_数据包\_筛选器\_参数
+# <a name="wdi_tlv_packet_filter_parameters"></a>WDI \_ TLV \_ 数据包 \_ 筛选器 \_ 参数
 
 
-WDI\_TLV\_数据包\_筛选器\_参数是一个 TLV，其中包含 OID 的数据包筛选器参数\_\_\_\_\_[筛选器](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wdi-set-receive-packet-filter)。
+WDI \_ tlv \_ 数据包 \_ 筛选器 \_ 参数是一个 Tlv，其中包含 [OID \_ WDI \_ 设置 \_ 接收 \_ 数据包 \_ 筛选器](./oid-wdi-set-receive-packet-filter.md)的数据包筛选器参数。
 
 ## <a name="tlv-type"></a>TLV 类型
 
 
 0x47
 
-## <a name="length"></a>长度
+## <a name="length"></a>Length
 
 
-UINT32 的大小（以字节为单位）。
+UINT32) 的大小 (以字节为单位）。
 
 ## <a name="values"></a>值
 
 
-| 在任务栏的搜索框中键入                                                                      | 描述                                |
+| 类型                                                                      | 说明                                |
 |---------------------------------------------------------------------------|--------------------------------------------|
-| [**WDI\_包\_筛选器\_类型**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wditypes/ne-wditypes-_wdi_packet_filter_type)（UINT32） | 指定所需的 Wi-fi 数据包筛选器。 |
+| [**WDI \_数据包 \_ 筛选器 \_ 类型**](/windows-hardware/drivers/ddi/wditypes/ne-wditypes-_wdi_packet_filter_type) (UINT32)  | 指定所需的 Wi-fi 数据包筛选器。 |
 
  
 
@@ -48,7 +48,7 @@ UINT32 的大小（以字节为单位）。
 <tbody>
 <tr class="odd">
 <td><p>最低受支持的客户端</p></td>
-<td><p>Windows 10</p></td>
+<td><p>Windows 10</p></td>
 </tr>
 <tr class="even">
 <td><p>最低受支持的服务器</p></td>
@@ -62,9 +62,4 @@ UINT32 的大小（以字节为单位）。
 </table>
 
  
-
- 
-
-
-
 

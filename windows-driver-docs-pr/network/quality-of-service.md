@@ -3,18 +3,18 @@ title: 服务质量
 description: 服务质量
 ms.assetid: e7a4413c-633b-4634-a647-c84b8c97cbea
 keywords:
-- 面向连接的 NDIS WDK、 服务质量
-- 网络服务质量的 CoNDIS WDK
-- WDK 的 CoNDIS 服务质量
-- QoS WDK 的 CoNDIS
+- 面向连接的 NDIS WDK，服务质量
+- CoNDIS WDK 网络，服务质量
+- 服务质量 WDK CoNDIS
+- QoS WDK CoNDIS
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0672b71557012165da225615585df93f61ff4d61
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: f09f0f93bf6aeb88c617045da9a48f3af882c373
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67385452"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89215143"
 ---
 # <a name="quality-of-service"></a>服务质量
 
@@ -22,23 +22,17 @@ ms.locfileid: "67385452"
 
 
 
-可以指定对 SVC 调用发起方*服务的质量*调用指定该调用的性能参数 (QoS) 参数。 根据信号协议，它是正在使用、 呼叫管理器或设置一个传出或传入调用的 MCM 驱动程序可以协商网络实体，例如网络交换机或远程客户端与 QoS。 如果允许信号协议，面向连接的客户端还可能会请求的 QoS 的更改，确定是否接受的传入呼叫时。
+在 SVC 上调用的发起方可以指定 *服务* (QoS) 参数，以指定调用的性能参数。 根据正在使用的信号协议，设置传出或传入呼叫的呼叫管理器或 MCM 驱动程序可以使用网络实体（例如网络交换机或远程客户端）来协商 QoS。 如果信号协议允许，则面向连接的客户端在确定是否接受传入呼叫时，还可能会请求更改 QoS。
 
-调用的 QoS 参数指定作为调用的参数[**共同\_调用\_参数**](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff545384(v=vs.85))结构。 CO\_调用\_参数指向两个其他结构：
+调用的 QoS 参数指定为 [**CO \_ 调用 \_ 参数**](/previous-versions/windows/hardware/network/ff545384(v=vs.85)) 结构中的调用参数。 CO \_ 调用 \_ 参数指向两个其他结构：
 
--   [**CO\_调用\_MANAGER\_参数**](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff545381(v=vs.85))，用于指定调用管理器参数呼叫管理器或用于设置调用的 MCM 驱动程序。
+-   [**共同 \_调用 \_ 管理器 \_ 参数**](/previous-versions/windows/hardware/network/ff545381(v=vs.85))，指定调用管理器或 MCM 驱动程序用于设置呼叫的调用管理器参数。
 
--   [**CO\_媒体\_参数**](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff545388(v=vs.85))，它指定媒体参数的微型端口驱动程序或使用激活 VC MCM 驱动程序。
+-   [**共同 \_媒体 \_ 参数**](/previous-versions/windows/hardware/network/ff545388(v=vs.85))，指定微型端口驱动程序或 MCM 驱动程序用于激活 VC 的媒体参数。
 
-这两个共同\_调用\_MANAGER\_参数和 CO\_媒体\_参数包含将应用于所有驱动程序的使用的参数的泛型参数 （标志）。 每个这些结构还指向[**共同\_特定\_参数**](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff545396(v=vs.85))结构，它指定调用特定于管理器的参数 (时指向共同\_调用\_MANAGER\_参数结构) 或特定于媒体的参数 (时指向共同\_媒体\_参数结构)。
+共同 \_ 调用 \_ 管理器 \_ 参数和 co \_ 媒体 \_ 参数都包含适用于使用参数的所有驱动程序 (标志) 的泛型参数。 其中的每个结构还指向 [**co \_ 特定的 \_ 参数**](/previous-versions/windows/hardware/network/ff545396(v=vs.85)) 结构，该结构指定由 co \_ 调用 \_ 管理器 \_ 参数结构指向) 或特定于媒体参数的参数， (当 co \_ media \_ parameters 结构) 时， (指定调用管理器特定的参数。
 
-有关 QoS 的操作的详细信息，请参阅[Client-Initiated 请求更改调用参数](client-initiated-request-to-change-call-parameters.md)并[对更改调用参数的传入请求](incoming-request-to-change-call-parameters.md)。
-
- 
+有关 QoS 操作的详细信息，请参阅 [客户端启动的更改调用参数的请求](client-initiated-request-to-change-call-parameters.md) 和 [用于更改调用参数的传入请求](incoming-request-to-change-call-parameters.md)。
 
  
-
-
-
-
 

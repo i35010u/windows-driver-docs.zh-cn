@@ -1,39 +1,39 @@
 ---
 title: WDI_TLV_WAKE_PACKET_PATTERN_REMOVE
-description: WDI_TLV_WAKE_PACKET_PATTERN_REMOVE 是包含的唤醒数据包模式 ID 来删除与 OID_WDI_SET_REMOVE_WOL_PATTERN TLV。
+description: WDI_TLV_WAKE_PACKET_PATTERN_REMOVE 是一种 TLV，其中包含要在 OID_WDI_SET_REMOVE_WOL_PATTERN 中删除的唤醒数据包模式 ID。
 ms.assetid: 69C87D35-AE6B-4F69-B099-A55B65EDAC58
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 WDI_TLV_WAKE_PACKET_PATTERN_REMOVE 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: f6bb3c9578e9396d9ea8b07925bf3eb77dc7fd28
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: b88b4ad8c6342a7b4804433f97d07676a39aed64
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67357104"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89215397"
 ---
-# <a name="wditlvwakepacketpatternremove"></a>WDI\_TLV\_WAKE\_PACKET\_PATTERN\_REMOVE
+# <a name="wdi_tlv_wake_packet_pattern_remove"></a>WDI \_ TLV \_ 唤醒 \_ 包 \_ 模式 \_ 删除
 
 
-WDI\_TLV\_唤醒\_数据包\_模式\_删除是包含要删除的唤醒数据包模式 ID TLV [OID\_WDI\_集\_删除\_WOL\_模式](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wdi-set-remove-wol-pattern)。
+WDI \_ tlv \_ 唤醒 \_ 包 \_ 模式 \_ 删除是一个 tlv，其中包含要删除的唤醒数据包模式 ID。 [ \_ \_ \_ \_ \_ ](./oid-wdi-set-remove-wol-pattern.md)
 
 ## <a name="tlv-type"></a>TLV 类型
 
 
 0x6B
 
-## <a name="length"></a>长度
+## <a name="length"></a>Length
 
 
-UINT32 大小 （以字节为单位）。
+UINT32) 的大小 (以字节为单位）。
 
 ## <a name="values"></a>值
 
 
-| 在任务栏的搜索框中键入   | 描述                           |
+| 类型   | 说明                           |
 |--------|---------------------------------------|
-| UINT32 | 指定唤醒数据包模式 id。 |
+| UINT32 | 指定唤醒数据包模式 ID。 |
 
  
 
@@ -55,16 +55,11 @@ UINT32 大小 （以字节为单位）。
 <td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
-<td><p>Header</p></td>
+<td><p>标头</p></td>
 <td>Wditypes.hpp</td>
 </tr>
 </tbody>
 </table>
 
  
-
- 
-
-
-
 

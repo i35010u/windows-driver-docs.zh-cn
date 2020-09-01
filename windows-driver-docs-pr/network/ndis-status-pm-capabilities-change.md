@@ -1,29 +1,29 @@
 ---
 title: NDIS_STATUS_PM_CAPABILITIES_CHANGE
-description: NDIS_STATUS_PM_CAPABILITIES_CHANGE 状态表示网络适配器对过量驱动程序的电源管理功能发生了更改。
+description: "\"NDIS_STATUS_PM_CAPABILITIES_CHANGE 状态\" 指示网络适配器对过量驱动程序的电源管理功能发生了更改。"
 ms.assetid: 28a2ed15-606a-4a40-b975-b766815a02cc
 ms.date: 07/18/2017
 keywords:
-- NDIS_STATUS_PM_CAPABILITIES_CHANGE 从 Windows Vista 开始的网络驱动程序
+- 从 Windows Vista 开始 NDIS_STATUS_PM_CAPABILITIES_CHANGE 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: e830b53efa9fe27e536c0706de78b5a4ebe35430
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 305a2e86efd856fa3c643e93a9a016e1c49ac314
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72843542"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89214680"
 ---
-# <a name="ndis_status_pm_capabilities_change"></a>NDIS\_状态\_PM\_功能\_更改
+# <a name="ndis_status_pm_capabilities_change"></a>NDIS \_ 状态 \_ PM \_ 功能 \_ 更改
 
 
-NDIS\_状态\_PM\_功能\_更改状态指示网络适配器的电源管理功能更改到过量驱动程序。
+NDIS \_ 状态 \_ PM \_ 功能 \_ 更改状态表明网络适配器对过量驱动程序的电源管理功能发生了更改。
 
 <a name="remarks"></a>备注
 -------
 
-如果需要更新以前报告的电源管理功能，NDIS\_状态\_PM\_功能\_更改状态。
+\_ \_ \_ \_ 当需要对以前报告的电源管理功能进行更新时，ndis 将生成 ndis 状态 PM 功能更改状态指示。
 
-[**Ndis\_状态\_指示**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_status_indication)结构的**StatusBuffer**成员包含一个指向[**NDIS\_PM\_功能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_pm_capabilities)结构的指针，该指针具有更新的电源管理功能。
+[**Ndis \_ 状态 \_ 指示**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_status_indication)结构的**StatusBuffer**成员包含一个指针，指向带有更新的电源管理功能的[**ndis \_ PM \_ 功能**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_pm_capabilities)结构。
 
 <a name="requirements"></a>要求
 ------------
@@ -40,7 +40,7 @@ NDIS\_状态\_PM\_功能\_更改状态指示网络适配器的电源管理功能
 </tr>
 <tr class="even">
 <td><p>标头</p></td>
-<td>Ndis .h （包括 Ndis .h）</td>
+<td> (包含 Ndis .h) </td>
 </tr>
 </tbody>
 </table>
@@ -48,14 +48,9 @@ NDIS\_状态\_PM\_功能\_更改状态指示网络适配器的电源管理功能
 ## <a name="see-also"></a>另请参阅
 
 
-[**NDIS\_PM\_功能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_pm_capabilities)
+[**NDIS \_ PM \_ 功能**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_pm_capabilities)
 
-[**NDIS\_状态\_指示**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_status_indication)
-
- 
+[**NDIS \_ 状态 \_ 指示**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_status_indication)
 
  
-
-
-
 

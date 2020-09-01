@@ -1,28 +1,28 @@
 ---
 title: BindPrinter
-description: IPrintTicketProvider BindPrinter 方法绑定到特定版本的打印票证架构打印机或打印队列。
+description: IPrintTicketProvider BindPrinter 方法将打印机或打印队列绑定到打印票证架构的特定版本。
 ms.assetid: 81f32a9a-417a-4851-972e-373112590e1c
 keywords:
 - BindPrinter
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0c6f6d41ea4f74e06d31f3343c1456186c027082
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: abcc46f85420083cb3c522082dfcd3dc45e48518
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67384194"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89214959"
 ---
 # <a name="bindprinter"></a>BindPrinter
 
 
-[ **IPrintTicketProvider::BindPrinter** ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff554354(v=vs.85))方法将打印机或打印队列绑定到特定版本的打印票证架构。 这使核心驱动程序将一组专用命名空间 Uri 与设备相关联。
+[**IPrintTicketProvider：： BindPrinter**](/previous-versions/windows/hardware/drivers/ff554354(v=vs.85))方法将打印机或打印队列绑定到打印票证架构的特定版本。 这使得核心驱动程序可以将一组专用命名空间 Uri 与设备相关联。
 
-绑定到的设备启用的提供程序缓存某些对象和处理，它将用于执行未来打印票证或设备功能服务，该设备。
+绑定到设备后，提供程序可以缓存某些对象和句柄，该对象和句柄会用于为该设备执行将来的打印票证或设备功能服务。
 
-[ **IPrintTicketProvider::BindPrinter** ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff554354(v=vs.85))方法保证将为每个 PrintTicketProvider 实例一次调用。
+对于每个 PrintTicketProvider 实例，都保证只调用一次 [**IPrintTicketProvider：： BindPrinter**](/previous-versions/windows/hardware/drivers/ff554354(v=vs.85)) 方法。
 
-下面的示例代码说明了该方法的参数。
+下面的示例代码演示了方法的参数。
 
 ```cpp
 STDMETHODIMP 

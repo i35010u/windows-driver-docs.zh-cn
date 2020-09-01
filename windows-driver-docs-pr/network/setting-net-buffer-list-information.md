@@ -8,67 +8,61 @@ keywords:
 - 标志 WDK 标头-数据拆分
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 54e4cdf46502759da1b7d87bfd7f44179ba6e193
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 3ff87cb8f240186ee494b6491c9300256d97431b
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72841939"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89214442"
 ---
-# <a name="setting-net_buffer_list-information"></a>设置 NET\_缓冲区\_列表信息
+# <a name="setting-net_buffer_list-information"></a>设置网络 \_ 缓冲区 \_ 列表信息
 
 
 
 
 
-标头-数据拆分提供程序必须将[**网络\_缓冲区**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)的**NblFlags**成员中的标头数据拆分标志设置为接收指示的\_列表结构。 对于拆分框架，NIC 还必须提供每个[**净\_缓冲区**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer)结构的**DataPhysicalAddress**成员中接收帧的数据部分的物理地址。
+标头-数据拆分提供程序必须在用于接收指示的[**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)结构的**NblFlags**成员中设置标头数据拆分标志。 对于拆分框架，NIC 还必须在每个[**网络 \_ 缓冲区**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer)结构的**DataPhysicalAddress**成员中提供接收帧的数据部分的物理地址。
 
-**请注意**  微型端口驱动程序可以设置 NET\_缓冲区结构的**DataPhysicalAddress**成员，即使 net\_缓冲区不与拆分框架相关联。 在这种情况下， **DataPhysicalAddress**包含标头 MDL 的物理地址。
+**注意**   微型端口驱动程序可以设置 NET buffer 结构的**DataPhysicalAddress**成员 \_ ，即使 net \_ 缓冲区与拆分框架无关。 在这种情况下， **DataPhysicalAddress** 包含标头 MDL 的物理地址。
 
  
 
-标头-数据拆分提供程序将**NblFlags**成员中的标志与按位 "或" 运算组合在一起。
+标头-数据拆分提供程序将 **NblFlags** 成员中的标志与按位 "或" 运算组合在一起。
 
 标头-数据拆分提供程序可以设置以下标志，即使它不拆分框架：
 
-<a href="" id="ndis-nbl-flags-is-ipv4"></a>NDIS\_NBL\_标志\_是\_IPV4  
-[**NET\_BUFFER\_列表**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)中的所有帧都是 IPv4 帧。 如果设置了此标志，则不能设置\_IPV6 标志\_的 NDIS\_NBL\_标志。
+<a href="" id="ndis-nbl-flags-is-ipv4"></a>NDIS \_ NBL \_ 标志 \_ 是 \_ IPV4  
+[**NET \_ BUFFER \_ 列表**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)中的所有帧都是 IPv4 帧。 如果设置了此标志，则 \_ 不得设置 NDIS NBL \_ 标志 \_ \_ 。
 
-<a href="" id="ndis-nbl-flags-is-ipv6"></a>NDIS\_NBL\_标志\_是\_IPV6  
-NET\_BUFFER\_列表中的所有帧都是 IPv6 帧。 如果设置了此标志，则不得设置 NBL\_标志\_\_的 NDIS\_。
+<a href="" id="ndis-nbl-flags-is-ipv6"></a>NDIS \_ NBL \_ 标志 \_ 为 \_ IPV6  
+NET BUFFER 列表中的所有帧 \_ \_ 都是 IPv6 帧。 如果设置了此标志，则 \_ 不得设置 NDIS NBL \_ 标志 \_ \_ 。
 
-<a href="" id="ndis-nbl-flags-is-tcp"></a>NDIS\_NBL\_标志\_是\_TCP  
-NET\_BUFFER\_列表中的所有帧都是 TCP 帧。 如果设置了此标志，则不能\_UDP\_NBL\_标志\_为。 而 NDIS\_NBL\_FLAGS\_是\_IPV4 或 NDIS\_NBL\_\_\_必须设置 IPV6。
+<a href="" id="ndis-nbl-flags-is-tcp"></a>NDIS \_ NBL \_ 标志 \_ 为 \_ TCP  
+NET BUFFER 列表中的所有帧 \_ \_ 都是 TCP 帧。 如果设置了此标志， \_ \_ \_ 则不得设置 "UDP NBL 标志" \_ 。 而 NDIS \_ NBL \_ 标志为 IPV4，则 \_ \_ \_ \_ 必须设置 NBL 标志 \_ 为 \_ IPV6。
 
-<a href="" id="ndis-nbl-flags-is-udp"></a>NDIS\_NBL\_标志\_是\_UDP  
-[**NET\_BUFFER\_列表**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)中的所有帧都是 UDP 帧。 如果设置了此标志，\_则不能设置 NBL\_标志\_的 NDIS\_。 而 NDIS\_NBL\_FLAGS\_是\_IPV4 或 NDIS\_NBL\_\_\_必须设置 IPV6。
+<a href="" id="ndis-nbl-flags-is-udp"></a>NDIS \_ NBL \_ 标志 \_ 是 \_ UDP  
+[**NET \_ BUFFER \_ 列表**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)中的所有帧都是 UDP 帧。 如果设置了此标志， \_ \_ \_ 则 \_ 不得设置 TCP NBL 标志。 而 NDIS \_ NBL \_ 标志为 IPV4，则 \_ \_ \_ \_ 必须设置 NBL 标志 \_ 为 \_ IPV6。
 
 任何 NDIS 驱动程序都可以设置上述标志来进行调试、测试或其他目的。 如果驱动程序设置这些标志，则值必须准确描述接收帧的内容。 建议设置这些标志。
 
 标头-数据拆分提供程序可以设置以下标头数据拆分标志：
 
-<a href="" id="ndis-nbl-flags-hd-split"></a>NDIS\_NBL\_标志\_HD\_SPLIT  
-标头和数据将在与[**NET\_BUFFER\_列表**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)结构关联的所有以太网帧中拆分。
+<a href="" id="ndis-nbl-flags-hd-split"></a>NDIS \_ NBL \_ 标志 \_ HD \_ SPLIT  
+标头和数据将在与 [**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list) 结构关联的所有以太网帧中拆分。
 
-<a href="" id="ndis-nbl-flags-split-at-upper-layer-protocol-header"></a>NDIS\_NBL\_标志\_拆分\_\_\_\_\_  
-NET\_BUFFER\_列表结构的所有帧都在[上层协议标头的开头](splitting-frames-at-the-beginning-of-the-upper-layer-protocol-headers.md)处拆分。 如果设置此标志，则 NDIS\_NBL\_标志\_是\_IPV4 或 NDIS\_NBL\_\_\_必须设置 IPV6。 此外，NDIS\_NBL\_标志\_是\_TCP 或 NDIS\_NBL\_标志\_可以设置\_UDP。 而且，NDIS\_NBL\_标志\_拆分\_\_\_\_\_协议，则不能设置的。
+<a href="" id="ndis-nbl-flags-split-at-upper-layer-protocol-header"></a>\_ \_ \_ \_ 在 \_ 上层 \_ \_ 协议 \_ 标头处拆分的 NDIS NBL 标志  
+NET BUFFER 列表结构中的所有 \_ 帧 \_ 都在 [上层协议标头的开头](splitting-frames-at-the-beginning-of-the-upper-layer-protocol-headers.md)处拆分。 如果设置此标志，则必须设置以下两个 \_ NBL \_ 标志： \_ \_ IPV4 或 ndis \_ NBL \_ 标记 \_ 为 \_ IPV6。 此外，NDIS \_ NBL \_ 标志 \_ 为 \_ TCP 或 ndis \_ NBL \_ 标志 \_ 为 \_ UDP。 不能 \_ \_ \_ \_ \_ 设置位于上层 \_ \_ 协议 \_ 有效负载的 NDIS NBL 标志拆分。
 
-<a href="" id="ndis-nbl-flags-split-at-upper-layer-protocol-payload"></a>NDIS\_NBL\_标志\_拆分\_\_\_\_\_  
-NET\_缓冲区中的所有帧\_列表结构在[TCP 有效](splitting-frames-at-the-tcp-payload.md)负载或[UDP 有效负载开始](splitting-frames-at-the-udp-payload.md)时被拆分。 如果设置此标志，则 NDIS\_NBL\_标志\_是\_IPV4 或 NDIS\_NBL\_\_\_必须设置 IPV6。 NDIS\_NBL\_FLAGS\_是\_TCP 或 NDIS\_\_\_\_标志，则必须设置 UDP。 此外，不能设置\_\_的\_标志\_拆分\_\_\_\_协议。
+<a href="" id="ndis-nbl-flags-split-at-upper-layer-protocol-payload"></a>\_ \_ \_ \_ 在 \_ 上层 \_ \_ 协议 \_ 有效负载处拆分的 NDIS NBL 标志  
+NET BUFFER 列表结构中的所有 \_ 帧 \_ 都在 [TCP 有效](splitting-frames-at-the-tcp-payload.md) 负载或 [UDP 有效负载开始](splitting-frames-at-the-udp-payload.md)处拆分。 如果设置此标志，则必须设置以下两个 \_ NBL \_ 标志： \_ \_ IPV4 或 ndis \_ NBL \_ 标记 \_ 为 \_ IPV6。 \_ \_ \_ \_ 必须设置 NBL 或 ndis \_ NBL \_ 标志 \_ 为 "UDP" \_ 。 此外， \_ 不能 \_ \_ \_ \_ 设置位于上层 \_ \_ 协议 \_ 标头的 NDIS NBL 标志。
 
-如果标头-数据拆分提供程序不拆分帧，则必须在**NblFlags**中清除以下标志：
+如果标头-数据拆分提供程序不拆分帧，则必须在 **NblFlags** 中清除以下标志：
 
--   NDIS\_NBL\_标志\_HD\_SPLIT
+-   NDIS \_ NBL \_ 标志 \_ HD \_ SPLIT
 
--   NDIS\_NBL\_标志\_拆分\_\_\_\_\_
+-   \_ \_ \_ \_ 在 \_ 上层 \_ \_ 协议 \_ 标头处拆分的 NDIS NBL 标志
 
--   NDIS\_NBL\_标志\_拆分\_\_\_\_\_
-
- 
+-   \_ \_ \_ \_ 在 \_ 上层 \_ \_ 协议 \_ 有效负载处拆分的 NDIS NBL 标志
 
  
-
-
-
-
 

@@ -1,34 +1,34 @@
 ---
 title: OID_SWITCH_PROPERTY_DELETE
-description: Hyper-v 可扩展交换机的协议边缘发出 OID_SWITCH_PROPERTY_DELETE 的对象标识符（OID）设置请求，通知有关删除交换机策略属性的可扩展交换机扩展。
+description: Hyper-v 可扩展交换机的协议边缘 (OID 发出对象标识符) 设置 OID_SWITCH_PROPERTY_DELETE 请求，通知有关删除交换机策略属性的可扩展交换机扩展。
 ms.assetid: 55291392-C018-4578-9767-DC5621F75D44
 ms.date: 08/08/2017
-keywords: -从 Windows Vista 开始 OID_SWITCH_PROPERTY_DELETE 网络驱动程序
+keywords: -从 Windows Vista 开始 OID_SWITCH_PROPERTY_DELETE 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: bd5e50243d427493c6d713502fccf567ffe81cf5
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 4b22da91adc9e285732890dce767aa31e7801a5e
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72843917"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89215218"
 ---
-# <a name="oid_switch_property_delete"></a>OID\_SWITCH\_属性\_DELETE
+# <a name="oid_switch_property_delete"></a>OID \_ 开关 \_ 属性 \_ 删除
 
 
-Hyper-v 可扩展交换机的协议边缘发出一个对象标识符（OID）设置的 OID 请求，\_SWITCH\_属性\_"删除"，以通知有关删除交换机策略属性的可扩展交换机扩展。
+Hyper-v 可扩展交换机的协议边缘 (OID 发出对象标识符) 设置 OID \_ 交换机 \_ 属性 DELETE 的请求 \_ ，以通知有关删除交换机策略属性的可扩展交换机扩展。
 
-[ **\_OID\_请求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的**InformationBuffer**成员包含一个指向缓冲区的指针，该缓冲区包含一个[**NDIS\_\_属性\_DELETE\_PARAMETERS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_property_delete_parameters)结构。
+[**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的**InformationBuffer**成员包含一个指向缓冲区的指针，该缓冲区包含[**NDIS \_ 交换机 \_ 属性 \_ 删除 \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_property_delete_parameters)结构。
 
 <a name="remarks"></a>备注
 -------
 
-转发扩展可以处理 OID 的 OID 集请求\_SWITCH\_属性\_DELETE。 所有其他类型的扩展都必须调用[**NdisFOidRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfoidrequest) ，将 OID 请求转发到可扩展交换机驱动程序堆栈中的下一个扩展。
+转发扩展可以处理 OID \_ 开关属性删除的 oid 设置请求 \_ \_ 。 所有其他类型的扩展都必须调用 [**NdisFOidRequest**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfoidrequest) ，将 OID 请求转发到可扩展交换机驱动程序堆栈中的下一个扩展。
 
-有关如何处理 OID\_SWITCH\_属性\_DELETE 的 OID 集请求的指南，请参阅[管理交换机策略](https://docs.microsoft.com/windows-hardware/drivers/network/managing-switch-policies)。
+有关如何处理 OID 交换机属性删除的 OID 集请求的 \_ 指南 \_ \_ ，请参阅 [管理交换机策略](./managing-switch-policies.md)。
 
 ### <a name="return-status-codes"></a>返回状态代码
 
-如果转发扩展插件完成 oid\_SWITCH\_属性\_DELETE，则返回以下状态代码之一。
+如果转发扩展插件完成 oid \_ 开关属性 DELETE 的 oid 设置 \_ 请求 \_ ，它将返回以下状态代码之一。
 
 <table>
 <colgroup>
@@ -59,7 +59,7 @@ Hyper-v 可扩展交换机的协议边缘发出一个对象标识符（OID）设
 
  
 
-如果转发扩展未完成 OID\_SWITCH\_属性\_删除的 OID 集请求，则该请求将由可扩展交换机的基础微型端口边缘完成。 微型端口边缘返回以下状态代码。
+如果转发扩展未完成 oid 开关属性删除的 OID 集请求 \_ \_ \_ ，则该请求将由可扩展交换机的基础微型端口边缘完成。 微型端口边缘返回以下状态代码。
 
 <table>
 <colgroup>
@@ -97,7 +97,7 @@ Hyper-v 可扩展交换机的协议边缘发出一个对象标识符（OID）设
 </tr>
 <tr class="even">
 <td><p>标头</p></td>
-<td>Ntddndis （包括 Ndis .h）</td>
+<td>Ntddndis (包含 Ndis .h) </td>
 </tr>
 </tbody>
 </table>
@@ -106,18 +106,13 @@ Hyper-v 可扩展交换机的协议边缘发出一个对象标识符（OID）设
 
 
 ****
-[**NDIS\_OID\_请求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)
+[**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)
 
-[ **\_\_自定义的 NDIS\_交换机**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_property_custom)
+[**NDIS \_ 交换机 \_ 属性 \_ 自定义**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_property_custom)
 
-[ **\_属性\_参数的 NDIS\_开关**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_property_parameters)
+[**NDIS \_ 开关 \_ 属性 \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_property_parameters)
 
-[**NdisFOidRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfoidrequest)
-
- 
+[**NdisFOidRequest**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfoidrequest)
 
  
-
-
-
 

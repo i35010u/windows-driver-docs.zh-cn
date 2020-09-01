@@ -4,23 +4,23 @@ description: 微型端口驱动程序使用 NDIS_STATUS_WWAN_DEVICE_SERVICE_SESS
 ms.assetid: 39C0FE62-E262-4D7D-8A93-6C31431AF846
 ms.date: 07/18/2017
 keywords:
-- NDIS_STATUS_WWAN_DEVICE_SERVICE_SESSION_WRITE_COMPLETE 从 Windows Vista 开始的网络驱动程序
+- 从 Windows Vista 开始 NDIS_STATUS_WWAN_DEVICE_SERVICE_SESSION_WRITE_COMPLETE 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 9891afecc7b8b91f442c924ee0547366ee0811b6
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: d39e3dbe897b92ac5fffab7b42ac8e85ff654f9c
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72843037"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89213425"
 ---
-# <a name="ndis_status_wwan_device_service_session_write_complete"></a>NDIS\_状态\_WWAN\_设备\_服务\_会话\_写入\_完成
+# <a name="ndis_status_wwan_device_service_session_write_complete"></a>NDIS \_ 状态 \_ WWAN \_ 设备 \_ 服务 \_ 会话 \_ 写入 \_ 完成
 
 
-微型端口驱动程序使用 NDIS\_状态\_WWAN\_设备\_SERVICE\_会话\_写入\_完整通知，以报告设备服务会话上写入操作的状态。
+微型端口驱动程序使用 NDIS \_ 状态 " \_ WWAN \_ 设备 \_ 服务 \_ 会话 \_ 写入" " \_ 完成通知" 报告设备服务会话上写入操作的状态。
 
 微型端口驱动程序无法使用此通知发送未经请求的事件。
 
-此通知使用[**NDIS\_WWAN\_设备\_服务\_会话\_写入\_完整**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_device_service_session_write_complete)结构。
+此通知使用 [**NDIS \_ WWAN \_ 设备 \_ 服务 \_ 会话 \_ 写入 \_ 完整**](/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_device_service_session_write_complete) 结构。
 
 <a name="requirements"></a>要求
 ------------
@@ -45,12 +45,7 @@ ms.locfileid: "72843037"
 ## <a name="see-also"></a>另请参阅
 
 
-[**NDIS\_WWAN\_设备\_服务\_会话\_写入\_完成**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_device_service_session_write_complete)
+[**NDIS \_ WWAN \_ 设备 \_ 服务 \_ 会话 \_ 写入 \_ 完成**](/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_device_service_session_write_complete)
 
  
-
- 
-
-
-
 

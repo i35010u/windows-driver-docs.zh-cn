@@ -4,19 +4,19 @@ description: 将移动宽带应用与其他 Windows 组件集成
 ms.assetid: 70469f6b-70a8-4ebc-b315-08ddeffbdc0f
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cad659cb3c38a81b3134cc539e278305dc1c9dc0
-ms.sourcegitcommit: b316c97bafade8b76d5d3c30d48496915709a9df
+ms.openlocfilehash: 9679b08a86f242b7fdbfe93151c4f38cd5106ac9
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79242748"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89215296"
 ---
 # <a name="integrate-a-mobile-broadband-app-with-other-windows-components"></a>将移动宽带应用与其他 Windows 组件集成
 
 
-可以使用 Windows 10 用户界面（UI）图面来增强移动宽带应用程序的总体体验。
+可以使用 Windows 10 用户界面 (UI) 图面来增强移动宽带应用程序的总体体验。
 
-有关布局、导航、命令、动画、触摸交互、对齐和缩放、协定和功能、磁贴和通知、UI 控件、到云的应用程序漫游的其他用户体验设计指南，请参阅[UWP 应用的 UX 准则索引](https://developer.microsoft.com/windows/apps/design)。
+有关布局、导航、命令、动画、触摸交互、对齐和缩放、协定和功能、磁贴和通知、UI 控件、到云的应用程序漫游的其他用户体验设计指南，请参阅 [UWP 应用的 UX 准则索引](https://developer.microsoft.com/windows/apps/design)。
 
 本主题包含以下各节：
 
@@ -39,7 +39,7 @@ ms.locfileid: "79242748"
 ## <a name="app-settings"></a>应用设置
 
 
-你可以使用[应用设置](https://docs.microsoft.com/windows/uwp/app-settings/guidelines-for-app-settings)来包括应用配置的设置。 其中的一些示例如下所示：
+你可以使用 [应用设置](/windows/uwp/app-settings/guidelines-for-app-settings) 来包括应用配置的设置。 其中的一些示例如下所示：
 
 -   登录和注销
 
@@ -58,17 +58,17 @@ ms.locfileid: "79242748"
 
 你的移动宽带应用可能会有很多错误案例，它们应该妥善处理。 一些常见示例如下所示：
 
--   **设备已丢失或已拔**出当设备（例如 SIM 或转换器）丢失或拔下时出现。
+-   **设备已丢失或已拔** 出当设备（例如 SIM 或转换器）丢失或拔下时出现。
 
--   **锁定的设备**已连接的设备锁定到用户时出现。
+-   **锁定的设备** 已连接的设备锁定到用户时出现。
 
--   **Internet 连接丢失**未检测到网络连接时显示。
+-   **Internet 连接丢失** 未检测到网络连接时显示。
 
--   **已插入多个设备**插入内置适配器和外部转换器时出现。 对于这种情况，建议使用通知栏错误。
+-   **已插入多个设备** 插入内置适配器和外部转换器时出现。 对于这种情况，建议使用通知栏错误。
 
--   **表单域验证错误**当用户向窗体中输入不正确的信息时显示。 验证错误应以内联方式显示，以便用户知道与错误关联的字段。
+-   **表单域验证错误** 当用户向窗体中输入不正确的信息时显示。 验证错误应以内联方式显示，以便用户知道与错误关联的字段。
 
-有关如何显示错误的指南，请参阅对[UI 进行布局](https://docs.microsoft.com/previous-versions/windows/apps/hh465304(v=win.10))。 在下面的示例中，页面顶部将显示一个通知栏。
+有关如何显示错误的指南，请参阅对 [UI 进行布局](/previous-versions/windows/apps/hh465304(v=win.10))。 在下面的示例中，页面顶部将显示一个通知栏。
 
 ![通知栏显示错误](images/mb-fig1-notificationbarerrors.png)
 
@@ -78,7 +78,7 @@ ms.locfileid: "79242748"
 
 -   **当用户接近计划过期时**：使用屏幕顶部的栏表示用户的计划接近过期。
 
--   **当使用量超过数据上限时**数据条应是完整的，而且还应该有描述该问题的内联消息，并告知用户要如何处理该问题。 或者，通过数据上限使用消息可以在页面顶部的通知栏中进行。
+-   **当使用量超过数据上限时** 数据条应是完整的，而且还应该有描述该问题的内联消息，并告知用户要如何处理该问题。 或者，通过数据上限使用消息可以在页面顶部的通知栏中进行。
 
 -   **当计划过期时**：在 "摘要" 框顶部使用栏来描述用户可以采取的问题和操作。 在这种情况下，不显示数据使用情况、计费周期和漫游信息。
 
@@ -99,7 +99,7 @@ ms.locfileid: "79242748"
 
 -   向上键盘
 
-    **请注意**   触摸键盘启动时，请确保元素（如窗体字段）正确滚动。
+    **注意**   触摸键盘启动时，请确保元素（如窗体字段）正确滚动。
 
      
 
@@ -109,12 +109,12 @@ ms.locfileid: "79242748"
 
 ![与其他应用并行的服务页](images/mb-fig3-snappedview-servicespage.png)
 
-请确保可以通过应用视图访问应用，包括高对比度模式和屏幕阅读器准备情况。 有关如何使应用程序可访问的详细信息，请参阅[使用 JavaScript 的 UWP 应用中的辅助功能](https://docs.microsoft.com/previous-versions/windows/apps/hh452681(v=win.10))。
+请确保可以通过应用视图访问应用，包括高对比度模式和屏幕阅读器准备情况。 有关如何使应用程序可访问的详细信息，请参阅 [使用 JavaScript 的 UWP 应用中的辅助功能](/previous-versions/windows/apps/hh452681(v=win.10))。
 
 ## <a name="span-idlaunchptsspanspan-idlaunchptsspanlaunch-points"></a><span id="launchpts"></span><span id="LAUNCHPTS"></span>启动点
 
 
-你的移动宽带应用可供用户在 "**所有应用**" 视图、"Windows 连接管理器" 或 "通过 toast 通知" 中使用。
+你的移动宽带应用可供用户在 " **所有应用** " 视图、"Windows 连接管理器" 或 "通过 toast 通知" 中使用。
 
 ![入门应用程序的入口点](images/mb-fig4-entrypoints.png)
 
@@ -132,13 +132,13 @@ ms.locfileid: "79242748"
 
 ### <a name="span-idlaunch_app_from_tile_in_all_apps_viewspanspan-idlaunch_app_from_tile_in_all_apps_viewspanspan-idlaunch_app_from_tile_in_all_apps_viewspanlaunch-app-from-tile-in-all-apps-view"></a><span id="Launch_app_from_tile_in_All_Apps_view"></span><span id="launch_app_from_tile_in_all_apps_view"></span><span id="LAUNCH_APP_FROM_TILE_IN_ALL_APPS_VIEW"></span>在所有应用视图中从磁贴启动应用
 
-应用应支持具有多个同时帐户的用户（例如，使用两个外部 USB 移动宽带适配器）。 从磁贴启动应用时，应用应允许用户选择他们想要使用的帐户。
+应用应支持具有多个同时帐户的用户 (例如，使用两个外部 USB 移动宽带适配器) 。 从磁贴启动应用时，应用应允许用户选择他们想要使用的帐户。
 
 如果你的应用程序已挂起或已在运行，则它应显示最后使用的页。 如果你的应用程序尚未运行或挂起信息不可用，则你的应用程序应打开到登陆页面。
 
 ### <a name="span-idtileandtoastspanspan-idtileandtoastspantile-and-toast-notifications"></a><span id="tileandtoast"></span><span id="TILEANDTOAST"></span>磁贴和 toast 通知
 
-在 "**开始**" 菜单中，磁贴是应用的主要表示形式。 用户通过这些磁贴启动其应用，这些磁贴可以通过通知显示新的相关内容和定制内容。 这使 "**开始**" 菜单显得非常生动，并使用户能够一目了然地查看新增内容。 应用还可以通过 toast 通知将时间关键事件与用户通信，无论用户是在其他应用中、在 "**开始**" 屏幕上，还是在桌面上。 设计和交付 toast 的方法与磁贴的设计方法非常相似，因此降低了学习曲线。
+在 " **开始** " 菜单中，磁贴是应用的主要表示形式。 用户通过这些磁贴启动其应用，这些磁贴可以通过通知显示新的相关内容和定制内容。 这使 " **开始** " 菜单显得非常生动，并使用户能够一目了然地查看新增内容。 应用还可以通过 toast 通知将时间关键事件与用户通信，无论用户是在其他应用中、在 " **开始** " 屏幕上，还是在桌面上。 设计和交付 toast 的方法与磁贴的设计方法非常相似，因此降低了学习曲线。
 
 ![启动屏幕磁贴](images/mb-fig7-startscreentile.png)
 
@@ -150,7 +150,7 @@ Toast 通知应仅用于对用户感兴趣的信息，并且通常涉及某种�
 
 ### <a name="span-idsplashspanspan-idsplashspansplash-screen"></a><span id="splash"></span><span id="SPLASH"></span>初始屏幕
 
-您可以使用初始屏幕来升级品牌。 有关初始屏幕的详细信息，请参阅[添加初始屏幕](https://docs.microsoft.com/previous-versions/windows/apps/hh465332(v=win.10))。
+您可以使用初始屏幕来升级品牌。 有关初始屏幕的详细信息，请参阅 [添加初始屏幕](/previous-versions/windows/apps/hh465332(v=win.10))。
 
 ![初始屏幕](images/mb-fig4-splash-screen.png)
 
@@ -166,15 +166,15 @@ Toast 通知应仅用于对用户感兴趣的信息，并且通常涉及某种�
 
 运算符通知设计不当：
 
--   对于不是实时的信息（如促销广告），请勿显示 toast 通知。
+-   对于不是实时 (如) 促销广告的信息，请勿显示 toast 通知。
 
 -   不要显示与操作员通知和警报一起混合的用户到用户聊天消息和促销和播发，因为最终用户可能会错过重要的操作员通知。
 
 ### <a name="span-idresourcesspanspan-idresourcesspanadditional-resources"></a><span id="resources"></span><span id="RESOURCES"></span>其他资源
 
--   [使用磁贴、徽章和 toast 通知](https://docs.microsoft.com/previous-versions/windows/apps/hh868259(v=win.10))
+-   [使用磁贴、徽章和 toast 通知](/previous-versions/windows/apps/hh868259(v=win.10))
 
--   [Toast 通知的指导原则和核对清单](https://docs.microsoft.com/windows/uwp/controls-and-patterns/tiles-badges-notifications)
+-   [Toast 通知的指导原则和核对清单](/windows/uwp/controls-and-patterns/tiles-badges-notifications)
 
 ## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
@@ -182,11 +182,4 @@ Toast 通知应仅用于对用户感兴趣的信息，并且通常涉及某种�
 [设计移动宽带应用的用户体验](designing-the-user-experience-of-a-mobile-broadband-app.md)
 
  
-
- 
-
-
-
-
-
 

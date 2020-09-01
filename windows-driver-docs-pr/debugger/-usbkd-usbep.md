@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 1227cf98b6c0ba4b3e664077ca1ac4d3e84eb994
-ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
+ms.openlocfilehash: e310f1f165c7f8e6983d521e3ccf24230e44a3b4
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84534700"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89213519"
 ---
 # <a name="usbkdusbep"></a>!usbkd.usbep
 
@@ -32,17 +32,17 @@ ms.locfileid: "84534700"
 
 
 <span id="_______StructAddr______"></span><span id="_______structaddr______"></span><span id="_______STRUCTADDR______"></span>*StructAddr*   
-Usbport 的地址 **！ \_HCD \_ 终结点**结构。 若要获取 USB 主机控制器的终结点列表，请使用[**！ usbkd. usbhcdext**](-usbkd-usbhcdext.md)命令。
+Usbport 的地址 **！ \_HCD \_ 终结点** 结构。 若要获取 USB 主机控制器的终结点列表，请使用 [**！ usbkd. usbhcdext**](-usbkd-usbhcdext.md) 命令。
 
 ## <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 
-Usbkd
+Usbkd.dll
 
 <a name="examples"></a>示例
 --------
 
-下面是查找 usbport 地址的一种方法 **！ \_HCD \_ 终结点**结构。 首先输入[**！ usbkd. usb2tree**](-usbkd-usb2tree.md)。
+下面是查找 usbport 地址的一种方法 **！ \_HCD \_ 终结点** 结构。 首先输入 [**！ usbkd. usb2tree**](-usbkd-usb2tree.md)。
 
 ```dbgcmd
 0: kd> !usbkd.usb2tree
@@ -51,9 +51,9 @@ Usbkd
      ...
 ```
 
-在上面的输出中，FDO 的设备扩展的地址显示为[DML](debugger-markup-language-commands.md)命令 **！ ehci \_ info ffffe00001ca11a0**的参数。
+在上面的输出中，FDO 的设备扩展的地址显示为 [DML](debugger-markup-language-commands.md) 命令 **！ ehci \_ info ffffe00001ca11a0**的参数。
 
-单击 DML 命令或将设备扩展的地址传递给[**！ usbhcdext**](-usbkd-usbhcdext.md)以获取全局终结点列表。
+单击 DML 命令或将设备扩展的地址传递给 [**！ usbhcdext**](-usbkd-usbhcdext.md) 以获取全局终结点列表。
 
 ```dbgcmd
 0: kd> !usbkd.usbhcdext ffffe00001ca11a0
@@ -108,14 +108,7 @@ RootHub Endpoint
 
 [USB 2.0 调试器扩展](usb-2-0-extensions.md)
 
-[通用串行总线（USB）驱动程序](https://docs.microsoft.com/windows-hardware/drivers/usbcon/)
+[ (USB) 驱动程序的通用串行总线](../usbcon/index.md)
 
  
-
- 
-
-
-
-
-
 

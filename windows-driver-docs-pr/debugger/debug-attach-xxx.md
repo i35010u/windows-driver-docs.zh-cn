@@ -1,6 +1,6 @@
 ---
-title: 调试\_附加\_XXX
-description: DEBUG\_附加了本主题中介绍的\_*XXX*位标志控制调试器引擎如何附加到用户模式进程。
+title: 调试 \_ 附加 \_ XXX
+description: '\_ \_ 本主题中所述的 DEBUG 附加*XXX*位标志控制调试器引擎如何附加到用户模式进程。'
 ms.date: 08/10/2018
 topic_type:
 - apiref
@@ -11,23 +11,23 @@ api_location:
 api_type:
 - HeaderDef
 ms.localizationpriority: medium
-ms.openlocfilehash: de54d41b7b4fcd9f0616097ec3b088a192f4fcb3
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: f696e7df10e3b8de10c31bae468d4e23e5bc44ef
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72837796"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89213489"
 ---
-# <a name="debug_attach_xxx"></a>调试\_附加\_XXX
+# <a name="debug_attach_xxx"></a>调试 \_ 附加 \_ XXX
 
-DEBUG\_附加了本主题中介绍的\_*XXX*位标志控制调试器引擎如何附加到用户模式进程。 对于附加到内核目标时使用的 DEBUG_ATTACH_XXX 选项，请参阅[IDebugClient：： AttachKernel 方法](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugclient-attachkernel)。
+\_ \_ 本主题中所述的 DEBUG 附加*XXX*位标志控制调试器引擎如何附加到用户模式进程。 对于附加到内核目标时使用的 DEBUG_ATTACH_XXX 选项，请参见 [IDebugClient：： AttachKernel 方法](/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugclient-attachkernel)。
 
 可能的值包括以下各项。
 
 <table>
 <tr>
-<th>Constant</th>
-<th>描述</th>
+<th>返回的常量</th>
+<th>说明</th>
 </tr>
 <tr VALIGN="top">
 <td align="left" width="40%"><a id="DEBUG_ATTACH_NONINVASIVE"></a><a id="debug_attach_noninvasive"></a><dl>
@@ -35,7 +35,7 @@ DEBUG\_附加了本主题中介绍的\_*XXX*位标志控制调试器引擎如何
 </dl>
 </td>
 <td align="left" width="60%">
-<p>附加到目标 noninvasively。  有关 noninvasive 调试的详细信息，请参阅<a href="https://docs.microsoft.com/windows-hardware/drivers/debugger/noninvasive-debugging--user-mode-" data-raw-source="[Noninvasive Debugging (User Mode)](https://docs.microsoft.com/windows-hardware/drivers/debugger/noninvasive-debugging--user-mode-)">Noninvasive 调试（用户模式）</a>。</p>
+<p>附加到目标 noninvasively。  有关 noninvasive 调试的详细信息，请参阅 <a href="https://docs.microsoft.com/windows-hardware/drivers/debugger/noninvasive-debugging--user-mode-" data-raw-source="[Noninvasive Debugging (User Mode)](./noninvasive-debugging--user-mode-.md)">Noninvasive 调试 (用户模式) </a>。</p>
 <p>如果设置了此标志，则不得设置标志 DEBUG_ATTACH_EXISTING、DEBUG_ATTACH_INVASIVE_NO_INITIAL_BREAK 和 DEBUG_ATTACH_INVASIVE_RESUME_PROCESS。</p>
 </td>
 </tr>
@@ -45,8 +45,8 @@ DEBUG\_附加了本主题中介绍的\_*XXX*位标志控制调试器引擎如何
 </dl>
 </td>
 <td align="left" width="60%">
-<p>重新附加到调试器已附加的应用程序（可能已被放弃）。  有关重新附加到目标的详细信息，请参阅<a href="https://docs.microsoft.com/windows-hardware/drivers/debugger/-attach--attach-to-process-" data-raw-source="[.attach (Attach to Process)](https://docs.microsoft.com/windows-hardware/drivers/debugger/-attach--attach-to-process-)">。附加（附加到进程）</a>。</p>
-<p>如果设置了此标志，则不得设置其他 DEBUG_ATTACH_<i>XXX</i>标志。</p>
+<p>重新附加到调试器已附加到的应用程序 (可能被放弃) 。  有关重新附加到目标的详细信息，请参阅 <a href="https://docs.microsoft.com/windows-hardware/drivers/debugger/-attach--attach-to-process-" data-raw-source="[.attach (Attach to Process)](./-attach--attach-to-process-.md)">。附加 (附加到进程) </a>。</p>
+<p>如果设置了此标志，则不得设置其他 DEBUG_ATTACH_<i>XXX</i> 标志。</p>
 </td>
 </tr>
 <tr VALIGN="top">
@@ -93,16 +93,10 @@ DEBUG\_附加了本主题中介绍的\_*XXX*位标志控制调试器引擎如何
 <tbody>
 <tr class="odd">
 <td align="left"><p>标头</p></td>
-<td align="left">DbgEng （包括 DbgEng）</td>
+<td align="left">DbgEng (包含 DbgEng) </td>
 </tr>
 </tbody>
 </table>
 
  
-
- 
-
-
-
-
 

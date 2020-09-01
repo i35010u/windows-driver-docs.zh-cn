@@ -1,39 +1,39 @@
 ---
 title: WDI_TLV_DOT11_RESET_PARAMETERS
-description: WDI_TLV_DOT11_RESET_PARAMETERS 是包含参数的 OID_WDI_TASK_DOT11_RESET TLV。
+description: WDI_TLV_DOT11_RESET_PARAMETERS 是包含 OID_WDI_TASK_DOT11_RESET 的参数的 TLV。
 ms.assetid: 14F3DECD-E875-44BB-969B-705B075E4636
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 WDI_TLV_DOT11_RESET_PARAMETERS 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: b4b318d8626a7e15672861f5a4009cb4496422ec
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 949b5739b9275d4564bf64706072b4dad60c04e8
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67358562"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89214993"
 ---
-# <a name="wditlvdot11resetparameters"></a>WDI\_TLV\_DOT11\_RESET\_PARAMETERS
+# <a name="wdi_tlv_dot11_reset_parameters"></a>WDI \_ TLV \_ DOT11 \_ 重置 \_ 参数
 
 
-WDI\_TLV\_DOT11\_重置\_参数是包含参数的 TLV [OID\_WDI\_任务\_DOT11\_重置](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wdi-task-dot11-reset).
+WDI \_ tlv \_ DOT11 \_ reset \_ 参数是一个 TLV，其中包含 [OID \_ WDI \_ 任务 \_ DOT11 \_ RESET](./oid-wdi-task-dot11-reset.md)的参数。
 
 ## <a name="tlv-type"></a>TLV 类型
 
 
 0xA2
 
-## <a name="length"></a>长度
+## <a name="length"></a>Length
 
 
-超出 UINT8 的大小 （以字节为单位）。
+UINT8 的大小 (以字节为单位) 。
 
 ## <a name="values"></a>值
 
 
-| 在任务栏的搜索框中键入  | 描述                                                                                                     |
+| 类型  | 说明                                                                                                     |
 |-------|-----------------------------------------------------------------------------------------------------------------|
-| UINT8 | 当 （且仅当） 此值设置为 1，端口正在重置所有 MIB 属性都设置为其默认值。 |
+| UINT8 | 如果 (并且仅当) 此设置为1时，重置端口的所有 MIB 属性都将设置为其默认值。 |
 
  
 
@@ -55,16 +55,11 @@ WDI\_TLV\_DOT11\_重置\_参数是包含参数的 TLV [OID\_WDI\_任务\_DOT11\_
 <td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
-<td><p>Header</p></td>
+<td><p>标头</p></td>
 <td>Wditypes.hpp</td>
 </tr>
 </tbody>
 </table>
 
  
-
- 
-
-
-
 

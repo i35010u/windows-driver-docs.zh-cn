@@ -10,33 +10,33 @@ MSHAttr:
 ms.assetid: 286ab231-c215-45cc-b0da-97ec8adf2de1
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 01fba7e9303d79ef2962788508a46eaec4e3c6ea
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6014271e2bfd8496eabcd46cad290e5930c06386
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63382605"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89213659"
 ---
 # <a name="iolecvt-automation-interface"></a>IOleCvt 自动化接口
 
-自动化界面**IOleCvt**对象启用 ASP Web 页后，可以执行各种从一种格式的字符串转换到另一个。 这些问题包括：
+通过 **IOleCvt** 对象的自动化接口，ASP 网页可执行各种格式的字符串转换。 这些方法包括：
 
 -   从 Unicode 到 ANSI 的转换
 
--   从 ANSI 到 Unicode 的转换
+-   从 ANSI 转换为 Unicode
 
--   从 Unicode 转换为 utf-8 （UCS 转换格式 8）
+-   从 Unicode 转换为 UTF-8 (UCS 转换格式 8) 
 
--   从 Unicode 使用为使用另一个代码页的 Unicode 代码页转换
+-   使用另一个代码页将一个代码页转换为 Unicode
 
-尽管大多数应用程序现在使用 Unicode (utf-16) 编码为字符数据，但某些 Windows 桌面应用程序使用基于 Windows 代码页的字符集。 代码页将国际字符分配给大于 127 的 ANSI 字符代码。 有关代码页的详细信息，请参阅 Windows SDK 文档。
+尽管大多数应用程序现在使用 Unicode (字符数据的 UTF-16) 编码，但某些 Windows 桌面应用程序使用基于 Windows 代码页的字符集。 代码页将国际字符分配到大于127的 ANSI 字符代码。 有关代码页的详细信息，请参阅 Windows SDK 文档。
 
-**IOleCvt** Windows 2000 及更高版本支持的接口。
+Windows 2000 及更高版本支持 **IOleCvt** 接口。
 
-编程标识符**IOleCvt**对象是 OlePrn.OleCvt。
+**IOleCvt**对象的编程标识符为 OlePrn. OleCvt。
 
-有关如何对访问打印机从 ASP Web 页面的详细信息，请参阅[Internet 打印](https://docs.microsoft.com/windows-hardware/drivers/print/internet-printing)。
+有关如何从 ASP 网页访问打印机的详细信息，请参阅 [Internet 打印](./internet-printing.md)。
 
-中的"属性 get"操作**IOleCvt**接口以下部分所述：
+以下部分介绍了 **IOleCvt** 接口中的 "属性 get" 操作：
 
-[IOleCvt 属性 Get 操作](iolecvt-property-get-operations.md)
+[IOleCvt 属性获取操作](iolecvt-property-get-operations.md)

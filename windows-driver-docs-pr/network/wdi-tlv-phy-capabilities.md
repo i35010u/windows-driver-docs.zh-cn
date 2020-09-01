@@ -4,36 +4,36 @@ description: WDI_TLV_PHY_CAPABILITIES 是包含 PHY 功能的 TLV。
 ms.assetid: 8F482ED6-6594-4DB5-B53B-4424DAD32D36
 ms.date: 07/18/2017
 keywords:
-- WDI_TLV_PHY_CAPABILITIES 从 Windows Vista 开始的网络驱动程序
+- 从 Windows Vista 开始 WDI_TLV_PHY_CAPABILITIES 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: e57cf918a4916f08d497b43de94daa7d83f0570d
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: d3a58cbc1b60e7c0f125150d8ebdd00ffdc10318
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72838018"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89213728"
 ---
-# <a name="wdi_tlv_phy_capabilities"></a>WDI\_TLV\_PHY\_功能
+# <a name="wdi_tlv_phy_capabilities"></a>WDI \_ TLV \_ PHY \_ 功能
 
 
-WDI\_TLV\_PHY\_功能是包含 PHY 功能的 TLV。
+WDI \_ tlv \_ PHY \_ 功能是包含 PHY 功能的 tlv。
 
 ## <a name="tlv-type"></a>TLV 类型
 
 
 0x1B
 
-## <a name="length"></a>长度
+## <a name="length"></a>Length
 
 
-所有包含的元素的大小的总和（以字节为单位）。
+Sum (所有包含的元素的大小) 。
 
 ## <a name="values"></a>值
 
 
-| 在任务栏的搜索框中键入                                        | 描述                                        |
+| 类型                                        | 说明                                        |
 |---------------------------------------------|----------------------------------------------------|
-| [**WDI\_PHY\_类型**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wditypes/ne-wditypes-_wdi_phy_type) | 指定 PHY 类型。                           |
+| [**WDI \_ PHY \_ 类型**](/windows-hardware/drivers/ddi/wditypes/ne-wditypes-_wdi_phy_type) | 指定 PHY 类型。                           |
 | UINT8                                       | 指定 PHY 是否支持 CF 轮询。 |
 | UINT32                                      | 指定 MPDU 的最大长度。                 |
 | UINT32                                      | 指定操作温度类。         |
@@ -52,7 +52,7 @@ WDI\_TLV\_PHY\_功能是包含 PHY 功能的 TLV。
 <tbody>
 <tr class="odd">
 <td><p>最低受支持的客户端</p></td>
-<td><p>Windows 10</p></td>
+<td><p>Windows 10</p></td>
 </tr>
 <tr class="even">
 <td><p>最低受支持的服务器</p></td>
@@ -66,9 +66,4 @@ WDI\_TLV\_PHY\_功能是包含 PHY 功能的 TLV。
 </table>
 
  
-
- 
-
-
-
 

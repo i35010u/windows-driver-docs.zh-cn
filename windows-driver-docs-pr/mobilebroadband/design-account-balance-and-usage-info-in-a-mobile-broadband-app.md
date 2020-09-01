@@ -4,78 +4,71 @@ description: 设计移动宽带应用中的帐户余额和使用情况信息
 ms.assetid: aec4e4b3-d207-4319-a134-29b4a773c3a6
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b2416293e778f76366cc764d04763c942fcf1cde
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 20e9e4f99455143d7232b6b7d34415a6ab32d10d
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67369676"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89215365"
 ---
 # <a name="design-account-balance-and-usage-info-in-a-mobile-broadband-app"></a>设计移动宽带应用中的帐户余额和使用情况信息
 
 
-用户主要使用移动宽带应用以查看帐户余额和使用情况信息。 此数据应该是应用程序的主屏幕上清晰可见。
+用户主要使用移动宽带应用来查看帐户余额和使用情况信息。 此数据应清楚地显示在应用的主屏幕上。
 
-![后付费的计划摘要](images/mb-fig1-postpaidplansummary.png)
+![支付后计划摘要](images/mb-fig1-postpaidplansummary.png)
 
-后付费帐户相关的帐户信息包括：
-
--   帐户的移动电话号码
-
--   剩余的帐户余额
-
--   数据使用，漫游数据使用和剩余的使用情况
-
--   计费期或计划到期日期
-
-一眼，用户可以清楚地了解多少已使用数据、 以及剩余多少数据，并在计费周期结束 （对于每月帐户）。
-
-![預付的计划摘要](images/mb-fig2-prepaidplansummary.png)
-
-预付帐户相关的帐户信息包括：
+支付后帐户的相关帐户信息包括以下内容：
 
 -   帐户的移动电话号码
 
--   剩余的帐户余额
+-   剩余帐户余额
 
--   重新充电现在按钮，可将付款页面的链接
+-   使用的数据、使用的漫游数据和剩余使用量
 
--   使用数据磁盘大小和剩余
+-   计费周期或计划到期日期
 
--   计划到期日期 （如果存在）
+用户可以一目了然地了解他们使用的数据量、剩余的数据量，以及在每月帐户)  (的计费周期。
 
-## <a name="span-idquicksummaryspanspan-idquicksummaryspanspan-idquicksummaryspanquick-summary"></a><span id="Quick_summary"></span><span id="quick_summary"></span><span id="QUICK_SUMMARY"></span>快速摘要
+![预付付计划摘要](images/mb-fig2-prepaidplansummary.png)
+
+预付帐户的相关帐户信息包括：
+
+-   帐户的移动电话号码
+
+-   剩余帐户余额
+
+-   "立即充电" 按钮，其中的链接可生成付款页
+
+-   使用的数据和剩余数据
+
+-   计划到期日期 (（如果存在）) 
+
+## <a name="span-idquick_summaryspanspan-idquick_summaryspanspan-idquick_summaryspanquick-summary"></a><span id="Quick_summary"></span><span id="quick_summary"></span><span id="QUICK_SUMMARY"></span>快速摘要
 
 
-用于显示帐户信息的相应设计：
+显示帐户信息的适当设计：
 
--   显示相关的帐户信息
+-   显示相关帐户信息
 
--   显示上次更新数据时
+-   显示上次更新数据的时间
 
--   使用说明，如图表和图形，以实现数据可视化效果
+-   使用图表和图形等插图来可视化数据
 
-    **提示**  中所述，可以通过使用确定性进度栏控件，实现条形图[添加进度控件](https://docs.microsoft.com/previous-versions/windows/apps/hh465428(v=win.10))。
+    **提示**   如[添加进度控件](/previous-versions/windows/apps/hh465428(v=win.10))中所述，可以使用确定性进度栏控件实现条形图。
 
      
 
--   当剩余的使用率较低时，显示链接到计划页后，可以升级计划
+-   当剩余使用率较低时，显示指向 "计划" 页的链接以升级计划
 
-用于显示帐户信息的设计不完善：
+用于显示帐户信息的不适当的设计：
 
--   不再显示较长的段落的旁边数据使用情况的法律免责声明。 这可以使用户从帐户使用情况部分的重点变得混乱。 相反，显示的应用程序具有完整法律免责声明的单独部分的链接。
+-   请勿在数据使用旁显示法律免责声明的长段。 这会将用户从 "帐户使用情况" 部分的主要焦点上分散。 而是显示一个链接，该链接指向应用中具有完全法律免责声明的单独部分。
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
+## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
-[设计用户体验的移动宽带应用程序](designing-the-user-experience-of-a-mobile-broadband-app.md)
-
- 
+[设计移动宽带应用的用户体验](designing-the-user-experience-of-a-mobile-broadband-app.md)
 
  
-
-
-
-
-
 

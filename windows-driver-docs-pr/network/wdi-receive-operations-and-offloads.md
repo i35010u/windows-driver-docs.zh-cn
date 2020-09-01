@@ -1,15 +1,15 @@
 ---
 title: WDI 接收操作和卸载
-description: 操作卸载的主要类别是可配置的。MSDU 接收 operationsFrame 转发（转发决策和传动）协议/任务卸载。
+description: 操作卸载的主要类别是可配置的。MSDU operationsFrame 转发 (转发决策和传动) 协议/任务卸载。
 ms.assetid: 7D2648BC-05F2-4F75-BA01-E0385C83E0E8
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ee3060c7b2dd40fed8dfccd65cc3d21f39d689d4
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 0fe5b6770a00ec2c774bfd1ac52c702d4e5f698a
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72842909"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89213157"
 ---
 # <a name="wdi-receive-operations-and-offloads"></a>WDI 接收操作和卸载
 
@@ -17,7 +17,7 @@ ms.locfileid: "72842909"
 操作卸载的主要类别是可配置的。
 
 -   MSDU 级别接收操作
--   帧转发（转发决策和传动）
+-   帧转发 (转发决策和传动) 
 -   协议/任务卸载
 
 下面是 RX 操作和卸载的列表。
@@ -32,9 +32,9 @@ ms.locfileid: "72842909"
 <thead>
 <tr class="header">
 <th align="left">函数</th>
-<th align="left">描述</th>
+<th align="left">说明</th>
 <th align="left">所有权</th>
-<th align="left">注释</th>
+<th align="left">说明</th>
 </tr>
 </thead>
 <tbody>
@@ -84,12 +84,12 @@ ms.locfileid: "72842909"
 <li>密码密钥不可用于解密数据包。</li>
 <li>数据包有效负载未能成功解密。</li>
 <li>数据包有效负载无法通过 MIC 验证。</li>
-<li>此数据包会使为密码算法定义的重播机制失败（请参阅 Rx PN/replay 检查）。</li>
-<li>为数据包的网类型定义隐私例外，该类型指定<strong>WDI_EXEMPT_ 始终</strong>操作。</li>
+<li>该数据包无法找到为密码算法定义的重播机制 (请参阅 Rx PN/replay 检查) 。</li>
+<li>为数据包的网类型定义隐私例外，该类型指定 <strong>WDI_EXEMPT_ 始终</strong> 操作。</li>
 </ul></li>
 <li>如果未加密帧，则丢弃：
 <ul>
-<li>加密密钥可用于解密数据包，并为数据包的 Ethertype 定义了一个隐私例外，其中指定了<strong>WDI_EXEMPT_ON_ KEY_UNAVAILABLE</strong>操作。</li>
+<li>加密密钥可用于解密数据包，并为数据包的 Ethertype 定义了一个隐私例外，用于指定 <strong>WDI_EXEMPT_ON_ KEY_UNAVAILABLE</strong> 操作。</li>
 <li>Dot11ExcludeUnencrypted MIB 设置为 true。</li>
 </ul></li>
 </ol></td>
@@ -127,10 +127,10 @@ ms.locfileid: "72842909"
 <td align="left"></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>较高级别的协议（任务）卸载</p></td>
+<td align="left"><p>高级协议 (任务) 卸载</p></td>
 <td align="left"><p>校验和</p></td>
 <td align="left"><p>Checksum：在启动时可配置的卸载（如果需要）。</p></td>
-<td align="left"><p>校验和：在启动过程中，目标会将其校验和卸载功能作为设备 cap 的一部分传递到 WDI。 有关功能的信息，请参阅<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_tcp_ip_checksum_offload" data-raw-source="[&lt;strong&gt;NDIS_TCP_IP_ CHECKSUM_OFFLOAD&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_tcp_ip_checksum_offload)"><strong>NDIS_TCP_IP_ CHECKSUM_OFFLOAD</strong></a>。</p></td>
+<td align="left"><p>校验和：在启动过程中，目标会将其校验和卸载功能作为设备 cap 的一部分传递到 WDI。 有关功能的信息，请参阅 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_tcp_ip_checksum_offload" data-raw-source="[&lt;strong&gt;NDIS_TCP_IP_ CHECKSUM_OFFLOAD&lt;/strong&gt;](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_tcp_ip_checksum_offload)"><strong>NDIS_TCP_IP_ CHECKSUM_OFFLOAD</strong></a>。</p></td>
 </tr>
 </tbody>
 </table>
@@ -154,25 +154,18 @@ ms.locfileid: "72842909"
 
 在主机实现的 FIPS 模式下操作时，目标不应从 RX 路径上的802.11 标头中去除 QoS 标志。 目标应指示帧，而不修改 QoS 标头。
 
-对于零碎的数据包，由 LE 为 FIPS 模式报告的负载类型总是\_WDI，在主机执行碎片整理过程中 **\_MSDU\_片段**。 但是，在非 FIPS 模式下，报告的负载类型应为 **\_WDI\_MSDU** ，因为目标/TAL 正在执行碎片整理。
+对于零碎的数据包，由 LE 为 FIPS 模式报告的负载类型总是 **WDI \_ 帧 \_ MSDU \_ 片段** ，因为主机正在执行碎片整理过程。 但是，在非 FIPS 模式下，报告的负载类型应为 **WDI \_ 帧 \_ MSDU** ，因为目标/TAL 正在执行碎片整理。
 
 ## <a name="related-topics"></a>相关主题
 
 
-[**NDIS\_TCP\_IP\_校验和\_卸载**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_tcp_ip_checksum_offload)
+[**NDIS \_ TCP \_ IP \_ 校验和 \_ 卸载**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_tcp_ip_checksum_offload)
 
 [WDI 数据传输](wdi-data-transfer.md)
 
-[**WDI\_豁免\_操作\_类型**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dot11wdi/ne-dot11wdi-_wdi_exemption_action_type)
+[**WDI \_ 豁免 \_ 操作 \_ 类型**](/windows-hardware/drivers/ddi/dot11wdi/ne-dot11wdi-_wdi_exemption_action_type)
 
-[**WDI\_帧\_负载\_类型**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dot11wdi/ne-dot11wdi-_wdi_frame_payload_type)
-
- 
+[**WDI \_ 帧 \_ 负载 \_ 类型**](/windows-hardware/drivers/ddi/dot11wdi/ne-dot11wdi-_wdi_frame_payload_type)
 
  
-
-
-
-
-
 

@@ -1,41 +1,41 @@
 ---
 title: OID_WDI_GET_AUTO_POWER_SAVE
-description: OID_WDI_GET_AUTO_POWER_SAVE 获取省电状态的端口。
+description: OID_WDI_GET_AUTO_POWER_SAVE 获取端口的省电状态。
 ms.assetid: b7a14348-66ad-4728-986d-05145eb49b27
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 OID_WDI_GET_AUTO_POWER_SAVE 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: d1224c8ac0454805ac7d574186155e044e49d521
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 66c64a6541d517c462e1f4a1306ee1203b87e2ca
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67387268"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89213295"
 ---
-# <a name="oidwdigetautopowersave"></a>OID\_WDI\_GET\_AUTO\_POWER\_SAVE
+# <a name="oid_wdi_get_auto_power_save"></a>OID \_ WDI \_ 获取 \_ 自动 \_ 节能 \_
 
 
-OID\_WDI\_获取\_自动\_POWER\_保存获取省电状态的端口。
+OID \_ WDI \_ GET \_ 自动省 \_ 电 \_ 获取端口的省电状态。
 
-| 范围 | 设置与任务序列化 | 正常执行时间 （秒） |
+| 作用域 | 设置序列化任务 | 正常执行时间 (秒)  |
 |-------|--------------------------|---------------------------------|
-| Port  | 不适用           | 1                               |
+| 端口  | 不适用           | 1                               |
 
  
 
-没有省电和延迟之间进行权衡。 当自动节能模式设置为启用了[OID\_WDI\_设置\_连接\_质量](oid-wdi-set-connection-quality.md)命令，固件会尝试连接的访问点，若要转到与之交互节能模式多达相应以节约电源。 固件程序还负责检测连接的访问点确认 802.11 规范，并遵循模式协议节能。 如果不符合的访问点 （不支持节能模式正确），固件应不进入节能模式，即使自动 Power 保存设置为启用。 当设置为禁用自动节能时，固件主要关注发送和接收数据包的低延迟。 此示例包括和流式处理模式时，系统使用交流电源，因此较低的延迟是优先于节省电源时。
+省电与延迟之间的权衡。 当自动节能模式设置为使用 [OID \_ WDI \_ set \_ 连接 \_ 质量](oid-wdi-set-connection-quality.md) 命令启用时，固件将尝试与连接的访问点进行交互，使其尽可能多地进入省电模式。 该固件还负责检测连接的接入点是否确认为802.11 规范并遵循省电模式协议。 如果访问点不符合 (不能正确地) 节能模式，则即使将 "自动节能" 设置为 "已启用"，固件也不会进入节能模式。 当 "自动节能" 设置为 "已禁用" 时，固件侧重于发送和接收数据包的低延迟。 这种情况的示例包括：流式处理模式为打开状态，以及系统使用的是 AC 电源，因此首选低延迟是省电。
 
 ## <a name="get-property-parameters"></a>获取属性参数
 
 
-任何其他参数。 标头中的数据就足够了。
-## <a name="get-property-results"></a>获取属性的结果
+无其他参数。 标头中的数据足够了。
+## <a name="get-property-results"></a>获取属性结果
 
 
-| TLV                                                                          | 允许多个 TLV 实例 | 可选 | 描述                  |
+| TLV                                                                          | 允许多个 TLV 实例 | 可选 | 说明                  |
 |------------------------------------------------------------------------------|--------------------------------|----------|------------------------------|
-| [**WDI\_TLV\_GET\_AUTO\_POWER\_SAVE**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-get-auto-power-save) |                                |          | 自动 power 保存信息。 |
+| [**WDI \_ TLV \_ 获取 \_ 自动 \_ 节能 \_**](./wdi-tlv-get-auto-power-save.md) |                                |          | 自动保存电源信息。 |
 
  
 
@@ -57,16 +57,11 @@ OID\_WDI\_获取\_自动\_POWER\_保存获取省电状态的端口。
 <td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
-<td><p>Header</p></td>
-<td>Dot11wdi.h</td>
+<td><p>标头</p></td>
+<td>Dot11wdi</td>
 </tr>
 </tbody>
 </table>
 
  
-
- 
-
-
-
 

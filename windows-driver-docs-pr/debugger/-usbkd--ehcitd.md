@@ -12,17 +12,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 57285ec83d7d356a583a84dad40cbc8cdae79275
-ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
+ms.openlocfilehash: 7bb28247db34d55f36f4992c852b8ba1f7ddd8fe
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84534876"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89213584"
 ---
 # <a name="usbkd_ehcitd"></a>！ usbkd。 \_ehcitd
 
 
-**！ Usbkd。 \_ehcitd**命令显示 usbehci 中的信息 **！ \_传输 \_ 上下文**结构。 使用此命令可以显示有关异步终结点（即控件和大容量终结点）的信息。
+**！ Usbkd。 \_ehcitd**命令显示 usbehci 中的信息 **！ \_传输 \_ 上下文**结构。 使用此命令显示 (的异步终结点的相关信息，) 控制和批量终结点。
 
 ```dbgcmd
 !usbkd._ehcitd StructAddr
@@ -32,17 +32,17 @@ ms.locfileid: "84534876"
 
 
 <span id="_______StructAddr______"></span><span id="_______structaddr______"></span><span id="_______STRUCTADDR______"></span>*StructAddr*   
-Usbehci 的地址 **！ \_传输 \_ 上下文**结构。
+Usbehci 的地址 **！ \_传输 \_ 上下文** 结构。
 
 ## <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 
-Usbkd
+Usbkd.dll
 
 <a name="examples"></a>示例
 --------
 
-此示例展示了获取 usbehci 地址的一种方法 **！ \_传输 \_ 上下文**结构。 使用[**！ \_ehciep**](-usbkd--ehciep.md)显示有关终结点的信息。
+此示例展示了获取 usbehci 地址的一种方法 **！ \_传输 \_ 上下文** 结构。 使用 [**！ \_ehciep**](-usbkd--ehciep.md) 显示有关终结点的信息。
 
 ```dbgcmd
 0: kd> !_ehciep ffffe000001ab618
@@ -65,7 +65,7 @@ slot[0] dt usbehci!_ENDPOINT_SLOT ffffe000001ab798 - slot_NotBusy
     ....
 ```
 
-在上面的输出中， `ffffd00021e65100` 是 usbehci 的地址 **！ \_传输 \_ 上下文**结构。 将此地址传递给 **！ \_ehcitd**。
+在上面的输出中， `ffffd00021e65100` 是 usbehci 的地址 **！ \_传输 \_ 上下文** 结构。 将此地址传递给 **！ \_ehcitd**。
 
 ```dbgcmd
 0: kd> !_ehcitd ffffd00021e65100
@@ -111,14 +111,7 @@ SlotNextHcdTD: 21e65200
 
 [USB 2.0 调试器扩展](usb-2-0-extensions.md)
 
-[通用串行总线（USB）驱动程序](https://docs.microsoft.com/windows-hardware/drivers/usbcon/)
+[ (USB) 驱动程序的通用串行总线](../usbcon/index.md)
 
  
-
- 
-
-
-
-
-
 

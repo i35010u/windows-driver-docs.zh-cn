@@ -1,35 +1,35 @@
 ---
 title: NDIS_STATUS_WDI_INDICATION_STOP_AP
-description: 微型端口驱动程序使用 NDIS_STATUS_WDI_INDICATION_STOP_AP 指示适配器无法承受任何 PHYs 802.11 访问点 (AP) 功能。
+description: 微型端口驱动程序使用 NDIS_STATUS_WDI_INDICATION_STOP_AP 指示适配器无法在任何 PHYs 上维持802.11 接入点 (AP) 功能。
 ms.assetid: EF129BD3-6AA2-4F38-BECD-E9D526314A27
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 NDIS_STATUS_WDI_INDICATION_STOP_AP 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: d634be86928ccb383763dbb4195cc98c492c01ee
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 4b4663b1683ee90df1c1db9f40ac8339077f1eee
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67375211"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89213901"
 ---
-# <a name="ndisstatuswdiindicationstopap"></a>NDIS\_状态\_WDI\_指示\_停止\_亚太
+# <a name="ndis_status_wdi_indication_stop_ap"></a>NDIS \_ 状态 \_ WDI \_ 指示 \_ 停止 \_ AP
 
 
-微型端口驱动程序使用 NDIS\_状态\_WDI\_指示\_停止\_AP 以指示该适配器无法承受任何 PHYs 802.11 访问点 (AP) 功能。 只有在 NIC 上可用 PHYs 已停止运行任何 APs 后，适配器应发送此指示。 主机阻止所有[OID\_WDI\_任务\_启动\_AP](oid-wdi-task-start-ap.md)请求，直到适配器发送为止[NDIS\_状态\_WDI\_指示\_可以\_SUSTAIN\_AP](ndis-status-wdi-indication-can-sustain-ap.md)。
+微型端口驱动程序使用 NDIS \_ 状态 \_ WDI \_ 指示 \_ 停止 \_ AP，指示适配器无法在任何 PHYs 上维持802.11 接入点 (AP) 功能。 仅当 NIC 停止了在可用 PHYs 上运行的任何 Ap 后，适配器才应发送此指示。 主机会阻止所有 [OID \_ WDI \_ 任务 \_ 启动 \_ AP](oid-wdi-task-start-ap.md) 请求，直到适配器发送 [NDIS \_ 状态 \_ WDI \_ 指示 \_ 可以 \_ 维持 \_ ap](ndis-status-wdi-indication-can-sustain-ap.md)。
 
-| Object |
+| 对象 |
 |--------|
-| Port   |
+| 端口   |
 
  
 
-## <a name="payload-data"></a>有效负载数据
+## <a name="payload-data"></a>负载数据
 
 
-| 在任务栏的搜索框中键入                                                                      | 允许多个 TLV 实例 | 可选 | 描述                                                                       |
+| 类型                                                                      | 允许多个 TLV 实例 | 可选 | 说明                                                                       |
 |---------------------------------------------------------------------------|--------------------------------|----------|-----------------------------------------------------------------------------------|
-| [**WDI\_TLV\_INDICATION\_STOP\_AP**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-indication-stop-ap) |                                |          | 该适配器的原因无法承受任何 PHYs 802.11 AP 功能。 |
+| [**WDI \_ TLV \_ 指示 \_ 停止 \_ AP**](./wdi-tlv-indication-stop-ap.md) |                                |          | 适配器无法在任何 PHYs 上承受 802.11 AP 功能的原因。 |
 
  
 
@@ -51,23 +51,18 @@ ms.locfileid: "67375211"
 <td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
-<td><p>Header</p></td>
-<td>Dot11wdi.h</td>
+<td><p>标头</p></td>
+<td>Dot11wdi</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
-[OID\_WDI\_TASK\_START\_AP](oid-wdi-task-start-ap.md)
+[OID \_ WDI \_ 任务 \_ 启动 \_ AP](oid-wdi-task-start-ap.md)
 
-[NDIS\_状态\_WDI\_指示\_可以\_SUSTAIN\_亚太](ndis-status-wdi-indication-can-sustain-ap.md)
-
- 
+[NDIS \_ 状态 \_ WDI \_ 指示 \_ 可以 \_ 承受 \_ AP](ndis-status-wdi-indication-can-sustain-ap.md)
 
  
-
-
-
 

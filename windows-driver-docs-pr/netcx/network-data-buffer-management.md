@@ -7,16 +7,16 @@ keywords:
 ms.date: 02/20/2018
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 89f9cd1ea75ab39f9989dabb6c0e6052a78ba0be
-ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
+ms.openlocfilehash: 7bf85e96e717710db18c155eaa0b5fcd8b07db8c
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/19/2019
-ms.locfileid: "75209022"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89214158"
 ---
 # <a name="network-data-buffer-management"></a>网络数据缓冲区管理
 
-缓冲区管理是一项功能，可使网络接口卡（NIC）客户端驱动程序和操作系统在为传输（Tx）和接收（Rx）数据路径从系统内存中分配数据包数据缓冲区时一起工作。 这可能会使 NIC 更快地提高性能，并使 NIC 的客户端驱动程序的内存生存期管理更简单，并使系统更好地控制内存。
+缓冲区管理是一项功能，该功能使网络接口卡 (NIC) 客户端驱动程序和操作系统，以便在传输 (Tx) 的系统内存中分配数据包数据缓冲区，并接收 (Rx) 数据路径。 这可能会使 NIC 更快地提高性能，并使 NIC 的客户端驱动程序的内存生存期管理更简单，并使系统更好地控制内存。
 
 ## <a name="the-benefits-of-buffer-management-in-netadaptercx"></a>NetAdapterCx 中的缓冲区管理的优点
 
@@ -33,13 +33,13 @@ ms.locfileid: "75209022"
 ## <a name="how-to-leverage-buffer-management"></a>如何利用缓冲区管理
 
 > [!IMPORTANT]
-> 如果你的硬件具有 DMA 功能，则在设置 Rx 和 Tx 功能之前，你将需要创建一个 WDFDMAENABLER 对象。 当你用[**WDF_DMA_ENABLER_CONFIG**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdmaenabler/ns-wdfdmaenabler-_wdf_dma_enabler_config)结构配置 WDFDMAENABLER 对象时，请确保将**WdmDmaVersionOverride**成员设置为**3**以指定 DMA 版本3。
+> 如果你的硬件具有 DMA 功能，则在设置 Rx 和 Tx 功能之前，你将需要创建一个 WDFDMAENABLER 对象。 当你用 [**WDF_DMA_ENABLER_CONFIG**](/windows-hardware/drivers/ddi/wdfdmaenabler/ns-wdfdmaenabler-_wdf_dma_enabler_config) 结构配置 WDFDMAENABLER 对象时，请确保将 **WdmDmaVersionOverride** 成员设置为 **3** 以指定 DMA 版本3。
 
 若要选择缓冲管理，请执行以下步骤：
 
-1. 在启动网络适配器时，但在调用[**NetAdapterStart**](https://docs.microsoft.com/windows-hardware/drivers/ddi/netadapter/nf-netadapter-netadapterstart)之前，请分别使用 RX 和 TX 路径的[**NET_ADAPTER_RX_CAPABILITIES**](https://docs.microsoft.com/windows-hardware/drivers/ddi/netadapter/ns-netadapter-_net_adapter_rx_capabilities)和[**NET_ADAPTER_TX_CAPABILITIES**](https://docs.microsoft.com/windows-hardware/drivers/ddi/netadapter/ns-netadapter-_net_adapter_tx_capabilities)数据结构告诉系统硬件的数据缓冲区功能和约束。 
-2. 通过调用某个初始化函数来初始化两个功能结构。 例如，支持 DMA 的 NIC 客户端驱动程序将使用[**NET_ADAPTER_TX_CAPABILITIES_INIT_FOR_DMA**](https://docs.microsoft.com/windows-hardware/drivers/ddi/netadapter/nf-netadapter-net_adapter_tx_capabilities_init_for_dma)和[**NET_ADAPTER_RX_CAPABILITIES_INIT_SYSTEM_MANAGED_DMA**](https://docs.microsoft.com/windows-hardware/drivers/ddi/netadapter/nf-netadapter-net_adapter_rx_capabilities_init_system_managed_dma)来声明其硬件 DMA capablities，并指示系统完全管理它的数据缓冲区。
-3. 将初始化的 Tx 和 Rx 功能结构传递到[**NetAdapterSetDatapathCapabilities**](https://docs.microsoft.com/windows-hardware/drivers/ddi/netadapter/nf-netadapter-netadaptersetdatapathcapabilities)方法。
+1. 在启动网络适配器时，但在调用 [**NetAdapterStart**](/windows-hardware/drivers/ddi/netadapter/nf-netadapter-netadapterstart)之前，请分别使用 RX 和 TX 路径的 [**NET_ADAPTER_RX_CAPABILITIES**](/windows-hardware/drivers/ddi/netadapter/ns-netadapter-_net_adapter_rx_capabilities) 和 [**NET_ADAPTER_TX_CAPABILITIES**](/windows-hardware/drivers/ddi/netadapter/ns-netadapter-_net_adapter_tx_capabilities) 数据结构告诉系统硬件的数据缓冲区功能和约束。 
+2. 通过调用某个初始化函数来初始化两个功能结构。 例如，支持 DMA 的 NIC 客户端驱动程序将使用 [**NET_ADAPTER_TX_CAPABILITIES_INIT_FOR_DMA**](/windows-hardware/drivers/ddi/netadapter/nf-netadapter-net_adapter_tx_capabilities_init_for_dma) 和 [**NET_ADAPTER_RX_CAPABILITIES_INIT_SYSTEM_MANAGED_DMA**](/windows-hardware/drivers/ddi/netadapter/nf-netadapter-net_adapter_rx_capabilities_init_system_managed_dma) 来声明其硬件 DMA capablities，并指示系统完全管理它的数据缓冲区。
+3. 将初始化的 Tx 和 Rx 功能结构传递到 [**NetAdapterSetDatapathCapabilities**](/windows-hardware/drivers/ddi/netadapter/nf-netadapter-netadaptersetdatapathcapabilities) 方法。
 
 
 ## <a name="example"></a>示例

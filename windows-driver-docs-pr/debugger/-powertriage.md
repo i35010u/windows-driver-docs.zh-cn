@@ -1,6 +1,6 @@
 ---
 title: powertriage
-description: 有关系统和设备电源 powertriage 扩展显示摘要信息相关组件。
+description: Powertriage 扩展显示有关系统和设备电源相关组件的摘要信息。
 ms.assetid: A202ED64-B706-42AC-B058-C44321C9171F
 keywords:
 - powertriage Windows 调试
@@ -12,17 +12,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: e5a96131147a9272bd50287b6b7bca70969df8c0
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: efa4fcf591189d94ba886c3ece06fd0b74363ad0
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67363095"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89215377"
 ---
 # <a name="powertriage"></a>!powertriage
 
 
-！ Powertriage 扩展显示摘要信息系统和设备电源相关的组件。 它还提供了指向可用于收集的其他信息的相关命令。 ！ Powertriage 命令不具有任何参数。 可以使用此命令，以及这两个实时内核模式调试和故障转储文件分析。
+！ Powertriage 扩展显示有关系统和设备电源相关组件的摘要信息。 它还提供指向可用于收集其他信息的相关命令的链接。 ！ Powertriage 命令没有参数。 此命令可用于实时内核模式调试和故障转储文件分析。
 
 语法
 
@@ -30,12 +30,12 @@ ms.locfileid: "67363095"
 !powertriage
 ```
 
-## <a name="span-idddkthreaddbgspanspan-idddkthreaddbgspanparameters"></a><span id="ddk__thread_dbg"></span><span id="DDK__THREAD_DBG"></span>参数
+## <a name="span-idddk__thread_dbgspanspan-idddk__thread_dbgspanparameters"></a><span id="ddk__thread_dbg"></span><span id="DDK__THREAD_DBG"></span>参数
 
 
 无
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 <table>
 <colgroup>
@@ -55,13 +55,13 @@ ms.locfileid: "67363095"
 <a name="remarks"></a>备注
 -------
 
-！ Powertriage 扩展将显示以下信息。
+！ Powertriage 扩展显示以下信息。
 
-1. 电源和设备节点的状态 ！ podev 的所有设备对象。
-2. 链接到[ **！ rcdrkd.rcdrlogdump** ](-rcdrkd-rcdrlogdump.md)如果驱动程序已启用 IFR。 有关 IFR 详细信息，请参阅[使用即时跟踪记录器 (IFR) KMDF 和 UMDF 2 驱动程序中](https://docs.microsoft.com/windows-hardware/drivers/wdf/using-wpp-software-tracing-in-kmdf-and-umdf-2-drivers)。
-3. 链接到[ **！ wdfkd.wdfdriverinfo** ](-wdfkd-wdfdriverinfo.md)并[ **！ wdfkd.wdflogdump** ](-wdfkd-wdflogdump.md) WDF 驱动程序。
-4. 链接到 ！ fxdevice PoFx 设备。 有关 PoFX 详细信息，请参阅[电源管理框架概述](https://docs.microsoft.com/windows-hardware/drivers/kernel/overview-of-the-power-management-framework)。
-下面是示例输出 ！ powertriage 命令。
+1. 所有设备对象的设备节点的电源状态以及！ podev。
+2. 如果驱动程序已启用 IFR，则链接到[**！ rcdrkd. rcdrlogdump。**](-rcdrkd-rcdrlogdump.md) 有关 IFR 的详细信息，请参阅 [在 KMDF 和 UMDF 2 驱动程序中使用即时 Trace 录像机 (IFR) ](../wdf/using-wpp-software-tracing-in-kmdf-and-umdf-2-drivers.md)。
+3. 指向 WDF 驱动程序的 [**！ wdfkd. wdfdriverinfo**](-wdfkd-wdfdriverinfo.md) 和 [**！ wdfkd**](-wdfkd-wdflogdump.md) 的链接。
+4. 链接到！ fxdevice for PoFx 设备。 有关 PoFX 的详细信息，请参阅 [电源管理框架概述](../kernel/overview-of-the-power-management-framework.md)。
+下面是！ powertriage 命令的示例输出。
 
 ```dbgcmd
 kd> !powertriage
@@ -134,17 +134,11 @@ Links:
 
 **转储文件电源故障分析**
 
-！ Powertriage 扩展可用于检查相关错误的电源状态信息的系统崩溃。 例如，在中的情况下[ **Bug 检查 0x9F:驱动程序\_电源\_状态\_失败**](bug-check-0x9f--driver-power-state-failure.md)，扩展将显示所有已分配的 power Irp，连同关联的设备堆栈：
+在检查与错误电源状态信息相关的系统崩溃时，！ powertriage 扩展可能很有用。 例如，在发生 [**错误检查0x9F：驱动程序 \_ 电源 \_ 状态 \_ 故障**](bug-check-0x9f--driver-power-state-failure.md)的情况下，该扩展将显示所有已分配的电源 irp，相关联的设备堆栈连同：
 
-1. 链接到[ **！ irp** ](-irp.md)相关 Irp 命令。
-2. 链接到[ **！ findthreads** ](-findthreads.md)相关 IRP 命令。 IRP 添加为该搜索条件并显示从开始到搜索条件线程更高版本关联的线程首先列出的一部分。
-转储的 power Irp 可帮助在调试中的所有设备堆栈事例 ！ 分析无法以正确地标识 IRP 与故障相关联。
-
- 
+1. 链接到相关 Irp 的 [**！ irp**](-irp.md) 命令。
+2. 指向带有相关 IRP 的 [**！ findthreads**](-findthreads.md) 命令的链接。 IRP 作为搜索条件的一部分进行添加，并将以更高的相关性开始的线程显示到前面列出的搜索条件线程。
+用 power Irp 转储所有设备堆栈可帮助进行调试，其中！分析无法正确标识与崩溃关联的 IRP。
 
  
-
-
-
-
 

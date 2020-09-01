@@ -1,60 +1,60 @@
 ---
 title: OID_WDI_ABORT_TASK
-description: OID_WDI_ABORT_TASK 是向下发送取消挂起的任务特定的属性。
+description: OID_WDI_ABORT_TASK 是向下发送以取消特定挂起任务的属性。
 ms.assetid: 0E454DC9-1CED-497F-90A8-7065883BB945
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 OID_WDI_ABORT_TASK 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 36e481f0eff633f580756a8dfc2f1165e30cc884
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 069564197a72c3fb41c7df42fa5630c70756d87d
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67353668"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89213307"
 ---
-# <a name="oidwdiaborttask"></a>OID\_WDI\_ABORT\_TASK
+# <a name="oid_wdi_abort_task"></a>OID \_ WDI \_ 中止 \_ 任务
 
 
-OID\_WDI\_中止\_任务是向下发送取消挂起的任务特定的属性。
+OID \_ WDI \_ 中止 \_ 任务是向下发送以取消特定挂起任务的属性。
 
-| 范围 | 设置与任务序列化 | 正常执行时间 （秒） |
+| 作用域 | 设置序列化任务 | 正常执行时间 (秒)  |
 |-------|--------------------------|---------------------------------|
-| Port  | 否                       | 1                               |
+| 端口  | 否                       | 1                               |
 
  
 
-此命令遵循属性语义。 它应被视为一个信号，应尽可能快地处理，应完成独立任务完成。 然后，IHV 组件必须尝试尽可能快地完成挂起的任务。
+此命令遵循属性语义。 应将它视为信号，应尽快处理，并应独立于任务完成完成。 然后，IHV 组件必须尽快尝试完成挂起的任务。
 
 ## <a name="command-parameters"></a>命令参数
 
 
-| TLV                                                                    | 允许多个 TLV 实例 | 可选 | 描述                                          |
+| TLV                                                                    | 允许多个 TLV 实例 | 可选 | 说明                                          |
 |------------------------------------------------------------------------|--------------------------------|----------|------------------------------------------------------|
-| [**WDI\_TLV\_CANCEL\_PARAMETERS**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-cancel-parameters) |                                |          | 正在取消此命令的信息。 |
+| [**WDI \_ TLV \_ 取消 \_ 参数**](./wdi-tlv-cancel-parameters.md) |                                |          | 要取消的命令的信息。 |
 
  
 
 ## <a name="command-result"></a>命令结果
 
 
-包含状态的 NDIS\_状态\_成功。 没有任何额外负载。
+包含 NDIS \_ 状态 \_ 成功状态。 没有其他有效负载。
 ## <a name="examples"></a>示例
 
 
-原始输入的任务命令：
+原始输入任务命令：
 
-字段子字段类型值 NDIS\_OID\_请求 Oid NDIS\_OID OID(WDI\_TASK\_SCAN) InputBufferLength UINT32 0x210 （示例） InformationBuffer PVOID 指针指向包含 WDI 的内存块\_消息\_标头 + TLV 负载 WDI\_消息\_标头 PortId UINT16 0x0001 （示例） 保留 UINT16 n/A WiFiStatus NDIS\_状态 n/A TransactionId UINT32 0x1111 （示例) IhvSpecificId UINT32 n/A TLV 负载 TLV 负载各种负载数据
+字段子字段类型值 NDIS \_ oid \_ 请求 oid NDIS \_ OID oid (WDI \_ TASK \_ SCAN) InputBufferLength UINT32 0X210 (示例) InformationBuffer PVOID 指向包含 WDI \_ 消息 \_ 头 + TLV 负载 WDI 消息标头的内存块的指针 + TLV 负载 PortId \_ 消息 \_ 标头 0x0001 UINT16 WiFiStatus (示例) 保留 UINT16 \_
  
 
-中止任务输入的命令 （使用消息标头中）：
+中止任务输入命令 (，消息标头) ：
 
-字段子字段类型值 NDIS\_OID\_请求 Oid NDIS\_OID OID(WDI\_ABORT\_TASK) InputBufferLength UINT32 sizeof (WDI\_消息\_标头) + sizeof (WDI\_TLV\_取消\_参数) InformationBuffer PVOID 指向内存块，其中包含 WDI\_消息\_标头 + TLV 负载 WDI\_消息\_标头 PortId UINT16 0x0001 （示例） 保留 UINT16 n/A WiFiStatus NDIS\_状态 n/A TransactionId UINT32 0x2222 （示例） IhvSpecificId UINT32 0 WDI\_TLV\_取消\_参数OriginalTaskOid NDIS\_OID OID(WDI\_TASK\_SCAN) OriginalPortId UINT16 0x0001 （示例） OriginalTransactionId UINT32 0x1111 （示例）
+字段子字段类型值 NDIS \_ oid \_ 请求 oid NDIS \_ OID oid (WDI \_ ABORT \_ TASK) InputBufferLength UINT32 sizeof (WDI \_ 消息 \_ 标头) + Sizeof (WDI \_ TLV \_ 取消 \_ 参数) InformationBuffer PVOID 指向包含 WDI 消息头 + TLV 负载的内存块的指针 WDI \_ \_ \_ 消息标头 \_ PortId UINT16 0X0001 (示例) 保留 UINT16 n/a WiFiStatus NDIS \_ 状态 n/a TransactionId UINT32 0x2222 (示例) IhvSpecificId Uint32 0 WDI \_ TLV \_ 取消 \_ 参数 OriginalTaskOid NDIS \_ OID oid (WDI \_ 任务 \_ 扫描) OriginalPortId UINT16 0x0001 (示例) OriginalTransactionId UINT32 0x1111 (示例) 
  
 
-中止任务命令的结果：
+中止任务命令结果：
 
-字段子字段类型值 NDIS\_OID\_请求 Oid NDIS\_OID OID(WDI\_TASK\_SCAN) OutputBufferLength UINT32 sizeof (WDI\_消息\_标头)InformationBuffer PVOID 指向内存块，其中包含 WDI\_消息\_标头 WDI\_消息\_标头 PortId UINT16 0x0001 （示例） 保留 UINT16 n/A WiFiStatus NDIS\_状态 NDIS\_状态\_成功 TransactionId UINT32 0x2222 （示例） IhvSpecificId UINT32 n/A
+字段子字段类型值 NDIS \_ oid \_ 请求 oid NDIS \_ OID oid (WDI \_ TASK \_ SCAN) OutputBufferLength UINT32 sizeof (WDI \_ 消息 \_ 标头) InformationBuffer PVOID 指向包含 WDI 消息头的内存块的指针 WDI 消息头 \_ \_ \_ \_ PortId UINT16 0x0001 (示例) 保留 UINT16 n/a WiFiStatus ndis \_ 状态 NDIS \_ 状态 \_ 成功 TransactionId
  
 
 <a name="requirements"></a>要求
@@ -75,16 +75,11 @@ OID\_WDI\_中止\_任务是向下发送取消挂起的任务特定的属性。
 <td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
-<td><p>Header</p></td>
-<td>Dot11wdi.h</td>
+<td><p>标头</p></td>
+<td>Dot11wdi</td>
 </tr>
 </tbody>
 </table>
 
  
-
- 
-
-
-
 

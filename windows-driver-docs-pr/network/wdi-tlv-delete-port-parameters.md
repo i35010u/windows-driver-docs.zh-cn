@@ -1,37 +1,37 @@
 ---
 title: WDI_TLV_DELETE_PORT_PARAMETERS
-description: WDI_TLV_DELETE_PORT_PARAMETERS 是包含参数的 OID_WDI_TASK_DELETE_PORT TLV。
+description: WDI_TLV_DELETE_PORT_PARAMETERS 是包含 OID_WDI_TASK_DELETE_PORT 的参数的 TLV。
 ms.assetid: F3DDECDC-1A92-4022-9E2C-780ED480172C
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 WDI_TLV_DELETE_PORT_PARAMETERS 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 030d8a7a3f1835bf535e857e650a755d57d95806
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 646fc3a6139319155d520cd9db0803d48e81acd4
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67384204"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89214286"
 ---
-# <a name="wditlvdeleteportparameters"></a>WDI\_TLV\_删除\_端口\_参数
+# <a name="wdi_tlv_delete_port_parameters"></a>WDI \_ TLV \_ 删除 \_ 端口 \_ 参数
 
 
-WDI\_TLV\_删除\_端口\_参数是包含参数的 TLV [OID\_WDI\_任务\_删除\_端口](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wdi-task-delete-port).
+WDI \_ tlv \_ 删除 \_ 端口 \_ 参数是一个 TLV，其中包含 [OID \_ WDI \_ TASK \_ DELETE \_ 端口](./oid-wdi-task-delete-port.md)的参数。
 
 ## <a name="tlv-type"></a>TLV 类型
 
 
 0x2A
 
-## <a name="length"></a>长度
+## <a name="length"></a>Length
 
 
-所有包含的元素的大小的总和 （以字节为单位）。
+Sum (所有包含的元素的大小) 。
 
 ## <a name="values"></a>值
 
 
-| 在任务栏的搜索框中键入   | 描述                          |
+| 类型   | 说明                          |
 |--------|--------------------------------------|
 | UINT16 | 指定要删除的端口号。 |
 
@@ -55,16 +55,11 @@ WDI\_TLV\_删除\_端口\_参数是包含参数的 TLV [OID\_WDI\_任务\_删除
 <td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
-<td><p>Header</p></td>
+<td><p>标头</p></td>
 <td>Wditypes.hpp</td>
 </tr>
 </tbody>
 </table>
 
  
-
- 
-
-
-
 

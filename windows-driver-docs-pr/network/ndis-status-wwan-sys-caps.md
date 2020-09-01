@@ -1,26 +1,26 @@
 ---
 title: NDIS_STATUS_WWAN_SYS_CAPS_INFO
-description: 微型端口驱动程序使用 NDIS_STATUS_WWAN_SYS_CAPS_INFO 通知来通知 MB 服务完成了以前的 OID_WWAN_SYS_CAPS_INFO 查询请求。
+description: 微型端口驱动程序使用 NDIS_STATUS_WWAN_SYS_CAPS_INFO 通知来通知 MB 服务完成了上一个 OID_WWAN_SYS_CAPS_INFO 查询请求。
 ms.assetid: 653A35EC-29BB-458D-B33C-41EF6EF47A6E
 ms.date: 07/18/2017
 keywords:
-- NDIS_STATUS_WWAN_SYS_CAPS_INFO 从 Windows Vista 开始的网络驱动程序
+- 从 Windows Vista 开始 NDIS_STATUS_WWAN_SYS_CAPS_INFO 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 18a02c8404785648f903de3555bb239fc23f82e6
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 04689175f1e4a6376fab44fd22d7301df01a1177
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72844626"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89213415"
 ---
-# <a name="ndis_status_wwan_sys_caps_info"></a>NDIS\_状态\_WWAN\_SYS\_CAP\_信息
+# <a name="ndis_status_wwan_sys_caps_info"></a>NDIS \_ 状态 \_ WWAN \_ SYS \_ CAP \_ 信息
 
 
-微型端口驱动程序使用**NDIS\_状态\_WWAN\_SYS\_cap\_info**通知，通知 MB 服务有关上一个 OID 的完成[\_WWAN\_sys.databases](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wwan-sys-caps)\_查询请求。
+微型端口驱动程序使用 **NDIS \_ 状态 \_ WWAN \_ sys \_ CAP \_ info** 通知来通知 MB 服务完成了上一个 [OID \_ WWAN \_ sys \_ cap \_ 信息](./oid-wwan-sys-caps.md) 查询请求。
 
 微型端口驱动程序无法使用此通知发送未经请求的事件。
 
-此通知使用[**NDIS\_WWAN\_SYS\_cap\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_sys_caps_info)结构。
+此通知使用 [**NDIS \_ WWAN \_ 系统 \_ cap \_ 信息**](/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_sys_caps_info) 结构。
 
 <a name="requirements"></a>要求
 ------------
@@ -45,14 +45,9 @@ ms.locfileid: "72844626"
 ## <a name="see-also"></a>另请参阅
 
 
-[OID\_WWAN\_SYS\_CAP\_信息](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wwan-sys-caps)
+[OID \_ WWAN \_ SYS \_ CAP \_ 信息](./oid-wwan-sys-caps.md)
 
-[**NDIS\_WWAN\_SYS\_CAP\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_sys_caps_info)
-
- 
+[**NDIS \_ WWAN \_ SYS \_ CAP \_ 信息**](/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_sys_caps_info)
 
  
-
-
-
 

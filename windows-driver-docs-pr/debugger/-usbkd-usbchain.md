@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: f5d57b852e76e5261eb7bb35f4737ef10ab7472c
-ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
+ms.openlocfilehash: ef6a9ab3f55c0825495a01839396cb4d47d94407
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84534040"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89213566"
 ---
 # <a name="usbkdusbchain"></a>!usbkd.usbchain
 
@@ -32,17 +32,17 @@ ms.locfileid: "84534040"
 
 
 <span id="_______PDO______"></span><span id="_______pdo______"></span>*PDO*   
-连接到 USB 集线器的设备的物理设备对象（PDO）的地址。
+连接到 USB 集线器的设备 (PDO) 的物理设备对象的地址。
 
 ## <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 
-Usbkd
+Usbkd.dll
 
 <a name="examples"></a>示例
 --------
 
-下面是查找 USB 设备的 PDO 地址的一种方法。 首先输入[**！ usbkd. usb2tree**](-usbkd-usb2tree.md)。
+下面是查找 USB 设备的 PDO 地址的一种方法。 首先输入 [**！ usbkd. usb2tree**](-usbkd-usb2tree.md)。
 
 ```dbgcmd
  kd> !usbkd.usb2tree
@@ -74,14 +74,7 @@ VID Xxxx PID Xxxx REV 0100  Xxxx Corporation
 
 [USB 2.0 调试器扩展](usb-2-0-extensions.md)
 
-[通用串行总线（USB）驱动程序](https://docs.microsoft.com/windows-hardware/drivers/usbcon/)
+[ (USB) 驱动程序的通用串行总线](../usbcon/index.md)
 
  
-
- 
-
-
-
-
-
 

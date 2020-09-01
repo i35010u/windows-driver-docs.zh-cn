@@ -6,12 +6,12 @@ keywords:
 - 紧急数据 WDK San
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2168866c5b17ec8deb1b15c72d0c896646ff055a
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 0a05d44b866b860d4c3d794ee15bbbcb69504662
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386834"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89214450"
 ---
 # <a name="sending-urgent-data-on-a-san"></a>在 SAN 上发送紧急数据
 
@@ -19,27 +19,21 @@ ms.locfileid: "67386834"
 
 
 
-如果应用程序在 SAN 上发送紧急的数据，Windows 套接字切换传输的数据作为按以下顺序中所述：
+如果应用程序在 SAN 上发送紧急数据，Windows 套接字交换机会按以下顺序传输该数据：
 
-1.  开关用于发送紧急的数据的请求，接收**WSPSend**在其中调用 MSG\_OOB 标志设置。
+1.  对于发送紧急数据的请求，开关将接收设置了 MSG OOB 标志的 **WSPSend** 调用 \_ 。
 
-2.  此开关将紧急的数据复制到控制消息缓冲区的有效负载部分。
+2.  该开关将紧急数据复制到控制消息缓冲区的负载部分。
 
-3.  此开关调用相应 SAN 服务提供商[ **WSPSend** ](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff566316(v=vs.85))函数传输 SAN 套接字的远程对等方连接到控制消息中包含的紧急数据。 SAN NIC 又会将紧急的数据传输。
+3.  此开关调用适当的 SAN 服务提供程序的 [**WSPSend**](/previous-versions/windows/hardware/network/ff566316(v=vs.85)) 函数，以将控制消息中包含的紧急数据传输到 SAN 套接字的远程对等连接。 SAN NIC 反过来传输紧急数据。
 
-4.  在远程对等方 switch 接收到它使用发布的接收缓冲区的传输的数据[ **WSPRecv** ](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff566309(v=vs.85))函数。
+4.  远程对等节点上的开关接收传输的数据到其通过 [**WSPRecv**](/previous-versions/windows/hardware/network/ff566309(v=vs.85)) 函数发送的接收缓冲区。
 
-5.  在远程对等方 switch 将接收缓冲区中接收到的数据复制到专用存储。
+5.  远程对等节点上的交换机将接收的数据从接收缓冲区复制到专用存储。
 
-6.  在远程对等方调用开关**WSPRecv**来重新投递接收缓冲区。
+6.  远程对等机上的开关调用 **WSPRecv** 来重新发布接收缓冲区。
 
-7.  在远程对等方 switch 将数据传送到标准 Windows 套接字过程根据应用程序。
-
- 
+7.  远程对等机上的开关根据标准 Windows 套接字过程将数据传递给应用程序。
 
  
-
-
-
-
 

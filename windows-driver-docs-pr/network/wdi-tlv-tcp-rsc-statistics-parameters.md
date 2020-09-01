@@ -1,42 +1,42 @@
 ---
 title: WDI_TLV_TCP_RSC_STATISTICS_PARAMETERS
-description: WDI_TLV_TCP_RSC_STATISTICS_PARAMETERS 是 TLV OID_WDI_TCP_RSC_STATISTICS 包含 TCP RSC 统计信息。
+description: WDI_TLV_TCP_RSC_STATISTICS_PARAMETERS 是包含 OID_WDI_TCP_RSC_STATISTICS 的 TCP RSC 统计信息的 TLV。
 ms.assetid: C1459DF6-6492-4C1F-A22D-2BDC6492B29C
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 WDI_TLV_TCP_RSC_STATISTICS_PARAMETERS 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 147486c45267020bcd549342ded78abd075efef6
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: fbd8caf8d9ff8605e820fa53bd0365aac6b67827
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67357321"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89214987"
 ---
-# <a name="wditlvtcprscstatisticsparameters"></a>WDI\_TLV\_TCP\_RSC\_STATISTICS\_PARAMETERS
+# <a name="wdi_tlv_tcp_rsc_statistics_parameters"></a>WDI \_ TLV \_ TCP \_ RSC \_ STATISTICS \_ 参数
 
 
-WDI\_TLV\_TCP\_RSC\_统计信息\_参数是包含 TCP RSC 的统计信息 TLV [OID\_WDI\_TCP\_RSC\_统计信息](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wdi-tcp-rsc-statistics)。
+WDI \_ tlv \_ tcp \_ rsc \_ STATISTICS \_ 参数是一个 tlv，其中包含 [OID \_ WDI \_ tcp \_ rsc \_ 统计信息](./oid-wdi-tcp-rsc-statistics.md)的 tcp RSC 统计信息。
 
 ## <a name="tlv-type"></a>TLV 类型
 
 
 0xF3
 
-## <a name="length"></a>长度
+## <a name="length"></a>Length
 
 
-所有包含的元素的大小的总和 （以字节为单位）。
+Sum (所有包含的元素的大小) 。
 
 ## <a name="values"></a>值
 
 
-| 在任务栏的搜索框中键入   | 描述                                                                                                                                                                                                                               |
+| 类型   | 说明                                                                                                                                                                                                                               |
 |--------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| UINT64 | 已合并的数据包的总数。                                                                                                                                                                                          |
-| UINT64 | 已合并的字节总数。                                                                                                                                                                                            |
-| UINT64 | 合并事件总数，这是已从合并的数据包格式正确的数据包总数。                                                                                                                     |
-| UINT64 | RSC 的总数中止事件，这是 IP 数据报长度超出异常数。 此计数应包括其中数据包不合并由于硬件资源不足的情况。 |
+| UINT64 | 合并的数据包总数。                                                                                                                                                                                          |
+| UINT64 | 合并的总字节数。                                                                                                                                                                                            |
+| UINT64 | 合并事件总数，即通过合并数据包而形成的数据包总数。                                                                                                                     |
+| UINT64 | RSC abort 事件的总数，即超出了 IP 数据报长度的除外。 此计数应包括由于硬件资源不足而未合并数据包的情况。 |
 
  
 
@@ -58,16 +58,11 @@ WDI\_TLV\_TCP\_RSC\_统计信息\_参数是包含 TCP RSC 的统计信息 TLV [O
 <td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
-<td><p>Header</p></td>
+<td><p>标头</p></td>
 <td>Wditypes.hpp</td>
 </tr>
 </tbody>
 </table>
 
  
-
- 
-
-
-
 

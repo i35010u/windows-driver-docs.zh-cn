@@ -1,32 +1,32 @@
 ---
 title: WDI_TLV_RADIO_STATE_PARAMETERS
-description: WDI_TLV_RADIO_STATE_PARAMETERS 是包含单选状态参数的 OID_WDI_TASK_SET_RADIO_STATE TLV。
+description: WDI_TLV_RADIO_STATE_PARAMETERS 是包含 OID_WDI_TASK_SET_RADIO_STATE 的无线电状态参数的 TLV。
 ms.assetid: D977DF8A-146C-4921-AE7C-5FBEC7FBA4C8
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 WDI_TLV_RADIO_STATE_PARAMETERS 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 84c5929034c5035357134743d666c5bab3ee860a
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: c0363353408e191f3b7a0b467e5c447d6bf177c9
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67366512"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89214252"
 ---
-# <a name="wditlvradiostateparameters"></a>WDI\_TLV\_RADIO\_STATE\_PARAMETERS
+# <a name="wdi_tlv_radio_state_parameters"></a>WDI \_ TLV \_ 无线电 \_ 状态 \_ 参数
 
 
-WDI\_TLV\_单选\_状态\_参数是包含单选状态参数 TLV [OID\_WDI\_任务\_设置\_单选\_状态](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wdi-task-set-radio-state)。
+WDI \_ tlv \_ 无线电 \_ 状态 \_ 参数是一个 TLV，其中包含 [OID \_ WDI \_ 任务 \_ 集 \_ 无线电 \_ 状态](./oid-wdi-task-set-radio-state.md)的无线电状态参数。
 
 ## <a name="tlv-type"></a>TLV 类型
 
 
 0xA0
 
-## <a name="length"></a>长度
+## <a name="length"></a>Length
 
 
-超出 UINT8 的大小 （以字节为单位）。
+UINT8 的大小 (以字节为单位) 。
 
 ## <a name="values"></a>值
 
@@ -38,15 +38,15 @@ WDI\_TLV\_单选\_状态\_参数是包含单选状态参数 TLV [OID\_WDI\_任�
 </colgroup>
 <thead>
 <tr class="header">
-<th>在任务栏的搜索框中键入</th>
-<th>描述</th>
+<th>类型</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td>UINT8</td>
-<td>所需的单选状态中。
-<p>有效值为的 0 （单选处于关闭状态） 和 1 （启用单选）。</p></td>
+<td>所需的无线电状态。
+<p>有效值为 0 (无线电关闭) 和 1 (启用了无线电) 。</p></td>
 </tr>
 </tbody>
 </table>
@@ -71,16 +71,11 @@ WDI\_TLV\_单选\_状态\_参数是包含单选状态参数 TLV [OID\_WDI\_任�
 <td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
-<td><p>Header</p></td>
+<td><p>标头</p></td>
 <td>Wditypes.hpp</td>
 </tr>
 </tbody>
 </table>
 
  
-
- 
-
-
-
 

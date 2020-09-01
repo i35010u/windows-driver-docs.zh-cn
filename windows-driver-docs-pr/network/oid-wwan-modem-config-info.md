@@ -4,21 +4,21 @@ description: OID_WWAN_MODEM_CONFIG_INFO 检索有关调制解调器配置信息�
 ms.assetid: 527B970C-09FC-4E49-A309-44D5C6A39778
 ms.date: 08/08/2017
 keywords:
-- OID_WWAN_MODEM_CONFIG_INFO 从 Windows Vista 开始的网络驱动程序
+- 从 Windows Vista 开始 OID_WWAN_MODEM_CONFIG_INFO 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: f5551743122d0393efc0d8ce3f9c6e6857e0c074
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 3b9c66bbc96970ca5e80c59cdd07d2e8a16d7b24
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72843835"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89213762"
 ---
-# <a name="oid_wwan_modem_config_info"></a>OID\_WWAN\_调制解调器\_CONFIG\_信息
+# <a name="oid_wwan_modem_config_info"></a>OID \_ WWAN \_ 调制解调器 \_ 配置 \_ 信息
 
 
-OID\_WWAN\_调制解调器\_CONFIG\_信息检索有关调制解调器配置信息的信息。
+OID \_ WWAN \_ 调制解调器 \_ 配置信息 \_ 检索有关调制解调器配置信息的信息。
 
-MBB 驱动程序必须异步处理查询请求，最初返回 NDIS\_状态\_指示\_需要请求原始请求，然后再发送[ndis\_状态\_WWAN\_调制解调器\_配置\_信息](ndis-status-wwan-modem-config-info.md)状态通知，其中包含一个[**NDIS\_wwan\_调制解调器\_配置\_info**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_modem_config_info)结构，后者又包含一个[**wwan\_调制解调器\_配置\_info**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wwan/ns-wwan-_wwan_modem_config_info)结构，用于提供有关调制解调器配置的信息。
+MBB 驱动程序必须异步处理查询请求，最初返回 \_ \_ \_ 原始请求所需的 ndis 状态指示，然后再发送 [ndis \_ 状态 wwan 调制 \_ \_ 解调器 \_ \_ ](ndis-status-wwan-modem-config-info.md) 配置信息（包含 [**ndis \_ wwan \_ 调制 \_ \_ **](/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_modem_config_info) 解调器配置信息结构，后者又包含一个 [**wwan \_ 调制 \_ \_ **](/windows-hardware/drivers/ddi/wwan/ns-wwan-_wwan_modem_config_info) 解调器配置信息结构）来提供有关调制解调器配置的信息。
 
 设置请求不适用。
 
@@ -42,7 +42,7 @@ MBB 驱动程序必须异步处理查询请求，最初返回 NDIS\_状态\_指�
 </tr>
 <tr class="even">
 <td><p>标头</p></td>
-<td>Ntddndis （包括 Ndis .h）</td>
+<td>Ntddndis (包含 Ndis .h) </td>
 </tr>
 </tbody>
 </table>
@@ -50,11 +50,8 @@ MBB 驱动程序必须异步处理查询请求，最初返回 NDIS\_状态\_指�
 ## <a name="see-also"></a>另请参阅
 
 
-[NDIS\_状态\_WWAN\_调制解调器\_配置\_信息](ndis-status-wwan-modem-config-info.md)
+[NDIS \_ 状态 \_ WWAN \_ 调制解调器 \_ 配置 \_ 信息](ndis-status-wwan-modem-config-info.md)
 
-[**NDIS\_WWAN\_调制解调器\_配置\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_modem_config_info)
+[**NDIS \_ WWAN \_ 调制解调器 \_ 配置 \_ 信息**](/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_modem_config_info)
 
-[**WWAN\_调制解调器\_CONFIG\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wwan/ns-wwan-_wwan_modem_config_info)
-
-
-
+[**WWAN \_ 调制解调器 \_ 配置 \_ 信息**](/windows-hardware/drivers/ddi/wwan/ns-wwan-_wwan_modem_config_info)

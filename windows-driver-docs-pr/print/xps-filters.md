@@ -11,24 +11,24 @@ keywords:
 - IPrintPipelineFilter
 ms.date: 06/15/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: b9cde58f300409a60eed8c8deff2dea0981bc679
-ms.sourcegitcommit: a16fd2876383265b4ad336dea624e4b13fc13a1b
+ms.openlocfilehash: 804cf002262580459e7554312ff8d74f97984c90
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88644005"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89215381"
 ---
 # <a name="xps-filters"></a>XPS 筛选器
 
 对于 XPS 打印路径，筛选器是驱动程序为打印机准备打印数据的主要方式。 在 Windows Vista 之前的 Microsoft Windows 操作系统版本中，打印处理器和呈现模块执行筛选器工作。
 
-XPS 筛选器是导出 [DllGetClassObject](https://docs.microsoft.com/windows/win32/api/combaseapi/nf-combaseapi-dllgetclassobject) 和 [DLLCANUNLOADNOW](https://docs.microsoft.com/windows/win32/api/combaseapi/nf-combaseapi-dllcanunloadnow) 函数的 DLL。 在加载和卸载 XPS 筛选器 DLL 时，筛选器管道管理器会调用这些函数。 在加载筛选器 DLL 之后，筛选器管道管理器将执行以下操作：
+XPS 筛选器是导出 [DllGetClassObject](/windows/win32/api/combaseapi/nf-combaseapi-dllgetclassobject) 和 [DLLCANUNLOADNOW](/windows/win32/api/combaseapi/nf-combaseapi-dllcanunloadnow) 函数的 DLL。 在加载和卸载 XPS 筛选器 DLL 时，筛选器管道管理器会调用这些函数。 在加载筛选器 DLL 之后，筛选器管道管理器将执行以下操作：
 
-- 调用 **DllGetClassObject** 以获取对筛选器对象的 [IClassFactory](https://docs.microsoft.com/windows/win32/api/unknwn/nn-unknwn-iclassfactory) 接口的引用。
+- 调用 **DllGetClassObject** 以获取对筛选器对象的 [IClassFactory](/windows/win32/api/unknwn/nn-unknwn-iclassfactory) 接口的引用。
 
-- 调用 [IClassFactory：： CreateInstance](https://docs.microsoft.com/windows/win32/api/unknwn/nf-unknwn-iclassfactory-createinstance) 方法以获取对筛选器对象的 [IPrintPipelineFilter](https://docs.microsoft.com/windows-hardware/drivers/ddi/filterpipeline/nn-filterpipeline-iprintpipelinefilter) 接口的引用。
+- 调用 [IClassFactory：： CreateInstance](/windows/win32/api/unknwn/nf-unknwn-iclassfactory-createinstance) 方法以获取对筛选器对象的 [IPrintPipelineFilter](/windows-hardware/drivers/ddi/filterpipeline/nn-filterpipeline-iprintpipelinefilter) 接口的引用。
 
-- 调用 [**IPrintPipelineFilter：： InitializeFilter**](https://docs.microsoft.com/windows-hardware/drivers/ddi/filterpipeline/nf-filterpipeline-iprintpipelinefilter-initializefilter) 方法以初始化筛选器对象。
+- 调用 [**IPrintPipelineFilter：： InitializeFilter**](/windows-hardware/drivers/ddi/filterpipeline/nf-filterpipeline-iprintpipelinefilter-initializefilter) 方法以初始化筛选器对象。
 
 在卸载筛选器 DLL 之前，筛选器管道管理器调用 **DllCanUnloadNow**。
 
@@ -39,7 +39,7 @@ XPS 筛选器使打印子系统更可靠，因为筛选器在与后台处理程�
 
 为了最大限度地提高灵活性和重复使用，每个筛选器都应执行特定的打印处理功能。 例如，一个筛选器将仅应用水印，而另一个筛选器只会执行记帐。
 
-Github 上提供了以下 [XPS 驱动程序和筛选器示例](https://docs.microsoft.com/samples/microsoft/windows-driver-samples/xpsdrv-driver-and-filter-sample/) ：
+Github 上提供了以下 [XPS 驱动程序和筛选器示例](/samples/microsoft/windows-driver-samples/xpsdrv-driver-and-filter-sample/) ：
 
 - 手册
 

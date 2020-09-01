@@ -6,47 +6,47 @@ ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 WDI_TLV_UNICAST_ALGORITHM_LIST 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 0614e6502e48b3e9a8c36b956a8724644783a577
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: dbc1a7944e16ad2a0fad87f33aa274b4481548fc
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72841721"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89215423"
 ---
-# <a name="wdi_tlv_unicast_algorithm_list"></a>WDI\_TLV\_单播\_算法\_列表
+# <a name="wdi_tlv_unicast_algorithm_list"></a>WDI \_ TLV \_ 单播 \_ 算法 \_ 列表
 
 
-WDI\_TLV\_单播\_算法\_列表是包含单播数据算法对的数组的 TLV。
+WDI \_ tlv \_ 单播 \_ 算法 \_ 列表是一个 tlv，其中包含单播数据算法对的数组。
 
 ## <a name="tlv-type"></a>TLV 类型
 
 
 0x13
 
-## <a name="length"></a>长度
+## <a name="length"></a>Length
 
 
-WDI 的数组的大小（以字节为单位）\_算法\_对元素。 数组必须包含1个或多个元素。
+WDI \_ 算法对元素数组的大小 (以字节为单位) \_ 。 数组必须包含1个或多个元素。
 
-**请注意**  WDI\_算法\_对不是 WDI 结构。 它在 WDI TLV 分析程序生成器中定义，仅用于文档目的。
+**注意**   WDI \_ 算法 \_ 对不是 WDI 结构。 它在 WDI TLV 分析程序生成器中定义，仅用于文档目的。
 
  
 
 ## <a name="values"></a>值
 
 
-| 在任务栏的搜索框中键入                 | 描述                                            |
+| 类型                 | 说明                                            |
 |----------------------|--------------------------------------------------------|
-| WDI\_算法\_对\[\] | 身份验证和密码算法对的数组。 |
+| WDI \_ 算法 \_ 对\[\] | 身份验证和密码算法对的数组。 |
 
  
 
-WDI\_算法\_对包含以下元素。
+WDI \_ 算法 \_ 对由下列元素组成。
 
-| 在任务栏的搜索框中键入  | 描述                                                                                     |
+| 类型  | 说明                                                                                     |
 |-------|-------------------------------------------------------------------------------------------------|
-| UINT8 | WDI 中定义的身份验证算法[ **\_AUTH\_算法**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wditypes/ne-wditypes-_wdi_auth_algorithm)。 |
-| UINT8 | 在 WDI 中定义的密码算法[ **\_密码\_算法**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wditypes/ne-wditypes-_wdi_cipher_algorithm)。     |
+| UINT8 | [**WDI \_ AUTH \_ 算法**](/windows-hardware/drivers/ddi/wditypes/ne-wditypes-_wdi_auth_algorithm)中定义的身份验证算法。 |
+| UINT8 | 在 [**WDI \_ 密码 \_ 算法**](/windows-hardware/drivers/ddi/wditypes/ne-wditypes-_wdi_cipher_algorithm)中定义的密码算法。     |
 
  
 
@@ -75,9 +75,4 @@ WDI\_算法\_对包含以下元素。
 </table>
 
  
-
- 
-
-
-
 

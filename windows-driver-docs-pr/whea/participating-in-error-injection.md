@@ -12,21 +12,21 @@ keywords:
 - 错误注入 WDK WHEA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 35dd295977e61e374606baa3d82e1f4fb51d527c
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: bbf11523f066e1e949aa393102c21b8be989787b
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72826188"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89214174"
 ---
 # <a name="participating-in-error-injection"></a>参与错误注入
 
 
 若要参与检索错误信息，PSHED 插件必须实现以下回调函数：
 
-[*GetInjectionCapabilities*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nc-ntddk-pshed_pi_get_injection_capabilities)
+[*GetInjectionCapabilities*](/windows-hardware/drivers/ddi/ntddk/nc-ntddk-pshed_pi_get_injection_capabilities)
 
-[*InjectError*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nc-ntddk-pshed_pi_inject_error)
+[*InjectError*](/windows-hardware/drivers/ddi/ntddk/nc-ntddk-pshed_pi_inject_error)
 
 下面的代码示例演示如何实现这些回调函数。
 
@@ -90,9 +90,4 @@ NTSTATUS
 参与错误注入的 PSHED 插件必须在向操作系统[注册](registering-a-pshed-plug-in.md)自身时指定**PshedFAErrorInjection**标志。
 
  
-
- 
-
-
-
 

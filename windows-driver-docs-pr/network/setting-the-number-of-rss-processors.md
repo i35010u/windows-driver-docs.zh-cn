@@ -7,12 +7,12 @@ keywords:
 - CPU 配置 WDK RSS
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2574fde01ad98cbc9869c40a59067de254f88f64
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 5294ecead308a18e263383a484dba9f901f389de
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67375127"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89214424"
 ---
 # <a name="setting-the-number-of-rss-processors"></a>设置 RSS 处理器数目
 
@@ -20,20 +20,20 @@ ms.locfileid: "67375127"
 
 
 
-管理员应将数设置接收方缩放 (RSS) 处理器，帮助计算机的总体性能。 并发延缓的过程调用 (Dpc) 上分布的多个 Cpu 启用运行的接收处理，并删除 （例如，在高速 Nic) 的 CPU 瓶颈。 但是，多个 Dpc 创建其他开销。 中断和 DPC 处理开销将增大，因为多个处理器用于 RSS。 因此，当 RSS 处于活动状态，所有 cpu 的总 CPU 使用率增加。 管理员应选择使用的 RSS 中以避免使用 RSS 离开应用程序以使用更少处理能力且不能提高网络吞吐量的 Cpu 数。
+管理员应将接收方缩放 (RSS) 处理器数设置为有助于计算机的整体性能。 并行延迟的过程调用在多个 Cpu 上运行 (Dpc) 启用分布式接收处理并消除 CPU 瓶颈 (例如，在高速 Nic) 中。 但是，多个 Dpc 确实会产生额外的开销。 随着 RSS 的使用更多处理器，中断和 DPC 处理开销会增加。 因此，当 RSS 处于活动状态时，所有 Cpu 的总 CPU 使用率会增加。 管理员应选择用于 RSS 的 Cpu 数量，以避免出现以下情况：使用 RSS 会使应用程序使用的处理能力更少，并且不会提高网络吞吐量。
 
-在 Microsoft Windows Server 2003 的可伸缩网络包，管理员可以设置与 RSS Cpu 的最大数目**MaxNumRssCpus**中的注册表关键字**HKEY\_本地\_机器\\\\系统\\CurrentControlSet\\Services\\Tcpip\\参数**。 **MaxNumRssCpus**值是 DWORD 类型，并 NDIS 不存在，如果使用的默认值为 4。
+在带有可伸缩网络包的 Microsoft Windows Server 2003 中，管理员可以在**HKEY \_ 本地 \_ 计算机 \\ \\ 系统 \\ CurrentControlSet \\ Services \\ Tcpip \\ 参数**中设置包含**MaxNumRssCpus**注册表关键字的 RSS cpu 的最大数目。 **MaxNumRssCpus**值是一个 DWORD 类型，如果不存在，NDIS 将使用默认值4。
 
-在 Windows Server 2008 中，管理员可以设置与 RSS Cpu 的最大数目**MaxNumRssCpus**中的注册表关键字**HKEY\_本地\_机\\\\系统\\CurrentControlSet\\Services\\Ndis\\参数**。 **MaxNumRssCpus**值是 DWORD 类型，并 NDIS 不存在，如果使用的默认值为 4。 此注册表关键字也适用于更高版本的 Windows Server。
+在 Windows Server 2008 中，管理员可在**HKEY \_ 本地 \_ 计算机 \\ \\ 系统 \\ CurrentControlSet \\ SERVICES \\ Ndis \\ 参数**中设置最大 RSS cpu 数量，其中包含**MaxNumRssCpus**注册表关键字。 **MaxNumRssCpus**值是一个 DWORD 类型，如果不存在，NDIS 将使用默认值4。 此注册表关键字还适用于 Windows Server 的更高版本。
 
-若要避免复杂的情况下 （和不现实中实际的硬件不实现的情况下） 队列接收可用的硬件的数小于 RSS Cpu 的数量，管理员必须未设置**MaxNumRssCpus**大于 16 的值的值。
+若要避免复杂情况 (和未在实际硬件中实现的非现实情况) （其中可用硬件接收队列数量小于 RSS Cpu 数量），管理员不得将 **MaxNumRssCpus** 值设置为大于16的值。
 
-用于 RSS Cpu 的实际数目也受到配置 RSS 基 CPU 数后保留的核心处理器的总数。 例如，如果管理员将 RSS Cpu 的最大数目设置为 6 的四核计算机系统上，网络驱动程序堆栈使用，最多 4 个 rss Cpu。 管理员还可以设置 RSS CPU 底数为 1，如果网络驱动程序堆栈使用最多 3 个 Cpu （CPU 号 1、 2 和 3）。
+用于 RSS 的 Cpu 的实际数量也受在配置 RSS 基本 CPU 号后保留的核心处理器总数限制。 例如，如果管理员将四核计算机系统上的最大 RSS Cpu 数设置为6，则网络驱动程序堆栈最多使用用于 RSS 的4个 Cpu。 如果管理员还将 RSS 基本 CPU 数设置为1，则网络驱动程序堆栈最多使用3个 cpu (CPU 号1、2和 3) 。
 
- 在计算机使用 RSS 的 Cpu 数是静态的且不会更改在运行时。 因此，对任何更改**MaxNumRssCpus**注册表值需要重新启动才能生效。
+ 计算机用于 RSS 的 Cpu 数量是静态的，并且在运行时不会更改。 因此，对 **MaxNumRssCpus** 注册表值所做的任何更改都需要重新启动才能生效。
 
-**请注意**从 Windows 8 和 Windows Server 2012 中，管理员可以控制许多方面的网络适配器使用 PowerShell cmdlet。 现在不建议直接编辑注册表。 
+**注意** 从 Windows 8 和 Windows Server 2012 开始，管理员可以使用 PowerShell cmdlet 控制网络适配器的许多方面。 现在不鼓励直接编辑注册表。 
 
-用于设置 RSS Cpu 数的 PowerShell cmdlet 是[Set-netadapterrss](https://docs.microsoft.com/powershell/module/netadapter/Set-NetAdapterRss)。 使用的主要区别**Set-netadapterrss**并使用**MaxNumRssCpus**是针对每个网络适配器时运行 PowerShell cmdlet **MaxNumRssCpus**是全局的这意味着它将应用于所有网络适配器。 通常情况下，单独使用每个网络适配器的建议，因为它提供了更多的灵活性、 粒度和为每个网络适配器提供其自己的配置中的可理解性。 但是，管理员可能仍使用全局**MaxNumRssCpus**密钥如果他们想要在同一时间将配置应用于所有当前及未来的所有网络适配器。
+用于设置 RSS Cpu 数量的 PowerShell cmdlet 是 [get-netadapterrss](/powershell/module/netadapter/Set-NetAdapterRss)。 使用 **get-netadapterrss** 和 using **MaxNumRssCpus** 之间的主要区别是，PowerShell Cmdlet 在每个网络适配器基础上运行，而 **MaxNumRssCpus** 是全局性的，这意味着它适用于所有网络适配器。 通常，建议单独使用每个网络适配器，因为它在为每个网络适配器提供自己的配置时提供更大的灵活性、粒度和可理解性。 但是，如果他们想要同时对所有当前和未来的网络适配器应用配置，则管理员可能仍然使用 global **MaxNumRssCpus** 密钥。
 
-网络适配器 cmdlet 的完整列表，请参阅[Windows PowerShell 中的网络适配器 Cmdlet](https://docs.microsoft.com/powershell/module/netadapter/)。
+有关网络适配器 cmdlet 的完整列表，请参阅 [Windows PowerShell 中的网络适配器 cmdlet](/powershell/module/netadapter/)。

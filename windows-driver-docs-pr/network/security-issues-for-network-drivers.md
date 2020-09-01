@@ -7,26 +7,26 @@ keywords:
 - 安全 WDK 网络
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9677778e08ad80f2315d47fe3889a489d9d8d646
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 840a6d2dd653210089ca865da55ccd84efeb5dd8
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72841991"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89214462"
 ---
 # <a name="security-issues-for-network-drivers"></a>网络驱动程序的安全问题
 
-有关编写安全驱动程序的一般讨论，请参阅[创建可靠的内核模式驱动程序](https://docs.microsoft.com/windows-hardware/drivers/kernel/creating-reliable-kernel-mode-drivers)。
+有关编写安全驱动程序的一般讨论，请参阅 [创建可靠的内核模式驱动程序](../kernel/creating-reliable-kernel-mode-drivers.md)。
 
 除了遵循安全的编码实践和常规设备驱动程序指南之外，网络驱动程序还应执行以下操作以增强安全性：
 
-- 所有网络驱动程序都应该验证它们从注册表中读取的值。 具体而言， [**NdisReadConfiguration**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisreadconfiguration)或[**NdisReadNetworkAddress**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisreadnetworkaddress)的调用方不能对从注册表中读取的值作出任何假设，并且必须验证其所读取的每个注册表值。 如果**NdisReadConfiguration**的调用方确定某个值超出界限，则应改用默认值。 如果**NdisReadNetworkAddress**的调用方确定某个值超出界限，则应改为使用永久的媒体访问控制（MAC）地址或默认地址。
+- 所有网络驱动程序都应该验证它们从注册表中读取的值。 具体而言， [**NdisReadConfiguration**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisreadconfiguration) 或 [**NdisReadNetworkAddress**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisreadnetworkaddress) 的调用方不能对从注册表中读取的值作出任何假设，并且必须验证其所读取的每个注册表值。 如果 **NdisReadConfiguration** 的调用方确定某个值超出界限，则应改用默认值。 如果 **NdisReadNetworkAddress** 的调用方确定某个值超出界限，则它应改为使用永久中型访问控制 (MAC) 地址或默认地址。
 
 ## <a name="oid-specific-issues"></a>OID 特定的问题
 
-- 微型端口驱动程序（在其[*MiniportOidRequest*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_oid_request)或[**MiniportCoOidRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_co_oid_request)函数中）应验证请求设置的驱动程序的任何对象标识符（OID）值。 如果驱动程序确定要设置的值超出界限，则该设置请求应失败。 有关对象标识符的详细信息，请参阅[获取并设置微型端口驱动程序信息和对 WMI 的 NDIS 支持](obtaining-and-setting-miniport-driver-information-and-ndis-support-for.md)。
+- 微型端口驱动程序（在其 [*MiniportOidRequest*](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_oid_request) 或 [**MiniportCoOidRequest**](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_co_oid_request) 函数中）应验证 (OID 的任何对象标识符) 请求该驱动程序设置的值。 如果驱动程序确定要设置的值超出界限，则该设置请求应失败。 有关对象标识符的详细信息，请参阅 [获取并设置微型端口驱动程序信息和对 WMI 的 NDIS 支持](obtaining-and-setting-miniport-driver-information-and-ndis-support-for.md)。
 
-- 如果中间驱动程序的*MiniportOidRequest*函数未将设置操作传递到基础微型端口驱动程序，则该函数应验证 OID 值。 有关详细信息，请参阅[中间驱动程序查询和设置操作](intermediate-driver-query-and-set-operations.md)。
+- 如果中间驱动程序的 *MiniportOidRequest* 函数未将设置操作传递到基础微型端口驱动程序，则该函数应验证 OID 值。 有关详细信息，请参阅 [中间驱动程序查询和设置操作](intermediate-driver-query-and-set-operations.md)。
 
 ### <a name="query-oid-security-guidelines"></a>查询 OID 安全准则
 
@@ -41,7 +41,7 @@ ms.locfileid: "72841991"
     }
     ```
 
-2. 始终向 BytesWritten 写入正确的最小值。 这是一个用于分配 `oid->BytesWritten = oid->InformationBufferLength` 的红色标志，如以下示例中所示。
+2. 始终向 BytesWritten 写入正确的最小值。 它是一个要分配的红色标志， `oid->BytesWritten = oid->InformationBufferLength` 如以下示例所示。
 
     ```c++
     // ALWAYS WRONG
@@ -72,7 +72,7 @@ ms.locfileid: "72841991"
     }
     ```
 
-    利用此方法，for 循环从驱动程序的堆栈变量 `num` 而不是从其输出缓冲区中读取。 驱动程序还应将输出缓冲区标记 `volatile` 关键字，以防止编译器无提示地撤消此修补程序。
+    利用此方法，for 循环从驱动程序的堆栈变量（ `num` 而不是从其输出缓冲区）进行读取。 驱动程序还应将输出缓冲区标记为 `volatile` 关键字，以防止编译器无提示地撤消此修补程序。
 
 ### <a name="set-oid-security-guidelines"></a>设置 OID 安全指导原则
 
@@ -86,9 +86,9 @@ ms.locfileid: "72841991"
     }
     ```
 
-2. 当验证具有嵌入偏移量的 OID 时，必须验证嵌入的缓冲区是否位于 OID 有效负载中。 这需要进行多项检查。 例如， [OID_PM_ADD_WOL_PATTERN](https://docs.microsoft.com/windows-hardware/drivers/network/oid-pm-add-wol-pattern)可能会提供需要检查的嵌入模式。 正确的验证需要检查：
+2. 当验证具有嵌入偏移量的 OID 时，必须验证嵌入的缓冲区是否位于 OID 有效负载中。 这需要进行多项检查。 例如， [OID_PM_ADD_WOL_PATTERN](./oid-pm-add-wol-pattern.md) 可能会传递嵌入模式，需要进行检查。 正确的验证需要检查：
 
-    1. InformationBufferSize > = sizeof （NDIS_PM_PACKET_PATTERN）
+    1. InformationBufferSize >= sizeof (NDIS_PM_PACKET_PATTERN) 
 
         ```c++
         PmPattern = (PNDIS_PM_PACKET_PATTERN) InformationBuffer;
@@ -100,7 +100,7 @@ ms.locfileid: "72841991"
         }
         ```
 
-    2. 模式 > PatternOffset + 模式 > PatternSize 不溢出
+    2. 模式 >PatternOffset + 模式 >PatternSize 不溢出
 
         ```c++
         ULONG TotalSize = 0;
@@ -123,7 +123,7 @@ ms.locfileid: "72841991"
         }
         ```
    
-    3. InformationBuffer + 模式 > PatternOffset + 模式-> PatternLength 未溢出
+    3. InformationBuffer + 模式 >PatternOffset + 模式->PatternLength 未溢出
 
         ```c++
         ULONG TotalSize = 0;
@@ -135,7 +135,7 @@ ms.locfileid: "72841991"
         }
         ```
 
-    4. 模式 > PatternOffset + 模式-> PatternLength < = InformationBufferSize
+    4. 模式 >PatternOffset + 模式->PatternLength <= InformationBufferSize
 
         ```c++
         ULONG TotalSize = 0;
@@ -152,11 +152,10 @@ ms.locfileid: "72841991"
 
 ## <a name="other-network-driver-security-issues"></a>其他网络驱动程序安全问题
 
-- 许多 NDIS 微型端口驱动程序通过使用 NdisRegisterDeviceEx 来公开控制设备。 执行此操作的操作必须审核其 IOCTL 处理程序，并使用与 WDM 驱动程序相同的所有安全规则。 有关详细信息，请参阅[I/o 控制代码的安全问题](https://docs.microsoft.com/windows-hardware/drivers/kernel/security-issues-for-i-o-control-codes)。
+- 许多 NDIS 微型端口驱动程序通过使用 NdisRegisterDeviceEx 来公开控制设备。 执行此操作的操作必须审核其 IOCTL 处理程序，并使用与 WDM 驱动程序相同的所有安全规则。 有关详细信息，请参阅 [I/o 控制代码的安全问题](../kernel/security-issues-for-i-o-control-codes.md)。
 
-- 设计良好的 NDIS 微型端口驱动程序不应依赖于在特定的进程上下文中调用，也不应与 usermode 非常紧密交互（IOCTLs & Oid 就是例外）。 它将是一个红色标志，用于查看打开 usermode 句柄、执行 usermode 等待或分配的内存和 usermode 配额的小型端口。 应调查该代码。
+- 设计良好的 NDIS 微型端口驱动程序不应依赖于在特定的进程上下文中调用，也不应与 usermode (进行密切交互，因为 IOCTLs & Oid 是) 异常。 它将是一个红色标志，用于查看打开 usermode 句柄、执行 usermode 等待或分配的内存和 usermode 配额的小型端口。 应调查该代码。
 
 - 大多数 NDIS 微型端口驱动程序不应涉及分析数据包有效负载。 但在某些情况下，可能需要这样做。 如果是这样，则应仔细审核此代码，因为驱动程序正在分析来自不受信任的源的数据。
 
-- 与分配内核模式内存时的标准一样，NDIS 驱动程序应使用适当[的 NX 池选择机制](https://docs.microsoft.com/windows-hardware/drivers/kernel/nx-pool-opt-in-mechanisms)。 在 WDK 8 及更高版本中，已正确选择了 `NdisAllocate*` 系列的函数。
-
+- 与分配内核模式内存时的标准一样，NDIS 驱动程序应使用适当 [的 NX 池选择机制](../kernel/nx-pool-opt-in-mechanisms.md)。 在 WDK 8 及更高版本中， `NdisAllocate*` 已正确选择了这些功能系列。

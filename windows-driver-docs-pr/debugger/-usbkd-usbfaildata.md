@@ -1,6 +1,6 @@
 ---
 title: usbkd.usbfaildata
-description: Usbkd. usbfaildata 命令显示为 USB 设备存储的故障数据（如果有）。
+description: 如果为 USB 设备存储了任何) ，usbkd. usbfaildata 命令将显示失败数据 (。
 ms.assetid: 08FD3F82-73E3-4616-92EB-D562ECAB8A96
 keywords:
 - usbkd usbfaildata Windows 调试
@@ -12,17 +12,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 743172ae48fef183451ef390d2e3d8d276a6739e
-ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
+ms.openlocfilehash: 9661abb872986739ecf72dbcff08b274eb03b6db
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84534024"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89213513"
 ---
 # <a name="usbkdusbfaildata"></a>!usbkd.usbfaildata
 
 
-**！ Usbkd. usbfaildata**命令显示为 USB 设备存储的故障数据（如果有）。
+如果为 USB 设备存储了任何) ，则 **！ usbkd. usbfaildata** 命令将显示失败数据 (。
 
 ```dbgcmd
 !usbkd.usbfaildata PDO
@@ -32,17 +32,17 @@ ms.locfileid: "84534024"
 
 
 <span id="_______PDO______"></span><span id="_______pdo______"></span>*PDO*   
-连接到 USB 集线器的设备的物理设备对象（PDO）的地址。
+连接到 USB 集线器的设备 (PDO) 的物理设备对象的地址。
 
 ## <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 
-Usbkd
+Usbkd.dll
 
 <a name="examples"></a>示例
 --------
 
-下面是查找 USB 设备的 PDO 地址的一种方法。 输入[**！ usbkd. usb2tree**](-usbkd-usb2tree.md)。
+下面是查找 USB 设备的 PDO 地址的一种方法。 输入 [**！ usbkd. usb2tree**](-usbkd-usb2tree.md)。
 
 ```dbgcmd
  kd> !usbkd.usb2tree
@@ -64,14 +64,7 @@ Usbkd
 
 [USB 2.0 调试器扩展](usb-2-0-extensions.md)
 
-[通用串行总线（USB）驱动程序](https://docs.microsoft.com/windows-hardware/drivers/usbcon/)
+[ (USB) 驱动程序的通用串行总线](../usbcon/index.md)
 
  
-
- 
-
-
-
-
-
 

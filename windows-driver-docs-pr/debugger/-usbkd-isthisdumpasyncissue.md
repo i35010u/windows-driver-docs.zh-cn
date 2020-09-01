@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: a1939efedae2a1a0fbbc3b3d368f3de228b6c2a5
-ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
+ms.openlocfilehash: 9b46f2858bddf837a6cd798cb33771692cd0177d
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84534050"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89213570"
 ---
 # <a name="usbkdisthisdumpasyncissue"></a>!usbkd.isthisdumpasyncissue
 
@@ -31,12 +31,12 @@ ms.locfileid: "84534050"
 ## <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 
-Usbkd
+Usbkd.dll
 
-<a name="remarks"></a>注解
+<a name="remarks"></a>备注
 -------
 
-仅当调试因[**Bug 检查0xFE： BUGCODE \_ USB \_ 驱动程序**](bug-check-0xfe--bugcode-usb-driver.md)而生成的故障转储文件时，才使用此命令。
+仅当调试因 [**Bug 检查0xFE： BUGCODE \_ USB \_ 驱动程序**](bug-check-0xfe--bugcode-usb-driver.md)而生成的故障转储文件时，才使用此命令。
 
 <a name="examples"></a>示例
 --------
@@ -57,14 +57,7 @@ This is *NOT* Async on Advance Issue because the EndPointData is NULL
 
 [USB 2.0 调试器扩展](usb-2-0-extensions.md)
 
-[通用串行总线（USB）驱动程序](https://docs.microsoft.com/windows-hardware/drivers/usbcon/)
+[ (USB) 驱动程序的通用串行总线](../usbcon/index.md)
 
  
-
- 
-
-
-
-
-
 

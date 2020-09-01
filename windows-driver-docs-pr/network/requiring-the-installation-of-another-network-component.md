@@ -3,18 +3,18 @@ title: 要求安装另一个网络组件
 description: 要求安装另一个网络组件
 ms.assetid: 30e6db7f-46f4-414f-a485-051b007f0eb6
 keywords:
-- 添加注册表部分 WDK 网络连接、 组件依赖项
+- 添加-注册表--WDK 网络，组件依赖项
 - 组件 Id WDK 网络
 - 组件依赖项 WDK 网络
 - 依赖项 WDK 网络
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 88291647a1a4252651fcd1045588e05a17a7cb12
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 8341e3e669e3d6b865c230ddc693ab8138a1792a
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67378658"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89215078"
 ---
 # <a name="requiring-the-installation-of-another-network-component"></a>要求安装另一个网络组件
 
@@ -22,36 +22,30 @@ ms.locfileid: "67378658"
 
 
 
-网络组件可能需要一个或多个其他网络组件的安装才能正常运行。 网络 INF 文件指定了与每个此类依赖项**RequiredAll**值。 **RequiredAll**添加值 (通过*添加注册表部分*) 到**Ndi**密钥要求安装另一个网络的网络组件组件。
+网络组件可能需要安装一个或多个其他网络组件，才能正常工作。 网络 INF 文件使用 **RequiredAll** 值指定每个此类依赖项。 将 **RequiredAll** 值添加 (通过) *添加* 到需要安装其他网络组件的网络组件的 **Ndi** 键。
 
-下面的示例演示**RequiredAll**中的条目*添加注册表部分*:
+以下示例显示了 "*添加注册表" 部分*中的**RequiredAll**条目：
 
 ```INF
 [ndi.reg]
 HKR, Ndi, RequiredAll, 0, "component id"
 ```
 
-*组件 ID*是*hw id*的所需的网络组件。 有关详细信息，请参阅[ **INF 模型部分**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-models-section)。 如果某个网络组件需要多个其他网络组件的安装，请使用一个**RequiredAll**条目为每个网络组件，必须安装，如下面的示例中所示：
+*组件 id*是所需的网络组件的*硬件 id* 。 有关详细信息，请参阅 [**INF 模型部分**](../install/inf-models-section.md)。 如果网络组件需要安装多个其他网络组件，请为每个必须安装的网络组件使用一个 **RequiredAll** 条目，如以下示例中所示：
 
 ```INF
 HKR, Ndi, RequiredAll, 0, "component1 id, component2 id"
 ```
 
-**请注意**   **RequiredAll**值仅应该用于安装隐藏不能由用户安装的网络组件。 此类组件应支持用户界面。 通过指定的组件的所有网络**RequiredAll**不能删除之前所需通过其安装的网络组件**RequiredAll**自行删除。
+**注意**   **RequiredAll**值只应用于安装用户无法安装的隐藏网络组件。 此类组件不应支持用户界面。 在需要通过**RequiredAll**安装的网络组件本身被删除之前，不能删除由**RequiredAll**指定的任何网络组件。
 
  
 
-例如，如果 INF 文件组件的指定，通过**RequiredAll**，才删除组件 A，组件 B，组件 B 上的依赖项不能将其删除。 **RequiredAll**因此应安装绝对操作所需的另一个网络组件的网络组件。 例如，如果网络组件的 INF 文件 （适配器） 将使用**RequiredAll**若要指定必须安装了 tcp/ip 协议，用户将不能删除 TCP/IP 直到删除该适配器。 由于适配器不需要 TCP/IP 进行操作，不应使用的适配器 INF **RequiredAll**若要在 TCP/IP 上指定的依赖关系。
+例如，如果组件 A 的 INF 文件指定通过 **RequiredAll**，则在删除组件 a 之前，无法删除组件 b 上的依赖关系。 因此， **RequiredAll**应仅安装在另一个网络组件的操作中绝对需要的网络组件。 例如，如果网络组件的 INF 文件 (适配器) 使用 **RequiredAll** 指定必须安装 tcp/ip，则在删除该适配器之前，用户将无法删除 tcp/ip。 由于适配器不要求 TCP/IP 运行，因此适配器的 INF 不应使用 **RequiredAll** 来指定 tcp/ip 上的依赖关系。
 
-指定的 INF 文件**RequiredAll**依赖项必须确保所需的网络组件的 INF 文件是否存在 inf 目录中。 通常情况下，这通过实现**CopyINF**指令。 有关详细信息**CopyINF**指令，请参阅[ **INF CopyINF 指令**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-copyinf-directive)。 有关复制 INF 文件的详细信息，请参阅[复制 Inf](https://docs.microsoft.com/windows-hardware/drivers/install/copying-inf-files)。
+指定 **RequiredAll** 依赖项的 inf 文件必须确保 inf 目录中存在所需的网络组件的 inf 文件。 通常，这是通过 **CopyINF** 指令来完成的。 有关 **CopyINF** 指令的详细信息，请参阅 [**INF CopyINF 指令**](../install/inf-copyinf-directive.md)。 有关复制 INF 文件的详细信息，请参阅 [复制 inf](../install/copying-inf-files.md)。
 
-如果指定的网络组件的安装，则**RequiredAll**条目失败，需要指定的组件也会失败的网络组件的安装。
-
- 
+如果安装 **RequiredAll** 条目指定的网络组件失败，则需要指定组件的网络组件的安装也会失败。
 
  
-
-
-
-
 

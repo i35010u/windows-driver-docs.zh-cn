@@ -1,25 +1,25 @@
 ---
 title: 使用 Visual Studio 进行调试
-description: 从 Windows 驱动程序工具包（WDK）8开始，驱动程序开发环境和 Windows 调试器集成到 Microsoft Visual Studio 中。
+description: 从 Windows 驱动程序工具包开始 (WDK) 8，驱动程序开发环境和 Windows 调试器集成到 Microsoft Visual Studio 中。
 ms.assetid: B961B0C9-FF6C-4F6B-AC15-CA1B405A4C4C
 ms.date: 05/11/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 344bdf0df5ef685335b0d9bea44c4ef924bf38c0
-ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
+ms.openlocfilehash: 6ab080fbb8a0dc4ba976155013aded38d76aa7bd
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84534450"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89214832"
 ---
 # <a name="debugging-using-visual-studio"></a>使用 Visual Studio 进行调试
 
-从 Windows 驱动程序工具包（WDK）8开始，驱动程序开发环境和 Windows 调试器集成到 Microsoft Visual Studio 中。 在此集成环境中，Visual Studio 用户界面中提供了编码、构建、打包、测试、调试和部署驱动程序所需的大多数工具。
+从 Windows 驱动程序工具包开始 (WDK) 8，驱动程序开发环境和 Windows 调试器集成到 Microsoft Visual Studio 中。 在此集成环境中，Visual Studio 用户界面中提供了编码、构建、打包、测试、调试和部署驱动程序所需的大多数工具。
 
 > [!IMPORTANT]
 > 此功能在 Windows 10 版本1507及更高版本的 WDK 中不可用。
 >
  
-若要获取集成环境，请首先安装 Visual Studio，然后安装 Windows 驱动程序工具包（WDK）。 有关详细信息，请参阅[下载 Windows 驱动程序工具包（WDK）](https://docs.microsoft.com/windows-hardware/drivers/download-the-wdk)。
+若要获取集成环境，请首先安装 Visual Studio，然后 (WDK) 安装 Windows 驱动程序工具包。 有关详细信息，请参阅 [下载 Windows 驱动程序工具包 (WDK) ](../download-the-wdk.md)。
 
 通常内核模式调试需要两台计算机。 调试程序在主计算机  上运行，所调试的代码在目标计算机  上运行。 目标计算机也称为“测试计算机”  。 您可以在一台计算机上执行用户模式调试，但在某些情况下，您可能需要调试在单独的目标计算机上运行的用户模式进程。
 
@@ -46,10 +46,4 @@ ms.locfileid: "84534450"
 -   [在 Visual Studio 中保存日志文件](keeping-a-log-file-in-visual-studio.md)
 
  
-
- 
-
-
-
-
 

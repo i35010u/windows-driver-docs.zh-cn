@@ -6,12 +6,12 @@ keywords:
 - 颜色管理 WDK 打印，启用
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 85b8fc39b75cdeef20b689e5c016839eafa1cf8c
-ms.sourcegitcommit: 17c1bbc5ea0bef3bbc87794b030a073f905dc942
+ms.openlocfilehash: 55083e992b0813b9c84037b733ec5f3abc363fb0
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88802767"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89214890"
 ---
 # <a name="enabling-color-management"></a>启用颜色管理
 
@@ -25,16 +25,11 @@ ms.locfileid: "88802767"
 
     此方法可实现系统控制的颜色管理。
 
--   在调用**CreateDC**创建打印作业时指定[**DEVMODEW**](https://docs.microsoft.com/windows/win32/api/wingdi/ns-wingdi-devmodew)结构，并 \_ \_ \_ 在 DEVMODE 结构的**DMICMMETHOD**成员中设置 DMICMMETHOD 系统、DMICMMETHOD 驱动程序或 DMICMMETHOD 设备。
+-   在调用**CreateDC**创建打印作业时指定[**DEVMODEW**](/windows/win32/api/wingdi/ns-wingdi-devmodew)结构，并 \_ \_ \_ 在 DEVMODE 结构的**DMICMMETHOD**成员中设置 DMICMMETHOD 系统、DMICMMETHOD 驱动程序或 DMICMMETHOD 设备。
 
     此方法允许应用程序选择系统控制的、驱动程序控制的或设备控制的颜色管理 (，前提是) 支持指定的控件类型。
 
-打印机驱动程序可以通过 \_ \_ \_ 在驱动程序的默认 DEVMODE 结构的 **DMICMMETHOD** 成员中设置 DMICMMETHOD 系统、DMICMMETHOD DRIVER 或 DMICMMETHOD 设备来启用颜色管理。  (如果为 **CreateDC**提供 DEVMODE 结构，应用程序可以重写默认设置。 此外，驱动程序负责在执行驱动程序的 [**DrvDocumentPropertySheets**](https://docs.microsoft.com/windows-hardware/drivers/ddi/winddiui/nf-winddiui-drvdocumentpropertysheets) 函数期间存储用户的颜色管理选择。 ) 
+打印机驱动程序可以通过 \_ \_ \_ 在驱动程序的默认 DEVMODE 结构的 **DMICMMETHOD** 成员中设置 DMICMMETHOD 系统、DMICMMETHOD DRIVER 或 DMICMMETHOD 设备来启用颜色管理。  (如果为 **CreateDC**提供 DEVMODE 结构，应用程序可以重写默认设置。 此外，驱动程序负责在执行驱动程序的 [**DrvDocumentPropertySheets**](/windows-hardware/drivers/ddi/winddiui/nf-winddiui-drvdocumentpropertysheets) 函数期间存储用户的颜色管理选择。 ) 
 
  
-
- 
-
-
-
 

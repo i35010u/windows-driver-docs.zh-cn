@@ -6,24 +6,24 @@ keywords:
 - 筛选条件标志网络驱动程序
 ms.date: 01/07/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 0fbc8a4ae58efaa504f66ca6ec4a984d84f057c0
-ms.sourcegitcommit: 9567e4f4f4e97bacc60320770b9d42212b7cba06
+ms.openlocfilehash: 94a40f36fec922d2bb25d569914cc53e4e47b844
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74019627"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89215242"
 ---
 # <a name="filtering-condition-flags"></a>筛选条件标志
 
 筛选条件标志分别由位域表示。 这些标志定义如下：
 
 > [!NOTE]
-> 本主题包含内核模式 WFP 标注驱动程序的筛选条件标志。 有关筛选在用户模式和内核模式之间共享的条件标志的信息，或者要查找有关此处未列出的标志的信息，请参阅 Windows SDK 文档中的[筛选条件标志](https://docs.microsoft.com/windows/desktop/FWP/filtering-condition-flags-)主题。
+> 本主题包含内核模式 WFP 标注驱动程序的筛选条件标志。 有关筛选在用户模式和内核模式之间共享的条件标志的信息，或者要查找有关此处未列出的标志的信息，请参阅 Windows SDK 文档中的 [筛选条件标志](/windows/desktop/FWP/filtering-condition-flags-) 主题。
 
 <table>
 <tr>
 <th>筛选条件标志</th>
-<th>描述</th>
+<th>说明</th>
 </tr>
 <tr>
 <td>
@@ -99,7 +99,7 @@ ms.locfileid: "74019627"
 <p>0x00000004</p>
 </td>
 <td>
-<p>指示策略更改（与新连接相对）。</p>
+<p>指示 (与新连接) 的策略更改。</p>
 <p>此标志适用于下列筛选层：<dl>
 <dd>FWPM_LAYER_ALE_AUTH_RECV_ACCEPT_V4</dd>
 <dd>FWPM_LAYER_ALE_AUTH_RECV_ACCEPT_V6</dd>
@@ -183,7 +183,7 @@ ms.locfileid: "74019627"
 <p>0x00000020</p>
 </td>
 <td>
-<p>指示传递给标注驱动程序的<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list"><b>NET_BUFFER_LIST</b></a>结构是 IP 数据包片段。</p>
+<p>指示传递给标注驱动程序的 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list"><b>NET_BUFFER_LIST</b></a> 结构是 IP 数据包片段。</p>
 <p>此标志适用于下列筛选层：<dl>
 <dd>FWPM_LAYER_INBOUND_IPPACKET_V4</dd>
 <dd>FWPM_LAYER_INBOUND_IPPACKET_V6</dd>
@@ -199,7 +199,7 @@ ms.locfileid: "74019627"
 <p>0x00000040</p>
 </td>
 <td>
-<p>指示传递给标注驱动程序的<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list"><b>NET_BUFFER_LIST</b></a>结构描述了数据包片段的链接列表。</p>
+<p>指示传递给标注驱动程序的 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list"><b>NET_BUFFER_LIST</b></a> 结构描述了数据包片段的链接列表。</p>
 <p>此标志适用于下列筛选层：<dl>
 <dd>FWPM_LAYER_INBOUND_IPPACKET_V4</dd>
 <dd>FWPM_LAYER_INBOUND_IPPACKET_V6</dd>
@@ -215,7 +215,7 @@ ms.locfileid: "74019627"
 <p>0x00000080</p>
 </td>
 <td>
-<p>当指明 NAT 遍历（UDP 端口4500）数据包时，将设置此标志。  和解发生后，使用封装的数据包中的信息为重新分类设置标志。</p>
+<p>当 NAT 遍历 (UDP 端口 4500) 数据包时，将设置此标志。  和解发生后，使用封装的数据包中的信息为重新分类设置标志。</p>
 <p>此标志适用于下列筛选层：<dl>
 <dd>FWPM_LAYER_INBOUND_TRANSPORT_V4</dd>
 <dd>FWPM_LAYER_INBOUND_TRANSPORT_V6</dd>
@@ -235,7 +235,7 @@ ms.locfileid: "74019627"
 <p>0x00000100</p>
 </td>
 <td>
-<p>指示数据包尚未到达 ALE 接收/接受层（FWPM_LAYER_ALE_AUTH_RECV_ACCEPT_V4 或 FWPM_LAYER_ALE_AUTH_RECV_ACCEPT_V6），将在其中跟踪其连接状态。</p>
+<p>指示数据包尚未到达 ALE 接收/接受层 (FWPM_LAYER_ALE_AUTH_RECV_ACCEPT_V4 或 FWPM_LAYER_ALE_AUTH_RECV_ACCEPT_V6) ，此时将跟踪其连接状态。</p>
 <p>此标志适用于下列筛选层：<dl>
 <dd>FWPM_LAYER_INBOUND_TRANSPORT_V4</dd>
 <dd>FWPM_LAYER_INBOUND_TRANSPORT_V6</dd>
@@ -251,7 +251,7 @@ ms.locfileid: "74019627"
 <p>0x00000200</p>
 </td>
 <td>
-<p>指示未显式绑定套接字。 如果发送方调用 send 而不先调用 bind，Windows 套接字会执行隐式绑定。<div class="alert"><b>请注意</b>  此标志仅在 windows Server 2008 和 windows Vista 中受支持。 它在更高版本的 Windows 版本中已弃用。</div>
+<p>指示未显式绑定套接字。 如果发送方调用 send 而不先调用 bind，Windows 套接字会执行隐式绑定。<div class="alert"><b>注意</b>   只有 Windows Server 2008 和 Windows Vista 支持此标志。 它在更高版本的 Windows 版本中已弃用。</div>
 <div> </div>
 </p>
 <p>此标志适用于下列筛选层：<dl>
@@ -270,7 +270,7 @@ ms.locfileid: "74019627"
 </td>
 <td>
 <p>指示数据包已从一组片段重新组合。</p>
-<p>此标志适用于 Windows Server 2008、Windows Vista Service Pack 1 （SP1）和更高版本的 windows 中的以下筛选层：<dl>
+<p>此标志适用于 Windows Server 2008、Windows Vista Service Pack 1 (SP1) 和更高版本的 windows 中的以下筛选层：<dl>
 <dd>FWPM_LAYER_INBOUND_IPPACKET_V4</dd>
 <dd>FWPM_LAYER_INBOUND_IPPACKET_V6</dd>
 <dd>FWPM_LAYER_INBOUND_IPPACKET_V4_DISCARD</dd>
@@ -285,7 +285,7 @@ ms.locfileid: "74019627"
 <p>0x00004000</p>
 </td>
 <td>
-<p>指示已通过调用<a href="https://docs.microsoft.com/windows/desktop/api/ws2tcpip/nf-ws2tcpip-wsasetsocketpeertargetname"><b>WSASetSocketPeerTargetName</b></a>而不是使用缓存试探法来获取应用程序要连接到的对等计算机的名称。</p>
+<p>指示已通过调用 <a href="https://docs.microsoft.com/windows/desktop/api/ws2tcpip/nf-ws2tcpip-wsasetsocketpeertargetname"><b>WSASetSocketPeerTargetName</b></a> 而不是使用缓存试探法来获取应用程序要连接到的对等计算机的名称。</p>
 <p>此标志适用于 Windows Server 2008 R2、Windows 7 和更高版本的 Windows 中的以下筛选层：<dl>
 <dd>FWPM_LAYER_ALE_AUTH_CONNECT_V4</dd>
 <dd>FWPM_LAYER_ALE_AUTH_CONNECT_V6</dd>
@@ -310,7 +310,7 @@ ms.locfileid: "74019627"
 <p>0x00010000</p>
 </td>
 <td>
-<p>指示数据包与经过身份验证的防火墙策略相匹配。 只有与 "如果安全，则允许连接" 防火墙规则选项匹配的连接才会设置此标志。 有关详细信息，请参阅<a href="https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc753463(v=ws.10)">如何启用通过身份验证的防火墙旁路</a>。</p>
+<p>指示数据包与经过身份验证的防火墙策略相匹配。 只有与 "如果安全，则允许连接" 防火墙规则选项匹配的连接才会设置此标志。 有关详细信息，请参阅 <a href="https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc753463(v=ws.10)">如何启用通过身份验证的防火墙旁路</a>。</p>
 <p>此标志还适用于 Windows Server 2008、Windows Vista SP1 和更高版本的 windows 中的以下筛选层：<dl>
 <dd>FWPM_LAYER_ALE_FLOW_ESTABLISHED_V4</dd>
 <dd>FWPM_LAYER_ALE_FLOW_ESTABLISHED_V6</dd>
@@ -337,7 +337,7 @@ ms.locfileid: "74019627"
 <p>0x00020000</p>
 </td>
 <td>
-<p>当在以前授权的套接字上设置<a href="https://docs.microsoft.com/windows/desktop/WinSock/ipv6-protection-level">IPV6_PROTECTION_LEVEL</a>套接字选项时，将设置此标志。</p>
+<p>当在以前授权的套接字上设置 <a href="/windows/desktop/WinSock/ipv6-protection-level">IPV6_PROTECTION_LEVEL</a> 套接字选项时，将设置此标志。</p>
 <p>此标志适用于下列筛选层：<dl>
 <dd>FWPM_LAYER_ALE_RESOURCE_ASSIGNMENT_V6</dd>
 <dd>FWPM_LAYER_ALE_RESOURCE_ASSIGNMENT_V6_DISCARD</dd>
@@ -443,7 +443,7 @@ ms.locfileid: "74019627"
 <p>0x00800000</p>
 </td>
 <td>
-<p>指示流量将进出使用环回的标准应用（而不是 AppContainer）。</p>
+<p>指示流量传入和传出标准应用 (不是使用环回) 。</p>
 <p>此标志适用于 Windows Server 2012、Windows 8 及更高版本的 Windows 中的以下筛选层：<dl>
 <dd>FWPM_LAYER_ALE_AUTH_RECV_ACCEPT_V4</dd>
 <dd>FWPM_LAYER_ALE_AUTH_RECV_ACCEPT_V6</dd>
@@ -472,7 +472,7 @@ ms.locfileid: "74019627"
 <p>0x02000000</p>
 </td>
 <td>
-<p>指示正在执行当前分类以服从重定向的通用 Windows 应用程序连接到指定主机的意图。 此类分类包含的 classifiable 字段值相同，就好像应用从未重定向一样。 标志还指示将调用未来的分类来匹配有效的重定向目标。 如果将应用重定向到代理服务进行检查，则这也意味着将对代理连接调用未来分类。 标注应使用 FWPS_FIELD_ALE_AUTH_CONNECT_V4_ALE_ORIGINAL_APP_ID 来查找（原始）重定向连接的 appid。</p>
+<p>指示正在执行当前分类以服从重定向的通用 Windows 应用程序连接到指定主机的意图。 此类分类包含的 classifiable 字段值相同，就好像应用从未重定向一样。 标志还指示将调用未来的分类来匹配有效的重定向目标。 如果将应用重定向到代理服务进行检查，则这也意味着将对代理连接调用未来分类。 标注应使用 FWPS_FIELD_ALE_AUTH_CONNECT_V4_ALE_ORIGINAL_APP_ID 来查找 (原始) 重定向连接的 appid。</p>
 <p>此标志适用于 Windows Server 2012、Windows 8 及更高版本的 Windows 中的以下筛选层：<dl>
 <dd>FWPM_LAYER_ALE_AUTH_CONNECT_V4</dd>
 <dd>FWPM_LAYER_ALE_AUTH_CONNECT_V6</dd>
@@ -483,4 +483,3 @@ ms.locfileid: "74019627"
 </td>
 </tr>
 </table>
-

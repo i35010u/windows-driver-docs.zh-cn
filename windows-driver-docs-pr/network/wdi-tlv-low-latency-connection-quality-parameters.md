@@ -1,40 +1,40 @@
 ---
 title: WDI_TLV_LOW_LATENCY_CONNECTION_QUALITY_PARAMETERS
-description: WDI_TLV_LOW_LATENCY_CONNECTION_QUALITY_PARAMETERS 是包含较低的延迟的连接质量参数 TLV。
+description: WDI_TLV_LOW_LATENCY_CONNECTION_QUALITY_PARAMETERS 是包含低延迟连接质量参数的 TLV。
 ms.assetid: F6C26267-AC6F-4810-913B-46DA99498BE2
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 WDI_TLV_LOW_LATENCY_CONNECTION_QUALITY_PARAMETERS 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 03faeaff0e4fa6b3c248706678da27889f7601e1
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: df9304decae716c3113a3eb14c3afa26e82afd14
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67354470"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89214270"
 ---
-# <a name="wditlvlowlatencyconnectionqualityparameters"></a>WDI\_TLV\_低\_延迟\_连接\_质量\_参数
+# <a name="wdi_tlv_low_latency_connection_quality_parameters"></a>WDI \_ TLV \_ 低 \_ 延迟 \_ 连接 \_ 质量 \_ 参数
 
 
-WDI\_TLV\_低\_延迟\_连接\_质量\_参数是包含较低的延迟的连接质量参数 TLV。
+WDI \_ tlv \_ 低 \_ 延迟 \_ 连接 \_ 质量 \_ 参数是包含低延迟连接质量参数的 tlv。
 
 ## <a name="tlv-type"></a>TLV 类型
 
 
 0xF6
 
-## <a name="length"></a>长度
+## <a name="length"></a>Length
 
 
-所有包含的元素的数组大小 （以字节为单位）。
+所有包含的元素的数组的大小 (以字节为单位) 。
 
 ## <a name="values"></a>值
 
 
-| 在任务栏的搜索框中键入  | 描述                                                                                                                                                                                                                                                                            |
+| 类型  | 说明                                                                                                                                                                                                                                                                            |
 |-------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| UINT8 | 指定最大端口可以是另一个通道 Active 扫描或其他多渠道操作期间的毫秒数。 此关闭通道可更高版本的唯一实例是适配器需要为被动扫描。                                 |
-| UINT8 | 指定的链接质量阈值[NDIS\_状态\_WDI\_指示\_漫游\_需执行](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-wdi-indication-roaming-needed)。 低于此阈值链接质量时，它是可接受的适配器以发送 NDIS\_状态\_WDI\_指示\_漫游\_需执行。 |
+| UINT8 | 指定在活动扫描或其他多通道操作期间端口可以位于不同通道上的最大毫秒数。 此脱离通道的唯一实例是，如果适配器需要执行被动扫描。                                 |
+| UINT8 | 指定 [ \_ \_ \_ \_ \_ 所需的 NDIS 状态 WDI 指示漫游](./ndis-status-wdi-indication-roaming-needed.md)的链接质量阈值。 当链接质量低于此阈值时，适配器可以通过需要发送 NDIS \_ 状态 \_ WDI \_ 指示 \_ 漫游 \_ 。 |
 
  
 
@@ -56,23 +56,18 @@ WDI\_TLV\_低\_延迟\_连接\_质量\_参数是包含较低的延迟的连接�
 <td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
-<td><p>Header</p></td>
+<td><p>标头</p></td>
 <td>Wditypes.hpp</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
-[OID\_WDI\_设置\_连接\_质量](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wdi-set-connection-quality)
+[OID \_ WDI \_ 设置 \_ 连接 \_ 质量](./oid-wdi-set-connection-quality.md)
 
-[NDIS\_状态\_WDI\_指示\_漫游\_需执行](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-wdi-indication-roaming-needed)
-
- 
+[需要有 NDIS \_ 状态 \_ WDI \_ 指示 \_ 漫游 \_](./ndis-status-wdi-indication-roaming-needed.md)
 
  
-
-
-
 

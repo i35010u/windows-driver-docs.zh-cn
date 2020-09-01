@@ -1,39 +1,39 @@
 ---
 title: WDI_TLV_IHV_TASK_DEVICE_CONTEXT
-description: WDI_TLV_IHV_TASK_DEVICE_CONTEXT 是包含 IHV 提供的设备上下文的 NDIS_STATUS_WDI_INDICATION_IHV_TASK_REQUEST TLV。
+description: WDI_TLV_IHV_TASK_DEVICE_CONTEXT 是一种 TLV，其中包含用于 NDIS_STATUS_WDI_INDICATION_IHV_TASK_REQUEST 的由 IHV 提供的设备上下文。
 ms.assetid: FBFE8931-DF29-4605-A14D-12CEC0433086
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 WDI_TLV_IHV_TASK_DEVICE_CONTEXT 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 5a5dcabc0c42b41c273a6378f5fcb3adaa66170d
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 0ffe7afb8e69ec4abf93149463e3a5ba9d6804fd
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67380803"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89215431"
 ---
-# <a name="wditlvihvtaskdevicecontext"></a>WDI\_TLV\_IHV\_TASK\_DEVICE\_CONTEXT
+# <a name="wdi_tlv_ihv_task_device_context"></a>WDI \_ TLV \_ IHV \_ 任务 \_ 设备 \_ 上下文
 
 
-WDI\_TLV\_IHV\_任务\_设备\_上下文是包含 IHV 提供的设备上下文 TLV [NDIS\_状态\_WDI\_指示\_IHV\_任务\_请求](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-wdi-indication-ihv-task-request)。
+WDI \_ tlv \_ IHV \_ 任务 \_ 设备 \_ 上下文是一个 TLV，其中包含由 IHV 提供的用于 [NDIS \_ 状态 \_ WDI \_ 指示 \_ IHV \_ 任务 \_ 请求](./ndis-status-wdi-indication-ihv-task-request.md)的设备上下文。
 
 ## <a name="tlv-type"></a>TLV 类型
 
 
 0xE0
 
-## <a name="length"></a>长度
+## <a name="length"></a>Length
 
 
-UINT8 元素的数组大小 （以字节为单位）。 该数组必须包含一个或多个元素。
+UINT8 元素数组的大小 (以字节为单位) 。 数组必须包含1个或多个元素。
 
 ## <a name="values"></a>值
 
 
-| 在任务栏的搜索框中键入      | 描述                                                                    |
+| 类型      | 说明                                                                    |
 |-----------|--------------------------------------------------------------------------------|
-| UINT8\[\] | IHV 提供的设备上下文信息转发到 IHV 任务。 |
+| UINT8\[\] | 由 IHV 提供的、转发到 IHV 任务的设备上下文信息。 |
 
  
 
@@ -55,16 +55,11 @@ UINT8 元素的数组大小 （以字节为单位）。 该数组必须包含一
 <td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
-<td><p>Header</p></td>
+<td><p>标头</p></td>
 <td>Wditypes.hpp</td>
 </tr>
 </tbody>
 </table>
 
  
-
- 
-
-
-
 

@@ -3,12 +3,12 @@ title: MB 网络阻止列表操作
 description: MB 网络阻止列表操作
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 93fb367013022b307da9cd67e83bd87966947a13
-ms.sourcegitcommit: 803b1a521b69f45b5580789d9b1ba9c7467e60e1
+ms.openlocfilehash: 510c2025d5246e6fe2f42a6e3adc63d778eef5ba
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88242883"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89213933"
 ---
 # <a name="mb-network-blacklist-operations"></a>MB 网络阻止列表操作
 
@@ -16,7 +16,7 @@ ms.locfileid: "88242883"
 >
 > ### <a name="bias-free-communication"></a>无偏差通信
 >
-> Microsoft 支持多样化的包容性环境。 本文包含对 word 黑名单的引用。 Microsoft 的[无偏差通信风格指南](https://docs.microsoft.com/style-guide/bias-free-communication)将其视为排他性单词。 本文中使用的词是为了保持一致，因为它当前是软件中出现的单词。 如果软件更新后删除了该单词，则本文也将更新以保持一致。
+> Microsoft 支持多样化的包容性环境。 本文包含对 word 黑名单的引用。 Microsoft 的[无偏差通信风格指南](/style-guide/bias-free-communication)将其视为排他性单词。 本文中使用的词是为了保持一致，因为它当前是软件中出现的单词。 如果软件更新后删除了该单词，则本文也将更新以保持一致。
 
 在各种情况下，设备可能需要不注册到网络，例如插入特定 SIM 卡或设备不想注册到特定网络。 为了应对这些情况，Windows 10 1703 版正在添加调制解调器接口，以使操作系统能够为 SIM 卡和网络提供程序配置黑名单。
 
@@ -61,11 +61,11 @@ UUID 值 = **3d01dcc5-fef5-4d05-0d3abef7058e9aaf**
 
 如果任何黑名单状态已从 "开始" 改为 "未开始" （反之亦然），则应为未经请求的事件。例如，如果插入的 SIM 与 SIM 提供程序黑名单匹配，则为。
 
-### <a name="parameters"></a>parameters
+### <a name="parameters"></a>参数
 
-| Operation | 设置 | 查询 | 通知 |
+| 操作 | 设置 | 查询 | 通知 |
 | --- | --- | --- | --- |
-| Command | MBIM_MS_NETWORK_BLACKLIST_INFO | 不适用 | 不适用 |
+| 命令 | MBIM_MS_NETWORK_BLACKLIST_INFO | 不适用 | 不适用 |
 | 响应 | MBIM_MS_NETWORK_BLACKLIST_INFO | MBIM_MS_NETWORK_BLACKLIST_INFO | MBIM_MS_NETWORK_BLACKLIST_INFO |
 
 ### <a name="data-structures"></a>数据结构

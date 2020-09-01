@@ -4,17 +4,17 @@ description: 确定当前连接的移动宽带网络
 ms.assetid: 65a47e79-3976-4f72-b810-982e7222fee3
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6041a1cbe2bb9fc50fad5c92fd5d5c6fcc5b013a
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 323b182aa9c211f79b438be20727e510f44d7a1f
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67381512"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89215298"
 ---
 # <a name="determine-which-mobile-broadband-network-is-currently-connected"></a>确定当前连接的移动宽带网络
 
 
-您可以确定通过检索通过 APN 连接到你的移动宽带网络[ **AccessPointName** ](https://docs.microsoft.com/uwp/api/Windows.Networking.NetworkOperators.MobileBroadbandNetwork#Windows_Networking_NetworkOperators_MobileBroadbandNetwork_AccessPointName)帐户的当前网络对象的属性。
+可以通过帐户的当前网络对象的 [**AccessPointName**](/uwp/api/Windows.Networking.NetworkOperators.MobileBroadbandNetwork#Windows_Networking_NetworkOperators_MobileBroadbandNetwork_AccessPointName) 属性检索 APN 来确定连接到的移动宽带网络。
 
 例如：
 
@@ -22,17 +22,10 @@ ms.locfileid: "67381512"
 account.currentNetwork.accessPointName
 ```
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
+## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
-[移动宽带 Windows 运行时 Api 的常见任务](common-tasks-for-mobile-broadband-windows-runtime-apis.md)
-
- 
+[移动宽带 Windows 运行时 API 的常见任务](./create-a-mobilebroadbandaccount-object.md)
 
  
-
-
-
-
-
 

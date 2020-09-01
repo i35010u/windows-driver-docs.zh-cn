@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 5e60507e8ccba9eb8b9aa6e5579e284828d85c1c
-ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
+ms.openlocfilehash: d56a83db0dd9ed806a3de70752ef54a00b05a519
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84534088"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89213631"
 ---
 # <a name="usbkd_ehciregs"></a>！ usbkd。 \_ehciregs
 
@@ -32,7 +32,7 @@ ms.locfileid: "84534088"
 
 
 <span id="_______StructAddr______"></span><span id="_______structaddr______"></span><span id="_______STRUCTADDR______"></span>*StructAddr*   
-Usbehci 的地址 **！ \_HC \_ 操作 \_ 寄存器**结构。 查找 usbehci 的地址 **！ \_HC \_ 操作 \_ 寄存器**结构，请使用[**！ usbkd. usbhcdlist**](-usbkd-usbhcdlist.md)。
+Usbehci 的地址 **！ \_HC \_ 操作 \_ 寄存器** 结构。 查找 usbehci 的地址 **！ \_HC \_ 操作 \_ 寄存器** 结构，请使用 [**！ usbkd. usbhcdlist**](-usbkd-usbhcdlist.md)。
 
 <span id="_______NumPorts______"></span><span id="_______numports______"></span><span id="_______NUMPORTS______"></span>*NumPorts*   
 要显示的根集线器端口状态寄存器的数目。
@@ -40,12 +40,12 @@ Usbehci 的地址 **！ \_HC \_ 操作 \_ 寄存器**结构。 查找 usbehci �
 ## <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 
-Usbkd
+Usbkd.dll
 
 <a name="examples"></a>示例
 --------
 
-下面是获取 usbehci 的地址的一种方法 **！ \_HC \_ 操作 \_ 寄存器**结构。 首先输入[**！ usbkd. usbhcdlist**](-usbkd-usbhcdlist.md)。
+下面是获取 usbehci 的地址的一种方法 **！ \_HC \_ 操作 \_ 寄存器** 结构。 首先输入 [**！ usbkd. usbhcdlist**](-usbkd-usbhcdlist.md)。
 
 ```dbgcmd
 0: kd> !usbkd.usbhcdlist
@@ -146,14 +146,7 @@ MINIPORT List @ fffff80001e5bbd0
 
 [USB 2.0 调试器扩展](usb-2-0-extensions.md)
 
-[通用串行总线（USB）驱动程序](https://docs.microsoft.com/windows-hardware/drivers/usbcon/)
+[ (USB) 驱动程序的通用串行总线](../usbcon/index.md)
 
  
-
- 
-
-
-
-
-
 

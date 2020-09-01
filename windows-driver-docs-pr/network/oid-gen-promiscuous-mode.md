@@ -1,36 +1,36 @@
 ---
 title: OID_GEN_PROMISCUOUS_MODE
-description: 为查询，使用 OID_GEN_PROMISCUOUS_MODE OID 确定网络接口是否为混杂 (RFC 2863 从 ifPromiscuousMode)。
+description: 作为查询，请使用 OID_GEN_PROMISCUOUS_MODE OID 来确定是否 (ifPromiscuousMode 从 RFC 2863) 混合了网络接口。
 ms.assetid: c3ba0908-724c-4149-a66f-5c3d41751165
 ms.date: 08/08/2017
-keywords: -从 Windows Vista 开始 OID_GEN_PROMISCUOUS_MODE 网络驱动程序
+keywords: -从 Windows Vista 开始 OID_GEN_PROMISCUOUS_MODE 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: f8ffe058c738adab8cf03b8505f1ae5882287d59
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: b19805d30979f5657370c3df5e7c3e164d3b9d1a
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67360807"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89213383"
 ---
-# <a name="oidgenpromiscuousmode"></a>OID\_GEN\_PROMISCUOUS\_模式
+# <a name="oid_gen_promiscuous_mode"></a>OID \_ 代 \_ 混合 \_ 模式
 
 
-为查询，使用 OID\_GEN\_PROMISCUOUS\_模式来确定网络接口是否是混杂的 OID (*ifPromiscuousMode*从[RFC 2863](https://go.microsoft.com/fwlink/p/?linkid=84054)).
+作为查询，请使用 OID \_ GEN \_ 混合 \_ 模式 OID 来确定是否 (*ifPromiscuousMode* 从 [RFC 2863](https://go.microsoft.com/fwlink/p/?linkid=84054)) 中混合了网络接口。
 
 **版本信息**
 
-<a href="" id="windows-vista-and-later"></a>Windows Vista 及更高版本  
+<a href="" id="windows-vista-and-later"></a>Windows Vista 和更高版本  
 支持。
 
 <a href="" id="ndis-6-0-and-later-miniport-drivers"></a>NDIS 6.0 和更高版本的微型端口驱动程序  
-未请求。 NDIS 接口提供程序仅。
+未请求。 仅适用于 NDIS 接口提供程序。
 
 <a name="remarks"></a>备注
 -------
 
-仅[NDIS 网络接口](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-network-interfaces2)提供程序，因此不微型端口驱动程序或筛选器驱动程序必须支持此 OID 作为 OID 的请求。
+只有 [NDIS 网络接口](./ndis-network-interfaces2.md) 提供程序（因此不是微型端口驱动程序或筛选器驱动程序）才能支持此 OID 作为 oid 请求。
 
-如果接口提供程序返回 NDIS\_状态\_成功，如果接口接受将寻址到该接口的唯一数据包，结果值应为**FALSE**。 此值应 **，则返回 TRUE**如果接口接受所有网络数据包。
+如果接口提供程序返回 NDIS \_ 状态 \_ SUCCESS，并且接口仅接受寻址到该接口的数据包，则结果值应为 **FALSE**。 如果接口接受所有网络数据包，则此值应为 **TRUE** 。
 
 <a name="requirements"></a>要求
 ------------
@@ -42,21 +42,16 @@ ms.locfileid: "67360807"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Header</p></td>
-<td>Ntddndis.h （包括 Ndis.h）</td>
+<td><p>标头</p></td>
+<td>Ntddndis (包含 Ndis .h) </td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
-[NDIS 网络接口 Oid](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-network-interface-oids)
-
- 
+[NDIS 网络接口 Oid](./ndis-network-interface-oids.md)
 
  
-
-
-
 

@@ -1,46 +1,46 @@
 ---
 title: OID_WDI_GET_PM_PROTOCOL_OFFLOAD
-description: OID_WDI_GET_PM_PROTOCOL_OFFLOAD 请求的协议列表将电源管理的卸载。
+description: OID_WDI_GET_PM_PROTOCOL_OFFLOAD 请求电源管理的协议卸载列表。
 ms.assetid: ed7604fa-666c-4aa1-9041-ed56d282c29b
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 OID_WDI_GET_PM_PROTOCOL_OFFLOAD 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: af84ff750e1351dd3c5973ccb143ef0a8a3edfcc
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 2f383a9d20f867aa85c3ca596e51f4fd9497686a
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67353676"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89213283"
 ---
-# <a name="oidwdigetpmprotocoloffload"></a>OID\_WDI\_GET\_PM\_PROTOCOL\_OFFLOAD
+# <a name="oid_wdi_get_pm_protocol_offload"></a>OID \_ WDI \_ 获取 \_ PM \_ 协议 \_ 卸载
 
 
-OID\_WDI\_获取\_PM\_协议\_卸载请求的协议列表将电源管理的卸载。
+OID \_ WDI \_ 获取 \_ PM \_ 协议 \_ 卸载请求电源管理的协议卸载列表。
 
-| 范围 | 设置与任务序列化 | 正常执行时间 （秒） |
+| 作用域 | 设置序列化任务 | 正常执行时间 (秒)  |
 |-------|--------------------------|---------------------------------|
-| Port  | 不适用           | 1                               |
+| 端口  | 不适用           | 1                               |
 
  
 
 ## <a name="get-property-parameters"></a>获取属性参数
 
 
-| TLV                                                                                  | 允许多个 TLV 实例 | 可选 | 描述          |
+| TLV                                                                                  | 允许多个 TLV 实例 | 可选 | 说明          |
 |--------------------------------------------------------------------------------------|--------------------------------|----------|----------------------|
-| [**WDI\_TLV\_PM\_PROTOCOL\_OFFLOAD\_GET**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-pm-protocol-offload-get) |                                |          | 协议卸载 id。 |
+| [**WDI \_ TLV \_ PM \_ 协议 \_ 卸载 \_ GET**](./wdi-tlv-pm-protocol-offload-get.md) |                                |          | 协议卸载 ID。 |
 
  
 
-## <a name="get-property-results"></a>获取属性的结果
+## <a name="get-property-results"></a>获取属性结果
 
 
-| TLV                                                                                                         | 允许多个 TLV 实例 | 可选 | 描述                            |
+| TLV                                                                                                         | 允许多个 TLV 实例 | 可选 | 说明                            |
 |-------------------------------------------------------------------------------------------------------------|--------------------------------|----------|----------------------------------------|
-| [**WDI\_TLV\_PM\_PROTOCOL\_OFFLOAD\_IPv4ARP**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-pm-protocol-offload-ipv4arp)                |                                | X        | IPv4 ARP 协议卸载参数。  |
-| [**WDI\_TLV\_PM\_PROTOCOL\_OFFLOAD\_IPv6NS**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-pm-protocol-offload-ipv6ns)                  |                                | X        | IPv6 NS 协议卸载参数。   |
-| [**WDI\_TLV\_PM\_PROTOCOL\_OFFLOAD\_80211RSN\_REKEY**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-pm-protocol-offload-80211rsn-rekey) |                                | X        | 重新生成密钥 RSN 协议卸载参数。 |
+| [**WDI \_ TLV \_ PM \_ 协议 \_ 卸载 \_ IPv4ARP**](./wdi-tlv-pm-protocol-offload-ipv4arp.md)                |                                | X        | IPv4 ARP 协议卸载参数。  |
+| [**WDI \_ TLV \_ PM \_ 协议 \_ 卸载 \_ IPv6NS**](./wdi-tlv-pm-protocol-offload-ipv6ns.md)                  |                                | X        | IPv6 NS 协议卸载参数。   |
+| [**WDI \_ TLV \_ PM \_ 协议 \_ 卸载 \_ 80211RSN \_ REKEY**](./wdi-tlv-pm-protocol-offload-80211rsn-rekey.md) |                                | X        | RSN Rekey 协议卸载参数。 |
 
  
 
@@ -62,23 +62,18 @@ OID\_WDI\_获取\_PM\_协议\_卸载请求的协议列表将电源管理的卸�
 <td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
-<td><p>Header</p></td>
-<td>Dot11wdi.h</td>
+<td><p>标头</p></td>
+<td>Dot11wdi</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
-[OID\_WDI\_SET\_ADD\_PM\_PROTOCOL\_OFFLOAD](oid-wdi-set-add-pm-protocol-offload.md)
+[OID \_ WDI \_ 设置 \_ 添加 \_ PM \_ 协议 \_ 卸载](oid-wdi-set-add-pm-protocol-offload.md)
 
-[OID\_WDI\_SET\_REMOVE\_PM\_PROTOCOL\_OFFLOAD](oid-wdi-set-remove-pm-protocol-offload.md)
-
- 
+[OID \_ WDI \_ SET \_ 删除 \_ PM \_ 协议 \_ 卸载](oid-wdi-set-remove-pm-protocol-offload.md)
 
  
-
-
-
 

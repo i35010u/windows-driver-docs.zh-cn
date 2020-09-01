@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: cf9da8b15c2bfbe6c69a88cf526ed2b4f93778c2
-ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
+ms.openlocfilehash: 472159574b12ecdfe0a956cafd69858110afcc55
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84534056"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89213582"
 ---
 # <a name="usbkdehci_info_from_fdo"></a>！ usbkd \_ \_ fdo 中的信息 \_
 
@@ -32,17 +32,17 @@ ms.locfileid: "84534056"
 
 
 <span id="_______fdo______"></span><span id="_______FDO______"></span>*fdo*   
-UHCI 或 EHCI USB 主机控制器的功能设备对象（FDO）的地址。 可以从[**！ usb2tree**](-usbkd-usb2tree.md)命令的输出中获取 FDO 的地址。
+功能设备对象的地址 (UHCI 或 EHCI USB 主机控制器的 FDO) 。 可以从 [**！ usb2tree**](-usbkd-usb2tree.md) 命令的输出中获取 FDO 的地址。
 
 ## <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 
-Usbkd
+Usbkd.dll
 
 <a name="examples"></a>示例
 --------
 
-首先，使用[**！ usb2tree**](-usbkd-usb2tree.md)命令获取 FDO 的地址。
+首先，使用 [**！ usb2tree**](-usbkd-usb2tree.md) 命令获取 FDO 的地址。
 
 ```dbgcmd
 0: kd> !usbkd.usb2tree
@@ -53,7 +53,7 @@ EHCI MINIPORT(s) dt usbport!_USBPORT_MINIPORT_DRIVER ffffe00001f48bd0
 ...
 ```
 
-在上面的输出中，可以看到 USB 主机控制器的 FDO 地址是 `ffffe00001ca1050` 。 将 FDO 的地址传递给[**！ ehci \_ info \_ from \_ FDO**](-usbkd-ehci-info-from-fdo.md)。
+在上面的输出中，可以看到 USB 主机控制器的 FDO 地址是 `ffffe00001ca1050` 。 将 FDO 的地址传递给 [**！ ehci \_ info \_ from \_ FDO**](-usbkd-ehci-info-from-fdo.md)。
 
 ```dbgcmd
 0: kd> !usbkd.ehci_info_from_fdo ffffe00001ca1050
@@ -95,14 +95,7 @@ BusContextHead: !usblist ffffe00001ca16b0, BC
 
 [USB 2.0 调试器扩展](usb-2-0-extensions.md)
 
-[通用串行总线（USB）驱动程序](https://docs.microsoft.com/windows-hardware/drivers/usbcon/)
+[ (USB) 驱动程序的通用串行总线](../usbcon/index.md)
 
  
-
- 
-
-
-
-
-
 

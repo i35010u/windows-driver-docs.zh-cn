@@ -1,22 +1,22 @@
 ---
 title: NDIS_MDL_LINKAGE 宏
-description: NDIS_MDL_LINKAGE 宏检索指向与指定 MDL 相关联的下一步 MDL。
+description: NDIS_MDL_LINKAGE 宏检索指向与指定 MDL 关联的下一个 MDL 的指针。
 ms.assetid: 3d5a91cb-cb26-49fb-b510-75fc95f7f46b
 ms.date: 07/18/2017
 keywords:
-- 与 Windows Vista 一起启动的网络驱动程序的 NDIS_MDL_LINKAGE 宏
+- 从 Windows Vista 开始 NDIS_MDL_LINKAGE 宏网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 58f91c90d0927c9780d4dde8c742b7d936987bd0
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 1fb1cbeb667d4fb9f730fcec4c32cf6b14e46baa
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67385747"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89213915"
 ---
-# <a name="ndismdllinkage-macro"></a>NDIS\_MDL\_链接宏
+# <a name="ndis_mdl_linkage-macro"></a>NDIS \_ MDL \_ 链接宏
 
 
-**NDIS\_MDL\_链接**宏检索指向与指定 MDL 相关联的下一步 MDL。
+**NDIS \_ MDL \_ 链接**宏检索指向与指定 mdl 关联的下一个 mdl 的指针。
 
 <a name="syntax"></a>语法
 ------
@@ -27,7 +27,7 @@ PVOID NDIS_MDL_LINKAGE(
 );
 ```
 
-<a name="parameters"></a>Parameters
+<a name="parameters"></a>参数
 ----------
 
 *\_Mdl*   
@@ -36,12 +36,12 @@ PVOID NDIS_MDL_LINKAGE(
 <a name="return-value"></a>返回值
 ------------
 
-**NDIS\_MDL\_链接**返回一个指向 MDL 或**NULL**如果没有下一步 MDL。
+**NDIS \_如果 \_ ** 没有下一个 MDL，mdl 链接将返回指向 MDL 的指针或 **NULL** 。
 
 <a name="remarks"></a>备注
 -------
 
-**NDIS\_MDL\_链接**宏提供的基于 MDL 版本[ **NDIS\_缓冲区\_链接**](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff556919(v=vs.85))函数。
+**Ndis \_ MDL \_ 链接**宏提供基于 MDL 的[**NDIS \_ 缓冲区 \_ 链接**](/previous-versions/windows/hardware/network/ff556919(v=vs.85))函数版本。
 
 <a name="requirements"></a>要求
 ------------
@@ -54,15 +54,15 @@ PVOID NDIS_MDL_LINKAGE(
 <tbody>
 <tr class="odd">
 <td><p>目标平台</p></td>
-<td>桌面设备</td>
+<td>“桌面”</td>
 </tr>
 <tr class="even">
-<td><p>Version</p></td>
-<td><p>支持 NDIS 6.0 及更高版本。</p></td>
+<td><p>版本</p></td>
+<td><p>在 NDIS 6.0 和更高版本中受支持。</p></td>
 </tr>
 <tr class="odd">
-<td><p>Header</p></td>
-<td>Ndis.h （包括 Ndis.h）</td>
+<td><p>标头</p></td>
+<td> (包含 Ndis .h) </td>
 </tr>
 <tr class="even">
 <td><p>IRQL</p></td>
@@ -71,15 +71,10 @@ PVOID NDIS_MDL_LINKAGE(
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
-[**NDIS\_缓冲区\_链接**](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff556919(v=vs.85))
-
- 
+[**NDIS \_ 缓冲区 \_ 链接**](/previous-versions/windows/hardware/network/ff556919(v=vs.85))
 
  
-
-
-
 

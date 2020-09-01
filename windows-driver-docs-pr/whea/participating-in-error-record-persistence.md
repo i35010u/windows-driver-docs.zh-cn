@@ -12,23 +12,23 @@ keywords:
 - 错误记录持久性 WDK WHEA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c3d709cf134f82e3dc25b030cfac5602a489c6b3
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 0f1efdd753530f0da5d220041aa76e55f1b836d8
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72843552"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89214172"
 ---
 # <a name="participating-in-error-record-persistence"></a>参与错误记录持久性
 
 
 若要参与错误记录持久性，PSHED 插件必须实现以下回调函数：
 
-[*WriteErrorRecord*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nc-ntddk-pshed_pi_write_error_record)
+[*WriteErrorRecord*](/windows-hardware/drivers/ddi/ntddk/nc-ntddk-pshed_pi_write_error_record)
 
-[*ReadErrorRecord*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nc-ntddk-pshed_pi_read_error_record)
+[*ReadErrorRecord*](/windows-hardware/drivers/ddi/ntddk/nc-ntddk-pshed_pi_read_error_record)
 
-[*ClearErrorRecord*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nc-ntddk-pshed_pi_clear_error_record)
+[*ClearErrorRecord*](/windows-hardware/drivers/ddi/ntddk/nc-ntddk-pshed_pi_clear_error_record)
 
 下面的代码示例演示如何实现这些回调函数。
 
@@ -183,12 +183,7 @@ NTSTATUS
 
 参与错误记录持久性的 PSHED 插件必须在向操作系统[注册](registering-a-pshed-plug-in.md)自身时指定**PshedFAErrorRecordPersistence**标志。
 
-有关错误记录持久性的详细信息，请参阅[错误记录永久性机制](error-record-persistence-mechanism.md)。
+有关错误记录持久性的详细信息，请参阅 [错误记录永久性机制](error-record-persistence-mechanism.md)。
 
  
-
- 
-
-
-
 

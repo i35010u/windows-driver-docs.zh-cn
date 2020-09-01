@@ -6,31 +6,31 @@ ms.date: 03/30/2018
 keywords:
 - 从 Windows Vista 开始 WDI_TLV_OS_POWER_MANAGEMENT_FEATURES 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: f92da82ba80ac3d4104e3f01b7b56811d9a6aad8
-ms.sourcegitcommit: ca5045a739eefd6ed14b9dbd9249b335e090c4e9
+ms.openlocfilehash: 8a6ab37fce9c75b1a4c318d32d318ab1b0849662
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/06/2020
-ms.locfileid: "85967938"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89215425"
 ---
 # <a name="wdi_tlv_os_power_management_features"></a>WDI_TLV_OS_POWER_MANAGEMENT_FEATURES
 
-WDI_TLV_OS_POWER_MANAGEMENT_FEATURES 是一种 TLV，其中包含操作系统电源管理功能的标志。 这使 Ihv 能够向操作系统指示它们支持称为 Nic 自动电源保护程序（NAPS）的高级电源管理功能。 NAPS 允许无线适配器在网络活动处于空闲状态的情况下进入*DX* 。
+WDI_TLV_OS_POWER_MANAGEMENT_FEATURES 是一种 TLV，其中包含操作系统电源管理功能的标志。 这使 Ihv 能够向操作系统指示它们支持称为 Nic 自动节能功能 (NAPS) 的高级电源管理功能。 NAPS 允许无线适配器在网络活动处于空闲状态的情况下进入 *DX* 。
 
 ## <a name="tlv-type"></a>TLV 类型
 
 0x144
 
-## <a name="length"></a>长度
+## <a name="length"></a>Length
 
 
-以下值的大小（以字节为单位）。
+以下值的大小 (以字节为单位) 。
 
 ## <a name="values"></a>值
 
 | 类型 | 说明 |
 | --- | --- |
-| [**WDI_OS_POWER_MANAGEMENT_FLAGS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wditypes/ne-wditypes-_wdi_os_power_management_flags) | 定义支持的 NAPS 支持方案的**WDI_OS_POWER_MANAGEMENT_FLAGS**值的按位 or。 |
+| [**WDI_OS_POWER_MANAGEMENT_FLAGS**](/windows-hardware/drivers/ddi/wditypes/ne-wditypes-_wdi_os_power_management_flags) | 定义支持的 NAPS 支持方案的 **WDI_OS_POWER_MANAGEMENT_FLAGS** 值的按位 or。 |
  
 
 ## <a name="requirements"></a>要求
@@ -40,4 +40,3 @@ WDI_TLV_OS_POWER_MANAGEMENT_FEATURES 是一种 TLV，其中包含操作系统电
 **支持的最低服务器**： Windows server 2016
 
 **标头**： Wditypes. hpp
-

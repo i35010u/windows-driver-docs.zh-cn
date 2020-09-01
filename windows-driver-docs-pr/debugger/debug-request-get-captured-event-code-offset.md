@@ -1,6 +1,6 @@
 ---
-title: 调试\_请求\_获取\_CAPTURED\_事件\_代码\_偏移量
-description: 调试\_请求\_获取\_CAPTURED\_事件\_代码\_偏移量
+title: 调试 \_ 请求 \_ 获取 \_ 捕获的 \_ 事件 \_ 代码 \_ 偏移量
+description: 调试 \_ 请求 \_ 获取 \_ 捕获的 \_ 事件 \_ 代码 \_ 偏移量
 ms.assetid: cdf05d4f-8a8c-4b52-b36f-9d00575fdb7b
 keywords:
 - DEBUG_REQUEST_GET_CAPTURED_EVENT_CODE_OFFSET Windows 调试
@@ -12,54 +12,47 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: dc9569206a346f5b1025e77295cb7a3c0a10e073
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 8842ab107b3e55c085a1ed1d5b15cfa43efbb9d4
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67361429"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89215359"
 ---
-# <a name="debugrequestgetcapturedeventcodeoffset"></a>调试\_请求\_获取\_CAPTURED\_事件\_代码\_偏移量
+# <a name="debug_request_get_captured_event_code_offset"></a>调试 \_ 请求 \_ 获取 \_ 捕获的 \_ 事件 \_ 代码 \_ 偏移量
 
 
-调试\_请求\_获取\_CAPTURED\_事件\_代码\_偏移量[**请求**](request.md)操作返回当前事件的指令指针。
+"调试 \_ 请求 \_ 获取 \_ 捕获 \_ \_ 的事件代码 \_ 偏移量 [**请求**](request.md) " 操作返回当前事件的指令指针。
 
-**Parameters**
+**参数**
 
 <span id="InBuffer"></span><span id="inbuffer"></span><span id="INBUFFER"></span>*InBuffer*  
-不使用。
+未使用。
 
 <span id="OutBuffer"></span><span id="outbuffer"></span><span id="OUTBUFFER"></span>*OutBuffer*  
 当前事件的指令指针。 指令指针的类型为 ULONG64。
 
-### <a name="span-idreturnvaluespanspan-idreturnvaluespanspan-idreturnvaluespanreturn-value"></a><span id="Return_Value"></span><span id="return_value"></span><span id="RETURN_VALUE"></span>返回值
+### <a name="span-idreturn_valuespanspan-idreturn_valuespanspan-idreturn_valuespanreturn-value"></a><span id="Return_Value"></span><span id="return_value"></span><span id="RETURN_VALUE"></span>返回值
 
-<span id="S_OK"></span><span id="s_ok"></span>S\_确定  
-此方法已成功。
+<span id="S_OK"></span><span id="s_ok"></span>S \_ 正常  
+方法成功。
 
-<span id="E_NOINTERFACE"></span><span id="e_nointerface"></span>E\_NOINTERFACE  
-在当前事件的指令指针的内存不是有效的。
+<span id="E_NOINTERFACE"></span><span id="e_nointerface"></span>E \_ NOINTERFACE  
+当前事件的指令指针处的内存无效。
 
-此方法还可能返回错误值。 请参阅[**返回值**](https://docs.microsoft.com/windows-hardware/drivers/debugger/hresult-values)的更多详细信息。
+此方法可能还会返回错误值。 有关更多详细信息，请参阅 [**返回值**](./hresult-values.md) 。
 
 <a name="remarks"></a>备注
 -------
 
-可以使用读取当前事件的指令指针的内存[**请求**](request.md)操作的[**调试\_请求\_读取\_CAPTURED\_事件\_代码\_流**](debug-request-read-captured-event-code-stream.md)。
+可以使用 [**请求**](request.md) 操作的 [**调试 \_ 请求 \_ 读取 \_ 捕获的 \_ 事件 \_ 代码 \_ 流**](debug-request-read-captured-event-code-stream.md)来读取当前事件的指令指针处的内存。
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
-[**请求**](request.md)
+[**Request**](request.md)
 
-[**调试\_请求\_读取\_CAPTURED\_事件\_代码\_流**](debug-request-read-captured-event-code-stream.md)
-
- 
+[**调试 \_ 请求 \_ 读取 \_ 捕获的 \_ 事件 \_ 代码 \_ 流**](debug-request-read-captured-event-code-stream.md)
 
  
-
-
-
-
-
 

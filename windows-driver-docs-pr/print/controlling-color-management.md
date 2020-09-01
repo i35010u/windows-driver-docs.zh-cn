@@ -6,12 +6,12 @@ keywords:
 - 颜色管理 WDK 打印，控制
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 93666d00d4f99494296d8bfb5f39646d95709ce5
-ms.sourcegitcommit: 17c1bbc5ea0bef3bbc87794b030a073f905dc942
+ms.openlocfilehash: ec9c71bfaeb8d541d8c0e97b2be0240883f932c6
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88802413"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89214941"
 ---
 # <a name="controlling-color-management"></a>控制颜色管理
 
@@ -19,7 +19,7 @@ ms.locfileid: "88802413"
 
 
 
-打印机的颜色管理可由应用程序、系统 (GDI) 、驱动程序或设备硬件控制。 驱动程序通过检查传递到其图形 DDI 绘图函数实现的 [**BRUSHOBJ**](https://docs.microsoft.com/windows/win32/api/winddi/ns-winddi-_brushobj) 和 [**XLATEOBJ**](https://docs.microsoft.com/windows/win32/api/winddi/ns-winddi-_xlateobj) 结构中的标志，来确定哪个组件正在管理颜色更正。 定义以下标志：
+打印机的颜色管理可由应用程序、系统 (GDI) 、驱动程序或设备硬件控制。 驱动程序通过检查传递到其图形 DDI 绘图函数实现的 [**BRUSHOBJ**](/windows/win32/api/winddi/ns-winddi-_brushobj) 和 [**XLATEOBJ**](/windows/win32/api/winddi/ns-winddi-_xlateobj) 结构中的标志，来确定哪个组件正在管理颜色更正。 定义以下标志：
 
 <table>
 <colgroup>
@@ -28,7 +28,7 @@ ms.locfileid: "88802413"
 </colgroup>
 <thead>
 <tr class="header">
-<th>Flag</th>
+<th>标志</th>
 <th>定义</th>
 </tr>
 </thead>
@@ -59,9 +59,4 @@ ms.locfileid: "88802413"
 [JPEG 和 PNG 图像的颜色管理](color-management-of-jpeg-and-png-images.md)
 
  
-
- 
-
-
-
 

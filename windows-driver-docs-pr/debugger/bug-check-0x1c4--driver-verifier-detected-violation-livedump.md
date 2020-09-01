@@ -1,6 +1,6 @@
 ---
 title: Bug 检查 0x1C4 DRIVER_VERIFIER_DETECTED_VIOLATION_LIVEDUMP
-description: DRIVER_VERIFIER_DETECTED_VIOLATION_LIVEDUMP bug 检查具有 0x000001C4 值。
+description: DRIVER_VERIFIER_DETECTED_VIOLATION_LIVEDUMP bug 检查的值为0x000001C4。
 ms.assetid: B5C00570-477C-4C0C-B8B9-A7796FC33D63
 keywords:
 - Bug 检查 0x1C4 DRIVER_VERIFIER_DETECTED_VIOLATION_LIVEDUMP
@@ -13,26 +13,26 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 6623ee07e4c59772f6e8459291de6188b834d481
-ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
+ms.openlocfilehash: 38508dba045d2a8831cbf49090cb5e35fc020de3
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67519724"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89214854"
 ---
-# <a name="bug-check-0x1c4-driververifierdetectedviolationlivedump"></a>Bug 检查 0x1C4：驱动程序\_VERIFIER\_已检测\_冲突\_LIVEDUMP
+# <a name="bug-check-0x1c4-driver_verifier_detected_violation_livedump"></a>Bug 检查0x1C4：驱动程序 \_ 验证程序 \_ 检测到 \_ 违反 \_ LIVEDUMP
 
 
-该驱动程序\_VERIFIER\_已检测\_冲突\_LIVEDUMP bug 检查的值为 0x000001C4。 这表示检测到尝试破坏系统的设备驱动程序。 这是因为正在可疑 （由管理员） 和内核已启用此驱动程序的大量检查驱动程序已在注册表中指定。 有关详细信息，请参阅[Driver Verifier](https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier)。
+驱动程序 \_ 验证程序 \_ 检测到 \_ 冲突 \_ LIVEDUMP bug 检查的值为0x000001C4。 这表示检测到尝试损坏系统的设备驱动程序。 这是因为在注册表中指定的驱动程序被管理员)  (可疑，并且内核已启用对此驱动程序的大量检查。 有关详细信息，请参阅[驱动程序验证程序](../devtest/driver-verifier.md)。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://www.windows.com/stopcode)。
+> 本主题面向程序员。 如果您是在使用计算机时收到蓝屏错误代码的客户，请参阅[蓝屏错误疑难解答](https://www.windows.com/stopcode)。
 
 
 
-## <a name="driververifierdetectedviolationlivedump-parameters"></a>驱动程序\_VERIFIER\_已检测\_冲突\_LIVEDUMP 参数
+## <a name="driver_verifier_detected_violation_livedump-parameters"></a>驱动程序 \_ 验证程序 \_ 检测到 \_ 违反 \_ LIVEDUMP 参数
 
-| 参数 | 描述                              |
+| 参数 | 说明                              |
 |-----------|------------------------------------------|
 |1| 驱动程序冲突的子类。 请参阅下面的值。|
 |2| 请参阅下面的值。 |
@@ -438,10 +438,3 @@ ms.locfileid: "67519724"
     Parameter 3 - Address of internal rule state (second argument to !ruleinfo).
     Parameter 4 - Address of supplemental states (third argument to !ruleinfo).
 ```
-
-
-
-
-
-
-

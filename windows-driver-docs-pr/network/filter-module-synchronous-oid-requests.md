@@ -5,16 +5,16 @@ ms.assetid: 14C6555D-D8E6-4DEB-96C8-D4F18F06CE6B
 keywords: 筛选器模块同步 OID 请求接口，筛选器模块同步 OID 调用，WDK 筛选器模块同步 oid，筛选器模块同步 OID 请求
 ms.date: 04/03/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8900b4bbed1cf2935f939dda3281499ac73c0a43
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 4a47b10973c0b8f82f8c17e05063c5d08f0d81d0
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72834667"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89213969"
 ---
 # <a name="filter-module-synchronous-oid-requests"></a>筛选器模块同步 OID 请求
 
-为了支持同步 OID 请求路径，筛选器驱动程序在 NDIS\_筛选器中提供了[*FilterSynchronousOidRequest*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-filter_synchronous_oid_request)函数入口点[ **\_驱动\_程序**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_filter_driver_characteristics)在调用[**NdisFRegisterFilterDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfregisterfilterdriver)函数。
+为了支持同步 OID 请求路径，筛选器驱动程序会在调用[**NdisFRegisterFilterDriver**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfregisterfilterdriver)函数时在[**NDIS \_ 筛选器 \_ 驱动程序 \_ 特征**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_filter_driver_characteristics)结构中提供[*FilterSynchronousOidRequest*](/windows-hardware/drivers/ddi/ndis/nf-ndis-filter_synchronous_oid_request)函数入口点。
 
 > [!NOTE]
 > NDIS 6.81 支持用于同步 OID 请求接口的特定 Oid。 不支持在 NDIS 6.80 和某些 NDIS 6.80 Oid 之前存在的 Oid。 若要确定是否可以在同步 OID 请求接口中使用 OID，请参见 "OID 引用" 页。
@@ -23,5 +23,5 @@ ms.locfileid: "72834667"
 
 | 同步 OID 函数 | 标准 OID 函数 |
 | --- | --- |
-| [*FilterSynchronousOidRequest*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-filter_synchronous_oid_request) | [*FilterOidRequest*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-filter_oid_request) |
-| [*FilterSynchronousOidRequestComplete*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-filter_synchronous_oid_request_complete) | [*FilterOidRequestComplete*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-filter_oid_request_complete) | 
+| [*FilterSynchronousOidRequest*](/windows-hardware/drivers/ddi/ndis/nf-ndis-filter_synchronous_oid_request) | [*FilterOidRequest*](/windows-hardware/drivers/ddi/ndis/nc-ndis-filter_oid_request) |
+| [*FilterSynchronousOidRequestComplete*](/windows-hardware/drivers/ddi/ndis/nf-ndis-filter_synchronous_oid_request_complete) | [*FilterOidRequestComplete*](/windows-hardware/drivers/ddi/ndis/nc-ndis-filter_oid_request_complete) |

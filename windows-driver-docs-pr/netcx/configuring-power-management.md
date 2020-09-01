@@ -6,52 +6,52 @@ keywords:
 - NetAdapterCx 配置电源管理，NetCx 配置电源管理
 ms.date: 06/12/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 39ae39450599b557f73c52eebe19ee64b1ce3e97
-ms.sourcegitcommit: 7cc3143fc4b7c88dbebb4bdaeff666d290aa1a16
+ms.openlocfilehash: bb1948a88c93e8030e5abb949295f8ccff9cb012
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/15/2020
-ms.locfileid: "84780689"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89215284"
 ---
 # <a name="configuring-netadaptercx-power-management"></a>配置 NetAdapterCx 电源管理
 
-所有 NetAdapterCx 客户端驱动程序都是 Windows 驱动程序框架（WDF）驱动程序，其电源管理功能与所有 WDF 驱动程序类似。 NetAdapterCx 驱动程序需要其他特定于网络的电源配置，如本文中所述。
+所有 NetAdapterCx 客户端驱动程序都是 Windows 驱动程序框架 (WDF) 驱动程序，其电源管理功能与所有 WDF 驱动程序类似。 NetAdapterCx 驱动程序需要其他特定于网络的电源配置，如本文中所述。
 
 典型的网络设备支持3个常见电源管理功能：
 
-- 当操作系统指示网络设备时，网络设备可以进入低功耗（Dx）状态。
-  - 客户端驱动程序将注册可选的 WDF 事件回调以接收电源转换的通知，如在[功能驱动程序中支持 PnP 和电源管理](../wdf/supporting-pnp-and-power-management-in-function-drivers.md)中所述。
+- 当操作系统指示的时候，网络设备可以进入低功耗 (Dx) 状态。
+  - 客户端驱动程序将注册可选的 WDF 事件回调以接收电源转换的通知，如在 [功能驱动程序中支持 PnP 和电源管理](../wdf/supporting-pnp-and-power-management-in-function-drivers.md)中所述。
 
-  - 如果网络设备在系统保持正常运行（S0）状态时可以进入 Dx 状态，则客户端驱动程序应支持空闲关机。 请参阅[支持空闲电源关闭](../wdf/supporting-idle-power-down.md)。
+  - 如果网络设备可以进入 Dx 状态，而系统仍处于正常工作 (S0) 状态，则客户端驱动程序应支持空闲关机。 请参阅 [支持空闲电源关闭](../wdf/supporting-idle-power-down.md)。
 
 - 当网络设备处于 Dx 状态时，如果已预配置的唤醒条件已发生，则它可以触发唤醒信号。
-  - 若要详细了解 WDF 设备如何从系统范围低功耗状态唤醒系统，请参阅[支持系统唤醒](../wdf/supporting-system-wake-up.md)。
+  - 若要详细了解 WDF 设备如何从系统范围低功耗状态唤醒系统，请参阅 [支持系统唤醒](../wdf/supporting-system-wake-up.md)。
 
-  - NetAdapterCx 为客户端驱动程序提供 Api，以声明其硬件对其具有唤醒支持的网络事件。 请参阅下面的 "[设置网络适配器的电源功能](#setting-power-capabilities-of-the-network-adapter)" 部分。
+  - NetAdapterCx 为客户端驱动程序提供 Api，以声明其硬件对其具有唤醒支持的网络事件。 请参阅下面的 " [设置网络适配器的电源功能](#setting-power-capabilities-of-the-network-adapter) " 部分。
 
-- 当网络设备处于 Dx 状态时，它仍然可以响应一些常用的网络请求，以维护主机系统在网络上的存在，而不会唤醒主机系统。 请参阅下面的 "[设置网络适配器的电源功能](#setting-power-capabilities-of-the-network-adapter)" 部分。
+- 当网络设备处于 Dx 状态时，它仍然可以响应一些常用的网络请求，以维护主机系统在网络上的存在，而不会唤醒主机系统。 请参阅下面的 " [设置网络适配器的电源功能](#setting-power-capabilities-of-the-network-adapter) " 部分。
 
 ## <a name="setting-power-capabilities-of-the-network-adapter"></a>设置网络适配器的电源功能
 
-配置 WDF 电源管理功能后，下一步是设置网络适配器的电源功能。 电源功能分为两类：[低功率协议卸载功能](#low-power-protocol-offload-capabilities)和[唤醒功能](#wake-up-capabilities)。
+配置 WDF 电源管理功能后，下一步是设置网络适配器的电源功能。 电源功能分为两类： [低功率协议卸载功能](#low-power-protocol-offload-capabilities) 和 [唤醒功能](#wake-up-capabilities)。
 
 ### <a name="low-power-protocol-offload-capabilities"></a>低功率协议卸载功能
 
-有关 Windows 网络堆栈如何利用此功能的背景信息，请参阅[NDIS 电源管理的协议卸载](../network/protocol-offloads-for-ndis-power-management.md)。
+有关 Windows 网络堆栈如何利用此功能的背景信息，请参阅 [NDIS 电源管理的协议卸载](../network/protocol-offloads-for-ndis-power-management.md)。
 
 客户端驱动程序通过调用适用于其硬件的以下方法来设置低功率协议卸载功能：
 
-- [**NetAdapterPowerOffloadSetArpCapabilities**](https://docs.microsoft.com/windows-hardware/drivers/ddi/netadapter/nf-netadapter-netadapterpoweroffloadsetarpcapabilities)
-- [**NetAdapterPowerOffloadSetNSCapabilities**](https://docs.microsoft.com/windows-hardware/drivers/ddi/netadapter/nf-netadapter-netadapterpoweroffloadsetnscapabilities)
+- [**NetAdapterPowerOffloadSetArpCapabilities**](/windows-hardware/drivers/ddi/netadapter/nf-netadapter-netadapterpoweroffloadsetarpcapabilities)
+- [**NetAdapterPowerOffloadSetNSCapabilities**](/windows-hardware/drivers/ddi/netadapter/nf-netadapter-netadapterpoweroffloadsetnscapabilities)
 
 ### <a name="wake-up-capabilities"></a>唤醒功能
 
-客户端驱动程序调用以下任一方法，设置在设备处于低功率状态（Dx）时其硬件支持的唤醒功能：
+当设备处于低功耗状态 (Dx) 时，客户端驱动程序将调用以下任一方法来设置其硬件支持的唤醒功能：
 
-- [**NetAdapterWakeSetBitmapCapabilities**](https://docs.microsoft.com/windows-hardware/drivers/ddi/netadapter/nf-netadapter-netadapterwakesetbitmapcapabilities)
-- [**NetAdapterWakeSetMagicPacketCapabilities**](https://docs.microsoft.com/windows-hardware/drivers/ddi/netadapter/nf-netadapter-netadapterwakesetmagicpacketcapabilities)
-- [**NetAdapterWakeSetMediaChangeCapabilities**](https://docs.microsoft.com/windows-hardware/drivers/ddi/netadapter/nf-netadapter-netadapterwakesetmediachangecapabilities)
-- [**NetAdapterWakeSetPacketFilterCapabilities**](https://docs.microsoft.com/windows-hardware/drivers/ddi/netadapter/nf-netadapter-netadapterwakesetpacketfiltercapabilities)
+- [**NetAdapterWakeSetBitmapCapabilities**](/windows-hardware/drivers/ddi/netadapter/nf-netadapter-netadapterwakesetbitmapcapabilities)
+- [**NetAdapterWakeSetMagicPacketCapabilities**](/windows-hardware/drivers/ddi/netadapter/nf-netadapter-netadapterwakesetmagicpacketcapabilities)
+- [**NetAdapterWakeSetMediaChangeCapabilities**](/windows-hardware/drivers/ddi/netadapter/nf-netadapter-netadapterwakesetmediachangecapabilities)
+- [**NetAdapterWakeSetPacketFilterCapabilities**](/windows-hardware/drivers/ddi/netadapter/nf-netadapter-netadapterwakesetpacketfiltercapabilities)
 
 ### <a name="power-consumption-and-resume-latency"></a>功率消耗和恢复延迟
 
@@ -60,7 +60,7 @@ ms.locfileid: "84780689"
 下表描述了有关每个唤醒功能的能耗与恢复延迟之间的权衡的一般准则。
 
 > [!IMPORTANT]
-> 某些信息与 prereleased 产品相关，这些信息可能会在正式发布之前经过重大修改。 对于提供的信息，Microsoft 不做任何明示或默示的保证。 有关特定设备类型的详细信息，请参阅媒体特定的文档和[Windows 硬件兼容性计划（WHCP）](https://docs.microsoft.com/windows-hardware/design/compatibility/) 。
+> 某些信息与 prereleased 产品相关，这些信息可能会在正式发布之前经过重大修改。 对于提供的信息，Microsoft 不做任何明示或默示的保证。 有关特定设备类型的详细信息，请参阅媒体特定文档和 [Windows 硬件兼容性计划 (WHCP) ](/windows-hardware/design/compatibility/) 。
   
 | 唤醒功能 | 唤醒事件 | 功率消耗 | 恢复延迟
 |-|-|-|-|
@@ -69,7 +69,7 @@ ms.locfileid: "84780689"
 | MagicPacket | 幻数据包 | 类似于位图 | <= 300 ms
 | MediaChange | 媒体已连接或已断开连接 | 类似于位图 | <= 300 ms
 
-下面的示例说明了客户端驱动程序如何初始化其电源功能。 它在启动网络适配器时，但在调用[**NetAdapterStart**](https://docs.microsoft.com/windows-hardware/drivers/ddi/netadapter/nf-netadapter-netadapterstart)之前执行此过程。 在此示例中，客户端驱动程序将设置其位图、媒体更改和数据包筛选器唤醒功能。
+下面的示例说明了客户端驱动程序如何初始化其电源功能。 它在启动网络适配器时，但在调用 [**NetAdapterStart**](/windows-hardware/drivers/ddi/netadapter/nf-netadapter-netadapterstart)之前执行此过程。 在此示例中，客户端驱动程序将设置其位图、媒体更改和数据包筛选器唤醒功能。
 
 ```cpp
 //
@@ -109,11 +109,11 @@ if(deviceContext->SelectiveSuspendSupported)
 }
 ```
 
-客户端可以选择注册[*EVT_NET_DEVICE_PREVIEW_POWER_OFFLOAD*](https://docs.microsoft.com/windows-hardware/drivers/ddi/netdevice/nc-netdevice-evt_net_device_preview_power_offload)和[*EVT_NET_DEVICE_PREVIEW_WAKE_SOURCE*](https://docs.microsoft.com/windows-hardware/drivers/ddi/netdevice/nc-netdevice-evt_net_device_preview_wake_source)回调函数，以接受或拒绝传入的协议卸载和唤醒模式。
+客户端可以选择注册 [*EVT_NET_DEVICE_PREVIEW_POWER_OFFLOAD*](/windows-hardware/drivers/ddi/netdevice/nc-netdevice-evt_net_device_preview_power_offload) 和 [*EVT_NET_DEVICE_PREVIEW_WAKE_SOURCE*](/windows-hardware/drivers/ddi/netdevice/nc-netdevice-evt_net_device_preview_wake_source) 回调函数，以接受或拒绝传入的协议卸载和唤醒模式。
 
 ## <a name="programming-protocol-power-offload-and-wake-patterns"></a>编程协议电源卸载和唤醒模式
 
-在设备的[关机顺序](../wdf/power-down-and-removal-sequence-for-a-function-or-filter-driver.md)中，驱动程序将循环访问已启用的唤醒模式和协议电源卸载，并将其程序写入硬件。 该驱动程序在其[*EvtDeviceArmWakeFromS0*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_arm_wake_from_s0)和[*EvtDeviceArmWakeFromSx*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_arm_wake_from_sx)回调函数中执行此功能。
+在设备的 [关机顺序](../wdf/power-down-and-removal-sequence-for-a-function-or-filter-driver.md) 中，驱动程序将循环访问已启用的唤醒模式和协议电源卸载，并将其程序写入硬件。 该驱动程序在其 [*EvtDeviceArmWakeFromS0*](/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_arm_wake_from_s0) 和 [*EvtDeviceArmWakeFromSx*](/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_arm_wake_from_sx) 回调函数中执行此功能。
 
 下面的示例演示客户端驱动程序如何循环访问唤醒模式列表以检查幻数据包条目的唤醒，然后循环访问电源卸载列表来处理 IPv4 ARP 协议卸载：
 
@@ -171,18 +171,35 @@ EvtDeviceArmWakeFromSx(
 }
 ```
 
-[回到高性能](../wdf/power-up-sequence-for-a-function-or-filter-driver.md)，驱动程序通常会在相应的[*EvtDeviceDisarmWakeFromSx*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_disarm_wake_from_sx)和[*EvtDeviceDisarmWakeFromS0*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_disarm_wake_from_s0)回调中禁用先前编程的协议电源卸载和唤醒模式。
+[回到高性能](../wdf/power-up-sequence-for-a-function-or-filter-driver.md)，驱动程序通常会在相应的[*EvtDeviceDisarmWakeFromSx*](/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_disarm_wake_from_sx)和[*EvtDeviceDisarmWakeFromS0*](/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_disarm_wake_from_s0)回调中禁用先前编程的协议电源卸载和唤醒模式。
+
+## <a name="reporting-wake-reason"></a>报表唤醒原因
+
+> [!IMPORTANT]
+> 要求客户端驱动程序将 "唤醒原因" 报告为 NetAdapterCx。
+
+NIC 硬件唤醒系统时，客户端驱动程序必须向 NetAdapterCx 报告唤醒触发唤醒的唤醒源。 对于大多数唤醒源，驱动程序使用 [**NET_ADAPTER_WAKE_REASON_PACKET**](/windows-hardware/drivers/ddi/netadapter/ns-netadapter-_net_adapter_wake_reason_packet) 结构来描述触发唤醒的网络数据包。
+
+如果 [**NET_WAKE_SOURCE_TYPE**](/windows-hardware/drivers/ddi/netwakesource/ne-netwakesource-_net_wake_source_type) 为：
+
+- **NetWakeSourceTypeBitmapPattern**，调用 [**NET_ADAPTER_WAKE_REASON_PACKET_INIT**](/windows-hardware/drivers/ddi/netadapter/nf-netadapter-net_adapter_wake_reason_packet_init) 初始化 **NET_ADAPTER_WAKE_REASON_PACKET** 结构。 调用 [**NetAdapterReportWakeReasonPacket**](/windows-hardware/drivers/ddi/netadapter/nf-netadapter-netadapterreportwakereasonpacket) 以报告此唤醒原因。
+
+- **NetWakeSourceTypeMagicPacket**，调用 [**NET_ADAPTER_WAKE_REASON_MAGIC_PACKET_INIT**](/windows-hardware/drivers/ddi/netadapter/nf-netadapter-net_adapter_wake_reason_magic_packet_init)  初始化 **NET_ADAPTER_WAKE_REASON_PACKET** 结构。 调用 **NetAdapterReportWakeReasonPacket** 以报告此唤醒原因。
+
+- **NetWakeSourceTypePacketFilterMatch**，调用 [**NET_ADAPTER_WAKE_REASON_FILTER_PACKET_INIT**](/windows-hardware/drivers/ddi/netadapter/nf-netadapter-net_adapter_wake_reason_filter_packet_init)  初始化 **NET_ADAPTER_WAKE_REASON_PACKET** 结构。 调用 **NetAdapterReportWakeReasonPacket** 以报告此唤醒原因。
+
+- **NetWakeSourceTypeMediaChange**，请调用 [**NetAdapterReportWakeReasonMediaChange**](/windows-hardware/drivers/ddi/netadapter/nf-netadapter-netadapterreportwakereasonmediachange) 来报告此唤醒原因。
 
 ## <a name="power-management-scenarios-for-modern-standby-system"></a>新式备用系统的电源管理方案
 
 > [!IMPORTANT]
 > 对于新式备用平台，网络设备驱动程序必须：
 >
-> - 调用[**WdfDeviceInitSetPnpPowerEventCallbacks**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceinitsetpnppowereventcallbacks)注册电源回调。
-> - 当系统处于工作状态（S0）时，调用[**WdfDeviceAssignS0IdleSettings**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceassigns0idlesettings)以支持设备置于空闲状态。
-> - 调用[**WdfDeviceInitSetPowerPolicyEventCallbacks**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceinitsetpowerpolicyeventcallbacks)以注册唤醒回调。
-> - 支持适用于设备类型的[低功率协议卸载功能](#low-power-protocol-offload-capabilities)。
-> - 支持适合于设备类型的[唤醒功能](#wake-up-capabilities)。
+> - 调用 [**WdfDeviceInitSetPnpPowerEventCallbacks**](/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceinitsetpnppowereventcallbacks) 注册电源回调。
+> - 当系统处于工作状态 (S0) 状态时，调用 [**WdfDeviceAssignS0IdleSettings**](/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceassigns0idlesettings) 以支持设备置于空闲状态。
+> - 调用 [**WdfDeviceInitSetPowerPolicyEventCallbacks**](/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceinitsetpowerpolicyeventcallbacks) 以注册唤醒回调。
+> - 支持适用于设备类型的 [低功率协议卸载功能](#low-power-protocol-offload-capabilities) 。
+> - 支持适合于设备类型的 [唤醒功能](#wake-up-capabilities) 。
 >
 > 有关设备类型的完整新式备用要求，请参阅媒体特定的文档和 WHCP。
 

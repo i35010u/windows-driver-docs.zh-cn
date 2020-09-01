@@ -4,51 +4,45 @@ description: 数据中心桥接的 NDIS QoS 要求
 ms.assetid: 09BEFF6C-6887-42BA-A44B-5BFE65DBD69E
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: beceb7a133f96ae12a28458418786706ea0ed242
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 4fbc3341bee2c04bd85b4747cd8b20b87fcc8579
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67369176"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89213909"
 ---
 # <a name="ndis-qos-requirements-for-data-center-bridging"></a>数据中心桥接的 NDIS QoS 要求
 
 
-若要支持 NDIS 服务质量 (QoS) 的 IEEE 802.1 数据中心桥接 (DCB)，微型端口驱动程序和网络适配器必须支持以下功能：
+若要支持 (QoS) IEEE 802.1 数据中心桥接 (DCB) ，微型端口驱动程序和网络适配器必须支持以下各项：
 
--   微型端口驱动程序和网络适配器必须支持基于优先级的流控制 (PFC) 指定的 IEEE 802.1Qbb 草案标准。
+-   小型端口驱动程序和网络适配器必须支持基于优先级的流控制 (PFC) 由 IEEE 802.1 Q b b 草案标准指定。
 
--   微型端口驱动程序和网络适配器必须支持指定的 IEEE 802.1Qaz 增强传输选择 (ETS) 算法草案标准。
+-   小型端口驱动程序和网络适配器必须支持 ETS) 算法的增强的传输选择， (由 IEEE 802.1 Qaz 草案标准指定。
 
--   微型端口驱动程序和网络适配器必须支持至少三个 NDIS QoS 通信类别，并且必须支持至少两个 ETS 基于流量类。 这两个至少一个基于 ETS 的流量类必须支持 PFC。
+-   微型端口驱动程序和网络适配器必须支持至少三个 NDIS QoS 通信类，并且必须支持至少两个基于 ETS 的通信类。 对于这两个，至少一个基于 ETS 的通信类必须支持 PFC。
 
-    有关流量类的详细信息，请参阅[NDIS QoS 通信类](ndis-qos-traffic-classes.md)。
+    有关流量类的详细信息，请参阅 [NDIS QoS 流量类](ndis-qos-traffic-classes.md)。
 
--   微型端口驱动程序和网络适配器必须支持严格的优先级算法为传输所选内容按照 IEEE 802.1Q-2005 标准。
+-   小型端口驱动程序和网络适配器必须支持 IEEE 802.1 Q-2005 标准指定的传输选择的严格优先级算法。
 
-有关 NDIS QoS、 微型端口驱动程序和网络适配器可以选择性地支持 IEEE 由指定的数据中心桥接交换 (DCBX) 协议 802.1Qaz 草案标准。 若要支持 DCBX，微型端口驱动程序和适配器还必须支持 IEEE 802.1AB 中指定的链接层发现协议 (LLDP) 协议的 2005 标准。
+对于 NDIS QoS，微型端口驱动程序和网络适配器可以根据 IEEE 802.1 Qaz 草案标准的指定，支持数据中心桥接 Exchange (DCBX) 协议。 为支持 DCBX，微型端口驱动程序和适配器还必须支持 802.1 2005 标准中指定的链接层发现协议 (LLDP) 协议。
 
-此外，微型端口驱动程序本身必须为 NDIS QoS 支持以下：
+此外，对于 NDIS QoS，微型端口驱动程序本身必须支持以下各项：
 
 -   微型端口驱动程序必须支持 NDIS 6.30 或更高版本的 NDIS。
 
--   微型端口驱动程序必须支持的对象标识符 (OID) 的方法请求[OID\_QOS\_参数](https://docs.microsoft.com/windows-hardware/drivers/network/oid-qos-parameters)设置 NDIS QoS 参数。 有关详细信息，请参阅[设置本地 NDIS QoS 参数](setting-local-ndis-qos-parameters.md)。
+-   微型端口驱动程序必须支持 [oid \_ qos \_ 参数](./oid-qos-parameters.md) (oid) 方法请求的对象标识符才能设置 NDIS qos 参数。 有关详细信息，请参阅 [设置本地 NDIS QoS 参数](setting-local-ndis-qos-parameters.md)。
 
-    **请注意**  NDIS 处理大部分除微型端口驱动程序的 NDIS QoS OID 请求[OID\_QOS\_参数](https://docs.microsoft.com/windows-hardware/drivers/network/oid-qos-parameters)。
+    **注意**   NDIS 处理微型端口驱动程序的大多数 NDIS QoS OID 请求（ [OID \_ qos \_ 参数](./oid-qos-parameters.md)除外）。
 
      
 
--   微型端口驱动程序必须能够解析冲突从远程对等方发送的 DCBX 帧上接收到的 NDIS QoS 参数设置。 该驱动程序解析其本地和远程 NDIS QoS 参数，以确定网络适配器将使用按优先顺序排列的数据包传输其操作的 NDIS QoS 参数之间的冲突。 有关此过程的详细信息，请参阅[解析操作的 NDIS QoS 参数](resolving-operational-ndis-qos-parameters.md)。
+-   微型端口驱动程序必须能够解决在从远程对等方发送的 DCBX 帧上收到的冲突的 NDIS QoS 参数设置。 驱动程序解决其本地和远程 NDIS QoS 参数之间的冲突，以确定网络适配器用于确定优先级的数据包传输的操作 NDIS QoS 参数。 有关此过程的详细信息，请参阅 [解析操作 NDIS QoS 参数](resolving-operational-ndis-qos-parameters.md)。
 
--   微型端口驱动程序必须能够发出 NDIS 状态指示其操作的 NDIS QoS 参数更改时。 有关此过程的详细信息，请参阅[对操作的 NDIS QoS 参数，该值指示更改](indicating-changes-to-the-operational-ndis-qos-parameters.md)。
+-   微型端口驱动程序必须能够在其操作 NDIS QoS 参数发生更改时发出 NDIS 状态指示。 有关此过程的详细信息，请参阅 [指示对操作 NDIS QoS 参数的更改](indicating-changes-to-the-operational-ndis-qos-parameters.md)。
 
--   微型端口驱动程序必须能够在远程对等方上的 NDIS QoS 参数中检测到更改时发出 NDIS 状态指示。 有关此过程的详细信息，请参阅[对远程 NDIS QoS 参数，该值指示更改](indicating-changes-to-the-remote-ndis-qos-parameters.md)。
-
- 
+-   当微型端口驱动程序检测到远程对等方上的 NDIS QoS 参数发生变化时，它必须能够发出 NDIS 状态指示。 有关此过程的详细信息，请参阅 [指示对远程 NDIS QoS 参数所做的更改](indicating-changes-to-the-remote-ndis-qos-parameters.md)。
 
  
-
-
-
-
 

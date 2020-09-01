@@ -3,45 +3,45 @@ title: NDIS_STATUS_NIC_SWITCH_CURRENT_CAPABILITIES
 description: NDIS_STATUS_NIC_SWITCH_CURRENT_CAPABILITIES 状态向 NDIS 和过量驱动程序指示网络适配器中 NIC 交换机的当前已启用硬件功能已更改。
 ms.assetid: 8F5DF045-4993-45E6-A5B9-502B695E3C62
 ms.date: 08/08/2017
-keywords: -从 Windows Vista 开始 NDIS_STATUS_NIC_SWITCH_CURRENT_CAPABILITIES 网络驱动程序
+keywords: -从 Windows Vista 开始 NDIS_STATUS_NIC_SWITCH_CURRENT_CAPABILITIES 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 2787a2717480edef70ae77994b77bf8928067efe
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 2cb3f1232139a71f96fad3701adefc421269dbc4
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72842781"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89214698"
 ---
-# <a name="ndis_status_nic_switch_current_capabilities"></a>NDIS\_状态\_NIC\_交换机\_当前\_功能
+# <a name="ndis_status_nic_switch_current_capabilities"></a>NDIS \_ 状态 \_ NIC \_ 交换机 \_ 当前 \_ 功能
 
 
-**Ndis\_状态\_NIC\_开关\_当前\_功能**状态向 NDIS 和过量驱动程序指示网络适配器中 NIC 交换机的当前已启用硬件功能已更改。
+**Ndis \_ 状态 \_ NIC \_ 交换机 \_ 当前 \_ 功能**状态向 ndis 和过量驱动程序指示网络适配器中 NIC 交换机的当前已启用硬件功能已更改。
 
-状态指示由网络适配器 PCI Express （PCIe）物理功能（PF）的微型端口驱动程序进行。 PF 微型端口驱动程序在 Hyper-v 父分区的管理操作系统中运行。
+状态指示由网络适配器 PCI Express (PCIe 的微型端口驱动程序) 物理功能 (PF) 。 PF 微型端口驱动程序在 Hyper-v 父分区的管理操作系统中运行。
 
 <a name="remarks"></a>备注
 -------
 
-只要检测到设备上的 NIC 交换机当前启用的硬件功能发生更改，PF 微型端口驱动程序必须 **\_\_\_NIC 上发出 NDIS\_状态\_** 网络适配器。 当满足以下条件之一时，这些功能可能会更改：
+每当检测到网络适配器上的 NIC 交换机的当前已启用硬件功能发生更改时，PF 微型端口驱动程序必须发出 **NDIS \_ 状态 \_ NIC \_ 交换机 \_ 当前 \_ 功能** 状态指示。 当满足以下条件之一时，这些功能可能会更改：
 
--   当前启用的 NIC 交换机硬件功能通过独立硬件供应商（IHV）开发的管理应用程序进行更改。
+-   当前启用的 NIC 交换机硬件功能通过独立硬件供应商 (IHV) 开发的管理应用程序进行更改。
 
--   当前启用的 NIC 交换机硬件功能对于属于某个 MUX 中间驱动程序管理的负载平衡故障转移（LBFO）团队的一个或多个网络适配器进行更改。 有关详细信息，请参阅[NDIS MUX 中间驱动程序](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-mux-intermediate-drivers)。
+-   当前启用的 NIC 交换机硬件功能对于属于负载平衡故障转移 (LBFO) 团队管理的一个或多个网络适配器（由 MUX 中间驱动程序管理）进行了更改。 有关详细信息，请参阅 [NDIS MUX 中间驱动程序](./ndis-mux-intermediate-drivers.md)。
 
-当 PF 微型端口驱动程序发出**NDIS\_状态\_NIC\_开关\_当前\_功能**状态指示时，必须执行以下步骤：
+当 PF 微型端口驱动程序发出 **NDIS \_ 状态 \_ NIC \_ 交换机 \_ 当前 \_ 功能** 状态指示时，必须执行以下步骤：
 
-1.  微型端口驱动程序使用网络适配器的 NIC 交换机当前启用的硬件功能，初始化[**NDIS\_NIC\_交换机\_功能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_capabilities)结构。
-2.  微型端口驱动程序通过以下方式初始化[**NDIS\_状态\_指示**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_status_indication)结构：
+1.  微型端口驱动程序使用网络适配器的 NIC 交换机当前启用的硬件功能初始化 [**NDIS \_ NIC \_ 交换机 \_ 功能**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_capabilities) 结构。
+2.  微型端口驱动程序通过以下方式初始化 [**NDIS \_ 状态 \_ 指示**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_status_indication) 结构：
 
-    -   必须将**StatusCode**成员设置为**NDIS\_状态\_NIC\_SWITCH\_当前\_功能**。
+    -   **StatusCode**成员必须设置为**NDIS \_ 状态 \_ NIC \_ 交换机 \_ 当前 \_ 功能**。
 
-    -   **StatusBuffer**成员必须设置为指向[**NDIS\_NIC 的指针\_交换机\_功能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_capabilities)结构。 此结构包含 NIC 交换机当前启用的硬件功能。
+    -   **StatusBuffer**成员必须设置为指向[**NDIS \_ NIC \_ 交换机 \_ 功能**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_capabilities)结构的指针。 此结构包含 NIC 交换机当前启用的硬件功能。
 
-    -   **StatusBufferSize**成员必须设置为 Sizeof （[**NDIS\_NIC\_交换机\_功能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_capabilities)）。
+    -   **StatusBufferSize**成员必须设置为 Sizeof ([**NDIS \_ NIC \_ 交换机 \_ 功能**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_capabilities)) 。
 
-3.  PF 微型端口驱动程序通过调用[**NdisMIndicateStatusEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismindicatestatusex)发出状态通知。 驱动程序必须向*StatusIndication*参数传递指向[**NDIS\_状态\_指示**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_status_indication)结构的指针。
+3.  PF 微型端口驱动程序通过调用 [**NdisMIndicateStatusEx**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismindicatestatusex)发出状态通知。 驱动程序必须将指向 [**NDIS \_ 状态 \_ 指示**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_status_indication) 结构的指针传递到 *StatusIndication* 参数。
 
-过量驱动程序可以使用**NDIS\_状态\_NIC\_交换机\_当前\_功能**状态指示来确定网络适配器上当前启用的 NIC 交换机功能。 此外，这些驱动程序还可以\_\_NIC 发出 oid 查询请求， [\_当前\_功能](oid-nic-switch-current-capabilities.md)随时获取这些功能。
+过量驱动程序可以使用 **NDIS \_ 状态 \_ NIC \_ 交换机 \_ 当前 \_ 功能** 状态指示来确定网络适配器上当前启用的 NIC 交换机功能。 此外，这些驱动程序还可以发出 oid [ \_ NIC \_ 交换机 \_ 当前 \_ 功能](oid-nic-switch-current-capabilities.md) 的 oid 查询请求，以随时获取这些功能。
 
 <a name="requirements"></a>要求
 ------------
@@ -67,16 +67,11 @@ ms.locfileid: "72842781"
 
 
 ****
-[**NDIS\_NIC\_交换机\_功能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_capabilities)
+[**NDIS \_ NIC \_ 交换机 \_ 功能**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_capabilities)
 
-[**NDIS\_状态\_指示**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_status_indication)
+[**NDIS \_ 状态 \_ 指示**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_status_indication)
 
-[OID\_NIC\_交换机\_当前\_功能](oid-nic-switch-current-capabilities.md)
-
- 
+[OID \_ NIC \_ 交换机 \_ 当前 \_ 功能](oid-nic-switch-current-capabilities.md)
 
  
-
-
-
 

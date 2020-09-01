@@ -6,12 +6,12 @@ keywords:
 - 配置函数 WDK NDIS
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 44dfcebfbc70ec7f8a50c79f639252b3b8a383c9
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: aecdb5810087e481c8803ea7fc9c602c9e2d44ea
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72823693"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89213461"
 ---
 # <a name="ndis-configuration-functions"></a>NDIS 配置函数
 
@@ -21,21 +21,15 @@ ms.locfileid: "72823693"
 
 NDIS 包括以下函数以简化驱动程序配置：
 
-[**NdisOpenConfigurationEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisopenconfigurationex)
+[**NdisOpenConfigurationEx**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisopenconfigurationex)
 
-[**NdisMGetBusData**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismgetbusdata)
+[**NdisMGetBusData**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismgetbusdata)
 
-[**NdisMSetBusData**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismsetbusdata)
+[**NdisMSetBusData**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismsetbusdata)
 
-若要获取适配器的配置信息，NDIS 微型端口驱动程序将调用**NdisOpenConfigurationEx**和[**NdisReadConfiguration**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisreadconfiguration)。 驱动程序可以调用**NdisMGetBusData**来获取特定于总线的信息。 驱动程序可以调用**NdisMSetBusData**来设置特定于总线的信息。
+若要获取适配器的配置信息，NDIS 微型端口驱动程序将调用 **NdisOpenConfigurationEx** 和 [**NdisReadConfiguration**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisreadconfiguration)。 驱动程序可以调用 **NdisMGetBusData** 来获取特定于总线的信息。 驱动程序可以调用 **NdisMSetBusData** 来设置特定于总线的信息。
 
-协议驱动程序使用适配器名称的注册表路径来读取特定于驱动程序和基础适配器之间的绑定的配置参数。 NDIS 在对[*ProtocolBindAdapterEx*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-protocol_bind_adapter_ex)函数的调用中提供了注册表路径。 驱动程序可以将此注册表路径传递给[**NdisOpenProtocolConfiguration**](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff553683(v=vs.85))函数或定向注册表调用。 作为替代方法，驱动程序可以将*BindParameters*结构传递到**NdisOpenConfigurationEx**函数以读取相同参数。
-
- 
+协议驱动程序使用适配器名称的注册表路径来读取特定于驱动程序和基础适配器之间的绑定的配置参数。 NDIS 在对 [*ProtocolBindAdapterEx*](/windows-hardware/drivers/ddi/ndis/nc-ndis-protocol_bind_adapter_ex) 函数的调用中提供了注册表路径。 驱动程序可以将此注册表路径传递给 [**NdisOpenProtocolConfiguration**](/previous-versions/windows/hardware/network/ff553683(v=vs.85)) 函数或定向注册表调用。 作为替代方法，驱动程序可以将 *BindParameters* 结构传递到 **NdisOpenConfigurationEx** 函数以读取相同参数。
 
  
-
-
-
-
 

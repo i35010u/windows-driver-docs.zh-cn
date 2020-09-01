@@ -10,19 +10,19 @@ MSHAttr:
 ms.assetid: 49b9705f-ba7c-4239-823b-7d738f4318b9
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9b0c7847a691dae18874b542905738b8346aba7a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6faa561bf25864859ecc0029ddbf6b214703de71
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63351891"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89214953"
 ---
 # <a name="com-interfaces-for-printer-web-pages"></a>打印机网页的 COM 接口
 
-可用于创建打印机网页的 ASP 文件内使用 Oleprn.dll，实现的以下自动化接口：
+可在 ASP 文件中使用 Oleprn.dll 实现的以下自动化接口，用于创建打印机网页：
 
 [Iasphelp 自动化接口](iasphelp-automation-interface.md)
 
 [IOleCvt 自动化接口](iolecvt-automation-interface.md)
 
-Windows SDK 文档中介绍 active Server Pages (ASP) 技术和自动化。 有关打印机网页的详细信息，请参阅[Internet 打印](https://docs.microsoft.com/windows-hardware/drivers/print/internet-printing)。
+Windows SDK 文档中介绍了 (ASP) 技术和自动化的 Active Server Pages。 有关打印机网页的详细信息，请参阅 [Internet 打印](./internet-printing.md)。

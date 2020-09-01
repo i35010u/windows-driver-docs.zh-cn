@@ -1,23 +1,23 @@
 ---
 title: OID_WAN_CO_SET_COMP_INFO
-description: OID_WAN_CO_SET_COMP_INFO OID 通知选择的微型端口驱动程序已返回信息与 OID_WAN_CO_GET_COMP_INFO 查询到的协议的 PPP 压缩方案的微型端口驱动程序。
+description: OID_WAN_CO_SET_COMP_INFO OID 通知小型端口驱动程序所选的 PPP 压缩方案的微型端口驱动程序已使用 OID_WAN_CO_GET_COMP_INFO 查询返回的信息。
 ms.assetid: f3b6b846-fa8c-425b-ba05-45927e744d66
 ms.date: 08/08/2017
-keywords: -从 Windows Vista 开始 OID_WAN_CO_SET_COMP_INFO 网络驱动程序
+keywords: -从 Windows Vista 开始 OID_WAN_CO_SET_COMP_INFO 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: aaa9f7ab189e69e1e25c26941a6ceb1a362a700e
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: a582a6d003e0989803eba8bfdf3de47c87e9cd55
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67353670"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89213303"
 ---
-# <a name="oidwancosetcompinfo"></a>OID\_WAN\_共同\_设置\_COMP\_信息
+# <a name="oid_wan_co_set_comp_info"></a>OID \_ WAN \_ CO \_ 集 \_ 复合 \_ 信息
 
 
-OID\_WAN\_共同\_设置\_COMP\_信息 OID 通知到的微型端口驱动程序已返回的信息与协议所选的PPP压缩方案的微型端口驱动程序[OID\_WAN\_共同\_获取\_COMP\_信息](oid-wan-co-get-comp-info.md)查询。 此 PPP 压缩方案是特定于虚拟连接 (VC)。
+OID \_ wan \_ co \_ 集 \_ 复合 \_ 信息 OID 通知小型端口驱动程序所选的 PPP 压缩方案的微型端口驱动程序已使用 [OID \_ WAN \_ CO \_ 获取 \_ 复合 \_ 信息](oid-wan-co-get-comp-info.md) 查询返回的信息。 此 PPP 压缩方案特定于 (VC) 的虚拟连接。
 
-协议提供一个规范，则在 NDIS 中选取的 PPP 压缩方案用于\_WAN\_共同\_设置\_COMP\_信息结构，定义，如下所示：
+协议为在 NDIS \_ WAN CO 集复合信息结构中选择的 PPP 压缩方案提供规范 \_ \_ \_ \_ ，定义如下：
 
 ```ManagedCPlusPlus
     typedef struct _NDIS_WAN_CO_SET_COMP_INFO {
@@ -29,18 +29,18 @@ OID\_WAN\_共同\_设置\_COMP\_信息 OID 通知到的微型端口驱动程序�
 
 
 
-此结构的成员包含下列信息：
+此结构的成员包含以下信息：
 
 <a href="" id="sendcapabilities"></a>**SendCapabilities**  
-指定包含有关用于发送数据的压缩功能的信息的结构。
+指定一个结构，该结构包含有关用于发送数据的压缩功能的信息。
 
 <a href="" id="recvcapabilities"></a>**RecvCapabilities**  
-指定包含有关接收数据的压缩功能的信息的结构。
+指定一个结构，该结构包含有关用于接收数据的压缩功能的信息。
 
 <a name="remarks"></a>备注
 -------
 
-有关详细信息的 NDIS\_WAN\_压缩\_信息结构，请参阅[OID\_WAN\_获取\_COMP\_信息](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff561202(v=vs.85))。
+有关 NDIS \_ wan \_ 压缩信息结构的详细信息 \_ ，请参阅 [OID \_ wan \_ 获取 \_ 复合 \_ 信息](/previous-versions/windows/hardware/network/ff561202(v=vs.85))。
 
 <a name="requirements"></a>要求
 ------------
@@ -52,25 +52,17 @@ OID\_WAN\_共同\_设置\_COMP\_信息 OID 通知到的微型端口驱动程序�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Version</p></td>
-<td><p>支持 Windows Vista 中的 NDIS 6.0 和 NDIS 5.1 驱动程序。 支持 NDIS 5.1 在 Windows XP 中的驱动程序。</p></td>
+<td><p>版本</p></td>
+<td><p>支持 Windows Vista 中的 NDIS 6.0 和 NDIS 5.1 驱动程序。 Windows XP 中的 NDIS 5.1 驱动程序支持。</p></td>
 </tr>
 <tr class="even">
-<td><p>Header</p></td>
-<td>Ntddndis.h （包括 Ndis.h）</td>
+<td><p>标头</p></td>
+<td>Ntddndis (包含 Ndis .h) </td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
-[OID\_WAN\_CO\_GET\_COMP\_INFO](oid-wan-co-get-comp-info.md)
-
-
-
-
-
-
-
-
+[OID \_ WAN \_ CO \_ 获取 \_ 复合 \_ 信息](oid-wan-co-get-comp-info.md)

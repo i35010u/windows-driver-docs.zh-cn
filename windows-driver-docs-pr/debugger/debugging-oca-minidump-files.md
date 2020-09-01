@@ -4,16 +4,16 @@ description: 联机崩溃分析 (OCA) 是适用于 Windows 错误报告 (WER) �
 ms.assetid: 56F4202D-6A5F-4177-BBFD-70DA717FF24A
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1603fcbba40ea6557eed1416bea56046644e86b3
-ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
+ms.openlocfilehash: f495725448e1631bf794d9b6635384f97e080014
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84534458"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89213469"
 ---
 # <a name="debugging-oca-minidump-files"></a>调试 OCA 小型转储文件
 
-联机崩溃分析（OCA）是[Windows 错误报告（WER）](https://docs.microsoft.com/windows/desktop/wer/windows-error-reporting)信息的报告工具。 贵公司可以使用 OCA 崩溃转储来分析客户问题。
+ (OCA) 的联机崩溃分析是 [Windows 错误报告 (WER) ](/windows/desktop/wer/windows-error-reporting) 信息的报告工具。 贵公司可以使用 OCA 崩溃转储来分析客户问题。
 
 ## <a name="analyze-dump-files"></a>分析转储文件
 
@@ -39,7 +39,7 @@ ms.locfileid: "84534458"
 - 局部变量的名称、数据类型、地址和范围。
 - 对应于每个二进制指令的源代码中的行号。
 
-Windows 驱动程序工具包 (WDK) 包括一些可用于减少符号文件中符号数量的工具。 将包含所有源级信息的符号文件称为完整的符号文件。 简化信息的符号文件被称为剥离符号文件。 有关详细信息，请参阅[BinPlace](https://docs.microsoft.com/windows-hardware/drivers/devtest/binplace)。
+Windows 驱动程序工具包 (WDK) 包括一些可用于减少符号文件中符号数量的工具。 将包含所有源级信息的符号文件称为完整的符号文件。 简化信息的符号文件被称为剥离符号文件。 有关详细信息，请参阅 [BinPlace](../devtest/binplace.md)。
 
 由于符号数据对于从 Windows 错误报告 (WER) 数据中获取有意义的崩溃信息至关重要，因此鼓励你在提交要签名的驱动程序时提交符号。 提交符号时，将它们存储在服务器上，从而使符号数据与相关联的 WER 进程同步。 通过此存储流程，你可以轻松地对小型转储文件中报告的崩溃进行分类，并最终接收从 Microsoft 返回的更佳数据。
 
@@ -47,20 +47,20 @@ Microsoft 在 Internet 上提供符号服务器，你可以使用它来分析显
 
 ## <a name="integrate-wer-into-applications"></a>将 WER 集成到应用程序中
 
-有关将 WER 集成到应用程序中的更多信息，请参阅[使用 WER](https://docs.microsoft.com/windows/desktop/wer/using-wer)。
+有关将 WER 集成到应用程序中的更多信息，请参阅[使用 WER](/windows/desktop/wer/using-wer)。
 
 ## <a name="related-topics"></a>相关主题
 
 [高级驱动程序调试 \[ 336 KB \] \[ PPT\]](https://download.microsoft.com/download/f/0/5/f05a42ce-575b-4c60-82d6-208d3754b2d6/adv-drv_debug.ppt)
 
-[WDK 和 WinDbg 下载](https://docs.microsoft.com/windows-hardware/drivers/download-the-wdk)
+[WDK 和 WinDbg 下载](../download-the-wdk.md)
 
 [驱动程序调试基础知识 \[ WinHEC 2007; 633 KB \] \[ PPT\]](https://download.microsoft.com/download/a/f/d/afdfd50d-6eb9-425e-84e1-b4085a80e34e/dvr-t410_wh07.pptx)
 
 [如何读取 Windows 在发生崩溃时创建的小型内存转储文件](https://support.microsoft.com/help/315263/how-to-read-the-small-memory-dump-file-that-is-created-by-windows-if-a)
 
-[资源定义声明](https://docs.microsoft.com/windows/desktop/menurc/resource-definition-statements)
+[资源定义声明](/windows/desktop/menurc/resource-definition-statements)
 
-[Windows 错误报告](https://docs.microsoft.com/windows/desktop/wer/windows-error-reporting)
+[Windows 错误报告](/windows/desktop/wer/windows-error-reporting)
 
-[VERSIONINFO 资源](https://docs.microsoft.com/windows/desktop/menurc/versioninfo-resource)
+[VERSIONINFO 资源](/windows/desktop/menurc/versioninfo-resource)

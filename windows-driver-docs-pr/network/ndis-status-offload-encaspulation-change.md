@@ -4,26 +4,26 @@ description: 微型端口驱动程序使用 NDIS_STATUS_OFFLOAD_ENCASPULATION_CH
 ms.assetid: 2db2a42e-85a2-41a6-b6ab-13b493057648
 ms.date: 07/18/2017
 keywords:
-- NDIS_STATUS_OFFLOAD_ENCASPULATION_CHANGE 从 Windows Vista 开始的网络驱动程序
+- 从 Windows Vista 开始 NDIS_STATUS_OFFLOAD_ENCASPULATION_CHANGE 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 3055200cc8aded2fabfdd37773e78c666b45d1f3
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 9fe410510a45b08d068d773d36720a3b6bcc9418
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72842778"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89214694"
 ---
-# <a name="ndis_status_offload_encaspulation_change"></a>\_卸载\_ENCASPULATION\_更改的 NDIS\_状态
+# <a name="ndis_status_offload_encaspulation_change"></a>NDIS \_ 状态 \_ 卸载 \_ ENCASPULATION \_ 更改
 
 
-微型端口驱动程序使用 NDIS\_状态\_卸载\_ENCASPULATION\_更改状态指示，通知 NDIS 和过量驱动程序已在封装设置中发生了更改。
+微型端口驱动程序使用 NDIS \_ 状态 \_ 卸载 \_ ENCASPULATION \_ 更改状态指示通知 ndis 和过量驱动程序已在封装设置中发生了更改。
 
 <a name="remarks"></a>备注
 -------
 
-[**Ndis\_状态\_指示**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_status_indication)结构的**StatusBuffer**成员包含[**ndis\_卸载\_封装**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_offload_encapsulation)结构。 NDIS\_卸载\_封装指定了封装设置。
+[**Ndis \_ 状态 \_ 指示**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_status_indication)结构的**StatusBuffer**成员包含[**ndis \_ 卸载 \_ 封装**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_offload_encapsulation)结构。 NDIS \_ 卸载 \_ 封装指定了封装设置。
 
-有关封装设置的详细信息，请参阅[OID\_卸载\_封装](https://docs.microsoft.com/windows-hardware/drivers/network/oid-offload-encapsulation)。
+有关封装设置的详细信息，请参阅 [OID \_ 卸载 \_ 封装](./oid-offload-encapsulation.md)。
 
 <a name="requirements"></a>要求
 ------------
@@ -40,7 +40,7 @@ ms.locfileid: "72842778"
 </tr>
 <tr class="even">
 <td><p>标头</p></td>
-<td>Ndis .h （包括 Ndis .h）</td>
+<td> (包含 Ndis .h) </td>
 </tr>
 </tbody>
 </table>
@@ -48,16 +48,11 @@ ms.locfileid: "72842778"
 ## <a name="see-also"></a>另请参阅
 
 
-[ **\_封装的 NDIS\_卸载**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_offload_encapsulation)
+[**NDIS \_ 卸载 \_ 封装**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_offload_encapsulation)
 
-[**NDIS\_状态\_指示**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_status_indication)
+[**NDIS \_ 状态 \_ 指示**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_status_indication)
 
-[OID\_卸载\_封装](https://docs.microsoft.com/windows-hardware/drivers/network/oid-offload-encapsulation)
-
- 
+[OID \_ 卸载 \_ 封装](./oid-offload-encapsulation.md)
 
  
-
-
-
 

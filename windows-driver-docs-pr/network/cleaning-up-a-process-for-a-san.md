@@ -3,16 +3,16 @@ title: 清理 SAN 的进程
 description: 清理 SAN 的进程
 ms.assetid: a6ae5882-4cde-43cf-8814-ea7ef5acee58
 keywords:
-- SAN 处理清理 WDK
-- 清理 SAN 过程 WDK
+- SAN process 清理 WDK
+- 清理 SAN 进程 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1d88a75364760a1a0c02e3e427d9a51fa89ca9fc
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 48be718ccee19fe6aaa96c218a90f7ce12b4d1f5
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67382784"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89215256"
 ---
 # <a name="cleaning-up-a-process-for-a-san"></a>清理 SAN 的进程
 
@@ -20,13 +20,7 @@ ms.locfileid: "67382784"
 
 
 
-准备就绪以进行清除的进程在其中运行应用程序时，它开始调用 Windows 套接字开关**WSPCleanup**函数。 开关，反过来，调用[ **WSPCleanup** ](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff566270(v=vs.85)) TCP/IP 提供程序和所有 SAN 服务提供程序的函数。 所有提供程序应释放它们使用的资源。 例如，资源可以包括用来同步事件的对象和用于执行数据传输的内存。
+当应用程序准备好清理正在运行的进程时，它将启动对 Windows 套接字交换机的 **WSPCleanup** 函数的调用。 交换机又调用 TCP/IP 提供程序和所有 SAN 服务提供程序的 [**WSPCleanup**](/previous-versions/windows/hardware/network/ff566270(v=vs.85)) 函数。 所有提供程序都应释放它们正在使用的所有资源。 例如，资源可以包含用于同步事件的对象，以及用于执行数据传输的内存。
 
  
-
- 
-
-
-
-
 

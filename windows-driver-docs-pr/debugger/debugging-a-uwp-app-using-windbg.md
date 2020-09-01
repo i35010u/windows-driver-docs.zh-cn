@@ -1,27 +1,27 @@
 ---
 title: 使用 WinDbg 调试 UWP 应用
-description: 可以使用 WinDbg 调试通用 Windows 平台（UWP）应用。
+description: 您可以使用 WinDbg 调试通用 Windows 平台 (UWP) 应用程序。
 ms.assetid: 1CE337AC-54C0-4EF5-A374-3ECF1D72BA60
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4294d1e035af5852906a63b5433a68f2a63b14aa
-ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
+ms.openlocfilehash: f932720f65c82017e0cfb3bc23c9fc249bcfd856
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84534408"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89213479"
 ---
 # <a name="debugging-a-uwp-app-using-windbg"></a>使用 WinDbg 调试 UWP 应用
 
 
-可以使用 WinDbg 调试通用 Windows 平台（UWP）应用。 此方法通常用于高级方案，在这种情况下，不能使用内置 Visual Studio 调试器来完成调试任务。 有关在 Visual Studio 中进行调试的详细信息，请参阅[在 Visual studio 中进行调试](https://docs.microsoft.com/visualstudio/debugger/debugging-in-visual-studio?view=vs-2015)。
+您可以使用 WinDbg 调试通用 Windows 平台 (UWP) 应用程序。 此方法通常用于高级方案，在这种情况下，不能使用内置 Visual Studio 调试器来完成调试任务。 有关在 Visual Studio 中进行调试的详细信息，请参阅 [在 Visual studio 中进行调试](/visualstudio/debugger/debugging-in-visual-studio?view=vs-2015)。
 
 ## <a name="span-idattaching_to_a_uwp_appspanspan-idattaching_to_a_uwp_appspanspan-idattaching_to_a_uwp_appspanattaching-to-a-uwp-app"></a><span id="Attaching_to_a_UWP_app"></span><span id="attaching_to_a_uwp_app"></span><span id="ATTACHING_TO_A_UWP_APP"></span>附加到 UWP 应用
 
 
-附加到 UWP 进程与附加到用户模式进程相同。 例如，在 WinDbg 中，可以通过**从 "文件" 菜单中选择 "附加到进程"** 或按 F6，附加到正在运行的进程。 有关详细信息，请参阅[使用 WinDbg 调试用户模式进程](debugging-a-user-mode-process-using-windbg.md)。
+附加到 UWP 进程与附加到用户模式进程相同。 例如，在 WinDbg 中，可以通过 **从 "文件" 菜单中选择 "附加到进程"** 或按 F6，附加到正在运行的进程。 有关详细信息，请参阅 [使用 WinDbg 调试用户模式进程](debugging-a-user-mode-process-using-windbg.md)。
 
-UWP 应用将不会以它在不进行调试时的相同方式挂起。 若要显式暂停/恢复 UWP 应用，可以使用. suspendpackage 和. resumepackage 命令（详细信息如下）。 有关 UWP 应用使用的流程生命周期管理（PLM）的常规信息，请参阅[应用生命周期](https://docs.microsoft.com/windows/uwp/launch-resume/app-lifecycle)和[启动、恢复以及后台任务](https://docs.microsoft.com/windows/uwp/launch-resume/index)。
+UWP 应用将不会以它在不进行调试时的相同方式挂起。 若要显式暂停/恢复 UWP 应用，可以使用 suspendpackage 和. resumepackage 命令 (下面) 的详细信息。 有关 UWP 应用使用的进程生命周期管理 (PLM) 的常规信息，请参阅 [应用生命周期](/windows/uwp/launch-resume/app-lifecycle) 和 [启动、恢复以及后台任务](/windows/uwp/launch-resume/index)。
 
 ## <a name="span-idlaunching_and_debugging__a_uwp_appspanspan-idlaunching_and_debugging__a_uwp_appspanspan-idlaunching_and_debugging__a_uwp_appspanlaunching-and-debugging-a-uwp-app"></a><span id="Launching_and_debugging__a_UWP_app"></span><span id="launching_and_debugging__a_uwp_app"></span><span id="LAUNCHING_AND_DEBUGGING__A_UWP_APP"></span>启动和调试 UWP 应用
 
@@ -51,7 +51,7 @@ windbg.exe -plmPackage <PLMPackageName> -plmApp <ApplicationId> [<parameters>]
 <tr class="odd">
 <td align="left">&lt;ApplicationId&gt;</td>
 <td align="left"><p>ApplicationId 位于应用程序清单文件中，可使用本主题中讨论的 querypackage 或 querypackages 命令查看。</p>
-<p>有关应用程序清单文件的详细信息，请参阅<a href="https://docs.microsoft.com/uwp/schemas/appxpackage/appx-package-manifest" data-raw-source="[App package manifest](https://docs.microsoft.com/uwp/schemas/appxpackage/appx-package-manifest)">应用包清单</a>。</p></td>
+<p>有关应用程序清单文件的详细信息，请参阅 <a href="https://docs.microsoft.com/uwp/schemas/appxpackage/appx-package-manifest" data-raw-source="[App package manifest](/uwp/schemas/appxpackage/appx-package-manifest)">应用包清单</a>。</p></td>
 </tr>
 <tr class="even">
 <td align="left">[ &lt; 参数 &gt; ]</td>
@@ -64,7 +64,7 @@ windbg.exe -plmPackage <PLMPackageName> -plmApp <ApplicationId> [<parameters>]
 
 **HelloWorld 示例**
 
-为了演示 UWP 调试，本主题使用[创建 "Hello，world" 应用（XAML）](https://docs.microsoft.com/windows/uwp/get-started/create-a-hello-world-app-xaml-universal)中所述的 HelloWorld 示例。
+为了演示 UWP 调试，本主题使用 [ (XAML) 创建 "Hello，world" 应用 ](/windows/uwp/get-started/create-a-hello-world-app-xaml-universal)中所述的 HelloWorld 示例。
 
 若要创建可行的测试应用，只需完成实验室的第三步。
 
@@ -93,9 +93,9 @@ AppId: App
 
 若要进行故障排除，你可能想要在 Visual Studio 中查看基本包名称。
 
-若要在 Visual Studio 中查找基包名称，请单击 "项目资源管理器" 中的 Applicationmanifest.xml 文件。 基本包名称将显示在 "打包" 选项卡的 "包名称" 下。 默认情况下，包名称将为 GUID，例如*e24caf14-8483-4743-b80c-ca46c28c75df*。
+若要在 Visual Studio 中查找基包名称，请单击 "项目资源管理器" 中的 ApplicationManifest.xml 文件。 基本包名称将显示在 "打包" 选项卡的 "包名称" 下。 默认情况下，包名称将为 GUID，例如 *e24caf14-8483-4743-b80c-ca46c28c75df*。
 
-若要使用记事本查找基包名称，请打开 Applicationmanifest.xml 文件并找到 "**标识名称**" 标记。
+若要使用记事本查找基包名称，请打开 ApplicationManifest.xml 文件，然后找到 " **标识名称** " 标记。
 
 ```xml
   <Identity
@@ -106,9 +106,9 @@ AppId: App
 
 **在清单中查找应用程序 Id**
 
-若要在安装的 UWP 应用的清单文件中找到应用程序 Id，请查找*应用程序 id*条目。
+若要在安装的 UWP 应用的清单文件中找到应用程序 Id，请查找 *应用程序 id* 条目。
 
-例如，对于 hello world 应用程序，应用程序 ID 为*app*。
+例如，对于 hello world 应用程序，应用程序 ID 为 *app*。
 
 ```xml
 <Application Id="App"
@@ -150,7 +150,7 @@ windbg.exe -plmPackage <PLMPackageName> -plmBgTaskId <BackgroundTaskId>
 <tr class="odd">
 <td align="left">&lt;BackgroundTaskId&gt;</td>
 <td align="left"><p>BackgroundTaskId 可以使用 querypackages 命令查找，如下所述。</p>
-<p>有关应用程序清单文件的详细信息，请参阅<a href="https://docs.microsoft.com/uwp/schemas/appxpackage/appx-package-manifest" data-raw-source="[App package manifest](https://docs.microsoft.com/uwp/schemas/appxpackage/appx-package-manifest)">应用包清单</a>。</p></td>
+<p>有关应用程序清单文件的详细信息，请参阅 <a href="https://docs.microsoft.com/uwp/schemas/appxpackage/appx-package-manifest" data-raw-source="[App package manifest](/uwp/schemas/appxpackage/appx-package-manifest)">应用包清单</a>。</p></td>
 </tr>
 </tbody>
 </table>
@@ -163,9 +163,9 @@ windbg.exe -plmPackage <PLMPackageName> -plmBgTaskId <BackgroundTaskId>
 windbg.exe -plmPackage Microsoft.SDKSamples.BackgroundTask.CPP_1.0.0.0_x64__8wekyb3d8bbwe -plmBgTaskId {ee4438ee-22db-4cdd-85e4-8ad8a1063523}
 ```
 
-你可以尝试后台任务示例代码，以熟悉 UWP 调试。 它可以在[后台任务示例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Universal%20Windows%20app%20samples/%5BC%23%5D-Universal%20Windows%20app%20samples/Background%20task%20sample)中下载。
+你可以尝试后台任务示例代码，以熟悉 UWP 调试。 它可以在 [后台任务示例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Universal%20Windows%20app%20samples/%5BC%23%5D-Universal%20Windows%20app%20samples/Background%20task%20sample)中下载。
 
-使用 querypackages 命令可找到 BackgroundTaskId。 使用 CTRL + F 查找应用程序，然后找到 "*后台任务 Id* " 字段。 若要显示关联的后台任务名称和任务 Id，必须运行后台任务。
+使用 querypackages 命令可找到 BackgroundTaskId。 使用 CTRL + F 查找应用程序，然后找到 " *后台任务 Id* " 字段。 若要显示关联的后台任务名称和任务 Id，必须运行后台任务。
 
 ```dbgcmd
 0:000> .querypackages
@@ -184,9 +184,9 @@ Background Task Id: {ee4438ee-22db-4cdd-85e4-8ad8a1063523}
 ...
 ```
 
-如果你知道你可以使用的完整包名称，则可以使用 querypackage 来显示 "*后台任务 Id* " 字段。
+如果你知道你可以使用的完整包名称，则可以使用 querypackage 来显示 " *后台任务 Id* " 字段。
 
-还可以通过使用 PLMDebug 的 enumerateBgTasks 选项来查找 BackgroundTaskId。 有关 PMLDebug utiltity 的详细信息，请参阅[**PLMDebug**](plmdebug.md)。
+还可以通过使用 PLMDebug 的 enumerateBgTasks 选项来查找 BackgroundTaskId。 有关 PMLDebug utiltity 的详细信息，请参阅 [**PLMDebug**](plmdebug.md)。
 
 ```console
 C:\Program Files\Debugging Tools for Windows (x64)>PLMDebug /enumerateBgTasks Microsoft.SDKSamples.BackgroundTask.CPP_1.0.0.0_x64__8wekyb3d8bbwe
@@ -197,7 +197,7 @@ SampleBackgroundTask : {C05806B1-9647-4765-9A0F-97182CEA5AAD}
 SUCCEEDED
 ```
 
-## <a name="span-iddebugging_a_uwp_process_remotely_using_a_process_server__dbgsrv_spanspan-iddebugging_a_uwp_process_remotely_using_a_process_server__dbgsrv_spanspan-iddebugging_a_uwp_process_remotely_using_a_process_server__dbgsrv_spandebugging-a-uwp-process-remotely-using-a-process-server-dbgsrv"></a><span id="Debugging_a_UWP_process_remotely_using_a_Process_Server__DbgSrv_"></span><span id="debugging_a_uwp_process_remotely_using_a_process_server__dbgsrv_"></span><span id="DEBUGGING_A_UWP_PROCESS_REMOTELY_USING_A_PROCESS_SERVER__DBGSRV_"></span>使用进程服务器远程调试 UWP 进程（DbgSrv）
+## <a name="span-iddebugging_a_uwp_process_remotely_using_a_process_server__dbgsrv_spanspan-iddebugging_a_uwp_process_remotely_using_a_process_server__dbgsrv_spanspan-iddebugging_a_uwp_process_remotely_using_a_process_server__dbgsrv_spandebugging-a-uwp-process-remotely-using-a-process-server-dbgsrv"></a><span id="Debugging_a_UWP_process_remotely_using_a_Process_Server__DbgSrv_"></span><span id="debugging_a_uwp_process_remotely_using_a_process_server__dbgsrv_"></span><span id="DEBUGGING_A_UWP_PROCESS_REMOTELY_USING_A_PROCESS_SERVER__DBGSRV_"></span>使用进程服务器远程调试 UWP 进程 (DbgSrv) 
 
 
 所有-plm 命令都能 \* 与 dbgsrv 正常配合使用。 若要使用 dbgsrv 进行调试，请将-premote 开关与 dbgsrv 的连接字符串一起使用：
@@ -206,7 +206,7 @@ SUCCEEDED
 windbg.exe -premote npipe:pipe=fdsa,server=localhost -plmPackage e24caf14-8483-4743-b80c-ca46c28c75df_1.0.0.0_x86__97ghe447vaan8 -plmApp App
 ```
 
-有关-premote 选项的详细信息，请参阅[进程服务器（用户模式）](process-servers--user-mode-.md)和[进程服务器示例](process-server-examples.md)。
+有关-premote 选项的详细信息，请参阅 [Process server (User Mode) ](process-servers--user-mode-.md) 和 [process Server 示例](process-server-examples.md)。
 
 ## <a name="span-idsummary_of_uwp_app_commandsspanspan-idsummary_of_uwp_app_commandsspanspan-idsummary_of_uwp_app_commandsspansummary-of-uwp-app-commands"></a><span id="Summary_of_UWP_app_commands"></span><span id="summary_of_uwp_app_commands"></span><span id="SUMMARY_OF_UWP_APP_COMMANDS"></span>UWP 应用命令摘要
 
@@ -217,7 +217,7 @@ windbg.exe -premote npipe:pipe=fdsa,server=localhost -plmPackage e24caf14-8483-4
 
 **.querypackage**
 
-Querypackage 显示 UWP 应用程序的状态。 例如，如果应用程序正在运行，则它可以处于*活动*状态。
+Querypackage 显示 UWP 应用程序的状态。 例如，如果应用程序正在运行，则它可以处于 *活动* 状态。
 
 ```dbgcmd
 .querypackage <PLMPackageName>
@@ -315,7 +315,7 @@ Createpackageapp 命令启用调试并启动 UWP 应用程序。
 <tr class="odd">
 <td align="left">&lt;ApplicationId&gt;</td>
 <td align="left"><p>可以使用 querypackage 或 querypackages 定位 ApplicationId，如本主题前面所述。</p>
-<p>有关应用程序清单文件的详细信息，请参阅<a href="https://docs.microsoft.com/uwp/schemas/appxpackage/appx-package-manifest" data-raw-source="[App package manifest](https://docs.microsoft.com/uwp/schemas/appxpackage/appx-package-manifest)">应用包清单</a>。</p></td>
+<p>有关应用程序清单文件的详细信息，请参阅 <a href="https://docs.microsoft.com/uwp/schemas/appxpackage/appx-package-manifest" data-raw-source="[App package manifest](/uwp/schemas/appxpackage/appx-package-manifest)">应用包清单</a>。</p></td>
 </tr>
 <tr class="even">
 <td align="left">[ &lt; 参数 &gt; ]</td>
@@ -464,13 +464,13 @@ AppId: App
 
 **将调试程序附加到已在运行的应用程序**
 
-假设要将 WinDbg 附加到已在运行的 MyApp。 在 WinDbg 的 "**文件**" 菜单上，选择 "**附加到进程**"。 记下 MyApp 的进程 ID。 假设进程 ID 为4816。 为包含 MyApp 的包增加调试引用计数。
+假设要将 WinDbg 附加到已在运行的 MyApp。 在 WinDbg 的 " **文件** " 菜单上，选择 " **附加到进程**"。 记下 MyApp 的进程 ID。 假设进程 ID 为4816。 为包含 MyApp 的包增加调试引用计数。
 
 ```dbgcmd
 .enablepackagedebug e24caf14-8483-4743-b80c-ca46c28c75df_1.0.0.0_x86__97ghe447vaan8
 ```
 
-在 WinDbg 的 "**附加到进程**" 对话框中，选择 "处理 4816"，然后单击 "确定"。 WinDbg 将附加到 MyApp。
+在 WinDbg 的 " **附加到进程** " 对话框中，选择 "处理 4816"，然后单击 "确定"。 WinDbg 将附加到 MyApp。
 
 完成调试后，请使用 disablepackagedebug 命令递减包的调试引用计数。
 
@@ -510,11 +510,4 @@ AppId: App
 [使用 WinDbg 进行调试](debugging-using-windbg.md)
 
  
-
- 
-
-
-
-
-
 

@@ -3,19 +3,19 @@ title: 检索网络配置接口指针
 description: 检索网络配置接口指针
 ms.assetid: ac3638a1-d039-478e-baec-c73d4d1b6751
 keywords:
-- 通知对象 WDK 网络接口的指针
-- 通知对象 WDK，接口指针网络
+- 通知对象 WDK 网络，接口指针
+- 网络通知对象 WDK，接口指针
 - 网络配置接口指针 WDK
 - 接口指针 WDK 网络
 - 指针 WDK 网络
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a4ca82f92c031c53f170d1e4b1f25df1a8a8c087
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 677b7b375f30cbe1cc64507f38905e694cc18628
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386525"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89213750"
 ---
 # <a name="retrieving-network-configuration-interface-pointers"></a>检索网络配置接口指针
 
@@ -23,7 +23,7 @@ ms.locfileid: "67386525"
 
 
 
-当网络配置子系统初始化通知对象的实例中所述[创建并初始化通知的对象的实例](creating-and-initializing-an-instance-of-a-notify-object.md)，该对象接收[ **INetCfgComponent** ](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff547715(v=vs.85))并[ **INetCfg** ](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff547694(v=vs.85))接口指针。 **INetCfgComponent**指向该对象可用于访问和控制该组件的通知对象的组件接口。 **INetCfg**指向通知对象可用于访问网络配置的所有方面的根网络配置接口。 下面的代码使用这些**INetCfgComponent**并**INetCfg**接口指针来检索通知对象可能需要其他网络配置接口。
+当网络配置子系统初始化 notify 对象的实例（如 [创建和初始化 Notify 对象的实例](creating-and-initializing-an-instance-of-a-notify-object.md)中所述）时，对象将接收 [**INetCfgComponent**](/previous-versions/windows/hardware/network/ff547715(v=vs.85)) 和 [**INetCfg**](/previous-versions/windows/hardware/network/ff547694(v=vs.85)) 接口指针。 **INetCfgComponent** 指向通知对象的组件接口，对象可使用该接口访问和控制组件。 **INetCfg** 指向根网络配置接口，通知对象可使用该接口访问网络配置的所有方面。 下面的代码使用这些 **INetCfgComponent** 和 **INetCfg** 接口指针检索 notify 对象可能需要的其他网络配置接口。
 
 ```C++
 // Using the notify object's component interface that the notify 
@@ -106,10 +106,4 @@ hr = pncfgclsSetup->Install(TEXT("MS_TCPIP"), pOboToken, dwSetupFlags,
 ```
 
  
-
- 
-
-
-
-
 

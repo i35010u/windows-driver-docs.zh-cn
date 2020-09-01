@@ -1,34 +1,34 @@
 ---
 title: NDIS_STATUS_WDI_INDICATION_P2P_GROUP_OPERATING_CHANNEL
-description: 微型端口驱动程序使用 NDIS_STATUS_WDI_INDICATION_P2P_GROUP_OPERATING_CHANNEL 指示给定的 Wi-Fi Direct 端口操作所用操作系统的通道。
+description: 微型端口驱动程序使用 NDIS_STATUS_WDI_INDICATION_P2P_GROUP_OPERATING_CHANNEL 指示给定 Wi-fi Direct 端口正在操作的操作通道。
 ms.assetid: 170e5df7-3128-4942-869d-45206022dfaa
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 NDIS_STATUS_WDI_INDICATION_P2P_GROUP_OPERATING_CHANNEL 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 08ec77366e9ca507cede911b500594b8e9a628dd
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 5bb7ebeb54b7e2effeb190b318a9d83c8430c886
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67382658"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89213455"
 ---
-# <a name="ndisstatuswdiindicationp2pgroupoperatingchannel"></a>NDIS\_状态\_WDI\_指示\_P2P\_组\_操作系统\_通道
+# <a name="ndis_status_wdi_indication_p2p_group_operating_channel"></a>NDIS \_ 状态 \_ WDI \_ 指示 \_ P2P \_ 组 \_ 操作 \_ 通道
 
 
-微型端口驱动程序使用 NDIS\_状态\_WDI\_指示\_P2P\_组\_操作系统\_通道以指示哪些操作通道给定的 Wi-Fi Direct 端口是操作系统上。
+微型端口驱动程序使用 NDIS \_ 状态 \_ WDI \_ 指示 \_ P2P \_ 组 \_ 操作 \_ 通道来指示给定 wi-fi Direct 端口正在操作哪个操作通道。
 
-对于 Wi-Fi Direct 客户端端口，此值必须表示期间 （在之前的连接完成） 连接。
+对于 Wi-fi Direct 客户端端口，必须在连接 (期间在连接完成) 之前指定此端口。
 
-对于 Wi-Fi Direct 转端口，此值必须表示期间[OID\_WDI\_任务\_启动\_AP](oid-wdi-task-start-ap.md) （在之前的 OID 完成）。
+对于 Wi-fi Direct 中转端口，必须在 oid [ \_ WDI \_ 任务 \_ 启动 \_ AP](oid-wdi-task-start-ap.md) (期间指定此项，然后) 。
 
-## <a name="payload-data"></a>有效负载数据
+## <a name="payload-data"></a>负载数据
 
 
-| 在任务栏的搜索框中键入                                                                                         | 允许多个 TLV 实例 | 可选 | 描述                                                        |
+| 类型                                                                                         | 允许多个 TLV 实例 | 可选 | 说明                                                        |
 |----------------------------------------------------------------------------------------------|--------------------------------|----------|--------------------------------------------------------------------|
-| [**WDI\_TLV\_P2P\_CHANNEL\_NUMBER**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-p2p-channel-number)                    |                                |          | 操作通道给定 Wi-Fi Direct 端口上运行。 |
-| [**WDI\_TLV\_P2P\_CHANNEL\_INDICATE\_REASON**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-p2p-channel-indicate-reason) |                                |          | 发送所指示的原因。                             |
+| [**WDI \_ TLV \_ P2P \_ 信道 \_ 号**](./wdi-tlv-p2p-channel-number.md)                    |                                |          | 给定 Wi-fi Direct 端口正在其上运行的操作通道。 |
+| [**WDI \_ TLV \_ P2P \_ 通道 \_ 指示 \_ 原因**](./wdi-tlv-p2p-channel-indicate-reason.md) |                                |          | 发送指示的原因。                             |
 
  
 
@@ -50,16 +50,11 @@ ms.locfileid: "67382658"
 <td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
-<td><p>Header</p></td>
-<td>Dot11wdi.h</td>
+<td><p>标头</p></td>
+<td>Dot11wdi</td>
 </tr>
 </tbody>
 </table>
 
  
-
- 
-
-
-
 

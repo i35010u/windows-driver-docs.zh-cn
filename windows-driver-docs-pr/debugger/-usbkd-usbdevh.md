@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 2f804c4c53a3685c660d50f5213e4c6731576663
-ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
+ms.openlocfilehash: 8ebdb4069370e30e4902a7466f5db60f58b94a44
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84534866"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89213564"
 ---
 # <a name="usbkdusbdevh"></a>!usbkd.usbdevh
 
@@ -32,17 +32,17 @@ ms.locfileid: "84534866"
 
 
 <span id="_______StructAddr______"></span><span id="_______structaddr______"></span><span id="_______STRUCTADDR______"></span>*StructAddr*   
-Usbport 的地址 **！ \_USBD \_ 设备 \_ 句柄**结构。 若要获取 USB 主机控制器的设备句柄列表，请使用[**！ usbkd. usbhcdext**](-usbkd-usbhcdext.md)命令。
+Usbport 的地址 **！ \_USBD \_ 设备 \_ 句柄** 结构。 若要获取 USB 主机控制器的设备句柄列表，请使用 [**！ usbkd. usbhcdext**](-usbkd-usbhcdext.md) 命令。
 
 ## <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 
-Usbkd
+Usbkd.dll
 
 <a name="examples"></a>示例
 --------
 
-下面是查找 usbport 地址的一种方法 **！ \_USBD \_ 设备 \_ 句柄**结构。 首先输入[**！ usbkd. usb2tree**](-usbkd-usb2tree.md)。
+下面是查找 usbport 地址的一种方法 **！ \_USBD \_ 设备 \_ 句柄** 结构。 首先输入 [**！ usbkd. usb2tree**](-usbkd-usb2tree.md)。
 
 ```dbgcmd
 0: kd> !usbkd.usb2tree
@@ -51,9 +51,9 @@ Usbkd
      ...
 ```
 
-在上面的输出中，FDO 的设备扩展的地址显示为[DML](debugger-markup-language-commands.md)命令 **！ ehci \_ info ffffe00001ca11a0**的参数。
+在上面的输出中，FDO 的设备扩展的地址显示为 [DML](debugger-markup-language-commands.md) 命令 **！ ehci \_ info ffffe00001ca11a0**的参数。
 
-单击 DML 命令或将设备扩展的地址传递给[**！ usbhcdext**](-usbkd-usbhcdext.md)以获取设备句柄列表。
+单击 DML 命令或将设备扩展的地址传递给 [**！ usbhcdext**](-usbkd-usbhcdext.md) 以获取设备句柄列表。
 
 ```dbgcmd
 0: kd> !usbkd.usbhcdext ffffe00001ca11a0
@@ -72,7 +72,7 @@ DeviceHandleDeletedList: !usblist ffffe00001ca23c8, DL [Empty]
 ...
 ```
 
-现在使用[**！ usbkd. usblist**](-usbkd-usblist.md)命令获取 usbport 的地址 **！ \_USBD \_ 设备 \_ 句柄**结构。
+现在使用 [**！ usbkd. usblist**](-usbkd-usblist.md) 命令获取 usbport 的地址 **！ \_USBD \_ 设备 \_ 句柄** 结构。
 
 ```dbgcmd
 0: kd> !usblist ffffe00001ca23b8, DL
@@ -128,14 +128,7 @@ Config Information: dt USBPORT!_USBD_CONFIG_HANDLE ffffe000023cd0b0
 
 [USB 2.0 调试器扩展](usb-2-0-extensions.md)
 
-[通用串行总线（USB）驱动程序](https://docs.microsoft.com/windows-hardware/drivers/usbcon/)
+[ (USB) 驱动程序的通用串行总线](../usbcon/index.md)
 
  
-
- 
-
-
-
-
-
 

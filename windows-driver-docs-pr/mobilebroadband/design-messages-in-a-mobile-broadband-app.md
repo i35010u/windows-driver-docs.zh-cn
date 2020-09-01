@@ -4,23 +4,23 @@ description: 设计移动宽带应用中的消息
 ms.assetid: 314fd479-7dcf-4559-a195-26e4c020446c
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 41beb13deff27298555093d426e3284de420bd71
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: b31aa184bc96472fbfa485307501ece53de2b8ec
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67360276"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89215333"
 ---
 # <a name="design-messages-in-a-mobile-broadband-app"></a>设计移动宽带应用中的消息
 
 
-移动宽带应用程序是向客户介绍重要的帐户信息与通信的简便方法。 应用应具有最终用户可以在其中查看重要帐户消息的主屏幕上的部分或链接。 While 重要运算符消息应显示为磁贴和 toast 通知，它们应还显示应用视图中的 toast 通知和有限的数量的磁贴通知可以显示的文本暂时性的性质。
+你的移动宽带应用程序是与客户沟通重要帐户信息的简便方法。 应用应在主屏幕上有一个 "部分" 或 "链接"，最终用户可以在其中查看重要的帐户消息。 尽管重要的操作员消息应显示为磁贴和 toast 通知，但是，它们还应显示在应用视图中，因为 toast 通知的暂时性性质以及磁贴通知中可显示的文本数量有限。
 
-不应混合以及运营商通知和警报，因为客户可能会遗漏重要运营商通知的消息部分中显示用户与用户聊天短信、 促销和播发。 可以在您的应用程序的布局中显示的促销和播发，并在用户界面的单独部分中显示用户与用户聊天文本消息。
+不应在 "消息" 部分中显示用户到用户的聊天文本消息、促销和广告，并将其与操作员通知和警报混合在一起，因为客户可能会错过重要的操作员通知。 可以在应用布局中显示促销和广告，并将用户到用户聊天文本消息显示在用户界面的单独部分中。
 
-![消息](images/message.png)
+![message](images/message.png)
 
-下表显示了一些示例运算符消息和警报。
+下表显示了一些示例操作员消息和警报。
 
 <table>
 <colgroup>
@@ -29,69 +29,62 @@ ms.locfileid: "67360276"
 </colgroup>
 <thead>
 <tr class="header">
-<th>在任务栏的搜索框中键入</th>
+<th>类型</th>
 <th>示例消息</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td><p>国际漫游</p></td>
-<td><p>欢迎使用英国。 必须为 5 美元 25 MB 的数据，并且则美元每 1 个 1 MB。 SMS 是为每个消息 0.49。了解详细信息，请 www.contoso.com/rates/uk。</p></td>
+<td><p>欢迎使用英国。 对于每日 $5，你有 25 MB 的数据，然后每 1 MB 就会 $1。 每条消息的短信为 $0.49。有关详细信息，请参阅 www.contoso.com/rates/uk。</p></td>
 </tr>
 <tr class="even">
-<td><p>超额数据使用情况</p></td>
-<td><p>已使用你的整个 4 GB 数据计划。 @ 10 美元/GB 超额费用账单。 通过升级计划立即在计划页上节省更多的数据。</p></td>
+<td><p>数据使用量超额</p></td>
+<td><p>你已使用了整个 4 GB 数据计划。 超额票据 @ $ 10/GB。 立即在 "计划" 页中升级计划，以节省更多数据。</p></td>
 </tr>
 <tr class="odd">
-<td><p>数据使用情况状态</p></td>
-<td><p>你已使用 65%的 40 GB 的数据计划。 @ 5 美元/GB 的任何超额费用账单。 提示：通过 Wi-fi，数据不受限制。 了解在计划页的详细信息。</p></td>
+<td><p>数据使用状态</p></td>
+<td><p>你使用了65% 的 40 GB 数据计划。 任何超额帐单 @ $ 5/GB。 提示：通过 Wi-fi 无限制数据。 在 "计划" 页中了解详细信息。</p></td>
 </tr>
 <tr class="even">
 <td><p>计划到期</p></td>
-<td><p>你的计划已于 2013 年 7 月 1 日到期。 通过转到计划页中续订你的计划。</p></td>
+<td><p>计划在2013年7月1日过期。 转到 "计划" 页，续订你的计划。</p></td>
 </tr>
 <tr class="odd">
 <td><p>帐户更新</p></td>
-<td><p>好消息 ！ 有效立即，Contoso 正在增加包含 DataPro Tethering 计划中从 2 GB 到 4 GB 的数据量。 将不会更改你的计划的每月费用和由你不需要任何操作。 感谢您成为很好的客户。</p></td>
+<td><p>好消息！ Contoso 立即有效地将 DataPro Tethering 计划中包含的数据量从 2 GB 增加到 4 GB。 计划的每月费用将不会更改，因此不需要执行任何操作。 感谢您成为一个优秀的客户。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-## <a name="span-idquicksummaryspanspan-idquicksummaryspanspan-idquicksummaryspanquick-summary"></a><span id="Quick_summary"></span><span id="quick_summary"></span><span id="QUICK_SUMMARY"></span>快速摘要
+## <a name="span-idquick_summaryspanspan-idquick_summaryspanspan-idquick_summaryspanquick-summary"></a><span id="Quick_summary"></span><span id="quick_summary"></span><span id="QUICK_SUMMARY"></span>快速摘要
 
 
-显示运算符的消息适合的设计：
+显示操作员消息的适当设计：
 
--   包括查看所有接收的消息列表的功能、 查看完整详细信息的一条消息，并删除一条消息。
+-   包含查看接收到的所有消息的列表、查看邮件的完整详细信息和删除消息的功能。
 
--   在某一部分的应用程序或自己的应用中的页上的主屏幕中显示重要运算符的消息。
+-   将重要的操作员消息显示在应用程序主屏幕的一部分中，或显示在应用程序中其自身的页面上。
 
-用于显示运算符的消息的设计不完善：
+显示操作员消息的不当设计：
 
--   不显示用户与用户聊天文本消息和促销和运营商通知和警报以及混合的播发。
+-   不要向用户与用户聊天文本消息和促销和广告显示混合了操作员通知和警报。
 
-## <a name="span-idadditionalresourcesspanspan-idadditionalresourcesspanspan-idadditionalresourcesspanadditional-resources"></a><span id="Additional_resources"></span><span id="additional_resources"></span><span id="ADDITIONAL_RESOURCES"></span>其他资源
-
-
--   使用[ **ListView** ](https://docs.microsoft.com/previous-versions/windows/apps/br211837(v=win.10))以显示消息。 有关详细信息，请参阅[添加列表视图、 语义缩放和其他数据控件](https://docs.microsoft.com/previous-versions/windows/apps/hh465409(v=win.10))。
-
--   应用栏控件用于查看和删除消息。 有关详细信息，请参阅[指导原则的应用程序栏](https://docs.microsoft.com/windows/uwp/controls-and-patterns/app-bars)。
-
--   [与其他 Windows 组件集成，移动宽带应用](integrate-a-mobile-broadband-app-with-other-windows-components.md#tileandtoast)
-
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
+## <a name="span-idadditional_resourcesspanspan-idadditional_resourcesspanspan-idadditional_resourcesspanadditional-resources"></a><span id="Additional_resources"></span><span id="additional_resources"></span><span id="ADDITIONAL_RESOURCES"></span>其他资源
 
 
-[设计用户体验的移动宽带应用程序](designing-the-user-experience-of-a-mobile-broadband-app.md)
+-   使用 [**ListView**](/previous-versions/windows/apps/br211837(v=win.10)) 显示消息。 有关详细信息，请参阅 [添加列表视图、语义缩放和其他数据控件](/previous-versions/windows/apps/hh465409(v=win.10))。
 
- 
+-   使用应用程序栏控件查看和删除消息。 有关详细信息，请参阅 [应用栏的准则](/windows/uwp/controls-and-patterns/app-bars)。
+
+-   [将移动宽带应用与其他 Windows 组件集成](integrate-a-mobile-broadband-app-with-other-windows-components.md#tileandtoast)
+
+## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
+
+
+[设计移动宽带应用的用户体验](designing-the-user-experience-of-a-mobile-broadband-app.md)
 
  
-
-
-
-
-
 

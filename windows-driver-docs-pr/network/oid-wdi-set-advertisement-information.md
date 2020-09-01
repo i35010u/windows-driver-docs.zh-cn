@@ -1,55 +1,55 @@
 ---
 title: OID_WDI_SET_ADVERTISEMENT_INFORMATION
-description: OID_WDI_SET_ADVERTISEMENT_INFORMATION 配置信息元素 (IEs) 和其他播发设置包含在探测请求、 探测响应，并由指定的端口发送的信号。
+description: OID_WDI_SET_ADVERTISEMENT_INFORMATION 将信息元素 () 和其他要包含在探测请求中的播发设置、探测响应和由指定端口发送的信标配置。
 ms.assetid: efa1fc93-2cc8-4d14-be5f-d099ef3c371e
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 OID_WDI_SET_ADVERTISEMENT_INFORMATION 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 96b35d61ffee2379406de49ce02ea64ccb2259cc
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 632c39fb881baf0c0bff2a9d3f0fc3c91a90266d
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67387258"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89213269"
 ---
-# <a name="oidwdisetadvertisementinformation"></a>OID\_WDI\_设置\_播发\_信息
+# <a name="oid_wdi_set_advertisement_information"></a>OID \_ WDI \_ 设置 \_ 播发 \_ 信息
 
 
-OID\_WDI\_设置\_播发\_信息将配置信息元素 (IEs) 和其他播发设置要包含在探测请求，探测响应，由发送信号指定的端口。 此请求操作仅适用于 Wi-Fi Direct 端口。
+OID \_ WDI \_ SET \_ 播发 \_ 信息将 (的信息元素配置为在探测请求、探测响应和由指定端口发送的信标中包含的) 和其他播发设置。 此请求仅适用于 Wi-fi 直接端口。
 
-| 范围 | 设置与任务序列化 | 正常执行时间 （秒） |
+| 作用域 | 设置序列化任务 | 正常执行时间 (秒)  |
 |-------|--------------------------|---------------------------------|
-| Port  | 是                      | 1                               |
+| 端口  | 是                      | 1                               |
 
  
 
-当设备收到此命令时，它应更新任何相关 Wi-Fi Direct 导致浏览器，并追加任何必要其他导致浏览器在将来传出消息发送的此端口。
+当设备收到此命令时，它应更新任何相关的 Wi-fi Direct，并在将来发送此端口发送的传出消息中附加任何必要的附加项。
 
 ## <a name="set-property-parameters"></a>设置属性参数
 
 
-WDI 可以播发服务提供一组预配置的前缀哈希。 如果对等方发送哈希，该驱动程序首先尝试与服务名称哈希匹配，如中所定义[ **WDI\_TLV\_P2P\_播发\_前缀\_条目**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-p2p-advertised-prefix-entry). 如果从前缀哈希找到匹配项，该驱动程序将搜索中的服务[ **WDI\_TLV\_P2P\_播发\_服务\_条目**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-p2p-advertised-service-entry)的具有前缀和使用这些响应。 如果找不到匹配项，该驱动程序将尝试匹配请求的服务名称中的哈希[ **WDI\_TLV\_P2P\_播发\_服务\_条目**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-p2p-advertised-service-entry).
+WDI 可以为播发服务提供一组预配置的前缀哈希。 如果对等方发送哈希，则驱动程序将首先尝试与 [**WDI \_ TLV \_ P2P \_ 播发 \_ 前缀 \_ 条目**](./wdi-tlv-p2p-advertised-prefix-entry.md)中定义的服务名称哈希匹配。 如果从前缀哈希中找到匹配项，则驱动程序会在具有前缀的 [**WDI \_ TLV \_ P2P \_ 播发 \_ 服务 \_ 项**](./wdi-tlv-p2p-advertised-service-entry.md) 中搜索服务 () ，并使用这些内容做出响应。 如果找不到匹配项，驱动程序将尝试与 [**WDI \_ TLV \_ P2P \_ 播发 \_ 服务 \_ 项**](./wdi-tlv-p2p-advertised-service-entry.md)中请求的服务名称哈希匹配。
 
-| TLV                                                                                                 | 允许多个 TLV 实例 | 可选 | 描述                                     |
+| TLV                                                                                                 | 允许多个 TLV 实例 | 可选 | 说明                                     |
 |-----------------------------------------------------------------------------------------------------|--------------------------------|----------|-------------------------------------------------|
-| [**WDI\_TLV\_ADDITIONAL\_IES**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-additional-ies)                                    |                                | X        | 要包含的其他 IEs。                  |
-| [**WDI\_TLV\_P2P\_DEVICE\_INFO**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-p2p-device-info)                                 |                                | X        | Wi-Fi Direct 设备信息。                |
-| [**WDI\_TLV\_P2P\_DEVICE\_CAPABILITY**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-p2p-device-capability)                     |                                | X        | Wi-Fi Direct 设备功能。               |
-| [**WDI\_TLV\_P2P\_GROUP\_OWNER\_CAPABILITY**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-p2p-group-owner-capability)          |                                | X        | Wi-Fi Direct 组所有者功能信息 |
-| [**WDI\_TLV\_P2P\_辅助\_设备\_类型\_列表**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-p2p-secondary-device-type-list) |                                | X        | Wi-Fi Direct 辅助设备类型的列表。    |
-| [**WDI\_TLV\_P2P\_ADVERTISED\_SERVICES**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-p2p-advertised-services)                 |                                | X        | Wi-Fi Direct 播发服务。               |
+| [**WDI \_ TLV \_ 补充 \_**](./wdi-tlv-additional-ies.md)                                    |                                | X        | 要包括的其他补充。                  |
+| [**WDI \_ TLV \_ P2P \_ 设备 \_ 信息**](./wdi-tlv-p2p-device-info.md)                                 |                                | X        | Wi-fi Direct 设备信息。                |
+| [**WDI \_ TLV \_ P2P \_ 设备 \_ 功能**](./wdi-tlv-p2p-device-capability.md)                     |                                | X        | Wi-fi Direct 设备功能。               |
+| [**WDI \_ TLV \_ P2P \_ 组 \_ 所有者 \_ 功能**](./wdi-tlv-p2p-group-owner-capability.md)          |                                | X        | Wi-fi Direct 组所有者功能信息 |
+| [**WDI \_ TLV \_ P2P \_ 辅助 \_ 设备 \_ 类型 \_ 列表**](./wdi-tlv-p2p-secondary-device-type-list.md) |                                | X        | Wi-fi Direct 辅助设备类型的列表。    |
+| [**WDI \_ TLV \_ P2P \_ 播发 \_ 服务**](./wdi-tlv-p2p-advertised-services.md)                 |                                | X        | Wi-fi Direct 播发服务。               |
 
  
 
 ## <a name="set-property-results"></a>设置属性结果
 
 
-没有其他数据。 标头中的数据就足够了。
+无其他数据。 标头中的数据足够了。
 ## <a name="unsolicited-indication"></a>未经请求的指示
 
 
-[NDIS\_状态\_WDI\_指示\_操作\_帧\_RECEIVED](ndis-status-wdi-indication-action-frame-received.md)适配器必须指示 ANQP 操作框架请求的服务信息如果它接收来自对等方 ANQP 请求 （或任何其他操作未知的帧）。
+[NDIS \_状态 \_ WDI \_ 指示 \_ 操作 \_ 帧 \_ 收到](ndis-status-wdi-indication-action-frame-received.md) 的适配器必须指示服务信息的 ANQP 操作帧请求，以获取对等方) 的 ANQP 请求 (或任何其他未知操作帧。
 
 <a name="requirements"></a>要求
 ------------
@@ -69,16 +69,11 @@ WDI 可以播发服务提供一组预配置的前缀哈希。 如果对等方发
 <td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
-<td><p>Header</p></td>
-<td>Dot11wdi.h</td>
+<td><p>标头</p></td>
+<td>Dot11wdi</td>
 </tr>
 </tbody>
 </table>
 
  
-
- 
-
-
-
 

@@ -1,34 +1,34 @@
 ---
 title: OID_SWITCH_PORT_PROPERTY_DELETE
-description: Hyper-v 可扩展交换机的协议边缘发出 OID_SWITCH_PORT_PROPERTY_DELETE 的对象标识符（OID）设置请求，通知有关为可扩展交换机端口删除策略属性的可扩展交换机扩展。
+description: Hyper-v 可扩展交换机的协议边缘 (OID 发出对象标识符) 设置 OID_SWITCH_PORT_PROPERTY_DELETE 请求，通知有关如何删除可扩展交换机端口的策略属性的可扩展交换机扩展。
 ms.assetid: BA8AB5D9-FF2C-4E16-B09F-B09E3EC19B90
 ms.date: 08/08/2017
-keywords: -从 Windows Vista 开始 OID_SWITCH_PORT_PROPERTY_DELETE 网络驱动程序
+keywords: -从 Windows Vista 开始 OID_SWITCH_PORT_PROPERTY_DELETE 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: f57290bb4268a59ca745158796b34124aa7b56a5
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 6be92eb1fd28ef39887fa295f8c477f79b263ebb
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72843930"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89214541"
 ---
-# <a name="oid_switch_port_property_delete"></a>OID\_SWITCH\_端口\_属性\_DELETE
+# <a name="oid_switch_port_property_delete"></a>OID \_ 交换机 \_ 端口 \_ 属性 \_ 删除
 
 
-Hyper-v 可扩展交换机的协议边缘发出 OID 的对象标识符（OID）设置请求\_SWITCH\_端口\_属性\_DELETE，以通知可扩展交换机扩展有关删除的策略属性可扩展交换机端口。
+Hyper-v 可扩展交换机的协议边缘 (OID 发出对象标识符) 设置 OID \_ 交换机 \_ 端口 \_ 属性 " \_ 删除"，通知有关为可扩展交换机端口删除策略属性的可扩展交换机扩展。
 
-[**NDIS\_OID\_请求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的**InformationBuffer**成员包含一个指向缓冲区的指针，该缓冲区包含一个[**NDIS\_SWITCH\_端口\_属性\_删除\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_port_property_delete_parameters)构造.
+[**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的**InformationBuffer**成员包含一个指向缓冲区的指针，该缓冲区包含[**NDIS \_ 交换机 \_ 端口 \_ 属性 \_ 删除 \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_port_property_delete_parameters)结构。
 
 <a name="remarks"></a>备注
 -------
 
-转发扩展可以处理 OID\_SWITCH\_端口\_属性\_DELETE 的 OID 集请求。 所有其他类型的扩展都必须调用[**NdisFOidRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfoidrequest) ，将 OID 请求转发到可扩展交换机驱动程序堆栈中的下一个扩展。
+转发扩展可以处理 OID \_ 交换机 \_ 端口 \_ 属性删除的 oid 设置请求 \_ 。 所有其他类型的扩展都必须调用 [**NdisFOidRequest**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfoidrequest) ，将 OID 请求转发到可扩展交换机驱动程序堆栈中的下一个扩展。
 
-有关如何处理 OID\_SWITCH\_端口\_属性\_DELETE 的 OID 集请求的指南，请参阅[管理端口策略](https://docs.microsoft.com/windows-hardware/drivers/network/managing-port-policies)。
+有关如何处理 OID 交换机端口属性删除的 OID 集请求的指南 \_ \_ \_ \_ ，请参阅 [管理端口策略](./managing-port-policies.md)。
 
 ### <a name="return-status-codes"></a>返回状态代码
 
-如果转发扩展插件\_端口\_属性\_DELETE 完成 oid 的 OID 设置\_请求，则将返回以下状态代码之一。
+如果转发扩展插件完成 oid \_ 交换机端口属性删除的 oid 设置请求 \_ \_ \_ ，它将返回以下状态代码之一。
 
 <table>
 <colgroup>
@@ -38,7 +38,7 @@ Hyper-v 可扩展交换机的协议边缘发出 OID 的对象标识符（OID）�
 <thead>
 <tr class="header">
 <th>状态代码</th>
-<th>描述</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>
@@ -59,7 +59,7 @@ Hyper-v 可扩展交换机的协议边缘发出 OID 的对象标识符（OID）�
 
  
 
-如果转发扩展未完成 OID\_SWITCH\_端口\_属性\_DELETE 的 OID 集请求，则该请求将由可扩展交换机的基础微型端口边缘完成。 微型端口边缘返回以下状态代码。
+如果转发扩展未完成 oid \_ 交换机端口属性删除的 oid 设置请求 \_ \_ \_ ，则该请求将由可扩展交换机的基础微型端口边缘完成。 微型端口边缘返回以下状态代码。
 
 <table>
 <colgroup>
@@ -69,7 +69,7 @@ Hyper-v 可扩展交换机的协议边缘发出 OID 的对象标识符（OID）�
 <thead>
 <tr class="header">
 <th>状态代码</th>
-<th>描述</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>
@@ -97,7 +97,7 @@ Hyper-v 可扩展交换机的协议边缘发出 OID 的对象标识符（OID）�
 </tr>
 <tr class="even">
 <td><p>标头</p></td>
-<td>Ntddndis （包括 Ndis .h）</td>
+<td>Ntddndis (包含 Ndis .h) </td>
 </tr>
 </tbody>
 </table>
@@ -106,20 +106,15 @@ Hyper-v 可扩展交换机的协议边缘发出 OID 的对象标识符（OID）�
 
 
 ****
-[**NDIS\_OID\_请求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)
+[**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)
 
-[**NDIS\_交换机\_端口\_属性\_自定义**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_port_property_custom)
+[**NDIS \_ 交换机 \_ 端口 \_ 属性 \_ 自定义**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_port_property_custom)
 
-[**NDIS\_交换机\_端口\_属性\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_port_property_parameters)
+[**NDIS \_ 交换机 \_ 端口 \_ 属性 \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_port_property_parameters)
 
-[**NDIS\_交换机\_端口\_属性\_VLAN**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_port_property_vlan)
+[**NDIS \_ 交换机 \_ 端口 \_ 属性 \_ VLAN**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_port_property_vlan)
 
-[**NdisFOidRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfoidrequest)
-
- 
+[**NdisFOidRequest**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfoidrequest)
 
  
-
-
-
 

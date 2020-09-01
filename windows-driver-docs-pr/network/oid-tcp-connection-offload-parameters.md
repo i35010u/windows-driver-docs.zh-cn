@@ -1,17 +1,17 @@
 ---
 title: OID_TCP_CONNECTION_OFFLOAD_PARAMETERS
-description: 本主题介绍 OID_TCP_CONNECTION_OFFLOAD_PARAMETERS 对象标识符（OID）。
+description: 本主题介绍) OID_TCP_CONNECTION_OFFLOAD_PARAMETERS 对象标识符 (OID。
 ms.assetid: 6481D565-900A-4B75-A60F-72701FB45FAD
 keywords:
 - OID_TCP_CONNECTION_OFFLOAD_PARAMETERS，WDK Oid，WDK 网络对象标识符，WDK 网络 Oid
 ms.date: 11/01/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d3d4a1b229dfb4be81bdb4854255b82950cc6926
-ms.sourcegitcommit: 82a9be3b3584f991e5121f8f46a972e04185fa52
+ms.openlocfilehash: e10ae2ea1b7155e0e321f09d9b563da616fe08d1
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85916802"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89213768"
 ---
 # <a name="oid_tcp_connection_offload_parameters"></a>OID_TCP_CONNECTION_OFFLOAD_PARAMETERS
 
@@ -21,17 +21,16 @@ ms.locfileid: "85916802"
 
 ## <a name="remarks"></a>备注
 
-[NDIS_OID_REQUEST](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的**InformationBuffer**成员包含[NDIS_TCP_CONNECTION_OFFLOAD_PARAMETERS](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndischimney/ns-ndischimney-_ndis_tcp_connection_offload_parameters)结构。
+[NDIS_OID_REQUEST](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的**InformationBuffer**成员包含[NDIS_TCP_CONNECTION_OFFLOAD_PARAMETERS](/windows-hardware/drivers/ddi/ndischimney/ns-ndischimney-_ndis_tcp_connection_offload_parameters)结构。
 
 > [!NOTE]
-> 不要将 OID_TCP_CONNECTION_OFFLOAD_PARAMETERS 与管理应用程序用于启用或禁用 TCP 卸载功能的[OID_TCP_OFFLOAD_PARAMETERS](oid-tcp-offload-parameters.md) OID 混淆。
+> 不要将 OID_TCP_CONNECTION_OFFLOAD_PARAMETERS 与管理应用程序用于启用或禁用 TCP 卸载功能的 [OID_TCP_OFFLOAD_PARAMETERS](oid-tcp-offload-parameters.md) OID 混淆。
 
 ### <a name="see-also"></a>另请参阅
 
-[NDIS_OID_REQUEST](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)  
+[NDIS_OID_REQUEST](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)  
 [OID_TCP_OFFLOAD_PARAMETERS](oid-tcp-offload-parameters.md)
 
 ## <a name="requirements"></a>要求
 
-**版本**： Windows Vista 和更高版本的**标头**： Ntddndis （包括 Ndis .h）
-
+**版本**： Windows Vista 和更高版本的 **标头**： Ntddndis (包括 Ndis .h) 

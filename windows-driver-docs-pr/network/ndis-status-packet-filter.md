@@ -1,33 +1,33 @@
 ---
 title: NDIS_STATUS_PACKET_FILTER
-description: NDIS_STATUS_PACKET_FILTER 状态表示对过量驱动程序的数据包筛选器更改。
+description: NDIS_STATUS_PACKET_FILTER 状态指示对过量驱动程序的数据包筛选器更改。
 ms.assetid: 7633772a-cd3d-4030-b97a-9d503341fdeb
 ms.date: 07/18/2017
 keywords:
-- NDIS_STATUS_PACKET_FILTER 从 Windows Vista 开始的网络驱动程序
+- 从 Windows Vista 开始 NDIS_STATUS_PACKET_FILTER 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: f5f58a7bc534c525334ca42a684d7117868f0574
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 020e557f738efc23490258479d09baf61023e8f5
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72842773"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89214688"
 ---
-# <a name="ndis_status_packet_filter"></a>\_数据包\_筛选器的 NDIS\_状态
+# <a name="ndis_status_packet_filter"></a>NDIS \_ 状态 \_ 数据包 \_ 筛选器
 
 
-\_数据包\_筛选器状态的 NDIS\_状态表明对过量驱动程序的数据包筛选器更改。 NDIS 为微型端口适配器生成此状态指示，以通知过量驱动程序可能会更改微型端口适配器的数据包筛选器设置。
+NDIS \_ 状态 \_ 数据包 \_ 筛选器状态指示对过量驱动程序的数据包筛选器更改。 NDIS 为微型端口适配器生成此状态指示，以通知过量驱动程序可能会更改微型端口适配器的数据包筛选器设置。
 
 <a name="remarks"></a>备注
 -------
 
-当 NDIS\_筛选器状态指示生成 NDIS\_\_状态时，NDIS 不保证数据包筛选器已更改。
+当 NDIS 生成 NDIS \_ 状态 \_ 数据包 \_ 筛选器状态指示时，ndis 不保证数据包筛选器已更改。
 
-NDIS 筛选器驱动程序还可以生成 NDIS\_状态\_数据包\_筛选器状态指示。
+NDIS 筛选器驱动程序还可以生成 NDIS \_ 状态 \_ 数据包 \_ 筛选器状态指示。
 
-NDIS 在[**NDIS\_状态\_指示**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_status_indication)结构的**StatusBuffer**成员中提供筛选器类型标志的按位 "或"。 有关筛选器类型标志的列表，请参阅[OID\_GEN\_当前\_数据包\_筛选器](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-current-packet-filter)OID。 有关数据包筛选器的其他信息，请参阅[OID\_GEN\_支持的\_数据包\_筛选器](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-supported-packet-filters)。
+NDIS 在[**NDIS \_ 状态 \_ 指示**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_status_indication)结构的**StatusBuffer**成员中提供筛选器类型标志的按位 "或"。 有关筛选器类型标志的列表，请参阅 [OID \_ GEN \_ 当前 \_ 数据包 \_ 筛选器](./oid-gen-current-packet-filter.md) oid。 有关数据包筛选器的其他信息，请参阅 [OID \_ GEN \_ 支持的 \_ 数据包 \_ 筛选器](./oid-gen-supported-packet-filters.md)。
 
-[**NDIS\_状态\_指示**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_status_indication)结构的**StatusBufferSize**成员设置为 sizeof （ULONG）。
+[**NDIS \_ 状态 \_ 指示**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_status_indication)结构的**StatusBufferSize**成员设置为 sizeof (ULONG) 。
 
 <a name="requirements"></a>要求
 ------------
@@ -44,7 +44,7 @@ NDIS 在[**NDIS\_状态\_指示**](https://docs.microsoft.com/windows-hardware/d
 </tr>
 <tr class="even">
 <td><p>标头</p></td>
-<td>Ndis .h （包括 Ndis .h）</td>
+<td> (包含 Ndis .h) </td>
 </tr>
 </tbody>
 </table>
@@ -52,16 +52,11 @@ NDIS 在[**NDIS\_状态\_指示**](https://docs.microsoft.com/windows-hardware/d
 ## <a name="see-also"></a>另请参阅
 
 
-[**NDIS\_状态\_指示**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_status_indication)
+[**NDIS \_ 状态 \_ 指示**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_status_indication)
 
-[OID\_代\_当前\_数据包\_筛选器](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-current-packet-filter)
+[OID \_ GEN \_ 当前 \_ 数据包 \_ 筛选器](./oid-gen-current-packet-filter.md)
 
-[OID\_代\_支持\_数据包\_筛选器](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-supported-packet-filters)
-
- 
+[OID \_ 代 \_ 支持的 \_ 数据包 \_ 筛选器](./oid-gen-supported-packet-filters.md)
 
  
-
-
-
 

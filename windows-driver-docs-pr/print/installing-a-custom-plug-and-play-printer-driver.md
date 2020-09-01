@@ -3,15 +3,15 @@ title: 安装自定义的即插即用打印机驱动程序
 description: 安装自定义的即插即用打印机驱动程序
 ms.assetid: 0269afbe-c7d1-4227-ad77-b921852d6a0c
 keywords:
-- 自定义打印机驱动程序 WDK，插
+- 自定义打印机驱动程序 WDK，即插即用
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 497a3335c63d42532bba5868cdac716ca77061b8
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 640395974a2648bb4bad7097a92eea7d60e8dfcb
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67385984"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89213698"
 ---
 # <a name="installing-a-custom-plug-and-play-printer-driver"></a>安装自定义的即插即用打印机驱动程序
 
@@ -19,19 +19,19 @@ ms.locfileid: "67385984"
 
 
 
-在 Windows XP 上的插管理器加载驱动程序按此顺序 （从最高到最低的首选项进行列出）：
+在 Windows XP 中，即插即用管理器按此顺序加载驱动程序， (从最高到最低的首选项) 列出：
 
-1.  签名的 IHV 驱动程序
+1.  签名 IHV 驱动程序
 
-2.  "现成"驱动程序
+2.  "机箱内" 驱动程序
 
-3.  未签名的 IHV 驱动程序
+3.  无符号 IHV 驱动程序
 
-在 Windows 2000 上没有现成和签名 IHV 驱动程序之间没有区别： 驱动程序的任何一种加载优先于未签名的 IHV 驱动程序。 若要了解有关用于安装驱动程序和替换"现成"驱动程序的 INF 文件的应用程序的详细信息，请参阅[编写设备安装应用程序](https://docs.microsoft.com/windows-hardware/drivers/install/writing-a-device-installation-application)。
+在 Windows 2000 上，机箱内和签名的 IHV 驱动程序之间没有区别：任何一种类型的驱动程序都按优先顺序加载到无符号的 IHV 驱动程序中。 若要详细了解设计用于安装替代 "内置" 驱动程序的驱动程序和 INF 文件的应用程序，请参阅 [编写设备安装应用程序](../install/writing-a-device-installation-application.md)。
 
-如果你正在开发的驱动程序，取代了 Windows 2000 现成驱动程序，请确保*硬件 Id*中[ **INF 模型部分**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-models-section)的 INF 文件包含相应的端口的枚举器。 Ntprint.inf 的 Windows 2000 版本在其 INF 模型节中的项包括端口枚举器。 如果相同的条目 INF 文件中省略端口枚举器，插选择优先于您的现成 Windows 2000 驱动程序。 如果您的驱动程序取代 Windows XP 现成驱动程序，无需包括端口枚举器中的硬件 id。
+如果要开发替换 Windows 2000 内置驱动程序的驱动程序，请确保 INF 文件的 " [**Inf 模型" 部分**](../install/inf-models-section.md)中的*硬件 id*包含相应的端口枚举器。 Windows 2000 版本的 Ntprint.inf 在 INF 模型部分的条目中包含端口枚举器。 如果 INF 文件中的相同项省略端口枚举器，即插即用会按优先选择的内置 Windows 2000 驱动程序。 如果驱动程序替换了 Windows XP 内置驱动程序，则无需在硬件 ID 中包含端口枚举器。
 
-IHV 可以避免对话框，询问有关客户端安装中的用户交互通过为每个模型，如以下示例所示提供 INF 模型部分中的两行。
+在每个模型的 "INF 模型" 部分中提供两行，IHV 可以避免在客户端安装中请求用户交互的对话框，如以下示例中所示。
 
 ```cpp
 ; Models section
@@ -44,14 +44,9 @@ IHV 可以避免对话框，询问有关客户端安装中的用户交互通过�
 .
 ```
 
-在此示例中，两行都几乎完全相同，仅不同总线枚举器 (LPTENUM) 包含在第一行中的硬件 ID。 在每个行中，第二个和第三个条目的值分别为硬件 ID 和兼容 ID。 通过特定的总线 （在本例中的并行端口） 安装的打印机，在第一行中的硬件 ID 生成硬件 ID 匹配，这是最可能的匹配项。 对于通过其他总线安装打印机，第二行中的硬件 ID 还将生成的硬件 ID 匹配项。
+在此示例中，这两行几乎完全相同，只是在第一行的硬件 ID 中包含了总线枚举器 (LPTENUM) 。 每行中的第二个和第三个条目值分别分别为硬件 ID 和兼容 ID。 对于在这种情况下 (并行端口安装在特定总线上的打印机) ，第一行中的硬件 ID 会生成硬件 ID 匹配项，这是最佳的可能匹配项。 对于通过任何其他总线安装的打印机，第二行中的硬件 ID 还会生成硬件 ID 匹配。
 
-在任一情况下，安装程序不需要来自上是否安装该驱动程序，因此不会显示一个对话框，要求作出响应的用户的响应。 但请注意，如果不匹配则硬件 ID 匹配项，而*兼容 ID*匹配项，而安装发生在客户端安装程序将显示对话框，询问用户交互。
-
- 
+在这两种情况下，安装程序不需要用户提供有关是否安装驱动程序的响应，因此不会显示请求响应的对话框。 但请注意，如果匹配不是硬件 ID 匹配项，而是 *兼容的 id* 匹配，则在客户端进行安装，则安装程序会显示一个对话框，要求用户交互。
 
  
-
-
-
 

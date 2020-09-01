@@ -1,39 +1,39 @@
 ---
 title: WDI_TLV_IHV_TASK_REQUEST_PARAMETERS
-description: WDI_TLV_IHV_TASK_REQUEST_PARAMETERS 是一个 TLV，其中包含 NDIS_STATUS_WDI_INDICATION_IHV_TASK_REQUEST 请求的优先级。
+description: WDI_TLV_IHV_TASK_REQUEST_PARAMETERS 是包含 NDIS_STATUS_WDI_INDICATION_IHV_TASK_REQUEST 请求优先级的 TLV。
 ms.assetid: C33CF8FE-EDBC-41D1-A63C-E43650E9570E
 ms.date: 07/18/2017
 keywords:
-- WDI_TLV_IHV_TASK_REQUEST_PARAMETERS 从 Windows Vista 开始的网络驱动程序
+- 从 Windows Vista 开始 WDI_TLV_IHV_TASK_REQUEST_PARAMETERS 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 937aa7e1bd2445a30b884e98245e3586d3bcbded
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: fd12c727dc2ccde0ecf1390e21eb51d1d094186d
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72840386"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89215427"
 ---
-# <a name="wdi_tlv_ihv_task_request_parameters"></a>WDI\_TLV\_IHV\_任务\_请求\_参数
+# <a name="wdi_tlv_ihv_task_request_parameters"></a>WDI \_ TLV \_ IHV \_ 任务 \_ 请求 \_ 参数
 
 
-WDI\_TLV\_IHV\_任务\_请求\_参数是一个 TLV，其中包含[NDIS\_状态](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-wdi-indication-ihv-task-request)的请求优先级\_WDI\_\_\_
+WDI \_ tlv \_ IHV \_ 任务 \_ 请求 \_ 参数是一个 tlv，其中包含 [NDIS \_ STATUS \_ WDI \_ 指示 \_ IHV \_ 任务 \_ 请求](./ndis-status-wdi-indication-ihv-task-request.md)的请求优先级。
 
 ## <a name="tlv-type"></a>TLV 类型
 
 
 0xDF
 
-## <a name="length"></a>长度
+## <a name="length"></a>Length
 
 
-UINT32 的大小（以字节为单位）。
+UINT32) 的大小 (以字节为单位）。
 
 ## <a name="values"></a>值
 
 
-| 在任务栏的搜索框中键入   | 描述                                                                                                                             |
+| 类型   | 说明                                                                                                                             |
 |--------|-----------------------------------------------------------------------------------------------------------------------------------------|
-| UINT32 | IHV 请求此任务的优先级。 请参阅[**WDI\_IHV\_任务\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/wditypes/ne-wditypes-_wdi_ihv_task_priority)有效优先级值的优先级。 |
+| UINT32 | IHV 请求此任务的优先级。 有关有效的优先级值，请参阅 [**WDI \_ IHV \_ 任务 \_ 优先级**](/windows-hardware/drivers/ddi/wditypes/ne-wditypes-_wdi_ihv_task_priority) 。 |
 
  
 
@@ -48,7 +48,7 @@ UINT32 的大小（以字节为单位）。
 <tbody>
 <tr class="odd">
 <td><p>最低受支持的客户端</p></td>
-<td><p>Windows 10</p></td>
+<td><p>Windows 10</p></td>
 </tr>
 <tr class="even">
 <td><p>最低受支持的服务器</p></td>
@@ -62,9 +62,4 @@ UINT32 的大小（以字节为单位）。
 </table>
 
  
-
- 
-
-
-
 

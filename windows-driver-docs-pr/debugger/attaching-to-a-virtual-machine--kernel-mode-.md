@@ -8,12 +8,12 @@ keywords:
 - VMware 调试
 ms.date: 04/23/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 7ef8b9fb890dde9d85f6496a93b15ac2f475fa06
-ms.sourcegitcommit: f610410e1500f0b0a4ca008b52679688ab51033d
+ms.openlocfilehash: 0c3946d5c6c4fa67af464e45e5043fa6e80b127d
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/15/2020
-ms.locfileid: "88252917"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89213510"
 ---
 # <a name="setting-up-kernel-mode-debugging-of-a-virtual-machine-manually-using-a-virtual-com-port"></a>使用虚拟 COM 端口手动设置虚拟机的内核模式调试
 
@@ -119,7 +119,7 @@ ms.locfileid: "88252917"
 
 4. 完成配置更改更新后，重新启用安全启动。
 
-有关第2代 Vm 的详细信息，请参阅 [第2代虚拟机概述](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn282285(v=ws.11))。
+有关第2代 Vm 的详细信息，请参阅 [第2代虚拟机概述](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn282285(v=ws.11))。
 
 
 ## <a name="span-idremarksspanspan-idremarksspanspan-idremarksspanremarks"></a><span id="Remarks"></span><span id="remarks"></span><span id="REMARKS"></span>备注
@@ -156,10 +156,3 @@ ms.locfileid: "88252917"
 [手动设置内核模式调试](setting-up-kernel-mode-debugging-in-windbg--cdb--or-ntsd.md)
 
 [设置虚拟机主机的网络调试](setting-up-network-debugging-of-a-virtual-machine-host.md)
- 
-
-
-
-
-
-
