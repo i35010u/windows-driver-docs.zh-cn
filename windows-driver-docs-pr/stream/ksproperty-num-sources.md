@@ -61,7 +61,7 @@ KSPROPERTY \_ NUM \_ 源属性指定选择器单元上的输入插针数目。
 
  
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
 发出 get 请求时，客户端将接收属性说明符结构的 **值** 成员中可用源的数目。
@@ -76,7 +76,7 @@ KSPROPERTY \_ NUM \_ 源属性指定选择器单元上的输入插针数目。
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Ksmedia (包含 Ksmedia) </td>
 </tr>
 </tbody>

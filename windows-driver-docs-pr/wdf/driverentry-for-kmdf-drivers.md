@@ -50,7 +50,7 @@ NTSTATUS DriverEntry(
 
 如果例程成功，则它必须返回状态 " \_ 成功"。 否则，它必须返回在 *ntstatus*中定义的错误状态值之一。
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
 与所有 WDM 驱动程序一样，基于框架的驱动程序必须具有 **DriverEntry** 例程，该例程是在加载驱动程序后调用的。 基于框架的驱动程序的 **DriverEntry** 例程必须：
@@ -187,7 +187,7 @@ DriverEntry(
 }
 ```
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**WdfDriverCreate**](/windows-hardware/drivers/ddi/wdfdriver/nf-wdfdriver-wdfdrivercreate)

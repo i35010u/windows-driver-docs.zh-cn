@@ -36,7 +36,7 @@ ms.locfileid: "89186265"
 <tr class="header">
 <th>如果需要，</th>
 <th>操作</th>
-<th>注释</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>

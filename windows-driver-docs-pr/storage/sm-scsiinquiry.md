@@ -94,7 +94,7 @@ Scsi 查询命令生成的 SCSI 感知数据。 微型端口驱动程序在 [**S
 
 不适用于 WMI 方法。
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
 此 WMI 方法属于 MS \_ SM \_ ScsiInformationMethods WMI 类。
@@ -110,10 +110,10 @@ Scsi 查询命令生成的 SCSI 感知数据。 微型端口驱动程序在 [**S
 <tbody>
 <tr class="odd">
 <td align="left"><p>目标平台</p></td>
-<td align="left">“桌面”</td>
+<td align="left">台式机</td>
 </tr>
 <tr class="even">
-<td align="left"><p>标头</p></td>
+<td align="left"><p>Header</p></td>
 <td align="left">Hbapiwmi</td>
 </tr>
 </tbody>

@@ -63,7 +63,7 @@ KSPROPERTY \_ 分配 \_ 器控制 \_ 面 \_ 大小属性通知提供 DirectDraw 
 
  (操作数据) 的属性值是指定覆盖曲面的宽度和高度的一对 ULONGs。
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
 支持此属性的微型驱动程序返回一个 KSPROPERTY \_ 分配器 \_ 控制 \_ 图面 \_ 大小 \_ S 结构，该结构描述了所需覆盖面的宽度和高度。 覆盖混音器分配此大小的覆盖面。 如果此值不是 pin 连接期间在媒体大小中指定的大小，则会将视频从视频端口缩放到此大小。 无论 VGA 芯片的缩放能力如何，都不会出现视频端口的其他缩放。
@@ -80,13 +80,13 @@ KSPROPERTY \_ 分配 \_ 器控制 \_ 面 \_ 大小属性通知提供 DirectDraw 
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Ksmedia (包含 Ksmedia) </td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSPROPERTY**](/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)

@@ -29,7 +29,7 @@ ms.locfileid: "89190079"
 <thead>
 <tr class="header">
 <th>方法</th>
-<th>描述</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>

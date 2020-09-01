@@ -35,7 +35,7 @@ ms.locfileid: "89186289"
 <span id="STATUS_NOT_SUPPORTED"></span><span id="status_not_supported"></span>\_不 \_ 支持的状态  
 指示微型驱动程序不支持所请求的数据格式。
 
-### <a name="comments"></a>注释
+### <a name="comments"></a>说明
 
 类驱动程序在**CommandData**中传递新的数据格式。*PSrb*指针的**OpenFormat**成员。  (此指针指向 [**HW \_ 流 \_ 请求 \_ 块**](/windows-hardware/drivers/ddi/strmini/ns-strmini-_hw_stream_request_block) 结构。 ) 
 

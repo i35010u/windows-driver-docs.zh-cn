@@ -61,7 +61,7 @@ KSPROPERTY \_ 流 \_ 速率属性与 [**KSPROPERTY \_ stream \_ RATECAPABILITY**
 
  
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
 \_ \_ 如果 pin 允许速率改变，或界定闭合相关 pin 之间的接口不同，并使用不同的时间戳格式，则应该实现 KSPROPERTY 流速率。
@@ -86,13 +86,13 @@ Rate 设置和查询都使用 [**KSRATE**](/windows-hardware/drivers/ddi/ks/ns-k
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Ks (包含 Ks .h) </td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSPROPERTY \_ 流 \_ RATECAPABILITY**](ksproperty-stream-ratecapability.md)

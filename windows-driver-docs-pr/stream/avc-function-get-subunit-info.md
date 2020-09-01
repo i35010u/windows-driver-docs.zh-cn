@@ -31,7 +31,7 @@ ms.locfileid: "89187493"
 
 此函数始终将 **Irp- &gt; IoStatus** 设置为状态 " \_ 成功"。
 
-### <a name="comments"></a>注释
+### <a name="comments"></a>说明
 
 此函数使用 AVC **Subunits** \_ MULTIFUNC IRB 结构的子单元连接成员 \_ ，如下所示。
 

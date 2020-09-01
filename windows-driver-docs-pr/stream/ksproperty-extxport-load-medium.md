@@ -63,7 +63,7 @@ KSPROPERTY \_ EXTXPORT \_ load \_ medium 属性设置或获取外部设备的负
 
  (操作数据) 的属性值是指定当前负载介质的 ULONG。 例如，弹出，打开托盘或关闭的纸盒。
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
 KSPROPERTY **LoadMedium** \_ EXTXPORT S 结构的 LoadMedium 成员 \_ 指定负载介质。
@@ -78,13 +78,13 @@ KSPROPERTY **LoadMedium** \_ EXTXPORT S 结构的 LoadMedium 成员 \_ 指定负
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Ksmedia (包含 Ksmedia) </td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSPROPERTY**](/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)

@@ -40,7 +40,7 @@ ms.locfileid: "89188343"
 <span id="STATUS_IO_DEVICE_ERROR"></span><span id="status_io_device_error"></span>状态 \_ IO \_ 设备 \_ 错误  
 指示出现硬件故障。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**SRB \_ 设置 \_ 流 \_ 状态**](srb-set-stream-state.md)

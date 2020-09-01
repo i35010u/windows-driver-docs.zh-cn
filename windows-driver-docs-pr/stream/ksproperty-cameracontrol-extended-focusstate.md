@@ -35,7 +35,7 @@ ms.locfileid: "89190529"
 </colgroup>
 <thead>
 <tr class="header">
-<th>作用域</th>
+<th>范围</th>
 <th>控制</th>
 <th>类型</th>
 </tr>
@@ -101,7 +101,7 @@ ms.locfileid: "89190529"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Ksmedia.h</td>
 </tr>
 </tbody>

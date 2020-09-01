@@ -88,6 +88,6 @@ RegFltr 示例演示如何编写注册表筛选器驱动程序。
 
 目录的其他子目录 `\src` 包含用于各种硬件类型的内核模式驱动程序的示例代码。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 GitHub 上的[Microsoft Windows 驱动程序示例](https://github.com/Microsoft/Windows-driver-samples)

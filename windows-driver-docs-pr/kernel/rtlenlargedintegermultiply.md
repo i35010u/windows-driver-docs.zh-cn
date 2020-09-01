@@ -24,7 +24,7 @@ ms.locfileid: "89185609"
 <thead>
 <tr class="header">
 <th>过时例程</th>
-<th>描述</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>

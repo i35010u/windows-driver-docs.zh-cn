@@ -27,7 +27,7 @@ ms.locfileid: "89189413"
 
 此函数始终将 **Irp- &gt; IoStatus** 设置为 "挂起" 状态 \_ 。
 
-## <a name="comments"></a>注释
+## <a name="comments"></a>说明
 
 此函数使用 AVC \_ 命令 \_ IRB 结构，如下所示。
 
@@ -140,7 +140,7 @@ typedef struct _AVC_COMMAND_IRB {
 
 此函数代码可在 IRQL <= 调度级别调用 \_ 。
 
-### <a name="see-also"></a>另请参阅
+### <a name="see-also"></a>请参阅
 
 [**AVC \_ 函数 \_ 发送 \_ 响应**](avc-function-send-response.md)
 

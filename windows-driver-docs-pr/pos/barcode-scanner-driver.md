@@ -70,7 +70,7 @@ GitHub 上提供了 [Windows 驱动程序示例](https://github.com/Microsoft/Wi
 
     在该文件夹中，你将看到以下文件：
 
-    | 文件                        | 描述                                                                  |
+    | 文件                        | 说明                                                                  |
     |-----------------------------|------------------------------------------------------------------------------|
     | SampleBarcodeScannerDrv.dll | 驱动程序文件。                                                             |
     | SampleBarcodeScannerDrv .inf | 一个 INF 文件，其中包含安装驱动程序所需的信息。          |

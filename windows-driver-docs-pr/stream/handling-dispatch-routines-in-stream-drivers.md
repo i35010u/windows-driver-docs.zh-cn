@@ -107,7 +107,7 @@ DRIVER_DISPATCH KsDefaultForwardIrp;
 
 有关详细信息，请参阅 [DRIVER_DISPATCH](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch) 例程。
 
-<a name="see-also"></a>另请参阅
+<a name="see-also"></a>请参阅
 --------
 
 [KsAddDevice](/windows-hardware/drivers/ddi/ks/nf-ks-ksadddevice)

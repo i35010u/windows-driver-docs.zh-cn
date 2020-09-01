@@ -57,7 +57,7 @@ ms.locfileid: "89189741"
 
 此属性控件是异步的，不可取消。
 
-## <a name="remarks"></a>备注
+## <a name="remarks"></a>注解
 
 ### <a name="getting-the-property"></a>获取属性
 
@@ -84,7 +84,7 @@ ms.locfileid: "89189741"
 
 **标头：** Ksmedia (包含 Ksmedia) 
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 [**KSCAMERA \_ EXTENDEDPROP \_ 标头**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)
 

@@ -63,7 +63,7 @@ KSPROPERTY \_ EXTDEVICE \_ port 属性检索外部设备的端口类型。
 
  (操作数据) 的属性值是一个指定外部设备的连接端口的 ULONG。 例如1394或 USB。
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
 KSPROPERTY **DevPort** \_ EXTDEVICE S 结构的 DevPort 成员 \_ 指定外部设备的端口类型。 **DevPort**成员可设置为等于开发 \_ 端口 \_ 1394、开发 \_ 端口 \_ USB 等。这些令牌在 Microsoft DirectX SDK 中的*xprtdefs*文件中定义。
@@ -78,13 +78,13 @@ KSPROPERTY **DevPort** \_ EXTDEVICE S 结构的 DevPort 成员 \_ 指定外部�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Ksmedia (包含 Ksmedia) </td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSPROPERTY**](/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)

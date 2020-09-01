@@ -62,7 +62,7 @@ AVC \_ 函数 \_ 集 \_ 连接 \_ 信息函数代码为每个 pin ID 设置 AVCC
 
  
 
-### <a name="comments"></a>注释
+### <a name="comments"></a>说明
 
 此函数使用 AVC **SetConnectInfo** \_ MULTIFUNC IRB 结构的 SetConnectInfo 成员 \_ ，如下所示。
 

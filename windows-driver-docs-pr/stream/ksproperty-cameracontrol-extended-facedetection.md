@@ -35,7 +35,7 @@ KSPROPERTY \_ CAMERACONTROL \_ EXTENDED \_ FACEDETECTION 是用于打开和关�
 </colgroup>
 <thead>
 <tr class="header">
-<th>作用域</th>
+<th>范围</th>
 <th>控制</th>
 <th>类型</th>
 </tr>
@@ -185,7 +185,7 @@ KSPROPERTY \_ CAMERACONTROL \_ EXTENDED \_ FACEDETECTION 是用于打开和关�
 </tbody>
 </table>
 
-## <a name="remarks"></a>备注
+## <a name="remarks"></a>注解
 
 启用 "面部检测" 时，该驱动程序可以直接使用感兴趣的人脸区域 (ROIs) ，以帮助根据需要进行3A 处理。 如果通过 KSPROPERTY CAMERACONTROL 扩展 ROI ISPCONTROL 配置了任何用户指定的 ROIs \_ \_ ，则 \_ \_ 指定 ROIs 的用户将优先于检测到的人脸 ROIs。 如果清除了用户指定的 ROIs，则检测到的人脸 ROIs 会生效。
 
@@ -198,7 +198,7 @@ KSPROPERTY \_ CAMERACONTROL \_ EXTENDED \_ FACEDETECTION 是用于打开和关�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Ksmedia.h</td>
 </tr>
 </tbody>

@@ -27,7 +27,7 @@ ms.locfileid: "89187988"
 <thead>
 <tr class="header">
 <th>函数</th>
-<th>描述</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>

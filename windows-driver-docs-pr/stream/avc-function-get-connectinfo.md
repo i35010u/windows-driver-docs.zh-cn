@@ -62,7 +62,7 @@ AVC \_ 函数 \_ 获取 \_ 连接 \_ 信息函数代码获取每个 pin ID 的 A
 
  
 
-### <a name="comments"></a>注释
+### <a name="comments"></a>说明
 
 此函数使用 AVC **PreConnectInfo** \_ MULTIFUNC IRB 结构的 PreConnectInfo 成员 \_ ，如下所示。
 

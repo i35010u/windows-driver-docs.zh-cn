@@ -40,7 +40,7 @@ ms.locfileid: "89190359"
 <span id="STATUS_IO_DEVICE_ERROR"></span><span id="status_io_device_error"></span>状态 \_ IO \_ 设备 \_ 错误  
 指示出现硬件故障。
 
-### <a name="comments"></a>注释
+### <a name="comments"></a>说明
 
 大多数适配器不支持多个实例，因此在这种情况下， [**HW \_ 初始化 \_ 数据**](/windows-hardware/drivers/ddi/strmini/ns-strmini-_hw_initialization_data)结构中的**FilterInstanceExtensionSize**字段应设置为零，且永远不会收到此命令。
 

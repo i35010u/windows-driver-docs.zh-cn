@@ -4,12 +4,12 @@ description: 将 PTP 格式代码映射到 WIA 格式 GUID
 ms.assetid: a69269c0-1474-4de5-9a08-94902ef1f089
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 60cbd1a2ce890c732c8c6cc12b752c7a88ce8f31
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: ff2c112f2bc240bf7bceb16464af1d2b3b7b77a8
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67376599"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89185193"
 ---
 # <a name="mapping-ptp-format-codes-to-wia-format-guids"></a>将 PTP 格式代码映射到 WIA 格式 GUID
 
@@ -17,7 +17,7 @@ ms.locfileid: "67376599"
 
 
 
-通过公开一个对象的格式[ **WIA\_IPA\_格式**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ipa-format)以 GUID 形式表示的属性。 PTP 格式代码和 WIA Guid 之间的映射表所示：
+对象的格式通过 [**WIA \_ IPA \_ FORMAT**](./wia-ipa-format.md) 属性作为 GUID 进行公开。 下表显示了 PTP 格式代码和 WIA Guid 之间的映射：
 
 <table>
 <colgroup>
@@ -27,7 +27,7 @@ ms.locfileid: "67376599"
 </colgroup>
 <thead>
 <tr class="header">
-<th>PTP 设置代码格式</th>
+<th>PTP 格式代码</th>
 <th>对象类型</th>
 <th>WIA GUID</th>
 </tr>
@@ -35,13 +35,13 @@ ms.locfileid: "67376599"
 <tbody>
 <tr class="odd">
 <td><p>0x3000</p></td>
-<td><p>未定义</p></td>
+<td><p>Undefined</p></td>
 <td><p>不适用。</p></td>
 </tr>
 <tr class="even">
 <td><p>0x3001</p></td>
 <td><p>关联</p></td>
-<td><p>请参阅<a href="mapping-ptp-associations-to-wia-folders.md" data-raw-source="[Mapping PTP Associations to WIA Folders](mapping-ptp-associations-to-wia-folders.md)">将 PTP 关联映射到 WIA 文件夹</a>。</p></td>
+<td><p>请参阅 <a href="mapping-ptp-associations-to-wia-folders.md" data-raw-source="[Mapping PTP Associations to WIA Folders](mapping-ptp-associations-to-wia-folders.md)">将 PTP 关联映射到 WIA 文件夹</a>。</p></td>
 </tr>
 <tr class="odd">
 <td><p>0x3002</p></td>
@@ -55,7 +55,7 @@ ms.locfileid: "67376599"
 </tr>
 <tr class="odd">
 <td><p>0x3004</p></td>
-<td><p>Text</p></td>
+<td><p>文本</p></td>
 <td><p>DATAFMT_UNICODE16</p></td>
 </tr>
 <tr class="even">
@@ -70,7 +70,7 @@ ms.locfileid: "67376599"
 </tr>
 <tr class="even">
 <td><p>0x3007</p></td>
-<td><p>AIFF</p></td>
+<td><p>.AIFF</p></td>
 <td><p>AUDFMT_AIFF</p></td>
 </tr>
 <tr class="odd">
@@ -100,7 +100,7 @@ ms.locfileid: "67376599"
 </tr>
 <tr class="even">
 <td><p>0x3800</p></td>
-<td><p>未定义的图像</p></td>
+<td><p>未定义图像</p></td>
 <td><p>不适用。</p></td>
 </tr>
 <tr class="odd">
@@ -130,7 +130,7 @@ ms.locfileid: "67376599"
 </tr>
 <tr class="even">
 <td><p>0x3806</p></td>
-<td><p>未定义的 （保留）</p></td>
+<td><p>未定义 (保留) </p></td>
 <td><p>不适用。</p></td>
 </tr>
 <tr class="odd">
@@ -145,12 +145,12 @@ ms.locfileid: "67376599"
 </tr>
 <tr class="odd">
 <td><p>0x3809</p></td>
-<td><p>PCD (PhotoCD 映像 Pac)</p></td>
+<td><p>PCD (PhotoCD 映像 Pac) </p></td>
 <td><p>WiaImgFmt_PHOTOCD</p></td>
 </tr>
 <tr class="even">
 <td><p>0x380A</p></td>
-<td><p>PICT</p></td>
+<td><p>图像</p></td>
 <td><p>WiaImgFmt_PICT</p></td>
 </tr>
 <tr class="odd">
@@ -160,7 +160,7 @@ ms.locfileid: "67376599"
 </tr>
 <tr class="even">
 <td><p>0x380C</p></td>
-<td><p>未定义的 （保留）</p></td>
+<td><p>未定义 (保留) </p></td>
 <td><p>不适用。</p></td>
 </tr>
 <tr class="odd">
@@ -170,12 +170,12 @@ ms.locfileid: "67376599"
 </tr>
 <tr class="even">
 <td><p>0x380E</p></td>
-<td><p>TIFF / 它</p></td>
+<td><p>TIFF/IT</p></td>
 <td><p>WiaImgFmt_TIFF</p></td>
 </tr>
 <tr class="odd">
 <td><p>0x380F</p></td>
-<td><p>JPEG2000 Baseline</p></td>
+<td><p>JPEG2000 基线</p></td>
 <td><p>WiaImgFmt_JPEG2K</p></td>
 </tr>
 <tr class="even">
@@ -188,12 +188,7 @@ ms.locfileid: "67376599"
 
  
 
-(WiaImgFmt\_中定义 XXX Guid *wiadef.h*。)
+ (\_ 在 *wiadef*中定义 WiaImgFmt XXX guid。 ) 
 
  
-
- 
-
-
-
 

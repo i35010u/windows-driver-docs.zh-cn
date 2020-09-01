@@ -118,7 +118,7 @@ ms.locfileid: "89190542"
 
  
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
 KSPROPERTY **Value** \_ CAMERACONTROL S 结构的值成员 \_ 指定了公开的长度。
@@ -135,7 +135,7 @@ KSPROPERTY **Value** \_ CAMERACONTROL S 结构的值成员 \_ 指定了公开的
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Ksmedia (包含 Ksmedia) </td>
 </tr>
 </tbody>

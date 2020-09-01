@@ -11,17 +11,17 @@ keywords:
 - 文件 WDK 错误日志
 - 文本文件 WDK 错误日志
 - 编译错误消息文件
-- LanguageNames 指令
+- Languagenames.xml 指令
 - SeverityNames 指令
 - FacilityNames 指令
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1e1841930f086c7081e0422de724fce11150b08d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 769d26076e3c7ff836fd54cdaef03a00c90d8df6
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63388222"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89185669"
 ---
 # <a name="defining-custom-error-types"></a>定义自定义错误类型
 
@@ -29,39 +29,39 @@ ms.locfileid: "63388222"
 
 
 
-驱动程序可以指定自己的错误类型和错误消息。 若要定义自定义错误消息，必须首先定义新 IO\_ERR\_*XXX*值指定为**ErrorCode**错误日志条目的成员。 事件查看器使用 IO\_ERR\_*XXX*值来查找驱动程序的错误消息。
+驱动程序可以指定其自己的错误类型和错误消息。 若要定义自定义错误消息，必须首先定义一个新的 IO \_ ERR \_ *XXX*值，以指定为错误日志条目的**ErrorCode**成员。 事件查看器使用 IO \_ ERR \_ *XXX*值查找驱动程序的错误消息。
 
-若要在您的驱动程序支持自定义错误消息，请执行以下步骤：
+若要支持驱动程序中的自定义错误消息，请执行以下步骤：
 
-1.  创建指定的自定义 IO 消息文本文件\_ERR\_*XXX*值和相应的错误消息。 有关详细信息，请参阅[创建错误消息的文本文件](#ddk-creating-the-error-message-text-file-kg)。
+1.  创建一个消息文本文件，该文件指定自定义 IO \_ ERR \_ *XXX*值和相应的错误消息。 有关详细信息，请参阅 [创建错误消息文本文件](#ddk-creating-the-error-message-text-file-kg)。
 
-2.  编译错误消息文本文件到资源，并将资源连接到驱动程序映像。 有关详细信息，请参阅[编译错误消息文本文件](#ddk-compiling-the-error-message-text-file-kg)。
+2.  将错误消息文本文件编译为资源，并将资源附加到驱动程序映像。 有关详细信息，请参阅 [编译错误消息文本文件](#ddk-compiling-the-error-message-text-file-kg)。
 
-3.  将驱动程序映像注册为包含错误消息。 有关详细信息，请参阅[注册为错误消息源](registering-as-a-source-of-error-messages.md)。
+3.  注册包含错误消息的驱动程序映像。 有关详细信息，请参阅 [注册为错误消息源](registering-as-a-source-of-error-messages.md)。
 
-### <a href="" id="ddk-creating-the-error-message-text-file-kg"></a>创建错误消息的文本文件
+### <a name="creating-the-error-message-text-file"></a><a href="" id="ddk-creating-the-error-message-text-file-kg"></a>创建错误消息文本文件
 
-定义的驱动程序的自定义 IO\_ERR\_*XXX*值和匹配的错误消息模板作为消息表资源附加到驱动程序映像。 您可以描述消息文本文件 （其文件扩展名为.mc） 中的驱动程序的消息。
+驱动程序自定义 IO \_ ERR \_ *XXX*值和匹配错误消息模板的定义作为消息表资源附加到驱动程序映像。 可以在消息文本文件中描述驱动程序的消息 (文件扩展名为 mc) 。
 
-消息文本文件包含两个部分： 标头部分和消息部分。 标头部分可以数字值的符号名称的声明，同时让消息部分指定的 IO\_ERR\_*XXX*值和匹配的错误消息模板。
+消息文本文件由两部分组成：标头部分和消息部分。 标头部分允许为数值声明符号名称，而 message 节则指定 IO \_ ERR \_ *XXX*值和匹配的错误消息模板。
 
-消息文本文件的示例，请参阅中的 Serlog.mc 文件[串行驱动程序示例](https://go.microsoft.com/fwlink/p/?LinkId=617962)GitHub 上提供。
+有关消息文本文件的示例，请参阅 GitHub 上提供的 [串行驱动程序示例](https://go.microsoft.com/fwlink/p/?LinkId=617962) 中的 Serlog.mc 文件。
 
-### <a name="header-section"></a>标头部分
+### <a name="header-section"></a>标题部分
 
-标头部分必须包含下面这行：
+标头部分必须包含以下行：
 
 ```cpp
 MessageIdTypedef=NTSTATUS
 ```
 
-这可以保证的 IO 类型\_ERR\_*XXX*消息编译器生成的值被声明为 NTSTATUS。
+这可确保 \_ 消息编译器生成的 IO ERR \_ *XXX*值的类型被声明为 NTSTATUS。
 
-标头部分中显示的其他指令定义用来替代消息部分中的数字值的符号值。
+标头部分中显示的其他指令定义用于替换 message 节中的数值的符号值。
 
-**SeverityNames**并**FacilityNames**指令定义的严重性和设施的 NTSTATUS 值字段的符号值。 指令是窗体<em>关键字</em>**= (** *值* **)**，其中*值*由一个或窗体的多个语句*名称* **=** *值* **:** *标头\_名称*、 通过空格分隔。 *名称*参数是使用指定数字的名称*值*在消息文本文件中，而*标头\_名称*是此值的名称在消息编译器生成的 C 标头文件中声明。 **:** *标头\_名称*子句是可选的。
+**SeverityNames**和**FacilityNames**指令定义了 NTSTATUS 值的 "严重级别" 和 "工具" 字段的符号值。 指令的形式为<em>关键字</em>**= (** *值* **) **，其中*值*由一个或多个窗体*名称*值的语句组成 **=** *value* **：** *标头 \_ 名称*，由空格分隔。 *Name*参数是在消息文本文件中*指定数值时*使用的名称，而*标头 \_ 名称*是在消息编译器生成的 C 头文件中声明的此值的名称。 **：** *Header \_ name*子句是可选的。
 
-下面是严重性代码的符号名称的标头声明的示例：
+下面是严重性代码的符号名称标头声明的示例：
 
 ```cpp
 SeverityNames = (
@@ -72,11 +72,11 @@ SeverityNames = (
 )
 ```
 
-**LanguageNames**指令定义的区域设置 Id (LCID) 的符号值。 指令是窗体**LanguageNames = (** *值* **)**，其中*值*包含的窗体的一个或多个语句*语言\_名称* **=** *lcid* **:** *langfile*，由空格分隔。 *语言\_名称*参数是的名称来代替使用*lcid*在消息文本文件中，而*filename*指定唯一的文件名 （不带扩展名）。 当消息编译器从消息文本文件生成资源脚本时，它将存储此语言的字符串资源的所有在名为的文件*langfile*。*bin*。
+**Languagenames.xml**指令定义 (LCID) 的区域设置 id 的符号值。 指令的格式为**languagenames.xml = (** *值* **) **，其中的*值*由一个或多*个格式 \_ 为*langfile 的语句 **=** *lcid* **:** *langfile*（由空格分隔）组成。 *Language \_ name*参数是用于替代消息文本文件中的*lcid*的名称，而*文件名*指定唯一的文件名 (不包含扩展名) 。 当消息编译器从消息文本文件生成资源脚本时，它将此语言的所有字符串资源都存储在名为 *langfile*的文件中。*bin*。
 
 ### <a name="message-section"></a>消息部分
 
-每个消息的定义开头定义的自定义的 IO\_ERR\_*XXX*驱动程序使用来报告错误的此特定类型的值。 IO\_ERR\_*XXX*值由一系列定义*关键字* = *值*对。 可能的关键字和它们的含义如下所示。
+每个消息定义都以自定义 IO ERR XXX 值的定义开始， \_ \_ *XXX*驱动程序使用该值报告此特定类型的错误。 IO \_ ERR \_ *XXX*值由一系列*关键字*  =  *值*对定义。 可能的关键字及其含义如下所示。
 
 <table>
 <colgroup>
@@ -86,71 +86,66 @@ SeverityNames = (
 <thead>
 <tr class="header">
 <th>关键字</th>
-<th>ReplTest1</th>
+<th>值</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td><p><strong>MessageId</strong></p></td>
-<td><p>代码字段的新 IO_ERR_<em>XXX</em>值。</p></td>
+<td><p>新 IO_ERR_<em>XXX</em> 值的代码字段。</p></td>
 </tr>
 <tr class="even">
-<td><p><strong>Severity</strong></p></td>
-<td><p>Severity 字段的新 IO_ERR_<em>XXX</em>值。 指定的值必须是由定义的符号名称之一<strong>SeverityNames</strong>标头指令。</p></td>
+<td><p><strong>严重性</strong></p></td>
+<td><p>新 IO_ERR_<em>XXX</em> 值的严重性字段。 指定的值必须是 <strong>SeverityNames</strong> 标头指令定义的符号名称之一。</p></td>
 </tr>
 <tr class="odd">
 <td><p><strong>设施</strong></p></td>
-<td><p>设施字段的新 IO_ERR_<em>XXX</em>值。 指定的值必须是由定义的符号名称之一<strong>FacilityNames</strong>标头指令。</p></td>
+<td><p>新 IO_ERR_<em>XXX</em> 值的设施字段。 指定的值必须是 <strong>FacilityNames</strong> 标头指令定义的符号名称之一。</p></td>
 </tr>
 <tr class="even">
 <td><p><strong>SymbolicName</strong></p></td>
-<td><p>符号名称，新 IO_ERR_<em>XXX</em>值。 消息编译器生成包含一个 C 标头文件<strong>#定义</strong>名称声明为相应的 NTSTATUS 值。 指定的错误类型时，驱动程序将使用该名称。</p></td>
+<td><p>新 IO_ERR_<em>XXX</em> 值的符号名称。 消息编译器将生成一个 C 头文件，其中包含名称的<strong> # 定义</strong>声明作为对应的 NTSTATUS 值。 驱动程序在指定错误类型时使用该名称。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-必须始终为第一个关键字**MessageId**。
+第一个关键字必须始终为 **MessageId**。
 
-消息定义的其余部分包含的错误消息的一个或多个本地化版本。 每个版本的形式：
+消息定义的其余部分包含错误消息的一个或多个本地化版本。 每个版本的格式为：
 
 ```cpp
 Language=language_name
 localized_message
 ```
 
-*语言\_名称*值，该值必须是一个符号名称由定义**LanguageNames**标头指令指定的消息文本的语言。 本地化的消息文本本身包含 Unicode 字符串。 任何嵌入的窗体的字符串"%*n*"将被视为事件查看器将替换记录错误时的模板。 "%1"字符串"%2"时，驱动程序的设备对象的名称替换为通过"%*n*"替换为驱动程序提供任何插入字符串。
+*Language \_ name*值必须是**languagenames.xml**标头指令定义的符号名称之一，指定消息文本的语言。 本地化消息文本本身包含 Unicode 字符串。 格式为 "%*n*" 的任何嵌入式字符串都将被视为在记录错误时事件查看器将替换的模板。 "%1" 字符串替换为驱动程序的设备对象的名称，而 "%2" 通过 "%*n*" 替换为驱动程序提供的任何插入字符串。
 
-行上唯一一个单个句点终止消息定义。
+消息定义在一行上单独由一个句点结束。
 
-如果定义自定义错误消息，不应使用插入字符串除非有必要。 插入字符串不能进行本地化，因此，它们应使用的是独立于语言的如数字或文件的名称的字符串。 大多数驱动程序不使用插入字符串。
+如果定义自定义错误消息，则除非需要，否则不应使用插入字符串。 不能对插入字符串进行本地化，因此应将其用于与语言无关的字符串，例如数字或文件名。 大多数驱动程序不使用插入字符串。
 
-### <a href="" id="ddk-compiling-the-error-message-text-file-kg"></a>编译错误消息文本文件
+### <a name="compiling-the-error-message-text-file"></a><a href="" id="ddk-compiling-the-error-message-text-file-kg"></a>编译错误消息文本文件
 
-使用消息编译器 (mc.exe) 要在消息文本文件编译到资源脚本文件 （它具有一个.rc 文件扩展名）。 格式的命令
+使用消息编译器 ( # A0) 将消息文本文件编译到 (文件) 扩展名为 .rc 的资源脚本文件中。 窗体的命令
 
 ```cpp
 mc filename.mc
 ```
 
-使消息编译器生成以下文件：
+导致消息编译器生成以下文件：
 
--   *文件名*.h、 头文件包含声明的每个自定义 IO\_ERR\_*XXX*中的值*filename*。*mc*。
+-   *filename*.h，其中包含 filename 中每个自定义 IO \_ ERR \_ *XXX*值*filename*的声明的头文件。*mc*。
 
--   *文件名*.rc、 资源脚本。
+-   *filename*.rc，资源脚本。
 
--   每种语言的消息文本中显示的的第一个文件。 每个文件，存储所有的错误消息字符串资源的一种语言。 每种语言的文件命名为*langfile*。*bin*，其中*langfile*是语言的消息文本文件中指定的值**LanguageNames**指令。
+-   消息文本文件中显示的每种语言都有一个文件。 其中每个文件都存储一种语言的所有错误消息字符串资源。 每种语言的文件都命名为 *langfile*。*bin*，其中 *langfile* 是在消息文本文件的 **languagenames.xml** 指令中为语言指定的值。
 
-可以在 Microsoft Windows SDK 中找到有关消息编译器的详细信息。
+有关消息编译器的详细信息，请参阅 Microsoft Windows SDK。
 
-资源编译器将资源脚本转换到的资源文件，您可以将附加到您的驱动程序的映像。 如果使用生成实用程序来构建您的驱动程序，可以确保资源脚本是转换到资源文件并附加到驱动程序映像，只需通过该驱动程序的源变量中包含的资源脚本名称。 资源编译器有关的详细信息，请参阅 Windows SDK 文档。 有关使用生成实用工具构建您的驱动程序的信息，请参阅[构建一个驱动程序](https://docs.microsoft.com/windows-hardware/drivers/develop/building-a-driver)。
+资源编译器将资源脚本转换为可附加到驱动程序映像的资源文件。 如果使用生成实用程序来构建驱动程序，则可以通过将资源脚本的名称包含在驱动程序的源变量中，确保资源脚本转换为资源文件并附加到驱动程序映像。 有关资源编译器的详细信息，请参阅 Windows SDK 文档。 有关使用生成实用程序构建驱动程序的信息，请参阅 [构建驱动程序](../develop/building-a-driver.md)。
 
 
  
-
- 
-
-
-
 

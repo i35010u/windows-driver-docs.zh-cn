@@ -34,7 +34,7 @@ ms.locfileid: "89189749"
 |--|--|--|--|--|
 | 是 | 是 | 筛选器 | [KSPROPERTY](/previous-versions/ff564262(v=vs.85)) | [KSCAMERA_EXTENDEDPROP_HEADER](/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header) |
 
-## <a name="remarks"></a>备注
+## <a name="remarks"></a>注解
 
 属性请求包含 [KSCAMERA_EXTENDEDPROP_HEADER](/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header) 结构和 [KSCAMERA_EXTENDEDPROP_VALUE](/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_extendedprop_value) 结构。
 

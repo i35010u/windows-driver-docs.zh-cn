@@ -71,7 +71,7 @@ KSPROPERTY \_ CAMERACONTROL \_ 卷筒 \_ 相对属性指定图像查看轴周围
 <thead>
 <tr class="header">
 <th>值</th>
-<th>描述</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>
@@ -92,7 +92,7 @@ KSPROPERTY \_ CAMERACONTROL \_ 卷筒 \_ 相对属性指定图像查看轴周围
 
  
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
 [**KSPROPERTY \_ CAMERACONTROL \_ 节点 \_ **](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_cameracontrol_node_s)结构的**值**成员指定了相对滚动。
@@ -119,13 +119,13 @@ KSPROPERTY \_ CAMERACONTROL \_ 卷筒 \_ 相对属性指定图像查看轴周围
 <td><p>适用于 windows Vista 和更高版本的 Windows 操作系统。</p></td>
 </tr>
 <tr class="even">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Ksmedia (包含 Ksmedia) </td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSPROPERTY \_ CAMERACONTROL \_ 节点 \_ S**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_cameracontrol_node_s)

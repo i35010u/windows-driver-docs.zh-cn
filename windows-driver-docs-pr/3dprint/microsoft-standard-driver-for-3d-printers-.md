@@ -87,7 +87,7 @@ static const uint8_t PROGMEM ms3dprint_descriptor[40] = {
 
 如上一节所述，Ihv 有权访问多个基本配置。 这样做的优点是可以将必须存储在打印机闪存中的信息量降到最低。 开发人员可以检查提供的基本配置，并选择最靠近其打印机的基本配置。 在此示例中，我们将选择 SD 卡基本配置，并用以下参数替代某些属性：
 
-| parameters | 值 |
+| 参数 | 值 |
 | --- | --- |
 | Job3DOutputAreaWidth | 250000 |
 | Job3DOutputAreaDepth | 260000 |

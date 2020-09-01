@@ -16,53 +16,47 @@ keywords:
 - 密钥 WDK KMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 629ee67117cc78ff673658a7ab4032e90c277a7a
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 2823a7e3b4ac54f049674a62278e501a0c9c4f39
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72843162"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89184305"
 ---
 # <a name="introduction-to-registry-keys-for-drivers"></a>驱动程序的注册表项简介
 
 
 驱动程序通常使用一组系统定义的注册表项来存储或访问驱动程序特定的信息或特定于设备的信息。 你的驱动程序可能会访问以下注册表项：
 
--   **参数**键
+-   **参数** 键
 
-    驱动程序的**参数**密钥可包含驱动程序的配置信息。 对于内核模式驱动程序框架（KMDF）驱动程序，此密钥位于 " [**HKLM\\SYSTEM\\CurrentControlSet\\服务**](https://docs.microsoft.com/windows-hardware/drivers/install/hklm-system-currentcontrolset-services-registry-tree)" 树中，位于驱动程序的 "服务名称" 下。 对于用户模式驱动程序框架（UMDF）驱动程序，此密钥位于**HKLM\\SOFTWARE\\Microsoft\\WINDOWS NT\\CurrentVersion\\WUDF\\Services**树中的驱动程序服务名称下。 驱动程序的子项始终使用驱动程序的服务名称，即使驱动程序二进制文件的文件名不同于服务名称也是如此。
+    驱动程序的 **参数** 密钥可包含驱动程序的配置信息。 对于内核模式驱动程序框架 (KMDF) 驱动程序，此密钥位于 [**HKLM \\ 系统 \\ CurrentControlSet \\ Services**](../install/hklm-system-currentcontrolset-services-registry-tree.md) 树中的驱动程序服务名称下。 对于用户模式驱动程序框架 (UMDF) 驱动程序，此密钥位于驱动程序的服务名称下的 **HKLM \\ SOFTWARE \\ Microsoft \\ Windows NT \\ CurrentVersion \\ WUDF \\ Services** 树中。 驱动程序的子项始终使用驱动程序的服务名称，即使驱动程序二进制文件的文件名不同于服务名称也是如此。
 
-    当系统调用驱动程序的[**DriverEntry**](https://docs.microsoft.com/windows-hardware/drivers/wdf/driverentry-for-kmdf-drivers)例程时，它会将驱动程序的路径传递给驱动程序的**服务**树。 你的驱动程序必须将此路径传递给[**WdfDriverCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdriver/nf-wdfdriver-wdfdrivercreate)。 随后，驱动程序可以通过调用[**WdfDriverGetRegistryPath**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdriver/nf-wdfdriver-wdfdrivergetregistrypath)获取路径，驱动程序可以通过调用[**WdfDriverOpenParametersRegistryKey**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdriver/nf-wdfdriver-wdfdriveropenparametersregistrykey)来打开其**参数**密钥。
+    当系统调用驱动程序的 [**DriverEntry**](./driverentry-for-kmdf-drivers.md) 例程时，它会将驱动程序的路径传递给驱动程序的 **服务** 树。 你的驱动程序必须将此路径传递给 [**WdfDriverCreate**](/windows-hardware/drivers/ddi/wdfdriver/nf-wdfdriver-wdfdrivercreate)。 随后，驱动程序可以通过调用[**WdfDriverGetRegistryPath**](/windows-hardware/drivers/ddi/wdfdriver/nf-wdfdriver-wdfdrivergetregistrypath)获取路径，驱动程序可以通过调用[**WdfDriverOpenParametersRegistryKey**](/windows-hardware/drivers/ddi/wdfdriver/nf-wdfdriver-wdfdriveropenparametersregistrykey)来打开其**参数**密钥。
 
 -   软件密钥
 
-    驱动程序的软件密钥也称为 "*驱动程序密钥*"。 系统在其软件密钥下存储有关每个驱动程序的信息。
+    驱动程序的软件密钥也称为 " *驱动程序密钥*"。 系统在其软件密钥下存储有关每个驱动程序的信息。
 
-    你的驱动程序可以调用[**WdfFdoInitOpenRegistryKey**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdffdo/nf-wdffdo-wdffdoinitopenregistrykey)和[**WdfDeviceOpenRegistryKey**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceopenregistrykey)以打开设备的软件密钥。
+    你的驱动程序可以调用 [**WdfFdoInitOpenRegistryKey**](/windows-hardware/drivers/ddi/wdffdo/nf-wdffdo-wdffdoinitopenregistrykey) 和 [**WdfDeviceOpenRegistryKey**](/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceopenregistrykey) 以打开设备的软件密钥。
 
-    驱动程序的 INF 文件可包含使用[**Inf DDInstall 部分**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-ddinstall-section)在软件密钥下设置注册表值的[**inf AddReg 指令**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addreg-directive)。
+    驱动程序的 INF 文件可包含使用[**Inf DDInstall 部分**](../install/inf-ddinstall-section.md)在软件密钥下设置注册表值的[**inf AddReg 指令**](../install/inf-addreg-directive.md)。
 
 -   硬件密钥
 
-    当驱动程序堆栈向即插即用（PnP）管理器通知设备已连接到系统时，PnP 管理器将为该设备创建一个硬件密钥。 此密钥也称为*设备密钥*。 与硬件相关的设置（如中断设置）可以通过驱动程序存储在此处。
+    当驱动程序堆栈通知即插即用设备连接到系统 (PnP) 管理器时，PnP 管理器将为该设备创建一个硬件密钥。 此密钥也称为 *设备密钥*。 与硬件 (相关的设置（如中断设置) 可通过驱动程序存储在此处。
 
-    你的驱动程序可以调用[**WdfFdoInitOpenRegistryKey**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdffdo/nf-wdffdo-wdffdoinitopenregistrykey)和[**WdfDeviceOpenRegistryKey**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceopenregistrykey)以打开设备的硬件密钥。
+    你的驱动程序可以调用 [**WdfFdoInitOpenRegistryKey**](/windows-hardware/drivers/ddi/wdffdo/nf-wdffdo-wdffdoinitopenregistrykey) 和 [**WdfDeviceOpenRegistryKey**](/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceopenregistrykey) 以打开设备的硬件密钥。
 
-    驱动程序的 INF 文件可包含使用[**Inf DDInstall 部分**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-ddinstall-hw-section)在硬件密钥下设置注册表值的[**inf AddReg 指令**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addreg-directive)。
+    驱动程序的 INF 文件可包含使用[**Inf DDInstall 部分**](../install/inf-ddinstall-hw-section.md)在硬件密钥下设置注册表值的[**inf AddReg 指令**](../install/inf-addreg-directive.md)。
 
 若要确定你的驱动程序类型是否要求你将信息存储在特定的注册表项下，请参阅本文档中的部分，其中介绍了如何使用目录讨论驱动程序的设备类型。
 
 有关驱动程序的注册表项的详细信息，请参阅：
 
--   [注册表树和密钥概述](https://docs.microsoft.com/windows-hardware/drivers/install/overview-of-registry-trees-and-keys)
+-   [注册表树和密钥概述](../install/overview-of-registry-trees-and-keys.md)
 
--   [使用驱动程序中的注册表](https://docs.microsoft.com/windows-hardware/drivers/kernel/using-the-registry-in-a-driver)
-
- 
+-   [在驱动程序中使用注册表](https://docs.microsoft.com/windows-hardware/drivers/kernel/using-the-registry-in-a-driver)
 
  
-
-
-
-
 

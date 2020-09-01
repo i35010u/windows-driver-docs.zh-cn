@@ -50,7 +50,7 @@ void SetFC3MgmtInfo(
 
 不适用于 WMI 方法。
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
 此 WMI 方法属于 [MSFC \_ HBAAdapterMethods WMI 类](msfc-hbaadaptermethods-wmi-class.md)。
@@ -66,10 +66,10 @@ void SetFC3MgmtInfo(
 <tbody>
 <tr class="odd">
 <td align="left"><p>目标平台</p></td>
-<td align="left">“桌面”</td>
+<td align="left">台式机</td>
 </tr>
 <tr class="even">
-<td align="left"><p>标头</p></td>
+<td align="left"><p>Header</p></td>
 <td align="left"> (包含 Hbapiwmi、Hbaapi 或 Hbaapi 的 Hbapiwmi) </td>
 </tr>
 </tbody>

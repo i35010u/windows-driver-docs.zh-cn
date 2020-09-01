@@ -44,7 +44,7 @@ PVOID WdfObjectGetTypedContext(
 
 **WdfObjectGetTypedContext** 返回指向指定对象的上下文空间的指针。
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
 可以使用 **WdfObjectGetTypedContext** 宏获取指向任何框架对象上下文空间的指针。 使用此宏作为调用 [**WDF_DECLARE_CONTEXT_TYPE**](wdf-declare-context-type.md) 宏或 [**WDF_DECLARE_CONTEXT_TYPE_WITH_NAME**](wdf-declare-context-type-with-name.md) 宏创建的对象特定上下文访问器方法的替代方法。 请注意，如果您使用 **WdfObjectGetTypedContext**，则仍必须使用 WDF_DECLARE_CONTEXT_TYPE 或 WDF_DECLARE_CONTEXT_TYPE_WITH_NAME 来声明您的对象上下文。
@@ -114,7 +114,7 @@ pMyContext = WdfObjectGetTypedContext(
 <td><p>2.0</p></td>
 </tr>
 <tr class="even">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Wdfobject (包含 Wdf .h) </td>
 </tr>
 <tr class="odd">
@@ -128,7 +128,7 @@ pMyContext = WdfObjectGetTypedContext(
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**WDF_DECLARE_CONTEXT_TYPE**](wdf-declare-context-type.md)

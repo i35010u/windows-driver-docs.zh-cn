@@ -43,7 +43,7 @@ ms.locfileid: "89186321"
 <span id="STATUS_IO_DEVICE_ERROR"></span><span id="status_io_device_error"></span>状态 \_ IO \_ 设备 \_ 错误  
 指示出现硬件故障。
 
-### <a name="comments"></a>注释
+### <a name="comments"></a>说明
 
 当类驱动程序收到 [**KSPROPERTY \_ 连接 \_ PROPOSEDATAFORMAT**](ksproperty-connection-proposedataformat.md) 请求时，它将使用此 SRB 代码来确定是否支持所建议的格式。 类驱动程序在**CommandData**中传递建议的数据格式。*PSrb*指向的**OpenFormat**成员。 *PSrb*指针指向[**HW \_ 流 \_ 请求 \_ 块**](/windows-hardware/drivers/ddi/strmini/ns-strmini-_hw_stream_request_block)结构。
 
@@ -51,7 +51,7 @@ ms.locfileid: "89186321"
 
 如果微型驱动程序能够接受新格式，则稍后的类驱动程序可以将微型驱动程序设置为格式更改，该更改由[**KSSTREAM \_ 标头**](/windows-hardware/drivers/ddi/ks/ns-ks-ksstream_header)结构中的**OptionsFlags**成员指示。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**SRB \_ 设置 \_ 数据 \_ 格式**](srb-set-data-format.md)

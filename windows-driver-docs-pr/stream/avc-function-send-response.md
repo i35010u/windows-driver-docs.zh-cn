@@ -62,7 +62,7 @@ ms.locfileid: "89187473"
 
 ### <a name="span-idheadersspanspan-idheadersspanheaders"></a><span id="headers"></span><span id="HEADERS"></span>只要
 
-### <a name="comments"></a>注释
+### <a name="comments"></a>说明
 
 此函数使用 AVC \_ 命令 \_ IRB 结构，如下所示。
 
@@ -163,7 +163,7 @@ typedef struct _AVC_COMMAND_IRB {
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Avc (包含 Avc) </td>
 </tr>
 </tbody>

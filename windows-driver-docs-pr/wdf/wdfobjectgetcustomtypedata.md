@@ -44,7 +44,7 @@ PULONG WdfObjectGetCustomTypeData(
 
 **WdfObjectGetCustomTypeData** 返回在先前对 [**WdfObjectAddCustomTypeWithData**](wdfobjectaddcustomtypewithdata.md)的调用中，驱动程序与框架对象和自定义类型相关联的数据。
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
 有关对象驱动程序类型的详细信息，请参阅 [框架对象自定义类型](./framework-object-custom-types.md)。
@@ -71,13 +71,13 @@ PULONG WdfObjectGetCustomTypeData(
 <td><p>2.0</p></td>
 </tr>
 <tr class="even">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Wdfobject (包含 Wdf .h) </td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**WDF_DECLARE_CUSTOM_TYPE**](wdf-declare-custom-type.md)

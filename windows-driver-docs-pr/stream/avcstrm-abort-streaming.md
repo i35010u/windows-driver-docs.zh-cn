@@ -41,7 +41,7 @@ ms.locfileid: "89187437"
 <thead>
 <tr class="header">
 <th>错误状态</th>
-<th>描述</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>
@@ -70,7 +70,7 @@ ms.locfileid: "89187437"
 
  
 
-### <a name="comments"></a>注释
+### <a name="comments"></a>说明
 
 请注意，此功能将取消 *所有* 流式处理 irp。 若要取消单个 IRP，请使用 [**IoCancelIrp**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iocancelirp)。
 

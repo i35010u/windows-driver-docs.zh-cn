@@ -40,7 +40,7 @@ ms.locfileid: "89186297"
 <span id="STATUS_IO_DEVICE_ERROR"></span><span id="status_io_device_error"></span>状态 \_ IO \_ 设备 \_ 错误  
 指示出现硬件故障。
 
-### <a name="comments"></a>注释
+### <a name="comments"></a>说明
 
 *PSrb* - &gt; **CommandData**的值。**DataBufferArray**指向[**KSSTREAM \_ 标头**](/windows-hardware/drivers/ddi/ks/ns-ks-ksstream_header)结构的数组，它们共同描述了数据缓冲区。 *PSrb*指针指向[**HW \_ 流 \_ 请求 \_ 块**](/windows-hardware/drivers/ddi/strmini/ns-strmini-_hw_stream_request_block)结构。 *pSrb* - pSrb &gt;**CommandData**。**NumberOfBuffers**指定数组的大小。
 

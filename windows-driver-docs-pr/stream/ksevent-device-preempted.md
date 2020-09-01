@@ -59,7 +59,7 @@ ms.locfileid: "89186153"
 
  
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
 在以下情况下，将触发抢占事件。
@@ -68,7 +68,7 @@ ms.locfileid: "89186153"
 2.  第二个 Windows 应用请求捕获堆栈从第一个应用中抢占设备并为第二个应用授予控制权。
 3.  发出此请求时，驱动程序会将 **KSEVENT \_ 设备 \_ 抢先** 事件发送到两个 Windows 应用。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSEVENT \_ 设备**](/windows-hardware/drivers/ddi/ks/ne-ks-ksevent_device)

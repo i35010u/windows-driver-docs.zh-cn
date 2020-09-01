@@ -63,7 +63,7 @@ ms.locfileid: "89190391"
 
  (操作数据) 的属性值是一个 ULONG，它指定当前可用的电视音频模式，如立体声或 mono 音频和多语言设置。
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
 KSPROPERTY **Mode** \_ TVAUDIO S 结构的 Mode 成员 \_ 指定音频模式。 它包含 KS \_ TVAUDIO 模式标志的按位 \_ or \_ \* ，用于指示请求信息时设备支持的模式。
@@ -78,13 +78,13 @@ KSPROPERTY **Mode** \_ TVAUDIO S 结构的 Mode 成员 \_ 指定音频模式。 
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Ksmedia (包含 Ksmedia) </td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSPROPERTY**](/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)

@@ -4,22 +4,22 @@ description: 精简预配
 ms.assetid: 0D65DDCC-D207-4EA8-B5D6-56DF57221EE3
 ms.date: 10/04/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 6ec9e06dee020367291cb7207452f1b640a6e561
-ms.sourcegitcommit: c23a403b3ebea05bde96067b678a318ca9b0cabe
+ms.openlocfilehash: 06391a99ff82342b856bec4a1e5c859e5e1bd7f2
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71939092"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89189209"
 ---
 # <a name="thin-provisioning"></a>精简预配
 
 ## <a name="overview"></a>概述
 
-精简设置是一种端到端存储预配解决方案，可提供实时分配。 它需要在主机和客户端应用程序上规划存储部署和执行。 Windows Server 精简设置功能充当精简预配支持的存储和主机服务器之间的接口。 精简设置功能包括精简预配逻辑单元（LUN）标识、阈值通知、资源耗尽的句柄和用于向最终用户提供高度可用且可缩放的存储预配服务的空间回收。
+精简设置是一种端到端存储预配解决方案，可提供实时分配。 它需要在主机和客户端应用程序上规划存储部署和执行。 Windows Server 精简设置功能充当精简预配支持的存储和主机服务器之间的接口。 精简设置功能包括精简设置逻辑单元 (LUN) 标识、阈值通知、资源耗尽的句柄和用于向最终用户提供高度可用且可缩放的存储预配服务的空间回收。
 
 ## <a name="thin-provisioning-lun-identification"></a>精简设置 LUN 标识
 
-Windows Server 采用了用于标识从 Windows Server 2012 开始的精简预配 Lun 的 T10 SCSI 块命令3（SBC3）标准规范。 在初始目标设备枚举过程中，Windows Server 从目标设备收集所有属性参数。 Windows Server 标识预配类型和取消映射和剪裁功能。 根据 SBC3 规范，存储设备会报告其设置类型以及取消映射和剪裁功能。
+Windows Server 采用了 T10 SCSI Block 命令 3 (SBC3) 标准规范来识别从 Windows Server 2012 开始的精简设置 Lun。 在初始目标设备枚举过程中，Windows Server 从目标设备收集所有属性参数。 Windows Server 标识预配类型和取消映射和剪裁功能。 根据 SBC3 规范，存储设备会报告其设置类型以及取消映射和剪裁功能。
 
 如果存储设备无法准确报告其当前功能，可能会出现设备兼容性问题。 例如，如果存储设备报告它支持 "取消映射" 命令，但不支持 "取消映射" 命令，则可能出现磁盘格式挂起问题。 当预配类型信息准确时，存储堆栈可根据存储设置类型提供更好的 i/o 处理。
 
@@ -29,7 +29,7 @@ Windows Server 采用了用于标识从 Windows Server 2012 开始的精简预�
 
 ## <a name="threshold-and-resource-exhaustion-handles"></a>阈值和资源耗尽句柄
 
-通常使用比 LUN 大小少的物理磁盘空间创建精简设置 LUN。 阈值通知是用于向主机和客户端应用程序发送存储空间消耗状态警报的必需函数。 达到阈值时，大多数精简设置存储阵列不会报告事件。 这些精简预配存储解决方案通过其专用存储管理实用工具解决了阈值通知。 因此，对于主机和客户端应用程序，这些存储阵列报告的唯一事件是永久资源耗尽。 精简预配存储设备可以使用阈值通知句柄、临时资源耗尽句柄或永久性资源耗尽句柄来在存储空间消耗接近时向系统管理员或客户端应用程序发出警报功能.
+通常使用比 LUN 大小少的物理磁盘空间创建精简设置 LUN。 阈值通知是用于向主机和客户端应用程序发送存储空间消耗状态警报的必需函数。 达到阈值时，大多数精简设置存储阵列不会报告事件。 这些精简预配存储解决方案通过其专用存储管理实用工具解决了阈值通知。 因此，对于主机和客户端应用程序，这些存储阵列报告的唯一事件是永久资源耗尽。 精简预配存储设备可以使用阈值通知句柄、临时资源耗尽句柄或永久性资源耗尽句柄，在存储空间消耗接近容量时向系统管理员或客户端应用程序发出警报。
 
 ### <a name="thin-provisioning-threshold-notification"></a>精简设置阈值通知
 
@@ -40,7 +40,7 @@ Windows Server 采用了用于标识从 Windows Server 2012 开始的精简预�
 - 已终止的命令将重试。
 
 > [!NOTE]
-> 如果未设置 FILE_FLAG_WRITE_THROUGH，则在记录该错误后发送的写入命令可能会丢失，因为它们可能会触发永久性资源耗尽情况。
+> FILE_FLAG_WRITE_THROUGH 如果未设置，则写入此错误后发送的命令可能会丢失，因为它们可能会触发永久性资源耗尽情况。
 
 ### <a name="temporary-resource-exhaustion"></a>临时资源耗尽
 
@@ -54,8 +54,8 @@ Windows Server 采用了用于标识从 Windows Server 2012 开始的精简预�
 
 永久资源耗尽情况表明精简设置 LUN 已经达到了最大存储空间限制。 当在写入命令期间发生永久性资源耗尽时，存储设备将通过使用 "感知数据" 终止操作，并发送 "空间分配失败写保护" 消息。 永久耗尽的处理方式如下：
 
-- 如果原始请求已设置 FILE_FLAG_WRITE_THROUGH，则会故障回复到应用程序。
-- 如果原始请求未设置 FILE_FLAG_WRITE_THROUGH，则在没有完成请求或未刷新到物理媒体的情况下，应用程序可能会收到成功响应。
+- 如果原始请求已 FILE_FLAG_WRITE_THROUGH 集，则会故障回复到应用程序。
+- 如果原始请求没有 FILE_FLAG_WRITE_THROUGH 设置，则应用程序可能会在没有完成请求或未刷新到物理媒体的情况下收到成功响应。
 - 将记录系统事件，其中包含 "永久资源耗尽" 错误消息。
 - 错误代码将传回分区管理器，LUN 将脱机。
 
@@ -69,9 +69,9 @@ Windows Server 采用了用于标识从 Windows Server 2012 开始的精简预�
 
 ### <a name="unmap-requests-from-the-hyper-v-guest-operating-system"></a>Hyper-v 来宾操作系统中的取消映射请求
 
-在虚拟机（VM）创建期间，Hyper-v 主机会发送一个查询，该查询介绍虚拟硬盘（VHD）所在的存储设备是否支持取消映射或剪裁命令。 从 VM 来宾操作系统的文件系统中删除大文件时，来宾操作系统会将文件删除请求发送到虚拟机的虚拟硬盘（VHD）或 VHD 文件（或 VHDX 文件）。 VM 的 VHD 或 VHDX 文件向 Windows Hyper-v 主机的类驱动程序堆栈隧道进行 SCSI 取消映射请求，如下所示：
+在虚拟机 (创建 VM) ，Hyper-v 主机会发送一个查询，该查询介绍虚拟硬盘 (VHD) 所在的存储设备是否支持取消映射或剪裁命令。 从 VM 来宾操作系统的文件系统中删除大型文件时，来宾操作系统会将文件删除请求发送到虚拟机的虚拟硬盘 (VHD) 或 VHD 文件 (或 VHDX 文件) 。 VM 的 VHD 或 VHDX 文件向 Windows Hyper-v 主机的类驱动程序堆栈隧道进行 SCSI 取消映射请求，如下所示：
 
-- 如果 VM 具有 VHD 文件，则 VHD 会将 SCSI 取消或 ATA 剪裁命令转换为[数据集管理 i/o 控制代码](https://docs.microsoft.com/windows-hardware/drivers/storage/data-set-management-overview)剪裁请求，然后将请求发送到主机存储设备。
+- 如果 VM 具有 VHD 文件，则 VHD 会将 SCSI 取消或 ATA 剪裁命令转换为 [数据集管理 i/o 控制代码](./data-set-management-overview.md) 剪裁请求，然后将请求发送到主机存储设备。
 - 如果 VM 有一个 VHDX 文件，则 VHD 文件系统会将 SCSI 取消映射或 ATA 剪裁命令转换为文件系统级剪裁请求，然后将请求发送到主机操作系统。
 
 Windows Hyper-v 还支持来宾操作系统中的 IOCTL DSM 剪裁调用。
@@ -84,6 +84,6 @@ Windows Hyper-v 还支持来宾操作系统中的 IOCTL DSM 剪裁调用。
 
 ## <a name="retrieving-the-slab-mapping-state"></a>检索楼板映射状态
 
-在精简设置 LUN 中，所有逻辑块都在碎片（群集）中进行分组。 平板大小由存储设备报告的最佳取消映射粒度参数设置。 所有碎片都分类为已映射的取消分配状态或锚定状态。 Windows Server 将取消分配状态和锚定状态视为未映射状态。 Windows Server 提供了一个 API 实现或 IOCTL DSM 分配，用于从精简设置 Lun 检索用于存储管理操作的 LBA 设置状态。 应用程序可以调用 IOCTL DSM 分配例程来发送 SCSI 命令，并检索特定范围内每个楼板的已映射或未映射状态。 如果返回的 LBA 预配状态不描述整个分配范围，则应用程序将发送另一个 SCSI 命令来检索剩余 LBA 范围的设置状态。
+在精简设置 LUN 中，所有逻辑块都在碎片 (群集) 中分组。 平板大小由存储设备报告的最佳取消映射粒度参数设置。 所有碎片都分类为已映射的取消分配状态或锚定状态。 Windows Server 将取消分配状态和锚定状态视为未映射状态。 Windows Server 提供了一个 API 实现或 IOCTL DSM 分配，用于从精简设置 Lun 检索用于存储管理操作的 LBA 设置状态。 应用程序可以调用 IOCTL DSM 分配例程来发送 SCSI 命令，并检索特定范围内每个楼板的已映射或未映射状态。 如果返回的 LBA 预配状态不描述整个分配范围，则应用程序将发送另一个 SCSI 命令来检索剩余 LBA 范围的设置状态。
 
 存储设备无需在一次返回时处理整个 LBA 范围。 如果已返回原始请求的部分 LBA 范围，则将发送另一个命令以检索剩余 LBA 范围的映射状态。

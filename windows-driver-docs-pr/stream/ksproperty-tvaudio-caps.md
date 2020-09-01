@@ -63,7 +63,7 @@ KSPROPERTY \_ TVAUDIO \_ cap 属性检索 TV 音频设备的功能。 必须实�
 
  (操作数据) 的属性值是一个 ULONG，它指定 TV 音频设备的功能，例如立体声与 mono 音频支持和多种语言功能。
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
 KSPROPERTY **Capabilities** \_ TVAUDIO \_ Cap S 结构的功能成员 \_ 指定 TV 音频设备的功能。
@@ -78,13 +78,13 @@ KSPROPERTY **Capabilities** \_ TVAUDIO \_ Cap S 结构的功能成员 \_ 指定 
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Ksmedia (包含 Ksmedia) </td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSPROPERTY**](/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)

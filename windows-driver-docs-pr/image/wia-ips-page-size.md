@@ -32,7 +32,7 @@ ms.locfileid: "89185515"
 
 访问权限：读/写
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
 若要选择要扫描的页的维度，应用程序将设置 "WIA \_ ip \_ 页面大小" \_ 属性。 WIA 微型驱动程序创建并维护此属性。
@@ -90,13 +90,13 @@ ms.locfileid: "89185515"
 <td><p>在 Windows Vista 和更高版本的操作系统中可用。 对于 Windows XP，请改用 WIA_DPS_PAGE_SIZE 属性。</p></td>
 </tr>
 <tr class="even">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Wiadef (包含 Wiadef) </td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**IWiaMiniDrv：:d rvValidateItemProperties**](/windows-hardware/drivers/ddi/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvvalidateitemproperties)

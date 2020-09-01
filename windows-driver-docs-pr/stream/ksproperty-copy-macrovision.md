@@ -63,7 +63,7 @@ KSPROPERTY \_ COPY \_ MACROVISION 属性指示数据流的 MACROVISION 级别。
 
  (操作数据) 的属性值是一个 KS \_ COPY \_ MACROVISION 结构，该结构指定数据流的 MACROVISION 级别。
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
 有关 Macrovision 级别的详细信息，请参阅 [DVD 版权保护](./dvd-copyright-protection.md)。
@@ -78,13 +78,13 @@ KSPROPERTY \_ COPY \_ MACROVISION 属性指示数据流的 MACROVISION 级别。
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Ksmedia (包含 Ksmedia) </td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KS \_ 复制 \_ MACROVISION**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-_ks_copy_macrovision)

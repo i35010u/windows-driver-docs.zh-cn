@@ -31,7 +31,7 @@ typedef struct _PosBarcodeScannerDataReceivedEventData
 
 下表显示此事件的数据缓冲区的内存布局。
 
-| 内存值                                            | 描述                                                                                                                          |
+| 内存值                                            | 说明                                                                                                                          |
 |---------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------|
 | 0x00000005                                   | **标头。事件 = PosEventType：： BarcodeScannerDataReceived**                                                           |
 | 0000020 + 扫描数据长度 + 标签数据长度 | **DataLength** = sizeof (**PosBarcodeScannerDataReceivedEventData**) + **ScanDataLength**  +  **ScanDataLabelLength** |

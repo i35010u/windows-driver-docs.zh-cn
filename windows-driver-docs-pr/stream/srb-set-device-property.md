@@ -40,13 +40,13 @@ ms.locfileid: "89186279"
 <span id="STATUS_IO_DEVICE_ERROR"></span><span id="status_io_device_error"></span>状态 \_ IO \_ 设备 \_ 错误  
 指示出现硬件故障。
 
-### <a name="comments"></a>注释
+### <a name="comments"></a>说明
 
 类驱动程序将操作的参数传递到*pSrb* - &gt; **CommandData**中。**PropertyInfo** buffer，形式为[**流 \_ 属性 \_ 描述符**](/windows-hardware/drivers/ddi/strmini/ns-strmini-_stream_property_descriptor)的结构。 *PSrb*指针指向[**HW \_ 流 \_ 请求 \_ 块**](/windows-hardware/drivers/ddi/strmini/ns-strmini-_hw_stream_request_block)结构。 流属性描述符的 **属性** 成员 \_ 描述了 \_ 有问题的属性，而 **PropertyInfo** 成员指定了要从中复制属性数据的缓冲区。 如果缓冲区太小，则微型驱动程序应将*pSrb*指向的**状态**成员设置为状态 \_ 缓冲区 \_ 溢出。
 
 有关属性集的详细信息，请参阅 [KS 属性](./ks-properties.md)。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**流 \_ 属性 \_ 描述符**](/windows-hardware/drivers/ddi/strmini/ns-strmini-_stream_property_descriptor)

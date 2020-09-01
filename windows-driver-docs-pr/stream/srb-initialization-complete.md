@@ -27,7 +27,7 @@ ms.locfileid: "89190357"
 
 类驱动程序发送此请求，通知微型驱动程序已完成初始化。
 
-### <a name="comments"></a>注释
+### <a name="comments"></a>说明
 
 微型驱动程序完成此请求后，类驱动程序可以开始发送 [**SRB 打开的 \_ \_ 流**](srb-open-stream.md) 请求。
 

@@ -27,7 +27,7 @@ ms.locfileid: "89188671"
 <thead>
 <tr class="header">
 <th>结构</th>
-<th>描述</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>

@@ -63,7 +63,7 @@ KSPROPERTY \_ EXTXPORT \_ 功能属性检索外部设备的传输特定功能。
 
  (操作数据) 的属性值是一个指定外部传输功能的 ULONG。
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
 KSPROPERTY EXTXPORT 结构的 **功能** 成员 \_ \_ 介绍了传输特定的功能。
@@ -78,13 +78,13 @@ KSPROPERTY EXTXPORT 结构的 **功能** 成员 \_ \_ 介绍了传输特定的�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Ksmedia (包含 Ksmedia) </td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSPROPERTY**](/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)

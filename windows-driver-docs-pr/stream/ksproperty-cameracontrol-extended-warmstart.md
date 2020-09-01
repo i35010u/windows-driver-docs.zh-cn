@@ -61,14 +61,14 @@ ms.locfileid: "89187367"
 
 使用[**KSCAMERA \_ EXTENDEDPROP \_ 标头**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)的**功能**成员中的下列标志之一启用或禁用热启动。
 
-| 热启动标志                                  | 描述             |
+| 热启动标志                                  | 说明             |
 |---------------------------------------------------|-------------------------|
 | \_已禁用 KSCAMERA EXTENDEDPROP \_ WARMSTART \_ 模式 \_ | 已禁用热启动。 |
 | \_已启用 KSCAMERA EXTENDEDPROP \_ WARMSTART \_ 模式 \_  | 启用 "热启动"。  |
 
 此属性控件是异步的，不可取消。
 
-## <a name="remarks"></a>备注
+## <a name="remarks"></a>注解
 
 ### <a name="getting-the-property"></a>获取属性
 
@@ -105,7 +105,7 @@ ms.locfileid: "89187367"
 <tr class="odd">
 <td>功能</td>
 <td><p>KSCAMERA_EXTENDEDPROP_CAPS_ASYNCCONTROL |KSCAMERA_EXTENDEDPROP_WARMSTART_MODE_DISABLED</p>
-<p>\- 或 -</p>
+<p>- 或 -</p>
 <p>KSCAMERA_EXTENDEDPROP_CAPS_ASYNCCONTROL |KSCAMERA_EXTENDEDPROP_WARMSTART_MODE_ENABLED</p></td>
 </tr>
 <tr class="even">
@@ -117,6 +117,6 @@ ms.locfileid: "89187367"
 
 对于 get 操作， [**KSCAMERA \_ EXTENDEDPROP \_ 标头**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)的**Result**成员始终设置为0。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 [**KSCAMERA \_ EXTENDEDPROP \_ 标头**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)

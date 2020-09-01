@@ -78,7 +78,7 @@ void SM_SendRPL(
 
 不适用于 WMI 方法。
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
 此 WMI 方法属于 MS \_ SM \_ FabricAndDomainManagementMethods WMI 类。
@@ -94,10 +94,10 @@ void SM_SendRPL(
 <tbody>
 <tr class="odd">
 <td align="left"><p>目标平台</p></td>
-<td align="left">“桌面”</td>
+<td align="left">台式机</td>
 </tr>
 <tr class="even">
-<td align="left"><p>标头</p></td>
+<td align="left"><p>Header</p></td>
 <td align="left">Hbapiwmi</td>
 </tr>
 </tbody>

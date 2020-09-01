@@ -24,13 +24,13 @@ ms.locfileid: "89189671"
 ## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>Parameters
 
 
-| 参数              | 描述                                                                     |
+| 参数              | 说明                                                                     |
 |------------------------|---------------------------------------------------------------------------------|
 | **输入流索引** | 必须在 IMFMediaEvent 的属性存储上设置输入流索引。 |
 
  
 
-## <a name="remarks"></a>备注
+## <a name="remarks"></a>注解
 
 
 对于此事件，设备转换管理器 (DTM) 将在具有指定输入流索引的设备 MFT 上调用 [**GetInputStreamPreferredState**](/windows/win32/api/mftransform/nf-mftransform-imfdevicetransform-getinputstreampreferredstate) 。 设备 MFT 将返回首选的状态和媒体状态。

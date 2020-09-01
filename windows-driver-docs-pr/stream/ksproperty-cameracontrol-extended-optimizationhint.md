@@ -37,7 +37,7 @@ ms.locfileid: "89190522"
 
 [**KSCAMERA \_ EXTENDEDPROP \_ 标头**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)的**功能**成员包含以下一个或多个优化提示的按位 "或" 组合。
 
-| 优化提示 | 描述 |
+| 优化提示 | 说明 |
 |--|--|
 | KSCAMERA \_ EXTENDEDPROP \_ 优化 \_ 照片 | 为照片优化了相机操作 |
 | KSCAMERA \_ EXTENDEDPROP \_ 优化 \_ 视频 | 相机操作经过优化，可用于视频 |
@@ -48,7 +48,7 @@ ms.locfileid: "89190522"
 
 此属性控件是同步的，不可取消。
 
-## <a name="remarks"></a>备注
+## <a name="remarks"></a>注解
 
 ### <a name="optimization-modes"></a>优化模式
 
@@ -85,7 +85,7 @@ ms.locfileid: "89190522"
 
 **标头：** Ksmedia (包含 Ksmedia) 
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 [**KSCAMERA \_ EXTENDEDPROP \_ 标头**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)
 

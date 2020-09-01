@@ -43,7 +43,7 @@ ms.locfileid: "89185413"
 <thead>
 <tr class="header">
 <th>错误状态</th>
-<th>描述</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>

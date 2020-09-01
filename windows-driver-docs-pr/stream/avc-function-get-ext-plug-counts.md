@@ -62,7 +62,7 @@ ms.locfileid: "89186785"
 
  
 
-### <a name="comments"></a>注释
+### <a name="comments"></a>说明
 
 此函数使用 AVC **ExtPlugCounts** \_ MULTIFUNC IRB 结构的 ExtPlugCounts 成员 \_ ，如下所示。
 

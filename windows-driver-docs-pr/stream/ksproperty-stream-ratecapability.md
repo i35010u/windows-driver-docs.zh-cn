@@ -61,7 +61,7 @@ ms.locfileid: "89187089"
 
  
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
 \_ \_ 如果 pin 允许速率改变，或者界定闭合相关 pin 之间的接口不同并导致使用不同的时间戳格式，则应该实现 KSPROPERTY STREAM RATECAPABILITY。 属性还可用于转换一般时间戳格式，如跳过降级请求。
@@ -86,13 +86,13 @@ Pin 必须能够接受具有类似拓扑的任何 pin 所使用的接口标识�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Ks (包含 Ks .h) </td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSRATE**](/windows-hardware/drivers/ddi/ks/ns-ks-ksrate)

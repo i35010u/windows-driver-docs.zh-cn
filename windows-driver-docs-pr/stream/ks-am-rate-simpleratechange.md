@@ -73,13 +73,13 @@ KS \_ AM \_ rate \_ SimpleDataRate 属性设置筛选器上的时间戳速率。
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Ksmedia (包含 Ksmedia) </td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KS \_ AM \_ SimpleRateChange**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ks_am_simpleratechange)

@@ -64,7 +64,7 @@ KSPROPERTY \_ 显示 \_ 适配器 \_ guid 属性从捕获微型驱动程序返�
 
 KSPROPERTY \_ 显示 \_ 适配器 \_ GUID 属性返回状态 " \_ 成功" 以指示已成功完成。 如果属性类型值不正确，则返回 STATUS \_ 无效 \_ 参数。
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
 微型驱动程序应返回 GPU 上第一个头的适配器标识符。
@@ -83,13 +83,13 @@ AVStream 将此 GUID 与下游呈现器 pin 的 GUID 相匹配，以验证捕获
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Ksmedia (包含 Ksmedia) </td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSPROPERTY**](/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)

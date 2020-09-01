@@ -30,7 +30,7 @@ ms.locfileid: "89185565"
 <thead>
 <tr class="header">
 <th>切换</th>
-<th>描述</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>

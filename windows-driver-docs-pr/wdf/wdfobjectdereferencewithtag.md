@@ -46,7 +46,7 @@ VOID WdfObjectDereferenceWithTag(
 
 如果驱动程序提供的对象句柄无效，则会发生 bug 检查。
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
 如果对象的引用计数变为零，则在 **WdfObjectDereferenceWithTag** 返回之前可能会删除该对象。
@@ -91,7 +91,7 @@ WdfObjectDereferenceWithTag(
 <td><p>2.0</p></td>
 </tr>
 <tr class="even">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Wdfobject (包含 Wdf .h) </td>
 </tr>
 <tr class="odd">
@@ -105,7 +105,7 @@ WdfObjectDereferenceWithTag(
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**WdfObjectDereference**](wdfobjectdereference.md)

@@ -61,7 +61,7 @@ ms.locfileid: "89186137"
 
  
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
 节点支持的事件列表是 Guid 列表。
@@ -78,13 +78,13 @@ ms.locfileid: "89186137"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Bdamedia (包含 Bdamedia) </td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**BdaPropertyNodeEvents**](/windows-hardware/drivers/ddi/bdasup/nf-bdasup-bdapropertynodeevents)

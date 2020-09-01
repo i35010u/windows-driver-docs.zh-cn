@@ -71,7 +71,7 @@ KSPROPERTY \_ VIDEOPROCAMP \_ POWERLINE \_ frequency 属性指定本地电源线
 <thead>
 <tr class="header">
 <th>值</th>
-<th>描述</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>
@@ -102,7 +102,7 @@ KSPROPERTY \_ VIDEOPROCAMP \_ POWERLINE \_ frequency 属性指定本地电源线
 
  
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
 发出集请求时，客户端应提供 KSPROPERTY VIDEOPROCAMP 节点的 **值** 成员的上一个表中的值之一 \_ \_ \_ 。
@@ -119,13 +119,13 @@ KSPROPERTY \_ VIDEOPROCAMP \_ POWERLINE \_ frequency 属性指定本地电源线
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Ksmedia (包含 Ksmedia) </td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSPROPERTY**](/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)

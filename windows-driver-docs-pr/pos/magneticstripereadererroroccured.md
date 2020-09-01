@@ -75,7 +75,7 @@ typedef struct _MSR_ERROR_EVENT
 | wchar \_ T \[ MSR \_ 错误 \_ 最大 \_ 消息 \_ 长度\]                       | 最多 **MSR \_ 错误 \_ 最大 \_ 消息 \_ 长度** wchar \_ t of 错误 **Null**终止消息文本                                  |
 
 
-## <a name="remarks"></a>备注
+## <a name="remarks"></a>注解
 
 如果发生扫描错误，并且获取了某些扫描数据，则事件数据将包含部分扫描数据。
 

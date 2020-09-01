@@ -35,7 +35,7 @@ WIA \_ DPS \_ 文档 \_ 处理 \_ 功能属性包含扫描程序的功能。
 
 访问权限：只读
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
 应用程序将读取 "WIA \_ DPS \_ 文档 \_ 处理功能" \_ 属性，以确定扫描仪是否安装了平板、文档送纸器或双面打印器。 你还可以使用此属性来进一步定义已安装的功能。 WIA 微型驱动程序创建并维护此属性。
@@ -225,7 +225,7 @@ WIA \_ DPS \_ 文档 \_ 处理 \_ 功能属性包含扫描程序的功能。
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Wiadef (包含 Wiadef) </td>
 </tr>
 </tbody>

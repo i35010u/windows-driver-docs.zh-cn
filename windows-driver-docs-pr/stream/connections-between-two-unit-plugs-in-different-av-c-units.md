@@ -9,31 +9,31 @@ keywords:
 - AVCPRECONNECTINFO
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 06e889459dc78b223c6ace0cc8866b0007e9492c
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 89f77d14a178a80afbd15baacdf26606af00938d
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72844706"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89190611"
 ---
 # <a name="connections-between-two-unit-plugs-in-different-avc-units"></a>在不同 AV/C 单元中的两个单元插头之间的连接
 
 
-方案7和8表示一个单元中的子单位与不同单元中的子单位之间的连接，其中目标不支持一个 AV/C 单元内的单元连接。 这些类型的连接需要**信号源**，并**输入**CCM 命令。
+方案7和8表示一个单元中的子单位与不同单元中的子单位之间的连接，其中目标不支持一个 AV/C 单元内的单元连接。 这些类型的连接需要 **信号源** ，并 **输入** CCM 命令。
 
-方案7和8描述了具有 KSPIN\_标志的次级源或目标插头 **\_AVC\_PCRONLY**标志设置在其[**AVCPRECONNECTINFO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/avc/ns-avc-_avcpreconnectinfo)结构的**标志**成员中，该标志由*AVC 转换*到0xff 的子地址。
+方案7和8描述了在其[**AVCPRECONNECTINFO**](/windows-hardware/drivers/ddi/avc/ns-avc-_avcpreconnectinfo)结构的**标志**成员中设置了**KSPIN \_ 标志 \_ AVC \_ PCRONLY**标志的子单位源或目标插头，该标志由*Avc.sys*转换为子地址的0xff。
 
 ### <a name="scenario-7"></a>**方案7**
 
 **信号源**：本地单元不支持内部连接。
 
-**输入选择**：本地单元从目标单元上的任何可用的（0x7f）同步输出插件连接到本地单元上任何可用的（0x7f）同步输入插件，然后连接到特定（0X0 到0x1E）或任何可用（0xff）子单位本地单元的目标插件。
+**输入选择**：本地单元从任何可用的 (0x7f) 目标单元连接到任何可用的 (0x7f) 本地单元上的任何可用的0x7f，然后连接到本地单元上的特定 () 子区域目标插件。
 
-![演示本地 pin 的数据流成员在 kspin\-数据流的连接的关系图\-](images/avc-ccm7.gif)
+![演示本地 pin 的数据流成员在 kspin 的 \- 数据流中的连接的关系图 \-](images/avc-ccm7.gif)
 
-方案7描述了一个连接，其中本地 pin 的**数据流**成员是在中 KSPIN\_数据流\_的。
+方案7介绍了本地 pin 的 **数据流** 成员 \_ 在中 KSPIN 数据流的连接 \_ 。
 
-下表中的每列对应于[**AVCCONNECTINFO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/avc/ns-avc-_avcconnectinfo)结构的成员，并为源子源插件的这些成员指定值。
+下表中的每列对应于 [**AVCCONNECTINFO**](/windows-hardware/drivers/ddi/avc/ns-avc-_avcconnectinfo) 结构的成员，并为源子源插件的这些成员指定值。
 
 <table>
 <colgroup>
@@ -47,14 +47,14 @@ ms.locfileid: "72844706"
 <th>DeviceID</th>
 <th>SubunitAddress</th>
 <th>SubunitPlugNumber</th>
-<th>UnitPlugNumber （用于同步输出）</th>
+<th>同步输出的 UnitPlugNumber () </th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td><p>目标</p></td>
 <td><p>子地址</p></td>
-<td><p>已忽略源插件（0xFF）值</p></td>
+<td><p>源插件 (0xFF) 已忽略值</p></td>
 <td><p>0x0 到0x1E 或0xFF</p></td>
 </tr>
 </tbody>
@@ -76,14 +76,14 @@ ms.locfileid: "72844706"
 <th>DeviceID</th>
 <th>SubunitAddress</th>
 <th>SubunitPlugNumber</th>
-<th>UnitPlugNumber （用于同步输入）</th>
+<th>同步输入的 UnitPlugNumber () </th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>Self</p></td>
-<td><p>Self</p></td>
-<td><p>目标插件（0x0 到0x1E，即0xFF）</p></td>
+<td><p>自己</p></td>
+<td><p>自己</p></td>
+<td><p>目标插头 (0x0 到0x1E 或 0xFF) </p></td>
 <td><p>0x7F</p></td>
 </tr>
 </tbody>
@@ -93,13 +93,13 @@ ms.locfileid: "72844706"
 
 ### <a name="scenario-8"></a>**方案8**
 
-**信号源**：本地单元连接到任何可用的（0x7f）同步输出插件（并返回按同步输出插件的数字）。
+**信号源**：本地单元连接到任何可用的 (0x7f) 按同步输出插件 (，并返回) 的同步输出插件的数字。
 
-**输入选择**：目标单元从本地单元的同步输出插件（在信号源 CCM 命令中返回）连接到目标单元上任何可用的（0x7f）同步输入插件。
+**输入选择**：目标单元从本地单元的同步输出插件连接 (在信号源 CCM 命令) 连接到任何可用的 (0x7f) 目标单元上的同步输入插件。
 
-![说明本地 pin 的数据流成员 kspin\-数据流的连接的关系图\-](images/avc-ccm8.gif)
+![说明本地 pin \- 的数据流成员 kspin 的连接的关系图 \-](images/avc-ccm8.gif)
 
-方案8描述了一个连接，其中本地 pin 的**数据流**成员是 KSPIN\_数据流\_的。
+方案8描述了一个连接，其中本地 pin 的 **数据流** 成员是 KSPIN \_ 数据流 \_ 。
 
 下表中的每列对应于 AVCCONNECTINFO 结构的成员，并为源子源插件的这些成员指定值。
 
@@ -115,14 +115,14 @@ ms.locfileid: "72844706"
 <th>DeviceID</th>
 <th>SubunitAddress</th>
 <th>SubunitPlugNumber</th>
-<th>UnitPlugNumber （用于同步输出）</th>
+<th>同步输出的 UnitPlugNumber () </th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>Self</p></td>
-<td><p>Self</p></td>
-<td><p>源插件（0x0 到0x1E，即0xFF）</p></td>
+<td><p>自己</p></td>
+<td><p>自己</p></td>
+<td><p>源插件 (0x0 到0x1E 或 0xFF) </p></td>
 <td><p>0x7F</p></td>
 </tr>
 </tbody>
@@ -144,14 +144,14 @@ ms.locfileid: "72844706"
 <th>DeviceID</th>
 <th>SubunitAddress</th>
 <th>SubunitPlugNumber</th>
-<th>UnitPlugNumber （用于同步输入）</th>
+<th>同步输入的 UnitPlugNumber () </th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td><p>目标</p></td>
 <td><p>子地址</p></td>
-<td><p>已忽略目标插件（0xFF）-值</p></td>
+<td><p>已忽略目标插入 (0xFF) -值</p></td>
 <td><p>0x0 到0x1E，或0x7F</p></td>
 </tr>
 </tbody>
@@ -161,7 +161,7 @@ ms.locfileid: "72844706"
 
 以下列表描述了前面的表中显示的值的含义：
 
--   值0x0 到0x1E （30 decimal）表示特定的插件号。
+-   值0x0 到 0x1E (30 decimal) 表示特定的插件号。
 
 -   值0x7F 表示 AV/C 单元上的任何可用的同步输入或输出插件号。
 
@@ -169,12 +169,7 @@ ms.locfileid: "72844706"
 
 -   "Self" 包含 AVCCONNECTINFO 结构所设置的 pin。 "Target" 表示 AVCCONNECTINFO 结构用于的数据。
 
--   **DeviceID**列中的值（适用于源和目标子源插头）用于搜索目标 Av/c 设备的物理设备对象（PDO），以便向发出 AV/c CCM 命令。
+-   为源和目标子源插入 (的 **DeviceID** 列中的值) 用于搜索目标 AV/c 设备的物理设备对象 (PDO) ，以向发出 AV/c CCM 命令。
 
  
-
- 
-
-
-
 

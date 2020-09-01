@@ -85,7 +85,7 @@ KSPROPERTY \_ CAMERACONTROL \_ 自动 \_ 曝光 \_ 优先级属性指定设备�
 
  
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
 自动曝光优先级决定照相机是否可以根据光照条件动态变化帧速率。
@@ -114,7 +114,7 @@ KSPROPERTY \_ CAMERACONTROL \_ 自动曝光优先级的默认 \_ 值 \_ 为零�
 <td><p>适用于 windows Vista 和更高版本的 Windows 操作系统。</p></td>
 </tr>
 <tr class="even">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Ksmedia (包含 Ksmedia) </td>
 </tr>
 </tbody>

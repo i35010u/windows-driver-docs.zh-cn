@@ -54,7 +54,7 @@ ms.locfileid: "89187491"
 
  
 
-### <a name="comments"></a>注释
+### <a name="comments"></a>说明
 
 此函数使用 AVC **PeerList** \_ MULTIFUNC IRB 结构的 PeerList 成员 \_ ，如下所示。
 

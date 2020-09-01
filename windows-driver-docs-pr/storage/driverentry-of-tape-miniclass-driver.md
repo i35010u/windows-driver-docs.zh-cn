@@ -50,7 +50,7 @@ ULONG DriverEntry(
 
 **DriverEntry** 返回通过其对 **TapeClassInitialize**的调用返回的值。
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
 **DriverEntry** 是磁带 miniclass 驱动程序的初始入口点。
@@ -72,10 +72,10 @@ ULONG DriverEntry(
 <tbody>
 <tr class="odd">
 <td align="left"><p>目标平台</p></td>
-<td align="left">“桌面”</td>
+<td align="left">台式机</td>
 </tr>
 <tr class="even">
-<td align="left"><p>标头</p></td>
+<td align="left"><p>Header</p></td>
 <td align="left">Minitape</td>
 </tr>
 <tr class="odd">

@@ -108,13 +108,13 @@ WNODE**指向标识**实例的[** \_ 单个 \_ 实例**](/windows-hardware/drive
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Wdm.h（包括 Wdm.h、Ntddk.h 或 Ntifs.h）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [*DpWmiSetDataBlock*](/windows-hardware/drivers/ddi/wmilib/nc-wmilib-wmi_set_datablock_callback)

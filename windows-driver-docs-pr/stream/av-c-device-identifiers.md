@@ -9,12 +9,12 @@ keywords:
 - Avc.sys 函数驱动程序 WDK，标识符
 ms.date: 08/25/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: e67f1fef0c43d0fd17eca98329408378914d699f
-ms.sourcegitcommit: d9a9925f790271f4ca2c8377d551d96e8d1e62c7
+ms.openlocfilehash: e4f99ab9b6afd31aed65bfd13f968244a80fefd3
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88850246"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89186839"
 ---
 # <a name="avc-device-identifiers"></a>AV/C 设备标识符
 
@@ -42,7 +42,7 @@ ms.locfileid: "88850246"
 
 *Avc.sys* 无法区分同一 ***SubunitType***的多个子单元连接，因此添加和删除这些子单元连接将加载并卸载具有最高 ***SubunitID***的相应子单位驱动程序。
 
-每个次级的设备对象有一个或两个硬件标识符和多个兼容的标识符。 供应商必须为其子单位驱动程序提供一个或多个这些硬件或兼容标识符，如下所述。 当设备第一次连接到计算机时，Windows 将使用这些设备标识符来查找要为每个次级计算机加载的合适的驱动程序。 您可以查看 Microsoft 提供的 *61883*、 *Msdv* 和 *Mstape* 文件，以了解用于 AV/C 设备的硬件和兼容设备标识符的示例。 有关实现 INF 文件的详细信息，请参阅查看 [Inf 文件部分](https://docs.microsoft.com/windows-hardware/drivers/install/inf-classinstall32-section) 和 [inf 文件指令](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addcomponent-directive)。
+每个次级的设备对象有一个或两个硬件标识符和多个兼容的标识符。 供应商必须为其子单位驱动程序提供一个或多个这些硬件或兼容标识符，如下所述。 当设备第一次连接到计算机时，Windows 将使用这些设备标识符来查找要为每个次级计算机加载的合适的驱动程序。 您可以查看 Microsoft 提供的 *61883*、 *Msdv* 和 *Mstape* 文件，以了解用于 AV/C 设备的硬件和兼容设备标识符的示例。 有关实现 INF 文件的详细信息，请参阅查看 [Inf 文件部分](../install/inf-classinstall32-section.md) 和 [inf 文件指令](../install/inf-addcomponent-directive.md)。
 
 设备标识符字符串的各个元素如下所示：
 
@@ -82,7 +82,7 @@ ms.locfileid: "88850246"
 
 例如： **AVC \\ 即使 \_ 50F2&MOD \_ 0&TYP \_ 4& * SubunitID***
 
-有关 *Avc.sys* 支持的子类型和其对应数值的列表，请参阅 [**AvcSubunitType**](https://docs.microsoft.com/windows-hardware/drivers/ddi/avc/ne-avc-_tagavcsubunittype)。
+有关 *Avc.sys* 支持的子类型和其对应数值的列表，请参阅 [**AvcSubunitType**](/windows-hardware/drivers/ddi/avc/ne-avc-_tagavcsubunittype)。
 
 ***SubunitID***
   

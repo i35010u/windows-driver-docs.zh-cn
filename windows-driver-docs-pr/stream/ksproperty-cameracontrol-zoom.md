@@ -65,7 +65,7 @@ ms.locfileid: "89187093"
 
 **警告**   编写或测试应用时，应注意，在实际情况下，某些驱动程序定义了一系列自定义的缩放值和自定义步骤值，这些值可能不基于典型单位。 驱动程序可能会以物理方式或数字方式实现缩放控件。
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
 KSPROPERTY **Value** \_ CAMERACONTROL S 结构的 Value 成员 \_ 指定缩放。
@@ -82,13 +82,13 @@ KSPROPERTY **Value** \_ CAMERACONTROL S 结构的 Value 成员 \_ 指定缩放�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Ksmedia (包含 Ksmedia) </td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSPROPERTY**](/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)

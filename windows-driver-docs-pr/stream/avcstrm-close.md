@@ -41,7 +41,7 @@ ms.locfileid: "89187433"
 <thead>
 <tr class="header">
 <th>错误状态</th>
-<th>描述</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>
@@ -70,7 +70,7 @@ ms.locfileid: "89187433"
 
  
 
-### <a name="comments"></a>注释
+### <a name="comments"></a>说明
 
 此函数使用 AVC 流请求块结构中的**CommandData**联合的**AVCStreamContext**成员 \_ ，如下 \_ \_ 所示。
 

@@ -50,7 +50,7 @@ ms.locfileid: "89190635"
 <td><p>未使用，因为源单元的设备标识符是包含子单位的单位</p></td>
 <td><p>子地址</p></td>
 <td><p>目标插头 (0x0 到0x1E 或 0xFF) </p></td>
-<td><p>不适用</p></td>
+<td><p>空值</p></td>
 </tr>
 </tbody>
 </table>
@@ -79,7 +79,7 @@ ms.locfileid: "89190635"
 <td><p>未使用，因为此方案不涉及其他单元</p></td>
 <td><p>自己</p></td>
 <td><p>目标插头 (0xFF) </p></td>
-<td><p>不适用</p></td>
+<td><p>空值</p></td>
 </tr>
 </tbody>
 </table>
@@ -116,7 +116,7 @@ ms.locfileid: "89190635"
 <td><p>未使用，因为源单元的设备标识符是包含子单位的单位</p></td>
 <td><p>自行 (相同的子) </p></td>
 <td><p>源插件 (0xFF) </p></td>
-<td><p>不适用</p></td>
+<td><p>空值</p></td>
 </tr>
 </tbody>
 </table>
@@ -145,7 +145,7 @@ ms.locfileid: "89190635"
 <td><p>未使用，因为此方案不涉及其他单元</p></td>
 <td><p>子地址</p></td>
 <td><p>目标插头 (0x0 到0x1E 或 0xFF) </p></td>
-<td><p>不适用</p></td>
+<td><p>空值</p></td>
 </tr>
 </tbody>
 </table>

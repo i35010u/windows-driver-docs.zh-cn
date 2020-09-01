@@ -51,7 +51,7 @@ CODECAPI \_ ALLSETTINGS 属性用于向后传递微型驱动程序生成的数�
 
 操作数据) 的属性值 (的类型为 PVOID，这是一个指向微型驱动程序生成的数据块的用户模式缓冲区的指针。
 
-### <a name="comments"></a>注释
+### <a name="comments"></a>说明
 
 在属性 get 调用上：
 

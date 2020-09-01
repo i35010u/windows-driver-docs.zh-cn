@@ -27,7 +27,7 @@ KSPROPERTY \_ CAMERACONTROL \_ 扩展 \_ OPTIMIZATIONHINT 用于控制照片捕�
 
 ## <a name="usage-summary-table"></a>使用情况摘要表
 
-| 作用域 | 控制 | 类型 |
+| 范围 | 控制 | 类型 |
 |--|--|--|
 | 版本 1 | 筛选器 | 同步 |
 
@@ -72,7 +72,7 @@ KSPROPERTY \_ CAMERACONTROL \_ 扩展 \_ OPTIMIZATIONHINT 用于控制照片捕�
 | 功能 | 必须是前面定义的受支持 KSCAMERA_EXTENDEDPROP_OPTIMIZATION_ * 标志的按位 "或"。 |
 | Flags | 这是一个读/写字段。 这可以是上面定义的受支持 KSCAMERA_EXTENDEDPROP_OPTIMIZATION_ * 标志的任何有效组合。 |
 
-## <a name="remarks"></a>备注
+## <a name="remarks"></a>注解
 
 使用优化提示时，请注意以下事项：
 

@@ -98,7 +98,7 @@ ms.locfileid: "89189409"
 > [!NOTE]
 > 对于上述任何方案，只要保护已挂起，就可以使用 BitLocker 加密的卷来转换 MBR 磁盘。 要在转换后恢复 BitLocker，需要删除现有保护程序并重新创建。
 
-## <a name="troubleshooting"></a>故障排除
+## <a name="troubleshooting"></a>疑难解答
 
 有关日志文件位置和其他帮助的信息，请参阅 MBR2GPT.EXE [疑难解答](/windows/deployment/mbr-to-gpt#troubleshooting) 文档。 如果通过脚本或 Microsoft Endpoint Configuration Manager/Microsoft 部署工具包 (MDT) 任务序列自动使用此工具，则可以为文档中讨论的返回代码编写处理程序。
 

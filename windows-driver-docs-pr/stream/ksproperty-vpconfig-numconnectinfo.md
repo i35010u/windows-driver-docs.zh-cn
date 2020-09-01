@@ -73,7 +73,7 @@ KSPROPERTY \_ VPCONFIG \_ NUMCONNECTINFO 属性获取电源连接配置的最大
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Ksmedia (包含 Ksmedia) </td>
 </tr>
 </tbody>

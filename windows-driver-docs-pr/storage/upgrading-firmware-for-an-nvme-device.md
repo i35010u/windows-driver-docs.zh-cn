@@ -4,12 +4,12 @@ description: 对 NVMe 存储设备上的固件的更新会颁发给该设备的�
 ms.assetid: A912715A-F82A-41E5-BE14-5B17930C29B7
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fae5703910c981967d2ac6a416532e2ea07cc570
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 1607770326207d9f0f1f291c394dedd8744d28a4
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72844443"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89187497"
 ---
 # <a name="upgrading-firmware-for-an-nvme-device"></a>升级为 NVMe 设备的固件
 
@@ -19,23 +19,23 @@ ms.locfileid: "72844443"
 ## <a name="span-idfirmware_upgrade_processspanspan-idfirmware_upgrade_processspanspan-idfirmware_upgrade_processspanfirmware-upgrade-process"></a><span id="Firmware_upgrade_process"></span><span id="firmware_upgrade_process"></span><span id="FIRMWARE_UPGRADE_PROCESS"></span>固件升级过程
 
 
-为 Windows 认证的 NVMe 设备在设备处于操作时可以更新其固件。 使用[**IOCTL\_SCSI\_微型端口**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddscsi/ni-ntddscsi-ioctl_scsi_miniport)请求更新固件，其中包含使用 SRB 格式设置的关联固件控制数据。 更新过程涉及：
+为 Windows 认证的 NVMe 设备在设备处于操作时可以更新其固件。 使用包含在 SRB 中格式化的关联固件控制数据的 [**IOCTL \_ SCSI \_ 微型端口**](/windows-hardware/drivers/ddi/ntddscsi/ni-ntddscsi-ioctl_scsi_miniport) 请求更新固件。 更新过程涉及：
 
 1.  收集固件槽信息以确定放置更新的位置。 在决定固件更新的位置时，需要考虑几个注意事项。
 
     -   有多少插槽可用？
     -   有多少个槽可以容纳更新？ 如果需要还原到以前的图像，某些槽是只读的或包含必须保留的映像。
-    -   哪个槽包含当前活动固件映像（正在运行的固件）？
+    -   哪个槽包含当前活动固件映像 (正在运行的固件) ？
 
     若要更新设备，请选择一个可写且当前未处于活动状态的槽。 更新完成后，所选槽中的所有现有图像数据都将被覆盖。
 
-2.  下载所选槽的新固件映像。 根据映像的大小，此操作将在单个传输操作中或在映像的多个部分的后续传输中发生。 图像的部分限制为**最小值**（*控制器最大传输大小*512 KB）。
+2.  下载所选槽的新固件映像。 根据映像的大小，此操作将在单个传输操作中或在映像的多个部分的后续传输中发生。 图像的一部分受*最大 (控制器最大传输大小*512 KB **) 的限制**。
 3.  为了使下载的映像成为活动固件映像，将其分配给槽。 然后，将活动固件槽从当前使用的槽切换到分配给已下载映像的槽。 根据下载的类型和固件映像中的更改，可能需要重新启动系统。 这由 NVMe 控制器确定。
 
 ## <a name="span-idminiport_firmware_control_requestsspanspan-idminiport_firmware_control_requestsspanspan-idminiport_firmware_control_requestsspanminiport-firmware-control-requests"></a><span id="Miniport_firmware_control_requests"></span><span id="miniport_firmware_control_requests"></span><span id="MINIPORT_FIRMWARE_CONTROL_REQUESTS"></span>微型端口固件控制请求
 
 
-每个函数命令都在**固件\_请求\_块**结构中设置，该结构包含在 IOCTL 的缓冲区中的[**SRB\_IO\_控件**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddscsi/ns-ntddscsi-_srb_io_control)中， [ **\_SCSI\_微型端口**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddscsi/ni-ntddscsi-ioctl_scsi_miniport)请求。 **SRB\_IO\_控制**的**ControlCode**成员设置为**IOCTL\_SCSI\_微型端口\_固件**以指示微型端口固件操作。 每个函数命令都具有位于**固件\_请求\_块**后的相关信息结构。 下表列出了每个函数命令以及用于**IOCTL\_SCSI\_微型端口**的系统缓冲区中包含的结构。
+每个函数命令都在**固件 \_ 请求 \_ 块**结构中设置，该结构包含在[**IOCTL \_ SCSI \_ 微型端口**](/windows-hardware/drivers/ddi/ntddscsi/ni-ntddscsi-ioctl_scsi_miniport)请求的缓冲区中的[**SRB \_ IO \_ 控件**](/windows-hardware/drivers/ddi/ntddscsi/ns-ntddscsi-_srb_io_control)中。 **SRB \_ IO \_ 控件**的**ControlCode**成员设置为**IOCTL \_ SCSI \_ 微型端口 \_ 固件**以指示微型端口固件操作。 每个函数命令都具有位于 **固件 \_ 请求 \_ 块**后面的相关信息结构。 下表列出了每个函数命令以及用于 **IOCTL \_ SCSI \_ 微型端口**的系统缓冲区中包含的结构。
 
 <table>
 <colgroup>
@@ -78,7 +78,7 @@ ms.locfileid: "72844443"
 
  
 
-固件功能和关联的结构在*ntddscsi*中定义。
+固件功能和关联的结构在 *ntddscsi*中定义。
 
 ## <a name="span-idfirmware_slot_informationspanspan-idfirmware_slot_informationspanspan-idfirmware_slot_informationspanfirmware-slot-information"></a><span id="Firmware_slot_information"></span><span id="firmware_slot_information"></span><span id="FIRMWARE_SLOT_INFORMATION"></span>固件槽信息
 
@@ -211,14 +211,14 @@ Return Value:
 }
 ```
 
-槽信息以**存储\_固件\_槽\_信息**结构）的数组返回。 每个结构都指示固件槽的激活状态和可用性。 可用性条件如下：
+槽信息以 **存储 \_ 固件 \_ 槽 \_ 信息** 结构的数组返回。 每个结构都指示固件槽的激活状态和可用性。 可用性条件如下：
 
 -   **ReadOnly**成员设置为0。
--   槽不是**存储\_固件\_信息**的**ActiveSlot**成员中的插槽号指示的活动槽。
--   **存储\_固件\_信息**的**PendingActiveSlot**成员设置为存储\_固件\_信息\_无效\_槽。
--   **存储\_固件\_信息**的**PendingActiveSlot**成员未设置为所需的槽。
+-   槽不是在**存储 \_ 固件 \_ 信息**的**ActiveSlot**成员中由槽编号指示的活动槽。
+-   **存储固件 \_ \_ 信息**的**PendingActiveSlot**成员设置为存储 \_ 固件 \_ 信息 \_ 无效 \_ 槽。
+-   **存储 \_ 固件 \_ 信息**的**PendingActiveSlot**成员未设置为所需的槽。
 
-此外，如果槽状态满足可用性条件，但**信息**字符串包含有效的修订数据，即非零字节，则该槽包含有效的固件映像，但可能会被替换。 **信息**字符串中的所有零都表示空槽。
+此外，如果槽状态满足可用性条件，但 **信息** 字符串包含有效的修订数据，即非零字节，则该槽包含有效的固件映像，但可能会被替换。 **信息**字符串中的所有零都表示空槽。
 
 ## <a name="span-idexample__firmware_upgrade_-_slot_selection__download__and_activationspanspan-idexample__firmware_upgrade_-_slot_selection__download__and_activationspanspan-idexample__firmware_upgrade_-_slot_selection__download__and_activationspanexample-firmware-upgrade---slot-selection-download-and-activation"></a><span id="Example__Firmware_upgrade_-_slot_selection__download__and_activation"></span><span id="example__firmware_upgrade_-_slot_selection__download__and_activation"></span><span id="EXAMPLE__FIRMWARE_UPGRADE_-_SLOT_SELECTION__DOWNLOAD__AND_ACTIVATION"></span>示例：固件升级-槽选择、下载和激活
 
@@ -579,18 +579,13 @@ Exit:
 }
 ```
 
-**请注意**，  不支持同时下载多个固件映像。 单个固件下载总是后跟单一固件激活。
+**注意**   不支持同时下载多个固件映像。 单个固件下载总是后跟单一固件激活。
 
  
 
 可以通过只使用带有相应插槽号的 "激活函数" 命令，重新激活已驻留在槽中的固件映像。
 
-SRB i/o 控制的**IOCTL\_SCSI\_微型端口\_固件**控制代码可从 Windows 8.1 开始使用。
+SRB i/o 控制的 **IOCTL \_ SCSI \_ 微型端口 \_ 固件** 控制代码可从 Windows 8.1 开始使用。
 
  
-
- 
-
-
-
 

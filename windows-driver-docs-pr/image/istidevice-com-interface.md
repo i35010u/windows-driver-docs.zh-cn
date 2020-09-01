@@ -32,7 +32,7 @@ ms.locfileid: "89186481"
 <thead>
 <tr class="header">
 <th>方法</th>
-<th>描述</th>
+<th>说明</th>
 <th>典型调用方</th>
 </tr>
 </thead>

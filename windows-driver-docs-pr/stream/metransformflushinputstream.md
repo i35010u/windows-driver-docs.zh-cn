@@ -26,13 +26,13 @@ ms.locfileid: "89188733"
 ## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>Parameters
 
 
-| 参数              | 描述                                                                     |
+| 参数              | 说明                                                                     |
 |------------------------|---------------------------------------------------------------------------------|
 | **输入流索引** | 必须在 IMFMediaEvent 的属性存储上设置输入流索引。 |
 
  
 
-## <a name="remarks"></a>备注
+## <a name="remarks"></a>注解
 
 
 需要刷新设备 MFT 的输入流的连接流时，会生成此事件。 为响应此事件，DTM 会在连接的 Devproxy 流上调用 [**FlushOutputStream**](/windows/win32/api/mftransform/nf-mftransform-imfdevicetransform-flushoutputstream) ，并将在设备 MFT 上调用 [**FlushInputStream**](/windows/win32/api/mftransform/nf-mftransform-imfdevicetransform-flushinputstream) 。 设备 MFT 会刷新其输入流，刷新操作将被视为已完成。

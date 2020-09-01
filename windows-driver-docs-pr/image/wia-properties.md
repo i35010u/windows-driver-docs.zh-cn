@@ -4,12 +4,12 @@ description: WIA 属性
 ms.assetid: 3b9d4d90-775b-450e-b5d1-646ea45253d7
 ms.date: 05/29/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 192097f625abf4c76fcfd5ff0559449858e55199
-ms.sourcegitcommit: 609c5731b2db4c17b9959082c4621c001e012db1
+ms.openlocfilehash: 2051ddaf448b04294ca3bc10edc2c052e66e04dc
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/30/2020
-ms.locfileid: "84223572"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89187955"
 ---
 # <a name="wia-properties"></a>WIA 属性
 
@@ -23,7 +23,7 @@ WIA 中使用以下类型来指示属性的数据类型：
 
 **VT \_ BSTR**
 
-Unicode 字符（宽字符字符串）的字符串。
+ (宽字符串) 的 Unicode 字符字符串。
 
 **VT \_ I4**
 
@@ -31,7 +31,7 @@ Unicode 字符（宽字符字符串）的字符串。
 
 **VT \_ R4**
 
-4字节实数（C **float**）。
+ (C **float**) 的4字节实数。
 
 **VT \_ UI2**
 
@@ -73,12 +73,12 @@ Unicode 字符（宽字符字符串）的字符串。
 
 驱动程序具有读取和写入访问权限。
 
-## <a name="remarks"></a>备注
+## <a name="remarks"></a>注解
 
 前面的列表仅描述了在此部分包含的 WIA 属性中使用的那些类型。 
 
-有关这些属性类型和其他属性类型的详细信息，请参阅[**WIA \_ 属性 \_ 信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wiamindr_lh/ns-wiamindr_lh-_wia_property_info)。
+有关这些属性类型和其他属性类型的详细信息，请参阅 [**WIA \_ 属性 \_ 信息**](/windows-hardware/drivers/ddi/wiamindr_lh/ns-wiamindr_lh-_wia_property_info)。
 
-Windows SDK 包含有关[WIA \_ 原始 \_ 标头](https://docs.microsoft.com/windows/win32/wia/-wia-wia-raw-header)结构的信息。
+Windows SDK 包含有关 [WIA \_ 原始 \_ 标头](/windows/win32/wia/-wia-wia-raw-header) 结构的信息。
 
-它还包含有关 WIA 事件 \_ \_ XXX 和 wia \_ CMD \_ XXX 常量的信息，请参阅[wia 事件标识符](https://docs.microsoft.com/windows/win32/wia/-wia-wia-event-identifiers)主题。
+它还包含有关 WIA 事件 \_ \_ XXX 和 wia \_ CMD \_ XXX 常量的信息，请参阅 [wia 事件标识符](/windows/win32/wia/-wia-wia-event-identifiers) 主题。

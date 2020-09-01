@@ -61,7 +61,7 @@ KSPROPERTY \_ 引脚 \_ CONSTRAINEDDATARANGES 属性指定在 pin 工厂实例�
 
  
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
 [**KSP \_ pin**](/windows-hardware/drivers/ddi/ks/ns-ks-ksp_pin)结构的**PinId**成员指定要查询的 PIN 工厂。
@@ -84,13 +84,13 @@ Stream 微型驱动程序不需要直接处理此属性;流类驱动程序使用
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Ks (包含 Ks .h) </td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSMULTIPLE \_ 项**](/windows-hardware/drivers/ddi/ks/ns-ks-ksmultiple_item)

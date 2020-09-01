@@ -51,7 +51,7 @@ CODECAPI \_ CURRENTCHANGELIST 属性用于指示在前一个属性 "set" 调用�
 
  (操作数据) 的属性值是一个 Guid 数组。
 
-### <a name="comments"></a>注释
+### <a name="comments"></a>说明
 
 在属性 get 调用上：
 

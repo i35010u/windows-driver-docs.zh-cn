@@ -63,7 +63,7 @@ KSPROPERTY \_ 纵横制 \_ 路由属性用于查询是否可以进行特定的�
 
  (操作数据) 的属性值是一个 KSPROPERTY \_ 交叉 \_ 路由 \_ 结构，它指定特定的路由，以及该路由是否可以。
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
 当路由到的输入插针索引为-1 时，音频输出插针应该为输出音频流静音，如更改通道时。
@@ -78,13 +78,13 @@ KSPROPERTY \_ 纵横制 \_ 路由属性用于查询是否可以进行特定的�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Ksmedia (包含 Ksmedia) </td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSPROPERTY**](/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)

@@ -38,7 +38,7 @@ ACPI **Data** \_ 方法参数结构的数据数组中数据的大小（以字节
 
 可变长度 ACPI 方法参数结构的大小（以字节为单位）， \_ \_ 该方法可包含大小为*DataLength*的**数据**数组。
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
 驱动程序可以使用此宏来计算可变长度 ACPI 方法参数结构的所需大小（以字节为单位）， \_ \_ 该方法可以包含指定大小的 **数据** 数组（以字节为单位）。
@@ -54,16 +54,16 @@ ACPI **Data** \_ 方法参数结构的数据数组中数据的大小（以字节
 <tbody>
 <tr>
 <td><p>目标平台</p></td>
-<td>“桌面”</td>
+<td>台式机</td>
 </tr>
 <tr>
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Acpiioct (包含 Acpiioct) </td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**ACPI \_ 方法 \_ 参数**](/windows-hardware/drivers/ddi/acpiioct/ns-acpiioct-_acpi_method_argument_v1)

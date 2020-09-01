@@ -43,13 +43,13 @@ NTSTATUS WdfObjectAddCustomTypeWithData(
 自定义类型的驱动程序定义名称。
 
 *_data*   
-指向驱动程序提供的数据缓冲区的指针，或为 NULL。 此参数可选。
+指向驱动程序提供的数据缓冲区的指针，或为 NULL。 此参数是可选的。
 
 *_cleanup*   
-指向驱动程序的 [*EvtCleanupCallback*](/windows-hardware/drivers/ddi/wdfobject/nc-wdfobject-evt_wdf_object_context_cleanup) 回调函数的指针，或为 NULL。 此参数可选。
+指向驱动程序的 [*EvtCleanupCallback*](/windows-hardware/drivers/ddi/wdfobject/nc-wdfobject-evt_wdf_object_context_cleanup) 回调函数的指针，或为 NULL。 此参数是可选的。
 
 *_destroy*   
-指向驱动程序的 [*EvtDestroyCallback*](/windows-hardware/drivers/ddi/wdfobject/nc-wdfobject-evt_wdf_object_context_destroy) 回调函数的指针，或为 NULL。 此参数可选。
+指向驱动程序的 [*EvtDestroyCallback*](/windows-hardware/drivers/ddi/wdfobject/nc-wdfobject-evt_wdf_object_context_destroy) 回调函数的指针，或为 NULL。 此参数是可选的。
 
 <a name="return-value"></a>返回值
 ------------
@@ -89,7 +89,7 @@ NTSTATUS WdfObjectAddCustomTypeWithData(
 
  
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
 如果你的驱动程序使用指向数据缓冲区的指针调用 **WdfObjectAddCustomTypeWithData** ，则驱动程序可以提供 [*EvtCleanupCallback*](/windows-hardware/drivers/ddi/wdfobject/nc-wdfobject-evt_wdf_object_context_cleanup) 或 [*EvtDestroyCallback*](/windows-hardware/drivers/ddi/wdfobject/nc-wdfobject-evt_wdf_object_context_destroy) 回调函数，以便在删除对象时解除分配内存缓冲区。
@@ -120,13 +120,13 @@ NTSTATUS WdfObjectAddCustomTypeWithData(
 <td><p>2.0</p></td>
 </tr>
 <tr class="even">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Wdfobject (包含 Wdf .h) </td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**WDF_DECLARE_CUSTOM_TYPE**](wdf-declare-custom-type.md)

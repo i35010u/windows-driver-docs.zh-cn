@@ -62,7 +62,7 @@ ms.locfileid: "89187489"
 
  
 
-### <a name="comments"></a>注释
+### <a name="comments"></a>说明
 
 此函数使用 AVC **UniqueID** \_ MULTIFUNC IRB 结构的 UniqueID 成员 \_ ，如下所示。
 

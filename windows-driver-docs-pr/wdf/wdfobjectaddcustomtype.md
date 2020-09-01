@@ -30,7 +30,7 @@ NTSTATUS WdfObjectAddCustomType(
 );
 ```
 
-<a name="parameters"></a>parameters
+<a name="parameters"></a>参数
 ----------
 
 *_handle*   
@@ -77,7 +77,7 @@ NTSTATUS WdfObjectAddCustomType(
 
  
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
 **WdfObjectAddCustomType** 是 [**WdfObjectAddCustomTypeWithData**](wdfobjectaddcustomtypewithdata.md)的简化版本。
@@ -143,13 +143,13 @@ End:
 <td><p>2.0</p></td>
 </tr>
 <tr class="even">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Wdfobject (包含 Wdf .h) </td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**WDF_DECLARE_CUSTOM_TYPE**](wdf-declare-custom-type.md)

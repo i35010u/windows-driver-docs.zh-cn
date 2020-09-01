@@ -62,7 +62,7 @@ ms.locfileid: "89188475"
 
  
 
-### <a name="comments"></a>注释
+### <a name="comments"></a>说明
 
 此函数使用 AVC **PinCount** \_ MULTIFUNC IRB 结构的 PinCount 成员 \_ ，如下所示。
 

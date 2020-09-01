@@ -63,7 +63,7 @@ KSPROPERTY \_ VPCONFIG \_ INVERTPOLARITY 属性用于切换全局极性标志，
 
 ) 操作数据 (的属性值是一个布尔值。 指定 **TRUE** 以反转极性，或指定 **FALSE** 以防止反转极性。
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
 KSPROPERTY \_ VPCONFIG \_ INVERTPOLARITY 属性请求返回状态 " \_ 成功" 以指示成功完成。 否则，请求将返回相应的错误状态代码。
@@ -80,13 +80,13 @@ KSPROPERTY \_ VPCONFIG \_ INVERTPOLARITY 属性请求返回状态 " \_ 成功" �
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Ksmedia (包含 Ksmedia) </td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSPROPERTY**](/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)

@@ -44,7 +44,7 @@ void WDF_OBJECT_ATTRIBUTES_INIT_CONTEXT_TYPE(
 
 此宏不返回值。
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
 在调用 **WDF_OBJECT_ATTRIBUTES_INIT_CONTEXT_TYPE**之前，必须 [**WDF_DECLARE_CONTEXT_TYPE**](wdf-declare-context-type.md) 或 [**WDF_DECLARE_CONTEXT_TYPE_WITH_NAME**](wdf-declare-context-type-with-name.md) 全局 (不在函数) 中。
@@ -101,13 +101,13 @@ WDF_OBJECT_ATTRIBUTES_INIT_CONTEXT_TYPE( &attributes, WDM_NDIS_REQUEST );
 <td><p>2.0</p></td>
 </tr>
 <tr class="even">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Wdfobject (包含 Wdf .h) </td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**WDF_OBJECT_ATTRIBUTES**](/windows-hardware/drivers/ddi/wdfobject/ns-wdfobject-_wdf_object_attributes)

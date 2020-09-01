@@ -63,7 +63,7 @@ KSPROPERTY \_ VIDEODECODER \_ standard 属性控制当前的模拟视频标准�
 
 ) 操作数据 (的属性值是指定当前模拟视频标准的 ULONG。
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
 KSPROPERTY **Value** \_ VIDEODECODER S 结构的 Value 成员 \_ 指定当前的模拟视频标准。
@@ -78,13 +78,13 @@ KSPROPERTY **Value** \_ VIDEODECODER S 结构的 Value 成员 \_ 指定当前的
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Ksmedia (包含 Ksmedia) </td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSPROPERTY**](/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)

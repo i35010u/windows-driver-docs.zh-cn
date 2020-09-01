@@ -13,7 +13,7 @@ ms.locfileid: "89188095"
 ---
 # <a name="secure-mor-implementation"></a>安全 MOR 实现
 
-## <a name="summary"></a>“摘要”
+## <a name="summary"></a>总结
 
 - MorLock，修订版2的行为
 
@@ -157,7 +157,7 @@ SetVariable(MemoryOverwriteRequestControlLock, 8, keyPtr);
 
 ![morlock getvariable](images/morlock4.png)
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 [适用于 SoC 平台上的所有 Windows 版本的 UEFI 要求](uefi-requirements-that-apply-to-all-windows-platforms.md#security-requirements)
 

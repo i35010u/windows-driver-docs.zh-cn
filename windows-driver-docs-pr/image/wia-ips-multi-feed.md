@@ -35,7 +35,7 @@ ms.locfileid: "89185005"
 
 访问权限：读/写
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
 下表描述了 " **WIA \_ IPS \_ 多 \_ 源** " 属性的有效值。
@@ -87,7 +87,7 @@ ms.locfileid: "89185005"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Wiadef (包含 Wiadef) </td>
 </tr>
 </tbody>

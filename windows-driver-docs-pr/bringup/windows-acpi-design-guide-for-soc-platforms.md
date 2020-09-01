@@ -19,7 +19,7 @@ ms.locfileid: "89186505"
 
 ## <a name="in-this-section"></a>在本节中
 
-| 主题 | 描述 |
+| 主题 | 说明 |
 | --- | --- |
 | [针对 ACPI 5.0 的 Windows 支持概述](overview-of-windows-support-for-acpi-5-0.md) | [ACPI 5.0 规范](https://uefi.org/specifications)支持在 windows 8 及更高版本中运行的基于 SoC 的移动平台，但继续支持在早期版本的 windows 中引入的许多有用功能。 此设计指南将实施者指引到专门适用于基于 SoC 的平台的 ACPI 5.0 的各个部分，并介绍在 ACPI 中实现特定于 SoC 的功能以在这些平台上运行 Windows 的最佳实践。 |
 | [ACPI 系统说明表](acpi-system-description-tables.md) | 支持高级配置和电源接口 (ACPI) 硬件规范在基于 Windows Server 的基于 SoC 的平台或 Windows Server 系统上不是必需的，但很多 ACPI 软件规范都是 (或) 必需的。 ACPI 定义了一个通用的可扩展表传递机制，还定义了用于为操作系统描述平台的特定表。 |

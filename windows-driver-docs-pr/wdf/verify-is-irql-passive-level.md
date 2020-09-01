@@ -79,13 +79,13 @@ VERIFY_IS_IRQL_PASSIVE_LEVEL();
 <td><p>1.0</p></td>
 </tr>
 <tr class="odd">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Wdfassert (包含 Wdf .h) </td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**WDFVERIFY**](wdfverify.md)

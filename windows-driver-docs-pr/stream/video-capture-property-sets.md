@@ -38,7 +38,7 @@ ms.locfileid: "89184335"
 
 下表列出了视频捕获微型驱动程序使用的主属性集。 它还指示属性集是影响视频捕获硬件，还是影响单个视频捕获流。 此列表还指示实现属性集是否需要微型驱动程序。
 
-| 属性集 | 硬件属性集 | 视频捕获属性集 | 必须 |
+| 属性集 | 硬件属性集 | 视频捕获属性集 | 必需 |
 | --- | --- | --- | --- |
 | [PROPSETID_ALLOCATOR_CONTROL](propsetid-allocator-control.md) |  | Y |  |
 | [PROPSETID_TUNER](propsetid-tuner.md) | Y |  |  |

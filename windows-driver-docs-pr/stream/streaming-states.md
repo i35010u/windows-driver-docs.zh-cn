@@ -33,7 +33,7 @@ ms.locfileid: "89188341"
 <thead>
 <tr class="header">
 <th>状态</th>
-<th>描述</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>

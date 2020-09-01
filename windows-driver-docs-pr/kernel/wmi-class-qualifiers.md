@@ -39,7 +39,7 @@ ms.locfileid: "89190431"
 <thead>
 <tr class="header">
 <th>限定符</th>
-<th>描述</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>

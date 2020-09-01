@@ -1,9 +1,9 @@
 ---
-title: WIA\_DPS\_扫描\_可用\_项
-description: WIA\_DPS\_扫描\_可用\_项属性提供程序控制下执行应用程序推送扫描操作的输入源的名称。 WIA 微型驱动程序创建并维护此属性。
+title: WIA \_ DPS \_ 扫描 \_ 可用 \_ 项
+description: WIA \_ DPS \_ SCAN \_ 可用 \_ 项属性提供应用程序在程序控制下执行的推送扫描操作的输入源的名称。 WIA 微型驱动程序创建并维护此属性。
 ms.assetid: 747cd5bb-4746-4086-8a87-08a6728125bc
 keywords:
-- WIA_DPS_SCAN_AVAILABLE_ITEM 成像设备
+- WIA_DPS_SCAN_AVAILABLE_ITEM 图像设备
 topic_type:
 - apiref
 api_name:
@@ -14,38 +14,38 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 01d3a9d7cab4818f6351338658774b9ea072789b
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 2feeac86a6a20ab02cd1daafbedf974a6d2e3d5e
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67383770"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89185281"
 ---
-# <a name="wiadpsscanavailableitem"></a>WIA\_DPS\_扫描\_可用\_项
+# <a name="wia_dps_scan_available_item"></a>WIA \_ DPS \_ 扫描 \_ 可用 \_ 项
 
 
-WIA\_DPS\_扫描\_可用\_项属性提供程序控制下执行应用程序推送扫描操作的输入源的名称。 WIA 微型驱动程序创建并维护此属性。
+WIA \_ DPS \_ SCAN \_ 可用 \_ 项属性提供应用程序在程序控制下执行的推送扫描操作的输入源的名称。 WIA 微型驱动程序创建并维护此属性。
 
-属性类型：VT\_BSTR
+属性类型： VT \_ BSTR
 
-有效值：WIA\_PROP\_NONE
+有效值： WIA " \_ \_ 无"
 
 访问权限：只读
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
-在 Windows 7 及更高版本，WIA\_DPS\_扫描\_可用\_项是 WIA 扫描程序设备 WIA 项树的根的项目的可选属性。 应用程序可以查询此属性来确定输入的源 （平板、 自动文档送纸器或电影扫描适配器） 进行扫描或将数据从传输的存储位置。
+在 Windows 7 和更高版本中，WIA \_ DPS \_ SCAN \_ 可用 \_ 项是 WIA 扫描器设备的 wia 项树中的根项的可选属性。 应用程序可以查询此属性，以确定输入源 (平板、自动文档送纸器或胶片扫描适配器) 从中进行扫描，或从其传输数据的存储位置。
 
-某些 WIA 扫描程序设备可使用户可以从设备的前面板中选择一个扫描作业的输入的源或隐式选择的输入的源，例如，通过将文档插入到在设备上送纸器。 当用户在设备上按开始扫描按钮时，该应用程序必须确定哪个输入用户选择，以便它可以启动此源的扫描操作的源。
+某些 WIA 扫描器设备使用户能够从设备的前面板中为扫描作业选择输入源，或者通过将文档插入设备上的进纸器来隐式选择输入源。 当用户按下设备上的 "开始扫描" 按钮时，应用程序必须确定用户选择了哪个输入源，以便它可以在此源上启动扫描操作。
 
-扫描事件通知应用程序，用户已开始扫描速度，但该事件不会提供 WIA 项表示的输入的源的名称。 应用程序的事件处理程序可以查询根项 WIA\_DPS\_扫描\_可用\_项属性来获取输入的源项的名称。
+Scan 事件会通知应用程序用户已启动扫描，但该事件不提供表示输入源的 WIA 项的名称。 应用程序的事件处理程序可以查询根项的 WIA \_ DPS \_ SCAN \_ 可用 \_ 项属性以获取输入源项的名称。
 
-在 WIA 树的根项目具有一个或多个子项 （平板项、 送纸器项目和电影胶片项），表示设备上的输入的源。 其中每个项目可能是表示部件或区域的输入源的子项目的父级。 是根项的子级，该值表示作为一个整体平板平板项可以有子级 （这也是平板项），用于表示单独的平板图面区域。 是根项的子级，该值表示自动文档送纸器送纸器项可以有子级，用于表示的前端和后端边进纸器通过在文档页扫描程序。 是根项的子级，该值表示作为一个整体的电影胶片扫描适配器电影项可以有子级 （这也是电影胶片项），用于表示单个电影帧。 具体取决于扫描操作请求的用户，WIA\_DPS\_扫描\_可用\_平板、 送纸器或电影是根的子级的项的项属性可以名或它可以进行命名的其中一种子项。 有关这些项目的详细信息，请参阅[WIA 项类别](https://docs.microsoft.com/windows-hardware/drivers/image/wia-item-categories)。
+WIA 树中的根项具有一个或多个子项 (平板项、进纸器项和胶卷项) ，表示设备上的输入源。 其中每个项都可能是表示输入源的部件或区域的父项。 作为根项的子项并且表示整个外围的平板项可以具有子 (，它们也是表示平板表面的各个区域) 平台项。 作为根项的子项并且表示自动文档送纸器的 "送纸器" 项可以具有代表文档页面正面和背面的扫描仪的子送纸器。 作为根项的子项并且表示作为整体的胶卷扫描适配器的一个胶卷项可以具有子级 (，它们也是表示各个胶片帧) 的电影项。 根据用户请求的扫描操作，WIA \_ DPS \_ SCAN \_ 可用 \_ 项属性可以命名作为根子项的平板、进纸器或胶卷项，也可以命名其中一个项的子项。 有关这些项的详细信息，请参阅 [WIA 项类别](./wia-item-categories.md)。
 
-扫描事件发生时，该驱动程序将立即设置 WIA\_DPS\_扫描\_可用\_项属性值为 WIA 项名称 (完全由报告[ **WIA\_IPA\_项\_名称**](wia-ipa-item-name.md)项属性)，它标识从其扫描作业不可用，如果知道此信息的输入的源。 否则，如果输入的源未知，则该驱动程序设置的属性值为空字符串。 当应用程序使用扫描事件时中的扫描事件更改的状态终止状态为非终止，并驱动程序将重置 WIA\_DPS\_扫描\_可用\_项属性值为空字符串。
+当发生扫描事件时，驱动程序会立即将 WIA \_ DPS \_ 扫描 \_ 可用 \_ 项属性值设置为 wia 项名称 (由项) 的 [**wia \_ IPA \_ 项 \_ 名称**](wia-ipa-item-name.md) 属性标识，该项用于标识扫描作业可用的输入源，如果此信息已知，则为。 否则，如果输入源未知，则驱动程序将属性值设置为空字符串。 当应用程序使用 scan 事件时，scan 事件的状态将从 "已发出到非终止" 更改，驱动程序会将 "WIA \_ DPS \_ 扫描 \_ 可用 \_ 项" 属性值重置为空字符串。
 
-有关此属性的详细信息，请参阅[扫描事件标识输入源](https://docs.microsoft.com/windows-hardware/drivers/image/identifying-the-input-source-for-a-scan-event)。
+有关此属性的详细信息，请参阅 [标识扫描事件的输入源](./identifying-the-input-source-for-a-scan-event.md)。
 
 <a name="requirements"></a>要求
 ------------
@@ -58,7 +58,7 @@ WIA\_DPS\_扫描\_可用\_项属性提供程序控制下执行应用程序推送
 <tbody>
 <tr class="odd">
 <td><p>Header</p></td>
-<td>Wiadef.h （包括 Wiadef.h）</td>
+<td>Wiadef (包含 Wiadef) </td>
 </tr>
 </tbody>
 </table>
@@ -66,14 +66,7 @@ WIA\_DPS\_扫描\_可用\_项属性提供程序控制下执行应用程序推送
 ## <a name="see-also"></a>请参阅
 
 
-[**WIA\_IPA\_ITEM\_NAME**](wia-ipa-item-name.md)
+[**WIA \_ IPA \_ 项 \_ 名称**](wia-ipa-item-name.md)
 
  
-
- 
-
-
-
-
-
 
