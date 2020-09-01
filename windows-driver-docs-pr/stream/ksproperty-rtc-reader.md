@@ -63,7 +63,7 @@ KSPROPERTY \_ rtc \_ 读取器属性检索当前磁带位置 (RTC) 的相对时�
 
  (操作数据) 的属性值是一个时间码 \_ 示例结构，该结构指定当前磁带位置的相对时间计数器。
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
 KSPROPERTY **TimecodeSamp**时间 \_ 码 S 结构的 TimecodeSamp 成员描述了 \_ 当前磁带位置的相对时间计数器。
@@ -78,13 +78,13 @@ KSPROPERTY **TimecodeSamp**时间 \_ 码 S 结构的 TimecodeSamp 成员描述�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Ksmedia (包含 Ksmedia) </td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSPROPERTY**](/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)

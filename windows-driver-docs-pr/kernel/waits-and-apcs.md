@@ -44,7 +44,7 @@ ms.locfileid: "89193077"
 </colgroup>
 <thead>
 <tr class="header">
-<th>parameters</th>
+<th>参数</th>
 <th>等待中断？</th>
 <th>用户 APC 的交付？</th>
 </tr>

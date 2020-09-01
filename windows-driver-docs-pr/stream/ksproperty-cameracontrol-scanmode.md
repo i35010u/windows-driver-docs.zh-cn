@@ -63,7 +63,7 @@ KSPROPERTY \_ CAMERACONTROL \_ SCANMODE 属性指定相机传感器的扫描模�
 
  (操作数据) 的属性值是指定是否应启用隔行模式的 LONG。 值0指示已启用隔行扫描模式，值为1表示启用渐进式 (或非隔行) 模式。
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
 KSPROPERTY **Value** \_ CAMERACONTROL 节点结构的值成员 \_ \_ 指定是否应启用隔行扫描模式。
@@ -82,13 +82,13 @@ KSPROPERTY **Value** \_ CAMERACONTROL 节点结构的值成员 \_ \_ 指定是�
 <td><p>适用于 windows Vista 和更高版本的 Windows 操作系统。</p></td>
 </tr>
 <tr class="even">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Ksmedia (包含 Ksmedia) </td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSPROPERTY \_ CAMERACONTROL \_ 节点 \_ S**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_cameracontrol_node_s)

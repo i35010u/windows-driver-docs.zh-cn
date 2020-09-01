@@ -61,7 +61,7 @@ KSPROPERTY \_ MEDIASEEKING \_ 预计算属性检索筛选器上所需的以100�
 
  
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
 此属性返回以 LONGLONG 类型的值形式表示的预缓冲的100毫微秒单位数。
@@ -76,13 +76,13 @@ KSPROPERTY \_ MEDIASEEKING \_ 预计算属性检索筛选器上所需的以100�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Ks (包含 Ks .h) </td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [KSPROPSETID \_ MediaSeeking](kspropsetid-mediaseeking.md)

@@ -35,7 +35,7 @@ WIA \_ IPA \_ item \_ NAME 属性包含 wia 项名称。
 
 访问权限：只读
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
 *项目名称*与在对[**wiasCreateDrvItem**](/windows-hardware/drivers/ddi/wiamdef/nf-wiamdef-wiascreatedrvitem)服务实用程序的调用中指定的项目名称相同。
@@ -52,13 +52,13 @@ WIA \_ IPA \_ item \_ NAME 属性包含 wia 项名称。
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Wiadef (包含 Wiadef) </td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**IWiaMiniDrvTransferCallback：： GetNextStream**](/windows-hardware/drivers/ddi/wiamindr_lh/nf-wiamindr_lh-iwiaminidrvtransfercallback-getnextstream)

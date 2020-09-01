@@ -61,7 +61,7 @@ ms.locfileid: "89192837"
 
  
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
 使用 KSP pin 指定此属性 \_ ，其中成员指定相关的 PIN 工厂。
@@ -80,13 +80,13 @@ KSPROPERTY \_ pin \_ NECESSARYINSTANCES 返回类型为 ULONG 的值，指定 pi
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Ks (包含 Ks .h) </td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSP \_ PIN**](/windows-hardware/drivers/ddi/ks/ns-ks-ksp_pin)

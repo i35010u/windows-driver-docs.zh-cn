@@ -35,7 +35,7 @@ WIA \_ IPA \_ ITEM \_ SIZE 属性包含与 WIA 项关联的数据的当前大小
 
 访问权限：只读
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
 WIA \_ IPA \_ ITEM \_ SIZE 属性包含的值是正在传输的数据的总大小。 如果此值为零，则 WIA 微型驱动程序不包含有关数据的准确大小的信息。  (这种情况通常适用于压缩的数据。 ) 
@@ -58,7 +58,7 @@ WIA \_ IPA \_ ITEM \_ SIZE 属性包含的值是正在传输的数据的总大�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Wiadef (包含 Wiadef) </td>
 </tr>
 </tbody>

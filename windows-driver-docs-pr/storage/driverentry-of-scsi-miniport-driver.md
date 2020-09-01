@@ -53,7 +53,7 @@ ULONG DriverEntry(
 
 **DriverEntry** 返回 **ScsiPortInitialize**返回的值。 如果多次调用 **ScsiPortInitialize** ，则 **DriverEntry** 将返回 **ScsiPortInitialize**返回的最小值。
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
 微型端口驱动程序的 **DriverEntry** 例程在堆栈上分配内存，并 \_ 使用零初始化 HW 初始化 \_ 数据结构。 **DriverEntry**在 \_ \_ 用适用于) 微型端口驱动程序支持的 HBA (的值初始化之前，DriverEntry 的所有成员必须为零。

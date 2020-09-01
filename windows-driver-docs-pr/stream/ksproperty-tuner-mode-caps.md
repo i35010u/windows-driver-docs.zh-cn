@@ -63,7 +63,7 @@ KSPROPERTY \_ 调谐器 \_ mode \_ cap 属性描述支持模拟电视或无线�
 
  (操作数据) 的属性值是一个 ULONG，用于指定调谐器的优化功能。
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
 KSPROPERTY **StandardsSupported** \_ 调谐器 \_ 模式 cap 结构的 StandardsSupported 成员 \_ \_ 指定当前的模拟视频标准。
@@ -80,13 +80,13 @@ KSPROPERTY **StandardsSupported** \_ 调谐器 \_ 模式 cap 结构的 Standards
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Ksmedia (包含 Ksmedia) </td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSPROPERTY**](/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)

@@ -60,7 +60,7 @@ KSPROPERTY \_ 调谐器 \_ 扫描 \_ 状态属性描述扫描操作的状态。 
 
  (操作数据) 的属性值是一个 KSPROPERTY \_ 调谐器 \_ 扫描 \_ 状态 \_ S 结构，它指定扫描操作的状态。
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
 *KsTvTune.ax*模块可随时调用驱动程序的 KSPROPERTY \_ 调谐器 \_ 扫描 \_ 状态属性。 但是， *KsTvTune.ax* 通常 \_ \_ \_ 会在调用 [**KSEVENT \_ 调谐器 \_ INITIATE \_ scan**](ksevent-tuner-initiate-scan.md) 事件之后调用 KSPROPERTY 调谐器扫描状态，以设置扫描操作并设置扫描完成时的通知。 *KsTvTune.ax* 然后等待扫描完成通知发生。 最糟糕的情况是， *KsTvTune.ax*会等待[**调谐器 \_ 模拟 \_ cap \_ **](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tuner_analog_caps_s)结构的**SettlingTime**成员中指定的时间量。 驱动程序应已 \_ \_ 从对 \_ 其[**KSPROPERTY \_ 调谐器 \_ NETWORKTYPE \_ scan \_ cap**](ksproperty-tuner-networktype-scan-caps.md)属性的调用返回填充的调谐器模拟 cap，并在 \_ \_ \_ [**KSPROPERTY \_ 调谐器 \_ NETWORKTYPE \_ 扫描 \_ 端 \_ **](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_tuner_networktype_scan_caps_s)结构的**NETWORKTYPE**成员中设置了模拟 TV 网络类型值。 但是，通常情况下，调谐器会确定信号的状态，这比在 **SettlingTime** 中指定的时间更快，并应通过发出事件信号通知 *KsTvTune.ax* 已完成扫描。
@@ -85,13 +85,13 @@ KSPROPERTY \_ 调谐器 \_ 扫描 \_ 状态属性描述扫描操作的状态。 
 <td><p>在 Windows Vista 和更高版本的操作系统中可用。</p></td>
 </tr>
 <tr class="even">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Ksmedia (包含 Ksmedia) </td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSEVENT \_ 调谐器 \_ 启动 \_ 扫描**](ksevent-tuner-initiate-scan.md)

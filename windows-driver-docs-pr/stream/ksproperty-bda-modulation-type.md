@@ -61,7 +61,7 @@ ms.locfileid: "89193013"
 
  
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
 ModulationType 枚举类型的返回值标识解调器类型。
@@ -78,13 +78,13 @@ KSP **NodeId** \_ 节点的节点标识号指定了解调器节点的标识符�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Bdamedia (包含 Bdamedia) </td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSP \_ 节点**](/windows-hardware/drivers/ddi/ks/ns-ks-ksp_node)

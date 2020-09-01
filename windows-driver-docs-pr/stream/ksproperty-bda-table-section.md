@@ -61,7 +61,7 @@ ms.locfileid: "89192395"
 
  
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
 KSP **NodeId**节点的节点成员 \_ 指定了 LNB 放大器节点。
@@ -78,13 +78,13 @@ KSP **NodeId**节点的节点成员 \_ 指定了 LNB 放大器节点。
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Bdamedia (包含 Bdamedia) </td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**BDA \_ 表 \_ 部分**](/windows-hardware/drivers/ddi/bdatypes/ns-bdatypes-_bda_table_section)

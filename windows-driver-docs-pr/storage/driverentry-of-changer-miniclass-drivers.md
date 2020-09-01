@@ -50,7 +50,7 @@ NTSTATUS DriverEntry(
 
 Miniclass 驱动程序的 **DriverEntry** 例程必须返回 [**ChangerClassInitialize**](/windows-hardware/drivers/ddi/mcd/nf-mcd-changerclassinitialize) 例程返回的值。
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
 参数 **Argument1** 和 **Argument2** 指向特定于操作系统的信息。 Miniclass 驱动程序 *不* 应尝试解释这些参数。 相反，它应将这些参数传递到 **ChangerClassInitialize** 例程。
@@ -68,10 +68,10 @@ Miniclass 驱动程序的 **DriverEntry** 例程必须返回 [**ChangerClassInit
 <tbody>
 <tr class="odd">
 <td align="left"><p>目标平台</p></td>
-<td align="left">“桌面”</td>
+<td align="left">台式机</td>
 </tr>
 <tr class="even">
-<td align="left"><p>标头</p></td>
+<td align="left"><p>Header</p></td>
 <td align="left">Mcd (包含 Mcd) </td>
 </tr>
 <tr class="odd">

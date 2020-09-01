@@ -63,7 +63,7 @@ KSPROPERTY \_ VIDEOCONTROL \_ cap 属性标识设备的视频控制功能。 必
 
  (操作数据) 的属性值是一个 KSPROPERTY \_ VIDEOCONTROL \_ cap \_ S 结构，用于指定微型驱动程序的视频控制功能，如图像翻转或事件触发能力。
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
 KSPROPERTY **VideoControlCaps** \_ VIDEOCONTROL \_ Cap S 结构的 VideoControlCaps 成员 \_ 指定设备的视频控制功能。
@@ -78,13 +78,13 @@ KSPROPERTY **VideoControlCaps** \_ VIDEOCONTROL \_ Cap S 结构的 VideoControlC
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Ksmedia (包含 Ksmedia) </td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSPROPERTY**](/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)

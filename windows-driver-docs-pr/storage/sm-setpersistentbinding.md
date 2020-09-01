@@ -41,7 +41,7 @@ void SM_SetPersistentBinding(
 );
 ```
 
-<a name="parameters"></a>parameters
+<a name="parameters"></a>参数
 ----------
 
 *HbaPortWWN*   
@@ -70,7 +70,7 @@ SM GetPersistentBinding 方法检索的永久绑定的总数 \_ 。 此值将小
 
 不适用于 WMI 方法。
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
 此 WMI 方法属于 MS \_ SM \_ TargetInformationMethods WMI 类。
@@ -86,10 +86,10 @@ SM GetPersistentBinding 方法检索的永久绑定的总数 \_ 。 此值将小
 <tbody>
 <tr class="odd">
 <td align="left"><p>目标平台</p></td>
-<td align="left">“桌面”</td>
+<td align="left">台式机</td>
 </tr>
 <tr class="even">
-<td align="left"><p>标头</p></td>
+<td align="left"><p>Header</p></td>
 <td align="left">Hbapiwmi</td>
 </tr>
 </tbody>

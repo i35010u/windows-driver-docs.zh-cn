@@ -61,7 +61,7 @@ ms.locfileid: "89191767"
 
  
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
 \_ \_ 使用 KSP PIN 指定 KSPROPERTY pin 接口 \_ ，其中**PinId**成员指定要为其返回可用接口的 pin 工厂。
@@ -80,13 +80,13 @@ Stream 微型驱动程序不需要直接处理此属性;流类驱动程序使用
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Ks (包含 Ks .h) </td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSP \_ PIN**](/windows-hardware/drivers/ddi/ks/ns-ks-ksp_pin)

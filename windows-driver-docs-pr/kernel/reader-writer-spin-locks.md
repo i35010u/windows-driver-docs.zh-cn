@@ -24,7 +24,7 @@ ms.locfileid: "89191163"
 
 下面列出了可用于管理读取器/编写器自旋锁（从 Windows Vista SP1 开始）的例程列表。
 
-| 例程名称                                                                                | 描述                                                                                                           |
+| 例程名称                                                                                | 说明                                                                                                           |
 |---------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------|
 | [**ExAcquireSpinLockExclusive**](/previous-versions/windows/hardware/drivers/hh451007(v=vs.85))                         | 获取用于调用方进行独占访问的自旋锁，并将 IRQL 提高到调度 \_ 级别。                      |
 | [**ExAcquireSpinLockExclusiveAtDpcLevel**](/previous-versions/windows/hardware/drivers/hh451009(v=vs.85))    | 获取一个自旋锁，该锁用于通过已在 IRQL = 调度级别运行的调用方进行独占访问 &gt; \_ 。          |

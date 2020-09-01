@@ -32,7 +32,7 @@ ms.locfileid: "89192261"
 
 访问权限：读/写
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
 应用程序将读取 WIA \_ ip \_ 页面，以确定文档送纸器的页容量。 应用程序将此属性设置为在当前 WIA 会话中要扫描的最大页数。 WIA 微型驱动程序创建并维护此属性。
@@ -81,13 +81,13 @@ ms.locfileid: "89192261"
 <td><p>在 Windows Vista 和更高版本的操作系统中可用。 对于 Windows XP，请改用 WIA_DPS_PAGES 属性。</p></td>
 </tr>
 <tr class="even">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Wiadef (包含 Wiadef) </td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**WIA \_ DPS \_ 页面**](wia-dps-pages.md)

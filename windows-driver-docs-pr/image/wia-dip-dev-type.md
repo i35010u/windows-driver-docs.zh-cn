@@ -35,7 +35,7 @@ WIA \_ DIP \_ 开发 \_ 类型属性包含设备类型和设备子类型。 WIA 
 
 访问权限：只读
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
 设备类型和子类型是从设备文件的驱动程序 INF 文件中获取的。 应用程序读取 WIA \_ DIP \_ 开发 \_ 类型属性，以确定它使用的是扫描仪、照相机还是视频设备。
@@ -93,7 +93,7 @@ WIA \_ DIP \_ 开发 \_ 类型属性包含设备类型和设备子类型。 WIA 
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Wiadef (包含 Wiadef) </td>
 </tr>
 </tbody>

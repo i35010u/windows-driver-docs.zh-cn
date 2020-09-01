@@ -33,7 +33,7 @@ KSPROPERTY \_ raw \_ AVC \_ CMD 属性发出原始 AV/C 命令。 仅 IEEE 1394 
 
  (操作数据) 的属性值是**RawAVC** \_ \_ 用于描述要运行的原始 AV/C 命令的 KSPROPERTY EXTXPORT S 结构的嵌入 RawAVC 成员。
 
-## <a name="remarks"></a>备注
+## <a name="remarks"></a>注解
 
 此属性仅可用于可支持 AV/C 命令的设备，以及[**KSPROPERTY \_ EXTDEVICE \_ 端口**](ksproperty-extdevice-port.md) \_ \_ 在[**KSPROPERTY \_ EXTDEVICE \_ S**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_extdevice_s)结构的**DevPort**成员中返回开发端口1394的设备。
 
@@ -49,7 +49,7 @@ KSPROPERTY \_ raw \_ AVC \_ CMD 属性发出原始 AV/C 命令。 仅 IEEE 1394 
 | --- | --- |
 | **标头** | Ksmedia (包含 Ksmedia)  |
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 [**KSPROPERTY**](/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)
 

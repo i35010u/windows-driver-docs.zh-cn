@@ -34,7 +34,7 @@ ms.locfileid: "89192875"
 <thead>
 <tr class="header">
 <th>属性 Set</th>
-<th>描述</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>
@@ -67,7 +67,7 @@ ms.locfileid: "89192875"
 <thead>
 <tr class="header">
 <th>属性 Set</th>
-<th>描述</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>
@@ -106,7 +106,7 @@ ms.locfileid: "89192875"
 <thead>
 <tr class="header">
 <th>事件集</th>
-<th>描述</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>

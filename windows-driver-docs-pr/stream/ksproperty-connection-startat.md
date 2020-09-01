@@ -61,7 +61,7 @@ KSPROPERTY \_ 连接 \_ STARTAT 是一个可选属性，该属性由支持在指
 
  
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
 仅当 pin 处于暂停状态时，才应请求此属性，以将 pin 转换为运行状态。
@@ -76,13 +76,13 @@ KSPROPERTY \_ 连接 \_ STARTAT 是一个可选属性，该属性由支持在指
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Ks (包含 Ks .h) </td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSRELATIVEEVENT**](/windows-hardware/drivers/ddi/ks/ns-ks-ksrelativeevent)

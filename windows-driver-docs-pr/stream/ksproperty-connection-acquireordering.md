@@ -61,7 +61,7 @@ KSPROPERTY \_ CONNECTION \_ ACQUIREORDERING 属性是一个可选属性，当状
 
  
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
 如果状态更改排序非常重要，则此属性返回 **TRUE** 。 如果返回 **FALSE** ，则不需要实现属性。
@@ -78,13 +78,13 @@ KSPROPERTY \_ CONNECTION \_ ACQUIREORDERING 属性是一个可选属性，当状
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Ks (包含 Ks .h) </td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [KSPROPSETID \_ 连接](kspropsetid-connection.md)

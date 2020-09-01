@@ -61,7 +61,7 @@ KSPROPERTY \_ MEDIASEEKING \_ 功能属性检索筛选器的媒体搜寻功能�
 
  
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
 此属性检索的筛选器的功能包括：查找绝对位置、在媒体中向前或向后查找、在播放或停止模式下获取当前位置、获取持续时间或向后播放。 请注意，这些是整个筛选器的功能;此属性旨在映射到 DirectShow 查找功能，其中仅对筛选器（而不是 pin）查询此类功能。
@@ -78,13 +78,13 @@ KSPROPERTY \_ MEDIASEEKING \_ 功能属性检索筛选器的媒体搜寻功能�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Ks (包含 Ks .h) </td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [KSPROPSETID \_ MediaSeeking](kspropsetid-mediaseeking.md)

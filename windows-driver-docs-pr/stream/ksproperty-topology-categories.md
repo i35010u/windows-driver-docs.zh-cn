@@ -61,7 +61,7 @@ KSPROPERTY \_ 拓扑 \_ 类别属性用于查询驱动程序支持的功能类�
 
  
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
 此属性返回一个 [**KSMULTIPLE \_ 项**](/windows-hardware/drivers/ddi/ks/ns-ks-ksmultiple_item) 结构，后跟一个 guid 序列，该序列表示 KS 筛选器支持的可能功能类别。 Microsoft 在 *ks* 和 *ksmedia*中提供了标准类别。 下面列出了非特定于技术的功能类别：
@@ -74,7 +74,7 @@ KSPROPERTY \_ 拓扑 \_ 类别属性用于查询驱动程序支持的功能类�
 <thead>
 <tr class="header">
 <th>功能类别</th>
-<th>描述</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>
@@ -144,13 +144,13 @@ KSCATEGORY_ COMMUNICATIONSTRANSFORM</td>
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Ks (包含 Ks .h) </td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSTOPOLOGY**](/windows-hardware/drivers/ddi/ks/ns-ks-kstopology)

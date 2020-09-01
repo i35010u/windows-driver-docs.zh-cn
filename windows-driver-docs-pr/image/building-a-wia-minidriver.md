@@ -31,7 +31,7 @@ ms.locfileid: "89192727"
 <thead>
 <tr class="header">
 <th>标头文件</th>
-<th>描述</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>
@@ -66,7 +66,7 @@ WIA 使用下表中显示的库文件。 所有微型驱动程序都需要这些
 <thead>
 <tr class="header">
 <th>库文件</th>
-<th>描述</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>

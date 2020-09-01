@@ -61,7 +61,7 @@ ms.locfileid: "89192167"
 
  
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
 KSP **NodeId** \_ 节点的节点标识号指定了 RF 调谐器节点的标识符。
@@ -82,7 +82,7 @@ KSP **NodeId** \_ 节点的节点标识号指定了 RF 调谐器节点的标识�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Bdamedia (包含 Bdamedia) </td>
 </tr>
 </tbody>

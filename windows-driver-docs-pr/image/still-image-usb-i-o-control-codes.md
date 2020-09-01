@@ -27,7 +27,7 @@ ms.locfileid: "89192915"
 <thead>
 <tr class="header">
 <th>I/o 控制代码</th>
-<th>描述</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>

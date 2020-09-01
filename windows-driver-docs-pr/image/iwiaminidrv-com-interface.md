@@ -40,7 +40,7 @@ ms.locfileid: "89192281"
 <thead>
 <tr class="header">
 <th>方法</th>
-<th>描述</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>
@@ -69,7 +69,7 @@ ms.locfileid: "89192281"
 <thead>
 <tr class="header">
 <th>方法</th>
-<th>描述</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>
@@ -98,7 +98,7 @@ ms.locfileid: "89192281"
 <thead>
 <tr class="header">
 <th>方法</th>
-<th>描述</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>
@@ -119,7 +119,7 @@ ms.locfileid: "89192281"
 <thead>
 <tr class="header">
 <th>方法</th>
-<th>描述</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>
@@ -140,7 +140,7 @@ ms.locfileid: "89192281"
 <thead>
 <tr class="header">
 <th>方法</th>
-<th>描述</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>
@@ -161,7 +161,7 @@ ms.locfileid: "89192281"
 <thead>
 <tr class="header">
 <th>方法</th>
-<th>描述</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>
@@ -186,7 +186,7 @@ ms.locfileid: "89192281"
 <thead>
 <tr class="header">
 <th>方法</th>
-<th>描述</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>
@@ -207,7 +207,7 @@ ms.locfileid: "89192281"
 <thead>
 <tr class="header">
 <th>方法</th>
-<th>描述</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>
@@ -228,7 +228,7 @@ ms.locfileid: "89192281"
 <thead>
 <tr class="header">
 <th>方法</th>
-<th>描述</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>
@@ -257,7 +257,7 @@ ms.locfileid: "89192281"
 <thead>
 <tr class="header">
 <th>方法</th>
-<th>描述</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>

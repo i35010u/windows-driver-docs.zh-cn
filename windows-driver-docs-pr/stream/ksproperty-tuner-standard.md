@@ -63,7 +63,7 @@ KSPROPERTY \_ 调谐器 \_ 标准属性检索当前的模拟视频标准。 必�
 
  (操作数据) 的属性值是一个 ULONG，用于指定调谐器的优化标准。
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
 KSPROPERTY 调谐器标准版结构的 **标准** 成员 \_ \_ \_ 指定当前的模拟视频标准。
@@ -82,13 +82,13 @@ KSPROPERTY 调谐器标准版结构的 **标准** 成员 \_ \_ \_ 指定当前�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Ksmedia (包含 Ksmedia) </td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSPROPERTY**](/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)

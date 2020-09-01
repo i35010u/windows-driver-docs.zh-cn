@@ -61,7 +61,7 @@ KSPROPERTY \_ MEDIASEEKING \_ duration 属性检索筛选器上的媒体持续�
 
  
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
 此属性将媒体持续时间返回为 LONGLONG 类型的值。
@@ -76,13 +76,13 @@ KSPROPERTY \_ MEDIASEEKING \_ duration 属性检索筛选器上的媒体持续�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Ks (包含 Ks .h) </td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [KSPROPSETID \_ MediaSeeking](kspropsetid-mediaseeking.md)

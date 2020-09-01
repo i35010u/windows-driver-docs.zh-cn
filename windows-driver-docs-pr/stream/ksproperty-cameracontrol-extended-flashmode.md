@@ -61,7 +61,7 @@ Flash 属性控件为相机的正常和序列照片模式设置 flash 模式操�
 
 此属性控件是同步的，不可取消。
 
-## <a name="remarks"></a>备注
+## <a name="remarks"></a>注解
 
 ### <a name="getting-the-property"></a>获取属性
 
@@ -90,7 +90,7 @@ Flash 属性控件为相机的正常和序列照片模式设置 flash 模式操�
 
 **标头：** Ksmedia (包含 Ksmedia) 
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 [**KSCAMERA \_ EXTENDEDPROP \_ 标头**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)
 

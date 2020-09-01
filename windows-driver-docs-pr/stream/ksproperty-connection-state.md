@@ -61,7 +61,7 @@ KSPROPERTY \_ 连接 \_ 状态属性设置 pin 的当前运行状态。
 
  
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
 此属性返回以下值之一：
@@ -74,7 +74,7 @@ KSPROPERTY \_ 连接 \_ 状态属性设置 pin 的当前运行状态。
 <thead>
 <tr class="header">
 <th>值</th>
-<th>描述</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>
@@ -111,7 +111,7 @@ Pin 仅读取或写入 **KSSTATE \_ 运行** 状态的数据。 单个 pin 和 K
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Ks (包含 Ks .h) </td>
 </tr>
 </tbody>

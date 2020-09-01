@@ -69,7 +69,7 @@ KSPROPERTY \_ CAMERACONTROL \_ PANTILT 属性指定绝对平移和倾斜设置�
 
 倾斜请求时，正值会向上倾斜摄像机，负值将向下倾斜相机。
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
 [**KSPROPERTY \_ CAMERACONTROL \_ s2**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_cameracontrol_s2)或[**KSPROPERTY \_ CAMERACONTROL \_ 节点 \_ s2**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_cameracontrol_node_s2)结构的**Value1**成员指定平移设置。 **Value2**成员指定倾斜设置。
@@ -88,13 +88,13 @@ KSPROPERTY \_ CAMERACONTROL \_ PANTILT 属性指定绝对平移和倾斜设置�
 <td><p>适用于 windows Vista 和更高版本的 Windows 操作系统。</p></td>
 </tr>
 <tr class="even">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Ksmedia (包含 Ksmedia) </td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSPROPERTY \_ CAMERACONTROL \_ S2**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_cameracontrol_s2)

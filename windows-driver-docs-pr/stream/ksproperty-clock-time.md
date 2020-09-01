@@ -61,7 +61,7 @@ ms.locfileid: "89192367"
 
  
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
 此属性返回类型为 LONGLONG 的值，指定当前演示时间（以100毫微秒为单位）。
@@ -80,13 +80,13 @@ ms.locfileid: "89192367"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Ks (包含 Ks .h) </td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [KSPROPSETID \_ 时钟](kspropsetid-clock.md)

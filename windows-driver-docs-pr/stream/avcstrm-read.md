@@ -70,7 +70,7 @@ ms.locfileid: "89192883"
 
  
 
-### <a name="comments"></a>注释
+### <a name="comments"></a>说明
 
 此函数使用 AVC 流请求块结构中的**CommandData**联合的**BufferStruct**成员 \_ ，如下 \_ \_ 所示。
 

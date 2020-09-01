@@ -45,7 +45,7 @@ ms.locfileid: "89193007"
 > [!NOTE]
 > 设置照片模式是一种异步控制操作，并且 \_ \_ \_ 必须在[**KSCAMERA \_ EXTENDEDPROP \_ 标头**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)的**功能**成员中设置 KSCAMERA EXTENDEDPROP cap ASYNCCONTROL。
 
-## <a name="remarks"></a>备注
+## <a name="remarks"></a>注解
 
 当响应 KSPROPERTY \_ 类型 \_ GET 请求时，驱动程序会将 [**KSCAMERA \_ EXTENDEDPROP \_ 标头**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header) 的成员设置为以下项。
 
@@ -64,7 +64,7 @@ ms.locfileid: "89193007"
 
 **标头：** Ksmedia (包含 Ksmedia) 
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 [**KSCAMERA \_ EXTENDEDPROP \_ 标头**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)
 

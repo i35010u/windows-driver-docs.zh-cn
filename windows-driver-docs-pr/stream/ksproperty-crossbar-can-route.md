@@ -63,7 +63,7 @@ KSPROPERTY \_ 纵横制 \_ CAN \_ 路由属性检索设备是否能够支持指�
 
  (操作数据) 的属性值是一个 ULONG，指定流式处理微型驱动程序是否支持两个 pin 之间的指定路由。 非零值表示支持路由。 如果微型驱动程序不支持两个插针之间的路由，则此值为零。
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
 KSPROPERTY **CanRoute** \_ 纵横制路由结构的 CanRoute \_ 成员 \_ 指示该设备是否能够支持指定的路由。
@@ -78,13 +78,13 @@ KSPROPERTY **CanRoute** \_ 纵横制路由结构的 CanRoute \_ 成员 \_ 指示
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Ksmedia (包含 Ksmedia) </td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSPROPERTY**](/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)

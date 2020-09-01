@@ -61,7 +61,7 @@ KSPROPERTY \_ MEDIASEEKING \_ POSITION 检索筛选器的媒体时间。
 
  
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
 媒体时间作为 LONGLONG 类型的值返回。
@@ -76,13 +76,13 @@ KSPROPERTY \_ MEDIASEEKING \_ POSITION 检索筛选器的媒体时间。
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Ks (包含 Ks .h) </td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [KSPROPSETID \_ MediaSeeking](kspropsetid-mediaseeking.md)

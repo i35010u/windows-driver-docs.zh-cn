@@ -63,7 +63,7 @@ ms.locfileid: "89191275"
 
  (操作数据) 的属性值是一个 ULONG，用于指定调谐器的当前优化模式。
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
 KSPROPERTY **Mode** \_ 调谐器 \_ 模式 S 结构的 Mode 成员 \_ 指定当前调谐器模式。
@@ -78,13 +78,13 @@ KSPROPERTY **Mode** \_ 调谐器 \_ 模式 S 结构的 Mode 成员 \_ 指定当�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Ksmedia (包含 Ksmedia) </td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSPROPERTY**](/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)

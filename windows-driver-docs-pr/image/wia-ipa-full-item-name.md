@@ -35,7 +35,7 @@ WIA \_ IPA \_ full \_ item \_ name 属性包含项名称 (项名称的完整项�
 
 访问权限：只读
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
 *完整的项名称*与[**wiasCreateDrvItem**](/windows-hardware/drivers/ddi/wiamdef/nf-wiamdef-wiascreatedrvitem)服务实用工具函数的*bstrFullItemName*参数相同。 应用程序读取 "WIA \_ IPA \_ FULL \_ ITEM \_ NAME" 属性，以确定它当前使用的项以及该项在 WIA 项树中的位置。 每个项都应具有唯一的名称。 应用程序通常使用完整项名称在 WIA 项树中搜索项。 WIA 服务创建并维护 WIA \_ IPA \_ 的完整 \_ 项 \_ 名称。
@@ -52,13 +52,13 @@ WIA \_ IPA \_ full \_ item \_ name 属性包含项名称 (项名称的完整项�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Wiadef (包含 Wiadef) </td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**IWiaMiniDrvTransferCallback：： GetNextStream**](/windows-hardware/drivers/ddi/wiamindr_lh/nf-wiamindr_lh-iwiaminidrvtransfercallback-getnextstream)

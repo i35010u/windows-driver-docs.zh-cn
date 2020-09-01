@@ -61,14 +61,14 @@ ms.locfileid: "89191075"
 
 使用[**KSCAMERA \_ EXTENDEDPROP \_ 标头**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)的**flags**成员中的下列标志之一设置或清除触发器时间。
 
-| 触发时间标志                           | 描述                     |
+| 触发时间标志                           | 说明                     |
 |---------------------------------------------|---------------------------------|
 | KSPROPERTY \_ 摄影机 \_ PHOTOTRIGGERTIME \_ CLEAR | 清除 "触发器时间" 设置。 |
 | KSPROPERTY \_ 照相机 \_ PHOTOTRIGGERTIME \_ 集   | 设置新的触发器时间值。   |
 
 此属性控件是同步的，并且不可取消。
 
-## <a name="remarks"></a>备注
+## <a name="remarks"></a>注解
 
 ### <a name="getting-the-property"></a>获取属性
 
@@ -134,7 +134,7 @@ ms.locfileid: "89191075"
 <td><p>可从 Windows 8.1 开始。</p></td>
 </tr>
 <tr class="even">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Ksmedia (包含 Ksmedia) </td>
 </tr>
 </tbody>

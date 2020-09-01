@@ -61,7 +61,7 @@ KSPROPERTY \_ 质量 \_ 报表属性是一个可选属性，如果 pin 支持质
 
  
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
 KSPROPERTY \_ 质量 \_ 报告的属性值为 [**KSQUALITY**](/windows-hardware/drivers/ddi/ks/ns-ks-ksquality) 结构。 使用此结构可获取或设置当前所用帧的比例和最佳帧接收时间的增量。
@@ -78,13 +78,13 @@ KSPROPERTY \_ 质量 \_ 报告的属性值为 [**KSQUALITY**](/windows-hardware/
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Ks (包含 Ks .h) </td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSPROPERTY**](/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)

@@ -71,7 +71,7 @@ KSPROPERTY \_ CAMERACONTROL \_ PANTILT \_ 相对属性指定相机的水平或�
 <thead>
 <tr class="header">
 <th>Value1</th>
-<th>描述</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>
@@ -102,7 +102,7 @@ KSPROPERTY \_ CAMERACONTROL \_ PANTILT \_ 相对属性指定相机的水平或�
 <thead>
 <tr class="header">
 <th>Value2</th>
-<th>描述</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>
@@ -123,7 +123,7 @@ KSPROPERTY \_ CAMERACONTROL \_ PANTILT \_ 相对属性指定相机的水平或�
 
  
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
 发出用于平移照相机的 set 请求时，客户端应在属性描述符结构的 **Value1** 成员的上表中提供其中一个值。
@@ -150,13 +150,13 @@ KSPROPERTY \_ CAMERACONTROL \_ PANTILT \_ 相对属性指定相机的水平或�
 <td><p>适用于 windows Vista 和更高版本的 Windows 操作系统。</p></td>
 </tr>
 <tr class="even">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Ksmedia (包含 Ksmedia) </td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSPROPERTY \_ CAMERACONTROL \_ S2**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_cameracontrol_s2)

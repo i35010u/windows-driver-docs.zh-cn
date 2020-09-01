@@ -19,7 +19,7 @@ Cd-rom 设备驱动程序的所有公共 i/o 控制代码均使用缓冲 i/o。 
 
 Cd-rom 设备的类驱动程序处理额外的公共 i/o 控制代码，以及本节所述的代码。 有关存储类驱动程序要求的详细信息，请参阅 [常规存储 I/o 控制代码](general-storage-io-control-codes.md)。
 
-|I/o 控制代码|描述|
+|I/o 控制代码|说明|
 |----|----|
 |[IOCTL_CDROM_CHECK_VERIFY](/windows-hardware/drivers/ddi/ntddcdrm/ni-ntddcdrm-ioctl_cdrom_check_verify)|此 IOCTL 由 [IOCTL_STORAGE_CHECK_VERIFY](/windows-hardware/drivers/ddi/ntddstor/ni-ntddstor-ioctl_storage_check_verify)替换。 这两个 IOCTLs 之间的唯一差别在于基值。|
 |**IOCTL_CDROM_CLOSE_DOOR**|已 [IOCTL_STORAGE_LOAD_MEDIA](/windows-hardware/drivers/ddi/ntddstor/ni-ntddstor-ioctl_storage_load_media)替换此 i/o 控制代码。|

@@ -61,7 +61,7 @@ ms.locfileid: "89192373"
 
  
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
 此属性返回类型为 LONGLONG 的值，它表示以100毫微秒为单位的当前物理时间。
@@ -80,13 +80,13 @@ ms.locfileid: "89192373"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Ks (包含 Ks .h) </td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSPROPERTY \_ 时钟 \_ CORRELATEDPHYSICALTIME**](ksproperty-clock-correlatedphysicaltime.md)
