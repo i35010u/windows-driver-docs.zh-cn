@@ -6,23 +6,23 @@ ms.date: 04/20/2017
 ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
-ms.openlocfilehash: 55111b7ff7b7a02eb0a97c8b148afc9181147794
-ms.sourcegitcommit: 988d100e4d3b218a59fdac034d39a1816d145c85
+ms.openlocfilehash: eed2935170431ad820e93443b838067dc1691b44
+ms.sourcegitcommit: 7e4d9508198a30bdc1cb6eda83852dda4e42213e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2020
-ms.locfileid: "63352976"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89304292"
 ---
 # <a name="mobile-broadband"></a>移动宽带
 
 
 使用本部分中的文档详细了解移动宽带以及如何为客户配置移动宽带体验。
 
--   [概述](overview-b-mb.md)
+-   [概述](overview-of-mobile-broadband.md)
 
 -   [使用元数据配置移动宽带体验](using-metadata-to-configure-mobile-broadband-experiences.md)
 
--   [移动运营商方案](mobile-operator-scenarios-b-mb.md)
+-   [移动运营商方案](mobile-plans-scenarios.md)
 
  
 
