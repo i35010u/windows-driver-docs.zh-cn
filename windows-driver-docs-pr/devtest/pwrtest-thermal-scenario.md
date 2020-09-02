@@ -4,19 +4,19 @@ description: PwrTest 散热方案监视 ACPI 热量区域信息和统计信息�
 ms.assetid: C6941A50-EA0F-4C46-A290-8CAAD292E156
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f3d9e86da55a505ad8dd6835e15d32a8ad3a4347
-ms.sourcegitcommit: cbcb712a9f1f62c7d67e1b98097a0d8d24bd0c71
+ms.openlocfilehash: d04a3ca0d9b4c4f4d889b62c59251d7ffc55407b
+ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83769571"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89381933"
 ---
 # <a name="pwrtest-thermal-scenario"></a>PwrTest 热量方案
 
 
 PwrTest 散热方案监视 ACPI 热量区域信息和统计信息。 此方案仅在报告热量区域和温度变化的系统上受支持。
 
-**注意** 此方案仅适用于向操作系统报告热量数据的系统。
+**注意**  此方案仅适用于向操作系统报告热量数据的系统。
 
  
 
@@ -28,10 +28,10 @@ pwrtest /thermal [/t:n] [/?]
 ```
 
 <span id="_t_n"></span><span id="_T_N"></span>**/t：**<em>n</em>  
-指定应用场景运行的总时间（分钟）（ *n*的默认值为30分钟）。
+指定运行该方案 (默认 *值为 30* 分钟) )  (的总时间（分钟）。
 
 <span id="_temp_kcf"></span><span id="_TEMP_KCF"></span>**/temp：**{**k** | **c** | **f**}  
-指定用于所有输出和日志记录的温度刻度（**k**）、摄氏温度（**c**）、华氏（**f**）（默认为 "开氏"）。
+指定温度刻度的开氏度 (**k**) ，摄氏温度 (**c**) ，华氏 (**f**) 用于所有输出和日志记录 (默认为 "开氏) "。
 
 **示例**
 
@@ -125,7 +125,7 @@ pwrtest /thermal  /t:30 /temp:f
 </tr>
 <tr class="even">
 <td align="left"><strong>&lt;EnteringCS&gt;</strong></td>
-<td align="left"><p>已启动连接备用（CS）条目，在显示器关闭并禁用输入后，系统就会进入 CS。</p></td>
+<td align="left"><p>连接备用 (CS) 条目开始，系统在 CS 中显示为 "已关闭"，并且 "输入" 处于禁用状态。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><strong>&lt;ExitingCS&gt;</strong></td>
@@ -172,7 +172,7 @@ pwrtest /thermal  /t:30 /temp:f
 <td align="left"><p>平台空闲统计信息块。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><strong>&lt;州省/自治区/直辖市&gt;</strong></td>
+<td align="left"><strong>&lt;状态&gt;</strong></td>
 <td align="left"><p>自上一个平台空闲统计信息块以来平台空闲状态的转换计数。</p></td>
 </tr>
 </tbody>
@@ -185,14 +185,7 @@ pwrtest /thermal  /t:30 /temp:f
 
 [PwrTest 语法](pwrtest-syntax.md)
 
-[PowerCfg](https://docs.microsoft.com/windows-hardware/design/device-experiences/powercfg-command-line-options)
+[PowerCfg](/windows-hardware/design/device-experiences/powercfg-command-line-options)
 
  
-
- 
-
-
-
-
-
 

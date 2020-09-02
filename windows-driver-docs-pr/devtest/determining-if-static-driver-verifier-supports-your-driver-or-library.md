@@ -1,23 +1,23 @@
 ---
 title: 确定静态驱动程序验证程序是否支持你的驱动程序或库
-description: 静态驱动程序验证程序（SDV）可以支持 WDM、KMDF、NDIS 和 Storport 驱动程序和库。 若要确定是否支持并正确配置了驱动程序或库，请阅读本部分中所述的超出要求。
+description: 静态驱动程序验证器 (SDV) 可以支持 WDM、KMDF、NDIS 和 Storport 驱动程序和库。 若要确定是否支持并正确配置了驱动程序或库，请阅读本部分中所述的超出要求。
 ms.assetid: 29E93E9E-7F87-4706-97AD-DB9A32EDD388
 ms.date: 10/08/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: d5288a967f39f8b02cd446704dcde08b10f72513
-ms.sourcegitcommit: 3ec971f54122b77408433f7f1e59c467099fb4de
+ms.openlocfilehash: 2da10cec649fdcc20d35d1df89be91d578e996e0
+ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86873818"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89382929"
 ---
 # <a name="determining-if-static-driver-verifier-supports-your-driver-or-library"></a>确定静态驱动程序验证程序是否支持你的驱动程序或库
 
-静态驱动程序验证程序（SDV）完全支持 WDM、KMDF、NDIS 和 Storport 驱动程序和库，对其他驱动程序的支持是有限的。 若要确定是否支持并正确配置了驱动程序或库，请阅读本部分中所述的超出要求。
+静态驱动程序验证器 (SDV) 完全支持 WDM、KMDF、NDIS 和 Storport 驱动程序和库，并对其他驱动程序的支持有限。 若要确定是否支持并正确配置了驱动程序或库，请阅读本部分中所述的超出要求。
 
 ## <a name="driver-or-library-requirements"></a>驱动程序或库要求
 
-如果驱动程序或库满足以下条件之一，则可以在 SDV 分析工具中运行完整的一组规则 **，而**不会链接到[下面列出的任何类框架库](#class-framework-libraries)。
+如果驱动程序或库满足以下条件之一，则可以在 SDV 分析工具中运行完整的一组规则 **，而** 不会链接到 [下面列出的任何类框架库](#class-framework-libraries)。
 
 - 有一个 WDM 驱动程序或库。
 - 你有一个链接到 WdfLdr 或 WdfDriverEntry 的驱动程序或库。
@@ -28,15 +28,15 @@ ms.locfileid: "86873818"
 
 此外，请注意，由 SDV 验证的库必须是内核模式驱动程序库，而不是一般 C 或 c + + 库。  
 
-静态驱动程序验证程序支持通过这些条件的驱动程序或库，即使驱动程序或库链接到多个[实用程序库](#utility-libraries)。
+静态驱动程序验证程序支持通过这些条件的驱动程序或库，即使驱动程序或库链接到多个 [实用程序库](#utility-libraries)。
 
 此外，若要执行分析，SDV 要求：
 
-- 驱动程序已[使用函数角色类型声明](using-function-role-type-declarations.md)至少声明了一个入口点。
-- 驱动程序正确生成和链接（使用 MSBuild 在 Visual Studio 中）。
+- 驱动程序已 [使用函数角色类型声明](using-function-role-type-declarations.md)至少声明了一个入口点。
+- 驱动程序在 Visual Studio 中使用 MSBuild) 正确生成和链接 (。
 - 如果驱动程序或库使用 KMDF，则驱动程序或库使用 KDMF 版本1.7 或更高版本。
 - 如果驱动程序或库使用 NDIS，则使用 NDIS 版本6.0、6.1、6.20、6.30 或6.40。 请注意，此列表可能会更改。
-- 驱动程序未合并驱动程序模型（例如，KMDF 与 WDM，或 KMDF 和 NDIS）。
+- 该驱动程序不会合并驱动程序模型 (例如，KMDF 与 WDM，或 KMDF 和 NDIS) 。
 
 其他因素影响了静态分析结果的质量和准确性。 这些因素包括：
 
@@ -49,7 +49,7 @@ ms.locfileid: "86873818"
 若要使用静态驱动程序验证程序，Visual Studio 项目必须具有以下设置：
 
 - UseDebugLibraries = false
-- 平台 = Win32 （x86）或 x64
+- 平台 = Win32 (x86) 或 x64
 
 ## <a name="class-framework-libraries"></a>类框架库
 
@@ -218,7 +218,7 @@ ms.locfileid: "86873818"
 
 ## <a name="utility-libraries"></a>实用工具库
 
-如果驱动程序或库符合[驱动程序或库要求](#driver-or-library-requirements)，则静态驱动程序验证程序支持具有指向多个实用工具库的链接的驱动程序或库。
+如果驱动程序或库符合 [驱动程序或库要求](#driver-or-library-requirements)，则静态驱动程序验证程序支持具有指向多个实用工具库的链接的驱动程序或库。
 
 | 文件名           |
 |---------------------|
@@ -234,4 +234,4 @@ ms.locfileid: "86873818"
 
 ## <a name="static-driver-verifier-and-microsoft-class-framework-libraries"></a>静态驱动程序验证程序和 Microsoft 类框架库
 
-如果使用的是必须链接到[类框架](#class-framework-libraries)库中的类框架库的 WDM 驱动程序，则驱动程序将无法通过静态驱动程序验证程序条件。 但是，还可以使用某些通用规则，例如[NullCheck 规则](https://docs.microsoft.com/windows-hardware/drivers/devtest/nullcheck)来执行某些级别的静态验证。
+如果使用的是必须链接到 [类框架](#class-framework-libraries) 库中的类框架库的 WDM 驱动程序，则驱动程序将无法通过静态驱动程序验证程序条件。 但是，还可以使用某些通用规则，例如 [NullCheck 规则](./nullcheck.md) 来执行某些级别的静态验证。

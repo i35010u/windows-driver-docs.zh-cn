@@ -4,19 +4,19 @@ description: 跟踪托管对象格式 (MOF) 文件
 ms.assetid: e0ef452b-042d-42d0-be0f-b36e7bf47285
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0de160d0af0595a07fe826cf0f4a859791ab66d7
-ms.sourcegitcommit: cbcb712a9f1f62c7d67e1b98097a0d8d24bd0c71
+ms.openlocfilehash: 340e3ff2ff64de4021847bdf67547e7362785b41
+ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83769649"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89383321"
 ---
 # <a name="trace-managed-object-format-mof-file"></a>跟踪托管对象格式 (MOF) 文件
 
 
-跟踪[托管对象格式](https://docs.microsoft.com/windows/win32/wmisdk/managed-object-format--mof-)（MOF）文件是一个文本文件，该文件包含 PDB 文件中表示的每个[跟踪提供程序](trace-provider.md)的控件 GUID。 MOF 文件的名称为跟踪制造者的模块名称，后跟 MOF 文件扩展名。
+MOF) 文件 (的跟踪 [托管对象格式](/windows/win32/wmisdk/managed-object-format--mof-) 是文本文件，其中包含 PDB 文件中表示的每个 [跟踪提供程序](trace-provider.md) 的控件 GUID。 MOF 文件的名称为跟踪制造者的模块名称，后跟 MOF 文件扩展名。
 
-[Tracepdb](tracepdb.md)和[BINPLACE](binplace.md)在从 PDB 文件中的格式说明创建跟踪消息格式（. tmf）文件时，为每个跟踪提供程序创建 MOF 文件。
+[Tracepdb](tracepdb.md) 和 [BinPlace](binplace.md) 创建跟踪消息格式时，将为每个跟踪提供程序创建一个 MOF 文件 (. tmf) 文件中的格式说明。
 
 跟踪 MOF 文件还包含以下信息：
 

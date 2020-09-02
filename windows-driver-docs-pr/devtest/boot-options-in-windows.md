@@ -19,29 +19,29 @@ keywords:
 - 独立于固件的启动选项 WDK
 ms.date: 04/23/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: c3e373a96970eb314c0a40516060f4a3659a1624
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 76f2b8f2242fd779089e2c12b0945d774dc7e77f
+ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72840299"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89382427"
 ---
 # <a name="overview-of-boot-options-in-windows"></a>Windows 中的启动选项概述
 
-Windows 启动加载器体系结构包括与固件无关的启动配置和存储系统（称为*引导配置数据*（BCD））和启动选项编辑工具（bcdedit）。 在开发过程中，您可以使用 BCDEdit 来配置用于在运行 Windows 10、Windows 8、Windows Server 2012、Windows 7 和 Windows Server 2008 的计算机上调试、测试和排查您的驱动程序的启动选项。
+Windows 启动加载器体系结构包括与固件无关的启动配置和存储系统（称为 *引导配置数据* (BCD) 和启动选项编辑工具，BCDEdit ( # A0) 。 在开发过程中，您可以使用 BCDEdit 来配置用于在运行 Windows 10、Windows 8、Windows Server 2012、Windows 7 和 Windows Server 2008 的计算机上调试、测试和排查您的驱动程序的启动选项。
 
 > [!CAUTION]
-> 使用 BCDEdit 修改 BCD 需要管理权限。 使用 BCDEdit 更改某些启动项选项可能会导致计算机无法操作。 作为替代方法，请使用系统配置实用工具（Msconfig.exe）更改启动设置。
+> 需要管理权限才能使用 BCDEdit 来修改 BCD。 使用 BCDEdit 更改某些启动项选项可能会导致计算机无法操作。 请改为使用系统配置实用程序 (MSConfig.exe) 更改启动设置。
 
 ## <a name="boot-loading-architecture"></a>启动加载体系结构
 
-Windows 包括旨在快速、安全地加载 Windows 的启动加载程序组件。 以前的 Windows NT 启动加载程序*ntldr*由三个组件替代：
+Windows 包括旨在快速、安全地加载 Windows 的启动加载程序组件。 以前的 Windows NT 启动加载程序 *ntldr*由三个组件替代：
 
-- Windows 启动管理器（Bootmgr）
+- Windows 启动管理器 ( # A0) 
 
-- Windows 操作系统加载程序（Winload.exe）
+- Windows 操作系统加载程序 ( # A0) 
 
-- Windows 恢复加载程序（Winresume）
+- Windows 恢复加载器 ( # A0) 
 
 在此配置中，Windows 启动管理器是通用的，并不知道每个操作系统的特定要求，而系统特定的启动加载程序会针对其加载的系统进行优化。
 
@@ -51,7 +51,7 @@ Windows 包括旨在快速、安全地加载 Windows 的启动加载程序组件
 
 ## <a name="boot-configuration-data"></a>引导配置数据
 
-Windows 启动选项存储在基于 BIOS 和 EFI 的计算机上的引导配置数据（BCD）存储区中。
+Windows 启动选项存储在基于 BIOS 和 EFI 的计算机上引导配置数据 (BCD) 存储区中。
 
 
 BCD 为运行 Windows 10、Windows 8、Windows Server 2012、Windows 7 和 Windows Server 2008 的所有计算机提供与固件无关的通用启动选项接口。 它比以前的启动选项存储配置更安全，因为它允许安全锁定 BCD 存储，并允许管理员分配管理启动选项的权限。 在运行时以及在安装程序的所有阶段都可以使用 BCD。 甚至可以在电源状态转换期间调用 BCD，并使用它定义启动过程以在休眠后恢复。
@@ -60,21 +60,20 @@ BCD 为运行 Windows 10、Windows 8、Windows Server 2012、Windows 7 和 Windo
 
 具有熟悉的对象和元素体系结构的 BCD 存储使用 Guid 和名称（如 "Default"）来精确标识与启动相关的应用程序。
 
-BCD 包含自己的一组启动选项。 有关这些启动选项的详细信息，请参阅[BCD 启动选项参考](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)。
+BCD 包含自己的一组启动选项。 有关这些启动选项的详细信息，请参阅 [BCD 启动选项参考](/windows-hardware/drivers/ddi/index)。
 
 ## <a name="editing-boot-options"></a>编辑启动选项
 
-若要在 Windows 中编辑启动选项，请使用 Windows 中包含的一种工具。 
+若要在 Windows 中编辑启动选项，请使用 BCDEdit ( # A0) ，它是 Windows 中包含的工具。 
 
 若要使用 BCDEdit，你必须是计算机上 Administrators 组的成员。
 
-你还可以使用系统配置实用工具（Msconfig.exe）更改启动设置。
+你还可以使用系统配置实用工具 ( # A0) 更改启动设置。
 
-若要在 Windows 中以编程方式更改启动选项，请使用 Windows 管理规范（WMI）接口启动选项。 此 BCD WMI 接口是以编程方式更改启动选项的最佳方法。 有关 BCD WMI 接口的信息，请参阅 Windows SDK 文档中的[引导配置数据 WMI 提供程序](https://docs.microsoft.com/previous-versions/windows/desktop/bcd/boot-configuration-data-portal)。
+若要在 Windows 中以编程方式更改启动选项，请使用 Windows Management 检测 (WMI) 接口启动选项。 此 BCD WMI 接口是以编程方式更改启动选项的最佳方法。 有关 BCD WMI 接口的信息，请参阅 Windows SDK 文档中的 [引导配置数据 WMI 提供程序](/previous-versions/windows/desktop/bcd/boot-configuration-data-portal) 。
 
 ## <a name="related-topics"></a>相关主题
 
 - [BCD 编辑选项参考](bcd-boot-options-reference.md)
 - [编辑启动选项](editing-boot-options.md)
 - [使用启动参数](using-boot-parameters.md)
-

@@ -5,17 +5,17 @@ ms.assetid: D3887E09-E0A4-4FBC-9D26-344016047235
 keywords:
 - NFC
 - 近场通信
-- proximity
+- 近程
 - 近场邻近感应
 - NFP
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c9808776e342698949d587a4093c4f62f451bbb0
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 1a3b18fdd9fbbc59345724c9648db2221a281a53
+ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72831548"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89382445"
 ---
 # <a name="physical-sensor-model"></a>物理传感器模型
 
@@ -26,6 +26,5 @@ ms.locfileid: "72831548"
 
  
 ## <a name="related-topics"></a>相关主题
-[NFC 设备驱动程序接口（DDI）概述](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)  
-[近字段邻近 DDI 引用](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)  
-
+[NFC 设备驱动程序接口 (DDI) 概述](/windows-hardware/drivers/ddi/index)  
+[近字段邻近 DDI 引用](/windows-hardware/drivers/ddi/index)

@@ -7,37 +7,37 @@ keywords:
 - 内存池监视器 WDK，显示
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a1b60378d1da67dad206c0cf7196d89fdcc0a083
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 17e8b9412290a48506680ad0f5e943e9d909c44f
+ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72840051"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89382717"
 ---
 # <a name="poolmon-display"></a>PoolMon 显示
 
 PoolMon 在命令窗口中显示有关池内存分配的数据的列。 使用箭头键、PAGE UP 和 PAGE DOWN 键滚动查看数据。
 
 >[!NOTE]
->若要查看整个 PoolMon 显示，命令提示符窗口的大小必须至少为80个字符（宽度 = 80）且至少53行高（高度 = 53）;并且命令提示符窗口缓冲区的宽度必须至少为500个字符（width = 500），且至少为2000行（高度 = 2000）。 否则，显示可能会被截断。
+>若要查看整个 PoolMon 显示，命令提示符窗口的大小必须至少为80个字符宽 (width = 80) ，至少53行高 (高度 = 53) ;并且命令提示符窗口缓冲区的宽度必须至少为500个字符 (width = 500) ，至少2000行高 (height = 2000) 。 否则，显示可能会被截断。
 
 下表描述了 PoolMon 显示中的列。
 
-|列名称|描述|
+|列名|描述|
 |----|----|
-|**符**|分配给池分配的4字节标记。|
-|**Type**|内存分配是否处于分页或非分页字节。|
+|**标记**|分配给池分配的4字节标记。|
+|**类型**|内存分配是否处于分页或非分页字节。|
 |**Allocs**|分配数。|
 |**( )**|自上次更新以来的分配数的变化。|
 |**释放**|可用操作的数量。|
 |**( )**|自上次更新以来的分配数的变化。|
-|**差别**|分配数减去可用操作的数量。|
+|**差异**|分配数减去可用操作的数量。|
 |**字节**|分配的大小（以字节为单位）。|
 |**( )**|自上次更新以来分配的大小变化。|
 |**按分配**|Bytes 的值除以 Diff 的值。|
-|**Mapped_Driver**|分配池标记值的本地驱动程序（ **/c**）和其他常用的驱动程序和系统组件（ **/g**）。 仅当使用 **/c**或 **/g**参数时，才会显示此列。|
+|**Mapped_Driver**|本地驱动程序 (**/c**) 和其他常用的驱动程序和系统组件 (**/g**) 分配池标记值。 仅当使用 **/c** 或 **/g** 参数时，才会显示此列。|
 
-下面的示例 PoolMon 输出按分配数进行排序。 （若要以这种方式对您的显示进行排序，请用 **/a**参数开始 PoolMon。）
+下面的示例 PoolMon 输出按分配数进行排序。  (以这种方式对您的显示进行排序，请用 **/a** 参数开始 PoolMon。 ) 
 
 ```command
  Memory:  260620K Avail:   96364K  PageFlts:     0   InRam Krnl: 1916K P:17856K
@@ -65,4 +65,4 @@ PoolMon 每5秒钟更新一次。 不能以编程方式更改更新速率。 但
 
 ## <a name="interpreting-tag-values"></a>解释标记值
 
-所有池内存分配都有标记，但是它们并非都具有特征标记值。 当分配内存的驱动程序使用[**ExAllocatePoolWithTag**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exallocatepoolwithtag)或[**ExAllocatePoolWithQuotaTag**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exallocatepoolwithquotatag)设置标记值时，池内存分配具有特征标记值。 如果驱动程序未分配标记值（[**ExAllocatePool**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exallocatepool)、 [**ExAllocatePoolWithQuota**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exallocatepoolwithquota)），则 Windows 仍会创建一个标记，但会将默认标记值指定为 None。 因此，不能将该驱动程序的分配的统计信息与其他池分配的统计信息区分开来。
+所有池内存分配都有标记，但是它们并非都具有特征标记值。 当分配内存的驱动程序使用 [**ExAllocatePoolWithTag**](/windows-hardware/drivers/ddi/wdm/nf-wdm-exallocatepoolwithtag) 或 [**ExAllocatePoolWithQuotaTag**](/windows-hardware/drivers/ddi/wdm/nf-wdm-exallocatepoolwithquotatag)设置标记值时，池内存分配具有特征标记值。 如果驱动程序没有分配标记值 ([**ExAllocatePool**](/windows-hardware/drivers/ddi/wdm/nf-wdm-exallocatepool)， [**ExAllocatePoolWithQuota**](/windows-hardware/drivers/ddi/wdm/nf-wdm-exallocatepoolwithquota)) ，则 Windows 仍会创建一个标记，但会将默认标记值指定为 None。 因此，不能将该驱动程序的分配的统计信息与其他池分配的统计信息区分开来。

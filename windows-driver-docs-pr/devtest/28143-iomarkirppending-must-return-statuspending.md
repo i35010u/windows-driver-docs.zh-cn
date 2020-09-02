@@ -9,21 +9,21 @@ ms.date: 04/20/2017
 ms.localizationpriority: medium
 f1_keywords:
 - C28143
-ms.openlocfilehash: a78c01d225402b89f66dcc3c8557c4bdc0a4f525
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: c4af3096a51668c5c7c0c5bc8cdd327226ad2d7b
+ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72840316"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89382593"
 ---
 # <a name="c28143"></a>C28143
 
 
-警告 C28143：调用也的调度例程还必须返回状态\_"挂起"
+警告 C28143：调用也的调度例程还必须返回状态 " \_ 挂起"
 
-调用[**也**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iomarkirppending)的调度例程包含至少一个路径，在该路径中，驱动程序返回的值不是状态\_"挂起"。
+调用 [**也**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iomarkirppending) 的调度例程包含至少一个路径，在该路径中，驱动程序返回的值不是 "挂起" 状态 \_ 。
 
-### <a name="span-idexamplespanspan-idexamplespanexample"></a><span id="example"></span><span id="EXAMPLE"></span>实例
+### <a name="span-idexamplespanspan-idexamplespanexample"></a><span id="example"></span><span id="EXAMPLE"></span>示例
 
 下面的代码示例 elicits 此警告。
 
@@ -42,10 +42,4 @@ return STATUS_PENDING;
 ```
 
  
-
- 
-
-
-
-
 

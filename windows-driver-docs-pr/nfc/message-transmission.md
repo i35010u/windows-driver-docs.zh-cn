@@ -5,17 +5,17 @@ ms.assetid: 96C5CE38-25EE-425A-A7C5-05990CBE2C3E
 keywords:
 - NFC
 - 近场通信
-- proximity
+- 近程
 - 近场邻近感应
 - NFP
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 003d56f117aca0ab67bff31ef26653333d9e49f3
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 53254154ce0aa287427f3afcb0333eb51110c27d
+ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72843456"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89382535"
 ---
 # <a name="message-transmission"></a>消息传输
 
@@ -38,6 +38,5 @@ NFP 设备驱动程序接口不要求按发布的消息发布的顺序进行传�
 
  
 ## <a name="related-topics"></a>相关主题
-[NFC 设备驱动程序接口（DDI）概述](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)  
-[近字段邻近 DDI 引用](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)  
-
+[NFC 设备驱动程序接口 (DDI) 概述](/windows-hardware/drivers/ddi/index)  
+[近字段邻近 DDI 引用](/windows-hardware/drivers/ddi/index)

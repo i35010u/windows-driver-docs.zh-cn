@@ -5,20 +5,20 @@ ms:assetid: 44ad67da-f374-4a8e-80bd-d531853088a2
 keywords: ACPI，ACPI \_ DSD 方法
 ms.date: 05/29/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 0b6faf10c6c4d1ba1fa340ee0f194e4e9fc7aa30
-ms.sourcegitcommit: 8143bb312ead6582b4b3e0ad34b6266dcfd74fb5
+ms.openlocfilehash: db4a44f55359d89949e9a33d7a22d6feb99918b9
+ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84992468"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89381999"
 ---
-# <a name="acpi-interface-device-specific-data-_dsd-for-pcie-root-ports"></a>ACPI 接口： \_ 适用于 PCIe 根端口的设备特定数据（DSD）
+# <a name="acpi-interface-device-specific-data-_dsd-for-pcie-root-ports"></a>ACPI 接口：设备特定的数据 (\_ DSD) 用于 PCIe 根端口
 
-在 Windows 10 （版本1803）中，新增了 ACPI \_ DSD 方法来支持新式备用和 PCI 热插拔方案。
+在 Windows 10 (版本 1803) 中，新增了 ACPI \_ DSD 方法来支持新式备用和 PCI 热插拔方案。
 
-## <a name="directed-deepest-runtime-idle-platform-state-drips-support-on-pcie-root-ports"></a>PCIe 根端口上的定向最深运行时空闲平台状态（DRIPS）支持
+## <a name="directed-deepest-runtime-idle-platform-state-drips-support-on-pcie-root-ports"></a>定向最深的运行时空闲平台状态 (DRIPS) 支持的 PCIe 根端口
 
- 此 ACPI 对象必须在每个 PCIe 根端口/槽的 ACPI 范围内实现，用户可在支持[定向电源管理框架（DFx）](../kernel/introduction-to-the-directed-power-management-framework.md)的新式备用系统上访问该系统。
+ 必须在每个 PCIe 根端口/槽的 ACPI 范围内实现此 ACPI 对象，用户可以在支持的新式备用系统上实现该用户访问，该系统可以实现 [定向电源管理框架 (DFx) ](../kernel/introduction-to-the-directed-power-management-framework.md)。
 
 ```ASL
 Name (_DSD, Package () {
@@ -37,7 +37,7 @@ Name (_DSD, Package () {
 
 此 ACPI 对象使操作系统能够识别和管理能够在 D3 状态下处理热插拔事件的 PCIe 根端口。 如果未在 PCIe 热插拔可用端口上实现此对象，则系统不会对此端口进行电源管理，因为它没有任何子 PCIe 设备，导致系统消耗的电量比所需的更多。
 
-此对象必须在根端口 ACPI 设备范围内的闪电层次结构的所有 PCIe 根端口（在运行时 D3 （RTD3）的系统）上实现。
+此对象必须在根端口 ACPI 设备范围内的闪电层次结构的所有 PCIe 根端口（运行时 D3 (RTD3) 支持的系统）上实现。
 
 ```ASL
 Name (_DSD, Package () {  
@@ -73,7 +73,7 @@ Package (2) {"UID", 0}, // Property 2: UID of the externally facing port on plat
 
 ## <a name="identifying-internal-pcie-ports-accessible-to-users-and-requiring-dma-protection"></a>确定用户可访问并需要 DMA 保护的内部 PCIe 端口
 
-此 ACPI 对象使操作系统能够识别可供用户轻松访问的内部 PCIe 层次结构（例如，使用闩锁可以访问的便携式计算机 M. 2 PCIe 槽），并需要由 OS[内核 DMA 保护](https://docs.microsoft.com/windows/security/information-protection/kernel-dma-protection-for-thunderbolt)机制进行保护。 此对象必须在根端口 ACPI 设备范围内实现。
+此 ACPI 对象使操作系统能够识别可供用户轻松访问的内部 PCIe 层次结构， (例如，使用闩锁) 可访问的膝上机 2 PCIe 槽，并需要操作系统 [内核 DMA 保护](/windows/security/information-protection/kernel-dma-protection-for-thunderbolt) 机制的保护。 此对象必须在根端口 ACPI 设备范围内实现。
 
 注意的重要事项：
 
@@ -81,7 +81,7 @@ Package (2) {"UID", 0}, // Property 2: UID of the externally facing port on plat
 
 - 必须在系统 BIOS/UEFI 中启用内核 DMA 保护，操作系统才能分析 \_ DSD 并将必要的保护应用到 PCI 端口。
 
-- 连接到此端口的设备的驱动程序必须支持[DMA 重新映射](https://docs.microsoft.com/windows-hardware/drivers/pci/enabling-dma-remapping-for-device-drivers)，否则，Windows 10 可能会阻止这些设备运行，直到用户登录或无限期，具体取决于[DMAGuard 策略](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-dmaguard)。
+- 连接到此端口的设备的驱动程序必须支持 [DMA 重新映射](./enabling-dma-remapping-for-device-drivers.md)，否则，Windows 10 可能会阻止这些设备运行，直到用户登录或无限期，具体取决于 [DMAGuard 策略](/windows/client-management/mdm/policy-csp-dmaguard)。
 
 ```ASL
 Name (_DSD, Package () {  
@@ -97,7 +97,7 @@ Package (2) {"UID", 0}, // Property 2: UID of the PCIe port on platform, range i
 
 ## <a name="identifying-pcie-ports-supporting-d3_cold_aux_power-ecn-interface"></a>识别支持 D3_COLD_AUX_POWER ECN 接口的 PCIe 端口
 
-此 ACPI 对象使操作系统能够识别支持[D3_COLD_AUX_POWER ECN 接口](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_d3cold_aux_power_and_timing_interface)的 pcie 端口，这允许 pcie 设备从平台上的其他辅助电源，在默认375mA 上进行请求 @3.3V 。 定义此 DSD 的任何 PCI 端口或桥*都必须*保证在对以前协商的辅助电源值进行编程时，操作将会成功。
+此 ACPI 对象使操作系统能够识别支持 [D3_COLD_AUX_POWER ECN 接口](/windows-hardware/drivers/ddi/wdm/ns-wdm-_d3cold_aux_power_and_timing_interface)的 pcie 端口，这允许 pcie 设备从平台上的其他辅助电源，在默认375mA 上进行请求 @3.3V 。 定义此 DSD 的任何 PCI 端口或桥 *都必须* 保证在对以前协商的辅助电源值进行编程时，操作将会成功。
 
 ```asl
 Name (_DSD, Package () {
@@ -113,8 +113,8 @@ Name (_DSD, Package () {
 
 [在 Windows 中启用 PCI Express 原生控制](enabling-pci-express-native-control.md)
 
-[闪电3的内核 DMA 保护](https://docs.microsoft.com/windows/security/information-protection/kernel-dma-protection-for-thunderbolt)
+[闪电3的内核 DMA 保护](/windows/security/information-protection/kernel-dma-protection-for-thunderbolt)
 
-[为设备驱动程序启用 DMA 重新映射](https://docs.microsoft.com/windows-hardware/drivers/pci/enabling-dma-remapping-for-device-drivers)
+[为设备驱动程序启用 DMA 重新映射](./enabling-dma-remapping-for-device-drivers.md)
 
-[D3COLD_AUX_POWER_AND_TIMING_INTERFACE 结构](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_d3cold_aux_power_and_timing_interface)
+[D3COLD_AUX_POWER_AND_TIMING_INTERFACE 结构](/windows-hardware/drivers/ddi/wdm/ns-wdm-_d3cold_aux_power_and_timing_interface)

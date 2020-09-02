@@ -17,12 +17,12 @@ keywords:
 - 锁定 WDK IEEE 1394 总线
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 418efa59f4c8fc3a8143510c6c0740d60d4af011
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: c2264d0166e87099c5722a9ae2c0aa9f61ce6c7d
+ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72841526"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89383023"
 ---
 # <a name="sending-asynchronous-io-request-packets-on-the-ieee-1394-bus"></a>在 IEEE 1394 总线上发送异步 I/O 请求数据包
 
@@ -30,13 +30,13 @@ ms.locfileid: "72841526"
 
 
 
-驱动程序使用请求\_ASYNC\_读取、请求\_异步\_写入，并请求\_ASYNC\_LOCK 向 IEEE 1394 总线上的设备发送异步读取、写入和锁定操作。 对于请求\_异步\_读取并请求\_异步\_写入，IRB 的操作特定参数存储在 IRB 的**AsyncWrite**成员中 **。**
+驱动程序使用请求 \_ 异步 \_ 读取、请求 \_ 异步 \_ 写入和请求 \_ async \_ LOCK 向 IEEE 1394 总线上的设备发送异步读取、写入和锁定操作。 对于请求 \_ 异步 \_ 读取和请求 \_ 异步 \_ 写入，IRB 的操作特定参数存储在 IRB 的 **AsyncRead** 或 **AsyncWrite** 成员中。
 
 ### <a name="types-of-addressing"></a>寻址类型
 
-发出异步 i/o 请求的驱动程序必须在 IRB 的**DestinationAddress**成员中指定类型为[**IO\_地址**](https://docs.microsoft.com/windows-hardware/drivers/ddi/1394/ns-1394-_io_address)的目标地址。 目标地址包括两个值：节点地址和地址偏移量。 总线驱动程序为这两个值提供的解释取决于启动请求的驱动程序所使用的寻址模式。
+发出异步 i/o 请求的驱动程序必须在 IRB 的**DestinationAddress**成员中指定类型为[**IO \_ address**](/windows-hardware/drivers/ddi/1394/ns-1394-_io_address)的目标地址。 目标地址包括两个值：节点地址和地址偏移量。 总线驱动程序为这两个值提供的解释取决于启动请求的驱动程序所使用的寻址模式。
 
-有三种寻址模式可用于发送异步1394包：*普通*、*原始*和*虚拟*。
+有三种寻址模式可用于发送异步1394包： *普通*、 *原始*和 *虚拟*。
 
 在正常模式下，寻址启动请求的驱动程序提供了地址偏移，但未指定目标设备的节点地址。 总线驱动程序使用它在枚举设备时存储在设备的 PDO 中的信息来填充节点地址。
 
@@ -48,36 +48,31 @@ ms.locfileid: "72841526"
 
 ### <a name="buffering-of-io-requests"></a>I/o 请求的缓冲
 
-启动异步 i/o 请求的驱动程序必须提供指向指定 i/o 缓冲区的 MDL 的指针。 它将此指针放在 IRB 的**Mdl**成员中。 总线驱动程序使用此缓冲区从设备中复制其读取的数据，或将其写入设备的数据源复制到设备。
+启动异步 i/o 请求的驱动程序必须提供指向指定 i/o 缓冲区的 MDL 的指针。 它将此指针放在 IRB 的 **Mdl** 成员中。 总线驱动程序使用此缓冲区从设备中复制其读取的数据，或将其写入设备的数据源复制到设备。
 
-驱动程序在**AsyncXXX**的**nNumberOfBytesToRead**或**nNumberOfBytesToWrite**成员中指定数据缓冲区的大小，在**nBlockSize**成员中指定块大小。 事务实际发生时，总线驱动程序会将数据分解为在**nBlockSize**中指定的大小的数据包。 默认情况下，总线驱动程序会连续读取或写入数据：从设备的地址空间中的后续位置读取或写入数据块。
+驱动程序在**AsyncXXX**的**nNumberOfBytesToRead**或**nNumberOfBytesToWrite**成员中指定数据缓冲区的大小，在**nBlockSize**成员中指定块大小。 事务实际发生时，总线驱动程序会将数据分解为在 **nBlockSize**中指定的大小的数据包。 默认情况下，总线驱动程序会连续读取或写入数据：从设备的地址空间中的后续位置读取或写入数据块。
 
 下图说明了连续的数据块。
 
 ![说明连续数据块的关系图](images/1394blkd.png)
 
-或者，驱动程序可以为请求指定 ASYNC\_标志\_NONINCREMENTING 标志;然后，总线驱动程序将为每个块使用相同的地址集。
+或者，驱动程序可以为请求指定 ASYNC \_ FLAGS \_ NONINCREMENTING 标志; 然后，总线驱动程序将为每个块使用相同的地址集。
 
 下图演示了异步的非递增数据块。
 
 ![阐释异步非递增数据块的关系图](images/1394blkf.png)
 
-**警告**  总线驱动程序强制实施设备与计算机之间的当前连接速度的最大异步数据包大小，以及设备在其配置 ROM 的最大\_记录字段中报告的最大速度。 如果**nBlockSize**的值大于上述任一值，则总线驱动程序将为块大小使用强制值。 如果驱动程序将 ASYNC\_标志设置\_NONINCREMENTING 标志，则这不太可能会给出所需的行为。 如果驱动程序设置此标志，则在提交请求之前，它们应检查块大小是否小于强制限制。
+**警告**   总线驱动程序为设备与计算机之间的当前连接速度强制执行最大异步数据包大小，并为设备在其配置 ROM 的 "最大记录" 字段中报告的最大速度 \_ 。 如果 **nBlockSize** 的值大于上述任一值，则总线驱动程序将为块大小使用强制值。 如果驱动程序设置 ASYNC \_ FLAGS \_ NONINCREMENTING 标志，这不太可能给出所需的行为。 如果驱动程序设置此标志，则在提交请求之前，它们应检查块大小是否小于强制限制。
 
  
 
 ### <a name="sending-lock-requests"></a>发送锁请求
 
-IEEE 1394 总线协议提供了异步锁定请求，这些请求允许原子操作和设置类型操作。 除了指定目标地址（在**AsyncLock. DestinationAddress**中），驱动程序还指定事务类型（在**AsyncLock. fulTransactionType**中）。 操作的数据值和参数值（有关详细信息，请参阅 IEEE 1394 规范）会传入**AsyncLock. datavalue**和**AsyncLock**。
+IEEE 1394 总线协议提供了异步锁定请求，这些请求允许原子操作和设置类型操作。 除了指定 (在 **AsyncLock. DestinationAddress**) 中的目标地址外，驱动程序还指定 **AsyncLock fulTransactionType**) 中的事务 (类型。 操作 (的数据值和参数值。有关详细信息) 的详细信息，请1394参阅 **datavalue** 和 **AsyncLock**。
 
 ### <a name="bus-reset-generation"></a>总线重置生成
 
-使用异步 i/o 的设备驱动程序将跟踪总线重置生成。 在每个异步请求中，设备驱动程序会在请求的 IRB 的**ulGeneration**成员中报告该值。 总线驱动程序将该值与实际生成计数进行比较，如果它们无法匹配，则将失败状态值为 "状态"\_无效\_生成的请求。 如果请求以这种方式失败，则驱动程序应通过使用\_请求\_生成\_计数总线请求来查询正确的生成。 但是，驱动程序不应重新发出通过此状态失败的任何请求，直到在其总线重置通知回调中检索到新代。 这可确保设备仍在总线上存在。 请注意，客户端驱动程序不应依赖于 IRP\_MN\_总线\_重置以获得总线重置通知。 在 Windows XP 及更高版本的操作系统中，IRP\_MN\_总线\_重置已过时。
+使用异步 i/o 的设备驱动程序将跟踪总线重置生成。 在每个异步请求中，设备驱动程序会在请求的 IRB 的 **ulGeneration** 成员中报告该值。 总线驱动程序将该值与实际生成计数进行比较，如果它们无法匹配，则将失败，状态值为 " \_ 生成无效" \_ 。 如果请求以这种方式失败，则驱动程序应通过使用请求 \_ 获取 \_ 生成 \_ 计数总线请求来查询正确的生成。 但是，驱动程序不应重新发出通过此状态失败的任何请求，直到在其总线重置通知回调中检索到新代。 这可确保设备仍在总线上存在。 请注意，客户端驱动程序不应依赖于 IRP \_ MN \_ bus \_ reset 来接收总线重置通知。 \_ \_ \_ 在 Windows XP 及更高版本的操作系统中，IRP MN 总线重置已过时。
 
  
-
- 
-
-
-
 

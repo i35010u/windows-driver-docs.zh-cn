@@ -3,18 +3,18 @@ title: 删除 IEEE 1394 虚拟设备
 description: 删除 IEEE 1394 虚拟设备
 ms.assetid: ea2d4b9e-7774-42dc-98dd-d95298012d72
 keywords:
-- 仿真驱动程序 WDK IEEE 1394 总线
+- 模拟驱动程序 WDK IEEE 1394 总线
 - 硬件仿真驱动程序 WDK IEEE 1394 总线
 - 虚拟设备 WDK IEEE 1394 总线
 - 删除虚拟设备
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e0a8b12396033e6ff246f49a350886081259ccf8
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 4f74ed22c25e3be58b71c6d371c7ba1d472e6bf5
+ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67381047"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89383021"
 ---
 # <a name="removing-ieee-1394-virtual-devices"></a>删除 IEEE 1394 虚拟设备
 
@@ -22,35 +22,30 @@ ms.locfileid: "67381047"
 
 
 
-有两个删除的虚拟设备的物理设备对象 (PDO) 的方法：
+可通过两种方法 (PDO) 虚拟设备中删除物理设备对象：
 
-1.  **标准插设置 （即插即用） 的方法删除设备**。 若要使用此方法，具有您的驱动程序发送[ **IRP\_MN\_删除\_设备**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-remove-device)到虚拟设备的请求。
+1.  **标准即插即用 (PnP) 删除设备的方法**。 若要使用此方法，请让你的驱动程序将 [**IRP \_ MN \_ REMOVE \_ 设备**](../kernel/irp-mn-remove-device.md) 请求发送到虚拟设备。
 
-    I/O 堆栈应包含以下值：
+    I/o 堆栈应包含以下值：
 
-    -   **MajorFunction** = IRP\_MJ\_PNP
-    -   **MinorFunction** = IRP\_MN\_删除\_设备
+    -   **MajorFunction** = IRP \_ MJ \_ PNP
+    -   **MinorFunction** = IRP \_ MN \_ 删除 \_ 设备
 
-2.  **类型的 I/O 请求数据包 (IRP)** IOCTL\_IEEE1394\_API\_请求：若要使用此方法，具有您的驱动程序发送[ **IRP\_MJ\_设备\_控制**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-device-control)到虚拟设备的请求。
+2.  **I/o 请求数据包 (IRP) 类型** IOCTL \_ IEEE1394 \_ API \_ 请求：若要使用此方法，请让你的驱动程序将 [**IRP \_ MJ \_ 设备 \_ 控制**](../kernel/irp-mj-device-control.md) 请求发送到虚拟设备。
 
-    I/O 堆栈应包含以下值：
+    I/o 堆栈应包含以下值：
 
-    -   **MajorFunction** = IRP\_MJ\_设备\_控件
-    -   **Parameters.DeviceIoControl.IoControlCode** = [**IOCTL\_IEEE1394\_API\_REQUEST**](https://msdn.microsoft.com/library/windows/hardware/ff537241)
+    -   **MajorFunction** = IRP \_ MJ \_ 设备 \_ 控制
+    -   **DeviceIoControl. IoControlCode**  = [ **IOCTL \_ IEEE1394 \_ API \_ 请求**](https://msdn.microsoft.com/library/windows/hardware/ff537241)
 
     IRP 应包含以下值：
 
-    -   **AssocicatedIrp.SystemBuffer-&gt;SystemBuffer**指向[ **IEEE1394\_API\_请求**](https://docs.microsoft.com/previous-versions/ff537204(v=vs.85))结构
-    -   **RequestNumber**隶属 IEEE1394\_API\_请求 = [ **IEEE1394\_API\_删除\_虚拟\_设备**](https://msdn.microsoft.com/library/windows/hardware/ff537201)
+    -   **AssocicatedIrp.SystemBuffer- &gt;SystemBuffer** 指向 [**IEEE1394 \_ API \_ 请求**](/previous-versions/ff537204(v=vs.85)) 结构
+    -   IEEE1394 api 请求的**RequestNumber**成员 \_ \_ = [ **IEEE1394 \_ api \_ 删除 \_ 虚拟 \_ 设备**](https://msdn.microsoft.com/library/windows/hardware/ff537201)
 
-第一种方法 (IRP\_MN\_删除\_设备) 会移除该设备，但如果是持久性的设备将恢复下一次计算机启动。 第二种方法 (IEEE1394\_API\_删除\_虚拟\_设备)，以便它将不再保留在重新启动后完全删除该设备。 下一次在计算机启动该设备将不会还原。
+第一种方法 (IRP \_ MN \_ remove \_ device) 将删除该设备，但如果该设备是永久性的，则下次计算机启动时，它将被还原。 第二种方法 (IEEE1394 \_ API \_ 删除 \_ 虚拟 \_ 设备) 完全删除该设备，以便在重新启动后，它将不再存在。 下次计算机启动时，将不会还原设备。
 
-请注意，较高级别驱动程序或用户模式服务可以确定，通过常规的即插即用机制，已列出的虚拟设备。 此机制使用的虚拟驱动程序的 INF 文件中的类提供的 GUID。
-
- 
+请注意，上层驱动程序或用户模式服务可以通过常用的 PnP 机制确定哪些虚拟设备存在。 此机制使用虚拟驱动程序的 INF 文件中提供的类 GUID。
 
  
-
-
-
 

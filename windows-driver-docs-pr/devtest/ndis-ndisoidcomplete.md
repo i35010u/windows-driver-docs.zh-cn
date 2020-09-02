@@ -1,10 +1,10 @@
 ---
-title: NdisOidComplete 规则（ndis）
+title: 'NdisOidComplete 规则 (ndis) '
 description: NdisOidComplete 规则验证 NDIS 微型端口驱动程序是否正确完成了 OID。
 ms.assetid: 344DECA8-F72A-4962-80D0-DDC648A4FC21
 ms.date: 05/21/2018
 keywords:
-- NdisOidComplete 规则（ndis）
+- 'NdisOidComplete 规则 (ndis) '
 topic_type:
 - apiref
 api_name:
@@ -12,14 +12,14 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 3532795a5ee62d5b4e0c990a6399aca82c73ce7b
-ms.sourcegitcommit: ca5045a739eefd6ed14b9dbd9249b335e090c4e9
+ms.openlocfilehash: 75ad484b605d39acda52118519cb0a4df87638d1
+ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/06/2020
-ms.locfileid: "85968094"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89382941"
 ---
-# <a name="ndisoidcomplete-rule-ndis"></a>NdisOidComplete 规则（ndis）
+# <a name="ndisoidcomplete-rule-ndis"></a>NdisOidComplete 规则 (ndis) 
 
 
 **NdisOidComplete**规则验证 NDIS 微型端口驱动程序是否正确完成了 OID。
@@ -64,7 +64,7 @@ ms.locfileid: "85968094"
 
  
 
-小型端口驱动程序不得使用请求操作的最终状态调用[**NdisMOidRequestComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismoidrequestcomplete)函数，因为 NDIS 状态为 \_ " \_ 挂起"。
+小型端口驱动程序不得使用请求操作的最终状态调用 [**NdisMOidRequestComplete**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismoidrequestcomplete) 函数，因为 NDIS 状态为 \_ " \_ 挂起"。
 
 <table>
 <colgroup>
@@ -104,7 +104,7 @@ ms.locfileid: "85968094"
 
 **驱动程序模型： NDIS**
 
-**找到了具有此规则的 bug 检查**： [**bug 检查0XC4：驱动程序 \_ 验证程序 \_ 检测到 \_ 冲突**](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc4--driver-verifier-detected-violation)（0x00091001）
+**Bug 检查 () 发现此规则**： [**bug 检查0XC4：驱动程序 \_ 验证器 \_ 检测到 \_ 违反**](../debugger/bug-check-0xc4--driver-verifier-detected-violation.md) (0x00091001) 
 
 
 <a name="how-to-test"></a>如何测试
@@ -121,7 +121,7 @@ ms.locfileid: "85968094"
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>运行<a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier" data-raw-source="[Driver Verifier](https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier)">驱动程序验证程序</a>，并选择<a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/ndis-wifi-verification" data-raw-source="[NDIS/WIFI verification](https://docs.microsoft.com/windows-hardware/drivers/devtest/ndis-wifi-verification)">NDIS/WIFI 验证</a>选项。 此规则也会用<a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/ddi-compliance-checking" data-raw-source="[DDI compliance checking](https://docs.microsoft.com/windows-hardware/drivers/devtest/ddi-compliance-checking)">DDI 相容性检查</a>选项进行测试。</p></td>
+<td align="left"><p>运行 <a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier" data-raw-source="[Driver Verifier](./driver-verifier.md)">驱动程序验证程序</a> ，并选择 <a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/ndis-wifi-verification" data-raw-source="[NDIS/WIFI verification](./ndis-wifi-verification.md)">NDIS/WIFI 验证</a> 选项。 此规则也会用 <a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/ddi-compliance-checking" data-raw-source="[DDI compliance checking](./ddi-compliance-checking.md)">DDI 相容性检查</a> 选项进行测试。</p></td>
 </tr>
 </tbody>
 </table>
@@ -131,14 +131,8 @@ ms.locfileid: "85968094"
 <a name="applies-to"></a>适用于
 ----------
 
-[**MiniportDevicePnPEventNotify**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_device_pnp_event_notify) 
-[**MiniportOidRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_oid_request) 
-[**NdisMOidRequestComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismoidrequestcomplete)
+[**MiniportDevicePnPEventNotify**](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_device_pnp_event_notify) 
+[**MiniportOidRequest**](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_oid_request) 
+[**NdisMOidRequestComplete**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismoidrequestcomplete)
  
-
- 
-
-
-
-
 

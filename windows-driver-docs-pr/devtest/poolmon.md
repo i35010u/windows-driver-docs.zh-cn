@@ -19,12 +19,12 @@ keywords:
 - 状态信息 WDK PoolMon
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ea468b00148cccd81e57c392fbc4faa8d47fb92a
-ms.sourcegitcommit: cbcb712a9f1f62c7d67e1b98097a0d8d24bd0c71
+ms.openlocfilehash: f461497675b7e492d768b6209d786ef555c20428
+ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83769525"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89382403"
 ---
 # <a name="poolmon"></a>PoolMon
 
@@ -32,11 +32,11 @@ ms.locfileid: "83769525"
 ## <span id="ddk_poolmon_tools"></span><span id="DDK_POOLMON_TOOLS"></span>
 
 
-PoolMon （poolmon）是内存池监视器，显示操作系统从系统分页和非分页内核池收集的内存分配数据，以及用于终端服务会话的内存池。 数据按池分配标记进行分组。
+PoolMon ( # A0) ，内存池监视器显示操作系统从系统分页和非分页内核池收集的内存分配数据，以及用于终端服务会话的内存池。 数据按池分配标记进行分组。
 
 当驱动程序开发人员和测试人员创建新的驱动程序、更改驱动程序代码或对驱动程序进行压力时，通常使用 PoolMon 来检测内存泄漏。 你还可以在测试的每个阶段使用 PoolMon 来查看驱动程序的分配模式和自由操作模式，并显示驱动程序在任何给定时间使用的池内存量。
 
-本文档中所述的 PoolMon 版本包含在 \\ \\ [Windows 驱动程序工具包（WDK）](https://docs.microsoft.com/windows-hardware/drivers/download-the-wdk)的工具其他子目录中。
+本文档中所述的 PoolMon 版本包含在 \\ \\ [Windows 驱动程序工具包 (WDK) ](../download-the-wdk.md)的工具的其他子目录中。
 
 本主题包括以下内容：
 
@@ -50,13 +50,7 @@ PoolMon （poolmon）是内存池监视器，显示操作系统从系统分页�
 
 [PoolMon 示例](poolmon-examples.md)
 
-若要在 Microsoft Windows XP 和更早的系统上使用 PoolMon，必须启用*池标记*。 在 Windows Server 2003 和更高版本的 Windows 上，将永久启用池标记。 有关详细信息，请参阅[PoolMon 要求](poolmon-requirements.md)中的 "池标记要求"。
+若要在 Microsoft Windows XP 和更早的系统上使用 PoolMon，必须启用 *池标记*。 在 Windows Server 2003 和更高版本的 Windows 上，将永久启用池标记。 有关详细信息，请参阅 [PoolMon 要求](poolmon-requirements.md)中的 "池标记要求"。
 
-PoolMon 可以显示 Windows 组件的名称，以及分配每个池标记的常用驱动程序的名称。 此功能使用 pooltag 中的数据、使用 PoolMon 安装的文件以及用于 Windows 包的调试工具。
-
- 
-
-
-
-
+PoolMon 可以显示 Windows 组件的名称，以及分配每个池标记的常用驱动程序的名称。 此功能使用 pooltag.txt 中的数据、使用 PoolMon 安装的文件以及用于 Windows 包的调试工具。
 

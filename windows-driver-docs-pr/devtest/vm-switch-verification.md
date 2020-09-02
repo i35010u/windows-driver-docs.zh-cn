@@ -1,55 +1,49 @@
 ---
 title: VM 交换机验证
-description: VM 交换机验证选项可监视筛选器驱动程序 （可扩展交换机扩展），HYPER-V 可扩展交换机在中运行。 使用此选项以捕获错误发生在发送或接收可扩展交换机中的操作。
+description: VM 交换机验证选项监视在 Hyper-v 可扩展交换机内运行)  (可扩展交换机扩展的筛选器驱动程序。 使用此选项可以捕获在可扩展交换机内的 send 或 receive 操作中发生的错误。
 ms.assetid: 629C0C70-D6C6-4977-A36B-6BD6EEC14FE8
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cc4e109ef2cc85619259c4ff02f0c7073a45e4c7
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 96a72932fbda062486ad20f6c281e56d4e1b75fc
+ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67381786"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89381755"
 ---
 # <a name="vm-switch-verification"></a>VM 交换机验证
 
 
-VM 交换机验证选项可监视筛选器驱动程序 (*可扩展交换机扩展*) 内运行[HYPER-V 可扩展交换机](https://docs.microsoft.com/windows-hardware/drivers/network/hyper-v-extensible-switch)。 使用此选项以捕获错误发生在发送或接收可扩展交换机中的操作。
+VM 交换机验证选项监视在[Hyper-v 可扩展交换机](../network/hyper-v-extensible-switch.md)内运行)  (*可扩展交换机扩展*的筛选器驱动程序。 使用此选项可以捕获在可扩展交换机内的 send 或 receive 操作中发生的错误。
 
-**请注意**  此选项是从 Windows 8.1 开始提供。
+**注意**   此选项可从 Windows 8.1 开始使用。
 
  
 
-驱动程序验证程序时此选项处于活动状态，将发出[ **Bug 检查 0xC4** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc4--driver-verifier-detected-violation) (驱动程序\_VERIFIER\_检测到\_冲突) 如果可扩展交换机扩展无法正确调用处理程序函数的 HYPER-V 可扩展交换机。
+如果此选项处于活动状态，则驱动程序验证程序将发出 [**Bug 检查 0xC4**](../debugger/bug-check-0xc4--driver-verifier-detected-violation.md) (驱动程序 \_ 验证程序 \_ 检测到 \_ 冲突) 如果可扩展交换机扩展无法正确地调用 hyper-v 可扩展交换机处理程序函数。
 
-## <a name="span-idactivatingthisoptionspanspan-idactivatingthisoptionspanspan-idactivatingthisoptionspanactivating-this-option"></a><span id="Activating_this_option"></span><span id="activating_this_option"></span><span id="ACTIVATING_THIS_OPTION"></span>激活此选项
+## <a name="span-idactivating_this_optionspanspan-idactivating_this_optionspanspan-idactivating_this_optionspanactivating-this-option"></a><span id="Activating_this_option"></span><span id="activating_this_option"></span><span id="ACTIVATING_THIS_OPTION"></span>激活此选项
 
 
-可以使用驱动程序验证程序管理器或 Verifier.exe 命令行来激活一个或多个驱动程序的 VM 交换机验证功能。 有关详细信息，请参阅[选择 Driver Verifier 选项](selecting-driver-verifier-options.md)。 必须重新启动计算机以激活或停用电源框架延迟模糊选项。
+可以通过使用驱动程序验证器管理器或 Verifier.exe 命令行为一个或多个驱动程序激活 VM 交换机验证功能。 有关详细信息，请参阅 [选择驱动程序验证程序选项](selecting-driver-verifier-options.md)。 您必须重新启动计算机以激活或停用 Power Framework 延迟模糊化选项。
 
--   **在命令行**
+-   **在命令行中**
 
-    在命令行中，VM 交换机验证为由**verifier /flags 0x01000000** (位 24)。 若要激活电源框架延迟模糊，使用标志值为 0x01000000，或将 0x01000000 添加到标志值。 例如：
+    在命令行中，VM 交换机验证由 **verifier/flags 0x01000000** (位 24) 表示。 若要激活 Power Framework 延迟模糊功能，请使用0x01000000 的标志值或将0x01000000 添加到标志值。 例如：
 
     ```
     verifier /flags 0x01000000  /driver MyDriver.sys
     ```
 
-    在下一次启动后，该功能将处于活动状态。
+    此功能将在下一次启动后处于活动状态。
 
--   **使用驱动程序验证程序管理器**
+-   **使用驱动程序验证器管理器**
 
-    1.  启动驱动程序验证器管理器。 类型**Verifier**在命令提示符窗口中。
-    2.  选择**创建自定义设置 （适用于代码开发人员）** ，然后单击**下一步**。
-    3.  选择**从完整的列表中选择单个设置**。
-    4.  选择 （选中） **VM 交换机验证**。
+    1.  启动驱动程序验证器管理器。 在命令提示符窗口中键入 **Verifier** 。
+    2.  选择 " **为代码开发人员 (创建自定义设置") ** ，然后单击 " **下一步**"。
+    3.  选择 " **从完整列表中选择单个设置**"。
+    4.  选择 (检查) **VM 交换机验证**。
     5.  重新启动计算机。
 
  
-
- 
-
-
-
-
 

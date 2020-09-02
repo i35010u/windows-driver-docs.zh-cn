@@ -11,12 +11,12 @@ keywords:
 - 压力测试 WDK 驱动程序验证程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5ccda2142881bbc725731fdb8a5757fc877bd5d0
-ms.sourcegitcommit: 9e5a99dc75dfee3caa9a242adc0ed22ae4df9f29
+ms.openlocfilehash: 42b6ac5a9fc0b196a1086f59446f1e038bbc192a
+ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89043117"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89382783"
 ---
 # <a name="driver-verifier"></a>驱动程序验证程序
 
@@ -44,12 +44,12 @@ ms.locfileid: "89043117"
 
 -   用于故障排除和调试测试失败和计算机崩溃。
 
--   若要在部署驱动程序时监视行为，以便使用 WDK、Visual Studio 和 [Windows 硬件实验室工具包](https://docs.microsoft.com/windows-hardware/test/hlk/) 中的测试 (windows HLK) 或 [Windows 硬件认证工具包](https://docs.microsoft.com/previous-versions/windows/hardware/hck/jj124227(v=vs.85)) (Windows 8.1) 。 有关测试驱动程序的详细信息，请参阅 [测试驱动程序](https://docs.microsoft.com/windows-hardware/drivers/develop/testing-a-driver)。
+-   若要在部署驱动程序时监视行为，以便使用 WDK、Visual Studio 和 [Windows 硬件实验室工具包](/windows-hardware/test/hlk/) 中的测试 (windows HLK) 或 [Windows 硬件认证工具包](/previous-versions/windows/hardware/hck/jj124227(v=vs.85)) (Windows 8.1) 。 有关测试驱动程序的详细信息，请参阅 [测试驱动程序](../develop/testing-a-driver.md)。
 
 
 ## <a name="how-to-start-driver-verifier"></a>如何启动驱动程序验证程序
 
-只应在测试计算机或要测试和调试的计算机上运行驱动程序验证程序。 若要充分利用驱动程序验证程序，你应该使用内核调试器并连接到测试计算机。 有关调试工具的详细信息，请参阅 [适用于 Windows 的调试工具 (WinDbg，KD，CDB，NTSD) ](https://docs.microsoft.com/windows-hardware/drivers/debugger/index)。
+只应在测试计算机或要测试和调试的计算机上运行驱动程序验证程序。 若要充分利用驱动程序验证程序，你应该使用内核调试器并连接到测试计算机。 有关调试工具的详细信息，请参阅 [适用于 Windows 的调试工具 (WinDbg，KD，CDB，NTSD) ](../debugger/index.md)。
 
 1. 通过选择 "以**管理员身份运行**" 启动**命令提示符**窗口，然后键入**Verifier**以打开**驱动程序验证器管理器**。
 
@@ -112,7 +112,7 @@ ms.locfileid: "89043117"
 
 ## <a name="how-to-control-driver-verifier"></a>如何控制驱动程序验证程序
 
-您可以使用驱动程序验证器管理器或命令行来控制驱动程序验证程序。 若要启动驱动程序验证程序管理器，请参阅本主题前面的 [如何启动驱动程序验证程序](https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier#how-to-start-driver-verifier)。
+您可以使用驱动程序验证器管理器或命令行来控制驱动程序验证程序。 若要启动驱动程序验证程序管理器，请参阅本主题前面的 [如何启动驱动程序验证程序](#how-to-start-driver-verifier)。
 
 对于以下每项操作，可以使用驱动程序验证器管理器或输入命令行。
 
@@ -121,7 +121,7 @@ ms.locfileid: "89043117"
 
 1. 在 **驱动程序验证器管理器**中，选择 " **删除现有设置**"，然后选择 " **完成**"。
 
-    or
+    或
 
     在命令提示符处输入以下命令：
 
@@ -136,7 +136,7 @@ ms.locfileid: "89043117"
 
 - 在 "**驱动程序验证程序管理器**" 中 **，选择** **"显示有关当前已验证的驱动程序的信息**"， 继续选择 " **下一步** " 将显示其他信息。
 
-  or
+  或
 
   在命令提示符处输入以下命令：
 
@@ -149,7 +149,7 @@ ms.locfileid: "89043117"
 
 - 在 **驱动程序验证器管理器**中，选择 " **显示现有设置**"，然后选择 " **下一步**"
 
-  or
+  或
 
   在命令提示符处输入以下命令：
 
@@ -160,22 +160,22 @@ ms.locfileid: "89043117"
 
 ## <a name="how-to-debug-driver-verifier-violations"></a>如何调试驱动程序验证程序冲突
 
-若要充分利用驱动程序验证程序，你应该使用内核调试器并将其连接到测试计算机。 有关适用于 Windows 的调试工具的概述，请参阅 [适用于 windows 的调试工具 (WinDbg，KD，CDB，NTSD) ](https://docs.microsoft.com/windows-hardware/drivers/debugger/index)。
+若要充分利用驱动程序验证程序，你应该使用内核调试器并将其连接到测试计算机。 有关适用于 Windows 的调试工具的概述，请参阅 [适用于 windows 的调试工具 (WinDbg，KD，CDB，NTSD) ](../debugger/index.md)。
 
 如果驱动程序验证程序检测到冲突，则会生成 bug 检查来停止计算机。 这是为了提供用于调试问题的最大信息。 如果已将内核调试器连接到运行驱动程序验证程序的测试计算机，并且 Driver Verifier 检测到冲突，则 Windows 将中断调试器并显示错误的简短说明。
 
 驱动程序验证程序检测到的所有冲突都将导致 bug 检查。 常见的 bug 检查代码包括：
 
--   [**Bug 检查0xC1：特殊 \_ 池 \_ 检测到 \_ 内存 \_ 损坏**](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc1--special-pool-detected-memory-corruption)
--   [**Bug 检查0xC4：驱动程序 \_ 验证程序 \_ 检测到 \_ 冲突**](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc4--driver-verifier-detected-violation)
--   [**Bug 检查0xC6：驱动程序已 \_ 捕获 \_ 修改已释放的 \_ \_ 池**](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc6--driver-caught-modifying-freed-pool)
--   [**Bug 检查0xC9：驱动程序 \_ 验证程序 \_ IOMANAGER \_ 冲突**](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc9--driver-verifier-iomanager-violation)
--   [**Bug 检查0xD6：在 \_ \_ \_ \_ \_ \_ 分配结束后出现驱动程序页错误**](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xd6--driver-page-fault-beyond-end-of-allocation)
--   [**Bug 检查0xE6：驱动程序 \_ 验证程序 \_ DMA \_ 冲突**](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xe6--driver-verifier-dma-violation)
+-   [**Bug 检查0xC1：特殊 \_ 池 \_ 检测到 \_ 内存 \_ 损坏**](../debugger/bug-check-0xc1--special-pool-detected-memory-corruption.md)
+-   [**Bug 检查0xC4：驱动程序 \_ 验证程序 \_ 检测到 \_ 冲突**](../debugger/bug-check-0xc4--driver-verifier-detected-violation.md)
+-   [**Bug 检查0xC6：驱动程序已 \_ 捕获 \_ 修改已释放的 \_ \_ 池**](../debugger/bug-check-0xc6--driver-caught-modifying-freed-pool.md)
+-   [**Bug 检查0xC9：驱动程序 \_ 验证程序 \_ IOMANAGER \_ 冲突**](../debugger/bug-check-0xc9--driver-verifier-iomanager-violation.md)
+-   [**Bug 检查0xD6：在 \_ \_ \_ \_ \_ \_ 分配结束后出现驱动程序页错误**](../debugger/bug-check-0xd6--driver-page-fault-beyond-end-of-allocation.md)
+-   [**Bug 检查0xE6：驱动程序 \_ 验证程序 \_ DMA \_ 冲突**](../debugger/bug-check-0xe6--driver-verifier-dma-violation.md)
 
-有关详细信息，请参阅 [在启用驱动程序验证程序时处理 Bug 检查](https://docs.microsoft.com/windows-hardware/drivers/debugger/handling-a-bug-check-when-driver-verifier-is-enabled)。 有关调试 Bug 检查0xC4 的提示，请参阅 [调试 Bug 检查0xC4：驱动程序 \_ 验证程序 \_ 检测到 \_ 冲突](debugging-bug-check-0xc4--driver-verifier-detected-violation.md)。
+有关详细信息，请参阅 [在启用驱动程序验证程序时处理 Bug 检查](../debugger/handling-a-bug-check-when-driver-verifier-is-enabled.md)。 有关调试 Bug 检查0xC4 的提示，请参阅 [调试 Bug 检查0xC4：驱动程序 \_ 验证程序 \_ 检测到 \_ 冲突](debugging-bug-check-0xc4--driver-verifier-detected-violation.md)。
 
-当你启动新的调试会话时，请使用调试器扩展命令 " [**！分析**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-analyze)"。 在内核模式下，" **！分析** " 命令显示有关最新 bug 检查的信息。 若要显示*其他*信息，以帮助识别出错的驱动程序，请在**kd>** 提示符下向命令添加选项**v** ：
+当你启动新的调试会话时，请使用调试器扩展命令 " [**！分析**](../debugger/-analyze.md)"。 在内核模式下，" **！分析** " 命令显示有关最新 bug 检查的信息。 若要显示*其他*信息，以帮助识别出错的驱动程序，请在**kd>** 提示符下向命令添加选项**v** ：
 
 ```dbgcmd
 kd> !analyze -v
@@ -183,25 +183,25 @@ kd> !analyze -v
 
 除了 **！分析**以外，还可以在 **kd>** 提示符下输入以下调试器扩展，以查看特定于驱动程序验证程序的信息：
 
--   [**！ verifier**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-verifier) 转储捕获的驱动程序验证程序统计信息。 使用 **！ verifier-？** 显示所有可用选项。
+-   [**！ verifier**](../debugger/-verifier.md) 转储捕获的驱动程序验证程序统计信息。 使用 **！ verifier-？** 显示所有可用选项。
 
     ```dbgcmd
     kd> !verifier
     ```
 
--   [**！死锁**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-deadlock) 显示了驱动程序验证程序的死锁检测功能跟踪的锁定或对象的相关信息。 使用 **！死锁-？** 显示所有可用选项。
+-   [**！死锁**](../debugger/-deadlock.md) 显示了驱动程序验证程序的死锁检测功能跟踪的锁定或对象的相关信息。 使用 **！死锁-？** 显示所有可用选项。
 
     ```dbgcmd
     kd> !deadlock
     ```
 
--   [**！ iovirp**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-iovirp) \[*地址* \]显示与由 i/o 验证程序跟踪的 IRP 相关的信息。 例如：
+-   [**！ iovirp**](../debugger/-iovirp.md) \[*地址* \]显示与由 i/o 验证程序跟踪的 IRP 相关的信息。 例如：
 
     ```dbgcmd
     kd> !iovirp 947cef68
     ```
 
--   [**！ ruleinfo**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-ruleinfo) \[*RuleID* \]显示与违反的[DDI 相容性检查](ddi-compliance-checking.md)规则相关的信息。  (*RuleID* 始终是 bug 检查的第一个参数。 ) DDI 相容性检查中的所有规则 id 的形式为 0x200*nn*。 例如：
+-   [**！ ruleinfo**](../debugger/-ruleinfo.md) \[*RuleID* \]显示与违反的[DDI 相容性检查](ddi-compliance-checking.md)规则相关的信息。  (*RuleID* 始终是 bug 检查的第一个参数。 ) DDI 相容性检查中的所有规则 id 的形式为 0x200*nn*。 例如：
 
     ```dbgcmd
     kd> !ruleinfo 0x20005

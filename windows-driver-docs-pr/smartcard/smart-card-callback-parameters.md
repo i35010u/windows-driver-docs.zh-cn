@@ -8,12 +8,12 @@ keywords:
 - 供应商提供的驱动程序 WDK 智能卡，IOCTL 请求管理
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 102a2bb5f963451bacd44312af7c38cb0dddcb17
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: e9c5a6b164174379317b5a80ba1a75f605017d30
+ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72842615"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89381351"
 ---
 # <a name="smart-card-callback-parameters"></a>智能卡回调参数
 
@@ -21,7 +21,7 @@ ms.locfileid: "72842615"
 ## <span id="_ntovr_smart_card_callback_parameters"></span><span id="_NTOVR_SMART_CARD_CALLBACK_PARAMETERS"></span>
 
 
-对于除了 Ioctl\_的所有 IOCTL 请求，[**智能卡\_\_不**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff548905(v=vs.85))存在并且[**IOCTL\_智能卡\_存在**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff548906(v=vs.85))， [**SmartcardDeviceControl （WDM）** ](https://docs.microsoft.com/previous-versions/ff548939(v=vs.85))初始化**IoRequest**成员[**智能卡\_扩展**](https://docs.microsoft.com/windows-hardware/drivers/ddi/smclib/ns-smclib-_smartcard_extension)结构的，然后再调用回调例程。 下表指明了**SmartcardDeviceControl**执行的初始化的种类。
+对于除[** \_ \_ \_ 缺少 ioctl 智能卡**](/previous-versions/windows/hardware/drivers/ff548905(v=vs.85))之外的所有 ioctl 请求和[**IOCTL \_ 智能卡 \_ \_ **](/previous-versions/windows/hardware/drivers/ff548906(v=vs.85))， [**SmartcardDeviceControl (WDM) **](/previous-versions/ff548939(v=vs.85))在调用回调例程之前初始化[**智能卡 \_ 扩展**](/windows-hardware/drivers/ddi/smclib/ns-smclib-_smartcard_extension)结构的**IoRequest**成员。 下表指明了 **SmartcardDeviceControl** 执行的初始化的种类。
 
 <table>
 <colgroup>
@@ -61,14 +61,14 @@ ms.locfileid: "72842615"
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>MinorIoControlCode</strong></p></td>
-<td align="left"><p>在此成员中存储 IOCTL 请求的次要 i/o 控制代码（如果有）。</p></td>
+<td align="left"><p>如果此成员中的 IOCTL 请求的任何) ，则存储次 i/o 控制代码 (。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-按下表所述设置**SmartcardExtension-&gt;OsData**指向的结构。
+按下表所述设置 **SmartcardExtension- &gt; OsData** 指向的结构。
 
 <table>
 <colgroup>
@@ -78,17 +78,17 @@ ms.locfileid: "72842615"
 <thead>
 <tr class="header">
 <th align="left">成员</th>
-<th align="left">描述</th>
+<th align="left">说明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left"><p><strong>CurrentIrp</strong></p></td>
-<td align="left"><p>接收一个指针，该指针指向每个控制请求（ <a href="https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff548905(v=vs.85)" data-raw-source="[&lt;strong&gt;IOCTL_SMARTCARD_IS_ABSENT&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff548905(v=vs.85))"><strong>IOCTL_SMARTCARD_IS_ABSENT</strong></a>和<a href="https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff548906(v=vs.85)" data-raw-source="[&lt;strong&gt;IOCTL_SMARTCARD_IS_PRESENT&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff548906(v=vs.85))"><strong>IOCTL_SMARTCARD_IS_PRESENT</strong></a>除外）的请求 IRP。</p></td>
+<td align="left"><p>接收一个指针，该指针指向每个控制请求的请求 IRP （ <a href="https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff548905(v=vs.85)" data-raw-source="[&lt;strong&gt;IOCTL_SMARTCARD_IS_ABSENT&lt;/strong&gt;](/previous-versions/windows/hardware/drivers/ff548905(v=vs.85))"><strong>IOCTL_SMARTCARD_IS_ABSENT</strong></a> 和 <a href="https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff548906(v=vs.85)" data-raw-source="[&lt;strong&gt;IOCTL_SMARTCARD_IS_PRESENT&lt;/strong&gt;](/previous-versions/windows/hardware/drivers/ff548906(v=vs.85))"><strong>IOCTL_SMARTCARD_IS_PRESENT</strong></a>除外）。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>NotificationIrp</strong></p></td>
-<td align="left"><p>接收指向 IOCTL_SMARTCARD_IS_ABSENT 或 IOCTL_SMARTCARD_IS_PRESENT 控制请求的请求 IRP 的指针。</p></td>
+<td align="left"><p>接收一个指针，该指针指向 IOCTL_SMARTCARD_IS_ABSENT 的请求 IRP 或 IOCTL_SMARTCARD_IS_PRESENT 控制请求。</p></td>
 </tr>
 </tbody>
 </table>
@@ -96,10 +96,4 @@ ms.locfileid: "72842615"
  
 
  
-
- 
-
-
-
-
 

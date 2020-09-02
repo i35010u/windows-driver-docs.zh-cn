@@ -12,16 +12,16 @@ api_type:
 - NA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 319e1f8a9e623a0517bccdb2f8520770fb5fbe5e
-ms.sourcegitcommit: 67efcd26f7be8f50c92b141ccd14c9c68f4412d8
+ms.openlocfilehash: 5c6cf86c7cd1e0165853b9bb8de0e86de3128ed3
+ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88902613"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89381393"
 ---
 # <a name="signtool"></a>SignTool
 
-SignTool ( # A0) 是一个命令行 [CryptoAPI](https://docs.microsoft.com/windows/win32/seccrypto/cryptography-portal) 工具，用于对文件进行数字签名，验证文件中的签名和时间戳文件。
+SignTool ( # A0) 是一个命令行 [CryptoAPI](/windows/win32/seccrypto/cryptography-portal) 工具，用于对文件进行数字签名，验证文件中的签名和时间戳文件。
 
 ```command
     SignTool [Operation] [Options] [FileName ...]
@@ -29,7 +29,7 @@ SignTool ( # A0) 是一个命令行 [CryptoAPI](https://docs.microsoft.com/windo
 
 ## <a name="partial-list-of-operations-options-and-arguments"></a>操作、选项和参数的部分列表
 
-### <a name="operations"></a>Operations
+### <a name="operations"></a>操作
 
 **catdb**  
 配置 SignTool 以更新目录数据库。 SignTool 可以将目录文件添加到数据库中，也可以从数据库中删除目录。 默认情况下， **catdb** 命令会将文件（其名称由 *FileName* 参数指定）添加到系统组件 (驱动程序) 数据库。
@@ -190,10 +190,10 @@ SignTool ( # A0) 是一个命令行 [CryptoAPI](https://docs.microsoft.com/windo
 指定在目录中搜索文件时要使用的可选哈希算法。
 
 **/kp**  
-配置 SignTool 以验证 *FileName* 参数指定的每个文件的数字签名是否符合 [内核模式代码签名策略](https://docs.microsoft.com/windows-hardware/drivers/install/kernel-mode-code-signing-policy--windows-vista-and-later-) 和 windows Vista 和更高版本的 windows Vista 的 [PnP 设备安装签名要求](https://docs.microsoft.com/windows-hardware/drivers/install/pnp-device-installation-signing-requirements--windows-vista-and-later-) 。 如果未指定此选项，则 SignTool 仅验证签名是否符合 PnP 设备安装签名要求。
+配置 SignTool 以验证 *FileName* 参数指定的每个文件的数字签名是否符合 [内核模式代码签名策略](../install/kernel-mode-code-signing-policy--windows-vista-and-later-.md) 和 windows Vista 和更高版本的 windows Vista 的 [PnP 设备安装签名要求](../install/pnp-device-installation-signing-requirements--windows-vista-and-later-.md) 。 如果未指定此选项，则 SignTool 仅验证签名是否符合 PnP 设备安装签名要求。
 
 **/ms**  
-使用多个验证语义。 这是 Windows 8 及更高版本上的 [**WinVerifyTrust 函数**](https://docs.microsoft.com/windows/desktop/api/wintrust/nf-wintrust-winverifytrust) 调用的默认行为。
+使用多个验证语义。 这是 Windows 8 及更高版本上的 [**WinVerifyTrust 函数**](/windows/desktop/api/wintrust/nf-wintrust-winverifytrust) 调用的默认行为。
 
 **/O** *版本*  
 按操作系统版本验证文件。 *版本*参数的格式为*PlatformID： VerMajor. VerMinor. BuildNumber*
@@ -204,7 +204,7 @@ SignTool ( # A0) 是一个命令行 [CryptoAPI](https://docs.microsoft.com/windo
 验证 PKCS \# 7 文件。 无现有策略用于 PKCS \# 7 验证。 该签名处于选中状态，并为签名证书生成了链。
 
 **/pa**  
-配置 SignTool，以验证 *FileName* 参数指定的每个文件的数字签名是否符合 [PnP 设备安装签名要求](https://docs.microsoft.com/windows-hardware/drivers/install/pnp-device-installation-signing-requirements--windows-vista-and-later-)。
+配置 SignTool，以验证 *FileName* 参数指定的每个文件的数字签名是否符合 [PnP 设备安装签名要求](../install/pnp-device-installation-signing-requirements--windows-vista-and-later-.md)。
 
 >[!NOTE]
 >此选项不能与 **catdb** 选项一起使用。
@@ -237,23 +237,23 @@ SignTool ( # A0) 是一个命令行 [CryptoAPI](https://docs.microsoft.com/windo
 *FileName .。。*  
 指定一个或多个文件名的列表。 根据命令，SignTool 将对指定的文件进行签名、时间戳或验证。 如果使用 **catdb** 命令，SignTool 将在目录数据库中添加或删除指定的文件。
 
-对于 **sign**、 **timestamp**和 **verify** 命令，文件可以是 [驱动程序包](https://docs.microsoft.com/windows-hardware/drivers/install/driver-packages) 或驱动程序文件的目录文件。
+对于 **sign**、 **timestamp**和 **verify** 命令，文件可以是 [驱动程序包](../install/driver-packages.md) 或驱动程序文件的目录文件。
 
-对于 **catdb** 命令，文件必须是 [驱动程序包](https://docs.microsoft.com/windows-hardware/drivers/install/driver-packages)的编录文件。
+对于 **catdb** 命令，文件必须是 [驱动程序包](../install/driver-packages.md)的编录文件。
 
-## <a name="remarks"></a>注解
+## <a name="remarks"></a>备注
 
 SignTool 支持大量选项。 本主题中所述的选项仅限于可用于对驱动程序包或驱动程序文件进行签名或验证的选项。
 
-有关 SignTool 参数的完整列表，请参阅 Microsoft [SignTool](https://docs.microsoft.com/windows/win32/seccrypto/signtool) 网站。
+有关 SignTool 参数的完整列表，请参阅 Microsoft [SignTool](/windows/win32/seccrypto/signtool) 网站。
 
-有关签名文件的详细信息，请参阅 Microsoft [加密工具](https://docs.microsoft.com/windows/win32/seccrypto/cryptography-tools) 网站。
+有关签名文件的详细信息，请参阅 Microsoft [加密工具](/windows/win32/seccrypto/cryptography-tools) 网站。
 
 SignTool 的32位版本位于 WDK 的 "bin" \\ 文件夹中。 此工具的64位版本位于 WDK 的 bin \\ 和 bin \\ ia64 文件夹中。
 
 ## <a name="examples"></a>示例
 
-下面的示例演示如何使用软件发行者证书 (SPC) 和相应的交叉证书对 [驱动程序包的](https://docs.microsoft.com/windows-hardware/drivers/install/driver-packages) 目录文件进行签名。 此示例适用于对64位版本的 Windows Vista 和更高版本的 Windows 的驱动程序包进行签名，这将强制实施内核模式代码签名策略。 该示例对驱动程序包的目录文件 AbcCatFileName.cat 进行签名。 若要对编录文件进行签名，该示例使用了交叉证书 AbcCrossCertificate 和 AbcSPCCertificate 证书。 AbcSPCCertificate 证书位于 AbcCertificateStore 证书存储区中。
+下面的示例演示如何使用软件发行者证书 (SPC) 和相应的交叉证书对 [驱动程序包的](../install/driver-packages.md) 目录文件进行签名。 此示例适用于对64位版本的 Windows Vista 和更高版本的 Windows 的驱动程序包进行签名，这将强制实施内核模式代码签名策略。 该示例对驱动程序包的目录文件 AbcCatFileName.cat 进行签名。 若要对编录文件进行签名，该示例使用了交叉证书 AbcCrossCertificate 和 AbcSPCCertificate 证书。 AbcSPCCertificate 证书位于 AbcCertificateStore 证书存储区中。
 
 该示例还使用公开提供的时间戳服务器对目录文件进行签名。 时间戳服务器由 DigiCert 提供，其 URL 为 `http://timestamp.digicert.com` 。
 
@@ -267,7 +267,7 @@ SignTool sign /ac AbcCrossCertificate.cer /s AbcCertificateStore /n AbcSPCCertif
 SignTool sign /ac AbcCrossCertificate.cer /s AbcCertificateStore /n AbcSPCCertificate /t http://timestamp.digicert.com AbcDriverFile.sys
 ```
 
-下面的示例演示如何使用[商业发布证书](https://docs.microsoft.com/windows-hardware/drivers/install/commercial-release-certificate)或[商业测试证书](https://docs.microsoft.com/windows-hardware/drivers/install/commercial-test-certificate)对[驱动程序包的](https://docs.microsoft.com/windows-hardware/drivers/install/driver-packages)目录文件进行签名。 此示例适用于对32位版本的 Windows Vista 和更高版本的 Windows 的驱动程序包进行签名，这不会强制实施内核模式代码签名策略。 该示例对驱动程序包的目录文件 CatalogFileName.cat 进行签名。 该示例使用位于 TestCertificateStore 证书存储区中的 AbcTestCertificate 测试证书对编录文件进行签名。
+下面的示例演示如何使用[商业发布证书](../install/commercial-release-certificate.md)或[商业测试证书](../install/commercial-test-certificate.md)对[驱动程序包的](../install/driver-packages.md)目录文件进行签名。 此示例适用于对32位版本的 Windows Vista 和更高版本的 Windows 的驱动程序包进行签名，这不会强制实施内核模式代码签名策略。 该示例对驱动程序包的目录文件 CatalogFileName.cat 进行签名。 该示例使用位于 TestCertificateStore 证书存储区中的 AbcTestCertificate 测试证书对编录文件进行签名。
 
 该示例还使用公开提供的时间戳服务器对目录文件进行签名。 时间戳服务器由 DigiCert 提供，其 URL 为 `http://timestamp.digicert.com` 。
 
@@ -277,7 +277,7 @@ SignTool sign /s TestCertificateStore /n AbcTestCertificate /t http://timestamp.
 
 ### <a name="verifying-examples"></a>验证示例
 
-下面的示例演示如何验证 [驱动程序包](https://docs.microsoft.com/windows-hardware/drivers/install/driver-packages) 的目录文件的签名是否符合内核模式代码签名策略和 PnP 设备安装签名要求。 该示例将验证目录文件 AbcCatalogFile.cat 的签名。
+下面的示例演示如何验证 [驱动程序包](../install/driver-packages.md) 的目录文件的签名是否符合内核模式代码签名策略和 PnP 设备安装签名要求。 该示例将验证目录文件 AbcCatalogFile.cat 的签名。
 
 ```command
 SignTool verify /kp CatalogFileName.cat
@@ -295,7 +295,7 @@ SignTool verify /kp /c CatalogFileName.cat AbcDriverPackage.inf
 SignTool verify /kp AbcDriverFile.sys
 ```
 
-下面的示例演示如何验证 [驱动程序包](https://docs.microsoft.com/windows-hardware/drivers/install/driver-packages) 的目录文件的签名是否符合 PnP 设备安装签名要求。 该示例将验证目录文件 CatalogFileName.cat 的签名。
+下面的示例演示如何验证 [驱动程序包](../install/driver-packages.md) 的目录文件的签名是否符合 PnP 设备安装签名要求。 该示例将验证目录文件 CatalogFileName.cat 的签名。
 
 ```command
 SignTool verify /pa CatalogFileName.cat

@@ -1,64 +1,64 @@
 ---
 title: Windows 7 中的 IEEE 1394 总线驱动程序
-description: Windows 7 包括 1394ohci.sys，新的 IEEE 1394 总线驱动程序支持更快的速度和备选媒体 IEEE 1394b 规范中定义。
+description: Windows 7 包括 1394ohci.sys，这是一种新的 IEEE 1394 总线驱动程序，它支持以 IEEE-1394b 规范中定义的速度更快、更备用的媒体。
 ms.assetid: 3744C1D5-E411-4E47-9154-40E15626250D
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e0be9334833e1f4b8644e5b67a15c135c30eed56
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 158507c488b4319d317d7932fe8d8801109b7c1f
+ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67385776"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89382231"
 ---
 # <a name="ieee-1394-bus-driver-in-windows-7"></a>Windows 7 中的 IEEE 1394 总线驱动程序
 
-Windows 7 包括 1394ohci.sys，新的 IEEE 1394 总线驱动程序支持更快的速度和备选媒体 IEEE 1394b 规范中定义。 1394ohci.sys 总线驱动程序是一个单一 （整体式） 的设备驱动程序，通过使用内核模式驱动程序框架 (KMDF) 实现。 旧的 1394年总线驱动程序 （在早期版本的 Windows 中可用） 包括端口/微型端口配置中使用 Windows 驱动程序模型 (WDM) 实现的多个设备驱动程序。 1394ohci.sys 总线驱动程序将替换旧端口驱动程序、 1394bus.sys，主要的微型端口驱动程序、 ochi1394.sys。
+Windows 7 包括 1394ohci.sys，这是一种新的 IEEE 1394 总线驱动程序，它支持以 IEEE-1394b 规范中定义的速度更快、更备用的媒体。 1394ohci.sys 总线驱动程序是单个 (单一) 设备驱动程序，通过使用内核模式驱动程序框架 (KMDF) 实现。 旧版1394总线驱动程序 (适用于 Windows 的早期版本) 包含多个设备驱动程序，这些驱动程序是使用 Windows 驱动模型 (WDM) 在端口/微型端口配置中实现的。 1394ohci.sys 总线驱动程序会替换旧的端口驱动程序、1394bus.sys 和主要微型端口驱动程序，ochi1394.sys。
 
-新 1394ohci.sys 总线驱动程序是使用旧式总线驱动程序完全向后的兼容。 本主题介绍了一些新的和旧的 1394年总线驱动程序之间的已知行为差异。
+新的 1394ohci.sys 总线驱动程序完全向后兼容旧的总线驱动程序。 本主题介绍新的和旧的1394总线驱动程序之间的一些已知行为差异。
 
 > [!NOTE]
-> 1394ohci.sys 驱动程序是在 Windows 中包含的系统驱动程序。 在安装 1394年控制器时，它会自动加载。 这不是一个可再发行组件的驱动程序，则可以单独下载。
+> 1394ohci.sys 驱动程序是 Windows 中包含的系统驱动程序。 当你安装1394控制器时，它会自动加载。 这不是可再发行的驱动程序，可单独下载。
 
-* [I/O 请求完成](#io-request-completion)
+* [I/o 请求完成](#io-request-completion)
 * [配置 ROM 检索](#configuration-rom-retrieval)
-* [IEEE 1394 1995 PHY 支持](#ieee-1394-1995-phy-support)
-* [节点\_设备\_扩展结构用法](#node_device_extension-structure-usage)
-* [间隙计数优化](#gap-count-optimization)
+* [IEEE-1394-1995 PHY 支持](#ieee-1394-1995-phy-support)
+* [节点 \_ 设备 \_ 扩展结构使用情况](#node_device_extension-structure-usage)
+* [差距计数优化](#gap-count-optimization)
 * [设备驱动程序接口 (DDI) 更改](#device-driver-interface-ddi-changes)
 * [相关主题](#related-topics)
 
-## <a name="io-request-completion"></a>I/O 请求完成
+## <a name="io-request-completion"></a>I/o 请求完成
 
-发送到新的 1394年总线驱动程序的所有 I/O 请求都返回状态\_PENDING 由于 1394ohci.sys 总线驱动程序实现而不是 WDM 使用 KMDF。 此行为不同于旧的 1394年总线驱动程序，在特定的 I/O 请求立即完成。
+发送到新1394总线驱动程序的所有 i/o 请求都将返回状态 \_ "挂起"，因为 1394ohci.sys 总线驱动程序是通过使用 KMDF 而不是使用 WDM 实现的。 此行为不同于旧1394总线驱动程序的行为，在这种情况下，某些 i/o 请求会立即完成。
 
-客户端驱动程序必须等待，直到 I/O 请求发送到新的 1394年总线驱动程序都已完成。 您可以在请求完成后调用的 I/O 完成例程。 已完成的 I/O 请求的状态处于 IRP。
+客户端驱动程序必须等待，直到发送到新1394总线驱动程序的 i/o 请求已完成。 你可以提供一个在请求完成后调用的 i/o 完成例程。 已完成的 i/o 请求的状态位于 IRP 中。
 
 ## <a name="configuration-rom-retrieval"></a>配置 ROM 检索
 
-新的 1394年总线驱动程序将尝试使用异步块事务总线速度更快地检索内容节点的配置 rom。 旧的 1394年总线驱动程序使用异步 quadlet 读取 S100 速度 — 或 100 兆位 / 秒 (Mbps)。 1394ohci.sys 总线驱动程序还在使用中指定值**代**和**max\_rom**的节点的配置 ROM 标头以提高检索的剩余条目配置 rom。 内容 有关新的 1394年总线驱动程序如何检索节点的配置 ROM 中的内容的详细信息，请参阅[检索的 IEEE 1394 节点的配置 ROM 内容](https://docs.microsoft.com/windows-hardware/drivers/ieee/retrieving-the-contents-of-a-ieee-1394-node-s-configuration-rom)。
+新的1394总线驱动程序尝试使用更快的总线速度来检索节点配置 ROM 的内容。 旧1394总线驱动程序使用异步 quadlet 读取速度为 S100 速度，即每秒100兆位 (Mbps) 。 1394ohci.sys 总线驱动程序还使用节点配置 ROM 标头的 " **生成** " 和 " **最大 \_ rom** " 条目中指定的值来改善配置 rom 的其余内容的检索。 有关新1394总线驱动程序如何检索节点配置 ROM 内容的详细信息，请参阅 [检索 IEEE 1394 节点的配置 rom 的内容](./retrieving-the-contents-of-a-ieee-1394-node-s-configuration-rom.md)。
 
-## <a name="ieee-1394-1995-phy-support"></a>IEEE 1394 1995 PHY 支持
+## <a name="ieee-1394-1995-phy-support"></a>IEEE-1394-1995 PHY 支持
 
-1394ohci.sys 总线驱动程序需要支持 IEEE 1394a 或 IEEE 1394b 物理层 （物理）。 它不支持支持 IEEE 1394 1995年 PHY。 这是由于短 （仲裁） 总线重置 1394ohci.sys 总线驱动程序的独占使用。
+1394ohci.sys 总线驱动程序需要支持 IEEE-1394a 或 IEEE-1394b 的物理层 (PHY) 。 它不支持支持 IEEE-1394-1995 的 PHY。 此要求的原因是 1394ohci.sys 总线驱动程序独占使用较短的 (仲裁) 总线重置。
 
-## <a name="node_device_extension-structure-usage"></a>节点\_设备\_扩展结构用法
+## <a name="node_device_extension-structure-usage"></a>节点 \_ 设备 \_ 扩展结构使用情况
 
-客户端驱动程序可以引用客户端驱动程序控制的设备与物理设备对象 (PDO) 相关联的 1394年总线驱动程序中的设备扩展。 描述此设备扩展**节点\_设备\_扩展**结构。 在 1394ohci.sys，此结构保持在相同的位置，如下所示的旧的 1394年总线驱动程序，但非静态成员的结构可能不是有效。 当客户端驱动程序使用新的 1394年总线驱动程序时，它们必须确保在访问数据**节点\_设备\_扩展**有效。 静态成员**节点\_设备\_扩展**包含有效的数据是**标记**， **DeviceObject**，和**PortDeviceObject**。 所有其他成员**节点\_设备\_扩展**是非静态，客户端驱动程序不能引用。
+客户端驱动程序可以引用与客户端驱动程序所控制设备 (PDO) 相关联的1394总线驱动程序中的设备扩展。 此设备扩展由 **节点 \_ 设备 \_ 扩展** 结构描述。 在 1394ohci.sys 中，此结构保持在与旧版1394总线驱动程序相同的位置，但结构的非静态成员可能无效。 当客户端驱动程序使用新的1394总线驱动程序时，必须确保 **节点 \_ 设备 \_ 扩展** 中的访问数据有效。 包含有效数据的 **节点 \_ 设备 \_ 扩展** 的静态成员为 **Tag**、 **DeviceObject**和 **PortDeviceObject**。 所有其他成员 **节点 \_ 设备 \_ 扩展** 都是非静态的，客户端驱动程序不得引用此扩展。
 
-## <a name="gap-count-optimization"></a>间隙计数优化
+## <a name="gap-count-optimization"></a>差距计数优化
 
-1394ohci.sys 总线驱动程序的默认行为是仅 IEEE 1394a 设备找到 1394年总线，不包括本地节点上时优化间隔计数。 例如，如果运行 1394ohci.sys 系统有符合 IEEE 1394b 的主控制器，但在总线上的所有设备都符合 IEEE 1394a，然后尝试为新的 1394年总线驱动程序优化的间隔计数。
+1394ohci.sys 总线驱动程序的默认行为是在1394总线上仅找到 IEEE 1394a 设备（不包括本地节点）时优化间隙计数。 例如，如果运行 1394ohci.sys 的系统的主机控制器符合 IEEE 1394b，但总线上的所有设备都符合 IEEE 1394a，则新的1394总线驱动程序会尝试优化间隙计数。
 
-仅当 1394ohci.sys 总线驱动程序确定本地节点是总线管理器，会出现间隙计数优化。
+仅当 1394ohci.sys 总线驱动程序确定本地节点为总线管理器时，才会进行间隙计数优化。
 
-1394ohci.sys 总线驱动程序确定设备是否符合 IEEE 1394a 中节点的自助 id 数据包的速度设置。 如果速度 (sp) 中的节点集两个位自助 id 数据包，然后 1394ohci.sys 中的字段会认为节点符合 IEEE 1394b。 如果速度字段包含任何其他值，1394ohci.sys 会认为节点符合 IEEE 1394a。 使用的间隔计数值基于表 E-1 在 IEEE 1394a 规范中，为跃点的函数提供的间隔计数。 1394ohci.sys 总线驱动程序不会计算间隔计数。 可以使用注册表值来更改默认间隙计数行为。 有关详细信息，请参阅[修改 IEEE 1394 总线驱动程序的默认行为](https://docs.microsoft.com/windows-hardware/drivers/ieee/modifying-the-default-behavior-of-the-ieee-1394-bus-driver)。
+1394ohci.sys 总线驱动程序使用节点的自 id 数据包中的速度设置来确定设备是否符合 IEEE-1394a。 如果某个节点在自 id 数据包的速度 (sp) 字段中设置了这两个位，则 1394ohci.sys 会将节点视为符合1394b。 如果 "速度" 字段包含任何其他值，则 1394ohci.sys 会将节点视为符合 IEEE-1394a。 使用的 "间隙计数" 值基于 IEEE-1394a 规范中的表 E-1，它提供了一个跃点的功能。 1394ohci.sys 总线驱动程序不计算差距计数。 您可以通过使用注册表值来更改默认的间隙计数行为。 有关详细信息，请参阅 [修改 IEEE 1394 总线驱动程序的默认行为](./modifying-the-default-behavior-of-the-ieee-1394-bus-driver.md)。
 
 ## <a name="device-driver-interface-ddi-changes"></a>设备驱动程序接口 (DDI) 更改
 
-在 Windows 7 中，1394 DDIs 都已更改为支持 1394b 规范规定并改进了简化的 1394年客户端驱动程序开发更快的速度。 有关新的 1394年总线驱动程序支持的常规 DDI 更改的详细信息，请参阅[在 Windows 7 中的设备驱动程序接口 (DDI) 更改](https://docs.microsoft.com/windows-hardware/drivers/ieee/device-driver-interface--ddi--changes-in-windows-7)。
+在 Windows 7 中，1394 DDIs 已更改为支持1394b 规范定义的更快的速度，并经过改进，简化了1394客户端驱动程序的开发。 有关新的1394总线驱动程序支持的常规 DDI 更改的详细信息，请参阅 [Windows 7 中的设备驱动程序界面 (DDI) 更改](./device-driver-interface--ddi--changes-in-windows-7.md)。
 
 ## <a name="related-topics"></a>相关主题
 
-[IEEE 1394 驱动程序堆栈](https://docs.microsoft.com/windows-hardware/drivers/ieee/the-ieee-1394-driver-stack)  
-[检索 IEEE 1394 节点的配置 ROM 的内容](https://docs.microsoft.com/windows-hardware/drivers/ieee/retrieving-the-contents-of-a-ieee-1394-node-s-configuration-rom)  
+[IEEE 1394 驱动程序堆栈](./the-ieee-1394-driver-stack.md)  
+[检索 IEEE 1394 节点的配置 ROM 的内容](./retrieving-the-contents-of-a-ieee-1394-node-s-configuration-rom.md)

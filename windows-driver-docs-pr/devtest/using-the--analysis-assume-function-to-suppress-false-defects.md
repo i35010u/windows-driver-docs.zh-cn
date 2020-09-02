@@ -4,37 +4,37 @@ description: 使用 _analysis_assume 函数抑制误判缺陷
 ms.assetid: eb71a664-ada5-44e3-b75d-b1a7348b115f
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fff9be124fe8dbe0658d4a992733da01ab6d5ac7
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 777c38be0601f82bc1f8a1bb0eb1fd2dd12b4007
+ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67363776"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89381376"
 ---
-# <a name="using-the-analysisassume-function-to-suppress-false-defects"></a>使用\_分析\_假定禁止显示 False 缺陷函数
+# <a name="using-the-_analysis_assume-function-to-suppress-false-defects"></a>使用 \_ 分析 \_ 假设函数禁止显示错误
 
 
-您可以向 Static Driver Verifier (SDV) 提供的其他信息有关您的驱动程序源代码，以便在验证期间，可取消的 false 缺陷报告。 SDV 报告了明显的规则冲突，但该驱动程序正确操作的情况下，会出现 false 缺陷。
+可以向静态驱动程序验证程序 (SDV) 提供有关驱动程序源代码的其他信息，以便在验证期间可以禁止显示错误错误的报告。 当 SDV 报告明显的规则冲突，但在驱动程序正常工作的情况下，会出现错误。
 
-若要为 SDV 提供此附加信息，请使用 **\_ \_analysis\_假定**函数。 该函数具有以下语法：
+若要为 SDV 提供此附加信息，请使用** \_ \_ 分析 \_ 假定**函数。 函数具有以下语法：
 
 ```
 __analysis_assume( expression ) 
 ```
 
-其中*表达式*可以是任何表达式的计算结果为假定**true**。
+其中 *expression* 可以是计算结果为 **true**的任何表达式。
 
-SDV 时使用此函数，假设条件表示由*表达式*是**true**点位置 **\_ \_analysis\_假定**函数显示。 **\_ \_Analysis\_假定**函数只能使用由静态分析工具。 编译器将忽略该函数。
+使用此函数时，SDV 假定*表达式*表示的条件在** \_ \_ 分析 \_ 假设**函数显示的点处为**true** 。 ** \_ \_ 分析 \_ 假定**函数仅由静态分析工具使用。 编译器将忽略该函数。
 
-如果您使用 **\_ \_analysis\_假定**，这一点至关重要，您确信可以在进行的假设的有效性。 如果事实证明，您的假设**false**，现在或在将来，你无法将禁止显示，则返回 true 的缺陷。 我们建议你始终向您说明为什么要使用的代码添加注释 **\_ \_analysis\_假定**函数。 如果您不能编写假设的原因，不要禁止显示缺陷。
+如果你使用** \_ \_ 分析 \_ 假设**，则一定要确定你所做的假设有效性，这一点至关重要。 如果事实证明您假设是 **假**的，无论是现在还是将来，您都可能会禁止真正的缺陷。 建议你始终向代码添加注释，说明使用** \_ \_ 分析 \_ 假定**函数的原因。 如果无法编写假设的原因，请不要取消该缺陷。
 
-应将添加 **\_ \_analysis\_假定**函数根据需要您找到可以安全地的 false 缺陷时禁止显示。
+你应根据需要添加** \_ \_ 分析 \_ 假设**函数，只要你发现可以安全取消的错误。
 
 ### <a name="span-idexamplesspanspan-idexamplesspanexamples"></a><span id="examples"></span><span id="EXAMPLES"></span>示例
 
-在下面的代码示例，KMDF 规则[RequestCompletedLocal](https://docs.microsoft.com/windows-hardware/drivers/devtest/kmdf-requestcompletedlocal)报告缺陷。 这是误报缺陷，因为无法正确解释 SDV**切换**语句，因此不会进入分支完成请求。
+在下面的代码示例中，KMDF 规则 [RequestCompletedLocal](./kmdf-requestcompletedlocal.md) 报告了一个缺陷。 这是错误的缺陷，因为 SDV 无法正确解释 **switch** 语句，因此不会进入请求完成的分支。
 
-在此**切换**语句中，有六个可能的情况。 该驱动程序已经定义了六个 IOCTL 代码，因此，该驱动程序将绝对需要的一个分支。 如果采用的一个分支，该请求是成功完成。
+此 **switch** 语句中有六种可能的情况。 驱动程序定义了六条 IOCTL 代码，因此驱动程序将绝对采用其中一个分支。 如果执行了其中一个分支，则请求会成功完成。
 
 ```
 VOID
@@ -82,7 +82,7 @@ PortIOEvtIoDeviceControl(
 }
 ```
 
-若要安全地禁止显示误报缺陷，请使用 **\_ \_analysis\_假定**函数指定的*IoControlCode*保证是一个 Ioctl定义了该驱动程序。
+若要安全地取消误报，请使用** \_ \_ analysis \_ 假设**函数指定*IoControlCode*保证为驱动程序定义的 IOCTLs 之一。
 
 ```
 VOID
@@ -141,13 +141,7 @@ There are only 6 possible IOCTLs for IoControlCode; each case is covered in the 
 }
 ```
 
-有关如何使用的另一个示例 **\_ \_analysis\_假定**，请参阅示例代码中使用[Using \_ \_sdv\_保存\_请求和\_ \_sdv\_检索\_延迟过程调用的请求](using---sdv-save-request-and---sdv-retrieve-request-for-deferred-proce.md)。 该示例演示如何使用 **\_ \_sdv\_保存\_请求**并 **\_ \_sdv\_检索\_请求**的 Dpc （工作项、 计时器等）。 **\_ \_Analysis\_假定**函数用于禁止显示 false，否则可能会导致的缺陷。
+有关如何使用** \_ \_ 分析 \_ 假设**的另一个示例，请参阅[使用 \_ \_ sdv \_ save \_ 请求和 \_ \_ sdv \_ 检索 \_ 延迟过程调用的请求](using---sdv-save-request-and---sdv-retrieve-request-for-deferred-proce.md)中使用的代码示例。 该示例演示了如何使用** \_ \_ sdv \_ save \_ request**和** \_ \_ sdv \_ 检索 \_ ** () 上的 dpc 的请求。 ** \_ \_ 分析 \_ 假设**函数用于禁止显示可能导致的错误缺陷。
 
  
-
- 
-
-
-
-
 

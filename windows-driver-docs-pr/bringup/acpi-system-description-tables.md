@@ -4,12 +4,12 @@ description: " (ACPI) 硬件规范的高级配置和电源接口的实现在基�
 ms.assetid: 6EFCD288-031D-46BB-ABF3-8ADB53E7B4B1
 ms.date: 05/20/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 1766c46c17bdf7c8ff319aaef4d7eacd6f704a8e
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: d975761be8dc3f1b7a949874f2220825eabb8845
+ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89188679"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89382129"
 ---
 # <a name="acpi-system-description-tables"></a>ACPI 系统说明表
 
@@ -88,7 +88,7 @@ Microsoft 需要在所有系统上都有调试端口。 为了描述内置于平
 
 Windows 使用 DBG2 表中的端口类型值来标识和加载内核调试器 (KD) 传输 (例如，系统需要的 USB 或串行) 。 然后，KD 传输使用 DBG2 表中的端口子类型值来标识端口使用的硬件接口。 DBG2 表中的其他信息指定端口寄存器的系统地址，该地址由硬件接口模块用于指定的子类型。 最后，DBG2 表必须包括对与调试端口对应的 ACPI 命名空间中的设备节点的引用。 此引用使 Windows 能够管理调试使用情况和设备的正常使用情况之间的冲突（如果有），还可将调试器与电源转换集成。
 
-有关详细信息，请参阅 [Microsoft 调试端口表 2 (DBG2) 规范](/previous-versions/windows/hardware/design/dn639131(v=vs.85))。
+有关详细信息，请参阅 [Microsoft 调试端口表 2 (DBG2) 规范](acpi-debug-port-table.md)。
 
 ## <a name="differentiated-system-description-table-dsdt"></a>区分系统说明表 (DSDT) 
 

@@ -5,7 +5,7 @@ description: 使用 NFC 类扩展编写 NFC 功能驱动程序的快速入门指
 keywords:
 - NFC
 - 近场通信
-- proximity
+- 近程
 - 近场邻近感应
 - NFP
 - CX
@@ -15,26 +15,26 @@ ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
 ms.localizationpriority: low
-ms.openlocfilehash: c335cf7386a33fddbe11316b5727938e12065191
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 384342faf2afc34da2ec177786eb195b3e429225
+ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72831892"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89382503"
 ---
 # <a name="nfc-cx-quick-start-guide"></a>NFC CX 快速入门指南
 
-本指南演示如何使用 NFC 类扩展（NFC CX）驱动程序编写 NFC 功能驱动程序。
+本指南演示如何使用 nfc 类扩展 (NFC CX) 驱动程序来编写 NFC 功能驱动程序。
 
 > [!NOTE]
 > 在其实现中使用类扩展驱动程序的驱动程序称为 "客户端驱动程序"。 这就是类扩展驱动程序的客户端。
 
-## <a name="prerequisites"></a>必备条件
+## <a name="prerequisites"></a>先决条件
 
-* NFC 控制器的固件必须实现 NFC 论坛的[Nfc 控制器接口（NCI）](https://nfc-forum.org/our-work/specifications-and-application-documents/specifications/nfc-controller-interface-nci-specification/)协议。
-* [Visual Studio 2017](https://visualstudio.microsoft.com/downloads/?utm_content=download+vs2017) （或更高版本）。
+* NFC 控制器的固件必须实现 NFC 论坛的 [Nfc 控制器接口 (NCI) ](https://nfc-forum.org/our-work/specifications-and-application-documents/specifications/nfc-controller-interface-nci-specification/) 协议。
+* [Visual Studio 2017](https://visualstudio.microsoft.com/downloads/?utm_content=download+vs2017) (或更高版本) 。
 * [Windows 10 SDK](https://developer.microsoft.com/windows/downloads/windows-10-sdk)。
-* [Windows 10 驱动程序工具包（WDK）](https://docs.microsoft.com/windows-hardware/drivers/download-the-wdk)。
+* [Windows 10 驱动程序工具包 (WDK) ](../download-the-wdk.md)。
 
 ## <a name="client-driver-responsibilities"></a>客户端驱动程序责任
 
@@ -48,15 +48,15 @@ GitHub 上提供了此示例代码的完整版本： [NFC CX 客户端驱动程�
 
 ## <a name="project-setup"></a>项目设置
 
-1. 在 Visual Studio 中，创建一个新的 "用户模式驱动程序，空（UMDF V2）" 项目。
+1. 在 Visual Studio 中，创建一个新的 "用户模式驱动程序，空 (UMDF V2) " 项目。
 
-    在 "**文件**" 菜单上，指向 "**新建**"，然后单击 "**项目**"。 在**可视化C++** 节点的 " **Windows 驱动程序**" 下，单击 " **WDF**"，然后单击 "**用户模式驱动程序"，空（UMDF V2）**
+    在 **“文件”** 菜单上，指向 **“新建”** ，再单击 **“项目”** 。 在 " **Visual C++** " 节点的 " **Windows 驱动程序**" 下，单击 " **WDF**"，然后单击 " **用户模式驱动程序"，空 (UMDF V2) **
 
     ![image](images/quick-start-new-project.png)
 
 2. 打开 INF 文件。
 
-   在**解决方案资源管理器**的 " **\<项目-名称 >** " 节点下的 "**驱动程序文件**" 文件夹中，双击 **\<项目名称 >** 。
+   在**解决方案资源管理器**的 " **\<project-name>** **驱动程序文件**" 文件夹中的节点下，双击 " ** \<project-name> .inf**"。
 
 3. 在 INF 文件中，使用以下步骤删除自定义设备类：
 
@@ -77,10 +77,10 @@ GitHub 上提供了此示例代码的完整版本： [NFC CX 客户端驱动程�
         ClassName="Samples" ; TODO: edit ClassName
         ```
 
-4. 在 INF 文件中，将驱动程序的设备类设置为**邻近**：
+4. 在 INF 文件中，将驱动程序的设备类设置为 **邻近**：
 
-    1. 将 `Class` 的值更改为 `Proximity`
-    2. 将 `ClassGuid` 的值更改为 `{5630831C-06C9-4856-B327-F5D32586E060}`
+    1. 将的值更改 `Class` 为 `Proximity`
+    2. 将的值更改 `ClassGuid` 为 `{5630831C-06C9-4856-B327-F5D32586E060}`
         - 这是邻近感应设备类的 GUID。
 
     ```ini
@@ -91,9 +91,9 @@ GitHub 上提供了此示例代码的完整版本： [NFC CX 客户端驱动程�
     ...
     ```
 
-5. 在 INF 文件中，添加对 NFC 类扩展的引用。 这样做可确保在客户端驱动程序加载时 Windows 驱动程序框架（WDF）将加载 NFC CX 驱动程序。
+5. 在 INF 文件中，添加对 NFC 类扩展的引用。 这样做可确保在客户端驱动程序加载时，Windows 驱动程序框架 (WDF) 会加载 NFC CX 驱动程序。
   
-    1. 找到 `<project-name>_Install` 部分。
+    1. 找到 `<project-name>_Install` 节。
     2. 添加 `UmdfExtensions=NfcCx0102`。
 
     ```ini
@@ -104,16 +104,16 @@ GitHub 上提供了此示例代码的完整版本： [NFC CX 客户端驱动程�
 
 6. 在 "驱动程序生成设置" 中，链接到 NFC 类扩展。 这样做可确保 NFC CX API 在代码编译期间可用。
 
-    1. 在**解决方案资源管理器**中，右键单击项目，然后单击 "**属性**"。 在 "**配置属性**" 的 "**驱动程序设置**" 下，单击 " **NFC**"。
-    2. 确保**配置**设置为 `All Configurations`。
-    3. 确保将**平台**设置为 `All Platforms`。
-    4. 设置**要 `Yes`的 NFC 类扩展的链接**。
+    1. 在 **解决方案资源管理器**中，右键单击项目，然后单击 " **属性**"。 在 " **配置属性**" 的 " **驱动程序设置**" 下，单击 " **NFC**"。
+    2. 确保将 " **配置** " 设置为 `All Configurations` 。
+    3. 确保将 **平台** 设置为 `All Platforms` 。
+    4. 将 **NFC 类扩展的链接** 设置为 `Yes` 。
 
     ![image](images/quick-start-link-to-nfc-cx.png)
 
 7. 将名为 `Driver.cpp` 的文件添加到项目。
 
-8. 在 `Driver.cpp`中创建 `DriverEntry` 例程。 这是驱动程序的入口点。 它的主要用途是初始化 WDF 并注册[`EvtDriverDeviceAdd`](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)回调函数。
+8. `DriverEntry`在中创建一个例程 `Driver.cpp` 。 这是驱动程序的入口点。 它的主要用途是初始化 WDF 并注册 [`EvtDriverDeviceAdd`](/windows-hardware/drivers/ddi/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add) 回调函数。
 
     ```cpp
     #include <windows.h>
@@ -150,9 +150,9 @@ GitHub 上提供了此示例代码的完整版本： [NFC CX 客户端驱动程�
     }
     ```
 
-9. 将名为 `Device.cpp` 和 `Device.h` 的两个文件添加到项目。
+9. 向项目添加两个名为 `Device.cpp` 和 `Device.h` 的文件。
 
-10. 在 `Device.h`中，定义 `DeviceContext` 类。
+10. 在中 `Device.h` ，定义 `DeviceContext` 类。
 
     ```cpp
     #pragma once
@@ -203,7 +203,7 @@ GitHub 上提供了此示例代码的完整版本： [NFC CX 客户端驱动程�
     WDF_DECLARE_CONTEXT_TYPE_WITH_NAME(DeviceContext, DeviceGetContext);
     ```
 
-11. 在 `Device.cpp`中，开始 `DeviceContext::AddDevice` 函数的定义。
+11. 在中 `Device.cpp` ，开始 `DeviceContext::AddDevice` 函数的定义。
 
     ```cpp
     #include "Device.h"
@@ -216,7 +216,7 @@ GitHub 上提供了此示例代码的完整版本： [NFC CX 客户端驱动程�
 
     ```
 
-12. 设置 NFC CX 设备配置。 设备配置包括提供[`EvtNfcCxWriteNciPacket`](https://docs.microsoft.com/windows-hardware/drivers/ddi/nfccx/nc-nfccx-evt_nfc_cx_write_nci_packet)回调函数。 此回调从 NFC CX 驱动程序接收来自客户端驱动程序应转发到 NFC 控制器的 NCI 数据包。
+12. 设置 NFC CX 设备配置。 设备配置包括提供 [`EvtNfcCxWriteNciPacket`](/windows-hardware/drivers/ddi/nfccx/nc-nfccx-evt_nfc_cx_write_nci_packet) 回调函数。 此回调从 NFC CX 驱动程序接收来自客户端驱动程序应转发到 NFC 控制器的 NCI 数据包。
 
     ```cpp
         // Create the NfcCx config.
@@ -233,9 +233,9 @@ GitHub 上提供了此示例代码的完整版本： [NFC CX 客户端驱动程�
         }
     ```
 
-13. 注册客户端驱动程序所需的[PnP 电源回调](https://docs.microsoft.com/windows-hardware/drivers/wdf/supporting-pnp-and-power-management-in-function-drivers)。
+13. 注册客户端驱动程序所需的 [PnP 电源回调](../wdf/supporting-pnp-and-power-management-in-function-drivers.md) 。
 
-    典型的客户端驱动程序可能需要[`EvtDevicePrepareHardware`](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_prepare_hardware)、 [`EvtDeviceReleaseHardware`](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_release_hardware)、 [`EvtDeviceD0Entry`](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_d0_entry)和[`EvtDeviceD0Exit`](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_d0_exit)函数。 根据客户端驱动程序处理电源管理的方式，要求可能有所不同。
+    典型的客户端驱动程序可能需要 [`EvtDevicePrepareHardware`](/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_prepare_hardware) 、 [`EvtDeviceReleaseHardware`](/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_release_hardware) 、 [`EvtDeviceD0Entry`](/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_d0_entry) 和 [`EvtDeviceD0Exit`](/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_d0_exit) 函数。 根据客户端驱动程序处理电源管理的方式，要求可能有所不同。
 
     ```cpp
         // Create the PnP power callbacks configuration.
@@ -250,7 +250,7 @@ GitHub 上提供了此示例代码的完整版本： [NFC CX 客户端驱动程�
         WdfDeviceInitSetPnpPowerEventCallbacks(DeviceInit, &pnpCallbacks);
     ```
 
-14. 调用[`WdfDeviceCreate`](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdevicecreate)函数以创建[`WDFDEVICE`](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/)对象。
+14. 调用 [`WdfDeviceCreate`](/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdevicecreate) 函数以创建 [`WDFDEVICE`](/windows-hardware/drivers/ddi/wdfdevice/) 对象。
 
     ```cpp
         // Create WDF object attributes for the WDFDEVICE object.
@@ -266,9 +266,9 @@ GitHub 上提供了此示例代码的完整版本： [NFC CX 客户端驱动程�
         }
     ```
 
-15. 调用[`NfcCxDeviceInitialize`](https://docs.microsoft.com/windows-hardware/drivers/ddi/nfccx/nf-nfccx-nfccxdeviceinitialize)函数。
+15. 调用 [`NfcCxDeviceInitialize`](/windows-hardware/drivers/ddi/nfccx/nf-nfccx-nfccxdeviceinitialize) 函数。
 
-    创建[`WDFDEVICE`](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/)对象后，应调用此函数以允许 NFC CX 驱动程序完成其设备实例的初始化。
+    创建对象后，应调用此函数 [`WDFDEVICE`](/windows-hardware/drivers/ddi/wdfdevice/) 以允许 NFC CX 驱动程序完成其设备实例的初始化。
 
     ```cpp
         // Let NFC CX finish initializing the device instance.
@@ -279,7 +279,7 @@ GitHub 上提供了此示例代码的完整版本： [NFC CX 客户端驱动程�
         }
     ```
 
-16. 调用[`NfcCxSetRfDiscoveryConfig`](https://docs.microsoft.com/windows-hardware/drivers/ddi/nfccx/nf-nfccx-nfccxsetrfdiscoveryconfig)以指定 nfc 控制器支持的 nfc 技术和协议。
+16. 调用 [`NfcCxSetRfDiscoveryConfig`](/windows-hardware/drivers/ddi/nfccx/nf-nfccx-nfccxsetrfdiscoveryconfig) 以指定 Nfc 控制器支持的 nfc 技术和协议。
 
     ```cpp
         // Create the RF config. (Enable everything.)
@@ -317,9 +317,9 @@ GitHub 上提供了此示例代码的完整版本： [NFC CX 客户端驱动程�
     }
     ```
 
-18. 实现[`PrepareHardware`](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_prepare_hardware)和[`ReleaseHardware`](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_release_hardware)回调函数。
+18. 实现 [`PrepareHardware`](/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_prepare_hardware) 和 [`ReleaseHardware`](/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_release_hardware) 回调函数。
 
-    这两个函数用于初始化和取消初始化分配给 NFC 控制器的设备实例的硬件资源。 其实现取决于设备连接到的总线类型（例如，I<sup>2</sup>C、SPI 和 USB）。
+    这两个函数用于初始化和取消初始化分配给 NFC 控制器的设备实例的硬件资源。 它们的实现将取决于设备连接到的总线类型 (例如，I<sup>2</sup>C、SPI 和 USB) 。
 
     ```cpp
     NTSTATUS DeviceContext::PrepareHardware(
@@ -340,9 +340,9 @@ GitHub 上提供了此示例代码的完整版本： [NFC CX 客户端驱动程�
     }
     ```
 
-19. 调用[`NfcCxHardwareEvent`](https://docs.microsoft.com/windows-hardware/drivers/ddi/nfccx/nf-nfccx-nfccxhardwareevent)函数与[`HostActionStart`](https://docs.microsoft.com/windows-hardware/drivers/ddi/nfccx/ne-nfccx-_nfc_cx_host_action) ，并[`HostActionStop`](https://docs.microsoft.com/windows-hardware/drivers/ddi/nfccx/ne-nfccx-_nfc_cx_host_action)在适当的时间启动和停止 NCI 状态机。
+19. [`NfcCxHardwareEvent`](/windows-hardware/drivers/ddi/nfccx/nf-nfccx-nfccxhardwareevent)通过和调用函数 [`HostActionStart`](/windows-hardware/drivers/ddi/nfccx/ne-nfccx-_nfc_cx_host_action) ， [`HostActionStop`](/windows-hardware/drivers/ddi/nfccx/ne-nfccx-_nfc_cx_host_action) 在适当的时间启动和停止 NCI 状态机。
 
-    某些驱动程序在[`D0Entry`](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_d0_entry)期间执行此操作，并[`D0Exit`](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_d0_exit) PnP 电源回调。 但这可能会因客户端驱动程序处理电源管理的情况而有所不同。
+    某些驱动程序在 [`D0Entry`](/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_d0_entry) 和 PnP 电源回调期间执行此操作 [`D0Exit`](/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_d0_exit) 。 但这可能会因客户端驱动程序处理电源管理的情况而有所不同。
 
     ```cpp
     // Device exiting low power state (or is booting up).
@@ -392,7 +392,7 @@ GitHub 上提供了此示例代码的完整版本： [NFC CX 客户端驱动程�
     }
     ```
 
-20. 实现[`WriteNciPacket`](https://docs.microsoft.com/windows-hardware/drivers/ddi/nfccx/nc-nfccx-evt_nfc_cx_write_nci_packet)函数。
+20. 实现 [`WriteNciPacket`](/windows-hardware/drivers/ddi/nfccx/nc-nfccx-evt_nfc_cx_write_nci_packet) 函数。
 
     当存在要发送到 NFC 控制器的 NCI 数据包时，NFC CX 会调用此回调。
 
@@ -420,12 +420,12 @@ GitHub 上提供了此示例代码的完整版本： [NFC CX 客户端驱动程�
     };
     ```
 
-21. 当 NFC 控制器具有应发送到 NFC CX 的 NCI 数据包时，调用[`NfcCxNciReadNotification`](https://docs.microsoft.com/windows-hardware/drivers/ddi/nfccx/nf-nfccx-nfccxncireadnotification)函数。 通常在硬件事件回调中完成此操作。
+21. [`NfcCxNciReadNotification`](/windows-hardware/drivers/ddi/nfccx/nf-nfccx-nfccxncireadnotification)当 NFC 控制器具有应发送到 NFC CX 的 NCI 数据包时，调用函数。 通常在硬件事件回调中完成此操作。
 
     例如：
-    - [GPIO 中断](https://docs.microsoft.com/windows-hardware/drivers/gpio/gpio-interrupts)事件回调。 （I<sup>2</sup>C 和 SPI）
-    - [USB 连续读取器](https://docs.microsoft.com/windows-hardware/drivers/usbcon/how-to-use-the-continous-reader-for-getting-data-from-a-usb-endpoint--umdf-)回调。
+    - [GPIO 中断](../gpio/gpio-interrupts.md)事件回调。  (I<sup>2</sup>C 和 SPI) 
+    - [USB 连续读取器](../usbcon/how-to-use-the-continous-reader-for-getting-data-from-a-usb-endpoint--umdf-.md)回调。
 
 ## <a name="logging"></a>日志记录
 
-请考虑将日志记录添加到客户端驱动程序，以便更轻松地进行调试。 [ETW 跟踪](https://docs.microsoft.com/windows-hardware/drivers/devtest/event-tracing-for-windows--etw-)和[WPP 跟踪](https://docs.microsoft.com/windows-hardware/drivers/devtest/wpp-software-tracing)都是不错的选择。
+请考虑将日志记录添加到客户端驱动程序，以便更轻松地进行调试。 [ETW 跟踪](../devtest/event-tracing-for-windows--etw-.md)和[WPP 跟踪](../devtest/wpp-software-tracing.md)都是不错的选择。

@@ -1,28 +1,22 @@
 ---
-title: 如何初始化 WPP 软件跟踪在用户模式应用程序
-description: 如何初始化 WPP 软件跟踪在用户模式应用程序
+title: 如何实现在用户模式应用程序中初始化 WPP 软件跟踪
+description: 如何实现在用户模式应用程序中初始化 WPP 软件跟踪
 ms.assetid: 1f1ab873-a1c3-4915-af31-ab74c1898fcb
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2382b292e274fbdbc9b1d059004391a62fcd2f41
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: a24c9c98fa7fb37e05aef7b321ccadef5e737a0f
+ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67358285"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89383187"
 ---
 # <a name="how-do-i-initialize-wpp-software-tracing-in-a-user-mode-application"></a>如何在用户模式应用程序中初始化 WPP 软件跟踪？
 
 
-您可以通过调用初始化 WPP 跟踪在用户模式应用程序[WPP\_INIT\_跟踪](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff556191(v=vs.85))宏来初始化 WPP 软件跟踪。
+您可以通过调用 [wpp \_ INIT \_ 跟踪](/previous-versions/windows/hardware/previsioning-framework/ff556191(v=vs.85)) 宏初始化 wpp 软件跟踪，在用户模式应用程序中初始化 wpp 跟踪。
 
-若要避免错误，应调用[WPP\_INIT\_跟踪](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff556191(v=vs.85))宏在其中任何跟踪尝试以前已经在源代码中的点。
-
- 
+若要避免错误，应在源代码中的某个时间点调用 [WPP \_ INIT \_ 跟踪](/previous-versions/windows/hardware/previsioning-framework/ff556191(v=vs.85)) 宏，但之前未进行任何跟踪尝试。
 
  
-
-
-
-
 

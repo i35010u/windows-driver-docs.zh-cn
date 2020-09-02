@@ -9,12 +9,12 @@ keywords:
 - 线程锁定 WDK 驱动程序验证程序
 ms.date: 06/04/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 4a30943b3e97647608c7b22de47505bc98ced6a9
-ms.sourcegitcommit: 9e5a99dc75dfee3caa9a242adc0ed22ae4df9f29
+ms.openlocfilehash: d62160bd0de84fce5fd9d61c304b450e1b29a0e1
+ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89043155"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89382377"
 ---
 # <a name="deadlock-detection"></a>死锁检测
 
@@ -82,18 +82,18 @@ ms.locfileid: "89043155"
 
 - 从 Windows 7 开始，驱动程序验证程序可以预测可能的死锁。 例如，尝试将相同的 KSPIN \_ 锁数据结构同时用作常规旋转锁和堆栈排队自旋锁。
 
-有关错误检查参数的列表，请参阅 [**Bug 检查 0xC4**](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc4--driver-verifier-detected-violation) (驱动程序 \_ 验证器 \_ 检测到 \_ 冲突) 。
+有关错误检查参数的列表，请参阅 [**Bug 检查 0xC4**](../debugger/bug-check-0xc4--driver-verifier-detected-violation.md) (驱动程序 \_ 验证器 \_ 检测到 \_ 冲突) 。
 
 ## <a name="monitoring-deadlock-detection"></a>监视死锁检测
 
 死锁检测发现冲突后，可使用 **！死锁** 内核调试器扩展来准确调查所发生的情况。 它可以显示锁层次结构拓扑以及最初获取锁时每个线程的调用堆栈。
 
-有关详细信息，请参阅 "适用于 Windows 的调试工具" 包中的 " [**死锁**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-deadlock) 扩展" 和 "调试器扩展的常规信息"。 有关详细信息，请参阅 [Windows 调试](https://docs.microsoft.com/windows-hardware/drivers/debugger/index) 。
+有关详细信息，请参阅 "适用于 Windows 的调试工具" 包中的 " [**死锁**](../debugger/-deadlock.md) 扩展" 和 "调试器扩展的常规信息"。 有关详细信息，请参阅 [Windows 调试](../debugger/index.md) 。
 
 ### <a name="activating-this-option"></a>激活此选项
 
 > [!NOTE]
-> 此选项与[内核同步延迟模糊](https://docs.microsoft.com/windows-hardware/drivers/devtest/kernel-synchronization-delay-fuzzing)处理不兼容
+> 此选项与[内核同步延迟模糊](./kernel-synchronization-delay-fuzzing.md)处理不兼容
 
 您可以使用驱动程序验证器管理器或 Verifier.exe 命令行为一个或多个驱动程序激活死锁检测功能。 有关详细信息，请参阅 [选择驱动程序验证程序选项](selecting-driver-verifier-options.md)。
 

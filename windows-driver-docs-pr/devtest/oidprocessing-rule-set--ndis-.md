@@ -4,19 +4,19 @@ description: 使用这些规则验证驱动程序是否正确地处理了 OID �
 ms.assetid: 0E12778B-BB86-4387-9B8A-19E3876D6F8C
 ms.date: 05/21/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 203fc1a6ae9e25ce0c585ef57173052a8b70105a
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 7e530bec7fc9f8c86ad64ca43a77bb74dd677e3c
+ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72840058"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89381385"
 ---
 # <a name="oidprocessing-rule-set-ndis"></a>OidProcessing 规则集 (NDIS)
 
 
 使用这些规则验证驱动程序是否正确地处理了 OID 请求。
 
-## <a name="in-this-section"></a>本部分内容
+## <a name="in-this-section"></a>在本节中
 
 
 <table>
@@ -27,13 +27,13 @@ ms.locfileid: "72840058"
 <thead>
 <tr class="header">
 <th align="left">主题</th>
-<th align="left">描述</th>
+<th align="left">说明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left"><p><a href="ndis-doublecomplete.md" data-raw-source="[&lt;strong&gt;DoubleComplete&lt;/strong&gt;](ndis-doublecomplete.md)"><strong>DoubleComplete</strong></a></p></td>
-<td align="left"><p><a href="ndis-doublecomplete.md" data-raw-source="[DoubleComplete](ndis-doublecomplete.md)">DoubleComplete</a>规则指定 NDIS 驱动程序不得多次完成对象标识符（OID）请求。</p></td>
+<td align="left"><p><a href="ndis-doublecomplete.md" data-raw-source="[DoubleComplete](ndis-doublecomplete.md)">DoubleComplete</a>规则指定 NDIS 驱动程序不得 (OID) 请求中多次完成对象标识符。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><a href="ndis-doublecompleteworkitem.md" data-raw-source="[&lt;strong&gt;DoubleCompleteWorkItem&lt;/strong&gt;](ndis-doublecompleteworkitem.md)"><strong>DoubleCompleteWorkItem</strong></a></p></td>
@@ -41,7 +41,7 @@ ms.locfileid: "72840058"
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="ndis-ndismnetpnpeventinoidrequest.md" data-raw-source="[&lt;strong&gt;NdisMNetPnPEventInOIDRequest&lt;/strong&gt;](ndis-ndismnetpnpeventinoidrequest.md)"><strong>NdisMNetPnPEventInOIDRequest</strong></a></p></td>
-<td align="left"><p>此规则检查 OID 请求的上下文中是否未调用<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismnetpnpevent" data-raw-source="[&lt;strong&gt;NdisMNetPnPEvent&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismnetpnpevent)"><strong>NdisMNetPnPEvent</strong></a> 。</p></td>
+<td align="left"><p>此规则检查 OID 请求的上下文中是否未调用 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismnetpnpevent" data-raw-source="[&lt;strong&gt;NdisMNetPnPEvent&lt;/strong&gt;](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismnetpnpevent)"><strong>NdisMNetPnPEvent</strong></a> 。</p></td>
 </tr>
 </tbody>
 </table>
@@ -50,9 +50,9 @@ ms.locfileid: "72840058"
 
 **选择 OidProcessing 规则集**
 
-1.  在 Microsoft Visual Studio 中选择驱动程序项目（. .Vcxproj）。 在 "**驱动程序**" 菜单中，单击 "**启动静态驱动程序验证程序 ...** "。
+1.  选择你的驱动程序项目 () 在 Microsoft Visual Studio 中。 在 " **驱动程序** " 菜单中，单击 " **启动静态驱动程序验证程序 ...**"。
 
-2.  单击 "**规则**" 选项卡。在 "**规则集**" 下，选择**OidProcessing**。
+2.  单击 " **规则** " 选项卡。在 " **规则集**" 下，选择 **OidProcessing**。
 
     若要从 Visual Studio 开发人员命令提示符窗口中选择默认规则集，请使用 **/check**选项指定**OidProcessing。 sdv** 。 例如：
 
@@ -60,13 +60,7 @@ ms.locfileid: "72840058"
     msbuild /t:sdv /p:Inputs="/check:OidProcessing.sdv" mydriver.VcxProj /p:Configuration="Win8 Release" /p:Platform=Win32
     ```
 
-    有关详细信息，请参阅[使用静态驱动程序验证器查找驱动程序中的缺陷](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers)和[静态驱动程序验证程序命令（MSBuild）](https://docs.microsoft.com/windows-hardware/drivers/devtest/-static-driver-verifier-commands--msbuild-)。
+    有关详细信息，请参阅 [使用静态驱动程序验证器查找驱动程序中的缺陷](./using-static-driver-verifier-to-find-defects-in-drivers.md) 和 [静态驱动程序验证程序命令 (MSBuild) ](./-static-driver-verifier-commands--msbuild-.md)。
 
  
-
- 
-
-
-
-
 

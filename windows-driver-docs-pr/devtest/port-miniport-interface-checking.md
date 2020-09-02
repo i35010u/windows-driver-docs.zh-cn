@@ -1,37 +1,37 @@
 ---
-title: 检查端口/微型端口接口
-description: 检查端口/微型端口接口
+title: 端口/微型端口接口检查
+description: 端口/微型端口接口检查
 ms.assetid: ad6c4762-354d-446d-bcda-a2e99c37c589
 keywords:
-- 检查端口/微型端口接口
+- 端口/微型端口接口检查
 ms.date: 09/14/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3f71ea841e0304bb0c9924b99098a4307b789f61
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c576efbb58411d5209a8e6d182dce0474b9f0ac3
+ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63338705"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89382405"
 ---
 # <a name="portminiport-interface-checking"></a>端口/微型端口接口检查
 
-检查端口/微型端口接口使驱动程序验证程序检查 PortCls.sys 和其音频微型端口驱动程序，以及 ks.sys 和其 AVStream 微型端口驱动程序之间的 DDI 接口。 请参阅[AVStream 驱动程序的规则](https://docs.microsoft.com/windows-hardware/drivers/devtest/rules-for-avstream-drivers)和[音频驱动程序的规则](https://docs.microsoft.com/windows-hardware/drivers/devtest/rules-for-audio-drivers)
+端口/微型端口接口检查使驱动程序验证程序能够检查 PortCls.sys 及其音频微型端口驱动程序之间的 DDI 接口，以及 ks.sys 及其 AVStream 微型端口驱动程序。 请参阅 [AVStream 驱动程序规则](./rules-for-avstream-drivers.md) 和 [音频驱动程序规则](./rules-for-audio-drivers.md)
 
 ### <a name="activating-this-option"></a>激活此选项：
 
-您可以激活端口/微型端口接口使用驱动程序验证程序管理器或 Verifier.exe 命令行检查一个或多个驱动程序。 有关详细信息，请参阅[选择 driver verifier 选项](https://docs.microsoft.com/windows-hardware/drivers/devtest/selecting-driver-verifier-options)。 必须重新启动计算机以激活或停用检查选项的微型端口端口/接口。
+可以通过使用驱动程序验证器管理器或 Verifier.exe 命令行来为一个或多个驱动程序激活端口/微型端口接口检查。 有关详细信息，请参阅 [选择驱动程序验证程序选项](./selecting-driver-verifier-options.md)。 您必须重新启动计算机以激活或停用端口/微型端口接口检查选项。
 
-* **在命令行**
+* **在命令行中**
 
-    在命令行中，在由表示端口微型端口接口检查**0x0 x 00010000 (16 位)**。 例如：
+    在命令行中，端口微型端口接口检查由 **0x0x00010000 (位 16) **表示。 例如：
     
     `verifier /flags 0x00010000 /driver MyDriver.sys`
 
-    在下一次启动后，该功能将处于活动状态。
+    此功能将在下一次启动后处于活动状态。
 
-* **使用驱动程序验证程序管理器**
+* **使用驱动程序验证器管理器**
 
-1. 启动驱动程序验证器管理器。 在命令提示符窗口中键入验证程序。
-2. 选择创建自定义设置 （适用于代码开发人员），然后单击下一步。
-3. Select(check) 端口微型端口接口检查。
+1. 启动驱动程序验证器管理器。 在命令提示符窗口中键入 Verifier。
+2. 选择 "为代码开发人员 (创建自定义设置") ，然后单击 "下一步"。
+3. 选择 (检查) 端口微型端口接口检查。
 4. 重新启动计算机。

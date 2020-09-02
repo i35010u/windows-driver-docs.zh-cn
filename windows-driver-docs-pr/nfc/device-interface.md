@@ -5,17 +5,17 @@ ms.assetid: ED63FDCF-3253-4976-8571-82F4824923C5
 keywords:
 - NFC
 - 近场通信
-- proximity
+- 近程
 - 近场邻近感应
 - NFP
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a764b889eb57c3be72d78c5a0365b1110a0978df
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: d38fd042fcc3e7aa4431b6b401260d31a40c1f38
+ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72842538"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89382829"
 ---
 # <a name="nfp-device-interface"></a>NFP 设备接口
 
@@ -37,9 +37,9 @@ ms.locfileid: "72842538"
 
 支持邻近设备驱动程序接口的 IOCTLs 在 Nfpdev 中定义。 控制代码是用以下属性定义的。
 
--   \_缓冲的方法
--   文件\_任何\_访问
--   文件\_设备\_NFP
+-   方法 \_ 缓冲
+-   文件 \_ 任何 \_ 访问权限
+-   文件 \_ 设备 \_ NFP
 
 每个发布和每个订阅均表现为驱动程序的打开句柄。 因此，M 发布和 N 订阅将等同于 M + N 打开驱动程序的句柄。 Windows i/o 管理器将在进程上强制实施合理的句柄计数限制。
 
@@ -52,9 +52,9 @@ IOCTL 代码在标头 Nfpdev 中定义
 
 下表介绍了保留的和供应商的特定控制代码范围。
 
-| 在任务栏的搜索框中键入            | 范围开始                               | 范围结束                                 |
+| 类型            | 范围开始                               | 范围结束                                 |
 |-----------------|-------------------------------------------|-------------------------------------------|
-| 保留        | `CTL_CODE(FILE_DEVICE_NFP, 0x0000, *, *)` | `CTL_CODE(FILE_DEVICE_NFP, 0x00FF, *, *)` |
+| 预留        | `CTL_CODE(FILE_DEVICE_NFP, 0x0000, *, *)` | `CTL_CODE(FILE_DEVICE_NFP, 0x00FF, *, *)` |
 | 特定于供应商 | `CTL_CODE(FILE_DEVICE_NFP, 0x0100, *, *)` | `CTL_CODE(FILE_DEVICE_NFP, 0x01FF, *, *)` |
 
  
@@ -63,6 +63,5 @@ IOCTL 代码在标头 Nfpdev 中定义
 
  
 ## <a name="related-topics"></a>相关主题
-[NFC 设备驱动程序接口（DDI）概述](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)  
-[近字段邻近 DDI 引用](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)  
-
+[NFC 设备驱动程序接口 (DDI) 概述](/windows-hardware/drivers/ddi/index)  
+[近字段邻近 DDI 引用](/windows-hardware/drivers/ddi/index)

@@ -22,18 +22,18 @@ keywords:
 - 启动选项 WDK，编辑
 ms.date: 07/03/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 37e6cd9ba360168120ccec33a6477950ef779d7c
-ms.sourcegitcommit: 9e5a99dc75dfee3caa9a242adc0ed22ae4df9f29
+ms.openlocfilehash: 7378a002cb5c37e9aed8e8624d2433e3dec26c5b
+ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89043097"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89383245"
 ---
 # <a name="editing-the-bootini-file"></a>编辑 Boot.ini 文件
 
 
 > [!IMPORTANT] 
-> 本主题介绍 Windows XP 和 Windows Server 2003 中支持的启动选项。 如果要更改 Windows 的新式版本的启动选项，请参阅 [Windows Vista 和更高版本中的启动选项](boot-options-in-windows-vista-and-later.md)。
+> 本主题介绍 Windows XP 和 Windows Server 2003 中支持的启动选项。 如果要更改 Windows 的新式版本的启动选项，请参阅 [Windows Vista 和更高版本中的启动选项](./boot-options-in-windows.md)。
 
 在 Windows Vista 之前，在 Boot.ini 文本文件中运行 Windows 应用商店启动选项的基于 BIOS 的计算机。 您可以使用 Bootcfg (`bootcfg.exe`) 、WINDOWS XP 和 Windows Server 2003 中包含的工具或使用记事本之类的文本编辑器来编辑 Boot.ini。 Windows 帮助和支持中介绍了 Bootcfg。 你还可以在 "系统" 下的 "控制面板" 中查看和更改某些启动选项。 在 "系统属性" 对话框中的 "高级" 选项卡上，选择 " **启动和恢复**" 下的设置。 由于此功能有限，本部分未对此进行讨论。 有关 " **启动和恢复** " 对话框的信息，请参阅帮助和支持中心。
 

@@ -4,28 +4,28 @@ description: 某些总线，如 SPI，支持全双工总线传输。
 ms.assetid: C80FE3F2-6659-4DE8-8F77-F77EDA60400F
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9c6c9054a0fc18acc01cbeaa842220f10d64d392
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 5e745556ad4af736dbceab201fbbe2692afe9d53
+ms.sourcegitcommit: c766ab74e32eb44795cbbd1a4f352d3a6a9adc14
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72826170"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89389587"
 ---
 # <a name="full-duplex-io-requests"></a>全双工 I/O 请求
 
 
-某些总线，如 SPI，支持全双工总线传输。 这些传输通过将数据同时写入设备并从同一设备读取数据来提高 i/o 性能。 为了支持全双工总线传输，[简单外围总线](https://docs.microsoft.com/previous-versions/hh450903(v=vs.85))（SPB） [i/o 请求接口](https://docs.microsoft.com/previous-versions/hh698224(v=vs.85))定义了[**IOCTL\_SPB\_完整\_双工**](https://msdn.microsoft.com/library/windows/hardware/hh974774)i/o 控制代码（IOCTL）。
+某些总线，如 SPI，支持全双工总线传输。 这些传输通过将数据同时写入设备并从同一设备读取数据来提高 i/o 性能。 为了支持全双工总线传输， [简单的外围总线](/previous-versions/hh450903(v=vs.85)) (SPB) [i/o 请求接口](/previous-versions/hh698224(v=vs.85)) 定义 ioctl [** \_ SPB \_ 全双工 \_ **](https://msdn.microsoft.com/library/windows/hardware/hh974774) i/o 控制代码 (ioctl) 。
 
-支持**IOCTL\_SPB\_完整\_双工**IOCTL 是可选的。 仅在硬件中实现全双工传输的总线控制器的[SPB 控制器驱动程序](https://docs.microsoft.com/windows-hardware/drivers/spb/spb-controller-drivers)支持此 IOCTL。 如果 SPB 控制器驱动程序不支持全双工传输，则该驱动程序将无法通过所有**IOCTL\_SPB\_其接收的完整\_双工**请求，并将其完成，并将错误状态代码状态\_not\_受.
+支持 **IOCTL \_ SPB \_ 全双工 \_ ** IOCTL 是可选的。 仅在硬件中实现全双工传输的总线控制器的 [SPB 控制器驱动程序](./spb-controller-drivers.md) 支持此 IOCTL。 如果 SPB 控制器驱动程序不支持全双工传输，则此驱动程序将无法接收到所有的 **IOCTL \_ SPB \_ \_ ** 全双工请求，并将其完成，并将错误状态代码状态 " \_ 不 \_ 受支持"。
 
 ## <a name="transfer-list"></a>传输列表
 
 
-**Ioctl\_spb\_完整\_双工**请求的格式类似于[**ioctl\_SPB\_执行\_序列**](https://msdn.microsoft.com/library/windows/hardware/hh450857)请求的格式。 这两个请求都使用[**SPB\_传输\_列表**](https://docs.microsoft.com/windows-hardware/drivers/ddi/spb/ns-spb-spb_transfer_list)结构来描述请求的读取和写入传输列表。 IOCTL\_SPB 中的传输列表 **\_执行\_序列**请求可以有任意组合的读取缓冲区和写入缓冲区。 与此相反， **IOCTL\_SPB\_完整\_双工**请求的传输列表必须始终只有一个读取缓冲区和一个写入缓冲区。 写入缓冲区始终是转换列表中的第一个缓冲区，读取缓冲区是第二个缓冲区。
+**Ioctl \_ spb \_ 全双工 \_ **请求的格式类似于[**ioctl \_ spb \_ 执行 \_ 序列**](https://msdn.microsoft.com/library/windows/hardware/hh450857)请求的格式。 这两个请求都使用 [**SPB \_ 传输 \_ 列表**](/windows-hardware/drivers/ddi/spb/ns-spb-spb_transfer_list) 结构来描述请求的读取和写入传输列表。 **IOCTL \_ SPB \_ 执行 \_ 序列**请求中的传输列表可以具有读取缓冲区和写入缓冲区的任意组合。 与此相反， **IOCTL \_ SPB \_ 全双工 \_ ** 请求中的传输列表必须始终只有一个读取缓冲区和一个写入缓冲区。 写入缓冲区始终是转换列表中的第一个缓冲区，读取缓冲区是第二个缓冲区。
 
-对**IOCTL\_SPB 的额外要求\_完整\_双工**请求，是**DelayInUs**成员在 spb 中必须始终为零[ **\_传输\_列表\_输入**](https://docs.microsoft.com/windows-hardware/drivers/ddi/spb/ns-spb-spb_transfer_list_entry)结构读取缓冲区和写入缓冲区。
+**IOCTL \_ SPB \_ 全双工 \_ **请求的另一个要求是， **DelayInUs**成员必须在描述读取缓冲区和写入缓冲区的[**SPB \_ 传输 \_ 列表 \_ 输入**](/windows-hardware/drivers/ddi/spb/ns-spb-spb_transfer_list_entry)结构中始终为零。
 
-下面的代码示例演示了 SPB 外围设备的驱动程序如何为 IOCTL\_SPB 构建传输列表， **\_完整\_双工**请求。
+下面的代码示例演示了 SPB 外围设备的驱动程序如何为 **IOCTL \_ SPB \_ 全双工 \_ ** 请求生成传输列表。
 
 ```cpp
 const ULONG transfers = 2;
@@ -49,21 +49,21 @@ SPB_TRANSFER_LIST_INIT(&(seq.List), transfers);
 }
 ```
 
-前面的代码示例使用了[**SPB\_传输\_列表\_INIT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/spb/nf-spb-spb_transfer_list_init) and [**spb\_传输\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/spb/nf-spb-spb_transfer_list_entry_init_simple)\_\_INIT\_简单函数初始化传输列表标头和日志. Spb\_传输在 Spb 头文件中定义的 **\_LIST\_和\_条目**宏，简化了传输列表的声明。 此宏将 `seq` 变量定义为一个结构，该结构包含一个 **\_传输\_列表**结构和一个**spb\_传输\_\_项**数组的两个元素。
+前面的代码示例使用 [**SPB \_ 传输 \_ 列表 \_ init**](/windows-hardware/drivers/ddi/spb/nf-spb-spb_transfer_list_init) 和 [**spb \_ 传输 \_ 列表 \_ 条目 \_ init \_ 简单**](/windows-hardware/drivers/ddi/spb/nf-spb-spb_transfer_list_entry_init_simple) 函数初始化传输列表标头和条目。 在 Spb 头文件中定义的 **spb \_ 传输 \_ 列表 \_ 和 \_ 条目** 宏简化了传输列表的声明。 此宏将 `seq` 变量定义为包含 **SPB \_ 传输 \_ 列表** 结构的结构和两个元素的 **spb \_ 传输 \_ 列表 \_ 项** 数组。
 
 ## <a name="full-duplex-bus-transfers"></a>全双工总线传输
 
 
-为了响应 IOCTL\_SPB\_从 SPB 外设驱动程序的**完整\_双工**请求，SPB 控制器驱动程序会在总线上启动全双工传输。 写入缓冲区的第一个字节会在总线时钟的相同时钟周期写入设备，在此期间，读取缓冲区的第一个字节将从设备中读取。
+为了响应来自 SPB 外围设备驱动程序的 **IOCTL \_ SPB \_ 全双工 \_ ** 请求，SPB 控制器驱动程序会在总线上启动全双工传输。 写入缓冲区的第一个字节会在总线时钟的相同时钟周期写入设备，在此期间，读取缓冲区的第一个字节将从设备中读取。
 
-IOCTL\_SPB 的读取缓冲区和写入缓冲区 **\_完整\_双工**请求的长度不必相同。 如果写入缓冲区小于读取缓冲区，则在清空缓冲区后，SPB 控制器驱动程序停止将写入缓冲区的内容写入到设备，但会继续填充读取缓冲区，直到它已满。 同样，如果读取缓冲区小于写入缓冲区，则 SPB 控制器驱动程序会在读取缓冲区已满后停止填充它，但会继续将写入缓冲区的内容写入设备，直到缓冲区被清空。
+**IOCTL \_ SPB \_ 全双工 \_ **请求的读取缓冲区和写入缓冲区的长度不必相同。 如果写入缓冲区小于读取缓冲区，则在清空缓冲区后，SPB 控制器驱动程序停止将写入缓冲区的内容写入到设备，但会继续填充读取缓冲区，直到它已满。 同样，如果读取缓冲区小于写入缓冲区，则 SPB 控制器驱动程序会在读取缓冲区已满后停止填充它，但会继续将写入缓冲区的内容写入设备，直到缓冲区被清空。
 
 ## <a name="example-kmdf-driver"></a>示例： KMDF 驱动程序
 
 
-用于 SPB 外围设备的内核模式 Driver Foundation （KMDF）驱动程序将调用一个方法（如[**WdfIoTargetSendIoctlSynchronously**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfiotarget/nf-wdfiotarget-wdfiotargetsendioctlsynchronously) ），将 IOCTL 请求发送到 SPB 控制器。 此方法具有*InputBuffer*和*OutputBuffer*参数。 对于某些类型的设备，驱动程序可能会将这两个参数分别指向写入缓冲区和读取缓冲区，以用于 IOCTL 请求。 但是，若要向 SPB 控制器发送 IOCTL 请求，则 SPB 外围设备驱动程序将*InputBuffer*参数设置为指向\_列表结构中指向 SPB 的内存描述符 **\_传输**。 例如，对于**IOCTL\_SPB\_完整\_双工**请求，此结构描述写入缓冲区和读取缓冲区（按该顺序）。 驱动程序将*OutputBuffer*参数设置为 NULL。
+用于 SPB 外围设备的内核模式驱动程序基础 (KMDF) 驱动程序调用诸如 [**WdfIoTargetSendIoctlSynchronously**](/windows-hardware/drivers/ddi/wdfiotarget/nf-wdfiotarget-wdfiotargetsendioctlsynchronously) 的方法，将 IOCTL 请求发送到 SPB 控制器。 此方法具有 *InputBuffer* 和 *OutputBuffer* 参数。 对于某些类型的设备，驱动程序可能会将这两个参数分别指向写入缓冲区和读取缓冲区，以用于 IOCTL 请求。 但是，若要将 IOCTL 请求发送到 SPB 控制器，则 SPB 外围设备驱动程序将 *InputBuffer* 参数设置为指向用于指向 **spb \_ 传输 \_ 列表** 结构的内存描述符。 例如，以下结构对 **IOCTL \_ SPB \_ 全双工 \_ ** 请求) 顺序描述了写入缓冲区和读取缓冲区 (。 驱动程序将 *OutputBuffer* 参数设置为 NULL。
 
-下面的代码示例演示了一个**WdfIoTargetSendIoctlSynchronously**调用，该调用将**IOCTL\_SPB 发送\_完整\_双工**请求到 SPB 外围设备。 在此示例中，`seq` 变量是在[传输列表](#transfer-list)的代码示例中定义的传输列表。
+下面的代码示例演示了向 SPB 外围设备发送**IOCTL \_ SPB \_ 全双工 \_ **请求的**WdfIoTargetSendIoctlSynchronously**调用。 `seq`在此示例中，变量是在[传输列表](#transfer-list)的代码示例中定义的传输列表。
 
 ```cpp
 ULONG_PTR BytesTransferred = 0;
@@ -85,16 +85,16 @@ Status = WdfIoTargetSendIoctlSynchronously(
                             &BytesTransferred);
 ```
 
-在上面的代码示例中，`MemoryDescriptor` 变量是一个框架内存说明符。 [**WDF\_内存\_描述符\_INIT\_BUFFER**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfmemory/nf-wdfmemory-wdf_memory_descriptor_init_buffer)宏将初始化此描述符，以充当 `seq` 变量中包含的结构的容器。 在对**WdfIoTargetSendIoctlSynchronously**方法的调用中，`SpbIoTarget` 变量是先前在总线上打开的目标外围设备的句柄。 此方法的*InputBuffer*参数是指向内存说明符的指针。 *OutputBuffer*参数为 NULL。
+在上面的代码示例中， `MemoryDescriptor` 变量是一个框架内存说明符。 [**WDF \_ 内存 \_ 描述符 \_ 初始化 \_ 缓冲区**](/windows-hardware/drivers/ddi/wdfmemory/nf-wdfmemory-wdf_memory_descriptor_init_buffer)宏将初始化此描述符，以用作变量中包含的结构的容器 `seq` 。 在对 **WdfIoTargetSendIoctlSynchronously** 方法的调用中， `SpbIoTarget` 变量是之前打开的指向总线上的目标外围设备的句柄。 此方法的 *InputBuffer* 参数是指向内存说明符的指针。 *OutputBuffer*参数为 NULL。
 
-此代码示例中的**WdfIoTargetSendIoctlSynchronously**调用将 `BytesTransferred` 变量设置为传输的总字节数（写入的字节数加上读取的字节数）。 例如，如果请求具有1字节的写入缓冲区和4字节的读取缓冲区，并且调用成功，则 `BytesTransferred` 值应为5。
+此代码示例中的 **WdfIoTargetSendIoctlSynchronously** 调用将 `BytesTransferred` 变量设置为 (传输的字节总数加上) 读取的字节数。 例如，如果请求具有1字节写入缓冲区和4字节读取缓冲区，并且调用成功，则 `BytesTransferred` 值应为5。
 
 ## <a name="example-umdf-driver"></a>示例： UMDF 驱动程序
 
 
-适用于 SPB 外围设备的用户模式 Driver Foundation （UMDF）驱动程序调用方法（如[**IWDFIoTarget：： FormatRequestForIoctl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiotarget-formatrequestforioctl) ）来格式化 i/o 控制操作的 i/o 请求。 此方法具有*pInputMemory*和*pOutputMemory*参数。 某些类型的设备的驱动程序可能使用这两个参数来指向读取缓冲区和 IOCTL 请求的写入缓冲区。 但是，若要向 SPB 控制器发送 IOCTL 请求，则 SPB 外围设备驱动程序将*pInputMemory*参数设置为指向包含**SPB\_传输\_列表**结构的内存对象。 例如，此结构描述用于**IOCTL\_SPB\_完整\_双工**请求的写入缓冲区和读取缓冲区。 驱动程序将*pOutputMemory*参数设置为 NULL。
+适用于 SPB 外围设备的用户模式驱动程序基础 (UMDF) 驱动程序调用方法，例如 [**IWDFIoTarget：： FormatRequestForIoctl**](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiotarget-formatrequestforioctl) ，以格式化 i/o 控制操作的 i/o 请求。 此方法具有 *pInputMemory* 和 *pOutputMemory* 参数。 某些类型的设备的驱动程序可能使用这两个参数来指向读取缓冲区和 IOCTL 请求的写入缓冲区。 但是，若要向 SPB 控制器发送 IOCTL 请求，则 SPB 外围设备驱动程序将 *pInputMemory* 参数设置为指向包含 **SPB \_ 传输 \_ 列表** 结构的内存对象。 例如，此结构描述了用于 **IOCTL \_ SPB \_ 全双工 \_ ** 请求的写入缓冲区和读取缓冲区。 驱动程序将 *pOutputMemory* 参数设置为 NULL。
 
-下面的代码示例演示了**IWDFIoTarget：： FormatRequestForIoctl**调用，该调用将**IOCTL\_SPB\_完整\_双工**请求的格式设置为 spb 外围设备。 在此示例中，`seq` 变量是在[传输列表](#transfer-list)的代码示例中定义的传输列表。
+下面的代码示例演示了将**IOCTL \_ SPB \_ 全双工 \_ **请求格式化为 SPB 外围设备的**IWDFIoTarget：： FormatRequestForIoctl**调用。 `seq`在此示例中，变量是在[传输列表](#transfer-list)的代码示例中定义的传输列表。
 
 ```cpp
 ULONG_PTR BytesTransferred = 0;
@@ -140,22 +140,17 @@ if (FAILED(hr))
 
 前面的代码示例使用以下对象指针：
 
--   `pWdfMemory` 变量是指向以前分配的框架内存（[**IWDFMemory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-iwdfmemory)）对象的指针。 外围设备驱动程序使用此对象作为 `seq` 变量中的传输列表的容器。
--   `pWdfRemoteTarget` 参数是指向以前打开的远程 i/o 目标（[**IWDFRemoteTarget**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-iwdfremotetarget)）对象的指针。 此对象表示外围设备驱动程序与外围设备的连接。
--   `pWdfIoRequest` 变量是指向之前创建的框架请求（[**IWDFIoRequest2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-iwdfiorequest2)）对象的指针。 外围设备驱动程序使用此对象作为**IOCTL\_SPB 的容器\_完整\_双工**请求。
+-   `pWdfMemory`变量是指向以前分配的框架内存 ([**IWDFMemory**](/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-iwdfmemory)) 对象的指针。 外围设备驱动程序使用此对象作为变量中的传输列表的容器 `seq` 。
+-   `pWdfRemoteTarget`参数是指向之前打开的远程 i/o 目标 ([**IWDFRemoteTarget**](/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-iwdfremotetarget)) 对象的指针。 此对象表示外围设备驱动程序与外围设备的连接。
+-   `pWdfIoRequest`变量是指向之前创建的框架请求 ([**IWDFIoRequest2**](/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-iwdfiorequest2)) 对象的指针。 外围设备驱动程序使用此对象作为 **IOCTL \_ SPB \_ 全双工 \_ ** 请求的容器。
 
 前面的代码示例执行以下操作：
 
-1.  对[**IWDFMemory：： SetBuffer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfmemory-setbuffer)方法的调用会重复使用所 `pWdfMemory` 指向的内存对象，以用作传输列表的容器。
-2.  **FormatRequestForIoctl**调用重复使用所 `pWdfIoRequest` 指向的请求对象，以用作**IOCTL\_SPB 的容器\_完全\_双工**请求。 此方法的*pInputMemory*参数是一个指针，指向包含传输列表的内存对象。 *POutputMemory*参数为 NULL。
-3.  调用[**IWDFIoRequest：： Send**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiorequest-send)方法会将 i/o 请求发送到设备。 此调用是同步的，并在 SPB 控制器驱动程序完成请求后返回。
-4.  对[**IWDFIoRequest：： GetCompletionParams**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiorequest-getcompletionparams)方法的调用从请求获取完成参数。
-5.  对[**IWDFRequestCompletionParams：： GetInformation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfrequestcompletionparams-getinformation)方法的调用从完成参数（i/o 状态块中的**信息**字段）获取*信息*值。 此值是**IOCTL\_SPB\_完整\_双工**请求传输的总字节数（写入的字节数加上读取的字节数）。
+1.  对 [**IWDFMemory：： SetBuffer**](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfmemory-setbuffer) 方法的调用会重复使用指向的内存对象， `pWdfMemory` 作为传输列表的容器。
+2.  **FormatRequestForIoctl**调用重用指向的请求对象 `pWdfIoRequest` ，作为**IOCTL \_ SPB \_ 全双工 \_ **请求的容器。 此方法的 *pInputMemory* 参数是一个指针，指向包含传输列表的内存对象。 *POutputMemory*参数为 NULL。
+3.  调用 [**IWDFIoRequest：： Send**](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiorequest-send) 方法会将 i/o 请求发送到设备。 此调用是同步的，并在 SPB 控制器驱动程序完成请求后返回。
+4.  对 [**IWDFIoRequest：： GetCompletionParams**](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiorequest-getcompletionparams) 方法的调用从请求获取完成参数。
+5.  对[**IWDFRequestCompletionParams：： GetInformation**](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfrequestcompletionparams-getinformation)方法的调用从 i/o 状态块) 的**信息**字段 (的完成参数获取*信息*值。 此值是由 **IOCTL \_ SPB \_ 全双工 \_ ** 请求) 写入 (字节数传输的总字节数。
 
  
-
- 
-
-
-
 

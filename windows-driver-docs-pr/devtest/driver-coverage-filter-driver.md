@@ -3,58 +3,52 @@ title: 驱动程序覆盖范围筛选器驱动程序
 description: 驱动程序覆盖范围筛选器驱动程序
 ms.assetid: 8d345081-b9be-4e22-9276-dacd7815f506
 keywords:
-- 驱动程序覆盖范围工具包 WDK，筛选器驱动程序
+- 驱动程序覆盖套件 WDK，筛选器驱动程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 678682048e05d246d8a19c1370eefeacd65f515e
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: e954904024db7e31392e9ca071c33c6cebe22e35
+ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67360356"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89381995"
 ---
 # <a name="driver-coverage-filter-driver"></a>驱动程序覆盖范围筛选器驱动程序
 
 
-**请注意**  的驱动程序覆盖范围工具包不再需要在 Windows 10 中，安装程序不再包含在 WDK 中。 若要执行此处所述在 Windows 10 中的任务，请改用[Driver Verifier](driver-verifier.md)并[IRP 日志记录](irp-logging.md)。
+**注意**   Windows 10 不再需要驱动程序覆盖率工具包，并且 WDK 中不再包括该安装程序。 若要在 Windows 10 中执行此处所述的任务，请改用 [驱动程序验证程序](driver-verifier.md) 和 [IRP 日志记录](irp-logging.md)。
 
  
 
-驱动程序覆盖范围筛选器驱动程序 (Drvcov.sys) 监视 I/O 请求数据包 (Irp)，进入或离开指定设备驱动程序堆栈。 指定的设备的驱动程序覆盖范围筛选器驱动程序将使用监视*DQ*参数运行时**启用 IRP 覆盖率数据集合**工具。 请参阅[如何选择和配置设备基础测试](https://docs.microsoft.com/windows-hardware/drivers)并[设备基础测试参数](https://docs.microsoft.com/windows-hardware/drivers)。
+ ( # A0) 的驱动程序覆盖率筛选器驱动程序监视 (Irp) 输入或保留指定设备的驱动程序堆栈的 i/o 请求数据包。 在运行 "**启用 IRP 覆盖率" 数据收集**工具时，通过使用*DQ*参数指定驱动程序覆盖率筛选器驱动程序监视的设备。 请参阅 [如何选择和配置设备基础测试](/windows-hardware/drivers) 和 [设备基础测试参数](/windows-hardware/drivers)。
 
 <span id="UpperFilter___TRUE"></span><span id="upperfilter___true"></span><span id="UPPERFILTER___TRUE"></span>**UpperFilter = TRUE**  
-此选项将安装为上部设备驱动程序筛选器指定设备驱动程序覆盖范围筛选器驱动程序。 此配置监视所有 IRP 流量传入或传出设备的驱动程序堆栈，无论该驱动程序处理 IRP 还是通过其传递到较低的设备驱动程序中的设备驱动程序。
+此选项将驱动程序覆盖率筛选器驱动程序安装为指定设备的设备驱动程序的上限筛选器。 此配置监视设备驱动程序堆栈中的设备驱动程序的所有 IRP 流量，无论驱动程序是处理 IRP 还是传递到更低的设备驱动程序。
 
 <span id="UpperFilter___FALSE"></span><span id="upperfilter___false"></span><span id="UPPERFILTER___FALSE"></span>**UpperFilter = FALSE**  
-此选项将安装为较低的设备驱动程序筛选器指定设备驱动程序覆盖范围筛选器驱动程序。 此配置监视所有 IRP 流量传入或传出中设备的驱动程序堆栈的低级驱动程序中的设备驱动程序。
+此选项将驱动程序覆盖率筛选器驱动程序安装为指定设备的设备驱动程序的较低筛选器。 此配置监视设备驱动程序堆栈中较低驱动程序的设备驱动程序的所有 IRP 流量。
 
-下图显示了驱动程序堆栈和 IRP 监视窗口的设备驱动程序覆盖范围筛选器驱动程序为上限的筛选器的安装。 在此配置中，筛选器驱动程序跟踪所有 Irp，进入或离开指定设备的驱动程序。
+下图显示了驱动程序覆盖率筛选器驱动程序作为上层筛选器安装的设备的 "驱动程序堆栈" 和 "IRP 监视" 窗口。 在此配置中，筛选器驱动程序跟踪为指定设备进入或离开驱动程序的所有 Irp。
 
-![说明为上限的筛选器安装了驱动程序覆盖范围筛选器驱动程序的关系图](images/coverage-1.png)
+![说明安装为上限筛选器的驱动程序覆盖率筛选器驱动程序的关系图](images/coverage-1.png)
 
-下图显示了驱动程序堆栈和 IRP 监视窗口中的设备驱动程序覆盖范围筛选器驱动程序为较低的筛选器的安装。 在此配置中，筛选器驱动程序跟踪所有 Irp，进入或离开指定的设备驱动程序堆栈的设备驱动程序。
+下图显示了一个设备的驱动程序堆栈和 IRP 监视窗口，其中，驱动程序覆盖率筛选器驱动程序安装为较低的筛选器。 在此配置中，筛选器驱动程序跟踪为指定设备的驱动程序堆栈进入或离开设备驱动程序的所有 Irp。
 
-![说明为较低的筛选器安装了驱动程序覆盖范围筛选器驱动程序的关系图](images/coverage-2.png)
+![说明驱动程序覆盖率筛选器驱动程序安装为较低筛选器的关系图](images/coverage-2.png)
 
 .
 
-### <a name="span-idinstallingthedrivercoveragefilterdriverspanspan-idinstallingthedrivercoveragefilterdriverspan-installing-the-driver-coverage-filter-driver"></a><span id="installing_the_driver_coverage_filter_driver"></span><span id="INSTALLING_THE_DRIVER_COVERAGE_FILTER_DRIVER"></span> 安装驱动程序覆盖范围筛选器驱动程序
+### <a name="span-idinstalling_the_driver_coverage_filter_driverspanspan-idinstalling_the_driver_coverage_filter_driverspan-installing-the-driver-coverage-filter-driver"></a><span id="installing_the_driver_coverage_filter_driver"></span><span id="INSTALLING_THE_DRIVER_COVERAGE_FILTER_DRIVER"></span> 安装驱动程序覆盖率筛选器驱动程序
 
-以下规则定义安装驱动程序覆盖范围筛选器驱动程序来监视 Irp 的最佳方法：
+以下规则定义了安装驱动程序覆盖率筛选器驱动程序以监视 Irp 的最佳方式：
 
--   如果您希望为特定设备和用户模式应用程序或服务之间的 IRP 流量的覆盖率数据，作为设备驱动程序的上部筛选器安装筛选器驱动程序。
+-   如果希望在特定设备和用户模式应用程序或服务之间进行 IRP 流量，请将筛选器驱动程序安装为设备驱动程序的筛选器。
 
--   如果您希望覆盖率数据 IRP 之间的通信指定的设备和设备驱动程序堆栈，例如设备的总线驱动程序中较低级别安装筛选器驱动程序作为设备驱动程序的较低筛选器。
+-   如果要在指定的设备和驱动程序堆栈中的设备（例如设备的总线驱动程序）之间 IRP 流量，请将筛选器驱动程序安装为设备驱动程序的较低筛选器。
 
-**请注意**  如何安装驱动程序覆盖范围筛选器驱动程序，获得最佳的 IRP 覆盖范围取决于驱动程序堆栈的拓扑，并要求您了解的关系和堆栈内的驱动程序的顺序。
-
- 
+**注意**   如何安装驱动程序覆盖率筛选器驱动程序以获得最佳 IRP 覆盖范围取决于驱动程序堆栈的拓扑，并要求您了解堆栈内驱动程序的关系和顺序。
 
  
 
  
-
-
-
-
 

@@ -1,31 +1,31 @@
 ---
 title: C30032
-description: 警告 C30032 调用内存分配函数和强制执行内存通过使用 POOL_NX_OPTOUT 指令的请求。
+description: 警告 C30032 调用内存分配函数，并通过使用 POOL_NX_OPTOUT 指令强制执行可执行内存请求。
 ms.assetid: 7C6F9ACE-DD02-45A7-A601-C5C7A5C89256
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 f1_keywords:
 - C30032
-ms.openlocfilehash: ae5a20bc4344e7d6c45d9cbd437cd03de83d5cac
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 3f8eae0b25bf202e07fda5f10ff6406520e6396f
+ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67371695"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89381639"
 ---
 # <a name="c30032"></a>C30032
 
 
-警告 C30032:调用内存分配函数和强制执行内存使用请求[池\_NX\_OPTOUT](https://docs.microsoft.com/windows-hardware/drivers/kernel/selective-opt-out-pool-nx-optout)指令
+警告 C30032：通过使用 [POOL \_ NX \_ 选择](../kernel/selective-opt-out-pool-nx-optout.md) 指令调用内存分配函数并强制执行可执行内存请求
 
-已禁止\_内存优化\_分配\_强制\_UNSAFE
+禁止的 \_ 内存 \_ 分配 \_ 强制 \_ 不安全
 
-预处理器指令[池\_NX\_OPTOUT](https://docs.microsoft.com/windows-hardware/drivers/kernel/selective-opt-out-pool-nx-optout)阻止非安全类型的自动升级 (**MM\_页\_优先级**和**池\_类型**) 安全类型 （例如，非分页池到 NonPagedPoolNx）。 使用的池\_NX\_OPTOUT 中你的源是可能的设计。 如果这是设计使然，并且可执行文件的内存是必需的则可以禁止显示警告，其中包含[禁止显示警告消息的杂注 Prefast](https://docs.microsoft.com/previous-versions/windows/embedded/gg155764(v=winembedded.70))。 在具有中选择更多的内存保护功能的 Windows 10 系统上不允许这种类型的分配。
+预处理器指令 [池 \_ NX \_ 选择](../kernel/selective-opt-out-pool-nx-optout.md) 阻止将非安全类型 (**MM \_ 页面 \_ 优先级** 和 **池 \_ 类型**) 自动升级到安全类型 (例如，非分页池 to NonPagedPoolNx) 。 \_ \_ 在源中使用 POOL NX 选择可能是设计使然。 如果这是设计使然并且需要可执行内存，则可以使用 [杂注 Prefast 禁止显示警告消息](/previous-versions/windows/embedded/gg155764(v=winembedded.70))。 在已选择额外内存保护的 Windows 10 系统上不允许此类型的分配。
 
-## <a name="span-idexamplespanspan-idexamplespanspan-idexamplespanexample"></a><span id="Example"></span><span id="example"></span><span id="EXAMPLE"></span>示例
+## <a name="span-idexamplespanspan-idexamplespanspan-idexamplespanexample"></a><span id="Example"></span><span id="example"></span><span id="EXAMPLE"></span>实例
 
 
-下面的代码生成此警告：
+下面的代码将生成此警告：
 
 在源文件中：
 
@@ -54,10 +54,4 @@ pPtr = MmGetSystemAddressForMdlSafe( pMdl, NormalPagePriority);
 ```
 
  
-
- 
-
-
-
-
 

@@ -3,24 +3,24 @@ title: IEEE 1394 设备的常时等量 I/O
 description: IEEE 1394 设备的常时等量 I/O
 ms.assetid: fc544776-af45-40e2-9699-7dcc50275d1e
 keywords:
-- IEEE 1394 WDK 总线，同步 I/O
-- 1394 WDK 总线，同步 I/O
-- I/O WDK IEEE 1394 总线
-- I/O 请求数据包 WDK IEEE 1394 总线
+- IEEE 1394 WDK 总线，同步 i/o
+- 1394 WDK 总线，同步 i/o
+- I/o WDK IEEE 1394 总线
+- I/o 请求数据包 WDK IEEE 1394 总线
 - Irp WDK IEEE 1394 总线
-- 同步 I/O WDK IEEE 1394 总线
-- 有保证的带宽 WDK IEEE 1394 总线
+- 同步 i/o WDK IEEE 1394 总线
+- 保证带宽 WDK IEEE 1394 总线
 - 带宽 WDK IEEE 1394 总线
-- 同步 I/O WDK IEEE 1394 总线，有关同步 I/O
+- 同步 i/o WDK IEEE 1394 总线，关于同步 i/o
 - 传输数据 WDK IEEE 1394 总线
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4dd85a0297ca7bbdf61eb82e1b2877814383890e
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 536b01d621a0f3c437955250f3090725b25e3acd
+ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67385766"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89382213"
 ---
 # <a name="isochronous-io-for-ieee-1394-devices"></a>IEEE 1394 设备的常时等量 I/O
 
@@ -28,26 +28,21 @@ ms.locfileid: "67385766"
 
 
 
-实时多媒体设备，如数字照相机需要大量的带宽在稳定流中发送数据，但不是需要有保证的传递。 （例如，从数字照相机丢弃的帧将会降低信号质量，但它不会销毁它的含义。）对于此类设备，提供 IEEE 1394*等时*传输，它提供有保证的带宽，但不保证传递。
+诸如数码相机这样的实时多媒体设备需要大量带宽才能以稳定流的形式发送数据，但不需要确保送达。  (例如，从数字照相机拖放的帧会降低信号的质量，但不会损坏其含义。 ) 对于此类设备，IEEE 1394 提供按 *流量传输，可提供有* 保证的带宽，但不保证送达。
 
-本部分包括：
+本节包括：
 
-[设置同步传输的 IEEE 1394 设备](https://docs.microsoft.com/windows-hardware/drivers/ieee/setting-up-isochronous-transfer-for-ieee-1394-devices)
+[设置 IEEE 1394 设备的常时等量传输](./setting-up-isochronous-transfer-for-ieee-1394-devices.md)
 
-[缓冲等时 DMA 传输的 IEEE 1394 设备](https://docs.microsoft.com/windows-hardware/drivers/ieee/buffering-isochronous-dma-transfers-for-ieee-1394-devices)
+[缓冲 IEEE 1394 设备的常时等量 DMA 传输](./buffering-isochronous-dma-transfers-for-ieee-1394-devices.md)
 
-[等时侦听的 IEEE 1394 设备的选项](https://docs.microsoft.com/windows-hardware/drivers/ieee/isochronous-listen-options-for-ieee-1394-devices)
+[IEEE 1394 设备的常时等量侦听选项](./isochronous-listen-options-for-ieee-1394-devices.md)
 
-[IEEE 1394 设备等时讨论选项](https://docs.microsoft.com/windows-hardware/drivers/ieee/isochronous-talk-options-for-ieee-1394-devices)
+[IEEE 1394 设备的常时等量交谈选项](./isochronous-talk-options-for-ieee-1394-devices.md)
 
-[适用于 IEEE 1394 设备同步的同步选项](https://docs.microsoft.com/windows-hardware/drivers/ieee/isochronous-synchronization-options-for-ieee-1394-devices)
+[IEEE 1394 设备的常时等量同步选项](./isochronous-synchronization-options-for-ieee-1394-devices.md)
 
-[完成同步数据传输](https://docs.microsoft.com/windows-hardware/drivers/ieee/completing-an-isochronous-data-transfer)
-
- 
+[完成常时等量数据传输](./completing-an-isochronous-data-transfer.md)
 
  
-
-
-
 

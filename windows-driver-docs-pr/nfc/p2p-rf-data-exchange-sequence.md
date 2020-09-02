@@ -5,17 +5,17 @@ ms.assetid: FF77D322-47AE-412C-9924-110FB9E8F9F5
 keywords:
 - NFC
 - 近场通信
-- proximity
+- 近程
 - 近场邻近感应
 - NFP
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 339531ecf27a1ba8b6904b8ea8118fabb31853c3
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: da11acd48a44a712e670516827c16687a01ecdf6
+ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72845266"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89382459"
 ---
 # <a name="p2p-rf-data-exchange-sequence"></a>P2P RF 数据交换序列
 
@@ -28,6 +28,5 @@ ms.locfileid: "72845266"
 
  
 ## <a name="related-topics"></a>相关主题
-[NFC 设备驱动程序接口（DDI）概述](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)  
-[NFC 类扩展（CX）参考](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)  
-
+[NFC 设备驱动程序接口 (DDI) 概述](/windows-hardware/drivers/ddi/index)  
+[ (CX) 参考的 NFC 类扩展](/windows-hardware/drivers/ddi/index)

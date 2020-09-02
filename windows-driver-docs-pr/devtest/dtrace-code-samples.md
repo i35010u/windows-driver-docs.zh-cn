@@ -13,20 +13,20 @@ keywords:
 - 跟踪消息格式化文件 WDK
 ms.date: 11/04/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 6457c7d9690c83ec52b62719e8d3169e96ca4077
-ms.sourcegitcommit: 5081de283b09b4fe847912fc1dc0e7f057e0a0cd
+ms.openlocfilehash: 050cd2eadcd1b6f84a950f99f967557cbd535d04
+ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/05/2019
-ms.locfileid: "73592430"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89383269"
 ---
 # <a name="dtrace-code-samples"></a>DTrace 代码示例
 
 DTrace 支持 D 编程语言。 本主题提供了 D 代码示例。
 
-有关 Windows 上的 DTrace 的一般信息，请参阅[dtrace](dtrace.md)。
+有关 Windows 上的 DTrace 的一般信息，请参阅 [dtrace](dtrace.md)。
 
-有关 DTrace 的详细信息，请参阅剑桥大学的[OpenDTrace 规范1.0 版](https://www.cl.cam.ac.uk/techreports/UCAM-CL-TR-924.pdf)。
+有关 DTrace 的详细信息，请参阅剑桥大学的 [OpenDTrace 规范1.0 版](https://www.cl.cam.ac.uk/techreports/UCAM-CL-TR-924.pdf) 。
 
 > [!NOTE]
 > 版本18980和 Windows Server 有问必答 Preview 版本18975后，Windows 内部版本支持 DTrace。
@@ -37,7 +37,7 @@ DTrace 源代码的示例目录中提供了适用于 Windows 方案的其他 D �
 
 [https://github.com/microsoft/DTrace-on-Windows/tree/master/samples/windows](https://github.com/microsoft/DTrace-on-Windows/tree/master/samples/windows)
 
-[https://github.com/opendtrace/toolkit](https://github.com/opendtrace/toolkit)提供一组有用的 opentrace 工具包脚本。
+提供一组有用的 opentrace 工具包脚本 [https://github.com/opendtrace/toolkit](https://github.com/opendtrace/toolkit) 。
 
 
 ## <a name="disk-usage-by-name"></a>按名称的磁盘使用情况
@@ -138,7 +138,7 @@ tick-2s
 }
 ```
 
-将该文件另存为 diskuagebyname，并使用-s 选项运行测试脚本。 为所需的 exe （如 Notepad.exe）提供区分大小写的名称
+将该文件另存为 diskuagebyname，并使用-s 选项运行测试脚本。 为所需的 exe 提供区分大小写的名称（例如 Notepad.exe
 
 ```dtrace
 
@@ -247,7 +247,7 @@ System Commit Reserve: 5 Mb
 
 ## <a name="identifying-heap-free-time-breakdown-for-an-activity"></a>标识活动的堆空闲时间细分
 
-此示例提供了[RtlFreeHeap](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-rtlfreeheap)函数到子函数的细分，并显示了执行这些函数所用的最长时间。
+此示例提供了  [RtlFreeHeap](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-rtlfreeheap) 函数到子函数的细分，并显示了执行这些函数所用的最长时间。
 
 ```dtrace
 /* Mark script destructive as we call "cls" in the tick-1sec provider*/
@@ -371,7 +371,7 @@ count of function hit = 28 <<Press Ctrl-C to exit>>
 
 ## <a name="memory-pool-tracking"></a>内存池跟踪
 
-注意：请以 aggsortkeypos 变量集运行此脚本。 此变量通知 D 跟踪基于第一个索引（大小）对输出进行排序。
+注意：请以 aggsortkeypos 变量集运行此脚本。 此变量通知 D 跟踪根据第一个索引 (大小) 来对输出进行排序。
 
 用法：
 
@@ -379,7 +379,7 @@ count of function hit = 28 <<Press Ctrl-C to exit>>
 
 跟踪 KSec 泄漏的示例： dtrace-s PoolTrackingSummary "120s" 0x6365734b-x aggsortkey-x aggsortkeypos = 1 
 
-`<Tag>` 值是内存池标记的编码 ASCII 值。 例如，若要对 nt 文件系统 NtFf 的标记值进行编码，请首先反转两组字母，这会是 fFtN。 将 ASCII 字符转换为十六进制将是 46 66 74 4e 或0x4666744e 作为我们的程序的参数。
+`<Tag>`该值是内存池标记的已编码 ASCII 值。 例如，若要对 nt 文件系统 NtFf 的标记值进行编码，请首先反转两组字母，这会是 fFtN。 将 ASCII 字符转换为十六进制将是 46 66 74 4e 或0x4666744e 作为我们的程序的参数。
 
 另一个示例是转换 Ksec。
 

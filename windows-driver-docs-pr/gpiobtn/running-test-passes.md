@@ -1,53 +1,48 @@
 ---
 title: 运行测试通过
-description: MITT 平台可以提供测试自动化和选择自定义发送目标调查的 GPIO 模式测试 GPIO 按钮。
+description: MITT 平台通过提供测试自动化和用于自定义为目标调查发送的 GPIO 模式的选项来测试 GPIO 按钮。
 ms.assetid: E24AD015-1E14-4EF9-8443-D0F38FA3321E
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: aa2698456bdb74af8cf56962a742d05306d66a00
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 437fe9f2cd4d912b1a9ebc279c92a7deca2d18b5
+ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67373559"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89381521"
 ---
 # <a name="running-test-passes"></a>运行测试通过
 
 
-MITT 平台可以提供测试自动化和选择自定义发送目标调查的 GPIO 模式测试 GPIO 按钮。
+MITT 平台通过提供测试自动化和用于自定义为目标调查发送的 GPIO 模式的选项来测试 GPIO 按钮。
 
-MITT 测试工具的详细信息，请联系MittSupport@microsoft.com。
+有关 MITT 测试工具的详细信息，请联系 MittSupport@microsoft.com 。
 
-若要开始，请参阅[GPIO 测试中 MITT](https://docs.microsoft.com/windows-hardware/drivers/spb/gpio-tests-in-mitt)。 下载安装程序，解压缩其内容，并阅读**自述文件**有关该工具的一般概述的文件。
+若要开始，请参阅 [MITT 中的 GPIO 测试](../spb/gpio-tests-in-mitt.md)。 下载安装程序，解压缩其内容，并阅读 **自述** 文件以获取该工具的一般概述。
 
-## <a name="span-idend-to-endindicatortestingforconvertiblesspanspan-idend-to-endindicatortestingforconvertiblesspanspan-idend-to-endindicatortestingforconvertiblesspanend-to-end-indicator-testing-for-convertibles"></a><span id="End-to-end_indicator_testing_for_convertibles"></span><span id="end-to-end_indicator_testing_for_convertibles"></span><span id="END-TO-END_INDICATOR_TESTING_FOR_CONVERTIBLES"></span>测试双用型的端到端指示器
+## <a name="span-idend-to-end_indicator_testing_for_convertiblesspanspan-idend-to-end_indicator_testing_for_convertiblesspanspan-idend-to-end_indicator_testing_for_convertiblesspanend-to-end-indicator-testing-for-convertibles"></a><span id="End-to-end_indicator_testing_for_convertibles"></span><span id="end-to-end_indicator_testing_for_convertibles"></span><span id="END-TO-END_INDICATOR_TESTING_FOR_CONVERTIBLES"></span>改装的端到端指示器测试
 
 
-请务必执行端到端测试双用型公开以下几个方面中的任何潜在问题的指示器：
+必须对改装执行端到端指示器测试，才能在以下领域公开任何潜在问题：
 
--   将系统从一种模式转换为另一种模式时的各种计时。
--   可转换的机械具体信息。
+-   将系统从一种模式转换到另一种模式时的各种计时。
+-   可转换的机械细节。
 
-### <a name="span-idlaptoptoslateconversiontestscenariospanspan-idlaptoptoslateconversiontestscenariospanspan-idlaptoptoslateconversiontestscenariospanlaptop-to-slate-conversion-test-scenario"></a><span id="Laptop_to_slate_conversion_test_scenario"></span><span id="laptop_to_slate_conversion_test_scenario"></span><span id="LAPTOP_TO_SLATE_CONVERSION_TEST_SCENARIO"></span>向静态转换测试方案的便携式计算机
+### <a name="span-idlaptop_to_slate_conversion_test_scenariospanspan-idlaptop_to_slate_conversion_test_scenariospanspan-idlaptop_to_slate_conversion_test_scenariospanlaptop-to-slate-conversion-test-scenario"></a><span id="Laptop_to_slate_conversion_test_scenario"></span><span id="laptop_to_slate_conversion_test_scenario"></span><span id="LAPTOP_TO_SLATE_CONVERSION_TEST_SCENARIO"></span>便携机到石板转换测试方案
 
-开始在便携式计算机模式下 （键盘操作） 系统。
+以便携式计算机模式下的系统开始 (键盘可访问) 。
 
-1.  按窗口按钮以导航到**启动**。
-2.  按使用键盘来启动以字母**搜索**。
-3.  点击编辑字段中。 *验证*:不应部署在屏幕键盘。
-4.  旋转系统 （横向与纵向）。 *验证*:系统应不会旋转。
-5.  将从便携式计算机以平板转换 （键盘变得无法访问）。 此类操作的示例是： 旋转或翻转屏幕、 分离的键盘，等等。
-6.  在点击**搜索**编辑字段。 *验证*:应部署在屏幕键盘。
-7.  旋转系统 （横向与纵向）。 *验证*:系统应轮换。
+1.  按窗口按钮以导航到 " **开始**"。
+2.  使用键盘按字母开始 **搜索**。
+3.  在编辑字段中点击。 *验证*：屏幕键盘不应部署。
+4.  将系统 (横向旋转到纵向，并向后) 。 *验证*：系统不应旋转。
+5.  从便携式计算机转换为石板 (键盘将无法访问) 。 此类操作的示例包括：旋转或翻转屏幕、分离键盘等。
+6.  在 **搜索** 编辑字段中点击。 *验证*：屏幕键盘应部署。
+7.  将系统 (横向旋转到纵向，并向后) 。 *验证*：系统应旋转。
 
-**请注意**  为每个不同的方式可将系统转换为平板电脑模式重复这些步骤。
-
- 
+**注意**   对于系统可转换为平板电脑模式的每个不同方法，重复这些步骤。
 
  
 
  
-
-
-
 

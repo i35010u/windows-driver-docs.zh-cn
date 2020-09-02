@@ -7,12 +7,12 @@ keywords:
 - SDEL 查询
 ms.date: 11/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8442b3bcdf343ca2fd4f0b7a4835ccf1f5ac2e23
-ms.sourcegitcommit: cd84cc10570384b0e7a91cb6f91fe67009c1a90e
+ms.openlocfilehash: ca035e76ece1a06bc8a8b857e93c98b00110701e
+ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89238147"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89381873"
 ---
 # <a name="run-the-tests"></a>运行测试
 
@@ -40,22 +40,22 @@ ms.locfileid: "89238147"
 ### <a name="system---pnp-disable-and-enable-with-io-before-and-after-reliability"></a>系统-PNP (在 (可靠性前后禁用和启用 IO) ) 
 
 - Binary： Sysfund_PNP_DisableEnable_With_IO_BeforeAndAfter_DataDriven.dll
-- [文档](https://docs.microsoft.com/windows-hardware/test/hlk/testref/b2849bf1-3478-4fd7-a577-31001084e908)
+- [文档](/windows-hardware/test/hlk/testref/b2849bf1-3478-4fd7-a577-31001084e908)
 
 ### <a name="system---pnp-remove-device-test-reliability"></a>系统-PNP 删除设备测试 (可靠性) 
 
 - Binary： Sysfund_PNP_RemoveAndRestartDevice_DataDriven.dll
-- [文档](https://docs.microsoft.com/windows-hardware/test/hlk/testref/ead2222e-4485-4bfc-84cd-43ac0d2e8181)
+- [文档](/windows-hardware/test/hlk/testref/ead2222e-4485-4bfc-84cd-43ac0d2e8181)
 
 ### <a name="system---reboot-restart-with-io-during-reliability"></a>系统 - 使用期间 IO 重新引导/重启（可靠性）
 
 - Binary： Sysfund_RebootRestart_With_IO_During_DataDriven.dll
-- [文档](https://docs.microsoft.com/windows-hardware/test/hlk/testref/6d6ed5ec-1765-4569-a7ac-20ed7869d89a)
+- [文档](/windows-hardware/test/hlk/testref/6d6ed5ec-1765-4569-a7ac-20ed7869d89a)
 
 ### <a name="system---sleep-with-io-before-and-after-reliability-sysfund"></a>系统-在 (可靠性 SysFund 之前和之后进行 IO 休眠) 
 
 - Binary： Sysfund_Sleep_With_IO_BeforeAndAfter_DataDriven.dll
-- [文档](https://docs.microsoft.com/windows-hardware/test/hlk/testref/16ac817e-b042-4679-8027-c6c44d1ce29f)
+- [文档](/windows-hardware/test/hlk/testref/16ac817e-b042-4679-8027-c6c44d1ce29f)
 
 ### <a name="device-status-check"></a>设备状态检查
 
@@ -84,7 +84,7 @@ ms.locfileid: "89238147"
 
 #### <a name="configuring-the-sdel-query"></a>配置 SDEL 查询
 
-[SDEL 语言](../wdtf/simple-data-evaluation-language-overview.md)用于创建查询，该查询可返回测试和实用程序的目标设备。 使用和语句将以下 SDEL 相关参数一起用于创建完整的查询：
+[SDEL 语言](/windows-hardware/drivers/ddi/index)用于创建查询，该查询可返回测试和实用程序的目标设备。 使用和语句将以下 SDEL 相关参数一起用于创建完整的查询：
 
 **SDEL**：值 *IsDevice* 指定系统上的完整设备集。  通常，除非您只想测试特定驱动程序或设备，否则不会编辑此参数。  接下来，与 SDEL 相关的参数将通过指定应从测试中排除的驱动程序或设备，从此超集创建设备子集，因此此参数可以保持不变。
 
@@ -138,7 +138,7 @@ ms.locfileid: "89238147"
 
 #### <a name="parameters-that-apply-to-utility_enabledisabledriververifier_datadrivendll-only"></a>仅适用于的参数 `utility_enabledisabledriververifier_datadriven.dll`
 
-**DriverVerifierLevel**：0x209BB 的默认值等于 [驱动程序验证程序](https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier)的 "标准标志"。
+**DriverVerifierLevel**：0x209BB 的默认值等于 [驱动程序验证程序](./driver-verifier.md)的 "标准标志"。
 
 ```SDEL
     <Parameter Name="DriverVerifierLevel">0x209BB</Parameter>
@@ -176,7 +176,7 @@ ms.locfileid: "89238147"
     te.exe Utility_DeviceStatusCheck_DataDriven.dll
 ```
 
-此实用程序使用 WDTFTest.xml 中定义的 SDEL 查询来查找受测设备集，并验证它们都有 **问题代码 0**。  "通过" 结果表示查询的设备集全部工作正常。 查看 **TestTextLog** 以调查失败。  有关设备管理器问题代码的说明，请参阅 [设备管理器错误消息](https://docs.microsoft.com/windows-hardware/drivers/install/device-manager-error-messages)。
+此实用程序使用 WDTFTest.xml 中定义的 SDEL 查询来查找受测设备集，并验证它们都有 **问题代码 0**。  "通过" 结果表示查询的设备集全部工作正常。 查看 **TestTextLog** 以调查失败。  有关设备管理器问题代码的说明，请参阅 [设备管理器错误消息](../install/device-manager-error-messages.md)。
 
 ### <a name="launch-a-test"></a>启动测试
 
@@ -229,7 +229,7 @@ ms.locfileid: "89238147"
     EndGroup: PNP_DisableEnable_With_IO_BeforeAndAfter::PNP_DisableEnable_With_IO_BeforeAndAfter_DataDriven_Test#0 [Failed]
 ```
 
-HRESULT "0x80070057" 表示 "E_INVALIDARG：一个或多个参数无效"。 请仔细检查 [SDEL 文档](https://docs.microsoft.com/windows-hardware/drivers/ddi/index) 中的 WDTFTest.xml 配置文件，并查找可能导致此错误的格式不正确的查询。
+HRESULT "0x80070057" 表示 "E_INVALIDARG：一个或多个参数无效"。 请仔细检查 [SDEL 文档](/windows-hardware/drivers/ddi/index) 中的 WDTFTest.xml 配置文件，并查找可能导致此错误的格式不正确的查询。
 
 ### <a name="test-is-blocked-because-it-might-reboot-the-machine"></a>测试被阻止，因为它可能会重新启动计算机
 
@@ -269,4 +269,4 @@ HRESULT "0x80070057" 表示 "E_INVALIDARG：一个或多个参数无效"。 请�
 
 ### <a name="other-issues"></a>其他问题
 
-若要帮助解决此处未列出的其他问题，请参阅 [DevFund 其他文档](https://docs.microsoft.com/windows-hardware/test/hlk/testref/device-devfund-additional-documentation)。
+若要帮助解决此处未列出的其他问题，请参阅 [DevFund 其他文档](/windows-hardware/test/hlk/testref/device-devfund-additional-documentation)。

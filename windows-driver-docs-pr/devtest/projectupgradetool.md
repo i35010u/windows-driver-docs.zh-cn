@@ -1,43 +1,43 @@
 ---
 title: ProjectUpgradeTool
-description: ProjectUpgradeTool 采用 Microsoft Visual Studio 2012 项目 ( *.vcxproj) 和解决方案文件 (* .sln)，适用于 Windows 8 创建使用 Windows Driver Kit (WDK) 和升级其可用于 Windows 8.1 的 WDK 和Microsoft Visual Studio 2013。
+description: ProjectUpgradeTool 采用 Microsoft Visual Studio 2012 项目 (*) 和解决方案文件 (*.sln) 使用 Windows 驱动程序工具包在 windows 8 中创建，并将其升级为适用于 (和) 2013 的 wdk。
 ms.assetid: DEB7799C-D505-40E6-B2B0-CF774A99B1BE
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9f349aa2f788b5960d2b777d8be2d843f656584b
-ms.sourcegitcommit: 2589492f3c14f779efa8b446e81d4e0f6d048f4f
+ms.openlocfilehash: 3e08a681fe12436ccfb8ae5ff3f8b4a24b9fe5b7
+ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2019
-ms.locfileid: "66815084"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89382973"
 ---
 # <a name="projectupgradetool"></a>ProjectUpgradeTool
 
 
-ProjectUpgradeTool 采用 Microsoft Visual Studio 2012 项目 (\*.vcxproj) 和解决方案文件 (\*.sln)，适用于 Windows 8 创建使用 Windows Driver Kit (WDK) 和升级其可用于 Windows 8.1 的 WDK 和Microsoft Visual Studio 2013。
+ProjectUpgradeTool Microsoft Visual Studio 采用 2012 (\*) 和解决方案文件 (\* .sln) 使用 Windows 驱动程序工具包（windows 8 的 Windows 驱动程序工具包）进行创建，并将其升级为适用于 (和) 2013 的 wdk。
 
-**重要**ProjectUpgradeTool 不会更改的源文件。 该工具仅将转换的项目和解决方案文件。 默认情况下，该工具将保存原始文件的备份副本。
+**重要提示**  ProjectUpgradeTool 不会更改您的源文件。 该工具只转换项目和解决方案文件。 默认情况下，该工具将保存原始文件的备份副本。
 
 
 
-**若要升级到 WDK 8.1 WDK 8 项目或解决方案**
+**将 WDK 8 项目或解决方案升级到 WDK 8。1**
 
 1.  打开 Visual Studio 命令提示符窗口。
-2.  键入命令**ProjectUpgradeTool**并指定包含想要升级到 Windows Driver Kit (WDK) 8.1 的 Windows 8.1 的 Windows Driver Kit (WDK) 8 项目或解决方案文件的根 （或父） 目录。 例如，以下命令将升级 c： 驱动器中的所有文件\\myDriver 目录和子目录。
+2.  键入命令 **ProjectUpgradeTool** 并指定根 (或父) 目录，其中包含要升级到 Windows 驱动程序工具包的 Windows 驱动程序工具包 (wdk) 8 项目或解决方案文件， (的 wdk) 8.1。 例如，以下命令将升级 C： \\ myDriver 目录和子目录中的所有文件。
 
     ```
     ProjectUpgradeTool.exe  C:\myDriver
     ```
 
-3.  打开使用 Visual Studio 2013 的 WDK 8.1 项目或解决方案文件。 该工具将保持原始文件的名称。 使用.backup 文件扩展名保存以前的版本。
-    **请注意**如果你想要能够生成适用于 Windows Vista 的目标，使用 Visual Studio 2013 和 WDK 8.1，请参阅[要执行的操作如果无法将 WDK 8 项目迁移到 WDK 8.1 后生成的 Windows Vista 目标](#build-vista-with-wdk-8-1)。
+3.  使用 Visual Studio 2013 打开 WDK 8.1 项目或解决方案文件。 该工具保留文件的原始名称。 以前的版本连同备份文件扩展名一起保存。
+    **注意**  如果希望能够为 Windows Vista 生成目标，请使用 Visual Studio 2013 和 WDK 8.1，请参阅 [将 WDK 8 项目迁移到 wdk 8.1 后，如果无法生成 Windows vista 目标，应如何操作](#build-vista-with-wdk-8-1)。
 
 
 
-## <a name="span-idprojectupgradetoolsyntaxspanspan-idprojectupgradetoolsyntaxspanspan-idprojectupgradetoolsyntaxspanprojectupgradetool-syntax"></a><span id="ProjectUpgradeTool_Syntax"></span><span id="projectupgradetool_syntax"></span><span id="PROJECTUPGRADETOOL_SYNTAX"></span>ProjectUpgradeTool 语法
+## <a name="span-idprojectupgradetool_syntaxspanspan-idprojectupgradetool_syntaxspanspan-idprojectupgradetool_syntaxspanprojectupgradetool-syntax"></a><span id="ProjectUpgradeTool_Syntax"></span><span id="projectupgradetool_syntax"></span><span id="PROJECTUPGRADETOOL_SYNTAX"></span>ProjectUpgradeTool 语法
 
 
-项目升级工具位于 %windowssdkdir%\\bin\\x86\\目录。 例如，c:\\Program Files (x86)\\Windows 工具包\\8.1\\bin\\x86。
+项目升级工具位于% WindowsSdkDir% \\ bin \\ x86 \\ 目录中。 例如，C： \\ Program 文件 (x86) \\ Windows 工具包 \\ 8.1 \\ bin \\ x86。
 
 ProjectUpgradeTool.exe 具有以下语法：
 
@@ -59,71 +59,71 @@ ProjectUpgradeTool.exe  < rootDir >
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p><strong>-Log:</strong><em>&lt;LogFile&gt;</em><strong>: [</strong><em>&lt;详细级别&gt;</em><strong>]</strong></p></td>
-<td align="left"><p>指定日志文件的名称和指定的日志记录级别 (请参阅<em>详细级别</em>)。</p></td>
+<td align="left"><p><strong>-Log：</strong>日志<em> &lt; &gt; 文件</em><strong>： [</strong><em> &lt; 详细级别 &gt; </em><strong>]</strong></p></td>
+<td align="left"><p>指定日志文件的名称，并指定日志记录级别 (查看 <em>详细</em> 级别) 。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>-ConsoleLog:</strong><em>&lt;详细级别&gt;</em></p></td>
-<td align="left"><p>指定控制台日志文件的名称和指定的日志记录级别 (请参阅<em>详细级别</em>)。</p></td>
+<td align="left"><p><strong>-ConsoleLog：</strong><em> &lt; 详细 &gt; 级别</em></p></td>
+<td align="left"><p>指定控制台日志文件的名称，并指定日志记录级别 (查看 <em>详细</em> 级别) 。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><em>详细级别</em></p></td>
-<td align="left"><p>默认日志记录级别的日志文件和控制台日志记录<strong>Verbose</strong>并<strong>信息</strong>分别。 <em>详细程度</em>是之一<strong>System.Diagnostics.SourceLevels</strong>。</p></td>
+<td align="left"><p><em>程度</em></p></td>
+<td align="left"><p>日志文件和控制台日志记录的默认日志记录级别分别为 " <strong>详细</strong> " 和 " <strong>信息</strong> "。 <em>详细级别</em> 是 <strong>SourceLevels</strong>之一。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>-NoBackup</strong></p></td>
-<td align="left"><p>告知 ProjectUpgradeTool 不以制作备份副本的原始项目 (.vcxproj) 或解决方案 (.sln)。 如果选择此选项时，原始项目和解决方案文件覆盖，并将仅适用于 Windows 8.1 的 WDK 和 Visual Studio 2013。</p></td>
+<td align="left"><p>告诉 ProjectUpgradeTool 不 ( 的原始项目的备份副本) 或 ( .sln) 的解决方案。 如果选择此选项，原始项目和解决方案文件将被覆盖，并且仅适用于 Windows 8.1 和 Visual Studio 2013 的 WDK。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>-NoToolsetUpgrade</strong></p></td>
-<td align="left"><p>指定<strong>-NoToolsetUpgrade</strong>选项如果您不想要指定 Windows 8.1 之前的 Windows 版本的生成配置时使用 WDK 8.1 平台工具集。 当选择此选项时，只有<strong>WinPreRel</strong>将使用最新的 WDK 构建配置。</p></td>
+<td align="left"><p>如果在 Windows 8.1 之前指定 Windows 版本的生成配置，请指定 <strong>-NoToolsetUpgrade</strong> 选项，以便在你不希望使用 WDK 8.1 平台工具集。 当你选择此选项时，将仅使用最新的 WDK 生成 <strong>WinPreRel</strong> 配置。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>-InPlaceUpgrade</strong></p></td>
-<td align="left"><p>使用新替换每个现有的生成配置<strong>WinPreRel</strong>配置。 这样可防止您从以前版本的 Windows 构建。</p></td>
+<td align="left"><p>将每个现有的生成配置替换为新的 <strong>WinPreRel</strong> 配置。 这会阻止你为以前版本的 Windows 构建。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>-ForceUpgrade</strong></p></td>
-<td align="left"><p>强制升级，每个项目文件 (.vcxproj)，即使该项目不符合要求的驱动程序项目。</p></td>
+<td align="left"><p>强制升级 () 的每个项目文件，即使项目不满足驱动程序项目的要求也是如此。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>-KeepObsoleteConfigs</strong></p></td>
-<td align="left"><p>将保留通过 WDK (例如，Windows Vista) 不再受支持的操作系统的目标配置。 但是，若要生成为这些已过时的目标，需要具有 Visual Studio 2012 和除了 WDK 8.1 和 Visual Studio 2013 的计算机上安装 WDK 8。 例如，假设你想要升级该驱动程序项目以使用 WDK 8.1 的所有支持的目标版本 （Windows 7、 Windows 8 和 Windows 8.1）。 并且你仍想要使用相同的驱动程序项目来为 Windows Vista 中继续生成。 若要执行此操作，则升级项目文件使用<strong>-KeepObsoleteConfigs</strong>选项可以使 Windows Vista 目标配置项目中。 Windows Vista 配置将继续使用<strong>WindowsKernelModeDriver8.0</strong>的工具集 （WDK 8 中提供），即使生成 Visual Studio 2013 中的项目。</p></td>
+<td align="left"><p>保留 WDK (不再支持的操作系统的目标配置，例如，Windows Vista) 。 但是，若要为这些过时目标生成，除了 WDK 8.1 和 Visual Studio 2013，还需要在计算机上安装 Visual Studio 2012 和 WDK 8。 例如，假设你想要升级驱动程序项目，以使用适用于所有受支持的目标版本（ (Windows 7、Windows 8 和 Windows 8.1) ）的 WDK 8.1。 你仍希望使用相同的驱动程序项目来继续为 Windows Vista 构建。 要执行此操作，请使用 <strong>-KeepObsoleteConfigs</strong> 选项升级项目文件，以将 Windows Vista 目标配置保存在项目中。 Windows Vista 配置将继续使用 <strong>windowskernelmodedriver 8.0</strong> 工具集 (在 WDK 8) 中可用，即使您在 Visual Studio 2013 中生成项目也是如此。</p></td>
 </tr>
 </tbody>
 </table>
 
 
 
-## <a name="span-idcommentsspanspan-idcommentsspanspan-idcommentsspancomments"></a><span id="Comments"></span><span id="comments"></span><span id="COMMENTS"></span>注释
+## <a name="span-idcommentsspanspan-idcommentsspanspan-idcommentsspancomments"></a><span id="Comments"></span><span id="comments"></span><span id="COMMENTS"></span>提出
 
 
--   [要执行的操作如果看到错误 MSB8020 (平台工具集 = WindowsKernelModeDriver8.0) 找不到](#what-to-do-if-you-see-error-msb8020)
--   [要执行的操作如果无法将 WDK 8 项目迁移到 WDK 8.1 后生成的 Windows Vista 目标](#build-vista-with-wdk-8-1)
+-   [如果 ) 找不到 "MSB8020" (平台工具集 = "WindowsKernelModeDriver 8.0" 时应执行的操作](#what-to-do-if-you-see-error-msb8020)
+-   [将 WDK 8 项目迁移到 WDK 8.1 之后，如果无法生成 Windows Vista 目标，该怎么办](#build-vista-with-wdk-8-1)
 
-### <span id="What_to_do_if_you_see_Error_MSB8020__Platform_Toolset____WindowsKernelModeDriver8.0___cannot_be_found_"></span><span id="what_to_do_if_you_see_error_msb8020__platform_toolset____windowskernelmodedriver8.0___cannot_be_found_"></span><span id="WHAT_TO_DO_IF_YOU_SEE_ERROR_MSB8020__PLATFORM_TOOLSET____WINDOWSKERNELMODEDRIVER8.0___CANNOT_BE_FOUND_"></span><a name="what-to-do-if-you-see-error-msb8020"></a>要执行的操作如果看到错误 MSB8020 (平台工具集 = WindowsKernelModeDriver8.0) 找不到
+### <a name="span-idwhat_to_do_if_you_see_error_msb8020__platform_toolset____windowskernelmodedriver80___cannot_be_found_spanspan-idwhat_to_do_if_you_see_error_msb8020__platform_toolset____windowskernelmodedriver80___cannot_be_found_spanspan-idwhat_to_do_if_you_see_error_msb8020__platform_toolset____windowskernelmodedriver80___cannot_be_found_spanwhat-to-do-if-you-see-error-msb8020-platform-toolset--windowskernelmodedriver80-cannot-be-found"></a><span id="What_to_do_if_you_see_Error_MSB8020__Platform_Toolset____WindowsKernelModeDriver8.0___cannot_be_found_"></span><span id="what_to_do_if_you_see_error_msb8020__platform_toolset____windowskernelmodedriver8.0___cannot_be_found_"></span><span id="WHAT_TO_DO_IF_YOU_SEE_ERROR_MSB8020__PLATFORM_TOOLSET____WINDOWSKERNELMODEDRIVER8.0___CANNOT_BE_FOUND_"></span><a name="what-to-do-if-you-see-error-msb8020"></a>如果 ) 找不到 "MSB8020" (平台工具集 = "WindowsKernelModeDriver 8.0" 时应执行的操作
 
-如果您尝试打开项目或解决方案，它使用 WDK 8 创建的可能会看到以下错误消息，当你尝试生成使用 WDK 8.1 的项目。
+如果尝试打开使用 WDK 8 创建的项目或解决方案，则在尝试使用 WDK 8.1 生成项目时，可能会看到以下错误消息。
 
 ```
 1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V120\Microsoft.Cpp.Platform.targets(54,5): error MSB8020: The builds tools for WindowsKernelModeDriver8.0 (Platform Toolset = 'WindowsKernelModeDriver8.0') cannot be found. To build using the WindowsKernelModeDriver8.0 build tools, please install WindowsKernelModeDriver8.0 build tools. Alternatively, you may update to the current Visual Studio tools by selecting the Project menu or right-click the solution, and then selecting "Update VC++ Projects...".
 ```
 
-WDK 8 中的平台工具集已**WindowsKernelModeDriver8.0**。 若要解决此错误，请运行 ProjectUpgradeTool 此处所述，并升级 WDK 8 解决方案以使用 WDK 8.1 中提供的工具集
+WDK 8 中的平台工具集是 **windowskernelmodedriver 8.0**。 若要修复此错误，请按此处所述运行 ProjectUpgradeTool，并升级 WDK 8 解决方案以使用 WDK 8.1 中提供的工具集
 
-### <span id="build_vista_with_WDK_8.1"></span><span id="build_vista_with_wdk_8.1"></span><span id="BUILD_VISTA_WITH_WDK_8.1"></span><a name="build-vista-with-wdk-8-1"></a>要执行的操作如果无法将 WDK 8 项目迁移到 WDK 8.1 后生成的 Windows Vista 目标
+### <a name="span-idbuild_vista_with_wdk_81spanspan-idbuild_vista_with_wdk_81spanspan-idbuild_vista_with_wdk_81spanwhat-to-do-if-you-are-unable-to-build-a-windows-vista-target-after-migrating-a-wdk-8-project-to-wdk-81"></a><span id="build_vista_with_WDK_8.1"></span><span id="build_vista_with_wdk_8.1"></span><span id="BUILD_VISTA_WITH_WDK_8.1"></span><a name="build-vista-with-wdk-8-1"></a>将 WDK 8 项目迁移到 WDK 8.1 之后，如果无法生成 Windows Vista 目标，该怎么办
 
-**问题：** 无法将 WDK 8 项目迁移到 WDK 8.1 后生成的 Windows Vista 目标。
+**问题：** 将 WDK 8 项目迁移到 WDK 8.1 后，无法构建 Windows Vista 目标。
 
-**方案：** 已创建的项目使用 WDK 8 和 Visual Studio 2012。 已升级项目/解决方案使用 WDK 8.1 和 Visual Studio 2013 中，使用 ProjectUpgradeTool 工具。 执行此操作使用以下命令以保留 Windows Vista 配置：**ProjectUpgradeTool.exe** *PathToProjectFolder* **-KeepObsoleteConfigs.**
+**方案：** 已使用 WDK 8 和 Visual Studio 2012 创建了一个项目。 已使用 ProjectUpgradeTool 工具升级了使用 WDK 8.1 和 Visual Studio 2013 的项目/解决方案。 为此，请使用以下命令保留 Windows Vista 配置： **ProjectUpgradeTool.exe** *PathToProjectFolder* **-KeepObsoleteConfigs。**
 
-WDK 8.1 中打开的项目。 生成 Win32 Windows Vista 目标时，可能会看到以下错误消息：
+在 WDK 8.1 中打开该项目。 生成 Win32 Windows Vista 目标时，可能会看到以下错误消息：
 
 ```
 error MSB6004: The specified task executable location "C:\Program Files (x86)\Windows Kits\8.0\bin\x86\x86\CL.exe" is invalid.   C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V110\Microsoft.CppCommon.targets  347 5   KMDF Driver1
 ```
 
-在生成 x64 Windows Vista 的目标，可能会看到以下错误消息：
+构建 x64 Windows Vista 目标时，可能会看到以下错误消息：
 
 ```
 error TRK0002: Failed to execute command: ""C:\Program Files (x86)\Windows Kits\8.0\bin\x64\stampinf.exe" -d * -a amd64 -v * -k 1.11 -u 1.11.0 -f x64\VistaRelease\KMDFDriver1.inf". The operation identifier is not valid.  C:\Users\Administrator\Desktop\KMDF Driver1 - Copy\KMDF Driver1\TRACKER KMDF Driver1
@@ -133,13 +133,13 @@ error TRK0002: Failed to execute command: ""C:\Program Files (x86)\Windows Kits\
 error : Verification Error: Driver package has no driver version.    C:\Program Files (x86)\Windows Kits\8.0\build\WindowsDriver8.0.common.targets   1338    5   KMDF Driver1 Package
 ```
 
-**解决方法：** 您需要执行两项更改。
+**解决方法：** 需要进行两次更改。
 
-1.  **更正的 WindowsDriver8.0.x64.props 和 WindowsDriver8.0.Win32.props 文件。**
+1.  **更正 WindowsDriver 属性和 WindowsDriver 8.0. 属性文件。**
 
-    您需要两个在这些条件表达式中进行的更正\*.props 文件中。 这些文件位于 c： 驱动器中\\Program Files (x86)\\Windows 工具包\\8.0\\生成目录。
+    需要在这两个属性文件的条件表达式中进行更正 \* 。 文件位于 C： \\ Program files (x86) \\ Windows 工具包 \\ 8.0 \\ 生成目录中。
 
-    在每个\*.props 文件中，找到表达式其中`('$(VisualStudioVersion)' != '11.0')`。 例如，第一个实例将如以下所示：
+    在每个 \* 属性文件中，找到表达式 where `('$(VisualStudioVersion)' != '11.0')` 。 例如，第一个实例将如下所示：
 
     ```XML
             <When  Condition="'$(VisualStudioVersion)' != '11.0'">
@@ -157,31 +157,31 @@ error : Verification Error: Driver package has no driver version.    C:\Program 
         </When>
     ```
 
-    更改不等于 (！ =) 到小于 ("&lt;")。
+    将 not 等于 (！ =) 改为小于 ( " &lt; " ) 。
 
     ```XML
         <When  Condition="'$(VisualStudioVersion)' &lt;'11.0'">
     ```
 
-    查找下一个实例，该表达式的位置 `('$(VisualStudioVersion)' != '11.0')`
+    找到表达式的下一个实例，其中 `('$(VisualStudioVersion)' != '11.0')`
 
     ```XML
         <When Condition="('$(PlatformToolset)' == 'WindowsApplicationForDrivers8.0') and ('$(VisualStudioVersion)' != '11.0')">
     ```
 
-    和更改不等于 (！ =) 到小于 ("&lt;")。
+    然后将 not 等于 (！ =) 改为小于 ( " &lt; " ) 。
 
     ```XML
         <When Condition="('$(PlatformToolset)' == 'WindowsApplicationForDrivers8.0') and ('$(VisualStudioVersion)' &lt;'11.0')">
     ```
 
-    进行更改后，将同时保存\*.props 文件中。
+    进行更改后，请保存这两个 \* 属性文件。
 
-2.  **更正该驱动程序的项目文件。**
+2.  **更正驱动程序的项目文件。**
 
-    打开项目文件 (\*.vcxproj) 为您的驱动程序。
+    为驱动程序打开项目文件 (" \* .vcxproj") 。
 
-    在项目文件 （发行版和调试） 中找到 Vista 目标配置。 例如：
+    在项目文件中找到 Vista 目标配置 ("发布并调试") 。 例如：
 
     ```XML
        <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Vista Debug|Win32'">
@@ -191,7 +191,7 @@ error : Verification Error: Driver package has no driver version.    C:\Program 
       </PropertyGroup>
     ```
 
-    添加**PackageDir**与 Windows Vista 配置设置的属性。 在大多数情况下，应使用默认值： `<PackageDir>$(OutDir)\$(Intdir)</PackageDir>`。
+    将 **PackageDir** 属性添加到 Windows Vista 配置设置。 在大多数情况下，应使用默认值： `<PackageDir>$(OutDir)\$(Intdir)</PackageDir>` 。
 
     ```XML
        <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Vista Debug|Win32'">
@@ -202,7 +202,7 @@ error : Verification Error: Driver package has no driver version.    C:\Program 
       </PropertyGroup>
     ```
 
-    进行其他配置的相同的更改。
+    对其他配置进行相同的更改。
 
     ```XML
         <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Vista Release|Win32'">
@@ -213,21 +213,11 @@ error : Verification Error: Driver package has no driver version.    C:\Program 
       </PropertyGroup>
     ```
 
-    进行这些更改并保存该文件后可以打开并生成 Visual Studio 2013 中的项目。 项目应继续使用 Visual Studio 2012。 请注意，即使这些更改后仍需要 WDK 8 的计算机上安装 Visual Studio 2012。
+    进行这些更改并保存文件后，可以在 Visual Studio 2013 中打开并生成项目。 项目应继续使用 Visual Studio 2012。 请注意，即使在这些更改之后，计算机上仍需要安装 WDK 8 和 Visual Studio 2012。
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
+## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
-[生成驱动程序](https://docs.microsoft.com/windows-hardware/drivers/develop/building-a-driver)
+[生成驱动程序](../develop/building-a-driver.md)
 
 [WDK 和 Visual Studio 生成环境](wdk-and-visual-studio-build-environment.md)
-
-
-
-
-
-
-
-
-
-

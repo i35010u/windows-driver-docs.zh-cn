@@ -1,42 +1,42 @@
 ---
 title: 修改 IEEE 1394 总线驱动程序的默认行为
-description: Windows 7 包括 1394ohci.sys，新的 IEEE 1394 总线驱动程序使用内核模式驱动程序框架 (KMDF) 实现的。
+description: Windows 7 包括 1394ohci.sys，这是通过使用内核模式驱动程序框架（ (KMDF) 实现的新 IEEE 1394 总线驱动程序）。
 ms.assetid: B636943E-EE52-4D0D-A638-89C05AD41F1A
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 37ba44dc4d49d7f52e8fcf6afac1008118e40ad6
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 65e3aa88824fc33fc947ae09fa5a8c561cbbe024
+ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67381049"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89383039"
 ---
 # <a name="modifying-the-default-behavior-of-the-ieee-1394-bus-driver"></a>修改 IEEE 1394 总线驱动程序的默认行为
 
 
-Windows 7 包括 1394ohci.sys，新的 IEEE 1394 总线驱动程序使用内核模式驱动程序框架 (KMDF) 实现的。 1394ohci.sys 总线驱动程序将替换中端口/微型端口配置-1394bus.sys 和 ochi1394.sys 的旧 IEEE 总线驱动程序。
+Windows 7 包括 1394ohci.sys，这是通过使用内核模式驱动程序框架（ (KMDF) 实现的新 IEEE 1394 总线驱动程序）。 1394ohci.sys 总线驱动程序替换端口/微型端口配置中的旧版 IEEE bus 驱动程序--1394bus.sys 和 ochi1394.sys。
 
-在某些情况下你可能想要重写 1394ohci.sys 的默认行为。 可以通过设置它支持某些注册表值来执行此操作。
+在某些情况下，你可能想要重写 1394ohci.sys 的默认行为。 为此，可以设置它所支持的特定注册表值。
 
 ## <a name="registry-value-locations"></a>注册表值位置
 
 
-可以针对所有的 1394 年控制器的全局系统中或单独为每个 1394年控制器来设置 1394年相关的注册表值。 1394ohci.sys，总线驱动程序首先查询全局 1394年注册表值，然后查询各个 1394年控制器注册表值。
+你可以为系统中的所有1394控制器全局设置1394相关的注册表值，也可以为每个1394控制器分别设置。 1394ohci.sys 总线驱动程序首先查询全局1394注册表值，然后查询各个1394控制器注册表值。
 
-在以下注册表位置包含全局 1394年注册表值：
+以下注册表位置包含全局1394注册表值：
 
 `HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\1394ohci \Parameters`
 
-在以下注册表位置包含各个 1394年控制器注册表值：
+以下注册表位置包含各个1394控制器注册表值：
 
 `HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class \{6BDD1FC1-810F-11D0-BEC7-08002BE2092F}\<NNNN>`
 
-`<NNNN>` 表示每个 1394年控制器的实例标识号。
+`<NNNN>` 表示每个1394控制器的实例标识号。
 
 ## <a name="registry-values"></a>注册表值
 
 
-下表介绍新的 1394年总线驱动程序支持的注册表值。 全局或为特定的 1394年控制器，可以指定所有注册表值。 为特定的 1394年控制器指定的任何注册表值重写任何对应的全局指定的注册表值。
+下表介绍了新的1394总线驱动程序支持的注册表值。 可以为特定1394控制器指定全局或全部注册表值。 为特定1394控制器指定的任何注册表值都将覆盖所有对应的全局指定的注册表值。
 
 <table>
 <colgroup>
@@ -49,10 +49,10 @@ Windows 7 包括 1394ohci.sys，新的 IEEE 1394 总线驱动程序使用内核�
 <thead>
 <tr class="header">
 <th>名称</th>
-<th>在任务栏的搜索框中键入</th>
-<th>ReplTest1</th>
+<th>类型</th>
+<th>值</th>
 <th>默认</th>
-<th>描述</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>
@@ -61,30 +61,30 @@ Windows 7 包括 1394ohci.sys，新的 IEEE 1394 总线驱动程序使用内核�
 <td>DWORD</td>
 <td>0 或 1</td>
 <td>0</td>
-<td>1394ohci.sys 总线驱动程序中的生成计数值进行比较<strong>self_id</strong>注册 1394年控制器与中的异步接收的生成计数值的处理时接收 DMA 请求上下文缓冲区接收异步请求。 将此值设置为 0 允许生成计数比较。 此值设置为 1 禁用生成计数比较。</td>
+<td>1394ohci.sys 总线驱动程序将1394控制器的 <strong>self_id</strong> 寄存器中的生成计数值与异步接收 DMA 请求上下文缓冲区在处理收到的异步请求时接收的生成计数值进行比较。 如果将此值设置为0，则启用生成计数比较。 将此值设置为1将禁用生成计数比较。</td>
 </tr>
 <tr class="even">
 <td>UseQuadletReadsForEnumeration</td>
 <td>DWORD</td>
 <td>0 或 1</td>
 <td>0</td>
-<td>设置此值为 0，用于检索配置 rom。 内容的默认方法 此值设置为 1 会导致新的 1394年总线驱动程序，使用异步 quadlet 读取的事务来检索内容配置 rom。</td>
+<td>如果将此值设置为0，则将启用用于检索配置 ROM 内容的默认方法。 将此值设置为1会导致新的1394总线驱动程序使用异步 quadlet 读取事务来检索配置 ROM 的内容。</td>
 </tr>
 <tr class="odd">
 <td>EnumerateIP1394</td>
 <td>DWORD</td>
 <td>0 或 1</td>
 <td>0</td>
-<td>将此值设置为 0 将禁用 1394年总线上 IP1394 设备的枚举。 此值设置为 1 启用 1394年总线上 IP1394 设备的枚举。</td>
+<td>如果将此值设置为0，则将在1394总线上禁用 IP1394 设备的枚举。 将此值设置为1可在1394总线上枚举 IP1394 设备。</td>
 </tr>
 <tr class="even">
 <td>EnableGapCountOptimization</td>
 <td>DWORD</td>
 <td>0 或 1</td>
-<td>优化为仅限 1394a 拓扑</td>
-<td>将此值设置为 0 会禁用间隙计数优化。 此值设置为 1 可实现间隙计数优化。
+<td>仅针对1394a 拓扑优化</td>
+<td>将此值设置为0将禁用间隙计数优化。 将此值设置为1可启用间隙计数优化。
 <div class="alert">
-<strong>请注意</strong>  启用间隙计数优化改进了所有的 1394年总线拓扑，包括 1394b 的间隔计数。 使用的间隔计数值基于 IEEE 1394a 规范中指定的表方法。 最终用户必须确保使用的间隔计数是对其的 1394年总线拓扑有效。
+<strong>注意</strong>   启用间隙计数优化可改进所有1394总线拓扑（包括1394b）的间隙计数。 根据 IEEE-1394a 规范中指定的表方法，使用的 "间隙计数" 值。 最终用户必须确保使用的间距计数对其1394总线拓扑有效。
 </div>
 <div>
  
@@ -95,9 +95,9 @@ Windows 7 包括 1394ohci.sys，新的 IEEE 1394 总线驱动程序使用内核�
 <td>DWORD</td>
 <td>0 或 1</td>
 <td>0</td>
-<td>如果没有等时支持的节点上的 1394年总线发现，此值设置为 0 禁用周期开始数据包。 此值设置为 1 启用周期开始数据包而不考虑是否 1394年总线上找到等时支持的节点。
+<td>如果在1394总线上找不到支持同步的节点，则将此值设置为0将禁用循环启动数据包。 将此值设置为1可启用循环启动数据包，无论是否在1394总线上都找到了支持同步的节点。
 <div class="alert">
-<strong>请注意</strong>  1394ohci.sys 总线驱动程序禁用和启用周期开始数据包，仅当本地节点是总线管理器。
+<strong>注意</strong>   1394ohci.sys 总线驱动程序将禁用，并且仅当本地节点为总线管理器时，才启用循环启动数据包。
 </div>
 <div>
  
@@ -109,8 +109,5 @@ Windows 7 包括 1394ohci.sys，新的 IEEE 1394 总线驱动程序使用内核�
  
 
 ## <a name="related-topics"></a>相关主题
-[IEEE 1394 驱动程序堆栈](https://docs.microsoft.com/windows-hardware/drivers/ieee/the-ieee-1394-driver-stack)  
-[在 Windows 7 中的 IEEE 1394 总线驱动程序](https://docs.microsoft.com/windows-hardware/drivers/ieee/IEEE-1394-Bus-Driver-in-Windows-7)  
-
-
-
+[IEEE 1394 驱动程序堆栈](./the-ieee-1394-driver-stack.md)  
+[Windows 7 中的 IEEE 1394 总线驱动程序](./ieee-1394-bus-driver-in-windows-7.md)

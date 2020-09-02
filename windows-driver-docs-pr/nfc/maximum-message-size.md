@@ -5,17 +5,17 @@ ms.assetid: 9806130F-AB9D-4265-8D9E-72CED49BF2C2
 keywords:
 - NFC
 - 近场通信
-- proximity
+- 近程
 - 近场邻近感应
 - NFP
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 04b16307f6d8585f45e267bd57a9390beca15ee6
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: a4027a580d623fc1fc2173a7f077e2761f30a4b7
+ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72843458"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89382541"
 ---
 # <a name="nfp-maximum-message-size"></a>NFP 最大消息大小
 
@@ -24,7 +24,6 @@ ms.locfileid: "72843458"
 
 
 ## <a name="related-topics"></a>相关主题
-[IOCTL\_NFP\_获取\_MAX\_消息\_字节](https://docs.microsoft.com/windows-hardware/drivers/ddi/nfpdev/ni-nfpdev-ioctl_nfp_get_max_message_bytes)  
-[NFC 设备驱动程序接口（DDI）概述](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)  
-[近字段邻近 DDI 引用](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)  
-
+[IOCTL \_ NFP \_ 获取 \_ 最大 \_ 消息 \_ 字节数](/windows-hardware/drivers/ddi/nfpdev/ni-nfpdev-ioctl_nfp_get_max_message_bytes)  
+[NFC 设备驱动程序接口 (DDI) 概述](/windows-hardware/drivers/ddi/index)  
+[近字段邻近 DDI 引用](/windows-hardware/drivers/ddi/index)

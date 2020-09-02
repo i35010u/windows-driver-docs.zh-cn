@@ -9,12 +9,12 @@ ms.date: 04/20/2017
 ms.localizationpriority: medium
 f1_keywords:
 - C28128
-ms.openlocfilehash: 467295590a2e01e59297e412ab9979cf3e7f5841
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 6d255df1bf6b9f28dd5714df28438bdc5e7f5bc6
+ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72839598"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89382607"
 ---
 # <a name="c28128"></a>C28128
 
@@ -23,9 +23,9 @@ ms.locfileid: "72839598"
 
 驱动程序直接访问仅应使用专用函数访问的结构成员。
 
-例如，你应该使用[**IoSetCancelRoutine**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iosetcancelroutine) ，而不是直接修改[**IRP**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_irp)结构的**CancelRoutine**成员。
+例如，你应该使用[**IoSetCancelRoutine**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iosetcancelroutine) ，而不是直接修改[**IRP**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_irp)结构的**CancelRoutine**成员。
 
-### <a name="span-idexamplespanspan-idexamplespanexample"></a><span id="example"></span><span id="EXAMPLE"></span>实例
+### <a name="span-idexamplespanspan-idexamplespanexample"></a><span id="example"></span><span id="EXAMPLE"></span>示例
 
 下面的代码示例 elicits 此警告。
 
@@ -40,10 +40,4 @@ oldCancel = IoSetCancelRoutine(irp, myCancelRoutine);
 ```
 
  
-
- 
-
-
-
-
 

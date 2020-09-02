@@ -9,12 +9,12 @@ keywords:
 - 供应商提供的驱动程序 WDK 智能卡，调试
 ms.date: 06/04/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 5512a2a8bb632abe73d3763dc75634a7a083834c
-ms.sourcegitcommit: 0a0b75d93130b6c5854279607cd0aac099f65fd5
+ms.openlocfilehash: 522ba41ede13e7fd316c3d402d679aae94a300c9
+ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84428324"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89381341"
 ---
 # <a name="smart-card-driver-debugging"></a>智能卡驱动程序调试
 
@@ -22,7 +22,7 @@ ms.locfileid: "84428324"
 > 在 Windows 10 版本1803之前，已检查的生成在较早版本的 Windows 上可用。
 > 使用驱动程序验证程序和 GFlags 等工具在更高版本的 Windows 中检查驱动程序代码。
 
-智能卡驱动程序库支持多种调试功能。 每个调试功能由以下常量之一表示，这些常量是在*Smclib*头文件中定义的：
+智能卡驱动程序库支持多种调试功能。 每个调试功能由以下常量之一表示，这些常量是在 *Smclib* 头文件中定义的：
 
 ```cpp
 DEBUG_IOCTL
@@ -35,9 +35,9 @@ DEBUG_BREAK
 DEBUG_ALL
 ```
 
-启用的调试功能的组合集由一个称为*调试级别*的值表示。 您可以通过采用与要启用的功能对应的常量的按位 OR 来计算此值。
+启用的调试功能的组合集由一个称为 *调试级别*的值表示。 您可以通过采用与要启用的功能对应的常量的按位 OR 来计算此值。
 
-可以通过两种方式设置调试级别。 首先，可以使用 Windows 驱动程序工具包（WDK）随附的智能卡驱动程序测试程序*Scdrvtst*。 第二种是使用[**SmartcardSetDebugLevel**](https://docs.microsoft.com/previous-versions/ff548960(v=vs.85))智能卡驱动程序库例程。
+可以通过两种方式设置调试级别。 首先，可以使用 Windows 驱动程序工具包附带的智能卡驱动程序测试程序 *Scdrvtst*，)  (。 第二种是使用 [**SmartcardSetDebugLevel**](/previous-versions/ff548960(v=vs.85)) 智能卡驱动程序库例程。
 
 在这两种情况下，必须将所需的调试级别的值传递到设置调试级别的程序或例程。 例如，若要使用智能卡库例程从驱动程序设置调试级别，请执行以下调用：
 
@@ -63,8 +63,8 @@ SmartcardDebug(
 
 - 若要写入标准驱动程序消息，请使用调试 \_ 驱动程序常量。
 
-- 若要编写指示读取器驱动程序何时进入或退出例程的跟踪消息，请使用调试 \_ 跟踪作为*DebugLevel*。
+- 若要编写指示读取器驱动程序何时进入或退出例程的跟踪消息，请使用调试 \_ 跟踪作为 *DebugLevel*。
 
-开发驱动程序时，请使用所选的智能卡驱动程序库版本，并使用**SmartcardSetDebugLevel** \_ *DriverEntry*例程中的 SmartcardSetDebugLevel （调试全部）将调试级别设置为最大值。
+开发驱动程序时，请使用所选的智能卡驱动程序库版本，并使用 **SmartcardSetDebugLevel** (调试 \_ *DriverEntry* 例程中的所有) 来设置最大调试级别。
 
-有关设置远程调试会话的信息，请参阅[Windows 调试](https://docs.microsoft.com/windows-hardware/drivers/debugger/index)。
+有关设置远程调试会话的信息，请参阅 [Windows 调试](../debugger/index.md)。

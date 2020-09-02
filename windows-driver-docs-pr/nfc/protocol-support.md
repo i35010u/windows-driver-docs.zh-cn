@@ -5,22 +5,22 @@ ms.assetid: B9F27F28-1D67-4692-9EA1-FC671B5C2098
 keywords:
 - NFC
 - 近场通信
-- proximity
+- 近程
 - 近场邻近感应
 - NFP
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e54cfd7bc1fc05f88d6ba6da284845fb0933d1d2
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: ca7f86200de58f26aea17fefdf3456f6e51b4640
+ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72845301"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89382011"
 ---
 # <a name="nfp-protocol-support"></a>NFP 协议支持
 
 
-## <a name="in-this-section"></a>本部分内容
+## <a name="in-this-section"></a>本节内容
 
 
 -   [NDEF 协议](ndef-protocol.md)
@@ -35,6 +35,5 @@ ms.locfileid: "72845301"
 
  
 ## <a name="related-topics"></a>相关主题
-[NFC 设备驱动程序接口（DDI）概述](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)  
-[近字段邻近 DDI 引用](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)  
-
+[NFC 设备驱动程序接口 (DDI) 概述](/windows-hardware/drivers/ddi/index)  
+[近字段邻近 DDI 引用](/windows-hardware/drivers/ddi/index)

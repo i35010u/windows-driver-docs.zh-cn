@@ -10,12 +10,12 @@ keywords:
 - Web 服务 WDK 的设备配置文件
 ms.date: 05/20/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 153564ea31aaf881f7f07ff4e9facb9b91ece0a0
-ms.sourcegitcommit: cbcb712a9f1f62c7d67e1b98097a0d8d24bd0c71
+ms.openlocfilehash: 0733e25ceb0a0ebad950da7baf7917a53e097882
+ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83769497"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89381921"
 ---
 # <a name="referenced-namespaces"></a>参考的命名空间
 
@@ -43,17 +43,17 @@ ms.locfileid: "83769497"
 <tr class="odd">
 <td align="left"><p>soap</p></td>
 <td align="left"><p><a href="https://www.w3.org/2003/05/soap-envelope/" data-raw-source="[https://www.w3.org/2003/05/soap-envelope](https://www.w3.org/2003/05/soap-envelope/)">https://www.w3.org/2003/05/soap-envelope</a></p></td>
-<td align="left"><p>SOAP 1.2<a href="https://www.w3.org/TR/2003/REC-soap12-part1-20030624/" data-raw-source="[part 1](https://www.w3.org/TR/2003/REC-soap12-part1-20030624/)">第1部分</a>和<a href="https://www.w3.org/TR/2003/REC-soap12-part2-20030624/" data-raw-source="[part 2](https://www.w3.org/TR/2003/REC-soap12-part2-20030624/)">第2部分</a></p></td>
+<td align="left"><p>SOAP 1.2 <a href="https://www.w3.org/TR/2003/REC-soap12-part1-20030624/" data-raw-source="[part 1](https://www.w3.org/TR/2003/REC-soap12-part1-20030624/)">第1部分</a> 和 <a href="https://www.w3.org/TR/2003/REC-soap12-part2-20030624/" data-raw-source="[part 2](https://www.w3.org/TR/2003/REC-soap12-part2-20030624/)">第2部分</a></p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>wsa</p></td>
 <td align="left"><p><a href="https://schemas.xmlsoap.org/ws/2004/08/addressing" data-raw-source="[https://schemas.xmlsoap.org/ws/2004/08/addressing](https://schemas.xmlsoap.org/ws/2004/08/addressing/)">https://schemas.xmlsoap.org/ws/2004/08/addressing</a></p></td>
-<td align="left"><p><a href="https://www.w3.org/Submission/2004/SUBM-ws-addressing-20040810/" data-raw-source="[Web Services Addressing](https://www.w3.org/Submission/2004/SUBM-ws-addressing-20040810/)">Web 服务寻址</a>（ws-addressing）</p></td>
+<td align="left"><p><a href="https://www.w3.org/Submission/2004/SUBM-ws-addressing-20040810/" data-raw-source="[Web Services Addressing](https://www.w3.org/Submission/2004/SUBM-ws-addressing-20040810/)">Web 服务寻址</a> (ws-addressing) </p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>关于</p></td>
 <td align="left"><p><a href="https://schemas.xmlsoap.org/ws/2005/04/discovery/" data-raw-source="[https://schemas.xmlsoap.org/ws/2005/04/discovery](https://schemas.xmlsoap.org/ws/2005/04/discovery/)">https://schemas.xmlsoap.org/ws/2005/04/discovery</a></p></td>
-<td align="left"><p><a href="https://specs.xmlsoap.org/ws/2005/04/discovery/ws-discovery.pdf" data-raw-source="[Web Services Discovery](https://specs.xmlsoap.org/ws/2005/04/discovery/ws-discovery.pdf)">Web 服务发现</a>（WS 发现）</p></td>
+<td align="left"><p><a href="https://specs.xmlsoap.org/ws/2005/04/discovery/ws-discovery.pdf" data-raw-source="[Web Services Discovery](https://specs.xmlsoap.org/ws/2005/04/discovery/ws-discovery.pdf)">Web 服务发现</a> (ws-management) </p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>wsdp</p></td>
@@ -63,35 +63,29 @@ ms.locfileid: "83769497"
 <tr class="odd">
 <td align="left"><p>wse</p></td>
 <td align="left"><p><a href="https://schemas.xmlsoap.org/ws/2004/08/eventing/" data-raw-source="[https://schemas.xmlsoap.org/ws/2004/08/eventing](https://schemas.xmlsoap.org/ws/2004/08/eventing/)">https://schemas.xmlsoap.org/ws/2004/08/eventing</a></p></td>
-<td align="left"><p><a href="https://docs.microsoft.com/previous-versions/ms951233(v=msdn.10)" data-raw-source="[Web Services Eventing](https://docs.microsoft.com/previous-versions/ms951233(v=msdn.10)">Web 服务事件</a>（ws-eventing）</p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/previous-versions/ms951233(v=msdn.10)" data-raw-source="[Web Services Eventing](/previous-versions/ms951233(v=msdn.10)">Web 服务事件</a> (WS 事件) </p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>wsx</p></td>
 <td align="left"><p><a href="https://schemas.xmlsoap.org/ws/2004/09/mex/" data-raw-source="[https://schemas.xmlsoap.org/ws/2004/09/mex](https://schemas.xmlsoap.org/ws/2004/09/mex/)">https://schemas.xmlsoap.org/ws/2004/09/mex</a></p></td>
-<td align="left"><p><a href="https://specs.xmlsoap.org/ws/2004/09/mex/WS-MetadataExchange0904.pdf" data-raw-source="[Web Services MetadataExchange](https://specs.xmlsoap.org/ws/2004/09/mex/WS-MetadataExchange0904.pdf)">Web Services ws-metadataexchange</a> （ws-metadataexchange）</p></td>
+<td align="left"><p><a href="https://specs.xmlsoap.org/ws/2004/09/mex/WS-MetadataExchange0904.pdf" data-raw-source="[Web Services MetadataExchange](https://specs.xmlsoap.org/ws/2004/09/mex/WS-MetadataExchange0904.pdf)">Web 服务 ws-metadataexchange</a> (ws-metadataexchange) </p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>.wsf</p></td>
 <td align="left"><p><a href="https://schemas.xmlsoap.org/ws/2004/09/transfer/" data-raw-source="[https://schemas.xmlsoap.org/ws/2004/09/transfer](https://schemas.xmlsoap.org/ws/2004/09/transfer/)">https://schemas.xmlsoap.org/ws/2004/09/transfer</a></p></td>
-<td align="left"><p><a href="https://schemas.xmlsoap.org/ws/2004/09/transfer/" data-raw-source="[Web Services Transfer](https://schemas.xmlsoap.org/ws/2004/09/transfer/)">Web 服务传输</a>（WS 传输）</p></td>
+<td align="left"><p><a href="https://schemas.xmlsoap.org/ws/2004/09/transfer/" data-raw-source="[Web Services Transfer](https://schemas.xmlsoap.org/ws/2004/09/transfer/)">Web 服务传输</a> (WS 传输) </p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>xs</p></td>
 <td align="left"><p><a href="https://www.w3.org/2001/XMLSchema" data-raw-source="[https://www.w3.org/2001/XMLSchema](https://www.w3.org/2001/XMLSchema)">https://www.w3.org/2001/XMLSchema</a></p></td>
-<td align="left"><p><a href="https://www.w3.org/TR/2001/REC-xmlschema-1-20010502/" data-raw-source="[XML Schema Part 1](https://www.w3.org/TR/2001/REC-xmlschema-1-20010502/)">XML 架构第1部分</a>和<a href="https://www.w3.org/TR/2001/REC-xmlschema-2-20010502/" data-raw-source="[Part 2](https://www.w3.org/TR/2001/REC-xmlschema-2-20010502/)">第2部分</a></p></td>
+<td align="left"><p><a href="https://www.w3.org/TR/2001/REC-xmlschema-1-20010502/" data-raw-source="[XML Schema Part 1](https://www.w3.org/TR/2001/REC-xmlschema-1-20010502/)">XML 架构第1部分</a> 和 <a href="https://www.w3.org/TR/2001/REC-xmlschema-2-20010502/" data-raw-source="[Part 2](https://www.w3.org/TR/2001/REC-xmlschema-2-20010502/)">第2部分</a></p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-除此之外，还使用了[SOAP 消息传输优化机制（MTOM）](https://www.w3.org/TR/2005/REC-soap12-mtom-20050125/) 。
+除此之外， [SOAP 消息传输优化机制还 (使用 MTOM) ](https://www.w3.org/TR/2005/REC-soap12-mtom-20050125/) 。
 
  
-
- 
-
-
-
-
 

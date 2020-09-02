@@ -1,64 +1,64 @@
 ---
 title: MITT 中的 UART 测试
-description: MITT 软件程序包包括用于验证数据传输到 UART 控制器和其驱动程序的测试。 MITT 板 UART 接口充当 UART 环回设备。
+description: MITT 软件包包括用于验证到 UART 控制器及其驱动程序的数据传输的测试。 MITT 板的 UART 接口充当 UART 回送设备。
 ms.assetid: 239F131C-5416-4E86-B0EE-E3156CDA11CF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5d10f5806800bae881ad640cc97b5d7a06335a6d
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 9104a7475a1dd01f0f15b1c17fc8a67aa3825781
+ms.sourcegitcommit: c766ab74e32eb44795cbbd1a4f352d3a6a9adc14
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67383518"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89389589"
 ---
 # <a name="uart-tests-in-mitt"></a>MITT 中的 UART 测试
 
 
 **上次更新时间**
 
--   2015 年 1 月
+-   2015年1月
 
 **适用于：**
 
--   Windows 8.1
+-   Windows 8.1
 
-MITT 软件程序包包括用于验证数据传输到 UART 控制器和其驱动程序的测试。 MITT 板 UART 接口充当 UART 环回设备。
+MITT 软件包包括用于验证到 UART 控制器及其驱动程序的数据传输的测试。 MITT 板的 UART 接口充当 UART 回送设备。
 
-## <a name="before-you-begin"></a>开始之前...
-
-
--   获取 MITT 板和 UART 适配器板。 请参阅[购买硬件使用 MITT](https://docs.microsoft.com/windows-hardware/drivers/spb/multi-interface-test-tool--mitt--)。
--   [下载 MITT 软件包](https://docs.microsoft.com/previous-versions/dn919810(v=vs.85))。 待测试系统上安装它。
--   安装 MITT 固件 MITT 板上。 请参阅[开始使用 MITT](https://docs.microsoft.com/windows-hardware/drivers/spb/get-started-with-mitt---)。
-
-## <a name="hardware-setup"></a>硬件安装
+## <a name="before-you-begin"></a>开始之前 .。。
 
 
-![mitt uart 硬件安装](images/mitt-uart.jpg)
+-   获取 MITT 板和 UART 适配器板。 请参阅 [购买使用 MITT 的硬件](./multi-interface-test-tool--mitt--.md)。
+-   [下载 MITT](/previous-versions/dn919810(v=vs.85))软件包。 在受测系统上安装它。
+-   在 MITT 板上安装 MITT 固件。 请参阅 [MITT 入门](./get-started-with-mitt---.md)。
 
-1.  需要外部引脚 MITT 板上的将 UART 接口连接到待测试系统 UART 控制器。 如果 UART 控制器公开引脚，直接连接到**JB1**的看板。
+## <a name="hardware-setup"></a>硬件设置
+
+
+![mitt uart 硬件设置](images/mitt-uart.jpg)
+
+1.  需要外部引脚才能将 MITT 板上的 UART 接口连接到受测系统的 UART 控制器。 如果 UART 控制器公开了引脚，请直接连接到 **JB1** 板。
 2.  连接这些行：
 
-    | UART MITT 板上的接口 | 待测试系统上的 UART 控制器 |
+    | MITT 板上的 UART 接口 | 测试中的系统上的 UART 控制器 |
     |----------------------------------|------------------------------------------|
     | TX                               | RX                                       |
-    | RTS                              | CTS                                      |
+    | RTS                              | 限                                      |
     | RX                               | TX                                       |
-    | CTS                              | RTS                                      |
+    | 限                              | RTS                                      |
 
      
 
-3.  UART 适配器板提供用于选择正确的电压跳线。 仅 3.3V 信号支持直接连接 （而无需适配器开发板）。
+3.  UART 适配器板提供了一个用于选择正确电压的跳线。 直接连接 (仅支持 3.3 V 信号，无需适配器板) 。
 
     ![uart 布线](images/uart-wiring.png)
 
 ## <a name="test-driver-and-acpi-configuration"></a>测试驱动程序和 ACPI 配置
 
 
-若要修改的 ACPI 表，请安装 Windows 硬件认证工具包 (HCK) 8.1。 具有 UART 控制器的测试的系统上执行以下步骤：
+若要修改 ACPI 表，请将 Windows 硬件认证包安装 (HCK) 8.1。 在具有 UART 控制器的受测系统上执行以下步骤：
 
-1.  执行 Device.BusController.UART.HCKTestability 要求下描述的系统更改。
-2.  更新 UART 测试驱动程序基于下提供的模板的 ACPI 表\\ \\ &lt;hckcontrollername&gt;\\测试\\&lt;体系结构&gt;\\UART\\示例 UART.asl 或使用此示例。 可以使用[Microsoft ASL compiler](https://docs.microsoft.com/windows-hardware/drivers/bringup/microsoft-asl-compiler)。
+1.  执行 BusController. HCKTestability 要求下所述的系统更改。
+2.  根据 \\ \\ &lt; hckcontrollername &gt; \\ 测试 \\ &lt; 体系结构 &gt; UART Sample-UART 中提供 \\ 的模板更新 uart 测试驱动程序的 ACPI 表， \\ 或使用此示例。 你可以使用 [MICROSOFT ASL 编译器](../bringup/microsoft-asl-compiler.md)。
 
     ``` syntax
     Device(UART) {
@@ -88,32 +88,32 @@ MITT 软件程序包包括用于验证数据传输到 UART 控制器和其驱动
     }
     ```
 
-3.  安装 UARTTest 测试外围设备驱动程序从\\ \\ &lt;hckcontrollername&gt;\\测试\\&lt;体系结构&gt;\\通过 UART运行以下命令：
+3.  \\ \\ &lt; &gt; \\ \\ &lt; &gt; \\ 运行以下命令，通过 hckcontrollername 测试体系结构 UART 安装 UARTTest 测试外围设备：
 
-    **pnputil – a UARTTest.inf**
+    **pnputil – UARTTest**
 
 ## <a name="uart-automation-tests"></a>UART 自动化测试
 
 
 1.  执行测试驱动程序和 ACPI 配置中所述的步骤。
-2.  待测试系统上创建一个文件夹。
-3.  复制这些文件从 %programfiles （x86） %\\Windows 工具包\\8.1\\测试\\运行时\\TAEF 的文件夹。
+2.  在要测试的系统上创建一个文件夹。
+3.  将这些文件从% ProgramFiles (x86) % \\ Windows 工具包 \\ 8.1 \\ 测试 \\ 运行时 \\ TAEF 复制到该文件夹。
     -   Wex.Common.dll
     -   Wex.Communication.dll
     -   Wex.Logger.dll
 
-4.  将 UtsSanity.exe 和 muttutil.dll 复制从 MITT 软件程序包。
-5.  查看可用的所有命令，启动 UtsSanity.exe-？ 和可用的命令行选项是指：**请注意**   **– mitt**选项是必需 MITT 板连接时在运行测试。
+4.  从 MITT 软件包中复制 UtsSanity.exe 和 muttutil.dll。
+5.  查看所有可用命令，启动 UtsSanity.exe-？ 并参阅可用的命令行选项：**请注意**，在    连接 mitt 板时运行测试需要使用 **– mitt**选项。
 
      
 
-示例 1：若要在 115200 bps （默认值） 运行测试
+示例1：在 115200 bps 运行测试 (默认值) 
 
-**C:\\uart&gt; UtsSanity.exe – mitt**
+**C： \\ uart &gt; UtsSanity.exe – mitt**
 
-示例 2：若要在 3 mbps 运行测试：
+示例2：在3Mbps 运行测试：
 
-**C:\\uart&gt; UtsSanity.exe -mitt –baudRate 3000000**
+**C： \\ uart &gt; UtsSanity.exe-Mitt –波特率3000000**
 
 ## <a name="uart-adapter-schematic"></a>UART 适配器示意图
 
@@ -121,9 +121,4 @@ MITT 软件程序包包括用于验证数据传输到 UART 控制器和其驱动
 ![spi 示意图](images/spi-schematic.png)
 
  
-
- 
-
-
-
 

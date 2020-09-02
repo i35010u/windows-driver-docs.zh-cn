@@ -4,12 +4,12 @@ description: 若要使用多个接口测试工具 (MITT) ，请按顺序使用 M
 ms.assetid: 268217FF-0F0B-4175-B2DE-A45FAF94EA79
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 62aee8ff926cc87de7daa6076df39e592340cc98
-ms.sourcegitcommit: 67efcd26f7be8f50c92b141ccd14c9c68f4412d8
+ms.openlocfilehash: 91292946f8a1d989657c3d6105c49b710a4bed55
+ms.sourcegitcommit: c766ab74e32eb44795cbbd1a4f352d3a6a9adc14
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88902448"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89389575"
 ---
 # <a name="buy-hardware-for-using-mitt"></a>使用 MITT 购买硬件
 
@@ -59,4 +59,4 @@ ms.locfileid: "88902448"
 
 ## <a name="related-topics"></a>相关主题
 
-[通过多接口测试工具进行测试 (MITT) ](https://docs.microsoft.com/windows-hardware/drivers/spb/testing-with-multi-interface-test-tool--mitt-)  
+[通过多接口测试工具进行测试 (MITT) ](./testing-with-multi-interface-test-tool--mitt-.md)

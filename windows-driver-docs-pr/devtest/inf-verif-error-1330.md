@@ -1,15 +1,15 @@
 ---
 title: InfVerif 错误 1330
-description: InfVerif （InfVerif）是一种可用于测试驱动程序 INF 文件的工具。 除了报告 INF 语法问题外，该工具还报告 INF 文件是否是通用的。
+description: 'InfVerif ( # A0) 是可用于测试驱动程序 INF 文件的工具。 除了报告 INF 语法问题外，该工具还报告 INF 文件是否是通用的。'
 ms.assetid: 6F565E1C-C6FC-4637-B476-FE4E4672CCC3
 ms.date: 03/05/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 32d53db49eadac6ac822d96b74a3b5a008ca50b7
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: f94a5ba6ec321679e430c34a51535612b449ce73
+ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72839556"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89382671"
 ---
 # <a name="infverif-error-1330---1333"></a>InfVerif 错误 1330-1333
 
@@ -23,19 +23,19 @@ DesiredFileName1,SourceFile1A ; Used by DDInstallSection A
 DesiredFileName1,SourceFile1B ; Used by DDInstallSection B
 ```
 
-当多个[DDInstall 部分](https://docs.microsoft.com/windows-hardware/drivers/install/inf-ddinstall-section)使用[CopyFiles](https://docs.microsoft.com/windows-hardware/drivers/install/inf-copyfiles-directive)指令将不同的源文件复制到单个目标文件时，如果**DDInstall 部分**都在同一系统上得到处理，则这些**CopyFiles**可能会冲突。 例如，如果两个不同的设备使用的是相同的驱动程序，但安装部分不同，或者在某些脱机驱动程序映像和部署方案中使用。 由于不同**DDInstall 部分**的多个源文件将复制到同一个单个目标文件，不同**DDInstall 部分**中的不同源文件会相互覆盖，以使最后一个文件复制到其中。放置在目标中，这可能不是预期的结果。
+当多个[DDInstall 部分](../install/inf-ddinstall-section.md)使用[CopyFiles](../install/inf-copyfiles-directive.md)指令将不同的源文件复制到单个目标文件时，如果**DDInstall 部分**都在同一系统上得到处理，则这些**CopyFiles**可能会冲突。 例如，如果两个不同的设备使用的是相同的驱动程序，但安装部分不同，或者在某些脱机驱动程序映像和部署方案中使用。 由于不同 **DDInstall 部分** 的多个源文件将复制到同一个单个目标文件，不同 **DDInstall 部分** 中的不同源文件将彼此覆盖，以使最后一个文件复制到目标中，这可能不是预期的结果。
 
-## <a name="cases"></a>这
+## <a name="cases"></a>案例
 
 本文档提供有关如何将旧语法更新为在以下情况下删除功能错误的方法的指导。 下面并未列出所有事例，因为每个 INF 都有其他特定的原因。
 
-* 不同的**DDInstall 节**为一个服务重命名服务二进制文件
+* 不同的 **DDInstall 节** 为一个服务重命名服务二进制文件
 
-* 不同的**DDInstall 节**重命名源文件，以便将其复制到由驱动程序或用户模式应用程序访问的目标文件位置
+* 不同的 **DDInstall 节** 重命名源文件，以便将其复制到由驱动程序或用户模式应用程序访问的目标文件位置
 
-### <a name="different-ddinstall-sections-rename-a-service-binary-for-one-service"></a>不同的**DDInstall 节**为一个服务重命名服务二进制文件
+### <a name="different-ddinstall-sections-rename-a-service-binary-for-one-service"></a>不同的 **DDInstall 节** 为一个服务重命名服务二进制文件
 
-下面的代码示例演示了不同的**DDInstall 节**如何为一个服务重命名服务二进制文件：
+下面的代码示例演示了不同的 **DDInstall 节** 如何为一个服务重命名服务二进制文件：
 
 ```command
 [DDInstallSection_A]
@@ -97,9 +97,9 @@ ErrorControl   = 0
 ServiceBinary  = %12%\ServiceBinaryB
 ```
 
-### <a name="different-ddinstall-sections-rename-a-source-file-to-get-copied-over-to-a-destination-file-location-accessed-by-the-driver-or-a-user-mode-application"></a>不同的**DDInstall 节**重命名源文件，以便将其复制到由驱动程序或用户模式应用程序访问的目标文件位置
+### <a name="different-ddinstall-sections-rename-a-source-file-to-get-copied-over-to-a-destination-file-location-accessed-by-the-driver-or-a-user-mode-application"></a>不同的 **DDInstall 节** 重命名源文件，以便将其复制到由驱动程序或用户模式应用程序访问的目标文件位置
 
-在这种情况下，驱动程序将访问用作动态文件位置的固定文件位置。 若要让一个动态变量跟踪多个源文件，可以使用[AddReg](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addreg-directive) HKR 项来存储可在运行时检索的路径。 这是因为**AddReg** HKR 条目是相对于设备存储的。
+在这种情况下，驱动程序将访问用作动态文件位置的固定文件位置。 若要让一个动态变量跟踪多个源文件，可以使用 [AddReg](../install/inf-addreg-directive.md) HKR 项来存储可在运行时检索的路径。 这是因为 **AddReg** HKR 条目是相对于设备存储的。
 
 **AddReg** HKR 条目指定源文件的文件位置，而不是选择要将源文件复制到的单个目标文件：
 
@@ -113,26 +113,26 @@ HKR,, FileName1Path, "%13%\SourceFile1B"
 
 可以从设备上的设置中检索目标文件的位置，而不是访问固定文件位置。 目标文件位置由 INF 存储在注册表值中，并通过驱动程序中的 API 调用来检索。
 
-若要通过 INF 预配这些值，请在[Inf DDInstall 部分](https://docs.microsoft.com/windows-hardware/drivers/install/inf-ddinstall-section)或 [inf DDInstall 部分](https://docs.microsoft.com/windows-hardware/drivers/install/inf-ddinstall-hw-section)引用的*添加注册表部分*中使用[inf AddReg 指令](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addreg-directive)。
+若要通过 INF 预配这些值，请在[Inf DDInstall 部分](../install/inf-ddinstall-section.md)或*reg-root* [inf DDInstall 部分](../install/inf-ddinstall-hw-section.md)引用的*添加注册表部分*中使用[inf AddReg 指令](../install/inf-addreg-directive.md)。
 
 由于注册表值跟踪目标文件而不是单个目标文件位置，因此驱动程序必须以不同的方式访问这些文件。 若要访问目标文件，驱动程序现在需要调用以下 Api 之一来打开注册表值并使其返回源文件的位置：
 
 #### <a name="wdm"></a>WDM
 
-* [**IoOpenDeviceRegistryKey**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioopendeviceregistrykey)
+* [**IoOpenDeviceRegistryKey**](/windows-hardware/drivers/ddi/wdm/nf-wdm-ioopendeviceregistrykey)
 
 #### <a name="wdf"></a>WDF
 
-* [**WdfDeviceOpenRegistryKey**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceopenregistrykey)
+* [**WdfDeviceOpenRegistryKey**](/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceopenregistrykey)
 
-* [**WdfFdoInitOpenRegistryKey**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdffdo/nf-wdffdo-wdffdoinitopenregistrykey)
+* [**WdfFdoInitOpenRegistryKey**](/windows-hardware/drivers/ddi/wdffdo/nf-wdffdo-wdffdoinitopenregistrykey)
 
 #### <a name="other-user-mode-code"></a>其他用户模式代码
 
-* [**CM_Open_DevNode_Key**](https://docs.microsoft.com/windows/desktop/api/cfgmgr32/nf-cfgmgr32-cm_open_devnode_key)
+* [**CM_Open_DevNode_Key**](/windows/desktop/api/cfgmgr32/nf-cfgmgr32-cm_open_devnode_key)
 
 > [!NOTE]
-> 在此示例中，INF 负载不会影响解决方案的文件的目标位置。  但是，若要使用最佳做法，示例使用了[DIRID](https://docs.microsoft.com/windows-hardware/drivers/install/using-dirids) 13，因为它通过更少的文件副本提供更快的安装。  有关详细信息，请参阅 "[使用 DIRIDs](https://docs.microsoft.com/windows-hardware/drivers/install/using-dirids)" 和 "[从驱动程序存储区运行](https://docs.microsoft.com/windows-hardware/drivers/develop/universal-driver-scenarios#run-from-the-driver-store)"。
+> 在此示例中，INF 负载不会影响解决方案的文件的目标位置。  但是，若要使用最佳做法，示例使用了 [DIRID](../install/using-dirids.md) 13，因为它通过更少的文件副本提供更快的安装。  有关详细信息，请参阅 "[使用 DIRIDs](../install/using-dirids.md)" 和 "[从驱动程序存储区运行](../develop/dch-example.md#run-from-the-driver-store)"。
 
 下面的示例代码演示如何更新使用旧语法的 INF。
 
@@ -189,7 +189,7 @@ CopyFiles.A = 13
 CopyFiles.B = 13
 </td>
 </pre>
-<td></br>最佳做法是将所有内容保留在驱动程序存储目录中（Dirid 13）</td>
+<td></br>最佳做法是将驱动程序存储目录中的所有内容保留 (Dirid 13) </td>
 </tr>
 <tr>
 <td><pre>[DDInstallSection_A]
@@ -238,7 +238,7 @@ SourceFile2B ; HW Version B
 </tbody>
 </table>
 
-### <a name="accessing-the-file-location-from-the-driver-pseudo-code"></a>从驱动程序访问文件位置（伪代码）
+### <a name="accessing-the-file-location-from-the-driver-pseudo-code"></a> (伪代码从驱动程序访问文件位置) 
 
 ```command
 Before (Fixed Filename):
@@ -254,7 +254,7 @@ After (Dynamic Filename):
 
 从用户模式访问目标文件时，不会有驱动程序具有的设备上下文。 在这种情况下，需要添加其他步骤。 打开密钥句柄之前，请查找包含用于指示要加载的文件的注册表值的设备。
 
-请参阅[从驱动程序存储区运行](https://docs.microsoft.com/windows-hardware/drivers/develop/universal-driver-scenarios#run-from-the-driver-store)，了解如何筛选设备列表以查找设备，并在用户模式下使用 Dirid 13 获取注册表位置的句柄。
+请参阅 [从驱动程序存储区运行](../develop/dch-example.md#run-from-the-driver-store) ，了解如何筛选设备列表以查找设备，并在用户模式下使用 Dirid 13 获取注册表位置的句柄。
 
 ## <a name="errors-1331---1333"></a>错误 1331-1333
 

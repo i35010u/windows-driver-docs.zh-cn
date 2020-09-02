@@ -5,17 +5,17 @@ ms.assetid: 85E85DBA-8A88-4738-8B4E-A04F4A82808F
 keywords:
 - NFC
 - 近场通信
-- proximity
+- 近程
 - 近场邻近感应
 - NFP
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 041a8d169bb70702c7f881af208554118ee5d12f
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 1c430eef372fe2058afe570a17eba8b22ab4b00a
+ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72829027"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89382309"
 ---
 # <a name="nfp-transmission-rate"></a>NFP 传输速率
 
@@ -24,7 +24,6 @@ ms.locfileid: "72829027"
 
  
 ## <a name="related-topics"></a>相关主题
-[IOCTL\_NFP\_每\_秒获取\_千\_字节数](https://docs.microsoft.com/windows-hardware/drivers/ddi/nfpdev/ni-nfpdev-ioctl_nfp_get_kilo_bytes_per_second)  
-[NFC 设备驱动程序接口（DDI）概述](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)  
-[近字段邻近 DDI 引用](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)  
-
+[IOCTL \_ NFP \_ \_ \_ \_ 每秒获取千字节数 \_](/windows-hardware/drivers/ddi/nfpdev/ni-nfpdev-ioctl_nfp_get_kilo_bytes_per_second)  
+[NFC 设备驱动程序接口 (DDI) 概述](/windows-hardware/drivers/ddi/index)  
+[近字段邻近 DDI 引用](/windows-hardware/drivers/ddi/index)

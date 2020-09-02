@@ -11,12 +11,12 @@ keywords:
 - 存储跟踪消息
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8a6aabdf804d313c7def6a33ae4c960a4e44802f
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: e137a16351f1412ea941a2221e245826220e9191
+ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67380248"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89383335"
 ---
 # <a name="trace-log"></a>跟踪日志
 
@@ -24,17 +24,11 @@ ms.locfileid: "67380248"
 ## <span id="ddk_trace_log_tools"></span><span id="DDK_TRACE_LOG_TOOLS"></span>
 
 
-事件跟踪日志 (.etl) 文件，也称为*跟踪日志*，将存储在一个或多个过程中生成的跟踪消息[跟踪会话](trace-session.md)。
+事件跟踪日志 ( .etl) 文件（也称为 *跟踪日志*）存储在一个或多个 [跟踪会话](trace-session.md)过程中生成的跟踪消息。
 
-系统首先将存储在跟踪消息[跟踪提供程序](trace-provider.md)跟踪会话缓冲区中生成并直接传递它们[跟踪使用者](trace-consumer.md)或将其写入到跟踪日志。
+系统首先存储跟踪 [提供程序](trace-provider.md) 在跟踪会话缓冲区中生成的跟踪消息，然后将它们直接传递给 [跟踪使用者](trace-consumer.md) 或将它们写入跟踪日志。
 
-因为消息可以占用大量磁盘空间，跟踪日志会将其存储在压缩的二进制格式。 若要读取的消息，跟踪使用者使用提供的跟踪提供程序信息 ( *FormatString*中的参数[ **DoTraceMessage** ](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff544918(v=vs.85))宏) 分析和格式设置消息，以便它们是可读。 跟踪使用者可以找到此信息在[PDB 符号文件](pdb-symbol-files.md)或[跟踪消息格式文件](trace-message-format-file.md)提供程序。
-
- 
+由于这些消息会占用大量的磁盘空间，因此跟踪日志以压缩的二进制格式存储它们。 若要读取消息，跟踪使用者使用跟踪提供程序提供的信息 ([**DoTraceMessage**](/previous-versions/windows/hardware/previsioning-framework/ff544918(v=vs.85))宏) 中的 "*格式字符串*" 参数，以便对消息进行分析和格式设置，使其可读。 跟踪使用者可以在 [PDB 符号文件](pdb-symbol-files.md) 或提供程序的 [跟踪消息格式文件](trace-message-format-file.md) 中找到此信息。
 
  
-
-
-
-
 

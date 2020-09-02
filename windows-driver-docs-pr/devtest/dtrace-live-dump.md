@@ -1,6 +1,6 @@
 ---
 title: DTrace 实时转储
-description: DTrace 通过使用 LKD （）支持创建实时转储文件。
+description: 'DTrace 支持使用 LKD ( # A1 创建实时转储文件。'
 ms.assetid: bbf23d76-423d-4d1e-afde-83739015bbf1
 keywords:
 - DTrace WDK
@@ -13,37 +13,37 @@ keywords:
 - 跟踪消息格式化文件 WDK
 ms.date: 11/04/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 6edb4d356c2c11923454c6fa21f4a74a0d9155e4
-ms.sourcegitcommit: 3ec971f54122b77408433f7f1e59c467099fb4de
+ms.openlocfilehash: 4a4b649f85ec6905a1dff16d10b6cf32ec67c586
+ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86873864"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89383261"
 ---
 # <a name="dtrace-live-dump"></a>DTrace 实时转储
 
-DTrace 提供一项功能，可使用 lkd （）从 D 脚本中捕获实时转储。 内存转储文件用于调试使用 Windows 调试器的 Windows 中的复杂问题。 有关详细信息，请参阅[使用 WinDbg 分析故障转储文件](https://docs.microsoft.com/windows-hardware/drivers/debugger/crash-dump-files)。 若要下载调试器，请参阅[WinDbg 预览-安装](https://docs.microsoft.com/windows-hardware/drivers/debugger/windbg-install-preview)。
+DTrace 提供一种工具，用于从使用 lkd ( # A1 的 D 脚本中捕获实时转储。 内存转储文件用于调试使用 Windows 调试器的 Windows 中的复杂问题。 有关详细信息，请参阅 [使用 WinDbg 分析故障转储文件](../debugger/crash-dump-files.md)。 若要下载调试器，请参阅 [WinDbg 预览-安装](../debugger/windbg-install-preview.md)。
 
  通过 DTrace 实时转储，可以在发生错误的确切位置触发转储。 例如，该错误可能是返回错误的函数。 当返回值为 "error" 时，可以使用 DTrace 挂钩到此函数返回并触发实时转储。
 
 > [!NOTE]
 > 版本18980和 Windows Server 有问必答 Preview 版本18975后，Windows 内部版本支持 DTrace。
 
-有关在 Windows 上使用 DTrace 的常规信息，请参阅[dtrace](dtrace.md)。
+有关在 Windows 上使用 DTrace 的常规信息，请参阅 [dtrace](dtrace.md)。
 
 ## <a name="dtrace-live-dump-usage"></a>DTrace 实时转储使用情况
 
-用法： **lkd （参数）;**
+用法： **lkd (参数) ;**
 
 可以设置以下选项来更改实时迷你转储中包含的信息。
 
-0x0-完整内核转储（默认值）
+0x0- (默认值的完整内核转储) 
 
-0x1-用户页面 + 内核页面（仅适用于 KD attach）
+0x1-用户页面 + 内核页面 (仅适用于 KD attach) 
 
 0x2-小型转储
 
-0x4-Hyper-v 页面 + 内核页面）
+0x4-Hyper-v 页面 + 内核页面) 
 
 0x5-用户、内核和虚拟机监控程序页面。
 
@@ -83,7 +83,7 @@ Triggering LiveDump
 
 创建的转储文件通常位于 `C:\Windows\LiveKernelReports` 。
 
-如果转储文件的位置已更改，该值将存储在以下注册表项中：`hklm\system\currentcontrolset\control\crashcontrol\livekernelreports`
+如果转储文件的位置已更改，该值将存储在以下注册表项中： `hklm\system\currentcontrolset\control\crashcontrol\livekernelreports`
 
 如上所述，使用 WinDbg 处理转储文件。
 
@@ -117,7 +117,7 @@ Triggering LiveDump
 
 `reg add "HKLM\System\CurrentControlSet\Control\CrashControl" /f /t REG_DWORD /v AlwaysKeepMemoryDump /d 1`
 
-有关这些设置的详细信息，请参阅[WER 设置](https://docs.microsoft.com/windows/win32/wer/wer-settings)。
+有关这些设置的详细信息，请参阅 [WER 设置](https://docs.microsoft.com/windows/win32/wer/wer-settings)。
 
 ### <a name="disable-throttling"></a>禁用限制
 
@@ -130,13 +130,13 @@ reg add "HKLM\System\CurrentControlSet\Control\CrashControl\FullLiveKernelReport
 reg add "HKLM\System\CurrentControlSet\Control\CrashControl\FullLiveKernelReports" /f /t REG_DWORD /v ComponentThrottleThreshold /d 0
 ```
 
-### <a name="disk-space-issues-event-id-202--error-text-live-dump-write-deferred-dump-data-api-ended-nt-status-0xc000007f"></a>磁盘空间问题（事件 ID 202-错误文本：实时转储写入延迟转储数据 API 已结束。 NT 状态：0xC000007F。）
+### <a name="disk-space-issues-event-id-202--error-text-live-dump-write-deferred-dump-data-api-ended-nt-status-0xc000007f"></a>磁盘空间问题 (事件 ID 202-错误文本：实时转储写入延迟转储数据 API 已结束。 NT 状态：0xC000007F。 ) 
 
 这意味着磁盘空间不足。 更新下面显示的注册表项，将实时转储的路径（在本示例中为驱动器 d：）更改为可用的额外存储空间。
 
 `reg add hklm\system\currentcontrolset\control\crashcontrol\livekernelreports /v "LiveKernelReportsPath" /t reg_sz /d "\??\d:\livedumps"`
 
-此命令将实时转储根路径设置为 `d:\livedumps` （例如）。
+此命令将实时转储根路径设置为 `d:\livedumps` () 的示例。
 
 不要手动创建该文件夹，因为它是由操作系统管理的，当使用适当的权限触发转储时，将创建该文件夹。
 
