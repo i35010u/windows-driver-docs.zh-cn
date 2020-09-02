@@ -4,12 +4,12 @@ description: 开发短信应用程序的简介
 ms.assetid: 052eb3cc-4a39-4667-8678-b18650f3b5c9
 ms.date: 07/05/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: ad013bcb89331c41a6709ee0290d127784e8d5f7
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: b89acf58b507e39fd6468279d973b1e9c93d8d28
+ms.sourcegitcommit: 7e4d9508198a30bdc1cb6eda83852dda4e42213e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89217348"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89304286"
 ---
 # <a name="introduction-to-developing-sms-apps"></a>开发短信应用程序的简介
 
@@ -132,7 +132,7 @@ Mno 为 Windows 预配平台中的管理短信通知指定自定义筛选规则�
 
 -   [使用自定义字符集发送短信](send-sms-by-using-custom-character-sets.md)
 
--   [使用文本模式界面发送短信](send-sms-by-using-the-text-mode-interface.md)
+-   [使用文本模式界面发送短信](calculate-characters-and-segments-of-a-draft-sms.md)
 
 -   [设置短信声明](set-sms-declarations.md)
 

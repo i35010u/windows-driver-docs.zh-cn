@@ -4,12 +4,12 @@ description: 移动宽带 Windows 运行时 API 的概述
 ms.assetid: 45ec97c4-1a58-48a8-ad50-1cd8fcc4763f
 ms.date: 07/02/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: c1536741da5284fcc6d947f81d30d45cefcf1234
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: d6efe7ae18896d7b5a11aed74020e9f476bde733
+ms.sourcegitcommit: 7e4d9508198a30bdc1cb6eda83852dda4e42213e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89216212"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89304262"
 ---
 # <a name="overview-of-mobile-broadband-windows-runtime-apis"></a>移动宽带 Windows 运行时 API 的概述
 
@@ -110,7 +110,7 @@ ms.locfileid: "89216212"
 ## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
-[移动宽带 WinRT API 概述](mobile-broadband-winrt-api-overview.md)
+[移动宽带 WinRT API 概述](list-of-mobile-broadband-windows-runtime-apis.md)
 
  
 

@@ -4,12 +4,12 @@ description: 创建和配置 Internet 共享体验
 ms.assetid: 11906ee4-68f5-4be6-a3ab-6af3253c8a11
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 82f258f0895ce7e91fd0450db25e0417bbbcad30
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: b5e23f4369bac1140339ab487dbd18b21f57280a
+ms.sourcegitcommit: 7e4d9508198a30bdc1cb6eda83852dda4e42213e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89214797"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89304282"
 ---
 # <a name="creating-and-configuring-internet-sharing-experiences"></a>创建和配置 Internet 共享体验
 
@@ -81,7 +81,7 @@ Windows 8.1 和 Windows 10 通过使客户能够启用和连接到已配置 Inte
 
 某些移动网络操作员 (Mno) 或移动虚拟网络运营商 (Mvno) 在其网络上不支持 Internet 共享，或者在设置 Internet 共享之前需要进行权利检查。 Windows 提供必要的控件，以确保 Windows 设备符合网络策略。 
 
-若要在 Windows 8、Windows 8.1 或 Windows 10 版本1803之前执行此操作，必须编写服务元数据包，并在架构 ([服务元数据包架构参考](service-metadata-package-schema-reference.md)) 中配置[AllowTethering](allowtethering.md)元素。 有关创建服务元数据包的详细信息，请参阅 [创建服务元数据的开发人员指南](developer-guide-for-creating-service-metadata.md)。 有三个选项：
+若要在 Windows 8、Windows 8.1 或 Windows 10 版本1803之前执行此操作，必须编写服务元数据包，并在架构 ([服务元数据包架构参考](mobilebroadbandinfo-xml-schema.md)) 中配置[AllowTethering](allowtethering.md)元素。 有关创建服务元数据包的详细信息，请参阅 [创建服务元数据的开发人员指南](developer-guide-for-creating-service-metadata.md)。 有三个选项：
 
 -   允许所有客户进行 Internet 共享。 如果服务元数据包中未指定 (默认值) 
 

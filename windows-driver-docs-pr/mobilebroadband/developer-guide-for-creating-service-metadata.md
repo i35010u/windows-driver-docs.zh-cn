@@ -4,12 +4,12 @@ description: 创建服务元数据的开发人员指南
 ms.assetid: 2d250bce-2dd2-4bd8-aa0f-432dde7783e1
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: aa9eb35df36b8b63d8f9a54e80dbc7887cf38cd4
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 92c9b6b6a78d7aa7724127fd15b1e26af7a725db
+ms.sourcegitcommit: 7e4d9508198a30bdc1cb6eda83852dda4e42213e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89216744"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89304290"
 ---
 # <a name="developer-guide-for-creating-service-metadata"></a>创建服务元数据的开发人员指南
 
@@ -68,7 +68,7 @@ ms.locfileid: "89216744"
 
 在创建服务元数据包之前，请确保已开发移动宽带应用并将其与 Microsoft Store 相关联。 此应用应提供重要的体验，如计划购买、数据使用、帮助和支持，以及从操作员突出显示增值服务。 有关创建移动宽带应用的详细信息，请参阅以下链接：
 
--   [移动宽带 WinRT API 概述](mobile-broadband-winrt-api-overview.md)
+-   [移动宽带 WinRT API 概述](list-of-mobile-broadband-windows-runtime-apis.md)
 
 -   [移动运营商硬件概述](mobile-operator-hardware-overview.md)
 
@@ -190,7 +190,7 @@ ms.locfileid: "89216744"
 
     ![向导的服务信息步骤](images/mbae-sxs81-serviceinfostep.png)
 
-4.  在 " **硬件信息** " 页上，选择应该用于识别你的体验的信息。 选中某个复选框后，可以添加相应的网络范围。 生成的 ID 应该存在于 Windows APN 数据库中，以便标识正确的订阅服务器。 有关 APN 数据库的详细信息，请参阅 [COSA/APN 数据库提交](cosa-apn-database-submission.md)。
+4.  在 " **硬件信息** " 页上，选择应该用于识别你的体验的信息。 选中某个复选框后，可以添加相应的网络范围。 生成的 ID 应该存在于 Windows APN 数据库中，以便标识正确的订阅服务器。 有关 APN 数据库的详细信息，请参阅 [COSA/APN 数据库提交](planning-your-desktop-cosa-apn-database-submission.md)。
 
     -   如果你是使用国际化 Mobile 订户身份 (IMSI) 的 GSM 提供商，请在 " **GSM** " 标题下选择 " **IMSI** " 复选框。 在 " **提供程序 id** " 框中，输入 GSM 服务提供程序 id。 在 **IMSI/ICCID 范围** 标题下，输入范围，然后单击 " **添加**"。
 
@@ -538,7 +538,7 @@ Write-Host "END"
 
 !["管理体验" 页](images/mbae-sxs81-manageexperience.png)
 
-## <a name="troubleshooting"></a>故障排除
+## <a name="troubleshooting"></a>疑难解答
 
 
 打开 "网络" 列表，并查找移动宽带网络。 如果使用服务元数据包 **ServiceInfo.xml** 文件中使用的名称和图标列出了网络，则会正确分析包。 如果要更新的服务元数据包具有相同的名称和图标，或者在大约一分钟后名称或图标未显示在列表中，则应执行其他步骤，如此处所述：

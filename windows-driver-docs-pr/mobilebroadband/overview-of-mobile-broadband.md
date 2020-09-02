@@ -4,12 +4,12 @@ description: 移动宽带概述
 ms.assetid: 5193927b-7367-468e-8012-c41f6bd743a3
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f5695896f0aef36edc11d3ef9a758c1bc871de64
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 88c9b132f2128684c357d85f4eefb38f4a953948
+ms.sourcegitcommit: 7e4d9508198a30bdc1cb6eda83852dda4e42213e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89218183"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89304316"
 ---
 # <a name="overview-of-mobile-broadband"></a>移动宽带概述
 
@@ -407,7 +407,7 @@ Windows APN 数据库存在于所有 Windows 8、Windows 8.1 和 Windows 10 电�
 
 此信息旨在让客户在连接移动宽带设备后的几秒钟内联机。 它应该允许他们通过使用 Web 浏览器立即购买服务，或在用户已购买服务时立即联机。
 
-有关将更新提交到 Windows APN 数据库的信息，请参阅 [COSA/APN 数据库提交](cosa-apn-database-submission.md)。
+有关将更新提交到 Windows APN 数据库的信息，请参阅 [COSA/APN 数据库提交](planning-your-desktop-cosa-apn-database-submission.md)。
 
 ### <a name="service-metadata"></a>服务元数据
 
@@ -415,7 +415,7 @@ Windows APN 数据库存在于所有 Windows 8、Windows 8.1 和 Windows 10 电�
 
 此信息使用户能够获得更丰富的体验，因为它允许你添加 Windows 连接管理器的品牌元素，引用自动从 Microsoft Store 获取的移动宽带应用，并具有最新的移动宽带设置以联机进行购买或 Internet 连接。 Windows 将定期检查它是否具有来自 WMIS 的最新服务元数据包。
 
-仅当在电脑上检测到来自指定操作员的移动宽带设备时，才会将服务元数据包发送给客户。 此包中的信息会在存在时覆盖 APN 数据库的内容。 有关服务元数据包架构参考的详细信息，请参阅 [服务元数据包架构参考](service-metadata-package-schema-reference.md)。
+仅当在电脑上检测到来自指定操作员的移动宽带设备时，才会将服务元数据包发送给客户。 此包中的信息会在存在时覆盖 APN 数据库的内容。 有关服务元数据包架构参考的详细信息，请参阅 [服务元数据包架构参考](mobilebroadbandinfo-xml-schema.md)。
 
 有关如何创建服务元数据包的说明，请参阅 [创建服务元数据的开发人员指南](developer-guide-for-creating-service-metadata.md)。
 

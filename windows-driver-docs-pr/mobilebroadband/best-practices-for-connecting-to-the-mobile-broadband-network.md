@@ -4,12 +4,12 @@ description: 连接到移动宽带网络的最佳做法
 ms.assetid: 6106d026-1c5f-4990-8ef2-467c1a77a38e
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9b4934fc1559ed49959227bf5c642d2e1816f1cf
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: edb0ad2eb8ab0139197dc3deb84ffdcc3d7ddf61
+ms.sourcegitcommit: 7e4d9508198a30bdc1cb6eda83852dda4e42213e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89216238"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89304304"
 ---
 # <a name="best-practices-for-connecting-to-the-mobile-broadband-network"></a>连接到移动宽带网络的最佳做法
 
@@ -29,7 +29,7 @@ ms.locfileid: "89216238"
 ## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
-[使用移动宽带 Windows 运行时 API 的最佳做法](best-practices-for-using-mobile-broadband-windows-runtime-api.md)
+[使用移动宽带 Windows 运行时 API 的最佳做法](best-practices-for-handling-account-arrival-and-removal-events.md)
 
  
 

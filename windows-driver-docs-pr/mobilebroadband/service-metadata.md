@@ -4,12 +4,12 @@ description: 服务元数据概述
 ms.assetid: daf5db05-cf39-4ff2-a2f1-0ffd718c638e
 ms.date: 07/05/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 64dd8fd0de9ba7e70572062f5e9eefac6fa69bcd
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 6139396d12d72f2320a3b47fcafe03d6b1d241c3
+ms.sourcegitcommit: 7e4d9508198a30bdc1cb6eda83852dda4e42213e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89218481"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89304227"
 ---
 # <a name="service-metadata-overview"></a>服务元数据概述
 
@@ -39,7 +39,7 @@ ms.locfileid: "89218481"
 
 服务元数据包由 devicemetadata-ms 文件中存储的多个 XML 文档组成。 每个文档都指定了服务属性的各种组件。 这些 XML 文档向 Windows 连接管理器提供了向用户显示的自定义，以及网络配置信息。
 
-有关服务元数据包中 XML 文档的参考信息，请参阅 [服务元数据包架构参考](service-metadata-package-schema-reference.md)。
+有关服务元数据包中 XML 文档的参考信息，请参阅 [服务元数据包架构参考](mobilebroadbandinfo-xml-schema.md)。
 
 ## <a name="service-metadata-contents"></a>服务元数据内容
 

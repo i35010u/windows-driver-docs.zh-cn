@@ -4,12 +4,12 @@ description: 适用于 MVNO 的传送体验
 ms.assetid: fcb2a3d4-bc19-4fa5-b81d-b0df287404a8
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 24a5bf893181e00bb75decfd78f2f26d52278813
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 1b7ec3afffe4dc0e4e1ce07d8b90ae945a333558
+ms.sourcegitcommit: 7e4d9508198a30bdc1cb6eda83852dda4e42213e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89215373"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89304260"
 ---
 # <a name="delivering-experiences-for-mvnos"></a>适用于 MVNO 的传送体验
 
@@ -29,7 +29,7 @@ ms.locfileid: "89215373"
 
 有关服务元数据的信息，请参阅 [服务元数据](service-metadata.md)。
 
-有关服务元数据包架构的信息，请参阅 [服务元数据包架构参考](service-metadata-package-schema-reference.md)。
+有关服务元数据包架构的信息，请参阅 [服务元数据包架构参考](mobilebroadbandinfo-xml-schema.md)。
 
 ## <a name="matching-on-gsm-networks"></a>GSM 网络上的匹配
 

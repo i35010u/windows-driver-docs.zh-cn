@@ -4,12 +4,12 @@ description: 移动运营商硬件概述
 ms.assetid: b2322972-16be-443f-b46a-7834b4d7ead0
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8b25ebb1c3dd57dc3013070ff3d82e076be65126
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 560dcfa28f202712af874b297a232f8ed891e468
+ms.sourcegitcommit: 7e4d9508198a30bdc1cb6eda83852dda4e42213e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89212213"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89304276"
 ---
 # <a name="mobile-operator-hardware-overview"></a>移动运营商硬件概述
 
@@ -43,7 +43,7 @@ ms.locfileid: "89212213"
 
 2.  移动宽带服务读取 IMSI 并生成一组哈希。
 
-3.  当用户单击 " **连接**" 时，这些哈希将用于匹配 [COSA/APN 数据库提交](cosa-apn-database-submission.md)中的连接设置。
+3.  当用户单击 " **连接**" 时，这些哈希将用于匹配 [COSA/APN 数据库提交](planning-your-desktop-cosa-apn-database-submission.md)中的连接设置。
 
     -   如果连接成功并且 Internet 连接可用，则无需进一步操作。 用户已购买服务。
 
@@ -67,7 +67,7 @@ ms.locfileid: "89212213"
 
 2.  移动宽带服务读取 IMSI 并生成一组哈希。
 
-3.  当用户单击 " **连接**" 时，这些哈希将用于匹配 [COSA/APN 数据库提交](cosa-apn-database-submission.md)中的连接设置。 对于具有活动 SIM 的设备，连接成功并且 Internet 连接可用。
+3.  当用户单击 " **连接**" 时，这些哈希将用于匹配 [COSA/APN 数据库提交](planning-your-desktop-cosa-apn-database-submission.md)中的连接设置。 对于具有活动 SIM 的设备，连接成功并且 Internet 连接可用。
 
 ## <a name="span-idcomponentsspanspan-idcomponentsspanspan-idcomponentsspancomponents"></a><span id="Components"></span><span id="components"></span><span id="COMPONENTS"></span>组分
 

@@ -4,17 +4,17 @@ description: TrustedCertificateList
 ms.assetid: 116ee448-b0a8-4441-845c-945fc5ae0ddd
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2f045ea209aaa1db14ee2a37862c13575634d96a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 22a0fa1e9e3214929cf9ae9e027badc305b2892e
+ms.sourcegitcommit: 7e4d9508198a30bdc1cb6eda83852dda4e42213e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63376978"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89304272"
 ---
 # <a name="trustedcertificatelist"></a>TrustedCertificateList
 
 
-TrustedCertificateList 元素指定的操作员的受信任的证书列表。
+TrustedCertificateList 元素指定操作员的受信任证书列表。
 
 ## <a name="span-idusagespanspan-idusagespanspan-idusagespanusage"></a><span id="Usage"></span><span id="usage"></span><span id="USAGE"></span>使用情况
 
@@ -30,7 +30,7 @@ TrustedCertificateList 元素指定的操作员的受信任的证书列表。
 
 没有特性。
 
-## <a name="span-idchildelementsspanspan-idchildelementsspanspan-idchildelementsspanchild-elements"></a><span id="Child_elements"></span><span id="child_elements"></span><span id="CHILD_ELEMENTS"></span>子元素
+## <a name="span-idchild_elementsspanspan-idchild_elementsspanspan-idchild_elementsspanchild-elements"></a><span id="Child_elements"></span><span id="child_elements"></span><span id="CHILD_ELEMENTS"></span>子元素
 
 
 <table>
@@ -41,20 +41,20 @@ TrustedCertificateList 元素指定的操作员的受信任的证书列表。
 <thead>
 <tr class="header">
 <th>元素</th>
-<th>描述</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td><p><a href="trustedcertificate-apnxml.md" data-raw-source="[TrustedCertificate](trustedcertificate-apnxml.md)">TrustedCertificate</a></p></td>
-<td><p>运算符所信任的证书。</p></td>
+<td><p>操作员信任的证书。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-## <a name="span-idparentelementsspanspan-idparentelementsspanspan-idparentelementsspanparent-elements"></a><span id="Parent_elements"></span><span id="parent_elements"></span><span id="PARENT_ELEMENTS"></span>父元素
+## <a name="span-idparent_elementsspanspan-idparent_elementsspanspan-idparent_elementsspanparent-elements"></a><span id="Parent_elements"></span><span id="parent_elements"></span><span id="PARENT_ELEMENTS"></span>父元素
 
 
 <table>
@@ -65,20 +65,20 @@ TrustedCertificateList 元素指定的操作员的受信任的证书列表。
 <thead>
 <tr class="header">
 <th>元素</th>
-<th>描述</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td><p><a href="operatorlist.md" data-raw-source="[OperatorList](operatorlist.md)">OperatorList</a></p></td>
-<td><p>父元素<a href="apn-xml-schema.md" data-raw-source="[APN XML schema](apn-xml-schema.md)">APN XML 架构</a>。</p></td>
+<td><p><a href="apn-schema-definition.md" data-raw-source="[APN XML schema](apn-schema-definition.md)">APN XML 架构</a>的父元素。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-## <a name="span-idxsdspanspan-idxsdspanxsd"></a><span id="XSD"></span><span id="xsd"></span>XSD
+## <a name="span-idxsdspanspan-idxsdspanxsd"></a><span id="XSD"></span><span id="xsd"></span>XSD.EXE
 
 
 ``` syntax

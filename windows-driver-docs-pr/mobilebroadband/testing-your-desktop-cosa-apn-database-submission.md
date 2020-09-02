@@ -4,12 +4,12 @@ description: 测试桌面 COSA/APN 数据库提交
 ms.assetid: 8f45dbf0-4f96-4d11-b2a2-41b9e75b5e9b
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ea826a43f147f6ed62de9ea825f4ee7724a91b25
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 8eafafe17dd40dba9591758b7ed5b27fbf7a8a8c
+ms.sourcegitcommit: 7e4d9508198a30bdc1cb6eda83852dda4e42213e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89214095"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89304274"
 ---
 # <a name="testing-your-desktop-cosaapn-database-submission"></a>测试桌面 COSA/APN 数据库提交
 
@@ -110,11 +110,11 @@ ms.locfileid: "89214095"
 
 1. **从本地 apn 数据库文件复制任何现有值** --查看电脑上本地 apn 数据库中的现有条目，并将这些条目复制到新的 XML 文件中。 如果 APN 数据库的本地副本中没有任何 APN 条目，请跳过此步骤，并从空白 XML 文件开始。
 
-2. **根据已发布的接入点架构修改 XML 文件中的值** –确保 apn 条目跟随 [apn 数据库架构引用](apn-database-schema-reference.md)。
+2. **根据已发布的接入点架构修改 XML 文件中的值** –确保 apn 条目跟随 [apn 数据库架构引用](apn-schema-definition.md)。
 
 3. **生成硬件 id** -硬件 id 指定一个或多个将 SIM 特征与数据库中的 APN 条目相匹配的硬件标识字符串。 每个字符串由 [HardwareId](hardwareid-apnxml.md) 元素指定。 建议使用 mbidgenerator.exe 来生成硬件 Id。 有关详细信息，请参阅 [使用 mbidgenerator.exe 生成硬件 id](using-mbidgeneratorexe-to-generate-hardware-ids.md)。
 
-4. **验证生成的文件是否符合已发布的 APN 数据库架构** --始终执行架构检查以确保生成的文件符合 [APN 数据库架构引用](apn-database-schema-reference.md)。
+4. **验证生成的文件是否符合已发布的 APN 数据库架构** --始终执行架构检查以确保生成的文件符合 [APN 数据库架构引用](apn-schema-definition.md)。
 
 5. **在电脑上用新数据库覆盖 APN 连接数据库**
 

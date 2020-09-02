@@ -4,17 +4,17 @@ description: APN 示例
 ms.assetid: 3cf74bc4-a334-4213-8138-ebfc91b459e8
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5fe9c2f55cbfe34f28b2948efc393bb28c1582d8
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5b844b35ea0e5aa34e93c111f28b5d4ee2a32784
+ms.sourcegitcommit: 7e4d9508198a30bdc1cb6eda83852dda4e42213e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63351291"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89304306"
 ---
 # <a name="apn-example"></a>APN 示例
 
 
-下面的 XML 文档使用[APN XML 架构](apn-xml-schema.md)来指定服务的 APN 信息：
+以下 XML 文档使用 [APN XML 架构](apn-schema-definition.md) 指定服务的接入点信息：
 
 ``` syntax
 <?xml version="1.0" encoding="utf-8"?>

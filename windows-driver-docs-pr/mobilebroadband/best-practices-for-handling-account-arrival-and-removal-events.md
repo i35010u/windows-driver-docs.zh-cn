@@ -4,12 +4,12 @@ description: 处理帐户到达和删除事件的最佳做法
 ms.assetid: e299a920-a27e-4832-b81d-1562f86f37e2
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 11803c50f8d7c9f40375e960b346551952d33b98
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 17a0dd62e69650d95c39d07392247a2695e39b8f
+ms.sourcegitcommit: 7e4d9508198a30bdc1cb6eda83852dda4e42213e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89211121"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89304302"
 ---
 # <a name="best-practices-for-handling-account-arrival-and-removal-events"></a>处理帐户到达和删除事件的最佳做法
 
@@ -27,7 +27,7 @@ ms.locfileid: "89211121"
 ## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
-[使用移动宽带 Windows 运行时 API 的最佳做法](best-practices-for-using-mobile-broadband-windows-runtime-api.md)
+[使用移动宽带 Windows 运行时 API 的最佳做法](best-practices-for-handling-account-arrival-and-removal-events.md)
 
  
 

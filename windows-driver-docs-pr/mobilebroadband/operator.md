@@ -4,17 +4,17 @@ description: 运算符
 ms.assetid: 770ad50d-d42d-49ad-a302-e839a0ca1fb4
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bbcdd8a09ec6e0235d0be7dbdb76115614ac561c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ee0edd3721c920c14e895d9cc6dba3361147417d
+ms.sourcegitcommit: 7e4d9508198a30bdc1cb6eda83852dda4e42213e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63375750"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89304314"
 ---
 # <a name="operator"></a>运算符
 
 
-该运算符元素指定包含在 APN 数据库中的运算符的详细信息。
+Operator 元素指定 APN 数据库中包含的操作员的详细信息。
 
 ## <a name="span-idusagespanspan-idusagespanspan-idusagespanusage"></a><span id="Usage"></span><span id="usage"></span><span id="USAGE"></span>使用情况
 
@@ -37,10 +37,10 @@ ms.locfileid: "63375750"
 </colgroup>
 <thead>
 <tr class="header">
-<th>特性</th>
-<th>在任务栏的搜索框中键入</th>
+<th>Attribute</th>
+<th>类型</th>
 <th>必需</th>
-<th>描述</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>
@@ -48,27 +48,27 @@ ms.locfileid: "63375750"
 <td><p>名称</p></td>
 <td><p>xs:string</p></td>
 <td><p>是</p></td>
-<td><p>名称和国家/地区的运算符。</p>
-<p>例如：Contoso （阿根廷）</p></td>
+<td><p>操作员的名称和国家/地区。</p>
+<p>示例： Contoso (阿根廷) </p></td>
 </tr>
 <tr class="even">
 <td><p>AccountExperienceURL</p></td>
-<td><p>xs: anyuri</p></td>
+<td><p>xs:anyURI</p></td>
 <td><p>否</p></td>
-<td><p>用于配置移动宽带运营商的网站的 URL。</p></td>
+<td><p>用于配置移动宽带的操作员网站的 URL。</p></td>
 </tr>
 <tr class="odd">
 <td><p>OperatorGUID</p></td>
 <td><p>GUID</p></td>
 <td><p>否</p></td>
-<td><p>使用 GUID 来标识该运算符。</p></td>
+<td><p>用于标识运算符的 GUID。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-## <a name="span-idchildelementsspanspan-idchildelementsspanspan-idchildelementsspanchild-elements"></a><span id="Child_elements"></span><span id="child_elements"></span><span id="CHILD_ELEMENTS"></span>子元素
+## <a name="span-idchild_elementsspanspan-idchild_elementsspanspan-idchild_elementsspanchild-elements"></a><span id="Child_elements"></span><span id="child_elements"></span><span id="CHILD_ELEMENTS"></span>子元素
 
 
 <table>
@@ -79,13 +79,13 @@ ms.locfileid: "63375750"
 <thead>
 <tr class="header">
 <th>元素</th>
-<th>描述</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td><p><a href="hardwareidlist-apnxml.md" data-raw-source="[HardwareIdList](hardwareidlist-apnxml.md)">HardwareIdList</a></p></td>
-<td><p>硬件向操作员分配 Id 的列表。</p></td>
+<td><p>分配给操作员的硬件 Id 列表。</p></td>
 </tr>
 <tr class="even">
 <td><p><a href="connectioninfolist.md" data-raw-source="[ConnectionInfoList](connectioninfolist.md)">ConnectionInfoList</a></p></td>
@@ -93,14 +93,14 @@ ms.locfileid: "63375750"
 </tr>
 <tr class="odd">
 <td><p><a href="trustedcertificatelist.md" data-raw-source="[TrustedCertificateList](trustedcertificatelist.md)">TrustedCertificateList</a></p></td>
-<td><p>若要验证拥有由运营商的采购网站，提供帐户预配所用的受信任证书的列表。</p></td>
+<td><p>受信任的证书列表，用于验证帐户预配是否由操作员拥有的购买网站提供。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-## <a name="span-idparentelementsspanspan-idparentelementsspanspan-idparentelementsspanparent-elements"></a><span id="Parent_elements"></span><span id="parent_elements"></span><span id="PARENT_ELEMENTS"></span>父元素
+## <a name="span-idparent_elementsspanspan-idparent_elementsspanspan-idparent_elementsspanparent-elements"></a><span id="Parent_elements"></span><span id="parent_elements"></span><span id="PARENT_ELEMENTS"></span>父元素
 
 
 <table>
@@ -111,20 +111,20 @@ ms.locfileid: "63375750"
 <thead>
 <tr class="header">
 <th>元素</th>
-<th>描述</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td><p><a href="operatorlist.md" data-raw-source="[OperatorList](operatorlist.md)">OperatorList</a></p></td>
-<td><p>父元素<a href="apn-xml-schema.md" data-raw-source="[APN XML schema](apn-xml-schema.md)">APN XML 架构</a>。</p></td>
+<td><p><a href="apn-schema-definition.md" data-raw-source="[APN XML schema](apn-schema-definition.md)">APN XML 架构</a>的父元素。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-## <a name="span-idxsdspanspan-idxsdspanxsd"></a><span id="XSD"></span><span id="xsd"></span>XSD
+## <a name="span-idxsdspanspan-idxsdspanxsd"></a><span id="XSD"></span><span id="xsd"></span>XSD.EXE
 
 
 ``` syntax
@@ -145,7 +145,7 @@ ms.locfileid: "63375750"
 ## <a name="span-idremarksspanspan-idremarksspanspan-idremarksspanremarks"></a><span id="Remarks"></span><span id="remarks"></span><span id="REMARKS"></span>备注
 
 
-该运算符元素是必需的。
+Operator 元素是必需的。
 
  
 

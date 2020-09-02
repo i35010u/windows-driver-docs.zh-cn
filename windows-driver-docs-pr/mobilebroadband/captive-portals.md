@@ -4,12 +4,12 @@ description: 强制网络门户
 ms.assetid: 6f710440-3012-4bf4-92cc-3743b0f4fd34
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 74fc1c30e5d10f05e36d441bf4b383ac357103d9
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: c117d4da083567f93289d40a2b5be69f3cf9973e
+ms.sourcegitcommit: 7e4d9508198a30bdc1cb6eda83852dda4e42213e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89214099"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89304298"
 ---
 # <a name="captive-portals"></a>强制网络门户
 
@@ -76,7 +76,7 @@ Windows 8、Windows 8.1 和 Windows 10 的最丰富的体验是通过使用移�
 ## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
-[热点身份验证方法](hotspot-authentication-methods.md)
+[热点身份验证方法](integrating-windows-with-wireless-hotspots.md)
 
  
 
