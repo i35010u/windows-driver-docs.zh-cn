@@ -1,44 +1,44 @@
 ---
 title: C30033
-description: 检测警告 C30033 可执行文件分配到使用 POOL_NX_OPTIN 编译到驱动程序。
+description: 警告在使用 POOL_NX_OPTIN 编译的驱动程序中检测到 C30033 可执行文件分配。
 ms.assetid: A5212960-F33D-485A-9B80-23F3D95D475C
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 f1_keywords:
 - C30033
-ms.openlocfilehash: 7f0732574c5ee1adff1e651883695b83f437b93d
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: cbaa3eddbcda501e3432df093ed0a61308977672
+ms.sourcegitcommit: bc3d8a2a01dbe2074d3581bf687f003b3849b647
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67371461"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89285395"
 ---
 # <a name="c30033"></a>C30033
 
 
-警告 C30033:使用编译的驱动程序中，检测到可执行文件的分配[池\_NX\_OPTIN](https://docs.microsoft.com/windows-hardware/drivers/kernel/single-binary-opt-in-pool-nx-optin)。 此驱动程序已确定要在加载运行时由另一个驱动程序。 请验证是否加载驱动程序调用**ExInitializeDriverRuntime (*DrvRtPoolNxOptIn*)** 其 DriverEntry 中。
+警告 C30033：在使用 [池 \_ NX \_ OPTIN](https://docs.microsoft.com/windows-hardware/drivers/kernel/single-binary-opt-in-pool-nx-optin)编译的驱动程序中检测到可执行的分配。 已确定此驱动程序在运行时由另一个驱动程序加载。 请验证加载驱动程序是否在其 DriverEntry 中调用了 **ExInitializeDriverRuntime (*DrvRtPoolNxOptIn*) ** 。
 
-已禁止\_内存优化\_分配\_也许\_UNSAFE\_驱动程序\_LOADED
+禁止的 \_ 内存 \_ 分配可能会 \_ \_ 加载不安全的 \_ 驱动程序 \_
 
-已确定这是由另一个驱动程序，加载并没有这种情况下完成初始化函数的 DLL。 验证加载驱动程序：
+已确定这是由另一个驱动程序加载的 DLL，因此没有完整的初始化函数。 验证加载驱动程序是否为：
 
--   使用编译[池\_NX\_OPTIN](https://docs.microsoft.com/windows-hardware/drivers/kernel/single-binary-opt-in-pool-nx-optin)= 1
--   Calls **ExInitializeDriverRuntime(*DrvRtPoolNxOptIn*)** in its initialization function
+-   使用 [POOL \_ NX \_ OPTIN](https://docs.microsoft.com/windows-hardware/drivers/kernel/single-binary-opt-in-pool-nx-optin)= 1 编译
+-   在其初始化函数中调用**ExInitializeDriverRuntime (*DrvRtPoolNxOptIn*) **
 
-如果加载驱动程序正确指定这些，可以忽略此警告。
+如果加载驱动程序指定了这些正确的，则可以忽略此警告。
 
-## <a name="span-idexamplespanspan-idexamplespanspan-idexamplespanexample"></a><span id="Example"></span><span id="example"></span><span id="EXAMPLE"></span>示例
+## <a name="span-idexamplespanspan-idexamplespanspan-idexamplespanexample"></a><span id="Example"></span><span id="example"></span><span id="EXAMPLE"></span>实例
 
 
-每个加载的 DLL 的程序中的以下代码意味着您应更改 （根据安全下面的示例）
+DLL 的每个加载器中的以下代码都意味着应按照以下安全示例 (进行更改) 
 
-源文件中
+在源文件中
 
 ```
 C_DEFINES=$(C_DEFINES)
 ```
 
-在中**DriverEntry**、 任何内存分配发生之前：
+在 **DriverEntry**中，在发生任何内存分配之前：
 
 ```
 NTSTATUS
@@ -54,7 +54,7 @@ DriverEntry (
 }
 ```
 
-每个加载的 DLL 的程序中的以下代码意味着你可以忽略该警告。
+DLL 的每个加载器中的以下代码都意味着可以忽略此警告。
 
 在源文件中，添加
 
@@ -62,7 +62,7 @@ DriverEntry (
 C_DEFINES=$(C_DEFINES) -DPOOL_NX_OPTIN=1
 ```
 
-在中**DriverEntry**、 任何内存分配发生之前：
+在 **DriverEntry**中，在发生任何内存分配之前：
 
 ```
 NTSTATUS
@@ -77,12 +77,12 @@ DriverEntry (
 …
 ```
 
-## <a name="span-idexamplespanspan-idexamplespanspan-idexamplespanexample"></a><span id="Example"></span><span id="example"></span><span id="EXAMPLE"></span>示例
+## <a name="span-idexample2spanspan-idexample2spanspan-idexample2spanexample-2"></a><span id="Example2"></span><span id="example2"></span><span id="EXAMPLE2"></span>示例 #2
 
 
-若要解决此问题的第二种方法是使显式引用非可执行文件的内存的每个调用。
+解决此问题的另一种方法是使每个调用都显式引用不可执行的内存。
 
-下面的代码生成此警告。
+下面的代码将生成此警告。
 
 ```
 ExAllocatePoolWithTag(NonPagedPool, numberOfBytes, 'xppn');

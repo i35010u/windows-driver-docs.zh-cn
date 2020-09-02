@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 3d07c39fb30b3abecac0a2792be4d0c67d228f55
-ms.sourcegitcommit: 99997c9eb94b1f58f5e881a17f7bdb7b5d005019
+ms.openlocfilehash: b0866454ddb7d3d0629add9c4ba9f8e5851edc2a
+ms.sourcegitcommit: bc3d8a2a01dbe2074d3581bf687f003b3849b647
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82255484"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89285409"
 ---
 # <a name="kdbgctrl-command-line-options"></a>KDbgCtrl 命令行选项
 
@@ -76,7 +76,7 @@ kdbgctrl -?
 检查内核调试是否被阻止。 如果内核调试被阻止，则显示 true; 如果未阻止内核调试，则显示 false。
 
 <span id="_______-sdb_______Size______"></span><span id="_______-sdb_______size______"></span><span id="_______-SDB_______SIZE______"></span>**-sdb** *大小*   
-设置 DbgPrint 缓冲区的大小。 如果*大小*以**0x**为前缀，则将其解释为十六进制数。 如果它的前缀为**0** （零），则它将被解释为八进制。 否则，它将被解释为十进制。
+设置 DbgPrint 缓冲区的大小。 如果 *大小* 以 **0x** 为前缀，则将其解释为十六进制数。 如果前缀为 **0** (零) ，则将其解释为八进制。 否则，它将被解释为十进制。
 
 <span id="_______-cdb______"></span><span id="_______-CDB______"></span>**-cdb**   
 显示 DbgPrint 缓冲区的当前大小（以字节为单位）。
@@ -91,7 +91,7 @@ kdbgctrl -?
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">“值”</th>
+<th align="left">值</th>
 <th align="left">含义</th>
 </tr>
 </thead>
@@ -116,15 +116,15 @@ kdbgctrl -?
 <span id="-td_ProcessID_File"></span><span id="-td_processid_file"></span><span id="-TD_PROCESSID_FILE"></span>**-td** *ProcessID* *文件*  
 获取内核会审转储文件。 输入转储文件的进程 ID 和名称。
 
-<span id="-sd_Type"></span>**-sd {active | 自动 | 完整 | 内核 | 迷你**   
-设置要在发生系统崩溃时收集的转储类型，并重新加载故障转储堆栈。 有关转储类型的详细信息，请参阅[各种内核模式转储文件](varieties-of-kernel-mode-dump-files.md)。
+<span id="-sd_Type"></span>**-sd {active \| 自动 \| 完整 \| 内核 \| 迷你**   
+设置要在发生系统崩溃时收集的转储类型，并重新加载故障转储堆栈。 有关转储类型的详细信息，请参阅 [各种内核模式转储文件](varieties-of-kernel-mode-dump-files.md) 。
 
 <span id="_______-_______"></span> **-?**   
 显示 KDbgCtrl 的命令行帮助。
 
 ### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>附加信息
 
-有关所有 KDbgCtrl 设置的说明，请参阅[使用 KDbgCtrl](using-kdbgctrl.md)。
+有关所有 KDbgCtrl 设置的说明，请参阅 [使用 KDbgCtrl](using-kdbgctrl.md)。
 
  
 

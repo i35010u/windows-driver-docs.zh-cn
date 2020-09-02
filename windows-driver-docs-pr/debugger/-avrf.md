@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 1a6140e29083a1136a5fa9013db77180965cdfc9
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: a3d18ca79ae2a416212c38107a3dee12787d96ba
+ms.sourcegitcommit: bc3d8a2a01dbe2074d3581bf687f003b3849b647
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89217711"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89285411"
 ---
 # <a name="avrf"></a>!avrf
 
@@ -50,13 +50,13 @@ ms.locfileid: "89217711"
 ## <a name="span-idddk__avrf_dbgspanspan-idddk__avrf_dbgspanparameters"></a><span id="ddk__avrf_dbg"></span><span id="DDK__AVRF_DBG"></span>参数
 
 
-<span id="-vs___Length___-a_Address__"></span><span id="-vs___length___-a_address__"></span><span id="-VS___LENGTH___-A_ADDRESS__"></span>**-vs {** *Length* **|-a** *Address* **}**  
+<span id="-vs___Length___-a_Address__"></span><span id="-vs___length___-a_address__"></span><span id="-VS___LENGTH___-A_ADDRESS__"></span>**-vs {** *Length* ** \| -a** *Address* **}**  
 显示虚拟空间操作日志。 *Length* 指定要显示的记录数，从最新值开始。 *Address* 指定虚拟地址。 将显示包含此虚拟地址的虚拟操作的记录。
 
-<span id="-hp___Length___-a_Address__"></span><span id="-hp___length___-a_address__"></span><span id="-HP___LENGTH___-A_ADDRESS__"></span>**-hp {** *Length* **|-a** *Address* **}**  
+<span id="-hp___Length___-a_Address__"></span><span id="-hp___length___-a_address__"></span><span id="-HP___LENGTH___-A_ADDRESS__"></span>**-hp {** *长度* ** \| -a** *地址* **}**  
 显示堆操作日志。 *Address* 指定堆地址。 将显示包含此堆地址的堆操作的记录。
 
-<span id="-cs___Length___-a_Address__"></span><span id="-cs___length___-a_address__"></span><span id="-CS___LENGTH___-A_ADDRESS__"></span>**-cs {** *长度* **|-a** *地址* **}**  
+<span id="-cs___Length___-a_Address__"></span><span id="-cs___length___-a_address__"></span><span id="-CS___LENGTH___-A_ADDRESS__"></span>**-cs {** *长度* ** \| -a** *地址* **}**  
 显示临界区删除日志。 *Length* 指定要显示的记录数，从最新值开始。 *Address* 指定关键部分地址。 指定 *Address* 时，将显示特定关键部分的记录。
 
 <span id="-dlls___Length__"></span><span id="-dlls___length__"></span><span id="-DLLS___LENGTH__"></span>**-dll \[ ***长度***\]**  
@@ -74,7 +74,7 @@ ms.locfileid: "89217711"
 <span id="-tp___ThreadID___"></span><span id="-tp___threadid___"></span><span id="-TP___THREADID___"></span>**-tp \[ ***ThreadID***\]**   
 显示 threadpool 日志。 此日志包含各种操作的堆栈跟踪，例如更改线程关联掩码、更改线程优先级、发布线程消息以及从线程池回调内初始化或取消初始化 COM。 如果提供线程 ID，则仅显示该线程的信息。
 
-<span id="-srw____Address___Address_Length_____-stats___"></span><span id="-srw____address___address_length_____-stats___"></span><span id="-SRW____ADDRESS___ADDRESS_LENGTH_____-STATS___"></span>**-srw \[ ***地址* **|***地址长度* ** \] \[ -统计 \] **信息   
+<span id="-srw____Address___Address_Length_____-stats___"></span><span id="-srw____address___address_length_____-stats___"></span><span id="-SRW____ADDRESS___ADDRESS_LENGTH_____-STATS___"></span>**-srw \[ ***地址* **\|***地址长度* ** \] \[ -统计 \] **信息   
  (SRW) 日志中显示超薄读卡器/写入器。 如果指定 *address*，则会显示该地址处的 SRW 锁的记录。 如果指定 *address* 和 *Length*，则会显示该地址范围内的 SRW 锁的记录。 如果包括 **-stats** 选项，则显示 SRW 锁统计信息。
 
 <span id="-leak___-m_ModuleName____-r_ResourceType____-a_Address_____-t___"></span><span id="-leak___-m_modulename____-r_resourcetype____-a_address_____-t___"></span><span id="-LEAK___-M_MODULENAME____-R_RESOURCETYPE____-A_ADDRESS_____-T___"></span>**-泄漏 \[ -m** <em>ModuleName</em> -** \] \[ r** <em>ResourceType</em> ** \] \[ -a** *Address* ** \] \[ -t \] **   
@@ -108,9 +108,9 @@ Power：显示电源通知对象
 
 <span id="-flt_stacks_Length"></span><span id="-flt_stacks_length"></span><span id="-FLT_STACKS_LENGTH"></span>**-flt** stack *length* 显示最新的故障插入操作的堆栈跟踪的 *长度* 。
 
-<span id="-trg___Start_End___dll_Module___all____"></span><span id="-trg___start_end___dll_module___all____"></span><span id="-TRG___START_END___DLL_MODULE___ALL____"></span>**-.trg \[ ***开始结束* **|dll** *模块* **| all \] **指定了目标范围。 *起始* 地址是目标范围的起始地址。 *结束* 是目标范围的结束地址。 *模块* 指定名称 (包括 .exe 或 .dll 扩展名，但不包括要以其为目标的模块的路径) 。 如果输入 **-.trg all**，则将重置所有目标范围。 如果输入 **-.trg** ，但没有其他参数，则会显示当前的目标范围。
+<span id="-trg___Start_End___dll_Module___all____"></span><span id="-trg___start_end___dll_module___all____"></span><span id="-TRG___START_END___DLL_MODULE___ALL____"></span>**-.trg \[ ***开始结束* ** \| dll** *模块* ** \| all \] **指定了目标范围。 *起始* 地址是目标范围的起始地址。 *结束* 是目标范围的结束地址。 *模块* 指定名称 (包括 .exe 或 .dll 扩展名，但不包括要以其为目标的模块的路径) 。 如果输入 **-.trg all**，则将重置所有目标范围。 如果输入 **-.trg** ，但没有其他参数，则会显示当前的目标范围。
 
-<span id="-skp___Start_End___dll_Module___all___Time____"></span><span id="-skp___start_end___dll_module___all___time____"></span><span id="-SKP___START_END___DLL_MODULE___ALL___TIME____"></span>**-skp \[ ***开始结束* **|dll** *Module* **| all |** *Time* **\]** 指定排除范围。 *起始* 地址是排除范围的起始地址。 *结尾* 是排除范围的结束地址。 Module 指定要以其为目标或排除的模块的名称。 *模块* 指定包含 .exe 或 .dll 扩展名 (名称，但不包括要排除的模块的路径) 。 如果输入 **-skp all**，则将重置所有目标范围或排除范围。 如果输入*时间* 值，则在执行恢复后，将抑制所有错误的 *时间* 毫秒。
+<span id="-skp___Start_End___dll_Module___all___Time____"></span><span id="-skp___start_end___dll_module___all___time____"></span><span id="-SKP___START_END___DLL_MODULE___ALL___TIME____"></span>**-skp \[ ***开始结束* ** \| dll** *模块* ** \| 所有 \| ** *时间* **\]** 指定排除范围。 *起始* 地址是排除范围的起始地址。 *结尾* 是排除范围的结束地址。 Module 指定要以其为目标或排除的模块的名称。 *模块* 指定包含 .exe 或 .dll 扩展名 (名称，但不包括要排除的模块的路径) 。 如果输入 **-skp all**，则将重置所有目标范围或排除范围。 如果输入*时间* 值，则在执行恢复后，将抑制所有错误的 *时间* 毫秒。
 
 ### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
