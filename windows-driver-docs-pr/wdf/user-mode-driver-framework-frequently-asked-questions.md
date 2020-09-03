@@ -4,12 +4,12 @@ description: Windows 驱动程序框架 (WDF) 是一组可用于编写在 Window
 ms.assetid: 0c07e514-73f9-4d24-86ad-8ac036fdbcf4
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f595c738d7e4b6b3b22882195174b7b25a6c8b41
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 1ccb466b541c42bda58e2b819b23f8e4878db786
+ms.sourcegitcommit: 057b72e8a44ba8f4282e072edc7be0b7e9341d2a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89187323"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89412471"
 ---
 # <a name="user-mode-driver-framework-frequently-asked-questions"></a>用户模式驱动程序框架常见问题解答
 
@@ -90,7 +90,7 @@ UMDF 驱动程序在驱动程序主机进程中运行，该进程在 LocalServic
 ## <a name="how-do-i-debug-a-umdf-driver"></a>如何实现调试 UMDF 驱动程序？
 
 
-可以使用用户模式调试器或内核模式调试程序调试 UMDF 驱动程序。 有关详细信息，请参阅 [调试 WDF 驱动程序](debugging-a-wdf-driver.md)。
+可以使用用户模式调试器或内核模式调试程序调试 UMDF 驱动程序。 有关详细信息，请参阅 [调试 WDF 驱动程序](accessing-umdf-metadata-in-wer-reports.md)。
 
 从 UMDF 版本2.0 开始，可以使用 *Wdfkd.dll* 调试程序扩展库中的许多命令来调试 UMDF 驱动程序。 有关命令列表，请参阅 [调试器扩展](debugger-extensions-for-kmdf-drivers.md)。 此外，UMDF 还会在内核非分页内存中存储 UMDF 跟踪日志 (或 UMDF *IFR*) 。 有关 IFR 的信息，请参阅 [使用框架的事件记录器](using-the-framework-s-event-logger.md)。
 

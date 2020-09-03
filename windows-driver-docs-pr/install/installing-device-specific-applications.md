@@ -5,15 +5,15 @@ ms.assetid: 47e54ea6-f391-420a-aa69-caf7225b1147
 keywords:
 - 安装应用程序 WDK，特定于设备的应用程序
 - 设备安装应用程序 WDK，特定于设备的应用程序
-- 特定于设备的应用程序 WDK 设备安装
+- 设备特定的应用程序 WDK 设备安装
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 095f4ec16702756e9126a076a3f5e0b5f06f0770
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 32f9f2d2dd3e25594ca6e91310d15905fefddf79
+ms.sourcegitcommit: 057b72e8a44ba8f4282e072edc7be0b7e9341d2a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63341488"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89412436"
 ---
 # <a name="installing-device-specific-applications"></a>安装特定于设备的应用程序
 
@@ -21,24 +21,24 @@ ms.locfileid: "63341488"
 
 
 
-如果分发介质中包含特定于设备的应用程序，您可以使用以下方法安装这些应用程序：
+如果你的分发介质包含设备特定的应用程序，你可以使用以下方法来安装这些应用程序：
 
--   使用设备共同安装程序安装的应用程序通过使用[完成安装操作](finish-install-actions--windows-vista-and-later-.md)。
+-   使用设备共同安装程序通过使用 " [完成-安装" 操作](finish-install-actions--windows-vista-and-later-.md)来安装应用程序。
 
-    如果用户插入设备插入分发介质之前，这称为[硬件第一个安装](hardware-first-installation.md)。 如果收件箱驱动程序不支持该设备，Windows 会调用共同安装程序在安装过程中提供的介质。
+    如果用户在插入分发媒体之前插入设备，则这称为 [硬件第一次安装](hardware-first-installation.md)。 如果收件箱驱动程序不支持该设备，Windows 将调用安装过程中介质提供的共同安装程序。
 
-    辅助安装程序应确定是否已安装了特定于设备的应用程序。 如果它们尚未打开，辅助安装程序应执行以下项之一
+    共同安装程序应确定是否已安装了特定于设备的应用程序。 如果没有，则共同安装程序应执行以下操作之一
 
-    1.  启动*设备安装应用程序*分发介质安装特定于设备的应用程序上。
-    2.  提示用户从 Internet 下载的设备安装应用程序的较新版本。
+    1.  在分发介质上启动 *设备安装应用程序* 以安装特定于设备的应用程序。
+    2.  提示用户从 Internet 下载设备安装应用程序的较新版本。
 
-    独立硬件供应商 (Ihv) 可以使用各种方法来提供[硬件第一个安装](hardware-first-installation.md)用于安装特定于设备的应用程序的解决方案。 有关这些方法的详细信息，请参阅[硬件第一个安装的特定于设备的应用程序](hardware-first-installation-of-device-specific-applications.md)。
+    独立硬件供应商 (Ihv) 可以使用各种方法来提供 [硬件优先安装](hardware-first-installation.md) 解决方案，以便安装特定于设备的应用程序。 有关这些方法的详细信息，请参阅 [硬件-第一次安装设备特定的应用程序](device-installation-application-not-included-in-the-driver-package.md)。
 
-    有关共同安装程序的详细信息，请参阅[编写共同安装程序](writing-a-co-installer.md)。
+    有关共同安装程序的详细信息，请参阅 [编写共同安装程序](writing-a-co-installer.md)。
 
--   使用设备安装应用程序使用 Windows 安装程序来安装特定于设备的应用程序。
+-   使用 Windows Installer 安装特定于设备的应用程序的设备安装应用程序。
 
-    如果用户插入设备之前插入分发介质，因此将此称为[软件的第一个安装](software-first-installation.md)。 中的自动运行调用设备安装应用程序应确定是否已安装特定于设备的应用程序，如果它们尚未打开，它应使用 Windows 安装程序安装它们。 有关详细信息，请参阅 Windows SDK 文档。
+    如果用户在插入设备前插入分布介质，则这称为 [软件优先安装](software-first-installation.md)。 介质的自动运行调用设备安装应用程序应该确定是否已安装了设备特定的应用程序，如果没有，则应使用 Windows Installer 安装它们。 有关详细信息，请参阅 Windows SDK 文档。
 
  
 

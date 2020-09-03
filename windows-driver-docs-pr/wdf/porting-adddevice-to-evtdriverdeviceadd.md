@@ -4,12 +4,12 @@ description: 将 AddDevice 移植到 EvtDriverDeviceAdd
 ms.assetid: 8FCFDA98-621E-415E-83D7-0371F55DD8A8
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2801b1e7192d7601cc52588319b259fb0bc5f50b
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 197d4334471d6e8bbab2c034eebbe091fccb2646
+ms.sourcegitcommit: 057b72e8a44ba8f4282e072edc7be0b7e9341d2a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89184585"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89412470"
 ---
 # <a name="porting-adddevice-to-evtdriverdeviceadd"></a>将 AddDevice 移植到 EvtDriverDeviceAdd
 
@@ -54,7 +54,7 @@ WDM 驱动程序创建 [**设备 \_ 对象**](/windows-hardware/drivers/ddi/wdm/
 -   [创建设备接口](using-device-interfaces.md)。
 -   如果设备对象拥有电源策略，请设置 [设备空闲策略](supporting-idle-power-down.md) 和 [唤醒设置](supporting-system-wake-up.md)。
 -   如果硬件支持中断，则[创建一个中断对象](creating-an-interrupt-object.md)。
--   [初始化 WMI](supporting-wmi-in-kmdf-drivers.md)。<sup>†</sup>
+-   [初始化 WMI](introduction-to-wmi-for-kmdf-drivers.md)。<sup>†</sup>
 
 †此功能仅适用于 KMDF 驱动程序。
 

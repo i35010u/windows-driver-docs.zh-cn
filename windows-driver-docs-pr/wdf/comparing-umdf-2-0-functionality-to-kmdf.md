@@ -4,12 +4,12 @@ description: 本主题将可用于内核模式驱动程序 (框架的功能与�
 ms.assetid: 9D4DD1A9-DA49-4132-B98F-AFEC8B427272
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ff0dcad5967cfd0f3213f6a493d29d4b5d511aed
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: bb940a56f0684a7cab87e97c24312cc480b7c53d
+ms.sourcegitcommit: 057b72e8a44ba8f4282e072edc7be0b7e9341d2a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89184327"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89412482"
 ---
 # <a name="comparing-umdf-2-functionality-to-kmdf"></a>将 UMDF 2 功能与 KMDF 进行比较
 
@@ -32,7 +32,7 @@ ms.locfileid: "89184327"
 <tbody>
 <tr class="odd">
 <td align="left"> (DMA) 的直接内存访问</td>
-<td align="left"><a href="handling-dma-operations-in-kmdf-drivers.md" data-raw-source="[Handling DMA Operations in KMDF Drivers](handling-dma-operations-in-kmdf-drivers.md)">在 KMDF 驱动程序中处理 DMA 操作</a></td>
+<td align="left"><a href="https://docs.microsoft.com/windows-hardware/drivers/wdf/introduction-to-dma-in-windows-driver-framework">在 KMDF 驱动程序中处理 DMA 操作</a></td>
 </tr>
 <tr class="even">
 <td align="left">总线枚举</td>

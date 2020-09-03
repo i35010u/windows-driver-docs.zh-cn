@@ -4,12 +4,12 @@ description: 移植步骤
 ms.assetid: D8B7E534-7CFC-45EC-93E9-4B046598D82B
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 42fcce0c4b02cf038d68c66941dafaab2ac72101
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 4482411dcc96647c11a91f6006f50e92d1e91b7c
+ms.sourcegitcommit: 057b72e8a44ba8f4282e072edc7be0b7e9341d2a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89189711"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89412490"
 ---
 # <a name="steps-in-porting"></a>移植步骤
 
@@ -27,7 +27,7 @@ ms.locfileid: "89189711"
 -   如果设备执行 DMA，则添加对 [dma](porting-dma.md)的支持。<sup>†</sup>
 -   [端口 WMI 代码](porting-wmi-code.md)。<sup>†</sup>
 -   用于 [处理框架不代表 KMDF 驱动程序处理的请求的](requests-that-kmdf-does-not-support.md)端口代码。<sup>†</sup>
--   [修改](installation-procedure.md) 安装驱动程序的 INF。
+-   [修改](building--installing--and-testing-a-wdf-driver.md) 安装驱动程序的 INF。
 
 †此功能仅可用于 (KMDF) 驱动程序的内核模式驱动程序框架。
 

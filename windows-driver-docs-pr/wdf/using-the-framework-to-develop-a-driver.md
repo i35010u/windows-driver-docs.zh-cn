@@ -9,12 +9,12 @@ keywords:
 - 基于框架的驱动程序 WDK KMDF，开发步骤
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3b6187f0a96e6cc2aaec0226d9d3282cd2bf5e8c
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: c0ad54c3c8db9b13c9ef59a39df5676262ae7bf7
+ms.sourcegitcommit: 057b72e8a44ba8f4282e072edc7be0b7e9341d2a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89187747"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89412472"
 ---
 # <a name="using-wdf-to-develop-a-driver"></a>使用 WDF 开发驱动程序
 
@@ -45,13 +45,13 @@ Windows 驱动程序框架 (WDF) 驱动程序由基于框架的驱动程序所�
 
     处理设备中断的驱动程序必须调用 [**WdfInterruptCreate**](/windows-hardware/drivers/ddi/wdfinterrupt/nf-wdfinterrupt-wdfinterruptcreate) ，以便为每个中断创建框架中断对象并注册回调函数。 这些回调函数启用和禁用中断，并充当中断服务例程 (ISR) ，并为中断 (DPC) 延迟过程调用。
 
-    有关框架中断对象的详细信息，请参阅 [处理硬件中断](handling-hardware-interrupts.md)。
+    有关框架中断对象的详细信息，请参阅 [处理硬件中断](creating-an-interrupt-object.md)。
 
 -   KMDF 驱动程序可以使用框架的 *dma 启用码* 对象和 *dma 事务对象* 来处理设备 (DMA) 操作的直接内存访问。
 
     如果 KMDF 驱动程序的设备支持 DMA 操作，驱动程序应调用 [**WdfDmaEnablerCreate**](/windows-hardware/drivers/ddi/wdfdmaenabler/nf-wdfdmaenabler-wdfdmaenablercreate) 来创建 dma 启用程序对象，并使用 [**WdfDmaTransactionCreate**](/windows-hardware/drivers/ddi/wdfdmatransaction/nf-wdfdmatransaction-wdfdmatransactioncreate) 创建一个或多个 dma 事务对象。 DMA transaction 对象定义用于计划设备硬件执行 DMA 操作的 [*EvtProgramDma*](/windows-hardware/drivers/ddi/wdfdmatransaction/nc-wdfdmatransaction-evt_wdf_program_dma) 回调函数。
 
-    有关支持 DMA 操作的详细信息，请参阅 [在基于框架的驱动程序中处理 Dma 操作](handling-dma-operations-in-kmdf-drivers.md)。
+    有关支持 DMA 操作的详细信息，请参阅 [在基于框架的驱动程序中处理 Dma 操作](introduction-to-dma-in-windows-driver-framework.md)。
 
 -   使用框架的 *i/o 目标对象* 将 i/o 请求发送到其他驱动程序。
 
@@ -63,7 +63,7 @@ Windows 驱动程序框架 (WDF) 驱动程序由基于框架的驱动程序所�
 
     大多数 KMDF 驱动程序应支持 WMI，并应调用 [**WdfWmiInstanceCreate**](/windows-hardware/drivers/ddi/wdfwmi/nf-wdfwmi-wdfwmiinstancecreate) 来注册发送或接收 WMI 数据的回调函数。
 
-    有关 WMI 的详细信息，请参阅 [在基于框架的驱动程序中支持 WMI](supporting-wmi-in-kmdf-drivers.md)。
+    有关 WMI 的详细信息，请参阅 [在基于框架的驱动程序中支持 WMI](introduction-to-wmi-for-kmdf-drivers.md)。
 
 -   使用框架的同步功能。
 

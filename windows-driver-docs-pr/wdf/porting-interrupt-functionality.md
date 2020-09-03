@@ -4,12 +4,12 @@ description: 移植中断
 ms.assetid: E91B971D-044C-45A4-AD76-44AFB1213F8E
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f34b17da37c893c4482170355a979d9f101009c3
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 52cf2b5b0b100a02b80d1d5f7f4a08dc1c7cc481
+ms.sourcegitcommit: 057b72e8a44ba8f4282e072edc7be0b7e9341d2a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89191731"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89412456"
 ---
 # <a name="porting-interrupts"></a>移植中断
 
@@ -21,7 +21,7 @@ ms.locfileid: "89191731"
 
 WDF 驱动程序中的 [*EvtInterruptIsr*](/windows-hardware/drivers/ddi/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_isr) 回调执行与 WDM 驱动程序的 [*InterruptService*](/windows-hardware/drivers/ddi/wdm/nc-wdm-kservice_routine) 例程相同的任务。 *EvtInterruptIsr*回调调用[**WdfInterruptQueueDpcForIsr**](/windows-hardware/drivers/ddi/wdfinterrupt/nf-wdfinterrupt-wdfinterruptqueuedpcforisr)将[*EvtInterruptDpc*](/windows-hardware/drivers/ddi/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_dpc)回调排队，以便以后在调度级别进行处理 \_ 。 在响应中，框架将一个 DPC 对象添加到运行此回调的系统队列。
 
-有关框架中断对象的详细信息，请参阅 [处理硬件中断](handling-hardware-interrupts.md)。
+有关框架中断对象的详细信息，请参阅 [处理硬件中断](creating-an-interrupt-object.md)。
 
  
 

@@ -4,12 +4,12 @@ description: Windows 内核不透明结构
 ms.assetid: 4053d82e-78ae-4945-ad5b-44ba41229a5d
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 2f8a164ba178f4c0618a86ab538f8c2b55f90f3b
-ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
+ms.openlocfilehash: 00725288ab0e8cc7f148c65bcb13cb14d9524d93
+ms.sourcegitcommit: 057b72e8a44ba8f4282e072edc7be0b7e9341d2a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89402934"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89412478"
 ---
 # <a name="windows-kernel-opaque-structures"></a>Windows 内核不透明结构
 
@@ -115,7 +115,7 @@ ms.locfileid: "89402934"
 </tr>
 <tr class="odd">
 <td><strong>KDPC</strong></td>
-<td><p><strong>KDPC</strong>结构是表示 DPC 对象的不透明结构。 请勿直接设置此结构的成员。 请参阅 <a href="dpc-objects-and-dpcs.md" data-raw-source="[DPC Objects and DPCs](introduction-to-dpc-objects.md)">Dpc 对象和 dpc</a>。</p>
+<td><p><strong>KDPC</strong>结构是表示 DPC 对象的不透明结构。 请勿直接设置此结构的成员。 请参阅 <a href="https://docs.microsoft.com/windows-hardware/drivers/kernel/introduction-to-dpc-objects">Dpc 对象和 dpc</a>。</p>
 <p>标头： Wdm .h。 Include： Wdm、Ntddk、Ntifs。</p></td>
 </tr>
 <tr class="even">

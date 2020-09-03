@@ -9,12 +9,12 @@ keywords:
 - DMA 传输 WDK 内核，适配器对象
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c8d1bdcc87bf1f7aa5223ae6c0e0ced8b93c450e
-ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
+ms.openlocfilehash: 6a11da255ede82f86a705dd1673e9b428313270e
+ms.sourcegitcommit: 057b72e8a44ba8f4282e072edc7be0b7e9341d2a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89402930"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89412440"
 ---
 # <a name="getting-an-adapter-object"></a>获取适配器对象
 
@@ -58,7 +58,7 @@ ms.locfileid: "89402930"
 
 当驱动程序完成所有 DMA 操作时，它会调用 [**PutDmaAdapter**](/windows-hardware/drivers/ddi/wdm/nc-wdm-pput_dma_adapter) 来释放适配器对象。
 
-以下各节 ([使用系统 DMA](introduction-to-adapter-objects) 并 [使用总线主控 DMA](using-bus-master-dma.md)) 介绍 DMA 设备的单一驱动程序如何使用支持例程来满足传输请求。 这些部分假定驱动程序具有以下各项：
+以下部分 [使用系统 dma](introduction-to-adapter-objects.md) 和 [使用总线主控 DMA](using-bus-master-dma.md)) 说明 DMA 设备的单一驱动程序如何使用支持例程来满足传输请求。 这些部分假定驱动程序具有以下各项：
 
 -   标准 [*StartIo*](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_startio) 例程，而不是设置和管理 irp 的内部队列
 
