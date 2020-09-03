@@ -4,17 +4,17 @@ description: 卡 PIN 操作
 ms.assetid: 7993D284-8122-4831-9C00-E53DAEB7965F
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 341451de05573a4eec9ae4368d0073465eca7242
-ms.sourcegitcommit: 9102e34c3322d8697dbb6f9a1d78879147a73373
+ms.openlocfilehash: 6e44ec4547b1fe009efdc39fa7fd3dafdbb1b004
+ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87264456"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89384711"
 ---
 # <a name="card-pin-operations"></a>卡 PIN 操作
 
 
-由于它在 ATM 计算机的数字键盘上首次使用，因此它从银行业继承而来。 其他一些行业文档使用条款卡持有人验证（CHV）。 了解到数据格式不只是数值，但也可以是用户可以提供的任何形式的任何内容。 作为 PIN 数据传递的值由互操作性注意事项约束为 ANSI 单字节字符集。
+由于它在 ATM 计算机的数字键盘上首次使用，因此它从银行业继承而来。 其他一些行业文档使用 "卡持有人验证" (CHV) 。 了解到数据格式不只是数值，但也可以是用户可以提供的任何形式的任何内容。 作为 PIN 数据传递的值由互操作性注意事项约束为 ANSI 单字节字符集。
 
 用户的身份验证与管理员身份验证的差别很大，因为用户通常不具有拥有管理身份验证机密的特权。 这对可以使用哪种类型的数据及其处理方式有很多影响。 如果在客户端计算机上使用管理机密来执行某些操作，例如，通过中心颁发机构提供帮助来取消阻止用户的卡，则必须将此数据安全地传输到此卡，否则不会泄露任何可能性，否则，它将不会在当前事务之外提供任何值。 将安全传输到卡的难点在于，不建议使用 PIN 对管理员进行身份验证。
 
@@ -66,7 +66,7 @@ typedef enum
 } SECRET_TYPE;
 ```
 
-**注意** 当遇到 PIN**机密 \_ TYPEEmptyPinType**时，Windows 不会提示输入 pin，也不会调用**CardAuthenticatePin**或**CardAuthenticatePinEx**。 如果需要无条件访问卡片上的材料，此设置很有用。
+**注意**  当遇到 PIN **机密 \_ TYPEEmptyPinType**时，Windows 不会提示输入 pin，也不会调用 **CardAuthenticatePin** 或 **CardAuthenticatePinEx**。 如果需要无条件访问卡片上的材料，此设置很有用。
 
 
 
@@ -92,9 +92,9 @@ Windows 使用枚举值向用户显示一条描述当前请求的卡 PIN 的相�
 
 !["固定" 对话框](images/pinbox.png)
 
-图中的第一个字符串（"输入插针。 注册： BaseRSASmartcardLogon "）由调用应用程序提供，用于提供应用程序上下文。 如果不存在应用程序上下文字符串，则对话框将显示标准文本。
+图中的第一个字符串 ( "Enter PIN。 注册： BaseRSASmartcardLogon ") 由调用应用程序提供，用于提供应用程序上下文。 如果不存在应用程序上下文字符串，则对话框将显示标准文本。
 
-第二个字符串（"请输入您的身份验证 PIN"）通过以下方式之一由**机密 \_ 用途**驱动：
+第二个字符串 ( "请输入您的身份验证 PIN" ) 由 **机密 \_ 用途** 通过以下方式之一驱动：
 
 -   默认上下文字符串
 
@@ -114,9 +114,9 @@ Windows 使用枚举值向用户显示一条描述当前请求的卡 PIN 的相�
 
 -   自定义字符串
 
-    开发人员可以通过在微型驱动程序的注册表项（HKLM \\ 软件 \\ software \\ Microsoft \\ 加密 \\ Calais \\ 智能 \\ 卡 XYZ xyz，其中 XYZ 是卡微型驱动程序的名称）的以下注册表值中设置自定义字符串来覆盖默认上下文字符串。
+    开发人员可以通过以下方式重写默认上下文字符串：在微型驱动程序的注册表项的注册表项中的注册表项中设置自定义字符串 (HKLM\ \\ software software \\ \\ Microsoft \\ 密码 \\ Calais \\ 智能 \\ 卡 xyz，其中 XYZ 是卡微型驱动程序) 的名称。
 
-    若要重写预定义的上下文字符串，请使用自定义字符串将注册表字符串值添加到微型驱动程序的注册表项。 密钥名称用于设置要重写的**机密 \_ 用途**预定义上下文字符串，其中包含0x80000100，它对应于**机密 \_ 类型**和开头的第一个成员。 不能只重写一个字符串、部分或全部上下文字符串。
+    若要重写预定义的上下文字符串，请使用自定义字符串将注册表字符串值添加到微型驱动程序的注册表项。 密钥名称用于设置要重写的 **机密 \_ 用途** 预定义上下文字符串，其中包含0x80000100，它对应于 **机密 \_ 类型** 和开头的第一个成员。 不能只重写一个字符串、部分或全部上下文字符串。
 
     字符串的值应遵循以下格式：
 
@@ -124,21 +124,21 @@ Windows 使用枚举值向用户显示一条描述当前请求的卡 PIN 的相�
     “LangID,xxxx;LangID,xxxxx”
     ```
 
-    **注意** 自定义字符串周围的引号不会得到正确处理，因此不应依赖于防止分析字符串中的特殊字符。
+    **注意**  自定义字符串周围的引号不会得到正确处理，因此不应依赖于防止分析字符串中的特殊字符。
 
 
 
 
-**注意** 为同一区域设置包含两个不同的自定义字符串将导致选取第一个自定义字符串。
+**注意**  为同一区域设置包含两个不同的自定义字符串将导致选取第一个自定义字符串。
 
 
 
 
-对话框中的第三个字符串（"数字签名 PIN"）是一个预定义的字符串，由**PIN \_ 信息**数据结构中的**机密 \_ 用途**值决定。
+对话框中的第三个字符串 ( "数字签名 PIN" ) 是一个预定义的字符串，由**PIN \_ 信息**数据结构中的**机密 \_ 用途**值决定。
 
-对于**UnblockOnlyPin**，预期用途是取消阻止用户 PIN。 此 PIN 不得用于任何其他目的。
+对于 **UnblockOnlyPin**，预期用途是取消阻止用户 PIN。 此 PIN 不得用于任何其他目的。
 
-## <a name="span-id_pin_cache_policy_typespanspan-id_pin_cache_policy_typespan-pin_cache_policy_type"></a><span id="_PIN_CACHE_POLICY_TYPE"></span><span id="_pin_cache_policy_type"></span>PIN \_ 缓存 \_ 策略 \_ 类型
+## <a name="span-id_pin_cache_policy_typespanspan-id_pin_cache_policy_typespan-pin_cache_policy_type"></a><span id="_PIN_CACHE_POLICY_TYPE"></span><span id="_pin_cache_policy_type"></span> PIN \_ 缓存 \_ 策略 \_ 类型
 
 
 下面的枚举描述要与此 PIN 关联的 PIN 缓存策略。
@@ -155,23 +155,23 @@ typedef enum
 
 下表描述了基本 CSP 如何处理三种不同的缓存模式。
 
-| 缓存模式               | 描述                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+| 缓存模式               | 说明                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
 |--------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **PinCacheNormal**       | 对于此模式，将根据每个登录 ID 的每个进程的基本 CSP 缓存 PIN。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
-| **PinCacheTimed**        | 对于此模式，在指定的时间段（以秒为单位给出的值）之后，PIN 会失效。 这是通过在将 PIN 添加到缓存时记录时间戳来实现的，然后验证此时间戳与访问 PIN 的时间。 这意味着 PIN 可能在缓存中的时间长于指定的时间戳，但在过期后不会使用。 在内存中加密 PIN 以使其受到保护。                                                                                                                |
-| **PinCacheNone**         | 当无法缓存 PIN 时，基本 CSP 绝不会将 PIN 添加到缓存中。 当使用[**CryptSetProvParam**](https://docs.microsoft.com/windows/desktop/api/wincrypt/nf-wincrypt-cryptsetprovparam)调用基本 CSP/KSP 来设置 pin 时，会将 pin 提交到卡进行验证，但不会进行缓存。 这意味着，任何后续操作都必须在基本 CSP 事务超时过期之前发生。                                                                                                                                                                                                                  |
-| **PinCacheAlwaysPrompt** | 与**PinCacheNone**不同，设置此缓存模式时，基本 CSP 事务超时不适用。 将从用户收集 PIN，然后在每次需要身份验证的调用之前提交到卡进行验证。 调用[**CryptSetProvParam**](https://docs.microsoft.com/windows/desktop/api/wincrypt/nf-wincrypt-cryptsetprovparam)和[**NCRYPTSETPROPERTY**](https://docs.microsoft.com/windows/desktop/api/ncrypt/nf-ncrypt-ncryptsetproperty)以设置 pin 返回错误 SUCCESS， \_ 而不验证和缓存 pin。 这意味着，如果调用需要身份验证，则使用无提示上下文的应用程序的调用将失败。 |
+| **PinCacheTimed**        | 在此模式下，在指定的时间段内，在给定的时间段内，PIN 会无效， (值以秒为单位) 。 这是通过在将 PIN 添加到缓存时记录时间戳来实现的，然后验证此时间戳与访问 PIN 的时间。 这意味着 PIN 可能在缓存中的时间长于指定的时间戳，但在过期后不会使用。 在内存中加密 PIN 以使其受到保护。                                                                                                                |
+| **PinCacheNone**         | 当无法缓存 PIN 时，基本 CSP 绝不会将 PIN 添加到缓存中。 当使用 [**CryptSetProvParam**](/windows/desktop/api/wincrypt/nf-wincrypt-cryptsetprovparam) 调用基本 CSP/KSP 来设置 pin 时，会将 pin 提交到卡进行验证，但不会进行缓存。 这意味着，任何后续操作都必须在基本 CSP 事务超时过期之前发生。                                                                                                                                                                                                                  |
+| **PinCacheAlwaysPrompt** | 与 **PinCacheNone**不同，设置此缓存模式时，基本 CSP 事务超时不适用。 将从用户收集 PIN，然后在每次需要身份验证的调用之前提交到卡进行验证。 调用 [**CryptSetProvParam**](/windows/desktop/api/wincrypt/nf-wincrypt-cryptsetprovparam) 和 [**NCRYPTSETPROPERTY**](/windows/desktop/api/ncrypt/nf-ncrypt-ncryptsetproperty) 以设置 pin 返回错误 SUCCESS， \_ 而不验证和缓存 pin。 这意味着，如果调用需要身份验证，则使用无提示上下文的应用程序的调用将失败。 |
 
 
 
-**注意** 如果未缓存 PIN，Windows 登录可能无法正常工作。 这是设计的行为。 因此，在将 PIN 缓存模式设置为**PinCacheNormal**以外的任何值时，应仔细考虑。
+**注意**  如果未缓存 PIN，Windows 登录可能无法正常工作。 此行为是设计使然。 因此，在将 PIN 缓存模式设置为 **PinCacheNormal**以外的任何值时，应仔细考虑。
 
 
 
-## <a name="span-id_pin_cache_policyspanspan-id_pin_cache_policyspan-pin_cache_policy"></a><span id="_PIN_CACHE_POLICY"></span><span id="_pin_cache_policy"></span>PIN \_ 缓存 \_ 策略
+## <a name="span-id_pin_cache_policyspanspan-id_pin_cache_policyspan-pin_cache_policy"></a><span id="_PIN_CACHE_POLICY"></span><span id="_pin_cache_policy"></span> PIN \_ 缓存 \_ 策略
 
 
-PIN 缓存策略结构包含描述 PIN 缓存策略的信息。 除了介绍与此 PIN 缓存策略关联的信息外，还介绍了 PIN 缓存类型。 此关联信息的一个示例是在策略指示**PinCacheTimed**时 PIN 缓存的超时值。
+PIN 缓存策略结构包含描述 PIN 缓存策略的信息。 除了介绍与此 PIN 缓存策略关联的信息外，还介绍了 PIN 缓存类型。 此关联信息的一个示例是在策略指示 **PinCacheTimed**时 PIN 缓存的超时值。
 
 ```ManagedCPlusPlus
 #define      PIN_CACHE_POLICY_CURRENT_VERSION   6
@@ -208,15 +208,4 @@ typedef struct _PIN_INFO
 
 **DwFlags**成员包含 PIN 标志。 目前仅定义了一个标志： PIN \_ 信息 \_ 需要 \_ 安全 \_ 输入。 此标志指示基本 CSP/KSP 是否需要安全桌面来输入 PIN 码。
 
-**注意** 使用此结构可以为 \_ 每个人授予更改或取消阻止 PIN 的权限。 我们不建议这样做，并且不会在微型驱动程序 API 中提供任何机制，以允许角色 \_ 更改或取消阻止 PIN。
-
-
-
-
-
-
-
-
-
-
-
+**注意**  使用此结构可以为 \_ 每个人授予更改或取消阻止 PIN 的权限。 我们不建议这样做，并且不会在微型驱动程序 API 中提供任何机制，以允许角色 \_ 更改或取消阻止 PIN。

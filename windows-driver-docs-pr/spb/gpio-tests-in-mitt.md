@@ -1,37 +1,37 @@
 ---
 title: MITT 中的 GPIO 测试
-description: MITT 软件程序包中包含的 GPIO 测试模块可用于测试以下按钮卷会关闭电源，以及旋转锁的卷。
+description: MITT 软件包中包含的 GPIO 测试模块可用于测试以下按钮的音量：向上、向下、向下和旋转锁定。
 ms.assetid: D50C371B-4A03-4BDD-8EC2-6E7A4A4DF3C5
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5b0bc3c5ac0c6a2687c096a9edf5f6423a69bfd9
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 38fda273039758bf38b259c1ddc79a6946683983
+ms.sourcegitcommit: c766ab74e32eb44795cbbd1a4f352d3a6a9adc14
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67373775"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89389597"
 ---
 # <a name="gpio-tests-in-mitt"></a>MITT 中的 GPIO 测试
 
 
 **上次更新时间**
 
--   2015 年 1 月
+-   2015年1月
 
 **适用于：**
 
--   Windows 8.1
+-   Windows 8.1
 
-MITT 软件程序包中包含的 GPIO 测试模块可用于测试以下按钮卷会关闭电源，以及旋转锁的卷。 可以使用这些测试要检测的 GPIO 驱动程序和微控制器的问题和确定对短期或长期推送的系统响应是否为所需的响应。 附加到按钮的行以物理方式由 MITT 委员会拉取低。
+MITT 软件包中包含的 GPIO 测试模块可用于测试以下按钮的音量：向上、向下、向下和旋转锁定。 你可以使用这些测试来检测 GPIO 驱动程序和微控制器的问题，并确定系统是响应短推送还是长推送。 MITT 板以物理方式将附加到按钮的行拉低。
 
-## <a name="before-you-begin"></a>开始之前...
+## <a name="before-you-begin"></a>开始之前 .。。
 
 
--   获取 MITT 板和 GPIO 适配器板。 请参阅[购买硬件使用 MITT](https://docs.microsoft.com/windows-hardware/drivers/spb/multi-interface-test-tool--mitt--)。
--   [下载 MITT 软件包](https://docs.microsoft.com/previous-versions/dn919810(v=vs.85))。 待测试系统上安装它。
--   安装 MITT 固件 MITT 板上。 请参阅[开始使用 MITT](https://docs.microsoft.com/windows-hardware/drivers/spb/get-started-with-mitt---)。
+-   获取 MITT 板和 GPIO 适配器板。 请参阅 [购买使用 MITT 的硬件](./multi-interface-test-tool--mitt--.md)。
+-   [下载 MITT](/previous-versions/dn919810(v=vs.85))软件包。 在受测系统上安装它。
+-   在 MITT 板上安装 MITT 固件。 请参阅 [MITT 入门](./get-started-with-mitt---.md)。
 
-## <a name="hardware-setup"></a>硬件安装
+## <a name="hardware-setup"></a>硬件设置
 
 
 ![mitt gpio 硬件安装](images/mitttogpio.jpg)
@@ -46,76 +46,76 @@ MITT 软件程序包中包含的 GPIO 测试模块可用于测试以下按钮卷
 <thead>
 <tr class="header">
 <th>总线接口</th>
-<th>引出线</th>
-<th>ACPI 和图表</th>
+<th>固定</th>
+<th>ACPI 和示意图</th>
 <th>连接解决方案</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td>GPIO 按钮</td>
-<td>按钮和指示符的代码行：卷向上/向下，电源、 旋转锁、 便携式计算机/盖板指示器、 停靠指示器</td>
-<td>图表</td>
-<td>（在调试开发板） 的简单男性块</td>
+<td>按钮和指示器行：音量增加/降低、电源、旋转锁定、笔记本电脑/石板指示器、坞指示器</td>
+<td>示意图</td>
+<td>调试板上 (简单的男块) </td>
 </tr>
 <tr class="even">
 <td>GPIO 控制器</td>
-<td>GPIO 控制器引出线和使用索引</td>
+<td>GPIO 控制器引出线和使用的索引</td>
 <td><ul>
-<li>ACPI 的用于引出线的 GPIO 控制器的名称。</li>
-<li>中断控制器 （级别或基于 edge） 中的触发类型</li>
-<li>使用 GPIO 固定到测试传递过程中禁用的设备 （如果有） 的说明 （包括其即插即用 ID）</li>
+<li>用于引线的 GPIO 控制器的 ACPI 名称。</li>
+<li>控制器 (级别或基于边缘的) 中的中断触发类型</li>
+<li>描述 (包括设备的 PNP ID) ) 如果在测试过程中使用 GPIO pin 来禁用该设备，则 (</li>
 </ul></td>
-<td>（在调试开发板） 的简单男性块</td>
+<td>调试板上 (简单的男块) </td>
 </tr>
 </tbody>
 </table>
 
  
 
-1.  MITT 板上标识 GPIO 连接器。 它使用 left 最 12 pin 标头，标有**JA1**，此图中所示。
+1.  在 MITT 板上，标识 GPIO 连接器。 它使用标签为 " **JA1**" 的最左侧12针标头，如图所示。
 
-    ![gpio mitt 板上的标头](images/gpioheader.jpg)
+    ![mitt 板上的 gpio 标头](images/gpioheader.jpg)
 
-2.  连接到的 GPIO 适配器看板**JA1**标头。
-3.  连接到 3V3 MITT 板上的电源跳线。
-4.  将滑块推送上要为开发板供电的 GPIO 标头旁边的开关。
+2.  将 GPIO 适配器板连接到 **JA1** 标头。
+3.  将 MITT 上的电源跳线连接到3V3。
+4.  在 GPIO 标头旁边的开关上向上推送滑块，以打开板的电源。
 
-    ![gpio power 连接](images/gpiopower.png)
+    ![gpio 电源连接](images/gpiopower.png)
 
-5.  音量增大 (volu)、 (vold) 减小音量、 停靠/取消停靠 （停靠） 和盖板/便携式计算机 （模式） 行从 GPIO 适配器看板 （连接到 MITT） 连接到待测试系统上的相应针。
+5.   (volu) ，将音量向上，按下音量 (vold) ，将的停放/脱开 (dock) ，并将计算机上的计算机 (模式，) 从安装的操作系统适配器板 (连接到 MITT) 到所测试系统上的相应针脚。
 
-    此图中所示，12 pin 标头被绑定到 GPIO 的各个行。
+    12针标头连接到各个 GPIO 线路，如图所示。
 
-    ![gpio 接线上 ja1 标头](images/gpiowiring.png)
+    ![ja1 标头上的 gpio 布线](images/gpiowiring.png)
 
-    输出插针 GPIO 板上的示意图。 Pin 必须位于与交换机并行以便 FET 可以提取行低，像按开关。
+    GPIO 板上的输出插针示意图。 Pin 必须与开关并行放置，以便 FET 可以将行的电量降低，就像开关被推送一样。
 
-    ![gpio 输出插针上 mitt](images/gpiooutputpin.png)
+    ![mitt 上的 gpio 输出插针](images/gpiooutputpin.png)
 
-6.  可选。 如果你想要在卷或指示器，但不是能同时运行 MITT GPIO 测试，您可以通过设置这些注册表项中跳过 GPIO 自动化中的相关的测试。 每个条目是一个 dword 值，它的值为 1 使测试;0 禁用它。
+6.  可选。 如果要对卷或指示器运行 MITT GPIO 测试，但不能同时运行这两个测试，则可以通过设置这些注册表项在 GPIO 自动化中跳过相关测试。 每个条目均为 DWORD，值为1时启用测试;0禁用该方法。
     -   Volume
 
-        **HKEY\_CURRENT\_USER\\Software\\Microsoft\\MITT\\GPIO\\RunVolumeTest**
+        **HKEY \_ CURRENT \_ USER \\ Software \\ Microsoft \\ MITT \\ GPIO \\ RunVolumeTest**
 
-    -   指示器
+    -   指示灯
 
-        **HKEY\_CURRENT\_USER\\Software\\Microsoft\\MITT\\GPIO\\RunIndicatorsTest**
+        **HKEY \_ CURRENT \_ USER \\ Software \\ Microsoft \\ MITT \\ GPIO \\ RunIndicatorsTest**
 
 ## <a name="run-gpio-automation-tests"></a>运行 GPIO 自动化测试
 
 
-若要使用 WDTF GPIO 测试运行手动，请执行以下任务：
+若要使用 WDTF 手动运行 GPIO 测试，请执行以下任务：
 
-1.  将 mittsimpleioaction.dll 从 MITT 软件程序包复制到 %programfiles （x86） %\\Windows 工具包\\8.1\\测试\\运行时\\WDTF\\运行时\\操作\\SimpleIO
-2.  运行 **%programfiles （x86） %\\Windows 工具包\\8.1\\测试\\运行时\\WDTF\\运行时\\UnRegisterWDTF.exe**。
-3.  Run **%ProgramFiles(x86)%\\Windows Kits\\8.1\\Testing\\Runtimes\\WDTF\\RunTime\\Actions ..\\RegisterWDTF.exe /nogacinstall**
-4.  首先 GPIO 自动化测试运行 SimpleIO\_MITT\_ GPIO \_Sample.vbs 纳入 MITT 软件程序包。
+1.  将 mittsimpleioaction.dll 从 MITT 软件包复制到% ProgramFiles (x86) % \\ Windows 工具包 \\ 8.1 \\ 测试 \\ 运行 \\ 时 WDTF \\ 运行时 \\ 操作 \\ SimpleIO
+2.  运行 **% ProgramFiles (x86) % \\ Windows 工具包 \\ 8.1 \\ 测试 \\ 运行 \\ \\ 时 WDTF 运行时 \\UnRegisterWDTF.exe**。
+3.  运行 **% ProgramFiles (x86) % \\ Windows 工具包 \\ 8.1 \\ 测试 \\ 运行 \\ \\ 时 WDTF 运行时 \\ 操作 ... \\RegisterWDTF.exe/nogacinstall**
+4.  通过运行 \_ \_ \_ MITT 软件包中包含的 SimpleIO MITT gpio SAMPLE 来启动 GPIO 自动化测试。
 
-## <a name="example-custom-gpio-input-injection"></a>例如：自定义 GPIO 输入注入
+## <a name="example-custom-gpio-input-injection"></a>示例：自定义 GPIO 输入注入
 
 
-此示例使用一个文件，Example.txt，包含两秒钟按电源按钮，然后释放按钮的序列。 下面是该文件的内容：
+此示例使用文件 Example.txt，其中包含两秒钟内按下电源按钮的顺序，然后松开按钮。 下面是该文件的内容：
 
 ``` syntax
 ‘h001E8480
@@ -126,64 +126,64 @@ MITT 软件程序包中包含的 GPIO 测试模块可用于测试以下按钮卷
 
 运行以下命令：
 
-**Muttutil.exe -SetChannel 00**
+**Muttutil.exe SetChannel 00**
 
-**Muttutil.exe -WriteData 0000**
+**Muttutil.exe WriteData 0000**
 
-**Muttutill.exe –SetChannel 01**
+**Muttutill.exe – SetChannel 01**
 
-**Muttutil.exe – WriteDataFromFile Example.txt**
+**Muttutil.exe-WriteDataFromFile Example.txt**
 
-**Muttutil.exe –SetChannel 00**
+**Muttutil.exe – SetChannel 00**
 
-**Muttutil.exe –Writedata 0001**
+**Muttutil.exe – Writedata 0001**
 
--   **SetChannel** 00 指示控制通道将接收数据。
--   **WriteData** 0000 暂停所有测试模块。
--   **SetChannel**通过指定 01 的选项以指示 GPIO 通道将接收数据。
--   **WriteDataFromFile**要发送到 GPIO 模块的示例输入文件的内容文件的名称。
--   **SetChannel**通道将与 00，切换回该控件接收数据。
--   **WriteData**与 0001 到要激活 GPIO sequencer 的控制通道。 GPIO 模块将进行序列化。
+-   **SetChannel** with 00 表示控制通道将接收数据。
+-   **WriteData** 和0000将暂停所有测试模块。
+-   **SetChannel** 选项，方法是指定01，指示 GPIO 通道将接收数据。
+-   **WriteDataFromFile** ，其中包含要将示例输入文件的内容发送到 GPIO 模块的文件的名称。
+-   **SetChannel** 与00一起切换回控制通道将接收数据。
+-   将**WriteData**与0001一起用于激活 GPIO sequencer 的控制通道。 GPIO 模块将开始序列化。
 
-## <a name="generate-input-sequences"></a>生成输入的序列
+## <a name="generate-input-sequences"></a>生成输入序列
 
 
-若要生成的序列，需要这些值：
+若要生成序列，需要以下值：
 
 -   间隔值
 
-    间隔值是一个位掩码，指示在间隔期间按下的按钮。 位掩码中的零值指示的时间间隔内未按下按钮。 以下是可能的值比索引值：
+    间隔值是一个位掩码，用于指示在间隔期间按下的按钮。 位掩码中的零值表示在时间间隔内未按下该按钮。 下面是可能的值位索引值：
 
-    | 16 位值中的位索引 | 待测试系统上的使用情况                      |
+    | 16位值中的位索引 | 正在测试的系统上的使用情况                      |
     |---------------------------|-----------------------------------------------------|
-    | 0                         | 电源按钮启用 （"1"启用输出）        |
-    | 1                         | 停靠指示器启用 （"1"启用输出）      |
-    | 2                         | 启用增大音量 （"1"启用输出）           |
-    | 3                         | 旋转锁启用 （"1"启用输出）       |
-    | 4                         | 启用减小音量 （"1"启用输出）         |
-    | 5                         | 静态图像/便携式计算机上切换启用 （"1"启用输出） |
-    | 6-7                       | 不使用                                            |
-    | 8                         | 电源按钮的值 （"1"按交换机）         |
-    | 9                         | 停靠指示器值 （"1"按交换机）       |
-    | 10                        | 音量增大值 （"1"按交换机）            |
-    | 11                        | 旋转锁值 （"1"按交换机）        |
-    | 12                        | 增大音量值 （"1"按交换机）          |
-    | 13                        | 静态图像/便携式计算机上切换值 （"1"按交换机）  |
-    | 14-15                     | 不使用                                            |
+    | 0                         | 启用电源按钮 ( "1" 启用输出)         |
+    | 1                         | 定位指示器启用 ( "1" 启用输出)       |
+    | 2                         | 启用启用容量 ( "1" 可启用输出)            |
+    | 3                         | 旋转锁定启用 ( "1" 启用输出)        |
+    | 4                         | 关闭卷启用 ( "1" 启用输出)          |
+    | 5                         | 使用平板电脑切换开关 ( "1" 可启用输出)  |
+    | 6-7                       | 未使用                                            |
+    | 8                         | 电源按钮值 ( "1" 按开关)          |
+    | 9                         | 停靠指示器值 ( "1" 按开关)        |
+    | 10                        | 向上 ( "1" 的卷值按开关)             |
+    | 11                        | 旋转锁值 ( "1" 按开关)         |
+    | 12                        | 按下音量 ( "1" 按开关)           |
+    | 13                        | 石板/便携式计算机切换值 ( "1" 按开关)   |
+    | 14-15                     | 未使用                                            |
 
      
 
 -   时钟乘数
 
-    时钟乘数移到下一步的数据模式之前是为每个数据模式的持续时间 （以一个低至微秒为增量） 的按钮。 GPIO 测试模块保存数据的最后一个模式，直到重置该线路。
+    在移动到下一个数据模式之前，时钟乘数是每个数据模式) 为每个数据模式 (的按钮的保持时间。 如果重置线路，GPIO 测试模块将保留最后的数据模式。
 
-    没有使用与大型时钟乘数的较小的权衡。 较小值为乘数允许更高的精度，这要求在数据模式覆盖一个 timespan，用于创建更多的行。 您需要决定所需的数据包和时钟乘数值之间的适当平衡时创建的数据模式文件。
+    使用较小的和较大的时钟乘数会产生折衷。 乘数的较小值允许更高的精度，这要求您在数据模式中创建更多的行以涵盖 timespan。 你将需要在创建数据模式文件时，确定所需的数据数据包和时钟乘数值之间的适当平衡。
 
-    通过使用前面的示例中可以创建输入的注入文件。 若要生成的输入的序列，您需要的通信协议。 从 MITT 板发送到待测试系统的数据被排列在此模式：
+    通过使用前面的示例，您可以创建输入注入文件。 若要生成输入序列，需要通信协议。 从 MITT 板发送到受测系统的数据按以下模式排列：
 
     ![gpio 模块的通信协议](images/gpioprotocol.png)
 
-    没有签入 GPIO 测试线路协议级别错误。 如果协议错误，MITT 显示出现未知的错误。
+    GPIO 测试线路中没有协议级别的错误检查。 如果出现协议错误，MITT 将显示未知错误。
 
 ## <a name="gpio-adapter-schematic"></a>GPIO 适配器示意图
 
@@ -191,7 +191,4 @@ MITT 软件程序包中包含的 GPIO 测试模块可用于测试以下按钮卷
 ![gpio 示意图](images/gpioschematic.png)
 
 ## <a name="related-topics"></a>相关主题
-[使用多接口测试工具 (MITT) 进行测试](https://docs.microsoft.com/windows-hardware/drivers/spb/testing-with-multi-interface-test-tool--mitt-)  
-
-
-
+[通过多接口测试工具进行测试 (MITT) ](./testing-with-multi-interface-test-tool--mitt-.md)

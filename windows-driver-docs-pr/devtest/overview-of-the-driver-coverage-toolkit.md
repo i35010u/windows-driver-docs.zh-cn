@@ -3,65 +3,65 @@ title: 驱动程序覆盖范围工具包概述
 description: 驱动程序覆盖范围工具包概述
 ms.assetid: eead0c9a-fc26-4777-b19a-e97b898e28a2
 keywords:
-- 驱动程序覆盖范围工具包 WDK，有关驱动程序覆盖范围工具包
+- 驱动程序覆盖套件 WDK，关于驱动程序覆盖套件
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2d3f662c400ef8bc44f040c6d562902b7ec51b4b
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 8e46e9498e5edb393c66e236a603d7dd065a7e7c
+ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67361273"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89385083"
 ---
 # <a name="overview-of-the-driver-coverage-toolkit"></a>驱动程序覆盖范围工具包概述
 
 
-**请注意**  的驱动程序覆盖范围工具包不再需要在 Windows 10 中，安装程序不再包含在 WDK 中。 若要执行此处所述在 Windows 10 中的任务，请改用[Driver Verifier](driver-verifier.md)并[IRP 日志记录](irp-logging.md)。
+**注意**   Windows 10 不再需要驱动程序覆盖率工具包，并且 WDK 中不再包括该安装程序。 若要在 Windows 10 中执行此处所述的任务，请改用 [驱动程序验证程序](driver-verifier.md) 和 [IRP 日志记录](irp-logging.md)。
 
  
 
-驱动程序覆盖范围工具包监视和报告的 I/O 请求数据包 (Irp)，进入或离开驱动程序堆栈的一个或多个指定的设备。 覆盖率数据收集[驱动程序覆盖范围筛选器驱动程序](driver-coverage-filter-driver.md)为这些设备。 驱动程序覆盖范围工具用于启用或禁用指定设备上的 IRP 覆盖，以及生成报表从覆盖率数据。
+驱动程序范围工具包监视和报告 i/o 请求数据包 (Irp) 为一个或多个指定设备进入或离开驱动程序堆栈。 这些设备的 [驱动程序覆盖率筛选器驱动程序](driver-coverage-filter-driver.md) 收集覆盖率数据。 驱动程序覆盖工具用于在指定的设备上启用或禁用 IRP 覆盖区，并从覆盖面数据生成报表。
 
-驱动程序覆盖范围工具包收集并报告 IRP 覆盖率数据基于三个度量值：
+驱动程序覆盖套件根据以下三个指标收集和报告 IRP 覆盖率数据：
 
-<span id="Major__MJ__IRP_Function_Codes"></span><span id="major__mj__irp_function_codes"></span><span id="MAJOR__MJ__IRP_FUNCTION_CODES"></span>主要 (MJ) IRP 函数代码  
-处于活动状态的设备驱动程序堆栈内的 Irp 的 MJ 函数代码的计数。 驱动程序覆盖范围工具包收集 12 MJ 函数代码的数据。 有关这些函数代码的详细信息，请参阅[IRP 主要函数代码](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-major-function-codes)。
+<span id="Major__MJ__IRP_Function_Codes"></span><span id="major__mj__irp_function_codes"></span><span id="MAJOR__MJ__IRP_FUNCTION_CODES"></span>主 (MJ) IRP 函数代码  
+设备的驱动程序堆栈内处于活动状态的 Irp 的 MJ 函数代码计数。 驱动程序覆盖率工具包收集12个 MJ 函数代码的数据。 有关这些函数代码的详细信息，请参阅 [IRP 主要功能代码](../kernel/irp-major-function-codes.md)。
 
-<span id="Major__MJ__and_Minor__MN__IRP_Function_Codes"></span><span id="major__mj__and_minor__mn__irp_function_codes"></span><span id="MAJOR__MJ__AND_MINOR__MN__IRP_FUNCTION_CODES"></span>(MJ) 主要和次要的 (MN) IRP 函数代码  
-MJ IRP 函数代码，连同的 Irp 处于活动状态的设备驱动程序堆栈内的其从属 MN 函数代码的计数。 驱动程序覆盖范围工具包收集 52 MJ 和 MN 函数代码的数据。
+<span id="Major__MJ__and_Minor__MN__IRP_Function_Codes"></span><span id="major__mj__and_minor__mn__irp_function_codes"></span><span id="MAJOR__MJ__AND_MINOR__MN__IRP_FUNCTION_CODES"></span>主 (MJ) 和次要 (MN) IRP 函数代码  
+在设备的驱动程序堆栈内处于活动状态的 Irp 的 MJ IRP 函数代码及其从属 MN 函数代码的计数。 驱动程序覆盖率工具包收集 52 MJ 和 MN 函数代码的数据。
 
 <span id="IRP_Pairs"></span><span id="irp_pairs"></span><span id="IRP_PAIRS"></span>IRP 对  
-已在设备驱动程序堆栈中并发活动 MJ 和 MJ/MN IRP 函数代码的计数。 此计数反映的次数单独 Irp 进入或离开在同一时间的驱动程序堆栈。 驱动程序覆盖范围工具包收集 1099 MJ 和 MN 函数代码对数据。
+在设备的驱动程序堆栈内并发活动的 MJ 和 MJ/MN IRP 函数代码的计数。 此计数反映了在同一时间进入或离开驱动程序堆栈的单独 Irp 的次数。 驱动程序覆盖率工具包收集 1099 MJ 和 MN 函数代码对的数据。
 
-有关 IRP 函数代码的详细信息，请参阅[IRP 函数代码](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff550706(v=vs.85))。
+有关 IRP 函数代码的详细信息，请参阅 [Irp 函数代码](/previous-versions/windows/hardware/drivers/ff550706(v=vs.85))。
 
-### <a name="span-idirpcoveragedataspanspan-idirpcoveragedataspanirp-coverage-data"></a><span id="irp_coverage_data"></span><span id="IRP_COVERAGE_DATA"></span>IRP 覆盖率数据
+### <a name="span-idirp_coverage_dataspanspan-idirp_coverage_dataspanirp-coverage-data"></a><span id="irp_coverage_data"></span><span id="IRP_COVERAGE_DATA"></span>IRP 覆盖率数据
 
-每当 IRP 进入或离开由监视的设备驱动程序堆栈[驱动程序覆盖范围筛选器驱动程序](driver-coverage-filter-driver.md)，筛选器驱动程序递增及其与 IRP 相关的计数器。 驱动程序覆盖范围筛选器驱动程序监视 active Irp 驱动程序堆栈，而不考虑如何 Irp 发起内。 因此，监视窗口的筛选器驱动程序的 IRP 介绍的所有驱动程序堆栈中的下列筛选器驱动程序立即分层。
+无论何时为 [驱动程序覆盖面筛选器驱动程序](driver-coverage-filter-driver.md)监视的设备进入或离开驱动程序堆栈，筛选器驱动程序都将增加与 IRP 相关的计数器。 驱动程序覆盖率筛选器驱动程序监视驱动程序堆栈中的活动 Irp，而不管 Irp 是如何产生的。 因此，筛选器驱动程序的 IRP 的 "监视" 窗口会涵盖堆栈中紧靠筛选器驱动程序下的所有驱动程序。
 
-[驱动程序覆盖范围筛选器驱动程序](driver-coverage-filter-driver.md)时它首先监视驱动程序堆栈内的 IRP 递增及其 IRP 的计数器。 如果 IRP 源于驱动程序堆栈之外，驱动程序覆盖范围筛选器驱动程序会增加其计数器的 IRP 在 IRP 进入堆栈的时间。 如果 IRP 源自驱动程序堆栈中的驱动程序，筛选器驱动程序将 IRP 离开驱动程序堆栈时递增其计数器。
+[驱动程序覆盖率筛选器驱动](driver-coverage-filter-driver.md)程序在首次监视驱动程序堆栈中的 irp 时，会递增其 irp 计数器。 如果 IRP 源自驱动程序堆栈，则驱动程序覆盖率筛选器驱动程序会在 IRP 输入堆栈时为 IRP 增加其计数器。 如果 IRP 源自驱动程序堆栈中的驱动程序，则当 IRP 离开驱动程序堆栈时，筛选器驱动程序会递增其计数器。
 
-下图显示了设备驱动程序堆栈中的 IRP 流量的示例。
+下图显示了设备的驱动程序堆栈内的 IRP 流量的示例。
 
-![说明中的设备驱动程序堆栈的 i/o 请求数据包 (irp) 流量的关系图](images/coverage-3.png)
+![说明设备的驱动程序堆栈中的 i/o 请求数据包 (irp) 流量的关系图](images/coverage-3.png)
 
-在此示例中，[驱动程序覆盖范围筛选器驱动程序](driver-coverage-filter-driver.md)监视以下 Irp:
+在此示例中， [驱动程序覆盖率筛选器驱动程序](driver-coverage-filter-driver.md) 监视以下 irp：
 
--   IRP A，只需进入驱动程序堆栈。
+-   IRP A，它刚刚进入了驱动程序堆栈。
 
--   IRP B，即将退出驱动程序堆栈。
+-   IRP B，它即将离开驱动程序堆栈。
 
-驱动程序覆盖范围筛选器驱动程序对于这两个 Irp 的递增其 MN 和 MN/MJ 函数代码计数器。 此外，因为这两个 Irp A 和 B 中保持活动状态的驱动程序堆栈，驱动程序覆盖范围筛选器驱动程序将递增 {IRP A、 B IRP} 的元组的 IRP 对计数器。
+驱动程序覆盖率筛选器驱动程序为两个 Irp 递增其 MN 和 MN/MJ 函数代码计数器。 此外，由于在驱动程序堆栈内两个 Irp A 和 B 都处于活动状态，因此驱动程序覆盖率筛选器驱动程序会递增该元组 {IRP A，IRP B} 的 IRP 对计数器的值。
 
-### <a name="span-idirppaircoveragedataspanspan-idirppaircoveragedataspanirp-pair-coverage-data"></a><span id="irp_pair_coverage_data"></span><span id="IRP_PAIR_COVERAGE_DATA"></span>IRP 对覆盖率数据
+### <a name="span-idirp_pair_coverage_dataspanspan-idirp_pair_coverage_dataspanirp-pair-coverage-data"></a><span id="irp_pair_coverage_data"></span><span id="IRP_PAIR_COVERAGE_DATA"></span>IRP 对覆盖率数据
 
-IRP 对覆盖率数据基于 IRP 的并发程度，在其中多个 Irp 中保持活动状态的驱动程序堆栈在同一时间。 此数据可以帮助确定测试覆盖率漏洞在驱动程序验证期间，可帮助提高你的测试解决驱动程序并发问题。
+IRP 对覆盖率数据基于 IRP 并发，其中多个 Irp 同时在驱动程序堆栈内处于活动状态。 此数据可帮助确定驱动程序验证过程中的测试覆盖率孔，并可帮助你改进测试以解决驱动程序并发问题。
 
-驱动程序覆盖范围工具包监视器和 1099 MJ 和 MN 函数代码对上的报表。
+驱动程序覆盖率工具包监视和报告 1099 MJ 和 MN 函数代码对。
 
-### <a name="span-idsampleirpcoveragereportspanspan-idsampleirpcoveragereportspansample-irp-coverage-report"></a><span id="sample_irp_coverage_report"></span><span id="SAMPLE_IRP_COVERAGE_REPORT"></span>示例 IRP 覆盖范围报表
+### <a name="span-idsample_irp_coverage_reportspanspan-idsample_irp_coverage_reportspansample-irp-coverage-report"></a><span id="sample_irp_coverage_report"></span><span id="SAMPLE_IRP_COVERAGE_REPORT"></span>示例 IRP 覆盖率报告
 
-以下命令生成类似于下一个示例 IRP 覆盖率报告：
+以下命令可以生成与下一示例类似的 IRP 覆盖率报告：
 
 ```
 Getting coverage data
@@ -269,10 +269,4 @@ Getting coverage data
 ```
 
  
-
- 
-
-
-
-
 

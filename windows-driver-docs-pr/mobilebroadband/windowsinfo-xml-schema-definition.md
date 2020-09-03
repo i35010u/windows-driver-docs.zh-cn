@@ -4,16 +4,16 @@ description: WindowsInfo XML 架构定义
 ms.assetid: d14e0537-0b95-4986-a11c-67645bd88b26
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a14a4df01c2bbc277ca68939d88ce94ff1d498c9
-ms.sourcegitcommit: 67efcd26f7be8f50c92b141ccd14c9c68f4412d8
+ms.openlocfilehash: e77c0d8dc59f154cc44b9119b3a0923082bdca79
+ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88902640"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89402737"
 ---
 # <a name="windowsinfo-xml-schema-definition"></a>WindowsInfo XML 架构定义
 
-[!include[MBAE deprecation warning](mbae-deprecation-warning.md)]
+[!include[MBAE deprecation warning](../includes/mbae-deprecation-warning.md)]
 
 下面是 WindowsInfo XML 架构的命名空间：
 

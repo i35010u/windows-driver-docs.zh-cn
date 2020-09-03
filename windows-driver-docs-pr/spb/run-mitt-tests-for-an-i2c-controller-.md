@@ -1,81 +1,81 @@
 ---
 title: MITT 中的 I2C 控制器测试
-description: MITT 软件程序包中包含的 I²C 测试模块可用于测试 I²C 控制器和其驱动程序的数据传输。 MITT 板充当客户端设备连接到 I²C 总线。
+description: MITT 软件包中包含的 i2c 测试模块可用于测试 i2c 控制器及其驱动程序的数据传输。 MITT 板充当连接到 I i2c 总线的客户端设备。
 ms.assetid: E40B9ABB-B119-4EC1-A383-EB96CC350A25
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8d3df2e310649d5e488e738d860799368c9be4b2
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 8f5217b56c2eb7fc40be06922a219fe10f3a317e
+ms.sourcegitcommit: c766ab74e32eb44795cbbd1a4f352d3a6a9adc14
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67376944"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89389599"
 ---
 # <a name="i2c-controller-tests-in-mitt"></a>MITT 中的 I2C 控制器测试
 
 
 **上次更新时间**
 
--   2015 年 1 月
+-   2015年1月
 
 **适用于：**
 
 -   Windows 8.1
 
-MITT 软件程序包中包含的 I²C 测试模块可用于测试 I²C 控制器和其驱动程序的数据传输。 MITT 板充当客户端设备连接到 I²C 总线。
+MITT 软件包中包含的 i2c 测试模块可用于测试 i2c 控制器及其驱动程序的数据传输。 MITT 板充当连接到 I i2c 总线的客户端设备。
 
-## <a name="before-you-begin"></a>开始之前...
-
-
--   获取 MITT 板和 I²C 适配器板。 请参阅[购买硬件使用 MITT](https://docs.microsoft.com/windows-hardware/drivers/spb/multi-interface-test-tool--mitt--)。
--   [下载 MITT 软件包](https://docs.microsoft.com/previous-versions/dn919810(v=vs.85))。 待测试系统上安装它。
--   安装 MITT 固件 MITT 板上。 请参阅[开始使用 MITT](https://docs.microsoft.com/windows-hardware/drivers/spb/get-started-with-mitt---)。
-
-## <a name="hardware-setup"></a>硬件安装
+## <a name="before-you-begin"></a>开始之前 .。。
 
 
-![mitt i2c 硬件安装](images/i2csetup.png)
+-   获取 MITT 板和 i2c 适配器板。 请参阅 [购买使用 MITT 的硬件](./multi-interface-test-tool--mitt--.md)。
+-   [下载 MITT](/previous-versions/dn919810(v=vs.85))软件包。 在受测系统上安装它。
+-   在 MITT 板上安装 MITT 固件。 请参阅 [MITT 入门](./get-started-with-mitt---.md)。
 
-| 总线接口 | 引出线                             | ACPI 和图表 | 连接解决方案                |
+## <a name="hardware-setup"></a>硬件设置
+
+
+![mitt i2c 硬件设置](images/i2csetup.png)
+
+| 总线接口 | 固定                             | ACPI 和示意图 | 连接解决方案                |
 |---------------|-------------------------------------|---------------------|------------------------------------|
-| I²C           | （SCL、 SDA 和 GND） 需要的所有行 | ACPI 表          | （在调试开发板） 的简单男性块 |
+| I i2c           |  (SCL、SDA 和 GND 所需的所有行)  | ACPI 表          | 调试板上 (简单的男块)  |
 
 
 
-1.  连接到 I²C 适配器**JB1** MITT 板上。
+1.  将 i2c 适配器连接到 MITT 板上的 **JB1** 。
 
     ![mitt i2c 标头](images/i2cheader.png)
 
-2.  使用跳到 I²C 标头 (上面**JB1**) 来选择正确的 I²C 电压 3.3V 和 1.8 v 之间。 在此图中选定 1.8 v。
-3.  适配器板上的 SCL、 SDA 和 GND 插针连接到待测试系统上公开的 SCL、 SDA 和 GND 行。
+2.  使用 **JB1** 上的 i v C 标头 () ，在 3.3 v 与 1.8 v 之间选择正确的 i v c。 在此图中选择了 1.8 V。
+3.  将适配器板上的 "SCL"、"SDA" 和 "GND" pin 连接到所测试系统上的已公开 SCL、SDA 和 GND 行。
 
     ![i2c 适配器](images/i2c-power.png)
 
-4.  用于跳线 I2C 适配器板上选择正确的 I2C 电压 3.3V 和 1.8 v 之间。 在此图中选定 1.8 v。
-5.  MITT 板上将开关设置**SW0**到高的位置。 打开 MITT 时，此位置为 I²C 启用默认模式。
+4.  使用 I2C 适配器板上的跳线选择 3.3 V 与 1.8 V 之间的正确 I2C 电压。 在此图中，选择了 1.8 V。
+5.  在 MITT 板上，将开关 **SW0** 设置为高位置。 当 MITT 处于开启状态时，此位置启用 I i2c 的默认模式。
 
-    ![sw0 mitt 板上](images/sw0.png)
+    ![mitt 板上的 sw0](images/sw0.png)
 
-6.  使用**重置**按钮到电源周期 MITT 板。 I²C 控制器的网络连接是正确的如果**LD7** （SDA 指标） 和**LD6** （SCL 指示器） 开启。 如果任一 led 指示灯没有亮起，因为 SDA 和 / 或，SCL，拉取低则接线问题。
+6.  使用 " **重置** " 按钮重启 MITT 板。 如果到 I e 控制器的线路连接正确，请**LD7** (SDA 指示器) 并 LD6 打开**LD6** (SCL) 指示器。 如果任一 LED 未打开，则会出现线路问题，因为 SDA 或 SCL，或者两者都未被拉取。
 
 ## <a name="test-driver-and-acpi-configuration"></a>测试驱动程序和 ACPI 配置
 
 
-具有 I²C 控制器的测试的系统上执行以下步骤：
+在具有 I # C 控制器的受测系统上执行以下步骤：
 
-1.  安装 WITTTest 驱动程序 MITT 软件程序包中包含通过运行以下命令：
+1.  通过运行以下命令安装 MITT 软件包中包含的 WITTTest 驱动程序：
 
-    **pnputil –a witttest.inf**
+    **pnputil – witttest**
 
-    ![安装 witt mitt 板的驱动程序](images/mitt-install-witt.png)
+    ![mitt 板的安装 witt 驱动程序](images/mitt-install-witt.png)
 
-    **请注意**PnpUtil.exe 包含在 %systemroot%\\System32。
+    **注意**  PnpUtil.exe 包含在% SystemRoot% \\ System32 中。
 
 
 
-2.  修改系统 ACPI，包括此 ASL 表。 可以使用[Microsoft ASL compiler](https://docs.microsoft.com/windows-hardware/drivers/bringup/microsoft-asl-compiler)。
+2.  修改系统 ACPI，并包含此 ASL 表。 你可以使用 [MICROSOFT ASL 编译器](../bringup/microsoft-asl-compiler.md)。
 
-    **请注意**更改"\\\\\_SB\_。I2C2"为 ACPI I²C 控制器，若要测试项名称。
+    **注意** 更改 " \\ \\ \_ SB \_ 。I2C2 "到要测试的 i2c 控制器的 ACPI 条目名称。
 
 
 
@@ -153,24 +153,24 @@ Device(TP5) {
 }
 ```
 
-**请注意**需要运行 MITT I²C 测试仅 TP1 3 个。 使用 TP4 和 TP5 是可选的目标。
+**注意**  只需 TP1-3 即可运行 MITT I i2c 测试。 TP4 和 TP5 是可选目标。
 
 
 
 
-## <a name="ic-automation-tests"></a>I²C 自动化测试
+## <a name="ic-automation-tests"></a>I i2c 自动测试
 
 
-1.  待测试系统上创建一个文件夹。
-2.  TAEF 二进制文件复制到的文件夹，然后将其添加到 PATH 环境变量。 必需的 TAEF 二进制文件位于 %programfiles （x86） %\\Windows 工具包\\8.1\\测试\\运行时\\TAEF。
-3.  将 Muttutil.dll 和 Mitti2ctest.dll 从 MITT 软件程序包复制到的文件夹。
-4.  通过查看所有 MITT I²C 测试 **/list**选项：
+1.  在要测试的系统上创建一个文件夹。
+2.  将 TAEF 二进制文件复制到该文件夹，然后将其添加到 PATH 环境变量中。 所需的 TAEF 二进制文件位于% ProgramFiles (x86) % \\ Windows 工具包 \\ 8.1 \\ 测试 \\ 运行时 \\ TAEF。
+3.  将 Muttutil.dll 和 Mitti2ctest.dll 从 MITT 软件包复制到文件夹。
+4.  使用 **/list** 选项查看所有 MITT I I C 测试：
 
     ![mitt i2c 命令](images/mitt-i2c-cmds.png)
 
-现在您就可以运行 I²C 测试。 可以运行单个测试，所有测试，或手动运行测试。
+你现在已准备好运行 i2c 测试。 可以一次运行一个测试，也可以一次性运行测试，也可以手动运行测试。
 
-- 使用运行单个测试 **/name: *&lt;测试名称&gt;** * 选项。 此命令将运行 BasicIORead 测试：
+- 使用 **/name： * &lt; test name &gt; *** 选项运行单个测试。 此命令运行 BasicIORead 测试：
 
   ![mitt i2c 命令](images/mitt-i2c-cmds1.png)
 
@@ -178,15 +178,12 @@ Device(TP5) {
 
   ![mitt i2c 命令](images/mitt-i2c-cmds2.png)
 
-- 通过使用 MITT 软件程序包中包含的 SPBCmd.exe 工具手动运行测试。
+- 使用 MITT 软件包中包含 SPBCmd.exe 工具手动运行测试。
 
-## <a name="ic-adapter-schematic"></a>I²C 适配器示意图
+## <a name="ic-adapter-schematic"></a>I i2c 适配器示意图
 
 
 ![i2c 示意图](images/i2c-schematic.png)
 
 ## <a name="related-topics"></a>相关主题
-[使用多接口测试工具 (MITT) 进行测试](https://docs.microsoft.com/windows-hardware/drivers/spb/testing-with-multi-interface-test-tool--mitt-)  
-
-
-
+[通过多接口测试工具进行测试 (MITT) ](./testing-with-multi-interface-test-tool--mitt-.md)

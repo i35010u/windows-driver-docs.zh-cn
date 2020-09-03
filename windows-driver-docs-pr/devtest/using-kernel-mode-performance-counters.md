@@ -4,12 +4,12 @@ description: 使用内核模式性能计数器
 ms.assetid: b740dd92-ad75-4dea-98d4-dce04b273d2f
 ms.date: 08/05/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: aa710065fe8865bf3270da34a69e1c5363a97760
-ms.sourcegitcommit: 17c1bbc5ea0bef3bbc87794b030a073f905dc942
+ms.openlocfilehash: f23b3c3c8a187d9ac5fdf43d44aa6a736ee8554e
+ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88802567"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89384987"
 ---
 # <a name="using-kernel-mode-performance-counters"></a>使用内核模式性能计数器
 
@@ -17,16 +17,16 @@ ms.locfileid: "88802567"
 
 使用以下步骤来开发新的计数器数据提供程序：
 
-1. 编写描述提供程序及其 countersets 的[计数器清单](https://docs.microsoft.com/windows/win32/perfctrs/performance-counters-schema)。 计数器清单是一种 XML 格式的文件，用于定义性能计数器提供程序及其 countersets。
+1. 编写描述提供程序及其 countersets 的[计数器清单](/windows/win32/perfctrs/performance-counters-schema)。 计数器清单是一种 XML 格式的文件，用于定义性能计数器提供程序及其 countersets。
    - 将 `applicationIdentity` 属性设置为将作为内核模式组件安装的二进制文件的名称，并且将包含性能数据使用者所需的字符串资源。
    - 将 `providerType` 属性设置为 `kernelMode`。
    - `struct` `counterSet/structs` 使用 C/c + + 结构的名称（在将计数器值从组件传递到 PCW api 时将使用），在 ") " 中定义至少一个元素 (。
    - 在每个中 `counter` ， `struct` 定义 `field` PCW 应从中读取计数器值的和。
-2. 作为组件的生成过程的一部分，请使用 [CTRPP 工具](https://docs.microsoft.com/windows/win32/perfctrs/ctrpp) 编译计数器清单。  (计数器预处理器 (CTRPP) 工具包含在 WDK 中，并通过键入在 [开发人员命令提示](https://docs.microsoft.com/dotnet/framework/tools/developer-command-prompt-for-vs) 中提供 `ctrpp` 。 ) CTRPP 工具会生成 `.rc` 文件和 `.h` 文件。
+2. 作为组件的生成过程的一部分，请使用 [CTRPP 工具](/windows/win32/perfctrs/ctrpp) 编译计数器清单。  (计数器预处理器 (CTRPP) 工具包含在 WDK 中，并通过键入在 [开发人员命令提示](/dotnet/framework/tools/developer-command-prompt-for-vs) 中提供 `ctrpp` 。 ) CTRPP 工具会生成 `.rc` 文件和 `.h` 文件。
    - CTRPP 生成的 `.rc` 文件必须由资源编译器 ( # A0) 工具编译，并且生成的 `.res` 文件必须链接到属性中名为的二进制文件 `applicationIdentity` 。 可以直接编译 CTRPP 生成的 `.rc` 文件，也可以 `#include` 将 CTRPP 生成的 `.rc` 文件导入到 `.rc` 正在编译到二进制文件中的现有文件。
    - CTRPP 生成的 `.h` 文件包含用于包装基础 PCW api 的 helper 函数。 例如，CTRPP 生成的 `.h` 文件将包含代表您调用的 **Register * * Xxx* 函数 `PcwRegister` 。 在大多数情况下，你将调用 CTRPP 生成的帮助程序函数，而不是直接调用任何 PCW Api，但你可以参考 PCW Api 的文档来了解相应的 CTRPP 生成的函数执行的操作。 Helper 函数管理将组件的计数器数据布局转换为 `PCW_DATA` PCW api 所需的布局。
-3. 在组件初始化时，调用 CTRPP 生成的 **Register * * * Xxx* 函数，该函数将调用 [**PcwRegister**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-pcwregister)。 组件关闭时，调用 CTRPP 生成的 **注销 * ** 调用 [**PcwUnregister**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-pcwunregister)的函数。
-4. 添加代码以提供计数器数据。 这是通过实现 [*PCW_CALLBACK*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-pcw_callback) 回调函数或使用每个实例的计数器值维护数据结构，并在创建和销毁实例时调用 CTRPP 生成的 **CreateInstance ** * * xxx 和 **CloseInstance * * xxx* 函数来实现的。
+3. 在组件初始化时，调用 CTRPP 生成的 **Register * * * Xxx* 函数，该函数将调用 [**PcwRegister**](/windows-hardware/drivers/ddi/wdm/nf-wdm-pcwregister)。 组件关闭时，调用 CTRPP 生成的 **注销 * ** 调用 [**PcwUnregister**](/windows-hardware/drivers/ddi/wdm/nf-wdm-pcwunregister)的函数。
+4. 添加代码以提供计数器数据。 这是通过实现 [*PCW_CALLBACK*](/windows-hardware/drivers/ddi/wdm/nc-wdm-pcw_callback) 回调函数或使用每个实例的计数器值维护数据结构，并在创建和销毁实例时调用 CTRPP 生成的 **CreateInstance ** * * xxx 和 **CloseInstance * * xxx* 函数来实现的。
 5. 在组件安装中，请使用 `lodctr /m:<CounterManifest> <InstallPath>` 安装提供程序。 卸载组件时，将 `unlodctr` (与 `/m` 或 `/g` 参数) 以卸载提供程序。 安装提供程序会将提供程序的 countersets 添加到可用 countersets 系统范围的存储库中，以便性能数据使用者（例如 perfmon、typeperf 或 WMI）可以使用 countersets。 具体而言，安装提供程序将记录包含提供程序字符串表的二进制 (DLL、SYS 或 EXE 文件) 的完整路径。 二进制文件的完整路径是通过将清单的 `applicationIdentity` 属性与 `<CounterManifest>` `<InstallPath>` 命令行中使用的和值相结合来确定的，如下所示 `lodctr` ：
    - 如果该 `applicationIdentity` 属性是完整路径，则将使用该路径。
    - 否则，如果 `<InstallationPath>` 参数是完整路径，则将使用该路径。
@@ -39,10 +39,10 @@ ms.locfileid: "88802567"
 
 [关于内核模式性能计数器](about-kernel-mode-performance-counters.md)
 
-[性能计数器架构](https://docs.microsoft.com/windows/win32/perfctrs/performance-counters-schema)
+[性能计数器架构](/windows/win32/perfctrs/performance-counters-schema)
 
-[CTRPP 工具](https://docs.microsoft.com/windows/win32/perfctrs/ctrpp)
+[CTRPP 工具](/windows/win32/perfctrs/ctrpp)
 
-[**PcwRegister**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-pcwregister)
+[**PcwRegister**](/windows-hardware/drivers/ddi/wdm/nf-wdm-pcwregister)
 
-[*PCW_CALLBACK*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-pcw_callback)
+[*PCW_CALLBACK*](/windows-hardware/drivers/ddi/wdm/nc-wdm-pcw_callback)

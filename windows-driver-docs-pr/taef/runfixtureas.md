@@ -1,108 +1,108 @@
 ---
 title: RunFixtureAs
-description: TAEF 提供了一种机制来执行测试装置比其相应的测试在不同上下文中。
+description: TAEF 提供一种机制，用于在与相应测试不同的上下文中执行测试装置。
 ms.assetid: FAFF5265-5268-412E-86A5-149B187B1376
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f837dd849574228e38fe49798198510e0e408fc5
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 3bafef9d16ff2b190ae937cdd6a0197778439f50
+ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67373006"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89402766"
 ---
 # <a name="runfixtureas"></a>RunFixtureAs
 
 
-TAEF 使用 RunFixtureAs 之外所对应的测试的上下文中执行测试装置 （模块、 类和测试级别设置和清理功能）。
+TAEF 使用 RunFixtureAs 来执行测试装置 (模块、类和测试级安装程序和清理) 函数在上下文中，而不是相应测试 () 。
 
 ## <a name="span-idprerequisitesspanspan-idprerequisitesspanspan-idprerequisitesspanprerequisites"></a><span id="Prerequisites"></span><span id="prerequisites"></span><span id="PREREQUISITES"></span>先决条件
 
 
--   [Te.Service](te-service.md)必须安装并在计算机上运行，以便从非提升 Te.exe 过程中，运行提升的测试装置或作为本地系统运行测试装置。
+-   [Te](te-service.md) 必须在计算机上安装并运行服务，才能从非提升的 Te.exe 进程运行提升的测试装置，或将测试装置作为本地系统运行。
 
-## <a name="span-idoverviewspanspan-idoverviewspanspan-idoverviewspanoverview"></a><span id="Overview"></span><span id="overview"></span><span id="OVERVIEW"></span>概述
-
-
-RunFixtureAs 可以在模块、 类和或测试级别应用，并将测试树中自上而下继承。 若要支持的功能，可以选择不在树中，RunFixtureAs 给定级别的 RunFixtureAs 继承：\[作用域\]也支持元数据。
-
-例如，如果模块被标记为与 RunFixtureAs = 系统，可以将类 (ClassA) 标记为 RunFixtureAs:Test = 默认值。 在这种情况下，模块和类装置将运行为系统，但将在测试级别装置 ClassA 中的与 Te.exe 相同的上下文中运行 （尽管仍在不同于测试的进程）。
-
-RunFixtureAs:\[作用域\]元数据值不测试树中自上而下继承; 它仅适用于指定的作用域。
-
-## <a name="span-iddeterministicguaranteesspanspan-iddeterministicguaranteesspanspan-iddeterministicguaranteesspandeterministic-guarantees"></a><span id="Deterministic_Guarantees"></span><span id="deterministic_guarantees"></span><span id="DETERMINISTIC_GUARANTEES"></span>确定性保证
+## <a name="span-idoverviewspanspan-idoverviewspanspan-idoverviewspanoverview"></a><span id="Overview"></span><span id="overview"></span><span id="OVERVIEW"></span>叙述
 
 
--   默认值 （如果不指定了任何 RunFixtureAs 值）、 测试和装置，并保证能够在同一进程中运行。
--   如果装置标有 Test 以外的有效 RunFixtureAs 值，则将在不同于测试的进程中运行装置。 这意味着，即使使用运行方式标记测试 = 提升和 RunFixtureAs = 提升，测试将在已提升进程中运行和其装置将在单独的已提升进程中运行。
--   （例如，类的设置和清理装置将运行在同一进程中） 在同一进程中将始终运行匹配装置对的给定作用域。
+RunFixtureAs 可以应用于模块、类或测试级别，并将在测试树中被继承。 为了支持在树的给定级别上退出 RunFixtureAs 继承功能， \[ 还支持 RunFixtureAs：范围 \] 元数据。
 
-## <a name="span-idrunfixtureastypesspanspan-idrunfixtureastypesspanspan-idrunfixtureastypesspanrunfixtureas-types"></a><span id="RunFixtureAs_Types_"></span><span id="runfixtureas_types_"></span><span id="RUNFIXTUREAS_TYPES_"></span>RunFixtureAs 类型
+例如，如果模块标记有 RunFixtureAs = System，则可以将类 (ClassA) 标记为 RunFixtureAs： Test = Default。 在这种情况下，模块和类装置将作为系统运行，但 ClassA 中的测试级别装置将与 Te.exe (在同一上下文中运行，尽管仍在不同于测试) 的进程中运行。
+
+RunFixtureAs： \[ 作用域 \] 元数据值不会沿着测试树向下继承; 它仅适用于指定的作用域。
+
+## <a name="span-iddeterministic_guaranteesspanspan-iddeterministic_guaranteesspanspan-iddeterministic_guaranteesspandeterministic-guarantees"></a><span id="Deterministic_Guarantees"></span><span id="deterministic_guarantees"></span><span id="DETERMINISTIC_GUARANTEES"></span>确定性保证
 
 
-TAEF 支持以下 RunFixtureAs 类型，指定的测试元数据：
+-   默认情况下 (如果未指定任何 RunFixtureAs 值) ，则保证测试和装置在同一进程中运行。
+-   如果为装置标记的 RunFixtureAs 值不是 "Test"，则该装置将在与测试不同的进程中运行。 这意味着，即使测试标记为 RunAs = 升高且 RunFixtureAs = 提升，该测试也会在提升的进程中运行，并且其装置会在单独的提升进程中运行。
+-   给定作用域的匹配装置对将始终在同一进程中运行 (例如，类的设置和清理装置将在同一进程中运行) 。
 
-<span id="System"></span><span id="system"></span><span id="SYSTEM"></span>**系统**  
-TAEF 作为本地系统运行装置。
+## <a name="span-idrunfixtureas_types_spanspan-idrunfixtureas_types_spanspan-idrunfixtureas_types_spanrunfixtureas-types"></a><span id="RunFixtureAs_Types_"></span><span id="runfixtureas_types_"></span><span id="RUNFIXTUREAS_TYPES_"></span>RunFixtureAs 类型
 
-**请注意**  运行如本地系统不应创建任何 UI 测试装置。 如果您的装置需要创建或与 UI 交互，您需要与 UI 相关中的代码移动到单独的可执行文件启动台式机上使用 CreateProcessAsUser 测试。
 
- 
+TAEF 支持以下 RunFixtureAs 类型，这些类型由测试元数据指定：
 
-<span id="Elevated"></span><span id="elevated"></span><span id="ELEVATED"></span>**提升的权限**  
-TAEF 可确保装置提升的进程中运行生成要在其中运行装置，如有必要提升的进程。
+<span id="System"></span><span id="system"></span><span id="SYSTEM"></span>**主板**  
+TAEF 将装置作为本地系统运行。
 
-**请注意**  执行 TAEF 的用户必须是 administrators 组的成员才能执行装置标有 RunFixtureAs = 提升。 这是由于非管理员不具有提升的拆分令牌。
+**注意**   作为本地系统运行的测试装置不应创建任何 UI。 如果你的夹具需要创建 UI 或与 UI 交互，则需要将与 UI 相关的代码移到使用 CreateProcessAsUser 从测试中启动的独立可执行文件。
 
  
 
-<span id="Default"></span><span id="default"></span><span id="DEFAULT"></span>**默认值**  
-TAEF 作为 Te.exe （但仍在不同于测试的进程内） 在同一上下文中运行装置。
+<span id="Elevated"></span><span id="elevated"></span><span id="ELEVATED"></span>**较**  
+TAEF 可确保在提升的进程中运行装置，如有必要，请根据需要生成要运行的装置。
 
-<span id="Broker"></span><span id="broker"></span><span id="BROKER"></span>**Broker**  
-TAEF 沉浸式 Broker 进程中运行装置。
+**注意**   执行 TAEF 的用户必须是 administrators 组的成员，才能执行标有 RunFixtureAs = 升高的装置。 这是因为，非管理员没有要提升的拆分令牌。
+
+ 
+
+<span id="Default"></span><span id="default"></span><span id="DEFAULT"></span>**缺省值**  
+TAEF 在与 Te.exe (相同的上下文中运行装置，但仍在不同于测试) 的进程中运行。
+
+<span id="Broker"></span><span id="broker"></span><span id="BROKER"></span>**中间**  
+TAEF 运行 "沉浸式代理" 进程中的装置。
 
 **注意**  
--   在 Windows 8 和更高版本的操作系统上仅支持代理。
--   必须在系统上启用测试签名策略。 有关详细信息[TESTSIGNING 启动配置选项](https://docs.microsoft.com/windows-hardware/drivers/install/the-testsigning-boot-configuration-option)。
--   使用远程运行测试 RunFixtureAs = Broker 当前不支持。
--   当执行带有 RunFixtureAs = Broker TAEF 将使用"TE。对于固定例程执行，不是"TE ProcessHost.Broker.exe"过程。ProcessHost.exe"。
+-   只有 Windows 8 及更高版本的操作系统才支持 "Broker"。
+-   必须在系统上启用测试签名策略。 有关详细信息，请查看 [TESTSIGNING Boot 配置选项](../install/the-testsigning-boot-configuration-option.md)。
+-   当前不支持通过 "RunFixtureAs = Broker" 远程运行测试。
+-   使用 "RunFixtureAs = Broker" TAEF 执行时，将使用 "TE.ProcessHost.Broker.exe" 进程执行夹具，而不是 "TE.ProcessHost.exe"。
 
  
 
 <span id="UIAccess"></span><span id="uiaccess"></span><span id="UIACCESS"></span>**UIAccess**  
-TAEF 使用 UIAccess 执行级别标记-向上某个进程中运行装置。 有关 UI 自动化应用程序的 UIAccess 信息，请参阅[Windows 完整性机制设计](https://docs.microsoft.com/previous-versions/dotnet/articles/bb625963(v=msdn.10))。
+TAEF 在使用 UIAccess 执行级别标记的进程中运行装置。 有关适用于 UI 自动化应用程序的 UIAccess 的信息，请参阅 [Windows 完整性机制设计](/previous-versions/dotnet/articles/bb625963(v=msdn.10))。
 
 **注意**  
--   在 Vista 和更高版本的操作系统才支持 UIAccess。
--   在计算机上，必须从 Program Files 文件夹下的文件夹运行 TAEF 二进制文件。
--   使用远程运行测试 RunFixtureAs = UIAccess' 当前不支持。
--   当执行带有 RunFixtureAs = UIAccess' TAEF 将使用"TE。对于固定例程执行，不是"TE ProcessHost.UIAccess.exe"过程。ProcessHost.exe"。
+-   仅在 Vista 和更高版本的操作系统上支持 UIAccess。
+-   TAEF 二进制文件必须从计算机上 Program Files 文件夹下的文件夹运行。
+-   当前不支持通过 "RunFixtureAs = UIAccess" 远程运行测试。
+-   使用 "RunFixtureAs = UIAccess" TAEF 执行时，将使用 "TE.ProcessHost.UIAccess.exe" 进程执行夹具，而不是 "TE.ProcessHost.exe"。
 
  
 
-<span id="Test"></span><span id="test"></span><span id="TEST"></span>**测试**  
-TAEF 在装置中的相同进程或上下文运行作为测试。
+<span id="Test"></span><span id="test"></span><span id="TEST"></span>**考试**  
+TAEF 运行与测试相同的进程或上下文中的装置。
 
-**请注意**  未不指定任何 RunFixtureAs 设置时，这是默认 TAEF 行为。
+**注意**   如果未指定 RunFixtureAs 设置，这是默认的 TAEF 行为。
 
  
 
-## <a name="span-idrunfixtureasscopespanspan-idrunfixtureasscopespanspan-idrunfixtureasscopespanrunfixtureasscope"></a><span id="RunFixtureAs__scope_"></span><span id="runfixtureas__scope_"></span><span id="RUNFIXTUREAS__SCOPE_"></span>RunFixtureAs:\[作用域\]
+## <a name="span-idrunfixtureas__scope_spanspan-idrunfixtureas__scope_spanspan-idrunfixtureas__scope_spanrunfixtureasscope"></a><span id="RunFixtureAs__scope_"></span><span id="runfixtureas__scope_"></span><span id="RUNFIXTUREAS__SCOPE_"></span>RunFixtureAs： \[ 作用域\]
 
 
-TAEF 支持以下 RunFixtureAs:\[作用域\]测试元数据由指定的值。
+TAEF 支持以下 RunFixtureAs： \[ 范围 \] 值，这些值由测试元数据指定。
 
-<span id="RunFixtureAs_Module__RunFixtureAs_Assembly__or_RunFixtureAs_Dll"></span><span id="runfixtureas_module__runfixtureas_assembly__or_runfixtureas_dll"></span><span id="RUNFIXTUREAS_MODULE__RUNFIXTUREAS_ASSEMBLY__OR_RUNFIXTUREAS_DLL"></span>**RunFixtureAs:Module**， **RunFixtureAs:Assembly**，或**RunFixtureAs:Dll**  
-RunFixtureAs 值将仅适用于测试层次结构中在模块级别节点。
+<span id="RunFixtureAs_Module__RunFixtureAs_Assembly__or_RunFixtureAs_Dll"></span><span id="runfixtureas_module__runfixtureas_assembly__or_runfixtureas_dll"></span><span id="RUNFIXTUREAS_MODULE__RUNFIXTUREAS_ASSEMBLY__OR_RUNFIXTUREAS_DLL"></span>**RunFixtureAs： Module**、 **RunFixtureAs： Assembly**或 **RunFixtureAs： Dll**  
+RunFixtureAs 值将仅应用于测试层次结构中的模块级别节点。
 
-<span id="RunFixtureAs_Class"></span><span id="runfixtureas_class"></span><span id="RUNFIXTUREAS_CLASS"></span>**RunFixtureAs:Class**  
-RunFixtureAs 值将仅适用于测试层次结构中的类级节点。
+<span id="RunFixtureAs_Class"></span><span id="runfixtureas_class"></span><span id="RUNFIXTUREAS_CLASS"></span>**RunFixtureAs：类**  
+RunFixtureAs 值将仅应用于测试层次结构中的类级别节点。
 
-<span id="RunFixtureAs_Method_or_RunFixtureAs_Test"></span><span id="runfixtureas_method_or_runfixtureas_test"></span><span id="RUNFIXTUREAS_METHOD_OR_RUNFIXTUREAS_TEST"></span>**RunFixtureAs:Method**或**RunFixtureAs:Test**  
-RunFixtureAs 值将仅适用于测试层次结构中的测试级别节点。
+<span id="RunFixtureAs_Method_or_RunFixtureAs_Test"></span><span id="runfixtureas_method_or_runfixtureas_test"></span><span id="RUNFIXTUREAS_METHOD_OR_RUNFIXTUREAS_TEST"></span>**RunFixtureAs： Method** 或 **RunFixtureAs： Test**  
+RunFixtureAs 值将仅应用于测试层次结构中的测试级别节点。
 
-## <a name="span-idmarkingtestswithrunfixtureasspanspan-idmarkingtestswithrunfixtureasspanspan-idmarkingtestswithrunfixtureasspanmarking-tests-with-runfixtureas"></a><span id="Marking_Tests_with_RunFixtureAs"></span><span id="marking_tests_with_runfixtureas"></span><span id="MARKING_TESTS_WITH_RUNFIXTUREAS"></span>将标记与 RunFixtureAs 测试
+## <a name="span-idmarking_tests_with_runfixtureasspanspan-idmarking_tests_with_runfixtureasspanspan-idmarking_tests_with_runfixtureasspanmarking-tests-with-runfixtureas"></a><span id="Marking_Tests_with_RunFixtureAs"></span><span id="marking_tests_with_runfixtureas"></span><span id="MARKING_TESTS_WITH_RUNFIXTUREAS"></span>用 RunFixtureAs 标记测试
 
 
 ```ManagedCPlusPlus
@@ -126,12 +126,12 @@ class MyTests
 };
 ```
 
-前面的示例将运行测试和装置，如下所示：
+前面的示例将按如下所示运行测试和装置：
 
--   作为系统运行 MyTestMethod
--   运行方式提升 MyTestSetup 和 MyTestCleanup
--   MyClassSetup 和 MyClassCleanup 以 System 身份运行 （在同一进程中作为 MyTestMethod）
--   MyModuleSetup 和 MyModuleCleanup 以 System 身份运行 （在同一进程中作为 MyTestMethod）
+-   MyTestMethod 作为系统运行
+-   MyTestSetup 和 MyTestCleanup 以提升的权限运行
+-   MyClassSetup 和 MyClassCleanup 在与 MyTestMethod 相同的进程内作为系统 (运行) 
+-   MyModuleSetup 和 MyModuleCleanup 在与 MyTestMethod 相同的进程内作为系统 (运行) 
 
 ```ManagedCPlusPlus
 MODULE_SETUP(MyModuleSetup);
@@ -155,12 +155,12 @@ class MyTests
 };
 ```
 
-前面的示例将运行测试和装置，如下所示：
+前面的示例将按如下所示运行测试和装置：
 
--   作为系统运行 MyTestMethod
--   运行方式提升 MyTestSetup 和 MyTestCleanup
--   运行方式提升 MyClassSetup 和 MyClassCleanup
--   MyModuleSetup 和 MyModuleCleanup 以 System 身份运行 （在同一进程中作为 MyTestMethod）
+-   MyTestMethod 作为系统运行
+-   MyTestSetup 和 MyTestCleanup 以提升的权限运行
+-   MyClassSetup 和 MyClassCleanup 以提升的权限运行
+-   MyModuleSetup 和 MyModuleCleanup 在与 MyTestMethod 相同的进程内作为系统 (运行) 
 
 ```ManagedCPlusPlus
 MODULE_SETUP(MyModuleSetup);
@@ -185,12 +185,12 @@ class MyTests
 };
 ```
 
-前面的示例将运行测试和装置，如下所示：
+前面的示例将按如下所示运行测试和装置：
 
--   Restricted 作为运行 MyTestMethod
--   运行方式提升 MyTestSetup 和 MyTestCleanup
--   MyClassSetup 和 MyClassCleanup 以 System 身份运行
--   MyModuleSetup MyModuleCleanup 运行方式和受限制 （在同一进程中作为 MyTestMethod）
+-   MyTestMethod 以受限方式运行
+-   MyTestSetup 和 MyTestCleanup 以提升的权限运行
+-   MyClassSetup 和 MyClassCleanup 运行方式系统
+-   MyModuleSetup 和 MyModuleCleanup 在与 MyTestMethod 相同的进程内作为受限 (运行) 
 
 ```ManagedCPlusPlus
 MODULE_SETUP(MyModuleSetup);
@@ -219,13 +219,13 @@ class MyTests
 };
 ```
 
-前面的示例将运行测试和装置，如下所示：
+前面的示例将按如下所示运行测试和装置：
 
--   作为系统运行 MyTestMethod
--   作为 Restricted MyTestMethod2 运行
--   运行方式提升; MyTestSetup 和 MyTestCleanupRunFixtureAs:Test 作用域应用于 MyTests 类中的所有测试方法
--   MyClassSetup 和 MyClassCleanup 以 System 身份运行 （在不同于 MyTestMethod 进程）
--   MyModuleSetup 和 MyModuleCleanup 运行其各自的上下文中测试进程 （用于 MyTestMethod 系统） 和 MyTestMethod2 的受限制
+-   MyTestMethod 作为系统运行
+-   MyTestMethod2 以受限方式运行
+-   MyTestSetup 和 MyTestCleanup 以提升的权限运行;RunFixtureAs：测试范围应用于 Mytests.dll 类中的所有测试方法
+-   MyClassSetup 和 MyClassCleanup 在除) MyTestMethod 外的不同进程中运行 (
+-   MyModuleSetup 和 MyModuleCleanup 在其各自测试过程的上下文中运行， (System for MyTestMethod，并限制 MyTestMethod2) 
 
 ```ManagedCPlusPlus
 MODULE_SETUP(MyModuleSetup);
@@ -254,13 +254,13 @@ class MyTests
 };
 ```
 
-前面的示例将运行测试和装置，如下所示：
+前面的示例将按如下所示运行测试和装置：
 
--   作为系统运行 MyTestMethod
--   作为 Restricted MyTestMethod2 运行
--   作为系统 MyTestMethod 和 MyTestMethod2 的提升 MyTestSetup 和 MyTestCleanup 运行
--   MyClassSetup 和 MyClassCleanup 以 System 身份运行 （在不同于 MyTestMethod 进程）
--   MyModuleSetup 和 MyModuleCleanup 运行其各自的上下文中测试进程 （用于 MyTestMethod 系统） 和 MyTestMethod2 的受限制
+-   MyTestMethod 作为系统运行
+-   MyTestMethod2 以受限方式运行
+-   MyTestSetup 和 MyTestCleanup 以系统的形式运行 MyTestMethod 和 MyTestMethod2 的提升
+-   MyClassSetup 和 MyClassCleanup 在除) MyTestMethod 外的不同进程中运行 (
+-   MyModuleSetup 和 MyModuleCleanup 在其各自测试过程的上下文中运行， (System for MyTestMethod，并限制 MyTestMethod2) 
 
 ```ManagedCPlusPlus
 BEGIN_MODULE()
@@ -293,13 +293,13 @@ class MyTests
 };
 ```
 
-前面的示例将运行测试和装置，如下所示：
+前面的示例将按如下所示运行测试和装置：
 
--   作为系统运行 MyTestMethod
--   作为 Restricted MyTestMethod2 运行
--   MyTestSetup 和 MyTestCleanup MyTestMethod 和 MyTestMethod2 的运行方式提升
--   为默认值运行 MyClassSetup 和 MyClassCleanup （Te.exe 与相同的上下文中当前正在运行，尚未在不同于 MyTestMethod 和 MyTestMethod2 的进程内）
--   MyModuleSetup 和 MyModuleCleanup 以 System 身份运行 （在不同于 MyTestMethod 进程）
+-   MyTestMethod 作为系统运行
+-   MyTestMethod2 以受限方式运行
+-   MyTestSetup 和 MyTestCleanup 在 MyTestMethod 和 MyTestMethod2 上都以提升的权限运行
+-   MyClassSetup 和 MyClassCleanup 作为默认 (在当前运行 Te.exe 的上下文中运行，但在与 MyTestMethod 和 MyTestMethod2 不同的进程内) 
+-   MyModuleSetup 和 MyModuleCleanup 在除) MyTestMethod 外的不同进程中运行 (
 
 ```ManagedCPlusPlus
 BEGIN_MODULE()
@@ -332,13 +332,13 @@ class MyTests
 };
 ```
 
-前面的示例将运行测试和装置，如下所示：
+前面的示例将按如下所示运行测试和装置：
 
--   作为系统运行 MyTestMethod
--   作为 Restricted MyTestMethod2 运行
--   MyTestSetup 和 MyTestCleanup MyTestMethod 和 MyTestMethod2 与相同的进程中运行
--   运行方式提升 MyClassSetup 和 MyClassCleanup
--   MyModuleSetup 和 MyModuleCleanup 以 System 身份运行 （在不同于 MyTestMethod 进程）
+-   MyTestMethod 作为系统运行
+-   MyTestMethod2 以受限方式运行
+-   MyTestSetup 和 MyTestCleanup 在与 MyTestMethod 和 MyTestMethod2 相同的进程中运行
+-   MyClassSetup 和 MyClassCleanup 以提升的权限运行
+-   MyModuleSetup 和 MyModuleCleanup 在除) MyTestMethod 外的不同进程中运行 (
 
 ```ManagedCPlusPlus
 BEGIN_MODULE()
@@ -372,13 +372,13 @@ class MyTests
 };
 ```
 
-前面的示例将运行测试和装置，如下所示：
+前面的示例将按如下所示运行测试和装置：
 
--   作为系统运行 MyTestMethod
--   作为 Restricted MyTestMethod2 运行
--   MyTestSetup 和 MyTestCleanup MyTestMethod2 作为 MyTestMethod 和在提升的进程在同一进程中运行
--   运行方式提升 MyClassSetup 和 MyClassCleanup
--   MyModuleSetup 和 MyModuleCleanup 以 System 身份运行 （在不同于 MyTestMethod 进程）
+-   MyTestMethod 作为系统运行
+-   MyTestMethod2 以受限方式运行
+-   MyTestSetup 和 MyTestCleanup 在与 MyTestMethod 相同的进程中运行，并在 MyTestMethod2 的提升的进程中运行
+-   MyClassSetup 和 MyClassCleanup 以提升的权限运行
+-   MyModuleSetup 和 MyModuleCleanup 在除) MyTestMethod 外的不同进程中运行 (
 
 ```ManagedCPlusPlus
 BEGIN_MODULE()
@@ -410,19 +410,13 @@ class MyTests
 };
 ```
 
-上面的示例将运行测试和装置，如下所示：
+上面的示例将按如下所示运行测试和装置：
 
--   作为系统运行 MyTestMethod
--   作为 Restricted MyTestMethod2 运行
--   MyTestSetup 和 MyTestCleanup 以 System 身份运行 （在不同于 MyTestMethod 进程）
--   运行方式提升 MyClassSetup 和 MyClassCleanup
--   MyModuleSetup 和 MyModuleCleanup 以 System 身份运行 （在不同于 MyTestMethod 进程）
-
- 
+-   MyTestMethod 作为系统运行
+-   MyTestMethod2 以受限方式运行
+-   MyTestSetup 和 MyTestCleanup 在除) MyTestMethod 外的不同进程中运行 (
+-   MyClassSetup 和 MyClassCleanup 以提升的权限运行
+-   MyModuleSetup 和 MyModuleCleanup 在除) MyTestMethod 外的不同进程中运行 (
 
  
-
-
-
-
 

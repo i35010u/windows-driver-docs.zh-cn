@@ -1,28 +1,28 @@
 ---
 title: PwrTest 执行状态方案
-description: PwrTest 执行状态的情况 (/ es) 监视器线程当前正在运行的进程和服务的执行状态发生更改。
+description: PwrTest 执行状态方案 (/es) 监视当前正在运行的进程和服务的线程执行状态更改。
 ms.assetid: 5470c99b-5780-486f-b36a-922fb821b7f3
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 58a29895573145873df565fbea55affb5efa5142
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 27084aabd0ce7c68cffaa8c271375c91082767d9
+ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67372059"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89384769"
 ---
 # <a name="pwrtest-execution-state-scenario"></a>PwrTest 执行状态方案
 
 
-PwrTest 执行状态的情况 ( **/es**) 监视器线程当前正在运行的进程和服务的执行状态发生更改。
+PwrTest 执行状态方案 (**/es**) 监视当前正在运行的进程和服务的线程执行状态更改。
 
-**请注意**  此 PwrTest 执行状态的情况主要用于应用程序使用旧版 power 请求 Api，如[ **SetThreadExecutionState 函数 (Windows)** ](https://docs.microsoft.com/windows/desktop/api/winbase/nf-winbase-setthreadexecutionstate)). 若要监视的应用程序使用较新的 power 请求 Api，如[ **PowerSetRequest 函数 (Windows)** ](https://docs.microsoft.com/windows/desktop/api/winbase/nf-winbase-powersetrequest)使用[PwrTest 请求方案](pwrtest-requests-scenario.md)相反。
+**注意**   此 PwrTest 执行状态方案主要用于使用旧版 power request Api 的应用程序，例如[**SetThreadExecutionState 函数 (Windows) **](/windows/desktop/api/winbase/nf-winbase-setthreadexecutionstate)) 。 若要监视使用较新的 power request Api 的应用程序（如 [**PowerSetRequest 函数） (Windows) **](/windows/desktop/api/winbase/nf-winbase-powersetrequest) 改为使用 [PwrTest 请求方案](pwrtest-requests-scenario.md) 。
 
  
 
-应用程序和服务可能会暂时替代监视器之类的电源管理设置和通过更改其线程执行状态睡眠空闲超时。 PwrTest 执行状态方案监视线程的执行状态和系统状态将更改该应用程序和服务使用 Win32 做[ **SetThreadExecutionState 函数 (Windows)** ](https://docs.microsoft.com/windows/desktop/api/winbase/nf-winbase-setthreadexecutionstate).
+应用程序和服务可能会通过更改其线程执行状态来暂时覆盖电源管理设置，如监视器和睡眠空闲超时。 PwrTest 执行状态方案使用 Win32 [**SetThreadExecutionState 函数 (Windows) **](/windows/desktop/api/winbase/nf-winbase-setthreadexecutionstate)监视线程执行状态和系统状态更改。
 
-可以使用 **/es**一起使用的方案[PwrTest 空闲方案](pwrtest-idle-scenario.md)来帮助确定应用程序和服务，使监视器或系统无法进入空闲状态。
+可以结合使用 **/es** 方案和 [PwrTest Idle 方案](pwrtest-idle-scenario.md) 来帮助识别阻止监视器或系统进入空闲状态的应用程序和服务。
 
 ### <a name="span-idsyntaxspanspan-idsyntaxspanspan-idsyntaxspansyntax"></a><span id="Syntax"></span><span id="syntax"></span><span id="SYNTAX"></span>语法
 
@@ -30,29 +30,29 @@ PwrTest 执行状态的情况 ( **/es**) 监视器线程当前正在运行的进
 pwrtest /es  [/t:n] [/stes:{y|n}] [/rss:{y|n}] [/sss:{y|n}] [/all] [/user] [/kernel] [/idle] [/?] 
 ```
 
-<span id="_t_n"></span><span id="_T_N"></span> **/t:** <em>n</em>  
-为方案运行指定的总时间 （以分钟为单位） (默认值*n*为 30 分钟)。
+<span id="_t_n"></span><span id="_T_N"></span>**/t：**<em>n</em>  
+指定运行该方案 (默认 *值为 30* 分钟) )  (的总时间（分钟）。
 
-<span id="_stes_yn"></span><span id="_STES_YN"></span> **/stes:** {**y**|**n**}  
-指定是否[ **SetThreadExecutionState** ](https://docs.microsoft.com/windows/desktop/api/winbase/nf-winbase-setthreadexecutionstate)应记录事件 (**y** (yes) 是默认值)。
+<span id="_stes_yn"></span><span id="_STES_YN"></span>**/stes：**{**y** | **n**}  
+指定是否应 (**y**记录[**SetThreadExecutionState**](/windows/desktop/api/winbase/nf-winbase-setthreadexecutionstate)事件 (是) 默认) 。
 
-<span id="_rss_yn"></span><span id="_RSS_YN"></span> **/rss:** {**y**|**n**}  
-指定是否**RegisterSystemState**应记录事件 (**y** (yes) 是默认值)。
+<span id="_rss_yn"></span><span id="_RSS_YN"></span>**/rss：**{**y** | **n**}  
+指定是否应 (**y**记录**RegisterSystemState**事件 (是) 默认) 。
 
-<span id="_sss_yn"></span><span id="_SSS_YN"></span> **/sss:** {**y**|**n**}  
-指定是否**SetSystemState**应记录事件 (**y** (yes) 是默认值)。
+<span id="_sss_yn"></span><span id="_SSS_YN"></span>**/sss：**{**y** | **n**}  
+指定是否应 (**y**记录**SetSystemState**事件 (是) 默认) 。
 
-<span id="_all"></span><span id="_ALL"></span> **/all**  
-指定应记录所有事件 ([**SetThreadExecutionState**](https://docs.microsoft.com/windows/desktop/api/winbase/nf-winbase-setthreadexecutionstate)， **RegisterSystemState**， **SetSystemState**)。
+<span id="_all"></span><span id="_ALL"></span>**/all**  
+指定应 ([**SetThreadExecutionState**](/windows/desktop/api/winbase/nf-winbase-setthreadexecutionstate)， **RegisterSystemState**， **SetSystemState**) 记录所有事件。
 
-<span id="_user"></span><span id="_USER"></span> **/user**  
-指定应记录所有用户事件 ([**SetThreadExecutionState**](https://docs.microsoft.com/windows/desktop/api/winbase/nf-winbase-setthreadexecutionstate))。
+<span id="_user"></span><span id="_USER"></span>**/user**  
+指定应将所有用户事件记录 ([**SetThreadExecutionState**](/windows/desktop/api/winbase/nf-winbase-setthreadexecutionstate)) 。
 
-<span id="_kernel"></span><span id="_KERNEL"></span> **/kernel**  
-指定应记录仅内核模式事件 (**RegisterSystemState**， **SetSystemState**)。
+<span id="_kernel"></span><span id="_KERNEL"></span>**/kernel**  
+指定仅应记录内核模式事件 (**RegisterSystemState**， **SetSystemState**) 。
 
-<span id="_idle"></span><span id="_IDLE"></span> **/idle**  
-日志空闲状态的统计信息。
+<span id="_idle"></span><span id="_IDLE"></span>**/idle**  
+日志空闲统计信息。
 
 **示例**
 
@@ -96,7 +96,7 @@ pwrtest /es /stes:n
 pwrtest /es /all /idle 
 ```
 
-### <a name="span-idxmllogfileoutputspanspan-idxmllogfileoutputspanspan-idxmllogfileoutputspanxml-log-file-output"></a><span id="XML_log_file_output"></span><span id="xml_log_file_output"></span><span id="XML_LOG_FILE_OUTPUT"></span>XML 日志文件输出
+### <a name="span-idxml_log_file_outputspanspan-idxml_log_file_outputspanspan-idxml_log_file_outputspanxml-log-file-output"></a><span id="XML_log_file_output"></span><span id="xml_log_file_output"></span><span id="XML_LOG_FILE_OUTPUT"></span>XML 日志文件输出
 
 ```XML
 <PwrTestLog>
@@ -125,7 +125,7 @@ pwrtest /es /all /idle
 </PwrTestLog> 
 ```
 
-下表介绍日志文件中显示的 XML 元素。
+下表描述了日志文件中显示的 XML 元素。
 
 <table>
 <colgroup>
@@ -135,62 +135,55 @@ pwrtest /es /all /idle
 <thead>
 <tr class="header">
 <th align="left">元素</th>
-<th align="left">描述</th>
+<th align="left">说明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left"><strong>&lt;ExecutionState&gt;</strong></td>
-<td align="left"><p>包含与执行状态的情况相关的信息。 可能只有一个<strong>&lt;ExecutionState&gt;</strong> PwrTest 日志文件中的元素。</p></td>
+<td align="left"><p>包含与执行状态方案相关的信息。 PwrTest 日志文件中只能有一个<strong> &lt; executionstate& &gt; </strong>元素。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><strong>&lt;EsChange&gt;</strong></td>
-<td align="left"><p>包含单个线程执行状态更改事件相关信息。 将一个<strong>&lt;EsChange&gt;</strong>元素。</p></td>
+<td align="left"><p>包含与单个线程执行状态更改事件相关的信息。 将有一个<strong> &lt; EsChange &gt; </strong>元素。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><strong>&lt;时间&gt;</strong></td>
-<td align="left"><p>指示执行状态更改事件发生时的时间。</p></td>
+<td align="left"><strong>&lt;阶段&gt;</strong></td>
+<td align="left"><p>指示执行状态更改事件发生的时间。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><strong>&lt;Process&gt;</strong></td>
-<td align="left"><p>指示请求的执行状态更改的进程的图像文件的路径。</p></td>
+<td align="left"><strong>&lt;流程&gt;</strong></td>
+<td align="left"><p>指示请求执行状态更改的进程的映像文件的路径。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><strong>&lt;RawState&gt;</strong></td>
-<td align="left"><p>指示请求执行状态。 这是类型 EXECUTION_STATE 的 32 位值 （请参阅 Windows.h）。</p></td>
+<td align="left"><p>指示请求执行状态。 这是 EXECUTION_STATE (类型的32位值，请参阅 Windows) 。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><strong>&lt;Continuous&gt;</strong></td>
-<td align="left"><p>指示是否进程请求执行状态更改为持续 (ES_CONTINUOUS)。</p></td>
+<td align="left"><strong>&lt;连续&gt;</strong></td>
+<td align="left"><p>指示进程是否请求的执行状态更改为连续 (ES_CONTINUOUS) 。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><strong>&lt;System&gt;</strong></td>
-<td align="left"><p>如果在过程请求或不是可用 (ES_SYSTEM_REQUIRED) 系统 (TRUE) 指示 (FALSE)。</p></td>
+<td align="left"><strong>&lt;系统&gt;</strong></td>
+<td align="left"><p>指示 () 如果进程请求提供系统 (ES_SYSTEM_REQUIRED)  (FALSE) 。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><strong>&lt;显示&gt;</strong></td>
-<td align="left"><p>如果在过程请求显示为可用 (ES_DISPLAY_REQUIRED)，或不 (TRUE) 指示 (FALSE)。</p></td>
+<td align="left"><strong>&lt;显示器&gt;</strong></td>
+<td align="left"><p>指示 (TRUE) 如果该进程已请求显示可用 (ES_DISPLAY_REQUIRED) 或 (FALSE) 错误。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><strong>&lt;AwayMode&gt;</strong></td>
-<td align="left"><p>如果为过程请求离开模式或未启用 (ES_AWAYMODE_REQUIRED) (TRUE) 指示 (FALSE)。</p></td>
+<td align="left"><p>指示 (TRUE) 如果已 (ES_AWAYMODE_REQUIRED) ，则 () FALSE。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
+## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
 [PwrTest 语法](pwrtest-syntax.md)
 
  
-
- 
-
-
-
-
-
 

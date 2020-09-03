@@ -7,12 +7,12 @@ keywords:
 - 内存 Windows WDK PCMCIA 总线
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 16b84e26a63ee1d289734355f1640dc9859406eb
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: d1eeffb857525177cb495e4712c73c8d6ae11dc6
+ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67382608"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89384703"
 ---
 # <a name="restrictions-on-memory-windows"></a>Windows 上的内存限制
 
@@ -20,15 +20,9 @@ ms.locfileid: "67382608"
 
 
 
-本部分介绍由 Windows 2000 和更高版本操作系统上的 PCMCIA 卡内存 windows 施加的限制。
+本部分介绍了 Windows 2000 和更高版本的 Windows 和更高版本的操作系统在 PCMCIA 内存卡的内存窗口中的限制。
 
-当枚举设备所带来的插管理器的请求时，通常指定 PCMCIA 内存卡的资源要求由总线驱动程序。 此外可以在指定特定内存窗口[ **INF DDInstall.LogConfigOverride 部分**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-ddinstall-logconfigoverride-section)设备驱动程序的 INF 文件。 可以为 PCMCIA 内存卡请求最多为两个内存窗口。
-
- 
+PCMCIA 内存卡的资源要求通常由总线驱动程序在即插即用 manager 请求枚举设备时指定。 还可以在设备驱动程序的 INF 文件的 [**Inf DDInstall. LogConfigOverride 部分**](../install/inf-ddinstall-logconfigoverride-section.md) 中指定特定内存窗口。 PCMCIA 内存卡最多可请求两个内存窗口。
 
  
-
-
-
-
 

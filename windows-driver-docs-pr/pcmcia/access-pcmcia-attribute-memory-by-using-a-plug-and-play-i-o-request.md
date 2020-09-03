@@ -1,19 +1,19 @@
 ---
-title: 通过使用即插即用的 I/O 请求访问内存
+title: 使用 PnP i/o 请求访问内存
 description: 使用即插即用 I/O 请求访问 PCMCIA 属性内存
 ms.assetid: ee2f9d9f-9e2b-4ecf-ba6d-4baad3653301
 keywords:
-- 属性内存 WDK PCMCIA 总线，插 I/O 请求
+- 属性内存 WDK PCMCIA 总线，即插即用 i/o 请求
 - 即插即用 WDK PCMCIA 总线
-- 即插即用 WDK PCMCIA 总线
+- PnP WDK PCMCIA 总线
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a59e862d6b311de6174417a7a930fcf5d82b82ec
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 4c9601a37d8918e2e51d04301b83df6d1f24440a
+ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67382604"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89384815"
 ---
 # <a name="access-pcmcia-attribute-memory-by-using-a-plug-and-play-io-request"></a>使用即插即用 I/O 请求访问 PCMCIA 属性内存
 
@@ -21,43 +21,37 @@ ms.locfileid: "67382604"
 
 
 
-本部分介绍如何 PC 卡或 Cardbus 卡驱动程序可以使用插 I/O 请求访问属性的内存。
+本部分介绍 PC 卡或 Cardbus 卡驱动程序如何使用即插即用 i/o 请求来访问属性内存。
 
-驱动程序通常使用此方法初始化设备，配置设备，或从设备获取信息。 驱动程序应使用此方法，如果 I/O 开销是可以接受的并且访问可按 IRQL&lt;调度\_级别。
+驱动程序通常使用此方法来初始化设备、配置设备或从设备获取信息。 如果 i/o 开销是可接受的，则驱动程序应使用此方法，并且可以在 IRQL &lt; 调度级别进行访问 \_ 。
 
-驱动程序只能在 IRQL 运行时使用此方法&lt;调度\_级别。
+在以 IRQL 调度级别运行时，驱动程序只能使用此方法 &lt; \_ 。
 
-驱动程序将执行以下一系列操作：
+驱动程序执行以下一系列操作：
 
--   创建并初始化新的 IRP\_MJ\_即插即用的请求。
+-   创建并初始化新的 IRP \_ MJ \_ PNP 请求。
 
-    该驱动程序指定任一配置文件[ **IRP\_MN\_读取\_CONFIG** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-read-config)或[ **IRP\_MN\_编写\_CONFIG** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-write-config)较小函数。
+    驱动程序指定 [**irp \_ MN \_ READ \_ config**](../kernel/irp-mn-read-config.md) 或 [**irp \_ MN \_ WRITE \_ config**](../kernel/irp-mn-write-config.md) 次要函数。
 
--   获取下一步的堆栈位置。
+-   获取下一个堆栈位置。
 
--   设置的以下成员**Parameters.ReadWriteConfig**新的堆栈位置中的结构：
+-   设置新堆栈位置的 **ReadWriteConfig** 结构的以下成员：
 
     <a href="" id="whichspace"></a>**WhichSpace**  
-    指定的值 PCCARD\_特性\_内存。
+    指定值 PCCARD \_ 属性 \_ 内存。
 
-    <a href="" id="buffer"></a>**缓冲区**  
-    指向该驱动程序分配访问权限的分页内存缓冲区的指针。 写入操作，该缓冲区包含要写入到配置区域的数据。 对于读取操作，缓冲区是零填充缓冲区。 在请求完成后，此缓冲区包含从设备读取的属性内存的副本。
+    <a href="" id="buffer"></a>**宽限**  
+    指向驱动程序为访问分配的分页内存缓冲区的指针。 对于写入操作，缓冲区包含要写入配置空间的数据。 对于读取操作，该缓冲区是一个填充了零的缓冲区。 请求完成后，此缓冲区保存从设备读取的属性内存副本。
 
-    <a href="" id="offset"></a>**Offset**  
-    指定相对于基属性内存读取或写入操作的开始处的偏移量的单词。
+    <a href="" id="offset"></a>**抵销**  
+    指定从读取或写入操作开始的属性内存基数开始的单词偏移量。
 
-    <a href="" id="length"></a>**长度**  
-    指定以字节为单位的驱动程序将为请求分配的缓冲区的大小。
+    <a href="" id="length"></a>**长短**  
+    指定驱动程序为请求分配的缓冲区的大小（以字节为单位）。
 
 -   设置完成例程。
 
--   发送请求，关闭设备堆栈。
+-   按设备堆栈向下发送请求。
 
  
-
- 
-
-
-
-
 

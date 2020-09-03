@@ -10,12 +10,12 @@ keywords:
 - 跟踪消息格式化文件 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2d559734dd426890d3e88abdeb3d192dc3ba62f0
-ms.sourcegitcommit: cbcb712a9f1f62c7d67e1b98097a0d8d24bd0c71
+ms.openlocfilehash: ad20d1510c4c0cfda1fac15d3d10dc76f378fb50
+ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83769447"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89384865"
 ---
 # <a name="tracepdb"></a>Tracepdb
 
@@ -23,7 +23,7 @@ ms.locfileid: "83769447"
 ## <span id="ddk_tracepdb_tools"></span><span id="DDK_TRACEPDB_TOOLS"></span>
 
 
-Tracepdb （Tracepdb）是一种命令行工具，它通过从使用 WPP 软件跟踪宏的[跟踪提供程序](trace-provider.md)的完整或专用[PDB 符号文件](pdb-symbol-files.md)中提取跟踪消息格式说明来创建[跟踪消息格式（. tmf）文件](trace-message-format-file.md)。
+Tracepdb ( # A0) 是一个命令行工具，该工具通过从使用 WPP 软件跟踪宏的[跟踪提供程序](trace-provider.md)的完整或专用[PDB 符号文件](pdb-symbol-files.md)中提取跟踪消息格式指令， [ ( tmf) 文件来创建跟踪消息格式。](trace-message-format-file.md)
 
 您可以为跟踪提供程序提供私有 PDB 符号文件，或 Tracepdb 可以在目录中找到该提供程序的私有 PDB 符号文件或使用内部符号服务器。 Tracepdb 在 windows 2000 和更高版本的 Windows 上运行。
 
@@ -42,12 +42,12 @@ Tracepdb （Tracepdb）是一种命令行工具，它通过从使用 WPP 软件�
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>安装 WDK、Visual Studio 和适用于桌面应用的 Windows SDK 时，将包含 Tracepdb （Tracepdb）。 有关下载套件的信息，请参阅<a href="https://docs.microsoft.com/windows-hardware/drivers/download-the-wdk" data-raw-source="[Windows Hardware Downloads](https://docs.microsoft.com/windows-hardware/drivers/download-the-wdk)">Windows 硬件下载</a>。</p>
-<p><strong>Windows 驱动程序工具包（WDK） 8.1</strong> （安装路径）</p>
-<p>%WindowsSdkDir%\bin\x64\Tracepdb.exe</p>
-<p>%WindowsSdkDir%\bin\x86\Tracepdb.exe</p>
+<td align="left"><p>安装 WDK、Visual Studio 和桌面应用的 Windows SDK 时，将包含 Tracepdb ( # A0) 。 有关下载套件的信息，请参阅 <a href="https://docs.microsoft.com/windows-hardware/drivers/download-the-wdk" data-raw-source="[Windows Hardware Downloads](../download-the-wdk.md)">Windows 硬件下载</a>。</p>
+<p><strong>Windows 驱动程序工具包 (WDK) 8.1</strong> (安装路径) </p>
+<p>% WindowsSdkDir% \bin\x64\Tracepdb.exe</p>
+<p>% WindowsSdkDir% \bin\x86\Tracepdb.exe</p>
 <div class="alert">
-<strong>注意</strong>   Visual Studio 环境变量% WindowsSdkDir% 表示安装包的 Windows 工具包目录的路径，例如，C:\Program Files （x86） \Windows Kits\8.1。
+<strong>注意</strong>   Visual Studio 环境变量% WindowsSdkDir% 表示安装包的 Windows 工具包目录的路径，例如，C:\Program 文件 (x86) \Windows Kits\8.1。
 </div>
 <div>
  

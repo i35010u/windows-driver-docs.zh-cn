@@ -15,12 +15,12 @@ keywords:
 - 空调制解调器电缆 WDK 启动参数
 ms.date: 04/23/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: d79c0cc0c3cd71b1616a6046bc0f4397c06f861f
-ms.sourcegitcommit: 9e5a99dc75dfee3caa9a242adc0ed22ae4df9f29
+ms.openlocfilehash: 262bbda6a8df10df8b6d8c3c3d8d92153ca9c842
+ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89043113"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89384361"
 ---
 # <a name="boot-parameters-to-enable-debugging"></a>用于启用调试的启动参数
 
@@ -62,11 +62,11 @@ bcdedit /debug on
 
 可以使用 **bcdedit/enum** 命令查看当前启动项及其设置。
 
-有关更多详细信息，请参阅 [**BCDEdit/debug**](https://docs.microsoft.com/windows-hardware/drivers/devtest/bcdedit--debug)。
+有关更多详细信息，请参阅 [**BCDEdit/debug**](./bcdedit--debug.md)。
 
 ### <a name="span-idboot_options_to_debug_with_a_null_modem_cable_in_windows_vista_and_latspanspan-idboot_options_to_debug_with_a_null_modem_cable_in_windows_vista_and_latspanboot-options-to-debug-with-a-null-modem-cable-in-windows"></a><span id="boot_options_to_debug_with_a_null_modem_cable_in_windows_vista_and_lat"></span><span id="BOOT_OPTIONS_TO_DEBUG_WITH_A_NULL_MODEM_CABLE_IN_WINDOWS_VISTA_AND_LAT"></span>在 Windows 中使用空调制网线进行调试的启动选项
 
-若要在 Windows 中使用空调制网线启用调试，请使用 BCDEdit 并将 "调试" 连接类型设置为 "串行"。 你可以通过使用后跟**串行**的[**bcdedit/dbgsettings**](https://docs.microsoft.com/windows-hardware/drivers/devtest/bcdedit--dbgsettings)命令来全局设置此项，也可以使用后跟**debugtype 序列**的[**bcdedit/set**](https://docs.microsoft.com/windows-hardware/drivers/devtest/bcdedit--set)命令为特定启动项设置此项。 还必须使用 [**BCDEdit/debug**](https://docs.microsoft.com/windows-hardware/drivers/devtest/bcdedit--debug) 命令来启用对所需操作系统的内核调试。
+若要在 Windows 中使用空调制网线启用调试，请使用 BCDEdit 并将 "调试" 连接类型设置为 "串行"。 你可以通过使用后跟**串行**的[**bcdedit/dbgsettings**](./bcdedit--dbgsettings.md)命令来全局设置此项，也可以使用后跟**debugtype 序列**的[**bcdedit/set**](./bcdedit--set.md)命令为特定启动项设置此项。 还必须使用 [**BCDEdit/debug**](./bcdedit--debug.md) 命令来启用对所需操作系统的内核调试。
 
 如果未使用 BCDEdit，则默认的全局调试设置用于串行通信，使用 COM1，波特率为115200。
 
@@ -122,11 +122,11 @@ bcdedit /debug on
 
 可以使用 **bcdedit/enum** 命令查看当前启动项及其设置。
 
-有关更多详细信息，请参阅 [**bcdedit/debug**](https://docs.microsoft.com/windows-hardware/drivers/devtest/bcdedit--debug) 和 [**bcdedit/dbgsettings**](https://docs.microsoft.com/windows-hardware/drivers/devtest/bcdedit--dbgsettings)。
+有关更多详细信息，请参阅 [**bcdedit/debug**](./bcdedit--debug.md) 和 [**bcdedit/dbgsettings**](./bcdedit--dbgsettings.md)。
 
 ### <a name="span-idboot_parameters_to_debug_with_a_1394_cable_in_windows_vista_and_laterspanspan-idboot_parameters_to_debug_with_a_1394_cable_in_windows_vista_and_laterspanboot-parameters-to-debug-with-a-1394-cable-in-windows"></a><span id="boot_parameters_to_debug_with_a_1394_cable_in_windows_vista_and_later"></span><span id="BOOT_PARAMETERS_TO_DEBUG_WITH_A_1394_CABLE_IN_WINDOWS_VISTA_AND_LATER"></span>使用 Windows 中的1394电缆进行调试的启动参数
 
-若要使用 Windows 中的 IEEE 1394 电缆进行调试，请使用 BCDEdit 并将 "调试" 连接类型设置为 "1394"。 你可以使用后跟**1394**的[**bcdedit/dbgsettings**](https://docs.microsoft.com/windows-hardware/drivers/devtest/bcdedit--dbgsettings)命令全局设置此项，也可以使用后跟**debugtype 1394**的[**bcdedit/set**](https://docs.microsoft.com/windows-hardware/drivers/devtest/bcdedit--set)命令为特定启动项设置此项。 还必须使用 [**BCDEdit/debug**](https://docs.microsoft.com/windows-hardware/drivers/devtest/bcdedit--debug) 命令来启用对所需操作系统的内核调试。
+若要使用 Windows 中的 IEEE 1394 电缆进行调试，请使用 BCDEdit 并将 "调试" 连接类型设置为 "1394"。 你可以使用后跟**1394**的[**bcdedit/dbgsettings**](./bcdedit--dbgsettings.md)命令全局设置此项，也可以使用后跟**debugtype 1394**的[**bcdedit/set**](./bcdedit--set.md)命令为特定启动项设置此项。 还必须使用 [**BCDEdit/debug**](./bcdedit--debug.md) 命令来启用对所需操作系统的内核调试。
 
 若要使用 BCDEdit，请使用提升的权限打开命令提示符窗口， (选择并按住或右键单击 **命令提示符** ，然后从快捷菜单中选择 "以 **管理员身份运行** ") 。
 
@@ -164,11 +164,11 @@ bcdedit /debug on
 
 可以使用 **bcdedit/enum** 命令查看当前启动项及其设置。
 
-有关更多详细信息，请参阅 [**bcdedit/debug**](https://docs.microsoft.com/windows-hardware/drivers/devtest/bcdedit--debug) 和 [**bcdedit/dbgsettings**](https://docs.microsoft.com/windows-hardware/drivers/devtest/bcdedit--dbgsettings)。
+有关更多详细信息，请参阅 [**bcdedit/debug**](./bcdedit--debug.md) 和 [**bcdedit/dbgsettings**](./bcdedit--dbgsettings.md)。
 
 ### <a name="span-idboot_parameters_to_debug_with_a_usb_2_0_debugging_cable_in_windows_visspanspan-idboot_parameters_to_debug_with_a_usb_2_0_debugging_cable_in_windows_visspanboot-parameters-to-debug-with-a-usb-20-debugging-cable-in-windows"></a><span id="boot_parameters_to_debug_with_a_usb_2_0_debugging_cable_in_windows_vis"></span><span id="BOOT_PARAMETERS_TO_DEBUG_WITH_A_USB_2_0_DEBUGGING_CABLE_IN_WINDOWS_VIS"></span>在 Windows 中使用 USB 2.0 调试电缆进行调试的启动参数
 
-若要在这些版本的 Windows 中使用 USB 电缆启用调试，请使用 BCDEdit 并将 "调试" 连接类型设置为 "USB"。 可以使用后跟**usb**的[**bcdedit/dbgsettings**](https://docs.microsoft.com/windows-hardware/drivers/devtest/bcdedit--dbgsettings)命令全局设置此项，也可以使用后跟**debugtype usb**的[**bcdedit/set**](https://docs.microsoft.com/windows-hardware/drivers/devtest/bcdedit--set)命令为特定启动项设置此项。 还必须使用 [**BCDEdit/debug**](https://docs.microsoft.com/windows-hardware/drivers/devtest/bcdedit--debug) 命令来启用对所需操作系统的内核调试。
+若要在这些版本的 Windows 中使用 USB 电缆启用调试，请使用 BCDEdit 并将 "调试" 连接类型设置为 "USB"。 可以使用后跟**usb**的[**bcdedit/dbgsettings**](./bcdedit--dbgsettings.md)命令全局设置此项，也可以使用后跟**debugtype usb**的[**bcdedit/set**](./bcdedit--set.md)命令为特定启动项设置此项。 还必须使用 [**BCDEdit/debug**](./bcdedit--debug.md) 命令来启用对所需操作系统的内核调试。
 
 若要使用 BCDEdit，请使用提升的权限打开命令提示符窗口， (选择并按住或右键单击 **命令提示符** ，然后从快捷菜单中选择 "以 **管理员身份运行** ") 。
 
@@ -206,12 +206,12 @@ bcdedit /debug on
 
 可以使用 **bcdedit/enum** 命令查看当前启动项及其设置。
 
-有关更多详细信息，请参阅 [**bcdedit/debug**](https://docs.microsoft.com/windows-hardware/drivers/devtest/bcdedit--debug) 和 [**bcdedit/dbgsettings**](https://docs.microsoft.com/windows-hardware/drivers/devtest/bcdedit--dbgsettings)。
+有关更多详细信息，请参阅 [**bcdedit/debug**](./bcdedit--debug.md) 和 [**bcdedit/dbgsettings**](./bcdedit--dbgsettings.md)。
 
 ### <a name="span-idboot_parameters_to_debug_the_boot_process_in_windows_vista_and_laterspanspan-idboot_parameters_to_debug_the_boot_process_in_windows_vista_and_laterspanboot-parameters-to-debug-the-boot-process-in-windows"></a><span id="boot_parameters_to_debug_the_boot_process_in_windows_vista_and_later"></span><span id="BOOT_PARAMETERS_TO_DEBUG_THE_BOOT_PROCESS_IN_WINDOWS_VISTA_AND_LATER"></span>用于在 Windows 中调试启动过程的启动参数
 
-若要启用启动调试，请使用 [**BCDEdit/bootdebug**](https://docs.microsoft.com/windows-hardware/drivers/devtest/bcdedit--bootdebug) 命令，并指定相应的启动组件。 如果要在 Windows 启动后执行内核调试，还应使用 [**BCDEdit/debug**](https://docs.microsoft.com/windows-hardware/drivers/devtest/bcdedit--debug) 命令。
+若要启用启动调试，请使用 [**BCDEdit/bootdebug**](./bcdedit--bootdebug.md) 命令，并指定相应的启动组件。 如果要在 Windows 启动后执行内核调试，还应使用 [**BCDEdit/debug**](./bcdedit--debug.md) 命令。
 
-还必须选择 (串行、1394或 USB) 的调试连接。 可以通过 [**BCDEdit/dbgsettings**](https://docs.microsoft.com/windows-hardware/drivers/devtest/bcdedit--dbgsettings) 或 [**bcdedit/set**](https://docs.microsoft.com/windows-hardware/drivers/devtest/bcdedit--set) 命令完成此操作，就像在正常内核调试中一样。
+还必须选择 (串行、1394或 USB) 的调试连接。 可以通过 [**BCDEdit/dbgsettings**](./bcdedit--dbgsettings.md) 或 [**bcdedit/set**](./bcdedit--set.md) 命令完成此操作，就像在正常内核调试中一样。
 
-有关更多详细信息，请参阅 [**BCDEdit/bootdebug**](https://docs.microsoft.com/windows-hardware/drivers/devtest/bcdedit--bootdebug)。
+有关更多详细信息，请参阅 [**BCDEdit/bootdebug**](./bcdedit--bootdebug.md)。

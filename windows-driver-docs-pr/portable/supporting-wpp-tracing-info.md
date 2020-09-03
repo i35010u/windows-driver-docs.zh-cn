@@ -3,12 +3,12 @@ description: 支持 WPP 跟踪
 title: 支持 WPP 跟踪
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a9110a4ce5f6a689508008806114da257b16337c
-ms.sourcegitcommit: 15caaf6d943135efcaf9975927ff3933957acd5d
+ms.openlocfilehash: d5fa50526e56b8f29fc388f2d7f11348aaa35790
+ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88969352"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89384963"
 ---
 # <a name="supporting-wpp-tracing"></a>支持 WPP 跟踪
 
@@ -152,13 +152,7 @@ return _AtlModule.DllMain(dwReason, lpReserved);
 ## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
-[WDK 和 Visual Studio 生成环境](https://docs.microsoft.com/windows-hardware/drivers/devtest/wdk-and-visual-studio-build-environment)
+[WDK 和 Visual Studio 生成环境](../devtest/wdk-and-visual-studio-build-environment.md)
 
  
-
- 
-
-
-
-
 

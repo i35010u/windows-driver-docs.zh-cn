@@ -8,12 +8,12 @@ keywords:
 - 并行设备 WDK，设备堆栈
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0c07e3f97d17a71bce511c9fbcc2fb890d7deef4
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 27f5bd08b68d2bfd6d80f5cd70d14fe51816e6f0
+ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72831486"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89384235"
 ---
 # <a name="device-stacks-for-parallel-ports-and-devices"></a>并行端口和设备的设备堆栈
 
@@ -33,18 +33,13 @@ ms.locfileid: "72831486"
 
 [并行设备接口、内部名称和符号链接](parallel-device-interfaces--internal-names--and-symbolic-links.md)
 
-[并行端口和设备的 IOCTL 和回调支持](ioctl-and-callback-support-for-parallel-ports-and-devices.md)
+[对并行端口和设备的 IOCTL 和回调支持](ioctl-and-callback-support-for-parallel-ports-and-devices.md)
 
-[操作并行端口](operating-a-parallel-port.md)
+[打开并行端口](operating-a-parallel-port.md)
 
-[操作连接到并行端口的并行设备](operating-a-parallel-device-attached-to-a-parallel-port.md)
+[打开连接到并行端口的并行设备](operating-a-parallel-device-attached-to-a-parallel-port.md)
 
-[系统提供的并行驱动程序的客户端接口](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)
-
- 
+[系统提供的并行驱动程序的客户端接口](/windows-hardware/drivers/ddi/index)
 
  
-
-
-
 

@@ -4,15 +4,15 @@ description: 读取和写入属性内存
 ms.assetid: 8e430057-b68a-4edc-8755-1d7255412269
 keywords:
 - PCMCIA WDK 总线，属性内存
-- WDK PCMCIA 总线内存、 读取和写入属性
+- 属性内存 WDK PCMCIA 总线，读取和写入
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cc8a12e30b47c83c1d3fc112e0099481745fa595
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 403e6c0f3736ed75297b08159f5094bc2210e5c1
+ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67382622"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89383515"
 ---
 # <a name="read-and-write-attribute-memory"></a>读取和写入属性内存
 
@@ -20,36 +20,30 @@ ms.locfileid: "67382622"
 
 
 
-本部分介绍如何 PCMCIA 驱动程序可以读写属性内存 PCMCIA 内存卡上。
+本部分介绍 PCMCIA 驱动程序如何读取和写入 PCMCIA 内存卡上的属性内存。
 
-Windows 2000 和更高版本操作系统视为属性内存 PC 卡或 CardBus 卡上配置空间。
+Windows 2000 和更高版本的操作系统将 PC 卡或 CardBus 卡上的属性内存视为配置空间。
 
-一般情况下，若要访问属性的内存，驱动程序上必须要创建使用主要函数代码的 IRP IRP\_MJ\_PNP 和次要函数代码[ **IRP\_MN\_读取\_CONFIG** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-read-config)或[ **IRP\_MN\_编写\_配置**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-write-config)。
+通常，若要访问属性内存，驱动程序必须使用 IRP MJ PNP 的主要功能代码 \_ \_ 和 [**irp \_ MN \_ READ \_ config**](../kernel/irp-mn-read-config.md) 或 [**irp \_ MN \_ 写入 \_ 配置**](../kernel/irp-mn-write-config.md)的次要函数代码创建 IRP。
 
-如有必要，驱动程序可以直接通过永久内存窗口访问属性内存。 请参阅[访问 PCMCIA 属性内存通过永久内存窗口](https://docs.microsoft.com/windows-hardware/drivers/pcmcia/access-pcmcia-attribute-memory-through-a-permanent-memory-window)的更多详细信息。
+如有必要，驱动程序可以通过永久性内存窗口直接访问属性内存。 有关更多详细信息，请参阅 [通过永久性内存窗口访问 PCMCIA 属性内存](./access-pcmcia-attribute-memory-through-a-permanent-memory-window.md) 。
 
-PCMCIA 内存卡驱动程序将执行以下操作：
+PCMCIA 内存卡驱动程序执行以下操作：
 
 -   创建并初始化新的 IRP。
 
--   获取下一步的堆栈位置。
+-   获取下一个堆栈位置。
 
--   设置新的堆栈位置的以下成员：
-    -   **ReadWriteConfig.WhichSpace**成员指定值 PCCARD\_属性\_内存。
-    -   **缓冲区**成员将指向驱动程序分配，非分页缓冲区的读取或写入操作。 写入操作，该缓冲区包含要写入到配置区域的数据。 对于读取操作，缓冲区是零填充缓冲区。 IRP 完成后，此缓冲区设置为从设备读取的属性内存的副本。
-    -   **偏移量**成员指定的字节偏移量属性内存读取或写入操作的开始位置的基。
-    -   **长度**成员指定的大小，以字节为单位，在指定的缓冲区**缓冲区**。
+-   设置新堆栈位置的以下成员：
+    -   **ReadWriteConfig. WhichSpace**成员指定值 PCCARD \_ 属性 \_ 内存。
+    -   **缓冲区**成员指向用于读取或写入操作的驱动程序分配的非分页缓冲区。 对于写入操作，缓冲区包含要写入配置空间的数据。 对于读取操作，该缓冲区是一个填充了零的缓冲区。 完成 IRP 后，此缓冲区设置为从设备读取的属性内存副本。
+    -   **Offset**成员指定从属性内存基开始读取或写入操作的字节偏移量。
+    -   **Length**成员指定**缓冲区**中指定的缓冲区的大小（以字节为单位）。
 -   设置完成例程。
 
--   将驱动器在堆栈的下层请求发送。
+-   沿驱动器堆栈向下发送请求。
 
-驱动程序必须运行在 IRQL&lt;调度\_要发送此请求关闭驱动程序堆栈级别。
-
- 
+驱动程序必须以 IRQL &lt; 调度级别运行 \_ ，才能将此请求沿驱动程序堆栈向下发送。
 
  
-
-
-
-
 

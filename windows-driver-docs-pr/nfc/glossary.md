@@ -1,27 +1,27 @@
 ---
 title: NFC 术语表
-description: 本主题提供 NFC 类扩展（CX）术语的词汇表。
+description: 本主题提供了 (CX) 术语的 NFC 类扩展术语表。
 Robots: noindex, nofollow
 ms.assetid: F8674D9B-AD43-452A-A146-473ABE65A298
 keywords:
 - NFC
 - 近场通信
-- proximity
+- 近程
 - 近场邻近感应
 - NFP
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bb1bd37409f178e58b71d14018f2d97743c307b8
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: fd150be898994ff2528699f0ce3401ea8d233b9f
+ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72842537"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89384819"
 ---
 # <a name="nfc-glossary"></a>NFC 术语表
 
 
-本主题提供 NFC 类扩展（CX）术语的词汇表。
+本主题提供了 (CX) 术语的 NFC 类扩展术语表。
 
 <a href="" id="nfpdrivers-glossary"></a>**CE**  
 卡仿真
@@ -39,10 +39,10 @@ NFCC 固件
 主机卡仿真
 
 <a href="" id="nfpdrivers-ihv"></a>**IHV**  
-独立硬件供应商
+独立硬件供应商 (independent hardware vendor)
 
 <a href="" id="nfpdrivers-isv"></a>**独立**  
-独立软件供应商
+独立软件供应商 (independent software vendor)
 
 <a href="" id="nfpdrivers-kmdf"></a>**KMDF**  
 内核模式驱动程序框架
@@ -87,6 +87,5 @@ Windows 驱动程序框架
 
  
 ## <a name="related-topics"></a>相关主题
-[NFC 设备驱动程序接口（DDI）概述](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)  
-[NFC 类扩展（CX）参考](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)  
-
+[NFC 设备驱动程序接口 (DDI) 概述](/windows-hardware/drivers/ddi/index)  
+[ (CX) 参考的 NFC 类扩展](/windows-hardware/drivers/ddi/index)

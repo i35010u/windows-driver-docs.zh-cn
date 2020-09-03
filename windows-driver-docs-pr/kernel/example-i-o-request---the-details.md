@@ -8,12 +8,12 @@ keywords:
 - 堆栈位置 WDK 内核
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3bb73474b41b745dd6f0adccfb83de9c0e486efc
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: ead344b0277854e2aa4e7a8c6039c5e2043a0b5c
+ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89191487"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89402735"
 ---
 # <a name="example-io-request---the-details"></a>示例 I/O 请求 - 详细信息
 
@@ -55,7 +55,7 @@ ms.locfileid: "89191487"
 
 -   通过在每个 IRP 中设置下一个较低的驱动程序的 i/o 堆栈位置并调用 [**IoCallDriver**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iocalldriver)，将中的任何传入请求传递到更低的驱动程序。  (请注意，对于具有主要功能代码 [**IRP \_ MJ \_ 功能**](./irp-mj-power.md)的 irp，驱动程序必须使用 [**PoCallDriver**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-pocalldriver)。 ) 
 
-每个驱动程序创建的设备对象表示一个物理设备、逻辑设备或虚拟设备，特定驱动程序会对该设备执行 i/o 请求。 有关创建和设置设备对象的详细信息，请参阅 [设备对象和设备堆栈](device-objects-and-device-stacks.md)。
+每个驱动程序创建的设备对象表示一个物理设备、逻辑设备或虚拟设备，特定驱动程序会对该设备执行 i/o 请求。 有关创建和设置设备对象的详细信息，请参阅 [设备对象和设备堆栈](introduction-to-device-objects.md)。
 
 由于 [分层驱动程序中的处理 irp](#ddk-example-i-o-request---the-details-kg) 还显示，大多数驱动程序通过驱动程序提供的一组由系统定义的 *标准例程*来处理每个 IRP，而链中不同级别的驱动程序必须具有不同的标准例程。 例如，只有最低级别的驱动程序处理来自物理设备的中断，因此，只有最低级别的驱动程序才能有 ISR 和用于完成中断驱动 i/o 操作的 DPC。 另一方面，因为此类驱动程序知道当 i/o 从其设备接收到一个中断时，它不需要完成例程。 只有较高级别的驱动程序具有一个或多个完成例程，如此图中的 FSD。
 

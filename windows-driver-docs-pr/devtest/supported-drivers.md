@@ -3,99 +3,93 @@ title: 支持的驱动程序
 description: 支持的驱动程序
 ms.assetid: 1d41a9a9-415a-4dba-8b52-138c47ad63fd
 keywords:
-- 静态驱动程序验证程序 WDK 要求
-- StaticDV WDK 要求
-- SDV WDK 要求
-- 函数原型 WDK Static Driver Verifier
+- 静态驱动程序验证程序 WDK，要求
+- StaticDV WDK，要求
+- SDV WDK，要求
+- 函数原型 WDK 静态驱动程序验证程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b5cbe4cc93ec5b489d099e638cdee1efe36b19f0
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: bc44a50b385acdcebea14c4c3b42b9ee332ffe55
+ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67360936"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89384505"
 ---
 # <a name="supported-drivers"></a>支持的驱动程序
 
 
-SDV 可以验证驱动程序，它必须能够解释的驱动程序代码，具体而言，驱动程序的入口点和函数以及支持的例程中的代码所需的驱动程序的功能。
+为了使 SDV 能够验证驱动程序，该驱动程序必须能够解释驱动程序代码，具体而言，就是驱动程序的入口点以及支持所需驱动程序功能的函数和例程中的代码。
 
-以下部分介绍有关驱动程序和 SDV 要求驱动程序，它将验证的特定语法的基本要求。 SDV 不验证驱动程序符合这些要求，但如果驱动程序不符合，SDV 可能无法运行并且，在极少数情况下，它将报告 false 正或假负结果由于错误解释。
+以下各节介绍了驱动程序的基本要求，以及 SDV 希望其验证的驱动程序所需的特定语法。 SDV 不会验证驱动程序是否符合这些要求，但如果该驱动程序不符合，则 SDV 可能无法运行，在极少数情况下，它会报告误报或误报结果，因为有误解。
 
-### <a name="span-idbasicdrivercharacteristicsspanspan-idbasicdrivercharacteristicsspanbasic-driver-characteristics"></a><span id="basic_driver_characteristics"></span><span id="BASIC_DRIVER_CHARACTERISTICS"></span>基本的驱动程序特征
+### <a name="span-idbasic_driver_characteristicsspanspan-idbasic_driver_characteristicsspanbasic-driver-characteristics"></a><span id="basic_driver_characteristics"></span><span id="BASIC_DRIVER_CHARACTERISTICS"></span>基本驱动程序特征
 
-SDV 是能够验证驱动程序具有以下特征：
+SDV 只能验证具有以下特征的驱动程序：
 
--   SDV 验证驱动程序和用 C 编写的库和C++。
+-   SDV 验证用 C 和 c + + 编写的驱动程序和库。
 
--   SDV 仅在符合 KMDF 和 WDM 符合设备驱动程序 （函数驱动程序、 筛选器驱动程序和总线驱动程序）、 NDIS 驱动程序 （筛选器、 微型端口和协议驱动程序） 和 Storport 驱动程序上执行完全验证。
+-   SDV 仅对 KMDF 兼容的设备驱动程序和与 WDM 兼容的设备驱动程序执行完全验证， (功能驱动程序、筛选器驱动程序和总线驱动程序) 、NDIS 驱动程序 (筛选器、微型端口和协议驱动程序) 以及 Storport 驱动程序。
 
--   SDV 尝试进行有限的泛型属性的验证 (如[NullCheck](nullcheckw.md)) 上不适合上述类别的驱动程序。
+-   SDV 尝试对不属于以上类别的驱动程序的泛型属性 (（例如 [NullCheck](nullcheckw.md)) ）进行有限的验证。
 
--   SDV 可以验证通过使用 WDM 函数角色类型来声明其驱动程序回调函数的 WDM 驱动程序。 有关如何声明函数的信息，请参阅[声明函数使用函数角色类型用于 WDM 驱动程序](declaring-functions-using-function-role-types-for-wdm-drivers.md)。
+-   SDV 可以通过使用 WDM 函数角色类型来验证用于声明其驱动程序回调函数的 WDM 驱动程序。 有关如何声明函数的信息，请参阅 [使用 WDM 驱动程序的函数角色类型声明函数](declaring-functions-using-function-role-types-for-wdm-drivers.md)。
 
--   SDV 可以验证驱动程序时生成[内核模式驱动程序框架](https://docs.microsoft.com/windows-hardware/drivers/wdf/what-s-new-for-wdf-drivers)，前提是使用 SDV KMDF 回调函数角色类型声明的每个回调函数。 有关详细信息，请参阅[KMDF 驱动程序中使用函数角色类型声明函数](static-driver-verifier-kmdf-function-declarations.md)。
+-   SDV 可以验证从 [内核模式驱动程序框架](../wdf/index.md)生成的驱动程序，前提是使用 SDV-KMDF 回调函数角色类型声明每个回调函数。 有关详细信息，请参阅 [使用 KMDF 驱动程序的函数角色类型声明函数](static-driver-verifier-kmdf-function-declarations.md)。
 
--   SDV 可以验证的 NDIS 驱动程序，提供通过使用 SDV NDIS 回调函数类型批注与函数声明每个回调函数。 有关详细信息，请参阅[NDIS 驱动程序中使用函数角色类型声明函数](static-driver-verifier-ndis-function-declarations.md)。
+-   SDV 可以验证 NDIS 驱动程序，前提是使用 SDV 回调函数类型通过函数声明为每个回调函数添加注释。 有关详细信息，请参阅 [使用 NDIS 驱动程序的函数角色类型声明函数](static-driver-verifier-ndis-function-declarations.md)。
 
--   SDV 可以验证 Storport 驱动程序，前提是批注与函数声明每个回调函数。 通过使用 SDV Storport 回调函数类型执行此操作。 有关详细信息，请参阅[Storport 驱动程序中使用函数角色类型声明函数](declaring-functions-by-using-function-role-types-for-storport-drivers.md)。
+-   SDV 可以验证 Storport 驱动程序，前提是你为每个回调函数添加了函数声明。 可以使用 SDV-Storport 回调函数类型执行此操作。 有关详细信息，请参阅 [使用 Storport 驱动程序的函数角色类型声明函数](declaring-functions-by-using-function-role-types-for-storport-drivers.md)。
 
-### <a name="span-idbasicdriverrequirementsspanspan-idbasicdriverrequirementsspanbasic-driver-requirements"></a><span id="basic_driver_requirements"></span><span id="BASIC_DRIVER_REQUIREMENTS"></span>基本驱动程序要求
+### <a name="span-idbasic_driver_requirementsspanspan-idbasic_driver_requirementsspanbasic-driver-requirements"></a><span id="basic_driver_requirements"></span><span id="BASIC_DRIVER_REQUIREMENTS"></span>基本驱动程序要求
 
-若要验证 WDM 驱动程序的 SDV，为驱动程序必须：
+对于 SDV 验证 WDM 驱动程序，该驱动程序必须：
 
-- 包括 wdm.h 中或 Ntddk.h （wdm.h 中是 Ntddk.h 的子集）。
+- 包括 Wdm .h 或 Ntddk (Ntddk 是) 的子集。
 
-- 使用中所述的方法创建设备对象[WDM 设备对象和设备堆栈](https://docs.microsoft.com/windows-hardware/drivers/kernel/wdm-device-objects-and-device-stacks)。
+- 使用 [WDM 设备对象和设备堆栈](https://docs.microsoft.com/windows-hardware/drivers/kernel/wdm-device-objects-and-device-stacks)中描述的方法创建设备对象。
 
-- 已根据中的建议编写一个卸载例程[编写卸载例程](https://docs.microsoft.com/windows-hardware/drivers/kernel/writing-an-unload-routine)。
+- 有一个在 [编写卸载例程](../kernel/writing-an-unload-routine.md)时按建议编写的 unload 例程。
 
-- 声明使用中所述的函数角色类型声明的每个调度函数[使用函数角色类型声明](using-function-role-type-declarations.md)。 有关 WDM 角色类型信息和 **\_调度\_类型\_(** <em>类型</em> **)** 批注，请参阅[函数用于 WDM 驱动程序函数的角色类型声明](declaring-functions-using-function-role-types-for-wdm-drivers.md)。
+- 使用函数角色类型声明声明每个调度函数，如 [使用函数角色类型声明](using-function-role-type-declarations.md)中所述。 有关 WDM 角色类型和** \_ 调度 \_ 类型 \_ (**<em>类型</em>**) **注释的信息，请参阅[使用 WDM 驱动程序的函数角色类型声明函数](declaring-functions-using-function-role-types-for-wdm-drivers.md)。
 
-若要验证 KMDF 驱动程序的 SDV，为驱动程序必须：
+对于 SDV 验证 KMDF 驱动程序的驱动程序，该驱动程序必须：
 
--   包括 Wdf.h 和 Ntddk.h。
+-   包含 Wdf 和 Ntddk。
 
--   创建 KMDF 对象中所述[使用框架来开发驱动程序](https://docs.microsoft.com/windows-hardware/drivers/wdf/using-the-framework-to-develop-a-driver)。
+-   创建 [使用框架开发驱动程序](../wdf/using-the-framework-to-develop-a-driver.md)中所述的 KMDF 对象。
 
--   批注使用 SDV KMDF 回调函数角色类型中, 所述的每个回调函数[使用函数角色类型声明](using-function-role-type-declarations.md)。 有关受支持的角色类型的列表，请参阅[静态验证工具 KMDF 驱动程序函数声明](static-driver-verifier-kmdf-function-declarations.md)。
+-   使用 SDV-KMDF 回调函数角色注释每个回调函数，如 [使用函数角色类型声明](using-function-role-type-declarations.md)中所述。 有关支持的角色类型的列表，请参阅 [Static Driver VERIFIER KMDF Function 声明](static-driver-verifier-kmdf-function-declarations.md)。
 
-若要验证的 NDIS 驱动程序的 SDV，对于该驱动程序必须：
+对于 SDV 验证 NDIS 驱动程序，该驱动程序必须：
 
--   包括 Ndis.h 和 Ntddk.h。
+-   包括 Ndis .h 和 Ntddk。
 
--   遵循中的准则[网络设计指南](https://docs.microsoft.com/windows-hardware/drivers/network)若要创建的 NDIS 驱动程序。
+-   按照 [网络设计指南](../network/index.md) 中的准则创建 NDIS 驱动程序。
 
--   通过使用 SDV NDIS 回调函数角色类型，批注的每个回调函数中所述[使用函数角色类型声明](using-function-role-type-declarations.md)。 有关受支持的角色类型的列表，请参阅[静态验证工具 NDIS 驱动程序函数声明](static-driver-verifier-ndis-function-declarations.md)。
+-   使用 SDV 回调函数角色类型对每个回调函数添加批注，如 [使用函数角色类型声明](using-function-role-type-declarations.md)中所述。 有关支持的角色类型的列表，请参阅 [静态驱动程序验证器 NDIS 函数声明](static-driver-verifier-ndis-function-declarations.md)。
 
 此外，SDV 可以验证支持的驱动程序：
 
--   [Plug and Play](https://docs.microsoft.com/windows-hardware/drivers/kernel/implementing-plug-and-play)。
+-   [即插即用](https://docs.microsoft.com/windows-hardware/drivers/kernel/implementing-plug-and-play)。
 
--   [电源管理](https://docs.microsoft.com/windows-hardware/drivers/kernel/implementing-power-management)。
+-   [电源管理](../kernel/introduction-to-power-management.md)。
 
--   [Windows Management Instrumentation](https://docs.microsoft.com/windows-hardware/drivers/kernel/implementing-wmi) (WMI)。
+-    (WMI) [Windows Management Instrumentation](../kernel/implementing-wmi.md) 。
 
-### <a name="span-idreservedfunctionnamesspanspan-idreservedfunctionnamesspanreserved-function-names"></a><span id="reserved_function_names"></span><span id="RESERVED_FUNCTION_NAMES"></span>保留的函数名称
+### <a name="span-idreserved_function_namesspanspan-idreserved_function_namesspanreserved-function-names"></a><span id="reserved_function_names"></span><span id="RESERVED_FUNCTION_NAMES"></span>保留的函数名称
 
-SDV[验证引擎](verification-engine.md)驱动程序或库代码时使用 SDV 在内部使用的相同函数名称模式无法正常运行。
+当驱动程序或库代码使用 SDV 在内部使用的相同函数名称模式时，SDV [验证引擎](verification-engine.md) 不能正常运行。
 
-具体而言，SDV 不会正确解释代码如果：
+具体而言，在以下情况下，SDV 不会正确解释代码：
 
--   此代码包含函数名称开头\_ \_init 并后接一个或多个整数，例如\_ \_init123。
+-   此代码包括以 \_ \_ init 开头并且后跟一个或多个整数（如 init123）的函数名称 \_ \_ 。
 
--   此代码包含函数名称开头 sdv\_，如 sdv\_Func，或包含字符串\_sdv\_，如 Func\_sdv\_或 Func\_sdv\_foo。
+-   此代码包括以 sdv 开头的函数名称（ \_ 如 sdv \_ Func），或包含字符串 \_ Sdv \_ ，如 func \_ sdv \_ 或 func \_ sdv \_ foo。
 
--   库使用.def 文件重命名一个导出的函数和外部名称是库中的另一个静态函数的名称相同。
+-   库使用 .def 文件来重命名已导出的函数，外部名称与库中其他静态函数的名称相同。
 
-如果驱动程序代码或库代码包括以下这些元素，SDV 尝试验证该驱动程序或处理库，但会得到**不支持功能 (NSF)** 。 SDV 结果有关的详细信息，请参阅[解释静态驱动程序验证工具结果](interpreting-static-driver-verifier-results.md)。
-
- 
+如果驱动程序代码或库代码包含这些元素，则 SDV 会尝试验证驱动程序或处理库，但 **不支持 (NSF) **的结果。 有关 SDV 结果的详细信息，请参阅 [解释静态驱动程序验证程序结果](interpreting-static-driver-verifier-results.md)。
 
  
-
-
-
-
 

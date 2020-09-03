@@ -1,10 +1,10 @@
 ---
-title: KsIrqlDDIs 规则（）
-description: KsIrqlDDIs 规则指定内核流式处理（KS）微型端口驱动程序在正确的 IRQL 级别调用 KS DDIs。
+title: 'KsIrqlDDIs 规则 ( # A1'
+description: KsIrqlDDIs 规则指定内核流式处理 (KS) 微型端口驱动程序在正确的 IRQL 级别调用 KS DDIs。
 ms.assetid: 060CAFBC-3BA6-40C7-91A1-8AFCB082A683
 ms.date: 05/21/2018
 keywords:
-- KsIrqlDDIs 规则（）
+- 'KsIrqlDDIs 规则 ( # A1'
 topic_type:
 - apiref
 api_name:
@@ -12,21 +12,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 44e8b122a42b8d6772f0319b4ea0517b3f73b3e2
-ms.sourcegitcommit: ca5045a739eefd6ed14b9dbd9249b335e090c4e9
+ms.openlocfilehash: 2310efca18f90c08af8e4802559252464c1937e7
+ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/06/2020
-ms.locfileid: "85968166"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89385115"
 ---
-# <a name="ksirqlddis-rule-"></a>KsIrqlDDIs 规则（）
+# <a name="ksirqlddis-rule-"></a>KsIrqlDDIs 规则 ( # A1
 
 
-KsIrqlDDIs 规则指定内核流式处理（KS）微型端口驱动程序在正确的 IRQL 级别调用 KS DDIs。
+KsIrqlDDIs 规则指定内核流式处理 (KS) 微型端口驱动程序在正确的 IRQL 级别调用 KS DDIs。
 
 **驱动程序模型： KS**
 
-**找到了具有此规则的 bug 检查**： [**bug 检查0XC4：驱动程序 \_ 验证程序 \_ 检测到 \_ 冲突**](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc4--driver-verifier-detected-violation)（0x00081009）
+**Bug 检查 () 发现此规则**： [**bug 检查0XC4：驱动程序 \_ 验证器 \_ 检测到 \_ 违反**](../debugger/bug-check-0xc4--driver-verifier-detected-violation.md) (0x00081009) 
 
 
 <a name="how-to-test"></a>如何测试
@@ -43,10 +43,10 @@ KsIrqlDDIs 规则指定内核流式处理（KS）微型端口驱动程序在正�
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>若要验证此规则，请打开 "命令提示符" 窗口。 输入 Driver Verifier 命令并指定<strong>/domain ks</strong>。</p>
+<td align="left"><p>若要验证此规则，请打开 "命令提示符" 窗口。 输入 Driver Verifier 命令并指定 <strong>/domain ks</strong>。</p>
 <p>例如：</p>
 <p><strong>验证程序/domain ks</strong> [<em>options</em>] <strong>/driver</strong> <em> &lt; &gt; yourdriver</em></p>
-<p>有关详细信息，请参阅<a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier" data-raw-source="[Driver Verifier](https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier)">Driver Verifier</a>。</p></td>
+<p>有关详细信息，请参阅<a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier" data-raw-source="[Driver Verifier](./driver-verifier.md)">驱动程序验证程序</a>。</p></td>
 </tr>
 </tbody>
 </table>
@@ -54,10 +54,4 @@ KsIrqlDDIs 规则指定内核流式处理（KS）微型端口驱动程序在正�
  
 
  
-
- 
-
-
-
-
 

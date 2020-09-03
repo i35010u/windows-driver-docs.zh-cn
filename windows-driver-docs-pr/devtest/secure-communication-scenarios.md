@@ -10,12 +10,12 @@ keywords:
 - 安全通信方案 WDK WSDBIT
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: dfbe3cf3cc1dfb4094ecd2d38ae97840cd561ec1
-ms.sourcegitcommit: 67efcd26f7be8f50c92b141ccd14c9c68f4412d8
+ms.openlocfilehash: d90088f6607c335080b849cb239a0b816c7e2e8f
+ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88902529"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89384851"
 ---
 # <a name="secure-communication-scenarios"></a>安全通信方案
 
@@ -23,7 +23,7 @@ ms.locfileid: "88902529"
 
 在尝试这些方案之前，应已成功完成 [设备和服务检查](device-and-service-inspection-scenarios.md) 以及 [事件](eventing-scenarios.md) 方案。
 
-若要详细了解常规 WSDAPI 规范的符合性，请参阅 [WSDAPI 规范符合性](https://docs.microsoft.com/windows/win32/wsdapi/wsdapi-specification-compliance)。
+若要详细了解常规 WSDAPI 规范的符合性，请参阅 [WSDAPI 规范符合性](/windows/win32/wsdapi/wsdapi-specification-compliance)。
 
 |案例|客户端操作|服务器操作|通过失败的条件|
 |----|----|----|----|

@@ -4,37 +4,32 @@ description: GPIO 测试自动化使用 MITT 平台。
 ms.assetid: F6C4FCC2-210B-4B6E-9D1A-77842E470025
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 1feb2891fd4820e0396b61b013253f0855bc4bb7
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 9ecad1ed5bdef040ed45ea810ee94e49ea8eeae0
+ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67373557"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89384251"
 ---
 # <a name="test-automation-tools"></a>测试自动化工具
 
 
 GPIO 测试自动化使用 MITT 平台。
 
-若要开始，请参阅[GPIO 测试中 MITT](https://docs.microsoft.com/windows-hardware/drivers/spb/gpio-tests-in-mitt)。 下载安装程序，解压缩其内容，并阅读**自述文件**有关该工具的一般概述的文件。
+若要开始，请参阅 [MITT 中的 GPIO 测试](../spb/gpio-tests-in-mitt.md)。 下载安装程序，解压缩其内容，并阅读 **自述** 文件以获取该工具的一般概述。
 
-若要连接到待测试系统的工具，GPIO 按钮和指示符引脚是必需的。 看板设置和安装其相关的程序包后，可以使用它在以下两种方式：
+若要将该工具连接到受测系统，需要 GPIO 按钮和指示器引脚。 安装主板并安装其相关程序包后，可以通过以下任一方式使用它：
 
--   运行现有的自动化测试 GPIO 按钮和指示符的方案。
--   使用模式生成器来浏览其他方案。
+-   针对 GPIO 按钮和指示器方案运行现有的自动化测试。
+-   使用模式生成器来探索其他方案。
 
-测试二进制文件是 MITT 工具安装程序的一部分。 若要开始测试，按照 MITT 文档中的"正在运行的 GPIO 自动化"部分下的说明。
+测试二进制文件是 MITT 工具安装程序的一部分。 若要开始测试，请按照 MITT 文档的 "运行 GPIO 自动化" 一节中的说明进行操作。
 
-MITT 工具可直接生成 GPIO 冲量为模拟各种按钮按下操作 （按向下按住按下了按钮并松开按钮） 的等效项所需的。 测试[SimpleIo](https://go.microsoft.com/fwlink/p/?linkid=296486)-基于和可以检测到问题，如即将同步 power 转换后的指标。
+MITT 工具可以直接生成用于模拟) 各种按钮按下操作的等效项的 GPIO impulses (按下，按住按钮按下并松开按钮。 这些测试是基于 [SimpleIo](https://go.microsoft.com/fwlink/p/?linkid=296486)的，可以检测到问题，例如在电源转换后出现不同步的指示器。
 
-**请注意**   MITT 平台可以轻松地应用自定义的输入的模式。 有关如何生成这些信息，请参阅说明的 MITT 自述文件。
-
- 
+**注意**   MITT 平台可以轻松容纳自定义的输入模式。 有关如何生成这些文件的说明，请参阅 MITT 自述文件。
 
  
 
  
-
-
-
 

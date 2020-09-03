@@ -5,15 +5,15 @@ ms.assetid: 270b8821-6322-4694-83eb-de319197dd6a
 keywords:
 - PCMCIA WDK 总线，属性内存
 - 属性内存 WDK PCMCIA 总线
-- 属性内存 WDK PCMCIA 总线，有关属性内存
+- 属性内存 WDK PCMCIA 总线，关于属性内存
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ca963b57979593242ee623ecbfd4e91f701875b5
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 4e5131c1eded37b8dfe2fa9e88a44ebf5ac50d74
+ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67353536"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89385107"
 ---
 # <a name="access-attribute-memory-of-a-pcmcia-device"></a>访问 PCMCIA 设备的属性内存
 
@@ -21,33 +21,27 @@ ms.locfileid: "67353536"
 
 
 
-本部分介绍如何在 Microsoft Windows 2000 和更高版本操作系统的 PCMCIA 设备的驱动程序可以访问 PCMCIA 设备的属性内存：
+本部分介绍了 Microsoft Windows 2000 和更高版本操作系统中的 PCMCIA 设备驱动程序如何可以访问 PCMCIA 设备的属性内存：
 
--   [访问属性的 PCMCIA 设备内存的要求](https://docs.microsoft.com/windows-hardware/drivers/pcmcia/requirements-for-accessing-attribute-memory-of-a-pcmcia-device)
+-   [访问 PCMCIA 设备的属性内存的要求](./requirements-for-accessing-attribute-memory-of-a-pcmcia-device.md)
 
--   [通过使用插 I/O 请求访问 PCMCIA 属性内存](https://docs.microsoft.com/windows-hardware/drivers/pcmcia/access-pcmcia-attribute-memory-by-using-a-plug-and-play-i-o-request)
+-   [使用即插即用 I/O 请求访问 PCMCIA 属性内存](./access-pcmcia-attribute-memory-by-using-a-plug-and-play-i-o-request.md)
 
-    这是一个简单的方法对于大多数情况下，已足够，但只能运行在 IRQL&lt;调度\_级别。
+    这是一种非常适合大多数用途的简单方法，但只能以 IRQL &lt; 调度级别运行 \_ 。
 
--   [通过使用总线访问 PCMCIA 属性内存\_接口\_标准接口](https://docs.microsoft.com/windows-hardware/drivers/pcmcia/access-pcmcia-attribute-memory-by-using-a-bus-interface-standard-inter)
+-   [使用总线 \_ 接口标准界面访问 PCMCIA 属性内存 \_](./access-pcmcia-attribute-memory-by-using-a-bus-interface-standard-inter.md)
 
-    此方法消除了 I/O 请求的开销，并可以运行在 IRQL &lt;= 调度\_级别
+    此方法可消除 i/o 请求的开销，并可运行 IRQL &lt; = 调度 \_ 级别
 
--   [通过永久内存窗口访问 PCMCIA 属性内存](https://docs.microsoft.com/windows-hardware/drivers/pcmcia/access-pcmcia-attribute-memory-through-a-permanent-memory-window)
+-   [通过永久内存窗口访问 PCMCIA 属性内存](./access-pcmcia-attribute-memory-through-a-permanent-memory-window.md)
 
-    驱动程序的 ISR 可以使用此方法直接在 IRQL DIRQL 运行时访问内存。
+    驱动程序的 ISR 可以使用此方法在 IRQL DIRQL 运行时直接访问内存。
 
--   [通过使用 PCMCIA 访问 PCMCIA 属性内存\_接口\_标准接口](https://docs.microsoft.com/windows-hardware/drivers/pcmcia/access-pcmcia-attribute-memory-by-using-a-pcmcia-interface-standard-in)
+-   [使用 PCMCIA \_ 接口标准界面访问 Pcmcia 属性内存 \_](./access-pcmcia-attribute-memory-by-using-a-pcmcia-interface-standard-in.md)
 
-    内存卡驱动程序可以使用此方法，在 IRQL &lt;= 调度\_级别。
+    内存卡驱动程序可以使用以下方法： IRQL &lt; = 调度 \_ 级别。
 
-这些方法支持通过*pcmcia.sys*，在 Windows 2000 和更高版本操作系统总线 PCMCIA 系统驱动程序。
-
- 
+*pcmcia.sys*，在 Windows 2000 和更高版本的操作系统中，PCMCIA 总线的系统驱动程序支持这些方法。
 
  
-
-
-
-
 

@@ -5,17 +5,17 @@ ms.assetid: 79589ECE-9DF9-40C8-897D-95B432C4C9C8
 keywords:
 - NFC
 - 近场通信
-- proximity
+- 近程
 - 近场邻近感应
 - NFP
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8b8a7391cb55374115038552cfef7748b1d5a085
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 43469381e433670826035d2e0f1502fc933de2b3
+ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72843463"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89385007"
 ---
 # <a name="windowsuri-protocol"></a>WindowsUri 协议
 
@@ -29,7 +29,7 @@ ms.locfileid: "72843463"
 -   如果近程技术被播发为 NFC，则驱动程序必须将对 "WindowsUri" 类型的订阅视为等效于 "NDEF： wkt" 中 URI 有效负载的订阅。U "或" NDEF： wkt "。Sp "消息。
     -   驱动程序还必须在 "NDEF： wkt" 中将 "WindowsUri" 订阅与 URI 有效负载相匹配。Sp "消息。 对 "NDEF： wkt" 的所有订阅。Sp "必须使用" NDEF： wkt "的完整有效负载填充。Sp "消息。 如果 NDEF 消息同时包含智能海报和非嵌套 URI 记录，则必须忽略 URI 记录。
     -   驱动程序必须仅将此消息的 URI 字符串负载返回到此类型的订阅服务器。 驱动程序不得将完整的 NDEF 消息返回到此类型的订阅服务器。
--   如果近程技术被播发为 NFC，则驱动程序必须在 \[NFC URI\]中指定的 NDEF 消息中封装每个 "WindowsUri" 发布的负载。
+-   如果近程技术被播发为 NFC，则驱动程序必须在 NDEF 消息中封装每个 "WindowsUri" 发布的负载，如 nfc URI 中所指定 \[ \] 。
 -   提供程序还可以支持其他兼容方案。
 
 ## <a name="publications-for-windowsuriwritetag"></a>"WindowsUri： WriteTag" 的发布
@@ -39,13 +39,12 @@ ms.locfileid: "72843463"
 
 ### <a name="required-actions"></a>必需的措施
 
--   其他地方所述的常见 "\*： WriteTag" 要求适用。
+-   \*其他地方所述的常见 "： WriteTag" 要求适用。
 -   上述 "WindowsUri" 发布要求也适用于 "WindowsUri： WriteTag" 发布。
 
  
 
  
 ## <a name="related-topics"></a>相关主题
-[NFC 设备驱动程序接口（DDI）概述](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)  
-[近字段邻近 DDI 引用](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)  
-
+[NFC 设备驱动程序接口 (DDI) 概述](/windows-hardware/drivers/ddi/index)  
+[近字段邻近 DDI 引用](/windows-hardware/drivers/ddi/index)

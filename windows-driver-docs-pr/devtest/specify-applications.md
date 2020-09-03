@@ -6,12 +6,12 @@ keywords:
 - 在设备元数据创作向导中指定应用程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c3e54cce69d6037e97d7498abef377698f27acfd
-ms.sourcegitcommit: 17c1bbc5ea0bef3bbc87794b030a073f905dc942
+ms.openlocfilehash: c56e81e495ae96da2645ec5b80417eb6da74ff0b
+ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88802525"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89384317"
 ---
 # <a name="specify-applications-in-the-device-metadata-authoring-wizard"></a>在设备元数据创作向导中指定应用程序
 
@@ -23,10 +23,10 @@ ms.locfileid: "88802525"
 
 1. 单击“应用程序”**** 选项卡。
 2. 填写以下字段：
-   1. **包名称**。 在应用程序清单的 Package 元素中的 Identity 元素中输入 Name 属性的值。 在将应用程序提交到 Microsoft Store 后，应获取包名称，因为 Microsoft Store 提交过程会更改包名称。 若要详细了解如何将应用与 Microsoft Store 相关联，并将更新的值复制到应用程序清单中，请参阅 [生成 UWP 设备应用](https://docs.microsoft.com/windows-hardware/drivers/devapps/the-workflow) 。
+   1. **包名称**。 在应用程序清单的 Package 元素中的 Identity 元素中输入 Name 属性的值。 在将应用程序提交到 Microsoft Store 后，应获取包名称，因为 Microsoft Store 提交过程会更改包名称。 若要详细了解如何将应用与 Microsoft Store 相关联，并将更新的值复制到应用程序清单中，请参阅 [生成 UWP 设备应用](../devapps/the-workflow.md) 。
    2. **发布者**。 在应用程序清单的 Package 元素中的 Identity 元素中输入 "发布服务器" 属性的值。 发布者名称应与用于对包进行签名的开发人员证书和元数据的名称相同。
    3. **应用 ID**。 在应用程序清单的应用程序元素中输入 ID 属性的值。
-   4. **通知处理程序**。 有关通知处理程序的信息，请参阅 [设备元数据架构参考](https://docs.microsoft.com/previous-versions/windows/hardware/metadata/ff541452(v=vs.85))。
+   4. **通知处理程序**。 有关通知处理程序的信息，请参阅 [设备元数据架构参考](/previous-versions/windows/hardware/metadata/ff541452(v=vs.85))。
 
 **包名称**、**发布者**和**应用 ID**必须与应用包 appxmanifest.xml 中的信息匹配。
 
@@ -69,7 +69,7 @@ ms.locfileid: "88802525"
 若要指定特权应用程序，请在 **特权应用程序**下填写以下字段：
 
 >[!NOTE]
->有关特权设备接口属性键的详细信息，请参阅 [DEVPKEY \_ DeviceInterface \_ 限制](https://docs.microsoft.com/windows-hardware/drivers/install/devpkey-deviceinterface-restricted)。
+>有关特权设备接口属性键的详细信息，请参阅 [DEVPKEY \_ DeviceInterface \_ 限制](../install/devpkey-deviceinterface-restricted.md)。
 
 - **包名称**。 在应用程序清单的 Package 元素中的 Identity 元素中输入 Name 属性的值。
 - **发布者**。 在应用程序清单的 Package 元素中的 Identity 元素中输入 "发布服务器" 属性的值。
@@ -150,4 +150,4 @@ ms.locfileid: "88802525"
 
 ## <a name="related-topics"></a>相关主题
 
-[设备元数据架构引用](https://docs.microsoft.com/previous-versions/windows/hardware/metadata/dn465877(v=vs.85))
+[设备元数据架构引用](/previous-versions/windows/hardware/metadata/dn465877(v=vs.85))

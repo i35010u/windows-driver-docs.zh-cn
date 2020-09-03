@@ -1,53 +1,53 @@
 ---
 title: MITT 中的电容式触控测试
-description: MITT 软件程序包中的电容式触摸测试需要 MCATT （Microsoft 电容式应用程序测试工具）。
+description: MITT 软件包中的电容式触控测试需要 MCATT (Microsoft 电容式应用程序测试工具) 。
 ms.assetid: 86E4D489-7DC3-4765-85BE-3706B3CA6C0B
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8c42687c2162a9457088ea80d6261111a2bb0532
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 5c4b8f35c7707f6d7db12f37f51e9a48c2c6042f
+ms.sourcegitcommit: c766ab74e32eb44795cbbd1a4f352d3a6a9adc14
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67369595"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89389593"
 ---
 # <a name="capacitive-touch-tests-in-mitt"></a>MITT 中的电容式触控测试
 
 
 **上次更新时间**
 
--   2015 年 1 月
+-   2015年1月
 
 **适用于：**
 
--   Windows 8.1
+-   Windows 8.1
 
-MITT 软件程序包中的电容式触摸测试需要 MCATT （Microsoft 电容式应用程序测试工具）。 它是用于验证基于电容式触控硬件 （触摸板和触摸屏） 自动化工具。 MCATT 包括了用于编程 MCATT 设备和自动的测试的简单接口。 可以使用测试来检测虚影点或确定第一个触摸屏输入传播后系统唤醒时间表。
+MITT 软件包中的电容式触控测试需要 MCATT (Microsoft 电容式应用程序测试工具) 。 它是一个自动化工具，用于验证基于电容式的触摸硬件 (触摸板和 touchscreens) 。 MCATT 包含一个用于对 MCATT 设备进行编程和自动测试的简单接口。 你可以使用这些测试来检测虚影点，或确定第一个触摸输入在系统唤醒后传播的时间表。
 
-您可以使用这些测试用例 MCATT:
+对于这些测试用例，可以使用 MCATT：
 
 -   压力测试
--   目标的延迟度量
--   如在板上执行输入时的电源转换 SimpleIo/设备基础方案。
+-   目标延迟度量
+-   SimpleIo/设备基础方案，例如在 pad 上执行输入时的电源转换。
 
-## <a name="before-you-begin"></a>开始之前...
+## <a name="before-you-begin"></a>开始之前 .。。
 
 
--   获取 MITT 看板。 请参阅[购买硬件使用 MITT](https://docs.microsoft.com/windows-hardware/drivers/spb/multi-interface-test-tool--mitt--)。
--   获取触摸模拟器板和带外电缆连接到适配器。
--   获取有 40 pin 适配器以 MITT 板连接到触摸模拟器板 MCATT 扩展板。
--   [下载 MITT 软件包](https://docs.microsoft.com/previous-versions/dn919810(v=vs.85))。
--   安装 MITT 固件 MITT 板上。 请参阅[开始使用 MITT](https://docs.microsoft.com/windows-hardware/drivers/spb/get-started-with-mitt---)。
+-   获取 MITT 板。 请参阅 [购买使用 MITT 的硬件](./multi-interface-test-tool--mitt--.md)。
+-   获取触控模拟器板和带缆线连接到适配器。
+-   获取一个 MCATT 扩展板，其中包含40针适配器，以将 MITT 板连接到触控模拟器板。
+-   [下载 MITT](/previous-versions/dn919810(v=vs.85))软件包。
+-   在 MITT 板上安装 MITT 固件。 请参阅 [MITT 入门](./get-started-with-mitt---.md)。
 
-## <a name="hardware-setup"></a>硬件安装
+## <a name="hardware-setup"></a>硬件设置
 
 
 ![mcatt 安装程序](images/mcatt-hardware-setup.png)
 
-1.  连接到 40 pin 适配器 MITT 板。
-2.  触摸模拟器板连接到适配器。
-3.  使用 USB 电缆，将其连接到主计算机 MITT 板。
-4.  使用 USB 电缆连接到主机系统的待测试系统。 这可以是一个 A USB 电缆或从待测试系统的完全连接到待测试设备以有线方式。
+1.  将 MITT 板连接到40针适配器。
+2.  将触摸模拟器 pad 连接到适配器。
+3.  使用 USB 电缆将 MITT 板连接到主计算机。
+4.  使用 USB 电缆将正在测试的系统连接到主机系统。 这可以是一种从 A 到 A 的 USB 电缆，也可以是一条连接在受测系统与受测设备之间的连接。
 
     ![mcatt 连接](images/mcatt-setup.png)
 
@@ -56,43 +56,43 @@ MITT 软件程序包中的电容式触摸测试需要 MCATT （Microsoft 电容�
 
 若要手动运行 MCATT 测试，请执行以下任务：
 
-1.  将复制到 mittsimpleioaction.dll:\[WDTF 目录\]\\操作\\SimpleIO
-2.  运行\[WDTF 目录\]\\UnRegisterWDTF.exe
-3.  运行\[WDTF 目录\]\\RegisterWDTF.exe
+1.  将 mittsimpleioaction.dll 复制到： \[ WDTF directory \] \\ Actions \\ SimpleIO
+2.  运行 \[ WDTF 目录 \] \\UnRegisterWDTF.exe
+3.  运行 \[ WDTF 目录 \] \\RegisterWDTF.exe
 
-## <a name="example-sending-input-sequence"></a>例如：发送输入的序列
+## <a name="example-sending-input-sequence"></a>示例：发送输入序列
 
 
-可以通过编程看板，在循环中运行指定的接触点序列。
+可以将此板编程为在循环中运行指定的触摸点序列。
 
-在任何给定时间的触摸点的脚本控件提供模拟。 该脚本可以描述请逐个框架的接触点来模拟用户笔势，例如点击，pan （慢速拖动） 或笔锋 (加速 pan) 集。
+在任意给定时间，该脚本控制哪些触点提供模拟。 此脚本可以逐个描述一组触摸点，以模拟用户手势（如点击、平移 (缓慢拖动) 或笔锋 (加速平移) 。
 
-下面是示例，用于生成测试模块中包含一个简单的平移手势。 此示例测试适用于具有此编号约定的 5 x 8 看板。
+下面是一个示例，用于生成包含在测试模块中的简单平移手势。 此示例测试适用于具有此编号约定的5x8 板。
 
 ![mcatt 模式](images/mcatt-pattern.png)
 
 运行以下命令：
 
-**Muttutil.exe -SetChannel 00**
+**Muttutil.exe SetChannel 00**
 
-**Muttutil.exe -WriteData 0000**
+**Muttutil.exe WriteData 0000**
 
-**Muttutill.exe –SetChannel 02**
+**Muttutill.exe – SetChannel 02**
 
-**Muttutil.exe – WriteDataFromFile Example.txt**
+**Muttutil.exe-WriteDataFromFile Example.txt**
 
-**Muttutil.exe –SetChannel 00**
+**Muttutil.exe – SetChannel 00**
 
-**Muttutil.exe –Writedata 0004**
+**Muttutil.exe – Writedata 0.0004**
 
--   **SetChannel** 00 指示控制通道将接收数据。
--   **WriteData** 0000 暂停所有测试模块。
--   **SetChannel**选项通过指定 02 选择 MCATT 模块。
--   **WriteDataFromFile**要发送到 MCATT 模块的示例输入文件的内容文件的名称。
--   **SetChannel**通道将与 00，切换回该控件接收数据。
--   **Writedata** 0004 MCATT 序列运行文件中使用。 如果你想要循环的序列，而不是 0004 使用 000 C。
+-   **SetChannel** with 00 表示控制通道将接收数据。
+-   **WriteData** 和0000将暂停所有测试模块。
+-   **SetChannel** 选项，方法是指定02以选择 MCATT 模块。
+-   **WriteDataFromFile** ，其中包含要将示例输入文件的内容发送到 MCATT 模块的文件的名称。
+-   **SetChannel** 与00一起切换回控制通道将接收数据。
+-   **Writedata** with 0.0004 在文件中运行 MCATT 序列。 如果希望序列循环，请使用000C 而不是0.0004。
 
-以下是示例模式：
+下面是示例模式：
 
 ``` syntax
 'h00028480
@@ -114,10 +114,7 @@ MITT 软件程序包中的电容式触摸测试需要 MCATT （Microsoft 电容�
 'b0000000000000000000000000000000000000000
 ```
 
-在前面的示例中，第一行设置到 0x00028480，模式速率或每行 164,992 微秒为单位。 其余行用于指示已连接到地面板和浮动的面板。 有 40 面板，因此每一行都是 40 位长时间使用位 39 左侧和右侧的行和第 0 位行右侧。 此模式以通过按下上填充 26、 27、 38 和 39，通过设置这些位为"1"，然后将按从看板的左侧移到的看板的创建模式使用示例模式作为起始点的权限。 可以创建并使用编辑 MCATT 模式文件[MCATT 模式编辑器](https://docs.microsoft.com/previous-versions/dn919809(v=vs.85))。
+在前面的示例中，第一行将模式速率设置为0x00028480，或每行164992微秒。 其余行用于指示连接到地面的垫和浮动的垫。 有40的 pad，因此每行的长度为40位，行的左侧有位39，位0位于行右侧。 此模式通过以下方式开始：按 39 38 下，将这些位设置为 "1"，然后从棋盘的左侧向右移动，以创建模式，使用该示例模式作为起始点即可。 可以通过使用 [MCATT 模式编辑器](/previous-versions/dn919809(v=vs.85))来创建和编辑 MCATT 模式文件。
 
 ## <a name="related-topics"></a>相关主题
-[使用多接口测试工具 (MITT) 进行测试](https://docs.microsoft.com/windows-hardware/drivers/spb/testing-with-multi-interface-test-tool--mitt-)  
-
-
-
+[通过多接口测试工具进行测试 (MITT) ](./testing-with-multi-interface-test-tool--mitt-.md)

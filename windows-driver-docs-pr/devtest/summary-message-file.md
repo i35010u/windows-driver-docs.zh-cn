@@ -10,12 +10,12 @@ keywords:
 - sum 文件
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 785baa8f875ea0567ec22bcbaf8b1b5621f2a785
-ms.sourcegitcommit: cbcb712a9f1f62c7d67e1b98097a0d8d24bd0c71
+ms.openlocfilehash: b25bcba43d22216fe50b2e5f5f5be98cad3c9ee5
+ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83769713"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89384509"
 ---
 # <a name="summary-message-file"></a>摘要消息文件
 
@@ -23,7 +23,7 @@ ms.locfileid: "83769713"
 ## <span id="ddk_summary_message_file_tools"></span><span id="DDK_SUMMARY_MESSAGE_FILE_TOOLS"></span>
 
 
-摘要消息文件是一个文本文件，其中包含有关软件跟踪的信息。 在处理跟踪日志或跟踪会话中的消息后，Tracefmt 创建*摘要消息（sum）文件*。
+摘要消息文件是一个文本文件，其中包含有关软件跟踪的信息。 Tracefmt 在处理跟踪日志或跟踪会话中的消息之后* ( 创建摘要消息) 文件。*
 
 摘要消息文件包含统计摘要中的以下数据：
 
@@ -39,15 +39,15 @@ ms.locfileid: "83769713"
 跟踪消息在跟踪中的实例数。
 
 <span id="EventName"></span><span id="eventname"></span><span id="EVENTNAME"></span>**名**  
-跟踪消息的[消息 GUID](message-guid.md)的友好名称。 默认情况下，消息 GUID 的友好名称是在其中生成跟踪提供程序的目录的名称，但您可以通过使用 **-p**参数运行 WPP 或 Tracewpp 来指定备用的友好名称 \_ 。 有关信息，请参阅运行 \_ WPP 选项。 （**事件名称**与[跟踪消息前缀](trace-message-prefix.md)中的 %1 变量具有相同的值。）
+跟踪消息的 [消息 GUID](message-guid.md) 的友好名称。 默认情况下，消息 GUID 的友好名称是在其中生成跟踪提供程序的目录的名称，但您可以通过使用 **-p** 参数运行 WPP 或 Tracewpp.exe 来指定备用的友好名称 \_ 。 有关信息，请参阅运行 \_ WPP 选项。  (**事件名称** 与 [跟踪消息前缀](trace-message-prefix.md)中的 %1 变量具有相同的值。 ) 
 
 <span id="EventType"></span><span id="eventtype"></span><span id="EVENTTYPE"></span>**EventType**  
-跟踪消息的友好名称。 默认情况下，跟踪消息的友好名称是源文件的名称和生成跟踪消息的代码的行号。 （**事件**1 与[跟踪消息前缀](trace-message-prefix.md)中的 %2 变量具有相同的值。）
+跟踪消息的友好名称。 默认情况下，跟踪消息的友好名称是源文件的名称和生成跟踪消息的代码的行号。  (**事件** 1 与 [跟踪消息前缀](trace-message-prefix.md)中的 %2 变量具有相同的值。 ) 
 
 <span id="GUID"></span><span id="guid"></span>**GUID.EMPTY**  
 跟踪消息的消息 GUID。
 
-下面的示例演示由 Tracedrv 生成的 testtrace 跟踪日志的摘要消息文件，该文件是一个用于跟踪的示例驱动程序。 [TraceDrv](https://github.com/Microsoft/Windows-driver-samples/tree/master/general/tracing/tracedriver)是设计用于软件跟踪的示例驱动程序，可从 GitHub 上的[Windows 驱动程序示例](https://github.com/Microsoft/Windows-driver-samples)存储库获取。
+下面的示例演示由 Tracedrv 生成的 testtrace 跟踪日志的摘要消息文件，该文件是一个用于跟踪的示例驱动程序。 [TraceDrv](https://github.com/Microsoft/Windows-driver-samples/tree/master/general/tracing/tracedriver)是设计用于软件跟踪的示例驱动程序，可从 GitHub 上的 [Windows 驱动程序示例](https://github.com/Microsoft/Windows-driver-samples) 存储库获取。
 
 ```
 Files Processed:
@@ -65,15 +65,9 @@ Elapsed Time            122 sec
 +---------------------------------------------------------------------------------+
 ```
 
-上述摘要显示 Tracedrv 生成标头消息和两条跟踪消息。 [**DoTraceMessage**](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff544918(v=vs.85))语句在第264行生成一个跟踪消息，另一个跟踪消息由第258行的 DoTraceMessage 语句生成。 在此跟踪日志中，有1700个实例的第一个跟踪消息和17个实例的第二个跟踪消息。
+上述摘要显示 Tracedrv 生成标头消息和两条跟踪消息。 [**DoTraceMessage**](/previous-versions/windows/hardware/previsioning-framework/ff544918(v=vs.85))语句在第264行生成一个跟踪消息，另一个跟踪消息由第258行的 DoTraceMessage 语句生成。 在此跟踪日志中，有1700个实例的第一个跟踪消息和17个实例的第二个跟踪消息。
 
 摘要消息文件主要用于调试软件跟踪，其格式可能会更改。
 
  
-
- 
-
-
-
-
 

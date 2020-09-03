@@ -6,23 +6,23 @@ ms.date: 04/20/2017
 ms.localizationpriority: medium
 f1_keywords:
 - C30033
-ms.openlocfilehash: cbaa3eddbcda501e3432df093ed0a61308977672
-ms.sourcegitcommit: bc3d8a2a01dbe2074d3581bf687f003b3849b647
+ms.openlocfilehash: 07e9f5cd969d873f3fb4d795ce0470dbd1434a14
+ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89285395"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89384581"
 ---
 # <a name="c30033"></a>C30033
 
 
-警告 C30033：在使用 [池 \_ NX \_ OPTIN](https://docs.microsoft.com/windows-hardware/drivers/kernel/single-binary-opt-in-pool-nx-optin)编译的驱动程序中检测到可执行的分配。 已确定此驱动程序在运行时由另一个驱动程序加载。 请验证加载驱动程序是否在其 DriverEntry 中调用了 **ExInitializeDriverRuntime (*DrvRtPoolNxOptIn*) ** 。
+警告 C30033：在使用 [池 \_ NX \_ OPTIN](../kernel/single-binary-opt-in-pool-nx-optin.md)编译的驱动程序中检测到可执行的分配。 已确定此驱动程序在运行时由另一个驱动程序加载。 请验证加载驱动程序是否在其 DriverEntry 中调用了 **ExInitializeDriverRuntime (*DrvRtPoolNxOptIn*) ** 。
 
 禁止的 \_ 内存 \_ 分配可能会 \_ \_ 加载不安全的 \_ 驱动程序 \_
 
 已确定这是由另一个驱动程序加载的 DLL，因此没有完整的初始化函数。 验证加载驱动程序是否为：
 
--   使用 [POOL \_ NX \_ OPTIN](https://docs.microsoft.com/windows-hardware/drivers/kernel/single-binary-opt-in-pool-nx-optin)= 1 编译
+-   使用 [POOL \_ NX \_ OPTIN](../kernel/single-binary-opt-in-pool-nx-optin.md)= 1 编译
 -   在其初始化函数中调用**ExInitializeDriverRuntime (*DrvRtPoolNxOptIn*) **
 
 如果加载驱动程序指定了这些正确的，则可以忽略此警告。
@@ -95,10 +95,4 @@ ExAllocatePoolWithTag(NonPagedPoolNx, numberOfBytes, 'xppn');
 ```
 
  
-
- 
-
-
-
-
 

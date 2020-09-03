@@ -5,18 +5,18 @@ keywords:
 - 智能卡资源管理器中的 IOCTLs 序列示例，包括启动连接和断开连接
 - NFC
 - 近场通信
-- proximity
+- 近程
 - 近场邻近感应
 - NFP
 description: 提供智能卡资源管理器中 IOCTLs 序列的示例，包括启动、连接和断开连接。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fff748d7c696c5c0abf46e539a65c92aca542d89
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 56c6f73dec1d6ab1678fc01694da8e9be453f378
+ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72843414"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89384859"
 ---
 # <a name="example-sequence"></a>示例序列
 
@@ -32,38 +32,38 @@ ms.locfileid: "72843414"
 
 3.  确定读取器名称。
 
-    -   IOCTL\_智能卡\_在放弃\_ATTR 上获取\_特性\_供应商\_名称、放弃\_属性\_供应商\_IFD\_类型和放弃\_ATTR\_设备\_单元
+    -   IOCTL \_ 智能卡 \_ 获取 \_ 放弃属性 \_ \_ 供应商 \_ 名称、放弃属性 \_ \_ 供应商 \_ IFD \_ 类型和放弃 \_ attr \_ 设备 \_ 的属性
 
 4.  确定读取器特征。
-    -   IOCTL\_智能卡\_在\_放弃上获取\_特性\_特性
+    -   IOCTL \_ 智能卡 \_ 获取 \_ 放弃属性 \_ \_ 特征的属性
 
 5.  启动卡状态监视器。
-    -   IOCTL\_智能卡\_\_存在–等待智能卡到达。
+    -   \_存在 IOCTL \_ 智能 \_ 卡–等待智能卡到达。
 
-    -   IOCTL\_智能卡\_\_不存在–等待智能卡离开。
+    -   \_缺少 IOCTL \_ 智能 \_ 卡–等待智能卡离开。
 
-因为我们不支持放弃\_吞并，放弃\_通电状态，所以重置功能是不相关的。
+因为我们不支持放弃 \_ 吞并，放弃供电状态，所以重置功能是不相关的 \_ 。
 
 ## <a name="connect-sequence"></a>连接顺序
 
 
 1.  循环起点。
 
-2.  IOCTL\_智能卡\_获取\_状态
+2.  IOCTL \_ 智能卡 \_ 获取 \_ 状态
 
-    -   大小写放弃\_未知和放弃\_不存在，不执行任何操作
+    -   Case 放弃 \_ UNKNOWN 和放弃 \_ 不存在，不执行任何操作
 
-    -   Case 放弃\_存在，吞并卡
+    -   Case 放弃 \_ ，吞并卡
 
-    -   Case 放弃\_吞并，冷重置
+    -   Case 放弃 \_ 吞并，冷重置
 
-    -   放弃\_电源、热重置
+    -   放弃 \_ 电源、热重置的情况
 
-    -   Case 放弃\_流通，确定卡 ATR
+    -   Case 放弃 \_ 流通，确定卡 ATR
 
-    -   Case 放弃\_特定的，确定卡 ATR 和协议
+    -   放弃特定情况下 \_ ，确定卡 ATR 和协议
 
-3.  IOCTL\_智能卡\_集\_协议
+3.  IOCTL \_ 智能卡 \_ 设置 \_ 协议
 
 ## <a name="disconnect-sequence"></a>断开连接序列
 
@@ -72,17 +72,17 @@ ms.locfileid: "72843414"
 
 2.  循环起点。
 
-3.  IOCTL\_智能卡\_获取\_状态
+3.  IOCTL \_ 智能卡 \_ 获取 \_ 状态
 
-    -   案例放弃\_特定、放弃\_流通、放弃\_已接通电源，并将电源关闭
+    -   案例放弃 \_ 特定，放弃 \_ 流通，放弃， \_ 设置电源关闭
 
-    -   Case 放弃\_吞并，放弃\_存在，不执行任何操作
+    -   Case 放弃 \_ 吞并，放弃 \_ 存在，不执行任何操作
 
-    -   Case 放弃\_不存在，放弃\_未知，不执行任何操作
+    -   Case 放弃 \_ 不存在，放弃 \_ 未知，不执行任何操作
 
  
 
  
 ## <a name="related-topics"></a>相关主题
-[NFC 设备驱动程序接口（DDI）概述](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)  
-[智能卡 DDI 和命令参考](https://docs.microsoft.com/previous-versions/dn905601(v=vs.85))  
+[NFC 设备驱动程序接口 (DDI) 概述](/windows-hardware/drivers/ddi/index)  
+[智能卡 DDI 和命令参考](/previous-versions/dn905601(v=vs.85))

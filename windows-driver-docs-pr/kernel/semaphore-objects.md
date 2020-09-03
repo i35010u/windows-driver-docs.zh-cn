@@ -14,12 +14,12 @@ keywords:
 - 等待状态 WDK 内核
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 99318cdf70a2808836be513af6e72d1758744ad2
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: a280e97ec4cfb04eaafc465c2eb2fac6faed87c8
+ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89191924"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89402838"
 ---
 # <a name="semaphore-objects"></a>信号灯对象
 
@@ -53,7 +53,7 @@ ms.locfileid: "89191924"
 
     这种类型的信号量称为 *计数信号量* ，因为将信号量设置为 "已终止" 状态的例程还指定了多少个等待线程可以将其状态从 "等待" 状态更改为 "就绪"。 此类等待线程的数量可能是初始化信号量时设置的 *限制* ，或者是小于此预设 *限制*的某个数字。
 
-很少有设备或中间驱动程序具有单个驱动程序创建的线程;甚至更少的一组线程可能会等待获取或释放信号量。 系统提供的几个驱动程序使用信号量对象，而此类对象只使用二进制信号量。 尽管二进制信号量在功能上可能与 [互斥体对象](mutex-objects.md)相似，但二进制信号量不提供对在 SMP 计算机中运行的系统线程的死锁的内置保护。
+很少有设备或中间驱动程序具有单个驱动程序创建的线程;甚至更少的一组线程可能会等待获取或释放信号量。 系统提供的几个驱动程序使用信号量对象，而此类对象只使用二进制信号量。 尽管二进制信号量在功能上可能与 [互斥体对象](introduction-to-mutex-objects.md)相似，但二进制信号量不提供对在 SMP 计算机中运行的系统线程的死锁的内置保护。
 
 在加载了具有初始化信号量的驱动程序后，它可以在保护共享资源的信号量上同步操作。 例如，具有设备专用线程的驱动程序（如系统软盘控制器驱动程序）可在信号量上同步 IRP 队列，如前图所示：
 

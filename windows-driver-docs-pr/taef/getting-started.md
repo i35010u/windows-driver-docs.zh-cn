@@ -4,12 +4,12 @@ description: '入门测试创作和执行框架 (TAEF) '
 ms.assetid: 7F57C5EF-141A-4303-9B9F-2EC118324BF8
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 93a436ff4bd06351e56fbebd42a398aa2af2e035
-ms.sourcegitcommit: 7a7e61b4147a4aa86bf820fd0b0c7681fe17e544
+ms.openlocfilehash: 84e0979c3dd3516f87753ee5cb0fd8f2fb84f2ba
+ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89056963"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89402942"
 ---
 # <a name="getting-started"></a>入门
 
@@ -17,7 +17,7 @@ ms.locfileid: "89056963"
 ## <a name="installation"></a>安装
 
 
-安装 [Windows 驱动程序工具包](https://docs.microsoft.com/windows-hardware/drivers/download-the-wdk)后，TAEF 文件将放在 WDK 的测试 \\ 运行时 \\ TAEF 子目录中。 设置测试计算机以进行部署时，按照说明为 [驱动程序部署设置计算机并测试 (wdk 8.1) ](https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/provision-a-target-computer-wdk-8-1) 或 [预配用于驱动程序部署和测试的计算机 (wdk 8) ](https://docs.microsoft.com/previous-versions/hh698272(v=vs.85))，在测试计算机上安装 TAEF 文件。
+安装 [Windows 驱动程序工具包](../download-the-wdk.md)后，TAEF 文件将放在 WDK 的测试 \\ 运行时 \\ TAEF 子目录中。 设置测试计算机以进行部署时，按照说明为 [驱动程序部署设置计算机并测试 (wdk 8.1) ](../gettingstarted/provision-a-target-computer-wdk-8-1.md) 或 [预配用于驱动程序部署和测试的计算机 (wdk 8) ](/previous-versions/hh698272(v=vs.85))，在测试计算机上安装 TAEF 文件。
 
 你还可以手动安装 TAEF 文件，请参阅 [在测试计算机上手动安装和卸载 TAEF](#manually-installing-and-uninstalling-taef-on-a-test-computer)。
 
@@ -68,10 +68,4 @@ TE.exe UnitTests\Wex.Common.Tests.dll
 2.  中转到 "控制面板" "程序" "程序 \\ \\ 和功能"，然后卸载 **测试创作和执行框架程序**。
 
  
-
- 
-
-
-
-
 

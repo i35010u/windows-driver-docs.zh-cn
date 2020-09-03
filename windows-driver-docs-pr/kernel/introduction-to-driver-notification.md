@@ -8,12 +8,12 @@ keywords:
 - 驱动程序通知 WDK 动态硬件分区，内存通知
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0537e1cb42439b4018f0045986cf35932b2b29d1
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 0fa8c1160f478e031a4b2f355113703fc2ea5761
+ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89188869"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89402720"
 ---
 # <a name="introduction-to-driver-notification"></a>驱动程序通知简介
 
@@ -60,7 +60,7 @@ ms.locfileid: "89188869"
 
 ## <a name="synchronous-driver-notification"></a>同步驱动程序通知
 
-使用 [同步驱动程序通知](synchronous-driver-notification.md)时，操作系统将同步通知设备驱动程序已将新处理器添加到硬件分区。 这是设备驱动程序收到的有关处理器数量变化的第一个通知。
+使用 [同步驱动程序通知](registering-for-synchronous-driver-notification.md)时，操作系统将同步通知设备驱动程序已将新处理器添加到硬件分区。 这是设备驱动程序收到的有关处理器数量变化的第一个通知。
 
 将新处理器添加到硬件分区后，操作系统会在操作系统启动新处理器后，但在操作系统开始计划处理器上的线程之前，将此通知发送到设备驱动程序。 当设备驱动程序收到此通知时，它可以分配任何每个处理器的数据结构，并将任何其他每个处理器资源分配给新的处理器。 这将准备设备驱动程序以运行其调度例程，中断服务例程 (Isr) ，延迟的过程调用 (Dpc) ，以及新处理器上的任何其他驱动程序线程。
 
@@ -70,7 +70,7 @@ ms.locfileid: "89188869"
 
 ## <a name="asynchronous-driver-notification"></a>异步驱动程序通知
 
-使用 [异步驱动程序通知](asynchronous-driver-notification.md)，操作系统会以异步方式通知设备驱动程序，新处理器或内存模块已添加到硬件分区。 从 Windows Server 2008 开始，会将处理器和内存模块视为即插即用 (PnP) 设备。 因此，操作系统使用用于异步驱动程序通知的 PnP 通知机制。
+使用 [异步驱动程序通知](registering-for-asynchronous-driver-notification.md)，操作系统会以异步方式通知设备驱动程序，新处理器或内存模块已添加到硬件分区。 从 Windows Server 2008 开始，会将处理器和内存模块视为即插即用 (PnP) 设备。 因此，操作系统使用用于异步驱动程序通知的 PnP 通知机制。
 
 将新处理器或内存模块添加到硬件分区时，操作系统启动了新的处理器或内存设备后，操作系统会将此通知发送到设备驱动程序。 对于新的处理器，操作系统不会将此通知发送到设备驱动程序，直到开始在新处理器上计划线程为止。
 

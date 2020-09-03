@@ -1,6 +1,6 @@
 ---
 title: DTrace ETW
-description: DTrace 使用 D 编程语言支持 Windows 事件跟踪（ETW）。
+description: DTrace 使用 D 编程语言支持 Windows (ETW) 的事件跟踪。
 ms.assetid: abf23d76-423d-4d1e-afde-83739015bbf1
 keywords:
 - DTrace WDK
@@ -13,23 +13,23 @@ keywords:
 - 跟踪消息格式化文件 WDK
 ms.date: 11/04/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: cf77440157fa3cad5f7e4acf2cbb42bdab02119d
-ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
+ms.openlocfilehash: 8c70b0f7f433ff9e9bfe779f5d57293825f1bf1f
+ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/19/2019
-ms.locfileid: "75209477"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89384779"
 ---
 # <a name="dtrace-etw"></a>DTrace ETW
 
 使用适用于 Windows 的 DTrace 处理现有的 ETW 事件并添加新的 ETW 事件。
 
-Windows 事件跟踪（ETW）是一个内核级别的跟踪功能，可让你将内核或应用程序定义的事件记录到日志文件中。 你可以实时使用事件或从日志文件中使用事件，并使用它们来调试应用程序，或确定应用程序中出现性能问题的位置。 有关 ETW 的一般信息，请参阅[关于事件跟踪](https://docs.microsoft.com/windows/win32/etw/about-event-tracing)。
+Windows (ETW) 的事件跟踪是一种内核级跟踪功能，可让你将内核或应用程序定义的事件记录到日志文件中。 你可以实时使用事件或从日志文件中使用事件，并使用它们来调试应用程序，或确定应用程序中出现性能问题的位置。 有关 ETW 的一般信息，请参阅 [关于事件跟踪](/windows/win32/etw/about-event-tracing)。
 
 > [!NOTE]
 > 版本18980和 Windows Server 有问必答 Preview 版本18975后，Windows 内部版本支持 DTrace。
 
-有关在 Windows 上使用 DTrace 的常规信息，请参阅[dtrace](dtrace.md)。
+有关在 Windows 上使用 DTrace 的常规信息，请参阅 [dtrace](dtrace.md)。
 
 ## <a name="etw-windows-dtrace-provider"></a>ETW Windows DTrace 提供程序
 
@@ -43,9 +43,9 @@ Funcname = 0x00_0x0000000000000000 格式的 Level_Keyword。 若要匹配，请
 
 Probename = 整数事件 ID 或 "generic_event"，以匹配所有事件 Id。
 
-基于 Probename 的筛选仅适用于所提供的事件。 对 tracelogged 事件使用通配符（*）。
+基于 Probename 的筛选仅适用于所提供的事件。 使用通配符 ( * ) tracelogged 事件。
 
-ETW 有效负载通过 arg0 访问。 这由 nt\`\_事件\_标头后跟事件特定日期。
+ETW 有效负载通过 arg0 访问。 这由 nt \` \_ 事件 \_ 标头组成，后跟特定于事件的日期。
 
 ### <a name="determining-available-etw-providers"></a>确定可用的 ETW 提供程序
 
@@ -88,15 +88,15 @@ CPU     ID                    FUNCTION:NAME
 
 ## <a name="adding-new-etw-events"></a>添加新的 ETW 事件
 
-可以通过调用 etw\_跟踪宏来创建 etw 跟踪事件。 仅当存在指定跟踪提供程序的活动侦听器时才记录事件，否则将跳过这些事件。
+可以通过调用 etw 跟踪宏来创建 etw 跟踪事件 \_ 。 仅当存在指定跟踪提供程序的活动侦听器时才记录事件，否则将跳过这些事件。
 
-Etw\_trace 宏支持基本数据类型，如 int8、uint8、int16、uint16、int32、uint32、int64、uint64、hexint32、hexint64 和 string。 有关更多详细信息，请参阅下*支持的 ETW 数据类型*表格。
+Etw \_ 跟踪宏支持基本数据类型，如 int8、uint8、int16、uint16、int32、uint32、int64、uint64、hexint32、hexint64 和 string。 有关更多详细信息，请参阅下 *支持的 ETW 数据类型* 表格。
 
-**示例 ETW\_跟踪宏：**
+**示例 ETW \_ 跟踪宏：**
 
 当 syscall 例程返回 STATUS_UNSUCCESSFUL 0xc0000001 时，此脚本会生成一个自定义 ETW 事件。
 
-您可以更改 `this->status` 值，以使用不同的[NTSTATUS 值](https://docs.microsoft.com/openspecs/windows_protocols/ms-erref/596a1078-e883-4972-9bbc-49e60bebca55)记录不同的 syscall 返回值。
+您可以更改此 `this->status` 值以使用不同的 [NTSTATUS 值](/openspecs/windows_protocols/ms-erref/596a1078-e883-4972-9bbc-49e60bebca55) 来记录不同的 syscall 返回值。
 
 ```dtrace
 syscall:::return 
@@ -137,9 +137,9 @@ CPU     ID                    FUNCTION:NAME
 
 ## <a name="etw-numa-mem-stats-example-code"></a>ETW NUMA 内存统计示例代码
 
-此示例脚本使用 Microsoft Windows 内核内存 ETW 提供程序来转储 NUMA 节点内存。 页面大小可转换为大小（KB），乘以4。 有关 NUMA 的一般信息，请参阅[Numa 支持](https://docs.microsoft.com/windows/win32/procthread/numa-support)。
+此示例脚本使用 Microsoft Windows 内核内存 ETW 提供程序来转储 NUMA 节点内存。 页面大小可转换为大小（KB），乘以4。 有关 NUMA 的一般信息，请参阅 [Numa 支持](/windows/win32/procthread/numa-support)。
 
-此代码也位于 <https://github.com/microsoft/DTrace-on-Windows/blob/master/samples/windows/etw/numamemstats.d>
+此代码还位于 <https://github.com/microsoft/DTrace-on-Windows/blob/master/samples/windows/etw/numamemstats.d>
 
 ```dtrace
 typedef struct KernelMemInfoEvent
@@ -328,42 +328,42 @@ m_nodeinfo {
 
 ## <a name="supported-etw-data-types"></a>支持的 ETW 数据类型
 
-| **ETW 类型**           | **D 语言数据类型** | **注意**                                                                                 |
+| **ETW 类型**           | **D 语言数据类型** | **备注**                                                                                 |
 | ---------------------- | ------------------------ | ----------------------------------------------------------------------------------------- |
-| etw\_结构            | 整型                  | 此类型的负载值表示新结构将具有的成员的计数。  |
-| etw\_字符串            | 字符串                   | N/A                                                                                       |
-| etw\_mbcsstring        | 字符串                   | N/A                                                                                       |
-| etw\_int8              | 整型                  | 建议键入大小，并强制转换为 D 脚本中 \`int8\_t\`             |
-| etw\_uint8             | 整型                  | 建议将类型大小匹配，并强制转换为 D 脚本中 \`uint8\_t\`            |
-| etw\_int16             | 整型                  | 建议键入大小，并强制转换为 D 脚本中 \`int16\_t\`            |
-| etw\_uint16            | 整型                  | 建议将类型大小匹配，并强制转换为 D 脚本中的 \`uint16\_t\`           |
-| etw\_int32             | 整型                  | N/A                                                                                       |
-| etw\_uint32            | 整型                  | N/A                                                                                       |
-| etw\_int64             | 整型                  | 类型必须显式 \`int64\_t\`，因为 D 默认为 \`int32\_t\`                  |
-| etw\_uint64            | 整型                  | 类型必须显式 \`int64\_t\`，因为 D 默认为 \`int32\_t\`                  |
-| etw\_float             | Scalar                   | D 脚本中不允许使用浮点常量，但在加载的符号上允许它 |
-| etw\_双精度            | Scalar                   | D 脚本中不允许使用浮点常量，但在加载的符号上允许它 |
-| etw\_bool32            | 整型                  | N/A                                                                                       |
-| etw\_hexint32          | 整型                  | N/A                                                                                       |
-| etw\_hexint64          | 整型                  | 类型必须显式 \`int64\_t\`，因为 D 默认为 \`int32\_t\`                  |
-| etw\_countedmbcsstring | 整型                  | N/A                                                                                       |
-| etw\_intptr            | 整型                  | 数据类型大小根据体系结构而变化（\`int32\_t\` 与 \`int64\_t\`）   |
-| etw\_uintptr           | 整型                  | 数据类型大小根据体系结构而变化（\`int32\_t\` 与 \`int64\_t\`）   |
-| etw\_指针           | 整型                  | 数据类型大小根据体系结构而变化（\`int32\_t\` 与 \`int64\_t\`）   |
-| etw\_char16            | 整型                  | 建议键入大小，并强制转换为 D 脚本中 \`int16\_t\`            |
-| etw\_char8             | 整型                  | 建议键入大小，并强制转换为 D 脚本中 \`int8\_t\`             |
-| etw\_bool8             | 整型                  | 建议键入大小，并强制转换为 D 脚本中 \`int8\_t\`             |
-| etw\_hexint8           | 整型                  | 建议键入大小，并强制转换为 D 脚本中 \`int8\_t\`             |
-| etw\_hexint16          | 整型                  | 建议键入大小，并强制转换为 D 脚本中 \`int16\_t\`            |
-| etw\_pid               | 整型                  | N/A                                                                                       |
-| etw\_tid               | 整型                  | N/A                                                                                       |
-| etw\_mbcsxml           | 整型                  | N/A                                                                                       |
-| etw\_mbcsjson          | 整型                  | N/A                                                                                       |
-| etw\_countedmbcsxml    | 整型                  | N/A                                                                                       |
-| etw\_countedmbcsjson   | 整型                  | N/A                                                                                       |
-| etw\_win32error        | 整型                  | N/A                                                                                       |
-| etw\_ntstatus          | 整型                  | N/A                                                                                       |
-| etw\_hresult           | 整型                  | N/A                                                                                       |
+| etw \_ 结构            | Integer                  | 此类型的负载值表示新结构将具有的成员的计数。  |
+| etw \_ 字符串            | string                   | 空值                                                                                       |
+| etw \_ mbcsstring        | string                   | 空值                                                                                       |
+| etw \_ int8              | Integer                  | 建议键入大小，并强制转换为 \` \_ \` D 脚本中的 int8 t             |
+| etw \_ uint8             | Integer                  | 建议键入大小，并强制转换为 \` \_ \` D 脚本中的 uint8 t            |
+| etw \_ int16             | Integer                  | 建议键入大小，并强制转换为 \` \_ \` D 脚本中的 int16 t            |
+| etw \_ uint16            | Integer                  | 建议键入大小，并强制转换为 \` \_ \` D 脚本中的 uint16 t           |
+| etw \_ int32             | Integer                  | 空值                                                                                       |
+| etw \_ uint32            | Integer                  | 空值                                                                                       |
+| etw \_ int64             | Integer                  | 类型必须显式为 \` int64 \_ t \` ，因为 D 默认为 \` int32 \_ t\`                  |
+| etw \_ uint64            | Integer                  | 类型必须显式为 \` int64 \_ t \` ，因为 D 默认为 \` int32 \_ t\`                  |
+| etw \_ 浮动             | Scalar                   | D 脚本中不允许使用浮点常量，但在加载的符号上允许它 |
+| etw \_ 双            | Scalar                   | D 脚本中不允许使用浮点常量，但在加载的符号上允许它 |
+| etw \_ bool32            | Integer                  | 空值                                                                                       |
+| etw \_ hexint32          | Integer                  | 空值                                                                                       |
+| etw \_ hexint64          | Integer                  | 类型必须显式为 \` int64 \_ t \` ，因为 D 默认为 \` int32 \_ t\`                  |
+| etw \_ countedmbcsstring | Integer                  | 空值                                                                                       |
+| etw \_ intptr            | Integer                  | 数据类型大小根据体系结构 (\` int32 \_ t \` vs \` int64 \_ t \`)    |
+| etw \_ uintptr           | Integer                  | 数据类型大小根据体系结构 (\` int32 \_ t \` vs \` int64 \_ t \`)    |
+| etw \_ 指针           | Integer                  | 数据类型大小根据体系结构 (\` int32 \_ t \` vs \` int64 \_ t \`)    |
+| etw \_ char16            | Integer                  | 建议键入大小，并强制转换为 \` \_ \` D 脚本中的 int16 t            |
+| etw \_ char8             | Integer                  | 建议键入大小，并强制转换为 \` \_ \` D 脚本中的 int8 t             |
+| etw \_ bool8             | Integer                  | 建议键入大小，并强制转换为 \` \_ \` D 脚本中的 int8 t             |
+| etw \_ hexint8           | Integer                  | 建议键入大小，并强制转换为 \` \_ \` D 脚本中的 int8 t             |
+| etw \_ hexint16          | Integer                  | 建议键入大小，并强制转换为 \` \_ \` D 脚本中的 int16 t            |
+| etw \_ pid               | Integer                  | 空值                                                                                       |
+| etw \_ tid               | Integer                  | 空值                                                                                       |
+| etw \_ mbcsxml           | Integer                  | 空值                                                                                       |
+| etw \_ mbcsjson          | Integer                  | 空值                                                                                       |
+| etw \_ countedmbcsxml    | Integer                  | 空值                                                                                       |
+| etw \_ countedmbcsjson   | Integer                  | 空值                                                                                       |
+| etw \_ win32error        | Integer                  | 空值                                                                                       |
+| etw \_ ntstatus          | Integer                  | 空值                                                                                       |
+| etw \_ hresult           | Integer                  | N/A                                                                                       |
 
 ## <a name="see-also"></a>另请参阅
 

@@ -6,12 +6,12 @@ keywords:
 - 在移动宽带元数据创作向导中指定应用程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 21c0109652382c0373b64922ef41fc741c54ded8
-ms.sourcegitcommit: 17c1bbc5ea0bef3bbc87794b030a073f905dc942
+ms.openlocfilehash: c303e70f76e80a236e66f754a9bf9192652b3b3d
+ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88802569"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89384319"
 ---
 # <a name="specify-applications-in-the-mobile-broadband-metadata-authoring-wizard"></a>在移动宽带元数据创作向导中指定应用程序
 
@@ -68,7 +68,7 @@ ms.locfileid: "88802569"
 若要指定特权应用程序，请在 **特权应用程序**下填写以下字段：
 
 >[!NOTE]
->有关特权设备接口属性密钥的信息，请参阅 [DEVPKEY \_ DeviceInterface \_ 限制](https://docs.microsoft.com/windows-hardware/drivers/install/devpkey-deviceinterface-restricted)。
+>有关特权设备接口属性密钥的信息，请参阅 [DEVPKEY \_ DeviceInterface \_ 限制](../install/devpkey-deviceinterface-restricted.md)。
 
 - **包名称**。 在应用程序清单的 Package 元素中的 Identity 元素中输入 Name 属性的值。
 - **发布者**。 在应用程序清单的 Package 元素中的 Identity 元素中输入 "发布服务器" 属性的值。
@@ -95,4 +95,4 @@ ms.locfileid: "88802569"
 
 移动宽带平台提供了增强的功能，可用于接收和显示 o 的管理短信或 USSD 通知，如接近数据使用量上限、国际化漫游和低平衡。 它还提供了用于响应移动网络提供程序的 UWP 应用中的数据使用和连接、断开或漫游背景事件的功能。
 
-Windows 提供适用于 UWP 应用的 broker 功能，以运行某些代码来响应事件，即使 Microsoft Store 应用未运行也是如此。 有关实现通知处理程序的详细信息，请参阅 [启用移动运营商通知和系统事件简介](https://docs.microsoft.com/windows-hardware/drivers/mobilebroadband/enabling-mobile-operator-notifications-and-system-events)。
+Windows 提供适用于 UWP 应用的 broker 功能，以运行某些代码来响应事件，即使 Microsoft Store 应用未运行也是如此。 有关实现通知处理程序的详细信息，请参阅 [启用移动运营商通知和系统事件简介](../mobilebroadband/enabling-mobile-operator-notifications-and-system-events.md)。

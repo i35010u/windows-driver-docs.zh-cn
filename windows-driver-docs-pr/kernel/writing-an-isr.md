@@ -10,12 +10,12 @@ keywords:
 - I/o WDK 内核，中断
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fca1e48510cb2d99137c81ba35eee6e6f985d508
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: b9cf6ba1ee0b51c50d19a8fc9218846ab4e29fb0
+ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89185909"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89402840"
 ---
 # <a name="writing-an-isr"></a>编写 ISR
 
@@ -37,7 +37,7 @@ Isr 会被中断。 系统分配的 DIRQL 较高的其他设备可能会中断�
 
 -   如果导致中断的设备不是 ISR 支持的设备，则 ISR 会立即返回 **FALSE**。
 
--   否则，ISR 会清除中断（如有必要），保存所需的任何设备上下文，并将 DPC 排队，以以较低的 IRQL 完成 i/o 操作。 有关详细信息，请参阅 [Dpc 对象和 dpc](dpc-objects-and-dpcs.md) 。 ISR 必须返回 **TRUE**。
+-   否则，ISR 会清除中断（如有必要），保存所需的任何设备上下文，并将 DPC 排队，以以较低的 IRQL 完成 i/o 操作。 有关详细信息，请参阅 [Dpc 对象和 dpc](introduction-to-dpc-objects.md) 。 ISR 必须返回 **TRUE**。
 
 具体而言，在不与设备 i/o 操作重叠的驱动程序中，ISR 应该执行以下操作：
 

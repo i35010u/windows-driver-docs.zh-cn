@@ -5,17 +5,17 @@ ms.assetid: 03C5A31F-269A-45B3-9359-B6FFF4823190
 keywords:
 - NFC
 - 近场通信
-- proximity
+- 近程
 - 近场邻近感应
 - NFP
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 42d2988a61bb9a0770a8234c9eba329f156c888f
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: ca09ed1b733996de14a9bd4bb4694c2750f9e85f
+ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72843288"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89385009"
 ---
 # <a name="windowsmime-protocol"></a>WindowsMime 协议
 
@@ -29,7 +29,7 @@ ms.locfileid: "72843288"
 
 -   驱动程序必须将有效负载的 MIME 类型作为 ASCII 编码且以 NULL 结尾的字符串返回到输出缓冲区的前256个字节内。
 -   驱动程序必须在输出缓冲区的前256字节后返回消息负载。
--   驱动程序必须将已完成 IRP 的信息字段设置为 256 +**sizeof**（有效负载）。
+-   驱动程序必须将已完成 IRP 的信息字段设置为 256 +**sizeof** (负载) 。
 -   如果邻近技术被播发为 NFC，则驱动程序必须将 "WindowsMime" 的订阅与具有 TNF 字段值0x02 的所有 NDEF 消息匹配。
     -   驱动程序必须仅将匹配的 NDEF 消息的负载返回到此类型的订阅服务器。
     -   驱动程序不得将完整编码的 NDEF 消息返回到此类型的订阅服务器。
@@ -40,34 +40,33 @@ ms.locfileid: "72843288"
 
 "WindowsMime"。 发布是将 MIME 类型的负载发布到对等设备的一种方法。 "WindowsMime"。 订阅是一种订阅负载特定 MIME 类型的方式。 当用户指导你执行此操作时，Windows 将向近程设备发布简单的 MIME 类型的消息。
 
-泛型示例类型： "WindowsMime"。&lt;SomeMimeType&gt;"
+泛型示例类型： "WindowsMime"。 &lt;SomeMimeType &gt; "
 
 具体示例类型： "WindowsMime/jpeg"
 
 ### <a name="required-actions"></a>必需的措施
 
--   如果近程技术被播发为 NFC，则驱动程序必须与 "WindowsMime" 的订阅匹配。仅&lt;SomeMimeType&gt;"接收的 NDEF 消息，该消息的 TNF 字段值为0x02，并且具有与在 \[NDEF\]中指定的等效规则匹配"&lt;SomeMimeType&gt;"的类型字段。
+-   如果近程技术被播发为 NFC，则驱动程序必须与 "WindowsMime" 的订阅匹配。 &lt;&gt;"SomeMimeType" 仅具有 TNF 字段值为0x02 并且具有与 "SomeMimeType" 匹配的类型字段（ &lt; &gt; 基于 NDEF 中指定的等效规则）的已接收 NDEF \[ 消息 \] 。
 
     驱动程序必须仅将单个匹配的 NDEF 消息的负载返回到此类型的订阅服务器。
 
--   如果近程技术被播发为 NFC，则驱动程序必须将每个 "WindowsMime" 封装。&lt;SomeSubType&gt;"在 TNF 字段值为0x02 的 NDEF 消息中发布。
-    -   NDEF 类型字段必须包含 &lt;SomeSubType&gt; 字符串的直接映射，其中每个宽字符被解释为单字节。
+-   如果近程技术被播发为 NFC，则驱动程序必须将每个 "WindowsMime" 封装。 &lt;SomeSubType &gt; "NDEF 消息中的发布，TNF 字段值为0x02。
+    -   NDEF TYPE 字段必须包含 SomeSubType 字符串的直接映射 &lt; &gt; ，其中每个宽字符被解释为单字节。
     -   NDEF 负载必须包含发布消息负载的直接二进制内容。
 
-## <a name="windowsmimewritetag-publications"></a>"WindowsMime:WriteTag." 之中
+## <a name="windowsmimewritetag-publications"></a>"WindowsMime:WriteTag." 发布
 
 
 "WindowsMime： WriteTag"。 发布是一种应用程序，只需将 MIME 类型的负载写入标记。
 
 ### <a name="required-actions"></a>必需的措施
 
--   其他地方所述的常见 "\*： WriteTag" 要求适用。
--   "WindowsMime"。&lt;SomeMimeType&gt;"其他地方所述的发布要求适用于" WindowsMime： WriteTag。&lt;SomeMimeType&gt;"发布。
+-   \*其他地方所述的常见 "： WriteTag" 要求适用。
+-   "WindowsMime"。 &lt;SomeMimeType &gt; "其他地方所述的发布要求适用于" WindowsMime： WriteTag。 &lt;SomeMimeType &gt; "发布。
 
  
 
  
 ## <a name="related-topics"></a>相关主题
-[NFC 设备驱动程序接口（DDI）概述](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)  
-[近字段邻近 DDI 引用](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)  
-
+[NFC 设备驱动程序接口 (DDI) 概述](/windows-hardware/drivers/ddi/index)  
+[近字段邻近 DDI 引用](/windows-hardware/drivers/ddi/index)

@@ -7,12 +7,12 @@ keywords:
 - 即插即用 WDK 内核，设计指南
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b11988cd028c5c1476593743f8c3062598fd6507
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 5e3e5d4de9ce4e99725a771a94c9a7475c986de2
+ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89187743"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89402746"
 ---
 # <a name="pnp-driver-design-guidelines"></a>PnP 驱动程序设计指导原则
 
@@ -34,7 +34,7 @@ ms.locfileid: "89187743"
 
 若要支持 PnP，驱动程序必须遵循以下准则：
 
--   它必须包含 [*DispatchPnP*](./dispatchpnp-routines.md#feedback) 例程。
+-   它必须包含 [*DispatchPnP*](./dispatchpnp-routines.md) 例程。
 
     此调度例程必须处理 [**IRP \_ MJ \_ PNP**](./irp-mj-pnp.md) 请求和相关的次要函数代码。 有关详细信息，请参阅 [DispatchPnP 例程](dispatchpnp-routines.md)。
 

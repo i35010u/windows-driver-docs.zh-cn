@@ -1,46 +1,46 @@
 ---
 title: 用于软件跟踪的工具
-description: WDK 包含旨在支持 Windows 事件跟踪 (ETW) 并补充在 Windows 中包含的跟踪工具的工具。
+description: WDK 包含的工具旨在支持 Windows (ETW) 的事件跟踪，并补充了 Windows 中包含的跟踪工具。
 ms.assetid: 31056b02-378f-4756-b5a0-3d4cbbc6d3da
 keywords:
 - 工具 WDK，软件跟踪
-- 驱动程序开发工具 WDK，软件跟踪
-- 跟踪 WDK 的软件
+- 驱动程序开发工具 WDK、软件跟踪
+- 软件跟踪 WDK
 - 跟踪 WDK
-- 跟踪软件跟踪有关 WDK，
+- 跟踪 WDK，关于软件跟踪
 - 事件跟踪 WDK
 - 跟踪工具 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a24dca714db3c9fb13460039f7a9ab673b44265a
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 25203ff5296e72b86123644cde9d04498690022a
+ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67360909"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89384149"
 ---
 # <a name="tools-for-software-tracing"></a>用于软件跟踪的工具
 
 
-Microsoft Windows Driver Kit (WDK) 包括一套应用程序和软件跟踪用于命令行工具。 这些工具旨在以支持 Windows 事件跟踪 (ETW) 并补充在 Windows 中包含的跟踪工具。
+Microsoft Windows 驱动程序工具包 (WDK) 包含一组用于软件跟踪的应用程序和命令行工具。 这些工具旨在支持 Windows (ETW) 的事件跟踪，并补充 Windows 中包含的跟踪工具。
 
-- [跟踪工具有哪些？](#what-are-the-tracing-tools)
-- [何时应使用 WPP 软件跟踪或事件跟踪 Windows (ETW) API？](#when-should-i-use-wpp-software-tracing-or-the-event-tracing-for-windows-etw-api)
-- [什么是在本部分中](#whats-in-this-section)
+- [跟踪工具是什么？](#what-are-the-tracing-tools)
+- [何时应使用 WPP 软件跟踪或 Windows (ETW) API 的事件跟踪？](#when-should-i-use-wpp-software-tracing-or-the-event-tracing-for-windows-etw-api)
+- [本节内容](#whats-in-this-section)
 
-## <a name="what-are-the-tracing-tools"></a>跟踪工具有哪些？
+## <a name="what-are-the-tracing-tools"></a>跟踪工具是什么？
 
-这些工具包括[跟踪控制器](trace-controller.md)的配置、 启动、 更新和停止跟踪会话，并[跟踪使用者](trace-consumer.md)的接收在会话过程中生成的跟踪消息，并将二进制数据转换为文件或显示的用户可读格式。
+这些工具包括用于配置、启动、更新和停止跟踪会话的 [跟踪控制器](trace-controller.md) ，以及跟踪在会话过程中生成的跟踪消息的 [使用者](trace-consumer.md) ，以及将二进制数据转换为可读格式的文件或显示。
 
-这些工具所支持的各种[跟踪提供程序](trace-provider.md)，包括用户模式应用程序和内核模式驱动程序，它通过使用软件跟踪检测[WPP 软件跟踪](wpp-software-tracing.md)或 ([Windows (ETW) 事件跟踪](event-tracing-for-windows--etw-.md)。 比较两个方法检测代码，请参阅[何时使用 WPP 软件跟踪和事件跟踪 Windows (ETW)](#when-should-i-use-wpp-software-tracing-or-the-event-tracing-for-windows-etw-api)。
+这些工具支持各种 [跟踪提供](trace-provider.md)程序，包括用户模式应用程序和内核模式驱动程序，这些提供程序通过使用 [WPP 软件跟踪](wpp-software-tracing.md) 或 ([Windows (ETW) 的事件跟踪 ](event-tracing-for-windows--etw-.md)来检测软件跟踪。 有关检测代码的两种方法的比较，请参阅 [何时使用 WPP 软件跟踪和 Windows (ETW 的事件跟踪) ](#when-should-i-use-wpp-software-tracing-or-the-event-tracing-for-windows-etw-api)。
 
-这些工具还可以访问保留[跟踪会话](trace-session.md)内置到 Windows，如[全局记录器跟踪会话](global-logger-trace-session.md) / [NT 内核记录器跟踪会话](nt-kernel-logger-trace-session.md).
+这些工具还可以访问 Windows 中内置的保留[跟踪会话](trace-session.md)，例如[全局记录器跟踪会话](global-logger-trace-session.md)  /  [NT 内核记录器跟踪会话](nt-kernel-logger-trace-session.md)。
 
-其中某些工具位于工具\\&lt;*平台*&gt;子目录的 Windows Driver Kit (WDK) 中，其中&lt;*平台*&gt;是 x86 或 x64。 其他工具是可以包含在 Windows 或位于 bin\\&lt;*平台*&gt; WDK 的子目录。
+其中的某些工具位于 \\ &lt; *Platform* &gt; Windows 驱动程序工具包 (WDK) 的工具平台子目录中，其中 &lt; *平台* &gt; 为 x86 或 x64。 其他工具包括在 Windows 中，或者位于 WDK 的 bin \\ &lt; *平台* &gt; 子目录中。
 
-## <a name="when-should-i-use-wpp-software-tracing-or-the-event-tracing-for-windows-etw-api"></a>何时应使用 WPP 软件跟踪或事件跟踪 Windows (ETW) API？
+## <a name="when-should-i-use-wpp-software-tracing-or-the-event-tracing-for-windows-etw-api"></a>何时应使用 WPP 软件跟踪或 Windows (ETW) API 的事件跟踪？
 
-使用[WPP 软件跟踪](wpp-software-tracing.md)如果您有兴趣主要收集跟踪数据，用于开发和调试目的。 使用[Windows 事件跟踪 (ETW)](event-tracing-for-windows--etw-.md)对于其他类型的跟踪。
+如果你有兴趣主要收集用于开发和调试目的的跟踪数据，请使用 [WPP 软件跟踪](wpp-software-tracing.md) 。 对于其他类型的跟踪，请使用 [Windows 事件跟踪 (ETW) ](event-tracing-for-windows--etw-.md) 。
 
 <table>
 <colgroup>
@@ -50,54 +50,54 @@ Microsoft Windows Driver Kit (WDK) 包括一套应用程序和软件跟踪用于
 <thead>
 <tr class="header">
 <th align="left">WPP 软件跟踪</th>
-<th align="left">显示/TraceLogging ETW</th>
+<th align="left">列入清单/TraceLogging ETW</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left">支持 Windows 2000 及更高版本。</td>
-<td align="left">支持 Windows Vista 及更高版本。</td>
+<td align="left">在 Windows 2000 和更高版本上受支持。</td>
+<td align="left">在 Windows Vista 和更高版本上受支持。</td>
 </tr>
 <tr class="even">
-<td align="left">跟踪事件进行开发和调试。 主要是内部开发人员中心。</td>
-<td align="left">管理、 操作、 分析和调试目的的跟踪事件。</td>
+<td align="left">跟踪用于开发和调试的事件。 主要面向内部开发人员。</td>
+<td align="left">跟踪事件以实现管理、操作、分析和调试目的。</td>
 </tr>
 <tr class="even">
-<td align="left">需要 TMF 文件进行解码的事件，从该日志记录二进制文件的 PDB 提取。</td>
-<td align="left">在本地的二进制文件中或在事件负载中包含要解码事件的元数据。</td>
+<td align="left">需要 TMF 文件来解码事件，这些事件是从日志记录二进制 PDB 中提取的。</td>
+<td align="left">用于对事件进行解码的元数据包含在本地二进制文件或事件负载中。</td>
 </tr>
 <tr class="odd">
-<td align="left">可以为每个跟踪提供程序只有一个活动会话。</td>
-<td align="left">事件可以进行多路复用到多个使用者。</td>
+<td align="left">对于每个跟踪提供程序，只能有一个活动会话。</td>
+<td align="left">事件可复用到多个使用者。</td>
 </tr>
 <tr class="even">
-<td align="left">不能本地化消息字符串。</td>
-<td align="left">可本地化字符串。</td>
+<td align="left">消息字符串不能本地化。</td>
+<td align="left">字符串可本地化。</td>
 </tr>
 <tr class="odd">
-<td align="left">提供程序安全性被限制为不共享启用并分别对事件进行解码所需的控件的 GUID 或 TMF 文件。</td>
-<td align="left">提供程序可以具有 Acl 应用于限制哪些用户可以从其收集事件。</td>
+<td align="left">提供程序安全限制为不共享启用和解码事件所需的控件 GUID 或 TMF 文件。</td>
+<td align="left">提供程序可以应用 Acl 来限制可以从中收集事件的用户。</td>
 </tr>
 </tbody>
 </table> 
 
-有关使用 Windows 软件跟踪预处理器 (WPP) 宏将软件跟踪添加到驱动程序或应用程序的信息，请参阅[WPP 软件跟踪](wpp-software-tracing.md)。
+有关使用 Windows 软件跟踪预处理器 (WPP) 宏将软件跟踪添加到驱动程序或应用程序的信息，请参阅 [WPP 软件跟踪](wpp-software-tracing.md)。
 
-有关使用内核模式 ETW API 的驱动程序的信息，请参阅[事件跟踪 Windows (ETW)](event-tracing-for-windows--etw-.md)。
+有关对驱动程序使用内核模式 ETW API 的信息，请参阅 [Windows 事件跟踪 (ETW) ](event-tracing-for-windows--etw-.md)。
 
-有关使用 Windows Management Instrumentation (WMI) 扩展对 Windows 驱动程序模型 (WDM) 添加到任何驱动程序软件跟踪的信息，请参阅[WMI 事件跟踪](https://docs.microsoft.com/windows-hardware/drivers/kernel/wmi-event-tracing)。
+有关使用 Windows Management Instrumentation (WMI) 扩展添加到 Windows 驱动模型 (WDM) 以将软件跟踪添加到任何驱动程序的信息，请参阅 [Wmi 事件跟踪](../kernel/wmi-event-tracing.md)。
 
-**请注意**   ETW 和 WPP 支持大多数类型的内核模式驱动程序和用户模式应用程序。 但是，ETW 和 WPP 使用不适用于某些类型的驱动程序，例如微型端口驱动程序的类型。 若要确定是否支持特定驱动程序类型，基本 WPP 将宏添加到驱动程序，如[WPP\_INIT\_跟踪](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff556191(v=vs.85))并[WPP\_清理](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff556179(v=vs.85))。 如果由于未定义使用的类型，不会进行编译代码，ETW 和 WPP 都不能支持的驱动程序类型。 
+**注意**   ETW 和 WPP 支持大多数类型的内核模式驱动程序和用户模式应用程序。 但 ETW 和 WPP 使用某些类型的驱动程序（如微型端口驱动程序）不可用的类型。 若要确定是否支持某个特定的驱动程序类型，请将基本的 WPP 宏添加到该驱动程序，如 [WPP \_ INIT \_ 跟踪](/previous-versions/windows/hardware/previsioning-framework/ff556191(v=vs.85)) 和 [wpp \_ 清除](/previous-versions/windows/hardware/previsioning-framework/ff556179(v=vs.85))。 如果代码由于未定义所使用的类型而不编译，则 ETW 和 WPP 不能支持驱动程序类型。 
 
-## <a name="whats-in-this-section"></a>什么是在本部分中
+## <a name="whats-in-this-section"></a>本节内容
 
-本部分开头的软件跟踪工具的调查、 讨论基础工具、 概念和 WDK 中包括的软件跟踪工具的文档。
+本部分从软件跟踪工具的调查开始，讨论工具的基础概念，然后在 WDK 中包括软件跟踪工具的文档。
 
-本部分包括：
+本节包括：
 
-[软件跟踪工具的调查](survey-of-software-tracing-tools.md)
+[软件跟踪工具调查](survey-of-software-tracing-tools.md)
 
-[跟踪工具概念](tracing-tool-concepts.md)
+[跟踪工具的概念](tracing-tool-concepts.md)
 
 [TraceView](traceview.md)
 
@@ -111,10 +111,10 @@ Microsoft Windows Driver Kit (WDK) 包括一套应用程序和软件跟踪用于
 
 [WPP 软件跟踪](wpp-software-tracing.md)
 
-[软件跟踪常见问题](software-tracing-faq.md)
+[软件跟踪常见问题解答](software-tracing-faq.md)
 
 [Windows 事件跟踪 (ETW)](event-tracing-for-windows--etw-.md)
 
 [内核模式性能监视](kernel-mode-performance-monitoring.md)
 
-有关概念性信息[关于事件跟踪](https://docs.microsoft.com/windows/desktop/ETW/about-event-tracing)，请参阅 Microsoft Windows SDK 文档。 
+有关 [事件跟踪](/windows/desktop/ETW/about-event-tracing)的概念信息，请参阅 Microsoft Windows SDK 文档。 

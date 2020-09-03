@@ -1,19 +1,19 @@
 ---
-title: 应用程序（SoftwareInfo）
-description: 应用程序（SoftwareInfo）
+title: '应用程序 (SoftwareInfo) '
+description: '应用程序 (SoftwareInfo) '
 ms.assetid: 1f16a690-4453-4563-a4b1-44bbd5d02f47
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a95bae273f1e80f50d9b235a5aecf5282fced669
-ms.sourcegitcommit: f017184b00f59b088df87a5bd85fec51b7aed8b2
+ms.openlocfilehash: 168e8df35bacf4497361a38843c840165127855d
+ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72323641"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89402958"
 ---
-# <a name="application-softwareinfo"></a>应用程序（SoftwareInfo）
+# <a name="application-softwareinfo"></a>应用程序 (SoftwareInfo) 
 
-[!include[MBAE deprecation warning](mbae-deprecation-warning.md)]
+[!include[MBAE deprecation warning](../includes/mbae-deprecation-warning.md)]
 
 应用程序元素指定关联的设备通知处理程序。
 
@@ -38,17 +38,17 @@ ms.locfileid: "72323641"
 </colgroup>
 <thead>
 <tr class="header">
-<th>属性</th>
-<th>在任务栏的搜索框中键入</th>
-<th>必需</th>
-<th>描述</th>
+<th>Attribute</th>
+<th>类型</th>
+<th>必选</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td><p>ID</p></td>
 <td><p>tns： ApplicationIdType</p></td>
-<td><p>“是”</p></td>
+<td><p>是</p></td>
 <td><p>应用程序的 ID。</p></td>
 </tr>
 </tbody>
@@ -67,7 +67,7 @@ ms.locfileid: "72323641"
 <thead>
 <tr class="header">
 <th>元素</th>
-<th>描述</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>
@@ -91,7 +91,7 @@ ms.locfileid: "72323641"
 <thead>
 <tr class="header">
 <th>元素</th>
-<th>描述</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>

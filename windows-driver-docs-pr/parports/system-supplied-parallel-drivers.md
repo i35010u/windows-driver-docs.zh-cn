@@ -9,12 +9,12 @@ keywords:
 - 并行设备 WDK，系统提供的驱动程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0bd0d13c622611c6a5ba6e58b9314c719df0009c
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: b583a2554b86335178f933fb37ba7b923c2accab
+ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72842315"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89384721"
 ---
 # <a name="system-supplied-parallel-drivers"></a>系统提供的并行驱动程序
 
@@ -30,7 +30,7 @@ ms.locfileid: "72842315"
 
 [并行设备接口、内部名称和符号链接](parallel-device-interfaces--internal-names--and-symbolic-links.md)
 
-[并行端口和设备的 IOCTL 和回调支持](ioctl-and-callback-support-for-parallel-ports-and-devices.md)
+[对并行端口和设备的 IOCTL 和回调支持](ioctl-and-callback-support-for-parallel-ports-and-devices.md)
 
 有关并行端口和设备支持的详细信息，请参阅：
 
@@ -38,12 +38,7 @@ ms.locfileid: "72842315"
 
 [供应商提供的并行驱动程序](vendor-supplied-parallel-drivers.md)
 
-[系统提供的并行驱动程序的客户端接口](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)
+[系统提供的并行驱动程序的客户端接口](/windows-hardware/drivers/ddi/index)
 
  
-
- 
-
-
-
 

@@ -1,25 +1,25 @@
 ---
 title: HS_SIM_DATA 结构
-description: HS_SIM_DATA 结构包含存储在 SIM 卡的信息。
+description: HS_SIM_DATA 结构包含 SIM 卡中存储的信息。
 ms.assetid: 9e29a85e-e764-4841-b218-c63bba0ca9fa
 keywords:
-- HS_SIM_DATA 结构与 Windows Vista 一起启动的网络驱动程序
-- PHS_SIM_DATA 结构指针与 Windows Vista 一起启动的网络驱动程序
+- 从 Windows Vista 开始 HS_SIM_DATA 结构网络驱动程序
+- 从 Windows Vista 开始 PHS_SIM_DATA 结构指针网络驱动程序
 ms.date: 07/31/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5472ef1830e08cbea36a9fa879b22adde3614bbf
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5357a1605032fc988e296ebfba2ed072da627c35
+ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63322138"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89402978"
 ---
-# <a name="hssimdata-structure"></a>HS\_SIM\_数据结构
+# <a name="hs_sim_data-structure"></a>HS \_ SIM \_ 数据结构
 
-[!include[Wi-Fi Hotspot Offloading deprecation](wi-fi-hotspot-offloading-deprecation.md)]
+[!include[Wi-Fi Hotspot Offloading deprecation](../includes/wi-fi-hotspot-offloading-deprecation.md)]
 
 
-**HS\_SIM\_数据**结构包含存储在 SIM 卡的信息。
+**HS \_ sim \_ 数据**结构包含 SIM 卡中存储的信息。
 
 <a name="syntax"></a>语法
 ------
@@ -37,16 +37,16 @@ typedef struct _HS_SIM_DATA {
 -------
 
 **wszICCID**  
-集成电路卡标识符 (ICCID) 存储在 SIM 卡中。
+SIM 卡中存储 (ICCID) 的集成卡标识符。
 
 **wszIMEI**  
-国际移动设备标识 (IMEI) 用于标识 3GPP 手机。
+国际移动设备标识 (IMEI) 用于标识3GPP 手机。
 
-**wszMEID\_ME**  
-移动设备标识符 (MEID) 由 3GPP2 定义。
+**wszMEID \_**  
+由3GPP2 定义的移动设备标识符 (MEID) 。
 
-**wszSF\_EUIMID**  
-短格式扩展的用户标识模块标识符 (EUIMID) R UIM 或 CSIM （CDMA SIM 应用程序） 卡。
+**wszSF \_ EUIMID**  
+为 R-UIM 或 CSIM (CDMA SIM 应用程序) 卡 (EUIMID) 扩展了短格式的用户标识模块标识符。
 
 <a name="requirements"></a>要求
 ------------
@@ -59,7 +59,7 @@ typedef struct _HS_SIM_DATA {
 <tbody>
 <tr class="odd">
 <td><p>Header</p></td>
-<td>Hotspotoffloadplugin.h （包括 Hotspotoffloadplugin.h）</td>
+<td>Hotspotoffloadplugin (包含 Hotspotoffloadplugin) </td>
 </tr>
 </tbody>
 </table>

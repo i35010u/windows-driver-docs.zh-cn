@@ -4,69 +4,69 @@ description: 创建合作伙伴设置应用
 ms.assetid: 3b549c11-f8b2-46e8-9d22-4edc787743ee
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7417af3e917a7bc6d0aed64ddd8db2511a914183
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 85f95cab56ef9f640dee7df5ce8ccde9b4ed3e53
+ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67353577"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89383559"
 ---
 # <a name="create-a-partner-settings-app"></a>创建合作伙伴设置应用
 
-Oem 和移动运营商可以公开自定义功能设置的设备硬件将它与其他设备区分开来。 一些示例包括扬声器、 传感器、 或麦克风。 最多五个这些自定义设置将显示为一个设置应用的级别的两个页面中的其他链接。  
+Oem 和移动运营商可以公开设备硬件功能的自定义设置，以便将其与其他设备区分开来。 一些示例包括扬声器、传感器或麦克风。 在其中一个 "设置" 应用的级别中，多达5个自定义设置将显示为其他链接。  
 
-例如，在**设备**选项卡**设置**应用程序中，以下页每个最多可有五个自定义设置应用到的其他链接：
+例如，在 "**设置**" 应用的 "**设备**" 选项卡中，每个页面可以具有多达五个指向自定义设置应用的其他链接：
 
 * 打印机和扫描仪
-* 连接的设备
+* 已连接的设备
 * 蓝牙
 * 鼠标
 * 触摸板
-* 键入
+* Typing
 * 笔和 Windows Ink
-* AutoPlay
+* 自动播放
 * USB
 
-![在设置应用中的设备列表](images/devices-list-in-settings.png)
+![设置应用中的设备列表](images/devices-list-in-settings.png)
 
-您可以找到一系列中的所有级别两个页面[启动 Windows 设置应用](https://docs.microsoft.com/windows/uwp/launch-resume/launch-settings-app)主题。 请务必注意，必须与在放入的页面相关的所有链接。
+你可以在 [启动 Windows 设置应用](/windows/uwp/launch-resume/launch-settings-app) 主题中找到所有级别为两页的列表。 请务必注意，所有链接都必须与它们所在的页面相关。
 
-此外，您就能够将最多五个搜索词添加在每个页上，它必须是与页面上的内容。 为获得最佳的搜索体验，使用特定的短语。 使用常规和一个 word 条款可能会导致您不相关搜索结果中出现的链接。  
+此外，还可以在每个页面上添加最多五个搜索词，它们必须与页面上的内容相关。 为了获得最佳搜索体验，请使用特定短语。 使用 "常规" 和 "单字" 条件可能会导致链接不会出现在相关搜索中。  
 
-例如，如果你有"Fabricam multipen"设备，创建搜索短语，例如"设置 fabricam mulitipen"而不是泛型的搜索词，例如"笔"。
+例如，如果你有一个 "Fabricam.com multipen" 设备，请创建一个搜索短语，如 "设置 fabricam.com mulitipen"，而不是 "笔" 等通用搜索词。
 
-## <a name="characteristics-of-partner-settings-app"></a>合作伙伴设置应用程序的特征
+## <a name="characteristics-of-partner-settings-app"></a>合作伙伴设置应用的特征
 
 合作伙伴设置应用具有以下特征：
 
-* 它们是通用 Windows 平台 (UWP) 应用或 Windows Phone Silverlight 应用程序。
+* 它们是通用 Windows 平台 (UWP) 应用程序或 Windows Phone Silverlight 应用程序。
 
-* 用户可以卸载它们直接，其他应用一样。
+* 用户可以直接卸载它们，如其他应用。
 
-* 它们可以通过更新存储区，如其他 Windows 应用中的设置应用程序进行升级。
+* 可以通过更新存储中的 "设置" 应用程序来升级它们，如其他 Windows 应用程序。
 
-* 它们是在首次启动安装的预安装应用程序。
+* 它们是首次启动时安装的预安装应用程序。
 
-    与任何其他预安装应用程序，合作伙伴必须提交到 Windows 开发人员中心，以便为系统设置应用程序：
+    与任何其他预安装的应用程序一样，合作伙伴必须将系统设置应用程序提交到 Windows 开发人员中心，才能：
   * 认证应用程序
-  * 获取已签名的.appx 文件和要包含在设备图像中的应用程序所需的许可证文件。
+  * 获取在设备映像中包含应用程序所需的已签名的 .appx 文件和许可证文件。
 
-* 它们被发布到用户无法浏览到或使用搜索查找的存储区中的隐藏位置。
+* 它们发布到应用商店中的隐藏位置，用户无法使用搜索进行浏览或查找。
 
 ## <a name="creating-system-settings-applications"></a>创建系统设置应用程序
 
 > [!NOTE]
-> 设置应用程序通用 Windows 平台应用，应遵守所有 UWP 编程原则。 请参阅[适用于通用 Windows 平台 (UWP) 应用准则](https://developer.microsoft.com/windows/apps/design)有关详细信息。
+> 设置应用程序通用 Windows 平台应用程序，应符合所有 UWP 编程准则。 有关详细信息，请参阅 [通用 Windows 平台 (UWP) 应用的准则](https://developer.microsoft.com/windows/apps/design) 。
 
-1. 使用 Windows 软件开发工具包 (SDK) 来创建 Windows 通用应用。 创建 Windows 通用应用程序的详细信息，请参阅[使用 Visual Studio 构建 UWP 应用](https://docs.microsoft.com/windows/uwp/get-started/create-uwp-apps)。
+1. 使用 Windows 软件开发工具包 (SDK) 创建 Windows 通用应用。 有关创建 Windows 通用应用的详细信息，请参阅 [使用 Visual Studio 生成 UWP 应用](/windows/uwp/get-started/create-uwp-apps)。
 
-    如果您要编写面向 Windows Phone 的设置应用程序，还可以创建 Windows Phone Silverlight 应用程序。
+    如果要将设置应用目标 Windows Phone，还可以创建 Windows Phone 的 Silverlight 应用。
 
-2. 在以下应用程序清单：
+2. 在下面的应用程序清单中：
 
     `xmlns:rescap=http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities`
   
-    描述页在你的应用程序链接列出使用`SettingsPageUri`属性。 使用`AppActivationMode`属性以指向此链接。 使用下面的代码示例为例：
+    使用属性描述应用程序链接所列出的页面 `SettingsPageUri` 。 使用 `AppActivationMode` 特性指向此链接。 使用下面的代码示例作为示例：
 
     ```xml
     <Extensions>
@@ -85,7 +85,7 @@ Oem 和移动运营商可以公开自定义功能设置的设备硬件将它与�
     </Extensions>
     ```
 
-   请注意此包中的所有应用列表不能有一个条目。 若要完成此操作，设置[AppListEntry](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.applistentry)属性设置为**none**。
+   请注意，此包不能包含 "所有应用" 列表中的条目。 若要实现此目的，请将 [AppListEntry](/uwp/api/windows.applicationmodel.core.applistentry) 属性设置为 **none**。
 
     ```xml
      <uap:VisualElements AppListEntry="none" DisplayName="OptionalPackage"
@@ -93,16 +93,16 @@ Oem 和移动运营商可以公开自定义功能设置的设备硬件将它与�
      </uap:VisualElements>
     ```
 
-3. 若要将配置为预安装的应用程序，你设置应用程序提交到 Windows 开发人员中心。 接收已签名的.appx 文件并获取许可证文件之后, 在设备图像中包括的应用。
+3. 若要将配置为预安装的应用程序，请将设置应用程序提交到 Windows 开发人员中心。 接收到已签名的 .appx 文件并获取许可证文件后，在设备映像中包括该应用程序。
 
-## <a name="updating-system-settings-applications"></a>更新系统设置的应用程序
+## <a name="updating-system-settings-applications"></a>更新系统设置应用程序
 
-提交到 Microsoft Store 设置应用程序更新。 提交更新后，已安装的设置应用程序的客户更新通知，并可安装更新，通过应用商店。
+将设置应用程序更新提交到 Microsoft Store。 提交更新后，已安装设置应用的客户将收到更新通知，并可通过应用商店安装更新。
 
-系统设置应用程序不会显示在设备应用程序列表中。 为避免混淆，用户会收到通知的应用程序的更新时，请确保其应用商店说明指定，它提供了系统级设置，显示在**设置**设备。
+"系统设置" 应用不会显示在 "设备应用程序列表" 中。 若要避免在用户收到应用更新通知时产生混淆，请确保其存储说明指定它提供了在设备的 " **设置** " 中显示的系统级设置。
 
-## <a name="what-happens-to-legacy-control-panel-or-system-settings-apps-when-the-os-upgrades-to-windows-10"></a>在 OS 升级到 Windows 10，传统控件面板或系统设置应用程序会发生什么情况
+## <a name="what-happens-to-legacy-control-panel-or-system-settings-apps-when-the-os-upgrades-to-windows-10"></a>如果 OS 升级到 Windows 10，旧版控制面板或系统设置应用会发生什么情况
 
-如果控制面板应用程序专为 Windows 7、 8 或 Windows 8.1，它将继续工作并 （之前的未来版本中删除），会显示旧的控制面板中，但不会显示在 Windows 10 系统设置应用并支持任何其功能。
+如果你的控制面板应用程序是为 Windows 7、Windows 8 或 Windows 8.1 编写的，则该应用程序将继续工作，并在旧控制面板中显示 (，直到在将来的版本) 中将其删除，但不会在 Windows 10 系统设置应用中显示，并支持其任何功能。
 
-同样，如果您的旧系统设置的应用程序专为 Windows 8 或 Windows 8.1，它将继续工作，但将不支持任何 Windows 10 系统设置应用的功能。
+同样，如果你的旧系统设置应用是为 Windows 8 或 Windows 8.1 编写的，则该应用程序将继续运行，但不支持 Windows 10 系统设置应用程序的任何功能。

@@ -7,14 +7,14 @@ keywords:
 - 配置空间 WDK 总线
 - IRP_MN_READ_CONFIG
 - IRP_MN_WRITE_CONFIG
-ms.date: 04/20/2017
+ms.date: 08/31/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 970c42fc25298ab6f68f45b6ecf78ee0e7a7518b
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 8455ac55f0b49ac87c2ca1b3fc3fed69b1bc2ca5
+ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 09/02/2020
-ms.locfileid: "89382005"
+ms.locfileid: "89402778"
 ---
 # <a name="accessing-pci-device-configuration-space"></a>访问 PCI 设备配置空间
 
@@ -24,6 +24,9 @@ ms.locfileid: "89382005"
 -   [**总线 \_ 接口 \_ 标准**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_bus_interface_standard)总线接口
 
 -   配置 i/o 请求数据包 (Irp) 、 [**IRP \_ MN \_ 读取 \_ 配置**](../kernel/irp-mn-read-config.md) 和 [**IRP \_ MN \_ 写入 \_ 配置**](../kernel/irp-mn-write-config.md)
+
+>[!NOTE]
+>从 Windows 10、2004开始，如果设备具有 (SDEV 的安全设备) 启用了 ACPI 表并启用了基于虚拟化的安全性，则会对访问 PCI 设备配置空间的不受支持的方法施加限制。 如果驱动程序或进程尝试使用上面未列出的方法读取或操作 PCI 设备配置空间，则该访问将被阻止，并将导致系统 bug 检查。
 
 Windows XP 和 Windows Server 2003 及更高版本的操作系统可以独占控制 *PCI 本地总线* 规范定义的配置空间标头以及功能链接列表中的所有功能。 驱动程序不得尝试修改这些寄存器。
 

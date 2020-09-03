@@ -10,12 +10,12 @@ keywords:
 - 完成 irp WDK 内核，关于完成 Irp
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 530e5dd131466831f6600f6458f93ef037cdc251
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 4d3026668e238c8fe5691a24deeb55e6e515dbcf
+ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89189835"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89402762"
 ---
 # <a name="completing-irps"></a>完成 IRP
 
@@ -33,7 +33,7 @@ ms.locfileid: "89189835"
 
 [何时完成 IRP](when-to-complete-an-irp.md)
 
-[在 Dispatch 例程中完成 IRP](completing-irps-in-dispatch-routines.md)
+[在 Dispatch 例程中完成 IRP](how-to-complete-an-irp-in-a-dispatch-routine.md)
 
 [使用 IoCompletion 例程](using-iocompletion-routines.md)
 

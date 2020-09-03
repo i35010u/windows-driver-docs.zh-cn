@@ -8,44 +8,44 @@ keywords:
 - 在启动过程中记录 WDK 跟踪
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 173b851a9fad621d66b386396780be271a7282fe
-ms.sourcegitcommit: cbcb712a9f1f62c7d67e1b98097a0d8d24bd0c71
+ms.openlocfilehash: b2fdb29df4f9b1fbb0b726c2fc7aee9731837125
+ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83769711"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89384831"
 ---
 # <a name="how-to-log-to-the-global-logger-session"></a>如何记录到全局记录器会话
 
 
 使用以下过程将驱动程序配置为记录到全局记录器跟踪会话：
 
-1. 将以下定义添加到驱动程序代码中。 在[WPP \_ 控件 \_ guid](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff556186(v=vs.85))宏定义和[跟踪消息头文件](trace-message-header-file.md)的 include 语句之间插入定义。
+1. 将以下定义添加到驱动程序代码中。 在 [WPP \_ 控件 \_ guid](/previous-versions/windows/hardware/previsioning-framework/ff556186(v=vs.85)) 宏定义和 [跟踪消息头文件](trace-message-header-file.md)的 include 语句之间插入定义。
    ```
    #define WPP_GLOBALLOGGER
    ```
 
-2. 使用[Tracelog](tracelog.md)配置全局记录器跟踪会话。 最简单的命令如下所示：
+2. 使用 [Tracelog](tracelog.md) 配置全局记录器跟踪会话。 最简单的命令如下所示：
 
    ```
    tracelog -start GlobalLogger
    ```
 
-   有关完整的说明，包括用于配置全局记录器跟踪会话的参数，请参阅[**Tracelog 命令语法**](tracelog-command-syntax.md)和[全局记录器跟踪会话](global-logger-trace-session.md)。
+   有关完整的说明，包括用于配置全局记录器跟踪会话的参数，请参阅 [**Tracelog 命令语法**](tracelog-command-syntax.md) 和 [全局记录器跟踪会话](global-logger-trace-session.md)。
 
-   有关示例，请参阅[示例13：创建全局记录器会话](example-13--creating-a-global-logger-session.md)。
+   有关示例，请参阅 [示例13：创建全局记录器会话](example-13--creating-a-global-logger-session.md)。
 
-   此命令创建并配置跟踪会话，但在重新启动系统之前，会话不会启动（步骤5）。
+   此命令创建并配置跟踪会话，但在重新启动系统 (步骤 5) 之前，会话不会启动。
 
-3. 在**HKLM \\ System \\ CurrentControlSet \\ control \\ WMI \\ GlobalLogger**子项下，为跟踪提供程序的[控件 GUID](control-guid.md)添加一个名为的子项。 在 Windows Vista 和更高版本的 Windows 中，控件 GUID 必须括在大括号（ {} ）中。
+3. 在 **HKLM \\ System \\ CurrentControlSet \\ control \\ WMI \\ GlobalLogger** 子项下，为跟踪提供程序的 [控件 GUID](control-guid.md) 添加一个名为的子项。 在 Windows Vista 和更高版本的 Windows 中，必须将控件 GUID 括在大括号中， ( {} ) 。
 
    **Tracelog GlobalLogger**命令将**GlobalLogger**子项添加到注册表。 **ControlGUID**子项将驱动程序建立为全局记录器跟踪会话的[跟踪提供程序](trace-provider.md)。
 
    例如，若要将 Tracedrv 示例驱动程序配置为在运行 Windows XP 的计算机上记录到全局记录器跟踪会话，请添加一个名为 for Tracedrv control GUID、d58c126f-b309-11d1-969e-0000f875a5bc： **HKLM \\ SYSTEM \\ CurrentControlSet \\ control \\ WMI \\ GlobalLogger \\ d58c126f-b309-11d1-969e-0000f875a5bc**的子项。
 
-   [TraceDrv](https://github.com/Microsoft/Windows-driver-samples/tree/master/general/tracing/tracedriver)是设计用于软件跟踪的示例驱动程序，位于 GitHub 上的[Windows 驱动程序示例](https://github.com/Microsoft/Windows-driver-samples)存储库中。
+   [TraceDrv](https://github.com/Microsoft/Windows-driver-samples/tree/master/general/tracing/tracedriver)是设计用于软件跟踪的示例驱动程序，位于 GitHub 上的 [Windows 驱动程序示例](https://github.com/Microsoft/Windows-driver-samples) 存储库中。
 
-4. 若要配置跟踪提供程序，请将以下注册表项添加到**ControlGUID**子项。 这些条目是可选的，它们的值由驱动程序定义。
+4. 若要配置跟踪提供程序，请将以下注册表项添加到 **ControlGUID** 子项。 这些条目是可选的，它们的值由驱动程序定义。
 
    <table>
    <colgroup>
@@ -64,14 +64,14 @@ ms.locfileid: "83769711"
    <tr class="odd">
    <td align="left"><p><strong>标记</strong></p></td>
    <td align="left"><p>REG_DWORD</p></td>
-   <td align="left"><p>指定提供程序的<a href="trace-flags.md" data-raw-source="[trace flags](trace-flags.md)">跟踪标志</a>。</p>
+   <td align="left"><p>指定提供程序的 <a href="trace-flags.md" data-raw-source="[trace flags](trace-flags.md)">跟踪标志</a> 。</p>
    <p>标志的含义由每个跟踪提供程序单独定义。 通常，标志表示越来越详细的报表级别。</p></td>
    </tr>
    <tr class="even">
    <td align="left"><p><strong>级别</strong></p></td>
    <td align="left"><p>REG_DWORD</p></td>
-   <td align="left"><p>指定提供程序的<a href="trace-level.md" data-raw-source="[trace level](trace-level.md)">跟踪级别</a>。</p>
-   <p><strong>级别</strong>值的含义由每个跟踪提供程序单独定义。 通常，跟踪级别表示事件的严重级别（信息、警告或错误）。</p></td>
+   <td align="left"><p>指定提供程序的 <a href="trace-level.md" data-raw-source="[trace level](trace-level.md)">跟踪级别</a> 。</p>
+   <p><strong>级别</strong>值的含义由每个跟踪提供程序单独定义。 通常，跟踪级别表示事件的严重性 (信息、警告或错误) 。</p></td>
    </tr>
    </tbody>
    </table>
@@ -79,7 +79,7 @@ ms.locfileid: "83769711"
 
 
 
-请注意，**标志**条目的名称是复数，**级别**条目的名称是单数。
+请注意， **标志** 条目的名称是复数， **级别** 条目的名称是单数。
 
 
 5.  重新启动系统。 这会启动全局记录器跟踪会话。
@@ -93,12 +93,3 @@ ms.locfileid: "83769711"
 此外，由于全局记录器会话不提供回调通知，因此 Windows 会假定回调已发生，并进行相应的处理。
 
 WPP 定义只生成少量的代码，因此在测试后无需将其从代码中移除。
-
-
-
-
-
-
-
-
-

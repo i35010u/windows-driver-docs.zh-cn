@@ -7,34 +7,28 @@ keywords:
 - PCMCIA_INTERFACE_STANDARD
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2b83c27a6113a03ef82e683a855ec21f5885175e
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 29acbc4a612824870bceaa2668e86efe39a4cd26
+ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386194"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89384427"
 ---
-# <a name="pcmciainterfacestandard-interface-for-memory-cards"></a>PCMCIA\_接口\_标准接口，用于存储卡
+# <a name="pcmcia_interface_standard-interface-for-memory-cards"></a>\_ \_ 内存卡的 PCMCIA 接口标准接口
 
 
 
 
 
-本部分介绍 PCMCIA\_接口\_标准接口，Microsoft Windows 2000 和更高版本操作系统为 PCMCIA 卡和线性闪存卡提供：
+本部分介绍 \_ \_ Microsoft Windows 2000 及更高版本的操作系统为 pcmcia 内存卡和线性闪存卡提供的 pcmcia 接口标准接口：
 
-[功能 PCMCIA\_接口\_标准接口](https://docs.microsoft.com/windows-hardware/drivers/pcmcia/functionality-of-the-pcmcia-interface-standard-interface)
+[PCMCIA \_ 接口 \_ 标准接口的功能](./functionality-of-the-pcmcia-interface-standard-interface.md)
 
-[获取 PCMCIA\_接口\_标准接口](https://docs.microsoft.com/windows-hardware/drivers/pcmcia/obtaining-a-pcmcia-interface-standard-interface)
+[获取 PCMCIA \_ 接口 \_ 标准接口](./obtaining-a-pcmcia-interface-standard-interface.md)
 
-[调用 PCMCIA\_接口\_标准接口例程](https://docs.microsoft.com/windows-hardware/drivers/pcmcia/calling-a-pcmcia-interface-standard-interface-routine)
+[调用 PCMCIA \_ 接口 \_ 标准接口例程](./calling-a-pcmcia-interface-standard-interface-routine.md)
 
-[PCMCIA 内存卡驱动程序的特殊注意事项](https://docs.microsoft.com/windows-hardware/drivers/pcmcia/special-considerations-for-pcmcia-memory-card-drivers)
-
- 
+[PCMCIA 内存卡驱动程序的特殊注意事项](./special-considerations-for-pcmcia-memory-card-drivers.md)
 
  
-
-
-
-
 

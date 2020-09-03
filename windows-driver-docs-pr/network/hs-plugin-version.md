@@ -1,25 +1,25 @@
 ---
 title: HS_PLUGIN_VERSION 结构
-description: HS_PLUGIN_VERSION 结构包含由插件所支持的最小值和最大热点主机版本。
+description: HS_PLUGIN_VERSION 结构包含插件支持的最小和最大热点主机版本。
 ms.assetid: ced24606-0379-4b13-831c-11de3ed6cd2b
 keywords:
-- HS_PLUGIN_VERSION 结构与 Windows Vista 一起启动的网络驱动程序
-- PHS_PLUGIN_VERSION 结构指针与 Windows Vista 一起启动的网络驱动程序
+- 从 Windows Vista 开始 HS_PLUGIN_VERSION 结构网络驱动程序
+- 从 Windows Vista 开始 PHS_PLUGIN_VERSION 结构指针网络驱动程序
 ms.date: 07/31/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5db1c982afe60fbaa492b551fa452aede38370c5
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 40408006fe857c8c14a81f9ce1e6241deca24e07
+ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63322134"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89402980"
 ---
-# <a name="hspluginversion-structure"></a>HS\_插件\_版本的结构
+# <a name="hs_plugin_version-structure"></a>HS \_ 插件 \_ 版本结构
 
-[!include[Wi-Fi Hotspot Offloading deprecation](wi-fi-hotspot-offloading-deprecation.md)]
+[!include[Wi-Fi Hotspot Offloading deprecation](../includes/wi-fi-hotspot-offloading-deprecation.md)]
 
 
-**HS\_插件\_版本**结构包含由插件所支持的最小值和最大热点主机版本。
+**HS \_ 插件 \_ 版本**结构包含插件支持的最小和最大热点主机版本。
 
 <a name="syntax"></a>语法
 ------
@@ -35,10 +35,10 @@ typedef struct _HS_PLUGIN_VERSION {
 -------
 
 **dwVerMin**  
-该插件支持的最小热点主机版本。
+插件支持的最小热点主机版本。
 
 **dwVerMax**  
-该插件支持的最大热点主机版本。
+插件支持的最高热点主机版本。
 
 <a name="requirements"></a>要求
 ------------
@@ -51,7 +51,7 @@ typedef struct _HS_PLUGIN_VERSION {
 <tbody>
 <tr class="odd">
 <td><p>Header</p></td>
-<td>Hotspotoffloadplugin.h （包括 Hotspotoffloadplugin.h）</td>
+<td>Hotspotoffloadplugin (包含 Hotspotoffloadplugin) </td>
 </tr>
 </tbody>
 </table>

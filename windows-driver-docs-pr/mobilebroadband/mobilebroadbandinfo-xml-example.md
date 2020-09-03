@@ -4,16 +4,16 @@ description: MobileBroadbandInfo XML 示例
 ms.assetid: 605566a2-55d7-456c-8999-e3bb626527fd
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7ce080016f13426dece83363046af8928095cdb0
-ms.sourcegitcommit: 67efcd26f7be8f50c92b141ccd14c9c68f4412d8
+ms.openlocfilehash: 4227073db876e23d4d72165e235800a3e1e1adcf
+ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88902480"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89402780"
 ---
 # <a name="mobilebroadbandinfo-xml-example"></a>MobileBroadbandInfo XML 示例
 
-[!include[MBAE deprecation warning](mbae-deprecation-warning.md)]
+[!include[MBAE deprecation warning](../includes/mbae-deprecation-warning.md)]
 
 以下 XML 文档使用 [MOBILEBROADBANDINFO xml 架构](mobilebroadbandinfo-xml-schema.md) 指定服务的移动宽带特定信息：
 

@@ -1,6 +1,6 @@
 ---
 title: DevCon Install
-description: 创建新的、 根枚举的 devnode 非即插即用设备并安装其支持软件。 仅在本地计算机上有效。
+description: 为非即插即用设备创建一个新的根枚举 devnode，并安装其支持的软件。 仅在本地计算机上有效。
 ms.assetid: d31007dd-6f20-460d-8561-d1639c69aa09
 keywords:
 - DevCon 安装驱动程序开发工具
@@ -12,49 +12,49 @@ api_type:
 - NA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b9fbf6b15245dcfd3d5bf7f3d39106f8358a86f5
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 1a64931a6da1fb95d2d87abc5aac4b825c79fabf
+ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67371537"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89384953"
 ---
 # <a name="devcon-install"></a>DevCon Install
 
 
-创建新的、 根枚举的 devnode 非即插即用设备并安装其支持软件。 仅在本地计算机上有效。
+为非即插即用设备创建一个新的根枚举 devnode，并安装其支持的软件。 仅在本地计算机上有效。
 
 ```
     devcon [/r] install INFfile HardwareID 
 ```
 
-## <a name="span-idddkdevconinstalltoolsspanspan-idddkdevconinstalltoolsspanparameters"></a><span id="ddk_devcon_install_tools"></span><span id="DDK_DEVCON_INSTALL_TOOLS"></span>参数
+## <a name="span-idddk_devcon_install_toolsspanspan-idddk_devcon_install_toolsspanparameters"></a><span id="ddk_devcon_install_tools"></span><span id="DDK_DEVCON_INSTALL_TOOLS"></span>参数
 
 
-<span id="________r______"></span><span id="________R______"></span> **/r**   
-条件性重新启动。 完成操作时必须重新启动，以使更改生效后，会重新启动系统。 默认情况下，DevCon 不重新启动系统。
+<span id="________r______"></span><span id="________R______"></span>**/r**   
+条件重启。 完成操作后，如果需要重新启动才能使更改生效，则重新启动系统。 默认情况下，DevCon 不会重新启动系统。
 
-<span id="_______INFfile______"></span><span id="_______inffile______"></span><span id="_______INFFILE______"></span> *INFfile*   
-指定设备的 INF 文件的完整路径和文件名。 如果省略路径，DevCon 假定该文件位于当前目录。
+<span id="_______INFfile______"></span><span id="_______inffile______"></span><span id="_______INFFILE______"></span>*INFfile*   
+为设备指定 INF 文件的完整路径和文件名。 如果省略路径，则 DevCon 会假定文件位于当前目录中。
 
-<span id="_______HardwareID______"></span><span id="_______hardwareid______"></span><span id="_______HARDWAREID______"></span> *HardwareID*   
+<span id="_______HardwareID______"></span><span id="_______hardwareid______"></span><span id="_______HARDWAREID______"></span>*HardwareID*   
 指定设备的硬件 ID。
 
-指定的硬件 ID 必须完全符合设备的硬件 ID。 模式不是有效的。 请不要键入一个单引号字符 (  ) 以指示文本值。 有关详细信息，请参阅[硬件 Id](https://docs.microsoft.com/windows-hardware/drivers/install/hardware-ids)并[设备标识字符串](https://docs.microsoft.com/windows-hardware/drivers/install/device-identification-strings)。
+指定的硬件 ID 必须与设备的硬件 ID 完全匹配。 模式无效。 不要键入单引号字符 (**"**) 来指示文本值。 有关详细信息，请参阅 [硬件 id](../install/hardware-ids.md) 和 [设备标识字符串](../install/device-identification-strings.md)。
 
-### <a name="span-idcommentsspanspan-idcommentsspancomments"></a><span id="comments"></span><span id="COMMENTS"></span>注释
+### <a name="span-idcommentsspanspan-idcommentsspancomments"></a><span id="comments"></span><span id="COMMENTS"></span>提出
 
-系统可能需要重新启动才能使此更改生效。 若要让 DevCon 重新启动系统，添加条件的重新启动参数 ( **/r**) 到该命令。
+系统可能需要重新启动才能使此更改生效。 若要让 DevCon 重新启动系统，请将 (**/r**) 的条件重新启动参数添加到命令中。
 
-不能使用**DevCon 安装**插设备的操作。
+不能对即插即用设备使用 **DevCon 安装** 操作。
 
-**DevCon 安装**操作创建一个新的非即插设备节点。 然后，它使用[ **DevCon 更新**](devcon-update.md)操作以安装新添加的设备驱动程序。 因此，成功消息**DevCon 安装**操作报告 DevCon 已创建设备节点，并且它已更新设备的驱动程序。
+**DevCon 安装**操作会创建新的非即插即用设备节点。 然后，它使用 [**DevCon Update**](devcon-update.md) 操作来为新添加的设备安装驱动程序。 因此， **Devcon 安装** 操作的成功消息会报告 devcon 已创建设备节点，并且已更新设备的驱动程序。
 
-如果任何步骤**DevCon 安装**操作将失败，DevCon 显示失败消息，并会继续进行驱动程序安装。
+如果 **Devcon 安装** 操作的任何步骤失败，则 devcon 会显示失败消息，不会继续安装驱动程序。
 
-**DevCon 安装**命令创建一个新的非即插设备节点每次运行它。 若要更新或重新安装驱动程序，请使用[ **DevCon 更新**](devcon-update.md)命令。
+在每次运行 **DevCon 安装** 命令时，它都会创建一个新的非即插即用设备节点。 若要更新或重新安装驱动程序，请使用 [**DevCon update**](devcon-update.md) 命令。
 
-### <a name="span-idsampleusagespanspan-idsampleusagespansample-usage"></a><span id="sample_usage"></span><span id="SAMPLE_USAGE"></span>示例用法
+### <a name="span-idsample_usagespanspan-idsample_usagespansample-usage"></a><span id="sample_usage"></span><span id="SAMPLE_USAGE"></span>示例用法
 
 ```
 devcon install c:\windows\inf\newdvc.inf ISAPNP\CSC4324\0
@@ -63,23 +63,13 @@ devcon /r install c:\windows\inf\newdvc.inf ISAPNP\CSC4324\0
 
 ### <a name="span-idexamplesspanspan-idexamplesspanexamples"></a><span id="examples"></span><span id="EXAMPLES"></span>示例
 
-[示例 33:安装设备](devcon-examples.md#ddk_example_33_install_a_device_tools)
+[示例33：安装设备](devcon-examples.md#ddk_example_33_install_a_device_tools)
 
-[示例 34:安装使用无人参与的安装的设备](devcon-examples.md#ddk_example_34_install_a_device_using_unattended_setup_tools)
+[示例34：使用无人参与安装程序安装设备](devcon-examples.md#ddk_example_34_install_a_device_using_unattended_setup_tools)
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
-
-
-[硬件 Id](https://docs.microsoft.com/windows-hardware/drivers/install/hardware-ids)
-
-[设备标识字符串](https://docs.microsoft.com/windows-hardware/drivers/install/device-identification-strings)
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
+[硬件 Id](../install/hardware-ids.md)
 
-
-
-
-
-
-
-
+[设备标识字符串](../install/device-identification-strings.md)

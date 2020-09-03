@@ -3,16 +3,16 @@ title: 与智能卡驱动程序库的交互
 description: 与智能卡驱动程序库的交互
 ms.assetid: 44cf41f4-bbff-4193-afad-6d4106ce50c3
 keywords:
-- Ioctl WDK 智能卡
-- 供应商提供的驱动程序 WDK 的智能卡，IOCTL 请求管理
+- IOCTLs WDK 智能卡
+- 供应商提供的驱动程序 WDK 智能卡，IOCTL 请求管理
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c2e9f9ffcfca73558d1c0da2598d9d75e6c47af7
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: f2cff599869626d9f409f74a24dea0810c7ee3e1
+ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67356722"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89384961"
 ---
 # <a name="interaction-with-the-smart-card-driver-library"></a>与智能卡驱动程序库的交互
 
@@ -20,35 +20,29 @@ ms.locfileid: "67356722"
 ## <span id="_ntovr_interaction_with_the_smart_card_driver_library"></span><span id="_NTOVR_INTERACTION_WITH_THE_SMART_CARD_DRIVER_LIBRARY"></span>
 
 
-下图显示了读卡器驱动程序交互的方式与智能卡驱动程序库来处理它从资源管理器收到的 IOCTL 请求：
+下图显示了读取器驱动程序如何与智能卡驱动程序库交互，以便处理从资源管理器接收的 IOCTL 请求：
 
-![说明如何使用智能卡驱动程序库来处理 ioctl 请求交互读卡器驱动程序的关系图 ](images/memnum3.png)
+![说明读取器驱动程序如何与智能卡驱动程序库交互以处理 ioctl 请求的关系图 ](images/memnum3.png)
 
-下面的编号，与上图中的数字相对应。 从数字 1 开始，该图显示的步骤 （以及系统提供的驱动程序库中） 完成读卡器驱动程序必须处理 IOCTL 请求：
+以下数字与上图中的数字相对应。 从数字1开始，该图显示了读取器驱动程序必须 (与系统提供的驱动程序库一起完成的步骤，) 才能处理 IOCTL 请求：
 
-1.  读卡器驱动程序将传递到所有 IOCTL 请求[ **SmartcardDeviceControl (WDM)** ](https://docs.microsoft.com/previous-versions/ff548939(v=vs.85))驱动程序库例程。
+1.  读取器驱动程序将所有 IOCTL 请求传递到 [**SmartcardDeviceControl (WDM) **](/previous-versions/ff548939(v=vs.85)) 驱动程序库例程。
 
-2.  如果读卡器驱动程序将传递给参数[ **SmartcardDeviceControl** ](https://docs.microsoft.com/previous-versions/ff548939(v=vs.85))不正确， **SmartcardDeviceControl**返回一条错误消息。 **SmartcardDeviceControl**返回，而不完成 IOCTL 请求。 在这种情况下，读卡器驱动程序必须完成 IOCTL 请求。
+2.  如果读取器驱动程序传递到 [**SmartcardDeviceControl**](/previous-versions/ff548939(v=vs.85)) 的参数不正确，则 **SmartcardDeviceControl** 返回并返回错误消息。 **SmartcardDeviceControl** 返回，但不完成 IOCTL 请求。 在这种情况下，读取器驱动程序必须完成 IOCTL 请求。
 
-3.  如果参数有效， [ **SmartcardDeviceControl** ](https://docs.microsoft.com/previous-versions/ff548939(v=vs.85))如果它能够处理 IOCTL 请求。
+3.  如果参数有效， [**SmartcardDeviceControl**](/previous-versions/ff548939(v=vs.85)) 将处理 IOCTL 请求（如果可能）。
 
-4.  [**SmartcardDeviceControl** ](https://docs.microsoft.com/previous-versions/ff548939(v=vs.85))检查读卡器驱动程序是否正在处理的 IOCTL 请求定义的回调例程。 如果回调存在，则**SmartcardDeviceControl**调用它。
+4.  [**SmartcardDeviceControl**](/previous-versions/ff548939(v=vs.85)) 检查读取器驱动程序是否具有为其正在处理的 IOCTL 请求定义的回调例程。 如果回调存在， **SmartcardDeviceControl** 将调用该回调。
 
-5.  回调例程调用所有驱动程序完成处理 IOCTL 请求所需的库例程。
+5.  回调例程调用完成 IOCTL 请求处理所需的所有驱动程序库例程。
 
-6.  在处理 IOCTL 请求之后, 回调例程将返回到[ **SmartcardDeviceControl**](https://docs.microsoft.com/previous-versions/ff548939(v=vs.85))。
+6.  处理 IOCTL 请求后，回调例程返回到 [**SmartcardDeviceControl**](/previous-versions/ff548939(v=vs.85))。
 
-7.  [**SmartcardDeviceControl** ](https://docs.microsoft.com/previous-versions/ff548939(v=vs.85))完成执行 IOCTL IRP。
+7.  [**SmartcardDeviceControl**](/previous-versions/ff548939(v=vs.85)) 完成携带 IOCTL 的 IRP。
 
-8.  [**SmartcardDeviceControl** ](https://docs.microsoft.com/previous-versions/ff548939(v=vs.85))将控制权返回给读卡器驱动程序调度例程。
+8.  [**SmartcardDeviceControl**](/previous-versions/ff548939(v=vs.85)) 向读取器-驱动程序调度例程返回控制权。
 
-智能卡库同步到读卡器驱动程序的访问。 没有两个回调函数将调用一次。 但是，必须以异步方式处理的事件处理卡插入和删除。
-
- 
+智能卡库同步对读取器驱动程序的访问。 同时不会调用两个回调函数。 但是，必须异步处理卡片插入和移除的事件处理。
 
  
-
-
-
-
 
