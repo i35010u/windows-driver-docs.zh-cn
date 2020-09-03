@@ -11,12 +11,12 @@ keywords:
 - 可选标准例程 WDK 内核
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d118f90bc5e857cba5530d840acd3dc04b42b493
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: d4cb24e1963b8bf256355753d824304fc267a06a
+ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89188959"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89402678"
 ---
 # <a name="introduction-to-standard-driver-routines"></a>标准驱动程序例程简介
 
@@ -105,7 +105,7 @@ ms.locfileid: "89188959"
 <tr class="even">
 <td><p>延迟的过程调用</p></td>
 <td><p>在 ISR 保存设备状态之后完成设备中断的处理。</p></td>
-<td><p><a href="dpc-objects-and-dpcs.md" data-raw-source="[DPC Objects and DPCs](dpc-objects-and-dpcs.md)">DPC 对象和 DPC</a></p></td>
+<td><p><a href="dpc-objects-and-dpcs.md" data-raw-source="[DPC Objects and DPCs](introduction-to-dpc-objects.md)">DPC 对象和 DPC</a></p></td>
 </tr>
 <tr class="odd">
 <td><p><em>SynchCritSection</em></p></td>
@@ -130,7 +130,7 @@ ms.locfileid: "89188959"
 <tr class="odd">
 <td><p><em>CustomTimerDpc</em>、 <em>IoTimer</em></p></td>
 <td><p>计时和同步事件。</p></td>
-<td><p><a href="synchronization-techniques.md" data-raw-source="[Synchronization Techniques](synchronization-techniques.md)">同步技术</a></p></td>
+<td><p><a href="synchronization-techniques.md" data-raw-source="[Synchronization Techniques](introduction-to-kernel-dispatcher-objects.md)">同步技术</a></p></td>
 </tr>
 </tbody>
 </table>

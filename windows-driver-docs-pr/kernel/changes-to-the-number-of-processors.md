@@ -12,12 +12,12 @@ keywords:
 - 每处理器数据结构 WDK 动态硬件分区
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 05ed90515faa6afd1e62d71c26f5ed3561020623
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 6d60c9bd5cadd7e65cc6e3361da1853e6f815d4f
+ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89183997"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89403452"
 ---
 # <a name="changes-to-the-number-of-processors"></a>处理器数量的更改
 
@@ -42,7 +42,7 @@ ms.locfileid: "89183997"
 
 -   设备驱动程序使用负载平衡算法跨多个处理器分发 i/o 请求的处理。 在这种情况下，如果将处理器添加到硬件分区，则设备驱动程序可能会停止正常工作，并且设备驱动程序将无法完全使用任何新处理器。
 
-如果设备驱动程序受到活动处理器数量的更改的影响，则它必须向操作系统注册自身，以便在将处理器添加到硬件分区时收到通知。 当设备驱动程序得到通知时，它可以根据需要对安全和最佳操作做出响应。 有关设备驱动程序如何向操作系统注册自身的详细信息，请参阅 [驱动程序通知](driver-notification.md)。
+如果设备驱动程序受到活动处理器数量的更改的影响，则它必须向操作系统注册自身，以便在将处理器添加到硬件分区时收到通知。 当设备驱动程序得到通知时，它可以根据需要对安全和最佳操作做出响应。 有关设备驱动程序如何向操作系统注册自身的详细信息，请参阅 [驱动程序通知](introduction-to-driver-notification.md)。
 
 若要检索硬件分区中活动处理器的当前数量，设备驱动程序应调用 [**KeQueryActiveProcessorCount**](/windows-hardware/drivers/ddi/wdm/nf-wdm-kequeryactiveprocessorcount) 函数。 若要检索当前的处理器关联值，设备驱动程序可调用 [**KeQueryActiveProcessors**](/windows-hardware/drivers/ddi/wdm/nf-wdm-kequeryactiveprocessors) 函数或 **KeQueryActiveProcessorCount** 函数。
 

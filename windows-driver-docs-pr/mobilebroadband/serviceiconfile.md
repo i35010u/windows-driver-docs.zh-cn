@@ -4,21 +4,21 @@ description: ServiceIconFile
 ms.assetid: a35a121d-66a8-485e-ac12-adc653db3572
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 891e257bdac542c3eeee5bcbd6ee7d567db13db8
-ms.sourcegitcommit: f017184b00f59b088df87a5bd85fec51b7aed8b2
+ms.openlocfilehash: 4a1e76158beea1fd2f7747b56c4fc41c51d7204e
+ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72323728"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89403444"
 ---
 # <a name="serviceiconfile"></a>ServiceIconFile
 
-[!include[MBAE deprecation warning](mbae-deprecation-warning.md)]
+[!include[MBAE deprecation warning](../includes/mbae-deprecation-warning.md)]
 
 > [!IMPORTANT]
-> 在 Windows 10 版本1709及更高版本中，此字段已通过 COSA 的品牌替换。 COSA for 署名中的字段在[规划桌面 COSA/APN 数据库提交](planning-your-desktop-cosa-apn-database-submission.md)中进行了介绍。 如果在 Windows 10 版本1709之前面向 Windows 版本，则仍将创建此部分中所述的元数据包。 有关 COSA 的详细信息，请参阅[COSA 概述](cosa-overview.md)。 
+> 在 Windows 10 版本1709及更高版本中，此字段已通过 COSA 的品牌替换。 COSA for 署名中的字段在 [规划桌面 COSA/APN 数据库提交](planning-your-desktop-cosa-apn-database-submission.md)中进行了介绍。 如果在 Windows 10 版本1709之前面向 Windows 版本，则仍将创建此部分中所述的元数据包。 有关 COSA 的详细信息，请参阅 [COSA 概述](cosa-overview.md)。 
 
-ServiceIconFile 元素指定服务元数据包中服务图标文件的名称。 服务图标文件用于显示 Windows 连接管理器中的移动网络操作员（o）或移动虚拟网络操作员（MVNO）的徽标。
+ServiceIconFile 元素指定服务元数据包中服务图标文件的名称。 服务图标文件用于在 Windows 连接管理器中显示移动网络操作员 (o) 或移动虚拟网络运营商 (MVNO) 的徽标。
 
 ## <a name="span-idusagespanspan-idusagespanspan-idusagespanusage"></a><span id="Usage"></span><span id="usage"></span><span id="USAGE"></span>使用情况
 
@@ -37,12 +37,12 @@ ServiceIconFile 元素指定服务元数据包中服务图标文件的名称。 
 ## <a name="span-idtext_valuespanspan-idtext_valuespanspan-idtext_valuespantext-value"></a><span id="Text_value"></span><span id="text_value"></span><span id="TEXT_VALUE"></span>文本值
 
 
-具有的图标文件的名称.ICO 扩展。
+具有的图标文件的名称。.ICO 扩展。
 
 ## <a name="span-idchild_elementsspanspan-idchild_elementsspanspan-idchild_elementsspanchild-elements"></a><span id="Child_elements"></span><span id="child_elements"></span><span id="CHILD_ELEMENTS"></span>子元素
 
 
-没有子元素。
+没有任何子元素。
 
 ## <a name="span-idparent_elementsspanspan-idparent_elementsspanspan-idparent_elementsspanparent-elements"></a><span id="Parent_elements"></span><span id="parent_elements"></span><span id="PARENT_ELEMENTS"></span>父元素
 
@@ -55,7 +55,7 @@ ServiceIconFile 元素指定服务元数据包中服务图标文件的名称。 
 <thead>
 <tr class="header">
 <th>元素</th>
-<th>描述</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>

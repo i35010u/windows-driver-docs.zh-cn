@@ -9,12 +9,12 @@ keywords:
 - 顶级对象目录 WDK 内核
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a8cf49db09565b24289726aa0d35eea52ac28623
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 07fe246a8e05e3a2079b2774ab79a8c0ea9d0083
+ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89187905"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89403128"
 ---
 # <a name="object-directories"></a>对象目录
 
@@ -42,7 +42,7 @@ ms.locfileid: "89187905"
 
 -   **\\DosDevices**
 
-    此目录将设备的 MS-DOS 设备名称存储为对应设备对象的符号链接。 有关详细信息，请参阅 [MS-DOS 设备名称](ms-dos-device-names.md)。
+    此目录将设备的 MS-DOS 设备名称存储为对应设备对象的符号链接。 有关详细信息，请参阅 [MS-DOS 设备名称](introduction-to-ms-dos-device-names.md)。
 
 系统会创建其他顶级目录，但它们保留供系统使用。
 

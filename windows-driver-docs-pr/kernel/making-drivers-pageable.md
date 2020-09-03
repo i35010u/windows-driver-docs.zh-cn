@@ -9,12 +9,12 @@ keywords:
 - 页面外的驱动程序 WDK 内核
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7c5e151f09667b3e9782748920f21dd3674c381f
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 5e67273ee76958a59df0c45c341a6e2afb7290a4
+ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89184441"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89403336"
 ---
 # <a name="making-drivers-pageable"></a>使驱动程序可分页
 
@@ -36,7 +36,7 @@ ms.locfileid: "89184441"
 
 [代码和数据何时应可分页？](when-should-code-and-data-be-pageable-.md)
 
-[使驱动程序代码或数据可分页](making-driver-code-or-data-pageable.md)
+[使驱动程序代码或数据可分页](detecting-code-that-can-be-pageable.md)
 
  
 

@@ -4,16 +4,16 @@ description: LaunchApplicationOnDeviceConnect
 ms.assetid: d8a5f20a-bd88-4279-9e15-4f20287edfd4
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bc87de4188efa8cf52467c232c223ca80ed33c66
-ms.sourcegitcommit: f017184b00f59b088df87a5bd85fec51b7aed8b2
+ms.openlocfilehash: 7557d5e0392ffd3353668efdbcb2d67782205517
+ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72323718"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89403372"
 ---
 # <a name="launchapplicationondeviceconnect"></a>LaunchApplicationOnDeviceConnect
 
-[!include[MBAE deprecation warning](mbae-deprecation-warning.md)]
+[!include[MBAE deprecation warning](../includes/mbae-deprecation-warning.md)]
 
 LaunchApplicationOnDeviceConnect 元素指定在用户插入设备时应显示为建议的自动播放操作的应用。
 
@@ -42,7 +42,7 @@ LaunchApplicationOnDeviceConnect 元素指定在用户插入设备时应显示�
 <thead>
 <tr class="header">
 <th>元素</th>
-<th>描述</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>
@@ -70,7 +70,7 @@ LaunchApplicationOnDeviceConnect 元素指定在用户插入设备时应显示�
 <thead>
 <tr class="header">
 <th>元素</th>
-<th>描述</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>
@@ -101,7 +101,7 @@ LaunchApplicationOnDeviceConnect 元素指定在用户插入设备时应显示�
 ## <a name="span-idremarksspanspan-idremarksspanspan-idremarksspanremarks"></a><span id="Remarks"></span><span id="remarks"></span><span id="REMARKS"></span>备注
 
 
-必须指定 UWP 设备应用或桌面应用。 如果将指定 UWP 设备应用，请使用[AutoplayHandler](autoplayhandler.md) ，如果指定桌面应用程序，则使用[DesktopAutoplayHandler](desktopautoplayhandler.md) 。
+必须指定 UWP 设备应用或桌面应用。 如果将指定 UWP 设备应用，请使用 [AutoplayHandler](autoplayhandler.md) ，如果指定桌面应用程序，则使用 [DesktopAutoplayHandler](desktopautoplayhandler.md) 。
 
 LaunchApplicationOnDeviceConnect 元素是可选的。
 

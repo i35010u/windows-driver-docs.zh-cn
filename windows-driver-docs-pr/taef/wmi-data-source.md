@@ -4,37 +4,37 @@ description: WMI 数据源
 ms.assetid: 1C9D0EEC-6542-4249-B7E0-CA3ED63FB120
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c76feb1074d623095c624082919d562056c2a496
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: cfe2f28e487a0dd48106225c101996af591bf197
+ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63346355"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89403264"
 ---
 # <a name="wmi-data-source"></a>WMI 数据源
 
 
-请确保您熟悉基本的 TAEF 执行，并且知道如何使用它，然后继续进行本部分中创建测试。
+请确保熟悉 TAEF 的基本执行，并知道如何使用它创作测试，然后再继续此部分。
 
 ## <a name="span-idbackgroundspanspan-idbackgroundspanspan-idbackgroundspanbackground"></a><span id="Background"></span><span id="background"></span><span id="BACKGROUND"></span>背景
 
 
-"WMI"代表"Windows Management Instrumentation"。 使用通用信息模型 (CIM)，这是行业标准来表示系统。 Windows Management Instrumentation 提供统一的方式，用于访问系统管理信息。
+"WMI" 代表 "Windows Management Instrumentation"。 使用通用信息模型 (CIM) ，这是表示系统的行业标准。 Windows Management Instrumentation 提供了一种统一的方法来访问系统管理信息。
 
-## <a name="span-idhowdoesithelpmytestsspanspan-idhowdoesithelpmytestsspanspan-idhowdoesithelpmytestsspanhow-does-it-help-my-tests"></a><span id="How_does_it_help_my_tests_"></span><span id="how_does_it_help_my_tests_"></span><span id="HOW_DOES_IT_HELP_MY_TESTS_"></span>它如何帮助我的测试？
+## <a name="span-idhow_does_it_help_my_tests_spanspan-idhow_does_it_help_my_tests_spanspan-idhow_does_it_help_my_tests_spanhow-does-it-help-my-tests"></a><span id="How_does_it_help_my_tests_"></span><span id="how_does_it_help_my_tests_"></span><span id="HOW_DOES_IT_HELP_MY_TESTS_"></span>它如何帮助我的测试？
 
 
-使用作为 TAEF 中 WMI 数据源可用的 WMI 查询支持，您可以将前置条件添加到你的测试，以及获取信息的资源的相关测试计算机上运行你的测试之前。 下面是类型的一些您能够使用 WMI 查询的示例：
+使用 WMI 查询支持作为 TAEF 中的 WMI 数据源，可以在测试中添加一个前置条件，还可以在运行测试前获取有关测试计算机上资源的信息。 下面是可以使用 WMI 进行的查询类型的一些示例：
 
--   检查是否在计算机上运行该测试是便携式计算机，并运行测试，仅当它是便携式计算机。
--   检查是否已在测试计算机上安装并运行测试，仅当已被 service pack。
--   检索所有可移动驱动器和测试计算机上的本地硬盘磁盘驱动器并运行测试，以便每个驱动器与查询相匹配。
--   运行测试，仅当测试计算机不是域加入的或
--   仅当测试计算机已加入域，并且检索的域名，请运行测试。
+-   检查运行测试的计算机是否为便携式计算机，并仅在其为便携式计算机时才运行测试。
+-   检查是否已在测试计算机上安装了 Service Pack 并仅在测试计算机上运行了测试。
+-   检索测试计算机上的所有可移动驱动器和本地硬盘驱动器，并为与该查询匹配的每个驱动器运行测试。
+-   仅在未加入域的测试计算机上运行测试，或
+-   仅在测试计算机已加入域并检索域名时才运行测试。
 
-将希望为您提供有关在何处以及如何为您的测试，你可以利用 WMI 数据源的一些思路。 让我们看看如何添加创作 TAEF 测试时此 WMI 查询支持。
+这会给您带来一些想法，希望您可以在何处以及如何使用 WMI 数据源进行测试。 让我们看看如何在创作 TAEF 测试的同时添加此 WMI 查询支持。
 
-您需要使 WMI 数据源测试的测试的唯一特殊元数据是"数据源"。 数据源语法必须如下所示：
+测试 WMI 数据源所需的唯一特殊元数据是 "数据源"。 数据源语法必须如下所示：
 
 ```cpp
 [DataSource("WMI:<WQL query>")]
@@ -46,47 +46,47 @@ ms.locfileid: "63346355"
 TEST_METHOD_PROPERTY(L"DataSource", L"WMI:<WQL query>")]
 ```
 
-您必须已经注意到数据源值开头"WMI:"它可让 TAEF 知道这确实取决于 WMI 查询结果并也使它从数据驱动测试的测试的数据源。 这是很好的机会，说目前 TAEF 不支持一个测试，以是同时-数据驱动的测试，也取决于 WMI 查询结果的测试。
+您必须注意到，DataSource 值以 "WMI：" 开头，这使 TAEF 知道这确实是依赖于 WMI 查询结果的测试的数据源，并将其与数据驱动的测试区分开来。 这是一种很好的机会，指出当前 TAEF 不支持既是数据驱动的测试，也不支持依赖于 WMI 查询结果的测试。
 
-下一个问题自然是如何编写 WQL 查询的要查找的内容？ WQL 查询语法是非常类似于简化的 SQL 查询。 有一些非常好的示例的查询上提供[ https://msdn2.microsoft.com/library/aa394585(VS.85).aspx。](https://msdn2.microsoft.com/library/aa394585(VS.85).aspx) 以下是几个示例：
+下一个问题是如何为您要查找的内容编写 WQL 查询？ WQL 查询语法非常类似于简化的 SQL 查询。 [脚本和应用程序的 WMI 任务](/windows/win32/wmisdk/wmi-tasks-for-scripts-and-applications)中提供了一些很好的查询示例。 以下是一些示例：
 
-<span id="SELECT_Description__DesktopInteract__ProcessId_FROM_Win32_Service_WHERE_Name__Themes_"></span><span id="select_description__desktopinteract__processid_from_win32_service_where_name__themes_"></span><span id="SELECT_DESCRIPTION__DESKTOPINTERACT__PROCESSID_FROM_WIN32_SERVICE_WHERE_NAME__THEMES_"></span>SELECT Description, DesktopInteract, ProcessId FROM Win32\_Service WHERE Name='Themes'  
-找出它的描述、 DesktopInteract 和 ProcessId 属性想要使用它在你的测试后，请在"主题"服务中运行测试。
+<span id="SELECT_Description__DesktopInteract__ProcessId_FROM_Win32_Service_WHERE_Name__Themes_"></span><span id="select_description__desktopinteract__processid_from_win32_service_where_name__themes_"></span><span id="SELECT_DESCRIPTION__DESKTOPINTERACT__PROCESSID_FROM_WIN32_SERVICE_WHERE_NAME__THEMES_"></span>选择 \_ Name = ' Themes ' 的 Win32 服务中的 DesktopInteract 说明  
+确定要在测试中使用的 "主题" 服务的说明、DesktopInteract 和 ProcessId 属性后，在 "主题" 服务上运行测试。
 
-<span id="SELECT_Capabilities__CapabilityDescriptions_FROM_Win32_Printe"></span><span id="select_capabilities__capabilitydescriptions_from_win32_printe"></span><span id="SELECT_CAPABILITIES__CAPABILITYDESCRIPTIONS_FROM_WIN32_PRINTE"></span>选择功能，CapabilityDescriptions 从 Win32\_Printe  
-运行测试，以便连接到此计算机每台打印机。 允许测试后，若要访问的功能和 CapabilityDescriptions 的每个打印机。
+<span id="SELECT_Capabilities__CapabilityDescriptions_FROM_Win32_Printe"></span><span id="select_capabilities__capabilitydescriptions_from_win32_printe"></span><span id="SELECT_CAPABILITIES__CAPABILITYDESCRIPTIONS_FROM_WIN32_PRINTE"></span>SELECT 功能，CapabilityDescriptions 从 Win32 \_ Printe  
+对连接到此计算机的每个打印机运行测试。 允许测试访问每台打印机的功能和 CapabilityDescriptions。
 
-<span id="SELECT_Name__User__Location_FROM_Win32_StartupCommand"></span><span id="select_name__user__location_from_win32_startupcommand"></span><span id="SELECT_NAME__USER__LOCATION_FROM_WIN32_STARTUPCOMMAND"></span>选择名称、 用户、 位置从 Win32\_StartupCommand  
-运行测试，以便获取在 Windows 启动时运行每个进程。 对于每个进程让测试知道进程名称是什么，其中是位于 （位置），以及用户作为进程运行。
+<span id="SELECT_Name__User__Location_FROM_Win32_StartupCommand"></span><span id="select_name__user__location_from_win32_startupcommand"></span><span id="SELECT_NAME__USER__LOCATION_FROM_WIN32_STARTUPCOMMAND"></span>选择名称、用户、从 Win32 StartupCommand 的位置 \_  
+针对在 Windows 启动时运行的每个进程运行测试。 对于每个进程，让测试知道进程的名称是什么，它位于 (位置) ，以及进程运行的用户。
 
-可以如下所示的.cs 文件和标头文件中已打开的示例以及上述文档中找到更多示例。 简化的常规语法如下所示：
+您可以在上面提到的文档中找到更多示例，还可以在打开的示例中找到 .cs 文件和标头文件中的更多示例。 一般的、经过简化的语法如下所示：
 
 ```cpp
 SELECT <comma separated properties> FROM <WMI Class name> [WHERE <add condition on some properties>]
 ```
 
-在示例，您刚才看到的而 Win32\_服务、 Win32\_打印机和 Win32\_StartupCommand 是所有的 WMI 类。 您可以查看哪些测试此处感兴趣的 WMI 类： [ https://msdn2.microsoft.com/library/aa394554(VS.85).aspx。](https://msdn2.microsoft.com/library/aa394554(VS.85).aspx)
+在刚刚看到的示例中，Win32 \_ 服务、win32 \_ Printer 和 win32 \_ STARTUPCOMMAND 都是 WMI 类。 可以在 [wmi 类](/windows/win32/wmisdk/wmi-classes)中查找 wmi 类。
 
 TAEF 不支持检索系统属性。
 
-在场景的背面 TAEF 将为您执行查询，并确认结果。 如果查询返回至少一个对象，获取为每个返回的对象执行测试。 如果 WQL 查询不返回任何对象，该测试使用此信息获取记录为已阻止并执行转到下一个测试。
+在场景 TAEF 后，将执行查询并确认结果。 如果至少有一个对象作为查询结果返回，则为每个返回的对象执行该测试。 如果 WQL 查询不返回任何对象，则会将此信息记录为已阻止，并执行到下一次测试。
 
-检查或创作你的测试之前验证您的查询似乎是不错的选择，并且是一个非常简单的过程：
+在创作测试之前检查或验证查询似乎是一个很好的想法，这是一个非常简单的过程：
 
--   从运行对话框或命令提示符调用"wbemtest.exe"
--   单击右上角上的"连接"按钮。
--   请确保你的命名空间是"根\\cimv2"之前再次在右上角单击"连接"。
--   在"iwbemservices 下面"，单击"查询"
--   显示并单击"应用"编辑框中输入您的查询
+-   从 "运行" 对话框或命令提示符调用 "wbemtest.exe"
+-   单击右上角的 "连接" 按钮。
+-   在 \\ 右上角再次单击 "连接" 之前，请确保命名空间为 "根 cimv2"。
+-   在 "IWbemServices" 下，单击 "查询"
+-   在出现的编辑框中输入查询，然后单击 "应用"
 
-注意："IWbemService"具有多个其他选项，能够帮助您解决您的查询。 例如，使用"枚举类"，并将单选按钮更改为"递归"将帮助您在系统上看到的所有 WMI 类。
+注意： "IWbemService" 有多个其他选项可帮助你进行查询。 例如，使用 "Enum 类" 并将单选按钮改为 "递归" 将有助于您查看系统中的所有 WMI 类。
 
-## <a name="span-idretrievingpropertiesqueriedusingthewmiqueryspanspan-idretrievingpropertiesqueriedusingthewmiqueryspanspan-idretrievingpropertiesqueriedusingthewmiqueryspanretrieving-properties-queried-using-the-wmi-query"></a><span id="Retrieving_properties_queried_using_the_WMI_query"></span><span id="retrieving_properties_queried_using_the_wmi_query"></span><span id="RETRIEVING_PROPERTIES_QUERIED_USING_THE_WMI_QUERY"></span>检索使用 WMI 查询进行查询的属性
+## <a name="span-idretrieving_properties_queried_using_the_wmi_queryspanspan-idretrieving_properties_queried_using_the_wmi_queryspanspan-idretrieving_properties_queried_using_the_wmi_queryspanretrieving-properties-queried-using-the-wmi-query"></a><span id="Retrieving_properties_queried_using_the_WMI_query"></span><span id="retrieving_properties_queried_using_the_wmi_query"></span><span id="RETRIEVING_PROPERTIES_QUERIED_USING_THE_WMI_QUERY"></span>检索使用 WMI 查询查询的属性
 
 
-现在可以了解如何附带测试方法的 WMI 查询以及如何将测试创作时将其应用作为元数据。 您还知道如何确认查询有效使用 wbemtest.exe。 现在让我们看看如何检索所需的属性值。
+现在，你已了解如何在创作测试的同时，为测试方法提供 WMI 查询，以及如何将其作为元数据应用。 还知道如何使用 wbemtest.exe 确认查询是否有效。 现在，让我们看看如何检索所查找的属性值。
 
-检索此信息的基础知识是非常类似于检索值的数据驱动测试。 例如，在托管代码中这将如下所示：
+检索此信息的基础知识与检索数据驱动测试的值非常类似。 例如，在托管代码中，这将如下所示：
 
 ```cpp
 1 namespace WEX.Examples
@@ -124,9 +124,9 @@ TAEF 不支持检索系统属性。
 32}
 ```
 
-在上面的示例行 24-30 是完全托管的数据驱动测试的要求。 定义了一个专用的 TestContext 属性和提供公共 getter 和 setter 上为 TAEF 设置正确的值。 使用专用的 TestContext 属性，您可以检索任何 TAEF 中检索到的 WMI 查询结果对象的属性的当前值。
+上面示例中的行24-30 是托管数据驱动测试所需的内容。 你定义了 private TestContext 属性并在其上提供了公共 getter 和 setter，以便 TAEF 设置正确的值。 使用 private TestContext 属性，您可以检索从 TAEF 检索到的任何 WMI 查询结果对象属性的当前值。
 
-检索 WMI 属性的本机代码是非常相似。 像使用本机数据驱动的测试，你将使用 TestData 获取属性值。 例如，让我们考虑用于获取属性的默认打印机的测试。 标头文件编写此测试如下所示：
+用于检索 WMI 属性的本机代码非常相似。 与本机数据驱动测试一样，你将使用 TestData 来获取属性值。 例如，让我们考虑一下获取默认打印机的属性的测试。 此测试的头文件作者如下所示：
 
 ```cpp
 1        // Test on the default printer and its driver name
@@ -136,7 +136,7 @@ TAEF 不支持检索系统属性。
 4        END_TEST_METHOD()
 ```
 
-为此，我们 cpp 文件中的检索代码如下所示：
+为此，在 cpp 文件中，检索代码如下所示：
 
 ```cpp
 1     void WmiExample::DefaultPrinterTest()
@@ -159,12 +159,12 @@ TAEF 不支持检索系统属性。
 18    }
 ```
 
-## <a name="span-idaccountingforpossiblenullpropertyvaluesspanspan-idaccountingforpossiblenullpropertyvaluesspanspan-idaccountingforpossiblenullpropertyvaluesspanaccounting-for-possible-null-property-values"></a><span id="Accounting_for_possible_NULL_property_values"></span><span id="accounting_for_possible_null_property_values"></span><span id="ACCOUNTING_FOR_POSSIBLE_NULL_PROPERTY_VALUES"></span>有关可能的 NULL 属性值的记帐
+## <a name="span-idaccounting_for_possible_null_property_valuesspanspan-idaccounting_for_possible_null_property_valuesspanspan-idaccounting_for_possible_null_property_valuesspanaccounting-for-possible-null-property-values"></a><span id="Accounting_for_possible_NULL_property_values"></span><span id="accounting_for_possible_null_property_values"></span><span id="ACCOUNTING_FOR_POSSIBLE_NULL_PROPERTY_VALUES"></span>考虑可能的 NULL 属性值
 
 
-需要注意的部分是 WMI 查询可能会始终返回非 null 属性。 可能有的时间时返回的 WMI 属性值为"null"。 如果您认为您正在寻找的属性可能是"null"，在某些情况下，则验证或尝试使用它之前检查它。
+要记住的部分是 WMI 查询不能始终返回非 null 属性。 有时，返回的 WMI 属性值为 "null"。 如果你认为你要查找的属性在某些情况下可能为 "null"，则在验证或尝试使用它之前，请检查是否存在这种情况。
 
-在托管测试代码，如 TestContext 将为 DBNull 类型的对象存储 null 值。 必须检查 DBNull 类型的对象是否尝试强制转换为类型结果值之前在预期进行。 让我们来实际操作一下：
+例如，在托管测试代码中，TestContext 将 null 值存储为 DBNull 类型的对象。 在尝试将生成的值强制转换为所需的类型之前，必须检查对象是否为 DBNull 类型。 我们一起来看一下：
 
 ```cpp
 1 namespace WEX.Examples
@@ -234,9 +234,9 @@ TAEF 不支持检索系统属性。
 64}
 ```
 
-例如，在上述测试中，"压缩"、"MaximumComponentLength"和"可用性"可以为 null 在某些情况下 （当该查询将返回如软盘驱动器的可移动驱动器）。 你想要确保测试在这种情况下正确行为。 为达到此目的，检索属性值作为对象并检查它是否为类型"DBNull"。 如果是，这意味着返回的属性值为 null。 如果不是，返回的值不为 null，因此有效-因此将其转换为合适的类型，并使用它进行测试。
+例如，在上面的测试中，在某些情况下，"已压缩"、"MaximumComponentLength" 和 "可用性" 可以为 null (查询返回可移动驱动器，如软盘驱动器) 。 你需要确保在这种情况下测试的行为正确。 为此，请将属性值作为对象检索，并检查它是否为 "DBNull" 类型。 如果是，则表示返回的属性值为 null。 如果不是，则返回的值不为 null，因此有效-因此，将其转换为适当的类型并将其用于测试。
 
-这同样适用以及本机检索 Api-返回的属性值可以为 NULL。 这意味着您需要检查是否 TestData 成功检索值而无需使用验证调用 （因为无法检索可能是因为值为 null）。 例如，您可能必须依赖于 WMI 查询的测试方法：
+同样，对于本机检索 Api 也是如此，返回的属性值可能为 NULL。 这意味着，需要检查 TestData 是否已成功检索值，而无需使用验证调用 (因为由于值为 null) ，因此无法检索。 例如，你可能有一个依赖于 WMI 查询的测试方法：
 
 ```cpp
 1        // Test on only local (drive type = 3) or removable (drive type = 2) harddrive
@@ -246,7 +246,7 @@ TAEF 不支持检索系统属性。
 4        END_TEST_METHOD()
 ```
 
-您可能有"可用性和"MaximumComponentLength"返回为 NULL 值。 因此编写测试，因此考虑此类似：
+您可能已将 "可用性" 和 "MaximumComponentLength" 返回为 NULL 值。 因此请编写测试来考虑这一点，如下所示：
 
 ```cpp
 1     void WmiExample::LocalOrRemovableHardDriveTest()
@@ -274,10 +274,4 @@ TAEF 不支持检索系统属性。
 ```
 
  
-
- 
-
-
-
-
 

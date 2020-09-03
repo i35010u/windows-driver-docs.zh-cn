@@ -4,16 +4,16 @@ description: SoftwareInfo XML 架构定义
 ms.assetid: 7b09ffc6-0f69-4710-988b-4952823da72e
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 445710da56387728ee430a934aba298e9e1fd91f
-ms.sourcegitcommit: 67efcd26f7be8f50c92b141ccd14c9c68f4412d8
+ms.openlocfilehash: b927449e729b12876f80833ae94728aa1f64c6d9
+ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88902415"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89403162"
 ---
 # <a name="softwareinfo-xml-schema-definition"></a>SoftwareInfo XML 架构定义
 
-[!include[MBAE deprecation warning](mbae-deprecation-warning.md)]
+[!include[MBAE deprecation warning](../includes/mbae-deprecation-warning.md)]
 
 下面是 SoftwareInfo XML 架构的命名空间：
 

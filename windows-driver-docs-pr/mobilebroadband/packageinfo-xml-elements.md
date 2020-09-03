@@ -4,18 +4,18 @@ description: PackageInfo XML 元素列表
 ms.assetid: eb08c164-d901-4806-a9f1-f538f3ff00e3
 ms.date: 07/05/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: ee07d53025cd96accfe5c1ddaa7d9d627eff0119
-ms.sourcegitcommit: 6f74454e7ed5e703e4e4b363b6816652950e6a51
+ms.openlocfilehash: 8511bb620fd4c4a47bb0871128e322d5d2254169
+ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/06/2019
-ms.locfileid: "67608537"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89403304"
 ---
 # <a name="packageinfo-xml-elements-list"></a>PackageInfo XML 元素列表
 
-[!include[MBAE deprecation warning](mbae-deprecation-warning.md)]
+[!include[MBAE deprecation warning](../includes/mbae-deprecation-warning.md)]
 
-本部分介绍了定义的 XML 元素[PackageInfo XML 架构](packageinfo-xml-schema.md)。 下面是这些元素的 XML 架构中定义的顺序的列表。
+本部分介绍 [PACKAGEINFO xml 架构](packageinfo-xml-schema.md)定义的 xml 元素。 下面是这些元素在 XML 架构中的定义顺序的列表。
 
 -   [PackageInfo](packageinfo.md)
 
@@ -37,7 +37,7 @@ ms.locfileid: "67608537"
 
     -   [PackageStructure](packagestructure.md)
 
-        -   [Metadata](metadata-service-schema.md)
+        -   Metadata
 
     -   [关系](relationships.md)
 

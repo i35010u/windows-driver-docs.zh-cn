@@ -4,16 +4,16 @@ description: MobileBroadbandProfiles
 ms.assetid: 251ece1e-67ec-48d3-977a-f033f1bff8c4
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 74e9375244be6c6acf2beaf099960118687f6218
-ms.sourcegitcommit: f017184b00f59b088df87a5bd85fec51b7aed8b2
+ms.openlocfilehash: 7cdd696cd6902742fff33dbb6d77a5ac257e1af1
+ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72323666"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89403262"
 ---
 # <a name="mobilebroadbandprofiles"></a>MobileBroadbandProfiles
 
-[!include[MBAE deprecation warning](mbae-deprecation-warning.md)]
+[!include[MBAE deprecation warning](../includes/mbae-deprecation-warning.md)]
 
 MobileBroadbandProfiles 元素指定要使用的购买和 Internet 移动宽带配置文件。
 
@@ -42,7 +42,7 @@ MobileBroadbandProfiles 元素指定要使用的购买和 Internet 移动宽带�
 <thead>
 <tr class="header">
 <th>元素</th>
-<th>描述</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>
@@ -51,7 +51,7 @@ MobileBroadbandProfiles 元素指定要使用的购买和 Internet 移动宽带�
 <td><p>指定要使用的购买移动宽带配置文件。</p></td>
 </tr>
 <tr class="even">
-<td><p><a href="internet.md" data-raw-source="[Internet](internet.md)">互联</a></p></td>
+<td><p><a href="internet.md" data-raw-source="[Internet](internet.md)">Internet</a></p></td>
 <td><p>指定要使用的 Internet 移动宽带配置文件。</p></td>
 </tr>
 </tbody>
@@ -70,7 +70,7 @@ MobileBroadbandProfiles 元素指定要使用的购买和 Internet 移动宽带�
 <thead>
 <tr class="header">
 <th>元素</th>
-<th>描述</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>

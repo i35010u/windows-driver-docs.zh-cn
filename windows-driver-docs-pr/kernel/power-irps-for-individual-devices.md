@@ -12,12 +12,12 @@ keywords:
 - 设备唤醒 ups WDK 电源管理
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 809a29071718f7ff1da32d0a0cb206a02e29dd42
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 9c03614d8a51913cbfc919b6a8e26d77bf0dbfe2
+ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89187745"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89403514"
 ---
 # <a name="power-irps-for-individual-devices"></a>单个设备的电源 IRP
 
@@ -73,7 +73,7 @@ ms.locfileid: "89187745"
 
 5.  当驱动程序通过将 IRP 向下传递到堆栈中时，i/o 管理器将调用由驱动程序设置的 *IoCompletion* 例程。 调用完所有 *IoCompletion* 例程后，将运行回调例程。
 
-有关设备电源 Irp 的详细信息，请参阅 [管理单个设备的电源](managing-power-for-individual-devices.md) 和 [具有唤醒功能的支持设备](supporting-devices-that-have-wake-up-capabilities.md)。 有关电源序列 IRP 的详细信息，请参阅 [**IRP \_ MN \_ power \_ sequence**](./irp-mn-power-sequence.md)。
+有关设备电源 Irp 的详细信息，请参阅 [管理单个设备的电源](device-power-states.md) 和 [具有唤醒功能的支持设备](supporting-devices-that-have-wake-up-capabilities.md)。 有关电源序列 IRP 的详细信息，请参阅 [**IRP \_ MN \_ power \_ sequence**](./irp-mn-power-sequence.md)。
 
  
 

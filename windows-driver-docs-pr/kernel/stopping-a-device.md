@@ -9,12 +9,12 @@ keywords:
 - 停止 Irp WDK PnP
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: adab12cf82023b58df8546ff774f3e31bc9ea716
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 9e84754646589ee1554bbf89bddc620edec5c4ae
+ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89184721"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89402916"
 ---
 # <a name="stopping-a-device"></a>停止设备
 
@@ -40,7 +40,6 @@ PnP 管理器指示驱动程序在以下情况下停止设备：
 
 [处理停止 IRP（Windows 2000 和更高版本）](handling-stop-irps--windows-2000-and-later-.md)
 
-[处理停止 IRP (Windows 98/Me)](handling-stop-irps--windows-98-me-.md)
 
  
 

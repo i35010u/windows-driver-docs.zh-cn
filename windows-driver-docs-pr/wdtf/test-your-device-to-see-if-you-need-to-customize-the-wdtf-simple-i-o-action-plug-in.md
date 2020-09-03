@@ -1,42 +1,42 @@
 ---
-title: 测试存在或需要自定义 WDTF 简单 I/O 操作插件
-description: 如果已配置为使用 Visual Studio 测试的远程计算机，可以运行一个实用程序测试，以便显示所有具有 WDTF 简单 I/O 插件的设备。
+title: 测试存在还是需要自定义 WDTF 简单 i/o 操作插件
+description: 如果已使用 Visual Studio 配置了用于测试的远程计算机，则可以运行一个实用工具测试，该测试显示具有 WDTF 简单 i/o 插件的所有设备。
 ms.assetid: 7AD2F8DD-8428-4C30-A3B0-B6678986DCCD
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d8600413245042e609773c27f3889740ca61665f
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: d2ca890568d118430f3771e6773902d3520b1f30
+ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67369479"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89402666"
 ---
-# <a name="how-to-determine-if-a-custom-wdtf-simple-io-action-plug-in-is-required-for-your-device"></a>如何确定自定义 WDTF 简单 I/O 操作插件是否需要为你的设备
+# <a name="how-to-determine-if-a-custom-wdtf-simple-io-action-plug-in-is-required-for-your-device"></a>如何确定设备是否需要自定义 WDTF 简单 i/o 操作插件
 
 
-如果已配置为使用 Visual Studio 测试的远程计算机，可以运行一个实用程序测试，以便显示所有具有 WDTF 简单 I/O 插件的设备。该测试还返回不具有 WDTF 简单 I/O 支持的测试计算机上的设备的列表。 如果不支持你的设备，则可以创建一个 Visual Studio 中使用**WDTF 简单 I/O 操作插件**模板，请参阅[如何为你的设备使用 WDTF 简单 I/O 操作插件自定义 I/O](to-customize-i-o-for-your-device-using-the-wdtf-simple-i-o-action-plug-in.md)。
+如果已使用 Visual Studio 配置了用于测试的远程计算机，则可以运行一个实用工具测试，该测试显示具有 WDTF 简单 i/o 插件的所有设备。该测试还返回测试计算机上没有 WDTF 简单 i/o 支持的设备的列表。 如果你的设备不受支持，则可以使用 **WDTF 简单的 I/o 操作插件** 模板在 Visual Studio 中创建一个，请参阅 [如何使用 WDTF 简单 i/o 操作插件为你的设备自定义 i/o](to-customize-i-o-for-your-device-using-the-wdtf-simple-i-o-action-plug-in.md)。
 
 ### <a name="prerequisites"></a>先决条件
 
--   在测试计算机上安装待测试的设备。
--   是测试签名，并且在测试计算机上安装的驱动程序包。 若要验证您的驱动程序正确安装，请参阅如何测试驱动程序包。
--   测试针对部署配置和预配的计算机。 请参阅[测试在运行时使用 Visual Studio 的驱动程序](https://docs.microsoft.com/windows-hardware/drivers)
+-   测试中的设备已安装在测试计算机上。
+-   在测试计算机上对其进行测试签名和安装的驱动程序包。 若要验证是否正确安装了驱动程序，请参阅如何测试驱动程序包。
+-   测试针对部署配置和预配的计算机。 请参阅 [使用 Visual Studio 在运行时测试驱动程序](/windows-hardware/drivers)
 
-<a name="instructions"></a>说明
+<a name="instructions"></a>Instructions
 ------------
 
-### <a name="test-your-device-to-see-if-you-need-to-customize-the-wdtf-simple-io-action-plug-in"></a>测试你的设备以查看您是否需要自定义 WDTF 简单 I/O 操作插件
+### <a name="test-your-device-to-see-if-you-need-to-customize-the-wdtf-simple-io-action-plug-in"></a>测试您的设备，查看是否需要自定义 WDTF 简单 i/o 操作插件
 
-WDK 提供了实用程序测试可以运行以确定是否有用于你的设备类型的插件 WDTF 简单 I/O。
+WDK 提供一项实用程序测试，你可以运行该测试来确定设备类型是否有 WDTF 简单的 i/o 插件。
 
-1.  打开**驱动程序测试组资源管理器**。 从驱动程序菜单中，单击**驱动程序&gt;测试&gt;驱动程序测试组资源管理器**。
+1.  打开 **驱动程序测试组资源管理器**。 从 "驱动程序" 菜单中，单击 " **驱动程序 &gt; 测试 &gt; 驱动程序测试组资源管理器**"
 2.  创建新的测试组。
-3.  在驱动程序测试组窗口中，单击**添加/删除测试**。
-4.  在中**添加或删除测试**对话框中，选择**的所有测试\\实用程序**从**设备测试类别**列表，然后添加测试**显示具有 WDTF 简单 I/O 插件的设备**。单击“确定”  。 保存测试组。
-5.  运行包括实用程序测试的测试组**显示了 WDTF 简单 I/O 插件设备**。
-6.  打开测试 TestTextlog 并验证你的设备被报告为具有 WDTF 简单 I/O 的插件的设备。 如果列出你的设备，则你不需要创建一个简单的 I/O 插件为你的设备。 您可以运行设备基础测试和正确为你的设备类型将自动选择插件。 提供测试有关的信息，请参阅[如何选择和配置设备基础测试](https://docs.microsoft.com/windows-hardware/drivers)。
+3.  在 "驱动程序测试组" 窗口中，单击 " **添加/删除测试**"。
+4.  在 "**添加或删除测试**" 对话框中，从 "**设备测试类别**" 列表中选择 "**所有测试" \\ 实用程序**，然后添加**具有 WDTF 简单 i/o 插件的测试显示设备**。单击 **"确定"**。 保存测试组。
+5.  运行包含实用程序测试 **显示设备（具有 WDTF 简单 i/o 插件）** 的测试组。
+6.  打开测试的 TestTextlog，并验证是否已将设备报告为具有 WDTF 简单 i/o 插件的设备。 如果设备已列出，则无需为设备创建简单的 i/o 插件。 你可以运行设备基础测试，并将自动选择设备类型的正确插件。 有关提供的测试的信息，请参阅 [如何选择和配置设备基础测试](/windows-hardware/drivers)。
 
-    如果没有任何 I/O 插件为你的设备，需要创建一个自定义提供的 WDTF 简单 I/O 操作插件模板。
+    如果设备没有 i/o 插件，需要通过自定义 WDTF 简单的 "i/o 操作" 插件模板来创建一个。
 
 **示例测试文本日志**
 
@@ -60,7 +60,4 @@ WDTF_TEST                 : INFO  :      Generic volume (G:) STORAGE\VOLUME\_??_
 
 ## <a name="related-topics"></a>相关主题
 [How to customize I/O for your device using the WDTF Simple I/O Action Plug-in](to-customize-i-o-for-your-device-using-the-wdtf-simple-i-o-action-plug-in.md)（如何使用 WDTF 简单 I/O 操作插件为设备自定义 I/O）  
-[Provided WDTF Simple I/O plug-ins](provided-wdtf-simpleio-plug-ins.md)（提供的 WDTF 简单 I/O 插件）  
-
-
-
+[Provided WDTF Simple I/O plug-ins](provided-wdtf-simpleio-plug-ins.md)（提供的 WDTF 简单 I/O 插件）

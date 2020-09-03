@@ -4,18 +4,18 @@ description: ServiceNumber
 ms.assetid: 7e02557a-34e5-41f2-9a27-122a144c2ab9
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fc89b599bf9bc0cd4a70d1945e6178f14011e399
-ms.sourcegitcommit: f017184b00f59b088df87a5bd85fec51b7aed8b2
+ms.openlocfilehash: 5569d0a1a6e715938a7e76af80c8696f95ed8087
+ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72323686"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89403176"
 ---
 # <a name="servicenumber"></a>ServiceNumber
 
-[!include[MBAE deprecation warning](mbae-deprecation-warning.md)]
+[!include[MBAE deprecation warning](../includes/mbae-deprecation-warning.md)]
 
-ServiceNumber 元素指定代表移动运营商的唯一自行生成的 GUID。 如果将帐户预配元数据应用于电脑以确保与该文件中标识的运营商 ID 中声明的 GUID 值匹配，则此 GUID 必须存在并选中。 帐户预配元数据是由移动宽带应用或操作员网站生成的。 帐户预配元数据在[帐户设置](account-provisioning.md)中进行了介绍。
+ServiceNumber 元素指定代表移动运营商的唯一自行生成的 GUID。 如果将帐户预配元数据应用于电脑以确保与该文件中标识的运营商 ID 中声明的 GUID 值匹配，则此 GUID 必须存在并选中。 帐户预配元数据是由移动宽带应用或操作员网站生成的。 帐户预配元数据在 [帐户设置](account-provisioning.md)中进行了介绍。
 
 ## <a name="span-idusagespanspan-idusagespanspan-idusagespanusage"></a><span id="Usage"></span><span id="usage"></span><span id="USAGE"></span>使用情况
 
@@ -39,7 +39,7 @@ ServiceNumber 元素指定代表移动运营商的唯一自行生成的 GUID。 
 ## <a name="span-idchild_elementsspanspan-idchild_elementsspanspan-idchild_elementsspanchild-elements"></a><span id="Child_elements"></span><span id="child_elements"></span><span id="CHILD_ELEMENTS"></span>子元素
 
 
-没有子元素。
+没有任何子元素。
 
 ## <a name="span-idparent_elementsspanspan-idparent_elementsspanspan-idparent_elementsspanparent-elements"></a><span id="Parent_elements"></span><span id="parent_elements"></span><span id="PARENT_ELEMENTS"></span>父元素
 
@@ -52,7 +52,7 @@ ServiceNumber 元素指定代表移动运营商的唯一自行生成的 GUID。 
 <thead>
 <tr class="header">
 <th>元素</th>
-<th>描述</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>

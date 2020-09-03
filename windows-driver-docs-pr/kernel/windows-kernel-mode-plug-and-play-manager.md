@@ -4,19 +4,19 @@ description: Windows 内核模式即插即用管理器
 ms.assetid: 43d06dbe-da66-4103-8be3-f27ff075a1b4
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: eb77e2b9ac243ff8f254b58f13c4eb2d430e2ff3
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: fba886138588aa6ab92002dce4d05e252f7db2b9
+ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89190669"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89403488"
 ---
 # <a name="windows-kernel-mode-plug-and-play-manager"></a>Windows 内核模式即插即用管理器
 
 
 即插即用 (PnP) 是硬件技术和软件技术的组合，使 PC 能够识别设备何时添加到系统中。 通过 PnP，系统配置可以在用户的少量输入或无输入的情况下进行更改。 例如，当接通 USB 拇指驱动器后，Windows 可以检测拇指驱动器，并自动将其添加到文件系统。 但是，若要执行此操作，硬件必须遵循某些要求，因此必须满足驱动程序的要求。
 
-有关用于驱动程序的 PnP 的详细信息，请参阅 [即插即用](implementing-plug-and-play.md)。
+有关用于驱动程序的 PnP 的详细信息，请参阅 [即插即用](introduction-to-plug-and-play.md)。
 
 PnP 管理器实际上是 i/o 管理器的子系统。 有关 i/o 管理器的详细信息，请参阅 [Windows 内核模式 I/o 管理器](windows-kernel-mode-i-o-manager.md)。
 

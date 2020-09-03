@@ -4,16 +4,16 @@ description: PackageInfo XML 示例
 ms.assetid: 4e514e79-d450-4cae-a40d-16ce86f95e43
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fa6387877e18a8bd1c13b9f65e25b27f9cd4b57c
-ms.sourcegitcommit: 67efcd26f7be8f50c92b141ccd14c9c68f4412d8
+ms.openlocfilehash: 4423396f6367719c74f2cc9c8b86c0878461abeb
+ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88902468"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89403300"
 ---
 # <a name="packageinfo-xml-example"></a>PackageInfo XML 示例
 
-[!include[MBAE deprecation warning](mbae-deprecation-warning.md)]
+[!include[MBAE deprecation warning](../includes/mbae-deprecation-warning.md)]
 
 下面的 XML 文档使用 [PACKAGEINFO xml 架构](packageinfo-xml-schema.md) 来指定供应商的元数据包的组件。
 

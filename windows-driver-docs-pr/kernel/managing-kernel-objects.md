@@ -12,12 +12,12 @@ keywords:
 - 内核模式对象 WDK
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3a108a775c65393344b991055583e13bb4f7b2a1
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: c4402d58c100a7881c7a80215e02498e4c0cb7db
+ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89184431"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89403506"
 ---
 # <a name="managing-kernel-objects"></a>管理内核对象
 
@@ -29,7 +29,7 @@ Windows 对象管理器控制作为内核模式操作系统一部分的 *对象*
 
 典型的内核模式对象包括以下对象：
 
--   设备对象 (参阅 [设备对象和设备堆栈](device-objects-and-device-stacks.md)。 ) 
+-   设备对象 (参阅 [设备对象和设备堆栈](introduction-to-device-objects.md)。 ) 
 
 -   文件对象。
 
@@ -53,7 +53,7 @@ Windows 对象管理器控制作为内核模式操作系统一部分的 *对象*
 
 内核模式对象具有非常具体的生命周期。 有关对象生命周期的详细信息，请参阅 [对象的生命周期](life-cycle-of-an-object.md)。
 
-对于内核模式编程，对象安全性是一个主要考虑因素。 有关对象安全的详细信息，请参阅 [对象安全性](object-security.md)。
+对于内核模式编程，对象安全性是一个主要考虑因素。 有关对象安全的详细信息，请参阅 [对象安全性](access-rights.md)。
 
 内核模式环境将对象存储在虚拟目录系统（也称为对象命名空间）中。 这允许使用父对象和子对象以分层方式访问对象。 此命名空间类似于文件系统目录集，但并不完全对应于计算机上的特定文件系统。 有关对象目录的详细信息，请参阅 [对象目录](object-directories.md)。
 

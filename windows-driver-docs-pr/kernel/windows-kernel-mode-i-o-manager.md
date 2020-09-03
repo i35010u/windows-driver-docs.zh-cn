@@ -4,12 +4,12 @@ description: Windows 内核模式 I/O 管理器
 ms.assetid: 8652f37d-0ece-4c08-9bce-499f0fedb0dd
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 7d4ec34a962dc884363250fbaff2db2347e9a47f
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: fa43bdb9c2017d60b247398c6ed231d316aee7ec
+ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89190257"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89403492"
 ---
 # <a name="windows-kernel-mode-io-manager"></a>Windows 内核模式 I/O 管理器
 
@@ -24,7 +24,7 @@ Windows i/o 系统提供名为 stack 的分层驱动程序模型。 通常，在
 
 有关 Irp 的详细信息，请参阅 [处理 irp](handling-irps.md)。
 
-有关驱动程序堆栈的详细信息，请参阅 [设备对象和设备堆栈](device-objects-and-device-stacks.md)。
+有关驱动程序堆栈的详细信息，请参阅 [设备对象和设备堆栈](example-wdm-device-stack.md)。
 
 有关与 i/o 管理相关的编程能够，请参阅 [I/o 管理器编程技术](i-o-programming-techniques.md)。
 

@@ -7,12 +7,12 @@ keywords:
 - 示例驱动程序 WDK 内核模式
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ca84d3ddff0af71eecbb23c8e3bc5563be517aae
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: f5809de9d1056e3abf8e453eb2e8e6e9e2c7b968
+ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89185119"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89402836"
 ---
 # <a name="sample-kernel-mode-drivers"></a>示例内核模式驱动程序
 
@@ -74,7 +74,7 @@ RegFltr 示例演示如何编写注册表筛选器驱动程序。
 
 [**吐司炉**](https://github.com/Microsoft/Windows-driver-samples/tree/master/general/toaster)  
 
-提供一组符合 [Windows 驱动模型](windows-driver-model.md) (WDM) 的驱动程序的示例代码。 此示例还包括示例安装软件。
+提供一组符合 [Windows 驱动模型](introduction-to-wdm.md) (WDM) 的驱动程序的示例代码。 此示例还包括示例安装软件。
 
 [**tracedrv**](https://github.com/Microsoft/Windows-driver-samples/tree/master/general/tracing/tracedriver)  
 
@@ -88,6 +88,6 @@ RegFltr 示例演示如何编写注册表筛选器驱动程序。
 
 目录的其他子目录 `\src` 包含用于各种硬件类型的内核模式驱动程序的示例代码。
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 GitHub 上的[Microsoft Windows 驱动程序示例](https://github.com/Microsoft/Windows-driver-samples)

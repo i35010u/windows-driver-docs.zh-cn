@@ -10,17 +10,17 @@ keywords:
 - TPS 的资源管理器 WDK KTM
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 669bb599550708efb2f49fd803d18a8b278f4bf5
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 5ee5b949740fca7b2866b0ee436348d409cc1376
+ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89192027"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89402842"
 ---
 # <a name="understanding-tps-components"></a>了解 TPS 组件
 
 
-任何 [*事务处理系统*](transaction-processing-terms.md#ktm-term-transaction-processing-system) (TPS) 使用内核事务管理器 (KTM) ， [公用日志文件系统](using-common-log-file-system.md) (CLFS) 应包含以下重要组件：
+任何 [*事务处理系统*](transaction-processing-terms.md#ktm-term-transaction-processing-system) (TPS) 使用内核事务管理器 (KTM) ， [公用日志文件系统](introduction-to-the-common-log-file-system.md) (CLFS) 应包含以下重要组件：
 
 -   [*事务管理器*](transaction-processing-terms.md#ktm-term-transaction-manager) (KTM) 
 

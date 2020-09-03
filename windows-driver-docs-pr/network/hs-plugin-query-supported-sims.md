@@ -1,24 +1,24 @@
 ---
 title: HS_PLUGIN_QUERY_SUPPORTED_SIMS 函数
-description: HS_PLUGIN_QUERY_SUPPORTED_SIMS 函数返回的插件支持的 Sim 的列表。
+description: HS_PLUGIN_QUERY_SUPPORTED_SIMS 函数返回插件支持的 Sim 列表。
 ms.assetid: e1b41bb1-7f82-4298-b070-20cb557fa0fc
 keywords:
-- 与 Windows Vista 一起启动的网络驱动程序的 typedef DWORD (WINAPI HS_PLUGIN_QUERY_SUPPORTED_SIMS) 函数
+- typedef DWORD (WINAPI HS_PLUGIN_QUERY_SUPPORTED_SIMS 从 Windows Vista 开始) 函数网络驱动程序
 ms.date: 07/31/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 20c7948c6769893e6147fc5b774d1e61f8282214
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1fa1bbbc380a2b96fe950c82bad314f2cf49ac89
+ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63322175"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89403012"
 ---
-# <a name="hspluginquerysupportedsims-function"></a>HS\_插件\_查询\_支持\_SIMS 函数
+# <a name="hs_plugin_query_supported_sims-function"></a>HS \_ 插件 \_ 查询 \_ 支持的 \_ sim 函数
 
-[!include[Wi-Fi Hotspot Offloading deprecation](wi-fi-hotspot-offloading-deprecation.md)]
+[!include[Wi-Fi Hotspot Offloading deprecation](../includes/wi-fi-hotspot-offloading-deprecation.md)]
 
 
-**HS\_插件\_查询\_支持\_SIMS**函数返回的插件支持的 Sim 的列表。
+**HS \_ 插件 \_ 查询支持的 \_ \_ sim**函数返回插件支持的 sim 列表。
 
 <a name="syntax"></a>语法
 ------
@@ -30,24 +30,24 @@ ms.locfileid: "63322175"
 );
 ```
 
-<a name="parameters"></a>Parameters
+<a name="parameters"></a>参数
 ----------
 
-*\*pNetworkIdentity* \[in, optional\]  
-[ **HS\_网络\_标识**](hs-network-identity.md)唯一标识网络的结构。
+* \* pNetworkIdentity* \[ in，可选\]  
+用于唯一标识网络的 [**HS \_ 网络 \_ 标识**](hs-network-identity.md) 结构。
 
-*\*pSupportedSIMs* \[in、 out\]  
-指向数组的一个或多个指针[ **HS\_插件\_支持\_SIMS** ](hs-plugin-supported-sims.md)列出的受支持的 Sim 的结构。
+* \* pSupportedSIMs* \[ ，out\]  
+指向一个或多个 HS 插件的数组的指针 [** \_ 支持的 \_ \_ sim**](hs-plugin-supported-sims.md) 结构，其中包含支持的 sim 的列表。
 
 <a name="return-value"></a>返回值
 ------------
 
-此函数调用由宿主与插件进行通信，并不会返回一个值。
+宿主调用此函数以与插件通信，而不返回值。
 
 <a name="remarks"></a>备注
 -------
 
-如果*pNetworkIdentity*参数存在，则必须提供连接到指定的网络所需这些 SIM 标识，否则必须提供用于连接到所有网络 Sim 的完整列表。
+如果 *pNetworkIdentity* 参数存在，则必须提供连接到指定网络所需的 SIM 标识，否则必须提供用于连接到所有网络的全部 sim 列表。
 
 <a name="requirements"></a>要求
 ------------
@@ -59,22 +59,22 @@ ms.locfileid: "63322175"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Version</p></td>
+<td><p>版本</p></td>
 <td><p>Windows 10 移动版</p></td>
 </tr>
 <tr class="even">
 <td><p>Header</p></td>
-<td>Hotspotoffloadplugin.h （包括 Hotspotoffloadplugin.h）</td>
+<td>Hotspotoffloadplugin (包含 Hotspotoffloadplugin) </td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
-[**HS\_NETWORK\_IDENTITY**](hs-network-identity.md)
+[**HS \_ 网络 \_ 标识**](hs-network-identity.md)
 
-[**HS\_插件\_支持\_SIMS**](hs-plugin-supported-sims.md)
+[**HS \_ 插件 \_ 支持的 \_ SIM**](hs-plugin-supported-sims.md)
 
  
 

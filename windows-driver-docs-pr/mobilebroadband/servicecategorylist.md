@@ -4,18 +4,18 @@ description: ServiceCategoryList
 ms.assetid: 69ea35aa-c658-49ed-86bd-815392d157f6
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4b49386c37c64f7064f9a072061682d78aa3d39a
-ms.sourcegitcommit: f017184b00f59b088df87a5bd85fec51b7aed8b2
+ms.openlocfilehash: 8ced03056fecc1a74e284932164c67867eeed888
+ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72323648"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89403196"
 ---
 # <a name="servicecategorylist"></a>ServiceCategoryList
 
-[!include[MBAE deprecation warning](mbae-deprecation-warning.md)]
+[!include[MBAE deprecation warning](../includes/mbae-deprecation-warning.md)]
 
-ServiceCategoryList 元素指定应用于服务的一个或多个功能类别。 每个功能类别均通过[ServiceCategory](servicecategory.md)元素指定。
+ServiceCategoryList 元素指定应用于服务的一个或多个功能类别。 每个功能类别均通过 [ServiceCategory](servicecategory.md) 元素指定。
 
 ## <a name="span-idusagespanspan-idusagespanspan-idusagespanusage"></a><span id="Usage"></span><span id="usage"></span><span id="USAGE"></span>使用情况
 
@@ -34,7 +34,7 @@ ServiceCategoryList 元素指定应用于服务的一个或多个功能类别。
 ## <a name="span-idtext_valuespanspan-idtext_valuespanspan-idtext_valuespantext-value"></a><span id="Text_value"></span><span id="text_value"></span><span id="TEXT_VALUE"></span>文本值
 
 
-必须包含一个[ServiceCategory](servicecategory.md)元素。
+必须包含一个 [ServiceCategory](servicecategory.md) 元素。
 
 ## <a name="span-idchild_elementsspanspan-idchild_elementsspanspan-idchild_elementsspanchild-elements"></a><span id="Child_elements"></span><span id="child_elements"></span><span id="CHILD_ELEMENTS"></span>子元素
 
@@ -47,7 +47,7 @@ ServiceCategoryList 元素指定应用于服务的一个或多个功能类别。
 <thead>
 <tr class="header">
 <th>元素</th>
-<th>描述</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>
@@ -71,7 +71,7 @@ ServiceCategoryList 元素指定应用于服务的一个或多个功能类别。
 <thead>
 <tr class="header">
 <th>元素</th>
-<th>描述</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>
@@ -103,11 +103,11 @@ ServiceCategoryList 元素指定应用于服务的一个或多个功能类别。
 
 下面讨论了如何在服务元数据包中使用 ServiceCategoryList 元素：
 
--   ServiceCategoryList 元素中的第一个[ServiceCategory](servicecategory.md)元素指定服务的主要功能类别。 主要功能类别应该与服务的播发、打包、销售和最终标识方式匹配。
+-   ServiceCategoryList 元素中的第一个 [ServiceCategory](servicecategory.md) 元素指定服务的主要功能类别。 主要功能类别应该与服务的播发、打包、销售和最终标识方式匹配。
 
--   由于服务只能由其主要功能类别定义，因此，只应在 ServiceCategoryList 元素中指定[ServiceCategory](servicecategory.md)元素的一个实例。
+-   由于服务只能由其主要功能类别定义，因此，只应在 ServiceCategoryList 元素中指定 [ServiceCategory](servicecategory.md) 元素的一个实例。
 
--   服务元数据包的[ServiceCategory](servicecategory.md)必须是以下各项之一：
+-   服务元数据包的 [ServiceCategory](servicecategory.md) 必须是以下各项之一：
 
     -   Network.MobileBroadband
 

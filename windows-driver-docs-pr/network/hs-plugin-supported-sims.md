@@ -7,16 +7,16 @@ keywords:
 - 从 Windows Vista 开始 PHS_PLUGIN_SUPPORTED_SIMS 结构指针网络驱动程序
 ms.date: 07/31/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2ed0faea390237324d4aa8e4c8b1f02a920f67f3
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 0489162fc3fef8045d9a0b3c7dcb493455960d39
+ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89216194"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89402986"
 ---
 # <a name="hs_plugin_supported_sims-structure"></a>HS \_ 插件 \_ 支持的 \_ sim 结构
 
-[!include[Wi-Fi Hotspot Offloading deprecation](wi-fi-hotspot-offloading-deprecation.md)]
+[!include[Wi-Fi Hotspot Offloading deprecation](../includes/wi-fi-hotspot-offloading-deprecation.md)]
 
 
 **HS \_ 插件支持 \_ 的 \_ sim**结构包含受支持的 SIM 配置的列表。 如果热点插件要求对其任何网络进行 HTTP 或 EAP 身份验证，则必须提供此列表。
@@ -63,7 +63,7 @@ typedef struct _HS_PLUGIN_SUPPORTED_SIMS {
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Hotspotoffloadplugin (包含 Hotspotoffloadplugin) </td>
 </tr>
 </tbody>

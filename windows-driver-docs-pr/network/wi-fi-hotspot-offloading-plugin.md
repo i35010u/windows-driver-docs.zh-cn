@@ -3,16 +3,16 @@ title: Wi-Fi 热点卸载插件
 description: Wi-Fi 热点卸载插件
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 20040efa4db89c77653b4477f93414fb0ca2fca0
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: e791f592df01eb0dd19f4b784bb4257935d39f34
+ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89207747"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89403420"
 ---
 # <a name="wi-fi-hotspot-offloading-plugin"></a>Wi-Fi 热点卸载插件
 
-[!include[Wi-Fi Hotspot Offloading deprecation](wi-fi-hotspot-offloading-deprecation.md)]
+[!include[Wi-Fi Hotspot Offloading deprecation](../includes/wi-fi-hotspot-offloading-deprecation.md)]
 
 若要启用 Wi-fi 卸载，请创建并安装热点插件。 本主题讨论开发热点插件时要考虑的一些问题。 它还提供了要作为插件包的一部分实现的插件 Api 的一般说明。
 

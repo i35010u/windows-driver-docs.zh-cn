@@ -4,18 +4,18 @@ description: MobileBroadbandInfo
 ms.assetid: 02279e23-becd-49ef-8981-6afb8e5aab91
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9ccc1f6d2f6a5ea11161dcdbc82e5e1d57b4ae8e
-ms.sourcegitcommit: f017184b00f59b088df87a5bd85fec51b7aed8b2
+ms.openlocfilehash: 0dc46291ca5572d3300887d1b87af8b4914ac1c4
+ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72323668"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89403512"
 ---
 # <a name="mobilebroadbandinfo"></a>MobileBroadbandInfo
 
-[!include[MBAE deprecation warning](mbae-deprecation-warning.md)]
+[!include[MBAE deprecation warning](../includes/mbae-deprecation-warning.md)]
 
-MobileBroadbandInfo 元素是[MOBILEBROADBANDINFO XML 架构](mobilebroadbandinfo-xml-schema.md)的父元素。
+MobileBroadbandInfo 元素是 [MOBILEBROADBANDINFO XML 架构](mobilebroadbandinfo-xml-schema.md)的父元素。
 
 ## <a name="span-idusagespanspan-idusagespanspan-idusagespanusage"></a><span id="Usage"></span><span id="usage"></span><span id="USAGE"></span>使用情况
 
@@ -42,7 +42,7 @@ MobileBroadbandInfo 元素是[MOBILEBROADBANDINFO XML 架构](mobilebroadbandinf
 <thead>
 <tr class="header">
 <th>元素</th>
-<th>描述</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>

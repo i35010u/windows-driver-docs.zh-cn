@@ -11,12 +11,12 @@ keywords:
 - 引发当前 IRQLs
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d736eca6da0693173ba79fd6533866268d7181ce
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 178e1bc4a514ffca339314e1feceb92ddced6c87
+ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89185658"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89403136"
 ---
 # <a name="disabling-apcs"></a>禁用 APC
 
@@ -43,7 +43,7 @@ ms.locfileid: "89185658"
 
 -   保留快速 mutex 会将当前的 IRQL 隐式提升到 APC \_ 级别。
 
-有关 mutex 对象的详细信息，请参阅 [Mutex 对象](mutex-objects.md)。 有关快速和受保护的互斥体的详细信息，请参阅 [快速互斥体和受保护的互斥体](fast-mutexes-and-guarded-mutexes.md)。
+有关 mutex 对象的详细信息，请参阅 [Mutex 对象](introduction-to-mutex-objects.md)。 有关快速和受保护的互斥体的详细信息，请参阅 [快速互斥体和受保护的互斥体](fast-mutexes-and-guarded-mutexes.md)。
 
  
 

@@ -9,12 +9,12 @@ keywords:
 - 设备状态 WDK PnP
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4c5d0e011bb9e06cff7a247116fcc44e765527b7
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 712eb15d09466797563af45e39c0a7ce227803e8
+ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89184743"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89402926"
 ---
 # <a name="state-transitions-for-pnp-devices"></a>PnP 设备的状态转换
 
@@ -40,7 +40,7 @@ ms.locfileid: "89184743"
 
 在 Windows 98/Me 上，PnP 管理器还会在设备被禁用时发送 **IRP \_ MN \_ 查询 \_ 停止 \_ 设备** 和 **irp \_ MN \_ 停止 \_ 设备** 请求。 这些系统上的驱动程序还会在启动失败后收到 **IRP \_ MN \_ 停止 \_ 设备** 请求。
 
-当 PnP 设备从系统中实际删除或已被删除时，PnP 管理器会将各种删除的 Irp 发送到设备的驱动程序，定向它们以删除设备的软件表示形式 (设备对象，等等) 。 有关处理删除 Irp 的信息，请参阅 [删除设备](removing-a-device.md)。
+当 PnP 设备从系统中实际删除或已被删除时，PnP 管理器会将各种删除的 Irp 发送到设备的驱动程序，定向它们以删除设备的软件表示形式 (设备对象，等等) 。 有关处理删除 Irp 的信息，请参阅 [删除设备](understanding-when-remove-irps-are-issued.md)。
 
 在删除驱动程序的所有设备后的某个时间点，PnP 管理器会调用驱动程序的 [*Unload*](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_unload) 例程并卸载驱动程序。
 

@@ -11,12 +11,12 @@ keywords:
 - WDM 驱动程序 WDK 内核，关于 WDM 驱动程序
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b2646b12e2f9e67c2f4e05881df93207e1b4a211
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: f418e7c69a95a4a89030ddc9572ba68ee2823a73
+ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89187283"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89403544"
 ---
 # <a name="introduction-to-wdm"></a>WDM 简介
 
@@ -31,9 +31,9 @@ ms.locfileid: "89187283"
 
 -   设计为总线驱动程序、函数驱动程序或筛选器驱动程序，如 [WDM 驱动程序的类型](types-of-wdm-drivers.md)中所述。
 
--   按照 [WDM 设备对象和设备堆栈](wdm-device-objects-and-device-stacks.md)中的说明创建设备对象。
+-   [创建设备对象](creating-a-device-object.md)
 
--   支持 [ (PnP) 即插即用 ](implementing-plug-and-play.md)。
+-   支持 [ (PnP) 即插即用 ](introduction-to-plug-and-play.md)。
 
 -   支持 [电源管理](./introduction-to-power-management.md)。
 

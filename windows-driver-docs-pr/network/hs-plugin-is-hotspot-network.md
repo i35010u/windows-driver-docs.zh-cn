@@ -1,24 +1,24 @@
 ---
 title: HS_PLUGIN_IS_HOTSPOT_NETWORK 函数
-description: 由主机以确定指定的网络是否热点网络调用 HS_PLUGIN_IS_HOTSPOT_NETWORK 函数。
+description: 主机调用 HS_PLUGIN_IS_HOTSPOT_NETWORK 函数来确定指定的网络是否是热点网络。
 ms.assetid: 24a26ee0-9eb1-49fa-95da-40315a4aab3a
 keywords:
-- 与 Windows Vista 一起启动的网络驱动程序的 typedef DWORD (WINAPI HS_PLUGIN_IS_HOTSPOT_NETWORK) 函数
+- typedef DWORD (WINAPI HS_PLUGIN_IS_HOTSPOT_NETWORK 从 Windows Vista 开始) 函数网络驱动程序
 ms.date: 07/31/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 52bd0fefd29dc2aafeba7c3484f7fab6237da18b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9685f2f90aa08e519e09d31d6880771760b4e8c1
+ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63322291"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89403030"
 ---
-# <a name="hspluginishotspotnetwork-function"></a>HS\_插件\_IS\_热点\_网络函数
+# <a name="hs_plugin_is_hotspot_network-function"></a>HS \_ 插件 \_ 是 \_ 热点 \_ 网络功能
 
-[!include[Wi-Fi Hotspot Offloading deprecation](wi-fi-hotspot-offloading-deprecation.md)]
+[!include[Wi-Fi Hotspot Offloading deprecation](../includes/wi-fi-hotspot-offloading-deprecation.md)]
 
 
-**HS\_插件\_IS\_热点\_网络**主机以确定指定的网络是否热点网络调用函数。
+**HS \_ 插件 \_ 为 \_ 热点 \_ 网络**函数由主机调用，用于确定指定的网络是否为热点网络。
 
 <a name="syntax"></a>语法
 ------
@@ -31,22 +31,22 @@ ms.locfileid: "63322291"
 );
 ```
 
-<a name="parameters"></a>Parameters
+<a name="parameters"></a>参数
 ----------
 
-*\*pNetworkIdentity* \[in\]  
-指向[ **HS\_网络\_标识**](hs-network-identity.md)要断开连接设备的网络的结构。
+* \* pNetworkIdentity* \[\]  
+一个指针，指向要从中断开设备连接的网络的 [**HS \_ 网络 \_ 标识**](hs-network-identity.md) 结构。
 
-*\*pNetworkState* \[out\]  
-[ **EHS\_网络\_状态**](ehs-network-state.md)枚举值，该值指示网络的类型。
+* \* pNetworkState* \[\]  
+指示网络类型的 [**eHS \_ 网络 \_ 状态**](ehs-network-state.md) 枚举值。
 
-*\*pNetworkProfile* \[out, optional\]  
-指向[ **HS\_网络\_配置文件**](hs-network-profile.md)网络的结构。
+* \* pNetworkProfile* \[ out，可选\]  
+指向网络的 [**HS \_ 网络 \_ 配置文件**](hs-network-profile.md) 结构的指针。
 
 <a name="return-value"></a>返回值
 ------------
 
-此函数调用由宿主与插件进行通信，并不会返回一个值。
+宿主调用此函数以与插件通信，而不返回值。
 
 <a name="requirements"></a>要求
 ------------
@@ -58,24 +58,24 @@ ms.locfileid: "63322291"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Version</p></td>
+<td><p>版本</p></td>
 <td><p>Windows 10 移动版</p></td>
 </tr>
 <tr class="even">
 <td><p>Header</p></td>
-<td>Hotspotoffloadplugin.h （包括 Hotspotoffloadplugin.h）</td>
+<td>Hotspotoffloadplugin (包含 Hotspotoffloadplugin) </td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
-[**HS\_NETWORK\_IDENTITY**](hs-network-identity.md)
+[**HS \_ 网络 \_ 标识**](hs-network-identity.md)
 
-[**eHS\_NETWORK\_STATE**](ehs-network-state.md)
+[**eHS \_ 网络 \_ 状态**](ehs-network-state.md)
 
-[**HS\_NETWORK\_PROFILE**](hs-network-profile.md)
+[**HS \_ 网络 \_ 配置文件**](hs-network-profile.md)
 
  
 

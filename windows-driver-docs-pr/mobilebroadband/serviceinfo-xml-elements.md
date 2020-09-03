@@ -4,18 +4,18 @@ description: ServiceInfo XML 元素列表
 ms.assetid: 807a2741-a515-468f-9188-0cc4e43b4485
 ms.date: 07/05/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 6790dd2f7e70b5961819dbc7973bae4a3d5a42b5
-ms.sourcegitcommit: 6f74454e7ed5e703e4e4b363b6816652950e6a51
+ms.openlocfilehash: ed6bdfe13737f82ff871a435a6f2615dd074fa5a
+ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/06/2019
-ms.locfileid: "67608496"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89403442"
 ---
 # <a name="serviceinfo-xml-elements-list"></a>ServiceInfo XML 元素列表
 
-[!include[MBAE deprecation warning](mbae-deprecation-warning.md)]
+[!include[MBAE deprecation warning](../includes/mbae-deprecation-warning.md)]
 
-本部分介绍了定义的 XML 元素[ServiceInfo XML 架构](serviceinfo-xml-schema.md)。 下面是这些元素的 XML 架构中定义的顺序的列表。
+本部分介绍 [SERVICEINFO xml 架构](serviceinfo-xml-schema.md)定义的 xml 元素。 下面是这些元素在 XML 架构中的定义顺序的列表。
 
 -   [ServiceInfo](serviceinfo.md)
 

@@ -4,16 +4,16 @@ description: TrustedCertificates
 ms.assetid: f035a453-d767-4cb5-b556-dfcf7b0b1962
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1e846b18b4ca269fc326221cab4a2dd7f486b72d
-ms.sourcegitcommit: f017184b00f59b088df87a5bd85fec51b7aed8b2
+ms.openlocfilehash: e343de27669d347f3708e97cf9fef2590518902a
+ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72323676"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89403460"
 ---
 # <a name="trustedcertificates"></a>TrustedCertificates
 
-[!include[MBAE deprecation warning](mbae-deprecation-warning.md)]
+[!include[MBAE deprecation warning](../includes/mbae-deprecation-warning.md)]
 
 TrustedCertificates 元素指定受信任的证书的列表。
 
@@ -42,7 +42,7 @@ TrustedCertificates 元素指定受信任的证书的列表。
 <thead>
 <tr class="header">
 <th>元素</th>
-<th>描述</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>
@@ -66,7 +66,7 @@ TrustedCertificates 元素指定受信任的证书的列表。
 <thead>
 <tr class="header">
 <th>元素</th>
-<th>描述</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>

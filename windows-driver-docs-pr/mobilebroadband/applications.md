@@ -4,16 +4,16 @@ description: 应用程序
 ms.assetid: 40d73650-556e-4221-a679-0b8e9ead4df5
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 780423013170b3ef1bf28e4a654ce5d0bc651e18
-ms.sourcegitcommit: f017184b00f59b088df87a5bd85fec51b7aed8b2
+ms.openlocfilehash: ac5570bb76b9d90ba1a0877d4d16f162f19f08d1
+ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72323637"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89402896"
 ---
 # <a name="applications"></a>应用程序
 
-[!include[MBAE deprecation warning](mbae-deprecation-warning.md)]
+[!include[MBAE deprecation warning](../includes/mbae-deprecation-warning.md)]
 
 应用程序元素指定与移动宽带硬件设备关联的应用。
 
@@ -42,7 +42,7 @@ ms.locfileid: "72323637"
 <thead>
 <tr class="header">
 <th>元素</th>
-<th>描述</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>
@@ -66,12 +66,12 @@ ms.locfileid: "72323637"
 <thead>
 <tr class="header">
 <th>元素</th>
-<th>描述</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><p><a href="package.md" data-raw-source="[Package](package.md)">Package</a></p></td>
+<td><p><a href="package.md" data-raw-source="[Package](package.md)">包</a></p></td>
 <td><p>指定在计算机上检测到操作员的移动宽带硬件时要下载的应用。</p></td>
 </tr>
 </tbody>

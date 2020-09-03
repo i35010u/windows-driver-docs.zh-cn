@@ -4,16 +4,16 @@ description: MobileBroadbandInfo XML 架构定义
 ms.assetid: 4d4a8f0a-99e5-429b-bc56-fdc4818b0a91
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9f0360ce57e4e1539227bfc9788c726f38fbbc94
-ms.sourcegitcommit: 67efcd26f7be8f50c92b141ccd14c9c68f4412d8
+ms.openlocfilehash: d654974d6f5b214c2d425348f03cadad833eb9cd
+ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88902502"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89402796"
 ---
 # <a name="mobilebroadbandinfo-xml-schema-definition"></a>MobileBroadbandInfo XML 架构定义
 
-[!include[MBAE deprecation warning](mbae-deprecation-warning.md)]
+[!include[MBAE deprecation warning](../includes/mbae-deprecation-warning.md)]
 
 下面是 MobileBroadbandInfo XML 架构的命名空间：
 

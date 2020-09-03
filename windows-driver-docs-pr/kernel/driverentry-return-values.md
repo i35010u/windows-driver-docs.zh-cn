@@ -7,12 +7,12 @@ keywords:
 - 返回值 WDK DriverEntry 例程
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d7aebb40833bf256ae6f97856f5b98fcc8da2bb1
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: bcad2c05ee3fb4deef9998fa9910557367bfd088
+ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89186015"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89403270"
 ---
 # <a name="driverentry-return-values"></a>DriverEntry 返回值
 
@@ -20,7 +20,7 @@ ms.locfileid: "89186015"
 
 
 
-[**DriverEntry**](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_initialize)例程返回一个[NTSTATUS 值](ntstatus-values.md)，即状态 \_ 成功或适当的错误状态。
+[**DriverEntry**](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_initialize)例程返回一个[NTSTATUS 值](using-ntstatus-values.md)，即状态 \_ 成功或适当的错误状态。
 
 **DriverEntry**例程应将对[**IoRegisterDriverReinitialization**](/windows-hardware/drivers/ddi/ntddk/nf-ntddk-ioregisterdriverreinitialization)的任何调用推迟到返回状态成功之前 \_ 。 它不得进行此调用，除非它将返回状态 " \_ 成功"。
 

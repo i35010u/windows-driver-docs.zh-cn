@@ -4,16 +4,16 @@ description: AllowStandardUserPinUnlock
 ms.assetid: 3fb6de78-662b-46d0-bf0c-9efde15b0861
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8cc86418798a74818008867cd11837c7cb340566
-ms.sourcegitcommit: 958a5ced83856df22627c06eb42c9524dd547906
+ms.openlocfilehash: 610c96eacaea3500761143fa9b3157fd7e3093cd
+ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83235304"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89403334"
 ---
 # <a name="allowstandarduserpinunlock"></a>AllowStandardUserPinUnlock
 
-[!include[MBAE deprecation warning](mbae-deprecation-warning.md)]
+[!include[MBAE deprecation warning](../includes/mbae-deprecation-warning.md)]
 
 > [!IMPORTANT]
 > 从 Windows 10 版本1507开始，此元素已弃用，在未来版本的 Windows 中可能不受支持。

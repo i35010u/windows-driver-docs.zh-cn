@@ -14,12 +14,12 @@ keywords:
 - 内核模式驱动程序 WDK、WMI
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 40d8fa930dfb86e2fc814f73d442e535cd515994
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 3eb8ba2a09f41b01b0bbec978bd406d834ee84a3
+ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89185403"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89403258"
 ---
 # <a name="implementing-wmi"></a>实现 WMI
 
@@ -59,7 +59,7 @@ ms.locfileid: "89185403"
 
 [WMI 事件跟踪](wmi-event-tracing.md)
 
-[测试 WMI 驱动程序支持及排查其问题](testing-and-troubleshooting-wmi-driver-support.md)
+[测试 WMI 驱动程序支持及排查其问题](general-techniques-for-testing-wmi-driver-support.md)
 
  
 

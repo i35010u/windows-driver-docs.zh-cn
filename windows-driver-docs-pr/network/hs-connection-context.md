@@ -1,25 +1,25 @@
 ---
 title: HS_CONNECTION_CONTEXT 结构
-description: HS_CONNECTION_CONTEXT 结构包含 post 连接身份验证，该插件所需的信息。
+description: HS_CONNECTION_CONTEXT 结构包含插件用于 post 连接身份验证所需的信息。
 ms.assetid: 22b219fc-691b-4813-a523-a76de037e64d
 keywords:
-- HS_CONNECTION_CONTEXT 结构与 Windows Vista 一起启动的网络驱动程序
-- PHS_CONNECTION_CONTEXT 结构指针与 Windows Vista 一起启动的网络驱动程序
+- 从 Windows Vista 开始 HS_CONNECTION_CONTEXT 结构网络驱动程序
+- 从 Windows Vista 开始 PHS_CONNECTION_CONTEXT 结构指针网络驱动程序
 ms.date: 07/31/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4fe42ada75739323a10c0cbc78e0975ff7276a0b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2eba522df8560d4619218b31d7616d0aa06d6d09
+ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63349684"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89403114"
 ---
-# <a name="hsconnectioncontext-structure"></a>HS\_连接\_上下文结构
+# <a name="hs_connection_context-structure"></a>HS \_ 连接 \_ 上下文结构
 
-[!include[Wi-Fi Hotspot Offloading deprecation](wi-fi-hotspot-offloading-deprecation.md)]
+[!include[Wi-Fi Hotspot Offloading deprecation](../includes/wi-fi-hotspot-offloading-deprecation.md)]
 
 
-**HS\_连接\_上下文**结构包含 post 连接身份验证，该插件所需的信息。
+**HS \_ 连接 \_ 上下文**结构包含插件用于 post 连接身份验证所需的信息。
 
 <a name="syntax"></a>语法
 ------
@@ -36,13 +36,13 @@ typedef struct _HS_CONNECTION_CONTEXT {
 -------
 
 **MacAddress**  
-[ **HS\_MAC\_地址**](hs-mac-address.md)结构，其中包含的 MAC 地址。
+包含 MAC 地址的 [**HS \_ mac \_ 地址**](hs-mac-address.md) 结构。
 
 **SIMIdentity**  
-[ **HS\_SIM\_标识**](hs-sim-identity.md)结构，其中包含也称为 EAP-SIM 身份验证所需的信息。
+[**HS \_ sim \_ 标识**](hs-sim-identity.md)结构，其中包含 EAP-SIM/称为身份验证所需的信息。
 
 **pszPhoneNumber**  
-电话号码的指针。
+指向电话号码的指针。
 
 <a name="requirements"></a>要求
 ------------
@@ -55,17 +55,17 @@ typedef struct _HS_CONNECTION_CONTEXT {
 <tbody>
 <tr class="odd">
 <td><p>Header</p></td>
-<td>Hotspotoffloadplugin.h （包括 Hotspotoffloadplugin.h）</td>
+<td>Hotspotoffloadplugin (包含 Hotspotoffloadplugin) </td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
-[**HS\_MAC\_ADDRESS**](hs-mac-address.md)
+[**HS \_ MAC \_ 地址**](hs-mac-address.md)
 
-[**HS\_SIM\_标识**](hs-sim-identity.md)
+[**HS \_ SIM \_ 标识**](hs-sim-identity.md)
 
  
 

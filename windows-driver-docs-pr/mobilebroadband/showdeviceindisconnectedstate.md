@@ -4,18 +4,18 @@ description: ShowDeviceInDisconnectedState
 ms.assetid: f2f517dd-68e5-4013-83ee-777579562db3
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a7cec04a76a0269e7864a146b3de6ed32418ffa3
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4f2324c4b7bfa056f2d1c12d96b1b4f5efe421d5
+ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63345345"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89403168"
 ---
 # <a name="showdeviceindisconnectedstate"></a>ShowDeviceInDisconnectedState
 
-[!include[MBAE deprecation warning](mbae-deprecation-warning.md)]
+[!include[MBAE deprecation warning](../includes/mbae-deprecation-warning.md)]
 
-ShowDeviceInDisconnectedState 元素应设置为**false**因为不适用于 Windows 8、 Windows 8.1 和 Windows 10 中的服务元数据包。
+由于 ShowDeviceInDisconnectedState 元素不适用于 Windows 8、Windows 8.1 和 Windows 10 中的服务元数据包，因此应将其设置为 **false** 。
 
 ## <a name="span-idusagespanspan-idusagespanspan-idusagespanusage"></a><span id="Usage"></span><span id="usage"></span><span id="USAGE"></span>使用情况
 
@@ -31,17 +31,17 @@ ShowDeviceInDisconnectedState 元素应设置为**false**因为不适用于 Wind
 
 没有特性。
 
-## <a name="span-idtextvaluespanspan-idtextvaluespanspan-idtextvaluespantext-value"></a><span id="Text_value"></span><span id="text_value"></span><span id="TEXT_VALUE"></span>文本值
+## <a name="span-idtext_valuespanspan-idtext_valuespanspan-idtext_valuespantext-value"></a><span id="Text_value"></span><span id="text_value"></span><span id="TEXT_VALUE"></span>文本值
 
 
-应设置为**false**因为不适用于 Windows 8、 Windows 8.1 和 Windows 10 中的服务元数据包。
+应设置为 **false** ，因为它不适用于 windows 8、Windows 8.1 和 windows 10 中的服务元数据包。
 
-## <a name="span-idchildelementsspanspan-idchildelementsspanspan-idchildelementsspanchild-elements"></a><span id="Child_elements"></span><span id="child_elements"></span><span id="CHILD_ELEMENTS"></span>子元素
+## <a name="span-idchild_elementsspanspan-idchild_elementsspanspan-idchild_elementsspanchild-elements"></a><span id="Child_elements"></span><span id="child_elements"></span><span id="CHILD_ELEMENTS"></span>子元素
 
 
-没有子元素。
+没有任何子元素。
 
-## <a name="span-idparentelementsspanspan-idparentelementsspanspan-idparentelementsspanparent-elements"></a><span id="Parent_elements"></span><span id="parent_elements"></span><span id="PARENT_ELEMENTS"></span>父元素
+## <a name="span-idparent_elementsspanspan-idparent_elementsspanspan-idparent_elementsspanparent-elements"></a><span id="Parent_elements"></span><span id="parent_elements"></span><span id="PARENT_ELEMENTS"></span>父元素
 
 
 <table>
@@ -52,20 +52,20 @@ ShowDeviceInDisconnectedState 元素应设置为**false**因为不适用于 Wind
 <thead>
 <tr class="header">
 <th>元素</th>
-<th>描述</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td><p><a href="windowsinfo.md" data-raw-source="[WindowsInfo](windowsinfo.md)">WindowsInfo</a></p></td>
-<td><p>父元素<a href="windowsinfo-xml-schema.md" data-raw-source="[WindowsInfo XML schema](windowsinfo-xml-schema.md)">WindowsInfo XML 架构</a>。</p></td>
+<td><p><a href="windowsinfo-xml-schema.md" data-raw-source="[WindowsInfo XML schema](windowsinfo-xml-schema.md)">WINDOWSINFO XML 架构</a>的父元素。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-## <a name="span-idxsdspanspan-idxsdspanxsd"></a><span id="XSD"></span><span id="xsd"></span>XSD
+## <a name="span-idxsdspanspan-idxsdspanxsd"></a><span id="XSD"></span><span id="xsd"></span>XSD.EXE
 
 
 ``` syntax

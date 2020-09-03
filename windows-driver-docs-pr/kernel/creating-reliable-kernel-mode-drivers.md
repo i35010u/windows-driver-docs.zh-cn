@@ -9,12 +9,12 @@ keywords:
 - Irp WDK 内核，可靠性问题
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 987d0b0026f8fb28608efaa1dbede8b3c42488af
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 41e79107f5834771e31d44299540b17bf0393bb4
+ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89187589"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89402810"
 ---
 # <a name="creating-reliable-kernel-mode-drivers"></a>创建可靠的内核模式驱动程序
 
@@ -26,7 +26,7 @@ ms.locfileid: "89187589"
 
 -   正确保护设备对象。
 
-    用户对系统驱动程序和设备的访问权限由系统分配给设备对象的安全描述符控制。 最常见的情况是，系统会在安装设备时设置设备安全参数。 有关详细信息，请参阅 [创建安全设备安装](../install/creating-secure-device-installations.md)。 有时，驱动程序可以在控制其设备的访问权限的过程中发挥作用。 有关详细信息，请参阅 [保护设备对象](securing-device-objects.md)。
+    用户对系统驱动程序和设备的访问权限由系统分配给设备对象的安全描述符控制。 最常见的情况是，系统会在安装设备时设置设备安全参数。 有关详细信息，请参阅 [创建安全设备安装](../install/creating-secure-device-installations.md)。 有时，驱动程序可以在控制其设备的访问权限的过程中发挥作用。 有关详细信息，请参阅 [保护设备对象](controlling-device-access.md)。
 
 -   正确验证设备对象。
 
@@ -48,7 +48,7 @@ ms.locfileid: "89187589"
 
     永远不会假设您的驱动程序将仅在单处理器系统上运行。 有关可用于确保驱动程序在多处理器系统上正常运行的编程技术的信息，请参阅以下主题：
 
-    [同步技术](synchronization-techniques.md)
+    [同步技术](introduction-to-kernel-dispatcher-objects.md)
 
     [多处理器环境出错](errors-in-a-multiprocessor-environment.md)
 
@@ -62,7 +62,7 @@ ms.locfileid: "89187589"
 
     [使用缓冲 I/O 执行 DispatchReadWrite](dispatchreadwrite-using-buffered-i-o.md)
 
-    [缓冲 I/O 出错](errors-in-buffered-i-o.md)
+    [缓冲 I/O 出错](failure-to-check-the-size-of-buffers.md)
 
     [使用直接 I/O 执行 DispatchReadWrite](dispatchreadwrite-using-direct-i-o.md)
 

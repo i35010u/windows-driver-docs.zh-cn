@@ -1,19 +1,19 @@
 ---
-title: 应用程序（WindowsInfo）
-description: 应用程序（WindowsInfo）
+title: '应用程序 (WindowsInfo) '
+description: '应用程序 (WindowsInfo) '
 ms.assetid: e76ede51-e494-47b4-b30a-e354799f66e7
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 180c28b9fb3717d6cbb2a1371146cb2adeb48b02
-ms.sourcegitcommit: f017184b00f59b088df87a5bd85fec51b7aed8b2
+ms.openlocfilehash: d4c29a32e3d68a5b290518be975d1771705fcbbb
+ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72323640"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89402906"
 ---
-# <a name="application-windowsinfo"></a>应用程序（WindowsInfo）
+# <a name="application-windowsinfo"></a>应用程序 (WindowsInfo) 
 
-[!include[MBAE deprecation warning](mbae-deprecation-warning.md)]
+[!include[MBAE deprecation warning](../includes/mbae-deprecation-warning.md)]
 
 应用程序元素指定应用程序的应用程序 ID。
 
@@ -36,17 +36,17 @@ ms.locfileid: "72323640"
 </colgroup>
 <thead>
 <tr class="header">
-<th>属性</th>
-<th>在任务栏的搜索框中键入</th>
-<th>必需</th>
-<th>描述</th>
+<th>Attribute</th>
+<th>类型</th>
+<th>必选</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td><p>ID</p></td>
 <td><p>tns： ApplicationIdType</p></td>
-<td><p>“是”</p></td>
+<td><p>是</p></td>
 <td><p>应用程序 ID。 从应用程序清单复制此值，如 "备注" 中所述。</p></td>
 </tr>
 </tbody>
@@ -57,7 +57,7 @@ ms.locfileid: "72323640"
 ## <a name="span-idchild_elementsspanspan-idchild_elementsspanspan-idchild_elementsspanchild-elements"></a><span id="Child_elements"></span><span id="child_elements"></span><span id="CHILD_ELEMENTS"></span>子元素
 
 
-没有子元素。
+没有任何子元素。
 
 ## <a name="span-idparent_elementsspanspan-idparent_elementsspanspan-idparent_elementsspanparent-elements"></a><span id="Parent_elements"></span><span id="parent_elements"></span><span id="PARENT_ELEMENTS"></span>父元素
 
@@ -70,7 +70,7 @@ ms.locfileid: "72323640"
 <thead>
 <tr class="header">
 <th>元素</th>
-<th>描述</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>
@@ -103,9 +103,9 @@ ms.locfileid: "72323640"
 ## <a name="span-idremarksspanspan-idremarksspanspan-idremarksspanremarks"></a><span id="Remarks"></span><span id="remarks"></span><span id="REMARKS"></span>备注
 
 
-应用程序元素的结构与应用程序清单中 &lt;Application &gt; 元素的结构相对应。 从应用程序清单中的 Id 属性复制 Id 值的值。
+应用程序元素的结构与应用 &lt; 程序清单中的应用程序元素的结构相对应 &gt; 。 从应用程序清单中的 Id 属性复制 Id 值的值。
 
-下面的示例演示如何在应用程序清单内构造 &lt;Applications &gt; 元素：
+下面的示例演示如何在 &lt; 应用程序 &gt; 清单中构造应用程序元素：
 
 ``` syntax
 <Applications>

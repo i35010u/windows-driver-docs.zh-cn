@@ -10,12 +10,12 @@ keywords:
 - 控制器对象 WDK 内核，扩展
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1b8fd35d961a625b581402b065a803165dbcce10
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 96a127e983201973ce8f9b3ffd764128b710cbbb
+ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89190069"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89403236"
 ---
 # <a name="creating-controller-objects-and-controller-extensions"></a>创建控制器对象和控制器扩展
 
@@ -35,7 +35,7 @@ ms.locfileid: "89190069"
 
 大多数设置控制器对象的驱动程序都可以轻松地将指向当前目标设备对象或设备扩展的指针存储在控制器扩展中。 通常，此类驱动程序会在其每个设备扩展中存储控制器对象指针，使其可以使用 *ControllerObject * * *- &gt; ControllerExtension** 指针来访问驱动程序维护的、特定于控制器的状态关于每个目标设备对象的 i/o 操作。
 
-如果控制器对象表示的物理控制器产生中断，则驱动程序还可以使用控制器扩展作为[**IoConnectInterrupt**](/windows-hardware/drivers/ddi/wdm/nf-wdm-ioconnectinterrupt)返回的*PtrToInterruptObject*指针的存储。 有关详细信息，请参阅 [中断服务例程](interrupt-service-routines.md)。
+如果控制器对象表示的物理控制器产生中断，则驱动程序还可以使用控制器扩展作为[**IoConnectInterrupt**](/windows-hardware/drivers/ddi/wdm/nf-wdm-ioconnectinterrupt)返回的*PtrToInterruptObject*指针的存储。 有关详细信息，请参阅 [中断服务例程](introduction-to-interrupt-service-routines.md)。
 
 **IoCreateController** 为控制器对象和扩展分配驻留存储，并将其初始化为零。 如果无法分配内存，则 **IoCreateController** 将返回 **NULL** 指针。 如果出现这种情况，驱动程序必须无法启动设备，并且应返回 "状态" \_ \_ 资源不足。
 

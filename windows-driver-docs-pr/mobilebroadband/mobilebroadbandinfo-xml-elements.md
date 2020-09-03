@@ -4,18 +4,18 @@ description: MobileBroadbandInfo XML 元素列表
 ms.assetid: 399a0d58-5464-49b2-a6da-8c645016cc1e
 ms.date: 07/05/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 14868e615da77dba7ceffc8945811b10ef7132a5
-ms.sourcegitcommit: 6f74454e7ed5e703e4e4b363b6816652950e6a51
+ms.openlocfilehash: effad461d542b6ece64f891826c9ab1dd38968b9
+ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/06/2019
-ms.locfileid: "67608502"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89402806"
 ---
 # <a name="mobilebroadbandinfo-xml-elements-list"></a>MobileBroadbandInfo XML 元素列表
 
-[!include[MBAE deprecation warning](mbae-deprecation-warning.md)]
+[!include[MBAE deprecation warning](../includes/mbae-deprecation-warning.md)]
 
-本部分介绍了定义的 XML 元素[MobileBroadbandInfo XML 架构](mobilebroadbandinfo-xml-schema.md)。 下面是这些元素的 XML 架构中定义的顺序的列表。
+本部分介绍 [MOBILEBROADBANDINFO xml 架构](mobilebroadbandinfo-xml-schema.md)定义的 xml 元素。 下面是这些元素在 XML 架构中的定义顺序的列表。
 
 -   [MobileBroadbandInfo](mobilebroadbandinfo.md)
 
@@ -37,7 +37,7 @@ ms.locfileid: "67608502"
 
             -   [TrustedCertificate](trustedcertificate.md)
 
-                -   [SubjectName](subjectname.md)
+                -   [](subjectname.md)  SubjectName
 
                 -   [IssuerName](issuername.md)
 

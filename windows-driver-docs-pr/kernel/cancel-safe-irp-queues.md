@@ -8,12 +8,12 @@ keywords:
 - 同步 WDK Irp
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 969df87a951b968bdab7c13712275e3786347f2c
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 8fa0b249fbb8c165570877d425a6782119504e2a
+ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89188649"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89403478"
 ---
 # <a name="cancel-safe-irp-queues"></a>可安全取消的 IRP 队列
 
@@ -80,7 +80,7 @@ VOID CsqCompleteCanceledIrp(PIO_CSQ Csq, PIRP Irp) {
 }
 ```
 
-驱动程序可以使用任何操作系统的同步基元来实现其 [*CsqAcquireLock*](/windows-hardware/drivers/ddi/wdm/nc-wdm-io_csq_acquire_lock) 和 [*CsqReleaseLock*](/windows-hardware/drivers/ddi/wdm/nc-wdm-io_csq_release_lock) 例程。 可用的同步基元包括 [自旋锁](./introduction-to-spin-locks.md) 和 [互斥体对象](mutex-objects.md)。
+驱动程序可以使用任何操作系统的同步基元来实现其 [*CsqAcquireLock*](/windows-hardware/drivers/ddi/wdm/nc-wdm-io_csq_acquire_lock) 和 [*CsqReleaseLock*](/windows-hardware/drivers/ddi/wdm/nc-wdm-io_csq_release_lock) 例程。 可用的同步基元包括 [自旋锁](./introduction-to-spin-locks.md) 和 [互斥体对象](introduction-to-mutex-objects.md)。
 
 下面的示例演示了驱动程序如何使用自旋锁实现锁定。
 
@@ -103,7 +103,7 @@ VOID CsqReleaseLock(PIO_CSQ IoCsq, KIRQL Irql)
 
 系统向 *CsqAcquireLock* 和 *CSQRELEASELOCK*传递指向 IRQL 变量的指针。 如果驱动程序使用自旋锁来实现队列的锁定，则该驱动程序可以使用此变量来存储当前的 IRQL，同时锁定队列。
 
-驱动程序无需使用自旋锁。 例如，驱动程序可以使用 mutex 锁定队列。 有关对驱动程序可用的同步技术的说明，请参阅 [同步技术](synchronization-techniques.md)。
+驱动程序无需使用自旋锁。 例如，驱动程序可以使用 mutex 锁定队列。 有关对驱动程序可用的同步技术的说明，请参阅 [同步技术](introduction-to-kernel-dispatcher-objects.md)。
 
 ### <a name="using-the-cancel-safe-irp-queue"></a><a href="" id="ddk-using-the-cancel-safe-irp-queue-kg"></a>使用取消安全 IRP 队列
 

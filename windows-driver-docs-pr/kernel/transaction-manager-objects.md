@@ -9,17 +9,17 @@ keywords:
 - 事务管理器对象 WDK KTM
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 949a19e01002c479a4ec912a960e13849cf282ea
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 5fed949ddaad2afad740b54fbd6a7ba9d2b4fe3b
+ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89185613"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89403546"
 ---
 # <a name="transaction-manager-objects"></a>事务管理器对象
 
 
-*事务管理器对象*的主要目的是创建和维护 KTM 用来记录有关事务的状态信息的[公用日志文件系统](using-common-log-file-system.md) (CLFS) 日志流。
+*事务管理器对象*的主要目的是创建和维护 KTM 用来记录有关事务的状态信息的[公用日志文件系统](introduction-to-the-common-log-file-system.md) (CLFS) 日志流。
 
 事务管理器对象还包含一个 [虚拟时钟值](using-virtual-clock-values.md) ，KTM 维护该虚拟时钟值并将其用于对象的日志流中的序列信息。
 

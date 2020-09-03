@@ -6,12 +6,12 @@ keywords:
 - 禁用 PnP 设备
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ded6e2fb17a07671e04e20d445c8a628e1a67213
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 94a4bb01c4ee338572cd60724a5c9a0b874c5ffd
+ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89184735"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89402920"
 ---
 # <a name="stopping-a-device-to-disable-it-windows-98me"></a>停止设备以将其禁用 (Windows 98/Me)
 
@@ -19,7 +19,7 @@ ms.locfileid: "89184735"
 
 
 
-在 Windows 98/Me 上，当设备管理器禁用设备时，PnP 管理器会发出停止 Irp。 Windows 2000 和更高版本的 Windows (在这种情况下 [删除 irp](removing-a-device.md)) 。
+在 Windows 98/Me 上，当设备管理器禁用设备时，PnP 管理器会发出停止 Irp。 Windows 2000 和更高版本的 Windows (在这种情况下 [删除 irp](understanding-when-remove-irps-are-issued.md)) 。
 
 PnP 管理器按以下顺序发送停止 Irp：
 

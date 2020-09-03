@@ -1,24 +1,24 @@
 ---
 title: HS_HOST_SEND_USER_MESSAGE 函数
-description: HS_HOST_SEND_USER_MESSAGE 函数调用与用户进行通信。 传递给热点卸载服务的自定义用户界面显示字符串中包含消息内容。
+description: 调用 HS_HOST_SEND_USER_MESSAGE 函数以便与用户通信。 消息内容包含在传递到热点卸载服务的自定义 UI 显示字符串中。
 ms.assetid: c4ab1fda-18eb-44e4-aa64-f7b37b4147a3
 keywords:
-- 与 Windows Vista 一起启动的网络驱动程序的 typedef DWORD (WINAPI HS_HOST_SEND_USER_MESSAGE) 函数
+- typedef DWORD (WINAPI HS_HOST_SEND_USER_MESSAGE 从 Windows Vista 开始) 函数网络驱动程序
 ms.date: 07/31/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: af7f445d32f21ab001fe945f86b5d80aa822b0c5
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 128d81ef1c9e97df4713defe608143485508516e
+ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63349629"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89403080"
 ---
-# <a name="hshostsendusermessage-function"></a>HS\_主机\_发送\_用户\_消息函数
+# <a name="hs_host_send_user_message-function"></a>HS \_ 主机 \_ 发送 \_ 用户 \_ 消息函数
 
-[!include[Wi-Fi Hotspot Offloading deprecation](wi-fi-hotspot-offloading-deprecation.md)]
+[!include[Wi-Fi Hotspot Offloading deprecation](../includes/wi-fi-hotspot-offloading-deprecation.md)]
 
 
-**HS\_主机\_发送\_用户\_消息**函数调用与用户进行通信。 传递给热点卸载服务的自定义用户界面显示字符串中包含消息内容。
+将调用 **HS \_ HOST \_ SEND \_ 用户 \_ 消息** 函数来与用户通信。 消息内容包含在传递到热点卸载服务的自定义 UI 显示字符串中。
 
 <a name="syntax"></a>语法
 ------
@@ -31,27 +31,27 @@ ms.locfileid: "63349629"
 );
 ```
 
-<a name="parameters"></a>Parameters
+<a name="parameters"></a>参数
 ----------
 
-*hPluginContext* \[in\]  
-此函数在调用插件的上下文句柄。
+*hPluginContext* \[中\]  
+调用此函数的插件的上下文句柄。
 
-*dwConnectionId* \[in\]  
+*dwConnectionId* \[中\]  
 网络连接的唯一标识符。
 
-*dwStringID* \[in\]  
-字符串 ID 的索引使用到字符串表中存储的消息。
+*dwStringID* \[中\]  
+字符串 ID，用作存储消息的字符串表中的索引。
 
 <a name="return-value"></a>返回值
 ------------
 
-此函数调用由插件与主机通信，并不会返回一个值。
+此函数由插件调用，以与主机通信并且不返回值。
 
 <a name="remarks"></a>备注
 -------
 
-热点插件会将消息存储字符串表。 该插件必须向热点卸载服务以使其能够加载相应的字符串传递字符串 Id。
+热点插件将消息存储在字符串表中。 插件必须将字符串 Id 传递到热点卸载服务，以使其能够加载相应的字符串。
 
 <a name="requirements"></a>要求
 ------------
@@ -63,12 +63,12 @@ ms.locfileid: "63349629"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Version</p></td>
+<td><p>版本</p></td>
 <td><p>Windows 10 移动版</p></td>
 </tr>
 <tr class="even">
 <td><p>Header</p></td>
-<td>Hotspotoffloadplugin.h （包括 Hotspotoffloadplugin.h）</td>
+<td>Hotspotoffloadplugin (包含 Hotspotoffloadplugin) </td>
 </tr>
 </tbody>
 </table>

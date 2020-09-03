@@ -1,24 +1,24 @@
 ---
 title: HS_PLUGIN_STOP_POST_CONNECT_AUTH 函数
-description: HS_PLUGIN_STOP_POST_CONNECT_AUTH 函数调用以通知插件以停止身份验证过程。
+description: 调用 HS_PLUGIN_STOP_POST_CONNECT_AUTH 函数以通知插件停止身份验证过程。
 ms.assetid: 2e4e01b1-e41a-41db-a3ca-6cc6b53b3a8b
 keywords:
-- 与 Windows Vista 一起启动的网络驱动程序的 typedef DWORD (WINAPI HS_PLUGIN_STOP_POST_CONNECT_AUTH) 函数
+- typedef DWORD (WINAPI HS_PLUGIN_STOP_POST_CONNECT_AUTH 从 Windows Vista 开始) 函数网络驱动程序
 ms.date: 07/31/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fe1b3d25b236a1ae7a6afe43b30d3f9270b24649
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a28b3fedee10cc79cbb0d01d925793e59e1eb9df
+ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63322165"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89402992"
 ---
-# <a name="hspluginstoppostconnectauth-function"></a>HS\_插件\_停止\_POST\_CONNECT\_身份验证函数
+# <a name="hs_plugin_stop_post_connect_auth-function"></a>HS \_ 插件 \_ 停止 \_ 后 \_ 连接 \_ 身份验证功能
 
-[!include[Wi-Fi Hotspot Offloading deprecation](wi-fi-hotspot-offloading-deprecation.md)]
+[!include[Wi-Fi Hotspot Offloading deprecation](../includes/wi-fi-hotspot-offloading-deprecation.md)]
 
 
-**HS\_插件\_停止\_POST\_CONNECT\_身份验证**函数调用以通知插件以停止身份验证过程。
+将调用 **HS \_ 插件 " \_ 停止 \_ 后连接" \_ \_ 身份** 验证功能，通知插件停止身份验证过程。
 
 <a name="syntax"></a>语法
 ------
@@ -29,16 +29,16 @@ ms.locfileid: "63322165"
 );
 ```
 
-<a name="parameters"></a>Parameters
+<a name="parameters"></a>参数
 ----------
 
-*\*pNetworkIdentity* \[in\]  
-[ **HS\_网络\_标识**](hs-network-identity.md)唯一标识网络的结构。
+* \* pNetworkIdentity* \[\]  
+用于唯一标识网络的 [**HS \_ 网络 \_ 标识**](hs-network-identity.md) 结构。
 
 <a name="return-value"></a>返回值
 ------------
 
-此函数调用由宿主与插件进行通信，并不会返回一个值。
+宿主调用此函数以与插件通信，而不返回值。
 
 <a name="requirements"></a>要求
 ------------
@@ -50,20 +50,20 @@ ms.locfileid: "63322165"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Version</p></td>
+<td><p>版本</p></td>
 <td><p>Windows 10 移动版</p></td>
 </tr>
 <tr class="even">
 <td><p>Header</p></td>
-<td>Hotspotoffloadplugin.h （包括 Hotspotoffloadplugin.h）</td>
+<td>Hotspotoffloadplugin (包含 Hotspotoffloadplugin) </td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
-[**HS\_NETWORK\_IDENTITY**](hs-network-identity.md)
+[**HS \_ 网络 \_ 标识**](hs-network-identity.md)
 
  
 

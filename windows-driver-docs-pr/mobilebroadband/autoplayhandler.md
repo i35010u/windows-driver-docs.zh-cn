@@ -4,16 +4,16 @@ description: AutoplayHandler
 ms.assetid: 0ee7ac9b-7c1a-4267-b718-ba110ef5b12d
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 53a0041d692a7208998922bef0bc32ffaabacfc3
-ms.sourcegitcommit: f017184b00f59b088df87a5bd85fec51b7aed8b2
+ms.openlocfilehash: cace5cb820535a93ed575479e54f72ba12812966
+ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72323635"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89402890"
 ---
 # <a name="autoplayhandler"></a>AutoplayHandler
 
-[!include[MBAE deprecation warning](mbae-deprecation-warning.md)]
+[!include[MBAE deprecation warning](../includes/mbae-deprecation-warning.md)]
 
 AutoplayHandler 元素指定在用户插入设备时应显示为建议的自动播放操作的 UWP 设备应用。
 
@@ -42,13 +42,13 @@ AutoplayHandler 元素指定在用户插入设备时应显示为建议的自动�
 <thead>
 <tr class="header">
 <th>元素</th>
-<th>描述</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td><p><a href="packageidentity.md" data-raw-source="[PackageIdentity](packageidentity.md)">PackageIdentity</a></p></td>
-<td><p>指定应用的包标识（名称和发布者）。</p></td>
+<td><p>指定应用的包标识 (名称和发布服务器) 。</p></td>
 </tr>
 <tr class="even">
 <td><p><a href="application-windowsinfo-v2.md" data-raw-source="[Application](application-windowsinfo-v2.md)">应用程序</a></p></td>
@@ -82,7 +82,7 @@ AutoplayHandler 元素指定在用户插入设备时应显示为建议的自动�
 <thead>
 <tr class="header">
 <th>元素</th>
-<th>描述</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>
@@ -120,9 +120,9 @@ AutoplayHandler 元素指定在用户插入设备时应显示为建议的自动�
 
 -   除了在设备元数据中包含 AutoplayHandler 元素外，指定的 UWP 设备应用还必须通过在事件的应用程序清单中添加声明来注册自动播放事件。 自动播放识别应用程序的声明，然后将其包含在用户可以执行以响应该事件的可能操作列表中。
 
--   只有在 SoftwareInfo 文件的[DeviceCompanionApplications](devicecompanionapplications.md)值中列出的包将作为设备安装的一部分进行下载。 如果[LaunchApplicationOnDeviceConnect](launchapplicationondeviceconnect.md)元素的值来自于不同的包，则 Windows 不知道它是否将实际位于用户的设备上。 如果建议的应用程序不在用户的设备上，则将不会向用户显示所选的。
+-   只会在安装设备的过程中下载 SoftwareInfo.xml 文件中的 [DeviceCompanionApplications](devicecompanionapplications.md) 值中列出的程序包。 如果 [LaunchApplicationOnDeviceConnect](launchapplicationondeviceconnect.md) 元素的值来自于不同的包，则 Windows 不知道它是否将实际位于用户的设备上。 如果建议的应用程序不在用户的设备上，则将不会向用户显示所选的。
 
--   即使应用程序与[DeviceCompanionApplications](devicecompanionapplications.md)项相同，它也不会始终出现在 "自动播放" 列表中。 如果用户未连接到 Internet 或无法下载伴生应用程序，则它将不会出现在列表中。 但是，当用户获取应用程序时，将在下次连接其设备时，显示 "新选项可用" 的 "自动播放" 对话框。
+-   即使应用程序与 [DeviceCompanionApplications](devicecompanionapplications.md) 项相同，它也不会始终出现在 "自动播放" 列表中。 如果用户未连接到 Internet 或无法下载伴生应用程序，则它将不会出现在列表中。 但是，当用户获取应用程序时，将在下次连接其设备时，显示 "新选项可用" 的 "自动播放" 对话框。
 
 AutoplayHandler 元素是可选的。
 

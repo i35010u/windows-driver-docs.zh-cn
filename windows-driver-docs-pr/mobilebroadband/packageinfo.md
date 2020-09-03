@@ -4,18 +4,18 @@ description: PackageInfo
 ms.assetid: b74bfc2a-6779-4f53-9e46-71ca8ae26fda
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ab8f1afddc41fd561a0baa09ac9a69d08a814019
-ms.sourcegitcommit: f017184b00f59b088df87a5bd85fec51b7aed8b2
+ms.openlocfilehash: 2b29e1aa8ecb0f6d6b435717fceb3a459b5ec378
+ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72323612"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89403292"
 ---
 # <a name="packageinfo"></a>PackageInfo
 
-[!include[MBAE deprecation warning](mbae-deprecation-warning.md)]
+[!include[MBAE deprecation warning](../includes/mbae-deprecation-warning.md)]
 
-PackageInfo 元素是[PACKAGEINFO XML 架构](packageinfo-xml-schema.md)的父元素。 PackageInfo 元素的子元素指定服务元数据包的属性。
+PackageInfo 元素是 [PACKAGEINFO XML 架构](packageinfo-xml-schema.md)的父元素。 PackageInfo 元素的子元素指定服务元数据包的属性。
 
 ## <a name="span-idusagespanspan-idusagespanspan-idusagespanusage"></a><span id="Usage"></span><span id="usage"></span><span id="USAGE"></span>使用情况
 
@@ -42,7 +42,7 @@ PackageInfo 元素是[PACKAGEINFO XML 架构](packageinfo-xml-schema.md)的父�
 <thead>
 <tr class="header">
 <th>元素</th>
-<th>描述</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>
@@ -52,7 +52,7 @@ PackageInfo 元素是[PACKAGEINFO XML 架构](packageinfo-xml-schema.md)的父�
 </tr>
 <tr class="even">
 <td><p><a href="metadatakey.md" data-raw-source="[MetadataKey](metadatakey.md)">MetadataKey</a></p></td>
-<td><p><a href="metadatakey.md" data-raw-source="[MetadataKey](metadatakey.md)">MetadataKey</a>元素指定服务元数据包的属性。 这包括：</p>
+<td><p><a href="metadatakey.md" data-raw-source="[MetadataKey](metadatakey.md)">MetadataKey</a>元素指定服务元数据包的属性。 其中包括：</p>
 <ul>
 <li><p>设备支持的每个硬件功能的标识符。</p></li>
 <li><p>包中的文本字符串的语言特定区域设置。</p></li>
@@ -97,7 +97,7 @@ PackageInfo 元素是[PACKAGEINFO XML 架构](packageinfo-xml-schema.md)的父�
 ## <a name="span-idremarksspanspan-idremarksspanspan-idremarksspanremarks"></a><span id="Remarks"></span><span id="remarks"></span><span id="REMARKS"></span>备注
 
 
-PackageInfo 元素必须包含[MetadataKey](metadatakey.md)、 [PackageStructure](packagestructure.md)和[关系](relationships.md)元素的一个实例。
+PackageInfo 元素必须包含 [MetadataKey](metadatakey.md)、 [PackageStructure](packagestructure.md)和 [关系](relationships.md) 元素的一个实例。
 
  
 

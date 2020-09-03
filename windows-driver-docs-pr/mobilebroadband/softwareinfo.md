@@ -4,18 +4,18 @@ description: SoftwareInfo
 ms.assetid: 736040e9-76cd-4f59-b16a-1e8fc3b687fa
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ae6df337514213881f0e73f4b7e109fadb9bb9db
-ms.sourcegitcommit: f017184b00f59b088df87a5bd85fec51b7aed8b2
+ms.openlocfilehash: 7551540cfc1d51bf6b1499e7996b1ded43be178b
+ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72323682"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89403146"
 ---
 # <a name="softwareinfo"></a>SoftwareInfo
 
-[!include[MBAE deprecation warning](mbae-deprecation-warning.md)]
+[!include[MBAE deprecation warning](../includes/mbae-deprecation-warning.md)]
 
-SoftwareInfo 元素是[SOFTWAREINFO XML 架构](softwareinfo-xml-schema.md)的父元素。
+SoftwareInfo 元素是 [SOFTWAREINFO XML 架构](softwareinfo-xml-schema.md)的父元素。
 
 ## <a name="span-idusagespanspan-idusagespanspan-idusagespanusage"></a><span id="Usage"></span><span id="usage"></span><span id="USAGE"></span>使用情况
 
@@ -42,7 +42,7 @@ SoftwareInfo 元素是[SOFTWAREINFO XML 架构](softwareinfo-xml-schema.md)的�
 <thead>
 <tr class="header">
 <th>元素</th>
-<th>描述</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>

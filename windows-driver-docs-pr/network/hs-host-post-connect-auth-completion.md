@@ -1,24 +1,24 @@
 ---
 title: HS_HOST_POST_CONNECT_AUTH_COMPLETION 函数
-description: HS_HOST_POST_CONNECT_AUTH_COMPLETION 函数指示成功或失败的身份验证尝试遵循在第 2 层的 Wi-fi 连接设置。
+description: HS_HOST_POST_CONNECT_AUTH_COMPLETION 函数指示在第2层 Wi-fi 连接设置后的身份验证尝试是成功还是失败。
 ms.assetid: 2c69802b-968b-400c-b02c-c2d39fa51d5a
 keywords:
-- 与 Windows Vista 一起启动的网络驱动程序的 typedef DWORD (WINAPI HS_HOST_POST_CONNECT_AUTH_COMPLETION) 函数
+- typedef DWORD (WINAPI HS_HOST_POST_CONNECT_AUTH_COMPLETION 从 Windows Vista 开始) 函数网络驱动程序
 ms.date: 07/31/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9e538fc9bbec138e7f7de0fae9117c2b1b00e5c8
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8841bd4842a427fe2ea8c99cb96cec5e5f99e48f
+ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63349643"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89403094"
 ---
-# <a name="hshostpostconnectauthcompletion-function"></a>HS\_主机\_POST\_CONNECT\_身份验证\_完成函数
+# <a name="hs_host_post_connect_auth_completion-function"></a>HS \_ 主机 \_ 后 \_ 连接 \_ 身份验证 \_ 完成功能
 
-[!include[Wi-Fi Hotspot Offloading deprecation](wi-fi-hotspot-offloading-deprecation.md)]
+[!include[Wi-Fi Hotspot Offloading deprecation](../includes/wi-fi-hotspot-offloading-deprecation.md)]
 
 
-**HS\_主机\_POST\_CONNECT\_身份验证\_完成**函数指示成功或失败的身份验证尝试以下 Wi-fi 连接在第 2 层的安装程序。
+**HS \_ 主机 \_ 后 \_ 连接 \_ 身份验证 \_ 完成**功能指示在第2层的 wi-fi 连接设置之后的身份验证尝试是成功还是失败。
 
 <a name="syntax"></a>语法
 ------
@@ -32,30 +32,30 @@ ms.locfileid: "63349643"
 );
 ```
 
-<a name="parameters"></a>Parameters
+<a name="parameters"></a>参数
 ----------
 
-*hPluginContext* \[in\]  
-此函数在调用插件的上下文句柄。
+*hPluginContext* \[中\]  
+调用此函数的插件的上下文句柄。
 
-*dwConnectionId* \[in\]  
+*dwConnectionId* \[中\]  
 网络连接的唯一标识符。
 
-*AuthResult* \[in\]  
-[ **EHS\_身份验证\_结果**](ehs-authentication-result.md)枚举值，该值指示成功或失败。
+*AuthResult* \[中\]  
+[**EHS \_ AUTHENTICATION \_ 结果**](ehs-authentication-result.md)枚举值，指示成功或失败。
 
-*pvReserved* \[in, optional\]  
-保留供将来使用。
+*pvReserved* \[in，可选\]  
+留待将来使用。
 
 <a name="return-value"></a>返回值
 ------------
 
-此函数调用由插件与主机通信，并不会返回一个值。
+此函数由插件调用，以与主机通信并且不返回值。
 
 <a name="remarks"></a>备注
 -------
 
-该插件必须调用此函数来通知以前调用的结果的宿主[ **HS\_插件\_启动\_POST\_CONNECT\_身份验证**](hs-plugin-start-post-connect-auth.md).
+插件必须调用此函数，以通知主机对 HS 插件的先前调用的结果将 [** \_ \_ 启动 \_ \_ 连接 \_ 身份验证**](hs-plugin-start-post-connect-auth.md)。
 
 <a name="requirements"></a>要求
 ------------
@@ -67,22 +67,22 @@ ms.locfileid: "63349643"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Version</p></td>
+<td><p>版本</p></td>
 <td><p>Windows 10 移动版</p></td>
 </tr>
 <tr class="even">
 <td><p>Header</p></td>
-<td>Hotspotoffloadplugin.h （包括 Hotspotoffloadplugin.h）</td>
+<td>Hotspotoffloadplugin (包含 Hotspotoffloadplugin) </td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
-[**eHS\_AUTHENTICATION\_RESULT**](ehs-authentication-result.md)
+[**eHS \_ AUTHENTICATION \_ 结果**](ehs-authentication-result.md)
 
-[**HS\_PLUGIN\_START\_POST\_CONNECT\_AUTH**](hs-plugin-start-post-connect-auth.md)
+[**HS \_ 插件 \_ 启动 \_ 后 \_ 连接 \_ 身份验证**](hs-plugin-start-post-connect-auth.md)
 
  
 

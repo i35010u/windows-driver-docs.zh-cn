@@ -7,12 +7,12 @@ keywords:
 - 注册表筛选驱动程序 WDK 内核，要获取的其他信息
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e0e918c272f6f15730b3212235d01b0d6d50008f
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 0d96e78326043112e7898d973245850df8d8d9da
+ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89185137"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89403120"
 ---
 # <a name="obtaining-additional-registry-information"></a>获取其他注册表信息
 
@@ -25,7 +25,7 @@ ms.locfileid: "89185137"
 
 -   事务对象
 
-    [**CmGetBoundTransaction**](/windows-hardware/drivers/ddi/wdm/nf-wdm-cmgetboundtransaction)例程返回指向 transaction 对象的指针，该对象表示与某个注册表项对象关联的[事务](using-kernel-transaction-manager.md)（如果有）。
+    [**CmGetBoundTransaction**](/windows-hardware/drivers/ddi/wdm/nf-wdm-cmgetboundtransaction)例程返回指向 transaction 对象的指针，该对象表示与某个注册表项对象关联的[事务](introduction-to-ktm.md)（如果有）。
 
 -   版本信息
 

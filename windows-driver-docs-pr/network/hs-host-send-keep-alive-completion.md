@@ -1,24 +1,24 @@
 ---
 title: HS_HOST_SEND_KEEP_ALIVE_COMPLETION 函数
-description: HS_HOST_SEND_KEEP_ALIVE_COMPLETION 函数指示成功或失败的网络发送保持活动状态消息的请求。
+description: HS_HOST_SEND_KEEP_ALIVE_COMPLETION 函数指示网络请求的成功或失败情况发送 keep-alive 消息。
 ms.assetid: 19fc1210-2c3a-46ca-96fb-dccafa9e9eef
 keywords:
-- 与 Windows Vista 一起启动的网络驱动程序的 typedef DWORD (WINAPI HS_HOST_SEND_KEEP_ALIVE_COMPLETION) 函数
+- typedef DWORD (WINAPI HS_HOST_SEND_KEEP_ALIVE_COMPLETION 从 Windows Vista 开始) 函数网络驱动程序
 ms.date: 07/31/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c1d73877e83584b147e1159ef5b025a5dc1ed623
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 620d37d2556518131d87f887de1326e46a8a4b94
+ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63349654"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89403092"
 ---
-# <a name="hshostsendkeepalivecompletion-function"></a>HS\_主机\_发送\_保持\_ALIVE\_完成函数
+# <a name="hs_host_send_keep_alive_completion-function"></a>HS \_ 主机 \_ 发送 \_ 保持 \_ 活动 \_ 完成功能
 
-[!include[Wi-Fi Hotspot Offloading deprecation](wi-fi-hotspot-offloading-deprecation.md)]
+[!include[Wi-Fi Hotspot Offloading deprecation](../includes/wi-fi-hotspot-offloading-deprecation.md)]
 
 
-**HS\_主机\_发送\_保留\_ALIVE\_完成**函数指示成功或失败的网络发送保持活动状态消息的请求。
+**HS \_ 主机 send \_ keep-alive \_ \_ \_ 完成**功能指示网络请求的成功或失败情况发送 keep-alive 消息。
 
 <a name="syntax"></a>语法
 ------
@@ -30,11 +30,11 @@ ms.locfileid: "63349654"
 );
 ```
 
-<a name="parameters"></a>Parameters
+<a name="parameters"></a>参数
 ----------
 
-*hPluginContext* \[in\]  
-此函数在调用插件的上下文句柄。
+*hPluginContext* \[中\]  
+调用此函数的插件的上下文句柄。
 
 *dwResult* \[中\]  
 结果代码。
@@ -42,12 +42,12 @@ ms.locfileid: "63349654"
 <a name="return-value"></a>返回值
 ------------
 
-此函数调用由插件与主机通信，并不会返回一个值。
+此函数由插件调用，以与主机通信并且不返回值。
 
 <a name="remarks"></a>备注
 -------
 
-该插件必须调用此函数来通知以前调用的结果的宿主[ **HS\_插件\_发送\_保留\_ALIVE**](hs-plugin-send-keep-alive.md)。
+插件必须调用此函数以通知主机对 HS 插件的先前调用的结果 [** \_ \_ 发送 \_ 保持 \_ 活动状态**](hs-plugin-send-keep-alive.md)。
 
 <a name="requirements"></a>要求
 ------------
@@ -59,20 +59,20 @@ ms.locfileid: "63349654"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Version</p></td>
+<td><p>版本</p></td>
 <td><p>Windows 10 移动版</p></td>
 </tr>
 <tr class="even">
 <td><p>Header</p></td>
-<td>Hotspotoffloadplugin.h （包括 Hotspotoffloadplugin.h）</td>
+<td>Hotspotoffloadplugin (包含 Hotspotoffloadplugin) </td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
-[**HS\_PLUGIN\_SEND\_KEEP\_ALIVE**](hs-plugin-send-keep-alive.md)
+[**HS \_ 插件 \_ 发送 \_ 保持 \_ 活动状态**](hs-plugin-send-keep-alive.md)
 
  
 

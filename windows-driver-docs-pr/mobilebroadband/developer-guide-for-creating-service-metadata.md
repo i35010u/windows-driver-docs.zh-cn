@@ -4,16 +4,16 @@ description: 创建服务元数据的开发人员指南
 ms.assetid: 2d250bce-2dd2-4bd8-aa0f-432dde7783e1
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 92c9b6b6a78d7aa7724127fd15b1e26af7a725db
-ms.sourcegitcommit: 7e4d9508198a30bdc1cb6eda83852dda4e42213e
+ms.openlocfilehash: a4e0c06fd3a5ab2fcb7611162c73bfc2ae09ffb7
+ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 09/02/2020
-ms.locfileid: "89304290"
+ms.locfileid: "89403338"
 ---
 # <a name="developer-guide-for-creating-service-metadata"></a>创建服务元数据的开发人员指南
 
-[!include[MBAE deprecation warning](mbae-deprecation-warning.md)]
+[!include[MBAE deprecation warning](../includes/mbae-deprecation-warning.md)]
 
 
 本指南将指导你完成在 Windows 开发人员中心硬件仪表板上创建服务元数据包的过程，以前称为 Sysdev (<https://sysdev.microsoft.com>) 。 将移动宽带应用连接到硬件设备需要服务元数据。 当用户将移动宽带设备插入到计算机时，将下载关联的服务元数据，然后自动下载移动宽带应用。

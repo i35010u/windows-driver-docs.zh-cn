@@ -9,12 +9,12 @@ keywords:
 - 设备控制调度例程 WDK 内核
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6d8900c250db37c7d415bec912e230eeefa3f4a7
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 1b1c3a81ccef57a428b88de496e5f8506f2c93dc
+ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89185657"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89403134"
 ---
 # <a name="dispatchinternaldevicecontrol-in-classport-drivers"></a>类/端口驱动程序中的 Dispatch(Internal)DeviceControl
 
@@ -30,7 +30,7 @@ ms.locfileid: "89185657"
 
 系统并行类/端口驱动程序模型具有相似的功能。 新的并行类驱动程序可以通过使用公共 IOCTL 并行端口 XXX 控制代码为**irp \_ MJ \_ 内部 \_ 设备 \_ 控制**请求设置 irp，从而从系统并行端口驱动程序获得支持 \_ \_ \_ *XXX* 。 可以替换系统并行端口驱动程序，但任何新的驱动程序也必须支持这组公共内部设备控制请求。
 
-有关这些公共内部设备控制请求的详细信息，请参阅 Windows 驱动程序工具包中的设备特定文档 (WDK) 。 有关如何定义专用 i/o 控制代码的信息，请参阅 [使用 I/o 控制代码](using-i-o-control-codes.md)。
+有关这些公共内部设备控制请求的详细信息，请参阅 Windows 驱动程序工具包中的设备特定文档 (WDK) 。 有关如何定义专用 i/o 控制代码的信息，请参阅 [使用 I/o 控制代码](introduction-to-i-o-control-codes.md)。
 
 对于紧密耦合的端口/类驱动程序，类驱动程序可能会处理某些设备控制请求的处理，而不会将这些请求传递到端口驱动程序。 在新的类/端口驱动程序对中，类驱动程序的 *DispatchDeviceControl* 例程可以执行以下任一操作：
 

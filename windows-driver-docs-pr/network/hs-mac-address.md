@@ -1,25 +1,25 @@
 ---
 title: HS_MAC_ADDRESS 结构
-description: HS_MAC_ADDRESS 结构包含主机媒体访问控制 (MAC) 地址。
+description: HS_MAC_ADDRESS 结构包含 (MAC) 地址的主机媒体访问控制。
 ms.assetid: 2d632ed4-4522-48ae-b23d-927517185d73
 keywords:
-- HS_MAC_ADDRESS 结构与 Windows Vista 一起启动的网络驱动程序
-- PHS_MAC_ADDRESS 结构指针与 Windows Vista 一起启动的网络驱动程序
+- 从 Windows Vista 开始 HS_MAC_ADDRESS 结构网络驱动程序
+- 从 Windows Vista 开始 PHS_MAC_ADDRESS 结构指针网络驱动程序
 ms.date: 07/31/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c3da45d1c5f9088da55ec0b771ecfecc433b25ea
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 56f76baec058a15f070de16523fde6145d546480
+ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63349636"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89403078"
 ---
-# <a name="hsmacaddress-structure"></a>HS\_MAC\_地址结构
+# <a name="hs_mac_address-structure"></a>HS \_ MAC \_ 地址结构
 
-[!include[Wi-Fi Hotspot Offloading deprecation](wi-fi-hotspot-offloading-deprecation.md)]
+[!include[Wi-Fi Hotspot Offloading deprecation](../includes/wi-fi-hotspot-offloading-deprecation.md)]
 
 
-**HS\_MAC\_地址**结构包含主机媒体访问控制 (MAC) 地址。
+**HS \_ mac \_ 地址**结构包含主机媒体访问控制 (MAC) 地址。
 
 <a name="syntax"></a>语法
 ------
@@ -47,7 +47,7 @@ MAC 地址。
 <tbody>
 <tr class="odd">
 <td><p>Header</p></td>
-<td>Hotspotoffloadplugin.h （包括 Hotspotoffloadplugin.h）</td>
+<td>Hotspotoffloadplugin (包含 Hotspotoffloadplugin) </td>
 </tr>
 </tbody>
 </table>

@@ -4,16 +4,16 @@ description: AutoplayType
 ms.assetid: 06097d2a-7883-416e-a81d-3a8abccc620b
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 53f7e8c9e9044c3f21ddc7918be79c63a4088a39
-ms.sourcegitcommit: f017184b00f59b088df87a5bd85fec51b7aed8b2
+ms.openlocfilehash: 9402524c8c792a57f3559e97410d19f3bad66893
+ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72323634"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89402892"
 ---
 # <a name="autoplaytype"></a>AutoplayType
 
-[!include[MBAE deprecation warning](mbae-deprecation-warning.md)]
+[!include[MBAE deprecation warning](../includes/mbae-deprecation-warning.md)]
 
 AutoplayType 元素指定自动播放事件是设备事件还是内容事件。 自动播放会确定设备类型，并为非卷设备引发设备事件，或为卷设备引发内容事件。
 
@@ -39,7 +39,7 @@ AutoplayType 元素指定自动播放事件是设备事件还是内容事件。 
 ## <a name="span-idchild_elementsspanspan-idchild_elementsspanspan-idchild_elementsspanchild-elements"></a><span id="Child_elements"></span><span id="child_elements"></span><span id="CHILD_ELEMENTS"></span>子元素
 
 
-没有子元素。
+没有任何子元素。
 
 ## <a name="span-idparent_elementsspanspan-idparent_elementsspanspan-idparent_elementsspanparent-elements"></a><span id="Parent_elements"></span><span id="parent_elements"></span><span id="PARENT_ELEMENTS"></span>父元素
 
@@ -52,7 +52,7 @@ AutoplayType 元素指定自动播放事件是设备事件还是内容事件。 
 <thead>
 <tr class="header">
 <th>元素</th>
-<th>描述</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>

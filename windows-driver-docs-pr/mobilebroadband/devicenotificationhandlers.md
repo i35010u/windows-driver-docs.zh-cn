@@ -4,16 +4,16 @@ description: DeviceNotificationHandlers
 ms.assetid: 94661e6a-97ed-4dbf-ab09-b39545ee2e40
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d6e20cb59754fdb97a725a5ccaa9e42e01ff174a
-ms.sourcegitcommit: f017184b00f59b088df87a5bd85fec51b7aed8b2
+ms.openlocfilehash: 4f28c5ac35e9a48587041136567f6b014dc8ee19
+ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72323618"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89403406"
 ---
 # <a name="devicenotificationhandlers"></a>DeviceNotificationHandlers
 
-[!include[MBAE deprecation warning](mbae-deprecation-warning.md)]
+[!include[MBAE deprecation warning](../includes/mbae-deprecation-warning.md)]
 
 DeviceNotificationHandlers 元素指定设备通知处理程序。
 
@@ -42,7 +42,7 @@ DeviceNotificationHandlers 元素指定设备通知处理程序。
 <thead>
 <tr class="header">
 <th>元素</th>
-<th>描述</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>
@@ -66,7 +66,7 @@ DeviceNotificationHandlers 元素指定设备通知处理程序。
 <thead>
 <tr class="header">
 <th>元素</th>
-<th>描述</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>

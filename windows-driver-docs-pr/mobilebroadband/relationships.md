@@ -4,18 +4,18 @@ description: 关系
 ms.assetid: 78443a49-96c6-45d9-a4f3-8213005f82d5
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 62e6b2714071466b7bf988dd040d3dab647c32ac
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c27a4bd53fcba937b3773baebb1a29587e52359e
+ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63342977"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89403206"
 ---
 # <a name="relationships"></a>关系
 
-[!include[MBAE deprecation warning](mbae-deprecation-warning.md)]
+[!include[MBAE deprecation warning](../includes/mbae-deprecation-warning.md)]
 
-Relationships 元素指定用于跟踪设备元数据包设备元数据缓存中的数据。
+关系元素指定用于在设备元数据缓存中跟踪设备元数据包的数据。
 
 ## <a name="span-idusagespanspan-idusagespanspan-idusagespanusage"></a><span id="Usage"></span><span id="usage"></span><span id="USAGE"></span>使用情况
 
@@ -32,12 +32,12 @@ Relationships 元素指定用于跟踪设备元数据包设备元数据缓存中
 
 没有特性。
 
-## <a name="span-idtextvaluespanspan-idtextvaluespanspan-idtextvaluespantext-value"></a><span id="Text_value"></span><span id="text_value"></span><span id="TEXT_VALUE"></span>文本值
+## <a name="span-idtext_valuespanspan-idtext_valuespanspan-idtext_valuespantext-value"></a><span id="Text_value"></span><span id="text_value"></span><span id="TEXT_VALUE"></span>文本值
 
 
-如果指定的关系元素，则它必须指定[ExperienceID](experienceid.md)元素或[LanguageNeutralIdentifier](languageneutralidentifier.md)元素，或两者。
+如果指定了关系元素，则它必须指定 [ExperienceID](experienceid.md) 元素或 [LanguageNeutralIdentifier](languageneutralidentifier.md) 元素，或同时指定这两者。
 
-## <a name="span-idchildelementsspanspan-idchildelementsspanspan-idchildelementsspanchild-elements"></a><span id="Child_elements"></span><span id="child_elements"></span><span id="CHILD_ELEMENTS"></span>子元素
+## <a name="span-idchild_elementsspanspan-idchild_elementsspanspan-idchild_elementsspanchild-elements"></a><span id="Child_elements"></span><span id="child_elements"></span><span id="CHILD_ELEMENTS"></span>子元素
 
 
 <table>
@@ -48,24 +48,24 @@ Relationships 元素指定用于跟踪设备元数据包设备元数据缓存中
 <thead>
 <tr class="header">
 <th>元素</th>
-<th>描述</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td><p><a href="experienceid.md" data-raw-source="[ExperienceID](experienceid.md)">ExperienceID</a></p></td>
-<td><p><a href="experienceid.md" data-raw-source="[ExperienceID](experienceid.md)">ExperienceID</a>元素指定由 Windows 开发人员中心仪表板的 GUID。 此 GUID 用于组相同的设备标识符独立于包的区域设置的一个或多个元数据包。</p></td>
+<td><p><a href="experienceid.md" data-raw-source="[ExperienceID](experienceid.md)">ExperienceID</a>元素指定由 Windows 开发人员中心仪表板管理的 GUID。 此 GUID 用于为与包的区域设置无关的相同设备标识符组合一个或多个元数据包。</p></td>
 </tr>
 <tr class="even">
 <td><p><a href="languageneutralidentifier.md" data-raw-source="[LanguageNeutralIdentifier](languageneutralidentifier.md)">LanguageNeutralIdentifier</a></p></td>
-<td><p><a href="languageneutralidentifier.md" data-raw-source="[LanguageNeutralIdentifier](languageneutralidentifier.md)">LanguageNeutralIdentifier</a>元素指定用于标识独立于其区域设置的设备元数据包的 GUID。</p></td>
+<td><p><a href="languageneutralidentifier.md" data-raw-source="[LanguageNeutralIdentifier](languageneutralidentifier.md)">LanguageNeutralIdentifier</a>元素指定一个 GUID，用于标识与设备元数据包无关的区域设置。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-## <a name="span-idparentelementsspanspan-idparentelementsspanspan-idparentelementsspanparent-elements"></a><span id="Parent_elements"></span><span id="parent_elements"></span><span id="PARENT_ELEMENTS"></span>父元素
+## <a name="span-idparent_elementsspanspan-idparent_elementsspanspan-idparent_elementsspanparent-elements"></a><span id="Parent_elements"></span><span id="parent_elements"></span><span id="PARENT_ELEMENTS"></span>父元素
 
 
 <table>
@@ -76,20 +76,20 @@ Relationships 元素指定用于跟踪设备元数据包设备元数据缓存中
 <thead>
 <tr class="header">
 <th>元素</th>
-<th>描述</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td><p><a href="packageinfo.md" data-raw-source="[PackageInfo](packageinfo.md)">PackageInfo</a></p></td>
-<td><p><a href="packageinfo.md" data-raw-source="[PackageInfo](packageinfo.md)">PackageInfo</a>元素指定服务元数据包的特性。</p></td>
+<td><p><a href="packageinfo.md" data-raw-source="[PackageInfo](packageinfo.md)">PackageInfo</a>元素指定服务元数据包的属性。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-## <a name="span-idxsdspanspan-idxsdspanxsd"></a><span id="XSD"></span><span id="xsd"></span>XSD
+## <a name="span-idxsdspanspan-idxsdspanxsd"></a><span id="XSD"></span><span id="xsd"></span>XSD.EXE
 
 
 ``` syntax
@@ -107,7 +107,7 @@ Relationships 元素指定用于跟踪设备元数据包设备元数据缓存中
 ## <a name="span-idremarksspanspan-idremarksspanspan-idremarksspanremarks"></a><span id="Remarks"></span><span id="remarks"></span><span id="REMARKS"></span>备注
 
 
-Relationships 元素的子元素 ([ExperienceID](experienceid.md)并[LanguageNeutralIdentifier](languageneutralidentifier.md)) 提供操作系统使用到查询设备元数据的单独的搜索密钥包安装在设备元数据缓存。
+关系元素的子元素 ([ExperienceID](experienceid.md) 和 [LanguageNeutralIdentifier](languageneutralidentifier.md)) 提供单独的搜索键，操作系统使用该搜索键来查询设备元数据缓存中安装的设备元数据包。
 
  
 

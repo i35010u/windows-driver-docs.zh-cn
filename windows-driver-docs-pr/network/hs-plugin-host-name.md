@@ -1,25 +1,25 @@
 ---
 title: HS_PLUGIN_HOST_NAME 结构
-description: HS_PLUGIN_HOST_NAME 结构包含的主机名。
+description: HS_PLUGIN_HOST_NAME 结构包含主机名。
 ms.assetid: 3995fff6-6992-4dd6-a94c-a27b2ee44436
 keywords:
-- HS_PLUGIN_HOST_NAME 结构与 Windows Vista 一起启动的网络驱动程序
-- PHS_PLUGIN_HOST_NAME 结构指针与 Windows Vista 一起启动的网络驱动程序
+- 从 Windows Vista 开始 HS_PLUGIN_HOST_NAME 结构网络驱动程序
+- 从 Windows Vista 开始 PHS_PLUGIN_HOST_NAME 结构指针网络驱动程序
 ms.date: 07/31/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e4457f8f594fe1a2663c23929e045865ba92ed18
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 73a84e19c647049b5a77762f5cb643aa3e24196d
+ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63322191"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89403042"
 ---
-# <a name="hspluginhostname-structure"></a>HS\_插件\_主机\_结构
+# <a name="hs_plugin_host_name-structure"></a>HS \_ 插件 \_ 主机 \_ 名称结构
 
-[!include[Wi-Fi Hotspot Offloading deprecation](wi-fi-hotspot-offloading-deprecation.md)]
+[!include[Wi-Fi Hotspot Offloading deprecation](../includes/wi-fi-hotspot-offloading-deprecation.md)]
 
 
-**HS\_插件\_主机\_名称**结构包含的主机名。
+**HS \_ 插件 \_ 主机 \_ 名称**结构包含主机名。
 
 <a name="syntax"></a>语法
 ------
@@ -47,7 +47,7 @@ typedef struct _HS_PLUGIN_HOST_NAME {
 <tbody>
 <tr class="odd">
 <td><p>Header</p></td>
-<td>Hotspotoffloadplugin.h （包括 Hotspotoffloadplugin.h）</td>
+<td>Hotspotoffloadplugin (包含 Hotspotoffloadplugin) </td>
 </tr>
 </tbody>
 </table>

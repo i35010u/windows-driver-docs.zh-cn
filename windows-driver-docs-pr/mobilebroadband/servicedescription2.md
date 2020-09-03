@@ -4,16 +4,16 @@ description: ServiceDescription2
 ms.assetid: 92de51be-dfd7-443b-987c-b4b364e1aaa6
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0d9b7bbbc1e6e78f88c3cd6b5a910efe877d0220
-ms.sourcegitcommit: f017184b00f59b088df87a5bd85fec51b7aed8b2
+ms.openlocfilehash: 9d21ece95ed9cf34d6997cc130e8e99e8101d5cd
+ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72323693"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89403446"
 ---
 # <a name="servicedescription2"></a>ServiceDescription2
 
-[!include[MBAE deprecation warning](mbae-deprecation-warning.md)]
+[!include[MBAE deprecation warning](../includes/mbae-deprecation-warning.md)]
 
 当前未使用 ServiceDescription2 元素。
 
@@ -39,7 +39,7 @@ ms.locfileid: "72323693"
 ## <a name="span-idchild_elementsspanspan-idchild_elementsspanspan-idchild_elementsspanchild-elements"></a><span id="Child_elements"></span><span id="child_elements"></span><span id="CHILD_ELEMENTS"></span>子元素
 
 
-没有子元素。
+没有任何子元素。
 
 ## <a name="span-idparent_elementsspanspan-idparent_elementsspanspan-idparent_elementsspanparent-elements"></a><span id="Parent_elements"></span><span id="parent_elements"></span><span id="PARENT_ELEMENTS"></span>父元素
 
@@ -52,7 +52,7 @@ ms.locfileid: "72323693"
 <thead>
 <tr class="header">
 <th>元素</th>
-<th>描述</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>

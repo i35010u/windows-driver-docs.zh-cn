@@ -1,25 +1,25 @@
 ---
 title: HS_PLUGIN_PROFILE 结构
-description: HS_PLUGIN_PROFILE 结构提供了有关该插件的信息。 由主机调用 HSPluginInitPlugin 函数执行期间，该插件会设置此结构的成员。
+description: HS_PLUGIN_PROFILE 结构提供有关插件的信息。 此结构的成员由插件在执行由主机调用的 HSPluginInitPlugin 函数期间进行设置。
 ms.assetid: 0c4f7088-737e-479a-b46e-a55e96719775
 keywords:
-- HS_PLUGIN_PROFILE 结构与 Windows Vista 一起启动的网络驱动程序
-- PHS_PLUGIN_PROFILE 结构指针与 Windows Vista 一起启动的网络驱动程序
+- 从 Windows Vista 开始 HS_PLUGIN_PROFILE 结构网络驱动程序
+- 从 Windows Vista 开始 PHS_PLUGIN_PROFILE 结构指针网络驱动程序
 ms.date: 07/31/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d3b5e46347b4008af7c7e14926e9ffa32a9ae982
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b8e913ef165accaeaac3fd9658e1f66d4abf76de
+ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63322189"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89403026"
 ---
-# <a name="hspluginprofile-structure"></a>HS\_插件\_配置文件结构
+# <a name="hs_plugin_profile-structure"></a>HS \_ 插件 \_ 配置文件结构
 
-[!include[Wi-Fi Hotspot Offloading deprecation](wi-fi-hotspot-offloading-deprecation.md)]
+[!include[Wi-Fi Hotspot Offloading deprecation](../includes/wi-fi-hotspot-offloading-deprecation.md)]
 
 
-**HS\_插件\_配置文件**结构提供了有关该插件的信息。 此结构的成员由插件设置的执行过程[ **HSPluginInitPlugin** ](hsplugininitplugin.md)由主机调用的函数。
+**HS \_ 插件 \_ 配置文件**结构提供有关插件的信息。 此结构的成员由插件在执行由主机调用的 [**HSPluginInitPlugin**](hsplugininitplugin.md) 函数期间进行设置。
 
 <a name="syntax"></a>语法
 ------
@@ -43,40 +43,40 @@ typedef struct _HS_PLUGIN_PROFILE {
 **dwPluginCapabilities**  
 必需。
 
-可能的一个子集**HS\_标志\_功能\_网络\_\\*** 值。 热点主机功能的详细信息，请参阅[ **Wi-fi 热点卸载常量**](wi-fi-hotspot-offloading-constants.md)。
+可能的**HS \_ 标志 \_ 功能 \_ NETWORK \_ \\ *** 值的子集。 有关热点主机功能的详细信息，请参阅 [**Wi-fi 热点卸载常数**](wi-fi-hotspot-offloading-constants.md)。
 
 **dwNumNetworksSupported**  
 必需。
 
-此插件支持的网络的总数。
+此插件支持的网络总数。
 
 **dwProviderNameStringID**  
 必需。
 
-向用户显示网络提供程序名称。 最大字符串大小 = MAX\_提供程序\_名称\_长度。
+向用户显示的网络提供程序名称。 最大字符串大小 = 最大 \_ 提供程序 \_ 名称 \_ 长度。
 
 **dwGenericNetworkNameStringID**  
 可选。
 
-网络名称。 最大字符串大小 = MAX\_网络\_显示\_名称\_长度。
+网络名称。 最大字符串大小 = 最大 \_ 网络 \_ 显示 \_ 名称 \_ 长度。
 
 **dwAdvancedPageStringID**  
 可选。
 
-最大字符串大小 = HS\_常量\_最大\_高级\_页\_字符串\_长度。
+最大字符串大小 = 最大长度为 HS \_ \_ 的常量最大值 \_ \_ \_ \_ 。
 
 **dwProfileUpdateTimeDays**  
 可选。
 
-必须是大于或等于 HS\_常量\_MIN\_配置文件\_更新\_时间\_IN\_天。
+必须大于或等于最小为 HS \_ 常量 \_ \_ 的配置文件 \_ 更新时间（天） \_ \_ \_ 。
 
 **szRealm**  
-如果使用 HS\_标志\_功能\_网络\_自定义\_领域设置。
+如果 \_ 设置了 "HS 标志 \_ 功能" \_ 网络 \_ 自定义 \_ 领域，则是必需的。
 
 特定于网络的领域值。
 
 **dwSupportedSIMCount**  
-指向列表的大小**pSupported SIMs**。
+**PSupported sim**指向的列表的大小。
 
 <a name="requirements"></a>要求
 ------------
@@ -89,17 +89,17 @@ typedef struct _HS_PLUGIN_PROFILE {
 <tbody>
 <tr class="odd">
 <td><p>Header</p></td>
-<td>Hotspotoffloadplugin.h （包括 Hotspotoffloadplugin.h）</td>
+<td>Hotspotoffloadplugin (包含 Hotspotoffloadplugin) </td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
 [**HSPluginInitPlugin**](hsplugininitplugin.md)
 
-[**Wi-fi 热点卸载常量**](wi-fi-hotspot-offloading-constants.md)
+[**Wi-Fi 热点卸载常量**](wi-fi-hotspot-offloading-constants.md)
 
  
 

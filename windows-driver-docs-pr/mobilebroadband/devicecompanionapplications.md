@@ -4,16 +4,16 @@ description: DeviceCompanionApplications
 ms.assetid: 3e0b21a8-aa1f-4f7a-84fc-447bba172794
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7b9dcb11928c0985c8c4daf2a621453d82ddb4e4
-ms.sourcegitcommit: f017184b00f59b088df87a5bd85fec51b7aed8b2
+ms.openlocfilehash: 1583f729f03ab7f3d3e35f04fe48c2243c1eff6a
+ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72323622"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89403308"
 ---
 # <a name="devicecompanionapplications"></a>DeviceCompanionApplications
 
-[!include[MBAE deprecation warning](mbae-deprecation-warning.md)]
+[!include[MBAE deprecation warning](../includes/mbae-deprecation-warning.md)]
 
 DeviceCompanionApplications 元素指定在计算机上检测到操作员的移动宽带硬件时要下载的应用。
 
@@ -42,12 +42,12 @@ DeviceCompanionApplications 元素指定在计算机上检测到操作员的移�
 <thead>
 <tr class="header">
 <th>元素</th>
-<th>描述</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><p><a href="package.md" data-raw-source="[Package](package.md)">Package</a></p></td>
+<td><p><a href="package.md" data-raw-source="[Package](package.md)">包</a></p></td>
 <td><p>指定将用于 Microsoft Store 设备应用的包。</p></td>
 </tr>
 </tbody>
@@ -66,7 +66,7 @@ DeviceCompanionApplications 元素指定在计算机上检测到操作员的移�
 <thead>
 <tr class="header">
 <th>元素</th>
-<th>描述</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>
@@ -98,7 +98,7 @@ DeviceCompanionApplications 元素指定在计算机上检测到操作员的移�
 
 -   指定 DeviceCompanionApplications 元素时，当 Windows 检测到操作员的移动宽带硬件时，将下载指定的应用。
 
--   包[标识](identity.md)和[应用程序](application-softwareinfo-schema.md)元素的结构与应用程序清单结构相同。
+-   包 [标识](identity.md) 和 [应用程序](application-softwareinfo-schema.md) 元素的结构与应用程序清单结构相同。
 
 -   对于 Windows 8、Windows 8.1 和 Windows 10，你只能指定一个包和一个应用程序 ID。 如果指定，则将忽略第二个包或应用程序 ID。
 

@@ -4,16 +4,16 @@ description: EnableAutoPlayForRegisteredApps
 ms.assetid: 8f4b1a6a-262a-4ebc-808b-8e998fd78f99
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2fb00401b4b604928d027cdb606e1c0cfacb7f6a
-ms.sourcegitcommit: f017184b00f59b088df87a5bd85fec51b7aed8b2
+ms.openlocfilehash: 61d0f1f4d34d8e8db8634047df69f4575d001ceb
+ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72323616"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89403404"
 ---
 # <a name="enableautoplayforregisteredapps"></a>EnableAutoPlayForRegisteredApps
 
-[!include[MBAE deprecation warning](mbae-deprecation-warning.md)]
+[!include[MBAE deprecation warning](../includes/mbae-deprecation-warning.md)]
 
 EnableAutoPlayForRegisteredApps 元素指定是否为已注册的应用启用自动播放。
 
@@ -39,7 +39,7 @@ EnableAutoPlayForRegisteredApps 元素指定是否为已注册的应用启用自
 ## <a name="span-idchild_elementsspanspan-idchild_elementsspanspan-idchild_elementsspanchild-elements"></a><span id="Child_elements"></span><span id="child_elements"></span><span id="CHILD_ELEMENTS"></span>子元素
 
 
-没有子元素。
+没有任何子元素。
 
 ## <a name="span-idparent_elementsspanspan-idparent_elementsspanspan-idparent_elementsspanparent-elements"></a><span id="Parent_elements"></span><span id="parent_elements"></span><span id="PARENT_ELEMENTS"></span>父元素
 
@@ -52,7 +52,7 @@ EnableAutoPlayForRegisteredApps 元素指定是否为已注册的应用启用自
 <thead>
 <tr class="header">
 <th>元素</th>
-<th>描述</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>

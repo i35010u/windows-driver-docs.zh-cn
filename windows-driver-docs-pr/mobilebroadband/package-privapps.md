@@ -4,16 +4,16 @@ description: 包（SoftwareInfo - 特权应用程序）
 ms.assetid: c9b22498-a7b6-4e17-9688-536883aa5844
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 152ed8306f713279a042a91c60ff68517758335c
-ms.sourcegitcommit: f017184b00f59b088df87a5bd85fec51b7aed8b2
+ms.openlocfilehash: 131a2530edcd64d2bdaaee9f296d0b945eff0452
+ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72323706"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89403490"
 ---
 # <a name="package-softwareinfo---priviliged-applications"></a>包（SoftwareInfo - 特权应用程序）
 
-[!include[MBAE deprecation warning](mbae-deprecation-warning.md)]
+[!include[MBAE deprecation warning](../includes/mbae-deprecation-warning.md)]
 
 Package 元素指定应有权访问特权移动宽带接口的应用。
 
@@ -42,7 +42,7 @@ Package 元素指定应有权访问特权移动宽带接口的应用。
 <thead>
 <tr class="header">
 <th>元素</th>
-<th>描述</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>
@@ -66,7 +66,7 @@ Package 元素指定应有权访问特权移动宽带接口的应用。
 <thead>
 <tr class="header">
 <th>元素</th>
-<th>描述</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>

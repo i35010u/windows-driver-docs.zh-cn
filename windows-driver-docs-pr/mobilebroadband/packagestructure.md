@@ -4,18 +4,18 @@ description: PackageStructure
 ms.assetid: 44be9d7d-79b0-49b6-b427-e729efadb88c
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 83ecc7da5a6be2dbb76eecebf1371c4a7b94777d
-ms.sourcegitcommit: f017184b00f59b088df87a5bd85fec51b7aed8b2
+ms.openlocfilehash: 4e446098abf69bbbd06ed245cfd903b8790c0edd
+ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72323608"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89403278"
 ---
 # <a name="packagestructure"></a>PackageStructure
 
-[!include[MBAE deprecation warning](mbae-deprecation-warning.md)]
+[!include[MBAE deprecation warning](../includes/mbae-deprecation-warning.md)]
 
-PackageStructure 元素指定服务元数据包引用的 XML 架构。 每个 XML 架构都是通过[Metadata](metadata-service-schema.md)元素指定的。
+PackageStructure 元素指定服务元数据包引用的 XML 架构。 每个 XML 架构都是通过 [Metadata](metadata-service-schema.md) 元素指定的。
 
 ## <a name="span-idusagespanspan-idusagespanspan-idusagespanusage"></a><span id="Usage"></span><span id="usage"></span><span id="USAGE"></span>使用情况
 
@@ -35,7 +35,7 @@ PackageStructure 元素指定服务元数据包引用的 XML 架构。 每个 XM
 ## <a name="span-idtext_valuespanspan-idtext_valuespanspan-idtext_valuespantext-value"></a><span id="Text_value"></span><span id="text_value"></span><span id="TEXT_VALUE"></span>文本值
 
 
-需要四个或更多的[元数据](metadata-service-schema.md)元素。
+需要四个或更多的 [元数据](metadata-service-schema.md) 元素。
 
 ## <a name="span-idchild_elementsspanspan-idchild_elementsspanspan-idchild_elementsspanchild-elements"></a><span id="Child_elements"></span><span id="child_elements"></span><span id="CHILD_ELEMENTS"></span>子元素
 
@@ -48,12 +48,12 @@ PackageStructure 元素指定服务元数据包引用的 XML 架构。 每个 XM
 <thead>
 <tr class="header">
 <th>元素</th>
-<th>描述</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><p><a href="metadata-service-schema.md" data-raw-source="[Metadata](metadata-service-schema.md)">新元</a></p></td>
+<td><p><a href="metadata-service-schema.md" data-raw-source="[Metadata](metadata-service-schema.md)">元数据</a></p></td>
 <td><p><a href="metadata-service-schema.md" data-raw-source="[Metadata](metadata-service-schema.md)">Metadata</a>元素指定通过设备元数据包引用的 XML 架构。</p></td>
 </tr>
 </tbody>
@@ -72,7 +72,7 @@ PackageStructure 元素指定服务元数据包引用的 XML 架构。 每个 XM
 <thead>
 <tr class="header">
 <th>元素</th>
-<th>描述</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>
@@ -102,7 +102,7 @@ PackageStructure 元素指定服务元数据包引用的 XML 架构。 每个 XM
 ## <a name="span-idremarksspanspan-idremarksspanspan-idremarksspanremarks"></a><span id="Remarks"></span><span id="remarks"></span><span id="REMARKS"></span>备注
 
 
-在 PackageStructure 元素中，必须至少指定[Metadata](metadata-service-schema.md)元素的四个实例。 每个实例必须指定一个用于创建服务元数据包的必需 XML 架构：
+在 PackageStructure 元素中，必须至少指定 [Metadata](metadata-service-schema.md) 元素的四个实例。 每个实例必须指定一个用于创建服务元数据包的必需 XML 架构：
 
 -   [PackageInfo XML 架构](packageinfo-xml-schema.md)
 

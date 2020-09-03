@@ -9,12 +9,12 @@ keywords:
 - 当前状态 WDK Irp
 ms.date: 05/08/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: b7c990e03327f700fc4d8295caa4098aee01b00a
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 542233a2eba9408454af4ffef4d0e8f77a8d3445
+ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89187903"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89402856"
 ---
 # <a name="points-to-consider-when-canceling-irps"></a>取消 IRP 时要考虑的要点
 
@@ -74,7 +74,7 @@ ms.locfileid: "89187903"
 
 任何较高级别的驱动程序都可以使用已分配和传递的 IRP 来调用 [**IoCancelIrp**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iocancelirp) ，以供较低级别的驱动程序进一步处理。 但是，此类驱动程序无法假定给定的 IRP 将以 \_ 较低的驱动程序取消状态。
 
-### <a name="synchronization"></a>Synchronization
+### <a name="synchronization"></a>同步
 
 驱动程序可以 (或必须根据其设计) 在其设备扩展中维护附加状态信息以跟踪 Irp 的可取消状态。 如果此状态由以 IRQL = 调度级别运行的驱动程序例程共享 &lt; \_ ，则应该使用驱动程序分配的和初始化的自旋锁来保护共享数据。
 
@@ -82,7 +82,7 @@ ms.locfileid: "89187903"
 
 如果设备驱动程序维护有关各种驱动程序例程与其 ISR 共享的可取消 Irp 的状态信息，则这些其他例程必须使用 ISR 同步对共享状态的访问。 只有驱动程序提供的 *SynchCritSection* 例程才能访问以多处理器安全方式与 ISR 共享的状态信息。
 
-有关详细信息，请参阅 [同步技术](synchronization-techniques.md)。
+有关详细信息，请参阅 [同步技术](introduction-to-kernel-dispatcher-objects.md)。
 
  
 

@@ -4,20 +4,20 @@ description: ProvisioningEngine
 ms.assetid: b6b10145-d554-43be-8682-1355145b3241
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 49ce5c65436e9da9d14496c32ec90b32b007bbcd
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4657100c4c81d2b3d6c8225ab8cc40558c72fdb2
+ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63335270"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89403226"
 ---
 # <a name="provisioningengine"></a>ProvisioningEngine
 
-[!include[MBAE deprecation warning](mbae-deprecation-warning.md)]
+[!include[MBAE deprecation warning](../includes/mbae-deprecation-warning.md)]
 
-ProvisioningEngine 元素指定受信任的证书。 这使操作员可以预配 PC 的使用受信任的证书进行签名的包。
+ProvisioningEngine 元素指定受信任的证书。 这允许操作员使用由受信任证书签名的包预配 PC。
 
-有关预配的详细信息，请参阅[帐户预配](account-provisioning.md)。
+有关预配的详细信息，请参阅 [帐户预配](account-provisioning.md)。
 
 ## <a name="span-idusagespanspan-idusagespanspan-idusagespanusage"></a><span id="Usage"></span><span id="usage"></span><span id="USAGE"></span>使用情况
 
@@ -33,7 +33,7 @@ ProvisioningEngine 元素指定受信任的证书。 这使操作员可以预配
 
 没有特性。
 
-## <a name="span-idchildelementsspanspan-idchildelementsspanspan-idchildelementsspanchild-elements"></a><span id="Child_elements"></span><span id="child_elements"></span><span id="CHILD_ELEMENTS"></span>子元素
+## <a name="span-idchild_elementsspanspan-idchild_elementsspanspan-idchild_elementsspanchild-elements"></a><span id="Child_elements"></span><span id="child_elements"></span><span id="CHILD_ELEMENTS"></span>子元素
 
 
 <table>
@@ -44,7 +44,7 @@ ProvisioningEngine 元素指定受信任的证书。 这使操作员可以预配
 <thead>
 <tr class="header">
 <th>元素</th>
-<th>描述</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>
@@ -57,7 +57,7 @@ ProvisioningEngine 元素指定受信任的证书。 这使操作员可以预配
 
  
 
-## <a name="span-idparentelementsspanspan-idparentelementsspanspan-idparentelementsspanparent-elements"></a><span id="Parent_elements"></span><span id="parent_elements"></span><span id="PARENT_ELEMENTS"></span>父元素
+## <a name="span-idparent_elementsspanspan-idparent_elementsspanspan-idparent_elementsspanparent-elements"></a><span id="Parent_elements"></span><span id="parent_elements"></span><span id="PARENT_ELEMENTS"></span>父元素
 
 
 <table>
@@ -68,20 +68,20 @@ ProvisioningEngine 元素指定受信任的证书。 这使操作员可以预配
 <thead>
 <tr class="header">
 <th>元素</th>
-<th>描述</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td><p><a href="mobilebroadbandinfo.md" data-raw-source="[MobileBroadbandInfo](mobilebroadbandinfo.md)">MobileBroadbandInfo</a></p></td>
-<td><p><a href="mobilebroadbandinfo.md" data-raw-source="[MobileBroadbandInfo](mobilebroadbandinfo.md)">MobileBroadbandInfo</a>元素是父元素<a href="mobilebroadbandinfo-xml-schema.md" data-raw-source="[MobileBroadbandInfo XML schema](mobilebroadbandinfo-xml-schema.md)">MobileBroadbandInfo XML 架构</a>。</p></td>
+<td><p><a href="mobilebroadbandinfo.md" data-raw-source="[MobileBroadbandInfo](mobilebroadbandinfo.md)">MobileBroadbandInfo</a>元素是<a href="mobilebroadbandinfo-xml-schema.md" data-raw-source="[MobileBroadbandInfo XML schema](mobilebroadbandinfo-xml-schema.md)">MobileBroadbandInfo XML 架构</a>的父元素。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-## <a name="span-idxsdspanspan-idxsdspanxsd"></a><span id="XSD"></span><span id="xsd"></span>XSD
+## <a name="span-idxsdspanspan-idxsdspanxsd"></a><span id="XSD"></span><span id="xsd"></span>XSD.EXE
 
 
 ``` syntax
@@ -98,9 +98,9 @@ ProvisioningEngine 元素指定受信任的证书。 这使操作员可以预配
 ## <a name="span-idremarksspanspan-idremarksspanspan-idremarksspanremarks"></a><span id="Remarks"></span><span id="remarks"></span><span id="REMARKS"></span>备注
 
 
--   Windows 8、 Windows 8.1 和 Windows 10 允许移动网络运营商可以提供对名为预配包的用户的移动宽带网络设置进行更新的包。
+-   Windows 8、Windows 8.1 和 Windows 10 允许移动网络操作员提供程序包，以便更新用户的移动宽带网络设置，称为预配包。
 
--   若要确保这些预配包来自移动网络运营商，Windows 将验证颁发者名称和从用于预配包进行签名的证书的使用者名称匹配服务元数据包中的描述。
+-   为了确保这些预配包来自移动网络操作员，Windows 将验证用于对预配包进行签名的证书中的颁发者名称和使用者名称是否匹配服务元数据包中所述的内容。
 
 ProvisioningEngine 元素是可选的。
 

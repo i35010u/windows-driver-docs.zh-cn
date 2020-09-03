@@ -4,16 +4,16 @@ description: SoftwareInfo XML 示例
 ms.assetid: 3ee92b21-ed4e-4ed9-9199-3f43f2f8ec00
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2ab08e3b1df63ed0528d3d6896c2609280767c4e
-ms.sourcegitcommit: 67efcd26f7be8f50c92b141ccd14c9c68f4412d8
+ms.openlocfilehash: 9db88e02647769f1971c2984138a4de685890289
+ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88902642"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89403432"
 ---
 # <a name="softwareinfo-xml-example"></a>SoftwareInfo XML 示例
 
-[!include[MBAE deprecation warning](mbae-deprecation-warning.md)]
+[!include[MBAE deprecation warning](../includes/mbae-deprecation-warning.md)]
 
 以下 XML 文档使用 [SERVICEINFO XML 架构](serviceinfo-xml-schema.md) 指定 Contoso 无线服务的属性：
 

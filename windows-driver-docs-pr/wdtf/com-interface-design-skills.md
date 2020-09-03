@@ -8,32 +8,27 @@ keywords:
 - 操作接口 WDK WDTF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 292a179291806c21ccb89f863202ebce6779e6d0
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: f51ad489f63d80466bf670fee16617b4a0079cc9
+ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386250"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89403510"
 ---
 # <a name="com-interface-design-skills"></a>COM 接口设计技能
 
 
-创建新的操作接口时，应设计您的对象模型中考虑到了以下功能：
+创建新的操作接口时，应考虑以下功能，设计对象模型：
 
-1.  **直观**。 表示在单词中的手动测试。
+1.  **直观**的。 以单词表示手动手动测试。
 
-2.  **易于学习和使用。** 使其容易使用，以便手动测试人员可以编写的顶级方案脚本。 这些测试人员具有有价值的见解如何中断应用程序，因此请让它们到自动巩固这一知识[方案脚本](creating-wdtf-scenarios.md)。
+2.  **易于学习和使用。** 使其足够简单，使手动测试人员可以编写顶级方案脚本。 这些测试人员可以了解如何中断应用程序，让他们将这些知识分解为自动 [方案脚本](creating-wdtf-scenarios.md)。
 
-3.  **面向对象的**。 使你的接口的面向对象，来提高工作效率。 幸运的是， [WDTF 方案模型](extending-the-framework.md)就很难为中断此规则。
+3.  **面向对象**。 使接口面向对象，以提高工作效率。 幸运的是， [WDTF 方案模型](extending-the-framework.md) 使这一规则变得很困难。
 
-4.  **可靠**。 操作接口应以可重用性，因此试着不只简单用例准备。
+4.  **可靠**。 操作接口旨在实现可重用性，因此，只需针对简单用例做好准备。
 
-5.  **套**。 请确保在设计中包含诊断性。 试着考虑在使用您的界面时，人员调试问题的方式。 若要检测代码可帮助[WPP 软件跟踪](https://docs.microsoft.com/windows-hardware/drivers/devtest/wpp-software-tracing)。
-
- 
+5.  **Diagnosable**。 请确保在设计中包括诊断。 尝试考虑用户使用您的界面时如何调试问题。 它有助于通过 [WPP 软件跟踪](../devtest/wpp-software-tracing.md)来检测代码。
 
  
-
-
-
 

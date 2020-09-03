@@ -4,12 +4,12 @@ description: 使用脚本语言创作测试
 ms.assetid: 4F5328E4-4817-4391-BF56-EC9E7F469AA7
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b8a3ccc486752f839ea8c9108daaa3a687ac57cb
-ms.sourcegitcommit: 67efcd26f7be8f50c92b141ccd14c9c68f4412d8
+ms.openlocfilehash: 538e9e2b910a80d0c44bf416d303f15d3c77ba3f
+ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88902392"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89403476"
 ---
 # <a name="authoring-tests-in-scripting-languages"></a>使用脚本语言创作测试
 
@@ -23,7 +23,7 @@ Windows 只支持 JScript 和 VBScript。
 
 ## <a name="script-test-file-format"></a>脚本测试文件格式
 
-对于脚本语言测试，TAEF 使用略微修改 [Windows 脚本组件](https://docs.microsoft.com/previous-versions/07zhfkh8(v=vs.85)) 文件格式。 下面的示例演示一个包含 VBScript 和 JScript 测试类的测试文件。
+对于脚本语言测试，TAEF 使用略微修改 [Windows 脚本组件](/previous-versions/07zhfkh8(v=vs.85)) 文件格式。 下面的示例演示一个包含 VBScript 和 JScript 测试类的测试文件。
 
 ```cpp
 1   <?xml version="1.0" ?>
@@ -162,7 +162,7 @@ Windows 只支持 JScript 和 VBScript。
 
 在 **Component** 元素之后，可以通过使用 **TestClassProperty** 元素插入类级元数据。 与 **ModuleProperty** 元素一样，它必须具有 **name** 和 **value** 属性。
 
-此时，您还可以创建对象并定义对对象的引用。 有关详细信息，请参阅 [其他组件部分](https://docs.microsoft.com/previous-versions/ye6w00x4(v=vs.85)) 。 XML 示例中的第15、18、49和52行说明了如何引用和初始化**WEX。记录对象。**
+此时，您还可以创建对象并定义对对象的引用。 有关详细信息，请参阅 [其他组件部分](/previous-versions/ye6w00x4(v=vs.85)) 。 XML 示例中的第15、18、49和52行说明了如何引用和初始化**WEX。记录对象。**
 
 ** &lt; 公共 &gt; **元素包含测试脚本模块的测试方法声明。 通过在** &lt; &gt; 方法**元素的**name**特性中指定测试方法名称来声明测试方法。 你还可以在** &lt; 方法 &gt; **元素中添加 "测试方法" 属性。 与其他级别的属性一样，它不是必需的。 但是，如果添加它，则必须包含 **名称** 和 **值** 属性。
 

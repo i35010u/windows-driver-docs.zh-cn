@@ -4,16 +4,16 @@ description: PackageInfo XML 架构定义
 ms.assetid: b0e4f800-816a-4d8b-a68b-56dc468caf52
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2d05d4996d7d097d718ccfefce2bd19283f5e85e
-ms.sourcegitcommit: 67efcd26f7be8f50c92b141ccd14c9c68f4412d8
+ms.openlocfilehash: e16bbf56688a10e1ac46432daf682b9e0621a35f
+ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88902648"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89403302"
 ---
 # <a name="packageinfo-xml-schema-definition"></a>PackageInfo XML 架构定义
 
-[!include[MBAE deprecation warning](mbae-deprecation-warning.md)]
+[!include[MBAE deprecation warning](../includes/mbae-deprecation-warning.md)]
 
 下面是 PackageInfo XML 架构的命名空间：
 

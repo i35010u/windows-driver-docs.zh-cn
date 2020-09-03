@@ -4,16 +4,16 @@ description: ServiceInfo XML 架构定义
 ms.assetid: c5d6aa78-b494-4931-bdfc-6acaab5c570f
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 033f12c8f85e0c7c36773713fec787ff86b71007
-ms.sourcegitcommit: 67efcd26f7be8f50c92b141ccd14c9c68f4412d8
+ms.openlocfilehash: 290edd0b686bc64c7f6a3a7ed2022dbd1d8cd9eb
+ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88902576"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89403438"
 ---
 # <a name="serviceinfo-xml-schema-definition"></a>ServiceInfo XML 架构定义
 
-[!include[MBAE deprecation warning](mbae-deprecation-warning.md)]
+[!include[MBAE deprecation warning](../includes/mbae-deprecation-warning.md)]
 
 下面是 ServiceInfo XML 架构的命名空间：
 

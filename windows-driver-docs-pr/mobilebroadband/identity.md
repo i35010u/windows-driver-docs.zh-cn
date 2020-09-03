@@ -4,16 +4,16 @@ description: 标识 (SoftwareInfo)
 ms.assetid: fcec93ad-54d4-466e-8fac-888377115689
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0dddaf836fc6e9ded93788195890aa697500206f
-ms.sourcegitcommit: f017184b00f59b088df87a5bd85fec51b7aed8b2
+ms.openlocfilehash: f2f111e69500ec5839fdecdc2e6d6d4b2293d42e
+ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72323708"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89403468"
 ---
 # <a name="identity-softwareinfo"></a>标识 (SoftwareInfo)
 
-[!include[MBAE deprecation warning](mbae-deprecation-warning.md)]
+[!include[MBAE deprecation warning](../includes/mbae-deprecation-warning.md)]
 
 标识元素指定应用程序的发布服务器标识和应用程序清单名称。
 
@@ -36,23 +36,23 @@ ms.locfileid: "72323708"
 </colgroup>
 <thead>
 <tr class="header">
-<th>属性</th>
-<th>在任务栏的搜索框中键入</th>
-<th>必需</th>
-<th>描述</th>
+<th>Attribute</th>
+<th>类型</th>
+<th>必选</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td><p>名称</p></td>
 <td><p>tns： AsciiIdentifierType</p></td>
-<td><p>“是”</p></td>
+<td><p>是</p></td>
 <td><p>应用程序清单文件中指定的应用程序的名称。</p></td>
 </tr>
 <tr class="even">
-<td><p>Publisher</p></td>
+<td><p>发布者</p></td>
 <td><p>tns： DistinguishedNameType</p></td>
-<td><p>“是”</p></td>
+<td><p>是</p></td>
 <td><p>应用程序的发布者标识。</p></td>
 </tr>
 </tbody>
@@ -63,7 +63,7 @@ ms.locfileid: "72323708"
 ## <a name="span-idchild_elementsspanspan-idchild_elementsspanspan-idchild_elementsspanchild-elements"></a><span id="Child_elements"></span><span id="child_elements"></span><span id="CHILD_ELEMENTS"></span>子元素
 
 
-没有子元素。
+没有任何子元素。
 
 ## <a name="span-idparent_elementsspanspan-idparent_elementsspanspan-idparent_elementsspanparent-elements"></a><span id="Parent_elements"></span><span id="parent_elements"></span><span id="PARENT_ELEMENTS"></span>父元素
 
@@ -76,7 +76,7 @@ ms.locfileid: "72323708"
 <thead>
 <tr class="header">
 <th>元素</th>
-<th>描述</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>

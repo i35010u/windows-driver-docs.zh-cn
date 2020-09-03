@@ -4,16 +4,16 @@ description: 服务元数据概述
 ms.assetid: daf5db05-cf39-4ff2-a2f1-0ffd718c638e
 ms.date: 07/05/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 6139396d12d72f2320a3b47fcafe03d6b1d241c3
-ms.sourcegitcommit: 7e4d9508198a30bdc1cb6eda83852dda4e42213e
+ms.openlocfilehash: f3ec74b8284d8c8591e6de1189230bf5b09a54db
+ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 09/02/2020
-ms.locfileid: "89304227"
+ms.locfileid: "89403200"
 ---
 # <a name="service-metadata-overview"></a>服务元数据概述
 
-[!include[MBAE deprecation warning](mbae-deprecation-warning.md)]
+[!include[MBAE deprecation warning](../includes/mbae-deprecation-warning.md)]
 
 你可以创建和提交服务元数据包，以创建与 Windows 深度集成的体验。 当 Windows 检测到与操作员的服务元数据包匹配的移动宽带硬件时，它会自动下载服务元数据和指定的移动宽带应用。
 

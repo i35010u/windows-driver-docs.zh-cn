@@ -4,16 +4,16 @@ description: PackageInfo XML 架构概述
 ms.assetid: 5873604e-564e-4c8e-bfc7-526aac5767fa
 ms.date: 07/05/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: a09c0eafd08bc37505ee424dcbcddf990dc071c2
-ms.sourcegitcommit: 7e4d9508198a30bdc1cb6eda83852dda4e42213e
+ms.openlocfilehash: 9c9638f0bbe8e564f43af73d830c7c8a50fb7e10
+ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 09/02/2020
-ms.locfileid: "89304284"
+ms.locfileid: "89402882"
 ---
 # <a name="packageinfo-xml-schema-overview"></a>PackageInfo XML 架构概述
 
-[!include[MBAE deprecation warning](mbae-deprecation-warning.md)]
+[!include[MBAE deprecation warning](../includes/mbae-deprecation-warning.md)]
 
 元数据包包含一个 PackageInfo.xml 文档，该文档包含操作系统用于安装元数据包并引用其内容的信息。
 

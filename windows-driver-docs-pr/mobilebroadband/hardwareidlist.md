@@ -4,18 +4,18 @@ description: HardwareIdList (PackageInfo)
 ms.assetid: 32bd11f8-767f-4082-b753-efa9debf23cc
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 15f45b60560676e26d7c7fcd12879058d1f44646
-ms.sourcegitcommit: f017184b00f59b088df87a5bd85fec51b7aed8b2
+ms.openlocfilehash: 93e22ba011911e4592292f17827fa965da2db72d
+ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72323712"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89403550"
 ---
 # <a name="hardwareidlist-packageinfo"></a>HardwareIdList (PackageInfo)
 
-[!include[MBAE deprecation warning](mbae-deprecation-warning.md)]
+[!include[MBAE deprecation warning](../includes/mbae-deprecation-warning.md)]
 
-HardwareIDList 元素指定服务元数据包的一个或多个硬件标识字符串。 每个字符串由[HardwareID](hardwareid.md)元素指定。
+HardwareIDList 元素指定服务元数据包的一个或多个硬件标识字符串。 每个字符串由 [HardwareID](hardwareid.md) 元素指定。
 
 ## <a name="span-idusagespanspan-idusagespanspan-idusagespanusage"></a><span id="Usage"></span><span id="usage"></span><span id="USAGE"></span>使用情况
 
@@ -34,7 +34,7 @@ HardwareIDList 元素指定服务元数据包的一个或多个硬件标识字�
 ## <a name="span-idtext_valuespanspan-idtext_valuespanspan-idtext_valuespantext-value"></a><span id="Text_value"></span><span id="text_value"></span><span id="TEXT_VALUE"></span>文本值
 
 
-必须包含一个或多个[HardwareID](hardwareid.md)元素。
+必须包含一个或多个 [HardwareID](hardwareid.md) 元素。
 
 ## <a name="span-idchild_elementsspanspan-idchild_elementsspanspan-idchild_elementsspanchild-elements"></a><span id="Child_elements"></span><span id="child_elements"></span><span id="CHILD_ELEMENTS"></span>子元素
 
@@ -47,7 +47,7 @@ HardwareIDList 元素指定服务元数据包的一个或多个硬件标识字�
 <thead>
 <tr class="header">
 <th>元素</th>
-<th>描述</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>
@@ -71,13 +71,13 @@ HardwareIDList 元素指定服务元数据包的一个或多个硬件标识字�
 <thead>
 <tr class="header">
 <th>元素</th>
-<th>描述</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td><p><a href="metadatakey.md" data-raw-source="[MetadataKey](metadatakey.md)">MetadataKey</a></p></td>
-<td><p><a href="metadatakey.md" data-raw-source="[MetadataKey](metadatakey.md)">MetadataKey</a>元素指定设备元数据包的属性。 这包括：</p>
+<td><p><a href="metadatakey.md" data-raw-source="[MetadataKey](metadatakey.md)">MetadataKey</a>元素指定设备元数据包的属性。 其中包括：</p>
 <ul>
 <li><p>设备支持的每个硬件功能的标识符。</p></li>
 <li><p>包中的文本字符串的语言特定区域设置。</p></li>

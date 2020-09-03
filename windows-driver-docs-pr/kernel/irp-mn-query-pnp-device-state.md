@@ -6,19 +6,19 @@ ms.assetid: 24362a20-9e9d-4566-bc95-ce52b91056af
 keywords:
 - IRP_MN_QUERY_PNP_DEVICE_STATE 内核模式驱动程序体系结构
 ms.localizationpriority: medium
-ms.openlocfilehash: 16c07eee8b8c2bf1106288744267cbc9ec49d9b8
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 96f9887ae8d64960c3c00e28339525fd9e64f391
+ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89186723"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89403256"
 ---
 # <a name="irp_mn_query_pnp_device_state"></a>IRP \_ MN \_ 查询 \_ PNP \_ 设备 \_ 状态
 
 
 函数、筛选器和总线驱动程序可处理此请求。
 
-## <a name="value"></a>值
+## <a name="value47"></a>Value47
 
 0x14
 
@@ -49,14 +49,14 @@ PnP 管理器在任意线程的上下文中以 IRQL 被动级别发送此 IRP \_
 
 驱动程序将 **Irp- &gt; IoStatus** 设置为状态 " \_ 成功"，或设置为适当的错误状态，如状态 "未 \_ 成功"。
 
-成功时，驱动程序将 **Irp- &gt; IoStatus** 设置为 [**PNP \_ 设备 \_ 状态**](./handling-an-irp-mn-surprise-removal-request.md#about-pnpdevicestate) 位掩码。
+成功时，驱动程序将 **Irp- &gt; IoStatus** 设置为 [**PNP \_ 设备 \_ 状态**](./handling-an-irp-mn-surprise-removal-request.md#about-pnp_device_state) 位掩码。
 
 
 如果函数或筛选器驱动程序不处理此 IRP，它将调用 [**IoSkipCurrentIrpStackLocation**](./mm-bad-pointer.md)，不会设置 [*IoCompletion*](/windows-hardware/drivers/ddi/wdm/nc-wdm-io_completion_routine) 例程，并将 IRP 向下传递到下一个驱动程序。 此类驱动程序不得修改 **irp- &gt; IoStatus** 并且不得完成 irp。
 
 如果总线驱动程序未处理此 IRP，它会将 **irp- &gt; IoStatus** 保持原样，并完成 irp。
 
-<a name="operation"></a>操作
+<a name="operation"></a>Operation
 ---------
 
 此 IRP 首先由设备堆栈顶部的驱动程序和堆栈中的每个下一个较低的驱动程序处理。
@@ -85,9 +85,9 @@ PnP 管理器在任意线程的上下文中以 IRQL 被动级别发送此 IRP \_
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
 [**IoInvalidateDeviceState**](/windows-hardware/drivers/ddi/wdm/nf-wdm-ioinvalidatedevicestate)
 
-[**PNP \_ 设备 \_ 状态**](./handling-an-irp-mn-surprise-removal-request.md#about-pnpdevicestate)
+[**PNP \_ 设备 \_ 状态**](./handling-an-irp-mn-surprise-removal-request.md#about-pnp_device_state)

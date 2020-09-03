@@ -4,16 +4,16 @@ description: 标识（SoftwareInfo - 特权应用程序）
 ms.assetid: 405ec2ee-ea4a-468b-b75b-365ffce03cdb
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 94396720678c3baf9701ac801379e4a4a5b93a35
-ms.sourcegitcommit: f017184b00f59b088df87a5bd85fec51b7aed8b2
+ms.openlocfilehash: f9d4be123822b4894563b5630c359a47cb656abc
+ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72323710"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89403472"
 ---
 # <a name="identity-softwareinfo---priviliged-applications"></a>标识（SoftwareInfo - 特权应用程序）
 
-[!include[MBAE deprecation warning](mbae-deprecation-warning.md)]
+[!include[MBAE deprecation warning](../includes/mbae-deprecation-warning.md)]
 
 标识元素指定应用程序的发布服务器标识和应用程序清单名称。
 
@@ -36,30 +36,30 @@ ms.locfileid: "72323710"
 </colgroup>
 <thead>
 <tr class="header">
-<th>属性</th>
-<th>在任务栏的搜索框中键入</th>
-<th>必需</th>
-<th>描述</th>
+<th>Attribute</th>
+<th>类型</th>
+<th>必选</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td><p>名称</p></td>
 <td><p>tns： AsciiIdentifierType</p></td>
-<td><p>“是”</p></td>
+<td><p>是</p></td>
 <td><p>应用程序清单文件中指定的应用程序的名称。</p></td>
 </tr>
 <tr class="even">
-<td><p>Publisher</p></td>
+<td><p>发布者</p></td>
 <td><p>tns： DistinguishedNameType</p></td>
-<td><p>“是”</p></td>
+<td><p>是</p></td>
 <td><p>应用程序的发布者标识。</p></td>
 </tr>
 <tr class="odd">
 <td><p>AccessCustomDriver</p></td>
 <td><p>xs:boolean</p></td>
-<td><p>无</p></td>
-<td><p>如果应用应该具有对自定义驱动程序的访问权限，请将此值设置为<strong>true</strong>。</p></td>
+<td><p>否</p></td>
+<td><p>如果应用应该具有对自定义驱动程序的访问权限，请将此值设置为 <strong>true</strong>。</p></td>
 </tr>
 </tbody>
 </table>
@@ -69,7 +69,7 @@ ms.locfileid: "72323710"
 ## <a name="span-idchild_elementsspanspan-idchild_elementsspanspan-idchild_elementsspanchild-elements"></a><span id="Child_elements"></span><span id="child_elements"></span><span id="CHILD_ELEMENTS"></span>子元素
 
 
-没有子元素。
+没有任何子元素。
 
 ## <a name="span-idparent_elementsspanspan-idparent_elementsspanspan-idparent_elementsspanparent-elements"></a><span id="Parent_elements"></span><span id="parent_elements"></span><span id="PARENT_ELEMENTS"></span>父元素
 
@@ -82,12 +82,12 @@ ms.locfileid: "72323710"
 <thead>
 <tr class="header">
 <th>元素</th>
-<th>描述</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><p><a href="package-privapps.md" data-raw-source="[Package](package-privapps.md)">Package</a></p></td>
+<td><p><a href="package-privapps.md" data-raw-source="[Package](package-privapps.md)">包</a></p></td>
 <td><p>指定应有权访问特权移动宽带接口的应用。</p></td>
 </tr>
 </tbody>

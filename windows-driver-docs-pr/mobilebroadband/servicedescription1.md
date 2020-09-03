@@ -4,18 +4,18 @@ description: ServiceDescription1
 ms.assetid: 4451c429-3b89-47d6-ba21-ab30919e5ff8
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 73a182280237080e11e124ab6ce6397a92e3ff79
-ms.sourcegitcommit: f017184b00f59b088df87a5bd85fec51b7aed8b2
+ms.openlocfilehash: 25941b159b7ab195bb9a0c83c0567dc649eef3b4
+ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72323697"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89403448"
 ---
 # <a name="servicedescription1"></a>ServiceDescription1
 
-[!include[MBAE deprecation warning](mbae-deprecation-warning.md)]
+[!include[MBAE deprecation warning](../includes/mbae-deprecation-warning.md)]
 
-ServiceDescription1 元素指定有关服务的描述性信息。 这适用于无线广域网（WWAN）连接配置文件的 "描述" 字段。 它不会在用户界面中显示给最终用户，并且应留空。
+ServiceDescription1 元素指定有关服务的描述性信息。 这适用于无线广域网 (WWAN) 连接配置文件的 "描述" 字段。 它不会在用户界面中显示给最终用户，并且应留空。
 
 ## <a name="span-idusagespanspan-idusagespanspan-idusagespanusage"></a><span id="Usage"></span><span id="usage"></span><span id="USAGE"></span>使用情况
 
@@ -39,7 +39,7 @@ ServiceDescription1 元素指定有关服务的描述性信息。 这适用于�
 ## <a name="span-idchild_elementsspanspan-idchild_elementsspanspan-idchild_elementsspanchild-elements"></a><span id="Child_elements"></span><span id="child_elements"></span><span id="CHILD_ELEMENTS"></span>子元素
 
 
-没有子元素。
+没有任何子元素。
 
 ## <a name="span-idparent_elementsspanspan-idparent_elementsspanspan-idparent_elementsspanparent-elements"></a><span id="Parent_elements"></span><span id="parent_elements"></span><span id="PARENT_ELEMENTS"></span>父元素
 
@@ -52,7 +52,7 @@ ServiceDescription1 元素指定有关服务的描述性信息。 这适用于�
 <thead>
 <tr class="header">
 <th>元素</th>
-<th>描述</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>

@@ -1,24 +1,24 @@
 ---
 title: HS_HOST_UPDATE_CONFIGURATION_COMPLETION 函数
-description: HS_HOST_UPDATE_CONFIGURATION_COMPLETION 函数指示成功或失败的请求以检查更新。
+description: HS_HOST_UPDATE_CONFIGURATION_COMPLETION 函数指示检查更新的请求是成功还是失败。
 ms.assetid: 7e9eda04-db8e-4181-90e3-8716a99429a8
 keywords:
-- 与 Windows Vista 一起启动的网络驱动程序的 typedef DWORD (WINAPI HS_HOST_UPDATE_CONFIGURATION_COMPLETION) 函数
+- typedef DWORD (WINAPI HS_HOST_UPDATE_CONFIGURATION_COMPLETION 从 Windows Vista 开始) 函数网络驱动程序
 ms.date: 07/31/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 67135e7348bfe8a3ee2c58b932c98c54f5fad319
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f0a69af43a6428e15a7a73aa3b18e2b41f5b408c
+ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63349651"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89403076"
 ---
-# <a name="hshostupdateconfigurationcompletion-function"></a>HS\_主机\_更新\_配置\_完成函数
+# <a name="hs_host_update_configuration_completion-function"></a>HS \_ 主机 \_ 更新 \_ 配置 \_ 完成功能
 
-[!include[Wi-Fi Hotspot Offloading deprecation](wi-fi-hotspot-offloading-deprecation.md)]
+[!include[Wi-Fi Hotspot Offloading deprecation](../includes/wi-fi-hotspot-offloading-deprecation.md)]
 
 
-**HS\_主机\_更新\_配置\_完成**函数指示成功或失败的请求以检查更新。
+**HS \_ 主机 \_ 更新 \_ 配置 \_ 完成**功能指示检查更新的请求是成功还是失败。
 
 <a name="syntax"></a>语法
 ------
@@ -30,24 +30,24 @@ ms.locfileid: "63349651"
 );
 ```
 
-<a name="parameters"></a>Parameters
+<a name="parameters"></a>参数
 ----------
 
-*hPluginContext* \[in\]  
-此函数在调用插件的上下文句柄。
+*hPluginContext* \[中\]  
+调用此函数的插件的上下文句柄。
 
 *UpdateResult* \[中\]  
-[ **EHS\_更新\_结果**](ehs-update-result.md)枚举值，该值指示要检查是否有更新的请求的结果。
+[**EHS \_ UPDATE \_ result**](ehs-update-result.md)枚举值，指示请求检查更新的结果。
 
 <a name="return-value"></a>返回值
 ------------
 
-此函数调用由插件与主机通信，并不会返回一个值。
+此函数由插件调用，以与主机通信并且不返回值。
 
 <a name="remarks"></a>备注
 -------
 
-该插件必须调用此函数来通知以前调用的结果的宿主[ **HS\_插件\_检查\_有关\_更新**](hs-plugin-check-for-updates.md)。
+插件必须调用此函数以通知主机对 HS 插件的先前调用的结果 [** \_ \_ 检查 \_ 是否有 \_ 更新**](hs-plugin-check-for-updates.md)。
 
 <a name="requirements"></a>要求
 ------------
@@ -59,22 +59,22 @@ ms.locfileid: "63349651"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Version</p></td>
+<td><p>版本</p></td>
 <td><p>Windows 10 移动版</p></td>
 </tr>
 <tr class="even">
 <td><p>Header</p></td>
-<td>Hotspotoffloadplugin.h （包括 Hotspotoffloadplugin.h）</td>
+<td>Hotspotoffloadplugin (包含 Hotspotoffloadplugin) </td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
-[**eHS\_UPDATE\_RESULT**](ehs-update-result.md)
+[**eHS \_ 更新 \_ 结果**](ehs-update-result.md)
 
-[**HS\_插件\_检查\_为\_更新**](hs-plugin-check-for-updates.md)
+[**HS \_ 插件 \_ 检查 \_ \_ 更新**](hs-plugin-check-for-updates.md)
 
  
 

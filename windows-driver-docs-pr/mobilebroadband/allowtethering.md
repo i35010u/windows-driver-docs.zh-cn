@@ -4,20 +4,20 @@ description: AllowTethering
 ms.assetid: f9b92c46-5e0e-447a-b571-bf549e9a749d
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d65981a1967012b5fe091da6d6da90cadd90f3ef
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: fbd40bd5ab16af23cb2d33c7a55517144bfdfc56
+ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63327811"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89403326"
 ---
 # <a name="allowtethering"></a>AllowTethering
 
-[!include[MBAE deprecation warning](mbae-deprecation-warning.md)]
+[!include[MBAE deprecation warning](../includes/mbae-deprecation-warning.md)]
 
-AllowTethering 元素指定用户是否是始终允许，永远不会允许，或允许权利检查后使用 Internet 共享。
+AllowTethering 元素指定是始终允许还是从不允许用户，或在权利检查后允许用户使用 Internet 共享。
 
-**请注意**  如果此元素配置为允许授权检查后，必须指定[DeviceNotificationHandler](devicenotificationhandler.md)将处理权利检查在应用中。
+**注意**   如果此元素配置为在授权检查后允许，则必须在应用中指定将处理权限检查的[DeviceNotificationHandler](devicenotificationhandler.md) 。
 
  
 
@@ -35,17 +35,17 @@ AllowTethering 元素指定用户是否是始终允许，永远不会允许，�
 
 没有特性。
 
-## <a name="span-idtextvaluespanspan-idtextvaluespanspan-idtextvaluespantext-value"></a><span id="Text_value"></span><span id="text_value"></span><span id="TEXT_VALUE"></span>文本值
+## <a name="span-idtext_valuespanspan-idtext_valuespanspan-idtext_valuespantext-value"></a><span id="Text_value"></span><span id="text_value"></span><span id="TEXT_VALUE"></span>文本值
 
 
-指示 Internet 共享是始终允许，永远不会允许，还是权利检查后，允许的字符串。
+一个字符串，指示是否始终允许、不允许或在权利检查后允许 Internet 共享。
 
-## <a name="span-idchildelementsspanspan-idchildelementsspanspan-idchildelementsspanchild-elements"></a><span id="Child_elements"></span><span id="child_elements"></span><span id="CHILD_ELEMENTS"></span>子元素
+## <a name="span-idchild_elementsspanspan-idchild_elementsspanspan-idchild_elementsspanchild-elements"></a><span id="Child_elements"></span><span id="child_elements"></span><span id="CHILD_ELEMENTS"></span>子元素
 
 
-没有子元素。
+没有任何子元素。
 
-## <a name="span-idparentelementsspanspan-idparentelementsspanspan-idparentelementsspanparent-elements"></a><span id="Parent_elements"></span><span id="parent_elements"></span><span id="PARENT_ELEMENTS"></span>父元素
+## <a name="span-idparent_elementsspanspan-idparent_elementsspanspan-idparent_elementsspanparent-elements"></a><span id="Parent_elements"></span><span id="parent_elements"></span><span id="PARENT_ELEMENTS"></span>父元素
 
 
 <table>
@@ -56,20 +56,20 @@ AllowTethering 元素指定用户是否是始终允许，永远不会允许，�
 <thead>
 <tr class="header">
 <th>元素</th>
-<th>描述</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td><p><a href="networkconfiguration.md" data-raw-source="[NetworkConfiguration](networkconfiguration.md)">NetworkConfiguration</a></p></td>
-<td><p>指定的采购和 Internet 移动宽带的配置文件，以使用或标准用户是否可以执行 PIN 解锁操作。</p></td>
+<td><p>指定要使用的购买和 Internet 移动宽带配置文件，或者标准用户是否可以执行 PIN 解锁操作。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-## <a name="span-idxsdspanspan-idxsdspanxsd"></a><span id="XSD"></span><span id="xsd"></span>XSD
+## <a name="span-idxsdspanspan-idxsdspanxsd"></a><span id="XSD"></span><span id="xsd"></span>XSD.EXE
 
 
 ``` syntax
@@ -87,7 +87,7 @@ AllowTethering 元素指定用户是否是始终允许，永远不会允许，�
 ## <a name="span-idremarksspanspan-idremarksspanspan-idremarksspanremarks"></a><span id="Remarks"></span><span id="remarks"></span><span id="REMARKS"></span>备注
 
 
-此元素是仅适用于 Windows 8.1 和 Windows 10。
+此元素仅适用于 Windows 8.1 和 Windows 10。
 
 AllowTethering 元素是可选的。
 

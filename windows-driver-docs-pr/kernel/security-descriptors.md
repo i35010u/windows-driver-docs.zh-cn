@@ -12,12 +12,12 @@ keywords:
 - ACL WDK 对象
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4ef917e3d2fb2a35223a12b5090eda3cf088e4ef
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 65a0e6e7a05dab3a0d64db039ca47ed0a3ccbb8c
+ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89186197"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89402832"
 ---
 # <a name="security-descriptors"></a>安全描述符
 
@@ -42,7 +42,7 @@ ms.locfileid: "89186197"
 
 -   授予或拒绝访问权限集。
 
-对于驱动程序，最重要的安全描述符是驱动程序的设备对象的描述符。 有关详细信息，请参阅 [保护设备对象](securing-device-objects.md)。
+对于驱动程序，最重要的安全描述符是驱动程序的设备对象的描述符。 有关详细信息，请参阅 [保护设备对象](controlling-device-access.md)。
 
 有关一般安全描述符的详细信息，请参阅 Windows SDK。
 

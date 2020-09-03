@@ -4,16 +4,16 @@ description: ServiceInfo XML 示例
 ms.assetid: b2114044-ca4b-4c1e-ab2e-73f4f56142b5
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f6d502d71a7eaeba74bdca4ec46b984487ff5d32
-ms.sourcegitcommit: 67efcd26f7be8f50c92b141ccd14c9c68f4412d8
+ms.openlocfilehash: df4226e9f040a0a0858cd259e8d6157be5ff4f69
+ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88902577"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89403440"
 ---
 # <a name="serviceinfo-xml-example"></a>ServiceInfo XML 示例
 
-[!include[MBAE deprecation warning](mbae-deprecation-warning.md)]
+[!include[MBAE deprecation warning](../includes/mbae-deprecation-warning.md)]
 
 以下 XML 文档使用 [SERVICEINFO XML 架构](serviceinfo-xml-schema.md) 指定 Contoso 无线服务的属性：
 

@@ -4,16 +4,16 @@ description: 元数据
 ms.assetid: bab7803c-df1f-4282-a9d7-5536d30d00dc
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f49b4c1e7eca5657b834ddbba1b8b6b3645abc17
-ms.sourcegitcommit: 67efcd26f7be8f50c92b141ccd14c9c68f4412d8
+ms.openlocfilehash: d8911616d7d9aeb713858c136d82ddafc9c73a70
+ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88902514"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89403352"
 ---
 # <a name="metadata"></a>元数据
 
-[!include[MBAE deprecation warning](mbae-deprecation-warning.md)]
+[!include[MBAE deprecation warning](../includes/mbae-deprecation-warning.md)]
 
 Metadata 元素指定服务元数据包中所引用的 XML 架构的命名空间。
 
@@ -28,7 +28,7 @@ Metadata 元素指定服务元数据包中所引用的 XML 架构的命名空间
 
 ## <a name="attributes"></a>属性
 
-|属性|类型|必需|说明|
+|属性|类型|必选|说明|
 |----|----|----|----|
 |MetadataID|xs:anyURI|是|指定在服务元数据包内引用的 XML 架构的命名空间。|
 
@@ -66,7 +66,7 @@ Metadata 元素指定服务元数据包中所引用的 XML 架构的命名空间
 </xs:complexType>
 ```
 
-## <a name="remarks"></a>注解
+## <a name="remarks"></a>备注
 
 在 [PackageInfo](packageinfo.md) 元素中，必须至少指定 Metadata 元素的两个实例。 每个实例都必须指定以下一个用于创建服务元数据包的必需 XML 架构的命名空间：
 

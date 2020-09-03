@@ -4,16 +4,16 @@ description: 适用于 MVNO 的传送体验
 ms.assetid: fcb2a3d4-bc19-4fa5-b81d-b0df287404a8
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1b7ec3afffe4dc0e4e1ce07d8b90ae945a333558
-ms.sourcegitcommit: 7e4d9508198a30bdc1cb6eda83852dda4e42213e
+ms.openlocfilehash: 819ddb44a1d0c77f2ba69d3fda597ad83955dcd5
+ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 09/02/2020
-ms.locfileid: "89304260"
+ms.locfileid: "89402912"
 ---
 # <a name="delivering-experiences-for-mvnos"></a>适用于 MVNO 的传送体验
 
-[!include[MBAE deprecation warning](mbae-deprecation-warning.md)]
+[!include[MBAE deprecation warning](../includes/mbae-deprecation-warning.md)]
 
 本主题提供有关如何将服务元数据与移动网络操作员 (o) 或移动虚拟网络运营商 (MVNO) 匹配的信息，以便在插入移动宽带设备时自动下载移动宽带应用。
 

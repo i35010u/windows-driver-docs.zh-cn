@@ -3,23 +3,23 @@ title: HOTSPOT_PLUGIN_APIS 结构
 description: HOTSPOT_PLUGIN_APIS 结构包含热点插件 Api 函数表。
 ms.assetid: eee56f84-2c7f-4218-b7ec-b4fc0181d767
 keywords:
-- HOTSPOT_PLUGIN_APIS 结构与 Windows Vista 一起启动的网络驱动程序
-- PHOTSPOT_PLUGIN_APIS 结构指针与 Windows Vista 一起启动的网络驱动程序
+- 从 Windows Vista 开始 HOTSPOT_PLUGIN_APIS 结构网络驱动程序
+- 从 Windows Vista 开始 PHOTSPOT_PLUGIN_APIS 结构指针网络驱动程序
 ms.date: 07/31/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0fdf2e93ad7904b221b5eb714fb92230329caa28
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 31d5e707aea91d187b648d25556a20df7e99f622
+ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63349681"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89403124"
 ---
-# <a name="hotspotpluginapis-structure"></a>热点\_插件\_API 结构
+# <a name="hotspot_plugin_apis-structure"></a>热点 \_ 插件 \_ api 结构
 
-[!include[Wi-Fi Hotspot Offloading deprecation](wi-fi-hotspot-offloading-deprecation.md)]
+[!include[Wi-Fi Hotspot Offloading deprecation](../includes/wi-fi-hotspot-offloading-deprecation.md)]
 
 
-**热点\_插件\_API**结构包含热点插件 Api 函数表。 此函数表返回由插件时[ **HSPluginInitPlugin** ](hsplugininitplugin.md)调用以初始化该插件。 该表包含函数调用的热点宿主与插件进行通信。
+**作用点 \_ 插件 \_ Api**结构包含热点插件 api 函数表。 调用 [**HSPluginInitPlugin**](hsplugininitplugin.md) 来初始化插件时，插件会返回此函数表。 该表包含热点主机调用以与插件通信的函数。
 
 <a name="syntax"></a>语法
 ------
@@ -46,57 +46,57 @@ typedef struct _HOTSPOT_PLUGIN_APIS {
 **HSPluginQuerySupportedSIMs**  
 在插件初始化过程中调用 API。
 
-调用由热点宿主来检索该插件支持的 Sim 的列表。 它可以调用以检索支持的 SIMs 或只是为特定网络 Sim 的完整列表。 有关详细信息，请参阅[ **HS\_插件\_查询\_支持\_SIMS**](hs-plugin-query-supported-sims.md)。
+由热点主机调用以检索插件支持的 Sim 列表。 可调用此方法来检索受支持的 Sim 的完整列表，或仅检索特定网络的 Sim。 有关详细信息，请参阅 [**HS \_ 插件 \_ 查询支持的 \_ \_ sim**](hs-plugin-query-supported-sims.md)。
 
 **HSPluginQueryCellularExceptionHosts**  
 在插件初始化过程中调用 API。
 
-如果指定该插件，则调用的热点主机**HS\_标志\_功能\_网络\_类型\_HIDDEN**功能通过[**HS\_插件\_配置文件**](hs-plugin-profile.md)结构。 有关详细信息，请参阅[ **HS\_插件\_查询\_HIDDEN\_网络**](hs-plugin-query-hidden-network.md)。
+如果插件已通过[**hs \_ 插件 \_ 配置文件**](hs-plugin-profile.md)结构指定了**hs \_ 标志 \_ 功能 \_ 网络 \_ 类型 \_ 隐藏**功能，则由该热点主机调用。 有关详细信息，请参阅 [**HS \_ 插件 \_ 查询 \_ 隐藏 \_ 网络**](hs-plugin-query-hidden-network.md)。
 
 **HSPluginIsHotspotNetwork**  
-处理扫描结果时，API 调用。
+处理扫描结果时调用了 API。
 
-调用的热点主机以请求插件来识别是否有网络传入*pHiddenNetworkIdentity*参数是热点网络。 有关详细信息，请参阅[ **HS\_插件\_IS\_热点\_网络**](hs-plugin-is-hotspot-network.md)。
+由热点主机调用，以请求该插件识别传入 *pHiddenNetworkIdentity* 参数的网络是否是热点网络。 有关详细信息，请参阅 [**HS \_ 插件 \_ 是 \_ 热点 \_ 网络**](hs-plugin-is-hotspot-network.md)。
 
 **HSPluginPreConnectInit**  
-连接过程的 API。
+连接-进程 API。
 
-由热点主机以通知的插件，其状态初始化连接时调用。 有关详细信息，请参阅[ **HS\_插件\_PRE\_CONNECT\_INIT**](hs-plugin-pre-connect-init.md)。
+由热点主机调用，用于通知插件在连接正在进行时初始化其状态。 有关详细信息，请 [**参阅 \_ HS \_ 插件 \_ CONNECT \_ INIT**](hs-plugin-pre-connect-init.md)。
 
 **HSPluginStartPostConnectAuth**  
-连接过程的 API。
+连接-进程 API。
 
-名为热点主机以请求插件以执行任何连接后通过网络设备进行身份验证所需的身份验证。 有关详细信息，请参阅[ **HS\_插件\_启动\_POST\_CONNECT\_身份验证**](hs-plugin-start-post-connect-auth.md)。
+由热点主机调用，请求该插件执行任何要求的连接后身份验证，以通过网络对设备进行身份验证。 有关详细信息，请 [**参阅 \_ HS \_ 插件 \_ 启动 \_ 连接 \_ 身份验证**](hs-plugin-start-post-connect-auth.md)。
 
 **HSPluginStopPostConnectAuth**  
-连接过程的 API。
+连接-进程 API。
 
-由热点主机以通知插件以停止身份验证过程调用。 有关详细信息，请参阅[ **HS\_插件\_停止\_POST\_CONNECT\_身份验证**](hs-plugin-stop-post-connect-auth.md)。
+由热点主机调用以通知插件停止身份验证过程。 有关详细信息，请参阅 [**HS \_ 插件 \_ 停止 \_ 后 \_ 连接 \_ 身份验证**](hs-plugin-stop-post-connect-auth.md)。
 
 **HSPluginDisconnectFromNetwork**  
-连接过程的 API。
+连接-进程 API。
 
-调用由热点宿主以通知从网络断开连接的插件。 有关详细信息，请参阅[ **HS\_插件\_断开连接\_FROM\_网络**](hs-plugin-disconnect-from-network.md)。
+由热点主机调用以通知插件与网络断开连接。 有关详细信息，请 [**参阅 \_ HS \_ 插件 \_ 从 \_ 网络断开连接**](hs-plugin-disconnect-from-network.md)。
 
 **HSPluginReset**  
-若要重置该插件的 API。 如果该插件不会从此调用返回前释放任何挂起的调用，该插件将被卸载。
+用于重置插件的 API。 如果在从此调用返回之前，该插件不会释放任何挂起的调用，则将卸载该插件。
 
-由要重置该插件的热点主机调用。 有关详细信息，请参阅[ **HS\_插件\_重置**](hs-plugin-reset.md)。
+由热点主机调用以重置插件。 有关详细信息，请参阅 [**HS \_ 插件 \_ RESET**](hs-plugin-reset.md)。
 
 **HSPluginSendKeepAlive**  
-执行定期更新插件的 API。
+用于进行定期更新的插件 API。
 
-调用由热点主机将保持活动状态的消息发送到该插件。 有关详细信息，请参阅[ **HS\_插件\_发送\_保留\_ALIVE**](hs-plugin-send-keep-alive.md)。
+由热点主机调用，以将 keep-alive 消息发送到插件。 有关详细信息，请参阅 [**HS \_ 插件 \_ 发送 \_ 保持 \_ 活动状态**](hs-plugin-send-keep-alive.md)。
 
 **HSPluginCheckForUpdates**  
-执行定期更新插件的 API。
+用于进行定期更新的插件 API。
 
-要检查有更新的热点主机由调用。 有关详细信息，请参阅[ **HS\_插件\_检查\_有关\_更新**](hs-plugin-check-for-updates.md)。
+由热点主机调用以检查更新。 有关详细信息，请 [**参阅 \_ HS \_ 插件 \_ 检查 \_ 更新**](hs-plugin-check-for-updates.md)。
 
 **HSPluginDeinit**  
-API 调用以取消初始化和清理在卸载之前该插件。
+在卸载之前调用 API 来取消初始化和清理插件。
 
-调用由热点宿主以通知它是即将卸载该插件。 有关详细信息，请参阅[ **HS\_插件\_DEINIT**](hs-plugin-deinit.md)。
+由热点主机调用，通知插件即将卸载它。 有关详细信息，请参阅 [**HS \_ 插件 \_ DEINIT**](hs-plugin-deinit.md)。
 
 <a name="requirements"></a>要求
 ------------
@@ -109,39 +109,39 @@ API 调用以取消初始化和清理在卸载之前该插件。
 <tbody>
 <tr class="odd">
 <td><p>Header</p></td>
-<td>Hotspotoffloadplugin.h （包括 Hotspotoffloadplugin.h）</td>
+<td>Hotspotoffloadplugin (包含 Hotspotoffloadplugin) </td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
 [**HSPluginInitPlugin**](hsplugininitplugin.md)
 
-[**HS\_插件\_查询\_支持\_SIMS**](hs-plugin-query-supported-sims.md)
+[**HS \_ 插件 \_ 查询 \_ 支持的 \_ SIM**](hs-plugin-query-supported-sims.md)
 
-[**HS\_插件\_配置文件**](hs-plugin-profile.md)
+[**HS \_ 插件 \_ 配置文件**](hs-plugin-profile.md)
 
-[**HS\_插件\_查询\_HIDDEN\_网络**](hs-plugin-query-hidden-network.md)
+[**HS \_ 插件 \_ 查询 \_ 隐藏 \_ 网络**](hs-plugin-query-hidden-network.md)
 
-[**HS\_插件\_IS\_热点\_网络**](hs-plugin-is-hotspot-network.md)
+[**HS \_ 插件 \_ 是 \_ 热点 \_ 网络**](hs-plugin-is-hotspot-network.md)
 
-[**HS\_插件\_PRE\_CONNECT\_INIT**](hs-plugin-pre-connect-init.md)
+[**HS \_ 插件 \_ 预先 \_ 连接 \_ 初始化**](hs-plugin-pre-connect-init.md)
 
-[**HS\_PLUGIN\_START\_POST\_CONNECT\_AUTH**](hs-plugin-start-post-connect-auth.md)
+[**HS \_ 插件 \_ 启动 \_ 后 \_ 连接 \_ 身份验证**](hs-plugin-start-post-connect-auth.md)
 
-[**HS\_插件\_停止\_POST\_CONNECT\_身份验证**](hs-plugin-stop-post-connect-auth.md)
+[**HS \_ 插件 \_ 停止 \_ 后 \_ 连接 \_ 身份验证**](hs-plugin-stop-post-connect-auth.md)
 
-[**HS\_PLUGIN\_DISCONNECT\_FROM\_NETWORK**](hs-plugin-disconnect-from-network.md)
+[**HS \_ 插件 \_ \_ 从 \_ 网络断开连接**](hs-plugin-disconnect-from-network.md)
 
-[**HS\_插件\_重置**](hs-plugin-reset.md)
+[**HS \_ 插件 \_ 重置**](hs-plugin-reset.md)
 
-[**HS\_PLUGIN\_SEND\_KEEP\_ALIVE**](hs-plugin-send-keep-alive.md)
+[**HS \_ 插件 \_ 发送 \_ 保持 \_ 活动状态**](hs-plugin-send-keep-alive.md)
 
-[**HS\_插件\_检查\_为\_更新**](hs-plugin-check-for-updates.md)
+[**HS \_ 插件 \_ 检查 \_ \_ 更新**](hs-plugin-check-for-updates.md)
 
-[**HS\_PLUGIN\_DEINIT**](hs-plugin-deinit.md)
+[**HS \_ 插件 \_ DEINIT**](hs-plugin-deinit.md)
 
  
 

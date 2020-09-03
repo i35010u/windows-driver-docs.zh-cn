@@ -13,12 +13,12 @@ keywords:
 - TPS WDK KTM，添加资源管理器
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 089144953af7296a5308fa362e91859142700481
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: b3fc3804373b872646e13071239eb3788598b1c1
+ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89193241"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89403240"
 ---
 # <a name="creating-a-resource-manager"></a>创建资源管理器
 
@@ -31,7 +31,7 @@ ms.locfileid: "89193241"
 
 1.  创建日志流。
 
-    资源管理器可以使用 [公用日志文件系统](using-common-log-file-system.md) (CLFS) 或其他一些日志记录功能来维护其日志流。 调用 [**ClfsCreateLogFile**](/windows-hardware/drivers/ddi/wdm/nf-wdm-clfscreatelogfile) 会创建 CLFS 日志流。 资源管理器必须使用日志流记录其提交、回滚或恢复事务所需的任何信息。 此外，KTM 使用日志流记录可能需要恢复事务的任何内部状态更改。
+    资源管理器可以使用 [公用日志文件系统](introduction-to-the-common-log-file-system.md) (CLFS) 或其他一些日志记录功能来维护其日志流。 调用 [**ClfsCreateLogFile**](/windows-hardware/drivers/ddi/wdm/nf-wdm-clfscreatelogfile) 会创建 CLFS 日志流。 资源管理器必须使用日志流记录其提交、回滚或恢复事务所需的任何信息。 此外，KTM 使用日志流记录可能需要恢复事务的任何内部状态更改。
 
 2.  创建事务管理器对象。
 

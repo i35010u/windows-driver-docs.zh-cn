@@ -1,25 +1,25 @@
 ---
 title: HS_NETWORK_PROFILE 结构
-description: HS_NETWORK_PROFILE 结构提供的插件，并包含连接到的目标网络所需的信息。 网络配置文件的每个实例都与相应的 HS_NETWORK_IDENTITY 结构唯一关联。
+description: HS_NETWORK_PROFILE 结构由插件提供，并包含连接到目标网络所需的信息。 网络配置文件的每个实例都与相应的 HS_NETWORK_IDENTITY 结构唯一关联。
 ms.assetid: 55e8786c-d7b8-48f3-9e54-312183cf8fb3
 keywords:
-- HS_NETWORK_PROFILE 结构与 Windows Vista 一起启动的网络驱动程序
-- PHS_NETWORK_PROFILE 结构指针与 Windows Vista 一起启动的网络驱动程序
+- 从 Windows Vista 开始 HS_NETWORK_PROFILE 结构网络驱动程序
+- 从 Windows Vista 开始 PHS_NETWORK_PROFILE 结构指针网络驱动程序
 ms.date: 07/31/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ef670ed92132114119174230fc78532fe5ca6e44
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b19793b607d20963d0286669a2c741e91d9deac9
+ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63349627"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89403064"
 ---
-# <a name="hsnetworkprofile-structure"></a>HS\_网络\_配置文件结构
+# <a name="hs_network_profile-structure"></a>HS \_ 网络 \_ 配置文件结构
 
-[!include[Wi-Fi Hotspot Offloading deprecation](wi-fi-hotspot-offloading-deprecation.md)]
+[!include[Wi-Fi Hotspot Offloading deprecation](../includes/wi-fi-hotspot-offloading-deprecation.md)]
 
 
-**HS\_网络\_配置文件**结构提供的插件和包含连接到的目标网络所需的信息。 网络配置文件的每个实例都与相应唯一关联[ **HS\_网络\_标识**](hs-network-identity.md)结构。
+**HS \_ 网络 \_ 配置文件**结构由插件提供，并包含连接到目标网络所需的信息。 网络配置文件的每个实例都与相应的 [**HS \_ 网络 \_ 标识**](hs-network-identity.md) 结构唯一关联。
 
 <a name="syntax"></a>语法
 ------
@@ -40,19 +40,19 @@ typedef struct _HS_NETWORK_PROFILE {
 -------
 
 **dwNetworkCapabilities**  
-可能的一个子集**HS\_标志\_功能\_网络\_\\*** 值。 热点主机功能的详细信息，请参阅[ **Wi-fi 热点卸载常量**](wi-fi-hotspot-offloading-constants.md)。
+可能的**HS \_ 标志 \_ 功能 \_ NETWORK \_ \\ *** 值的子集。 有关热点主机功能的详细信息，请参阅 [**Wi-fi 热点卸载常数**](wi-fi-hotspot-offloading-constants.md)。
 
 **usPriority**  
-分配给关联的网络的唯一的优先级值。 它必须是介于 1 和 65000 （隐藏的网络必须具有值为 1） 之间的值。 较低的数字值对应于更高的优先级。
+分配给关联网络的唯一优先级值。 该值必须是介于1和65000之间的值 (隐藏网络的值必须为 1) 。 数值越小，优先级越高。
 
 **dwSupportedSIMCount**  
-受支持的 SIM 计数。 此成员设置为基于 HTTP 和 SIM/AKA/EAP-AKA ' 身份验证。
+支持的 SIM 计数。 此成员设置为基于 HTTP 和 EAP-SIM/也称 "身份验证"。
 
 **dmNumCellularExceptions**  
-可选。 通过仅移动电话网络的主机连接数。
+可选。 仅通过蜂窝的主机连接数。
 
 **dwNetworkStringID**  
-网络名称的字符串 id。 最大字符串大小 = MAX\_网络\_显示\_名称\_长度。
+网络名称字符串 ID。 最大字符串大小 = 最大 \_ 网络 \_ 显示 \_ 名称 \_ 长度。
 
 **dwKeepAliveTimeMins**  
 可选。 网络连接保持活动消息之间的时间间隔。
@@ -71,17 +71,17 @@ typedef struct _HS_NETWORK_PROFILE {
 <tbody>
 <tr class="odd">
 <td><p>Header</p></td>
-<td>Hotspotoffloadplugin.h （包括 Hotspotoffloadplugin.h）</td>
+<td>Hotspotoffloadplugin (包含 Hotspotoffloadplugin) </td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
-[**HS\_NETWORK\_IDENTITY**](hs-network-identity.md)
+[**HS \_ 网络 \_ 标识**](hs-network-identity.md)
 
-[**Wi-fi 热点卸载常量**](wi-fi-hotspot-offloading-constants.md)
+[**Wi-Fi 热点卸载常量**](wi-fi-hotspot-offloading-constants.md)
 
  
 

@@ -4,16 +4,16 @@ description: MetadataBuilderInformation
 ms.assetid: 94403994-2165-405e-bfa0-974af8e241fe
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a6e5f20a8fc4a03a74c32846298d0b4365af7827
-ms.sourcegitcommit: f017184b00f59b088df87a5bd85fec51b7aed8b2
+ms.openlocfilehash: e27031858bd84ac402e444e10a5894470b234d28
+ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72323628"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89403348"
 ---
 # <a name="metadatabuilderinformation"></a>MetadataBuilderInformation
 
-[!include[MBAE deprecation warning](mbae-deprecation-warning.md)]
+[!include[MBAE deprecation warning](../includes/mbae-deprecation-warning.md)]
 
 MetadataBuilderInformation 元素指定有关创建设备元数据包的应用程序的信息。
 
@@ -48,7 +48,7 @@ MetadataBuilderInformation 元素指定有关创建设备元数据包的应用�
 <thead>
 <tr class="header">
 <th>元素</th>
-<th>描述</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>
@@ -76,7 +76,7 @@ MetadataBuilderInformation 元素指定有关创建设备元数据包的应用�
 <thead>
 <tr class="header">
 <th>元素</th>
-<th>描述</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>

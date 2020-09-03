@@ -7,12 +7,12 @@ keywords:
 - 命名设备对象 WDK 内核
 ms.date: 09/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 15920ed802426f7a50760cf1a4f92ffe09613e9d
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 7040fa777623196def2bfb0d76d21feb201adc9b
+ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89187911"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89402858"
 ---
 # <a name="named-device-objects"></a>命名的设备对象
 
@@ -27,7 +27,7 @@ ms.locfileid: "89187911"
 
 驱动程序可以在调用 [**IoCreateDevice**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iocreatedevice) 或 [**IoCreateDeviceSecure**](/windows-hardware/drivers/ddi/wdmsec/nf-wdmsec-wdmlibiocreatedevicesecure) 来创建设备对象时，为设备对象指定一个名称。 有关何时以及如何命名设备对象的详细信息，请参阅 [NT 设备名称](nt-device-names.md)。
   
-命名设备对象还可以具有 MS-DOS 设备名称，这是由 [**IoCreateSymbolicLink**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iocreatesymboliclink) 或 [**IoCreateUnprotectedSymbolicLink**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iocreateunprotectedsymboliclink)创建的符号链接。 WDM 驱动程序通常不需要 MS-DOS 设备名称。 有关详细信息，请参阅 [MS-DOS 设备名称](ms-dos-device-names.md)。
+命名设备对象还可以具有 MS-DOS 设备名称，这是由 [**IoCreateSymbolicLink**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iocreatesymboliclink) 或 [**IoCreateUnprotectedSymbolicLink**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iocreateunprotectedsymboliclink)创建的符号链接。 WDM 驱动程序通常不需要 MS-DOS 设备名称。 有关详细信息，请参阅 [MS-DOS 设备名称](introduction-to-ms-dos-device-names.md)。
 
 > [!IMPORTANT]
 > 如果使用命名设备对象，则可以使用 [IoCreateDeviceSecure](/windows-hardware/drivers/ddi/wdmsec/nf-wdmsec-wdmlibiocreatedevicesecure) 并指定 SDDL 来帮助保护该对象。 实现 [IoCreateDeviceSecure](/windows-hardware/drivers/ddi/wdmsec/nf-wdmsec-wdmlibiocreatedevicesecure) 时，请始终指定 DeviceClassGuid 的自定义类 GUID。 不应在此指定现有的类 GUID。 这样做可能会中断属于该类的其他设备的安全设置或兼容性。 有关详细信息，请参阅 [WdmlibIoCreateDeviceSecure](/windows-hardware/drivers/ddi/wdmsec/nf-wdmsec-wdmlibiocreatedevicesecure)。
@@ -39,7 +39,7 @@ ms.locfileid: "89187911"
 
 [NT 设备名称](nt-device-names.md)
 
-[MS-DOS 设备名称](ms-dos-device-names.md)
+[MS-DOS 设备名称](introduction-to-ms-dos-device-names.md)
 
  
 

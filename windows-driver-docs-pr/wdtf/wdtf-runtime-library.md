@@ -9,12 +9,12 @@ keywords:
 - 驱动程序测试
 ms.date: 08/14/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 9f67cfa32db5233b8aad54d9d79754ae4740dda5
-ms.sourcegitcommit: 7a7e61b4147a4aa86bf820fd0b0c7681fe17e544
+ms.openlocfilehash: 2b5384ebf60e63aefbdd317ecb4a239f8261455d
+ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89056939"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89403528"
 ---
 # <a name="the-wdtf-runtime-library"></a>WDTF 运行时库
 
@@ -44,7 +44,7 @@ WDTF 运行时库包含可帮助您会审和运行测试的工具。
 
 ## <a name="how-to-install-the-wdtf-runtime-library"></a>如何安装 WDTF 运行时库
 
-设置测试计算机以进行部署时，会在测试计算机上安装 WDTF 运行时库。 按照[为驱动程序部署设置计算机和测试 (wdk 10 和 WDK 8.1) ](https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/provision-a-target-computer-wdk-8-1)中的说明进行操作
+设置测试计算机以进行部署时，会在测试计算机上安装 WDTF 运行时库。 按照[为驱动程序部署设置计算机和测试 (wdk 10 和 WDK 8.1) ](../gettingstarted/provision-a-target-computer-wdk-8-1.md)中的说明进行操作
 
 <!-- [Provision a computer for driver deployment and testing (WDK 8)](https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/provision-a-target-computer-wdk-8) -->
 
@@ -101,9 +101,9 @@ msiexec /i "Windows Driver Testing Framework (WDTF) Runtime Libraries-x64_en-us.
 
 ## <a name="how-to-uninstall-the-wdtf-runtime-library"></a>如何卸载 WDTF 运行时库
 
-设置测试计算机以进行部署时，按照说明 [为驱动程序部署设置计算机并测试 (WDK 10) ](https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/provision-a-target-computer-wdk-8-1)上，WDTF 运行时库安装在目标计算机上。
+设置测试计算机以进行部署时，按照说明 [为驱动程序部署设置计算机并测试 (WDK 10) ](../gettingstarted/provision-a-target-computer-wdk-8-1.md)上，WDTF 运行时库安装在目标计算机上。
 
-可以通过从目标计算机中删除预配来删除 WDTF 运行时库。 有关详细信息，请参阅 [从目标计算机中删除设置](https://docs.microsoft.com/windows-hardware/drivers/develop/what-happens-when-you-provision-a-computer--wdk-8-1-#span-idremovingprovisioningfromthetargetcomputerspanspan-idremovingprovisioningfromthetargetcomputerspanspan-idremovingprovisioningfromthetargetcomputerspanremoving-provisioning-from-the-target-computer)。
+可以通过从目标计算机中删除预配来删除 WDTF 运行时库。 有关详细信息，请参阅 [从目标计算机中删除设置](../develop/what-happens-when-you-provision-a-computer--wdk-8-1-.md#removing-provisioning-from-the-target-computer)。
 
 还可以手动卸载 WDTF 运行时库。
 

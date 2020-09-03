@@ -4,16 +4,16 @@ description: ServiceInfo XML 架构概述
 ms.assetid: e59aa675-fea2-4c2d-90f8-4979aac1c7e8
 ms.date: 07/05/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: ca23a8b8c0a9958d90bd53f6a36f2002afe08cda
-ms.sourcegitcommit: 7e4d9508198a30bdc1cb6eda83852dda4e42213e
+ms.openlocfilehash: 17a33398729a6aa133b8f704906ae4b3afbaa6d4
+ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 09/02/2020
-ms.locfileid: "89304294"
+ms.locfileid: "89403436"
 ---
 # <a name="serviceinfo-xml-schema-overview"></a>ServiceInfo XML 架构概述
 
-[!include[MBAE deprecation warning](mbae-deprecation-warning.md)]
+[!include[MBAE deprecation warning](../includes/mbae-deprecation-warning.md)]
 
 服务元数据包包含一个 ServiceInfo.xml 文档，其中包含有关 Windows 连接管理器向用户显示的服务的详细信息。
 

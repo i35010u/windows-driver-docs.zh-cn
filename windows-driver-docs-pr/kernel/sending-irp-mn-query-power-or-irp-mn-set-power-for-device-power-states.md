@@ -16,12 +16,12 @@ keywords:
 - 设备设置电源 Irp WDK 内核
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 523d47d0bbc0e029b34719c247e06d0dc8939d61
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 7b316c8cb7ed981ddc37e8294641d08d7ac1e199
+ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89190675"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89402818"
 ---
 # <a name="sending-irp_mn_query_power-or-irp_mn_set_power-for-device-power-states"></a>发送 IRP \_ MN \_ QUERY \_ power 或 IRP \_ MN \_ \_ 为设备电源状态设置电源
 
@@ -45,7 +45,7 @@ ms.locfileid: "89190675"
 
 -   驱动程序接收系统设置-power IRP。
 
-驱动程序不得分配其自己的 power IRP;出于此目的，电源管理器提供了 [**PoRequestPowerIrp**](/windows-hardware/drivers/ddi/wdm/nf-wdm-porequestpowerirp) 例程。 作为 [处理电源 irp 的规则](rules-for-handling-power-irps.md) 说明， **PoRequestPowerIrp** 分配并发送 IRP，并结合 Windows 7 和 Windows Vista 中的 **IoCallDriver** () 或 windows Server 2003、windows XP 和 windows 2000) 中的 **PoCallDriver** (，确保所有电源请求均正确同步。 **PoRequestPowerIrp**的调用方必须以 IRQL &lt; = 调度 \_ 级别运行。
+驱动程序不得分配其自己的 power IRP;出于此目的，电源管理器提供了 [**PoRequestPowerIrp**](/windows-hardware/drivers/ddi/wdm/nf-wdm-porequestpowerirp) 例程。 作为 [处理电源 irp 的规则](calling-iocalldriver-versus-calling-pocalldriver.md) 说明， **PoRequestPowerIrp** 分配并发送 IRP，并结合 Windows 7 和 Windows Vista 中的 **IoCallDriver** () 或 windows Server 2003、windows XP 和 windows 2000) 中的 **PoCallDriver** (，确保所有电源请求均正确同步。 **PoRequestPowerIrp**的调用方必须以 IRQL &lt; = 调度 \_ 级别运行。
 
 下面是此例程的原型：
 

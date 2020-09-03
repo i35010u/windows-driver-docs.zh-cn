@@ -4,16 +4,16 @@ description: 应用程序
 ms.assetid: 8dd55438-8097-4177-a4ad-94b0ee8d3616
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 62eab2eca5abfe0a026120e5f2c8c4a580af6660
-ms.sourcegitcommit: f017184b00f59b088df87a5bd85fec51b7aed8b2
+ms.openlocfilehash: 2e4e66eb04cbbb6fab7051b23433b72586e36a62
+ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72323643"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89402914"
 ---
 # <a name="application"></a>应用程序
 
-[!include[MBAE deprecation warning](mbae-deprecation-warning.md)]
+[!include[MBAE deprecation warning](../includes/mbae-deprecation-warning.md)]
 
 Application 元素指定创建设备元数据包的应用程序软件的名称。
 
@@ -39,7 +39,7 @@ Application 元素指定创建设备元数据包的应用程序软件的名称�
 ## <a name="span-idchild_elementsspanspan-idchild_elementsspanspan-idchild_elementsspanchild-elements"></a><span id="Child_elements"></span><span id="child_elements"></span><span id="CHILD_ELEMENTS"></span>子元素
 
 
-没有子元素。
+没有任何子元素。
 
 ## <a name="span-idparent_elementsspanspan-idparent_elementsspanspan-idparent_elementsspanparent-elements"></a><span id="Parent_elements"></span><span id="parent_elements"></span><span id="PARENT_ELEMENTS"></span>父元素
 
@@ -52,7 +52,7 @@ Application 元素指定创建设备元数据包的应用程序软件的名称�
 <thead>
 <tr class="header">
 <th>元素</th>
-<th>描述</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>

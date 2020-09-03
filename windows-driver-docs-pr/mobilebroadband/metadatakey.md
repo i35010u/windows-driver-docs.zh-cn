@@ -4,16 +4,16 @@ description: MetadataKey
 ms.assetid: 1915db47-98bb-40f5-be3b-75e9af80f506
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 68b5b01565427bd1b8b0786f8f305c624a042a87
-ms.sourcegitcommit: 67efcd26f7be8f50c92b141ccd14c9c68f4412d8
+ms.openlocfilehash: 14f28790d701d09705d94492d885c2d8adddba2c
+ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88902504"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89403344"
 ---
 # <a name="metadatakey"></a>MetadataKey
 
-[!include[MBAE deprecation warning](mbae-deprecation-warning.md)]
+[!include[MBAE deprecation warning](../includes/mbae-deprecation-warning.md)]
 
 MetadataKey 元素指定服务元数据包的属性。 其中包括：
 
@@ -86,7 +86,7 @@ MetadataKey 元素指定服务元数据包的属性。 其中包括：
 </xs:schema>
 ```
 
-## <a name="remarks"></a>注解
+## <a name="remarks"></a>备注
 
 MetadataKey 元素的子元素指定操作系统用于执行以下操作的元数据：
 
