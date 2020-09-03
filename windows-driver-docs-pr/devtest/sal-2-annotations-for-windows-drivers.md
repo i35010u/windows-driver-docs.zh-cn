@@ -30,7 +30,7 @@ Microsoft 源代码批注语言 (SAL) 包含特定于 Windows 驱动程序分析
 <tr class="header">
 <th align="left">驱动程序批注</th>
 <th align="left">类别</th>
-<th align="left">使用</th>
+<th align="left">用途</th>
 </tr>
 </thead>
 <tbody>

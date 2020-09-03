@@ -13,12 +13,12 @@ ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
 author: EliotSeattle
-ms.openlocfilehash: edfec13594a86f482f22c0f61bb519ed21fc5153
-ms.sourcegitcommit: 988d100e4d3b218a59fdac034d39a1816d145c85
+ms.openlocfilehash: 4cba01d979708b19e078f002489670d6c0e533ce
+ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2020
-ms.locfileid: "72842845"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89382553"
 ---
 # <a name="near-field-communications-nfc-design-guide"></a>近场通信 (NFC) 设计指南
 
@@ -34,6 +34,6 @@ Windows 公开了使用 NFC 技术（包括以下平台）的一组丰富体验�
 
 ## <a name="related-topics"></a>相关主题
 
-[UMDF 入门](https://docs.microsoft.com/windows-hardware/drivers/wdf/getting-started-with-umdf-version-2)  
+[UMDF 入门](../wdf/getting-started-with-umdf-version-2.md)  
 
-[NFC 设备驱动程序接口 (DDI) 参考](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)    
+[NFC 设备驱动程序接口 (DDI) 参考](/windows-hardware/drivers/ddi/index)

@@ -13,19 +13,19 @@ ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
 author: EliotSeattle
-ms.openlocfilehash: 4efb5ac44aa1212f764f6d76a8123b0674f96fd0
-ms.sourcegitcommit: 988d100e4d3b218a59fdac034d39a1816d145c85
+ms.openlocfilehash: 396d0ba416c4bf880c2f2b84922f1acc471dfab2
+ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2020
-ms.locfileid: "68473507"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89384807"
 ---
 # <a name="pcmcia-bus-driver-design-guide"></a>PCMCIA 总线驱动程序设计指南
 
-本部分包括：
+本节包括：
 
-[访问 PCMCIA 设备的属性内存](https://docs.microsoft.com/windows-hardware/drivers/pcmcia/access-attribute-memory-of-a-pcmcia-device)
+[访问 PCMCIA 设备的属性内存](./access-attribute-memory-of-a-pcmcia-device.md)
 
-[内存卡的 PCMCIA\_INTERFACE\_STANDARD 接口](https://docs.microsoft.com/windows-hardware/drivers/pcmcia/pcmcia-interface-standard-interface-for-memory-cards)
+[内存卡的 PCMCIA\_INTERFACE\_STANDARD 接口](./pcmcia-interface-standard-interface-for-memory-cards.md)
 
-[Windows XP 上的 PCMCIA IRQ 路由](https://docs.microsoft.com/windows-hardware/drivers/pcmcia/pcmcia-irq-routing-on-windows-xp)
+[Windows XP 上的 PCMCIA IRQ 路由](./pcmcia-irq-routing-on-windows-xp.md)

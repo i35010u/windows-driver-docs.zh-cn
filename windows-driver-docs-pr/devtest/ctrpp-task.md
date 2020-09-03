@@ -54,7 +54,7 @@ ctrpp.exe –ch "c:\test\abc.h" a.manifest
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left">Source</td>
+<td align="left">源</td>
 <td align="left">@ (Ctrpp) </td>
 <td align="left"></td>
 <td align="left">必需的 ITaskItem 参数。 指定要处理的计数器清单。</td>
