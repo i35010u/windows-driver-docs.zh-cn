@@ -172,15 +172,17 @@
                       href: graphics-display-health-percent-devices-with-display-issues-resume-from-low-power.md
                     - name: 生态系统 Netflix HWDRM 质量比较
                       href: ecosystem-netflix-hwdrm-quality-comparison.md
+                    - name: 遇到 WinML 运行时错误的设备所占的百分比
+                      href: pct-devices-winml-runtime-error-ecosystem.md
             - name: WLAN
               items:
                 - name: WLAN 度量
                   href: wi-fi-measures.md
-                - name: 'WLAN 连接失败次数百分比（来自前 95% 的设备和接入点对） '
+                - name: 信号质量大于 50% 的设备和接入点对的 Wi-Fi 连接失败次数百分比
                   href: percent-of-wifi-connection-failures-from-the-top-95-percent-of-device-ap-pairs.md
-                - name: Internet 连接失败次数百分比（来自信号质量大于 50% 的前 95% 的设备和接入点对）
+                - name: 信号质量大于 50% 的设备和接入点对的 Internet 连接失败次数百分比
                   href: percent-of-internet-connection-failures-from-the-top-95-percent-of-device-ap-pairs.md
-                - name: 在意外断开连接的情况下结束的 WLAN 会话百分比
+                - name: 在意外断开连接的情况下结束的信号质量大于 50% 的 Wi-Fi 会话百分比
                   href: pct-wi-fi-sessions-ending-in-unexpected-disconnect.md
         - name: 附录
           href: measure-appendix.md

@@ -9,16 +9,16 @@ ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
 author: EliotSeattle
-ms.openlocfilehash: 1017e93d5eb8008894eece9cf5b4729da88efc05
-ms.sourcegitcommit: 988d100e4d3b218a59fdac034d39a1816d145c85
+ms.openlocfilehash: 5c16961fccf1348386e2a56ce0200957f9f1679d
+ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2020
-ms.locfileid: "72845323"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89384997"
 ---
 # <a name="parallel-device-driver-design-guide"></a>并行设备驱动程序设计指南
 
-本部分包括：
+本节包括：
 
 [并行端口和设备简介](introduction-to-parallel-ports-and-devices.md)
 
@@ -26,4 +26,4 @@ ms.locfileid: "72845323"
 
 [供应商提供的并行驱动程序](vendor-supplied-parallel-drivers.md)
 
-[并行设备参考](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)
+[并行设备参考](/windows-hardware/drivers/ddi/index)

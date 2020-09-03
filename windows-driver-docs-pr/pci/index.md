@@ -18,12 +18,12 @@ ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
 author: EliotSeattle
-ms.openlocfilehash: 5a7f02d9a4fad698c12b2fefc461c4b0542e2960
-ms.sourcegitcommit: 67efcd26f7be8f50c92b141ccd14c9c68f4412d8
+ms.openlocfilehash: d25e16b0efce23bdb0e803e55ce1a58724b52013
+ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88902659"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89384783"
 ---
 # <a name="pci-driver-programming-guide"></a>PCI 驱动程序编程指南
 
@@ -40,16 +40,16 @@ ms.locfileid: "88902659"
 |替代路由 ID 解释 (ARI)</br>请参阅 6.13 部分。|- Windows 8</br>- Windows Server 2012|
 |消息信号中断 (MSI/MSI-X) 支持</br>请参阅 6.1.4 部分。|- Windows Vista</br>- Windows Server 2008 R2|
 |TLP 处理提示 (TPH)</br>请参阅 6.17 部分。|- Windows 8</br>- Windows Server 2012|
-|单根 I/O 虚拟化 (SR-IOV)</br>请参阅[单根 I/O 虚拟化 (SR-IOV)](https://docs.microsoft.com/windows-hardware/drivers/network/single-root-i-o-virtualization--sr-iov-)。|- Windows 8</br>- Windows Server 2012|
+|单根 I/O 虚拟化 (SR-IOV)</br>请参阅[单根 I/O 虚拟化 (SR-IOV)](../network/single-root-i-o-virtualization--sr-iov-.md)。|- Windows 8</br>- Windows Server 2012|
 
 ## <a name="in-this-section"></a>本节内容
 
-- [PCI 电源管理和设备驱动程序](https://docs.microsoft.com/windows-hardware/drivers/pci/pci-power-management-and-device-drivers)
-- [访问 PCI 设备配置空间](https://docs.microsoft.com/windows-hardware/drivers/pci/accessing-pci-device-configuration-space)
-- [减少 I/O 资源使用](https://docs.microsoft.com/windows-hardware/drivers/pci/i-o-resource-usage-reduction)
-- [启动设备 IRP 中的资源顺序](https://docs.microsoft.com/windows-hardware/drivers/pci/order-of-resources-in-start-device-irp)
-- [有关图形的 PCI Express 常见问题解答](https://docs.microsoft.com/windows-hardware/drivers/pci/pci-express-faq-for-graphics)
-- [PCI 示例](https://docs.microsoft.com/windows-hardware/drivers/pci/pci-sample)
+- [PCI 电源管理和设备驱动程序](./pci-power-management-and-device-drivers.md)
+- [访问 PCI 设备配置空间](./accessing-pci-device-configuration-space.md)
+- [减少 I/O 资源使用](./i-o-resource-usage-reduction.md)
+- [启动设备 IRP 中的资源顺序](./order-of-resources-in-start-device-irp.md)
+- [有关图形的 PCI Express 常见问题解答](./pci-express-faq-for-graphics.md)
+- [PCI 示例](./pci-sample.md)
 
 ## <a name="see-also"></a>另请参阅
 

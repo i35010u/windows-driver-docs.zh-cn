@@ -11,29 +11,29 @@ ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
 author: EliotSeattle
-ms.openlocfilehash: b79daff8941074938e46c74162f5b494553481bd
-ms.sourcegitcommit: 988d100e4d3b218a59fdac034d39a1816d145c85
+ms.openlocfilehash: 1ab12006ee8ce91199a0c721a416909b4d55f5c7
+ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2020
-ms.locfileid: "68473478"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89382221"
 ---
 # <a name="ieee-1394-bus-driver-design-guide"></a>IEEE 1394 总线驱动程序设计指南
 
-本部分包括：
+本节包括：
 
-[IEEE 1394 驱动程序堆栈](https://docs.microsoft.com/windows-hardware/drivers/ieee/the-ieee-1394-driver-stack)
+[IEEE 1394 驱动程序堆栈](./the-ieee-1394-driver-stack.md)
 
-[安装 IEEE 1394 设备驱动程序](https://docs.microsoft.com/windows-hardware/drivers/ieee/installing-ieee-1394-device-drivers)
+[安装 IEEE 1394 设备驱动程序](./installing-ieee-1394-device-drivers.md)
 
-[IEEE 1394 设备的异步 I/O](https://docs.microsoft.com/windows-hardware/drivers/ieee/asynchronous-i-o-for-ieee-1394-devices)
+[IEEE 1394 设备的异步 I/O](./asynchronous-i-o-for-ieee-1394-devices.md)
 
-[IEEE 1394 设备的常时等量 I/O](https://docs.microsoft.com/windows-hardware/drivers/ieee/isochronous-i-o-for-ieee-1394-devices)
+[IEEE 1394 设备的常时等量 I/O](./isochronous-i-o-for-ieee-1394-devices.md)
 
-[修改 1394 配置 ROM](https://docs.microsoft.com/windows-hardware/drivers/ieee/modifying-the-1394-configuration-rom)
+[修改 1394 配置 ROM](./modifying-the-1394-configuration-rom.md)
 
-[IEEE 1394 硬件仿真驱动程序](https://docs.microsoft.com/windows-hardware/drivers/ieee/ieee-1394-hardware-emulation-drivers)
+[IEEE 1394 硬件仿真驱动程序](./ieee-1394-hardware-emulation-drivers.md)
 
-[1394 示例和诊断工具](https://docs.microsoft.com/windows-hardware/drivers/ieee/1394-samples-and-diagnostic-tools)
+[1394 示例和诊断工具](./1394-samples-and-diagnostic-tools.md)
 
-[IEC-61883 客户端驱动程序](https://docs.microsoft.com/windows-hardware/drivers/ieee/iec-61883-client-drivers)
+[IEC-61883 客户端驱动程序](./iec-61883-client-drivers.md)
