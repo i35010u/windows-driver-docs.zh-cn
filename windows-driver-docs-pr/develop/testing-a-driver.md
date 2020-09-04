@@ -4,12 +4,12 @@ title: 测试驱动程序
 description: 测试驱动程序
 ms.date: 06/28/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 53fa185c23d5d2b7c3f99e74d27482ff065f4d2c
-ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
+ms.openlocfilehash: 0e4540d82e9d79c1f59c394ee72bd7f67a7ef400
+ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "67427687"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89063580"
 ---
 # <a name="testing-a-driver"></a>测试驱动程序
 
@@ -60,11 +60,5 @@ WDK 提供的测试二进制文件和工具支持轻松地从命令行运行设�
 
 ## <a name="see-also"></a>另请参阅
 
-[用于验证驱动程序的工具](https://docs.microsoft.com/windows-hardware/drivers/devtest/tools-for-verifying-drivers)
-
- 
-
-
-
-
+[用于验证驱动程序的工具](../devtest/tools-for-verifying-drivers.md)
 

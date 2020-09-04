@@ -5,12 +5,12 @@ ms.assetid: 080c3f4a-400f-426c-8296-1cd0bdfb0828
 ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6af73faf555b64e17336a5f0abfeb57a4db04891
-ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
+ms.openlocfilehash: 0675ac46cb52b840ac1b498d1af11c20607a873a
+ms.sourcegitcommit: 4f08f5686c0bbc27d58930b993cbab1a98e3afb0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "67363832"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89443742"
 ---
 # <a name="submit-a-mobile-broadband-device-manifest-package"></a>提交移动宽带设备清单包
 
@@ -30,13 +30,7 @@ ms.locfileid: "67363832"
 
 4.  浏览并选择你的新 devicemanifest-ms 程序包，然后单击“提交”  。
 
-有关创建移动宽带设备提交程序包的详细信息，请参阅[移动宽带设备提交程序包](https://docs.microsoft.com/windows-hardware/drivers/mobilebroadband/index)。
+有关创建移动宽带设备提交程序包的详细信息，请参阅[移动宽带设备提交程序包](../mobilebroadband/index.md)。
 
  
-
- 
-
-
-
-
 

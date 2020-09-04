@@ -4,12 +4,12 @@ description: 通过基元驱动程序处理和管理使用基于 INF 的安装�
 ms.date: 04/16/2019
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 05ed44d21291a17a3bc532550ef1ff47d1c3b9fd
-ms.sourcegitcommit: 958a5ced83856df22627c06eb42c9524dd547906
+ms.openlocfilehash: f94196f43c400ebd8d73a8a21f075f68219ae3d7
+ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83235400"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89065202"
 ---
 # <a name="creating-a-new-primitive-driver"></a>创建新的基元驱动程序
 
@@ -23,11 +23,11 @@ ms.locfileid: "83235400"
 
 为了提高可靠性并保证此类软件的正确行为（尤其是在 OS 升级和重置方案期间），从 Windows 10 版本 1903 开始，即插即用平台现在会将此类软件包作为顶级实体进行处理和管理。
 
-利用这种新平台支持的软件类型称为“基元驱动程序”。 基元驱动程序继续使用基于 INF 的安装，底层平台利用[驱动程序存储](https://docs.microsoft.com/windows-hardware/drivers/install/driver-store)来跟踪所有相关文件。
+利用这种新平台支持的软件类型称为“基元驱动程序”。 基元驱动程序继续使用基于 INF 的安装，底层平台利用[驱动程序存储](../install/driver-store.md)来跟踪所有相关文件。
 
 然后，底层即插即用平台在 OS 升级时，可正常安装、卸载和维护驱动程序状态。
 
-从概念上讲，将以不同的方式管理这些 INF。 以前，\[DefaultInstall\]（往往是 \[DefaultUninstall\]）由 [SetupAPI](https://docs.microsoft.com/windows-hardware/drivers/install/setupapi) 以类似于脚本的方式进行处理，其中，INF 用作清单，[SetupAPI](https://docs.microsoft.com/windows-hardware/drivers/install/setupapi) 代表调用方执行相关节中的指令。
+从概念上讲，将以不同的方式管理这些 INF。 以前，\[DefaultInstall\]（往往是 \[DefaultUninstall\]）由 [SetupAPI](../install/setupapi.md) 以类似于脚本的方式进行处理，其中，INF 用作清单，[SetupAPI](../install/setupapi.md) 代表调用方执行相关节中的指令。
 
 撤消更改（以执行卸载）需要指定一个 INF 节，该节执行的指令集与安装 (installation) 节相反。 但是，利用基元驱动程序的 INF 不需要卸载 (uninstallation) 节。
 
@@ -57,9 +57,9 @@ ms.locfileid: "83235400"
 
 ## <a name="primitive-drivers-targeting-only-windows-10-version-1903-and-later"></a>仅面向 Windows 10 版本 1903 和更高版本的基元驱动程序
 
-仅面向 Windows 10 版本 1903 和更高版本的基元驱动程序应使用 [DiInstallDriver](https://docs.microsoft.com/windows/desktop/api/newdev/nf-newdev-diinstalldriverw) 和 [DiUninstallDriver](https://docs.microsoft.com/windows/desktop/api/newdev/nf-newdev-diuninstalldriverw) 在驱动程序存储中正确安装和卸载其软件。
+仅面向 Windows 10 版本 1903 和更高版本的基元驱动程序应使用 [DiInstallDriver](/windows/desktop/api/newdev/nf-newdev-diinstalldriverw) 和 [DiUninstallDriver](/windows/desktop/api/newdev/nf-newdev-diuninstalldriverw) 在驱动程序存储中正确安装和卸载其软件。
 
-驱动程序还应使用 Dirid 13 将驱动程序存储正确指定为所需的安装目标。 有关 Dirid 的详细信息，请参阅[使用 Dirid](https://docs.microsoft.com/windows-hardware/drivers/install/using-dirids)。
+驱动程序还应使用 Dirid 13 将驱动程序存储正确指定为所需的安装目标。 有关 Dirid 的详细信息，请参阅[使用 Dirid](../install/using-dirids.md)。
 
 ## <a name="legacy-compatibility"></a>传统兼容性
 
@@ -72,7 +72,7 @@ LegacyUninstall=1
 
 \[DefaultInstall\] 和 \[DefaultUninstall\] 节中的**体系结构仍必须经过修饰**；但是，如果包含 `LegacyUninstall=1`，则 Windows 会忽略 \[DefaultUninstall\] 节（在 Windows 10 版本 1903 和更高版本中）。 这样，就可以在 INF 中包含该节，从而可以在下层的传统安装/卸载应用程序中使用该节来卸载基元驱动程序包。
 
-从 Windows 10 版本 1903 开始，如果将经过体系结构修饰的 \[DefaultInstall\] 或 \[DefaultUninstall\] 节传入 setupapi.dll 中的 [InstallHInfSection](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-installhinfsectionw) API，则会检查驱动程序包，以确定它是否支持基元驱动程序功能。 如果它不支持基元驱动程序功能，则不会以传统方式处理指定的节，而是适当地将 INF 传递给 [DiInstallDriver](https://docs.microsoft.com/windows/desktop/api/newdev/nf-newdev-diinstalldrivera) 或 [DiUninstallDriver](https://docs.microsoft.com/windows/desktop/api/newdev/nf-newdev-diuninstalldriverw)。 这样，单个安装程序就可以在兼容的 OS 版本中使用基元驱动程序，并保留以往 OS 版本的支持。
+从 Windows 10 版本 1903 开始，如果将经过体系结构修饰的 \[DefaultInstall\] 或 \[DefaultUninstall\] 节传入 setupapi.dll 中的 [InstallHInfSection](/windows/desktop/api/setupapi/nf-setupapi-installhinfsectionw) API，则会检查驱动程序包，以确定它是否支持基元驱动程序功能。 如果它不支持基元驱动程序功能，则不会以传统方式处理指定的节，而是适当地将 INF 传递给 [DiInstallDriver](/windows/desktop/api/newdev/nf-newdev-diinstalldrivera) 或 [DiUninstallDriver](/windows/desktop/api/newdev/nf-newdev-diuninstalldriverw)。 这样，单个安装程序就可以在兼容的 OS 版本中使用基元驱动程序，并保留以往 OS 版本的支持。
 
 ## <a name="converting-from-a-device-driver-inf"></a>从设备驱动程序 INF 进行转换
 

@@ -9,12 +9,12 @@ keywords:
 - Microsoft 符号存储
 ms.date: 04/26/2018
 ms.localizationpriority: High
-ms.openlocfilehash: 0b73c5c5b6cf9a61fd4cc4cb84fed4c4b755c302
-ms.sourcegitcommit: 15caaf6d943135efcaf9975927ff3933957acd5d
+ms.openlocfilehash: 900e02d80f573959dbaa58177a556fb9b50bab37
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88969410"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89209368"
 ---
 # <a name="microsoft-public-symbol-server"></a>Microsoft 公共符号服务器
 
@@ -51,7 +51,7 @@ Symbol search path is: srv*
 Expanded Symbol search path is: cache*c:\MyCache;SRV*https://msdl.microsoft.com/download/symbols
 ```
 
-若要详细了解如何处理符号，请参阅 [Windows 调试程序的符号路径](https://docs.microsoft.com/windows-hardware/drivers/debugger/symbol-path)。
+若要详细了解如何处理符号，请参阅 [Windows 调试程序的符号路径](./symbol-path.md)。
 
 **符号文件压缩**
 
@@ -60,10 +60,4 @@ Microsoft 符号服务器提供压缩版符号文件。 这些文件在文件扩
 
 
  
-
- 
-
-
-
-
 

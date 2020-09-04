@@ -5,12 +5,12 @@ ms.assetid: 49880681-480d-4f2d-bf8f-d621ac275244
 ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 09b7376a8df2c4f4aebdfd3f36bf04f430b00726
-ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
+ms.openlocfilehash: 3056aa8d665df9bcd7bc57def2fe03f214de1c1b
+ms.sourcegitcommit: bd72676caf2bf5c9738c4081c778316919b85d30
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "67353916"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89450198"
 ---
 # <a name="creating-a-preview-package"></a>创建预览程序包
 
@@ -50,8 +50,9 @@ ms.locfileid: "67353916"
 
 ## <a name="related-topics"></a>相关主题
 
-[创建设备元数据体验](https://docs.microsoft.com/windows-hardware/drivers/dashboard/)
 
-[提交设备元数据包（仪表板帮助）](https://docs.microsoft.com/windows-hardware/drivers/dashboard/)
+[创建设备元数据体验](create-a-device-metadata-experience.md)
 
-[设备元数据业务规则](https://docs.microsoft.com/windows-hardware/drivers/dashboard/)
+[提交设备元数据包（仪表板帮助）](submit-a-device-metadata-package--dashboard-help-.md)
+
+[设备元数据业务规则](device-metadata-business-rules.md)

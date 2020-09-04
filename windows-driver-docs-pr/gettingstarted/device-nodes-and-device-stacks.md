@@ -7,12 +7,12 @@ keywords:
 - 设备堆栈
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 68cafd6b5f4929e1b17b77f6e6a1907edc4daa18
-ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
+ms.openlocfilehash: 0a070ec2a7b460a6e8ca0b26d1616464094eedf1
+ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "72825191"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89383543"
 ---
 # <a name="device-nodes-and-device-stacks"></a>设备节点和设备堆栈
 
@@ -37,7 +37,7 @@ Windows 在称为*即插即用设备树*或简称为*设备树*的树结构中�
 ## <a name="span-iddevice_objects_and_device_stacksspanspan-iddevice_objects_and_device_stacksspanspan-iddevice_objects_and_device_stacksspandevice-objects-and-device-stacks"></a><span id="Device_objects_and_device_stacks"></span><span id="device_objects_and_device_stacks"></span><span id="DEVICE_OBJECTS_AND_DEVICE_STACKS"></span>设备对象和设备堆栈
 
 
-“设备对象”  是 [**DEVICE\_OBJECT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_device_object) 结构的实例。 PnP 设备树中的每个设备节点都有设备对象的有序列表，这些设备对象中的每一个都与一个驱动程序相关联。 设备对象的有序列表与它们的关联驱动程序一起被称为设备节点的“设备堆栈”  。
+“设备对象”  是 [**DEVICE\_OBJECT**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_device_object) 结构的实例。 PnP 设备树中的每个设备节点都有设备对象的有序列表，这些设备对象中的每一个都与一个驱动程序相关联。 设备对象的有序列表与它们的关联驱动程序一起被称为设备节点的“设备堆栈”  。
 
 你可以采用多种方式考虑设备堆栈。 就最正式的意义而言，设备堆栈为（设备对象、驱动程序）对的有序列表。 但是，在某些上下文中，将设备堆栈视为设备对象的有序列表可能会有用。 在其他上下文中，将设备堆栈视为驱动程序的有序列表可能会有用。
 
@@ -78,7 +78,7 @@ PDO 始终为设备堆栈中的底部设备对象。 这缘于设备堆栈的构
 
 到目前为止，我们已介绍了内核模式设备堆栈。 即，堆栈中的驱动程序在内核模式下运行，设备对象映射到系统空间，该空间是唯一一个以内核模式运行的代码能够使用的地址空间。 有关内核模式与用户模式之间差异的信息，请参阅[用户模式和内核模式](user-mode-and-kernel-mode.md)。
 
-在某些情形下，设备不仅具有内核模式设备堆栈，同时还有用户模式设备堆栈。 用户模式驱动程序通常基于用户模式驱动程序框架 (UMDF)，它是 [Windows 驱动程序框架 (WDF)](https://docs.microsoft.com/windows-hardware/drivers/wdf/) 提供的驱动程序模型之一。 在 UMDF 中，驱动程序为用户模式 DLL，设备对象为实现 IWDFDevice 接口的 COM 对象。 UMDF 设备堆栈中的设备对象称为“WDF 设备对象”  (WDF DO)。
+在某些情形下，设备不仅具有内核模式设备堆栈，同时还有用户模式设备堆栈。 用户模式驱动程序通常基于用户模式驱动程序框架 (UMDF)，它是 [Windows 驱动程序框架 (WDF)](../wdf/index.md) 提供的驱动程序模型之一。 在 UMDF 中，驱动程序为用户模式 DLL，设备对象为实现 IWDFDevice 接口的 COM 对象。 UMDF 设备堆栈中的设备对象称为“WDF 设备对象”  (WDF DO)。
 
 下图显示了设备节点、内核模式设备堆栈以及 USB-FX-2 设备的用户模式设备堆栈。 用户模式和内核模式堆栈中的驱动程序参与在 USB-FX-2 设备上定向的 I/O 请求。
 
@@ -92,11 +92,4 @@ PDO 始终为设备堆栈中的底部设备对象。 这缘于设备堆栈的构
 [驱动程序堆栈](driver-stacks.md)
 
  
-
- 
-
-
-
-
-
 

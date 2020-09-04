@@ -5,12 +5,12 @@ ms.assetid: 793b4c92-96e8-4b3e-a7de-d00e953c983a
 ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 19542734f4689dc23db5f87f211aadb34b15e7ef
-ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
+ms.openlocfilehash: e18e6ad2e6967012e33b901fe588400427b32ea6
+ms.sourcegitcommit: 4f08f5686c0bbc27d58930b993cbab1a98e3afb0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "68808265"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89443842"
 ---
 # <a name="errors-and-solutions-when-submitting-device-metadata-experiences"></a>提交设备元数据体验时的错误和解决方案
 
@@ -36,18 +36,18 @@ ms.locfileid: "68808265"
 |:::no-loc text="\[TaskName] task \[TaskId] is required to exist at root for your device in Behavior.xml.":::|有关详细信息，请参阅 [Microsoft 设备使用体验开发工具包](https://go.microsoft.com/fwlink/p/?LinkId=241658)。|
 |:::no-loc text="\DeviceStage\Device\[Locale]\ and \DeviceStage\Device\ folders should have same files.":::|如果将此包设置为默认区域设置，则该区域设置目录和中性语言目录必须具有相同的文件。 有关详细信息，请参阅 [Microsoft 设备使用体验开发工具包](https://go.microsoft.com/fwlink/p/?LinkId=241658)">。|
 |:::no-loc text="A .cab submission needs to contain either Hardware and/or Model information. Please correct the .cab or modify the existing .cabs.":::|你的包必须至少包含一个硬件 ID 或型号 ID。 有关详细信息，请参阅 [Microsoft 设备使用体验开发工具包](https://go.microsoft.com/fwlink/p/?LinkId=241658)。|
-|:::no-loc text="A Hardware ID in this .cab is in conflict and the .cab cannot be uploaded. Please ensure no other experience you have created uses this Hardware ID.":::|你的硬件 ID 已经在你的另一个体验中使用。 在仪表板上的“设备元数据”  下，打开“管理体验”  页。 在筛选器中，输入硬件 ID 以查找其他体验。 然后，你可以解决任何冲突。 有关详细信息，请参阅[设备元数据业务规则](https://docs.microsoft.com/windows-hardware/drivers/dashboard/device-metadata-business-rules)。|
+|:::no-loc text="A Hardware ID in this .cab is in conflict and the .cab cannot be uploaded. Please ensure no other experience you have created uses this Hardware ID.":::|你的硬件 ID 已经在你的另一个体验中使用。 在仪表板上的“设备元数据”  下，打开“管理体验”  页。 在筛选器中，输入硬件 ID 以查找其他体验。 然后，你可以解决任何冲突。 有关详细信息，请参阅[设备元数据业务规则](./device-metadata-business-rules.md)。|
 |:::no-loc text="A Hardware ID in this. cab is in use by another company and the .cab cannot be uploaded. Please verify this Hardware ID.":::|你已经包含在包中的硬件 ID 正由另一个公司使用。 你无法提交另一个公司的硬件 ID。 确保你的硬件 ID 拼写正确。 如果仍然收到错误消息，请联系仪表板支持部门。|
 |:::no-loc text="A live submission already exists for this locale in this experience.":::|删除此区域设置的现有实时包，然后再为同一个区域设置上载新包。|
-|:::no-loc text="A live submission already exists with default locale set to true in this experience.":::|只能将体验中的一个实时包设置为默认包。 有关详细信息，请参阅[设备元数据业务规则](https://docs.microsoft.com/windows-hardware/drivers/dashboard/device-metadata-business-rules)。|
+|:::no-loc text="A live submission already exists with default locale set to true in this experience.":::|只能将体验中的一个实时包设置为默认包。 有关详细信息，请参阅[设备元数据业务规则](./device-metadata-business-rules.md)。|
 |:::no-loc text="A logo submission for a MultiPurpose device does not match the submission category.":::|列在徽标提交中的设备类别不匹配你的设备元数据包的主要设备类别。 要解决此问题，请执行下列步骤：<br/> \- 更正你的徽标提交的设备类别。<br/>\- 创建一个新体验并且仅绑定正确的徽标提交。|
-|:::no-loc text="A Model ID in this cab is in conflict and the cab cannot be uploaded. Please ensure no other experience you have created uses this Model ID.":::|你的型号 ID 已经在你的另一个体验中使用。 在仪表板上的“设备元数据”  下，打开“管理体验”  页。 在筛选器中，输入型号 ID 以查找其他体验。 然后，你可以解决任何冲突。 有关详细信息，请参阅[设备元数据业务规则](https://docs.microsoft.com/windows-hardware/drivers/dashboard/device-metadata-business-rules)。|
+|:::no-loc text="A Model ID in this cab is in conflict and the cab cannot be uploaded. Please ensure no other experience you have created uses this Model ID.":::|你的型号 ID 已经在你的另一个体验中使用。 在仪表板上的“设备元数据”  下，打开“管理体验”  页。 在筛选器中，输入型号 ID 以查找其他体验。 然后，你可以解决任何冲突。 有关详细信息，请参阅[设备元数据业务规则](./device-metadata-business-rules.md)。|
 |:::no-loc text="A Model ID in this cab is in use by another company and the cab cannot be uploaded. Please verify this Model ID.":::|你已经包含在包中的型号 ID 正由另一个公司使用。 你无法提交另一个公司的型号 ID。 确保你的型号 ID 拼写正确。 如果你仍然收到错误消息，请发送电子邮件到 sysdev@microsoft.com 以寻求仪表板支持来解决问题。|
 |:::no-loc text="A non-preview live package cannot be promoted to live.":::|你不能将实时包提升为“实时”状态。|
 |:::no-loc text="A package with a status of error cannot be promoted to live.":::|你不能将包含错误的包提升为“实时”状态。|
 |:::no-loc text="A preview submission already exists for this locale in this experience.":::|要解决此问题，请尝试执行下列步骤：<br/> \- 删除此区域设置的现有预览包，然后为同一个区域设置上载新预览包。<br/>\- 将此区域设置的当前预览包提升为“发布”状态，然后为同一个区域设置上载新预览包。|
-|:::no-loc text="A preview submission already exists with default locale set to true in this experience.":::|只能将体验中的一个预览包设置为默认包。 有关详细信息，请参阅[设备元数据业务规则](https://docs.microsoft.com/windows-hardware/drivers/dashboard/device-metadata-business-rules)。|
-|:::no-loc text="All device metadata .cab files in an experience must support the same Hardware IDs. Please correct the .cab.":::|此包不具有该体验中的其他包所具有的相同型号 ID 列表。 更正此包中的型号 ID 列表，然后再次上载此包。 有关详细信息，请参阅[设备元数据业务规则](https://docs.microsoft.com/windows-hardware/drivers/dashboard/device-metadata-business-rules)。|
+|:::no-loc text="A preview submission already exists with default locale set to true in this experience.":::|只能将体验中的一个预览包设置为默认包。 有关详细信息，请参阅[设备元数据业务规则](./device-metadata-business-rules.md)。|
+|:::no-loc text="All device metadata .cab files in an experience must support the same Hardware IDs. Please correct the .cab.":::|此包不具有该体验中的其他包所具有的相同型号 ID 列表。 更正此包中的型号 ID 列表，然后再次上载此包。 有关详细信息，请参阅[设备元数据业务规则](./device-metadata-business-rules.md)。|
 |:::no-loc text="Allowed Domain should not be empty for task [TaskID] in Tasks.xml.":::|有关详细信息，请参阅 [Microsoft 设备使用体验开发工具包](https://go.microsoft.com/fwlink/p/?LinkId=241658)。|
 |:::no-loc text="An unexpected file was found:'\[ExtraFile]'. Please ensure you follow the architecture or reference all root files in PackageInfo.xml.":::|在包的根目录处存在额外的文件。 有关详细信息，请参阅 [Microsoft 设备使用体验开发工具包](https://go.microsoft.com/fwlink/p/?LinkId=241658)。|
 |:::no-loc text="An unexpected folder was found: ‘\[ExtraFolder]'. Please ensure you follow the architecture or reference all root folders in PackageInfo.xml.":::|有关详细信息，请参阅 [Microsoft 设备使用体验开发工具包](https://go.microsoft.com/fwlink/p/?LinkId=241658)。|
@@ -79,7 +79,7 @@ ms.locfileid: "68808265"
 |:::no-loc text="Missing resource reference for \[Id] in Resource.xml file in \DeviceStage\Task\[TaskID]\[Locale] folder":::|有关详细信息，请参阅 [Microsoft 设备使用体验开发工具包](https://go.microsoft.com/fwlink/p/?LinkId=241658)。|
 |:::no-loc text="Model IDs are not allowed for [Device Class] submissions.":::|当提交此类型的设备类的设备元数据时，不能使用型号 ID。 而应仅使用你设备的硬件 ID。 要查找计算机设备的硬件 ID，请参阅 [Microsoft 设备使用体验开发工具包](https://go.microsoft.com/fwlink/p/?LinkId=241658)。|
 |:::no-loc text="Model Name not found in DeviceInfo.xml":::|你的 DeviceInfo.xml 文件编写不正确。 有关详细信息，请参阅 [Microsoft 设备使用体验开发工具包](https://go.microsoft.com/fwlink/p/?LinkId=241658)。|
-|:::no-loc text="No preview key can be found for this organization.":::|你必须在上载预览包之前设置 PreviewKey。 有关详细信息，请参阅[设备元数据业务规则](https://docs.microsoft.com/windows-hardware/drivers/dashboard/device-metadata-business-rules)。|
+|:::no-loc text="No preview key can be found for this organization.":::|你必须在上载预览包之前设置 PreviewKey。 有关详细信息，请参阅[设备元数据业务规则](./device-metadata-business-rules.md)。|
 |:::no-loc text="PackageStructure node in PackageInfo.xml is invalid.":::|确保你的 PackageInfo.xml 文件正确。 有关详细信息，请参阅 [Microsoft 设备使用体验开发工具包](https://go.microsoft.com/fwlink/p/?LinkId=241658)。|
 |:::no-loc text="Task \[TaskGUID] is required for your device in Behavior.xml.":::|有关详细信息，请参阅 [Microsoft 设备使用体验开发工具包](https://go.microsoft.com/fwlink/p/?LinkId=241658)。|
 |:::no-loc text="Task \[TaskID] should not use taskGroupGuid \[TaskGroupGuid]":::|有关详细信息，请参阅 [Microsoft 设备使用体验开发工具包](https://go.microsoft.com/fwlink/p/?LinkId=241658)。|
@@ -114,8 +114,8 @@ ms.locfileid: "68808265"
 
 ## <a name="related-topics"></a>相关主题
 
-[创建设备元数据体验](https://docs.microsoft.com/windows-hardware/drivers/dashboard/create-a-device-metadata-experience)
+[创建设备元数据体验](./create-a-device-metadata-experience.md)
 
-[提交设备元数据包（仪表板帮助）](https://docs.microsoft.com/windows-hardware/drivers/dashboard/submit-a-device-metadata-package--dashboard-help-)
+[提交设备元数据包（仪表板帮助）](./submit-a-device-metadata-package--dashboard-help-.md)
 
-[设备元数据业务规则](https://docs.microsoft.com/windows-hardware/drivers/dashboard/device-metadata-business-rules)
+[设备元数据业务规则](./device-metadata-business-rules.md)

@@ -4,12 +4,12 @@ title: Windows 驱动程序入门
 description: 使用 Windows 驱动程序，可以创建一个同时在 Windows 10X 和 Windows 桌面版中运行的驱动程序。
 ms.date: 04/28/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: da9e24d9f24bccd7742cfcfec628b9284f9fda5f
-ms.sourcegitcommit: f788aa204a3923f9023d8690488459a4d9bc2495
+ms.openlocfilehash: c7fec3eaf7b2be9a600b2a507dca184bd7f9d0d6
+ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86141274"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89066056"
 ---
 # <a name="getting-started-with-windows-drivers"></a>Windows 驱动程序入门
 
@@ -32,7 +32,7 @@ Windows 驱动程序在所有 Window 10 变体中运行，其中包括 Windows 1
 - 符合 [DCH 设计原则](dch-principles-best-practices.md)。
 - 遵循[驱动程序包隔离](driver-isolation.md)原则。
 - 遵循 [API 分层要求](api-layering.md)。
-- 使用 [Hardware Lab Kit](https://docs.microsoft.com/windows-hardware/test/hlk/) 获得 [Windows 硬件兼容性计划认证流程](https://docs.microsoft.com/windows-hardware/design/compatibility/whcp-certification-process)认证。 请注意，Windows 硬件兼容性计划认证流程要求适用于 KMDF 和 UMDF 驱动程序。
+- 使用 [Hardware Lab Kit](/windows-hardware/test/hlk/) 获得 [Windows 硬件兼容性计划认证流程](/windows-hardware/design/compatibility/whcp-certification-process)认证。 请注意，Windows 硬件兼容性计划认证流程要求适用于 KMDF 和 UMDF 驱动程序。
 
 ## <a name="windows-drivers-vs-windows-desktop-drivers"></a>Windows 驱动程序与Windows 桌面驱动程序
 

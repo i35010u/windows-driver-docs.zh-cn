@@ -5,12 +5,12 @@ ms.assetid: aede9597-4b67-4c1a-8ae4-924d39c88b53
 ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2c6e9dab46eef01a358b95133672e6cb10008eeb
-ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
+ms.openlocfilehash: 455a1dd138a24352e07233652cb83155c90e4e3f
+ms.sourcegitcommit: 4f08f5686c0bbc27d58930b993cbab1a98e3afb0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "63334954"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89443897"
 ---
 # <a name="manage-device-metadata-experiences"></a>管理设备元数据体验
 
@@ -148,7 +148,7 @@ ms.locfileid: "63334954"
 
 3. 若要更新现有程序包，请选择该程序包、单击“删除”  ，然后创建并上载新程序包。
 
-    有关创建新程序包的详细信息，请参阅[设备元数据创作向导](https://docs.microsoft.com/windows-hardware/drivers/devtest/device-metadata-authoring-wizard-portal)，此向导位于 [Windows 驱动程序工具包](https://docs.microsoft.com/windows-hardware/drivers/download-the-wdk)中。
+    有关创建新程序包的详细信息，请参阅[设备元数据创作向导](../devtest/device-metadata-authoring-wizard-portal.md)，此向导位于 [Windows 驱动程序工具包](../download-the-wdk.md)中。
 
 4. 若要添加新程序包，请在“添加更多元数据”  下，浏览要添加的一个或多个文件、创建友好名称（如果需要），然后单击“提交”  。
 

@@ -7,12 +7,12 @@ keywords:
 - 下载
 ms.date: 05/01/2020
 ms.localizationpriority: High
-ms.openlocfilehash: e9e9a5897ca51c3bc770d39ea4602422e0e9f77e
-ms.sourcegitcommit: f610410e1500f0b0a4ca008b52679688ab51033d
+ms.openlocfilehash: 3e1070c007ac4e59fbcb8729cc7ece1865e30ea7
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/15/2020
-ms.locfileid: "88253051"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89211205"
 ---
 # <a name="download-debugging-tools-for-windows"></a>下载 Windows 调试工具
 
@@ -26,7 +26,7 @@ WinDbg Preview 是 WinDbg 的新版本，具有更现代的视觉效果、更快
 
  - 从 Microsoft Store 下载 WinDbg Preview：[WinDbg Preview](https://www.microsoft.com/store/p/windbg/9pgjgd53tn86)。
 
- - 在 [WinDbg Preview - 安装](https://docs.microsoft.com/windows-hardware/drivers/debugger/windbg-install-preview)中了解有关安装和配置的详细信息。
+ - 在 [WinDbg Preview - 安装](./windbg-install-preview.md)中了解有关安装和配置的详细信息。
 
 ## <a name="small-classic-windbg-preview-logo-debugging-tools-for-windows-10-windbg"></a>![小的经典 WinDbg Preview 徽标](images/windbg-classic-logo.png) Windows 10 调试工具 (WinDbg)
 
@@ -50,16 +50,16 @@ WinDbg Preview 是 WinDbg 的新版本，具有更现代的视觉效果、更快
 
 ## <a name="learn-more-about-the-debuggers"></a>详细了解调试程序
 
-在 [Windows 调试工具（WinDbg、KD、CDB、NTSD）](https://docs.microsoft.com/windows-hardware/drivers/debugger/)中详细了解 WinDbg 和其他调试程序。
+在 [Windows 调试工具（WinDbg、KD、CDB、NTSD）](./index.md)中详细了解 WinDbg 和其他调试程序。
 
 ## <a name="looking-for-related-downloads"></a>查找相关下载？
 
-- [下载 Windows 驱动程序工具包 (WDK)](https://docs.microsoft.com/windows-hardware/drivers/download-the-wdk)
+- [下载 Windows 驱动程序工具包 (WDK)](../download-the-wdk.md)
 
 - [Windows 符号程序包](debugger-download-symbols.md)  
 
-- [Windows Hardware Lab Kit](https://docs.microsoft.com/windows-hardware/test/hlk/windows-hardware-lab-kit)
+- [Windows Hardware Lab Kit](/windows-hardware/test/hlk/windows-hardware-lab-kit)
 
-- [下载并安装 Windows 评估和部署工具包 (Windows ADK)](https://docs.microsoft.com/windows-hardware/get-started/adk-install)
+- [下载并安装 Windows 评估和部署工具包 (Windows ADK)](/windows-hardware/get-started/adk-install)
 
 - [Windows 预览体验成员 - Windows 预览版本](https://insider.windows.com/)

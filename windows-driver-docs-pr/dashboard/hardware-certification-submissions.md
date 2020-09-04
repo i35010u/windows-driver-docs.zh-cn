@@ -5,25 +5,25 @@ ms.assetid: 7EFA9617-CF1D-4259-B0C4-A9DDCF5C3A1F
 ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b26a9cdea2a31f4a04486ed09b5bcb694c128509
-ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
+ms.openlocfilehash: 7d83f6e3e161557e9494c25c924047adb304fba6
+ms.sourcegitcommit: 4f08f5686c0bbc27d58930b993cbab1a98e3afb0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "68483075"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89443911"
 ---
 # <a name="hardware-submissions"></a>硬件提交
 
 Windows 硬件兼容性计划（适用于 Windows 10）和 Windows 硬件认证计划（适用于 Windows 8/8.1 及较早版本的操作系统）使你可以在通过合作伙伴中心提交最终版本之前，设计、创建和测试你的硬件和驱动程序。 有关详细信息，请参阅 [Windows 硬件认证](https://go.microsoft.com/fwlink/p/?LinkId=224782)页。 通过为 Windows 认证你的硬件设备、系统和驱动程序，你将以下列形式获得 Microsoft 市场营销资源支持：兼容性和可靠性列表、徽标图片和促销伙伴关系。
 
-若要开发你的设备，请下载 [Windows 驱动程序工具包 (WDK)](https://docs.microsoft.com/windows-hardware/drivers/download-the-wdk)。
+若要开发你的设备，请下载 [Windows 驱动程序工具包 (WDK)](../download-the-wdk.md)。
 
-若要测试你的设备，请下载适用于 Windows 10 的 [Windows Hardware Lab Kit (Windows HLK)](https://docs.microsoft.com/windows-hardware/test/hlk/windows-hardware-lab-kit)。 对于以前版本的操作系统，请下载 [Windows 硬件认证工具包 (Windows HCK)](https://docs.microsoft.com/windows-hardware/test/hlk/windows-hardware-lab-kit) 或 [Windows 徽标工具包 (WLK)](https://go.microsoft.com/fwlink/p/?LinkId=219237)。
+若要测试你的设备，请下载适用于 Windows 10 的 [Windows Hardware Lab Kit (Windows HLK)](/windows-hardware/test/hlk/windows-hardware-lab-kit)。 对于以前版本的操作系统，请下载 [Windows 硬件认证工具包 (Windows HCK)](/windows-hardware/test/hlk/windows-hardware-lab-kit) 或 [Windows 徽标工具包 (WLK)](https://go.microsoft.com/fwlink/p/?LinkId=219237)。
 
 在开发并测试你的产品后，可以通过硬件提交的方式提交结果。
 
 > [!NOTE]
-> 我们强烈建议你将公共驱动程序符号作为 HLK 程序包的一部分包括在内。 请参阅[公共符号和私有符号](../devtest/public-symbols-and-private-symbols.md)，了解如何创建公共符号。  请参阅[步骤 8：创建提交包](https://docs.microsoft.com/windows-hardware/test/hlk/getstarted/step-8-create-a-submission-package)，了解如何将符号包括在程序包中。 请注意，提交中的任何 .pdb 文件都将在发布前被删除。
+> 我们强烈建议你将公共驱动程序符号作为 HLK 程序包的一部分包括在内。 请参阅[公共符号和私有符号](../devtest/public-symbols-and-private-symbols.md)，了解如何创建公共符号。  请参阅[步骤 8：创建提交包](/windows-hardware/test/hlk/getstarted/step-8-create-a-submission-package)，了解如何将符号包括在程序包中。 请注意，提交中的任何 .pdb 文件都将在发布前被删除。
 
 - 若要提交 HLK 或 HCK 包，请参阅[创建新的硬件提交](create-a-new-hardware-submission.md)。
 
@@ -140,7 +140,7 @@ Windows 硬件兼容性计划（适用于 Windows 10）和 Windows 硬件认证�
 <td><p>指示驱动程序是否已使用 Retpoline 标记进行编译。  勾号为 True，叉号为 False。  有关此变更的详细信息，请查看我们的<a href="https://techcommunity.microsoft.com/t5/Hardware-Dev-Center/Upcoming-Hardware-Dev-Center-changes-that-enable-support-for/ba-p/504574">博客文章</a>。 </p></td>
 </tr><tr class="even">
 <td><p>这是一个通用 Windows 驱动程序吗？</p></td>
-<td><p>指示你的驱动程序是否满足通用 Windows 平台要求。 有关详细信息，请参阅<a href="https://docs.microsoft.com/windows-hardware/drivers/develop/getting-started-with-universal-drivers" data-raw-source="[Getting Started with Universal Windows drivers](https://docs.microsoft.com/windows-hardware/drivers/develop/getting-started-with-universal-drivers)">通用 Windows 驱动程序入门</a>。</p></td>
+<td><p>指示你的驱动程序是否满足通用 Windows 平台要求。 有关详细信息，请参阅<a href="https://docs.microsoft.com/windows-hardware/drivers/develop/getting-started-with-universal-drivers" data-raw-source="[Getting Started with Universal Windows drivers](../develop/getting-started-with-windows-drivers.md)">通用 Windows 驱动程序入门</a>。</p></td>
 </tr>
 <tr class="even">
 <td><p>设备属于何种类型？</p></td>

@@ -4,12 +4,12 @@ description: 微型驱动程序或微型端口驱动程序可以用作半个驱�
 ms.assetid: 33387A72-5278-4637-AED4-C010E4C1616B
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 19cf08d6a8ce1a7d2f81ee5907cdc664a7f004b9
-ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
+ms.openlocfilehash: 8f55e18060d4a5a7fc3a0c82a4df232a4428f831
+ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "72825165"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89385117"
 ---
 # <a name="minidrivers-miniport-drivers-and-driver-pairs"></a>微型驱动程序、微型端口驱动程序和驱动程序对
 
@@ -18,17 +18,17 @@ ms.locfileid: "72825165"
 
 Microsoft 提供一般驱动程序，而独立的硬件供应商通常提供特定驱动程序。 在阅读本主题之前，应了解[设备节点和设备堆栈](device-nodes-and-device-stacks.md)和 [I/O 请求数据包](i-o-request-packets.md)中介绍的理念。
 
-每个内核模式驱动程序都必须实现名为 [**DriverEntry**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_initialize) 的函数，该函数在加载驱动程序之后会立即得到调用。 **DriverEntry** 函数使用指向驱动程序实现的一些其他函数的指针来填充 [**DRIVER\_OBJECT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_driver_object) 结构的某些成员。 例如，**DriverEntry** 函数使用指向驱动程序的 [*Unload*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_unload) 函数的指针来填充 **DRIVER\_OBJECT** 结构的 **Unload** 成员，如下图所示。
+每个内核模式驱动程序都必须实现名为 [**DriverEntry**](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_initialize) 的函数，该函数在加载驱动程序之后会立即得到调用。 **DriverEntry** 函数使用指向驱动程序实现的一些其他函数的指针来填充 [**DRIVER\_OBJECT**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_driver_object) 结构的某些成员。 例如，**DriverEntry** 函数使用指向驱动程序的 [*Unload*](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_unload) 函数的指针来填充 **DRIVER\_OBJECT** 结构的 **Unload** 成员，如下图所示。
 
 ![显示 driver\-object 结构和 Unload 成员的图](images/driverfunctionpointers02.png)
 
-[**DRIVER\_OBJECT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_driver_object) 结构的 **MajorFunction** 成员为指向函数的大量指针，这些函数处理 I/O 请求数据包 ([**IRP**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_irp))，如下图所示。 通常，驱动程序使用指向函数（由驱动程序实现）的指针来填充 **MajorFunction** 数组的多个成员，这些函数处理各种 IRP。
+[**DRIVER\_OBJECT**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_driver_object) 结构的 **MajorFunction** 成员为指向函数的大量指针，这些函数处理 I/O 请求数据包 ([**IRP**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_irp))，如下图所示。 通常，驱动程序使用指向函数（由驱动程序实现）的指针来填充 **MajorFunction** 数组的多个成员，这些函数处理各种 IRP。
 
 ![显示 driver\-object 结构和 MajorFunction 成员的图](images/driverfunctionpointers03.png)
 
 可以根据 IRP 的主要函数代码对 IRP 进行分类，该代码由常量标识，例如 **IRP\_MJ\_READ**、**IRP\_MJ\_WRITE** 或 **IRP\_MJ\_PNP**。 标识主要函数代码的常量用作 **MajorFunction** 数组中的索引。 例如，假设驱动程序实现调度函数以处理具有主要函数代码 **IRP\_MJ\_WRITE** 的 IRP。 在这种情形下，驱动程序必须使用指向调度函数的指针来填充数组的 **MajorFunction**\[IRP\_MJ\_WRITE\] 元素。
 
-通常，驱动程序填充 **MajorFunction** 数组的某些元素并使剩下的元素设置为 I/O 管理器提供的默认值。 以下示例说明了如何使用 [ **!drvobj**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-drvobj) 调试程序扩展来检查用于 parport 驱动程序的函数指针。
+通常，驱动程序填充 **MajorFunction** 数组的某些元素并使剩下的元素设置为 I/O 管理器提供的默认值。 以下示例说明了如何使用 [ **!drvobj**](../debugger/-drvobj.md) 调试程序扩展来检查用于 parport 驱动程序的函数指针。
 
 ``` syntax
 0: kd> !drvobj parport 2
@@ -70,9 +70,9 @@ Dispatch routines:
 [1b] IRP_MJ_PNP                         fffff880065d4840    parport!PptDispatchPnp
 ```
 
-在调试程序输出中，可以看到 parport.sys 实现 **GsDriverEntry**，驱动程序的入口点。 **GsDriverEntry**（在生成驱动程序时自动生成）执行一些初始化，然后调用 [**DriverEntry**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_initialize)（由驱动程序开发人员实现）。
+在调试程序输出中，可以看到 parport.sys 实现 **GsDriverEntry**，驱动程序的入口点。 **GsDriverEntry**（在生成驱动程序时自动生成）执行一些初始化，然后调用 [**DriverEntry**](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_initialize)（由驱动程序开发人员实现）。
 
-还可以看到 parport 驱动程序（位于其 [**DriverEntry**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_initialize) 函数中）为指向调度函数的指针提供了以下主要函数代码：
+还可以看到 parport 驱动程序（位于其 [**DriverEntry**](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_initialize) 函数中）为指向调度函数的指针提供了以下主要函数代码：
 
 -   IRP\_MJ\_CREATE
 -   IRP\_MJ\_CLOSE
@@ -89,7 +89,7 @@ Dispatch routines:
 
 **MajorFunction** 数组的其余元素包含指向默认调度函数 **nt!IopInvalidDeviceRequest** 的指针。
 
-在调试程序输出中，可以看到 parport 驱动程序提供了用于 [*Unload*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_unload) 和 [*AddDevice*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_add_device) 的函数指针，但未提供用于 [*StartIo*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_startio) 的函数指针。 *AddDevice* 函数很独特，原因是其函数指针未存储在 [**DRIVER\_OBJECT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_driver_object) 结构中， 而是存储在 **DRIVER\_OBJECT** 结构扩展的 **AddDevice** 成员中。 下图说明了 parport 驱动程序在其 [**DriverEntry**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_initialize) 函数中提供的函数指针。 parport 提供的函数指针被阴影遮蔽。
+在调试程序输出中，可以看到 parport 驱动程序提供了用于 [*Unload*](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_unload) 和 [*AddDevice*](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_add_device) 的函数指针，但未提供用于 [*StartIo*](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_startio) 的函数指针。 *AddDevice* 函数很独特，原因是其函数指针未存储在 [**DRIVER\_OBJECT**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_driver_object) 结构中， 而是存储在 **DRIVER\_OBJECT** 结构扩展的 **AddDevice** 成员中。 下图说明了 parport 驱动程序在其 [**DriverEntry**](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_initialize) 函数中提供的函数指针。 parport 提供的函数指针被阴影遮蔽。
 
 ![图：driver\-object 结构中的函数指针](images/driverfunctionpointers01.png)
 
@@ -112,7 +112,7 @@ Dispatch routines:
 ## <a name="span-idfunction_pointers_in_driver_pairsspanspan-idfunction_pointers_in_driver_pairsspanspan-idfunction_pointers_in_driver_pairsspanfunction-pointers-in-driver-pairs"></a><span id="Function_pointers_in_driver_pairs"></span><span id="function_pointers_in_driver_pairs"></span><span id="FUNCTION_POINTERS_IN_DRIVER_PAIRS"></span>驱动程序对中的函数指针
 
 
-在（specific.sys、general.sys）对中，Windows 会加载 specific.sys 并调用其 [**DriverEntry**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_initialize) 函数。 specific.sys 的 **DriverEntry** 函数会收到指向 [**DRIVER\_OBJECT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_driver_object) 结构的指针。 正常情况下，你期望 **DriverEntry** 使用指向调度函数的指针来填充 **MajorFunction** 数组的多个元素。 你还期望 **DriverEntry** 填充 **DRIVER\_OBJECT** 结构的 **Unload** 成员（和可能的 **StartIo** 成员）和驱动程序对象扩展的 **AddDevice** 成员。 但是，在驱动程序对模型中，**DriverEntry** 不需这样做， 只需通过 specific.sys 的 **DriverEntry** 函数将 **DRIVER\_OBJECT** 结构传递至 general.sys 实现的初始化函数即可。 以下代码示例说明了在（ProsewareRobot.sys、GeneralRobot.sys）对中如何调用初始化函数。
+在（specific.sys、general.sys）对中，Windows 会加载 specific.sys 并调用其 [**DriverEntry**](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_initialize) 函数。 specific.sys 的 **DriverEntry** 函数会收到指向 [**DRIVER\_OBJECT**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_driver_object) 结构的指针。 正常情况下，你期望 **DriverEntry** 使用指向调度函数的指针来填充 **MajorFunction** 数组的多个元素。 你还期望 **DriverEntry** 填充 **DRIVER\_OBJECT** 结构的 **Unload** 成员（和可能的 **StartIo** 成员）和驱动程序对象扩展的 **AddDevice** 成员。 但是，在驱动程序对模型中，**DriverEntry** 不需这样做， 只需通过 specific.sys 的 **DriverEntry** 函数将 **DRIVER\_OBJECT** 结构传递至 general.sys 实现的初始化函数即可。 以下代码示例说明了在（ProsewareRobot.sys、GeneralRobot.sys）对中如何调用初始化函数。
 
 ```ManagedCPlusPlus
 PVOID g_ProsewareRobottCallbacks[3] = {DeviceControlCallback, PnpCallback, PowerCallback};
@@ -125,9 +125,9 @@ NTSTATUS DriverEntry (DRIVER_OBJECT *DriverObject, PUNICODE_STRING RegistryPath)
 }
 ```
 
-GeneralRobot.sys 中的初始化函数编写指向 [**DRIVER\_OBJECT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_driver_object) 结构（及其扩展）的相应成员和 **MajorFunction** 数组的相应元素的函数指针。 理念为当 I/O 管理器将 IRP 发送至驱动程序对时，IRP 首先转至由 GeneralRobot.sys 实现的调度函数。 如果 GeneralRobot.sys 可以自行处理 IRP，则无需涉及到特定驱动程序 ProsewareRobot.sys。 如果 GeneralRobot.sys 可以处理部分但不是全部的 IRP 处理，则它会从由 ProsewareRobot.sys 实现的回调函数之一获取帮助。 GeneralRobot.sys 接收指向 GeneralRobotInit 调用中 ProsewareRobot 回调的指针。
+GeneralRobot.sys 中的初始化函数编写指向 [**DRIVER\_OBJECT**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_driver_object) 结构（及其扩展）的相应成员和 **MajorFunction** 数组的相应元素的函数指针。 理念为当 I/O 管理器将 IRP 发送至驱动程序对时，IRP 首先转至由 GeneralRobot.sys 实现的调度函数。 如果 GeneralRobot.sys 可以自行处理 IRP，则无需涉及到特定驱动程序 ProsewareRobot.sys。 如果 GeneralRobot.sys 可以处理部分但不是全部的 IRP 处理，则它会从由 ProsewareRobot.sys 实现的回调函数之一获取帮助。 GeneralRobot.sys 接收指向 GeneralRobotInit 调用中 ProsewareRobot 回调的指针。
 
-在 [**DriverEntry**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_initialize) 返回的某个点，会构造用于 Proseware Robot 设备节点的设备堆栈。 设备堆栈可能如下所示。
+在 [**DriverEntry**](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_initialize) 返回的某个点，会构造用于 Proseware Robot 设备节点的设备堆栈。 设备堆栈可能如下所示。
 
 ![图：Proseware Robot 设备节点，显示设备堆栈中的三个设备对象：afterthought.sys (filter do)、prosewarerobot.sys、generalrobot.sys (FDO) 以及 pci.sys (PDO)](images/driverpairs01.png)
 
@@ -138,7 +138,7 @@ GeneralRobot.sys 中的初始化函数编写指向 [**DRIVER\_OBJECT**](https://
 ## <a name="span-idexample_of_a_driver_pairspanspan-idexample_of_a_driver_pairspanspan-idexample_of_a_driver_pairspanexample-of-a-driver-pair"></a><span id="Example_of_a_driver_pair"></span><span id="example_of_a_driver_pair"></span><span id="EXAMPLE_OF_A_DRIVER_PAIR"></span>驱动程序对示例
 
 
-假设笔记本电脑中有无线网卡，并且通过在“设备管理器”中查找，你确定 netwlv64.sys 为网卡驱动程序。 可以使用 [ **!drvobj**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-drvobj) 调试程序扩展来检查用于 netwlv64.sys 的函数指针。
+假设笔记本电脑中有无线网卡，并且通过在“设备管理器”中查找，你确定 netwlv64.sys 为网卡驱动程序。 可以使用 [ **!drvobj**](../debugger/-drvobj.md) 调试程序扩展来检查用于 netwlv64.sys 的函数指针。
 
 ``` syntax
 1: kd> !drvobj netwlv64 2
@@ -179,9 +179,9 @@ Dispatch routines:
 [1b] IRP_MJ_PNP                         fffff8800193e518 ndis!ndisPnPDispatch
 ```
 
-在调试程序输出中，可以看到 netwlv64.sys 实现 **GsDriverEntry**，驱动程序的入口点。 **GsDriverEntry**（在生成驱动程序时自动生成）执行一些初始化，然后调用 [**DriverEntry**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_initialize)（由驱动程序开发人员编写）。
+在调试程序输出中，可以看到 netwlv64.sys 实现 **GsDriverEntry**，驱动程序的入口点。 **GsDriverEntry**（在生成驱动程序时自动生成）执行一些初始化，然后调用 [**DriverEntry**](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_initialize)（由驱动程序开发人员编写）。
 
-在本示例中，netwlv64.sys 实现 [**DriverEntry**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_initialize)，但 ndis.sys 实现 [*AddDevice*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_add_device)、[*Unload*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_unload) 以及多个调度函数。 Netwlv64.sys 称为 NDIS 微型端口驱动程序，ndis.sys 称为 NDIS 库。 两个模块共同形成（NDIS 微型端口、NDIS 库）对。
+在本示例中，netwlv64.sys 实现 [**DriverEntry**](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_initialize)，但 ndis.sys 实现 [*AddDevice*](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_add_device)、[*Unload*](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_unload) 以及多个调度函数。 Netwlv64.sys 称为 NDIS 微型端口驱动程序，ndis.sys 称为 NDIS 库。 两个模块共同形成（NDIS 微型端口、NDIS 库）对。
 
 此图表示无线网卡的设备堆栈。 注意，驱动程序对（netwlv64.sys、ndis.sys）仅占用设备堆栈中的一层并且仅与一个设备对象关联：FDO。
 
@@ -214,11 +214,4 @@ Dispatch routines:
 [驱动程序堆栈](driver-stacks.md)
 
  
-
- 
-
-
-
-
-
 

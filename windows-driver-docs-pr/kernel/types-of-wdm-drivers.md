@@ -15,12 +15,12 @@ keywords:
 - WDM 筛选器驱动程序 WDK
 ms.date: 06/16/2017
 ms.localizationpriority: High
-ms.openlocfilehash: 0bb3c681298fad8ccecdc35842e512058c350a70
-ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
+ms.openlocfilehash: fb163074078c0925df90b66edda42df6a69c9ba1
+ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "79437062"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89402848"
 ---
 # <a name="types-of-wdm-drivers"></a>WDM 驱动程序的类型
 
@@ -36,7 +36,7 @@ ms.locfileid: "79437062"
 
 在此上下文中，*总线*是其他物理、逻辑或虚拟设备连接到的任何设备；总线包括传统总线（如 SCSI 和 PCI）以及并行端口、串行端口和 i8042 端口。
 
-驱动程序开发人员必须了解不同类型的 WDM 驱动程序并知道自己正在编写哪种类型的驱动程序，这一点非常重要。 例如，驱动程序是否处理每个[即插即用](implementing-plug-and-play.md) IRP 以及如何处理此类 IRP 取决于所编写的驱动程序的类型（总线驱动程序、函数驱动程序或筛选器驱动程序）。
+驱动程序开发人员必须了解不同类型的 WDM 驱动程序并知道自己正在编写哪种类型的驱动程序，这一点非常重要。 例如，驱动程序是否处理每个[即插即用](introduction-to-plug-and-play.md) IRP 以及如何处理此类 IRP 取决于所编写的驱动程序的类型（总线驱动程序、函数驱动程序或筛选器驱动程序）。
 
 ### <a href="" id="possible-driver-layers"></a>
 

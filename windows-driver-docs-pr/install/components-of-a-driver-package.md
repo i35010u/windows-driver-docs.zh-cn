@@ -14,12 +14,12 @@ keywords:
 - .cat 文件
 ms.date: 05/09/2018
 ms.localizationpriority: High
-ms.openlocfilehash: 30b141e4d06268f6eddaa2037f25945c39f59d69
-ms.sourcegitcommit: a0e6830b125a86ac0a0da308d5bf0091e968b787
+ms.openlocfilehash: 7987d58d9b4a198c9e8061a5a438b7a66f18e187
+ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86557796"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89094903"
 ---
 # <a name="components-of-a-driver-package"></a>驱动程序包的组件
 
@@ -63,7 +63,7 @@ ms.locfileid: "86557796"
 
     驱动程序目录文件包含驱动程序包中每个文件的加密哈希。 Windows 使用这些哈希值来验证程序包在发布后是否未被更改。 若要确保不更改目录文件，应[使用数字签名](digital-signatures.md)。
 
-    有关如何对驱动程序进行签名的信息，请参阅[对驱动程序的公共版本签名](signing-drivers-for-public-release--windows-vista-and-later-.md)，以及[在开发和测试期间对驱动程序签名](signing-drivers-during-development-and-test.md)。
+    有关如何对驱动程序进行签名的信息，请参阅[对驱动程序的公共版本签名](signing-drivers-for-public-release--windows-vista-and-later-.md)，以及[在开发和测试期间对驱动程序签名](./introduction-to-test-signing.md)。
 
 ### <a name="other-files"></a>其他文件
 
@@ -72,5 +72,3 @@ ms.locfileid: "86557796"
 [为设备提供图标](providing-vendor-icons-for-the-shell-and-autoplay.md)
 
 [安装引导启动驱动程序](installing-a-boot-start-driver.md)
-
-

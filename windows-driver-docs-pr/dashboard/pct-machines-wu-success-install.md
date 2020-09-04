@@ -4,12 +4,12 @@ description: 该度量将 28 天滑动窗口中的遥测数据聚合为已报告
 ms.topic: article
 ms.date: 02/28/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 1bfe9a06d3d90ee124cadc9c8cfa252ea8557352
-ms.sourcegitcommit: 774d42aa3392ae88f4890d901dbd3e8945cb2658
+ms.openlocfilehash: 5125a4164c2c635e349240240485d592dba005f2
+ms.sourcegitcommit: 4f08f5686c0bbc27d58930b993cbab1a98e3afb0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2020
-ms.locfileid: "82138638"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89443836"
 ---
 # <a name="percent-of-machines-that-wu-reported-a-successful-installation-within-the-last-28-days"></a>在过去 28 天内 WU 报告成功安装的计算机的百分比
 
@@ -18,8 +18,8 @@ ms.locfileid: "82138638"
 在过去 28 天内 WU 报告成功安装的计算机的百分比 
 
 有关“Windows 更新”错误代码的详细信息，请参阅：
-* [按组件列出的“Windows 更新”错误代码](https://docs.microsoft.com/windows/deployment/update/windows-update-error-reference)
-* [“Windows 更新”常见错误和缓解措施](https://docs.microsoft.com/windows/deployment/update/windows-update-errors)
+* [按组件列出的“Windows 更新”错误代码](/windows/deployment/update/windows-update-error-reference)
+* [“Windows 更新”常见错误和缓解措施](/windows/deployment/update/windows-update-errors)
 
 ## <a name="measure-attributes"></a>度量属性
 

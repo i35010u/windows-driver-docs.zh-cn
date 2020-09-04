@@ -4,12 +4,12 @@ title: 从现有源文件创建驱动程序
 description: WDK 已与 Microsoft Visual Studio 集成，并使用与你用于生成 Visual Studio 解决方案和项目的相同编译器和生成工具。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e57e821e4a223107fa28d193eb68784f8eece76d
-ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
+ms.openlocfilehash: b1b0fa6e880b30238d0bc20bf1d66c2368870013
+ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "67370805"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89066504"
 ---
 # <a name="creating-a-driver-from-existing-source-files"></a>从现有源文件创建驱动程序
 
@@ -20,19 +20,12 @@ WDK 已与 Microsoft Visual Studio 集成，并使用与你用于生成 Visual S
 ## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
-* [WDK 和 Visual Studio 生成环境](https://docs.microsoft.com/windows-hardware/drivers/devtest/wdk-and-visual-studio-build-environment)
-* [ProjectUpgradeTool](https://docs.microsoft.com/windows-hardware/drivers/devtest/projectupgradetool)
+* [WDK 和 Visual Studio 生成环境](../devtest/wdk-and-visual-studio-build-environment.md)
+* [ProjectUpgradeTool](../devtest/projectupgradetool.md)
 * [MSBuild](https://go.microsoft.com/fwlink/p/?linkid=262804)
 * [演练：使用 MSBuild](https://go.microsoft.com/fwlink/p/?linkid=262807)
 * [创建新的设备功能驱动程序](creating-a-new-driver.md)
 * [创建新的筛选器驱动程序](creating-a-new-filter-driver.md)
 * [创建新的软件驱动程序](creating-a-new-software-driver.md)
  
-
- 
-
-
-
-
-
 

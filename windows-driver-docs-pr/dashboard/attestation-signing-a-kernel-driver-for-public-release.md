@@ -5,12 +5,12 @@ ms.assetid: A292B15D-37FD-407E-998C-728D9423E712
 ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d38f6e0548787de1008f10723a1570b75d93c03c
-ms.sourcegitcommit: 17c1bbc5ea0bef3bbc87794b030a073f905dc942
+ms.openlocfilehash: 57cab77a24bab98faa0accd88f31d7e74d9fff4b
+ms.sourcegitcommit: 4f08f5686c0bbc27d58930b993cbab1a98e3afb0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88802807"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89443855"
 ---
 # <a name="attestation-signing-a-kernel-driver-for-public-release"></a>对内核驱动程序进行证明签名以便公开发布
 
@@ -70,7 +70,7 @@ ms.locfileid: "88802807"
 
 你需要下载并安装 Windows 驱动程序工具包 (WDK)，才能访问用于签署驱动程序二进制文件的工具。
 
-按照[下载适用于 Windows 10 的工具包和工具](https://msdn.microsoft.com/windows/hardware/dn913721.aspx)中描述的过程下载并安装 WDK。
+按照[下载适用于 Windows 10 的工具包和工具](/windows-hardware/get-started/adk-install)中描述的过程下载并安装 WDK。
 
 ## <a name="create-a-cab-files-submission"></a>创建 CAB 文件提交
 
@@ -176,7 +176,7 @@ C:\Echo> SignTool sign /ac "C:\MyEVCert.cer" /s MY /n "Company Name" /fd sha256 
 
 ## <a name="submit-the-ev-signed-cab-file-using-the-partner-center"></a>使用合作伙伴中心提交 EV 签名的 Cab 文件
 
-1. 使用合作伙伴中心提交 EV 签名的 CAB 文件。 有关详细信息，请参阅[驱动程序签名属性](https://docs.microsoft.com/windows-hardware/drivers/develop/driver-signing-properties)。
+1. 使用合作伙伴中心提交 EV 签名的 CAB 文件。 有关详细信息，请参阅[驱动程序签名属性](../develop/driver-signing-properties.md)。
 
    - 在完成证明提交的过程中，请勿勾选在下面突出显示的任何测试签名框。  让它们保持取消选中状态。
 

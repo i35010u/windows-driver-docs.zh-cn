@@ -5,12 +5,12 @@ ms.assetid: ce018a26-f5ce-4fbb-8339-b3207ca5ed68
 ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b000e700b8639bb44653fd4abbf6a8c55a07266a
-ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
+ms.openlocfilehash: f6803dc5e2f844b60e0005749d590f3e803860b0
+ms.sourcegitcommit: 4f08f5686c0bbc27d58930b993cbab1a98e3afb0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "67363823"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89443927"
 ---
 # <a name="service-icon-requirements"></a>服务图标要求
 
@@ -58,18 +58,11 @@ ms.locfileid: "67363823"
 
  
 
-服务图标与服务元数据包的 [ServiceInfo XML](https://docs.microsoft.com/windows-hardware/drivers/mobilebroadband/serviceinfo-xml-schema) 架构中的 [ServiceIconFile](https://docs.microsoft.com/windows-hardware/drivers/mobilebroadband/serviceiconfile) 元素相关联。
+服务图标与服务元数据包的 [ServiceInfo XML](../mobilebroadband/serviceinfo-xml-schema.md) 架构中的 [ServiceIconFile](../mobilebroadband/serviceiconfile.md) 元素相关联。
 
 ## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
-- [创建移动宽带体验](https://docs.microsoft.com/windows-hardware/drivers/dashboard/create-a-mobile-broadband-experience)
+- [创建移动宽带体验](./create-a-mobile-broadband-experience.md)
 
  
-
- 
-
-
-
-
-
 

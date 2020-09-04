@@ -4,12 +4,12 @@ description: 硬件 ID 是供应商定义的标识字符串，Windows 使用该�
 ms.assetid: 9eb894d6-4e83-4c08-8165-f30d6636da75
 ms.date: 04/20/2017
 ms.localizationpriority: High
-ms.openlocfilehash: 090018971c02b7de68642c6afe03af296f55e193
-ms.sourcegitcommit: 43797a92ac6d2a37d2284d990d5cc4ca730afa00
+ms.openlocfilehash: 70138aeb0d105bfd15d067dd5b793261b9cf0be0
+ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/30/2020
-ms.locfileid: "82588364"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89095309"
 ---
 # <a name="hardware-id"></a>硬件 ID
 
@@ -59,6 +59,4 @@ ms.locfileid: "82588364"
 
 ## <a name="see-also"></a>另请参阅
 
-[INF HardwareId 指令](https://docs.microsoft.com/windows-hardware/drivers/install/inf-hardwareid-directive)
-
-
+[INF HardwareId 指令](./inf-hardwareid-directive.md)

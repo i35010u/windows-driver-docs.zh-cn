@@ -4,12 +4,12 @@ title: DCH 设计原则和最佳做法
 description: 介绍了 Windows 驱动程序的 DCH 原则。
 ms.date: 04/28/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 6505f9bda33e2bc9a543314e5d62cfdee81468a2
-ms.sourcegitcommit: 4d1ed685d198629f792d287619621a87ca42c26f
+ms.openlocfilehash: 802fe8a7cd8217f66b784004f09ee3088a319912
+ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83435373"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89065192"
 ---
 # <a name="dch-design-principles-and-best-practices"></a>DCH 设计原则和最佳做法
 
@@ -23,7 +23,7 @@ ms.locfileid: "83435373"
 
 - 组件化 **(C)** ：特定于版本的、特定于 OEM 和可选的驱动程序自定义项独立于基础驱动程序包。 因此，可以独立于自定义项为仅提供核心设备功能的基础驱动程序设定目标、进行外部测试和提供服务。
 
-- 硬件支持应用 **(H)** ：任何与 Windows 驱动程序关联的用户界面 (UI) 组件都必须打包为硬件支持应用 (HSA) 或预安装在 OEM 设备上。 HSA 是与驱动程序配对的可选设备特定应用。 此类应用可以是[通用 Windows 平台 (UWP)](https://docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide)，也可以是[桌面桥应用](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-root)。 必须通过 Microsoft Store 分发和更新 HSA。 有关详细信息，请参阅[硬件支持应用 (HSA)：适用于驱动程序开发人员的步骤](https://docs.microsoft.com/windows-hardware/drivers/devapps/hardware-support-app--hsa--steps-for-driver-developers)和[硬件支持应用 (HSA)：适用于应用开发人员的步骤](https://docs.microsoft.com/windows-hardware/drivers/devapps/hardware-support-app--hsa--steps-for-app-developers)。
+- 硬件支持应用 **(H)** ：任何与 Windows 驱动程序关联的用户界面 (UI) 组件都必须打包为硬件支持应用 (HSA) 或预安装在 OEM 设备上。 HSA 是与驱动程序配对的可选设备特定应用。 此类应用可以是[通用 Windows 平台 (UWP)](/windows/uwp/get-started/universal-application-platform-guide)，也可以是[桌面桥应用](/windows/uwp/porting/desktop-to-uwp-root)。 必须通过 Microsoft Store 分发和更新 HSA。 有关详细信息，请参阅[硬件支持应用 (HSA)：适用于驱动程序开发人员的步骤](../devapps/hardware-support-app--hsa--steps-for-driver-developers.md)和[硬件支持应用 (HSA)：适用于应用开发人员的步骤](../devapps/hardware-support-app--hsa--steps-for-app-developers.md)。
 
 首字母缩略词“DCH”指的是上面列出的原则。 请参阅[符合 DCH 的驱动程序包示例](dch-example.md)页，以了解驱动程序示例如何应用 DCH 设计原则。
 
@@ -31,7 +31,7 @@ ms.locfileid: "83435373"
 
 符合 DCH 的驱动程序包中有 INF 文件，以及在[基于通用 Windows 平台 (UWP) 的 Windows 10 版本](target-platforms.md)上安装和运行的二进制文件。 它们还在共用一组公用接口的其他 Windows 10 版本上安装和运行。
 
-符合 DCH 的驱动程序二进制文件可使用 [KMDF](https://docs.microsoft.com/windows-hardware/drivers/wdf/index)、[UMDF 2](https://docs.microsoft.com/windows-hardware/drivers/wdf/getting-started-with-umdf-version-2) 或 Windows 驱动程序模型 (WDM)。
+符合 DCH 的驱动程序二进制文件可使用 [KMDF](../wdf/index.md)、[UMDF 2](../wdf/getting-started-with-umdf-version-2.md) 或 Windows 驱动程序模型 (WDM)。
 
 符合 DCH 的驱动程序由以下部分组成：
 
@@ -66,7 +66,5 @@ OEM 仅验证它为 OEM 系统提供的可选自定义项。
     3. 使用下拉菜单将“目标平台”设置为 `Windows Driver`。
    
 *  如果 INF 执行依赖于目标平台的任何自定义设置操作，请考虑将其分离形成一个扩展 INF。 可以独立于基础驱动程序包更新扩展 INF，以提高稳健性和可用性。 有关详细信息，请参阅[使用扩展 INF 文件](../install/using-an-extension-inf-file.md)。
-*  如果想要提供一个与你的设备兼容的应用程序，请包括 UWP 应用。 有关详细信息，请参阅[硬件支持应用 (HSA)：适用于驱动程序开发人员的步骤](../devapps/hardware-support-app--hsa--steps-for-driver-developers.md)。  OEM 可以使用 [DISM - 部署映像服务和管理](https://docs.microsoft.com/windows-hardware/manufacture/desktop/dism---deployment-image-servicing-and-management-technical-reference-for-windows)预加载此类应用。 或者，用户可以从 Microsoft Store 手动下载此应用。
+*  如果想要提供一个与你的设备兼容的应用程序，请包括 UWP 应用。 有关详细信息，请参阅[硬件支持应用 (HSA)：适用于驱动程序开发人员的步骤](../devapps/hardware-support-app--hsa--steps-for-driver-developers.md)。  OEM 可以使用 [DISM - 部署映像服务和管理](/windows-hardware/manufacture/desktop/dism---deployment-image-servicing-and-management-technical-reference-for-windows)预加载此类应用。 或者，用户可以从 Microsoft Store 手动下载此应用。
 *  在 [**INF DestinationDirs 部分**](../install/inf-destinationdirs-section.md)中，将目标目录设为 [dirid 13](../install/using-dirids.md)，使驱动程序可从[驱动程序存储](driver-isolation.md#run-from-driver-store)运行。 此设置不适用于某些设备。
-
-

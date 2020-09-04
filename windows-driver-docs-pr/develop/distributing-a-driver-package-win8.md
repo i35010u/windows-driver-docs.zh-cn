@@ -4,12 +4,12 @@ title: 分发驱动程序包
 description: 分发驱动程序包
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1afd0b5a442c7f1e31204a7b306123a089301caf
-ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
+ms.openlocfilehash: fccd49655665fca56cb0f00318bea1461c9a8508
+ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "67370755"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89065176"
 ---
 # <a name="distributing-a-driver-package"></a>分发驱动程序包
 
@@ -21,13 +21,13 @@ ms.locfileid: "67370755"
 ## <a name="span-idddk_windows_update_pgspanspan-idddk_windows_update_pgspanwindows-update"></a><span id="ddk_windows_update_pg"></span><span id="DDK_WINDOWS_UPDATE_PG"></span>Windows 更新
 
 
-* 通过 [Windows 硬件认证工具包 (HCK)](https://go.microsoft.com/fwlink/p/?linkid=254893) 测试的[驱动程序包](https://docs.microsoft.com/windows-hardware/drivers/install/driver-packages)可以由 WHQL 进行数字签名。 如果驱动程序包由 WHQL 进行数字签名，则可以通过 Windows 更新计划或其他 Microsoft 支持的分发机制来分发。
+* 通过 [Windows 硬件认证工具包 (HCK)](https://go.microsoft.com/fwlink/p/?linkid=254893) 测试的[驱动程序包](../install/driver-packages.md)可以由 WHQL 进行数字签名。 如果驱动程序包由 WHQL 进行数字签名，则可以通过 Windows 更新计划或其他 Microsoft 支持的分发机制来分发。
 
-获取 WHQL 发布签名是 [Windows 硬件认证工具包 (HCK)](https://go.microsoft.com/fwlink/p/?linkid=254893) 的一部分。 WHQL 发布签名包含经过数字签名的[目录文件](https://docs.microsoft.com/windows-hardware/drivers/install/catalog-files)。 数字签名不会更改你提交用于测试的驱动程序二进制文件或 INF 文件。
+获取 WHQL 发布签名是 [Windows 硬件认证工具包 (HCK)](https://go.microsoft.com/fwlink/p/?linkid=254893) 的一部分。 WHQL 发布签名包含经过数字签名的[目录文件](../install/catalog-files.md)。 数字签名不会更改你提交用于测试的驱动程序二进制文件或 INF 文件。
 
 如果驱动程序包满足以下条件，则可以通过 Windows 更新计划分发驱动程序包：
 
--   通过 WHQL 测试程序，并且收到 [WHQL 发布签名](https://docs.microsoft.com/windows-hardware/drivers/install/whql-release-signature)。
+-   通过 WHQL 测试程序，并且收到 [WHQL 发布签名](../install/whql-release-signature.md)。
 
 -   有资格参加 Windows 认证计划。
 
@@ -44,15 +44,9 @@ WFP 阻止程序替换关键的 Windows 系统文件。 程序不得覆盖这些
 
 WFP 保护的系统文件类型包括随操作系统提供的 .sys、.exe、.ocx 和 .dll 文件。
 
-在 WHQL 测试期间，[**Signability**](https://docs.microsoft.com/windows-hardware/drivers/devtest/inf2cat) 程序会检查驱动程序的 INF 文件以确保它不会尝试替换系统文件。 尝试替换系统文件的驱动程序包无法收到数字签名。 但是，驱动程序包可以包含供应商提供给 Microsoft，以随 Windows 2000 或更高版本的操作系统提供的更新文件版本。
+在 WHQL 测试期间，[**Signability**](../devtest/inf2cat.md) 程序会检查驱动程序的 INF 文件以确保它不会尝试替换系统文件。 尝试替换系统文件的驱动程序包无法收到数字签名。 但是，驱动程序包可以包含供应商提供给 Microsoft，以随 Windows 2000 或更高版本的操作系统提供的更新文件版本。
 
 有关 Windows 文件保护的其他信息，请参阅 Windows SDK 文档。
 
  
-
- 
-
-
-
-
 

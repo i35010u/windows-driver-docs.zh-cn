@@ -11,12 +11,12 @@ keywords:
 - 最下层驱动程序 WDK
 ms.date: 06/16/2017
 ms.localizationpriority: High
-ms.openlocfilehash: d348634821c1b675c388c529fe845e20f8c7575a
-ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
+ms.openlocfilehash: 097cd01205f12ee7abac7c843ebaecbf67485059
+ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "72007654"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89402846"
 ---
 # <a name="types-of-windows-drivers"></a>Windows 驱动程序的类型
 
@@ -28,13 +28,13 @@ Microsoft Windows 驱动程序有两种基本类型：
 
 -   用户模式驱动程序  在用户模式下执行，并且它们通常在 Win32 应用程序和内核模式驱动程序/其他操作系统组件之间提供一个接口。
 
-    例如，在 Windows Vista 中，所有打印机驱动程序都在用户模式下执行。 有关打印机驱动程序组件的详细信息，请参阅[打印简介](https://docs.microsoft.com/windows-hardware/drivers/print/introduction-to-printing)。
+    例如，在 Windows Vista 中，所有打印机驱动程序都在用户模式下执行。 有关打印机驱动程序组件的详细信息，请参阅[打印简介](../print/introduction-to-printing.md)。
 
 -   内核模式驱动程序  作为可执行程序的一部分在内核模式下执行，由管理 I/O、即插即用内存、进程和线程、安全性等的内核模式操作系统组件组成。 内核模式驱动程序通常是分层的。 一般而言，较高层的驱动程序通常会从应用程序接收数据、筛选数据，并将其传递给支持设备功能的较低层的驱动程序。
 
-    某些内核模式驱动程序也是 WDM 驱动程序  ，这符合 [Windows 驱动模型](windows-driver-model.md) (WDM)。 所有 WDM 驱动程序都支持即插即用和电源管理。 WDM 驱动程序在 Windows 98/Me 和 Windows 2000 及更高版本操作系统中的源代码都是兼容的（但二进制不兼容）。
+    某些内核模式驱动程序也是 WDM 驱动程序  ，这符合 [Windows 驱动模型](introduction-to-wdm.md) (WDM)。 所有 WDM 驱动程序都支持即插即用和电源管理。 WDM 驱动程序在 Windows 98/Me 和 Windows 2000 及更高版本操作系统中的源代码都是兼容的（但二进制不兼容）。
 
-    像操作系统本身一样，内核模式驱动程序被实现为离散的模块化组件，这些组件具有一组明确定义的必需功能。 所有内核模式驱动程序都提供一组系统定义的[标准驱动程序例程](https://docs.microsoft.com/windows-hardware/drivers/kernel/introduction-to-standard-driver-routines)。
+    像操作系统本身一样，内核模式驱动程序被实现为离散的模块化组件，这些组件具有一组明确定义的必需功能。 所有内核模式驱动程序都提供一组系统定义的[标准驱动程序例程](./introduction-to-standard-driver-routines.md)。
 
 下图将内核模式驱动程序划分为多个类型。
 
@@ -73,9 +73,4 @@ Microsoft Windows 驱动程序有两种基本类型：
     -   直接控制物理设备的旧版驱动程序  是最下层驱动程序。
 
  
-
- 
-
-
-
 

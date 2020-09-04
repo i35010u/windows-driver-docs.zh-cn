@@ -4,12 +4,12 @@ description: 管理产品的硬件仪表板提交，并让 Microsoft 对产品�
 ms.topic: article
 ms.date: 04/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 9ca915ec2ee7a1f73622d222a7d029be6338c474
-ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
+ms.openlocfilehash: 2630bc1832e467135c548c65ba3383a9f9d990a5
+ms.sourcegitcommit: 4f08f5686c0bbc27d58930b993cbab1a98e3afb0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "77072170"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89443895"
 ---
 # <a name="manage-product-submissions"></a>管理产品提交
 
@@ -49,10 +49,10 @@ https://manage.devcenter.microsoft.com/v2.0/my/hardware/products/
     https://manage.devcenter.microsoft.com/v2.0/my/hardware/products/{productID}/submissions/
     ```
 
-    响应正文包含[提交资源](get-product-data.md#submission-resource)，此资源包括提交 ID、用于上传产品（驱动程序）包以提交到 Azure Blob 存储的共享访问签名 (SAS) URI。 [!NOTE] > SAS URI 提供对 Azure 存储中的安全资源的访问权限（无需帐户密钥）。 有关 SAS URI 及其与 Azure Blob 存储一起使用的背景信息，请参阅[共享访问签名（第 1 部分）：了解 SAS 模型](https://azure.microsoft.com/documentation/articles/storage-dotnet-shared-access-signature-part-1/)和[共享访问签名（第 2 部分）：创建 SAS 并将其与 Blob 存储一起使用](https://azure.microsoft.com/documentation/articles/storage-dotnet-shared-access-signature-part-2/)。
+    响应正文包含[提交资源](get-product-data.md#submission-resource)，此资源包括提交 ID、用于上传产品（驱动程序）包以提交到 Azure Blob 存储的共享访问签名 (SAS) URI。 [!NOTE] > SAS URI 提供对 Azure 存储中的安全资源的访问权限（无需帐户密钥）。 有关 SAS URI 及其与 Azure Blob 存储一起使用的背景信息，请参阅[共享访问签名（第 1 部分）：了解 SAS 模型](/azure/storage/common/storage-sas-overview)和[共享访问签名（第 2 部分）：创建 SAS 并将其与 Blob 存储一起使用](/azure/storage/common/storage-sas-overview)。
 
 5. **上传你的程序包**到 Azure Blob 存储中的某个位置，此位置由上一个步骤中的 SAS URI 指定。
-以下 C# 代码示例演示如何在用于 .NET 的 Azure 存储客户端库中使用 [CloudBlockBlob](https://docs.microsoft.com/dotnet/api/microsoft.windowsazure.storage.blob.cloudblockblob?redirectedfrom=MSDN) 类将程序包上传到 Azure Blob 存储。 此示例假定程序包已写入流对象。
+以下 C# 代码示例演示如何在用于 .NET 的 Azure 存储客户端库中使用 [CloudBlockBlob](/dotnet/api/microsoft.windowsazure.storage.blob.cloudblockblob) 类将程序包上传到 Azure Blob 存储。 此示例假定程序包已写入流对象。
 
     ```json
     string sasUrl = "https://productingestionbin1.blob.core.windows.net/ingestion/26920f66-b592-4439-9a9d-fb0f014902ec?sv=2014-02-14&sr=b&sig=usAN0kNFNnYE2tGQBI%2BARQWejX1Guiz7hdFtRhyK%2Bog%3D&se=2016-06-17T20:45:51Z&sp=rwl";
@@ -76,7 +76,7 @@ https://manage.devcenter.microsoft.com/v2.0/my/hardware/products/
     若要确认提交状态，请查看响应正文中的 *commitStatus* 值。 如果请求成功，此值应该从 commitReceived  更改为 commitCompleted  ；如果请求中存在错误，此值应该更改为 commitFailed  。 如果存在错误，error  字段将包含有关错误的更多详细信息。
 
    >[!NOTE]
-   >“搜索”主页大约每隔 10 分钟刷新一次。 若要在创建时查看所有结果，请单击合作伙伴中心的“驱动程序”页顶部的“驱动程序列表页(全部)”。   如果提交了大量的请求，页面处理和加载需要花费一段时间，不过，在加载后，应会列出成功和失败的提交。 有关详细信息，请参阅[查找硬件提交](https://docs.microsoft.com/windows-hardware/drivers/dashboard/find-hardware-submission)。
+   >“搜索”主页大约每隔 10 分钟刷新一次。 若要在创建时查看所有结果，请单击合作伙伴中心的“驱动程序”页顶部的“驱动程序列表页(全部)”。   如果提交了大量的请求，页面处理和加载需要花费一段时间，不过，在加载后，应会列出成功和失败的提交。 有关详细信息，请参阅[查找硬件提交](./find-hardware-submission.md)。
 
 ## <a name="code-examples"></a>代码示例
 

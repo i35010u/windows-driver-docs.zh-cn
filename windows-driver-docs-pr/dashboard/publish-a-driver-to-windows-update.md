@@ -5,12 +5,12 @@ ms.assetid: E62AADCF-E481-40CA-98F1-BE4629C3EE35
 ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6684c1ca80719a6f2ab7de13b678ea0f32b21bfe
-ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
+ms.openlocfilehash: ff6b33e6322a43285509f8b2af0bbe5fd20021ab
+ms.sourcegitcommit: 4f08f5686c0bbc27d58930b993cbab1a98e3afb0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "67392031"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89443861"
 ---
 # <a name="publish-a-driver-to-windows-update"></a>将驱动程序发布到 Windows 更新
 
@@ -51,7 +51,7 @@ ms.locfileid: "67392031"
    </tr>
    <tr class="even">
    <td><p><strong>指定合作伙伴（如果有），使其获得对此请求的可见性</strong></p></td>
-   <td><p>输入希望其具有驱动程序和发货标签的只读权限的合作伙伴。 希望合作伙伴注意此发货标签请求时（例如当代表他们发布驱动程序时），使用此字段。 有关详细信息，请参阅<a href="https://docs.microsoft.com/previous-versions/mt786462(v=vs.85)" data-raw-source="[Publish a driver on behalf of a partner](https://docs.microsoft.com/previous-versions/mt786462(v=vs.85))">代表合作伙伴发布驱动程序</a>。</p></td>
+   <td><p>输入希望其具有驱动程序和发货标签的只读权限的合作伙伴。 希望合作伙伴注意此发货标签请求时（例如当代表他们发布驱动程序时），使用此字段。 有关详细信息，请参阅<a href="https://docs.microsoft.com/previous-versions/mt786462(v=vs.85)" data-raw-source="[Publish a driver on behalf of a partner](/previous-versions/mt786462(v=vs.85))">代表合作伙伴发布驱动程序</a>。</p></td>
    </tr>
    <tr class="odd">
    <td><p><strong>驱动程序推广</strong></p></td>
@@ -97,15 +97,13 @@ ms.locfileid: "67392031"
 
 9. 如果驱动程序面向处于 S 模式的 Windows 10，则必须将两个框都选中，并确认满足以下条件：
 
-   * 驱动程序兼容且遵循[处于 S 模式的 Windows 10 驱动程序要求](https://docs.microsoft.com/windows-hardware/drivers/install/Windows10SDriverRequirements)中所述的驱动程序策略。
+   * 驱动程序兼容且遵循[处于 S 模式的 Windows 10 驱动程序要求](../install/windows10sdriverrequirements.md)中所述的驱动程序策略。
    * 确保驱动程序遵循“处于 S 模式的 Windows 10 指南”中所述的其他代码完整性策略。
    * 驱动程序不包含驱动程序包中的任何非 Microsoft UI 组件或应用程序。
 
    ![提交 Windows 10 S 驱动程序时必须选中的两个复选框的屏幕截图](images/win-cloud-checkboxes.png)
 
 10. 选择“发布”  将请求发送到 Windows 更新。 如果不希望立即发布发货标签，可选择“保存”  。 以后可通过打开发货标签并选择“发布”  来发布发货标签，或者可从硬件提交页面中选择“发布所有待处理”  。 请注意，选择“发布所有待处理”  将发布所有未发布的发货标签。
-
- 
 
  
 

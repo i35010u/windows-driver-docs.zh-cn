@@ -6,20 +6,20 @@ keywords:
 - 编写 KMDF 驱动程序
 ms.date: 04/20/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 8b6b239e2e4f976bf62efe9536690df5d3889b2b
-ms.sourcegitcommit: 9e5a99dc75dfee3caa9a242adc0ed22ae4df9f29
+ms.openlocfilehash: 9e96a1a4c1054848433c6e0ea035214f2d5520cb
+ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89043153"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89382407"
 ---
 # <a name="write-a-universal-windows-driver-kmdf-based-on-a-template"></a>基于模板编写通用 Windows 驱动程序 (KMDF)
 
-本主题介绍了如何使用内核模式驱动程序框架 (KMDF) 编写[通用 Windows 驱动程序](https://docs.microsoft.com/windows-hardware/drivers)。 首先使用 Microsoft Visual Studio 模板，然后在单独的计算机上部署和安装驱动程序。
+本主题介绍了如何使用内核模式驱动程序框架 (KMDF) 编写[通用 Windows 驱动程序](/windows-hardware/drivers)。 首先使用 Microsoft Visual Studio 模板，然后在单独的计算机上部署和安装驱动程序。
 
-若要开始操作，请确保已安装最新版本的 [Microsoft Visual Studio]https://visualstudio.microsoft.com/vs/) 和 [Windows 驱动程序工具包 (WDK)](https://docs.microsoft.com/windows-hardware/drivers/download-the-wdk)。
+若要开始操作，请确保已安装最新版本的 [Microsoft Visual Studio]https://visualstudio.microsoft.com/vs/) 和 [Windows 驱动程序工具包 (WDK)](../download-the-wdk.md)。
 
-安装 WDK 时，需要包括 [Windows 调试工具](https://docs.microsoft.com/windows-hardware/drivers/debugger/)。
+安装 WDK 时，需要包括 [Windows 调试工具](../debugger/index.md)。
 
 ## <a name="create-and-build-a-driver-package"></a>创建和生成驱动程序包
 
@@ -53,7 +53,7 @@ ms.locfileid: "89043153"
 
 ## <a name="deploy-the-driver"></a>部署驱动程序
 
-通常，在测试和调试驱动程序时，调试程序和驱动程序会在不同的计算机上运行。 运行调试程序的计算机称为“主计算机”，运行驱动程序的计算机称为“目标计算机”。 目标计算机也称为“测试计算机”。 有关调试驱动程序的详细信息，请参阅 [Windows 调试工具](https://docs.microsoft.com/windows-hardware/drivers/debugger/)。
+通常，在测试和调试驱动程序时，调试程序和驱动程序会在不同的计算机上运行。 运行调试程序的计算机称为“主计算机”，运行驱动程序的计算机称为“目标计算机”。 目标计算机也称为“测试计算机”。 有关调试驱动程序的详细信息，请参阅 [Windows 调试工具](../debugger/index.md)。
 
 到目前为止，你已在主计算机上使用 Visual Studio 生成了驱动程序。 现在，需要配置目标计算机。
 
@@ -131,10 +131,10 @@ ms.locfileid: "89043153"
 
 4. 此时，可以试验调试程序，方法是在 **kd&gt;** 提示符处输入命令。 例如，可以尝试使用以下命令：
 
-    * [lm](https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/device-nodes-and-device-stacks)
-    * [.sympath](https://docs.microsoft.com/windows-hardware/drivers/debugger/-sympath--set-symbol-path-)
-    * [.reload](https://docs.microsoft.com/windows-hardware/drivers/debugger/-reload--reload-module-)
-    * [x KmdfHelloWorld!\*](https://docs.microsoft.com/windows-hardware/drivers/debugger/x--examine-symbols-)
+    * [lm](./device-nodes-and-device-stacks.md)
+    * [.sympath](../debugger/-sympath--set-symbol-path-.md)
+    * [.reload](../debugger/-reload--reload-module-.md)
+    * [x KmdfHelloWorld!\*](../debugger/x--examine-symbols-.md)
 
 5. 若要让目标计算机再次运行，请从“调试”菜单中选择“执行”，或者按“g”，然后按“Enter”。
 6. 若要停止调试会话，请从“调试”菜单中选择“分离调试程序”。
@@ -158,9 +158,9 @@ DMF 不会取代 WDF。 DMF 是与 WDF 搭配使用的另一个框架。 利用 
 
 ## <a name="related-topics"></a>相关主题
 
-[开发、测试以及部署驱动程序](https://docs.microsoft.com/windows-hardware/drivers/develop/)
+[开发、测试以及部署驱动程序](../develop/index.md)
 
-[Windows 调试工具](https://docs.microsoft.com/windows-hardware/drivers/debugger/)
+[Windows 调试工具](../debugger/index.md)
 
 [调试通用驱动程序 - 分步实验室（回显内核模式）](../debugger/debug-universal-drivers---step-by-step-lab--echo-kernel-mode-.md)
 

@@ -4,16 +4,16 @@ description: 显卡度量在显卡驱动程序外部测试过程中筛选出良�
 ms.topic: article
 ms.date: 05/20/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 6754d8f26d06aa29793bf6162ef57f3662917749
-ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
+ms.openlocfilehash: 255d2210db2b61e4703883592b684ce3ccdb2237
+ms.sourcegitcommit: 4f08f5686c0bbc27d58930b993cbab1a98e3afb0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "71017063"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89443915"
 ---
 # <a name="graphics-measures"></a>显卡度量
 
-[Windows 显示驱动程序模型](https://docs.microsoft.com/windows-hardware/drivers/display/roadmap-for-developing-drivers-for-the-windows-vista-display-driver-mo)要求硬件供应商提交配对的用户模式显示驱动程序和内核模式显示驱动程序。 用户模式显示驱动程序在受保护的空间中运行，因此，驱动程序二进制文件中的任何崩溃都不会使计算机崩溃。 相比之下，内核模式驱动程序对计算机功能具有更多的访问权限，并且会在出现错误时使计算机崩溃。 这些驱动程序会一起将操作系统和应用程序中的二进制信息转换为用户可读的视觉对象。 由于显卡和声卡组件会经常交互，因此，还可以通过[音频度量](audio-measures.md)对这些驱动程序进行评估。
+[Windows 显示驱动程序模型](../display/roadmap-for-developing-drivers-for-the-windows-vista-display-driver-mo.md)要求硬件供应商提交配对的用户模式显示驱动程序和内核模式显示驱动程序。 用户模式显示驱动程序在受保护的空间中运行，因此，驱动程序二进制文件中的任何崩溃都不会使计算机崩溃。 相比之下，内核模式驱动程序对计算机功能具有更多的访问权限，并且会在出现错误时使计算机崩溃。 这些驱动程序会一起将操作系统和应用程序中的二进制信息转换为用户可读的视觉对象。 由于显卡和声卡组件会经常交互，因此，还可以通过[音频度量](audio-measures.md)对这些驱动程序进行评估。
 
 此外，一些显卡度量会计算应用程序中用户模式崩溃的次数，并且会计算这些应用程序的使用时间。 然后，这些度量会将使用时间规范化到年，供 Microsoft 用于计算用户在使用该应用程序的一年中将遇到的预期崩溃次数。
 

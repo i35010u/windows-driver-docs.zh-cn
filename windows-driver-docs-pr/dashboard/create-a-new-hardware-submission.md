@@ -5,12 +5,12 @@ ms.assetid: 3F433F0A-422C-46E5-B59E-8DB4AC537F01
 ms.date: 04/20/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 84d0d90055be8c79438ff4985119678c66f46235
-ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
+ms.openlocfilehash: 430edee3523834c847501f7bdde74b8b335806ba
+ms.sourcegitcommit: 4f08f5686c0bbc27d58930b993cbab1a98e3afb0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "67353940"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89443815"
 ---
 # <a name="create-a-new-hardware-submission"></a>创建新硬件提交
 
@@ -18,7 +18,7 @@ ms.locfileid: "67353940"
 
 ## <a name="to-create-a-submission-file"></a>创建提交文件
 
-有关创建 **.hlkx** 文件并对其进行数字签名的信息，请参阅 [Windows HLK 入门指南](https://docs.microsoft.com/windows-hardware/test/hlk/getstarted/windows-hlk-getting-started)。
+有关创建 **.hlkx** 文件并对其进行数字签名的信息，请参阅 [Windows HLK 入门指南](/windows-hardware/test/hlk/getstarted/windows-hlk-getting-started)。
 
 有关创建 **.hckx** 文件并对其进行数字签名的信息，请参阅 [Windows HCK 入门指南](https://go.microsoft.com/fwlink/p/?LinkId=248436)。
 
@@ -33,7 +33,7 @@ ms.locfileid: "67353940"
 
 4. 此时，提交门户将确定要提交的产品类型。 然后，在“提交”页上，门户会显示为 Windows Server 认证提交的产品可能需要的任何调查表。 对于提交用于 Windows Server 认证或签名的所有产品，如果提交门户提供调查表，则必须完成调查表。 除非完成调查表，否则提交将不会完成。
 
-5. 如果希望在发布之前测试驱动程序，可以选中标记为“对 Win10 及更高版本执行测试签名”或“对 Win10 以下版本（旧版）的 OS 执行测试签名”的复选框。 测试签名驱动程序类似于为公开版本签名的驱动程序，但不需要 HLK 测试。 它们还没有通过 Windows 更新分发，但可以从硬件提交站点下载。 可以仅在测试计算机上安装它们。 有关对驱动程序包进行测试签名的详细信息，请参阅 [WHQL 测试签名计划](https://docs.microsoft.com/windows-hardware/drivers/install/whql-test-signature-program)以及[如何对驱动程序包进行测试签名](https://docs.microsoft.com/windows-hardware/drivers/install/how-to-test-sign-a-driver-package)。
+5. 如果希望在发布之前测试驱动程序，可以选中标记为“对 Win10 及更高版本执行测试签名”或“对 Win10 以下版本（旧版）的 OS 执行测试签名”的复选框。 测试签名驱动程序类似于为公开版本签名的驱动程序，但不需要 HLK 测试。 它们还没有通过 Windows 更新分发，但可以从硬件提交站点下载。 可以仅在测试计算机上安装它们。 有关对驱动程序包进行测试签名的详细信息，请参阅 [WHQL 测试签名计划](../install/whql-test-signature-program.md)以及[如何对驱动程序包进行测试签名](../install/how-to-test-sign-a-driver-package.md)。
 
 6. 如果希望在发布之前对驱动程序进行外部测试签名，可以选中标记为“仅执行外部测试签名”的复选框。 已外部测试签名的驱动程序使用所有“预览体验”版本使用并信任的 Microsoft 开发人员测试证书进行签名。 零售系统没有此证书。 已外部测试签名的驱动程序只能安装在 *Windows 10 预览体验内部版本*上。 这意味着它不会在 Windows 10 的零售版本上提供或安装。 已外部测试签名的驱动程序在启用“安全启动”的情况下工作。 外部测试签名仅适用于 Windows 10 RS2 及更高版本，不适用于更低版本的 Windows。 _此功能目前正在逐步推出，可能还不是每个人都能看到。如果你还没有看到它，请稍候，你将在几个星期后看到它。_
 
@@ -67,7 +67,7 @@ ms.locfileid: "67353940"
    <tr class="odd">
    <td><p>设备元数据类别</p></td>
    <td><p>基于设备类别从默认图标列表中为你的设备选择图标。 这确定哪个图标显示在“设备和打印机”中。 如果你的设备不应出现，请选择“内部设备”。</p>
-   <p>有关使用 Windows Device Stage 提供丰富体验的信息，请参阅<a href="https://docs.microsoft.com/windows-hardware/drivers/dashboard/" data-raw-source="[Device Metadata](https://docs.microsoft.com/windows-hardware/drivers/dashboard/)">设备元数据</a>。</p></td>
+   <p>有关使用 Windows Device Stage 提供丰富体验的信息，请参阅<a href="https://docs.microsoft.com/windows-hardware/drivers/dashboard/" data-raw-source="[Device Metadata](./index.yml)">设备元数据</a>。</p></td>
    </tr>
    <tr class="even">
    <td><p>设备元数据型号 ID</p></td>

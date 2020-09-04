@@ -7,12 +7,12 @@ keywords:
 - 驱动程序设计
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2a45b6fe28d4d876c030b0bd7b37106bc40a0386
-ms.sourcegitcommit: 7ec16beda3860c058f693651d614001d5572f719
+ms.openlocfilehash: 5f19d9bcf05b16748beca4616c74d8a535fa604c
+ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/27/2020
-ms.locfileid: "82166365"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89383529"
 ---
 # <a name="choosing-a-driver-model"></a>选择驱动程序模型
 
@@ -34,7 +34,7 @@ Microsoft Windows 提供了多种驱动程序模型，你可以使用这些模�
 
 是否可以完全避免编写驱动程序？
 如果必须编写函数驱动程序，则最好使用哪个驱动程序模型？
-若要回答这些问题，请确定设备的何处可以容纳[设备和驱动程序技术](https://docs.microsoft.com/windows-hardware/drivers/device-and-driver-technologies)中介绍的技术列表。 参阅该特定技术的文档，以确定是否需要编写函数驱动程序以及了解哪些驱动程序模型可供设备使用。
+若要回答这些问题，请确定设备的何处可以容纳[设备和驱动程序技术](../device-and-driver-technologies.md)中介绍的技术列表。 参阅该特定技术的文档，以确定是否需要编写函数驱动程序以及了解哪些驱动程序模型可供设备使用。
 
 某些个别技术具有微型驱动程序模型。 在微型驱动程序模型中，设备驱动程序由两个部分组成：一个部分处理常规任务，另一部分处理设备特定的任务。 通常，Microsoft 编写通用部分，设备制造商编写设备特定的部分。 设备特定的部分具有多种名称，其中大部分名称都共享前缀“微型”  。 以下是微型驱动程序模型中使用的一些名称：
 
@@ -50,14 +50,14 @@ Microsoft Windows 提供了多种驱动程序模型，你可以使用这些模�
 
 有关微型驱动程序模型的概述，请参阅[微型驱动程序和驱动程序对](minidrivers-and-driver-pairs.md)。
 
-并非[设备和驱动程序技术](https://docs.microsoft.com/windows-hardware/drivers/device-and-driver-technologies)中列出的每项技术都有专用的微型驱动程序模型。 特定技术的文档可能会建议你使用[内核模式驱动程序框架 (KMDF)](https://docs.microsoft.com/windows-hardware/drivers/wdf/)；其他技术的文档可能会建议你使用[用户模式驱动程序框架 (UMDF)](https://docs.microsoft.com/windows-hardware/drivers/wdf/)。 关键点是你应从研究特定设备技术的文档开始。 如果你的设备技术具有微型驱动程序模型，则必须使用微型驱动程序模型。 否则就遵循技术特定的文档中有关是使用 UMDF、KMDF 还是 Windows 驱动程序模型 (WDM) 的建议。
+并非[设备和驱动程序技术](../device-and-driver-technologies.md)中列出的每项技术都有专用的微型驱动程序模型。 特定技术的文档可能会建议你使用[内核模式驱动程序框架 (KMDF)](../wdf/index.md)；其他技术的文档可能会建议你使用[用户模式驱动程序框架 (UMDF)](../wdf/index.md)。 关键点是你应从研究特定设备技术的文档开始。 如果你的设备技术具有微型驱动程序模型，则必须使用微型驱动程序模型。 否则就遵循技术特定的文档中有关是使用 UMDF、KMDF 还是 Windows 驱动程序模型 (WDM) 的建议。
 
 ## <a name="span-idchoosing_a_driver_model_for_a_device_filter_driverspanspan-idchoosing_a_driver_model_for_a_device_filter_driverspanspan-idchoosing_a_driver_model_for_a_device_filter_driverspanchoosing-a-driver-model-for-a-device-filter-driver"></a><span id="Choosing_a_driver_model_for_a_device_filter_driver"></span><span id="choosing_a_driver_model_for_a_device_filter_driver"></span><span id="CHOOSING_A_DRIVER_MODEL_FOR_A_DEVICE_FILTER_DRIVER"></span>为设备筛选器驱动程序选择驱动程序模型
 
 
 一些驱动程序频繁参与单个 I/O 请求（如从设备读取数据）。 驱动程序在堆栈中进行分层，并且可视化堆栈的常规方法是将第一个驱动程序放在顶部，将最后一个驱动程序放在底部。 堆栈具有一个函数驱动程序并且还可以具有筛选器驱动程序。 有关函数驱动程序和筛选器驱动程序的介绍，请参阅[什么是驱动程序？](what-is-a-driver-.md)和[设备节点和设备堆栈](device-nodes-and-device-stacks.md)。
 
-如果你准备为设备编写筛选器驱动程序，则确定设备的何处可以容纳[设备和驱动程序技术](https://docs.microsoft.com/windows-hardware/drivers/device-and-driver-technologies)中介绍的技术列表。 查看特定设备技术的文档是否有关于选择筛选器驱动程序模型的任何指南。 如果设备技术的文档未提供此指南，则首先考虑使用 UMDF 作为驱动程序模型。 如果筛选器驱动程序需要访问的数据结构无法通过 UMDF 获取，则考虑使用 KMDF 作为驱动程序模型。 在极端少见的情形中，驱动程序需要访问的数据结构无法通过 KMDF 获取，则使用 WDM 作为驱动程序模型。
+如果你准备为设备编写筛选器驱动程序，则确定设备的何处可以容纳[设备和驱动程序技术](../device-and-driver-technologies.md)中介绍的技术列表。 查看特定设备技术的文档是否有关于选择筛选器驱动程序模型的任何指南。 如果设备技术的文档未提供此指南，则首先考虑使用 UMDF 作为驱动程序模型。 如果筛选器驱动程序需要访问的数据结构无法通过 UMDF 获取，则考虑使用 KMDF 作为驱动程序模型。 在极端少见的情形中，驱动程序需要访问的数据结构无法通过 KMDF 获取，则使用 WDM 作为驱动程序模型。
 
 ## <a name="span-idchoosing_a_driver_model_for_a_software_driverspanspan-idchoosing_a_driver_model_for_a_software_driverspanspan-idchoosing_a_driver_model_for_a_software_driverspanchoosing-a-driver-model-for-a-software-driver"></a><span id="Choosing_a_driver_model_for_a_software_driver"></span><span id="choosing_a_driver_model_for_a_software_driver"></span><span id="CHOOSING_A_DRIVER_MODEL_FOR_A_SOFTWARE_DRIVER"></span>为软件驱动程序选择驱动程序模型
 
@@ -73,32 +73,25 @@ Microsoft Windows 提供了多种驱动程序模型，你可以使用这些模�
 ## <a name="span-idchoosing_a_driver_model_for_a_file_system_driverspanspan-idchoosing_a_driver_model_for_a_file_system_driverspanspan-idchoosing_a_driver_model_for_a_file_system_driverspanchoosing-a-driver-model-for-a-file-system-driver"></a><span id="Choosing_a_driver_model_for_a_file_system_driver"></span><span id="choosing_a_driver_model_for_a_file_system_driver"></span><span id="CHOOSING_A_DRIVER_MODEL_FOR_A_FILE_SYSTEM_DRIVER"></span>为文件系统驱动程序选择驱动程序模型
 
 
-有关为文件系统筛选器驱动程序选择模型的帮助，请参阅[文件系统驱动程序示例](https://docs.microsoft.com/windows-hardware/drivers/samples/file-system-driver-samples)。 请注意，文件系统驱动程序非常复杂，需要具备高级驱动程序开发概念的知识。
+有关为文件系统筛选器驱动程序选择模型的帮助，请参阅[文件系统驱动程序示例](../samples/file-system-driver-samples.md)。 请注意，文件系统驱动程序非常复杂，需要具备高级驱动程序开发概念的知识。
 
 
 ## <a name="span-idchoosing_a_driver_model_for_a_file_system_filter_driverspanspan-idchoosing_a_driver_model_for_a_file_system_filter_driverspanspan-idchoosing_a_driver_model_for_a_file_system_filter_driverspanchoosing-a-driver-model-for-a-file-system-filter-driver"></a><span id="Choosing_a_driver_model_for_a_file_system_filter_driver"></span><span id="choosing_a_driver_model_for_a_file_system_filter_driver"></span><span id="CHOOSING_A_DRIVER_MODEL_FOR_A_FILE_SYSTEM_FILTER_DRIVER"></span>为文件系统筛选器驱动程序选择驱动程序模型
 
 
-有关为文件系统筛选器驱动程序选择模型的帮助，请参阅“文件系统微过滤驱动程序”和[文件系统筛选器驱动程序](https://docs.microsoft.com/windows-hardware/drivers/ifs/#file-system-filter-drivers)。
+有关为文件系统筛选器驱动程序选择模型的帮助，请参阅“文件系统微过滤驱动程序”和[文件系统筛选器驱动程序](../ifs/index.md#file-system-filter-drivers)。
 
 ## <a name="span-idchoosing_a_driver_model_for_a_file_system_minifilter_driverspanspan-idchoosing_a_driver_model_for_a_file_system_minifilter_driverspanspan-idchoosing_a_driver_model_for_a_file_system_minifilter_driverspanchoosing-a-driver-model-for-a-file-system-minifilter-driver"></a><span id="Choosing_a_driver_model_for_a_file_system_minifilter_driver"></span><span id="choosing_a_driver_model_for_a_file_system_minifilter_driver"></span><span id="CHOOSING_A_DRIVER_MODEL_FOR_A_FILE_SYSTEM_MINIFILTER_DRIVER"></span>为文件系统微过滤驱动程序选择驱动程序模型
 
 
-有关为文件系统微过滤驱动程序选择模型的帮助，请参阅[文件系统微过滤驱动程序](https://docs.microsoft.com/windows-hardware/drivers/ifs/filter-manager-concepts)。
+有关为文件系统微过滤驱动程序选择模型的帮助，请参阅[文件系统微过滤驱动程序](../ifs/filter-manager-concepts.md)。
 
 ## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
-[内核模式驱动程序框架](https://docs.microsoft.com/windows-hardware/drivers/wdf/)
+[内核模式驱动程序框架](../wdf/index.md)
 
-[用户模式驱动程序框架](https://docs.microsoft.com/windows-hardware/drivers/wdf/)
-
- 
+[用户模式驱动程序框架](../wdf/index.md)
 
  
-
-
-
-
-
 

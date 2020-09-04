@@ -4,26 +4,26 @@ description: LSA 插件和 UEFI 固件签名
 ms.localizationpriority: medium
 ms.topic: article
 ms.date: 10/17/2018
-ms.openlocfilehash: cafdaa3a12a23d36c1174c64f1367c70eb80fecf
-ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
+ms.openlocfilehash: 491efc68326562116ac547dadc706e3a5513b23a
+ms.sourcegitcommit: 4f08f5686c0bbc27d58930b993cbab1a98e3afb0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "67393063"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89443903"
 ---
 # <a name="file-signing-lsa-plugins-and-uefi-firmware"></a>文件签名 LSA 插件和 UEFI 固件
 
-使用合作伙伴中心，可以对[本地安全机构 (LSA)](https://docs.microsoft.com/windows-server/security/credentials-protection-and-management/configuring-additional-lsa-protection) 插件和 [UEFI 固件](https://docs.microsoft.com/windows-hardware/design/device-experiences/oem-uefi)二进制文件进行数字签名，使它们能够安装在 windows 设备上。
+使用合作伙伴中心，可以对[本地安全机构 (LSA)](/windows-server/security/credentials-protection-and-management/configuring-additional-lsa-protection) 插件和 [UEFI 固件](/windows-hardware/design/device-experiences/oem-uefi)二进制文件进行数字签名，使它们能够安装在 windows 设备上。
 
 > [!IMPORTANT]
 > 使用本主题所述的文件签名技术进行 **UEFI** 和 **LSA** 签名。
-> 有关**驱动程序**签名的信息，请参阅[硬件提交](https://docs.microsoft.com/windows-hardware/drivers/dashboard/hardware-certification-submissions)。
+> 有关**驱动程序**签名的信息，请参阅[硬件提交](./hardware-certification-submissions.md)。
 >
 > * 文件签名需要[扩展验证 (EV) 代码签名证书](get-a-code-signing-certificate.md)。
 > * 所有 LSA 和 UEFI 提交均必须是已签名的单个 CAB 二进制文件，并包含签名所需的所有文件。
 >   * 此文件不应包含任何文件夹，而只应包含要签名的二进制文件或 .efi 文件。
-> * **仅 UEFI 固件** - CAB 文件签名必须与组织的[验证码证书](https://docs.microsoft.com/windows-hardware/drivers/install/authenticode)匹配。
->   * 视证书提供者而定，可能需要使用 [SignTool](https://docs.microsoft.com/windows/desktop/SecCrypto/signtool) 或外部进程。
+> * **仅 UEFI 固件** - CAB 文件签名必须与组织的[验证码证书](../install/authenticode.md)匹配。
+>   * 视证书提供者而定，可能需要使用 [SignTool](/windows/desktop/SecCrypto/signtool) 或外部进程。
 >   * EFI ByteCode (EBC) 文件必须使用 /ALIGN:32 标志进行编译才能成功处理。
 > * **仅 UEFI 固件** - 如果提交的是垫片，则必须向垫片审查委员会提交完整的模板以供审查。 垫片审查过程请参见 [https://github.com/rhboot/shim-review/](https://github.com/rhboot/shim-review/)。
 > **仅 LSA 插件** - CAB 文件签名必须与组织的 EV 代码签名证书匹配。

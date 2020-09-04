@@ -4,12 +4,12 @@ description: 该度量将 28 天滑动窗口中的遥测数据聚合为达到最
 ms.topic: article
 ms.date: 10/31/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: d4f59740ce37d92e4e1032ae4db4cec32fa6f332
-ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
+ms.openlocfilehash: 1b0cc45225b0395ad2f4d68608f9ccb62725bd97
+ms.sourcegitcommit: 4f08f5686c0bbc27d58930b993cbab1a98e3afb0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "79083139"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89443835"
 ---
 # <a name="percent-of-machines-exceeded-firmware-max-retry-limit-from-esrt"></a>超出了 ESRT 的固件最大重试限制的计算机百分比
 
@@ -21,7 +21,7 @@ ms.locfileid: "79083139"
 
 许多未达到对此度量的要求的固件未遵守以下协定：当报告的 ESRT 版本与安装之前计算机上的以前版本相同时，ESRT LastAttemptStatus 字段不报告故障代码。 
 
-[本文档的第 3 部分](https://docs.microsoft.com/windows-hardware/manufacture/desktop/validating-windows-uefi-firmware-update-platform-functionality)提供基本验证方案，以确保固件实现满足此要求。  
+[本文档的第 3 部分](/windows-hardware/manufacture/desktop/validating-windows-uefi-firmware-update-platform-functionality)提供基本验证方案，以确保固件实现满足此要求。  
 
 ## <a name="measure-attributes"></a>度量属性
 
@@ -39,4 +39,3 @@ ms.locfileid: "79083139"
 安装了固件但达到最大重试限制的计算机数/
 
 收到了固件设备的驱动程序安装事件的计算机数
-

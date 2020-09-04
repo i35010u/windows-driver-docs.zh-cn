@@ -8,12 +8,12 @@ keywords:
 - 安装设备 WDK , 关于设备安装
 ms.date: 10/16/2019
 ms.localizationpriority: High
-ms.openlocfilehash: 284ba5a6913b022a6e7988354388e9e9e76c9abc
-ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
+ms.openlocfilehash: 8031cfa6b33207bc7fefa8dd85cdf6845cc7c0e2
+ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "72512076"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89097321"
 ---
 # <a name="overview-of-device-and-driver-installation"></a>设备和驱动程序安装概述
 
@@ -21,7 +21,7 @@ ms.locfileid: "72512076"
 
 具体而言，Windows 会枚举系统中存在的设备，并为每个设备加载并调用驱动程序。
 
-诸如 ACPI 驱动程序和其他 PnP [总线驱动程序](https://docs.microsoft.com/windows-hardware/drivers/kernel/bus-drivers)之类的驱动程序将帮助 Windows 确定哪些设备存在。
+诸如 ACPI 驱动程序和其他 PnP [总线驱动程序](../kernel/bus-drivers.md)之类的驱动程序将帮助 Windows 确定哪些设备存在。
 
 ## <a name="in-this-section"></a>本部分内容
 
@@ -30,4 +30,3 @@ ms.locfileid: "72512076"
 -   [步骤 2：选择设备的驱动程序](step-2--a-driver-for-the-device-is-selected.md)
 -   [步骤 3：安装设备的驱动程序](step-3--the-driver-for-the-device-is-installed.md)
 -   [驱动程序选择过程概述](overview-of-the-driver-selection-process.md)
-

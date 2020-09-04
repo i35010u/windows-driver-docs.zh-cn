@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: high
-ms.openlocfilehash: 1ee9898b747fe08032107845c2167414eabca5e6
-ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
+ms.openlocfilehash: 6c0d1455c5b905a6095de9f5b7133b5ca57c0dfc
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84534638"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89209365"
 ---
 # <a name="bug-check-0x3b-system_service_exception"></a>Bug 检查 0x3B：SYSTEM\_SERVICE\_EXCEPTION
 
@@ -67,7 +67,7 @@ The SYSTEM\_SERVICE\_EXCEPTION Bug 检查具有 0x0000003B 值。 这表示在�
 
 此停止代码指示执行代码存在异常，其下方的线程是系统线程。
 
-[NTSTATUS 值](https://docs.microsoft.com/openspecs/windows_protocols/ms-erref/596a1078-e883-4972-9bbc-49e60bebca55)中介绍了在参数 1 中返回的异常信息。 异常代码在 ntstatus.h（[Windows 驱动程序工具包](https://docs.microsoft.com/windows-hardware/drivers/)提供的标头文件）中定义  。 （有关详细信息，请参阅 [Windows 驱动程序工具包中的标头文件](../gettingstarted/header-files-in-the-windows-driver-kit.md)）。 
+[NTSTATUS 值](/openspecs/windows_protocols/ms-erref/596a1078-e883-4972-9bbc-49e60bebca55)中介绍了在参数 1 中返回的异常信息。 异常代码在 ntstatus.h（[Windows 驱动程序工具包](../index.yml)提供的标头文件）中定义  。 （有关详细信息，请参阅 [Windows 驱动程序工具包中的标头文件](../gettingstarted/header-files-in-the-windows-driver-kit.md)）。 
 
 常见的异常代码包括：
 
@@ -127,7 +127,7 @@ Error code: (NTSTATUS) 0xc0000005 (3221225477) - The instruction at 0x%p referen
 
 驱动程序验证程序是一个实时运行的工具，用于检查驱动程序的行为。 例如，驱动程序验证程序检查内存资源（如内存池）的使用。 如果在执行驱动程序代码时标识错误，它会主动创建一个异常，以允许进一步检查该部分驱动程序代码。 驱动程序验证程序管理器内置于 Windows 中，可在所有 Windows 电脑上使用。 
 
-若要启动驱动程序验证程序管理器，请在命令提示下输入“验证程序”  。 你可以配置要验证的驱动程序。 验证驱动程序的代码在运行时会增加开销，因此请尝试验证尽可能少的驱动程序。 有关详细信息，请参阅[驱动程序验证程序](https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier)。
+若要启动驱动程序验证程序管理器，请在命令提示下输入“验证程序”  。 你可以配置要验证的驱动程序。 验证驱动程序的代码在运行时会增加开销，因此请尝试验证尽可能少的驱动程序。 有关详细信息，请参阅[驱动程序验证程序](../devtest/driver-verifier.md)。
 
 
 <a name="remarks"></a>备注

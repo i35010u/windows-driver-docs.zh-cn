@@ -4,12 +4,12 @@ description: 介绍如何设置基于命令行的环境，以便组织使用 WDK
 author: Dansimp
 ms.date: 08/25/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3ff60bb0abbb7107fe94bff95aa5923f8e3f8bba
-ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
+ms.openlocfilehash: 5e9e33f060005766705cd185da0c6f91784f5063
+ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "67364183"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89063560"
 ---
 # <a name="using-the-enterprise-wdk-10"></a>使用企业版 WDK 10
 
@@ -24,7 +24,7 @@ ms.locfileid: "67364183"
 > [!NOTE] 
 > 从 Windows 10 1709 版本开始，企业版 WDK 基于 ISO。  若要开始使用，请下载并装载 ISO，然后运行 `LaunchBuildEnv`。
 
-1.  从以下位置下载 EWDK：[WDK 和 EWDK 下载](https://docs.microsoft.com/windows-hardware/drivers/download-the-wdk)
+1.  从以下位置下载 EWDK：[WDK 和 EWDK 下载](../download-the-wdk.md)
 2.  将 .zip 文件展开到一个适当命名的目录中，例如 d:\ewdk。
 3.  在管理员命令提示符下，导航到上一步中的展开文件夹，然后运行 **LaunchBuildEnvcmd** 以创建生成环境。 例如：**D:\EWDK\LaunchBuildEnv**
 
@@ -46,4 +46,4 @@ ms.locfileid: "67364183"
 
 ## <a name="see-also"></a>另请参阅
 
-[MSBuild 参考](https://docs.microsoft.com/visualstudio/msbuild/msbuild-reference?view=vs-2015)
+[MSBuild 参考](/visualstudio/msbuild/msbuild-reference?view=vs-2015)

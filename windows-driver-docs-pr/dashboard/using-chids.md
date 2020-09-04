@@ -5,16 +5,16 @@ ms.assetid: 45DCAED5-8D20-4A31-B316-0460AB030DAD
 ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d3bb465ae25376fd1b8ff0ffe88c7607d3543f05
-ms.sourcegitcommit: f63852446e614c985a65f599cdfe788bdb0c6089
+ms.openlocfilehash: 0b4c1fdb24c697e28077458e4a6029be21852d8f
+ms.sourcegitcommit: 4f08f5686c0bbc27d58930b993cbab1a98e3afb0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2020
-ms.locfileid: "87425722"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89443833"
 ---
 # <a name="using-computer-hardware-ids-chids"></a>使用计算机硬件 ID (CHID)
 
-计算机硬件 ID (CHID) 在[为计算机指定硬件 ID](https://docs.microsoft.com/windows-hardware/drivers/install/specifying-hardware-ids-for-a-computer) 中定义。
+计算机硬件 ID (CHID) 在[为计算机指定硬件 ID](../install/specifying-hardware-ids-for-a-computer.md) 中定义。
 
 Windows 10 添加多个合并基板制造商和基板产品信息的新 CHID。 这些新 CHID 包含在 CHID 层次结构中，如下表所示。 此表以特异性的降序顺序显示该层次结构。 Windows 10 中新添加的 CHID 以粗体突出显示。
 
@@ -36,7 +36,7 @@ Windows 10 添加多个合并基板制造商和基板产品信息的新 CHID。
 |HardwareID-13|**制造商 + Baseboard_Manufacturer + Baseboard_Product**|
 |HardwareID-14|制造商|
 
-OEM 必须向驱动程序发布者提供正确的 CHID 信息。 包含在 Windows 桌面工具 SDK 中的 [ComputerHardwareIds](https://docs.microsoft.com/windows-hardware/drivers/devtest/computerhardwareids) 工具有助于从一组已知的系统管理 BIOS (SMBIOS) 值中报告 CHID。 ComputerHardwareIds 执行两个不同的任务。
+OEM 必须向驱动程序发布者提供正确的 CHID 信息。 包含在 Windows 桌面工具 SDK 中的 [ComputerHardwareIds](../devtest/computerhardwareids.md) 工具有助于从一组已知的系统管理 BIOS (SMBIOS) 值中报告 CHID。 ComputerHardwareIds 执行两个不同的任务。
 
 1. 默认行为：该工具报告系统的 SMBIOS 值和生成的 CHID。
 
@@ -52,7 +52,7 @@ CHID 基于区分大小写的 SMBIOS 值生成。 必须小心地确保系统不
 
 ComputerHardwareIds 工具仅计算提供必要的 SMBIOS 值的 CHID。 如果缺少 SMBIOS 数据字段（或为空），不会生成任何相关的 CHID。 例如，如果 SMBIOS SKU 字段为空，CHID 0、3、4、6 和 7 将不可用于该特定系统。
 
-有关 CHID 的详细信息，请参阅[指定计算机的硬件 ID](https://docs.microsoft.com/windows-hardware/drivers/install/specifying-hardware-ids-for-a-computer)。
+有关 CHID 的详细信息，请参阅[指定计算机的硬件 ID](../install/specifying-hardware-ids-for-a-computer.md)。
 
 ## <a name="how-the-windows-update-service-uses-chid"></a>Windows 更新服务如何使用 CHID
 

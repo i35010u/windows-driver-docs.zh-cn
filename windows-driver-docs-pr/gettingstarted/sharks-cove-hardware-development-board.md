@@ -4,17 +4,17 @@ description: Sharks Cove 是硬件开发板，可用于开发 Windows 硬件和�
 ms.assetid: D86546BB-B613-4CEE-9A76-3FD269137EE9
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 459802c7686ac0fd9cfdd06f107c89724c6af86d
-ms.sourcegitcommit: 1d531bf9d02653fdf9ad728126d68b8acb86182e
+ms.openlocfilehash: b3b16b23869b1911d73db6416c93aad474d34c97
+ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87402268"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89384603"
 ---
 # <a name="sharks-cove-hardware-development-board"></a>Sharks Cove 硬件开发板
 
 > [!WARNING]
-> Windows IoT Core 不再支持 Sharks Cove 硬件开发板。  如需目前支持的开发板的列表，请参阅 [SoCs and custom boards](https://docs.microsoft.com/windows/iot-core/learn-about-hardware/socsandcustomboards)（SoC 和自定义板）。
+> Windows IoT Core 不再支持 Sharks Cove 硬件开发板。  如需目前支持的开发板的列表，请参阅 [SoCs and custom boards](/windows/iot-core/learn-about-hardware/socsandcustomboards)（SoC 和自定义板）。
 
 Sharks Cove 是[硬件开发板](https://go.microsoft.com/fwlink/p?linkid=506967)，可用于开发 Windows 硬件和驱动程序。
 
@@ -199,7 +199,7 @@ Set-ExecutionPolicy -ExecutionPolicy Unrestricted
 下面是更改 SSDT 的示例。 我们将为 [ADXL345](https://go.microsoft.com/fwlink/p?linkid=401463) 加速计添加一个表条目。
 
 >[!NOTE]
->有关 [SpbAccelerometer 示例驱动程序](https://go.microsoft.com/fwlink/p?linkid=506965)和 ADXL345 加速计的分步指南，请参阅 [SpbAccelerometer 驱动程序指南](https://docs.microsoft.com/windows-hardware/drivers/sensors/spbaccelerometer-driver-cookbook)。
+>有关 [SpbAccelerometer 示例驱动程序](https://go.microsoft.com/fwlink/p?linkid=506965)和 ADXL345 加速计的分步指南，请参阅 [SpbAccelerometer 驱动程序指南](../sensors/spbaccelerometer-driver-cookbook.md)。
 
 1. 将 x86 版本的 ASL.exe 复制到 Sharks Cove 板。 ASL.exe 包括在 WDK 中。
 
@@ -418,8 +418,8 @@ GpioInt(... "\\_SB.GPO2") {0x17}
 
 无论使用的是 Visual Studio 还是 WinDbg，以下实例指南都有助于学习调试程序命令：
 
-- [Getting Started with WinDbg (User-Mode)](https://docs.microsoft.com/windows-hardware/drivers/debugger/getting-started-with-windbg)（WinDbg 入门（用户模式））
-- [Getting Started with WinDbg (Kernel-Mode)](https://docs.microsoft.com/windows-hardware/drivers/debugger/getting-started-with-windbg--kernel-mode-)（WinDbg 入门（内核模式））
+- [Getting Started with WinDbg (User-Mode)](../debugger/getting-started-with-windbg.md)（WinDbg 入门（用户模式））
+- [Getting Started with WinDbg (Kernel-Mode)](../debugger/getting-started-with-windbg--kernel-mode-.md)（WinDbg 入门（内核模式））
 
 ## <a name="sample-driver-code"></a>示例驱动程序代码
 

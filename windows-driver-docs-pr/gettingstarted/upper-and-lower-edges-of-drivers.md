@@ -4,12 +4,12 @@ description: 参与 I/O 请求的驱动程序序列称为“请求的驱动程�
 ms.assetid: EA1C36F4-B9BD-4A9E-A6D4-6B4EC5455030
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f050749d4d784809238816968c1f79dc0fd76247
-ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
+ms.openlocfilehash: 49f8604a86b6dcbb3126a416c705af80209649d2
+ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "67385173"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89381493"
 ---
 # <a name="upper-and-lower-edges-of-drivers"></a>驱动程序的上沿和下沿
 
@@ -46,7 +46,7 @@ I/O 请求首先由驱动程序堆栈中的顶层驱动程序处理，然后由�
 
 ### <a name="span-idndis_examplespanspan-idndis_examplespanspan-idndis_examplespanndis-example"></a><span id="NDIS_example"></span><span id="ndis_example"></span><span id="NDIS_EXAMPLE"></span>NDIS 示例
 
-有时，驱动程序直接调用低层驱动程序的上沿。 例如，假设 [TCP/IP 协议驱动程序](https://docs.microsoft.com/windows-hardware/drivers/network/introduction-to-ndis-protocol-drivers)在驱动程序堆栈中位于 [NDIS](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-drivers) 微型端口驱动程序的上面。 该微型端口驱动程序将实现一组 *MiniportXxx* 函数，它们形成微型端口驱动程序的上沿。 我们称之为 TCP/IP 协议驱动程序绑定  到 NDIS 微型端口驱动程序的上沿。 但 TCP/IP 驱动程序不直接调用 MiniportXxx  函数。 而是调用 NDIS 库中的函数，然后这些函数再调用 MiniportXxx  函数。
+有时，驱动程序直接调用低层驱动程序的上沿。 例如，假设 [TCP/IP 协议驱动程序](../network/introduction-to-ndis-protocol-drivers.md)在驱动程序堆栈中位于 [NDIS](../network/ndis-drivers.md) 微型端口驱动程序的上面。 该微型端口驱动程序将实现一组 *MiniportXxx* 函数，它们形成微型端口驱动程序的上沿。 我们称之为 TCP/IP 协议驱动程序绑定  到 NDIS 微型端口驱动程序的上沿。 但 TCP/IP 驱动程序不直接调用 MiniportXxx  函数。 而是调用 NDIS 库中的函数，然后这些函数再调用 MiniportXxx  函数。
 
 ![TCP/IP 和 NDIS 微型端口堆栈图](images/upperloweredge03.png)
 
@@ -72,16 +72,9 @@ I/O 请求首先由驱动程序堆栈中的顶层驱动程序处理，然后由�
 
 [驱动程序堆栈](driver-stacks.md)
 
-[音频设备](https://docs.microsoft.com/windows-hardware/drivers/audio/portal-audio-ref)
+[音频设备](../audio/portal-audio-ref.md)
 
-[从 Windows Vista 开始的网络驱动程序](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff570021(v=vs.85))
-
- 
+[从 Windows Vista 开始的网络驱动程序](/previous-versions/windows/hardware/drivers/ff570021(v=vs.85))
 
  
-
-
-
-
-
 

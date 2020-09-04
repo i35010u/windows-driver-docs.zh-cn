@@ -13,17 +13,17 @@ keywords:
 - 文件 WDK 头文件
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b2613202fb101bcd13bd6cbc2d76c1ab39b7766f
-ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
+ms.openlocfilehash: 3d2dc53745bdff758aadf634d318434fb93593cd
+ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "72825155"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89383525"
 ---
 # <a name="header-files-in-the-windows-driver-kit"></a>Windows 驱动程序工具包中的头文件
 
 
-[Windows 驱动程序工具包 (WDK)](https://docs.microsoft.com/windows-hardware/drivers/) 包含构建内核模式和用户模式驱动程序所需的所有头文件（.h 文件）。 头文件位于 WDK 安装文件夹的 Include 文件夹中。 例如：C:\\Program Files (x86)\\Windows Kits\\10\\Include。
+[Windows 驱动程序工具包 (WDK)](../index.yml) 包含构建内核模式和用户模式驱动程序所需的所有头文件（.h 文件）。 头文件位于 WDK 安装文件夹的 Include 文件夹中。 例如：C:\\Program Files (x86)\\Windows Kits\\10\\Include。
 
 头文件包含版本信息，因此不论驱动程序在哪个版本的 Windows 上运行，你都可以使用一组相同的头文件。
 
@@ -99,7 +99,7 @@ KeSetTargetProcessorDpcEx (
 #endif
 ```
 
-在该示例中，你可以看到仅在 Windows 7 和更高版本的 Windows 中才提供 [**KeSetTargetProcessorDpcEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kesettargetprocessordpcex) 函数。
+在该示例中，你可以看到仅在 Windows 7 和更高版本的 Windows 中才提供 [**KeSetTargetProcessorDpcEx**](/windows-hardware/drivers/ddi/wdm/nf-wdm-kesettargetprocessordpcex) 函数。
 
 此条件声明出现在 Winspool.h 中，该文件为可能由用户模式驱动程序包含的头文件。
 
@@ -115,7 +115,7 @@ GetPrintExecutionData(
 #endif // (NTDDI_VERSION >= NTDDI_WIN7)
 ```
 
-在该示例中，你可以看到仅在 Windows 7 和更高版本的 Windows 中才提供 [**GetPrintExecutionData**](https://docs.microsoft.com/windows/desktop/printdocs/getprintexecutiondata) 函数。
+在该示例中，你可以看到仅在 Windows 7 和更高版本的 Windows 中才提供 [**GetPrintExecutionData**](/windows/desktop/printdocs/getprintexecutiondata) 函数。
 
 ## <a name="span-idheader_files_for_the_kernel_mode_driver_frameworkspanspan-idheader_files_for_the_kernel_mode_driver_frameworkspanspan-idheader_files_for_the_kernel_mode_driver_frameworkspanheader-files-for-the-kernel-mode-driver-framework"></a><span id="Header_files_for_the_Kernel_Mode_Driver_Framework"></span><span id="header_files_for_the_kernel_mode_driver_framework"></span><span id="HEADER_FILES_FOR_THE_KERNEL_MODE_DRIVER_FRAMEWORK"></span>用于内核模式驱动程序框架的头文件
 
@@ -123,10 +123,4 @@ GetPrintExecutionData(
 WDK 支持多种版本的 Windows，并且它还支持多种版本的内核模式驱动程序框架 (KMDF) 和用户模式驱动程序框架 (UMDF)。 WDK 头文件中的版本信息与 Windows 版本有关，但与 KMDF 或 UMDF 版本无关。 用于不同版本的 KMDF 和 UMDF 的头文件放置在不同的目录中。
 
  
-
- 
-
-
-
-
 

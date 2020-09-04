@@ -5,12 +5,12 @@ ms.assetid: b96b02b8-8804-403e-9513-7a5d1b730fcd
 ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b823d7c0ebaedd81a8d0015c62ce3853ac1e2150
-ms.sourcegitcommit: 17c1bbc5ea0bef3bbc87794b030a073f905dc942
+ms.openlocfilehash: 0da1c696f308d56d896fc1f9171b89c414cd2219
+ms.sourcegitcommit: bd72676caf2bf5c9738c4081c778316919b85d30
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88802406"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89450112"
 ---
 # <a name="submit-a-pc-device-manifest-package"></a>提交电脑设备清单包
 
@@ -539,4 +539,4 @@ SKUNumber 元素指定的值必须与目标电脑 SMBIOS 表中“SKU 号”字�
 
 ## <a name="creating-localeinfoxml"></a>创建 LocaleInfo.xml
 
-有关创建用于提交的 Localeinfo.xml 文件的信息，请参阅[创建 LocaleInfo.xml 提交文件](https://docs.microsoft.com/windows-hardware/drivers/dashboard/)。
+有关创建用于提交的 Localeinfo.xml 文件的信息，请参阅[创建 LocaleInfo.xml 提交文件](create-the-localeinfoxml-submission-file.md)。

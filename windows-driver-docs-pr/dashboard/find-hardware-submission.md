@@ -4,12 +4,12 @@ description: 了解如何通过搜索文本或选择关键字搜索中的驱动�
 ms.topic: article
 ms.date: 09/24/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 19f8a7f74a143e93f1cf49d2e1007f0c6be65e7c
-ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
+ms.openlocfilehash: de172b86e5c124223e3167fc32a7db9b01558fb7
+ms.sourcegitcommit: 4f08f5686c0bbc27d58930b993cbab1a98e3afb0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "81679115"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89443884"
 ---
 # <a name="find-a-hardware-submission"></a>查找硬件提交
 
@@ -75,7 +75,7 @@ ms.locfileid: "81679115"
 |IsDeclarativeDriver |布尔|False、True|
 |INFName |文本|
 |HardwareID |文本|
-|OperatingSystemCode |文本|[OS 代码列表](https://docs.microsoft.com/windows-hardware/drivers/dashboard/get-product-data#list-of-operating-system-codes)|
+|OperatingSystemCode |文本|[OS 代码列表](./get-product-data.md#list-of-operating-system-codes)|
 
 ## <a name="search-results"></a>搜索结果
 
@@ -84,7 +84,7 @@ ms.locfileid: "81679115"
 > [!NOTE]
 > 只有在包验收完成后，硬件仪表板才会创建实体。 因此，只有在包验收完成后，驱动程序提交内容才会显示在搜索结果中。
 
-在结果中，单击“专用产品 ID”可导航到该驱动程序的概述页。  在该页中，可以查看有关驱动程序提交内容的信息、通过 [DUA 过程](https://docs.microsoft.com/windows-hardware/test/hlk/user/create-a-driver-only-update-package)更新提交内容，以及查看、创建和编辑发货标签或下载已签名的文件。
+在结果中，单击“专用产品 ID”可导航到该驱动程序的概述页。  在该页中，可以查看有关驱动程序提交内容的信息、通过 [DUA 过程](/windows-hardware/test/hlk/user/create-a-driver-only-update-package)更新提交内容，以及查看、创建和编辑发货标签或下载已签名的文件。
 
 ### <a name="important-points"></a>要点
 

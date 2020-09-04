@@ -10,12 +10,12 @@ keywords:
 ms.author: eliotgra
 ms.date: 07/11/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 21e5b5d729f31b855a75ff82ba59e5754432410e
-ms.sourcegitcommit: 72535665bb80c28ee09331844cd0e15da8084e19
+ms.openlocfilehash: 77c1af4707e9039943176387c0107fb0b56f7df6
+ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88623494"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89065284"
 ---
 # <a name="installing-preview-versions-of-the-windows-driver-kit-wdk"></a>安装 Windows 驱动程序工具包 (WDK) 的预览版本
 
@@ -56,7 +56,7 @@ reg add HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\StrongName\Verificatio
 
 ## <a name="install-enterprise-wdk-ewdk-insider-preview"></a>安装企业版 WDK (EWDK) Insider Preview
 
-EWDK 是一种用于生成驱动程序的独立自包含命令行环境。  它包括用于 Visual Studio 2019 的生成工具、SDK、WDK 以及对 ARM64 驱动程序开发的支持。 有关详细信息，请参阅[安装企业版 WDK](https://docs.microsoft.com/windows-hardware/drivers/develop/installing-the-enterprise-wdk)。 
+EWDK 是一种用于生成驱动程序的独立自包含命令行环境。  它包括用于 Visual Studio 2019 的生成工具、SDK、WDK 以及对 ARM64 驱动程序开发的支持。 有关详细信息，请参阅[安装企业版 WDK](./develop/using-the-enterprise-wdk.md)。 
 
 [获取企业版 Windows 驱动程序工具包 (WDK) Insider Preview](https://www.microsoft.com/en-us/software-download/windowsinsiderpreviewWDK)
 
@@ -64,9 +64,9 @@ EWDK 是一种用于生成驱动程序的独立自包含命令行环境。  它�
 
 ## <a name="run-time-requirements-for-the-wdk-and-the-ewdk"></a>WDK 和 EWDK 的运行时要求
 
-WDK 需要 Visual Studio。 有关 Visual Studio 系统要求的详细信息，请参阅[Visual Studio 2019 系统要求](https://docs.microsoft.com/visualstudio/releases/2019/system-requirements)。
+WDK 需要 Visual Studio。 有关 Visual Studio 系统要求的详细信息，请参阅[Visual Studio 2019 系统要求](/visualstudio/releases/2019/system-requirements)。
 
-此外，EWDK 需要 .NET 4.7.2。 有关运行 .NET 的平台的更多信息，请参阅 [.NET Framework 系统要求](https://docs.microsoft.com/dotnet/framework/get-started/system-requirements)。
+此外，EWDK 需要 .NET 4.7.2。 有关运行 .NET 的平台的更多信息，请参阅 [.NET Framework 系统要求](/dotnet/framework/get-started/system-requirements)。
 
 可以使用 WDK Insider Preview 和 EWDK Insider Preview 开发适用于以下操作系统的驱动程序： 
 
@@ -76,4 +76,3 @@ WDK 需要 Visual Studio。 有关 Visual Studio 系统要求的详细信息，�
 |Windows 8.1|Windows Server 2012 R2|
 |Windows 8|Windows Server 2012|
 |Windows 7|Windows Server 2008 R2 SP1|
-

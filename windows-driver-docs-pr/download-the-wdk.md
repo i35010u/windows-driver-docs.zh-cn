@@ -10,12 +10,12 @@ keywords:
 ms.date: 08/17/2020
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 3ddec8858052616c07d7d60a1270ea6dd7b0babd
-ms.sourcegitcommit: a6dde266b92d088a97398d119f7cac5744cb3df6
+ms.openlocfilehash: ec2e2303ab5fd144c8124d951f11124869cb6fce
+ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88512210"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89063704"
 ---
 # <a name="download-the-windows-driver-kit-wdk"></a>下载 Windows 驱动程序工具包 (WDK)
 
@@ -41,7 +41,7 @@ Windows 7|Windows Server 2008 R2 SP1|
 
 ### <a name="download-icon-step-1-install-visual-studio-2019"></a>![“下载”图标](images/download-install.png) 步骤 1：安装 Visual Studio 2019
 
-WDK 需要 Visual Studio。 有关 Visual Studio 系统要求的详细信息，请参阅 [Visual Studio 2019 系统要求](https://docs.microsoft.com/visualstudio/releases/2019/system-requirements)。
+WDK 需要 Visual Studio。 有关 Visual Studio 系统要求的详细信息，请参阅 [Visual Studio 2019 系统要求](/visualstudio/releases/2019/system-requirements)。
 
 以下版本的 Visual Studio 2019 支持针对此发行版进行驱动程序开发：
 
@@ -82,11 +82,11 @@ WDK Visual Studio 扩展包含在默认 WDK 安装中。
 
 EWDK 是一种用于生成驱动程序的独立自包含命令行环境。 其中包括 Visual Studio 生成工具、SDK 和 WDK。  EWDK 的最新公共版本包含 Visual Studio 2019 生成工具 16.3.0 和 MSVC 工具集 v14.23。  若要开始使用，请装载 ISO 并运行 **LaunchBuildEnv**。
 
-EWDK 还需要 .NET Framework 版本 4.7.2。 有关 .NET Framework 的其他要求的详细信息，请参阅 [.NET Framework 系统要求](https://docs.microsoft.com/dotnet/framework/get-started/system-requirements)。
+EWDK 还需要 .NET Framework 版本 4.7.2。 有关 .NET Framework 的其他要求的详细信息，请参阅 [.NET Framework 系统要求](/dotnet/framework/get-started/system-requirements)。
 
 ### <a name="download-icon-ewdk-with-visual-studio-build-tools"></a>![“下载”图标](images/download-install.png) 包含 Visual Studio 生成工具的 EWDK
 
-* [下载适用于 Windows 10 版本 2004 的 EWDK](https://docs.microsoft.com/legal/windows/hardware/enterprise-wdk-license-2019)
+* [下载适用于 Windows 10 版本 2004 的 EWDK](/legal/windows/hardware/enterprise-wdk-license-2019)
 
 ## <a name="driver-samples-for-windows-10"></a>Windows 10 驱动程序示例
 
@@ -94,13 +94,13 @@ EWDK 还需要 .NET Framework 版本 4.7.2。 有关 .NET Framework 的其他要
 
 * 转到 [GitHub](https://github.com/Microsoft/Windows-driver-samples) 上的驱动程序示例页面，然后依次单击“克隆或下载”、“下载 ZIP” 。
 * 下载[适用于 Visual Studio 的 GitHub 扩展](https://visualstudio.github.com/)，然后连接到 GitHub 存储库。
-* 浏览 [Microsoft 示例门户](https://docs.microsoft.com/samples/browse/?products=windows-wdk)中的驱动程序示例。
+* 浏览 [Microsoft 示例门户](/samples/browse/?products=windows-wdk)中的驱动程序示例。
 
 ## <a name="related-downloads"></a>相关下载
 
 * [下载 WDK Insider Preview](https://www.microsoft.com/software-download/windowsinsiderpreviewWDK)
 * [下载以前版本的 WDK](other-wdk-downloads.md)
-* [下载 Windows 评估和部署工具包 (Windows ADK)](https://docs.microsoft.com/windows-hardware/get-started/adk-install)
-* [下载 Windows HLK](https://docs.microsoft.com/windows-hardware/test/hlk/windows-hardware-lab-kit)
-* [下载 Windows 调试工具 (WinDbg)](https://docs.microsoft.com/windows-hardware/drivers/debugger/debugger-download-tools)
-* [下载 Windows 符号程序包](https://docs.microsoft.com/windows-hardware/drivers/debugger/debugger-download-symbols)
+* [下载 Windows 评估和部署工具包 (Windows ADK)](/windows-hardware/get-started/adk-install)
+* [下载 Windows HLK](/windows-hardware/test/hlk/windows-hardware-lab-kit)
+* [下载 Windows 调试工具 (WinDbg)](./debugger/debugger-download-tools.md)
+* [下载 Windows 符号程序包](./debugger/debugger-download-symbols.md)

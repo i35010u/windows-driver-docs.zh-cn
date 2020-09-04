@@ -3,12 +3,12 @@ title: 获取发货标签数据
 description: Microsoft 硬件 API 中的这些方法可获取注册到开发人员中心帐户的硬件产品的发货标签。
 ms.topic: article
 ms.date: 10/03/2019
-ms.openlocfilehash: f4795fa7a29071c1eb2c83051cf68a2052caa447
-ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
+ms.openlocfilehash: a60fefd0e1d2b7acd648dc53e822cfeb75b8b7c6
+ms.sourcegitcommit: 4f08f5686c0bbc27d58930b993cbab1a98e3afb0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "79243058"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89443919"
 ---
 # <a name="get-shipping-label-data"></a>获取发货标签数据
 
@@ -29,7 +29,7 @@ https://manage.devcenter.microsoft.com/v2.0/my/hardware/products/{productId}/sub
 
 ## <a name="prerequisites"></a>必备条件
 
-如果尚未开始操作，请先满足 Microsoft 硬件 API 的所有[先决条件](https://docs.microsoft.com/windows-hardware/drivers/dashboard/dashboard-api#complete-prerequisites-for-using-the-microsoft-hardware-api)，然后尝试使用下述任一方法。
+如果尚未开始操作，请先满足 Microsoft 硬件 API 的所有[先决条件](./dashboard-api.md#complete-the-prerequisites-for-using-the-microsoft-hardware-api)，然后尝试使用下述任一方法。
 
 ## <a name="data-resources"></a>数据资源
 
@@ -271,7 +271,7 @@ https://manage.devcenter.microsoft.com/v2.0/my/hardware/products/{productId}/sub
 
 ### <a name="hardware-id-object"></a>硬件 ID 对象
 
-此对象表示发货标签需要针对的硬件 ID 的详细信息。 有关更多详细信息，请参阅[硬件 ID](https://docs.microsoft.com/windows-hardware/drivers/install/hardware-ids)。
+此对象表示发货标签需要针对的硬件 ID 的详细信息。 有关更多详细信息，请参阅[硬件 ID](../install/hardware-ids.md)。
 
 ```json
 {
@@ -297,7 +297,7 @@ https://manage.devcenter.microsoft.com/v2.0/my/hardware/products/{productId}/sub
 
 ### <a name="chids-object"></a>CHIDs 对象
 
-此对象表示发货标签需要针对的 CHID（计算机硬件 ID）。 有关更多详细信息，请参阅[使用 CHID](https://docs.microsoft.com/windows-hardware/drivers/dashboard/using-chids)。
+此对象表示发货标签需要针对的 CHID（计算机硬件 ID）。 有关更多详细信息，请参阅[使用 CHID](./using-chids.md)。
 
 ```json
 {
@@ -331,7 +331,7 @@ https://manage.devcenter.microsoft.com/v2.0/my/hardware/products/{productId}/sub
 |flooring|字符串|希望驱动程序只在列出的 Windows 10 操作系统或更高版本的操作系统上提供时，请使用此选项。 例如，选择 RS4 下限意味着只在运行 Windows 10 1803 (RS4) 和更高版本的系统提供此驱动程序。 可能的值为： <ul><li>TH</li><li>RS1</li><li>RS2</li><li>RS3</li><li>RS4</li><li>RS5</li><li>19H1</li></ul> 请注意，可能的值将会扩展，以包含最新版本 的 OS。 |
 |ceiling|字符串|对此功能的访问受到限制。  希望只为列出的操作系统或更低版本的系统提供某个驱动程序时，请使用此选项。 例如，在 Windows 10 1607 RS1 认证的驱动程序中选择 RS3 上限意味着，永远不会将驱动程序提供给运行 Windows 10 1803 (RS4) 或更高版本的系统。可能的值为： <ul><li>TH</li><li>RS1</li><li>RS2</li><li>RS3</li><li>RS4</li><li>RS5</li><li>19H1</li></ul> 请注意，可能的值将会扩展，以包含最新版本 的 OS。 |
 
-有关这些值的详细信息，请参阅[按 Windows 版本限制驱动程序分发](https://docs.microsoft.com/windows-hardware/drivers/dashboard/limit-driver-distribution)。
+有关这些值的详细信息，请参阅[按 Windows 版本限制驱动程序分发](./limit-driver-distribution.md)。
 
 ### <a name="co-engineering-driver-publish-information-object"></a>联合研发驱动程序发布信息对象
 
@@ -349,7 +349,7 @@ https://manage.devcenter.microsoft.com/v2.0/my/hardware/products/{productId}/sub
 |flooringBuildNumber|数字|发行软件的内部版本号，你只希望在此内部版本号或更高内部版本中提供某个驱动程序。 例如，如果下限需是 10.1.17135，则输入需是 17135。 主要版本 (10.1) 始终自动默认为相应的版本。|
 |ceiling|数字|发行软件的内部版本号，你只希望在此内部版本号或更低内部版本中提供某个驱动程序。 例如，如果上限需是 10.1.17139，则输入需是 17139。 主要版本 (10.1) 始终自动默认为相应的版本。|
 
-有关详细信息，请参阅[按 Windows 版本限制驱动程序分发](https://docs.microsoft.com/windows-hardware/drivers/dashboard/limit-driver-distribution)。
+有关详细信息，请参阅[按 Windows 版本限制驱动程序分发](./limit-driver-distribution.md)。
 
 ### <a name="shipping-label-workflow-status-object"></a>发货标签工作流状态对象
 

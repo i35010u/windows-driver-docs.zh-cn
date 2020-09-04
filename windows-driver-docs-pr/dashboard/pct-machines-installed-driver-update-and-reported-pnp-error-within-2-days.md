@@ -4,18 +4,18 @@ description: 度量将 30 天滑动窗口中的遥测数据聚合为成功安装
 ms.topic: article
 ms.date: 05/22/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: f483456c3305ba18395d2f791542d587081daff5
-ms.sourcegitcommit: d7b5e6049db3109fdcbe83279875f24f3fa6acdd
+ms.openlocfilehash: e4559c30b22735071b8f89af71869befa3af8082
+ms.sourcegitcommit: 4f08f5686c0bbc27d58930b993cbab1a98e3afb0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84108604"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89443859"
 ---
 # <a name="percent-of-machines-that-installed-a-driver-update-and-reported-a-pnp-error-code-within-two-days-of-install"></a>安装了驱动程序更新并在安装后两天内报告 PnP 错误代码的计算机的百分比
 
 ## <a name="description"></a>说明
 
-成功安装后，计算机可能会遇到安装后 PnP 错误，该错误会导致消极的用户体验 - 从设备未按预期方式工作到意外重启。 PNP 错误代码列表位于[设备管理器问题代码](https://docs.microsoft.com/windows-hardware/drivers/install/device-manager-error-messages)和 [Windows 支持](https://support.microsoft.com/help/310123/error-codes-in-device-manager-in-windows)。
+成功安装后，计算机可能会遇到安装后 PnP 错误，该错误会导致消极的用户体验 - 从设备未按预期方式工作到意外重启。 PNP 错误代码列表位于[设备管理器问题代码](../install/device-manager-error-messages.md)和 [Windows 支持](https://support.microsoft.com/help/310123/error-codes-in-device-manager-in-windows)。
 
 ## <a name="measure-attributes"></a>度量属性
 

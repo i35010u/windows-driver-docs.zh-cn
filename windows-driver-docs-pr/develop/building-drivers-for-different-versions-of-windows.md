@@ -4,16 +4,16 @@ title: 为不同版本的 Windows 生成驱动程序
 description: 如果你在为不同版本的 Windows 编写驱动程序，以下部分提供了一些有关如何使用 Windows 驱动程序工具包 (WDK) 8.1 或 WDK 8、Visual Studio 和 MSBuild 生成这些驱动程序的指南。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d00ea320f46d52efb357a2c28489b7788dbdba4b
-ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
+ms.openlocfilehash: 1edeffdad636b73f0cd6ef0d499d7d839d539329
+ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "72829903"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89066516"
 ---
 # <a name="building-drivers-for-different-versions-of-windows"></a>为不同版本的 Windows 生成驱动程序
 
-如果你在[为不同版本的 Windows 编写驱动程序](https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/platforms-and-driver-versions)，以下部分提供了一些有关如何使用 Windows 驱动程序工具包 (WDK) 8.1 或 WDK 8、Visual Studio 和 MSBuild 生成这些驱动程序的指南。
+如果你在[为不同版本的 Windows 编写驱动程序](../gettingstarted/platforms-and-driver-versions.md)，以下部分提供了一些有关如何使用 Windows 驱动程序工具包 (WDK) 8.1 或 WDK 8、Visual Studio 和 MSBuild 生成这些驱动程序的指南。
 
 ## <a name="span-idguidelines_that_apply_to_building_both_user-mode_and_kernel-mode_driversspanspan-idguidelines_that_apply_to_building_both_user-mode_and_kernel-mode_driversspanspan-idguidelines_that_apply_to_building_both_user-mode_and_kernel-mode_driversspanguidelines-that-apply-to-building-both-user-mode-and-kernel-mode-drivers"></a><span id="Guidelines_that_apply_to_building_both_user-mode_and_kernel-mode_drivers"></span><span id="guidelines_that_apply_to_building_both_user-mode_and_kernel-mode_drivers"></span><span id="GUIDELINES_THAT_APPLY_TO_BUILDING_BOTH_USER-MODE_AND_KERNEL-MODE_DRIVERS"></span>用户模式和内核模式驱动程序均适用的生成指南
 
@@ -27,7 +27,7 @@ ms.locfileid: "72829903"
 
 -   如果希望内核模式驱动程序在多个版本的 Windows 上运行，并且动态确定驱动程序可用的功能，则应使用最新版本操作系统的生成配置生成驱动程序。 例如，如果希望驱动程序支持从 Windows 7 开始的所有 Windows 版本，但在驱动程序运行于 Windows 8.1 或更高版本的操作系统时使用 Windows 8.1 率先推出的某些功能，则应指定 Windows 8.1 (**Win8.1**) 为目标配置。
 
--   使用 [**RtlIsNtDdiVersionAvailable**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-rtlisntddiversionavailable) 和 [**RtlIsServicePackVersionInstalled**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-rtlisservicepackversioninstalled) 函数来确定你的驱动程序在运行时可用的 Windows 版本。 有关详细信息，请参阅[为不同版本的 Windows 编写驱动程序](https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/platforms-and-driver-versions)。
+-   使用 [**RtlIsNtDdiVersionAvailable**](/windows-hardware/drivers/ddi/wdm/nf-wdm-rtlisntddiversionavailable) 和 [**RtlIsServicePackVersionInstalled**](/windows-hardware/drivers/ddi/wdm/nf-wdm-rtlisservicepackversioninstalled) 函数来确定你的驱动程序在运行时可用的 Windows 版本。 有关详细信息，请参阅[为不同版本的 Windows 编写驱动程序](../gettingstarted/platforms-and-driver-versions.md)。
 -   创建驱动程序必须按条件调用的函数的指针原型。
 -   如果你有 WDM 驱动程序或非 KMDF 内核模式驱动程序并且针对 Windows 8.1 或 Windows 8，但同时希望在较早版本的 Windows 上运行，则需要重写链接器 **$(KernelBufferOverflowLib)** 选项。 在选择 Windows 8 或 Windows 8.1 配置时，驱动程序将与 BufferOverflowFastFailK.lib 链接，较早的 Windows 版本中没有这一项。 对于 Windows 7 和 Vista，则必须改为与 BufferOverflowK.lib 链接。
 
@@ -122,14 +122,7 @@ ms.locfileid: "72829903"
 ## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
-* [为不同版本的 Windows 编写驱动程序](https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/platforms-and-driver-versions)
+* [为不同版本的 Windows 编写驱动程序](../gettingstarted/platforms-and-driver-versions.md)
 * [生成驱动程序](building-a-driver.md)
  
-
- 
-
-
-
-
-
 

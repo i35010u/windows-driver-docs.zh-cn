@@ -4,12 +4,12 @@ description: 在定义的 Windows 预览体验成员圈中分发驱动程序。 
 ms.date: 07/27/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: f3c308adf14d0cc04e94dd4573769b723fc0ccd4
-ms.sourcegitcommit: 3a2a28d1e7f0dfd799b7b87f02bc2bea9129c10d
+ms.openlocfilehash: aaac8269ebabb9451773be96186370fb9dda4eec
+ms.sourcegitcommit: 4f08f5686c0bbc27d58930b993cbab1a98e3afb0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87335385"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89443809"
 ---
 # <a name="driver-flighting"></a>驱动程序外部测试
 
@@ -44,7 +44,7 @@ ms.locfileid: "87335385"
 
 在将驱动程序提交到合作伙伴中心后，可以使用以下步骤推广驱动程序以进行外部测试：
 
-1. 驱动程序提交并且处于处理的**验证**阶段后，请创建新的发货标签并填写“详细信息”和“属性”部分。 有关详细信息，请参阅[将驱动程序发布到 Windows 更新](https://docs.microsoft.com/windows-hardware/drivers/dashboard/publish-a-driver-to-windows-update)。
+1. 驱动程序提交并且处于处理的**验证**阶段后，请创建新的发货标签并填写“详细信息”和“属性”部分。 有关详细信息，请参阅[将驱动程序发布到 Windows 更新](./publish-a-driver-to-windows-update.md)。
 
 2. 按照如下所述，选择一个或多个驱动程序推广选项，以推广驱动程序进行外部测试：
 

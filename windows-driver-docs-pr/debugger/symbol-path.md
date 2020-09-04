@@ -5,12 +5,12 @@ ms.assetid: 705df98f-717f-40ad-a424-101826970691
 keywords: 符号文件和路径、符号、延迟符号加载、延迟符号加载、符号路径
 ms.date: 10/23/2019
 ms.localizationpriority: high
-ms.openlocfilehash: 71cf811cffadf33a34c207e5455ff2a0e3d322f6
-ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
+ms.openlocfilehash: 1ef2c182b0dd04116bc85ce6e3582d2cf5cbf228
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "78335964"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89214828"
 ---
 # <a name="symbol-path-for-windows-debuggers"></a>Windows 调试器的符号路径
 
@@ -117,7 +117,7 @@ ms.locfileid: "78335964"
 
 ## <a name="span-idazurespanspan-idazurespanazure-devops-services-artifacts"></a><span id="azure"></span><span id="AZURE"></span>Azure DevOps Services Artifacts
 
-符号服务器可用于 Azure DevOps 服务中的 Azure Artifacts。 有关在 WinDbg 中使用 Azure Artifacts 的信息，请参阅[在 WinDbg 中使用符号进行调试](https://docs.microsoft.com/azure/devops/artifacts/symbols/debug-with-symbols-visual-studio)。 有关 Azure 生成的符号的常规信息，请参阅[符号文件 (PDB)](https://docs.microsoft.com/azure/devops/artifacts/concepts/symbols)。
+符号服务器可用于 Azure DevOps 服务中的 Azure Artifacts。 有关在 WinDbg 中使用 Azure Artifacts 的信息，请参阅[在 WinDbg 中使用符号进行调试](/azure/devops/artifacts/symbols/debug-with-symbols-visual-studio)。 有关 Azure 生成的符号的常规信息，请参阅[符号文件 (PDB)](/azure/devops/artifacts/concepts/symbols)。
 
 ### <a name="span-idcontrolling-the-symbol-pathspanspan-idcontrolling-the-symbol-pathspancontrolling-the-symbol-path"></a><span id="controlling-the-symbol-path"></span><span id="CONTROLLING-THE-SYMBOL-PATH"></span>控制符号路径
 

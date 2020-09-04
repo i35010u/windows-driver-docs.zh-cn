@@ -4,12 +4,12 @@ description: 虚拟地址空间
 ms.assetid: 5A3E1918-E5A4-4129-B0C2-45B6EEB7EFB3
 ms.date: 02/11/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: e9c9ba03e89cf2d6436b1d99f88582f0516b9b52
-ms.sourcegitcommit: 988d100e4d3b218a59fdac034d39a1816d145c85
+ms.openlocfilehash: 63b4180846d9b540053f8cdcd7594a5438476167
+ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2020
-ms.locfileid: "82122238"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89383285"
 ---
 # <a name="virtual-address-spaces"></a>虚拟地址空间
 
@@ -22,7 +22,7 @@ ms.locfileid: "82122238"
 
 -   不同进程使用的虚拟地址彼此隔离。 一个进程中的代码无法更改正在由另一进程或操作系统使用的物理内存。
 
-进程可用的虚拟地址范围称为该进程的“虚拟地址空间”  。 每个用户模式进程都有其各自的专用虚拟地址空间。 对于 32 位进程，虚拟地址空间通常为 2 GB，范围从 0x00000000 至 0x7FFFFFFF。 对于 64 位 Windows 上的 64 位进程，虚拟地址空间为 128 TB，范围从 0x000'00000000 至 0x7FFF'FFFFFFFF。 一系列虚拟地址有时称为一系列“虚拟内存”  。 有关详细信息，请参阅[内存和地址空间限制](https://docs.microsoft.com/windows/win32/memory/memory-limits-for-windows-releases#memory-and-address-space-limits)。
+进程可用的虚拟地址范围称为该进程的“虚拟地址空间”  。 每个用户模式进程都有其各自的专用虚拟地址空间。 对于 32 位进程，虚拟地址空间通常为 2 GB，范围从 0x00000000 至 0x7FFFFFFF。 对于 64 位 Windows 上的 64 位进程，虚拟地址空间为 128 TB，范围从 0x000'00000000 至 0x7FFF'FFFFFFFF。 一系列虚拟地址有时称为一系列“虚拟内存”  。 有关详细信息，请参阅[内存和地址空间限制](/windows/win32/memory/memory-limits-for-windows-releases#memory-and-address-space-limits)。
 
 此图说明了虚拟地址空间的一些重要功能。
 
@@ -39,7 +39,7 @@ ms.locfileid: "82122238"
 
 ![图：系统空间](images/virtualaddressspace02.png)
 
-在 32 位 Windows 中，可以选择指定（在启动时）超过 2 GB 可用于用户空间。 其结果是系统空间可用的虚拟地址更少。 可以将用户空间的大小增加到 3 GB，在这种情况下，系统空间只有1 GB 可用。 若要增大用户空间的大小，请使用 [**BCDEdit /set increaseuserva**](https://docs.microsoft.com/windows-hardware/drivers/devtest/bcdedit--set)。
+在 32 位 Windows 中，可以选择指定（在启动时）超过 2 GB 可用于用户空间。 其结果是系统空间可用的虚拟地址更少。 可以将用户空间的大小增加到 3 GB，在这种情况下，系统空间只有1 GB 可用。 若要增大用户空间的大小，请使用 [**BCDEdit /set increaseuserva**](../devtest/bcdedit--set.md)。
 
 在 64 位 Windows 中，虚拟地址空间的理论大小为 2^64 字节（16 艾字节），但实际上仅使用 16 艾字节范围的一小部分。
 
@@ -69,11 +69,4 @@ ms.locfileid: "82122238"
 [用户模式和内核模式](user-mode-and-kernel-mode.md)
 
  
-
- 
-
-
-
-
-
 

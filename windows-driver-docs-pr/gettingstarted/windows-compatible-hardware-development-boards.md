@@ -4,12 +4,12 @@ description: 利用 Windows 平台和 Visual Studio 的强大功能，并通过�
 ms.assetid: 241AC0DF-4DE6-481A-BBDB-13F811686B40
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 92b4ac18e101d2ec6162aa36567342a5c3b0aa07
-ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
+ms.openlocfilehash: 516d87bd2069b8f927c1a17b714b752e2ab8dd5b
+ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "67828366"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89383271"
 ---
 # <a name="windows-compatible-hardware-development-boards"></a>Windows 兼容硬件开发板
 
@@ -30,7 +30,7 @@ Windows 兼容硬件开发板提供经济实惠但功能强大的开发系统，
 ## <a name="span-idsupported_hardware_development_boardsspanspan-idsupported_hardware_development_boardsspanspan-idsupported_hardware_development_boardsspansupported-hardware-development-boards"></a><span id="Supported_Hardware_Development_Boards"></span><span id="supported_hardware_development_boards"></span><span id="SUPPORTED_HARDWARE_DEVELOPMENT_BOARDS"></span>支持的硬件开发板
 
 
-有关最新的受支持开发板的信息，请参阅 [IoT 设备选项](https://docs.microsoft.com/windows/iot-core/learn-about-hardware/socsandcustomboards)。
+有关最新的受支持开发板的信息，请参阅 [IoT 设备选项](/windows/iot-core/learn-about-hardware/socsandcustomboards)。
 
 ## <a name="span-idlearn_morespanspan-idlearn_morespanspan-idlearn_morespanlearn-more"></a><span id="Learn_more"></span><span id="learn_more"></span><span id="LEARN_MORE"></span>了解更多信息
 
@@ -54,10 +54,4 @@ Windows 兼容硬件开发板提供经济实惠但功能强大的开发系统，
     [Windows 硬件和驱动程序开发人员社区](https://go.microsoft.com/fwlink/p/?linkid=393552)
 
  
-
- 
-
-
-
-
 

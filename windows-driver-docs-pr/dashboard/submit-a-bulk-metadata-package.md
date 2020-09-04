@@ -5,12 +5,12 @@ ms.assetid: c8e248d4-a419-48e1-839d-1bbb9adda382
 ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 035264bb41142706adadb62f72548705eee73e7f
-ms.sourcegitcommit: f788aa204a3923f9023d8690488459a4d9bc2495
+ms.openlocfilehash: 1c78288e72fea9951c8a6114c2ae7dafc9a5ad56
+ms.sourcegitcommit: bd72676caf2bf5c9738c4081c778316919b85d30
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86141302"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89450192"
 ---
 # <a name="submit-a-bulk-metadata-package"></a>提交批量元数据包
 
@@ -78,7 +78,7 @@ Filename1、Filename2、Filename3、Filename4 等必须是 GUID。
 
 若要开发设备元数据包 \*.devicemetadata-ms，请参阅 [Windows 8 的设备元数据包架构参考](https://go.microsoft.com/fwlink/p/?LinkId=226753)。
 
-若要开发设备清单包 \*.devicemanifest-ms，请参阅[提交电脑设备清单包](https://docs.microsoft.com/windows-hardware/drivers/dashboard/)。
+若要开发设备清单包 \*.devicemanifest-ms，请参阅[提交电脑设备清单包](submit-a-pc-device-manifest-package.md)。
 
 你可以使用 Cabarc 工具创建这些 CAB 程序包。 若要了解有关此工具的详细信息，请参阅 [Cabarc 概述](https://go.microsoft.com/fwlink/p/?LinkId=248843)。
 

@@ -19,12 +19,12 @@ keywords:
 - 延迟 WDK 电源管理
 ms.date: 07/30/2020
 ms.localizationpriority: High
-ms.openlocfilehash: a95885c6b54c698d98e554e3f70beff5dc1b4ebc
-ms.sourcegitcommit: 3f4f035e235c91c54de8492e340cf86d71c7437d
+ms.openlocfilehash: 22e8e1d00ae547ac3887ad41bb90abe1a9835f5a
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2020
-ms.locfileid: "87445006"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89185919"
 ---
 # <a name="system-sleeping-states"></a>系统睡眠状态
 
@@ -40,7 +40,7 @@ ms.locfileid: "87445006"
 
 中间睡眠状态的详细信息可能因制造商设计计算机的方式不同而异。 例如，在某些计算机上，主板上的某些芯片可能会在 S3 时断电，而其他一些芯片会保持电源，直到进入 S4 状态。 此外，某些设备只能从 S1 唤醒系统，而不能从更深的睡眠状态唤醒系统。
 
-使用 `powercfg /a` 枚举系统上的所有可用睡眠状态。 用户可使用[睡眠按钮操作](https://docs.microsoft.com/windows-hardware/customize/power-settings/power-button-and-lid-settings-sleep-button-action)，指定在按下“睡眠”电源按钮时要执行的操作。
+使用 `powercfg /a` 枚举系统上的所有可用睡眠状态。 用户可使用[睡眠按钮操作](/windows-hardware/customize/power-settings/power-button-and-lid-settings-sleep-button-action)，指定在按下“睡眠”电源按钮时要执行的操作。
 
 通常，在用户按睡眠按钮后，系统将进入系统电源状态 S3。
 
@@ -115,9 +115,4 @@ CPU 上下文和系统缓存内容丢失。
 硬件中没有保留。 系统在关机之前，将内存映像写入休眠文件。 加载操作系统后，它将读取此文件并跳转到其之前的位置。
 
  
-
- 
-
-
-
 

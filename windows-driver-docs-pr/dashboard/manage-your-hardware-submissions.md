@@ -5,12 +5,12 @@ ms.assetid: C4C3C56F-8E92-4CB1-A57B-942E466ECD3D
 ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4c2649bac3fe5edf312fa80683ba72d674e4e51b
-ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
+ms.openlocfilehash: e6685ae6dd2797f22f7090a609cd6632c48b15f2
+ms.sourcegitcommit: 4f08f5686c0bbc27d58930b993cbab1a98e3afb0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "63337129"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89443877"
 ---
 # <a name="managing-hardware-submissions-in-the-partner-center"></a>在合作伙伴中心内管理硬件提交
 
@@ -26,14 +26,14 @@ ms.locfileid: "63337129"
 > 只能从初始提交创建 DUA 提交。
 > - 因为不能对 DUA 提交执行 DUA，与其他公司共享的 DUA 提交不会显示“下载 DUA Shell”按钮。
 
-有关如何从 DUA Shell 创建 DUA 提交的说明，请参阅[创建仅更新驱动程序的包](https://docs.microsoft.com/windows-hardware/test/hlk/user/create-a-driver-only-update-package)。
+有关如何从 DUA Shell 创建 DUA 提交的说明，请参阅[创建仅更新驱动程序的包](/windows-hardware/test/hlk/user/create-a-driver-only-update-package)。
 
 ## <a name="registering-an-extensionid"></a>注册 ExtensionId
 
 当你提交要签名的扩展 INF 时，仪表板会检查指定的 **ExtensionId** 是否先前已注册到其他帐户。
 如果是，你将看到一条消息，提示你提供不同的 ID。 如果不是，仪表板会将其与你的帐户相关联。
 
-有关指定 **ExtensionId** 的详细信息，请参阅[使用扩展 INF 文件](https://docs.microsoft.com/windows-hardware/drivers/install/using-an-extension-inf-file)。
+有关指定 **ExtensionId** 的详细信息，请参阅[使用扩展 INF 文件](../install/using-an-extension-inf-file.md)。
 
 请注意，在你的提交中，你只能使用注册到你的帐户的 ExtensionID。
 

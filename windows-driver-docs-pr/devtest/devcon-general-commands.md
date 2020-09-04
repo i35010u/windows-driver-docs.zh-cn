@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 04/20/2017
 ms.localizationpriority: high
-ms.openlocfilehash: aeff1990d5695440e0f7431334f26e7782863027
-ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
+ms.openlocfilehash: df5da42e6c906765b1be5a82cf06cb5297671c30
+ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "78335945"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89384955"
 ---
 # <a name="device-console-devconexe-commands"></a>设备控制台 (DevCon.exe) 命令
 
@@ -114,7 +114,7 @@ DevCon 命令中的参数必须按照语法中显示的顺序显示。 如果参
 
 ### <a name="span-idcommentsspanspan-idcommentsspancomments"></a><span id="comments"></span><span id="COMMENTS"></span>备注
 
-许多 DevCon 操作都需要设备的硬件 ID。 若要创建计算机上的所有设备的硬件 ID 列表，以用于后续的 DevCon 操作，请从 [DevCon HwIDs  ](devcon-hwids.md) 命令开始。 有关详细信息，请参阅[硬件 ID](https://docs.microsoft.com/windows-hardware/drivers/install/hardware-ids) 和[设备标识字符串](https://docs.microsoft.com/windows-hardware/drivers/install/device-identification-strings)。
+许多 DevCon 操作都需要设备的硬件 ID。 若要创建计算机上的所有设备的硬件 ID 列表，以用于后续的 DevCon 操作，请从 [DevCon HwIDs  ](devcon-hwids.md) 命令开始。 有关详细信息，请参阅[硬件 ID](../install/hardware-ids.md) 和[设备标识字符串](../install/device-identification-strings.md)。
 
 ### <a name="span-idddk_devcon_search_logic_toolsspanspan-idddk_devcon_search_logic_toolsspanhow-devcon-searches-for-devices"></a><span id="ddk_devcon_search_logic_tools"></span><span id="DDK_DEVCON_SEARCH_LOGIC_TOOLS"></span>DevCon 如何搜索设备
 
@@ -182,10 +182,4 @@ DevCon 返回一个整数，可在程序和脚本中使用该整数来确定 Dev
  
 
  
-
- 
-
-
-
-
 

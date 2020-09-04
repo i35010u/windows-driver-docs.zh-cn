@@ -4,16 +4,16 @@ title: 如何添加测试元数据
 description: 使用 Windows 驱动程序工具包 (WDK) 以及测试创作和执行框架 (TAEF) 来创建适用于 Windows 8 的测试内容。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d28281ed52474270cdd340d9bd9cf7e03db7e4a2
-ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
+ms.openlocfilehash: ae0f26e4e3f573d781f90a549cf8b4786839a10c
+ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "67364207"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89063578"
 ---
 # <a name="how-to-add-test-metadata"></a>如何添加测试元数据
 
-对于 Windows 8，Windows 驱动程序工具包 (WDK) 使用[测试创作和执行框架 (TAEF)](https://docs.microsoft.com/windows-hardware/drivers/taef/index) 来创建测试内容。 TAEF 测试是以包含多个方法的动态链接库 (DLL) 形式实现的对象，其中的每个方法均映射到特定的测试方案。 TAEF 对象将相关方法合并为一个测试组。 对于每个测试，均有一组描述该测试的元数据。 为了提高测试可移植性和封装，TAEF 将测试元数据存储在测试对象本身中。 在使用驱动程序测试模板创建自己的驱动程序测试时，你需要添加该元数据，以便驱动程序测试可用，并可以使用 Visual Studio 部署。
+对于 Windows 8，Windows 驱动程序工具包 (WDK) 使用[测试创作和执行框架 (TAEF)](../taef/index.md) 来创建测试内容。 TAEF 测试是以包含多个方法的动态链接库 (DLL) 形式实现的对象，其中的每个方法均映射到特定的测试方案。 TAEF 对象将相关方法合并为一个测试组。 对于每个测试，均有一组描述该测试的元数据。 为了提高测试可移植性和封装，TAEF 将测试元数据存储在测试对象本身中。 在使用驱动程序测试模板创建自己的驱动程序测试时，你需要添加该元数据，以便驱动程序测试可用，并可以使用 Visual Studio 部署。
 
 ### <a name="span-idprerequisitesspanspan-idprerequisitesspanspan-idprerequisitesspanprerequisites"></a><span id="Prerequisites"></span><span id="prerequisites"></span><span id="PREREQUISITES"></span>先决条件
 
@@ -375,18 +375,11 @@ ms.locfileid: "67364207"
     </table>
 
     <span id="Deploymentitem"></span><span id="deploymentitem"></span><span id="DEPLOYMENTITEM"></span>**Deploymentitem**  
-    将文件和/或文件夹标识为测试依赖项。 这些可能包含运行测试所需的任何资源。 有关使用此元数据的详细信息，请参阅 [DeploymentItem 元数据](https://docs.microsoft.com/windows-hardware/drivers/taef/deploymentitem-metadata)。
+    将文件和/或文件夹标识为测试依赖项。 这些可能包含运行测试所需的任何资源。 有关使用此元数据的详细信息，请参阅 [DeploymentItem 元数据](../taef/deploymentitem-metadata.md)。
 
 ## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
 * [如何使用“驱动程序测试”模板编写驱动程序测试](how-to-write-a-driver-test-.md)
  
-
- 
-
-
-
-
-
 

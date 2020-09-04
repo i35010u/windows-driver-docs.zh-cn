@@ -6,18 +6,18 @@ keywords:
 - 编写 UMDF 驱动程序
 ms.date: 04/20/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 1cf16a3a9347db28293c1b1736393ffb6428e9fc
-ms.sourcegitcommit: 9e5a99dc75dfee3caa9a242adc0ed22ae4df9f29
+ms.openlocfilehash: eeaa1a7ff9188322196fcb6e16517ca449c60384
+ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89043139"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89382397"
 ---
 # <a name="write-a-universal-windows-driver-umdf-2-based-on-a-template"></a>基于模板编写通用 Windows 驱动程序 (UMDF 2)
 
-本主题介绍了如何使用用户模式驱动程序框架 (UMDF) 2 编写[通用 Windows 驱动程序](https://docs.microsoft.com/windows-hardware/drivers)。 首先使用 Microsoft Visual Studio 模板，然后在单独的计算机上部署和安装驱动程序。
+本主题介绍了如何使用用户模式驱动程序框架 (UMDF) 2 编写[通用 Windows 驱动程序](/windows-hardware/drivers)。 首先使用 Microsoft Visual Studio 模板，然后在单独的计算机上部署和安装驱动程序。
 
-若要开始操作，请确保已安装最新版本的 Microsoft Visual Studio 和 Windows 驱动程序工具包 (WDK)。 有关下载链接，请参阅[下载 Windows 驱动程序工具包 (WDK)](https://docs.microsoft.com/windows-hardware/drivers/download-the-wdk)。
+若要开始操作，请确保已安装最新版本的 Microsoft Visual Studio 和 Windows 驱动程序工具包 (WDK)。 有关下载链接，请参阅[下载 Windows 驱动程序工具包 (WDK)](../download-the-wdk.md)。
 
 安装 WDK 时，需要包括 [Windows 调试工具](https://go.microsoft.com/fwlink/p?linkid=223405)。
 
@@ -93,8 +93,8 @@ DMF 不会取代 WDF。 DMF 是与 WDF 搭配使用的另一个框架。 利用 
 
 ## <a name="related-topics"></a>相关主题
 
-[开发、测试以及部署驱动程序](https://docs.microsoft.com/windows-hardware/drivers/develop/)
+[开发、测试以及部署驱动程序](../develop/index.md)
 
-[Windows 调试工具](https://docs.microsoft.com/windows-hardware/drivers/debugger/)
+[Windows 调试工具](../debugger/index.md)
 
 [编写第一个驱动程序](writing-your-first-driver.md)

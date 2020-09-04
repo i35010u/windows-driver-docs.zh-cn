@@ -4,12 +4,12 @@ description: 在本主题中，我们介绍内核模式驱动程序框架可以�
 ms.assetid: C05E3017-0F1A-49D7-8EAD-0DC44351A39A
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3fb7c4c0d0c87db0ae03d092239b6ed0182098eb
-ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
+ms.openlocfilehash: 24018c168e61d6f69ccc34fb05e5d6919e6cc417
+ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "63371287"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89382765"
 ---
 # <a name="kmdf-as-a-generic-driver-pair-model"></a>作为通用驱动程序对模型的 KMDF
 
@@ -66,14 +66,7 @@ USB 3.0 主控制器驱动程序为基于 KMDF 的驱动程序示例。 在此�
 
 [微型驱动程序和驱动程序对](minidrivers-and-driver-pairs.md)
 
-[内核模式驱动程序框架](https://docs.microsoft.com/windows-hardware/drivers/wdf/)
+[内核模式驱动程序框架](../wdf/index.md)
 
  
-
- 
-
-
-
-
-
 

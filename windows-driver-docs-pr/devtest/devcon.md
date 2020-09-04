@@ -18,12 +18,12 @@ keywords:
 - 列出设备信息 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: high
-ms.openlocfilehash: 94b709bf27910f9bd6a4aba7d94b9f55d5af3a28
-ms.sourcegitcommit: cbcb712a9f1f62c7d67e1b98097a0d8d24bd0c71
+ms.openlocfilehash: 6b32bfbbdc59f2c1a468973a0bd19bd7dfc23d91
+ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83769625"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89384555"
 ---
 # <a name="windows-device-console-devconexe"></a>Windows 设备控制台 (Devcon.exe)
 
@@ -46,7 +46,7 @@ DevCon 在 Microsoft Windows 2000 和更高版本的 Windows 上运行。
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>安装适用于桌面应用的 WDK、Visual Studio 和 Windows SDK 时，DevCon (Devcon.exe) 会包括在内。 有关下载工具包的信息，请参阅 <a href="https://docs.microsoft.com/windows-hardware/drivers/download-the-wdk" data-raw-source="[Windows Hardware Downloads](https://docs.microsoft.com/windows-hardware/drivers/download-the-wdk)">Windows 硬件下载</a>。</p>
+<td align="left"><p>安装适用于桌面应用的 WDK、Visual Studio 和 Windows SDK 时，DevCon (Devcon.exe) 会包括在内。 有关下载工具包的信息，请参阅 <a href="https://docs.microsoft.com/windows-hardware/drivers/download-the-wdk" data-raw-source="[Windows Hardware Downloads](../download-the-wdk.md)">Windows 硬件下载</a>。</p>
 <p><strong>Windows 驱动程序工具包 (WDK) 8 和 Windows 驱动程序工具包 (WDK) 8.1</strong>（安装路径）</p>
 <p>%WindowsSdkDir%\tools\x64\devcon.exe</p>
 <p>%WindowsSdkDir%\tools\x86\devcon.exe</p>
@@ -83,11 +83,11 @@ DevCon 是一种命令行工具，可在本地计算机和远程计算机上执�
 Devcon 的功能包括：
 
 -   **显示驱动程序和设备信息** DevCon 可以显示本地计算机和远程计算机（运行 Windows XP 及更低版本）上的驱动程序和设备的以下属性：
-    -   硬件 ID、兼容 ID 和设备实例 ID。 有关这些标识符的详细信息，请参阅[设备标识字符串](https://docs.microsoft.com/windows-hardware/drivers/install/device-identification-strings)。
-    -   [设备安装程序类](https://docs.microsoft.com/windows-hardware/drivers/install/device-setup-classes)
+    -   硬件 ID、兼容 ID 和设备实例 ID。 有关这些标识符的详细信息，请参阅[设备标识字符串](../install/device-identification-strings.md)。
+    -   [设备安装程序类](../install/overview-of-device-setup-classes.md)
     -   设备安装程序类中的设备
     -   INF 文件和设备驱动程序文件
-    -   [驱动程序包](https://docs.microsoft.com/windows-hardware/drivers/install/components-of-a-driver-package)的详细信息
+    -   [驱动程序包](../install/components-of-a-driver-package.md)的详细信息
     -   硬件资源
     -   设备状态
     -   需要的驱动程序堆栈
@@ -109,7 +109,7 @@ Devcon 的功能包括：
 ## <a name="span-iddevcon_source_codespanspan-iddevcon_source_codespanspan-iddevcon_source_codespandevcon-source-code"></a><span id="DevCon_source_code"></span><span id="devcon_source_code"></span><span id="DEVCON_SOURCE_CODE"></span>DevCon 源代码
 
 
-还可以使用 DevCon 源代码，以便查看 DevCon 用于检索安装程序和配置数据并对其进行更改的方法。 DevCon 说明了如何使用[常规安装程序功能](https://docs.microsoft.com/previous-versions/ff544985(v=vs.85))、[设备安装程序功能](https://docs.microsoft.com/previous-versions/ff541299(v=vs.85))和 [PnP Configuration Manager 功能](https://docs.microsoft.com/previous-versions/ff549713(v=vs.85))。 GitHub 上的 [Windows 驱动程序示例](https://github.com/Microsoft/Windows-driver-samples)存储库中提供了[设备控制台 (DevCon)](https://github.com/Microsoft/Windows-driver-samples/tree/master/setup/devcon) 工具的源代码。
+还可以使用 DevCon 源代码，以便查看 DevCon 用于检索安装程序和配置数据并对其进行更改的方法。 DevCon 说明了如何使用[常规安装程序功能](/previous-versions/ff544985(v=vs.85))、[设备安装程序功能](/previous-versions/ff541299(v=vs.85))和 [PnP Configuration Manager 功能](/previous-versions/ff549713(v=vs.85))。 GitHub 上的 [Windows 驱动程序示例](https://github.com/Microsoft/Windows-driver-samples)存储库中提供了[设备控制台 (DevCon)](https://github.com/Microsoft/Windows-driver-samples/tree/master/setup/devcon) 工具的源代码。
 
 ## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
@@ -119,11 +119,4 @@ Devcon 的功能包括：
 [DevCon 示例](devcon-examples.md)
 
  
-
- 
-
-
-
-
-
 

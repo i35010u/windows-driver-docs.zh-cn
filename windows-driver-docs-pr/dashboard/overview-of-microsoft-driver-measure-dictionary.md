@@ -4,18 +4,18 @@ description: 发布者和作者使用 Microsoft 驱动程序度量的说明来�
 ms.topic: article
 ms.date: 05/12/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 19413615340b3c4d8a13442fcdd13580c77f8268
-ms.sourcegitcommit: d7b5e6049db3109fdcbe83279875f24f3fa6acdd
+ms.openlocfilehash: 2f5a9af7e077baefbeb0ed49cff3968009820daa
+ms.sourcegitcommit: 4f08f5686c0bbc27d58930b993cbab1a98e3afb0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84108614"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89443869"
 ---
 # <a name="overview-of-the-microsoft-driver-measures"></a>Microsoft 驱动程序度量概述
 
 Microsoft 通过 Windows 更新服务分配成千上万个驱动程序，每月为数百万计算机和用户提供服务。 大规模安全地提供适当驱动程序需要在分配过程中通过实际验证来评估驱动程序质量。
 
-本文档供 Windows 设备驱动程序的发布者和作者参考。  发布者和作者可以更好地了解 Microsoft 在[驱动程序外部测试过程](https://docs.microsoft.com/windows-hardware/drivers/dashboard/driver-flighting)中用于评估驱动程序质量的标准。 熟悉驱动程序质量标准将有助于驱动程序发布者了解 Microsoft 如何决定发布其驱动程序。
+本文档供 Windows 设备驱动程序的发布者和作者参考。  发布者和作者可以更好地了解 Microsoft 在[驱动程序外部测试过程](./driver-flighting.md)中用于评估驱动程序质量的标准。 熟悉驱动程序质量标准将有助于驱动程序发布者了解 Microsoft 如何决定发布其驱动程序。
 
 使用粗体的关键字在术语表中具有相应的定义。
 
@@ -70,8 +70,6 @@ Microsoft 通过唯一计算逻辑、特性集、采样百分比和评估标准�
 ## <a name="related-topics"></a>相关主题
 
 [音频度量](audio-measures.md)
-
-[蓝牙度量](bluetooth-measures.md)
 
 [相机度量](camera-measures.md)
 

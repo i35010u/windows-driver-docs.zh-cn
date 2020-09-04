@@ -5,12 +5,12 @@ ms.assetid: b6748bff-d730-434e-9316-dc7b7222b727
 ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 619f566be357fd74d462213ff6d05f69bf8b94bb
-ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
+ms.openlocfilehash: 68404c5318b66db84e1b79e2703bf144aa7269f6
+ms.sourcegitcommit: bd72676caf2bf5c9738c4081c778316919b85d30
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "67364403"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89450032"
 ---
 # <a name="submit-a-multiple-locale-device-manifest-package"></a>提交多区域设置设备清单包
 
@@ -105,12 +105,12 @@ GUID1.devicemanifest-ms
 GUID.devicemanifest-ms 文件在名为 ManifestFiles 的本地目录中创建：
 
 ``` syntax
-Cabarc.exe -r -p -P  .\DeviceManifestPackages\ 
-N .\ManifestFiles\ GUID.devicemanifest-ms 
+Cabarc.exe -r -p -P  .\DeviceManifestPackages\
+N .\ManifestFiles\ GUID.devicemanifest-ms
 .\DeviceManifestPackages\LocaleInfo.xml
 .\DeviceManifestPackages\GUID.devicemetadata-ms
 ```
 
 ## <a name="creating-localeinfoxml"></a>创建 LocaleInfo.xml
 
-有关创建用于提交的 Localeinfo.xml 文件的信息，请参阅[创建 LocaleInfo.xml 提交文件](https://docs.microsoft.com/windows-hardware/drivers/dashboard/)。
+有关创建用于提交的 Localeinfo.xml 文件的信息，请参阅[创建 LocaleInfo.xml 提交文件](create-the-localeinfoxml-submission-file.md)。

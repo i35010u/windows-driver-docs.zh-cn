@@ -9,12 +9,12 @@ keywords:
 - 下载符号
 ms.date: 04/26/2018
 ms.localizationpriority: High
-ms.openlocfilehash: d0252096c3ec188709e026c896a72d5703c097c9
-ms.sourcegitcommit: 53a947d6ada18ca70f40f4e73a6a6c6f3abd31f0
+ms.openlocfilehash: 29c000e8f192c6e61603252dc24486156168380e
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/10/2020
-ms.locfileid: "88057004"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89211197"
 ---
 # <a name="windows-symbol-packages"></a>Windows 符号程序包
 
@@ -27,7 +27,7 @@ ms.locfileid: "88057004"
 >
 > 随着我们发布 Windows 更新的节奏，通过此页上的程序包发布的 Windows 调试符号很快就会过时。
 > 我们已对联机 [Microsoft 符号服务器](microsoft-public-symbols.md)进行了重大改进，移动此内容形成一个基于 Azure 的符号存储，并且其中可提供所有 Windows 版本和更新的符号。 
-> 可以在此[博客文章](https://blogs.msdn.microsoft.com/windbg/2017/10/18/update-on-microsofts-symbol-server/)中找到有关此内容的详细信息。
+> 可以在此[博客文章](/archive/blogs/windbg/update-on-microsofts-symbol-server)中找到有关此内容的详细信息。
 >
 > 有关如何为未连接到 Internet 的计算机检索符号的信息，请参阅[通过 SymChk 使用清单文件](using-a-manifest-file-with-symchk.md)。
 
@@ -43,10 +43,10 @@ ms.locfileid: "88057004"
 
 - [下载 Windows 调试工具](debugger-download-tools.md)
 
-- [下载 Windows 驱动程序工具包 (WDK)](https://docs.microsoft.com/windows-hardware/drivers/download-the-wdk)
+- [下载 Windows 驱动程序工具包 (WDK)](../download-the-wdk.md)
 
-- [下载 Windows 评估和部署工具包 (Windows ADK)](https://docs.microsoft.com/windows-hardware/get-started/adk-install)
+- [下载 Windows 评估和部署工具包 (Windows ADK)](/windows-hardware/get-started/adk-install)
 
-- [下载 Windows HLK、HCK 或徽标工具包](https://docs.microsoft.com/windows-hardware/test/hlk/windows-hardware-lab-kit)
+- [下载 Windows HLK、HCK 或徽标工具包](/windows-hardware/test/hlk/windows-hardware-lab-kit)
 
 - [下载 Windows Insider Preview 版本](https://insider.windows.com/)

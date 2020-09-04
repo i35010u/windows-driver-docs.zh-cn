@@ -4,12 +4,12 @@ description: 预配目标计算机或测试计算机是配置计算机以自动�
 ms.assetid: A2615EE9-316E-4AE2-BBAA-B9E153090016
 ms.date: 05/08/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 7c8dd64c720c717249633aa1b729eee13d4ef1f9
-ms.sourcegitcommit: 9e5a99dc75dfee3caa9a242adc0ed22ae4df9f29
+ms.openlocfilehash: c059cc8d1507df22629e56222cf1695861e278d5
+ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89043145"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89383633"
 ---
 # <a name="provision-a-computer-for-driver-deployment-and-testing-wdk-10"></a>预配计算机以便进行驱动程序部署和测试 (WDK 10)
 
@@ -78,4 +78,4 @@ ms.locfileid: "89043145"
 
 ## <a name="see-also"></a>另请参阅
 
-[将驱动程序部署到测试计算机](https://docs.microsoft.com/windows-hardware/drivers/develop/deploying-a-driver-to-a-test-computer)
+[将驱动程序部署到测试计算机](../develop/deploying-a-driver-to-a-test-computer.md)

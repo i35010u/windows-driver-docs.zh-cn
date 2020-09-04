@@ -4,20 +4,20 @@ description: 可以在 Windows 硬件开发人员中心为扩展 INF 文件创�
 ms.topic: article
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 6803f0632e501678688a48a50fc457dfa58fb359
-ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
+ms.openlocfilehash: 0983b59dece30bd71e5d2664555d8f2902ad792d
+ms.sourcegitcommit: 4f08f5686c0bbc27d58930b993cbab1a98e3afb0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "67364415"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89443931"
 ---
 # <a name="working-with-extension-infs-in-the-partner-center"></a>在合作伙伴中心使用扩展 INF
 
-可以在 Windows 硬件开发人员中心为扩展 INF 文件创建发货标签，以便能够像其他提交一样对其进行共享和发布。 本主题介绍打包、提交和发布这些程序包的过程。 有关如何创建和安装扩展 INF 的详细信息，请参阅[使用扩展 INF 文件](https://docs.microsoft.com/windows-hardware/drivers/install/using-an-extension-inf-file)。
+可以在 Windows 硬件开发人员中心为扩展 INF 文件创建发货标签，以便能够像其他提交一样对其进行共享和发布。 本主题介绍打包、提交和发布这些程序包的过程。 有关如何创建和安装扩展 INF 的详细信息，请参阅[使用扩展 INF 文件](../install/using-an-extension-inf-file.md)。
 
 ## <a name="requirements-for-publishing-extension-infs-to-windows-update"></a>将扩展 INF 发布到 Windows 更新的要求 
 
-如果要将扩展 INF 发布到 Windows 更新，必须选中发货标签上的自动驱动程序推广复选框。 之所以不能将扩展 INF 作为可选项进行发布，是因为它们未列在设备管理器中，因此最终用户无法启动“更新驱动程序”操作。   若要查看这些复选框，必须先注册[驱动程序外部测试](https://docs.microsoft.com/windows-hardware/drivers/dashboard/driver-flighting)。 
+如果要将扩展 INF 发布到 Windows 更新，必须选中发货标签上的自动驱动程序推广复选框。 之所以不能将扩展 INF 作为可选项进行发布，是因为它们未列在设备管理器中，因此最终用户无法启动“更新驱动程序”操作。   若要查看这些复选框，必须先注册[驱动程序外部测试](./driver-flighting.md)。 
 
 > [!NOTE]
 > 若要让 Windows 更新提供扩展 INF，所有系统都必须至少运行 RS3 [2018 年 1 月更新](https://support.microsoft.com/help/4056892/windows-10-update-kb4056892) (10.0.16299.192)。
@@ -63,7 +63,7 @@ ms.locfileid: "67364415"
 
 ### <a name="submitting-your-packages-to-the-partner-center"></a>将程序包提交到合作伙伴中心
 
-为上面创建的每个程序包都创建一个新的提交，并将其上传到硬件开发人员中心。  以后，为需要共享或发布的项创建发货标签。 有关详细信息，请参阅 [Create a new hardware submission](https://docs.microsoft.com/windows-hardware/drivers/dashboard/create-a-new-hardware-submission)（创建新硬件提交）和 [Manage driver distribution with shipping labels](https://docs.microsoft.com/windows-hardware/drivers/dashboard/manage-driver-distribution-by-submission)（使用发货标签管理驱动程序分发）。
+为上面创建的每个程序包都创建一个新的提交，并将其上传到硬件开发人员中心。  以后，为需要共享或发布的项创建发货标签。 有关详细信息，请参阅 [Create a new hardware submission](./create-a-new-hardware-submission.md)（创建新硬件提交）和 [Manage driver distribution with shipping labels](./manage-driver-distribution-by-submission.md)（使用发货标签管理驱动程序分发）。
 
 #### <a name="extensionid"></a>ExtensionID
 
@@ -78,7 +78,7 @@ ExtensionID 是你生成的用于驱动程序沿袭标识和版本控制的 GUID
 > [!NOTE]
 >
 > * 如果你使用与 SellerID 不相关的 ExtensionID，则合作伙伴中心将拒绝你的提交，并通知你该 ExtensionID 已属于另一个组织：
-> * 对于给定的设备，会针对每个唯一的 ExtensionID 值只安装一个扩展 INF。 因此，如果设备具有多个扩展 INF，则每一项都将需要一个新的 ExtensionID。  这也意味着，如果两个扩展 INF 面向具有不同 ExtensionID 的相同设备，那么将应用这两个扩展 INF。 有关详细信息，请参阅 [Using an Extension INF file](https://docs.microsoft.com/windows-hardware/drivers/install/using-an-extension-inf-file)（使用扩展 INF 文件）。
+> * 对于给定的设备，会针对每个唯一的 ExtensionID 值只安装一个扩展 INF。 因此，如果设备具有多个扩展 INF，则每一项都将需要一个新的 ExtensionID。  这也意味着，如果两个扩展 INF 面向具有不同 ExtensionID 的相同设备，那么将应用这两个扩展 INF。 有关详细信息，请参阅 [Using an Extension INF file](../install/using-an-extension-inf-file.md)（使用扩展 INF 文件）。
 >
 > 如果你的组织管理另一个组织的项目和提交，请注意以下各项：
 >
@@ -90,15 +90,15 @@ ExtensionID 是你生成的用于驱动程序沿袭标识和版本控制的 GUID
 
 ![一个显示在 Visual Studio 中创建 GUID 屏幕的图像](images/guid-formatting.png)
 
-若要更新已持续发布的扩展 INF，请保持 ExtensionID 不变并递增 [DriverVer 指令](https://docs.microsoft.com/windows-hardware/drivers/install/inf-driverver-directive)所指定的版本和/或日期。 系统会（按该顺序）使用驱动程序日期和驱动程序版本，以便区分具有相同 ExtensionID 的多个扩展 INF。
+若要更新已持续发布的扩展 INF，请保持 ExtensionID 不变并递增 [DriverVer 指令](../install/inf-driverver-directive.md)所指定的版本和/或日期。 系统会（按该顺序）使用驱动程序日期和驱动程序版本，以便区分具有相同 ExtensionID 的多个扩展 INF。
 
 ### <a name="publishing-an-extension-inf"></a>发布扩展 INF
 
-若要发布扩展 INF 提交，请按照 [Publish a driver to Windows Update](https://docs.microsoft.com/windows-hardware/drivers/dashboard/publish-a-driver-to-windows-update)（将驱动程序发布到 Windows 更新）中的步骤进行操作。 请确保选择两个自动驱动程序推广选项，并且扩展 INF 具有特定目标。 
+若要发布扩展 INF 提交，请按照 [Publish a driver to Windows Update](./publish-a-driver-to-windows-update.md)（将驱动程序发布到 Windows 更新）中的步骤进行操作。 请确保选择两个自动驱动程序推广选项，并且扩展 INF 具有特定目标。 
 
 ![一个显示自动驱动程序推广的图像](images/automatic-driver-promotion-options.png)
 
-如果未看到这些驱动程序推广选项，则可能需要注册[驱动程序外部测试](https://docs.microsoft.com/windows-hardware/drivers/dashboard/driver-flighting)。
+如果未看到这些驱动程序推广选项，则可能需要注册[驱动程序外部测试](./driver-flighting.md)。
 
 所有扩展 INF 在完成驱动程序外部测试过程以后才能通过 Windows 更新进行分发。 外部测试成功后，将向零售系统提供文件。 如果加入 Windows 预览体验成员计划，则能在此阶段更快地访问驱动程序。
 
@@ -121,12 +121,12 @@ ExtensionID 是你生成的用于驱动程序沿袭标识和版本控制的 GUID
 
 * WU 将为每个适用的扩展 ID 提供排名最高的扩展驱动程序（PnP 将为其安装此驱动程序）。
 
-* 扩展驱动程序仅按照 DriverVer 指令中所包含的日期和版本进行排名。 WU 和 PnP 都使用此项。  有关详细信息，请参阅 [INF Version Section](https://docs.microsoft.com/windows-hardware/drivers/install/inf-version-section)（INF 版本部分）和 [INF DriverVer directive](https://docs.microsoft.com/windows-hardware/drivers/install/inf-driverver-directive)（INF DriverVer 指令）。
+* 扩展驱动程序仅按照 DriverVer 指令中所包含的日期和版本进行排名。 WU 和 PnP 都使用此项。  有关详细信息，请参阅 [INF Version Section](../install/inf-version-section.md)（INF 版本部分）和 [INF DriverVer directive](../install/inf-driverver-directive.md)（INF DriverVer 指令）。
 * 注意，对于扩展驱动程序，PnP 和 WU 不考虑功能或标识符分数（即 2 部分与 4 部分）。
 
 * 在 WU 上对扩展驱动程序排名时不使用 CHID 信息（即，不能“阻止”具有 CHID 定向的其他扩展驱动程序）。
 
-* 有关 Windows 操作系统中的驱动程序选择和定向的信息，请参阅 [Using an Extension INF file](https://docs.microsoft.com/windows-hardware/drivers/install/using-an-extension-inf-file)（使用扩展 INF 文件）
+* 有关 Windows 操作系统中的驱动程序选择和定向的信息，请参阅 [Using an Extension INF file](../install/using-an-extension-inf-file.md)（使用扩展 INF 文件）
 
 ## <a name="faq"></a>FAQ
 
@@ -174,10 +174,10 @@ ExtensionID 是你生成的用于驱动程序沿袭标识和版本控制的 GUID
 
 ### <a name="windows-drivers"></a>Windows 驱动程序
 
-* [Using a Universal INF File](https://docs.microsoft.com/windows-hardware/drivers/install/using-a-universal-inf-file)（使用通用 INF 文件）
+* [Using a Universal INF File](../install/using-a-universal-inf-file.md)（使用通用 INF 文件）
 
-* [通用驱动程序入门](https://docs.microsoft.com/windows-hardware/drivers/develop/getting-started-with-universal-drivers)
+* [通用驱动程序入门](../develop/getting-started-with-windows-drivers.md)
 
-* [Using a component INF file](https://docs.microsoft.com/windows-hardware/drivers/install/using-a-component-inf-file)（使用组件 INF 文件）
+* [Using a component INF file](../install/using-a-component-inf-file.md)（使用组件 INF 文件）
 
-* [How windows ranks drivers](https://docs.microsoft.com/windows-hardware/drivers/install/how-setup-ranks-drivers--windows-vista-and-later-)（Windows 如何对驱动程序排名）
+* [How windows ranks drivers](../install/how-setup-ranks-drivers--windows-vista-and-later-.md)（Windows 如何对驱动程序排名）

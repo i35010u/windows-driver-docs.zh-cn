@@ -5,12 +5,12 @@ ms.assetid: 120AA970-D981-4E7D-A9BD-68125D90A0EE
 ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bc51953376ce51e683e69d1fcd0f50f1f2fc4ba2
-ms.sourcegitcommit: f610410e1500f0b0a4ca008b52679688ab51033d
+ms.openlocfilehash: 87c08d598b3cb39128933965956b52ffcd737b28
+ms.sourcegitcommit: 4f08f5686c0bbc27d58930b993cbab1a98e3afb0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/15/2020
-ms.locfileid: "88252987"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89443725"
 ---
 # <a name="add-or-update-a-code-signing-certificate"></a>添加或更新代码签名证书
 
@@ -18,7 +18,7 @@ ms.locfileid: "88252987"
 
 合作伙伴中心支持将多个证书与单个帐户相关联。  如果要添加其他证书，请使用这个相同的过程。
 
-如果你首次在仪表板上注册公司，请参阅[建立新公司](https://docs.microsoft.com/windows-hardware/drivers/dashboard/establish-a-new-company)。
+如果你首次在仪表板上注册公司，请参阅[建立新公司](/windows-hardware/drivers/dashboard/dashboard-administration)。
 
 > [!IMPORTANT]
 > 已上传并用于所有合作伙伴中心提交包的证书已更改：
@@ -31,7 +31,7 @@ ms.locfileid: "88252987"
 
 ### <a name="step-1-renew-your-code-signing-certificate-if-needed"></a>步骤 1：续订代码签名证书（如果需要）  
 
-1. 确定所需的代码签名证书类型（有关详细信息，请参阅[获取代码签名证书](https://docs.microsoft.com/windows-hardware/drivers/dashboard/get-a-code-signing-certificate)）。
+1. 确定所需的代码签名证书类型（有关详细信息，请参阅[获取代码签名证书](./get-a-code-signing-certificate.md)）。
 
 2. 获取新证书或重新使用现有的证书。
 
@@ -53,10 +53,10 @@ ms.locfileid: "88252987"
 
 ## <a name="related-topics"></a>相关主题
 
-* [在登录之前](https://docs.microsoft.com/windows-hardware/drivers/dashboard/before-you-sign-in)
+* [在登录之前](./get-started-with-the-hardware-dashboard.md)
 
-* [建立新公司](https://docs.microsoft.com/windows-hardware/drivers/dashboard/establish-a-new-company)
+* [建立新公司](/windows-hardware/drivers/dashboard/dashboard-administration)
 
-* [硬件认证提交](https://docs.microsoft.com/windows-hardware/drivers/dashboard/hardware-certification-submissions)
+* [硬件认证提交](./hardware-certification-submissions.md)
 
-* [应用认证提交](https://docs.microsoft.com/windows-hardware/drivers/dashboard/app-certification-submissions)
+* [应用认证提交](https://techcommunity.microsoft.com/t5/windows-hardware-certification/bg-p/WindowsHardwareCertification)

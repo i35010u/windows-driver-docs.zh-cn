@@ -5,12 +5,12 @@ ms.assetid: AA3D1147-7015-4D21-84A6-D127F57DDC97
 ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: dbc344aafeb335626b231013fb9dad398c2de185
-ms.sourcegitcommit: f610410e1500f0b0a4ca008b52679688ab51033d
+ms.openlocfilehash: b1f8ed439d8251ba6522c77b59498846d3a44337
+ms.sourcegitcommit: 4f08f5686c0bbc27d58930b993cbab1a98e3afb0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/15/2020
-ms.locfileid: "88252989"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89443905"
 ---
 # <a name="hardware-dashboard-faq"></a>硬件仪表板常见问题
 
@@ -80,8 +80,8 @@ ms.locfileid: "88252989"
 | 组件 | 说明 |
 | ---       | ---         |
 |SellerID   | 合作伙伴帐户的标识号。 可以在帐户管理页上的**帐户设置**下，找到该标识号。 |
-|PrivateProductID | 每次创建产品时生成的标识号。 位于产品的驱动程序详细信息页上。 请参阅[仪表板 ID 定义](https://docs.microsoft.com/windows-hardware/drivers/dashboard/id-definitions)，了解详细信息。 |
-|SubmissionID | 指定给每个提交和提交更新的标识号。 位于产品的驱动程序详细信息页上。 请参阅[仪表板 ID 定义](https://docs.microsoft.com/windows-hardware/drivers/dashboard/id-definitions)，了解详细信息。 |
+|PrivateProductID | 每次创建产品时生成的标识号。 位于产品的驱动程序详细信息页上。 请参阅[仪表板 ID 定义](./id-definitions.md)，了解详细信息。 |
+|SubmissionID | 指定给每个提交和提交更新的标识号。 位于产品的驱动程序详细信息页上。 请参阅[仪表板 ID 定义](./id-definitions.md)，了解详细信息。 |
 
 * 若要创建可共享链接，请将以上示例 URL 中的 **SellerID**、**PrivateProductID** 和 **SubmissionID** 替换为相应的标识号。
 * 无需事先获得授权或合作伙伴中心的访问权限，便可通过此 URL 访问并下载报告。
@@ -109,4 +109,4 @@ ms.locfileid: "88252989"
 
 ### <a name="the-dua-package-error-shows-failed-to-open-package-with-the-error-not-compatible-with-a-version-3200-with-this-instance-package-manager"></a>DUA 程序包错误显示“无法打开程序包”，带有错误“与包含此实例程序包管理器的版本 (3.2.0.0) 不兼容”
 
-* 使用 [HLK Studio](https://docs.microsoft.com/windows-hardware/test/hlk/user/install-standalone-hlk-studio) 来打开下载的 DUA shell 程序包，并创建 DUA 提交。
+* 使用 [HLK Studio](/windows-hardware/test/hlk/user/install-standalone-hlk-studio) 来打开下载的 DUA shell 程序包，并创建 DUA 提交。

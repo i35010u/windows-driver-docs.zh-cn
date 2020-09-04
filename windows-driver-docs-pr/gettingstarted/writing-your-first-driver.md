@@ -6,12 +6,12 @@ keywords:
 - Hello World 驱动程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b19a39b73fcf69d144732d43712d8e4a4aac7b6b
-ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
+ms.openlocfilehash: d1ed76cb9addf40a5a7f068e0837904f4e14a4f0
+ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "67385170"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89384191"
 ---
 # <a name="write-your-first-driver"></a>编写你的第一个驱动程序
 
@@ -35,15 +35,15 @@ ms.locfileid: "67385170"
 <tbody>
 <tr class="odd">
 <td align="left"><p><a href="writing-a-umdf-driver-based-on-a-template.md" data-raw-source="[Write a Universal Windows driver (UMDF 2) based on a template](writing-a-umdf-driver-based-on-a-template.md)">基于模板编写通用 Windows 驱动程序 (UMDF 2)</a></p></td>
-<td align="left"><p>本主题介绍了如何使用用户模式驱动程序框架 (UMDF) 2 编写<a href="https://docs.microsoft.com/windows-hardware/drivers" data-raw-source="[Universal Windows driver](https://docs.microsoft.com/windows-hardware/drivers)">通用 Windows 驱动程序</a>。 首先使用 Microsoft Visual Studio 模板，然后在单独的计算机上部署和安装驱动程序。</p></td>
+<td align="left"><p>本主题介绍了如何使用用户模式驱动程序框架 (UMDF) 2 编写<a href="https://docs.microsoft.com/windows-hardware/drivers" data-raw-source="[Universal Windows driver](/windows-hardware/drivers)">通用 Windows 驱动程序</a>。 首先使用 Microsoft Visual Studio 模板，然后在单独的计算机上部署和安装驱动程序。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><a href="writing-a-very-small-kmdf--driver.md" data-raw-source="[Write a universal Hello World driver (KMDF)](writing-a-very-small-kmdf--driver.md)">编写通用 Hello World 驱动程序 (KMDF)</a></p></td>
-<td align="left"><p>本主题介绍了如何使用内核模式驱动程序框架 (KMDF) 编写<a href="https://docs.microsoft.com/windows-hardware/drivers" data-raw-source="[Universal Windows driver](https://docs.microsoft.com/windows-hardware/drivers)">通用 Windows 驱动程序</a>。 首先使用 Visual Studio 模板，然后在单独的计算机上部署和安装驱动程序。</p></td>
+<td align="left"><p>本主题介绍了如何使用内核模式驱动程序框架 (KMDF) 编写<a href="https://docs.microsoft.com/windows-hardware/drivers" data-raw-source="[Universal Windows driver](/windows-hardware/drivers)">通用 Windows 驱动程序</a>。 首先使用 Visual Studio 模板，然后在单独的计算机上部署和安装驱动程序。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="writing-a-kmdf-driver-based-on-a-template.md" data-raw-source="[Write a Universal Windows driver (KMDF) based on a template](writing-a-kmdf-driver-based-on-a-template.md)">基于模板编写通用 Windows 驱动程序 (KMDF)</a></p></td>
-<td align="left"><p>本主题介绍如何使用 KMDF 编写<a href="https://docs.microsoft.com/windows-hardware/drivers" data-raw-source="[Universal Windows driver](https://docs.microsoft.com/windows-hardware/drivers)">通用 Windows 驱动程序</a>。 首先使用 Visual Studio 模板，然后在单独的计算机上部署和安装驱动程序。</p></td>
+<td align="left"><p>本主题介绍如何使用 KMDF 编写<a href="https://docs.microsoft.com/windows-hardware/drivers" data-raw-source="[Universal Windows driver](/windows-hardware/drivers)">通用 Windows 驱动程序</a>。 首先使用 Visual Studio 模板，然后在单独的计算机上部署和安装驱动程序。</p></td>
 </tr>
 </tbody>
 </table>
@@ -53,10 +53,4 @@ ms.locfileid: "67385170"
 UMDF 和 KMDF 是 [Windows 驱动程序框架 (WDF)](https://go.microsoft.com/fwlink/p?linkid=399235) 的一部分。
 
  
-
- 
-
-
-
-
 

@@ -4,12 +4,12 @@ description: 创建驱动程序提交下限或上限以更改其分发。
 ms.topic: article
 ms.date: 06/25/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: be0a92b0c9d72640b4dfaf615be8d8dc35cbb1a2
-ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
+ms.openlocfilehash: bf58607df6aecf9712d13f61d4e9d482eb333450
+ms.sourcegitcommit: 4f08f5686c0bbc27d58930b993cbab1a98e3afb0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "67364464"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89443917"
 ---
 # <a name="how-to-limit-or-expand-a-drivers-distribution-based-on-windows-version"></a>如何基于 Windows 版本限制或扩展驱动程序的分发
 
@@ -114,7 +114,7 @@ OS 下限表示可以将驱动程序分发到的最低 Windows 版本。  若要
 
 * 只能由**原始提交内容所有者**进行扩展。 共享提交内容的接收者不会看到此选项。 （参见[重要信息](#important-information)。）  
 * 每次提交只可执行一次扩展，且不可撤销。  如果已进行过扩展，则“扩展”按钮会灰显。
-* 只能对其中的 [INF 制造商部分](https://docs.microsoft.com/windows-hardware/drivers/install/inf-manufacturer-section)不使用 \[BuildNumber] *TargetOSVersion* 修饰（例如 NTamd64.10.0...**14393**）的驱动程序进行扩展。
+* 只能对其中的 [INF 制造商部分](../install/inf-manufacturer-section.md)不使用 \[BuildNumber] *TargetOSVersion* 修饰（例如 NTamd64.10.0...**14393**）的驱动程序进行扩展。
 * 只有 Windows 8.1 驱动程序可以**向上**扩展到目标 Windows 10 系统。  Windows 10 驱动程序可以**向下**扩展。
 * 扩展不会更改或扩大驱动程序的认证级别。  如果驱动程序是针对 RS5 认证的，扩展不会提供更低的 OS 认证。
 
@@ -130,7 +130,7 @@ OS 下限表示可以将驱动程序分发到的最低 Windows 版本。  若要
 
 ![一个 UI，显示某个提交扩展了网格条目](images/expansion-pnpgrid-outline.png)
 
-如果此提交中存在多个 INF，则其中的每个 INF 和硬件 ID 会收到相同的全新“已扩展”条目。   例外情况是，如果 [INF 制造商](https://docs.microsoft.com/windows-hardware/drivers/install/inf-manufacturer-section)部分使用 *\[BuildNumber] TargetOSVersion* 修饰（例如 NTamd64.10.0...**14393**），  则会跳过这些 INF，不能将其扩展。  这意味着，最终在 PNP 网格中只有部分扩展的 INF 列表。  若要扩展所有 INF 文件，必须编辑 INF，将 *BuildNumber* 删除。  另外，如果没有任何受支持的 INF，则可能根本看不到“展开”选项框。 
+如果此提交中存在多个 INF，则其中的每个 INF 和硬件 ID 会收到相同的全新“已扩展”条目。   例外情况是，如果 [INF 制造商](../install/inf-manufacturer-section.md)部分使用 *\[BuildNumber] TargetOSVersion* 修饰（例如 NTamd64.10.0...**14393**），  则会跳过这些 INF，不能将其扩展。  这意味着，最终在 PNP 网格中只有部分扩展的 INF 列表。  若要扩展所有 INF 文件，必须编辑 INF，将 *BuildNumber* 删除。  另外，如果没有任何受支持的 INF，则可能根本看不到“展开”选项框。 
 
 有了“已扩展”条目后，即可共享或发布它。 
 
@@ -201,4 +201,4 @@ OS 下限表示可以将驱动程序分发到的最低 Windows 版本。  若要
 
 ### <a name="some-of-my-infs-are-missing-after-expansion--why-cant-i-expand-my-entire-submission"></a>扩展后，我的部分 INF 缺失。  为何我不能扩展我的整个提交？
 
-我们会针对扩展单独评估提交中的每个 INF。 如果其中一个 INF 或所有 INF（参见 [INF 制造商](https://docs.microsoft.com/windows-hardware/drivers/install/inf-manufacturer-section)）使用 *\[BuildNumber] TargetOSVersion* 修饰，我们将无法处理需要扩展的该 INF。 若需扩展提交，则必须先编辑 INF，将 \[BuildNumber] 删除。 不包含 \[BuildNumber] 的 INF 可以成功处理。  有关详细信息，请参阅[重要信息](#important-information)。
+我们会针对扩展单独评估提交中的每个 INF。 如果其中一个 INF 或所有 INF（参见 [INF 制造商](../install/inf-manufacturer-section.md)）使用 *\[BuildNumber] TargetOSVersion* 修饰，我们将无法处理需要扩展的该 INF。 若需扩展提交，则必须先编辑 INF，将 \[BuildNumber] 删除。 不包含 \[BuildNumber] 的 INF 可以成功处理。  有关详细信息，请参阅[重要信息](#important-information)。

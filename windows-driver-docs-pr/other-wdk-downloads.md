@@ -9,12 +9,12 @@ keywords:
 ms.date: 05/07/2018
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: a42836b29a0692ab201e4473b1252f7ea822ba9b
-ms.sourcegitcommit: 958a5ced83856df22627c06eb42c9524dd547906
+ms.openlocfilehash: 18a8bf1b5d0e2939bb89777780e91668491d191e
+ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83235294"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89064938"
 ---
 # <a name="other-wdk-downloads"></a>其他 WDK 下载
 
@@ -86,17 +86,17 @@ WDK 与 Visual Studio 和 Windows 调试工具 (WinDbg) 集成在一起。 此�
 
 企业版 WDK (EWDK) 是一种独立的自包含命令行环境，用于生成驱动程序和基本的 Win32 测试应用程序。 其中包括 Visual Studio 生成工具、SDK 和 WDK。 此环境不包含在 Visual Studio 中可用的所有功能，例如集成开发环境 (IDE)。
 
-使用 EWDK 需要 .NET Framework 4.6.1。 若要详细了解哪些系统运行此版本的框架，请参阅 [.NET Framework 系统要求](https://docs.microsoft.com/dotnet/framework/get-started/system-requirements)。 如需用于下载 .NET Framework 的链接，请参阅[安装面向开发人员的 .NET Framework](https://docs.microsoft.com/dotnet/framework/install/guide-for-developers)。
+使用 EWDK 需要 .NET Framework 4.6.1。 若要详细了解哪些系统运行此版本的框架，请参阅 [.NET Framework 系统要求](/dotnet/framework/get-started/system-requirements)。 如需用于下载 .NET Framework 的链接，请参阅[安装面向开发人员的 .NET Framework](/dotnet/framework/install/guide-for-developers)。
 
-有关 EWDK 的详细信息，请参阅[使用企业版 WDK 10](https://docs.microsoft.com/windows-hardware/drivers/develop/using-the-enterprise-wdk)。
+有关 EWDK 的详细信息，请参阅[使用企业版 WDK 10](./develop/using-the-enterprise-wdk.md)。
 
 | Windows 版本               | EWDK                              |
 |-----------------------------------|-----------------------------------|
-| Windows 10 版本 1903          | [适用于 Windows 10 版本 1903 的 EWDK](https://docs.microsoft.com/legal/windows/hardware/enterprise-wdk-license-2019) |
-| Windows 10 版本 1809          | [适用于 Windows 10 版本 1809 的 EWDK](https://docs.microsoft.com/legal/windows/hardware/enterprise-wdk-license-2017) |
-| Windows 10 版本 1803          | [适用于 Windows 10 版本 1803 的 EWDK](https://docs.microsoft.com/legal/windows/hardware/enterprise-wdk-license-2017) |
-| Windows 10 版本 1709          | [适用于 Visual Studio 与生成工具 15.6 的 EWDK](https://docs.microsoft.com/legal/windows/hardware/enterprise-wdk-license-2017)（推荐） <br/>[适用于 Visual Studio 与生成工具 15.4 的 EWDK](https://docs.microsoft.com/legal/windows/hardware/enterprise-wdk-license-2017) <br/>[适用于 Visual Studio 与生成工具 15.2 的 EWDK](https://docs.microsoft.com/legal/windows/hardware/enterprise-wdk-license-2017) |
-| Windows 10 版本 1703          | [适用于 Windows 10 版本 1703 的 EWDK](https://docs.microsoft.com/legal/windows/hardware/enterprise-wdk-license-2015) |
+| Windows 10 版本 1903          | [适用于 Windows 10 版本 1903 的 EWDK](/legal/windows/hardware/enterprise-wdk-license-2019) |
+| Windows 10 版本 1809          | [适用于 Windows 10 版本 1809 的 EWDK](/legal/windows/hardware/enterprise-wdk-license-2017) |
+| Windows 10 版本 1803          | [适用于 Windows 10 版本 1803 的 EWDK](/legal/windows/hardware/enterprise-wdk-license-2017) |
+| Windows 10 版本 1709          | [适用于 Visual Studio 与生成工具 15.6 的 EWDK](/legal/windows/hardware/enterprise-wdk-license-2017)（推荐） <br/>[适用于 Visual Studio 与生成工具 15.4 的 EWDK](/legal/windows/hardware/enterprise-wdk-license-2017) <br/>[适用于 Visual Studio 与生成工具 15.2 的 EWDK](/legal/windows/hardware/enterprise-wdk-license-2017) |
+| Windows 10 版本 1703          | [适用于 Windows 10 版本 1703 的 EWDK](/legal/windows/hardware/enterprise-wdk-license-2015) |
 
 > [!Note]
 > 从 Windows 10 版本 1709 开始，EWDK 基于 ISO。 若要开始使用，请下载并装载 ISO，然后运行 **LaunchBuildEnv**。
@@ -111,7 +111,7 @@ WDK 与 Visual Studio 和 Windows 调试工具 (WinDbg) 集成在一起。 此�
 
 WinDbg Preview 是 WinDbg 的新版本，在重要位置构建有可扩展的调试器数据模型，具有更现代的视觉效果、更快速的 Windows 和成熟的脚本体验。 WinDbg Preview 支持调试每个版本的 Windows 10。
 
-如需 WinDbg Preview 的下载链接和详细信息，请参阅[下载 WinDbg Preview](https://docs.microsoft.com/windows-hardware/drivers/debugger/debugger-download-tools#small-windbg-preview-logo-download-windbg-preview)。
+如需 WinDbg Preview 的下载链接和详细信息，请参阅[下载 WinDbg Preview](./debugger/debugger-download-tools.md#small-windbg-preview-logo-download-windbg-preview)。
 
 ## <a name="standalone-tools-for-debugging-windows-xp-and-windows-vista"></a>用于调试 Windows XP 和 Windows Vista 的独立工具
 
@@ -125,8 +125,8 @@ WinDbg Preview 是 WinDbg 的新版本，在重要位置构建有可扩展的调
 若要将 Windows 调试工具作为单独组件进行安装，请启动 SDK 安装程序，在安装向导中选择“Windows 调试工具”，然后清除其他所有组件。
 
 ### <a name="related-downloads"></a>相关下载
-* [下载 Windows 评估和部署工具包 (Windows ADK)](https://docs.microsoft.com/windows-hardware/get-started/adk-install)
-* [下载 Windows HLK、HCK 或徽标工具包](https://docs.microsoft.com/windows-hardware/test/hlk/windows-hardware-lab-kit)
-* [下载 Windows 调试工具 (WinDbg)](https://docs.microsoft.com/windows-hardware/drivers/debugger/debugger-download-tools)
-* [下载 Windows 符号程序包](https://docs.microsoft.com/windows-hardware/drivers/debugger/debugger-download-symbols)
+* [下载 Windows 评估和部署工具包 (Windows ADK)](/windows-hardware/get-started/adk-install)
+* [下载 Windows HLK、HCK 或徽标工具包](/windows-hardware/test/hlk/windows-hardware-lab-kit)
+* [下载 Windows 调试工具 (WinDbg)](./debugger/debugger-download-tools.md)
+* [下载 Windows 符号程序包](./debugger/debugger-download-symbols.md)
 * [下载 WDK Insider Preview](https://www.microsoft.com/software-download/windowsinsiderpreviewWDK)

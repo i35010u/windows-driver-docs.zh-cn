@@ -4,12 +4,12 @@ description: Microsoft 硬件 API 中的这些方法可获取注册到开发人�
 ms.topic: article
 ms.date: 04/09/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 9c249cbfdbcda158190c10bea937317e24dd156c
-ms.sourcegitcommit: 40d7d538756767d26bbda636589f614f85a6fab3
+ms.openlocfilehash: e3fabfea067ecfb2c5cb191d1e1259b89deffc71
+ms.sourcegitcommit: 4f08f5686c0bbc27d58930b993cbab1a98e3afb0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/06/2020
-ms.locfileid: "86020024"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89443830"
 ---
 # <a name="get-product-data"></a>获取产品数据
 
@@ -92,7 +92,7 @@ https://manage.devcenter.microsoft.com/v2.0/my/hardware/products/
 | isExtensionInf | 布尔 | （已弃用）指示产品是否为扩展驱动程序。 此字段已弃用，不应再使用。 isExtensionInf 已移至提交级别属性。 |
 | deviceMetadataIds | GUID 数组 | 将设备元数据提交映射到驱动程序的 GUID |
 | deviceType | 字符串 | 指示设备的类型。 可能的值为：<ul><li>“internal”- 内部组件，设备是系统的一部分，在电脑内部进行连接</li><li>“external”- 外部组件，设备是连接到电脑的外部设备（外设）</li><li>“internalExternal”- 两者，设备可以在内部（在电脑内）和外部（外设）进行连接</li><li>“notSet”- 没有可用数据</li></ul>|
-| isTestSign | 布尔 | 指示产品是否为经过测试签名的驱动程序。 有关对驱动程序包进行测试签名的详细信息，请参阅 [WHQL Test Signature Program](https://docs.microsoft.com/windows-hardware/drivers/install/whql-test-signature-program)（WHQL 测试签名计划）  |
+| isTestSign | 布尔 | 指示产品是否为经过测试签名的驱动程序。 有关对驱动程序包进行测试签名的详细信息，请参阅 [WHQL Test Signature Program](../install/whql-test-signature-program.md)（WHQL 测试签名计划）  |
 | isFlightSign | 布尔 | 指示产品是否为经过外部测试签名的驱动程序。 经过外部测试签名的驱动程序是指可以通过 Windows 更新发布的测试驱动程序。 它们只能发布/安装在已注册 Windows 预览体验计划的计算机上。 它们可以在不禁用安全启动的情况下安装在计算机上。 它们不能安装在未加入 Windows 预览体验计划的零售计算机上。|
 | marketingNames | 字符串数组 | 产品的营销名称或别名 |
 | productName | 字符串 | 在创建期间指定的驱动程序的名称 |
