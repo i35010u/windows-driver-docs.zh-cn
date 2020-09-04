@@ -9,15 +9,15 @@ keywords:
 - MAC 层 WDK 网络
 - 物理层 WDK 网络
 - Windows 网络体系结构 WDK
-ms.date: 04/20/2017
+ms.date: 09/04/2020
 ms.localizationpriority: medium
 ms.custom: contperfq1
-ms.openlocfilehash: b5a2ef4ef8c6bbc475502926860a298c5344fd27
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: a8b9475cec17b594c690e41f0ecc98a39fc4fa9f
+ms.sourcegitcommit: 79a54c0aea8e30e38e0e3227078a12cc64ad3a3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89218288"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89475033"
 ---
 # <a name="windows-network-architecture-and-the-osi-model"></a>Windows 网络体系结构和 OSI 模型
 
@@ -50,7 +50,7 @@ Microsoft Windows 网络驱动程序实现了 OSI 模型的底部四层。
 
 MAC 子层管理对物理层的访问，检查帧错误，并管理接收到的帧的地址识别。
 
-在 Windows 网络体系结构中，MAC 子层在 NIC 中实现。 NIC 由称为 [微型端口驱动程序](ndis-miniport-drivers2.md)的软件设备驱动程序控制。 Windows 支持多种小型端口驱动程序的多种变体，包括 WDM 微型端口驱动程序、微型端口呼叫管理器 (MCMs) 和微型端口 [中间驱动程序](ndis-miniport-drivers.md)。
+在 Windows 网络体系结构中，MAC 子层在 NIC 中实现。 NIC 由称为 [微型端口驱动程序](ndis-miniport-drivers2.md)的软件设备驱动程序控制。 Windows 支持多种小型端口驱动程序的多种变体，包括 WDM 微型端口驱动程序、微型端口呼叫管理器 (MCMs) 和微型端口 [中间驱动程序](ndis-intermediate-drivers.md)。
 
 ### <a name="llc"></a>LLC
 

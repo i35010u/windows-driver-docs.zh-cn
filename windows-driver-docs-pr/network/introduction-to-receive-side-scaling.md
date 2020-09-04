@@ -6,15 +6,15 @@ keywords:
 - 接收方缩放 WDK 网络，关于接收方缩放
 - RSS WDK 网络，关于接收方缩放
 - CPU 确定 WDK RSS
-ms.date: 04/20/2017
+ms.date: 09/04/2020
 ms.localizationpriority: medium
 ms.custom: contperfq1
-ms.openlocfilehash: 6feb76bcf63e287c2b5550b293e6d0ee6ef15659
-ms.sourcegitcommit: 17c1bbc5ea0bef3bbc87794b030a073f905dc942
+ms.openlocfilehash: baa4a97bd06f3fc22af891c10fefef6ce6bc13d2
+ms.sourcegitcommit: 79a54c0aea8e30e38e0e3227078a12cc64ad3a3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88802799"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89475035"
 ---
 # <a name="introduction-to-receive-side-scaling"></a>接收端缩放简介
 
