@@ -4,18 +4,18 @@ description: WinDbg 是包含在 Windows 调试工具中的内核模式和用户
 ms.assetid: 8C2D2D0C-7E54-4711-A6FD-970E040F1C50
 ms.date: 06/05/2020
 ms.localizationpriority: high
-ms.openlocfilehash: b86dc5237f49d3385e668022ed47aee0b88f0b34
-ms.sourcegitcommit: f610410e1500f0b0a4ca008b52679688ab51033d
+ms.openlocfilehash: 6a8524484dc2904431eb8bb22c1ce49cf5797331
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/15/2020
-ms.locfileid: "88252871"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89210227"
 ---
 # <a name="getting-started-with-windbg-user-mode"></a>WinDbg 入门（用户模式）
 
 WinDbg 是包含在 Windows 调试工具中的内核模式和用户模式调试器。 在此，我们将提供实践练习，这些练习帮助你开始使用 WinDbg 作为用户模式调试器。
 
-有关如何获取 Windows 调试工具的信息，请参见 [Windows 调试工具（WinDbg、KD、CDB、NTSD）](https://docs.microsoft.com//windows-hardware/drivers/debugger/)。
+有关如何获取 Windows 调试工具的信息，请参见 [Windows 调试工具（WinDbg、KD、CDB、NTSD）](//windows-hardware/drivers/debugger/)。
 
 安装调试工具后，找到 64 位 (x64) 和 32 位 (x86) 版本工具的安装目录。 例如：
 
@@ -26,7 +26,7 @@ WinDbg 是包含在 Windows 调试工具中的内核模式和用户模式调试�
 
 1. 导航到安装目录，然后打开 WinDbg.exe。
 
-2. 也可在线 ([docs.microsoft.com](https://docs.microsoft.com/windows-hardware/drivers/debugger/)) 找到调试程序文档。
+2. 也可在线 ([docs.microsoft.com](./index.md)) 找到调试程序文档。
 
 3. 在“文件”菜单上，选择“打开可执行文件”   。 在“打开可执行文件”对话框中，导航到包含 notepad.exe 的文件夹（例如，C:\\Windows\\System32）。 输入 notepad.exe 作为“文件名称”  。 选择“打开”  。
 
@@ -345,6 +345,6 @@ void main ()
 
 [调试方法](debugging-techniques.md)
 
-[Windows 调试工具（WinDbg、KD、CDB、NTSD）](https://docs.microsoft.com/windows-hardware/drivers/debugger/)
+[Windows 调试工具（WinDbg、KD、CDB、NTSD）](./index.md)
 
 [使用 WinDbg 预览版进行调试](debugging-using-windbg-preview.md)

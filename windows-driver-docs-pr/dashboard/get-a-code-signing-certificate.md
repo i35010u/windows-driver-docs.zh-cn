@@ -5,12 +5,12 @@ ms.assetid: 6CF4111A-C645-40F5-8D45-55F46B3C0740
 ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c856273572ccb96ec93b9ac17df274031db8148e
-ms.sourcegitcommit: f610410e1500f0b0a4ca008b52679688ab51033d
+ms.openlocfilehash: f8896c707de4793de1363604c41f0dcc88308b39
+ms.sourcegitcommit: 4f08f5686c0bbc27d58930b993cbab1a98e3afb0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/15/2020
-ms.locfileid: "88253025"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89443873"
 ---
 # <a name="get-a-code-signing-certificate"></a>获取代码签名证书
 
@@ -28,8 +28,6 @@ ms.locfileid: "88253025"
 
 - [购买 SSL.com EV 代码签名证书](https://www.ssl.com/certificates/ev-code-signing/)
 
-- [购买 Symantec EV 代码签名证书](https://go.microsoft.com/fwlink/?LinkId=393248)
-
 - [购买 Certum EV 代码签名证书](https://go.microsoft.com/fwlink/?linkid=843061)
 
 - [购买 Entrust EV 代码签名证书](https://www.entrustdatacard.com/products/digital-signing-certificates/code-signing-certificates)
@@ -38,13 +36,7 @@ ms.locfileid: "88253025"
 
 - [购买 Sectigo（以前称为 Comodo）EV 代码签名证书](https://go.microsoft.com/fwlink/?linkid=863208)
 
-- [购买 DigiCert EV 代码签名证书](https://go.microsoft.com/fwlink/?LinkId=393249)
-
-  1. 在“Sysdevs 的 DigiCert 代码签名证书”页上，单击“开始”。
-
-  2. 在“DigiCert 订单”页上（步骤 1）的“代码签名”部分中，选择“EV 代码签名证书”、填写其余的表单，然后选择“继续”。
-
-  3. 按照 DigiCert 提供的说明购买证书。
+- [购买 DigiCert EV 代码签名证书](https://www.digicert.com/order/order-1.php)
 
 ## <a name="step-3-retrieve-code-signing-certificates"></a>步骤 3:检索代码签名证书
 
@@ -69,7 +61,7 @@ ms.locfileid: "88253025"
 
 ### <a name="hlk-tested-and-dashboard-signed-drivers"></a>HLK 测试和仪表板签名的驱动程序
 
-- 通过 HLK 测试并经仪表板签名的驱动程序可凭借 Windows 10（包括 Windows Server 版本）在 Windows Vista 上运行。 推荐将此方法用于驱动程序签名，因为它允许将一套过程用于所有操作系统版本。 此外，HLK 测试的驱动程序显示制造商严格测试其硬件，以满足 Microsoft 对于可靠性、安全性、电源效率、可维护性和性能的要求，以便提供出色的 Windows 体验。 这包括兼容行业标准和遵守特定于技术的功能的 Microsoft 规范，有助于确保正确安装、部署、连接和互操作性。 有关 HLK 的详细信息，请参阅 [Windows 硬件兼容性计划](https://docs.microsoft.com/windows-hardware/design/compatibility/index)。
+- 通过 HLK 测试并经仪表板签名的驱动程序可凭借 Windows 10（包括 Windows Server 版本）在 Windows Vista 上运行。 推荐将此方法用于驱动程序签名，因为它允许将一套过程用于所有操作系统版本。 此外，HLK 测试的驱动程序显示制造商严格测试其硬件，以满足 Microsoft 对于可靠性、安全性、电源效率、可维护性和性能的要求，以便提供出色的 Windows 体验。 这包括兼容行业标准和遵守特定于技术的功能的 Microsoft 规范，有助于确保正确安装、部署、连接和互操作性。 有关 HLK 的详细信息，请参阅 [Windows 硬件兼容性计划](/windows-hardware/design/compatibility/index)。
 
 ### <a name="windows-10-desktop-attestation-signing"></a>Windows 10 桌面版证明签名
 
@@ -85,20 +77,20 @@ ms.locfileid: "88253025"
 
 ### <a name="cross-signing-and-sha-256-certificates"></a>交叉签名和 SHA-256 证书
 
-交叉签名介绍了使用 Microsoft 信任的证书颁发机构 (CA) 颁发的证书对某个驱动程序进行签名的过程。 有关详细信息，请参阅[交叉证书概述](https://docs.microsoft.com/windows-hardware/drivers/install/cross-certificates-for-kernel-mode-code-signing)。
+交叉签名介绍了使用 Microsoft 信任的证书颁发机构 (CA) 颁发的证书对某个驱动程序进行签名的过程。 有关详细信息，请参阅[交叉证书概述](../install/cross-certificates-for-kernel-mode-code-signing.md)。
 
 - Windows 8 和更高版本均支持 SHA-256。
 - 修补后的 Windows 7 支持 SHA-256。 如果需要支持运行 Windows 7 的未修补的设备，则需要使用 SHA-1 证书进行交叉签名，或提交到仪表板以进行签名。 否则，可以使用 SHA-1 或 SHA-2 证书进行交叉签名，或创建 HLK/HCK 提交以进行签名。
 - 因为 Windows Vista 不支持 SHA-256，所以需要使用 SHA-1 证书进行交叉签名，或创建 HLK/HCK 提交以进行 Windows Vista 驱动程序签名。
 - 在 2015 年 7 月 29 日之前颁发的使用 SHA-256 证书（包括 EV 证书）进行交叉签名的驱动程序将在 Windows 8 和更高版本上运行。 它不会在 Windows Vista 或 Windows Server 2008 上运行。
-- 在 2015 年 7 月 29 日之前颁发的使用 SHA-256 证书（包括 EV 证书）进行交叉签名的驱动程序将在 Windows 7 或 Server 2008 R2 上运行，前提是已应用在今年较早时候通过 Windows 更新颁发的修补程序。 有关详细信息，请参阅[适用于 Windows 7 和 Windows Server 2008 R2 的 SHA-2 哈希算法的可用性](https://docs.microsoft.com/security-updates/SecurityAdvisories/2014/2949927)和 [Microsoft 安全公告：适用于 Windows 7 和 Windows Server 2008 R2 的 SHA-2 代码签名支持的可用性：2015 年 3 月 10 日](https://support.microsoft.com/help/3033929/microsoft-security-advisory-availability-of-sha-2-code-signing-support)。
+- 在 2015 年 7 月 29 日之前颁发的使用 SHA-256 证书（包括 EV 证书）进行交叉签名的驱动程序将在 Windows 7 或 Server 2008 R2 上运行，前提是已应用在今年较早时候通过 Windows 更新颁发的修补程序。 有关详细信息，请参阅[适用于 Windows 7 和 Windows Server 2008 R2 的 SHA-2 哈希算法的可用性](/security-updates/SecurityAdvisories/2014/2949927)和 [Microsoft 安全公告：适用于 Windows 7 和 Windows Server 2008 R2 的 SHA-2 代码签名支持的可用性：2015 年 3 月 10 日](https://support.microsoft.com/help/3033929/microsoft-security-advisory-availability-of-sha-2-code-signing-support)。
 - 使用在 2015 年 7 月 29 日前颁发的 SHA-1 证书进行交叉签名的驱动程序可以在从 Windows Vista 到 Windows 10 的所有平台上运行。
 - 不推荐将使用在 2015 年 7 月 29 日后颁发的 SHA-1 或 SHA-256 证书进行交叉签名的驱动程序用于 Windows 10。
 - 有关移动到 SHA-256 证书的工作的详细信息，请参阅[验证码签名和时间戳的 Windows 强制](https://social.technet.microsoft.com/wiki/contents/articles/32288.windows-enforcement-of-authenticode-code-signing-and-timestamping.aspx)
 
 ### <a name="windows-defender-application-control"></a>Microsoft Defender 应用程序控制
 
-- 企业可实现一项策略，使用 Windows 10 企业版修改驱动程序签名要求。 Microsoft Defender 应用程序控制 (WDAC) 提供企业定义的代码完整性策略，该策略可配置为要求至少一个证明签名的驱动程序。 有关 WDAC 的详细信息，请参阅 [关于 Microsoft Defender 应用程序控制部署过程的计划和入门](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-application-control/windows-defender-application-control-deployment-guide)。
+- 企业可实现一项策略，使用 Windows 10 企业版修改驱动程序签名要求。 Microsoft Defender 应用程序控制 (WDAC) 提供企业定义的代码完整性策略，该策略可配置为要求至少一个证明签名的驱动程序。 有关 WDAC 的详细信息，请参阅 [关于 Microsoft Defender 应用程序控制部署过程的计划和入门](/windows/security/threat-protection/windows-defender-application-control/windows-defender-application-control-deployment-guide)。
 
 ### <a name="windows-server"></a>Windows Server
 
@@ -115,22 +107,21 @@ ms.locfileid: "88253025"
 
 此表总结了 Windows 的驱动程序签名要求。
 
-|                                    |                                |                                    |                                                                                |
-|------------------------------------|--------------------------------|------------------------------------|--------------------------------------------------------------------------------|
-|                                    | *已签名的证明仪表板* | *已通过 HLK 测试的已签名仪表板* | *使用在 2015 年 7 月 29 日前颁发的 SHA-1 证书进行交叉签名*         |
-| Windows Vista                      | 否                             | 是                                | 是                                                                            |
-| Windows 7                          | 否                             | 是                                | 是                                                                            |
-| Windows 8/8.1                    | 否                             | 是                                | 是                                                                            |
-| Windows 10                         | 是                            | 是                                | 否（截至 Windows 10 1809）                                                                            |
-| Windows 10 - DG 已启用            | \*配置相关      | \*配置相关          | \*配置相关                                                      |
-| Windows Server 2008 R2             | 否                             | 是                                | 是                                                                            |
-| Windows Server 2012 R2             | 否                             | 是                                | 是                                                                            |
-| Windows Server >= 2016             | 否                             | 是                                | 是                                                                            |
-| Windows Server >= 2016 – DG 已启用| \*配置相关      | \*配置相关          | \*配置相关                                                      |
-| Windows IoT 企业版             | 是                            | 是                                | 是                                                                            |
-| Windows IoT 企业版 - DG 已启用 | \*配置相关      | \*配置相关          | \*配置相关                                                      |
-| Windows IoT 核心版(1)                | 是（不需要）             | 是（不需要）                 | 是（交叉签名也适用于 2015 年 7 月 29 日后颁发的证书） |
+| 版本 | *已签名的证明仪表板* | *已通过 HLK 测试的已签名仪表板* | *使用在 2015 年 7 月 29 日前颁发的 SHA-1 证书进行交叉签名* |
+|--|--|--|--|
+| Windows Vista | 否 | 是 | 是 |
+| Windows 7 | 否 | 是 | 是 |
+| Windows 8/8.1 | 否 | 是 | 是 |
+| Windows 10 | 是 | 是 | 否（截至 Windows 10 1809） |
+| Windows 10 - DG 已启用 | \*配置相关 | \*配置相关 | \*配置相关 |
+| Windows Server 2008 R2 | 否 | 是 | 是 |
+| Windows Server 2012 R2 | 否 | 是 | 是 |
+| Windows Server >= 2016 | 否 | 是 | 是 |
+| Windows Server >= 2016 – DG 已启用 | \*配置相关 | \*配置相关 | \*配置相关 |
+| Windows IoT 企业版 | 是 | 是 | 是 |
+| Windows IoT 企业版 - DG 已启用 | \*配置相关 | \*配置相关 | \*配置相关 |
+| Windows IoT 核心版(1) | 是（不需要） | 是（不需要） | 是（交叉签名也适用于 2015 年 7 月 29 日后颁发的证书） |
 
-\*配置从属 - 通过 Windows 10 企业版，组织可使用 Microsoft Defender 应用程序控制 (WDAC) 来定义自定义签名要求。 有关 WDAC 的详细信息，请参阅 [关于 Microsoft Defender 应用程序控制部署过程的计划和入门](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-application-control/windows-defender-application-control-deployment-guide)。
+\*配置从属 - 通过 Windows 10 企业版，组织可使用 Microsoft Defender 应用程序控制 (WDAC) 来定义自定义签名要求。 有关 WDAC 的详细信息，请参阅 [关于 Microsoft Defender 应用程序控制部署过程的计划和入门](/windows/security/threat-protection/windows-defender-application-control/windows-defender-application-control-deployment-guide)。
 
-(1) 制造商生成装有 IoT 核心版的零售产品（即不用于开发用途）需要驱动程序签名。 有关批准的证书颁发机构 (CA) 列表，请参阅[适用于内核模式代码签名的交叉证书](https://docs.microsoft.com/windows-hardware/drivers/install/cross-certificates-for-kernel-mode-code-signing)。 请注意，如果 UEFI 安全启动已启用，则必须对驱动程序进行签名。
+(1) 制造商生成装有 IoT 核心版的零售产品（即不用于开发用途）需要驱动程序签名。 有关批准的证书颁发机构 (CA) 列表，请参阅[适用于内核模式代码签名的交叉证书](../install/cross-certificates-for-kernel-mode-code-signing.md)。 请注意，如果 UEFI 安全启动已启用，则必须对驱动程序进行签名。
