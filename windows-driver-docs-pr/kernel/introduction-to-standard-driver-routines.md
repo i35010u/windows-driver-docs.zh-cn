@@ -11,12 +11,12 @@ keywords:
 - 可选标准例程 WDK 内核
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cd42f70a28c62cd5e7db205b3a02d01cd9aad66a
-ms.sourcegitcommit: 057b72e8a44ba8f4282e072edc7be0b7e9341d2a
+ms.openlocfilehash: 61d4f1e0fffba8905552a3eaaa78ec38482baade
+ms.sourcegitcommit: 4f08f5686c0bbc27d58930b993cbab1a98e3afb0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 09/03/2020
-ms.locfileid: "89412458"
+ms.locfileid: "89443729"
 ---
 # <a name="introduction-to-standard-driver-routines"></a>标准驱动程序例程简介
 
@@ -43,7 +43,7 @@ ms.locfileid: "89412458"
 <thead>
 <tr class="header">
 <th>必需的标准驱动程序例程</th>
-<th>目标</th>
+<th>用途</th>
 <th>描述位置</th>
 </tr>
 </thead>
@@ -82,7 +82,7 @@ ms.locfileid: "89412458"
 <thead>
 <tr class="header">
 <th>可选标准驱动程序例程</th>
-<th>目标</th>
+<th>用途</th>
 <th>描述位置</th>
 </tr>
 </thead>
@@ -139,7 +139,7 @@ ms.locfileid: "89412458"
 
 当前 IRP 和目标设备对象是许多标准例程的输入参数。 每个驱动程序都通过其一组标准例程处理每个 IRP。
 
-按照约定，系统提供的驱动程序会在除 **DriverEntry**之外的每个标准例程的名称前面预置标识、驱动程序特定的或特定于设备的前缀。 例如，本文档使用 "DD"，如 [驱动程序对象图](introduction-to-driver-objects.md#driver-object-illustration)所示。 遵循此约定可以更轻松地调试和维护驱动程序。
+按照约定，系统提供的驱动程序会在除 **DriverEntry**之外的每个标准例程的名称前面预置标识、驱动程序特定的或特定于设备的前缀。 例如，本文档使用 "DD"，如 [驱动程序对象简介](introduction-to-driver-objects.md)中所示。 遵循此约定可以更轻松地调试和维护驱动程序。
 
  
 

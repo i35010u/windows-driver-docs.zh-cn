@@ -4,12 +4,12 @@ description: 所有版本的 Windows 都允许设备处于 D3cold 状态，而�
 ms.assetid: C2C6166D-8269-4FCE-81A8-B350626052D4
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: dc2643efdb987b680d52e6db8e7d1d837db6154e
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 11114cb05b8d0bd11e487431430757641031a4ef
+ms.sourcegitcommit: 4f08f5686c0bbc27d58930b993cbab1a98e3afb0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89187177"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89443795"
 ---
 # <a name="enabling-transitions-to-d3cold"></a>启用到 D3cold 的转换
 
@@ -18,7 +18,7 @@ ms.locfileid: "89187177"
 
 从 Windows 8 开始，设备可以进入并退出 D3cold，而计算机仍在 S0 中。 作为设备的电源策略所有者 (PPO) 的驱动程序可以启用和禁用这些到 D3cold 的转换。 驱动程序不应使其设备进入 D3cold，除非设备可以（如果需要）从 D3cold 唤醒，然后在转换为 D0 后恢复正常操作。
 
-设备进入 D3 后，最初进入 d3 的 D3hot 子情况。 在 D3hot 中，设备可以输入 D0 或 D3cold。 对于唤醒事件或 i/o 请求，设备从 D3hot 进入 D0。 否则，该设备可能会保留在 D3hot 中，也可能从 D3hot 移动到 D3cold。 有关这些转换的详细信息，请参阅设备电源状态 [图](device-power-states.md#power-state-diagram) 中的 [设备电源](device-power-states.md)状态。
+设备进入 D3 后，最初进入 d3 的 D3hot 子情况。 在 D3hot 中，设备可以输入 D0 或 D3cold。 对于唤醒事件或 i/o 请求，设备从 D3hot 进入 D0。 否则，该设备可能会保留在 D3hot 中，也可能从 D3hot 移动到 D3cold。 有关这些转换的详细信息，请参阅设备电源状态图中的 [设备电源](device-power-states.md)状态。
 
 该驱动程序不启动设备从 D3hot 到 D3cold 的转换。 相反，当与此设备共享公共电源的所有其他设备处于 D3hot 并准备好进入 D3cold 时，将发生此转换。 当这些设备中的最后一个进入 D3hot 时，基础总线驱动程序和系统固件会删除电源，并且设备会一起进入 D3cold。
 

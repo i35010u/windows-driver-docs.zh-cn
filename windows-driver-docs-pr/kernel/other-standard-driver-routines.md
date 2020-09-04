@@ -3,19 +3,19 @@ title: 其他标准驱动程序例程
 description: 其他标准驱动程序例程
 ms.assetid: 3dada9cc-7239-47de-8940-bc4cef8be4ca
 keywords:
-- 驱动程序 WDK 内核对象
+- 驱动对象 WDK 内核
 - 标准驱动程序例程 WDK 内核，驱动程序对象
 - 驱动程序例程 WDK 内核，驱动程序对象
-- 例程 WDK 内核，驱动程序对象
+- 例程的 WDK 内核，驱动程序对象
 - 对象 WDK 驱动程序对象
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 55176b65ea228ee474a8057cef082b8e10fdea1a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 20a221ceb286a7a861c1f8288d63775604aa355f
+ms.sourcegitcommit: 4f08f5686c0bbc27d58930b993cbab1a98e3afb0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63352034"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89443723"
 ---
 # <a name="other-standard-driver-routines"></a>其他标准驱动程序例程
 
@@ -23,11 +23,11 @@ ms.locfileid: "63352034"
 
 
 
-作为[驱动程序对象图](introduction-to-driver-objects.md#driver-object-illustration)所示，内核模式驱动程序有其他标准例程以及它们设置入口点在其各自的驱动程序对象中。 大多数标准驱动程序例程以及他们使用的配置相关对象的一些由 I/O 管理器定义。 ISR *SynchCritSection*例程和那些名称中包含的单词"自定义"定义由 NT 内核驱动程序对象图中所示。
+如 [驱动程序对象简介](introduction-to-driver-objects.md) 中的图示所示，内核模式驱动程序具有其他标准例程以及它们在各自的驱动程序对象中设置入口点的。 大多数标准驱动程序例程及其使用的某些依赖于配置的对象由 i/o 管理器定义。 使用包含 "custom" 一词的名称（包含 "custom" 一词）的驱动器对象图中显示的 ISR、 *SynchCritSection* 例程和名称由 NT 内核定义。
 
-大多数驱动程序使用[设备扩展](device-extensions.md)的每个设备对象它们创建保持有关它们的 I/O 操作的特定于设备的状态并将其存储到它们必须以具有其他标准分配任何系统资源的指针例程。 例如， **DDCustomTimerDpc**驱动程序对象图中所示的例程需要驱动程序提供的内核定义计时器和 DPC 对象存储。
+大多数驱动程序使用其创建的每个设备对象的 [设备扩展](device-extensions.md) 来维护有关其 i/o 操作的特定于设备的状态，并存储指向其必须分配的任何系统资源的指针，以便具有其他标准例程。 例如，驱动程序对象图中显示的 **DDCustomTimerDpc** 例程需要驱动程序为内核定义的计时器和 DPC 对象提供存储。
 
-在左侧显示的最低级别驱动程序的标准驱动程序例程的一[驱动程序对象图](introduction-to-driver-objects.md#driver-object-illustration)一定不同于更高级别的驱动程序集。 此图中所示的例程的一些是依赖于设备的或依赖于配置的要求。 有些则是可选： 你可以选择对驱动程序的设计实现具体的特性或驱动程序的设备的配置取决于此类的例程和驱动程序上的位置的链中分层驱动程序。
+对 [驱动程序对象的介绍](introduction-to-driver-objects.md) 中，在图中左侧显示的最低级别驱动程序的标准驱动程序例程集与较高级别的驱动程序的设置不同。 此图中所示的某些例程是依赖于设备或依赖于配置的要求。 其他选项是可选的：可以根据驱动程序的设备的性质或配置、驱动程序的设计以及驱动程序在分层驱动程序链中的位置，来执行此类例程。
 
  
 

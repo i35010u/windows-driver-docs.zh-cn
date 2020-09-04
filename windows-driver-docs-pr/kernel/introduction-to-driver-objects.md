@@ -10,25 +10,19 @@ keywords:
 - 对象 WDK 驱动程序对象
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f23b5d53b4daee3498c0504a1659fc8bb9a63685
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 1dccf1afba2b4e31848bf9ef8e7d0fa9bc7c2566
+ms.sourcegitcommit: 4f08f5686c0bbc27d58930b993cbab1a98e3afb0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89188873"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89443933"
 ---
 # <a name="introduction-to-driver-objects"></a>驱动程序对象简介
-
-
-## <a href="" id="ddk-introduction-to-driver-objects-kg"></a>
 
 
 I/o 管理器为每个已安装和加载的驱动程序创建一个 *驱动程序对象* 。 驱动程序对象使用 [**驱动程序 \_ 对象**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_driver_object) 结构进行定义。
 
 当 i/o 管理器调用驱动程序的 [**DriverEntry**](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_initialize) 例程时，它将提供驱动程序的驱动程序对象的地址。 驱动程序对象包含多个驱动程序标准例程的入口点的存储区。 驱动程序负责填写这些入口点。
-
-## <a href="" id="driver-object-illustration"></a>
-
 
 下图说明了一个驱动程序对象，其中包含最低级别和更高级别的驱动程序可以或必须具有的系统定义标准例程集。
 

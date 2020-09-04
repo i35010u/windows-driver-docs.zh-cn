@@ -13,17 +13,14 @@ keywords:
 - 延迟 WDK 电源管理
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1047951b1e4d041a6aff866fee91ffc53f219985
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 4aa17397fb014d23e06c3d15c4fe8d431f46ac82
+ms.sourcegitcommit: 4f08f5686c0bbc27d58930b993cbab1a98e3afb0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89184793"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89443935"
 ---
 # <a name="device-power-states"></a>设备电源状态
-
-
-## <a href="" id="ddk-device-power-states-kg"></a>
 
 
 设备电源状态描述计算机中设备的电源状态，与计算机中的其他设备无关。 设备电源状态分别为 D0、D1、D2 和 D3。 D0 是完全打开状态，D1、D2 和 D3 均为低功耗状态。 状态号码与功率消耗成反比：更高编号的状态使用更少的电量。 从 Windows 8 开始，D3 状态分为两个 substates： D3hot 和 D3cold。
@@ -55,9 +52,6 @@ ms.locfileid: "89184793"
 [处理 IRP \_ MN \_ 查询 \_ 电源的设备电源状态](handling-irp-mn-query-power-for-device-power-states.md)
 
 [处理 IRP \_ MN \_ 设置 \_ 设备电源状态的电源](handling-irp-mn-set-power-for-device-power-states.md)
-
-## <a href="" id="power-state-diagram"></a>
-
 
 与系统一样，设备可以从工作状态转换 (D0)  (D1、D2 或 D3) ，并从任何低功耗状态转换到工作状态。 下图是一个状态图，它显示了有效的设备电源状态转换。
 

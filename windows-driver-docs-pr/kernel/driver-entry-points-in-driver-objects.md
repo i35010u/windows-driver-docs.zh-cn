@@ -12,12 +12,12 @@ keywords:
 - 驱动程序入口点 WDK 内核
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 75f395a4bbcafd6e4357d4d210efb5e64718d69e
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 65563d33b38e9c9a47bc536c90811f13bca81f86
+ms.sourcegitcommit: 4f08f5686c0bbc27d58930b993cbab1a98e3afb0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89191359"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89443923"
 ---
 # <a name="driver-entry-points-in-driver-objects"></a>驱动程序对象中的驱动程序入口点
 
@@ -57,7 +57,7 @@ DriverObject->DriverUnload = DDUnload;
 DriverObject->DriverExtension->AddDevice = DDAddDevice; 
 ```
 
-**DriverEntry**或可选的重新[*初始化*](/windows-hardware/drivers/ddi/ntddk/nc-ntddk-driver_reinitialize)例程还可以使用 driver 对象中的字段 (不显示在[驱动程序对象图](introduction-to-driver-objects.md#driver-object-illustration)中) 从配置管理器的注册表数据库中获取信息并/或设置信息。 有关详细信息，请参阅 [驱动程序的注册表项](../install/overview-of-registry-trees-and-keys.md)。
+**DriverEntry**或可选的重新[*初始化*](/windows-hardware/drivers/ddi/ntddk/nc-ntddk-driver_reinitialize)例程还可以使用 driver 对象中的字段，而不是在[驱动程序对象简介](introduction-to-driver-objects.md)中显示，以便从和/或设置 configuration manager 的注册表数据库中的信息。 有关详细信息，请参阅 [驱动程序的注册表项](../install/overview-of-registry-trees-and-keys.md)。
 
 I/o 管理器不会导出支持例程来处理驱动程序对象，这些对象是 [**驱动程序 \_ 对象**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_driver_object) 结构。 I/o 管理器使用驱动程序对象跟踪当前加载的驱动程序。 驱动程序对象的某些成员仅由 i/o 管理器使用。 其他成员也由驱动程序编写器使用;例如，您必须知道某些成员名称，才能定义 *AddDevice*、 *调度*、 *StartIo*和 *卸载* 入口点。 您既不应尝试使用 **驱动程序 \_ 对象** 结构中未记录的成员，也不应针对本文档中命名的任何驱动程序对象成员的位置进行假设。 否则，不能将驱动程序从一个 Windows 平台移植到另一个平台。
 
