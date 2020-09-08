@@ -3,12 +3,12 @@ title: 在 Windows 10 移动版上安装驱动程序
 description: 描述在 Windows 10 移动版上安装驱动程序的过程。
 ms.date: 06/02/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 34d19520e79745f3f0833010abac96767709dae9
-ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
+ms.openlocfilehash: c2530f82c535555cf8c5f54cd037607a668947a4
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "67364186"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89211137"
 ---
 # <a name="installing-a-driver-on-windows-10-mobile"></a>在 Windows 10 移动版上安装驱动程序
 
@@ -18,15 +18,15 @@ WDK 10 包括 PkgGen，后者是一个生成包文件的工具。 使用以下�
 
 **使用 PkgGen 生成包文件**
 
-1.  右键单击驱动程序项目，然后选择“添加”-&gt;“新项目”  。 接下来，在“Visual C++”-&gt;“Windows 驱动程序”  下，选择“程序包清单”  。 单击 **“添加”** 。
-2.  Visual Studio 会将名为 Package.pkg.xml 的文件添加到你的驱动程序项目。 你可以右键单击该文件，然后选择属性来确认项目类型是 **PkgGen**。 （在同一个属性页中，如果你稍后决定要生成此驱动程序项目且不生成包文件，可以将“从生成中排除”  设置为“是”  。）单击“确定”  。
-3.  右键单击该驱动程序项目，然后选择“属性”  。 在“配置属性”下打开 PackageGen 节点，将“版本”更改为你喜欢的任意值。
+1.  选择并按住（或右键单击）驱动程序项目，然后选择“添加”-&gt;“新项目”。 接下来，在“Visual C++”-&gt;“Windows 驱动程序”  下，选择“程序包清单”  。 选择 **添加** 。
+2.  Visual Studio 会将名为 Package.pkg.xml 的文件添加到你的驱动程序项目。 可以选择并按住（或右键单击）该文件，然后选择属性，以验证项目类型是否为 PkgGen。 （在同一个属性页中，如果你稍后决定要生成此驱动程序项目且不生成包文件，可以将“从生成中排除”设置为“是”。）选择“确定”。
+3.  选择并按住（或右键单击）驱动程序项目，然后选择“属性”。 在“配置属性”下打开 PackageGen 节点，将“版本”更改为你喜欢的任意值。
 4.  保存工作数据，并以管理员身份重启 Visual Studio。
 5.  生成驱动程序。 Visual Studio 链接所需库并生成 .cat 文件、.inf 文件、驱动程序二进制文件和 .spkg 文件。
 
 若要查看包文件的内容，将 .cab 后缀追加到文件名后面，然后在 Windows 资源管理器中打开此 cab 文件。
 
-若要了解有关在 Visual Studio 外部运行 PkgGen 的信息，请参阅[创建移动程序包](https://docs.microsoft.com/previous-versions/windows/hardware/packaging/dn756642(v=vs.85))。
+若要了解有关在 Visual Studio 外部运行 PkgGen 的信息，请参阅[创建移动程序包](/previous-versions/windows/hardware/packaging/dn756642(v=vs.85))。
 
 若要安装移动驱动程序包（.spkg 文件），你有两个选择。
 
@@ -43,11 +43,11 @@ WDK 10 包括 PkgGen，后者是一个生成包文件的工具。 使用以下�
        IUTool -p MyKmdfDriver.spkg
        ```
 
-2.  有关详细信息，请参阅[将驱动程序添加到测试映像](https://docs.microsoft.com/previous-versions/mt131832(v=vs.85))。
+2.  有关详细信息，请参阅[将驱动程序添加到测试映像](/previous-versions/mt131832(v=vs.85))。
 
 **使用 ImgGen 将移动驱动程序包 (.spkg) 添加到移动 OS 映像 (.ffu)**
 
-1.  安装 Visual Studio 后，在“开始”屏幕上，单击“Visual Studio 2015”文件夹。 右键单击“适用于 VS2015 的开发人员命令提示”  ，然后选择“以管理员身份运行”  。
+1.  安装 Visual Studio 后，在“开始”屏幕上，选择“Visual Studio 2015”文件夹。 选择并按住（或右键单击）“适用于 VS2015 的开发人员命令提示”，然后选择“以管理员身份运行”。
 
 ## <a name="span-idflashing_a_mobile_os_image__ffu_spanspan-idflashing_a_mobile_os_image__ffu_spanflashing-a-mobile-os-image-ffu"></a><span id="flashing_a_mobile_os_image__.ffu_"></span><span id="FLASHING_A_MOBILE_OS_IMAGE__.FFU_"></span>刷写移动 OS 映像 (.ffu)
 
