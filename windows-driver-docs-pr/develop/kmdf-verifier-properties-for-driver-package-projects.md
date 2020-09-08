@@ -4,25 +4,25 @@ title: 驱动程序包项目的 KMDF 验证程序属性
 description: 设置远程计算机上的 KMDF 验证程序的属性。  使用这些设置为测试计算机生成和部署 KMDF 驱动程序。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9b319b3c54012151bc2f27f2504ea471fe85937a
-ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
+ms.openlocfilehash: 58627fea3c62a1d36f91159829fca9f9f36b15c6
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "67393451"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89215650"
 ---
 # <a name="kmdf-verifier-properties-for-driver-package-projects"></a>驱动程序包项目的 KMDF 验证程序属性
 
-设置远程计算机上的 KMDF 验证程序（或框架验证程序）的属性。 为测试计算机生成和部署 KMDF 驱动程序时，可以使用这些设置。 有关 KMDF 驱动程序的信息，请参阅[内核模式驱动程序框架](https://docs.microsoft.com/windows-hardware/drivers/wdf/)。
+设置远程计算机上的 KMDF 验证程序（或框架验证程序）的属性。 为测试计算机生成和部署 KMDF 驱动程序时，可以使用这些设置。 有关 KMDF 驱动程序的信息，请参阅[内核模式驱动程序框架](../wdf/index.md)。
 
-有关框架验证程序的详细信息，请参阅[使用框架验证程序](https://docs.microsoft.com/windows-hardware/drivers/wdf/using-kmdf-verifier)和 [WDF 验证程序控制应用程序](https://docs.microsoft.com/windows-hardware/drivers/devtest/wdf-verifier-control-application)。
+有关框架验证程序的详细信息，请参阅[使用框架验证程序](../wdf/using-kmdf-verifier.md)和 [WDF 验证程序控制应用程序](../devtest/wdf-verifier-control-application.md)。
 
 ## <a name="span-idsetting_kmdf_verifier_properties_for_driver_package_projectsspanspan-idsetting_kmdf_verifier_properties_for_driver_package_projectsspanspan-idsetting_kmdf_verifier_properties_for_driver_package_projectsspansetting-kmdf-verifier-properties-for-driver-package-projects"></a><span id="Setting_KMDF_Verifier_properties_for_driver_package_projects"></span><span id="setting_kmdf_verifier_properties_for_driver_package_projects"></span><span id="SETTING_KMDF_VERIFIER_PROPERTIES_FOR_DRIVER_PACKAGE_PROJECTS"></span>设置驱动程序包项目的 KMDF 验证程序属性
 
 
-1.  打开驱动程序包的属性页。 在“解决方案资源管理器”中，右键单击驱动程序包项目，并选择“属性”  。
-2.  在驱动程序包的属性页中，依次单击“配置属性”  、“驱动程序安装”  和“KMDF 验证程序”  。
-3.  单击“启用 KMDF 验证程序”  选项并选择“KMDF 验证程序始终启用”  。 选择此选项时，可以为 KMDF 驱动程序配置框架验证选项。
+1.  打开驱动程序包的属性页。 在“解决方案资源管理器”中，选择并按住（或右键单击）驱动程序包项目，然后选择“属性”。
+2.  在驱动程序包的属性页中，依次选择“配置属性”、“驱动程序安装”、“KMDF 验证程序”  。
+3.  选择“启用 KMDF 验证程序”选项并选择“KMDF 验证程序始终启用”。 选择此选项时，可以为 KMDF 驱动程序配置框架验证选项。
 
 <table>
 <colgroup>
@@ -38,7 +38,7 @@ ms.locfileid: "67393451"
 <tbody>
 <tr class="odd">
 <td align="left"><p><span id="Enable_KMDF_Verifier"></span><span id="enable_kmdf_verifier"></span><span id="ENABLE_KMDF_VERIFIER"></span><strong>启用 KMDF 验证程序</strong></p></td>
-<td align="left"><p>启用测试计算机上的 KMDF 验证程序。 可以选择“KMDF 验证始终启用”或“KMDF 验证程序关闭”。 如果未启用 KMDF 验证程序，则当 KMDF 版本为 1.9 或更高版本时，基本框架验证将作为<a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier" data-raw-source="[Driver Verifier](https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier)">驱动程序验证程序</a>的一部分启用。</p></td>
+<td align="left"><p>启用测试计算机上的 KMDF 验证程序。 可以选择“KMDF 验证始终启用”或“KMDF 验证程序关闭”。 如果未启用 KMDF 验证程序，则当 KMDF 版本为 1.9 或更高版本时，基本框架验证将作为<a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier" data-raw-source="[Driver Verifier](../devtest/driver-verifier.md)">驱动程序验证程序</a>的一部分启用。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><span id="KMDF_Service_Names"></span><span id="kmdf_service_names"></span><span id="KMDF_SERVICE_NAMES"></span><strong>KMDF 服务名称</strong></p></td>
@@ -88,15 +88,8 @@ ms.locfileid: "67393451"
 ## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
-* [内核模式驱动程序框架](https://docs.microsoft.com/windows-hardware/drivers/wdf/)
-* [驱动程序验证程序](https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier)
+* [内核模式驱动程序框架](../wdf/index.md)
+* [驱动程序验证程序](../devtest/driver-verifier.md)
 * [将驱动程序部署到测试计算机](deploying-a-driver-to-a-test-computer.md)
  
-
- 
-
-
-
-
-
 

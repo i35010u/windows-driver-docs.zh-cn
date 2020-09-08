@@ -3,12 +3,12 @@ description: Microsoft 提供与 USB 类型 C 连接器系统软件接口 (UCSI)
 title: USB 类型 C 连接器系统软件接口 (UCSI) 驱动程序
 ms.date: 04/20/2017
 ms.localizationpriority: High
-ms.openlocfilehash: c22042dbbec05e4f917a6790cb9d3d3d562667d8
-ms.sourcegitcommit: 15caaf6d943135efcaf9975927ff3933957acd5d
+ms.openlocfilehash: a1d29332afe34d3abd57b3ddd4aafe7a1b7c07be
+ms.sourcegitcommit: 7a7e61b4147a4aa86bf820fd0b0c7681fe17e544
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88969422"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89056953"
 ---
 # <a name="usb-type-c-connector-system-software-interface-ucsi-driver"></a>USB 类型 C 连接器系统软件接口 (UCSI) 驱动程序
 
@@ -121,7 +121,7 @@ Microsoft 为 ACPI 传输提供与 USB 类型 C 连接器系统软件接口 (UCS
 可以使用 UCSIControl.exe 在 UCSI BIOS/EC 实现中测试各个命令。 此工具使你可以通过 UCSI 驱动程序将 UCSI 命令发送到固件。 它要求加载并运行驱动程序，同时还启用了驱动程序的测试接口。 默认情况下，不会启用此界面，因为这样可以防止在零售系统上未经授权的用户对其进行访问。
 
 1.  在设备管理器 (devmgmt.msc) 中找到名为“UCSI USB 连接器管理器”  的设备节点。 节点位于“通用串行总线控制器”  类别下。
-2.  右键单击该设备，然后选择“属性”  并打开“详细信息”  选项卡。
+2.  选择并按住（或右键单击）该设备，然后选择“属性”并打开“详细信息”选项卡。
 3.  从下拉列表中选择“设备实例路径”  ，并记下属性值。
 4.  打开注册表编辑器 (regedit.exe)。
 5.  导航到此项下的设备实例路径。

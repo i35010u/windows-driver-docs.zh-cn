@@ -4,12 +4,12 @@ title: 如何在 WDK 8.1 中运行 HCK 测试套件
 description: 为了可以更轻松地在 WDK 中测试 Windows 驱动程序，从 WDK 8.1 起，你可以选择要在测试计算机上运行的 HCK 测试套件。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 186461bfda62753dd3e9e5998e8dd257d476df1e
-ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
+ms.openlocfilehash: d77a1db71f9790316d3e96ed806a9f928d600fef
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "70020670"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89216248"
 ---
 # <a name="how-to-run-the-hck-test-suites-in-wdk-81"></a>如何在 WDK 8.1 中运行 HCK 测试套件
 
@@ -23,27 +23,27 @@ ms.locfileid: "70020670"
 ## <a name="span-idrun_hck_from_vsspanspan-idrun_hck_from_vsspanrunning-the-hck-test-suites-on-a-test-computer-using-visual-studio"></a><span id="run_hck_from_vs"></span><span id="RUN_HCK_FROM_VS"></span>在测试计算机上使用 Visual Studio 运行 HCK 测试套件
 
 
-按照[预配计算机以便进行驱动程序部署和测试 (WDK 8.1)](https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/provision-a-target-computer-wdk-8-1) 中的说明进行操作（如果尚未这样做）。 配置完测试计算机后，测试计算机的名称将显示在工具栏中。 请务必选择为使用 HCK 测试套件进行测试的设备配置的测试计算机。
+按照[预配计算机以便进行驱动程序部署和测试 (WDK 8.1)](../gettingstarted/provision-a-target-computer-wdk-8-1.md) 中的说明进行操作（如果尚未这样做）。 配置完测试计算机后，测试计算机的名称将显示在工具栏中。 请务必选择为使用 HCK 测试套件进行测试的设备配置的测试计算机。
 
 安装设备和驱动程序以及任何其他测试拓扑要求（请参阅测试设备的 HCK 测试先决条件），视需要准备测试计算机。 你将使用 Visual Studio 和 WDK 8.1 运行测试，而不是 HCK Studio 和 HCK 控制器。
 
 **选择要在测试计算机上运行的 HCK 测试套件**
 
-1.  从“驱动程序”  菜单中，单击“测试”  ，然后选择“测试组资源管理器”  。
-2.  在“驱动程序测试组资源管理器”  窗口中，单击其中一个 [HCK 测试套件](#HCK_test_suites)。
+1.  从“驱动程序”菜单中，选择“测试”，然后选择“测试组资源管理器”。
+2.  在“驱动程序测试组资源管理器”窗口中，选择其中一个 [HCK 测试套件](#HCK_test_suites)。
 
     选择测试套件时，该测试套件将显示在“驱动程序测试组”  窗口中。
 
 3.  请务必选择为使用 HCK 测试套件进行测试的设备配置的测试计算机。
 4.  若要使用 HCK 测试套件，你还必须遵循测试设备的配置要求。
 5.  你可以使用复选框来选择与目标测试计算机架构（x86、x64、ARM）匹配的测试。
-6.  从“驱动程序”  菜单中，单击“测试”&gt;“运行测试”。  默认情况下，“运行”测试命令将运行当前所选测试组中的所有测试。
+6.  从“驱动程序”菜单中，选择“测试”&gt;“运行测试” 。 默认情况下，“运行”测试命令将运行当前所选测试组中的所有测试。
 
 此外，你还可以复制提供的 HCK 测试套件之一（并将其导出）以及必要的测试支持文件，以便通过命令提示符窗口运行测试套件。
 
 **导出测试套件**
 
-1.  在“测试组资源管理器”  中，右键单击你想要复制的 HCK 测试套件，然后单击快捷方式菜单中的“导出测试套件...”  。 （此命令将运行 **CopyMe.cmd** 脚本）。
+1.  在“测试组资源管理器”中，选择并按住（或右键单击）要复制的 HCK 测试套件，然后选择快捷方式菜单中的“导出测试套件...”。 （此命令将运行 **CopyMe.cmd** 脚本）。
 2.  选择测试套件的目标文件夹。 你可以将测试套件导出至网络共享或 U 盘。
 3.  若要运行 HCK 测试套件，请在测试计算机上使用提升的权限打开命令提示符窗口。 导航至目标目录并运行 **RunMe.cmd** 脚本。 有关详细信息，请参阅[通过命令提示符窗口运行 HCK 测试套件](#RunMe)。
 
@@ -307,7 +307,7 @@ ms.locfileid: "70020670"
 * [如何使用 Visual Studio 测试驱动程序运行时](testing-a-driver-at-runtime.md)
 * [如何选择和配置设备基础功能测试](how-to-select-and-configure-the-device-fundamental-tests.md)
 * [将驱动程序部署到测试计算机](deploying-a-driver-to-a-test-computer.md)
-* [Windows 调试入门](https://docs.microsoft.com/windows-hardware/drivers/debugger/getting-started-with-windows-debugging)
+* [Windows 调试入门](../debugger/getting-started-with-windows-debugging.md)
 * [硬件认证计划](https://go.microsoft.com/fwlink/p/?linkid=227016)
 * [Windows 硬件认证工具包 (HCK)](https://go.microsoft.com/fwlink/p/?linkid=254893)
 * [如何在运行时通过命令提示符测试驱动程序](how-to-test-a-driver-at-runtime-from-a-command-prompt.md)

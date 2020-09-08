@@ -20,6 +20,12 @@
           href: writing-tests-with-wdtf.md
         - name: 简单数据评估语言概述
           href: simple-data-evaluation-language-overview.md
+        - name: SDEL 中的设备关系标记
+          href: device-relation-tokens-in-sdel.md
+        - name: SDEL 中的属性标记
+          href: attribute-tokens-in-sdel.md
+        - name: SDEL 查询示例
+          href: examples-of-sdel-queries.md
         - name: 创建 WDTF 方案
           items:
             - name: 创建 WDTF 方案

@@ -1,15 +1,15 @@
 ---
-title: 由于显卡驱动程序二进制文件中的崩溃导致 TDR 且具有离散式 GPU 的计算机的巨大数量
-description: 该度量将来自 7 天滑动窗口的遥测数据聚合为大量装有独立 GPU 的不同计算机，这些计算机由于显卡驱动程序二进制文件中的崩溃而发生了 TDR
+title: 由于显卡驱动程序二进制文件中的崩溃导致 TDR 且具有离散式 GPU 的计算机的巨大数量（生态系统）
+description: 该度量将来自 7 天滑动窗口的遥测数据聚合为大量装有独立 GPU 的不同计算机，这些计算机由于显卡驱动程序二进制文件中的崩溃而发生了 TDR（生态系统）
 ms.topic: article
 ms.date: 06/18/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 1836e211871ac63aae32ae8c1d18cd5dfb1455bf
-ms.sourcegitcommit: cb5f370b867ceab28b6b6c64a3586b0bb3831b3d
+ms.openlocfilehash: e764985c249b381dd0dcb17c6664aafb5756c7e8
+ms.sourcegitcommit: 4f08f5686c0bbc27d58930b993cbab1a98e3afb0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "86035994"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89443929"
 ---
 # <a name="myriad-of-machines-with-discrete-gpu-that-had-a-tdr-caused-by-a-crash-in-the-graphics-driver-binary-ecosystem"></a>由于显卡驱动程序二进制文件中的崩溃导致 TDR 且具有离散式 GPU 的计算机的巨大数量（生态系统）
 
@@ -17,7 +17,7 @@ ms.locfileid: "86035994"
 
 在用户会话期间，显卡驱动程序二进制文件中的崩溃会导致计算机的屏幕挂起或完全冻结。 超时检测和恢复 (TDR) 事件会尝试检测这些挂起，并动态恢复以取消冻结显示器。 遇到 TDR 的用户在 TDR 成功之前将无法使用计算机，这会导致屏幕闪烁。 此度量评估大量（总数 10,000 台）装有独立 GPU（带驱动程序）的计算机，这些计算机由于显卡驱动程序二进制文件中的崩溃而导致 TDR。
 
-这是[由于显卡驱动程序二进制文件中的崩溃导致出现 TDR 且具有独立 GPU 的计算机的巨大数量](https://docs.microsoft.com/windows-hardware/drivers/dashboard/myriad-of-machines-that-had-tdr-caused-by-crash-in-graphics-driver-binary-standard)度量的生态系统对应项。
+这是[由于显卡驱动程序二进制文件中的崩溃导致出现 TDR 且具有独立 GPU 的计算机的巨大数量](./myriad-of-machines-that-had-tdr-caused-by-crash-in-graphics-driver-binary-standard.md)度量的生态系统对应项。
 
 ## <a name="measure-attributes"></a>度量属性
 

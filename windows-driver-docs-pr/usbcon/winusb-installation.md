@@ -3,12 +3,12 @@ description: 将 WinUSB (Winusb.sys) 安装在设备的内核模式堆栈中，�
 title: WinUSB (Winusb.sys) 安装
 ms.date: 05/09/2018
 ms.localizationpriority: High
-ms.openlocfilehash: a3586830cde7cd720e92603e071099d018cfe533
-ms.sourcegitcommit: 15caaf6d943135efcaf9975927ff3933957acd5d
+ms.openlocfilehash: a67e2c3c38f55b7d4be86a349c6d69dea1d5a028
+ms.sourcegitcommit: 7a7e61b4147a4aa86bf820fd0b0c7681fe17e544
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88969386"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89056965"
 ---
 # <a name="winusb-winusbsys-installation"></a>WinUSB (Winusb.sys) 安装
 
@@ -38,7 +38,7 @@ OEM 或独立硬件供应商 (IHV) 可以构建设备，以便在 Windows 8 及�
 
 1.  将设备插入主机系统。
 2.  打开设备管理器并找到设备。
-3.  右键单击设备，然后从上下文菜单中选择“更新驱动程序软件…”  。
+3.  选择并按住（或右键单击）设备，然后从上下文菜单中选择“更新驱动程序软件…”。
 4.  在向导中，选择“浏览我的计算机以查找驱动程序软件”  。
 5.  选择“从计算机的设备驱动程序列表中选择”  。
 6.  从设备类别的列表中，选择“通用串行总线设备”  。

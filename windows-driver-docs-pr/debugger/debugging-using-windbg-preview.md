@@ -3,12 +3,12 @@ title: 使用 WinDbg 预览版进行调试
 description: 本部分介绍如何使用 WinDbg 预览版调试程序执行基本的调试任务。
 ms.date: 01/16/2020
 ms.localizationpriority: High
-ms.openlocfilehash: 0b0eff43cd9d414112d2f2a98817a74c27d17ae5
-ms.sourcegitcommit: f610410e1500f0b0a4ca008b52679688ab51033d
+ms.openlocfilehash: aee80ecdec45ec45ca48d9ee37309641308cf034
+ms.sourcegitcommit: cd84cc10570384b0e7a91cb6f91fe67009c1a90e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/15/2020
-ms.locfileid: "88253065"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89238141"
 ---
 # <a name="debugging-using-windbg-preview"></a>使用 WinDbg 预览版进行调试
 
@@ -50,8 +50,7 @@ WinDbg 预览版是 WinDbg 的最新版本，在重要位置构建有可扩展�
 
 - **命令窗口** - 使用命令窗口可以轻松地进行访问，以便切换 DML 和清除调试程序命令窗口。 所有当前的调试程序命令都兼容 WinDbg 预览版，可以继续在其中使用。
 
-
-### <a name="dark-theme"></a>深色主题 
+### <a name="dark-theme"></a>深色主题
 
 使用“文件”   >   “设置”来启用深色主题。
 
@@ -63,11 +62,11 @@ WinDbg 预览版是 WinDbg 的最新版本，在重要位置构建有可扩展�
 
 ![屏幕截图，显示一个带有固定项的功能区](images/windbgx-quick-access.png)
 
-### <a name="source-window"></a>源代码窗口
+### <a name="source-code"></a>源代码
 
 源代码窗口已更新，更符合新式编辑器的风格。
 
-![调试程序中的脚本菜单的屏幕截图](images/windbgx-source-window.png)
+![调试程序中源代码窗口的屏幕截图](images/windbgx-source-window.png)
 
 ### <a name="highlighting"></a>突出显示
 
@@ -85,7 +84,7 @@ WinDbg 预览版是 WinDbg 的最新版本，在重要位置构建有可扩展�
 
 如果需要应用程序的 TTD 跟踪，只需在执行启动或附加操作时勾选“通过时间行程调试来记录”框即可。 WinDbgNext 会针对 TTD 来设置它，并在记录完成后打开跟踪。
 
-![显示 ctrl tab 菜单的屏幕截图](images/windbgx-ttd.png)
+![显示进程记录菜单的屏幕截图，其中选中了用于记录的记事本进程](images/windbgx-ttd.png)
 
 有关详细信息，请参阅[时间行程调试 - 概述](time-travel-debugging-overview.md)。
 
@@ -95,7 +94,7 @@ WinDbg 预览版是 WinDbg 的最新版本，在重要位置构建有可扩展�
 
 ![“启动应用包”的“应用程序”选项卡，显示了搜索框中的“cal”，并列出了三个应用](images/windbgx-launch-app-package.png)
 
-有关详细信息，请参阅[启动应用包](https://docs.microsoft.com/windows-hardware/drivers/debugger/windbg-user-mode-preview#launch-app-package)。
+有关详细信息，请参阅[启动应用包](./windbg-user-mode-preview.md#launch-app-package)。
 
 ### <a name="attach-to-a-process"></a>附加到进程
 
@@ -123,11 +122,11 @@ WinDbg 预览版是 WinDbg 的最新版本，在重要位置构建有可扩展�
 
 - **脚本开发 UI** - 现在有一个专门构建的脚本窗口，方便 JavaScript 和 NatVis 脚本的开发，可以突出显示错误并带有 IntelliSense 功能。
 
-![调试程序中的脚本菜单的屏幕截图](images/windbgx-scripting-intellisense.png)
+![调试程序中的脚本菜单的屏幕截图，其中显示了 Intellisense](images/windbgx-scripting-intellisense.png)
 
 有关详细信息，请参阅 [WinDbg 预览版 - 脚本](windbg-scripting-preview.md)。
 
-### <a name="backwards-compatibility"></a>后向兼容性 
+### <a name="backwards-compatibility"></a>后向兼容性
 
 由于基础调试程序引擎相同，因此以前的所有调试程序命令和调试程序扩展都可以继续使用。
 
@@ -142,7 +141,7 @@ WinDbg 预览版是 WinDbg 的最新版本，在重要位置构建有可扩展�
 ### <a name="team-blog"></a>团队博客
 
 调试器团队博客虽然现在处于非活动状态，但包含提示和技巧。
-[https://blogs.msdn.microsoft.com/windbg/](https://blogs.msdn.microsoft.com/windbg/)
+[/archive/blogs/windbg/](/archive/blogs/windbg/)
 
 ## <a name="videos"></a>视频
 

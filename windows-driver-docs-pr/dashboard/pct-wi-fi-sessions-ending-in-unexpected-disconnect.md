@@ -1,17 +1,17 @@
 ---
-title: 在意外断开连接的情况下结束的 WLAN 会话百分比
+title: 在意外断开连接的情况下结束的信号质量大于 50% 的 Wi-Fi 会话百分比
 description: 该度量来自将 7 天滑动窗口的遥测数据聚合为设备意外断开 Wi-Fi 连接的实例所占的百分比
 ms.topic: article
 ms.date: 05/20/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 7034bdbaa669ba0d4e5de6386a7969f23769559e
-ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
+ms.openlocfilehash: 7b86022bb1855644ea771f157874a4639348a900
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "71017013"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89183915"
 ---
-# <a name="percent-of-wi-fi-sessions-ending-in-an-unexpected-disconnect"></a>在意外断开连接的情况下结束的 WLAN 会话百分比 
+# <a name="percent-of-wi-fi-sessions-ending-in-an-unexpected-disconnect-that-have-a-greater-than-50-signal-quality"></a>在意外断开连接的情况下结束的信号质量大于 50% 的 Wi-Fi 会话百分比
 
 ## <a name="description"></a>说明
 
@@ -25,8 +25,8 @@ ms.locfileid: "71017013"
 |时间段 |7 天|
 |度量标准 |实例的聚合|
 |最小实例数 |1,000 个实例|
-|通过标准 |<= 25% 的实例不以意外的断开连接结束|
-|度量 ID |7844359|
+|通过标准 |<= 20% 的实例不以意外的断开连接结束|
+|度量 ID |20305047|
 
 ## <a name="calculation"></a>计算
 

@@ -4,18 +4,18 @@ title: 预配计算机时会出现什么情况 (WDK 8.0)
 description: 这里我们将介绍在使用 Windows 驱动程序工具包 (WDK) 8.0 版预配目标计算机时发生的情况。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7cdf440bc787828d3d5bda4db778d6a08a843a79
-ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
+ms.openlocfilehash: 2846ed0b49bb6887dc71426f75a8da51342c2728
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "67364173"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89211131"
 ---
 # <a name="what-happens-when-you-provision-a-computer-wdk-80"></a>预配计算机时会出现什么情况 (WDK 8.0)
 
-使用 Microsoft Visual Studio 配置和设置驱动程序部署和驱动程序测试称为“预配目标计算机”  或“预配测试计算机”  。 有关使用 Windows 驱动程序工具包 (WDK) 8 预配的信息，请参阅[预配计算机以便进行驱动程序部署和测试 (WDK 8)](https://docs.microsoft.com/previous-versions/hh698272(v=vs.85))。 这里我们将介绍在使用 Windows 驱动程序工具包 (WDK) 8.0 版预配目标计算机时发生的情况。
+使用 Microsoft Visual Studio 配置和设置驱动程序部署和驱动程序测试称为“预配目标计算机”  或“预配测试计算机”  。 有关使用 Windows 驱动程序工具包 (WDK) 8 预配的信息，请参阅[预配计算机以便进行驱动程序部署和测试 (WDK 8)](/previous-versions/hh698272(v=vs.85))。 这里我们将介绍在使用 Windows 驱动程序工具包 (WDK) 8.0 版预配目标计算机时发生的情况。
 
-**注意**  WDK 8 不是 WDK 的最新版本。 我们建议你获取当前版本的 WDK，并根据[此处的预配说明](https://docs.microsoft.com/previous-versions/hh698272(v=vs.85))预配目标计算机。
+**注意**  WDK 8 不是 WDK 的最新版本。 我们建议你获取当前版本的 WDK，并根据[此处的预配说明](/previous-versions/hh698272(v=vs.85))预配目标计算机。
 
  
 
@@ -28,9 +28,9 @@ ms.locfileid: "67364173"
 -   创建名为 WDKRemoteUser 的用户，并切换到该用户
 -   安装 .NET 4.0（如果未安装）
 -   安装 Microsoft Visual C++ Redistributable
--   安装[测试创作和执行框架 (TAEF)](https://docs.microsoft.com/windows-hardware/drivers/taef/index)（WDK 客户端）
+-   安装[测试创作和执行框架 (TAEF)](../taef/index.md)（WDK 客户端）
 -   安装调试程序
--   安装 [Windows 设备测试框架](https://docs.microsoft.com/windows-hardware/drivers/wdtf/index) (WDTF)
+-   安装 [Windows 设备测试框架](../wdtf/index.md) (WDTF)
 -   关闭 AutoReboot
 -   启用内核内存故障转储
 -   禁用屏幕保护程序
@@ -49,9 +49,9 @@ ms.locfileid: "67364173"
 预配目标计算机后，将无法完全删除预配。 但是，可以使用主计算机上的 Visual Studio 从目标计算机上删除大部分预配。 以下是操作步骤。
 
 1.  在主计算机上，在 Visual Studio 的“驱动程序”  菜单中，选择“测试”&gt;“配置计算机”  。
-2.  选择目标计算机的名称，然后单击“删除计算机”  。
-3.  选择“删除预配并删除计算机”  。 单击 **下一步**。
-4.  完成删除过程后，单击“完成”  。
+2.  选择目标计算机的名称，然后选择“删除计算机”。
+3.  选择“删除预配并删除计算机”  。 选择“**下一页**”。
+4.  完成删除过程后，选择“完成”。
 
 ## <a name="span-idwhen_you_remove_provisioning__wdk_80_spanspan-idwhen_you_remove_provisioning__wdk_80_spanwhen-you-remove-provisioning-wdk-80"></a><span id="when_you_remove_provisioning__wdk_8.0_"></span><span id="WHEN_YOU_REMOVE_PROVISIONING__WDK_8.0_"></span>删除预配时 (WDK 8.0)
 
@@ -78,10 +78,4 @@ ms.locfileid: "67364173"
 -   测试签名设置
 
  
-
- 
-
-
-
-
 

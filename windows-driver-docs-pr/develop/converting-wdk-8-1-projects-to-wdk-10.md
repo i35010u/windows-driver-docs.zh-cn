@@ -4,12 +4,12 @@ title: 将 WDK 8.1 项目转换为 WDK 10
 description: 如何将使用 Microsoft Visual Studio 2013 和 Windows 驱动程序工具包 (WDK) 8.1 创建的驱动程序项目转换为在 Microsoft Visual Studio 2015 中使用 Windows 驱动程序工具包 (WDK) 10 生成的驱动程序项目。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4be525014290284e1c90d7053f1a97556860b945
-ms.sourcegitcommit: 958a5ced83856df22627c06eb42c9524dd547906
+ms.openlocfilehash: 83551c958fa5eb5c21cb5f0d31ce7df483a676eb
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83235401"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89217848"
 ---
 # <a name="converting-wdk-81-projects-to-wdk-10"></a>将 WDK 8.1 项目转换为 WDK 10
 
@@ -23,11 +23,11 @@ Visual Studio 2015 存在新的编译器警告和错误。 即使在 Visual Stud
 
     Visual Studio 会在此解决方案中自动运行 ProjectUpgradeTool 来转换项目。 也可以从命令行运行此工具。 默认情况下，安装 WDK 时，ProjectUpgradeTool.exe 会安装在 Windows Kits\\10\\bin\\x86 中。
 
-    Visual Studio 打开标题为“升级 VC++ 编译器和库”  的“查看解决方案操作”  对话框。 单击“确定”  ，Visual Studio 会尝试升级解决方案中的所有项目。
+    Visual Studio 打开标题为“升级 VC++ 编译器和库”  的“查看解决方案操作”  对话框。 选择“确定”，Visual Studio 会尝试升级解决方案中的所有项目。
 
     如果显示“检测到文件修改”  对话框，请选择“全部重新加载”  。
 
-2.  在“解决方案资源管理器”窗格中，右键单击驱动程序项目的名称，然后选择“属性”  。 单击“配置管理器”  按钮。 在“活动解决方案配置”  列表中，选择“&lt;新建…&gt;”  。 键入一个名称，然后从 Windows 8.1 项目上下文中复制设置。 单击“确定”  。
+2.  在“解决方案资源管理器”窗格中，选择并按住（或右键单击）驱动程序项目名称，然后选择“属性”。 选择“配置管理器”按钮。 在“活动解决方案配置”  列表中，选择“&lt;新建…&gt;”  。 键入一个名称，然后从 Windows 8.1 项目上下文中复制设置。 选择“确定”。
 
     通常，转换后的解决方案包含两个配置文件，一个用于调试（测试），另一个用于发布。 若要使用 WDK 10 创建类似环境，只需选择“&lt;新建…&gt;”  两次。 若要创建调试配置文件，请从“Win 8.1 调试”  配置文件复制。 若要创建发布配置文件，请从“Win 8.1 发布”  配置文件复制。
 
@@ -45,15 +45,9 @@ Visual Studio 2015 存在新的编译器警告和错误。 即使在 Visual Stud
 
     再次生成解决方案。 此时，仅有的错误来自 ApiValidator 工具，该工具检查驱动程序是否调用非通用功能。 将对非通用 DDI 的任何调用全部替换为对通用 DDI 的调用。
 
-    有关 ApiValidator 的详细信息，请参阅[验证通用 Windows 驱动程序](validating-universal-drivers.md)。
+    有关 ApiValidator 的详细信息，请参阅[验证通用 Windows 驱动程序](./validating-windows-drivers.md)。
 
     若要了解如何确定给定 DDI 的目标平台，请参阅[驱动程序的目标平台的参考页面](target-platforms.md)。
 
  
-
- 
-
-
-
-
 

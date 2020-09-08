@@ -1,15 +1,15 @@
 ---
-title: 在安装后的 2 天内回滚或重新安装的驱动程序的巨大数量
-description: 该度量将来自 7 天滑动窗口的遥测数据聚合为大量不同的计算机，这些计算机在安装后 2 天内回滚或重新安装
+title: 在安装后的 2 天内回滚或重新安装的驱动程序的巨大数量（生态系统）
+description: 该度量将来自 7 天滑动窗口的遥测数据聚合为大量不同的计算机，这些计算机在安装后 2 天内回滚或重新安装（生态系统）
 ms.topic: article
 ms.date: 05/11/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 4e6c0cf929fcb8ced4e7bcbaef10c51df478dd3e
-ms.sourcegitcommit: cb5f370b867ceab28b6b6c64a3586b0bb3831b3d
+ms.openlocfilehash: 19cc17511b1dc66f52593f1945c3ba03318fd463
+ms.sourcegitcommit: 4f08f5686c0bbc27d58930b993cbab1a98e3afb0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "86035997"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89443799"
 ---
 # <a name="myriad-of-drivers-that-were-rolled-back-or-re-installed-within-2-days-of-installation-ecosystem"></a>在安装后的 2 天内回滚或重新安装的驱动程序的巨大数量（生态系统）
 
@@ -17,7 +17,7 @@ ms.locfileid: "86035997"
 
 该度量跟踪驱动程序在安装后 2 天内是回滚还是通过安装另一驱动程序才能成功（不由 WU 启动）。 此类操作表示用户遇到足够严重的驱动程序以致于需要使用另一个驱动程序。
 
-对于[在安装后的 2 天内回滚或重新安装的驱动程序的巨大数量](https://docs.microsoft.com/windows-hardware/drivers/dashboard/myriad-drivers-rolled-back-standard)这一度量，这是它在生态系统中的对应项。
+对于[在安装后的 2 天内回滚或重新安装的驱动程序的巨大数量](./myriad-drivers-rolled-back-standard.md)这一度量，这是它在生态系统中的对应项。
 
 ## <a name="measure-attributes"></a>度量属性
 

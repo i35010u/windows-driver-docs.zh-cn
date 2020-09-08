@@ -4,12 +4,12 @@ title: 如何使用“驱动程序测试”模板编写驱动程序测试
 description: 使用适用于 Windows 8 的 Windows 驱动程序工具包 (WDK) 来创建自己的驱动程序测试或自定义所提供的部分测试。
 ms.date: 03/26/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 40dafed4d6fa901505fcc57fa82c0d74b7a3de18
-ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
+ms.openlocfilehash: b750c17de0789089e5eae9b3fd6ed4504d232342
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80327568"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89210827"
 ---
 # <a name="how-to-write-a-driver-test-using-a-driver-test-template"></a>如何使用“驱动程序测试”模板编写驱动程序测试
 
@@ -25,7 +25,7 @@ ms.locfileid: "80327568"
 ## <a name="span-idto_customize_a_driver_test_using_the_driver_test_template_for_c__spanspan-idto_customize_a_driver_test_using_the_driver_test_template_for_c__spanspan-idto_customize_a_driver_test_using_the_driver_test_template_for_c__spanto-customize-a-driver-test-using-the-driver-test-template-for-c"></a><span id="To_customize_a_driver_test_using_the_Driver_Test_template_for_C__"></span><span id="to_customize_a_driver_test_using_the_driver_test_template_for_c__"></span><span id="TO_CUSTOMIZE_A_DRIVER_TEST_USING_THE_DRIVER_TEST_TEMPLATE_FOR_C__"></span>使用 C++ 驱动程序测试模板自定义驱动程序测试
 
 
-1.  从“文件”  菜单中，单击“新建”&gt;“项目”  。
+1.  从“文件”菜单中选择“新建”&gt;“项目” 。
 2.  从“新建项目”  对话框中的已安装模板列表中，选择“Visual C++”&gt;“Windows 驱动程序”&gt;“测试”  。
 3.  选择“C++ Windows 驱动程序测试”  。
 4.  为驱动程序测试项目提供名称和位置（或使用默认值）。
@@ -36,7 +36,7 @@ ms.locfileid: "80327568"
 ## <a name="span-idto_customize_a_driver_test_using_the_driver_test_template_for_c_spanspan-idto_customize_a_driver_test_using_the_driver_test_template_for_c_spanspan-idto_customize_a_driver_test_using_the_driver_test_template_for_c_spanto-customize-a-driver-test-using-the-driver-test-template-for-c"></a><span id="To_customize_a_driver_test_using_the_Driver_Test_template_for_C_"></span><span id="to_customize_a_driver_test_using_the_driver_test_template_for_c_"></span><span id="TO_CUSTOMIZE_A_DRIVER_TEST_USING_THE_DRIVER_TEST_TEMPLATE_FOR_C_"></span>使用 C\# 驱动程序测试模板自定义驱动程序测试
 
 
-1.  从“文件”  菜单中，单击“新建”&gt;“项目”  。
+1.  从“文件”菜单中选择“新建”&gt;“项目” 。
 2.  从“新建项目”  对话框中的已安装模板列表中，选择“Visual C\#”&gt;“Windows 驱动程序”  。
 3.  选择“C\# Windows 驱动程序测试”  。
 4.  为驱动程序测试项目提供名称和位置（或使用默认值）。
@@ -47,7 +47,7 @@ ms.locfileid: "80327568"
 ## <a name="span-idto_customize_a_driver_test_using_the_driver_test_template_for_scriptspanspan-idto_customize_a_driver_test_using_the_driver_test_template_for_scriptspanspan-idto_customize_a_driver_test_using_the_driver_test_template_for_scriptspanto-customize-a-driver-test-using-the-driver-test-template-for-script"></a><span id="To_customize_a_driver_test_using_the_Driver_Test_template_for_Script"></span><span id="to_customize_a_driver_test_using_the_driver_test_template_for_script"></span><span id="TO_CUSTOMIZE_A_DRIVER_TEST_USING_THE_DRIVER_TEST_TEMPLATE_FOR_SCRIPT"></span>使用脚本驱动程序测试模板自定义驱动程序测试
 
 
-1.  从“文件”  菜单中，单击“新建”&gt;“项目”  。
+1.  从“文件”菜单中选择“新建”&gt;“项目” 。
 2.  从“新建项目”  对话框中的已安装模板列表中，选择“脚本”&gt;“Windows 驱动程序”  。
 3.  选择“Windows 驱动程序测试脚本”  。
 4.  为驱动程序测试项目提供名称和位置（或使用默认值）。
@@ -129,15 +129,8 @@ WDK 提供有采用 C++、C\# 和脚本编写的、适用于 Windows 驱动程�
 ## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
-* [测试创作和执行框架](https://docs.microsoft.com/windows-hardware/drivers/taef/index)
-* [Windows 驱动程序测试框架](https://docs.microsoft.com/windows-hardware/drivers/wdtf/index)
+* [测试创作和执行框架](../taef/index.md)
+* [Windows 驱动程序测试框架](../wdtf/index.md)
 * [如何添加测试元数据](to-add-test-metadata.md)
  
-
- 
-
-
-
-
-
 

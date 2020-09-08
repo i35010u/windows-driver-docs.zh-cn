@@ -3,12 +3,12 @@ title: 使用 WDK 生成 ARM64 驱动程序
 description: 本主题介绍如何使用 Windows 驱动程序工具包 (WDK) 生成 ARM64 驱动程序。
 ms.date: 01/18/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: ac4f277ee1a2d0b9a08c004173f68385b1bacdae
-ms.sourcegitcommit: 444e055daa9b28e9fd9dc92dd0a3f1e62e215b31
+ms.openlocfilehash: bb07d57a382076f7833b487b0912340d54c49feb
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/10/2020
-ms.locfileid: "84666165"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89217876"
 ---
 # <a name="building-arm64-drivers-with-the-wdk"></a>使用 WDK 生成 ARM64 驱动程序
 
@@ -32,13 +32,13 @@ Windows 10 可以在由 ARM64 处理器提供支持的计算机上运行。  但
 ## <a name="building-an-arm64-driver-with-the-wdk"></a>使用 WDK 生成 ARM64 驱动程序
 
 1.  在 Visual Studio 中，打开一个驱动程序解决方案。  你可以使用自己的驱动程序解决方案，也可以使用 [Windows 驱动程序示例](https://github.com/Microsoft/Windows-driver-samples)存储库中的驱动程序解决方案。
-2.  单击“解决方案”平台，然后选择“配置管理器”。  
+2.  选择解决方案平台，然后选择“配置管理器”。  
 ![从顶部工具栏的第二个下拉列表中选择配置管理器](images/VS-config-mgr.png)
   
 3.  在“活动解决方案平台”下，选择“新建”。  
 ![在“活动解决方案平台”下拉列表中，选择“新建”](images/VS-active-solution-platform.png)
 
-4.  从“键入或选择新平台”中选择“ARM64”。  从 **Win32** 复制设置。  单击“确定”和“关闭”。  
+4.  从“键入或选择新平台”中选择“ARM64”。  从 **Win32** 复制设置。  选择“确定”然后选择“关闭”。  
 ![从工具栏级别下拉列表中选择 ARM64 生成目标](images/VS-build-ARM64.png)
 
 5.  选择“ARM64”作为目标平台并重新生成。
@@ -46,5 +46,5 @@ Windows 10 可以在由 ARM64 处理器提供支持的计算机上运行。  但
 ## <a name="see-also"></a>另请参阅
 
 * [调试 ARM64](../debugger/debugging-arm64.md)
-* [基于 ARM 的 Windows 10](https://docs.microsoft.com/windows/uwp/porting/apps-on-arm)
-* [HLK ARM64 入门指南](https://docs.microsoft.com/windows-hardware/test/hlk/getstarted/hlk-arm64-getting-started-guide)
+* [基于 ARM 的 Windows 10](/windows/uwp/porting/apps-on-arm)
+* [HLK ARM64 入门指南](/windows-hardware/test/hlk/getstarted/hlk-arm64-getting-started-guide)

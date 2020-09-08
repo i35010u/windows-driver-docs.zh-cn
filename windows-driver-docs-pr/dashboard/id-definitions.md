@@ -4,12 +4,12 @@ description: Windows 合作伙伴中心 ID 定义
 ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1cb44f0d544f52e7025949b95d0f2ef7756d9638
-ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
+ms.openlocfilehash: 06671e6541098ca52a633a89a9646ce785279afe
+ms.sourcegitcommit: 4f08f5686c0bbc27d58930b993cbab1a98e3afb0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "67353884"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89443909"
 ---
 # <a name="dashboard-id-definitions"></a>仪表板 ID 定义
 
@@ -17,11 +17,11 @@ ms.locfileid: "67353884"
 
 在 Windows 硬件开发人员中心内，每个驱动程序提交都必须与三个 ID 相关联：专用 ID、共享 ID 和提交 ID。 这三个 ID 之间的关系如下所示：
 
-![显示三种 ID 类型的关系的屏幕截图](images/id_relationship.png)
+![显示专用 ID、共享 ID 和提交 ID 类型的关系的屏幕截图](images/id_relationship.png)
 
 合作伙伴中心在产品的驱动程序详细信息页上列出了上述每种 ID：
 
-![显示三种 ID 类型的关系的屏幕截图](images/id_driver_details.png)
+![显示在合作伙伴中心列出的三个 ID 类型和值的屏幕截图](images/id_driver_details.png)
 
 ## <a name="id-definitions"></a>ID 定义
 
@@ -46,7 +46,7 @@ ms.locfileid: "67353884"
 </tr>
 <tr class="odd">
 <td><p>提交 ID</p></td>
-<td><p>此标识符表示你上传到产品的各个程序包。 初始提交以及所有提交更新都具有唯一标识符。 此 ID 最常用于通过产品内的驱动程序更新可接受 (DUA) 进程跟踪更新。 请参阅<a href="https://docs.microsoft.com/windows-hardware/drivers/dashboard/manage-your-hardware-submissions" data-raw-source="[Manage your hardware submissions](https://docs.microsoft.com/windows-hardware/drivers/dashboard/manage-your-hardware-submissions)">管理硬件提交</a>，了解更多详细信息。 </p></td>
+<td><p>此标识符表示你上传到产品的各个程序包。 初始提交以及所有提交更新都具有唯一标识符。 此 ID 最常用于通过产品内的驱动程序更新可接受 (DUA) 进程跟踪更新。 请参阅<a href="https://docs.microsoft.com/windows-hardware/drivers/dashboard/manage-your-hardware-submissions" data-raw-source="[Manage your hardware submissions](./manage-your-hardware-submissions.md)">管理硬件提交</a>，了解更多详细信息。 </p></td>
 </tr>
 </tbody>
 </table>
@@ -60,6 +60,6 @@ ms.locfileid: "67353884"
 
 ## <a name="related-topics"></a>相关主题
 
-* [管理硬件提交](https://docs.microsoft.com/windows-hardware/drivers/dashboard/manage-your-hardware-submissions)
+* [管理硬件提交](./manage-your-hardware-submissions.md)
 
-* [使用发货标签管理驱动程序分发](https://docs.microsoft.com/windows-hardware/drivers/dashboard/manage-driver-distribution-by-submission)
+* [使用发货标签管理驱动程序分发](./manage-driver-distribution-by-submission.md)

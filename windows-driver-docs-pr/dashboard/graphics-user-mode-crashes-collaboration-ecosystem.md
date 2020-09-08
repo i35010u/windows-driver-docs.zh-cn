@@ -1,15 +1,15 @@
 ---
-title: 按使用时间规范化的通信和协作应用程序中用户模式崩溃的次数小于等于基线目标
-description: 该度量将 7 天滑动窗口中的遥测数据聚合为通信和协作应用程序在总运行时（以年为单位）内由显卡驱动程序引起的崩溃比率
+title: 按使用时间规范化的通信和协作应用程序中用户模式崩溃的次数小于等于基线目标（生态系统）
+description: 该度量将 7 天滑动窗口中的遥测数据聚合为通信和协作应用程序在总运行时（以年为单位）内由显卡驱动程序引起的崩溃比率（生态系统）
 ms.topic: article
 ms.date: 05/11/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: c219625a0ba3882cfeefb8c90a4d89bf2857130a
-ms.sourcegitcommit: cb5f370b867ceab28b6b6c64a3586b0bb3831b3d
+ms.openlocfilehash: b9a0394a123946ee2764f40980cc032b4b9a5cdd
+ms.sourcegitcommit: 4f08f5686c0bbc27d58930b993cbab1a98e3afb0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "86036020"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89443913"
 ---
 # <a name="number-of-user-mode-crashes-in-communication-and-collaboration-applications-normalized-by-usage--baseline-goal-ecosystem"></a>按使用时间规范化的通信和协作应用程序中用户模式崩溃的次数小于等于基线目标（生态系统）
 
@@ -37,7 +37,7 @@ ms.locfileid: "86036020"
 * VIBER.EXE
 * MICROSOFT.SKYPEROOMSYSTEM
 
-对于[按使用时间规范化的通信和协作应用程序中用户模式崩溃的次数小于等于基线目标](https://docs.microsoft.com/windows-hardware/drivers/dashboard/graphics-user-mode-crashes-collaboration-standard)这一度量，这是它在生态系统中的对应项。
+对于[按使用时间规范化的通信和协作应用程序中用户模式崩溃的次数小于等于基线目标](./graphics-user-mode-crashes-collaboration-standard.md)这一度量，这是它在生态系统中的对应项。
 
 ## <a name="measure-attributes"></a>度量属性
 

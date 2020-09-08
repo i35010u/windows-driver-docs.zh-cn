@@ -5,24 +5,24 @@ description: 在本主题中，我们将介绍如何使用 Visual Studio 开始�
 keywords: 筛选器驱动程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d2c5034890704e96e262cde52737e877c1ab2e7b
-ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
+ms.openlocfilehash: 3f59f2c8b491633825034ecba4eb2f42a350c0d8
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "67370781"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89214812"
 ---
 # <a name="creating-a-new-filter-driver"></a>创建新的筛选器驱动程序
 
 在本主题中，我们将介绍如何使用 Visual Studio 开始编写新的筛选器驱动程序。 筛选器驱动程序不同于设备功能驱动程序、软件驱动程序和文件系统驱动程序，这些驱动程序我们将在其他主题中加以介绍。 若要了解筛选器驱动程序以及它们与其他类型的驱动程序有何不同，请参阅以下主题。
 
--   [什么是驱动程序？](https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/what-is-a-driver-)
--   [选择驱动程序模型](https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/choosing-a-driver-model)
--   [设备节点和设备堆栈](https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/device-nodes-and-device-stacks)
--   [筛选器驱动程序](https://docs.microsoft.com/windows-hardware/drivers/kernel/filter-drivers)
--   [WDM 驱动程序的类型](https://docs.microsoft.com/windows-hardware/drivers/kernel/types-of-wdm-drivers)
+-   [什么是驱动程序？](../gettingstarted/what-is-a-driver-.md)
+-   [选择驱动程序模型](../gettingstarted/choosing-a-driver-model.md)
+-   [设备节点和设备堆栈](../gettingstarted/device-nodes-and-device-stacks.md)
+-   [筛选器驱动程序](../kernel/filter-drivers.md)
+-   [WDM 驱动程序的类型](../kernel/types-of-wdm-drivers.md)
 
-开始之前，请先确定哪个驱动程序模型适用于你的筛选器驱动程序。 如果在确定最适合的模型时需要帮助，请参阅[选择驱动程序模型](https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/choosing-a-driver-model)。 如果要为硬件设备编写筛选器驱动程序，请确定设备适合位于[设备和驱动程序技术](https://docs.microsoft.com/windows-hardware/drivers/)中介绍的技术列表的哪个位置。 请参阅该特定技术的相关文档，了解是否有关于选择筛选器驱动程序模型的任何指南。 建议的筛选器驱动程序模型因技术而异。 对于有些技术，此文档建议使用用户模式驱动程序框架 (UMDF)、内核模式驱动程序框架 (KMDF) 或 Windows 驱动程序模型 (WDM)。 对于其他技术，此文档为如何编写筛选器驱动程序提供了明确的详细信息。 部分技术有微筛选器模型。 对于有些技术，可能没有任何针对筛选器驱动程序模型的建议。
+开始之前，请先确定哪个驱动程序模型适用于你的筛选器驱动程序。 如果在确定最适合的模型时需要帮助，请参阅[选择驱动程序模型](../gettingstarted/choosing-a-driver-model.md)。 如果要为硬件设备编写筛选器驱动程序，请确定设备适合位于[设备和驱动程序技术](../index.yml)中介绍的技术列表的哪个位置。 请参阅该特定技术的相关文档，了解是否有关于选择筛选器驱动程序模型的任何指南。 建议的筛选器驱动程序模型因技术而异。 对于有些技术，此文档建议使用用户模式驱动程序框架 (UMDF)、内核模式驱动程序框架 (KMDF) 或 Windows 驱动程序模型 (WDM)。 对于其他技术，此文档为如何编写筛选器驱动程序提供了明确的详细信息。 部分技术有微筛选器模型。 对于有些技术，可能没有任何针对筛选器驱动程序模型的建议。
 
 接下来，确定以下哪个案例介绍你的驱动程序模型建议，并按照步骤进行操作：
 
@@ -32,7 +32,7 @@ ms.locfileid: "67370781"
 1.  在 Visual Studio 中的“文件”  菜单上，选择“新建 | 项目”  。
 2.  在“新建项目”对话框的左侧窗格中，找到并选择“Visual C++ | Windows 驱动程序 | WDF”  。
 3.  在中间窗格中，选择“用户模式驱动程序(UMDF)”  。
-4.  填写“名称”  和“位置”  框，然后单击“确定”  。 有关详细信息，请参阅[基于模板编写 UMDF 驱动程序](https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/writing-a-umdf-driver-based-on-a-template)。
+4.  填写“名称”和“位置”框，然后选择“确定”。 有关详细信息，请参阅[基于模板编写 UMDF 驱动程序](../gettingstarted/writing-a-umdf-driver-based-on-a-template.md)。
     **注意**  在创建新的 UMDF 驱动程序时，必须选择一个不多于 32 个字符的驱动程序名称。 此长度限制在 wdfglobals.h 中定义。
 5.  此时，你的驱动程序项目可以实现大多数 UMDF 驱动程序所需的一般代码。 现在你可以提供特定于你的筛选器的代码。
 
@@ -42,7 +42,7 @@ ms.locfileid: "67370781"
 1.  在 Visual Studio 中的“文件”  菜单上，选择“新建 | 项目”  。
 2.  在“新建项目”对话框的左侧窗格中，找到并选择“WDF”  。
 3.  在中间窗格中，选择“内核模式驱动程序(KMDF)”  。
-4.  填写“名称”  和“位置”  框，然后单击“确定”  。 有关详细信息，请参阅[基于模板编写 KMDF 驱动程序](https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/writing-a-kmdf-driver-based-on-a-template)。
+4.  填写“名称”和“位置”框，然后选择“确定”。 有关详细信息，请参阅[基于模板编写 KMDF 驱动程序](../gettingstarted/writing-a-kmdf-driver-based-on-a-template.md)。
     **注意**  在创建新的 KMDF 驱动程序时，必须选择一个不多于 32 个字符的驱动程序名称。 此长度限制在 wdfglobals.h 中定义。
 5.  此时，你的驱动程序项目可以实现大多数 KMDF 驱动程序所需的一般代码。 现在你可以提供特定于你的筛选器的代码。
 
@@ -54,8 +54,8 @@ ms.locfileid: "67370781"
 1.  在 Visual Studio 中的“文件”  菜单上，选择“新建 | 项目”  。
 2.  在“新建项目”对话框的左侧窗格中，找到并选择“模板 | Visual C++ | Windows 驱动程序”  。
 3.  浏览已安装模板列表，查看是否有你需要编写的筛选器类型的模板。 例如，可以选择“筛选器驱动程序:  NDIS”模板（在**网络**下）。
-4.  如果 **Windows 驱动程序**下没有你的筛选器驱动程序类型的模板，请单击“联机”  并浏览联机可用的模板。
-5.  如果你找到了你的筛选器驱动程序类型的模板，请选择该模板，填写“名称”  和“位置”  框，然后单击“确定”  。
+4.  如果“Windows 驱动程序”下没有适用于你的筛选器驱动程序类型的模板，请选择“联机”并浏览联机可用的模板 。
+5.  如果你找到了适用于你的筛选器驱动程序类型的模板，请选择该模板，填写“名称”和“位置”框，然后选择“确定”。
 6.  此时，你的驱动程序项目可以实现筛选器驱动程序所需的一般代码。 现在你可以提供特定于你的筛选器的代码。 请参阅你的技术的文档来了解你需要实现的功能。
 
 如果你的设备技术有特定的筛选器模型或微筛选器模型，并且你找不到你的筛选器驱动程序类型的模板，请参阅技术特定文档获取确定是使用 UMDF、KMDF 还是使用 WDM 的指导信息。
@@ -65,9 +65,9 @@ ms.locfileid: "67370781"
 
 1.  在 Visual Studio 中的“文件”  菜单上，选择“新建 | 项目”  。
 2.  在 Visual Studio 中的“新建项目”对话框中，在“Windows 驱动程序”  下选择 **WDM**。
-3.  填写“名称”  和“位置”  框，然后单击“确定”  。
-4.  此时，你有一个空的 WDM 驱动程序项目。 在“解决方案资源管理器”窗口中，右键单击你的驱动程序项目，然后选择“添加 | 新项目”  。
-5.  在“添加新项目”对话框中，选择“C++ 文件(.cpp)”  ，为文件输入一个名称，然后单击“确定”  。
+3.  填写“名称”和“位置”框，然后选择“确定”。
+4.  此时，你有一个空的 WDM 驱动程序项目。 在“解决方案资源管理器”窗口中，选择并按住（或右键单击）你的驱动程序项目，然后选择“添加 | 新项目”。
+5.  在“添加新项目”对话框中，选择“C++ 文件(.cpp)”，为文件输入一个名称，然后选择“确定”。
 
     **注意**  如果你想要创建 .c 文件，而不是 .cpp 文件，请输入具有 **.c** 扩展名的名称。
 6.  实现你的筛选器所需的功能。 在实现和组织功能时，你可能决定添加其他 .cpp 或 .c 文件。
@@ -75,7 +75,7 @@ ms.locfileid: "67370781"
 ## <a name="span-idcase_5__the_documentation_for_your_technology_does_not_have_a_recommendation_for_a_filter_driver_modelspanspan-idcase_5__the_documentation_for_your_technology_does_not_have_a_recommendation_for_a_filter_driver_modelspancase-5-the-documentation-for-your-technology-does-not-have-a-recommendation-for-a-filter-driver-model"></a><span id="case_5__the_documentation_for_your_technology_does_not_have_a_recommendation_for_a_filter_driver_model."></span><span id="CASE_5__THE_DOCUMENTATION_FOR_YOUR_TECHNOLOGY_DOES_NOT_HAVE_A_RECOMMENDATION_FOR_A_FILTER_DRIVER_MODEL."></span>案例 5：你的技术的相关文档未提供针对筛选器驱动程序模型的建议。
 
 
-1.  确定 UMDF、KMDF 或 WDM 是否是最适合你的筛选器驱动程序的模型。 如需帮助，请参阅[选择驱动程序模型](https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/choosing-a-driver-model)。
+1.  确定 UMDF、KMDF 或 WDM 是否是最适合你的筛选器驱动程序的模型。 如需帮助，请参阅[选择驱动程序模型](../gettingstarted/choosing-a-driver-model.md)。
 2.  在 Visual Studio 中的“文件”  菜单上，选择“新建 | 项目”  。
 3.  在 Visual Studio 的“新建项目”对话框中，在“Windows 驱动程序”  下，选择以下模板之一：
 
@@ -89,8 +89,4 @@ ms.locfileid: "67370781"
 如果你不确定要使用哪个模板，请考虑阅读 [Windows 硬件 WDK 和驱动程序开发](https://go.microsoft.com/fwlink/p?LinkID=252169)论坛帖子或将问题发布到论坛中。
 
  
-
- 
-
-
 

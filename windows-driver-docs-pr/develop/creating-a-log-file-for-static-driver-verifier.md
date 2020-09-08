@@ -4,24 +4,24 @@ title: 为静态驱动程序验证程序创建日志文件
 description: Windows Server 2012 硬件认证计划需要所有驱动程序在正当提交时提供驱动程序验证日志 (DVL)。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: aeaca1ed749c665de3e43f981df4426860212254
-ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
+ms.openlocfilehash: 9cada8a4664892b1f486e1a0e18e4f082af615ac
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "67370795"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89207643"
 ---
 # <a name="creating-a-log-file-for-static-driver-verifier"></a>为静态驱动程序验证程序创建日志文件
 
-Windows Server 2012 [硬件认证计划](https://go.microsoft.com/fwlink/p/?linkid=227016)需要所有驱动程序在正当提交时提供驱动程序验证日志 (DVL)。 在为驱动程序创建 DVL 之前，必须先运行[静态驱动程序验证程序](https://docs.microsoft.com/windows-hardware/drivers/devtest/static-driver-verifier) (SDV)。 DVL 包含代码分析的结果和静态驱动程序验证程序日志文件的摘要。 日志文件不包含源代码信息。
+Windows Server 2012 [硬件认证计划](https://go.microsoft.com/fwlink/p/?linkid=227016)需要所有驱动程序在正当提交时提供驱动程序验证日志 (DVL)。 在为驱动程序创建 DVL 之前，必须先运行[静态驱动程序验证程序](../devtest/static-driver-verifier.md) (SDV)。 DVL 包含代码分析的结果和静态驱动程序验证程序日志文件的摘要。 日志文件不包含源代码信息。
 
 为了获得最佳效果，请在运行静态驱动程序验证程序前运行代码分析工具。
 
 **为静态驱动程序验证程序创建日志文件**
 
-1.  在 Microsoft Visual Studio Ultimate 2012 中，选择驱动程序项目文件，然后右键单击以打开项目属性。 选择“Windows 8 版本”  作为“配置”  ，并选择“x64”  作为“平台”  。
-2.  如果已运行代码分析工具，请按照[运行静态驱动程序验证程序](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#running_static_driver_verifier)中的以下说明操作。 有关使用 SDV 的详细信息，请参阅“使用静态驱动程序验证程序查找驱动程序中的缺陷”
-3.  如果 SDV 发现你的驱动程序中存在缺陷，请在“结果”窗格中单击该缺陷以查看导致违反规则的代码路径的跟踪。 修复在驱动程序中找到的任何缺陷并再次运行 SDV。
+1.  在 Microsoft Visual Studio Ultimate 2012 中，选择驱动程序项目文件，然后选择并按住（或右键单击）打开项目属性。 选择“Windows 8 版本”  作为“配置”  ，并选择“x64”  作为“平台”  。
+2.  如果已运行代码分析工具，请按照[运行静态驱动程序验证程序](../devtest/using-static-driver-verifier-to-find-defects-in-drivers.md#running_static_driver_verifier)中的以下说明操作。 有关使用 SDV 的详细信息，请参阅“使用静态驱动程序验证程序查找驱动程序中的缺陷”
+3.  如果 SDV 发现你的驱动程序中存在缺陷，请在“结果”窗格中选择该缺陷，查看导致违反规则的代码路径的跟踪。 修复在驱动程序中找到的任何缺陷并再次运行 SDV。
 
 静态驱动程序验证程序会将结果写入到项目的 SDV 子目录（例如 \\myDriverProject\\SDV）中的文件 SDV.DVL.xml。
 
@@ -57,15 +57,8 @@ msbuild.exe <vcxprojectfile> /p:Configuration="Win8 Release" /p:Platform=x64 /ta
 
 
 * [创建驱动程序验证日志](creating-a-driver-verification-log.md)
-* [静态驱动程序验证程序](https://docs.microsoft.com/windows-hardware/drivers/devtest/static-driver-verifier)
-* [使用静态驱动程序验证程序查找驱动程序中的缺陷](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers)
+* [静态驱动程序验证程序](../devtest/static-driver-verifier.md)
+* [使用静态驱动程序验证程序查找驱动程序中的缺陷](../devtest/using-static-driver-verifier-to-find-defects-in-drivers.md)
 * [硬件认证计划](https://go.microsoft.com/fwlink/p/?linkid=227016)
  
-
- 
-
-
-
-
-
 

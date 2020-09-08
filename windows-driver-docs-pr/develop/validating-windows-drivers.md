@@ -4,12 +4,12 @@ title: 验证通用 Windows 驱动程序
 description: 可以使用 ApiValidator.exe 工具验证驱动程序调用的 API 是否对通用 Windows 驱动程序有效。
 ms.date: 04/28/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 5884d843d5f1ca25440ace35982f9051ac902774
-ms.sourcegitcommit: 958a5ced83856df22627c06eb42c9524dd547906
+ms.openlocfilehash: 86c407f50cd38317f9a4620d24f072fc054c68bb
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83270452"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89211133"
 ---
 # <a name="validating-windows-drivers"></a>验证 Windows 驱动程序
 
@@ -55,7 +55,7 @@ Error   10  error MSB3721: The command ""C:\Program Files (x86)\Windows Kits\10\
 
 ### <a name="fixing-validation-errors"></a>修复验证错误
 
-1.  如果已将旧的桌面 UMDF 驱动程序项目切换为 Windows 驱动程序，请验证在生成二进制文件时是否添加了正确的库。 右键单击该项目，然后选择“属性”。 依次转到“链接器”->“输入”。 **其他依赖项**应包含：
+1.  如果已将旧的桌面 UMDF 驱动程序项目切换为 Windows 驱动程序，请验证在生成二进制文件时是否添加了正确的库。 选择并按住（或右键单击）项目，然后选择属性。 依次转到“链接器”->“输入”。 **其他依赖项**应包含：
 
     ```cpp
     %AdditionalDependencies);$(SDK_LIB_PATH)\OneCoreUAP.lib

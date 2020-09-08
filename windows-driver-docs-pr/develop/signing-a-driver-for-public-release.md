@@ -4,12 +4,12 @@ title: 为驱动程序签名以便公开发布
 description: 在公开发布驱动程序包之前，我们建议你先提交程序包以进行认证。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0a0e381540ef439e45300df2e0d8852d687acc90
-ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
+ms.openlocfilehash: e202b136278cc4d711947eba0c884c50d9aaf212
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "67393066"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89210823"
 ---
 # <a name="signing-a-driver-for-public-release"></a>为驱动程序签名以便公开发布
 
@@ -17,11 +17,11 @@ ms.locfileid: "67393066"
 
 假设你已从 Verisign 获得一对文件：一个私钥文件 (PVK) 和一个软件发布证书 (SPC)。 此外还假设你拥有 Microsoft Visual Studio 解决方案，其中包含一个名为 MyDriver 的驱动程序项目和一个名为 MyDriver Package 的驱动程序包项目。 若要为驱动程序包签名，请执行以下步骤。
 
-1.  使用 [**Pvk2Pfx**](https://docs.microsoft.com/windows-hardware/drivers/devtest/pvk2pfx) 工具创建个人信息交换 (PFX) 证书。 **Pvk2Pfx** 工具会将你的 PVK 和 SPC 文件视为输入，并创建一个 PFX 文件。 在此练习中，假设 PFX 文件被命名为 MyCert.pfx。
+1.  使用 [**Pvk2Pfx**](../devtest/pvk2pfx.md) 工具创建个人信息交换 (PFX) 证书。 **Pvk2Pfx** 工具会将你的 PVK 和 SPC 文件视为输入，并创建一个 PFX 文件。 在此练习中，假设 PFX 文件被命名为 MyCert.pfx。
 
     **注意**   创建 PFX 文件后，你可以将其重复用于其他驱动程序项目并在其他驱动程序开发计算机上使用。
 2.  要确定需要使用的交叉证书，请参阅[适用于内核模式代码签名的交叉证书](https://go.microsoft.com/fwlink/p/?LinkID=248296)。 验证所需的交叉证书是否位于 $(BASEDIR)\\CrossCertificates 下，其中 $(BASEDIR) 是 Windows 工具包的基目录（例如 c:\\Program Files (x86)\\Windows Kits\\8.0\\CrossCertificates）。 如果所需的交叉证书不在此处，请从 Microsoft 下载交叉证书，并将其复制到 $(BASEDIR)\\CrossCertificates。
-3.  在 Visual Studio 中，打开包含 MyDriver 和 MyDriver Package 项目的解决方案。 如果“解决方案资源管理器”窗口尚未打开，请从“视图”  菜单中选择“解决方案资源管理器”  。 在“解决方案资源管理器”窗口中，右键单击程序包项目 **MyDriver Package**，然后选择“属性”  。
+3.  在 Visual Studio 中，打开包含 MyDriver 和 MyDriver Package 项目的解决方案。 如果“解决方案资源管理器”窗口尚未打开，请从“视图”  菜单中选择“解决方案资源管理器”  。 在“解决方案资源管理器”窗口中，选择并按住（或右键单击）程序包项目 MyDriver Package，然后选择“属性” 。
 
 4.  在程序包的属性页中，导航到“配置属性”&gt;“驱动程序签名”&gt;“常规”。  在“签名模式”  下拉列表中，选择“生产签名”  。 对于“生产签名”  ，执行下列操作之一：
 
@@ -29,24 +29,24 @@ ms.locfileid: "67393066"
     -   选择“从文件中选择”  ，然后浏览到你的签名证书。
     -   选择“从应用商店中选择”  ，然后选择你先前导入证书应用商店的证书。
 
-        **注意**  若要将证书导入应用商店，请右键单击证书文件（PFX 文件），然后选择“安装 PFX”  。 按照“证书导入”向导中的说明进行操作。
+        **注意**  若要将证书导入应用商店，请选择并按住（或右键单击）证书文件（PFX 文件），然后选择“安装 PFX”。 按照“证书导入”向导中的说明进行操作。
 
-        **注意**  如果你决定稍后使用不同的证书，请确保你的新证书已导入到证书应用商店中。 如果你选择“从文件中选择”  并浏览至新的证书，则新证书将会自动导入证书应用商店中。 但是，如果你手动输入新证书的路径，则它不会自动导入到证书应用商店中。 在此情况下，你必须右键单击新证书文件并选择“安装 PFX”  。
+        **注意**  如果你决定稍后使用不同的证书，请确保你的新证书已导入到证书应用商店中。 如果你选择“从文件中选择”  并浏览至新的证书，则新证书将会自动导入证书应用商店中。 但是，如果你手动输入新证书的路径，则它不会自动导入到证书应用商店中。 在此情况下，必须选择并按住（或右键单击）新证书文件，然后选择“安装 PFX”。
 5.  在“驱动程序签名”&gt;“常规”属性页中，对于“TimeStampServer”  ，从下拉列表中选择时间戳服务器之一。 
 
     **注意**  如需使用下拉列表中的时间戳服务器之一，则在生成驱动程序包时，必须连接到 Internet。 如果在生成驱动程序包时需要与 Internet 断开连接，请清除“TimeStampServer”  字段。
 6.  在程序包的属性页中，导航到“配置属性”&gt;“Inf2Cat”&gt;“常规”。  在“运行 Inf2Cat”  下拉列表中，选择“是”  。
 
 7.  关闭程序包的属性页。
-8.  右键单击驱动程序项目 **MyDriver**，然后选择“属性” 
+8.  选择并按住（或右键单击）驱动程序项目 MyDriver，然后选择“属性”
 9.  在驱动程序的属性页中，导航到“配置属性”&gt;“驱动程序签名”&gt;“常规”。  将“TimeStampServer”  设为驱动程序包属性中所用的相同值。 将“签名模式”  设为“生产签名”  ，然后将“生产证书”  设为驱动程序包属性中所用的相同值。
 
-10. 准备好生成驱动程序包时，请按 **F5**。 Visual Studio 将会自动为你的程序包和驱动程序文件签名。 如果已配置部署，则 Visual Studio 还会将已签名的驱动程序包部署到测试计算机。 有关详细信息，请参阅[预配计算机以便进行驱动程序部署和测试 (WDK 8.1)](https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/provision-a-target-computer-wdk-8-1)。
+10. 准备好生成驱动程序包时，请按 **F5**。 Visual Studio 将会自动为你的程序包和驱动程序文件签名。 如果已配置部署，则 Visual Studio 还会将已签名的驱动程序包部署到测试计算机。 有关详细信息，请参阅[预配计算机以便进行驱动程序部署和测试 (WDK 8.1)](../gettingstarted/provision-a-target-computer-wdk-8-1.md)。
 
 ## <a name="span-idviewing_the_driver_package_filesspanspan-idviewing_the_driver_package_filesspanspan-idviewing_the_driver_package_filesspanviewing-the-driver-package-files"></a><span id="Viewing_the_driver_package_files"></span><span id="viewing_the_driver_package_files"></span><span id="VIEWING_THE_DRIVER_PACKAGE_FILES"></span>查看驱动程序包文件
 
 
-生成解决方案后，在文件资源管理器中导航至包含你的驱动程序包的文件夹。 程序包中的其中一个文件为目录文件。 该目录文件包含程序包的数字签名。 如需查看已签名程序包中的文件的示例，请参阅[基于模板编写 KMDF 驱动程序](https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/writing-a-kmdf-driver-based-on-a-template)。
+生成解决方案后，在文件资源管理器中导航至包含你的驱动程序包的文件夹。 程序包中的其中一个文件为目录文件。 该目录文件包含程序包的数字签名。 如需查看已签名程序包中的文件的示例，请参阅[基于模板编写 KMDF 驱动程序](../gettingstarted/writing-a-kmdf-driver-based-on-a-template.md)。
 
 ## <a name="span-idgetting_a_whql_release_signaturespanspan-idgetting_a_whql_release_signaturespanspan-idgetting_a_whql_release_signaturespangetting-a-whql-release-signature"></a><span id="Getting_a_WHQL_release_signature"></span><span id="getting_a_whql_release_signature"></span><span id="GETTING_A_WHQL_RELEASE_SIGNATURE"></span>获取 WHQL 发布签名
 
@@ -55,7 +55,7 @@ ms.locfileid: "67393066"
 
 若要安装到 Windows 10、8.1、8 和 7 上，你的驱动程序包可以具有单个 SHA1 签名。
 
-从 Windows 10 起，你还需要在 [Windows 硬件开发人员中心仪表板门户](https://msdn.microsoft.com/windows/hardware/gg236587.aspx)中提交任何新的 Windows 10 内核模式驱动程序以进行数字签名。  提交内核和用户模式驱动程序必须具有有效的[扩展验证 (“EV”) 代码签名证书](https://docs.microsoft.com/windows-hardware/drivers/dashboard/)。
+从 Windows 10 起，你还需要在 [Windows 硬件开发人员中心仪表板门户](https://msdn.microsoft.com/windows/hardware/gg236587.aspx)中提交任何新的 Windows 10 内核模式驱动程序以进行数字签名。  提交内核和用户模式驱动程序必须具有有效的[扩展验证 (“EV”) 代码签名证书](../dashboard/index.yml)。
 
 **注意** SHA1 弃用不适用于驱动程序。  有关 Windows 中 SHA1 支持的结束日期信息，请参阅[验证码签名和时间戳的 Windows 强制](https://social.technet.microsoft.com/wiki/contents/articles/32288.windows-enforcement-of-authenticode-code-signing-and-timestamping.aspx)。
 
@@ -78,20 +78,15 @@ ms.locfileid: "67393066"
 
 
 * [Windows 10 中的驱动程序签名更改](https://techcommunity.microsoft.com/t5/Windows-Hardware-Certification/bg-p/WindowsHardwareCertification)
-* [适用于 Windows 7 和 Windows Server 2008 R2 的 SHA-2 代码签名支持的可用性](https://docs.microsoft.com/security-updates/SecurityAdvisories/2015/3033929)
+* [适用于 Windows 7 和 Windows Server 2008 R2 的 SHA-2 代码签名支持的可用性](/security-updates/SecurityAdvisories/2015/3033929)
 * [为驱动程序签名](signing-a-driver.md)
 * [Windows 硬件认证](https://go.microsoft.com/fwlink/p/?LinkID=248337)
 * [硬件仪表板服务](https://go.microsoft.com/fwlink/p/?LinkID=248336)
 * [Windows 驱动程序签名要求](https://go.microsoft.com/fwlink/p/?linkid=617515)
 * [用于内核模式代码签名的交叉证书](https://go.microsoft.com/fwlink/p/?LinkID=248296)
 * [内核模式代码签名演练](https://go.microsoft.com/fwlink/p/?linkid=617516)
-* [驱动程序签名](https://docs.microsoft.com/windows-hardware/drivers/install/driver-signing)
-* [安装引导启动驱动程序](https://docs.microsoft.com/windows-hardware/drivers/install/installing-a-boot-start-driver)
-* [驱动程序签名工具](https://docs.microsoft.com/windows-hardware/drivers/devtest/tools-for-signing-drivers)
+* [驱动程序签名](../install/driver-signing.md)
+* [安装引导启动驱动程序](../install/installing-a-boot-start-driver.md)
+* [驱动程序签名工具](../devtest/tools-for-signing-drivers.md)
  
-
- 
-
-
-
 

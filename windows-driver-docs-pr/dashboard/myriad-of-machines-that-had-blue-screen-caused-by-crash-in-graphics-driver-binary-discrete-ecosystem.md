@@ -1,15 +1,15 @@
 ---
-title: 由于显卡驱动程序二进制文件中的崩溃导致出现蓝屏且具有离散式 GPU 的计算机的巨大数量
-description: 该度量将来自 7 天滑动窗口的遥测数据聚合为大量装有离散 GPU 的不同计算机，这些计算机由于显卡驱动程序二进制文件中的崩溃而发生了蓝屏
+title: 由于显卡驱动程序二进制文件中的崩溃导致出现蓝屏且具有离散式 GPU 的计算机的巨大数量（生态系统）
+description: 该度量将来自 7 天滑动窗口的遥测数据聚合为大量装有离散 GPU 的不同计算机，这些计算机由于显卡驱动程序二进制文件中的崩溃而发生了蓝屏（生态系统）
 ms.topic: article
 ms.date: 06/18/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: ac93e773e31728a6dcf1c273b696c33b4826d999
-ms.sourcegitcommit: cb5f370b867ceab28b6b6c64a3586b0bb3831b3d
+ms.openlocfilehash: bd7181356e6325ec2c015700963320667a3aa4ca
+ms.sourcegitcommit: 4f08f5686c0bbc27d58930b993cbab1a98e3afb0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "86036011"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89443788"
 ---
 # <a name="myriad-of-machines-with-discrete-gpu-that-had-a-blue-screen-caused-by-a-crash-in-the-graphics-driver-binary-ecosystem"></a>由于显卡驱动程序二进制文件中的崩溃导致出现蓝屏且具有离散式 GPU 的计算机的巨大数量（生态系统）
 
@@ -17,7 +17,7 @@ ms.locfileid: "86036011"
 
 在用户会话期间，显卡驱动程序二进制文件中的崩溃可能会导致蓝屏，这会导致计算机重启，并且可能会中断用户的工作流。 此度量评估大量（总数 10,000 台）装有离散 GPU（带驱动程序）的计算机，这些计算机由于显卡驱动程序二进制文件中的崩溃而导致蓝屏。 
 
-这是[由于显卡驱动程序二进制文件中的崩溃导致出现蓝屏且具有离散 GPU 的计算机的巨大数量](https://docs.microsoft.com/windows-hardware/drivers/dashboard/myriad-of-machines-that-had-blue-screen-caused-by-crash-in-graphics-driver-binary-discrete-standard)度量的生态系统对应项。
+这是[由于显卡驱动程序二进制文件中的崩溃导致出现蓝屏且具有离散 GPU 的计算机的巨大数量](./myriad-of-machines-that-had-blue-screen-caused-by-crash-in-graphics-driver-binary-discrete-standard.md)度量的生态系统对应项。
 
 ## <a name="measure-attributes"></a>度量属性
 

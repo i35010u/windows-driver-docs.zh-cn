@@ -4,12 +4,12 @@ description: 介绍了 DCHU 驱动程序示例如何应用 DCH 设计原则（�
 ms.assetid: f46f0ea6-d855-49d2-8c09-a6ad56084742
 ms.date: 04/15/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: d0894525905e2ecbf5fc3e635a17350fbb91b48e
-ms.sourcegitcommit: 4d1ed685d198629f792d287619621a87ca42c26f
+ms.openlocfilehash: 7720fd73b47c5bc671839c039213527d692785fd
+ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83435379"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89065210"
 ---
 # <a name="dch-compliant-driver-package-example"></a>符合 DCH 的驱动程序包示例
 
@@ -17,7 +17,7 @@ ms.locfileid: "83435379"
 
 如果你需要此示例存储库的本地副本，请从 [Windows-driver-samples](https://github.com/Microsoft/Windows-driver-samples) 进行克隆。
 
-此示例的某些部分可能使用只在特定版本的 Windows 10 及更高版本上可用的指令和 API。  若要了解支持给定指令的 OS 版本，请参阅 [INF 指令](../install/inf-directives.md)。
+此示例的某些部分可能使用只在特定版本的 Windows 10 及更高版本上可用的指令和 API。  若要了解支持给定指令的 OS 版本，请参阅[设备和驱动程序安装](../install/index.md)。
 
 ## <a name="prerequisites"></a>必备条件
 
@@ -134,11 +134,11 @@ osrfx2_DCHU_componentsoftware.exe
 
 此示例包含了 [Win32 应用的源代码](https://github.com/Microsoft/Windows-driver-samples/tree/master/general/DCHU/osrfx2_DCHU_extension_loose/osrfx2_DCHU_componentsoftware)。
 
-请注意，由于 [Windows 硬件开发人员中心仪表板](https://partner.microsoft.com/dashboard/Registration/Hardware)的目标设置，该组件驱动程序包仅可在桌面 SKU 上分发。  有关详细信息，请参阅[将驱动程序发布到 Windows 更新](https://docs.microsoft.com/windows-hardware/drivers/dashboard/publish-a-driver-to-windows-update)。
+请注意，由于 [Windows 硬件开发人员中心仪表板](https://partner.microsoft.com/dashboard/Registration/Hardware)的目标设置，该组件驱动程序包仅可在桌面 SKU 上分发。  有关详细信息，请参阅[将驱动程序发布到 Windows 更新](../dashboard/publish-a-driver-to-windows-update.md)。
 
 ## <a name="allow-communication-with-a-hardware-support-app"></a>允许与硬件支持应用进行通信
 
-Fabrikam 要提供基于 GUI 的伴侣应用，作为 Windows 驱动程序包的一部分。  由于基于 Win32 的伴侣应用无法成为 Windows 驱动程序包的一部分，因此他们将 Win32 应用移植到通用 Windows 平台 (UWP)，并将[应用与设备配对](https://docs.microsoft.com/windows-hardware/drivers/devapps/hardware-access-for-universal-windows-platform-apps)。
+Fabrikam 要提供基于 GUI 的伴侣应用，作为 Windows 驱动程序包的一部分。  由于基于 Win32 的伴侣应用无法成为 Windows 驱动程序包的一部分，因此他们将 Win32 应用移植到通用 Windows 平台 (UWP)，并将[应用与设备配对](../devapps/hardware-support-app--hsa--steps-for-driver-developers.md)。
 
 来自 [`osrfx2_DCHU_base/device.c`](https://github.com/Microsoft/Windows-driver-samples/blob/master/general/DCHU/osrfx2_DCHU_base/osrfx2_DCHU_base/device.c) 的以下片段显示基准驱动程序包如何将自定义功能添加到设备接口实例：
 
@@ -157,7 +157,7 @@ Fabrikam 要提供基于 GUI 的伴侣应用，作为 Windows 驱动程序包的
                                               (PVOID)customCapabilities);
 ```
 
-这个新应用（不包含在此示例中）是安全的，并且可以在 Microsoft Store 中轻松更新。 在 UWP 应用就绪后，Contoso 使用 [DISM - 部署映像服务和管理](https://docs.microsoft.com/windows-hardware/manufacture/desktop/dism---deployment-image-servicing-and-management-technical-reference-for-windows)在 Windows 桌面版映像上预加载应用。
+这个新应用（不包含在此示例中）是安全的，并且可以在 Microsoft Store 中轻松更新。 在 UWP 应用就绪后，Contoso 使用 [DISM - 部署映像服务和管理](/windows-hardware/manufacture/desktop/dism---deployment-image-servicing-and-management-technical-reference-for-windows)在 Windows 桌面版映像上预加载应用。
 
 ## <a name="tightly-coupling-multiple-inf-files"></a>紧密耦合多个 INF 文件
 
@@ -173,7 +173,7 @@ Fabrikam 要提供基于 GUI 的伴侣应用，作为 Windows 驱动程序包的
 CopyInf=osrfx2_DCHU_component.inf
 ```
 
-该指令还可用于协调在多功能设备上安装 INF 文件。  有关更多详细信息，请参阅[复制 INF 文件](https://docs.microsoft.com/windows-hardware/drivers/install/copying-inf-files)。
+该指令还可用于协调在多功能设备上安装 INF 文件。  有关更多详细信息，请参阅[复制 INF 文件](../install/copying-inf-files.md)。
 
 > [!NOTE]
 > 虽然基本驱动程序可以装载一个扩展（并以发货标签中的基本驱动程序为目标），但是无法将与另一个驱动程序捆绑的扩展发布到扩展硬件 ID。

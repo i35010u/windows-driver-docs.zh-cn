@@ -4,24 +4,24 @@ title: 驱动程序项目的消息编译器属性
 description: 设置消息编译器 (MC.exe) 工具的属性。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1f5cbea73bb79d260dc703c226a5898c2784ecf5
-ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
+ms.openlocfilehash: 4bf859b169bc369c9fd7bbe396b04d116fa6c462
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "67364257"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89207637"
 ---
 # <a name="message-compiler-properties-for-driver-projects"></a>驱动程序项目的消息编译器属性
 
-设置[**消息编译器 (MC.exe)** ](https://docs.microsoft.com/windows/desktop/WES/message-compiler--mc-exe-) 工具的属性。 编译器将生成消息资源文件，你可以将其添加到项目中。
+设置[**消息编译器 (MC.exe)** ](/windows/desktop/WES/message-compiler--mc-exe-) 工具的属性。 编译器将生成消息资源文件，你可以将其添加到项目中。
 
-例如，如果你使用 [Windows 事件跟踪 (ETW)](https://docs.microsoft.com/windows-hardware/drivers/devtest/event-tracing-for-windows--etw-) 内核模式 API 来为内核模式驱动程序添加事件跟踪，则可使用消息编译器来创建一个包含事件提供程序、事件属性、通道和事件的定义的头文件。 你必须在源代码中包括此头文件。 消息编译器将创建一个资源编译器脚本 (\*.rc)，你可以将其添加到项目文件中。
+例如，如果你使用 [Windows 事件跟踪 (ETW)](../devtest/event-tracing-for-windows--etw-.md) 内核模式 API 来为内核模式驱动程序添加事件跟踪，则可使用消息编译器来创建一个包含事件提供程序、事件属性、通道和事件的定义的头文件。 你必须在源代码中包括此头文件。 消息编译器将创建一个资源编译器脚本 (\*.rc)，你可以将其添加到项目文件中。
 
 ## <a name="span-idsetting_message_compiler_properties_for_driver_projectsspanspan-idsetting_message_compiler_properties_for_driver_projectsspanspan-idsetting_message_compiler_properties_for_driver_projectsspansetting-message-compiler-properties-for-driver-projects"></a><span id="Setting_Message_Compiler_properties_for_driver_projects"></span><span id="setting_message_compiler_properties_for_driver_projects"></span><span id="SETTING_MESSAGE_COMPILER_PROPERTIES_FOR_DRIVER_PROJECTS"></span>设置驱动程序项目的消息编译器属性
 
 
-1.  打开驱动程序项目的属性页。 在“解决方案资源管理器”  中右键单击驱动程序项目，并选择“属性”  。
-2.  在驱动程序项目的属性页中，单击“配置属性”  ，然后单击“消息编译器”  。
+1.  打开驱动程序项目的属性页。 在“解决方案资源管理器”中，选择并按住（或右键单击）驱动程序项目，然后选择“属性” 。
+2.  在驱动程序项目的属性页中，选择“配置属性”，然后选择“消息编译器”。
 3.  设置项目属性。
 
 如果你将消息文本文件 (.mc) 或清单 (.man) 添加到解决方案，则此属性页可用。
@@ -40,7 +40,7 @@ ms.locfileid: "67364257"
 <tbody>
 <tr class="odd">
 <td align="left"><p><span id="Additional_Options"></span><span id="additional_options"></span><span id="ADDITIONAL_OPTIONS"></span><strong>其他选项</strong></p></td>
-<td align="left"><p>指定要传递至<a href="https://docs.microsoft.com/windows/desktop/WES/message-compiler--mc-exe-" data-raw-source="[&lt;strong&gt;Message Compiler (MC.exe)&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/WES/message-compiler--mc-exe-)"><strong>消息编译器 (MC.exe)</strong></a> 工具的其他选项。</p></td>
+<td align="left"><p>指定要传递至<a href="https://docs.microsoft.com/windows/desktop/WES/message-compiler--mc-exe-" data-raw-source="[&lt;strong&gt;Message Compiler (MC.exe)&lt;/strong&gt;](/windows/desktop/WES/message-compiler--mc-exe-)"><strong>消息编译器 (MC.exe)</strong></a> 工具的其他选项。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><span id="Ansi_Input_File"></span><span id="ansi_input_file"></span><span id="ANSI_INPUT_FILE"></span><strong>Ansi 输入文件</strong></p></td>
@@ -176,15 +176,8 @@ ms.locfileid: "67364257"
 ## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
-* [消息编译器 (MC.exe)](https://docs.microsoft.com/windows-hardware/drivers/devtest/message-compiler-task)
-* [WDK 和 Visual Studio 生成环境](https://docs.microsoft.com/windows-hardware/drivers/devtest/wdk-and-visual-studio-build-environment)消息编译器任务
-* [Windows 事件跟踪 (ETW)](https://docs.microsoft.com/windows-hardware/drivers/devtest/event-tracing-for-windows--etw-)
+* [消息编译器 (MC.exe)](../devtest/message-compiler-task.md)
+* [WDK 和 Visual Studio 生成环境](../devtest/wdk-and-visual-studio-build-environment.md)消息编译器任务
+* [Windows 事件跟踪 (ETW)](../devtest/event-tracing-for-windows--etw-.md)
  
-
- 
-
-
-
-
-
 
