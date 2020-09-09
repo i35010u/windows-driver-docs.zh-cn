@@ -12,14 +12,14 @@ api_location:
 - Ksmedia.h
 api_type:
 - HeaderDef
-ms.date: 11/28/2017
+ms.date: 09/04/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: b4968c723212adff1dda5d310385dcdfc51be04b
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 245853d9e8edc7625b5e5d960755d6c539a04ef2
+ms.sourcegitcommit: 51cba71be022c726c04c29ba5c0360860b65d7a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89208969"
+ms.lasthandoff: 09/09/2020
+ms.locfileid: "89562161"
 ---
 # <a name="ksproperty_audio_mix_level_table"></a>KSPROPERTY \_ AUDIO \_ 混音 \_ 级 \_ 表
 
@@ -51,7 +51,7 @@ KSPROPERTY \_ AUDIO \_ MIX \_ LEVEL LEVEL \_ TABLE 属性指定 supermixer 节�
 <tbody>
 <tr class="odd">
 <td align="left"><p>是</p></td>
-<td align="left"><p>是</p></td>
+<td align="left"><p>可选</p></td>
 <td align="left"><p>Pin</p></td>
 <td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksnodeproperty" data-raw-source="[&lt;strong&gt;KSNODEPROPERTY&lt;/strong&gt;](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksnodeproperty)"><strong>KSNODEPROPERTY</strong></a></p></td>
 <td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksaudio_mixlevel" data-raw-source="[&lt;strong&gt;KSAUDIO_MIXLEVEL&lt;/strong&gt;](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksaudio_mixlevel)"><strong>KSAUDIO_MIXLEVEL</strong></a>结构的数组</p></td>
@@ -59,7 +59,7 @@ KSPROPERTY \_ AUDIO \_ MIX \_ LEVEL LEVEL \_ TABLE 属性指定 supermixer 节�
 </tbody>
 </table>
 
- 
+节点需要实现对 KSPROPERTY TYPE_GET 请求的支持 \_ 。 但是，支持 KSPROPERTY \_ 类型 \_ 集的请求是可选的。
 
  (操作数据) 的属性值是一个 KSAUDIO \_ MIXLEVEL 结构的数组，该数组指定 \* supermixer 节点中所有 m N 输入输出路径的混合级别（带有 M 输入通道和 N 个输出通道）。 数组包含 M \* N 元素：
 

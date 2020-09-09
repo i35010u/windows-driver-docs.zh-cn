@@ -4,12 +4,12 @@ description: 本主题介绍 Windows 10 中的音频延迟更改。 它涵盖了
 ms.assetid: 888AEF01-271D-41CD-8372-A47551348959
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c14394be4e4a640ccfa94ad3ead2cd4c9502655b
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: f51e9fc42f2e1b9b898ba847734a0c5c08cbc95b
+ms.sourcegitcommit: 51cba71be022c726c04c29ba5c0360860b65d7a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89211453"
+ms.lasthandoff: 09/09/2020
+ms.locfileid: "89562193"
 ---
 # <a name="low-latency-audio"></a>低延迟音频
 
@@ -440,7 +440,8 @@ static struct
 有关这些结构的详细信息，请参阅下列主题：
 
 - [**KSAUDIO \_ PACKETSIZE \_ 约束结构**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-_ksaudio_packetsize_constraints)
-- [**KSAUDIO \_ PACKETSIZE \_ PROCESSINGMODE \_ 约束结构**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-_ksaudio_packetsize_signalprocessingmode_constraint)
+- [**KSAUDIO \_ PACKETSIZE \_ CONSTRAINTS2 结构**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-_ksaudio_packetsize_constraints2)
+ - [**KSAUDIO \_ PACKETSIZE \_ PROCESSINGMODE \_ 约束结构**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-_ksaudio_packetsize_signalprocessingmode_constraint)
 
 此外，sysvad 示例 (<https://github.com/Microsoft/Windows-driver-samples/tree/master/audio/sysvad>) 演示了如何使用这些属性，以便驱动程序声明每个模式的最小缓冲区。
 
@@ -488,7 +489,7 @@ Sysvad 示例 (<https://github.com/Microsoft/Windows-driver-samples/tree/master/
   - 注册其总线驱动程序的资源和
   - 通知 Portcls 子级的资源依赖于父项的资源。 在 HD 音频体系结构中，音频微型端口驱动程序只需注册其自己的驱动程序拥有的线程资源。
 
-注意：
+说明：
 
 - 收件箱 HDAudio 总线驱动程序 hdaudbus.sys 枚举的 HDAudio 微型端口函数驱动程序无需注册 HDAudio 中断，因为这已通过 hdaudbus.sys 完成。 但是，如果微型端口驱动程序创建其自己的线程，则需要对其进行注册。
 - 仅为注册流式处理资源而与 Portcls 链接的驱动程序必须更新其 Inf，使其包含/需要 wdmaudio，并) 复制 portcls.sys (和依赖文件。 在 wdmaudio 中定义了一个新的 INF 复制部分，仅复制这些文件。
@@ -545,7 +546,7 @@ Needs=WDMPORTCLS.CopyFilesOnly
 - AudioCreation 示例 (AudioGraph) ： <https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/AudioCreation>
 - Sysvad 驱动程序示例： <https://github.com/Microsoft/Windows-driver-samples/tree/master/audio/sysvad>
 
-## <a name="faq"></a>常见问题
+## <a name="faq"></a>FAQ
 
 **1. 如果所有应用程序都使用新 Api 来实现低延迟，则不是更好？低延迟始终保证用户获得更好的用户体验吗？**
 
@@ -558,8 +559,8 @@ Needs=WDMPORTCLS.CopyFilesOnly
 
 **2. 更新到 Windows 10 的所有系统是否会自动更新为支持小型缓冲区？同时，所有系统是否支持相同的最小缓冲区大小？**
 
-否。 为了使系统支持小型缓冲区，需要更新驱动程序。 由 Oem 决定将更新哪些系统以支持小型缓冲区。 另外，较新的系统更 likey 支持比较早的系统更小的缓冲区 (例如，新系统中的延迟很可能低于旧系统) 。
+不是。 为了使系统支持小型缓冲区，需要更新驱动程序。 由 Oem 决定将更新哪些系统以支持小型缓冲区。 另外，较新的系统更 likey 支持比较早的系统更小的缓冲区 (例如，新系统中的延迟很可能低于旧系统) 。
 
 **3. 如果驱动程序支持小缓冲区大小 (&lt; 10ms buffer) ，Windows 10 中的所有应用程序是否会自动使用小型缓冲区来呈现和捕获音频？**
 
-否。 默认情况下，Windows 10 中的所有应用程序都将使用10ms 的缓冲区来呈现和捕获音频。 如果应用程序需要使用小型缓冲区，则需要使用新的 AudioGraph 设置或 WASAPI IAudioClient3 接口，以便执行此操作。 但是，如果 Windows 10 中的一个应用程序请求使用小型缓冲区，则音频引擎将使用该特定缓冲区大小开始传输音频。 在这种情况下，使用同一终结点和模式的所有应用程序都将自动切换到该小型缓冲区大小。 当低延迟应用程序退出时，音频引擎将再次切换到10ms 缓冲区。
+不是。 默认情况下，Windows 10 中的所有应用程序都将使用10ms 的缓冲区来呈现和捕获音频。 如果应用程序需要使用小型缓冲区，则需要使用新的 AudioGraph 设置或 WASAPI IAudioClient3 接口，以便执行此操作。 但是，如果 Windows 10 中的一个应用程序请求使用小型缓冲区，则音频引擎将使用该特定缓冲区大小开始传输音频。 在这种情况下，使用同一终结点和模式的所有应用程序都将自动切换到该小型缓冲区大小。 当低延迟应用程序退出时，音频引擎将再次切换到10ms 缓冲区。

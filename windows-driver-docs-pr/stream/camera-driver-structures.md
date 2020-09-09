@@ -4,39 +4,39 @@ description: 以下照相机驱动程序结构是适用于 Windows 10 的新结�
 ms.assetid: E1C2695B-F3E3-4B16-9552-C79B957A5470
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ab16c20817f45e7a4f5a3dd0e2605f0ab3f8855a
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: e686caa2e7e1183ffa79b74f86388ba6e577585e
+ms.sourcegitcommit: 51cba71be022c726c04c29ba5c0360860b65d7a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89191443"
+ms.lasthandoff: 09/09/2020
+ms.locfileid: "89562203"
 ---
 # <a name="camera-driver-structures"></a>照相机驱动程序结构
 
 
 以下照相机驱动程序结构是适用于 Windows 10 的新结构。
 
-[**CapturedMetadataExposureCompensation**](/windows/win32/api/mfapi/ns-mfapi-tagcapturedmetadataexposurecompensation)
+[**CapturedMetadataExposureCompensation**](/windows/win32/api/mfapi/ns-mfapi-capturedmetadataexposurecompensation)
 
-[**CapturedMetadataISOGains**](/windows/win32/api/mfapi/ns-mfapi-tagcapturedmetadataisogains)
+[**CapturedMetadataISOGains**](/windows/win32/api/mfapi/ns-mfapi-capturedmetadataisogains)
 
-[**CapturedMetadataWhiteBalanceGains**](/windows/win32/api/mfapi/ns-mfapi-tagcapturedmetadatawhitebalancegains)
+[**CapturedMetadataWhiteBalanceGains**](/windows/win32/api/mfapi/ns-mfapi-capturedmetadatawhitebalancegains)
 
-[**FaceCharacterization**](/windows/win32/api/mfapi/ns-mfapi-tagfacecharacterization)
+[**FaceCharacterization**](/windows/win32/api/mfapi/ns-mfapi-facecharacterization)
 
-[**FaceCharacterizationBlobHeader**](/windows/win32/api/mfapi/ns-mfapi-tagfacecharacterizationblobheader)
+[**FaceCharacterizationBlobHeader**](/windows/win32/api/mfapi/ns-mfapi-facecharacterizationblobheader)
 
-[**FaceRectInfo**](/windows/win32/api/mfapi/ns-mfapi-tagfacerectinfo)
+[**FaceRectInfo**](/windows/win32/api/mfapi/ns-mfapi-facerectinfo)
 
-[**FaceRectInfoBlobHeader**](/windows/win32/api/mfapi/ns-mfapi-tagfacerectinfoblobheader)
+[**FaceRectInfoBlobHeader**](/windows/win32/api/mfapi/ns-mfapi-facerectinfoblobheader)
 
-[**HistogramBlobHeader**](/windows/win32/api/mfapi/ns-mfapi-taghistogramblobheader)
+[**HistogramBlobHeader**](/windows/win32/api/mfapi/ns-mfapi-histogramblobheader)
 
-[**HistogramDataHeader**](/windows/win32/api/mfapi/ns-mfapi-taghistogramdataheader)
+[**HistogramDataHeader**](/windows/win32/api/mfapi/ns-mfapi-histogramdataheader)
 
-[**HistogramGrid**](/windows/win32/api/mfapi/ns-mfapi-taghistogramgrid)
+[**HistogramGrid**](/windows/win32/api/mfapi/ns-mfapi-histogramgrid)
 
-[**HistogramHeader**](/windows/win32/api/mfapi/ns-mfapi-taghistogramheader)
+[**HistogramHeader**](/windows/win32/api/mfapi/ns-mfapi-histogramheader)
 
 [**KSCAMERA \_ EXTENDEDPROP \_ 标头**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)
 
@@ -104,7 +104,7 @@ ms.locfileid: "89191443"
 
 [**KSSTREAM \_ UVC \_ METADATATYPE \_ 时间戳**](/windows-hardware/drivers/ddi/ks/ns-ks-ksstream_uvc_metadatatype_timestamp)
 
-[**MetadataTimeStamps**](/windows/win32/api/mfapi/ns-mfapi-tagmetadatatimestamps)
+[**MetadataTimeStamps**](/windows/win32/api/mfapi/ns-mfapi-metadatatimestamps)
 
 [**MF \_ MDL \_ 共享 \_ 负载 \_ 密钥**](/windows-hardware/drivers/ddi/ks/ns-ks-_mf_mdl_shared_payload_key)
 

@@ -2,14 +2,14 @@
 title: 多语音助手
 description: 多个语音助手平台为除 Cortana 以外的其他语音助手提供支持。
 ms.assetid: 48a7e96b-58e8-4a49-b673-14036d4108d5
-ms.date: 03/12/2020
+ms.date: 09/08/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 6cf915aa749f2beb78a2856abe6d99fe11027e60
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 34b8b5f467c38eab669e7331e61e2f10846449a6
+ms.sourcegitcommit: 51cba71be022c726c04c29ba5c0360860b65d7a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89209913"
+ms.lasthandoff: 09/09/2020
+ms.locfileid: "89562188"
 ---
 # <a name="multiple-voice-assistant"></a>多语音助手
 
@@ -202,11 +202,11 @@ OEM 的实现可以选择任何 COM 线程模型。
 
 硬件-KWS 解决方案至少必须支持100ms 和200毫秒的音频捕获大小。
 
-驱动程序通过在 \_ \_ \_ \_ 包含 ks 流式处理 pin)  (KS 筛选器的 KSCATEGORY 音频 PnP 设备接口上设置 DEVPKEY KsAudio PacketSize 约束设备属性，来表示缓冲区大小约束。 当启用了 KS 筛选器接口时，此属性应保持有效且稳定。 操作系统可以随时读取此值，而无需打开驱动程序的句柄并对驱动程序调用。
+驱动程序通过在 \_ \_ \_ \_ 包含 ks 流式处理 pin (s) 的 KS 筛选器的 KSCATEGORY AUDIO PnP 设备接口上设置 DEVPKEY KsAudio PacketSize Constraints2 设备属性来表示缓冲区大小约束。 当启用了 KS 筛选器接口时，此属性应保持有效且稳定。 操作系统可以随时读取此值，而无需打开驱动程序的句柄并对驱动程序调用。
 
-### <a name="devpkey_ksaudio_packetsize_constraints"></a>DEVPKEY \_ KsAudio \_ PacketSize \_ 约束
+### <a name="devpkey_ksaudio_packetsize_constraints2"></a>DEVPKEY \_ KsAudio \_ PacketSize \_ Constraints2
 
-由于将 \_ \_ \_ 数据从 PacketSize 缓冲区传输到音频硬件) 的机制，DEVPKEY KsAudio PacketSize 约束属性值包含描述物理硬件 (约束的 [**KsAudio \_ WaveRT \_ 约束**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-_ksaudio_packetsize_constraints) 结构。 此结构包含一个数组，其中包含0个或多个 [**KSAUDIO \_ PACKETSIZE \_ PROCESSINGMODE \_ 约束**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-_ksaudio_packetsize_signalprocessingmode_constraint) 结构，其中描述了特定于任何信号处理模式的约束。 驱动程序在调用 [**PcRegisterSubdevice**](/windows-hardware/drivers/ddi/portcls/nf-portcls-pcregistersubdevice) 之前设置此属性，或以其他方式为其流式处理 pin 启用其 KS 筛选器接口。
+由于将 \_ \_ \_ 数据从 KsAudio 缓冲区传输到音频硬件) 的机制，DEVPKEY KsAudio PacketSize Constraints2 属性值包含一个 [**PacketSize \_ Constraints2 \_ **](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-_ksaudio_packetsize_constraints2) WaveRT 结构，该结构描述 (物理硬件约束。 此结构包含一个数组，其中包含0个或多个 [**KSAUDIO \_ PACKETSIZE \_ PROCESSINGMODE \_ 约束**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-_ksaudio_packetsize_signalprocessingmode_constraint) 结构，其中描述了特定于任何信号处理模式的约束。 驱动程序在调用 [**PcRegisterSubdevice**](/windows-hardware/drivers/ddi/portcls/nf-portcls-pcregistersubdevice) 之前设置此属性，或以其他方式为其流式处理 pin 启用其 KS 筛选器接口。
 
 ### <a name="iminiportwavertinputstream"></a>IMiniportWaveRTInputStream
 

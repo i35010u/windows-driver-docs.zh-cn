@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 85f1b46ce4d8eeedcd53653853bc209710b86d2e
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 0a13e937075411cece713c37cb69c2d84f0de15a
+ms.sourcegitcommit: 51cba71be022c726c04c29ba5c0360860b65d7a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89209885"
+ms.lasthandoff: 09/09/2020
+ms.locfileid: "89562227"
 ---
 # <a name="blue-screen-data"></a>蓝屏数据
 
@@ -150,7 +150,7 @@ ms.locfileid: "89209885"
 
 -   确认硬盘上有足够的可用空间。 操作系统和某些应用程序需要足够的可用空间来创建交换文件和其他功能。 根据系统配置，具体要求会有所不同，但通常最好使用10% 到15% 的可用空间。
 
--   验证系统是否已安装最新的 Service Pack。 若要检测系统上安装了哪个 Service Pack （如果有），select **启动**，select **运行**，键入 **winver**，然后按 enter。 " **关于 windows** " 对话框显示 windows 版本号和 Service Pack 的版本号（如果已安装）。
+-   验证系统是否已安装最新的 Service Pack。 若要检测系统上安装的 Service Pack （如果有），请选择 " **开始**"，选择 " **运行**"，键入 **winver**，然后按 enter。 " **关于 windows** " 对话框显示 windows 版本号和 Service Pack 的版本号（如果已安装）。
 
 -   请与制造商联系，查看是否有更新的系统 BIOS 或固件可用。
 

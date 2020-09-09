@@ -4,12 +4,12 @@ description: 介绍适用于 USB 视频类1.5 规范的 Microsoft 扩展，这�
 ms.date: 06/19/2020
 ms.localizationpriority: medium
 ms.custom: rs5, 19H1
-ms.openlocfilehash: 4bc384ed2b4276e1b732b7a50dbe3ab8f08bdd7b
-ms.sourcegitcommit: 17c1bbc5ea0bef3bbc87794b030a073f905dc942
+ms.openlocfilehash: e46ffcfb43845966bd5443227e61a4158a6b4dcb
+ms.sourcegitcommit: 51cba71be022c726c04c29ba5c0360860b65d7a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88802441"
+ms.lasthandoff: 09/09/2020
+ms.locfileid: "89562211"
 ---
 # <a name="microsoft-extensions-to-usb-video-class-15-specification"></a>USB 视频类 1.5 规范的 Microsoft 扩展
 
@@ -453,11 +453,11 @@ typedef struct tagKSCAMERA_METADATA_CAPTURESTATS {
 
 ###### <a name="22342-metadataid_cameraextrinsics"></a>2.2.3.4.2 MetadataId_CameraExtrinsics
 
-此标识符的元数据格式涉及标准 KSCAMERA_METADATA_ITEMHEADER 后跟字节数组有效负载。 有效负载应与后跟零个或多个[MFCameraExtrinsic_CalibratedTransform](https://docs.microsoft.com/windows/win32/api/mfapi/ns-mfapi-_mfcameraextrinsic_calibratedtransform)结构的[MFCameraExtrinsics](https://docs.microsoft.com/windows/win32/api/mfapi/ns-mfapi-_mfcameraextrinsics)结构对齐。 有效负载必须是8字节对齐的，所有未使用的字节应在负载结束时进行，并设置为0。
+此标识符的元数据格式涉及标准 KSCAMERA_METADATA_ITEMHEADER 后跟字节数组有效负载。 有效负载应与后跟零个或多个[MFCameraExtrinsic_CalibratedTransform](https://docs.microsoft.com/windows/win32/api/mfapi/ns-mfapi-mfcameraextrinsic_calibratedtransform)结构的[MFCameraExtrinsics](https://docs.microsoft.com/windows/win32/api/mfapi/ns-mfapi-mfcameraextrinsics)结构对齐。 有效负载必须是8字节对齐的，所有未使用的字节应在负载结束时进行，并设置为0。
 
 ###### <a name="22343-metadataid_cameraintrinsics"></a>2.2.3.4.3 MetadataId_CameraIntrinsics
 
-此标识符的元数据格式涉及标准 KSCAMERA_METADATA_ITEMHEADER 后跟字节数组有效负载。 有效负载应与 [MFPinholeCameraIntrinsics](https://docs.microsoft.com/windows/win32/api/mfapi/ns-mfapi-_mfpinholecameraintrinsics) 结构对齐。 有效负载必须是8字节对齐的，所有未使用的字节应在负载结束时进行，并设置为0。
+此标识符的元数据格式涉及标准 KSCAMERA_METADATA_ITEMHEADER 后跟字节数组有效负载。 有效负载应与 [MFPinholeCameraIntrinsics](https://docs.microsoft.com/windows/win32/api/mfapi/ns-mfapi-mfpinholecameraintrinsics) 结构对齐。 有效负载必须是8字节对齐的，所有未使用的字节应在负载结束时进行，并设置为0。
 
 ###### <a name="22344-metadataid_frameillumination"></a>2.2.3.4.4 MetadataId_FrameIllumination
 

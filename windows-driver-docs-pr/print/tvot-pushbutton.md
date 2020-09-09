@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 98799c02e27d8cbc2efeda07b74f46e90698bb29
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 3870a21acb3001afd499cea1b161233e23dc9155
+ms.sourcegitcommit: 51cba71be022c726c04c29ba5c0360860b65d7a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89207073"
+ms.lasthandoff: 09/09/2020
+ms.locfileid: "89562221"
 ---
 # <a name="tvot_pushbutton"></a>TVOT \_ 按键
 
@@ -98,7 +98,7 @@ TVOT \_ 按键选项类型包括分组框中的 "推送" 按钮。
 </tr>
 <tr class="even">
 <td><p>PUSHBUTTON_TYPE_HTSETUP</p></td>
-<td><p>指向 <a href="https://docs.microsoft.com/windows/win32/api/winddi/ns-winddi-_devhtadjdata" data-raw-source="[&lt;strong&gt;DEVHTADJDATA&lt;/strong&gt;](/windows/win32/api/winddi/ns-winddi-_devhtadjdata)"><strong>DEVHTADJDATA</strong></a> 结构的指针。</p></td>
+<td><p>指向 <a href="https://docs.microsoft.com/windows/win32/api/winddi/ns-winddi-devhtadjdata" data-raw-source="[&lt;strong&gt;DEVHTADJDATA&lt;/strong&gt;](/windows/win32/api/winddi/ns-winddi-devhtadjdata)"><strong>DEVHTADJDATA</strong></a> 结构的指针。</p></td>
 </tr>
 </tbody>
 </table>

@@ -5,20 +5,20 @@ ms.assetid: f900b0b1-3469-442f-8593-2094a0966d4a
 keywords:
 - 扩展单元-WDK USB 视频类、示例、示例应用程序
 - 示例代码 WDK USB 视频类，UVC 扩展单元
-ms.date: 06/18/2020
+ms.date: 09/08/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 62462cc212d696d8a2a7208fa5af83b9011b3115
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 5e853c597b5ca57081e907e16f535e327363911e
+ms.sourcegitcommit: 51cba71be022c726c04c29ba5c0360860b65d7a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89187996"
+ms.lasthandoff: 09/09/2020
+ms.locfileid: "89562219"
 ---
 # <a name="sample-application-for-uvc-extension-units"></a>UVC 扩展单元的示例应用程序
 
 本主题包含可用于支持扩展单元的示例应用程序代码。
 
-应用程序通过使用 [**IKsTopologyInfo：： CreateNodeInstance**](/previous-versions/windows/win32/api/Vidcap/nf-vidcap-ikstopologyinfo-createnodeinstance) ，然后调用节点对象上的 **QueryInterface** 以获取所需的 COM API 来访问接口。 有关详细信息，请参阅 [**IKsTopologyInfo**](/previous-versions/windows/win32/api/Vidcap/nn-vidcap-ikstopologyinfo)。
+应用程序通过使用 [**IKsTopologyInfo：： CreateNodeInstance**](/previous-versions/ms785846(v=vs.85)) ，然后调用节点对象上的 **QueryInterface** 以获取所需的 COM API 来访问接口。 有关详细信息，请参阅 [**IKsTopologyInfo**](/previous-versions/ms785854(v=vs.85))。
 
 在应用程序源中包含名为 TestApp 的以下代码。
 

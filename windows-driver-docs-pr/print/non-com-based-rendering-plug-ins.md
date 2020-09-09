@@ -7,12 +7,12 @@ keywords:
 - 呈现插件 WDK 打印，基于非 COM
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0a99c680f4675880c358be2bd83a8f5a8f063ba0
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 257c77ab8266237c65cf502035fb91dbbe617bf6
+ms.sourcegitcommit: 51cba71be022c726c04c29ba5c0360860b65d7a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89209533"
+ms.lasthandoff: 09/09/2020
+ms.locfileid: "89562223"
 ---
 # <a name="non-com-based-rendering-plug-ins"></a>不是基于 COM 的渲染插件
 
@@ -20,7 +20,7 @@ ms.locfileid: "89209533"
 
 
 
-打印机微型驱动程序通过实现 [**OEMEnableDriver**](/windows-hardware/drivers/ddi/printoem/nf-printoem-oemenabledriver) 函数通知核心驱动程序的功能，该函数将填充 [**DRVENABLEDATA**](/windows/win32/api/winddi/ns-winddi-tagdrvenabledata) 结构的成员。 应通过[**DRVFN**](/windows/win32/api/winddi/ns-winddi-_drvfn)结构的数组地址设置此结构的**pdrvfn**成员。 此数组的每个元素都应该使用函数索引进行初始化，并使用 IHV 实现的其中一个 **OEM**_Xxx_ 函数的地址。  (有关每个 **OEM**_Xxx_ 函数的详细说明，请参阅 [非基于 COM 的 DDI 挂钩函数](/windows-hardware/drivers/ddi/_print/index)。 ) 
+打印机微型驱动程序通过实现 [**OEMEnableDriver**](/windows-hardware/drivers/ddi/printoem/nf-printoem-oemenabledriver) 函数通知核心驱动程序的功能，该函数将填充 [**DRVENABLEDATA**](/windows/win32/api/winddi/ns-winddi-drvenabledata) 结构的成员。 应通过[**DRVFN**](/windows/win32/api/winddi/ns-winddi-drvfn)结构的数组地址设置此结构的**pdrvfn**成员。 此数组的每个元素都应该使用函数索引进行初始化，并使用 IHV 实现的其中一个 **OEM**_Xxx_ 函数的地址。  (有关每个 **OEM**_Xxx_ 函数的详细说明，请参阅 [非基于 COM 的 DDI 挂钩函数](/windows-hardware/drivers/ddi/_print/index)。 ) 
 
 当应用程序调用 Microsoft Win32 GDI 来执行呈示任务时，Win32 GDI 反过来会调用 Unidrv 或 Pscript5 核心驱动程序，该驱动程序通常会处理该任务。 但是，如果打印机微型驱动程序表明它能够与特定的渲染操作挂钩，则核心驱动程序会将渲染任务传递给 IHV 呈现插件。
 

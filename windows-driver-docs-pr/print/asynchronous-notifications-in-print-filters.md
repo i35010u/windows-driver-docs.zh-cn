@@ -9,12 +9,12 @@ keywords:
 - 异步通知 WDK XP
 ms.date: 06/01/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 6202ca1c78f2d6bb759c413b069a38fd3607a4f1
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 9172159f7db09c1384c3ced7cf3015d0a28898fb
+ms.sourcegitcommit: 51cba71be022c726c04c29ba5c0360860b65d7a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89216498"
+ms.lasthandoff: 09/09/2020
+ms.locfileid: "89562213"
 ---
 # <a name="asynchronous-notifications-in-print-filters"></a>打印筛选器中的异步通知
 
@@ -105,7 +105,7 @@ if (SUCCEEDED(hr))
 
 在上面的代码示例中，变量 `pIAsyncCallback` 是指向调用方的 [IPrintAsyncNotifyCallback](/windows/win32/api/prnasnot/nn-prnasnot-iprintasyncnotifycallback) 接口实现的指针。
 
-在某些情况下，在完成双向通知通道后，必须释放双向通知通道。 为此，请在[IPrintAsyncNotifyChannel](/windows/win32/api/prnasnot/nn-prnasnot-iprintasyncnotifychannel)上调用[Release](/windows/win32/api/prnasnot/nn-prnasnot-iprintasyncnotifychanne)方法。 有关何时发布通道的信息，请参阅 [通知通道](notification-channel.md)。
+在某些情况下，在完成双向通知通道后，必须释放双向通知通道。 为此，请在[IPrintAsyncNotifyChannel](/windows/win32/api/prnasnot/nn-prnasnot-iprintasyncnotifychannel)上调用[Release](/windows/win32/api/prnasnot/nn-prnasnot-iprintasyncnotifychannel)方法。 有关何时发布通道的信息，请参阅 [通知通道](notification-channel.md)。
 
 ## <a name="impersonation-and-notification"></a>模拟和通知
 

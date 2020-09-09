@@ -8,12 +8,12 @@ keywords:
 - 字体 WDK PCL XL
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e009d52085e4b1684ce2d14d23849345548fd3de
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 2f5f3491dbd0313db447a87ff76078f5f0eb703b
+ms.sourcegitcommit: 51cba71be022c726c04c29ba5c0360860b65d7a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89211486"
+ms.lasthandoff: 09/09/2020
+ms.locfileid: "89562199"
 ---
 # <a name="specifying-new-device-fonts-in-pcl-xl-minidrivers"></a>在 PCL XL 微型驱动程序中指定新的设备字体
 
@@ -29,7 +29,7 @@ UFM 文件采用以下格式：
 
 [**UNIDRVINFO**](/windows-hardware/drivers/ddi/prntfont/ns-prntfont-_unidrvinfo)结构
 
-[**IFIMETRICS**](/windows/win32/api/winddi/ns-winddi-_ifimetrics)结构
+[**IFIMETRICS**](/windows/win32/api/winddi/ns-winddi-ifimetrics)结构
 
 [**EXTTEXTMETRIC**](/windows-hardware/drivers/ddi/prntfont/ns-prntfont-_exttextmetric)结构
 
