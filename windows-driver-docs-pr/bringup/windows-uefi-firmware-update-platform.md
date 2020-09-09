@@ -4,12 +4,12 @@ description: Windows 支持通过使用 UpdateCapsule 函数处理的驱动程�
 ms.assetid: 9F0D22FB-3C83-4F90-8E24-2205EEF9D5F7
 ms.date: 05/26/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 63f78db62e3417ba682ccf984394800b780dc15c
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: b26cc5dc218c71da67bf9eaf8df5b5c6cbd2938f
+ms.sourcegitcommit: 963ee193bbc704ac8c03edb3e0e26ef32587ce64
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89189911"
+ms.lasthandoff: 09/08/2020
+ms.locfileid: "89559302"
 ---
 # <a name="windows-uefi-firmware-update-platform"></a>Windows UEFI 固件更新平台
 
@@ -65,7 +65,7 @@ Microsoft 强烈建议运行 Windows 10 移动版的设备应使用二进制更�
 
 为了使系统与 Windows 固件更新机制兼容，它必须满足以下要求：
 
-- 系统必须按照 [UEFI 规范](https://uefi.org/specifications)的7.5.3 节中的定义来实现 UpdateCapsule 和 QueryCapsuleCapabilities。
+- 系统必须按 [UEFI 规范 2.8](https://uefi.org/specifications)的节8.5.3 定义的方式实现 UpdateCapsule 和 QueryCapsuleCapabilities。
 
     UpdateCapsule 用于通过 Windows 和平台固件传递固件更新负载。
 
@@ -81,7 +81,7 @@ Microsoft 强烈建议运行 Windows 10 移动版的设备应使用二进制更�
 
     有关详细信息，请参阅 [ESRT 表定义](esrt-table-definition.md)。
 
-## <a name="in-this-section"></a>本节内容
+## <a name="in-this-section"></a>在本节中
 
 - [通过固件驱动程序包进行的系统和设备固件更新](system-and-device-firmware-updates-via-a-firmware-driver-package.md)
 
