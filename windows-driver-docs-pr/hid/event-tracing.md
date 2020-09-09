@@ -1,36 +1,36 @@
 ---
 title: 事件跟踪
-description: 您可以使用事件跟踪 Windows (ETW) 或 Windows 软件跟踪预处理器 (WPP) 若要通过 I²C 你 HID 中跟踪操作。
+description: 可以使用 Windows 的事件跟踪 (ETW) 或 Windows 软件跟踪预处理器 (WPP) 跟踪 HID over i2c 中的操作。
 ms.assetid: F23E5516-36B9-478E-90D3-54D1C52CB467
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fc5df2a5de31ff882eb0b3bf32fd68cfd5f884de
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 341b0e6ddd8f3f7a5c78d5dbe2db4ef0f2e43103
+ms.sourcegitcommit: 9145bffd4cc3b990a9ebff43b588db6ef2001f5d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67375730"
+ms.lasthandoff: 09/09/2020
+ms.locfileid: "89592329"
 ---
 # <a name="event-tracing"></a>事件跟踪
 
 
-您可以使用事件跟踪 Windows (ETW) 或 Windows 软件跟踪预处理器 (WPP) 若要通过 I²C 设备驱动程序在你 HID 跟踪操作。 有关 ETW 的详细信息，请参阅[事件跟踪](https://go.microsoft.com/fwlink/p/?linkid=256040)Windows 开发参考中的主题。 有关 WPP 详细信息，请参阅[WPP 软件跟踪](https://docs.microsoft.com/windows-hardware/drivers/devtest/wpp-software-tracing)并[即时跟踪记录器 (IFR) 的日志中记录跟踪](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-wpp-recorder)。
+可以使用 Windows 的事件跟踪 (ETW) 或 Windows 软件跟踪预处理器 (WPP) 跟踪 HID over i2c 设备驱动程序中的操作。 有关 ETW 的详细信息，请参阅 Windows 开发参考中的 [事件跟踪](https://go.microsoft.com/fwlink/p/?linkid=256040) 主题。 有关 WPP 的详细信息，请参阅 [Wpp Software](../devtest/wpp-software-tracing.md) [Trace 和即时 TRACE 录像机 (IFR) 用于日志记录跟踪](../devtest/using-wpp-recorder.md)。
 
-## <a name="using-the-inflight-trace-recorder-ifr"></a>使用即时跟踪记录器 (IFR)
+## <a name="using-the-inflight-trace-recorder-ifr"></a>使用即时 Trace 录像机 (IFR) 
 
 
-即时跟踪记录器 (IFR)，启用所有驱动程序的默认情况下，可以查看跟踪输出从 HIDI²C 驱动程序发送到内核调试程序。 下面的命令显示有关 HIDI²C WPP 跟踪消息。
+默认情况下，对于所有驱动程序都启用了即时 Trace 录像机 (IFR) ，可用于查看从 HIDI ²驱动程序到内核调试器的跟踪输出。 以下命令显示 HIDI ²的 WPP 跟踪消息。
 
 ``` syntax
 !rcdrkd.rcdrlogdump hidi2c
 ```
 
-即时跟踪记录器 (IFR) 的固定大小循环缓冲区中存储这些跟踪消息。 因此，输出可能不包含整个跟踪日志。
+即时 Trace 录像机 (IFR) 将这些跟踪消息存储为固定大小的循环缓冲区。 因此，输出可能不包含整个跟踪日志。
 
 ## <a name="using-logmanexe"></a>使用 logman.exe
 
 
-有关更详细，而且可控制跟踪，可以使用[logman.exe]( https://go.microsoft.com/fwlink/p/?linkid=256232)捕获跟踪。 以下命令为 HIDI²C 捕获 WPP 跟踪：
+若要获得更详细的可控制跟踪，可以使用 [logman.exe]( https://go.microsoft.com/fwlink/p/?linkid=256232) 来捕获跟踪。 以下命令将捕获 HIDI：
 
 ``` syntax
 Logman create trace -n HIDI2C_WPP -o HIDI2C_WPP.etl -nb 128 640 -bs 128 
@@ -43,14 +43,14 @@ Logman stop -n HIDI2C_WPP
 Logman delete -n HIDI2C_WPP
 ```
 
-可以将生成的跟踪日志文件分析为 HIDI²C 使用 PDB 或 TMF 文件的文本。
+您可以使用 HIDI ² C 的 PDB 或 TMF 文件将生成的跟踪日志文件分析为文本。
 
 ## <a name="enabling-etw-tracing"></a>启用 ETW 跟踪
 
 
-HIDI²C 驱动程序记录特定事件的 ETW 事件。 这些事件会记录在事件查看器日志中。
+HIDI ²驱动程序记录特定事件的 ETW 事件。 这些事件记录在事件查看器日志中。
 
-你还可以查看这些事件使用以下 logman.exe 命令：
+你还可以使用以下 logman.exe 命令查看这些事件：
 
 ``` syntax
 Logman create trace -n HIDI2C_ETW -o HIDI2C_ETW.etl -nb 128 640 -bs 128 
@@ -63,12 +63,7 @@ Logman stop -n HIDI2C_ETW
 Logman delete -n HIDI2C_ETW
 ```
 
-使用等工具可分析生成的跟踪日志**Xperf**或**Windows Performance Analyzer** (WPA)。
+生成的跟踪日志可以通过工具（如 **Xperf** 或 **Windows 性能分析器** (WPA) ）进行分析。
 
  
-
- 
-
-
-
 

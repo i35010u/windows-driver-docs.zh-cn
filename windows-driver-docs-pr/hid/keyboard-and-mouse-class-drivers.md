@@ -4,12 +4,12 @@ description: 非 HID 键盘和鼠标可通过多个旧式总线进行连接，�
 ms.assetid: 0771D802-4F1D-4612-8376-ED3113DCC652
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: df9d233525f9c32998c76e1771e703dc6f108ae7
-ms.sourcegitcommit: ca5045a739eefd6ed14b9dbd9249b335e090c4e9
+ms.openlocfilehash: 0294cc60856a5ab31d15c5e374ea0bbd338efa75
+ms.sourcegitcommit: 9145bffd4cc3b990a9ebff43b588db6ef2001f5d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/06/2020
-ms.locfileid: "85968218"
+ms.lasthandoff: 09/09/2020
+ms.locfileid: "89592465"
 ---
 # <a name="keyboard-and-mouse-class-drivers"></a>键盘和鼠标类驱动程序
 
@@ -45,17 +45,17 @@ Mouclass 实现了 Mouclass 服务，并 mouclass.sys 了其可执行映像。
 
 - 设备类的泛型和独立于硬件的操作。
 
-- 即插即用、电源管理和 Windows Management Instrumentation （WMI）。
+-  (WMI) 即插即用、电源管理和 Windows Management Instrumentation。
 
 - 旧设备的操作。
 
 - 同时操作多台设备。
 
-- [类服务回调例程](https://docs.microsoft.com/windows-hardware/drivers/ddi/kbdmou/nc-kbdmou-pservice_callback_routine)的连接，函数驱动程序使用它将数据从设备的输入数据缓冲区传输到类驱动程序的数据缓冲区。
+- [类服务回调例程](/windows-hardware/drivers/ddi/kbdmou/nc-kbdmou-pservice_callback_routine)的连接，函数驱动程序使用它将数据从设备的输入数据缓冲区传输到类驱动程序的数据缓冲区。
 
 ## <a name="configuration-of-device-objects"></a>设备对象的配置
 
-下图显示了即插即用 PS/2 样式键盘和鼠标设备的设备对象的配置。 每个类驱动程序创建一个上层类*筛选器设备对象*（筛选器），该对象通过可选的上层设备筛选器附加到函数设备对象（*FDO*）。 上层设备筛选器驱动程序用于创建上层设备筛选器。 I8042prt 创建函数并将其附加到根总线驱动程序创建的物理设备对象（*PDO*）。
+下图显示了即插即用 PS/2 样式键盘和鼠标设备的设备对象的配置。 每个类驱动程序通过一个可选的上层设备筛选器来创建一个顶级类 *筛选器设备对象* (filter) ，该对象附加到函数设备对象 (*FDO*) 。 上层设备筛选器驱动程序用于创建上层设备筛选器。 I8042prt 创建函数，并将其附加到根总线驱动程序创建 (*PDO*) 的物理设备对象。
 
 ![说明即插即用 ps/2 样式键盘和鼠标设备的设备对象配置的关系图](images/km-ovr2.png)
 
@@ -75,11 +75,11 @@ Mouclass 实现了 Mouclass 服务，并 mouclass.sys 了其可执行映像。
 - 一个或多个可选的上层鼠标筛选器驱动程序
 - **I8042prt**，函数驱动程序
 
-**Kbdclass**和**Mouclass**可支持两种不同模式下的多个设备。 在*一对一模式下*，每个设备都有一个独立的设备堆栈。 类驱动程序创建一个独立类并将其附加到每个设备堆栈。 每个设备堆栈都有自己的控制状态和输入缓冲区。 Microsoft Win32 子系统通过唯一的文件对象从每个设备访问输入。
+**Kbdclass** 和 **Mouclass** 可支持两种不同模式下的多个设备。 在 *一对一模式下*，每个设备都有一个独立的设备堆栈。 类驱动程序创建一个独立类并将其附加到每个设备堆栈。 每个设备堆栈都有自己的控制状态和输入缓冲区。 Microsoft Win32 子系统通过唯一的文件对象从每个设备访问输入。
 
-在*grandmaster 模式*下，类驱动程序将按照以下方式操作所有设备：
+在 *grandmaster 模式*下，类驱动程序将按照以下方式操作所有设备：
 
-- 类驱动程序创建一个表示所有设备的*grandmaster 类*，并为每个设备创建一个*从属类*。
+- 类驱动程序创建一个表示所有设备的 *grandmaster 类* ，并为每个设备创建一个 *从属类* 。
 
     类驱动程序将从属类附加到每个设备堆栈。 在从属类的下面，设备堆栈与在一对一模式下创建的堆栈相同。
 
@@ -91,13 +91,13 @@ Mouclass 实现了 Mouclass 服务，并 mouclass.sys 了其可执行映像。
 
 - Grandmaster 维护一个全局设备状态。
 
-如果 "Kbdclass" 和 "Mouclass" 的注册表项值 " **ConnectMultiplePorts** " 设置为0x00 （在 "密钥" 中的 " **HKLM \\ 服务" \\ CurrentControlSet \\ *** &lt; 类 &gt; 服务*** \\ 参数**下，*类服务*是 Kbdclass 或 Mouclass），则它将以一对一模式操作。 否则，Kbdclass 和 Mouclass 将在 grandmaster 模式下运行。
+如果将 Kbdclass 和 Mouclass 的注册表项值**ConnectMultiplePorts**设置为 (0x00，则和会在一对一模式下操作，**在 \\ \\ \\ *** &lt; &gt; *** \\ **此类服务参数下， *class service*为 Kbdclass 或 Mouclass) 。 否则，Kbdclass 和 Mouclass 将在 grandmaster 模式下运行。
 
 ## <a name="open-and-close-via-the-class-driver"></a>通过类驱动程序打开和关闭
 
 Microsoft Win32 子系统将打开所有键盘和鼠标设备，以供其独占使用。 对于每个设备类，Win32 子系统将从所有设备处理输入，就好像输入来自单个输入设备一样。 应用程序不能请求仅从一个特定设备接收输入。
 
-Win32 子系统从即插即用管理器收到通知后，会动态打开即插即用输入设备，指出 \_ \_ 已启用 GUID 类键盘或 guid \_ 类 \_ 的鼠标设备接口。 Win32 子系统在收到已禁用打开的接口的通知后关闭即插即用设备。 Win32 子系统还会按名称（例如，" \\ 设备 \\ KeyboardLegacyClass0"）打开旧版设备。 请注意，一旦 Win32 子系统成功打开旧设备，它将无法确定该设备是否已被物理删除。
+Win32 子系统从即插即用管理器收到通知后，会动态打开即插即用输入设备，指出 \_ \_ 已启用 GUID 类键盘或 guid \_ 类 \_ 的鼠标设备接口。 Win32 子系统在收到已禁用打开的接口的通知后关闭即插即用设备。 Win32 子系统还会按名称打开旧设备 (例如，" \\ Device \\ KeyboardLegacyClass0" ) 。 请注意，一旦 Win32 子系统成功打开旧设备，它将无法确定该设备是否已被物理删除。
 
 Kbdclass 和 Mouclass 接收到创建请求后，它们会执行以下操作来执行即插即用和旧操作：
 
@@ -111,13 +111,13 @@ Kbdclass 和 Mouclass 接收到创建请求后，它们会执行以下操作来�
 
 ## <a name="connect-a-service-callback-to-a-device"></a>将服务回叫连接到设备
 
-类驱动程序必须将其类服务连接到设备，然后才能打开设备。 类驱动程序在将类服务附加到设备堆栈后连接其类服务。 函数驱动程序使用类服务回调将输入数据从设备传输到设备的类数据队列。 设备驱动程序的 ISR 调度完成例程将调用类服务回调。 Kbdclass 提供类服务回调[**KeyboardClassServiceCallback**](https://docs.microsoft.com/previous-versions/ff542324(v=vs.85))，Mouclass 提供类服务回调[**MouseClassServiceCallback**](https://docs.microsoft.com/previous-versions/ff542394(v=vs.85))。
+类驱动程序必须将其类服务连接到设备，然后才能打开设备。 类驱动程序在将类服务附加到设备堆栈后连接其类服务。 函数驱动程序使用类服务回调将输入数据从设备传输到设备的类数据队列。 设备驱动程序的 ISR 调度完成例程将调用类服务回调。 Kbdclass 提供类服务回调 [**KeyboardClassServiceCallback**](/previous-versions/ff542324(v=vs.85))，Mouclass 提供类服务回调 [**MouseClassServiceCallback**](/previous-versions/ff542394(v=vs.85))。
 
-供应商可以通过为设备安装上层筛选器驱动程序来修改类服务回调的操作。 示例键盘筛选器驱动程序[Kbfiltr](https://docs.microsoft.com/samples/microsoft/windows-driver-samples/keyboard-input-wdf-filter-driver-kbfiltr/)定义[**KbFilter \_ ServiceCallback**](https://docs.microsoft.com/previous-versions/ff542297(v=vs.85))回调，并且示例鼠标筛选器驱动程序[Moufiltr](https://docs.microsoft.com/samples/microsoft/windows-driver-samples/mouse-input-wdf-filter-driver-moufiltr/)定义[**MouFilter \_ ServiceCallback**](https://docs.microsoft.com/previous-versions/ff542380(v=vs.85))回调。 可以配置示例筛选器服务回调，以将从设备的端口输入缓冲区传输的输入数据修改为类数据队列。 例如，筛选器服务回调可以删除、转换或插入数据。
+供应商可以通过为设备安装上层筛选器驱动程序来修改类服务回调的操作。 示例键盘筛选器驱动程序 [Kbfiltr](/samples/microsoft/windows-driver-samples/keyboard-input-wdf-filter-driver-kbfiltr/) 定义 [**KbFilter \_ ServiceCallback**](/previous-versions/ff542297(v=vs.85)) 回调，并且示例鼠标筛选器驱动程序 [Moufiltr](/samples/microsoft/windows-driver-samples/mouse-input-wdf-filter-driver-moufiltr/) 定义 [**MouFilter \_ ServiceCallback**](/previous-versions/ff542380(v=vs.85)) 回调。 可以配置示例筛选器服务回调，以将从设备的端口输入缓冲区传输的输入数据修改为类数据队列。 例如，筛选器服务回调可以删除、转换或插入数据。
 
 类和筛选器服务回调按以下方式连接：
 
-- 类驱动程序按设备堆栈（[**ioctl \_ 内部 \_ 键盘 \_ 连接**](https://docs.microsoft.com/windows-hardware/drivers/ddi/kbdmou/ni-kbdmou-ioctl_internal_keyboard_connect)或[**ioctl \_ 内部 \_ 鼠标 \_ 连接**](https://docs.microsoft.com/windows-hardware/drivers/ddi/kbdmou/ni-kbdmou-ioctl_internal_mouse_connect)）发送内部设备连接请求。 类连接数据由连接数据结构指定， \_ 该结构包含指向类设备对象的指针和指向类服务回调的指针。
+- 类驱动程序按设备堆栈向下发送内部设备连接请求 ([**IOCTL \_ 内部 \_ 键盘 \_ 连接**](/windows-hardware/drivers/ddi/kbdmou/ni-kbdmou-ioctl_internal_keyboard_connect) 或 [**ioctl \_ 内部 \_ 鼠标 \_ 连接**](/windows-hardware/drivers/ddi/kbdmou/ni-kbdmou-ioctl_internal_mouse_connect)) 。 类连接数据由连接数据结构指定， \_ 该结构包含指向类设备对象的指针和指向类服务回调的指针。
 
 - 筛选器驱动程序接收到连接请求后，它会保存类连接数据的副本，并将请求的连接数据替换为筛选器连接数据。 筛选器连接数据指定指向筛选器设备对象的指针和指向筛选器驱动程序服务回调的指针。 然后，筛选器驱动程序将筛选的连接请求发送到函数驱动程序。
 
@@ -131,19 +131,19 @@ Kbdclass 和 Mouclass 接收到创建请求后，它们会执行以下操作来�
 
 I8042prt 支持下列内部设备控制请求，以查询有关键盘设备的信息以及设置键盘设备的参数：
 
-[**IOCTL \_ 键盘 \_ 查询 \_ 特性**](https://docs.microsoft.com/windows/desktop/api/ntddkbd/ni-ntddkbd-ioctl_keyboard_query_attributes)
+[**IOCTL \_ 键盘 \_ 查询 \_ 特性**](/windows/desktop/api/ntddkbd/ni-ntddkbd-ioctl_keyboard_query_attributes)
 
-[**IOCTL \_ 键盘 \_ 查询 \_ 指示器 \_ 转换**](https://docs.microsoft.com/windows/desktop/api/ntddkbd/ni-ntddkbd-ioctl_keyboard_query_indicator_translation)
+[**IOCTL \_ 键盘 \_ 查询 \_ 指示器 \_ 转换**](/windows/desktop/api/ntddkbd/ni-ntddkbd-ioctl_keyboard_query_indicator_translation)
 
-[**IOCTL \_ 键盘 \_ 查询 \_ 指示器**](https://docs.microsoft.com/windows/desktop/api/ntddkbd/ni-ntddkbd-ioctl_keyboard_query_indicators)
+[**IOCTL \_ 键盘 \_ 查询 \_ 指示器**](/windows/desktop/api/ntddkbd/ni-ntddkbd-ioctl_keyboard_query_indicators)
 
-[**IOCTL \_ 键盘 \_ 查询 \_ 按键**](https://docs.microsoft.com/windows/desktop/api/ntddkbd/ni-ntddkbd-ioctl_keyboard_query_typematic)
+[**IOCTL \_ 键盘 \_ 查询 \_ 按键**](/windows/desktop/api/ntddkbd/ni-ntddkbd-ioctl_keyboard_query_typematic)
 
-[**IOCTL \_ 键盘 \_ 集 \_ 指示器**](https://docs.microsoft.com/windows/desktop/api/ntddkbd/ni-ntddkbd-ioctl_keyboard_set_indicators)
+[**IOCTL \_ 键盘 \_ 集 \_ 指示器**](/windows/desktop/api/ntddkbd/ni-ntddkbd-ioctl_keyboard_set_indicators)
 
-[**IOCTL \_ 键盘 \_ SET \_ 按键**](https://docs.microsoft.com/windows/desktop/api/ntddkbd/ni-ntddkbd-ioctl_keyboard_set_typematic)
+[**IOCTL \_ 键盘 \_ SET \_ 按键**](/windows/desktop/api/ntddkbd/ni-ntddkbd-ioctl_keyboard_set_typematic)
 
-有关所有键盘设备控制请求的详细信息，请参阅[人体学接口设备参考](https://docs.microsoft.com/windows/win32/api/_hid/)。
+有关所有键盘设备控制请求的详细信息，请参阅 [人体学接口设备参考](/windows/win32/api/_hid/)。
 
 ## <a name="scan-code-mapper-for-keyboards"></a>扫描适用于键盘的代码映射器
 
@@ -155,21 +155,20 @@ Windows 2000 和 Windows XP 包含一个新的扫描代码映射器，该映射�
 HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Keyboard Layout
 ```
 
-**注意**   在控制键下还有一个**键盘布局**键（请注意复数形式），但不应修改该键。
+**注意**   还有一个**键盘布局**键 (注意控制键下) 的复数形式，但不应修改该键。
 
-在**键盘布局**键中，必须添加**Scancode 映射**值。 此值的类型为 REG \_ BINARY （小 Endian 格式），并且具有下表中指定的数据格式。
+在 **键盘布局** 键中，必须添加 **Scancode 映射** 值。 此值的类型为 REG \_ BINARY (小 Endian 格式) ，并且具有下表中指定的数据格式。
 
-|                         |                 |                              |
-|-------------------------|-----------------|------------------------------|
-| 起始偏移量（以字节为单位） | 大小（以字节为单位） | 数据                         |
+| 起始偏移 (（字节）)  | 大小（以字节为单位） | 数据 |
+|---|---|---|
 | 0                       | 4               | 标头：版本信息  |
 | 4                       | 4               | 标头：标志                |
 | 8                       | 4               | 标头：映射的数目   |
 | 12                      | 4               | 单个映射           |
 | ...                     | ...             | ...                          |
-| 最后4个字节            | 4               | 空终止符（0x00000000） |
+| 最后4个字节            | 4               | 空终止符 (0x00000000)  |
 
-第一个和第二个 DWORD 存储标头信息，并且对于扫描代码映射器的当前版本，它应设置为全零。 第三个 DWORD 项包含后面的映射的总数，包括 null 终止映射。 因此，最小计数为1（未指定映射）。 每个映射都遵循标头。 每个映射的长度为一个 DWORD，并分为两个单词长度字段。 每个 WORD 字段存储要映射的密钥的扫描代码。
+第一个和第二个 DWORD 存储标头信息，并且对于扫描代码映射器的当前版本，它应设置为全零。 第三个 DWORD 项包含后面的映射的总数，包括 null 终止映射。 因此，最小计数为 1 (未) 指定任何映射。 每个映射都遵循标头。 每个映射的长度为一个 DWORD，并分为两个单词长度字段。 每个 WORD 字段存储要映射的密钥的扫描代码。
 
 在注册表中存储映射后，必须重新启动系统才能使映射生效。 请注意，如果在按键上需要扫描代码的映射，则在将扫描代码转换为虚拟密钥之前，该步骤将在用户模式下执行。 在用户模式下执行此转换可能会出现某些限制，例如在终端服务下运行时映射不能正常工作。
 
@@ -177,7 +176,7 @@ HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Keyboard Layout
 
 ### <a name="example-1"></a>示例 1
 
-下面显示了一个示例。 若要将左 CTRL 键替换为 Caps Lock 键，请使用注册表编辑器（最好是 Regedt32.exe）修改 Scancode 映射键，其中包含以下值：
+下面显示了一个示例。 若要将左 CTRL 键替换为 Caps Lock 键，请使用注册表编辑器 (最好 Regedt32.exe) 修改 Scancode 映射键，使其包含以下值：
 
 ``` syntax
 00000000 00000000 03000000 3A001D00 1D003A00 00000000
@@ -191,18 +190,17 @@ HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Keyboard Layout
 
 **0x00000000**：标头：标志。 设置为全零。
 
-**0x00000003**：映射中的三个条目（包括 null 条目）。
+**0x00000003**：映射中的三个条目 (包括 null 条目) 。
 
-**0x001D003A**：左 CTRL 键-- &gt; Caps Lock （0x1D-- &gt; 0x3A）。
+**0x001D003A**：左 CTRL 键-- &gt; Caps Lock (0x1D-- &gt; 0x3A) 。
 
-**0x003A001D**： Caps Lock-- &gt; Left CTRL 键（0x3A-- &gt; 0x1D）。
+**0x003A001D**： Caps Lock-- &gt; 左键 (0x3A-- &gt; 0x1D) 。
 
 **0x00000000**： Null 终止符。
 
-
 ### <a name="example-2"></a>示例 2
 
-还可以添加键盘上未正式提供或删除从未使用的密钥的密钥。 以下示例显示了存储在**Scancode 映射**中的值，以删除右 CTRL 键并更改右 ALT 键的功能，使其用作静音键：
+还可以添加键盘上未正式提供或删除从未使用的密钥的密钥。 以下示例显示了存储在 **Scancode 映射** 中的值，以删除右 CTRL 键并更改右 ALT 键的功能，使其用作静音键：
 
 ``` syntax
 00000000 00000000 03000000 00001DE0 20E038E0 00000000
@@ -216,14 +214,13 @@ HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Keyboard Layout
 
 **0x00000000**：标头：标志。 设置为全零。
 
-**0x00000003**：映射中的三个条目（包括 null 条目）。
+**0x00000003**：映射中的三个条目 (包括 null 条目) 。
 
-**0xE01D0000**：删除右 CTRL 键（0xE01D-- &gt; 0x00）。
+**0xE01D0000**：删除右 CTRL 键 (0xE01D-- &gt; 0x00) 。
 
-**0xE038E020**： Right ALT 键 &gt; （0xE038-- &gt; 0xE020）。
+**0xE038E020**：右 ALT 键-- &gt; 静音键 (0xE038-- &gt; 0xE020) 。
 
 **0x00000000**： Null 终止符。
-
 
 生成所需的数据后，可以通过多种方式将其插入注册表中。
 
@@ -236,7 +233,7 @@ HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Keyboard Layout
 优点包括：
 
 - 映射器可用作纠正固件错误的简单修补程序。
-- 通过在注册表中修改映射，可以将常用键添加到键盘。 不经常使用的键（例如，右 CTRL 键）可以映射到 null （已删除）或与其他键交换。
+- 通过在注册表中修改映射，可以将常用键添加到键盘。 不经常使用的密钥 (例如，右 CTRL 键) 可以映射到 null (为其他键删除) 或交换。
 - 可以轻松地更改密钥位置。 用户可以轻松地自定义常用密钥的位置。
 
 识别以下缺点：
@@ -249,9 +246,9 @@ HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Keyboard Layout
 
 I8042prt 支持使用以下内部设备控制请求来查询有关鼠标设备的信息：
 
-[**IOCTL \_ 鼠标 \_ 查询 \_ 特性**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff542085(v=vs.85))
+[**IOCTL \_ 鼠标 \_ 查询 \_ 特性**](/previous-versions/windows/hardware/drivers/ff542085(v=vs.85))
 
-有关所有鼠标设备控制请求的详细信息，请参阅[人体学接口设备参考](https://docs.microsoft.com/windows/win32/api/_hid/)。
+有关所有鼠标设备控制请求的详细信息，请参阅 [人体学接口设备参考](/windows/win32/api/_hid/)。
 
 ## <a name="registry-settings-associated-with-mouse-class-driver"></a>与鼠标类驱动程序关联的注册表设置
 
@@ -266,11 +263,11 @@ I8042prt 支持使用以下内部设备控制请求来查询有关鼠标设备�
 
 ## <a name="absolute-pointing-devices"></a>绝对指针设备
 
-对于[**GUID \_ 类 \_ 鼠标**](https://docs.microsoft.com/windows-hardware/drivers/install/guid-class-mouse)类型的设备，设备的函数驱动程序：
+对于 [**GUID \_ 类 \_ 鼠标**](../install/guid-class-mouse.md)类型的设备，设备的函数驱动程序：
 
 - 处理特定于设备的输入。
 
-- 创建[**MouseClassServiceCallback**](https://docs.microsoft.com/previous-versions/ff542394(v=vs.85))所需的[**鼠标 \_ 输入 \_ 数据**](https://docs.microsoft.com/windows/win32/api/ntddmou/ns-ntddmou-mouse_input_data)结构。
+- 创建[**MouseClassServiceCallback**](/previous-versions/ff542394(v=vs.85))所需的[**鼠标 \_ 输入 \_ 数据**](/windows/win32/api/ntddmou/ns-ntddmou-mouse_input_data)结构。
 
 - \_ \_ 通过在其 ISR 调度完成例程中调用**MOUSECLASSSERVICECALLBACK** ，将鼠标输入数据结构传输到 Mouclass 数据队列。
 
@@ -283,9 +280,9 @@ I8042prt 支持使用以下内部设备控制请求来查询有关鼠标设备�
     LastY = ((device input y value) * 0xFFFF ) / (Maximum y capability of the device)
     ```
 
-- 驱动程序 \_ \_ 在**FLAGS**中设置鼠标移动绝对标志。
+- 驱动程序 \_ \_ 在 **FLAGS**中设置鼠标移动绝对标志。
 
-- 如果应通过窗口管理器将输入映射到整个虚拟桌面，则驱动程序会 \_ \_ 在**标志**中设置鼠标虚拟桌面标志。 如果 \_ \_ 未设置鼠标虚拟桌面标志，则窗口管理器仅将输入映射到主监视器。
+- 如果应通过窗口管理器将输入映射到整个虚拟桌面，则驱动程序会 \_ \_ 在 **标志**中设置鼠标虚拟桌面标志。 如果 \_ \_ 未设置鼠标虚拟桌面标志，则窗口管理器仅将输入映射到主监视器。
 
 下面按设备类型指定如何实现对绝对定位设备的特殊要求：
 
@@ -295,16 +292,16 @@ I8042prt 支持使用以下内部设备控制请求来查询有关鼠标设备�
 
 - PS/2 样式设备：
 
-    需要高级筛选器驱动程序。 筛选器驱动程序提供 IsrHook 回调和类服务回调。 I8042prt 调用 IsrHook 来处理原始设备输入，并调用 filter 类服务回调来筛选输入。 然后，筛选器类服务回调调用**MouseClassServiceCallback**。 IsrHook 回调和类服务回调的组合处理特定于设备的输入，创建所需的鼠标 \_ 输入 \_ 数据结构，缩放设备输入数据，并设置鼠标 \_ 移动 \_ 绝对标志。
+    需要高级筛选器驱动程序。 筛选器驱动程序提供 IsrHook 回调和类服务回调。 I8042prt 调用 IsrHook 来处理原始设备输入，并调用 filter 类服务回调来筛选输入。 然后，筛选器类服务回调调用 **MouseClassServiceCallback**。 IsrHook 回调和类服务回调的组合处理特定于设备的输入，创建所需的鼠标 \_ 输入 \_ 数据结构，缩放设备输入数据，并设置鼠标 \_ 移动 \_ 绝对标志。
 
 - Serenum 枚举的即插即用 COM 端口设备：
 
-    需要即插即用函数驱动程序。 函数驱动程序将创建所需的鼠标 \_ 输入 \_ 数据结构，缩放设备输入数据，并在 \_ \_ 调用**MouseClassServiceCallback**之前设置鼠标移动绝对标志。
+    需要即插即用函数驱动程序。 函数驱动程序将创建所需的鼠标 \_ 输入 \_ 数据结构，缩放设备输入数据，并在 \_ \_ 调用 **MouseClassServiceCallback**之前设置鼠标移动绝对标志。
 
 - 非即插即用 COM 端口设备：
 
-    需要设备特定的函数驱动程序。 函数驱动程序将创建所需的鼠标 \_ 输入 \_ 数据结构，缩放设备输入数据，并在 \_ \_ 调用**MouseClassServiceCallback**之前设置鼠标移动绝对标志。
+    需要设备特定的函数驱动程序。 函数驱动程序将创建所需的鼠标 \_ 输入 \_ 数据结构，缩放设备输入数据，并在 \_ \_ 调用 **MouseClassServiceCallback**之前设置鼠标移动绝对标志。
 
 - 不受支持的总线上的设备：
 
-    需要设备特定的函数驱动程序。 函数驱动程序将创建所需的鼠标 \_ 输入 \_ 数据结构，缩放设备输入数据，并在 \_ \_ 调用**MouseClassServiceCallback**之前设置鼠标移动绝对标志。
+    需要设备特定的函数驱动程序。 函数驱动程序将创建所需的鼠标 \_ 输入 \_ 数据结构，缩放设备输入数据，并在 \_ \_ 调用 **MouseClassServiceCallback**之前设置鼠标移动绝对标志。

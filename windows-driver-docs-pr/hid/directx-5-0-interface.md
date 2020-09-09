@@ -3,25 +3,25 @@ title: DirectX 5.0 接口
 description: DirectX 5.0 接口
 ms.assetid: 416a9187-d64f-48a4-8868-fd5158d58a25
 keywords:
-- 游戏杆 WDK HID，接口
+- 操纵杆 WDK HID，接口
 - 虚拟游戏杆驱动程序 WDK HID，接口
-- VJoyD WDK HID 接口
-- WDK 游戏杆接口
-- 游戏杆 WDK HID，回调
+- VJoyD WDK HID，接口
+- 接口 WDK 操纵杆
+- 操纵杆 WDK HID，回调
 - 虚拟游戏杆驱动程序 WDK HID，回调
-- VJoyD WDK HID 回调
-- 回调 WDK 游戏杆
-- 轮询 WDK 游戏杆
+- VJoyD WDK HID，回调
+- 回调 WDK 操纵杆
+- 轮询 WDK 操纵杆
 - 游戏杆 WDK HID，版本
-- VJoyD WDK HID 版本
+- VJoyD WDK HID，版本
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 12ec7b604ed8c6d978b46487a9e84947f2b8bacd
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 3e06c7c2f30fe0b07b33a147c0cb8869cfae996a
+ms.sourcegitcommit: 9145bffd4cc3b990a9ebff43b588db6ef2001f5d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67375744"
+ms.lasthandoff: 09/09/2020
+ms.locfileid: "89592460"
 ---
 #  <a name="directx-50-interface"></a>DirectX 5.0 接口
 
@@ -29,19 +29,19 @@ ms.locfileid: "67375744"
 
 
 
-VJoyD 和任何其早期版本无法识别的 DirectX 5.0 和更高版本的接口。 因此，它是命令性微型驱动程序，它将尝试注册之前会检查 VJoyD 的版本。 VJoyD 不支持标准版消息。 因此，您必须 VJoyD 要实现这一点，手动获取设备描述符块 (DDB)，然后检查在 DDB 中标记的版本。 有关如何实现此的详细信息，请参阅示例的示例驱动程序。 请注意在 DDB 中标记的版本不是标记为版本资源中的版本相同。
+VJoyD 及其先前版本无法识别 DirectX 5.0 和更高版本的接口。 因此，微型驱动程序必须在尝试注册前检查 VJoyD 版本。 VJoyD 不支持标准版本消息。 因此，你必须获取设备描述符块 (DDB) 才能手动实现此目的，然后检查 DDB 中标记的版本。 有关如何实现此操作的详细信息，请参阅示例驱动程序示例。 请注意，DDB 中标记的版本与版本资源中标记的版本不同。
 
-显著扩展依据微型驱动程序注册其回调过程和它在 DirectX 5.0 中启动。
+微型驱动程序注册其回调的过程会大幅扩展，并在 DirectX 5.0 中启动。
 
-VJoyD，与之前一样或外部所有者 （如 HID 堆栈上） 可以加载微型驱动程序。 当 VJoyD 加载设备时，它需要微型驱动程序以注册其自身使用 VJoyD VJOYD\_注册\_设备\_驱动程序服务。 但是，微型驱动程序可能会收到三个系统控制消息，应提示它没有正确注册。 第一种是 SYS\_动态\_设备\_INIT 消息，如果 VJoyD 加载它之前不会加载 VxD 接收微型驱动程序。 这作为为注册的原始接口使用相同的机制。 因为它是一个全新的 VxD 负载，任何定义的 INIT 部分可用。 在收到此消息，VxD 执行内部初始化并 VJoyD 然后注册。
+VJoyD （与之前一样）或外部所有者 (如 HID 堆栈) 可加载微型驱动程序。 当 VJoyD 加载设备时，它需要微型驱动程序使用 VJoyD VJOYD \_ 注册 \_ 设备 \_ 驱动程序服务进行注册。 但是，微型驱动程序可能会收到三个系统控制消息，这些消息会提示它注册。 第一种是 SYS \_ 动态 \_ 设备 \_ 初始消息，如果在 VJoyD 加载 VxD 之前未加载 VxD，微型驱动程序将收到该消息。 这与用于注册的原始接口使用相同的机制。 由于它是 VxD 的全新负载，因此任何已定义的 INIT 部分都可用。 收到此消息后，VxD 会执行内部初始化，然后注册到 VJoyD。
 
-如果应用程序已加载微型驱动程序 （例如，如果应用程序已加载以使用专用的 IOCTL 接口），它不会收到此消息试 VJoyD 加载它时。 在这些情况下，Windows 98 发出 SYS\_动态\_设备\_REINIT 消息和微型驱动程序，在响应中，应注册 VJoyD。 由于这不是一个全新的 VxD 负载，INIT 部分不再可用。 对于不运行在 Windows 98 的微型驱动程序，VJoyD 采用缺乏响应加载作为微型驱动程序已加载的 VxD。 VJoyD 发出定向的系统控制消息 BEGIN\_保留\_专用\_系统\_控件，微型驱动程序应注册响应中。
+如果应用程序已加载微型驱动程序 (例如，如果应用程序已将其加载到使用) 专用 IOCTL 接口，则在 VJoyD 加载它时，它不会再次收到此消息。 在这种情况下，Windows 98 将发出 SYS \_ 动态 \_ 设备 \_ REINIT 消息，而微型驱动程序将在响应中注册 VJoyD。 由于这不是 VxD 的全新负载，INIT 部分将不再可用。 对于在 Windows 98 下不运行的微型驱动程序，VJoyD 将不会响应加载微型驱动程序，因为 VxD 已经加载。 VJoyD 发出定向系统控制消息 "开始 \_ 保留 \_ 专用 \_ 系统 \_ 控制"，微型驱动程序应在响应中注册此控制。
 
-加载时间在注册时，除了 VJoyD 现在接受新的注册类型时驱动程序检测到更改，它可以驱动的设备的状态。 除了回调，DirectX 5.0 接口允许各种控制参数和设置注册的设备说明。 这包括设备 （随附的校准信息），但它可以进行更改以适应它检测到的任何其他设备的完整说明。
+除了加载时间注册，当驱动程序检测到设备的状态发生更改时，VJoyD 现在会接受新的注册类型。 除了回调以外，DirectX 5.0 接口允许在注册时设置各种控制参数和设备说明。 这包括设备的完整描述 (完成后，校准信息) ，它可以更改以适合它检测到的任何其他设备。
 
-DirectX 5.0 和更高版本的接口的游戏杆微型驱动程序回调包含控制回调、 轮询回调，以及强制反馈回叫。 若要适应这些变化，VJoyD VJOYD\_注册\_设备\_驱动程序服务重载，以便 EAX 保存 0xFFFFFFFF，以指示新注册中使用，并且 ECX 保留一个指向一个结构，其中包含参数。 EBX 和 EDX 中的值是未定义，驱动程序可能会假定 EBX 返回从调用未被破坏。
+DirectX 5.0 和更高版本接口的操纵杆微型驱动程序回调包括控件回调、轮询回调和强制反馈回调。 为了适应这些更改，VJoyD VJOYD \_ 注册 \_ 设备 \_ 驱动程序服务将被重载，以便 EAX 保留0xffffffff 以指示新注册正在使用中，并且 ECX 保存指向保存参数的结构的指针。 EBX 和 EDX 的值是不确定的，驱动程序可能会假设 EBX 从未损坏的调用返回。
 
-下面的示例演示游戏杆微型驱动程序注册序列：
+下面的示例演示了操纵杆微型驱动程序注册顺序：
 
 <table>
 <colgroup>
@@ -50,12 +50,12 @@ DirectX 5.0 和更高版本的接口的游戏杆微型驱动程序回调包含�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Mov</p></td>
-<td><p>eax 0ffffffffh</p></td>
+<td><p>mov</p></td>
+<td><p>eax，0ffffffffh</p></td>
 </tr>
 <tr class="even">
-<td><p>Mov</p></td>
-<td><p>ecx offset32 RegData</p></td>
+<td><p>mov</p></td>
+<td><p>ecx，offset32 RegData</p></td>
 </tr>
 <tr class="odd">
 <td><p>VxDcall</p></td>
@@ -66,26 +66,21 @@ DirectX 5.0 和更高版本的接口的游戏杆微型驱动程序回调包含�
 
  
 
-[ **VJREGDRVINFO** ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff543581(v=vs.85))结构传递到新注册。
+[**VJREGDRVINFO**](/previous-versions/windows/hardware/drivers/ff543581(v=vs.85))结构会传递到新注册。
 
-**DwFunction** VJREGDRVINFO 结构的成员必须为 VJRT\_加载; 保留所有其他值。 VJRT\_LOADED，注册用于在原始的界面中，即在微型驱动程序加载到响应中的回调传递给 VJoyD 方式相同，新界面中使用。
+VJREGDRVINFO 结构的 **dwFunction** 成员必须是 VJRT 加载的 \_ ; 所有其他值都是保留值。 加载的 VJRT 在 \_ 新接口中使用的方式与在原始接口中使用注册的方式相同，即，将回调传递到 VJoyD 以响应正在加载的微型驱动程序。
 
-控制回调和轮询回调将合并成单个表，因为所有驱动程序必须提供控制回调，而极少设备是仅输出 （并因此不需要轮询回调）。 使用注册这些回调[ **VJPOLLREG** ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff543577(v=vs.85))结构。
+控件回调和轮询回调合并为单个表，因为所有驱动程序都必须提供控件回调，并且极少的设备只 (输出，因此不需要轮询回调) 。 这些回调使用 [**VJPOLLREG**](/previous-versions/windows/hardware/drivers/ff543577(v=vs.85)) 结构注册。
 
-**LpCfg** VJPOLLREG 结构的成员将指向标准配置管理器回叫，与在原始界面 CfgRoutine 完全相同。 主要区别是 VJoyD 调用相应的配置管理器回调。 VJoyD 链接到已安装的设备节点的驱动程序，并调用此回调以通知配置管理器活动的驱动程序。 上一接口调用所有已加载的驱动程序用于每个配置管理器回叫，DirectX 5.0 和更高版本的接口仅调用一个驱动程序而它已链接到设备节点的已更改。 此外，不加载该驱动程序时，configuration manager 活动可能会发生这种情况，因为 VJoyD 实现基元缓存系统，以便在加载时启动设备节点后，如果此设备节点的通知驱动程序。
+VJPOLLREG 结构的 **lpCfg** 成员指向标准的 configuration manager 回调，与原始接口中的 CfgRoutine 完全相同。 主要区别在于，VJoyD 会根据需要调用 configuration manager 回调。 VJoyD 将驱动程序链接到已安装的设备节点，并调用此回调来告知 configuration manager 活动的驱动程序。 除了以前的接口（称为每个配置管理器回调的所有加载的驱动程序），DirectX 5.0 和更高版本的接口仅调用其链接到已更改的设备节点的一个驱动程序。 此外，由于在未加载驱动程序时可能会发生 configuration manager 活动，因此 VJoyD 实现了一种基元缓存系统，因此，如果设备节点已启动，则在加载此设备节点时，会通知该驱动程序。
 
-由于始终为调用在其资源分配驱动程序，因此它们不应检查默认端口，以查找所需的资源。 遗憾的是，旧方法中的驱动程序，必须找到一些方法，可以使用上一接口也仍然可用。 这意味着，尽管 VJoyD 仅分配一组到单个驱动程序的资源，会加载任何旧驱动程序仍然可以使用未分配给它们的端口。 当已分配资源时，驱动程序应执行任何所需的设备，以确定设备状态的握手。
+由于驱动程序始终是为其资源分配而调用的，因此它们不应检查默认端口以查找所需的资源。 遗憾的是，必须找到某种方法来使用以前的接口的驱动程序仍以旧方法工作。 这意味着，当 VJoyD 仅将一组资源分配给单个驱动程序时，加载的任何旧驱动程序仍可以使用尚未分配给它们的端口。 分配资源后，驱动程序应执行设备需要的任何握手来确定设备状态。
 
-[*初始化*](https://docs.microsoft.com/previous-versions/ff541025(v=vs.85))回调 (指向**fpInitialize** VJPOLLREG 结构中的成员) 将替换*JoyId*中的回调以前的接口。 主要区别在于，VJoyD 传递回该驱动程序设备过程中传递给 VJoyD 注册以便可以区分这些实例，如果该驱动程序支持多个设备任何设备实例标识。
+VJPOLLREG 结构的**fpInitialize**成员指向的[*初始化*](/previous-versions/ff541025(v=vs.85))回调 () 替换之前接口中的*JoyId*回调。 主要区别在于，VJoyD 会将设备传递到 VJoyD 的任何设备实例标识传递回驱动程序，以便在驱动程序支持多个设备时，可以区分实例。
 
-**请注意**  如果你需要打开注册表项，则应使用[VJOYD\_OpenConfigKey\_服务](https://docs.microsoft.com/previous-versions/ff543545(v=vs.85))并[VJOYD\_OpenTypeKey\_服务](https://docs.microsoft.com/previous-versions/ff543549(v=vs.85))宏而不是直接打开注册表项。 使用这些服务宏可确保打开正确的注册表分支。 此外，支持的服务的宏将在将来版本的 DirectInput 时可能会以不同方式结构化的基础的注册表数据。
-
- 
+**注意**   如果需要打开注册表项，则应使用[VJOYD \_ OpenConfigKey \_ service](/previous-versions/ff543545(v=vs.85))和[VJOYD \_ OpenTypeKey \_ 服务](/previous-versions/ff543549(v=vs.85))宏，而不是直接打开注册表项。 使用这些服务宏可确保打开正确的注册表分支。 此外，如果基础注册表数据的结构不同，则未来版本的 DirectInput 将支持服务宏。
 
  
 
  
-
-
-
 

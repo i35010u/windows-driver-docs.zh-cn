@@ -11,12 +11,12 @@ ms.date: 02/28/2020
 ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
-ms.openlocfilehash: ad35eabb019b12b4367c7413cc22db98dacd1940
-ms.sourcegitcommit: 988d100e4d3b218a59fdac034d39a1816d145c85
+ms.openlocfilehash: 23087be63fba76512a82ddbb19db09bca8972846
+ms.sourcegitcommit: 9145bffd4cc3b990a9ebff43b588db6ef2001f5d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2020
-ms.locfileid: "78166681"
+ms.lasthandoff: 09/09/2020
+ms.locfileid: "89592429"
 ---
 # <a name="introduction-to-human-interface-devices-hid"></a>人体学接口设备 (HID) 简介
 
@@ -24,17 +24,17 @@ ms.locfileid: "78166681"
 
 目前，HID 设备包括各种设备，例如字母数字显示器、条码读取器、扬声器/耳机上的音量控制、辅助显示器、传感器等。 许多硬件供应商还对其专用设备使用 HID。
 
-HID 一开始为 USB，但设计为与总线无关。 它为低延迟、低带宽设备而设计，但可以灵活地指定基础传输中的速率。 1996 年，基于 USB 的 HID 的规范被 [USB-IF](https://www.usb.org/about) 批准。不久之后，对其他传输的支持又获得批准。 有关当前支持的传输的详细信息，可参阅 [Windows 中支持的 HID 传输](https://docs.microsoft.com/windows-hardware/drivers/hid/hid-transports)。 此外，还允许通过自定义传输驱动程序进行第三方的特定于供应商的传输。
+HID 一开始为 USB，但设计为与总线无关。 它为低延迟、低带宽设备而设计，但可以灵活地指定基础传输中的速率。 1996 年，基于 USB 的 HID 的规范被 [USB-IF](https://www.usb.org/about) 批准。不久之后，对其他传输的支持又获得批准。 有关当前支持的传输的详细信息，可参阅 [Windows 中支持的 HID 传输](./hid-transports.md)。 此外，还允许通过自定义传输驱动程序进行第三方的特定于供应商的传输。
 
 ## <a name="hid-concepts"></a>HID 概念
 
 HID 包含两个基本概念：“报告描述符”和“报告”。 报告是在设备和软件客户端之间交换的实际数据。 报告描述符描述设备支持的数据的格式和含义。
 
-### <a name="reports"></a>报告
+### <a name="reports"></a>报表
 
 应用程序和 HID 设备通过报告来交换数据。 有三种报告类型：输入报告、输出报告和功能报告。
 
-| 报告类型    | 说明                                                                                                     |
+| 报表类型    | 描述                                                                                                     |
 |----------------|-----------------------------------------------------------------------------------------------------------------|
 | 输入报告   | 从 HID 设备发送到应用程序的数据，通常在控件的状态发生更改时发送。 |
 | 输出报告  | 从应用程序发送到 HID 设备（例如键盘上的 LED）的数据。         |

@@ -1,58 +1,58 @@
 ---
 title: 飞行模式无线管理
-description: 从 Windows 8 开始，Windows 操作系统提供了通过 HID，对飞行模式单选管理控件的支持。
+description: 从 Windows 8 开始，Windows 操作系统将通过 HID 为飞行模式无线电管理控制提供支持。
 ms.assetid: 5B0662B0-CBD3-4F31-B98F-6BC8184574DB
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 58649c1a53e28f1ce3cbf7a7d4dd0140500502c7
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: c81233e5d1956273894432b4f1ac0ae520a8e833
+ms.sourcegitcommit: 9145bffd4cc3b990a9ebff43b588db6ef2001f5d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67375781"
+ms.lasthandoff: 09/09/2020
+ms.locfileid: "89592377"
 ---
 # <a name="airplane-mode-radio-management"></a>飞行模式无线管理
 
 
-从 Windows 8 开始，Windows 操作系统提供了通过 HID，对飞行模式单选管理控件的支持。
+从 Windows 8 开始，Windows 操作系统将通过 HID 为飞行模式无线电管理控制提供支持。
 
 ## <a name="architecture-and-overview"></a>体系结构和概述
 
 
-飞行模式的目的是允许 PC 制造商联系，以提供一个按钮或交换机 （和可能的 LED 来指示状态），使最终用户可以启用/禁用在一个操作中的所有无线控件。 这主要是使用户需要打开 / 关闭飞行模式，可以为此，请在各种无线通过软件无线电收发器的编程方法允许操作系统 （a） 识别的开关和 (b) 控制的状态。
+飞行模式的目标是让 PC 制造商提供按钮或交换机 (，并可能指示状态) 使最终用户能够在一次中启用/关闭所有无线控制。 这主要使需要打开/关闭飞行模式的用户能够以编程方式执行此操作，以允许操作系统 () 标识交换机的状态， (b) 通过软件控制各种无线无线电收发器。
 
-Windows 提供了普通台式计算机使用情况页面上的以下 HID 用法的支持。
+Windows 在 "一般桌面使用情况" 页上提供对以下 HID 用法的支持。
 
-| 使用 ID | 用法的名称                   | 使用类型                 |
+| 使用 ID | 使用名称                   | 使用情况类型                 |
 |----------|------------------------------|----------------------------|
-| 0x000C   | 无线电 Controlls     | CollectionApplication (CA) |
-| 0x00C6   | 无线单选按钮        | 打开/关闭控件 (OOC)       |
-| 0x00C7   | 无线电 LED           | 打开/关闭控件 (OOC)       |
-| 0x00C8   | 无线功能滑块开关 | 打开/关闭控件 (OOC)       |
+| 0x000C   | 无线广播 Controlls     | CollectionApplication (CA)  |
+| 0x00C6   | 无线单选按钮        | 开启/关闭控件 (OOC)        |
+| 0x00C7   | 无线无线电 LED           | 开启/关闭控件 (OOC)        |
+| 0x00C8   | 无线收音机滑块开关 | 开启/关闭控件 (OOC)        |
 
  
 
-以下是为单选管理提供支持的隐藏客户端的体系结构图 / 飞行模式。
+下面是为无线电管理/飞行模式提供支持的 HID 客户端的体系结构关系图。
 
 ![飞行模式体系结构](images/airplane-mode.png)
 
-ShellHW 检测服务 (SHSVCD.dll) 是隐藏客户端驱动程序/服务，在用户模式下运行并为单选管理设备提供支持。 它会监视存在的 HID 顶部级别类型的集合
+ShellHW 检测服务 ( # A0) 是在用户模式下运行并为无线电管理设备提供支持的 HID 客户端驱动程序/服务。 监视是否存在类型为的 HID 顶级集合
 
--   使用情况\_页 （普通台式计算机） 05 01
--   使用情况 （无线电控件） 09 0 C
+-   使用情况 \_ 页 (通用桌面) 05 01
+-   使用情况 (无线无线电控制) 09 0C
 
-## <a name="sample-report-descriptor"></a>示例报告描述符
+## <a name="sample-report-descriptor"></a>示例报表描述符
 
 
-以下部分提供了 PC 制造商必须利用的示例报告描述符。 请注意，是否顶部级别集合是已具有另一个顶部级别集合的报告描述符的一部分，报表 ID 必须包含 （在下面的示例中未显示）。
+以下部分提供了 PC 制造商必须利用的示例报表描述符。 请注意，如果顶层集合是已有另一个顶级集合的报表描述符的一部分，则必须包含报表 ID (不会在下面的示例) 中显示。
 
-下一节提供有关 PC 制造商的其他信息，并标识哪个报表描述符示例是最适合他们的系统设计：
+下一节提供了有关 PC 制造商的其他信息，并确定哪个报表描述符示例最适合其系统设计：
 
--   在键盘消费者控制按钮通常使用无状态的按钮 (无论它们是单机或与许多移动系统 (例如 Fn + F5) 上的函数按钮结合使用)。
--   具有开/关开关 （例如与在飞行模式打开/关闭开关的便携式计算机） 的物理滑块移动系统上通常使用滑块开关。
--   LED 通常是多个指示器用作独立飞机或与任一无状态按钮或滑块开关结合使用。 窗口用户无需使用此移动窗体身份系统上的 LED，如围绕飞行模式在 UI 中的可视指示。
+-   "无状态" 按钮通常在键盘使用者控件按钮上使用， (独立或与许多移动系统上的 "函数" 按钮一起使用 (例如 Fn + F5) # A3。
+-   滑块开关通常用于在移动系统上打开/关闭开关 (例如，使用 "在飞机上打开/关闭交换机) 的便携式计算机"。
+-   LED 通常用作独立飞机的更多指示器，或与无状态按钮或滑块开关结合使用。 Windows 用户无需在移动外观系统上使用此 LED，因为用户界面周围的视觉对象指示与飞行模式有关。
 
-*无状态的按钮，而无需 LED*
+*无 LED 的无状态按钮*
 
 ``` syntax
 USAGE_PAGE (Generic Desktop)                   05 01 
@@ -69,7 +69,7 @@ INPUT (Cnst,Var,Abs)                           81 03
 END_COLLECTION                                 C0
 ```
 
-*使用 LED 无状态的按钮*
+*带有 LED 的无状态按钮*
 
 ``` syntax
 USAGE_PAGE (Generic Desktop)                    05 01 
@@ -91,7 +91,7 @@ OUTPUT (Cnst,Var,Abs)                           91 03
 END_COLLECTION                                  C0
 ```
 
-*滑块开关 （不带 LED)*
+*不带 LED) 的滑块开关 (*
 
 ``` syntax
 USAGE_PAGE (Generic Desktop)                    05 01 
@@ -108,7 +108,7 @@ INPUT (Cnst,Var,Abs)                            81 03
 END_COLLECTION                                  C0
 ```
 
-*使用 LED 滑块开关*
+*带有 LED 的滑块开关*
 
 ``` syntax
 USAGE_PAGE (Generic Desktop)                    05 01 
@@ -130,7 +130,7 @@ OUTPUT (Cnst,Var,Abs)                           91 03
 END_COLLECTION                                  C0
 ```
 
-*LED 仅 （任何按钮或滑块）*
+*LED 仅 (没有按钮或滑块) *
 
 ``` syntax
 USAGE_PAGE (Generic Desktop)                   05 01 
@@ -150,18 +150,13 @@ END_COLLECTION                                 C0
 ## <a name="troubleshooting-common-errors"></a>排查常见错误
 
 
-提示\#1:使用单选 manager 按钮时，PC 制造商应释放按钮时并不是在按下按钮时发送一个 HID 报表。 这是因为切换按钮通常是相对的输入，不是绝对的另一个。
+提示 \# 1：使用收音机管理器按钮时，PC 制造商应在按钮被释放时发送一个 HID 报表，而不是在按下按钮时发送。 这是因为切换按钮通常是相对输入而不是绝对的。
 
-提示\#2:飞行模式无线管理 HID 用法仅在移动系统 （由电池供电） 上运行，需要 Windows 8 或更高版本的 Windows。
+提示 \# 2：飞行模式无线电管理 HID 使用情况仅在移动系统上运行 (备有电池的) 并且需要 windows 8 或更高版本的 windows。
 
-提示\#3:有关飞行模式无线管理按钮的详细信息，请参阅[到 Windows 8 的键盘增强功能](https://docs.microsoft.com/previous-versions/windows/hardware/design/dn613956(v=vs.85))白皮书。
+提示 \# 3：有关 "飞行模式" "无线电管理" 按钮的详细信息，请参阅 [Windows 8 白皮书的键盘增强功能](/previous-versions/windows/hardware/design/dn613956(v=vs.85)) 。
 
-提示\#4:有关详细信息按钮，并以确保实现正确的硬件，请查看 Windows 8 系统徽标要求。
-
- 
+提示 \# 4：有关按钮的详细信息，若要确保实施正确的硬件，请查看 Windows 8 系统徽标要求。
 
  
-
-
-
 
