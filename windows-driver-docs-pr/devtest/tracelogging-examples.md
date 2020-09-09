@@ -4,12 +4,12 @@ description: 本主题中的源代码演示了如何使用 TraceLogging。
 ms.assetid: 0FD7D517-D46A-4D76-A5E1-3267DBB09A29
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: beb58a8ec8e945cc4490b7fa5e26516bf90bb33e
-ms.sourcegitcommit: 238308264c1ee2c74ec0c8c303258dc00c79b902
+ms.openlocfilehash: 63f911941915358618766d92de6b66cab24a93d7
+ms.sourcegitcommit: 930dc67b8b83a9e9628c54a5d1470c7f698d1824
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70063937"
+ms.lasthandoff: 09/09/2020
+ms.locfileid: "89591994"
 ---
 # <a name="tracelogging-examples"></a>TraceLogging 示例
 
@@ -149,8 +149,8 @@ void BasicDataTypes()
         g_hProvider,
         "Other Types",
         TraceLoggingGuid(g, "GUID"), 
-        TraceLoggingFileTime(ft, "Current Time (SYSTEMTIME)"), 
-        TraceLoggingSystemTime(st, "Current Time (FILETIME)"), 
+        TraceLoggingFileTime(ft, "Current Time (FILETIME)"), 
+        TraceLoggingSystemTime(st, "Current Time (SYSTEMTIME)"), 
         TraceLoggingSid(&sid1, "SID"),  
         TraceLoggingPointer((LPCVOID)&g, "void*"),
         TraceLoggingIntPtr(iptr, "INT_PTR"),
