@@ -3,12 +3,12 @@ description: 本节中的主题介绍客户端驱动程序必须如何配置其�
 title: 在 USB 驱动程序中选择 USB 配置概述
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 53421177020e605ab358c8f47b529596384a92d1
-ms.sourcegitcommit: 15caaf6d943135efcaf9975927ff3933957acd5d
+ms.openlocfilehash: 31e58485efce4759fd2f566aa9434d3cc59387ce
+ms.sourcegitcommit: 937974aa9bbe0262a7ffe9631593fab48c4e7492
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88969532"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "90010619"
 ---
 # <a name="overview-of-selecting-a-usb-configuration-in-usb-drivers"></a>选择 USB 驱动程序中的 USB 配置的概述
 
@@ -21,7 +21,7 @@ USB 设备以一系列称为 *USB 配置*的接口的形式公开其功能。 �
 
 基于 WDM 的客户端驱动程序可以选择 USB 设备中的任何配置。
 
-如果客户端驱动程序基于 [内核模式驱动程序框架](https://docs.microsoft.com/windows-hardware/drivers/wdf/) 或 [用户模式驱动程序框架](https://docs.microsoft.com/windows-hardware/drivers/wdf/)，则应使用各自的框架接口来配置 USB 设备。 如果使用 Microsoft Visual Studio Professional 2012 附带的 USB 模板，则模板代码将选择每个接口中的第一个配置和默认备用设置。
+如果客户端驱动程序基于 [内核模式驱动程序框架](../wdf/index.md) 或 [用户模式驱动程序框架](../wdf/index.md)，则应使用各自的框架接口来配置 USB 设备。 如果使用 Microsoft Visual Studio Professional 2012 附带的 USB 模板，则模板代码将选择每个接口中的第一个配置和默认备用设置。
 
 ## <a name="in-this-section"></a>在本节中
 
@@ -34,7 +34,7 @@ USB 设备以一系列称为 *USB 配置*的接口的形式公开其功能。 �
 <thead>
 <tr class="header">
 <th>主题</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>
@@ -63,15 +63,12 @@ USB 设备以一系列称为 *USB 配置*的接口的形式公开其功能。 �
 如果客户端驱动程序使用 WDF 对象，或者设备是否有单个接口或多个接口，则会应用某些限制。 更改默认配置之前，请考虑以下限制：
 
 -   复合设备的客户端驱动程序（通过 [USB 通用父驱动程序](usb-common-class-generic-parent-driver.md) ( # A0) 管理接口或接口集合无法更改设备的配置值。 但是，客户端驱动程序可以将 Usbccgp.sys 配置为选择除第一个 (默认) 配置以外的其他配置。 有关详细信息，请参阅 [配置 Usbccgp.sys 以选择非默认的 USB 配置](selecting-the-configuration-for-a-multiple-interface--composite--usb-d.md)。
--   使用框架的 [USB I/o 目标](https://docs.microsoft.com/windows-hardware/drivers/wdf/usb-i-o-targets) 的基于 KMDF 的客户端驱动程序只能选择第一个配置。
+-   使用框架的 [USB I/o 目标](../wdf/usb-i-o-targets.md) 的基于 KMDF 的客户端驱动程序只能选择第一个配置。
 -   [WinUSB](winusb.md) 仅支持第一个配置。
 -   类驱动程序通常不支持多个配置。 如果设备实现了由 USB 类规范定义的类，请参阅 [Usb 技术](https://go.microsoft.com/fwlink/p/?linkid=8769) 网站获取有关设备类和类规范的信息。 Microsoft 为支持的 USB 设备类提供类驱动程序。 有关详细信息，请参阅[支持的 USB 设备类的驱动程序](supported-usb-classes.md)。
 
 ## <a name="related-topics"></a>相关主题
 [USB 驱动程序开发指南](usb-driver-development-guide.md)  
 [USB 配置描述符](usb-configuration-descriptors.md)  
-[使用 USB 设备](https://docs.microsoft.com/windows-hardware/drivers/wdf/working-with-usb-devices)  
-[在 UMDF 中使用 USB 接口](https://docs.microsoft.com/windows-hardware/drivers/wdf/working-with-usb-interfaces-in-umdf-1-x-drivers)  
-
-
-
+[使用 USB 设备](../wdf/working-with-usb-devices.md)  
+[在 UMDF 中使用 USB 接口](../wdf/working-with-usb-interfaces-in-umdf-1-x-drivers.md)

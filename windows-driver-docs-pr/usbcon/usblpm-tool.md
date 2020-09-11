@@ -3,19 +3,19 @@ description: USBLPM 工具监视 USB 3.0 端口的 U0/U1/U2/U3 电源状态。
 title: USBLPM
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 489ba7638d83530bf09bf40354841631a12fcd58
-ms.sourcegitcommit: 15caaf6d943135efcaf9975927ff3933957acd5d
+ms.openlocfilehash: 6215b530ee5ff1def0a740083bb04da84248c24f
+ms.sourcegitcommit: 937974aa9bbe0262a7ffe9631593fab48c4e7492
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88968592"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "90009907"
 ---
 # <a name="usblpm"></a>USBLPM
 
 
 USBLPM 工具监视 USB 3.0 端口的 U0/U1/U2/U3 电源状态。 它还可用于验证 U0/U1/U2 之间的转换是否正常进行。 此外，该工具可以启用或禁用系统中所有设备上的 U1 和/或 U2 状态。
 
-该工具包含在 [MUTT](https://msdn.microsoft.com/windows/hardware/jj590752)软件包中。
+该工具包含在 [MUTT](./index.md)软件包中。
 
 ## <a name="usblpm"></a>USBLPM
 
@@ -83,7 +83,4 @@ USBLPM 在 **监视**、 **测试**或 **配置** 模式下运行。
 
 ## <a name="related-topics"></a>相关主题
 [USB 测试工具](usb-test-tools.md)  
-[MUTT 软件包中的工具](mutt-software-package.md)  
-
-
-
+[MUTT 软件包中的工具](mutt-software-package.md)

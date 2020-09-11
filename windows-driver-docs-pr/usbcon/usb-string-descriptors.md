@@ -3,12 +3,12 @@ description: 设备、配置和接口描述符可能包含对字符串描述符�
 title: USB 字符串描述符
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8df18d32cffae9c25bca11aa0f4e98dbc44c10ac
-ms.sourcegitcommit: 15caaf6d943135efcaf9975927ff3933957acd5d
+ms.openlocfilehash: 792a6fc009a2e902b08dd83a9c5b4b2307c92a17
+ms.sourcegitcommit: 937974aa9bbe0262a7ffe9631593fab48c4e7492
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88968594"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "90010623"
 ---
 # <a name="usb-string-descriptors"></a>USB 字符串描述符
 
@@ -20,7 +20,7 @@ ms.locfileid: "88968594"
 
 字符串描述符由其从1开始的索引号引用。 字符串描述符包含一个或多个 Unicode 字符串;每个字符串都是将其他字符串转换为另一种语言。
 
-客户端驱动[**UsbBuildGetDescriptorRequest**](https://docs.microsoft.com/previous-versions/ff538943(v=vs.85))程序使用具有*DescriptorType* = USB \_ 字符串 \_ 描述符类型的 UsbBuildGetDescriptorRequest， \_ 以生成获取字符串描述符的请求。 *Index*参数指定索引号， *LanguageID*参数指定语言 ID (相同的值在) 的 Microsoft Win32 LANGID 值中使用。 驱动程序可以请求0的特殊索引号，以确定设备支持的语言 Id。 对于此特殊值，设备将返回语言 Id 的数组，而不是 Unicode 字符串。
+客户端驱动[**UsbBuildGetDescriptorRequest**](/previous-versions/ff538943(v=vs.85))程序使用具有*DescriptorType* = USB \_ 字符串 \_ 描述符类型的 UsbBuildGetDescriptorRequest， \_ 以生成获取字符串描述符的请求。 *Index*参数指定索引号， *LanguageID*参数指定语言 ID (相同的值在) 的 Microsoft Win32 LANGID 值中使用。 驱动程序可以请求0的特殊索引号，以确定设备支持的语言 Id。 对于此特殊值，设备将返回语言 Id 的数组，而不是 Unicode 字符串。
 
 由于字符串描述符包含可变长度数据，因此驱动程序必须通过两个步骤来获取它。 首先，驱动程序必须发出请求，传递一个足以容纳字符串描述符的标头的数据缓冲区，即一个 USB \_ 字符串 \_ 说明符结构。 USB **bLength**字符串描述符的 bLength \_ 成员 \_ 指定整个描述符的大小（以字节为单位）。 然后，该驱动程序将使用大小为 **bLength**的数据缓冲区进行相同的请求。
 
@@ -54,7 +54,4 @@ UsbBuildGetDescriptorRequest(
 ```
 
 ## <a name="related-topics"></a>相关主题
-[USB 描述符](usb-descriptors.md)  
-
-
-
+[USB 描述符](usb-descriptors.md)

@@ -3,12 +3,12 @@ description: 从 Windows 10 开始，Windows 现在支持 USB 双重角色控制
 title: USB 双角色驱动程序堆栈体系结构
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 26f2c71ba3d7fb93d39a2d144d14d70a7bb20217
-ms.sourcegitcommit: 15caaf6d943135efcaf9975927ff3933957acd5d
+ms.openlocfilehash: c2748df15bf673901b0520158bc187c7855b6d34
+ms.sourcegitcommit: 937974aa9bbe0262a7ffe9631593fab48c4e7492
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88968932"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "90010063"
 ---
 # <a name="usb-dual-role-driver-stack-architecture"></a>USB 双角色驱动程序堆栈体系结构
 
@@ -45,13 +45,13 @@ USB 双重角色功能使系统成为 USB *设备* 或 usb *主机*成为可能�
 
 | USB 主机类驱动程序                                             | Windows 10 移动版 | Windows 10 桌面版 |
 |--------------------------------------------------------------------|-------------------|---------------------------------|
-| USB 集线器 (USBHUB)                                                   | 适合               | 由于 Windows 2000) ，是 (        |
-| HID-键盘/鼠标 (HidClass，KBDCLass，MouClass，KBDHid，MouHid)  | 适合               | 由于 Windows 2000) ，是 (        |
-| USB 大容量存储 (批量 & UASP)                                      | 适合               | 由于 Windows 2000) ，是 (        |
-|  (WinUSB 的通用 USB 主机驱动程序)                                    | 适合               | 由于 Windows Vista) ，是 (       |
-| USB Audio in/out (USBAUDIO)                                       | 适合               |  (是的，因为 Windows XP)           |
-| 串行设备 (USBSER)                                             | 适合               | 由于 Windows 10) ，是 (          |
-| 蓝牙 (BTHUSB)                                                  | 适合               |  (是的，因为 Windows XP)           |
+| USB 集线器 (USBHUB)                                                   | 是               | 由于 Windows 2000) ，是 (        |
+| HID-键盘/鼠标 (HidClass，KBDCLass，MouClass，KBDHid，MouHid)  | 是               | 由于 Windows 2000) ，是 (        |
+| USB 大容量存储 (批量 & UASP)                                      | 是               | 由于 Windows 2000) ，是 (        |
+|  (WinUSB 的通用 USB 主机驱动程序)                                    | 是               | 由于 Windows Vista) ，是 (       |
+| USB Audio in/out (USBAUDIO)                                       | 是               |  (是的，因为 Windows XP)           |
+| 串行设备 (USBSER)                                             | 是               | 由于 Windows 10) ，是 (          |
+| 蓝牙 (BTHUSB)                                                  | 是               |  (是的，因为 Windows XP)           |
 | 打印 (usbprint)                                                    | 否                |  (是的，因为 Windows XP)           |
 | 正在扫描 (USBSCAN)                                                  | 否                | 由于 Windows 2000) ，是 (        |
 | 网络摄像机 (USBVIDEO)                                                   | 否                | 由于 Windows Vista) ，是 (       |
@@ -88,7 +88,7 @@ Microsoft USB 角色切换 (URS) 驱动程序允许系统实施者充分利用�
 
 URS 驱动程序旨在为使用单个 USB 控制器的平台提供双重角色功能，该控制器可以在一个端口上同时操作主机和外围角色。 *外围角色*也称为*函数角色*。 URS 驱动程序根据平台上的硬件事件，管理端口的当前角色以及适当软件堆栈的加载和卸载。
 
-在具有 USB 微 AB 连接器的系统上，驱动程序使用硬件中断来指示连接器上 ID pin 的状态。 此 pin 用于检测控制器是否需要在连接中采用主机角色或函数角色。 有关详细信息，请参阅 [USB 点播规范](https://go.microsoft.com/fwlink/p/?LinkId=698414)。 在使用 USB 类型 C 连接器的系统上，OEM 实施者应该使用 [USB 类型 c 连接器驱动程序编程接口](https://docs.microsoft.com/windows-hardware/drivers/ddi/_usbref/#type-c-driver-reference)提供连接器客户端驱动程序。 客户端驱动程序与 Microsoft 提供的 USB 连接器管理器类扩展通信， (UcmCx) 来管理 USB 类型 C 连接器的所有方面，如 CC 检测、PD 消息传送等。 对于角色切换，客户端驱动程序会将 USB 类型 C 连接器的状态传达给 URS 驱动程序。
+在具有 USB 微 AB 连接器的系统上，驱动程序使用硬件中断来指示连接器上 ID pin 的状态。 此 pin 用于检测控制器是否需要在连接中采用主机角色或函数角色。 有关详细信息，请参阅 [USB 点播规范](https://go.microsoft.com/fwlink/p/?LinkId=698414)。 在使用 USB 类型 C 连接器的系统上，OEM 实施者应该使用 [USB 类型 c 连接器驱动程序编程接口](/windows-hardware/drivers/ddi/_usbref/#type-c-driver-reference)提供连接器客户端驱动程序。 客户端驱动程序与 Microsoft 提供的 USB 连接器管理器类扩展通信， (UcmCx) 来管理 USB 类型 C 连接器的所有方面，如 CC 检测、PD 消息传送等。 对于角色切换，客户端驱动程序会将 USB 类型 C 连接器的状态传达给 URS 驱动程序。
 
 下图显示了使用 URS 驱动程序的双角色控制器的 USB 软件驱动程序堆栈。
 
@@ -263,10 +263,4 @@ URS 驱动程序将硬件 Id 分配给主机和函数堆栈。 这些硬件 Id �
   IHV/OEM 还可以在驱动程序包中包含筛选器驱动程序。
   ## <a name="see-also"></a>另请参阅
 
-[双重角色控制器驱动程序参考](https://docs.microsoft.com/windows-hardware/drivers/ddi/_usbref/#dual-role-controller-driver-reference)
-
-
-
-
-
-
+[双重角色控制器驱动程序参考](/windows-hardware/drivers/ddi/_usbref/#dual-role-controller-driver-reference)

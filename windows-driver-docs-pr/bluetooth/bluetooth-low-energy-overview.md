@@ -4,21 +4,21 @@ description: 本部分概述了 Windows 8 中引入的蓝牙低能耗
 ms.assetid: 8783E31B-99A3-40EB-8A67-647AFAB7D4D3
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f53360e52b078b6383f0608e3a584efd81d785aa
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 7413acaa46f9022519b50f3717bee7dafc5fcf0a
+ms.sourcegitcommit: 937974aa9bbe0262a7ffe9631593fab48c4e7492
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72833886"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "90010567"
 ---
 # <a name="bluetooth-low-energy-overview"></a>低耗电蓝牙概述
 
 
 Windows 8 引入了对蓝牙低能耗技术的支持。
 
-蓝牙低能耗引入了一个新的物理层，它与蓝牙基本速度共享相同的频率空间。 在此技术上开发的配置文件组织到一般属性配置文件（或 GATT）中。
+蓝牙低能耗引入了一个新的物理层，它与蓝牙基本速度共享相同的频率空间。 在此技术上开发的配置文件组织到一般属性配置文件中 (或 GATT) 。
 
-每个配置文件定义使用一个或多个服务来创建用例或方案。 符合性服务实现是按照与在蓝牙特别兴趣组[开发人员网站](https://www.bluetooth.com/specifications/gatt/services/)上定义的已建立架构一致的方式构造的。
+每个配置文件定义使用一个或多个服务来创建用例或方案。 符合性服务实现是按照与在蓝牙特别兴趣组 [开发人员网站](https://www.bluetooth.com/specifications/gatt/services/)上定义的已建立架构一致的方式构造的。
 
 下图说明了在典型的 GATT 服务内构造对象的方式。
 
@@ -28,17 +28,11 @@ Windows 8 引入了对蓝牙低能耗技术的支持。
 
 ![windows 8 蓝牙低能耗实现的设备对象结构](images/bthlewin8supt.png)
 
-每个设备及其主要服务在 Windows 中都表示为设备对象，可以使用[**SetupDiEnumDeviceInfo**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdienumdeviceinfo)和[**SetupDiGetDeviceProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)等[设备安装功能](https://docs.microsoft.com/previous-versions/ff549791(v=vs.85))来查询和管理这些设备对象。
+每个设备及其主要服务在 Windows 中都表示为设备对象，可以使用[**SetupDiEnumDeviceInfo**](/windows/desktop/api/setupapi/nf-setupapi-setupdienumdeviceinfo)和[**SetupDiGetDeviceProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)等[设备安装功能](/previous-versions/ff549791(v=vs.85))来查询和管理这些设备对象。
 
-除了标准的[蓝牙配置文件驱动程序函数](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)外，Windows 8 还引入了新的[蓝牙低能耗功能](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)，可用于开发 bluetooth GATT 客户端应用程序。
+除了标准的 [蓝牙配置文件驱动程序函数](/windows-hardware/drivers/ddi/index)外，Windows 8 还引入了新的 [蓝牙低能耗功能](/windows-hardware/drivers/ddi/index) ，可用于开发 bluetooth GATT 客户端应用程序。
 
-这些函数可用于枚举服务及其对象（包括服务、特征及其描述符）以及读写功能。
-
- 
+这些函数可用于枚举服务及其对象 (包括服务、特征及其描述符) 以及读写功能。
 
  
-
-
-
-
 

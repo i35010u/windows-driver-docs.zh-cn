@@ -3,12 +3,12 @@ description: 本主题说明如何测试启用了 USB 类型 C 的系统和 Wind
 title: USB 类型 C 手动互操作性测试过程
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 03cf4b5be3cf337a50fd7b54d0da97987b5e3720
-ms.sourcegitcommit: 15caaf6d943135efcaf9975927ff3933957acd5d
+ms.openlocfilehash: 85bbfabee023616d2a2dad09a5defeba2a31205b
+ms.sourcegitcommit: 937974aa9bbe0262a7ffe9631593fab48c4e7492
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88969430"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "90009815"
 ---
 # <a name="usb-type-c-manual-interoperability-test-procedures"></a>USB 类型 C 手动互操作性测试过程
 
@@ -155,7 +155,7 @@ USB 类型 C 互操作性测试过程分为两部分：功能测试 (FT) 和压�
 
 对其他可用系统电源状态重复此测试：睡眠 (S3) 、休眠 (S4) 和混合睡眠。
 
-**注意**   使用 Windows 驱动程序工具包)  (中包含的 pwrtest.exe，以简化到电源状态的过渡。 有关详细信息，请参阅 [PwrTest](https://docs.microsoft.com/windows-hardware/drivers/devtest/pwrtest)。
+**注意**   使用 Windows 驱动程序工具包)  (中包含的 pwrtest.exe，以简化到电源状态的过渡。 有关详细信息，请参阅 [PwrTest](../devtest/pwrtest.md)。
 
  
 
@@ -175,7 +175,7 @@ USB 类型 C 互操作性测试过程分为两部分：功能测试 (FT) 和压�
 可以从以下来源找到选择性挂起的其他信息：
 
 -   [为 HID 启用选择性挂起](https://go.microsoft.com/fwlink/p/?LinkId=623307)
--   [基于 USB 的 HID 设备的选择性挂起](https://docs.microsoft.com/windows-hardware/drivers/hid/selective-suspend-for-hid-over-usb-devices)
+-   [基于 USB 的 HID 设备的选择性挂起](../hid/selective-suspend-for-hid-over-usb-devices.md)
 -   [揭密选择性挂起]( https://go.microsoft.com/fwlink/p/?LinkId=623308)
 
 ## <a name="ft-case-5-dock-identification"></a><a href="" id="ft5"></a>FT 事例5：停靠标识
@@ -489,9 +489,4 @@ USB 类型 C 电缆旨在维持用户功能，而不考虑电缆方向。 翻转
 -   用于测试的系统、设备、停靠或集线器。 包含品牌、型号和网站，以便我们可以根据需要获取其他信息。
 
  
-
- 
-
-
-
 

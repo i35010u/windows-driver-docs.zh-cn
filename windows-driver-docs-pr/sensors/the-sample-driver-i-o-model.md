@@ -4,12 +4,12 @@ description: SPB 驱动程序通过简单的外围总线、系统 GPIO pin 和�
 ms.assetid: 86DA1BDE-DD97-45CA-884D-12BD279BD12E
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 00b8a9c4bc1fd9be97e71729c316d515d999afa7
-ms.sourcegitcommit: bd120d96651f9e338956388c618acec7d215b0d2
+ms.openlocfilehash: e2d956460a09d22d722b124a365ebf6ef1ab8486
+ms.sourcegitcommit: 937974aa9bbe0262a7ffe9631593fab48c4e7492
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/11/2020
-ms.locfileid: "84681677"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "90009865"
 ---
 # <a name="sample-driver-io-model"></a>示例驱动程序 i/o 模型
 
@@ -21,13 +21,13 @@ SPB 驱动程序通过简单的外围总线、系统 GPIO pin 和资源中心进
 ## <a name="simple-peripheral-bus-spb"></a>简单外设总线 (SPB)
 
 
-Windows 8.1 支持作为类扩展（在内核模式下运行）的 SPB 组件，使开发和实现 SPB 控制器驱动程序更容易。 SPB 组件：
+Windows 8.1 支持将 SPB 组件作为类扩展 (在内核模式下运行，) 使开发和实现 SPB 控制器驱动程序更容易。 SPB 组件：
 
 -   处理与资源中心的所有通信，包括注册和设置检索。
 -   实现分层队列结构以管理同时目标和总线锁定请求
 -   将缓冲区从用户模式转换为内核模式
 
-有关详细信息，请参阅[简单外围总线](https://docs.microsoft.com/windows-hardware/design/component-guidelines/simple-peripheral-bus--spb-)。
+有关详细信息，请参阅 [简单外围总线](/windows-hardware/design/component-guidelines/simple-peripheral-bus--spb-)。
 
 ### <a name="spb-component-and-the-sample-driver"></a>SPB 组件和示例驱动程序
 
@@ -47,7 +47,7 @@ SpbAccelerometer 示例代码与 SPB 组件进行交互，可在 SpbRequest 中�
 
  
 
-## <a name="general-purpose-inputoutput-gpio"></a>一般用途的输入/输出（GPIO）
+## <a name="general-purpose-inputoutput-gpio"></a>通用输入/输出 (GPIO) 
 
 Windows 8.1 支持与内核模式 SPB 组件位于同一级别的 GPIO 类扩展。 扩展可在基础硬件连接和 GPIO 位置上灵活，同时提供客户端驱动程序的标准接口。
 
@@ -57,11 +57,11 @@ Windows 8.1 支持与内核模式 SPB 组件位于同一级别的 GPIO 类扩展
 
 | 模块               | 类/接口 |
 |----------------------|-----------------|
-| SpbAccelerometer. asl | 空值             |
+| SpbAccelerometer. asl | 不可用             |
 
  
 
-SpbAccelerometer 示例依赖于用于中断的 GPIO 组件。 Asl 文件中的 GpioInt （）元素将连接到 ADXL345 的 GPIO pin 定义为中断资源。
+SpbAccelerometer 示例依赖于用于中断的 GPIO 组件。 Asl 文件中的 GpioInt ( # A1 元素将连接到 ADXL345 的 GPIO pin 定义为中断资源。
 
 ```cpp
 //
@@ -78,7 +78,7 @@ GpioInt(Level, ActiveHigh, Exclusive, PullDown, 0, "\\_SB.GPIO") {1} })
 
 下面是 I2C 资源的关键元素：
 
-| 元素    | 说明                                             |
+| 元素    | 描述                                             |
 |------------|---------------------------------------------------------|
 | 0x1D       | 指定从属设备的 I2C 地址。         |
 | 400000     | 指定从属设备的运行频率。 |
@@ -94,11 +94,11 @@ GpioInt(Level, ActiveHigh, Exclusive, PullDown, 0, "\\_SB.GPIO") {1} })
 
  
 
-如果 GPIO 行由 ADXL345 断言，则会调用示例驱动程序的被动 ISR 例程（**CAccelerometerDevice：： OnInterruptIsr**）。 Helper 函数**CAccelerometerDevice：： OnInterruptWorkItem**可处理：：**OnInterruptIsr**存储的中断数据。
+如果 GPIO 行由 ADXL345 断言，则会调用示例驱动程序的被动 ISR 例程 (**CAccelerometerDevice：： OnInterruptIsr**) 。 Helper 函数 **CAccelerometerDevice：： OnInterruptWorkItem**可处理：：**OnInterruptIsr** 存储的中断数据。
 
-如果由：：**OnInterruptIsr**处理的中断对应于 register 0x30 （ \_ 文件 ADXL345 中的 ADXL 345 \_ INT \_ 源），则驱动程序将调用 register 读取操作，以获取寄存器0x32 到0x37 的内容。 这些寄存器包含 X 轴、Y 轴和 Z 轴的最新加速数据。 读取操作在**CAcclerometerDevice：： RequestData**方法（由**CAccelerometerDevice：： OnInterruptWorkItem**调用）中调用。
+如果由：：**OnInterruptIsr** 处理的中断对应于 \_ \_ 在文件 Adxl345) 中注册 0x30 (ADXL 345 INT \_ 源，则驱动程序将调用 register 读取操作，以获取寄存器0x32 到0x37 的内容。 这些寄存器包含 X 轴、Y 轴和 Z 轴的最新加速数据。 读取操作在 **CAcclerometerDevice：： RequestData** 方法中调用， (通过 **CAccelerometerDevice：： OnInterruptWorkItem**) 调用。
 
-当：：**RequestData**方法处理读取操作的结果时，它首先合并对应于每个轴的两个字节的数据。 接下来，它应用缩放比例以获取实际加速值。 （缩放系数是指将 G 力（32）的范围除以分辨率（2 ^ 13）的结果。 结果为. 00390625。）
+当：：**RequestData** 方法处理读取操作的结果时，它首先合并对应于每个轴的两个字节的数据。 接下来，它应用缩放比例以获取实际加速值。  (比例因子是指将 G-力 (32) 的范围除以 (2 ^ 13) 的分辨率。 结果为. 00390625. ) 
 
 ```cpp
 // Get the data values as doubles
@@ -115,7 +115,7 @@ yAccel = (DOUBLE)yRaw * scaleFactor;
 zAccel = (DOUBLE)zRaw * scaleFactor;
 ```
 
-缩放比例取决于 register 0x31 中的设置（数据 \_ 格式）。
+比例因子由 register 0x31 (数据格式) 中的设置确定 \_ 。
 
 ## <a name="resource-hub"></a>资源中心
 
@@ -130,11 +130,11 @@ Windows 8.1 支持一个资源中心，该中心管理所有设备和总线控�
 
 | 模块               | 类/接口 |
 |----------------------|-----------------|
-| SpbAccelerometer. asl | 空值             |
+| SpbAccelerometer. asl | 不可用             |
 
  
 
-Asl 的**ResourceTemplate**节指定了资源的连接方式。
+Asl 的 **ResourceTemplate** 节指定了资源的连接方式。
 
 ```cpp
 Name(RBUF, ResourceTemplate()
@@ -154,9 +154,4 @@ Return(RBUF)
 ```
 
  
-
- 
-
-
-
 

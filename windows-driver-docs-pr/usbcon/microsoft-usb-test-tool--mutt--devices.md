@@ -3,12 +3,12 @@ description: Microsoft USB 测试工具 (MUTT) 是设备的集合，用于测试
 title: Microsoft USB 测试工具 (MUTT) 设备的概述
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1ddafa170fb4618966f6cb5da585572946d55870
-ms.sourcegitcommit: 15caaf6d943135efcaf9975927ff3933957acd5d
+ms.openlocfilehash: 4a826877933940a50fd90e8112da395c500eb2a3
+ms.sourcegitcommit: 937974aa9bbe0262a7ffe9631593fab48c4e7492
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88969332"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "90010285"
 ---
 # <a name="overview-of-microsoft-usb-test-tool-mutt-devices"></a>Microsoft USB 测试工具 (MUTT) 设备的概述
 
@@ -133,9 +133,5 @@ USB Type-c 连接试验 (USB Type-C ConnEx) 是一个自定义盾牌，具有四
 ![USB 类型-C ConnEx](images/connexc-side.jpg)
 
 ## <a name="related-topics"></a>相关主题
-[USB](https://docs.microsoft.com/windows-hardware/drivers/)  
-[在 Windows 中测试 USB 硬件、驱动程序和应用程序](usb-driver-testing-guide.md)  
-
-
-
-
+[USB](../index.yml)  
+[在 Windows 中测试 USB 硬件、驱动程序和应用程序](usb-driver-testing-guide.md)

@@ -3,12 +3,12 @@ description: '介绍 USB 连接器管理器 (UCM) ，该管理器管理 USB C # 
 title: 编写 USB 类型 C 连接器驱动程序
 ms.date: 01/07/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 55fd95a0efcb15d25a2419b3b24ce1bbd22914b4
-ms.sourcegitcommit: 15caaf6d943135efcaf9975927ff3933957acd5d
+ms.openlocfilehash: 4f6f5684489d865cb341f238e15e679165c8b8ca
+ms.sourcegitcommit: 937974aa9bbe0262a7ffe9631593fab48c4e7492
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88969014"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "90010043"
 ---
 # <a name="write-a-usb-type-c-connector-driver"></a>编写 USB 类型 C 连接器驱动程序
 
@@ -40,7 +40,7 @@ ms.locfileid: "88969014"
 
 ## <a name="important-apis"></a>重要的 API
 
-* [USB 类型 C 连接器驱动程序编程参考](https://docs.microsoft.com/windows-hardware/drivers/ddi/_usbref/#type-c-driver-reference)
+* [USB 类型 C 连接器驱动程序编程参考](/windows-hardware/drivers/ddi/_usbref/#type-c-driver-reference)
 
 介绍 USB 连接器管理器 (UCM) ，该管理器管理 USB C # C 连接器和连接器驱动程序的预期行为。
 
@@ -113,27 +113,27 @@ UCM connector 对象 (UCMCONNECTOR) 表示 USB C # C 连接器，是 UCM 类扩�
 
 下面是客户端驱动程序检索连接器的 UCMCONNECTOR 句柄的序列的摘要。 在驱动程序的
 
-1. 通过将引用传递给[**UCM \_ 管理器 \_ 配置**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ucmmanager/ns-ucmmanager-_ucm_manager_config)结构来调用[**UcmInitializeDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ucmmanager/nf-ucmmanager-ucminitializedevice) 。 在调用[**WdfDeviceCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdevicecreate)之前，驱动程序必须在[**EVT_WDF_DRIVER_DEVICE_ADD**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)回调函数中调用此方法。
+1. 通过将引用传递给[**UCM \_ 管理器 \_ 配置**](/windows-hardware/drivers/ddi/ucmmanager/ns-ucmmanager-_ucm_manager_config)结构来调用[**UcmInitializeDevice**](/windows-hardware/drivers/ddi/ucmmanager/nf-ucmmanager-ucminitializedevice) 。 在调用[**WdfDeviceCreate**](/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdevicecreate)之前，驱动程序必须在[**EVT_WDF_DRIVER_DEVICE_ADD**](/windows-hardware/drivers/ddi/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)回调函数中调用此方法。
 
-2. 在 [**UCM \_ 连接器 \_ TYPEC \_ CONFIG**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ucmmanager/ns-ucmmanager-_ucm_connector_typec_config) 结构中指定 USB 类型 C 连接器的初始化参数。 这包括连接器的操作模式，无论是面向下游的端口、面向上游的端口还是支持双重角色的端口。 当连接器为电源时，它还指定 USB 类型 C 当前级别。 可以设计 USB 类型 C 连接器，使其可以操作 3.5 mm 音频插孔。 如果硬件支持该功能，则必须相应地初始化连接器对象。
+2. 在 [**UCM \_ 连接器 \_ TYPEC \_ CONFIG**](/windows-hardware/drivers/ddi/ucmmanager/ns-ucmmanager-_ucm_connector_typec_config) 结构中指定 USB 类型 C 连接器的初始化参数。 这包括连接器的操作模式，无论是面向下游的端口、面向上游的端口还是支持双重角色的端口。 当连接器为电源时，它还指定 USB 类型 C 当前级别。 可以设计 USB 类型 C 连接器，使其可以操作 3.5 mm 音频插孔。 如果硬件支持该功能，则必须相应地初始化连接器对象。
 
    在结构中，还必须注册客户端驱动程序的回调函数以处理数据角色。
 
    此回调函数与连接器对象相关联，该对象由 UCM 类扩展调用。 此函数必须由客户端驱动程序实现。
 
-   [*.EVT \_ UCM \_ 连接器 \_ 设置 \_ 数据 \_ 角色*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ucmmanager/nc-ucmmanager-evt_ucm_connector_set_data_role)  
+   [*.EVT \_ UCM \_ 连接器 \_ 设置 \_ 数据 \_ 角色*](/windows-hardware/drivers/ddi/ucmmanager/nc-ucmmanager-evt_ucm_connector_set_data_role)  
     当连接到合作伙伴连接器时，将连接器的数据角色交换到指定的角色。
 
-3. 如果你的客户端驱动程序想要支持 PD 功能，即处理连接器的电源交付2.0 硬件实现，则还必须初始化指定 PD 初始化参数的 [**UCM \_ 连接器 \_ PD \_ 配置**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ucmmanager/ns-ucmmanager-_ucm_connector_pd_config) 结构。 这包括电源流，无论连接器是电源接收器还是源。
+3. 如果你的客户端驱动程序想要支持 PD 功能，即处理连接器的电源交付2.0 硬件实现，则还必须初始化指定 PD 初始化参数的 [**UCM \_ 连接器 \_ PD \_ 配置**](/windows-hardware/drivers/ddi/ucmmanager/ns-ucmmanager-_ucm_connector_pd_config) 结构。 这包括电源流，无论连接器是电源接收器还是源。
 
    在结构中，还必须注册客户端驱动程序的回调函数以处理电源角色。
 
    此回调函数与连接器对象相关联，该对象由 UCM 类扩展调用。 此函数必须由客户端驱动程序实现。
 
-   [*.EVT \_ UCM \_ 连接器 \_ 设置 \_ 电源 \_ 角色*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ucmmanager/nc-ucmmanager-evt_ucm_connector_set_power_role)  
+   [*.EVT \_ UCM \_ 连接器 \_ 设置 \_ 电源 \_ 角色*](/windows-hardware/drivers/ddi/ucmmanager/nc-ucmmanager-evt_ucm_connector_set_power_role)  
     将连接器的电源角色设置为在附加到合作伙伴连接器时指定的角色。
 
-4. 调用 [**UcmConnectorCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ucmmanager/nf-ucmmanager-ucmconnectorcreate) 并检索连接器的 UCMCONNECTOR 句柄。 请确保在客户端驱动程序通过调用 [**WdfDeviceCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdevicecreate)创建框架设备对象之后调用此方法。 此调用的适当位置可以是驱动程序的 [**EVT_WDF_DEVICE_PREPARE_HARDWARE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_prepare_hardware) 或 [**EVT_WDF_DEVICE_D0_ENTRY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_d0_entry)。
+4. 调用 [**UcmConnectorCreate**](/windows-hardware/drivers/ddi/ucmmanager/nf-ucmmanager-ucmconnectorcreate) 并检索连接器的 UCMCONNECTOR 句柄。 请确保在客户端驱动程序通过调用 [**WdfDeviceCreate**](/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdevicecreate)创建框架设备对象之后调用此方法。 此调用的适当位置可以是驱动程序的 [**EVT_WDF_DEVICE_PREPARE_HARDWARE**](/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_prepare_hardware) 或 [**EVT_WDF_DEVICE_D0_ENTRY**](/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_d0_entry)。
 
 ```cpp
 EVT_UCM_CONNECTOR_SET_DATA_ROLE     EvtSetDataRole;
@@ -225,7 +225,7 @@ Exit:
 
 ## <a name="2-report-the-partner-connector-attach-event"></a>2. 报告合作伙伴连接器附加事件
 
-当检测到合作伙伴连接器的连接时，客户端驱动程序必须调用 [**UcmConnectorTypeCAttach**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ucmmanager/nf-ucmmanager-ucmconnectortypecattach) 。 此调用会通知 UCM 类扩展，进而通知操作系统。 此时，系统可能会在 USB 类型 C 级别开始充电。
+当检测到合作伙伴连接器的连接时，客户端驱动程序必须调用 [**UcmConnectorTypeCAttach**](/windows-hardware/drivers/ddi/ucmmanager/nf-ucmmanager-ucmconnectortypecattach) 。 此调用会通知 UCM 类扩展，进而通知操作系统。 此时，系统可能会在 USB 类型 C 级别开始充电。
 
 UCM 类扩展还通知 USB 角色切换驱动程序 (URS) 。 根据伙伴的类型，URS 将在主机角色或函数角色中配置控制器。 在调用此方法之前，请确保已正确配置系统上的 Mux。 否则，如果系统处于函数角色中，它将以不正确的速度连接 (高速而不是 SuperSpeed) 。
 
@@ -255,53 +255,53 @@ UCM 类扩展还通知 USB 角色切换驱动程序 (URS) 。 根据伙伴的类
 
 在初始附加事件中，伙伴连接器发送当前播发。 当 partner 为 USB 类型为 C 的下游端口时播发指定合作伙伴连接器的当前级别。 否则，播发将指定本地连接器的当前级别，由 UCMCONNECTOR 句柄 (本地连接器) 表示。 此初始播发可能会在连接的生存期内发生更改。 必须由客户端驱动程序监视这些更改。
 
-如果本地连接器是 power 接收器，而当前播发发生了更改，则客户端驱动程序必须检测当前播发中的更改并将其报告给类扩展。 在 Windows 10 移动版系统上，CAD.sys 和电池子系统使用该信息调整其从源进行绘制的当前数量。 若要将当前级别的更改报告给类扩展，客户端驱动程序必须调用 [**UcmConnectorTypeCCurrentAdChanged**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ucmmanager/nf-ucmmanager-ucmconnectortypeccurrentadchanged)。
+如果本地连接器是 power 接收器，而当前播发发生了更改，则客户端驱动程序必须检测当前播发中的更改并将其报告给类扩展。 在 Windows 10 移动版系统上，CAD.sys 和电池子系统使用该信息调整其从源进行绘制的当前数量。 若要将当前级别的更改报告给类扩展，客户端驱动程序必须调用 [**UcmConnectorTypeCCurrentAdChanged**](/windows-hardware/drivers/ddi/ucmmanager/nf-ucmmanager-ucmconnectortypeccurrentadchanged)。
 
 ## <a name="4-report-the-new-negotiated-pd-contract"></a>4. 报告新的协商 PD 约定
 
 如果连接器支持 PD，则在初始附加事件之后，连接器及其伙伴连接器之间会传输 PD 消息。 在这两个伙伴之间，会协商一个 PD 协定，以确定连接器可以绘制的当前级别或允许合作伙伴绘制的当前级别。 每次 PD 协定发生更改时，客户端驱动程序都必须调用这些方法来报告对类扩展的更改。
 
 * 每当客户端驱动程序获取源功能播发时，都必须调用这些方法， (来自合作伙伴的未经请求或其他) 。 仅当伙伴为源时，本地连接器 (接收器) 才能获取来自合作伙伴的未经请求的播发。 同时，本地连接器还可以从可以作为源 (的伙伴显式请求源功能，即使该伙伴当前是接收器) 也是如此。 这种交换是通过向合作伙伴发送 **获取 \_ 源 \_ cap** 消息来完成的。
-  * [**UcmConnectorPdPartnerSourceCaps**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ucmmanager/nf-ucmmanager-ucmconnectorpdpartnersourcecaps) 报告合作伙伴连接器公布的源功能。
-  * [**UcmConnectorPdConnectionStateChanged**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ucmmanager/nf-ucmmanager-ucmconnectorpdconnectionstatechanged) 报告合同的详细信息。 协定在 Power 传递2.0 规范中定义的请求数据对象中进行了介绍。
+  * [**UcmConnectorPdPartnerSourceCaps**](/windows-hardware/drivers/ddi/ucmmanager/nf-ucmmanager-ucmconnectorpdpartnersourcecaps) 报告合作伙伴连接器公布的源功能。
+  * [**UcmConnectorPdConnectionStateChanged**](/windows-hardware/drivers/ddi/ucmmanager/nf-ucmmanager-ucmconnectorpdconnectionstatechanged) 报告合同的详细信息。 协定在 Power 传递2.0 规范中定义的请求数据对象中进行了介绍。
 * 相反，客户端驱动程序必须在每次本地连接器 (源) 向合作伙伴公布源功能时调用这些方法。 此外，当本地连接器接收来自合作伙伴的 " **获取 \_ 源" \_ cap** 消息时，它必须使用本地连接器的源功能进行响应。
-  * [**UcmConnectorPdSourceCaps**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ucmmanager/nf-ucmmanager-ucmconnectorpdsourcecaps) 将系统已播发的源功能报告给伙伴连接器。
-  * [**UcmConnectorPdConnectionStateChanged**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ucmmanager/nf-ucmmanager-ucmconnectorpdconnectionstatechanged) 报告当前协商的 PD 协定的连接功能。
+  * [**UcmConnectorPdSourceCaps**](/windows-hardware/drivers/ddi/ucmmanager/nf-ucmmanager-ucmconnectorpdsourcecaps) 将系统已播发的源功能报告给伙伴连接器。
+  * [**UcmConnectorPdConnectionStateChanged**](/windows-hardware/drivers/ddi/ucmmanager/nf-ucmmanager-ucmconnectorpdconnectionstatechanged) 报告当前协商的 PD 协定的连接功能。
 
 ## <a name="5-report-battery-charging-status"></a>5. 报告电池充电状态
 
 如果充电级别不充足，则客户端驱动程序可以通知 UCM 类扩展。 类扩展将此信息报告给操作系统。 系统使用该信息向用户通知显示充电器未以最佳方式向系统充电。 可以通过以下方法报告收费状态：
 
-* [**UcmConnectorChargingStateChanged**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ucmmanager/nf-ucmmanager-ucmconnectorchargingstatechanged)
-* [**UcmConnectorTypeCAttach**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ucmmanager/nf-ucmmanager-ucmconnectortypecattach)
-* [**UcmConnectorPdConnectionStateChanged**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ucmmanager/nf-ucmmanager-ucmconnectorpdconnectionstatechanged)
+* [**UcmConnectorChargingStateChanged**](/windows-hardware/drivers/ddi/ucmmanager/nf-ucmmanager-ucmconnectorchargingstatechanged)
+* [**UcmConnectorTypeCAttach**](/windows-hardware/drivers/ddi/ucmmanager/nf-ucmmanager-ucmconnectortypecattach)
+* [**UcmConnectorPdConnectionStateChanged**](/windows-hardware/drivers/ddi/ucmmanager/nf-ucmmanager-ucmconnectorpdconnectionstatechanged)
 
-这些方法指定充电状态。 如果报告的级别为 **UcmChargingStateSlowCharging** 或 **UcmChargingStateTrickleCharging** (参阅 [**UCM \_ 充电 \_ 状态**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ucmtypes/ne-ucmtypes-_ucm_charging_state)) ，操作系统将显示用户通知。
+这些方法指定充电状态。 如果报告的级别为 **UcmChargingStateSlowCharging** 或 **UcmChargingStateTrickleCharging** (参阅 [**UCM \_ 充电 \_ 状态**](/windows-hardware/drivers/ddi/ucmtypes/ne-ucmtypes-_ucm_charging_state)) ，操作系统将显示用户通知。
 
 ## <a name="6-report-pr_swapdr_swap-events"></a>6. 报告 PR \_ 交换/DR \_ 交换事件
 
 如果连接器接收到电源角色 (PR \_ 交换) 或数据角色 (DR \_ 交换) 从伙伴交换消息，则客户端驱动程序必须通知 UCM 类扩展。
 
-* [**UcmConnectorDataDirectionChanged**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ucmmanager/nf-ucmmanager-ucmconnectordatadirectionchanged)
+* [**UcmConnectorDataDirectionChanged**](/windows-hardware/drivers/ddi/ucmmanager/nf-ucmmanager-ucmconnectordatadirectionchanged)
 
   在处理 PD DR 交换消息后调用此方法 \_ 。 在此调用后，操作系统会将新角色报告给 URS，这会泪水现有角色驱动程序并为新角色加载驱动程序。
 
-* [**UcmConnectorPowerDirectionChanged**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ucmmanager/nf-ucmmanager-ucmconnectorpowerdirectionchanged)
+* [**UcmConnectorPowerDirectionChanged**](/windows-hardware/drivers/ddi/ucmmanager/nf-ucmmanager-ucmconnectorpowerdirectionchanged)
 
   处理 PD PR 交换消息后调用此方法 \_ 。 PR 交换后 \_ ，需要重新协商 PD 协定。 客户端驱动程序必须通过调用 [步骤 4](#4-report-the-new-negotiated-pd-contract)中所述的方法来报告 PD 协定协商。
 
 ## <a name="7-implement-callback-functions-to-handle-power-and-data-role-swap-requests"></a>7. 实现回调函数以处理电源和数据角色交换请求
 
-UCM 类扩展可能会收到更改连接器的数据或电源方向的请求。 在这种情况下，它会调用客户端驱动程序的 [* \_ UCM \_ 连接器 \_ 集 \_ 数据 \_ 角色*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ucmmanager/nc-ucmmanager-evt_ucm_connector_set_data_role) 和 [*.evt \_ UCM \_ 连接器 \_ 集 \_ 电源 \_ 角色*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ucmmanager/nc-ucmmanager-evt_ucm_connector_set_power_role) 回调函数的实现， (如果连接器实现了 PD) 。 客户端驱动程序以前在其对 [**UcmConnectorCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ucmmanager/nf-ucmmanager-ucmconnectorcreate)的调用中注册了这些函数。
+UCM 类扩展可能会收到更改连接器的数据或电源方向的请求。 在这种情况下，它会调用客户端驱动程序的 [* \_ UCM \_ 连接器 \_ 集 \_ 数据 \_ 角色*](/windows-hardware/drivers/ddi/ucmmanager/nc-ucmmanager-evt_ucm_connector_set_data_role) 和 [*.evt \_ UCM \_ 连接器 \_ 集 \_ 电源 \_ 角色*](/windows-hardware/drivers/ddi/ucmmanager/nc-ucmmanager-evt_ucm_connector_set_power_role) 回调函数的实现， (如果连接器实现了 PD) 。 客户端驱动程序以前在其对 [**UcmConnectorCreate**](/windows-hardware/drivers/ddi/ucmmanager/nf-ucmmanager-ucmconnectorcreate)的调用中注册了这些函数。
 
 客户端驱动程序使用硬件接口执行角色交换操作。
 
-* [*.EVT \_ UCM \_ 连接器 \_ 设置 \_ 数据 \_ 角色*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ucmmanager/nc-ucmmanager-evt_ucm_connector_set_data_role)
+* [*.EVT \_ UCM \_ 连接器 \_ 设置 \_ 数据 \_ 角色*](/windows-hardware/drivers/ddi/ucmmanager/nc-ucmmanager-evt_ucm_connector_set_data_role)
 
   在回调实现中，客户端驱动程序应：
 
   1. 向端口伙伴发送 PD DR \_ 交换消息。
-  2. 调用 [**UcmConnectorDataDirectionChanged**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ucmmanager/nf-ucmmanager-ucmconnectordatadirectionchanged) 以通知类扩展消息序列已成功完成或未成功完成。
+  2. 调用 [**UcmConnectorDataDirectionChanged**](/windows-hardware/drivers/ddi/ucmmanager/nf-ucmmanager-ucmconnectordatadirectionchanged) 以通知类扩展消息序列已成功完成或未成功完成。
 
     ```cpp
     EVT_UCM_CONNECTOR_SET_DATA_ROLE     EvtSetDataRole;  
@@ -324,12 +324,12 @@ UCM 类扩展可能会收到更改连接器的数据或电源方向的请求。 
     }  
     ```
 
-* [*.EVT \_ UCM \_ 连接器 \_ 设置 \_ 电源 \_ 角色*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ucmmanager/nc-ucmmanager-evt_ucm_connector_set_power_role)
+* [*.EVT \_ UCM \_ 连接器 \_ 设置 \_ 电源 \_ 角色*](/windows-hardware/drivers/ddi/ucmmanager/nc-ucmmanager-evt_ucm_connector_set_power_role)
 
     在回调实现中，客户端驱动程序应：
 
   1. 向端口伙伴发送一个 PD PR \_ 交换消息。
-  2. 调用 [**UcmConnectorPowerDirectionChanged**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ucmmanager/nf-ucmmanager-ucmconnectorpowerdirectionchanged) 以通知类扩展消息序列已成功完成或未成功完成。
+  2. 调用 [**UcmConnectorPowerDirectionChanged**](/windows-hardware/drivers/ddi/ucmmanager/nf-ucmmanager-ucmconnectorpowerdirectionchanged) 以通知类扩展消息序列已成功完成或未成功完成。
 
     ```cpp
     EVT_UCM_CONNECTOR_SET_POWER_ROLE     EvtSetPowerRole;  
@@ -355,24 +355,24 @@ UCM 类扩展可能会收到更改连接器的数据或电源方向的请求。 
     ```
 
 >[!NOTE]
->客户端驱动程序可以异步调用 [**UcmConnectorDataDirectionChanged**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ucmmanager/nf-ucmmanager-ucmconnectordatadirectionchanged) 和 [**UcmConnectorPowerDirectionChanged**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ucmmanager/nf-ucmmanager-ucmconnectorpowerdirectionchanged) ，而不是来自回调线程。 在典型实现中，类扩展调用回调函数，这会导致客户端驱动程序启动硬件事务来发送消息。 事务完成后，硬件将通知驱动程序。 驱动程序调用这些方法来通知类扩展。
+>客户端驱动程序可以异步调用 [**UcmConnectorDataDirectionChanged**](/windows-hardware/drivers/ddi/ucmmanager/nf-ucmmanager-ucmconnectordatadirectionchanged) 和 [**UcmConnectorPowerDirectionChanged**](/windows-hardware/drivers/ddi/ucmmanager/nf-ucmmanager-ucmconnectorpowerdirectionchanged) ，而不是来自回调线程。 在典型实现中，类扩展调用回调函数，这会导致客户端驱动程序启动硬件事务来发送消息。 事务完成后，硬件将通知驱动程序。 驱动程序调用这些方法来通知类扩展。
 
 ## <a name="8-report-the-partner-connector-detach-event"></a>8. 报告合作伙伴连接器分离事件
 
-当伙伴连接器的连接结束时，客户端驱动程序必须调用 [**UcmConnectorTypeCDetach**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ucmmanager/nf-ucmmanager-ucmconnectortypecdetach) 。 此调用会通知 UCM 类扩展，进而通知操作系统。
+当伙伴连接器的连接结束时，客户端驱动程序必须调用 [**UcmConnectorTypeCDetach**](/windows-hardware/drivers/ddi/ucmmanager/nf-ucmmanager-ucmconnectortypecdetach) 。 此调用会通知 UCM 类扩展，进而通知操作系统。
 
 ## <a name="use-case-example-mobile-device-connected-to-a-pc"></a>用例：连接到 PC 的移动设备
 
 当运行 Windows 10 移动版的设备通过 USB 类型 C 连接连接到运行 Windows 10 版桌面版的 PC 时，操作系统将确保移动设备是面向上游端口 (UFP) ，因为 MTP 仅在该方向上起作用。 在此方案中，数据角色更正的顺序如下：
 
-1. 在移动设备上运行的客户端驱动程序通过调用 [**UcmConnectorTypeCAttach**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ucmmanager/nf-ucmmanager-ucmconnectortypecattach) 报告附加事件，并将合作伙伴连接器报告为下游的端口 (UFP) 。
-2. 客户端驱动程序通过调用 [**UcmConnectorPdPartnerSourceCaps**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ucmmanager/nf-ucmmanager-ucmconnectorpdpartnersourcecaps) 和 [**UCMCONNECTORPDCONNECTIONSTATECHANGED**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ucmmanager/nf-ucmmanager-ucmconnectorpdconnectionstatechanged)来报告 PD 协定。
+1. 在移动设备上运行的客户端驱动程序通过调用 [**UcmConnectorTypeCAttach**](/windows-hardware/drivers/ddi/ucmmanager/nf-ucmmanager-ucmconnectortypecattach) 报告附加事件，并将合作伙伴连接器报告为下游的端口 (UFP) 。
+2. 客户端驱动程序通过调用 [**UcmConnectorPdPartnerSourceCaps**](/windows-hardware/drivers/ddi/ucmmanager/nf-ucmmanager-ucmconnectorpdpartnersourcecaps) 和 [**UCMCONNECTORPDCONNECTIONSTATECHANGED**](/windows-hardware/drivers/ddi/ucmmanager/nf-ucmmanager-ucmconnectorpdconnectionstatechanged)来报告 PD 协定。
 3. UCM 类扩展通知 USB 设备端驱动程序导致这些驱动程序响应来自主机的枚举。 操作系统信息通过 USB 进行交换。
-4. UCM 类扩展 UcmCx 调用客户端驱动程序的回调函数来更改角色： [*.Evt \_ UCM \_ 连接器 \_ 设置 \_ 数据 \_ 角色*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ucmmanager/nc-ucmmanager-evt_ucm_connector_set_data_role) 和 [*.evt \_ UCM \_ 连接器 \_ 集 \_ 电源 \_ 角色*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ucmmanager/nc-ucmmanager-evt_ucm_connector_set_power_role)。
+4. UCM 类扩展 UcmCx 调用客户端驱动程序的回调函数来更改角色： [*.Evt \_ UCM \_ 连接器 \_ 设置 \_ 数据 \_ 角色*](/windows-hardware/drivers/ddi/ucmmanager/nc-ucmmanager-evt_ucm_connector_set_data_role) 和 [*.evt \_ UCM \_ 连接器 \_ 集 \_ 电源 \_ 角色*](/windows-hardware/drivers/ddi/ucmmanager/nc-ucmmanager-evt_ucm_connector_set_power_role)。
 
 >[!NOTE]
 >如果两个 Windows 10 移动版设备相互连接，则不会执行角色交换，并且通知用户连接不是有效的连接。
 
 ## <a name="related-topics"></a>相关主题
 
-[为 USB 类型 C 连接器开发 Windows 驱动程序](developing-windows-drivers-for-usb-type-c-connectors.md)  
+[为 USB 类型 C 连接器开发 Windows 驱动程序](developing-windows-drivers-for-usb-type-c-connectors.md)

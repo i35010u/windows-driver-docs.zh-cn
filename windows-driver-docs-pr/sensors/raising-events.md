@@ -4,26 +4,26 @@ description: 引发传感器事件
 ms.assetid: a6e428f8-1613-4e8d-813d-5a54824dab82
 keywords:
 - 传感器事件
-- 事件处理程序
+- 事件处理程序 (event handler)
 - 数据更新事件
 - 传感器数据更新事件
 - 状态更改事件
 - 传感器状态更改事件
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2eec9a30bf3b174b4f6d6b5282418315047480b7
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: e95a9ab134581b310e48552a76c07511281cdb5e
+ms.sourcegitcommit: 937974aa9bbe0262a7ffe9631593fab48c4e7492
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72842526"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "90010139"
 ---
 # <a name="raising-sensor-events"></a>引发传感器事件
 
 
-有关传感器事件工作方式的详细信息，请参阅[关于传感器驱动程序事件](about-sensor-driver-events.md)。
+有关传感器事件工作方式的详细信息，请参阅 [关于传感器驱动程序事件](about-sensor-driver-events.md)。
 
-下面的代码示例演示一个类，该类引发数据更新和状态更改事件。 类命名为**CSensorManager**。
+下面的代码示例演示一个类，该类引发数据更新和状态更改事件。 类命名为 **CSensorManager**。
 
 ### <a name="member-variables"></a>成员变量
 
@@ -60,9 +60,9 @@ static const DWORD g_dwDefaultInterval = 1000; // one second
 
 ### <a name="lifetime-management"></a>生存期管理
 
-在第一个客户端订阅事件时，名为 CSensorDdi 的名为[ISensorDriver](https://docs.microsoft.com/windows-hardware/drivers/ddi/sensorsclassextension/nn-sensorsclassextension-isensordriver)的回调类创建 CSampleEvents 事件类的实例。 当客户端不再订阅事件时，回调类会销毁 CSampleEvents 实例。
+在第一个客户端订阅事件时，名为 CSensorDdi 的名为 [ISensorDriver](/windows-hardware/drivers/ddi/sensorsclassextension/nn-sensorsclassextension-isensordriver)的回调类创建 CSampleEvents 事件类的实例。 当客户端不再订阅事件时，回调类会销毁 CSampleEvents 实例。
 
-CSampleEvents 调用 CSensorDdi 以检索最新的数据，方法是使用类扩展所使用的相同方法，例如[**ISensorDriver：： OnGetDataFields**](https://docs.microsoft.com/windows-hardware/drivers/ddi/sensorsclassextension/nf-sensorsclassextension-isensordriver-ongetdatafields)。
+CSampleEvents 调用 CSensorDdi 以检索最新的数据，方法是使用类扩展所使用的相同方法，例如 [**ISensorDriver：： OnGetDataFields**](/windows-hardware/drivers/ddi/sensorsclassextension/nf-sensorsclassextension-isensordriver-ongetdatafields)。
 
 下面的代码示例包含 CSampleEvents 事件类的方法实现。
 
@@ -265,7 +265,4 @@ DWORD WINAPI CSampleEvents::_EventThreadProc(__in LPVOID pvData)
 ```
 
 ## <a name="related-topics"></a>相关主题
-[传感器地理位置驱动程序示例](https://docs.microsoft.com/windows-hardware/drivers/gnss/sensors-geolocation-driver-sample)
-
-
-
+[传感器地理位置驱动程序示例](../gnss/sensors-geolocation-driver-sample.md)

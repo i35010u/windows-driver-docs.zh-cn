@@ -4,12 +4,12 @@ description: 本主题提供有关如何使用用户模式驱动程序框架编�
 ms.assetid: FA888CB3-5B43-47CB-907D-76C6E6B6DE5D
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7174d89677eb5180a99768606f4d503c1c9a2b97
-ms.sourcegitcommit: d9a9925f790271f4ca2c8377d551d96e8d1e62c7
+ms.openlocfilehash: 42ceecf90bf9147abe89e722d881f827ed1d83c4
+ms.sourcegitcommit: 937974aa9bbe0262a7ffe9631593fab48c4e7492
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88850277"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "90010161"
 ---
 # <a name="write-and-deploy-your-universal-sensor-driver"></a>编写和部署通用传感器驱动程序
 
@@ -19,7 +19,7 @@ ms.locfileid: "88850277"
 ## <a name="write-a-generic-umdf-20-driver"></a>写入一般 UMDF 2.0 驱动程序
 
 
-若要构建通用的 UMDF 2.0 驱动程序，请参阅 [使用通用 Windows 驱动程序入门](https://docs.microsoft.com/windows-hardware/drivers/develop/getting-started-with-universal-drivers)，并按照使用用户模式驱动程序 [构建通用](https://docs.microsoft.com/windows-hardware/drivers/develop/building-a-universal-driver)WINDOWS 驱动程序 ** (UMDF V2) ** 模板中的步骤进行操作。
+若要构建通用的 UMDF 2.0 驱动程序，请参阅 [使用通用 Windows 驱动程序入门](../develop/getting-started-with-windows-drivers.md)，并按照使用用户模式驱动程序 [构建通用](https://docs.microsoft.com/windows-hardware/drivers/develop/building-a-universal-driver)WINDOWS 驱动程序 ** (UMDF V2) ** 模板中的步骤进行操作。
 
 ## <a name="customize-the-generic-umdf-20-driver-files"></a>自定义一般 UMDF 2.0 驱动程序文件
 
@@ -44,9 +44,4 @@ ms.locfileid: "88850277"
 -   [安装传感器驱动程序](install-the-sensor-driver.md)
 
  
-
- 
-
-
-
 

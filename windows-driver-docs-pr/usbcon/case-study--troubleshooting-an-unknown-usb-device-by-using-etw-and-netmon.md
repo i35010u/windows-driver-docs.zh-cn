@@ -3,12 +3,12 @@ description: 提供有关如何使用 USB ETW 和 Netmon 排查 Windows 无法�
 title: 案例研究-排查未知 USB 设备问题
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bab9c24ffce0fc30c06a69c829e66ac9bde956a6
-ms.sourcegitcommit: 15caaf6d943135efcaf9975927ff3933957acd5d
+ms.openlocfilehash: 3295772d94514d2b7b33de4900236e3de24095e9
+ms.sourcegitcommit: 937974aa9bbe0262a7ffe9631593fab48c4e7492
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88969002"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "90009919"
 ---
 # <a name="case-study-troubleshooting-an-unknown-usb-device-by-using-etw-and-netmon"></a>案例研究：使用 ETW 和 Netmon 排查未知 USB 设备的问题
 
@@ -97,7 +97,7 @@ USB 集线器驱动程序使用 **fid \_ USBHUB \_ 集线器** 结构来描述 U
 
 对于通过一个或多个附加 USB 集线器连接的 USB 设备，集线器端口号列表以根集线器端口开头，并继续以从根中心) 的距离 (的其他集线器继续。 忽略任何零。 例如：
 
-| 示例值|说明|
+| 示例值|描述|
 |----|----|
 |[0，0，0，0，0，0]|事件指的是 (计算机上的端口的根集线器，由 USB 主机控制器) 直接控制。|
 |[3，0，0，0，0，0]|事件是指插入到根集线器端口号3的集线器或设备。|
@@ -117,7 +117,7 @@ USB 集线器驱动程序使用 **fid \_ USBHUB \_ 集线器** 结构来描述 U
 
 USB 错误筛选器将事件列表缩小到仅符合下表中所示的条件的事件列表。
 
-|筛选文本|说明|
+|筛选文本|描述|
 |-----|----|
 | (USBPort_MicrosoftWindowsUSBUSBPORT 和 NetEvent = = 34) |具有 opcode 34 的 USB 端口事件是端口错误。|
 | (USBHub_MicrosoftWindowsUSBUSBHUB 和 NetEvent = = 11) |具有 opcode 11 的 USB 集线器事件是集线器错误。|
@@ -148,7 +148,7 @@ USB 错误事件和其他事件的数据中具有状态值，这些值提供有�
 |状态类型|资源|
 |----|----|
 |**fid_NtStatus**|请参阅 [NTSTATUS 值](https://go.microsoft.com/fwlink/p/?linkid=617532)。|
-|USB 请求块的 "状态" 字段 (URB) 或 **fid_UsbdStatus**|在 Windows 驱动程序工具包 (WDK) 的 inc\api\usb.h 中查找作为 USBD_STATUS 的值。 你还可以使用 [USBD \_ 状态](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff539136(v=vs.85))。 本主题列出了 USBD 状态值的符号名称和含义 \_ 。|
+|USB 请求块的 "状态" 字段 (URB) 或 **fid_UsbdStatus**|在 Windows 驱动程序工具包 (WDK) 的 inc\api\usb.h 中查找作为 USBD_STATUS 的值。 你还可以使用 [USBD \_ 状态](/previous-versions/windows/hardware/drivers/ff539136(v=vs.85))。 本主题列出了 USBD 状态值的符号名称和含义 \_ 。|
 
 ## <a name="reading-backwards-from-problem-events"></a>从问题事件中反向读取
 
@@ -198,4 +198,4 @@ USB 错误事件和其他事件的数据中具有状态值，这些值提供有�
 ## <a name="related-topics"></a>相关主题
 
 [使用 USB ETW](using-usb-etw.md)  
-[Windows 的 USB 事件跟踪](usb-event-tracing-for-windows.md)  
+[Windows 的 USB 事件跟踪](usb-event-tracing-for-windows.md)

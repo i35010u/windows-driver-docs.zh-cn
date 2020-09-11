@@ -3,12 +3,12 @@ description: 在本主题中，你将使用随 Microsoft Visual Studio Professio
 title: 如何编写第一个 USB 客户端驱动程序 (KMDF)
 ms.date: 06/07/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 8fb1b77546d2e8f62cca072280d1bb742b9b2220
-ms.sourcegitcommit: 7a7e61b4147a4aa86bf820fd0b0c7681fe17e544
+ms.openlocfilehash: f20a9898cb427483c354c190b5a41fed29480d59
+ms.sourcegitcommit: 937974aa9bbe0262a7ffe9631593fab48c4e7492
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89056947"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "90009809"
 ---
 # <a name="how-to-write-your-first-usb-client-driver-kmdf"></a>如何编写第一个 USB 客户端驱动程序 (KMDF)
 
@@ -29,10 +29,10 @@ ms.locfileid: "89056947"
 **软件要求**
 
 -   你的主计算机托管你的开发环境，并且具有 Visual Studio Professional 2019。
--   主计算机具有适用于 Windows 8 的最新 Windows 驱动程序工具包 (WDK) 。 工具包包括开发、生成和调试 KMDF 驱动程序所需的标头、库、工具、文档和调试工具。 若要获取最新版本的 WDK，请参阅 [下载 Windows 驱动程序工具包 (WDK) ](https://docs.microsoft.com/windows-hardware/drivers/download-the-wdk)。
--   您的主计算机具有适用于 Windows 的调试工具的最新版本。 可以从 WDK 获取最新版本，也可以 [下载和安装适用于 Windows 的调试工具](https://msdn.microsoft.com/windows/hardware/gg463009.aspx)。
+-   主计算机具有适用于 Windows 8 的最新 Windows 驱动程序工具包 (WDK) 。 工具包包括开发、生成和调试 KMDF 驱动程序所需的标头、库、工具、文档和调试工具。 若要获取最新版本的 WDK，请参阅 [下载 Windows 驱动程序工具包 (WDK) ](../download-the-wdk.md)。
+-   您的主计算机具有适用于 Windows 的调试工具的最新版本。 可以从 WDK 获取最新版本，也可以 [下载和安装适用于 Windows 的调试工具](../download-the-wdk.md)。
 -   你的目标计算机运行的是 Windows Vista 或更高版本的 Windows。
--   主机和目标计算机配置为进行内核调试。 有关详细信息，请参阅 [在 Visual Studio 中设置网络连接](https://docs.microsoft.com/windows-hardware/drivers/debugger/setting-up-a-network-debugging-connection-in-visual-studio)。
+-   主机和目标计算机配置为进行内核调试。 有关详细信息，请参阅 [在 Visual Studio 中设置网络连接](../debugger/setting-up-a-network-debugging-connection-in-visual-studio.md)。
 
 **硬件要求**
 
@@ -40,22 +40,22 @@ ms.locfileid: "89056947"
 
 如果你不熟悉 USB 驱动程序开发，请使用 OSR USB FX2 学习工具包来研究 WDK 附带的 USB 示例。 可以从 [OSR Online](https://www.osronline.com/)获取学习工具包。 它包含 USB FX2 设备以及实现客户端驱动程序所需的所有硬件规范。
 
-还可以 (MUTT) 设备获取 Microsoft USB 测试工具。 可以从 [JJG 技术](https://jjgtechnologies.com/mutt.md)购买 MUTT 硬件。 设备未安装安装的固件。 若要安装固件，请从 [该网站](https://msdn.microsoft.com/windows/hardware/jj590752) 下载 MUTT 软件包并运行 MUTTUtil.exe。 有关详细信息，请参阅包附带的文档。
+还可以 (MUTT) 设备获取 Microsoft USB 测试工具。 可以从 [JJG 技术](https://jjgtechnologies.com/mutt.md)购买 MUTT 硬件。 设备未安装安装的固件。 若要安装固件，请从 [该网站](./index.md) 下载 MUTT 软件包并运行 MUTTUtil.exe。 有关详细信息，请参阅包附带的文档。
 
 **建议阅读**
 
--   [适用于所有驱动程序开发人员的概念](https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/concepts-and-knowledge-for-all-driver-developers)
--   [设备节点和设备堆栈](https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/device-nodes-and-device-stacks)
--   [Windows 驱动程序入门](https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/index)
--   [内核模式驱动程序框架](https://docs.microsoft.com/windows-hardware/drivers/wdf/)
--   *使用 Windows Driver Foundation 开发驱动程序*，由 "Orwick" 和 "专家 Smith" 编写。 有关详细信息，请参阅 [通过 WDF 开发驱动程序](https://msdn.microsoft.com/windows/hardware/gg463318)。
+-   [适用于所有驱动程序开发人员的概念](../gettingstarted/concepts-and-knowledge-for-all-driver-developers.md)
+-   [设备节点和设备堆栈](../gettingstarted/device-nodes-and-device-stacks.md)
+-   [Windows 驱动程序入门](../gettingstarted/index.md)
+-   [内核模式驱动程序框架](../wdf/index.md)
+-   *使用 Windows Driver Foundation 开发驱动程序*，由 "Orwick" 和 "专家 Smith" 编写。 有关详细信息，请参阅 [通过 WDF 开发驱动程序](../wdf/developing-drivers-with-wdf.md)。
 
 <a name="instructions"></a>Instructions
 ------------
 
 ### <a name="step-1-generate-the-kmdf-driver-code-by-using-the-visual-studio-professional2019-usb-driver-template"></a><a href="" id="generate-the-kmdf-driver-code-by-using-the--visual-studio-professional-2019---usb-driver-template"></a>步骤1：使用 Visual Studio Professional 2019 USB 驱动程序模板生成 KMDF 驱动程序代码
 
-有关生成 KMDF 驱动程序代码的说明，请参阅 [基于模板编写 KMDF 驱动程序](https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/writing-a-kmdf-driver-based-on-a-template)中的步骤。
+有关生成 KMDF 驱动程序代码的说明，请参阅 [基于模板编写 KMDF 驱动程序](../gettingstarted/writing-a-kmdf-driver-based-on-a-template.md)中的步骤。
 
 **对于 USB 特定的代码，请在 Visual Studio Professional 2019 中选择以下选项**
 
@@ -72,7 +72,7 @@ ms.locfileid: "89056947"
 
 本主题假定 Visual Studio 项目的名称为 "MyUSBDriver \_ "。 它包含以下文件：
 
-| 文件                      | 说明                                                                                                          |
+| 文件                      | 描述                                                                                                          |
 |----------------------------|----------------------------------------------------------------------------------------------------------------------|
 | 公有。h                   | 提供客户端驱动程序和与 USB 设备通信的用户应用程序共享的常见声明。 |
 | * &lt; 项目名称 &gt; *.inf | 包含在目标计算机上安装客户端驱动程序所需的信息。                                   |
@@ -153,9 +153,9 @@ ms.locfileid: "89056947"
 
 **将目标计算机配置为进行 WPP 跟踪**
 
-1. 请确保目标计算机上已有 Tracelog 工具。 该工具位于 WDK 的 " <em> &lt; 安装 \_ " &gt; 文件夹</em>"Windows \\ \\ \\ * &lt; &gt; *工具包8.0 工具"。 有关详细信息，请参阅 [**Tracelog 命令语法**](https://docs.microsoft.com/windows-hardware/drivers/devtest/tracelog-command-syntax)。
+1. 请确保目标计算机上已有 Tracelog 工具。 该工具位于 WDK 的 " <em> &lt; 安装 \_ " &gt; 文件夹</em>"Windows \\ \\ \\ * &lt; &gt; *工具包8.0 工具"。 有关详细信息，请参阅 [**Tracelog 命令语法**](../devtest/tracelog-command-syntax.md)。
 2. 打开 **命令窗口** 并以管理员身份运行。
-3. 键入下列命令：
+3. 键入以下命令：
 
    **tracelog-start MyTrace \# c918ee71-68c7-4140-8f7d-c907abbcb05d-旗 0xffff-level 7-**
 
@@ -183,11 +183,11 @@ ms.locfileid: "89056947"
 
  
 
-有关将驱动程序部署到 Visual Studio Professional 2019 的目标系统的详细信息，请参阅将 [驱动程序部署到测试计算机](https://docs.microsoft.com/windows-hardware/drivers)。
+有关将驱动程序部署到 Visual Studio Professional 2019 的目标系统的详细信息，请参阅将 [驱动程序部署到测试计算机](/windows-hardware/drivers)。
 
 你还可以使用设备管理器在目标计算机上手动安装驱动程序。 如果要从命令提示符安装驱动程序，可以使用以下实用程序：
 
--   [PnPUtil](https://docs.microsoft.com/windows-hardware/drivers/devtest/pnputil)
+-   [PnPUtil](../devtest/pnputil.md)
 
     此工具随 Windows 一起提供。 它在 Windows \\ System32 中。 您可以使用此实用工具将驱动程序添加到驱动程序存储区中。
 
@@ -200,9 +200,9 @@ ms.locfileid: "89056947"
     Published name : oem22.inf
     ```
 
-    有关详细信息，请参阅 [PnPUtil 示例](https://docs.microsoft.com/windows-hardware/drivers/devtest/pnputil-examples)。
+    有关详细信息，请参阅 [PnPUtil 示例](../devtest/pnputil-examples.md)。
 
--   [**DevCon Update**](https://docs.microsoft.com/windows-hardware/drivers/devtest/devcon-update)
+-   [**DevCon Update**](../devtest/devcon-update.md)
 
     此工具随 WDK 一起提供。 你可以使用它来安装和更新驱动程序。
 

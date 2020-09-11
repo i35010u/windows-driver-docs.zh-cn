@@ -3,12 +3,12 @@ description: 本主题提供有关适用于通用串行总线 (USB) 的跟踪和
 title: Windows 的 USB 事件跟踪的概述
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5c31bec02de9157fe75315132d8bac8253d39c63
-ms.sourcegitcommit: 15caaf6d943135efcaf9975927ff3933957acd5d
+ms.openlocfilehash: f066c365c215592f17c03efa2ce41f029dd71513
+ms.sourcegitcommit: 937974aa9bbe0262a7ffe9631593fab48c4e7492
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88969234"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "90010039"
 ---
 # <a name="overview-of-usb-event-tracing-for-windows"></a>Windows 的 USB 事件跟踪的概述
 
@@ -31,7 +31,7 @@ ETW 是在 Windows 2000 中引入的。 自那时起，各种核心操作系统�
 
 ETW 对于 Windows Vista 和 Windows 7 进行了重大升级。 最重要的新功能之一是统一事件提供程序模型和 Api。 简而言之，新的统一 Api 将日志记录跟踪和写入事件查看器合并为事件提供程序的一个一致、易用的机制。 同时，为 ETW 增加了几项新功能，以改善开发人员和最终用户体验。
 
-有关 ETW 和 WPP 的详细信息，请参阅 [Windows (etw) 的 ](https://docs.microsoft.com/windows-hardware/drivers/devtest/event-tracing-for-windows--etw-)事件跟踪和事件跟踪。
+有关 ETW 和 WPP 的详细信息，请参阅 [Windows (etw) 的 ](../devtest/event-tracing-for-windows--etw-.md)事件跟踪和事件跟踪。
 
 ## <a name="usb-support-for-etw-logging"></a>支持 ETW 日志记录的 USB
 
@@ -85,7 +85,7 @@ Windows 8 提供了 USB 驱动程序堆栈以支持 USB 3.0 设备。 Microsoft 
 <thead>
 <tr class="header">
 <th>主题</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>
@@ -120,7 +120,4 @@ Windows 8 提供了 USB 驱动程序堆栈以支持 USB 3.0 设备。 Microsoft 
 
 ## <a name="related-topics"></a>相关主题
 [使用 USB ETW](using-usb-etw.md)  
-[Windows 的 USB 事件跟踪](usb-event-tracing-for-windows.md)  
-
-
-
+[Windows 的 USB 事件跟踪](usb-event-tracing-for-windows.md)

@@ -3,12 +3,12 @@ description: 在本主题中，你将了解如何在 Windows 8 中识别 WinUSB 
 title: WinUSB 设备
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 85b88dbb300b2361b7c69bf1bd2052ba3446c8a9
-ms.sourcegitcommit: 15caaf6d943135efcaf9975927ff3933957acd5d
+ms.openlocfilehash: 0311f9508d62f2a256f52153d12e58247e73b320
+ms.sourcegitcommit: 937974aa9bbe0262a7ffe9631593fab48c4e7492
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88969020"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "90010041"
 ---
 # <a name="winusb-device"></a>WinUSB 设备
 
@@ -149,7 +149,7 @@ Microsoft 不提供内置驱动程序的设备可以使用 "USBDevice" 安装程
 
  
 
-在设备枚举过程中，USB 驱动程序堆栈会从扩展属性 OS 功能描述符检索 **DeviceInterfaceGUID** 值，并在设备的硬件密钥中注册设备。 应用程序可以使用 **SetupDiXxx** api 检索该值 (参阅 [**SetupDiOpenDevRegKey**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdiopendevregkey)) 。 有关详细信息，请参阅 [如何使用 WinUSB 功能访问 USB 设备](using-winusb-api-to-communicate-with-a-usb-device.md)。
+在设备枚举过程中，USB 驱动程序堆栈会从扩展属性 OS 功能描述符检索 **DeviceInterfaceGUID** 值，并在设备的硬件密钥中注册设备。 应用程序可以使用 **SetupDiXxx** api 检索该值 (参阅 [**SetupDiOpenDevRegKey**](/windows/desktop/api/setupapi/nf-setupapi-setupdiopendevregkey)) 。 有关详细信息，请参阅 [如何使用 WinUSB 功能访问 USB 设备](using-winusb-api-to-communicate-with-a-usb-device.md)。
 
 **启用或禁用 WinUSB 电源管理功能**
 
@@ -182,7 +182,4 @@ Microsoft 不提供内置驱动程序的设备可以使用 "USBDevice" 安装程
 有关其他示例，请参阅 [MICROSOFT OS 描述符](microsoft-defined-usb-descriptors.md)上的规范。
 
 ## <a name="related-topics"></a>相关主题
-[Microsoft 定义的 USB 描述符](microsoft-defined-usb-descriptors.md)  
-
-
-
+[Microsoft 定义的 USB 描述符](microsoft-defined-usb-descriptors.md)

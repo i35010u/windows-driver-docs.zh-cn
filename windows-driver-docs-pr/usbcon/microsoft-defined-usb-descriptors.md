@@ -3,20 +3,20 @@ description: Microsoft 提供了一组专用设备类和 USB 描述符，它们�
 title: 针对 USB 设备的 Microsoft OS 描述符
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9ed9af9e068122b243d34d28e86b55b47105677f
-ms.sourcegitcommit: 15caaf6d943135efcaf9975927ff3933957acd5d
+ms.openlocfilehash: 3398892651089a1b4f41eeea8e27b6a59ba5973e
+ms.sourcegitcommit: 937974aa9bbe0262a7ffe9631593fab48c4e7492
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88969324"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "90009861"
 ---
 # <a name="microsoft-os-descriptors-for-usb-devices"></a>针对 USB 设备的 Microsoft OS 描述符
 
 
 **摘要**
 
--   [Microsoft OS 1.0 描述符规范](https://docs.microsoft.com/windows-hardware/drivers/usbcon/microsoft-os-1-0-descriptors-specification)
--   [Microsoft OS 2.0 描述符规范](https://docs.microsoft.com/windows-hardware/drivers/usbcon/microsoft-os-2-0-descriptors-specification)
+-   [Microsoft OS 1.0 描述符规范](./microsoft-os-1-0-descriptors-specification.md)
+-   [Microsoft OS 2.0 描述符规范](./microsoft-os-2-0-descriptors-specification.md)
 
 Microsoft 提供了一组专用设备类和 USB 描述符，它们被称为 Microsoft OS 描述符 (MODs) 。
 
@@ -70,7 +70,7 @@ Microsoft OS 描述符除了支持专用设备类之外，还有重要的使用�
 
 有关该注册表项下的注册表项，请参阅 [USB 设备注册表项](usb-device-specific-registry-settings.md)。
 
-有关其他信息，请参阅 [MICROSOFT OS 描述符](https://docs.microsoft.com/windows-hardware/drivers/usbcon/microsoft-os-1-0-descriptors-specification)。
+有关其他信息，请参阅 [MICROSOFT OS 描述符](./microsoft-os-1-0-descriptors-specification.md)。
 
 ## <a name="what-types-of-os-feature-descriptors-are-supported-by-windows"></a>Windows 支持哪种类型的操作系统功能描述符？
 
@@ -81,9 +81,6 @@ Microsoft OS 描述符除了支持专用设备类之外，还有重要的使用�
 -   **扩展属性**。 目前，可以在两个级别为 USB 设备声明属性：类级别或 devnode 级别。 扩展属性 OS 功能描述符允许供应商存储设备固件中的其他属性（如帮助页、Url 和图标）。
 
 ## <a name="related-topics"></a>相关主题
-[Microsoft OS 1.0 描述符规范](https://docs.microsoft.com/windows-hardware/drivers/usbcon/microsoft-os-1-0-descriptors-specification)  
-[Microsoft OS 2.0 描述符规范](https://docs.microsoft.com/windows-hardware/drivers/usbcon/microsoft-os-2-0-descriptors-specification)  
-[为 Windows 构建 USB 设备](building-usb-devices-for-windows.md)  
-
-
-
+[Microsoft OS 1.0 描述符规范](./microsoft-os-1-0-descriptors-specification.md)  
+[Microsoft OS 2.0 描述符规范](./microsoft-os-2-0-descriptors-specification.md)  
+[为 Windows 构建 USB 设备](building-usb-devices-for-windows.md)

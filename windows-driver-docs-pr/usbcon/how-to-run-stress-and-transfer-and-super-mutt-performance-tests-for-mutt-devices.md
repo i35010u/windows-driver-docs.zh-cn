@@ -3,12 +3,12 @@ description: 如何运行压力与传输以及超级 MUTT 性能测试。
 title: 如何对 MUTT 设备运行压力和传输性能测试
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 19bc0818dc0901cdc712b83d1d7ad4899864a556
-ms.sourcegitcommit: 15caaf6d943135efcaf9975927ff3933957acd5d
+ms.openlocfilehash: e4333f77e94c39c367919ac2f5047bfcaf999674
+ms.sourcegitcommit: 937974aa9bbe0262a7ffe9631593fab48c4e7492
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88969516"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "90009951"
 ---
 # <a name="how-to-run-stress-and-transfer-performance-tests-for-mutt-devices"></a>如何对 MUTT 设备运行压力和传输性能测试
 
@@ -38,8 +38,5 @@ ms.locfileid: "88969516"
 3.  运行名为 **FX3Perf.bat** 的脚本以启动测试运行。
 
 ## <a name="related-topics"></a>相关主题
-[USB](https://docs.microsoft.com/windows-hardware/drivers/)  
-[Microsoft USB 测试工具 (MUTT) 设备](microsoft-usb-test-tool--mutt--devices.md)  
-
-
-
+[USB](../index.yml)  
+[Microsoft USB 测试工具 (MUTT) 设备](microsoft-usb-test-tool--mutt--devices.md)

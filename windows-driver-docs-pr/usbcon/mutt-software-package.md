@@ -3,19 +3,19 @@ description: MUTT 软件包包含多个工具，可用于 MUTT 设备。 工具�
 title: MUTT 软件包中的工具
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c7c495ce84967caac0278a124c3de939c9e38a18
-ms.sourcegitcommit: 15caaf6d943135efcaf9975927ff3933957acd5d
+ms.openlocfilehash: 0d1f9d882de7d73b8f28c261f0b58ddcc2991a47
+ms.sourcegitcommit: 937974aa9bbe0262a7ffe9631593fab48c4e7492
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88969322"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "90010257"
 ---
 # <a name="tools-in-the-mutt-software-package"></a>MUTT 软件包中的工具
 
 
 **上次更新时间：**
 
--   2019年2月
+-   2020 年 8 月
 
 **适用于：**
 
@@ -30,13 +30,17 @@ MUTT 软件包包含多个工具，可用于 [MUTT 设备](microsoft-usb-test-to
 
 Microsoft USB 测试工具 (MUTT) 软件包包含用于硬件测试工程师的测试工具，用于通过 Microsoft USB 驱动程序堆栈测试其 USB 控制器或集线器的互操作性。 随附的文档简要概述了不同类型的 MUTT 硬件，并为控制器、集线器、设备和 BIOS/UEFI 测试建议了拓扑。 该文档还包含有关如何运行测试、跟踪 USB 驱动程序堆栈中的事件以及在内核调试器中捕获信息的过程信息。
 
-文件名： mutt2_94.msi
+文件名： mutt2_95.msi
 
-9.3 MB
+9.4 MB
 
 [![下载 mutt 软件包](images/download.png)](https://go.microsoft.com/fwlink/p/?LinkId=786621)
 
 ## <a name="version-updates"></a>版本更新
+
+版本2.9.5 的更改
+
+- 更新 USB 类型-C SuperMUTT 固件 (v55) 
 
 版本2.9.4 的更改
 
@@ -94,8 +98,8 @@ Microsoft USB 测试工具 (MUTT) 软件包包含用于硬件测试工程师的�
 <thead>
 <tr class="header">
 <th>测试工具</th>
-<th>说明</th>
-<th>文件名</th>
+<th>描述</th>
+<th>Filename</th>
 </tr>
 </thead>
 <tbody>
@@ -163,8 +167,5 @@ Microsoft USB 测试工具 (MUTT) 软件包包含用于硬件测试工程师的�
  
 
 ## <a name="related-topics"></a>相关主题
-[USB](https://docs.microsoft.com/windows-hardware/drivers/)  
-[Microsoft USB 测试工具 (MUTT) 设备](microsoft-usb-test-tool--mutt--devices.md)  
-
-
-
+[USB](../index.yml)  
+[Microsoft USB 测试工具 (MUTT) 设备](microsoft-usb-test-tool--mutt--devices.md)

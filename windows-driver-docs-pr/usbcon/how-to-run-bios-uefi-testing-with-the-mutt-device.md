@@ -3,12 +3,12 @@ description: BIOS/UEFI 测试可验证控制器到操作系统的 USB 启动和�
 title: 对 MUTT 设备进行 BIOS/UEFI 测试
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 363fdb780ff08bb2aadbd54fae24604403ae2959
-ms.sourcegitcommit: 15caaf6d943135efcaf9975927ff3933957acd5d
+ms.openlocfilehash: 8fddcfc59e97ef8c863ab68216cf285e8b85820c
+ms.sourcegitcommit: 937974aa9bbe0262a7ffe9631593fab48c4e7492
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88968982"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "90009977"
 ---
 # <a name="biosuefi-testing-with-the-mutt-devices"></a>对 MUTT 设备进行 BIOS/UEFI 测试
 
@@ -49,8 +49,5 @@ BIOS/UEFI 测试可验证控制器到操作系统的 USB 启动和切换。
 此方案的预期结果是，在启动到操作系统并运行标准 MUTT 测试后，SuperMUTT Pack 和 MUTT Pack 都可以正常工作，并可正常运行。 验证测试设备后，系统应在每个系统恢复后 (S3、S4) 执行每个受支持的系统电源状态，并验证 MUTT 测试设备是否仍然正常工作。 每次恢复事件后运行 MUTT 测试。
 
 ## <a name="related-topics"></a>相关主题
-[USB](https://docs.microsoft.com/windows-hardware/drivers/)  
-[Microsoft USB 测试工具 (MUTT) 设备](microsoft-usb-test-tool--mutt--devices.md)  
-
-
-
+[USB](../index.yml)  
+[Microsoft USB 测试工具 (MUTT) 设备](microsoft-usb-test-tool--mutt--devices.md)

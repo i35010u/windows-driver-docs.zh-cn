@@ -3,12 +3,12 @@ description: 本主题介绍使用 Windows Usb 命名空间的 Windows 应用程
 title: 如何将 USB 设备功能添加到应用部件清单
 ms.date: 01/07/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 3ff01f3619976ed2c475cce0b27adc5e2a0f77dc
-ms.sourcegitcommit: 15caaf6d943135efcaf9975927ff3933957acd5d
+ms.openlocfilehash: d4ac43092a985723e57e0f853efb3040be9d65b6
+ms.sourcegitcommit: 937974aa9bbe0262a7ffe9631593fab48c4e7492
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88968768"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "90010439"
 ---
 # <a name="how-to-add-usb-device-capabilities-to-the-app-manifest"></a>如何将 USB 设备功能添加到应用部件清单
 
@@ -18,14 +18,14 @@ ms.locfileid: "88968768"
 -   必须用 USB 设备功能更新 appxmanifest.xml。
 -   设备类必须是受支持的类之一。
 
-本主题介绍使用 [**Windows Usb**](https://docs.microsoft.com/uwp/api/Windows.Devices.Usb) 命名空间的 windows 应用程序所需的设备功能。
+本主题介绍使用 [**Windows Usb**](/uwp/api/Windows.Devices.Usb) 命名空间的 windows 应用程序所需的设备功能。
 
 ## <a name="usb-device-capability-usage"></a>USB 设备功能使用情况
 
 
-USB 应用必须在其 [应用程序包清单](https://docs.microsoft.com/uwp/schemas/appxpackage/appx-package-manifest) 中包含某些设备功能，以指定有关设备的关键信息。 下面是按层次顺序排列的必需元素：
+USB 应用必须在其 [应用程序包清单](/uwp/schemas/appxpackage/appx-package-manifest) 中包含某些设备功能，以指定有关设备的关键信息。 下面是按层次顺序排列的必需元素：
 
-[** &lt; DeviceCapability &gt; **](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-devicecapability)： **Name**属性必须是 "usb"。
+[** &lt; DeviceCapability &gt; **](/uwp/schemas/appxpackage/appxmanifestschema/element-devicecapability)： **Name**属性必须是 "usb"。
 
 ** &lt; 设备 &gt; **： **Id**属性必须指定供应商/产品 Id 或 "任何"，以允许访问与该函数类型匹配的任何设备。
 
@@ -96,7 +96,7 @@ USB 应用必须在其 [应用程序包清单](https://docs.microsoft.com/uwp/sc
 <thead>
 <tr class="header">
 <th>示例</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>
@@ -161,7 +161,4 @@ USB 应用必须在其 [应用程序包清单](https://docs.microsoft.com/uwp/sc
 ```
 
 ## <a name="related-topics"></a>相关主题
-[USB 设备的 UWP 应用](writing-usb-device-companion-apps-for-microsoft-store.md)  
-
-
-
+[USB 设备的 UWP 应用](writing-usb-device-companion-apps-for-microsoft-store.md)

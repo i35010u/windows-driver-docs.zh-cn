@@ -9,12 +9,12 @@ keywords:
 - 远程蓝牙 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8668dc295be7ea1470fc9da78d5e3176dce9986d
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: fc0ec696366fb6af260204ecb4ca17c232201384
+ms.sourcegitcommit: 937974aa9bbe0262a7ffe9631593fab48c4e7492
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72832137"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "90010565"
 ---
 # <a name="bluetooth-ioctls"></a>蓝牙 IOCTL
 
@@ -25,25 +25,19 @@ ms.locfileid: "72832137"
 
 -   远程蓝牙设备。
 
--   导致即插即用（PnP）管理器加载配置文件驱动程序的设备。
+-   导致即插即用 (PnP) 管理器加载配置文件驱动程序的设备。
 
-若要收集有关本地蓝牙收音机和 system 的信息，配置文件驱动程序使用[**IOCTL\_BTH\_获取\_本地\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/bthioctl/ni-bthioctl-ioctl_bth_get_local_info)。 IOCTL 返回后，其**AssociatedIrp SystemBuffer**成员包含指向[**BTH\_本地\_收音机\_INFO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/bthioctl/ns-bthioctl-_bth_local_radio_info)结构的指针，其中包含有关本地蓝牙无线电和系统的信息，包括指示是否可以发现本地收音机并连接到。 返回的 BTH\_本地\_收音机\_信息结构包含一个[BTH\_设备\_info](https://go.microsoft.com/fwlink/p/?linkid=50713)结构，其中包含系统特定的信息，以及一个[**BTH\_收音机\_info**](https://docs.microsoft.com/windows-hardware/drivers/ddi/bthioctl/ns-bthioctl-_bth_radio_info)结构，这种结构包含特定于广播的本地信息。
+若要收集有关本地蓝牙收音机和 system 的信息，配置文件驱动程序使用 [**IOCTL \_ BTH \_ 获取 \_ 本地 \_ 信息**](/windows-hardware/drivers/ddi/bthioctl/ni-bthioctl-ioctl_bth_get_local_info)。 IOCTL 返回后，其 **AssociatedIrp.Sys的 temBuffer** 成员包含一个指向 [**BTH \_ 本地 \_ 无线电 \_ 信息**](/windows-hardware/drivers/ddi/bthioctl/ns-bthioctl-_bth_local_radio_info) 结构的指针，该结构包含有关本地蓝牙无线电和系统的信息，其中包括指示是否可以发现本地收音机并连接到的标志。 返回的 BTH \_ 本地 \_ 无线电 \_ 信息结构包含一个 [BTH \_ 设备 \_ 信息](https://go.microsoft.com/fwlink/p/?linkid=50713) 结构，该结构包含系统特定的信息，以及一个 [**BTH \_ 无线 \_ 信息**](/windows-hardware/drivers/ddi/bthioctl/ns-bthioctl-_bth_radio_info) 结构，其中包含特定于无线电的特定信息。
 
-若要收集有关特定远程蓝牙设备的信息，配置文件驱动程序使用[**IOCTL\_BTH\_获取\_无线电\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/bthioctl/ni-bthioctl-ioctl_bth_get_radio_info)。 IOCTL 返回后，其**AssociatedIrp**将包含一个指向 BTH\_收音机\_INFO 结构的指针，该指针提供有关特定远程收音机的信息，包括是否可以发现远程收音机和连接到。
+若要收集有关特定远程蓝牙设备的信息，配置文件驱动程序将使用 [**IOCTL \_ BTH \_ 获取 \_ 无线电 \_ 信息**](/windows-hardware/drivers/ddi/bthioctl/ni-bthioctl-ioctl_bth_get_radio_info)。 IOCTL 返回后，其 **AssociatedIrp.Sys的 temBuffer** 成员包含一个指向 BTH 广播信息结构的指针， \_ \_ 该结构提供有关特定远程收音机的信息，包括是否可以发现远程收音机并连接到。
 
-若要收集有关已发现的所有远程无线电的信息，配置文件驱动程序使用[**IOCTL\_BTH\_获取\_设备\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/bthioctl/ni-bthioctl-ioctl_bth_get_device_info)。 IOCTL 返回后，它的**AssociatedIrp SystemBuffer**成员包含指向[**BTH\_设备的指针\_信息\_列表**](https://docs.microsoft.com/windows-hardware/drivers/ddi/bthioctl/ns-bthioctl-_bth_device_info_list)结构，该结构包含 BTH\_设备\_INFO 结构的数组。 对于每个发现的远程广播，BTH\_设备\_信息\_列表结构包含一个数组项。 用户模式[BluetoothGetDeviceInfo](https://go.microsoft.com/fwlink/p/?linkid=74493) API 使用此功能返回有关所有远程无线电收发器的信息。
+若要收集有关已发现的所有远程无线电的信息，配置文件驱动程序将使用 [**IOCTL \_ BTH \_ 获取 \_ 设备 \_ 信息**](/windows-hardware/drivers/ddi/bthioctl/ni-bthioctl-ioctl_bth_get_device_info)。 IOCTL 返回后，其 **AssociatedIrp.Sys的 temBuffer** 成员包含指向 [**BTH \_ 设备 \_ 信息 \_ 列表**](/windows-hardware/drivers/ddi/bthioctl/ns-bthioctl-_bth_device_info_list) 结构的指针，该结构包含 BTH \_ 设备 \_ 信息结构的数组。 BTH \_ 设备 \_ 信息 \_ 列表结构包含每个发现的远程广播的一个数组项。 用户模式 [BluetoothGetDeviceInfo](https://go.microsoft.com/fwlink/p/?linkid=74493) API 使用此功能返回有关所有远程无线电收发器的信息。
 
-若要收集导致 PnP 管理器加载它的远程设备的相关信息，配置文件驱动程序使用[**IOCTL\_内部\_BTHENUM\_获取\_lnk-devinfo**](https://docs.microsoft.com/windows-hardware/drivers/ddi/bthioctl/ni-bthioctl-ioctl_internal_bthenum_get_devinfo)。 IOCTL 返回后，其**AssociatedIrp**将包含一个指向 BTH\_设备的指针\_INFO 结构，其中包含有关远程设备的信息，包括其蓝牙设备地址、设备状态以及设备类（货货）设置。
+若要收集导致 PnP 管理器加载它的远程设备的相关信息，配置文件驱动程序使用 [**IOCTL \_ INTERNAL \_ BTHENUM \_ GET \_ lnk-devinfo**](/windows-hardware/drivers/ddi/bthioctl/ni-bthioctl-ioctl_internal_bthenum_get_devinfo)。 IOCTL 返回后，其 **AssociatedIrp.Sys的 temBuffer** 成员包含一个指向 BTH \_ 设备 \_ 信息结构的指针，该结构包含有关远程设备的信息，其中包括该远程设备的蓝牙设备地址、设备状态以及设备 (货到) 设置。
 
-配置文件驱动程序使用[**IOCTL\_内部\_BTHENUM\_获取\_ENUMINFO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/bthioctl/ni-bthioctl-ioctl_internal_bthenum_get_enuminfo) ，以获取导致 PnP 管理器加载配置文件驱动程序的底层设备和服务的相关信息。 IOCTL 返回后，其**AssociatedIrp**将包含一个指向[**BTH\_枚举器的指针\_INFO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/bthddi/ns-bthddi-_bth_enumerator_info)结构，其中包含供应商提供的有关设备的信息，包括端口号、设备标志、供应商 ID 和产品 ID。
+配置文件驱动程序使用 [**IOCTL \_ INTERNAL \_ BTHENUM \_ GET \_ ENUMINFO**](/windows-hardware/drivers/ddi/bthioctl/ni-bthioctl-ioctl_internal_bthenum_get_enuminfo) 获取有关导致 PnP 管理器加载配置文件驱动程序的底层设备和服务的信息。 IOCTL 返回后，其 **AssociatedIrp.Sys的 temBuffer** 成员包含指向 [**BTH \_ 枚举器 \_ 信息**](/windows-hardware/drivers/ddi/bthddi/ns-bthddi-_bth_enumerator_info) 结构的指针，该结构包含有关设备的供应商提供的信息，其中包括端口号、设备标志、供应商 id 和产品 ID。
 
-有关使用蓝牙 IOCTLs 和 BRBs 的详细信息，请参阅[生成和发送 BRB](building-and-sending-a-brb.md)。
-
- 
+有关使用蓝牙 IOCTLs 和 BRBs 的详细信息，请参阅 [生成和发送 BRB](building-and-sending-a-brb.md)。
 
  
-
-
-
-
 

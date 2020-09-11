@@ -3,12 +3,12 @@ description: 本主题概述了通用串行总线 (USB) 驱动程序堆栈体系
 title: Windows 中的 USB 宿主端驱动程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a6fe32c43cceea80dd4b639e2d87c89b6db51369
-ms.sourcegitcommit: 15caaf6d943135efcaf9975927ff3933957acd5d
+ms.openlocfilehash: 9e318ba7e57bae782f7964bce7ab9f12f8745fd3
+ms.sourcegitcommit: 937974aa9bbe0262a7ffe9631593fab48c4e7492
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88968762"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "90010443"
 ---
 # <a name="usb-host-side-drivers-in-windows"></a>Windows 中的 USB 宿主端驱动程序
 
@@ -121,11 +121,8 @@ Microsoft 提供了以下帮助程序库，用于帮助内核模式驱动程序�
 
 -   Winusb.dll
 
-    Winusb.dll 是一种用户模式 DLL，该 DLL 公开用于与 Winusb.sys 通信的 [WinUSB 函数](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff540046(v=vs.85)#winusb) ，该函数作为内核模式下的设备功能驱动程序加载。 应用程序使用这些功能来配置设备、检索有关设备的信息以及执行 i/o 操作。 有关使用这些功能的信息，请参阅 [如何使用 WinUSB 功能访问 USB 设备](using-winusb-api-to-communicate-with-a-usb-device.md)。
+    Winusb.dll 是一种用户模式 DLL，该 DLL 公开用于与 Winusb.sys 通信的 [WinUSB 函数](/previous-versions/windows/hardware/drivers/ff540046(v=vs.85)#winusb) ，该函数作为内核模式下的设备功能驱动程序加载。 应用程序使用这些功能来配置设备、检索有关设备的信息以及执行 i/o 操作。 有关使用这些功能的信息，请参阅 [如何使用 WinUSB 功能访问 USB 设备](using-winusb-api-to-communicate-with-a-usb-device.md)。
 
 ## <a name="related-topics"></a>相关主题
-[ (USB) 驱动程序的通用串行总线](https://docs.microsoft.com/windows-hardware/drivers/)  
-[USB 驱动程序开发指南](usb-driver-development-guide.md)  
-
-
-
+[ (USB) 驱动程序的通用串行总线](../index.yml)  
+[USB 驱动程序开发指南](usb-driver-development-guide.md)

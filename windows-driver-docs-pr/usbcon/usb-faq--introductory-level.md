@@ -3,12 +3,12 @@ description: 本主题为驱动程序开发人员提供了一些常见问题，�
 title: Windows 中的 USB - 常见问题解答
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f7dda29a6cca6db8751a531036a72a71c545bf7b
-ms.sourcegitcommit: 7a7e61b4147a4aa86bf820fd0b0c7681fe17e544
+ms.openlocfilehash: 35a44d48f5681d1e607b722d031c905993825786
+ms.sourcegitcommit: 937974aa9bbe0262a7ffe9631593fab48c4e7492
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89056973"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "90010065"
 ---
 # <a name="usb-in-windows---faq"></a>Windows 中的 USB - 常见问题解答
 
@@ -392,7 +392,7 @@ Microsoft 为大多数设备类型提供系统定义的安装程序类。 系统
 
 下面列出了支持选择性挂起的 Windows 8 中的 USB 类驱动程序：
 
-- Bluetooth
+- 蓝牙
 
     此驱动程序可以有选择地在运行 Windows XP Service Pack 2 和更高版本的 Windows 的计算机上挂起设备。 驱动程序要求蓝牙收音机设置配置描述符中的自驱动和远程唤醒位。 当不存在活动的蓝牙连接时，驱动程序会有选择地挂起 (D2) 蓝牙收音机。
 
@@ -620,4 +620,4 @@ Windows 附带的 USB 3.0 驱动程序堆栈支持此功能。
 ## <a name="related-topics"></a>相关主题
 
 [适用于所有开发人员的 USB 概念](usb-concepts-for-all-developers.md)  
-[通用串行总线 (USB)](https://docs.microsoft.com/windows-hardware/drivers/)  
+[通用串行总线 (USB)](../index.yml)

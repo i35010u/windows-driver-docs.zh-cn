@@ -3,12 +3,12 @@ description: 重点介绍 Windows 10 中通用串行总线 (USB) 的新增功能
 title: Windows 10-USB 的新增功能
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ecdece85c2228884c7673eb5c9f30b69ed7b80b7
-ms.sourcegitcommit: 15caaf6d943135efcaf9975927ff3933957acd5d
+ms.openlocfilehash: 435f799aa5c9ad2f59a2653222b544ed7d0e29a7
+ms.sourcegitcommit: 937974aa9bbe0262a7ffe9631593fab48c4e7492
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88969054"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "90010247"
 ---
 # <a name="windows-10-whats-new-for-usb"></a>Windows 10：USB 的新增功能
 
@@ -22,7 +22,7 @@ ms.locfileid: "88969054"
     Windows 10 版本1703提供 ( # A0) 的类扩展，该扩展插件支持通用串行总线类型 C 端口控制器接口规范。 USB 类型 C 连接器驱动程序不需要保留任何内部的 PD/类型 C 状态。 
     管理 USB C 型连接器和 USB 电源输送 (PD) 状态机时存在的复杂性由系统处理。 你只需编写一个客户端驱动程序，以便通过该类扩展将硬件事件传送给系统即可。 
 
-    [USB 类型 C 端口控制器接口驱动程序类扩展参考](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/mt805826(v=vs.85))
+    [USB 类型 C 端口控制器接口驱动程序类扩展参考](/previous-versions/windows/hardware/drivers/mt805826(v=vs.85))
 
 -   **USB 双重角色支持。**
 
@@ -32,7 +32,7 @@ ms.locfileid: "88969054"
 
     [USB 双角色驱动程序堆栈体系结构](usb-dual-role-driver-stack-architecture.md)
 
-    [USB 双角色控制器驱动程序编程参考](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/mt628026(v=vs.85))
+    [USB 双角色控制器驱动程序编程参考](/previous-versions/windows/hardware/drivers/mt628026(v=vs.85))
 
 -   **用于开发 USB 类型 C 连接器驱动程序的一组新的编程接口。**
 
@@ -40,7 +40,7 @@ ms.locfileid: "88969054"
 
     [为 USB 类型 C 连接器开发 Windows 驱动程序](developing-windows-drivers-for-usb-type-c-connectors.md)
 
-    [USB 连接器管理器类扩展 (UcmCx)](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/mt188011(v=vs.85))
+    [USB 连接器管理器类扩展 (UcmCx)](/previous-versions/windows/hardware/drivers/mt188011(v=vs.85))
 
 -   **用于开发模拟主机控制器和连接的虚拟设备的一组新的编程接口。**
 
@@ -48,15 +48,15 @@ ms.locfileid: "88969054"
 
     [开发模拟 USB 设备 (UDE) 的 Windows 驱动程序](developing-windows-drivers-for-emulated-usb-host-controllers-and-devices.md)
 
-    [Emulated USB host controller driver programming reference](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/mt628025(v=vs.85))（模拟 USB 主控制器驱动程序编程参考）
+    [模拟 USB 主控制器驱动程序编程参考](/previous-versions/windows/hardware/drivers/mt628025(v=vs.85))
 
 -   **用于开发 USB 主机控制器驱动程序的一组新的编程接口。**
 
-    如果你的硬件不符合规范 xHCI 或正在写入虚拟主机控制器，则可以开发主机控制器，如通过 TCP 连接将 USB 流量路由到连接到设备的外围设备的控制器。 主机控制器驱动程序是 USB 主机控制器扩展的客户端，它是一个遵循框架类扩展模型的系统提供的驱动程序。 在 [MICROSOFT USB 3.0 驱动程序堆栈](https://docs.microsoft.com/windows-hardware/drivers/ddi/index#usb-3-0-driver-stack)中，UCX 提供了帮助主机控制器驱动程序管理 USB 主机控制器设备的功能。
+    如果你的硬件不符合规范 xHCI 或正在写入虚拟主机控制器，则可以开发主机控制器，如通过 TCP 连接将 USB 流量路由到连接到设备的外围设备的控制器。 主机控制器驱动程序是 USB 主机控制器扩展的客户端，它是一个遵循框架类扩展模型的系统提供的驱动程序。 在 [MICROSOFT USB 3.0 驱动程序堆栈](/windows-hardware/drivers/ddi/index#usb-3-0-driver-stack)中，UCX 提供了帮助主机控制器驱动程序管理 USB 主机控制器设备的功能。
 
     [为 USB 主控制器开发 Windows 驱动程序](developing-windows-drivers-for-usb-host-controllers.md)
 
-    [USB 主控制器扩展 (UCX) 参考](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/mt188009(v=vs.85))
+    [USB 主控制器扩展 (UCX) 参考](/previous-versions/windows/hardware/drivers/mt188009(v=vs.85))
 
 -   **用于开发 USB 函数控制器驱动程序的一组新的编程接口。**
 
@@ -68,13 +68,13 @@ ms.locfileid: "88969054"
 
     [函数控制器客户端驱动程序的任务](function-client-driver.md)
 
-    [UFX 编程参考的用户模式服务](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)
+    [UFX 编程参考的用户模式服务](/windows-hardware/drivers/ddi/index)
 
-    [UFX 编程参考的 USB 函数类驱动程序](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/mt188008(v=vs.85))
+    [UFX 编程参考的 USB 函数类驱动程序](/previous-versions/windows/hardware/drivers/mt188008(v=vs.85))
 
-    [USB 函数控制器客户端驱动程序编程参考](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/mt188010(v=vs.85))
+    [USB 函数控制器客户端驱动程序编程参考](/previous-versions/windows/hardware/drivers/mt188010(v=vs.85))
 
-    [用于支持专用充电器的 USB 筛选器驱动程序](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/mt188012(v=vs.85))
+    [用于支持专用充电器的 USB 筛选器驱动程序](/previous-versions/windows/hardware/drivers/mt188012(v=vs.85))
 
 -   **提高了 USB CDC (串行) 设备的体验。**
 
@@ -83,9 +83,4 @@ ms.locfileid: "88969054"
     [USB 串行驱动程序 (Usbser.sys)](usb-driver-installation-based-on-compatible-ids.md)
 
  
-
- 
-
-
-
 

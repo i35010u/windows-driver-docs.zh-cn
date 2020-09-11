@@ -1,24 +1,24 @@
 ---
-title: 定义传感器常量的自定义值（以前的版本）
-description: 定义传感器常量的自定义值（以前的版本）
+title: 定义 (以前版本) 的传感器常量的自定义值
+description: 定义 (以前版本) 的传感器常量的自定义值
 ms.assetid: 0ed635c2-117d-4a49-a565-31e5a0a9861d
 ms.date: 07/20/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 3eb02dbc9a49e92ff2e7f9abf2ba941e26dadc69
-ms.sourcegitcommit: 9102e34c3322d8697dbb6f9a1d78879147a73373
+ms.openlocfilehash: a24719a10e80cb2de8b5bfe5d841189fc9bfd02f
+ms.sourcegitcommit: 937974aa9bbe0262a7ffe9631593fab48c4e7492
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87264460"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "90010131"
 ---
-# <a name="defining-custom-values-for-sensor-constants-previous-version"></a>定义传感器常量的自定义值（以前的版本）
+# <a name="defining-custom-values-for-sensor-constants-previous-version"></a>定义 (以前版本) 的传感器常量的自定义值
 
 
 您可以为类别、传感器类型、数据字段、属性和事件定义自定义值。
 
 ## <a name="guidelines-for-custom-values"></a>自定义值的准则
 
-如果一组平台定义的常量有效，请避免定义新常量。 研究并了解 "[常量](https://docs.microsoft.com/windows-hardware/drivers/sensors/about-sensor-constants)参考" 部分中描述的类别、类型、数据字段、属性和事件，并决定传感器驱动程序是否适合平台框架。
+如果一组平台定义的常量有效，请避免定义新常量。 研究并了解 " [常量](./about-sensor-constants.md) 参考" 部分中描述的类别、类型、数据字段、属性和事件，并决定传感器驱动程序是否适合平台框架。
 
 如果选择定义自定义值，请遵循以下准则：
 
@@ -78,7 +78,4 @@ DEFINE_PROPERTYKEY(SAMPLE_SENSOR_DATA_TYPE_SECOND,
 使用宏而不包含 Initguid.h，并且不引用库文件将导致 LNK2001 错误。
 
 ## <a name="related-topics"></a>相关主题
-[传感器地理位置驱动程序示例](https://docs.microsoft.com/windows-hardware/drivers/gnss/sensors-geolocation-driver-sample)
-
-
-
+[传感器地理位置驱动程序示例](../gnss/sensors-geolocation-driver-sample.md)

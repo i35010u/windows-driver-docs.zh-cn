@@ -3,19 +3,19 @@ description: 使用随 Microsoft Visual Studio 提供的 USB 用户模式驱动�
 title: 如何编写第一个 USB 客户端驱动程序 (UMDF)
 ms.date: 06/03/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: fc85ed2f567e3ed4ea368d9eafc851798f044853
-ms.sourcegitcommit: 7a7e61b4147a4aa86bf820fd0b0c7681fe17e544
+ms.openlocfilehash: d61ba98bafa79bd138317d22d3659711124542a4
+ms.sourcegitcommit: 937974aa9bbe0262a7ffe9631593fab48c4e7492
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89056969"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "90010105"
 ---
 # <a name="how-to-write-your-first-usb-client-driver-umdf"></a>如何编写第一个 USB 客户端驱动程序 (UMDF)
 
 
 在本主题中，你将使用随 Microsoft Visual Studio 2019 一起提供的 **USB 用户模式驱动程序** 模板来编写基于 (UMDF) 的客户端驱动程序的用户模式驱动程序框架。 生成和安装客户端驱动程序后，你将在 **设备管理器** 中查看客户端驱动程序，并在调试器中查看驱动程序输出。
 
-在本主题中，UMDF (称为框架) 基于组件对象模型 (COM) 。 默认情况下，每个框架对象都必须实现 [**IUnknown**](https://docs.microsoft.com/windows/desktop/api/unknwn/nn-unknwn-iunknown) 及其方法： [**QueryInterface**](https://docs.microsoft.com/windows/desktop/api/unknwn/nf-unknwn-iunknown-queryinterface(q_))、 [**AddRef**](https://docs.microsoft.com/windows/desktop/api/unknwn/nf-unknwn-iunknown-addref)和 [**Release**](https://docs.microsoft.com/windows/desktop/api/unknwn/nf-unknwn-iunknown-release)。 **AddRef**和**Release**方法管理对象的生存期，因此客户端驱动程序不需要维护引用计数。 通过 **QueryInterface** 方法，客户端驱动程序可以获取指向 Windows 驱动程序框架中其他框架对象的接口指针， (WDF) 对象模型中。 框架对象执行复杂的驱动程序任务并与 Windows 交互。 某些框架对象公开的接口允许客户端驱动程序与框架交互。
+在本主题中，UMDF (称为框架) 基于组件对象模型 (COM) 。 默认情况下，每个框架对象都必须实现 [**IUnknown**](/windows/desktop/api/unknwn/nn-unknwn-iunknown) 及其方法： [**QueryInterface**](/windows/desktop/api/unknwn/nf-unknwn-iunknown-queryinterface(q_))、 [**AddRef**](/windows/desktop/api/unknwn/nf-unknwn-iunknown-addref)和 [**Release**](/windows/desktop/api/unknwn/nf-unknwn-iunknown-release)。 **AddRef**和**Release**方法管理对象的生存期，因此客户端驱动程序不需要维护引用计数。 通过 **QueryInterface** 方法，客户端驱动程序可以获取指向 Windows 驱动程序框架中其他框架对象的接口指针， (WDF) 对象模型中。 框架对象执行复杂的驱动程序任务并与 Windows 交互。 某些框架对象公开的接口允许客户端驱动程序与框架交互。
 
 基于 UMDF 的客户端驱动程序作为 (DLL) 的进程内 COM 服务器实现，而 c + + 是为 USB 设备编写客户端驱动程序的首选语言。 通常情况下，客户端驱动程序实现框架公开的多个接口。 本主题引用客户端驱动程序定义的类，该类实现作为回调类的框架接口。 在对这些类进行实例化后，生成的回调对象将与特定的框架对象合作。 这种合作关系使客户端驱动程序可以对框架报告的设备或与系统相关的事件做出响应。 每当 Windows 通知框架有关某些事件时，框架会调用客户端驱动程序的回调（如果有）。 否则，框架将继续执行事件的默认处理。 模板代码定义驱动程序、设备和队列回调类。
 
@@ -40,7 +40,7 @@ ms.locfileid: "89056969"
     工具包包括开发、构建和调试 USB 客户端驱动程序所需的标头、库、工具、文档和调试工具。 可以从 [如何获取 wdk](https://go.microsoft.com/fwlink/p/?linkid=617585)获取最新版本的 wdk。
 
 -   您的主计算机具有适用于 Windows 的调试工具的最新版本。 可以从 WDK 获取最新版本，也可以 [下载和安装适用于 Windows 的调试工具](https://go.microsoft.com/fwlink/p/?linkid=617701)。
--   如果你使用两台计算机，则必须为用户模式调试配置主机和目标计算机。 有关详细信息，请参阅 [在 Visual Studio 中设置用户模式调试](https://docs.microsoft.com/windows-hardware/drivers/debugger/setting-up-user-mode-debugging-in-visual-studio)。
+-   如果你使用两台计算机，则必须为用户模式调试配置主机和目标计算机。 有关详细信息，请参阅 [在 Visual Studio 中设置用户模式调试](../debugger/setting-up-user-mode-debugging-in-visual-studio.md)。
 
 **硬件要求**
 
@@ -50,10 +50,10 @@ ms.locfileid: "89056969"
 
 **建议阅读**
 
--   [适用于所有驱动程序开发人员的概念](https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/concepts-and-knowledge-for-all-driver-developers)
--   [设备节点和设备堆栈](https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/device-nodes-and-device-stacks)
--   [Windows 驱动程序入门](https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/index)
--   [用户模式驱动程序框架](https://docs.microsoft.com/windows-hardware/drivers/debugger/user-mode-driver-framework-debugging)
+-   [适用于所有驱动程序开发人员的概念](../gettingstarted/concepts-and-knowledge-for-all-driver-developers.md)
+-   [设备节点和设备堆栈](../gettingstarted/device-nodes-and-device-stacks.md)
+-   [Windows 驱动程序入门](../gettingstarted/index.md)
+-   [用户模式驱动程序框架](../debugger/user-mode-driver-framework-debugging.md)
 -   *使用 Windows Driver Foundation 开发驱动程序*，由 "Orwick" 和 "专家 Smith" 编写。 有关详细信息，请参阅 [通过 WDF 开发驱动程序](https://go.microsoft.com/fwlink/p/?linkid=617702)。
 
 <a name="instructions"></a>Instructions
@@ -61,7 +61,7 @@ ms.locfileid: "89056969"
 
 ### <a name="step-1-generate-the-umdf-driver-code-by-using-the-visual-studio2019-usb-driver-template"></a><a href="" id="generate-the-umdf-driver-code-by-using-the-visual-studio-2019-usb-driver-template"></a>步骤1：使用 Visual Studio 2019 USB 驱动程序模板生成 UMDF 驱动程序代码
 
-<a href="" id="generate"></a> 有关生成 UMDF 驱动程序代码的说明，请参阅 [基于模板编写 UMDF 驱动程序](https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/writing-a-umdf-driver-based-on-a-template)。
+<a href="" id="generate"></a> 有关生成 UMDF 驱动程序代码的说明，请参阅 [基于模板编写 UMDF 驱动程序](../gettingstarted/writing-a-umdf-driver-based-on-a-template.md)。
 
 **对于 USB 特定的代码，请在 Visual Studio 2019 中选择以下选项**
 
@@ -78,11 +78,11 @@ ms.locfileid: "89056969"
 
 本主题假定项目名称为 "MyUSBDriver \_ UMDF \_ "。 它包含以下文件：
 
-| 文件                      | 说明                                                                                                                                                                                                                                                                                                                                                                                                                                  |
+| 文件                      | 描述                                                                                                                                                                                                                                                                                                                                                                                                                                  |
 |----------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Driver .h;驱动程序。c         | 声明和定义一个实现 [**IDriverEntry**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-idriverentry) 接口的回调类。 类定义框架驱动程序对象调用的方法。 此类的主要目的是为客户端驱动程序创建设备对象。                                                                                                                                                                     |
-| 设备 .h;设备 c         | 声明和定义一个实现 [**IPnpCallbackHardware**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-ipnpcallbackhardware) 接口的回调类。 类定义框架设备对象调用的方法。 此类的主要目的是处理因即插即用 (PnP) 状态更改而发生的事件。 类还会分配和初始化客户端驱动程序在系统中加载所需的资源。 |
-| IoQueue;IoQueue       | 声明和定义一个实现 [**IQueueCallbackDeviceIoControl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-iqueuecallbackdeviceiocontrol) 接口的回调类。 类定义框架队列对象调用的方法。 此类的目的是检索在框架中排队的 i/o 请求。                                                                                                                               |
+| Driver .h;驱动程序。c         | 声明和定义一个实现 [**IDriverEntry**](/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-idriverentry) 接口的回调类。 类定义框架驱动程序对象调用的方法。 此类的主要目的是为客户端驱动程序创建设备对象。                                                                                                                                                                     |
+| 设备 .h;设备 c         | 声明和定义一个实现 [**IPnpCallbackHardware**](/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-ipnpcallbackhardware) 接口的回调类。 类定义框架设备对象调用的方法。 此类的主要目的是处理因即插即用 (PnP) 状态更改而发生的事件。 类还会分配和初始化客户端驱动程序在系统中加载所需的资源。 |
+| IoQueue;IoQueue       | 声明和定义一个实现 [**IQueueCallbackDeviceIoControl**](/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-iqueuecallbackdeviceiocontrol) 接口的回调类。 类定义框架队列对象调用的方法。 此类的目的是检索在框架中排队的 i/o 请求。                                                                                                                               |
 | Internal。h                 | 提供客户端驱动程序和与 USB 设备通信的用户应用程序共享的常见声明。 它还声明跟踪函数和宏。                                                                                                                                                                                                                                                                          |
 | Dllsup .cpp                 | 包含驱动程序模块入口点的实现。                                                                                                                                                                                                                                                                                                                                                                              |
 | * &lt; 项目名称 &gt; *.inf | 在目标计算机上安装客户端驱动程序所需的 INF 文件。                                                                                                                                                                                                                                                                                                                                                               |
@@ -139,7 +139,7 @@ ms.locfileid: "89056969"
 
     `AddService=WinUsb,0x000001f8,WinUsb_ServiceInstall  ; this service is installed because its a filter.`
 
--   WinUSB-安装包必须包含用于 Winusb.sys 的 coinstallers，因为对于客户端驱动程序，WinUSB 是内核模式 USB 驱动程序堆栈的网关。 加载的另一个组件是在客户端驱动程序的主机进程中名为 WinUsb.dll 的用户模式 DLL ( # A1) 。 Winusb.dll 公开了可简化客户端驱动程序和 WinUSB 之间的通信过程的 [WinUSB 函数](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff540046(v=vs.85)#winusb) 。
+-   WinUSB-安装包必须包含用于 Winusb.sys 的 coinstallers，因为对于客户端驱动程序，WinUSB 是内核模式 USB 驱动程序堆栈的网关。 加载的另一个组件是在客户端驱动程序的主机进程中名为 WinUsb.dll 的用户模式 DLL ( # A1) 。 Winusb.dll 公开了可简化客户端驱动程序和 WinUSB 之间的通信过程的 [WinUSB 函数](/previous-versions/windows/hardware/drivers/ff540046(v=vs.85)#winusb) 。
 
 ### <a name="step-3-build-the-usb-client-driver-code"></a><a href="" id="build-the-usb-client-driver-code"></a>步骤3：生成 USB 客户端驱动程序代码
 
@@ -153,11 +153,11 @@ ms.locfileid: "89056969"
     - 设备接口 GUID 是在 node.js 中定义的，并且在中从设备的引用。 `MyUSBDriverUMDFCreateDevice` 创建名为 "MyUSBDriver UMDF" 的项目时 \_ \_ ，Visual Studio 2019 将定义具有名称的设备接口 GUID， `GUID_DEVINTERFACE_MyUSBDriver_UMDF_` 但会调用 `WdfDeviceCreateDeviceInterface` 不正确的参数 "GUID_DEVINTERFACE_MyUSBDriverUMDF"。 将不正确的参数替换为在 Trace .h 中定义的名称，以确保正确生成驱动程序。 
 4.  在 " **生成** " 菜单中，选择 " **生成解决方案**"。
 
-有关详细信息，请参阅 [构建驱动程序](https://docs.microsoft.com/windows-hardware/drivers/develop/building-a-driver)。
+有关详细信息，请参阅 [构建驱动程序](../develop/building-a-driver.md)。
 
 ### <a name="step-4-configure-a-computer-for-testing-and-debugging"></a><a href="" id="configure-a-computer-for-testing-and-debugging"></a>步骤4：配置计算机以进行测试和调试
 
-若要测试和调试驱动程序，请在主计算机上运行调试器，并在目标计算机上运行该驱动程序。 到目前为止，你已在主计算机上使用 Visual Studio 来构建驱动程序。 接下来，需要配置目标计算机。 若要配置目标计算机，请按照 [设置计算机以进行驱动程序部署和测试](https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/provision-a-target-computer-wdk-8-1)中的说明进行操作。
+若要测试和调试驱动程序，请在主计算机上运行调试器，并在目标计算机上运行该驱动程序。 到目前为止，你已在主计算机上使用 Visual Studio 来构建驱动程序。 接下来，需要配置目标计算机。 若要配置目标计算机，请按照 [设置计算机以进行驱动程序部署和测试](../gettingstarted/provision-a-target-computer-wdk-8-1.md)中的说明进行操作。
 
 ### <a name="step-5-enable-tracing-for-kernel-debugging"></a><a href="" id="enable-tracing-for-kernel-debugging"></a>步骤5：为内核调试启用跟踪
 
@@ -171,7 +171,7 @@ ms.locfileid: "89056969"
 
    **tracepdb-f \[ PDBFiles \] -p \[ TMFDirectory\]**
 
-   **-F**选项指定 PDB 符号文件的位置和名称。 **-P**选项指定由 Tracepdb 创建的 TMF 文件的位置。 有关详细信息，请参阅 [**Tracepdb 命令**](https://docs.microsoft.com/windows-hardware/drivers/devtest/tracepdb-commands)。
+   **-F**选项指定 PDB 符号文件的位置和名称。 **-P**选项指定由 Tracepdb 创建的 TMF 文件的位置。 有关详细信息，请参阅 [**Tracepdb 命令**](../devtest/tracepdb-commands.md)。
 
    在指定位置，将看到项目) 中每个 .c 文件 (一个文件。 它们具有 GUID 文件名。
 
@@ -196,7 +196,7 @@ ms.locfileid: "89056969"
 
 1. 请确保目标计算机上已有 Tracelog 工具。 该工具位于 WDK 的 " <em> &lt; 安装 \_ " &gt; 文件夹</em>"Windows \\ \\ \\ * &lt; &gt; *工具包10工具"。 有关详细信息，请参阅 [**Tracelog 命令语法**](https://docs.microsoft.com/windows-hardware/drivers/devtest/tracelog-command-syntax)。
 2. 打开 **命令窗口** 并以管理员身份运行。
-3. 键入下列命令：
+3. 键入以下命令：
 
    **tracelog-start MyTrace \# c918ee71-68c7-4140-8f7d-c907abbcb05d-旗 0xffff-level 7-**
 
@@ -274,16 +274,13 @@ ms.locfileid: "89056969"
 -   客户端驱动程序— USB 设备的用户模式功能驱动程序。
 -   UMDF —框架模块，它代表客户端驱动程序处理与 Windows 的大多数交互。 它公开用户模式设备驱动程序接口 (DDIs) ，客户端驱动程序可以使用这些接口来执行常见的驱动程序任务。
 -   调度程序—在宿主进程中运行的机制;确定如何在用户模式驱动程序处理请求后将请求转发到内核模式，并已达到用户模式堆栈的底部。 在此图中，调度程序将请求转发到用户模式 DLL，Winusb.dll。
--   Winusb.dll-一种 Microsoft 提供的用户模式 DLL，它公开了 [WinUSB 函数](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff540046(v=vs.85)#winusb) ，这些函数可简化) 内核模式下加载的客户端驱动程序和 WinUSB ( # A1 之间的通信过程。
+-   Winusb.dll-一种 Microsoft 提供的用户模式 DLL，它公开了 [WinUSB 函数](/previous-versions/windows/hardware/drivers/ff540046(v=vs.85)#winusb) ，这些函数可简化) 内核模式下加载的客户端驱动程序和 WinUSB ( # A1 之间的通信过程。
 -   Winusb.sys-一种 Microsoft 提供的驱动程序，适用于 USB 设备的所有 UMDF 客户端驱动程序都需要此驱动程序。 驱动程序必须安装在反射器下，并充当内核模式下 USB 驱动程序堆栈的网关。 有关详细信息，请参阅 [WinUSB](winusb.md)。
 -   USB 驱动程序堆栈-由 Microsoft 提供的一组驱动程序，用于处理与 USB 设备的协议级别的通信。 有关详细信息，请参阅 [Windows 中的 USB 主机端驱动程序](usb-3-0-driver-stack-architecture.md)。
 
-每当应用程序发出对 USB 驱动程序堆栈的请求时，Windows i/o 管理器都会向反射器发送请求，以在用户模式下将该请求定向到客户端驱动程序。 客户端驱动程序通过调用特定的 UMDF 方法来处理请求，该方法在内部调用 [WinUSB 函数](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff540046(v=vs.85)#winusb) 以将请求发送到 WinUSB。 收到请求后，WinUSB 将处理该请求或将其转发到 USB 驱动程序堆栈。
+每当应用程序发出对 USB 驱动程序堆栈的请求时，Windows i/o 管理器都会向反射器发送请求，以在用户模式下将该请求定向到客户端驱动程序。 客户端驱动程序通过调用特定的 UMDF 方法来处理请求，该方法在内部调用 [WinUSB 函数](/previous-versions/windows/hardware/drivers/ff540046(v=vs.85)#winusb) 以将请求发送到 WinUSB。 收到请求后，WinUSB 将处理该请求或将其转发到 USB 驱动程序堆栈。
 
 ## <a name="related-topics"></a>相关主题
 [了解 USB 客户端驱动程序的 UMDF 模板代码](understanding-the-umdf-template-code-for-usb.md)  
 [如何在 USB 设备的 UMDF 驱动程序中启用 USB 选择性挂起和系统唤醒](https://go.microsoft.com/fwlink/p/?linkid=617587)  
-[USB 客户端驱动程序开发入门](getting-started-with-usb-client-driver-development.md)  
-
-
-
+[USB 客户端驱动程序开发入门](getting-started-with-usb-client-driver-development.md)

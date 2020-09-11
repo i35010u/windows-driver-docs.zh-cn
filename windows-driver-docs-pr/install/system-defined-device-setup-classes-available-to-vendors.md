@@ -1,18 +1,18 @@
 ---
-title: INF 版本部分的类和 ClassGuid 条目
-description: INF 版本部分的类和 ClassGuid 条目
+title: INF 版本部分的 Class 和 ClassGuid 条目
+description: INF 版本部分的 Class 和 ClassGuid 条目
 ms.assetid: d4b8a964-f843-4960-9077-46746af27a61
 ms.date: 08/27/2020
 ms.localizationpriority: medium
 ms.custom: contperfq1
-ms.openlocfilehash: 75ea826de2d7c1b5ade71f952a9d67ccc70b4242
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 9c0e48690016f723856f2e8b3856361c62a9be83
+ms.sourcegitcommit: 937974aa9bbe0262a7ffe9631593fab48c4e7492
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89097317"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "90009937"
 ---
-# <a name="class-and-classguid-entries-for-inf-version-section"></a>INF 版本部分的类和 ClassGuid 条目  
+# <a name="class-and-classguid-entries-for-inf-version-section"></a>INF 版本部分的 Class 和 ClassGuid 条目  
 
 如果要为特定设备类别编写 Windows 设备驱动程序，可以使用以下列表来选择正确的预定义值，以用于 `Class` `ClassGuid` 驱动程序 INF 文件的 [版本部分](inf-version-section.md) 中的和条目。
 
@@ -230,7 +230,11 @@ ClassGuid = {50127dc3-0f36-415e-a6cc-4cb3be910b65}
 类 = SCSIAdapter  
 ClassGuid = {4d36e97b-e325-11ce-bfc1-08002be10318}  
 此类包括 (主机总线适配器) 和磁盘阵列控制器的 SCSI Hba。  
-  
+ 
+<a href="" id="security-devices-"></a>**安全设备** 类 = Securitydevices  
+ClassGuid = {d94ee5d8-d189-4994-83d2-f68d7d41b0e6}  
+ (Windows 8.1，Windows 10) 此类包含 [受信任的平台模块](/windows/security/information-protection/tpm/trusted-platform-module-top-node) 芯片。 TPM 是一种安全的加密处理器，可帮助你执行各种操作，如生成、存储和限制加密密钥的使用。 默认情况下，任何新制造设备都必须实现并启用 TPM 2.0。 有关详细信息，请参阅 [TPM 建议](/windows/security/information-protection/tpm/tpm-recommendations)。
+
 **传感器**  
 类 = 传感器  
 ClassGuid = {5175d334-c371-4806-b3ba-71fd53c9258d}  

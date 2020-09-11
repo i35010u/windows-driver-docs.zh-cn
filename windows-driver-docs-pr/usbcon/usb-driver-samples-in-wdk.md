@@ -3,12 +3,12 @@ description: 本主题包含有关可从 GitHub 上的 Windows 驱动程序示�
 title: USB 驱动程序示例
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 84bb31772da7829efebd54cdc9f5d5814f34e6ce
-ms.sourcegitcommit: 15caaf6d943135efcaf9975927ff3933957acd5d
+ms.openlocfilehash: 6f62094b6ba774c851b0acdd41bcb6b957c2f87b
+ms.sourcegitcommit: 937974aa9bbe0262a7ffe9631593fab48c4e7492
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88969360"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "90010053"
 ---
 # <a name="usb-driver-samples"></a>USB 驱动程序示例
 
@@ -58,10 +58,7 @@ ms.locfileid: "88969360"
 ## <a name="building-a-sample"></a>生成示例
 
 
-有关生成示例驱动程序的信息，请参阅 [开发、测试和部署驱动程序](https://docs.microsoft.com/windows-hardware/drivers)。
+有关生成示例驱动程序的信息，请参阅 [开发、测试和部署驱动程序](/windows-hardware/drivers)。
 
 ## <a name="related-topics"></a>相关主题
-[USB 客户端驱动程序开发入门](getting-started-with-usb-client-driver-development.md)  
-
-
-
+[USB 客户端驱动程序开发入门](getting-started-with-usb-client-driver-development.md)

@@ -3,12 +3,12 @@ description: 如果要构建新系统，则建议使用本主题中的测试。
 title: 建议用于系统开发的 USB 测试
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: dddfbfee24592d8a637ccc520c9290fd74638ff3
-ms.sourcegitcommit: 15caaf6d943135efcaf9975927ff3933957acd5d
+ms.openlocfilehash: ac32c9aace9bb97bba8eeed1d324e47b3701cdfc
+ms.sourcegitcommit: 937974aa9bbe0262a7ffe9631593fab48c4e7492
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88968596"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "90010625"
 ---
 # <a name="recommended-usb-tests-for-system-development"></a>建议用于系统开发的 USB 测试
 
@@ -26,11 +26,11 @@ ms.locfileid: "88968596"
 ## <a name="stage-1system-bring-up"></a>阶段 1-系统启动
 
 
--   [DF –在 (基本) 之前和之后休眠 ](https://docs.microsoft.com/previous-versions/windows/hardware/hck/dn247481(v=vs.85))
--   [DF - PNP（禁用和启用），带 IO 之前和之后（基本）](https://docs.microsoft.com/previous-versions/windows/hardware/hck/dn260411(v=vs.85))
--   [USB 公开端口控制器测试](https://docs.microsoft.com/previous-versions/windows/hardware/hck/hh998021(v=vs.85))
--   [USB xHCI 传输速度测试](https://docs.microsoft.com/previous-versions/windows/hardware/hck/hh997864(v=vs.85))
--   [USB3 终止](https://docs.microsoft.com/previous-versions/windows/hardware/hck/jj124672(v=vs.85))
+-   [DF –在 (基本) 之前和之后休眠 ](/previous-versions/windows/hardware/hck/dn247481(v=vs.85))
+-   [DF - PNP（禁用和启用），带 IO 之前和之后（基本）](/previous-versions/windows/hardware/hck/dn260411(v=vs.85))
+-   [USB 公开端口控制器测试](/previous-versions/windows/hardware/hck/hh998021(v=vs.85))
+-   [USB xHCI 传输速度测试](/previous-versions/windows/hardware/hck/hh997864(v=vs.85))
+-   [USB3 终止](/previous-versions/windows/hardware/hck/jj124672(v=vs.85))
 
 <table>
 <colgroup>
@@ -80,9 +80,9 @@ ms.locfileid: "88968596"
 ## <a name="stage-2system-integration"></a>阶段 2-系统集成
 
 
--   [DF-在 (功能之前和之后，重启和 IO 重启) ](https://docs.microsoft.com/previous-versions/windows/hardware/hck/dn260266(v=vs.85))
--   [DF-睡眠和 PNP (禁用和启用 (功能之前和之后的 IO) ) ](https://docs.microsoft.com/previous-versions/windows/hardware/hck/dn260391(v=vs.85))
--   [USB xHCI 传输速度测试](https://docs.microsoft.com/previous-versions/windows/hardware/hck/hh997864(v=vs.85))
+-   [DF-在 (功能之前和之后，重启和 IO 重启) ](/previous-versions/windows/hardware/hck/dn260266(v=vs.85))
+-   [DF-睡眠和 PNP (禁用和启用 (功能之前和之后的 IO) ) ](/previous-versions/windows/hardware/hck/dn260391(v=vs.85))
+-   [USB xHCI 传输速度测试](/previous-versions/windows/hardware/hck/hh997864(v=vs.85))
 
 <table>
 <colgroup>
@@ -138,13 +138,13 @@ ms.locfileid: "88968596"
 
 系统1
 
--   [DF- (认证期间休眠 IO) ](https://docs.microsoft.com/previous-versions/windows/hardware/hck/dn247416(v=vs.85))
--   [DF-并发硬件和操作系统 (混乱) 测试 (认证) ](https://docs.microsoft.com/previous-versions/windows/hardware/hck/hh998603(v=vs.85))
+-   [DF- (认证期间休眠 IO) ](/previous-versions/windows/hardware/hck/dn247416(v=vs.85))
+-   [DF-并发硬件和操作系统 (混乱) 测试 (认证) ](/previous-versions/windows/hardware/hck/hh998603(v=vs.85))
 
 系统2
 
--   [DF-睡眠和 PNP (禁用和启用 (功能之前和之后的 IO) ) ](https://docs.microsoft.com/previous-versions/windows/hardware/hck/dn260391(v=vs.85))
--   [USB xHCI 传输速度测试](https://docs.microsoft.com/previous-versions/windows/hardware/hck/hh997864(v=vs.85))
+-   [DF-睡眠和 PNP (禁用和启用 (功能之前和之后的 IO) ) ](/previous-versions/windows/hardware/hck/dn260391(v=vs.85))
+-   [USB xHCI 传输速度测试](/previous-versions/windows/hardware/hck/hh997864(v=vs.85))
 
 系统 3 (如果支持 dock) 
 
@@ -218,7 +218,4 @@ ms.locfileid: "88968596"
  
 
 ## <a name="related-topics"></a>相关主题
-[适用于 USB 的 Windows 硬件实验室包测试](windows-hardware-certification-kit-tests-for-usb.md)  
-
-
-
+[适用于 USB 的 Windows 硬件实验室包测试](windows-hardware-certification-kit-tests-for-usb.md)

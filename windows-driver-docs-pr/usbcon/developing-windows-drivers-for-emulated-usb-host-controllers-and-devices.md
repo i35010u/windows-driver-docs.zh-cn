@@ -3,12 +3,12 @@ description: 开发模拟 USB 设备 (UDE) 的 Windows 驱动程序的概述
 title: 开发模拟 USB 设备 (UDE) 的 Windows 驱动程序的概述
 ms.date: 10/23/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 3f6ddcfa0229ef2bcc860c117a595181b94beeff
-ms.sourcegitcommit: 15caaf6d943135efcaf9975927ff3933957acd5d
+ms.openlocfilehash: 74a90bc25fc37255f6c102b4c58667f279426a0c
+ms.sourcegitcommit: 937974aa9bbe0262a7ffe9631593fab48c4e7492
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88969086"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "90010563"
 ---
 # <a name="overview-of-developing-windows-drivers-for-emulated-usb-devices-ude"></a>开发模拟 USB 设备 (UDE) 的 Windows 驱动程序的概述
 
@@ -20,7 +20,7 @@ ms.locfileid: "88969086"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p><strong>目的</strong></p>
+<td><p><strong>用途</strong></p>
 <p>本部分介绍 Windows 操作系统中 (UDE) 支持的 USB 模拟设备，用于开发模拟通用串行总线 (USB) 主机控制器驱动程序和连接的虚拟 USB 设备。 这两个组件组合成单个 KMDF 驱动程序，该驱动程序可以与 Microsoft 提供的 USB 设备模拟类扩展 (UdeCx) 通信。</p>
 <p><strong>开发工具和 Microsoft 提供的二进制文件</strong></p>
 <p>Windows 驱动程序工具包 (WDK) 包含开发驱动程序所需的资源，如头文件、库、工具和示例。</p>
@@ -44,12 +44,12 @@ ms.locfileid: "88969086"
 <a href="usb-emulated-device--ude--architecture.md" data-raw-source="[Architecture: USB Device Emulation (UDE)](usb-emulated-device--ude--architecture.md)">体系结构： Usb 设备仿真 (UDE) </a>Windows 中的
 <a href="usb-3-0-driver-stack-architecture.md" data-raw-source="[USB host-side drivers](usb-3-0-driver-stack-architecture.md)">usb 主机端驱动程序</a>
 <p><strong>为模拟主机控制器和设备编写驱动程序</strong></p>
-<p>熟悉 UDE 对象和句柄。 有关 WDF 对象的详细信息，请参阅 <a href="https://docs.microsoft.com/windows-hardware/drivers/wdf/introduction-to-framework-objects" data-raw-source="[Introduction to Framework Objects](https://docs.microsoft.com/windows-hardware/drivers/wdf/introduction-to-framework-objects)">框架对象简介</a>。</p>
+<p>熟悉 UDE 对象和句柄。 有关 WDF 对象的详细信息，请参阅 <a href="https://docs.microsoft.com/windows-hardware/drivers/wdf/introduction-to-framework-objects" data-raw-source="[Introduction to Framework Objects](../wdf/introduction-to-framework-objects.md)">框架对象简介</a>。</p>
 <p>了解 UDE 的行为，该行为与客户端驱动程序交互的方式以及客户端驱动程序应实现的功能。</p>
 <p><a href="writing-a-ude-client-driver.md" data-raw-source="[Write a UDE client driver](writing-a-ude-client-driver.md)">编写 UDE 客户端驱动程序</a></p>
 <p><strong>编程参考节</strong></p>
-<p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/_usbref/#emulated-host-controller-driver-reference" data-raw-source="[Emulated USB host controller driver programming reference](https://docs.microsoft.com/windows-hardware/drivers/ddi/_usbref/#emulated-host-controller-driver-reference)">Emulated USB host controller driver programming reference</a>（模拟 USB 主控制器驱动程序编程参考）</p>
-<p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/_wdf/" data-raw-source="[WDF Reference](https://docs.microsoft.com/windows-hardware/drivers/ddi/_wdf/)">WDF 引用</a></p></td>
+<p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/_usbref/#emulated-host-controller-driver-reference" data-raw-source="[Emulated USB host controller driver programming reference](/windows-hardware/drivers/ddi/_usbref/#emulated-host-controller-driver-reference)">模拟 USB 主控制器驱动程序编程参考</a></p>
+<p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/_wdf/" data-raw-source="[WDF Reference](/windows-hardware/drivers/ddi/_wdf/)">WDF 引用</a></p></td>
 </tr>
 </tbody>
 </table>
@@ -57,7 +57,4 @@ ms.locfileid: "88969086"
  
 
 ## <a name="related-topics"></a>相关主题
-[通用串行总线 (USB)](https://docs.microsoft.com/windows-hardware/drivers/usbcon)  
-
-
-
+[通用串行总线 (USB)](./index.md)

@@ -3,12 +3,12 @@ description: 本主题提供有关在将数据传输到 USB 管道失败时可�
 title: 如何从 USB 管道错误中恢复
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fd96f18a74786f092040cc388e702fde94bccaf3
-ms.sourcegitcommit: 15caaf6d943135efcaf9975927ff3933957acd5d
+ms.openlocfilehash: 71fde05b42dd98156c136408ebdf034db3221e30
+ms.sourcegitcommit: 937974aa9bbe0262a7ffe9631593fab48c4e7492
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88968964"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "90010271"
 ---
 # <a name="how-to-recover-from-usb-pipe-errors"></a>如何从 USB 管道错误中恢复
 
@@ -49,7 +49,7 @@ USB 客户端驱动程序通过将控制传输发送到默认终结点来与其�
 
 ### <a name="technologies"></a>技术
 
--   [内核模式驱动程序框架](https://docs.microsoft.com/windows-hardware/drivers/wdf/)
+-   [内核模式驱动程序框架](../wdf/index.md)
 
 ### <a name="prerequisites"></a>先决条件
 
@@ -57,7 +57,7 @@ USB 客户端驱动程序通过将控制传输发送到默认终结点来与其�
 
     如果使用 Microsoft Visual Studio Professional 2012 随附的 USB 模板，则模板代码会执行这些任务。 模板代码会获取目标设备对象的句柄并将其存储在设备上下文中。
 
-    KMDF 客户端驱动程序必须调用 [**WdfUsbTargetDeviceCreateWithParameters**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetdevicecreatewithparameters) 方法来获取 WDFUSBDEVICE 句柄。 有关详细信息，请参阅[了解 USB 客户端驱动程序代码结构 (KMDF)](understanding-the-kmdf-template-code-for-usb.md) 中的“设备源代码”。
+    KMDF 客户端驱动程序必须调用 [**WdfUsbTargetDeviceCreateWithParameters**](/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetdevicecreatewithparameters) 方法来获取 WDFUSBDEVICE 句柄。 有关详细信息，请参阅[了解 USB 客户端驱动程序代码结构 (KMDF)](understanding-the-kmdf-template-code-for-usb.md) 中的“设备源代码”。
 
 -   客户端驱动程序必须具有框架目标管道对象的句柄。 有关详细信息，请参阅 [如何枚举 USB 管道](how-to-get-usb-pipe-handles.md)。
 
@@ -68,40 +68,40 @@ USB 客户端驱动程序通过将控制传输发送到默认终结点来与其�
 
 客户端驱动程序通过使用 USB 请求块 (URB) 来启动数据传输。 请求完成后，USB 驱动程序堆栈返回一个 USBD 状态代码，指示传输是成功还是失败。 在失败的情况下，USBD 代码指示失败的原因。
 
--   如果通过调用[**WdfUsbTargetDeviceSendUrbSynchronously**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetdevicesendurbsynchronously)方法提交了 URB，请在方法返回后检查[**URB**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usb/ns-usb-_urb)结构的 "Hdr" 成员 **。**
--   如果通过调用 [**WdfRequestSend**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestsend) 方法以异步方式提交 URB，请在 [*EVT_WDF_REQUEST_COMPLETION_ROUTINE*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nc-wdfrequest-evt_wdf_request_completion_routine)中检查 URB 状态。 *Params*参数指向[**WDF \_ 请求 \_ 完成 \_ 参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/ns-wdfrequest-_wdf_request_completion_params)结构。 若要检查 USBD 状态代码，请检查 ** &gt; UsbdStatus** 成员。 有关代码的信息，请参阅 [USBD \_ STATUS](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff539136(v=vs.85))。
+-   如果通过调用[**WdfUsbTargetDeviceSendUrbSynchronously**](/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetdevicesendurbsynchronously)方法提交了 URB，请在方法返回后检查[**URB**](/windows-hardware/drivers/ddi/usb/ns-usb-_urb)结构的 "Hdr" 成员 **。**
+-   如果通过调用 [**WdfRequestSend**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestsend) 方法以异步方式提交 URB，请在 [*EVT_WDF_REQUEST_COMPLETION_ROUTINE*](/windows-hardware/drivers/ddi/wdfrequest/nc-wdfrequest-evt_wdf_request_completion_routine)中检查 URB 状态。 *Params*参数指向[**WDF \_ 请求 \_ 完成 \_ 参数**](/windows-hardware/drivers/ddi/wdfrequest/ns-wdfrequest-_wdf_request_completion_params)结构。 若要检查 USBD 状态代码，请检查 ** &gt; UsbdStatus** 成员。 有关代码的信息，请参阅 [USBD \_ STATUS](/previous-versions/windows/hardware/drivers/ff539136(v=vs.85))。
 
 传输故障可能由设备错误导致，如 \_ 检测到 USBD 状态 \_ 延迟 \_ PID 或 USBD \_ 状态 \_ 干扰 \_ 。 它们还可能是由于主机控制器报告了错误引起的，例如 USBD \_ 状态 \_ 事务 \_ 错误。
 
 ### <a name="step-2-determine-whether-the-device-is-connected-to-the-port"></a><a href="" id="determine-whether-the-device-is-connected-to-the-port"></a>步骤2：确定设备是否已连接到端口
 
-发出重置管道或设备的任何请求之前，请确保设备已连接。 可以通过调用 [**WdfUsbTargetDeviceIsConnectedSynchronous**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetdeviceisconnectedsynchronous) 方法来确定设备的已连接状态。
+发出重置管道或设备的任何请求之前，请确保设备已连接。 可以通过调用 [**WdfUsbTargetDeviceIsConnectedSynchronous**](/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetdeviceisconnectedsynchronous) 方法来确定设备的已连接状态。
 
 ### <a name="step-3-cancel-all-pending-transfers-to-the-pipe"></a><a href="" id="cancel-all-pending-transfers-to-the-pipe"></a>步骤3：取消到管道的所有待定传输
 
 在发送重置管道或端口的任何请求之前，取消对管道的所有挂起的传输请求，即 USB 驱动程序堆栈尚未完成。 可以通过以下方式之一取消请求：
 
--   通过调用 [**WdfIoTargetStop**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfiotarget/nf-wdfiotarget-wdfiotargetstop) 方法停止 i/o 目标。
+-   通过调用 [**WdfIoTargetStop**](/windows-hardware/drivers/ddi/wdfiotarget/nf-wdfiotarget-wdfiotargetstop) 方法停止 i/o 目标。
 
-    若要停止 i/o 目标，首先请通过调用 [**WdfUsbTargetPipeGetIoTarget**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetpipegetiotarget) 方法获取与框架管道对象关联的 WDFIOTARGET 句柄。 使用句柄调用 [**WdfIoTargetStop**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfiotarget/nf-wdfiotarget-wdfiotargetstop)。 在调用中，将 "操作" 设置为 " **WdfIoTargetCancelSentIo** (参阅" [**WDF \_ io \_ 目标 \_ 发送 \_ io \_ 操作**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfiotarget/ne-wdfiotarget-_wdf_io_target_sent_io_action) ") ，指示框架取消 USB 驱动程序堆栈尚未完成的所有请求。 对于已完成的请求，客户端驱动程序必须等待其完成回调，才能由框架调用。
+    若要停止 i/o 目标，首先请通过调用 [**WdfUsbTargetPipeGetIoTarget**](/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetpipegetiotarget) 方法获取与框架管道对象关联的 WDFIOTARGET 句柄。 使用句柄调用 [**WdfIoTargetStop**](/windows-hardware/drivers/ddi/wdfiotarget/nf-wdfiotarget-wdfiotargetstop)。 在调用中，将 "操作" 设置为 " **WdfIoTargetCancelSentIo** (参阅" [**WDF \_ io \_ 目标 \_ 发送 \_ io \_ 操作**](/windows-hardware/drivers/ddi/wdfiotarget/ne-wdfiotarget-_wdf_io_target_sent_io_action) ") ，指示框架取消 USB 驱动程序堆栈尚未完成的所有请求。 对于已完成的请求，客户端驱动程序必须等待其完成回调，才能由框架调用。
 
 -   发送中止管道请求。 可以通过调用以下方法之一发送请求：
-    -   调用 [**WdfUsbTargetPipeAbortSynchronously**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetpipeabortsynchronously) 方法。
+    -   调用 [**WdfUsbTargetPipeAbortSynchronously**](/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetpipeabortsynchronously) 方法。
 
-        此调用是同步的，并且仅在取消所有挂起的请求后返回。 [**WdfUsbTargetPipeAbortSynchronously**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetpipeabortsynchronously) 采用一个可选的 *请求* 参数。 建议将 WDFREQUEST 句柄传递到预分配的框架请求对象。 参数使框架可以使用指定的请求对象，而不是驱动程序无法访问的内部请求对象。 此参数值可确保 **WdfUsbTargetPipeAbortSynchronously** 不会由于内存不足而失败。
+        此调用是同步的，并且仅在取消所有挂起的请求后返回。 [**WdfUsbTargetPipeAbortSynchronously**](/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetpipeabortsynchronously) 采用一个可选的 *请求* 参数。 建议将 WDFREQUEST 句柄传递到预分配的框架请求对象。 参数使框架可以使用指定的请求对象，而不是驱动程序无法访问的内部请求对象。 此参数值可确保 **WdfUsbTargetPipeAbortSynchronously** 不会由于内存不足而失败。
 
-    -   调用 [**WdfUsbTargetPipeFormatRequestForAbort**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetpipeformatrequestforabort) 方法，为中止管道请求设置请求对象的格式，然后通过调用 [**WdfRequestSend**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestsend) 方法发送请求。
+    -   调用 [**WdfUsbTargetPipeFormatRequestForAbort**](/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetpipeformatrequestforabort) 方法，为中止管道请求设置请求对象的格式，然后通过调用 [**WdfRequestSend**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestsend) 方法发送请求。
 
-        如果驱动程序以异步方式发送请求，则它必须指定指向驱动程序实现的驱动程序 [*EVT_WDF_REQUEST_COMPLETION_ROUTINE*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nc-wdfrequest-evt_wdf_request_completion_routine) 的指针。 若要指定指针，请调用 [**WdfRequestSetCompletionRoutine**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestsetcompletionroutine) 方法。
+        如果驱动程序以异步方式发送请求，则它必须指定指向驱动程序实现的驱动程序 [*EVT_WDF_REQUEST_COMPLETION_ROUTINE*](/windows-hardware/drivers/ddi/wdfrequest/nc-wdfrequest-evt_wdf_request_completion_routine) 的指针。 若要指定指针，请调用 [**WdfRequestSetCompletionRoutine**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestsetcompletionroutine) 方法。
 
-        该驱动程序可以通过 \_ \_ 将 "WDF 请求发送 \_ 选项 \_ " 同步指定为 [**WdfRequestSend**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestsend)中的某个请求选项来同步发送请求。 如果同步发送请求，则改为调用 [**WdfUsbTargetPipeAbortSynchronously**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetpipeabortsynchronously) 。
+        该驱动程序可以通过 \_ \_ 将 "WDF 请求发送 \_ 选项 \_ " 同步指定为 [**WdfRequestSend**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestsend)中的某个请求选项来同步发送请求。 如果同步发送请求，则改为调用 [**WdfUsbTargetPipeAbortSynchronously**](/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetpipeabortsynchronously) 。
 
 ### <a name="step-4-reset-the-usb-pipe"></a><a href="" id="reset-the-usb-pipe"></a>步骤4：重置 USB 管道
 
 通过重置管道开始恢复错误。 可以通过调用以下方法之一发送重置管道请求：
 
--   调用 [**WdfUsbTargetPipeResetSynchronously**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetpiperesetsynchronously) 以同步发送重置管道请求。
--   调用 [**WdfUsbTargetPipeFormatRequestForReset**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetpipeformatrequestforreset) 方法为 reset 管道请求设置请求对象的格式，然后通过调用 [**WdfRequestSend**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestsend) 方法发送该请求。 这些调用类似于中止管道请求，如步骤3中所述。
+-   调用 [**WdfUsbTargetPipeResetSynchronously**](/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetpiperesetsynchronously) 以同步发送重置管道请求。
+-   调用 [**WdfUsbTargetPipeFormatRequestForReset**](/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetpipeformatrequestforreset) 方法为 reset 管道请求设置请求对象的格式，然后通过调用 [**WdfRequestSend**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestsend) 方法发送该请求。 这些调用类似于中止管道请求，如步骤3中所述。
 
 **注意**   请不要发送任何新的传输请求，直到重置管道操作完成。
 
@@ -118,9 +118,9 @@ USB 客户端驱动程序通过将控制传输发送到默认终结点来与其�
 1.  取消所有到设备的传输。 为此，请枚举当前配置中的所有管道，并取消为每个管道计划的挂起的请求。
 2.  停止设备的 i/o 目标。
 
-    调用 [**WdfUsbTargetDeviceGetIoTarget**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetdevicegetiotarget) 方法以获取与框架目标设备对象关联的 WDFIOTARGET 句柄。 然后，调用 [**WdfIoTargetStop**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfiotarget/nf-wdfiotarget-wdfiotargetstop) 并指定 WDFIOTARGET 句柄。 在 "调用" 中，将 "操作" 设置为 " **WdfIoTargetCancelSentIo** (WDF \_ io \_ 目标 \_ 发送 \_ IO \_ 操作") 。
+    调用 [**WdfUsbTargetDeviceGetIoTarget**](/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetdevicegetiotarget) 方法以获取与框架目标设备对象关联的 WDFIOTARGET 句柄。 然后，调用 [**WdfIoTargetStop**](/windows-hardware/drivers/ddi/wdfiotarget/nf-wdfiotarget-wdfiotargetstop) 并指定 WDFIOTARGET 句柄。 在 "调用" 中，将 "操作" 设置为 " **WdfIoTargetCancelSentIo** (WDF \_ io \_ 目标 \_ 发送 \_ IO \_ 操作") 。
 
-3.  通过调用 [**WdfUsbTargetDeviceResetPortSynchronously**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetdeviceresetportsynchronously) 方法发送重置端口请求。
+3.  通过调用 [**WdfUsbTargetDeviceResetPortSynchronously**](/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetdeviceresetportsynchronously) 方法发送重置端口请求。
 
 重置端口操作导致设备在 USB 总线上重新枚举。 USB 驱动程序堆栈会在枚举之后保留设备配置。 由于驱动程序堆栈确保现有的管道句柄保持有效，因此客户端驱动程序可以使用以前获得的管道句柄。
 
@@ -135,11 +135,11 @@ USB 客户端驱动程序通过将控制传输发送到默认终结点来与其�
 1.  取消所有到设备的传输。 请确保取消为当前配置中的每个管道计划的挂起请求 (参见步骤 3) 。
 2.  停止设备的 i/o 目标。
 
-    调用 [**WdfUsbTargetDeviceGetIoTarget**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetdevicegetiotarget) 方法以获取与框架目标设备对象关联的 WDFIOTARGET 句柄。 然后，调用 [**WdfIoTargetStop**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfiotarget/nf-wdfiotarget-wdfiotargetstop) 并指定 WDFIOTARGET 句柄。 在 "调用" 中，将 "操作" 设置为 " **WdfIoTargetCancelSentIo** (WDF \_ io \_ 目标 \_ 发送 \_ IO \_ 操作") 。
+    调用 [**WdfUsbTargetDeviceGetIoTarget**](/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetdevicegetiotarget) 方法以获取与框架目标设备对象关联的 WDFIOTARGET 句柄。 然后，调用 [**WdfIoTargetStop**](/windows-hardware/drivers/ddi/wdfiotarget/nf-wdfiotarget-wdfiotargetstop) 并指定 WDFIOTARGET 句柄。 在 "调用" 中，将 "操作" 设置为 " **WdfIoTargetCancelSentIo** (WDF \_ io \_ 目标 \_ 发送 \_ IO \_ 操作") 。
 
 3.  通过调用以下方法之一发送循环端口请求：
-    -   调用 [**WdfUsbTargetDeviceCyclePortSynchronously**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetdevicecycleportsynchronously) 以同步发送循环端口请求。
-    -   调用 [**WdfUsbTargetDeviceFormatRequestForCyclePort**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetdeviceformatrequestforcycleport) 方法，为循环端口请求设置请求对象的格式，然后通过调用 [**WdfRequestSend**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestsend) 方法发送请求。 这些调用类似于中止管道请求，如步骤3中所述。
+    -   调用 [**WdfUsbTargetDeviceCyclePortSynchronously**](/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetdevicecycleportsynchronously) 以同步发送循环端口请求。
+    -   调用 [**WdfUsbTargetDeviceFormatRequestForCyclePort**](/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetdeviceformatrequestforcycleport) 方法，为循环端口请求设置请求对象的格式，然后通过调用 [**WdfRequestSend**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestsend) 方法发送请求。 这些调用类似于中止管道请求，如步骤3中所述。
 
 只有在完成了 "周期-端口" 请求之后，客户端驱动程序才能将传输请求发送到设备。 这是因为当 USB 驱动程序堆栈处理循环端口请求时，设备节点会被删除。
 
@@ -150,7 +150,4 @@ USB 客户端驱动程序通过将控制传输发送到默认终结点来与其�
 与步骤 6) 中所述 (重置端口操作相似，对于复合设备，循环端口操作会影响整个设备，而不会影响设备的各个功能。
 
 ## <a name="related-topics"></a>相关主题
-[USB i/o 传输](usb-device-i-o.md)  
-
-
-
+[USB i/o 传输](usb-device-i-o.md)

@@ -3,12 +3,12 @@ description: 本部分中的主题将探讨 WDM 电源模式与 USB 设备的电
 title: 在 USB 客户端驱动程序中实施电源管理的概述
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ed297dc24469d1a1833ffbb28d4b5381a86f149e
-ms.sourcegitcommit: 15caaf6d943135efcaf9975927ff3933957acd5d
+ms.openlocfilehash: 622e5425650be747cdf1adc6c9bed173f9be062f
+ms.sourcegitcommit: 937974aa9bbe0262a7ffe9631593fab48c4e7492
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88968610"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "90010011"
 ---
 # <a name="overview-of-implementing-power-management-in-usb-client-drivers"></a>在 USB 客户端驱动程序中实施电源管理的概述
 
@@ -17,9 +17,9 @@ ms.locfileid: "88968610"
 
 符合通用串行总线 (USB) 规范的 USB 设备的电源管理功能具有丰富且复杂的电源管理功能集。 务必了解这些功能与 Windows 驱动模型 (WDM) 的交互方式，特别是 Microsoft Windows 如何改编标准 USB 功能以支持系统唤醒体系结构。
 
-有关内核模式驱动程序中 WDM 电源管理的信息，请参阅 [实施电源管理](https://docs.microsoft.com/windows-hardware/drivers/kernel/implementing-power-management)。
+有关内核模式驱动程序中 WDM 电源管理的信息，请参阅 [实施电源管理](../kernel/introduction-to-power-management.md)。
 
-基于内核模式驱动程序框架 (KMDF) 和用户模式驱动程序框架 (UMDF) 的 USB 客户端驱动程序应使用基本技术和各自框架支持的机制来管理 USB 设备的电源。 有关在基于 KMDF 的客户端驱动程序中管理电源的信息，请参阅 [在驱动程序中支持 PnP 和电源管理](https://docs.microsoft.com/windows-hardware/drivers/wdf/supporting-pnp-and-power-management-in-your-driver);对于基于 UMDF 的客户端驱动程序，请参阅 [基于 umdf 的驱动程序中的 PnP 和电源管理](https://docs.microsoft.com/windows-hardware/drivers/wdf/pnp-and-power-management-in-umdf-drivers)。
+基于内核模式驱动程序框架 (KMDF) 和用户模式驱动程序框架 (UMDF) 的 USB 客户端驱动程序应使用基本技术和各自框架支持的机制来管理 USB 设备的电源。 有关在基于 KMDF 的客户端驱动程序中管理电源的信息，请参阅 [在驱动程序中支持 PnP 和电源管理](../wdf/supporting-pnp-and-power-management-in-your-driver.md);对于基于 UMDF 的客户端驱动程序，请参阅 [基于 umdf 的驱动程序中的 PnP 和电源管理](../wdf/pnp-and-power-management-in-umdf-drivers.md)。
 
 ## <a name="in-this-section"></a>在本节中
 
@@ -32,7 +32,7 @@ ms.locfileid: "88968610"
 <thead>
 <tr class="header">
 <th>主题</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>
@@ -66,7 +66,4 @@ ms.locfileid: "88968610"
  
 
 ## <a name="related-topics"></a>相关主题
-[USB 驱动程序开发指南](usb-driver-development-guide.md)  
-
-
-
+[USB 驱动程序开发指南](usb-driver-development-guide.md)

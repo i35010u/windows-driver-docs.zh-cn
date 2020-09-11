@@ -4,12 +4,12 @@ title: 编写 USB 类型 C 端口控制器驱动程序
 ms.date: 01/07/2019
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 5103b15a5e38d6474852bdf66f15b08882c03e9f
-ms.sourcegitcommit: 15caaf6d943135efcaf9975927ff3933957acd5d
+ms.openlocfilehash: 4b0f46c9a7e3249a3ff5263aa3b22d9bf54626c5
+ms.sourcegitcommit: 937974aa9bbe0262a7ffe9631593fab48c4e7492
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88968842"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "90009927"
 ---
 # <a name="write-a-usb-type-c-port-controller-driver"></a>编写 USB 类型 C 端口控制器驱动程序
 
@@ -45,7 +45,7 @@ UcmTcpciCx 类扩展本身就是 UcmCx 的客户端驱动程序。 有关电源�
 
 **重要的 API**
 
-[USB 类型 C 端口控制器接口驱动程序类扩展参考](https://docs.microsoft.com/windows-hardware/drivers/ddi/_usbref/#type-c-driver-reference)
+[USB 类型 C 端口控制器接口驱动程序类扩展参考](/windows-hardware/drivers/ddi/_usbref/#type-c-driver-reference)
 
 **UcmTcpciCx 客户端驱动程序模板**
 
@@ -155,7 +155,7 @@ UcmTcpciCx 的客户端驱动程序应为：
 
  3. 实现 EvtIoDeviceControl 回调函数来处理这些 IOCTLs。 
 
-|  控制代码 |  说明 | 
+|  控制代码 |  描述 | 
 |---            |           ---|
 |IOCTL_UCMTCPCI_PORT_CONTROLLER_GET_STATUS|   按通用串行总线类型 C 端口控制器接口规范获取所有状态寄存器的值。 客户端驱动程序必须检索 CC_STATUS、POWER_STATUS 和 FAULT_STATUS 寄存器的值。|
 |IOCTL_UCMTCPCI_PORT_CONTROLLER_GET_CONTROL|获取根据通用串行总线类型 C 端口控制器接口规范定义的所有控制寄存器的值。|
@@ -211,4 +211,4 @@ UcmTcpciCx 将命令作为 i/o 控制代码发送，说明客户端驱动程序�
 客户端驱动程序可能需要将 i/o 请求发送到另一个驱动程序，以执行硬件操作。 例如，在示例中，驱动程序将 SPB 请求发送到 I<sup>2</sup>C 连接端口控制器。 在这种情况下，驱动程序无法转发从 UcmTcpciCx 收到的框架请求对象，因为请求对象可能在 WDM IRP 中没有正确数目的堆栈位置。 客户端驱动程序必须创建另一个框架请求对象并将其转发给另一个驱动程序。 客户端驱动程序可以在初始化期间预分配它需要的请求对象，而无需在每次从 UcmTcpciCx 获取请求时创建一个对象。 这是可能的，因为 UcmTcpciCx 保证在任何给定时间都只有一个请求未完成。 
 
 ## <a name="see-also"></a>另请参阅
-[USB 类型 C 端口控制器接口驱动程序类扩展参考](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/mt805826(v=vs.85))
+[USB 类型 C 端口控制器接口驱动程序类扩展参考](/previous-versions/windows/hardware/drivers/mt805826(v=vs.85))

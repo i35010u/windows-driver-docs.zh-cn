@@ -3,19 +3,19 @@ description: USBTCD 是用户模式应用程序和内核模式驱动程序的组
 title: USBTCD
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 286565c8a01870834fc5c8e4ee10d9a5785b377c
-ms.sourcegitcommit: 15caaf6d943135efcaf9975927ff3933957acd5d
+ms.openlocfilehash: 7490e78c5dc80d8a5a5758421b758d2b71cb0765
+ms.sourcegitcommit: 937974aa9bbe0262a7ffe9631593fab48c4e7492
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88968576"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "90010499"
 ---
 # <a name="usbtcd"></a>USBTCD
 
 
 USBTCD 是用户模式应用程序和内核模式驱动程序的组合。 该工具执行读写操作。 它启动与测试设备之间的各种传输长度的控制、大容量、同步数据传输。 对于 SuperMUTT 设备，USBTCD 将数据传输到大容量终结点支持的流。 它还可以将传输缓冲区作为链式 MDLs 发送。 在这种情况下，可以指定传输缓冲区中的段数。
 
-USBTCD 文件包含在 [MUTT](https://msdn.microsoft.com/windows/hardware/jj590752)软件包中。
+USBTCD 文件包含在 [MUTT](./index.md)软件包中。
 
 ## <a name="usbtcd"></a>USBTCD
 
@@ -64,7 +64,4 @@ Return value: 1
 ## <a name="related-topics"></a>相关主题
 [USB 测试工具](usb-test-tools.md)  
 [MUTT 软件包中的工具](mutt-software-package.md)  
-[Microsoft USB 测试工具 (MUTT) 设备](microsoft-usb-test-tool--mutt--devices.md)  
-
-
-
+[Microsoft USB 测试工具 (MUTT) 设备](microsoft-usb-test-tool--mutt--devices.md)

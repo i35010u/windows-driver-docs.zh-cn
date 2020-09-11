@@ -3,12 +3,12 @@ description: USB 接口关联描述符 (IAD) 允许设备对属于某个函数�
 title: USB 接口关联描述符
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7848a314f287853f60c713f8fe605e409e071923
-ms.sourcegitcommit: 15caaf6d943135efcaf9975927ff3933957acd5d
+ms.openlocfilehash: 9679d0ae156a19cace11ba3450a408508b52b28d
+ms.sourcegitcommit: 937974aa9bbe0262a7ffe9631593fab48c4e7492
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88968608"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "90010027"
 ---
 # <a name="usb-interface-association-descriptor"></a>USB 接口关联描述符
 
@@ -112,7 +112,7 @@ IAD 的 *bFirstInterface* 字段指示函数中第一个接口的编号。 IAD �
 <a href="" id="function-1--video-class"></a>**函数1： Video 类**  
 此函数由接口关联描述符 (IAD) 定义，其中包含两个接口： interface 0 (0) 和 interface one (1) 。
 
-系统将为函数)  (Id 生成硬件和兼容标识符，如对 [无线移动通信设备类的支持](support-for-the-wireless-mobile-communication-device-class--wmcdc-.md)中所述。 匹配适当的 INF 文件后，系统会加载视频类驱动程序堆栈。
+系统将为函数)  (Id 生成硬件和兼容标识符，如对 [无线移动通信设备类的支持](./support-for-interface-collections.md)中所述。 匹配适当的 INF 文件后，系统会加载视频类驱动程序堆栈。
 
 <a href="" id="function-2--human-input-device"></a>**函数2：人体输入设备**  
 此函数只包含一个接口： interface 2 (2) 。
@@ -257,7 +257,4 @@ IAD 的 *bFirstInterface* 字段指示函数中第一个接口的编号。 IAD �
 ```
 
 ## <a name="related-topics"></a>相关主题
-[USB 描述符](usb-descriptors.md)  
-
-
-
+[USB 描述符](usb-descriptors.md)

@@ -1,48 +1,48 @@
 ---
-title: 合成传感器实现详细信息
-description: 本部分提供有关 Windows 合成传感器驱动程序堆栈的实现详细信息。
+title: 合成传感器实现细节
+description: 本部分提供有关 Windows 合成传感器驱动程序堆栈的实现细节。
 ms.assetid: B53D76AC-127C-4B5A-B908-A647D2B3F164
 ms.date: 07/20/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: bfff1b8c8357b5b6e706fdf5eea4f6b8b193974a
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 9459651232f51161b12da531a6b5b7c062a82bbf
+ms.sourcegitcommit: 937974aa9bbe0262a7ffe9631593fab48c4e7492
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386192"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "90010283"
 ---
-# <a name="fusion-sensor-implementation-details"></a>合成传感器实现详细信息
+# <a name="fusion-sensor-implementation-details"></a>合成传感器实现细节
 
 
-本部分提供有关 Windows 合成传感器驱动程序堆栈的实现详细信息。
+本部分提供有关 Windows 合成传感器驱动程序堆栈的实现细节。
 
 >[!NOTE]
->Microsoft 提供了在某些平台上的合成驱动程序二进制文件和合作伙伴不能取代这些。
+>Microsoft 在某些平台上提供了合成驱动程序二进制文件，无法将其替换为合作伙伴。
 
  
 
 下图显示了传感器合成软件堆栈。
 
-![合成传感器堆栈图示](images/fusion-sensor-stack.png)
+![显示合成传感器堆栈的关系图](images/fusion-sensor-stack.png)
 
-合成软件堆栈由以下组件构成：
+合成软件堆栈包含以下组件：
 
--   **传感器的本机 Api**调用的应用程序访问熔和指南针特性和功能。 Api 是 ReadFile 和 DeviceIoControl 的包装器。 这些 Api 将发送到传感器类扩展，然后处理并完成请求。
+-   应用程序调用 **传感器本机 api** 来访问合成和罗盘的特性和功能。 Api 是 ReadFile 和 DeviceIoControl 的包装器。 这些 Api 将发送到传感器类扩展，后者随后处理并完成请求。
 
 -   **传感器类扩展**为任何所需的特定于传感器的扩展性提供支持。
 
--   **合成驱动程序**是驱动程序的特定功能的软件部分。 它读取物理传感器，并处理数据。 此组件中实现基本指南针和熔传感器的算法。
+-   **合成驱动程序**是驱动程序的特定于功能的软件部分。 它读取物理传感器并处理数据。 指南针和合成传感器的算法是在此组件中实现的。
 
 ## <a name="coordinate-systems"></a>坐标系统
 
 
-下图中显示的坐标系用于所有物理传感器和融合数据。
+下图中显示的坐标系统用于所有物理传感器和合成数据。
 
-![图示陀螺仪设备方向](images/gyroscope-orientation.png)
+![显示陀螺仪设备方向的关系图](images/gyroscope-orientation.png)
 
-下图中显示的坐标系是合成算法和 Api 由用于接地/参考框架中的所有向量的约定。
+下图中显示的坐标系统是合成算法和 Api 用于引用的地球/地面帧中的所有矢量的约定。
 
-![一个显示地球坐标系统 fusion 算法所用的图表](images/earth-coordinatesystem.png)
+![显示合成算法使用的地球坐标系统的关系图](images/earth-coordinatesystem.png)
 
 <!--
 //commenting out for now, all these links are bad.
@@ -51,20 +51,15 @@ ms.locfileid: "67386192"
 
 The following structures and enumerations are used by the fusion data part of the logical sensor driver:
 
--   [**VEC3D**](https://docs.microsoft.com/windows-hardware/drivers/sensors/)
+-   [**VEC3D**](./index.md)
 
--   [**COORDINATE\_AXIS**](https://docs.microsoft.com/windows-hardware/drivers/sensors/)
+-   [**COORDINATE\_AXIS**](./index.md)
 
--   [**QUATERNION**](https://docs.microsoft.com/windows-hardware/drivers/sensors/)
+-   [**QUATERNION**](./index.md)
 
--   [**MATRIX3X3**](https://docs.microsoft.com/windows-hardware/drivers/sensors/)
+-   [**MATRIX3X3**](./index.md)
 
 -   [Fusion sensor enumerations](https://go.microsoft.com/fwlink/p/?linkid=839352) and [Fusion sensor structures](https://go.microsoft.com/fwlink/p/?linkid=839355) provide information about the entire sensor fusion data structure, which include the attitude (in multiple formats) and the linear acceleration, and the compass data.
 -->
  
-
- 
-
-
-
 

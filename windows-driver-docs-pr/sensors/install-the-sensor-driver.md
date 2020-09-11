@@ -4,19 +4,19 @@ description: 本主题说明如何在开发板上安装传感器驱动程序。
 ms.assetid: 01CC1903-A36B-4ECC-856D-6196EC606973
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e3b6de37a8f089e993272c9512575e31c048a70f
-ms.sourcegitcommit: 7a7e61b4147a4aa86bf820fd0b0c7681fe17e544
+ms.openlocfilehash: d336d17ee23c6807a5b331512392213a993ee5ff
+ms.sourcegitcommit: 937974aa9bbe0262a7ffe9631593fab48c4e7492
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89056961"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "90010397"
 ---
 # <a name="install-the-sensor-driver"></a>安装传感器驱动程序
 
 
 本主题说明如何在开发板上安装传感器驱动程序，并在为开发面板 (SSDT) 更新辅助系统说明表后安装该驱动程序。
 
-本主题使用带 Cove 开发板和 ADXL345 加速感应器作为案例研究，以帮助说明在开发板上安装传感器驱动程序的过程。 因此，如果要执行本主题中所述的任务，必须先在带 Cove 上安装操作系统。 有关如何执行此操作的详细信息，请参阅 [下载适用于 windows 10 的工具包和工具](https://docs.microsoft.com/windows-hardware/get-started/adk-install)，并按照说明安装 windows 10。
+本主题使用带 Cove 开发板和 ADXL345 加速感应器作为案例研究，以帮助说明在开发板上安装传感器驱动程序的过程。 因此，如果要执行本主题中所述的任务，必须先在带 Cove 上安装操作系统。 有关如何执行此操作的详细信息，请参阅 [下载适用于 windows 10 的工具包和工具](/windows-hardware/get-started/adk-install)，并按照说明安装 windows 10。
 
 在带 Cove 上完成操作系统的安装后，请参阅 [构建传感器驱动程序](build-the-sensor-driver.md) 以了解如何在 Microsoft Visual Studio 中构建驱动程序。 然后返回此处继续。
 
@@ -24,7 +24,7 @@ ms.locfileid: "89056961"
 
 若要使带 Cove 的 ACPI 驱动程序知道 (I2C 总线上的加速感应) ，则必须将有关该加速度的信息添加到带 Cove 上的 SSDT。 下表描述硬件平台设备的硬件资源和中断要求，包括与加速感应的连接外围设备。
 
-## <a name="before-you-begin"></a>开始之前
+## <a name="before-you-begin"></a>在开始之前
 
 
 在开始执行下面所述的任务之前，请确保已设置带 Cove，如下图所示：
@@ -199,14 +199,9 @@ ms.locfileid: "89056961"
 
 6. 成功安装示例传感器驱动程序后， **设备管理器** 显示传感器，如以下屏幕截图所示。<br/>![设备管理器屏幕截图，显示成功安装的 adxl345 加速感应器的设备节点](images/dev-mgr-sensors.png)
 
-有关如何使用 Visual Studio 将驱动程序部署到客户端计算机 (如带 Cove) 的信息，请参阅将 [驱动程序部署到测试计算机](https://docs.microsoft.com/windows-hardware/drivers/develop/deploying-a-driver-to-a-test-computer)。
+有关如何使用 Visual Studio 将驱动程序部署到客户端计算机 (如带 Cove) 的信息，请参阅将 [驱动程序部署到测试计算机](../develop/deploying-a-driver-to-a-test-computer.md)。
 
 成功安装示例传感器驱动程序后，请参阅 [测试通用传感器驱动程序](test-your-universal-sensor-driver.md) ，了解有关如何测试传感器的信息。
 
  
-
- 
-
-
-
 

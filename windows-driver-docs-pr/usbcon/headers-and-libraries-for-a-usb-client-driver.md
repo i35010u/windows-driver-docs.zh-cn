@@ -3,19 +3,19 @@ description: 本主题列出了写入 Windows 驱动模型 (WDM) USB 客户端�
 title: USB 客户端驱动程序所需的标头和库
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b58d10ab9c04c7f37b9daa3967c20a00665f8cfc
-ms.sourcegitcommit: 15caaf6d943135efcaf9975927ff3933957acd5d
+ms.openlocfilehash: 3c501083506d7fe2fc5cf5110ccef5e46aac9d5c
+ms.sourcegitcommit: 937974aa9bbe0262a7ffe9631593fab48c4e7492
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88969482"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "90010323"
 ---
 # <a name="headers-and-libraries-required-by-a-usb-client-driver"></a>USB 客户端驱动程序所需的标头和库
 
 
 本主题列出了写入 Windows 驱动模型 (WDM) USB 客户端驱动程序所需的标头和库。
 
-若要查找特定设备驱动程序接口的标头和库 (DDI) ，请参阅 [USB 参考](https://docs.microsoft.com/windows-hardware/drivers/ddi/_usbref/)中的参考页。
+若要查找特定设备驱动程序接口的标头和库 (DDI) ，请参阅 [USB 参考](/windows-hardware/drivers/ddi/_usbref/)中的参考页。
 
 ## <a name="headers"></a>标头
 
@@ -32,7 +32,7 @@ ms.locfileid: "88969482"
 <th>头文件</th>
 <th>路径</th>
 <th>包括</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>
@@ -46,7 +46,7 @@ ms.locfileid: "88969482"
 <td>usb。h</td>
 <td>Include\shared</td>
 <td></td>
-<td>定义客户端驱动程序向 USB 驱动程序堆栈发送请求所需的 (URBs) USB 请求块的 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/usb/ns-usb-_urb" data-raw-source="[&lt;strong&gt;URB&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/usb/ns-usb-_urb)"><strong>URB</strong></a> 结构。</td>
+<td>定义客户端驱动程序向 USB 驱动程序堆栈发送请求所需的 (URBs) USB 请求块的 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/usb/ns-usb-_urb" data-raw-source="[&lt;strong&gt;URB&lt;/strong&gt;](/windows-hardware/drivers/ddi/usb/ns-usb-_urb)"><strong>URB</strong></a> 结构。</td>
 </tr>
 <tr class="odd">
 <td>usb100</td>
@@ -132,14 +132,14 @@ ms.locfileid: "88969482"
 <td>Include\um</td>
 <td><p>winapifamily</p>
 <p>winusbio</p></td>
-<td>定义由 Winusb.dll 公开的 <a href="https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff540046(v=vs.85)#winusb" data-raw-source="[WinUSB functions](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff540046(v=vs.85)#winusb)">WinUSB 函数</a> ，这些函数由想要将请求发送到作为 USB 设备的函数驱动程序的 Winusb.sys 的应用程序使用。</td>
+<td>定义由 Winusb.dll 公开的 <a href="/previous-versions/windows/hardware/drivers/ff540046(v=vs.85)#winusb" data-raw-source="[WinUSB functions](/previous-versions/windows/hardware/drivers/ff540046(v=vs.85)#winusb)">WinUSB 函数</a> ，这些函数由想要将请求发送到作为 USB 设备的函数驱动程序的 Winusb.sys 的应用程序使用。</td>
 </tr>
 <tr class="even">
 <td>winusbio</td>
 <td>Include\shared</td>
 <td><p>winapifamily</p>
 <p>usb。h</p></td>
-<td>定义 <a href="https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff540046(v=vs.85)#winusb" data-raw-source="[WinUSB functions](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff540046(v=vs.85)#winusb)">WinUSB 函数</a>的标志。</td>
+<td>定义 <a href="https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff540046(v=vs.85)#winusb" data-raw-source="[WinUSB functions](/previous-versions/windows/hardware/drivers/ff540046(v=vs.85)#winusb)">WinUSB 函数</a>的标志。</td>
 </tr>
 </tbody>
 </table>
@@ -207,9 +207,6 @@ ms.locfileid: "88969482"
 新标头文件 usbspec 为定义的 DDIs 提供协议定义，这是根据正式的 USB 规范提供的。 标头文件包括用于 USB 3.0 规格的 DDIs。
 
 ## <a name="related-topics"></a>相关主题
-[通用串行总线 (USB)](https://docs.microsoft.com/windows-hardware/drivers/)  
-[Windows 驱动程序工具包中的头文件](https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/header-files-in-the-windows-driver-kit)  
-[USB 客户端驱动程序开发入门](getting-started-with-usb-client-driver-development.md)  
-
-
-
+[通用串行总线 (USB)](../index.yml)  
+[Windows 驱动程序工具包中的头文件](../gettingstarted/header-files-in-the-windows-driver-kit.md)  
+[USB 客户端驱动程序开发入门](getting-started-with-usb-client-driver-development.md)

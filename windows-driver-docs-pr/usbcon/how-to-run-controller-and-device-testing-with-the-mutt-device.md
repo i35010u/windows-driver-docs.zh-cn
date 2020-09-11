@@ -3,12 +3,12 @@ description: 控制器测试的目标是从集线器和设备生成一组完整�
 title: USB 主机控制器测试与 MUTT 设备
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8f200694a1e219ddaa59e157e560abf9a92b2df8
-ms.sourcegitcommit: 15caaf6d943135efcaf9975927ff3933957acd5d
+ms.openlocfilehash: b7555aaa7e368e5a50ffd6439164edcc8f9cf31e
+ms.sourcegitcommit: 937974aa9bbe0262a7ffe9631593fab48c4e7492
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88968956"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "90009967"
 ---
 # <a name="usb-host-controller-testing-with-mutt-devices"></a>USB 主机控制器测试与 MUTT 设备
 
@@ -46,8 +46,5 @@ ms.locfileid: "88968956"
     ![示例 xhci 控制器拓扑](images/fig12-xhci-controller-topology.png)
 
 ## <a name="related-topics"></a>相关主题
-[USB](https://docs.microsoft.com/windows-hardware/drivers/)  
-[Microsoft USB 测试工具 (MUTT) 设备](microsoft-usb-test-tool--mutt--devices.md)  
-
-
-
+[USB](../index.yml)  
+[Microsoft USB 测试工具 (MUTT) 设备](microsoft-usb-test-tool--mutt--devices.md)

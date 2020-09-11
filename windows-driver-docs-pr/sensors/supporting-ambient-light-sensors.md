@@ -4,32 +4,32 @@ description: 支持环境光线传感器
 ms.assetid: a0875084-c093-4659-91b9-375450f65234
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f5b2eb7bf2c72f0e5e4e73c29f74050a19917ff3
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9507b79a3e11d3cff3cabbb63de9c8d4ddf62eb7
+ms.sourcegitcommit: 937974aa9bbe0262a7ffe9631593fab48c4e7492
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63362821"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "90010103"
 ---
 # <a name="supporting-ambient-light-sensors"></a>支持环境光线传感器
 
 
-环境光线传感器可以测量当前光照条件。 从光线传感器的数据可用于自动调整屏幕亮度和键盘照明。 此外可以创建光感知的应用程序调整当前的光照条件的用户界面元素。 在 Windows 8 中，完全支持自动的亮度控制与环境光线传感器 （自适应亮度）。
+环境光线传感器可以度量当前照明条件。 可以使用光线传感器的数据自动调整屏幕亮度和键盘照明。 您还可以创建用于调整当前照明条件的用户界面元素的光源感知应用程序。 在 Windows 8 中，具有环境光线传感器的自动亮度控制 (完全支持自适应亮度) 。
 
-Windows 8 中包含这两个 ACPI 3.0b 类驱动程序支持-符合和符合 hid 标准的环境光线传感器实现。 这意味着您不需要编写自定义驱动程序以支持环境光线传感器。 因为这些驱动程序与 Windows 传感器和位置平台集成，还可以基于传感器 API 的客户端应用程序，使用这些传感器。
+Windows 8 为 ACPI 3.0 b 兼容和符合 HID 标准的环境光线传感器实现提供类驱动程序支持。 这意味着你无需编写自定义驱动程序来支持环境光线传感器。 这些传感器还可以由基于传感器 API 的客户端应用程序使用，因为这些驱动程序与 Windows 传感器和位置平台集成。
 
-有关环境光线传感器和 Windows 8 中的自适应亮度功能的详细信息，请参阅白皮书"使用 Windows 10 集成环境的光线传感器"上[Windows 硬件开发人员中心](https://docs.microsoft.com/windows-hardware/design/whitepapers/integrating-ambient-light-sensors-with-computers-running-windows-10-creators-update)网站。
+有关环境光线传感器和 Windows 8 中的自适应亮度功能的详细信息，请参阅 [Windows 硬件开发人员中心](/windows-hardware/design/whitepapers/integrating-ambient-light-sensors-with-computers-running-windows-10-creators-update) 网站上的白皮书 "将环境光线传感器与 Windows 10 集成"。
 
-对于不是 ACPI 3.0b 的环境光线传感器的符合或符合 hid 标准的必须创建一个传感器驱动程序以与传感器和位置平台集成。
+对于不符合 ACPI 3.0 b 或符合 HID 标准的环境光线传感器，你必须创建一个传感器驱动程序以与传感器和位置平台集成。
 
-## <a name="handling-light-sensor-properties"></a>处理光线传感器属性
+## <a name="handling-light-sensor-properties"></a>处理光传感器属性
 
 
-对于 Windows 8，正确的类型的传感器\_数据\_类型\_LIGHT\_级别\_LUX 是 VT\_R4。 但是，对于 Windows 7，正确的类型为 VT\_UI4。 因此，设备驱动程序需要正确处理这两种类型。
+对于 Windows 8，传感器 \_ 数据 \_ 类型 \_ 轻型级别 LUX 的正确 \_ 类型 \_ 是 VT \_ R4。 但对于 Windows 7，正确的类型为 VT \_ UI4。 因此，设备驱动程序需要正确处理这两种类型。
 
-Windows 8 和 Windows 7 之间的差异的另一点是，早期 ALS 设备驱动程序应使用传感器\_属性\_更改\_敏感度要传递单个值而不是一组值中**IPortableDeviceValues**对象。
+Windows 8 和 Windows 7 之间的另一个区别在于，较早的 ALS 设备驱动程序预期的传感器 \_ 属性 \_ 更改 \_ 敏感度应作为单个值（而不是 **IPortableDeviceValues** 对象中的一组值）传递。
 
-下面的伪代码演示如何正确处理可能的类型的传感器\_数据\_类型\_LIGHT\_级别\_LUX。
+下面的伪代码演示了如何正确处理传感器 \_ 数据 \_ 类型 \_ 轻型 \_ 级别 \_ LUX 的可能类型。
 
 ```cpp
 SetLuxChangeSensitivity(PROPVARIANT var)
@@ -96,7 +96,4 @@ SetLuxChangeSensitivity(PROPVARIANT var)
 
 ## <a name="related-topics"></a>相关主题
 
-[传感器驱动程序开发的基础知识](sensor-driver-development-basics.md)
-
-
-
+[传感器驱动程序开发基础知识](sensor-driver-development-basics.md)

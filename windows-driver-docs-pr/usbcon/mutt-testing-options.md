@@ -3,12 +3,12 @@ description: 使用 MUTT 设备之前，必须准备测试系统。
 title: 如何准备测试系统以运行 MUTT 测试工具
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c61a44b4645ae1f16fc08b6e08811d92295ffbb8
-ms.sourcegitcommit: 15caaf6d943135efcaf9975927ff3933957acd5d
+ms.openlocfilehash: 987a3b5227fbaffb0edae4fb15e38e84c858585d
+ms.sourcegitcommit: 937974aa9bbe0262a7ffe9631593fab48c4e7492
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88969326"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "90009829"
 ---
 # <a name="how-to-prepare-the-test-system-to-run-mutt-test-tools"></a>如何准备测试系统以运行 MUTT 测试工具
 
@@ -69,8 +69,5 @@ ms.locfileid: "88969326"
 请参阅 https://aka.ms/usbtrace 获取说明，并下载用于从 USB 驱动程序捕获 ETW 跟踪的脚本。
 
 ## <a name="related-topics"></a>相关主题
-[USB](https://docs.microsoft.com/windows-hardware/drivers/)  
-[Microsoft USB 测试工具 (MUTT) 设备](microsoft-usb-test-tool--mutt--devices.md)  
-
-
-
+[USB](../index.yml)  
+[Microsoft USB 测试工具 (MUTT) 设备](microsoft-usb-test-tool--mutt--devices.md)

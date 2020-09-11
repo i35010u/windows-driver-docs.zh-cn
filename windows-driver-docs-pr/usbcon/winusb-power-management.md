@@ -3,17 +3,17 @@ description: WinUSB 电源管理
 title: WinUSB 电源管理
 ms.date: 01/07/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 9e5f58330c04d0d97f20aed826f398ec0e6c0e89
-ms.sourcegitcommit: 15caaf6d943135efcaf9975927ff3933957acd5d
+ms.openlocfilehash: 4d21cc551b0bfc0e4a650e922cbea6a63e811ccd
+ms.sourcegitcommit: 937974aa9bbe0262a7ffe9631593fab48c4e7492
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88969494"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "90010179"
 ---
 # <a name="winusb-power-management"></a>WinUSB 电源管理
 
 
-WinUSB 使用 KMDF 状态机进行电源管理。 可以通过调用 [**WinUsb \_ SetPowerPolicy**](https://docs.microsoft.com/windows/desktop/api/winusb/nf-winusb-winusb_setpowerpolicy)管理电源策略。
+WinUSB 使用 KMDF 状态机进行电源管理。 可以通过调用 [**WinUsb \_ SetPowerPolicy**](/windows/desktop/api/winusb/nf-winusb-winusb_setpowerpolicy)管理电源策略。
 
 为了修改 WinUSB 的电源行为，可以在设备的 INF 中修改默认注册表设置。 必须通过在 HW 中添加值，将这些值写入到注册表中的设备特定位置 **。** INF 的 AddReg 部分。
 
@@ -36,7 +36,7 @@ HKR,,SystemWakeEnabled,0x00010001,1
 <a href="" id="selective-suspend"></a>**选择性挂起**  
 可以通过多个系统或 WinUSB 设置中的任何一个禁用选择性挂起。 单个设置无法强制 WinUSB 启用选择性挂起。
 
-在 [**WinUsb \_ SetPowerPolicy**](https://docs.microsoft.com/windows/desktop/api/winusb/nf-winusb-winusb_setpowerpolicy)的 *PolicyType* 参数中指定的以下电源策略设置将影响选择性挂起的行为：
+在 [**WinUsb \_ SetPowerPolicy**](/windows/desktop/api/winusb/nf-winusb-winusb_setpowerpolicy)的 *PolicyType* 参数中指定的以下电源策略设置将影响选择性挂起的行为：
 
 -   \_当设置为零时，自动挂起会将设备设置为选择性挂起模式。
 -   挂起 \_ 延迟设置设备进入空闲状态与 WinUSB 请求设备进入选择性挂起之间的时间间隔。
@@ -107,12 +107,9 @@ HKR,,SystemWakeEnabled,0x00010001,1
 [WinUSB 体系结构和模块](winusb-architecture.md)  
 [选择用于开发 USB 客户端驱动程序的驱动程序模型](winusb-considerations.md)  
 [WinUSB (Winusb.sys) 安装](winusb-installation.md)  
-[如何通过 WinUSB 函数访问 USB 设备](using-winusb-api-to-communicate-with-a-usb-device.md)  
-[用于管道策略修改的 WinUSB 函数](winusb-functions-for-pipe-policy-modification.md)  
-[WinUSB 函数](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff540046(v=vs.85)#winusb)  
+[如何通过 WinUSB Functions 访问 USB 设备](using-winusb-api-to-communicate-with-a-usb-device.md)  
+[用于修改管道策略的 WinUSB 函数](winusb-functions-for-pipe-policy-modification.md)  
+[WinUSB 函数](/previous-versions/windows/hardware/drivers/ff540046(v=vs.85)#winusb)  
 [WinUSB](winusb.md)  
-[**WinUsb \_ GetPowerPolicy**](https://docs.microsoft.com/windows/desktop/api/winusb/nf-winusb-winusb_getpowerpolicy)  
-[**WinUsb \_ SetPowerPolicy**](https://docs.microsoft.com/windows/desktop/api/winusb/nf-winusb-winusb_setpowerpolicy)  
-
-
-
+[**WinUsb \_ GetPowerPolicy**](/windows/desktop/api/winusb/nf-winusb-winusb_getpowerpolicy)  
+[**WinUsb \_ SetPowerPolicy**](/windows/desktop/api/winusb/nf-winusb-winusb_setpowerpolicy)

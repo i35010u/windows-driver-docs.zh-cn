@@ -3,16 +3,16 @@ description: 支持函数控制器的 USB 充电器
 title: 支持 USB 充电器的 USB 筛选器驱动程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2d663f2ab584bf929fa1230818c014f22ca92730
-ms.sourcegitcommit: 15caaf6d943135efcaf9975927ff3933957acd5d
+ms.openlocfilehash: 0726fe35cdeb8c36a285eaa9435c56d1e14a3be9
+ms.sourcegitcommit: 937974aa9bbe0262a7ffe9631593fab48c4e7492
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88968628"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "90010029"
 ---
 # <a name="usb-filter-driver-for-supporting-usb-chargers"></a>支持 USB 充电器的 USB 筛选器驱动程序
 
-如果函数控制器使用机箱中的 Synopsys 和 ChipIdea 驱动程序，则编写支持检测充电器的筛选器驱动程序。 如果要为专用功能控制器编写客户端驱动程序，通过实现 [EVT_UFX_DEVICE_PROPRIETARY_CHARGER_SET_PROPERTY](https://docs.microsoft.com/windows-hardware/drivers/ddi/ufxclient/nc-ufxclient-evt_ufx_device_proprietary_charger_set_property)、 [EVT_UFX_DEVICE_PROPRIETARY_CHARGER_RESET](https://docs.microsoft.com/windows-hardware/drivers/ddi/ufxclient/nc-ufxclient-evt_ufx_device_proprietary_charger_reset)和 [EVT_UFX_DEVICE_DETECT_PROPRIETARY_CHARGER](https://docs.microsoft.com/windows-hardware/drivers/ddi/ufxclient/nc-ufxclient-evt_ufx_device_proprietary_charger_detect)，可以在客户端驱动程序中集成 "充电器/附加检测"。
+如果函数控制器使用机箱中的 Synopsys 和 ChipIdea 驱动程序，则编写支持检测充电器的筛选器驱动程序。 如果要为专用功能控制器编写客户端驱动程序，通过实现 [EVT_UFX_DEVICE_PROPRIETARY_CHARGER_SET_PROPERTY](/windows-hardware/drivers/ddi/ufxclient/nc-ufxclient-evt_ufx_device_proprietary_charger_set_property)、 [EVT_UFX_DEVICE_PROPRIETARY_CHARGER_RESET](/windows-hardware/drivers/ddi/ufxclient/nc-ufxclient-evt_ufx_device_proprietary_charger_reset)和 [EVT_UFX_DEVICE_DETECT_PROPRIETARY_CHARGER](/windows-hardware/drivers/ddi/ufxclient/nc-ufxclient-evt_ufx_device_proprietary_charger_detect)，可以在客户端驱动程序中集成 "充电器/附加检测"。
 
 USB 函数堆栈允许设备（如电话或平板电脑）在连接到由 USB 电池充电 (BC) 1.2 规范定义的主机和 USB 充电器时进行收费。 
 
@@ -38,4 +38,3 @@ USB 函数堆栈允许设备（如电话或平板电脑）在连接到由 USB �
 将 USB 端口连接到设备后，客户端驱动程序将获得由较低筛选器驱动程序或中断通知。 目前，客户端驱动程序通过与 USB 硬件通信来执行端口检测，并向 UFX 报告端口类型。 或者，它可以请求筛选器驱动程序。 在这种情况下，筛选器驱动程序与 USB 硬件协调以执行 USB 端口检测，并将检测到的端口类型返回到客户端驱动程序，客户端驱动程序将它传递给 UFX。 
 
 根据端口类型，UFX 确定设备可绘制的最大当前数量，并将该信息发送给计费聚合驱动程序 (CAD) 。 CAD 验证信息。 如果当前有效，则 CAD 会将请求发送到电池类驱动程序，开始充电到指定的最大电流。 电池类驱动程序将充电请求转发给电池 miniclass 驱动程序进行处理。 如果充电请求指定了专有充电器已附加，并且电池 miniclass 处理专用的充电器，则 miniclass 驱动程序可以尝试根据它确定的最大电流进行收费。 否则，电池 miniclass 只能向 CAD 指定的最大值收费。
-

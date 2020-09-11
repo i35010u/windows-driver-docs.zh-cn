@@ -3,12 +3,12 @@ description: 本主题介绍有关在客户端驱动程序中实施远程唤醒�
 title: 远程唤醒 USB 设备
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9aaa6696d871f1bfc0789dd8ff48042c9c39725e
-ms.sourcegitcommit: 15caaf6d943135efcaf9975927ff3933957acd5d
+ms.openlocfilehash: aaa08a6801d914d3af516941b32cc394494c49bf
+ms.sourcegitcommit: 937974aa9bbe0262a7ffe9631593fab48c4e7492
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88969408"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "90010613"
 ---
 # <a name="remote-wakeup-of-usb-devices"></a>远程唤醒 USB 设备
 
@@ -17,14 +17,14 @@ ms.locfileid: "88969408"
 
 如果 USB 设备在挂起时可以响应外部唤醒信号，则称为具有 *远程唤醒* 功能。 具有远程唤醒功能的设备的示例包括：鼠标、键盘、USB 集线器、调制解调器 (唤醒) 、Nic、插入时唤醒。 所有这些设备都能产生远程唤醒信号。 不能生成远程唤醒信号的设备包括视频相机、大容量存储设备、音频设备和打印机。
 
-支持远程唤醒信号的设备驱动程序必须发出 [**IRP \_ MN \_ wait \_ 唤醒**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-wait-wake) irp，也称为等待唤醒 irp，以 arm 设备进行远程唤醒。 等待唤醒机制在 [支持具有唤醒功能的设备](https://docs.microsoft.com/windows-hardware/drivers/kernel/supporting-devices-that-have-wake-up-capabilities)的部分中进行了介绍。
+支持远程唤醒信号的设备驱动程序必须发出 [**IRP \_ MN \_ wait \_ 唤醒**](../kernel/irp-mn-wait-wake.md) irp，也称为等待唤醒 irp，以 arm 设备进行远程唤醒。 等待唤醒机制在 [支持具有唤醒功能的设备](../kernel/supporting-devices-that-have-wake-up-capabilities.md)的部分中进行了介绍。
 
 ## <a name="when-does-the-system-enable-remote-wakeup-on-a-usb-leaf-device"></a>系统何时启用 USB 叶设备上的远程唤醒？
 
 
 在 USB 术语中，在设置了 USB 设备的设备 \_ 远程唤醒功能时，会为其启用远程唤醒 \_ 。 USB 规范指定主机软件必须在设备上 "只是之前" 设置远程唤醒功能，使设备进入睡眠状态。
 
-出于此原因，在接收到设备的等待唤醒 IRP 后，USB 堆栈不会 \_ 在设备上设置设备远程 \_ 唤醒功能。 相反，它会一直等待，直到收到 [**IRP \_ MN \_ SET \_ 电源**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-set-power) 请求，将设备的 WDM 设备状态更改为 D1/D2。 在大多数情况下，当 USB stack 收到此请求时，它会在设备上设置远程唤醒功能，并通过挂起设备的上游端口来使设备进入睡眠状态。 当你设计和调试驱动程序时，应记住，武装是用于唤醒软件的 USB 设备与等待唤醒 IRP 之间的松关系，并通过设置远程唤醒功能武装设备在硬件中唤醒。
+出于此原因，在接收到设备的等待唤醒 IRP 后，USB 堆栈不会 \_ 在设备上设置设备远程 \_ 唤醒功能。 相反，它会一直等待，直到收到 [**IRP \_ MN \_ SET \_ 电源**](../kernel/irp-mn-set-power.md) 请求，将设备的 WDM 设备状态更改为 D1/D2。 在大多数情况下，当 USB stack 收到此请求时，它会在设备上设置远程唤醒功能，并通过挂起设备的上游端口来使设备进入睡眠状态。 当你设计和调试驱动程序时，应记住，武装是用于唤醒软件的 USB 设备与等待唤醒 IRP 之间的松关系，并通过设置远程唤醒功能武装设备在硬件中唤醒。
 
 当设备收到将设备更改为 "D3" 睡眠状态的请求时，USB 堆栈不允许设备进行远程唤醒，因为根据 WDM 电源模式，D3 中的设备无法唤醒系统。
 
@@ -40,7 +40,4 @@ WDM 电源模式 USB 实现的另一个独特方面是将 USB 集线器的武装
  
 
 ## <a name="related-topics"></a>相关主题
-[USB 电源管理](usb-power-management.md)  
-
-
-
+[USB 电源管理](usb-power-management.md)

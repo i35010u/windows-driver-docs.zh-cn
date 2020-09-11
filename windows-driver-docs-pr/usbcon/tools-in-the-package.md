@@ -3,12 +3,12 @@ description: 设备测试的目的是针对各种集线器方案和系统电源�
 title: USB 设备测试与 MUTT 设备
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c8a0eaf812c794f5635ff5239b7dccc799aba9d2
-ms.sourcegitcommit: 15caaf6d943135efcaf9975927ff3933957acd5d
+ms.openlocfilehash: c4c0485c4a08d278788428f32bf144a8f51627a5
+ms.sourcegitcommit: 937974aa9bbe0262a7ffe9631593fab48c4e7492
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88969272"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "90009849"
 ---
 # <a name="usb-device-testing-with-mutt-devices"></a>USB 设备测试与 MUTT 设备
 
@@ -45,8 +45,5 @@ ms.locfileid: "88969272"
     ![设备从 mutt 包下游](images/fig14-topology-downstream-muttpack.png)
 
 ## <a name="related-topics"></a>相关主题
-[USB](https://docs.microsoft.com/windows-hardware/drivers/)  
-[Microsoft USB 测试工具 (MUTT) 设备](microsoft-usb-test-tool--mutt--devices.md)  
-
-
-
+[USB](../index.yml)  
+[Microsoft USB 测试工具 (MUTT) 设备](microsoft-usb-test-tool--mutt--devices.md)

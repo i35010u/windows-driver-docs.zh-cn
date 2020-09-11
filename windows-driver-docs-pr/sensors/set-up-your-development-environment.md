@@ -1,49 +1,44 @@
 ---
 title: 设置开发环境
-description: 本主题演示如何设置开发环境中，为使用 Shark Cove 板和由 Microsoft 提供的软件开发工具，以生成您的传感器的通用传感器驱动程序。
+description: 本主题说明如何设置开发环境，以便使用带 Cove 板和 Microsoft 提供的软件开发工具构建传感器的通用传感器驱动程序。
 ms.assetid: 0CB6F5C9-4AA8-4745-A5FE-28440ADB0F11
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0704e51a2162957bcde2646e1703c260a5ee8e99
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 0e94585281b768e7f71783f15a2c37d3513d98bc
+ms.sourcegitcommit: 937974aa9bbe0262a7ffe9631593fab48c4e7492
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67387176"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "90010195"
 ---
 # <a name="set-up-your-development-environment"></a>设置开发环境
 
 
-本主题演示如何设置开发环境中，为使用 Shark Cove 板和由 Microsoft 提供的软件开发工具，以生成您的传感器的通用传感器驱动程序。
+本主题说明如何设置开发环境，以便使用带 Cove 板和 Microsoft 提供的软件开发工具构建传感器的通用传感器驱动程序。
 
-Shark Cove 是开发板的设计和配置为基于 x86 的 tablet 平台的核心。 例如照相机、 传感器、 显示等的其他设备具有已之外的看板的设计，以便这些设备的新版本可以开发和测试使用 Shark Cove。
+带 Cove 是一种开发板，设计和配置为基于 x86 的平板电脑平台的核心。 其他设备（如相机、传感器、显示器等）已脱离板的设计，以便使用带 Cove 开发和测试这些设备的新版本。
 
-您可以订购从 Shark Cove [Mouser 电子](https://www.mouser.com/ProductDetail/CircuitCo/999-0005112/?qs=%2fha2pyFadujHMsjnM70kKGG23vMNVMdDa094WOKuFgB8eIBF6%252bBXww%3d%3d)。
+你可以订购 [Mouser 电子设备](https://www.mouser.com/ProductDetail/CircuitCo/999-0005112/?qs=%2fha2pyFadujHMsjnM70kKGG23vMNVMdDa094WOKuFgB8eIBF6%252bBXww%3d%3d)的带 Cove。
 
-开始使用本练习之前，请确保具备以下硬件：
+开始此练习之前，请确保你具有以下硬件：
 
--   Shark Cove 板，具有包含的电源线和适配器
--   在其上面安装测试与您的传感器板
--   供电的 USB 集线器
+-   带 Cove 板，附带的电源线和适配器
+-   装入传感器的测试板
+-   USB 集线器已通电
 -   USB 键盘
 -   USB 鼠标
 -   USB 网络适配器
--   监视器和 HDMI 电缆 （也许加上 HDMI 电缆适配器）
+-   监视器和 HDMI 电缆 (可能与 HDMI 电缆适配器) 
 
-有关如何连接和将上述列表中的硬件设置的详细说明，请参阅[Shark Cove 硬件开发板](https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/sharks-cove-hardware-development-board)，并执行所有任务最多，并包括第 4 步。
+有关如何在前面的列表中连接和设置硬件的详细说明，请参阅 [带 Cove 硬件开发委员会](../gettingstarted/sharks-cove-hardware-development-board.md)，并执行所有任务，包括步骤4。
 
-如果您已成功完成上一段中建议的步骤，然后在开发环境现在，应有以下：
+如果成功完成了上一段中所述的步骤，则开发环境现在应具有以下内容：
 
 -   已下载并安装 Microsoft 工具包和工具
--   与 Windows 安装的正确版本的 shark Cove
--   Shark Cove 配置为接收和测试已部署的驱动程序
+-   已安装正确版本的 Windows 的带 Cove
+-   带 Cove 配置为接收和测试已部署的驱动程序
 
-遵循到下一主题中的指导[准备在传感器测试板](prepare-your-sensor-test-board.md)以连接到 Shark Cove 板。
-
- 
+遵循下一主题中的指南， [准备好传感器测试板](prepare-your-sensor-test-board.md) ，使其连接到带 Cove 板。
 
  
-
-
-
 

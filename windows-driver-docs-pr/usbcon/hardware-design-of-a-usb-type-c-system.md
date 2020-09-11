@@ -3,12 +3,12 @@ description: 下面是 USB 类型 C 系统的一些示例设计。
 title: USB 类型 C 系统的硬件设计
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 36f68a1ddd61869724811049f62d453ad3f67122
-ms.sourcegitcommit: 15caaf6d943135efcaf9975927ff3933957acd5d
+ms.openlocfilehash: 1b3e0711ca9239fc5afecbeb19ed4bc88eec9e20
+ms.sourcegitcommit: 937974aa9bbe0262a7ffe9631593fab48c4e7492
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88969488"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "90010339"
 ---
 # <a name="hardware-design-usb-type-c-systems"></a>硬件设计：USB 类型 C 系统
 
@@ -17,7 +17,7 @@ ms.locfileid: "88969488"
 
 -   2016 年 12 月
 
-\[某些信息与预发布的产品相关，这些信息可能会在正式发布之前进行重大修改。 对于此处提供的信息，Microsoft 不作任何明示或暗示的担保。\]
+\[某些信息与预发布的产品相关，这些信息可能会在正式发布之前进行重大修改。 Microsoft 对此处提供的信息不提供任何明示或暗示的保证。\]
 
 下面是 USB 类型 C 系统的一些示例设计。
 
@@ -51,7 +51,7 @@ ms.locfileid: "88969488"
 
 [编写 UCSI 客户端驱动程序](write-a-ucsi-driver.md)
 
-[USB 类型 C 驱动程序参考](https://docs.microsoft.com/windows-hardware/drivers/ddi/_usbref/#type-c-driver-reference)
+[USB 类型 C 驱动程序参考](/windows-hardware/drivers/ddi/_usbref/#type-c-driver-reference)
 
 ## <a name="usb-type-c-system-design"></a><a href="" id="hardware"></a>USB 类型 C 系统设计
 
@@ -68,10 +68,7 @@ ms.locfileid: "88969488"
 
 [编写 USB 类型 C 连接器驱动程序](bring-up-a-usb-type-c-connector-on-a-windows-system.md)
 
-[USB 类型 C 驱动程序参考](https://docs.microsoft.com/windows-hardware/drivers/ddi/_usbref/#type-c-driver-reference)
+[USB 类型 C 驱动程序参考](/windows-hardware/drivers/ddi/_usbref/#type-c-driver-reference)
 
 ## <a name="related-topics"></a>相关主题
-[Windows 对 USB 类型 C 连接器的支持](oem-tasks-for-bringing-up-a-usb-typec.md)  
-
-
-
+[Windows 对 USB 类型 C 连接器的支持](oem-tasks-for-bringing-up-a-usb-typec.md)

@@ -3,12 +3,12 @@ description: 下面是 Windows 8.1 中通用串行总线 (USB) 的新增功能�
 title: Windows 8.1-USB 的新增功能
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 02c3ddd9704fdb2daf7686bfacd23dff9e33d1a1
-ms.sourcegitcommit: 15caaf6d943135efcaf9975927ff3933957acd5d
+ms.openlocfilehash: 3efba40a6cad848abe34d7814ad13744845ad002
+ms.sourcegitcommit: 937974aa9bbe0262a7ffe9631593fab48c4e7492
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88969064"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "90010461"
 ---
 # <a name="windows-81-whats-new-for-usb"></a>Windows 8.1：USB 的新增功能
 
@@ -26,7 +26,7 @@ ms.locfileid: "88969064"
 ## <a name="windows-runtime-usb-api-for-developing-uwp-apps"></a>用于开发 UWP 应用的 Windows 运行时 USB API
 
 
-Windows 运行时提供新的命名空间： [**Windows. usb**](https://docs.microsoft.com/uwp/api/Windows.Devices.Usb) (请参阅 [使用 c #/VB/C + +) 为 Usb 设备编写应用 (UWP 应用 ](https://docs.microsoft.com/previous-versions/windows/apps/dn263144(v=win.10)) ，以获取简短概述) 。 通过使用命名空间，可以编写与自定义 USB 设备通信的 UWP 应用。
+Windows 运行时提供新的命名空间： [**Windows. usb**](/uwp/api/Windows.Devices.Usb) (请参阅 [使用 c #/VB/C + +) 为 Usb 设备编写应用 (UWP 应用 ](/previous-versions/windows/apps/dn263144(v=win.10)) ，以获取简短概述) 。 通过使用命名空间，可以编写与自定义 USB 设备通信的 UWP 应用。
 
 有关详细信息，请参阅以下主题：
 
@@ -39,7 +39,7 @@ Windows 运行时提供新的命名空间： [**Windows. usb**](https://docs.mic
 -   [如何获取 USB 描述符（UWP 应用）](how-to-get-usb-descriptors--uwp-app-.md)
 -   [如何选择 USB 接口设置（UWP 应用）](how-to-select-a-usb-interface-setting--uwp-app-.md)
 
-这些示例演示如何使用 [**Windows. Usb**](https://docs.microsoft.com/uwp/api/Windows.Devices.Usb) 命名空间。
+这些示例演示如何使用 [**Windows. Usb**](/uwp/api/Windows.Devices.Usb) 命名空间。
 
 <table>
 <colgroup>
@@ -49,7 +49,7 @@ Windows 运行时提供新的命名空间： [**Windows. usb**](https://docs.mic
 <thead>
 <tr class="header">
 <th>UWP 应用示例</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>
@@ -86,16 +86,16 @@ MS OS 2.0 描述符规范提供以下改进：
 
 Microsoft 提供的 WinUSB (内核模式驱动程序) 现在支持与 USB 设备的同步终结点进行传输
 
-Winusb.dll 的用户模式 DLL 公开了这些 [WinUSB 函数](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff540046(v=vs.85)#winusb) ，Windows 桌面应用程序可使用这些函数启动此类传输。
+Winusb.dll 的用户模式 DLL 公开了这些 [WinUSB 函数](/previous-versions/windows/hardware/drivers/ff540046(v=vs.85)#winusb) ，Windows 桌面应用程序可使用这些函数启动此类传输。
 
--   [**WinUsb \_ RegisterIsochBuffer**](https://docs.microsoft.com/windows/desktop/api/winusb/nf-winusb-winusb_registerisochbuffer)
--   [**WinUsb \_ UnregisterIsochBuffer**](https://docs.microsoft.com/windows/desktop/api/winusb/nf-winusb-winusb_unregisterisochbuffer)
--   [**WinUsb \_ WriteIsochPipeAsap**](https://docs.microsoft.com/windows/desktop/api/winusb/nf-winusb-winusb_writeisochpipeasap)
--   [**WinUsb \_ ReadIsochPipeAsap**](https://docs.microsoft.com/windows/desktop/api/winusb/nf-winusb-winusb_readisochpipeasap)
--   [**WinUsb \_ WriteIsochPipe**](https://docs.microsoft.com/windows/desktop/api/winusb/nf-winusb-winusb_writeisochpipe)
--   [**WinUsb \_ ReadIsochPipe**](https://docs.microsoft.com/windows/desktop/api/winusb/nf-winusb-winusb_readisochpipe)
--   [**WinUsb \_ GetCurrentFrameNumber**](https://docs.microsoft.com/windows/desktop/api/winusb/nf-winusb-winusb_getcurrentframenumber)
--   [**WinUsb \_ GetAdjustedFrameNumber**](https://docs.microsoft.com/windows/desktop/api/winusb/nf-winusb-winusb_getadjustedframenumber)
+-   [**WinUsb \_ RegisterIsochBuffer**](/windows/desktop/api/winusb/nf-winusb-winusb_registerisochbuffer)
+-   [**WinUsb \_ UnregisterIsochBuffer**](/windows/desktop/api/winusb/nf-winusb-winusb_unregisterisochbuffer)
+-   [**WinUsb \_ WriteIsochPipeAsap**](/windows/desktop/api/winusb/nf-winusb-winusb_writeisochpipeasap)
+-   [**WinUsb \_ ReadIsochPipeAsap**](/windows/desktop/api/winusb/nf-winusb-winusb_readisochpipeasap)
+-   [**WinUsb \_ WriteIsochPipe**](/windows/desktop/api/winusb/nf-winusb-winusb_writeisochpipe)
+-   [**WinUsb \_ ReadIsochPipe**](/windows/desktop/api/winusb/nf-winusb-winusb_readisochpipe)
+-   [**WinUsb \_ GetCurrentFrameNumber**](/windows/desktop/api/winusb/nf-winusb-winusb_getcurrentframenumber)
+-   [**WinUsb \_ GetAdjustedFrameNumber**](/windows/desktop/api/winusb/nf-winusb-winusb_getadjustedframenumber)
 
 ## <a name="usb-driver-stack-improvements"></a>USB 驱动程序堆栈改进
 
@@ -112,15 +112,15 @@ Winusb.dll 的用户模式 DLL 公开了这些 [WinUSB 函数](https://docs.micr
 
 -   硬件认证工具包中的这些 USB 测试 (HCK) 已得到改进。 设备枚举测试现在包含一个新的参数，可在使用简化拓扑进行测试的过程中减少手动干预。 挂起测试已改进日志记录功能。
 
-    -   [USB 公开端口控制器测试](https://docs.microsoft.com/previous-versions/windows/hardware/hck/hh998021(v=vs.85))
-    -   [USB 集线器公开端口测试 USB](https://docs.microsoft.com/previous-versions/windows/hardware/hck/jj123960(v=vs.85))
-    -   [集线器选择性挂起测试](https://docs.microsoft.com/previous-versions/windows/hardware/hck/jj124844(v=vs.85))
-    -   [USB 公开的端口系统测试](https://docs.microsoft.com/previous-versions/windows/hardware/hck/jj123655(v=vs.85))
-    -   [USB 选择性挂起测试 (xHCI) ](https://docs.microsoft.com/previous-versions/windows/hardware/hck/jj124491(v=vs.85))
-    -   [USB 3.0 挂起测试](https://docs.microsoft.com/previous-versions/windows/hardware/hck/jj125210(v=vs.85))
+    -   [USB 公开端口控制器测试](/previous-versions/windows/hardware/hck/hh998021(v=vs.85))
+    -   [USB 集线器公开端口测试 USB](/previous-versions/windows/hardware/hck/jj123960(v=vs.85))
+    -   [集线器选择性挂起测试](/previous-versions/windows/hardware/hck/jj124844(v=vs.85))
+    -   [USB 公开的端口系统测试](/previous-versions/windows/hardware/hck/jj123655(v=vs.85))
+    -   [USB 选择性挂起测试 (xHCI) ](/previous-versions/windows/hardware/hck/jj124491(v=vs.85))
+    -   [USB 3.0 挂起测试](/previous-versions/windows/hardware/hck/jj125210(v=vs.85))
 -   MUTT 和 SuperMUTT 设备现在为 USB-IF 合规性设备。 设备和随附的软件包会集成到 HCK 套件的 USB 测试。 它们提供的自动化测试可以在 USB 控制器、设备和系统的开发周期中使用，尤其是在进行压力测试时使用。
 
-    可以从 [JJG 技术](https://jjgtechnologies.com/mutt.md)购买 MUTT 硬件。 设备未安装安装的固件。 若要安装固件，请从 [该网站](https://msdn.microsoft.com/windows/hardware/jj590752) 下载 MUTT 软件包并运行 MUTTUtil.exe。 有关详细信息，请参阅包附带的文档。
+    可以从 [JJG 技术](https://jjgtechnologies.com/mutt.md)购买 MUTT 硬件。 设备未安装安装的固件。 若要安装固件，请从 [该网站](./index.md) 下载 MUTT 软件包并运行 MUTTUtil.exe。 有关详细信息，请参阅包附带的文档。
 
 ## <a name="improved-usb-diagnostic-tools-and-debugger-extensions"></a>改进的 USB 诊断工具和调试器扩展
 
@@ -129,7 +129,4 @@ Winusb.dll 的用户模式 DLL 公开了这些 [WinUSB 函数](https://docs.micr
 -    (Netmon) 中显示的 USB 事件现在更具描述性。 事件也可以按控制器、中心等进行分组和排序。
 
 ## <a name="related-topics"></a>相关主题
-[通用串行总线 (USB)](https://docs.microsoft.com/windows-hardware/drivers/)  
-
-
-
+[通用串行总线 (USB)](../index.yml)

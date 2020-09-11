@@ -4,19 +4,19 @@ description: V2 传感器驱动程序使用集合列表序列化帮助器函数�
 ms.assetid: 586FEDD7-6BA1-4E76-8E8D-E486F4711FAE
 ms.date: 07/20/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: a5f249fd74d7082bde99c02b5c44d3957bd2cade
-ms.sourcegitcommit: ca5045a739eefd6ed14b9dbd9249b335e090c4e9
+ms.openlocfilehash: cccc10db6319bedd8706c6031b56547f9bbd4952
+ms.sourcegitcommit: 937974aa9bbe0262a7ffe9631593fab48c4e7492
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/06/2020
-ms.locfileid: "85967893"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "90010581"
 ---
 # <a name="collection-list-serialization-helpers"></a>集合列表序列化帮助程序
 
 
-V2 传感器驱动程序使用集合列表序列化帮助器函数来对[**传感器 \_ 集合 \_ 列表**](https://docs.microsoft.com/windows-hardware/drivers/ddi/sensorsdef/ns-sensorsdef-sensor_collection_list)结构执行与序列化相关的操作。
+V2 传感器驱动程序使用集合列表序列化帮助器函数来对 [**传感器 \_ 集合 \_ 列表**](/windows-hardware/drivers/ddi/sensorsdef/ns-sensorsdef-sensor_collection_list) 结构执行与序列化相关的操作。
 
-Helper 函数与传感器设备驱动程序软件接口（DDSI）一起使用。 由于这些帮助器函数是独立于体系结构的，因此可以安全地将它们用于跨进程边界进行数据传输。 例如，在调用 DeviceIoControl 时，可以安全地使用这些帮助器函数。
+Helper 函数与传感器设备驱动程序软件接口一起使用 (DDSI) 。 由于这些帮助器函数是独立于体系结构的，因此可以安全地将它们用于跨进程边界进行数据传输。 例如，在调用 DeviceIoControl 时，可以安全地使用这些帮助器函数。
 
 **SerializationBufferAllocate**
 
@@ -52,7 +52,7 @@ Helper 函数与传感器设备驱动程序软件接口（DDSI）一起使用。
 
 传感器 DDSI 的使用情况
 
--   将[**传感器 \_ 集合 \_ 列表**](https://docs.microsoft.com/windows-hardware/drivers/ddi/sensorsdef/ns-sensorsdef-sensor_collection_list)信息写入序列化缓冲区。
+-   将 [**传感器 \_ 集合 \_ 列表**](/windows-hardware/drivers/ddi/sensorsdef/ns-sensorsdef-sensor_collection_list) 信息写入序列化缓冲区。
 
 注释
 
@@ -62,7 +62,7 @@ Helper 函数与传感器设备驱动程序软件接口（DDSI）一起使用。
 
 传感器 DDSI 的使用情况
 
--   分配一个序列化缓冲区，然后将[**传感器 \_ 集合 \_ 列表**](https://docs.microsoft.com/windows-hardware/drivers/ddi/sensorsdef/ns-sensorsdef-sensor_collection_list)信息写入缓冲区。
+-   分配一个序列化缓冲区，然后将 [**传感器 \_ 集合 \_ 列表**](/windows-hardware/drivers/ddi/sensorsdef/ns-sensorsdef-sensor_collection_list) 信息写入缓冲区。
 
 注释
 
@@ -74,7 +74,7 @@ Helper 函数与传感器设备驱动程序软件接口（DDSI）一起使用。
 
 传感器 DDSI 的使用情况
 
--   从源缓冲区读取[**传感器 \_ 集合 \_ 列表**](https://docs.microsoft.com/windows-hardware/drivers/ddi/sensorsdef/ns-sensorsdef-sensor_collection_list)信息。
+-   从源缓冲区读取 [**传感器 \_ 集合 \_ 列表**](/windows-hardware/drivers/ddi/sensorsdef/ns-sensorsdef-sensor_collection_list) 信息。
 
 注释
 
@@ -97,11 +97,4 @@ Helper 函数与传感器设备驱动程序软件接口（DDSI）一起使用。
 [帮助程序函数的封送处理](marshalling-helper-functions.md)
 
  
-
- 
-
-
-
-
-
 

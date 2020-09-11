@@ -3,39 +3,39 @@ description: 本主题介绍将已初始化的 URB 提交到 USB 驱动程序堆
 title: 如何提交 URB
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7c4f7da11fc34178f12eea024f2f3b023cf24201
-ms.sourcegitcommit: 15caaf6d943135efcaf9975927ff3933957acd5d
+ms.openlocfilehash: c2e4f00bf28346b5688a51daf5b83d2a82268f55
+ms.sourcegitcommit: 937974aa9bbe0262a7ffe9631593fab48c4e7492
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88969568"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "90010603"
 ---
 # <a name="how-to-submit-an-urb"></a>如何提交 URB
 
 
 本主题介绍将已初始化的 URB 提交到 USB 驱动程序堆栈以处理特定请求所需的步骤。
 
-客户端驱动程序通过使用 i/o 控制代码 (IOCTL) 请求传递到 (irp [** \_ MJ \_ 内部 \_ 设备 \_ 控制**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-internal-device-control)的 irp) 中传递到设备的请求，与设备进行通信。 对于特定于设备的请求，例如选择配置请求，会在与 IRP 关联 (URB) 的 USB 请求块中描述请求。 将 URB 与 IRP 关联并将请求发送到 USB 驱动程序堆栈的过程称为提交 URB。 若要提交 URB，客户端驱动程序必须使用 [**IOCTL \_ 内部 \_ USB \_ 提交 \_ URB**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbioctl/ni-usbioctl-ioctl_internal_usb_submit_urb) 作为设备控制代码。 IOCTL 是一个 "内部" 控制代码，它提供了一个 i/o 接口，客户端驱动程序使用该接口管理其设备和设备连接到的端口。 用户模式应用程序无权访问这些内部 i/o 接口。 有关内核模式驱动程序的更多控制代码，请参阅 [IOCTLs FOR USB Client 驱动程序的内核模式](https://docs.microsoft.com/windows-hardware/drivers/ddi/_usbref/#km-ioctl)。
+客户端驱动程序通过使用 i/o 控制代码 (IOCTL) 请求传递到 (irp [** \_ MJ \_ 内部 \_ 设备 \_ 控制**](../kernel/irp-mj-internal-device-control.md)的 irp) 中传递到设备的请求，与设备进行通信。 对于特定于设备的请求，例如选择配置请求，会在与 IRP 关联 (URB) 的 USB 请求块中描述请求。 将 URB 与 IRP 关联并将请求发送到 USB 驱动程序堆栈的过程称为提交 URB。 若要提交 URB，客户端驱动程序必须使用 [**IOCTL \_ 内部 \_ USB \_ 提交 \_ URB**](/windows-hardware/drivers/ddi/usbioctl/ni-usbioctl-ioctl_internal_usb_submit_urb) 作为设备控制代码。 IOCTL 是一个 "内部" 控制代码，它提供了一个 i/o 接口，客户端驱动程序使用该接口管理其设备和设备连接到的端口。 用户模式应用程序无权访问这些内部 i/o 接口。 有关内核模式驱动程序的更多控制代码，请参阅 [IOCTLs FOR USB Client 驱动程序的内核模式](/windows-hardware/drivers/ddi/_usbref/#km-ioctl)。
 
 ### <a name="prerequisites"></a>先决条件
 
-在将请求发送到通用串行总线 (USB) 驱动程序堆栈之前，客户端驱动程序必须分配 [**URB**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usb/ns-usb-_urb) 结构并根据请求类型设置该结构的格式。 有关详细信息，请参阅 [分配和生成 URBs](how-to-add-xrb-support-for-client-drivers.md) 和 [最佳做法：使用 URBs](usb-client-driver-contract-in-windows-8.md)。
+在将请求发送到通用串行总线 (USB) 驱动程序堆栈之前，客户端驱动程序必须分配 [**URB**](/windows-hardware/drivers/ddi/usb/ns-usb-_urb) 结构并根据请求类型设置该结构的格式。 有关详细信息，请参阅 [分配和生成 URBs](how-to-add-xrb-support-for-client-drivers.md) 和 [最佳做法：使用 URBs](usb-client-driver-contract-in-windows-8.md)。
 
 <a name="instructions"></a>Instructions
 ------------
 
-1.  通过调用 [**IoAllocateIrp**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioallocateirp) 例程为 URB 分配 IRP。 必须提供接收 IRP 的设备对象的堆栈大小。 在之前调用 [**IoAttachDeviceToDeviceStack**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioattachdevicetodevicestack) 例程时收到指向该设备对象的指针。 堆栈大小存储在[**设备 \_ 对象**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_device_object)结构的**StackSize**成员中。
-2.  通过调用[**IoGetNextIrpStackLocation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetnextirpstacklocation)，获取指向 IRP 的第一个堆栈位置 ([**IO \_ 堆栈 \_ 位置**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_stack_location)) 的指针。
-3.  将[**IO \_ 堆栈 \_ 位置**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_stack_location)结构的**MajorFunction**成员设置为[**IRP \_ MJ \_ 内部 \_ 设备 \_ 控制**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-internal-device-control)。
-4.  将[**IO \_ 堆栈 \_ 位置**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_stack_location)结构的**DeviceIoControl. IoControlCode**成员设置为[**IOCTL \_ 内部 \_ USB \_ SUBMIT \_ URB**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbioctl/ni-usbioctl-ioctl_internal_usb_submit_urb)。
-5.  将[**IO \_ 堆栈 \_ 位置**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_stack_location)结构的**Argument1**成员设置为已初始化的[**URB**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usb/ns-usb-_urb)结构的地址。 若要将 IRP 关联到 URB，仅当 URB 已由[**USBD \_ UrbAllocate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbdlib/nf-usbdlib-usbd_urballocate)、 [**USBD \_ SelectConfigUrbAllocateAndBuild**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbdlib/nf-usbdlib-usbd_selectconfigurballocateandbuild)或[**USBD \_ SelectInterfaceUrbAllocateAndBuild**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbdlib/nf-usbdlib-usbd_selectinterfaceurballocateandbuild)分配时，才可以调用[**USBD \_ AssignUrbToIoStackLocation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbdlib/nf-usbdlib-usbd_assignurbtoiostacklocation) 。
-6.  通过调用 [**IoSetCompletionRoutineEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iosetcompletionroutineex)设置完成例程。
+1.  通过调用 [**IoAllocateIrp**](/windows-hardware/drivers/ddi/wdm/nf-wdm-ioallocateirp) 例程为 URB 分配 IRP。 必须提供接收 IRP 的设备对象的堆栈大小。 在之前调用 [**IoAttachDeviceToDeviceStack**](/windows-hardware/drivers/ddi/wdm/nf-wdm-ioattachdevicetodevicestack) 例程时收到指向该设备对象的指针。 堆栈大小存储在[**设备 \_ 对象**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_device_object)结构的**StackSize**成员中。
+2.  通过调用[**IoGetNextIrpStackLocation**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetnextirpstacklocation)，获取指向 IRP 的第一个堆栈位置 ([**IO \_ 堆栈 \_ 位置**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_stack_location)) 的指针。
+3.  将[**IO \_ 堆栈 \_ 位置**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_stack_location)结构的**MajorFunction**成员设置为[**IRP \_ MJ \_ 内部 \_ 设备 \_ 控制**](../kernel/irp-mj-internal-device-control.md)。
+4.  将[**IO \_ 堆栈 \_ 位置**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_stack_location)结构的**DeviceIoControl. IoControlCode**成员设置为[**IOCTL \_ 内部 \_ USB \_ SUBMIT \_ URB**](/windows-hardware/drivers/ddi/usbioctl/ni-usbioctl-ioctl_internal_usb_submit_urb)。
+5.  将[**IO \_ 堆栈 \_ 位置**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_stack_location)结构的**Argument1**成员设置为已初始化的[**URB**](/windows-hardware/drivers/ddi/usb/ns-usb-_urb)结构的地址。 若要将 IRP 关联到 URB，仅当 URB 已由[**USBD \_ UrbAllocate**](/windows-hardware/drivers/ddi/usbdlib/nf-usbdlib-usbd_urballocate)、 [**USBD \_ SelectConfigUrbAllocateAndBuild**](/windows-hardware/drivers/ddi/usbdlib/nf-usbdlib-usbd_selectconfigurballocateandbuild)或[**USBD \_ SelectInterfaceUrbAllocateAndBuild**](/windows-hardware/drivers/ddi/usbdlib/nf-usbdlib-usbd_selectinterfaceurballocateandbuild)分配时，才可以调用[**USBD \_ AssignUrbToIoStackLocation**](/windows-hardware/drivers/ddi/usbdlib/nf-usbdlib-usbd_assignurbtoiostacklocation) 。
+6.  通过调用 [**IoSetCompletionRoutineEx**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iosetcompletionroutineex)设置完成例程。
 
     如果异步提交 URB，请将指针传递到调用方实现的完成例程及其上下文。 调用方在其完成例程中释放 IRP。
 
-    如果要同步提交 IRP，请在调用 [**IoSetCompletionRoutineEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iosetcompletionroutineex)时实现一个完成例程，并将一个指针传递到该例程。 此调用还需要 *上下文* 参数中的已初始化 KEVENT 对象。 在完成例程中，将事件的状态设置为 "已终止"。
+    如果要同步提交 IRP，请在调用 [**IoSetCompletionRoutineEx**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iosetcompletionroutineex)时实现一个完成例程，并将一个指针传递到该例程。 此调用还需要 *上下文* 参数中的已初始化 KEVENT 对象。 在完成例程中，将事件的状态设置为 "已终止"。
 
-7.  调用 [**IoCallDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocalldriver) 将填充的 IRP 转发到设备堆栈中的下一个较低设备对象。 对于同步调用，在调用 **IoCallDriver**之后，通过调用 [**KeWaitForSingleObject**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kewaitforsingleobject) 来等待事件对象，以获取事件通知。
+7.  调用 [**IoCallDriver**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iocalldriver) 将填充的 IRP 转发到设备堆栈中的下一个较低设备对象。 对于同步调用，在调用 **IoCallDriver**之后，通过调用 [**KeWaitForSingleObject**](/windows-hardware/drivers/ddi/wdm/nf-wdm-kewaitforsingleobject) 来等待事件对象，以获取事件通知。
 8.  完成 IRP 后，请检查 IRP 的 **IoStatus** 成员并评估结果。 如果 **IOSTATUS** 状态为 "成功" \_ ，则请求成功。
 
 ## <a name="complete-example"></a>完整示例
@@ -250,7 +250,4 @@ Exit:
 ```
 
 ## <a name="related-topics"></a>相关主题
-[向 USB 设备发送请求](communicating-with-a-usb-device.md)  
-
-
-
+[向 USB 设备发送请求](communicating-with-a-usb-device.md)

@@ -8,22 +8,22 @@ keywords:
 - COD_Type 子项
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e5298f160a02d80ff6d04a61ce374e8130d2fb09
-ms.sourcegitcommit: 20a89aa2cb2c6385c2a49ebf78e5797c821d87ab
+ms.openlocfilehash: 1a46c7acc424c608ec320e941dd2ff206d2154c4
+ms.sourcegitcommit: 937974aa9bbe0262a7ffe9631593fab48c4e7492
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87473723"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "90009905"
 ---
 # <a name="bluetooth-registry-entries"></a>蓝牙注册表项
 
-本部分介绍适用于蓝牙驱动程序堆栈的设备类（货到日志）注册表子项和条目。
+本部分介绍适用于蓝牙驱动程序堆栈) 设备 (货类注册表子项和条目。
 
 ## <a name="cod-major-and-cod-type-values"></a>"带货货的主要" 和 "货货类型" 值
 
-原始设备制造商（Oem）可以使用 "**货到付款**" 的 "主要" 和 "**货货" 类型**值来指示已启用 Bluetooth 的 Windows 设备的设备类。 Bluetooth 类安装程序根据这些注册表值设置设备类后，远程设备可以确定它是连接到便携式计算机、台式计算机、电话等。
+ (Oem 的原始设备制造商) 可以使用 "货到付款" 的 " **主要** " 和 "货到 **货" 类型** 值来指示已启用 Bluetooth 的 Windows 设备的设备类。 Bluetooth 类安装程序根据这些注册表值设置设备类后，远程设备可以确定它是连接到便携式计算机、台式计算机、电话等。
 
-指向**货到货**到货到货货货的**类型**值的注册表路径为：
+指向 **货到货** 到货到货货货的 **类型** 值的注册表路径为：
 
 HKEY \_ 本地 \_ 计算机 \\ 系统 \\ CurrentControlSet \\ Services \\ BTHPORT \\ 参数
 
@@ -35,9 +35,9 @@ HKEY \_ 本地 \_ 计算机 \\ 系统 \\ CurrentControlSet \\ Services \\ BTHPOR
 
 ## <a name="scanning-parameterization-settings"></a>扫描参数化设置
 
-配置文件驱动程序可以在其配置文件驱动程序的 INF 文件中指定其设备的扫描参数设置，以根据给定设备方案的特定需求进行定制。
+配置文件驱动程序可以在其配置文件驱动程序的 INF 文件中指定其设备 () 的扫描参数设置，以便根据给定设备方案的特定需求进行定制。
 
-可以通过将下面列出的一个或多个以下扫描参数提供给 AddReg 指令来覆盖默认系统扫描参数。 有关如何使用此指令的详细信息，请参阅[INF AddReg 指令](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addreg-directive)。
+可以通过将下面列出的一个或多个以下扫描参数提供给 AddReg 指令来覆盖默认系统扫描参数。 有关如何使用此指令的详细信息，请参阅 [INF AddReg 指令](../install/inf-addreg-directive.md)。
 
 | 值名称                | 类型          | 最小值 | 最大值                                                                      |
 |----|----|----|----|

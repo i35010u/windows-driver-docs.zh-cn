@@ -3,12 +3,12 @@ description: 本主题介绍通用串行总线2.0 规范的9.1 节中指定的 U
 title: USB 设备电源状态
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f423881c44846aa1e709260d8907ec69f1e148e7
-ms.sourcegitcommit: 15caaf6d943135efcaf9975927ff3933957acd5d
+ms.openlocfilehash: 5f720a13d2bb6909a5c50473d7829b7087931458
+ms.sourcegitcommit: 937974aa9bbe0262a7ffe9631593fab48c4e7492
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88968518"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "90010417"
 ---
 # <a name="usb-device-power-states"></a>USB 设备电源状态
 
@@ -29,9 +29,9 @@ WDM 模型中的设备电源状态可以总结如下：
 -   **D1/D2** -中间睡眠状态。 这些状态允许设备用于远程唤醒。
 -   **D3** -最深层睡眠状态。 状态 **D3** 中的设备无法用于远程唤醒。
 
-有关 WDM 电源模式下设备电源状态的完整讨论，请参阅 [设备电源状态](https://docs.microsoft.com/windows-hardware/drivers/kernel/device-power-states)。
+有关 WDM 电源模式下设备电源状态的完整讨论，请参阅 [设备电源状态](../kernel/device-power-states.md)。
 
-WDM 电源模式使用设备的术语 " *武装* " 进行远程唤醒。 武装是通常（但不总是）会导致硬件操作在 USB 设备上 *启用* 远程唤醒功能的软件操作。 用于远程唤醒设备的 WDM 软件操作是等待唤醒 IRP ([**IRP \_ MN \_ 等待 \_ 唤醒**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-wait-wake)) 。 有关此 IRP 的详细信息，请参阅 [支持具有唤醒功能的设备](https://docs.microsoft.com/windows-hardware/drivers/kernel/supporting-devices-that-have-wake-up-capabilities)。
+WDM 电源模式使用设备的术语 " *武装* " 进行远程唤醒。 武装是通常（但不总是）会导致硬件操作在 USB 设备上 *启用* 远程唤醒功能的软件操作。 用于远程唤醒设备的 WDM 软件操作是等待唤醒 IRP ([**IRP \_ MN \_ 等待 \_ 唤醒**](../kernel/irp-mn-wait-wake.md)) 。 有关此 IRP 的详细信息，请参阅 [支持具有唤醒功能的设备](../kernel/supporting-devices-that-have-wake-up-capabilities.md)。
 
 有关此软件操作与启用 USB 远程唤醒功能之间的关系的说明，请参阅 [远程唤醒 Usb 设备](remote-wakeup-of-usb-devices.md)。
 
@@ -44,7 +44,7 @@ WDM 电源模式使用设备的术语 " *武装* " 进行远程唤醒。 武装�
 ## <a name="changing-the-power-state-of-a-non-composite-device"></a>更改非复合设备的电源状态
 
 
-USB 设备的电源策略管理器负责设置设备的电源状态。 电源策略管理器通过发出 WDM power ([**irp \_ MN \_ 设置 \_ power**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-set-power)) irp 来设置电源状态。 有关电源策略管理器的详细信息，请参阅 [电源策略所有权](https://docs.microsoft.com/windows-hardware/drivers/wdf/power-policy-ownership)。
+USB 设备的电源策略管理器负责设置设备的电源状态。 电源策略管理器通过发出 WDM power ([**irp \_ MN \_ 设置 \_ power**](../kernel/irp-mn-set-power.md)) irp 来设置电源状态。 有关电源策略管理器的详细信息，请参阅 [电源策略所有权](../wdf/power-policy-ownership.md)。
 
 总线驱动程序执行的操作取决于电源策略管理器请求的设备电源级别。 下面列出了总线驱动程序为每个级别的设置电源请求所执行的操作：
 
@@ -60,7 +60,7 @@ USB 设备的电源策略管理器负责设置设备的电源状态。 电源策
 
     总线驱动程序执行以下任务：
 
-    1.  如果等待唤醒 IRP ([**IRP \_ MN \_ wait \_ 唤醒**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-wait-wake)) 处于挂起状态，则设备用于远程唤醒。
+    1.  如果等待唤醒 IRP ([**IRP \_ MN \_ wait \_ 唤醒**](../kernel/irp-mn-wait-wake.md)) 处于挂起状态，则设备用于远程唤醒。
     2.  通过设置端口挂起功能挂起设备的 USB 端口 \_ 。
 -   **D3**
 
@@ -68,12 +68,12 @@ USB 设备的电源策略管理器负责设置设备的电源状态。 电源策
 
     1.  通过设置端口挂起功能挂起设备的 USB 端口 \_ 。
     2.  完成设备的等待唤醒 IRP \_ \_ ，状态为 "电源状态 \_ 无效" （如果有）。
-    3.  完成设备的空闲 IRP ([**IOCTL \_ 内部 \_ USB \_ 提交 \_ 空闲 \_ 通知**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbioctl/ni-usbioctl-ioctl_internal_usb_submit_idle_notification)) 状态为 \_ "电源 \_ 状态 \_ 无效，如果一个处于挂起状态。
+    3.  完成设备的空闲 IRP ([**IOCTL \_ 内部 \_ USB \_ 提交 \_ 空闲 \_ 通知**](/windows-hardware/drivers/ddi/usbioctl/ni-usbioctl-ioctl_internal_usb_submit_idle_notification)) 状态为 \_ "电源 \_ 状态 \_ 无效，如果一个处于挂起状态。
 
 ## <a name="changing-the-power-state-of-a-composite-device"></a>更改复合设备的电源状态
 
 
-复合设备上某个接口的客户端驱动程序必须与设备上其他接口的客户端驱动程序共享复合设备的电源状态。 因此，接口的客户端驱动程序无法将复合设备置于低功耗状态，并且不会影响设备上的其他接口。 当接口的客户端驱动程序发送[**IRP \_ MN \_ 设置 \_ 电源**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-set-power)请求时， [USB 泛型父驱动程序 ( # A0) ](usb-common-class-generic-parent-driver.md)会执行以下操作。
+复合设备上某个接口的客户端驱动程序必须与设备上其他接口的客户端驱动程序共享复合设备的电源状态。 因此，接口的客户端驱动程序无法将复合设备置于低功耗状态，并且不会影响设备上的其他接口。 当接口的客户端驱动程序发送[**IRP \_ MN \_ 设置 \_ 电源**](../kernel/irp-mn-set-power.md)请求时， [USB 泛型父驱动程序 ( # A0) ](usb-common-class-generic-parent-driver.md)会执行以下操作。
 
 -   **D0**
 
@@ -91,7 +91,7 @@ USB 设备的电源策略管理器负责设置设备的电源状态。 电源策
     总线驱动程序执行以下任务：
 
     1.  完成客户端驱动程序的等待唤醒 IRP (IRP \_ MN \_ 等待 \_ 唤醒) ，其状态 \_ \_ 为 "电源状态 \_ 无效，如果一个处于挂起状态。
-    2.  完成客户端驱动程序的空闲 IRP ([**IOCTL \_ 内部 \_ USB \_ 提交 \_ 空闲 \_ 通知**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbioctl/ni-usbioctl-ioctl_internal_usb_submit_idle_notification)) \_ \_ \_ 如果一个处于挂起状态，则状态电源状态无效。
+    2.  完成客户端驱动程序的空闲 IRP ([**IOCTL \_ 内部 \_ USB \_ 提交 \_ 空闲 \_ 通知**](/windows-hardware/drivers/ddi/usbioctl/ni-usbioctl-ioctl_internal_usb_submit_idle_notification)) \_ \_ \_ 如果一个处于挂起状态，则状态电源状态无效。
 
 如果满足以下条件之一，一般父驱动程序会挂起设备的 USB 端口：
 
@@ -99,7 +99,4 @@ USB 设备的电源策略管理器负责设置设备的电源状态。 电源策
 -   复合设备上所有函数的客户端驱动程序启动了选择性挂起。
 
 ## <a name="related-topics"></a>相关主题
-[USB 电源管理](usb-power-management.md)  
-
-
-
+[USB 电源管理](usb-power-management.md)

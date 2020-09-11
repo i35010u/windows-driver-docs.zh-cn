@@ -4,19 +4,19 @@ description: V2 传感器驱动程序使用集合列表帮助程序函数来处�
 ms.assetid: 9BE06FA6-A171-4760-9D3E-C0183F3C3EFA
 ms.date: 07/20/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 00f28a70c7f41c5466dc13f7e179f0a8086b60a3
-ms.sourcegitcommit: ca5045a739eefd6ed14b9dbd9249b335e090c4e9
+ms.openlocfilehash: ea5133ac18862ea7711a68aed6dee2a5edd18820
+ms.sourcegitcommit: 937974aa9bbe0262a7ffe9631593fab48c4e7492
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/06/2020
-ms.locfileid: "85968236"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "90010585"
 ---
 # <a name="collection-list-helpers"></a>集合列表帮助程序
 
 
-V2 传感器驱动程序使用集合列表帮助程序函数来处理[**传感器 \_ 集合 \_ 列表**](https://docs.microsoft.com/windows-hardware/drivers/ddi/sensorsdef/ns-sensorsdef-sensor_collection_list)结构。
+V2 传感器驱动程序使用集合列表帮助程序函数来处理 [**传感器 \_ 集合 \_ 列表**](/windows-hardware/drivers/ddi/sensorsdef/ns-sensorsdef-sensor_collection_list) 结构。
 
-Helper 函数与传感器设备驱动程序软件接口（DDSI）一起使用。
+Helper 函数与传感器设备驱动程序软件接口一起使用 (DDSI) 。
 
 **SensorCollectionGetAt**
 
@@ -26,9 +26,9 @@ Helper 函数与传感器设备驱动程序软件接口（DDSI）一起使用。
 
 注释
 
--   有关详细信息，请参阅[**传感器 \_ 收集 \_ 列表**](https://docs.microsoft.com/windows-hardware/drivers/ddi/sensorsdef/ns-sensorsdef-sensor_collection_list)。
+-   有关详细信息，请参阅 [**传感器 \_ 收集 \_ 列表**](/windows-hardware/drivers/ddi/sensorsdef/ns-sensorsdef-sensor_collection_list) 。
 
--   有关详细信息，请参阅[**传感器 \_ 值 \_ 对**](https://docs.microsoft.com/windows-hardware/drivers/ddi/sensorsdef/ns-sensorsdef-sensor_value_pair)。
+-   有关详细信息，请参阅 [**传感器 \_ 值 \_ 对**](/windows-hardware/drivers/ddi/sensorsdef/ns-sensorsdef-sensor_value_pair) 。
 
 **CollectionsListGetFillableCount**
 
@@ -77,11 +77,4 @@ Helper 函数与传感器设备驱动程序软件接口（DDSI）一起使用。
 [帮助程序函数的封送处理](marshalling-helper-functions.md)
 
  
-
- 
-
-
-
-
-
 

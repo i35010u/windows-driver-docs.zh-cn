@@ -1,33 +1,33 @@
 ---
 title: 收集和解码 WPP 日志
-description: 本主题提供有关收集和解码为传感器类扩展 (CX) 跟踪提供程序的 Windows 软件跟踪预处理器 (WPP) 日志的信息。
+description: 本主题提供有关为传感器类扩展 (CX) 跟踪提供程序收集和解码 Windows 软件跟踪预处理器 (WPP) 日志的信息。
 ms.assetid: 174CDE37-D0D1-44BF-AD50-5A90C989FDE2
 ms.date: 07/20/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: af99074c09de6263a92aa4743d053e74e90ceeac
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: a4534e5d13d1094b91ca9fb879112c5eabce2e0f
+ms.sourcegitcommit: 937974aa9bbe0262a7ffe9631593fab48c4e7492
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67364907"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "90010587"
 ---
 # <a name="collecting-and-decoding-wpp-logs"></a>收集和解码 WPP 日志
 
 
-本主题提供有关收集和解码为传感器类扩展 (CX) 跟踪提供程序的 Windows 软件跟踪预处理器 (WPP) 日志的信息。
+本主题提供有关为传感器类扩展 (CX) 跟踪提供程序收集和解码 Windows 软件跟踪预处理器 (WPP) 日志的信息。
 
-WPP 提供方法来跟踪称为跟踪提供程序的软件组件的操作。 以下是包含要解码的 WPP 日志的 PDB 文件。
+WPP 提供了跟踪软件组件（称为跟踪提供程序）的操作的方法。 下面是用于解码 WPP 日志的 PDB 文件。
 
--   SensorsCx.pdb
+-   SensorsCx .pdb
 
--   SensorsUtilsV2.pdb
+-   SensorsUtilsV2 .pdb
 
-跟踪日志工具用于收集 WPP 日志。 有关详细信息，请参阅[Tracelog](https://docs.microsoft.com/windows-hardware/drivers/devtest/tracelog)。 有关跟踪概念，如跟踪 Guid，跟踪标志、 跟踪级别或 PDB 文件的详细信息，请参阅[跟踪工具概念](https://docs.microsoft.com/windows-hardware/drivers/devtest/tracing-tool-concepts)。
+Tracelog 工具用于收集 WPP 日志。 有关详细信息，请参阅 [Tracelog](../devtest/tracelog.md)。 有关跟踪 Guid、跟踪标志、跟踪级别或 PDB 文件等跟踪概念的详细信息，请参阅 [跟踪工具的概念](../devtest/tracing-tool-concepts.md)。
 
-## <a name="tracing-guid"></a>跟踪的 GUID
+## <a name="tracing-guid"></a>跟踪 GUID
 
 
-下面的 GUID 标识传感器 V2 堆栈中的 CX 驱动程序的跟踪提供程序。 使用此 GUID 的跟踪日志的详细信息，请参阅[Tracelog](https://docs.microsoft.com/windows-hardware/drivers/devtest/tracelog)。
+以下 GUID 标识传感器 V2 堆栈中 CX 驱动程序的跟踪提供程序。 有关将此 GUID 用于 tracelog 的详细信息，请参阅 [tracelog](../devtest/tracelog.md)。
 
 ``` syntax
 c88b592b-6090-480f-a839-ca2434de5844
@@ -36,7 +36,7 @@ c88b592b-6090-480f-a839-ca2434de5844
 ## <a name="trace-flags"></a>跟踪标志
 
 
-传感器类扩展定义以下 WPP\_控制\_GUID 跟踪标志：
+传感器类扩展定义以下 WPP \_ 控制 \_ guid 跟踪标志：
 
 ``` syntax
 EntryExit
@@ -52,7 +52,7 @@ DriverStatus
 ## <a name="trace-levels"></a>跟踪级别
 
 
-以下跟踪级别定义的跟踪日志使用情况。 有关如何使用这些详细信息，请参阅**级别**tracelog 语法中的参数。
+为使用 tracelog 定义了以下跟踪级别。 有关如何使用这些方法的详细信息，请参阅 tracelog 语法中的 **level** 参数。
 
 ``` syntax
 TRACE_LEVEL_FATAL           1
@@ -66,7 +66,7 @@ TRACE_LEVEL_PERF            6
 ## <a name="tracelog-macros"></a>Tracelog 宏
 
 
-以下是使用其关联的跟踪级别和跟踪标志 WPP 宏。 消息参数是为 printf 函数定义的标准格式字符串。 合作伙伴还可以使用 WPP 扩展格式字符串。 有关详细信息信息，请参阅[WPP 扩展格式字符串](https://go.microsoft.com/fwlink/p/?linkid=324276)MSD 上的主题。 换行字符也包含在消息因此"\\n"不是必需的。
+下面是 WPP 宏及其关联的跟踪级别和跟踪标志。 MSG 参数是为 printf 函数定义的标准格式字符串。 合作伙伴还可以使用 WPP 扩展格式字符串。 有关此内容的详细信息，请参阅 MSD 上的 [WPP 扩展格式字符串](https://go.microsoft.com/fwlink/p/?linkid=324276) 主题。 换行符也包含在消息中，因此 \\ 不需要 "n"。
 
 <table>
 <colgroup>
@@ -87,50 +87,50 @@ TRACE_LEVEL_PERF            6
 <tr class="odd">
 <td><p>TraceFatal</p></td>
 <td><p>TRACE_LEVEL_FATAL</p></td>
-<td><p>严重</p></td>
-<td><p>MSG</p></td>
+<td><p>出现</p></td>
+<td><p>缺少</p></td>
 </tr>
 <tr class="even">
 <td><p>TraceError</p></td>
 <td><p>TRACE_LEVEL_ERROR</p></td>
 <td><p>错误</p></td>
-<td><p>MSG</p></td>
+<td><p>缺少</p></td>
 </tr>
 <tr class="odd">
 <td><p>TraceWarning</p></td>
 <td><p>TRACE_LEVEL_WARNING</p></td>
 <td><p>警告</p></td>
-<td><p>MSG</p></td>
+<td><p>缺少</p></td>
 </tr>
 <tr class="even">
-<td><p>TraceInformation</p></td>
+<td><p>Tracesource.traceinformation</p></td>
 <td><p>TRACE_LEVEL_INFORMATION</p></td>
 <td><p>信息</p></td>
-<td><p>MSG</p></td>
+<td><p>缺少</p></td>
 </tr>
 <tr class="odd">
 <td><p>TraceVerbos</p></td>
 <td><p>TRACE_LEVEL_VERBOSE</p></td>
-<td><p>Verbose</p></td>
-<td><p>MSG</p></td>
+<td><p>详细</p></td>
+<td><p>缺少</p></td>
 </tr>
 <tr class="even">
 <td><p>TracePerformance</p></td>
 <td><p>TRACE_LEVEL_PERF</p></td>
 <td><p></p></td>
-<td><p>标志消息</p></td>
+<td><p>标志，MSG</p></td>
 </tr>
 <tr class="odd">
 <td><p>TraceData</p></td>
 <td><p>TRACE_LEVEL_VERBOSE</p></td>
-<td><p>DataFlow</p></td>
-<td><p>MSG</p></td>
+<td><p>数据流</p></td>
+<td><p>缺少</p></td>
 </tr>
 <tr class="even">
 <td><p>TraceDriverStatus</p></td>
 <td><p>TRACE_LEVEL_INFORMATION</p></td>
 <td><p>DriverStatus</p></td>
-<td><p>MSG</p></td>
+<td><p>缺少</p></td>
 </tr>
 <tr class="odd">
 <td><p>CLX_FunctionEnter</p></td>
@@ -164,14 +164,9 @@ TRACE_LEVEL_PERF            6
 ## <a name="decoding-etl-logs"></a>解码 ETL 日志
 
 
-Tracefmt 工具用于解码 ETL 日志。 有关此工具的详细信息，请参阅[Tracefmt](https://go.microsoft.com/fwlink/p/?linkid=324212)。
+Tracefmt 工具用于解码 ETL 日志。 有关此工具的详细信息，请参阅 [Tracefmt](https://go.microsoft.com/fwlink/p/?linkid=324212)。
 
-如果你想要执行更全面的测试的传感器驱动程序，请参阅 [测试通用传感器驱动程序] (测试-您的世界的传感器-driver.md。
-
- 
+如果要对传感器驱动程序进行更广泛的测试，请参阅 [测试通用传感器驱动程序] (test-your-universal-sensor-driver.md。
 
  
-
-
-
 

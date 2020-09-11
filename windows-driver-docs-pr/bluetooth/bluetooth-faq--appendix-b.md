@@ -1,30 +1,30 @@
 ---
-title: Windows Vista 中的 INF 文件供应商提供的示例
-description: 本附录包含如何实现引用 Bth.inf 的供应商提供 INF 文件的示例。
+title: Windows Vista 中供应商提供的 INF 文件的示例
+description: 本附录包含一个示例，演示如何实现一个引用 Bth 的供应商提供的 INF 文件。
 ms.assetid: 37865571-D632-4A69-A2AB-D0B2570A6F9D
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e27e66ef8c3ba8ef6d16dc4b9993e18cd090014a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b075b45dfbf27a19ab95e1dd1a305875ac32c42f
+ms.sourcegitcommit: 937974aa9bbe0262a7ffe9631593fab48c4e7492
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63328308"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "90010101"
 ---
-# <a name="appendix-b-an-example-of-a-vendor-provided-inf-file-for-use-in-windows-vista"></a>附录 B：在 Windows Vista 中使用的供应商提供的 INF 文件示例
+# <a name="appendix-b-an-example-of-a-vendor-provided-inf-file-for-use-in-windows-vista"></a>附录 B：供应商提供的用于 Windows Vista 的 INF 文件示例
 
-本附录包含如何实现引用 Bth.inf 的供应商提供 INF 文件的示例。 实现此特定示例是为了安装兼容使用 2.0 版和 Windows XP 或 Windows Vista 中的蓝牙规范 EDR 单选。 其他类型的蓝牙设备的 INF 文件很相似。
+本附录包含一个示例，演示如何实现一个引用 Bth 的供应商提供的 INF 文件。 实现此特定示例是为了安装与 Windows XP 或 Windows Vista 中的蓝牙规范的版本2.0 和 EDR 兼容的收音机。 其他类型的蓝牙设备的 INF 文件类似。
 
-此 INF 文件可用于以下版本的 Windows 上安装该设备：
+此 INF 文件可用于在以下版本的 Windows 上安装设备：
 
-- 32 位版本的 Windows XP SP2 和更高版本的 service pack 的所有 Sku。
-- 64 位版本的 Windows XP 的所有 Sku
+- 32位版本的 Windows XP SP2 和更高版本的 service pack 的所有 Sku。
+- 64位版本的 Windows XP 的所有 Sku
 - Windows Vista 的所有 Sku
 
 > [!NOTE]
-> 此 INF 文件不能用于 Windows 2000、 Windows Server 2003 或任何版本的尚未升级到最少的 Windows XP SP2。 此外，供应商提供的 INF 文件不是必需的 Windows 7 因为具有 USB 任何 USB 设备\\类\_E0 & 子类\_01 和端口是否\_01 硬件 ID 将安装为**泛型Bluetooth 适配器**Windows 7 中。
+> 此 INF 文件不能用于 Windows 2000、Windows Server 2003 或任何尚未升级到 SP2 的 Windows XP 版本。 此外，由于具有 USB \\ 类 \_ E0&子类 \_ 01&PROT 01 硬件 ID 的任何 usb 设备 \_ 都将作为 **一般蓝牙适配器** 安装在 windows 7 中，因此不需要由供应商提供的 INF 文件用于 windows 7。
 
-突出显示的部分和指令的说明，请在下面的示例后参阅带编号的说明：
+有关突出显示的部分和指令的说明，请参阅以下示例后面的编号说明：
 
 ```cpp
 ; XYZ Vendor INF File for Bluetooth Radio
@@ -92,12 +92,12 @@ SourceDisk       = "Windows Vista CD"
 
 **注意：**
 
-1. **版本**部分中应具有**CLASSGUID**并**DriverVer**指令设置，如下所示：
-    - **CLASSGUID**:蓝牙设备 ({e0cbf06c cd8b-4647-bb8a-263b43f0f974})，使用 Microsoft 类 GUID 不是第三方的 GUID。
-    - **DriverVer**:如果你想要取代默认现成驱动程序，必须设置驱动程序版本，以提供更高的排名匹配而不是在 Bth.inf。 有关配置驱动程序即可取代框驱动程序中的默认值的详细信息，请参阅[收件箱驱动程序的安装专用生成](https://docs.microsoft.com/windows-hardware/drivers/install/installing-private-builds-of-in-box-drivers--windows-vista-and-later-)。
+1. **版本**部分应将**CLASSGUID**和**DriverVer**指令设置如下：
+    - **CLASSGUID**：使用适用于蓝牙设备的 MICROSOFT 类 GUID ( {e0cbf06c cd8b-4647-bb8a-263b43f0f974} ) ，而不是第三方 guid。
+    - **DriverVer**：如果要取代默认的内置驱动程序，则必须将驱动程序版本设置为提供比 Bth 中内容更高的排名匹配。 有关将驱动程序配置为取代 box 驱动程序的默认驱动程序的详细信息，请参阅 [安装收件箱驱动程序的专用版本](../install/installing-private-builds-of-in-box-drivers--windows-vista-and-later-.md)。
 
-2. 硬件 Id。 VID 和 PID 的组合必须是唯一的制造商和设备。 这可确保在相同的硬件 ID 与多个设备不对应。
-3. **包括**并**需要**指令。 **Include**以下三个部分中的指令引用 Bth.inf。 **需要**指令指示应在设备安装过程中处理从 Bth.inf 哪些部分。
-4. **DelReg**指令，该引用指令**DeleteRegKeys**部分中，删除注册表项或阻止 Windows 创建 PDO 或 devnode 设备的值。 例如，传真服务配置文件位于当前 Windows Vista 服务列表中不受支持，所以它的值为**UnsupportedServices**注册表项。 此示例将删除的传真服务配置文件**UnsupportedServices**密钥，可让 Windows 创建设备 devnode。
+2. 硬件 ID。 VID 和 PID 的组合对于制造商和设备必须是唯一的。 这可确保相同的硬件 ID 与多个设备不对应。
+3. **Include** 和 **需要** 指令。 这三个部分中的 **Include** 指令引用 Bth。 **需求**指令指示应在设备安装过程中处理 Bth 中的哪些部分。
+4. 引用**DeleteRegKeys**部分的**DelReg**指令删除阻止 WINDOWS 为设备创建 PDO 或 devnode 的注册表项或值。 例如，传真服务配置文件当前位于 Windows Vista 不受支持服务的列表中，因此它是 **UnsupportedServices** 注册表项的值。 此示例从 **UnsupportedServices** 项中删除传真服务配置文件，以便 Windows 为设备创建 devnode。
 
-我们强烈建议你在设备和 INF 文件上运行最新的 WHQL 测试和发布 Windows 更新上的 INF 文件包。 这可确保，客户可以自动 INF 文件从 Internet 下载新蓝牙无线连接到其计算机时。
+强烈建议你在设备和 INF 文件上运行最新的 WHQL 测试，并在 Windows 更新上发布 INF 文件包。 这可确保客户在将其新的蓝牙收音机连接到计算机时，可以自动从 Internet 下载 INF 文件。

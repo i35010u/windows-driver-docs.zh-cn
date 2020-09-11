@@ -3,12 +3,12 @@ description: USB 设备在称为 USB 描述符的数据结构中提供自身的�
 title: USB 描述符
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8469f73407fca23abab391f3058fb7c90b71fac8
-ms.sourcegitcommit: 15caaf6d943135efcaf9975927ff3933957acd5d
+ms.openlocfilehash: 59d02f1f9fe6fe1f8f6c00f8232193f01075ae26
+ms.sourcegitcommit: 937974aa9bbe0262a7ffe9631593fab48c4e7492
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88969356"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "90010097"
 ---
 # <a name="usb-descriptors"></a>USB 描述符
 
@@ -35,13 +35,13 @@ USB 设备在称为 *USB 描述符*的数据结构中提供自身的相关信息
 <thead>
 <tr class="header">
 <th>主题</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td><p><a href="usb-device-descriptors.md" data-raw-source="[USB device descriptors](usb-device-descriptors.md)">USB 设备描述符</a></p></td>
-<td><p>设备描述符同时包含有关 USB 设备的信息。 本主题介绍 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/usbspec/ns-usbspec-_usb_device_descriptor" data-raw-source="[&lt;strong&gt;USB_DEVICE_DESCRIPTOR&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbspec/ns-usbspec-_usb_device_descriptor)"><strong>USB_DEVICE_DESCRIPTOR</strong></a> 的结构，并包括有关客户端驱动程序如何发送获取描述符请求以获取设备描述符的信息。</p></td>
+<td><p>设备描述符同时包含有关 USB 设备的信息。 本主题介绍 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/usbspec/ns-usbspec-_usb_device_descriptor" data-raw-source="[&lt;strong&gt;USB_DEVICE_DESCRIPTOR&lt;/strong&gt;](/windows-hardware/drivers/ddi/usbspec/ns-usbspec-_usb_device_descriptor)"><strong>USB_DEVICE_DESCRIPTOR</strong></a> 的结构，并包括有关客户端驱动程序如何发送获取描述符请求以获取设备描述符的信息。</p></td>
 </tr>
 <tr class="even">
 <td><p><a href="usb-configuration-descriptors.md" data-raw-source="[USB configuration descriptors](usb-configuration-descriptors.md)">USB 配置描述符</a></p></td>
@@ -62,7 +62,4 @@ USB 设备在称为 *USB 描述符*的数据结构中提供自身的相关信息
 
 ## <a name="related-topics"></a>相关主题
 [USB 设备布局](usb-device-layout.md)  
-[USB 驱动程序开发指南](usb-driver-development-guide.md)  
-
-
-
+[USB 驱动程序开发指南](usb-driver-development-guide.md)

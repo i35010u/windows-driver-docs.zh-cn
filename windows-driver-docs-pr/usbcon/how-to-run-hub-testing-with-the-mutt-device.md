@@ -3,12 +3,12 @@ description: 中心测试的目标是从设备生成一组完整的可能的流�
 title: USB 中心测试与 MUTT 设备
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3ff73ca7994a7dd9a1e4ffe6a2811cb791b5d4a7
-ms.sourcegitcommit: 15caaf6d943135efcaf9975927ff3933957acd5d
+ms.openlocfilehash: bf955efb8d3daf6d3cef455197c0e47f10e9e942
+ms.sourcegitcommit: 937974aa9bbe0262a7ffe9631593fab48c4e7492
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88969252"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "90009955"
 ---
 # <a name="usb-hub-testing-with-mutt-devices"></a>USB 中心测试与 MUTT 设备
 
@@ -42,8 +42,5 @@ ms.locfileid: "88969252"
     ![测试连接/断开连接](images/fig14-topology-connect-disconnect.png)
 
 ## <a name="related-topics"></a>相关主题
-[USB](https://docs.microsoft.com/windows-hardware/drivers/)  
-[Microsoft USB 测试工具 (MUTT) 设备](microsoft-usb-test-tool--mutt--devices.md)  
-
-
-
+[USB](../index.yml)  
+[Microsoft USB 测试工具 (MUTT) 设备](microsoft-usb-test-tool--mutt--devices.md)

@@ -12,17 +12,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 1683b6d9f3e0f1e41e0048e146859532534b2dc2
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: b504cbd4731f5f9ea3682b6a2147a5caf9f7c123
+ms.sourcegitcommit: 937974aa9bbe0262a7ffe9631593fab48c4e7492
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89381875"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "90010637"
 ---
 # <a name="wdfwaitlock-rule-kmdf"></a>WdfWaitlock 规则 (kmdf) 
 
 
-**WdfWaitlock**规则指定对[**WdfWaitLockAcquire**](/previous-versions/ff551168(v=vs.85))的调用用于具有[**WdfWaitlockRelease**](kmdf-wdfwaitlockrelease.md)的 strict 替换项。 当 KMDF 事件回调函数返回时，驱动程序不应持有通过先前对 **WdfWaitLockAcquire**的调用获取的框架旋转锁对象。
+**WdfWaitlock**规则指定对[**WdfWaitLockAcquire**](/previous-versions/ff551168(v=vs.85))的调用用于具有[**WdfWaitlockRelease**](kmdf-wdfwaitlockrelease.md)的 strict 替换项。 当 KMDF 事件回调函数返回时，驱动程序不应持有先前对 **WdfWaitLockAcquire**的调用获取的框架等待锁定对象。
 
 **驱动程序模型： KMDF**
 

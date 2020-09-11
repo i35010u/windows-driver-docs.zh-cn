@@ -4,12 +4,12 @@ description: 本主题介绍了在 Windows 10 中实现传感器数据批处理�
 ms.assetid: E64B9CE0-2C76-430A-ABE0-717BD27BCA8A
 ms.date: 07/20/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 2b65a42ee27b856f8afef203d98b145131264b69
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 1a4b32e100aa33ef6c1ca4575e01290e821a83e5
+ms.sourcegitcommit: 937974aa9bbe0262a7ffe9631593fab48c4e7492
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72845544"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "90010359"
 ---
 # <a name="sensor-data-batching-for-power-savings"></a>为了节能而对传感器数据进行批处理
 
@@ -38,30 +38,30 @@ ms.locfileid: "72845544"
 
 除了所需的常见传感器属性和枚举属性，支持数据批处理的驱动程序还必须报告以下属性：
 
--   PKEY\_传感器\_FifoReservedSize\_示例
+-   PKEY \_ 传感器 \_ FifoReservedSize \_ 示例
 
--   PKEY\_传感器\_FifoMaxSize\_示例
+-   PKEY \_ 传感器 \_ FifoMaxSize \_ 示例
 
--   PKEY\_传感器\_WakeCapable
+-   PKEY \_ 传感器 \_ WakeCapable
 
-有关详细信息，请参阅[常见传感器属性](common-sensor-properties.md)和[枚举属性](enumeration-properties.md)。
+有关详细信息，请参阅 [常见传感器属性](common-sensor-properties.md) 和 [枚举属性](enumeration-properties.md)。
 
 如果传感器硬件子系统具有唤醒功能，则应确保它提前启动唤醒，以避免缓冲区溢出。
 
 ## <a name="optional-ddsi-functions-for-data-batching"></a>用于数据批处理的可选 DDSI 函数
 
 
-设备驱动程序软件接口（DDSI）函数是驱动程序和类扩展之间的接口。 为了支持数据批处理，驱动程序必须实现以下 DDSI 函数，以便传感器类扩展可以设置批处理滞后时间。
+设备驱动程序软件接口 (DDSI) 函数是驱动程序和类扩展之间的接口。 为了支持数据批处理，驱动程序必须实现以下 DDSI 函数，以便传感器类扩展可以设置批处理滞后时间。
 
--   [EvtSensorSetBatchLatency](https://docs.microsoft.com/windows-hardware/drivers/ddi/sensorscx/ns-sensorscx-_sensor_controller_config)这是一个为指定传感器设置批处理延迟的回调函数。 驱动程序应将批处理延迟设置为小于或等于*BatchLatencyMs*参数的值，具体取决于缓冲区的可用性。
+-   [EvtSensorSetBatchLatency](/windows-hardware/drivers/ddi/sensorscx/ns-sensorscx-_sensor_controller_config) 这是一个为指定传感器设置批处理延迟的回调函数。 驱动程序应将批处理延迟设置为小于或等于 *BatchLatencyMs* 参数的值，具体取决于缓冲区的可用性。
 
-驱动程序还必须实现所有必需的 DDSI 函数。 有关详细信息，请参阅[传感器 DDSI 函数](sensor-ddsi-functions.md)。
+驱动程序还必须实现所有必需的 DDSI 函数。 有关详细信息，请参阅 [传感器 DDSI 函数](sensor-ddsi-functions.md)。
 
-对于传感器类扩展指定批处理延迟，这是可选的。 所有传感器的默认批处理延迟为零（0），该值用于指示不会对样本进行批处理。 仅当类扩展调用**EvtSensorSetBatchLatency**来设置批处理延迟值时，才会以批处理形式传递传感器示例。 否则，示例将按定期的数据间隔速率交付。
+对于传感器类扩展指定批处理延迟，这是可选的。 所有传感器的默认批处理延迟为零 (0) ，用于指示不会对样本进行批处理。 仅当类扩展调用 **EvtSensorSetBatchLatency** 来设置批处理延迟值时，才会以批处理形式传递传感器示例。 否则，示例将按定期的数据间隔速率交付。
 
-传感器类扩展可以随时调用**EvtSensorSetBatchLatency**来更改批处理滞后时间值。 特别是，当指定的传感器已经处于活动状态且正在运行时，可以调用此函数，这不会导致事件丢失。 传感器驱动程序应立即收集并开始交付最新批的示例（以最大努力为基础）。 驱动程序不应超过类扩展指定的批处理延迟。
+传感器类扩展可以随时调用 **EvtSensorSetBatchLatency** 来更改批处理滞后时间值。 特别是，当指定的传感器已经处于活动状态且正在运行时，可以调用此函数，这不会导致事件丢失。 传感器驱动程序应立即收集并开始交付最新批的示例，)  (。 驱动程序不应超过类扩展指定的批处理延迟。
 
-需要特别注意的是，由于数据批处理，传感器数据传递方法和事件不会有任何变化。 当批处理延迟过期时，驱动程序将重复调用 SensorsCxSensorDataReady，以便一次传递一个所有缓冲数据样本。 数据示例附带其时间戳（包含在其关联的 PKEY\_SensorData\_Timestamp 数据字段）中，用于指示每个采样的时间。 有关 PKEY\_SensorData\_时间戳的详细信息，请参阅[通用数据字段](common-data-fields.md)。
+需要特别注意的是，由于数据批处理，传感器数据传递方法和事件不会有任何变化。 当批处理延迟过期时，驱动程序将重复调用 SensorsCxSensorDataReady，以便一次传递一个所有缓冲数据样本。 数据示例附带其时间戳 (包含在其关联的 PKEY \_ SensorData \_ Timestamp 数据字段中，) 指示每个采样的时间。 有关 PKEY \_ SensorData 时间戳的详细信息 \_ ，请参阅 [通用数据字段](common-data-fields.md)。
 
 ## <a name="batch-latency-and-data-rate-relationship"></a>批处理延迟和数据速率关系
 
@@ -70,35 +70,35 @@ ms.locfileid: "72845544"
 
 ![批处理延迟值的公式（以毫秒为单位）。](images/batch-formula.png)
 
-其中， *SensorBatching\_MaxSize\_Bytes*是批处理传感器数据缓冲区的最大大小。 如果传感器是加速感应器，则建议使用足以容纳250或更多示例的硬件缓冲区。 数据速率以毫秒为单位表示，这是传输一个数据示例所用的时间长度。 传感器硬件必须存储在批中的样本数与数据速率成反比。 数据速率越小，存储给定批处理延迟值的批处理样本所需的示例缓冲区就越大。 在前面的公式中，批处理延迟由*BatchLatencyMs*表示，数据速率由*DataRateMs*表示。 而且，如果*BatchLatencyMs*和*DataRateMs*的组合导致缓冲区大小大于*SensorBatching\_MaxSize\_字节*，则**EvtSensorSetBatchLatency**和[EvtSensorSetDataInterval](https://docs.microsoft.com/windows-hardware/drivers/ddi/sensorscx/ns-sensorscx-_sensor_controller_config)会将批处理延迟设置为上述公式显示的值。
+其中， *SensorBatching \_ MaxSize \_ Bytes* 是批处理传感器数据缓冲区的最大大小。 如果传感器是加速感应器，则建议使用足以容纳250或更多示例的硬件缓冲区。 数据速率以毫秒为单位表示，这是传输一个数据示例所用的时间长度。 传感器硬件必须存储在批中的样本数与数据速率成反比。 数据速率越小，存储给定批处理延迟值的批处理样本所需的示例缓冲区就越大。 在前面的公式中，批处理延迟由 *BatchLatencyMs* 表示，数据速率由 *DataRateMs*表示。 而且，如果 *BatchLatencyMs* 和 *DataRateMs* 的组合产生大于 *SensorBatching \_ MaxSize \_ 字节*的缓冲区大小，则 **EvtSensorSetBatchLatency** 和 [EvtSensorSetDataInterval](/windows-hardware/drivers/ddi/sensorscx/ns-sensorscx-_sensor_controller_config) 会将批处理延迟设置为上一个公式显示的值。
 
-如果调用方指定的*BatchLatencyMs*值小于*DataRateMs*，则在不进行缓冲的情况下传递数据。
+如果调用方指定的 *BatchLatencyMs* 值小于 *DataRateMs*，则在不进行缓冲的情况下传递数据。
 
 ## <a name="batching-with-data-thresholds"></a>带有数据阈值的批处理
 
 
-实现数据批处理的传感器驱动程序可以使用[EvtSensorSetDataThresholds](https://docs.microsoft.com/windows-hardware/drivers/ddi/sensorscx/ns-sensorscx-_sensor_controller_config)来设置非零数据阈值。 在这种情况下，当当前读数与最后一个读数之间的数据值之差超出了使用**EvtSensorSetDataThresholds**设置的数据阈值时，将调用数据收集、批处理和传递进程。 因此，将数据批处理与数据阈值结合使用，可使传感器驱动程序节省更多的能力。
+实现数据批处理的传感器驱动程序可以使用 [EvtSensorSetDataThresholds](/windows-hardware/drivers/ddi/sensorscx/ns-sensorscx-_sensor_controller_config) 来设置非零数据阈值。 在这种情况下，当当前读数与最后一个读数之间的数据值之差超出了使用 **EvtSensorSetDataThresholds**设置的数据阈值时，将调用数据收集、批处理和传递进程。 因此，将数据批处理与数据阈值结合使用，可使传感器驱动程序节省更多的能力。
 
 当传感器类扩展和数据批处理设置非零数据阈值时，驱动程序应提供具有准确时间戳的批处理样本，并同时服从数据阈值。 如果传感器硬件本身无法在强制数据阈值时保持准确的时间戳，则它可以收集样本，而不会强制数据阈值。 但是，在这种情况下，驱动程序应在将其传递给传感器类扩展之前，筛选出不满足当前数据阈值设置的示例。
 
 ## <a name="sequence-diagram-examples"></a>序列图示例
 
 
-下面的序列图显示在[用于数据批处理的可选 DDSI 函数](#optional-ddsi-functions-for-data-batching)中提到的可选数据批处理 DDSI 函数的用法。 我们可以根据需要添加更多序列图，以基于合作伙伴反馈阐明方案。
+下面的序列图显示在 [用于数据批处理的可选 DDSI 函数](#optional-ddsi-functions-for-data-batching)中提到的可选数据批处理 DDSI 函数的用法。 我们可以根据需要添加更多序列图，以基于合作伙伴反馈阐明方案。
 
-**方案1**
+**方案 1**
 
 在此方案中，传感器类扩展在启动传感器之前设置批处理延迟和数据间隔。 传感器开始后会定期提供批次，同时遵从设置的属性。
 
 ![显示在启动传感器之前类扩展设置批处理延迟和数据间隔的方案的序列图。](images/batch-scenario1.png)
 
-**方案2**
+**方案 2**
 
 在此方案中，传感器类扩展在启动传感器之前设置批处理延迟、数据间隔和数据阈值。 传感器开始后会定期提供批次，同时遵从设置的属性。 请注意，驱动程序不应传递批处理，除非存在满足数据阈值的示例，需要在指定的批处理延迟内发送这些值。
 
 ![序列图显示在启动传感器之前，类扩展设置批处理延迟、数据间隔和数据阈值的情况。](images/batch-scenario2.png)
 
-**方案3**
+**方案 3**
 
 在此方案中，传感器类扩展在启动传感器之前设置批处理延迟和数据间隔。 传感器开始后会定期提供批次，同时遵从设置属性。 传感器类扩展在传感器运行时更改批处理延迟和数据间隔，驱动程序会立即根据新值开始交付样本，而不会在运行时丢失任何数据样本。
 
@@ -128,9 +128,4 @@ ms.locfileid: "72845544"
 在正常情况下，驱动程序应该每隔一段时间间隔至少读取一次硬件缓冲区 *，以*确保不会丢弃或丢失任何数据。 当硬件 FIFO 缓冲区填满时，它应换行并表现为类似于循环缓冲区的覆盖旧事件。
 
  
-
- 
-
-
-
 

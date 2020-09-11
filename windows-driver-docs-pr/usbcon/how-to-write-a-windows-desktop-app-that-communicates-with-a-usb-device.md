@@ -3,12 +3,12 @@ description: 编写与 USB 设备通信的 Windows 桌面应用程序的最简�
 title: 编写基于 WinUSB 模板的 Windows 桌面应用
 ms.date: 07/16/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: a32dac432cc2ea421ac529bf9f143f4283e4ab50
-ms.sourcegitcommit: 7a7e61b4147a4aa86bf820fd0b0c7681fe17e544
+ms.openlocfilehash: 39e1d1fd4ce5a6c1aa129f40f6a67a1bd39f0b02
+ms.sourcegitcommit: 937974aa9bbe0262a7ffe9631593fab48c4e7492
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89056971"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "90010395"
 ---
 # <a name="write-a-windows-desktop-app-based-on-the-winusb-template"></a>编写基于 WinUSB 模板的 Windows 桌面应用
 
@@ -16,7 +16,7 @@ ms.locfileid: "89056971"
 
 ## <a name="prerequisites"></a>先决条件
 
-- 若要设置集成开发环境，请首先安装 Microsoft Visual Studio Ultimate 2019 或 Microsoft Visual Studio Professional 2019，然后安装 WDK。 可以在 [WDK 下载页](https://docs.microsoft.com/windows-hardware/drivers/download-the-wdk)上找到有关如何设置 Visual STUDIO 和 wdk 的信息。
+- 若要设置集成开发环境，请首先安装 Microsoft Visual Studio Ultimate 2019 或 Microsoft Visual Studio Professional 2019，然后安装 WDK。 可以在 [WDK 下载页](../download-the-wdk.md)上找到有关如何设置 Visual STUDIO 和 wdk 的信息。
 - 安装 WDK 时包含 Windows 调试工具。 有关详细信息，请参阅 [下载和安装适用于 Windows 的调试工具](https://go.microsoft.com/fwlink/p/?linkid=235427)。
 
 ## <a name="creating-a-winusb-application"></a>创建 WinUSB 应用程序
@@ -78,7 +78,7 @@ ms.locfileid: "89056971"
 
 测试和调试环境可以：
 
-- 两台计算机设置：主计算机和目标计算机。 在主计算机上的 Visual Studio 中开发和生成项目。 调试程序在主机上运行并且位于 Visual Studio 用户界面中。 测试和调试应用程序时，驱动程序将在目标计算机上运行。
+- 两台计算机设置：主计算机和目标计算机。 在主计算机上的 Visual Studio 中开发和生成项目。 调试程序在主计算机上运行，并在 Visual Studio 用户界面中可用。 测试和调试应用程序时，驱动程序将在目标计算机上运行。
 
 - 单台计算机设置：目标和主机在一台计算机上运行。 在 Visual Studio 中开发和生成项目，并运行调试器和应用程序。
 
@@ -86,7 +86,7 @@ ms.locfileid: "89056971"
 
 - **两台计算机安装**
 
-  1. 按照 [设置计算机以进行驱动程序部署和测试](https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/provision-a-target-computer-wdk-8-1)中的说明，预配目标计算机。
+  1. 按照 [设置计算机以进行驱动程序部署和测试](../gettingstarted/provision-a-target-computer-wdk-8-1.md)中的说明，预配目标计算机。
         **注意：**  预配将在名为 WDKRemoteUser 的目标计算机上创建用户。 预配完成后，会看到用户切换到 WDKRemoteUser。
   2. 在主计算机上，在 Visual Studio 中打开你的解决方案。
   3. 在 main 中，.cpp 将此行添加到 OpenDevice 调用之前。
@@ -109,7 +109,7 @@ ms.locfileid: "89056971"
   6. 在 " **USB Application1 包属性页** " 窗口的左窗格中，导航到 " **配置属性 &gt; 驱动程序安装 &gt; 部署**"，如以下屏幕截图所示。
   7. 选中“部署前删除以前的驱动程序版本”。
   8. 对于**远程计算机名**，请选择配置用于测试和调试的计算机名。 在此练习中，我们将使用名为 dbg 目标的计算机。
-  9. 选择 " **安装/重新安装并验证**"。 选择“应用”。
+  9. 选择 " **安装/重新安装并验证**"。 选择“应用”。 
 
         ![winusb 模板部署](images/winusb-template-deployment.png)
 
@@ -152,7 +152,7 @@ Deployment may take a few minutes...
 5. 在主计算机上的 Visual Studio 中，右键单击 **USB Application1 包** 项目，然后选择 " **卸载项目**"。
 6. 选择并按住 (或右键单击) **USB Application1** 项目，在 "项目属性" 中展开 " **配置属性** " 节点，然后选择 " **调试**"。
 7. 更改 **调试器以启动** 到 **远程 Windows 调试器**。
-8. 按照 [远程调试本地生成的项目](https://docs.microsoft.com/visualstudio/debugger/remote-debugging?view=vs-2015)中提供的说明更改项目设置以在远程计算机上运行可执行文件。 请确保 " **工作目录** " 和 " **远程命令** 属性" 反映目标计算机上的文件夹。
+8. 按照 [远程调试本地生成的项目](/visualstudio/debugger/remote-debugging?view=vs-2015)中提供的说明更改项目设置以在远程计算机上运行可执行文件。 请确保 " **工作目录** " 和 " **远程命令** 属性" 反映目标计算机上的文件夹。
 9. 若要调试应用程序，请在 " **生成** " 菜单中选择 " **启动调试**"，或按 **F5。**
 
 - **单台计算机安装：**
@@ -190,7 +190,7 @@ typedef struct _DEVICE_DATA {
 
 ### <a name="getting-the-instance-path-for-the-device---see-retrievedevicepath-in-devicecpp"></a>获取设备的实例路径-请参阅 RetrieveDevicePath in node.js
 
-若要访问 USB 设备，应用程序可以通过调用 **CreateFile**为设备创建一个有效的文件句柄。 对于该调用，应用程序必须获取设备路径实例。 为了获取设备路径，应用使用 [setupapi.log](https://docs.microsoft.com/windows-hardware/drivers/install/setupapi) 例程，并指定 INF 文件中用于安装 Winusb.sys 的设备接口 GUID。 Device 将声明一个名为 GUID DEVINTERFACE USBApplication1 的 GUID 常量 \_ \_ 。 通过使用这些例程，应用程序会枚举指定设备接口类中的所有设备，并检索设备的设备路径。
+若要访问 USB 设备，应用程序可以通过调用 **CreateFile**为设备创建一个有效的文件句柄。 对于该调用，应用程序必须获取设备路径实例。 为了获取设备路径，应用使用 [setupapi.log](../install/setupapi.md) 例程，并指定 INF 文件中用于安装 Winusb.sys 的设备接口 GUID。 Device 将声明一个名为 GUID DEVINTERFACE USBApplication1 的 GUID 常量 \_ \_ 。 通过使用这些例程，应用程序会枚举指定设备接口类中的所有设备，并检索设备的设备路径。
 
 ```cpp
 HRESULT
@@ -348,25 +348,25 @@ Return value:
 
 在前面的函数中，应用程序通过调用以下例程获取设备路径：
 
-1. [**SetupDiGetClassDevs**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetclassdevsexa) 获取 *设备信息集*的句柄，它是一个数组，其中包含与指定的设备接口类、GUID DEVINTERFACE USBApplication1 匹配的所有已安装设备的相关信息 \_ \_ 。 数组中名为 *设备接口* 的每个元素对应于在系统中安装和注册的设备。 通过传递您在 INF 文件中定义的设备接口 GUID 来标识设备接口类。 函数将返回设备信息集的 HDEVINFO 句柄。
-2. [**SetupDiEnumDeviceInterfaces**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdienumdeviceinterfaces) 用于枚举设备信息集中的设备接口，并获取有关设备接口的信息。
+1. [**SetupDiGetClassDevs**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetclassdevsexa) 获取 *设备信息集*的句柄，它是一个数组，其中包含与指定的设备接口类、GUID DEVINTERFACE USBApplication1 匹配的所有已安装设备的相关信息 \_ \_ 。 数组中名为 *设备接口* 的每个元素对应于在系统中安装和注册的设备。 通过传递您在 INF 文件中定义的设备接口 GUID 来标识设备接口类。 函数将返回设备信息集的 HDEVINFO 句柄。
+2. [**SetupDiEnumDeviceInterfaces**](/windows/desktop/api/setupapi/nf-setupapi-setupdienumdeviceinterfaces) 用于枚举设备信息集中的设备接口，并获取有关设备接口的信息。
 
     此调用需要以下项：
 
-   - 一个已初始化的调用方分配的 [**SP \_ 设备 \_ 接口 \_ 数据**](https://docs.microsoft.com/windows/desktop/api/setupapi/ns-setupapi-_sp_device_interface_data) 结构，它将其 **cbSize** 成员设置为结构的大小。
+   - 一个已初始化的调用方分配的 [**SP \_ 设备 \_ 接口 \_ 数据**](/windows/desktop/api/setupapi/ns-setupapi-_sp_device_interface_data) 结构，它将其 **cbSize** 成员设置为结构的大小。
    - 步骤1中的 HDEVINFO 句柄。
    - 在 INF 文件中定义的设备接口 GUID。
 
-    [**SetupDiEnumDeviceInterfaces**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdienumdeviceinterfaces) 为设备接口的指定索引查找设备信息集数组，并用有关接口的基本数据填充已初始化的 [**SP \_ 设备 \_ 接口 \_ 数据**](https://docs.microsoft.com/windows/desktop/api/setupapi/ns-setupapi-_sp_device_interface_data) 结构。
+    [**SetupDiEnumDeviceInterfaces**](/windows/desktop/api/setupapi/nf-setupapi-setupdienumdeviceinterfaces) 为设备接口的指定索引查找设备信息集数组，并用有关接口的基本数据填充已初始化的 [**SP \_ 设备 \_ 接口 \_ 数据**](/windows/desktop/api/setupapi/ns-setupapi-_sp_device_interface_data) 结构。
 
-    **注意**   若要枚举设备信息集中的所有设备接口，请在循环中调用 [**SetupDiEnumDeviceInterfaces**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdienumdeviceinterfaces) ，直到该函数返回 **FALSE** ，并且失败的错误代码为 "错误" \_ \_ \_ 。 错误：无法再 \_ \_ \_ 调用 **GetLastError**来检索更多项错误代码。 对于每个迭代，递增成员索引。
+    **注意**   若要枚举设备信息集中的所有设备接口，请在循环中调用 [**SetupDiEnumDeviceInterfaces**](/windows/desktop/api/setupapi/nf-setupapi-setupdienumdeviceinterfaces) ，直到该函数返回 **FALSE** ，并且失败的错误代码为 "错误" \_ \_ \_ 。 错误：无法再 \_ \_ \_ 调用 **GetLastError**来检索更多项错误代码。 对于每个迭代，递增成员索引。
 
-    或者，您可以调用 [**SetupDiEnumDeviceInfo**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdienumdeviceinfo) 来枚举设备信息集，并返回由调用方分配的 [**SP \_ lnk-devinfo \_ 数据**](https://docs.microsoft.com/windows/desktop/api/setupapi/ns-setupapi-_sp_devinfo_data) 结构中的索引指定的设备接口元素的相关信息。 然后，你可以在[**SetupDiEnumDeviceInterfaces**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdienumdeviceinterfaces)函数的*DeviceInfoData*参数中传递对此结构的引用。
+    或者，您可以调用 [**SetupDiEnumDeviceInfo**](/windows/desktop/api/setupapi/nf-setupapi-setupdienumdeviceinfo) 来枚举设备信息集，并返回由调用方分配的 [**SP \_ lnk-devinfo \_ 数据**](/windows/desktop/api/setupapi/ns-setupapi-_sp_devinfo_data) 结构中的索引指定的设备接口元素的相关信息。 然后，你可以在[**SetupDiEnumDeviceInterfaces**](/windows/desktop/api/setupapi/nf-setupapi-setupdienumdeviceinterfaces)函数的*DeviceInfoData*参数中传递对此结构的引用。
 
-3. [**SetupDiGetDeviceInterfaceDetail**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdeviceinterfacedetaila) 获取设备接口的详细数据。 该信息在 [**SP \_ 设备 \_ 接口 \_ 详细信息 \_ 数据**](https://docs.microsoft.com/windows/desktop/api/setupapi/ns-setupapi-_sp_device_interface_detail_data_a) 结构中返回。 由于 **SP \_ 设备 \_ 接口 \_ 详细信息 \_ 数据** 结构的大小不同， **SetupDiGetDeviceInterfaceDetail** 调用了两次。 第一次调用获取为 **SP \_ 设备 \_ 接口 \_ 详细信息 \_ 数据** 结构分配的缓冲区大小。 第二次调用用有关接口的详细信息填充分配的缓冲区。
-   1. 调用 [**SetupDiGetDeviceInterfaceDetail**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdeviceinterfacedetaila) ，并将 *DeviceInterfaceDetailData* 参数设置为 **NULL**。 函数在 *requiredlength* 参数中返回正确的缓冲区大小。 此调用失败，出现错误 \_ \_ 缓冲区错误代码。 应为此错误代码。
-   2. 基于在*requiredlength*参数中检索到的正确缓冲区大小为[**SP \_ 设备 \_ 接口 \_ 详细信息 \_ 数据**](https://docs.microsoft.com/windows/desktop/api/setupapi/ns-setupapi-_sp_device_interface_detail_data_a)结构分配内存。
-   3. 再次调用 [**SetupDiGetDeviceInterfaceDetail**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdeviceinterfacedetaila) ，并向其传递对 *DeviceInterfaceDetailData* 参数中已初始化结构的引用。 当函数返回时，该结构将填充有关接口的详细信息。 设备路径在 [**SP \_ 设备 \_ 接口 \_ 详细信息 \_ 数据**](https://docs.microsoft.com/windows/desktop/api/setupapi/ns-setupapi-_sp_device_interface_detail_data_a) 结构的 **DevicePath** 成员中。
+3. [**SetupDiGetDeviceInterfaceDetail**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetdeviceinterfacedetaila) 获取设备接口的详细数据。 该信息在 [**SP \_ 设备 \_ 接口 \_ 详细信息 \_ 数据**](/windows/desktop/api/setupapi/ns-setupapi-_sp_device_interface_detail_data_a) 结构中返回。 由于 **SP \_ 设备 \_ 接口 \_ 详细信息 \_ 数据** 结构的大小不同， **SetupDiGetDeviceInterfaceDetail** 调用了两次。 第一次调用获取为 **SP \_ 设备 \_ 接口 \_ 详细信息 \_ 数据** 结构分配的缓冲区大小。 第二次调用用有关接口的详细信息填充分配的缓冲区。
+   1. 调用 [**SetupDiGetDeviceInterfaceDetail**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetdeviceinterfacedetaila) ，并将 *DeviceInterfaceDetailData* 参数设置为 **NULL**。 函数在 *requiredlength* 参数中返回正确的缓冲区大小。 此调用失败，出现错误 \_ \_ 缓冲区错误代码。 应为此错误代码。
+   2. 基于在*requiredlength*参数中检索到的正确缓冲区大小为[**SP \_ 设备 \_ 接口 \_ 详细信息 \_ 数据**](/windows/desktop/api/setupapi/ns-setupapi-_sp_device_interface_detail_data_a)结构分配内存。
+   3. 再次调用 [**SetupDiGetDeviceInterfaceDetail**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetdeviceinterfacedetaila) ，并向其传递对 *DeviceInterfaceDetailData* 参数中已初始化结构的引用。 当函数返回时，该结构将填充有关接口的详细信息。 设备路径在 [**SP \_ 设备 \_ 接口 \_ 详细信息 \_ 数据**](/windows/desktop/api/setupapi/ns-setupapi-_sp_device_interface_detail_data_a) 结构的 **DevicePath** 成员中。
 
 ### <a name="creating-a-file-handle-for-the-device"></a>为设备创建文件句柄
 
@@ -453,14 +453,14 @@ Return value:
 ```
 
 1. 此应用通过指定先前检索到的设备路径来调用 **CreateFile** 来创建设备的文件句柄。 \_ \_ 由于 WinUSB 依赖于此设置，因此它使用文件标志重叠标志。
-2. 通过使用设备的文件句柄，应用程序将创建 WinUSB 接口句柄。 [WinUSB 函数](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff540046(v=vs.85)#winusb) 使用此句柄来标识目标设备，而不是文件句柄。 若要获取 WinUSB 接口句柄，应用通过传递文件句柄来调用 [**WinUSB \_ Initialize**](https://docs.microsoft.com/windows/desktop/api/winusb/nf-winusb-winusb_initialize) 。 使用后续调用中接收的句柄从设备获取信息，并将 i/o 请求发送到设备。
+2. 通过使用设备的文件句柄，应用程序将创建 WinUSB 接口句柄。 [WinUSB 函数](/previous-versions/windows/hardware/drivers/ff540046(v=vs.85)#winusb) 使用此句柄来标识目标设备，而不是文件句柄。 若要获取 WinUSB 接口句柄，应用通过传递文件句柄来调用 [**WinUSB \_ Initialize**](/windows/desktop/api/winusb/nf-winusb-winusb_initialize) 。 使用后续调用中接收的句柄从设备获取信息，并将 i/o 请求发送到设备。
 
 ### <a name="release-the-device-handles---see-closedevice-in-devicecpp"></a>释放设备句柄-请参阅 CloseDevice in node.js
 
 模板代码实现代码以释放文件句柄和设备的 WinUSB 接口句柄。
 
 - **CloseHandle** 释放由 **CreateFile**创建的句柄，如本演练的为 [设备创建文件句柄](#creating-a-file-handle-for-the-device) 部分所述。
-- [**WinUsb\_Free**](https://docs.microsoft.com/windows/desktop/api/winusb/nf-winusb-winusb_free) 释放设备的 WinUSB 接口句柄，该句柄由 [**WinUsb\_Initialize**](https://docs.microsoft.com/windows/desktop/api/winusb/nf-winusb-winusb_initialize) 返回。
+- [**WinUsb\_Free**](/windows/desktop/api/winusb/nf-winusb-winusb_free) 释放设备的 WinUSB 接口句柄，该句柄由 [**WinUsb\_Initialize**](/windows/desktop/api/winusb/nf-winusb-winusb_initialize) 返回。
 
 ```cpp
 VOID
@@ -516,4 +516,4 @@ Return value:
 ## <a name="related-topics"></a>相关主题
 
 [USB 设备的 Windows 桌面应用](windows-desktop-app-for-a-usb-device.md)  
-[预配用于驱动程序部署和测试的计算机](https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/provision-a-target-computer-wdk-8-1)  
+[预配用于驱动程序部署和测试的计算机](../gettingstarted/provision-a-target-computer-wdk-8-1.md)

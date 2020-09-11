@@ -1,24 +1,24 @@
 ---
-title: 为传感器创建持久的唯一标识符（以前的版本）
-description: 为传感器创建持久的唯一标识符（以前的版本）
+title: '为传感器创建持久的唯一标识符 (早期版本) '
+description: '为传感器创建持久的唯一标识符 (早期版本) '
 ms.assetid: 09ff583e-6bb5-4812-ae3b-970dac671e39
 ms.date: 07/20/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: ff2f246ab8953bd6589a16c23c0e87940d93dacd
-ms.sourcegitcommit: 9102e34c3322d8697dbb6f9a1d78879147a73373
+ms.openlocfilehash: 39523a9688dbca27f4d07bf25a4bbbb593b2e758
+ms.sourcegitcommit: 937974aa9bbe0262a7ffe9631593fab48c4e7492
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87264446"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "90010203"
 ---
-# <a name="creating-a-persistent-unique-identifier-for-a-sensor-previous-version"></a>为传感器创建持久的唯一标识符（以前的版本）
+# <a name="creating-a-persistent-unique-identifier-for-a-sensor-previous-version"></a>为传感器创建持久的唯一标识符 (早期版本) 
 
 
-驱动程序必须为每个传感器创建永久唯一标识符（PUID）。 PUID 是跨会话存储并在设备上唯一标识该对象的 GUID 值。 当查询名为传感器 \_ 属性 \_ 持久 \_ 唯一 ID 的属性时，驱动程序必须返回 PUID 值 \_ 。 如果设备包含多个传感器，则必须为每个传感器分配其自己的 PUID。 应用程序可以通过调用传感器 API 中的[ISensor：： GetID](https://go.microsoft.com/fwlink/p/?linkid=157812)方法来检索此 ID。
+驱动程序必须为每个传感器 (PUID) 创建永久唯一标识符。 PUID 是跨会话存储并在设备上唯一标识该对象的 GUID 值。 当查询名为传感器 \_ 属性 \_ 持久 \_ 唯一 ID 的属性时，驱动程序必须返回 PUID 值 \_ 。 如果设备包含多个传感器，则必须为每个传感器分配其自己的 PUID。 应用程序可以通过调用传感器 API 中的 [ISensor：： GetID](https://go.microsoft.com/fwlink/p/?linkid=157812) 方法来检索此 ID。
 
 当传感器第一次连接到计算机时，应该为每个传感器创建新的 PUID，并存储此值供以后使用。
 
-在初始化传感器类扩展之前，驱动程序应创建或检索 PUID，例如，在[**IPnpCallbackHardware：： OnPrepareHardware**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-ipnpcallbackhardware-onpreparehardware)中调用该扩展时。 此方法提供一个指针，该指针指向表示传感器的[IWDFDevice](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-iwdfdevice)接口。 此指针可用于访问每个设备的特定属性存储。
+在初始化传感器类扩展之前，驱动程序应创建或检索 PUID，例如，在 [**IPnpCallbackHardware：： OnPrepareHardware**](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-ipnpcallbackhardware-onpreparehardware)中调用该扩展时。 此方法提供一个指针，该指针指向表示传感器的 [IWDFDevice](/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-iwdfdevice) 接口。 此指针可用于访问每个设备的特定属性存储。
 
 下面的代码示例创建一个函数，该函数根据需要创建、存储和检索 PUID。
 
@@ -84,7 +84,4 @@ HRESULT CMyDevice::GetUniqueID(__in IWDFDevice* pWdfDevice,
 ```
 
 ## <a name="related-topics"></a>相关主题
-[传感器地理位置驱动程序示例](https://docs.microsoft.com/windows-hardware/drivers/gnss/sensors-geolocation-driver-sample)
-
-
-
+[传感器地理位置驱动程序示例](../gnss/sensors-geolocation-driver-sample.md)

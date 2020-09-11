@@ -3,12 +3,12 @@ description: 希望用 USB 类型 C 连接器构建 Windows 系统的 Oem 的常
 title: FAQ-Windows 系统上的 USB 类型 C 连接器
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 84454827329615c132412ec2510a6d34c5ed00e7
-ms.sourcegitcommit: 15caaf6d943135efcaf9975927ff3933957acd5d
+ms.openlocfilehash: 5fc51f08f9904782fd6dd245410bce50d2178dc4
+ms.sourcegitcommit: 937974aa9bbe0262a7ffe9631593fab48c4e7492
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88969424"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "90010341"
 ---
 # <a name="faq-usb-type-c-connector-on-a-windows-system"></a>常见问题解答：Windows 系统上的 USB 类型 C 连接器
 
@@ -80,7 +80,7 @@ ms.locfileid: "88969424"
 
 ## <a name="operating-system-input-into-which-alternate-mode-needs-to-be-negotiated-such-as-dp-2-lane-vs-dp-4-lane"></a>需要协商备用模式的操作系统输入，例如 DP 2 通道与 DP 4 通道
 
-不行。 操作系统 (或任何 Microsoft 提供的软件组件) 在选择备用模式时不起作用。 该决策由连接器的驱动程序（具体而言就是 USB 连接器管理器 (UCM) 客户端驱动程序）决定。 驱动程序通过使用硬件接口与连接器的固件通信来实现此目的。
+不是。 操作系统 (或任何 Microsoft 提供的软件组件) 在选择备用模式时不起作用。 该决策由连接器的驱动程序（具体而言就是 USB 连接器管理器 (UCM) 客户端驱动程序）决定。 驱动程序通过使用硬件接口与连接器的固件通信来实现此目的。
 
 ## <a name="pre-os-charging-with-type-c-and-pd"></a>类型 C 和 PD 的预操作系统收费
 
@@ -176,4 +176,4 @@ Microsoft 提供内置驱动程序和 Windows UcmUcsi.sys，该驱动程序实�
 
 ## <a name="vbusvconn-control-and-role-switch-operations-handled-by-the-ucm-class-extension"></a>UCM 类扩展处理的 VBus/VConn 控件和角色切换操作
 
-UCM 类扩展可能会从操作系统获取请求，以更改连接器的数据或电源方向。 当它获取这些请求时，它会调用客户端驱动程序的 [* \_ UCM \_ 连接器 \_ 集 \_ 数据 \_ 角色*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ucmmanager/nc-ucmmanager-evt_ucm_connector_set_data_role) 和 [*.evt \_ UCM \_ 连接器 \_ 集 \_ 电源 \_ 角色*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ucmmanager/nc-ucmmanager-evt_ucm_connector_set_power_role) 回调函数的实现， (如果连接器实现了 PD) 。 在实现中，客户端驱动程序应该控制 VBUS 和 VCONN 的 pin。 有关这些回调函数的详细信息，请参阅 [编写 USB 类型 C 连接器驱动程序](bring-up-a-usb-type-c-connector-on-a-windows-system.md)。
+UCM 类扩展可能会从操作系统获取请求，以更改连接器的数据或电源方向。 当它获取这些请求时，它会调用客户端驱动程序的 [* \_ UCM \_ 连接器 \_ 集 \_ 数据 \_ 角色*](/windows-hardware/drivers/ddi/ucmmanager/nc-ucmmanager-evt_ucm_connector_set_data_role) 和 [*.evt \_ UCM \_ 连接器 \_ 集 \_ 电源 \_ 角色*](/windows-hardware/drivers/ddi/ucmmanager/nc-ucmmanager-evt_ucm_connector_set_power_role) 回调函数的实现， (如果连接器实现了 PD) 。 在实现中，客户端驱动程序应该控制 VBUS 和 VCONN 的 pin。 有关这些回调函数的详细信息，请参阅 [编写 USB 类型 C 连接器驱动程序](bring-up-a-usb-type-c-connector-on-a-windows-system.md)。

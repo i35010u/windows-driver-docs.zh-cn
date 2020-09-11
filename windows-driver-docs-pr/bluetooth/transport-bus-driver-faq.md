@@ -1,65 +1,59 @@
 ---
 title: 传输总线驱动程序常见问题解答
-description: 以下是常见的问题、 方案和问题的驱动程序开发人员可能会遇到开发总线驱动程序以支持蓝牙功能时。
+description: 下面是开发总线驱动程序时，驱动程序开发人员可能遇到的常见问题、方案和问题，以支持蓝牙功能。
 ms.assetid: 7189EB3B-E071-4145-8308-EFA6D4E89D4B
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f1bcf3c8a5fb1b07c9f6f01a9e0b826c2d1eb563
-ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
+ms.openlocfilehash: 9ba55576532344229154a99e0ec7ec5cfdf2a663
+ms.sourcegitcommit: 937974aa9bbe0262a7ffe9631593fab48c4e7492
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67391553"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "90010589"
 ---
 # <a name="transport-bus-driver-faq"></a>传输总线驱动程序常见问题解答
 
 
-以下是常见的问题、 方案和问题的驱动程序开发人员可能会遇到开发总线驱动程序以支持蓝牙功能时。
+下面是开发总线驱动程序时，驱动程序开发人员可能遇到的常见问题、方案和问题，以支持蓝牙功能。
 
-## <a name="span-idmyserialbusdriverencounteredsomeerrorwhatdoesitmeanspanspan-idmyserialbusdriverencounteredsomeerrorwhatdoesitmeanspanmy-serial-bus-driver-encountered-some-error-what-does-it-mean"></a><span id="my_serial_bus_driver_encountered_some_error._what_does_it_mean_"></span><span id="MY_SERIAL_BUS_DRIVER_ENCOUNTERED_SOME_ERROR._WHAT_DOES_IT_MEAN_"></span>我的串行总线驱动程序时遇到一些错误。 它是什么意思？
-
-
-代码 10 49:[设备管理器生成的错误代码的说明](https://support.microsoft.com/help/310123/error-codes-in-device-manager-in-windows)。
-
-代码 51:当串行总线驱动程序依赖于控制器驱动程序 （如 ACPI 表中所定义） 时，系统将在加载串行总线驱动程序，但它将不开始直到所有其依赖的驱动程序已成功启动。 当控制器驱动程序不存在或未加载成功，代码 51 错误触发。
-
-代码 52 = 未签名驱动程序。
-
-这些主题中的更详细地介绍驱动程序签名：
-
--   [驱动程序签名](https://docs.microsoft.com/windows-hardware/drivers/install/driver-signing)
--   [Windows 驱动程序签名要求](https://msdn.microsoft.com/windows/hardware/gg487317)
-
-## <a name="span-idwhyismyserialbusdrivernotgettinganyioctlsfromthebluetoothcorestackspanspan-idwhyismyserialbusdrivernotgettinganyioctlsfromthebluetoothcorestackspanspan-idwhyismyserialbusdrivernotgettinganyioctlsfromthebluetoothcorestackspanwhy-is-my-serial-bus-driver-not-getting-any-ioctls-from-the-bluetooth-core-stack"></a><span id="Why_is_my_serial_bus_driver_not_getting_any_IOCTLs_from_the_Bluetooth_core_stack_"></span><span id="why_is_my_serial_bus_driver_not_getting_any_ioctls_from_the_bluetooth_core_stack_"></span><span id="WHY_IS_MY_SERIAL_BUS_DRIVER_NOT_GETTING_ANY_IOCTLS_FROM_THE_BLUETOOTH_CORE_STACK_"></span>为什么我串行总线驱动程序未获得任何 Ioctl 从蓝牙核心堆栈？
+## <a name="span-idmy_serial_bus_driver_encountered_some_error_what_does_it_mean_spanspan-idmy_serial_bus_driver_encountered_some_error_what_does_it_mean_spanmy-serial-bus-driver-encountered-some-error-what-does-it-mean"></a><span id="my_serial_bus_driver_encountered_some_error._what_does_it_mean_"></span><span id="MY_SERIAL_BUS_DRIVER_ENCOUNTERED_SOME_ERROR._WHAT_DOES_IT_MEAN_"></span>我的串行总线驱动程序遇到了一些错误。 它意味着什么？
 
 
-串行总线驱动程序可能已启用空闲状态的功能，但未实现电源控制处理部分和及其子主题中讨论的机制。 在此情况下，在蓝牙 HID 设备 （鼠标或键盘） 将无法唤醒堆栈 （从到 D0 D2)。 建议将关闭此空闲状态的功能，直到已实现基本的蓝牙功能和电源控制处理机制。
+代码10-49：对 [设备管理器生成的错误代码的说明](https://support.microsoft.com/help/310123/error-codes-in-device-manager-in-windows)。
 
-## <a name="span-idaretherebluetoothwindowslogotestsspanspan-idaretherebluetoothwindowslogotestsspanspan-idaretherebluetoothwindowslogotestsspanare-there-bluetooth-windows-logo-tests"></a><span id="Are_there_Bluetooth_Windows_Logo_Tests_"></span><span id="are_there_bluetooth_windows_logo_tests_"></span><span id="ARE_THERE_BLUETOOTH_WINDOWS_LOGO_TESTS_"></span>是否有蓝牙 Windows 徽标测试？
+代码51：当串行总线驱动程序具有从属控制器驱动程序 (如 ACPI 表) 中定义时，系统将加载串行总线驱动程序，但在其所有从属驱动程序均已成功启动之前，该驱动程序不会启动。 如果控制器驱动程序不存在或未成功加载，则会触发代码51错误。
 
+代码 52 = 未签名的驱动程序。
 
-Windows HCK （硬件认证工具包） 包含一组特定于蓝牙的测试，必须在接收证书。 蓝牙驱动程序开发人员应在开发以确保其驱动程序将其要接收证书，使正确支持传递过程中运行这些测试。
+以下主题更详细地介绍了驱动程序签名：
 
-## <a name="span-idshoulduartsettingsbepreservedandrestoredamongthedifferentpowerstatetransitionsspanspan-idshoulduartsettingsbepreservedandrestoredamongthedifferentpowerstatetransitionsspanspan-idshoulduartsettingsbepreservedandrestoredamongthedifferentpowerstatetransitionsspanshould-uart-settings-be-preserved-and-restored-among-the-different-power-state-transitions"></a><span id="Should_UART_settings_be_preserved_and_restored_among_the_different_power_state_transitions_"></span><span id="should_uart_settings_be_preserved_and_restored_among_the_different_power_state_transitions_"></span><span id="SHOULD_UART_SETTINGS_BE_PRESERVED_AND_RESTORED_AMONG_THE_DIFFERENT_POWER_STATE_TRANSITIONS_"></span>应 UART 设置进行保留和还原在不同的电源状态转换？
+-   [驱动程序签名](../install/driver-signing.md)
+-   [Windows 驱动程序签名要求](/previous-versions/windows/hardware/design/dn653563(v=vs.85))
 
-
-因为蓝牙传输驱动程序已意识到，并且可以控制远程 UART 控制器的设置 （包括其设置后上提供支持），蓝牙传输驱动程序应重置两个远程和本地 UART 控制器在输入中的状态之前哪些电源可能会丢失。 因此，还原电源后，远程 UART （蓝牙端） 和本地 UART （宿主端） 控制器上的设置可能会保持同步。UART 驱动程序已对本地 UART 控制器的控制，并将负责之前还原为其设置。 蓝牙传输驱动程序还可以查询有关其强化设置 UART 驱动程序 （因为 UART 驱动程序将设置其最初使用 ACPI 表）、 缓存和输入一些 Dx 状态时将其设置。
-
-## <a name="span-idwhathappensifthebusdriverreceivesawakenotificationwhilethestackisintheprocessofenteringd2spanspan-idwhathappensifthebusdriverreceivesawakenotificationwhilethestackisintheprocessofenteringd2spanspan-idwhathappensifthebusdriverreceivesawakenotificationwhilethestackisintheprocessofenteringd2spanwhat-happens-if-the-bus-driver-receives-a-wake-notification-while-the-stack-is-in-the-process-of-entering-d2"></a><span id="What_happens_if_the_bus_driver_receives_a_wake_notification_while_the_stack_is_in_the_process_of_entering_D2_"></span><span id="what_happens_if_the_bus_driver_receives_a_wake_notification_while_the_stack_is_in_the_process_of_entering_d2_"></span><span id="WHAT_HAPPENS_IF_THE_BUS_DRIVER_RECEIVES_A_WAKE_NOTIFICATION_WHILE_THE_STACK_IS_IN_THE_PROCESS_OF_ENTERING_D2_"></span>如果总线驱动程序收到唤醒通知过程中进入 D2 堆栈时，会发生什么情况？
-
-
-在此情况下，总线驱动程序应完成 D2 转换，并继续唤醒机制。 串行总线驱动程序应执行此同步 （例如可以唤醒请求进行排队并仅在 D2 转换完成后启动唤醒过程）。
-
-## <a name="span-idhowshouldabusdriveridentifyitsacpiresourceofmultipleoccurrencessuchasmultiplegpiosspanspan-idhowshouldabusdriveridentifyitsacpiresourceofmultipleoccurrencessuchasmultiplegpiosspanspan-idhowshouldabusdriveridentifyitsacpiresourceofmultipleoccurrencessuchasmultiplegpiosspanhow-should-a-bus-driver-identify-its-acpi-resource-of-multiple-occurrences-such-as-multiple-gpios"></a><span id="How_should_a_bus_driver_identify_its_ACPI_resource_of_multiple_occurrences__such_as_multiple_GPIOs_"></span><span id="how_should_a_bus_driver_identify_its_acpi_resource_of_multiple_occurrences__such_as_multiple_gpios_"></span><span id="HOW_SHOULD_A_BUS_DRIVER_IDENTIFY_ITS_ACPI_RESOURCE_OF_MULTIPLE_OCCURRENCES__SUCH_AS_MULTIPLE_GPIOS_"></span>总线驱动程序应如何标识多个匹配项，如多个 GPIOs 其 ACPI 资源？
+## <a name="span-idwhy_is_my_serial_bus_driver_not_getting_any_ioctls_from_the_bluetooth_core_stack_spanspan-idwhy_is_my_serial_bus_driver_not_getting_any_ioctls_from_the_bluetooth_core_stack_spanspan-idwhy_is_my_serial_bus_driver_not_getting_any_ioctls_from_the_bluetooth_core_stack_spanwhy-is-my-serial-bus-driver-not-getting-any-ioctls-from-the-bluetooth-core-stack"></a><span id="Why_is_my_serial_bus_driver_not_getting_any_IOCTLs_from_the_Bluetooth_core_stack_"></span><span id="why_is_my_serial_bus_driver_not_getting_any_ioctls_from_the_bluetooth_core_stack_"></span><span id="WHY_IS_MY_SERIAL_BUS_DRIVER_NOT_GETTING_ANY_IOCTLS_FROM_THE_BLUETOOTH_CORE_STACK_"></span>为什么我的串行总线驱动程序无法从蓝牙核心堆栈获取任何 IOCTLs？
 
 
-没有方法来标记资源，GPIO 或其他。 这就是原因资源顺序非常重要。 设备驱动程序应建立一个约定 (例如要显示在列表中的第一个 GPIO 资源为 BT\_出现唤醒和第二个是宿主\_唤醒)。
+串行总线驱动程序可能已启用空闲功能，但未实现部分及其子主题中讨论的电源控制处理机制。 在这种情况下， (鼠标或键盘) 的蓝牙 HID 设备将无法将堆栈从 D2 (唤醒到 D0) 。 建议关闭此空闲功能，直到已实现基本蓝牙功能和电源控制处理机制。
 
- 
+## <a name="span-idare_there_bluetooth_windows_logo_tests_spanspan-idare_there_bluetooth_windows_logo_tests_spanspan-idare_there_bluetooth_windows_logo_tests_spanare-there-bluetooth-windows-logo-tests"></a><span id="Are_there_Bluetooth_Windows_Logo_Tests_"></span><span id="are_there_bluetooth_windows_logo_tests_"></span><span id="ARE_THERE_BLUETOOTH_WINDOWS_LOGO_TESTS_"></span>是否存在蓝牙 Windows 徽标测试？
+
+
+Windows HCK (硬件认证包) 包含一组特定于蓝牙的测试，必须传递这些测试才能接收证书。 蓝牙驱动程序开发人员应在开发过程中运行这些测试，以确保其驱动程序可以通过进行认证并获得正确的支持。
+
+## <a name="span-idshould_uart_settings_be_preserved_and_restored_among_the_different_power_state_transitions_spanspan-idshould_uart_settings_be_preserved_and_restored_among_the_different_power_state_transitions_spanspan-idshould_uart_settings_be_preserved_and_restored_among_the_different_power_state_transitions_spanshould-uart-settings-be-preserved-and-restored-among-the-different-power-state-transitions"></a><span id="Should_UART_settings_be_preserved_and_restored_among_the_different_power_state_transitions_"></span><span id="should_uart_settings_be_preserved_and_restored_among_the_different_power_state_transitions_"></span><span id="SHOULD_UART_SETTINGS_BE_PRESERVED_AND_RESTORED_AMONG_THE_DIFFERENT_POWER_STATE_TRANSITIONS_"></span>是否应在不同的电源状态转换中保留 UART 设置并进行还原？
+
+
+由于蓝牙传输驱动程序可以识别并控制远程 UART 控制器的设置 (在开机) 后包含其设置，因此，蓝牙传输驱动程序应重置远程和本地 UART 控制器，然后再进入可能会丢失电源的状态。 因此，当电源恢复时，远程 UART 上的设置 (蓝牙端) 并且本地 UART (主机端) 控制器可以同步。UART 驱动程序只能控制本地 UART 控制器，并将负责在关机之前还原到其设置。 蓝牙传输驱动程序还可以在 UART 驱动程序上查询其电源设置 (因为 UART 驱动程序最初使用 ACPI 表将其设置) 、缓存并在进入 Dx 状态时进行设置。
+
+## <a name="span-idwhat_happens_if_the_bus_driver_receives_a_wake_notification_while_the_stack_is_in_the_process_of_entering_d2_spanspan-idwhat_happens_if_the_bus_driver_receives_a_wake_notification_while_the_stack_is_in_the_process_of_entering_d2_spanspan-idwhat_happens_if_the_bus_driver_receives_a_wake_notification_while_the_stack_is_in_the_process_of_entering_d2_spanwhat-happens-if-the-bus-driver-receives-a-wake-notification-while-the-stack-is-in-the-process-of-entering-d2"></a><span id="What_happens_if_the_bus_driver_receives_a_wake_notification_while_the_stack_is_in_the_process_of_entering_D2_"></span><span id="what_happens_if_the_bus_driver_receives_a_wake_notification_while_the_stack_is_in_the_process_of_entering_d2_"></span><span id="WHAT_HAPPENS_IF_THE_BUS_DRIVER_RECEIVES_A_WAKE_NOTIFICATION_WHILE_THE_STACK_IS_IN_THE_PROCESS_OF_ENTERING_D2_"></span>如果在堆栈正在进入 D2 的过程中，总线驱动程序收到唤醒通知，会发生什么情况？
+
+
+在这种情况下，总线驱动程序应完成 D2 转换，然后继续进入唤醒机制。 串行总线驱动程序应执行此同步 (例如，它可以将唤醒请求排队并仅在 D2 转换完成后启动唤醒过程) 。
+
+## <a name="span-idhow_should_a_bus_driver_identify_its_acpi_resource_of_multiple_occurrences__such_as_multiple_gpios_spanspan-idhow_should_a_bus_driver_identify_its_acpi_resource_of_multiple_occurrences__such_as_multiple_gpios_spanspan-idhow_should_a_bus_driver_identify_its_acpi_resource_of_multiple_occurrences__such_as_multiple_gpios_spanhow-should-a-bus-driver-identify-its-acpi-resource-of-multiple-occurrences-such-as-multiple-gpios"></a><span id="How_should_a_bus_driver_identify_its_ACPI_resource_of_multiple_occurrences__such_as_multiple_GPIOs_"></span><span id="how_should_a_bus_driver_identify_its_acpi_resource_of_multiple_occurrences__such_as_multiple_gpios_"></span><span id="HOW_SHOULD_A_BUS_DRIVER_IDENTIFY_ITS_ACPI_RESOURCE_OF_MULTIPLE_OCCURRENCES__SUCH_AS_MULTIPLE_GPIOS_"></span>总线驱动程序应该如何识别其多个匹配项（例如多个 GPIOs）的 ACPI 资源？
+
+
+无法标记资源、GPIO 或其他方法。 这就是资源顺序非常重要的原因。 设备驱动程序应建立约定 (例如，要在列表中显示的第一个 GPIO 资源适用于 BT \_ 唤醒，另一个要显示的是用于主机 \_ 唤醒) 。
 
  
-
-
-
-
 

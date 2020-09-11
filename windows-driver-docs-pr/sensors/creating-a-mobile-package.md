@@ -4,12 +4,12 @@ description: 本主题提供有关创建用于在移动设备上安装示例驱�
 ms.assetid: E929D80D-17BF-4079-8CF9-972020306358
 ms.date: 07/20/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: fffc7ff8377e5e739d33ebf65d94c717baf4f37d
-ms.sourcegitcommit: ba3199328ea5d80119eafc399dc989e11e7ae1d6
+ms.openlocfilehash: 0a8f8cc5a651561a209adc5db6f25cd433f458fb
+ms.sourcegitcommit: 937974aa9bbe0262a7ffe9631593fab48c4e7492
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74862151"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "90010143"
 ---
 # <a name="creating-a-mobile-package"></a>创建移动包
 
@@ -63,23 +63,23 @@ Copyright (c) Microsoft Corporation.  All rights reserved.
 >[!NOTE]
 > **Security InfSectionName**元素的值必须与本主题中讨论的**AddReg**字段的值完全相同：请[查看 INX 文件](review-and-revise-the-inf-file.md)。
 
-2. 在记事本的主菜单中，单击 "**文件**" &gt;**另存为**"，然后在"**另存为**"对话框窗口中，使用下拉框将"**保存类型**"字段设置为"**所有文件**"。 * * * * *
+2. 在记事本的主菜单中，单击 " **文件** &gt; **另存为**"，然后在 " **另存为** " 对话框窗口中，使用下拉框将 " **保存类型** " 字段设置为 " **所有文件**"。 * * * *
 
-3. 在 "**文件名**" 文本框中，键入以下内容：
+3. 在 " **文件名** " 文本框中，键入以下内容：
 
-*adxl345acc. .pkg*
-4. 使用 "**另存为**" 对话框窗口顶部的 "目标" 框导航到 Microsoft Visual Studio 中的项目文件夹。 单击“保存”。
+*adxl345acc.pkg.xml*
+4. 使用 " **另存为** " 对话框窗口顶部的 "目标" 框导航到 Microsoft Visual Studio 中的项目文件夹。 然后单击“保存”  。
 
-如前面的步骤中所示创建*adxl345acc*文件后，还可以使用 Windows 驱动程序工具包（WDK）随附的**pkggen**工具打包该文件。
+按照前面的步骤创建 *adxl345acc.pkg.xml* 文件后，还可以使用 Windows 驱动程序工具包随附的 **pkggen.exe** 工具 (WDK) 来打包该文件。
 
-如果已将 WDK 安装到默认位置，则可以在以下位置找到**pkggen** ： *%WPDKCONTENTROOT%\Tools\bin\i386*
+如果已将 WDK 安装到默认位置，则可以在以下位置找到 **pkggen.exe** ： *%WPDKCONTENTROOT%\Tools\bin\i386*
 
-有关如何为移动设备创建包的说明，请参阅[包生成器的命令行参数](https://docs.microsoft.com/windows-hardware/manufacture/mobile/command-line-arguments-for-package-generator)。 有关更全面的介绍，请参阅[创建 Mobile Pacakages](https://docs.microsoft.com/previous-versions/windows/hardware/packaging/dn756642(v=vs.85)) 。
+有关如何为移动设备创建包的说明，请参阅 [包生成器的命令行参数](/windows-hardware/manufacture/mobile/command-line-arguments-for-package-generator) 。 有关更全面的介绍，请参阅 [创建 Mobile Pacakages](/previous-versions/windows/hardware/packaging/dn756642(v=vs.85)) 。
 
 ## <a name="related-topics"></a>相关主题
 
-[创建移动包](https://docs.microsoft.com/previous-versions/windows/hardware/packaging/dn756642(v=vs.85))
+[创建移动包](/previous-versions/windows/hardware/packaging/dn756642(v=vs.85))
 
 [查看 INX 文件](review-and-revise-the-inf-file.md)
 
-[包生成器的命令行参数](https://docs.microsoft.com/windows-hardware/manufacture/mobile/command-line-arguments-for-package-generator)
+[包生成器的命令行参数](/windows-hardware/manufacture/mobile/command-line-arguments-for-package-generator)

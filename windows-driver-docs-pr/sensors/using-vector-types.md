@@ -1,24 +1,24 @@
 ---
-title: 使用与传感器的矢量类型
-description: 使用与传感器的矢量类型
+title: 使用带有传感器的矢量类型
+description: 使用带有传感器的矢量类型
 ms.assetid: cadc2cd3-10aa-4a4a-926f-edc01b046f27
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 621a63f0d81101bc8fca0fd9ddc0d3a4b685b42b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2fe2c30e2855ee247ab2ea51185c6217ec60eb89
+ms.sourcegitcommit: 937974aa9bbe0262a7ffe9631593fab48c4e7492
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63345065"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "90010621"
 ---
-# <a name="using-vector-types-with-sensors"></a>使用与传感器的矢量类型
+# <a name="using-vector-types-with-sensors"></a>使用带有传感器的矢量类型
 
 
-某些属性和数据字段包含的信息的数组。 例如，传感器\_属性\_LIGHT\_响应\_曲线属性包含 4 字节无符号整数的数组。 但是，当应用程序接收此类数组通过传感器 API，它们始终表示键入 VT\_向量 |UI1，单字节字符数组。
+某些属性和数据字段包含信息的数组。 例如，"传感器 \_ 属性 \_ 灯 \_ 响应曲线" \_ 属性包含4字节无符号整数的数组。 但是，当应用程序通过传感器 API 接收此类数组时，它们始终表示为类型 VT \_ VECTOR |UI1，单字节字符数组。
 
-有关哪些属性和数据字段包含数组的信息，请参阅[常量](about-sensor-constants.md)。
+有关哪些属性和数据字段包含数组的信息，请参阅 [常量](about-sensor-constants.md)。
 
-下面的代码示例演示如何创建[IPortableDeviceValues](https://go.microsoft.com/fwlink/p/?linkid=131486)对象，其中包含值为传感器\_属性\_LIGHT\_响应\_曲线。 名为 m 的变量\_pSensorProperties 是指向[IPortableDeviceValues](https://go.microsoft.com/fwlink/p/?linkid=131486)接口。
+下面的代码示例演示如何创建一个 [IPortableDeviceValues](https://go.microsoft.com/fwlink/p/?linkid=131486) 对象，该对象包含传感器 \_ 属性 \_ 光源 \_ 响应 \_ 曲线的值。 名为 m pSensorProperties 的变量 \_ 是指向 [IPortableDeviceValues](https://go.microsoft.com/fwlink/p/?linkid=131486) 接口的指针。
 
 ```cpp
 UINT responseCurve[10] = {0}; // Array to contain the response curve data.
@@ -49,7 +49,4 @@ PropVariantClear(&pvCurve);
 ```
 
 ## <a name="related-topics"></a>相关主题
-[传感器地理位置驱动程序示例](https://docs.microsoft.com/windows-hardware/drivers/gnss/sensors-geolocation-driver-sample)
-
-
-
+[传感器地理位置驱动程序示例](../gnss/sensors-geolocation-driver-sample.md)

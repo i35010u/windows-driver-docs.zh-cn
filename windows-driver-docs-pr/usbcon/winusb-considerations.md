@@ -3,12 +3,12 @@ description: 用于开发作为设备功能驱动程序的 USB 客户端驱动�
 title: 选择用于开发 USB 驱动程序的驱动程序型号
 ms.date: 05/09/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 6e483da07e4e1b925081987577ea907a0945ff6f
-ms.sourcegitcommit: 15caaf6d943135efcaf9975927ff3933957acd5d
+ms.openlocfilehash: 1491e059a738fc3d3dd4badaa79f3f8e693b8cb7
+ms.sourcegitcommit: 937974aa9bbe0262a7ffe9631593fab48c4e7492
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88969546"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "90010419"
 ---
 # <a name="choosing-a-driver-model-for-developing-a-usb-client-driver"></a>选择用于开发 USB 客户端驱动程序的驱动程序模型
 
@@ -49,7 +49,7 @@ USB 设备制造商通常必须为应用程序提供访问设备功能的方式�
 
     将 WinUSB 作为函数驱动程序加载提供了一种更简单的方法来实现自定义 USB 驱动程序。 例如，WinUSB 是电子天气工作站的首选方法，只由与设备一起打包的应用程序访问。 它还可用于诊断与设备和闪存固件的通信。
 
-    为了使应用程序能够轻松地将请求发送到 Winusb.sys，我们提供了一个公开 [WinUSB 函数](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff540046(v=vs.85)#winusb)的用户模式 DLL Winusb.dll。 应用程序可调用这些函数来访问设备、对其进行配置，以及将数据传输到设备的终结点。
+    为了使应用程序能够轻松地将请求发送到 Winusb.sys，我们提供了一个公开 [WinUSB 函数](/previous-versions/windows/hardware/drivers/ff540046(v=vs.85)#winusb)的用户模式 DLL Winusb.dll。 应用程序可调用这些函数来访问设备、对其进行配置，以及将数据传输到设备的终结点。
 
     如果出现以下情况，则不能选择 WinUSB：
 
@@ -65,7 +65,7 @@ USB 设备制造商通常必须为应用程序提供访问设备功能的方式�
 
 如果选择编写驱动程序，可选择以下选项：
 
--   [用户模式驱动程序框架](https://docs.microsoft.com/windows-hardware/drivers/wdf/) (UMDF) 
+-   [用户模式驱动程序框架](../wdf/index.md) (UMDF) 
 
     UMDF 提供 (DDIs) 的设备驱动程序接口，客户端驱动程序可以使用该接口与即插即用 Manager 和电源管理器等 Windows 组件进行集成。 UMDF 还为 USB 设备提供专用目标对象，这些对象在用户模式下抽象硬件，并简化驱动程序的 i/o 操作。 除了 UMDF 接口，WDF 还为用户模式驱动程序提供增强的调试器扩展和跟踪工具。 UMDF 基于组件对象模型 (COM) ，开发用户模式驱动程序对于 c + + 开发人员来说更为简单。
 
@@ -84,7 +84,7 @@ USB 设备制造商通常必须为应用程序提供访问设备功能的方式�
 
      
 
--   [内核模式驱动程序框架](https://docs.microsoft.com/windows-hardware/drivers/wdf/) (KMDF) 
+-   [内核模式驱动程序框架](../wdf/index.md) (KMDF) 
 
     KMDF 旨在使驱动程序模型易于扩展，以支持新类型的硬件。 KMDF 提供 DDIs 和数据结构，使内核模式 USB 驱动程序比早期 Windows 驱动模型 (WDM) 驱动程序更容易实现。 此外，KMDF 还提供专用的输入/输出 (i/o) 目标，可用于编写使用 Microsoft USB 驱动程序堆栈的功能完备的客户端驱动程序。
 
@@ -94,7 +94,7 @@ USB 设备制造商通常必须为应用程序提供访问设备功能的方式�
 
     纯粹的 WDM 驱动程序难以编写、复杂且不可靠。 随着 KMDF 的发展，不再需要编写这种类型的驱动程序。
 
-Microsoft Visual Studio 2012 包括 **Usb 用户模式驱动程序** 和 **Usb 内核模式驱动程序** 模板，分别为 UMDF 和 KMDF USB 客户端驱动程序生成起始代码。 模板代码初始化 USB 目标设备对象，以启用与硬件的通信。 有关详细信息，请参阅下列主题：
+Microsoft Visual Studio 2012 包括 **Usb 用户模式驱动程序** 和 **Usb 内核模式驱动程序** 模板，分别为 UMDF 和 KMDF USB 客户端驱动程序生成起始代码。 模板代码初始化 USB 目标设备对象，以启用与硬件的通信。 有关详情，请参阅以下主题：
 -   [将第一个 USB 客户端驱动程序写入 (UMDF) ](implement-driver-entry-for-a-usb-driver--umdf-.md)
 -   [ (KMDF 中写入第一个 USB 客户端驱动程序) ](tutorial--write-your-first-usb-client-driver--kmdf-.md)
 
@@ -105,7 +105,7 @@ Microsoft Visual Studio 2012 包括 **Usb 用户模式驱动程序** 和 **Usb �
 
 下表总结了基于 WinUSB 的 USB 驱动程序和基于 KMDF 的 USB 驱动程序的功能。
 
-| 功能                                                                                                          | WinUSB | UMDF | KMDF |
+| 特性                                                                                                          | WinUSB | UMDF | KMDF |
 |------------------------------------------------------------------------------------------------------------------|--------|------|------|
 | 支持多个并发应用程序                                                                        | 否     | 是  | 是  |
 | 隔离应用程序地址空间中的驱动程序地址空间                                                     | 否     | 是  | 否   |
@@ -124,7 +124,7 @@ Microsoft Visual Studio 2012 包括 **Usb 用户模式驱动程序** 和 **Usb �
 | Windows 7              | 是    | 是  | 是  |
 | Windows Vista          | 是¹   | 是¹ | 是  |
 | Windows Server 2003    | 否     | 否   | 是  |
-| Windows XP             | 是²   | 是² | 适合  |
+| Windows XP             | 是²   | 是² | 是  |
 | Microsoft Windows 2000 | 否     | 否   | 是³ |
 
  
@@ -145,7 +145,4 @@ Microsoft Visual Studio 2012 包括 **Usb 用户模式驱动程序** 和 **Usb �
 [USB 客户端驱动程序开发入门](getting-started-with-usb-client-driver-development.md)  
 [WinUSB](winusb.md)  
 [将第一个 USB 客户端驱动程序写入 (UMDF) ](implement-driver-entry-for-a-usb-driver--umdf-.md)  
-[ (KMDF 中写入第一个 USB 客户端驱动程序) ](tutorial--write-your-first-usb-client-driver--kmdf-.md)  
-
-
-
+[ (KMDF 中写入第一个 USB 客户端驱动程序) ](tutorial--write-your-first-usb-client-driver--kmdf-.md)

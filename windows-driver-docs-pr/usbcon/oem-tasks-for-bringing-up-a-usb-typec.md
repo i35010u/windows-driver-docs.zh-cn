@@ -3,12 +3,12 @@ description: Windows 支持 USB 类型 C 连接器和用于构建 USB 类型 C �
 title: Windows 对 USB 类型 C 连接器的支持
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: abf807cab4e442e5939d26c83e35ab47d0386314
-ms.sourcegitcommit: 15caaf6d943135efcaf9975927ff3933957acd5d
+ms.openlocfilehash: 50d752c3ccacce570215fe201ffba0253408dd6d
+ms.sourcegitcommit: 937974aa9bbe0262a7ffe9631593fab48c4e7492
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88968748"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "90010371"
 ---
 # <a name="windows-support-for-usb-type-c-connectors"></a>Windows 对 USB 类型 C 连接器的支持
 
@@ -53,7 +53,7 @@ USB 类型 C 连接器是可逆的并且对称。
 - [使用嵌入式控制器的 USB 类型 C 系统的硬件设计](ucsi.md)
 
 考虑用于设计和开发 USB 组件的建议，包括最低硬件要求、Windows 硬件兼容性计划要求以及根据这些要求构建的其他建议。
-[硬件组件准则 USB](https://docs.microsoft.com/windows-hardware/design/component-guidelines/universal-serial-bus--usb-)
+[硬件组件准则 USB](/windows-hardware/design/component-guidelines/universal-serial-bus--usb-)
 
 ## <a name="choose-a-driver-model"></a>选择驱动程序模型
 
@@ -94,9 +94,4 @@ USB 类型 C 连接器是可逆的并且对称。
 
 -   [常见问题解答：Windows 系统上的 USB 类型 C 连接器](faq--usb-type-c-connector-on-a-windows-system.md)
 -   [UI 中的消息疑难解答](https://go.microsoft.com/fwlink/?LinkId=526894) 
-
- 
-
-
-
 

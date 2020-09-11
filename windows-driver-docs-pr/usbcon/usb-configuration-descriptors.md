@@ -3,19 +3,19 @@ description: USB 设备以一系列称为 USB 配置的接口的形式公开其�
 title: USB 配置描述符
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7675ca871a037efa837badb7a9342be06d6ef16b
-ms.sourcegitcommit: 15caaf6d943135efcaf9975927ff3933957acd5d
+ms.openlocfilehash: 957d00986ce61bfeb086f4c1c2d7a0edc8045d14
+ms.sourcegitcommit: 937974aa9bbe0262a7ffe9631593fab48c4e7492
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88969432"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "90010005"
 ---
 # <a name="usb-configuration-descriptors"></a>USB 配置描述符
 
 
 USB 设备以一系列称为 USB 配置的接口的形式公开其功能。 每个接口都由一个或多个备用设置组成，每个备用设置由一组终结点组成。 本主题介绍与 USB 配置相关的各种描述符。
 
-配置描述符中介绍了 USB 配置 (参阅 [**usb \_ 配置 \_ 描述符**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbspec/ns-usbspec-_usb_configuration_descriptor) 结构) 。 配置描述符包含有关配置及其接口、备用设置及其终结点的信息。 [**USB \_ 接口 \_ 描述符**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbspec/ns-usbspec-_usb_interface_descriptor)结构中介绍了每个接口描述符或替代设置。 在配置中，每个接口描述符在内存中后跟接口和备用设置的所有终结点说明符。 每个终结点描述符存储在 [**USB \_ 终结点 \_ 描述符**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbspec/ns-usbspec-_usb_endpoint_descriptor) 结构中。
+配置描述符中介绍了 USB 配置 (参阅 [**usb \_ 配置 \_ 描述符**](/windows-hardware/drivers/ddi/usbspec/ns-usbspec-_usb_configuration_descriptor) 结构) 。 配置描述符包含有关配置及其接口、备用设置及其终结点的信息。 [**USB \_ 接口 \_ 描述符**](/windows-hardware/drivers/ddi/usbspec/ns-usbspec-_usb_interface_descriptor)结构中介绍了每个接口描述符或替代设置。 在配置中，每个接口描述符在内存中后跟接口和备用设置的所有终结点说明符。 每个终结点描述符存储在 [**USB \_ 终结点 \_ 描述符**](/windows-hardware/drivers/ddi/usbspec/ns-usbspec-_usb_endpoint_descriptor) 结构中。
 
 例如，请考虑 [Usb 设备布局](usb-device-layout.md)中所述的 usb 网络摄像机设备。 该设备支持具有两个接口的配置，第一个接口 (索引 0) 支持两个备用设置。
 
@@ -71,14 +71,14 @@ bInterval:          0x01
 
 该配置描述符是通过标准设备请求 (获取描述符) 从设备获取的 \_ ，它作为 USB 驱动程序堆栈的控件传输发送。 USB 客户端驱动程序可以通过以下方式之一来启动请求：
 
-- 如果设备仅支持一个配置，最简单的方法是调用框架提供的 [**WdfUsbTargetDeviceRetrieveConfigDescriptor**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetdeviceretrieveconfigdescriptor) 方法。
+- 如果设备仅支持一个配置，最简单的方法是调用框架提供的 [**WdfUsbTargetDeviceRetrieveConfigDescriptor**](/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetdeviceretrieveconfigdescriptor) 方法。
 - 对于支持多个配置的设备，如果客户端驱动程序想要获取除第一个配置之外的其他配置描述符，则驱动程序必须提交 URB。 若要提交 URB，驱动程序必须分配和格式，然后将 URB 提交到 USB 驱动程序堆栈。
 
-  若要分配 URB，客户端驱动程序必须调用 [**WdfUsbTargetDeviceCreateUrb**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetdevicecreateurb) 方法。 方法接收指向 USB 驱动程序堆栈所分配的 URB 的指针。
+  若要分配 URB，客户端驱动程序必须调用 [**WdfUsbTargetDeviceCreateUrb**](/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetdevicecreateurb) 方法。 方法接收指向 USB 驱动程序堆栈所分配的 URB 的指针。
 
-  若要设置 URB 的格式，客户端驱动程序可以使用 [**UsbBuildGetDescriptorRequest**](https://docs.microsoft.com/previous-versions/ff538943(v=vs.85)) 宏。 宏在 URB 中设置所有必要的信息，如要为其检索描述符的设备定义的配置编号。 URB 函数设置为 URB \_ 函数 \_ GET \_ 描述符 \_ FROM \_ DEVICE (参阅[** \_ URB \_ CONTROL \_ 描述符 \_ REQUEST**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usb/ns-usb-_urb_control_descriptor_request)) ，将描述符的类型设置为 USB \_ 配置 \_ 描述符 \_ 类型。 通过使用 URB 中包含的信息，USB 驱动程序堆栈生成标准控制请求并将其发送到设备。
+  若要设置 URB 的格式，客户端驱动程序可以使用 [**UsbBuildGetDescriptorRequest**](/previous-versions/ff538943(v=vs.85)) 宏。 宏在 URB 中设置所有必要的信息，如要为其检索描述符的设备定义的配置编号。 URB 函数设置为 URB \_ 函数 \_ GET \_ 描述符 \_ FROM \_ DEVICE (参阅[** \_ URB \_ CONTROL \_ 描述符 \_ REQUEST**](/windows-hardware/drivers/ddi/usb/ns-usb-_urb_control_descriptor_request)) ，将描述符的类型设置为 USB \_ 配置 \_ 描述符 \_ 类型。 通过使用 URB 中包含的信息，USB 驱动程序堆栈生成标准控制请求并将其发送到设备。
 
-  若要提交 URB，客户端驱动程序必须使用 WDF request 对象。 若要以异步方式将请求对象发送到 USB 驱动程序堆栈，驱动程序必须调用 [**WdfRequestSend**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestsend)方法。 若要同步发送它，请调用 [**WdfUsbTargetDeviceSendUrbSynchronously**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetdevicesendurbsynchronously) 方法。
+  若要提交 URB，客户端驱动程序必须使用 WDF request 对象。 若要以异步方式将请求对象发送到 USB 驱动程序堆栈，驱动程序必须调用 [**WdfRequestSend**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestsend)方法。 若要同步发送它，请调用 [**WdfUsbTargetDeviceSendUrbSynchronously**](/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetdevicesendurbsynchronously) 方法。
 
   <strong>Wdm 驱动程序： * * Windows 驱动模型 (WDM) 客户端驱动程序只能通过提交 URB 来获取该配置描述符。若要分配 URB，驱动程序必须调用 [</strong> USBD \_ UrbAllocate <strong>](<https://msdn.microsoft.com/library/windows/hardware/hh406250>) 例程。若要设置 URB 的格式，驱动程序必须调用 [</strong> UsbBuildGetDescriptorRequest * *](<https://msdn.microsoft.com/library/windows/hardware/ff538943>) 宏。 若要提交 URB，驱动程序必须将 URB 与 IRP 相关联，并将 IRP 提交到 USB 驱动程序堆栈。 有关详细信息，请参阅 [如何提交 URB](send-requests-to-the-usb-driver-stack.md)。
 
@@ -86,9 +86,9 @@ bInterval:          0x01
 
 **若要通过调用 WdfUsbTargetDeviceRetrieveConfigDescriptor 获取配置描述符，请执行以下步骤：**
 
-1.  通过调用 [**WdfUsbTargetDeviceRetrieveConfigDescriptor**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetdeviceretrieveconfigdescriptor)获取保存所有配置信息所需的缓冲区大小。 驱动程序必须在缓冲区中传递 NULL，并使用一个变量来保存缓冲区的大小。
-2.  根据通过以前的 [**WdfUsbTargetDeviceRetrieveConfigDescriptor**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetdeviceretrieveconfigdescriptor) 调用接收的大小分配更大的缓冲区。
-3.  再次调用 [**WdfUsbTargetDeviceRetrieveConfigDescriptor**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetdeviceretrieveconfigdescriptor) ，并指定指向步骤2中分配的新缓冲区的指针。
+1.  通过调用 [**WdfUsbTargetDeviceRetrieveConfigDescriptor**](/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetdeviceretrieveconfigdescriptor)获取保存所有配置信息所需的缓冲区大小。 驱动程序必须在缓冲区中传递 NULL，并使用一个变量来保存缓冲区的大小。
+2.  根据通过以前的 [**WdfUsbTargetDeviceRetrieveConfigDescriptor**](/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetdeviceretrieveconfigdescriptor) 调用接收的大小分配更大的缓冲区。
+3.  再次调用 [**WdfUsbTargetDeviceRetrieveConfigDescriptor**](/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetdeviceretrieveconfigdescriptor) ，并指定指向步骤2中分配的新缓冲区的指针。
 
 ```cpp
  NTSTATUS RetrieveDefaultConfigurationDescriptor (
@@ -157,14 +157,14 @@ Exit:
 
 **若要通过提交 URB 获取配置描述符，请执行以下步骤：**
 
-1.  通过调用 [**WdfUsbTargetDeviceCreateUrb**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetdevicecreateurb) 方法来分配 URB。
-2.  通过调用 [**UsbBuildGetDescriptorRequest**](https://docs.microsoft.com/previous-versions/ff538943(v=vs.85)) 宏来设置 URB 的格式。 URB 的传输缓冲区必须指向足够大的缓冲区，以容纳 [**USB \_ 配置 \_ 描述符**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbspec/ns-usbspec-_usb_configuration_descriptor) 结构。
-3.  通过调用 [**WdfRequestSend**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestsend) 或 [**WDFUSBTARGETDEVICESENDURBSYNCHRONOUSLY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetdevicesendurbsynchronously)，将 URB 提交为 WDF 请求对象。
-4.  请求完成后，检查[**USB \_ 配置 \_ 描述符**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbspec/ns-usbspec-_usb_configuration_descriptor)的**wTotalLength**成员。 该值指示包含完整配置描述符所需的缓冲区大小。
+1.  通过调用 [**WdfUsbTargetDeviceCreateUrb**](/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetdevicecreateurb) 方法来分配 URB。
+2.  通过调用 [**UsbBuildGetDescriptorRequest**](/previous-versions/ff538943(v=vs.85)) 宏来设置 URB 的格式。 URB 的传输缓冲区必须指向足够大的缓冲区，以容纳 [**USB \_ 配置 \_ 描述符**](/windows-hardware/drivers/ddi/usbspec/ns-usbspec-_usb_configuration_descriptor) 结构。
+3.  通过调用 [**WdfRequestSend**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestsend) 或 [**WDFUSBTARGETDEVICESENDURBSYNCHRONOUSLY**](/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetdevicesendurbsynchronously)，将 URB 提交为 WDF 请求对象。
+4.  请求完成后，检查[**USB \_ 配置 \_ 描述符**](/windows-hardware/drivers/ddi/usbspec/ns-usbspec-_usb_configuration_descriptor)的**wTotalLength**成员。 该值指示包含完整配置描述符所需的缓冲区大小。
 5.  根据在 **wTotalLength**中检索到的大小分配更大的缓冲区。
 6.  用更大的缓冲区发出同一请求。
 
-下面的示例代码演示了用于获取第 i 个配置的配置信息的请求的 [**UsbBuildGetDescriptorRequest**](https://docs.microsoft.com/previous-versions/ff538943(v=vs.85)) 调用：
+下面的示例代码演示了用于获取第 i 个配置的配置信息的请求的 [**UsbBuildGetDescriptorRequest**](/previous-versions/ff538943(v=vs.85)) 调用：
 
 ```cpp
 NTSTATUS FX3_RetrieveConfigurationDescriptor (
@@ -300,15 +300,12 @@ Exit:
 
 ![说明配置描述符布局的关系图](images/usbconfig.png)
 
-[**USB \_ 接口 \_ 描述符**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbspec/ns-usbspec-_usb_interface_descriptor)的从零开始的**bInterfaceNumber**成员在配置中区分接口。 对于给定的接口，从零开始的 **bAlternateSetting** 成员区分接口的备用设置。 设备按照 **bInterfaceNumber** 值顺序返回接口描述符，然后按照 **bAlternateSetting** 值的顺序返回。
+[**USB \_ 接口 \_ 描述符**](/windows-hardware/drivers/ddi/usbspec/ns-usbspec-_usb_interface_descriptor)的从零开始的**bInterfaceNumber**成员在配置中区分接口。 对于给定的接口，从零开始的 **bAlternateSetting** 成员区分接口的备用设置。 设备按照 **bInterfaceNumber** 值顺序返回接口描述符，然后按照 **bAlternateSetting** 值的顺序返回。
 
-若要在配置中搜索给定的接口描述符，客户端驱动程序可以调用 [**USBD \_ ParseConfigurationDescriptorEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbdlib/nf-usbdlib-usbd_parseconfigurationdescriptorex)。 在调用中，客户端驱动程序在配置中提供开始位置。 或者，驱动程序可以指定接口号、替代设置、类、子类或协议。 例程返回指向下一个匹配接口描述符的指针。
+若要在配置中搜索给定的接口描述符，客户端驱动程序可以调用 [**USBD \_ ParseConfigurationDescriptorEx**](/windows-hardware/drivers/ddi/usbdlib/nf-usbdlib-usbd_parseconfigurationdescriptorex)。 在调用中，客户端驱动程序在配置中提供开始位置。 或者，驱动程序可以指定接口号、替代设置、类、子类或协议。 例程返回指向下一个匹配接口描述符的指针。
 
-若要检查终结点或字符串描述符的配置描述符，请使用 [**USBD \_ ParseDescriptors**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbdlib/nf-usbdlib-usbd_parsedescriptors) 例程。 调用方提供配置中的起始位置和描述符类型，如 USB \_ 字符串 \_ 描述符 \_ 类型或 usb \_ 终结点 \_ 描述符 \_ 类型。 例程返回指向下一个匹配描述符的指针。
+若要检查终结点或字符串描述符的配置描述符，请使用 [**USBD \_ ParseDescriptors**](/windows-hardware/drivers/ddi/usbdlib/nf-usbdlib-usbd_parsedescriptors) 例程。 调用方提供配置中的起始位置和描述符类型，如 USB \_ 字符串 \_ 描述符 \_ 类型或 usb \_ 终结点 \_ 描述符 \_ 类型。 例程返回指向下一个匹配描述符的指针。
 
 ## <a name="related-topics"></a>相关主题
 [如何为 USB 设备选择配置](how-to-select-a-configuration-for-a-usb-device.md)  
-[USB 描述符](usb-descriptors.md)  
-
-
-
+[USB 描述符](usb-descriptors.md)

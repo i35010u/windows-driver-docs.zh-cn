@@ -4,21 +4,21 @@ description: 本主题介绍 PnP 驱动程序存储区中可用的静态传感�
 ms.assetid: E4663410-375F-48B9-A9E4-6E608FA8D2FF
 ms.date: 01/04/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 8aab013ce15dabc077f9db23b4cc47454cdeac90
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: b521c9db71ac27d1f4e7aa2e9d16aacbf1d50db2
+ms.sourcegitcommit: 937974aa9bbe0262a7ffe9631593fab48c4e7492
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72841689"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "90010281"
 ---
 # <a name="enumeration-properties"></a>枚举属性
 
 
 本主题介绍 PnP 驱动程序存储区中可用的静态传感器属性。
 
-下表显示了静态传感器属性。 调用[SensorsCxSensorCreate](https://docs.microsoft.com/windows-hardware/drivers/ddi/sensorscx/nf-sensorscx-sensorscxsensorcreate)时，类扩展（CX）为每个传感器写入这些属性。 客户端应用程序可以使用这些属性在 Windows 设备上搜索传感器。
+下表显示了静态传感器属性。 调用 [SensorsCxSensorCreate](/windows-hardware/drivers/ddi/sensorscx/nf-sensorscx-sensorscxsensorcreate) 时，) 扩展 (CX 为每个传感器写入这些属性。 客户端应用程序可以使用这些属性在 Windows 设备上搜索传感器。
 
-有关 "**类型**" 列中显示的数据类型的详细信息，请参阅[PROPVARIANT 结构](https://go.microsoft.com/fwlink/p/?linkid=313395)。
+有关 " **类型** " 列中显示的数据类型的详细信息，请参阅 [PROPVARIANT 结构](https://go.microsoft.com/fwlink/p/?linkid=313395)。
 
 <table>
 <colgroup>
@@ -30,7 +30,7 @@ ms.locfileid: "72841689"
 <thead>
 <tr class="header">
 <th>属性键</th>
-<th>在任务栏的搜索框中键入</th>
+<th>类型</th>
 <th>必需/可选</th>
 <th><strong>描述</strong></th>
 </tr>
@@ -40,7 +40,7 @@ ms.locfileid: "72841689"
 <td><p>DEVPKEY_Sensor_Type</p></td>
 <td><p>VT_CLSID</p></td>
 <td><p>必需</p></td>
-<td><p>标识传感器类型的 GUID。 有关传感器类型的详细信息，请参阅<a href="https://docs.microsoft.com/windows-hardware/drivers/sensors/about-sensor-constants" data-raw-source="[Sensor type GUIDs](https://docs.microsoft.com/windows-hardware/drivers/sensors/about-sensor-constants)">传感器类型 guid</a>。</p></td>
+<td><p>标识传感器类型的 GUID。 有关传感器类型的详细信息，请参阅 <a href="https://docs.microsoft.com/windows-hardware/drivers/sensors/about-sensor-constants" data-raw-source="[Sensor type GUIDs](./about-sensor-constants.md)">传感器类型 guid</a>。</p></td>
 </tr>
 <tr class="even">
 <td><p>DEVPKEY_Sensor_Category</p></td>
@@ -54,7 +54,7 @@ ms.locfileid: "72841689"
 <td><p>可选</p>
 <p>对于环境光线传感器和加速感应器是必需的</p></td>
 <td><p>Senor 连接类型。 传感器连接类型可集成、附加或外部。</p>
-<p>有关详细信息，请参阅<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/sensorsclassextension/ne-sensorsclassextension-__midl___midl_itf_windowssensorclassextension_0000_0000_0002" data-raw-source="[&lt;strong&gt;SensorConnectionType&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/sensorsclassextension/ne-sensorsclassextension-__midl___midl_itf_windowssensorclassextension_0000_0000_0002)"><strong>SensorConnectionType</strong></a>枚举。</p></td>
+<p>有关详细信息，请参阅 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/sensorsclassextension/ne-sensorsclassextension-__midl___midl_itf_windowssensorclassextension_0000_0000_0002" data-raw-source="[&lt;strong&gt;SensorConnectionType&lt;/strong&gt;](/windows-hardware/drivers/ddi/sensorsclassextension/ne-sensorsclassextension-__midl___midl_itf_windowssensorclassextension_0000_0000_0002)"><strong>SensorConnectionType</strong></a> 枚举。</p></td>
 </tr>
 <tr class="even">
 <td><p>DEVPKEY_Sensor_IsPrimary</p></td>
@@ -115,20 +115,13 @@ ms.locfileid: "72841689"
 
 [PROPVARIANT 结构](https://go.microsoft.com/fwlink/p/?linkid=313395)
 
-[**SensorConnectionType**](https://docs.microsoft.com/windows-hardware/drivers/ddi/sensorsclassextension/ne-sensorsclassextension-__midl___midl_itf_windowssensorclassextension_0000_0000_0002)
+[**SensorConnectionType**](/windows-hardware/drivers/ddi/sensorsclassextension/ne-sensorsclassextension-__midl___midl_itf_windowssensorclassextension_0000_0000_0002)
 
-[SensorsCxSensorCreate](https://docs.microsoft.com/windows-hardware/drivers/ddi/sensorscx/nf-sensorscx-sensorscxsensorcreate)
+[SensorsCxSensorCreate](/windows-hardware/drivers/ddi/sensorscx/nf-sensorscx-sensorscxsensorcreate)
 
 [传感器属性](sensor-properties2.md)
 
-[传感器类型 Guid](https://docs.microsoft.com/windows-hardware/drivers/sensors/about-sensor-constants)
+[传感器类型 Guid](./about-sensor-constants.md)
 
  
-
- 
-
-
-
-
-
 

@@ -1,6 +1,6 @@
 ---
 title: 传感器图标常量
-description: 传感器驱动程序可以指定一个平台定义的图标或自定义图标，以表示在控制面板中的设备的一组。 下表列出了平台定义的图标资源 Id。
+description: 传感器驱动程序可以指定一组平台定义的图标或自定义图标，以表示控制面板中的设备。 下表列出了平台定义的图标资源 Id。
 ms.assetid: 1cfe925c-f291-48b0-a002-0916118a93b2
 keywords:
 - 传感器图标常量传感器设备
@@ -12,17 +12,17 @@ api_type:
 - NA
 ms.date: 01/04/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 56ed5fddbb8845b7a3f8ce23e9d1ff4f8e003611
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: e42d5833d9c185f310a2896483220b4c2d25772d
+ms.sourcegitcommit: 937974aa9bbe0262a7ffe9631593fab48c4e7492
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67354456"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "90010517"
 ---
 # <a name="sensor-icon-constants"></a>传感器图标常量
 
 
-传感器驱动程序可以指定一个平台定义的图标或自定义图标，以表示在控制面板中的设备的一组。 下表列出了平台定义的图标资源 Id。
+传感器驱动程序可以指定一组平台定义的图标或自定义图标，以表示控制面板中的设备。 下表列出了平台定义的图标资源 Id。
 
 <table>
 <colgroup>
@@ -31,7 +31,7 @@ ms.locfileid: "67354456"
 </colgroup>
 <thead>
 <tr class="header">
-<th>Sensor</th>
+<th>传感器</th>
 <th>ID</th>
 </tr>
 </thead>
@@ -49,11 +49,11 @@ ms.locfileid: "67354456"
 <td><p>1002</p></td>
 </tr>
 <tr class="even">
-<td><p>电力</p></td>
+<td><p>电气</p></td>
 <td><p>1003</p></td>
 </tr>
 <tr class="odd">
-<td><p>环境</p></td>
+<td><p>保护</p></td>
 <td><p>1004</p></td>
 </tr>
 <tr class="even">
@@ -61,7 +61,7 @@ ms.locfileid: "67354456"
 <td><p>1005</p></td>
 </tr>
 <tr class="odd">
-<td><p>手指</p></td>
+<td><p>形</p></td>
 <td><p>1006</p></td>
 </tr>
 <tr class="even">
@@ -69,15 +69,15 @@ ms.locfileid: "67354456"
 <td><p>1007</p></td>
 </tr>
 <tr class="odd">
-<td><p>浅色</p></td>
+<td><p>亮</p></td>
 <td><p>1008</p></td>
 </tr>
 <tr class="even">
-<td><p>Location</p></td>
+<td><p>位置</p></td>
 <td><p>1009</p></td>
 </tr>
 <tr class="odd">
-<td><p>机械</p></td>
+<td><p>物理规格</p></td>
 <td><p>1010</p></td>
 </tr>
 <tr class="even">
@@ -85,15 +85,15 @@ ms.locfileid: "67354456"
 <td><p>1011</p></td>
 </tr>
 <tr class="odd">
-<td><p>近场通信</p></td>
+<td><p>近现场通信</p></td>
 <td><p>1012</p></td>
 </tr>
 <tr class="even">
-<td><p>Orientation</p></td>
+<td><p>方向</p></td>
 <td><p>1013</p></td>
 </tr>
 <tr class="odd">
-<td><p>邻近感应</p></td>
+<td><p>邻近帮助</p></td>
 <td><p>1014</p></td>
 </tr>
 <tr class="even">
@@ -124,7 +124,7 @@ ms.locfileid: "67354456"
 <tbody>
 <tr class="odd">
 <td><p>最低受支持的客户端</p></td>
-<td><p>Windows 7</p></td>
+<td><p>Windows 7</p></td>
 </tr>
 <tr class="even">
 <td><p>最低受支持的服务器</p></td>
@@ -132,22 +132,15 @@ ms.locfileid: "67354456"
 </tr>
 <tr class="odd">
 <td><p>Version</p></td>
-<td><p>在 Windows 7 中可用</p></td>
+<td><p>在 Windows 7 中提供</p></td>
 </tr>
 </tbody>
 </table>
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
-[指定一个图标](https://docs.microsoft.com/windows-hardware/drivers/sensors/specifying-an-icon)
-
- 
+[指定图标](./specifying-an-icon.md)
 
  
-
-
-
-
-
 

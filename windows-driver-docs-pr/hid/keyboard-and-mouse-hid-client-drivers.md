@@ -11,12 +11,12 @@ keywords:
 - 适用于 Windows 的 HID 鼠标驱动程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 748e1db78f96a6b682b86ba9b8d27a7bcfb49013
-ms.sourcegitcommit: 9145bffd4cc3b990a9ebff43b588db6ef2001f5d
+ms.openlocfilehash: 1dee561e941d9710ed0d371fdd0c7cb30d4e40dc
+ms.sourcegitcommit: 937974aa9bbe0262a7ffe9631593fab48c4e7492
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/09/2020
-ms.locfileid: "89592413"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "90010599"
 ---
 # <a name="keyboard-and-mouse-hid-client-drivers"></a>键盘和鼠标 HID 客户端驱动程序
 
@@ -105,7 +105,7 @@ Microsoft 为 Ihv 编写驱动程序提供以下指导：
 
 下表列出了不同客户端版本的 Windows 操作系统所支持的功能。
 
-|Feature|Windows XP|Windows Vista|Windows 7|Windows 8 及更高版本|
+|特性|Windows XP|Windows Vista|Windows 7|Windows 8 及更高版本|
 |----|----|----|----|----|
 |按钮1-5|支持 (P/2 & HID) |支持的 (PS/2 & HID) |支持的 (PS/2 & HID) |支持的 (PS/2 & HID) |
 |垂直滚轮|支持的 (PS/2 & HID) |支持的 (PS/2 & HID) |支持的 (PS/2 & HID) |支持的 (PS/2 & HID) |
@@ -293,13 +293,13 @@ KbFilter_IsrHook returns TRUE if the interrupt service routine should continue; 
 */
 
 KbFilter_IsrHook KbFilter_IsrHook(
-  <em>In</em>    PDEVICE_OBJECT       DeviceObject,
-  <em>In</em>    PKEYBOARD_INPUT_DATA CurrentInput,
-  <em>In</em>    POUTPUT_PACKET       CurrentOutput,
-  <em>Inout</em> UCHAR                StatusByte,
-  <em>In</em>    PUCHAR               DataByte,
-  <em>Out</em>   PBOOLEAN             ContinueProcessing,
-  <em>In</em>    PKEYBOARD_SCAN_STATE ScanState
+  In    PDEVICE_OBJECT       DeviceObject,
+  In    PKEYBOARD_INPUT_DATA CurrentInput,
+  In    POUTPUT_PACKET       CurrentOutput,
+  Inout UCHAR                StatusByte,
+  In    PUCHAR               DataByte,
+  Out   PBOOLEAN             ContinueProcessing,
+  In    PKEYBOARD_SCAN_STATE ScanState
 );
 ```
 
@@ -329,10 +329,10 @@ None
 */
 
 VOID KbFilter_ServiceCallback(
-  <em>In</em>    PDEVICE_OBJECT       DeviceObject,
-  <em>In</em>    PKEYBOARD_INPUT_DATA InputDataStart,
-  <em>In</em>    PKEYBOARD_INPUT_DATA InputDataEnd,
-  <em>Inout</em> PULONG               InputDataConsumed
+  In    PDEVICE_OBJECT       DeviceObject,
+  In    PKEYBOARD_INPUT_DATA InputDataStart,
+  In    PKEYBOARD_INPUT_DATA InputDataEnd,
+  Inout PULONG               InputDataConsumed
 );
 ```
 
