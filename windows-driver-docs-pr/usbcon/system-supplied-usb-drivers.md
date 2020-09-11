@@ -3,12 +3,12 @@ description: 本部分中的主题介绍了 Microsoft 提供的类驱动程序�
 title: Microsoft 提供的 USB 驱动程序的概述
 ms.date: 04/20/2017
 ms.localizationpriority: High
-ms.openlocfilehash: ca4714807c04a789ab47f707bf6e673b7233be50
-ms.sourcegitcommit: 15caaf6d943135efcaf9975927ff3933957acd5d
+ms.openlocfilehash: 941aa90ef85cc9aecbd950d024cdf75cc29286d3
+ms.sourcegitcommit: 937974aa9bbe0262a7ffe9631593fab48c4e7492
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88968677"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "90010209"
 ---
 # <a name="overview-of-microsoft-provided-usb-drivers"></a>Microsoft 提供的 USB 驱动程序的概述
 
@@ -22,7 +22,7 @@ Microsoft 提供下列驱动程序集：
 
 -   适用于 USB 主机控制器和集线器。 有关详细信息，请参阅 [Windows 中的 USB 主机端驱动程序](usb-3-0-driver-stack-architecture.md)。 可以开发与 USB 主机控制器扩展 (UCX) 驱动程序通信的自定义主机控制器驱动程序。 有关详细信息，请参阅[为 USB 主机控制器开发 Windows 驱动程序](developing-windows-drivers-for-usb-host-controllers.md)。
 -   用于处理 USB 设备的公用功能逻辑。 有关详细信息，请参阅 [Windows 中的 USB 设备端驱动程序](usb-device-side-drivers-in-windows.md)。
--   用于支持类型 C 的连接器。 有关详细信息，请参阅 [USB 连接器管理器类扩展 (UcmCx)](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/mt188011(v=vs.85))。
+-   用于支持类型 C 的连接器。 有关详细信息，请参阅 [USB 连接器管理器类扩展 (UcmCx)](/previous-versions/windows/hardware/drivers/mt188011(v=vs.85))。
 
 ## <a name="other-microsoft-provided-usb-drivers"></a>Microsoft 提供的其他 USB 驱动程序
 
@@ -60,7 +60,7 @@ Microsoft 提供下列驱动程序集：
 <p>WudfUsbBIDAdvanced.inf</p></td>
 <td><p>Windows 8.1</p>
 <p>Windows 8</p></td>
-<td><p>Microsoft 通过提供 Windows Biometric Framework 来支持 USB 生物识别设备（指纹读取器）。 请参阅 <a href="https://docs.microsoft.com/previous-versions/ff536448(v=vs.85)" data-raw-source="[Windows Biometric Framework](https://docs.microsoft.com/previous-versions/ff536448(v=vs.85))">Windows Biometric Framework</a>。</p></td>
+<td><p>Microsoft 通过提供 Windows Biometric Framework 来支持 USB 生物识别设备（指纹读取器）。 请参阅 <a href="https://docs.microsoft.com/previous-versions/ff536448(v=vs.85)" data-raw-source="[Windows Biometric Framework](/previous-versions/ff536448(v=vs.85))">Windows Biometric Framework</a>。</p></td>
 </tr>
 <tr class="odd">
 <td>媒体传输协议设备</td>
@@ -75,7 +75,7 @@ Microsoft 提供下列驱动程序集：
 <div>
 
 </div>
-<p>Microsoft 提供 Wpdusb.sys 驱动程序来管理支持媒体传输协议的便携设备。 请参阅 <a href="https://docs.microsoft.com/previous-versions/ff597864(v=vs.85)" data-raw-source="[WPD Design Guide](https://docs.microsoft.com/previous-versions/ff597864(v=vs.85))">WPD 设计指南</a>。</p></td>
+<p>Microsoft 提供 Wpdusb.sys 驱动程序来管理支持媒体传输协议的便携设备。 请参阅 <a href="https://docs.microsoft.com/previous-versions/ff597864(v=vs.85)" data-raw-source="[WPD Design Guide](/previous-versions/ff597864(v=vs.85))">WPD 设计指南</a>。</p></td>
 </tr>
 <tr class="even">
 <td>USBDevice</td>
@@ -101,8 +101,5 @@ Microsoft 为 USB-IF 批准的多个 USB 设备类提供驱动程序。 这些�
 请参阅[包含在 Windows 中的 USB 设备类驱动程序](supported-usb-classes.md)。
 
 ## <a name="related-topics"></a>相关主题
-[通用串行总线 (USB)](https://docs.microsoft.com/windows-hardware/drivers/)  
-[USB 驱动程序开发指南](usb-driver-development-guide.md)  
-
-
-
+[通用串行总线 (USB)](../index.yml)  
+[USB 驱动程序开发指南](usb-driver-development-guide.md)

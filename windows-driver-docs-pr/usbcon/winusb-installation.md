@@ -3,12 +3,12 @@ description: 将 WinUSB (Winusb.sys) 安装在设备的内核模式堆栈中，�
 title: WinUSB (Winusb.sys) 安装
 ms.date: 05/09/2018
 ms.localizationpriority: High
-ms.openlocfilehash: a67e2c3c38f55b7d4be86a349c6d69dea1d5a028
-ms.sourcegitcommit: 7a7e61b4147a4aa86bf820fd0b0c7681fe17e544
+ms.openlocfilehash: 3c4c5a4ea29ae00a0d81fc334dc6c3b8c85ea0fa
+ms.sourcegitcommit: 937974aa9bbe0262a7ffe9631593fab48c4e7492
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89056965"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "90010188"
 ---
 # <a name="winusb-winusbsys-installation"></a>WinUSB (Winusb.sys) 安装
 
@@ -72,7 +72,7 @@ OEM 或独立硬件供应商 (IHV) 可以构建设备，以便在 Windows 8 及�
 
 以下 INF 在基于 x64 的系统上将 WinUSB 安装为 OSR USB FX2 板的功能驱动程序。
 
-> 从 Windows 10 1709 版开始，Windows 驱动程序工具包提供 [InfVerif.exe](https://docs.microsoft.com/windows-hardware/drivers/devtest/infverif)，你可以使用它来测试驱动程序 INF 文件，以确保没有语法问题并且 INF 文件是通用的。 建议提供通用 INF。 有关详细信息，请参阅[使用通用 INF 文件](https://docs.microsoft.com/windows-hardware/drivers/install/using-a-universal-inf-file)。
+> 从 Windows 10 1709 版开始，Windows 驱动程序工具包提供 [InfVerif.exe](../devtest/infverif.md)，你可以使用它来测试驱动程序 INF 文件，以确保没有语法问题并且 INF 文件是通用的。 建议提供通用 INF。 有关详细信息，请参阅[使用通用 INF 文件](../install/using-a-universal-inf-file.md)。
 
 ``` syntax
 ;
@@ -156,7 +156,7 @@ REG_MULTI_SZ = 0x00010000
 
 -   **USB\_Install.HW**：本部分是 .inf 文件中的项。 它指定设备的设备接口全局唯一标识符 (GUID)。 AddReg 指令在标准注册表值中设置指定的接口 GUID  。 当 Winusb.sys 作为设备的功能驱动程序加载时，它将读取注册表值 DeviceInterfaceGUIDs 项，并使用指定的 GUID 来表示设备接口。 在此示例中，应将 GUID 替换为专门为设备创建的 GUID。 如果设备的协议发生更改，请创建新的设备接口 GUID。
 
-    **注意**  用户模式软件必须调用 [SetupDiGetClassDevs](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetclassdevsw) 才能枚举与在 DeviceInterfaceGUIDs 项下指定的某个设备接口类关联的已注册设备接口  。 SetupDiGetClassDevs 返回了设备的设备句柄，然后用户模式软件必须将设备句柄传递给 [WinUsb\_Initialize](https://docs.microsoft.com/windows/desktop/api/winusb/nf-winusb-winusb_initialize) 例程，以获取设备接口的 WinUSB 句柄   。 有关这些例程的详细信息，请参阅[如何使用 WinUSB Functions 访问 USB 设备](using-winusb-api-to-communicate-with-a-usb-device.md)。
+    **注意**  用户模式软件必须调用 [SetupDiGetClassDevs](/windows/desktop/api/setupapi/nf-setupapi-setupdigetclassdevsw) 才能枚举与在 DeviceInterfaceGUIDs 项下指定的某个设备接口类关联的已注册设备接口  。 SetupDiGetClassDevs 返回了设备的设备句柄，然后用户模式软件必须将设备句柄传递给 [WinUsb\_Initialize](/windows/desktop/api/winusb/nf-winusb-winusb_initialize) 例程，以获取设备接口的 WinUSB 句柄   。 有关这些例程的详细信息，请参阅[如何使用 WinUSB Functions 访问 USB 设备](using-winusb-api-to-communicate-with-a-usb-device.md)。
 
 以下 INF 在基于 x64 的系统上将 WinUSB 安装为 OSR USB FX2 板的功能驱动程序。 该示例显示了 WDF 辅助安装程序的 INF。
 
@@ -277,7 +277,7 @@ HKR,,DeviceInterfaceGUIDs, 0x10000,"{D696BFEB-1734-417d-8A04-86D01071C512}"
 
  
 
-1. [下载 Windows 驱动程序工具包 (WDK)](https://docs.microsoft.com/windows-hardware/drivers/download-the-wdk) 并安装此包。
+1. [下载 Windows 驱动程序工具包 (WDK)](../download-the-wdk.md) 并安装此包。
 2. 在连接 USB 设备的计算机上创建驱动程序包文件夹。 例如，c:\\UsbDevice。
 3. 将 WinUSB 辅助安装程序 (WinusbcoinstallerX.dll) 从 WinDDK\\<em>BuildNumber</em>\\redist\\winusb 文件夹复制到驱动程序包文件夹   。
 
@@ -336,8 +336,5 @@ HKR,,DeviceInterfaceGUIDs, 0x10000,"{D696BFEB-1734-417d-8A04-86D01071C512}"
 [如何通过 WinUSB Functions 访问 USB 设备](using-winusb-api-to-communicate-with-a-usb-device.md)  
 [WinUSB 电源管理](winusb-power-management.md)  
 [用于修改管道策略的 WinUSB 函数](winusb-functions-for-pipe-policy-modification.md)  
-[WinUSB 函数](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff540046(v=vs.85)#winusb)  
-[WinUSB](winusb.md)  
-
-
-
+[WinUSB 函数](/previous-versions/windows/hardware/drivers/ff540046(v=vs.85)#winusb)  
+[WinUSB](winusb.md)

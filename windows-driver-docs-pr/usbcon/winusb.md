@@ -3,12 +3,12 @@ description: 此部分介绍 Microsoft 为所有 USB 设备提供的通用 WinUS
 title: WinUSB (Winusb.sys)
 ms.date: 04/20/2017
 ms.localizationpriority: High
-ms.openlocfilehash: 44b82b6bad0ac92a84c89dd8b0851cb1d033e78b
-ms.sourcegitcommit: 15caaf6d943135efcaf9975927ff3933957acd5d
+ms.openlocfilehash: f626e8dd31b431b116b5ce4222c22dc6e8f70824
+ms.sourcegitcommit: 937974aa9bbe0262a7ffe9631593fab48c4e7492
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88969222"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "90010177"
 ---
 # <a name="winusb-winusbsys"></a>WinUSB (Winusb.sys)
 
@@ -17,7 +17,7 @@ ms.locfileid: "88969222"
 
 在早于 Windows XP Service Pack 2 (SP2) 的 Windows 版本中，所有 USB 设备驱动程序都需要在内核模式下运行。 如果创建的 USB 设备的操作系统没有本机类驱动程序，则必须为设备编写内核模式设备驱动程序。
 
-Windows USB (WinUSB) 是一种适用于 USB 设备的通用驱动程序，该驱动程序是与适用于 Windows XP SP2 的 Windows 驱动程序框架 (WDF) 同时开发的。 WinUSB 体系结构由内核模式驱动程序 (Winusb.sys) 和公开 [WinUSB 函数](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff540046(v=vs.85)#winusb)的用户模式的动态链接库 (Winusb.dll) 组成。 借助这些功能，你可以使用用户模式软件管理 USB 设备。
+Windows USB (WinUSB) 是一种适用于 USB 设备的通用驱动程序，该驱动程序是与适用于 Windows XP SP2 的 Windows 驱动程序框架 (WDF) 同时开发的。 WinUSB 体系结构由内核模式驱动程序 (Winusb.sys) 和公开 [WinUSB 函数](/previous-versions/windows/hardware/drivers/ff540046(v=vs.85)#winusb)的用户模式的动态链接库 (Winusb.dll) 组成。 借助这些功能，你可以使用用户模式软件管理 USB 设备。
 
 Winusb.sys 也是 UMDF 功能驱动程序与关联设备之间链接的关键部分。 Winusb.sys 作为上部筛选器驱动程序安装在设备的内核模式堆栈中。 应用程序与设备的 UMDF 函数驱动程序通信，以发出读取、写入或设备 I/O 控制请求。 驱动程序与框架交互，后者将请求传递到 Winusb.sys。 然后，Winusb.sys 处理请求并将其传递给协议驱动程序并最终传递到设备。 响应通过反向路径返回。 Winusb.sys 还充当设备堆栈的即插即用和电源所有者。
 
@@ -77,7 +77,4 @@ Winusb.sys 也是 UMDF 功能驱动程序与关联设备之间链接的关键部
  
 
 ## <a name="related-topics"></a>相关主题
-[Microsoft 提供的 USB 驱动程序](system-supplied-usb-drivers.md)  
-
-
-
+[Microsoft 提供的 USB 驱动程序](system-supplied-usb-drivers.md)

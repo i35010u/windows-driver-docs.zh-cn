@@ -3,12 +3,12 @@ description: 本主题列出了支持的 USB 设备类的 Microsoft 提供的驱
 title: 包含在 Windows 中的 USB 设备类驱动程序
 ms.date: 04/20/2017
 ms.localizationpriority: High
-ms.openlocfilehash: 9810087e8fc06faa201053f820f4737ccb787e9b
-ms.sourcegitcommit: 15caaf6d943135efcaf9975927ff3933957acd5d
+ms.openlocfilehash: f5c7bab3879ec9c224224966811683bb28e72c61
+ms.sourcegitcommit: 937974aa9bbe0262a7ffe9631593fab48c4e7492
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88968694"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "90010215"
 ---
 # <a name="usb-device-class-drivers-included-in-windows"></a>包含在 Windows 中的 USB 设备类驱动程序
 
@@ -39,7 +39,7 @@ USB 设备类是具有类似特性并执行常见功能的设备类别  。 这�
 
 Windows 通过指示设备功能设备安装程序类来对设备分类  。
 
-Microsoft 为大多数设备定义安装程序类。 IHV 和 OEM 可以定义新的设备安装程序类，但前提是现有类都不适用。 有关详细信息，请参阅[系统定义的设备安装程序类](https://docs.microsoft.com/previous-versions/ff553419(v=vs.85))。
+Microsoft 为大多数设备定义安装程序类。 IHV 和 OEM 可以定义新的设备安装程序类，但前提是现有类都不适用。 有关详细信息，请参阅[系统定义的设备安装程序类](/previous-versions/ff553419(v=vs.85))。
 
 USB 设备的两个重要设备安装程序类如下所示：
 
@@ -68,7 +68,7 @@ USB 设备的两个重要设备安装程序类如下所示：
 {4d36e96c-e325-11ce-bfc1-08002be10318}</td>
       <td>Usbaudio.sys<p>Wdma\_usb.inf</p></td>
       <td>Windows 10 桌面版（家庭版、专业版、企业版和教育版）</br>Windows 10 移动版</br>Windows 8.1</br>Windows 8</br>Windows 7</br>Windows Server 2008</br>Windows Vista</td>
-      <td>Microsoft 通过 Usbaudio.sys 驱动程序为 USB 音频设备类提供支持。 有关详细信息，请参阅<a href="https://docs.microsoft.com/windows-hardware/drivers/audio/kernel-mode-wdm-audio-components">内核模式 WDM 音频组件</a>中的“USBAudio 类系统驱动程序”。 有关 Windows 音频支持的详细信息，请参阅 <a href="https://go.microsoft.com/fwlink/p/?linkid=8751">Windows 音频设备技术</a>网站。</td>
+      <td>Microsoft 通过 Usbaudio.sys 驱动程序为 USB 音频设备类提供支持。 有关详细信息，请参阅<a href="/windows-hardware/drivers/audio/kernel-mode-wdm-audio-components">内核模式 WDM 音频组件</a>中的“USBAudio 类系统驱动程序”。 有关 Windows 音频支持的详细信息，请参阅 <a href="https://go.microsoft.com/fwlink/p/?linkid=8751">Windows 音频设备技术</a>网站。</td>
     </tr>
     <tr>
       <td rowspan="4">通信和 CDC 控制 (02h)</td>
@@ -97,7 +97,7 @@ USB 设备的两个重要设备安装程序类如下所示：
         <td><strong>HIDClass</strong></br>{745a17a0-74d3-11d0-b6fe-00a0c90f57da}</td>
         <td>Hidclass.sys</br>Hidusb.sys</br>Input.inf</td>
         <td>Windows 10 桌面版</br>Windows 10 移动版</br>Windows 8.1</br>Windows 8</br>Windows 7</br>Windows Server 2008</br>Windows Vista</td>
-        <td>Microsoft 提供 HID 类驱动程序 (Hidclass.sys) 和 miniclass 驱动程序 (Hidusb.sys) 来操作符合 <a href="https://go.microsoft.com/fwlink/p/?LinkId=761243">USB HID 标准</a>的设备。 有关详细信息，请参阅 <a href="https://docs.microsoft.com/previous-versions/jj126193(v=vs.85)">HID 体系结构</a>和<a href="https://docs.microsoft.com/windows-hardware/drivers/hid/minidriver-operations">微型驱动程序和 HID 类驱动程序</a>。 有关 Windows 对输入硬件的支持的详细信息，请参阅<a href="https://go.microsoft.com/fwlink/p/?linkid=8709">输入和 HID - 体系结构和驱动程序支持</a>网站。</td>
+        <td>Microsoft 提供 HID 类驱动程序 (Hidclass.sys) 和 miniclass 驱动程序 (Hidusb.sys) 来操作符合 <a href="https://go.microsoft.com/fwlink/p/?LinkId=761243">USB HID 标准</a>的设备。 有关详细信息，请参阅 <a href="https://docs.microsoft.com/previous-versions/jj126193(v=vs.85)">HID 体系结构</a>和<a href="/windows-hardware/drivers/hid/minidriver-operations">微型驱动程序和 HID 类驱动程序</a>。 有关 Windows 对输入硬件的支持的详细信息，请参阅<a href="https://go.microsoft.com/fwlink/p/?linkid=8709">输入和 HID - 体系结构和驱动程序支持</a>网站。</td>
       </tr>
       <tr>
         <td>物理 (05h)</td>
@@ -127,7 +127,7 @@ USB 设备的两个重要设备安装程序类如下所示：
           <td><strong>USB</strong></td>
           <td>Usbstor.sys</td>
           <td>Windows 10 桌面版</br>Windows 10 移动版</br>Windows 8.1</br>Windows 8</br>Windows 7</br>Windows Server 2008</br>Windows Vista</td>
-          <td>Microsoft 提供 Usbstor.sys 端口驱动程序，以使用 Microsoft 的本机存储类驱动程序管理 USB 大容量存储设备。 有关由此驱动程序管理的设备堆栈的示例，请参阅 <a href="https://docs.microsoft.com/windows-hardware/drivers/storage/device-object-example-for-a-usb-mass-storage-device">USB 大容量存储设备的设备对象示例</a>。 有关 Windows 存储支持的信息，请参阅<a href="https://go.microsoft.com/fwlink/p/?linkid=8766">存储技术</a>网站。</td>
+          <td>Microsoft 提供 Usbstor.sys 端口驱动程序，以使用 Microsoft 的本机存储类驱动程序管理 USB 大容量存储设备。 有关由此驱动程序管理的设备堆栈的示例，请参阅 <a href="/windows-hardware/drivers/storage/device-object-example-for-a-usb-mass-storage-device">USB 大容量存储设备的设备对象示例</a>。 有关 Windows 存储支持的信息，请参阅<a href="https://go.microsoft.com/fwlink/p/?linkid=8766">存储技术</a>网站。</td>
         </tr>
         <tr>
          <td><strong>SCSIAdapter</strong><p>{4d36e97b-e325-11ce-bfc1-08002be10318}</td>
@@ -244,4 +244,4 @@ Usbvideo.inf</td>
 
 ## <a name="related-topics"></a>相关主题
 
-[Microsoft 提供的 USB 驱动程序](system-supplied-usb-drivers.md)  
+[Microsoft 提供的 USB 驱动程序](system-supplied-usb-drivers.md)

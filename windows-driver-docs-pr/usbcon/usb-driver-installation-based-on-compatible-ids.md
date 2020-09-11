@@ -3,12 +3,12 @@ description: 用于通信和 CDC 控制设备的 Microsoft 提供的内置驱动
 title: USB 串行驱动程序 (Usbser.sys)
 ms.date: 04/20/2017
 ms.localizationpriority: High
-ms.openlocfilehash: b8ffa51eee0f97c011c092102a5791a497e37045
-ms.sourcegitcommit: 15caaf6d943135efcaf9975927ff3933957acd5d
+ms.openlocfilehash: 25ffa9ce23328bc38458756ef5d12e6f91d2a132
+ms.sourcegitcommit: 937974aa9bbe0262a7ffe9631593fab48c4e7492
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88969144"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "90010057"
 ---
 # <a name="usb-serial-driver-usbsersys"></a>USB 串行驱动程序 (Usbser.sys)
 
@@ -28,12 +28,12 @@ ms.locfileid: "88969144"
 
 用于通信和 CDC 控制设备的 Microsoft 提供的内置驱动程序 (Usbser.sys)。
 
-在 Windows 10 中，通过使用[内核模式驱动程序框架](https://docs.microsoft.com/windows-hardware/drivers/wdf/)重写了驱动程序，从而提高了驱动程序的整体稳定性。
+在 Windows 10 中，通过使用[内核模式驱动程序框架](../wdf/index.md)重写了驱动程序，从而提高了驱动程序的整体稳定性。
 
 -   通过驱动程序改进了 PnP 和电源管理（例如处理意外删除）。
 -   添加了电源管理功能，如 [USB 选择性挂起](usb-selective-suspend.md)。
 
-此外，UWP 应用程序现在可以使用新的 [Windows.Devices.SerialCommunication](https://docs.microsoft.com/uwp/api/Windows.Devices.SerialCommunication) 命名空间提供的 API，该命名空间允许应用与这些设备对话。
+此外，UWP 应用程序现在可以使用新的 [Windows.Devices.SerialCommunication](/uwp/api/Windows.Devices.SerialCommunication) 命名空间提供的 API，该命名空间允许应用与这些设备对话。
 
 ## <a name="usbsersys-installation"></a>Usbser.sys 安装
 
@@ -54,7 +54,7 @@ ms.locfileid: "88969144"
 
 -   如果要自动加载 Usbser.sys，请在[设备描述符](usb-device-descriptors.md)中将类代码设置为 02，将子类代码设置为 02。 有关详细信息，请参阅 [USB DWG 网站](https://go.microsoft.com/fwlink/p/?linkid=617741)上的 USB 通信设备类（或 USB CDC）规范。 使用此方法时，无需为设备分发 INF 文件，因为系统使用的是 Usbser.inf。
 -   如果设备指定类代码 02，但子类代码值不是 02，则 Usbser.sys 不会自动加载。 Pnp 管理器尝试查找驱动程序。 如果找不到合适的驱动程序，则设备可能未加载驱动程序。 在这种情况下，你可能需要加载自己的驱动程序或编写引用另一个内置驱动程序的 INF。
--   如果你的设备将类和子类代码指定为 02，并且你想要加载另一个驱动程序而不是 Usbser.sys，则必须编写一个 INF，指定要安装的设备和驱动程序的硬件 ID。 例如，查看[示例驱动程序](https://go.microsoft.com/fwlink/p/?LinkId=534087)中包含的 INF 文件，并查找与你的设备类似的设备。 有关 INF 部分的信息，请参阅 [INF 文件概述](https://docs.microsoft.com/windows-hardware/drivers/install/overview-of-inf-files)。
+-   如果你的设备将类和子类代码指定为 02，并且你想要加载另一个驱动程序而不是 Usbser.sys，则必须编写一个 INF，指定要安装的设备和驱动程序的硬件 ID。 例如，查看[示例驱动程序](https://go.microsoft.com/fwlink/p/?LinkId=534087)中包含的 INF 文件，并查找与你的设备类似的设备。 有关 INF 部分的信息，请参阅 [INF 文件概述](../install/overview-of-inf-files.md)。
 
 **注意**  Microsoft 鼓励你尽可能使用内置驱动程序。 在 Windows 的移动版（如 Windows 10 Mobile）上，只加载属于操作系统的驱动程序。 与桌面版不同，不能通过外部驱动程序包加载驱动程序。 使用新的内置 INF，如果在移动设备上检测到 USB 到串行设备，则会自动加载 Usbser.sys。
 
@@ -64,7 +64,7 @@ ms.locfileid: "88969144"
 
 在 Windows 8.1 和更早版本的操作系统中，当 USB 到串行设备连接到计算机时，不会自动加载 Usbser.sys。 若要加载驱动程序，需要使用“包含”指令编写引用调制解调器 INF (mdmcpq.inf) 的 INF  。 需要该指令，才能实例化服务、复制内置二进制文件和注册设备接口 GUID，应用程序需要此 GUID 来查找设备并与之通信。 该 INF 将“Usbser”指定为设备堆栈中较低的筛选器驱动程序。
 
-INF 还需要将设备安装程序类指定为调制解调器才能使用 mdmcpq.INF  。 在 INF 的 [Version] 部分下，指定“调制解调器”和设备类 GUID  。 有关详细信息，请参阅[系统提供的设备安装程序类](https://docs.microsoft.com/previous-versions/ff553419(v=vs.85))。
+INF 还需要将设备安装程序类指定为调制解调器才能使用 mdmcpq.INF  。 在 INF 的 [Version] 部分下，指定“调制解调器”和设备类 GUID  。 有关详细信息，请参阅[系统提供的设备安装程序类](/previous-versions/ff553419(v=vs.85))。
 
 ``` syntax
 [DDInstall.NT]
@@ -111,22 +111,19 @@ AddReg=LowerFilterAddReg
 
 如果为 USB CDC 设备安装 Usbser.sys，以下是应用程序编程模型选项：
 
--   从 Windows 10 开始，Windows 应用可以使用 [Windows.Devices.SerialCommunication](https://docs.microsoft.com/uwp/api/Windows.Devices.SerialCommunication) 命名空间向 Usbser.sys 发送请求。 它定义了 Windows 运行时类，这些类可用于通过串行端口或某个串行端口抽象与 USB CDC 设备通信。 这些类提供了发现此类串行设备、读写数据和控制流控制的串行特定属性（如设置波特率、信号状态）的功能。
+-   从 Windows 10 开始，Windows 应用可以使用 [Windows.Devices.SerialCommunication](/uwp/api/Windows.Devices.SerialCommunication) 命名空间向 Usbser.sys 发送请求。 它定义了 Windows 运行时类，这些类可用于通过串行端口或某个串行端口抽象与 USB CDC 设备通信。 这些类提供了发现此类串行设备、读写数据和控制流控制的串行特定属性（如设置波特率、信号状态）的功能。
 
 -   在 Windows 8.1 及更早版本中，你可以编写 Windows 桌面应用程序，使其打开虚拟 COM 端口并与设备通信。 有关详细信息，请参阅：
 
     Win32 编程模型：
 
-    -   [配置通信资源](https://docs.microsoft.com/windows/desktop/DevIO/configuring-a-communications-resource)
-    -   [通信引用](https://docs.microsoft.com/windows/desktop/DevIO/communications-reference)
+    -   [配置通信资源](/windows/desktop/DevIO/configuring-a-communications-resource)
+    -   [通信引用](/windows/desktop/DevIO/communications-reference)
 
     .NET framework 编程模型：
 
-    -   [System.IO.Ports Namespace](https://docs.microsoft.com/dotnet/api/system.io.ports?redirectedfrom=MSDN)
+    -   [System.IO.Ports Namespace](/dotnet/api/system.io.ports)
 
 ## <a name="related-topics"></a>相关主题
 [包含在 Windows 中的 USB 设备类驱动程序](supported-usb-classes.md)  
 <!-- [How to use or to reference the Usbser.sys driver from universal serial bus (USB) modem .inf files](https://support.microsoft.com/help/837637/how-to-use-or-to-reference-the-usbser-sys-driver-from-universal-serial) -->
-
-
-
