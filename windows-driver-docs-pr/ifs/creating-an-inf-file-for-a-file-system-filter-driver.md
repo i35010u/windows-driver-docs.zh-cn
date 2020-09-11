@@ -1,31 +1,22 @@
 ---
-title: 为文件系统筛选器驱动程序创建 INF 文件
-description: 为文件系统筛选器驱动程序创建 INF 文件
+title: 为旧文件系统驱动程序创建 INF 文件
+description: 如何创建旧式文件系统驱动程序的 INF 文件
 ms.assetid: 1e8d0e59-eabd-4bdb-9675-e693a0b364ca
 keywords:
 - INF 文件系统，创建
-- Setupapi.log WDK 文件系统
-- 字符串部分 WDK 文件系统
-- DefaultUninstall 节 WDK 文件系统
-- ServiceInstall 节 WDK 文件系统
-- DefaultInstall 节 WDK 文件系统
-- SourceDisksNames 节 WDK 文件系统
-- DestinationDirs 节 WDK 文件系统
-- 版本部分 WDK 文件系统
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 22fa80d36eab65962ee9fe77af31e03573f22f67
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 16142679f96f684f3e6870cd5c9d6452fbd94216
+ms.sourcegitcommit: 2dd8e4262c30e3f8570e35da7b9485139b216ac8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89065092"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "90027579"
 ---
-# <a name="creating-an-inf-file-for-a-file-system-filter-driver"></a>为文件系统筛选器驱动程序创建 INF 文件
+# <a name="creating-an-inf-file-for-a-legacy-file-system-filter-driver"></a>为旧文件系统筛选器驱动程序创建 INF 文件
 
-
-## <span id="ddk_creating_an_inf_file_for_a_file_system_filter_driver_if"></span><span id="DDK_CREATING_AN_INF_FILE_FOR_A_FILE_SYSTEM_FILTER_DRIVER_IF"></span>
-
+> [!NOTE]
+> 为了获得最佳的可靠性和性能，请使用带有筛选器管理器支持的 [文件系统微筛选器驱动程序](https://docs.microsoft.com/windows-hardware/drivers/ifs/filter-manager-concepts) ，而不是使用旧的文件系统
 
 Windows 安装程序和设备安装程序服务（统称为 [setupapi.log](../install/setupapi.md)）提供控制 Windows 安装程序和驱动程序安装的功能。 安装过程由 INF 文件控制。
 

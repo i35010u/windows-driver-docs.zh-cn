@@ -9,24 +9,24 @@ keywords:
 - 文件系统筛选器驱动程序不是设备驱动程序
 ms.date: 02/10/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: be22614d4c949cbcc6a0034c9a7af600d4c45331
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 7b698eb9b0e532fa62765c75a6dd784847954416
+ms.sourcegitcommit: 2dd8e4262c30e3f8570e35da7b9485139b216ac8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89066260"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "90027578"
 ---
 # <a name="about-file-system-filter-drivers"></a>关于文件系统筛选器驱动程序
 
 ## <a name="file-system-filter-drivers-on-windows"></a>Windows 上的文件系统筛选器驱动程序
 
-*文件系统筛选器驱动程序*是一个可选的驱动程序，它将值添加到或修改文件系统的行为。 文件系统筛选器驱动程序是一个内核模式组件，作为 Windows executive 的一部分运行。
+*文件系统筛选器驱动程序*是一个可选的驱动程序，它将值添加到或修改文件系统的行为。 它是一个内核模式组件，作为 Windows executive 的一部分运行。
 
 文件系统筛选器驱动程序可以对一个或多个文件系统或文件系统卷的 i/o 操作进行筛选。 根据驱动程序的性质， *筛选器* 可以表示 *日志*、 *观察*、 *修改*甚至 *阻止*。 文件系统筛选器驱动程序的典型应用程序包括防病毒实用程序、加密程序和分层存储管理系统。
 
 Windows 中有两种文件系统筛选器模型：
 
-- 微筛选器 [模型](./filter-manager-concepts.md)，其中微筛选器使用系统提供的筛选器管理器支持，从而简化了筛选器开发
+- 筛选器 [模型](https://docs.microsoft.com/windows-hardware/drivers/ifs/filter-manager-concepts)，其中筛选器 (也称为微筛选器) 使用系统提供的筛选器管理器支持，从而简化了筛选器开发
 
 - [旧文件系统筛选器模型](./about-file-system-legacy-filter-drivers.md)
 

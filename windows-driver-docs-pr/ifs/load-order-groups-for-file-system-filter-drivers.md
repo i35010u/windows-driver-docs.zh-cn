@@ -10,12 +10,12 @@ keywords:
 - 加载顺序组 WDK 文件系统
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d6cb797a1b6906cd6331d297c43ba271d28323d6
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: febc66fcb80d008de5b0cec0795198f296bbac54
+ms.sourcegitcommit: 2dd8e4262c30e3f8570e35da7b9485139b216ac8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89066918"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "90027558"
 ---
 # <a name="load-order-groups-for-file-system-filter-drivers"></a>文件系统筛选器驱动程序的加载顺序组
 

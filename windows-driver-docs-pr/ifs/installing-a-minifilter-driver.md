@@ -1,42 +1,29 @@
 ---
-title: 安装微筛选器驱动程序
-description: 安装微筛选器驱动程序
+title: 安装筛选器驱动程序
+description: 描述如何安装筛选器驱动程序
 ms.assetid: c31aa104-404e-43e3-9215-2671ae6b12c0
 keywords:
+- 文件系统筛选器驱动程序 WDK，安装
 - 文件系统微筛选器驱动程序 WDK，安装
+- 筛选器驱动程序 WDK，安装
 - 微筛选器驱动程序 WDK，安装
-ms.date: 04/20/2017
+ms.date: 08/27/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 84f6254a9aa27f95f70e2f14db4f066e4ff3dd73
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4aef1c973eaafd91c622b6b56c2272fb7eae2437
+ms.sourcegitcommit: 2dd8e4262c30e3f8570e35da7b9485139b216ac8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63370123"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "90027554"
 ---
-# <a name="installing-a-minifilter-driver"></a>安装微筛选器驱动程序
+# <a name="installing-a-filter-driver"></a>安装筛选器驱动程序
 
+文件系统筛选器驱动程序开发人员使用 INF 文件来安装和升级驱动程序。 您可以单独使用 INF 文件，或将其与批处理文件或用户模式安装应用程序一起使用。
 
-对于 Microsoft Windows XP 和更高版本操作系统，应使用 INF 文件和安装应用程序来安装微筛选器驱动程序。 （在 Windows 2000 和更早的操作系统，微筛选器驱动程序通常安装的服务控制管理器。）
+本节包括：
 
-将来，有必要以符合微筛选器驱动程序的 Windows 硬件认证工具包要求应基于 INF 的安装。 请注意，"基于 INF 的安装"仅意味着需要使用 INF 文件以将文件复制并存储在注册表中的信息。 您不需要在使用仅的 INF 文件，请安装整个产品和你不将需要提供["右键单击安装"](using-an-inf-file-to-install-a-file-system-filter-driver.md)您的驱动程序的选项。
-
-本部分包括：
-
-[创建用于微筛选器驱动程序的 INF 文件](creating-an-inf-file-for-a-minifilter-driver.md)
-
-[加载顺序组和海拔微筛选器驱动程序的地区](load-order-groups-and-altitudes-for-minifilter-drivers.md)
-
-[已分配的海拔地区](allocated-altitudes.md)
-
-[微筛选器海拔高度请求](minifilter-altitude-request.md)
-
-[重新分析点标记请求](reparse-point-tag-request.md)
-
- 
-
- 
-
-
-
-
+* [创建筛选器驱动程序的 INF 文件](creating-an-inf-file-for-a-minifilter-driver.md)
+* [筛选器驱动程序的加载顺序组和高度](load-order-groups-and-altitudes-for-minifilter-drivers.md)
+* [分配的等级](allocated-altitudes.md)
+* [筛选器海拔请求](minifilter-altitude-request.md)
+* [重新分析点标记请求](reparse-point-tag-request.md)

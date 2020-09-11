@@ -5,12 +5,12 @@ ms.assetid: d4b8a964-f843-4960-9077-46746af27a61
 ms.date: 08/27/2020
 ms.localizationpriority: medium
 ms.custom: contperfq1
-ms.openlocfilehash: 9c0e48690016f723856f2e8b3856361c62a9be83
-ms.sourcegitcommit: 937974aa9bbe0262a7ffe9631593fab48c4e7492
+ms.openlocfilehash: 9cf9a54d2f9429ddd4ac11156301cb568ab174ff
+ms.sourcegitcommit: 2dd8e4262c30e3f8570e35da7b9485139b216ac8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 09/11/2020
-ms.locfileid: "90009937"
+ms.locfileid: "90027568"
 ---
 # <a name="class-and-classguid-entries-for-inf-version-section"></a>INF 版本部分的 Class 和 ClassGuid 条目  
 
@@ -281,13 +281,6 @@ WCEUSBS 安装程序类支持个人计算机与与 Windows CE ActiveSync 驱动�
 类 = WPD  
 ClassGuid = {eec5ad98-8080-425f-922a-dabf3de3f69a}  
  (Windows Vista 及更高版本的 Windows) 此类包括 WPD 设备。  
-  
-**Windows SideShow**  
-类 = 边栏显示  
-ClassGuid = {997b5d8d-c442-4f2e-baf3-9c8e671e9e21}  
- (Windows Vista 及更高版本的 Windows) 此类包括与 Windows 边栏显示兼容的所有设备。  
-  
-   
   
    
   

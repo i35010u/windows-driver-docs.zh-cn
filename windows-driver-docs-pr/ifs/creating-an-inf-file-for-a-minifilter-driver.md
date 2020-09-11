@@ -1,50 +1,52 @@
 ---
-title: 创建用于微筛选器驱动程序的 INF 文件
-description: 创建用于微筛选器驱动程序的 INF 文件
+title: 创建筛选器驱动程序的 INF 文件
+description: 描述如何创建筛选器驱动程序的 INF 文件
 ms.assetid: 2ae41287-e3c5-4df5-8dec-8575343d5319
 keywords:
 - INF 文件系统、微筛选器驱动程序
+- INF 文件系统、筛选器驱动程序
 - DestinationDirs 节 WDK 文件系统
 - 版本部分 WDK 文件系统
 - 字符串部分 WDK 文件系统
-- DefaultUninstall 节 WDK 文件系统
 - ServiceInstall 节 WDK 文件系统
 - DefaultInstall 节 WDK 文件系统
 - AddRegistry 节 WDK 文件系统
 ms.date: 08/21/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 427b468191d5b210013ec96d6c4c46f45807f48b
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 3b7514cd7694ab9a67bf20d3dd61fb940b521e2e
+ms.sourcegitcommit: 2dd8e4262c30e3f8570e35da7b9485139b216ac8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89065088"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "90027570"
 ---
-# <a name="creating-an-inf-file-for-a-minifilter-driver"></a>创建用于微筛选器驱动程序的 INF 文件
+# <a name="creating-an-inf-file-for-a-filter-driver"></a>创建筛选器驱动程序的 INF 文件
 
 ## <a name="introduction"></a>简介
 
 > [!NOTE]
 >
-> 从 Windows 10 版本1903开始，基元驱动程序 (例如文件系统微筛选器驱动程序) 继续使用基于 INF 的安装，但 INF 要求已更改。 有关详细信息，请参阅 [创建新的基元驱动程序](../develop/creating-a-primitive-driver.md) 。
+> 从 Windows 10 版本1903开始，基元驱动程序的 INF 要求 (例如，) 的文件系统筛选器驱动程序已更改。 有关详细信息，请参阅 [创建新的基元驱动程序](https://docs.microsoft.com/windows-hardware/drivers/develop/creating-a-primitive-driver) 。
 
-文件系统微筛选器驱动程序的 INF 文件通常包含以下部分：
+筛选器驱动程序需要在 Windows 操作系统上安装一个 INF 文件。 你将在 [微筛选器示例](https://github.com/microsoft/Windows-driver-samples/tree/master/filesys/miniFilter)中找到示例 INF 文件。
+
+文件系统筛选器驱动程序的 INF 文件通常包含以下部分：
 
 | 部分                       | 备注 |
 | -------                       | ----- |
-| **Version**                   | 必须 |
+| **Version**                   | 必需 |
 | **DestinationDirs**           | 可选，但建议使用 |
-| **DefaultInstall**            | 必须 |
-| **DefaultInstall**   | 必须 |
-| **ServiceInstall**            | 必须 |
-| **AddRegistry**               | 必须 |
-| **字符串**                   | 必须 |
-
-Windows 系统64位版本上运行的所有驱动程序都必须在 Windows 加载它们之前进行签名。 有关详细信息，请参阅对 [驱动程序进行签名](../develop/signing-a-driver.md) 。
+| **DefaultInstall**            | 必需 |
+| **DefaultInstall**   | 必需 |
+| **ServiceInstall**            | 必需 |
+| **AddRegistry**               | 必需 |
+| **字符串**                   | 必需 |
 
 > [!NOTE]
 >
-> 从 Windows 10 版本1903开始， **DefaultUninstall** 和 **DefaultUninstall** 部分禁止 [ (异常) ](../develop/creating-a-primitive-driver.md#legacy-compatibility)。 这些部分在以前的操作系统版本中是可选的。
+> 从 Windows 10 版本1903开始， **DefaultUninstall** 和 **DefaultUninstall** 部分禁止 [ (异常) ](https://docs.microsoft.com/windows-hardware/drivers/develop/creating-a-primitive-driver#legacy-compatibility)。 这些部分在以前的操作系统版本中是可选的。
+>
+> Windows 系统64位版本上运行的所有驱动程序都必须在 Windows 加载它们之前进行签名。 有关详细信息，请参阅对 [驱动程序进行签名](https://docs.microsoft.com/windows-hardware/drivers/develop/signing-a-driver) 。
 
 ## <a name="version-section-required"></a>版本部分 (必需) 
 
