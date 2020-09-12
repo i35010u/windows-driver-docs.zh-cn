@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c0082097733fdc5c6402f0c70549370391db2412
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 34a7c213e846f268557040e440b03d58911f4042
+ms.sourcegitcommit: 2ea988a725be8368b4291f8c28f95d793a253e95
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89096349"
+ms.lasthandoff: 09/12/2020
+ms.locfileid: "90045218"
 ---
 # <a name="inf-addreg-directive"></a>INF AddReg 指令
 
@@ -155,7 +155,7 @@ reg-root, [subkey],[value-entry-name],[flags],[value][,[value]]
 <a href="" id="0x00020000--flg-addreg-type-expand-sz--"></a>**0x00020000** (FLG_ADDREG_TYPE_EXPAND_SZ)    
 给定的 *值输入名称* 和/或 *值* 为注册表类型 [REG_EXPAND_SZ](/windows/desktop/SysInfo/registry-value-types)。
 
-<a href="" id="0x00010001--flg-addreg-type-dword---flg-addreg-type-dword-"></a>**0x00010001** (FLG_ADDREG_TYPE_DWORD)  (FLG_ADDREG_TYPE_DWORD)   
+<a href="" id="0x00010001--flg-addreg-type-dword---flg-addreg-type-dword-"></a>**0x00010001** (FLG_ADDREG_TYPE_DWORD)   
 给定的 *值输入名称* 和/或 *值* 为注册表类型 [REG_DWORD](/windows/desktop/SysInfo/registry-value-types)。
 
 <a href="" id="0x00020001--flg-addreg-type-none-"></a>**0x00020001** (FLG_ADDREG_TYPE_NONE)   
@@ -300,6 +300,8 @@ HKR,,EventMessageFile,0x00020000,"%%SystemRoot%%\System32\IoLogMsg.dll"
  
 HKR,,TypesSupported,0x00010001,7 
 ```
+
+请注意，可以指定十六进制格式的标志值（如示例中所示），也可以定义字符串占位符，如 `%FLG_ADDREG_TYPE_DWORD%` 每个 INF 文件的 [字符串] 部分。
 
 ## <a name="see-also"></a>另请参阅
 
