@@ -4,12 +4,12 @@ description: 启动环境中 Windows 10 移动版的电池充电
 ms.assetid: 5aa1ef68-6939-4896-aabd-d499ba23f89f
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3b06aa1ad5748ad32aeb5fe05cde395fcc2d6059
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 843f72fe71123e529efeabdb511c4ebab2ce61ca
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89188917"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90101555"
 ---
 # <a name="battery-charging-in-the-boot-environment-for-windows-10-mobile"></a>启动环境中 Windows 10 移动版的电池充电
 
@@ -125,7 +125,7 @@ Microsoft 定义了几个电池充电阈值，以确保正确的电池充电用�
 <thead>
 <tr class="header">
 <th>阈值</th>
-<th>描述</th>
+<th>说明</th>
 <th>配置指南</th>
 </tr>
 </thead>
@@ -168,7 +168,7 @@ Microsoft 定义了几个电池充电阈值，以确保正确的电池充电用�
 <tr class="even">
 <td><p>主 OS 关闭阈值</p></td>
 <td><p>这是软件安全关闭设备的阈值。 需要防止系统内存损坏。</p></td>
-<td><p>OEM 必须将此阈值设置为低于 <em>启动到主操作系统阈值</em> ，并且低于 <em>主操作系统警告阈值</em>。 此外，此阈值必须大于或等于2%。 此阈值由<a href="https://docs.microsoft.com/windows/desktop/Power/battery-information-str" data-raw-source="[BATTERY_INFORMATION](/windows/desktop/Power/battery-information-str)">BATTERY_INFORMATION</a>结构的<strong>DefaultAlert1</strong>成员定义。 有关如何修改此阈值的详细信息，请联系 SoC 供应商。</p></td>
+<td><p>OEM 必须将此阈值设置为低于 <em>启动到主操作系统阈值</em> ，并且低于 <em>主操作系统警告阈值</em>。 此外，此阈值必须大于或等于2%。 此阈值由<a href="/windows/desktop/Power/battery-information-str" data-raw-source="[BATTERY_INFORMATION](/windows/desktop/Power/battery-information-str)">BATTERY_INFORMATION</a>结构的<strong>DefaultAlert1</strong>成员定义。 有关如何修改此阈值的详细信息，请联系 SoC 供应商。</p></td>
 </tr>
 <tr class="odd">
 <td><p>硬件关闭阈值</p></td>

@@ -7,12 +7,12 @@ keywords:
 - 类安装程序 WDK 设备安装，完成-安装操作
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d9300740b52569c664c22c4301e46b2ef8f5feb4
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: ca30fcf237ba9452f5fa850c8c0704c6f207f1f0
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89095163"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90102922"
 ---
 # <a name="code-example-finish-install-actions-in-a-class-installer"></a>代码示例：类安装程序中的 Finish-Install 操作
 
@@ -21,7 +21,7 @@ ms.locfileid: "89095163"
 
 -   当类安装程序收到 [**DIF_NEWDEVICEWIZARD_FINISHINSTALL**](./dif-newdevicewizard-finishinstall.md) 请求时，它会调用安装程序提供的函数 *FinishInstallActionsNeeded* 来确定是否有完成安装操作。  (此示例中未显示 *FinishInstallActionsNeeded* 函数的代码。 ) 
 
-    如果 *FinishInstallActionsNeeded* 返回 **TRUE**，则类安装程序将调用 [**SetupDiGetDeviceInstallParams**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetdeviceinstallparamsa) 来检索设备的设备安装参数。 然后，它调用[**SetupDiSetDeviceInstallParams**](/windows/desktop/api/setupapi/nf-setupapi-setupdisetdeviceinstallparamsa)来设置具有 DI_FLAGSEX_FINISHINSTALL_ACTION 标志的设备的[**SP_DEVINSTALL_PARAMS**](/windows/desktop/api/setupapi/ns-setupapi-_sp_devinstall_params_a)结构的**FlagsEx**成员。 通过设置此标志，Windows 将向所有类安装程序、类共同安装程序和安装此设备的设备共同安装程序发送 [**DIF_FINISHINSTALL_ACTION**](./dif-finishinstall-action.md) 请求。 此请求在除完成安装操作完成之外的所有安装操作后发送。
+    如果 *FinishInstallActionsNeeded* 返回 **TRUE**，则类安装程序将调用 [**SetupDiGetDeviceInstallParams**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetdeviceinstallparamsa) 来检索设备的设备安装参数。 然后，它调用[**SetupDiSetDeviceInstallParams**](/windows/desktop/api/setupapi/nf-setupapi-setupdisetdeviceinstallparamsa)来设置具有 DI_FLAGSEX_FINISHINSTALL_ACTION 标志的设备的[**SP_DEVINSTALL_PARAMS**](/windows/win32/api/setupapi/ns-setupapi-sp_devinstall_params_a)结构的**FlagsEx**成员。 通过设置此标志，Windows 将向所有类安装程序、类共同安装程序和安装此设备的设备共同安装程序发送 [**DIF_FINISHINSTALL_ACTION**](./dif-finishinstall-action.md) 请求。 此请求在除完成安装操作完成之外的所有安装操作后发送。
 
 -   当类安装程序收到 DIF_FINISHINSTALL_ACTION 请求时，它会再次调用 *FinishInstallActionsNeeded* 来确定它是否有完成安装操作，如果是，则执行完成安装操作。 类安装程序向用户通知完成安装操作正在进行，并等待完成安装操作完成，然后再从处理 DIF_FINISHINSTALL_ACTION 请求。
 

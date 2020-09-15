@@ -8,12 +8,12 @@ keywords:
 - 预安装的驱动程序 WDK 设备安装
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c3a7a0a9db5de2f3f0fee3fe1f4e41e279ee0c29
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: e5f6679e596a11439d7746c0c3e5c27590ca2366
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89097273"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90101572"
 ---
 # <a name="installing-an-inbox-driver-or-a-preinstalled-driver"></a>安装收件箱驱动程序或预安装的驱动程序
 
@@ -22,7 +22,5 @@ ms.locfileid: "89097273"
 
 若要详细了解在进行 [硬件首次安装](hardware-first-installation.md)的过程中驱动程序包的位置，请参阅 [Windows 搜索驱动程序的位置](./how-windows-selects-a-driver-for-a-device.md)。
 
-有关 Windows 如何选择与设备最匹配的驱动程序的信息，请参阅 [Windows 如何选择驱动程序](how-setup-selects-drivers.md)。
-
- 
+有关 Windows 如何选择与设备最匹配的驱动程序的信息，请参阅 [Windows 如何选择驱动程序](./how-windows-selects-a-driver-for-a-device.md)。
 

@@ -11,12 +11,12 @@ keywords:
 - 安全描述符 WDK 设备对象
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 924cb599b87610cc19b3dd869228c108e39026cc
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 6bc8411075578aa53e2a51de31dbfa5ce228b5c0
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89185491"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90103438"
 ---
 # <a name="sddl-for-device-objects"></a>设备对象的 SDDL
 
@@ -122,13 +122,13 @@ ms.locfileid: "89185491"
 <thead>
 <tr class="header">
 <th>SID</th>
-<th>描述</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td><p>SY</p></td>
-<td><p>System</p>
+<td><p>系统</p>
 <p>表示操作系统本身，其中包括其用户模式组件。</p></td>
 </tr>
 <tr class="even">
@@ -156,13 +156,13 @@ ms.locfileid: "89185491"
 <thead>
 <tr class="header">
 <th>SID</th>
-<th>描述</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td><p>BA</p></td>
-<td><p>管理员</p>
+<td><p>Administrators</p>
 <p>计算机上的内置 Administrators 组。</p></td>
 </tr>
 <tr class="even">
@@ -190,7 +190,7 @@ ms.locfileid: "89185491"
 <thead>
 <tr class="header">
 <th>SID</th>
-<th>描述</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>
@@ -219,7 +219,7 @@ ms.locfileid: "89185491"
 <thead>
 <tr class="header">
 <th>SID</th>
-<th>描述</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>
@@ -255,7 +255,7 @@ ms.locfileid: "89185491"
 <thead>
 <tr class="header">
 <th>SID</th>
-<th>描述</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>
@@ -270,7 +270,7 @@ ms.locfileid: "89185491"
 <td><p>UD</p></td>
 <td><p>用户模式驱动程序</p>
 <p>此 SID 授予对用户模式驱动程序的访问权限。 目前，此 SID 只包含为用户模式驱动程序框架编写的驱动程序， (UMDF) 。 从 Windows 8 开始可以使用此 SID。</p>
-<p>在早期版本的 Windows 中，如果不能识别 "UD" 缩写，则必须指定该 SID 的完全限定形式 (S-1-5-84-0-0-0-0-0) ，才能授予对 UMDF 驱动程序的访问权限。 有关详细信息，请参阅在用户模式驱动程序框架中 <a href="/windows-hardware/drivers/wdf/controlling-device-access" data-raw-source="[Controlling Device Access](/windows-hardware/drivers/wdf/controlling-device-access)">控制设备访问</a> 文档。</p></td>
+<p>在早期版本的 Windows 中，如果不能识别 "UD" 缩写，则必须指定该 SID 的完全限定形式 (S-1-5-84-0-0-0-0-0) ，才能授予对 UMDF 驱动程序的访问权限。 有关详细信息，请参阅在用户模式驱动程序框架中 <a href="/windows-hardware/drivers/wdf/controlling-device-access" data-raw-source="[Controlling Device Access](../wdf/controlling-device-access.md)">控制设备访问</a> 文档。</p></td>
 </tr>
 </tbody>
 </table>
@@ -330,6 +330,4 @@ SDDL \_ DEVOBJ \_ SYS \_ ALL \_ ADM \_ RWX \_ WORLD \_ r \_ RES \_ r 允许内�
  
 
 请注意，上述 SDDL 字符串不包含任何继承修饰符。 因此，它们仅适用于设备对象，不应用于文件或注册表项。 有关使用 SDDL 指定继承的详细信息，请参阅 Microsoft Windows SDK 文档。
-
- 
 

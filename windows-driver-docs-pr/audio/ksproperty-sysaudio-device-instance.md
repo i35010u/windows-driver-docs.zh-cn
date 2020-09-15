@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6c5860e2f8c9e596c53f3e1062233dfbb8df241c
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 66b1bfc54a7cd41a8ee3b0ff2342ec6bf055e71d
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89208913"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90101868"
 ---
 # <a name="ksproperty_sysaudio_device_instance"></a>KSPROPERTY \_ SYSAUDIO \_ 设备 \_ 实例
 
@@ -53,7 +53,7 @@ KSPROPERTY \_ SYSAUDIO \_ 设备 \_ 实例属性指定虚拟音频设备的当�
 <td align="left"><p>是</p></td>
 <td align="left"><p>是</p></td>
 <td align="left"><p>筛选器</p></td>
-<td align="left"><p><a href="https://docs.microsoft.com/previous-versions/ff564262(v=vs.85)" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](/previous-versions/ff564262(v=vs.85))"><strong>KSPROPERTY</strong></a></p></td>
+<td align="left"><p><a href="/previous-versions/ff564262(v=vs.85)" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](/previous-versions/ff564262(v=vs.85))"><strong>KSPROPERTY</strong></a></p></td>
 <td align="left"><p>ULONG</p></td>
 </tr>
 </tbody>
@@ -102,6 +102,4 @@ Get 属性请求检索当前 (的设备 ID，) 虚拟音频设备上一次打开
 [**KSPROPERTY \_ SYSAUDIO \_ 设备 \_ 接口 \_ 名称**](ksproperty-sysaudio-device-interface-name.md)
 
 [**KSPROPERTY \_ SYSAUDIO \_ 设备 \_ 友好 \_ 名称**](ksproperty-sysaudio-device-friendly-name.md)
-
- 
 

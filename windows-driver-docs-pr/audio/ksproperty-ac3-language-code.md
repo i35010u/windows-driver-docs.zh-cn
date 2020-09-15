@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 789300e32ee1960035c7d19faf7125d033b14137
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 218ca58415691812ca084294f8d1a724a1415afb
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89209024"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90102336"
 ---
 # <a name="ksproperty_ac3_language_code"></a>KSPROPERTY \_ E-ac3 \_ 语言 \_ 代码
 
@@ -53,8 +53,8 @@ KSPROPERTY \_ E-ac3 \_ language \_ CODE 属性指定 AC 3 编码流的语言代�
 <td align="left"><p>是</p></td>
 <td align="left"><p>否</p></td>
 <td align="left"><p>Pin</p></td>
-<td align="left"><p><a href="https://docs.microsoft.com/previous-versions/ff564262(v=vs.85)" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](/previous-versions/ff564262(v=vs.85))"><strong>KSPROPERTY</strong></a></p></td>
-<td align="left"><p><a href="https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff537081(v=vs.85)" data-raw-source="[&lt;strong&gt;KSAC3_LANGUAGE_CODE&lt;/strong&gt;](/previous-versions/windows/hardware/drivers/ff537081(v=vs.85))"><strong>KSAC3_LANGUAGE_CODE</strong></a></p></td>
+<td align="left"><p><a href="/previous-versions/ff564262(v=vs.85)" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](/previous-versions/ff564262(v=vs.85))"><strong>KSPROPERTY</strong></a></p></td>
+<td align="left"><p><a href="/previous-versions/windows/hardware/drivers/ff537081(v=vs.85)" data-raw-source="[&lt;strong&gt;KSAC3_LANGUAGE_CODE&lt;/strong&gt;](/previous-versions/windows/hardware/drivers/ff537081(v=vs.85))"><strong>KSAC3_LANGUAGE_CODE</strong></a></p></td>
 </tr>
 </tbody>
 </table>
@@ -89,6 +89,4 @@ KSPROPERTY \_ E-ac3 \_ LANGUAGE \_ CODE 属性请求返回状态 \_ SUCCESS 以�
 [**KSPROPERTY**](/previous-versions/ff564262(v=vs.85))
 
 [**KSAC3 \_ 语言 \_ 代码**](/previous-versions/windows/hardware/drivers/ff537081(v=vs.85))
-
- 
 

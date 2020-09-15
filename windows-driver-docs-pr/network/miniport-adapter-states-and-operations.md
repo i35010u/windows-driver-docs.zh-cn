@@ -12,12 +12,12 @@ keywords:
 - 正在初始化状态 WDK ne
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 883c1634e0a6b2bd07be9d7041aa7a7b8edbe520
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: b5094a62843a7d077cea65b48ac6df3c217ce331
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89215572"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90102168"
 ---
 # <a name="miniport-adapter-states-and-operations"></a>微型端口适配器状态和操作
 
@@ -33,7 +33,7 @@ ms.locfileid: "89215572"
 <a href="" id="shutdown"></a>立即  
 在关闭状态下，必须先进行系统关闭并重启，然后系统才能再次使用该适配器。
 
-<a href="" id="initializing"></a>出错  
+<a href="" id="initializing"></a>正在初始化  
 在 "正在初始化" 状态下，微型端口驱动程序完成初始化适配器所需的任何操作。
 
 <a href="" id="paused"></a>悬停  
@@ -69,13 +69,13 @@ ms.locfileid: "89215572"
 <th align="left">正在初始化</th>
 <th align="left">已暂停</th>
 <th align="left">重新启动</th>
-<th align="left">正在运行</th>
+<th align="left">运行</th>
 <th align="left">正在暂停</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_initialize" data-raw-source="[&lt;em&gt;MiniportInitializeEx&lt;/em&gt;](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_initialize)"><em>MiniportInitializeEx</em></a></p></td>
+<td align="left"><p><a href="/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_initialize" data-raw-source="[&lt;em&gt;MiniportInitializeEx&lt;/em&gt;](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_initialize)"><em>MiniportInitializeEx</em></a></p></td>
 <td align="left"><p>正在初始化</p></td>
 <td align="left"></td>
 <td align="left"></td>
@@ -95,7 +95,7 @@ ms.locfileid: "89215572"
 <td align="left"></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_shutdown" data-raw-source="[&lt;em&gt;MiniportShutdownEx&lt;/em&gt;](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_shutdown)"><em>MiniportShutdownEx</em></a></p></td>
+<td align="left"><p><a href="/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_shutdown" data-raw-source="[&lt;em&gt;MiniportShutdownEx&lt;/em&gt;](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_shutdown)"><em>MiniportShutdownEx</em></a></p></td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
@@ -105,7 +105,7 @@ ms.locfileid: "89215572"
 <td align="left"><p>Shutdown</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_halt" data-raw-source="[&lt;em&gt;MiniportHaltEx&lt;/em&gt;](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_halt)"><em>MiniportHaltEx</em></a></p></td>
+<td align="left"><p><a href="/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_halt" data-raw-source="[&lt;em&gt;MiniportHaltEx&lt;/em&gt;](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_halt)"><em>MiniportHaltEx</em></a></p></td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
@@ -115,7 +115,7 @@ ms.locfileid: "89215572"
 <td align="left"></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_restart" data-raw-source="[&lt;em&gt;MiniportRestart&lt;/em&gt;](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_restart)"><em>MiniportRestart</em></a></p></td>
+<td align="left"><p><a href="/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_restart" data-raw-source="[&lt;em&gt;MiniportRestart&lt;/em&gt;](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_restart)"><em>MiniportRestart</em></a></p></td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
@@ -130,12 +130,12 @@ ms.locfileid: "89215572"
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
-<td align="left"><p>正在运行</p></td>
+<td align="left"><p>运行</p></td>
 <td align="left"></td>
 <td align="left"></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_pause" data-raw-source="[&lt;em&gt;MiniportPause&lt;/em&gt;](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_pause)"><em>MiniportPause</em></a></p></td>
+<td align="left"><p><a href="/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_pause" data-raw-source="[&lt;em&gt;MiniportPause&lt;/em&gt;](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_pause)"><em>MiniportPause</em></a></p></td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
@@ -181,7 +181,7 @@ ms.locfileid: "89215572"
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
-<td align="left"><p>正在运行</p></td>
+<td align="left"><p>运行</p></td>
 <td align="left"><p>正在暂停</p></td>
 </tr>
 <tr class="even">
@@ -191,7 +191,7 @@ ms.locfileid: "89215572"
 <td align="left"></td>
 <td align="left"><p>已暂停</p></td>
 <td align="left"><p>重新启动</p></td>
-<td align="left"><p>正在运行</p></td>
+<td align="left"><p>运行</p></td>
 <td align="left"><p>正在暂停</p></td>
 </tr>
 </tbody>
@@ -263,6 +263,4 @@ NDIS 调用驱动程序的 [*MiniportPause*](/windows-hardware/drivers/ddi/ndis/
 [暂停适配器](pausing-an-adapter.md)
 
 [启动适配器](starting-an-adapter.md)
-
- 
 

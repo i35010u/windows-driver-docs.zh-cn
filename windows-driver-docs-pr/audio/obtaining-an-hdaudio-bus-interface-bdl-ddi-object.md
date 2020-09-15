@@ -6,12 +6,12 @@ keywords:
 - HDAUDIO_BUS_INTERFACE_BDL 结构
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a583d386bcd743bb4ae812746f6260735c167304
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: a0c6e7fd0671917a8db113cfffede3bea3831d79
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89208821"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90101796"
 ---
 # <a name="obtaining-an-hdaudio_bus_interface_bdl-ddi-object"></a>获取 HDAUDIO \_ 总线 \_ 接口 \_ BDL DDI 对象
 
@@ -28,7 +28,7 @@ ms.locfileid: "89208821"
 <thead>
 <tr class="header">
 <th align="left">参数</th>
-<th align="left">值</th>
+<th align="left">“值”</th>
 </tr>
 </thead>
 <tbody>
@@ -38,7 +38,7 @@ ms.locfileid: "89208821"
 </tr>
 <tr class="even">
 <td align="left"><p>USHORT <em>大小</em></p></td>
-<td align="left"><p><strong>sizeof</strong> (<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/hdaudio/ns-hdaudio-_hdaudio_bus_interface_bdl" data-raw-source="[&lt;strong&gt;HDAUDIO_BUS_INTERFACE_BDL&lt;/strong&gt;](/windows-hardware/drivers/ddi/hdaudio/ns-hdaudio-_hdaudio_bus_interface_bdl)"><strong>HDAUDIO_BUS_INTERFACE_BDL</strong></a>) </p></td>
+<td align="left"><p><strong>sizeof</strong> (<a href="/windows-hardware/drivers/ddi/hdaudio/ns-hdaudio-_hdaudio_bus_interface_bdl" data-raw-source="[&lt;strong&gt;HDAUDIO_BUS_INTERFACE_BDL&lt;/strong&gt;](/windows-hardware/drivers/ddi/hdaudio/ns-hdaudio-_hdaudio_bus_interface_bdl)"><strong>HDAUDIO_BUS_INTERFACE_BDL</strong></a>) </p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>USHORT <em>版本</em></p></td>
@@ -46,7 +46,7 @@ ms.locfileid: "89208821"
 </tr>
 <tr class="even">
 <td align="left"><p>PINTERFACE <em>接口</em></p></td>
-<td align="left"><p>指向 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/hdaudio/ns-hdaudio-_hdaudio_bus_interface_bdl" data-raw-source="[&lt;strong&gt;HDAUDIO_BUS_INTERFACE_BDL&lt;/strong&gt;](/windows-hardware/drivers/ddi/hdaudio/ns-hdaudio-_hdaudio_bus_interface_bdl)"><strong>HDAUDIO_BUS_INTERFACE_BDL</strong></a> 结构的指针</p></td>
+<td align="left"><p>指向 <a href="/windows-hardware/drivers/ddi/hdaudio/ns-hdaudio-_hdaudio_bus_interface_bdl" data-raw-source="[&lt;strong&gt;HDAUDIO_BUS_INTERFACE_BDL&lt;/strong&gt;](/windows-hardware/drivers/ddi/hdaudio/ns-hdaudio-_hdaudio_bus_interface_bdl)"><strong>HDAUDIO_BUS_INTERFACE_BDL</strong></a> 结构的指针</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>PVOID <em>InterfaceSpecificData</em></p></td>
@@ -75,7 +75,7 @@ ms.locfileid: "89208821"
 <tbody>
 <tr class="odd">
 <td align="left"><p>USHORT <strong>大小</strong></p></td>
-<td align="left"><p><strong>sizeof</strong> (<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/hdaudio/ns-hdaudio-_hdaudio_bus_interface_bdl" data-raw-source="[&lt;strong&gt;HDAUDIO_BUS_INTERFACE_BDL&lt;/strong&gt;](/windows-hardware/drivers/ddi/hdaudio/ns-hdaudio-_hdaudio_bus_interface_bdl)"><strong>HDAUDIO_BUS_INTERFACE_BDL</strong></a>) </p></td>
+<td align="left"><p><strong>sizeof</strong> (<a href="/windows-hardware/drivers/ddi/hdaudio/ns-hdaudio-_hdaudio_bus_interface_bdl" data-raw-source="[&lt;strong&gt;HDAUDIO_BUS_INTERFACE_BDL&lt;/strong&gt;](/windows-hardware/drivers/ddi/hdaudio/ns-hdaudio-_hdaudio_bus_interface_bdl)"><strong>HDAUDIO_BUS_INTERFACE_BDL</strong></a>) </p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>USHORT <strong>版本</strong></p></td>
@@ -99,6 +99,4 @@ ms.locfileid: "89208821"
  
 
 在上表中， **上下文** 成员指向一个上下文对象，该上下文对象包含特定于 \_ \_ \_ 客户端从 IOCTL 中获取的 HDAUDIO 总线接口 BDL 版本的特定实例的信息。 如前文所述，调用 DDI 中的任何例程时，客户端函数驱动程序必须始终将 **上下文** 指针值指定为第一个调用参数。
-
- 
 

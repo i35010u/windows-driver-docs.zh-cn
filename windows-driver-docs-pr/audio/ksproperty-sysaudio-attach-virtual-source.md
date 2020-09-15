@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5bdca4773eea64128c420693558f0007d659c7c1
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: ace0d49309343e0b44b06aa01422e10165f610e3
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89206689"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90101898"
 ---
 # <a name="ksproperty_sysaudio_attach_virtual_source"></a>KSPROPERTY \_ SYSAUDIO \_ 附加 \_ 虚拟 \_ 源
 
@@ -53,7 +53,7 @@ KSPROPERTY \_ SYSAUDIO \_ 附加 \_ 虚拟 \_ 源属性将虚拟源附加到虚�
 <td align="left"><p>是</p></td>
 <td align="left"><p>是</p></td>
 <td align="left"><p>Pin</p></td>
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-sysaudio_attach_virtual_source" data-raw-source="[&lt;strong&gt;SYSAUDIO_ATTACH_VIRTUAL_SOURCE&lt;/strong&gt;](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-sysaudio_attach_virtual_source)"><strong>SYSAUDIO_ATTACH_VIRTUAL_SOURCE</strong></a></p></td>
+<td align="left"><p><a href="/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-sysaudio_attach_virtual_source" data-raw-source="[&lt;strong&gt;SYSAUDIO_ATTACH_VIRTUAL_SOURCE&lt;/strong&gt;](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-sysaudio_attach_virtual_source)"><strong>SYSAUDIO_ATTACH_VIRTUAL_SOURCE</strong></a></p></td>
 <td align="left"><p>无</p></td>
 </tr>
 </tbody>
@@ -94,6 +94,4 @@ KSPROPERTY \_ SYSAUDIO \_ 附加 \_ 虚拟 \_ 源属性请求返回状态 \_ SUC
 [**SYSAUDIO \_ 附加 \_ 虚拟 \_ 源**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-sysaudio_attach_virtual_source)
 
 [**KSPROPERTY \_ SYSAUDIO \_ 创建 \_ 虚拟 \_ 源**](ksproperty-sysaudio-create-virtual-source.md)
-
- 
 

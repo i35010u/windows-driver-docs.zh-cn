@@ -4,12 +4,12 @@ description: ACPI 5.0 规范定义了几种可用于管理设备的命名空间�
 ms.assetid: 26C3312D-B1B0-4843-BF4E-1B03630C0BDD
 ms.date: 06/26/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: b5c6efaed60136b126b7fbd7a030e17e6fbf71e2
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: b999109038eb59a54b91a2438fe96da832c19f28
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89187649"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90101534"
 ---
 # <a name="device-management-namespace-objects"></a>设备管理命名空间对象
 
@@ -46,7 +46,7 @@ ACPI\vvv[v]dddd
 
 对于与 Windows 附带的收件箱驱动程序兼容的设备，Microsoft 保留了供应商 ID "PNP"。 Windows 定义了多个与此供应商 ID 结合使用的设备 Id，该 ID 可用于为设备加载 Windows 提供的驱动程序。 一个单独的对象， (\_ CID) 对象的兼容 ID，用于返回这些标识符。 Windows 始终首选硬件 Id (由 \_ HID) 通过兼容 id 返回， (由 \_ CID) 在 INF 匹配和驱动程序选择中返回。 如果供应商提供的特定于设备的驱动程序不可用，则此首选项允许将 Windows 提供的驱动程序视为默认驱动程序。 下表中的兼容 Id 是新创建的，用于 SoC 平台。
 
-| 兼容 ID | 描述 |
+| 兼容 ID | 说明 |
 | --- | --- |
 | PNP0C40  | 与 Windows 兼容的按钮数组 |
 | PNP0C50  | HID-基于 I i2c 的设备 |
@@ -95,7 +95,7 @@ ACPI 5.0 定义了 \_ SUB、 \_ HRV 和 \_ CLS 对象，这些对象可与 HID �
 
 作为 Windows 即插即用的一部分，驱动程序必须能够由用户或系统 (动态启用和禁用，例如，) 更新驱动程序。
 
-SoC 设备集成到 SoC 芯片，无法删除。 可从启用和禁用的要求中免除大多数 on SoC 设备的驱动程序。 对于那些不例外的驱动程序，有一些驱动程序接口用于指示驱动程序支持有序删除。 有关详细信息，请参阅 [Microsoft Connect 网站](https://aka.ms/connect-redirect?DownloadID=47560)上标题为 "降低 SoC 驱动程序的 PNP 要求" 的文档。
+SoC 设备集成到 SoC 芯片，无法删除。 可从启用和禁用的要求中免除大多数 on SoC 设备的驱动程序。 对于那些不例外的驱动程序，有一些驱动程序接口用于指示驱动程序支持有序删除。 有关详细信息，请参阅 [Microsoft Connect 网站](/collaborate/connect-redirect?DownloadID=47560)上标题为 "降低 SoC 驱动程序的 PNP 要求" 的文档。
 
 如果驱动程序支持序删除，并且可禁用设备硬件 (也就是说，可以将设备配置为停止访问其已分配资源) ，然后设备的 "ACPI 命名空间" 节点可以包括 "禁用 (" \_ ) 对象。 只要删除驱动程序，操作系统就会对此方法进行评估。 使用 \_ 拆装具有以下附加要求：
 
@@ -116,7 +116,7 @@ SoC 设备集成到 SoC 芯片，无法删除。 可从启用和禁用的要求�
 
 设备驱动程序之间也可能存在软件依赖关系。 还必须描述这些依赖关系。
 
-有关更多信息，请参见以下资源：
+有关详细信息，请参阅以下资源：
 
 - 对于驱动程序加载顺序依赖关系，请参阅 [指定驱动程序加载顺序](../install/specifying-driver-load-order.md)。
 

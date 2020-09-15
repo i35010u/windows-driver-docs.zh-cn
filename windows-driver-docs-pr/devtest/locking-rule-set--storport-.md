@@ -4,12 +4,12 @@ description: 使用这些规则验证驱动程序是否正确管理共享资源�
 ms.assetid: FBB75F07-E689-4B7C-B053-E0B6A3772764
 ms.date: 05/21/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: b402aed91201422b32c4ee752c89ee5589ccb393
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 22b4f4b285748083118972cc6b979e969d0f1049
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89384111"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90103402"
 ---
 # <a name="locking-rule-set-storport"></a>锁定规则集 (Storport)
 
@@ -33,18 +33,18 @@ ms.locfileid: "89384111"
 <tbody>
 <tr class="odd">
 <td align="left"><p><a href="storport-cancelspinlock.md" data-raw-source="[&lt;strong&gt;CancelSpinLock&lt;/strong&gt;](storport-cancelspinlock.md)"><strong>CancelSpinLock</strong></a></p></td>
-<td align="left"><p><a href="storport-cancelspinlock.md" data-raw-source="[&lt;strong&gt;CancelSpinLock Rule (Storport)&lt;/strong&gt;](storport-cancelspinlock.md)"><strong>CancelSpinLock 规则 (Storport) </strong></a>规则验证对<a href="https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff548196(v=vs.85)" data-raw-source="[&lt;strong&gt;IoAcquireCancelSpinLock&lt;/strong&gt;](/previous-versions/windows/hardware/drivers/ff548196(v=vs.85))"><strong>IoAcquireCancelSpinLock</strong></a>的每个调用是否立即后跟对<a href="https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff549550(v=vs.85)" data-raw-source="[&lt;strong&gt;IoReleaseCancelSpinLock&lt;/strong&gt;](/previous-versions/windows/hardware/drivers/ff549550(v=vs.85))"><strong>IoReleaseCancelSpinLock</strong></a>的调用。</p></td>
+<td align="left"><p><a href="storport-cancelspinlock.md" data-raw-source="[&lt;strong&gt;CancelSpinLock Rule (Storport)&lt;/strong&gt;](storport-cancelspinlock.md)"><strong>CancelSpinLock 规则 (Storport) </strong></a>规则验证对<a href="/previous-versions/windows/hardware/drivers/ff548196(v=vs.85)" data-raw-source="[&lt;strong&gt;IoAcquireCancelSpinLock&lt;/strong&gt;](/previous-versions/windows/hardware/drivers/ff548196(v=vs.85))"><strong>IoAcquireCancelSpinLock</strong></a>的每个调用是否立即后跟对<a href="/previous-versions/windows/hardware/drivers/ff549550(v=vs.85)" data-raw-source="[&lt;strong&gt;IoReleaseCancelSpinLock&lt;/strong&gt;](/previous-versions/windows/hardware/drivers/ff549550(v=vs.85))"><strong>IoReleaseCancelSpinLock</strong></a>的调用。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><a href="storport-queuedspinlock.md" data-raw-source="[&lt;strong&gt;QueuedSpinLock&lt;/strong&gt;](storport-queuedspinlock.md)"><strong>QueuedSpinLock</strong></a></p></td>
-<td align="left"><p><a href="storport-queuedspinlock.md" data-raw-source="[&lt;strong&gt;QueuedSpinLock&lt;/strong&gt;](storport-queuedspinlock.md)"><strong>QueuedSpinLock</strong></a>规则验证如何使用<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kereleaseinstackqueuedspinlock" data-raw-source="[&lt;strong&gt;KeReleaseInStackQueuedSpinLock&lt;/strong&gt;](/windows-hardware/drivers/ddi/wdm/nf-wdm-kereleaseinstackqueuedspinlock)"><strong>KeReleaseInStackQueuedSpinLock</strong></a>立即释放使用<a href="https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff551899(v=vs.85)" data-raw-source="[&lt;strong&gt;KeAcquireInStackQueuedSpinLock&lt;/strong&gt;](/previous-versions/windows/hardware/drivers/ff551899(v=vs.85))"><strong>KeAcquireInStackQueuedSpinLock</strong></a>获取的堆栈内排队自旋锁。 此外，在调度或取消例程结束时，驱动程序不应持有任何锁。</p></td>
+<td align="left"><p><a href="storport-queuedspinlock.md" data-raw-source="[&lt;strong&gt;QueuedSpinLock&lt;/strong&gt;](storport-queuedspinlock.md)"><strong>QueuedSpinLock</strong></a>规则验证如何使用<a href="/windows-hardware/drivers/ddi/wdm/nf-wdm-kereleaseinstackqueuedspinlock" data-raw-source="[&lt;strong&gt;KeReleaseInStackQueuedSpinLock&lt;/strong&gt;](/windows-hardware/drivers/ddi/wdm/nf-wdm-kereleaseinstackqueuedspinlock)"><strong>KeReleaseInStackQueuedSpinLock</strong></a>立即释放使用<a href="/previous-versions/windows/hardware/drivers/ff551899(v=vs.85)" data-raw-source="[&lt;strong&gt;KeAcquireInStackQueuedSpinLock&lt;/strong&gt;](/previous-versions/windows/hardware/drivers/ff551899(v=vs.85))"><strong>KeAcquireInStackQueuedSpinLock</strong></a>获取的堆栈内排队自旋锁。 此外，在调度或取消例程结束时，驱动程序不应持有任何锁。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="storport-queuedspinlockrelease.md" data-raw-source="[&lt;strong&gt;QueuedSpinLockRelease&lt;/strong&gt;](storport-queuedspinlockrelease.md)"><strong>QueuedSpinLockRelease</strong></a></p></td>
 <td align="left"><p>此规则验证驱动程序在未首先通过<strong>KeAcquireInStackQueuedSpinLock</strong>获取锁定的情况下不会调用<strong>KeReleaseInStackQueuedSpinLock</strong> 。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="storport-spinlock.md" data-raw-source="[&lt;strong&gt;SpinLock&lt;/strong&gt;](storport-spinlock.md)"><strong>SpinLock</strong></a></p></td>
+<td align="left"><p><a href="storport-spinlock.md" data-raw-source="[&lt;strong&gt;SpinLock&lt;/strong&gt;](storport-spinlock.md)"><strong>旋转锁</strong></a></p></td>
 <td align="left"><p>此规则验证是否立即调用 <strong>KeAcquireSpinLock</strong> ，然后调用 <strong>KeReleaseSpinlock</strong>。 如果驱动程序在释放锁之前再次调用 <strong>KeAcquireSpinLockRaiseToDpc</strong> 或 <strong>KeAcquireSpinLock</strong> ，则该规则将失败。 此外，在退出调度或取消例程之前，驱动程序必须释放旋转锁。</p></td>
 </tr>
 <tr class="odd">
@@ -61,7 +61,7 @@ ms.locfileid: "89384111"
 </tr>
 <tr class="even">
 <td align="left"><p><a href="storport-storportmsilock.md" data-raw-source="[&lt;strong&gt;StorPortMSILock&lt;/strong&gt;](storport-storportmsilock.md)"><strong>StorPortMSILock</strong></a></p></td>
-<td align="left"><p>当且仅当<a href="https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff563901(v=vs.85)" data-raw-source="[&lt;strong&gt;PORT_CONFIGURATION_INFORMATION (Storport)&lt;/strong&gt;](/previous-versions/windows/hardware/drivers/ff563901(v=vs.85))"><strong>PORT_CONFIGURATION_INFORMATION (Storport) </strong></a>结构的 " <strong>InterruptSynchronizationMode</strong> " 成员设置为 " <strong>InterruptSynchronizePerMessage</strong>" 时，才需要使用微型端口驱动程序获取该消息的 MSI 旋转锁。 此规则验证当同步模式为<strong>InterruptSynchronizePerMessage</strong>时，是否仅对<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/storport/nf-storport-storportacquiremsispinlock" data-raw-source="[&lt;strong&gt;StorPortAcquireMSISpinLock&lt;/strong&gt;](/windows-hardware/drivers/ddi/storport/nf-storport-storportacquiremsispinlock)"><strong>StorPortAcquireMSISpinLock</strong></a>进行调用。</p></td>
+<td align="left"><p>当且仅当<a href="/previous-versions/windows/hardware/drivers/ff563901(v=vs.85)" data-raw-source="[&lt;strong&gt;PORT_CONFIGURATION_INFORMATION (Storport)&lt;/strong&gt;](/previous-versions/windows/hardware/drivers/ff563901(v=vs.85))"><strong>PORT_CONFIGURATION_INFORMATION (Storport) </strong></a>结构的 " <strong>InterruptSynchronizationMode</strong> " 成员设置为 " <strong>InterruptSynchronizePerMessage</strong>" 时，才需要使用微型端口驱动程序获取该消息的 MSI 旋转锁。 此规则验证当同步模式为<strong>InterruptSynchronizePerMessage</strong>时，是否仅对<a href="/windows-hardware/drivers/ddi/storport/nf-storport-storportacquiremsispinlock" data-raw-source="[&lt;strong&gt;StorPortAcquireMSISpinLock&lt;/strong&gt;](/windows-hardware/drivers/ddi/storport/nf-storport-storportacquiremsispinlock)"><strong>StorPortAcquireMSISpinLock</strong></a>进行调用。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="storport-storportspinlock.md" data-raw-source="[&lt;strong&gt;StorPortSpinLock&lt;/strong&gt;](storport-storportspinlock.md)"><strong>StorPortSpinLock</strong></a></p></td>
@@ -69,7 +69,7 @@ ms.locfileid: "89384111"
 </tr>
 <tr class="even">
 <td align="left"><p><a href="storport-storportspinlock3.md" data-raw-source="[&lt;strong&gt;StorPortSpinLock3&lt;/strong&gt;](storport-storportspinlock3.md)"><strong>StorPortSpinLock3</strong></a></p></td>
-<td align="left"><p><a href="storport-storportspinlock3.md" data-raw-source="[&lt;strong&gt;StorPortSpinLock3&lt;/strong&gt;](storport-storportspinlock3.md)"><strong>StorPortSpinLock3</strong></a>规则验证<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/storport/nf-storport-storportacquirespinlock" data-raw-source="[&lt;strong&gt;StorPortAcquireSpinLock&lt;/strong&gt;](/windows-hardware/drivers/ddi/storport/nf-storport-storportacquirespinlock)"><strong>StorPortAcquireSpinLock</strong></a>例程的文档中描述的锁获取层次结构。</p></td>
+<td align="left"><p><a href="storport-storportspinlock3.md" data-raw-source="[&lt;strong&gt;StorPortSpinLock3&lt;/strong&gt;](storport-storportspinlock3.md)"><strong>StorPortSpinLock3</strong></a>规则验证<a href="/windows-hardware/drivers/ddi/storport/nf-storport-storportacquirespinlock" data-raw-source="[&lt;strong&gt;StorPortAcquireSpinLock&lt;/strong&gt;](/windows-hardware/drivers/ddi/storport/nf-storport-storportacquirespinlock)"><strong>StorPortAcquireSpinLock</strong></a>例程的文档中描述的锁获取层次结构。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="storport-storportspinlock4.md" data-raw-source="[&lt;strong&gt;StorPortSpinLock4&lt;/strong&gt;](storport-storportspinlock4.md)"><strong>StorPortSpinLock4</strong></a></p></td>
@@ -93,6 +93,4 @@ ms.locfileid: "89384111"
     ```
 
     有关详细信息，请参阅 [使用静态驱动程序验证器查找驱动程序中的缺陷](./using-static-driver-verifier-to-find-defects-in-drivers.md) 和 [静态驱动程序验证程序命令 (MSBuild) ](./-static-driver-verifier-commands--msbuild-.md)。
-
- 
 

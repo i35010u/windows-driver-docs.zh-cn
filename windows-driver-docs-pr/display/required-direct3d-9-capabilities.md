@@ -4,12 +4,12 @@ ms.assetid: AE8ED273-2329-4E53-9FCD-5A8E863AED83
 description: 用户模式驱动程序访问 Direct3D 9 功能所需的功能。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fc73e872930a75cfac2b61e10b1b1051f22ac05c
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 285f05daf3d59d3089f8a23e350bafbcb928fda5
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89067234"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90104030"
 ---
 # <a name="required-direct3d-9-capabilities"></a>必需的 Direct3D 9 功能
 
@@ -26,7 +26,7 @@ ms.locfileid: "89067234"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left"><a href="https://docs.microsoft.com/windows/desktop/api/d3d9caps/ns-d3d9caps-_d3dcaps9" data-raw-source="[&lt;strong&gt;D3DCAPS9&lt;/strong&gt;](/windows/desktop/api/d3d9caps/ns-d3d9caps-_d3dcaps9)"><strong>D3DCAPS9</strong></a> 成员</th>
+<th align="left"><a href="/windows/desktop/api/d3d9caps/ns-d3d9caps-_d3dcaps9" data-raw-source="[&lt;strong&gt;D3DCAPS9&lt;/strong&gt;](/windows/desktop/api/d3d9caps/ns-d3d9caps-_d3dcaps9)"><strong>D3DCAPS9</strong></a> 成员</th>
 <th align="left">标志值</th>
 </tr>
 </thead>
@@ -190,7 +190,7 @@ ms.locfileid: "89067234"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left"><a href="https://docs.microsoft.com/windows/desktop/api/d3d9caps/ns-d3d9caps-_d3dcaps9" data-raw-source="[&lt;strong&gt;D3DCAPS9&lt;/strong&gt;](/windows/desktop/api/d3d9caps/ns-d3d9caps-_d3dcaps9)"><strong>D3DCAPS9</strong></a> 成员</th>
+<th align="left"><a href="/windows/desktop/api/d3d9caps/ns-d3d9caps-_d3dcaps9" data-raw-source="[&lt;strong&gt;D3DCAPS9&lt;/strong&gt;](/windows/desktop/api/d3d9caps/ns-d3d9caps-_d3dcaps9)"><strong>D3DCAPS9</strong></a> 成员</th>
 <th align="left">标志值</th>
 </tr>
 </thead>
@@ -265,7 +265,7 @@ ms.locfileid: "89067234"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left"><a href="https://docs.microsoft.com/windows/desktop/api/d3d9caps/ns-d3d9caps-_d3dcaps9" data-raw-source="[&lt;strong&gt;D3DCAPS9&lt;/strong&gt;](/windows/desktop/api/d3d9caps/ns-d3d9caps-_d3dcaps9)"><strong>D3DCAPS9</strong></a> 成员</th>
+<th align="left"><a href="/windows/desktop/api/d3d9caps/ns-d3d9caps-_d3dcaps9" data-raw-source="[&lt;strong&gt;D3DCAPS9&lt;/strong&gt;](/windows/desktop/api/d3d9caps/ns-d3d9caps-_d3dcaps9)"><strong>D3DCAPS9</strong></a> 成员</th>
 <th align="left">标志值</th>
 </tr>
 </thead>
@@ -325,8 +325,6 @@ ms.locfileid: "89067234"
  
 
 **注意** D3DVS **VertexShaderVersion** \_ 版本 (3，0) 的 VertexShaderVersion 值保证实例化支持。 Direct3D 10Level 9 不公开着色器模型3.0。
-
- 
 
  
 

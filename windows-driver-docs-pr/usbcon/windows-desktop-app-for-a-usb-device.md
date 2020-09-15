@@ -3,12 +3,12 @@ description: 了解应用程序如何调用 WinUSB 函数以与 USB 设备进行
 title: USB 设备的 Windows 桌面应用
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 28152129b40efce2f9252e2d0f7399bc0a96965d
-ms.sourcegitcommit: 937974aa9bbe0262a7ffe9631593fab48c4e7492
+ms.openlocfilehash: d91f680b5d9a9e3fcf0df35ccd6c345e0e35ce92
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "90010237"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90102824"
 ---
 # <a name="windows-desktop-app-for-a-usb-device"></a>USB 设备的 Windows 桌面应用
 
@@ -69,7 +69,7 @@ Winusb.dll 使用应用程序提供的数据来构造相应的设备 i/o 控制�
 <td><p>你可以通过以下两种方式之一编写你的第一个应用：</p>
 <ul>
 <li><p>基于包含在 Visual Studio 中的 WinUSB 模板编写你的应用程序。 有关详细信息，请参阅 <a href="how-to-write-a-windows-desktop-app-that-communicates-with-a-usb-device.md" data-raw-source="[Write a Windows desktop app based on the WinUSB template](how-to-write-a-windows-desktop-app-that-communicates-with-a-usb-device.md)">基于 WinUSB 模板编写 Windows 桌面应用</a>。</p></li>
-<li><p>调用 <a href="/windows-hardware/drivers/install/setupapi" data-raw-source="[SetupAPI](/windows-hardware/drivers/install/setupapi)">setupapi.log</a> 例程以获取设备的句柄，并通过调用 <a href="https://docs.microsoft.com/windows/desktop/api/winusb/nf-winusb-winusb_initialize" data-raw-source="[&lt;strong&gt;WinUsb_Initialize&lt;/strong&gt;](/windows/desktop/api/winusb/nf-winusb-winusb_initialize)"><strong>WinUsb_Initialize</strong></a>将其打开。 有关详细信息，请参阅 <a href="using-winusb-api-to-communicate-with-a-usb-device.md" data-raw-source="[How to Access a USB Device by Using WinUSB Functions](using-winusb-api-to-communicate-with-a-usb-device.md)">如何使用 WinUSB 功能访问 USB 设备</a>。</p></li>
+<li><p>调用 <a href="/windows-hardware/drivers/install/setupapi" data-raw-source="[SetupAPI](../install/setupapi.md)">setupapi.log</a> 例程以获取设备的句柄，并通过调用 <a href="/windows/desktop/api/winusb/nf-winusb-winusb_initialize" data-raw-source="[&lt;strong&gt;WinUsb_Initialize&lt;/strong&gt;](/windows/desktop/api/winusb/nf-winusb-winusb_initialize)"><strong>WinUsb_Initialize</strong></a>将其打开。 有关详细信息，请参阅 <a href="using-winusb-api-to-communicate-with-a-usb-device.md" data-raw-source="[How to Access a USB Device by Using WinUSB Functions](using-winusb-api-to-communicate-with-a-usb-device.md)">如何使用 WinUSB 功能访问 USB 设备</a>。</p></li>
 </ul></td>
 </tr>
 <tr class="even">

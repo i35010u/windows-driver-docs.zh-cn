@@ -11,12 +11,12 @@ keywords:
 - 可选标准例程 WDK 内核
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 61d4f1e0fffba8905552a3eaaa78ec38482baade
-ms.sourcegitcommit: 4f08f5686c0bbc27d58930b993cbab1a98e3afb0
+ms.openlocfilehash: 43baf86d2aa056e09bb540a7ef33d03c52c7a9b0
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/03/2020
-ms.locfileid: "89443729"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90102860"
 ---
 # <a name="introduction-to-standard-driver-routines"></a>标准驱动程序例程简介
 
@@ -43,23 +43,23 @@ ms.locfileid: "89443729"
 <thead>
 <tr class="header">
 <th>必需的标准驱动程序例程</th>
-<th>用途</th>
+<th>目的</th>
 <th>描述位置</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><p><strong><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_initialize">DriverEntry</a></strong></p></td>
+<td><p><strong><a href="/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_initialize">DriverEntry</a></strong></p></td>
 <td><p>初始化驱动程序及其驱动程序对象。</p></td>
 <td><p><a href="writing-a-driverentry-routine.md" data-raw-source="[Writing a DriverEntry Routine](writing-a-driverentry-routine.md)">编写 DriverEntry 例程</a></p></td>
 </tr>
 <tr class="even">
-<td><p><em><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_add_device">AddDevice</a></em></p></td>
+<td><p><em><a href="/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_add_device">AddDevice</a></em></p></td>
 <td><p>初始化设备并创建设备对象。</p></td>
 <td><p><a href="writing-an-adddevice-routine.md" data-raw-source="[Writing an AddDevice Routine](writing-an-adddevice-routine.md)">编写 AddDevice 例程</a></p></td>
 </tr>
 <tr class="odd">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/kernel/dispatchcreate--dispatchclose--and-dispatchcreateclose-routines">Dispatch 例程</a></p></td>
+<td><p><a href="/windows-hardware/drivers/kernel/dispatchcreate--dispatchclose--and-dispatchcreateclose-routines">Dispatch 例程</a></p></td>
 <td><p>接收和处理 Irp。</p></td>
 <td><p><a href="writing-dispatch-routines.md" data-raw-source="[Writing Dispatch Routines](writing-dispatch-routines.md)">编写 Dispatch 例程</a></p></td>
 </tr>
@@ -82,7 +82,7 @@ ms.locfileid: "89443729"
 <thead>
 <tr class="header">
 <th>可选标准驱动程序例程</th>
-<th>用途</th>
+<th>目的</th>
 <th>描述位置</th>
 </tr>
 </thead>
@@ -105,7 +105,7 @@ ms.locfileid: "89443729"
 <tr class="even">
 <td><p>延迟的过程调用</p></td>
 <td><p>在 ISR 保存设备状态之后完成设备中断的处理。</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/kernel/introduction-to-dpc-objects">DPC 对象和 DPC</a></p></td>
+<td><p><a href="/windows-hardware/drivers/kernel/introduction-to-dpc-objects">DPC 对象和 DPC</a></p></td>
 </tr>
 <tr class="odd">
 <td><p><em>SynchCritSection</em></p></td>
@@ -115,7 +115,7 @@ ms.locfileid: "89443729"
 <tr class="even">
 <td><p><em>AdapterControl</em></p></td>
 <td><p>启动 DMA 操作。</p></td>
-<td><p><a href="adapter-objects-and-dma.md" data-raw-source="[Adapter Objects and DMA](./introduction-to-adapter-objects.md)">适配器对象和 DMA</a></p></td>
+<td><p><a href="/windows-hardware/drivers/kernel/introduction-to-adapter-objects" data-raw-source="[Adapter Objects and DMA](./introduction-to-adapter-objects.md)">适配器对象和 DMA</a></p></td>
 </tr>
 <tr class="odd">
 <td><p><em>IoCompletion</em></p></td>
@@ -130,7 +130,7 @@ ms.locfileid: "89443729"
 <tr class="odd">
 <td><p><em>CustomTimerDpc</em>、 <em>IoTimer</em></p></td>
 <td><p>计时和同步事件。</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/kernel/introduction-to-kernel-dispatcher-objects">同步技术</a></p></td>
+<td><p><a href="/windows-hardware/drivers/kernel/introduction-to-kernel-dispatcher-objects">同步技术</a></p></td>
 </tr>
 </tbody>
 </table>
@@ -140,6 +140,4 @@ ms.locfileid: "89443729"
 当前 IRP 和目标设备对象是许多标准例程的输入参数。 每个驱动程序都通过其一组标准例程处理每个 IRP。
 
 按照约定，系统提供的驱动程序会在除 **DriverEntry**之外的每个标准例程的名称前面预置标识、驱动程序特定的或特定于设备的前缀。 例如，本文档使用 "DD"，如 [驱动程序对象简介](introduction-to-driver-objects.md)中所示。 遵循此约定可以更轻松地调试和维护驱动程序。
-
- 
 

@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 96fcc69095f257613d49213703d97894d7b74215
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: fb0cce571ab7a1c7c6509394342ad8f85d95cc04
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89186585"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90102734"
 ---
 # <a name="ksproperty_display_adapter_guid"></a>KSPROPERTY \_ 显示 \_ 适配器 \_ GUID
 
@@ -52,7 +52,7 @@ KSPROPERTY \_ 显示 \_ 适配器 \_ guid 属性从捕获微型驱动程序返�
 <td><p>是</p></td>
 <td><p>否</p></td>
 <td><p>Pin</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)"><strong>KSPROPERTY</strong></a></p></td>
+<td><p><a href="/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)"><strong>KSPROPERTY</strong></a></p></td>
 <td><p>GUID</p></td>
 </tr>
 </tbody>
@@ -64,7 +64,7 @@ KSPROPERTY \_ 显示 \_ 适配器 \_ guid 属性从捕获微型驱动程序返�
 
 KSPROPERTY \_ 显示 \_ 适配器 \_ GUID 属性返回状态 " \_ 成功" 以指示已成功完成。 如果属性类型值不正确，则返回 STATUS \_ 无效 \_ 参数。
 
-<a name="remarks"></a>注解
+<a name="remarks"></a>备注
 -------
 
 微型驱动程序应返回 GPU 上第一个头的适配器标识符。
@@ -83,16 +83,14 @@ AVStream 将此 GUID 与下游呈现器 pin 的 GUID 相匹配，以验证捕获
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Header</p></td>
+<td><p>标头</p></td>
 <td>Ksmedia (包含 Ksmedia) </td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
 [**KSPROPERTY**](/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)
-
- 
 

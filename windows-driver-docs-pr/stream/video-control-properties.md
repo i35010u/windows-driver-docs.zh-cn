@@ -8,12 +8,12 @@ keywords:
 - PROPSETID_VIDCAP_VIDEOCONTROL
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 768355d6f512a74750799b345757f47cbee3c222
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 0555c4a26b99ea0f32c08a605233a4e72500641f
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89184331"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90103860"
 ---
 # <a name="video-control-properties"></a>视频控件属性
 
@@ -33,25 +33,23 @@ ms.locfileid: "89184331"
 </thead>
 <tbody>
 <tr class="odd">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-videocontrol-caps" data-raw-source="[&lt;strong&gt;KSPROPERTY_VIDEOCONTROL_CAPS&lt;/strong&gt;](./ksproperty-videocontrol-caps.md)"><strong>KSPROPERTY_VIDEOCONTROL_CAPS</strong></a></p></td>
+<td><p><a href="/windows-hardware/drivers/stream/ksproperty-videocontrol-caps" data-raw-source="[&lt;strong&gt;KSPROPERTY_VIDEOCONTROL_CAPS&lt;/strong&gt;](./ksproperty-videocontrol-caps.md)"><strong>KSPROPERTY_VIDEOCONTROL_CAPS</strong></a></p></td>
 <td><p>返回有关视频流功能的信息，如图像方向和从流中触发视频帧。</p></td>
 </tr>
 <tr class="even">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-videocontrol-actual-frame-rate" data-raw-source="[&lt;strong&gt;KSPROPERTY_VIDEOCONTROL_ACTUAL_FRAME_RATE&lt;/strong&gt;](./ksproperty-videocontrol-actual-frame-rate.md)"><strong>KSPROPERTY_VIDEOCONTROL_ACTUAL_FRAME_RATE</strong></a></p></td>
+<td><p><a href="/windows-hardware/drivers/stream/ksproperty-videocontrol-actual-frame-rate" data-raw-source="[&lt;strong&gt;KSPROPERTY_VIDEOCONTROL_ACTUAL_FRAME_RATE&lt;/strong&gt;](./ksproperty-videocontrol-actual-frame-rate.md)"><strong>KSPROPERTY_VIDEOCONTROL_ACTUAL_FRAME_RATE</strong></a></p></td>
 <td><p>返回硬件正在流式传输特定 pin 的视频的实际帧速率。</p></td>
 </tr>
 <tr class="odd">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-videocontrol-frame-rates" data-raw-source="[&lt;strong&gt;KSPROPERTY_VIDEOCONTROL_FRAME_RATES&lt;/strong&gt;](./ksproperty-videocontrol-frame-rates.md)"><strong>KSPROPERTY_VIDEOCONTROL_FRAME_RATES</strong></a></p></td>
+<td><p><a href="/windows-hardware/drivers/stream/ksproperty-videocontrol-frame-rates" data-raw-source="[&lt;strong&gt;KSPROPERTY_VIDEOCONTROL_FRAME_RATES&lt;/strong&gt;](./ksproperty-videocontrol-frame-rates.md)"><strong>KSPROPERTY_VIDEOCONTROL_FRAME_RATES</strong></a></p></td>
 <td><p>返回设备可用于传输视频的可用帧速率的数目。</p></td>
 </tr>
 <tr class="even">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-videocontrol-mode" data-raw-source="[&lt;strong&gt;KSPROPERTY_VIDEOCONTROL_MODE&lt;/strong&gt;](./ksproperty-videocontrol-mode.md)"><strong>KSPROPERTY_VIDEOCONTROL_MODE</strong></a></p></td>
+<td><p><a href="/windows-hardware/drivers/stream/ksproperty-videocontrol-mode" data-raw-source="[&lt;strong&gt;KSPROPERTY_VIDEOCONTROL_MODE&lt;/strong&gt;](./ksproperty-videocontrol-mode.md)"><strong>KSPROPERTY_VIDEOCONTROL_MODE</strong></a></p></td>
 <td><p>控制视频流的模式，例如图像翻转和触发从流中获取视频帧。</p></td>
 </tr>
 </tbody>
 </table>
-
- 
 
  
 

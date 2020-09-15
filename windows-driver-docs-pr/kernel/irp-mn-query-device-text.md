@@ -6,12 +6,12 @@ ms.assetid: 07661709-8929-4567-a05f-96d995862ee6
 keywords:
 - IRP_MN_QUERY_DEVICE_TEXT 内核模式驱动程序体系结构
 ms.localizationpriority: medium
-ms.openlocfilehash: d8bd10fc24647e1e0680a867bc9267da037d7599
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 5b4477a6b46db1421ccf629a1a144800e7aff2f1
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89185141"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90103150"
 ---
 # <a name="irp_mn_query_device_text"></a>IRP \_ MN \_ 查询 \_ 设备 \_ 文本
 
@@ -20,7 +20,7 @@ PnP 管理器使用此 IRP 获取设备的说明或位置信息。
 
 如果总线支持此信息，则总线驱动程序必须为其子设备处理此请求。 函数和筛选器驱动程序不处理此 IRP。
 
-## <a name="value"></a>值
+## <a name="value"></a>“值”
 
 0x0C
 
@@ -70,7 +70,7 @@ PnP 管理器在 \_ 任意线程上下文中以 IRQL 被动级别发送此 IRP�
 
 支持不同区域设置的不同文本字符串的总线驱动程序应能够处理设备未显式支持的语言的请求。 在这种情况下，总线驱动程序应返回与区域设置最接近的匹配项，或者应回退并返回某些合适的受支持的区域设置字符串。
 
-请参阅 [即插即用](https://docs.microsoft.com/windows-hardware/drivers/kernel/implementing-plug-and-play) ，了解用于处理 [即插即用次要 irp](plug-and-play-minor-irps.md)的一般规则。
+请参阅 [即插即用](./introduction-to-plug-and-play.md) ，了解用于处理 [即插即用次要 irp](plug-and-play-minor-irps.md)的一般规则。
 
 **正在发送此 IRP**
 

@@ -4,12 +4,12 @@ description: 若要管理串行控制器，请编写一个串行控制器驱动�
 ms.assetid: 67045E19-4EE1-4C31-A842-858E9A90233E
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ed8df9bb0fd0e61837ad067080aec763a5f87003
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 31edb40128c008dea50f16048a352802508e4385
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89190299"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90103128"
 ---
 # <a name="serial-controller-driver-design-for-sercx2"></a>SerCx2 串行控制器驱动程序设计
 
@@ -25,7 +25,7 @@ ms.locfileid: "89190299"
 <thead>
 <tr class="header">
 <th>主题</th>
-<th>描述</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>
@@ -35,7 +35,7 @@ ms.locfileid: "89190299"
 </tr>
 <tr class="even">
 <td><p><a href="sercx2-i-o-transactions.md" data-raw-source="[SerCx2 I/O Transactions](sercx2-i-o-transactions.md)">SerCx2 I/O 事务</a></p></td>
-<td><p>SerCx2 简化了读取 (的处理 <a href="https://docs.microsoft.com/previous-versions/ff546883(v=vs.85)" data-raw-source="[&lt;strong&gt;IRP_MJ_READ&lt;/strong&gt;](/previous-versions/ff546883(v=vs.85))"><strong>IRP_MJ_READ</strong></a>) 并 (<a href="https://docs.microsoft.com/previous-versions/ff546904(v=vs.85)" data-raw-source="[&lt;strong&gt;IRP_MJ_WRITE&lt;/strong&gt;](/previous-versions/ff546904(v=vs.85))"><strong>IRP_MJ_WRITE</strong></a> 串行控制器驱动程序的) 请求。 为了响应读取或写入请求，SerCx2 向串行控制器驱动程序发出一个或多个 i/o 事务。 从驱动程序的角度来看，每个事务都是一个简单且完整的 i/o 操作。</p></td>
+<td><p>SerCx2 简化了读取 (的处理 <a href="/previous-versions/ff546883(v=vs.85)" data-raw-source="[&lt;strong&gt;IRP_MJ_READ&lt;/strong&gt;](/previous-versions/ff546883(v=vs.85))"><strong>IRP_MJ_READ</strong></a>) 并 (<a href="/previous-versions/ff546904(v=vs.85)" data-raw-source="[&lt;strong&gt;IRP_MJ_WRITE&lt;/strong&gt;](/previous-versions/ff546904(v=vs.85))"><strong>IRP_MJ_WRITE</strong></a> 串行控制器驱动程序的) 请求。 为了响应读取或写入请求，SerCx2 向串行控制器驱动程序发出一个或多个 i/o 事务。 从驱动程序的角度来看，每个事务都是一个简单且完整的 i/o 操作。</p></td>
 </tr>
 </tbody>
 </table>

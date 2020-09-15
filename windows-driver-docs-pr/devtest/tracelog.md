@@ -10,12 +10,12 @@ keywords:
 - 跟踪会话管理 WDK Tracelog
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c451004c923ded65b0ad09763acb0aa005aaf1c1
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 8780490725839b794e36c564a8975cc72ca39461
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89384869"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90103204"
 ---
 # <a name="tracelog"></a>Tracelog
 
@@ -33,7 +33,7 @@ Tracelog ( # A0) 是在命令提示符窗口中运行的事件跟踪控制器。
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>安装 WDK、Visual Studio 和桌面应用的 Windows SDK 时，将包含 Tracelog ( # A0) 。 有关下载套件的信息，请参阅 <a href="https://docs.microsoft.com/windows-hardware/drivers/download-the-wdk" data-raw-source="[Windows Hardware Downloads](../download-the-wdk.md)">Windows 硬件下载</a>。</p>
+<td align="left"><p>安装 WDK、Visual Studio 和桌面应用的 Windows SDK 时，将包含 Tracelog ( # A0) 。 有关下载套件的信息，请参阅 <a href="/windows-hardware/drivers/download-the-wdk" data-raw-source="[Windows Hardware Downloads](../download-the-wdk.md)">Windows 硬件下载</a>。</p>
 <p><strong>Windows 驱动程序工具包 (WDK) 8</strong> (安装路径) </p>
 <p>% WindowsSdkDir% \tools\x64\tracelog.exe</p>
 <p>% WindowsSdkDir% \tools\x86\tracelog.exe</p>

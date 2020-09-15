@@ -8,12 +8,12 @@ keywords:
 - 错误 WDK PREfast 驱动程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: efcb0ff623276522b783d6f3d5b33b8d0e6cf6ab
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: ec673ca34c5376cc90b75cb2d1f2776aa545a75f
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89382997"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90101498"
 ---
 # <a name="code-analysis-for-drivers-warnings"></a>驱动程序的代码分析警告
 
@@ -438,11 +438,11 @@ ms.locfileid: "89382997"
 </tr>
 <tr class="even">
 <td align="left"><p><a href="30032-forcing-request-of-executable-memory.md" data-raw-source="[C30032](30032-forcing-request-of-executable-memory.md)">C30032</a></p></td>
-<td align="left"><p>警告 C30032：调用内存分配函数并通过使用 <a href="https://docs.microsoft.com/windows-hardware/drivers/kernel/selective-opt-out-pool-nx-optout" data-raw-source="[POOL_NX_OPTOUT](../kernel/selective-opt-out-pool-nx-optout.md)">POOL_NX_OPTOUT</a> 指令强制执行可执行内存请求</p></td>
+<td align="left"><p>警告 C30032：调用内存分配函数并通过使用 <a href="/windows-hardware/drivers/kernel/selective-opt-out-pool-nx-optout" data-raw-source="[POOL_NX_OPTOUT](../kernel/selective-opt-out-pool-nx-optout.md)">POOL_NX_OPTOUT</a> 指令强制执行可执行内存请求</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="30033-executable-allocation-detected-with-pool-nx-optin.md" data-raw-source="[C30033](30033-executable-allocation-detected-with-pool-nx-optin.md)">C30033</a></p></td>
-<td align="left"><p>警告 C30033：在使用 <a href="https://docs.microsoft.com/windows-hardware/drivers/kernel/single-binary-opt-in-pool-nx-optin" data-raw-source="[POOL_NX_OPTIN](../kernel/single-binary-opt-in-pool-nx-optin.md)">POOL_NX_OPTIN</a>编译的驱动程序中检测到可执行分配。 已确定此驱动程序在运行时由另一个驱动程序加载。 请验证加载驱动程序是否在其 DriverEntry 中调用了 <strong>ExInitializeDriverRuntime (<em>DrvRtPoolNxOptIn</em>) </strong> 。</p></td>
+<td align="left"><p>警告 C30033：在使用 <a href="/windows-hardware/drivers/kernel/single-binary-opt-in-pool-nx-optin" data-raw-source="[POOL_NX_OPTIN](../kernel/single-binary-opt-in-pool-nx-optin.md)">POOL_NX_OPTIN</a>编译的驱动程序中检测到可执行分配。 已确定此驱动程序在运行时由另一个驱动程序加载。 请验证加载驱动程序是否在其 DriverEntry 中调用了 <strong>ExInitializeDriverRuntime (<em>DrvRtPoolNxOptIn</em>) </strong> 。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><a href="30034-passing-flag-value-to-allocating-function.md" data-raw-source="[C30034](30034-passing-flag-value-to-allocating-function.md)">C30034</a></p></td>
@@ -454,8 +454,6 @@ ms.locfileid: "89382997"
 </tr>
 </tbody>
 </table>
-
- 
 
  
 

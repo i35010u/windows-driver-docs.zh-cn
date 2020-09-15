@@ -20,12 +20,12 @@ keywords:
 - UmdfDispatcher INF 指令 WDK UMDF，语法
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1ca15e11650b0c930664c498e644b8a4edcbe700
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 2e082e767ee7fe42dbcd08aee7652a22dce21cf8
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89190847"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90101724"
 ---
 # <a name="specifying-wdf-directives-in-inf-files"></a>在 INF 文件中指定 WDF 指令
 
@@ -78,19 +78,19 @@ UmdfServiceOrder=UMDFSkeleton
 
 如果 **UmdfDirectHardwareAccess** 设置为 **AllowDirectHardwareAccess**，则该框架允许驱动程序使用执行直接硬件访问的 UMDF 接口。
 
-如果 UMDF 驱动程序访问硬件资源（如寄存器或端口、中断、[常规用途 i/o](https://docs.microsoft.com/windows-hardware/drivers/gpio/gpio-driver-support-overview) (GPIO) 引脚或串行总线连接，例如 I2C、SPI 和串行端口），则必须指定**AllowDirectHardwareAccess** 。 驱动程序通过其[*EvtDevicePrepareHardware*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_prepare_hardware)回调函数的*ResourcesRaw*和*ResourcesTranslated*参数接收所有这些资源。
+如果 UMDF 驱动程序访问硬件资源（如寄存器或端口、中断、[常规用途 i/o](../gpio/gpio-driver-support-overview.md) (GPIO) 引脚或串行总线连接，例如 I2C、SPI 和串行端口），则必须指定**AllowDirectHardwareAccess** 。 驱动程序通过其[*EvtDevicePrepareHardware*](/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_prepare_hardware)回调函数的*ResourcesRaw*和*ResourcesTranslated*参数接收所有这些资源。
 
 > [!NOTE]
-> 从 UMDF 版本2.15 开始，UMDF 驱动程序无需指定 **AllowDirectHardwareAccess** 即可在其 [*EvtDevicePrepareHardware*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_prepare_hardware) 回调例程中接收硬件资源列表。 如果未指定此项，则驱动程序将不具有使用这些资源的访问权限，但有一个例外：如果为设备分配了一个或多个 (**CmResourceTypeConnection**的连接资源) 和一个或多个中断资源 (**CmResourceTypeInterrupt**) ，则驱动程序可以从其[*EvtDevicePrepareHardware*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_prepare_hardware)回调例程 (而不是从[*EvtDriverDeviceAdd*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)) 调用[**WdfInterruptCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfinterrupt/nf-wdfinterrupt-wdfinterruptcreate) 。
+> 从 UMDF 版本2.15 开始，UMDF 驱动程序无需指定 **AllowDirectHardwareAccess** 即可在其 [*EvtDevicePrepareHardware*](/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_prepare_hardware) 回调例程中接收硬件资源列表。 如果未指定此项，则驱动程序将不具有使用这些资源的访问权限，但有一个例外：如果为设备分配了一个或多个 (**CmResourceTypeConnection**的连接资源) 和一个或多个中断资源 (**CmResourceTypeInterrupt**) ，则驱动程序可以从其[*EvtDevicePrepareHardware*](/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_prepare_hardware)回调例程 (而不是从[*EvtDriverDeviceAdd*](/windows-hardware/drivers/ddi/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)) 调用[**WdfInterruptCreate**](/windows-hardware/drivers/ddi/wdfinterrupt/nf-wdfinterrupt-wdfinterruptcreate) 。
 
  
 
 有关将 UMDF 驱动程序连接到特定类型的资源的信息，请参阅：
 
 -   [将 UMDF 驱动程序连接到 GPIO i/o 引脚](https://docs.microsoft.com/windows-hardware/drivers/gpio/connecting-a-umdf-driver-to-gpio-i-o-pins)
--   [用户模式 SPB 外设驱动程序的硬件资源](https://docs.microsoft.com/windows-hardware/drivers/spb/hardware-resources-for-user-mode-spb-peripheral-drivers)
--   [SPB 连接的外围设备的连接 ID](https://docs.microsoft.com/windows-hardware/drivers/spb/connection-ids-for-spb-connected-peripheral-devices)
--   [将 UMDF 外设驱动程序连接到串行端口](https://docs.microsoft.com/previous-versions/hh406559(v=vs.85))
+-   [用户模式 SPB 外设驱动程序的硬件资源](../spb/hardware-resources-for-user-mode-spb-peripheral-drivers.md)
+-   [SPB 连接的外围设备的连接 ID](../spb/connection-ids-for-spb-connected-peripheral-devices.md)
+-   [将 UMDF 外设驱动程序连接到串行端口](/previous-versions/hh406559(v=vs.85))
 
 如果 **UmdfDirectHardwareAccess** 设置为 **RejectDirectHardwareAccess**，则框架不允许驱动程序使用任何直接的硬件访问功能。 默认值为 **RejectDirectHardwareAccess**。
 
@@ -130,7 +130,7 @@ UMDF HID 客户端驱动程序可以将 **UmdfHostPriority** 设置为 **Priorit
 
 **UmdfImpersonationLevel** = <*级别*>  
 
-通知框架有关 UMDF 驱动程序可以具有的最大模拟级别。 **UmdfImpersonationLevel**指令是可选的;如果未指定模拟级别，则默认值为 "**标识**"。 当应用程序打开文件句柄时，应用程序可以向该驱动程序授予更高的模拟级别。 但是，驱动程序无法调用 [**IWDFIoRequest：：模拟**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiorequest-impersonate) 方法来请求大于 **UmdfImpersonationLevel** 指定的级别的模拟级别。 此指令的可能值为：
+通知框架有关 UMDF 驱动程序可以具有的最大模拟级别。 **UmdfImpersonationLevel**指令是可选的;如果未指定模拟级别，则默认值为 "**标识**"。 当应用程序打开文件句柄时，应用程序可以向该驱动程序授予更高的模拟级别。 但是，驱动程序无法调用 [**IWDFIoRequest：：模拟**](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiorequest-impersonate) 方法来请求大于 **UmdfImpersonationLevel** 指定的级别的模拟级别。 此指令的可能值为：
 
 -   **匿名**
 
@@ -140,15 +140,15 @@ UMDF HID 客户端驱动程序可以将 **UmdfHostPriority** 设置为 **Priorit
 
 -   **委托**
 
-这些值与 [**安全 \_ 模拟 \_ 级别**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/ne-wudfddi-_security_impersonation_level) 枚举中指定的值相对应。
+这些值与 [**安全 \_ 模拟 \_ 级别**](/windows-hardware/drivers/ddi/wudfddi/ne-wudfddi-_security_impersonation_level) 枚举中指定的值相对应。
 
 ## <a name="umdfmethodneitheraction"></a>UmdfMethodNeitherAction
 
 **UmdfMethodNeitherAction** = <**副本**  |  **拒绝**>  
 
-指示框架是否将接受 (**复制**) 或拒绝 () **拒绝** 设备的 i/o 请求，如果请求对象包含指定方法的 i/o 控制代码 [ \_ 不](https://docs.microsoft.com/windows-hardware/drivers/kernel/buffer-descriptions-for-i-o-control-codes) 是缓冲区访问方法，则为。 **UmdfMethodNeitherAction**指令是可选的。 如果未指定指令，则默认值为 " **拒绝**"。
+指示框架是否将接受 (**复制**) 或拒绝 () **拒绝** 设备的 i/o 请求，如果请求对象包含指定方法的 i/o 控制代码 [ \_ 不](../kernel/buffer-descriptions-for-i-o-control-codes.md) 是缓冲区访问方法，则为。 **UmdfMethodNeitherAction**指令是可选的。 如果未指定指令，则默认值为 " **拒绝**"。
 
-有关支持方法的详细信息 \_ ，请参阅基于 umdf 的驱动程序中的 "不 [使用缓冲的 i/o" 和 "直接](https://docs.microsoft.com/windows-hardware/drivers/wdf/accessing-data-buffers-in-umdf-1-x-drivers#using-neither-buffered-i-o-nor-direct-i-o-in-umdf-drivers)i/o"。
+有关支持方法的详细信息 \_ ，请参阅基于 umdf 的驱动程序中的 "不 [使用缓冲的 i/o" 和 "直接](./accessing-data-buffers-in-umdf-1-x-drivers.md#using-neither-buffered-i-o-nor-direct-i-o-in-umdf-drivers)i/o"。
 
 ## <a name="umdfdispatcher"></a>UmdfDispatcher
 
@@ -175,13 +175,13 @@ UmdfDispatcher=NativeUSB
 
 **UmdfKernelModeClientPolicy** = <**AllowKernelModeClients**  |  **RejectKernelModeClients**>  
 
-若要允许将内核模式驱动程序加载到早期 UMDF 版本中的用户模式驱动程序之上，请参阅 [早期 Umdf 版本中的内核模式客户端支持](https://docs.microsoft.com/windows-hardware/drivers/wdf/supporting-kernel-mode-clients-in-umdf-1-x-drivers#kernel-mode-client-support-in-earlier-umdf-versions)。
+若要允许将内核模式驱动程序加载到早期 UMDF 版本中的用户模式驱动程序之上，请参阅 [早期 Umdf 版本中的内核模式客户端支持](./supporting-kernel-mode-clients-in-umdf-1-x-drivers.md#kernel-mode-client-support-in-earlier-umdf-versions)。
 
 指示框架是否应允许驱动程序接收来自内核模式驱动程序的 i/o 请求。
 
 如果将 **UmdfKernelModeClientPolicy** 设置为 **AllowKernelModeClients**，则框架允许将内核模式驱动程序加载到用户模式驱动程序之上，并将来自内核模式驱动程序的 i/o 请求传递到用户模式驱动程序。
 
-如果将 **UmdfKernelModeClientPolicy** 设置为 **RejectKernelModeClients**，则框架不允许将内核模式驱动程序加载到用户模式驱动程序之上，并且它不会将任何内核模式驱动程序的 i/o 请求传递到用户模式驱动程序。 如果驱动程序的 INF 文件不包含此指令，则默认值为 **RejectKernelModeClients**。 有关详细信息，请参阅 [支持内核模式客户端](https://docs.microsoft.com/windows-hardware/drivers/wdf/supporting-kernel-mode-clients-in-umdf-1-x-drivers)。
+如果将 **UmdfKernelModeClientPolicy** 设置为 **RejectKernelModeClients**，则框架不允许将内核模式驱动程序加载到用户模式驱动程序之上，并且它不会将任何内核模式驱动程序的 i/o 请求传递到用户模式驱动程序。 如果驱动程序的 INF 文件不包含此指令，则默认值为 **RejectKernelModeClients**。 有关详细信息，请参阅 [支持内核模式客户端](./supporting-kernel-mode-clients-in-umdf-1-x-drivers.md)。
 
 
 ## <a name="umdffileobjectpolicy"></a>UmdfFileObjectPolicy
@@ -190,7 +190,7 @@ UmdfDispatcher=NativeUSB
 
 **UmdfFileObjectPolicy** = <**RejectNullAndUnknownFileObjects**  |  **AllowNullAndUnknownFileObjects**>   
 
-指示框架是否应允许处理 ([IWDFIoRequest](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-iwdfiorequest)) 的 i/o 请求，这些请求要么不与 ([IWDFFile](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-iwdffile)) 的文件对象相关联，要么与未知文件对象关联， (某个文件对象的驱动程序以前未看到其 create 请求) 。
+指示框架是否应允许处理 ([IWDFIoRequest](/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-iwdfiorequest)) 的 i/o 请求，这些请求要么不与 ([IWDFFile](/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-iwdffile)) 的文件对象相关联，要么与未知文件对象关联， (某个文件对象的驱动程序以前未看到其 create 请求) 。
 
 如果 **UmdfFileObjectPolicy** 设置为 **RejectNullAndUnknownFileObjects**，则框架不允许处理与 NULL 或未知文件对象关联的请求。
 

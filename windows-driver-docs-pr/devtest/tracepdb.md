@@ -10,12 +10,12 @@ keywords:
 - 跟踪消息格式化文件 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ad20d1510c4c0cfda1fac15d3d10dc76f378fb50
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: ddf8d371143a416d1ad41ad10ec8c244b474c673
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89384865"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90104032"
 ---
 # <a name="tracepdb"></a>Tracepdb
 
@@ -42,7 +42,7 @@ Tracepdb ( # A0) 是一个命令行工具，该工具通过从使用 WPP 软件�
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>安装 WDK、Visual Studio 和桌面应用的 Windows SDK 时，将包含 Tracepdb ( # A0) 。 有关下载套件的信息，请参阅 <a href="https://docs.microsoft.com/windows-hardware/drivers/download-the-wdk" data-raw-source="[Windows Hardware Downloads](../download-the-wdk.md)">Windows 硬件下载</a>。</p>
+<td align="left"><p>安装 WDK、Visual Studio 和桌面应用的 Windows SDK 时，将包含 Tracepdb ( # A0) 。 有关下载套件的信息，请参阅 <a href="/windows-hardware/drivers/download-the-wdk" data-raw-source="[Windows Hardware Downloads](../download-the-wdk.md)">Windows 硬件下载</a>。</p>
 <p><strong>Windows 驱动程序工具包 (WDK) 8.1</strong> (安装路径) </p>
 <p>% WindowsSdkDir% \bin\x64\Tracepdb.exe</p>
 <p>% WindowsSdkDir% \bin\x86\Tracepdb.exe</p>

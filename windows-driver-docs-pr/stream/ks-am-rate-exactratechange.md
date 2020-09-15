@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1ee8bcb79be3394dbeb9d3fad244eacf12cad189
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 6b7ab7b35067c6baa788944db5ac4b53f111c57c
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89191429"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90103566"
 ---
 # <a name="ks_am_rate_exactratechange"></a>KS \_ AM \_ 速率 \_ ExactRateChange
 
@@ -53,8 +53,8 @@ KS \_ AM \_ RATE \_ ExactRateChange 属性尚未实现。
 <td><p>是</p></td>
 <td><p>是</p></td>
 <td><p>Pin</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)"><strong>KSPROPERTY</strong></a></p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ks_am_exactratechange" data-raw-source="[&lt;strong&gt;KS_AM_ExactRateChange&lt;/strong&gt;](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ks_am_exactratechange)"><strong>KS_AM_ExactRateChange</strong></a></p></td>
+<td><p><a href="/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)"><strong>KSPROPERTY</strong></a></p></td>
+<td><p><a href="/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ks_am_exactratechange" data-raw-source="[&lt;strong&gt;KS_AM_ExactRateChange&lt;/strong&gt;](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ks_am_exactratechange)"><strong>KS_AM_ExactRateChange</strong></a></p></td>
 </tr>
 </tbody>
 </table>
@@ -88,6 +88,4 @@ KS \_ AM \_ RATE \_ ExactRateChange 属性尚未实现。
 
 
 [**KS \_ AM \_ ExactRateChange**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ks_am_exactratechange)
-
- 
 

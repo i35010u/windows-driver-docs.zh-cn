@@ -8,12 +8,12 @@ keywords:
 - PROPSETID_VIDCAP_VIDEODECODER
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5c2660e1d2a3ffdcb979ea5d89e8d2e570f1bc42
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 47a1431ee9c426da366d6211a188add85642a15c
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89192325"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90102908"
 ---
 # <a name="video-decoder-properties"></a>视频解码器属性
 
@@ -33,29 +33,27 @@ ms.locfileid: "89192325"
 </thead>
 <tbody>
 <tr class="odd">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-videodecoder-caps" data-raw-source="[&lt;strong&gt;KSPROPERTY_VIDEODECODER_CAPS&lt;/strong&gt;](./ksproperty-videodecoder-caps.md)"><strong>KSPROPERTY_VIDEODECODER_CAPS</strong></a></p></td>
+<td><p><a href="/windows-hardware/drivers/stream/ksproperty-videodecoder-caps" data-raw-source="[&lt;strong&gt;KSPROPERTY_VIDEODECODER_CAPS&lt;/strong&gt;](./ksproperty-videodecoder-caps.md)"><strong>KSPROPERTY_VIDEODECODER_CAPS</strong></a></p></td>
 <td><p>返回有关视频解码器设备功能的信息，如信号标准 (NTSC、PAL、SECAM) 和结算时间。</p></td>
 </tr>
 <tr class="even">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-videodecoder-standard" data-raw-source="[&lt;strong&gt;KSPROPERTY_VIDEODECODER_STANDARD&lt;/strong&gt;](./ksproperty-videodecoder-standard.md)"><strong>KSPROPERTY_VIDEODECODER_STANDARD</strong></a></p></td>
+<td><p><a href="/windows-hardware/drivers/stream/ksproperty-videodecoder-standard" data-raw-source="[&lt;strong&gt;KSPROPERTY_VIDEODECODER_STANDARD&lt;/strong&gt;](./ksproperty-videodecoder-standard.md)"><strong>KSPROPERTY_VIDEODECODER_STANDARD</strong></a></p></td>
 <td><p>控制当前的模拟视频标准。</p></td>
 </tr>
 <tr class="odd">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-videodecoder-status" data-raw-source="[&lt;strong&gt;KSPROPERTY_VIDEODECODER_STATUS&lt;/strong&gt;](./ksproperty-videodecoder-status.md)"><strong>KSPROPERTY_VIDEODECODER_STATUS</strong></a></p></td>
+<td><p><a href="/windows-hardware/drivers/stream/ksproperty-videodecoder-status" data-raw-source="[&lt;strong&gt;KSPROPERTY_VIDEODECODER_STATUS&lt;/strong&gt;](./ksproperty-videodecoder-status.md)"><strong>KSPROPERTY_VIDEODECODER_STATUS</strong></a></p></td>
 <td><p>返回视频解码设备的状态，例如视频信号中的行数，以及信号是否锁定。</p></td>
 </tr>
 <tr class="even">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-videodecoder-output-enable" data-raw-source="[&lt;strong&gt;KSPROPERTY_VIDEODECODER_OUTPUT_ENABLE&lt;/strong&gt;](./ksproperty-videodecoder-output-enable.md)"><strong>KSPROPERTY_VIDEODECODER_OUTPUT_ENABLE</strong></a></p></td>
+<td><p><a href="/windows-hardware/drivers/stream/ksproperty-videodecoder-output-enable" data-raw-source="[&lt;strong&gt;KSPROPERTY_VIDEODECODER_OUTPUT_ENABLE&lt;/strong&gt;](./ksproperty-videodecoder-output-enable.md)"><strong>KSPROPERTY_VIDEODECODER_OUTPUT_ENABLE</strong></a></p></td>
 <td><p>控制视频解码器的三状态输出。</p></td>
 </tr>
 <tr class="odd">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-videodecoder-vcr-timing" data-raw-source="[&lt;strong&gt;KSPROPERTY_VIDEODECODER_VCR_TIMING&lt;/strong&gt;](./ksproperty-videodecoder-vcr-timing.md)"><strong>KSPROPERTY_VIDEODECODER_VCR_TIMING</strong></a></p></td>
+<td><p><a href="/windows-hardware/drivers/stream/ksproperty-videodecoder-vcr-timing" data-raw-source="[&lt;strong&gt;KSPROPERTY_VIDEODECODER_VCR_TIMING&lt;/strong&gt;](./ksproperty-videodecoder-vcr-timing.md)"><strong>KSPROPERTY_VIDEODECODER_VCR_TIMING</strong></a></p></td>
 <td><p>控制视频解码器是使用 VCR 计时还是使用广播计时。</p></td>
 </tr>
 </tbody>
 </table>
-
- 
 
  
 

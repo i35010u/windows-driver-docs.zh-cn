@@ -4,12 +4,12 @@ description: ISCSI \_ 状态 \_ 限定符
 ms.assetid: d39ed448-5608-4f19-b49c-bbd6727e9491
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: c7d87c2d42373085a6fd011ee653ef18f60df8ac
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: ba478feeea2109d57a803ed16ff372fe03a6e3f1
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89187831"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90102950"
 ---
 # <a name="iscsi_status_qualifiers"></a>ISCSI \_ 状态 \_ 限定符
 
@@ -203,7 +203,7 @@ ISCSI \_ 状态 \_ 限定符 WMI 属性限定符对应于管理 ISCSI HBA 发起
 </tr>
 <tr class="odd">
 <td align="left"><p>ISDSC_LOGIN_USER_INFO_BAD (0xEFFF002A) </p></td>
-<td align="left"><p>在 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/iscsiop/ns-iscsiop-_logintotarget_in" data-raw-source="[&lt;strong&gt;LoginToTarget_IN&lt;/strong&gt;](/windows-hardware/drivers/ddi/iscsiop/ns-iscsiop-_logintotarget_in)"><strong>LoginToTarget_IN</strong></a> 结构中指定的一个或多个参数无效。</p></td>
+<td align="left"><p>在 <a href="/windows-hardware/drivers/ddi/iscsiop/ns-iscsiop-_logintotarget_in" data-raw-source="[&lt;strong&gt;LoginToTarget_IN&lt;/strong&gt;](/windows-hardware/drivers/ddi/iscsiop/ns-iscsiop-_logintotarget_in)"><strong>LoginToTarget_IN</strong></a> 结构中指定的一个或多个参数无效。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>ISDSC_TARGET_MAPPING_EXISTS (0xEFFF002B) </p></td>
@@ -447,8 +447,6 @@ ISCSI \_ 状态 \_ 限定符 WMI 属性限定符对应于管理 ISCSI HBA 发起
 </tr>
 </tbody>
 </table>
-
- 
 
  
 

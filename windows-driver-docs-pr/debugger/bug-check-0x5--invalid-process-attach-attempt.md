@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 4d7440f0fb004e5d8a5cd14a567f353383479ea5
-ms.sourcegitcommit: 51cba71be022c726c04c29ba5c0360860b65d7a4
+ms.openlocfilehash: e4638ab8f3c3ff088f225e28f90598b6b7dcb3ae
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/09/2020
-ms.locfileid: "89562201"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90101516"
 ---
 # <a name="bug-check-0x5-invalid_process_attach_attempt"></a>Bug 检查0x5： \_ 进程 \_ 附加 \_ 尝试无效
 
@@ -74,12 +74,7 @@ ms.locfileid: "89562201"
 
 如果驱动程序调用 [KeAttachProcess](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-kesattachprocess)  函数，并且该线程已附加到另一个进程，则会发生此 bug 检查。 最好使用 [KeStackAttachProcess](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-kestackattachprocess) 函数。 如果当前线程已附加到另一个进程，则 **KeStackAttachProcess** 函数将保存当前的 APC 状态，然后将当前线程附加到新进程。 错误调用 **KeStackAttachProcess** 也会导致此错误检查，例如，当 DPC 正在当前处理器上运行时。
 
-有关此方面的常规信息，请参阅使用 [Windows 内核模式进程和线程管理器](/windows-hardware/drivers/kernel/windows-kernel-mode-process-and-thread-manager.md) 和 [内核调度程序对象简介](/windows-hardware/drivers/kernel/managing-interlocked-queues-with-a-driver-created-thread)。
+有关此方面的常规信息，请参阅使用 [Windows 内核模式进程和线程管理器](../kernel/windows-kernel-mode-process-and-thread-manager.md) 和 [内核调度程序对象简介](../kernel/managing-interlocked-queues-with-a-driver-created-thread.md)。
 
  
-
- 
-
-
-
 

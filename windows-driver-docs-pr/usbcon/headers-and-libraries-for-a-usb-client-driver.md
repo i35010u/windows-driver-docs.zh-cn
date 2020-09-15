@@ -3,12 +3,12 @@ description: 本主题列出了写入 Windows 驱动模型 (WDM) USB 客户端�
 title: USB 客户端驱动程序所需的标头和库
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3c501083506d7fe2fc5cf5110ccef5e46aac9d5c
-ms.sourcegitcommit: 937974aa9bbe0262a7ffe9631593fab48c4e7492
+ms.openlocfilehash: 6531c9a5e964e47280505fed66b3bd3c90b79436
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "90010323"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90102900"
 ---
 # <a name="headers-and-libraries-required-by-a-usb-client-driver"></a>USB 客户端驱动程序所需的标头和库
 
@@ -17,7 +17,7 @@ ms.locfileid: "90010323"
 
 若要查找特定设备驱动程序接口的标头和库 (DDI) ，请参阅 [USB 参考](/windows-hardware/drivers/ddi/_usbref/)中的参考页。
 
-## <a name="headers"></a>标头
+## <a name="headers"></a>头文件
 
 
 <table>
@@ -32,7 +32,7 @@ ms.locfileid: "90010323"
 <th>头文件</th>
 <th>路径</th>
 <th>包括</th>
-<th>描述</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>
@@ -46,7 +46,7 @@ ms.locfileid: "90010323"
 <td>usb。h</td>
 <td>Include\shared</td>
 <td></td>
-<td>定义客户端驱动程序向 USB 驱动程序堆栈发送请求所需的 (URBs) USB 请求块的 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/usb/ns-usb-_urb" data-raw-source="[&lt;strong&gt;URB&lt;/strong&gt;](/windows-hardware/drivers/ddi/usb/ns-usb-_urb)"><strong>URB</strong></a> 结构。</td>
+<td>定义客户端驱动程序向 USB 驱动程序堆栈发送请求所需的 (URBs) USB 请求块的 <a href="/windows-hardware/drivers/ddi/usb/ns-usb-_urb" data-raw-source="[&lt;strong&gt;URB&lt;/strong&gt;](/windows-hardware/drivers/ddi/usb/ns-usb-_urb)"><strong>URB</strong></a> 结构。</td>
 </tr>
 <tr class="odd">
 <td>usb100</td>
@@ -105,7 +105,7 @@ ms.locfileid: "90010323"
 <td>usbkern</td>
 <td>Include\km</td>
 <td><p>usbioctl</p></td>
-<td>已否决。</td>
+<td>已弃用。</td>
 </tr>
 <tr class="even">
 <td>usbrpmif</td>
@@ -139,7 +139,7 @@ ms.locfileid: "90010323"
 <td>Include\shared</td>
 <td><p>winapifamily</p>
 <p>usb。h</p></td>
-<td>定义 <a href="https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff540046(v=vs.85)#winusb" data-raw-source="[WinUSB functions](/previous-versions/windows/hardware/drivers/ff540046(v=vs.85)#winusb)">WinUSB 函数</a>的标志。</td>
+<td>定义 <a href="/previous-versions/windows/hardware/drivers/ff540046(v=vs.85)#winusb" data-raw-source="[WinUSB functions](/previous-versions/windows/hardware/drivers/ff540046(v=vs.85)#winusb)">WinUSB 函数</a>的标志。</td>
 </tr>
 </tbody>
 </table>

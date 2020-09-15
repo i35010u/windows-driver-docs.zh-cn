@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 04/21/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 8c976b4f84f15a3d3f72211f496822f6cfb02d13
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 878d9833fe2af92dc41beb70c357dadcdf5e161b
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89206935"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90102084"
 ---
 # <a name="ksproperty_audio_peakmeter2"></a>KSPROPERTY \_ 音频 \_ PEAKMETER2
 
@@ -52,7 +52,7 @@ Windows 8 引入了 KSPROPERTY \_ AUDIO \_ PEAKMETER2 属性，该属性报告 \
 <td align="left"><p>是</p></td>
 <td align="left"><p>否</p></td>
 <td align="left"><p>节点 via 筛选器或固定实例</p></td>
-<td align="left"><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksnodeproperty_audio_channel" data-raw-source="[&lt;strong&gt;KSNODEPROPERTY_AUDIO_CHANNEL&lt;/strong&gt;](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksnodeproperty_audio_channel)"><strong>KSNODEPROPERTY_AUDIO_CHANNEL</strong></a></td>
+<td align="left"><a href="/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksnodeproperty_audio_channel" data-raw-source="[&lt;strong&gt;KSNODEPROPERTY_AUDIO_CHANNEL&lt;/strong&gt;](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksnodeproperty_audio_channel)"><strong>KSNODEPROPERTY_AUDIO_CHANNEL</strong></a></td>
 <td align="left"><p>LONG</p></td>
 </tr>
 </tbody>

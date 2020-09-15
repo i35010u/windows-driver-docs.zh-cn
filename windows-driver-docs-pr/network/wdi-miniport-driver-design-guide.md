@@ -6,12 +6,12 @@ keywords:
 - wi-fi 驱动程序，wi-fi 驱动程序 Windows 10，无线驱动程序，无线驱动程序 windows 10，wlan 驱动程序，wlan 驱动程序 windows 10，wlan 驱动程序接口，WDI 驱动程序，WDI 网络驱动程序，WDI Windows 10
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ad724410576b884776c6f07894faaf9e231d4261
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: b633b03af22c64f0f5949560b23a9e5e01d2cfb6
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89211529"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90103056"
 ---
 # <a name="wdi-miniport-driver-design-guide"></a>WDI 微型端口驱动程序设计指南
 
@@ -63,7 +63,7 @@ WLAN 设备驱动程序接口 (WDI) 是适用于 Windows 10 的 Wi-fi 驱动程�
 <td align="left"><p>实现 Wi-fi 功能的设备的特定部分，如本规范中所述。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>端口</p></td>
+<td align="left"><p>Port</p></td>
 <td align="left"><p>一个对象，该对象表示特定连接的 MAC 和 PHY 状态。</p></td>
 </tr>
 <tr class="even">
@@ -113,7 +113,7 @@ WLAN 设备驱动程序接口 (WDI) 是适用于 Windows 10 的 Wi-fi 驱动程�
 </tr>
 <tr class="even">
 <td align="left"><p>MAC 地址随机化</p></td>
-<td align="left"><p>为了提高 Windows 10 用户的隐私性，在某些情况下（例如，在连接到特定的 Wi-fi 网络之前，或在特定条件下启动扫描时），会使用配置的 Wi-fi MAC 地址。 这仅适用于工作站端口。 系统确保正确使用随机化，因此重要的连接方案不会中断。 系统通过在发出 scan 或 connect 命令之前发出 <a href="/windows-hardware/drivers/network/oid-wdi-task-dot11-reset" data-raw-source="[OID_WDI_TASK_DOT11_RESET](/windows-hardware/drivers/network/oid-wdi-task-dot11-reset)">OID_WDI_TASK_DOT11_RESET</a> 命令来管理地址的更改。 Reset 命令参数包含可选的 MAC 地址参数。 如果参数存在，则将 MAC 地址重置为指定的值。 如果它不存在，则将 MAC 地址留给当前值。 配置随机 MAC 地址时，操作系统使用为 IEEE802 地址定义的 "本地管理" 格式。</p></td>
+<td align="left"><p>为了提高 Windows 10 用户的隐私性，在某些情况下（例如，在连接到特定的 Wi-fi 网络之前，或在特定条件下启动扫描时），会使用配置的 Wi-fi MAC 地址。 这仅适用于工作站端口。 系统确保正确使用随机化，因此重要的连接方案不会中断。 系统通过在发出 scan 或 connect 命令之前发出 <a href="/windows-hardware/drivers/network/oid-wdi-task-dot11-reset" data-raw-source="[OID_WDI_TASK_DOT11_RESET](./oid-wdi-task-dot11-reset.md)">OID_WDI_TASK_DOT11_RESET</a> 命令来管理地址的更改。 Reset 命令参数包含可选的 MAC 地址参数。 如果参数存在，则将 MAC 地址重置为指定的值。 如果它不存在，则将 MAC 地址留给当前值。 配置随机 MAC 地址时，操作系统使用为 IEEE802 地址定义的 "本地管理" 格式。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>ECSA</p></td>
@@ -128,6 +128,4 @@ WLAN 设备驱动程序接口 (WDI) 是适用于 Windows 10 的 Wi-fi 驱动程�
 
 
 [WDI 微型端口驱动程序参考](/windows-hardware/drivers/ddi/_netvista/)
-
- 
 

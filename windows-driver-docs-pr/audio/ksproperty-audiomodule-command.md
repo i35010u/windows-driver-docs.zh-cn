@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 84b09713aeb6128873d52374673069912f9e57af
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: f479a2bd1e9249507f8287d51c85ebe826d945c5
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89209967"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90102598"
 ---
 # <a name="ksproperty_audiomodule_command"></a>KSPROPERTY \_ AUDIOMODULE \_ 命令
 
@@ -50,7 +50,7 @@ ms.locfileid: "89209967"
 <td align="left"><p>是</p></td>
 <td align="left"><p>否</p></td>
 <td align="left"><p>筛选器或固定</p></td>
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-_ksaudiomodule_property" data-raw-source="[&lt;strong&gt;KSAUDIOMODULE_PROPERTY&lt;/strong&gt;](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-_ksaudiomodule_property)"><strong>KSAUDIOMODULE_PROPERTY</strong></a> + [可选的自定义模块参数]</p></td>
+<td align="left"><p><a href="/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-_ksaudiomodule_property" data-raw-source="[&lt;strong&gt;KSAUDIOMODULE_PROPERTY&lt;/strong&gt;](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-_ksaudiomodule_property)"><strong>KSAUDIOMODULE_PROPERTY</strong></a> + [可选的自定义模块参数]</p></td>
 <td align="left"><p>尚未</p></td>
 </tr>
 </tbody>
@@ -99,6 +99,4 @@ ms.locfileid: "89209967"
 
 
 [KSPROPSETID \_ AudioModule](kspropsetid-audiomodule.md)
-
- 
 

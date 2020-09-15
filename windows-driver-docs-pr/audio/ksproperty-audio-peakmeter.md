@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 04/17/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 7e73fbd5ecc7b5b4c085e1d0974618babf45f642
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 7b963acb32c178f31d14356ff5e0bce0bc9a6693
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89206965"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90102086"
 ---
 # <a name="ksproperty_audio_peakmeter"></a>KSPROPERTY \_ 音频 \_ PEAKMETER
 
@@ -57,7 +57,7 @@ KSPROPERTY \_ AUDIO \_ PEAKMETER 属性检索自上次重置 PEAKMETER 节点后
 <td align="left"><p>是</p></td>
 <td align="left"><p>否</p></td>
 <td align="left"><p>节点 via 筛选器或固定实例</p></td>
-<td align="left"><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksnodeproperty_audio_channel" data-raw-source="[&lt;strong&gt;KSNODEPROPERTY_AUDIO_CHANNEL&lt;/strong&gt;](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksnodeproperty_audio_channel)"><strong>KSNODEPROPERTY_AUDIO_CHANNEL</strong></a></td>
+<td align="left"><a href="/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksnodeproperty_audio_channel" data-raw-source="[&lt;strong&gt;KSNODEPROPERTY_AUDIO_CHANNEL&lt;/strong&gt;](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksnodeproperty_audio_channel)"><strong>KSNODEPROPERTY_AUDIO_CHANNEL</strong></a></td>
 <td align="left"><p>LONG</p></td>
 </tr>
 </tbody>

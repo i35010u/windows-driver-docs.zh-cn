@@ -14,12 +14,12 @@ keywords:
 - 电源管理 WDK NDIS 微型端口，用户输入
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1f82988eeb31d586e2f078428efc183417dd4484
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 89da2d0422af6f0d35272c635cd65a21e41dd0f5
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89209733"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90103436"
 ---
 # <a name="how-ndis-sets-the-power-policy-for-a-network-adapter"></a>NDIS 如何设置网络适配器的电源策略
 
@@ -54,39 +54,39 @@ NDIS 使用以下信息来设置 NIC 的电源策略：
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/kernel/deviced1-and-deviced2" data-raw-source="[DeviceD1 and DeviceD2](../kernel/deviced1-and-deviced2.md)">DeviceD1 和 DeviceD2</a></p></td>
+<td align="left"><p><a href="/windows-hardware/drivers/kernel/deviced1-and-deviced2" data-raw-source="[DeviceD1 and DeviceD2](../kernel/deviced1-and-deviced2.md)">DeviceD1 和 DeviceD2</a></p></td>
 <td align="left"><p>如果设备支持 D1 电源状态，则为 TRUE。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/kernel/deviced1-and-deviced2" data-raw-source="[DeviceD1 and DeviceD2](../kernel/deviced1-and-deviced2.md)">DeviceD1 和 DeviceD2</a></p></td>
+<td align="left"><p><a href="/windows-hardware/drivers/kernel/deviced1-and-deviced2" data-raw-source="[DeviceD1 and DeviceD2](../kernel/deviced1-and-deviced2.md)">DeviceD1 和 DeviceD2</a></p></td>
 <td align="left"><p>如果设备支持 D2 电源状态，则为 TRUE。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/kernel/wakefromd0--wakefromd1--wakefromd2--and-wakefromd3" data-raw-source="[WakeFromD0, WakeFromD1, WakeFromD2, and WakeFromD3](../kernel/wakefromd0--wakefromd1--wakefromd2--and-wakefromd3.md)">WakeFromD0、WakeFromD1、WakeFromD2 和 WakeFromD3</a></p></td>
+<td align="left"><p><a href="/windows-hardware/drivers/kernel/wakefromd0--wakefromd1--wakefromd2--and-wakefromd3" data-raw-source="[WakeFromD0, WakeFromD1, WakeFromD2, and WakeFromD3](../kernel/wakefromd0--wakefromd1--wakefromd2--and-wakefromd3.md)">WakeFromD0、WakeFromD1、WakeFromD2 和 WakeFromD3</a></p></td>
 <td align="left"><p>如果设备在处于 D0 电源状态时可以响应外部唤醒信号，则为 TRUE。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/kernel/wakefromd0--wakefromd1--wakefromd2--and-wakefromd3" data-raw-source="[WakeFromD0, WakeFromD1, WakeFromD2, and WakeFromD3](../kernel/wakefromd0--wakefromd1--wakefromd2--and-wakefromd3.md)">WakeFromD0、WakeFromD1、WakeFromD2 和 WakeFromD3</a></p></td>
+<td align="left"><p><a href="/windows-hardware/drivers/kernel/wakefromd0--wakefromd1--wakefromd2--and-wakefromd3" data-raw-source="[WakeFromD0, WakeFromD1, WakeFromD2, and WakeFromD3](../kernel/wakefromd0--wakefromd1--wakefromd2--and-wakefromd3.md)">WakeFromD0、WakeFromD1、WakeFromD2 和 WakeFromD3</a></p></td>
 <td align="left"><p>如果设备在处于 D1 电源状态时可以响应外部唤醒信号，则为 TRUE。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/kernel/wakefromd0--wakefromd1--wakefromd2--and-wakefromd3" data-raw-source="[WakeFromD0, WakeFromD1, WakeFromD2, and WakeFromD3](../kernel/wakefromd0--wakefromd1--wakefromd2--and-wakefromd3.md)">WakeFromD0、WakeFromD1、WakeFromD2 和 WakeFromD3</a></p></td>
+<td align="left"><p><a href="/windows-hardware/drivers/kernel/wakefromd0--wakefromd1--wakefromd2--and-wakefromd3" data-raw-source="[WakeFromD0, WakeFromD1, WakeFromD2, and WakeFromD3](../kernel/wakefromd0--wakefromd1--wakefromd2--and-wakefromd3.md)">WakeFromD0、WakeFromD1、WakeFromD2 和 WakeFromD3</a></p></td>
 <td align="left"><p>如果设备可以在 D2 电源状态下响应外部唤醒信号，则为 TRUE。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/kernel/wakefromd0--wakefromd1--wakefromd2--and-wakefromd3" data-raw-source="[WakeFromD0, WakeFromD1, WakeFromD2, and WakeFromD3](../kernel/wakefromd0--wakefromd1--wakefromd2--and-wakefromd3.md)">WakeFromD0、WakeFromD1、WakeFromD2 和 WakeFromD3</a></p></td>
+<td align="left"><p><a href="/windows-hardware/drivers/kernel/wakefromd0--wakefromd1--wakefromd2--and-wakefromd3" data-raw-source="[WakeFromD0, WakeFromD1, WakeFromD2, and WakeFromD3](../kernel/wakefromd0--wakefromd1--wakefromd2--and-wakefromd3.md)">WakeFromD0、WakeFromD1、WakeFromD2 和 WakeFromD3</a></p></td>
 <td align="left"><p>如果设备在 D3 电源状态下可以响应外部唤醒信号，则为 TRUE。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/kernel/devicestate" data-raw-source="[DeviceState](../kernel/devicestate.md)">DeviceState</a><strong>[PowerSystemMaximum]</strong></p></td>
+<td align="left"><p><a href="/windows-hardware/drivers/kernel/devicestate" data-raw-source="[DeviceState](../kernel/devicestate.md)">DeviceState</a><strong>[PowerSystemMaximum]</strong></p></td>
 <td align="left"><p>指定此设备可以为每个系统电源状态维持的最高设备状态，从 <strong>PowerSystemUnspecified</strong> 到 <strong>PowerSystemShutdown</strong>。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/kernel/systemwake" data-raw-source="[SystemWake](../kernel/systemwake.md)">SystemWake</a></p></td>
+<td align="left"><p><a href="/windows-hardware/drivers/kernel/systemwake" data-raw-source="[SystemWake](../kernel/systemwake.md)">SystemWake</a></p></td>
 <td align="left"><p>指定由设备可以向其发出唤醒事件的最小电源状态 (S0 到 S4) 。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/kernel/devicewake" data-raw-source="[DeviceWake](../kernel/devicewake.md)">DeviceWake</a></p></td>
+<td align="left"><p><a href="/windows-hardware/drivers/kernel/devicewake" data-raw-source="[DeviceWake](../kernel/devicewake.md)">DeviceWake</a></p></td>
 <td align="left"><p>指定 (D0 到 D3) 的最小设备电源状态，设备可从该状态向唤醒事件发出信号。</p></td>
 </tr>
 </tbody>
@@ -166,6 +166,4 @@ DeviceState[PowerSystemShutdown] PowerDeviceD3
 默认情况下，" **仅允许管理工作站使计算机退出待机状态** " 选项处于清除状态。 用户可以选择此选项以指定仅接收幻数据包将导致 NIC 生成到系统的唤醒信号。
 
 只要用户为 NIC 选择或清除电源管理选项，系统就会通知 NDIS 发生了更改。 NDIS 将新设置写入注册表，以使更改的设置在重新启动后仍然存在。
-
- 
 

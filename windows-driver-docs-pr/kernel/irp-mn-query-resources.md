@@ -6,12 +6,12 @@ ms.assetid: b9a6f06b-07d9-4539-bd41-21cdccdc4b25
 keywords:
 - IRP_MN_QUERY_RESOURCES 内核模式驱动程序体系结构
 ms.localizationpriority: medium
-ms.openlocfilehash: 0603c886626c2e05c244115ab4d7e0310bb6e8c9
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: bc34f15fb133f661dc8f75ee48a513575c7ce29a
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89191475"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90104076"
 ---
 # <a name="irp_mn_query_resources"></a>IRP \_ MN \_ 查询 \_ 资源
 
@@ -20,7 +20,7 @@ PnP 管理器使用此 IRP 获取设备的启动配置资源。
 
 总线驱动程序必须为需要硬件资源的子设备处理此请求。 函数和筛选器驱动程序不处理此 IRP。
 
-## <a name="value"></a>值
+## <a name="value"></a>“值”
 
 0x0A
 
@@ -62,7 +62,7 @@ PnP 管理器在 \_ 任意线程上下文中以 IRQL 被动级别发送此 IRP�
 
 函数和筛选器驱动程序不会收到此 IRP。
 
-请参阅 [即插即用](https://docs.microsoft.com/windows-hardware/drivers/kernel/implementing-plug-and-play) ，了解用于处理 [即插即用次要 irp](plug-and-play-minor-irps.md)的一般规则。
+请参阅 [即插即用](./introduction-to-plug-and-play.md) ，了解用于处理 [即插即用次要 irp](plug-and-play-minor-irps.md)的一般规则。
 
 **正在发送此 IRP**
 
@@ -80,13 +80,13 @@ PnP 管理器在 \_ 任意线程上下文中以 IRQL 被动级别发送此 IRP�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Header</p></td>
+<td><p>标头</p></td>
 <td>Wdm.h（包括 Wdm.h、Ntddk.h 或 Ntifs.h）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
 [**CM \_ 资源列表 \_**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_cm_resource_list)

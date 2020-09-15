@@ -5,12 +5,12 @@ ms.assetid: 21232db2-7484-4878-a2f9-5131c18ecf57
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_PNP_SET_POWER 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 5bbc8ac1a755bde3310c9e2d0ae9126ded48524e
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: e186b47a7228831e1fbb50ebf255c6f26b117045
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89218367"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90103334"
 ---
 # <a name="oid_pnp_set_power"></a>OID \_ PNP \_ 设置 \_ 电源
 
@@ -106,7 +106,7 @@ OID \_ pnp \_ 集 \_ 电源请求可能位于 [oid \_ pnp \_ 查询 \_ 电源](o
 </tr>
 <tr class="even">
 <td><p><strong>NDIS_STATUS_PENDING</strong></p></td>
-<td><p>微型端口驱动程序将异步完成请求。 当微型端口驱动程序完成所有处理后，它必须通过调用 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismoidrequestcomplete" data-raw-source="[&lt;strong&gt;NdisMOidRequestComplete&lt;/strong&gt;](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismoidrequestcomplete)"><strong>NdisMOidRequestComplete</strong></a> 函数来成功请求，同时传递 NDIS_STATUS_SUCCESS 的 <em>状态</em> 参数。</p></td>
+<td><p>微型端口驱动程序将异步完成请求。 当微型端口驱动程序完成所有处理后，它必须通过调用 <a href="/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismoidrequestcomplete" data-raw-source="[&lt;strong&gt;NdisMOidRequestComplete&lt;/strong&gt;](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismoidrequestcomplete)"><strong>NdisMOidRequestComplete</strong></a> 函数来成功请求，同时传递 NDIS_STATUS_SUCCESS 的 <em>状态</em> 参数。</p></td>
 </tr>
 <tr class="odd">
 <td><p><strong>NDIS_STATUS_NOT_ACCEPTED</strong></p></td>
@@ -158,6 +158,4 @@ OID \_ pnp \_ 集 \_ 电源请求可能位于 [oid \_ pnp \_ 查询 \_ 电源](o
 [**NdisMSendNetBufferListsComplete**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismsendnetbufferlistscomplete)
 
 [**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)
-
- 
 

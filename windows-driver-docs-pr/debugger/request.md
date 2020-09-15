@@ -19,12 +19,12 @@ api_type:
 - COM
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bc5c90213b8373c74c0e791934b53bf8bbf70c19
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 1da1e8f81ae3c68a458cfb04e3ac0e1f8824b501
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89209849"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90104066"
 ---
 # <a name="idebugadvanced2request-method"></a>IDebugAdvanced2：： Request 方法
 
@@ -69,7 +69,7 @@ HRESULT Request(
 </tr>
 <tr class="even">
 <td align="left"><p><a href="debug-request-target-exception-context.md" data-raw-source="[&lt;strong&gt;DEBUG_REQUEST_TARGET_EXCEPTION_CONTEXT&lt;/strong&gt;](debug-request-target-exception-context.md)"><strong>DEBUG_REQUEST_TARGET_EXCEPTION_CONTEXT</strong></a></p></td>
-<td align="left"><p>返回用户模式小型转储文件中存储事件的 <a href="https://docs.microsoft.com/windows-hardware/drivers/debugger/scopes-and-symbol-groups#thread-context" data-raw-source="[thread context](./scopes-and-symbol-groups.md#thread-context)">线程上下文</a> 。</p></td>
+<td align="left"><p>返回用户模式小型转储文件中存储事件的 <a href="/windows-hardware/drivers/debugger/scopes-and-symbol-groups#thread-context" data-raw-source="[thread context](./scopes-and-symbol-groups.md#thread-context)">线程上下文</a> 。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="debug-request-target-exception-thread.md" data-raw-source="[&lt;strong&gt;DEBUG_REQUEST_TARGET_EXCEPTION_THREAD&lt;/strong&gt;](debug-request-target-exception-thread.md)"><strong>DEBUG_REQUEST_TARGET_EXCEPTION_THREAD</strong></a></p></td>
@@ -92,7 +92,7 @@ HRESULT Request(
 <td align="left"><p>返回目标上当前正在运行的 Windows 的版本。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://docs.microsoft.com/previous-versions/ff541575(v=vs.85)" data-raw-source="[&lt;strong&gt;DEBUG_REQUEST_READ_USER_MINIDUMP_STREAM&lt;/strong&gt;](/previous-versions/ff541575(v=vs.85))"><strong>DEBUG_REQUEST_READ_USER_MINIDUMP_STREAM</strong></a></p></td>
+<td align="left"><p><a href="/previous-versions/ff541575(v=vs.85)" data-raw-source="[&lt;strong&gt;DEBUG_REQUEST_READ_USER_MINIDUMP_STREAM&lt;/strong&gt;](/previous-versions/ff541575(v=vs.85))"><strong>DEBUG_REQUEST_READ_USER_MINIDUMP_STREAM</strong></a></p></td>
 <td align="left"><p>从用户模式小型转储目标读取流。</p></td>
 </tr>
 <tr class="odd">
@@ -101,7 +101,7 @@ HRESULT Request(
 </tr>
 <tr class="even">
 <td align="left"><p><a href="debug-request-set-local-implicit-command-line.md" data-raw-source="[&lt;strong&gt;DEBUG_REQUEST_SET_LOCAL_IMPLICIT_COMMAND_LINE&lt;/strong&gt;](debug-request-set-local-implicit-command-line.md)"><strong>DEBUG_REQUEST_SET_LOCAL_IMPLICIT_COMMAND_LINE</strong></a></p></td>
-<td align="left"><p>设置 <a href="https://docs.microsoft.com/windows-hardware/drivers/debugger/introduction#debugger-engine" data-raw-source="[debugger engine](./introduction.md#debugger-engine)">调试器引擎</a>的隐式命令行。</p></td>
+<td align="left"><p>设置 <a href="/windows-hardware/drivers/debugger/introduction#debugger-engine" data-raw-source="[debugger engine](./introduction.md#debugger-engine)">调试器引擎</a>的隐式命令行。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="debug-request-get-captured-event-code-offset.md" data-raw-source="[&lt;strong&gt;DEBUG_REQUEST_GET_CAPTURED_EVENT_CODE_OFFSET&lt;/strong&gt;](debug-request-get-captured-event-code-offset.md)"><strong>DEBUG_REQUEST_GET_CAPTURED_EVENT_CODE_OFFSET</strong></a></p></td>
@@ -182,7 +182,7 @@ HRESULT Request(
 <tbody>
 <tr class="odd">
 <td align="left"><p>目标平台</p></td>
-<td align="left">“桌面”</td>
+<td align="left">桌面型</td>
 </tr>
 <tr class="even">
 <td align="left"><p>标头</p></td>
@@ -221,6 +221,4 @@ HRESULT Request(
 [**调试 \_ 请求 \_ 获取 \_ 捕获的 \_ 事件 \_ 代码 \_ 偏移量**](debug-request-get-captured-event-code-offset.md)
 
 [**调试 \_ 请求 \_ 读取 \_ 捕获的 \_ 事件 \_ 代码 \_ 流**](debug-request-read-captured-event-code-stream.md)
-
- 
 

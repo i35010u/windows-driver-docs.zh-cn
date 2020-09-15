@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: f4e6cc34bcd3e0cc5f6570750c3f065eaf2a4084
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 13f7e293f25771f22f5916f11a9c9b53244f9e66
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89382319"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90103410"
 ---
 # <a name="kstimedprocessingmutex-rule-"></a>KsTimedProcessingMutex 规则 ( # A1
 
@@ -46,7 +46,7 @@ KsTimedProcessingMutex 规则指定一个 KS 微型端口驱动程序不应将�
 <td align="left"><p>若要验证此规则，请打开 "命令提示符" 窗口。 输入 Driver Verifier 命令并指定 <strong>/domain ks</strong>。</p>
 <p>例如：</p>
 <p><strong>验证程序/domain ks</strong> [<em>options</em>] <strong>/driver</strong> <em> &lt; &gt; yourdriver</em></p>
-<p>有关详细信息，请参阅<a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier" data-raw-source="[Driver Verifier](./driver-verifier.md)">驱动程序验证程序</a>。</p></td>
+<p>有关详细信息，请参阅<a href="/windows-hardware/drivers/devtest/driver-verifier" data-raw-source="[Driver Verifier](./driver-verifier.md)">驱动程序验证程序</a>。</p></td>
 </tr>
 </tbody>
 </table>
@@ -57,5 +57,3 @@ KsTimedProcessingMutex 规则指定一个 KS 微型端口驱动程序不应将�
 --------
 
 [在 AVStream 中处理互斥](../stream/processing-mutex-in-avstream.md)
- 
-

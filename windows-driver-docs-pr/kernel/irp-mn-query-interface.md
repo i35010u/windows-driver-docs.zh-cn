@@ -6,12 +6,12 @@ ms.assetid: ae1dab46-c387-4e5f-9368-451e625ddbc1
 keywords:
 - IRP_MN_QUERY_INTERFACE 内核模式驱动程序体系结构
 ms.localizationpriority: medium
-ms.openlocfilehash: d34e03d3acbd5508aa04f474bbf573ce330c7a2f
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: d2ab6d31db33ee491a05202055c9c6cb463da058
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89184115"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90103136"
 ---
 # <a name="irp_mn_query_interface"></a>IRP \_ MN \_ 查询 \_ 接口
 
@@ -26,7 +26,7 @@ ms.locfileid: "89184115"
 
 本部分介绍了查询界面 IRP 作为一般机制。 公开接口的驱动程序应提供有关其特定接口的其他信息。
 
-## <a name="value"></a>值
+## <a name="value"></a>“值”
 
 0x08
 
@@ -113,7 +113,7 @@ PVOID InterfaceSpecificData
 
 接口可以是特定于总线或与总线无关的。 特定于总线的接口是在这些总线的标头文件中定义的。 系统为导出标准总线接口定义与总线无关的接口（ [**总线 \_ 接口 \_ 标准**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_bus_interface_standard)）。
 
-请参阅 [即插即用](https://docs.microsoft.com/windows-hardware/drivers/kernel/implementing-plug-and-play) ，了解用于处理 [即插即用次要 irp](plug-and-play-minor-irps.md)的一般规则。
+请参阅 [即插即用](./introduction-to-plug-and-play.md) ，了解用于处理 [即插即用次要 irp](plug-and-play-minor-irps.md)的一般规则。
 
 此 IRP 专用于在设备的分层内核模式驱动程序之间传递例程入口点。 不要将此 IRP 公开的接口与 *设备接口*混淆。 设备接口主要用于公开设备的路径，供用户模式组件或其他内核组件使用。 有关设备接口的详细信息，请参阅 [设备接口类](../install/overview-of-device-interface-classes.md)。
 

@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4700dd2c3349286ee4c9073a3baf04efa690f099
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 8a5d23f9fc5b436e0d54560f572bc2ff9e68d984
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89208995"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90102126"
 ---
 # <a name="ksproperty_audio_cpu_resources"></a>KSPROPERTY \_ 音频 \_ CPU \_ 资源
 
@@ -53,7 +53,7 @@ ms.locfileid: "89208995"
 <td align="left"><p>是</p></td>
 <td align="left"><p>否</p></td>
 <td align="left"><p>筛选器</p></td>
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksnodeproperty" data-raw-source="[&lt;strong&gt;KSNODEPROPERTY&lt;/strong&gt;](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksnodeproperty)"><strong>KSNODEPROPERTY</strong></a></p></td>
+<td align="left"><p><a href="/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksnodeproperty" data-raw-source="[&lt;strong&gt;KSNODEPROPERTY&lt;/strong&gt;](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksnodeproperty)"><strong>KSNODEPROPERTY</strong></a></p></td>
 <td align="left"><p>ULONG</p></td>
 </tr>
 </tbody>
@@ -110,6 +110,4 @@ KSPROPERTY \_ 音频 \_ CPU \_ 资源属性请求返回状态 " \_ 成功" 以�
 [**KSNODETYPE \_ 干扰 \_**](ksnodetype-noise-suppress.md)
 
 [**KSNODETYPE \_ PEAKMETER**](ksnodetype-peakmeter.md)
-
- 
 

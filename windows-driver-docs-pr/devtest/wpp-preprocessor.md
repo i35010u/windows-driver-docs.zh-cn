@@ -12,12 +12,12 @@ keywords:
 - WPP 软件跟踪 WDK，生成过程
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e672ac1ed5bbde2aafe0e95969e40eba8535e669
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 29e7cc4820c6f71a35879000e4c80078c15f346d
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89382165"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90101576"
 ---
 # <a name="wpp-preprocessor"></a>WPP 预处理器
 
@@ -123,7 +123,7 @@ ms.locfileid: "89382165"
 <tr class="odd">
 <td align="left"><p>指定控件 GUID</p></td>
 <td align="left"><p><strong>-ctl：</strong> <em>GUID</em></p></td>
-<td align="left">定义一个 <a href="https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff556186(v=vs.85)" data-raw-source="[WPP_CONTROL_GUIDS](/previous-versions/windows/hardware/previsioning-framework/ff556186(v=vs.85))">WPP_CONTROL_GUIDS</a> 宏，其中包含指定的 <a href="control-guid.md" data-raw-source="[control GUID](control-guid.md)">控件 GUID</a> 和名为 "错误"、"异常" 和 "干扰" 的 WPP_DEFINE_BIT 条目。
+<td align="left">定义一个 <a href="/previous-versions/windows/hardware/previsioning-framework/ff556186(v=vs.85)" data-raw-source="[WPP_CONTROL_GUIDS](/previous-versions/windows/hardware/previsioning-framework/ff556186(v=vs.85))">WPP_CONTROL_GUIDS</a> 宏，其中包含指定的 <a href="control-guid.md" data-raw-source="[control GUID](control-guid.md)">控件 GUID</a> 和名为 "错误"、"异常" 和 "干扰" 的 WPP_DEFINE_BIT 条目。
 <p>这是将宏添加到源文件中的替代方法。</p>
 <p><em>Guid</em> 表示控件 guid。</p></td>
 </tr>
@@ -163,7 +163,7 @@ ms.locfileid: "89382165"
 <tr class="odd">
 <td align="left"><p>用于生成跟踪消息的函数</p></td>
 <td align="left"><p><strong>-func：</strong> <em>FunctionDescription</em></p></td>
-<td align="left"><p>指定 <a href="https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff544918(v=vs.85)" data-raw-source="[&lt;strong&gt;DoTraceMessage&lt;/strong&gt;](/previous-versions/windows/hardware/previsioning-framework/ff544918(v=vs.85))"><strong>DoTraceMessage</strong></a> 宏的替代项。 然后，可以使用这些函数来生成跟踪消息。</p>
+<td align="left"><p>指定 <a href="/previous-versions/windows/hardware/previsioning-framework/ff544918(v=vs.85)" data-raw-source="[&lt;strong&gt;DoTraceMessage&lt;/strong&gt;](/previous-versions/windows/hardware/previsioning-framework/ff544918(v=vs.85))"><strong>DoTraceMessage</strong></a> 宏的替代项。 然后，可以使用这些函数来生成跟踪消息。</p>
 <p>例如，可以定义一个函数，该函数同时指定跟踪消息的标志和级别，例如：</p>
 <pre space="preserve"><code>-func (DoMyTraceMessage(LEVEL,FLAGS,MSG,...)</code></pre>
 <p>可以使用 <strong>-func</strong> 选项的多个实例。</p>
@@ -286,6 +286,4 @@ WPP 生成过程完成以下步骤：
 1.  WPP 预处理器在每个源文件中处理 WPP 宏，并为每个源文件创建 [跟踪消息标头文件](trace-message-header-file.md) 。 源代码未直接修改。
 
 2.  在 WPP 预处理器创建跟踪消息头文件后，C 预处理器以正常方式处理跟踪消息头文件中的内置 WPP 宏。
-
- 
 

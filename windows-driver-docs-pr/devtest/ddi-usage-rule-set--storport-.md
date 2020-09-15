@@ -4,12 +4,12 @@ description: 使用这些规则验证驱动程序正确使用 Storport DDIs。
 ms.assetid: 858BBD97-4E3D-464A-B85F-358809431347
 ms.date: 05/21/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 23f234b2f85023e69b0e6d006ba1da1fcd5224fc
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 977026ce829ea59a5a58fbe2017f932e9103ef4e
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89384957"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90103108"
 ---
 # <a name="ddi-usage-rule-set-storport"></a>DDI 用法规则集 (Storport)
 
@@ -42,7 +42,7 @@ ms.locfileid: "89384957"
 <li>指定的值为 NULL，稍后取消引用。</li>
 <li>驱动程序中有一个全局/参数，该过程在后面可能为 NULL 的情况下，在该驱动程序中有一个明确的检查，表示指针的初始值可能为 NULL。</li>
 </ul>
-<p>对于 NullCheck 规则冲突，最相关的代码语句在跟踪树窗格中突出显示。 有关使用报表输出的详细信息，请参阅 <a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/static-driver-verifier-report" data-raw-source="[Static Driver Verifier Report](./static-driver-verifier-report.md)">静态驱动程序验证程序报表</a> 和 <a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/understanding-the-defect-viewer" data-raw-source="[Understanding the Trace Viewer](./understanding-the-defect-viewer.md)">了解跟踪查看器</a>。</p>
+<p>对于 NullCheck 规则冲突，最相关的代码语句在跟踪树窗格中突出显示。 有关使用报表输出的详细信息，请参阅 <a href="/windows-hardware/drivers/devtest/static-driver-verifier-report" data-raw-source="[Static Driver Verifier Report](./static-driver-verifier-report.md)">静态驱动程序验证程序报表</a> 和 <a href="/windows-hardware/drivers/devtest/understanding-the-defect-viewer" data-raw-source="[Understanding the Trace Viewer](./understanding-the-defect-viewer.md)">了解跟踪查看器</a>。</p>
 <p></p></td>
 </tr>
 <tr class="odd">
@@ -71,6 +71,4 @@ ms.locfileid: "89384957"
     ```
 
     有关详细信息，请参阅 [使用静态驱动程序验证器查找驱动程序中的缺陷](./using-static-driver-verifier-to-find-defects-in-drivers.md) 和 [静态驱动程序验证程序命令 (MSBuild) ](./-static-driver-verifier-commands--msbuild-.md)。
-
- 
 

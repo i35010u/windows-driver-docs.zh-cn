@@ -6,12 +6,12 @@ keywords:
 - 网络驱动程序 WDK，文档
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9c5988bc0fe04a047ab1fdcfd2606a5f3fc65597
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 933d6e6ce3a3fb080216abf95c484fa9b9211605
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89211001"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90101743"
 ---
 # <a name="navigating-the-network-driver-design-guide"></a>在网络驱动程序设计指南中导航
 
@@ -79,12 +79,12 @@ Windows Vista 和更高版本的操作系统版本支持以下类型的基于 ND
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/_netvista/" data-raw-source="[Scalable Networking](/windows-hardware/drivers/ddi/_netvista/)">可缩放网络</a></p></td>
+<td align="left"><p><a href="/windows-hardware/drivers/ddi/_netvista/" data-raw-source="[Scalable Networking](/windows-hardware/drivers/ddi/_netvista/)">可缩放网络</a></p></td>
 <td align="left"><p>支持将任务卸载到网络适配器的网络技术，如下所示：</p>
 <ul>
 <li><p><a href="header-data-split.md" data-raw-source="[Header-Data Split](header-data-split.md)">标头-数据拆分</a>，一种服务，它将接收的以太网帧中的标头和数据拆分为单独的缓冲区。</p></li>
-<li><p><a href="ndis-receive-side-scaling2.md" data-raw-source="[Receive Side Scaling](./receive-side-scaling-version-2-rssv2-.md)">接收方缩放</a>，一种网络驱动程序技术，可提高多处理器系统的网络性能。</p></li>
-<li><p><a href="ndis-tcp-chimney-offload.md" data-raw-source="[TCP Chimney Offload](/previous-versions/windows/hardware/network/ndis-tcp-chimney-offload)">Tcp 烟囱卸载</a>，将 tcp 协议处理的数据传输部分卸载到具有适当功能的网络适配器。</p></li>
+<li><p><a href="/windows-hardware/drivers/network/receive-side-scaling-version-2-rssv2-" data-raw-source="[Receive Side Scaling](./receive-side-scaling-version-2-rssv2-.md)">接收方缩放</a>，一种网络驱动程序技术，可提高多处理器系统的网络性能。</p></li>
+<li><p><a href="/previous-versions/windows/hardware/network/ndis-tcp-chimney-offload" data-raw-source="[TCP Chimney Offload](/previous-versions/windows/hardware/network/ndis-tcp-chimney-offload)">Tcp 烟囱卸载</a>，将 tcp 协议处理的数据传输部分卸载到具有适当功能的网络适配器。</p></li>
 <li><p><a href="tcp-ip-offload.md" data-raw-source="[TCP/IP Offload](tcp-ip-offload.md)">Tcp/ip 卸载</a>、任务或与具有适当功能的网络适配器的连接。</p></li>
 <li><p><a href="overview-of-network-direct-kernel-provider-interface--ndkpi-.md" data-raw-source="[Network Direct Kernel Provider Interface (NDKPI)](overview-of-network-direct-kernel-provider-interface--ndkpi-.md)">网络直接内核提供程序接口 (NDKPI) </a>，这使得内核模式 Windows 组件（如 SMB 服务器和客户端）可以使用远程直接内存访问 (RDMA) 功能，这些功能由独立硬件供应商 (ihv) 提供。</p></li>
 <li><p><a href="network-virtualization-using-generic-routing-encapsulation--nvgre--task-offload.md" data-raw-source="[Network Virtualization using Generic Routing Encapsulation (NVGRE) Task Offload](network-virtualization-using-generic-routing-encapsulation--nvgre--task-offload.md)">使用通用路由封装的网络虚拟化 (NVGRE) 任务卸载</a>，这使得可以使用通用路由封装 (GRE) 封装的数据包：</p>
@@ -106,15 +106,15 @@ Windows Vista 和更高版本的操作系统版本支持以下类型的基于 ND
 </ul></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/_netvista/" data-raw-source="[Wireless Networking](/windows-hardware/drivers/ddi/_netvista/)">无线联网</a></p></td>
+<td align="left"><p><a href="/windows-hardware/drivers/ddi/_netvista/" data-raw-source="[Wireless Networking](/windows-hardware/drivers/ddi/_netvista/)">无线联网</a></p></td>
 <td align="left"><p>包含本机802.11 无线 LAN 的网络功能。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/_netvista/" data-raw-source="[Network Module Registrar](/windows-hardware/drivers/ddi/_netvista/)">网络模块注册机构</a></p></td>
+<td align="left"><p><a href="/windows-hardware/drivers/ddi/_netvista/" data-raw-source="[Network Module Registrar](/windows-hardware/drivers/ddi/_netvista/)">网络模块注册机构</a></p></td>
 <td align="left"><p>允许驱动程序将网络模块相互连接的系统设备。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/_netvista/" data-raw-source="[Winsock Kernel](/windows-hardware/drivers/ddi/_netvista/)">Winsock 内核</a></p></td>
+<td align="left"><p><a href="/windows-hardware/drivers/ddi/_netvista/" data-raw-source="[Winsock Kernel](/windows-hardware/drivers/ddi/_netvista/)">Winsock 内核</a></p></td>
 <td align="left"><p> (NPI) 的内核模式网络编程接口。</p></td>
 </tr>
 <tr class="even">
@@ -130,13 +130,11 @@ Windows Vista 和更高版本的操作系统版本支持以下类型的基于 ND
 <td align="left"><p>一种网络连接，该连接使用 Windows Socket Direct 来支持高性能、面向连接的网络。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://docs.microsoft.com/previous-versions/ff570659(v=vs.85)" data-raw-source="[Remote NDIS (RNDIS)](/previous-versions/ff570659(v=vs.85))">远程 NDIS (RNDIS)</a></p></td>
+<td align="left"><p><a href="/previous-versions/ff570659(v=vs.85)" data-raw-source="[Remote NDIS (RNDIS)](/previous-versions/ff570659(v=vs.85))">远程 NDIS (RNDIS)</a></p></td>
 <td align="left"><p>一种类规范，用于定义与系统提供的、与总线无关的、通过 USB 总线设置的消息集。</p></td>
 </tr>
 </tbody>
 </table>
-
- 
 
  
 

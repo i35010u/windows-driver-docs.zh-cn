@@ -4,12 +4,12 @@ description: 使用这些规则验证你的驱动程序是否在所需的 IRQL �
 ms.assetid: EEFEF8E3-8AB8-46AD-A3BD-DA676F8FA786
 ms.date: 05/21/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 64110488e55d2a9fadb6f58eda95481bc06692a7
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 06511405964e7c6bb98ee90af2b25791b6a7ef2a
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89383939"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90102472"
 ---
 # <a name="irql-rule-set-ndis"></a>IRQL 规则集 (NDIS)
 
@@ -36,7 +36,7 @@ ms.locfileid: "89383939"
 <tr class="odd">
 <td align="left"><p><a href="ndis-flags-irql.md" data-raw-source="[&lt;strong&gt;Flags_Irql&lt;/strong&gt;](ndis-flags-irql.md)"><strong>Flags_Irql</strong></a></p></td>
 <td align="left"><p><a href="ndis-flags-irql.md" data-raw-source="[&lt;strong&gt;Flags_Irql&lt;/strong&gt;](ndis-flags-irql.md)"><strong>Flags_Irql</strong></a>规则指定不能在具有指示当前 Irql 的调度级别标志参数的回调函数中调用<strong>KeGetCurrentIrql</strong> 。</p>
-<p>正确使用派单级别标志可帮助避免不必要的设置 IRQL 的尝试。 有关如何使用此标志的详细信息，请参阅 <a href="https://docs.microsoft.com/windows-hardware/drivers/network/dispatch-irql-tracking" data-raw-source="[Dispatch IRQL Tracking](../network/dispatch-irql-tracking.md)">调度 IRQL 跟踪</a>。</p></td>
+<p>正确使用派单级别标志可帮助避免不必要的设置 IRQL 的尝试。 有关如何使用此标志的详细信息，请参阅 <a href="/windows-hardware/drivers/network/dispatch-irql-tracking" data-raw-source="[Dispatch IRQL Tracking](../network/dispatch-irql-tracking.md)">调度 IRQL 跟踪</a>。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><a href="ndis-irql-callmanager-function.md" data-raw-source="[&lt;strong&gt;Irql_CallManager_Function&lt;/strong&gt;](ndis-irql-callmanager-function.md)"><strong>Irql_CallManager_Function</strong></a></p></td>
@@ -132,6 +132,4 @@ ms.locfileid: "89383939"
     ```
 
     有关详细信息，请参阅 [使用静态驱动程序验证器查找驱动程序中的缺陷](./using-static-driver-verifier-to-find-defects-in-drivers.md) 和 [静态驱动程序验证程序命令 (MSBuild) ](./-static-driver-verifier-commands--msbuild-.md)。
-
- 
 

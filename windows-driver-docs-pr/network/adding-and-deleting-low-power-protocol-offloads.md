@@ -4,12 +4,12 @@ description: 添加和删除低功耗协议卸载
 ms.assetid: f00f13b4-9204-4480-884a-407684a4b2d4
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 71111f1c1282205ae55a2ca2a099a099732a74f5
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 4578ddb4235f9d9a73ad1b6999b53b50f6223546
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89209799"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90101660"
 ---
 # <a name="adding-and-deleting-low-power-protocol-offloads"></a>添加和删除低功耗协议卸载
 
@@ -43,19 +43,19 @@ ms.locfileid: "89209799"
 </tr>
 <tr class="even">
 <td align="left"><p><strong>ProtocolOffloadType</strong></p></td>
-<td align="left"><p>包含指定协议卸载类型的 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ne-ntddndis-_ndis_pm_protocol_offload_type" data-raw-source="[&lt;strong&gt;NDIS_PM_PROTOCOL_OFFLOAD_TYPE&lt;/strong&gt;](/windows-hardware/drivers/ddi/ntddndis/ne-ntddndis-_ndis_pm_protocol_offload_type)"><strong>NDIS_PM_PROTOCOL_OFFLOAD_TYPE</strong></a> 值。</p></td>
+<td align="left"><p>包含指定协议卸载类型的 <a href="/windows-hardware/drivers/ddi/ntddndis/ne-ntddndis-_ndis_pm_protocol_offload_type" data-raw-source="[&lt;strong&gt;NDIS_PM_PROTOCOL_OFFLOAD_TYPE&lt;/strong&gt;](/windows-hardware/drivers/ddi/ntddndis/ne-ntddndis-_ndis_pm_protocol_offload_type)"><strong>NDIS_PM_PROTOCOL_OFFLOAD_TYPE</strong></a> 值。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>FriendlyName</strong></p></td>
-<td align="left"><p>包含一个 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_pm_counted_string" data-raw-source="[&lt;strong&gt;NDIS_PM_COUNTED_STRING&lt;/strong&gt;](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_pm_counted_string)"><strong>NDIS_PM_COUNTED_STRING</strong></a> 结构，它包含用户可读的低功率协议卸载说明。</p></td>
+<td align="left"><p>包含一个 <a href="/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_pm_counted_string" data-raw-source="[&lt;strong&gt;NDIS_PM_COUNTED_STRING&lt;/strong&gt;](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_pm_counted_string)"><strong>NDIS_PM_COUNTED_STRING</strong></a> 结构，它包含用户可读的低功率协议卸载说明。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>ProtocolOffloadId</strong></p></td>
-<td align="left"><p>包含一个用于标识卸载协议的 NDIS 提供的值。 在 NDIS 将 <a href="/windows-hardware/drivers/network/oid-pm-add-protocol-offload" data-raw-source="[OID_PM_ADD_PROTOCOL_OFFLOAD](/windows-hardware/drivers/network/oid-pm-add-protocol-offload)">OID_PM_ADD_PROTOCOL_OFFLOAD</a> 的 OID 请求发送到基础 NDIS 驱动程序或完成对过量驱动程序的请求之前，ndis 会将 <strong>ProtocolOffloadId</strong> 设置为在网络适配器上的协议卸载之间唯一的值。</p></td>
+<td align="left"><p>包含一个用于标识卸载协议的 NDIS 提供的值。 在 NDIS 将 <a href="/windows-hardware/drivers/network/oid-pm-add-protocol-offload" data-raw-source="[OID_PM_ADD_PROTOCOL_OFFLOAD](./oid-pm-add-protocol-offload.md)">OID_PM_ADD_PROTOCOL_OFFLOAD</a> 的 OID 请求发送到基础 NDIS 驱动程序或完成对过量驱动程序的请求之前，ndis 会将 <strong>ProtocolOffloadId</strong> 设置为在网络适配器上的协议卸载之间唯一的值。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>NextProtocolOffloadOffset</strong></p></td>
-<td align="left"><p>包含<em>InformationBuffer</em>oid <a href="/windows-hardware/drivers/network/oid-pm-protocol-offload-list" data-raw-source="[OID_PM_PROTOCOL_OFFLOAD_LIST](/windows-hardware/drivers/network/oid-pm-protocol-offload-list)">OID_PM_PROTOCOL_OFFLOAD_LIST</a>列表中的下一个<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_pm_protocol_offload" data-raw-source="[&lt;strong&gt;NDIS_PM_PROTOCOL_OFFLOAD&lt;/strong&gt;](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_pm_protocol_offload)"><strong>NDIS_PM_PROTOCOL_OFFLOAD</strong></a>结构的偏移量，即 oid 请求的起始位置。 有关 OID_PM_PROTOCOL_OFFLOAD_LIST 的详细信息，请参阅 <a href="obtaining-the-current-parameter-settings-of-low-power-protocol-offload.md" data-raw-source="[Obtaining the Current Parameter Settings of Low Power Protocol Offloads](obtaining-the-current-parameter-settings-of-low-power-protocol-offload.md)">获取低功率协议卸载的当前参数设置</a>。</p></td>
+<td align="left"><p>包含<em>InformationBuffer</em>oid <a href="/windows-hardware/drivers/network/oid-pm-protocol-offload-list" data-raw-source="[OID_PM_PROTOCOL_OFFLOAD_LIST](./oid-pm-protocol-offload-list.md)">OID_PM_PROTOCOL_OFFLOAD_LIST</a>列表中的下一个<a href="/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_pm_protocol_offload" data-raw-source="[&lt;strong&gt;NDIS_PM_PROTOCOL_OFFLOAD&lt;/strong&gt;](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_pm_protocol_offload)"><strong>NDIS_PM_PROTOCOL_OFFLOAD</strong></a>结构的偏移量，即 oid 请求的起始位置。 有关 OID_PM_PROTOCOL_OFFLOAD_LIST 的详细信息，请参阅 <a href="obtaining-the-current-parameter-settings-of-low-power-protocol-offload.md" data-raw-source="[Obtaining the Current Parameter Settings of Low Power Protocol Offloads](obtaining-the-current-parameter-settings-of-low-power-protocol-offload.md)">获取低功率协议卸载的当前参数设置</a>。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>ProtocolOffloadParameters</strong></p></td>
@@ -105,6 +105,4 @@ NDIS 允许多个 NDIS 协议驱动程序将协议卸载添加到同一个网络
  
 
 由于卸载了高优先级的协议，因此删除了一个优先级较低的已卸载协议，NDIS 发送了 [**ndis \_ 状态 \_ PM 卸载已 \_ \_ 拒绝**](./ndis-status-pm-offload-rejected.md) 的状态指示，通知设置已删除协议卸载的过量驱动程序。 [**NDIS \_ 状态 \_ 指示**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_status_indication)结构的**StatusBuffer**成员包含被拒绝的协议卸载的协议卸载标识符。 NDIS 在[**ndis \_ PM \_ 协议 \_ 卸载**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_pm_protocol_offload)结构的**ProtocolOffloadId**成员中提供了协议卸载标识符。
-
- 
 

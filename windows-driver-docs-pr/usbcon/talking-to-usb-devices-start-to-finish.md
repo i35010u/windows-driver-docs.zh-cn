@@ -3,12 +3,12 @@ description: 使用 Windows 8.1 中引入的 Windows 运行时 Api 编写允许�
 title: 与 USB 设备通信，从开始到完成（UWP 应用）
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3187e5c7de96d01b97d0f4dc62e6a01c8eab9e43
-ms.sourcegitcommit: 937974aa9bbe0262a7ffe9631593fab48c4e7492
+ms.openlocfilehash: 8a0a5e3e3f86d57fbe338cf3a00a3fabc11b1043
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "90010211"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90102834"
 ---
 # <a name="talking-to-usb-devices-start-to-finish-uwp-app"></a>与 USB 设备通信，从开始到完成（UWP 应用）
 
@@ -118,7 +118,7 @@ ms.locfileid: "90010211"
 <td><a href="" id="step5"></a>
 <p><strong>步骤 5</strong>-将 USB 设备功能添加到应用程序清单。</p></td>
 <td><p><strong>快速入门：</strong> <a href="updating-the-app-manifest-with-usb-device-capabilities.md" data-raw-source="[How to add USB device capabilities to the app manifest](updating-the-app-manifest-with-usb-device-capabilities.md)">如何将 USB 设备功能添加到应用程序清单</a></p>
-<p>在文本编辑器中打开 appxmanifest.xml 文件，并添加<strong>Name</strong>属性设置为 "usb" 的<a href="https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-devicecapability" data-raw-source="[&lt;strong&gt;DeviceCapability&lt;/strong&gt;](/uwp/schemas/appxpackage/appxmanifestschema/element-devicecapability)"><strong>DeviceCapability</strong></a>元素，如本示例中所示。</p>
+<p>在文本编辑器中打开 appxmanifest.xml 文件，并添加<strong>Name</strong>属性设置为 "usb" 的<a href="/uwp/schemas/appxpackage/appxmanifestschema/element-devicecapability" data-raw-source="[&lt;strong&gt;DeviceCapability&lt;/strong&gt;](/uwp/schemas/appxpackage/appxmanifestschema/element-devicecapability)"><strong>DeviceCapability</strong></a>元素，如本示例中所示。</p>
 <div class="alert">
 <strong>注意</strong>   无法在 Visual Studio 2013 中修改 USB 设备功能。 您必须选择并按住 (或右键单击) <strong>解决方案资源管理器</strong> 中的 appxmanifest.xml 文件，然后选择 " <strong>打开方式 ...</strong>"，然后选择 " <strong>XML (文本) 编辑器</strong>"。 文件以纯 XML 格式打开。
 </div>
@@ -150,19 +150,19 @@ ms.locfileid: "90010211"
 <li>通过生成高级查询语法 (包含搜索条件（用于在枚举设备集合中查找设备）) 字符串来查找设备。</li>
 <li>通过以下两种方式之一打开设备：
 <ul>
-<li><p>将 AQS 传递到 <a href="https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration.DeviceInformation#Windows_Devices_Enumeration_DeviceInformation_FindAllAsync_System_String_" data-raw-source="[&lt;strong&gt;FindAllAsync&lt;/strong&gt;](/uwp/api/Windows.Devices.Enumeration.DeviceInformation#Windows_Devices_Enumeration_DeviceInformation_FindAllAsync_System_String_)"><strong>FindAllAsync</strong></a> 并获取设备的 <a href="https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration.DeviceInformation" data-raw-source="[&lt;strong&gt;DeviceInformation&lt;/strong&gt;](/uwp/api/Windows.Devices.Enumeration.DeviceInformation)"><strong>DeviceInformation</strong></a> 对象。</p>
-<p>有关详细信息，请参阅 <a href="https://docs.microsoft.com/previous-versions/windows/apps/hh872189(v=win.10)" data-raw-source="[Quickstart: enumerating commonly used devices](/previous-versions/windows/apps/hh872189(v=win.10))">快速入门：枚举常用设备</a>。</p></li>
-<li>通过使用 <a href="https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration.DeviceWatcher" data-raw-source="[&lt;strong&gt;DeviceWatcher&lt;/strong&gt;](/uwp/api/Windows.Devices.Enumeration.DeviceWatcher)"><strong>DeviceWatcher</strong></a> 对象来检测何时将设备添加到系统或从系统中删除设备。
+<li><p>将 AQS 传递到 <a href="/uwp/api/Windows.Devices.Enumeration.DeviceInformation#Windows_Devices_Enumeration_DeviceInformation_FindAllAsync_System_String_" data-raw-source="[&lt;strong&gt;FindAllAsync&lt;/strong&gt;](/uwp/api/Windows.Devices.Enumeration.DeviceInformation#Windows_Devices_Enumeration_DeviceInformation_FindAllAsync_System_String_)"><strong>FindAllAsync</strong></a> 并获取设备的 <a href="/uwp/api/Windows.Devices.Enumeration.DeviceInformation" data-raw-source="[&lt;strong&gt;DeviceInformation&lt;/strong&gt;](/uwp/api/Windows.Devices.Enumeration.DeviceInformation)"><strong>DeviceInformation</strong></a> 对象。</p>
+<p>有关详细信息，请参阅 <a href="/previous-versions/windows/apps/hh872189(v=win.10)" data-raw-source="[Quickstart: enumerating commonly used devices](/previous-versions/windows/apps/hh872189(v=win.10))">快速入门：枚举常用设备</a>。</p></li>
+<li>通过使用 <a href="/uwp/api/Windows.Devices.Enumeration.DeviceWatcher" data-raw-source="[&lt;strong&gt;DeviceWatcher&lt;/strong&gt;](/uwp/api/Windows.Devices.Enumeration.DeviceWatcher)"><strong>DeviceWatcher</strong></a> 对象来检测何时将设备添加到系统或从系统中删除设备。
 <ol>
-<li>将 AQS 传递到 <a href="https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration.DeviceInformation#Windows_Devices_Enumeration_DeviceInformation_CreateWatcher" data-raw-source="[&lt;strong&gt;CreateWatcher&lt;/strong&gt;](/uwp/api/Windows.Devices.Enumeration.DeviceInformation#Windows_Devices_Enumeration_DeviceInformation_CreateWatcher)"><strong>CreateWatcher</strong></a> 并获取 <a href="https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration.DeviceWatcher" data-raw-source="[&lt;strong&gt;DeviceWatcher&lt;/strong&gt;](/uwp/api/Windows.Devices.Enumeration.DeviceWatcher)"><strong>DeviceWatcher</strong></a> 对象。</li>
-<li>在 <a href="https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration.DeviceWatcher" data-raw-source="[&lt;strong&gt;DeviceWatcher&lt;/strong&gt;](/uwp/api/Windows.Devices.Enumeration.DeviceWatcher)"><strong>DeviceWatcher</strong></a> 对象上注册事件处理程序。</li>
-<li>在<a href="https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration.DeviceWatcher#Windows_Devices_Enumeration_DeviceWatcher_Added" data-raw-source="[&lt;strong&gt;Added&lt;/strong&gt;](/uwp/api/Windows.Devices.Enumeration.DeviceWatcher#Windows_Devices_Enumeration_DeviceWatcher_Added)"><strong>添加</strong></a>的事件处理程序中获取设备的<a href="https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration.DeviceInformation" data-raw-source="[&lt;strong&gt;DeviceInformation&lt;/strong&gt;](/uwp/api/Windows.Devices.Enumeration.DeviceInformation)"><strong>DeviceInformation</strong></a>对象。</li>
-<li>启动和停止 <a href="https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration.DeviceWatcher" data-raw-source="[&lt;strong&gt;DeviceWatcher&lt;/strong&gt;](/uwp/api/Windows.Devices.Enumeration.DeviceWatcher)"><strong>DeviceWatcher</strong></a> 对象。</li>
+<li>将 AQS 传递到 <a href="/uwp/api/Windows.Devices.Enumeration.DeviceInformation#Windows_Devices_Enumeration_DeviceInformation_CreateWatcher" data-raw-source="[&lt;strong&gt;CreateWatcher&lt;/strong&gt;](/uwp/api/Windows.Devices.Enumeration.DeviceInformation#Windows_Devices_Enumeration_DeviceInformation_CreateWatcher)"><strong>CreateWatcher</strong></a> 并获取 <a href="/uwp/api/Windows.Devices.Enumeration.DeviceWatcher" data-raw-source="[&lt;strong&gt;DeviceWatcher&lt;/strong&gt;](/uwp/api/Windows.Devices.Enumeration.DeviceWatcher)"><strong>DeviceWatcher</strong></a> 对象。</li>
+<li>在 <a href="/uwp/api/Windows.Devices.Enumeration.DeviceWatcher" data-raw-source="[&lt;strong&gt;DeviceWatcher&lt;/strong&gt;](/uwp/api/Windows.Devices.Enumeration.DeviceWatcher)"><strong>DeviceWatcher</strong></a> 对象上注册事件处理程序。</li>
+<li>在<a href="/uwp/api/Windows.Devices.Enumeration.DeviceWatcher#Windows_Devices_Enumeration_DeviceWatcher_Added" data-raw-source="[&lt;strong&gt;Added&lt;/strong&gt;](/uwp/api/Windows.Devices.Enumeration.DeviceWatcher#Windows_Devices_Enumeration_DeviceWatcher_Added)"><strong>添加</strong></a>的事件处理程序中获取设备的<a href="/uwp/api/Windows.Devices.Enumeration.DeviceInformation" data-raw-source="[&lt;strong&gt;DeviceInformation&lt;/strong&gt;](/uwp/api/Windows.Devices.Enumeration.DeviceInformation)"><strong>DeviceInformation</strong></a>对象。</li>
+<li>启动和停止 <a href="/uwp/api/Windows.Devices.Enumeration.DeviceWatcher" data-raw-source="[&lt;strong&gt;DeviceWatcher&lt;/strong&gt;](/uwp/api/Windows.Devices.Enumeration.DeviceWatcher)"><strong>DeviceWatcher</strong></a> 对象。</li>
 </ol>
-有关详细信息，请参阅 <a href="https://docs.microsoft.com/previous-versions/windows/apps/hh967756(v=win.10)" data-raw-source="[How to get notifications if devices are added, removed, or changed](/previous-versions/windows/apps/hh967756(v=win.10))">如何在添加、删除或更改设备时获取通知</a>。</li>
+有关详细信息，请参阅 <a href="/previous-versions/windows/apps/hh967756(v=win.10)" data-raw-source="[How to get notifications if devices are added, removed, or changed](/previous-versions/windows/apps/hh967756(v=win.10))">如何在添加、删除或更改设备时获取通知</a>。</li>
 </ul></li>
-<li>从 <a href="https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration.DeviceInformation#Windows_Devices_Enumeration_DeviceInformation_Id" data-raw-source="[&lt;strong&gt;DeviceInformation.Id&lt;/strong&gt;](/uwp/api/Windows.Devices.Enumeration.DeviceInformation#Windows_Devices_Enumeration_DeviceInformation_Id)"><strong>DeviceInformation.Id</strong></a> 属性获取设备实例。</li>
-<li>通过传递设备实例字符串并获取<a href="https://docs.microsoft.com/uwp/api/Windows.Devices.Usb.UsbDevice" data-raw-source="[&lt;strong&gt;UsbDevice&lt;/strong&gt;](/uwp/api/Windows.Devices.Usb.UsbDevice)"><strong>UsbDevice</strong></a>对象来调用<a href="https://docs.microsoft.com/uwp/api/Windows.Devices.Usb.UsbDevice#Windows_Devices_Usb_UsbDevice_FromIdAsync_System_String_" data-raw-source="[&lt;strong&gt;FromIdAsync&lt;/strong&gt;](/uwp/api/Windows.Devices.Usb.UsbDevice#Windows_Devices_Usb_UsbDevice_FromIdAsync_System_String_)"><strong>FromIdAsync</strong></a> 。</li>
+<li>从 <a href="/uwp/api/Windows.Devices.Enumeration.DeviceInformation#Windows_Devices_Enumeration_DeviceInformation_Id" data-raw-source="[&lt;strong&gt;DeviceInformation.Id&lt;/strong&gt;](/uwp/api/Windows.Devices.Enumeration.DeviceInformation#Windows_Devices_Enumeration_DeviceInformation_Id)"><strong>DeviceInformation.Id</strong></a> 属性获取设备实例。</li>
+<li>通过传递设备实例字符串并获取<a href="/uwp/api/Windows.Devices.Usb.UsbDevice" data-raw-source="[&lt;strong&gt;UsbDevice&lt;/strong&gt;](/uwp/api/Windows.Devices.Usb.UsbDevice)"><strong>UsbDevice</strong></a>对象来调用<a href="/uwp/api/Windows.Devices.Usb.UsbDevice#Windows_Devices_Usb_UsbDevice_FromIdAsync_System_String_" data-raw-source="[&lt;strong&gt;FromIdAsync&lt;/strong&gt;](/uwp/api/Windows.Devices.Usb.UsbDevice#Windows_Devices_Usb_UsbDevice_FromIdAsync_System_String_)"><strong>FromIdAsync</strong></a> 。</li>
 </ol>
 <p><strong>在示例中找到它：</strong> 请参阅名为 Scenario1_DeviceConnect 的文件。</p></td>
 </tr>
@@ -178,20 +178,20 @@ ms.locfileid: "90010211"
 <td><p><strong>快速入门：</strong> <a href="how-to-get-usb-descriptors--uwp-app-.md" data-raw-source="[How to get USB descriptors (UWP app)](how-to-get-usb-descriptors--uwp-app-.md)">如何获取 UWP 应用 (的 USB 描述符) </a></p>
 <p></p>
 <ul>
-<li>通过获取 <a href="https://docs.microsoft.com/uwp/api/Windows.Devices.Usb.UsbDevice#Windows_Devices_Usb_UsbDevice_DeviceDescriptor" data-raw-source="[&lt;strong&gt;UsbDevice.DeviceDescriptor&lt;/strong&gt;](/uwp/api/Windows.Devices.Usb.UsbDevice#Windows_Devices_Usb_UsbDevice_DeviceDescriptor)"><strong>UsbDevice. DeviceDescriptor</strong></a> 值获取设备描述符。</li>
-<li>获取 <a href="https://docs.microsoft.com/uwp/api/Windows.Devices.Usb.UsbConfiguration#Windows_Devices_Usb_UsbConfiguration_ConfigurationDescriptor" data-raw-source="[&lt;strong&gt;UsbConfiguration.ConfigurationDescriptor&lt;/strong&gt;](/uwp/api/Windows.Devices.Usb.UsbConfiguration#Windows_Devices_Usb_UsbConfiguration_ConfigurationDescriptor)"><strong>UsbConfiguration.ConfigurationDescriptor</strong></a> 值，获取配置描述符。
+<li>通过获取 <a href="/uwp/api/Windows.Devices.Usb.UsbDevice#Windows_Devices_Usb_UsbDevice_DeviceDescriptor" data-raw-source="[&lt;strong&gt;UsbDevice.DeviceDescriptor&lt;/strong&gt;](/uwp/api/Windows.Devices.Usb.UsbDevice#Windows_Devices_Usb_UsbDevice_DeviceDescriptor)"><strong>UsbDevice. DeviceDescriptor</strong></a> 值获取设备描述符。</li>
+<li>获取 <a href="/uwp/api/Windows.Devices.Usb.UsbConfiguration#Windows_Devices_Usb_UsbConfiguration_ConfigurationDescriptor" data-raw-source="[&lt;strong&gt;UsbConfiguration.ConfigurationDescriptor&lt;/strong&gt;](/uwp/api/Windows.Devices.Usb.UsbConfiguration#Windows_Devices_Usb_UsbConfiguration_ConfigurationDescriptor)"><strong>UsbConfiguration.ConfigurationDescriptor</strong></a> 值，获取配置描述符。
 <ul>
-<li>通过获取 <a href="https://docs.microsoft.com/uwp/api/Windows.Devices.Usb.UsbConfiguration#Windows_Devices_Usb_UsbConfiguration_Descriptors" data-raw-source="[&lt;strong&gt;UsbConfiguration.Descriptors&lt;/strong&gt;](/uwp/api/Windows.Devices.Usb.UsbConfiguration#Windows_Devices_Usb_UsbConfiguration_Descriptors)"><strong>UsbConfiguration</strong></a> 属性获取完整的配置描述符集。</li>
+<li>通过获取 <a href="/uwp/api/Windows.Devices.Usb.UsbConfiguration#Windows_Devices_Usb_UsbConfiguration_Descriptors" data-raw-source="[&lt;strong&gt;UsbConfiguration.Descriptors&lt;/strong&gt;](/uwp/api/Windows.Devices.Usb.UsbConfiguration#Windows_Devices_Usb_UsbConfiguration_Descriptors)"><strong>UsbConfiguration</strong></a> 属性获取完整的配置描述符集。</li>
 </ul></li>
-<li>获取 <a href="https://docs.microsoft.com/uwp/api/Windows.Devices.Usb.UsbConfiguration#Windows_Devices_Usb_UsbConfiguration_UsbInterfaces" data-raw-source="[&lt;strong&gt;UsbConfiguration.UsbInterfaces&lt;/strong&gt;](/uwp/api/Windows.Devices.Usb.UsbConfiguration#Windows_Devices_Usb_UsbConfiguration_UsbInterfaces)"><strong>UsbConfiguration UsbInterfaces</strong></a> 属性，获取配置中的接口数组。</li>
-<li>通过获取 <a href="https://docs.microsoft.com/uwp/api/Windows.Devices.Usb.UsbInterface#Windows_Devices_Usb_UsbInterface_InterfaceSettings" data-raw-source="[&lt;strong&gt;UsbInterface.InterfaceSettings&lt;/strong&gt;](/uwp/api/Windows.Devices.Usb.UsbInterface#Windows_Devices_Usb_UsbInterface_InterfaceSettings)"><strong>InterfaceSettings</strong></a>获取备用设置的数组。</li>
+<li>获取 <a href="/uwp/api/Windows.Devices.Usb.UsbConfiguration#Windows_Devices_Usb_UsbConfiguration_UsbInterfaces" data-raw-source="[&lt;strong&gt;UsbConfiguration.UsbInterfaces&lt;/strong&gt;](/uwp/api/Windows.Devices.Usb.UsbConfiguration#Windows_Devices_Usb_UsbConfiguration_UsbInterfaces)"><strong>UsbConfiguration UsbInterfaces</strong></a> 属性，获取配置中的接口数组。</li>
+<li>通过获取 <a href="/uwp/api/Windows.Devices.Usb.UsbInterface#Windows_Devices_Usb_UsbInterface_InterfaceSettings" data-raw-source="[&lt;strong&gt;UsbInterface.InterfaceSettings&lt;/strong&gt;](/uwp/api/Windows.Devices.Usb.UsbInterface#Windows_Devices_Usb_UsbInterface_InterfaceSettings)"><strong>InterfaceSettings</strong></a>获取备用设置的数组。</li>
 <li><p>在活动的备用设置中，枚举管道并获取关联的终结点。</p>
 <p>终结点描述符由以下对象表示：</p>
 <ul>
-<li><a href="https://docs.microsoft.com/uwp/api/Windows.Devices.Usb.UsbBulkInEndpointDescriptor" data-raw-source="[&lt;strong&gt;UsbBulkInEndpointDescriptor&lt;/strong&gt;](/uwp/api/Windows.Devices.Usb.UsbBulkInEndpointDescriptor)"><strong>UsbBulkInEndpointDescriptor</strong></a></li>
-<li><a href="https://docs.microsoft.com/uwp/api/Windows.Devices.Usb.UsbBulkOutEndpointDescriptor" data-raw-source="[&lt;strong&gt;UsbBulkOutEndpointDescriptor&lt;/strong&gt;](/uwp/api/Windows.Devices.Usb.UsbBulkOutEndpointDescriptor)"><strong>UsbBulkOutEndpointDescriptor</strong></a></li>
-<li><a href="https://docs.microsoft.com/uwp/api/Windows.Devices.Usb.UsbInterruptInEndpointDescriptor" data-raw-source="[&lt;strong&gt;UsbInterruptInEndpointDescriptor&lt;/strong&gt;](/uwp/api/Windows.Devices.Usb.UsbInterruptInEndpointDescriptor)"><strong>UsbInterruptInEndpointDescriptor</strong></a></li>
-<li><a href="https://docs.microsoft.com/uwp/api/Windows.Devices.Usb.UsbInterruptOutEndpointDescriptor" data-raw-source="[&lt;strong&gt;UsbInterruptOutEndpointDescriptor&lt;/strong&gt;](/uwp/api/Windows.Devices.Usb.UsbInterruptOutEndpointDescriptor)"><strong>UsbInterruptOutEndpointDescriptor</strong></a></li>
+<li><a href="/uwp/api/Windows.Devices.Usb.UsbBulkInEndpointDescriptor" data-raw-source="[&lt;strong&gt;UsbBulkInEndpointDescriptor&lt;/strong&gt;](/uwp/api/Windows.Devices.Usb.UsbBulkInEndpointDescriptor)"><strong>UsbBulkInEndpointDescriptor</strong></a></li>
+<li><a href="/uwp/api/Windows.Devices.Usb.UsbBulkOutEndpointDescriptor" data-raw-source="[&lt;strong&gt;UsbBulkOutEndpointDescriptor&lt;/strong&gt;](/uwp/api/Windows.Devices.Usb.UsbBulkOutEndpointDescriptor)"><strong>UsbBulkOutEndpointDescriptor</strong></a></li>
+<li><a href="/uwp/api/Windows.Devices.Usb.UsbInterruptInEndpointDescriptor" data-raw-source="[&lt;strong&gt;UsbInterruptInEndpointDescriptor&lt;/strong&gt;](/uwp/api/Windows.Devices.Usb.UsbInterruptInEndpointDescriptor)"><strong>UsbInterruptInEndpointDescriptor</strong></a></li>
+<li><a href="/uwp/api/Windows.Devices.Usb.UsbInterruptOutEndpointDescriptor" data-raw-source="[&lt;strong&gt;UsbInterruptOutEndpointDescriptor&lt;/strong&gt;](/uwp/api/Windows.Devices.Usb.UsbInterruptOutEndpointDescriptor)"><strong>UsbInterruptOutEndpointDescriptor</strong></a></li>
 </ul></li>
 </ul>
 <p><strong>在示例中找到它：</strong> 请参阅名为 Scenario5_UsbDescriptors 的文件。</p></td>
@@ -203,11 +203,11 @@ ms.locfileid: "90010211"
 <p></p>
 <ol>
 <li>从设备的硬件规范获取供应商命令。</li>
-<li>创建 <a href="https://docs.microsoft.com/uwp/api/Windows.Devices.Usb.UsbSetupPacket" data-raw-source="[&lt;strong&gt;UsbSetupPacket&lt;/strong&gt;](/uwp/api/Windows.Devices.Usb.UsbSetupPacket)"><strong>UsbSetupPacket</strong></a> 对象，并通过设置各种属性填充安装包。</li>
+<li>创建 <a href="/uwp/api/Windows.Devices.Usb.UsbSetupPacket" data-raw-source="[&lt;strong&gt;UsbSetupPacket&lt;/strong&gt;](/uwp/api/Windows.Devices.Usb.UsbSetupPacket)"><strong>UsbSetupPacket</strong></a> 对象，并通过设置各种属性填充安装包。</li>
 <li>根据传输方向，启动异步操作以按这些方法发送控件传输：
 <ul>
-<li><a href="https://docs.microsoft.com/uwp/api/Windows.Devices.Usb.UsbDevice#Windows_Devices_Usb_UsbDevice_SendControlInTransferAsync_Windows_Devices_Usb_UsbSetupPacket_Windows_Storage_Streams_IBuffer_" data-raw-source="[&lt;strong&gt;SendControlInTransferAsync&lt;/strong&gt;](/uwp/api/Windows.Devices.Usb.UsbDevice#Windows_Devices_Usb_UsbDevice_SendControlInTransferAsync_Windows_Devices_Usb_UsbSetupPacket_Windows_Storage_Streams_IBuffer_)"><strong>SendControlInTransferAsync</strong></a></li>
-<li><a href="https://docs.microsoft.com/uwp/api/Windows.Devices.Usb.UsbDevice#Windows_Devices_Usb_UsbDevice_SendControlOutTransferAsync_Windows_Devices_Usb_UsbSetupPacket_" data-raw-source="[&lt;strong&gt;SendControlOutTransferAsync&lt;/strong&gt;](/uwp/api/Windows.Devices.Usb.UsbDevice#Windows_Devices_Usb_UsbDevice_SendControlOutTransferAsync_Windows_Devices_Usb_UsbSetupPacket_)"><strong>SendControlOutTransferAsync</strong></a></li>
+<li><a href="/uwp/api/Windows.Devices.Usb.UsbDevice#Windows_Devices_Usb_UsbDevice_SendControlInTransferAsync_Windows_Devices_Usb_UsbSetupPacket_Windows_Storage_Streams_IBuffer_" data-raw-source="[&lt;strong&gt;SendControlInTransferAsync&lt;/strong&gt;](/uwp/api/Windows.Devices.Usb.UsbDevice#Windows_Devices_Usb_UsbDevice_SendControlInTransferAsync_Windows_Devices_Usb_UsbSetupPacket_Windows_Storage_Streams_IBuffer_)"><strong>SendControlInTransferAsync</strong></a></li>
+<li><a href="/uwp/api/Windows.Devices.Usb.UsbDevice#Windows_Devices_Usb_UsbDevice_SendControlOutTransferAsync_Windows_Devices_Usb_UsbSetupPacket_" data-raw-source="[&lt;strong&gt;SendControlOutTransferAsync&lt;/strong&gt;](/uwp/api/Windows.Devices.Usb.UsbDevice#Windows_Devices_Usb_UsbDevice_SendControlOutTransferAsync_Windows_Devices_Usb_UsbSetupPacket_)"><strong>SendControlOutTransferAsync</strong></a></li>
 </ul></li>
 </ol>
 <p><strong>在示例中找到它：</strong> 请参阅名为 Scenario2_ControlTransfer 的文件。</p></td>
@@ -218,10 +218,10 @@ ms.locfileid: "90010211"
 <td><p><strong>快速入门：</strong> <a href="how-to-send-a-usb-bulk-transfer--uwp-app-.md" data-raw-source="[How to send a USB bulk transfer request (UWP app)](how-to-send-a-usb-bulk-transfer--uwp-app-.md)">如何将 USB 批量传输请求发送 (UWP 应用) </a></p>
 <p></p>
 <ol>
-<li> (<a href="https://docs.microsoft.com/uwp/api/Windows.Devices.Usb.UsbBulkOutPipe" data-raw-source="[&lt;strong&gt;UsbBulkOutPipe&lt;/strong&gt;](/uwp/api/Windows.Devices.Usb.UsbBulkOutPipe)"><strong>UsbBulkOutPipe</strong></a> 或 <a href="https://docs.microsoft.com/uwp/api/Windows.Devices.Usb.UsbBulkInPipe" data-raw-source="[&lt;strong&gt;UsbBulkInPipe&lt;/strong&gt;](/uwp/api/Windows.Devices.Usb.UsbBulkInPipe)"><strong>UsbBulkInPipe</strong></a>) 获取大容量管道对象。</li>
+<li> (<a href="/uwp/api/Windows.Devices.Usb.UsbBulkOutPipe" data-raw-source="[&lt;strong&gt;UsbBulkOutPipe&lt;/strong&gt;](/uwp/api/Windows.Devices.Usb.UsbBulkOutPipe)"><strong>UsbBulkOutPipe</strong></a> 或 <a href="/uwp/api/Windows.Devices.Usb.UsbBulkInPipe" data-raw-source="[&lt;strong&gt;UsbBulkInPipe&lt;/strong&gt;](/uwp/api/Windows.Devices.Usb.UsbBulkInPipe)"><strong>UsbBulkInPipe</strong></a>) 获取大容量管道对象。</li>
 <li>配置批量管道以设置策略参数。</li>
-<li>使用 <a href="https://docs.microsoft.com/uwp/api/Windows.Storage.Streams.DataReader" data-raw-source="[&lt;strong&gt;DataReader&lt;/strong&gt;](/uwp/api/Windows.Storage.Streams.DataReader)"><strong>DataReader</strong></a> 或 <a href="https://docs.microsoft.com/uwp/api/Windows.Storage.Streams.DataWriter" data-raw-source="[&lt;strong&gt;DataWriter&lt;/strong&gt;](/uwp/api/Windows.Storage.Streams.DataWriter)"><strong>DataWriter</strong></a> 对象设置数据流。</li>
-<li>通过调用 <a href="https://docs.microsoft.com/uwp/api/Windows.Storage.Streams.DataReader#Windows_Storage_Streams_DataReader_LoadAsync_System_UInt32_" data-raw-source="[&lt;strong&gt;DataReader.LoadAsync&lt;/strong&gt;](/uwp/api/Windows.Storage.Streams.DataReader#Windows_Storage_Streams_DataReader_LoadAsync_System_UInt32_)"><strong>LoadAsync</strong></a> 或 <a href="https://docs.microsoft.com/uwp/api/Windows.Storage.Streams.DataWriter#Windows_Storage_Streams_DataWriter_StoreAsync" data-raw-source="[&lt;strong&gt;DataWriter.StoreAsync&lt;/strong&gt;](/uwp/api/Windows.Storage.Streams.DataWriter#Windows_Storage_Streams_DataWriter_StoreAsync)"><strong>DataWriter</strong></a>来启动异步传输操作。</li>
+<li>使用 <a href="/uwp/api/Windows.Storage.Streams.DataReader" data-raw-source="[&lt;strong&gt;DataReader&lt;/strong&gt;](/uwp/api/Windows.Storage.Streams.DataReader)"><strong>DataReader</strong></a> 或 <a href="/uwp/api/Windows.Storage.Streams.DataWriter" data-raw-source="[&lt;strong&gt;DataWriter&lt;/strong&gt;](/uwp/api/Windows.Storage.Streams.DataWriter)"><strong>DataWriter</strong></a> 对象设置数据流。</li>
+<li>通过调用 <a href="/uwp/api/Windows.Storage.Streams.DataReader#Windows_Storage_Streams_DataReader_LoadAsync_System_UInt32_" data-raw-source="[&lt;strong&gt;DataReader.LoadAsync&lt;/strong&gt;](/uwp/api/Windows.Storage.Streams.DataReader#Windows_Storage_Streams_DataReader_LoadAsync_System_UInt32_)"><strong>LoadAsync</strong></a> 或 <a href="/uwp/api/Windows.Storage.Streams.DataWriter#Windows_Storage_Streams_DataWriter_StoreAsync" data-raw-source="[&lt;strong&gt;DataWriter.StoreAsync&lt;/strong&gt;](/uwp/api/Windows.Storage.Streams.DataWriter#Windows_Storage_Streams_DataWriter_StoreAsync)"><strong>DataWriter</strong></a>来启动异步传输操作。</li>
 <li>获取传输操作的结果。</li>
 </ol>
 <p><strong>在示例中找到它：</strong> 请参阅名为 Scenario4_BulkPipes 的文件。</p></td>
@@ -232,8 +232,8 @@ ms.locfileid: "90010211"
 <td><p><strong>快速入门：</strong> <a href="how-to-send-a-usb-interrupt-transfer--uwp-app-.md" data-raw-source="[How to send a USB interrupt transfer request (UWP app)](how-to-send-a-usb-interrupt-transfer--uwp-app-.md)">如何将 USB 中断传输请求发送 (UWP 应用) </a></p>
 <p></p>
 <ol>
-<li> (<a href="https://docs.microsoft.com/uwp/api/Windows.Devices.Usb.UsbInterruptInPipe" data-raw-source="[&lt;strong&gt;UsbInterruptInPipe&lt;/strong&gt;](/uwp/api/Windows.Devices.Usb.UsbInterruptInPipe)"><strong>UsbInterruptInPipe</strong></a> 或 <a href="https://docs.microsoft.com/uwp/api/Windows.Devices.Usb.UsbInterruptOutPipe" data-raw-source="[&lt;strong&gt;UsbInterruptOutPipe&lt;/strong&gt;](/uwp/api/Windows.Devices.Usb.UsbInterruptOutPipe)"><strong>UsbInterruptOutPipe</strong></a>) 获取中断管道对象。</li>
-<li>实现 <a href="https://docs.microsoft.com/uwp/api/Windows.Devices.Usb.UsbInterruptInPipe#Windows_Devices_Usb_UsbInterruptInPipe_DataReceived" data-raw-source="[&lt;strong&gt;DataReceived&lt;/strong&gt;](/uwp/api/Windows.Devices.Usb.UsbInterruptInPipe#Windows_Devices_Usb_UsbInterruptInPipe_DataReceived)"><strong>DataReceived</strong></a> 事件的中断处理程序。</li>
+<li> (<a href="/uwp/api/Windows.Devices.Usb.UsbInterruptInPipe" data-raw-source="[&lt;strong&gt;UsbInterruptInPipe&lt;/strong&gt;](/uwp/api/Windows.Devices.Usb.UsbInterruptInPipe)"><strong>UsbInterruptInPipe</strong></a> 或 <a href="/uwp/api/Windows.Devices.Usb.UsbInterruptOutPipe" data-raw-source="[&lt;strong&gt;UsbInterruptOutPipe&lt;/strong&gt;](/uwp/api/Windows.Devices.Usb.UsbInterruptOutPipe)"><strong>UsbInterruptOutPipe</strong></a>) 获取中断管道对象。</li>
+<li>实现 <a href="/uwp/api/Windows.Devices.Usb.UsbInterruptInPipe#Windows_Devices_Usb_UsbInterruptInPipe_DataReceived" data-raw-source="[&lt;strong&gt;DataReceived&lt;/strong&gt;](/uwp/api/Windows.Devices.Usb.UsbInterruptInPipe#Windows_Devices_Usb_UsbInterruptInPipe_DataReceived)"><strong>DataReceived</strong></a> 事件的中断处理程序。</li>
 <li>注册事件处理程序以开始接收数据。</li>
 <li>取消注册事件处理程序以停止接收数据。</li>
 </ol>
@@ -245,8 +245,8 @@ ms.locfileid: "90010211"
 <td><p><strong>快速入门：</strong> <a href="how-to-select-a-usb-interface-setting--uwp-app-.md" data-raw-source="[How to select a USB interface setting (UWP app)](how-to-select-a-usb-interface-setting--uwp-app-.md)">如何选择 (UWP 应用的 USB 接口设置) </a></p>
 <p>当打开设备进行通信时，将选择默认接口及其第一个设置。 如果要更改该设置，请执行以下步骤：</p>
 <ol>
-<li>使用 <a href="https://docs.microsoft.com/uwp/api/Windows.Devices.Usb.UsbInterfaceSetting#Windows_Devices_Usb_UsbInterfaceSetting_Selected" data-raw-source="[&lt;strong&gt;UsbInterfaceSetting.Selected&lt;/strong&gt;](/uwp/api/Windows.Devices.Usb.UsbInterfaceSetting#Windows_Devices_Usb_UsbInterfaceSetting_Selected)"><strong>UsbInterfaceSetting</strong></a> 值获取 USB 接口的活动设置。</li>
-<li>通过调用 <a href="https://docs.microsoft.com/uwp/api/Windows.Devices.Usb.UsbInterfaceSetting#Windows_Devices_Usb_UsbInterfaceSetting_SelectSettingAsync" data-raw-source="[&lt;strong&gt;UsbInterfaceSetting.SelectSettingAsync&lt;/strong&gt;](/uwp/api/Windows.Devices.Usb.UsbInterfaceSetting#Windows_Devices_Usb_UsbInterfaceSetting_SelectSettingAsync)"><strong>UsbInterfaceSetting</strong></a>来启动异步操作，设置 USB 接口设置。</li>
+<li>使用 <a href="/uwp/api/Windows.Devices.Usb.UsbInterfaceSetting#Windows_Devices_Usb_UsbInterfaceSetting_Selected" data-raw-source="[&lt;strong&gt;UsbInterfaceSetting.Selected&lt;/strong&gt;](/uwp/api/Windows.Devices.Usb.UsbInterfaceSetting#Windows_Devices_Usb_UsbInterfaceSetting_Selected)"><strong>UsbInterfaceSetting</strong></a> 值获取 USB 接口的活动设置。</li>
+<li>通过调用 <a href="/uwp/api/Windows.Devices.Usb.UsbInterfaceSetting#Windows_Devices_Usb_UsbInterfaceSetting_SelectSettingAsync" data-raw-source="[&lt;strong&gt;UsbInterfaceSetting.SelectSettingAsync&lt;/strong&gt;](/uwp/api/Windows.Devices.Usb.UsbInterfaceSetting#Windows_Devices_Usb_UsbInterfaceSetting_SelectSettingAsync)"><strong>UsbInterfaceSetting</strong></a>来启动异步操作，设置 USB 接口设置。</li>
 </ol></td>
 </tr>
 <tr class="odd">
@@ -254,13 +254,13 @@ ms.locfileid: "90010211"
 <p><strong>步骤 13</strong>-关闭设备。</p></td>
 <td><p><strong>快速入门：</strong> <a href="how-to-connect-to-a-usb-device--uwp-app-.md" data-raw-source="[How to connect to a USB device (UWP app)](how-to-connect-to-a-usb-device--uwp-app-.md)">如何连接到 USB 设备 (UWP 应用) </a></p>
 <p>使用完 UsbDevice 对象后，请关闭该设备。</p>
-<p>C + + 应用程序必须使用 <strong>delete</strong> 关键字发布引用。 C #/VB 应用程序必须调用 <a href="https://docs.microsoft.com/uwp/api/Windows.Devices.Usb.UsbDevice#Windows_Devices_Usb_UsbDevice_Dispose" data-raw-source="[&lt;strong&gt;UsbDevice.Dispose&lt;/strong&gt;](/uwp/api/Windows.Devices.Usb.UsbDevice#Windows_Devices_Usb_UsbDevice_Dispose)"><strong>UsbDevice</strong></a> 方法。 JavaScript 应用程序必须调用 <a href="https://docs.microsoft.com/uwp/api/Windows.Devices.Usb.UsbDevice#Windows_Devices_Usb_UsbDevice_Close" data-raw-source="[&lt;strong&gt;UsbDevice.Close&lt;/strong&gt;](/uwp/api/Windows.Devices.Usb.UsbDevice#Windows_Devices_Usb_UsbDevice_Close)"><strong>UsbDevice</strong></a>。</p>
+<p>C + + 应用程序必须使用 <strong>delete</strong> 关键字发布引用。 C #/VB 应用程序必须调用 <a href="/uwp/api/Windows.Devices.Usb.UsbDevice#Windows_Devices_Usb_UsbDevice_Dispose" data-raw-source="[&lt;strong&gt;UsbDevice.Dispose&lt;/strong&gt;](/uwp/api/Windows.Devices.Usb.UsbDevice#Windows_Devices_Usb_UsbDevice_Dispose)"><strong>UsbDevice</strong></a> 方法。 JavaScript 应用程序必须调用 <a href="/uwp/api/Windows.Devices.Usb.UsbDevice#Windows_Devices_Usb_UsbDevice_Close" data-raw-source="[&lt;strong&gt;UsbDevice.Close&lt;/strong&gt;](/uwp/api/Windows.Devices.Usb.UsbDevice#Windows_Devices_Usb_UsbDevice_Close)"><strong>UsbDevice</strong></a>。</p>
 <p><strong>在示例中找到它：</strong> 请参阅名为 Scenario1_DeviceConnect 的文件。</p></td>
 </tr>
 <tr class="even">
 <td><a href="" id="step14"></a>
 <p><strong>步骤 14</strong>-为应用创建设备元数据包。</p></td>
-<td><strong>工具：</strong> <a href="/windows-hardware/drivers/devtest/device-metadata-authoring-wizard-portal" data-raw-source="[Device Metadata Authoring Wizard](/windows-hardware/drivers/devtest/device-metadata-authoring-wizard-portal)">设备元数据创作向导</a>
+<td><strong>工具：</strong> <a href="/windows-hardware/drivers/devtest/device-metadata-authoring-wizard-portal" data-raw-source="[Device Metadata Authoring Wizard](../devtest/device-metadata-authoring-wizard-portal.md)">设备元数据创作向导</a>
 <ul>
 <li>如果已安装 Windows 驱动程序工具包 (WDK) ，请打开 <strong>驱动程序</strong> &gt; <strong>设备元数据</strong> &gt; <strong>创作</strong>。</li>
 <li>如果已安装独立 SDK，则该工具位于<em> &lt; install_path &gt; </em>\bin\x86\DeviceMetadataWizardexe。</li>
@@ -289,14 +289,14 @@ ms.locfileid: "90010211"
 <tr class="odd">
 <td><a href="" id="step15"></a>
 <p><strong>步骤 15</strong>-扩展应用程序以实现自动播放激活，以便在设备连接到系统时启动应用。</p></td>
-<td><p><strong>快速入门：</strong> <a href="https://docs.microsoft.com/previous-versions/windows/apps/jj161017(v=win.10)" data-raw-source="[Register an app for an AutoPlay device](/previous-versions/windows/apps/jj161017(v=win.10))">为自动播放设备注册应用</a></p>
+<td><p><strong>快速入门：</strong> <a href="/previous-versions/windows/apps/jj161017(v=win.10)" data-raw-source="[Register an app for an AutoPlay device](/previous-versions/windows/apps/jj161017(v=win.10))">为自动播放设备注册应用</a></p>
 <p>可以添加自动播放功能，以便在设备连接到系统时启动应用。 可以 (特权或其他) 为所有 UWP 应用启用自动播放。</p>
 <p></p>
 <ol>
 <li>在设备元数据包中，必须指定设备应如何响应自动播放通知。 在 " <strong>Windows 信息</strong> " 选项卡上，选择 " <strong>UWP 设备应用</strong> " 选项，然后输入应用信息，如下所示：</li>
 <li><p>在应用程序清单中，添加 <strong>自动播放设备</strong> 声明和启动信息，如下所示：</p>
 <p><img src="images/autoplay.png" alt="AutoPlay" /></p></li>
-<li>在 App 类的 OnActivated 方法中，检查设备是否激活了该应用。 如果是，则该方法接收包含 <a href="https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration.DeviceInformation#Windows_Devices_Enumeration_DeviceInformation_Id" data-raw-source="[&lt;strong&gt;DeviceInformation.Id&lt;/strong&gt;](/uwp/api/Windows.Devices.Enumeration.DeviceInformation#Windows_Devices_Enumeration_DeviceInformation_Id)"><strong>DeviceInformation.Id</strong></a> 属性值的 DeviceEventArgs 参数值。 这与步骤6中所述的值相同<a href="#step6" data-raw-source="[&lt;strong&gt;Step 6&lt;/strong&gt;—Extend the app to open the device for communication](#step6)"> <strong>Step 6</strong>，即扩展应用程序以打开设备进行通信</a>。</li>
+<li>在 App 类的 OnActivated 方法中，检查设备是否激活了该应用。 如果是，则该方法接收包含 <a href="/uwp/api/Windows.Devices.Enumeration.DeviceInformation#Windows_Devices_Enumeration_DeviceInformation_Id" data-raw-source="[&lt;strong&gt;DeviceInformation.Id&lt;/strong&gt;](/uwp/api/Windows.Devices.Enumeration.DeviceInformation#Windows_Devices_Enumeration_DeviceInformation_Id)"><strong>DeviceInformation.Id</strong></a> 属性值的 DeviceEventArgs 参数值。 这与步骤6中所述的值相同<a href="#step6" data-raw-source="[&lt;strong&gt;Step 6&lt;/strong&gt;—Extend the app to open the device for communication](#step6)"> <strong>Step 6</strong>，即扩展应用程序以打开设备进行通信</a>。</li>
 </ol>
 <p><strong>在示例中找到它：</strong> 查看名为自动播放的文件。 有关 JavaScript，请参阅 default.js。</p></td>
 </tr>
@@ -304,16 +304,16 @@ ms.locfileid: "90010211"
 <td><a href="" id="step16"></a>
 <p><strong>步骤 16</strong>：扩展应用程序以实现可执行到设备的长度传输的后台任务，例如固件更新，不会使应用挂起。</p></td>
 <td><p>若要实现后台任务，需要两个类。</p>
-<p>后台任务类实现 <a href="https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.IBackgroundTask" data-raw-source="[&lt;strong&gt;IBackgroundTask&lt;/strong&gt;](/uwp/api/Windows.ApplicationModel.Background.IBackgroundTask)"><strong>IBackgroundTask</strong></a> 接口，并包含您创建的用于同步或更新外围设备的实际代码。 当后台任务触发时，将执行后台任务类，并从应用程序的应用程序清单中提供的入口点执行。</p>
+<p>后台任务类实现 <a href="/uwp/api/Windows.ApplicationModel.Background.IBackgroundTask" data-raw-source="[&lt;strong&gt;IBackgroundTask&lt;/strong&gt;](/uwp/api/Windows.ApplicationModel.Background.IBackgroundTask)"><strong>IBackgroundTask</strong></a> 接口，并包含您创建的用于同步或更新外围设备的实际代码。 当后台任务触发时，将执行后台任务类，并从应用程序的应用程序清单中提供的入口点执行。</p>
 <div class="alert">
-<strong>注意</strong>  Windows 8.1 提供的设备后台任务基础结构。 有关 Windows 后台任务的详细信息，请参阅 <a href="https://docs.microsoft.com/previous-versions/windows/apps/hh977056(v=win.10)" data-raw-source="[Supporting your app with background tasks](/previous-versions/windows/apps/hh977056(v=win.10))">支持包含后台任务的应用</a>。
+<strong>注意</strong>  Windows 8.1 提供的设备后台任务基础结构。 有关 Windows 后台任务的详细信息，请参阅 <a href="/previous-versions/windows/apps/hh977056(v=win.10)" data-raw-source="[Supporting your app with background tasks](/previous-versions/windows/apps/hh977056(v=win.10))">支持包含后台任务的应用</a>。
 </div>
 <div>
  
 </div>
 <p><strong>后台任务类</strong></p>
 <ol>
-<li>实现 Windows 后台任务基础结构所需的 <a href="https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.IBackgroundTask" data-raw-source="[&lt;strong&gt;IBackgroundTask&lt;/strong&gt;](/uwp/api/Windows.ApplicationModel.Background.IBackgroundTask)"><strong>IBackgroundTask</strong></a> 接口。</li>
+<li>实现 Windows 后台任务基础结构所需的 <a href="/uwp/api/Windows.ApplicationModel.Background.IBackgroundTask" data-raw-source="[&lt;strong&gt;IBackgroundTask&lt;/strong&gt;](/uwp/api/Windows.ApplicationModel.Background.IBackgroundTask)"><strong>IBackgroundTask</strong></a> 接口。</li>
 <li>获取传递给 <strong>Run</strong> 方法中的类的 DeviceUseDetails 实例，并使用此实例将进度报告回 Microsoft Store 应用并注册取消事件。</li>
 <li><strong>Run</strong>方法还会调用实现后台设备同步代码的私有 OpenDevice 和 WriteToDeviceAsync 方法。</li>
 </ol>
@@ -371,7 +371,7 @@ ms.locfileid: "90010211"
 <tr class="odd">
 <td><a href="" id="step17"></a>
 <p><strong>步骤 17</strong>-运行 Windows 应用认证工具包。</p></td>
-<td><p><a href="https://docs.microsoft.com/previous-versions/windows/apps/hh694081(v=win.10)" data-raw-source="[Using the Windows App Certification Kit](/previous-versions/windows/apps/hh694081(v=win.10))">使用 Windows 应用程序认证工具包</a></p>
+<td><p><a href="/previous-versions/windows/apps/hh694081(v=win.10)" data-raw-source="[Using the Windows App Certification Kit](/previous-versions/windows/apps/hh694081(v=win.10))">使用 Windows 应用程序认证工具包</a></p>
 <p>推荐。 运行 Windows 应用程序认证包可帮助你确保你的应用程序满足 Microsoft Store 要求，因此，在你将主要功能添加到应用程序时，应执行此操作。</p></td>
 </tr>
 </tbody>
@@ -400,6 +400,4 @@ ms.locfileid: "90010211"
 [异步编程（UWP 应用）](/previous-versions/windows/apps/hh464924(v=win.10))
 
 了解如何使你的应用程序在执行可能需要较长时间的操作时保持响应。
-
- 
 

@@ -14,12 +14,12 @@ api_type:
 - DllExport
 ms.date: 01/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 91e490f2ed09bea34e39843538ecd8d0e73a94a0
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: e0ff4dde8e05098f40d0e68e822327e4689295e5
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89064842"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90103788"
 ---
 # <a name="driverentry-of-video-miniport-driver-function"></a>视频微型端口驱动程序函数的 DriverEntry
 
@@ -36,7 +36,7 @@ ULONG DriverEntry(
 );
 ```
 
-<a name="parameters"></a>parameters
+<a name="parameters"></a>参数
 ----------
 
 *Context1* \[指向 \] 一个上下文值的指针，微型端口驱动程序必须调用 [**VideoPortInitialize**](/windows-hardware/drivers/ddi/video/nf-video-videoportinitialize)。 此上下文值标识系统为此微型端口驱动程序创建的驱动程序对象。
@@ -104,23 +104,23 @@ ULONG DriverEntry(
 <tbody>
 <tr class="odd">
 <td align="left"><p>SIZE_OF_NT4_VIDEO_PORT_CONFIG_INFO</p></td>
-<td align="left"><p>Windows NT 4.0 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/video/ns-video-_video_port_config_info" data-raw-source="[&lt;strong&gt;VIDEO_PORT_CONFIG_INFO&lt;/strong&gt;](/windows-hardware/drivers/ddi/video/ns-video-_video_port_config_info)"><strong>VIDEO_PORT_CONFIG_INFO</strong></a> 结构的大小（以字节为单位）。</p></td>
+<td align="left"><p>Windows NT 4.0 <a href="/windows-hardware/drivers/ddi/video/ns-video-_video_port_config_info" data-raw-source="[&lt;strong&gt;VIDEO_PORT_CONFIG_INFO&lt;/strong&gt;](/windows-hardware/drivers/ddi/video/ns-video-_video_port_config_info)"><strong>VIDEO_PORT_CONFIG_INFO</strong></a> 结构的大小（以字节为单位）。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>SIZE_OF_NT4_VIDEO_HW_INITIALIZATION_DATA</p></td>
-<td align="left"><p>Windows NT 4.0 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/video/ns-video-_video_hw_initialization_data" data-raw-source="[&lt;strong&gt;VIDEO_HW_INITIALIZATION_DATA&lt;/strong&gt;](/windows-hardware/drivers/ddi/video/ns-video-_video_hw_initialization_data)"><strong>VIDEO_HW_INITIALIZATION_DATA</strong></a> 结构的大小（以字节为单位）。 如果 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/video/nf-video-videoportinitialize" data-raw-source="[&lt;strong&gt;VideoPortInitialize&lt;/strong&gt;](/windows-hardware/drivers/ddi/video/nf-video-videoportinitialize)"><strong>VideoPortInitialize</strong></a> 失败，则视频微型端口驱动程序应将 VIDEO_HW_INITIALIZATION_DATA 结构的 <strong>HwInitDataSize</strong> 成员设置为此结构或 windows NT 4.0 版本的 windows 2000 (和更) 高版本的大小。 选择适当的结构大小，以匹配要运行微型端口驱动程序的操作系统版本。 然后，视频微型端口驱动程序应再次调用 <strong>VideoPortInitialize</strong> 。 有关使用的示例，请参阅 Windows 驱动程序开发工具包 (DDK) 中包含的视频微型端口驱动程序示例。</p></td>
+<td align="left"><p>Windows NT 4.0 <a href="/windows-hardware/drivers/ddi/video/ns-video-_video_hw_initialization_data" data-raw-source="[&lt;strong&gt;VIDEO_HW_INITIALIZATION_DATA&lt;/strong&gt;](/windows-hardware/drivers/ddi/video/ns-video-_video_hw_initialization_data)"><strong>VIDEO_HW_INITIALIZATION_DATA</strong></a> 结构的大小（以字节为单位）。 如果 <a href="/windows-hardware/drivers/ddi/video/nf-video-videoportinitialize" data-raw-source="[&lt;strong&gt;VideoPortInitialize&lt;/strong&gt;](/windows-hardware/drivers/ddi/video/nf-video-videoportinitialize)"><strong>VideoPortInitialize</strong></a> 失败，则视频微型端口驱动程序应将 VIDEO_HW_INITIALIZATION_DATA 结构的 <strong>HwInitDataSize</strong> 成员设置为此结构或 windows NT 4.0 版本的 windows 2000 (和更) 高版本的大小。 选择适当的结构大小，以匹配要运行微型端口驱动程序的操作系统版本。 然后，视频微型端口驱动程序应再次调用 <strong>VideoPortInitialize</strong> 。 有关使用的示例，请参阅 Windows 驱动程序开发工具包 (DDK) 中包含的视频微型端口驱动程序示例。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>SIZE_OF_W2K_VIDEO_HW_INITIALIZATION_DATA</p></td>
-<td align="left"><p>Windows 2000 和更高版本 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/video/ns-video-_video_hw_initialization_data" data-raw-source="[&lt;strong&gt;VIDEO_HW_INITIALIZATION_DATA&lt;/strong&gt;](/windows-hardware/drivers/ddi/video/ns-video-_video_hw_initialization_data)"><strong>VIDEO_HW_INITIALIZATION_DATA</strong></a> 结构的大小（以字节为单位）。</p></td>
+<td align="left"><p>Windows 2000 和更高版本 <a href="/windows-hardware/drivers/ddi/video/ns-video-_video_hw_initialization_data" data-raw-source="[&lt;strong&gt;VIDEO_HW_INITIALIZATION_DATA&lt;/strong&gt;](/windows-hardware/drivers/ddi/video/ns-video-_video_hw_initialization_data)"><strong>VIDEO_HW_INITIALIZATION_DATA</strong></a> 结构的大小（以字节为单位）。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>SIZE_OF_WXP_VIDEO_HW_INITIALIZATION_DATA</p></td>
-<td align="left"><p>Windows Vista 和更高版本 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/video/ns-video-_video_hw_initialization_data" data-raw-source="[&lt;strong&gt;VIDEO_HW_INITIALIZATION_DATA&lt;/strong&gt;](/windows-hardware/drivers/ddi/video/ns-video-_video_hw_initialization_data)"><strong>VIDEO_HW_INITIALIZATION_DATA</strong></a> 结构的大小（以字节为单位）。</p></td>
+<td align="left"><p>Windows Vista 和更高版本 <a href="/windows-hardware/drivers/ddi/video/ns-video-_video_hw_initialization_data" data-raw-source="[&lt;strong&gt;VIDEO_HW_INITIALIZATION_DATA&lt;/strong&gt;](/windows-hardware/drivers/ddi/video/ns-video-_video_hw_initialization_data)"><strong>VIDEO_HW_INITIALIZATION_DATA</strong></a> 结构的大小（以字节为单位）。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>SIZE_OF_WXP_VIDEO_PORT_CONFIG_INFO</p></td>
-<td align="left"><p>Windows Vista <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/video/ns-video-_video_port_config_info" data-raw-source="[&lt;strong&gt;VIDEO_PORT_CONFIG_INFO&lt;/strong&gt;](/windows-hardware/drivers/ddi/video/ns-video-_video_port_config_info)"><strong>VIDEO_PORT_CONFIG_INFO</strong></a> 结构的大小（以字节为单位）。</p></td>
+<td align="left"><p>Windows Vista <a href="/windows-hardware/drivers/ddi/video/ns-video-_video_port_config_info" data-raw-source="[&lt;strong&gt;VIDEO_PORT_CONFIG_INFO&lt;/strong&gt;](/windows-hardware/drivers/ddi/video/ns-video-_video_port_config_info)"><strong>VIDEO_PORT_CONFIG_INFO</strong></a> 结构的大小（以字节为单位）。</p></td>
 </tr>
 </tbody>
 </table>
@@ -171,6 +171,4 @@ ULONG DriverEntry(
 [**VideoPortVerifyAccessRanges**](/windows-hardware/drivers/ddi/video/nf-video-videoportverifyaccessranges)
 
 [**VideoPortZeroMemory**](/windows-hardware/drivers/ddi/video/nf-video-videoportzeromemory)
-
- 
 

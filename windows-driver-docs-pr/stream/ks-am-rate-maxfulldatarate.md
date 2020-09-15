@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ef545f56e8d29378335fa860b1408135959c42b8
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 95dde9b3f957664644a2d10b7d00c5bd641f0172
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89191427"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90103562"
 ---
 # <a name="ks_am_rate_maxfulldatarate"></a>KS \_ AM \_ 速率 \_ MaxFullDataRate
 
@@ -53,7 +53,7 @@ KS \_ AM \_ rate \_ MaxFullDataRate 属性检索最大值、完整数据速率�
 <td><p>是</p></td>
 <td><p>否</p></td>
 <td><p>Pin</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)"><strong>KSPROPERTY</strong></a></p></td>
+<td><p><a href="/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)"><strong>KSPROPERTY</strong></a></p></td>
 <td><p>KS_AM_MaxFullDataRate</p></td>
 </tr>
 </tbody>
@@ -78,6 +78,4 @@ KS \_ AM \_ rate \_ MaxFullDataRate 属性检索最大值、完整数据速率�
 </tr>
 </tbody>
 </table>
-
- 
 

@@ -4,12 +4,12 @@ description: Microsoft 源代码批注语言 (SAL) 包含特定于 Windows 驱�
 ms.assetid: 2CD181B8-4E1D-457A-9FF9-DAB3AB932730
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7526d36a9725f3c470dc6f53d7f17012ac1f1a2d
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 9644029412de5691f58b51b1a0a3faebf06bd962
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89381869"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90102870"
 ---
 # <a name="sal-20-annotations-for-windows-drivers"></a>Windows 驱动程序的 SAL 2.0 注释
 
@@ -30,7 +30,7 @@ Microsoft 源代码批注语言 (SAL) 包含特定于 Windows 驱动程序分析
 <tr class="header">
 <th align="left">驱动程序批注</th>
 <th align="left">类别</th>
-<th align="left">用途</th>
+<th align="left">使用</th>
 </tr>
 </thead>
 <tbody>
@@ -85,7 +85,7 @@ Microsoft 源代码批注语言 (SAL) 包含特定于 Windows 驱动程序分析
 <tr class="even">
 <td align="left"><p><strong><em>Flt_CompletionContext_Outptr</em></strong></p></td>
 <td align="left"><a href="-flt-completioncontext-outptr--annotation.md" data-raw-source="[_Flt_CompletionContext_Outptr_ Annotation](-flt-completioncontext-outptr--annotation.md)"><em>Flt_CompletionContext_Outptr</em> 绘图</a></td>
-<td align="left"><p>在声明文件系统微筛选器预操作回调函数 (<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nc-fltkernel-pflt_pre_operation_callback" data-raw-source="[&lt;strong&gt;PFLT_PRE_OPERATION_CALLBACK&lt;/strong&gt;](/windows-hardware/drivers/ddi/fltkernel/nc-fltkernel-pflt_pre_operation_callback)"><strong>PFLT_PRE_OPERATION_CALLBACK</strong></a>) 时使用<strong><em>Flt_CompletionContext_Outptr</em></strong>注释。 将此批注放置在 <em>CompletionContext</em> 参数上。 此批注指示代码分析工具检查 <em>CompletionContext</em> 是否适用于 FLT_PREOP_CALLBACK_STATUS 返回值。</p></td>
+<td align="left"><p>在声明文件系统微筛选器预操作回调函数 (<a href="/windows-hardware/drivers/ddi/fltkernel/nc-fltkernel-pflt_pre_operation_callback" data-raw-source="[&lt;strong&gt;PFLT_PRE_OPERATION_CALLBACK&lt;/strong&gt;](/windows-hardware/drivers/ddi/fltkernel/nc-fltkernel-pflt_pre_operation_callback)"><strong>PFLT_PRE_OPERATION_CALLBACK</strong></a>) 时使用<strong><em>Flt_CompletionContext_Outptr</em></strong>注释。 将此批注放置在 <em>CompletionContext</em> 参数上。 此批注指示代码分析工具检查 <em>CompletionContext</em> 是否适用于 FLT_PREOP_CALLBACK_STATUS 返回值。</p></td>
 </tr>
 </tbody>
 </table>
@@ -96,6 +96,4 @@ Microsoft 源代码批注语言 (SAL) 包含特定于 Windows 驱动程序分析
 
 
 [使用 SAL 注释减少 C/C++ 代码缺陷](/cpp/code-quality/using-sal-annotations-to-reduce-c-cpp-code-defects)
-
- 
 

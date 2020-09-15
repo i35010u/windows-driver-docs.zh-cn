@@ -3,12 +3,12 @@ description: USB 设备可以支持中断终结点，以便它可以定期发送
 title: 如何发送 USB 中断传输请求（UWP 应用）
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ef051a6b7d5158bf37cb6d31be6fb866712a8718
-ms.sourcegitcommit: 937974aa9bbe0262a7ffe9631593fab48c4e7492
+ms.openlocfilehash: 9f2827ff3f81ddd235a3a66a7acff761211b6ce2
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "90010655"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90101730"
 ---
 # <a name="how-to-send-a-usb-interrupt-transfer-request-uwp-app"></a>如何发送 USB 中断传输请求（UWP 应用）
 
@@ -125,9 +125,9 @@ void OnInterruptDataReceivedEvent(UsbInterruptInPipe^ /* sender */, UsbInterrupt
 
 若要为 [**DataReceived**](/uwp/api/Windows.Devices.Usb.UsbInterruptInPipe#Windows_Devices_Usb_UsbInterruptInPipe_DataReceived) 事件注册事件处理程序，请使用以下任何属性获取对 [**UsbInterruptInPipe**](/uwp/api/Windows.Devices.Usb.UsbInterruptInPipe) 的引用：
 
--   如果你的中断终结点在第一个 USB 接口中存在，则为[**UsbDevice DefaultInterface。 \[ \] **](https://msdn.microsoft.com/library/windows/apps/dn264292)
--   [**UsbDevice.Configu。UsbInterfaces \[ m \] 。InterruptInPipes \[ n \] **](https://msdn.microsoft.com/library/windows/apps/dn264292)用于枚举设备支持的每个接口的管道中的所有中断。
--   [**UsbInterface. InterfaceSettings \[ m \] 。InterruptInEndpoints \[ n \] 。**](https://msdn.microsoft.com/library/windows/apps/dn264292) 用于枚举接口的设置定义的管道中的中断的管道。
+-   如果你的中断终结点在第一个 USB 接口中存在，则为[**UsbDevice DefaultInterface。 \[ \] **](/uwp/api/Windows.Devices.Usb.UsbInterface)
+-   [**UsbDevice.Configu。UsbInterfaces \[ m \] 。InterruptInPipes \[ n \] **](/uwp/api/Windows.Devices.Usb.UsbInterface)用于枚举设备支持的每个接口的管道中的所有中断。
+-   [**UsbInterface. InterfaceSettings \[ m \] 。InterruptInEndpoints \[ n \] 。**](/uwp/api/Windows.Devices.Usb.UsbInterface) 用于枚举接口的设置定义的管道中的中断的管道。
 -   用于从终结点中中断的终结点描述符获取管道对象的[**UsbEndpointDescriptor. AsInterruptInEndpointDescriptor。**](/uwp/api/Windows.Devices.Usb.UsbInterruptInEndpointDescriptor#Windows_Devices_Usb_UsbInterruptInEndpointDescriptor_Pipe)
 
 **注意**  避免通过枚举当前未选择的接口设置的中断终结点来获取管道对象。 若要传输数据，管道必须与活动设置中的终结点相关联。

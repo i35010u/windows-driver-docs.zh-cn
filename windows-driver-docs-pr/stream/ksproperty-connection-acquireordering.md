@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 75d6b8a978afa67a7c4dc5d9efc3c4a21e65ee9d
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: e97e7a178fc42b5f9816edfa60b5fa8714f8f442
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89192361"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90103272"
 ---
 # <a name="ksproperty_connection_acquireordering"></a>KSPROPERTY \_ 连接 \_ ACQUIREORDERING
 
@@ -53,7 +53,7 @@ KSPROPERTY \_ CONNECTION \_ ACQUIREORDERING 属性是一个可选属性，当状
 <td><p>是</p></td>
 <td><p>否</p></td>
 <td><p>Pin</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)"><strong>KSPROPERTY</strong></a></p></td>
+<td><p><a href="/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)"><strong>KSPROPERTY</strong></a></p></td>
 <td><p>BOOL</p></td>
 </tr>
 </tbody>
@@ -61,7 +61,7 @@ KSPROPERTY \_ CONNECTION \_ ACQUIREORDERING 属性是一个可选属性，当状
 
  
 
-<a name="remarks"></a>注解
+<a name="remarks"></a>备注
 -------
 
 如果状态更改排序非常重要，则此属性返回 **TRUE** 。 如果返回 **FALSE** ，则不需要实现属性。
@@ -78,16 +78,14 @@ KSPROPERTY \_ CONNECTION \_ ACQUIREORDERING 属性是一个可选属性，当状
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Header</p></td>
+<td><p>标头</p></td>
 <td>Ks (包含 Ks .h) </td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
 [KSPROPSETID \_ 连接](kspropsetid-connection.md)
-
- 
 

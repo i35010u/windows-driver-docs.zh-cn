@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2141193d1abfa6155d773010b40c681447519286
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 66a8fd936168d89237686f00afd8982053486d79
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89206961"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90102642"
 ---
 # <a name="ksproperty_audio_eq_level"></a>KSPROPERTY \_ 音频 \_ EQ \_ 级别
 
@@ -53,7 +53,7 @@ KSPROPERTY \_ AUDIO \_ EQ \_ LEVEL 属性指定包含 *n* 个 frequency 区段�
 <td align="left"><p>是</p></td>
 <td align="left"><p>是</p></td>
 <td align="left"><p>筛选器</p></td>
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksnodeproperty_audio_channel" data-raw-source="[&lt;strong&gt;KSNODEPROPERTY_AUDIO_CHANNEL&lt;/strong&gt;](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksnodeproperty_audio_channel)"><strong>KSNODEPROPERTY_AUDIO_CHANNEL</strong></a></p></td>
+<td align="left"><p><a href="/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksnodeproperty_audio_channel" data-raw-source="[&lt;strong&gt;KSNODEPROPERTY_AUDIO_CHANNEL&lt;/strong&gt;](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksnodeproperty_audio_channel)"><strong>KSNODEPROPERTY_AUDIO_CHANNEL</strong></a></p></td>
 <td align="left"><p>长数组</p></td>
 </tr>
 </tbody>
@@ -136,6 +136,4 @@ KSPROPERTY \_ 音频 \_ EQ \_ LEVEL 属性请求返回状态 \_ SUCCESS 以指�
 [**KSPROPERTY \_ 音频 \_ 数字 \_ EQ \_ 带区**](ksproperty-audio-num-eq-bands.md)
 
 [**KSPROPERTY \_ 音频 \_ EQ \_ 带区**](ksproperty-audio-eq-bands.md)
-
- 
 

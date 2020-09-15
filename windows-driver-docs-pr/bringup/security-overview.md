@@ -4,12 +4,12 @@ description: 使用此部分中的主题来了解有关 Windows 10 移动版中�
 ms.assetid: 15783e59-f37b-4373-8604-d35c57eedfcc
 ms.date: 08/31/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 78bda857fe00c3e1ced1050c787d63f0563321f0
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 7766e0bfeb1031388d680c454e55898a039b033e
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89189403"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90101520"
 ---
 # <a name="security"></a>安全性
 
@@ -29,11 +29,11 @@ ms.locfileid: "89189403"
   <tbody>
     <tr>
       <td>了解如何对不同类型的可执行代码和其他代码资产进行签名</td>
-      <td>所有 Windows 10 移动版二进制文件都需要数字签名才能在零售电话上加载和执行。 有关详细信息，请参阅： <a href="https://docs.microsoft.com/windows-hardware/drivers/dashboard/get-a-code-signing-certificate">获取代码签名证书</a>。</td>
+      <td>所有 Windows 10 移动版二进制文件都需要数字签名才能在零售电话上加载和执行。 有关详细信息，请参阅： <a href="/windows-hardware/drivers/dashboard/get-a-code-signing-certificate">获取代码签名证书</a>。</td>
 </tr>
 <tr class="even">
 <td>了解映像验证和加密</td>
-<td>Windows 10 移动版包含 <a href="https://docs.microsoft.com/windows-hardware/drivers/bringup/secure-boot">安全引导</a>，这是在允许执行固件映像之前对其进行验证的进程。 Windows 10 移动版还提供了 <a href="https://docs.microsoft.com/windows-hardware/drivers/bringup/secure-boot-and-device-encryption-overview">设备加密</a>功能，该功能可对存储在内部数据分区上的所有用户数据进行加密。 在制造过程中，Oem 必须执行一系列任务才能实现这些功能。</td>
+<td>Windows 10 移动版包含 <a href="/windows-hardware/drivers/bringup/secure-boot">安全引导</a>，这是在允许执行固件映像之前对其进行验证的进程。 Windows 10 移动版还提供了 <a href="/windows-hardware/drivers/bringup/secure-boot-and-device-encryption-overview">设备加密</a>功能，该功能可对存储在内部数据分区上的所有用户数据进行加密。 在制造过程中，Oem 必须执行一系列任务才能实现这些功能。</td>
 </tr>
 <tr>
 <td>了解 SDL)  (安全开发生命周期</td>

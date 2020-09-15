@@ -6,12 +6,12 @@ ms.assetid: 3135cb30-a696-4201-8dfc-cdc1a29fe52b
 keywords:
 - IRP_MN_QUERY_ID 内核模式驱动程序体系结构
 ms.localizationpriority: medium
-ms.openlocfilehash: b998afbe5c3f569c0371a66ce49173548c4c34c0
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 9446f562058fed642aa1e95ceb70ec00a0fb5365
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89184119"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90103148"
 ---
 # <a name="irp_mn_query_id"></a>IRP \_ MN \_ 查询 \_ ID
 
@@ -24,7 +24,7 @@ ms.locfileid: "89184119"
 
 **注意**   函数驱动程序和筛选器驱动程序不处理此 IRP。
 
- ## <a name="value"></a>值
+ ## <a name="value"></a>“值”
 
 0x13
 
@@ -111,7 +111,7 @@ PnP 管理器和驱动程序将此 IRP 以 IRQL 被动级别发送到 \_ 任意�
 
 安装程序将根据 INF 文件中列出的 Id 检查 Id 以查找可能的匹配项。 安装程序首先扫描硬件 Id 列表，然后扫描兼容 Id 列表。 更早的条目被视为更具体的设备描述，更高的条目作为更常规的 (，因此与设备的最佳) 匹配更少。 如果在硬件 Id 列表中找不到匹配项，则安装程序可能会提示用户安装媒体，然后再转到兼容 Id 列表。
 
-请参阅 [即插即用](https://docs.microsoft.com/windows-hardware/drivers/kernel/implementing-plug-and-play) ，了解用于处理 [即插即用次要 irp](plug-and-play-minor-irps.md)的一般规则。
+请参阅 [即插即用](./introduction-to-plug-and-play.md) ，了解用于处理 [即插即用次要 irp](plug-and-play-minor-irps.md)的一般规则。
 
 **指定 BusQueryContainerIDs**
 

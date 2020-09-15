@@ -9,12 +9,12 @@ keywords:
 - EVENTSETID_VIDEODECODER
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ddf79687b426a80218ecde86a784d54fcefed882
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 92f4f669afd53384f6a349ebd6071bf829dcd608
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89190353"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90103524"
 ---
 # <a name="video-decoder-change-event"></a>视频解码器更改事件
 
@@ -34,13 +34,11 @@ ms.locfileid: "89190353"
 </thead>
 <tbody>
 <tr class="odd">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/stream/ksevent-videodecoder-changed" data-raw-source="[&lt;strong&gt;KSEVENT_VIDEODECODER_CHANGED&lt;/strong&gt;](./ksevent-videodecoder-changed.md)"><strong>KSEVENT_VIDEODECODER_CHANGED</strong></a></p></td>
+<td><p><a href="/windows-hardware/drivers/stream/ksevent-videodecoder-changed" data-raw-source="[&lt;strong&gt;KSEVENT_VIDEODECODER_CHANGED&lt;/strong&gt;](./ksevent-videodecoder-changed.md)"><strong>KSEVENT_VIDEODECODER_CHANGED</strong></a></p></td>
 <td><p>向 DirectShow 发出信号，指示视频解码器已更改，例如，由于从复合输入端口选择了 SVideo 输入端口。</p></td>
 </tr>
 </tbody>
 </table>
-
- 
 
  
 

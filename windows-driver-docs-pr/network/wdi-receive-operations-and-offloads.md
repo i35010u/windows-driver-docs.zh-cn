@@ -4,12 +4,12 @@ description: 操作卸载的主要类别是可配置的。MSDU operationsFrame �
 ms.assetid: 7D2648BC-05F2-4F75-BA01-E0385C83E0E8
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0fe5b6770a00ec2c774bfd1ac52c702d4e5f698a
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: bfe9f633734f7e770a5a3ce94db71ff9ae1fbf21
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89213157"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90102414"
 ---
 # <a name="wdi-receive-operations-and-offloads"></a>WDI 接收操作和卸载
 
@@ -34,7 +34,7 @@ ms.locfileid: "89213157"
 <th align="left">函数</th>
 <th align="left">说明</th>
 <th align="left">所有权</th>
-<th align="left">说明</th>
+<th align="left">备注</th>
 </tr>
 </thead>
 <tbody>
@@ -130,7 +130,7 @@ ms.locfileid: "89213157"
 <td align="left"><p>高级协议 (任务) 卸载</p></td>
 <td align="left"><p>校验和</p></td>
 <td align="left"><p>Checksum：在启动时可配置的卸载（如果需要）。</p></td>
-<td align="left"><p>校验和：在启动过程中，目标会将其校验和卸载功能作为设备 cap 的一部分传递到 WDI。 有关功能的信息，请参阅 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_tcp_ip_checksum_offload" data-raw-source="[&lt;strong&gt;NDIS_TCP_IP_ CHECKSUM_OFFLOAD&lt;/strong&gt;](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_tcp_ip_checksum_offload)"><strong>NDIS_TCP_IP_ CHECKSUM_OFFLOAD</strong></a>。</p></td>
+<td align="left"><p>校验和：在启动过程中，目标会将其校验和卸载功能作为设备 cap 的一部分传递到 WDI。 有关功能的信息，请参阅 <a href="/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_tcp_ip_checksum_offload" data-raw-source="[&lt;strong&gt;NDIS_TCP_IP_ CHECKSUM_OFFLOAD&lt;/strong&gt;](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_tcp_ip_checksum_offload)"><strong>NDIS_TCP_IP_ CHECKSUM_OFFLOAD</strong></a>。</p></td>
 </tr>
 </tbody>
 </table>
@@ -166,6 +166,4 @@ ms.locfileid: "89213157"
 [**WDI \_ 豁免 \_ 操作 \_ 类型**](/windows-hardware/drivers/ddi/dot11wdi/ne-dot11wdi-_wdi_exemption_action_type)
 
 [**WDI \_ 帧 \_ 负载 \_ 类型**](/windows-hardware/drivers/ddi/dot11wdi/ne-dot11wdi-_wdi_frame_payload_type)
-
- 
 

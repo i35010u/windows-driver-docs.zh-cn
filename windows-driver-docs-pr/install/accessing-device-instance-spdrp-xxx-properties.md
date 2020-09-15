@@ -4,12 +4,12 @@ description: 访问设备实例 SPDRP_Xxx 属性
 ms.assetid: 15ee51f8-1904-43ee-8bc2-311688c860e0
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2544bedd85bd002865423bc6177858c3a8056e88
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 14c4a6e225ad84d0cdabea41bb50c9c620cf99e2
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89096519"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90102418"
 ---
 # <a name="accessing-device-instance-spdrp_xxx-properties"></a>访问设备实例 SPDRP_Xxx 属性
 
@@ -41,7 +41,7 @@ ms.locfileid: "89096519"
 1.  调用 **SetupDiGetDeviceRegistryProperty** 可检索属性值的大小（以字节为单位）。 提供以下参数值：
 
     -   将 *DeviceInfoSet* 设置为设备信息集的句柄，其中包含要为其检索请求的属性值的设备实例。
-    -   将 *DeviceInfoData* 设置为指向 [**SP_DEVINFO_DATA**](/windows/desktop/api/setupapi/ns-setupapi-_sp_devinfo_data) 结构的指针，该结构表示要为其检索请求的属性值的设备实例。
+    -   将 *DeviceInfoData* 设置为指向 [**SP_DEVINFO_DATA**](/windows/win32/api/setupapi/ns-setupapi-sp_devinfo_data) 结构的指针，该结构表示要为其检索请求的属性值的设备实例。
     -   将 *属性* 设置为 SPDRP_*Xxx* 标识符。 有关这些标识符的列表和相应的设备属性的说明，请参阅[**SetupDiSetDeviceRegistryProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdisetdeviceregistrypropertya)附带的*属性*参数说明。
     -   将 *PropertyRegDataType* 设置为指向 DWORD 类型化变量的指针。
     -   将 *PropertyBuffer* 设置为 **NULL**。
@@ -63,7 +63,7 @@ ms.locfileid: "89096519"
 
 -   将 *DeviceInfoSet* 设置为设备信息集的句柄，其中包含要为其设置属性值的设备实例。
 
--   将 *DeviceInfoData* 设置为指向 [**SP_DEVINFO_DATA**](/windows/desktop/api/setupapi/ns-setupapi-_sp_devinfo_data) 结构的指针，该结构表示要为其设置属性值的设备实例。
+-   将 *DeviceInfoData* 设置为指向 [**SP_DEVINFO_DATA**](/windows/win32/api/setupapi/ns-setupapi-sp_devinfo_data) 结构的指针，该结构表示要为其设置属性值的设备实例。
 
 -   将 *属性* 设置为 SPDRP_*Xxx* 标识符。
 

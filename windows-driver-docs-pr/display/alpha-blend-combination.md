@@ -9,12 +9,12 @@ keywords:
 - 混合图片 WDK DirectX VA，关于 alpha blend 组合
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1cc58d4f557720806fe960e3e386ddb7a7482d8e
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: af6c3a40ade8b8b7994d8583cf9793cc2ea35185
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89064406"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90102866"
 ---
 # <a name="alpha-blend-combination"></a>Alpha 混合组合
 
@@ -41,21 +41,19 @@ ms.locfileid: "89064406"
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_bufferdescription" data-raw-source="[&lt;strong&gt;DXVA_BufferDescription&lt;/strong&gt;](/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_bufferdescription)"><strong>DXVA_BufferDescription</strong></a></p></td>
+<td align="left"><p><a href="/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_bufferdescription" data-raw-source="[&lt;strong&gt;DXVA_BufferDescription&lt;/strong&gt;](/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_bufferdescription)"><strong>DXVA_BufferDescription</strong></a></p></td>
 <td align="left"><p>指定要使用的 alpha blend 组合缓冲区。 此缓冲区控制来自源图片和 alpha 混合信息的混合图片的生成。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_blendcombination" data-raw-source="[&lt;strong&gt;DXVA_BlendCombination&lt;/strong&gt;](/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_blendcombination)"><strong>DXVA_BlendCombination</strong></a></p></td>
+<td align="left"><p><a href="/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_blendcombination" data-raw-source="[&lt;strong&gt;DXVA_BlendCombination&lt;/strong&gt;](/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_blendcombination)"><strong>DXVA_BlendCombination</strong></a></p></td>
 <td align="left"><p>指定如何从 alpha blend 组合缓冲区生成混合图片。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_configalphacombine" data-raw-source="[&lt;strong&gt;DXVA_ConfigAlphaCombine&lt;/strong&gt;](/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_configalphacombine)"><strong>DXVA_ConfigAlphaCombine</strong></a></p></td>
+<td align="left"><p><a href="/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_configalphacombine" data-raw-source="[&lt;strong&gt;DXVA_ConfigAlphaCombine&lt;/strong&gt;](/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_configalphacombine)"><strong>DXVA_ConfigAlphaCombine</strong></a></p></td>
 <td align="left"><p>建立用于执行 alpha 混合组合操作的方式的配置。</p></td>
 </tr>
 </tbody>
 </table>
-
- 
 
  
 

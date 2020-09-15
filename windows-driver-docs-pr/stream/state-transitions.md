@@ -10,12 +10,12 @@ keywords:
 - 状态转换 WDK 视频捕获
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8e337cc85d25011697913611ddcec0a8e85cc694
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: ba87a385c1575fa93ae371879b7bb675a1975f16
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89185565"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90102996"
 ---
 # <a name="state-transitions"></a>状态转换
 
@@ -48,7 +48,7 @@ ms.locfileid: "89185565"
 </tr>
 <tr class="even">
 <td><p>暂停以停止</p></td>
-<td><p>解除分配资源并完成所有未完成的读取 SRBs。 未使用图像填充的 SRBs 在<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksstream_header" data-raw-source="[&lt;strong&gt;KSSTREAM_HEADER&lt;/strong&gt;](/windows-hardware/drivers/ddi/ks/ns-ks-ksstream_header)"><strong>KSSTREAM_HEADER</strong></a>结构的<strong>DataUsed</strong>成员中以零长度完成。</p></td>
+<td><p>解除分配资源并完成所有未完成的读取 SRBs。 未使用图像填充的 SRBs 在<a href="/windows-hardware/drivers/ddi/ks/ns-ks-ksstream_header" data-raw-source="[&lt;strong&gt;KSSTREAM_HEADER&lt;/strong&gt;](/windows-hardware/drivers/ddi/ks/ns-ks-ksstream_header)"><strong>KSSTREAM_HEADER</strong></a>结构的<strong>DataUsed</strong>成员中以零长度完成。</p></td>
 </tr>
 </tbody>
 </table>
@@ -66,6 +66,4 @@ KSSTATE \_ &gt; **KSSTATE \_ 获取**  - &gt; **KSSTATE \_ 暂停**  - &gt; **KS
 由于用户模式应用程序在流式传输过程中可能会意外结束，因此所有 Stream 类微型驱动程序都必须随时接受并处理来自 Stream 类接口的 [**SRB \_ 关闭 \_ 流**](./srb-close-stream.md) 请求。 在 Stream 类接口将 SRB \_ CLOSE \_ 流发送到微型驱动程序之前，它会通过微型驱动程序的 **HwCancelPacket** 例程取消所有未完成的缓冲区。 请注意，在应用程序终止之前，不能将流状态设置为 **KSSTATE \_ STOP** 。
 
 请勿更新[**ks \_ 帧 \_ 信息**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagks_frame_info)的**PictureNumber**或**DropCount**成员， [**ks \_ VBI \_ 帧 \_ 信息**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagks_vbi_frame_info)或[**KSPROPERTY \_ DROPPEDFRAMES \_ 当前 \_ **](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_droppedframes_current_s)的从**KSSTATE \_ 暂停**转换到**KSSTATE \_ 运行**，或**KSSTATE \_ 运行**到 KSSTATE \_ 暂停。 有关详细信息，请参阅 [捕获视频](capturing-video.md)。
-
- 
 

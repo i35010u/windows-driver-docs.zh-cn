@@ -13,12 +13,12 @@ keywords:
 - 跟踪消息格式化文件 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 588994b3c4c63954d2a4718dfb0f0adbcee04281
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 258c7c7a9dedd8732c49d42328b26107dfed376b
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89383157"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90102238"
 ---
 # <a name="tracefmt"></a>Tracefmt
 
@@ -39,7 +39,7 @@ Tracefmt ( # A0) 是一种命令行工具，用于设置和显示事件跟踪日
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>安装 WDK、Visual Studio 和桌面应用的 Windows SDK 时，将包含 Tracefmt ( # A0) 。 有关下载套件的信息，请参阅 <a href="https://docs.microsoft.com/windows-hardware/drivers/download-the-wdk" data-raw-source="[Windows Hardware Downloads](../download-the-wdk.md)">Windows 硬件下载</a>。</p>
+<td align="left"><p>安装 WDK、Visual Studio 和桌面应用的 Windows SDK 时，将包含 Tracefmt ( # A0) 。 有关下载套件的信息，请参阅 <a href="/windows-hardware/drivers/download-the-wdk" data-raw-source="[Windows Hardware Downloads](../download-the-wdk.md)">Windows 硬件下载</a>。</p>
 <p><strong>Windows 驱动程序工具包 (WDK) 8.1</strong> (安装路径) </p>
 <p>% WindowsSdkDir% \bin\x64\Tracefmt.exe</p>
 <p>% WindowsSdkDir% \bin\x86\Tracefmt.exe</p>
@@ -68,6 +68,4 @@ Tracefmt 可以设置 **TraceEvent** 函数生成的跟踪事件的格式，以�
 [**Tracefmt 命令**](tracefmt-commands.md)
 
 [Tracefmt 示例](tracefmt-examples.md)
-
- 
 

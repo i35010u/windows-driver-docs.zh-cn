@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3d854edc2471ba30256ff620978d6749ca0d32d6
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 435268ffeae13bd652c0741ce96d9d2b77256cdb
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89190873"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90103040"
 ---
 # <a name="ksproperty_rtc_reader"></a>KSPROPERTY \_ RTC \_ 读取器
 
@@ -53,8 +53,8 @@ KSPROPERTY \_ rtc \_ 读取器属性检索当前磁带位置 (RTC) 的相对时�
 <td><p>是</p></td>
 <td><p>否</p></td>
 <td><p>设备</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_timecode_s" data-raw-source="[&lt;strong&gt;KSPROPERTY_TIMECODE_S&lt;/strong&gt;](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_timecode_s)"><strong>KSPROPERTY_TIMECODE_S</strong></a></p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagtimecode_sample" data-raw-source="[&lt;strong&gt;TIMECODE_SAMPLE&lt;/strong&gt;](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagtimecode_sample)"><strong>TIMECODE_SAMPLE</strong></a></p></td>
+<td><p><a href="/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_timecode_s" data-raw-source="[&lt;strong&gt;KSPROPERTY_TIMECODE_S&lt;/strong&gt;](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_timecode_s)"><strong>KSPROPERTY_TIMECODE_S</strong></a></p></td>
+<td><p><a href="/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagtimecode_sample" data-raw-source="[&lt;strong&gt;TIMECODE_SAMPLE&lt;/strong&gt;](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagtimecode_sample)"><strong>TIMECODE_SAMPLE</strong></a></p></td>
 </tr>
 </tbody>
 </table>
@@ -63,7 +63,7 @@ KSPROPERTY \_ rtc \_ 读取器属性检索当前磁带位置 (RTC) 的相对时�
 
  (操作数据) 的属性值是一个时间码 \_ 示例结构，该结构指定当前磁带位置的相对时间计数器。
 
-<a name="remarks"></a>注解
+<a name="remarks"></a>备注
 -------
 
 KSPROPERTY **TimecodeSamp**时间 \_ 码 S 结构的 TimecodeSamp 成员描述了 \_ 当前磁带位置的相对时间计数器。
@@ -78,13 +78,13 @@ KSPROPERTY **TimecodeSamp**时间 \_ 码 S 结构的 TimecodeSamp 成员描述�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Header</p></td>
+<td><p>标头</p></td>
 <td>Ksmedia (包含 Ksmedia) </td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
 [**KSPROPERTY**](/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)
@@ -92,6 +92,4 @@ KSPROPERTY **TimecodeSamp**时间 \_ 码 S 结构的 TimecodeSamp 成员描述�
 [**KSPROPERTY 时间 \_ 码 \_ S**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_timecode_s)
 
 [**时间码 \_ 示例**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagtimecode_sample)
-
- 
 

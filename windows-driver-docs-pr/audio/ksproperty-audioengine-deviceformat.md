@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ce206857a8cb5f22e130c1f2c0c80c66b91857e9
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 3425bf4a7f47a35731f0bba008abd6d9196f2876
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89206917"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90102012"
 ---
 # <a name="ksproperty_audioengine_deviceformat"></a>KSPROPERTY \_ AUDIOENGINE \_ DEVICEFORMAT
 
@@ -51,7 +51,7 @@ ms.locfileid: "89206917"
 <td align="left"><p>是</p></td>
 <td align="left"><p>节点 via 筛选器</p></td>
 <td align="left"><p>KSP_NODE</p></td>
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksdataformat" data-raw-source="[&lt;strong&gt;KSDATAFORMAT&lt;/strong&gt;](/windows-hardware/drivers/ddi/ks/ns-ks-ksdataformat)"><strong>KSDATAFORMAT</strong></a></p></td>
+<td align="left"><p><a href="/windows-hardware/drivers/ddi/ks/ns-ks-ksdataformat" data-raw-source="[&lt;strong&gt;KSDATAFORMAT&lt;/strong&gt;](/windows-hardware/drivers/ddi/ks/ns-ks-ksdataformat)"><strong>KSDATAFORMAT</strong></a></p></td>
 </tr>
 </tbody>
 </table>
@@ -88,6 +88,4 @@ ms.locfileid: "89206917"
 [**KSDATAFORMAT**](/windows-hardware/drivers/ddi/ks/ns-ks-ksdataformat)
 
 [**KSPROPERTY \_ AUDIOENGINE**](ksproperty-audioengine.md)
-
- 
 

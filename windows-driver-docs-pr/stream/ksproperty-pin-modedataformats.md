@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 07/01/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: a8f67d841682c75dd7004a769e047eae9819668f
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 3ad1518115c7a8847eaa6f18969767f46feee9d0
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89186537"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90103646"
 ---
 # <a name="ksproperty_pin_modedataformats"></a>KSPROPERTY \_ PIN \_ MODEDATAFORMATS
 
@@ -50,7 +50,7 @@ ms.locfileid: "89186537"
 <td><p>否</p></td>
 <td><p>筛选器</p></td>
 <td><p>KSP_PIN，后跟模式 GUID</p></td>
-<td><p>KSMULTIPLE_ITEM 结构，后跟一系列 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksdataformat" data-raw-source="[&lt;strong&gt;KSDATAFORMAT&lt;/strong&gt;](/windows-hardware/drivers/ddi/ks/ns-ks-ksdataformat)"><strong>KSDATAFORMAT</strong></a> 结构</p></td>
+<td><p>KSMULTIPLE_ITEM 结构，后跟一系列 <a href="/windows-hardware/drivers/ddi/ks/ns-ks-ksdataformat" data-raw-source="[&lt;strong&gt;KSDATAFORMAT&lt;/strong&gt;](/windows-hardware/drivers/ddi/ks/ns-ks-ksdataformat)"><strong>KSDATAFORMAT</strong></a> 结构</p></td>
 </tr>
 </tbody>
 </table>

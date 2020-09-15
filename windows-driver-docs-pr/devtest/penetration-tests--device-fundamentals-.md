@@ -4,12 +4,12 @@ description: 设备基础的渗透测试执行各种形式的输入攻击，这�
 ms.assetid: 53EBAF4B-2CEF-492B-98B8-DA199FDFBC46
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2b703c97cc5016ed5039cd212f6d4306b4cb05cf
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 7045bd9ef021c23235945d743f436cf85cdaf6f4
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89382857"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90102468"
 ---
 # <a name="penetration-tests-device-fundamentals"></a>渗透压力测试（设备基础功能）
 
@@ -38,7 +38,7 @@ ms.locfileid: "89382857"
 <td align="left"><p>禁用1个或多个设备上的 <a href="iospy.md" data-raw-source="[I/O Spy](iospy.md)">I/o 监视</a> 。</p>
 <p><strong>测试二进制文件：</strong> Devfund_IOSpy_DisableSupport. wsc</p>
 <p><strong>测试方法：</strong> DisableIoSpy</p>
-<p><strong>参数：</strong> - 请参阅 <a href="https://docs.microsoft.com/windows-hardware/drivers" data-raw-source="[Device Fundamentals Test Parameters](/windows-hardware/drivers)">设备基础测试参数</a></p>
+<p><strong>参数：</strong> - 请参阅 <a href="/windows-hardware/drivers" data-raw-source="[Device Fundamentals Test Parameters](/windows-hardware/drivers)">设备基础测试参数</a></p>
 <p><em>DQ</em></p></td>
 </tr>
 <tr class="even">
@@ -52,7 +52,7 @@ ms.locfileid: "89382857"
 <td align="left"><p>启用一个或多个设备上的 <a href="iospy.md" data-raw-source="[I/O Spy](iospy.md)">I/o 监视</a> 。</p>
 <p><strong>测试二进制文件：</strong> Devfund_IOSpy_EnableSupport. wsc</p>
 <p><strong>测试方法：</strong> EnableIoSpy</p>
-<p><strong>参数：</strong> - 请参阅 <a href="https://docs.microsoft.com/windows-hardware/drivers" data-raw-source="[Device Fundamentals Test Parameters](/windows-hardware/drivers)">设备基础测试参数</a></p>
+<p><strong>参数：</strong> - 请参阅 <a href="/windows-hardware/drivers" data-raw-source="[Device Fundamentals Test Parameters](/windows-hardware/drivers)">设备基础测试参数</a></p>
 <p><em>DQ</em></p>
 <p><em>DFD</em> - 指定 IoSpy 数据文件的路径。 默认位置为%SystemDrive%\DriverTest\IoSpy</p></td>
 </tr>
@@ -61,7 +61,7 @@ ms.locfileid: "89382857"
 <td align="left"><p>模糊杂项 API 测试是确定驱动程序是否可以处理来自内核模式驱动程序的各种常见调用的测试。</p>
 <p>这些测试包括以下测试：</p>
 <ul>
-<li><p>调用 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ntreadfile" data-raw-source="[&lt;strong&gt;ZwReadFile&lt;/strong&gt;](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ntreadfile)"><strong>ZwReadFile</strong></a> 和 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ntwritefile" data-raw-source="[&lt;strong&gt;ZwWriteFile&lt;/strong&gt;](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ntwritefile)"><strong>ZwWriteFile</strong></a>，指定有效的数据缓冲区指针、不同的长度 (包括零) 和不同的字节偏移量，包括零、-1 和64位字节偏移量。</p></li>
+<li><p>调用 <a href="/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ntreadfile" data-raw-source="[&lt;strong&gt;ZwReadFile&lt;/strong&gt;](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ntreadfile)"><strong>ZwReadFile</strong></a> 和 <a href="/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ntwritefile" data-raw-source="[&lt;strong&gt;ZwWriteFile&lt;/strong&gt;](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ntwritefile)"><strong>ZwWriteFile</strong></a>，指定有效的数据缓冲区指针、不同的长度 (包括零) 和不同的字节偏移量，包括零、-1 和64位字节偏移量。</p></li>
 <li><p>调用以取消 I/0 并刷新缓冲区。</p></li>
 <li><p>一系列目录查询调用，其中使用带有有效用户数据缓冲区指针和不同缓冲区长度的常见文件信息类 (包括零) 。</p></li>
 <li><p>目录查询调用与在虚拟 DOS 计算机 (控制的程序发出的调用) 。</p></li>
@@ -74,7 +74,7 @@ ms.locfileid: "89382857"
 </ul>
 <p><strong>测试二进制文件：</strong> Devfund_DevicePathExerciser.dll</p>
 <p><strong>测试方法：</strong> DoMiscAPITest</p>
-<p><strong>参数：</strong> - 请参阅 <a href="https://docs.microsoft.com/windows-hardware/drivers" data-raw-source="[Device Fundamentals Test Parameters](/windows-hardware/drivers)">设备基础测试参数</a></p>
+<p><strong>参数：</strong> - 请参阅 <a href="/windows-hardware/drivers" data-raw-source="[Device Fundamentals Test Parameters](/windows-hardware/drivers)">设备基础测试参数</a></p>
 <p><em>DoPoolCheck</em></p>
 <p><em>DQ</em></p>
 <p><em>TestCycles</em></p>
@@ -87,7 +87,7 @@ ms.locfileid: "89382857"
 <td align="left"><p>此测试执行与模糊杂项 API 测试相同的测试，并在尝试检索文件的扩展属性时，将空白 (零长度) 查询和无效缓冲区地址传递给驱动程序。</p>
 <p><strong>测试二进制文件：</strong> Devfund_DevicePathExerciser.dll</p>
 <p><strong>测试方法：</strong> DoMiscAPIWithZeroLengthTest</p>
-<p><strong>参数：</strong> - 请参阅 <a href="https://docs.microsoft.com/windows-hardware/drivers" data-raw-source="[Device Fundamentals Test Parameters](/windows-hardware/drivers)">设备基础测试参数</a></p>
+<p><strong>参数：</strong> - 请参阅 <a href="/windows-hardware/drivers" data-raw-source="[Device Fundamentals Test Parameters](/windows-hardware/drivers)">设备基础测试参数</a></p>
 <p><em>DoPoolCheck</em></p>
 <p><em>DQ</em></p>
 <p><em>TestCycles</em></p>
@@ -101,7 +101,7 @@ ms.locfileid: "89382857"
 <p>有关此测试的详细信息，请参阅 <a href="#about-the-fuzz-open-and-close-test" data-raw-source="[About the Fuzz open and close test](#about-the-fuzz-open-and-close-test)">关于模糊打开并关闭测试</a>。</p>
 <p><strong>测试二进制文件：</strong> Devfund_DevicePathExerciser.dll</p>
 <p><strong>测试方法：</strong> DoOpenCloseTest</p>
-<p><strong>参数：</strong> - 请参阅 <a href="https://docs.microsoft.com/windows-hardware/drivers" data-raw-source="[Device Fundamentals Test Parameters](/windows-hardware/drivers)">设备基础测试参数</a></p>
+<p><strong>参数：</strong> - 请参阅 <a href="/windows-hardware/drivers" data-raw-source="[Device Fundamentals Test Parameters](/windows-hardware/drivers)">设备基础测试参数</a></p>
 <p><em>DoPoolCheck</em></p>
 <p><em>DQ</em></p>
 <p><em>TestCycles</em></p>
@@ -116,10 +116,10 @@ ms.locfileid: "89382857"
 <p>模糊测试将使用有效的缓冲区和各种缓冲区长度和文件信息类发出每个查询或设置至少1024次调用。 每种类型的一个请求也会随无效的缓冲区指针和零缓冲区长度一起发送。</p>
 <p>如果使用 <em>ChangeBufferProtectionFlags</em> 参数（用于设置保护选项），则模糊测试会改变每个查询中的缓冲区的安全设置，并设置调用。</p>
 <p>此测试还会执行模糊的子打开测试。</p>
-<p>此测试使用 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ntqueryinformationfile" data-raw-source="[&lt;strong&gt;ZwQueryInformationFile&lt;/strong&gt;](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ntqueryinformationfile)"><strong>ZwQueryInformationFile</strong></a>、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ntsetinformationfile" data-raw-source="[&lt;strong&gt;ZwSetInformationFile&lt;/strong&gt;](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ntsetinformationfile)"><strong>ZwSetInformationFile</strong></a>、 <a href="https://msdn.microsoft.com/library/windows/hardware/ff567070" data-raw-source="[&lt;strong&gt;ZwQueryVolumeInformationFile&lt;/strong&gt;](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-zwqueryvolumeinformationfile)"><strong>ZwQueryVolumeInformationFile</strong></a>和 <a href="https://msdn.microsoft.com/library/windows/hardware/ff567112" data-raw-source="[&lt;strong&gt;ZwSetVolumeInformationFile&lt;/strong&gt;](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-zwsetvolumeinformationfile)"><strong>ZwSetVolumeInformationFile</strong></a> 函数。</p>
+<p>此测试使用 <a href="/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ntqueryinformationfile" data-raw-source="[&lt;strong&gt;ZwQueryInformationFile&lt;/strong&gt;](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ntqueryinformationfile)"><strong>ZwQueryInformationFile</strong></a>、 <a href="/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ntsetinformationfile" data-raw-source="[&lt;strong&gt;ZwSetInformationFile&lt;/strong&gt;](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ntsetinformationfile)"><strong>ZwSetInformationFile</strong></a>、 <a href="/windows-hardware/drivers/ddi/ntifs/nf-ntifs-zwqueryvolumeinformationfile" data-raw-source="[&lt;strong&gt;ZwQueryVolumeInformationFile&lt;/strong&gt;](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-zwqueryvolumeinformationfile)"><strong>ZwQueryVolumeInformationFile</strong></a>和 <a href="/windows-hardware/drivers/ddi/ntifs/nf-ntifs-zwsetvolumeinformationfile" data-raw-source="[&lt;strong&gt;ZwSetVolumeInformationFile&lt;/strong&gt;](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-zwsetvolumeinformationfile)"><strong>ZwSetVolumeInformationFile</strong></a> 函数。</p>
 <p><strong>测试二进制文件：</strong> Devfund_DevicePathExerciser.dll</p>
 <p><strong>测试方法：</strong> DoQueryAndSetFileInformationTest</p>
-<p><strong>参数：</strong> - 请参阅 <a href="https://docs.microsoft.com/windows-hardware/drivers" data-raw-source="[Device Fundamentals Test Parameters](/windows-hardware/drivers)">设备基础测试参数</a></p>
+<p><strong>参数：</strong> - 请参阅 <a href="/windows-hardware/drivers" data-raw-source="[Device Fundamentals Test Parameters](/windows-hardware/drivers)">设备基础测试参数</a></p>
 <p><em>DoPoolCheck</em></p>
 <p><em>DQ</em></p>
 <p><em>TestCycles</em></p>
@@ -135,7 +135,7 @@ ms.locfileid: "89382857"
 <p>如果使用 <em>ChangeBufferProtectionFlags</em> 参数（用于设置保护选项），则模糊测试会改变每个查询中的缓冲区的安全设置，并设置调用。</p>
 <p><strong>测试二进制文件：</strong> Devfund_DevicePathExerciser.dll</p>
 <p><strong>测试方法：</strong> DoQueryAndSetSecurityTest</p>
-<p><strong>参数：</strong> - 请参阅 <a href="https://docs.microsoft.com/windows-hardware/drivers" data-raw-source="[Device Fundamentals Test Parameters](/windows-hardware/drivers)">设备基础测试参数</a></p>
+<p><strong>参数：</strong> - 请参阅 <a href="/windows-hardware/drivers" data-raw-source="[Device Fundamentals Test Parameters](/windows-hardware/drivers)">设备基础测试参数</a></p>
 <p><em>DoPoolCheck</em></p>
 <p><em>DQ</em></p>
 <p><em>TestCycles</em></p>
@@ -157,7 +157,7 @@ ms.locfileid: "89382857"
 <p><em>定制的随机测试</em>包含为随机测试的一部分。 定制的随机测试使用随机测试的结果来更详细地检查对 IOCTL 或 FSCTL 请求的驱动程序响应。 定制的随机测试会探测随机测试丢失的区域，并根据随机测试调用返回的状态，驱动程序未按预期方式响应。</p>
 <p><strong>测试二进制文件：</strong> Devfund_DevicePathExerciser.dll</p>
 <p><strong>测试方法：</strong> DoRandomIOCTLTest, DoRandomFSCTLTest</p>
-<p><strong>参数：</strong> - 请参阅 <a href="https://docs.microsoft.com/windows-hardware/drivers" data-raw-source="[Device Fundamentals Test Parameters](/windows-hardware/drivers)">设备基础测试参数</a></p>
+<p><strong>参数：</strong> - 请参阅 <a href="/windows-hardware/drivers" data-raw-source="[Device Fundamentals Test Parameters](/windows-hardware/drivers)">设备基础测试参数</a></p>
 <p><em>MinInBuffer</em></p>
 <p><em>MaxInBuffer</em></p>
 <p><em>MinOutBuffer</em></p>
@@ -179,13 +179,13 @@ ms.locfileid: "89382857"
 <tr class="even">
 <td align="left"><p><span id="fuzz_sub-opens_test"></span>模糊子测试</p></td>
 <td align="left"><p>该测试执行一系列快速调用，以打开设备命名空间中的对象。 在这些调用中，它将传递一个以设备开头的路径，并包含不同长度和内容的任意名称和有意义的字符串。</p>
-<p>在 <em>相对打开的测试</em>过程中， (也称为 " <em>子打开测试</em> ") 模糊测试尝试打开设备 <a href="https://docs.microsoft.com/windows-hardware/drivers/kernel/controlling-device-namespace-access" data-raw-source="[namespace](../kernel/controlling-device-namespace-access.md)">命名空间</a>中的对象。</p>
+<p>在 <em>相对打开的测试</em>过程中， (也称为 " <em>子打开测试</em> ") 模糊测试尝试打开设备 <a href="/windows-hardware/drivers/kernel/controlling-device-namespace-access" data-raw-source="[namespace](../kernel/controlling-device-namespace-access.md)">命名空间</a>中的对象。</p>
 <p>在此测试期间，模糊测试将执行一系列快速调用，以打开通过使用 <a href="#basic-open-operations" data-raw-source="[Basic Open Operations](#basic-open-operations)">基本打开操作</a> 和其他打开的操作打开的设备的命名空间中的对象。 在这些调用中，模糊测试传递一个路径，该路径以设备开头，并包含不同长度和内容的任意名称和有意义的字符串。</p>
-<p>此测试确定驱动程序或文件系统如何在其命名空间中管理打开的请求。 具体而言，如果驱动程序不支持在其命名空间中打开请求，则该驱动程序必须通过失败请求来阻止未经授权的访问，或者在使用 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocreatedevice" data-raw-source="[&lt;strong&gt;IoCreateDevice&lt;/strong&gt;](/windows-hardware/drivers/ddi/wdm/nf-wdm-iocreatedevice)"><strong>IoCreateDevice</strong></a> 或 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdmsec/nf-wdmsec-wdmlibiocreatedevicesecure" data-raw-source="[&lt;strong&gt;IoCreateDeviceSecure&lt;/strong&gt;](/windows-hardware/drivers/ddi/wdmsec/nf-wdmsec-wdmlibiocreatedevicesecure)"><strong>IoCreateDeviceSecure</strong></a> 创建设备对象时设置 FILE_DEVICE_SECURE_OPEN 设备特性。</p>
-<p>有关设备命名空间的详细信息，请参阅 <a href="https://docs.microsoft.com/windows-hardware/drivers/kernel/controlling-device-namespace-access" data-raw-source="[Controlling Device Namespace Access](../kernel/controlling-device-namespace-access.md)">控制设备命名空间访问</a>。</p>
+<p>此测试确定驱动程序或文件系统如何在其命名空间中管理打开的请求。 具体而言，如果驱动程序不支持在其命名空间中打开请求，则该驱动程序必须通过失败请求来阻止未经授权的访问，或者在使用 <a href="/windows-hardware/drivers/ddi/wdm/nf-wdm-iocreatedevice" data-raw-source="[&lt;strong&gt;IoCreateDevice&lt;/strong&gt;](/windows-hardware/drivers/ddi/wdm/nf-wdm-iocreatedevice)"><strong>IoCreateDevice</strong></a> 或 <a href="/windows-hardware/drivers/ddi/wdmsec/nf-wdmsec-wdmlibiocreatedevicesecure" data-raw-source="[&lt;strong&gt;IoCreateDeviceSecure&lt;/strong&gt;](/windows-hardware/drivers/ddi/wdmsec/nf-wdmsec-wdmlibiocreatedevicesecure)"><strong>IoCreateDeviceSecure</strong></a> 创建设备对象时设置 FILE_DEVICE_SECURE_OPEN 设备特性。</p>
+<p>有关设备命名空间的详细信息，请参阅 <a href="/windows-hardware/drivers/kernel/controlling-device-namespace-access" data-raw-source="[Controlling Device Namespace Access](../kernel/controlling-device-namespace-access.md)">控制设备命名空间访问</a>。</p>
 <p><strong>测试二进制文件：</strong> Devfund_DevicePathExerciser.dll</p>
 <p><strong>测试方法：</strong> DoSubOpensTest</p>
-<p><strong>参数：</strong> - 请参阅 <a href="https://docs.microsoft.com/windows-hardware/drivers" data-raw-source="[Device Fundamentals Test Parameters](/windows-hardware/drivers)">设备基础测试参数</a></p>
+<p><strong>参数：</strong> - 请参阅 <a href="/windows-hardware/drivers" data-raw-source="[Device Fundamentals Test Parameters](/windows-hardware/drivers)">设备基础测试参数</a></p>
 <p><em>DoPoolCheck</em></p>
 <p><em>DQ</em></p>
 <p><em>TestCycles</em></p>
@@ -201,7 +201,7 @@ ms.locfileid: "89382857"
 <p>模糊测试记录测试中使用的流名称。</p>
 <p><strong>测试二进制文件：</strong> Devfund_DevicePathExerciser.dll</p>
 <p><strong>测试方法：</strong> DoSubOpensWithStreamsTest</p>
-<p><strong>参数：</strong> - 请参阅 <a href="https://docs.microsoft.com/windows-hardware/drivers" data-raw-source="[Device Fundamentals Test Parameters](/windows-hardware/drivers)">设备基础测试参数</a></p>
+<p><strong>参数：</strong> - 请参阅 <a href="/windows-hardware/drivers" data-raw-source="[Device Fundamentals Test Parameters](/windows-hardware/drivers)">设备基础测试参数</a></p>
 <p><em>DoPoolCheck</em></p>
 <p><em>DQ</em></p>
 <p><em>TestCycles</em></p>
@@ -211,13 +211,13 @@ ms.locfileid: "89382857"
 </tr>
 <tr class="even">
 <td align="left"><p><span id="Fuzz_Zero-Length_Buffer_FSCTL_test___Fuzz_Zero-Length_Buffer_IOCTL_test"></span><span id="fuzz_zero-length_buffer_fsctl_test___fuzz_zero-length_buffer_ioctl_test"></span><span id="FUZZ_ZERO-LENGTH_BUFFER_FSCTL_TEST___FUZZ_ZERO-LENGTH_BUFFER_IOCTL_TEST"></span>模糊零长度缓冲区 FSCTL 测试/模糊长度缓冲区 IOCTL 测试</p></td>
-<td align="left"><p>此测试发出一系列对 <a href="https://docs.microsoft.com/windows/desktop/api/ioapiset/nf-ioapiset-deviceiocontrol" data-raw-source="[&lt;strong&gt;DeviceIoControl function&lt;/strong&gt;](/windows/desktop/api/ioapiset/nf-ioapiset-deviceiocontrol)"><strong>DeviceIoControl 函数</strong></a> 的调用，其中的输入和/或输出缓冲区长度为0。 该测试通过使用不同的函数代码、设备类型、数据传输方法和访问要求，生成不同的文件系统控制代码。</p>
-<p>在长度为零的缓冲区测试期间，模糊测试会发出一系列对 <a href="https://docs.microsoft.com/windows/desktop/api/ioapiset/nf-ioapiset-deviceiocontrol" data-raw-source="[&lt;strong&gt;DeviceIoControl function&lt;/strong&gt;](/windows/desktop/api/ioapiset/nf-ioapiset-deviceiocontrol)"><strong>DeviceIoControl 函数</strong></a> 的调用，其中的输入和/或输出缓冲区长度为0。 该测试通过使用不同的函数代码、设备类型、数据传输方法和访问要求，生成不同的 i/o 控制代码。 有关 i/o 控制代码的内容的信息，请参阅 <a href="https://docs.microsoft.com/windows-hardware/drivers/kernel/defining-i-o-control-codes" data-raw-source="[Defining I/O Control Codes](../kernel/defining-i-o-control-codes.md)">定义 I/o 控制代码</a>。</p>
+<td align="left"><p>此测试发出一系列对 <a href="/windows/desktop/api/ioapiset/nf-ioapiset-deviceiocontrol" data-raw-source="[&lt;strong&gt;DeviceIoControl function&lt;/strong&gt;](/windows/desktop/api/ioapiset/nf-ioapiset-deviceiocontrol)"><strong>DeviceIoControl 函数</strong></a> 的调用，其中的输入和/或输出缓冲区长度为0。 该测试通过使用不同的函数代码、设备类型、数据传输方法和访问要求，生成不同的文件系统控制代码。</p>
+<p>在长度为零的缓冲区测试期间，模糊测试会发出一系列对 <a href="/windows/desktop/api/ioapiset/nf-ioapiset-deviceiocontrol" data-raw-source="[&lt;strong&gt;DeviceIoControl function&lt;/strong&gt;](/windows/desktop/api/ioapiset/nf-ioapiset-deviceiocontrol)"><strong>DeviceIoControl 函数</strong></a> 的调用，其中的输入和/或输出缓冲区长度为0。 该测试通过使用不同的函数代码、设备类型、数据传输方法和访问要求，生成不同的 i/o 控制代码。 有关 i/o 控制代码的内容的信息，请参阅 <a href="/windows-hardware/drivers/kernel/defining-i-o-control-codes" data-raw-source="[Defining I/O Control Codes](../kernel/defining-i-o-control-codes.md)">定义 I/o 控制代码</a>。</p>
 <p>若要测试驱动程序对无效缓冲区指针的处理，这些用户模式调用中的缓冲区指针指定内核虚拟地址空间中的最大地址，例如 0xFFFFFC00) 。</p>
 <p>模糊测试对基本和其他打开的测试中打开的所有设备执行长度为零的缓冲区测试。 可以通过使用<em>MinFunctionCode</em>和<em>MaxFunctionCode</em>命令参数来自定义此测试，以指定调用中使用的 IOCTL 或 FSCTL 函数代码的<em>范围，并</em>指定<em>MaxDeviceType</em>调用中使用的设备类型的范围。</p>
 <p><strong>测试二进制文件：</strong> Devfund_DevicePathExerciser.dll</p>
 <p><strong>测试方法：</strong> DoZeroLengthBufferIOCTLTest, DoZeroLengthBufferFSCTLTest</p>
-<p><strong>参数：</strong> - 请参阅 <a href="https://docs.microsoft.com/windows-hardware/drivers" data-raw-source="[Device Fundamentals Test Parameters](/windows-hardware/drivers)">设备基础测试参数</a></p>
+<p><strong>参数：</strong> - 请参阅 <a href="/windows-hardware/drivers" data-raw-source="[Device Fundamentals Test Parameters](/windows-hardware/drivers)">设备基础测试参数</a></p>
 <p><em>MinDeviceType</em></p>
 <p><em>MaxDeviceType</em></p>
 <p><em>MinFunctionCode</em></p>
@@ -233,7 +233,7 @@ ms.locfileid: "89382857"
 <td align="left"><p>在指定的一个或一些设备上运行 <a href="ioattack.md" data-raw-source="[I/O Attack](ioattack.md)">I/o 攻击</a> 。</p>
 <p><strong>测试二进制文件：</strong> Devfund_IOAttack_DeleteDataFile. wsc</p>
 <p><strong>测试方法：</strong> RunIoAttack</p>
-<p><strong>参数：</strong> - 请参阅 <a href="https://docs.microsoft.com/windows-hardware/drivers" data-raw-source="[Device Fundamentals Test Parameters](/windows-hardware/drivers)">设备基础测试参数</a></p>
+<p><strong>参数：</strong> - 请参阅 <a href="/windows-hardware/drivers" data-raw-source="[Device Fundamentals Test Parameters](/windows-hardware/drivers)">设备基础测试参数</a></p>
 <p><em>DQ</em></p></td>
 </tr>
 </tbody>
@@ -294,6 +294,4 @@ ms.locfileid: "89382857"
 [Provided WDTF Simple I/O plug-ins](../wdtf/provided-wdtf-simpleio-plug-ins.md)（提供的 WDTF 简单 I/O 插件）
 
 [如何在运行时通过命令提示符测试驱动程序](/windows-hardware/drivers)
-
- 
 

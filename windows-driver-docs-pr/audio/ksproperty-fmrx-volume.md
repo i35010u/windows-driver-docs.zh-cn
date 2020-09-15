@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3b7fa1ee81456d77dd4f158c5501abcb7fef9b64
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: f47e22d8375cb0519f7b74c77364d7028a6dbe36
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89210983"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90102498"
 ---
 # <a name="ksproperty_fmrx_volume"></a>KSPROPERTY \_ FMRX \_
 
@@ -50,7 +50,7 @@ ms.locfileid: "89210983"
 <td align="left"><p>是</p></td>
 <td align="left"><p>是</p></td>
 <td align="left"><p>筛选器</p></td>
-<td align="left"><p><a href="https://docs.microsoft.com/previous-versions/ff564262(v=vs.85)" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](/previous-versions/ff564262(v=vs.85))"><strong>KSPROPERTY</strong></a></p></td>
+<td align="left"><p><a href="/previous-versions/ff564262(v=vs.85)" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](/previous-versions/ff564262(v=vs.85))"><strong>KSPROPERTY</strong></a></p></td>
 <td align="left"><p>LONG</p></td>
 </tr>
 </tbody>
@@ -96,6 +96,4 @@ FM volume 和路由 (终结点选择) 由拓扑筛选器上的 **KSPROPERTY \_ F
 </tr>
 </tbody>
 </table>
-
- 
 

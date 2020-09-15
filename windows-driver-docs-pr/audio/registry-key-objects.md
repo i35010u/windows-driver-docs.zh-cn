@@ -7,12 +7,12 @@ keywords:
 - 注册表项对象 WDK 音频
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 42eced74866a1f9b59d62bb8b5a69b69e4321924
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 32cb055fcf3ae581865d671eacb4dd8785cb683f
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89211311"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90102300"
 ---
 # <a name="registry-key-objects"></a>注册表项对象
 
@@ -44,15 +44,15 @@ PortCls 系统驱动程序实现 [IRegistryKey](/windows-hardware/drivers/ddi/po
 <tbody>
 <tr class="odd">
 <td align="left"><p><strong>KeyBasicInformation</strong></p></td>
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_key_basic_information" data-raw-source="[&lt;strong&gt;KEY_BASIC_INFORMATION&lt;/strong&gt;](/windows-hardware/drivers/ddi/wdm/ns-wdm-_key_basic_information)"><strong>KEY_BASIC_INFORMATION</strong></a></p></td>
+<td align="left"><p><a href="/windows-hardware/drivers/ddi/wdm/ns-wdm-_key_basic_information" data-raw-source="[&lt;strong&gt;KEY_BASIC_INFORMATION&lt;/strong&gt;](/windows-hardware/drivers/ddi/wdm/ns-wdm-_key_basic_information)"><strong>KEY_BASIC_INFORMATION</strong></a></p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>KeyFullInformation</strong></p></td>
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_key_full_information" data-raw-source="[&lt;strong&gt;KEY_FULL_INFORMATION&lt;/strong&gt;](/windows-hardware/drivers/ddi/wdm/ns-wdm-_key_full_information)"><strong>KEY_FULL_INFORMATION</strong></a></p></td>
+<td align="left"><p><a href="/windows-hardware/drivers/ddi/wdm/ns-wdm-_key_full_information" data-raw-source="[&lt;strong&gt;KEY_FULL_INFORMATION&lt;/strong&gt;](/windows-hardware/drivers/ddi/wdm/ns-wdm-_key_full_information)"><strong>KEY_FULL_INFORMATION</strong></a></p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>KeyNodeInformation</strong></p></td>
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_key_node_information" data-raw-source="[&lt;strong&gt;KEY_NODE_INFORMATION&lt;/strong&gt;](/windows-hardware/drivers/ddi/wdm/ns-wdm-_key_node_information)"><strong>KEY_NODE_INFORMATION</strong></a></p></td>
+<td align="left"><p><a href="/windows-hardware/drivers/ddi/wdm/ns-wdm-_key_node_information" data-raw-source="[&lt;strong&gt;KEY_NODE_INFORMATION&lt;/strong&gt;](/windows-hardware/drivers/ddi/wdm/ns-wdm-_key_node_information)"><strong>KEY_NODE_INFORMATION</strong></a></p></td>
 </tr>
 </tbody>
 </table>
@@ -80,6 +80,4 @@ PortCls 系统驱动程序实现 [IRegistryKey](/windows-hardware/drivers/ddi/po
 [**IRegistryKey::QueryValueKey**](/windows-hardware/drivers/ddi/portcls/nf-portcls-iregistrykey-queryvaluekey)
 
 [**IRegistryKey::SetValueKey**](/windows-hardware/drivers/ddi/portcls/nf-portcls-iregistrykey-setvaluekey)
-
- 
 

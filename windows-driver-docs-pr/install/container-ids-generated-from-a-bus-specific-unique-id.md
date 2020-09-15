@@ -4,12 +4,12 @@ description: 从特定于总线的唯一 ID 生成的容器 ID
 ms.assetid: 06bd4f06-51f2-4983-9ddc-bff27eaa367e
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8e90ba17ff7a92aa45ac28eb7e073791069660e0
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: f12639eb66e06a4333743f75ed4f39ec2631b55d
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89096847"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90103780"
 ---
 # <a name="container-ids-generated-from-a-bus-specific-unique-id"></a>从特定于总线的唯一 ID 生成的容器 ID
 
@@ -28,7 +28,7 @@ Windows 7 和更高版本的 Windows 为多个最常见的总线类型提供了�
 
 以下主题介绍收件箱总线驱动程序如何为某些总线类型生成容器 Id：
 
-[USB 设备的容器 ID](container-ids-for-usb-devices.md)
+[USB 设备的容器 ID](./how-usb-devices-are-assigned-container-ids.md)
 
 [蓝牙设备的容器 ID](container-ids-for-bluetooth-devices.md)
 
@@ -39,6 +39,4 @@ Windows 7 和更高版本的 Windows 为多个最常见的总线类型提供了�
 [eSATA 设备的容器 ID](container-ids-for-esata-devices.md)
 
 [PCI Express 设备的容器 ID](container-ids-for-pci-express-devices.md)
-
- 
 

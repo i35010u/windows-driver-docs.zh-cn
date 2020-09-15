@@ -9,12 +9,12 @@ keywords:
 - 目录 WDK INF 文件
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 95ef0a89c5542e89020af097d6b09ae973b82251
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 118f1adcce90022fc1aef71f55dc3cd28c5fbd07
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67384766"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90104088"
 ---
 # <a name="using-dirids"></a>使用 Dirids
 
@@ -22,15 +22,15 @@ ms.locfileid: "67384766"
 
 
 
-可以通过使用目录标识符表示许多会显示在 INF 文件的目录 (*dirids*)，这是标识特定的目录的数字。 应用程序可以使用，但不能重新分配与关联的系统定义的目录*dirids*其值是从-1 到 32767 之间。
+INF 文件中的许多目录都可以通过使用目录标识符 (*dirids*) 来表示，该标识符是标识特定目录的数字。 应用程序可以使用，但不能重新分配与 *dirids* 关联的系统定义目录，其值介于-1 到32767之间。
 
-若要创建*dirids* 32768 通过 65534 或 65536 和更高，使用从用户定义的值与**SetupSetDirectoryId**函数 （Microsoft Windows SDK 文档中所述）。
+若要使用32768到65534、65536及更高的值创建 *dirids* ，请使用 Microsoft Windows SDK 文档) 中所述的 **SetupSetDirectoryId** (函数。
 
-请注意， *dirid*值为 65535 被视为与*dirid*值为-1，尽管后者 (*dirid* -1) 是首选。
+请注意，值为65535的 *dirid* 被视为具有值为-1 的 *dirid* 的同义词，不过，后者 (*dirid* -1) 是首选的。
 
-如果你想要使用*dirids*在 INF 文件中，请考虑以下两个指导原则：
+如果要在 INF 文件中使用 *dirids* ，请考虑以下两个准则：
 
-1. INF 文件条目的语法显式指定*dirid*值 ( [ **INF DestinationDirs 部分**](inf-destinationdirs-section.md)，例如)，表示为数字的值。
+1. 当 INF 文件条目的语法明确指定 *dirid* 值 ([**INF DestinationDirs 部分**](inf-destinationdirs-section.md)时（例如) ，将该值表示为数字）。
 
    下面的示例演示了此语法：
 
@@ -39,11 +39,11 @@ ms.locfileid: "67384766"
    DefaultDestDir = 11  ;  \system32 directory on Windows 2000 and later versions
    ```
 
-2. 当一个 INF 文件条目的语法指定文件路径时，可以使用系统提供的字符串替换来表示部分或全部此路径。 这种替换具有以下形式：
+2. 当 INF 文件条目的语法指定文件路径时，可以使用系统提供的字符串替换来表示此路径的部分或全部。 此替换形式的格式如下：
 
-   **%** <em>dirid</em> **%**
+   **%**<em>dirid</em>**%**
 
-   此窗体包含百分号 （%）字符后, 跟*dirid*你想要指定的目录后, 跟另一个百分号 （%）字符。 终止反斜杠 (\)字符将此表达式与以下文件名称或其他目录路径中的分隔开来<strong>。</strong>
+   此窗体包含百分号 (% ) 字符，后跟要指定的目录的 *dirid* ，后跟另一个百分比 (% ) 字符。 终止的反斜杠 (\) 字符将此表达式与路径中的以下文件名或其他目录隔开<strong>。</strong>
 
    下面的示例演示了此语法：
 
@@ -52,9 +52,9 @@ ms.locfileid: "67384766"
    ServiceBinary = %12%\aic78xx.sys
    ```
 
-   当完全展开，在前面的示例所示的路径将成为*c:* \\*windows*\\*system32* \\ *驱动程序*\\*aic78xx.sys* (假设 Windows 是否已安装在*c:* \\*windows*目录）。 请注意，字符串替换或 %*dirid*%窗体中，可以使用任何位置应有一个字符串，除[ **INF 字符串部分**](inf-strings-section.md)的 INF 文件。
+   完全展开后，在前面的示例中显示的路径将变成*c：* \\ *windows* \\ *system32* \\ *驱动程序* \\ *aic78xx.sys* (假定 windows 安装在*c：* \\ *windows*目录) 中。 请注意，字符串替换或%*dirid*% 格式可以在预期字符串的任何位置使用，但 inf 文件的 [**inf 字符串部分**](inf-strings-section.md) 除外。
 
-   两个以下示例演示如何替换字符串应*不*使用。
+   下面两个示例演示如何使用字符串替换*not* 。
 
    ```cpp
    [DestinationDirs]
@@ -64,9 +64,9 @@ ms.locfileid: "67384766"
    ServiceBinary = 12\aic78xx.sys  ; Error! - unknown directory name
    ```
 
-   在第一个示例中的语法**DefaultDestDir**项需要其值应为数字。 但是，%11%表达式扩展到字符串。 在第二个示例中，INF 编写器显然用于设置的值**ServiceBinary**进入包含驱动程序 （请参阅下表中的详细信息） 的目录中的文件。 出错的原因在于 Windows 将查找名为"12"可能不存在的计算机上的目录中的指定文件。
+   在第一个示例中， **DefaultDestDir** 项的语法要求其值为数值。 但是，%11% 表达式扩展为字符串。 在第二个示例中，INF 编写器显然打算将 **ServiceBinary** 条目的值设置为包含驱动程序的目录中的文件 (参阅下表以了解详细信息) 。 之所以发生此错误，是因为 Windows 将在名为 "12" 的目录中查找指定文件，这可能在计算机上不存在。
 
-下表显示了几种常用*dirids*，以及它们所代表的目录。 表在顶部列出了最常由设备 INF 文件和驱动程序 INF 文件指定的值。
+下表显示了几个常用的 *dirids*及其表示的目录。 设备 INF 文件和驱动程序 INF 文件最常指定的值在表的顶部列出。
 
 <table>
 <colgroup>
@@ -75,40 +75,40 @@ ms.locfileid: "67384766"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">值</th>
+<th align="left">“值”</th>
 <th align="left">目标目录</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><strong>01</strong></p></td>
-<td align="left"><p><em>SourceDrive</em><strong>: \</strong><em>路径名</em>（从其 INF 文件已安装的目录）</p></td>
+<td align="left"><p><strong>2001</strong></p></td>
+<td align="left"><p><em>SourceDrive</em><strong>： \</strong><em>pathname</em> (用于安装 INF 文件的目录) </p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>10</strong></p></td>
 <td align="left"><p>Windows 目录。</p>
-<p>这相当于<em>%systemroot%</em>。</p></td>
+<p>这等同于 <em>% SystemRoot%</em>。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>11</strong></p></td>
 <td align="left"><p>系统目录。</p>
-<p>这相当于<em>%systemroot%</em><strong>\</strong><em>system32</em>对于 Windows 2000 和更高版本的 Windows...</p></td>
+<p>这等效于<em>%SystemRoot%</em> <strong>\</strong> windows 2000 和更高版本的 windows 的% SystemRoot%<em>system32</em> 。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>12</strong></p></td>
 <td align="left"><p>驱动程序目录。</p>
-<p>这相当于<em>%systemroot%</em><strong>\</strong><em>system32</em><strong>\</strong><em>的驱动程序</em> Windows 2000 和更高版本的 Windows。</p></td>
+<p>这等效于<em>%SystemRoot%</em> <strong>\</strong> <em>system32</em> <strong>\</strong> windows 2000 和更高版本的 windows 的% SystemRoot% system32<em>驱动程序</em>。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>13</strong></p></td>
-<td align="left"><p>驱动程序包<a href="https://docs.microsoft.com/windows-hardware/drivers/install/driver-store">驱动程序存储区</a>目录。</p>
-<p>对于 Windows 8.1 和更高版本的 Windows，指定驱动程序包已导入其中的驱动程序存储区目录的路径。
+<td align="left"><p>驱动程序包的 <a href="/windows-hardware/drivers/install/driver-store">驱动程序存储</a> 目录。</p>
+<p>对于 Windows 8.1 及更高版本的 Windows，指定导入驱动程序包的驱动程序存储目录的路径。
 
-不要使用<a href="inf-delfiles-directive.md" data-raw-source="[DelFiles](inf-delfiles-directive.md)">DelFiles</a>上的文件<strong>DestinationDirs</strong>包括<em>dirid</em> 13。
+请勿在<strong>DestinationDirs</strong>包括<em>dirid</em> 13 的文件上使用<a href="inf-delfiles-directive.md" data-raw-source="[DelFiles](inf-delfiles-directive.md)">DelFiles</a> 。
 
-中的可选子目录<strong>SourceDiskFiles</strong>部分的文件必须与匹配的子目录中<strong>DestinationDirs</strong>部分，了解适用于此文件的条目。
+对于应用到此文件的条目，文件的 <strong>SourceDiskFiles</strong> 节中的可选子目录必须与 <strong>DestinationDirs</strong> 节中的子目录匹配。
 
-不要使用<a href="inf-copyfiles-directive.md" data-raw-source="[CopyFiles](inf-copyfiles-directive.md)">CopyFiles</a>若要为其重命名文件<strong>DestinationDirs</strong>包括<em>dirid</em> 13。
+不要使用 <a href="inf-copyfiles-directive.md" data-raw-source="[CopyFiles](inf-copyfiles-directive.md)">CopyFiles</a> 重命名 <strong>DestinationDirs</strong> 包括 <em>dirid</em> 13 的文件。
 </p></td>
 </tr>
 <tr class="even">
@@ -128,34 +128,34 @@ ms.locfileid: "67384766"
 <td align="left"><p>查看器目录</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>23</strong></p></td>
-<td align="left"><p>颜色目录 (ICM) (<em>不</em>用于安装打印机驱动程序)</p></td>
+<td align="left"><p>23 </p></td>
+<td align="left"><p>颜色目录 (ICM)  (<em>不</em> 用于安装打印机驱动程序) </p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><strong>24</strong></p></td>
+<td align="left"><p><strong>随时</strong></p></td>
 <td align="left"><p>系统磁盘的根目录。</p>
-<p>这是磁盘的在其安装 Windows 文件的根目录。 例如，如果<em>dirid</em> 10 是"<em>C:\winnt</em>"，然后<em>dirid</em> 24 是"<em>C:\</em>"。</p></td>
+<p>这是安装了 Windows 文件的磁盘的根目录。 例如，如果 <em>dirid</em> 10 是 "<em>C:\winnt</em>"，则 <em>dirid</em> 24 为 "<em>C：\</em>"。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>25</strong></p></td>
-<td align="left"><p>共享的目录</p></td>
+<td align="left"><p>共享目录</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>30</strong></p></td>
-<td align="left"><p>启动磁盘，也称为"弧线系统分区"的根目录。 (这可能会也可能不是由表示一个与相同的目录<em>dirid</em> 24。)</p></td>
+<td align="left"><p>启动磁盘（也称为 "ARC 系统分区"）的根目录。  (这与 <em>dirid</em> 24 ) 所表示的目录可能相同，也可能不相同。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>50</strong></p></td>
 <td align="left"><p>系统目录</p>
-<p>这相当于<em>%systemroot%</em><strong>\</strong><em>系统</em>。</p></td>
+<p>这等同于<em>% SystemRoot%</em> <strong>\</strong> <em>系统</em>。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>51</strong></p></td>
-<td align="left"><p>假脱机目录 (<em>不</em>用于安装打印机驱动程序，请参阅 −<a href="https://docs.microsoft.com/windows-hardware/drivers/print/printer-dirids">打印机 Dirids</a>)</p></td>
+<td align="left"><p>假脱机目录 (<em>不</em> 用于安装打印机驱动程序−请参阅 <a href="/windows-hardware/drivers/print/printer-dirids">printer Dirids</a>) </p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>52</strong></p></td>
-<td align="left"><p>后台打印驱动程序目录 (<em>不</em>用于安装打印机驱动程序)</p></td>
+<td align="left"><p>后台处理驱动程序目录 (<em>不</em> 用于安装打印机驱动程序) </p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>53</strong></p></td>
@@ -163,11 +163,11 @@ ms.locfileid: "67384766"
 </tr>
 <tr class="even">
 <td align="left"><p><strong>54</strong></p></td>
-<td align="left"><p>目录位置<em>Ntldr.exe</em>并<em>Osloader.exe</em>所在</p></td>
+<td align="left"><p><em>Ntldr.exe</em>和<em>Osloader.exe</em>所在的目录</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>55</strong></p></td>
-<td align="left"><p>打印处理器目录 (<em>不</em>用于安装打印机驱动程序)</p></td>
+<td align="left"><p>打印处理器目录 (<em>不</em> 用于安装打印机驱动程序) </p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>-1</strong></p></td>
@@ -178,7 +178,7 @@ ms.locfileid: "67384766"
 
  
 
-*Dirid*对于特定的解释器文件夹保留从 16384 到 32767 之间的值。 下表显示*dirid*这些文件夹的值。
+从16384到32767的*Dirid*值保留给特殊 shell 文件夹。 下表显示了这些文件夹的 *dirid* 值。
 
 <table>
 <colgroup>
@@ -187,34 +187,34 @@ ms.locfileid: "67384766"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">ReplTest1</th>
+<th align="left">“值”</th>
 <th align="left">Shell 特殊文件夹</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left"><p><strong>16406</strong></p></td>
-<td align="left"><p><em>所有 Users\Start 菜单</em></p></td>
+<td align="left"><p><em>所有 Settings\all users\start 菜单</em></p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>16407</strong></p></td>
-<td align="left"><p><em>所有 Users\Start Menu\Programs</em></p></td>
+<td align="left"><p><em>所有 Settings\all users\start Menu\Programs</em></p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>16408</strong></p></td>
-<td align="left"><p><em>所有 Users\Start Menu\Programs\Startup</em></p></td>
+<td align="left"><p><em>所有 Settings\all users\start Menu\Programs\Startup</em></p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>16409</strong></p></td>
-<td align="left"><p><em>All Users\Desktop</em></p></td>
+<td align="left"><p><em>所有 Users\Desktop</em></p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>16415</strong></p></td>
-<td align="left"><p><em>All Users\Favorites</em></p></td>
+<td align="left"><p><em>所有 Users\Favorites</em></p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>16419</strong></p></td>
-<td align="left"><p><em>所有用户 \ 应用程序数据</em></p></td>
+<td align="left"><p><em>所有 Users\Application 数据</em></p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>16422</strong></p></td>
@@ -230,11 +230,11 @@ ms.locfileid: "67384766"
 </tr>
 <tr class="even">
 <td align="left"><p><strong>16427</strong></p></td>
-<td align="left"><p><em>Program Files\Common</em></p></td>
+<td align="left"><p><em>程序 Files\Common</em></p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>16428</strong></p></td>
-<td align="left"><p><em>%ProgramFiles(x86)%\Common</p></td>
+<td align="left"><p><em>% ProgramFiles (x86) % \ Common</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>16429</strong></p></td>
@@ -242,20 +242,14 @@ ms.locfileid: "67384766"
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>16430</strong></p></td>
-<td align="left"><p><em>所有用户 \ 文件</em></p></td>
+<td align="left"><p><em>所有 Users\Documents</em></p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-除了中定义此表中的值*Setupapi.h*，可以使用任何 CSIDL_*Xxx*中定义的值*Shlobj.h*。 若要定义*dirid*值对此表未列出的某个文件夹时，请将 16384 (0x4000) 添加到 CSIDL_*Xxx*值。 详细了解 CSIDL_*Xxx*值，请参阅 Windows SDK 文档。
+除了在*setupapi.log*中定义的此表中的值之外，还可以使用*Shlobj*中定义的任何 CSIDL_*Xxx*值。 若要为未在此表中列出的文件夹定义 *dirid* 值，请将 16384 (0x4000) 添加到 CSIDL_*Xxx* 值。 有关 CSIDL_*Xxx* 值的详细信息，请参阅 Windows SDK 文档。
 
  
-
- 
-
-
-
-
 

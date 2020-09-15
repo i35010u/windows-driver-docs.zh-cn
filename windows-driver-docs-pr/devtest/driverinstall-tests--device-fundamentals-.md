@@ -4,12 +4,12 @@ description: 驱动程序安装测试类别包括多次卸载和重新安装驱�
 ms.assetid: 3FC00D4B-6520-45F1-805C-A5F8B6AACAC8
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a2f83f1ae86f08d7d9f3175a5f892c29a9287b83
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: f095579f7e3f9958dc56692742756135d727d48a
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89382813"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90103618"
 ---
 # <a name="driver-install-tests-device-fundamentals"></a>驱动程序安装测试（设备基础功能）
 
@@ -36,7 +36,7 @@ ms.locfileid: "89382813"
 <td align="left"><p>此测试将卸载并重新安装所选设备的驱动程序，并在设备上运行 i/o 测试。</p>
 <p><strong>测试二进制文件：</strong> Devfund_Reinstall_With_IO_BeforeAndAfter. wsc</p>
 <p><strong>测试方法：</strong> Reinstall_With_IO_Before_And_After</p>
-<p><strong>参数：</strong> - 请参阅 <a href="https://docs.microsoft.com/windows-hardware/drivers" data-raw-source="[Device Fundamentals Test Parameters](/windows-hardware/drivers)">设备基础测试参数</a></p>
+<p><strong>参数：</strong> - 请参阅 <a href="/windows-hardware/drivers" data-raw-source="[Device Fundamentals Test Parameters](/windows-hardware/drivers)">设备基础测试参数</a></p>
 <p><em>DQ</em></p>
 <p><em>IOPeriod</em></p></td>
 </tr>
@@ -86,6 +86,4 @@ HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Setup\LogLevel
 [Provided WDTF Simple I/O plug-ins](../wdtf/provided-wdtf-simpleio-plug-ins.md)（提供的 WDTF 简单 I/O 插件）
 
 [如何在运行时通过命令提示符测试驱动程序](/windows-hardware/drivers)
-
- 
 

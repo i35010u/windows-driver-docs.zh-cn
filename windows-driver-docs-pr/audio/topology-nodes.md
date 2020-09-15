@@ -15,12 +15,12 @@ keywords:
 - 中间频率属性 WDK 音频
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1d2c9b717ce64303a62a0cd512b0101da990455e
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: ba8e416741f39944e84b048c06046153a247333f
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89208779"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90101778"
 ---
 # <a name="topology-nodes"></a>拓扑节点
 
@@ -48,59 +48,59 @@ WDMAud 将部分（而不是所有）拓扑节点转换为相应的混音器控�
 <tbody>
 <tr class="odd">
 <td align="left"><p>AGC</p></td>
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/audio/ksnodetype-agc" data-raw-source="[&lt;strong&gt;KSNODETYPE_AGC&lt;/strong&gt;](./ksnodetype-agc.md)"><strong>KSNODETYPE_AGC</strong></a></p></td>
+<td align="left"><p><a href="/windows-hardware/drivers/audio/ksnodetype-agc" data-raw-source="[&lt;strong&gt;KSNODETYPE_AGC&lt;/strong&gt;](./ksnodetype-agc.md)"><strong>KSNODETYPE_AGC</strong></a></p></td>
 <td align="left"><p>MIXERCONTROL_CONTROLTYPE_ONOFF</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>响度</p></td>
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/audio/ksnodetype-loudness" data-raw-source="[&lt;strong&gt;KSNODETYPE_LOUDNESS&lt;/strong&gt;](./ksnodetype-loudness.md)"><strong>KSNODETYPE_LOUDNESS</strong></a></p></td>
+<td align="left"><p><a href="/windows-hardware/drivers/audio/ksnodetype-loudness" data-raw-source="[&lt;strong&gt;KSNODETYPE_LOUDNESS&lt;/strong&gt;](./ksnodetype-loudness.md)"><strong>KSNODETYPE_LOUDNESS</strong></a></p></td>
 <td align="left"><p>MIXERCONTROL_CONTROLTYPE_LOUDNESS</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>静音</p></td>
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/audio/ksnodetype-mute" data-raw-source="[&lt;strong&gt;KSNODETYPE_MUTE&lt;/strong&gt;](./ksnodetype-mute.md)"><strong>KSNODETYPE_MUTE</strong></a></p></td>
+<td align="left"><p><a href="/windows-hardware/drivers/audio/ksnodetype-mute" data-raw-source="[&lt;strong&gt;KSNODETYPE_MUTE&lt;/strong&gt;](./ksnodetype-mute.md)"><strong>KSNODETYPE_MUTE</strong></a></p></td>
 <td align="left"><p>MIXERCONTROL_CONTROLTYPE_MUTE</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>音调 (多个) </p></td>
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/audio/ksnodetype-tone" data-raw-source="[&lt;strong&gt;KSNODETYPE_TONE&lt;/strong&gt;](./ksnodetype-tone.md)"><strong>KSNODETYPE_TONE</strong></a></p></td>
+<td align="left"><p><a href="/windows-hardware/drivers/audio/ksnodetype-tone" data-raw-source="[&lt;strong&gt;KSNODETYPE_TONE&lt;/strong&gt;](./ksnodetype-tone.md)"><strong>KSNODETYPE_TONE</strong></a></p></td>
 <td align="left"><p>MIXERCONTROL_CONTROLTYPE_ONOFF (是否受支持 KSPROPERTY_AUDIO_BASS_BOOST) </p>
 <p>MIXERCONTROL_CONTROLTYPE_BASS (是否受支持 KSPROPERTY_AUDIO_BASS) </p>
 <p>MIXERCONTROL_CONTROLTYPE_TREBLE (是否受支持 KSPROPERTY_AUDIO_TREBLE) </p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>Volume</p></td>
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/audio/ksnodetype-volume" data-raw-source="[&lt;strong&gt;KSNODETYPE_VOLUME&lt;/strong&gt;](./ksnodetype-volume.md)"><strong>KSNODETYPE_VOLUME</strong></a></p></td>
+<td align="left"><p><a href="/windows-hardware/drivers/audio/ksnodetype-volume" data-raw-source="[&lt;strong&gt;KSNODETYPE_VOLUME&lt;/strong&gt;](./ksnodetype-volume.md)"><strong>KSNODETYPE_VOLUME</strong></a></p></td>
 <td align="left"><p>MIXERCONTROL_CONTROLTYPE_VOLUME</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>Peakmeter</p></td>
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/audio/ksnodetype-peakmeter" data-raw-source="[&lt;strong&gt;KSNODETYPE_PEAKMETER&lt;/strong&gt;](./ksnodetype-peakmeter.md)"><strong>KSNODETYPE_PEAKMETER</strong></a></p></td>
+<td align="left"><p><a href="/windows-hardware/drivers/audio/ksnodetype-peakmeter" data-raw-source="[&lt;strong&gt;KSNODETYPE_PEAKMETER&lt;/strong&gt;](./ksnodetype-peakmeter.md)"><strong>KSNODETYPE_PEAKMETER</strong></a></p></td>
 <td align="left"><p>MIXERCONTROL_CONTROLTYPE_PEAKMETER</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>混合</p></td>
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/audio/ksnodetype-mux" data-raw-source="[&lt;strong&gt;KSNODETYPE_MUX&lt;/strong&gt;](./ksnodetype-mux.md)"><strong>KSNODETYPE_MUX</strong></a></p></td>
+<td align="left"><p><a href="/windows-hardware/drivers/audio/ksnodetype-mux" data-raw-source="[&lt;strong&gt;KSNODETYPE_MUX&lt;/strong&gt;](./ksnodetype-mux.md)"><strong>KSNODETYPE_MUX</strong></a></p></td>
 <td align="left"><p>MIXERCONTROL_CONTROLTYPE_MUX</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>立体声宽</p></td>
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/audio/ksnodetype-stereo-wide" data-raw-source="[&lt;strong&gt;KSNODETYPE_STEREO_WIDE&lt;/strong&gt;](./ksnodetype-stereo-wide.md)"><strong>KSNODETYPE_STEREO_WIDE</strong></a></p></td>
+<td align="left"><p><a href="/windows-hardware/drivers/audio/ksnodetype-stereo-wide" data-raw-source="[&lt;strong&gt;KSNODETYPE_STEREO_WIDE&lt;/strong&gt;](./ksnodetype-stereo-wide.md)"><strong>KSNODETYPE_STEREO_WIDE</strong></a></p></td>
 <td align="left"><p>MIXERCONTROL_CONTROLTYPE_FADER</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>Chorus</p></td>
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/audio/ksnodetype-chorus" data-raw-source="[&lt;strong&gt;KSNODETYPE_CHORUS&lt;/strong&gt;](./ksnodetype-chorus.md)"><strong>KSNODETYPE_CHORUS</strong></a></p></td>
+<td align="left"><p><a href="/windows-hardware/drivers/audio/ksnodetype-chorus" data-raw-source="[&lt;strong&gt;KSNODETYPE_CHORUS&lt;/strong&gt;](./ksnodetype-chorus.md)"><strong>KSNODETYPE_CHORUS</strong></a></p></td>
 <td align="left"><p>MIXERCONTROL_CONTROLTYPE_FADER</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>混响</p></td>
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/audio/ksnodetype-reverb" data-raw-source="[&lt;strong&gt;KSNODETYPE_REVERB&lt;/strong&gt;](./ksnodetype-reverb.md)"><strong>KSNODETYPE_REVERB</strong></a></p></td>
+<td align="left"><p><a href="/windows-hardware/drivers/audio/ksnodetype-reverb" data-raw-source="[&lt;strong&gt;KSNODETYPE_REVERB&lt;/strong&gt;](./ksnodetype-reverb.md)"><strong>KSNODETYPE_REVERB</strong></a></p></td>
 <td align="left"><p>MIXERCONTROL_CONTROLTYPE_FADER</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>Supermix (多个) </p></td>
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/audio/ksnodetype-supermix" data-raw-source="[&lt;strong&gt;KSNODETYPE_SUPERMIX&lt;/strong&gt;](./ksnodetype-supermix.md)"><strong>KSNODETYPE_SUPERMIX</strong></a></p></td>
+<td align="left"><p><a href="/windows-hardware/drivers/audio/ksnodetype-supermix" data-raw-source="[&lt;strong&gt;KSNODETYPE_SUPERMIX&lt;/strong&gt;](./ksnodetype-supermix.md)"><strong>KSNODETYPE_SUPERMIX</strong></a></p></td>
 <td align="left"><p>MIXERCONTROL_CONTROLTYPE_MUTE (在 supermix 节点中是否支持 KSPROPERTY_AUDIO_MUTE) </p>
 <p>MIXERCONTROL_CONTROLTYPE_VOLUME (查看文本中的注释) </p></td>
 </tr>
@@ -134,6 +134,4 @@ WDMAud 将部分（而不是所有）拓扑节点转换为相应的混音器控�
 若要检查立体声或 mono 支持，请先查询左通道，然后再执行右通道，最后，如果这两种情况都失败，则将尝试主通道 (-1) 。 如果这些查询都不成功，则不会为该节点生成控件。 请注意，不会查询每个通道的 MUX 节点。 相反，将执行单个查询来检索当前的 MUX 选择。
 
 当查询节点的 [**KSPROPERTY \_ 拓扑 \_ 名称**](../stream/ksproperty-topology-name.md) 属性时，控件的名称将作为字符串返回。 如果某个节点生成了多个控件，则所有控件共享同一名称。
-
- 
 

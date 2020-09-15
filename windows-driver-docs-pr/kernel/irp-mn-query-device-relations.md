@@ -6,12 +6,12 @@ ms.assetid: 32437c5a-ad92-433c-8255-83775751a44d
 keywords:
 - IRP_MN_QUERY_DEVICE_RELATIONS 内核模式驱动程序体系结构
 ms.localizationpriority: medium
-ms.openlocfilehash: 8a10860c961f60857b8dc8772293b43306b99a9e
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 8fe427ba2bcbee29cc93593ea26c9c3e3f262a9f
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89185145"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90103170"
 ---
 # <a name="irp_mn_query_device_relations"></a>IRP \_ MN \_ 查询 \_ 设备 \_ 关系
 
@@ -26,7 +26,7 @@ PnP 管理器发送此请求，以确定设备之间的某些关系。 以下类
 
 -   总线驱动程序可能会处理 (子 PDOs) 子设备的 **EjectionRelations** 请求。
 
-## <a name="value"></a>值
+## <a name="value"></a>“值”
 
 0x07
 
@@ -87,7 +87,7 @@ typedef struct _DEVICE_RELATIONS {
 
 函数或筛选器驱动程序应准备好在设备的 [*AddDevice*](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_add_device) 例程完成后，为设备处理此 IRP。 枚举设备后，应准备好总线驱动程序来处理 **BusRelations** 的查询。
 
-有关处理 [即插即用次要 irp](plug-and-play-minor-irps.md) 的一般规则，请参阅 [即插即用](https://docs.microsoft.com/windows-hardware/drivers/kernel/implementing-plug-and-play)。
+有关处理 [即插即用次要 irp](plug-and-play-minor-irps.md) 的一般规则，请参阅 [即插即用](./introduction-to-plug-and-play.md)。
 
 以下小节介绍了用于处理各种查询的特定操作。
 

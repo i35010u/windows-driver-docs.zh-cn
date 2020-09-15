@@ -14,12 +14,12 @@ keywords:
 - 通知 WDK Winsock 内核
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: baff4f73a04c10cf36a587ae33d7884415790b9e
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 3f4dea6050ec9cecfd3d6b58b3e86f34c730e517
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89214979"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90101646"
 ---
 # <a name="winsock-kernel-events"></a>Winsock 内核事件
 
@@ -52,15 +52,15 @@ Winsock 内核 (WSK) 子系统可以在发生某些套接字事件时（例如�
 <tbody>
 <tr class="odd">
 <td align="left"><p>已接受传入连接。</p></td>
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_accept_event" data-raw-source="[&lt;em&gt;WskAcceptEvent&lt;/em&gt;](/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_accept_event)"><em>WskAcceptEvent</em></a></p></td>
+<td align="left"><p><a href="/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_accept_event" data-raw-source="[&lt;em&gt;WskAcceptEvent&lt;/em&gt;](/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_accept_event)"><em>WskAcceptEvent</em></a></p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>传入连接请求已收到。<em></p></td>
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_inspect_event" data-raw-source="[&lt;em&gt;WskInspectEvent&lt;/em&gt;](/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_inspect_event)"><em>WskInspectEvent</em></a></p></td>
+<td align="left"><p><a href="/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_inspect_event" data-raw-source="[&lt;em&gt;WskInspectEvent&lt;/em&gt;](/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_inspect_event)"><em>WskInspectEvent</em></a></p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>已删除传入连接请求。</em></p></td>
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_abort_event" data-raw-source="[&lt;em&gt;WskAbortEvent&lt;/em&gt;](/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_abort_event)"><em>WskAbortEvent</em></a></p></td>
+<td align="left"><p><a href="/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_abort_event" data-raw-source="[&lt;em&gt;WskAbortEvent&lt;/em&gt;](/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_abort_event)"><em>WskAbortEvent</em></a></p></td>
 </tr>
 </tbody>
 </table>
@@ -85,7 +85,7 @@ Winsock 内核 (WSK) 子系统可以在发生某些套接字事件时（例如�
 <tbody>
 <tr class="odd">
 <td align="left"><p>已收到一个或多个新的数据报。</p></td>
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_receive_from_event" data-raw-source="[&lt;em&gt;WskReceiveFromEvent&lt;/em&gt;](/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_receive_from_event)"><em>WskReceiveFromEvent</em></a></p></td>
+<td align="left"><p><a href="/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_receive_from_event" data-raw-source="[&lt;em&gt;WskReceiveFromEvent&lt;/em&gt;](/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_receive_from_event)"><em>WskReceiveFromEvent</em></a></p></td>
 </tr>
 </tbody>
 </table>
@@ -108,15 +108,15 @@ Winsock 内核 (WSK) 子系统可以在发生某些套接字事件时（例如�
 <tbody>
 <tr class="odd">
 <td align="left"><p>已收到新数据。</p></td>
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_receive_event" data-raw-source="[&lt;em&gt;WskReceiveEvent&lt;/em&gt;](/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_receive_event)"><em>WskReceiveEvent</em></a></p></td>
+<td align="left"><p><a href="/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_receive_event" data-raw-source="[&lt;em&gt;WskReceiveEvent&lt;/em&gt;](/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_receive_event)"><em>WskReceiveEvent</em></a></p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>套接字已断开连接。</p></td>
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_disconnect_event" data-raw-source="[&lt;em&gt;WskDisconnectEvent&lt;/em&gt;](/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_disconnect_event)"><em>WskDisconnectEvent</em></a></p></td>
+<td align="left"><p><a href="/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_disconnect_event" data-raw-source="[&lt;em&gt;WskDisconnectEvent&lt;/em&gt;](/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_disconnect_event)"><em>WskDisconnectEvent</em></a></p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>理想的发送积压工作（backlog）大小已更改。</p></td>
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_send_backlog_event" data-raw-source="[&lt;em&gt;WskSendBacklogEvent&lt;/em&gt;](/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_send_backlog_event)"><em>WskSendBacklogEvent</em></a></p></td>
+<td align="left"><p><a href="/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_send_backlog_event" data-raw-source="[&lt;em&gt;WskSendBacklogEvent&lt;/em&gt;](/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_send_backlog_event)"><em>WskSendBacklogEvent</em></a></p></td>
 </tr>
 </tbody>
 </table>
@@ -130,6 +130,4 @@ Winsock 内核 (WSK) 子系统可以在发生某些套接字事件时（例如�
 WSK 子系统还可以通知 WSK 应用程序不特定于特定套接字的事件。 为了让 WSK 应用程序收到这些事件的通知，WSK 应用程序必须实现 [*WskClientEvent*](/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_client_event) 事件回调函数。 当前没有定义为特定于特定套接字的事件。 WSK 应用程序的 *WskClientEvent* 事件回调函数始终处于启用状态，并且无法禁用。
 
 WSK 应用程序的事件回调函数不得等待 WSK 完成或事件回调函数上下文中其他 WSK 请求的完成。 回调可以启动其他 WSK 请求 (假设它在调度级别) 不会花费太多时间 \_ ，但它不能等待其完成，即使在 IRQL = 被动级别调用回调也是如此 \_ 。
-
- 
 

@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 06/19/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 00f807981e0c0640e08bb4fd3e6cfb299a0f235e
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: b3253d308bba8d733ad7b43c8a74e9467cc75dd4
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89210927"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90101946"
 ---
 # <a name="ksproperty_rtaudio_packetcount"></a>KSPROPERTY \_ RTAUDIO \_ PACKETCOUNT
 
@@ -50,8 +50,8 @@ KSPROPERTY \_ RTAUDIO \_ PACKETCOUNT 返回从 WaveRT 缓冲区完全传输到�
 <td align="left"><p>是</p></td>
 <td align="left"><p>否</p></td>
 <td align="left"><p>Pin</p></td>
-<td align="left"><p><a href="https://docs.microsoft.com/previous-versions/ff564262(v=vs.85)" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](/previous-versions/ff564262(v=vs.85))"><strong>KSPROPERTY</strong></a></p></td>
-<td align="left"><p><a href="https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/ulong" data-raw-source="[&lt;strong&gt;ULONG&lt;/strong&gt;](/dotnet/csharp/language-reference/keywords/ulong)"><strong>ULONG</strong></a></p></td>
+<td align="left"><p><a href="/previous-versions/ff564262(v=vs.85)" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](/previous-versions/ff564262(v=vs.85))"><strong>KSPROPERTY</strong></a></p></td>
+<td align="left"><p><a href="/dotnet/csharp/language-reference/keywords/ulong" data-raw-source="[&lt;strong&gt;ULONG&lt;/strong&gt;](/dotnet/csharp/language-reference/keywords/ulong)"><strong>ULONG</strong></a></p></td>
 </tr>
 </tbody>
 </table>
@@ -101,6 +101,4 @@ KSPROPERTY \_ RTAUDIO \_ PACKETCOUNT 属性请求返回状态 \_ SUCCESS 以指�
 
 
 [KSPROPSETID \_ RTAudio](kspropsetid-rtaudio.md)
-
- 
 

@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 731cec328c050ae557bdcbb684481a999ea90f8f
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: a5174a14701d1a92685ee04957fc8bb43f96ad6b
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89192511"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90102392"
 ---
 # <a name="ksproperty_pin_globalcinstances"></a>KSPROPERTY \_ PIN \_ GLOBALCINSTANCES
 
@@ -53,7 +53,7 @@ ms.locfileid: "89192511"
 <td><p>是</p></td>
 <td><p>否</p></td>
 <td><p>Pin</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksp_pin" data-raw-source="[&lt;strong&gt;KSP_PIN&lt;/strong&gt;](/windows-hardware/drivers/ddi/ks/ns-ks-ksp_pin)"><strong>KSP_PIN</strong></a></p></td>
+<td><p><a href="/windows-hardware/drivers/ddi/ks/ns-ks-ksp_pin" data-raw-source="[&lt;strong&gt;KSP_PIN&lt;/strong&gt;](/windows-hardware/drivers/ddi/ks/ns-ks-ksp_pin)"><strong>KSP_PIN</strong></a></p></td>
 <td><p>KSPIN_CINSTANCES</p></td>
 </tr>
 </tbody>
@@ -61,7 +61,7 @@ ms.locfileid: "89192511"
 
  
 
-<a name="remarks"></a>注解
+<a name="remarks"></a>备注
 -------
 
 使用 KSP pin 指定此属性 \_ ，其中 **PinId** 成员指定 PIN 工厂。
@@ -97,18 +97,16 @@ KSPROPERTY \_ 引脚 \_ GLOBALCINSTANCES 指定筛选器的所有实例上的最
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Header</p></td>
+<td><p>标头</p></td>
 <td>Ks (包含 Ks .h) </td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
 [**KSP \_ PIN**](/windows-hardware/drivers/ddi/ks/ns-ks-ksp_pin)
 
 [**KSPROPERTY \_ PIN \_ CINSTANCES**](ksproperty-pin-cinstances.md)
-
- 
 

@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5076aad0651ea68f5818c7801d896d47112c96e2
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 41f5580fe9f5cffa3488181d88c39144ac5ccd29
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89206687"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90101888"
 ---
 # <a name="ksproperty_sysaudio_create_virtual_source"></a>KSPROPERTY \_ SYSAUDIO \_ 创建 \_ 虚拟 \_ 源
 
@@ -53,7 +53,7 @@ KSPROPERTY \_ SYSAUDIO \_ CREATE \_ virtual \_ source 属性创建新的虚拟�
 <td align="left"><p>是</p></td>
 <td align="left"><p>否</p></td>
 <td align="left"><p>筛选器</p></td>
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-sysaudio_create_virtual_source" data-raw-source="[&lt;strong&gt;SYSAUDIO_CREATE_VIRTUAL_SOURCE&lt;/strong&gt;](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-sysaudio_create_virtual_source)"><strong>SYSAUDIO_CREATE_VIRTUAL_SOURCE</strong></a></p></td>
+<td align="left"><p><a href="/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-sysaudio_create_virtual_source" data-raw-source="[&lt;strong&gt;SYSAUDIO_CREATE_VIRTUAL_SOURCE&lt;/strong&gt;](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-sysaudio_create_virtual_source)"><strong>SYSAUDIO_CREATE_VIRTUAL_SOURCE</strong></a></p></td>
 <td align="left"><p>ULONG</p></td>
 </tr>
 </tbody>
@@ -104,6 +104,4 @@ SysAudio 截获对这些设备进行的卷更改，并将这些更改应用到�
 [**SYSAUDIO \_ 创建 \_ 虚拟 \_ 源**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-sysaudio_create_virtual_source)
 
 [**KSPROPERTY \_ SYSAUDIO \_ 附加 \_ 虚拟 \_ 源**](ksproperty-sysaudio-attach-virtual-source.md)
-
- 
 

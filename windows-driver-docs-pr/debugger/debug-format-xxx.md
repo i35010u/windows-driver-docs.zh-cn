@@ -11,12 +11,12 @@ api_location:
 api_type:
 - HeaderDef
 ms.localizationpriority: medium
-ms.openlocfilehash: 0c0062d4dca7265d1012a4089c8b2d831a2ff8ee
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: be9b1922effa0b260bdcdcbfad42f531446d0f90
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89217086"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90102290"
 ---
 # <a name="debug_format_xxx"></a>调试 \_ 格式 \_ XXX
 
@@ -26,7 +26,7 @@ WriteDumpFile2 和 WriteDumpFileWide 使用 DEBUG_FORMAT_XXX 位标志来确定�
 
 <table>
 <tr>
-<th>值</th>
+<th>“值”</th>
 <th>说明</th>
 </tr>
 <tr>
@@ -63,7 +63,7 @@ WriteDumpFile2 和 WriteDumpFileWide 使用 DEBUG_FORMAT_XXX 位标志来确定�
 <p>对于用户模式小型转储，还可以包含以下位标志。</p>
 <table>
 <tr>
-<th>值</th>
+<th>“值”</th>
 <th>说明</th>
 </tr>
 <tr>
@@ -167,7 +167,7 @@ WriteDumpFile2 和 WriteDumpFileWide 使用 DEBUG_FORMAT_XXX 位标志来确定�
 <p>DEBUG_FORMAT_USER_SMALL_FULL_MEMORY_INFO</p>
 </td>
 <td>
-<p>添加所有基本内存信息。  这是 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugdataspaces2-queryvirtual" data-raw-source="[IDebugDataSpaces2::QueryVirtual method](/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugdataspaces2-queryvirtual)">IDebugDataSpaces2：： QueryVirtual 方法</a>返回的信息。  包括所有内存的信息，而不只是有效的内存，这允许调试器从小型转储构造完整的虚拟内存布局。</p>
+<p>添加所有基本内存信息。  这是 <a href="/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugdataspaces2-queryvirtual" data-raw-source="[IDebugDataSpaces2::QueryVirtual method](/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugdataspaces2-queryvirtual)">IDebugDataSpaces2：： QueryVirtual 方法</a>返回的信息。  包括所有内存的信息，而不只是有效的内存，这允许调试器从小型转储构造完整的虚拟内存布局。</p>
 </td>
 </tr>
 <tr>

@@ -3,12 +3,12 @@ description: 本部分介绍 USB 驱动程序开发。
 title: USB 客户端驱动程序开发的首要步骤
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1c07d91f01c928afac323b2e2ae2d74b560d0b64
-ms.sourcegitcommit: 937974aa9bbe0262a7ffe9631593fab48c4e7492
+ms.openlocfilehash: dfa6520f2aefa34657bfa85ef9ec108f43b87be5
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "90010325"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90102904"
 ---
 # <a name="first-steps-for-usb-client-driver-development"></a>USB 客户端驱动程序开发的首要步骤
 
@@ -56,10 +56,10 @@ ms.locfileid: "90010325"
 <td><p><strong>步骤 5</strong>-熟悉 Microsoft 提供的 USB 驱动程序堆栈和驱动程序开发概念。</p>
 <ul>
 <li><a href="usb-3-0-driver-stack-architecture.md" data-raw-source="[USB host-side drivers in Windows](usb-3-0-driver-stack-architecture.md)">Windows 中的 USB 宿主端驱动程序</a></li>
-<li><a href="https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/concepts-and-knowledge-for-all-driver-developers" data-raw-source="[Concepts for All Driver Developers](../gettingstarted/concepts-and-knowledge-for-all-driver-developers.md)">适用于所有驱动程序开发人员的概念</a></li>
+<li><a href="/windows-hardware/drivers/gettingstarted/concepts-and-knowledge-for-all-driver-developers" data-raw-source="[Concepts for All Driver Developers](../gettingstarted/concepts-and-knowledge-for-all-driver-developers.md)">适用于所有驱动程序开发人员的概念</a></li>
 <li><a href="usb-concepts-for-all-developers.md" data-raw-source="[Concepts for all USB developers](usb-concepts-for-all-developers.md)">适用于所有 USB 开发人员的概念</a></li>
-<li><a href="https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/device-nodes-and-device-stacks" data-raw-source="[Device nodes and device stacks](../gettingstarted/device-nodes-and-device-stacks.md)">设备节点和设备堆栈</a></li>
-<li><em>使用 Windows Driver Foundation 开发驱动程序</em>，由 "Orwick" 和 "专家 Smith" 编写。 有关详细信息，请参阅 <a href="https://docs.microsoft.com/windows-hardware/drivers/wdf/developing-drivers-with-wdf" data-raw-source="[Developing Drivers with WDF](../wdf/developing-drivers-with-wdf.md)">通过 WDF 开发驱动程序</a>。</li>
+<li><a href="/windows-hardware/drivers/gettingstarted/device-nodes-and-device-stacks" data-raw-source="[Device nodes and device stacks](../gettingstarted/device-nodes-and-device-stacks.md)">设备节点和设备堆栈</a></li>
+<li><em>使用 Windows Driver Foundation 开发驱动程序</em>，由 "Orwick" 和 "专家 Smith" 编写。 有关详细信息，请参阅 <a href="/windows-hardware/drivers/wdf/developing-drivers-with-wdf" data-raw-source="[Developing Drivers with WDF](../wdf/developing-drivers-with-wdf.md)">通过 WDF 开发驱动程序</a>。</li>
 <li><a href="usb-driver-samples-in-wdk.md" data-raw-source="[USB driver samples](usb-driver-samples-in-wdk.md)">USB 驱动程序示例</a></li>
 </ul></td>
 <td><ul>
@@ -73,12 +73,12 @@ ms.locfileid: "90010325"
 <ul>
 <li><a href="https://go.microsoft.com/fwlink/p/?linkid=617580" data-raw-source="[Install the latest Windows Driver Kit (WDK)](https://go.microsoft.com/fwlink/p/?linkid=617580)"> (WDK) 安装最新的 Windows 驱动程序工具包 </a>。</li>
 <li><a href="https://go.microsoft.com/fwlink/p/?linkid=617580" data-raw-source="[Install Microsoft Visual Studio 2012](https://go.microsoft.com/fwlink/p/?linkid=617580)">安装 2012 Microsoft Visual Studio</a>。</li>
-<li><a href="https://docs.microsoft.com/windows-hardware/drivers/debugger/getting-set-up-for-debugging" data-raw-source="[Get Set Up for Debugging](../debugger/getting-set-up-for-debugging.md)">设置以进行调试</a>。</li>
+<li><a href="/windows-hardware/drivers/debugger/getting-set-up-for-debugging" data-raw-source="[Get Set Up for Debugging](../debugger/getting-set-up-for-debugging.md)">设置以进行调试</a>。</li>
 <li>请确保具有 <a href="headers-and-libraries-for-a-usb-client-driver.md" data-raw-source="[Headers and libraries required by a USB client driver](headers-and-libraries-for-a-usb-client-driver.md)">USB 客户端驱动程序所需的标头和库</a>。</li>
 </ul></td>
 <td><ul>
 <li>如果要编写内核模式驱动程序，应在主机和目标计算机上通过以太网网络、1394电缆、USB 2.0 或3.0 调试电缆或空调缆线配置调试。</li>
-<li>如果要编写用户模式驱动程序，可以使用 Microsoft Visual Studio 环境中可用的用户模式调试器。 你应该知道 <a href="https://docs.microsoft.com/windows-hardware/drivers/debugger/debugging-a-user-mode-process-using-visual-studio" data-raw-source="[how to attach to a process or launch a process under the debugger](../debugger/debugging-a-user-mode-process-using-visual-studio.md)">如何附加到进程或在调试器下启动进程</a>。</li>
+<li>如果要编写用户模式驱动程序，可以使用 Microsoft Visual Studio 环境中可用的用户模式调试器。 你应该知道 <a href="/windows-hardware/drivers/debugger/debugging-a-user-mode-process-using-visual-studio" data-raw-source="[how to attach to a process or launch a process under the debugger](../debugger/debugging-a-user-mode-process-using-visual-studio.md)">如何附加到进程或在调试器下启动进程</a>。</li>
 </ul></td>
 </tr>
 <tr class="odd">

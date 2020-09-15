@@ -6,12 +6,12 @@ keywords:
 - 设备属性 WDK 设备安装，修改
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: dc994bde4305fb5aa63e9a52dbc2d4de21b342e0
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: acbef8c95838847fb9208e4f4a6dfc1825131115
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89095065"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90103340"
 ---
 # <a name="inf-file-entry-values-that-modify-device-properties-before-windows-vista"></a>在 Windows Vista 之前修改设备属性的 INF 文件输入值
 
@@ -42,7 +42,7 @@ ms.locfileid: "89095065"
 
 -   [**Inf 版本部分**](inf-version-section.md)的 inf**类**指令包括*类名称*输入值，该值提供[设备安装程序类](./overview-of-device-setup-classes.md)的名称。 此值对应于统一设备属性模型中的 [**DEVPKEY_DeviceClass_ClassName**](./devpkey-deviceclass-classname.md) 属性。 设备安装程序类的类名称可以通过调用 [**SetupDiClassNameFromGuid**](/windows/desktop/api/setupapi/nf-setupapi-setupdiclassnamefromguida)进行检索，并且可以通过调用 [**SetupDiGetDeviceRegistryProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetdeviceregistrypropertya) 检索设备实例的类名，并将 *Property* 参数设置为 SPDRP_CLASS。
 
--   [**INF InterfaceInstall32 部分**](inf-interfaceinstall32-section.md)包括一个*InterfaceClassGuid*条目值，该值提供设备接口的 GUID。 此值对应于统一设备属性模型中的 DEVPKEY_DeviceInterface_ClassGuid 属性。 可以通过查询接口键的根的子项来检索已安装的设备接口类的 Guid，可以通过调用 [**SetupDiOpenClassRegKeyEx**](/windows/desktop/api/setupapi/nf-setupapi-setupdiopenclassregkeyexa) 打开该接口的根子项，并将 *ClassGuid* 参数设置为 **NULL** ，并将 *Flags* 参数设置为 DIOCR_INTERFACE。 可以通过调用 [**SetupDiEnumDeviceInterfaces**](/windows/desktop/api/setupapi/nf-setupapi-setupdienumdeviceinterfaces)来检索设备接口的 GUID，该接口将检索与设备实例关联的设备接口的 [**SP_DEVICE_INTERFACE_DATA**](/windows/desktop/api/setupapi/ns-setupapi-_sp_device_interface_data) 结构。 SP_DEVICE_INTERFACE_DATA 结构的 **InterfaceClassGuid** 成员标识接口类 GUID。
+-   [**INF InterfaceInstall32 部分**](inf-interfaceinstall32-section.md)包括一个*InterfaceClassGuid*条目值，该值提供设备接口的 GUID。 此值对应于统一设备属性模型中的 DEVPKEY_DeviceInterface_ClassGuid 属性。 可以通过查询接口键的根的子项来检索已安装的设备接口类的 Guid，可以通过调用 [**SetupDiOpenClassRegKeyEx**](/windows/desktop/api/setupapi/nf-setupapi-setupdiopenclassregkeyexa) 打开该接口的根子项，并将 *ClassGuid* 参数设置为 **NULL** ，并将 *Flags* 参数设置为 DIOCR_INTERFACE。 可以通过调用 [**SetupDiEnumDeviceInterfaces**](/windows/desktop/api/setupapi/nf-setupapi-setupdienumdeviceinterfaces)来检索设备接口的 GUID，该接口将检索与设备实例关联的设备接口的 [**SP_DEVICE_INTERFACE_DATA**](/windows/win32/api/setupapi/ns-setupapi-sp_device_interface_data) 结构。 SP_DEVICE_INTERFACE_DATA 结构的 **InterfaceClassGuid** 成员标识接口类 GUID。
 
 ### <a name="inf-addreg-directives-and-inf-delreg-directives-that-modify-system-defined-device-properties"></a><a href="" id="inf-addreg-directives-and-inf-delreg-directives-that-modify-system-def"></a>用于修改系统定义的设备属性的 INF AddReg 指令和 INF DelReg 指令
 

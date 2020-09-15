@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: da31122b98bc5754e8762789e53b13090dbd58e8
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: dfe8ab6a56d858fc3f71b9a55b9bbb314f72d31a
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89209979"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90102054"
 ---
 # <a name="ksproperty_audio_presentation_position"></a>KSPROPERTY \_ 音频 \_ 演示 \_ 位置
 
@@ -51,7 +51,7 @@ KSPROPERTY \_ AUDIO \_ PRESENTATION \_ POSITION 属性请求检索一个结构�
 <td align="left"><p>否</p></td>
 <td align="left"><p>节点 via 引脚实例</p></td>
 <td align="left"><p>KSP_NODE</p></td>
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksaudio_presentation_position" data-raw-source="[&lt;strong&gt;KSAUDIO_PRESENTATION_POSITION&lt;/strong&gt;](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksaudio_presentation_position)"><strong>KSAUDIO_PRESENTATION_POSITION</strong></a></p></td>
+<td align="left"><p><a href="/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksaudio_presentation_position" data-raw-source="[&lt;strong&gt;KSAUDIO_PRESENTATION_POSITION&lt;/strong&gt;](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksaudio_presentation_position)"><strong>KSAUDIO_PRESENTATION_POSITION</strong></a></p></td>
 </tr>
 </tbody>
 </table>
@@ -89,6 +89,4 @@ KSPROPERTY \_ 音频 \_ 演示 \_ 位置属性请求返回状态 " \_ 成功" �
 
 
 [**KSAUDIO \_ 演示 \_ 位置**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksaudio_presentation_position)
-
- 
 

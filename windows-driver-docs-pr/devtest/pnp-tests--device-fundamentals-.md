@@ -4,12 +4,12 @@ description: 设备基础知识 PnP 测试强制驱动程序处理几乎所有 P
 ms.assetid: 4224F92B-5430-4F55-900D-0B08ADBE54F6
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 362eda83765c9e0af44292fbec80f0d9b4c42874
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 03e512b41256b18a674f774eb876f8897c2e32d6
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89384881"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90102462"
 ---
 # <a name="pnp-tests-device-fundamentals"></a>PnP 测试（设备基础功能）
 
@@ -36,7 +36,7 @@ ms.locfileid: "89384881"
 <tr class="odd">
 <td align="left"><p><span id="Disable_Enhanced_Device_Testing__EDT__Support_"></span><span id="disable_enhanced_device_testing__edt__support_"></span><span id="DISABLE_ENHANCED_DEVICE_TESTING__EDT__SUPPORT_"></span>禁用 (EDT) 支持的增强型设备测试</p></td>
 <td align="left"><p>此测试会将测试筛选器驱动程序 ( # A0) 卸载为使用 DQ 参数指定的设备的上限。 此测试筛选器作为在此测试类别中运行测试的一部分进行安装</p>
-<p><strong>参数：</strong> - 请参阅 <a href="https://docs.microsoft.com/windows-hardware/drivers" data-raw-source="[Device Fundamentals Test Parameters](/windows-hardware/drivers)">设备基础测试参数</a></p>
+<p><strong>参数：</strong> - 请参阅 <a href="/windows-hardware/drivers" data-raw-source="[Device Fundamentals Test Parameters](/windows-hardware/drivers)">设备基础测试参数</a></p>
 <p><em>DQ</em></p>
 <p><em>TestCycles</em></p>
 <p><em>DoSimpleIO</em></p>
@@ -49,7 +49,7 @@ ms.locfileid: "89384881"
 <td align="left"><p>此测试在系统重新启动时在设备上执行基本的 PnP 禁用/启用和 i/o。</p>
 <p><strong>测试二进制文件：</strong> Devfund_PNP_DisableEnable_Reboot_With_IO_BeforeAndAfter. wsc</p>
 <p><strong>测试方法：</strong> PNP_DisableEnable_Reboot_With_IO_Before_And_After</p>
-<p><strong>参数：</strong> - 请参阅 <a href="https://docs.microsoft.com/windows-hardware/drivers" data-raw-source="[Device Fundamentals Test Parameters](/windows-hardware/drivers)">设备基础测试参数</a></p>
+<p><strong>参数：</strong> - 请参阅 <a href="/windows-hardware/drivers" data-raw-source="[Device Fundamentals Test Parameters](/windows-hardware/drivers)">设备基础测试参数</a></p>
 <p><em>DQ</em></p>
 <p><em>IOPeriod</em></p></td>
 </tr>
@@ -59,15 +59,15 @@ ms.locfileid: "89384881"
 <p>此测试执行以下操作：</p>
 <ol>
 <li>验证系统报告设备问题代码上是否没有设备。</li>
-<li>使用 WDTF 简单 i/o 插件测试系统上每台设备上的 i/o。 有关详细信息，请参阅 <a href="https://docs.microsoft.com/windows-hardware/drivers/wdtf/provided-wdtf-simpleio-plug-ins" data-raw-source="[Provided WDTF Simple I/O plug-ins](../wdtf/provided-wdtf-simpleio-plug-ins.md)">提供的 WDTF 简单 i/o 插件</a> 。</li>
-<li>使用 WDTF PnP 操作接口禁用和启用系统上的每个设备，有关详细信息，请参阅 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdtfpnpaction/nf-wdtfpnpaction-iwdtfpnpaction2-disabledevice" data-raw-source="[&lt;strong&gt;IWDTFPNPAction2::DisableDevice&lt;/strong&gt;](/windows-hardware/drivers/ddi/wdtfpnpaction/nf-wdtfpnpaction-iwdtfpnpaction2-disabledevice)"><strong>IWDTFPNPAction2：:D isabledevice</strong></a> 和 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdtfpnpaction/nf-wdtfpnpaction-iwdtfpnpaction2-enabledevice" data-raw-source="[&lt;strong&gt;IWDTFPNPAction2::EnableDevice&lt;/strong&gt;](/windows-hardware/drivers/ddi/wdtfpnpaction/nf-wdtfpnpaction-iwdtfpnpaction2-enabledevice)"><strong>IWDTFPNPAction2：： EnableDevice</strong></a> 方法。</li>
+<li>使用 WDTF 简单 i/o 插件测试系统上每台设备上的 i/o。 有关详细信息，请参阅 <a href="/windows-hardware/drivers/wdtf/provided-wdtf-simpleio-plug-ins" data-raw-source="[Provided WDTF Simple I/O plug-ins](../wdtf/provided-wdtf-simpleio-plug-ins.md)">提供的 WDTF 简单 i/o 插件</a> 。</li>
+<li>使用 WDTF PnP 操作接口禁用和启用系统上的每个设备，有关详细信息，请参阅 <a href="/windows-hardware/drivers/ddi/wdtfpnpaction/nf-wdtfpnpaction-iwdtfpnpaction2-disabledevice" data-raw-source="[&lt;strong&gt;IWDTFPNPAction2::DisableDevice&lt;/strong&gt;](/windows-hardware/drivers/ddi/wdtfpnpaction/nf-wdtfpnpaction-iwdtfpnpaction2-disabledevice)"><strong>IWDTFPNPAction2：:D isabledevice</strong></a> 和 <a href="/windows-hardware/drivers/ddi/wdtfpnpaction/nf-wdtfpnpaction-iwdtfpnpaction2-enabledevice" data-raw-source="[&lt;strong&gt;IWDTFPNPAction2::EnableDevice&lt;/strong&gt;](/windows-hardware/drivers/ddi/wdtfpnpaction/nf-wdtfpnpaction-iwdtfpnpaction2-enabledevice)"><strong>IWDTFPNPAction2：： EnableDevice</strong></a> 方法。</li>
 <li>验证系统报告设备问题代码上是否没有设备。</li>
-<li>使用 WDTF 简单 i/o 插件测试系统上每台设备上的 i/o。 有关详细信息，请参阅 <a href="https://docs.microsoft.com/windows-hardware/drivers/wdtf/provided-wdtf-simpleio-plug-ins" data-raw-source="[Provided WDTF Simple I/O plug-ins](../wdtf/provided-wdtf-simpleio-plug-ins.md)">提供的 WDTF 简单 i/o 插件</a> 。</li>
+<li>使用 WDTF 简单 i/o 插件测试系统上每台设备上的 i/o。 有关详细信息，请参阅 <a href="/windows-hardware/drivers/wdtf/provided-wdtf-simpleio-plug-ins" data-raw-source="[Provided WDTF Simple I/O plug-ins](../wdtf/provided-wdtf-simpleio-plug-ins.md)">提供的 WDTF 简单 i/o 插件</a> 。</li>
 <li>多次重复步骤3-5。</li>
 </ol>
 <p><strong>测试二进制文件：</strong> Devfund_PNP_DisableEnable_With_IO_BeforeAndAfter. wsc</p>
 <p><strong>测试方法：</strong> PNP_DisableEnable_With_IO_Before_And_After</p>
-<p><strong>参数：</strong> - 请参阅 <a href="https://docs.microsoft.com/windows-hardware/drivers" data-raw-source="[Device Fundamentals Test Parameters](/windows-hardware/drivers)">设备基础测试参数</a></p>
+<p><strong>参数：</strong> - 请参阅 <a href="/windows-hardware/drivers" data-raw-source="[Device Fundamentals Test Parameters](/windows-hardware/drivers)">设备基础测试参数</a></p>
 <p><em>DQ</em></p>
 <p><em>IOPeriod</em></p></td>
 </tr>
@@ -77,7 +77,7 @@ ms.locfileid: "89384881"
 <p>有关详细信息，请参阅 <a href="#about-the-device-removal-tests" data-raw-source="[About the Device Removal tests](#about-the-device-removal-tests)">关于设备删除测试</a>。</p>
 <p><strong>测试二进制文件：</strong> Devfund_PnPDTest.dll</p>
 <p><strong>测试方法：</strong> PNPCancelRemoveDevice</p>
-<p><strong>参数：</strong> - 请参阅 <a href="https://docs.microsoft.com/windows-hardware/drivers" data-raw-source="[Device Fundamentals Test Parameters](/windows-hardware/drivers)">设备基础测试参数</a></p>
+<p><strong>参数：</strong> - 请参阅 <a href="/windows-hardware/drivers" data-raw-source="[Device Fundamentals Test Parameters](/windows-hardware/drivers)">设备基础测试参数</a></p>
 <p><em>DQ</em></p>
 <p><em>TestCycles</em></p>
 <p><em>DoSimpleIO</em></p>
@@ -90,7 +90,7 @@ ms.locfileid: "89384881"
 <p>有关详细信息，请参阅 <a href="#about-the-rebalance-tests" data-raw-source="[About the Rebalance tests](#about-the-rebalance-tests)">关于重新平衡测试</a>。</p>
 <p><strong>测试二进制文件：</strong> Devfund_PnPDTest.dll</p>
 <p><strong>测试方法：</strong> PNPCancelStopDevice</p>
-<p><strong>参数：</strong> - 请参阅 <a href="https://docs.microsoft.com/windows-hardware/drivers" data-raw-source="[Device Fundamentals Test Parameters](/windows-hardware/drivers)">设备基础测试参数</a></p>
+<p><strong>参数：</strong> - 请参阅 <a href="/windows-hardware/drivers" data-raw-source="[Device Fundamentals Test Parameters](/windows-hardware/drivers)">设备基础测试参数</a></p>
 <p><em>DQ</em></p>
 <p><em>TestCycles</em></p>
 <p><em>DoSimpleIO</em></p>
@@ -99,10 +99,10 @@ ms.locfileid: "89384881"
 </tr>
 <tr class="even">
 <td align="left"><p><span id="PNP_DIF_Remove_Device_Test"></span><span id="pnp_dif_remove_device_test"></span><span id="PNP_DIF_REMOVE_DEVICE_TEST"></span>PNP DIF 删除设备测试</p></td>
-<td align="left"><p>此测试使用 SetupDi API 向安装程序发送 <a href="https://docs.microsoft.com/windows-hardware/drivers/install/dif-remove" data-raw-source="[&lt;strong&gt;DIF_REMOVE&lt;/strong&gt;](../install/dif-remove.md)"><strong>DIF_REMOVE</strong></a> 请求，以删除设备。</p>
+<td align="left"><p>此测试使用 SetupDi API 向安装程序发送 <a href="/windows-hardware/drivers/install/dif-remove" data-raw-source="[&lt;strong&gt;DIF_REMOVE&lt;/strong&gt;](../install/dif-remove.md)"><strong>DIF_REMOVE</strong></a> 请求，以删除设备。</p>
 <p><strong>测试二进制文件：</strong> Devfund_PnPDTest.dll</p>
 <p><strong>测试方法：</strong> PNPDIFRemoveAndRescanParentDevice</p>
-<p><strong>参数：</strong> - 请参阅 <a href="https://docs.microsoft.com/windows-hardware/drivers" data-raw-source="[Device Fundamentals Test Parameters](/windows-hardware/drivers)">设备基础测试参数</a></p>
+<p><strong>参数：</strong> - 请参阅 <a href="/windows-hardware/drivers" data-raw-source="[Device Fundamentals Test Parameters](/windows-hardware/drivers)">设备基础测试参数</a></p>
 <p><em>DQ</em></p>
 <p><em>TestCycles</em></p>
 <p><em>DoSimpleIO</em></p>
@@ -114,7 +114,7 @@ ms.locfileid: "89384881"
 <td align="left"><p>此测试将禁用并启用目标设备。</p>
 <p><strong>测试二进制文件：</strong> Devfund_PnPDTest.dll</p>
 <p><strong>测试方法：</strong> PNPDisableAndEnableDevice</p>
-<p><strong>参数：</strong> - 请参阅 <a href="https://docs.microsoft.com/windows-hardware/drivers" data-raw-source="[Device Fundamentals Test Parameters](/windows-hardware/drivers)">设备基础测试参数</a></p>
+<p><strong>参数：</strong> - 请参阅 <a href="/windows-hardware/drivers" data-raw-source="[Device Fundamentals Test Parameters](/windows-hardware/drivers)">设备基础测试参数</a></p>
 <p><em>DQ</em></p>
 <p><em>TestCycles</em></p>
 <p><em>DoSimpleIO</em></p>
@@ -128,7 +128,7 @@ ms.locfileid: "89384881"
 <p>有关详细信息，请参阅 <a href="#about-the-rebalance-tests" data-raw-source="[About the Rebalance tests](#about-the-rebalance-tests)">关于重新平衡测试</a>。</p>
 <p><strong>测试二进制文件：</strong> Devfund_PnPDTest.dll</p>
 <p><strong>测试方法：</strong> PNPTryStopDeviceAndFailRestart</p>
-<p><strong>参数：</strong> - 请参阅 <a href="https://docs.microsoft.com/windows-hardware/drivers" data-raw-source="[Device Fundamentals Test Parameters](/windows-hardware/drivers)">设备基础测试参数</a></p>
+<p><strong>参数：</strong> - 请参阅 <a href="/windows-hardware/drivers" data-raw-source="[Device Fundamentals Test Parameters](/windows-hardware/drivers)">设备基础测试参数</a></p>
 <p><em>DQ</em></p>
 <p><em>TestCycles</em></p>
 <p><em>DoSimpleIO</em></p>
@@ -141,7 +141,7 @@ ms.locfileid: "89384881"
 <p>有关详细信息，请参阅 <a href="#about-the-rebalance-tests" data-raw-source="[About the Rebalance tests](#about-the-rebalance-tests)">关于重新平衡测试</a>。</p>
 <p><strong>测试二进制文件：</strong> Devfund_PnPDTest.dll</p>
 <p><strong>测试方法：</strong> PNPTryStopDeviceRequestNewResourcesAndRestartDevice</p>
-<p><strong>参数：</strong> - 请参阅 <a href="https://docs.microsoft.com/windows-hardware/drivers" data-raw-source="[Device Fundamentals Test Parameters](/windows-hardware/drivers)">设备基础测试参数</a></p>
+<p><strong>参数：</strong> - 请参阅 <a href="/windows-hardware/drivers" data-raw-source="[Device Fundamentals Test Parameters](/windows-hardware/drivers)">设备基础测试参数</a></p>
 <p><em>DQ</em></p>
 <p><em>TestCycles</em></p>
 <p><em>DoSimpleIO</em></p>
@@ -154,7 +154,7 @@ ms.locfileid: "89384881"
 <p>有关详细信息，请参阅 <a href="#about-the-device-removal-tests" data-raw-source="[About the Device Removal tests](#about-the-device-removal-tests)">关于设备删除测试</a>。</p>
 <p><strong>测试二进制文件：</strong> Devfund_PnPDTest.dll</p>
 <p><strong>测试方法：</strong> PNPRemoveAndRestartDevice</p>
-<p><strong>参数：</strong> - 请参阅 <a href="https://docs.microsoft.com/windows-hardware/drivers" data-raw-source="[Device Fundamentals Test Parameters](/windows-hardware/drivers)">设备基础测试参数</a></p>
+<p><strong>参数：</strong> - 请参阅 <a href="/windows-hardware/drivers" data-raw-source="[Device Fundamentals Test Parameters](/windows-hardware/drivers)">设备基础测试参数</a></p>
 <p><em>DQ</em></p>
 <p><em>TestCycles</em></p>
 <p><em>DoSimpleIO</em></p>
@@ -167,7 +167,7 @@ ms.locfileid: "89384881"
 <p>有关详细信息，请参阅 <a href="#about-the-rebalance-tests" data-raw-source="[About the Rebalance tests](#about-the-rebalance-tests)">关于重新平衡测试</a>。</p>
 <p><strong>测试二进制文件：</strong> Devfund_PnPDTest.dll</p>
 <p><strong>测试方法：</strong> PNPTryStopAndRestartDevice</p>
-<p><strong>参数：</strong> - 请参阅 <a href="https://docs.microsoft.com/windows-hardware/drivers" data-raw-source="[Device Fundamentals Test Parameters](/windows-hardware/drivers)">设备基础测试参数</a></p>
+<p><strong>参数：</strong> - 请参阅 <a href="/windows-hardware/drivers" data-raw-source="[Device Fundamentals Test Parameters](/windows-hardware/drivers)">设备基础测试参数</a></p>
 <p><em>DQ</em></p>
 <p><em>TestCycles</em></p>
 <p><em>DoSimpleIO</em></p>
@@ -180,7 +180,7 @@ ms.locfileid: "89384881"
 <p>有关详细信息，请参阅 <a href="#about-the-surprise-removal-test" data-raw-source="[About the Surprise Removal test](#about-the-surprise-removal-test)">关于意外删除测试</a>。</p>
 <p><strong>测试二进制文件：</strong> Devfund_PnPDTest.dll</p>
 <p><strong>测试方法：</strong> PNPSurpriseRemoveAndRestartDevice</p>
-<p><strong>参数：</strong> - 请参阅 <a href="https://docs.microsoft.com/windows-hardware/drivers" data-raw-source="[Device Fundamentals Test Parameters](/windows-hardware/drivers)">设备基础测试参数</a></p>
+<p><strong>参数：</strong> - 请参阅 <a href="/windows-hardware/drivers" data-raw-source="[Device Fundamentals Test Parameters](/windows-hardware/drivers)">设备基础测试参数</a></p>
 <p><em>DQ</em></p>
 <p><em>TestCycles</em></p>
 <p><em>DoSimpleIO</em></p>
@@ -311,6 +311,4 @@ HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Setup\LogLevel
 [Provided WDTF Simple I/O plug-ins](../wdtf/provided-wdtf-simpleio-plug-ins.md)（提供的 WDTF 简单 I/O 插件）
 
 [如何在运行时通过命令提示符测试驱动程序](/windows-hardware/drivers)
-
- 
 

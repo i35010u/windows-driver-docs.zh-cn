@@ -9,12 +9,12 @@ keywords:
 - 时钟 WDK DVD 解码器
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d50369875196abf9d3991fb3b46e10fe8affe431
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: e1cc41ada5034dc63f53740fce1c2292d91782b6
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89190265"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90103328"
 ---
 # <a name="dvd-related-clock-functions"></a>与 DVD 相关的时钟函数
 
@@ -37,21 +37,19 @@ ms.locfileid: "89190265"
 </thead>
 <tbody>
 <tr class="odd">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/stream/srb-open-master-clock" data-raw-source="[&lt;strong&gt;SRB_OPEN_MASTER_CLOCK&lt;/strong&gt;](./srb-open-master-clock.md)"><strong>SRB_OPEN_MASTER_CLOCK</strong></a></p></td>
+<td><p><a href="/windows-hardware/drivers/stream/srb-open-master-clock" data-raw-source="[&lt;strong&gt;SRB_OPEN_MASTER_CLOCK&lt;/strong&gt;](./srb-open-master-clock.md)"><strong>SRB_OPEN_MASTER_CLOCK</strong></a></p></td>
 <td><p>向 DVD 解码器微型驱动程序指定的流将作为主时钟打开，并提供一个主时钟句柄，以用于对 DVD 解码器微型驱动程序主时钟例程的所有调用以访问该时钟。</p></td>
 </tr>
 <tr class="even">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/stream/srb-close-master-clock" data-raw-source="[&lt;strong&gt;SRB_CLOSE_MASTER_CLOCK&lt;/strong&gt;](./srb-close-master-clock.md)"><strong>SRB_CLOSE_MASTER_CLOCK</strong></a></p></td>
+<td><p><a href="/windows-hardware/drivers/stream/srb-close-master-clock" data-raw-source="[&lt;strong&gt;SRB_CLOSE_MASTER_CLOCK&lt;/strong&gt;](./srb-close-master-clock.md)"><strong>SRB_CLOSE_MASTER_CLOCK</strong></a></p></td>
 <td><p>指示指定的主时钟句柄不再处于活动状态。</p></td>
 </tr>
 <tr class="odd">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/stream/srb-indicate-master-clock" data-raw-source="[&lt;strong&gt;SRB_INDICATE_MASTER_CLOCK&lt;/strong&gt;](./srb-indicate-master-clock.md)"><strong>SRB_INDICATE_MASTER_CLOCK</strong></a></p></td>
+<td><p><a href="/windows-hardware/drivers/stream/srb-indicate-master-clock" data-raw-source="[&lt;strong&gt;SRB_INDICATE_MASTER_CLOCK&lt;/strong&gt;](./srb-indicate-master-clock.md)"><strong>SRB_INDICATE_MASTER_CLOCK</strong></a></p></td>
 <td><p>指示在调用时间戳并向所有流提供时要使用的句柄。</p></td>
 </tr>
 </tbody>
 </table>
-
- 
 
  
 

@@ -11,12 +11,12 @@ keywords:
 - 免费例程 WDK RDBSS
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 49b4ab902d4b8429e70b6164e779c423e6ef06b9
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 51a8871cc4c91e0bc219abb7eb5bd5c034775068
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89067372"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90104028"
 ---
 # <a name="pool-allocation-and-free-routines"></a>池分配和免费例程
 
@@ -45,17 +45,17 @@ RDBSS 提供了许多用于池分配的例程。 通常，使用宏调用这些�
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ifs/-rxallocatepoolwithtag" data-raw-source="[&lt;strong&gt;_RxAllocatePoolWithTag&lt;/strong&gt;](./-rxallocatepoolwithtag.md)"><strong>_RxAllocatePoolWithTag</strong></a></p></td>
+<td align="left"><p><a href="/windows-hardware/drivers/ifs/-rxallocatepoolwithtag" data-raw-source="[&lt;strong&gt;_RxAllocatePoolWithTag&lt;/strong&gt;](./-rxallocatepoolwithtag.md)"><strong>_RxAllocatePoolWithTag</strong></a></p></td>
 <td align="left"><p>此例程使用块开头的包含四个字节的标记从池中分配内存，有助于捕获内存问题。</p>
 <p>建议调用 <strong>RxAllocatePoolWithTag</strong> 宏，而不是直接使用此例程。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ifs/-rxcheckmemoryblock" data-raw-source="[&lt;strong&gt;_RxCheckMemoryBlock&lt;/strong&gt;](./-rxcheckmemoryblock.md)"><strong>_RxCheckMemoryBlock</strong></a></p></td>
+<td align="left"><p><a href="/windows-hardware/drivers/ifs/-rxcheckmemoryblock" data-raw-source="[&lt;strong&gt;_RxCheckMemoryBlock&lt;/strong&gt;](./-rxcheckmemoryblock.md)"><strong>_RxCheckMemoryBlock</strong></a></p></td>
 <td align="left"><p>此例程检查内存块中是否有特殊 RX_POOL_HEADER 的标头签名。 请注意，网络小型重定向器驱动程序需要将此特殊的签名块添加到分配的内存，以便使用该例程。</p>
 <p>不应使用此例程，因为尚未实现此特殊标头块。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ifs/-rxfreepool" data-raw-source="[&lt;strong&gt;_RxFreePool&lt;/strong&gt;](./-rxfreepool.md)"><strong>_RxFreePool</strong></a></p></td>
+<td align="left"><p><a href="/windows-hardware/drivers/ifs/-rxfreepool" data-raw-source="[&lt;strong&gt;_RxFreePool&lt;/strong&gt;](./-rxfreepool.md)"><strong>_RxFreePool</strong></a></p></td>
 <td align="left"><p>此例程释放内存池。</p>
 <p>建议调用 <strong>RxFreePool</strong> 宏，而不是直接使用此例程。</p></td>
 </tr>
@@ -95,8 +95,6 @@ RDBSS 提供了许多用于池分配的例程。 通常，使用宏调用这些�
 </tr>
 </tbody>
 </table>
-
- 
 
  
 

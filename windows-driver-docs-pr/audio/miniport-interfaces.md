@@ -13,12 +13,12 @@ keywords:
 - 流接口 WDK 音频
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ec66f07d0a1685d7d4f505a7a05b1f2bc3c154e7
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 51e8e9a36ff094d360d1f654afe34780c70ce2c0
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89210589"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90101800"
 ---
 # <a name="miniport-interfaces"></a>微型端口接口
 
@@ -64,33 +64,33 @@ ms.locfileid: "89210589"
 <tbody>
 <tr class="odd">
 <td align="left"><p>WaveCyclic</p></td>
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nn-portcls-iportwavecyclic" data-raw-source="[IPortWaveCyclic](/windows-hardware/drivers/ddi/portcls/nn-portcls-iportwavecyclic)">IPortWaveCyclic</a></p></td>
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nn-portcls-iminiportwavecyclic" data-raw-source="[IMiniportWaveCyclic](/windows-hardware/drivers/ddi/portcls/nn-portcls-iminiportwavecyclic)">IMiniportWaveCyclic</a></p></td>
+<td align="left"><p><a href="/windows-hardware/drivers/ddi/portcls/nn-portcls-iportwavecyclic" data-raw-source="[IPortWaveCyclic](/windows-hardware/drivers/ddi/portcls/nn-portcls-iportwavecyclic)">IPortWaveCyclic</a></p></td>
+<td align="left"><p><a href="/windows-hardware/drivers/ddi/portcls/nn-portcls-iminiportwavecyclic" data-raw-source="[IMiniportWaveCyclic](/windows-hardware/drivers/ddi/portcls/nn-portcls-iminiportwavecyclic)">IMiniportWaveCyclic</a></p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>WavePci</p></td>
-<td align="left"><p><a href="https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff536905(v=vs.85)" data-raw-source="[IPortWavePci](/previous-versions/windows/hardware/drivers/ff536905(v=vs.85))">IPortWavePci</a></p></td>
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nn-portcls-iminiportwavepci" data-raw-source="[IMiniportWavePci](/windows-hardware/drivers/ddi/portcls/nn-portcls-iminiportwavepci)">IMiniportWavePci</a></p></td>
+<td align="left"><p><a href="/previous-versions/windows/hardware/drivers/ff536905(v=vs.85)" data-raw-source="[IPortWavePci](/previous-versions/windows/hardware/drivers/ff536905(v=vs.85))">IPortWavePci</a></p></td>
+<td align="left"><p><a href="/windows-hardware/drivers/ddi/portcls/nn-portcls-iminiportwavepci" data-raw-source="[IMiniportWavePci](/windows-hardware/drivers/ddi/portcls/nn-portcls-iminiportwavepci)">IMiniportWavePci</a></p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>WaveRT</p></td>
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nn-portcls-iportwavert" data-raw-source="[IPortWaveRT](/windows-hardware/drivers/ddi/portcls/nn-portcls-iportwavert)">IPortWaveRT</a></p></td>
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nn-portcls-iminiportwavert" data-raw-source="[IMiniportWaveRT](/windows-hardware/drivers/ddi/portcls/nn-portcls-iminiportwavert)">IMiniportWaveRT</a></p></td>
+<td align="left"><p><a href="/windows-hardware/drivers/ddi/portcls/nn-portcls-iportwavert" data-raw-source="[IPortWaveRT](/windows-hardware/drivers/ddi/portcls/nn-portcls-iportwavert)">IPortWaveRT</a></p></td>
+<td align="left"><p><a href="/windows-hardware/drivers/ddi/portcls/nn-portcls-iminiportwavert" data-raw-source="[IMiniportWaveRT](/windows-hardware/drivers/ddi/portcls/nn-portcls-iminiportwavert)">IMiniportWaveRT</a></p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>拓扑</p></td>
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nn-portcls-iporttopology" data-raw-source="[IPortTopology](/windows-hardware/drivers/ddi/portcls/nn-portcls-iporttopology)">IPortTopology</a></p></td>
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nn-portcls-iminiporttopology" data-raw-source="[IMiniportTopology](/windows-hardware/drivers/ddi/portcls/nn-portcls-iminiporttopology)">IMiniportTopology</a></p></td>
+<td align="left"><p><a href="/windows-hardware/drivers/ddi/portcls/nn-portcls-iporttopology" data-raw-source="[IPortTopology](/windows-hardware/drivers/ddi/portcls/nn-portcls-iporttopology)">IPortTopology</a></p></td>
+<td align="left"><p><a href="/windows-hardware/drivers/ddi/portcls/nn-portcls-iminiporttopology" data-raw-source="[IMiniportTopology](/windows-hardware/drivers/ddi/portcls/nn-portcls-iminiporttopology)">IMiniportTopology</a></p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>MIDI</p></td>
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nn-portcls-iportmidi" data-raw-source="[IPortMidi](/windows-hardware/drivers/ddi/portcls/nn-portcls-iportmidi)">IPortMidi</a></p></td>
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nn-portcls-iminiportmidi" data-raw-source="[IMiniportMidi](/windows-hardware/drivers/ddi/portcls/nn-portcls-iminiportmidi)">IMiniportMidi</a></p></td>
+<td align="left"><p><a href="/windows-hardware/drivers/ddi/portcls/nn-portcls-iportmidi" data-raw-source="[IPortMidi](/windows-hardware/drivers/ddi/portcls/nn-portcls-iportmidi)">IPortMidi</a></p></td>
+<td align="left"><p><a href="/windows-hardware/drivers/ddi/portcls/nn-portcls-iminiportmidi" data-raw-source="[IMiniportMidi](/windows-hardware/drivers/ddi/portcls/nn-portcls-iminiportmidi)">IMiniportMidi</a></p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>DirectMusic</p></td>
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/dmusicks/nn-dmusicks-iportdmus" data-raw-source="[IPortDMus](/windows-hardware/drivers/ddi/dmusicks/nn-dmusicks-iportdmus)">IPortDMus</a></p></td>
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/dmusicks/nn-dmusicks-iminiportdmus" data-raw-source="[IMiniportDMus](/windows-hardware/drivers/ddi/dmusicks/nn-dmusicks-iminiportdmus)">IMiniportDMus</a></p></td>
+<td align="left"><p><a href="/windows-hardware/drivers/ddi/dmusicks/nn-dmusicks-iportdmus" data-raw-source="[IPortDMus](/windows-hardware/drivers/ddi/dmusicks/nn-dmusicks-iportdmus)">IPortDMus</a></p></td>
+<td align="left"><p><a href="/windows-hardware/drivers/ddi/dmusicks/nn-dmusicks-iminiportdmus" data-raw-source="[IMiniportDMus](/windows-hardware/drivers/ddi/dmusicks/nn-dmusicks-iminiportdmus)">IMiniportDMus</a></p></td>
 </tr>
 </tbody>
 </table>
@@ -98,6 +98,4 @@ ms.locfileid: "89210589"
  
 
 在上表中，所有 **IPortXxx** 接口派生自基接口 [IPort](/windows-hardware/drivers/ddi/portcls/nn-portcls-iport)，所有 **IMiniportXxx** 接口派生自 [IMiniport](/windows-hardware/drivers/ddi/portcls/nn-portcls-iminiport)。
-
- 
 

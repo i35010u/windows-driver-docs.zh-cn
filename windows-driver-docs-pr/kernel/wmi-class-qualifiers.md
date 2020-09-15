@@ -12,12 +12,12 @@ keywords:
 - WMI WDK 内核，类
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 52c773410a51b51c7be65a06f1c6c3a576a941b5
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: e56dc0101b4ba123a51f9ed1636cd1f0a034e6a5
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89190431"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90102856"
 ---
 # <a name="wmi-class-qualifiers"></a>WMI 类限定符
 
@@ -49,7 +49,7 @@ ms.locfileid: "89190431"
 </tr>
 <tr class="even">
 <td><p><strong>Static</strong></p></td>
-<td><p>指示数据访问接口在 MOF 文件中提供静态数据的实例，而不是在运行时提供数据块的实例。 由于静态数据驻留在 WMI 数据库中，驱动程序不会将静态数据块注册到 WMI。 MOF 文件中标记为 <strong>静态</strong> 的类不应由驱动程序的 <a href="https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-reginfo" data-raw-source="[&lt;strong&gt;IRP_MN_REGINFO&lt;/strong&gt;](./irp-mn-reginfo.md)"><strong>IRP_MN_REGINFO</strong></a> 或 <a href="https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-reginfo-ex" data-raw-source="[&lt;strong&gt;IRP_MN_REGINFO_EX&lt;/strong&gt;](./irp-mn-reginfo-ex.md)"><strong>IRP_MN_REGINFO_EX</strong></a> 处理程序注册。</p></td>
+<td><p>指示数据访问接口在 MOF 文件中提供静态数据的实例，而不是在运行时提供数据块的实例。 由于静态数据驻留在 WMI 数据库中，驱动程序不会将静态数据块注册到 WMI。 MOF 文件中标记为 <strong>静态</strong> 的类不应由驱动程序的 <a href="/windows-hardware/drivers/kernel/irp-mn-reginfo" data-raw-source="[&lt;strong&gt;IRP_MN_REGINFO&lt;/strong&gt;](./irp-mn-reginfo.md)"><strong>IRP_MN_REGINFO</strong></a> 或 <a href="/windows-hardware/drivers/kernel/irp-mn-reginfo-ex" data-raw-source="[&lt;strong&gt;IRP_MN_REGINFO_EX&lt;/strong&gt;](./irp-mn-reginfo-ex.md)"><strong>IRP_MN_REGINFO_EX</strong></a> 处理程序注册。</p></td>
 </tr>
 <tr class="odd">
 <td><p><strong>提供程序 ( "WMIProv" ) </strong></p></td>
@@ -77,8 +77,6 @@ ms.locfileid: "89190431"
 </tr>
 </tbody>
 </table>
-
- 
 
  
 

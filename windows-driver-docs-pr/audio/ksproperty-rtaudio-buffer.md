@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c48eeb17859ded5a6d4f140ad2909c5e19965854
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 7d63b43ff6b380d1fa504e67524f670bb6cb7e24
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89210953"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90101958"
 ---
 # <a name="ksproperty_rtaudio_buffer"></a>KSPROPERTY \_ RTAUDIO \_ 缓冲区
 
@@ -53,7 +53,7 @@ KSPROPERTY \_ RTAUDIO \_ BUFFER 属性指定用于音频数据的驱动程序分
 <td align="left"><p>否</p></td>
 <td align="left"><p>Pin</p></td>
 <td align="left"><p><a href="ksrtaudio-buffer-property.md" data-raw-source="[&lt;strong&gt;KSRTAUDIO_BUFFER_PROPERTY&lt;/strong&gt;](ksrtaudio-buffer-property.md)"><strong>KSRTAUDIO_BUFFER_PROPERTY</strong></a></p></td>
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksrtaudio_buffer" data-raw-source="[&lt;strong&gt;KSRTAUDIO_BUFFER&lt;/strong&gt;](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksrtaudio_buffer)"><strong>KSRTAUDIO_BUFFER</strong></a></p></td>
+<td align="left"><p><a href="/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksrtaudio_buffer" data-raw-source="[&lt;strong&gt;KSRTAUDIO_BUFFER&lt;/strong&gt;](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksrtaudio_buffer)"><strong>KSRTAUDIO_BUFFER</strong></a></p></td>
 </tr>
 </tbody>
 </table>
@@ -140,6 +140,4 @@ KSPROPERTY \_ RTAUDIO \_ 缓冲区属性请求返回状态 " \_ 成功" 以指�
 [**KSRTAUDIO \_ BUFFER \_ 属性**](ksrtaudio-buffer-property.md)
 
 [**\_ \_ \_ 带有通知的 KSPROPERTY RTAUDIO 缓冲区 \_**](ksproperty-rtaudio-buffer-with-notification.md)
-
- 
 

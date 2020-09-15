@@ -9,12 +9,12 @@ keywords:
 - 文件 WDK 设备安装
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 996510dbfc3521a1e3d458c98cee8a411ea5c1eb
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 8c288ff188db6a1f514f1e581580e17c1bc31c1a
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89095859"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90102192"
 ---
 # <a name="device-installation-files"></a>设备安装文件
 
@@ -44,11 +44,9 @@ ms.locfileid: "89095859"
 * <a href="" id="other-files"></a>其他文件  
     [驱动程序包](driver-packages.md)可以包含其他文件，如自定义设备安装应用程序、设备图标或驱动程序库文件 (如用于视频驱动程序) 。
 
-    有关详细信息，请参阅 [提供设备属性页](providing-device-property-pages.md)。
+    有关详细信息，请参阅 [提供设备属性页](./overview-of-device-property-pages.md)。
 
 另请参阅 WDK 中特定于设备类型的文档。
 
 WDK 包括各种示例安装文件。 有关详细信息，请参阅 [示例设备安装文件](sample-device-installation-files.md)
-
- 
 

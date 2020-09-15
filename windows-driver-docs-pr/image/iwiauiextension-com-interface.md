@@ -4,12 +4,12 @@ description: IWiaUIExtension COM 接口
 ms.assetid: 10a8e981-889a-46f0-8bf5-da75632d4d94
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2b9a1bdd0359a7915f6beca172dd879d2f23b759
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 26dc6bab05a1956c6c93f310a23dd76e98d58cf6
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89190079"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90102858"
 ---
 # <a name="iwiauiextension-com-interface"></a>IWiaUIExtension COM 接口
 
@@ -34,15 +34,15 @@ ms.locfileid: "89190079"
 </thead>
 <tbody>
 <tr class="odd">
-<td><p><a href="https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff545069(v=vs.85)" data-raw-source="[&lt;strong&gt;IWiaUIExtension::DeviceDialog&lt;/strong&gt;](/previous-versions/windows/hardware/drivers/ff545069(v=vs.85))"><strong>IWiaUIExtension：:D eviceDialog</strong></a></p></td>
+<td><p><a href="/previous-versions/windows/hardware/drivers/ff545069(v=vs.85)" data-raw-source="[&lt;strong&gt;IWiaUIExtension::DeviceDialog&lt;/strong&gt;](/previous-versions/windows/hardware/drivers/ff545069(v=vs.85))"><strong>IWiaUIExtension：:D eviceDialog</strong></a></p></td>
 <td><p>提供用来替换默认系统用户界面的自定义用户界面。</p></td>
 </tr>
 <tr class="even">
-<td><p><a href="https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff545073(v=vs.85)" data-raw-source="[&lt;strong&gt;IWiaUIExtension::GetDeviceBitmapLogo&lt;/strong&gt;](/previous-versions/windows/hardware/drivers/ff545073(v=vs.85))"><strong>IWiaUIExtension::GetDeviceBitmapLogo</strong></a></p></td>
+<td><p><a href="/previous-versions/windows/hardware/drivers/ff545073(v=vs.85)" data-raw-source="[&lt;strong&gt;IWiaUIExtension::GetDeviceBitmapLogo&lt;/strong&gt;](/previous-versions/windows/hardware/drivers/ff545073(v=vs.85))"><strong>IWiaUIExtension::GetDeviceBitmapLogo</strong></a></p></td>
 <td><p>获取设备的自定义位图徽标。</p></td>
 </tr>
 <tr class="odd">
-<td><p><a href="https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff545075(v=vs.85)" data-raw-source="[&lt;strong&gt;IWiaUIExtension::GetDeviceIcon&lt;/strong&gt;](/previous-versions/windows/hardware/drivers/ff545075(v=vs.85))"><strong>IWiaUIExtension::GetDeviceIcon</strong></a></p></td>
+<td><p><a href="/previous-versions/windows/hardware/drivers/ff545075(v=vs.85)" data-raw-source="[&lt;strong&gt;IWiaUIExtension::GetDeviceIcon&lt;/strong&gt;](/previous-versions/windows/hardware/drivers/ff545075(v=vs.85))"><strong>IWiaUIExtension::GetDeviceIcon</strong></a></p></td>
 <td><p>获取自定义设备图标。</p></td>
 </tr>
 </tbody>
@@ -69,6 +69,4 @@ ms.locfileid: "89190079"
 若要在 WIA 扫描器驱动程序中实现自定义扫描对话框，请使用 **IWiaUIExtension：:D evicedialog** 方法 (上面列出的四个约束) 创建 Win32 模式对话框，并将 DEVICEDIALOGDATA 结构作为 DialogBoxParam 传递到 LPARAM 函数的 *dwInitParam* 参数。
 
 请记住，"设备" 对话框本身并不管理数据传输，这一点很重要。 对话框仅返回指向 **IWiaItem** 接口指针数组的指针， (将属性设置) 从驱动程序到应用程序。 然后，由应用程序来协商传输机制和格式。
-
- 
 

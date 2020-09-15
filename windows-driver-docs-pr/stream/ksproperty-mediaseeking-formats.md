@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e237c9a0e22d2409f4dd14d6fd38522a5fd445e9
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: eccec5977dadef58d97287cd8606e72735820787
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89190483"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90102694"
 ---
 # <a name="ksproperty_mediaseeking_formats"></a>KSPROPERTY \_ MEDIASEEKING \_ 格式
 
@@ -53,7 +53,7 @@ KSPROPERTY \_ MEDIASEEKING \_ FORMATS 属性检索筛选器支持的媒体时间
 <td><p>是</p></td>
 <td><p>否</p></td>
 <td><p>筛选器</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)"><strong>KSPROPERTY</strong></a></p></td>
+<td><p><a href="/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)"><strong>KSPROPERTY</strong></a></p></td>
 <td><p>PVOID</p></td>
 </tr>
 </tbody>
@@ -86,6 +86,4 @@ KSPROPERTY \_ MEDIASEEKING \_ FORMATS 属性检索筛选器支持的媒体时间
 
 
 [KSPROPSETID \_ MediaSeeking](kspropsetid-mediaseeking.md)
-
- 
 

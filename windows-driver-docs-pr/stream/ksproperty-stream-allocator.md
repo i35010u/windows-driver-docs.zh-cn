@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cb8ab1c9d9962f8624eeed88843e43fb7a6f44b1
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: ade2f8a3d9ffe48b2ea7a8736e7096cf410b6d44
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89190861"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90103036"
 ---
 # <a name="ksproperty_stream_allocator"></a>KSPROPERTY \_ 流 \_ 分配器
 
@@ -53,7 +53,7 @@ KSPROPERTY \_ 流 \_ 分配器属性是一个可选属性，如果 pin 分配流
 <td><p>是</p></td>
 <td><p>是</p></td>
 <td><p>Pin</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)"><strong>KSPROPERTY</strong></a></p></td>
+<td><p><a href="/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)"><strong>KSPROPERTY</strong></a></p></td>
 <td><p>句柄</p></td>
 </tr>
 </tbody>
@@ -61,7 +61,7 @@ KSPROPERTY \_ 流 \_ 分配器属性是一个可选属性，如果 pin 分配流
 
  
 
-<a name="remarks"></a>注解
+<a name="remarks"></a>备注
 -------
 
 返回的值始终为 **NULL** 句柄。 但是，支持由调用是否成功返回决定。
@@ -80,16 +80,14 @@ KSPROPERTY \_ 流 \_ 分配器属性是一个可选属性，如果 pin 分配流
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Header</p></td>
+<td><p>标头</p></td>
 <td>Ks (包含 Ks .h) </td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
 [**KSPROPERTY**](/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)
-
- 
 

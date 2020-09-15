@@ -9,12 +9,12 @@ keywords:
 - INF 文件 WDK 蓝牙
 ms.date: 05/29/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 1a97b91bce50621c78888bb47cf5029556116d45
-ms.sourcegitcommit: 937974aa9bbe0262a7ffe9631593fab48c4e7492
+ms.openlocfilehash: 0c3523331841d24e6d33c7caa6c7ff941b22077f
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "90009973"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90101764"
 ---
 # <a name="installing-a-bluetooth-device"></a>安装蓝牙设备
 
@@ -78,7 +78,7 @@ AdjustTokenPrivileges(procToken, FALSE, &tp, sizeof(TOKEN_PRIVILEGES), (PTOKEN_P
 
 配置文件驱动程序的 INF 文件包含有关用于客户端安装的蓝牙设备的信息。 对于服务器端安装，INF 文件指定了与安装应用程序创建的服务 GUID 相对应的设备 ID。 所有蓝牙设备均为 **蓝牙** 类的成员。 蓝牙类安装程序 (*Bthci.dll*) 可帮助安装配置文件驱动程序。
 
-有关创建和分发 INF 文件和安装驱动程序的详细信息，请参阅 [创建 Inf 文件](../install/overview-of-inf-files.md) 和 [inf 文件部分和指令](https://docs.microsoft.com/windows-hardware/drivers/install/inf-file-sections-and-directives)。
+有关创建和分发 INF 文件和安装驱动程序的详细信息，请参阅 [创建 Inf 文件](../install/overview-of-inf-files.md) 和 [inf 文件部分和指令](../install/index.md)。
 
 ### <a name="plug-and-play-ids"></a>即插即用 Id
 

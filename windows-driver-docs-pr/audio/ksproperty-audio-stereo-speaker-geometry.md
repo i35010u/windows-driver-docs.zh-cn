@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0d4900d6b216214c96cea5239c138babec93a3d7
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 61d05528973b95a4d47178bdf0f74c713f4f777b
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89208949"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90102042"
 ---
 # <a name="ksproperty_audio_stereo_speaker_geometry"></a>KSPROPERTY \_ 音频 \_ 立体声 \_ 扬声器 \_ 几何
 
@@ -53,7 +53,7 @@ KSPROPERTY \_ audio \_ 立体声 \_ 扬声器 \_ 几何属性可与 [**KSPROPERT
 <td align="left"><p>是</p></td>
 <td align="left"><p>是</p></td>
 <td align="left"><p>固定/筛选器</p></td>
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksnodeproperty" data-raw-source="[&lt;strong&gt;KSNODEPROPERTY&lt;/strong&gt;](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksnodeproperty)"><strong>KSNODEPROPERTY</strong></a></p></td>
+<td align="left"><p><a href="/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksnodeproperty" data-raw-source="[&lt;strong&gt;KSNODEPROPERTY&lt;/strong&gt;](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksnodeproperty)"><strong>KSNODEPROPERTY</strong></a></p></td>
 <td align="left"><p>LONG</p></td>
 </tr>
 </tbody>
@@ -122,6 +122,4 @@ DirectSound 将 KSPROPERTY \_ 音频 \_ 立体声 \_ 发言人 \_ 几何视为 D
 [**KSNODETYPE \_ 三维 \_ 效果**](ksnodetype-3d-effects.md)
 
 [**KSNODEPROPERTY**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksnodeproperty)
-
- 
 

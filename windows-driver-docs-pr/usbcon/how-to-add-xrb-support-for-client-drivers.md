@@ -3,12 +3,12 @@ description: 本主题介绍在将请求发送到 Microsoft 提供的 USB 驱动
 title: 分配和构建 URB
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0fc5f4776a1976f29444c5116291a68c34fc5dbd
-ms.sourcegitcommit: 937974aa9bbe0262a7ffe9631593fab48c4e7492
+ms.openlocfilehash: eca25e9ed687b8f2b82ca81392564ec85ed00655
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "90010313"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90102896"
 ---
 # <a name="allocating-and-building-urbs"></a>分配和构建 URB
 
@@ -77,30 +77,30 @@ URB 上下文为存储额外的 URB 信息提供了一种官方机制。 如果�
 </tr>
 <tr class="even">
 <td>若要创建 URB .。。</td>
-<td>客户端驱动程序根据请求分配 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/usb/ns-usb-_urb" data-raw-source="[&lt;strong&gt;URB&lt;/strong&gt;](/windows-hardware/drivers/ddi/usb/ns-usb-_urb)"><strong>URB</strong></a> 结构并设置结构的格式。
-<p>客户端驱动程序在堆栈上分配 URB 结构，或通过调用 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exallocatepoolwithtag" data-raw-source="[&lt;strong&gt;ExAllocatePoolWithTag&lt;/strong&gt;](/windows-hardware/drivers/ddi/wdm/nf-wdm-exallocatepoolwithtag)"><strong>ExAllocatePoolWithTag</strong></a>，驱动程序在非分页池分配结构。</p></td>
-<td>客户端驱动程序调用 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/usbdlib/nf-usbdlib-usbd_urballocate" data-raw-source="[&lt;strong&gt;USBD_UrbAllocate&lt;/strong&gt;](/windows-hardware/drivers/ddi/usbdlib/nf-usbdlib-usbd_urballocate)"><strong>USBD_UrbAllocate</strong></a> 并收到指向新的 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/usb/ns-usb-_urb" data-raw-source="[&lt;strong&gt;URB&lt;/strong&gt;](/windows-hardware/drivers/ddi/usb/ns-usb-_urb)"><strong>URB</strong></a> 结构的指针，该结构由 USB 驱动程序堆栈分配。 根据基础 USB 驱动程序堆栈的 USBD 接口版本，URB 可能与 URB 上下文相关联。</td>
+<td>客户端驱动程序根据请求分配 <a href="/windows-hardware/drivers/ddi/usb/ns-usb-_urb" data-raw-source="[&lt;strong&gt;URB&lt;/strong&gt;](/windows-hardware/drivers/ddi/usb/ns-usb-_urb)"><strong>URB</strong></a> 结构并设置结构的格式。
+<p>客户端驱动程序在堆栈上分配 URB 结构，或通过调用 <a href="/windows-hardware/drivers/ddi/wdm/nf-wdm-exallocatepoolwithtag" data-raw-source="[&lt;strong&gt;ExAllocatePoolWithTag&lt;/strong&gt;](/windows-hardware/drivers/ddi/wdm/nf-wdm-exallocatepoolwithtag)"><strong>ExAllocatePoolWithTag</strong></a>，驱动程序在非分页池分配结构。</p></td>
+<td>客户端驱动程序调用 <a href="/windows-hardware/drivers/ddi/usbdlib/nf-usbdlib-usbd_urballocate" data-raw-source="[&lt;strong&gt;USBD_UrbAllocate&lt;/strong&gt;](/windows-hardware/drivers/ddi/usbdlib/nf-usbdlib-usbd_urballocate)"><strong>USBD_UrbAllocate</strong></a> 并收到指向新的 <a href="/windows-hardware/drivers/ddi/usb/ns-usb-_urb" data-raw-source="[&lt;strong&gt;URB&lt;/strong&gt;](/windows-hardware/drivers/ddi/usb/ns-usb-_urb)"><strong>URB</strong></a> 结构的指针，该结构由 USB 驱动程序堆栈分配。 根据基础 USB 驱动程序堆栈的 USBD 接口版本，URB 可能与 URB 上下文相关联。</td>
 </tr>
 <tr class="odd">
 <td>为选择配置请求创建 URB .。。</td>
-<td>客户端驱动程序调用 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/usbdlib/nf-usbdlib-usbd_createconfigurationrequestex" data-raw-source="[&lt;strong&gt;USBD_CreateConfigurationRequestEx&lt;/strong&gt;](/windows-hardware/drivers/ddi/usbdlib/nf-usbdlib-usbd_createconfigurationrequestex)"><strong>USBD_CreateConfigurationRequestEx</strong></a> 例程，该例程返回指向由 USB 驱动程序堆栈创建和格式化的新 URB 的指针。</td>
-<td>客户端驱动程序调用 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/usbdlib/nf-usbdlib-usbd_selectconfigurballocateandbuild" data-raw-source="[&lt;strong&gt;USBD_SelectConfigUrbAllocateAndBuild&lt;/strong&gt;](/windows-hardware/drivers/ddi/usbdlib/nf-usbdlib-usbd_selectconfigurballocateandbuild)"><strong>USBD_SelectConfigUrbAllocateAndBuild</strong></a> 并收到指向新的 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/usb/ns-usb-_urb" data-raw-source="[&lt;strong&gt;URB&lt;/strong&gt;](/windows-hardware/drivers/ddi/usb/ns-usb-_urb)"><strong>URB</strong></a> 结构的指针，该结构是通过 USB 驱动程序堆栈) 的选择配置请求 (分配和格式化的。 根据基础 USB 驱动程序堆栈的 USBD 接口版本，URB 可能与 URB 上下文相关联。</td>
+<td>客户端驱动程序调用 <a href="/windows-hardware/drivers/ddi/usbdlib/nf-usbdlib-usbd_createconfigurationrequestex" data-raw-source="[&lt;strong&gt;USBD_CreateConfigurationRequestEx&lt;/strong&gt;](/windows-hardware/drivers/ddi/usbdlib/nf-usbdlib-usbd_createconfigurationrequestex)"><strong>USBD_CreateConfigurationRequestEx</strong></a> 例程，该例程返回指向由 USB 驱动程序堆栈创建和格式化的新 URB 的指针。</td>
+<td>客户端驱动程序调用 <a href="/windows-hardware/drivers/ddi/usbdlib/nf-usbdlib-usbd_selectconfigurballocateandbuild" data-raw-source="[&lt;strong&gt;USBD_SelectConfigUrbAllocateAndBuild&lt;/strong&gt;](/windows-hardware/drivers/ddi/usbdlib/nf-usbdlib-usbd_selectconfigurballocateandbuild)"><strong>USBD_SelectConfigUrbAllocateAndBuild</strong></a> 并收到指向新的 <a href="/windows-hardware/drivers/ddi/usb/ns-usb-_urb" data-raw-source="[&lt;strong&gt;URB&lt;/strong&gt;](/windows-hardware/drivers/ddi/usb/ns-usb-_urb)"><strong>URB</strong></a> 结构的指针，该结构是通过 USB 驱动程序堆栈) 的选择配置请求 (分配和格式化的。 根据基础 USB 驱动程序堆栈的 USBD 接口版本，URB 可能与 URB 上下文相关联。</td>
 </tr>
 <tr class="even">
 <td>为选择接口请求创建 URB .。。</td>
-<td>客户端驱动程序分配一个 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/usb/ns-usb-_urb" data-raw-source="[&lt;strong&gt;URB&lt;/strong&gt;](/windows-hardware/drivers/ddi/usb/ns-usb-_urb)"><strong>URB</strong></a> 结构，并使用 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/usb/ns-usb-_urb_select_interface" data-raw-source="[&lt;strong&gt;_URB_SELECT_INTERFACE&lt;/strong&gt;](/windows-hardware/drivers/ddi/usb/ns-usb-_urb_select_interface)"><strong>_URB_SELECT_INTERFACE</strong></a> 结构定义用于 USB 设备的选择接口命令的格式。</td>
-<td>客户端驱动程序调用 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/usbdlib/nf-usbdlib-usbd_selectinterfaceurballocateandbuild" data-raw-source="[&lt;strong&gt;USBD_SelectInterfaceUrbAllocateAndBuild&lt;/strong&gt;](/windows-hardware/drivers/ddi/usbdlib/nf-usbdlib-usbd_selectinterfaceurballocateandbuild)"><strong>USBD_SelectInterfaceUrbAllocateAndBuild</strong></a> 并收到指向新的 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/usb/ns-usb-_urb" data-raw-source="[&lt;strong&gt;URB&lt;/strong&gt;](/windows-hardware/drivers/ddi/usb/ns-usb-_urb)"><strong>URB</strong></a> 结构的指针，该结构是通过 USB 驱动程序堆栈) 的选择接口请求 (分配和格式化的。 根据基础 USB 驱动程序堆栈的 USBD 接口版本，URB 可能与 URB 上下文相关联。</td>
+<td>客户端驱动程序分配一个 <a href="/windows-hardware/drivers/ddi/usb/ns-usb-_urb" data-raw-source="[&lt;strong&gt;URB&lt;/strong&gt;](/windows-hardware/drivers/ddi/usb/ns-usb-_urb)"><strong>URB</strong></a> 结构，并使用 <a href="/windows-hardware/drivers/ddi/usb/ns-usb-_urb_select_interface" data-raw-source="[&lt;strong&gt;_URB_SELECT_INTERFACE&lt;/strong&gt;](/windows-hardware/drivers/ddi/usb/ns-usb-_urb_select_interface)"><strong>_URB_SELECT_INTERFACE</strong></a> 结构定义用于 USB 设备的选择接口命令的格式。</td>
+<td>客户端驱动程序调用 <a href="/windows-hardware/drivers/ddi/usbdlib/nf-usbdlib-usbd_selectinterfaceurballocateandbuild" data-raw-source="[&lt;strong&gt;USBD_SelectInterfaceUrbAllocateAndBuild&lt;/strong&gt;](/windows-hardware/drivers/ddi/usbdlib/nf-usbdlib-usbd_selectinterfaceurballocateandbuild)"><strong>USBD_SelectInterfaceUrbAllocateAndBuild</strong></a> 并收到指向新的 <a href="/windows-hardware/drivers/ddi/usb/ns-usb-_urb" data-raw-source="[&lt;strong&gt;URB&lt;/strong&gt;](/windows-hardware/drivers/ddi/usb/ns-usb-_urb)"><strong>URB</strong></a> 结构的指针，该结构是通过 USB 驱动程序堆栈) 的选择接口请求 (分配和格式化的。 根据基础 USB 驱动程序堆栈的 USBD 接口版本，URB 可能与 URB 上下文相关联。</td>
 </tr>
 <tr class="odd">
 <td>若要将 URB 与 IRP 关联 .。。</td>
-<td>客户端驱动程序通过调用 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetnextirpstacklocation" data-raw-source="[&lt;strong&gt;IoGetNextIrpStackLocation&lt;/strong&gt;](/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetnextirpstacklocation)"><strong>IoGetNextIrpStackLocation</strong></a>获取指向下一个 IRP 堆栈位置的指针。 然后，客户端驱动程序将 <strong>参数.</strong> 堆栈位置的 Argument1 成员手动设置为 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/usb/ns-usb-_urb" data-raw-source="[&lt;strong&gt;URB&lt;/strong&gt;](/windows-hardware/drivers/ddi/usb/ns-usb-_urb)"><strong>URB</strong></a> 结构的地址。</td>
-<td>客户端驱动程序通过调用 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetnextirpstacklocation" data-raw-source="[&lt;strong&gt;IoGetNextIrpStackLocation&lt;/strong&gt;](/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetnextirpstacklocation)"><strong>IoGetNextIrpStackLocation</strong></a>获取指向下一个 IRP 堆栈位置的指针。 然后，客户端驱动程序调用 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/usbdlib/nf-usbdlib-usbd_assignurbtoiostacklocation" data-raw-source="[&lt;strong&gt;USBD_AssignUrbToIoStackLocation&lt;/strong&gt;](/windows-hardware/drivers/ddi/usbdlib/nf-usbdlib-usbd_assignurbtoiostacklocation)"><strong>USBD_AssignUrbToIoStackLocation</strong></a> 将 URB 与堆栈位置相关联。</td>
+<td>客户端驱动程序通过调用 <a href="/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetnextirpstacklocation" data-raw-source="[&lt;strong&gt;IoGetNextIrpStackLocation&lt;/strong&gt;](/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetnextirpstacklocation)"><strong>IoGetNextIrpStackLocation</strong></a>获取指向下一个 IRP 堆栈位置的指针。 然后，客户端驱动程序将 <strong>参数.</strong> 堆栈位置的 Argument1 成员手动设置为 <a href="/windows-hardware/drivers/ddi/usb/ns-usb-_urb" data-raw-source="[&lt;strong&gt;URB&lt;/strong&gt;](/windows-hardware/drivers/ddi/usb/ns-usb-_urb)"><strong>URB</strong></a> 结构的地址。</td>
+<td>客户端驱动程序通过调用 <a href="/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetnextirpstacklocation" data-raw-source="[&lt;strong&gt;IoGetNextIrpStackLocation&lt;/strong&gt;](/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetnextirpstacklocation)"><strong>IoGetNextIrpStackLocation</strong></a>获取指向下一个 IRP 堆栈位置的指针。 然后，客户端驱动程序调用 <a href="/windows-hardware/drivers/ddi/usbdlib/nf-usbdlib-usbd_assignurbtoiostacklocation" data-raw-source="[&lt;strong&gt;USBD_AssignUrbToIoStackLocation&lt;/strong&gt;](/windows-hardware/drivers/ddi/usbdlib/nf-usbdlib-usbd_assignurbtoiostacklocation)"><strong>USBD_AssignUrbToIoStackLocation</strong></a> 将 URB 与堆栈位置相关联。</td>
 </tr>
 <tr class="even">
 <td>若要释放 URB .。。</td>
 <td>如果客户端驱动程序在堆栈上分配了 URB，则在请求完成后，该变量将超出范围。
-<p>若要释放客户端驱动程序或在非分页池中分配的 USB 驱动程序堆栈的 URB 结构，客户端驱动程序将调用 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-exfreepool" data-raw-source="[&lt;strong&gt;ExFreePool&lt;/strong&gt;](/windows-hardware/drivers/ddi/ntddk/nf-ntddk-exfreepool)"><strong>ExFreePool</strong></a>。</p></td>
-<td>客户端驱动程序调用 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/usbdlib/nf-usbdlib-usbd_urbfree" data-raw-source="[&lt;strong&gt;USBD_UrbFree&lt;/strong&gt;](/windows-hardware/drivers/ddi/usbdlib/nf-usbdlib-usbd_urbfree)"><strong>USBD_UrbFree</strong></a>。</td>
+<p>若要释放客户端驱动程序或在非分页池中分配的 USB 驱动程序堆栈的 URB 结构，客户端驱动程序将调用 <a href="/windows-hardware/drivers/ddi/ntddk/nf-ntddk-exfreepool" data-raw-source="[&lt;strong&gt;ExFreePool&lt;/strong&gt;](/windows-hardware/drivers/ddi/ntddk/nf-ntddk-exfreepool)"><strong>ExFreePool</strong></a>。</p></td>
+<td>客户端驱动程序调用 <a href="/windows-hardware/drivers/ddi/usbdlib/nf-usbdlib-usbd_urbfree" data-raw-source="[&lt;strong&gt;USBD_UrbFree&lt;/strong&gt;](/windows-hardware/drivers/ddi/usbdlib/nf-usbdlib-usbd_urbfree)"><strong>USBD_UrbFree</strong></a>。</td>
 </tr>
 </tbody>
 </table>

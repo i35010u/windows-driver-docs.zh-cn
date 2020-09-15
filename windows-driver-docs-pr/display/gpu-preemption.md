@@ -4,12 +4,12 @@ description: 从 Windows 8 开始，可以使用新的 GPU 抢占模式。
 ms.assetid: 9382786E-2E1E-408F-A9E9-04EEEA1CC34A
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 537c3ec46f8fc64b403be70f9080b414b38eaac7
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 1e8c6b14c692a02c97849671978dc14b39d846dd
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89064208"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90102862"
 ---
 # <a name="gpu-preemption"></a>GPU 抢占
 
@@ -35,7 +35,7 @@ ms.locfileid: "89064208"
 <td align="left">必需</td>
 </tr>
 <tr class="even">
-<td align="left"><a href="https://docs.microsoft.com/windows-hardware/test/hlk/windows-hardware-lab-kit" data-raw-source="[WHCK](/windows-hardware/test/hlk/windows-hardware-lab-kit)">WHCK</a> 要求和测试</td>
+<td align="left"><a href="/windows-hardware/test/hlk/windows-hardware-lab-kit" data-raw-source="[WHCK](/windows-hardware/test/hlk/windows-hardware-lab-kit)">WHCK</a> 要求和测试</td>
 <td align="left"><p><strong>设备 .。。抢占测试</strong></p>
 <p><strong>设备 .。。FlipOnVSyncMmIo</strong></p></td>
 </tr>
@@ -101,6 +101,4 @@ ms.locfileid: "89064208"
 有关硬件设备实现此功能时必须满足的要求的信息，请参阅相关 [WHCK 文档](/windows-hardware/test/hlk/windows-hardware-lab-kit) **抢占测试** 和 **设备 .。。FlipOnVSyncMmIo**。
 
 请参阅 [WDDM 1.2 功能](wddm-v1-2-features.md) ，了解 Windows 8 中添加的功能。
-
- 
 

@@ -7,12 +7,12 @@ keywords:
 - 电池类驱动程序 WDK，安装
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7a18003ef5926e8fddde6c851a7aed8b77a060a8
-ms.sourcegitcommit: 7a7e61b4147a4aa86bf820fd0b0c7681fe17e544
+ms.openlocfilehash: c35fae997ac206d02fb31c2517d356a4e20c3827
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89056903"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90101765"
 ---
 # <a name="installing-a-battery-driver"></a>安装电池驱动程序
 
@@ -22,7 +22,7 @@ ms.locfileid: "89056903"
 
 电池驱动程序的 INF 文件指定有关驱动程序及其控制的设备的信息。 所有电池设备都是电池类的成员，电池类安装程序将安装驱动程序。
 
-本部分介绍 INF 文件中特定于电池的条目。 有关创建和分发 INF 文件和安装驱动程序的详细信息，请参阅 [创建 Inf 文件](../install/overview-of-inf-files.md) 和 [inf 文件部分和指令](https://docs.microsoft.com/windows-hardware/drivers/install/inf-file-sections-and-directives)。
+本部分介绍 INF 文件中特定于电池的条目。 有关创建和分发 INF 文件和安装驱动程序的详细信息，请参阅 [创建 Inf 文件](../install/overview-of-inf-files.md) 和 [inf 文件部分和指令](../install/index.md)。
 
 电池驱动程序的 INF 文件包括下面所述的部分。
 
@@ -93,6 +93,4 @@ StartType      = 3 ;    SERVICE_DEMAND_START
 ErrorControl   = 1 ;    SERVICE_ERROR_NORMAL%
 ServiceBinary  = %12%\NewBatt.sys
 ```
-
- 
 

@@ -8,12 +8,12 @@ keywords:
 - PROPSETID_VIDCAP_CAMERACONTROL
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d25e9d5a4de58c2c05e4ff946fbb2249afc34ab6
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: ef24ec2581bd82a058fa9e264092eabe4d883b92
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89192565"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90101550"
 ---
 # <a name="camera-control-properties"></a>相机控件属性
 
@@ -33,83 +33,83 @@ ms.locfileid: "89192565"
 </thead>
 <tbody>
 <tr class="odd">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-cameracontrol-exposure" data-raw-source="[&lt;strong&gt;KSPROPERTY_CAMERACONTROL_EXPOSURE&lt;/strong&gt;](./ksproperty-cameracontrol-exposure.md)"><strong>KSPROPERTY_CAMERACONTROL_EXPOSURE</strong></a></p></td>
+<td><p><a href="/windows-hardware/drivers/stream/ksproperty-cameracontrol-exposure" data-raw-source="[&lt;strong&gt;KSPROPERTY_CAMERACONTROL_EXPOSURE&lt;/strong&gt;](./ksproperty-cameracontrol-exposure.md)"><strong>KSPROPERTY_CAMERACONTROL_EXPOSURE</strong></a></p></td>
 <td><p>控制照相机的数字曝光时间。</p></td>
 </tr>
 <tr class="even">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-cameracontrol-focus" data-raw-source="[&lt;strong&gt;KSPROPERTY_CAMERACONTROL_FOCUS&lt;/strong&gt;](./ksproperty-cameracontrol-focus.md)"><strong>KSPROPERTY_CAMERACONTROL_FOCUS</strong></a></p></td>
+<td><p><a href="/windows-hardware/drivers/stream/ksproperty-cameracontrol-focus" data-raw-source="[&lt;strong&gt;KSPROPERTY_CAMERACONTROL_FOCUS&lt;/strong&gt;](./ksproperty-cameracontrol-focus.md)"><strong>KSPROPERTY_CAMERACONTROL_FOCUS</strong></a></p></td>
 <td><p>控制照相机的焦点设置。</p></td>
 </tr>
 <tr class="odd">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-cameracontrol-iris" data-raw-source="[&lt;strong&gt;KSPROPERTY_CAMERACONTROL_IRIS&lt;/strong&gt;](./ksproperty-cameracontrol-iris.md)"><strong>KSPROPERTY_CAMERACONTROL_IRIS</strong></a></p></td>
+<td><p><a href="/windows-hardware/drivers/stream/ksproperty-cameracontrol-iris" data-raw-source="[&lt;strong&gt;KSPROPERTY_CAMERACONTROL_IRIS&lt;/strong&gt;](./ksproperty-cameracontrol-iris.md)"><strong>KSPROPERTY_CAMERACONTROL_IRIS</strong></a></p></td>
 <td><p>控制照相机的口径设置。</p></td>
 </tr>
 <tr class="even">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-cameracontrol-zoom" data-raw-source="[&lt;strong&gt;KSPROPERTY_CAMERACONTROL_ZOOM&lt;/strong&gt;](./ksproperty-cameracontrol-zoom.md)"><strong>KSPROPERTY_CAMERACONTROL_ZOOM</strong></a></p></td>
+<td><p><a href="/windows-hardware/drivers/stream/ksproperty-cameracontrol-zoom" data-raw-source="[&lt;strong&gt;KSPROPERTY_CAMERACONTROL_ZOOM&lt;/strong&gt;](./ksproperty-cameracontrol-zoom.md)"><strong>KSPROPERTY_CAMERACONTROL_ZOOM</strong></a></p></td>
 <td><p>控制照相机的缩放设置。</p></td>
 </tr>
 <tr class="odd">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-cameracontrol-pan" data-raw-source="[&lt;strong&gt;KSPROPERTY_CAMERACONTROL_PAN&lt;/strong&gt;](./ksproperty-cameracontrol-pan.md)"><strong>KSPROPERTY_CAMERACONTROL_PAN</strong></a></p></td>
+<td><p><a href="/windows-hardware/drivers/stream/ksproperty-cameracontrol-pan" data-raw-source="[&lt;strong&gt;KSPROPERTY_CAMERACONTROL_PAN&lt;/strong&gt;](./ksproperty-cameracontrol-pan.md)"><strong>KSPROPERTY_CAMERACONTROL_PAN</strong></a></p></td>
 <td><p>控制照相机的平移设置。</p></td>
 </tr>
 <tr class="even">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-cameracontrol-roll" data-raw-source="[&lt;strong&gt;KSPROPERTY_CAMERACONTROL_ROLL&lt;/strong&gt;](./ksproperty-cameracontrol-roll.md)"><strong>KSPROPERTY_CAMERACONTROL_ROLL</strong></a></p></td>
+<td><p><a href="/windows-hardware/drivers/stream/ksproperty-cameracontrol-roll" data-raw-source="[&lt;strong&gt;KSPROPERTY_CAMERACONTROL_ROLL&lt;/strong&gt;](./ksproperty-cameracontrol-roll.md)"><strong>KSPROPERTY_CAMERACONTROL_ROLL</strong></a></p></td>
 <td><p>控制照相机的滚动设置。</p></td>
 </tr>
 <tr class="odd">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-cameracontrol-tilt" data-raw-source="[&lt;strong&gt;KSPROPERTY_CAMERACONTROL_TILT&lt;/strong&gt;](./ksproperty-cameracontrol-tilt.md)"><strong>KSPROPERTY_CAMERACONTROL_TILT</strong></a></p></td>
+<td><p><a href="/windows-hardware/drivers/stream/ksproperty-cameracontrol-tilt" data-raw-source="[&lt;strong&gt;KSPROPERTY_CAMERACONTROL_TILT&lt;/strong&gt;](./ksproperty-cameracontrol-tilt.md)"><strong>KSPROPERTY_CAMERACONTROL_TILT</strong></a></p></td>
 <td><p>控制相机的倾斜设置。</p></td>
 </tr>
 <tr class="even">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-cameracontrol-scanmode" data-raw-source="[&lt;strong&gt;KSPROPERTY_CAMERACONTROL_SCANMODE&lt;/strong&gt;](./ksproperty-cameracontrol-scanmode.md)"><strong>KSPROPERTY_CAMERACONTROL_SCANMODE</strong></a></p></td>
+<td><p><a href="/windows-hardware/drivers/stream/ksproperty-cameracontrol-scanmode" data-raw-source="[&lt;strong&gt;KSPROPERTY_CAMERACONTROL_SCANMODE&lt;/strong&gt;](./ksproperty-cameracontrol-scanmode.md)"><strong>KSPROPERTY_CAMERACONTROL_SCANMODE</strong></a></p></td>
 <td><p>控制相机传感器的扫描模式，如交错或非交错。</p></td>
 </tr>
 <tr class="odd">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-cameracontrol-privacy" data-raw-source="[&lt;strong&gt;KSPROPERTY_CAMERACONTROL_PRIVACY&lt;/strong&gt;](./ksproperty-cameracontrol-privacy.md)"><strong>KSPROPERTY_CAMERACONTROL_PRIVACY</strong></a></p></td>
+<td><p><a href="/windows-hardware/drivers/stream/ksproperty-cameracontrol-privacy" data-raw-source="[&lt;strong&gt;KSPROPERTY_CAMERACONTROL_PRIVACY&lt;/strong&gt;](./ksproperty-cameracontrol-privacy.md)"><strong>KSPROPERTY_CAMERACONTROL_PRIVACY</strong></a></p></td>
 <td><p>控制相机传感器是否应捕获视频，或阻止其捕获视频。</p></td>
 </tr>
 <tr class="even">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-cameracontrol-pantilt" data-raw-source="[&lt;strong&gt;KSPROPERTY_CAMERACONTROL_PANTILT&lt;/strong&gt;](./ksproperty-cameracontrol-pantilt.md)"><strong>KSPROPERTY_CAMERACONTROL_PANTILT</strong></a></p></td>
+<td><p><a href="/windows-hardware/drivers/stream/ksproperty-cameracontrol-pantilt" data-raw-source="[&lt;strong&gt;KSPROPERTY_CAMERACONTROL_PANTILT&lt;/strong&gt;](./ksproperty-cameracontrol-pantilt.md)"><strong>KSPROPERTY_CAMERACONTROL_PANTILT</strong></a></p></td>
 <td><p>控制相机的绝对平移和倾斜设置。</p></td>
 </tr>
 <tr class="odd">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-cameracontrol-pan-relative" data-raw-source="[&lt;strong&gt;KSPROPERTY_CAMERACONTROL_PAN_RELATIVE&lt;/strong&gt;](./ksproperty-cameracontrol-pan-relative.md)"><strong>KSPROPERTY_CAMERACONTROL_PAN_RELATIVE</strong></a></p></td>
+<td><p><a href="/windows-hardware/drivers/stream/ksproperty-cameracontrol-pan-relative" data-raw-source="[&lt;strong&gt;KSPROPERTY_CAMERACONTROL_PAN_RELATIVE&lt;/strong&gt;](./ksproperty-cameracontrol-pan-relative.md)"><strong>KSPROPERTY_CAMERACONTROL_PAN_RELATIVE</strong></a></p></td>
 <td><p>控制照相机相对于其当前值的垂直轴的相对旋转。</p></td>
 </tr>
 <tr class="even">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-cameracontrol-tilt-relative" data-raw-source="[&lt;strong&gt;KSPROPERTY_CAMERACONTROL_TILT_RELATIVE&lt;/strong&gt;](./ksproperty-cameracontrol-tilt-relative.md)"><strong>KSPROPERTY_CAMERACONTROL_TILT_RELATIVE</strong></a></p></td>
+<td><p><a href="/windows-hardware/drivers/stream/ksproperty-cameracontrol-tilt-relative" data-raw-source="[&lt;strong&gt;KSPROPERTY_CAMERACONTROL_TILT_RELATIVE&lt;/strong&gt;](./ksproperty-cameracontrol-tilt-relative.md)"><strong>KSPROPERTY_CAMERACONTROL_TILT_RELATIVE</strong></a></p></td>
 <td><p>控制照相机相对于其当前位置的水平轴的相对旋转。</p></td>
 </tr>
 <tr class="odd">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-cameracontrol-roll-relative" data-raw-source="[&lt;strong&gt;KSPROPERTY_CAMERACONTROL_ROLL_RELATIVE&lt;/strong&gt;](./ksproperty-cameracontrol-roll-relative.md)"><strong>KSPROPERTY_CAMERACONTROL_ROLL_RELATIVE</strong></a></p></td>
+<td><p><a href="/windows-hardware/drivers/stream/ksproperty-cameracontrol-roll-relative" data-raw-source="[&lt;strong&gt;KSPROPERTY_CAMERACONTROL_ROLL_RELATIVE&lt;/strong&gt;](./ksproperty-cameracontrol-roll-relative.md)"><strong>KSPROPERTY_CAMERACONTROL_ROLL_RELATIVE</strong></a></p></td>
 <td><p>控制照相机相对于图像查看轴当前值的相对旋转。</p></td>
 </tr>
 <tr class="even">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-cameracontrol-zoom-relative" data-raw-source="[&lt;strong&gt;KSPROPERTY_CAMERACONTROL_ZOOM_RELATIVE&lt;/strong&gt;](./ksproperty-cameracontrol-zoom-relative.md)"><strong>KSPROPERTY_CAMERACONTROL_ZOOM_RELATIVE</strong></a></p></td>
+<td><p><a href="/windows-hardware/drivers/stream/ksproperty-cameracontrol-zoom-relative" data-raw-source="[&lt;strong&gt;KSPROPERTY_CAMERACONTROL_ZOOM_RELATIVE&lt;/strong&gt;](./ksproperty-cameracontrol-zoom-relative.md)"><strong>KSPROPERTY_CAMERACONTROL_ZOOM_RELATIVE</strong></a></p></td>
 <td><p>控制照相机的当前值的相对缩放设置。</p></td>
 </tr>
 <tr class="odd">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-cameracontrol-exposure-relative" data-raw-source="[&lt;strong&gt;KSPROPERTY_CAMERACONTROL_EXPOSURE_RELATIVE&lt;/strong&gt;](./ksproperty-cameracontrol-exposure-relative.md)"><strong>KSPROPERTY_CAMERACONTROL_EXPOSURE_RELATIVE</strong></a></p></td>
+<td><p><a href="/windows-hardware/drivers/stream/ksproperty-cameracontrol-exposure-relative" data-raw-source="[&lt;strong&gt;KSPROPERTY_CAMERACONTROL_EXPOSURE_RELATIVE&lt;/strong&gt;](./ksproperty-cameracontrol-exposure-relative.md)"><strong>KSPROPERTY_CAMERACONTROL_EXPOSURE_RELATIVE</strong></a></p></td>
 <td><p>从相机的当前值控制相机的相对快门速度。</p></td>
 </tr>
 <tr class="even">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-cameracontrol-iris-relative" data-raw-source="[&lt;strong&gt;KSPROPERTY_CAMERACONTROL_IRIS_RELATIVE&lt;/strong&gt;](./ksproperty-cameracontrol-iris-relative.md)"><strong>KSPROPERTY_CAMERACONTROL_IRIS_RELATIVE</strong></a></p></td>
+<td><p><a href="/windows-hardware/drivers/stream/ksproperty-cameracontrol-iris-relative" data-raw-source="[&lt;strong&gt;KSPROPERTY_CAMERACONTROL_IRIS_RELATIVE&lt;/strong&gt;](./ksproperty-cameracontrol-iris-relative.md)"><strong>KSPROPERTY_CAMERACONTROL_IRIS_RELATIVE</strong></a></p></td>
 <td><p>指定相机的当前值中的相对孔径设置。</p></td>
 </tr>
 <tr class="odd">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-cameracontrol-focus-relative" data-raw-source="[&lt;strong&gt;KSPROPERTY_CAMERACONTROL_FOCUS_RELATIVE&lt;/strong&gt;](./ksproperty-cameracontrol-focus-relative.md)"><strong>KSPROPERTY_CAMERACONTROL_FOCUS_RELATIVE</strong></a></p></td>
+<td><p><a href="/windows-hardware/drivers/stream/ksproperty-cameracontrol-focus-relative" data-raw-source="[&lt;strong&gt;KSPROPERTY_CAMERACONTROL_FOCUS_RELATIVE&lt;/strong&gt;](./ksproperty-cameracontrol-focus-relative.md)"><strong>KSPROPERTY_CAMERACONTROL_FOCUS_RELATIVE</strong></a></p></td>
 <td><p>控制照相机的当前值的相对焦点设置。</p></td>
 </tr>
 <tr class="even">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-cameracontrol-pantilt-relative" data-raw-source="[&lt;strong&gt;KSPROPERTY_CAMERACONTROL_PANTILT_RELATIVE&lt;/strong&gt;](./ksproperty-cameracontrol-pantilt-relative.md)"><strong>KSPROPERTY_CAMERACONTROL_PANTILT_RELATIVE</strong></a></p></td>
+<td><p><a href="/windows-hardware/drivers/stream/ksproperty-cameracontrol-pantilt-relative" data-raw-source="[&lt;strong&gt;KSPROPERTY_CAMERACONTROL_PANTILT_RELATIVE&lt;/strong&gt;](./ksproperty-cameracontrol-pantilt-relative.md)"><strong>KSPROPERTY_CAMERACONTROL_PANTILT_RELATIVE</strong></a></p></td>
 <td><p>从相机的当前值控制相机的相对平移和倾斜设置。</p></td>
 </tr>
 <tr class="odd">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-cameracontrol-focal-length" data-raw-source="[&lt;strong&gt;KSPROPERTY_CAMERACONTROL_FOCAL_LENGTH&lt;/strong&gt;](./ksproperty-cameracontrol-focal-length.md)"><strong>KSPROPERTY_CAMERACONTROL_FOCAL_LENGTH</strong></a></p></td>
+<td><p><a href="/windows-hardware/drivers/stream/ksproperty-cameracontrol-focal-length" data-raw-source="[&lt;strong&gt;KSPROPERTY_CAMERACONTROL_FOCAL_LENGTH&lt;/strong&gt;](./ksproperty-cameracontrol-focal-length.md)"><strong>KSPROPERTY_CAMERACONTROL_FOCAL_LENGTH</strong></a></p></td>
 <td><p>指定相机的焦距。</p></td>
 </tr>
 <tr class="even">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-cameracontrol-auto-exposure-priority" data-raw-source="[&lt;strong&gt;KSPROPERTY_CAMERACONTROL_AUTO_EXPOSURE_PRIORITY&lt;/strong&gt;](./ksproperty-cameracontrol-auto-exposure-priority.md)"><strong>KSPROPERTY_CAMERACONTROL_AUTO_EXPOSURE_PRIORITY</strong></a></p></td>
+<td><p><a href="/windows-hardware/drivers/stream/ksproperty-cameracontrol-auto-exposure-priority" data-raw-source="[&lt;strong&gt;KSPROPERTY_CAMERACONTROL_AUTO_EXPOSURE_PRIORITY&lt;/strong&gt;](./ksproperty-cameracontrol-auto-exposure-priority.md)"><strong>KSPROPERTY_CAMERACONTROL_AUTO_EXPOSURE_PRIORITY</strong></a></p></td>
 <td><p>指定设备是否可以动态地改变帧速率。</p></td>
 </tr>
 </tbody>
@@ -140,6 +140,4 @@ ms.locfileid: "89192565"
 -   [如何实现扩展的相机控件属性](how-to-implement-extended-camera-control-properties.md)
 -   [扩展的相机控件有效负载](extended-camera-control-payloads.md)
 -   [照片序列模式](photo-sequence-mode.md)
-
- 
 

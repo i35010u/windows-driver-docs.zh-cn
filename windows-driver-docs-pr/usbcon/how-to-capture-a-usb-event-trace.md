@@ -3,12 +3,12 @@ description: 本主题提供有关使用 Logman 工具捕获 USB ETW 事件跟�
 title: 如何使用 Logman 捕获 USB 事件跟踪
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: faf1f24d6d67c01edcd4346577a16cf469bf8c36
-ms.sourcegitcommit: 937974aa9bbe0262a7ffe9631593fab48c4e7492
+ms.openlocfilehash: e329225d9ade3369926149c6864b2f85022dff1e
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "90009867"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90102878"
 ---
 # <a name="how-to-capture-a-usb-event-trace-with-logman"></a>如何使用 Logman 捕获 USB 事件跟踪
 
@@ -115,7 +115,7 @@ USB 3.0 驱动程序堆栈中的事件跟踪类似于 Windows 7 中引入的 USB
 </tr>
 <tr class="even">
 <td><p><strong>FullDataBusTrace</strong></p></td>
-<td><p>显示所有 USB 传输事件，并为大容量、中断和控制传输保存最多 4 KB 的总线数据。 请注意，只记录链式 MDL 的第一个缓冲区。 即使 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/usb/ns-usb-_urb_isoch_transfer" data-raw-source="[&lt;strong&gt;URB_ISOCH_TRANSFER&lt;/strong&gt;](/windows-hardware/drivers/ddi/usb/ns-usb-_urb_isoch_transfer)"><strong>URB_ISOCH_TRANSFER</strong></a> 请求结构保存) ，也永远不会记录同步总线数据 (。 有关详细信息，请参阅 <a href="how-to-send-chained-mdls.md" data-raw-source="[How to send chained MDLs](how-to-send-chained-mdls.md)">如何发送链式 MDLs</a> 和 <a href="transfer-data-to-isochronous-endpoints.md" data-raw-source="[How to transfer data to USB isochronous endpoints](transfer-data-to-isochronous-endpoints.md)">如何将数据传输到 USB 同步终结点</a>。</p></td>
+<td><p>显示所有 USB 传输事件，并为大容量、中断和控制传输保存最多 4 KB 的总线数据。 请注意，只记录链式 MDL 的第一个缓冲区。 即使 <a href="/windows-hardware/drivers/ddi/usb/ns-usb-_urb_isoch_transfer" data-raw-source="[&lt;strong&gt;URB_ISOCH_TRANSFER&lt;/strong&gt;](/windows-hardware/drivers/ddi/usb/ns-usb-_urb_isoch_transfer)"><strong>URB_ISOCH_TRANSFER</strong></a> 请求结构保存) ，也永远不会记录同步总线数据 (。 有关详细信息，请参阅 <a href="how-to-send-chained-mdls.md" data-raw-source="[How to send chained MDLs](how-to-send-chained-mdls.md)">如何发送链式 MDLs</a> 和 <a href="transfer-data-to-isochronous-endpoints.md" data-raw-source="[How to transfer data to USB isochronous endpoints](transfer-data-to-isochronous-endpoints.md)">如何将数据传输到 USB 同步终结点</a>。</p></td>
 </tr>
 <tr class="odd">
 <td><p><strong>HWVerifyHost</strong></p></td>

@@ -13,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 05/10/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 93d58e6fa2a3a5e2fad80f5c62cebd505dc99707
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: ce7fd30fc3f6d6b0279343ae603dad4c81eb4f4e
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89210005"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90102618"
 ---
 # <a name="ksproperty_audio_mic_sensitivity2"></a>KSPROPERTY \_ 音频 \_ MIC \_ SENSITIVITY2
 
@@ -46,7 +46,7 @@ KSPROPERTY \_ 音频 \_ MIC \_ SENSITIVITY2 属性以分贝 (为单位指定麦�
 <td align="left"><p>是</p></td>
 <td align="left"><p>否</p></td>
 <td align="left"><p>固定实例</p></td>
-<td align="left"><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksp_pin" data-raw-source="[&lt;strong&gt;KSP_PIN&lt;/strong&gt;](/windows-hardware/drivers/ddi/ks/ns-ks-ksp_pin)"><strong>KSP_PIN</strong></a></td>
+<td align="left"><a href="/windows-hardware/drivers/ddi/ks/ns-ks-ksp_pin" data-raw-source="[&lt;strong&gt;KSP_PIN&lt;/strong&gt;](/windows-hardware/drivers/ddi/ks/ns-ks-ksp_pin)"><strong>KSP_PIN</strong></a></td>
 <td align="left">LONG</td>
 </tr>
 </tbody>

@@ -3,12 +3,12 @@ description: 在本主题中，你将使用随 Microsoft Visual Studio Professio
 title: 如何编写第一个 USB 客户端驱动程序 (KMDF)
 ms.date: 06/07/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: f20a9898cb427483c354c190b5a41fed29480d59
-ms.sourcegitcommit: 937974aa9bbe0262a7ffe9631593fab48c4e7492
+ms.openlocfilehash: 3b059ca2066278d07afb7f516139c83faef31679
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "90009809"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90101746"
 ---
 # <a name="how-to-write-your-first-usb-client-driver-kmdf"></a>如何编写第一个 USB 客户端驱动程序 (KMDF)
 
@@ -61,7 +61,7 @@ ms.locfileid: "90009809"
 
 1.  在 " **新建项目** " 对话框顶部的 "搜索" 框中，键入 " **USB"。**
 2.  在中间窗格中，选择 " **内核模式驱动程序"、"USB (KMDF) " **。
-3.  选择“**下一页**”。
+3.  选择“下一步”  。
 4.  输入项目名称，选择 "保存位置"，然后选择 " **创建**"。
 
 以下屏幕截图显示了**USB 内核模式驱动程序**模板的 "**新建项目**" 对话框。
@@ -72,7 +72,7 @@ ms.locfileid: "90009809"
 
 本主题假定 Visual Studio 项目的名称为 "MyUSBDriver \_ "。 它包含以下文件：
 
-| 文件                      | 描述                                                                                                          |
+| 文件                      | 说明                                                                                                          |
 |----------------------------|----------------------------------------------------------------------------------------------------------------------|
 | 公有。h                   | 提供客户端驱动程序和与 USB 设备通信的用户应用程序共享的常见声明。 |
 | * &lt; 项目名称 &gt; *.inf | 包含在目标计算机上安装客户端驱动程序所需的信息。                                   |
@@ -112,11 +112,11 @@ ms.locfileid: "90009809"
 3.  从 " **Configuration Manager**中，选择" **活动解决方案配置** " (例如， **Windows 8 调试** 或 **Windows 8 版本**) 和 **活动解决方案平台** (例如，Win32) 对应于你感兴趣的版本类型。
 4.  在 " **生成** " 菜单中，选择 " **生成解决方案**"。
 
-有关详细信息，请参阅 [构建驱动程序](https://docs.microsoft.com/windows-hardware/drivers/develop/building-a-driver)。
+有关详细信息，请参阅 [构建驱动程序](../develop/building-a-driver.md)。
 
 ### <a name="step-4-configure-a-computer-for-testing-and-debugging"></a><a href="" id="configure-a-computer-for-testing-and-debugging"></a>步骤4：配置计算机以进行测试和调试
 
-若要测试和调试驱动程序，请在主计算机上运行调试器，并在目标计算机上运行该驱动程序。 到目前为止，你已在主计算机上使用 Visual Studio 来构建驱动程序。 接下来，需要配置目标计算机。 若要配置目标计算机，请按照 [设置计算机以进行驱动程序部署和测试](https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/provision-a-target-computer-wdk-8-1)中的说明进行操作。
+若要测试和调试驱动程序，请在主计算机上运行调试器，并在目标计算机上运行该驱动程序。 到目前为止，你已在主计算机上使用 Visual Studio 来构建驱动程序。 接下来，需要配置目标计算机。 若要配置目标计算机，请按照 [设置计算机以进行驱动程序部署和测试](../gettingstarted/provision-a-target-computer-wdk-8-1.md)中的说明进行操作。
 
 ### <a name="step-5-enable-tracing-for-kernel-debugging"></a><a href="" id="enable-tracing-for-kernel-debugging"></a>步骤5：为内核调试启用跟踪
 
@@ -130,7 +130,7 @@ ms.locfileid: "90009809"
 
    **tracepdb-f \[ PDBFiles \] -p \[ TMFDirectory\]**
 
-   **-F**选项指定 PDB 符号文件的位置和名称。 **-P**选项指定由 Tracepdb 创建的 TMF 文件的位置。 有关详细信息，请参阅 [**Tracepdb 命令**](https://docs.microsoft.com/windows-hardware/drivers/devtest/tracepdb-commands)。
+   **-F**选项指定 PDB 符号文件的位置和名称。 **-P**选项指定由 Tracepdb 创建的 TMF 文件的位置。 有关详细信息，请参阅 [**Tracepdb 命令**](../devtest/tracepdb-commands.md)。
 
    在指定位置，将看到项目) 中每个 .c 文件 (一个文件。 它们具有 GUID 文件名。
 

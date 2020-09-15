@@ -6,12 +6,12 @@ ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 SIO_WSK_REGISTER_EXTENSION 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 2a40f7e60f09d294e39f909da40a76fab643f4b3
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: a4b0ad9b071926f93187fd49ce6e4b24b906a477
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89212755"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90102980"
 ---
 # <a name="sio_wsk_register_extension"></a>SIO \_ WSK \_ 注册 \_ 扩展
 
@@ -28,7 +28,7 @@ SIO \_ WSK \_ register \_ EXTENSION socket i/o CONTROL 操作允许 WSK 应用�
 <thead>
 <tr class="header">
 <th>参数</th>
-<th>值</th>
+<th>“值”</th>
 </tr>
 </thead>
 <tbody>
@@ -50,7 +50,7 @@ SIO \_ WSK \_ register \_ EXTENSION socket i/o CONTROL 操作允许 WSK 应用�
 </tr>
 <tr class="odd">
 <td><p><em>InputBuffer</em></p></td>
-<td><p>指向 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/ns-wsk-_wsk_extension_control_in" data-raw-source="[&lt;strong&gt;WSK_EXTENSION_CONTROL_IN&lt;/strong&gt;](/windows-hardware/drivers/ddi/wsk/ns-wsk-_wsk_extension_control_in)"><strong>WSK_EXTENSION_CONTROL_IN</strong></a> 结构的指针。 此结构包含一个指向网络编程接口的指针，该指针指向扩展接口 <a href="/windows-hardware/drivers/network/network-programming-interface" data-raw-source="[Network Programming Interface (NPI)](/windows-hardware/drivers/network/network-programming-interface)"> (NPI) </a> 标识符，以及指向调度表的指针和指向该扩展接口的 WSK 应用程序实现上下文的指针。</p></td>
+<td><p>指向 <a href="/windows-hardware/drivers/ddi/wsk/ns-wsk-_wsk_extension_control_in" data-raw-source="[&lt;strong&gt;WSK_EXTENSION_CONTROL_IN&lt;/strong&gt;](/windows-hardware/drivers/ddi/wsk/ns-wsk-_wsk_extension_control_in)"><strong>WSK_EXTENSION_CONTROL_IN</strong></a> 结构的指针。 此结构包含一个指向网络编程接口的指针，该指针指向扩展接口 <a href="/windows-hardware/drivers/network/network-programming-interface" data-raw-source="[Network Programming Interface (NPI)](./network-programming-interface.md)"> (NPI) </a> 标识符，以及指向调度表的指针和指向该扩展接口的 WSK 应用程序实现上下文的指针。</p></td>
 </tr>
 <tr class="even">
 <td><p><em>OutputSize</em></p></td>
@@ -58,7 +58,7 @@ SIO \_ WSK \_ register \_ EXTENSION socket i/o CONTROL 操作允许 WSK 应用�
 </tr>
 <tr class="odd">
 <td><p><em>OutputBuffer</em></p></td>
-<td><p>指向 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/ns-wsk-_wsk_extension_control_out" data-raw-source="[&lt;strong&gt;WSK_EXTENSION_CONTROL_OUT&lt;/strong&gt;](/windows-hardware/drivers/ddi/wsk/ns-wsk-_wsk_extension_control_out)"><strong>WSK_EXTENSION_CONTROL_OUT</strong></a> 结构的指针。 此结构接收指向调度表的指针和指向扩展接口的 WSK 子系统实现上下文的指针。</p></td>
+<td><p>指向 <a href="/windows-hardware/drivers/ddi/wsk/ns-wsk-_wsk_extension_control_out" data-raw-source="[&lt;strong&gt;WSK_EXTENSION_CONTROL_OUT&lt;/strong&gt;](/windows-hardware/drivers/ddi/wsk/ns-wsk-_wsk_extension_control_out)"><strong>WSK_EXTENSION_CONTROL_OUT</strong></a> 结构的指针。 此结构接收指向调度表的指针和指向扩展接口的 WSK 子系统实现上下文的指针。</p></td>
 </tr>
 <tr class="even">
 <td><p><em>OutputSizeReturned</em></p></td>
@@ -93,6 +93,4 @@ SIO \_ WSK \_ register \_ EXTENSION socket i/o CONTROL 操作允许 WSK 应用�
 </tr>
 </tbody>
 </table>
-
- 
 

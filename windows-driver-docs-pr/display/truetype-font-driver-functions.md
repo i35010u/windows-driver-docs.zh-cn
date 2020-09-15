@@ -9,12 +9,12 @@ keywords:
 - TrueType 字体驱动程序 WDK GDI
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4e3c5c4f5832022e5cd9f9a409e8cb59a005eeda
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 3042944180810957e76ece8831942fa3d3973862
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89067172"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90102864"
 ---
 # <a name="truetype-font-driver-functions"></a>TrueType 字体驱动程序函数
 
@@ -37,15 +37,15 @@ TrueType 字体驱动程序必须支持下表中列出的函数。
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvgettruetypefile" data-raw-source="[&lt;strong&gt;DrvGetTrueTypeFile&lt;/strong&gt;](/windows/desktop/api/winddi/nf-winddi-drvgettruetypefile)"><strong>DrvGetTrueTypeFile</strong></a></p></td>
+<td align="left"><p><a href="/windows/desktop/api/winddi/nf-winddi-drvgettruetypefile" data-raw-source="[&lt;strong&gt;DrvGetTrueTypeFile&lt;/strong&gt;](/windows/desktop/api/winddi/nf-winddi-drvgettruetypefile)"><strong>DrvGetTrueTypeFile</strong></a></p></td>
 <td align="left"><p>赋予 GDI 对内存映射的 TrueType 字体文件的有效访问。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvquerytruetypeoutline" data-raw-source="[&lt;strong&gt;DrvQueryTrueTypeOutline&lt;/strong&gt;](/windows/desktop/api/winddi/nf-winddi-drvquerytruetypeoutline)"><strong>DrvQueryTrueTypeOutline</strong></a></p></td>
+<td align="left"><p><a href="/windows/desktop/api/winddi/nf-winddi-drvquerytruetypeoutline" data-raw-source="[&lt;strong&gt;DrvQueryTrueTypeOutline&lt;/strong&gt;](/windows/desktop/api/winddi/nf-winddi-drvquerytruetypeoutline)"><strong>DrvQueryTrueTypeOutline</strong></a></p></td>
 <td align="left"><p>返回本机 TrueType 格式的标志符号句柄。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvquerytruetypetable" data-raw-source="[&lt;strong&gt;DrvQueryTrueTypeTable&lt;/strong&gt;](/windows/desktop/api/winddi/nf-winddi-drvquerytruetypetable)"><strong>DrvQueryTrueTypeTable</strong></a></p></td>
+<td align="left"><p><a href="/windows/desktop/api/winddi/nf-winddi-drvquerytruetypetable" data-raw-source="[&lt;strong&gt;DrvQueryTrueTypeTable&lt;/strong&gt;](/windows/desktop/api/winddi/nf-winddi-drvquerytruetypetable)"><strong>DrvQueryTrueTypeTable</strong></a></p></td>
 <td align="left"><p>为 TrueType 字体文件格式的特定文件提供 GDI 访问。</p></td>
 </tr>
 </tbody>
@@ -54,6 +54,4 @@ TrueType 字体驱动程序必须支持下表中列出的函数。
  
 
 所有这些函数都为 GDI 提供有关 TrueType 字体文件的信息。 *DrvQueryTrueTypeTable* 应为 TrueType 字体文件格式的特定表授予 GDI 访问权限。 *DrvQueryTrueTypeOutline* 必须发送本机 TrueType 格式的 GDI 标志符号大纲。 *DrvGetTrueTypeFile* 会将 TrueType 驱动程序的私有入口点返回到 gdi，这允许 gdi 有效访问内存映射的 TrueType 字体文件。
-
- 
 

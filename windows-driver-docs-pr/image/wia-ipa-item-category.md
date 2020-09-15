@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 510f77837fbd1804df0c797c54e1be836f0709be
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 3c4e484708b883ac9fa32ea9c090a7066c421d80
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89193255"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90103162"
 ---
 # <a name="wia_ipa_item_category"></a>WIA \_ IPA \_ 项 \_ 类别
 
@@ -296,7 +296,7 @@ WIA 定义以下类别：
 </tr>
 <tr class="odd">
 <td><p>WIA_CATEGORY_AUTO</p></td>
-<td><p>属性包括用于自动配置的扫描。 有关详细信息，请参阅 <a href="https://docs.microsoft.com/windows-hardware/drivers/image/wia-properties-supported-by-an-auto-item" data-raw-source="[WIA Properties Supported by an Auto Item](./wia-properties-supported-by-an-auto-item.md)">自动项支持的 WIA 属性</a>。</p></td>
+<td><p>属性包括用于自动配置的扫描。 有关详细信息，请参阅 <a href="/windows-hardware/drivers/image/wia-properties-supported-by-an-auto-item" data-raw-source="[WIA Properties Supported by an Auto Item](./wia-properties-supported-by-an-auto-item.md)">自动项支持的 WIA 属性</a>。</p></td>
 <td><p>表示扫描仪自动配置的扫描设置的 WIA 自动项。</p></td>
 </tr>
 </tbody>
@@ -328,6 +328,4 @@ WIA 定义以下类别：
 
 
 [**WIA \_ IPA \_ 项 \_ 标志**](wia-ipa-item-flags.md)
-
- 
 

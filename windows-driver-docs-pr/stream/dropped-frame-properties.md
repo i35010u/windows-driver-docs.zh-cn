@@ -7,12 +7,12 @@ keywords:
 - PROPSETID_VIDCAP_DROPPEDFRAMES
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9c4c38f08e82fed65a7c0941dcce3522d2ff8fd8
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 6c1ae51d28bde3b578ef02936db4890898494465
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89192877"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90103052"
 ---
 # <a name="dropped-frame-properties"></a>已删除帧属性
 
@@ -32,13 +32,11 @@ ms.locfileid: "89192877"
 </thead>
 <tbody>
 <tr class="odd">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-droppedframes-current" data-raw-source="[&lt;strong&gt;KSPROPERTY_DROPPEDFRAMES_CURRENT&lt;/strong&gt;](./ksproperty-droppedframes-current.md)"><strong>KSPROPERTY_DROPPEDFRAMES_CURRENT</strong></a></p></td>
+<td><p><a href="/windows-hardware/drivers/stream/ksproperty-droppedframes-current" data-raw-source="[&lt;strong&gt;KSPROPERTY_DROPPEDFRAMES_CURRENT&lt;/strong&gt;](./ksproperty-droppedframes-current.md)"><strong>KSPROPERTY_DROPPEDFRAMES_CURRENT</strong></a></p></td>
 <td><p>返回捕获操作的删除帧信息，包括当前图片号和平均视频帧大小。</p></td>
 </tr>
 </tbody>
 </table>
-
- 
 
  
 

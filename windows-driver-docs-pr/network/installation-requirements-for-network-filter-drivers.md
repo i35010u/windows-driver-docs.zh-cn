@@ -4,12 +4,12 @@ description: 网络筛选器驱动程序的安装要求
 ms.assetid: 7fb31e18-a2f0-48fe-b0a8-cf4aca7d27d5
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a9288d57545388f760608e47a8e9eb367a08d695
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: b02d88ec14dfd577355660d55410a880e3991ad7
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89207907"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90104068"
 ---
 # <a name="installation-requirements-for-network-filter-drivers"></a>网络筛选器驱动程序的安装要求
 
@@ -35,18 +35,18 @@ ms.locfileid: "89207907"
 <tbody>
 <tr class="odd">
 <td align="left"><p><a href="version-section-in-a-network-inf-file.md" data-raw-source="[Version Section](version-section-in-a-network-inf-file.md)">版本部分</a></p></td>
-<td align="left"><p>必须</p></td>
+<td align="left"><p>必需</p></td>
 <td align="left"><p></p>
 <strong>类</strong>= 空间 <strong>ClassGuid</strong>= {4D36E974-E325-11CE-BFC1-08002BE10318}</td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/install/inf-sourcedisksnames-section" data-raw-source="[&lt;strong&gt;INF SourceDisksNames Section&lt;/strong&gt;](../install/inf-sourcedisksnames-section.md)"><strong>Inf SourceDisksNames 部分</strong></a>和<a href="https://docs.microsoft.com/windows-hardware/drivers/install/inf-sourcedisksfiles-section" data-raw-source="[&lt;strong&gt;INF SourceDisksFiles Section&lt;/strong&gt;](../install/inf-sourcedisksfiles-section.md)"> <strong>inf SourceDisksFiles 部分</strong></a></p></td>
+<td align="left"><p><a href="/windows-hardware/drivers/install/inf-sourcedisksnames-section" data-raw-source="[&lt;strong&gt;INF SourceDisksNames Section&lt;/strong&gt;](../install/inf-sourcedisksnames-section.md)"><strong>Inf SourceDisksNames 部分</strong></a>和<a href="/windows-hardware/drivers/install/inf-sourcedisksfiles-section" data-raw-source="[&lt;strong&gt;INF SourceDisksFiles Section&lt;/strong&gt;](../install/inf-sourcedisksfiles-section.md)"> <strong>inf SourceDisksFiles 部分</strong></a></p></td>
 <td align="left"><p>可选</p></td>
 <td align="left"><p>无特定于网络的要求。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/install/inf-destinationdirs-section" data-raw-source="[&lt;strong&gt;INF DestinationDirs Section&lt;/strong&gt;](../install/inf-destinationdirs-section.md)"><strong>INF DestinationDirs 节</strong></a></p></td>
-<td align="left"><p>必须</p></td>
+<td align="left"><p><a href="/windows-hardware/drivers/install/inf-destinationdirs-section" data-raw-source="[&lt;strong&gt;INF DestinationDirs Section&lt;/strong&gt;](../install/inf-destinationdirs-section.md)"><strong>INF DestinationDirs 节</strong></a></p></td>
+<td align="left"><p>必需</p></td>
 <td align="left"><p>无特定于网络的要求。</p></td>
 </tr>
 <tr class="even">
@@ -55,18 +55,18 @@ ms.locfileid: "89207907"
 <td align="left"><p>无特定于网络的要求。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/install/inf-manufacturer-section" data-raw-source="[&lt;strong&gt;INF Manufacturer Section&lt;/strong&gt;](../install/inf-manufacturer-section.md)"><strong>INF Manufacturer 节</strong></a></p></td>
-<td align="left"><p>必须</p></td>
+<td align="left"><p><a href="/windows-hardware/drivers/install/inf-manufacturer-section" data-raw-source="[&lt;strong&gt;INF Manufacturer Section&lt;/strong&gt;](../install/inf-manufacturer-section.md)"><strong>INF Manufacturer 节</strong></a></p></td>
+<td align="left"><p>必需</p></td>
 <td align="left"><p>无特定于网络的要求。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><a href="models-section-in-a-network-inf-file.md" data-raw-source="[Models Section](models-section-in-a-network-inf-file.md)">模型部分</a></p></td>
-<td align="left"><p>必须</p></td>
+<td align="left"><p>必需</p></td>
 <td align="left"><p><em>Hw id</em>应该包含提供程序名称，后跟下划线和制造商名称或产品名称 (例如 MS_DLC) 。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="ddinstall-section-in-a-network-inf-file.md" data-raw-source="[DDInstall Section](ddinstall-section-in-a-network-inf-file.md)">DDInstall 部分</a></p></td>
-<td align="left"><p>必须</p></td>
+<td align="left"><p>必需</p></td>
 <td align="left"><p><strong>特征</strong> 条目：</p>
 <p>NCF_LW_FILTER 设置 (0x40000) 。 筛选器驱动程序不得将 NCF_FILTER (0x400) 标志。 NCF_<em>Xxx</em> 标志的值是在 Netcfgx 中定义的。 有关 NCF_<em>Xxx</em> 标志的详细信息，请参阅 <a href="ddinstall-section-in-a-network-inf-file.md" data-raw-source="[DDInstall Section in a Network INF File](ddinstall-section-in-a-network-inf-file.md)">网络 INF 文件中的 DDInstall 部分</a>。</p>
 <p>设置 <strong>NetCfgInstanceId</strong> 条目。</p></td>
@@ -78,7 +78,7 @@ ms.locfileid: "89207907"
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="add-registry-sections-in-a-network-inf-file.md" data-raw-source="[Add-registry-sections](add-registry-sections-in-a-network-inf-file.md)">添加-注册表-部分</a></p></td>
-<td align="left"><p>必须</p></td>
+<td align="left"><p>必需</p></td>
 <td align="left"><p>创建 Ndi 键</p>
 <p>INF 文件的 "<strong>服务安装</strong>" 部分中的<strong>ServiceBinary</strong>条目指定筛选器驱动程序的二进制文件的路径。</p>
 <p>设置 " <strong>FilterType</strong> " 和 " <strong>FilterRunType</strong> "。 请参阅 <a href="types-of-filter-drivers.md" data-raw-source="[Types of Filter Drivers](types-of-filter-drivers.md)">筛选器驱动程序的类型</a>。</p>
@@ -101,14 +101,12 @@ ms.locfileid: "89207907"
 <td align="left"></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/install/inf-strings-section" data-raw-source="[&lt;strong&gt;INF Strings Section&lt;/strong&gt;](../install/inf-strings-section.md)"><strong>INF Strings 节</strong></a></p></td>
-<td align="left"><p>必须</p></td>
+<td align="left"><p><a href="/windows-hardware/drivers/install/inf-strings-section" data-raw-source="[&lt;strong&gt;INF Strings Section&lt;/strong&gt;](../install/inf-strings-section.md)"><strong>INF Strings 节</strong></a></p></td>
+<td align="left"><p>必需</p></td>
 <td align="left"><p>无特定于网络的要求。</p></td>
 </tr>
 </tbody>
 </table>
-
- 
 
  
 

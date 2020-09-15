@@ -11,12 +11,12 @@ keywords:
 - 全双工应用程序 WDK 音频
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 15bc004dc5713a3150e1688ca4f518b8b75a00a9
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: f62cf595292a9cfb7267d02c73a49412efcdd953
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89208109"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90102366"
 ---
 # <a name="directsound-capture-effects"></a>DirectSound 捕获效果
 
@@ -48,11 +48,11 @@ DirectSound 8 添加了一些新功能，用于启用和控制音频捕获过程
 <tbody>
 <tr class="odd">
 <td align="left"><p>GUID_DSCFX_CLASS_AEC</p></td>
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/audio/ksnodetype-acoustic-echo-cancel" data-raw-source="[&lt;strong&gt;KSNODETYPE_ACOUSTIC_ECHO_CANCEL&lt;/strong&gt;](./ksnodetype-acoustic-echo-cancel.md)"><strong>KSNODETYPE_ACOUSTIC_ECHO_CANCEL</strong></a></p></td>
+<td align="left"><p><a href="/windows-hardware/drivers/audio/ksnodetype-acoustic-echo-cancel" data-raw-source="[&lt;strong&gt;KSNODETYPE_ACOUSTIC_ECHO_CANCEL&lt;/strong&gt;](./ksnodetype-acoustic-echo-cancel.md)"><strong>KSNODETYPE_ACOUSTIC_ECHO_CANCEL</strong></a></p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>GUID_DSCFX_CLASS_NS</p></td>
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/audio/ksnodetype-noise-suppress" data-raw-source="[&lt;strong&gt;KSNODETYPE_NOISE_SUPPRESS&lt;/strong&gt;](./ksnodetype-noise-suppress.md)"><strong>KSNODETYPE_NOISE_SUPPRESS</strong></a></p></td>
+<td align="left"><p><a href="/windows-hardware/drivers/audio/ksnodetype-noise-suppress" data-raw-source="[&lt;strong&gt;KSNODETYPE_NOISE_SUPPRESS&lt;/strong&gt;](./ksnodetype-noise-suppress.md)"><strong>KSNODETYPE_NOISE_SUPPRESS</strong></a></p></td>
 </tr>
 </tbody>
 </table>
@@ -66,6 +66,4 @@ DirectSound 8 添加了一些新功能，用于启用和控制音频捕获过程
 [公开硬件加速捕获效果](exposing-hardware-accelerated-capture-effects.md)
 
 [AEC 系统筛选器](aec-system-filter.md)
-
- 
 

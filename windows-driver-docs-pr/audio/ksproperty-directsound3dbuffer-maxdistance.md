@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 81127344c0ac29fbeecffc984951de59b3c59dfd
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: be29c7fbcbcda0314df7433404366e540a705056
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89206881"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90102576"
 ---
 # <a name="ksproperty_directsound3dbuffer_maxdistance"></a>KSPROPERTY \_ DIRECTSOUND3DBUFFER \_ MAXDISTANCE
 
@@ -53,7 +53,7 @@ KSPROPERTY \_ DIRECTSOUND3DBUFFER \_ MAXDISTANCE 属性指定三维声音缓冲�
 <td align="left"><p>是</p></td>
 <td align="left"><p>是</p></td>
 <td align="left"><p>Pin</p></td>
-<td align="left"><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksnodeproperty" data-raw-source="[&lt;strong&gt;KSNODEPROPERTY&lt;/strong&gt;](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksnodeproperty)"><strong>KSNODEPROPERTY</strong></a></td>
+<td align="left"><a href="/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksnodeproperty" data-raw-source="[&lt;strong&gt;KSNODEPROPERTY&lt;/strong&gt;](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksnodeproperty)"><strong>KSNODEPROPERTY</strong></a></td>
 <td align="left"><p>FLOAT</p></td>
 </tr>
 </tbody>
@@ -98,6 +98,4 @@ KSPROPERTY \_ DIRECTSOUND3DBUFFER \_ MAXDISTANCE 属性请求返回状态 \_ SUC
 [**KSNODEPROPERTY**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksnodeproperty)
 
 [**KSPROPERTY \_ DIRECTSOUND3DLISTENER \_ DISTANCEFACTOR**](ksproperty-directsound3dlistener-distancefactor.md)
-
- 
 

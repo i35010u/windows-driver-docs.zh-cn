@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4916cf1102a8dd8a7a5ef046e1838f0a44c34b1d
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 3abce4f1bd2974ca5bb8874163b74a0a7bae896f
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89208955"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90102044"
 ---
 # <a name="ksproperty_audio_sampling_rate"></a>KSPROPERTY \_ 音频 \_ 采样 \_ 率
 
@@ -53,7 +53,7 @@ ms.locfileid: "89208955"
 <td align="left"><p>是</p></td>
 <td align="left"><p>是</p></td>
 <td align="left"><p>Pin</p></td>
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksnodeproperty" data-raw-source="[&lt;strong&gt;KSNODEPROPERTY&lt;/strong&gt;](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksnodeproperty)"><strong>KSNODEPROPERTY</strong></a></p></td>
+<td align="left"><p><a href="/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksnodeproperty" data-raw-source="[&lt;strong&gt;KSNODEPROPERTY&lt;/strong&gt;](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksnodeproperty)"><strong>KSNODEPROPERTY</strong></a></p></td>
 <td align="left"><p>ULONG</p></td>
 </tr>
 </tbody>
@@ -106,6 +106,4 @@ KSPROPERTY \_ 音频 \_ 采样 \_ 率属性请求返回状态 " \_ 成功" 以�
 [**KSNODETYPE \_ DAC**](ksnodetype-dac.md)
 
 [**KSNODETYPE \_ SRC**](ksnodetype-src.md)
-
- 
 

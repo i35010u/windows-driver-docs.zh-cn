@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 131ffde95d45089178a5377192c4cdeadbe45dd9
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 3942353c95f90fcd7685e9b150ae92ada3d51412
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89185285"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90103456"
 ---
 # <a name="wia_dps_document_handling_capabilities"></a>WIA \_ DPS \_ 文档 \_ 处理 \_ 功能
 
@@ -35,7 +35,7 @@ WIA \_ DPS \_ 文档 \_ 处理 \_ 功能属性包含扫描程序的功能。
 
 访问权限：只读
 
-<a name="remarks"></a>注解
+<a name="remarks"></a>备注
 -------
 
 应用程序将读取 "WIA \_ DPS \_ 文档 \_ 处理功能" \_ 属性，以确定扫描仪是否安装了平板、文档送纸器或双面打印器。 你还可以使用此属性来进一步定义已安装的功能。 WIA 微型驱动程序创建并维护此属性。
@@ -95,7 +95,7 @@ WIA \_ DPS \_ 文档 \_ 处理 \_ 功能属性包含扫描程序的功能。
 <tbody>
 <tr class="odd">
 <td><p>AUTO_SOURCE</p></td>
-<td><p>设备支持 <a href="https://docs.microsoft.com/windows-hardware/drivers/image/auto-configured-scanning" data-raw-source="[auto-configured scanning](./auto-configured-scanning.md)">自动配置的扫描</a>。</p></td>
+<td><p>设备支持 <a href="/windows-hardware/drivers/image/auto-configured-scanning" data-raw-source="[auto-configured scanning](./auto-configured-scanning.md)">自动配置的扫描</a>。</p></td>
 </tr>
 </tbody>
 </table>
@@ -225,11 +225,9 @@ WIA \_ DPS \_ 文档 \_ 处理 \_ 功能属性包含扫描程序的功能。
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Header</p></td>
+<td><p>标头</p></td>
 <td>Wiadef (包含 Wiadef) </td>
 </tr>
 </tbody>
 </table>
-
- 
 

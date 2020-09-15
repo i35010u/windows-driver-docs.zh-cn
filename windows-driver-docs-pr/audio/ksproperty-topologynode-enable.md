@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: be7fce0c49873a94d1ae3bff75dddb1793f1091f
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: b9b336f11d4381eb78615eeb5abd9133f6aaa714
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89208863"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90101820"
 ---
 # <a name="ksproperty_topologynode_enable"></a>KSPROPERTY \_ TOPOLOGYNODE \_ ENABLE
 
@@ -53,7 +53,7 @@ KSPROPERTY \_ TOPOLOGYNODE \_ ENABLE 属性用于在已生成的拓扑中打开�
 <td align="left"><p>是</p></td>
 <td align="left"><p>是</p></td>
 <td align="left"><p>筛选器</p></td>
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksnodeproperty" data-raw-source="[&lt;strong&gt;KSNODEPROPERTY&lt;/strong&gt;](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksnodeproperty)"><strong>KSNODEPROPERTY</strong></a></p></td>
+<td align="left"><p><a href="/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksnodeproperty" data-raw-source="[&lt;strong&gt;KSNODEPROPERTY&lt;/strong&gt;](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksnodeproperty)"><strong>KSNODEPROPERTY</strong></a></p></td>
 <td align="left"><p>BOOL</p></td>
 </tr>
 </tbody>
@@ -100,6 +100,4 @@ KSPROPERTY \_ TOPOLOGYNODE \_ ENABLE 属性请求返回状态 \_ SUCCESS 以指�
 [**KSNODETYPE \_ AGC**](ksnodetype-agc.md)
 
 [**KSNODETYPE \_ 干扰 \_**](ksnodetype-noise-suppress.md)
-
- 
 

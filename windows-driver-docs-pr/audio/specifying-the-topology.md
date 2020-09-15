@@ -25,12 +25,12 @@ keywords:
 - 混合音频 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3d50955eb7b6a7129ed8b545c933ee95a3bd2ddf
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 740c5ae43af6d34f40d9d6a9b3b088f4b00b01ae
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89210389"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90102304"
 ---
 # <a name="specifying-the-topology"></a>指定拓扑
 
@@ -96,37 +96,37 @@ PortCls 提供六个端口驱动程序： WavePci、WaveCyclic、WaveRT、MIDI�
 <tr class="odd">
 <td align="left"><p>合成</p></td>
 <td align="left"><p>合成器节点</p></td>
-<td align="left"><a href="https://docs.microsoft.com/windows-hardware/drivers/audio/ksnodetype-synthesizer" data-raw-source="[&lt;strong&gt;KSNODETYPE_SYNTHESIZER&lt;/strong&gt;](./ksnodetype-synthesizer.md)"><strong>KSNODETYPE_SYNTHESIZER</strong></a></td>
+<td align="left"><a href="/windows-hardware/drivers/audio/ksnodetype-synthesizer" data-raw-source="[&lt;strong&gt;KSNODETYPE_SYNTHESIZER&lt;/strong&gt;](./ksnodetype-synthesizer.md)"><strong>KSNODETYPE_SYNTHESIZER</strong></a></td>
 </tr>
 <tr class="even">
 <td align="left"><p>DAC</p></td>
 <td align="left"><p>数字到音频转换器节点</p></td>
-<td align="left"><a href="https://docs.microsoft.com/windows-hardware/drivers/audio/ksnodetype-dac" data-raw-source="[&lt;strong&gt;KSNODETYPE_DAC&lt;/strong&gt;](./ksnodetype-dac.md)"><strong>KSNODETYPE_DAC</strong></a></td>
+<td align="left"><a href="/windows-hardware/drivers/audio/ksnodetype-dac" data-raw-source="[&lt;strong&gt;KSNODETYPE_DAC&lt;/strong&gt;](./ksnodetype-dac.md)"><strong>KSNODETYPE_DAC</strong></a></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>ADC</p></td>
 <td align="left"><p>模拟到数字转换器节点</p></td>
-<td align="left"><a href="https://docs.microsoft.com/windows-hardware/drivers/audio/ksnodetype-adc" data-raw-source="[&lt;strong&gt;KSNODETYPE_ADC&lt;/strong&gt;](./ksnodetype-adc.md)"><strong>KSNODETYPE_ADC</strong></a></td>
+<td align="left"><a href="/windows-hardware/drivers/audio/ksnodetype-adc" data-raw-source="[&lt;strong&gt;KSNODETYPE_ADC&lt;/strong&gt;](./ksnodetype-adc.md)"><strong>KSNODETYPE_ADC</strong></a></td>
 </tr>
 <tr class="even">
 <td align="left"><p>Volume</p></td>
 <td align="left"><p>卷级控制节点</p></td>
-<td align="left"><a href="https://docs.microsoft.com/windows-hardware/drivers/audio/ksnodetype-volume" data-raw-source="[&lt;strong&gt;KSNODETYPE_VOLUME&lt;/strong&gt;](./ksnodetype-volume.md)"><strong>KSNODETYPE_VOLUME</strong></a></td>
+<td align="left"><a href="/windows-hardware/drivers/audio/ksnodetype-volume" data-raw-source="[&lt;strong&gt;KSNODETYPE_VOLUME&lt;/strong&gt;](./ksnodetype-volume.md)"><strong>KSNODETYPE_VOLUME</strong></a></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>静音</p></td>
 <td align="left"><p>静音控制节点</p></td>
-<td align="left"><a href="https://docs.microsoft.com/windows-hardware/drivers/audio/ksnodetype-mute" data-raw-source="[&lt;strong&gt;KSNODETYPE_MUTE&lt;/strong&gt;](./ksnodetype-mute.md)"><strong>KSNODETYPE_MUTE</strong></a></td>
+<td align="left"><a href="/windows-hardware/drivers/audio/ksnodetype-mute" data-raw-source="[&lt;strong&gt;KSNODETYPE_MUTE&lt;/strong&gt;](./ksnodetype-mute.md)"><strong>KSNODETYPE_MUTE</strong></a></td>
 </tr>
 <tr class="even">
 <td align="left"><p>Sum</p></td>
 <td align="left"><p>求和节点</p></td>
-<td align="left"><a href="https://docs.microsoft.com/windows-hardware/drivers/audio/ksnodetype-sum" data-raw-source="[&lt;strong&gt;KSNODETYPE_SUM&lt;/strong&gt;](./ksnodetype-sum.md)"><strong>KSNODETYPE_SUM</strong></a></td>
+<td align="left"><a href="/windows-hardware/drivers/audio/ksnodetype-sum" data-raw-source="[&lt;strong&gt;KSNODETYPE_SUM&lt;/strong&gt;](./ksnodetype-sum.md)"><strong>KSNODETYPE_SUM</strong></a></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>混合</p></td>
 <td align="left"><p>多路复用器节点</p></td>
-<td align="left"><a href="https://docs.microsoft.com/windows-hardware/drivers/audio/ksnodetype-mux" data-raw-source="[&lt;strong&gt;KSNODETYPE_MUX&lt;/strong&gt;](./ksnodetype-mux.md)"><strong>KSNODETYPE_MUX</strong></a></td>
+<td align="left"><a href="/windows-hardware/drivers/audio/ksnodetype-mux" data-raw-source="[&lt;strong&gt;KSNODETYPE_MUX&lt;/strong&gt;](./ksnodetype-mux.md)"><strong>KSNODETYPE_MUX</strong></a></td>
 </tr>
 </tbody>
 </table>

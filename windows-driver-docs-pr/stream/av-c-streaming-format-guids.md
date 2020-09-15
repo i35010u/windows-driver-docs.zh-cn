@@ -4,12 +4,12 @@ description: AV/C 流式处理格式 GUID
 ms.assetid: 60f1fd59-e760-4be4-8990-e49628b76d15
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 801ed83cdcea1d2d0a993a734c93a97578fc4812
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 6b7a0f6cedaec4530a958626e174c4989116b3b9
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89186837"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90104008"
 ---
 # <a name="avc-streaming-format-guids"></a>AV/C 流式处理格式 GUID
 
@@ -59,7 +59,7 @@ KSDATAFORMAT 结构指定 Guid 的主要格式、格式子类型和说明符。 
 <span id="KSDATAFORMAT_SPECIFIER_61883_4"></span><span id="ksdataformat_specifier_61883_4"></span>KSDATAFORMAT \_ 说明符 \_ 61883 \_ 4  
 指定遵循 IEC 61883-4 协议的 MPEG2 TS 格式。 此说明符不使用任何扩展的数据结构来跟踪内存中的 KSDATAFORMAT。
 
-### <a name="comments"></a>说明
+### <a name="comments"></a>注释
 
 *Avcstrm.sys* 和 *Msdv.sys* 支持 \_ windows Vista 中的 KSDATAFORMAT 子类型 \_ DV25、KSDATAFORMAT \_ 子类型 \_ DV50 和 KSDATAFORMAT \_ 子类型 \_ DVH1 格式子类型、Windows SERVER 2003 Service pack 1 (SP1) 和 windows XP service pack 2 (SP2) 操作系统。
 
@@ -85,11 +85,11 @@ KSDATAFORMAT 结构指定 Guid 的主要格式、格式子类型和说明符。 
 <tbody>
 <tr class="odd">
 <td><p>KSDATAFORMAT_SPECIFIER_DVINFO</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/avcstrm/ns-avcstrm-_dvinfo" data-raw-source="[&lt;strong&gt;DVINFO&lt;/strong&gt;](/windows-hardware/drivers/ddi/avcstrm/ns-avcstrm-_dvinfo)"><strong>DVINFO</strong></a></p></td>
+<td><p><a href="/windows-hardware/drivers/ddi/avcstrm/ns-avcstrm-_dvinfo" data-raw-source="[&lt;strong&gt;DVINFO&lt;/strong&gt;](/windows-hardware/drivers/ddi/avcstrm/ns-avcstrm-_dvinfo)"><strong>DVINFO</strong></a></p></td>
 </tr>
 <tr class="even">
 <td><p>KSDATAFORMAT_SPECIFIER_DV_AVC</p></td>
-<td><p>DVINFO 和<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/avc/ns-avc-_avcconnectinfo" data-raw-source="[&lt;strong&gt;AVCCONNECTINFO&lt;/strong&gt;](/windows-hardware/drivers/ddi/avc/ns-avc-_avcconnectinfo)"> <strong>AVCCONNECTINFO</strong></a></p></td>
+<td><p>DVINFO 和<a href="/windows-hardware/drivers/ddi/avc/ns-avc-_avcconnectinfo" data-raw-source="[&lt;strong&gt;AVCCONNECTINFO&lt;/strong&gt;](/windows-hardware/drivers/ddi/avc/ns-avc-_avcconnectinfo)"> <strong>AVCCONNECTINFO</strong></a></p></td>
 </tr>
 <tr class="odd">
 <td><p>KSDATAFORMAT_SPECIFIER_AVC</p></td>
@@ -109,6 +109,4 @@ Microsoft Corporation 引入了 *msdv.sys* 的包含 WINDOWS 98 SE 的子单位�
 Microsoft Corporation 为 Windows Me 引入了 *mstape.sys* 磁带子单位驱动程序。 此驱动程序支持 VHS 磁带卡座和 MPEG 摄像机设备。
 
 **注意** Microsoft 不提供支持 DVCPro 格式解码的编解码器。
-
- 
 

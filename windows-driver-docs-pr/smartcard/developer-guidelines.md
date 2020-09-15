@@ -4,12 +4,12 @@ description: 本主题讨论使用和开发智能卡微型驱动程序的一般�
 ms.assetid: 48999DF6-3AC2-4DEA-8ABC-C427237B31E8
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2e31af619f3467655d723f38fd494bf22dceabf1
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 4b454f32f7db161d62d8b1f4bad5714656601e0d
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89384011"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90101634"
 ---
 # <a name="developer-guidelines"></a>开发人员指南
 
@@ -97,227 +97,227 @@ ms.locfileid: "89384011"
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><a href="https://docs.microsoft.com/previous-versions/dn468701(v=vs.85)" data-raw-source="[&lt;strong&gt;CardAcquireContext&lt;/strong&gt;](/previous-versions/dn468701(v=vs.85))"><strong>CardAcquireContext</strong></a></td>
+<td align="left"><a href="/previous-versions/dn468701(v=vs.85)" data-raw-source="[&lt;strong&gt;CardAcquireContext&lt;/strong&gt;](/previous-versions/dn468701(v=vs.85))"><strong>CardAcquireContext</strong></a></td>
 <td align="left">是</td>
 <td align="left"></td>
 </tr>
 <tr class="even">
-<td align="left"><a href="https://docs.microsoft.com/previous-versions/dn468715(v=vs.85)" data-raw-source="[&lt;strong&gt;CardDeleteContext&lt;/strong&gt;](/previous-versions/dn468715(v=vs.85))"><strong>CardDeleteContext</strong></a></td>
+<td align="left"><a href="/previous-versions/dn468715(v=vs.85)" data-raw-source="[&lt;strong&gt;CardDeleteContext&lt;/strong&gt;](/previous-versions/dn468715(v=vs.85))"><strong>CardDeleteContext</strong></a></td>
 <td align="left">是</td>
 <td align="left"></td>
 </tr>
 <tr class="odd">
-<td align="left"><a href="https://docs.microsoft.com/previous-versions/dn468704(v=vs.85)" data-raw-source="[&lt;strong&gt;CardAuthenticatePin&lt;/strong&gt;](/previous-versions/dn468704(v=vs.85))"><strong>CardAuthenticatePin</strong></a></td>
+<td align="left"><a href="/previous-versions/dn468704(v=vs.85)" data-raw-source="[&lt;strong&gt;CardAuthenticatePin&lt;/strong&gt;](/previous-versions/dn468704(v=vs.85))"><strong>CardAuthenticatePin</strong></a></td>
 <td align="left">是</td>
 <td align="left"></td>
 </tr>
 <tr class="even">
-<td align="left"><a href="https://docs.microsoft.com/previous-versions/dn468723(v=vs.85)" data-raw-source="[&lt;strong&gt;CardGetChallenge&lt;/strong&gt;](/previous-versions/dn468723(v=vs.85))"><strong>CardGetChallenge</strong></a></td>
+<td align="left"><a href="/previous-versions/dn468723(v=vs.85)" data-raw-source="[&lt;strong&gt;CardGetChallenge&lt;/strong&gt;](/previous-versions/dn468723(v=vs.85))"><strong>CardGetChallenge</strong></a></td>
 <td align="left">无 (可选) </td>
 <td align="left"></td>
 </tr>
 <tr class="odd">
-<td align="left"><a href="https://docs.microsoft.com/previous-versions/dn468702(v=vs.85)" data-raw-source="[&lt;strong&gt;CardAuthenticateChallenge&lt;/strong&gt;](/previous-versions/dn468702(v=vs.85))"><strong>CardAuthenticateChallenge</strong></a></td>
+<td align="left"><a href="/previous-versions/dn468702(v=vs.85)" data-raw-source="[&lt;strong&gt;CardAuthenticateChallenge&lt;/strong&gt;](/previous-versions/dn468702(v=vs.85))"><strong>CardAuthenticateChallenge</strong></a></td>
 <td align="left">无 (可选) </td>
 <td align="left"></td>
 </tr>
 <tr class="even">
-<td align="left"><a href="https://docs.microsoft.com/previous-versions/dn468712(v=vs.85)" data-raw-source="[&lt;strong&gt;CardDeauthenticate&lt;/strong&gt;](/previous-versions/dn468712(v=vs.85))"><strong>CardDeauthenticate</strong></a></td>
+<td align="left"><a href="/previous-versions/dn468712(v=vs.85)" data-raw-source="[&lt;strong&gt;CardDeauthenticate&lt;/strong&gt;](/previous-versions/dn468712(v=vs.85))"><strong>CardDeauthenticate</strong></a></td>
 <td align="left">是 (可选) </td>
 <td align="left"></td>
 </tr>
 <tr class="odd">
-<td align="left"><a href="https://docs.microsoft.com/previous-versions/dn468742(v=vs.85)" data-raw-source="[&lt;strong&gt;CardUnblockPin&lt;/strong&gt;](/previous-versions/dn468742(v=vs.85))"><strong>CardUnblockPin</strong></a></td>
+<td align="left"><a href="/previous-versions/dn468742(v=vs.85)" data-raw-source="[&lt;strong&gt;CardUnblockPin&lt;/strong&gt;](/previous-versions/dn468742(v=vs.85))"><strong>CardUnblockPin</strong></a></td>
 <td align="left">无 (可选) </td>
 <td align="left"></td>
 </tr>
 <tr class="even">
-<td align="left"><a href="https://docs.microsoft.com/previous-versions/dn468705(v=vs.85)" data-raw-source="[&lt;strong&gt;CardChangeAuthenticator&lt;/strong&gt;](/previous-versions/dn468705(v=vs.85))"><strong>CardChangeAuthenticator</strong></a></td>
+<td align="left"><a href="/previous-versions/dn468705(v=vs.85)" data-raw-source="[&lt;strong&gt;CardChangeAuthenticator&lt;/strong&gt;](/previous-versions/dn468705(v=vs.85))"><strong>CardChangeAuthenticator</strong></a></td>
 <td align="left">无 (可选) </td>
 <td align="left"></td>
 </tr>
 <tr class="odd">
-<td align="left"><a href="https://docs.microsoft.com/previous-versions/dn468710(v=vs.85)" data-raw-source="[&lt;strong&gt;CardCreateDirectory&lt;/strong&gt;](/previous-versions/dn468710(v=vs.85))"><strong>CardCreateDirectory</strong></a></td>
+<td align="left"><a href="/previous-versions/dn468710(v=vs.85)" data-raw-source="[&lt;strong&gt;CardCreateDirectory&lt;/strong&gt;](/previous-versions/dn468710(v=vs.85))"><strong>CardCreateDirectory</strong></a></td>
 <td align="left">否</td>
 <td align="left"></td>
 </tr>
 <tr class="even">
-<td align="left"><a href="https://docs.microsoft.com/previous-versions/dn468716(v=vs.85)" data-raw-source="[&lt;strong&gt;CardDeleteDirectory&lt;/strong&gt;](/previous-versions/dn468716(v=vs.85))"><strong>CardDeleteDirectory</strong></a></td>
-<td align="left">否</td>
-<td align="left"></td>
-</tr>
-<tr class="odd">
-<td align="left"><a href="https://docs.microsoft.com/previous-versions/dn468736(v=vs.85)" data-raw-source="[&lt;strong&gt;CardReadFile&lt;/strong&gt;](/previous-versions/dn468736(v=vs.85))"><strong>CardReadFile</strong></a></td>
-<td align="left">是</td>
-<td align="left">卡微型驱动程序必须模拟文件系统。</td>
-</tr>
-<tr class="even">
-<td align="left"><a href="https://docs.microsoft.com/previous-versions/dn468711(v=vs.85)" data-raw-source="[&lt;strong&gt;CardCreateFile&lt;/strong&gt;](/previous-versions/dn468711(v=vs.85))"><strong>CardCreateFile</strong></a></td>
+<td align="left"><a href="/previous-versions/dn468716(v=vs.85)" data-raw-source="[&lt;strong&gt;CardDeleteDirectory&lt;/strong&gt;](/previous-versions/dn468716(v=vs.85))"><strong>CardDeleteDirectory</strong></a></td>
 <td align="left">否</td>
 <td align="left"></td>
 </tr>
 <tr class="odd">
-<td align="left"><a href="https://docs.microsoft.com/previous-versions/dn468727(v=vs.85)" data-raw-source="[&lt;strong&gt;CardGetFileInfo&lt;/strong&gt;](/previous-versions/dn468727(v=vs.85))"><strong>CardGetFileInfo</strong></a></td>
+<td align="left"><a href="/previous-versions/dn468736(v=vs.85)" data-raw-source="[&lt;strong&gt;CardReadFile&lt;/strong&gt;](/previous-versions/dn468736(v=vs.85))"><strong>CardReadFile</strong></a></td>
 <td align="left">是</td>
 <td align="left">卡微型驱动程序必须模拟文件系统。</td>
 </tr>
 <tr class="even">
-<td align="left"><a href="https://docs.microsoft.com/previous-versions/dn468743(v=vs.85)" data-raw-source="[&lt;strong&gt;CardWriteFile&lt;/strong&gt;](/previous-versions/dn468743(v=vs.85))"><strong>CardWriteFile</strong></a></td>
+<td align="left"><a href="/previous-versions/dn468711(v=vs.85)" data-raw-source="[&lt;strong&gt;CardCreateFile&lt;/strong&gt;](/previous-versions/dn468711(v=vs.85))"><strong>CardCreateFile</strong></a></td>
 <td align="left">否</td>
 <td align="left"></td>
 </tr>
 <tr class="odd">
-<td align="left"><a href="https://docs.microsoft.com/previous-versions/dn468711(v=vs.85)" data-raw-source="[&lt;strong&gt;CardDeleteFile&lt;/strong&gt;](/previous-versions/dn468711(v=vs.85))"><strong>CardDeleteFile</strong></a></td>
+<td align="left"><a href="/previous-versions/dn468727(v=vs.85)" data-raw-source="[&lt;strong&gt;CardGetFileInfo&lt;/strong&gt;](/previous-versions/dn468727(v=vs.85))"><strong>CardGetFileInfo</strong></a></td>
+<td align="left">是</td>
+<td align="left">卡微型驱动程序必须模拟文件系统。</td>
+</tr>
+<tr class="even">
+<td align="left"><a href="/previous-versions/dn468743(v=vs.85)" data-raw-source="[&lt;strong&gt;CardWriteFile&lt;/strong&gt;](/previous-versions/dn468743(v=vs.85))"><strong>CardWriteFile</strong></a></td>
+<td align="left">否</td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left"><a href="/previous-versions/dn468711(v=vs.85)" data-raw-source="[&lt;strong&gt;CardDeleteFile&lt;/strong&gt;](/previous-versions/dn468711(v=vs.85))"><strong>CardDeleteFile</strong></a></td>
 <td align="left">否</td>
 <td align="left"></td>
 </tr>
 <tr class="even">
-<td align="left"><a href="https://docs.microsoft.com/previous-versions/dn468721(v=vs.85)" data-raw-source="[&lt;strong&gt;CardEnumFiles&lt;/strong&gt;](/previous-versions/dn468721(v=vs.85))"><strong>CardEnumFiles</strong></a></td>
+<td align="left"><a href="/previous-versions/dn468721(v=vs.85)" data-raw-source="[&lt;strong&gt;CardEnumFiles&lt;/strong&gt;](/previous-versions/dn468721(v=vs.85))"><strong>CardEnumFiles</strong></a></td>
 <td align="left">是</td>
 <td align="left">卡微型驱动程序必须模拟文件系统。</td>
 </tr>
 <tr class="odd">
-<td align="left"><a href="https://docs.microsoft.com/previous-versions/dn468734(v=vs.85)" data-raw-source="[&lt;strong&gt;CardQueryFreeSpace&lt;/strong&gt;](/previous-versions/dn468734(v=vs.85))"><strong>CardQueryFreeSpace</strong></a></td>
+<td align="left"><a href="/previous-versions/dn468734(v=vs.85)" data-raw-source="[&lt;strong&gt;CardQueryFreeSpace&lt;/strong&gt;](/previous-versions/dn468734(v=vs.85))"><strong>CardQueryFreeSpace</strong></a></td>
 <td align="left">是</td>
 <td align="left">卡微型驱动程序必须模拟文件系统。</td>
 </tr>
 <tr class="even">
-<td align="left"><a href="https://docs.microsoft.com/previous-versions/dn468733(v=vs.85)" data-raw-source="[&lt;strong&gt;CardQueryCapabilities&lt;/strong&gt;](/previous-versions/dn468733(v=vs.85))"><strong>CardQueryCapabilities</strong></a></td>
+<td align="left"><a href="/previous-versions/dn468733(v=vs.85)" data-raw-source="[&lt;strong&gt;CardQueryCapabilities&lt;/strong&gt;](/previous-versions/dn468733(v=vs.85))"><strong>CardQueryCapabilities</strong></a></td>
 <td align="left">是</td>
 <td align="left">卡微型驱动程序必须模拟文件系统。</td>
 </tr>
 <tr class="odd">
-<td align="left"><a href="https://docs.microsoft.com/previous-versions/dn468708(v=vs.85)" data-raw-source="[&lt;strong&gt;CardCreateContainer&lt;/strong&gt;](/previous-versions/dn468708(v=vs.85))"><strong>CardCreateContainer</strong></a></td>
+<td align="left"><a href="/previous-versions/dn468708(v=vs.85)" data-raw-source="[&lt;strong&gt;CardCreateContainer&lt;/strong&gt;](/previous-versions/dn468708(v=vs.85))"><strong>CardCreateContainer</strong></a></td>
 <td align="left">否</td>
 <td align="left"></td>
 </tr>
 <tr class="even">
-<td align="left"><a href="https://docs.microsoft.com/previous-versions/dn468709(v=vs.85)" data-raw-source="[&lt;strong&gt;CardCreateContainerEx&lt;/strong&gt;](/previous-versions/dn468709(v=vs.85))"><strong>CardCreateContainerEx</strong></a></td>
+<td align="left"><a href="/previous-versions/dn468709(v=vs.85)" data-raw-source="[&lt;strong&gt;CardCreateContainerEx&lt;/strong&gt;](/previous-versions/dn468709(v=vs.85))"><strong>CardCreateContainerEx</strong></a></td>
 <td align="left">无 (可选) </td>
 <td align="left"></td>
 </tr>
 <tr class="odd">
-<td align="left"><a href="https://docs.microsoft.com/previous-versions/dn468714(v=vs.85)" data-raw-source="[&lt;strong&gt;CardDeleteContainer&lt;/strong&gt;](/previous-versions/dn468714(v=vs.85))"><strong>CardDeleteContainer</strong></a></td>
+<td align="left"><a href="/previous-versions/dn468714(v=vs.85)" data-raw-source="[&lt;strong&gt;CardDeleteContainer&lt;/strong&gt;](/previous-versions/dn468714(v=vs.85))"><strong>CardDeleteContainer</strong></a></td>
 <td align="left">否</td>
 <td align="left"></td>
 </tr>
 <tr class="even">
-<td align="left"><a href="https://docs.microsoft.com/previous-versions/dn468725(v=vs.85)" data-raw-source="[&lt;strong&gt;CardGetContainerInfo&lt;/strong&gt;](/previous-versions/dn468725(v=vs.85))"><strong>CardGetContainerInfo</strong></a></td>
+<td align="left"><a href="/previous-versions/dn468725(v=vs.85)" data-raw-source="[&lt;strong&gt;CardGetContainerInfo&lt;/strong&gt;](/previous-versions/dn468725(v=vs.85))"><strong>CardGetContainerInfo</strong></a></td>
 <td align="left">是</td>
 <td align="left"></td>
 </tr>
 <tr class="odd">
-<td align="left"><a href="https://docs.microsoft.com/previous-versions/dn468737(v=vs.85)" data-raw-source="[&lt;strong&gt;CardRSADecrypt&lt;/strong&gt;](/previous-versions/dn468737(v=vs.85))"><strong>CardRSADecrypt</strong></a></td>
+<td align="left"><a href="/previous-versions/dn468737(v=vs.85)" data-raw-source="[&lt;strong&gt;CardRSADecrypt&lt;/strong&gt;](/previous-versions/dn468737(v=vs.85))"><strong>CardRSADecrypt</strong></a></td>
 <td align="left">是 (可选) </td>
 <td align="left"></td>
 </tr>
 <tr class="even">
-<td align="left"><a href="https://docs.microsoft.com/previous-versions/dn468707(v=vs.85)" data-raw-source="[&lt;strong&gt;CardConstructDHAgreement&lt;/strong&gt;](/previous-versions/dn468707(v=vs.85))"><strong>CardConstructDHAgreement</strong></a></td>
+<td align="left"><a href="/previous-versions/dn468707(v=vs.85)" data-raw-source="[&lt;strong&gt;CardConstructDHAgreement&lt;/strong&gt;](/previous-versions/dn468707(v=vs.85))"><strong>CardConstructDHAgreement</strong></a></td>
 <td align="left">是 (可选) </td>
 <td align="left"></td>
 </tr>
 <tr class="odd">
-<td align="left"><a href="https://docs.microsoft.com/previous-versions/dn468718(v=vs.85)" data-raw-source="[&lt;strong&gt;CardDeriveKey&lt;/strong&gt;](/previous-versions/dn468718(v=vs.85))"><strong>CardDeriveKey</strong></a></td>
+<td align="left"><a href="/previous-versions/dn468718(v=vs.85)" data-raw-source="[&lt;strong&gt;CardDeriveKey&lt;/strong&gt;](/previous-versions/dn468718(v=vs.85))"><strong>CardDeriveKey</strong></a></td>
 <td align="left">是 (可选) </td>
 <td align="left"></td>
 </tr>
 <tr class="even">
-<td align="left"><a href="https://docs.microsoft.com/previous-versions/dn468719(v=vs.85)" data-raw-source="[&lt;strong&gt;CardDestroyDHAgreement&lt;/strong&gt;](/previous-versions/dn468719(v=vs.85))"><strong>CardDestroyDHAgreement</strong></a></td>
+<td align="left"><a href="/previous-versions/dn468719(v=vs.85)" data-raw-source="[&lt;strong&gt;CardDestroyDHAgreement&lt;/strong&gt;](/previous-versions/dn468719(v=vs.85))"><strong>CardDestroyDHAgreement</strong></a></td>
 <td align="left">是 (可选) </td>
 <td align="left"></td>
 </tr>
 <tr class="odd">
-<td align="left"><a href="https://docs.microsoft.com/previous-versions/dn468741(v=vs.85)" data-raw-source="[&lt;strong&gt;CardSignData&lt;/strong&gt;](/previous-versions/dn468741(v=vs.85))"><strong>CardSignData</strong></a></td>
+<td align="left"><a href="/previous-versions/dn468741(v=vs.85)" data-raw-source="[&lt;strong&gt;CardSignData&lt;/strong&gt;](/previous-versions/dn468741(v=vs.85))"><strong>CardSignData</strong></a></td>
 <td align="left">是</td>
 <td align="left"></td>
 </tr>
 <tr class="even">
-<td align="left"><a href="https://docs.microsoft.com/previous-versions/dn468735(v=vs.85)" data-raw-source="[&lt;strong&gt;CardQueryKeySizes&lt;/strong&gt;](/previous-versions/dn468735(v=vs.85))"><strong>CardQueryKeySizes</strong></a></td>
+<td align="left"><a href="/previous-versions/dn468735(v=vs.85)" data-raw-source="[&lt;strong&gt;CardQueryKeySizes&lt;/strong&gt;](/previous-versions/dn468735(v=vs.85))"><strong>CardQueryKeySizes</strong></a></td>
 <td align="left">是</td>
 <td align="left"></td>
 </tr>
 <tr class="odd">
-<td align="left"><a href="https://docs.microsoft.com/previous-versions/dn468703(v=vs.85)" data-raw-source="[&lt;strong&gt;CardAuthenticateEx&lt;/strong&gt;](/previous-versions/dn468703(v=vs.85))"><strong>CardAuthenticateEx</strong></a></td>
+<td align="left"><a href="/previous-versions/dn468703(v=vs.85)" data-raw-source="[&lt;strong&gt;CardAuthenticateEx&lt;/strong&gt;](/previous-versions/dn468703(v=vs.85))"><strong>CardAuthenticateEx</strong></a></td>
 <td align="left">是</td>
 <td align="left"></td>
 </tr>
 <tr class="even">
-<td align="left"><a href="https://docs.microsoft.com/previous-versions/dn468706(v=vs.85)" data-raw-source="[&lt;strong&gt;CardChangeAuthenticatorEx&lt;/strong&gt;](/previous-versions/dn468706(v=vs.85))"><strong>CardChangeAuthenticatorEx</strong></a></td>
+<td align="left"><a href="/previous-versions/dn468706(v=vs.85)" data-raw-source="[&lt;strong&gt;CardChangeAuthenticatorEx&lt;/strong&gt;](/previous-versions/dn468706(v=vs.85))"><strong>CardChangeAuthenticatorEx</strong></a></td>
 <td align="left">无 (可选) </td>
 <td align="left"></td>
 </tr>
 <tr class="odd">
-<td align="left"><a href="https://docs.microsoft.com/previous-versions/dn468713(v=vs.85)" data-raw-source="[&lt;strong&gt;CardDeauthenticateEx&lt;/strong&gt;](/previous-versions/dn468713(v=vs.85))"><strong>CardDeauthenticateEx</strong></a></td>
+<td align="left"><a href="/previous-versions/dn468713(v=vs.85)" data-raw-source="[&lt;strong&gt;CardDeauthenticateEx&lt;/strong&gt;](/previous-versions/dn468713(v=vs.85))"><strong>CardDeauthenticateEx</strong></a></td>
 <td align="left">是</td>
 <td align="left"></td>
 </tr>
 <tr class="even">
-<td align="left"><a href="https://docs.microsoft.com/previous-versions/dn468724(v=vs.85)" data-raw-source="[&lt;strong&gt;CardGetChallengeEx&lt;/strong&gt;](/previous-versions/dn468724(v=vs.85))"><strong>CardGetChallengeEx</strong></a></td>
+<td align="left"><a href="/previous-versions/dn468724(v=vs.85)" data-raw-source="[&lt;strong&gt;CardGetChallengeEx&lt;/strong&gt;](/previous-versions/dn468724(v=vs.85))"><strong>CardGetChallengeEx</strong></a></td>
 <td align="left">无 (可选) </td>
 <td align="left"></td>
 </tr>
 <tr class="odd">
-<td align="left"><a href="https://docs.microsoft.com/previous-versions/dn468726(v=vs.85)" data-raw-source="[&lt;strong&gt;CardGetContainerProperty&lt;/strong&gt;](/previous-versions/dn468726(v=vs.85))"><strong>CardGetContainerProperty</strong></a></td>
+<td align="left"><a href="/previous-versions/dn468726(v=vs.85)" data-raw-source="[&lt;strong&gt;CardGetContainerProperty&lt;/strong&gt;](/previous-versions/dn468726(v=vs.85))"><strong>CardGetContainerProperty</strong></a></td>
 <td align="left">是</td>
 <td align="left"></td>
 </tr>
 <tr class="even">
-<td align="left"><a href="https://docs.microsoft.com/previous-versions/dn468738(v=vs.85)" data-raw-source="[&lt;strong&gt;CardSetContainerProperty&lt;/strong&gt;](/previous-versions/dn468738(v=vs.85))"><strong>CardSetContainerProperty</strong></a></td>
+<td align="left"><a href="/previous-versions/dn468738(v=vs.85)" data-raw-source="[&lt;strong&gt;CardSetContainerProperty&lt;/strong&gt;](/previous-versions/dn468738(v=vs.85))"><strong>CardSetContainerProperty</strong></a></td>
 <td align="left">否</td>
 <td align="left"></td>
 </tr>
 <tr class="odd">
-<td align="left"><a href="https://docs.microsoft.com/previous-versions/dn468729(v=vs.85)" data-raw-source="[&lt;strong&gt;CardGetProperty&lt;/strong&gt;](/previous-versions/dn468729(v=vs.85))"><strong>CardGetProperty</strong></a></td>
+<td align="left"><a href="/previous-versions/dn468729(v=vs.85)" data-raw-source="[&lt;strong&gt;CardGetProperty&lt;/strong&gt;](/previous-versions/dn468729(v=vs.85))"><strong>CardGetProperty</strong></a></td>
 <td align="left">是</td>
 <td align="left"></td>
 </tr>
 <tr class="even">
-<td align="left"><a href="https://docs.microsoft.com/previous-versions/dn468740(v=vs.85)" data-raw-source="[&lt;strong&gt;CardSetProperty&lt;/strong&gt;](/previous-versions/dn468740(v=vs.85))"><strong>CardSetProperty</strong></a></td>
+<td align="left"><a href="/previous-versions/dn468740(v=vs.85)" data-raw-source="[&lt;strong&gt;CardSetProperty&lt;/strong&gt;](/previous-versions/dn468740(v=vs.85))"><strong>CardSetProperty</strong></a></td>
 <td align="left">是</td>
 <td align="left"></td>
 </tr>
 <tr class="odd">
-<td align="left"><a href="https://docs.microsoft.com/previous-versions/dn468757(v=vs.85)" data-raw-source="[&lt;strong&gt;MDImportSessionKey&lt;/strong&gt;](/previous-versions/dn468757(v=vs.85))"><strong>MDImportSessionKey</strong></a></td>
+<td align="left"><a href="/previous-versions/dn468757(v=vs.85)" data-raw-source="[&lt;strong&gt;MDImportSessionKey&lt;/strong&gt;](/previous-versions/dn468757(v=vs.85))"><strong>MDImportSessionKey</strong></a></td>
 <td align="left">无 (可选) </td>
 <td align="left"></td>
 </tr>
 <tr class="even">
-<td align="left"><a href="https://docs.microsoft.com/previous-versions/dn468756(v=vs.85)" data-raw-source="[&lt;strong&gt;MDEncryptData&lt;/strong&gt;](/previous-versions/dn468756(v=vs.85))"><strong>MDEncryptData</strong></a></td>
+<td align="left"><a href="/previous-versions/dn468756(v=vs.85)" data-raw-source="[&lt;strong&gt;MDEncryptData&lt;/strong&gt;](/previous-versions/dn468756(v=vs.85))"><strong>MDEncryptData</strong></a></td>
 <td align="left">无 (可选) </td>
 <td align="left"></td>
 </tr>
 <tr class="odd">
-<td align="left"><a href="https://docs.microsoft.com/previous-versions/dn468731(v=vs.85)" data-raw-source="[&lt;strong&gt;CardImportSessionKey&lt;/strong&gt;](/previous-versions/dn468731(v=vs.85))"><strong>CardImportSessionKey</strong></a></td>
+<td align="left"><a href="/previous-versions/dn468731(v=vs.85)" data-raw-source="[&lt;strong&gt;CardImportSessionKey&lt;/strong&gt;](/previous-versions/dn468731(v=vs.85))"><strong>CardImportSessionKey</strong></a></td>
 <td align="left">无 (可选) </td>
 <td align="left"></td>
 </tr>
 <tr class="even">
-<td align="left"><a href="https://docs.microsoft.com/previous-versions/dn468730(v=vs.85)" data-raw-source="[&lt;strong&gt;CardGetSharedKeyHandle&lt;/strong&gt;](/previous-versions/dn468730(v=vs.85))"><strong>CardGetSharedKeyHandle</strong></a></td>
+<td align="left"><a href="/previous-versions/dn468730(v=vs.85)" data-raw-source="[&lt;strong&gt;CardGetSharedKeyHandle&lt;/strong&gt;](/previous-versions/dn468730(v=vs.85))"><strong>CardGetSharedKeyHandle</strong></a></td>
 <td align="left">无 (可选) </td>
 <td align="left"></td>
 </tr>
 <tr class="odd">
-<td align="left"><a href="https://docs.microsoft.com/previous-versions/dn468722(v=vs.85)" data-raw-source="[&lt;strong&gt;CardGetAlgorithmProperty&lt;/strong&gt;](/previous-versions/dn468722(v=vs.85))"><strong>CardGetAlgorithmProperty</strong></a></td>
+<td align="left"><a href="/previous-versions/dn468722(v=vs.85)" data-raw-source="[&lt;strong&gt;CardGetAlgorithmProperty&lt;/strong&gt;](/previous-versions/dn468722(v=vs.85))"><strong>CardGetAlgorithmProperty</strong></a></td>
 <td align="left">无 (可选) </td>
 <td align="left"></td>
 </tr>
 <tr class="even">
-<td align="left"><a href="https://docs.microsoft.com/previous-versions/dn468728(v=vs.85)" data-raw-source="[&lt;strong&gt;CardGetKeyProperty&lt;/strong&gt;](/previous-versions/dn468728(v=vs.85))"><strong>CardGetKeyProperty</strong></a></td>
+<td align="left"><a href="/previous-versions/dn468728(v=vs.85)" data-raw-source="[&lt;strong&gt;CardGetKeyProperty&lt;/strong&gt;](/previous-versions/dn468728(v=vs.85))"><strong>CardGetKeyProperty</strong></a></td>
 <td align="left">无 (可选) </td>
 <td align="left"></td>
 </tr>
 <tr class="odd">
-<td align="left"><a href="https://docs.microsoft.com/previous-versions/dn468739(v=vs.85)" data-raw-source="[&lt;strong&gt;CardSetKeyProperty&lt;/strong&gt;](/previous-versions/dn468739(v=vs.85))"><strong>CardSetKeyProperty</strong></a></td>
+<td align="left"><a href="/previous-versions/dn468739(v=vs.85)" data-raw-source="[&lt;strong&gt;CardSetKeyProperty&lt;/strong&gt;](/previous-versions/dn468739(v=vs.85))"><strong>CardSetKeyProperty</strong></a></td>
 <td align="left">无 (可选) </td>
 <td align="left"></td>
 </tr>
 <tr class="even">
-<td align="left"><a href="https://docs.microsoft.com/previous-versions/dn468720(v=vs.85)" data-raw-source="[&lt;strong&gt;CardDestroyKey&lt;/strong&gt;](/previous-versions/dn468720(v=vs.85))"><strong>CardDestroyKey</strong></a></td>
+<td align="left"><a href="/previous-versions/dn468720(v=vs.85)" data-raw-source="[&lt;strong&gt;CardDestroyKey&lt;/strong&gt;](/previous-versions/dn468720(v=vs.85))"><strong>CardDestroyKey</strong></a></td>
 <td align="left">无 (可选) </td>
 <td align="left"></td>
 </tr>
 <tr class="odd">
-<td align="left"><a href="https://docs.microsoft.com/previous-versions/dn468732(v=vs.85)" data-raw-source="[&lt;strong&gt;CardProcessEncryptedData&lt;/strong&gt;](/previous-versions/dn468732(v=vs.85))"><strong>CardProcessEncryptedData</strong></a></td>
+<td align="left"><a href="/previous-versions/dn468732(v=vs.85)" data-raw-source="[&lt;strong&gt;CardProcessEncryptedData&lt;/strong&gt;](/previous-versions/dn468732(v=vs.85))"><strong>CardProcessEncryptedData</strong></a></td>
 <td align="left">无 (可选) </td>
 <td align="left"></td>
 </tr>
@@ -671,6 +671,4 @@ Microsoft CNG 智能卡密钥存储提供程序组策略设置位于 \[ HKEY \_ 
     -   DM-CRYPT \_ DELETEKEYSET
     -   DM-CRYPT \_ VERIFYCONTEXT
 -   即使在 DLL 进程分离调用了*DllMain*后，也可以调用[**CardDeleteContext**](/previous-versions/dn468715(v=vs.85)) \_ \_ 。
-
- 
 

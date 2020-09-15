@@ -4,12 +4,12 @@ description: 获取 HDAUDIO_BUS_INTERFACE_V2 DDI 对象
 ms.assetid: 3aad8c7a-8c89-499a-bfe8-e3facdffcd15
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c8ab869322e821d9c897c63fddbe1d4f72e6d55c
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 3401ca614e4c18e9131842eec958a33c7d4e8016
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89208807"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90101784"
 ---
 # <a name="obtaining-an-hdaudio_bus_interface_v2-ddi-object"></a>获取 HDAUDIO \_ BUS \_ 接口 \_ V2 DDI 对象
 
@@ -24,7 +24,7 @@ ms.locfileid: "89208807"
 <thead>
 <tr class="header">
 <th align="left">参数</th>
-<th align="left">值</th>
+<th align="left">“值”</th>
 </tr>
 </thead>
 <tbody>
@@ -34,7 +34,7 @@ ms.locfileid: "89208807"
 </tr>
 <tr class="even">
 <td align="left"><p>USHORT <em>大小</em></p></td>
-<td align="left"><p><strong>sizeof</strong> (<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/hdaudio/ns-hdaudio-_hdaudio_bus_interface_v2" data-raw-source="[&lt;strong&gt;HDAUDIO_BUS_INTERFACE_V2&lt;/strong&gt;](/windows-hardware/drivers/ddi/hdaudio/ns-hdaudio-_hdaudio_bus_interface_v2)"><strong>HDAUDIO_BUS_INTERFACE_V2</strong></a>) </p></td>
+<td align="left"><p><strong>sizeof</strong> (<a href="/windows-hardware/drivers/ddi/hdaudio/ns-hdaudio-_hdaudio_bus_interface_v2" data-raw-source="[&lt;strong&gt;HDAUDIO_BUS_INTERFACE_V2&lt;/strong&gt;](/windows-hardware/drivers/ddi/hdaudio/ns-hdaudio-_hdaudio_bus_interface_v2)"><strong>HDAUDIO_BUS_INTERFACE_V2</strong></a>) </p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>USHORT <em>版本</em></p></td>
@@ -42,7 +42,7 @@ ms.locfileid: "89208807"
 </tr>
 <tr class="even">
 <td align="left"><p>PINTERFACE <em>接口</em></p></td>
-<td align="left"><p>指向 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/hdaudio/ns-hdaudio-_hdaudio_bus_interface_v2" data-raw-source="[&lt;strong&gt;HDAUDIO_BUS_INTERFACE_V2&lt;/strong&gt;](/windows-hardware/drivers/ddi/hdaudio/ns-hdaudio-_hdaudio_bus_interface_v2)"><strong>HDAUDIO_BUS_INTERFACE_V2</strong></a> 结构的指针</p></td>
+<td align="left"><p>指向 <a href="/windows-hardware/drivers/ddi/hdaudio/ns-hdaudio-_hdaudio_bus_interface_v2" data-raw-source="[&lt;strong&gt;HDAUDIO_BUS_INTERFACE_V2&lt;/strong&gt;](/windows-hardware/drivers/ddi/hdaudio/ns-hdaudio-_hdaudio_bus_interface_v2)"><strong>HDAUDIO_BUS_INTERFACE_V2</strong></a> 结构的指针</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>PVOID <em>InterfaceSpecificData</em></p></td>
@@ -71,7 +71,7 @@ ms.locfileid: "89208807"
 <tbody>
 <tr class="odd">
 <td align="left"><p>USHORT <strong>大小</strong></p></td>
-<td align="left"><p><strong>sizeof</strong> (<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/hdaudio/ns-hdaudio-_hdaudio_bus_interface_v2" data-raw-source="[&lt;strong&gt;HDAUDIO_BUS_INTERFACE_V2&lt;/strong&gt;](/windows-hardware/drivers/ddi/hdaudio/ns-hdaudio-_hdaudio_bus_interface_v2)"><strong>HDAUDIO_BUS_INTERFACE_V2</strong></a>) </p></td>
+<td align="left"><p><strong>sizeof</strong> (<a href="/windows-hardware/drivers/ddi/hdaudio/ns-hdaudio-_hdaudio_bus_interface_v2" data-raw-source="[&lt;strong&gt;HDAUDIO_BUS_INTERFACE_V2&lt;/strong&gt;](/windows-hardware/drivers/ddi/hdaudio/ns-hdaudio-_hdaudio_bus_interface_v2)"><strong>HDAUDIO_BUS_INTERFACE_V2</strong></a>) </p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>USHORT <strong>版本</strong></p></td>
@@ -95,6 +95,4 @@ ms.locfileid: "89208807"
  
 
 在上表中， **上下文** 成员指向上下文对象，该对象包含特定于基线 HD 音频 DDI 的特定实例的信息。 客户端从 IOCTL 获取此基线 HD 音频 DDI。 当客户端函数驱动程序调用 DDI 中的任何例程时，它必须始终将 **上下文** 成员值指定为第一个调用参数。 上下文信息对客户端是不透明的。 HD 音频总线驱动程序为每个客户端创建一个不同的上下文对象。 当不再需要上下文对象时，客户端将通过调用上表中显示的 **InterfaceDereference** 例程来释放上下文对象。 如果需要，客户端可以通过调用 **InterfaceDereference** 例程来创建对对象的其他引用，但当客户端不再需要这些引用时，该客户端负责将其释放。
-
- 
 

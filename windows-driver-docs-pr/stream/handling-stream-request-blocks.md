@@ -10,12 +10,12 @@ keywords:
 - 流请求块，请参阅 SRB 或 SRBs
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 03861cd87ca7ffc9a5cb069ba897db84594fce74
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 59cfe52b92ef98579655a8c3e0f543d8bdfaf96f
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89190567"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90102410"
 ---
 # <a name="handling-stream-request-blocks"></a>处理流请求块
 
@@ -45,17 +45,17 @@ ms.locfileid: "89190567"
 <tbody>
 <tr class="odd">
 <td><p>设备请求</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/strmini/nf-strmini-streamclassdevicenotification" data-raw-source="[&lt;strong&gt;StreamClassDeviceNotification&lt;/strong&gt;](/windows-hardware/drivers/ddi/strmini/nf-strmini-streamclassdevicenotification)"><strong>StreamClassDeviceNotification</strong></a></p></td>
+<td><p><a href="/windows-hardware/drivers/ddi/strmini/nf-strmini-streamclassdevicenotification" data-raw-source="[&lt;strong&gt;StreamClassDeviceNotification&lt;/strong&gt;](/windows-hardware/drivers/ddi/strmini/nf-strmini-streamclassdevicenotification)"><strong>StreamClassDeviceNotification</strong></a></p></td>
 <td><p>ReadyForNextDeviceRequest</p></td>
 </tr>
 <tr class="even">
 <td><p>流控制请求</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/strmini/nf-strmini-streamclassstreamnotification" data-raw-source="[&lt;strong&gt;StreamClassStreamNotification&lt;/strong&gt;](/windows-hardware/drivers/ddi/strmini/nf-strmini-streamclassstreamnotification)"><strong>StreamClassStreamNotification</strong></a></p></td>
+<td><p><a href="/windows-hardware/drivers/ddi/strmini/nf-strmini-streamclassstreamnotification" data-raw-source="[&lt;strong&gt;StreamClassStreamNotification&lt;/strong&gt;](/windows-hardware/drivers/ddi/strmini/nf-strmini-streamclassstreamnotification)"><strong>StreamClassStreamNotification</strong></a></p></td>
 <td><p>ReadyForNextStreamControlRequest</p></td>
 </tr>
 <tr class="odd">
 <td><p>流数据请求</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/strmini/nf-strmini-streamclassstreamnotification" data-raw-source="[&lt;strong&gt;StreamClassStreamNotification&lt;/strong&gt;](/windows-hardware/drivers/ddi/strmini/nf-strmini-streamclassstreamnotification)"><strong>StreamClassStreamNotification</strong></a></p></td>
+<td><p><a href="/windows-hardware/drivers/ddi/strmini/nf-strmini-streamclassstreamnotification" data-raw-source="[&lt;strong&gt;StreamClassStreamNotification&lt;/strong&gt;](/windows-hardware/drivers/ddi/strmini/nf-strmini-streamclassstreamnotification)"><strong>StreamClassStreamNotification</strong></a></p></td>
 <td><p>ReadyForNextStreamDataRequest</p></td>
 </tr>
 </tbody>
@@ -78,6 +78,4 @@ ms.locfileid: "89190567"
 微型驱动程序异步处理请求，因此类驱动程序可能需要取消或超时请求。 出于这些目的，微型驱动程序必须提供 [*StrMiniCancelPacket*](/windows-hardware/drivers/ddi/strmini/nc-strmini-phw_cancel_srb) 和 [*StrMiniRequestTimeout*](/windows-hardware/drivers/ddi/strmini/nc-strmini-phw_request_timeout_handler) 例程。 类驱动程序在取消或超时请求时，将调用相应的微型驱动程序例程。
 
 当操作系统取消基础 i/o 请求时，类驱动程序会取消请求。 类驱动程序发出的请求花费了太长时间来处理的请求数--它将在流请求块的 **TimeoutCounter** 成员中超时请求之前，将计数器递减多少秒。 如果微型驱动程序必须长时间延迟处理请求，则应将 **TimeoutCounter** 成员设置为零--类驱动程序将不会超时请求。 微型驱动程序继续处理请求后，它应将 **TimeoutCounter** 重置为等于流请求块的 **TimeoutOriginal** 成员。 微型驱动程序可以重置 **TimeoutOriginal** ，以更改请求超时前的时间长度。有关详细信息，请参阅 [**HW \_ STREAM \_ REQUEST \_ BLOCK**](/windows-hardware/drivers/ddi/strmini/ns-strmini-_hw_stream_request_block) 。
-
- 
 

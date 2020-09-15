@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ecaca1a8ea2b188c9d8987c6ed52021cfca32084
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 6ce35ad1004afe63accfc99aadb8fa0a1b02dbdc
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89065578"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90103784"
 ---
 # <a name="fsctl_get_reparse_point-control-code"></a>FSCTL \_ 获取重新 \_ 分析 \_ 点控制代码
 
@@ -72,11 +72,11 @@ FSCTL \_ 获取重新 \_ 分析 \_ 点控制代码检索与指定的文件或目
 <tbody>
 <tr class="odd">
 <td align="left"><p><strong>STATUS_BUFFER_OVERFLOW</strong></p></td>
-<td align="left"><p><em>OutputBuffer</em>参数指向的缓冲区足以容纳 REPARSE_GUID_DATA_BUFFER 或 REPARSE_DATA_BUFFER 结构的固定部分，而不是用户定义数据。 在这种情况下，仅在 <em>OutputBuffer</em> 缓冲区中返回重新分析点数据的固定部分。 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltfscontrolfile" data-raw-source="[&lt;strong&gt;FltFsControlFile&lt;/strong&gt;](/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltfscontrolfile)"><strong>FltFsControlFile</strong></a>的<em>LengthReturned</em>参数接收返回的数据的实际长度（以字节为单位）。 这是警告代码。</p></td>
+<td align="left"><p><em>OutputBuffer</em>参数指向的缓冲区足以容纳 REPARSE_GUID_DATA_BUFFER 或 REPARSE_DATA_BUFFER 结构的固定部分，而不是用户定义数据。 在这种情况下，仅在 <em>OutputBuffer</em> 缓冲区中返回重新分析点数据的固定部分。 <a href="/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltfscontrolfile" data-raw-source="[&lt;strong&gt;FltFsControlFile&lt;/strong&gt;](/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltfscontrolfile)"><strong>FltFsControlFile</strong></a>的<em>LengthReturned</em>参数接收返回的数据的实际长度（以字节为单位）。 这是警告代码。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>STATUS_BUFFER_TOO_SMALL</strong></p></td>
-<td align="left"><p><em>OutputBuffer</em>参数指向的缓冲区不够大，无法容纳重新分析点数据。 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltfscontrolfile" data-raw-source="[&lt;strong&gt;FltFsControlFile&lt;/strong&gt;](/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltfscontrolfile)"><strong>FltFsControlFile</strong></a> (的<em>LengthReturned</em>参数，或<a href="https://msdn.microsoft.com/library/windows/hardware/ff566462" data-raw-source="[&lt;strong&gt;ZwFsControlFile&lt;/strong&gt;](/previous-versions/ff566462(v=vs.85))"><strong>ZwFsControlFile</strong></a>) 的<em>IoStatus</em>参数的<strong>信息</strong>成员接收所需的缓冲区大小。 在这种情况下，不会返回重新分析点数据。 这是一个错误代码。</p></td>
+<td align="left"><p><em>OutputBuffer</em>参数指向的缓冲区不够大，无法容纳重新分析点数据。 <a href="/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltfscontrolfile" data-raw-source="[&lt;strong&gt;FltFsControlFile&lt;/strong&gt;](/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltfscontrolfile)"><strong>FltFsControlFile</strong></a> (的<em>LengthReturned</em>参数，或<a href="/previous-versions/ff566462(v=vs.85)" data-raw-source="[&lt;strong&gt;ZwFsControlFile&lt;/strong&gt;](/previous-versions/ff566462(v=vs.85))"><strong>ZwFsControlFile</strong></a>) 的<em>IoStatus</em>参数的<strong>信息</strong>成员接收所需的缓冲区大小。 在这种情况下，不会返回重新分析点数据。 这是一个错误代码。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>STATUS_IO_REPARSE_DATA_INVALID</strong></p></td>
@@ -137,6 +137,4 @@ FSCTL \_ 获取重新 \_ 分析 \_ 点控制代码检索与指定的文件或目
 [**重新分析 \_ GUID \_ 数据 \_ 缓冲区**](/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_reparse_guid_data_buffer)
 
 [**ZwFsControlFile**](/previous-versions/ff566462(v=vs.85))
-
- 
 

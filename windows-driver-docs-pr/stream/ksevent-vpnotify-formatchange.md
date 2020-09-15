@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 68088d89178ffd26f975101d7a86e9f697dcb5d1
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: f17d69bf1dfccf5282014ed1c21636028588b042
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89186145"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90103306"
 ---
 # <a name="ksevent_vpnotify_formatchange"></a>KSEVENT \_ VPNOTIFY \_ FORMATCHANGE
 
@@ -51,8 +51,8 @@ KSEVENT \_ VPNOTIFY \_ FORMATCHANGE 事件用于在用户模式下将事件（�
 <td><p>否</p></td>
 <td><p>是</p></td>
 <td><p>Pin</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-kse_node" data-raw-source="[&lt;strong&gt;KSE_NODE&lt;/strong&gt;](/windows-hardware/drivers/ddi/ks/ns-ks-kse_node)"><strong>KSE_NODE</strong></a></p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-kseventdata" data-raw-source="[&lt;strong&gt;KSEVENTDATA&lt;/strong&gt;](/windows-hardware/drivers/ddi/ks/ns-ks-kseventdata)"><strong>KSEVENTDATA</strong></a></p></td>
+<td><p><a href="/windows-hardware/drivers/ddi/ks/ns-ks-kse_node" data-raw-source="[&lt;strong&gt;KSE_NODE&lt;/strong&gt;](/windows-hardware/drivers/ddi/ks/ns-ks-kse_node)"><strong>KSE_NODE</strong></a></p></td>
+<td><p><a href="/windows-hardware/drivers/ddi/ks/ns-ks-kseventdata" data-raw-source="[&lt;strong&gt;KSEVENTDATA&lt;/strong&gt;](/windows-hardware/drivers/ddi/ks/ns-ks-kseventdata)"><strong>KSEVENTDATA</strong></a></p></td>
 </tr>
 </tbody>
 </table>
@@ -68,6 +68,4 @@ KsProxy 的 VPE 筛选器通过此事件将使用 Win32 API CreateEvent) 创建�
 KsProxy VPE 筛选器通过 \_ \_ \_ 使用相同事件句柄发送 IOCTL KS 禁用事件 i/o 控制代码来禁用事件通知。 然后，将由 VPE 筛选器关闭该事件句柄。 微型驱动程序不得关闭事件句柄。
 
 有关 DirectShow 筛选器和 KsProxy 的详细信息，请参阅 [内核流式处理代理](/windows-hardware/drivers/ddi/_stream/index)。 有关处理流更改的详细信息（如视频分辨率更改），请参阅 [流更改](./stream-changes.md)。
-
- 
 

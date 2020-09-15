@@ -14,12 +14,12 @@ api_location:
 api_type:
 - HeaderDef
 ms.localizationpriority: medium
-ms.openlocfilehash: ccced609ccad014ffb55c42a595835fad2a58b98
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: b11cea884064d6adcc1c46c560ebd2678f23dc7b
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89216032"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90103854"
 ---
 # <a name="debug_outctl_xxx"></a>调试 \_ OUTCTL \_ XXX
 
@@ -38,14 +38,14 @@ DEBUG \_ OUTCTL \_ *XXX*常量用于输出控制。 常量构成一个位域，�
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">值</th>
+<th align="left">“值”</th>
 <th align="left">说明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left"><p>DEBUG_OUTCTL_THIS_CLIENT</p></td>
-<td align="left"><p>由该客户端调用的方法生成的输出将仅发送到此客户端的 <a href="https://docs.microsoft.com/windows-hardware/drivers/debugger/using-input-and-output#output-callbacks" data-raw-source="[output callbacks](./using-input-and-output.md#output-callbacks)">输出回调</a>。</p></td>
+<td align="left"><p>由该客户端调用的方法生成的输出将仅发送到此客户端的 <a href="/windows-hardware/drivers/debugger/using-input-and-output#output-callbacks" data-raw-source="[output callbacks](./using-input-and-output.md#output-callbacks)">输出回调</a>。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>DEBUG_OUTCTL_ALL_CLIENTS</p></td>
@@ -77,7 +77,7 @@ DEBUG \_ OUTCTL \_ *XXX*常量用于输出控制。 常量构成一个位域，�
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">值</th>
+<th align="left">“值”</th>
 <th align="left">说明</th>
 </tr>
 </thead>
@@ -112,7 +112,7 @@ DEBUG \_ OUTCTL \_ *XXX*常量用于输出控制。 常量构成一个位域，�
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">值</th>
+<th align="left">“值”</th>
 <th align="left">说明</th>
 </tr>
 </thead>
@@ -149,6 +149,4 @@ DEBUG \_ OUTCTL \_ *XXX*常量用于输出控制。 常量构成一个位域，�
 </tr>
 </tbody>
 </table>
-
- 
 

@@ -4,12 +4,12 @@ description: PwrTest 设备方案监视设备空闲统计信息。
 ms.assetid: 75C53B6E-3D1F-4E9D-A99E-3060A9CC37BC
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bbbb52f427722680c1936ee270b3901b55a21a7d
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 00ff5b9f180f870e791380269d7a8c16c40705b4
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89382969"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90101500"
 ---
 # <a name="pwrtest-device-scenario"></a>PwrTest 设备方案
 
@@ -87,7 +87,7 @@ pwrtest /device
 <td align="left"><p>包含所有不同的设备空闲事件。 每个 PwrTest 日志文件只能有一个<strong> &lt; DeviceIdleEvents</strong>元素。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><strong>&lt;时间戳&gt;</strong></td>
+<td align="left"><strong>&lt;标志&gt;</strong></td>
 <td align="left"><p>任何给定事件的时间戳。</p></td>
 </tr>
 <tr class="odd">
@@ -128,11 +128,11 @@ pwrtest /device
 </tr>
 <tr class="even">
 <td align="left"><strong>&lt;BusyCount&gt;</strong></td>
-<td align="left"><p>一段时间内设备驱动程序调用 <a href="https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer" data-raw-source="[&lt;strong&gt;PoSetDeviceBusy&lt;/strong&gt;](../kernel/mm-bad-pointer.md)"><strong>PoSetDeviceBusy</strong></a> 的次数。</p></td>
+<td align="left"><p>一段时间内设备驱动程序调用 <a href="/windows-hardware/drivers/kernel/mm-bad-pointer" data-raw-source="[&lt;strong&gt;PoSetDeviceBusy&lt;/strong&gt;](../kernel/mm-bad-pointer.md)"><strong>PoSetDeviceBusy</strong></a> 的次数。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><strong>&lt;AccruedBusyCount&gt;</strong></td>
-<td align="left"><p>设备驱动程序调用 <a href="https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer" data-raw-source="[&lt;strong&gt;PoSetDeviceBusy&lt;/strong&gt;](../kernel/mm-bad-pointer.md)"><strong>PoSetDeviceBusy</strong></a>的总次数。</p></td>
+<td align="left"><p>设备驱动程序调用 <a href="/windows-hardware/drivers/kernel/mm-bad-pointer" data-raw-source="[&lt;strong&gt;PoSetDeviceBusy&lt;/strong&gt;](../kernel/mm-bad-pointer.md)"><strong>PoSetDeviceBusy</strong></a>的总次数。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><strong>&lt;IdlePowerState&gt;</strong></td>
