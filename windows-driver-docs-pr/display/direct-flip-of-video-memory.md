@@ -7,12 +7,12 @@ keywords:
 - DirectFlip
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9cc4a4b272e2cd92b4e06ecbd709f5a5494fa1b3
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 9aedd3fc4a28465732a29082621b0010330bb608
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89065912"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90103926"
 ---
 # <a name="direct-flip-of-video-memory"></a>视频内存的直接交替
 
@@ -41,7 +41,7 @@ ms.locfileid: "89065912"
 <td align="left">必需</td>
 </tr>
 <tr class="even">
-<td align="left"><a href="https://docs.microsoft.com/windows-hardware/test/hlk/windows-hardware-lab-kit" data-raw-source="[WHCK](/windows-hardware/test/hlk/windows-hardware-lab-kit)">WHCK</a> 要求和测试</td>
+<td align="left"><a href="/windows-hardware/test/hlk/windows-hardware-lab-kit" data-raw-source="[WHCK](/windows-hardware/test/hlk/windows-hardware-lab-kit)">WHCK</a> 要求和测试</td>
 <td align="left"><p><strong>¦ DirectFlip</strong></p></td>
 </tr>
 </tbody>
@@ -77,6 +77,4 @@ ms.locfileid: "89065912"
 有关硬件设备实现此功能时必须满足的要求的信息，请参阅相关 [WHCK 文档](/windows-hardware/test/hlk/windows-hardware-lab-kit) ，了解 **¦ DirectFlip**。
 
 请参阅 [WDDM 1.2 功能](wddm-v1-2-features.md) ，了解 Windows 8 中添加的功能。
-
- 
 

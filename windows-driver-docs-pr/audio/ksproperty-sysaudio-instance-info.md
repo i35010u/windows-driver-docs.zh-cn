@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 184a181bbf2932aa220b7e5181984ddaf180302e
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 0c0734df695ec4d3a3d20def6811356c061d3c46
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89208901"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90101864"
 ---
 # <a name="ksproperty_sysaudio_instance_info"></a>KSPROPERTY \_ SYSAUDIO \_ 实例 \_ 信息
 
@@ -53,7 +53,7 @@ KSPROPERTY \_ SYSAUDIO \_ 实例 \_ 信息属性打开一个虚拟音频设备�
 <td align="left"><p>是</p></td>
 <td align="left"><p>是</p></td>
 <td align="left"><p>筛选器</p></td>
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-sysaudio_instance_info" data-raw-source="[&lt;strong&gt;SYSAUDIO_INSTANCE_INFO&lt;/strong&gt;](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-sysaudio_instance_info)"><strong>SYSAUDIO_INSTANCE_INFO</strong></a></p></td>
+<td align="left"><p><a href="/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-sysaudio_instance_info" data-raw-source="[&lt;strong&gt;SYSAUDIO_INSTANCE_INFO&lt;/strong&gt;](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-sysaudio_instance_info)"><strong>SYSAUDIO_INSTANCE_INFO</strong></a></p></td>
 <td align="left"><p>无</p></td>
 </tr>
 </tbody>
@@ -89,6 +89,4 @@ KSPROPERTY \_ SYSAUDIO \_ 实例 \_ 信息属性请求返回状态 " \_ 成功" 
 
 
 [**SYSAUDIO \_ 实例 \_ 信息**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-sysaudio_instance_info)
-
- 
 

@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4538f97e1886905c4e4c6d70a382f3a200793a89
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 26225afd95a4ffe5dd8b58be3c6430c315168d7f
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89208905"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90101866"
 ---
 # <a name="ksproperty_sysaudio_device_interface_name"></a>KSPROPERTY \_ SYSAUDIO \_ 设备 \_ 接口 \_ 名称
 
@@ -53,7 +53,7 @@ KSPROPERTY \_ SYSAUDIO \_ 设备 \_ 接口 \_ 名称属性检索包含指定虚�
 <td align="left"><p>是</p></td>
 <td align="left"><p>否</p></td>
 <td align="left"><p>筛选器</p></td>
-<td align="left"><p><a href="https://docs.microsoft.com/previous-versions/ff564262(v=vs.85)" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](/previous-versions/ff564262(v=vs.85))"><strong>KSPROPERTY</strong></a>+ ULONG</p></td>
+<td align="left"><p><a href="/previous-versions/ff564262(v=vs.85)" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](/previous-versions/ff564262(v=vs.85))"><strong>KSPROPERTY</strong></a>+ ULONG</p></td>
 <td align="left"><p>LPWSTR</p></td>
 </tr>
 </tbody>
@@ -95,6 +95,4 @@ KSPROPERTY \_ SYSAUDIO \_ 设备 \_ 接口 \_ 名称属性请求返回状态 " \
 [**KSPROPERTY \_ SYSAUDIO \_ 设备 \_ 实例**](ksproperty-sysaudio-device-instance.md)
 
 [**KSPROPERTY \_ SYSAUDIO \_ 实例 \_ 信息**](ksproperty-sysaudio-instance-info.md)
-
- 
 

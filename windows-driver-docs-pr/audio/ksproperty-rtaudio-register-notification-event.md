@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 76e2940ff21264a37b320c9aa18ce95438a33fb2
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: a8ed6e00810c92523d5b2ac5e926a69b3de5ca8c
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89210915"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90101930"
 ---
 # <a name="ksproperty_rtaudio_register_notification_event"></a>KSPROPERTY \_ RTAUDIO \_ 注册 \_ 通知 \_ 事件
 
@@ -52,7 +52,7 @@ KSPROPERTY \_ RTAUDIO \_ REGISTER \_ notification \_ 事件属性为 DMA 驱动�
 <td align="left"><p>是</p></td>
 <td align="left"><p>是</p></td>
 <td align="left"><p>Pin</p></td>
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksrtaudio_notification_event_property" data-raw-source="[&lt;strong&gt;KSRTAUDIO_NOTIFICATION_EVENT_PROPERTY&lt;/strong&gt;](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksrtaudio_notification_event_property)"><strong>KSRTAUDIO_NOTIFICATION_EVENT_PROPERTY</strong></a></p></td>
+<td align="left"><p><a href="/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksrtaudio_notification_event_property" data-raw-source="[&lt;strong&gt;KSRTAUDIO_NOTIFICATION_EVENT_PROPERTY&lt;/strong&gt;](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksrtaudio_notification_event_property)"><strong>KSRTAUDIO_NOTIFICATION_EVENT_PROPERTY</strong></a></p></td>
 <td align="left"><p><strong>NULL</strong></p></td>
 </tr>
 </tbody>
@@ -136,6 +136,4 @@ KSPROPERTY \_ RTAUDIO \_ 注册 \_ 通知 \_ 事件属性请求返回状态 " \_
 [**KSPROPERTY \_ RTAUDIO \_ 注销 \_ 通知 \_ 事件**](ksproperty-rtaudio-unregister-notification-event.md)
 
 [状态转换](../stream/state-transitions.md)
-
- 
 

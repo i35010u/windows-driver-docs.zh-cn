@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ddcdefffcd56aa90f162cad9902c4a974c5d1a9d
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 715d4165682ade532c1a438404c0615f456ac64b
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89206683"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90101886"
 ---
 # <a name="ksproperty_sysaudio_device_count"></a>KSPROPERTY \_ SYSAUDIO \_ 设备 \_ 计数
 
@@ -53,7 +53,7 @@ KSPROPERTY \_ SYSAUDIO \_ 设备 \_ 计数属性检索指定 DirectSound 应用�
 <td align="left"><p>是</p></td>
 <td align="left"><p>否</p></td>
 <td align="left"><p>筛选器</p></td>
-<td align="left"><p><a href="https://docs.microsoft.com/previous-versions/ff564262(v=vs.85)" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](/previous-versions/ff564262(v=vs.85))"><strong>KSPROPERTY</strong></a></p></td>
+<td align="left"><p><a href="/previous-versions/ff564262(v=vs.85)" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](/previous-versions/ff564262(v=vs.85))"><strong>KSPROPERTY</strong></a></p></td>
 <td align="left"><p>ULONG</p></td>
 </tr>
 </tbody>
@@ -96,6 +96,4 @@ SysAudio 在 KSCATEGORY 音频设备类别下的系统注册表中维护虚拟�
 
 
 [**KSPROPERTY**](/previous-versions/ff564262(v=vs.85))
-
- 
 

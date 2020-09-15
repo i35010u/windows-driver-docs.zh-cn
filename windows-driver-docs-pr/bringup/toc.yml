@@ -292,6 +292,8 @@
       items:
         - name: ACPI 系统说明表
           href: acpi-system-description-tables.md
+        - name: 调试端口表 2 (DBG2)
+          href: acpi-debug-port-table.md
         - name: 使用 AcpiGenFx 生成 ACPI 表
           href: generate-acpi-tables-by-using-acpigenfx.md
     - name: 设备管理命名空间对象
