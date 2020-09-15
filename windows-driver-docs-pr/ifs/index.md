@@ -6,12 +6,12 @@ ms.date: 09/10/2020
 ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
-ms.openlocfilehash: 7d26b9e022ade45317c6147a3d7c455ed5fc1b1c
-ms.sourcegitcommit: 2dd8e4262c30e3f8570e35da7b9485139b216ac8
+ms.openlocfilehash: c4d912e0e4568a756e56f755b3d6776d7213698f
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "90027582"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90104640"
 ---
 # <a name="file-systems-driver-design-guide"></a>文件系统驱动程序设计指南
 
@@ -33,7 +33,7 @@ Windows 中系统提供的每个文件系统旨在提供可靠的数据存储和
 - 备份代理
 - 加密产品
 
-筛选器驱动程序开发人员使用系统提供的[筛选器管理器](https://docs.microsoft.com/windows-hardware/drivers/ifs/filter-manager-concepts)，它提供一个框架来开发筛选器驱动程序，这样就无需管理文件 I/O 造成的所有复杂情况。 筛选器管理器简化了第三方筛选器驱动程序的开发，解决了旧版筛选器驱动程序模型的许多问题，例如能够通过分配的等级控制加载顺序。
+筛选器驱动程序开发人员使用系统提供的[筛选器管理器](./filter-manager-concepts.md)，它提供一个框架来开发筛选器驱动程序，这样就无需管理文件 I/O 造成的所有复杂情况。 筛选器管理器简化了第三方筛选器驱动程序的开发，解决了旧版筛选器驱动程序模型的许多问题，例如能够通过分配的等级控制加载顺序。
 
 ## <a name="file-system-and-filter-sample-code"></a>文件系统和筛选器示例代码
 
