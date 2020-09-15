@@ -5,12 +5,12 @@ ms.date: 04/20/2017
 ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
-ms.openlocfilehash: eca07e21f412ad4dee334d1d8e065e02ec617036
-ms.sourcegitcommit: 937974aa9bbe0262a7ffe9631593fab48c4e7492
+ms.openlocfilehash: 92e9bee7c828071c0b794be7056b06b32b6fd4ff
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "90010279"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90102178"
 ---
 # <a name="universal-serial-bus-usb"></a>通用串行总线 (USB)
 
@@ -119,7 +119,7 @@ Windows 操作系统为 USB 主控制器、集线器以及符合官方 USB 规�
 <td><strong>编写 USB 客户端驱动程序（KMDF、UMDF）</strong>
 <p>USB 驱动程序开发简介。 介绍在为设备提供 USB 驱动程序时如何选择最适合的模型。 此部分还包括一些教程，介绍如何使用 Microsoft Visual Studio 随附的 USB 模板编写第一个用户模式的 USB 驱动程序和内核模式的 USB 驱动程序。</p>
 <p><a href="getting-started-with-usb-client-driver-development.md" data-raw-source="[Getting started with USB client driver development](getting-started-with-usb-client-driver-development.md)">USB 客户端驱动程序开发入门</a></p>
-<p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/_usbref/" data-raw-source="[USB device driver programming reference](/windows-hardware/drivers/ddi/_usbref/)">USB device driver programming reference</a>（USB 设备驱动程序编程参考）</p>
+<p><a href="/windows-hardware/drivers/ddi/_usbref/" data-raw-source="[USB device driver programming reference](/windows-hardware/drivers/ddi/_usbref/)">USB device driver programming reference</a>（USB 设备驱动程序编程参考）</p>
 <strong>编写 USB 主控制器驱动程序</strong>
 <p>如果开发不符合规格的 xHCI 主控制器，或者开发自定义的非 xHCI 硬件（例如虚拟主控制器），则可编写可以与 UCX 通信的主控制器驱动程序。 例如，可以考虑支持 USB 设备的无线坞。 电脑通过无线坞与 USB 设备通信，使用基于 TCP 的 USB 作为传输方式。</p>
 <p><a href="developing-windows-drivers-for-usb-host-controllers.md" data-raw-source="[Developing Windows drivers for USB host controllers](developing-windows-drivers-for-usb-host-controllers.md)">为 USB 主控制器开发 Windows 驱动程序</a></p>
@@ -196,7 +196,7 @@ Windows 操作系统为 USB 主控制器、集线器以及符合官方 USB 规�
 </p>
 <strong>编写 UWP 应用</strong><p>提供如何在 UWP 应用中实现 USB 功能的分步说明。 若要为 USB 设备编写此类应用，需要使用 Visual Studio 和 Microsoft Windows 软件开发工具包 (SDK)。</p>
 <p><a href="talking-to-usb-devices-start-to-finish.md" data-raw-source="[Talk to USB devices, start to finish](talking-to-usb-devices-start-to-finish.md)">与 USB 设备通信，从开始到完成</a></p>
-<p><a href="https://docs.microsoft.com/uwp/api/Windows.Devices.Usb" data-raw-source="[&lt;strong&gt;Windows.Devices.Usb&lt;/strong&gt;](/uwp/api/Windows.Devices.Usb)"><strong>Windows.Devices.Usb</strong></a></p>
+<p><a href="/uwp/api/Windows.Devices.Usb" data-raw-source="[&lt;strong&gt;Windows.Devices.Usb&lt;/strong&gt;](/uwp/api/Windows.Devices.Usb)"><strong>Windows.Devices.Usb</strong></a></p>
 <strong>编写 Windows 桌面应用</strong>
 <p>介绍应用程序如何通过调用 WinUSB 函数与 USB 设备通信。</p>
 <p><a href="how-to-write-a-windows-desktop-app-that-communicates-with-a-usb-device.md" data-raw-source="[Write a WinUSB application](how-to-write-a-windows-desktop-app-that-communicates-with-a-usb-device.md)">编写 WinUSB 应用程序</a></p>
@@ -214,12 +214,10 @@ Windows 操作系统为 USB 主控制器、集线器以及符合官方 USB 规�
 <p><a href="https://github.com/Microsoft/Windows-universal-samples" data-raw-source="[UWP app samples for USB](https://github.com/Microsoft/Windows-universal-samples)">USB 的 UWP 应用示例</a></p>
 <p><a href="https://go.microsoft.com/fwlink/p/?linkid=618021" data-raw-source="[Windows driver samples for USB](https://go.microsoft.com/fwlink/p/?linkid=618021)">USB 的 Windows 驱动程序示例</a></p>
 <p><strong>开发工具</strong></p>
-<a href="https://docs.microsoft.com/windows-hardware/drivers/download-the-wdk" data-raw-source="[Download kits and tools for Windows]( ../download-the-wdk.md)">下载适用于 Windows 的工具包和工具</a></td>
+<a href="/windows-hardware/drivers/download-the-wdk" data-raw-source="[Download kits and tools for Windows]( ../download-the-wdk.md)">下载适用于 Windows 的工具包和工具</a></td>
 </tr>
 </tbody>
 </table>
-
- 
 
  
 

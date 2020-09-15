@@ -6,12 +6,12 @@ ms.date: 04/20/2017
 ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
-ms.openlocfilehash: 7c364274cad46783a367a2befa98df20d299531d
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 0bdd46c623d865b4cf4027b9818798317ab7fd3d
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89189161"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90106066"
 ---
 # <a name="imaging-device-driver-design-guide"></a>图像处理设备驱动程序设计指南
 
@@ -80,11 +80,11 @@ ms.locfileid: "89189161"
 <td><p>成像设备的设备类 GUID。</p></td>
 </tr>
 <tr class="even">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wiamindr_lh/nn-wiamindr_lh-iwiaminidrv" data-raw-source="[IWiaMiniDrv Interface](/windows-hardware/drivers/ddi/wiamindr_lh/nn-wiamindr_lh-iwiaminidrv)">IWiaMiniDrv 接口</a></p></td>
+<td><p><a href="/windows-hardware/drivers/ddi/wiamindr_lh/nn-wiamindr_lh-iwiaminidrv" data-raw-source="[IWiaMiniDrv Interface](/windows-hardware/drivers/ddi/wiamindr_lh/nn-wiamindr_lh-iwiaminidrv)">IWiaMiniDrv 接口</a></p></td>
 <td><p>用于管理 WIA 微型驱动程序和 WIA 服务之间的所有通信的接口。</p></td>
 </tr>
 <tr class="odd">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wiamdef/index" data-raw-source="[WIA Driver Services Library Functions](/windows-hardware/drivers/ddi/wiamdef/index)">WIA 驱动程序服务库函数</a></p></td>
+<td><p><a href="/windows-hardware/drivers/ddi/wiamdef/index" data-raw-source="[WIA Driver Services Library Functions](/windows-hardware/drivers/ddi/wiamdef/index)">WIA 驱动程序服务库函数</a></p></td>
 <td><p>WIA 微型驱动程序用于管理设备项和数据传输的 Helper 函数。</p></td>
 </tr>
 <tr class="even">
@@ -92,55 +92,55 @@ ms.locfileid: "89189161"
 <td><p>WIA 设备的属性，包括状态、功能和设备标识信息。</p></td>
 </tr>
 <tr class="odd">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/_image/index" data-raw-source="[WIA Utility Library Functions and Classes](/windows-hardware/drivers/ddi/_image/index)">WIA 实用工具库函数和类</a></p></td>
+<td><p><a href="/windows-hardware/drivers/ddi/_image/index" data-raw-source="[WIA Utility Library Functions and Classes](/windows-hardware/drivers/ddi/_image/index)">WIA 实用工具库函数和类</a></p></td>
 <td><p>WIA 微型驱动程序用于支持调试和执行常见任务的实用工具函数和类。</p></td>
 </tr>
 <tr class="even">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wiamindr_lh/nn-wiamindr_lh-iwiaminidrvcallback" data-raw-source="[IWiaMiniDrvCallBack Interface](/windows-hardware/drivers/ddi/wiamindr_lh/nn-wiamindr_lh-iwiaminidrvcallback)">IWiaMiniDrvCallBack 接口</a></p></td>
+<td><p><a href="/windows-hardware/drivers/ddi/wiamindr_lh/nn-wiamindr_lh-iwiaminidrvcallback" data-raw-source="[IWiaMiniDrvCallBack Interface](/windows-hardware/drivers/ddi/wiamindr_lh/nn-wiamindr_lh-iwiaminidrvcallback)">IWiaMiniDrvCallBack 接口</a></p></td>
 <td><p>用于在 WIA 服务和 WIA 微型驱动程序之间传输状态和图像数据的回调接口。</p></td>
 </tr>
 <tr class="odd">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wiamindr_lh/nn-wiamindr_lh-iwiadrvitem" data-raw-source="[IWiaDrvItem Interface](/windows-hardware/drivers/ddi/wiamindr_lh/nn-wiamindr_lh-iwiadrvitem)">IWiaDrvItem 接口</a></p></td>
+<td><p><a href="/windows-hardware/drivers/ddi/wiamindr_lh/nn-wiamindr_lh-iwiadrvitem" data-raw-source="[IWiaDrvItem Interface](/windows-hardware/drivers/ddi/wiamindr_lh/nn-wiamindr_lh-iwiadrvitem)">IWiaDrvItem 接口</a></p></td>
 <td><p>WIA 微型驱动程序用于管理 WIA 驱动程序项树的接口。</p></td>
 </tr>
 <tr class="even">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wia_lh/nn-wia_lh-iwiaerrorhandler" data-raw-source="[IWiaErrorHandler Interface](/windows-hardware/drivers/ddi/wia_lh/nn-wia_lh-iwiaerrorhandler)">IWiaErrorHandler 接口</a></p></td>
+<td><p><a href="/windows-hardware/drivers/ddi/wia_lh/nn-wia_lh-iwiaerrorhandler" data-raw-source="[IWiaErrorHandler Interface](/windows-hardware/drivers/ddi/wia_lh/nn-wia_lh-iwiaerrorhandler)">IWiaErrorHandler 接口</a></p></td>
 <td><p>WIA 微型驱动程序用来提供错误状态和支持错误恢复的接口。</p></td>
 </tr>
 <tr class="odd">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wia_lh/nn-wia_lh-iwiaimagefilter" data-raw-source="[IWiaImageFilter Interface](/windows-hardware/drivers/ddi/wia_lh/nn-wia_lh-iwiaimagefilter)">IWiaImageFilter 接口</a></p></td>
+<td><p><a href="/windows-hardware/drivers/ddi/wia_lh/nn-wia_lh-iwiaimagefilter" data-raw-source="[IWiaImageFilter Interface](/windows-hardware/drivers/ddi/wia_lh/nn-wia_lh-iwiaimagefilter)">IWiaImageFilter 接口</a></p></td>
 <td><p>由图像处理筛选器实现并由 WIA 服务调用以用来与筛选器通信的接口。</p></td>
 </tr>
 <tr class="even">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/_image/index" data-raw-source="[IWiaLog Interface and Diagnostic Log Macros](/windows-hardware/drivers/ddi/_image/index)">IWiaLog 接口和诊断日志宏</a></p></td>
+<td><p><a href="/windows-hardware/drivers/ddi/_image/index" data-raw-source="[IWiaLog Interface and Diagnostic Log Macros](/windows-hardware/drivers/ddi/_image/index)">IWiaLog 接口和诊断日志宏</a></p></td>
 <td><p>WIA 微型驱动程序用于将跟踪、错误和警告消息记录到诊断日志文件的接口和宏。</p></td>
 </tr>
 <tr class="odd">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wia_lh/nn-wia_lh-iwiasegmentationfilter" data-raw-source="[IWiaSegmentationFilter Interface](/windows-hardware/drivers/ddi/wia_lh/nn-wia_lh-iwiasegmentationfilter)">IWiaSegmentationFilter 接口</a></p></td>
+<td><p><a href="/windows-hardware/drivers/ddi/wia_lh/nn-wia_lh-iwiasegmentationfilter" data-raw-source="[IWiaSegmentationFilter Interface](/windows-hardware/drivers/ddi/wia_lh/nn-wia_lh-iwiasegmentationfilter)">IWiaSegmentationFilter 接口</a></p></td>
 <td><p>WIA 微型驱动程序用来检测分段图像中的区域的接口。</p></td>
 </tr>
 <tr class="even">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wia_lh/nn-wia_lh-iwiatransfercallback" data-raw-source="[IWiaTransferCallback Interface](/windows-hardware/drivers/ddi/wia_lh/nn-wia_lh-iwiatransfercallback)">IWiaTransferCallback 接口</a></p></td>
+<td><p><a href="/windows-hardware/drivers/ddi/wia_lh/nn-wia_lh-iwiatransfercallback" data-raw-source="[IWiaTransferCallback Interface](/windows-hardware/drivers/ddi/wia_lh/nn-wia_lh-iwiatransfercallback)">IWiaTransferCallback 接口</a></p></td>
 <td><p>由图像处理筛选器实现并由 WIA 服务调用以用来启动图像流处理的接口。</p></td>
 </tr>
 <tr class="odd">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/_image/index" data-raw-source="[WIA Microdriver Functions, Structures, and Commands](/windows-hardware/drivers/ddi/_image/index)">WIA 微驱动程序函数、结构和命令</a></p></td>
+<td><p><a href="/windows-hardware/drivers/ddi/_image/index" data-raw-source="[WIA Microdriver Functions, Structures, and Commands](/windows-hardware/drivers/ddi/_image/index)">WIA 微驱动程序函数、结构和命令</a></p></td>
 <td><p>WIA 微驱动程序使用的函数、结构和命令。</p></td>
 </tr>
 <tr class="even">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wiadevd/index" data-raw-source="[WIA User Interface Extensions](/windows-hardware/drivers/ddi/wiadevd/index)">WIA 用户界面扩展</a></p></td>
+<td><p><a href="/windows-hardware/drivers/ddi/wiadevd/index" data-raw-source="[WIA User Interface Extensions](/windows-hardware/drivers/ddi/wiadevd/index)">WIA 用户界面扩展</a></p></td>
 <td><p>设备供应商用于为其设备提供自定义用户界面的接口。</p></td>
 </tr>
 <tr class="odd">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/_image/index" data-raw-source="[WIA Structures](/windows-hardware/drivers/ddi/_image/index)">WIA 结构</a></p></td>
+<td><p><a href="/windows-hardware/drivers/ddi/_image/index" data-raw-source="[WIA Structures](/windows-hardware/drivers/ddi/_image/index)">WIA 结构</a></p></td>
 <td><p>驱动程序级 WIA 方法和函数使用的结构。</p></td>
 </tr>
 <tr class="even">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/_image/index" data-raw-source="[Still Image Interfaces](/windows-hardware/drivers/ddi/_image/index)">静止图像接口</a></p></td>
+<td><p><a href="/windows-hardware/drivers/ddi/_image/index" data-raw-source="[Still Image Interfaces](/windows-hardware/drivers/ddi/_image/index)">静止图像接口</a></p></td>
 <td><p>STI 驱动程序所使用的接口、结构、数据类型和控制代码。</p></td>
 </tr>
 <tr class="odd">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/image/scan-service--ws-scan--schema" data-raw-source="[Web Services on Devices Reference](./scan-service--ws-scan--schema.md)">基于设备的 Web 服务参考</a></p></td>
+<td><p><a href="/windows-hardware/drivers/image/scan-service--ws-scan--schema" data-raw-source="[Web Services on Devices Reference](./scan-service--ws-scan--schema.md)">基于设备的 Web 服务参考</a></p></td>
 <td><p>设备上的 Web 服务信息，包括扫描服务 (WS-SCAN)</p></td>
 </tr>
 </tbody>
