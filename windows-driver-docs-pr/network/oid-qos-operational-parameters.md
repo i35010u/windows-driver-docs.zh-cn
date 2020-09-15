@@ -23,7 +23,7 @@ ms.locfileid: "90103331"
 
  
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
 当 NDIS 成功处理 OID QOS 操作参数的 OID 查询请求时 \_ \_ \_ ，它将返回其已从以前的 [**ndis \_ 状态 \_ QOS \_ 操作 \_ 参数 \_ **](./ndis-status-qos-operational-parameters-change.md) 缓存的操作 NDIS qos 参数更改了由微型端口驱动程序颁发的状态指示。 驱动程序发出此状态指示来报告初始的操作 NDIS QoS 参数集。 每当操作 NDIS QoS 参数发生变化时，驱动程序还会发出此状态指示。
@@ -93,7 +93,7 @@ NDIS 返回以下状态代码之一。
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 ****

@@ -76,7 +76,7 @@ KSJACK \_ DESCRIPTION2 \[ 0\]
 
 KSJACK \_ DESCRIPTION2 \[\]
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
 每个 KSJACK \_ DESCRIPTION2 结构都必须只包含一个插孔的相关信息。

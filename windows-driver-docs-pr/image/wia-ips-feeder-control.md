@@ -35,7 +35,7 @@ ms.locfileid: "90105352"
 
 访问权限：读/写
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
 下表描述了 " **WIA \_ ip \_ 进纸器 \_ 控制** " 属性的有效值。

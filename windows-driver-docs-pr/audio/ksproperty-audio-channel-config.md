@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 56c939b6747dcce2b376d8f72cc44027f60e1a09
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: e90101babb0da6bc0e78aa6cc7b29ce94e874646
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89206973"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90102140"
 ---
 # <a name="ksproperty_audio_channel_config"></a>KSPROPERTY \_ 音频 \_ 通道 \_ 配置
 
@@ -53,8 +53,8 @@ KSPROPERTY \_ 音频 \_ 通道 \_ CONFIG 属性指定节点输出的音频流中
 <td align="left"><p>是</p></td>
 <td align="left"><p>是</p></td>
 <td align="left"><p>筛选器/Pin</p></td>
-<td align="left"><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksnodeproperty" data-raw-source="[&lt;strong&gt;KSNODEPROPERTY&lt;/strong&gt;](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksnodeproperty)"><strong>KSNODEPROPERTY</strong></a></td>
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksaudio_channel_config" data-raw-source="[&lt;strong&gt;KSAUDIO_CHANNEL_CONFIG&lt;/strong&gt;](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksaudio_channel_config)"><strong>KSAUDIO_CHANNEL_CONFIG</strong></a></p></td>
+<td align="left"><a href="/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksnodeproperty" data-raw-source="[&lt;strong&gt;KSNODEPROPERTY&lt;/strong&gt;](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksnodeproperty)"><strong>KSNODEPROPERTY</strong></a></td>
+<td align="left"><p><a href="/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksaudio_channel_config" data-raw-source="[&lt;strong&gt;KSAUDIO_CHANNEL_CONFIG&lt;/strong&gt;](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksaudio_channel_config)"><strong>KSAUDIO_CHANNEL_CONFIG</strong></a></p></td>
 </tr>
 </tbody>
 </table>
@@ -67,7 +67,7 @@ KSPROPERTY \_ 音频 \_ 通道 \_ CONFIG 属性指定节点输出的音频流中
 
 KSPROPERTY \_ 音频 \_ 通道 \_ CONFIG 属性请求返回状态 " \_ 成功" 以指示已成功完成。 否则，请求将返回相应的错误状态代码。
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
 用作 DAC 节点的属性时 ([**KSNODETYPE \_ DAC**](ksnodetype-dac.md)) 或3D 节点 ([**KSNODETYPE \_ 三维 \_ 效果**](ksnodetype-3d-effects.md)) ，则 KSPROPERTY \_ 音频 \_ 通道 \_ CONFIG 属性指定 DirectSound 发言人配置。 对于立体声扬声器配置，此属性与 [**KSPROPERTY \_ 音频 \_ 立体声 \_ 扬声器 \_ 几何**](ksproperty-audio-stereo-speaker-geometry.md) 属性结合使用，可区分耳机和几个立体声扬声器配置。 有关扬声器配置的详细信息，请参阅 [DirectSound 演讲者-配置设置](./directsound-speaker-configuration-settings.md)。
@@ -112,6 +112,4 @@ DirectSound 将 KSPROPERTY \_ AUDIO \_ 信道 \_ CONFIG 视为 DAC 节点上的�
 [**KSPROPERTY \_ 音频 \_ 立体声 \_ 扬声器 \_ 几何**](ksproperty-audio-stereo-speaker-geometry.md)
 
 [**KSPROPERTY \_ 音频 \_ VOLUMELEVEL**](ksproperty-audio-volumelevel.md)
-
- 
 

@@ -63,7 +63,7 @@ KSPROPERTY \_ VIDEOPROCAMP \_ 对比度属性控制相机 (亮度增益) 设置�
 
  (操作数据) 的属性值是指定相机对比度设置的 LONG 值。 对比度值表示为增益系数乘以100。
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
 KSPROPERTY **Value** \_ VIDEOPROCAMP S 结构的 Value 成员 \_ 指定对比度值。
@@ -86,7 +86,7 @@ KSPROPERTY **Value** \_ VIDEOPROCAMP S 结构的 Value 成员 \_ 指定对比度
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSPROPERTY**](/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)

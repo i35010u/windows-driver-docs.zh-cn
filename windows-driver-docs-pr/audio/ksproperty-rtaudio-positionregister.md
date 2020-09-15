@@ -68,7 +68,7 @@ KSPROPERTY \_ RTAUDIO \_ POSITIONREGISTER 属性将特定流的音频设备位�
 
 KSPROPERTY \_ RTAUDIO \_ POSITIONREGISTER 属性请求返回状态 \_ SUCCESS 以指示该请求已成功完成。 否则，请求将返回相应的失败状态代码。
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
 通常，音频应用程序必须监视音频流的当前位置。 此位置被指定为距流开头的字节偏移量：

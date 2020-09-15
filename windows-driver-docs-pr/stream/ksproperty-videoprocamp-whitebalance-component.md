@@ -90,7 +90,7 @@ KSPROPERTY \_ VIDEOPROCAMP \_ WHITEBALANCE \_ COMPONENT 属性指定视频格式
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSPROPERTY**](/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)

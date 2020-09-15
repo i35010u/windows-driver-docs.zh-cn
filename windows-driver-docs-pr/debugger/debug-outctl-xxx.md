@@ -38,7 +38,7 @@ DEBUG \_ OUTCTL \_ *XXX*常量用于输出控制。 常量构成一个位域，�
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">“值”</th>
+<th align="left">值</th>
 <th align="left">说明</th>
 </tr>
 </thead>
@@ -77,7 +77,7 @@ DEBUG \_ OUTCTL \_ *XXX*常量用于输出控制。 常量构成一个位域，�
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">“值”</th>
+<th align="left">值</th>
 <th align="left">说明</th>
 </tr>
 </thead>
@@ -112,7 +112,7 @@ DEBUG \_ OUTCTL \_ *XXX*常量用于输出控制。 常量构成一个位域，�
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">“值”</th>
+<th align="left">值</th>
 <th align="left">说明</th>
 </tr>
 </thead>

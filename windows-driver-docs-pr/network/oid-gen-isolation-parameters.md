@@ -36,7 +36,7 @@ NDIS 和过量驱动程序发出对象标识符 (OID) 请求 OID \_ GEN \_ 隔�
 
 如果未在 VM 网络适配器上设置多租户配置参数，网络适配器微型端口驱动程序将设置 **数据。查询 \_ 信息。** 将 [**ndis \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request) 结构的成员 BytesWritten 为零并返回 **ndis \_ 状态 \_ 成功**。 在这种情况下，数据中的数据 **。查询 \_ 信息。** 微型端口驱动程序不修改 InformationBuffer 成员。
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
 ### <a name="return-status-codes"></a>返回状态代码
@@ -92,7 +92,7 @@ VM 网络适配器微型端口驱动程序返回此 OID 请求的以下状态代
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**NDIS \_ 隔离 \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_isolation_parameters)

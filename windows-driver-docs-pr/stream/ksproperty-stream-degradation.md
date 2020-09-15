@@ -61,7 +61,7 @@ KSPROPERTY \_ 流 \_ 降级属性是一个可选属性，如果 pin 允许降级
 
  
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
 查询时，属性返回要以 [**KSMULTIPLE \_ ITEM**](/windows-hardware/drivers/ddi/ks/ns-ks-ksmultiple_item) 格式返回的结构的大小和计数，后跟 [**KSDEGRADE**](/previous-versions/ff561671(v=vs.85)) 结构。
@@ -86,7 +86,7 @@ KSPROPERTY \_ 流 \_ 降级属性是一个可选属性，如果 pin 允许降级
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSPROPERTY**](/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)

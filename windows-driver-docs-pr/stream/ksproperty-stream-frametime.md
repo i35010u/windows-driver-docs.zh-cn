@@ -61,7 +61,7 @@ KSPROPERTY \_ STREAM \_ FRAMETIME 属性允许客户端根据特定的媒体流�
 
  
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
 KSPROPERTY \_ STREAM \_ FRAMETIME 是一个可选属性，如果 pin 识别出正在传输的媒体类型的细节，则应该实现该属性。
@@ -86,7 +86,7 @@ KSPROPERTY \_ STREAM \_ FRAMETIME 是一个可选属性，如果 pin 识别出�
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSPROPERTY**](/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)

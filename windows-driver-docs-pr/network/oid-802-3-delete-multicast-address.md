@@ -25,7 +25,7 @@ ms.locfileid: "90107326"
 <a href="" id="ndis-6-0-and-later-miniport-drivers"></a>NDIS 6.0 和更高版本的微型端口驱动程序  
 未请求。
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
 [**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的**InformationBuffer**成员包含要从多播地址列表中删除的6个字节的地址。

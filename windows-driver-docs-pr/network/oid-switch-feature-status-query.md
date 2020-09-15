@@ -23,7 +23,7 @@ Hyper-v 可扩展交换机的协议边缘发出对象标识符 (OID) 方法请�
 
 -   一个 [**NDIS \_ 交换机 \_ 功能 \_ 状态 \_ 自定义**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_feature_status_custom) 结构，其中包含可扩展交换机的功能状态信息。
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
 有关如何处理 oid 设置 oid \_ 开关 \_ 功能 \_ 状态查询的准则 \_ ，请参阅 [管理自定义交换机功能状态信息](./managing-custom-switch-feature-status-information.md)。

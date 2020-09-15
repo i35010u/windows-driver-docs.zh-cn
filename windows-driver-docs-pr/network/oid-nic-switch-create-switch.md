@@ -25,7 +25,7 @@ NDIS 将此 OID 方法请求颁发给网络适配器 PCI Express (PCIe 的微型
 
 [**Ndis \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的**InformationBuffer**成员包含指向[**NDIS \_ NIC \_ 交换机 \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_parameters)结构的指针。
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
 接收到 oid NIC 交换机 CREATE SWITCH 的 OID 方法请求时 \_ \_ \_ \_ ，PF 微型端口驱动程序必须执行以下操作：
@@ -121,7 +121,7 @@ PF 多端口驱动程序为 OID \_ NIC \_ 交换机 \_ 创建开关的 oid 方�
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 ****

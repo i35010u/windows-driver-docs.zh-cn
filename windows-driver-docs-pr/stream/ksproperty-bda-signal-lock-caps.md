@@ -58,7 +58,7 @@ ms.locfileid: "90104478"
 
  
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
 KSP **NodeId** \_ 节点的节点1指定了控制节点的标识符，或设置为−1以指定 pin。

@@ -66,7 +66,7 @@ KSPROPERTY \_ RTAUDIO \_ PACKETCOUNT 返回从 WaveRT 缓冲区完全传输到�
 
 KSPROPERTY \_ RTAUDIO \_ PACKETCOUNT 属性请求返回状态 \_ SUCCESS 以指示该请求已成功完成。 否则，请求将返回相应的失败状态代码。
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
 从数据包计数中，OS 可以派生出其写入到 WaveRT 缓冲区的数据包的流位置。 操作系统还可以派生下一个数据包的 WaveRT 缓冲区位置，以便在 WaveRT 缓冲区中写入。 对于 WaveRT 驱动程序，驱动程序会发出单个通知事件的信号，因为它会从每个 WaveRT 缓冲区包中传输数据。 因此，单独的事件无法指示正在传输 WaveRT 缓冲区中的数据包。 在正常操作中，这并不是问题，但在下溢情况下，通过查询 OS 可以确定要写入的数据包的数据包计数，可以更轻松地实现更正。

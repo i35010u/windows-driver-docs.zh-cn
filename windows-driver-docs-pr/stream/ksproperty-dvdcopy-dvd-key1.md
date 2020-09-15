@@ -63,7 +63,7 @@ KSPROPERTY \_ DVDCOPY \_ dvd \_ KEY1 属性检索作为 DVD 版权保护身份�
 
 ) 操作数据 (的属性值是用于 \_ \_ 描述 DVD 解码器第一个总线密钥的 KS DVDCOPY BUSKEY 结构。
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
 有关第一个总线密钥的详细信息，请参阅 [DVD 版权保护](./dvd-copyright-protection.md)。
@@ -84,7 +84,7 @@ KSPROPERTY \_ DVDCOPY \_ dvd \_ KEY1 属性检索作为 DVD 版权保护身份�
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KS \_ DVDCOPY \_ BUSKEY**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-_ks_dvdcopy_buskey)

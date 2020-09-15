@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 01/31/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: a03d4aef770cd5e2f51cbf62cc68b75fef477727
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: ef92f80fb2152f0d3fdb5408d3a531de23d97c3f
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89210923"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90101938"
 ---
 # <a name="ksproperty_rtaudio_presentation_position"></a>KSPROPERTY \_ RTAUDIO \_ 演示 \_ 位置
 
@@ -50,8 +50,8 @@ KSPROPERTY \_ RTAUDIO \_ 演示 \_ 位置返回流演示信息。
 <td align="left"><p>是</p></td>
 <td align="left"><p>否</p></td>
 <td align="left"><p>Pin</p></td>
-<td align="left"><p><a href="https://docs.microsoft.com/previous-versions/ff564262(v=vs.85)" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](/previous-versions/ff564262(v=vs.85))"><strong>KSPROPERTY</strong></a></p></td>
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksaudio_presentation_position"><STRONG>KSAUDIO_PRESENTATION_POSITION</STRONG></a></p></td>
+<td align="left"><p><a href="/previous-versions/ff564262(v=vs.85)" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](/previous-versions/ff564262(v=vs.85))"><strong>KSPROPERTY</strong></a></p></td>
+<td align="left"><p><a href="/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksaudio_presentation_position"><STRONG>KSAUDIO_PRESENTATION_POSITION</STRONG></a></p></td>
 </tr>
 </tbody>
 </table>
@@ -65,7 +65,7 @@ KSPROPERTY \_ RTAUDIO \_ 演示 \_ 位置返回流演示信息。
 
 KSPROPERTY \_ RTAUDIO \_ 演示 \_ 位置属性请求返回状态 " \_ 成功" 以指示已成功完成。 否则，请求将返回相应的失败状态代码。
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
 操作系统可能会定期从驱动程序获取此属性，以从驱动程序中检索最近的演示位置信息，以允许上层与音频流同步视频或其他活动。
@@ -98,6 +98,4 @@ KSPROPERTY \_ RTAUDIO \_ 演示 \_ 位置属性请求返回状态 " \_ 成功" �
 
 
 [KSPROPSETID \_ RTAudio](kspropsetid-rtaudio.md)
-
- 
 

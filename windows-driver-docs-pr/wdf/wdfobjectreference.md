@@ -42,7 +42,7 @@ VOID WdfObjectReference(
 
 如果驱动程序提供的对象句柄无效，则会发生 bug 检查。
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
 如果驱动程序调用 **WdfObjectReference** 来递增引用计数，则驱动程序必须调用 [**WdfObjectDereference**](wdfobjectdereference.md) 来减小计数。
@@ -100,7 +100,7 @@ WdfObjectReference(Object);
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**WdfObjectReferenceActual**](/windows-hardware/drivers/ddi/wdfobject/nf-wdfobject-wdfobjectreferenceactual)

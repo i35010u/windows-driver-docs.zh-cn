@@ -61,7 +61,7 @@ KSPROPERTY \_ STREAMALLOCATOR \_ FUNCTIONTABLE 属性检索给定分配器的函
 
  
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
 KSPROPERTY \_ STREAMALLOCATOR \_ FUNCTIONTABLE 只由支持调度 \_ 级别函数接口的分配器使用。 支持此属性的分配器必须能够为派单 \_ 级别和更低的 IRQL 分配和释放帧。 此属性只能从内核模式进行访问。

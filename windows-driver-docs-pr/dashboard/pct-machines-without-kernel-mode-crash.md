@@ -4,12 +4,12 @@ description: 该度量将 7 天滑动窗口中的遥测数据进行聚合并形�
 ms.topic: article
 ms.date: 05/29/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 722dc7626f61ee4001b4c16f1d1fe36d7d8becc7
-ms.sourcegitcommit: 8517f8ecc7a53e958ea3989ea5441ec549b70b64
+ms.openlocfilehash: 5e145ad5d5dd3a6fa5c90b3815330eae6d2bd1f7
+ms.sourcegitcommit: c214e65a7f5dd868037718a34ca7cc80584df5c6
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2020
-ms.locfileid: "85353727"
+ms.lasthandoff: 09/09/2020
+ms.locfileid: "89615481"
 ---
 # <a name="percent-of-machines-without-a-kernel-mode-crash"></a>没有内核模式崩溃的计算机所占的百分比
 
@@ -28,7 +28,7 @@ ms.locfileid: "85353727"
 |通过标准|<= 1% 的计算机遇到了内核模式崩溃|
 |已启用队列|是|
 |每队列最小总体数量|500 台计算机|
-|度量 ID|25739920|
+|度量 ID|25739920 或 26118008|
 
 ## <a name="calculation"></a>计算
 

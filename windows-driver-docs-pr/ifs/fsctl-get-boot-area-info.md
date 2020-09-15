@@ -91,7 +91,7 @@ ms.locfileid: "90102988"
 
  
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
 **FSCTL \_可以在 FastFAT 和 exFAT 设备上使用 "获取 \_ 启动 \_ 区域 \_ 信息** " 控制代码。 此功能支持为闪存驱动器等设备使用 BitLocker。

@@ -85,7 +85,7 @@ PnP 管理器在任意线程的上下文中以 IRQL 被动级别发送此 IRP \_
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**IoInvalidateDeviceState**](/windows-hardware/drivers/ddi/wdm/nf-wdm-ioinvalidatedevicestate)

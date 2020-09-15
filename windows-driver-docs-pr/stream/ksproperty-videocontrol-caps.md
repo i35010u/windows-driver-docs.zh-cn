@@ -84,7 +84,7 @@ KSPROPERTY **VideoControlCaps** \_ VIDEOCONTROL \_ Cap S 结构的 VideoControlC
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSPROPERTY**](/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)

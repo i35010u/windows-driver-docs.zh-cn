@@ -67,7 +67,7 @@ KSPROPERTY \_ TOPOLOGYNODE \_ ENABLE 属性用于在已生成的拓扑中打开�
 
 KSPROPERTY \_ TOPOLOGYNODE \_ ENABLE 属性请求返回状态 \_ SUCCESS 以指示已成功完成。 否则，请求将返回相应的错误状态代码。
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
 启用已启用的节点或禁用已禁用的节点不起作用，但不应将其视为错误。

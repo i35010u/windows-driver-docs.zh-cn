@@ -20,7 +20,7 @@ PnP 管理器使用此 IRP 获取设备的资源需求列表。
 
 总线驱动程序必须为需要硬件资源的子设备处理此请求。 总线筛选器驱动程序可以处理此请求。 函数和筛选器驱动程序不处理此 IRP。
 
-## <a name="value"></a>“值”
+## <a name="value"></a>值
 
 0x0B
 
@@ -86,7 +86,7 @@ PnP 管理器在 \_ 任意线程上下文中以 IRQL 被动级别发送此 IRP�
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**IO \_ 资源 \_ 需求 \_ 列表**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_resource_requirements_list)

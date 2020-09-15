@@ -98,7 +98,7 @@ Sum (所有包含的元素的大小) 。
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [OID \_ WDI \_ 任务 \_ 启动 \_ AP](./oid-wdi-task-start-ap.md)

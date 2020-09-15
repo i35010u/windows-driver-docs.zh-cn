@@ -53,7 +53,7 @@ KsCallbackReturn 规则指定内核流式处理 (KS) 微型端口驱动程序回
 
  
 
-<a name="see-also"></a>另请参阅
+<a name="see-also"></a>请参阅
 --------
 
 [驱动程序验证程序](./driver-verifier.md) 

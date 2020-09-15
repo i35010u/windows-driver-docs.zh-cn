@@ -61,7 +61,7 @@ KSPROPERTY \_ STREAM \_ PRESENTATIONTIME 属性用于检索和设置筛选器 pi
 
  
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
 KSPROPERTY \_ STREAM \_ PRESENTATIONTIME 是一个可选属性，如果 pin 保留位置信息，或在与界定闭合相关的 pin 之间使用不同的时间戳格式，则应该实现该属性。 因此，它需要在出现搜索表示时间时将时间戳转换为。

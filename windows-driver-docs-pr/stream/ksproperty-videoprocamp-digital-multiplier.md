@@ -63,7 +63,7 @@ KSPROPERTY \_ VIDEOPROCAMP \_ 数字 \_ 乘数属性指定要应用于图像的�
 
 ) 操作数据 (的属性值是指定相机的数字乘数设置的 LONG。 值指定相机应用于图像的数字乘数值。
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
 发出集请求时，客户端应提供 KSPROPERTY VIDEOPROCAMP 节点的 **值** 成员的数字乘数值 \_ \_ \_ 。
@@ -88,7 +88,7 @@ KSPROPERTY \_ VIDEOPROCAMP \_ 数字 \_ 乘数属性指定要应用于图像的�
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSPROPERTY**](/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)

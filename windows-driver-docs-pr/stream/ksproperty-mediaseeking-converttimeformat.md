@@ -61,7 +61,7 @@ KSPROPERTY \_ MEDIASEEKING \_ CONVERTTIMEFORMAT 属性将指定的媒体时间�
 
  
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
 另请参阅 [KS 属性](./ks-properties.md)。

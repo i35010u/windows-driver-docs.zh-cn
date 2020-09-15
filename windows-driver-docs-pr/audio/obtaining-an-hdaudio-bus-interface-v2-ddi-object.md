@@ -24,7 +24,7 @@ ms.locfileid: "90101784"
 <thead>
 <tr class="header">
 <th align="left">参数</th>
-<th align="left">“值”</th>
+<th align="left">值</th>
 </tr>
 </thead>
 <tbody>

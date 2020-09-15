@@ -67,7 +67,7 @@ KSPROPERTY \_ SYSAUDIO \_ 附加 \_ 虚拟 \_ 源属性将虚拟源附加到虚�
 
 KSPROPERTY \_ SYSAUDIO \_ 附加 \_ 虚拟 \_ 源属性请求返回状态 \_ SUCCESS 以指示已成功完成。 否则，请求将返回相应的错误状态代码。
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
 此属性将虚拟源附加到虚拟音频设备上的 pin 实例。 有关详细信息，请参阅 [**KSPROPERTY \_ SYSAUDIO \_ CREATE \_ VIRTUAL \_ SOURCE**](ksproperty-sysaudio-create-virtual-source.md)。

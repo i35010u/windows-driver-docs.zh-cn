@@ -44,7 +44,7 @@ Microsoft 提供的软件有助于内容编码系统 (CSS) 方案所需的身份
 </colgroup>
 <thead>
 <tr class="header">
-<th>Property</th>
+<th>属性</th>
 <th>说明</th>
 </tr>
 </thead>

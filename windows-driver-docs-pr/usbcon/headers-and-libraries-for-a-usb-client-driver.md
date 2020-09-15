@@ -17,7 +17,7 @@ ms.locfileid: "90102900"
 
 若要查找特定设备驱动程序接口的标头和库 (DDI) ，请参阅 [USB 参考](/windows-hardware/drivers/ddi/_usbref/)中的参考页。
 
-## <a name="headers"></a>头文件
+## <a name="headers"></a>标头
 
 
 <table>

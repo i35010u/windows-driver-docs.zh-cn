@@ -70,7 +70,7 @@ KSPROPERTY \_ CAMERACONTROL \_ 卷筒 \_ 相对属性指定图像查看轴周围
 </colgroup>
 <thead>
 <tr class="header">
-<th>“值”</th>
+<th>值</th>
 <th>说明</th>
 </tr>
 </thead>
@@ -92,7 +92,7 @@ KSPROPERTY \_ CAMERACONTROL \_ 卷筒 \_ 相对属性指定图像查看轴周围
 
  
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
 [**KSPROPERTY \_ CAMERACONTROL \_ 节点 \_ **](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_cameracontrol_node_s)结构的**值**成员指定了相对滚动。

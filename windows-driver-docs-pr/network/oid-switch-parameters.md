@@ -19,7 +19,7 @@ Hyper-v 可扩展交换机扩展 (OID 发出对象标识符) 请求 OID \_ 开�
 
 如果 OID 查询请求成功完成， [**ndis \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的**InformationBuffer**成员包含指向[**ndis \_ 开关 \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_parameters)结构的指针。
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
 当扩展处理返回的 [**ndis \_ 开关 \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_parameters) 结构时，它不能假定 **ndis \_ 开关 \_ 参数** 结构的各个字符串成员（如 **SwitchName**）都以 null 结尾。 这些字符串成员的数据类型由 [**IF \_ 计数 \_ 字符串**](/windows/desktop/api/ifdef/ns-ifdef-_if_counted_string_lh) 结构的类型定义。 该扩展必须确定此结构的 **length** 成员值中的字符串长度。
@@ -81,7 +81,7 @@ Hyper-v 可扩展交换机扩展 (OID 发出对象标识符) 请求 OID \_ 开�
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 ****

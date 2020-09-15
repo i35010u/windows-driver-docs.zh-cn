@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0a7b316ceabaf46fce01272c1af90074cd0e3ff7
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: c0d4bbe5d94ffc4b5c93034fde563fe88c1b2567
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89209957"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90102596"
 ---
 # <a name="ksproperty_audiosignalprocessing_modes"></a>KSPROPERTY \_ AUDIOSIGNALPROCESSING \_ 模式
 
@@ -50,8 +50,8 @@ ms.locfileid: "89209957"
 <td align="left"><p>是</p></td>
 <td align="left"><p>否</p></td>
 <td align="left"><p>通过筛选器实例 (固定工厂) </p></td>
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksp_pin" data-raw-source="[KSP_PIN](/windows-hardware/drivers/ddi/ks/ns-ks-ksp_pin)">KSP_PIN</a></p></td>
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksmultiple_item" data-raw-source="[KSMULTIPLE_ITEM](/windows-hardware/drivers/ddi/ks/ns-ks-ksmultiple_item)">KSMULTIPLE_ITEM</a></p></td>
+<td align="left"><p><a href="/windows-hardware/drivers/ddi/ks/ns-ks-ksp_pin" data-raw-source="[KSP_PIN](/windows-hardware/drivers/ddi/ks/ns-ks-ksp_pin)">KSP_PIN</a></p></td>
+<td align="left"><p><a href="/windows-hardware/drivers/ddi/ks/ns-ks-ksmultiple_item" data-raw-source="[KSMULTIPLE_ITEM](/windows-hardware/drivers/ddi/ks/ns-ks-ksmultiple_item)">KSMULTIPLE_ITEM</a></p></td>
 </tr>
 </tbody>
 </table>
@@ -105,6 +105,4 @@ ms.locfileid: "89209957"
 [KSMULTIPLE \_ 项](/windows-hardware/drivers/ddi/ks/ns-ks-ksmultiple_item)
 
 [KSP \_ PIN](/windows-hardware/drivers/ddi/ks/ns-ks-ksp_pin)
-
- 
 

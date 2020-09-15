@@ -52,7 +52,7 @@ HRESULT ProcAmpControlQueryRange(
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">“值”</th>
+<th align="left">值</th>
 <th align="left">说明</th>
 </tr>
 </thead>
@@ -87,7 +87,7 @@ HRESULT ProcAmpControlQueryRange(
 
 如果成功，则返回零 (S \_ 正常 \_) ; 否则返回一个错误代码 (例如，E \_ NOTIMPL) 。 有关错误代码的完整列表，请参阅*ddraw。*
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
 对于每个 ProcAmp 属性，VMR 会查询驱动程序以确定最小值、最大值、步长大小和默认值。 如果硬件不支持特定的 ProcAmp 控件属性，则驱动程序应 \_ 从 **ProcAmpControlQueryRange** 函数返回 E NOTIMPL。

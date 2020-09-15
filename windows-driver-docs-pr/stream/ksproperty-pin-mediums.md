@@ -61,7 +61,7 @@ ms.locfileid: "90104160"
 
  
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
 客户端使用此属性来请求由 pin 工厂实例化的 pin 支持的所有媒体的列表。 然后，客户端指定要在连接到 pin 时使用的实际媒介。
@@ -88,7 +88,7 @@ Stream 微型驱动程序不需要直接处理此属性;流类驱动程序使用
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSP \_ PIN**](/windows-hardware/drivers/ddi/ks/ns-ks-ksp_pin)

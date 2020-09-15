@@ -18,7 +18,7 @@ ms.locfileid: "90107286"
 
 具有配置空间的总线的总线驱动程序必须为其子设备处理此请求 (子 PDOs) 。 函数和筛选器驱动程序不处理此请求。
 
-## <a name="value"></a>“值”
+## <a name="value"></a>值
 
 0x10
 
@@ -119,7 +119,7 @@ ULONG Length
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**IRP \_ MN \_ 查询 \_ 接口**](irp-mn-query-interface.md)

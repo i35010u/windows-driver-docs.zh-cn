@@ -119,7 +119,7 @@ DIF_UNREMOVE 请求通知安装程序，Windows 将在给定的硬件配置文�
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**SetupDiUnremoveDevice**](/windows/desktop/api/setupapi/nf-setupapi-setupdiunremovedevice)

@@ -121,7 +121,7 @@ ms.locfileid: "90105428"
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**文件 \_ FS \_ 永久性 \_ 卷 \_ 信息**](/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_file_fs_persistent_volume_information)

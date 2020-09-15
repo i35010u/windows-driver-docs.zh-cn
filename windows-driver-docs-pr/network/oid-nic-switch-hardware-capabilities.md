@@ -19,7 +19,7 @@ ms.locfileid: "90106022"
 
 成功从 OID 查询请求返回后， [**ndis \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的**InformationBuffer**成员包含指向[**NDIS \_ NIC \_ 交换机 \_ 功能**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_capabilities)结构的指针。
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
 [**NDIS \_ NIC \_ 交换机 \_ 功能**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_capabilities)结构包含有关网络适配器上 NIC 交换机的硬件功能的信息。 这些功能可能包括 INF 文件设置当前禁用的硬件功能，或通过 " **高级** 属性" 页当前禁用的硬件功能。
@@ -91,7 +91,7 @@ NDIS 处理 \_ \_ \_ 对微型端口驱动程序的 oid NIC 交换机硬件功�
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**NDIS \_ 绑定 \_ 参数**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_bind_parameters)

@@ -25,7 +25,7 @@ NDIS 向网络适配器的 PCIe 物理功能 (PF) 的微型端口驱动程序发
 
 -   一个 [**CM \_ 部分 \_ 资源 \_ 描述符**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_cm_partial_resource_descriptor) 结构，它遵循 [**NDIS \_ SRIOV \_ BAR \_ 资源 \_ 信息**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_sriov_bar_resources_info) 结构。 **CM \_ 部分 \_ 资源 \_ 描述符**结构包含有关分配给指定条形的内存资源的信息。
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
 NDIS 发出 OID SRIOV BAR 资源的 OID 方法请求， \_ \_ \_ 以获取分配给 VF 栏的内存资源的系统物理地址和长度。 在它发出 OID 方法请求之前，NDIS 按以下方式设置 [**ndis \_ SRIOV \_ BAR \_ 资源 \_ 信息**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_sriov_bar_resources_info) 结构的格式：
@@ -107,7 +107,7 @@ NDIS 发出 OID SRIOV BAR 资源的 OID 方法请求， \_ \_ \_ 以获取分配
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 ****

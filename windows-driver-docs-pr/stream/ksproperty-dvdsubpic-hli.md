@@ -84,7 +84,7 @@ KSPROPERTY \_ DVDSUBPIC \_ b-hli 属性指定要更改的子画面或 screen 的
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSPROPERTY \_ SPHLI**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-_ksproperty_sphli)

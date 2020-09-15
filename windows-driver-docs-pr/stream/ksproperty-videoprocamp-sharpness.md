@@ -86,7 +86,7 @@ KSPROPERTY **Value** \_ VIDEOPROCAMP S 结构的 Value 成员 \_ 指定清晰度
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSPROPERTY**](/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)

@@ -121,7 +121,7 @@ DIF_NEWDEVICEWIZARD_SELECT 请求允许安装程序提供 (s) 替换标准选择
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**DIF_NEWDEVICEWIZARD_PREANALYZE**](dif-newdevicewizard-preanalyze.md)

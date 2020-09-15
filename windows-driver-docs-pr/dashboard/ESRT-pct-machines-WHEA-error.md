@@ -4,12 +4,12 @@ description: 该度量将 28 天滑动窗口中的遥测数据聚合为报告了
 ms.topic: article
 ms.date: 10/31/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 7c9b46519daeb40725267ac9d285a1442bfd611b
-ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
+ms.openlocfilehash: 3c129ab9767658e6eaacd598ecf6b91bd8c4e086
+ms.sourcegitcommit: c214e65a7f5dd868037718a34ca7cc80584df5c6
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "79083124"
+ms.lasthandoff: 09/09/2020
+ms.locfileid: "89615463"
 ---
 # <a name="percent-of-machines-with-windows-hardware-error-architecture-whea-error-after-firmware-installation"></a>固件安装后出现 Windows 硬件错误体系结构 (WHEA) 错误的计算机的百分比
 
@@ -30,7 +30,7 @@ WHEA 事件仅在 20H1 生成中检索到，很快会后向移植到 19H1。
 |度量标准 |计算机的聚合|
 |最小实例数 |200|
 |通过标准 |<= 5%|
-|度量 ID |20319726|
+|度量 ID |20319726 或 23260714|
 
 ## <a name="calculation"></a>计算
 

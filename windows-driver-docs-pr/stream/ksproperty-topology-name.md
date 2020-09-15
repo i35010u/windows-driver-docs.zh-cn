@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4a0ba25eeaa450a2eb32bd31b2f552363b8c87a1
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: e77c1bab884ab6ba97bf14bcac761bfe1873cb35
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89185887"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90103368"
 ---
 # <a name="ksproperty_topology_name"></a>KSPROPERTY \_ 拓扑 \_ 名称
 
@@ -53,7 +53,7 @@ KSPROPERTY \_ 拓扑 \_ 名称属性提供节点的本地化 Unicode 字符串�
 <td><p>是</p></td>
 <td><p>否</p></td>
 <td><p>节点</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksp_node" data-raw-source="[&lt;strong&gt;KSP_NODE&lt;/strong&gt;](/windows-hardware/drivers/ddi/ks/ns-ks-ksp_node)"><strong>KSP_NODE</strong></a></p></td>
+<td><p><a href="/windows-hardware/drivers/ddi/ks/ns-ks-ksp_node" data-raw-source="[&lt;strong&gt;KSP_NODE&lt;/strong&gt;](/windows-hardware/drivers/ddi/ks/ns-ks-ksp_node)"><strong>KSP_NODE</strong></a></p></td>
 <td><p>用于保存字符串名称的缓冲区。</p></td>
 </tr>
 </tbody>
@@ -61,7 +61,7 @@ KSPROPERTY \_ 拓扑 \_ 名称属性提供节点的本地化 Unicode 字符串�
 
  
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
 KSP **NodeId** \_ 节点结构的节点 ID 指定要为其返回字符串名称的节点 ID。
@@ -82,10 +82,8 @@ KSP **NodeId** \_ 节点结构的节点 ID 指定要为其返回字符串名称�
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSP \_ 节点**](/windows-hardware/drivers/ddi/ks/ns-ks-ksp_node)
-
- 
 

@@ -27,7 +27,7 @@ ms.locfileid: "90106012"
 
 -   从 [oid \_ NIC \_ 交换机 \_ 枚举 \_ VPORTS](oid-nic-switch-enum-vports.md)的上一个 oid 方法请求开始。
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
 OID \_ NIC \_ SWITCH \_ VPORT \_ 参数可用于 [oid 方法请求](#oid-method-requests) 或 [oid 设置请求](#oid-set-requests)。
@@ -119,7 +119,7 @@ NDIS 或 PF 微型端口驱动程序为 OID \_ NIC \_ SWITCH \_ VPORT 参数的�
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 ****

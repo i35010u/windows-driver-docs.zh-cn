@@ -61,7 +61,7 @@ KSPROPERTY \_ 流 \_ 分配器属性是一个可选属性，如果 pin 分配流
 
  
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
 返回的值始终为 **NULL** 句柄。 但是，支持由调用是否成功返回决定。
@@ -86,7 +86,7 @@ KSPROPERTY \_ 流 \_ 分配器属性是一个可选属性，如果 pin 分配流
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSPROPERTY**](/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)

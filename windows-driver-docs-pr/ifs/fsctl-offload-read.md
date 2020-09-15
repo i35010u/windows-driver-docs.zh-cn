@@ -144,7 +144,7 @@ ms.locfileid: "90105190"
 
  
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
 卸载读取仅适用于普通文件。 有关不支持的文件类型的列表，请参阅 **状态 \_ 卸载 \_ 读取 \_ 文件 \_ \_ ** 的描述。
@@ -171,7 +171,7 @@ ms.locfileid: "90105190"
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**FltFsControlFile**](/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltfscontrolfile)

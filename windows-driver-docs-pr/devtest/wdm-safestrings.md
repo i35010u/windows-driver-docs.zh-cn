@@ -56,7 +56,7 @@ ms.locfileid: "90102452"
 </tbody>
 </table>
 
-<a name="see-also"></a>另请参阅
+<a name="see-also"></a>请参阅
 --------
 
 [**使用安全字符串函数**](../kernel/using-safe-string-functions.md)

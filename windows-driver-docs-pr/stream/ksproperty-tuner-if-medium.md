@@ -63,7 +63,7 @@ ms.locfileid: "90104556"
 
  (操作数据) 的属性值是一个 KSPIN \_ 中型结构，该结构为能够支持优化到中间频率的 pin 指定中型 GUID。
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
 **IFMedium** \_ \_ 如果 \_ MEDIUM \_ S 结构指定中间频率 pin 的中等 GUID，则为 KSPROPERTY 调谐器的 IFMedium 成员。

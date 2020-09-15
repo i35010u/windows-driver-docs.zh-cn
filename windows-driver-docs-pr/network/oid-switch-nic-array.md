@@ -27,7 +27,7 @@ Hyper-v 可扩展交换机扩展)  (OID 发出对象标识符，请求 OID \_ �
 
      
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
 \_ \_ \_ 仅当 hyper-v 可扩展交换机完成激活时才必须发出 oid 交换机 NIC 数组 oid。 有关更多详细信息，请参阅 [查询 Hyper-v 可扩展交换机配置](./querying-the-hyper-v-extensible-switch-configuration.md) 。

@@ -4,12 +4,12 @@ description: 此页面介绍了驱动程序隔离，这是 Windows 驱动程序�
 ms.date: 10/01/2019
 ms.assetid: 3955fb29-ee49-4c3e-ac6d-700dcba3f884
 ms.localizationpriority: medium
-ms.openlocfilehash: e6ddb5ecb0227617d68e02f371a6e3da5f1b9985
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 870d1e5e82beed6d28e0bf6157a83d470efd03c3
+ms.sourcegitcommit: 19a7c283d927611f37fcb0a6470295000bb01b27
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89065504"
+ms.lasthandoff: 09/09/2020
+ms.locfileid: "89605344"
 ---
 # <a name="driver-package-isolation"></a>驱动程序包隔离
 
@@ -204,6 +204,8 @@ HKR, Parameters, ExampleValue, 0x00010001, 1
 
 * [**IoOpenDriverRegistryKey**](/windows-hardware/drivers/ddi/wdm/nf-wdm-ioopendriverregistrykey) (WDM)
 * [**WdfDriverOpenParametersRegistryKey**](/windows-hardware/drivers/ddi/wdfdriver/nf-wdfdriver-wdfdriveropenparametersregistrykey) (WDF)
+* [**WdfDriverOpenPersistentStateRegistryKey**](/windows-hardware/drivers/ddi/wdfdriver/nf-wdfdriver-wdfdriveropenpersistentstateregistrykey)（在运行时编写的状态的 WDF）
+* [**GetServiceRegistryStateKey**](/windows/win32/api/winsvc/nf-winsvc-getserviceregistrystatekey)（Win32 服务）
 
 ### <a name="device-file-state"></a>设备文件状态
 
@@ -230,6 +232,10 @@ Win32 和驱动程序服务均读取和写入关于本身的状态。
 
 这些位置为组件提供一个位置，用于写入临时状态或旨在由其他组件使用、可能从某一系统收集和复制以供另一系统处理的状态。  例如，自定义日志文件或故障转储符合此描述。
 
+避免在 `DriverData` 或 `ProgramData` 目录的根目录中写入文件。 请改用公司名称创建子目录，然后在在该目录中写入文件和更多子目录。
+
+例如，对于 Contoso 的公司名称，内核模式驱动程序可将自定义日志写入 `\DriverData\Contoso\Logs`，用户模式应用程序可收集或分析 `%DriverData%\Contoso\Logs` 中的日志文件。
+
 ### <a name="driverdata"></a>DriverData
 
 `DriverData` 目录在 Windows 10 版本 1803 及更高版本中可用。 此目录可由用户模式和内核模式组件通过不同机制进行访问。
@@ -241,6 +247,3 @@ Win32 和驱动程序服务均读取和写入关于本身的状态。
 
 `%ProgramData%` 用户模式环境变量适用于存储数据时要使用的用户模式组件。 
 
-避免在 `DriverData` 或 `ProgramData` 目录的根目录中写入文件。 请改用公司名称创建子目录，然后在在该目录中写入文件和更多子目录。
-
-例如，对于 Contoso 的公司名称，内核模式驱动程序可将自定义日志写入 `\DriverData\Contoso\Logs`，用户模式应用程序可收集或分析 `%DriverData%\Contoso\Logs` 中的日志文件。

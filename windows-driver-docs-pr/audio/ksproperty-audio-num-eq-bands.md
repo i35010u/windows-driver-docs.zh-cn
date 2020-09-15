@@ -67,7 +67,7 @@ KSPROPERTY \_ AUDIO \_ NUM \_ EQ \_ 波段属性用于检索均衡表中的频�
 
 KSPROPERTY \_ 音频 \_ 号 \_ EQ \_ 波段属性请求返回状态 " \_ 成功" 以指示已成功完成。 否则，请求将返回相应的错误状态代码。
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
 此属性与 [**KSPROPERTY \_ audio \_ eq \_ 带区**](ksproperty-audio-eq-bands.md) 和 [**KSPROPERTY \_ 音频 \_ eq \_ 级别**](ksproperty-audio-eq-level.md) 属性结合使用，以确定包含这些属性的值的数组的长度。

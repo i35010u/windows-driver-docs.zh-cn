@@ -65,7 +65,7 @@ KSPROPERTY \_ AUDDECOUT \_ 模式属性返回音频解码器的可用输出模�
 
 ) 操作数据 (的属性值是一个 DWORD 值，它表示音频解码器支持的音频输出模式的位掩码。
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
 属性值可以包含在 *Ksmedia* 头文件中定义的以下常量的按位 "或"：
@@ -95,7 +95,7 @@ KSPROPERTY \_ AUDDECOUT \_ 模式属性返回音频解码器的可用输出模�
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSPROPERTY \_ AUDDECOUT \_ 当前 \_ 模式**](ksproperty-auddecout-cur-mode.md)

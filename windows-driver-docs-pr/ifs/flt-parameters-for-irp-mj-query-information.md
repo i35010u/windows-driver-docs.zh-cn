@@ -123,7 +123,7 @@ typedef union _FLT_PARAMETERS {
 **InfoBuffer**  
 一个指针，指向要返回文件信息的输出缓冲区。
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
 IRP MJ 查询信息操作的 [**FLT \_ 参数**](/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_parameters) 结构 \_ \_ \_ 包含由回调数据表示的查询信息操作的参数) 结构中 ([**FLT \_ 回调 \_ 数据**](/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_callback_data) 。 它包含在 FLT \_ IO \_ 参数 \_ 块结构中。

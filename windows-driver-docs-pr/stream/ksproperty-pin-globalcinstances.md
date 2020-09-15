@@ -61,7 +61,7 @@ ms.locfileid: "90102392"
 
  
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
 使用 KSP pin 指定此属性 \_ ，其中 **PinId** 成员指定 PIN 工厂。
@@ -103,7 +103,7 @@ KSPROPERTY \_ 引脚 \_ GLOBALCINSTANCES 指定筛选器的所有实例上的最
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSP \_ PIN**](/windows-hardware/drivers/ddi/ks/ns-ks-ksp_pin)

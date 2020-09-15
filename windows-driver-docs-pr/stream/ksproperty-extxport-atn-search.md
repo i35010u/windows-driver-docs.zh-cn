@@ -63,7 +63,7 @@ ms.locfileid: "90105406"
 
 ) 操作数据 (的属性值是一个 DWORD，用于指定绝对磁道号。
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
 KSPROPERTY **dwAbsTrackNumber** \_ EXTXPORT S 结构的 dwAbsTrackNumber 成员 \_ 指定要搜索的绝对磁道号。
@@ -86,7 +86,7 @@ KSPROPERTY **dwAbsTrackNumber** \_ EXTXPORT S 结构的 dwAbsTrackNumber 成员 
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSPROPERTY**](/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)

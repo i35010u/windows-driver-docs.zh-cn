@@ -68,7 +68,7 @@ ms.locfileid: "90105332"
 
 此属性控件是异步的，不可取消。
 
-## <a name="remarks"></a>备注
+## <a name="remarks"></a>注解
 
 ### <a name="getting-the-property"></a>获取属性
 
@@ -117,6 +117,6 @@ ms.locfileid: "90105332"
 
 对于 get 操作， [**KSCAMERA \_ EXTENDEDPROP \_ 标头**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)的**Result**成员始终设置为0。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 [**KSCAMERA \_ EXTENDEDPROP \_ 标头**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)

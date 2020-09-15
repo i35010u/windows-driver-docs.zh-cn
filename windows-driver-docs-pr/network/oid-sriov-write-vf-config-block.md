@@ -25,7 +25,7 @@ ms.locfileid: "90105678"
 
 -   要写入指定 VF 配置块的数据的额外缓冲区空间。
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
 VF 配置块用于 backchannel 和 VF 微型端口驱动程序之间的通信。 IHV 可以为微型端口驱动程序定义一个或多个 VF 配置块。 每个 VF 配置块都有一个 IHV 定义的格式、长度和块 ID。

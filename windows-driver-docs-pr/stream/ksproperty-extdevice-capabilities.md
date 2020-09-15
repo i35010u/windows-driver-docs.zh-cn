@@ -63,7 +63,7 @@ KSPROPERTY \_ EXTDEVICE \_ 功能属性检索外部设备的功能。
 
  (操作数据) 的属性值是描述外部设备功能的 DEVCAPS 结构。
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
 KSPROPERTY **Capabilities** \_ EXTDEVICE S 结构的功能成员 \_ 指定了外部设备的功能。

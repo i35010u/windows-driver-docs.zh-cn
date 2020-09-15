@@ -61,7 +61,7 @@ KSPROPERTY \_ STREAMINTERFACE \_ HEADERSIZE 属性在 pin 中查询此 pin 所�
 
  
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
 有关详细信息，请参阅[**KSPIN**](/windows-hardware/drivers/ddi/ks/ns-ks-_kspin)的**StreamHeaderSize**成员。

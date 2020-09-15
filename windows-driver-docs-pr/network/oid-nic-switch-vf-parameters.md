@@ -21,7 +21,7 @@ NDIS \_ \_ \_ \_ 为微型端口驱动程序处理 oid NIC 交换机 VF 参数�
 
 进行 OID 方法请求时， [**ndis \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的**InformationBuffer**成员包含指向[**NDIS \_ NIC \_ 开关 \_ VF \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vf_parameters)结构的指针。
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
 过量驱动程序或用户模式应用程序通过将[**NDIS \_ NIC \_ 开关 \_ VF \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vf_parameters)结构的**VFId**成员设置为 VF 的标识符来指定要查询的 VF。 过量驱动程序或应用程序通过以下方式之一获取 VF 标识符：
@@ -105,7 +105,7 @@ NDIS 处理 \_ \_ \_ 适用于微型端口驱动程序的 oid NIC 开关 VF 参�
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 ****

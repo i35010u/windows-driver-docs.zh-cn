@@ -19,7 +19,7 @@ Hyper-v 可扩展交换机的协议边缘发出对象标识符 () OID \_ \_ \_ �
 
 [**Ndis \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的**InformationBuffer**成员包含指向[**ndis \_ 交换机 \_ NIC \_ 保存 \_ 状态**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_nic_save_state)结构的指针。 此结构由可扩展交换机的协议边缘分配。
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
 当收到 oid 交换机 NIC SAVE 的 OID 方法请求时 \_ \_ \_ ，可扩展交换机扩展通过执行以下操作来保存运行时数据：
@@ -116,7 +116,7 @@ OID 交换机 NIC SAVE 的 OID 方法请求 \_ \_ \_ 最终由可扩展交换机
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 ****

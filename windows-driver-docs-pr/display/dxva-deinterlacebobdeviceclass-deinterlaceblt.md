@@ -67,7 +67,7 @@ HRESULT DeinterlaceBlt(
 
 如果成功，则返回零 (S \_ 正常或 DD \_ 确定) ; 否则返回错误代码。 有关错误代码的完整列表，请参阅*ddraw。*
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
 *DeinterlaceBlt*函数直接映射到[**DD \_ MOTIONCOMPCALLBACKS**](/windows/desktop/api/ddrawint/ns-ddrawint-dd_motioncompcallbacks)结构的**RenderMoComp**成员的调用。 **RenderMoComp**成员指向显示驱动程序提供的、引用[**DD \_ RENDERMOCOMPDATA**](/windows/desktop/api/ddrawint/ns-ddrawint-_dd_rendermocompdata)结构的函数。 \_按如下所示填充 DD RENDERMOCOMPDATA 结构。

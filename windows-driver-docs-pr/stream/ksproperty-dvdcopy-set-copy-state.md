@@ -99,7 +99,7 @@ KSPROPERTY \_ DVDCOPY \_ 设置 \_ 复制 \_ 状态属性设置 DVD 解码器流
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KS \_ DVDCOPY \_ 设置 \_ 复制 \_ 状态**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-_ks_dvdcopy_set_copy_state)

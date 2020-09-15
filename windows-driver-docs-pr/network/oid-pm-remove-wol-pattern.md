@@ -17,7 +17,7 @@ ms.locfileid: "90104606"
 
 作为集，NDIS 和协议驱动程序使用 OID \_ PM \_ 删除 \_ wol \_ 模式 OID 从网络适配器中删除电源管理 LAN 唤醒 (wol) 模式。 [**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的**InformationBuffer**成员包含指向 ULONG 模式标识符的指针。
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
 NDIS 和协议驱动程序使用 OID \_ PM \_ 删除 \_ wol \_ 模式，以从基础网络适配器中删除 LAN 唤醒 (wol) 模式。

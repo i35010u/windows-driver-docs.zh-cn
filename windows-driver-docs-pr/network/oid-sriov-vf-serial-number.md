@@ -19,7 +19,7 @@ ms.locfileid: "90104974"
 
 [**Ndis \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的**InformationBuffer**成员包含指向[**ndis \_ SRIOV \_ VF \_ 序列 \_ 号 \_ 信息**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_sriov_vf_serial_number_info)结构的指针。
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
 过量驱动程序使用序列号将 VF 网络适配器映射到物理网络适配器上的 VF 的实例。 序列号是由虚拟化堆栈生成的，在通过 oid [ \_ NIC \_ 交换机 \_ 分配 \_ vf](oid-nic-switch-allocate-vf.md)的 oid 集请求分配 vf 的资源之前。

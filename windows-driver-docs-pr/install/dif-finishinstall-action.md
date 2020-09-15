@@ -153,7 +153,7 @@ Windows 8 及更高版本中没有默认的 DIF 代码处理程序，并且 [**S
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**SetupDiFinishInstallAction**](/previous-versions/windows/hardware/previsioning-framework/ff551022(v=vs.85))

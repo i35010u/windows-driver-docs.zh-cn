@@ -97,7 +97,7 @@ KSPROPERTY \_ RTAUDIO \_ 注销 \_ 通知 \_ 事件属性请求返回状态 " \_
 
  
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
 此属性用于从 DMA 驱动的事件通知中注销用户模式事件。

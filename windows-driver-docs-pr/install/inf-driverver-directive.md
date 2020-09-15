@@ -50,7 +50,7 @@ DriverVer=mm/dd/yyyy,w.x.y.z
 
 -   应将此值视为 (的输入驱动程序所必需的值，例如鼠标或键盘驱动程序) 。 如果不包含版本值，则可能无法以编程方式更新输入驱动程序。 通常，应在所有 [驱动程序包](driver-packages.md) 中指定版本信息，因为操作系统使用版本信息作为确定最新驱动程序的条件。
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
 从 Windows 2000 开始，INF 文件必须在其[**INF 版本部分**](inf-version-section.md)中有一个**DriverVer**指令，以便为整个 INF 提供版本信息。 单个 [**INF *DDInstall* 节**](inf-ddinstall-section.md) 还可包含 **DriverVer** 指令，以提供各个驱动程序的版本信息。 *DDInstall*部分中的**DriverVer**指令更为具体，并优先于**版本**部分中的全局**DriverVer**指令。
@@ -71,7 +71,7 @@ DriverVer=09/28/1999,5.00.2136.1
 
 [***DDInstall***](inf-ddinstall-section.md)
 
-[**Version**](inf-version-section.md)
+[**版本**](inf-version-section.md)
 
  
 

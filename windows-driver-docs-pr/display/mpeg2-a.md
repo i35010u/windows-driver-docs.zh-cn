@@ -35,7 +35,7 @@ MPEG2 \_ ：配置文件由下列限制集定义：
 <thead>
 <tr class="header">
 <th align="left">结构成员</th>
-<th align="left">“值”</th>
+<th align="left">值</th>
 </tr>
 </thead>
 <tbody>
@@ -58,7 +58,7 @@ MPEG2 \_ ：配置文件由下列限制集定义：
 <thead>
 <tr class="header">
 <th align="left">结构成员</th>
-<th align="left">“值”</th>
+<th align="left">值</th>
 </tr>
 </thead>
 <tbody>
@@ -145,7 +145,7 @@ MPEG2 \_ ：配置文件由下列限制集定义：
 <thead>
 <tr class="header">
 <th align="left">wMBtype 位</th>
-<th align="left">“值”</th>
+<th align="left">值</th>
 </tr>
 </thead>
 <tbody>

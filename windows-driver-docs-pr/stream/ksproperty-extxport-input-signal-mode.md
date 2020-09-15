@@ -63,7 +63,7 @@ KSPROPERTY \_ EXTXPORT \_ 输入 \_ 信号 \_ 模式属性设置或获取外部�
 
  (操作数据) 的属性值是一个 ULONG，用于指定外部传输的当前输入信号模式。
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
 KSPROPERTY **SignalMode** \_ EXTXPORT S 结构的 SignalMode 成员 \_ 指定输入信号模式。
@@ -84,7 +84,7 @@ KSPROPERTY **SignalMode** \_ EXTXPORT S 结构的 SignalMode 成员 \_ 指定输
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSPROPERTY**](/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)

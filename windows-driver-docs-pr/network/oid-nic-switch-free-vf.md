@@ -23,7 +23,7 @@ ms.locfileid: "90106020"
 
 过量驱动程序指定要通过此结构的 **VFId** 成员释放的 VF 的标识符。 驱动程序从 [oid \_ NIC \_ 交换机 \_ 分配 \_ VF](oid-nic-switch-allocate-vf.md)的早期 oid 方法请求中获取了此标识符。
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
 过量驱动程序发出 oid \_ NIC 交换机自由 vf 的 oid 设置请求 \_ \_ \_ ，以释放 vf 的资源。 以前通过 oid [ \_ NIC \_ 交换机 \_ 分配 \_ VF](oid-nic-switch-allocate-vf.md)的 oid 方法请求分配了这些资源。
@@ -126,7 +126,7 @@ NDIS 为此请求返回以下状态代码之一：
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 ****

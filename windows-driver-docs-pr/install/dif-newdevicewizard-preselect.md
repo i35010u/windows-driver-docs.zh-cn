@@ -121,7 +121,7 @@ DIF_NEWDEVICEWIZARD_PRESELECT 请求允许安装程序提供 Windows 在用户�
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**DIF_NEWDEVICEWIZARD_PREANALYZE**](dif-newdevicewizard-preanalyze.md)

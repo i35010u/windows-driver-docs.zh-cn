@@ -70,7 +70,7 @@ KSPROPERTY \_ CAMERACONTROL \_ IRIS \_ 相对属性指定相机的口径设置�
 </colgroup>
 <thead>
 <tr class="header">
-<th>“值”</th>
+<th>值</th>
 <th>说明</th>
 </tr>
 </thead>
@@ -92,7 +92,7 @@ KSPROPERTY \_ CAMERACONTROL \_ IRIS \_ 相对属性指定相机的口径设置�
 
  
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
 发出集请求时，应提供 KSPROPERTY CAMERACONTROL 节点的 **值** 成员的上一个表中的值之一 \_ \_ \_ 。

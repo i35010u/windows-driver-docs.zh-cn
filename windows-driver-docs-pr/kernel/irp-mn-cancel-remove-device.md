@@ -18,7 +18,7 @@ ms.locfileid: "90106196"
 
 所有 PnP 驱动程序都必须处理此 IRP。
 
-## <a name="value"></a>“值”
+## <a name="value"></a>值
 
 0x03
 
@@ -84,7 +84,7 @@ PnP 管理器调用任何 **EventCategoryTargetDeviceChange** 通知回调，并
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**IoRegisterPlugPlayNotification**](/windows-hardware/drivers/ddi/wdm/nf-wdm-ioregisterplugplaynotification)

@@ -78,7 +78,7 @@ EV 补偿属性允许按曝光度或区域系统的增量调整公开控制。
 
 此属性控件是异步的，不可取消。
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
 ### <a name="getting-the-property"></a>获取属性

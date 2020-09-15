@@ -72,7 +72,7 @@ KSPROPERTY \_ aec \_ status 属性用于监视 AEC 节点的状态 ([**KSNODETYP
 <thead>
 <tr class="header">
 <th align="left">AEC 状态标志</th>
-<th align="left">“值”</th>
+<th align="left">值</th>
 <th align="left">DSCFX_AEC_STATUS 标志</th>
 </tr>
 </thead>
@@ -106,7 +106,7 @@ KSPROPERTY \_ aec \_ status 属性用于监视 AEC 节点的状态 ([**KSNODETYP
 
 KSPROPERTY \_ AEC \_ 状态属性请求返回状态 " \_ 成功" 以指示它已成功完成。 否则，请求将返回相应的错误状态代码。
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
 AEC 状态标志中的三个最不重要的位 (参阅上表) 表示 AEC 算法 (CH) 的聚合历史记录。 Microsoft DirectSound 应用程序可以使用 CH 状态位来确定算法是否已聚合，以及自开始处理数据后它是否保持收敛状态。 根据音频硬件，AEC 算法可能无法收敛，在这种情况下，生成的捕获缓冲区可能会包含来自扬声器的回显。

@@ -63,7 +63,7 @@ KSPROPERTY \_ AUDDECOUT \_ \_ current mode 属性指示当前音频输出模式�
 
 ) 操作数据 (的属性值是表示音频解码器当前输出模式的 DWORD 值。
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
 属性值可以是头文件 *ksmedia*中定义的以下模式常量之一：
@@ -99,7 +99,7 @@ KSPROPERTY \_ AUDDECOUT \_ \_ current mode 属性指示当前音频输出模式�
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSPROPERTY \_ AUDDECOUT \_ 模式**](ksproperty-auddecout-modes.md)

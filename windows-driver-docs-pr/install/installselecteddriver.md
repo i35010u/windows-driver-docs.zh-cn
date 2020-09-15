@@ -89,7 +89,7 @@ BOOL WINAPI InstallSelectedDriver(
 
  
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
 若要访问 **InstallSelectedDriver**，请调用 **LoadLibrary** 以加载 *Newdev.dll* ，然后调用 **GetProcAddress** 以获取指向 **InstallSelectedDriver**的函数指针。
@@ -150,7 +150,7 @@ BOOL WINAPI InstallSelectedDriver(
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**DiInstallDevice**](/windows/desktop/api/newdev/nf-newdev-diinstalldevice)

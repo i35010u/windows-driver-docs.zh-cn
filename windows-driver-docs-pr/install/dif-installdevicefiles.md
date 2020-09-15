@@ -126,7 +126,7 @@ DIF_INSTALLDEVICEFILES 请求允许安装程序参与复制文件以支持设备
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**SetupDiInstallDriverFiles**](/windows/desktop/api/setupapi/nf-setupapi-setupdiinstalldriverfiles)

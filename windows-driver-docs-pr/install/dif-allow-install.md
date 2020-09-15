@@ -123,7 +123,7 @@ DIF_ALLOW_INSTALL 请求要求设备安装程序是否可以继续安装设备�
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**SP_DEVINFO_DATA**](/windows/win32/api/setupapi/ns-setupapi-sp_devinfo_data)

@@ -27,7 +27,7 @@ Hyper-v 可扩展交换机扩展会发出对象标识符 (OID) 方法请求， \
 
      
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
 \_ \_ \_ 仅当 hyper-v 可扩展交换机完成激活时才必须发出 oid 开关属性 ENUM。 有关更多详细信息，请参阅 [查询 Hyper-v 可扩展交换机配置](./querying-the-hyper-v-extensible-switch-configuration.md) 。
@@ -91,7 +91,7 @@ Hyper-v 可扩展交换机扩展会发出对象标识符 (OID) 方法请求， \
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 ****

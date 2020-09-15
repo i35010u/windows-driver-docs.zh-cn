@@ -128,7 +128,7 @@ DIF_INSTALLINTERFACES 请求允许安装程序参与设备的设备接口注册�
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**SetupDiInstallDeviceInterfaces**](/windows/desktop/api/setupapi/nf-setupapi-setupdiinstalldeviceinterfaces)

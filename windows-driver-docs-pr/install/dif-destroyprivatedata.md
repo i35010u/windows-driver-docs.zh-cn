@@ -112,7 +112,7 @@ DIF_DESTROYPRIVATEDATA 请求指示类安装程序释放它所分配的或存储
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**SP_DEVINFO_DATA**](/windows/win32/api/setupapi/ns-setupapi-sp_devinfo_data)

@@ -56,7 +56,7 @@ KSEVENT \_ 调谐器 \_ 启动 \_ 扫描事件请求，驱动程序启动扫描�
 
  
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
 每个扫描请求应为非阻塞。 也就是说，驱动程序在返回 control 之前不应等待扫描操作完成。 事实上，驱动程序应使用单独的线程来执行扫描操作。
@@ -79,7 +79,7 @@ Scan status 属性 [**KSPROPERTY \_ 调谐器 \_ scan \_ status**](ksproperty-tu
 
 只要发现新的通道或信号，就必须完成扫描操作。 然后，该驱动程序通过 [**KSPROPERTY \_ 调谐器 \_ 扫描 \_ 状态**](ksproperty-tuner-scan-status.md) 属性返回扫描状态。 即使驱动程序确定新找到的通道与以前应用的标准不匹配，只要找到新通道，就必须完成扫描。 应用程序必须处理新的通道信息，并且必须重新提交扫描请求以查找信号标准相同的另一个通道。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSEVENT \_ 调谐器 \_ 启动 \_ 扫描 \_**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksevent_tuner_initiate_scan_s)

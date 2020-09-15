@@ -24,7 +24,7 @@ PnP 管理器将此 IRP 发送到设备堆栈，以便函数驱动程序可以�
 
 上限和小写筛选器驱动程序不处理此 IRP。
 
-## <a name="value"></a>“值”
+## <a name="value"></a>值
 
 0x0D
 
@@ -108,7 +108,7 @@ PnP 管理器将 [**IRP \_ MN \_ 查询 \_ 资源 \_ 要求**](irp-mn-query-reso
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**ExAllocatePoolWithTag**](/windows-hardware/drivers/ddi/wdm/nf-wdm-exallocatepoolwithtag)

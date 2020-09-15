@@ -31,7 +31,7 @@ typedef USHORT SECURITY_DESCRIPTOR_CONTROL, *PSECURITY_DESCRIPTOR_CONTROL;
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">“值”</th>
+<th align="left">值</th>
 <th align="left">含义</th>
 </tr>
 </thead>

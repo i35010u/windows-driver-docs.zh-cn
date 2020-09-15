@@ -21,7 +21,7 @@ ms.locfileid: "90104614"
 
 [**Ndis \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的**InformationBuffer**成员包含指向[**NDIS \_ NIC \_ SWITCH \_ DELETE \_ VPORT \_ PARAMETERS**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_delete_vport_parameters)结构的指针。
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
 过量驱动程序（如协议或筛选器驱动程序）只能删除先前创建的非默认 VPort。 过量驱动程序通过发出 [oid \_ NIC \_ SWITCH \_ CREATE \_ VPort](oid-nic-switch-create-vport.md)的 Oid 方法请求来创建一个 VPort。

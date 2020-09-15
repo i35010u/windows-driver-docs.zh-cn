@@ -71,7 +71,7 @@ DIF_REGISTER_COINSTALLERS 请求允许安装程序参与设备共同安装程序
 
 ### <a name="installer-output"></a>安装程序输出
 
-<a href="" id="none"></a>内容  
+<a href="" id="none"></a>无  
 
 ### <a name="installer-return-value"></a>安装程序返回值
 
@@ -125,7 +125,7 @@ DIF_REGISTER_COINSTALLERS 请求允许安装程序参与设备共同安装程序
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**SetupDiRegisterCoDeviceInstallers**](/windows/desktop/api/setupapi/nf-setupapi-setupdiregistercodeviceinstallers)

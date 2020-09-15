@@ -67,7 +67,7 @@ ms.locfileid: "90102948"
 
  
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
 KSPROPERTY **Value** \_ CAMERACONTROL S 结构的 Value 成员 \_ 指定焦点设置。
@@ -90,7 +90,7 @@ KSPROPERTY **Value** \_ CAMERACONTROL S 结构的 Value 成员 \_ 指定焦点�
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSPROPERTY**](/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)

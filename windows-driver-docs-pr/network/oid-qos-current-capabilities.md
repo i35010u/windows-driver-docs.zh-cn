@@ -97,7 +97,7 @@ NDIS 处理 \_ \_ 针对微型端口驱动程序的 oid QOS 当前功能请求�
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 ****

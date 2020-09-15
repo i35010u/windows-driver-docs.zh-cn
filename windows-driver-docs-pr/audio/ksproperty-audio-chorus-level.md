@@ -71,7 +71,7 @@ KSPROPERTY \_ AUDIO \_ CHORUS \_ level 属性指定 CHORUS 级别。 这是 chor
 
 KSPROPERTY \_ 音频 \_ CHORUS \_ 级别属性请求返回状态 " \_ 成功" 以指示它已成功完成。 否则，请求将返回相应的错误状态代码。
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
 此属性用于获取和设置 chorus 回显的音量级别。

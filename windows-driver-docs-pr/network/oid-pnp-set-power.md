@@ -137,7 +137,7 @@ OID \_ pnp \_ 集 \_ 电源请求可能位于 [oid \_ pnp \_ 查询 \_ 电源](o
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 ****

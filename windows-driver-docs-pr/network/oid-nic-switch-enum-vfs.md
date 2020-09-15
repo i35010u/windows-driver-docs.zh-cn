@@ -27,7 +27,7 @@ ms.locfileid: "90106032"
 
      
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
 过量驱动程序和用户模式应用程序发出 oid \_ NIC 交换机枚举 vfs 的 oid 方法请求 \_ \_ \_ ，以枚举附加到网络适配器的 NIC 交换机的 VFS。
@@ -111,7 +111,7 @@ NDIS 处理对 \_ \_ \_ 微型端口驱动程序的 oid NIC 交换机枚举 \_ V
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 ****

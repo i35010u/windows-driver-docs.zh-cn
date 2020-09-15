@@ -55,7 +55,7 @@ ms.locfileid: "90103372"
 </tbody>
 </table>
 
-## <a name="remarks"></a>备注
+## <a name="remarks"></a>注解
 
 KSPROPERTY_PIN_PROPOSEDATAFORMAT 包括 KSDATAFORMAT 类型的结构，并指定建议的数据格式。 使用 KSP_PIN 指定此属性，其中成员指定相关的 PIN 工厂。
 
@@ -84,7 +84,7 @@ KSPROPERTY \_ PIN \_ PROPOSEDATAFORMAT 包含类型为 [**KSDATAFORMAT**](/windo
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 [**KSP \_ PIN**](/windows-hardware/drivers/ddi/ks/ns-ks-ksp_pin)
 

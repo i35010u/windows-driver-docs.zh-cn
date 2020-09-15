@@ -84,7 +84,7 @@ KSPROPERTY **Value** \_ VIDEODECODER S 结构的 Value 成员 \_ 指定当前的
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSPROPERTY**](/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)

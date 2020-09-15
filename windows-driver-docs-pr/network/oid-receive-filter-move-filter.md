@@ -21,7 +21,7 @@ ms.locfileid: "90106740"
 
 [**Ndis \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的**InformationBuffer**成员包含指向[**ndis \_ 接收 \_ 筛选器 \_ 移动 \_ 筛选器 \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_filter_move_filter_parameters)结构的指针。
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
 在将 OID 集请求转发到 PF 微型端口驱动程序之前，NDIS 验证 [**ndis \_ 接收 \_ 筛选器 \_ 移动 \_ 筛选器 \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_filter_move_filter_parameters) 结构的成员。
@@ -91,7 +91,7 @@ PF 微型端口驱动程序必须以原子方式处理此 OID 集请求。 驱�
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 ****

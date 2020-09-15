@@ -67,7 +67,7 @@ KSPROPERTY \_ AUDIO \_ 首选 \_ 状态属性通知设备是系统的首选音�
 
 KSPROPERTY \_ 音频 \_ 首选 \_ 状态属性请求返回状态 " \_ 成功" 以指示已成功完成。 否则，请求将返回相应的错误状态代码。
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
 [SysAudio 系统驱动程序](./kernel-mode-wdm-audio-components.md#sysaudio-system-driver)使用此属性来通知波形播放、波形记录、MIDI 或混音器设备被选择为新的首选设备，或取消选择以前选择的首选设备时。

@@ -89,7 +89,7 @@ KSPROPERTY \_ audio \_ 立体声 \_ 扬声器 \_ 几何属性可与 [**KSPROPERT
 
 KSPROPERTY \_ 音频 \_ 立体声 \_ 扬声器 \_ 几何属性请求返回状态 " \_ 成功" 以指示已成功完成。 否则，请求将返回相应的错误状态代码。
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
 DirectSound 将 KSPROPERTY \_ 音频 \_ 立体声 \_ 发言人 \_ 几何视为 DAC 节点上的筛选器属性，并将作为3d 节点上的固定属性。

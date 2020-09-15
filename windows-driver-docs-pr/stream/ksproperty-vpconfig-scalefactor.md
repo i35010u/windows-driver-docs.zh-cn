@@ -63,7 +63,7 @@ KSPROPERTY \_ VPCONFIG \_ SCALEFACTOR 属性将视频端口尺寸设置为用户
 
  (操作数据) 的属性值是一个 KS \_ AMVPSIZE 结构，它指定视频端口的宽度和高度。
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
 当 KSPROPSETID VPVBIConfig 使用此属性时 \_ ，所有属性请求都必须返回 \_ 未实现的状态 \_ 。

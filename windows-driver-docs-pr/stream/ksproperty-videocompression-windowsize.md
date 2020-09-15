@@ -63,7 +63,7 @@ KSPROPERTY \_ VIDEOCOMPRESSION \_ WINDOWSIZE 属性控制描述平均帧大小�
 
  (操作数据) 的属性值是一个 LONG，用于指定表示平均帧大小的数据速率。
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
 KSPROPERTY **Value** \_ VIDEOCOMPRESSION S 结构的 Value 成员 \_ 指定窗口大小。
@@ -88,7 +88,7 @@ KSPROPERTY **Value** \_ VIDEOCOMPRESSION S 结构的 Value 成员 \_ 指定窗�
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSPROPERTY**](/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)

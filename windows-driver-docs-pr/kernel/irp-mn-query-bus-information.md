@@ -20,7 +20,7 @@ PnP 管理器使用此 IRP 来请求设备的父总线的类型和实例编号�
 
 总线驱动程序应为 (PDOs) 的子设备处理此请求。 函数和筛选器驱动程序不处理此 IRP。
 
-## <a name="value"></a>“值”
+## <a name="value"></a>值
 
 0x15
 
@@ -109,7 +109,7 @@ PnP 总线驱动程序将 **LegacyBusType** 设置为父总线的 [**接口 \_ �
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**IoGetDeviceProperty**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetdeviceproperty)

@@ -1,6 +1,6 @@
 ---
-title: KSPROPERTY\_SOUNDDETECTOR\_STREAMINGSUPPORT
-description: KSPROPERTY\_SOUNDDETECTOR\_STREAMINGSUPPORT 属性指示流是否受支持。
+title: KSPROPERTY \_ SOUNDDETECTOR \_ STREAMINGSUPPORT
+description: KSPROPERTY \_ SOUNDDETECTOR \_ STREAMINGSUPPORT 属性指示流是否受支持。
 ms.assetid: 3B9B43C0-31EE-4490-AD29-98DA81D1664E
 keywords:
 - KSPROPERTY_SOUNDDETECTOR_STREAMINGSUPPORT 音频设备
@@ -14,16 +14,16 @@ api_type:
 - HeaderDef
 ms.date: 09/24/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 4ffd33d153c7dd5ca962e39150f82fb09a95a12b
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: d4cbf23d2a8703b45ff99f2043698db767dd2cbb
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72830573"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90101904"
 ---
-# <a name="ksproperty_sounddetector_streamingsupport"></a>KSPROPERTY\_SOUNDDETECTOR\_STREAMINGSUPPORT
+# <a name="ksproperty_sounddetector_streamingsupport"></a>KSPROPERTY \_ SOUNDDETECTOR \_ STREAMINGSUPPORT
 
-**KSPROPERTY\_SOUNDDETECTOR\_STREAMINGSUPPORT**属性指示流是否受支持。
+**KSPROPERTY \_ SOUNDDETECTOR \_ STREAMINGSUPPORT**属性指示流是否受支持。
 
 ### <a name="span-idusage_summary_tablespanspan-idusage_summary_tablespanspan-idusage_summary_tablespanusage-summary-table"></a><span id="Usage_Summary_Table"></span><span id="usage_summary_table"></span><span id="USAGE_SUMMARY_TABLE"></span>使用情况摘要表
 
@@ -37,7 +37,7 @@ ms.locfileid: "72830573"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">“获取”</th>
+<th align="left">获取</th>
 <th align="left">设置</th>
 <th align="left">目标</th>
 <th align="left">属性描述符类型</th>
@@ -46,11 +46,11 @@ ms.locfileid: "72830573"
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>“是”</p></td>
-<td align="left"><p>无</p></td>
-<td align="left"><p>Filter</p></td>
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-kssounddetectorproperty" data-raw-source="[&lt;strong&gt;KSSOUNDDETECTORPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-kssounddetectorproperty"><strong>KSSOUNDDETECTORPROPERTY</strong></a></p></td>
-<td align="left"><p>型</p></td>
+<td align="left"><p>是</p></td>
+<td align="left"><p>否</p></td>
+<td align="left"><p>筛选器</p></td>
+<td align="left"><p><a href="/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-kssounddetectorproperty" data-raw-source="[&lt;strong&gt;KSSOUNDDETECTORPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-kssounddetectorproperty"><strong>KSSOUNDDETECTORPROPERTY</strong></a></p></td>
+<td align="left"><p>BOOL</p></td>
 </tr>
 </tbody>
 </table>
@@ -67,7 +67,7 @@ ms.locfileid: "72830573"
 
 所有检测程序都必须支持缓冲和脉冲流式处理触发硬件关键字检测的音频数据，并使此请求失败，或将此值设置为 true。
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 此属性供将来使用。 目前没有对检测程序的操作系统支持，这只是语音开始。
 
@@ -93,6 +93,6 @@ ms.locfileid: "72830573"
 
 ## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅
 
-[**KSPROPERTY\_SOUNDDETECTOR\_模式**](ksproperty-sounddetector-patterns.md)
+[**KSPROPERTY \_ SOUNDDETECTOR \_ 模式**](ksproperty-sounddetector-patterns.md)
 
 [**KSSOUNDDETECTORPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/)

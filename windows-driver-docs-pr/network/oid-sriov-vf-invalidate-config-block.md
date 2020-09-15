@@ -19,7 +19,7 @@ NDIS (oid 发出对象标识符) 方法请求 OID \_ SRIOV \_ vf \_ 使 \_ CONFI
 
 [**Ndis \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的**InformationBuffer**成员包含指向 ndis SRIOV VF 的指针，该指针会[** \_ \_ \_ 使 \_ 配置 \_ 块 \_ 信息结构无效**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_sriov_vf_invalidate_config_block_info)。 此结构指定了一个或多个虚拟函数 (VF) 配置块，这些配置块的数据已更改 (无效，而 PF 微型端口驱动程序) *失效* 。
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
 VF 配置块用于 backchannel 和 VF 微型端口驱动程序之间的通信。 IHV 可以为设备定义一个或多个 VF 配置块。 每个 VF 配置块都有一个 IHV 定义的格式、长度和块 ID。

@@ -64,7 +64,7 @@ ms.locfileid: "90101838"
 
 **KSPROPERTY \_ 电话服务 \_ PROVIDERCHANGE**属性请求返回状态 " \_ 成功" 以指示它已成功完成。 否则，请求将返回相应的错误状态代码。
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
 音频堆栈使用 [**KSTELEPHONY \_ PROVIDERCHANGE**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-_tagkstelephony_providerchange) 属性指示 SRVCC 到音频驱动程序的开始和结束。 此属性将调用类型 (LTE 数据包交换、WLAN 数据包交换或线路交换) ，以及提供程序更改操作 (开始、结束或取消) 到驱动程序。 当提供程序操作用于结束 SRVCC 时，调用类型将被忽略。

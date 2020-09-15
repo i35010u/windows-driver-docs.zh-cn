@@ -149,7 +149,7 @@ DIF_SELECTBESTCOMPATDRV 请求允许安装程序从设备信息元素的兼容�
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**SetupDiSelectBestCompatDrv**](/windows/desktop/api/setupapi/nf-setupapi-setupdiselectbestcompatdrv)

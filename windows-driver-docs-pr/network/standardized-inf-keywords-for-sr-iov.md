@@ -55,7 +55,7 @@ SR-IOV 标准化 INF 关键字是枚举关键字，下表对此进行了说明�
 
  
 
-<a href="" id="value"></a>“值”  
+<a href="" id="value"></a>值  
 与列表中的每个 **SubkeyName** 关键字关联的枚举整数值。
 
 <a href="" id="enumdesc"></a>EnumDesc  
@@ -72,7 +72,7 @@ SR-IOV 标准化 INF 关键字是枚举关键字，下表对此进行了说明�
 <tr class="header">
 <th align="left">SubkeyName</th>
 <th align="left">ParamDesc</th>
-<th align="left">“值”</th>
+<th align="left">值</th>
 <th align="left">EnumDesc</th>
 </tr>
 </thead>

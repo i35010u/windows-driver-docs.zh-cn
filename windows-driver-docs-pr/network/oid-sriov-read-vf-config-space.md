@@ -23,7 +23,7 @@ ms.locfileid: "90105526"
 
 -   要从 PCI 配置空间读取的数据的额外缓冲区空间。
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
 VF 微型端口驱动程序在 Hyper-v 子分区的来宾操作系统中运行。 因此，VF 微型端口驱动程序无法直接访问硬件资源，如 VF 的 PCI 配置空间。 只有 PCIe 物理功能 (PF) 的微型端口驱动程序可以访问 VF 的 PCI 配置空间。 PF 微型端口驱动程序在 Hyper-v 父分区的管理操作系统中运行，并具有对 VF 资源的特权访问权限。
@@ -108,7 +108,7 @@ PF 多端口驱动程序为 OID \_ SRIOV \_ READ \_ VF \_ 配置 \_ 空间的 oi
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 ****

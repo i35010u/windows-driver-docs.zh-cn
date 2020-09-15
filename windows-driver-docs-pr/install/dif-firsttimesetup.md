@@ -129,7 +129,7 @@ GUI 模式安装程序发送一个 DIF_FIRSTTIMESETUP 请求，其中包含空�
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**DIF_SELECTBESTCOMPATDRV**](dif-selectbestcompatdrv.md)

@@ -61,7 +61,7 @@ ms.locfileid: "90105712"
 
  
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
 发出此请求时，pin 连接反过来会通过使用给定的上下文参数提供 [**KSQUALITY**](/windows-hardware/drivers/ddi/ks/ns-ks-ksquality) 结构来通知质量管理器。

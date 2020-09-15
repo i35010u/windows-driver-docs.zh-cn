@@ -71,7 +71,7 @@ Torch 模式决定了照相机的闪光在轻型条件下的使用方式。 闪�
 
 此属性控件是同步的，不可取消。
 
-## <a name="remarks"></a>备注
+## <a name="remarks"></a>注解
 
 ### <a name="getting-the-property"></a>获取属性
 

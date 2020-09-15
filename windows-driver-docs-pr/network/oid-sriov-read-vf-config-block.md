@@ -25,7 +25,7 @@ ms.locfileid: "90102416"
 
 -   要从指定的 VF 配置块中读取的数据的额外缓冲区空间。
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
 VF 配置块用于 backchannel 和 VF 微型端口驱动程序之间的通信。 IHV 可以为微型端口驱动程序定义一个或多个 VF 配置块。 每个 VF 配置块都有一个 IHV 定义的格式、长度和块 ID。
@@ -113,7 +113,7 @@ PF 多端口驱动程序为 OID \_ SRIOV \_ 读取 \_ VF \_ 配置 \_ 块的方�
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 ****

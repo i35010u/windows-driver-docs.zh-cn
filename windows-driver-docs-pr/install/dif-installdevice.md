@@ -150,7 +150,7 @@ DIF_INSTALLDEVICE 请求允许安装程序在安装设备之前和/或之后执�
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**DIF_INSTALLDEVICEFILES**](dif-installdevicefiles.md)

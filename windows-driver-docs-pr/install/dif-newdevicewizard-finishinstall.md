@@ -111,7 +111,7 @@ Windows 安装设备后 ([**DIF_INSTALLDEVICE**](dif-installdevice.md) 处理) �
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**DIF_FINISHINSTALL_ACTION**](dif-finishinstall-action.md)

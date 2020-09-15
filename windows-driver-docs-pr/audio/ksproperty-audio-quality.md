@@ -79,7 +79,7 @@ ms.locfileid: "90102052"
 
 KSPROPERTY \_ 音频 \_ 质量属性请求返回状态 " \_ 成功" 以指示它已成功完成。 否则，请求将返回相应的错误状态代码。
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
 有关 [KMixer 系统驱动程序](./kernel-mode-wdm-audio-components.md#kmixer-system-driver) 执行的采样速率转换的类型的信息，请参阅 [KMixer 驱动程序采样速率转换和混合策略](./index.md)。

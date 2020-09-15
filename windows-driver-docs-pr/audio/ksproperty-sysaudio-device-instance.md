@@ -67,7 +67,7 @@ KSPROPERTY \_ SYSAUDIO \_ 设备 \_ 实例属性指定虚拟音频设备的当�
 
 KSPROPERTY \_ SYSAUDIO \_ 设备 \_ 实例属性请求返回状态 " \_ 成功" 以指示已成功完成。 否则，请求将返回相应的错误状态代码。
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
 KSPROPERTY \_ SYSAUDIO \_ 设备 \_ 实例集-属性请求打开由属性值中包含的设备 ID 指定的虚拟音频设备。 最后一个要打开的设备称为 "当前设备"。

@@ -32,7 +32,7 @@ ms.locfileid: "90106614"
    <tr class="header">
    <th align="left">成员名称</th>
    <th align="left">成员类型</th>
-   <th align="left">“值”</th>
+   <th align="left">值</th>
    </tr>
    </thead>
    <tbody>

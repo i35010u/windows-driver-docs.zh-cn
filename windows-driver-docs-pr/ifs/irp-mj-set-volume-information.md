@@ -81,7 +81,7 @@ FileFsObjectIdInformation
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">“值”</th>
+<th align="left">值</th>
 <th align="left">含义</th>
 </tr>
 </thead>
@@ -105,7 +105,7 @@ FileFsObjectIdInformation
 
 <a href="" id="irpsp--parameters-setvolume-length"></a>*IrpSp- &gt;SetVolume* * &gt; temBuffer 所AssociatedIrp.Sys*指向的缓冲区的长度（以字节为单位）。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**文件 \_ FS \_ 控制 \_ 信息**](/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_file_fs_control_information)

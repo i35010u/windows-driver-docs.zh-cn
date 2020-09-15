@@ -134,7 +134,7 @@ Windows 只显示一个驱动程序页、一个资源页和一个设备的一个
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**SP_ADDPROPERTYPAGE_DATA**](/windows/desktop/api/setupapi/ns-setupapi-_sp_newdevicewizard_data)

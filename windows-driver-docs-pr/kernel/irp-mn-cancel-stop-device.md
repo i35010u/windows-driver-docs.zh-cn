@@ -18,7 +18,7 @@ ms.locfileid: "90105536"
 
 所有 PnP 驱动程序都必须处理此 IRP。
 
-## <a name="value"></a>“值”
+## <a name="value"></a>值
 
 0x06
 
@@ -80,7 +80,7 @@ PnP 管理器在 \_ 系统线程的上下文中以 IRQL 被动级别发送此 IR
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**IRP \_ MN \_ 查询 \_ 停止 \_ 设备**](irp-mn-query-stop-device.md)

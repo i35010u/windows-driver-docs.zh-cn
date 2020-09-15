@@ -20,7 +20,7 @@ PnP 管理器发送此 IRP 以获取设备的功能，例如设备是否可以�
 
 函数和筛选器驱动程序在更改总线驱动程序支持的功能时，可以处理此请求。 总线驱动程序必须为其子设备处理此请求。
 
-## <a name="value"></a>“值”
+## <a name="value"></a>值
 
 0x09
 
@@ -106,7 +106,7 @@ PnP 管理器和驱动程序将此 IRP 以 IRQL 被动级别发送到 \_ 任意�
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**设备 \_ 功能**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_device_capabilities)

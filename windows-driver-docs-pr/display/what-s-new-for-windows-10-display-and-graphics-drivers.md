@@ -4,12 +4,12 @@ description: 描述用于显示驱动程序的 Windows 10 中的新增功能
 ms.assetid: 619175D4-98DA-4B17-8F6F-71B13A31374D
 ms.date: 05/12/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 3096932b6e0c2312ba876698c2a1312008d6eae7
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 2d0cea93214ca6db5dfbd8f2efcf58b7fd59e442
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89065980"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90103658"
 ---
 # <a name="whats-new-for-windows-10-display-and-graphics-drivers"></a>Windows 10 显示驱动程序和图形驱动程序的新增功能
 
@@ -23,7 +23,7 @@ ms.locfileid: "89065980"
 
 网格着色器功能引入了网格着色器阶段和新阶段：放大着色器。 Amplifications 着色器替换 GPU 分割阶段。 应用程序将其放大着色器设置为根据需要调用网格着色器若干次。 放大着色器是一个可选步骤，可让应用程序动态控制几何详细信息的级别。
 
-网格着色器功能涉及新的底纹语言构造以及 UMD 的更改。 对于网格着色器的报表设备功能，有一个名为 **MeshShaderTier** 的字段，通过 [**D3D12DDI_D3D12_OPTIONS_DATA_0073**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d12umddi/ns-d3d12umddi-d3d12ddi_d3d12_options_data_0073)报告。 而且，由于这会引入两个新的着色器阶段，因此 [**D3D12DDIARG_CREATE_PIPELINE_STATE_0075**](/windows-hardware/drivers/ddi/d3d12umddi/ns-d3d12umddi-d3d12ddiarg_create_pipeline_state_0075)、 **hMeshShader** 和 **hAmplificationShader**中有两个新字段。 若要启动，请参阅 "DDI [**PFND3D12DDI_DISPATCH_MESH_0074**](/windows-hardware/drivers/ddi/d3d12umddi/nc-d3d12umddi-pfnd3d12ddi_dispatch_mesh_0074) 的命令列表" 和 "间接调度 [**D3D12DDI_INDIRECT_ARGUMENT_TYPE_DISPATCH_MESH**](/windows-hardware/drivers/ddi/d3d12umddi/ne-d3d12umddi-d3d12ddi_indirect_argument_type) "。
+网格着色器功能涉及新的底纹语言构造以及 UMD 的更改。 对于网格着色器的报表设备功能，有一个名为 **MeshShaderTier** 的字段，通过 [**D3D12DDI_D3D12_OPTIONS_DATA_0073**](/windows-hardware/drivers/ddi/d3d12umddi/ns-d3d12umddi-d3d12ddi_d3d12_options_data_0073)报告。 而且，由于这会引入两个新的着色器阶段，因此 [**D3D12DDIARG_CREATE_PIPELINE_STATE_0075**](/windows-hardware/drivers/ddi/d3d12umddi/ns-d3d12umddi-d3d12ddiarg_create_pipeline_state_0075)、 **hMeshShader** 和 **hAmplificationShader**中有两个新字段。 若要启动，请参阅 "DDI [**PFND3D12DDI_DISPATCH_MESH_0074**](/windows-hardware/drivers/ddi/d3d12umddi/nc-d3d12umddi-pfnd3d12ddi_dispatch_mesh_0074) 的命令列表" 和 "间接调度 [**D3D12DDI_INDIRECT_ARGUMENT_TYPE_DISPATCH_MESH**](/windows-hardware/drivers/ddi/d3d12umddi/ne-d3d12umddi-d3d12ddi_indirect_argument_type) "。
 
 ## <a name="directx-raytracing-dxr-11"></a>DirectX Raytracing (DXR) 1。1
 
@@ -46,7 +46,7 @@ WDDM 2.7 引入了一些新功能和改进功能，这些功能在 Direct3D 12 �
 
 示例操作的反馈会写入 "反馈映射"，它充当一种不透明资源，这类资源必须转码，才能获取 inspectable 的信息。与编写反馈本身一样，着色器模型6_5 中有 HLSL 的构造。 语义非常类似于 Texture2D's 示例及其变体的语义。
 
-虽然取样器反馈可以充分利用新的底纹语言构造，但它也涉及 UMD 的更改。 对于设备功能检查，有一个名为 "SamplerFeedbackTier" 的上限通过 [**D3D12DDI_D3D12_OPTIONS_DATA_0073**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d12umddi/ns-d3d12umddi-d3d12ddi_d3d12_options_data_0073)报告。 已将资源创建修改为采用 [**D3D12DDI_MIP_REGION_0075**](/windows-hardware/drivers/ddi/d3d12umddi/ns-d3d12umddi-d3d12ddi_mip_region_0075)类型的新字段 "采样器反馈" mip 区域。 与此一起，还有一个新的描述符创建方法， [**PFND3D12DDI_CREATE_SAMPLER_FEEDBACK_UNORDERED_ACCESS_VIEW_0075**](/windows-hardware/drivers/ddi/d3d12umddi/nc-d3d12umddi-pfnd3d12ddi_create_sampler_feedback_unordered_access_view_0075)。
+虽然取样器反馈可以充分利用新的底纹语言构造，但它也涉及 UMD 的更改。 对于设备功能检查，有一个名为 "SamplerFeedbackTier" 的上限通过 [**D3D12DDI_D3D12_OPTIONS_DATA_0073**](/windows-hardware/drivers/ddi/d3d12umddi/ns-d3d12umddi-d3d12ddi_d3d12_options_data_0073)报告。 已将资源创建修改为采用 [**D3D12DDI_MIP_REGION_0075**](/windows-hardware/drivers/ddi/d3d12umddi/ns-d3d12umddi-d3d12ddi_mip_region_0075)类型的新字段 "采样器反馈" mip 区域。 与此一起，还有一个新的描述符创建方法， [**PFND3D12DDI_CREATE_SAMPLER_FEEDBACK_UNORDERED_ACCESS_VIEW_0075**](/windows-hardware/drivers/ddi/d3d12umddi/nc-d3d12umddi-pfnd3d12ddi_create_sampler_feedback_unordered_access_view_0075)。
 
 ## <a name="content-protection"></a>内容保护
 

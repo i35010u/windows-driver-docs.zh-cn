@@ -61,7 +61,7 @@ ms.locfileid: "90104972"
 
  
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
 此属性将返回 [**KSALLOCATOR \_ 组帧**](/windows-hardware/drivers/ddi/ks/ns-ks-ksallocator_framing)，其中描述了 pin 的组帧要求。 例如， **FrameSize** 成员指定 pin 上数据的帧大小。

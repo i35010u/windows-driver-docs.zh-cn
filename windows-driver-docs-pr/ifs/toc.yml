@@ -18,15 +18,15 @@
           href: how-file-system-filter-drivers-are-similar-to-device-drivers.md
         - name: 文件系统筛选器驱动程序与设备驱动程序的差异在哪里
           href: how-file-system-filter-drivers-are-different-from-device-drivers.md
-- name: 文件系统微筛选器驱动程序
+- name: 文件系统筛选器驱动程序
   items:
-    - name: 筛选器管理器和微筛选器
+    - name: 筛选器管理器和筛选器
       items:
         - name: 概述
           href: filter-manager-concepts.md
         - name: 筛选器管理器的优势
           href: advantages-of-the-filter-manager-model.md
-        - name: 筛选器管理器对微筛选器驱动程序的支持
+        - name: 筛选器管理器对筛选器驱动程序的支持
           items:
             - name: 加载和卸载
               href: loading-and-unloading.md
@@ -40,7 +40,7 @@
               href: managing-file-names.md
             - name: 管理上下文
               href: managing-contexts.md
-            - name: 由微筛选器驱动程序生成的 I/O 请求
+            - name: 由筛选器驱动程序生成的 I/O 请求
               href: i-o-requests-generated-by-the-minifilter-driver.md
             - name: 用户模式和内核模式之间的通信
               href: communication-between-user-mode-and-kernel-mode.md
@@ -52,25 +52,25 @@
           href: development-and-testing-tools.md
         - name: 旧筛选器驱动程序移植指南
           href: guidelines-for-porting-legacy-filter-drivers.md
-    - name: 微筛选器驱动程序安装
+    - name: 筛选器驱动程序安装
       items:
-        - name: 安装微筛选器驱动程序
+        - name: 安装筛选器驱动程序
           href: installing-a-minifilter-driver.md
+        - name: '文件系统筛选器加载顺序 '
+          href: what-determines-when-a-driver-is-loaded.md
         - name: 创建 INF 文件
           href: creating-an-inf-file-for-a-minifilter-driver.md
         - name: 加载顺序组和等级
           href: load-order-groups-and-altitudes-for-minifilter-drivers.md
         - name: 分配的等级
           href: allocated-altitudes.md
-        - name: 微筛选器等级请求
+        - name: 筛选器等级请求
           href: minifilter-altitude-request.md
-        - name: 重新分析点标记请求
-          href: reparse-point-tag-request.md
-    - name: 微筛选器 DriverEntry 例程
+    - name: 筛选器 DriverEntry 例程
       items:
         - name: 编写 DriverEntry 例程
           href: writing-a-driverentry-routine-for-a-minifilter-driver.md
-        - name: 注册微筛选器驱动程序
+        - name: 注册筛选器驱动程序
           href: registering-the-minifilter-driver.md
         - name: 启动筛选
           href: initiating-filtering.md
@@ -100,7 +100,7 @@
           href: writing-preoperation-and-postoperation-callback-routines.md
         - name: 注册预操作和后操作回调例程
           href: registering-preoperation-and-postoperation-callback-routines.md
-        - name: 筛选微筛选器驱动程序中的 I/O 操作
+        - name: 筛选筛选器驱动程序中的 I/O 操作
           href: filtering-i-o-operations-in-a-minifilter-driver.md
         - name: 预操作回调实现
           items:
@@ -108,7 +108,7 @@
               href: writing-preoperation-callback-routines.md
             - name: 向下传递 I/O 操作
               items:
-                - name: 沿微筛选器驱动程序实例堆栈向下传递 I/O 操作
+                - name: 沿筛选器驱动程序实例堆栈向下传递 I/O 操作
                   href: passing-an-i-o-operation-down-the-minifilter-driver-instance-stack.md
                 - name: 返回 FLT_PREOP_SUCCESS_WITH_CALLBACK
                   href: returning-flt-preop-success-with-callback.md
@@ -164,7 +164,7 @@
               href: accessing-user-buffers-in-a-postoperation-callback-routine.md
     - name: 管理上下文
       items:
-        - name: 管理微筛选器驱动程序中的上下文
+        - name: 管理筛选器驱动程序中的上下文
           href: managing-contexts-in-a-minifilter-driver.md
         - name: 注册上下文类型
           href: registering-context-types.md
@@ -198,14 +198,18 @@
           href: user-defined-ecps.md
         - name: 系统定义的 ECP
           href: system-defined-ecps.md
+    - name: 重新分析点
+      items:
+        - name: 关于重新分析点
+          href: reparse-points.md
+        - name: 重新分析点标记请求
+          href: reparse-point-tag-request.md
 - name: 文件系统旧版筛选器驱动程序
   items:
     - name: 关于旧版筛选器驱动程序
       href: about-file-system-legacy-filter-drivers.md
     - name: 旧版筛选器驱动程序的文件系统概念
       items:
-        - name: 什么决定何时加载驱动程序
-          href: what-determines-when-a-driver-is-loaded.md
         - name: 文件系统在系统启动期间会发生什么情况
           href: what-happens-to-file-systems-during-system-boot.md
         - name: 存储设备堆栈、存储卷和文件系统堆栈

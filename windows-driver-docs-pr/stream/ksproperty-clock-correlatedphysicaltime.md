@@ -61,7 +61,7 @@ ms.locfileid: "90104752"
 
  
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
 KSCORRELATED \_ 时间结构包含 **时间** 成员中的当前时钟时间和 **SystemTime** 成员的相关物理时间。
@@ -84,7 +84,7 @@ KSCORRELATED \_ 时间结构包含 **时间** 成员中的当前时钟时间和 
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSPROPERTY \_ 时钟 \_ PHYSICALTIME**](ksproperty-clock-physicaltime.md)

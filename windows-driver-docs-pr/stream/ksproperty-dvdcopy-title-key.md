@@ -63,7 +63,7 @@ KSPROPERTY \_ DVDCOPY \_ title \_ KEY 属性从 DVD 版权保护身份验证过�
 
 ) 操作数据 (的属性值是 \_ \_ 描述当前标题键的 KS DVDCOPY TITLEKEY 结构。
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
 有关标题键的详细信息，请参阅 [DVD 版权保护](./dvd-copyright-protection.md)。
@@ -84,7 +84,7 @@ KSPROPERTY \_ DVDCOPY \_ title \_ KEY 属性从 DVD 版权保护身份验证过�
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KS \_ DVDCOPY \_ TITLEKEY**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-_ks_dvdcopy_titlekey)

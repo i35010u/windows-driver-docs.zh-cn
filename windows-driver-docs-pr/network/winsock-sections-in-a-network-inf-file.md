@@ -112,7 +112,7 @@ ms.locfileid: "90107092"
 <thead>
 <tr class="header">
 <th align="left">命名空间</th>
-<th align="left">“值”</th>
+<th align="left">值</th>
 </tr>
 </thead>
 <tbody>

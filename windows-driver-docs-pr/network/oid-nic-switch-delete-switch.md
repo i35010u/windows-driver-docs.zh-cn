@@ -25,7 +25,7 @@ NDIS 将此 OID 集请求颁发给网络适配器 PCI Express (PCIe 的微型端
 
 [**Ndis \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的**InformationBuffer**成员包含指向[**ndis \_ NIC \_ SWITCH \_ DELETE \_ SWITCH \_ PARAMETERS**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_delete_switch_parameters)结构的指针。
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
 Oid \_ nic 交换机删除交换机的 oid 集请求 \_ \_ \_ 删除先前通过 oid [ \_ nic \_ 交换机 \_ CREATE \_ SWITCH](oid-nic-switch-create-switch.md)的 oid 方法请求创建的 NIC 交换机。
@@ -142,7 +142,7 @@ NDIS 为此请求返回以下状态代码之一：
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 ****

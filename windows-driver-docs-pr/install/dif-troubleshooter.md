@@ -126,7 +126,7 @@ DIF_TROUBLESHOOTER 没有默认的处理程序，但是，如果没有安装程�
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**CM_Get_DevNode_Status**](/windows/desktop/api/cfgmgr32/nf-cfgmgr32-cm_get_devnode_status)

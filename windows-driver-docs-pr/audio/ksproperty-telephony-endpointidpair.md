@@ -64,7 +64,7 @@ ms.locfileid: "90101846"
 
 **KSPROPERTY \_ 电话服务 \_ ENDPOINTIDPAIR**属性请求返回手机网络音频路由的呈现和捕获终结点。
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
 通过拓扑筛选器上的 **KSPROPERTY \_ 电话服务 \_ ENDPOINTIDPAIR** 属性控制手机网络路由。 此属性为所请求的终结点组合使用一对 [**KSTOPOLOGY \_ ENDPOINTID**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-_tagkstopology_endpointid) 结构。 **KSTOPOLOGY \_ENDPOINTID** 包含终结点的拓扑筛选器的引用字符串，以及终结点连接到的拓扑筛选器 PIN ID。 驱动程序提供对此属性的基本支持，并返回可用于移动电话音频路由的所有有效的呈现对和捕获终结点。 驱动程序负责处理将移动电话和捕获移动电话音频移动到这个新的终结点组合，满足硬件所需的任何约束。 即使系统中没有活动电话呼叫，也必须可以设置此属性。

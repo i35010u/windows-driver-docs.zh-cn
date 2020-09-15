@@ -63,7 +63,7 @@ ms.locfileid: "90102944"
 
  (操作数据) 的属性值是指定相机口径设置的 LONG 值。 此值以 fstop 10 的单位表示 \* 。
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
 KSPROPERTY **Value** \_ CAMERACONTROL S 结构的 Value 成员 \_ 指定相机的口径设置。

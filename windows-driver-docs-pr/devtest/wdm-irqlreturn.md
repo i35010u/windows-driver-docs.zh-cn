@@ -52,7 +52,7 @@ ms.locfileid: "90107462"
 </tbody>
 </table>
 
-<a name="see-also"></a>另请参阅
+<a name="see-also"></a>请参阅
 --------
 
 [**Dispatch 例程和于 IRQL**](../kernel/dispatch-routines-and-irqls.md)

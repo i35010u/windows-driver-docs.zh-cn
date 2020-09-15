@@ -4,12 +4,12 @@ description: 该度量将 7 天滑动窗口中的遥测数据进行聚合并形�
 ms.topic: article
 ms.date: 05/29/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 954803dd8822115fae419f242262548c2a6e1999
-ms.sourcegitcommit: 8517f8ecc7a53e958ea3989ea5441ec549b70b64
+ms.openlocfilehash: 1c7f8803df1d4db454b8b8e0644da3af1dd38c5f
+ms.sourcegitcommit: c214e65a7f5dd868037718a34ca7cc80584df5c6
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2020
-ms.locfileid: "85353711"
+ms.lasthandoff: 09/09/2020
+ms.locfileid: "89615469"
 ---
 # <a name="percent-of-machines-without-a-live-kernel-dump"></a>没有实时内核转储的计算机所占的百分比
 
@@ -28,7 +28,7 @@ ms.locfileid: "85353711"
 |通过标准|<= 3% 的计算机遇到了 LKD|
 |已启用队列|是|
 |每队列最小总体数量|500 台计算机|
-|度量 ID|25739929|
+|度量 ID|25739929 或 26118015|
 
 ## <a name="calculation"></a>计算
 

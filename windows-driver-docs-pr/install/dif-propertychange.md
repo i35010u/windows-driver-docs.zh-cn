@@ -75,7 +75,7 @@ DIF_PROPERTYCHANGE 请求通知安装程序设备的属性正在更改。 设备
 
 ### <a name="installer-output"></a>安装程序输出
 
-<a href="" id="none"></a>内容  
+<a href="" id="none"></a>无  
 
 ### <a name="installer-return-value"></a>安装程序返回值
 
@@ -127,7 +127,7 @@ DIF_PROPERTYCHANGE 请求通知安装程序设备的属性正在更改。 设备
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**SetupDiChangeState**](/windows/desktop/api/setupapi/nf-setupapi-setupdichangestate)

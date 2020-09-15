@@ -70,7 +70,7 @@ KSPROPERTY \_ VIDEOPROCAMP \_ POWERLINE \_ frequency 属性指定本地电源线
 </colgroup>
 <thead>
 <tr class="header">
-<th>“值”</th>
+<th>值</th>
 <th>说明</th>
 </tr>
 </thead>
@@ -102,7 +102,7 @@ KSPROPERTY \_ VIDEOPROCAMP \_ POWERLINE \_ frequency 属性指定本地电源线
 
  
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
 发出集请求时，客户端应提供 KSPROPERTY VIDEOPROCAMP 节点的 **值** 成员的上一个表中的值之一 \_ \_ \_ 。

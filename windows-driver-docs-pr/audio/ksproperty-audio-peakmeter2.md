@@ -85,7 +85,7 @@ KSPROPERTY \_ 音频 \_ PEAKMETER2 属性请求返回状态 " \_ 成功" 以指�
 </table>
 
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
 KSPROPERTY \_ 音频 \_ PEAKMETER2 属性与 [**KSPROPERTY \_ 音频 \_ PEAKMETER**](ksproperty-audio-peakmeter.md) 属性几乎相同。 \_Windows 8 中引入了 KSPROPERTY AUDIO \_ PEAKMETER2 属性，以提供已改进的 pin 拓扑硬件计数。 旧的 KSPROPERTY \_ AUDIO \_ PEAKMETER 属性已弃用，不应再使用。

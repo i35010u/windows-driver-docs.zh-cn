@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 09/04/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 245853d9e8edc7625b5e5d960755d6c539a04ef2
-ms.sourcegitcommit: 51cba71be022c726c04c29ba5c0360860b65d7a4
+ms.openlocfilehash: 4b5336aa6f849145d2d1c448545cf00d2e22dff2
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/09/2020
-ms.locfileid: "89562161"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90102100"
 ---
 # <a name="ksproperty_audio_mix_level_table"></a>KSPROPERTY \_ AUDIO \_ 混音 \_ 级 \_ 表
 
@@ -53,8 +53,8 @@ KSPROPERTY \_ AUDIO \_ MIX \_ LEVEL LEVEL \_ TABLE 属性指定 supermixer 节�
 <td align="left"><p>是</p></td>
 <td align="left"><p>可选</p></td>
 <td align="left"><p>Pin</p></td>
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksnodeproperty" data-raw-source="[&lt;strong&gt;KSNODEPROPERTY&lt;/strong&gt;](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksnodeproperty)"><strong>KSNODEPROPERTY</strong></a></p></td>
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksaudio_mixlevel" data-raw-source="[&lt;strong&gt;KSAUDIO_MIXLEVEL&lt;/strong&gt;](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksaudio_mixlevel)"><strong>KSAUDIO_MIXLEVEL</strong></a>结构的数组</p></td>
+<td align="left"><p><a href="/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksnodeproperty" data-raw-source="[&lt;strong&gt;KSNODEPROPERTY&lt;/strong&gt;](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksnodeproperty)"><strong>KSNODEPROPERTY</strong></a></p></td>
+<td align="left"><p><a href="/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksaudio_mixlevel" data-raw-source="[&lt;strong&gt;KSAUDIO_MIXLEVEL&lt;/strong&gt;](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksaudio_mixlevel)"><strong>KSAUDIO_MIXLEVEL</strong></a>结构的数组</p></td>
 </tr>
 </tbody>
 </table>
@@ -128,7 +128,7 @@ KSAUDIO MIXLEVEL 数组的大小 \_ 是从从[**KSPROPERTY \_ 音频 \_ 混音 \
 
 KSPROPERTY \_ 音频 \_ 组合 \_ 级别 \_ 表属性请求返回状态 " \_ 成功" 以指示已成功完成。 否则，请求将返回相应的错误状态代码。
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
 此筛选器将成功 \_ \_ \_ \_ 指定组合级别值 (**level** 成员 of KSAUDIO \_ MIXLEVEL) 超出了筛选器的范围，但 (会以) 静默方式将值设置为支持的范围。 但是，在后续请求中获取此属性时，筛选器将输出所使用的实际值。
@@ -161,6 +161,4 @@ KSPROPERTY \_ 音频 \_ 组合 \_ 级别 \_ 表属性请求返回状态 " \_ 成
 [**KSAUDIO \_ MIXLEVEL**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksaudio_mixlevel)
 
 [**KSNODETYPE \_ SUPERMIX**](ksnodetype-supermix.md)
-
- 
 

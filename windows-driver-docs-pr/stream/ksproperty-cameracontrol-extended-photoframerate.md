@@ -63,7 +63,7 @@ ms.locfileid: "90103760"
 
 此属性控件是同步的，不可取消。
 
-## <a name="remarks"></a>备注
+## <a name="remarks"></a>注解
 
 当响应 KSPROPERTY \_ 类型 \_ GET 请求时，驱动程序会将 [**KSCAMERA \_ EXTENDEDPROP \_ 标头**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header) 的成员设置为以下项。
 

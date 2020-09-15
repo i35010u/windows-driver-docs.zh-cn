@@ -23,7 +23,7 @@ Hyper-v 可扩展交换机的协议边缘 (OID 发出对象标识符) 设置 OID
 
 -   包含端口策略参数的属性缓冲区。 属性缓冲区包含一个结构，该结构基于[**NDIS \_ 交换机 \_ 端口 \_ 属性 \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_port_property_parameters)结构的**PropertyType**成员。 例如，如果 **PropertyType** 成员设置为 **NdisSwitchPortPropertyTypeVlan**，则属性缓冲区包含 [**NDIS \_ 交换机 \_ 端口 \_ 属性 \_ VLAN**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_port_property_vlan) 结构。
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
 转发扩展可以处理 OID \_ 交换机 \_ 端口 \_ 属性添加的 oid 设置请求 \_ 。 所有其他类型的扩展都必须调用 [**NdisFOidRequest**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfoidrequest) ，将 OID 请求转发到可扩展交换机驱动程序堆栈中的下一个扩展。
@@ -118,7 +118,7 @@ Hyper-v 可扩展交换机的协议边缘 (OID 发出对象标识符) 设置 OID
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 ****

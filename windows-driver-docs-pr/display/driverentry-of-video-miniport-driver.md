@@ -48,7 +48,7 @@ ULONG DriverEntry(
 
 **DriverEntry** 返回 [**VideoPortInitialize**](/windows-hardware/drivers/ddi/video/nf-video-videoportinitialize)返回的值。
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
 每个微型端口驱动程序必须具有显式命名为 **DriverEntry** 的函数才能加载。 **DriverEntry** 是由 i/o 系统直接调用的。

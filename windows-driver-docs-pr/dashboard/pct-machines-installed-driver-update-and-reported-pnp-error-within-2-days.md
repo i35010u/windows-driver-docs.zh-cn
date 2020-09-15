@@ -4,12 +4,12 @@ description: 度量将 30 天滑动窗口中的遥测数据聚合为成功安装
 ms.topic: article
 ms.date: 05/22/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: e4559c30b22735071b8f89af71869befa3af8082
-ms.sourcegitcommit: 4f08f5686c0bbc27d58930b993cbab1a98e3afb0
+ms.openlocfilehash: 28a5388ac5deeba7ba7e572645556b6b6a80205f
+ms.sourcegitcommit: c214e65a7f5dd868037718a34ca7cc80584df5c6
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/03/2020
-ms.locfileid: "89443859"
+ms.lasthandoff: 09/09/2020
+ms.locfileid: "89615489"
 ---
 # <a name="percent-of-machines-that-installed-a-driver-update-and-reported-a-pnp-error-code-within-two-days-of-install"></a>安装了驱动程序更新并在安装后两天内报告 PnP 错误代码的计算机的百分比
 
@@ -28,7 +28,7 @@ ms.locfileid: "89443859"
 |通过标准|<= 5% 的计算机遇到安装后 PNP 错误|
 |已启用队列|是|
 |每队列最小总体数量|500 台计算机|
-|度量 ID|10042784|
+|度量 ID|10042784 或 26387262|
 
 ## <a name="calculation"></a>计算
 

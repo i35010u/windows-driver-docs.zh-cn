@@ -80,7 +80,7 @@ ms.locfileid: "90107452"
 
 [NdisMDeregisterWdiMiniportDriver](/windows-hardware/drivers/ddi/dot11wdi/nf-dot11wdi-ndismderegisterwdiminiportdriver)
 
-<a name="see-also"></a>另请参阅
+<a name="see-also"></a>请参阅
 --------
 
 [WDI IHV 驱动程序接口](../network/wdi-ihv-driver-interfaces.md)

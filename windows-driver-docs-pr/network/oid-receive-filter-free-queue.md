@@ -19,7 +19,7 @@ NDIS 协议驱动程序发出对象标识符 (OID) 设置 OID \_ 接收 \_ 筛�
 
 [**Ndis \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的**InformationBuffer**成员包含指向[**ndis \_ 接收 \_ 队列 \_ 可用 \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_queue_free_parameters)结构的指针，该结构具有类型为**ndis \_ 接收 \_ 队列 \_ ID**的队列标识符。
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
 \_ \_ \_ \_ 对于 NDIS 6.20 和更高版本的微型端口驱动程序，oid 请求 oid 接收筛选器免费队列是可选的。 这对于支持虚拟机队列接口的微型端口驱动程序是必需的。

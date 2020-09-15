@@ -91,7 +91,7 @@ PF 多端口驱动程序为 oid \_ SRIOV \_ set \_ VF \_ 电源 \_ 状态的 oid
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 ****

@@ -19,7 +19,7 @@ ms.locfileid: "90105518"
 
 [**Ndis \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的**InformationBuffer**成员包含指向[**NDIS \_ SRIOV \_ 重置 \_ VF \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_sriov_reset_vf_parameters)结构的指针。 过量驱动程序通过此结构的 **VFId** 成员指定要重置的 VF 的标识符。
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
 可以通过 PCI Express (PCIe) 功能级别重置 (FLR) 重置 VF。 由于 FLR 请求是一项特权操作，因此只能由 Hyper-v 父分区的管理操作系统中运行的 PF 微型端口驱动程序执行。 在管理操作系统中运行的过量驱动程序将收到 FLR 请求的通知，并 \_ \_ \_ 向 PF 微型端口驱动程序发出 oid SRIOV 重置 VF 的 oid 请求。
@@ -93,7 +93,7 @@ ms.locfileid: "90105518"
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 ****

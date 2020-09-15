@@ -79,7 +79,7 @@ KSPROPERTY \_ 音频 \_ 算法 \_ 实例属性指定 (DSP) 算法的数字信号
 
 KSPROPERTY \_ 音频 \_ 算法 \_ 实例属性请求返回状态 " \_ 成功" 以指示已成功完成。 否则，请求将返回相应的错误状态代码。
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
 此属性用于控制由 AEC 节点执行的 DSP 算法 (KSNODETYPE 的 "回声" [** \_ \_ \_ 取消**](ksnodetype-acoustic-echo-cancel.md)) 或 "噪音禁止显示" 节点 ([**KSNODETYPE \_ 噪声 \_ 禁止显示**](ksnodetype-noise-suppress.md)) 。

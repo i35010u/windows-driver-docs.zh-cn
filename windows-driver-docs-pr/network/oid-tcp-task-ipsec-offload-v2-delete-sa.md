@@ -91,7 +91,7 @@ ms.locfileid: "90103578"
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**IPSEC \_ 卸载 \_ V2 \_ 删除 \_ SA**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ipsec_offload_v2_delete_sa)
