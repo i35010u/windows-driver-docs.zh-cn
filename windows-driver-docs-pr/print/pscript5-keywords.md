@@ -4,12 +4,12 @@ description: Pscript5 关键字
 ms.assetid: a5f4384a-8d78-4dc6-969b-f7a1fa6cb5e7
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 756978c5b434470a3f869cd0fb2231e76370df6d
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 8fd774f55e7be16049a4aa48cebda6a4e0699978
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89217425"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90107522"
 ---
 # <a name="pscript5-keywords"></a>Pscript5 关键字
 
@@ -55,7 +55,7 @@ ms.locfileid: "89217425"
 <tr class="even">
 <td><p>%CustomPageSize</p></td>
 <td><p>自定义页面大小选项具有复杂格式。 请参阅此表后面的注释2。</p></td>
-<td><p>读取或指定自定义页面大小设置。 设置此功能还会导致公用<a href="https://docs.microsoft.com/windows/win32/api/wingdi/ns-wingdi-devmodew" data-raw-source="[&lt;strong&gt;DEVMODEW&lt;/strong&gt;](/windows/win32/api/wingdi/ns-wingdi-devmodew)"><strong>DEVMODEW</strong></a>结构的<strong>dmPaperSize</strong>成员重置为 DMPAPER_CUSTOMSIZE (指示 PS 自定义大小) ，并设置 DM_PAPERSIZE 位标志。 此功能只能在公共 DEVMODEW 结构指示正在使用的是自定义纸张大小时才会被读取。</p>
+<td><p>读取或指定自定义页面大小设置。 设置此功能还会导致公用<a href="/windows/win32/api/wingdi/ns-wingdi-devmodew" data-raw-source="[&lt;strong&gt;DEVMODEW&lt;/strong&gt;](/windows/win32/api/wingdi/ns-wingdi-devmodew)"><strong>DEVMODEW</strong></a>结构的<strong>dmPaperSize</strong>成员重置为 DMPAPER_CUSTOMSIZE (指示 PS 自定义大小) ，并设置 DM_PAPERSIZE 位标志。 此功能只能在公共 DEVMODEW 结构指示正在使用的是自定义纸张大小时才会被读取。</p>
 <p>文档-粘滞。</p></td>
 </tr>
 <tr class="odd">
@@ -112,7 +112,7 @@ ms.locfileid: "89217425"
 <td><p>% 方向</p></td>
 <td><p></p>
 "纵向" "横向" "RotatedLandscape"</td>
-<td><p>指定输出方向。 使用此技术配置方向时，将在与<strong>IPrintCoreHelperPS</strong>接口一起使用时，更改 private 和 public <a href="https://docs.microsoft.com/windows/win32/api/wingdi/ns-wingdi-devmodew" data-raw-source="[&lt;strong&gt;DEVMODEW&lt;/strong&gt;](/windows/win32/api/wingdi/ns-wingdi-devmodew)"><strong>DEVMODEW</strong></a>结构值。 此警告不适用于 <strong>IPrintCoreUI2</strong> 接口。</p>
+<td><p>指定输出方向。 使用此技术配置方向时，将在与<strong>IPrintCoreHelperPS</strong>接口一起使用时，更改 private 和 public <a href="/windows/win32/api/wingdi/ns-wingdi-devmodew" data-raw-source="[&lt;strong&gt;DEVMODEW&lt;/strong&gt;](/windows/win32/api/wingdi/ns-wingdi-devmodew)"><strong>DEVMODEW</strong></a>结构值。 此警告不适用于 <strong>IPrintCoreUI2</strong> 接口。</p>
 <p>文档-粘滞。</p></td>
 </tr>
 <tr class="odd">
@@ -201,8 +201,6 @@ ms.locfileid: "89217425"
  
 
 **注意**   3个数值表示为只包含数字字符的 ANSI 字符串。 不允许使用符号符号。 例如，"300" 有效，但 "-20"、"20.5" 和 "+ 300" 均无效。 本说明适用于% JobTimeout、% MaxFontSizeAsBitmap、% MinFontAsOutline、% PSMemory 和% WaitTimeout。
-
- 
 
  
 

@@ -11,12 +11,12 @@ keywords:
 - 用户模式驱动程序 WDK UMDF，处理 i/o、驱动程序创建与应用程序创建的文件对象
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 568fa5a2332c330ec684587986a1429404bf9369
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: aeb9ad6814ee7b28dda3167c6fdbf6b6e174d289
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89188715"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90106916"
 ---
 # <a name="driver-created-versus-application-created-file-objects"></a>驱动程序创建的文件对象与应用程序创建的文件对象
 
@@ -40,19 +40,19 @@ ms.locfileid: "89188715"
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>对 Microsoft Win32 <a href="https://docs.microsoft.com/windows/desktop/api/fileapi/nf-fileapi-createfilea" data-raw-source="[&lt;strong&gt;CreateFile&lt;/strong&gt;](/windows/desktop/api/fileapi/nf-fileapi-createfilea)"><strong>CreateFile</strong></a> 函数的调用。</p></td>
-<td align="left"><p>对其 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iqueuecallbackcreate-oncreatefile" data-raw-source="[&lt;strong&gt;IQueueCallbackCreate::OnCreateFile&lt;/strong&gt;](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iqueuecallbackcreate-oncreatefile)"><strong>IQueueCallbackCreate：： OnCreateFile</strong></a> 方法的调用。</p></td>
+<td align="left"><p>对 Microsoft Win32 <a href="/windows/desktop/api/fileapi/nf-fileapi-createfilea" data-raw-source="[&lt;strong&gt;CreateFile&lt;/strong&gt;](/windows/desktop/api/fileapi/nf-fileapi-createfilea)"><strong>CreateFile</strong></a> 函数的调用。</p></td>
+<td align="left"><p>对其 <a href="/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iqueuecallbackcreate-oncreatefile" data-raw-source="[&lt;strong&gt;IQueueCallbackCreate::OnCreateFile&lt;/strong&gt;](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iqueuecallbackcreate-oncreatefile)"><strong>IQueueCallbackCreate：： OnCreateFile</strong></a> 方法的调用。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>对 Win32 <strong>ReadFileEx</strong>、 <strong>WriteFileEx</strong>或 <a href="https://docs.microsoft.com/windows/desktop/api/ioapiset/nf-ioapiset-deviceiocontrol" data-raw-source="[&lt;strong&gt;DeviceIoControl&lt;/strong&gt;](/windows/desktop/api/ioapiset/nf-ioapiset-deviceiocontrol)"><strong>DeviceIoControl</strong></a> 函数的调用。</p></td>
-<td align="left"><p>对其 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iqueuecallbackread-onread" data-raw-source="[&lt;strong&gt;IQueueCallbackRead::OnRead&lt;/strong&gt;](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iqueuecallbackread-onread)"><strong>IQueueCallbackRead：： OnRead</strong></a>、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iqueuecallbackwrite-onwrite" data-raw-source="[&lt;strong&gt;IQueueCallbackWrite::OnWrite&lt;/strong&gt;](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iqueuecallbackwrite-onwrite)"><strong>IQueueCallbackWrite：： OnWrite</strong></a>或 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iqueuecallbackdeviceiocontrol-ondeviceiocontrol" data-raw-source="[&lt;strong&gt;IQueueCallbackDeviceIoControl::OnDeviceIoControl&lt;/strong&gt;](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iqueuecallbackdeviceiocontrol-ondeviceiocontrol)"><strong>IQueueCallbackDeviceIoControl：： OnDeviceIoControl</strong></a> 方法的调用。</p></td>
+<td align="left"><p>对 Win32 <strong>ReadFileEx</strong>、 <strong>WriteFileEx</strong>或 <a href="/windows/desktop/api/ioapiset/nf-ioapiset-deviceiocontrol" data-raw-source="[&lt;strong&gt;DeviceIoControl&lt;/strong&gt;](/windows/desktop/api/ioapiset/nf-ioapiset-deviceiocontrol)"><strong>DeviceIoControl</strong></a> 函数的调用。</p></td>
+<td align="left"><p>对其 <a href="/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iqueuecallbackread-onread" data-raw-source="[&lt;strong&gt;IQueueCallbackRead::OnRead&lt;/strong&gt;](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iqueuecallbackread-onread)"><strong>IQueueCallbackRead：： OnRead</strong></a>、 <a href="/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iqueuecallbackwrite-onwrite" data-raw-source="[&lt;strong&gt;IQueueCallbackWrite::OnWrite&lt;/strong&gt;](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iqueuecallbackwrite-onwrite)"><strong>IQueueCallbackWrite：： OnWrite</strong></a>或 <a href="/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iqueuecallbackdeviceiocontrol-ondeviceiocontrol" data-raw-source="[&lt;strong&gt;IQueueCallbackDeviceIoControl::OnDeviceIoControl&lt;/strong&gt;](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iqueuecallbackdeviceiocontrol-ondeviceiocontrol)"><strong>IQueueCallbackDeviceIoControl：： OnDeviceIoControl</strong></a> 方法的调用。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>对文件对象的最后一个打开句柄调用 Win32 <strong>CloseHandle</strong> 函数。</p></td>
-<td align="left"><p>对其 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-ifilecallbackcleanup-oncleanupfile" data-raw-source="[&lt;strong&gt;IFileCallbackCleanup::OnCleanupFile&lt;/strong&gt;](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-ifilecallbackcleanup-oncleanupfile)"><strong>IFileCallbackCleanup：： OnCleanupFile</strong></a> 方法的调用。</p>
+<td align="left"><p>对其 <a href="/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-ifilecallbackcleanup-oncleanupfile" data-raw-source="[&lt;strong&gt;IFileCallbackCleanup::OnCleanupFile&lt;/strong&gt;](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-ifilecallbackcleanup-oncleanupfile)"><strong>IFileCallbackCleanup：： OnCleanupFile</strong></a> 方法的调用。</p>
 <p>驱动程序将取消或完成与该文件对象关联的所有 i/o 请求。</p>
 <p>驱动程序从清除通知返回后，UMDF 会取消任何挂起的 i/o 请求。</p>
-<p>清理完成后，UMDF 将取消挂起的 i/o 请求，驱动程序将收到对其 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-ifilecallbackclose-onclosefile" data-raw-source="[&lt;strong&gt;IFileCallbackClose::OnCloseFile&lt;/strong&gt;](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-ifilecallbackclose-onclosefile)"><strong>IFileCallbackClose：： OnCloseFile</strong></a> 方法的调用。</p></td>
+<p>清理完成后，UMDF 将取消挂起的 i/o 请求，驱动程序将收到对其 <a href="/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-ifilecallbackclose-onclosefile" data-raw-source="[&lt;strong&gt;IFileCallbackClose::OnCloseFile&lt;/strong&gt;](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-ifilecallbackclose-onclosefile)"><strong>IFileCallbackClose：： OnCloseFile</strong></a> 方法的调用。</p></td>
 </tr>
 </tbody>
 </table>
@@ -81,22 +81,22 @@ ms.locfileid: "89188715"
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>对 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdevice-createwdffile" data-raw-source="[&lt;strong&gt;IWDFDevice::CreateWdfFile&lt;/strong&gt;](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdevice-createwdffile)"><strong>IWDFDevice：： CreateWdfFile</strong></a> 方法的调用。</p>
+<td align="left"><p>对 <a href="/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdevice-createwdffile" data-raw-source="[&lt;strong&gt;IWDFDevice::CreateWdfFile&lt;/strong&gt;](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdevice-createwdffile)"><strong>IWDFDevice：： CreateWdfFile</strong></a> 方法的调用。</p>
 <p>UMDF 创建的文件对象表示设备与堆栈中的下一个设备之间的 i/o 会话。</p></td>
-<td align="left"><p>对其 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iqueuecallbackcreate-oncreatefile" data-raw-source="[&lt;strong&gt;IQueueCallbackCreate::OnCreateFile&lt;/strong&gt;](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iqueuecallbackcreate-oncreatefile)"><strong>IQueueCallbackCreate：： OnCreateFile</strong></a> 方法的调用。</p></td>
+<td align="left"><p>对其 <a href="/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iqueuecallbackcreate-oncreatefile" data-raw-source="[&lt;strong&gt;IQueueCallbackCreate::OnCreateFile&lt;/strong&gt;](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iqueuecallbackcreate-oncreatefile)"><strong>IQueueCallbackCreate：： OnCreateFile</strong></a> 方法的调用。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>对 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdevice-createrequest" data-raw-source="[&lt;strong&gt;IWDFDevice::CreateRequest&lt;/strong&gt;](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdevice-createrequest)"><strong>IWDFDevice：： CreateRequest</strong></a> 方法的调用。</p>
-<p>对请求进行格式设置的调用 (例如，对 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiotarget-formatrequestforioctl" data-raw-source="[&lt;strong&gt;IWDFIoTarget::FormatRequestForIoctl&lt;/strong&gt;](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiotarget-formatrequestforioctl)"><strong>IWDFIoTarget：： FormatRequestForIoctl</strong></a> 方法的调用) 。</p>
-<p>调用 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiorequest-send" data-raw-source="[&lt;strong&gt;IWDFIoRequest::Send&lt;/strong&gt;](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiorequest-send)"><strong>IWDFIoRequest：： Send</strong></a> 方法。</p></td>
-<td align="left"><p>对其 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iqueuecallbackread-onread" data-raw-source="[&lt;strong&gt;IQueueCallbackRead::OnRead&lt;/strong&gt;](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iqueuecallbackread-onread)"><strong>IQueueCallbackRead：： OnRead</strong></a>、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iqueuecallbackwrite-onwrite" data-raw-source="[&lt;strong&gt;IQueueCallbackWrite::OnWrite&lt;/strong&gt;](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iqueuecallbackwrite-onwrite)"><strong>IQueueCallbackWrite：： OnWrite</strong></a>或 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iqueuecallbackdeviceiocontrol-ondeviceiocontrol" data-raw-source="[&lt;strong&gt;IQueueCallbackDeviceIoControl::OnDeviceIoControl&lt;/strong&gt;](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iqueuecallbackdeviceiocontrol-ondeviceiocontrol)"><strong>IQueueCallbackDeviceIoControl：： OnDeviceIoControl</strong></a> 方法的调用。</p></td>
+<td align="left"><p>对 <a href="/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdevice-createrequest" data-raw-source="[&lt;strong&gt;IWDFDevice::CreateRequest&lt;/strong&gt;](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdevice-createrequest)"><strong>IWDFDevice：： CreateRequest</strong></a> 方法的调用。</p>
+<p>对请求进行格式设置的调用 (例如，对 <a href="/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiotarget-formatrequestforioctl" data-raw-source="[&lt;strong&gt;IWDFIoTarget::FormatRequestForIoctl&lt;/strong&gt;](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiotarget-formatrequestforioctl)"><strong>IWDFIoTarget：： FormatRequestForIoctl</strong></a> 方法的调用) 。</p>
+<p>调用 <a href="/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiorequest-send" data-raw-source="[&lt;strong&gt;IWDFIoRequest::Send&lt;/strong&gt;](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiorequest-send)"><strong>IWDFIoRequest：： Send</strong></a> 方法。</p></td>
+<td align="left"><p>对其 <a href="/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iqueuecallbackread-onread" data-raw-source="[&lt;strong&gt;IQueueCallbackRead::OnRead&lt;/strong&gt;](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iqueuecallbackread-onread)"><strong>IQueueCallbackRead：： OnRead</strong></a>、 <a href="/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iqueuecallbackwrite-onwrite" data-raw-source="[&lt;strong&gt;IQueueCallbackWrite::OnWrite&lt;/strong&gt;](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iqueuecallbackwrite-onwrite)"><strong>IQueueCallbackWrite：： OnWrite</strong></a>或 <a href="/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iqueuecallbackdeviceiocontrol-ondeviceiocontrol" data-raw-source="[&lt;strong&gt;IQueueCallbackDeviceIoControl::OnDeviceIoControl&lt;/strong&gt;](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iqueuecallbackdeviceiocontrol-ondeviceiocontrol)"><strong>IQueueCallbackDeviceIoControl：： OnDeviceIoControl</strong></a> 方法的调用。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>调用 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdrivercreatedfile-close" data-raw-source="[&lt;strong&gt;IWDFDriverCreatedFile::Close&lt;/strong&gt;](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdrivercreatedfile-close)"><strong>IWDFDriverCreatedFile：： Close</strong></a> 方法。</p></td>
-<td align="left"><p>对其 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-ifilecallbackcleanup-oncleanupfile" data-raw-source="[&lt;strong&gt;IFileCallbackCleanup::OnCleanupFile&lt;/strong&gt;](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-ifilecallbackcleanup-oncleanupfile)"><strong>IFileCallbackCleanup：： OnCleanupFile</strong></a> 方法的调用。</p>
+<td align="left"><p>调用 <a href="/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdrivercreatedfile-close" data-raw-source="[&lt;strong&gt;IWDFDriverCreatedFile::Close&lt;/strong&gt;](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdrivercreatedfile-close)"><strong>IWDFDriverCreatedFile：： Close</strong></a> 方法。</p></td>
+<td align="left"><p>对其 <a href="/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-ifilecallbackcleanup-oncleanupfile" data-raw-source="[&lt;strong&gt;IFileCallbackCleanup::OnCleanupFile&lt;/strong&gt;](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-ifilecallbackcleanup-oncleanupfile)"><strong>IFileCallbackCleanup：： OnCleanupFile</strong></a> 方法的调用。</p>
 <p>驱动程序将取消或完成与该文件对象关联的所有 i/o 请求。</p>
 <p>驱动程序从清除通知返回后，UMDF 会取消任何挂起的 i/o 请求。</p>
-<p>清理完成后，UMDF 将取消挂起的 i/o 请求，驱动程序将收到对其 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-ifilecallbackclose-onclosefile" data-raw-source="[&lt;strong&gt;IFileCallbackClose::OnCloseFile&lt;/strong&gt;](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-ifilecallbackclose-onclosefile)"><strong>IFileCallbackClose：： OnCloseFile</strong></a> 方法的调用。</p></td>
+<p>清理完成后，UMDF 将取消挂起的 i/o 请求，驱动程序将收到对其 <a href="/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-ifilecallbackclose-onclosefile" data-raw-source="[&lt;strong&gt;IFileCallbackClose::OnCloseFile&lt;/strong&gt;](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-ifilecallbackclose-onclosefile)"><strong>IFileCallbackClose：： OnCloseFile</strong></a> 方法的调用。</p></td>
 </tr>
 </tbody>
 </table>
@@ -104,6 +104,4 @@ ms.locfileid: "89188715"
  
 
 对于堆栈中的下一个设备，由应用程序创建的文件对象与更高层设备创建的文件对象之间没有差异。
-
- 
 

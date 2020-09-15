@@ -8,12 +8,12 @@ keywords:
 - 小型重定向程序 WDK，设备控制
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 67b46c3435c573ddbb8f5e01bc1c96c4f5123679
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 2b0d78f5d916d466112a3f4f9cf3d140939da308
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89065316"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90107304"
 ---
 # <a name="driver-start-stop-and-device-control"></a>驱动程序启动、停止和设备控制
 
@@ -30,7 +30,7 @@ ms.locfileid: "89065316"
 
 [**MRxDevFcbXXXControlFile**](./mrxdevfcbxxxcontrolfile.md)例程用于接收来自用户模式应用程序或服务的请求，通过在设备 FCB 上发出 IOCTL 或 FSCTL 调用来控制网络小型重定向程序。
 
-此外，还提供了两个用于处理驱动程序对象上的 IOCTL 和 FSCTL 操作的低 i/o 例程： [**MRxLowIOSubmit \[ LOWIO \_ Op \_ FSCTL \] **](https://msdn.microsoft.com/library/windows/hardware/ff550709)和[**MRxLowIOSubmit \[ LOWIO \_ op \_ IOCTL \] **](https://msdn.microsoft.com/library/windows/hardware/ff550715)。
+此外，还提供了两个用于处理驱动程序对象上的 IOCTL 和 FSCTL 操作的低 i/o 例程： [**MRxLowIOSubmit \[ LOWIO \_ Op \_ FSCTL \] **](./mrxlowiosubmit-lowio-op-fsctl-.md)和[**MRxLowIOSubmit \[ LOWIO \_ op \_ IOCTL \] **](./mrxlowiosubmit-lowio-op-ioctl-.md)。
 
 网络小型重定向程序还可以使用这些低 i/o 例程从用户模式应用程序或服务提供网络微型重定向程序的控制和管理。
 
@@ -49,21 +49,19 @@ ms.locfileid: "89065316"
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><a href="https://docs.microsoft.com/windows-hardware/drivers/ifs/mrxdevfcbxxxcontrolfile" data-raw-source="[&lt;strong&gt;MRxDevFcbXXXControlFile&lt;/strong&gt;](./mrxdevfcbxxxcontrolfile.md)"><strong>MRxDevFcbXXXControlFile</strong></a></td>
+<td align="left"><a href="/windows-hardware/drivers/ifs/mrxdevfcbxxxcontrolfile" data-raw-source="[&lt;strong&gt;MRxDevFcbXXXControlFile&lt;/strong&gt;](./mrxdevfcbxxxcontrolfile.md)"><strong>MRxDevFcbXXXControlFile</strong></a></td>
 <td align="left"><p>RDBSS 调用此例程将设备 FCB 控制请求传递到网络小型重定向程序。 RDBSS 发出此调用以响应在设备 FCB 上接收 IRP_MJ_DEVICE_CONTROL、IRP_MJ_FILE_SYSTEM_CONTROL 或 IRP_MJ_INTERNAL_DEVICE_CONTROL。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_calldown_ctx" data-raw-source="[&lt;strong&gt;MRxStart&lt;/strong&gt;](/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_calldown_ctx)"><strong>MRxStart</strong></a></td>
+<td align="left"><a href="/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_calldown_ctx" data-raw-source="[&lt;strong&gt;MRxStart&lt;/strong&gt;](/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_calldown_ctx)"><strong>MRxStart</strong></a></td>
 <td align="left"><p>RDBSS 调用此例程来启动网络小型重定向程序。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><a href="https://docs.microsoft.com/windows-hardware/drivers/ifs/mrxstop" data-raw-source="[&lt;strong&gt;MRxStop&lt;/strong&gt;](./mrxstop.md)"><strong>MRxStop</strong></a></td>
+<td align="left"><a href="/windows-hardware/drivers/ifs/mrxstop" data-raw-source="[&lt;strong&gt;MRxStop&lt;/strong&gt;](./mrxstop.md)"><strong>MRxStop</strong></a></td>
 <td align="left"><p>RDBSS 调用此例程来停止网络微型重定向程序。</p></td>
 </tr>
 </tbody>
 </table>
-
- 
 
  
 

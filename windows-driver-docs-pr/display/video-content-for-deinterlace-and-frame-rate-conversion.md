@@ -10,12 +10,12 @@ keywords:
 - 帧速率转换的视频内容 WDK DirectX VA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 42259a9afa175a7de88639abfc88a69d234811f6
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 91ef1c8aabe1b997f19612335da4b3d736137e44
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89063734"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90107524"
 ---
 # <a name="video-content-for-deinterlace-and-frame-rate-conversion"></a>要进行反交错和帧速率转换的视频内容
 
@@ -59,7 +59,7 @@ DXVA \_ VideoDesc 结构按如下方式进行填充，以将驱动程序定向�
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>SampleFormat</strong></p></td>
-<td align="left"><p>DXVA_SampleFormat 中的<strong>DXVA_SampleFieldInterleavedOddFirst</strong>枚举器<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/dxva/ne-dxva-_dxva_sampleformat" data-raw-source="[&lt;strong&gt;DXVA_SampleFormat&lt;/strong&gt;](/windows-hardware/drivers/ddi/dxva/ne-dxva-_dxva_sampleformat)"> <strong>DXVA_SampleFormat</strong></a></p></td>
+<td align="left"><p>DXVA_SampleFormat 中的<strong>DXVA_SampleFieldInterleavedOddFirst</strong>枚举器<a href="/windows-hardware/drivers/ddi/dxva/ne-dxva-_dxva_sampleformat" data-raw-source="[&lt;strong&gt;DXVA_SampleFormat&lt;/strong&gt;](/windows-hardware/drivers/ddi/dxva/ne-dxva-_dxva_sampleformat)"> <strong>DXVA_SampleFormat</strong></a></p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>d3dFormat</strong></p></td>
@@ -170,7 +170,7 @@ DXVA \_ VideoDesc 结构的填充方式如下，指示驱动程序对480p 内容
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>SampleFormat</strong></p></td>
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/dxva/ne-dxva-_dxva_sampleformat" data-raw-source="[&lt;strong&gt;DXVA_SampleFormat&lt;/strong&gt;](/windows-hardware/drivers/ddi/dxva/ne-dxva-_dxva_sampleformat)"><strong>DXVA_SampleFormat</strong></a>枚举中的<strong>DXVA_SampleProgressiveFrame</strong>枚举器</p></td>
+<td align="left"><p><a href="/windows-hardware/drivers/ddi/dxva/ne-dxva-_dxva_sampleformat" data-raw-source="[&lt;strong&gt;DXVA_SampleFormat&lt;/strong&gt;](/windows-hardware/drivers/ddi/dxva/ne-dxva-_dxva_sampleformat)"><strong>DXVA_SampleFormat</strong></a>枚举中的<strong>DXVA_SampleProgressiveFrame</strong>枚举器</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>d3dFormat</strong></p></td>
@@ -194,8 +194,6 @@ DXVA \_ VideoDesc 结构的填充方式如下，指示驱动程序对480p 内容
 </tr>
 </tbody>
 </table>
-
- 
 
  
 

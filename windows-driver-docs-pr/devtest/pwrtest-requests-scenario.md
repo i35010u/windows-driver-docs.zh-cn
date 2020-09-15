@@ -4,12 +4,12 @@ description: PwrTest 请求方案记录系统中正在运行的进程和服务�
 ms.assetid: 4B082680-5C43-45F6-9A0E-0C23E9B1F282
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c8a559d86b1df32998441a7e698b2b3ce14affec
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: ee0a9d4a9a9d9b7046761c5771f83085a5346b54
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89381945"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90107146"
 ---
 # <a name="pwrtest-requests-scenario"></a>PwrTest 请求方案
 
@@ -105,7 +105,7 @@ pwrtest /requests  /t:60
 <td align="left"><p>包含所有不同的电源请求事件。 PwrTest 日志文件中只能有一个<strong> &lt; PowerRequests &gt; </strong>元素。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><strong>&lt;时间戳&gt;</strong></td>
+<td align="left"><strong>&lt;标志&gt;</strong></td>
 <td align="left"><p>任何给定事件的时间戳。</p></td>
 </tr>
 <tr class="odd">
@@ -137,7 +137,7 @@ pwrtest /requests  /t:60
 </tr>
 <tr class="odd">
 <td align="left"><strong>&lt;旧的&gt;</strong></td>
-<td align="left"><p>如果调用方使用旧的 <a href="https://docs.microsoft.com/windows/desktop/api/winbase/nf-winbase-setthreadexecutionstate" data-raw-source="[&lt;strong&gt;SetThreadExecutionState function (Windows)&lt;/strong&gt;](/windows/desktop/api/winbase/nf-winbase-setthreadexecutionstate)"><strong>SetThreadExecutionState 函数 (windows) </strong></a> 或 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-posetsystemstate" data-raw-source="[&lt;strong&gt;PoSetSystemState&lt;/strong&gt;](/windows-hardware/drivers/ddi/wdm/nf-wdm-posetsystemstate)"><strong>PoSetSystemState</strong></a> Api，或者 <a href="https://docs.microsoft.com/windows/desktop/api/winbase/nf-winbase-powersetrequest" data-raw-source="[&lt;strong&gt;PowerSetRequest function (Windows)&lt;/strong&gt;](/windows/desktop/api/winbase/nf-winbase-powersetrequest)"><strong> (windows) </strong></a> 或 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-posetpowerrequest" data-raw-source="[&lt;strong&gt;PoSetPowerRequest&lt;/strong&gt;](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-posetpowerrequest)"><strong>PoSetPowerRequest</strong></a> api，则报告为 True 或 False。</p></td>
+<td align="left"><p>如果调用方使用旧的 <a href="/windows/desktop/api/winbase/nf-winbase-setthreadexecutionstate" data-raw-source="[&lt;strong&gt;SetThreadExecutionState function (Windows)&lt;/strong&gt;](/windows/desktop/api/winbase/nf-winbase-setthreadexecutionstate)"><strong>SetThreadExecutionState 函数 (windows) </strong></a> 或 <a href="/windows-hardware/drivers/ddi/wdm/nf-wdm-posetsystemstate" data-raw-source="[&lt;strong&gt;PoSetSystemState&lt;/strong&gt;](/windows-hardware/drivers/ddi/wdm/nf-wdm-posetsystemstate)"><strong>PoSetSystemState</strong></a> Api，或者 <a href="/windows/desktop/api/winbase/nf-winbase-powersetrequest" data-raw-source="[&lt;strong&gt;PowerSetRequest function (Windows)&lt;/strong&gt;](/windows/desktop/api/winbase/nf-winbase-powersetrequest)"><strong> (windows) </strong></a> 或 <a href="/windows-hardware/drivers/ddi/ntifs/nf-ntifs-posetpowerrequest" data-raw-source="[&lt;strong&gt;PoSetPowerRequest&lt;/strong&gt;](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-posetpowerrequest)"><strong>PoSetPowerRequest</strong></a> api，则报告为 True 或 False。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><strong>&lt;SystemAllowed&gt;</strong></td>
@@ -202,6 +202,4 @@ pwrtest /requests  /t:60
 [PwrTest 语法](pwrtest-syntax.md)
 
 [PowerCfg](/windows-hardware/design/device-experiences/powercfg-command-line-options)
-
- 
 

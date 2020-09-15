@@ -4,12 +4,12 @@ description: 设备基础重新启动测试在指定的设备上、之前和之�
 ms.assetid: 71EBEC60-C99F-412D-8FC5-2DD9209CC92D
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 618bd8b48ef31b6f51be04c52228d2cf814a6beb
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 57a6c4f7e7207d3fd3722644ef788a04859d1786
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89381925"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90107508"
 ---
 # <a name="reboot-tests-device-fundamentals"></a>重新启动测试（设备基础功能）
 
@@ -36,7 +36,7 @@ ms.locfileid: "89381925"
 <td align="left"><p>此测试在关键系统重启前后在设备上运行 i/o。</p>
 <p><strong>测试二进制文件：</strong> Devfund_Critical_RebootRestart_With_IO_BeforeAndAfter. wsc</p>
 <p><strong>测试方法：</strong> Critical_Reboot_Restart_With_IO_Before_And_After</p>
-<p><strong>参数：</strong> - 请参阅 <a href="https://docs.microsoft.com/windows-hardware/drivers" data-raw-source="[Device Fundamentals Test Parameters](/windows-hardware/drivers)">设备基础测试参数</a></p>
+<p><strong>参数：</strong> - 请参阅 <a href="/windows-hardware/drivers" data-raw-source="[Device Fundamentals Test Parameters](/windows-hardware/drivers)">设备基础测试参数</a></p>
 <p><em>DQ</em></p>
 <p><em>IOPeriod</em></p></td>
 </tr>
@@ -45,7 +45,7 @@ ms.locfileid: "89381925"
 <td align="left"><p>此测试启动设备上的简单 i/o，启动运行 i/o 的关键重启，并在重新启动后再次运行 SimpleI/O。</p>
 <p><strong>测试二进制文件：</strong> Devfund_Critical_RebootRestart_With_IO_During. wsc</p>
 <p><strong>测试方法：</strong> Critical_Reboot_Restart_With_IO_During</p>
-<p><strong>参数：</strong> - 请参阅 <a href="https://docs.microsoft.com/windows-hardware/drivers" data-raw-source="[Device Fundamentals Test Parameters](/windows-hardware/drivers)">设备基础测试参数</a></p>
+<p><strong>参数：</strong> - 请参阅 <a href="/windows-hardware/drivers" data-raw-source="[Device Fundamentals Test Parameters](/windows-hardware/drivers)">设备基础测试参数</a></p>
 <p><em>DQ</em></p></td>
 </tr>
 <tr class="odd">
@@ -53,7 +53,7 @@ ms.locfileid: "89381925"
 <td align="left"><p>此测试在系统重启前后在设备上运行 i/o。</p>
 <p><strong>测试二进制文件：</strong> Devfund_RebootRestart_With_IO_BeforeAndAfter. wsc</p>
 <p><strong>测试方法：</strong> Reboot_Restart_With_IO_Before_And_After</p>
-<p><strong>参数：</strong> - 请参阅 <a href="https://docs.microsoft.com/windows-hardware/drivers" data-raw-source="[Device Fundamentals Test Parameters](/windows-hardware/drivers)">设备基础测试参数</a></p>
+<p><strong>参数：</strong> - 请参阅 <a href="/windows-hardware/drivers" data-raw-source="[Device Fundamentals Test Parameters](/windows-hardware/drivers)">设备基础测试参数</a></p>
 <p><em>DQ</em></p>
 <p><em>IOPeriod</em></p></td>
 </tr>
@@ -62,7 +62,7 @@ ms.locfileid: "89381925"
 <td align="left"><p>此测试启动设备上的简单 i/o，启动运行 i/o 的重新启动，并在重新启动后再次运行 SimpleI/O。</p>
 <p><strong>测试二进制文件：</strong> Devfund_RebootRestart_With_IO_During. wsc</p>
 <p><strong>测试方法：</strong> Reboot_Restart_With_IO_During</p>
-<p><strong>参数：</strong> - 请参阅 <a href="https://docs.microsoft.com/windows-hardware/drivers" data-raw-source="[Device Fundamentals Test Parameters](/windows-hardware/drivers)">设备基础测试参数</a></p>
+<p><strong>参数：</strong> - 请参阅 <a href="/windows-hardware/drivers" data-raw-source="[Device Fundamentals Test Parameters](/windows-hardware/drivers)">设备基础测试参数</a></p>
 <p><em>DQ</em></p></td>
 </tr>
 </tbody>
@@ -84,6 +84,4 @@ ms.locfileid: "89381925"
 [Provided WDTF Simple I/O plug-ins](../wdtf/provided-wdtf-simpleio-plug-ins.md)（提供的 WDTF 简单 I/O 插件）
 
 [如何在运行时通过命令提示符测试驱动程序](/windows-hardware/drivers)
-
- 
 

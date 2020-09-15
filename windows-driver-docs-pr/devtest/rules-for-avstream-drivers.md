@@ -4,12 +4,12 @@ description: 'AVStream 微型端口驱动程序的 DDI 符合性规则验证内�
 ms.assetid: 0A104ADF-8607-4708-A0E3-1697F55B0CF5
 ms.date: 05/21/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: b151265c93e1208cdb4a981932450010389876b6
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: db18a3708a24e03a0c17df4ccc05220d5d070e5c
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89382099"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90106780"
 ---
 # <a name="rules-for-avstream-drivers"></a>AVStream 驱动程序的规则
 
@@ -37,7 +37,7 @@ AVStream 微型端口驱动程序的 DDI 符合性规则验证内核流式处理
 </tr>
 <tr class="even">
 <td align="left"><p><a href="ks-ksdevicemutex.md" data-raw-source="[&lt;strong&gt;KsDeviceMutex&lt;/strong&gt;](ks-ksdevicemutex.md)"><strong>KsDeviceMutex</strong></a></p></td>
-<td align="left"><p><a href="ks-ksdevicemutex.md" data-raw-source="[&lt;strong&gt;KsDeviceMutex&lt;/strong&gt;](ks-ksdevicemutex.md)"><strong>KsDeviceMutex</strong></a>规则指定内核流式处理端口驱动程序在正确的序列中使用<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/nf-ks-ksacquiredevice" data-raw-source="[&lt;strong&gt;KsAcquireDevice&lt;/strong&gt;](/windows-hardware/drivers/ddi/ks/nf-ks-ksacquiredevice)"><strong>KsAcquireDevice</strong></a>和<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/nf-ks-ksreleasedevice" data-raw-source="[&lt;strong&gt;KsReleaseDevice&lt;/strong&gt;](/windows-hardware/drivers/ddi/ks/nf-ks-ksreleasedevice)"><strong>KsReleaseDevice</strong></a> 。 也就是说，每次调用 <strong>KsAcquireDevice</strong> 时，都必须具有对 <strong>KsReleaseDevice</strong>的相应调用。</p></td>
+<td align="left"><p><a href="ks-ksdevicemutex.md" data-raw-source="[&lt;strong&gt;KsDeviceMutex&lt;/strong&gt;](ks-ksdevicemutex.md)"><strong>KsDeviceMutex</strong></a>规则指定内核流式处理端口驱动程序在正确的序列中使用<a href="/windows-hardware/drivers/ddi/ks/nf-ks-ksacquiredevice" data-raw-source="[&lt;strong&gt;KsAcquireDevice&lt;/strong&gt;](/windows-hardware/drivers/ddi/ks/nf-ks-ksacquiredevice)"><strong>KsAcquireDevice</strong></a>和<a href="/windows-hardware/drivers/ddi/ks/nf-ks-ksreleasedevice" data-raw-source="[&lt;strong&gt;KsReleaseDevice&lt;/strong&gt;](/windows-hardware/drivers/ddi/ks/nf-ks-ksreleasedevice)"><strong>KsReleaseDevice</strong></a> 。 也就是说，每次调用 <strong>KsAcquireDevice</strong> 时，都必须具有对 <strong>KsReleaseDevice</strong>的相应调用。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="ks-ksfiltermutex.md" data-raw-source="[&lt;strong&gt;KsFilterMutex&lt;/strong&gt;](ks-ksfiltermutex.md)"><strong>KsFilterMutex</strong></a></p></td>
@@ -78,11 +78,11 @@ AVStream 微型端口驱动程序的 DDI 符合性规则验证内核流式处理
 </tr>
 <tr class="even">
 <td align="left"><p><a href="ks-ksstreampointerclone.md" data-raw-source="[&lt;strong&gt;KsStreamPointerClone&lt;/strong&gt;](ks-ksstreampointerclone.md)"><strong>KsStreamPointerClone</strong></a></p></td>
-<td align="left"><p>KsStreamPointerClone 规则指定内核流 (KS) 微型端口驱动程序正确使用 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/nf-ks-ksstreampointerclone" data-raw-source="[&lt;strong&gt;KsStreamPointerClone&lt;/strong&gt;](/windows-hardware/drivers/ddi/ks/nf-ks-ksstreampointerclone)"><strong>KsStreamPointerClone</strong></a> 和 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/nf-ks-ksstreampointerdelete" data-raw-source="[&lt;strong&gt;KsStreamPointerDelete&lt;/strong&gt;](/windows-hardware/drivers/ddi/ks/nf-ks-ksstreampointerdelete)"><strong>KsStreamPointerDelete</strong></a> 函数。</p></td>
+<td align="left"><p>KsStreamPointerClone 规则指定内核流 (KS) 微型端口驱动程序正确使用 <a href="/windows-hardware/drivers/ddi/ks/nf-ks-ksstreampointerclone" data-raw-source="[&lt;strong&gt;KsStreamPointerClone&lt;/strong&gt;](/windows-hardware/drivers/ddi/ks/nf-ks-ksstreampointerclone)"><strong>KsStreamPointerClone</strong></a> 和 <a href="/windows-hardware/drivers/ddi/ks/nf-ks-ksstreampointerdelete" data-raw-source="[&lt;strong&gt;KsStreamPointerDelete&lt;/strong&gt;](/windows-hardware/drivers/ddi/ks/nf-ks-ksstreampointerdelete)"><strong>KsStreamPointerDelete</strong></a> 函数。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="ks-ksstreampointerlock.md" data-raw-source="[&lt;strong&gt;KsStreamPointerLock&lt;/strong&gt;](ks-ksstreampointerlock.md)"><strong>KsStreamPointerLock</strong></a></p></td>
-<td align="left"><p>KsStreamPointerLock 规则指定内核流式处理 (KS) 微型端口驱动程序在正确的序列中使用 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/nf-ks-ksstreampointerlock" data-raw-source="[&lt;strong&gt;KsStreamPointerLock&lt;/strong&gt;](/windows-hardware/drivers/ddi/ks/nf-ks-ksstreampointerlock)"><strong>KsStreamPointerLock</strong></a> 和 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/nf-ks-ksstreampointerunlock" data-raw-source="[&lt;strong&gt;KsStreamPointerUnlock&lt;/strong&gt;](/windows-hardware/drivers/ddi/ks/nf-ks-ksstreampointerunlock)"><strong>KsStreamPointerUnlock</strong></a> 函数。</p></td>
+<td align="left"><p>KsStreamPointerLock 规则指定内核流式处理 (KS) 微型端口驱动程序在正确的序列中使用 <a href="/windows-hardware/drivers/ddi/ks/nf-ks-ksstreampointerlock" data-raw-source="[&lt;strong&gt;KsStreamPointerLock&lt;/strong&gt;](/windows-hardware/drivers/ddi/ks/nf-ks-ksstreampointerlock)"><strong>KsStreamPointerLock</strong></a> 和 <a href="/windows-hardware/drivers/ddi/ks/nf-ks-ksstreampointerunlock" data-raw-source="[&lt;strong&gt;KsStreamPointerUnlock&lt;/strong&gt;](/windows-hardware/drivers/ddi/ks/nf-ks-ksstreampointerunlock)"><strong>KsStreamPointerUnlock</strong></a> 函数。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><a href="ks-ksstreampointerunlock.md" data-raw-source="[&lt;strong&gt;KsStreamPointerUnlock&lt;/strong&gt;](ks-ksstreampointerunlock.md)"><strong>KsStreamPointerUnlock</strong></a></p></td>
@@ -102,7 +102,7 @@ AVStream 微型端口驱动程序的 DDI 符合性规则验证内核流式处理
 </tr>
 <tr class="even">
 <td align="left"><p><a href="ks-kstimedpinsetdevicestate.md" data-raw-source="[&lt;strong&gt;KsTimedPinSetDeviceState&lt;/strong&gt;](ks-kstimedpinsetdevicestate.md)"><strong>KsTimedPinSetDeviceState</strong></a></p></td>
-<td align="left"><p>KsTimedPinSetDeviceState 规则指定 AVStream (KS) 微型端口驱动程序在所需时间内使用 AVStream 微型驱动程序的 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/nc-ks-pfnkspinsetdevicestate" data-raw-source="[&lt;em&gt;AVStrMiniPinSetDeviceState&lt;/em&gt;](/windows-hardware/drivers/ddi/ks/nc-ks-pfnkspinsetdevicestate)"><em>AVStrMiniPinSetDeviceState</em></a> 例程进行状态转换。</p></td>
+<td align="left"><p>KsTimedPinSetDeviceState 规则指定 AVStream (KS) 微型端口驱动程序在所需时间内使用 AVStream 微型驱动程序的 <a href="/windows-hardware/drivers/ddi/ks/nc-ks-pfnkspinsetdevicestate" data-raw-source="[&lt;em&gt;AVStrMiniPinSetDeviceState&lt;/em&gt;](/windows-hardware/drivers/ddi/ks/nc-ks-pfnkspinsetdevicestate)"><em>AVStrMiniPinSetDeviceState</em></a> 例程进行状态转换。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="ks-kstimedprocessingmutex.md" data-raw-source="[&lt;strong&gt;KsTimedProcessingMutex&lt;/strong&gt;](ks-kstimedprocessingmutex.md)"><strong>KsTimedProcessingMutex</strong></a></p></td>
@@ -110,8 +110,6 @@ AVStream 微型端口驱动程序的 DDI 符合性规则验证内核流式处理
 </tr>
 </tbody>
 </table>
-
- 
 
  
 

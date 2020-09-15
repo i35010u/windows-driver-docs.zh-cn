@@ -6,12 +6,12 @@ ms.assetid: 3c968a46-5bfb-4579-b09a-ad6bce4d9e3b
 keywords:
 - IRP_MN_QUERY_CAPABILITIES 内核模式驱动程序体系结构
 ms.localizationpriority: medium
-ms.openlocfilehash: 93ea1dbe8077b3d4e5fdc27fa4af2154569b8a81
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 8e18fb090ffc89af73fa3178a39cac5108a662f5
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89189513"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90106742"
 ---
 # <a name="irp_mn_query_capabilities"></a>IRP \_ MN \_ 查询 \_ 功能
 
@@ -20,7 +20,7 @@ PnP 管理器发送此 IRP 以获取设备的功能，例如设备是否可以�
 
 函数和筛选器驱动程序在更改总线驱动程序支持的功能时，可以处理此请求。 总线驱动程序必须为其子设备处理此请求。
 
-## <a name="value"></a>值
+## <a name="value"></a>“值”
 
 0x09
 
@@ -64,7 +64,7 @@ PnP 管理器和驱动程序将此 IRP 以 IRQL 被动级别发送到 \_ 任意�
 
 驱动程序应在将 IRP 传递到下一个较低版本的驱动程序之前添加功能。
 
-使用 IRP 完成所有较低版本的驱动程序后，驱动程序应删除功能。 驱动程序通常不会删除已由其他驱动程序设置的功能，但如果它在特定的配置中具有有关设备功能的特殊信息，则它可能会执行此操作。 请参阅 [即插即用](https://docs.microsoft.com/windows-hardware/drivers/kernel/implementing-plug-and-play) ，了解有关推迟 IRP 处理的信息，直到较低的驱动程序完成。
+使用 IRP 完成所有较低版本的驱动程序后，驱动程序应删除功能。 驱动程序通常不会删除已由其他驱动程序设置的功能，但如果它在特定的配置中具有有关设备功能的特殊信息，则它可能会执行此操作。 请参阅 [即插即用](./introduction-to-plug-and-play.md) ，了解有关推迟 IRP 处理的信息，直到较低的驱动程序完成。
 
 枚举设备及其驱动程序时，其功能不应更改。 如果删除并重新枚举设备，则设备的功能可能会改变。
 
@@ -74,7 +74,7 @@ PnP 管理器和驱动程序将此 IRP 以 IRQL 被动级别发送到 \_ 任意�
 
 处理此 IRP 的驱动程序可以设置一些 **设备 \_ 功能** 字段，但不得设置 " **大小** " 和 " **版本** " 字段。 这些字段仅由发送 IRP 的组件设置。
 
-请参阅 [即插即用](https://docs.microsoft.com/windows-hardware/drivers/kernel/implementing-plug-and-play) ，了解用于处理 [即插即用次要 irp](plug-and-play-minor-irps.md)的一般规则。
+请参阅 [即插即用](./introduction-to-plug-and-play.md) ，了解用于处理 [即插即用次要 irp](plug-and-play-minor-irps.md)的一般规则。
 
 **正在发送此 IRP**
 
@@ -100,13 +100,13 @@ PnP 管理器和驱动程序将此 IRP 以 IRQL 被动级别发送到 \_ 任意�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Header</p></td>
+<td><p>标头</p></td>
 <td>Wdm.h（包括 Wdm.h、Ntddk.h 或 Ntifs.h）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
 [**设备 \_ 功能**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_device_capabilities)

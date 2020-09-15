@@ -12,12 +12,12 @@ keywords:
 - 现有驱动程序更新 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d99f17249f05dc7205656a6158fa59d127484162
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: bba10201ec53a2d07988a3c9af62cfa131abcf8c
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89096210"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90107332"
 ---
 # <a name="updating-driver-files"></a>更新驱动程序文件
 
@@ -66,7 +66,5 @@ ms.locfileid: "89096210"
 
 -   更新类安装程序、类共同安装程序或服务 DLL 时，必须为新版本指定一个新的文件名。
 
-有关 INF 文件的详细信息，请参阅 [创建 Inf 文件](overview-of-inf-files.md) 和 [inf 文件部分和指令](inf-file-sections-and-directives.md)。
-
- 
+有关 INF 文件的详细信息，请参阅 [创建 Inf 文件](overview-of-inf-files.md) 和 [inf 文件部分和指令](./index.md)。
 

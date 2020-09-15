@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ab0ff2fa8783bc3d96b409e7f4f943a8ebac51ed
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 16533e90b1d980b9a5faf618e6240d976156b304
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89185347"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90107362"
 ---
 # <a name="ksproperty_videoprocamp_powerline_frequency"></a>KSPROPERTY \_ VIDEOPROCAMP \_ POWERLINE \_ FREQUENCY
 
@@ -53,7 +53,7 @@ KSPROPERTY \_ VIDEOPROCAMP \_ POWERLINE \_ frequency 属性指定本地电源线
 <td><p>是</p></td>
 <td><p>是</p></td>
 <td><p>筛选器或节点</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_videoprocamp_s" data-raw-source="[&lt;strong&gt;KSPROPERTY_VIDEOPROCAMP_S&lt;/strong&gt;](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_videoprocamp_s)"><strong>KSPROPERTY_VIDEOPROCAMP_S</strong></a>或<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_videoprocamp_node_s" data-raw-source="[&lt;strong&gt;KSPROPERTY_VIDEOPROCAMP_NODE_S&lt;/strong&gt;](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_videoprocamp_node_s)"> <strong>KSPROPERTY_VIDEOPROCAMP_NODE_S</strong></a></p></td>
+<td><p><a href="/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_videoprocamp_s" data-raw-source="[&lt;strong&gt;KSPROPERTY_VIDEOPROCAMP_S&lt;/strong&gt;](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_videoprocamp_s)"><strong>KSPROPERTY_VIDEOPROCAMP_S</strong></a>或<a href="/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_videoprocamp_node_s" data-raw-source="[&lt;strong&gt;KSPROPERTY_VIDEOPROCAMP_NODE_S&lt;/strong&gt;](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_videoprocamp_node_s)"> <strong>KSPROPERTY_VIDEOPROCAMP_NODE_S</strong></a></p></td>
 <td><p>LONG</p></td>
 </tr>
 </tbody>
@@ -70,7 +70,7 @@ KSPROPERTY \_ VIDEOPROCAMP \_ POWERLINE \_ frequency 属性指定本地电源线
 </colgroup>
 <thead>
 <tr class="header">
-<th>值</th>
+<th>“值”</th>
 <th>说明</th>
 </tr>
 </thead>
@@ -102,7 +102,7 @@ KSPROPERTY \_ VIDEOPROCAMP \_ POWERLINE \_ frequency 属性指定本地电源线
 
  
 
-<a name="remarks"></a>注解
+<a name="remarks"></a>备注
 -------
 
 发出集请求时，客户端应提供 KSPROPERTY VIDEOPROCAMP 节点的 **值** 成员的上一个表中的值之一 \_ \_ \_ 。
@@ -119,13 +119,13 @@ KSPROPERTY \_ VIDEOPROCAMP \_ POWERLINE \_ frequency 属性指定本地电源线
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Header</p></td>
+<td><p>标头</p></td>
 <td>Ksmedia (包含 Ksmedia) </td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
 [**KSPROPERTY**](/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)
@@ -133,6 +133,4 @@ KSPROPERTY \_ VIDEOPROCAMP \_ POWERLINE \_ frequency 属性指定本地电源线
 [**KSPROPERTY \_ VIDEOPROCAMP \_ S**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_videoprocamp_s)
 
 [**PowerlineFrequency 枚举**](/uwp/api/Windows.Media.Capture.PowerlineFrequency)
-
- 
 

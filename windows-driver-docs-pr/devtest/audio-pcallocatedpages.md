@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: b03ec6ab260905f5f5c9ea7bd4173a49cddf8a1a
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 456d6bcc1eb9b3a73bb1396ef0348f99ac97ac53
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89384699"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90107086"
 ---
 # <a name="pcallocatedpages-rule-audio"></a>PcAllocatedPages 规则 (音频) 
 
@@ -46,12 +46,10 @@ PcAllocatedPages 规则指定 PortCls 微型端口驱动程序通过调用 Alloc
 <td align="left"><p>若要验证此规则，请打开 "命令提示符" 窗口。 输入 Driver Verifier 命令并指定 <strong>/domain 音频</strong>。</p>
 <p>例如：</p>
 <p><strong>verifier/domain 音频</strong>[<em>options</em>] <strong>/driver</strong> <em> &lt; yourdriver &gt; </em></p>
-<p>有关详细信息，请参阅<a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier" data-raw-source="[Driver Verifier](./driver-verifier.md)">驱动程序验证程序</a>。</p></td>
+<p>有关详细信息，请参阅<a href="/windows-hardware/drivers/devtest/driver-verifier" data-raw-source="[Driver Verifier](./driver-verifier.md)">驱动程序验证程序</a>。</p></td>
 </tr>
 </tbody>
 </table>
-
- 
 
  
 

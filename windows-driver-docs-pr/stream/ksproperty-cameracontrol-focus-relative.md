@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 16f661249aa58b9bbd06ffaaf3266d68c813d0dd
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: bca1e75b65ba7f214141f68e7f276aebeadfa16f
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89192547"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90107264"
 ---
 # <a name="ksproperty_cameracontrol_focus_relative"></a>KSPROPERTY \_ CAMERACONTROL \_ 焦点 \_ 相对
 
@@ -53,7 +53,7 @@ KSPROPERTY \_ CAMERACONTROL \_ focus \_ 相对属性指定照相机的焦点设�
 <td><p>是</p></td>
 <td><p>是</p></td>
 <td><p>筛选器或节点</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_cameracontrol_s" data-raw-source="[&lt;strong&gt;KSPROPERTY_CAMERACONTROL_S&lt;/strong&gt;](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_cameracontrol_s)"><strong>KSPROPERTY_CAMERACONTROL_S</strong></a>或<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_cameracontrol_node_s" data-raw-source="[&lt;strong&gt;KSPROPERTY_CAMERACONTROL_NODE_S&lt;/strong&gt;](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_cameracontrol_node_s)"> <strong>KSPROPERTY_CAMERACONTROL_NODE_S</strong></a></p></td>
+<td><p><a href="/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_cameracontrol_s" data-raw-source="[&lt;strong&gt;KSPROPERTY_CAMERACONTROL_S&lt;/strong&gt;](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_cameracontrol_s)"><strong>KSPROPERTY_CAMERACONTROL_S</strong></a>或<a href="/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_cameracontrol_node_s" data-raw-source="[&lt;strong&gt;KSPROPERTY_CAMERACONTROL_NODE_S&lt;/strong&gt;](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_cameracontrol_node_s)"> <strong>KSPROPERTY_CAMERACONTROL_NODE_S</strong></a></p></td>
 <td><p>LONG</p></td>
 </tr>
 </tbody>
@@ -70,7 +70,7 @@ KSPROPERTY \_ CAMERACONTROL \_ focus \_ 相对属性指定照相机的焦点设�
 </colgroup>
 <thead>
 <tr class="header">
-<th>值</th>
+<th>“值”</th>
 <th>说明</th>
 </tr>
 </thead>
@@ -92,7 +92,7 @@ KSPROPERTY \_ CAMERACONTROL \_ focus \_ 相对属性指定照相机的焦点设�
 
  
 
-<a name="remarks"></a>注解
+<a name="remarks"></a>备注
 -------
 
 发出集请求时，请在 KSPROPERTY CAMERACONTROL 节点的值成员的 **值** 成员中提供上一个表中的值之一 \_ \_ \_ 。
@@ -117,16 +117,14 @@ KSPROPERTY \_ CAMERACONTROL \_ focus \_ 相对属性指定照相机的焦点设�
 <td><p>适用于 windows Vista 和更高版本的 Windows 操作系统。</p></td>
 </tr>
 <tr class="even">
-<td><p>Header</p></td>
+<td><p>标头</p></td>
 <td>Ksmedia (包含 Ksmedia) </td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
 [**KSPROPERTY \_ CAMERACONTROL \_ 节点 \_ S**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_cameracontrol_node_s)
-
- 
 

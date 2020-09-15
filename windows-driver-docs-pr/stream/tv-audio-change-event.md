@@ -9,12 +9,12 @@ keywords:
 - 音频更改事件 WDK 视频捕获
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5949693eedfbffc9a25abb6eabd923fabb2ed049
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 36af44765d9e0656a5075f374ee8595ac37e613a
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89191765"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90107482"
 ---
 # <a name="tv-audio-change-event"></a>电视音频更改事件
 
@@ -34,13 +34,11 @@ ms.locfileid: "89191765"
 </thead>
 <tbody>
 <tr class="odd">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/stream/ksevent-tvaudio-changed" data-raw-source="[&lt;strong&gt;KSEVENT_TVAUDIO_CHANGED&lt;/strong&gt;](./ksevent-tvaudio-changed.md)"><strong>KSEVENT_TVAUDIO_CHANGED</strong></a></p></td>
+<td><p><a href="/windows-hardware/drivers/stream/ksevent-tvaudio-changed" data-raw-source="[&lt;strong&gt;KSEVENT_TVAUDIO_CHANGED&lt;/strong&gt;](./ksevent-tvaudio-changed.md)"><strong>KSEVENT_TVAUDIO_CHANGED</strong></a></p></td>
 <td><p>向 DirectShow 发出信号，指示电视音频已更改，例如，由于新选定通道上的辅助音频节目的外观。</p></td>
 </tr>
 </tbody>
 </table>
-
- 
 
  
 

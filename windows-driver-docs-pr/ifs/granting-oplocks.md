@@ -4,12 +4,12 @@ description: 授予 Oplock
 ms.assetid: 7faf17ef-1596-4952-9575-616f66b37ed6
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: afe43266c7fcb41cc2ae1586d6e8ef1206b91079
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: c012567a5d553de1346728f37b983a54b3df1107
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89065950"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90107548"
 ---
 # <a name="granting-oplocks"></a>授予 Oplock
 
@@ -73,7 +73,7 @@ NTFS 文件系统通过 "文件 \_ 保留 \_ OPFILTER create" 选项标志为此
 <ul>
 <li>如果为同步访问打开了，则将返回 STATUS_OPLOCK_NOT_GRANTED， (不向) 的同步 i/o 请求授予 oplock。</li>
 </ul></li>
-<li>文件的任何流上都没有 <a href="https://docs.microsoft.com/windows-hardware/drivers/kernel/windows-kernel-mode-kernel-transaction-manager" data-raw-source="[TxF](../kernel/windows-kernel-mode-kernel-transaction-manager.md)">TxF</a> 事务。
+<li>文件的任何流上都没有 <a href="/windows-hardware/drivers/kernel/windows-kernel-mode-kernel-transaction-manager" data-raw-source="[TxF](../kernel/windows-kernel-mode-kernel-transaction-manager.md)">TxF</a> 事务。
 <ul>
 <li>否则，将返回 STATUS_OPLOCK_NOT_GRANTED。</li>
 </ul></li>
@@ -256,8 +256,6 @@ NTFS 文件系统通过 "文件 \_ 保留 \_ OPFILTER create" 选项标志为此
  
 
 **注意**   读取和级别 2 oplock 可以共存于同一流上，读取和读取句柄 oplock 可能共存，但级别2和读取-句柄 oplock 可能不会共存。
-
- 
 
  
 

@@ -6,19 +6,19 @@ ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 OID_WDI_SET_POWER_STATE 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 00fb657d6b374b954cd7304f684fce4a219658bc
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 3ce7cef194c8ca81aeec85757b30c052c1cc9df9
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89213271"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90106942"
 ---
 # <a name="oid_wdi_set_power_state"></a>OID \_ WDI \_ 设置 \_ 电源 \_ 状态
 
 
 OID \_ WDI \_ 设置 \_ 电源 \_ 状态设置设备的电源状态。
 
-| 作用域   | 设置序列化任务 | 正常执行时间 (秒)  |
+| 范围   | 设置序列化任务 | 正常执行时间 (秒)  |
 |---------|--------------------------|---------------------------------|
 | 适配器 | 是                      | 10                              |
 
@@ -155,19 +155,19 @@ PCIe 总线 NIC 支持 D0 和 D3，其中 D3 可以是 D3Hot 或 D3Cold。 主�
 </thead>
 <tbody>
 <tr class="odd">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-power-state" data-raw-source="[&lt;strong&gt;WDI_TLV_POWER_STATE&lt;/strong&gt;](./wdi-tlv-power-state.md)"><strong>WDI_TLV_POWER_STATE</strong></a></p></td>
+<td><p><a href="/windows-hardware/drivers/network/wdi-tlv-power-state" data-raw-source="[&lt;strong&gt;WDI_TLV_POWER_STATE&lt;/strong&gt;](./wdi-tlv-power-state.md)"><strong>WDI_TLV_POWER_STATE</strong></a></p></td>
 <td></td>
 <td></td>
 <td><p>电源状态。 这适用于主端口。</p></td>
 </tr>
 <tr class="even">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-enable-wake-events" data-raw-source="[&lt;strong&gt;WDI_TLV_ENABLE_WAKE_EVENTS&lt;/strong&gt;](./wdi-tlv-enable-wake-events.md)"><strong>WDI_TLV_ENABLE_WAKE_EVENTS</strong></a></p></td>
+<td><p><a href="/windows-hardware/drivers/network/wdi-tlv-enable-wake-events" data-raw-source="[&lt;strong&gt;WDI_TLV_ENABLE_WAKE_EVENTS&lt;/strong&gt;](./wdi-tlv-enable-wake-events.md)"><strong>WDI_TLV_ENABLE_WAKE_EVENTS</strong></a></p></td>
 <td></td>
 <td>X</td>
 <td><p>此字段可能仅在以下情况下才会出现：将 NIC 置于低功耗，并唤醒任何指定的事件 (如在 SD IO) 上的 D2。</p></td>
 </tr>
 <tr class="odd">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-set-power-dx-reason" data-raw-source="[&lt;strong&gt;WDI_TLV_SET_POWER_DX_REASON&lt;/strong&gt;](./wdi-tlv-set-power-dx-reason.md)"><strong>WDI_TLV_SET_POWER_DX_REASON</strong></a></p></td>
+<td><p><a href="/windows-hardware/drivers/network/wdi-tlv-set-power-dx-reason" data-raw-source="[&lt;strong&gt;WDI_TLV_SET_POWER_DX_REASON&lt;/strong&gt;](./wdi-tlv-set-power-dx-reason.md)"><strong>WDI_TLV_SET_POWER_DX_REASON</strong></a></p></td>
 <td></td>
 <td>X</td>
 <td><p>设置的电源原因。</p></td>
@@ -275,6 +275,4 @@ Wi-fi NIC 的每个和每个唤醒都应该后跟 NIC 唤醒堆栈的原因的�
 </tr>
 </tbody>
 </table>
-
- 
 

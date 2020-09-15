@@ -4,12 +4,12 @@ description: 多数据包消息
 ms.assetid: 58979799-4618-43b9-a6dc-0635f6ade9b3
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b22a35dd97337c6a5b9ffdceb2f7cadf5cf66bb3
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 2f17eb1fe0b9a6a21a65ae425f317f4c8d24fdf9
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89217034"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90107000"
 ---
 # <a name="multipacket-messages"></a>多数据包消息
 
@@ -34,7 +34,7 @@ ms.locfileid: "89217034"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Offset</th>
+<th align="left">偏移量</th>
 <th align="left">大小</th>
 <th align="left">字段</th>
 <th align="left">值</th>
@@ -104,7 +104,7 @@ ms.locfileid: "89217034"
 <tr class="odd">
 <td align="left"><p>40</p></td>
 <td align="left"><p>4</p></td>
-<td align="left"><p>预留</p></td>
+<td align="left"><p>保留</p></td>
 <td align="left"><p>0</p></td>
 </tr>
 <tr class="even">
@@ -122,7 +122,7 @@ ms.locfileid: "89217034"
 <tr class="even">
 <td align="left"><p>72</p></td>
 <td align="left"><p>4</p></td>
-<td align="left"><p>MessageType (第二个 <a href="https://docs.microsoft.com/previous-versions/ff570635(v=vs.85)" data-raw-source="[&lt;strong&gt;REMOTE_NDIS_PACKET_MSG&lt;/strong&gt;](/previous-versions/ff570635(v=vs.85))"><strong>REMOTE_NDIS_PACKET_MSG</strong></a> 的开头) </p></td>
+<td align="left"><p>MessageType (第二个 <a href="/previous-versions/ff570635(v=vs.85)" data-raw-source="[&lt;strong&gt;REMOTE_NDIS_PACKET_MSG&lt;/strong&gt;](/previous-versions/ff570635(v=vs.85))"><strong>REMOTE_NDIS_PACKET_MSG</strong></a> 的开头) </p></td>
 <td align="left"><p>0x1</p></td>
 </tr>
 <tr class="odd">
@@ -182,7 +182,7 @@ ms.locfileid: "89217034"
 <tr class="even">
 <td align="left"><p>112</p></td>
 <td align="left"><p>4</p></td>
-<td align="left"><p>预留</p></td>
+<td align="left"><p>保留</p></td>
 <td align="left"><p>0</p></td>
 </tr>
 <tr class="odd">
@@ -193,8 +193,6 @@ ms.locfileid: "89217034"
 </tr>
 </tbody>
 </table>
-
- 
 
  
 

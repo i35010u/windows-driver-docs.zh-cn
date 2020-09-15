@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9b3b05038ca86b8a5bed30d0343ae891fe1fad86
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: b04b8fe214cef7a1f2b4398bf4e9857b70627a42
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89186535"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90106994"
 ---
 # <a name="ksproperty_stream_rate"></a>KSPROPERTY \_ 流 \_ 速率
 
@@ -53,15 +53,15 @@ KSPROPERTY \_ 流 \_ 速率属性与 [**KSPROPERTY \_ stream \_ RATECAPABILITY**
 <td><p>是</p></td>
 <td><p>是</p></td>
 <td><p>Pin</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)"><strong>KSPROPERTY</strong></a></p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksrate" data-raw-source="[&lt;strong&gt;KSRATE&lt;/strong&gt;](/windows-hardware/drivers/ddi/ks/ns-ks-ksrate)"><strong>KSRATE</strong></a></p></td>
+<td><p><a href="/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)"><strong>KSPROPERTY</strong></a></p></td>
+<td><p><a href="/windows-hardware/drivers/ddi/ks/ns-ks-ksrate" data-raw-source="[&lt;strong&gt;KSRATE&lt;/strong&gt;](/windows-hardware/drivers/ddi/ks/ns-ks-ksrate)"><strong>KSRATE</strong></a></p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-<a name="remarks"></a>注解
+<a name="remarks"></a>备注
 -------
 
 \_ \_ 如果 pin 允许速率改变，或界定闭合相关 pin 之间的接口不同，并使用不同的时间戳格式，则应该实现 KSPROPERTY 流速率。
@@ -86,18 +86,16 @@ Rate 设置和查询都使用 [**KSRATE**](/windows-hardware/drivers/ddi/ks/ns-k
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Header</p></td>
+<td><p>标头</p></td>
 <td>Ks (包含 Ks .h) </td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
 [**KSPROPERTY \_ 流 \_ RATECAPABILITY**](ksproperty-stream-ratecapability.md)
 
 [**KSRATE**](/windows-hardware/drivers/ddi/ks/ns-ks-ksrate)
-
- 
 

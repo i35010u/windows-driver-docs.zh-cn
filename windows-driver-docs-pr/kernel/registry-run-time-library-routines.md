@@ -9,12 +9,12 @@ keywords:
 - RtlXxxRegistryYyy 例程
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bf374682f1bb39fa4ffbf11f1bde7e43d052099c
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: ac438ecf1b07e64097de1a6411920ab615d488a1
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89185611"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90107376"
 ---
 # <a name="registry-run-time-library-routines"></a>注册表运行时库例程
 
@@ -42,23 +42,23 @@ ms.locfileid: "89185611"
 <tbody>
 <tr class="odd">
 <td><p>创建注册表项</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-rtlcreateregistrykey" data-raw-source="[&lt;strong&gt;RtlCreateRegistryKey&lt;/strong&gt;](/windows-hardware/drivers/ddi/wdm/nf-wdm-rtlcreateregistrykey)"><strong>RtlCreateRegistryKey</strong></a></p></td>
+<td><p><a href="/windows-hardware/drivers/ddi/wdm/nf-wdm-rtlcreateregistrykey" data-raw-source="[&lt;strong&gt;RtlCreateRegistryKey&lt;/strong&gt;](/windows-hardware/drivers/ddi/wdm/nf-wdm-rtlcreateregistrykey)"><strong>RtlCreateRegistryKey</strong></a></p></td>
 </tr>
 <tr class="even">
 <td><p>检查注册表项是否存在</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-rtlcheckregistrykey" data-raw-source="[&lt;strong&gt;RtlCheckRegistryKey&lt;/strong&gt;](/windows-hardware/drivers/ddi/wdm/nf-wdm-rtlcheckregistrykey)"><strong>RtlCheckRegistryKey</strong></a></p></td>
+<td><p><a href="/windows-hardware/drivers/ddi/wdm/nf-wdm-rtlcheckregistrykey" data-raw-source="[&lt;strong&gt;RtlCheckRegistryKey&lt;/strong&gt;](/windows-hardware/drivers/ddi/wdm/nf-wdm-rtlcheckregistrykey)"><strong>RtlCheckRegistryKey</strong></a></p></td>
 </tr>
 <tr class="odd">
 <td><p>检查一个或多个注册表项值</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-rtlqueryregistryvalues" data-raw-source="[&lt;strong&gt;RtlQueryRegistryValues&lt;/strong&gt;](/windows-hardware/drivers/ddi/wdm/nf-wdm-rtlqueryregistryvalues)"><strong>RtlQueryRegistryValues</strong></a></p></td>
+<td><p><a href="/windows-hardware/drivers/ddi/wdm/nf-wdm-rtlqueryregistryvalues" data-raw-source="[&lt;strong&gt;RtlQueryRegistryValues&lt;/strong&gt;](/windows-hardware/drivers/ddi/wdm/nf-wdm-rtlqueryregistryvalues)"><strong>RtlQueryRegistryValues</strong></a></p></td>
 </tr>
 <tr class="even">
 <td><p>写入注册表项值</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-rtlwriteregistryvalue" data-raw-source="[&lt;strong&gt;RtlWriteRegistryValue&lt;/strong&gt;](/windows-hardware/drivers/ddi/wdm/nf-wdm-rtlwriteregistryvalue)"><strong>RtlWriteRegistryValue</strong></a></p></td>
+<td><p><a href="/windows-hardware/drivers/ddi/wdm/nf-wdm-rtlwriteregistryvalue" data-raw-source="[&lt;strong&gt;RtlWriteRegistryValue&lt;/strong&gt;](/windows-hardware/drivers/ddi/wdm/nf-wdm-rtlwriteregistryvalue)"><strong>RtlWriteRegistryValue</strong></a></p></td>
 </tr>
 <tr class="odd">
 <td><p>删除注册表项值</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-rtldeleteregistryvalue" data-raw-source="[&lt;strong&gt;RtlDeleteRegistryValue&lt;/strong&gt;](/windows-hardware/drivers/ddi/wdm/nf-wdm-rtldeleteregistryvalue)"><strong>RtlDeleteRegistryValue</strong></a></p></td>
+<td><p><a href="/windows-hardware/drivers/ddi/wdm/nf-wdm-rtldeleteregistryvalue" data-raw-source="[&lt;strong&gt;RtlDeleteRegistryValue&lt;/strong&gt;](/windows-hardware/drivers/ddi/wdm/nf-wdm-rtldeleteregistryvalue)"><strong>RtlDeleteRegistryValue</strong></a></p></td>
 </tr>
 </tbody>
 </table>
@@ -82,6 +82,4 @@ status = RtlWriteRegistryValue(RTL_REGISTRY_ABSOLUTE,
 尽管使用 **Rtl*xxx*Registry * Xxx*** 例程（而不是 **Zw*Xxx*密钥** 例程）编写的代码行更少，但在执行某些操作时需要使用后者。 例如，不存在对应于[**ZwEnumerateKey**](/windows-hardware/drivers/ddi/wdm/nf-wdm-zwenumeratekey)的**Rtl*Xxx*Registry * Xxx*** 例程。
 
 如果对同一项执行多个操作， **Zw*Xxx*密钥** 例程将更高效，你可以对每个操作使用相同的打开句柄。 与此相反， **Rtl*Xxx*Registry * Xxx*** 例程打开并关闭每个操作的新句柄。
-
- 
 

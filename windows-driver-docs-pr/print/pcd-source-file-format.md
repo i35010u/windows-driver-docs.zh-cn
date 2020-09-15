@@ -11,12 +11,12 @@ keywords:
 - 关键字 WDK MSPlot
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 43cb1865d2de9200bf32bf34339f160db3943586
-ms.sourcegitcommit: 51cba71be022c726c04c29ba5c0360860b65d7a4
+ms.openlocfilehash: 608fe699476c062e7a825ae1ef58463290f3cf52
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/09/2020
-ms.locfileid: "89562209"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90107084"
 ---
 # <a name="pcd-source-file-format"></a>PCD 源文件格式
 
@@ -64,7 +64,7 @@ ColorCap {1}
 </tr>
 <tr class="odd">
 <td><p><strong>COLORINFO</strong></p></td>
-<td><p>三十个 DWORD 大小的值，表示 <a href="https://docs.microsoft.com/windows/win32/api/winddi/ns-winddi-colorinfo" data-raw-source="[&lt;strong&gt;COLORINFO&lt;/strong&gt;](/windows/win32/api/winddi/ns-winddi-colorinfo)"><strong>COLORINFO</strong></a> 结构的内容。</p></td>
+<td><p>三十个 DWORD 大小的值，表示 <a href="/windows/win32/api/winddi/ns-winddi-colorinfo" data-raw-source="[&lt;strong&gt;COLORINFO&lt;/strong&gt;](/windows/win32/api/winddi/ns-winddi-colorinfo)"><strong>COLORINFO</strong></a> 结构的内容。</p></td>
 <td><p></p>
 { {6810,3050,0} ，//xr，年，年 {2260,6550,0} ，//xg，Yg，yg {1810,500,0} ，//xb，yb，yb {2000,2450,0} ，//Xc，yc，yc {5210,2100,0} ，//，ym，ym {4750,5100,0} ，//xy，yy，yy {3324,3474,10000} ，//xw，yw，yw 10000，10000，10000，//RGB 伽玛1422952，//m/c，y/C 787495，//c/y，m/y} 324248</td>
 </tr>
@@ -81,7 +81,7 @@ ColorCap {1}
 </tr>
 <tr class="even">
 <td><p><strong>DevicePelsDPI</strong></p></td>
-<td><p>一个 DWORD 大小的值，表示设备的有效 DPI。 有关详细信息，请参阅<a href="https://docs.microsoft.com/windows/win32/api/winddi/ns-winddi-gdiinfo" data-raw-source="[&lt;strong&gt;GDIINFO&lt;/strong&gt;](/windows/win32/api/winddi/ns-winddi-gdiinfo)"><strong>GDIINFO</strong></a>的<strong>upDevicePelsDPI</strong>成员。</p></td>
+<td><p>一个 DWORD 大小的值，表示设备的有效 DPI。 有关详细信息，请参阅<a href="/windows/win32/api/winddi/ns-winddi-gdiinfo" data-raw-source="[&lt;strong&gt;GDIINFO&lt;/strong&gt;](/windows/win32/api/winddi/ns-winddi-gdiinfo)"><strong>GDIINFO</strong></a>的<strong>upDevicePelsDPI</strong>成员。</p></td>
 <td><p>默认值为零，导致 GDI 计算值。</p></td>
 </tr>
 <tr class="odd">
@@ -103,7 +103,7 @@ ColorCap {1}
 </tr>
 <tr class="even">
 <td><p><strong>InitString</strong></p></td>
-<td><p>带引号的 C 语言字符串，表示驱动程序的 <a href="https://docs.microsoft.com/windows/win32/api/winddi/nf-winddi-drvstartpage" data-raw-source="[&lt;strong&gt;DrvStartPage&lt;/strong&gt;](/windows/win32/api/winddi/nf-winddi-drvstartpage)"><strong>DrvStartPage</strong></a> 函数发送到打印机的命令。</p></td>
+<td><p>带引号的 C 语言字符串，表示驱动程序的 <a href="/windows/win32/api/winddi/nf-winddi-drvstartpage" data-raw-source="[&lt;strong&gt;DrvStartPage&lt;/strong&gt;](/windows/win32/api/winddi/nf-winddi-drvstartpage)"><strong>DrvStartPage</strong></a> 函数发送到打印机的命令。</p></td>
 <td><p>空字符串。</p></td>
 </tr>
 <tr class="odd">
@@ -268,6 +268,4 @@ FormInfo {"Roll Paper 24 in",    609600,      0, 0, 0, 0, 0}
 FormInfo {"ANSI A 8.5 x 11 in",  215900, 279400, 0, 0, 0, 0}
 FormInfo {"ISO A4 210 x 297 mm", 210000, 297000, 0, 0, 0, 0}
 ```
-
- 
 

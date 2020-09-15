@@ -13,12 +13,12 @@ keywords:
 - 跟踪 WDK，WPP
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 36cbb5f875407bc0b9fadf7347448b8b1311b3fc
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: fbbb896434a2ea454e9f28198cf3a5306cfc6f93
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89382161"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90107184"
 ---
 # <a name="wpp-software-tracing"></a>WPP 软件跟踪
 
@@ -45,7 +45,7 @@ WPP 软件跟踪通过添加简化跟踪提供程序操作的方法来补充和�
 <td align="left"><p>WPP 软件跟踪主要用于调试开发过程中的代码。 如果希望发布可由对结构化 ETW 事件感兴趣的应用程序使用的事件，以及在开发期间进行跟踪，请使用以下内容：</p>
 <ul>
 <li>对于内核模式驱动程序，请使用 <a href="event-tracing-for-windows--etw-.md" data-raw-source="[Event Tracing for Windows (ETW)](event-tracing-for-windows--etw-.md)">Windows 事件跟踪 (ETW) </a> API。</li>
-<li>对于用户模式驱动程序或应用程序，请使用 Windows Desktop) API (<a href="https://docs.microsoft.com/windows/desktop/ETW/event-tracing-portal" data-raw-source="[Event Tracing](/windows/desktop/ETW/event-tracing-portal)">事件跟踪</a> 。</li>
+<li>对于用户模式驱动程序或应用程序，请使用 Windows Desktop) API (<a href="/windows/desktop/ETW/event-tracing-portal" data-raw-source="[Event Tracing](/windows/desktop/ETW/event-tracing-portal)">事件跟踪</a> 。</li>
 </ul>
 有关详细信息，请参阅 <a href="tools-for-software-tracing.md" data-raw-source="[When should I use WPP Software Tracing or the Event Tracing for Windows (ETW) API?](tools-for-software-tracing.md)">何时应使用 WPP 软件跟踪或 Windows (ETW 事件跟踪) API？</a></td>
 </tr>
@@ -70,7 +70,7 @@ Microsoft Windows 2000 和更高版本的 Windows 支持 WPP 软件跟踪。
 
 -   安装驱动程序或组件。 启动跟踪会话并记录跟踪消息。 使用软件跟踪工具，如 [TraceView](traceview.md)、 [Tracelog](tracelog.md)、 [Tracefmt](tracefmt.md)和 [Tracepdb](tracepdb.md) ，以配置、启动和停止跟踪会话并显示和筛选跟踪消息。 这些工具包含在 Windows 驱动程序工具包 (WDK) 中。
 
-## <a name="in-this-section"></a>本节内容
+## <a name="in-this-section"></a>在本节中
 
 
 -   [将 WPP 软件跟踪添加到 Windows 驱动程序](adding-wpp-software-tracing-to-a-windows-driver.md)
@@ -93,6 +93,4 @@ Microsoft Windows 2000 和更高版本的 Windows 支持 WPP 软件跟踪。
 [**WmiTraceMessage**](/windows-hardware/drivers/ddi/wdm/nf-wdm-wmitracemessage)
 
 [**WmiTraceMessageVa**](/windows-hardware/drivers/ddi/wdm/nf-wdm-wmitracemessageva)
-
- 
 

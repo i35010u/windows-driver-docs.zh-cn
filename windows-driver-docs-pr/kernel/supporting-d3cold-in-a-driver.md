@@ -4,12 +4,12 @@ description: 从 Windows 8 开始，D3 (关闭) 设备电源状态分成两个�
 ms.assetid: D085820E-EDAC-4353-8500-207F77D9CC1F
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: e93ab964848071bb2afde7ff441a06b3ea104c26
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: e4378efa9ed5245a7554236400e4c2263e0946f9
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89185979"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90107272"
 ---
 # <a name="supporting-d3cold-in-a-driver"></a>在驱动程序中支持 D3cold
 
@@ -41,7 +41,7 @@ Windows 8 是 Windows 的第一个版本，当计算机处于 S0 状态且未准
 <thead>
 <tr class="header">
 <th>主题</th>
-<th>描述</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>
@@ -55,7 +55,7 @@ Windows 8 是 Windows 的第一个版本，当计算机处于 S0 状态且未准
 </tr>
 <tr class="odd">
 <td><p><a href="using-guid-d3cold-support-interface.md" data-raw-source="[Using the GUID_D3COLD_SUPPORT_INTERFACE Driver Interface](using-guid-d3cold-support-interface.md)">使用 GUID_D3COLD_SUPPORT_INTERFACE 驱动程序接口</a></p></td>
-<td><p>从 Windows 8 开始，驱动程序可以调用 <a href="https://msdn.microsoft.com/library/windows/hardware/hh967714" data-raw-source="[GUID_D3COLD_SUPPORT_INTERFACE](https://msdn.microsoft.com/library/windows/hardware/hh967714)">GUID_D3COLD_SUPPORT_INTERFACE</a> 接口中的例程来确定设备的 D3COLD 功能，并使这些设备能够使用 D3COLD。 此接口中的两个主要例程是 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-set_d3cold_support" data-raw-source="[&lt;em&gt;SetD3ColdSupport&lt;/em&gt;](/windows-hardware/drivers/ddi/wdm/nc-wdm-set_d3cold_support)"><em>SetD3ColdSupport</em></a> 和 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-get_idle_wake_info" data-raw-source="[&lt;em&gt;GetIdleWakeInfo&lt;/em&gt;](/windows-hardware/drivers/ddi/wdm/nc-wdm-get_idle_wake_info)"><em>GetIdleWakeInfo</em></a>。</p></td>
+<td><p>从 Windows 8 开始，驱动程序可以调用 <a href="https://msdn.microsoft.com/library/windows/hardware/hh967714" data-raw-source="[GUID_D3COLD_SUPPORT_INTERFACE](https://msdn.microsoft.com/library/windows/hardware/hh967714)">GUID_D3COLD_SUPPORT_INTERFACE</a> 接口中的例程来确定设备的 D3COLD 功能，并使这些设备能够使用 D3COLD。 此接口中的两个主要例程是 <a href="/windows-hardware/drivers/ddi/wdm/nc-wdm-set_d3cold_support" data-raw-source="[&lt;em&gt;SetD3ColdSupport&lt;/em&gt;](/windows-hardware/drivers/ddi/wdm/nc-wdm-set_d3cold_support)"><em>SetD3ColdSupport</em></a> 和 <a href="/windows-hardware/drivers/ddi/wdm/nc-wdm-get_idle_wake_info" data-raw-source="[&lt;em&gt;GetIdleWakeInfo&lt;/em&gt;](/windows-hardware/drivers/ddi/wdm/nc-wdm-get_idle_wake_info)"><em>GetIdleWakeInfo</em></a>。</p></td>
 </tr>
 <tr class="even">
 <td><p><a href="surprise-wake-up.md" data-raw-source="[Surprise Wake-Up](surprise-wake-up.md)">意外唤醒</a></p></td>
@@ -63,8 +63,6 @@ Windows 8 是 Windows 的第一个版本，当计算机处于 S0 状态且未准
 </tr>
 </tbody>
 </table>
-
- 
 
  
 

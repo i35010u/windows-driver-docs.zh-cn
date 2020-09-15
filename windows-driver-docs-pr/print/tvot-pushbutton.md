@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3870a21acb3001afd499cea1b161233e23dc9155
-ms.sourcegitcommit: 51cba71be022c726c04c29ba5c0360860b65d7a4
+ms.openlocfilehash: 94083abbed433f3c105237e293f2db680e9d2349
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/09/2020
-ms.locfileid: "89562221"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90107520"
 ---
 # <a name="tvot_pushbutton"></a>TVOT \_ 按键
 
@@ -86,7 +86,7 @@ TVOT \_ 按键选项类型包括分组框中的 "推送" 按钮。
 <tbody>
 <tr class="odd">
 <td><p>PUSHBUTTON_TYPE_CALLBACK</p></td>
-<td><p>指向 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/compstui/nc-compstui-_cpsuicallback" data-raw-source="[&lt;strong&gt;_CPSUICALLBACK&lt;/strong&gt;](/windows-hardware/drivers/ddi/compstui/nc-compstui-_cpsuicallback)"><strong>_CPSUICALLBACK</strong></a>类型的函数的指针。</p></td>
+<td><p>指向 <a href="/windows-hardware/drivers/ddi/compstui/nc-compstui-_cpsuicallback" data-raw-source="[&lt;strong&gt;_CPSUICALLBACK&lt;/strong&gt;](/windows-hardware/drivers/ddi/compstui/nc-compstui-_cpsuicallback)"><strong>_CPSUICALLBACK</strong></a>类型的函数的指针。</p></td>
 </tr>
 <tr class="even">
 <td><p>PUSHBUTTON_TYPE_DLGPROC</p></td>
@@ -98,7 +98,7 @@ TVOT \_ 按键选项类型包括分组框中的 "推送" 按钮。
 </tr>
 <tr class="even">
 <td><p>PUSHBUTTON_TYPE_HTSETUP</p></td>
-<td><p>指向 <a href="https://docs.microsoft.com/windows/win32/api/winddi/ns-winddi-devhtadjdata" data-raw-source="[&lt;strong&gt;DEVHTADJDATA&lt;/strong&gt;](/windows/win32/api/winddi/ns-winddi-devhtadjdata)"><strong>DEVHTADJDATA</strong></a> 结构的指针。</p></td>
+<td><p>指向 <a href="/windows/win32/api/winddi/ns-winddi-devhtadjdata" data-raw-source="[&lt;strong&gt;DEVHTADJDATA&lt;/strong&gt;](/windows/win32/api/winddi/ns-winddi-devhtadjdata)"><strong>DEVHTADJDATA</strong></a> 结构的指针。</p></td>
 </tr>
 </tbody>
 </table>
@@ -158,16 +158,16 @@ TVOT \_ 按键选项类型包括分组框中的 "推送" 按钮。
 <tbody>
 <tr class="odd">
 <td><p><span id="___________Style__________"></span><span id="___________style__________"></span><span id="___________STYLE__________"></span> 方式</p></td>
-<td><p>指定当用户单击 "推送" 按钮时 CPSUI 执行的操作。 可以是以下其中一个值：</p></td>
+<td><p>指定当用户单击 "推送" 按钮时 CPSUI 执行的操作。 可以是以下值之一：</p></td>
 </tr>
 <tr class="even">
 <td><p><span id="PUSHBUTTON_TYPE_CALLBACK"></span><span id="pushbutton_type_callback"></span>PUSHBUTTON_TYPE_CALLBACK</p></td>
-<td><p>CPSUI 调用应用程序的 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/compstui/nc-compstui-_cpsuicallback" data-raw-source="[&lt;strong&gt;_CPSUICALLBACK&lt;/strong&gt;](/windows-hardware/drivers/ddi/compstui/nc-compstui-_cpsuicallback)"><strong>_CPSUICALLBACK</strong></a>类型回调函数来处理按钮事件，并将 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/compstui/ns-compstui-_cpsuicbparam" data-raw-source="[&lt;strong&gt;CPSUICBPARAM&lt;/strong&gt;](/windows-hardware/drivers/ddi/compstui/ns-compstui-_cpsuicbparam)"><strong>CPSUICBPARAM</strong></a> 结构的 <strong>Reason</strong> 成员设置为 CPSUICB_REASON_PUSHBUTTON。  (CPSUI 将忽略回调函数的返回值。 ) </p></td>
+<td><p>CPSUI 调用应用程序的 <a href="/windows-hardware/drivers/ddi/compstui/nc-compstui-_cpsuicallback" data-raw-source="[&lt;strong&gt;_CPSUICALLBACK&lt;/strong&gt;](/windows-hardware/drivers/ddi/compstui/nc-compstui-_cpsuicallback)"><strong>_CPSUICALLBACK</strong></a>类型回调函数来处理按钮事件，并将 <a href="/windows-hardware/drivers/ddi/compstui/ns-compstui-_cpsuicbparam" data-raw-source="[&lt;strong&gt;CPSUICBPARAM&lt;/strong&gt;](/windows-hardware/drivers/ddi/compstui/ns-compstui-_cpsuicbparam)"><strong>CPSUICBPARAM</strong></a> 结构的 <strong>Reason</strong> 成员设置为 CPSUICB_REASON_PUSHBUTTON。  (CPSUI 将忽略回调函数的返回值。 ) </p></td>
 </tr>
 <tr class="odd">
 <td><p><span id="PUSHBUTTON_TYPE_DLGPROC"></span><span id="pushbutton_type_dlgproc"></span>PUSHBUTTON_TYPE_DLGPROC</p></td>
-<td><p>应用程序的对话框过程处理按钮事件。  (有关详细信息，请参阅<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/compstui/ns-compstui-_dlgpage" data-raw-source="[&lt;strong&gt;DLGPAGE&lt;/strong&gt;](/windows-hardware/drivers/ddi/compstui/ns-compstui-_dlgpage)"><strong>DLGPAGE</strong></a>的 "<strong>备注</strong>" 部分。 ) </p>
-<p>当函数收到 WM_INITDIALOG 消息时，其 <em>lParam</em> 参数将指向 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/compstui/ns-compstui-_cpsuicbparam" data-raw-source="[&lt;strong&gt;CPSUICBPARAM&lt;/strong&gt;](/windows-hardware/drivers/ddi/compstui/ns-compstui-_cpsuicbparam)"><strong>CPSUICBPARAM</strong></a> 结构，并将 <strong>Reason</strong> 成员设置为 CPSUICB_REASON_DLGPROC。</p></td>
+<td><p>应用程序的对话框过程处理按钮事件。  (有关详细信息，请参阅<a href="/windows-hardware/drivers/ddi/compstui/ns-compstui-_dlgpage" data-raw-source="[&lt;strong&gt;DLGPAGE&lt;/strong&gt;](/windows-hardware/drivers/ddi/compstui/ns-compstui-_dlgpage)"><strong>DLGPAGE</strong></a>的 "<strong>备注</strong>" 部分。 ) </p>
+<p>当函数收到 WM_INITDIALOG 消息时，其 <em>lParam</em> 参数将指向 <a href="/windows-hardware/drivers/ddi/compstui/ns-compstui-_cpsuicbparam" data-raw-source="[&lt;strong&gt;CPSUICBPARAM&lt;/strong&gt;](/windows-hardware/drivers/ddi/compstui/ns-compstui-_cpsuicbparam)"><strong>CPSUICBPARAM</strong></a> 结构，并将 <strong>Reason</strong> 成员设置为 CPSUICB_REASON_DLGPROC。</p></td>
 </tr>
 <tr class="even">
 <td><p><span id="PUSHBUTTON_TYPE_HTCLRADJ"></span><span id="pushbutton_type_htclradj"></span>PUSHBUTTON_TYPE_HTCLRADJ</p></td>
@@ -269,6 +269,4 @@ TVOT \_ 按键
 </tr>
 </tbody>
 </table>
-
- 
 

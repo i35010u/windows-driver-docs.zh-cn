@@ -6,12 +6,12 @@ keywords:
 - WdfObjectDereferenceWithTag 宏
 ms.date: 08/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1c64ae0a1c2fb29661c738e10c0d40c782aef818
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 4a5209e5a61e51becc7f9447f8cd850d37fd27cc
+ms.sourcegitcommit: a5f76805387760730faed5674d87201ec85b7dd3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89188689"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90112106"
 ---
 # <a name="wdfobjectdereferencewithtag-macro"></a>WdfObjectDereferenceWithTag 宏
 
@@ -46,14 +46,14 @@ VOID WdfObjectDereferenceWithTag(
 
 如果驱动程序提供的对象句柄无效，则会发生 bug 检查。
 
-<a name="remarks"></a>注解
+<a name="remarks"></a>备注
 -------
 
 如果对象的引用计数变为零，则在 **WdfObjectDereferenceWithTag** 返回之前可能会删除该对象。
 
 调用 [**WdfObjectDereferenceActual**](/windows-hardware/drivers/ddi/wdfobject/nf-wdfobject-wdfobjectdereferenceactual) 或 **WdfObjectDereferenceWithTag** 而不是 [**WdfObjectDereference**](wdfobjectdereference.md) (标记字符串、行号和文件名) Microsoft 调试器提供附加信息。 **WdfObjectDereferenceActual** 允许驱动程序指定行号和文件名，而 **WdfObjectDereferenceWithTag** 使用驱动程序的当前行号和文件名。
 
-可以通过使用 **！ wdftagtracker** 调试器扩展来查看标记、行号和文件名值。 调试器扩展将标记值显示为指针和一系列字符。 有关调试器扩展的详细信息，请参阅 [调试 KMDF 驱动程序](https://docs.microsoft.com/windows-hardware/drivers/wdf/debugging-a-wdf-driver)。
+可以通过使用 **！ wdftagtracker** 调试器扩展来查看标记、行号和文件名值。 调试器扩展将标记值显示为指针和一系列字符。 有关调试器扩展的详细信息，请参阅 [调试 KMDF 驱动程序](../debugger/debug-universal-drivers---step-by-step-lab--echo-kernel-mode-.md)。
 
 有关对象引用计数的详细信息，请参阅 [框架对象生命周期](./framework-object-life-cycle.md)。
 
@@ -91,7 +91,7 @@ WdfObjectDereferenceWithTag(
 <td><p>2.0</p></td>
 </tr>
 <tr class="even">
-<td><p>Header</p></td>
+<td><p>标头</p></td>
 <td>Wdfobject (包含 Wdf .h) </td>
 </tr>
 <tr class="odd">
@@ -105,7 +105,7 @@ WdfObjectDereferenceWithTag(
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
 [**WdfObjectDereference**](wdfobjectdereference.md)

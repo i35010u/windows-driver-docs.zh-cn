@@ -9,12 +9,12 @@ keywords:
 - PINNAME_VIDEO_VBI
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 421033b6b594583377eaf51fc57b4ca02d1dbf51
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: e84d38de110bad5e3ea9e446b4d2f201c1d332b2
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89190350"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90107116"
 ---
 # <a name="vbi-category"></a>VBI 类别
 
@@ -41,7 +41,7 @@ ms.locfileid: "89190350"
 <tbody>
 <tr class="odd">
 <td><p><strong>DataRange 结构</strong></p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagks_datarange_video_vbi" data-raw-source="[&lt;strong&gt;KS_DATARANGE_VIDEO_VBI&lt;/strong&gt;](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagks_datarange_video_vbi)"><strong>KS_DATARANGE_VIDEO_VBI</strong></a></p></td>
+<td><p><a href="/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagks_datarange_video_vbi" data-raw-source="[&lt;strong&gt;KS_DATARANGE_VIDEO_VBI&lt;/strong&gt;](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagks_datarange_video_vbi)"><strong>KS_DATARANGE_VIDEO_VBI</strong></a></p></td>
 </tr>
 <tr class="even">
 <td><p><strong>DataFormat 结构</strong></p></td>
@@ -61,7 +61,7 @@ ms.locfileid: "89190350"
 </tr>
 <tr class="even">
 <td><p><strong>扩展的标头大小</strong></p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagks_vbi_frame_info" data-raw-source="[&lt;strong&gt;KS_VBI_FRAME_INFO&lt;/strong&gt;](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagks_vbi_frame_info)"><strong>KS_VBI_FRAME_INFO</strong></a></p></td>
+<td><p><a href="/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagks_vbi_frame_info" data-raw-source="[&lt;strong&gt;KS_VBI_FRAME_INFO&lt;/strong&gt;](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagks_vbi_frame_info)"><strong>KS_VBI_FRAME_INFO</strong></a></p></td>
 </tr>
 <tr class="odd">
 <td><p><strong>必需的属性集</strong></p></td>
@@ -81,8 +81,6 @@ ms.locfileid: "89190350"
 </tr>
 </tbody>
 </table>
-
- 
 
  
 

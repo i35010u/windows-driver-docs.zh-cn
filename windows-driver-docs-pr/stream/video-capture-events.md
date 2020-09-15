@@ -8,12 +8,12 @@ keywords:
 - 视频捕获事件 WDK AVStream
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7582e21f0437d1664b1dfd68064b84554ee6e68b
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 2f99cc2650d7c78ef1cf798ae2c626294bfa3c0e
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89184361"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90107114"
 ---
 # <a name="video-capture-events"></a>视频捕获事件
 
@@ -33,21 +33,19 @@ ms.locfileid: "89184361"
 </thead>
 <tbody>
 <tr class="odd">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/stream/ksevent-vidcaptosti-ext-trigger" data-raw-source="[&lt;strong&gt;KSEVENT_VIDCAPTOSTI_EXT_TRIGGER&lt;/strong&gt;](./ksevent-vidcaptosti-ext-trigger.md)"><strong>KSEVENT_VIDCAPTOSTI_EXT_TRIGGER</strong></a></p></td>
+<td><p><a href="/windows-hardware/drivers/stream/ksevent-vidcaptosti-ext-trigger" data-raw-source="[&lt;strong&gt;KSEVENT_VIDCAPTOSTI_EXT_TRIGGER&lt;/strong&gt;](./ksevent-vidcaptosti-ext-trigger.md)"><strong>KSEVENT_VIDCAPTOSTI_EXT_TRIGGER</strong></a></p></td>
 <td><p>当触发视频捕获设备上的按钮时，向已注册的客户端发出信号。</p></td>
 </tr>
 <tr class="even">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/stream/ksevent-vidcap-auto-update" data-raw-source="[&lt;strong&gt;KSEVENT_VIDCAP_AUTO_UPDATE&lt;/strong&gt;](./ksevent-vidcap-auto-update.md)"><strong>KSEVENT_VIDCAP_AUTO_UPDATE</strong></a></p></td>
+<td><p><a href="/windows-hardware/drivers/stream/ksevent-vidcap-auto-update" data-raw-source="[&lt;strong&gt;KSEVENT_VIDCAP_AUTO_UPDATE&lt;/strong&gt;](./ksevent-vidcap-auto-update.md)"><strong>KSEVENT_VIDCAP_AUTO_UPDATE</strong></a></p></td>
 <td><p>当属性值更改时向注册的客户端发出信号。</p></td>
 </tr>
 <tr class="odd">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/stream/ksevent-vidcap-search" data-raw-source="[&lt;strong&gt;KSEVENT_VIDCAP_SEARCH&lt;/strong&gt;](./ksevent-vidcap-search.md)"><strong>KSEVENT_VIDCAP_SEARCH</strong></a></p></td>
+<td><p><a href="/windows-hardware/drivers/stream/ksevent-vidcap-search" data-raw-source="[&lt;strong&gt;KSEVENT_VIDCAP_SEARCH&lt;/strong&gt;](./ksevent-vidcap-search.md)"><strong>KSEVENT_VIDCAP_SEARCH</strong></a></p></td>
 <td><p>搜索完成时向注册的客户端发出信号。</p></td>
 </tr>
 </tbody>
 </table>
-
- 
 
  
 

@@ -8,12 +8,12 @@ keywords:
 - Winsock 部分 WDK 网络
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d536919281dfc1484709986ad910cc3938af62b3
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 5ed7d375c9f1d58e8c123242765ca855291812a8
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89207117"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90107092"
 ---
 # <a name="winsock-sections-in-a-network-inf-file"></a>网络 INF 文件中的 Winsock 节
 
@@ -48,7 +48,7 @@ ms.locfileid: "89207117"
 </tr>
 <tr class="even">
 <td align="left"><p>HelperDllName</p></td>
-<td align="left"><p>一个 REG_EXPAND_SZ 值，该值指定 Windows 套接 helper 的路径 (WSH) DLL 协议。 有关详细信息，请参阅 <a href="https://docs.microsoft.com/previous-versions/windows/hardware/network/ff566260(v=vs.85)" data-raw-source="[WSH DLL Function Summary](/previous-versions/windows/hardware/network/ff566260(v=vs.85))">WSH DLL 函数摘要</a>。</p></td>
+<td align="left"><p>一个 REG_EXPAND_SZ 值，该值指定 Windows 套接 helper 的路径 (WSH) DLL 协议。 有关详细信息，请参阅 <a href="/previous-versions/windows/hardware/network/ff566260(v=vs.85)" data-raw-source="[WSH DLL Function Summary](/previous-versions/windows/hardware/network/ff566260(v=vs.85))">WSH DLL 函数摘要</a>。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>MaxSockAddrLength</p></td>
@@ -112,7 +112,7 @@ ms.locfileid: "89207117"
 <thead>
 <tr class="header">
 <th align="left">命名空间</th>
-<th align="left">值</th>
+<th align="left">“值”</th>
 </tr>
 </thead>
 <tbody>
@@ -219,6 +219,4 @@ DelSock = Remove.IpxWinsock
 TransportService = nwlinkipx
 ProviderId = "GUID"
 ```
-
- 
 

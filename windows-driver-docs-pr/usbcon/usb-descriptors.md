@@ -3,12 +3,12 @@ description: USB 设备在称为 USB 描述符的数据结构中提供自身的�
 title: USB 描述符
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 59d02f1f9fe6fe1f8f6c00f8232193f01075ae26
-ms.sourcegitcommit: 937974aa9bbe0262a7ffe9631593fab48c4e7492
+ms.openlocfilehash: d1ec9fdd290bc9b87f1baa8846edb40a2aed1af7
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "90010097"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90107318"
 ---
 # <a name="usb-descriptors"></a>USB 描述符
 
@@ -35,13 +35,13 @@ USB 设备在称为 *USB 描述符*的数据结构中提供自身的相关信息
 <thead>
 <tr class="header">
 <th>主题</th>
-<th>描述</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td><p><a href="usb-device-descriptors.md" data-raw-source="[USB device descriptors](usb-device-descriptors.md)">USB 设备描述符</a></p></td>
-<td><p>设备描述符同时包含有关 USB 设备的信息。 本主题介绍 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/usbspec/ns-usbspec-_usb_device_descriptor" data-raw-source="[&lt;strong&gt;USB_DEVICE_DESCRIPTOR&lt;/strong&gt;](/windows-hardware/drivers/ddi/usbspec/ns-usbspec-_usb_device_descriptor)"><strong>USB_DEVICE_DESCRIPTOR</strong></a> 的结构，并包括有关客户端驱动程序如何发送获取描述符请求以获取设备描述符的信息。</p></td>
+<td><p>设备描述符同时包含有关 USB 设备的信息。 本主题介绍 <a href="/windows-hardware/drivers/ddi/usbspec/ns-usbspec-_usb_device_descriptor" data-raw-source="[&lt;strong&gt;USB_DEVICE_DESCRIPTOR&lt;/strong&gt;](/windows-hardware/drivers/ddi/usbspec/ns-usbspec-_usb_device_descriptor)"><strong>USB_DEVICE_DESCRIPTOR</strong></a> 的结构，并包括有关客户端驱动程序如何发送获取描述符请求以获取设备描述符的信息。</p></td>
 </tr>
 <tr class="even">
 <td><p><a href="usb-configuration-descriptors.md" data-raw-source="[USB configuration descriptors](usb-configuration-descriptors.md)">USB 配置描述符</a></p></td>

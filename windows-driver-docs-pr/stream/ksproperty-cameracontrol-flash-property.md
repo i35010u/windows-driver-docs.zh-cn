@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 15c837ccaab1c6a74ad098f2df811b83ffa5b4b8
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: e242dbced8aa2eb9ae651c9b832652d2b55f572c
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89192559"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90107262"
 ---
 # <a name="ksproperty_cameracontrol_flash_property"></a>KSPROPERTY \_ CAMERACONTROL \_ FLASH \_ 属性
 
@@ -53,8 +53,8 @@ ms.locfileid: "89192559"
 <td><p>是</p></td>
 <td><p>是</p></td>
 <td><p>筛选器</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)"><strong>KSPROPERTY</strong></a></p></td>
-<td><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_cameracontrol_flash_s" data-raw-source="[&lt;strong&gt;KSPROPERTY_CAMERACONTROL_FLASH_S&lt;/strong&gt;](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_cameracontrol_flash_s)"><strong>KSPROPERTY_CAMERACONTROL_FLASH_S</strong></a></td>
+<td><p><a href="/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)"><strong>KSPROPERTY</strong></a></p></td>
+<td><a href="/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_cameracontrol_flash_s" data-raw-source="[&lt;strong&gt;KSPROPERTY_CAMERACONTROL_FLASH_S&lt;/strong&gt;](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_cameracontrol_flash_s)"><strong>KSPROPERTY_CAMERACONTROL_FLASH_S</strong></a></td>
 </tr>
 </tbody>
 </table>
@@ -88,6 +88,4 @@ ms.locfileid: "89192559"
 [**KSPROPERTY**](/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)
 
 [**KSPROPERTY \_ CAMERACONTROL \_ FLASH \_ S**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_cameracontrol_flash_s)
-
- 
 

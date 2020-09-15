@@ -15,12 +15,12 @@ keywords:
 - 并行前缀解析 WDK 网络重定向器
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: dd43f904535da6c3d3c8e364839351ec9003c350
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: aabf1d8a467a5932d7a004026ca830964bea59dd
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89064950"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90107378"
 ---
 # <a name="support-for-unc-naming-and-mup"></a>支持 UNC 命名和 MUP
 
@@ -194,7 +194,7 @@ IOCTL \_ REDIR \_ 查询 \_ 路径请求应仅来自 MUP，而 IRP 的请求者�
 
 任何传统的网络重定向程序 (不基于使用通过 [**FsRtlRegisterUncProvider**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-_fsrtl_advanced_fcb_header-fsrtlregisteruncprovider) 注册为 UNC 提供程序的 RDBSS) 将接收 IOCTL \_ REDIR \_ 查询 \_ 路径请求。
 
-表示支持的网络微型重定向程序将接收此前缀声明，就像它是 IRP \_ MJ \_ CREATE 调用一样。 此创建请求类似于**Createfile** \_ \_ \_ 在上设置了文件创建树连接标志的用户模式 Createfile 调用。 网络小型重定向程序将不会接收前缀声明作为对[**MRxLowIOSubmit \[ LOWIO \_ OP \_ IOCTL \] **](https://msdn.microsoft.com/library/windows/hardware/ff550715)的调用。 对于前缀声明，RDBSS 会将 [**MRxCreateSrvCall**](/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_create_srvcall) 请求发送到网络小型重定向程序，然后调用 [**MRxSrvCallWinnerNotify**](/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_srvcall_winner_notify) 和 [**MRxCreateVNetRoot**](/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_create_v_net_root)。 当网络微重定向器注册到 RDBSS 时，网络小型重定向器的驱动程序调度表将由 RDBSS 复制到指向内部 RDBSS 入口点。 然后，RDBSS 将 \_ \_ \_ 为网络小型重定向器在内部接收此 IOCTL REDIR 查询路径，并调用 **MRxCreateSrvCall**、 **MRxSrvCallWinnerNotify**和 **MRxCreateVNetRoot**。 原始 IOCTL \_ REDIR \_ 查询 \_ 路径 IRP 将包含在 \_ 传递到 **MRxCreateSrvCall** 例程的 RX 上下文结构中。 此外， \_ 将修改传递到 **MRXCREATESRVCALL** 的 RX 上下文中的以下成员：
+表示支持的网络微型重定向程序将接收此前缀声明，就像它是 IRP \_ MJ \_ CREATE 调用一样。 此创建请求类似于**Createfile** \_ \_ \_ 在上设置了文件创建树连接标志的用户模式 Createfile 调用。 网络小型重定向程序将不会接收前缀声明作为对[**MRxLowIOSubmit \[ LOWIO \_ OP \_ IOCTL \] **](./mrxlowiosubmit-lowio-op-ioctl-.md)的调用。 对于前缀声明，RDBSS 会将 [**MRxCreateSrvCall**](/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_create_srvcall) 请求发送到网络小型重定向程序，然后调用 [**MRxSrvCallWinnerNotify**](/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_srvcall_winner_notify) 和 [**MRxCreateVNetRoot**](/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_create_v_net_root)。 当网络微重定向器注册到 RDBSS 时，网络小型重定向器的驱动程序调度表将由 RDBSS 复制到指向内部 RDBSS 入口点。 然后，RDBSS 将 \_ \_ \_ 为网络小型重定向器在内部接收此 IOCTL REDIR 查询路径，并调用 **MRxCreateSrvCall**、 **MRxSrvCallWinnerNotify**和 **MRxCreateVNetRoot**。 原始 IOCTL \_ REDIR \_ 查询 \_ 路径 IRP 将包含在 \_ 传递到 **MRxCreateSrvCall** 例程的 RX 上下文结构中。 此外， \_ 将修改传递到 **MRXCREATESRVCALL** 的 RX 上下文中的以下成员：
 
 **MajorFunction** \_ \_ 即使原始 IRP 为 irp \_ mj \_ 设备 \_ 控制，MajorFunction 成员也会设置为 irp mj CREATE。
 

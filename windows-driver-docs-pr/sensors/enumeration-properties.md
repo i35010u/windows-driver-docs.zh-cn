@@ -4,12 +4,12 @@ description: 本主题介绍 PnP 驱动程序存储区中可用的静态传感�
 ms.assetid: E4663410-375F-48B9-A9E4-6E608FA8D2FF
 ms.date: 01/04/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: b521c9db71ac27d1f4e7aa2e9d16aacbf1d50db2
-ms.sourcegitcommit: 937974aa9bbe0262a7ffe9631593fab48c4e7492
+ms.openlocfilehash: f22a2700bbc78e05a5f346644ae19b1cd6b169a5
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "90010281"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90107324"
 ---
 # <a name="enumeration-properties"></a>枚举属性
 
@@ -40,7 +40,7 @@ ms.locfileid: "90010281"
 <td><p>DEVPKEY_Sensor_Type</p></td>
 <td><p>VT_CLSID</p></td>
 <td><p>必需</p></td>
-<td><p>标识传感器类型的 GUID。 有关传感器类型的详细信息，请参阅 <a href="https://docs.microsoft.com/windows-hardware/drivers/sensors/about-sensor-constants" data-raw-source="[Sensor type GUIDs](./about-sensor-constants.md)">传感器类型 guid</a>。</p></td>
+<td><p>标识传感器类型的 GUID。 有关传感器类型的详细信息，请参阅 <a href="/windows-hardware/drivers/sensors/about-sensor-constants" data-raw-source="[Sensor type GUIDs](./about-sensor-constants.md)">传感器类型 guid</a>。</p></td>
 </tr>
 <tr class="even">
 <td><p>DEVPKEY_Sensor_Category</p></td>
@@ -54,7 +54,7 @@ ms.locfileid: "90010281"
 <td><p>可选</p>
 <p>对于环境光线传感器和加速感应器是必需的</p></td>
 <td><p>Senor 连接类型。 传感器连接类型可集成、附加或外部。</p>
-<p>有关详细信息，请参阅 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/sensorsclassextension/ne-sensorsclassextension-__midl___midl_itf_windowssensorclassextension_0000_0000_0002" data-raw-source="[&lt;strong&gt;SensorConnectionType&lt;/strong&gt;](/windows-hardware/drivers/ddi/sensorsclassextension/ne-sensorsclassextension-__midl___midl_itf_windowssensorclassextension_0000_0000_0002)"><strong>SensorConnectionType</strong></a> 枚举。</p></td>
+<p>有关详细信息，请参阅 <a href="/windows-hardware/drivers/ddi/sensorsclassextension/ne-sensorsclassextension-__midl___midl_itf_windowssensorclassextension_0000_0000_0002" data-raw-source="[&lt;strong&gt;SensorConnectionType&lt;/strong&gt;](/windows-hardware/drivers/ddi/sensorsclassextension/ne-sensorsclassextension-__midl___midl_itf_windowssensorclassextension_0000_0000_0002)"><strong>SensorConnectionType</strong></a> 枚举。</p></td>
 </tr>
 <tr class="even">
 <td><p>DEVPKEY_Sensor_IsPrimary</p></td>
@@ -122,6 +122,4 @@ ms.locfileid: "90010281"
 [传感器属性](sensor-properties2.md)
 
 [传感器类型 Guid](./about-sensor-constants.md)
-
- 
 

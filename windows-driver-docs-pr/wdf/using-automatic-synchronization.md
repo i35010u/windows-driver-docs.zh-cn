@@ -20,12 +20,12 @@ keywords:
 - WdfSynchronizationScopeInheritFromParent
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c3452a8b518f4523b1d23080a54d2432dc8ea648
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 39cf35abfd72cfb94913b3c9d4d5fd52884a44ff
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89184573"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90107152"
 ---
 # <a name="using-automatic-synchronization"></a>使用自动同步
 
@@ -58,15 +58,15 @@ ms.locfileid: "89184573"
 <tbody>
 <tr class="odd">
 <td align="left"><p>Queue 对象</p></td>
-<td align="left"><p><a href="request-handlers.md" data-raw-source="[Request handlers](request-handlers.md)">请求处理程序</a>、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfio/nc-wdfio-evt_wdf_io_queue_state" data-raw-source="[&lt;em&gt;EvtIoQueueState&lt;/em&gt;](/windows-hardware/drivers/ddi/wdfio/nc-wdfio-evt_wdf_io_queue_state)"><em>EvtIoQueueState</em></a>、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfio/nc-wdfio-evt_wdf_io_queue_io_resume" data-raw-source="[&lt;em&gt;EvtIoResume&lt;/em&gt;](/windows-hardware/drivers/ddi/wdfio/nc-wdfio-evt_wdf_io_queue_io_resume)"><em>EvtIoResume</em></a>、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfio/nc-wdfio-evt_wdf_io_queue_io_stop" data-raw-source="[&lt;em&gt;EvtIoStop&lt;/em&gt;](/windows-hardware/drivers/ddi/wdfio/nc-wdfio-evt_wdf_io_queue_io_stop)"><em>EvtIoStop</em></a></p></td>
+<td align="left"><p><a href="request-handlers.md" data-raw-source="[Request handlers](request-handlers.md)">请求处理程序</a>、 <a href="/windows-hardware/drivers/ddi/wdfio/nc-wdfio-evt_wdf_io_queue_state" data-raw-source="[&lt;em&gt;EvtIoQueueState&lt;/em&gt;](/windows-hardware/drivers/ddi/wdfio/nc-wdfio-evt_wdf_io_queue_state)"><em>EvtIoQueueState</em></a>、 <a href="/windows-hardware/drivers/ddi/wdfio/nc-wdfio-evt_wdf_io_queue_io_resume" data-raw-source="[&lt;em&gt;EvtIoResume&lt;/em&gt;](/windows-hardware/drivers/ddi/wdfio/nc-wdfio-evt_wdf_io_queue_io_resume)"><em>EvtIoResume</em></a>、 <a href="/windows-hardware/drivers/ddi/wdfio/nc-wdfio-evt_wdf_io_queue_io_stop" data-raw-source="[&lt;em&gt;EvtIoStop&lt;/em&gt;](/windows-hardware/drivers/ddi/wdfio/nc-wdfio-evt_wdf_io_queue_io_stop)"><em>EvtIoStop</em></a></p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>File 对象</p></td>
-<td align="left"><p>所有 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdffileobject/" data-raw-source="[callback functions](/windows-hardware/drivers/ddi/wdffileobject/)">回调函数</a></p></td>
+<td align="left"><p>所有 <a href="/windows-hardware/drivers/ddi/wdffileobject/" data-raw-source="[callback functions](/windows-hardware/drivers/ddi/wdffileobject/)">回调函数</a></p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>请求对象</p></td>
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nc-wdfrequest-evt_wdf_request_cancel" data-raw-source="[&lt;em&gt;EvtRequestCancel&lt;/em&gt;](/windows-hardware/drivers/ddi/wdfrequest/nc-wdfrequest-evt_wdf_request_cancel)"><em>EvtRequestCancel</em></a></p></td>
+<td align="left"><p><a href="/windows-hardware/drivers/ddi/wdfrequest/nc-wdfrequest-evt_wdf_request_cancel" data-raw-source="[&lt;em&gt;EvtRequestCancel&lt;/em&gt;](/windows-hardware/drivers/ddi/wdfrequest/nc-wdfrequest-evt_wdf_request_cancel)"><em>EvtRequestCancel</em></a></p></td>
 </tr>
 </tbody>
 </table>
@@ -248,6 +248,4 @@ ms.locfileid: "89184573"
 对于 DPC 对象和不表示[被动级别计时器](using-timers.md)的计时器对象，请注意，如果已将父设备的执行级别设置为 " **WdfExecutionLevelPassive**"，则不能将配置结构的**AutomaticSerialization**成员设置为**TRUE** 。 这是因为，框架将以 IRQL = 被动级别获取设备对象的 [回调同步锁](using-framework-locks.md) ， \_ 因此不能使用锁来同步 DPC 或计时器对象回调函数，该函数必须以 IRQL = 调度 \_ 级别执行。 在这种情况下，你的驱动程序应在必须相互同步的任何设备、DPC 或计时器对象回调函数中使用 [framework 旋转锁](using-framework-locks.md#framework-spin-locks) 。
 
 另请注意，*对于表示被动级别计时器的计时器*对象，仅当父设备的执行级别设置为**WdfExecutionLevelPassive**时，*才*可以将配置结构的**AutomaticSerialization**成员设置为 TRUE。
-
- 
 

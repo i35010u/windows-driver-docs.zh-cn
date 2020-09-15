@@ -6,12 +6,12 @@ ms.assetid: 24362a20-9e9d-4566-bc95-ce52b91056af
 keywords:
 - IRP_MN_QUERY_PNP_DEVICE_STATE 内核模式驱动程序体系结构
 ms.localizationpriority: medium
-ms.openlocfilehash: 96f9887ae8d64960c3c00e28339525fd9e64f391
-ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
+ms.openlocfilehash: 0763a0660ed0892b827b35b28e5fd8652c8297fa
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89403256"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90107288"
 ---
 # <a name="irp_mn_query_pnp_device_state"></a>IRP \_ MN \_ 查询 \_ PNP \_ 设备 \_ 状态
 
@@ -56,14 +56,14 @@ PnP 管理器在任意线程的上下文中以 IRQL 被动级别发送此 IRP \_
 
 如果总线驱动程序未处理此 IRP，它会将 **irp- &gt; IoStatus** 保持原样，并完成 irp。
 
-<a name="operation"></a>Operation
+<a name="operation"></a>操作
 ---------
 
 此 IRP 首先由设备堆栈顶部的驱动程序和堆栈中的每个下一个较低的驱动程序处理。
 
 如果驱动程序包含有关设备 PnP 状态的信息，则该驱动程序将处理此 IRP。 驱动程序可以在 PNP \_ 设备状态位掩码中设置或清除标志 \_ 。 如果其他驱动程序已 \_ \_ 在 **Irp- &gt; IoStatus**中设置 PNP 设备状态，则驱动程序必须小心修改该位掩码中的标志，而不是覆盖整个结构。
 
-请参阅 [即插即用](https://docs.microsoft.com/windows-hardware/drivers/kernel/implementing-plug-and-play) ，了解用于处理 [即插即用次要 irp](plug-and-play-minor-irps.md)的一般规则。
+请参阅 [即插即用](./introduction-to-plug-and-play.md) ，了解用于处理 [即插即用次要 irp](plug-and-play-minor-irps.md)的一般规则。
 
 **正在发送此 IRP**
 
@@ -79,7 +79,7 @@ PnP 管理器在任意线程的上下文中以 IRQL 被动级别发送此 IRP \_
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Header</p></td>
+<td><p>标头</p></td>
 <td>Wdm.h（包括 Wdm.h、Ntddk.h 或 Ntifs.h）</td>
 </tr>
 </tbody>

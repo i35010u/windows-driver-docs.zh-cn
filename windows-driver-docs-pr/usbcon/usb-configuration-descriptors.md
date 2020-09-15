@@ -3,12 +3,12 @@ description: USB 设备以一系列称为 USB 配置的接口的形式公开其�
 title: USB 配置描述符
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 957d00986ce61bfeb086f4c1c2d7a0edc8045d14
-ms.sourcegitcommit: 937974aa9bbe0262a7ffe9631593fab48c4e7492
+ms.openlocfilehash: a384700f1e23b38210ba3cf7a82aa8347db33e09
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "90010005"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90107240"
 ---
 # <a name="usb-configuration-descriptors"></a>USB 配置描述符
 
@@ -80,7 +80,7 @@ bInterval:          0x01
 
   若要提交 URB，客户端驱动程序必须使用 WDF request 对象。 若要以异步方式将请求对象发送到 USB 驱动程序堆栈，驱动程序必须调用 [**WdfRequestSend**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestsend)方法。 若要同步发送它，请调用 [**WdfUsbTargetDeviceSendUrbSynchronously**](/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetdevicesendurbsynchronously) 方法。
 
-  <strong>Wdm 驱动程序： * * Windows 驱动模型 (WDM) 客户端驱动程序只能通过提交 URB 来获取该配置描述符。若要分配 URB，驱动程序必须调用 [</strong> USBD \_ UrbAllocate <strong>](<https://msdn.microsoft.com/library/windows/hardware/hh406250>) 例程。若要设置 URB 的格式，驱动程序必须调用 [</strong> UsbBuildGetDescriptorRequest * *](<https://msdn.microsoft.com/library/windows/hardware/ff538943>) 宏。 若要提交 URB，驱动程序必须将 URB 与 IRP 相关联，并将 IRP 提交到 USB 驱动程序堆栈。 有关详细信息，请参阅 [如何提交 URB](send-requests-to-the-usb-driver-stack.md)。
+  <strong>Wdm 驱动程序： * * Windows 驱动模型 (WDM) 客户端驱动程序只能通过提交 URB 来获取该配置描述符。若要分配 URB，驱动程序必须调用 [</strong> USBD \_ UrbAllocate <strong>](/windows-hardware/drivers/ddi/usbdlib/nf-usbdlib-usbd_urballocate) 例程。若要设置 URB 的格式，驱动程序必须调用 [</strong> UsbBuildGetDescriptorRequest * *](/previous-versions//ff538943(v=vs.85)) 宏。 若要提交 URB，驱动程序必须将 URB 与 IRP 相关联，并将 IRP 提交到 USB 驱动程序堆栈。 有关详细信息，请参阅 [如何提交 URB](send-requests-to-the-usb-driver-stack.md)。
 
 在 USB 配置中，接口的数量及其备用设置是可变的。 因此，很难预测保存配置描述符所需的缓冲区大小。 客户端驱动程序必须在两个步骤中收集所有这些信息。 首先，确定保存所有配置描述符所需的缓冲区大小，然后发出请求来检索整个描述符。 客户端驱动程序可以通过下列方式之一获得大小：
 

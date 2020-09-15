@@ -10,12 +10,12 @@ keywords:
 - 查询 WDK CoNDIS WAN
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 86928235df85b1ef05c56ed9e9e3fbc9614e7d49
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 8e8626491c3819290ee9ccc153616c55de3f74c3
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89211103"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90107494"
 ---
 # <a name="handling-queries-in-a-condis-wan-miniport-driver"></a>处理 CoNDIS WAN 微型端口驱动程序中的查询
 
@@ -49,17 +49,17 @@ NDISWAN 中间驱动程序转发查询请求后，NDIS 将调用微型端口驱�
 <tbody>
 <tr class="odd">
 <td align="left"><p></p>
-<a href="/windows-hardware/drivers/network/oid-wan-co-get-info" data-raw-source="[OID_WAN_CO_GET_INFO](/windows-hardware/drivers/network/oid-wan-co-get-info)">OID_WAN_CO_GET_INFO</a> 获取有关 (VCs) 的虚拟连接的信息。</td>
-<td align="left"><p>必须</p></td>
+<a href="/windows-hardware/drivers/network/oid-wan-co-get-info" data-raw-source="[OID_WAN_CO_GET_INFO](./oid-wan-co-get-info.md)">OID_WAN_CO_GET_INFO</a> 获取有关 (VCs) 的虚拟连接的信息。</td>
+<td align="left"><p>必需</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p></p>
-<a href="/windows-hardware/drivers/network/oid-wan-co-get-link-info" data-raw-source="[OID_WAN_CO_GET_LINK_INFO](/windows-hardware/drivers/network/oid-wan-co-get-link-info)">OID_WAN_CO_GET_LINK_INFO</a> 获取有关 VC 的信息。</td>
-<td align="left"><p>必须</p></td>
+<a href="/windows-hardware/drivers/network/oid-wan-co-get-link-info" data-raw-source="[OID_WAN_CO_GET_LINK_INFO](./oid-wan-co-get-link-info.md)">OID_WAN_CO_GET_LINK_INFO</a> 获取有关 VC 的信息。</td>
+<td align="left"><p>必需</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p></p>
-<a href="/windows-hardware/drivers/network/oid-wan-co-get-stats-info" data-raw-source="[OID_WAN_CO_GET_STATS_INFO](/windows-hardware/drivers/network/oid-wan-co-get-stats-info)">OID_WAN_CO_GET_STATS_INFO</a> 获取 VC 的统计信息。</td>
+<a href="/windows-hardware/drivers/network/oid-wan-co-get-stats-info" data-raw-source="[OID_WAN_CO_GET_STATS_INFO](./oid-wan-co-get-stats-info.md)">OID_WAN_CO_GET_STATS_INFO</a> 获取 VC 的统计信息。</td>
 <td align="left"><p>可选</p></td>
 </tr>
 </tbody>
@@ -68,6 +68,4 @@ NDISWAN 中间驱动程序转发查询请求后，NDIS 将调用微型端口驱�
  
 
 CoNDIS WAN 微型端口驱动程序可以支持所有 NDIS [常规对象](/previous-versions/windows/hardware/network/ff546510(v=vs.85))。 若要了解有关在 CoNDIS 微型端口驱动程序中设置信息的详细信息，请参阅 [查询或设置信息](querying-or-setting-information.md)。
-
- 
 

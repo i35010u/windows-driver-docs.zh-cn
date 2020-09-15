@@ -17,12 +17,12 @@ keywords:
 - IoGetCurrentIrpStackLocation
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 160336037468ace80aeae90d1f8439512a4ac56e
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 4049dabd094442efa92b29681774f8a1274bca09
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89185505"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90106948"
 ---
 # <a name="processing-irps-in-a-lowest-level-driver"></a>在最低级驱动程序中处理 IRP
 
@@ -52,7 +52,7 @@ ms.locfileid: "89185505"
 
 ### <a name="calling-iogetcurrentirpstacklocation"></a>调用 IoGetCurrentIrpStackLocation
 
-需要 IRP 参数的任何驱动程序例程都必须调用 [**IoGetCurrentIrpStackLocation**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetcurrentirpstacklocation) 以获取驱动程序的 [i/o 堆栈位置](i-o-stack-locations.md)。 此类例程包括处理多个主要 i/o 函数代码 (<strong>irp \_ MJ \_ * XXX</strong> <em>) 、处理支持 (</em> <em>irp \_ MN \_ </em>XXX) 的次要函数的函数，<strong><em>或处理设备 i/o 控制请求 ([</em> * irp \_ mj \_ 设备 \_ 控制</strong>](<https://msdn.microsoft.com/library/windows/hardware/ff550744>)和/或[**IRP \_ mj \_ 内部 \_ 设备 \_ 控制**](./irp-mj-internal-device-control.md)) ，以及处理 irp 的每个其他驱动程序例程。
+需要 IRP 参数的任何驱动程序例程都必须调用 [**IoGetCurrentIrpStackLocation**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetcurrentirpstacklocation) 以获取驱动程序的 [i/o 堆栈位置](i-o-stack-locations.md)。 此类例程包括处理多个主要 i/o 函数代码 (<strong>irp \_ MJ \_ * XXX</strong> <em>) 、处理支持 (</em> <em>irp \_ MN \_ </em>XXX) 的次要函数的函数，<strong><em>或处理设备 i/o 控制请求 ([</em> * irp \_ mj \_ 设备 \_ 控制</strong>](./irp-mj-device-control.md)和/或[**IRP \_ mj \_ 内部 \_ 设备 \_ 控制**](./irp-mj-internal-device-control.md)) ，以及处理 irp 的每个其他驱动程序例程。
 
 此驱动程序的 i/o 堆栈位置是最低的，其中数量不确定的高级驱动程序的 i/o 堆栈位置显示为灰色。 为简单起见，上图中未显示对[*DispatchReadWrite*](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch)、 *StartIo*、 *AdapterControl*和[*DpcForIsr*](/windows-hardware/drivers/ddi/wdm/nc-wdm-io_dpc_routine)例程的**IoGetCurrentIrpStackLocation**的调用。
 
@@ -109,6 +109,4 @@ ms.locfileid: "89185505"
 假设上图中的传输操作成功， *DpcForIsr* 例程（如图中所示）通过最低级别的驱动程序例程来阐明 IRP 路径，在 " \_ **状态** " 中设置状态 "成功"，并在 IRP 的 i/o 状态块的 **信息** 中传输的字节数。
 
 许多标准驱动程序例程还会返回 NTSTATUS 类型值。 有关 NTSTATUS 常量（如状态成功）的详细信息 \_ ，请参阅 [日志记录错误](logging-errors.md)。
-
- 
 

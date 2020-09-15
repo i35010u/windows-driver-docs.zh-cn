@@ -4,12 +4,12 @@ description: 检索设备接口属性值
 ms.assetid: 2a845adc-6965-420d-9e0a-20935d20577a
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8a334b048b23e91e252373a702f137d3d905ebaa
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 8ffedb3d19b01180a78e953f68b75ed889641553
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89095627"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90107498"
 ---
 # <a name="retrieving-a-device-interface-property-value"></a>检索设备接口属性值
 
@@ -19,7 +19,7 @@ ms.locfileid: "89095627"
 1.  调用 [**SetupDiGetDeviceInterfaceProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetdeviceinterfacepropertyw) 以确定属性值的数据类型和大小（以字节为单位）。 提供以下参数值：
 
     -   将 *DeviceInfoSet* 设置为设备信息集的句柄，其中包含要为其检索设备接口属性密钥列表的设备接口。
-    -   将 *DeviceInterfaceData* 设置为指向 [**SP_DEVICE_INTERFACE_DATA**](/windows/desktop/api/setupapi/ns-setupapi-_sp_device_interface_data) 结构的指针，该结构表示要为其检索设备属性键列表的设备接口。
+    -   将 *DeviceInterfaceData* 设置为指向 [**SP_DEVICE_INTERFACE_DATA**](/windows/win32/api/setupapi/ns-setupapi-sp_device_interface_data) 结构的指针，该结构表示要为其检索设备属性键列表的设备接口。
     -   将 *PropertyKey* 设置为指向表示属性的 [**DEVPROPKEY**](./devpropkey.md) 结构的指针。
     -   将 *PropertyType* 设置为指向 [**DEVPROPKEY**](./devpropkey.md)类型的变量的指针。
     -   将 *PropertyBuffer* 设置为 **NULL**。

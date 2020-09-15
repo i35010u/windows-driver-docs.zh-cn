@@ -6,12 +6,12 @@ keywords:
 - 筛选条件标志网络驱动程序
 ms.date: 01/07/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 94a40f36fec922d2bb25d569914cc53e4e47b844
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 28e801e8e7cdf0fec2aed644da814d3150cca221
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89215242"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90106936"
 ---
 # <a name="filtering-condition-flags"></a>筛选条件标志
 
@@ -183,7 +183,7 @@ ms.locfileid: "89215242"
 <p>0x00000020</p>
 </td>
 <td>
-<p>指示传递给标注驱动程序的 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list"><b>NET_BUFFER_LIST</b></a> 结构是 IP 数据包片段。</p>
+<p>指示传递给标注驱动程序的 <a href="/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list"><b>NET_BUFFER_LIST</b></a> 结构是 IP 数据包片段。</p>
 <p>此标志适用于下列筛选层：<dl>
 <dd>FWPM_LAYER_INBOUND_IPPACKET_V4</dd>
 <dd>FWPM_LAYER_INBOUND_IPPACKET_V6</dd>
@@ -199,7 +199,7 @@ ms.locfileid: "89215242"
 <p>0x00000040</p>
 </td>
 <td>
-<p>指示传递给标注驱动程序的 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list"><b>NET_BUFFER_LIST</b></a> 结构描述了数据包片段的链接列表。</p>
+<p>指示传递给标注驱动程序的 <a href="/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list"><b>NET_BUFFER_LIST</b></a> 结构描述了数据包片段的链接列表。</p>
 <p>此标志适用于下列筛选层：<dl>
 <dd>FWPM_LAYER_INBOUND_IPPACKET_V4</dd>
 <dd>FWPM_LAYER_INBOUND_IPPACKET_V6</dd>
@@ -285,7 +285,7 @@ ms.locfileid: "89215242"
 <p>0x00004000</p>
 </td>
 <td>
-<p>指示已通过调用 <a href="https://docs.microsoft.com/windows/desktop/api/ws2tcpip/nf-ws2tcpip-wsasetsocketpeertargetname"><b>WSASetSocketPeerTargetName</b></a> 而不是使用缓存试探法来获取应用程序要连接到的对等计算机的名称。</p>
+<p>指示已通过调用 <a href="/windows/desktop/api/ws2tcpip/nf-ws2tcpip-wsasetsocketpeertargetname"><b>WSASetSocketPeerTargetName</b></a> 而不是使用缓存试探法来获取应用程序要连接到的对等计算机的名称。</p>
 <p>此标志适用于 Windows Server 2008 R2、Windows 7 和更高版本的 Windows 中的以下筛选层：<dl>
 <dd>FWPM_LAYER_ALE_AUTH_CONNECT_V4</dd>
 <dd>FWPM_LAYER_ALE_AUTH_CONNECT_V6</dd>
@@ -310,7 +310,7 @@ ms.locfileid: "89215242"
 <p>0x00010000</p>
 </td>
 <td>
-<p>指示数据包与经过身份验证的防火墙策略相匹配。 只有与 "如果安全，则允许连接" 防火墙规则选项匹配的连接才会设置此标志。 有关详细信息，请参阅 <a href="https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc753463(v=ws.10)">如何启用通过身份验证的防火墙旁路</a>。</p>
+<p>指示数据包与经过身份验证的防火墙策略相匹配。 只有与 "如果安全，则允许连接" 防火墙规则选项匹配的连接才会设置此标志。 有关详细信息，请参阅 <a href="/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc753463(v=ws.10)">如何启用通过身份验证的防火墙旁路</a>。</p>
 <p>此标志还适用于 Windows Server 2008、Windows Vista SP1 和更高版本的 windows 中的以下筛选层：<dl>
 <dd>FWPM_LAYER_ALE_FLOW_ESTABLISHED_V4</dd>
 <dd>FWPM_LAYER_ALE_FLOW_ESTABLISHED_V6</dd>

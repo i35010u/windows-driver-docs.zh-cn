@@ -11,12 +11,12 @@ keywords:
 - 共享对象处理 WDK
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0d8f77f4e4c353dadfa0734db84f3205f3d09a3a
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 898d760d7860a3f1b71eec1c29e6f2074f103504
+ms.sourcegitcommit: a5f76805387760730faed5674d87201ec85b7dd3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 09/15/2020
-ms.locfileid: "90106338"
+ms.locfileid: "90112102"
 ---
 # <a name="object-handles"></a>对象句柄
 
@@ -77,7 +77,7 @@ ms.locfileid: "90106338"
 
 当驱动程序不再需要访问该对象时，它将调用 [**ZwClose**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ntclose) 例程来关闭该句柄。 这适用于上表中列出的所有对象类型。
 
-提供句柄的大多数例程将 [**对象 \_ 属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfwdm/ns-wudfwdm-_object_attributes) 结构作为参数。 此结构可用于为句柄指定属性。
+提供句柄的大多数例程将 [**对象 \_ 属性**](/windows/win32/api/ntdef/ns-ntdef-_object_attributes) 结构作为参数。 此结构可用于为句柄指定属性。
 
 驱动程序可以指定下列句柄属性：
 
@@ -93,7 +93,7 @@ ms.locfileid: "90106338"
 
     此属性指定系统对句柄执行所有访问检查。 默认情况下，系统会绕过在内核模式下创建的句柄的所有访问检查。
 
-使用 [**InitializeObjectAttributes**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfwdm/nf-wudfwdm-initializeobjectattributes) 例程在 **对象 \_ 属性** 结构中设置这些属性。
+使用 [**InitializeObjectAttributes**](/windows/win32/api/ntdef/nf-ntdef-initializeobjectattributes) 例程在 **对象 \_ 属性** 结构中设置这些属性。
 
 有关验证对象句柄的信息，请参阅 [验证对象句柄失败](failure-to-validate-object-handles.md)。
 

@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: a360fc4aceb5591f4248661f534c6d5ba8d6ae12
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: c169cdd3d9244bab72bbfede8cc062953520bfac
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89381561"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90107438"
 ---
 # <a name="wlantimedlinkquality-rule-ndis"></a>WlanTimedLinkQuality 规则 (ndis) 
 
@@ -43,7 +43,7 @@ ms.locfileid: "89381561"
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>运行 <a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier" data-raw-source="[Driver Verifier](./driver-verifier.md)">驱动程序验证程序</a> ，并选择 <a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/ddi-compliance-checking" data-raw-source="[NDIS/WIFI verification](./ddi-compliance-checking.md)">NDIS/WIFI 验证</a> 选项。</p></td>
+<td align="left"><p>运行 <a href="/windows-hardware/drivers/devtest/driver-verifier" data-raw-source="[Driver Verifier](./driver-verifier.md)">驱动程序验证程序</a> ，并选择 <a href="/windows-hardware/drivers/devtest/ddi-compliance-checking" data-raw-source="[NDIS/WIFI verification](./ddi-compliance-checking.md)">NDIS/WIFI 验证</a> 选项。</p></td>
 </tr>
 </tbody>
 </table>
@@ -60,5 +60,3 @@ ms.locfileid: "89381561"
 --------
 
 [NDIS \_ 状态 \_ DOT11 \_ 链接 \_ 质量](/previous-versions/windows/hardware/wireless/ndis-status-dot11-link-quality)
- 
-

@@ -4,12 +4,12 @@ description: PwrTest 磁盘方案监视磁盘空闲统计信息和降速事件�
 ms.assetid: E54AA721-27C6-4E42-B42A-77AC70711A26
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8d617380aadafbec455186289ba558f9a0c201da
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 3fa2de39f6bb7873cd9de7dd824cfa0a9d5c4c58
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89384777"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90107538"
 ---
 # <a name="pwrtest-disk-scenario"></a>PwrTest 磁盘方案
 
@@ -99,7 +99,7 @@ pwrtest /disk
 <td align="left"><p>包含所有不同的磁盘空闲事件。 &lt; &gt; 每个 PwrTest 日志文件只能有一个 DeviceIdleEvents 元素。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><strong>&lt;时间戳&gt;</strong></td>
+<td align="left"><strong>&lt;标志&gt;</strong></td>
 <td align="left"><p>任何给定事件的时间戳。</p></td>
 </tr>
 <tr class="odd">
@@ -140,11 +140,11 @@ pwrtest /disk
 </tr>
 <tr class="even">
 <td align="left"><strong>&lt;BusyCount&gt;</strong></td>
-<td align="left"><p>一段时间内设备驱动程序调用 <a href="https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer" data-raw-source="[&lt;strong&gt;PoSetDeviceBusy&lt;/strong&gt;](../kernel/mm-bad-pointer.md)"><strong>PoSetDeviceBusy</strong></a> 的次数。</p></td>
+<td align="left"><p>一段时间内设备驱动程序调用 <a href="/windows-hardware/drivers/kernel/mm-bad-pointer" data-raw-source="[&lt;strong&gt;PoSetDeviceBusy&lt;/strong&gt;](../kernel/mm-bad-pointer.md)"><strong>PoSetDeviceBusy</strong></a> 的次数。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><strong>&lt;AccruedBusyCount&gt;</strong></td>
-<td align="left"><p>设备驱动程序调用 <a href="https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer" data-raw-source="[&lt;strong&gt;PoSetDeviceBusy&lt;/strong&gt;](../kernel/mm-bad-pointer.md)"><strong>PoSetDeviceBusy</strong></a> 总数的次数。</p></td>
+<td align="left"><p>设备驱动程序调用 <a href="/windows-hardware/drivers/kernel/mm-bad-pointer" data-raw-source="[&lt;strong&gt;PoSetDeviceBusy&lt;/strong&gt;](../kernel/mm-bad-pointer.md)"><strong>PoSetDeviceBusy</strong></a> 总数的次数。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><strong>&lt;IdlePowerState&gt;</strong></td>
@@ -183,6 +183,4 @@ pwrtest /disk
 
 
 [PwrTest 语法](pwrtest-syntax.md)
-
- 
 

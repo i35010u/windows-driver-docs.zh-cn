@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 90c1264f164a2c468e2ff646dfa5f13d9070aeae
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 2b7cb8ccb72f0240fbded73020f94b052aa69f6e
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89187089"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90106992"
 ---
 # <a name="ksproperty_stream_ratecapability"></a>KSPROPERTY \_ 流 \_ RATECAPABILITY
 
@@ -53,15 +53,15 @@ ms.locfileid: "89187089"
 <td><p>是</p></td>
 <td><p>否</p></td>
 <td><p>Pin</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksrate" data-raw-source="[&lt;strong&gt;KSRATE&lt;/strong&gt;](/windows-hardware/drivers/ddi/ks/ns-ks-ksrate)"><strong>KSRATE</strong></a></p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksrate_capability" data-raw-source="[&lt;strong&gt;KSRATE_CAPABILITY&lt;/strong&gt;](/windows-hardware/drivers/ddi/ks/ns-ks-ksrate_capability)"><strong>KSRATE_CAPABILITY</strong></a></p></td>
+<td><p><a href="/windows-hardware/drivers/ddi/ks/ns-ks-ksrate" data-raw-source="[&lt;strong&gt;KSRATE&lt;/strong&gt;](/windows-hardware/drivers/ddi/ks/ns-ks-ksrate)"><strong>KSRATE</strong></a></p></td>
+<td><p><a href="/windows-hardware/drivers/ddi/ks/ns-ks-ksrate_capability" data-raw-source="[&lt;strong&gt;KSRATE_CAPABILITY&lt;/strong&gt;](/windows-hardware/drivers/ddi/ks/ns-ks-ksrate_capability)"><strong>KSRATE_CAPABILITY</strong></a></p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-<a name="remarks"></a>注解
+<a name="remarks"></a>备注
 -------
 
 \_ \_ 如果 pin 允许速率改变，或者界定闭合相关 pin 之间的接口不同并导致使用不同的时间戳格式，则应该实现 KSPROPERTY STREAM RATECAPABILITY。 属性还可用于转换一般时间戳格式，如跳过降级请求。
@@ -86,18 +86,16 @@ Pin 必须能够接受具有类似拓扑的任何 pin 所使用的接口标识�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Header</p></td>
+<td><p>标头</p></td>
 <td>Ks (包含 Ks .h) </td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
 [**KSRATE**](/windows-hardware/drivers/ddi/ks/ns-ks-ksrate)
 
 [**KSRATE \_ 功能**](/windows-hardware/drivers/ddi/ks/ns-ks-ksrate_capability)
-
- 
 

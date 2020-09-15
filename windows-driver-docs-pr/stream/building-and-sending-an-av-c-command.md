@@ -11,12 +11,12 @@ keywords:
 - I/O WDK AV/C
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2b553376ab13b10f89e603bf241cca61c517b286
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 6b0832800250d9de1fbcc63d91246e19b1742993
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89192879"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90107168"
 ---
 # <a name="building-and-sending-an-avc-command"></a>生成和发送 AV/C 命令
 
@@ -114,14 +114,14 @@ ms.locfileid: "89192879"
 </colgroup>
 <thead>
 <tr class="header">
-<th>值</th>
-<th>描述</th>
+<th>“值”</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td><p>STATUS_SUCCESS</p></td>
-<td><p>发出了请求，并且在 AV/C 规范的超时和重试参数的界限内收到最终响应。 还必须检查子单位的响应代码 (<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/avc/ns-avc-_avc_command_irb" data-raw-source="[&lt;strong&gt;AVC_COMMAND_IRB&lt;/strong&gt;](/windows-hardware/drivers/ddi/avc/ns-avc-_avc_command_irb)"><strong>AVC_COMMAND_IRB</strong></a>结构的<strong>ResponseCode</strong>成员) ，以确定操作的实际结果。 STATUS_SUCCESS 只是意味着往返请求和响应周期已在100毫秒内完成， (假定默认超时未从 100 ms) 更改。</p></td>
+<td><p>发出了请求，并且在 AV/C 规范的超时和重试参数的界限内收到最终响应。 还必须检查子单位的响应代码 (<a href="/windows-hardware/drivers/ddi/avc/ns-avc-_avc_command_irb" data-raw-source="[&lt;strong&gt;AVC_COMMAND_IRB&lt;/strong&gt;](/windows-hardware/drivers/ddi/avc/ns-avc-_avc_command_irb)"><strong>AVC_COMMAND_IRB</strong></a>结构的<strong>ResponseCode</strong>成员) ，以确定操作的实际结果。 STATUS_SUCCESS 只是意味着往返请求和响应周期已在100毫秒内完成， (假定默认超时未从 100 ms) 更改。</p></td>
 </tr>
 <tr class="even">
 <td><p>STATUS_TIMEOUT</p></td>
@@ -151,8 +151,8 @@ ms.locfileid: "89192879"
 </colgroup>
 <thead>
 <tr class="header">
-<th>值</th>
-<th>描述</th>
+<th>“值”</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>

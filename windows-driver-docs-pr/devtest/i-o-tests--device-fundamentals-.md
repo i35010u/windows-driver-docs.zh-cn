@@ -4,12 +4,12 @@ description: 设备基础 i/o 测试在指定设备上执行基本 i/o 测试。
 ms.assetid: 4FF125BE-846A-4A93-9B4F-C6BC469EA0AF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: afc337349f57128229d0f77e789f90ee0e214b56
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: afd348820fce1bd3a8e6a57b664bb68dff1043cd
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89385101"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90107108"
 ---
 # <a name="io-tests-device-fundamentals"></a>I/O 测试（设备基础功能）
 
@@ -36,7 +36,7 @@ ms.locfileid: "89385101"
 <td align="left"><p>此测试在设备上执行基本 i/o 测试。</p>
 <p><strong>测试二进制文件：</strong> Devfund_Device_IO. wsc</p>
 <p><strong>测试方法：</strong> DeviceIO</p>
-<p><strong>参数：</strong> - 请参阅 <a href="https://docs.microsoft.com/windows-hardware/drivers" data-raw-source="[Device Fundamentals Test Parameters](/windows-hardware/drivers)">设备基础测试参数</a></p>
+<p><strong>参数：</strong> - 请参阅 <a href="/windows-hardware/drivers" data-raw-source="[Device Fundamentals Test Parameters](/windows-hardware/drivers)">设备基础测试参数</a></p>
 <p><em>DQ</em></p>
 <p><em>TestCycles</em></p>
 <p><em>IOPeriod</em></p>
@@ -47,7 +47,7 @@ ms.locfileid: "89385101"
 <td align="left"><p>此测试在单独的进程中对设备执行简单的 i/o 测试，并在指定 i/o 周期和测试周期后终止 i/o 进程。</p>
 <p><strong>测试二进制文件：</strong> Devfund_SimpleIoStress_TermIoProc. wsc</p>
 <p><strong>测试方法：</strong> SimpleIOStress_TermIoProc</p>
-<p><strong>参数：</strong> - 请参阅 <a href="https://docs.microsoft.com/windows-hardware/drivers" data-raw-source="[Device Fundamentals Test Parameters](/windows-hardware/drivers)">设备基础测试参数</a></p>
+<p><strong>参数：</strong> - 请参阅 <a href="/windows-hardware/drivers" data-raw-source="[Device Fundamentals Test Parameters](/windows-hardware/drivers)">设备基础测试参数</a></p>
 <p><em>DQ</em></p>
 <p><em>TestCycles</em></p>
 <p><em>IOPeriod</em></p></td>
@@ -71,6 +71,4 @@ ms.locfileid: "89385101"
 [Provided WDTF Simple I/O plug-ins](../wdtf/provided-wdtf-simpleio-plug-ins.md)（提供的 WDTF 简单 I/O 插件）
 
 [如何在运行时通过命令提示符测试驱动程序](/windows-hardware/drivers)
-
- 
 

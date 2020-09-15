@@ -3,12 +3,12 @@ description: 本主题介绍 USB 3.0 驱动程序堆栈的 USB 客户端驱动�
 title: USB 客户端驱动程序验证程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 13b6a10791c61c8d312ff5d649ec723fb68bcd11
-ms.sourcegitcommit: 937974aa9bbe0262a7ffe9631593fab48c4e7492
+ms.openlocfilehash: e4a1504a07823e21ef80e9702f291312b3d73f59
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "90009807"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90107110"
 ---
 # <a name="usb-client-driver-verifier"></a>USB 客户端驱动程序验证程序
 
@@ -95,8 +95,8 @@ HKEY_LOCAL_MACHINE
 <td><p><strong>UsbVerifierFailRegistration</strong></p>
 <p>客户端驱动程序对这些例程的调用失败：</p>
 <ul>
-<li><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetdevicecreatewithparameters" data-raw-source="[&lt;strong&gt;WdfUsbTargetDeviceCreateWithParameters&lt;/strong&gt;](/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetdevicecreatewithparameters)"><strong>WdfUsbTargetDeviceCreateWithParameters</strong></a></li>
-<li><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/usbdlib/nf-usbdlib-usbd_createhandle" data-raw-source="[&lt;strong&gt;USBD_CreateHandle&lt;/strong&gt;](/windows-hardware/drivers/ddi/usbdlib/nf-usbdlib-usbd_createhandle)"><strong>USBD_CreateHandle</strong></a></li>
+<li><a href="/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetdevicecreatewithparameters" data-raw-source="[&lt;strong&gt;WdfUsbTargetDeviceCreateWithParameters&lt;/strong&gt;](/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetdevicecreatewithparameters)"><strong>WdfUsbTargetDeviceCreateWithParameters</strong></a></li>
+<li><a href="/windows-hardware/drivers/ddi/usbdlib/nf-usbdlib-usbd_createhandle" data-raw-source="[&lt;strong&gt;USBD_CreateHandle&lt;/strong&gt;](/windows-hardware/drivers/ddi/usbdlib/nf-usbdlib-usbd_createhandle)"><strong>USBD_CreateHandle</strong></a></li>
 </ul></td>
 <td><ul>
 <li>0：已禁用设置。</li>
@@ -105,7 +105,7 @@ HKEY_LOCAL_MACHINE
 </ul></td>
 <td><p><strong>客户端驱动程序注册失败。</strong></p>
 <p>客户端驱动程序的其中一个初始化任务是向基础驱动程序堆栈注册自身。 接下来的几个调用中需要注册。</p>
-<p>例如，客户端驱动程序调用 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/usbdlib/nf-usbdlib-usbd_createhandle" data-raw-source="[&lt;strong&gt;USBD_CreateHandle&lt;/strong&gt;](/windows-hardware/drivers/ddi/usbdlib/nf-usbdlib-usbd_createhandle)"><strong>USBD_CreateHandle</strong></a> 进行注册。 假设驱动程序假设例程始终返回 STATUS_SUCCESS，而不实现代码来处理失败。 如果例程返回错误 NTSTATUS 代码，驱动程序可能会无意中忽略该错误，并使用无效的 USBD 句柄继续执行后续调用。</p>
+<p>例如，客户端驱动程序调用 <a href="/windows-hardware/drivers/ddi/usbdlib/nf-usbdlib-usbd_createhandle" data-raw-source="[&lt;strong&gt;USBD_CreateHandle&lt;/strong&gt;](/windows-hardware/drivers/ddi/usbdlib/nf-usbdlib-usbd_createhandle)"><strong>USBD_CreateHandle</strong></a> 进行注册。 假设驱动程序假设例程始终返回 STATUS_SUCCESS，而不实现代码来处理失败。 如果例程返回错误 NTSTATUS 代码，驱动程序可能会无意中忽略该错误，并使用无效的 USBD 句柄继续执行后续调用。</p>
 <p>设置允许您对调用失败，以便您可以测试故障代码路径。</p>
 <p>注册失败时预期的客户端驱动程序行为：</p>
 <ul>
@@ -117,8 +117,8 @@ HKEY_LOCAL_MACHINE
 <td><p><strong>UsbVerifierFailChainedMdlSupport</strong></p>
 <p>如果调用方将 GUID_USB_CAPABILITY_CHAINED_MDLS 传入 <em>CapabilityType</em> 参数，则客户端驱动程序对这些例程的调用将失败。</p>
 <ul>
-<li><a href="https://docs.microsoft.com/previous-versions/windows/hardware/drivers/hh406230(v=vs.85)" data-raw-source="[&lt;strong&gt;USBD_QueryUsbCapability&lt;/strong&gt;](/previous-versions/windows/hardware/drivers/hh406230(v=vs.85))"><strong>USBD_QueryUsbCapability</strong></a></li>
-<li><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetdevicequeryusbcapability" data-raw-source="[&lt;strong&gt;WdfUsbTargetDeviceQueryUsbCapability&lt;/strong&gt;](/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetdevicequeryusbcapability)"><strong>WdfUsbTargetDeviceQueryUsbCapability</strong></a></li>
+<li><a href="/previous-versions/windows/hardware/drivers/hh406230(v=vs.85)" data-raw-source="[&lt;strong&gt;USBD_QueryUsbCapability&lt;/strong&gt;](/previous-versions/windows/hardware/drivers/hh406230(v=vs.85))"><strong>USBD_QueryUsbCapability</strong></a></li>
+<li><a href="/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetdevicequeryusbcapability" data-raw-source="[&lt;strong&gt;WdfUsbTargetDeviceQueryUsbCapability&lt;/strong&gt;](/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetdevicequeryusbcapability)"><strong>WdfUsbTargetDeviceQueryUsbCapability</strong></a></li>
 </ul></td>
 <td><ul>
 <li>0：已禁用设置。</li>
@@ -126,7 +126,7 @@ HKEY_LOCAL_MACHINE
 <li><em>N</em>：调用失败，概率为 1/<em>N</em>，其中 <em>N</em> 是介于1到0x7FF 之间的十六进制值。 例如，如果 <em>N</em> 为10。 每10次调用都将失败。</li>
 </ul></td>
 <td><p><strong>与不支持链接 MDLs 的主机控制器通信。</strong></p>
-<p>为了使客户端驱动程序发送链式 MDLs (参阅 <a href="https://docs.microsoft.com/windows-hardware/drivers/kernel/using-mdls" data-raw-source="[MDL](../kernel/using-mdls.md)">MDL</a>) ，USB 驱动程序堆栈和主机控制器必须支持它们。</p>
+<p>为了使客户端驱动程序发送链式 MDLs (参阅 <a href="/windows-hardware/drivers/kernel/using-mdls" data-raw-source="[MDL](../kernel/using-mdls.md)">MDL</a>) ，USB 驱动程序堆栈和主机控制器必须支持它们。</p>
 <p>此设置允许你测试客户端驱动程序向连接到不支持的主机控制器的设备发送链式 MDL 请求时所执行的代码。 无论主机控制器是否支持链接的 MDLs，调用都会失败。</p>
 <p>有关 USB 驱动程序堆栈中链接的 MDLs 支持的详细信息，请参阅 <a href="how-to-send-chained-mdls.md" data-raw-source="[How to Send Chained MDLs](how-to-send-chained-mdls.md)">如何发送链式 MDLs</a>。</p>
 <p>当主机控制器不支持链接的 MDLs 时，预期的客户端驱动程序行为：</p>
@@ -139,8 +139,8 @@ HKEY_LOCAL_MACHINE
 <td><p><strong>UsbVerifierFailStaticStreamsSupport</strong></p>
 <p>如果调用方将 GUID_USB_CAPABILITY_STATIC_STREAMS 传入 <em>CapabilityType</em> 参数，则客户端驱动程序对这些例程的调用将失败。</p>
 <ul>
-<li><a href="https://docs.microsoft.com/previous-versions/windows/hardware/drivers/hh406230(v=vs.85)" data-raw-source="[&lt;strong&gt;USBD_QueryUsbCapability&lt;/strong&gt;](/previous-versions/windows/hardware/drivers/hh406230(v=vs.85))"><strong>USBD_QueryUsbCapability</strong></a></li>
-<li><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetdevicequeryusbcapability" data-raw-source="[&lt;strong&gt;WdfUsbTargetDeviceQueryUsbCapability&lt;/strong&gt;](/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetdevicequeryusbcapability)"><strong>WdfUsbTargetDeviceQueryUsbCapability</strong></a></li>
+<li><a href="/previous-versions/windows/hardware/drivers/hh406230(v=vs.85)" data-raw-source="[&lt;strong&gt;USBD_QueryUsbCapability&lt;/strong&gt;](/previous-versions/windows/hardware/drivers/hh406230(v=vs.85))"><strong>USBD_QueryUsbCapability</strong></a></li>
+<li><a href="/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetdevicequeryusbcapability" data-raw-source="[&lt;strong&gt;WdfUsbTargetDeviceQueryUsbCapability&lt;/strong&gt;](/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetdevicequeryusbcapability)"><strong>WdfUsbTargetDeviceQueryUsbCapability</strong></a></li>
 </ul></td>
 <td><ul>
 <li>0：已禁用设置。</li>
@@ -160,8 +160,8 @@ HKEY_LOCAL_MACHINE
 <td><p><strong>UsbVerifierStaticStreamCountOverride</strong></p>
 当客户端通过 GUID_USB_CAPABILITY_STATIC_STREAMS 调用这些例程时，更改 <em>OutputBuffer</em> 参数中接收的值。
 <ul>
-<li><a href="https://docs.microsoft.com/previous-versions/windows/hardware/drivers/hh406230(v=vs.85)" data-raw-source="[&lt;strong&gt;USBD_QueryUsbCapability&lt;/strong&gt;](/previous-versions/windows/hardware/drivers/hh406230(v=vs.85))"><strong>USBD_QueryUsbCapability</strong></a></li>
-<li><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetdevicequeryusbcapability" data-raw-source="[&lt;strong&gt;WdfUsbTargetDeviceQueryUsbCapability&lt;/strong&gt;](/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetdevicequeryusbcapability)"><strong>WdfUsbTargetDeviceQueryUsbCapability</strong></a></li>
+<li><a href="/previous-versions/windows/hardware/drivers/hh406230(v=vs.85)" data-raw-source="[&lt;strong&gt;USBD_QueryUsbCapability&lt;/strong&gt;](/previous-versions/windows/hardware/drivers/hh406230(v=vs.85))"><strong>USBD_QueryUsbCapability</strong></a></li>
+<li><a href="/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetdevicequeryusbcapability" data-raw-source="[&lt;strong&gt;WdfUsbTargetDeviceQueryUsbCapability&lt;/strong&gt;](/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetdevicequeryusbcapability)"><strong>WdfUsbTargetDeviceQueryUsbCapability</strong></a></li>
 </ul>
 <p><em>OutputBuffer</em>值指示宿主控制器支持的静态流的最大数目。</p></td>
 <td><ul>
@@ -190,7 +190,7 @@ HKEY_LOCAL_MACHINE
 <li><em>N</em>：请求失败，概率为 1/<em>N</em>，其中 <em>N</em> 是介于1到0x7FF 之间的十六进制值。 例如，如果 <em>N</em> 为10。 每10次调用，请求会失败。</li>
 </ul>
 <div class="alert">
-<strong>注意</strong>  如果先前对 <a href="https://docs.microsoft.com/previous-versions/windows/hardware/drivers/hh406230(v=vs.85)" data-raw-source="[&lt;strong&gt;USBD_QueryUsbCapability&lt;/strong&gt;](/previous-versions/windows/hardware/drivers/hh406230(v=vs.85))"><strong>USBD_QueryUsbCapability</strong></a> 或 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetdevicequeryusbcapability" data-raw-source="[&lt;strong&gt;WdfUsbTargetDeviceQueryUsbCapability&lt;/strong&gt;](/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetdevicequeryusbcapability)"><strong>WdfUsbTargetDeviceQueryUsbCapability</strong></a> 的调用失败，则打开的静态流请求会失败。
+<strong>注意</strong>  如果先前对 <a href="/previous-versions/windows/hardware/drivers/hh406230(v=vs.85)" data-raw-source="[&lt;strong&gt;USBD_QueryUsbCapability&lt;/strong&gt;](/previous-versions/windows/hardware/drivers/hh406230(v=vs.85))"><strong>USBD_QueryUsbCapability</strong></a> 或 <a href="/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetdevicequeryusbcapability" data-raw-source="[&lt;strong&gt;WdfUsbTargetDeviceQueryUsbCapability&lt;/strong&gt;](/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetdevicequeryusbcapability)"><strong>WdfUsbTargetDeviceQueryUsbCapability</strong></a> 的调用失败，则打开的静态流请求会失败。
 </div>
 <div>
  

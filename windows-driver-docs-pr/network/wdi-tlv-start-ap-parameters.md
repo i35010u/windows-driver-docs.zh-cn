@@ -6,12 +6,12 @@ ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 WDI_TLV_START_AP_PARAMETERS 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 74efdf008428df65b48c52885dda5793565ad2da
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 5f96341ef5fbdb1fd75996fe857c5ed726b6829c
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89206149"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90107136"
 ---
 # <a name="wdi_tlv_start_ap_parameters"></a>WDI \_ TLV \_ 启动 \_ AP \_ 参数
 
@@ -23,7 +23,7 @@ WDI \_ tlv \_ 启动 \_ ap \_ 参数是一个 TLV，其中包含 [OID \_ WDI \_ 
 
 0xAB
 
-## <a name="length"></a>Length
+## <a name="length"></a>长度
 
 
 Sum (所有包含的元素的大小) 。
@@ -67,7 +67,7 @@ Sum (所有包含的元素的大小) 。
 <tr class="even">
 <td>UINT8</td>
 <td>已在 Windows 10 版本1511、WDI 版本1.0.10 中添加。
-<p>MustUseSpecifiedChannels. 此参数指定是否只能在<a href="wdi-tlv-ap-band-channel.md" data-raw-source="[&lt;strong&gt;WDI_TLV_AP_BAND_CHANNEL&lt;/strong&gt;](wdi-tlv-ap-band-channel.md)"><strong>WDI_TLV_AP_BAND_CHANNEL</strong></a> <a href="/windows-hardware/drivers/network/oid-wdi-task-start-ap" data-raw-source="[OID_WDI_TASK_START_AP](/windows-hardware/drivers/network/oid-wdi-task-start-ap)">OID_WDI_TASK_START_AP</a>任务参数中指定的通道上启动 AP。 有效值为0和1。 如果设置为1，则只能从指定列表启动 AP。 如果未设置此列表，则该列表应是固件可以选取的通道的建议，如果不能在任何指定的通道上启动 AP，则可以选择另一个通道。</p></td>
+<p>MustUseSpecifiedChannels. 此参数指定是否只能在<a href="wdi-tlv-ap-band-channel.md" data-raw-source="[&lt;strong&gt;WDI_TLV_AP_BAND_CHANNEL&lt;/strong&gt;](wdi-tlv-ap-band-channel.md)"><strong>WDI_TLV_AP_BAND_CHANNEL</strong></a> <a href="/windows-hardware/drivers/network/oid-wdi-task-start-ap" data-raw-source="[OID_WDI_TASK_START_AP](./oid-wdi-task-start-ap.md)">OID_WDI_TASK_START_AP</a>任务参数中指定的通道上启动 AP。 有效值为0和1。 如果设置为1，则只能从指定列表启动 AP。 如果未设置此列表，则该列表应是固件可以选取的通道的建议，如果不能在任何指定的通道上启动 AP，则可以选择另一个通道。</p></td>
 </tr>
 </tbody>
 </table>
@@ -102,6 +102,4 @@ Sum (所有包含的元素的大小) 。
 
 
 [OID \_ WDI \_ 任务 \_ 启动 \_ AP](./oid-wdi-task-start-ap.md)
-
- 
 

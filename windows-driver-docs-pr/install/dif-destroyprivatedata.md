@@ -14,21 +14,21 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 3fe1dacfc02091296f691a5797cbfa8d658bc919
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 4f69ab7f39de83362673cb4de07f1436fe17eed7
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89097343"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90107298"
 ---
 # <a name="dif_destroyprivatedata"></a>DIF_DESTROYPRIVATEDATA
 
 
-DIF_DESTROYPRIVATEDATA 请求指示类安装程序释放它所分配的或存储在[**SP_DEVINSTALL_PARAMS**](/windows/desktop/api/setupapi/ns-setupapi-_sp_devinstall_params_a)结构的**ClassInstallReserved**字段中的任何内存或资源。
+DIF_DESTROYPRIVATEDATA 请求指示类安装程序释放它所分配的或存储在[**SP_DEVINSTALL_PARAMS**](/windows/win32/api/setupapi/ns-setupapi-sp_devinstall_params_a)结构的**ClassInstallReserved**字段中的任何内存或资源。
 
 ### <a name="when-sent"></a>发送时间
 
-当 Windows 销毁 [设备信息集](./device-information-sets.md) 或 [**SP_DEVINFO_DATA**](/windows/desktop/api/setupapi/ns-setupapi-_sp_devinfo_data) 元素时，或在 windows 丢弃设备的共同安装程序和类安装程序列表时。
+当 Windows 销毁 [设备信息集](./device-information-sets.md) 或 [**SP_DEVINFO_DATA**](/windows/win32/api/setupapi/ns-setupapi-sp_devinfo_data) 元素时，或在 windows 丢弃设备的共同安装程序和类安装程序列表时。
 
 ### <a name="who-handles"></a>谁处理
 
@@ -61,10 +61,10 @@ DIF_DESTROYPRIVATEDATA 请求指示类安装程序释放它所分配的或存储
 提供设备信息集的句柄。
 
 <a href="" id="deviceinfodata"></a>*DeviceInfoData*  
-还可以提供一个指向 [**SP_DEVINFO_DATA**](/windows/desktop/api/setupapi/ns-setupapi-_sp_devinfo_data) 结构的指针，该结构在设备信息集中标识设备。
+还可以提供一个指向 [**SP_DEVINFO_DATA**](/windows/win32/api/setupapi/ns-setupapi-sp_devinfo_data) 结构的指针，该结构在设备信息集中标识设备。
 
 <a href="" id="device-installation-parameters-"></a>设备安装参数   
-[**SP_DEVINSTALL_PARAMS**](/windows/desktop/api/setupapi/ns-setupapi-_sp_devinstall_params_a))  (设备安装参数与*DeviceInfoData*（如果已指定）或与*DeviceInfoSet*相关联。
+[**SP_DEVINSTALL_PARAMS**](/windows/win32/api/setupapi/ns-setupapi-sp_devinstall_params_a))  (设备安装参数与*DeviceInfoData*（如果已指定）或与*DeviceInfoSet*相关联。
 
 <a href="" id="class-installation-parameters"></a>类安装参数  
 无
@@ -72,7 +72,7 @@ DIF_DESTROYPRIVATEDATA 请求指示类安装程序释放它所分配的或存储
 ### <a name="installer-output"></a>安装程序输出
 
 <a href="" id="device-installation-parameters-"></a>设备安装参数   
-安装程序可以 ([**SP_DEVINSTALL_PARAMS**](/windows/desktop/api/setupapi/ns-setupapi-_sp_devinstall_params_a)) 中清除设备安装参数中的**ClassInstallReserved**字段。
+安装程序可以 ([**SP_DEVINSTALL_PARAMS**](/windows/win32/api/setupapi/ns-setupapi-sp_devinstall_params_a)) 中清除设备安装参数中的**ClassInstallReserved**字段。
 
 ### <a name="installer-return-value"></a>安装程序返回值
 
@@ -86,7 +86,7 @@ DIF_DESTROYPRIVATEDATA 请求指示类安装程序释放它所分配的或存储
 
 ### <a name="installer-operation"></a>安装程序操作
 
-为响应 DIF_DESTROYPRIVATEDATA 请求，类安装程序将释放它所分配的任何内存或资源，并将其存储在[**SP_DEVINSTALL_PARAMS**](/windows/desktop/api/setupapi/ns-setupapi-_sp_devinstall_params_a)结构的**ClassInstallReserved**字段中。
+为响应 DIF_DESTROYPRIVATEDATA 请求，类安装程序将释放它所分配的任何内存或资源，并将其存储在[**SP_DEVINSTALL_PARAMS**](/windows/win32/api/setupapi/ns-setupapi-sp_devinstall_params_a)结构的**ClassInstallReserved**字段中。
 
 共同安装程序不应使用 **ClassInstallReserved** 字段。
 
@@ -115,9 +115,9 @@ DIF_DESTROYPRIVATEDATA 请求指示类安装程序释放它所分配的或存储
 ## <a name="see-also"></a>另请参阅
 
 
-[**SP_DEVINFO_DATA**](/windows/desktop/api/setupapi/ns-setupapi-_sp_devinfo_data)
+[**SP_DEVINFO_DATA**](/windows/win32/api/setupapi/ns-setupapi-sp_devinfo_data)
 
-[**SP_DEVINSTALL_PARAMS**](/windows/desktop/api/setupapi/ns-setupapi-_sp_devinstall_params_a)
+[**SP_DEVINSTALL_PARAMS**](/windows/win32/api/setupapi/ns-setupapi-sp_devinstall_params_a)
 
  
 

@@ -8,12 +8,12 @@ keywords:
 - 设备电源策略 WDK 内核
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f1f3e23a6a934ece6e2af0967a65f97400a3a709
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: e18883f1c1ad1958f3477b7d483be2a277beec25
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89188643"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90107546"
 ---
 # <a name="calling-postartnextpowerirp-from-a-device-power-policy-owner"></a>从设备电源策略所有者调用 PoStartNextPowerIrp
 
@@ -39,12 +39,12 @@ ms.locfileid: "89188643"
 <tbody>
 <tr class="odd">
 <td><p> (设备电源状态<strong>IRP_MN_QUERY_POWER</strong>) </p></td>
-<td><p>在 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-io_completion_routine" data-raw-source="[&lt;em&gt;IoCompletion&lt;/em&gt;](/windows-hardware/drivers/ddi/wdm/nc-wdm-io_completion_routine)"><em>IoCompletion</em></a> 例程中，在返回之前立即发生。</p></td>
-<td><p>在 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch" data-raw-source="[&lt;em&gt;DispatchPower&lt;/em&gt;](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch)"><em>DispatchPower</em></a> 例程中，在调用 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocompleterequest" data-raw-source="[&lt;strong&gt;IoCompleteRequest&lt;/strong&gt;](/windows-hardware/drivers/ddi/wdm/nf-wdm-iocompleterequest)"><strong>IoCompleteRequest</strong></a>之前。</p></td>
+<td><p>在 <a href="/windows-hardware/drivers/ddi/wdm/nc-wdm-io_completion_routine" data-raw-source="[&lt;em&gt;IoCompletion&lt;/em&gt;](/windows-hardware/drivers/ddi/wdm/nc-wdm-io_completion_routine)"><em>IoCompletion</em></a> 例程中，在返回之前立即发生。</p></td>
+<td><p>在 <a href="/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch" data-raw-source="[&lt;em&gt;DispatchPower&lt;/em&gt;](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch)"><em>DispatchPower</em></a> 例程中，在调用 <a href="/windows-hardware/drivers/ddi/wdm/nf-wdm-iocompleterequest" data-raw-source="[&lt;strong&gt;IoCompleteRequest&lt;/strong&gt;](/windows-hardware/drivers/ddi/wdm/nf-wdm-iocompleterequest)"><strong>IoCompleteRequest</strong></a>之前。</p></td>
 </tr>
 <tr class="even">
 <td><p> (系统电源状态<strong>IRP_MN_QUERY_POWER</strong>) </p></td>
-<td><p>在完成系统 IRP 之前，在相关设备 IRP 的 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-porequestpowerirp" data-raw-source="[&lt;strong&gt;PoRequestPowerIrp&lt;/strong&gt;](/windows-hardware/drivers/ddi/wdm/nf-wdm-porequestpowerirp)"><strong>PoRequestPowerIrp</strong></a> 回调例程中立即执行。</p></td>
+<td><p>在完成系统 IRP 之前，在相关设备 IRP 的 <a href="/windows-hardware/drivers/ddi/wdm/nf-wdm-porequestpowerirp" data-raw-source="[&lt;strong&gt;PoRequestPowerIrp&lt;/strong&gt;](/windows-hardware/drivers/ddi/wdm/nf-wdm-porequestpowerirp)"><strong>PoRequestPowerIrp</strong></a> 回调例程中立即执行。</p></td>
 <td><p>在 <em>DispatchPower</em> 例程中，在调用 <strong>IoCompleteRequest</strong>之前。</p></td>
 </tr>
 <tr class="odd">
@@ -59,8 +59,6 @@ ms.locfileid: "89188643"
 </tr>
 </tbody>
 </table>
-
- 
 
  
 

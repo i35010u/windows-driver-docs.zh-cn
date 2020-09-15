@@ -6,12 +6,12 @@ keywords:
 - 半色调功能
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0b334a1142ec924368f9797e7372a38940b9a086
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: fad1849f04b356197130e6e618c2229f1e687cf1
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89216364"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90107128"
 ---
 # <a name="option-attributes-for-the-halftone-feature"></a>半色调功能的选项属性
 
@@ -37,7 +37,7 @@ ms.locfileid: "89216364"
 <tbody>
 <tr class="odd">
 <td><p><em><strong>HTCallbackID</strong></p></td>
-<td><p>传递给呈现插件的 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/prcomoem/nf-prcomoem-iprintoemuni-halftonepattern" data-raw-source="[&lt;strong&gt;IPrintOemUni::HalftonePattern&lt;/strong&gt;](/windows-hardware/drivers/ddi/prcomoem/nf-prcomoem-iprintoemuni-halftonepattern)"><strong>IPrintOemUni：： HalftonePattern</strong></a> 方法的正数值作为其 <em>dwCallbackID</em> 参数。</p></td>
+<td><p>传递给呈现插件的 <a href="/windows-hardware/drivers/ddi/prcomoem/nf-prcomoem-iprintoemuni-halftonepattern" data-raw-source="[&lt;strong&gt;IPrintOemUni::HalftonePattern&lt;/strong&gt;](/windows-hardware/drivers/ddi/prcomoem/nf-prcomoem-iprintoemuni-halftonepattern)"><strong>IPrintOemUni：： HalftonePattern</strong></a> 方法的正数值作为其 <em>dwCallbackID</em> 参数。</p></td>
 <td><p>如果提供了 <strong>IPrintOemUni：： HalftonePattern</strong> 方法，则为必需。 请参阅 <a href="halftoning-with-unidrv.md" data-raw-source="[Halftoning with Unidrv](halftoning-with-unidrv.md)">Unidrv 的半色调</a>。</p></td>
 </tr>
 <tr class="even">
@@ -64,6 +64,4 @@ ms.locfileid: "89216364"
 有关示例，请参阅 [示例 GPD 文件](sample-gpd-files.md)。
 
 有关使用这些属性的详细信息，请参阅 [使用 Unidrv 的半色调](halftoning-with-unidrv.md)。 这些属性不与 [微型驱动程序提供的半色调](minidriver-supplied-halftoning.md)一起使用。
-
- 
 

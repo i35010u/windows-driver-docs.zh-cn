@@ -6,12 +6,12 @@ keywords:
 - IPrintOemUni2
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4d54fe049589f5536eb9e9a36087be976cbaffe9
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 99f32c0bf1bb75ff94c96f13e7ff642f7e58eb2d
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89209553"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90107090"
 ---
 # <a name="iprintoemuni2-com-interface"></a>IPrintOemUni2 COM 接口
 
@@ -36,7 +36,7 @@ ms.locfileid: "89209553"
 </thead>
 <tbody>
 <tr class="odd">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/prcomoem/nf-prcomoem-iprintoemuni2-writeprinter" data-raw-source="[&lt;strong&gt;IPrintOemUni2::WritePrinter&lt;/strong&gt;](/windows-hardware/drivers/ddi/prcomoem/nf-prcomoem-iprintoemuni2-writeprinter)"><strong>IPrintOemUni2::WritePrinter</strong></a></p></td>
+<td><p><a href="/windows-hardware/drivers/ddi/prcomoem/nf-prcomoem-iprintoemuni2-writeprinter" data-raw-source="[&lt;strong&gt;IPrintOemUni2::WritePrinter&lt;/strong&gt;](/windows-hardware/drivers/ddi/prcomoem/nf-prcomoem-iprintoemuni2-writeprinter)"><strong>IPrintOemUni2::WritePrinter</strong></a></p></td>
 <td><p>允许插件捕获 Unidrv 驱动程序生成的所有输出数据。</p></td>
 </tr>
 </tbody>
@@ -45,6 +45,4 @@ ms.locfileid: "89209553"
  
 
 有关详细信息，请参阅 [实现打印机驱动程序 COM 接口](implementing-printer-driver-com-interfaces.md)。
-
- 
 

@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bc4340c3b64f37600cfe34e4f51d8679980a5984
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 69503d208badc800919c793e73b6a3b7eb145f9b
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89192351"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90107166"
 ---
 # <a name="ksproperty_mediaseeking_duration"></a>KSPROPERTY \_ MEDIASEEKING \_ DURATION
 
@@ -53,7 +53,7 @@ KSPROPERTY \_ MEDIASEEKING \_ duration 属性检索筛选器上的媒体持续�
 <td><p>是</p></td>
 <td><p>否</p></td>
 <td><p>筛选器</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)"><strong>KSPROPERTY</strong></a></p></td>
+<td><p><a href="/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)"><strong>KSPROPERTY</strong></a></p></td>
 <td><p>LONGLONG</p></td>
 </tr>
 </tbody>
@@ -61,7 +61,7 @@ KSPROPERTY \_ MEDIASEEKING \_ duration 属性检索筛选器上的媒体持续�
 
  
 
-<a name="remarks"></a>注解
+<a name="remarks"></a>备注
 -------
 
 此属性将媒体持续时间返回为 LONGLONG 类型的值。
@@ -76,16 +76,14 @@ KSPROPERTY \_ MEDIASEEKING \_ duration 属性检索筛选器上的媒体持续�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Header</p></td>
+<td><p>标头</p></td>
 <td>Ks (包含 Ks .h) </td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
 [KSPROPSETID \_ MediaSeeking](kspropsetid-mediaseeking.md)
-
- 
 

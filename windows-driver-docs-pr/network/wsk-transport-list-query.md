@@ -6,12 +6,12 @@ ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 WSK_TRANSPORT_LIST_QUERY 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: f1997e2922fca822b86ebcbca6e36ff345d50d8f
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 8e38f3ccc1a0632ac52a9f5ebe51557334f5308f
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89207739"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90106802"
 ---
 # <a name="wsk_transport_list_query"></a>WSK \_ 传输 \_ 列表 \_ 查询
 
@@ -28,7 +28,7 @@ WSK 应用程序使用 WSK \_ 传输 \_ 列表 \_ 查询客户端控制操作来
 <thead>
 <tr class="header">
 <th>参数</th>
-<th>值</th>
+<th>“值”</th>
 </tr>
 </thead>
 <tbody>
@@ -50,7 +50,7 @@ WSK 应用程序使用 WSK \_ 传输 \_ 列表 \_ 查询客户端控制操作来
 </tr>
 <tr class="odd">
 <td><p><em>OutputBuffer</em></p></td>
-<td><p>指向接收可用网络传输列表的 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/ns-wsk-_wsk_transport" data-raw-source="[&lt;strong&gt;WSK_TRANSPORT&lt;/strong&gt;](/windows-hardware/drivers/ddi/wsk/ns-wsk-_wsk_transport)"><strong>WSK_TRANSPORT</strong></a> 结构的数组的指针</p></td>
+<td><p>指向接收可用网络传输列表的 <a href="/windows-hardware/drivers/ddi/wsk/ns-wsk-_wsk_transport" data-raw-source="[&lt;strong&gt;WSK_TRANSPORT&lt;/strong&gt;](/windows-hardware/drivers/ddi/wsk/ns-wsk-_wsk_transport)"><strong>WSK_TRANSPORT</strong></a> 结构的数组的指针</p></td>
 </tr>
 <tr class="even">
 <td><p><em>OutputSizeReturned</em></p></td>
@@ -86,6 +86,4 @@ WSK 应用程序可以在*OutputSize*参数中指定零，在*OutputBuffer*参�
 </tr>
 </tbody>
 </table>
-
- 
 

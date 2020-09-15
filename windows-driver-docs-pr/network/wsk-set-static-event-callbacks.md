@@ -6,12 +6,12 @@ ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 WSK_SET_STATIC_EVENT_CALLBACKS 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: d2df1acfdeaa843df2781bede4116fcd0567b654
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: ea92198fb9270a9ed10fd53d9bd0fb09b61f3a91
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89207741"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90106808"
 ---
 # <a name="wsk_set_static_event_callbacks"></a>WSK \_ 设置 \_ 静态 \_ 事件 \_ 回调
 
@@ -30,7 +30,7 @@ WSK 应用程序使用 WSK \_ 设置 \_ 静态 \_ 事件 \_ 回调客户端控�
 <thead>
 <tr class="header">
 <th>参数</th>
-<th>值</th>
+<th>“值”</th>
 </tr>
 </thead>
 <tbody>
@@ -44,7 +44,7 @@ WSK 应用程序使用 WSK \_ 设置 \_ 静态 \_ 事件 \_ 回调客户端控�
 </tr>
 <tr class="odd">
 <td><p><em>InputBuffer</em></p></td>
-<td><p>指向 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/ns-wsk-_wsk_event_callback_control" data-raw-source="[&lt;strong&gt;WSK_EVENT_CALLBACK_CONTROL&lt;/strong&gt;](/windows-hardware/drivers/ddi/wsk/ns-wsk-_wsk_event_callback_control)"><strong>WSK_EVENT_CALLBACK_CONTROL</strong></a> 结构的指针，该结构指定要自动启用的所需事件回调函数</p></td>
+<td><p>指向 <a href="/windows-hardware/drivers/ddi/wsk/ns-wsk-_wsk_event_callback_control" data-raw-source="[&lt;strong&gt;WSK_EVENT_CALLBACK_CONTROL&lt;/strong&gt;](/windows-hardware/drivers/ddi/wsk/ns-wsk-_wsk_event_callback_control)"><strong>WSK_EVENT_CALLBACK_CONTROL</strong></a> 结构的指针，该结构指定要自动启用的所需事件回调函数</p></td>
 </tr>
 <tr class="even">
 <td><p><em>OutputSize</em></p></td>
@@ -92,6 +92,4 @@ WSK 应用程序可以在[**WSK \_ 事件 \_ 回调 \_ 控制**](/windows-hardwa
 </tr>
 </tbody>
 </table>
-
- 
 

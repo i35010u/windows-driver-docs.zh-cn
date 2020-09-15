@@ -19,12 +19,12 @@ keywords:
 - 统计引用 WDK 对象
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8b87641bad1b609dad496fc380251971d3e86420
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 807f6d1406cfbd3dd0fba0809a30b0fd4a39c5f5
+ms.sourcegitcommit: a5f76805387760730faed5674d87201ec85b7dd3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89189309"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90112096"
 ---
 # <a name="life-cycle-of-an-object"></a>对象的生命周期
 
@@ -72,7 +72,7 @@ ms.locfileid: "89189309"
 
 临时对象只能通过名称进行访问，只要其句柄计数不为零。 句柄计数减为零时，会从对象管理器的命名空间中删除该对象的名称。 此类对象的引用计数保持大于零时，仍然可以通过指针访问此类对象。 可以通过名称访问永久对象，只要这些对象存在。
 
-在创建对象时，可以通过在对象 \_ 的 [**对象 \_ 属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfwdm/ns-wudfwdm-_object_attributes) 结构中指定 OBJ 永久属性，使该对象成为永久属性。 有关详细信息，请参阅 [**InitializeObjectAttributes**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfwdm/nf-wudfwdm-initializeobjectattributes)。
+在创建对象时，可以通过在对象 \_ 的 [**对象 \_ 属性**](/windows/win32/api/ntdef/ns-ntdef-_object_attributes) 结构中指定 OBJ 永久属性，使该对象成为永久属性。 有关详细信息，请参阅 [**InitializeObjectAttributes**](/windows/win32/api/ntdef/nf-ntdef-initializeobjectattributes)。
 
 若要使永久对象成为临时对象，请使用 [**ZwMakeTemporaryObject**](/windows-hardware/drivers/ddi/wdm/nf-wdm-zwmaketemporaryobject) 例程。 此例程会使对象在不再使用后被自动删除。  (如果对象没有打开的句柄，则会立即从对象管理器的命名空间中删除该对象的名称。 对象本身仍保留，直到引用计数降为零。 ) 
 

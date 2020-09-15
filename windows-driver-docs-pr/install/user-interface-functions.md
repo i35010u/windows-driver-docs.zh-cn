@@ -4,12 +4,12 @@ description: 用户界面函数
 ms.assetid: 30ec0628-cac7-46ab-a9f2-c81ca3ad7125
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 943a073633e6c29baa7f02accb18c6ef0c33200e
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 48271831ffe29f9bf7e1854965dde38c9a3c6f6e
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89096549"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90107328"
 ---
 # <a name="user-interface-functions"></a>用户界面函数
 
@@ -29,17 +29,15 @@ ms.locfileid: "89096549"
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupgetnoninteractivemode" data-raw-source="[&lt;strong&gt;SetupGetNonInteractiveMode&lt;/strong&gt;](/windows/desktop/api/setupapi/nf-setupapi-setupgetnoninteractivemode)"><strong>SetupGetNonInteractiveMode</strong></a></p></td>
+<td align="left"><p><a href="/windows/desktop/api/setupapi/nf-setupapi-setupgetnoninteractivemode" data-raw-source="[&lt;strong&gt;SetupGetNonInteractiveMode&lt;/strong&gt;](/windows/desktop/api/setupapi/nf-setupapi-setupgetnoninteractivemode)"><strong>SetupGetNonInteractiveMode</strong></a></p></td>
 <td align="left"><p>返回 Setupapi.log 非交互式标志的值，该值指示调用方的进程是否可以通过用户界面组件（如对话框）与用户交互。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupsetnoninteractivemode" data-raw-source="[&lt;strong&gt;SetupSetNonInteractiveMode&lt;/strong&gt;](/windows/desktop/api/setupapi/nf-setupapi-setupsetnoninteractivemode)"><strong>SetupSetNonInteractiveMode</strong></a></p></td>
+<td align="left"><p><a href="/windows/desktop/api/setupapi/nf-setupapi-setupsetnoninteractivemode" data-raw-source="[&lt;strong&gt;SetupSetNonInteractiveMode&lt;/strong&gt;](/windows/desktop/api/setupapi/nf-setupapi-setupsetnoninteractivemode)"><strong>SetupSetNonInteractiveMode</strong></a></p></td>
 <td align="left"><p>设置非交互式 Setupapi.log 标志，该标志确定 Setupapi.log 是否可以与用户在调用方的上下文中交互。</p></td>
 </tr>
 </tbody>
 </table>
-
- 
 
  
 

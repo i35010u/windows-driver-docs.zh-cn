@@ -4,12 +4,12 @@ description: 步骤2选择设备的驱动程序
 ms.assetid: 2134cab6-58ea-4258-9a45-09bf54156e0a
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: dc9e504443620b0efeb7e3f74d98fbb452bfec6c
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: ebc4b780fd310cd0cfe5cc24df6511b9462c5412
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89096219"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90107496"
 ---
 # <a name="step-2-a-driver-for-the-device-is-selected"></a>步骤 2：选择设备的驱动程序
 
@@ -101,7 +101,5 @@ ms.locfileid: "89096219"
 
 Windows 选择设备驱动程序后，Windows [会按照步骤3：安装设备驱动程序](step-3--the-driver-for-the-device-is-installed.md)中所述安装驱动程序。
 
-有关如何为设备选择驱动程序的详细信息，请参阅 [Windows 如何选择驱动程序](how-setup-selects-drivers.md)。
-
- 
+有关如何为设备选择驱动程序的详细信息，请参阅 [Windows 如何选择驱动程序](./how-windows-selects-a-driver-for-a-device.md)。
 

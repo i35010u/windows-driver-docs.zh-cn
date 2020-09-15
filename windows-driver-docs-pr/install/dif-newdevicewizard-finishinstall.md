@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: cde5df666c9c4a779e6b8e6e9e9026f92958abf0
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: d041193c050f897b756ddb525470138a7217eb48
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89095569"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90107290"
 ---
 # <a name="dif_newdevicewizard_finishinstall"></a>DIF_NEWDEVICEWIZARD_FINISHINSTALL
 
@@ -61,10 +61,10 @@ Windows 安装设备后 ([**DIF_INSTALLDEVICE**](dif-installdevice.md) 处理) �
 包含设备的 [设备信息集](./device-information-sets.md) 的句柄。
 
 <a href="" id="deviceinfodata"></a>*DeviceInfoData*  
-一个指针，指向用于在设备信息集中标识设备的 [**SP_DEVINFO_DATA**](/windows/desktop/api/setupapi/ns-setupapi-_sp_devinfo_data) 结构。
+一个指针，指向用于在设备信息集中标识设备的 [**SP_DEVINFO_DATA**](/windows/win32/api/setupapi/ns-setupapi-sp_devinfo_data) 结构。
 
 <a href="" id="device-installation-parameters-"></a>设备安装参数   
-与*DeviceInfoData*关联的设备安装参数 ([**SP_DEVINSTALL_PARAMS**](/windows/desktop/api/setupapi/ns-setupapi-_sp_devinstall_params_a)) 。
+与*DeviceInfoData*关联的设备安装参数 ([**SP_DEVINSTALL_PARAMS**](/windows/win32/api/setupapi/ns-setupapi-sp_devinstall_params_a)) 。
 
 <a href="" id="class-installation-parameters"></a>类安装参数  
 [**SP_NEWDEVICEWIZARD_DATA**](/windows/desktop/api/setupapi/ns-setupapi-_sp_newdevicewizard_data)结构与*DeviceInfoData*关联。
@@ -120,9 +120,9 @@ Windows 安装设备后 ([**DIF_INSTALLDEVICE**](dif-installdevice.md) 处理) �
 
 [**SetupDiChangeState**](/windows/desktop/api/setupapi/nf-setupapi-setupdichangestate)
 
-[**SP_DEVINFO_DATA**](/windows/desktop/api/setupapi/ns-setupapi-_sp_devinfo_data)
+[**SP_DEVINFO_DATA**](/windows/win32/api/setupapi/ns-setupapi-sp_devinfo_data)
 
-[**SP_DEVINSTALL_PARAMS**](/windows/desktop/api/setupapi/ns-setupapi-_sp_devinstall_params_a)
+[**SP_DEVINSTALL_PARAMS**](/windows/win32/api/setupapi/ns-setupapi-sp_devinstall_params_a)
 
 [**SP_NEWDEVICEWIZARD_DATA**](/windows/desktop/api/setupapi/ns-setupapi-_sp_newdevicewizard_data)
 

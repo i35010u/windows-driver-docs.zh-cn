@@ -7,12 +7,12 @@ keywords:
 - 系统定义的回叫对象 WDK 内核
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3aafec630175b1ae85c0f7b335949470503bf182
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 9afe9645e1055f05a8b01c4c3e530c7ea5f777a5
+ms.sourcegitcommit: a5f76805387760730faed5674d87201ec85b7dd3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89187727"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90112056"
 ---
 # <a name="using-a-system-defined-callback-object"></a>使用系统定义的回调对象
 
@@ -40,7 +40,7 @@ ms.locfileid: "89187727"
 
 向系统添加新处理器时， ** \\ 回调 \\ ProcessorAdd**回调会提供通知。
 
-若要使用系统定义的回调，驱动程序将使用回调的名称初始化属性块 ([**InitializeObjectAttributes**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfwdm/nf-wudfwdm-initializeobjectattributes)) ，然后打开 ([**ExCreateCallback**](/windows-hardware/drivers/ddi/wdm/nf-wdm-excreatecallback)) 的回调对象，就像为驱动程序定义的回调那样。 驱动程序不应请求创建回调对象。
+若要使用系统定义的回调，驱动程序可以通过使用回调的名称调用 [**InitializeObjectAttributes**](/windows/win32/api/ntdef/nf-ntdef-initializeobjectattributes) 来初始化属性块，然后 ([**ExCreateCallback**](/windows-hardware/drivers/ddi/wdm/nf-wdm-excreatecallback)) 打开回调对象，就像为驱动程序定义的回调那样。 驱动程序不应请求创建回调对象。
 
 使用 **ExCreateCallback**返回的句柄，驱动程序将调用 [**ExRegisterCallback**](/windows-hardware/drivers/ddi/wdm/nf-wdm-exregistercallback) 来注册通知例程，并将指向任意上下文的指针和指向其例程的指针传递到该例程。 驱动程序可以随时注册其回调例程。 当出现指定的条件时，系统会调用已注册的回调例程，以 IRQL &lt; = 调度 \_ 级别。
 

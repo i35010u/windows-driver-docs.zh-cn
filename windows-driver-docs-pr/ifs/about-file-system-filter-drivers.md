@@ -9,12 +9,12 @@ keywords:
 - 文件系统筛选器驱动程序不是设备驱动程序
 ms.date: 02/10/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 7b698eb9b0e532fa62765c75a6dd784847954416
-ms.sourcegitcommit: 2dd8e4262c30e3f8570e35da7b9485139b216ac8
+ms.openlocfilehash: db2b882a4feb2a4f220a4c068e3f69895c362b54
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "90027578"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90106890"
 ---
 # <a name="about-file-system-filter-drivers"></a>关于文件系统筛选器驱动程序
 
@@ -26,7 +26,7 @@ ms.locfileid: "90027578"
 
 Windows 中有两种文件系统筛选器模型：
 
-- 筛选器 [模型](https://docs.microsoft.com/windows-hardware/drivers/ifs/filter-manager-concepts)，其中筛选器 (也称为微筛选器) 使用系统提供的筛选器管理器支持，从而简化了筛选器开发
+- 筛选器 [模型](./filter-manager-concepts.md)，其中筛选器 (也称为微筛选器) 使用系统提供的筛选器管理器支持，从而简化了筛选器开发
 
 - [旧文件系统筛选器模型](./about-file-system-legacy-filter-drivers.md)
 

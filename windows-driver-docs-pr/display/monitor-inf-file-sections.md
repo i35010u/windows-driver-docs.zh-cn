@@ -11,12 +11,12 @@ keywords:
 - SourceDisksFiles 部分 WDK Windows 2000 显示
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f8e642e7ae46afe641dfd416625562b21a114153
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 44e0ae2c267c64951cf4201c47b25f6fc2251194
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89066024"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90107306"
 ---
 # <a name="monitor-inf-file-sections"></a>监视 INF 文件节
 
@@ -26,7 +26,7 @@ ms.locfileid: "89066024"
 
 必须使用 INF 文件在基于 NT 的操作系统上安装监视器。 Windows 驱动程序工具包 (WDK) 提供一个示例监视器 INF 文件 *monsamp*，您应将该文件用作模板，以便为您的监视器生成 INF 文件。 不能使用[创建图形 Inf 文件](creating-graphics-inf-files.md)中介绍的*geninf.exe*工具来生成监视器 inf。
 
-本主题的其余部分将对 *monsamp* 中特定于监视 inf 编写器感兴趣的部分进行评论。 有关 INF 文件的更多常规信息，请参阅 [Inf 文件部分和指令](https://docs.microsoft.com/windows-hardware/drivers/install/inf-file-sections-and-directives)。
+本主题的其余部分将对 *monsamp* 中特定于监视 inf 编写器感兴趣的部分进行评论。 有关 INF 文件的更多常规信息，请参阅 [Inf 文件部分和指令](../install/index.md)。
 
 你还可以使用 INF 文件来替代监视 (EDID) 的扩展显示标识数据。 请参阅 [使用 INF 替代监视器 edid](overriding-monitor-edids.md)。
 

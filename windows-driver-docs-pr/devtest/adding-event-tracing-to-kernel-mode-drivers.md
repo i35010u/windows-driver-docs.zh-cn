@@ -8,12 +8,12 @@ keywords:
 - 内核模式 ETW WDK 软件跟踪
 ms.date: 07/09/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 9e817ba497623456e121991fddb43e1bdfceafac
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 8bb2d5efafbf266984ec2f90ecd9d134e0cbab1f
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89384181"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90107424"
 ---
 # <a name="adding-event-tracing-to-kernel-mode-drivers"></a>将事件跟踪添加到内核模式驱动程序
 
@@ -254,7 +254,7 @@ ms.locfileid: "89384181"
    #endif
    ```
 
-   将**EventRegister \<*provider*\> **宏添加到[*DriverEntry*](../wdf/driverentry-for-kmdf-drivers.md)函数。 将此函数添加到创建和初始化设备对象的代码之后。 请注意，必须通过调用**EventUnregister \<*provider*\> **来匹配**对 \<*provider*\> EventRegister**函数的调用。 你可以在驱动程序的[ </em> *卸载* * ](<https://msdn.microsoft.com/library/windows/hardware/ff564886>)例程中注销该驱动程序。
+   将**EventRegister \<*provider*\> **宏添加到[*DriverEntry*](../wdf/driverentry-for-kmdf-drivers.md)函数。 将此函数添加到创建和初始化设备对象的代码之后。 请注意，必须通过调用**EventUnregister \<*provider*\> **来匹配**对 \<*provider*\> EventRegister**函数的调用。 你可以在驱动程序的[ </em> *卸载* * ](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_unload)例程中注销该驱动程序。
 
    ```ManagedCPlusPlus
       // DriverEntry function

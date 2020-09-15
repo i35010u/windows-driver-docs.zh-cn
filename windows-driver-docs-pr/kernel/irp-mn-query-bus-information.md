@@ -6,12 +6,12 @@ ms.assetid: a7ea1a81-7f03-41c7-8861-a2e1813c15cf
 keywords:
 - IRP_MN_QUERY_BUS_INFORMATION 内核模式驱动程序体系结构
 ms.localizationpriority: medium
-ms.openlocfilehash: be9a8f32aacf10dc28bc48edfb61a61fe83b47ce
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 9673449116dcd3a076e283fc20e3d2002d246306
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89189515"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90106750"
 ---
 # <a name="irp_mn_query_bus_information"></a>IRP \_ MN \_ 查询 \_ 总线 \_ 信息
 
@@ -20,7 +20,7 @@ PnP 管理器使用此 IRP 来请求设备的父总线的类型和实例编号�
 
 总线驱动程序应为 (PDOs) 的子设备处理此请求。 函数和筛选器驱动程序不处理此 IRP。
 
-## <a name="value"></a>值
+## <a name="value"></a>“值”
 
 0x15
 
@@ -85,7 +85,7 @@ PnP 总线驱动程序将 **LegacyBusType** 设置为父总线的 [**接口 \_ �
 <a href="" id="busnumber"></a>**BusNumber**  
 总线驱动程序将 **BusNumber** 设置为一个数字，该数字将总线与计算机上相同类型的其他总线区分开来。 总线编号方案是特定于总线的。 总线编号可能是虚拟的，但必须与旧接口（如 [**IoReportResourceUsage**](./mmcreatemdl.md)）使用的任何编号匹配。
 
-请参阅 [即插即用](https://docs.microsoft.com/windows-hardware/drivers/kernel/implementing-plug-and-play) ，了解用于处理 [即插即用次要 irp](plug-and-play-minor-irps.md)的一般规则。
+请参阅 [即插即用](./introduction-to-plug-and-play.md) ，了解用于处理 [即插即用次要 irp](plug-and-play-minor-irps.md)的一般规则。
 
 **正在发送此 IRP**
 
@@ -103,13 +103,13 @@ PnP 总线驱动程序将 **LegacyBusType** 设置为父总线的 [**接口 \_ �
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Header</p></td>
+<td><p>标头</p></td>
 <td>Wdm.h（包括 Wdm.h、Ntddk.h 或 Ntifs.h）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
 [**IoGetDeviceProperty**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetdeviceproperty)

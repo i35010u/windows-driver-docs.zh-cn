@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cb4cc19fc2baac78198cfc350fd2ea9f9949f9f0
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 662cd2ff1e728d8d39cb07a3b89b22a47992e746
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89189943"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90107162"
 ---
 # <a name="ksproperty_videodecoder_output_enable"></a>KSPROPERTY \_ VIDEODECODER \_ OUTPUT \_ ENABLE
 
@@ -53,7 +53,7 @@ KSPROPERTY \_ VIDEODECODER \_ output \_ ENABLE 属性控制位于共享视频端
 <td><p>是</p></td>
 <td><p>是</p></td>
 <td><p>Pin</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_videodecoder_s" data-raw-source="[&lt;strong&gt;KSPROPERTY_VIDEODECODER_S&lt;/strong&gt;](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_videodecoder_s)"><strong>KSPROPERTY_VIDEODECODER_S</strong></a></p></td>
+<td><p><a href="/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_videodecoder_s" data-raw-source="[&lt;strong&gt;KSPROPERTY_VIDEODECODER_S&lt;/strong&gt;](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_videodecoder_s)"><strong>KSPROPERTY_VIDEODECODER_S</strong></a></p></td>
 <td><p>ULONG</p></td>
 </tr>
 </tbody>
@@ -63,7 +63,7 @@ KSPROPERTY \_ VIDEODECODER \_ output \_ ENABLE 属性控制位于共享视频端
 
  (操作数据) 的属性值是一个 ULONG，用于指定三状态输出启用设置。 如果值为零，则指示三状态输出。 非零值表示设备正在积极驱动视频端口总线。
 
-<a name="remarks"></a>注解
+<a name="remarks"></a>备注
 -------
 
 KSPROPERTY **Value** \_ VIDEODECODER S 结构的 Value 成员 \_ 指定三个输出启用设置。
@@ -78,18 +78,16 @@ KSPROPERTY **Value** \_ VIDEODECODER S 结构的 Value 成员 \_ 指定三个输
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Header</p></td>
+<td><p>标头</p></td>
 <td>Ksmedia (包含 Ksmedia) </td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
 [**KSPROPERTY**](/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)
 
 [**KSPROPERTY \_ VIDEODECODER \_ S**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_videodecoder_s)
-
- 
 

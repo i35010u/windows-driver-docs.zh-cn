@@ -4,12 +4,12 @@ description: 请按照以下步骤来评估驱动程序代码的要求 HVCI 驱�
 ms.assetid: ''
 ms.date: 05/26/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 69eaf24fdb39c1f9a4d3b0af26eb59cc909b3f23
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: b35719d06ec03c5103b3309731499817604f77cc
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89217360"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90107024"
 ---
 # <a name="evaluate-hvci-driver-compatibility"></a>评估 HVCI 驱动程序兼容性
 
@@ -243,7 +243,7 @@ DGReadiness 工具旨在检查多种需求，用于创建支持各种安全增�
 <tr class="even">
 <td align="left"><p>执行页面映射</p></td>
 <td align="left"><p>调用方 (MDL) 映射指定了可执行的内存描述符列表。</p>
-<p> 请确保使用的掩码包含 MdlMappingNoExecute。 有关详细信息，请参阅 <a href="https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer" data-raw-source="[MmGetSystemAddressForMdlSafe](../kernel/mm-bad-pointer.md)">MmGetSystemAddressForMdlSafe</a></p>
+<p> 请确保使用的掩码包含 MdlMappingNoExecute。 有关详细信息，请参阅 <a href="/windows-hardware/drivers/kernel/mm-bad-pointer" data-raw-source="[MmGetSystemAddressForMdlSafe](../kernel/mm-bad-pointer.md)">MmGetSystemAddressForMdlSafe</a></p>
 </td>
 </tr>
 
@@ -265,7 +265,7 @@ DGReadiness 工具旨在检查多种需求，用于创建支持各种安全增�
 <td align="left"><p>可执行部分中的 IAT</p></td>
 <td align="left"><p>导入地址表 (IAT) ，不应为内存的可执行部分。</p>
 <p>当 IAT (RX 仅) 内存段时，会出现此问题。 这意味着 OS 将不能写入 IAT 来为所引用的 DLL 设置正确的地址。 </p>
-<p> 出现这种情况的一种方法是在代码链接中使用 <a href="https://docs.microsoft.com/cpp/build/reference/merge-combine-sections" data-raw-source="[/MERGE (Combine Sections)](/cpp/build/reference/merge-combine-sections)">/merge (合并节) </a> 选项。 例如，如果 rdata (只读初始化数据) 与合并。文本数据 (可执行代码) ，则 IAT 可能会在内存的可执行部分中结束。  </p>
+<p> 出现这种情况的一种方法是在代码链接中使用 <a href="/cpp/build/reference/merge-combine-sections" data-raw-source="[/MERGE (Combine Sections)](/cpp/build/reference/merge-combine-sections)">/merge (合并节) </a> 选项。 例如，如果 rdata (只读初始化数据) 与合并。文本数据 (可执行代码) ，则 IAT 可能会在内存的可执行部分中结束。  </p>
 </td>
 </tr>
 
@@ -278,7 +278,7 @@ DGReadiness 工具旨在检查多种需求，用于创建支持各种安全增�
 
 <p>在 Windows 10 中，版本1507到 Windows 10，版本1607，因为使用地址空间布局随机化 (ASLR) 出现问题时，可能会出现地址对齐和内存重定位问题。  操作系统需要将地址从链接器设置其默认基址的位置重定位到 ASLR 分配的实际位置。 此重定位不能跨页面边界。  例如，请考虑在页面中以 offset 0x3FFC 开始的64位地址值。 它的地址值与0x0003 偏移量重叠到下一页。 在 Windows 10 版本1703之前，不支持此类型的重叠重定位。</p>
 
-<p>当全局结构类型变量初始值设定项具有指向另一个全局结构的未对齐指针时，可能会出现这种情况，这种情况下，链接器无法移动变量来避免跨越重定位。 链接器将尝试移动变量，但在某些情况下，它可能无法执行此操作 (例如，具有较大的结构或不对齐的结构的大型数组) 。 在适当的情况下，应使用 <a href="https://docs.microsoft.com/cpp/build/reference/gy-enable-function-level-linking" data-raw-source="[/Gy (COMDAT)](/cpp/build/reference/gy-enable-function-level-linking)">/gy (COMDAT) </a> 选项来组装模块，以允许链接器尽可能地对齐模块代码。</p>
+<p>当全局结构类型变量初始值设定项具有指向另一个全局结构的未对齐指针时，可能会出现这种情况，这种情况下，链接器无法移动变量来避免跨越重定位。 链接器将尝试移动变量，但在某些情况下，它可能无法执行此操作 (例如，具有较大的结构或不对齐的结构的大型数组) 。 在适当的情况下，应使用 <a href="/cpp/build/reference/gy-enable-function-level-linking" data-raw-source="[/Gy (COMDAT)](/cpp/build/reference/gy-enable-function-level-linking)">/gy (COMDAT) </a> 选项来组装模块，以允许链接器尽可能地对齐模块代码。</p>
 
 ```cpp
 #include <pshpack1.h>

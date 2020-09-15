@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d527726e6089202cef16de2c8641af38fb61b2e1
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 5c7134c9d5fb00704c1e5825233758e5eceeebe0
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89190143"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90106968"
 ---
 # <a name="ksproperty_streaminterface_headersize"></a>KSPROPERTY \_ STREAMINTERFACE \_ HEADERSIZE
 
@@ -53,7 +53,7 @@ KSPROPERTY \_ STREAMINTERFACE \_ HEADERSIZE 属性在 pin 中查询此 pin 所�
 <td><p>是</p></td>
 <td><p>否</p></td>
 <td><p>Pin</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)"><strong>KSPROPERTY</strong></a></p></td>
+<td><p><a href="/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)"><strong>KSPROPERTY</strong></a></p></td>
 <td><p>ULONG</p></td>
 </tr>
 </tbody>
@@ -61,7 +61,7 @@ KSPROPERTY \_ STREAMINTERFACE \_ HEADERSIZE 属性在 pin 中查询此 pin 所�
 
  
 
-<a name="remarks"></a>注解
+<a name="remarks"></a>备注
 -------
 
 有关详细信息，请参阅[**KSPIN**](/windows-hardware/drivers/ddi/ks/ns-ks-_kspin)的**StreamHeaderSize**成员。
@@ -76,18 +76,16 @@ KSPROPERTY \_ STREAMINTERFACE \_ HEADERSIZE 属性在 pin 中查询此 pin 所�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Header</p></td>
+<td><p>标头</p></td>
 <td>Ks (包含 Ks .h) </td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
 [**KSPROPERTY**](/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)
 
 [**KSPIN**](/windows-hardware/drivers/ddi/ks/ns-ks-_kspin)
-
- 
 

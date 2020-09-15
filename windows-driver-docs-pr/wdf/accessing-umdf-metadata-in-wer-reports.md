@@ -4,12 +4,12 @@ description: 本主题介绍在用户模式驱动程序框架 (UMDF) 崩溃时�
 ms.assetid: ca5fe108-b4fb-4c90-87bc-9901854780d3
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 805188aa8f2069c3d1be2509b00f02e308773e82
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: c177dbbcd4add40151c9cab1a196f0e0a00835d2
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89191235"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90106922"
 ---
 # <a name="accessing-umdf-metadata-in-wer-reports"></a>访问 WER 报表中的 UMDF 元数据
 
@@ -153,7 +153,7 @@ WdfComponentMax</code>
 </tr>
 <tr class="odd">
 <td align="left">6</td>
-<td align="left">消息</td>
+<td align="left">Message</td>
 <td align="left"><p>此字段的第一个数字始终为1，指示操作涉及 IRP。 后续位数分别指示 IRP 的 <strong>MajorFunction</strong> 和 <strong>MinorFunction</strong> 。</p>
 <p>例如，在上面的示例报表中，此字段包含值11b00。 这意味着该操作是一个 IRP，反映器代表驱动程序主机进程处理，其主要函数值为 IRP_MJ_PNP，次函数值为 IRP_MN_START_DEVICE (1 = IRP message，1b = IRP_MJ_PNP，00 = IRP_MN_START_DEVICE) 。</p></td>
 </tr>
@@ -213,7 +213,7 @@ WdfComponentMax</code>
 <tr class="odd">
 <td align="left">2</td>
 <td align="left">ExceptionCode</td>
-<td align="left"><p>异常发生的原因。 有关值的列表，请参阅 <a href="https://docs.microsoft.com/windows/win32/api/winnt/ns-winnt-exception_record" data-raw-source="[&lt;strong&gt;EXCEPTION_RECORD&lt;/strong&gt;](/windows/win32/api/winnt/ns-winnt-exception_record)"><strong>EXCEPTION_RECORD</strong></a>。</p></td>
+<td align="left"><p>异常发生的原因。 有关值的列表，请参阅 <a href="/windows/win32/api/winnt/ns-winnt-exception_record" data-raw-source="[&lt;strong&gt;EXCEPTION_RECORD&lt;/strong&gt;](/windows/win32/api/winnt/ns-winnt-exception_record)"><strong>EXCEPTION_RECORD</strong></a>。</p></td>
 </tr>
 <tr class="even">
 <td align="left">3</td>

@@ -7,12 +7,12 @@ keywords:
 - 函数 WDK 打印提供程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 38f2d2eb957dfddf56099f0564176b943a2c7887
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 9c12a8bc3d4091f4ed016feb84ac578ccdecd028
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89217189"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90106718"
 ---
 # <a name="functions-defined-by-print-providers"></a>打印提供程序定义的函数
 
@@ -71,7 +71,7 @@ ms.locfileid: "89217189"
 </thead>
 <tbody>
 <tr class="odd">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/winsplp/nf-winsplp-initializeprintprovidor" data-raw-source="[&lt;strong&gt;InitializePrintProvidor&lt;/strong&gt;](/windows-hardware/drivers/ddi/winsplp/nf-winsplp-initializeprintprovidor)"><strong>InitializePrintProvidor</strong></a> (必需) </p></td>
+<td><p><a href="/windows-hardware/drivers/ddi/winsplp/nf-winsplp-initializeprintprovidor" data-raw-source="[&lt;strong&gt;InitializePrintProvidor&lt;/strong&gt;](/windows-hardware/drivers/ddi/winsplp/nf-winsplp-initializeprintprovidor)"><strong>InitializePrintProvidor</strong></a> (必需) </p></td>
 <td><p>初始化打印提供程序，并将指针返回到提供的函数。</p></td>
 </tr>
 </tbody>
@@ -134,12 +134,12 @@ ms.locfileid: "89217189"
 <td><p>允许调用方访问指定的打印队列。</p></td>
 </tr>
 <tr class="odd">
-<td><p><a href="https://docs.microsoft.com/previous-versions/ff561930(v=vs.85)" data-raw-source="[&lt;strong&gt;RefreshPrinterChangeNotification&lt;/strong&gt;](/previous-versions/ff561930(v=vs.85))"><strong>RefreshPrinterChangeNotification</strong></a></p></td>
+<td><p><a href="/previous-versions/ff561930(v=vs.85)" data-raw-source="[&lt;strong&gt;RefreshPrinterChangeNotification&lt;/strong&gt;](/previous-versions/ff561930(v=vs.85))"><strong>RefreshPrinterChangeNotification</strong></a></p></td>
 <td><p>如果客户端调用 <strong>FindNextPrinterChangeNotification</strong> ，则由路由器调用 (参阅 Microsoft Windows SDK 文档) ，并设置 PRINTER_NOTIFY_OPTIONS_REFRESH 标志。</p></td>
 </tr>
 <tr class="even">
 <td><p><strong>ResetPrinter</strong></p></td>
-<td><p>修改打印队列的数据类型或 <a href="https://docs.microsoft.com/windows/win32/api/wingdi/ns-wingdi-devmodew" data-raw-source="[&lt;strong&gt;DEVMODEW&lt;/strong&gt;](/windows/win32/api/wingdi/ns-wingdi-devmodew)"><strong>DEVMODEW</strong></a> 结构。</p></td>
+<td><p>修改打印队列的数据类型或 <a href="/windows/win32/api/wingdi/ns-wingdi-devmodew" data-raw-source="[&lt;strong&gt;DEVMODEW&lt;/strong&gt;](/windows/win32/api/wingdi/ns-wingdi-devmodew)"><strong>DEVMODEW</strong></a> 结构。</p></td>
 </tr>
 <tr class="odd">
 <td><p><strong>SetPrinter</strong> (必需) </p></td>
@@ -227,7 +227,7 @@ ms.locfileid: "89217189"
 <tr class="even">
 <td><p></p>
 <strong>System.printing.printqueue.addjob</strong> (必需) </td>
-<td><p>返回作业标识符和假脱机文件路径。 调用方使用 <a href="https://docs.microsoft.com/windows/win32/api/fileapi/nf-fileapi-createfilea" data-raw-source="[&lt;strong&gt;CreateFile&lt;/strong&gt;](/windows/win32/api/fileapi/nf-fileapi-createfilea)"><strong>CreateFile</strong></a> 和 <strong>WriteFile</strong> 将数据发送到假脱机文件。</p></td>
+<td><p>返回作业标识符和假脱机文件路径。 调用方使用 <a href="/windows/win32/api/fileapi/nf-fileapi-createfilea" data-raw-source="[&lt;strong&gt;CreateFile&lt;/strong&gt;](/windows/win32/api/fileapi/nf-fileapi-createfilea)"><strong>CreateFile</strong></a> 和 <strong>WriteFile</strong> 将数据发送到假脱机文件。</p></td>
 </tr>
 <tr class="odd">
 <td><p></p>
@@ -414,7 +414,7 @@ ms.locfileid: "89217189"
 <tbody>
 <tr class="odd">
 <td><p><strong>AddPort</strong></p></td>
-<td><p>将打印机端口添加到可用的列表中，通常通过调用指定的端口监视器的 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/winsplp/nf-winsplp-addportui" data-raw-source="[&lt;strong&gt;AddPortUI&lt;/strong&gt;](/windows-hardware/drivers/ddi/winsplp/nf-winsplp-addportui)"><strong>AddPortUI</strong></a> 函数。</p></td>
+<td><p>将打印机端口添加到可用的列表中，通常通过调用指定的端口监视器的 <a href="/windows-hardware/drivers/ddi/winsplp/nf-winsplp-addportui" data-raw-source="[&lt;strong&gt;AddPortUI&lt;/strong&gt;](/windows-hardware/drivers/ddi/winsplp/nf-winsplp-addportui)"><strong>AddPortUI</strong></a> 函数。</p></td>
 </tr>
 <tr class="even">
 <td><p><strong>AddPortEx</strong></p></td>
@@ -423,12 +423,12 @@ ms.locfileid: "89217189"
 <tr class="odd">
 <td><p></p>
 <strong>ConfigurePort</strong> (必需) </td>
-<td><p>配置打印机端口，通常通过调用指定的端口监视器的 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/winsplp/nf-winsplp-configureportui" data-raw-source="[&lt;strong&gt;ConfigurePortUI&lt;/strong&gt;](/windows-hardware/drivers/ddi/winsplp/nf-winsplp-configureportui)"><strong>ConfigurePortUI</strong></a> 函数。</p></td>
+<td><p>配置打印机端口，通常通过调用指定的端口监视器的 <a href="/windows-hardware/drivers/ddi/winsplp/nf-winsplp-configureportui" data-raw-source="[&lt;strong&gt;ConfigurePortUI&lt;/strong&gt;](/windows-hardware/drivers/ddi/winsplp/nf-winsplp-configureportui)"><strong>ConfigurePortUI</strong></a> 函数。</p></td>
 </tr>
 <tr class="even">
 <td><p></p>
 <strong>DeletePort</strong> (必需) </td>
-<td><p>从可用的列表中删除打印机端口，通常通过调用指定的端口监视器的 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/winsplp/nf-winsplp-deleteportui" data-raw-source="[&lt;strong&gt;DeletePortUI&lt;/strong&gt;](/windows-hardware/drivers/ddi/winsplp/nf-winsplp-deleteportui)"><strong>DeletePortUI</strong></a> 函数。</p></td>
+<td><p>从可用的列表中删除打印机端口，通常通过调用指定的端口监视器的 <a href="/windows-hardware/drivers/ddi/winsplp/nf-winsplp-deleteportui" data-raw-source="[&lt;strong&gt;DeletePortUI&lt;/strong&gt;](/windows-hardware/drivers/ddi/winsplp/nf-winsplp-deleteportui)"><strong>DeletePortUI</strong></a> 函数。</p></td>
 </tr>
 <tr class="odd">
 <td><p></p>
@@ -518,13 +518,11 @@ ms.locfileid: "89217189"
 </thead>
 <tbody>
 <tr class="odd">
-<td><p><a href="https://docs.microsoft.com/previous-versions/ff564255(v=vs.85)" data-raw-source="[&lt;strong&gt;XcvData&lt;/strong&gt;](/previous-versions/ff564255(v=vs.85))"><strong>XcvData</strong></a></p></td>
+<td><p><a href="/previous-versions/ff564255(v=vs.85)" data-raw-source="[&lt;strong&gt;XcvData&lt;/strong&gt;](/previous-versions/ff564255(v=vs.85))"><strong>XcvData</strong></a></p></td>
 <td><p>提供端口监视器 UI DLL 和端口监视器服务器 DLL 之间的通信路径。</p></td>
 </tr>
 </tbody>
 </table>
-
- 
 
  
 

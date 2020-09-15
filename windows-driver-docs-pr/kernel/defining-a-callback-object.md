@@ -7,12 +7,12 @@ keywords:
 - 注册回调通知
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cb0d080fd4b39458ce9a8b37ff47a7e652a66eb2
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 505223592b0b1ed55e87f3037d0182981bca7a64
+ms.sourcegitcommit: a5f76805387760730faed5674d87201ec85b7dd3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89188589"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90112114"
 ---
 # <a name="defining-a-callback-object"></a>定义回调对象
 
@@ -24,7 +24,7 @@ ms.locfileid: "89188589"
 
 ![说明如何定义回调对象的关系图](images/3crt-cbk.png)
 
-在创建对象之前，驱动程序会调用 [**InitializeObjectAttributes**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfwdm/nf-wudfwdm-initializeobjectattributes) 来设置其属性。 回调对象的名称必须与系统定义的回调的名称不匹配;它可以具有其创建者认为合适的任何其他属性，通常不 \_ 区分 OBJ 大小写 \_ 。 接下来，该驱动程序调用 [**ExCreateCallback**](/windows-hardware/drivers/ddi/wdm/nf-wdm-excreatecallback)，并将一个指针传递到已初始化的属性，以及将接收到回调对象的句柄的位置。 它还传递两个布尔值，指示系统是否应在不存在此类命名对象时创建回调对象，以及该对象是否应允许多个已注册的回调例程。
+在创建对象之前，驱动程序会调用 [**InitializeObjectAttributes**](/windows/win32/api/ntdef/nf-ntdef-initializeobjectattributes) 来设置其属性。 回调对象的名称必须与系统定义的回调的名称不匹配;它可以具有其创建者认为合适的任何其他属性，通常不 \_ 区分 OBJ 大小写 \_ 。 接下来，该驱动程序调用 [**ExCreateCallback**](/windows-hardware/drivers/ddi/wdm/nf-wdm-excreatecallback)，并将一个指针传递到已初始化的属性，以及将接收到回调对象的句柄的位置。 它还传递两个布尔值，指示系统是否应在不存在此类命名对象时创建回调对象，以及该对象是否应允许多个已注册的回调例程。
 
 驱动程序定义它将调用注册的回调例程的条件。 条件采用两个参数的形式，每个参数都指向由创建回调的驱动程序定义的参数。 对于驱动程序的客户端，应记录这些条件，以及回调对象的名称以及它请求通知的 IRQL。
 

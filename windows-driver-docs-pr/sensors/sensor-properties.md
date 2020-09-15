@@ -32,12 +32,12 @@ api_type:
 - HeaderDef
 ms.date: 01/04/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: de753b1daab2837273da9799ad88b3d13766f9e1
-ms.sourcegitcommit: 937974aa9bbe0262a7ffe9631593fab48c4e7492
+ms.openlocfilehash: b3fb33ae8cb2ccdc08badeda0a7ad932c1857f8d
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "90010171"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90107518"
 ---
 # <a name="sensor-properties"></a>传感器属性
 
@@ -64,7 +64,7 @@ ms.locfileid: "90010171"
 <thead>
 <tr class="header">
 <th>属性键名称和 PID</th>
-<th>描述</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>
@@ -89,7 +89,7 @@ ms.locfileid: "90010171"
 <td><span id="SENSOR_PROPERTY_CONNECTION_TYPE"></span><span id="sensor_property_connection_type"></span>
 <strong>SENSOR_PROPERTY_CONNECTION_TYPE</strong> (PID = 11) </td>
 <td><p>VT_UI4</p>
-<p>只读。 包含当前连接类型的<a href="https://docs.microsoft.com/windows/desktop/api/sensorsapi/ne-sensorsapi-__midl___midl_itf_sensorsapi_0000_0000_0002" data-raw-source="[&lt;strong&gt;SensorConnectionType&lt;/strong&gt;](/windows/desktop/api/sensorsapi/ne-sensorsapi-__midl___midl_itf_sensorsapi_0000_0000_0002)"><strong>SensorConnectionType</strong></a>值。</p></td>
+<p>只读。 包含当前连接类型的<a href="/windows/desktop/api/sensorsapi/ne-sensorsapi-__midl___midl_itf_sensorsapi_0000_0000_0002" data-raw-source="[&lt;strong&gt;SensorConnectionType&lt;/strong&gt;](/windows/desktop/api/sensorsapi/ne-sensorsapi-__midl___midl_itf_sensorsapi_0000_0000_0002)"><strong>SensorConnectionType</strong></a>值。</p></td>
 </tr>
 <tr class="even">
 <td><span id="SENSOR_PROPERTY_CURRENT_REPORT_INTERVAL"></span><span id="sensor_property_current_report_interval"></span>
@@ -98,7 +98,7 @@ ms.locfileid: "90010171"
 <p>读/写。 传感器数据报表生成的当前运行时间（以毫秒为单位）。</p>
 <p>如果将值设置为零，则表示驱动程序返回：默认报表间隔，或者是最小报表间隔。 如果仅有一个客户端连接，则驱动程序应返回默认报告间隔。 如果连接了多个客户端，则驱动程序应返回其中任何一个客户端所请求的最小间隔。</p>
 <p>应用程序可以将此值设置为请求特定的报表间隔，但多个应用程序可能使用同一个驱动程序。 因此，驱动程序将基于内部逻辑来确定真实的报表时间间隔。 例如，驱动程序可能始终使用由任何调用方请求的最短报表间隔。</p>
-<p>有关如何使用此属性的示例，请参阅 <a href="https://docs.microsoft.com/windows/desktop/SensorsAPI/using-sensor-api-events" data-raw-source="[Using Sensor API Events](/windows/desktop/SensorsAPI/using-sensor-api-events)">使用传感器 API 事件</a>。</p></td>
+<p>有关如何使用此属性的示例，请参阅 <a href="/windows/desktop/SensorsAPI/using-sensor-api-events" data-raw-source="[Using Sensor API Events](/windows/desktop/SensorsAPI/using-sensor-api-events)">使用传感器 API 事件</a>。</p></td>
 </tr>
 <tr class="odd">
 <td><span id="SENSOR_PROPERTY_DESCRIPTION"></span><span id="sensor_property_description"></span>
@@ -124,13 +124,13 @@ ms.locfileid: "90010171"
 <strong>SENSOR_PROPERTY_LIGHT_RESPONSE_CURVE</strong> (PID = 16) </td>
 <td><p><strong>VT_VECTOR |VT_UI1</strong></p>
 <p>只读。 一个计数数组，其中包含一对值，这些值提供在环境光线级别与偏移量之间的映射。 这些值表示为百分比。 Windows 中的自适应亮度功能将这些值应用于用户的当前显示亮度首选项。</p>
-<p>矢量类型的数据始终序列化为 <strong>VT_UI1</strong> (一个) 的无符号、1字节字符数组。 此属性实际包含每个值作为4字节无符号整数 (<strong>VT_UI4) </strong>。 有关使用数组的信息，请参阅 <a href="https://docs.microsoft.com/windows/desktop/SensorsAPI/retrieving-vector-types" data-raw-source="[Retrieving Vector Types](/windows/desktop/SensorsAPI/retrieving-vector-types)">检索矢量类型</a>。</p></td>
+<p>矢量类型的数据始终序列化为 <strong>VT_UI1</strong> (一个) 的无符号、1字节字符数组。 此属性实际包含每个值作为4字节无符号整数 (<strong>VT_UI4) </strong>。 有关使用数组的信息，请参阅 <a href="/windows/desktop/SensorsAPI/retrieving-vector-types" data-raw-source="[Retrieving Vector Types](/windows/desktop/SensorsAPI/retrieving-vector-types)">检索矢量类型</a>。</p></td>
 </tr>
 <tr class="odd">
 <td><span id="SENSOR_PROPERTY_LOCATION_DESIRED_ACCURACY"></span><span id="sensor_property_location_desired_accuracy"></span>
 <strong>SENSOR_PROPERTY_LOCATION_DESIRED_ACCURACY</strong> (PID = 19) </td>
 <td><p>VT_UI4</p>
-<p>读/写。 <a href="https://docs.microsoft.com/previous-versions/windows/desktop/legacy/dd756639(v=vs.85)" data-raw-source="[&lt;strong&gt;LOCATION_DESIRED_ACCURACY&lt;/strong&gt;](/previous-versions/windows/desktop/legacy/dd756639(v=vs.85))"><strong>LOCATION_DESIRED_ACCURACY</strong></a>枚举中的一个值，该值指示客户端应用程序请求的准确性处理的类型。</p>
+<p>读/写。 <a href="/previous-versions/windows/desktop/legacy/dd756639(v=vs.85)" data-raw-source="[&lt;strong&gt;LOCATION_DESIRED_ACCURACY&lt;/strong&gt;](/previous-versions/windows/desktop/legacy/dd756639(v=vs.85))"><strong>LOCATION_DESIRED_ACCURACY</strong></a>枚举中的一个值，该值指示客户端应用程序请求的准确性处理的类型。</p>
 <p><strong>LOCATION_DESIRED_ACCURACY_DEFAULT</strong> (0) 指示传感器应使用其可优化电源使用情况和其他成本注意事项的准确性。</p>
 <p><strong>LOCATION_DESIRED_ACCURACY_HIGH</strong> (1) 指示传感器应提供最准确的报告。 这包括使用可能收费的服务或消耗更高级别的电池电量或连接带宽。</p></td>
 </tr>
@@ -156,7 +156,7 @@ ms.locfileid: "90010171"
 <td><span id="SENSOR_PROPERTY_PERSISTENT_UNIQUE_ID"></span><span id="sensor_property_persistent_unique_id"></span>
 <strong>SENSOR_PROPERTY_PERSISTENT_UNIQUE_ID</strong> (PID = 5) </td>
 <td><p><strong>VT_CLSID</strong></p>
-<p>只读。 必需，static。 标识传感器的 <strong>GUID</strong> 。 对于设备上的每个传感器，此值必须是唯一的，对于在计算机上枚举的同一模型，此值必须是唯一的。 此属性包含通过调用 <a href="https://docs.microsoft.com/windows/desktop/api/sensorsapi/nf-sensorsapi-isensor-getid" data-raw-source="[&lt;strong&gt;ISensor::GetID&lt;/strong&gt;](/windows/desktop/api/sensorsapi/nf-sensorsapi-isensor-getid)"><strong>ISensor：： GetID</strong></a> 获取的相同值。</p></td>
+<p>只读。 必需，static。 标识传感器的 <strong>GUID</strong> 。 对于设备上的每个传感器，此值必须是唯一的，对于在计算机上枚举的同一模型，此值必须是唯一的。 此属性包含通过调用 <a href="/windows/desktop/api/sensorsapi/nf-sensorsapi-isensor-getid" data-raw-source="[&lt;strong&gt;ISensor::GetID&lt;/strong&gt;](/windows/desktop/api/sensorsapi/nf-sensorsapi-isensor-getid)"><strong>ISensor：： GetID</strong></a> 获取的相同值。</p></td>
 </tr>
 <tr class="even">
 <td><span id="SENSOR_PROPERTY_RANGE_MAXIMUM"></span><span id="sensor_property_range_maximum"></span>
@@ -188,9 +188,9 @@ ms.locfileid: "90010171"
 <strong>SENSOR_PROPERTY_STATE</strong> (PID = 3) </td>
 <td><p>VT_UI4</p>
 <p>只读。 必需。</p>
-<p>包含当前传感器状态的<a href="https://docs.microsoft.com/windows/desktop/api/sensorsapi/ne-sensorsapi-__midl___midl_itf_sensorsapi_0000_0000_0001" data-raw-source="[&lt;strong&gt;SensorState&lt;/strong&gt;](/windows/desktop/api/sensorsapi/ne-sensorsapi-__midl___midl_itf_sensorsapi_0000_0000_0001)"><strong>SensorState</strong></a>值。</p>
+<p>包含当前传感器状态的<a href="/windows/desktop/api/sensorsapi/ne-sensorsapi-__midl___midl_itf_sensorsapi_0000_0000_0001" data-raw-source="[&lt;strong&gt;SensorState&lt;/strong&gt;](/windows/desktop/api/sensorsapi/ne-sensorsapi-__midl___midl_itf_sensorsapi_0000_0000_0001)"><strong>SensorState</strong></a>值。</p>
 <div class="alert">
-<strong>注意</strong>  若要更新此属性，请通过调用 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/sensorsclassextension/nf-sensorsclassextension-isensorclassextension-poststatechange" data-raw-source="[&lt;strong&gt;ISensorClassExtension::PostStateChange&lt;/strong&gt;](/windows-hardware/drivers/ddi/sensorsclassextension/nf-sensorsclassextension-isensorclassextension-poststatechange)"><strong>ISensorClassExtension：:P oststatechange</strong></a>引发状态更改事件。
+<strong>注意</strong>  若要更新此属性，请通过调用 <a href="/windows-hardware/drivers/ddi/sensorsclassextension/nf-sensorsclassextension-isensorclassextension-poststatechange" data-raw-source="[&lt;strong&gt;ISensorClassExtension::PostStateChange&lt;/strong&gt;](/windows-hardware/drivers/ddi/sensorsclassextension/nf-sensorsclassextension-isensorclassextension-poststatechange)"><strong>ISensorClassExtension：:P oststatechange</strong></a>引发状态更改事件。
 </div>
 <div>
  
@@ -221,7 +221,7 @@ ms.locfileid: "90010171"
 <thead>
 <tr class="header">
 <th>属性键</th>
-<th>描述</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>
@@ -268,6 +268,4 @@ ms.locfileid: "90010171"
 [IPortableDeviceValues](https://go.microsoft.com/fwlink/p/?linkid=275070)
 
 [**SetProperties**](/windows/desktop/api/sensorsapi/nf-sensorsapi-isensor-setproperties)
-
- 
 

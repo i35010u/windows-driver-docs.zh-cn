@@ -17,12 +17,12 @@ api_type:
 ms.date: 12/06/2018
 ms.localizationpriority: medium
 ms.custom: seodec18
-ms.openlocfilehash: cd6c502f2bf43fdb80ce185e7be2b50a55de47b1
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 69a8ecde4799678587a16097b48957832fca878e
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89064264"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90107380"
 ---
 # <a name="dxva_deinterlacecontainerdeviceclassprocampcontrolqueryrange-method"></a>DXVA \_ DeinterlaceContainerDeviceClass：:P rocampcontrolqueryrange 方法
 
@@ -40,7 +40,7 @@ HRESULT ProcAmpControlQueryRange(
 );
 ```
 
-<a name="parameters"></a>parameters
+<a name="parameters"></a>参数
 ----------
 
 *VideoProperty* \[在中， \] 标识驱动程序应为其返回信息的 ProcAmp 控件属性。 下面是此参数的可能值。
@@ -52,7 +52,7 @@ HRESULT ProcAmpControlQueryRange(
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">值</th>
+<th align="left">“值”</th>
 <th align="left">说明</th>
 </tr>
 </thead>
@@ -122,11 +122,11 @@ HRESULT ProcAmpControlQueryRange(
 </tr>
 <tr class="even">
 <td align="left"><p>lpInputData</p></td>
-<td align="left"><p>指向 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_procampcontrolqueryrange" data-raw-source="[&lt;strong&gt;DXVA_ProcAmpControlQueryRange&lt;/strong&gt;](/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_procampcontrolqueryrange)"><strong>DXVA_ProcAmpControlQueryRange</strong></a> 结构的指针。</p></td>
+<td align="left"><p>指向 <a href="/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_procampcontrolqueryrange" data-raw-source="[&lt;strong&gt;DXVA_ProcAmpControlQueryRange&lt;/strong&gt;](/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_procampcontrolqueryrange)"><strong>DXVA_ProcAmpControlQueryRange</strong></a> 结构的指针。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>lpOutputData</p></td>
-<td align="left"><p>指向 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_videopropertyrange" data-raw-source="[&lt;strong&gt;DXVA_VideoPropertyRange&lt;/strong&gt;](/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_videopropertyrange)"><strong>DXVA_VideoPropertyRange</strong></a> 结构的指针。</p></td>
+<td align="left"><p>指向 <a href="/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_videopropertyrange" data-raw-source="[&lt;strong&gt;DXVA_VideoPropertyRange&lt;/strong&gt;](/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_videopropertyrange)"><strong>DXVA_VideoPropertyRange</strong></a> 结构的指针。</p></td>
 </tr>
 </tbody>
 </table>
@@ -211,6 +211,4 @@ DXVA_DeinterlaceContainerDeviceClass::ProcAmpControlQueryRange(
 [**DXVA \_ VideoDesc**](/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_videodesc)
 
 [**DXVA \_ VideoPropertyRange**](/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_videopropertyrange)
-
- 
 

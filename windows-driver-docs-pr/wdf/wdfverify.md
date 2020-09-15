@@ -6,12 +6,12 @@ keywords:
 - WDFVERIFY 宏
 ms.date: 08/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3ecb9528c22bbc56db10d5f366a3f55ea30400d9
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: e8443338eb55b81b5487c8661fc41d94e795bc7f
+ms.sourcegitcommit: a5f76805387760730faed5674d87201ec85b7dd3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89187301"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90112108"
 ---
 # <a name="wdfverify-macro"></a>WDFVERIFY 宏
 
@@ -47,7 +47,7 @@ WDFVERIFY 测试的逻辑表达式。
 
 仅当在注册表中设置了**VerifyOn**值时， **WDFVERIFY**代码才会进入内核调试器。 有关可用于调试驱动程序的注册表项的详细信息，请参阅 [用于调试基于框架的驱动程序的注册表项](./registry-values-for-debugging-kmdf-drivers.md)。
 
-有关调试驱动程序的详细信息，请参阅 [调试 KMDF 驱动程序](https://docs.microsoft.com/windows-hardware/drivers/wdf/debugging-a-wdf-driver)。
+有关调试驱动程序的详细信息，请参阅 [调试 KMDF 驱动程序](../debugger/debug-universal-drivers---step-by-step-lab--echo-kernel-mode-.md)。
 
 <a name="examples"></a>示例
 --------

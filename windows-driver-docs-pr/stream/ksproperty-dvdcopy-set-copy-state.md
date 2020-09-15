@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b1f50711c6206b0f1a4515e00f682bd6e2609474
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: c63e944006fd8932bcd539f59824082024b7a1b7
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89186551"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90107260"
 ---
 # <a name="ksproperty_dvdcopy_set_copy_state"></a>KSPROPERTY \_ DVDCOPY \_ 设置 \_ 复制 \_ 状态
 
@@ -53,8 +53,8 @@ KSPROPERTY \_ DVDCOPY \_ 设置 \_ 复制 \_ 状态属性设置 DVD 解码器流
 <td><p>是</p></td>
 <td><p>是</p></td>
 <td><p>Pin</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)"><strong>KSPROPERTY</strong></a></p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-_ks_dvdcopy_set_copy_state" data-raw-source="[&lt;strong&gt;KS_DVDCOPY_SET_COPY_STATE&lt;/strong&gt;](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-_ks_dvdcopy_set_copy_state)"><strong>KS_DVDCOPY_SET_COPY_STATE</strong></a></p></td>
+<td><p><a href="/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)"><strong>KSPROPERTY</strong></a></p></td>
+<td><p><a href="/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-_ks_dvdcopy_set_copy_state" data-raw-source="[&lt;strong&gt;KS_DVDCOPY_SET_COPY_STATE&lt;/strong&gt;](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-_ks_dvdcopy_set_copy_state)"><strong>KS_DVDCOPY_SET_COPY_STATE</strong></a></p></td>
 </tr>
 </tbody>
 </table>
@@ -111,6 +111,4 @@ KSPROPERTY \_ DVDCOPY \_ 设置 \_ 复制 \_ 状态属性设置 DVD 解码器流
 [同一硬件上的多个数据流](./multiple-data-streams-on-the-same-hardware.md)
 
 [将密钥交换与数据流同步](./synchronizing-key-exchange-with-data-flow.md)
-
- 
 

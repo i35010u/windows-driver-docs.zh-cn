@@ -4,12 +4,12 @@ description: Windows 8 通过 HID 微型端口类驱动程序引入了对常规 
 ms.assetid: E073E15A-7068-43D0-9DBA-7DD2E7FE2993
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: bc9ea372afa16c98d03f2a60fae4d04992c91d0e
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 0979a3b2e79c8713d9ff8c04303927bcd7f97b6e
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89382963"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90107096"
 ---
 # <a name="gpio-buttons-and-indicators-implementation-guide"></a>GPIO 按钮和指示器实现指南
 
@@ -73,9 +73,9 @@ Windows 8 通过 HID 微型端口类驱动程序引入了对常规 I/O (GPIO) �
 有关 GPIO 按钮和指标实现的问题，请发送电子邮件至 Microsoft 支持组，网址为 dockingsupport@microsoft.com 。
 
 ## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
-[电源按钮行为和实现](https://aka.ms/connect-redirect?DownloadID=47452)  
-[连接备用唤醒源](https://aka.ms/connect-redirect?DownloadID=49891)  
-[ACPI 设计指南](https://aka.ms/connect-redirect?DownloadID=48755)  
+[电源按钮行为和实现](/collaborate/connect-redirect?DownloadID=47452)  
+[连接备用唤醒源](/collaborate/connect-redirect?DownloadID=49891)  
+[ACPI 设计指南](/collaborate/connect-redirect?DownloadID=48755)  
 [GetSystemMetrics 函数](https://go.microsoft.com/fwlink/p/?linkid=324686)  
 [Windows 8 中的键盘增强功能](https://go.microsoft.com/fwlink/p/?linkid=324536)  
 [Windows 硬件兼容性计划](/windows-hardware/design/compatibility/index)  

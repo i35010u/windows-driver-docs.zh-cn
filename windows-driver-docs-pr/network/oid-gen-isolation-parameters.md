@@ -5,12 +5,12 @@ ms.assetid: 68E89349-4907-4241-9C50-B13C75273F0D
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_GEN_ISOLATION_PARAMETERS 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: d27f62b05ffb274d225380a179db1fc2cfe32f57
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 07a0dd3255458ee9111bf9e0ecd42ebab1fab517
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89207201"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90106830"
 ---
 # <a name="oid_gen_isolation_parameters"></a>OID \_ 代 \_ 隔离 \_ 参数
 
@@ -61,7 +61,7 @@ VM 网络适配器微型端口驱动程序返回此 OID 请求的以下状态代
 </tr>
 <tr class="even">
 <td><p><strong>NDIS_STATUS_INVALID_LENGTH</strong></p></td>
-<td><p>信息缓冲区的长度太小，无法返回请求的信息。 VM 网络适配器微型端口驱动程序设置 <strong>数据。METHOD_INFORMATION。</strong> 将 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request" data-raw-source="[&lt;strong&gt;NDIS_OID_REQUEST&lt;/strong&gt;](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)"><strong>NDIS_OID_REQUEST</strong></a> 结构中的成员 BytesNeeded 为所需的最小缓冲区大小（以字节为单位）。</p></td>
+<td><p>信息缓冲区的长度太小，无法返回请求的信息。 VM 网络适配器微型端口驱动程序设置 <strong>数据。METHOD_INFORMATION。</strong> 将 <a href="/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request" data-raw-source="[&lt;strong&gt;NDIS_OID_REQUEST&lt;/strong&gt;](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)"><strong>NDIS_OID_REQUEST</strong></a> 结构中的成员 BytesNeeded 为所需的最小缓冲区大小（以字节为单位）。</p></td>
 </tr>
 <tr class="odd">
 <td><p><strong>NDIS_STATUS_FAILURE</strong></p></td>
@@ -104,6 +104,4 @@ VM 网络适配器微型端口驱动程序返回此 OID 请求的以下状态代
 [**NDIS \_ 路由 \_ 域 \_ 隔离 \_ 条目**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_routing_domain_isolation_entry)
 
 [**NDIS \_ 状态 \_ 隔离 \_ 参数 \_ 更改**](ndis-status-isolation-parameters-change.md)
-
- 
 

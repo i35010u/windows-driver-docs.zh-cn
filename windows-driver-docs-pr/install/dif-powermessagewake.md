@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 7fcf486072739d77e5f2a6e53bbbac177e8d35be
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 2c9f780dced67e5c2f6cd92f1c284860e52cb586
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89095539"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90107504"
 ---
 # <a name="dif_powermessagewake"></a>DIF_POWERMESSAGEWAKE
 
@@ -63,10 +63,10 @@ DIF_POWERMESSAGEWAKE 请求允许安装程序提供 Windows 在设备属性的 "
 提供包含设备的 [设备信息集](./device-information-sets.md) 的句柄。
 
 <a href="" id="deviceinfodata"></a>*DeviceInfoData*  
-提供一个指向 [**SP_DEVINFO_DATA**](/windows/desktop/api/setupapi/ns-setupapi-_sp_devinfo_data) 结构的指针，该结构在设备信息集中标识设备。
+提供一个指向 [**SP_DEVINFO_DATA**](/windows/win32/api/setupapi/ns-setupapi-sp_devinfo_data) 结构的指针，该结构在设备信息集中标识设备。
 
 <a href="" id="device-installation-parameters-"></a>设备安装参数   
-与*DeviceInfoData*关联的设备安装参数 ([**SP_DEVINSTALL_PARAMS**](/windows/desktop/api/setupapi/ns-setupapi-_sp_devinstall_params_a)) 。
+与*DeviceInfoData*关联的设备安装参数 ([**SP_DEVINSTALL_PARAMS**](/windows/win32/api/setupapi/ns-setupapi-sp_devinstall_params_a)) 。
 
 <a href="" id="class-installation-parameters"></a>类安装参数  
 [**SP_POWERMESSAGEWAKE_PARAMS**](/windows/desktop/api/setupapi/ns-setupapi-_sp_powermessagewake_params_a)结构与*DeviceInfoData*关联。
@@ -117,9 +117,9 @@ DIF_POWERMESSAGEWAKE 请求允许安装程序提供 Windows 在设备的电源�
 ## <a name="see-also"></a>另请参阅
 
 
-[**SP_DEVINFO_DATA**](/windows/desktop/api/setupapi/ns-setupapi-_sp_devinfo_data)
+[**SP_DEVINFO_DATA**](/windows/win32/api/setupapi/ns-setupapi-sp_devinfo_data)
 
-[**SP_DEVINSTALL_PARAMS**](/windows/desktop/api/setupapi/ns-setupapi-_sp_devinstall_params_a)
+[**SP_DEVINSTALL_PARAMS**](/windows/win32/api/setupapi/ns-setupapi-sp_devinstall_params_a)
 
 [**SP_POWERMESSAGEWAKE_PARAMS**](/windows/desktop/api/setupapi/ns-setupapi-_sp_powermessagewake_params_a)
 

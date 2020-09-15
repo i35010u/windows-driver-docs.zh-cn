@@ -5,12 +5,12 @@ ms.assetid: 577CF1C2-9737-4FB0-9C40-AEE529EF1439
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_SWITCH_PORT_FEATURE_STATUS_QUERY 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 4b0fa72f081f3b84d228b70df0c56e0a4c9b2d65
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 7cffd94e937f6b7eab53aef3a670e8e0804e7ae6
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89210117"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90107204"
 ---
 # <a name="oid_switch_port_feature_status_query"></a>OID \_ 交换机 \_ 端口 \_ 功能 \_ 状态 \_ 查询
 
@@ -50,7 +50,7 @@ Hyper-v 可扩展交换机的协议边缘发出对象标识符 (OID) 方法请�
 </tr>
 <tr class="even">
 <td><p>NDIS_STATUS_INVALID_LENGTH</p></td>
-<td><p>信息缓冲区的长度太小，无法返回功能状态信息以及 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_port_feature_status_custom" data-raw-source="[&lt;strong&gt;NDIS_SWITCH_PORT_FEATURE_STATUS_CUSTOM&lt;/strong&gt;](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_port_feature_status_custom)"><strong>NDIS_SWITCH_PORT_FEATURE_STATUS_CUSTOM</strong></a> 和 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_port_feature_status_parameters" data-raw-source="[&lt;strong&gt;NDIS_SWITCH_PORT_FEATURE_STATUS_PARAMETERS&lt;/strong&gt;](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_port_feature_status_parameters)"><strong>NDIS_SWITCH_PORT_FEATURE_STATUS_PARAMETERS</strong></a> 结构。 可扩展交换机的基础微型端口边缘设置 <strong>数据。METHOD_INFORMATION。</strong> 将 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request" data-raw-source="[&lt;strong&gt;NDIS_OID_REQUEST&lt;/strong&gt;](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)"><strong>NDIS_OID_REQUEST</strong></a> 结构中的成员 BytesNeeded 为所需的最小缓冲区大小。</p></td>
+<td><p>信息缓冲区的长度太小，无法返回功能状态信息以及 <a href="/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_port_feature_status_custom" data-raw-source="[&lt;strong&gt;NDIS_SWITCH_PORT_FEATURE_STATUS_CUSTOM&lt;/strong&gt;](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_port_feature_status_custom)"><strong>NDIS_SWITCH_PORT_FEATURE_STATUS_CUSTOM</strong></a> 和 <a href="/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_port_feature_status_parameters" data-raw-source="[&lt;strong&gt;NDIS_SWITCH_PORT_FEATURE_STATUS_PARAMETERS&lt;/strong&gt;](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_port_feature_status_parameters)"><strong>NDIS_SWITCH_PORT_FEATURE_STATUS_PARAMETERS</strong></a> 结构。 可扩展交换机的基础微型端口边缘设置 <strong>数据。METHOD_INFORMATION。</strong> 将 <a href="/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request" data-raw-source="[&lt;strong&gt;NDIS_OID_REQUEST&lt;/strong&gt;](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)"><strong>NDIS_OID_REQUEST</strong></a> 结构中的成员 BytesNeeded 为所需的最小缓冲区大小。</p></td>
 </tr>
 <tr class="odd">
 <td><p>NDIS_STATUS_FAILURE</p></td>
@@ -92,6 +92,4 @@ Hyper-v 可扩展交换机的协议边缘发出对象标识符 (OID) 方法请�
 [**NDIS \_ 交换机 \_ 端口 \_ 功能 \_ 状态 \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_port_feature_status_parameters)
 
 [**NDIS \_ 交换机 \_ 端口 \_ 属性 \_ 类型**](/windows-hardware/drivers/ddi/ntddndis/ne-ntddndis-_ndis_switch_port_property_type)
-
- 
 

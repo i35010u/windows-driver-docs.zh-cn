@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 1120cdd0b5a23492e29d99e106a4e20b5382a1b1
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: f12eacdce2cadf0d42d5429a71084783cff8109e
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89096295"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90107174"
 ---
 # <a name="dif_troubleshooter"></a>DIF_TROUBLESHOOTER
 
@@ -65,10 +65,10 @@ DIF_TROUBLESHOOTER 请求允许安装程序为设备启动疑难解答，或返�
 提供包含设备的 [设备信息集](./device-information-sets.md) 的句柄。
 
 <a href="" id="deviceinfodata"></a>*DeviceInfoData*  
-提供一个指向 [**SP_DEVINFO_DATA**](/windows/desktop/api/setupapi/ns-setupapi-_sp_devinfo_data) 结构的指针，该结构在设备信息集中标识设备。
+提供一个指向 [**SP_DEVINFO_DATA**](/windows/win32/api/setupapi/ns-setupapi-sp_devinfo_data) 结构的指针，该结构在设备信息集中标识设备。
 
 <a href="" id="device-installation-parameters-"></a>设备安装参数   
-与*DeviceInfoData*关联的设备安装参数 ([**SP_DEVINSTALL_PARAMS**](/windows/desktop/api/setupapi/ns-setupapi-_sp_devinstall_params_a)) 。
+与*DeviceInfoData*关联的设备安装参数 ([**SP_DEVINSTALL_PARAMS**](/windows/win32/api/setupapi/ns-setupapi-sp_devinstall_params_a)) 。
 
 <a href="" id="class-installation-parameters"></a>类安装参数  
 [**SP_TROUBLESHOOTER_PARAMS**](/windows/desktop/api/setupapi/ns-setupapi-_sp_troubleshooter_params_a)结构与*DeviceInfoData*关联。
@@ -131,9 +131,9 @@ DIF_TROUBLESHOOTER 没有默认的处理程序，但是，如果没有安装程�
 
 [**CM_Get_DevNode_Status**](/windows/desktop/api/cfgmgr32/nf-cfgmgr32-cm_get_devnode_status)
 
-[**SP_DEVINFO_DATA**](/windows/desktop/api/setupapi/ns-setupapi-_sp_devinfo_data)
+[**SP_DEVINFO_DATA**](/windows/win32/api/setupapi/ns-setupapi-sp_devinfo_data)
 
-[**SP_DEVINSTALL_PARAMS**](/windows/desktop/api/setupapi/ns-setupapi-_sp_devinstall_params_a)
+[**SP_DEVINSTALL_PARAMS**](/windows/win32/api/setupapi/ns-setupapi-sp_devinstall_params_a)
 
 [**SP_TROUBLESHOOTER_PARAMS**](/windows/desktop/api/setupapi/ns-setupapi-_sp_troubleshooter_params_a)
 

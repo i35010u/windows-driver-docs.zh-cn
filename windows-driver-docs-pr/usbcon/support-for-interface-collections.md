@@ -4,12 +4,12 @@ title: 枚举 USB 复合设备上的接口集合的概述
 ms.date: 01/07/2019
 ms.assetid: aa68a774-d5b2-4fd8-aee9-9b72b1e4ad4f
 ms.localizationpriority: medium
-ms.openlocfilehash: b473edd59c85ebf6fa7c3f0871ea67d92d733733
-ms.sourcegitcommit: 937974aa9bbe0262a7ffe9631593fab48c4e7492
+ms.openlocfilehash: 5766f5b5c92309d29aacc7eabf6d15a71a0c01f1
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "90010226"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90107458"
 ---
 # <a name="overview-of-enumeration-of-interface-collections-on-usb-composite-devices"></a>枚举 USB 复合设备上的接口集合的概述
 
@@ -256,7 +256,7 @@ Windows 支持的大多数接口集合对应于属于通信设备类 (CDC) 和�
 </colgroup>
 <thead>
 <tr class="header">
-<th>属性</th>
+<th>Property</th>
 <th>说明</th>
 </tr>
 </thead>
@@ -279,7 +279,7 @@ Windows 支持的大多数接口集合对应于属于通信设备类 (CDC) 和�
 </tr>
 <tr class="odd">
 <td><p>Enumerated</p></td>
-<td><p>是的。</p></td>
+<td><p>可以。</p></td>
 </tr>
 <tr class="even">
 <td><p>相关接口</p></td>
@@ -289,7 +289,7 @@ Windows 支持的大多数接口集合对应于属于通信设备类 (CDC) 和�
 <td><p>硬件 Id</p></td>
 <td><pre space="preserve"><code class="language-syntax">USB\Vid_%04x&Pid_%04x&Rev_%04x&MI_%02x
 USB\Vid_%04x&Pid_%04x&MI_%02x</code></pre>
-<p>音频接口集合的硬件 Id 不包含接口类特定的信息。 有关与音频接口集合关联的硬件 Id 的格式的说明，请参阅对 <a href="support-for-the-wireless-mobile-communication-device-class--wmcdc-.md" data-raw-source="[Support for the Wireless Mobile Communication Device Class]()">无线移动通信设备类的支持</a>。</p></td>
+<p>音频接口集合的硬件 Id 不包含接口类特定的信息。 有关与音频接口集合关联的硬件 Id 的格式的说明，请参阅对 <a href="/windows-hardware/drivers/usbcon/support-for-interface-collections" data-raw-source="[Support for the Wireless Mobile Communication Device Class]()">无线移动通信设备类的支持</a>。</p></td>
 </tr>
 <tr class="even">
 <td><p>兼容 Id</p></td>
@@ -317,7 +317,7 @@ USB\Class_01</code></pre>
 </colgroup>
 <thead>
 <tr class="header">
-<th>属性</th>
+<th>Property</th>
 <th>说明</th>
 </tr>
 </thead>
@@ -340,7 +340,7 @@ USB\Class_01</code></pre>
 </tr>
 <tr class="odd">
 <td><p>Enumerated</p></td>
-<td><p>是的。</p></td>
+<td><p>可以。</p></td>
 </tr>
 <tr class="even">
 <td><p>相关接口</p></td>
@@ -378,7 +378,7 @@ USB CDC ATM 网络控制模型 (ANCM) 接口集合具有以下属性。
 </colgroup>
 <thead>
 <tr class="header">
-<th>属性</th>
+<th>Property</th>
 <th>说明</th>
 </tr>
 </thead>
@@ -440,7 +440,7 @@ USB\Class_02</code></pre></td>
 </colgroup>
 <thead>
 <tr class="header">
-<th>属性</th>
+<th>Property</th>
 <th>说明</th>
 </tr>
 </thead>
@@ -499,7 +499,7 @@ USB CDC 直接线路控制模型 (DLCM) 接口集合具有以下属性。
 </colgroup>
 <thead>
 <tr class="header">
-<th>属性</th>
+<th>Property</th>
 <th>说明</th>
 </tr>
 </thead>
@@ -522,7 +522,7 @@ USB CDC 直接线路控制模型 (DLCM) 接口集合具有以下属性。
 </tr>
 <tr class="odd">
 <td><p>Enumerated</p></td>
-<td><p>是的。</p></td>
+<td><p>可以。</p></td>
 </tr>
 <tr class="even">
 <td><p>相关接口</p></td>
@@ -560,7 +560,7 @@ USB CDC 以太网网络控制模型 (ENCM) 接口集合具有以下属性。
 </colgroup>
 <thead>
 <tr class="header">
-<th>属性</th>
+<th>Property</th>
 <th>说明</th>
 </tr>
 </thead>
@@ -583,7 +583,7 @@ USB CDC 以太网网络控制模型 (ENCM) 接口集合具有以下属性。
 </tr>
 <tr class="odd">
 <td><p>Enumerated</p></td>
-<td><p>是的。</p></td>
+<td><p>可以。</p></td>
 </tr>
 <tr class="even">
 <td><p>相关接口</p></td>
@@ -621,7 +621,7 @@ USB CDC 多通道 ISDN 控制模型 (MCCM) 接口集合具有以下属性。
 </colgroup>
 <thead>
 <tr class="header">
-<th>属性</th>
+<th>Property</th>
 <th>说明</th>
 </tr>
 </thead>
@@ -683,7 +683,7 @@ USB\Class_02</code></pre></td>
 </colgroup>
 <thead>
 <tr class="header">
-<th>属性</th>
+<th>Property</th>
 <th>说明</th>
 </tr>
 </thead>
@@ -706,7 +706,7 @@ USB\Class_02</code></pre></td>
 </tr>
 <tr class="odd">
 <td><p>Enumerated</p></td>
-<td><p>是的。</p></td>
+<td><p>可以。</p></td>
 </tr>
 <tr class="even">
 <td><p>相关接口</p></td>
@@ -746,7 +746,7 @@ USB\Class_02</code></pre></td>
 </colgroup>
 <thead>
 <tr class="header">
-<th>属性</th>
+<th>Property</th>
 <th>说明</th>
 </tr>
 </thead>
@@ -807,7 +807,7 @@ USB\Class_02</code></pre></td>
 </colgroup>
 <thead>
 <tr class="header">
-<th>属性</th>
+<th>Property</th>
 <th>说明</th>
 </tr>
 </thead>
@@ -830,7 +830,7 @@ USB\Class_02</code></pre></td>
 </tr>
 <tr class="odd">
 <td><p>Enumerated</p></td>
-<td><p>是的。</p></td>
+<td><p>可以。</p></td>
 </tr>
 <tr class="even">
 <td><p>相关接口</p></td>
@@ -870,7 +870,7 @@ USB\Class_0E</code></pre></td>
 </colgroup>
 <thead>
 <tr class="header">
-<th>属性</th>
+<th>Property</th>
 <th>说明</th>
 </tr>
 </thead>
@@ -893,7 +893,7 @@ USB\Class_0E</code></pre></td>
 </tr>
 <tr class="odd">
 <td><p>Enumerated</p></td>
-<td><p>是的。</p></td>
+<td><p>可以。</p></td>
 </tr>
 <tr class="even">
 <td><p>相关接口</p></td>
@@ -915,7 +915,7 @@ USB\Class_02</code></pre></td>
 <tr class="odd">
 <td><p>特殊处理</p></td>
 <td><p>UFD 可能会引用一个音频接口集合，该集合是独立于工作类型接口集合枚举的。</p>
-<p>接口集合必须符合 WMCDC 规范的6.2 节中指定的特殊描述符和终结点要求。 如果接口集合不符合 WMCDC 要求，但接口符合 CDC 要求，则 USB 通用父驱动程序将用 CDC 格式枚举接口集合和通用硬件 Id，如对 <a href="support-for-the-wireless-mobile-communication-device-class--wmcdc-.md" data-raw-source="[Support for the Wireless Mobile Communication Device Class]()">无线移动通信设备类的支持</a>中所述。</p>
+<p>接口集合必须符合 WMCDC 规范的6.2 节中指定的特殊描述符和终结点要求。 如果接口集合不符合 WMCDC 要求，但接口符合 CDC 要求，则 USB 通用父驱动程序将用 CDC 格式枚举接口集合和通用硬件 Id，如对 <a href="/windows-hardware/drivers/usbcon/support-for-interface-collections" data-raw-source="[Support for the Wireless Mobile Communication Device Class]()">无线移动通信设备类的支持</a>中所述。</p>
 <p>此控件模型的兼容 Id 在 Microsoft 提供的 INF 文件中匹配。 如果操作系统在供应商提供的 INF 文件中找不到某个硬件 Id 的匹配项，则系统会自动加载本地电话应用程序编程接口 (TAPI) 调制解调器筛选器驱动程序来管理调制解调器功能并设置相应的 TAPI 注册表设置，除非协议代码为0xFE。 如果协议代码为0xFE，则供应商必须提供设备或类共同安装程序，才能正确地填充 TAPI 注册表设置。</p></td>
 </tr>
 </tbody>
@@ -933,7 +933,7 @@ USB WMCDC 设备管理模型 (CALL CENTER.DMM) 接口集合具有以下属性。
 </colgroup>
 <thead>
 <tr class="header">
-<th>属性</th>
+<th>Property</th>
 <th>说明</th>
 </tr>
 </thead>
@@ -956,7 +956,7 @@ USB WMCDC 设备管理模型 (CALL CENTER.DMM) 接口集合具有以下属性。
 </tr>
 <tr class="odd">
 <td><p>Enumerated</p></td>
-<td><p>是的。</p></td>
+<td><p>可以。</p></td>
 </tr>
 <tr class="even">
 <td><p>相关接口</p></td>
@@ -994,7 +994,7 @@ USB WMCDC Mobile 直接线路型号 (MDLM) 接口集合具有以下属性：
 </colgroup>
 <thead>
 <tr class="header">
-<th>属性</th>
+<th>Property</th>
 <th>说明</th>
 </tr>
 </thead>
@@ -1057,7 +1057,7 @@ USB\Class_02</code></pre></td>
 </colgroup>
 <thead>
 <tr class="header">
-<th>属性</th>
+<th>Property</th>
 <th>说明</th>
 </tr>
 </thead>
@@ -1080,7 +1080,7 @@ USB\Class_02</code></pre></td>
 </tr>
 <tr class="odd">
 <td><p>Enumerated</p></td>
-<td><p>是的。</p></td>
+<td><p>可以。</p></td>
 </tr>
 <tr class="even">
 <td><p>相关接口</p></td>
@@ -1101,7 +1101,7 @@ USB\Class_02</code></pre></td>
 </tr>
 <tr class="odd">
 <td><p>特殊处理</p></td>
-<td><p>与管理复合设备的 USB 通用父驱动程序实例关联的注册表设置确定是使用单个 PDO 还是多个 PDOs 来管理 OBEX 接口。 有关指定 USB 通用父驱动程序如何枚举 OBEX 接口的注册表设置说明，请参阅对 <a href="support-for-the-wireless-mobile-communication-device-class--wmcdc-.md" data-raw-source="[Support for the Wireless Mobile Communication Device Class]()">无线移动通信设备类的支持</a>。</p></td>
+<td><p>与管理复合设备的 USB 通用父驱动程序实例关联的注册表设置确定是使用单个 PDO 还是多个 PDOs 来管理 OBEX 接口。 有关指定 USB 通用父驱动程序如何枚举 OBEX 接口的注册表设置说明，请参阅对 <a href="/windows-hardware/drivers/usbcon/support-for-interface-collections" data-raw-source="[Support for the Wireless Mobile Communication Device Class]()">无线移动通信设备类的支持</a>。</p></td>
 </tr>
 </tbody>
 </table>
@@ -1120,7 +1120,7 @@ USB\Class_02</code></pre></td>
 </colgroup>
 <thead>
 <tr class="header">
-<th>属性</th>
+<th>Property</th>
 <th>说明</th>
 </tr>
 </thead>
@@ -1143,7 +1143,7 @@ USB\Class_02</code></pre></td>
 </tr>
 <tr class="odd">
 <td><p>Enumerated</p></td>
-<td><p>是的。</p></td>
+<td><p>可以。</p></td>
 </tr>
 <tr class="even">
 <td><p>相关接口</p></td>
@@ -1182,7 +1182,7 @@ USB 泛型父驱动程序并不总是枚举无线耳机控制模型 (WHCM) 接�
 </colgroup>
 <thead>
 <tr class="header">
-<th>属性</th>
+<th>Property</th>
 <th>说明</th>
 </tr>
 </thead>
@@ -1205,7 +1205,7 @@ USB 泛型父驱动程序并不总是枚举无线耳机控制模型 (WHCM) 接�
 </tr>
 <tr class="odd">
 <td><p>Enumerated</p></td>
-<td><p>是的。</p></td>
+<td><p>可以。</p></td>
 </tr>
 <tr class="even">
 <td><p>相关接口</p></td>

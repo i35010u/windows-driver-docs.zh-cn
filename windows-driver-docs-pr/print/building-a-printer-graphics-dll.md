@@ -7,12 +7,12 @@ keywords:
 - 图形 DLL WDK 打印机，生成
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 817dbc72aa1bd4850f2e91aebc07a122bb66e0b4
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 1a644bd1945080efc774fa108f1be21fd7fc4dad
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89208433"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90107200"
 ---
 # <a name="building-a-printer-graphics-dll"></a>生成打印机图形 DLL
 
@@ -53,13 +53,11 @@ ms.locfileid: "89208433"
 <td><p>对象模块必须与 win32k.sys 导入库链接。</p></td>
 </tr>
 <tr class="even">
-<td><p><a href="https://docs.microsoft.com/windows/win32/api/winddi/nf-winddi-drvquerydriverinfo" data-raw-source="[&lt;strong&gt;DrvQueryDriverInfo&lt;/strong&gt;](/windows/win32/api/winddi/nf-winddi-drvquerydriverinfo)"><strong>DrvQueryDriverInfo</strong></a>函数必须为 DRVQUERY_USERMODE 返回<strong>TRUE</strong> 。</p></td>
-<td><p><a href="https://docs.microsoft.com/windows/win32/api/winddi/nf-winddi-drvquerydriverinfo" data-raw-source="[&lt;strong&gt;DrvQueryDriverInfo&lt;/strong&gt;](/windows/win32/api/winddi/nf-winddi-drvquerydriverinfo)"><strong>DrvQueryDriverInfo</strong></a>函数必须为 DRVQUERY_USERMODE 返回<strong>FALSE</strong> 。  (或者，可以省略函数。 ) </p></td>
+<td><p><a href="/windows/win32/api/winddi/nf-winddi-drvquerydriverinfo" data-raw-source="[&lt;strong&gt;DrvQueryDriverInfo&lt;/strong&gt;](/windows/win32/api/winddi/nf-winddi-drvquerydriverinfo)"><strong>DrvQueryDriverInfo</strong></a>函数必须为 DRVQUERY_USERMODE 返回<strong>TRUE</strong> 。</p></td>
+<td><p><a href="/windows/win32/api/winddi/nf-winddi-drvquerydriverinfo" data-raw-source="[&lt;strong&gt;DrvQueryDriverInfo&lt;/strong&gt;](/windows/win32/api/winddi/nf-winddi-drvquerydriverinfo)"><strong>DrvQueryDriverInfo</strong></a>函数必须为 DRVQUERY_USERMODE 返回<strong>FALSE</strong> 。  (或者，可以省略函数。 ) </p></td>
 </tr>
 </tbody>
 </table>
-
- 
 
  
 

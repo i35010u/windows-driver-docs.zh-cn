@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 25eb08a4e3a94ab45a63ad3f8562e4e443f4c15e
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 892db026e9a782b899b9327db9c0f13cc080162a
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89381575"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90107448"
 ---
 # <a name="wlanconnectionroaming-rule-ndis"></a>WlanConnectionRoaming 规则 (ndis) 
 
@@ -43,7 +43,7 @@ ms.locfileid: "89381575"
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>运行 <a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier" data-raw-source="[Driver Verifier](./driver-verifier.md)">驱动程序验证程序</a> ，并选择 <a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/ddi-compliance-checking" data-raw-source="[NDIS/WIFI verification](./ddi-compliance-checking.md)">NDIS/WIFI 验证</a> 选项。</p></td>
+<td align="left"><p>运行 <a href="/windows-hardware/drivers/devtest/driver-verifier" data-raw-source="[Driver Verifier](./driver-verifier.md)">驱动程序验证程序</a> ，并选择 <a href="/windows-hardware/drivers/devtest/ddi-compliance-checking" data-raw-source="[NDIS/WIFI verification](./ddi-compliance-checking.md)">NDIS/WIFI 验证</a> 选项。</p></td>
 </tr>
 </tbody>
 </table>
@@ -61,5 +61,3 @@ ms.locfileid: "89381575"
 [NDIS \_状态 \_ DOT11 \_ 连接 \_ 开始](/previous-versions/windows/hardware/wireless/ndis-status-dot11-connection-start) 
  [OID \_ DOT11 \_ 重置 \_ 请求](/previous-versions/windows/hardware/wireless/oid-dot11-reset-request) 
  [NDIS \_ 状态 \_ DOT11 \_ 漫游 \_ 启动](/previous-versions/windows/hardware/wireless/ndis-status-dot11-roaming-start)
- 
-

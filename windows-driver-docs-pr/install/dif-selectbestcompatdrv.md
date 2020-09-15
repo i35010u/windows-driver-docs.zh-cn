@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 048dfd861843db3d3ddd3e768ab19b54e265803e
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: ca8081d3f29216050351f6e50bf9070a55e249b5
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89097171"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90107176"
 ---
 # <a name="dif_selectbestcompatdrv"></a>DIF_SELECTBESTCOMPATDRV
 
@@ -65,10 +65,10 @@ DIF_SELECTBESTCOMPATDRV 请求允许安装程序从设备信息元素的兼容�
 提供包含设备的 [设备信息集](./device-information-sets.md) 的句柄。
 
 <a href="" id="deviceinfodata"></a>*DeviceInfoData*  
-提供一个指向 [**SP_DEVINFO_DATA**](/windows/desktop/api/setupapi/ns-setupapi-_sp_devinfo_data) 结构的指针，该结构在设备信息集中标识设备。
+提供一个指向 [**SP_DEVINFO_DATA**](/windows/win32/api/setupapi/ns-setupapi-sp_devinfo_data) 结构的指针，该结构在设备信息集中标识设备。
 
 <a href="" id="device-installation-parameters-"></a>设备安装参数   
-与*DeviceInfoData*关联的设备安装参数 ([**SP_DEVINSTALL_PARAMS**](/windows/desktop/api/setupapi/ns-setupapi-_sp_devinstall_params_a)) 。
+与*DeviceInfoData*关联的设备安装参数 ([**SP_DEVINSTALL_PARAMS**](/windows/win32/api/setupapi/ns-setupapi-sp_devinstall_params_a)) 。
 
 <a href="" id="class-installation-parameters"></a>类安装参数  
 无
@@ -115,7 +115,7 @@ DIF_SELECTBESTCOMPATDRV 请求允许安装程序从设备信息元素的兼容�
 
     1.  通过调用 [**SetupDiEnumDriverInfo**](/windows/desktop/api/setupapi/nf-setupapi-setupdienumdriverinfoa) 和 [**SetupDiGetDriverInstallParams**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetdriverinstallparamsa)获取有关列表中第一个驱动程序的信息。 如果需要，请修改驱动程序参数，并通过调用 [**SetupDiSetDriverInstallParams**](/windows/desktop/api/setupapi/nf-setupapi-setupdisetdriverinstallparamsa)应用该更改。
 
-        如果驱动程序是最坏的选择，请在驱动程序安装参数中将驱动程序的排名设置为0xFFFF 或更高。 查看 [Windows 如何选择驱动程序](https://docs.microsoft.com/windows-hardware/drivers/install/how-setup-selects-drivers) 以获取详细信息。
+        如果驱动程序是最坏的选择，请在驱动程序安装参数中将驱动程序的排名设置为0xFFFF 或更高。 查看 [Windows 如何选择驱动程序](./how-windows-selects-a-driver-for-a-device.md) 以获取详细信息。
 
     2.  重复上述步骤，直到处理完列表中的所有驱动程序。 请确保将 *MemberIndex* 参数递增为 [**SetupDiEnumDriverInfo**](/windows/desktop/api/setupapi/nf-setupapi-setupdienumdriverinfoa) ，如该函数的 "引用" 页中所述。
 
@@ -156,9 +156,7 @@ DIF_SELECTBESTCOMPATDRV 请求允许安装程序从设备信息元素的兼容�
 
 [**SetupDiSetSelectedDriver**](/windows/desktop/api/setupapi/nf-setupapi-setupdisetselecteddrivera)
 
-[**SP_DEVINFO_DATA**](/windows/desktop/api/setupapi/ns-setupapi-_sp_devinfo_data)
+[**SP_DEVINFO_DATA**](/windows/win32/api/setupapi/ns-setupapi-sp_devinfo_data)
 
-[**SP_DEVINSTALL_PARAMS**](/windows/desktop/api/setupapi/ns-setupapi-_sp_devinstall_params_a)
-
- 
+[**SP_DEVINSTALL_PARAMS**](/windows/win32/api/setupapi/ns-setupapi-sp_devinstall_params_a)
 

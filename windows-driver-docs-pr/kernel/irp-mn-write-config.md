@@ -6,19 +6,19 @@ ms.assetid: d57c30b8-83bd-41c9-906d-b8c95f8ca54e
 keywords:
 - IRP_MN_WRITE_CONFIG 内核模式驱动程序体系结构
 ms.localizationpriority: medium
-ms.openlocfilehash: f354dd608d929982e28dbd0997c43a06cedbdb8d
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: dee3c3f8e00f8cd6fe66cb65b2a118c033229aae
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89189319"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90107286"
 ---
 # <a name="irp_mn_write_config"></a>IRP \_ MN \_ 写入 \_ 配置
 
 
 具有配置空间的总线的总线驱动程序必须为其子设备处理此请求 (子 PDOs) 。 函数和筛选器驱动程序不处理此请求。
 
-## <a name="value"></a>值
+## <a name="value"></a>“值”
 
 0x10
 
@@ -81,7 +81,7 @@ ULONG Length
 
 函数和筛选器驱动程序不处理此 IRP;它们将其传递到下一个较低的驱动程序，而不会更改 ** &gt; IoStatus** ，并且不会设置 [*IoCompletion*](/windows-hardware/drivers/ddi/wdm/nc-wdm-io_completion_routine) 例程。
 
-请参阅 [即插即用](https://docs.microsoft.com/windows-hardware/drivers/kernel/implementing-plug-and-play) ，了解用于处理 [即插即用次要 irp](plug-and-play-minor-irps.md)的一般规则。
+请参阅 [即插即用](./introduction-to-plug-and-play.md) ，了解用于处理 [即插即用次要 irp](plug-and-play-minor-irps.md)的一般规则。
 
 **正在发送此 IRP**
 
@@ -113,13 +113,13 @@ ULONG Length
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Header</p></td>
+<td><p>标头</p></td>
 <td>Wdm.h（包括 Wdm.h、Ntddk.h 或 Ntifs.h）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
 [**IRP \_ MN \_ 查询 \_ 接口**](irp-mn-query-interface.md)

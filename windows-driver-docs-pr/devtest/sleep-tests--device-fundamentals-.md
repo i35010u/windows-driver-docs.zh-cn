@@ -4,12 +4,12 @@ description: 设备基础睡眠测试在指定的设备上、之前和之后或�
 ms.assetid: 38B65078-B436-4C24-B973-032702DB9CBE
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: de217170bd9db9d0c23db372ad085a91d7a56176
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 9636b603269ea029a1de25e9023ac0b02c7c5289
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89384035"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90107536"
 ---
 # <a name="sleep-tests-device-fundamentals"></a>睡眠测试（设备基础功能）
 
@@ -36,7 +36,7 @@ ms.locfileid: "89384035"
 <td align="left"><p>此测试执行系统上的关键睡眠状态转换，并对每个睡眠状态周期前后的设备执行 i/o。</p>
 <p><strong>测试二进制文件：</strong> Devfund_Critical_Sleep_With_IO_BeforeAndAfter. wsc</p>
 <p><strong>测试方法：</strong> Critical_Reboot_Restart_With_IO_Before_And_After</p>
-<p><strong>参数：</strong> - 请参阅 <a href="https://docs.microsoft.com/windows-hardware/drivers" data-raw-source="[Device Fundamentals Test Parameters](/windows-hardware/drivers)">设备基础测试参数</a></p>
+<p><strong>参数：</strong> - 请参阅 <a href="/windows-hardware/drivers" data-raw-source="[Device Fundamentals Test Parameters](/windows-hardware/drivers)">设备基础测试参数</a></p>
 <p><em>DQ</em></p>
 <p><em>TestCycles</em></p>
 <p><em>ResumeDelay</em></p>
@@ -47,7 +47,7 @@ ms.locfileid: "89384035"
 <td align="left"><p>此测试执行系统上的关键睡眠状态转换，并在设备上执行 i/o。</p>
 <p><strong>测试二进制文件：</strong> Devfund_Critical_Sleep_With_IO_During. wsc</p>
 <p><strong>测试方法：</strong> Critical_Sleep_With_IO_During</p>
-<p><strong>参数：</strong> - 请参阅 <a href="https://docs.microsoft.com/windows-hardware/drivers" data-raw-source="[Device Fundamentals Test Parameters](/windows-hardware/drivers)">设备基础测试参数</a></p>
+<p><strong>参数：</strong> - 请参阅 <a href="/windows-hardware/drivers" data-raw-source="[Device Fundamentals Test Parameters](/windows-hardware/drivers)">设备基础测试参数</a></p>
 <p><em>DQ</em></p>
 <p><em>TestCycles</em></p>
 <p><em>ResumeDelay</em></p>
@@ -59,7 +59,7 @@ ms.locfileid: "89384035"
 <p>有关详细信息，请参阅 <a href="#about-the-sleep-and-pnp-disable-and-enable-with-io-before-and-after-test" data-raw-source="[About the Sleep and PNP disable and enable with IO Before and After test](#about-the-sleep-and-pnp-disable-and-enable-with-io-before-and-after-test)">关于睡眠和 PNP 在测试前后使用 IO 禁用和启用</a>。</p>
 <p><strong>测试二进制文件：</strong> Devfund_Sleep_PNP_DisableEnable_With_IO_BeforeAndAfter. wsc</p>
 <p><strong>测试方法：</strong> Sleep_PNP_DisableEnable_With_IO_Before_And_After</p>
-<p><strong>参数：</strong> - 请参阅 <a href="https://docs.microsoft.com/windows-hardware/drivers" data-raw-source="[Device Fundamentals Test Parameters](/windows-hardware/drivers)">设备基础测试参数</a></p>
+<p><strong>参数：</strong> - 请参阅 <a href="/windows-hardware/drivers" data-raw-source="[Device Fundamentals Test Parameters](/windows-hardware/drivers)">设备基础测试参数</a></p>
 <p><em>DQ</em></p>
 <p><em>TestCycles</em></p>
 <p><em>ResumeDelay</em></p>
@@ -71,7 +71,7 @@ ms.locfileid: "89384035"
 <p>有关详细信息，请参阅 <a href="#about-the-sleep-with-io-before-and-after-test" data-raw-source="[About the Sleep with IO Before And After test](#about-the-sleep-with-io-before-and-after-test)">关于测试前后 IO 的睡眠</a>。</p>
 <p><strong>测试二进制文件：</strong> Devfund_Sleep_With_IO_BeforeAndAfter. wsc</p>
 <p><strong>测试方法：</strong> Sleep_With_Io_Before_And_After</p>
-<p><strong>参数：</strong> - 请参阅 <a href="https://docs.microsoft.com/windows-hardware/drivers" data-raw-source="[Device Fundamentals Test Parameters](/windows-hardware/drivers)">设备基础测试参数</a></p>
+<p><strong>参数：</strong> - 请参阅 <a href="/windows-hardware/drivers" data-raw-source="[Device Fundamentals Test Parameters](/windows-hardware/drivers)">设备基础测试参数</a></p>
 <p><em>DQ</em></p>
 <p><em>TestCycles</em></p>
 <p><em>ResumeDelay</em></p>
@@ -82,7 +82,7 @@ ms.locfileid: "89384035"
 <td align="left"><p>此测试通过各种睡眠状态循环系统，并在设备上执行 i/o。</p>
 <p><strong>测试二进制文件：</strong> Devfund_Sleep_With_IO_During. wsc</p>
 <p><strong>测试方法：</strong> Sleep_With_IO_During</p>
-<p><strong>参数：</strong> - 请参阅 <a href="https://docs.microsoft.com/windows-hardware/drivers" data-raw-source="[Device Fundamentals Test Parameters](/windows-hardware/drivers)">设备基础测试参数</a></p>
+<p><strong>参数：</strong> - 请参阅 <a href="/windows-hardware/drivers" data-raw-source="[Device Fundamentals Test Parameters](/windows-hardware/drivers)">设备基础测试参数</a></p>
 <p><em>DQ</em></p>
 <p><em>TestCycles</em></p>
 <p><em>ResumeDelay</em></p>
@@ -136,6 +136,4 @@ ms.locfileid: "89384035"
 [Provided WDTF Simple I/O plug-ins](../wdtf/provided-wdtf-simpleio-plug-ins.md)（提供的 WDTF 简单 I/O 插件）
 
 [如何在运行时通过命令提示符测试驱动程序](/windows-hardware/drivers)
-
- 
 

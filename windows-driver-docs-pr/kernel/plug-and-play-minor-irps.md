@@ -4,12 +4,12 @@ description: 即插即用次要 IRP
 ms.date: 08/12/2017
 ms.assetid: eeb7dafd-fb44-4fb7-b5f0-314059ee0093
 ms.localizationpriority: medium
-ms.openlocfilehash: ea39bb895d004770a9382cf2ddd4d5d78d2d73ef
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 9030c1551cb78782fbea0927a372f069fb7d666d
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89191843"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90106848"
 ---
 # <a name="plug-and-play-minor-irps"></a>即插即用次要 IRP
 
@@ -19,7 +19,7 @@ ms.locfileid: "89191843"
 
 本部分介绍发送到驱动程序的 PnP Irp。 所有 PnP Irp 都具有主函数代码 [**IRP \_ MJ \_ PnP**](irp-mj-pnp.md) 和用于指示特定 PnP 请求的次要函数代码。
 
-本部分提供单个 Irp 的参考信息。 有关 Irp 发送顺序的说明，请参阅 [即插即用](https://docs.microsoft.com/windows-hardware/drivers/kernel/implementing-plug-and-play) ，有关如何处理 irp 的详细 [说明，请](./dispatchpnp-routines.md)参阅 PnP 概念和术语的常规讨论。
+本部分提供单个 Irp 的参考信息。 有关 Irp 发送顺序的说明，请参阅 [即插即用](./introduction-to-plug-and-play.md) ，有关如何处理 irp 的详细 [说明，请](./dispatchpnp-routines.md)参阅 PnP 概念和术语的常规讨论。
 
 对于每个 IRP 和每种类型的驱动程序，需要使用驱动程序来处理 IRP，还可以选择处理 IRP，或者不得处理 IRP。 请参阅下表以确定驱动程序将处理哪些 Irp，然后查阅参考页获取有关各个 Irp 的信息。 Irp 按功能顺序列出在表中，并在 IRP 引用页中按字母顺序列出。
 
@@ -30,7 +30,7 @@ PnP 管理器发送这些 Irp。 PnP 驱动程序可以发送其中一些 Irp，
 下面是 PnP Irp 的次要函数代码和处理它们的驱动程序类型：
 
 
-|                              PnP IRP 次要函数代码                              | 值 | Nonbus 设备的函数或筛选器驱动程序 | 用于 bus FDO) 的总线设备 (的函数驱动程序 |  (子 PDOs) 的总线驱动程序或总线筛选器驱动程序 |
+|                              PnP IRP 次要函数代码                              | “值” | Nonbus 设备的函数或筛选器驱动程序 | 用于 bus FDO) 的总线设备 (的函数驱动程序 |  (子 PDOs) 的总线驱动程序或总线筛选器驱动程序 |
 |---------------------------------------------------------------------------------------|---------------------------------------------|----------------------------------------------|--------------------------------------------------|
 |                 [**IRP \_ MN \_ 启动 \_ 设备**](irp-mn-start-device.md)                  |0x00|                  必需                   |                   必需                   |                     必需                     |
 |          [**IRP \_ MN \_ 查询 \_ 删除 \_ 设备**](irp-mn-query-remove-device.md)          |0x01|                  必需                   |                   必需                   |                     必需                     |

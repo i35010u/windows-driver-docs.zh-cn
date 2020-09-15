@@ -3,12 +3,12 @@ description: Winusb.dll 公开 WinUsb_GetPipePolicy 函数以检索管道的默�
 title: 用于管道策略修改的 WinUSB 函数
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f2bb924c9bd066ecea69c545efab29f6b15e683b
-ms.sourcegitcommit: 937974aa9bbe0262a7ffe9631593fab48c4e7492
+ms.openlocfilehash: bac4b2f53f49bf8535e477ec6cd90e50957fddc3
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "90010186"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90107236"
 ---
 # <a name="winusb-functions-for-pipe-policy-modification"></a>用于管道策略修改的 WinUSB 函数
 
@@ -33,7 +33,7 @@ WinUSB 允许您通过将策略应用于终结点的管道来修改其默认行�
 <tr class="header">
 <th>策略编号</th>
 <th>策略名称</th>
-<th>描述</th>
+<th>说明</th>
 <th>端点 (方向) </th>
 <th>默认值</th>
 </tr>
@@ -45,7 +45,7 @@ WinUSB 允许您通过将策略应用于终结点的管道来修改其默认行�
 <td>发送一个长度为零的数据包，该写入请求中的缓冲区是终结点支持的最大数据包大小的倍数。</td>
 <td><p>大容量 () </p>
 <p>中断 () </p></td>
-<td>FALSE</td>
+<td>false</td>
 </tr>
 <tr class="even">
 <td>0x02</td>
@@ -53,7 +53,7 @@ WinUSB 允许您通过将策略应用于终结点的管道来修改其默认行�
 <td>自动清除已停止的管道，而不停止数据流。</td>
 <td><p>大容量 () </p>
 <p>中断 () </p></td>
-<td>FALSE</td>
+<td>false</td>
 </tr>
 <tr class="odd">
 <td>0x03</td>
@@ -71,7 +71,7 @@ WinUSB 允许您通过将策略应用于终结点的管道来修改其默认行�
 <td>当收到短数据包或读取特定字节数时，完成读取请求。 如果文件大小未知，请求将在短数据包上终止。</td>
 <td><p>大容量 () </p>
 <p>中断 () </p></td>
-<td>FALSE</td>
+<td>false</td>
 </tr>
 <tr class="odd">
 <td>0x05</td>
@@ -79,7 +79,7 @@ WinUSB 允许您通过将策略应用于终结点的管道来修改其默认行�
 <td>允许来自返回比调用方请求的数据更多的设备的读取请求。</td>
 <td><p>大容量 () </p>
 <p>中断 () </p></td>
-<td>TRUE</td>
+<td>true</td>
 </tr>
 <tr class="even">
 <td>0x06</td>
@@ -87,7 +87,7 @@ WinUSB 允许您通过将策略应用于终结点的管道来修改其默认行�
 <td>保存读取请求中多余的数据，并将其添加到下一个读取请求或丢弃多余的数据。</td>
 <td><p>大容量 () </p>
 <p>中断 () </p></td>
-<td>FALSE</td>
+<td>false</td>
 </tr>
 <tr class="odd">
 <td>0x07</td>
@@ -95,12 +95,12 @@ WinUSB 允许您通过将策略应用于终结点的管道来修改其默认行�
 <td>绕过排队和错误处理，提高多个读取请求的性能。</td>
 <td><p>大容量 () </p>
 <p>中断 () </p></td>
-<td>FALSE</td>
+<td>false</td>
 </tr>
 <tr class="even">
 <td>0x08</td>
 <td>MAXIMUM_TRANSFER_SIZE</td>
-<td>获取 WinUSB 支持的 USB 传输的最大大小。 这是一个只读策略，可以通过调用 <a href="https://docs.microsoft.com/windows/desktop/api/winusb/nf-winusb-winusb_getpipepolicy" data-raw-source="[&lt;strong&gt;WinUsb_GetPipePolicy&lt;/strong&gt;](/windows/desktop/api/winusb/nf-winusb-winusb_getpipepolicy)"><strong>WinUsb_GetPipePolicy</strong></a>来检索。</td>
+<td>获取 WinUSB 支持的 USB 传输的最大大小。 这是一个只读策略，可以通过调用 <a href="/windows/desktop/api/winusb/nf-winusb-winusb_getpipepolicy" data-raw-source="[&lt;strong&gt;WinUsb_GetPipePolicy&lt;/strong&gt;](/windows/desktop/api/winusb/nf-winusb-winusb_getpipepolicy)"><strong>WinUsb_GetPipePolicy</strong></a>来检索。</td>
 <td><p>大容量 () </p>
 <p>大容量 () </p>
 <p>中断 () </p>
@@ -115,7 +115,7 @@ WinUSB 允许您通过将策略应用于终结点的管道来修改其默认行�
 <p>大容量 () </p>
 <p>中断 () </p>
 <p>中断 () </p></td>
-<td>FALSE</td>
+<td>false</td>
 </tr>
 </tbody>
 </table>
@@ -142,7 +142,7 @@ WinUSB 允许您通过将策略应用于终结点的管道来修改其默认行�
 <td>SHORT_PACKET_TERMINATE (0x01) </td>
 <td>设备要求使用长度为零的数据包终止传输。 大多数设备没有这一要求。</td>
 <td><p>如果已启用 (策略参数值为 <strong>TRUE</strong> 或非零) ，则每个写入请求是终结点支持的最大数据包大小的倍数，后面是长度为零的数据包。</p>
-<p>将数据发送到主机控制器后，WinUSB 会发送一个包含零长度数据包的写入请求，然后完成 <a href="https://docs.microsoft.com/windows/desktop/api/winusb/nf-winusb-winusb_writepipe" data-raw-source="[&lt;strong&gt;WinUsb_WritePipe&lt;/strong&gt;](/windows/desktop/api/winusb/nf-winusb-winusb_writepipe)"><strong>WinUsb_WritePipe</strong></a>创建的请求。</p></td>
+<p>将数据发送到主机控制器后，WinUSB 会发送一个包含零长度数据包的写入请求，然后完成 <a href="/windows/desktop/api/winusb/nf-winusb-winusb_writepipe" data-raw-source="[&lt;strong&gt;WinUsb_WritePipe&lt;/strong&gt;](/windows/desktop/api/winusb/nf-winusb-winusb_writepipe)"><strong>WinUsb_WritePipe</strong></a>创建的请求。</p></td>
 </tr>
 <tr class="even">
 <td>AUTO_CLEAR_STALL</td>
@@ -151,7 +151,7 @@ WinUSB 允许您通过将策略应用于终结点的管道来修改其默认行�
 <li><p>如果启用 (策略参数值为 <strong>TRUE</strong> 或非零) ，将自动清除隔栏条件。 此策略参数不影响控制管道。</p>
 <p>当读取请求失败并且宿主控制器返回 STATUS_CANCELLED 或 STATUS_DEVICE_NOT_CONNECTED 以外的状态时，WinUSB 将在完成失败请求之前重置管道。 重置管道将清除延迟条件，而不会中断数据流。 只要新的传输一直到达设备，数据就会继续流过终结点。 新传输可以在发生延迟时包含队列中的一个传输。</p>
 <p>启用此策略不会对性能产生显著影响。</p></li>
-<li>如果已禁用 (策略参数值为 <strong>FALSE</strong> 或零) ，则在停止传输后到达终结点的所有传输都将失败，直到调用方手动重置终结点的 <a href="https://docs.microsoft.com/windows/desktop/api/winusb/nf-winusb-winusb_resetpipe" data-raw-source="[&lt;strong&gt;WinUsb_ResetPipe&lt;/strong&gt;](/windows/desktop/api/winusb/nf-winusb-winusb_resetpipe)"><strong>WinUsb_ResetPipe</strong></a>管道。</li>
+<li>如果已禁用 (策略参数值为 <strong>FALSE</strong> 或零) ，则在停止传输后到达终结点的所有传输都将失败，直到调用方手动重置终结点的 <a href="/windows/desktop/api/winusb/nf-winusb-winusb_resetpipe" data-raw-source="[&lt;strong&gt;WinUsb_ResetPipe&lt;/strong&gt;](/windows/desktop/api/winusb/nf-winusb-winusb_resetpipe)"><strong>WinUsb_ResetPipe</strong></a>管道。</li>
 </ul></td>
 </tr>
 <tr class="odd">
@@ -208,10 +208,10 @@ WinUSB 允许您通过将策略应用于终结点的管道来修改其默认行�
 <tr class="odd">
 <td>RAW_IO</td>
 <td>性能是优先考虑的，应用程序将对同一终结点同时提交读取请求。
-<p>RAW_IO 在 <a href="https://docs.microsoft.com/windows/desktop/api/winusb/nf-winusb-winusb_readpipe" data-raw-source="[&lt;strong&gt;WinUsb_ReadPipe&lt;/strong&gt;](/windows/desktop/api/winusb/nf-winusb-winusb_readpipe)"><strong>WinUsb_ReadPipe</strong></a>中对调用方传递的缓冲区施加某些限制：</p>
+<p>RAW_IO 在 <a href="/windows/desktop/api/winusb/nf-winusb-winusb_readpipe" data-raw-source="[&lt;strong&gt;WinUsb_ReadPipe&lt;/strong&gt;](/windows/desktop/api/winusb/nf-winusb-winusb_readpipe)"><strong>WinUsb_ReadPipe</strong></a>中对调用方传递的缓冲区施加某些限制：</p>
 <ul>
 <li>缓冲区长度必须是最大终结点数据包大小的倍数。</li>
-<li>长度必须小于或等于 <a href="https://docs.microsoft.com/windows/desktop/api/winusb/nf-winusb-winusb_getpipepolicy" data-raw-source="[&lt;strong&gt;WinUsb_GetPipePolicy&lt;/strong&gt;](/windows/desktop/api/winusb/nf-winusb-winusb_getpipepolicy)"><strong>WinUsb_GetPipePolicy</strong></a>检索 MAXIMUM_TRANSFER_SIZE 的值。</li>
+<li>长度必须小于或等于 <a href="/windows/desktop/api/winusb/nf-winusb-winusb_getpipepolicy" data-raw-source="[&lt;strong&gt;WinUsb_GetPipePolicy&lt;/strong&gt;](/windows/desktop/api/winusb/nf-winusb-winusb_getpipepolicy)"><strong>WinUsb_GetPipePolicy</strong></a>检索 MAXIMUM_TRANSFER_SIZE 的值。</li>
 </ul></td>
 <td><p>如果启用，则传输绕过队列和错误处理，以提升多个读取请求的性能。 WinUSB 按如下所示处理读取请求：</p>
 <ul>

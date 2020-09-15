@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 09/10/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 0614e5228076a10a876d14a5e7b35a6526e92624
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 08c9ee92539b9e748d30bb9a1e5171a4c1421dfb
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89190529"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90107124"
 ---
 # <a name="ksproperty_cameracontrol_extended_focusstate"></a>KSPROPERTY \_ CAMERACONTROL \_ 扩展 \_ FOCUSSTATE
 
@@ -75,7 +75,7 @@ ms.locfileid: "89190529"
 </tr>
 <tr class="odd">
 <td><p>大小</p></td>
-<td><p>这必须是 sizeof (<strong>KSCAMERA_EXTENDEDPROP_HEADER</strong>) + sizeof (<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_value" data-raw-source="[&lt;strong&gt;KSCAMERA_EXTENDEDPROP_VALUE&lt;/strong&gt;](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_value)"><strong>KSCAMERA_EXTENDEDPROP_VALUE</strong></a>) </p></td>
+<td><p>这必须是 sizeof (<strong>KSCAMERA_EXTENDEDPROP_HEADER</strong>) + sizeof (<a href="/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_value" data-raw-source="[&lt;strong&gt;KSCAMERA_EXTENDEDPROP_VALUE&lt;/strong&gt;](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_value)"><strong>KSCAMERA_EXTENDEDPROP_VALUE</strong></a>) </p></td>
 </tr>
 <tr class="even">
 <td><p>结果</p></td>
@@ -87,7 +87,7 @@ ms.locfileid: "89190529"
 </tr>
 <tr class="even">
 <td><p>Flags</p></td>
-<td><p>此字段为只读字段。 这包含驱动程序返回的焦点状态。 有关焦点状态的详细信息，请参阅 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ne-ksmedia-kscamera_extendedprop_focusstate" data-raw-source="[&lt;strong&gt;KSCAMERA_EXTENDEDPROP_FOCUSSTATE&lt;/strong&gt;](/windows-hardware/drivers/ddi/ksmedia/ne-ksmedia-kscamera_extendedprop_focusstate)"><strong>KSCAMERA_EXTENDEDPROP_FOCUSSTATE</strong></a> 主题。</p></td>
+<td><p>此字段为只读字段。 这包含驱动程序返回的焦点状态。 有关焦点状态的详细信息，请参阅 <a href="/windows-hardware/drivers/ddi/ksmedia/ne-ksmedia-kscamera_extendedprop_focusstate" data-raw-source="[&lt;strong&gt;KSCAMERA_EXTENDEDPROP_FOCUSSTATE&lt;/strong&gt;](/windows-hardware/drivers/ddi/ksmedia/ne-ksmedia-kscamera_extendedprop_focusstate)"><strong>KSCAMERA_EXTENDEDPROP_FOCUSSTATE</strong></a> 主题。</p></td>
 </tr>
 </tbody>
 </table>
@@ -101,7 +101,7 @@ ms.locfileid: "89190529"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Header</p></td>
+<td><p>标头</p></td>
 <td>Ksmedia.h</td>
 </tr>
 </tbody>

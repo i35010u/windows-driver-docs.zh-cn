@@ -5,12 +5,12 @@ ms.assetid: 19D98264-325B-4EA4-83BF-BBFECD185E55
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_SRIOV_VF_VENDOR_DEVICE_ID 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 5a462276dfc4ebd08bad84174d3e46939aef0f53
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 38d3f7b6bf5308a413ead41ac88de98857ef8fa8
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89213339"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90106852"
 ---
 # <a name="oid_sriov_vf_vendor_device_id"></a>OID \_ SRIOV \_ VF \_ 供应商 \_ 设备 \_ ID
 
@@ -56,11 +56,11 @@ ms.locfileid: "89213339"
 </tr>
 <tr class="odd">
 <td><p>NDIS_STATUS_INVALID_PARAMETER</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_sriov_vf_vendor_device_id_info" data-raw-source="[&lt;strong&gt;NDIS_SRIOV_VF_VENDOR_DEVICE_ID_INFO&lt;/strong&gt;](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_sriov_vf_vendor_device_id_info)"><strong>NDIS_SRIOV_VF_VENDOR_DEVICE_ID_INFO</strong></a>结构的一个或多个成员的值无效。</p></td>
+<td><p><a href="/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_sriov_vf_vendor_device_id_info" data-raw-source="[&lt;strong&gt;NDIS_SRIOV_VF_VENDOR_DEVICE_ID_INFO&lt;/strong&gt;](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_sriov_vf_vendor_device_id_info)"><strong>NDIS_SRIOV_VF_VENDOR_DEVICE_ID_INFO</strong></a>结构的一个或多个成员的值无效。</p></td>
 </tr>
 <tr class="even">
 <td><p>NDIS_STATUS_INVALID_LENGTH</p></td>
-<td><p>信息缓冲区太短。 NDIS 设置 <strong>数据。METHOD_INFORMATION。</strong> 将 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request" data-raw-source="[&lt;strong&gt;NDIS_OID_REQUEST&lt;/strong&gt;](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)"><strong>NDIS_OID_REQUEST</strong></a> 结构中的成员 BytesNeeded 为所需的最小缓冲区大小。</p></td>
+<td><p>信息缓冲区太短。 NDIS 设置 <strong>数据。METHOD_INFORMATION。</strong> 将 <a href="/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request" data-raw-source="[&lt;strong&gt;NDIS_OID_REQUEST&lt;/strong&gt;](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)"><strong>NDIS_OID_REQUEST</strong></a> 结构中的成员 BytesNeeded 为所需的最小缓冲区大小。</p></td>
 </tr>
 <tr class="odd">
 <td><p>NDIS_STATUS_FAILURE</p></td>
@@ -100,6 +100,4 @@ ms.locfileid: "89213339"
 [**NDIS \_ SRIOV \_ VF \_ 供应商 \_ 设备 \_ ID \_ 信息**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_sriov_vf_vendor_device_id_info)
 
 [OID \_ NIC \_ 交换机 \_ 分配 \_ VF](oid-nic-switch-allocate-vf.md)
-
- 
 

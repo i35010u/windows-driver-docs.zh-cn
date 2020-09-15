@@ -8,12 +8,12 @@ keywords:
 - SYSVAD
 ms.date: 07/20/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 8df72df31b7f2644c290d24b30b98f4091abc1cc
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: fd2b5b9e83611bb757930615e078e9a49ba9eaa3
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89211207"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90107006"
 ---
 # <a name="span-iddebuggerdebug_universal_drivers__kernel-mode_spandebug-drivers---step-by-step-lab-sysvad-kernel-mode"></a><span id="debugger.debug_universal_drivers__kernel-mode_"></span>调试驱动程序-逐步骤实验室 (Sysvad 内核模式) 
 
@@ -416,7 +416,7 @@ fffff801`094d9000 fffff801`09561000   CI         (export symbols)       CI.dll
 
     安装此驱动程序所需的 INF 文件为 *TabletAudioSample*。 在目标计算机上，以管理员身份打开“命令提示符”窗口。 导航到 "驱动程序包" 文件夹，右键单击 "TabletAudioSample" 文件，然后选择 " **安装**"。
 
-    此时将显示一个对话框，指示测试驱动程序是未签名驱动程序。 选择 "仍要继续 **安装此驱动程序** "。
+    此时将显示一个对话框，指示测试驱动程序是未签名驱动程序。 选择“仍然安装此驱动程序”以继续。
 
     ![windows 安全警告-windows 无法验证发布服务器](images/debuglab-image-install-security-warning.png)
 
@@ -425,7 +425,7 @@ fffff801`094d9000 fffff801`09561000   CI         (export symbols)       CI.dll
     `%windir%\inf\setupapi.dev.log`
     >
      
-    有关更多详细说明，请参阅 [配置计算机以进行驱动程序部署、测试和调试](https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/provision-a-target-computer-wdk-8-1)。
+    有关更多详细说明，请参阅 [配置计算机以进行驱动程序部署、测试和调试](../gettingstarted/provision-a-target-computer-wdk-8-1.md)。
 
     INF 文件包含用于安装 *tabletaudiosample.sys*的硬件 ID。 对于 Syvad 示例，硬件 ID 为： `root\sysvad_TabletAudioSample`
 
@@ -1434,7 +1434,7 @@ ffffd001`c3098218 class CMiniportWaveRTStream * stream = 0x00000000`00000000
 
 *在第10节中，您将使用调试器命令来显示进程和线程。*
 
-**处理**
+**Process**
 
 若要更改当前进程上下文，请使用. process &lt; process &gt; 命令。 下面的示例演示如何识别进程并向其切换上下文。
 
@@ -2001,7 +2001,7 @@ fffff803`bb757020 cc              int     3
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">命令</th>
+<th align="left">Command</th>
 <th align="left">说明</th>
 </tr>
 </thead>
@@ -2110,4 +2110,3 @@ OSR <https://www.osr.com/>
 ## <a name="see-also"></a>另请参阅
 
 [Windows 调试入门](getting-started-with-windows-debugging.md) 
-

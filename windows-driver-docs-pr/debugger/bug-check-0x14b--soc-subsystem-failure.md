@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 7790b91e71f51486a85dd6f23207ddbf7e768c29
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 701d09ae26fa008fc36aed518966e8b352628fb0
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89211821"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90107192"
 ---
 # <a name="bug-check-0x14b-soc_subsystem_failure"></a>Bug 检查0x14B： SOC \_ 子系统 \_ 故障
 
@@ -46,7 +46,7 @@ SOC \_ 子系统 \_ 失败 bug 检查的值为0x0000014B。 这表明芯片 (SoC
 <tbody>
 <tr class="odd">
 <td align="left"><p>1</p></td>
-<td align="left"><p><strong><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/ns-ntddk-_soc_subsystem_failure_details" data-raw-source="[SOC_SUBSYSTEM_FAILURE_DETAILS](/windows-hardware/drivers/ddi/ntddk/ns-ntddk-_soc_subsystem_failure_details)">SOC_SUBSYSTEM_FAILURE_DETAILS</a></strong>结构的地址。</p></td>
+<td align="left"><p><strong><a href="/windows-hardware/drivers/ddi/ntddk/ns-ntddk-_soc_subsystem_failure_details" data-raw-source="[SOC_SUBSYSTEM_FAILURE_DETAILS](/windows-hardware/drivers/ddi/ntddk/ns-ntddk-_soc_subsystem_failure_details)">SOC_SUBSYSTEM_FAILURE_DETAILS</a></strong>结构的地址。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>2</p></td>
@@ -137,6 +137,4 @@ Arg4: a126c000, (Optional) address to vendor supplied general purpose data block
 </tr>
 </tbody>
 </table>
-
- 
 

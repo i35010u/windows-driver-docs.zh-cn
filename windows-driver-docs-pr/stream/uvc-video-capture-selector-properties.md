@@ -8,12 +8,12 @@ keywords:
 - PROPSETID_VIDCAP_SELECTOR
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2250f4f6942759dc59b0f476b5fffa1e45293f99
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 147dc21ee1dd40327037489a3a538c71db85b28f
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89192329"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90107118"
 ---
 # <a name="uvc-video-capture-selector-properties"></a>UVC 视频捕获选择器属性
 
@@ -33,17 +33,15 @@ ms.locfileid: "89192329"
 </thead>
 <tbody>
 <tr class="odd">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-selector-source-node-id" data-raw-source="[&lt;strong&gt;KSPROPERTY_SELECTOR_SOURCE_NODE_ID&lt;/strong&gt;](./ksproperty-selector-source-node-id.md)"><strong>KSPROPERTY_SELECTOR_SOURCE_NODE_ID</strong></a></p></td>
+<td><p><a href="/windows-hardware/drivers/stream/ksproperty-selector-source-node-id" data-raw-source="[&lt;strong&gt;KSPROPERTY_SELECTOR_SOURCE_NODE_ID&lt;/strong&gt;](./ksproperty-selector-source-node-id.md)"><strong>KSPROPERTY_SELECTOR_SOURCE_NODE_ID</strong></a></p></td>
 <td><p>指定特定节点的源 pin 标识符。</p></td>
 </tr>
 <tr class="even">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-num-sources" data-raw-source="[&lt;strong&gt;KSPROPERTY_NUM_SOURCES&lt;/strong&gt;](./ksproperty-num-sources.md)"><strong>KSPROPERTY_NUM_SOURCES</strong></a></p></td>
+<td><p><a href="/windows-hardware/drivers/stream/ksproperty-num-sources" data-raw-source="[&lt;strong&gt;KSPROPERTY_NUM_SOURCES&lt;/strong&gt;](./ksproperty-num-sources.md)"><strong>KSPROPERTY_NUM_SOURCES</strong></a></p></td>
 <td><p>指定选择器单元上存在的源端口号。</p></td>
 </tr>
 </tbody>
 </table>
-
- 
 
  
 

@@ -4,12 +4,12 @@ description: 安装收件箱驱动程序的专用版本概述
 ms.assetid: eec9474c-5aad-4b81-b7df-5e89cbfe92ab
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 00238a45878e9a4acba50a03e8bc34599988fae2
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 18a51d1eff4a92186ce44f6fa9ec227051355d07
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89095453"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90106960"
 ---
 # <a name="overview-of-installing-private-builds-of-inbox-drivers"></a>安装收件箱驱动程序的专用版本概述
 
@@ -52,7 +52,5 @@ Microsoft 签名类型包括以下内容：
 
     有关详细信息，请参阅 [将 Windows 配置为平等排列驱动程序签名](configuring-windows-to-rank-driver-signatures-equally.md)。
 
-有关 Windows 如何对驱动程序进行排名的详细信息，请参阅 [Windows 如何选择驱动程序](how-setup-selects-drivers.md)。
-
- 
+有关 Windows 如何对驱动程序进行排名的详细信息，请参阅 [Windows 如何选择驱动程序](./how-windows-selects-a-driver-for-a-device.md)。
 

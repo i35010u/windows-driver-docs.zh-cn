@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2b64a3edae66de42d34e5c1de4fa994ab843131c
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: ac8aecd79b77a07271ca0ed4051546feedc09d2f
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89183955"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90107244"
 ---
 # <a name="ksproperty_videoprocamp_whitebalance_component"></a>KSPROPERTY \_ VIDEOPROCAMP \_ WHITEBALANCE \_ 组件
 
@@ -53,7 +53,7 @@ KSPROPERTY \_ VIDEOPROCAMP \_ WHITEBALANCE \_ COMPONENT 属性指定视频格式
 <td><p>是</p></td>
 <td><p>是</p></td>
 <td><p>节点</p></td>
-<td><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_videoprocamp_node_s2" data-raw-source="[&lt;strong&gt;KSPROPERTY_VIDEOPROCAMP_NODE_S2&lt;/strong&gt;](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_videoprocamp_node_s2)"><strong>KSPROPERTY_VIDEOPROCAMP_NODE_S2</strong></a></td>
+<td><a href="/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_videoprocamp_node_s2" data-raw-source="[&lt;strong&gt;KSPROPERTY_VIDEOPROCAMP_NODE_S2&lt;/strong&gt;](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_videoprocamp_node_s2)"><strong>KSPROPERTY_VIDEOPROCAMP_NODE_S2</strong></a></td>
 <td><p>长整数对</p></td>
 </tr>
 </tbody>
@@ -96,6 +96,4 @@ KSPROPERTY \_ VIDEOPROCAMP \_ WHITEBALANCE \_ COMPONENT 属性指定视频格式
 [**KSPROPERTY**](/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)
 
 [**KSPROPERTY \_ VIDEOPROCAMP \_ 节点 \_ S2**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_videoprocamp_node_s2)
-
- 
 

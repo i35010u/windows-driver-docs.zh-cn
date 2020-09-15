@@ -7,12 +7,12 @@ keywords:
 - 驱动程序定义的回叫对象 WDK 内核
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2ce887c4573323bb370f105b47cfbb323710e640
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: d9269452010346eefd8474b1711d54ebb184c3fe
+ms.sourcegitcommit: a5f76805387760730faed5674d87201ec85b7dd3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89191657"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90112110"
 ---
 # <a name="using-a-driver-defined-callback-object"></a>使用驱动程序定义的回调对象
 
@@ -24,7 +24,7 @@ ms.locfileid: "89191657"
 
 ![说明回调通知注册的示意图](images/3reg-cbk.png)
 
-在打开对象之前，驱动程序必须调用 [**InitializeObjectAttributes**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfwdm/nf-wudfwdm-initializeobjectattributes) 来创建属性块，并指定对象的名称。 在该指针指向属性块后，它将调用[**ExCreateCallback**](/windows-hardware/drivers/ddi/wdm/nf-wdm-excreatecallback)，传递特性指针、要接收回调句柄的位置以及*Create*参数的**FALSE** （表示它需要现有的回调对象）。
+在打开对象之前，驱动程序必须调用 [**InitializeObjectAttributes**](/windows/win32/api/ntdef/nf-ntdef-initializeobjectattributes) 来创建属性块，并指定对象的名称。 在该指针指向属性块后，它将调用[**ExCreateCallback**](/windows-hardware/drivers/ddi/wdm/nf-wdm-excreatecallback)，传递特性指针、要接收回调句柄的位置以及*Create*参数的**FALSE** （表示它需要现有的回调对象）。
 
 然后，该驱动程序可以调用 [**ExRegisterCallback**](/windows-hardware/drivers/ddi/wdm/nf-wdm-exregistercallback) 和返回的句柄来注册其回调例程。
 

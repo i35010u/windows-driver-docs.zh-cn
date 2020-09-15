@@ -3,12 +3,12 @@ description: 编写与 USB 设备通信的 Windows 桌面应用程序的最简�
 title: 编写基于 WinUSB 模板的 Windows 桌面应用
 ms.date: 07/16/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 39e1d1fd4ce5a6c1aa129f40f6a67a1bd39f0b02
-ms.sourcegitcommit: 937974aa9bbe0262a7ffe9631593fab48c4e7492
+ms.openlocfilehash: 6c4cf09d8693b5903c3a2b70b0f2c23e8ca76019
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "90010395"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90107212"
 ---
 # <a name="write-a-windows-desktop-app-based-on-the-winusb-template"></a>编写基于 WinUSB 模板的 Windows 桌面应用
 
@@ -25,7 +25,7 @@ ms.locfileid: "90010395"
 
 1. 在 " **新建项目** " 对话框顶部的 "搜索" 框中，键入 " **USB"。**
 2. 在中间窗格中，选择 " **WinUSB Application (通用) **"。
-3. 选择“**下一页**”。
+3. 选择“下一步”  。
 4. 输入项目名称，选择 "保存位置"，然后选择 " **创建**"。
 
     以下屏幕截图显示了 WinUSB 应用程序的 " **新建项目** " 对话框 ** (通用) ** 模板。
@@ -48,7 +48,7 @@ ms.locfileid: "90010395"
 
 6. 在 " **新建项目** " 对话框顶部的 "搜索" 框中，再次键入 " **USB"。**
 7. 在中间窗格中，选择 " **WINUSB INF 驱动程序包**"。
-8. 选择“**下一页**”。
+8. 选择“下一步”  。
 9. 输入项目名称，然后选择 " **创建**"。
 
     以下屏幕截图显示了**WINUSB INF 驱动程序包**模板的 "**新建项目**" 对话框。
@@ -109,7 +109,7 @@ ms.locfileid: "90010395"
   6. 在 " **USB Application1 包属性页** " 窗口的左窗格中，导航到 " **配置属性 &gt; 驱动程序安装 &gt; 部署**"，如以下屏幕截图所示。
   7. 选中“部署前删除以前的驱动程序版本”。
   8. 对于**远程计算机名**，请选择配置用于测试和调试的计算机名。 在此练习中，我们将使用名为 dbg 目标的计算机。
-  9. 选择 " **安装/重新安装并验证**"。 选择“应用”。 
+  9. 选择 " **安装/重新安装并验证**"。 选择“应用”。
 
         ![winusb 模板部署](images/winusb-template-deployment.png)
 
@@ -353,15 +353,15 @@ Return value:
 
     此调用需要以下项：
 
-   - 一个已初始化的调用方分配的 [**SP \_ 设备 \_ 接口 \_ 数据**](/windows/desktop/api/setupapi/ns-setupapi-_sp_device_interface_data) 结构，它将其 **cbSize** 成员设置为结构的大小。
+   - 一个已初始化的调用方分配的 [**SP \_ 设备 \_ 接口 \_ 数据**](/windows/win32/api/setupapi/ns-setupapi-sp_device_interface_data) 结构，它将其 **cbSize** 成员设置为结构的大小。
    - 步骤1中的 HDEVINFO 句柄。
    - 在 INF 文件中定义的设备接口 GUID。
 
-    [**SetupDiEnumDeviceInterfaces**](/windows/desktop/api/setupapi/nf-setupapi-setupdienumdeviceinterfaces) 为设备接口的指定索引查找设备信息集数组，并用有关接口的基本数据填充已初始化的 [**SP \_ 设备 \_ 接口 \_ 数据**](/windows/desktop/api/setupapi/ns-setupapi-_sp_device_interface_data) 结构。
+    [**SetupDiEnumDeviceInterfaces**](/windows/desktop/api/setupapi/nf-setupapi-setupdienumdeviceinterfaces) 为设备接口的指定索引查找设备信息集数组，并用有关接口的基本数据填充已初始化的 [**SP \_ 设备 \_ 接口 \_ 数据**](/windows/win32/api/setupapi/ns-setupapi-sp_device_interface_data) 结构。
 
     **注意**   若要枚举设备信息集中的所有设备接口，请在循环中调用 [**SetupDiEnumDeviceInterfaces**](/windows/desktop/api/setupapi/nf-setupapi-setupdienumdeviceinterfaces) ，直到该函数返回 **FALSE** ，并且失败的错误代码为 "错误" \_ \_ \_ 。 错误：无法再 \_ \_ \_ 调用 **GetLastError**来检索更多项错误代码。 对于每个迭代，递增成员索引。
 
-    或者，您可以调用 [**SetupDiEnumDeviceInfo**](/windows/desktop/api/setupapi/nf-setupapi-setupdienumdeviceinfo) 来枚举设备信息集，并返回由调用方分配的 [**SP \_ lnk-devinfo \_ 数据**](/windows/desktop/api/setupapi/ns-setupapi-_sp_devinfo_data) 结构中的索引指定的设备接口元素的相关信息。 然后，你可以在[**SetupDiEnumDeviceInterfaces**](/windows/desktop/api/setupapi/nf-setupapi-setupdienumdeviceinterfaces)函数的*DeviceInfoData*参数中传递对此结构的引用。
+    或者，您可以调用 [**SetupDiEnumDeviceInfo**](/windows/desktop/api/setupapi/nf-setupapi-setupdienumdeviceinfo) 来枚举设备信息集，并返回由调用方分配的 [**SP \_ lnk-devinfo \_ 数据**](/windows/win32/api/setupapi/ns-setupapi-sp_devinfo_data) 结构中的索引指定的设备接口元素的相关信息。 然后，你可以在[**SetupDiEnumDeviceInterfaces**](/windows/desktop/api/setupapi/nf-setupapi-setupdienumdeviceinterfaces)函数的*DeviceInfoData*参数中传递对此结构的引用。
 
 3. [**SetupDiGetDeviceInterfaceDetail**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetdeviceinterfacedetaila) 获取设备接口的详细数据。 该信息在 [**SP \_ 设备 \_ 接口 \_ 详细信息 \_ 数据**](/windows/desktop/api/setupapi/ns-setupapi-_sp_device_interface_detail_data_a) 结构中返回。 由于 **SP \_ 设备 \_ 接口 \_ 详细信息 \_ 数据** 结构的大小不同， **SetupDiGetDeviceInterfaceDetail** 调用了两次。 第一次调用获取为 **SP \_ 设备 \_ 接口 \_ 详细信息 \_ 数据** 结构分配的缓冲区大小。 第二次调用用有关接口的详细信息填充分配的缓冲区。
    1. 调用 [**SetupDiGetDeviceInterfaceDetail**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetdeviceinterfacedetaila) ，并将 *DeviceInterfaceDetailData* 参数设置为 **NULL**。 函数在 *requiredlength* 参数中返回正确的缓冲区大小。 此调用失败，出现错误 \_ \_ 缓冲区错误代码。 应为此错误代码。

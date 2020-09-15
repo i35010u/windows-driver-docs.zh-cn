@@ -6,12 +6,12 @@ ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 WSK_TDI_DEVICENAME_MAPPING 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: aa67cd76618e78b4eab9ceb421c586db06a4c847
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 045a892e4f732d7ae6be4d9ab8034d1f4ca62135
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89207114"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90106810"
 ---
 # <a name="wsk_tdi_devicename_mapping"></a>WSK \_ TDI \_ DEVICENAME \_ 映射
 
@@ -30,7 +30,7 @@ WSK 应用程序使用 WSK \_ tdi \_ DEVICENAME \_ 映射客户端控制操作�
 <thead>
 <tr class="header">
 <th>参数</th>
-<th>值</th>
+<th>“值”</th>
 </tr>
 </thead>
 <tbody>
@@ -44,7 +44,7 @@ WSK 应用程序使用 WSK \_ tdi \_ DEVICENAME \_ 映射客户端控制操作�
 </tr>
 <tr class="odd">
 <td><p><em>InputBuffer</em></p></td>
-<td><p>一个指向 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/ns-wsk-_wsk_tdi_map_info" data-raw-source="[&lt;strong&gt;WSK_TDI_MAP_INFO&lt;/strong&gt;](/windows-hardware/drivers/ddi/wsk/ns-wsk-_wsk_tdi_map_info)"><strong>WSK_TDI_MAP_INFO</strong></a> 结构的指针，该结构包含地址族、套接字类型和协议到 <a href="/previous-versions/windows/hardware/network/ff565091(v=vs.85)" data-raw-source="[TDI](/previous-versions/windows/hardware/network/ff565091(v=vs.85))">TDI</a> 设备名称的组合的映射列表。</p></td>
+<td><p>一个指向 <a href="/windows-hardware/drivers/ddi/wsk/ns-wsk-_wsk_tdi_map_info" data-raw-source="[&lt;strong&gt;WSK_TDI_MAP_INFO&lt;/strong&gt;](/windows-hardware/drivers/ddi/wsk/ns-wsk-_wsk_tdi_map_info)"><strong>WSK_TDI_MAP_INFO</strong></a> 结构的指针，该结构包含地址族、套接字类型和协议到 <a href="/previous-versions/windows/hardware/network/ff565091(v=vs.85)" data-raw-source="[TDI](/previous-versions/windows/hardware/network/ff565091(v=vs.85))">TDI</a> 设备名称的组合的映射列表。</p></td>
 </tr>
 <tr class="even">
 <td><p><em>OutputSize</em></p></td>
@@ -92,6 +92,4 @@ WSK 应用程序使用 WSK \_ tdi \_ DEVICENAME \_ 映射客户端控制操作�
 </tr>
 </tbody>
 </table>
-
- 
 

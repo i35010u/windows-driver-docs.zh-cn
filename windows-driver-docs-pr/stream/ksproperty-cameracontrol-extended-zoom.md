@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 09/11/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: adefc90e26419e4d53e4cedcf75e2a725c4d75a4
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 39bdd8e3ea6dba0fcc83537c03c590bbc9e4e4fe
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89192393"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90107266"
 ---
 # <a name="ksproperty_cameracontrol_extended_zoom"></a>KSPROPERTY \_ CAMERACONTROL \_ 扩展 \_ 缩放
 
@@ -70,7 +70,7 @@ ms.locfileid: "89192393"
 </colgroup>
 <thead>
 <tr class="header">
-<th>标志</th>
+<th>Flag</th>
 <th>描述</th>
 </tr>
 </thead>
@@ -116,7 +116,7 @@ ms.locfileid: "89192393"
 </tr>
 <tr class="odd">
 <td><p>大小</p></td>
-<td><p>这必须是 sizeof (<strong>KSCAMERA_EXTENDEDPROP_HEADER</strong>) + sizeof (<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_videoprocsetting" data-raw-source="[&lt;strong&gt;KSCAMERA_EXTENDEDPROP_VIDEOPROCSETTING&lt;/strong&gt;](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_videoprocsetting)"><strong>KSCAMERA_EXTENDEDPROP_VIDEOPROCSETTING</strong></a>) 。</p></td>
+<td><p>这必须是 sizeof (<strong>KSCAMERA_EXTENDEDPROP_HEADER</strong>) + sizeof (<a href="/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_videoprocsetting" data-raw-source="[&lt;strong&gt;KSCAMERA_EXTENDEDPROP_VIDEOPROCSETTING&lt;/strong&gt;](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_videoprocsetting)"><strong>KSCAMERA_EXTENDEDPROP_VIDEOPROCSETTING</strong></a>) 。</p></td>
 </tr>
 <tr class="even">
 <td><p>结果</p></td>
@@ -160,7 +160,7 @@ ms.locfileid: "89192393"
 <td><p>对于 <strong>SET</strong> 操作，VideoProc 必须指定最小/最大值/步骤参数描述的范围内的缩放比例。 对于 <strong>GET</strong> 操作，驱动程序必须返回当前的缩放比例。</p></td>
 </tr>
 <tr class="even">
-<td><p>预留</p></td>
+<td><p>保留</p></td>
 <td><p>这是未使用的。 驱动程序必须忽略此情况。</p></td>
 </tr>
 </tbody>
@@ -177,7 +177,7 @@ ms.locfileid: "89192393"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Header</p></td>
+<td><p>标头</p></td>
 <td>Ksmedia.h</td>
 </tr>
 </tbody>

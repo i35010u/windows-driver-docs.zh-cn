@@ -14,12 +14,12 @@ api_type:
 - COM
 ms.date: 01/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 91c21e70d412e8ece5435eea6358ad4de256ed88
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: d7a96cbd9a1864cce6c80a92dd3ea0a020d5df08
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89063108"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90107282"
 ---
 # <a name="dxva_procampcontroldeviceclassprocampcontrolblt-method"></a>DXVA \_ ProcAmpControlDeviceClass：:P rocampcontrolblt 方法
 
@@ -37,7 +37,7 @@ HRESULT ProcAmpControlBlt(
 );
 ```
 
-<a name="parameters"></a>parameters
+<a name="parameters"></a>参数
 ----------
 
 *lpDDSDstSurface* \[在中， \] 提供指向目标图面的指针。
@@ -86,7 +86,7 @@ HRESULT ProcAmpControlBlt(
 </tr>
 <tr class="even">
 <td align="left"><p><strong>lpInputData</strong></p></td>
-<td align="left"><p>指向 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_procampcontrolblt" data-raw-source="[&lt;strong&gt;DXVA_ProcAmpControlBlt&lt;/strong&gt;](/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_procampcontrolblt)"><strong>DXVA_ProcAmpControlBlt</strong></a> 结构的指针。</p></td>
+<td align="left"><p>指向 <a href="/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_procampcontrolblt" data-raw-source="[&lt;strong&gt;DXVA_ProcAmpControlBlt&lt;/strong&gt;](/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_procampcontrolblt)"><strong>DXVA_ProcAmpControlBlt</strong></a> 结构的指针。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>lpOutputData</strong></p></td>
@@ -111,6 +111,4 @@ HRESULT ProcAmpControlBlt(
 [**DD \_ MOTIONCOMPCALLBACKS**](/windows/desktop/api/ddrawint/ns-ddrawint-dd_motioncompcallbacks)
 
 [**DD \_ CREATEMOCOMPDATA**](/windows/desktop/api/ddrawint/ns-ddrawint-_dd_createmocompdata)
-
- 
 

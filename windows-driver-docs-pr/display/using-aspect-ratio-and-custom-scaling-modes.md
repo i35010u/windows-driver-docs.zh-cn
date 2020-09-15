@@ -7,12 +7,12 @@ keywords:
 - 自定义缩放 WDK 显示
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 152753658b4a8b346dfb83a61626e0a221556856
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 4883a08a70532c37279e5faeff5ab80c493f2fb7
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89067144"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90107278"
 ---
 # <a name="using-aspect-ratio-and-custom-scaling-modes"></a>使用纵横比和自定义缩放模式
 
@@ -59,7 +59,7 @@ ms.locfileid: "89067144"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left"><a href="https://docs.microsoft.com/windows/desktop/api/winuser/nf-winuser-setdisplayconfig" data-raw-source="[&lt;strong&gt;SetDisplayConfig&lt;/strong&gt;](/windows/desktop/api/winuser/nf-winuser-setdisplayconfig)"><strong>SetDisplayConfig</strong></a> API 缩放值</th>
+<th align="left"><a href="/windows/desktop/api/winuser/nf-winuser-setdisplayconfig" data-raw-source="[&lt;strong&gt;SetDisplayConfig&lt;/strong&gt;](/windows/desktop/api/winuser/nf-winuser-setdisplayconfig)"><strong>SetDisplayConfig</strong></a> API 缩放值</th>
 <th align="left">DDI 缩放值</th>
 </tr>
 </thead>
@@ -103,7 +103,7 @@ ms.locfileid: "89067144"
 
 **DXGKDDI \_接口 \_ 版本** &lt; **DXGKDDI \_ 接口 \_ 版本 \_ WIN7**
 
-和
+以及
 
 &gt;= **DXGKDDI \_ 接口 \_ 版本 \_ VISTA**
 
@@ -134,6 +134,4 @@ Call center.dmm 将始终确认驱动程序接口 &gt; =  **DXGKDDI \_ 接口 \_
 随 Windows 7 引入的缩放类型 **D3DKMDT \_ VPPS \_ ASPECTRATIOCENTEREDMAX** 和 **D3DKMDT \_ VPPS \_ 自定义** 的值存储在与 (GPU) 的图形处理单元关联的 CCD 连接数据库中。 如果用户将监视器从支持这些缩放成员的驱动程序移动到另一个 GPU，则原始驱动程序可能不支持第二个 GPU。 在这种情况下，操作系统会将这些缩放类型映射到系统默认缩放。
 
 如果两个 Gpu 都支持缩放类型 **D3DKMDT \_ VPPS \_ ASPECTRATIOCENTEREDMAX** 和 **D3DKMDT \_ VPPS \_ custom**，并且第一个 GPU 的驱动程序实现了 **D3DKMDT \_ VPPS \_ 自** 定义缩放请求，则当用户将监视器切换到第二个 gpu 时，第二个 gpu 的驱动程序可能不知道如何解释自定义的缩放请求。 在这种情况下，第二个驱动程序应失败对 [**DxgkDdiCommitVidPn**](/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_commitvidpn) 函数的调用，并且应返回 **状态 \_ 图形 \_ VIDPN \_ 模态 \_ 不 \_ 受支持** 的状态代码; 操作系统将此缩放类型映射到系统默认缩放。
-
- 
 

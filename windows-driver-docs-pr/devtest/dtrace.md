@@ -13,12 +13,12 @@ keywords:
 - 跟踪消息格式化文件 WDK
 ms.date: 11/14/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: c0a699112132e517f24bdb2284af31cb14b5245c
-ms.sourcegitcommit: 9e5a99dc75dfee3caa9a242adc0ed22ae4df9f29
+ms.openlocfilehash: 1911cf1732ce9ebc5ca356b05ce4e25f721f56d0
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89043111"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90106806"
 ---
 # <a name="dtrace-on-windows"></a>Windows 上的 DTrace
 
@@ -134,7 +134,7 @@ C:\> dtrace -lvn syscall:::
 
 对于每个指令集，都有少量函数不调用其他函数，并且由编译器高度优化 (称为叶函数) 无法通过 FBT 进行检测。 DTrace 中不存在对这些函数的探测。
 
-命令 `dtrace -ln fbt:nt::` 将列出可用于 nt 模块的所有探测及其参数。 使用 "调试器 [lm (列出加载的模块") ](https://docs.microsoft.com/windows-hardware/drivers/debugger/lm--list-loaded-modules-) 命令列出所有可用模块。
+命令 `dtrace -ln fbt:nt::` 将列出可用于 nt 模块的所有探测及其参数。 使用 "调试器 [lm (列出加载的模块") ](../debugger/lm--list-loaded-modules-.md) 命令列出所有可用模块。
 
 ```dtrace
 C:\>dtrace -ln "fbt:nt::"
@@ -154,7 +154,7 @@ C:\>dtrace -ln "fbt:nt::"
 
 使用 DTrace PID 提供程序，可以跟踪用户模式进程（如 web 浏览器或数据库）的内部执行。 你还可以在启动进程时附加 DTrace，以便调试进程启动问题。 作为 PID 定义的一部分，你可以指定在进程中定义的函数，并使用函数中的通配符 * ) 指定 (或所有偏移量。 PID 提供程序要求在执行脚本时启动或运行二进制文件。
 
-此示例命令显示与 notepad.exe 关联的 PID 中特定调用的相关信息。 使用 "调试器 [lm (列出加载的模块") ](https://docs.microsoft.com/windows-hardware/drivers/debugger/lm--list-loaded-modules-) 命令列出所有可用模块。
+此示例命令显示与 notepad.exe 关联的 PID 中特定调用的相关信息。 使用 "调试器 [lm (列出加载的模块") ](../debugger/lm--list-loaded-modules-.md) 命令列出所有可用模块。
 
 ```dtrace
 C:\Windows\system32>dtrace -ln "pid$target:ntdll:RtlAllocateHeap:entry" -c notepad.exe
@@ -212,7 +212,7 @@ mkdir c:\symbols
 set _NT_SYMBOL_PATH=srv*C:\symbols*https://msdl.microsoft.com/download/symbols 
 ```
 
-有关符号路径的详细信息，请参阅 [Windows 调试器的符号路径](https://docs.microsoft.com/windows-hardware/drivers/debugger/symbol-path)。
+有关符号路径的详细信息，请参阅 [Windows 调试器的符号路径](../debugger/symbol-path.md)。
 
 ### <a name="using-dtrace-inside-of-a-virtual-machine"></a>在虚拟机内使用 DTrace
 
@@ -399,7 +399,7 @@ C:\> dtrace -qn "pid$target:::entry { @k[probemod] = count();} tick-10s{printa(@
 
 ```
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 [DTrace Windows 编程](dtrace-programming.md)
 

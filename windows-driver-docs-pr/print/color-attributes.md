@@ -7,12 +7,12 @@ keywords:
 - 常规打印机属性 WDK Unidrv，color
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 129b2054bfcc1c29e4d04feb875b37014b58d518
-ms.sourcegitcommit: 51cba71be022c726c04c29ba5c0360860b65d7a4
+ms.openlocfilehash: d4d801d408234105fb1b228b94eca2d2bff691fe
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/09/2020
-ms.locfileid: "89562225"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90107088"
 ---
 # <a name="color-attributes"></a>颜色属性
 
@@ -56,7 +56,7 @@ ms.locfileid: "89562225"
 <tr class="even">
 <td><p><strong></em>EnableGDIColorMapping</strong></p></td>
 <td><p><strong>TRUE</strong> 或 <strong>FALSE</strong>。 指示 GDI 是否应执行从显示到打印机颜色空间的 gamut 映射。</p></td>
-<td><p>可选。 如果未指定，则默认值为 <strong>FALSE</strong>。 如果 <strong>为 TRUE</strong>，则 Unidrv 设置 <a href="https://docs.microsoft.com/windows/win32/api/winddi/ns-winddi-gdiinfo" data-raw-source="[&lt;strong&gt;GDIINFO&lt;/strong&gt;](/windows/win32/api/winddi/ns-winddi-gdiinfo)"><strong>GDIINFO</strong></a> 结构中的 HT_FLAG_DO_DEVCLR_XFORM 标志。</p></td>
+<td><p>可选。 如果未指定，则默认值为 <strong>FALSE</strong>。 如果 <strong>为 TRUE</strong>，则 Unidrv 设置 <a href="/windows/win32/api/winddi/ns-winddi-gdiinfo" data-raw-source="[&lt;strong&gt;GDIINFO&lt;/strong&gt;](/windows/win32/api/winddi/ns-winddi-gdiinfo)"><strong>GDIINFO</strong></a> 结构中的 HT_FLAG_DO_DEVCLR_XFORM 标志。</p></td>
 </tr>
 <tr class="odd">
 <td><p><strong><em>MagentaInCyanDye</strong></p></td>
@@ -91,6 +91,4 @@ ms.locfileid: "89562225"
  
 
 有关此页上列出的颜色属性的示例，请参阅 [示例 GPD 文件](sample-gpd-files.md)。
-
- 
 

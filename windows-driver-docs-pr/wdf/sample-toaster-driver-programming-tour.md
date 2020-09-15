@@ -4,12 +4,12 @@ description: 本主题提供了 Toaster 示例的代码演练，其中包含内�
 ms.assetid: 5977AC09-AB53-4CA4-A35A-0E5A1FEE936F
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5a7e8d9cd2fe21ce7f168df2d4f3bda299f19836
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 8019ff90d605d72f1b73e6c56543e12fa802fbae
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89189635"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90107160"
 ---
 # <a name="sample-toaster-driver-programming-tour"></a>示例 Toaster 驱动程序编程指南
 
@@ -87,17 +87,17 @@ KMDF 总线驱动程序为 toaster 总线控制器服务，枚举接通电源的
   <thead>
   <tr class="header">
   <th align="left">术语</th>
-  <th align="left">描述</th>
+  <th align="left">说明</th>
   </tr>
   </thead>
   <tbody>
   <tr class="odd">
   <td align="left"><p><a href="" id="---------------------identification-description"></a> 标识描述</p></td>
-  <td align="left"><p>标识说明是一个结构，其中包含用于唯一标识驱动程序所枚举的每个设备的信息。 驱动程序定义此结构，但其第一个成员必须是 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfchildlist/ns-wdfchildlist-_wdf_child_identification_description_header" data-raw-source="[&lt;strong&gt;WDF_CHILD_IDENTIFICATION_DESCRIPTION_HEADER&lt;/strong&gt;](/windows-hardware/drivers/ddi/wdfchildlist/ns-wdfchildlist-_wdf_child_identification_description_header)"><strong>WDF_CHILD_IDENTIFICATION_DESCRIPTION_HEADER</strong></a> 结构。</p></td>
+  <td align="left"><p>标识说明是一个结构，其中包含用于唯一标识驱动程序所枚举的每个设备的信息。 驱动程序定义此结构，但其第一个成员必须是 <a href="/windows-hardware/drivers/ddi/wdfchildlist/ns-wdfchildlist-_wdf_child_identification_description_header" data-raw-source="[&lt;strong&gt;WDF_CHILD_IDENTIFICATION_DESCRIPTION_HEADER&lt;/strong&gt;](/windows-hardware/drivers/ddi/wdfchildlist/ns-wdfchildlist-_wdf_child_identification_description_header)"><strong>WDF_CHILD_IDENTIFICATION_DESCRIPTION_HEADER</strong></a> 结构。</p></td>
   </tr>
   <tr class="even">
   <td align="left"><p><a href="" id="---------------------address-description"></a> 地址说明</p></td>
-  <td align="left"><p>地址说明是一个结构，其中包含驱动程序所需的信息，以便在设备接通电源的情况下可以在设备总线上访问设备。 驱动程序定义此结构，但其第一个成员必须是 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfchildlist/ns-wdfchildlist-_wdf_child_identification_description_header" data-raw-source="[&lt;strong&gt;WDF_CHILD_IDENTIFICATION_DESCRIPTION_HEADER&lt;/strong&gt;](/windows-hardware/drivers/ddi/wdfchildlist/ns-wdfchildlist-_wdf_child_identification_description_header)"><strong>WDF_CHILD_IDENTIFICATION_DESCRIPTION_HEADER</strong></a> 结构。 地址说明是可选的。 此示例不使用地址说明。</p></td>
+  <td align="left"><p>地址说明是一个结构，其中包含驱动程序所需的信息，以便在设备接通电源的情况下可以在设备总线上访问设备。 驱动程序定义此结构，但其第一个成员必须是 <a href="/windows-hardware/drivers/ddi/wdfchildlist/ns-wdfchildlist-_wdf_child_identification_description_header" data-raw-source="[&lt;strong&gt;WDF_CHILD_IDENTIFICATION_DESCRIPTION_HEADER&lt;/strong&gt;](/windows-hardware/drivers/ddi/wdfchildlist/ns-wdfchildlist-_wdf_child_identification_description_header)"><strong>WDF_CHILD_IDENTIFICATION_DESCRIPTION_HEADER</strong></a> 结构。 地址说明是可选的。 此示例不使用地址说明。</p></td>
   </tr>
   </tbody>
   </table>

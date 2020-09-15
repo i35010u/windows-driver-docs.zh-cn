@@ -3,12 +3,12 @@ description: Windows. u 命名空间提供 Api 以与外部 USB 设备进行通�
 title: USB 设备的 UWP 应用
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8b96e0680bbf3bd674d18e4a6230d55519d13c4a
-ms.sourcegitcommit: 937974aa9bbe0262a7ffe9631593fab48c4e7492
+ms.openlocfilehash: 30bd5cd719cad00928b6a1924533248087b7bcbc
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "90010361"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90106924"
 ---
 # <a name="uwp-app-for-a-usb-device"></a>USB 设备的 UWP 应用
 
@@ -26,7 +26,7 @@ Windows [**应用**](/uwp/api/Windows.Devices.Usb) 程序提供了一种方法�
 <thead>
 <tr class="header">
 <th>主题</th>
-<th>描述</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>
@@ -36,12 +36,12 @@ Windows [**应用**](/uwp/api/Windows.Devices.Usb) 程序提供了一种方法�
 </tr>
 <tr class="even">
 <td><p><a href="updating-the-app-manifest-with-usb-device-capabilities.md" data-raw-source="[How to add USB device capabilities to the app manifest](updating-the-app-manifest-with-usb-device-capabilities.md)">如何将 USB 设备功能添加到应用部件清单</a></p></td>
-<td><p>本主题介绍使用 <a href="https://docs.microsoft.com/uwp/api/Windows.Devices.Usb" data-raw-source="[&lt;strong&gt;Windows.Devices.Usb&lt;/strong&gt;](/uwp/api/Windows.Devices.Usb)"><strong>Windows Usb</strong></a> 命名空间的 windows 应用程序所需的设备功能。</p></td>
+<td><p>本主题介绍使用 <a href="/uwp/api/Windows.Devices.Usb" data-raw-source="[&lt;strong&gt;Windows.Devices.Usb&lt;/strong&gt;](/uwp/api/Windows.Devices.Usb)"><strong>Windows Usb</strong></a> 命名空间的 windows 应用程序所需的设备功能。</p></td>
 </tr>
 <tr class="odd">
 <td><p><a href="how-to-connect-to-a-usb-device--uwp-app-.md" data-raw-source="[How to connect to a USB device (UWP app)](how-to-connect-to-a-usb-device--uwp-app-.md)">如何连接到 USB 设备（UWP 应用）</a></p></td>
 <td><p>在 Windows 8.1 中，可以编写与 USB 设备交互的 UWP 应用。 应用可以发送控制命令、获取设备信息，以及在大容量和中断终结点之间读取和写入数据。 在执行所有这些操作之前，必须找到设备并建立连接。</p>
-<p>在此部分中，你将了解如何使用 <a href="https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration.DeviceWatcher" data-raw-source="[&lt;strong&gt;DeviceWatcher&lt;/strong&gt;](/uwp/api/Windows.Devices.Enumeration.DeviceWatcher)"><strong>DeviceWatcher</strong></a> 对象查找设备，然后打开该设备，开始从你的应用进行通信。 你还将了解如何在使用完设备后关闭设备。</p></td>
+<p>在此部分中，你将了解如何使用 <a href="/uwp/api/Windows.Devices.Enumeration.DeviceWatcher" data-raw-source="[&lt;strong&gt;DeviceWatcher&lt;/strong&gt;](/uwp/api/Windows.Devices.Enumeration.DeviceWatcher)"><strong>DeviceWatcher</strong></a> 对象查找设备，然后打开该设备，开始从你的应用进行通信。 你还将了解如何在使用完设备后关闭设备。</p></td>
 </tr>
 <tr class="even">
 <td><p><a href="how-to-send-a-usb-control-transfer--uwp-app-.md" data-raw-source="[How to send a USB control transfer (UWP app)](how-to-send-a-usb-control-transfer--uwp-app-.md)">如何发送 USB 控制传输（UWP 应用）</a></p></td>
@@ -61,7 +61,7 @@ Windows [**应用**](/uwp/api/Windows.Devices.Usb) 程序提供了一种方法�
 </tr>
 <tr class="even">
 <td><p><a href="how-to-select-a-usb-interface-setting--uwp-app-.md" data-raw-source="[How to select a USB interface setting (UWP app)](how-to-select-a-usb-interface-setting--uwp-app-.md)">如何选择 USB 接口设置（UWP 应用）</a></p></td>
-<td><p>在本主题中，你将了解如何更改 USB 接口内的设置。 你将使用 <a href="https://docs.microsoft.com/uwp/api/Windows.Devices.Usb.UsbInterfaceSetting" data-raw-source="[&lt;strong&gt;UsbInterfaceSetting&lt;/strong&gt;](/uwp/api/Windows.Devices.Usb.UsbInterfaceSetting)"><strong>UsbInterfaceSetting</strong></a> 对象获取当前设置并在接口中设置设置。</p></td>
+<td><p>在本主题中，你将了解如何更改 USB 接口内的设置。 你将使用 <a href="/uwp/api/Windows.Devices.Usb.UsbInterfaceSetting" data-raw-source="[&lt;strong&gt;UsbInterfaceSetting&lt;/strong&gt;](/uwp/api/Windows.Devices.Usb.UsbInterfaceSetting)"><strong>UsbInterfaceSetting</strong></a> 对象获取当前设置并在接口中设置设置。</p></td>
 </tr>
 </tbody>
 </table>

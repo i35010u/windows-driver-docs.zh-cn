@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 57b6ffde781f9e0420c83f052e32ebe934c71aa0
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 5cdd00441841a6a4cbab5b4693509261837669ab
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89192997"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90107514"
 ---
 # <a name="ksproperty_cameracontrol_pantilt"></a>KSPROPERTY \_ CAMERACONTROL \_ PANTILT
 
@@ -53,7 +53,7 @@ KSPROPERTY \_ CAMERACONTROL \_ PANTILT 属性指定绝对平移和倾斜设置�
 <td><p>是</p></td>
 <td><p>是</p></td>
 <td><p>筛选器或节点</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_cameracontrol_s2" data-raw-source="[&lt;strong&gt;KSPROPERTY_CAMERACONTROL_S2&lt;/strong&gt;](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_cameracontrol_s2)"><strong>KSPROPERTY_CAMERACONTROL_S2</strong></a> 或 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_cameracontrol_node_s2" data-raw-source="[&lt;strong&gt;KSPROPERTY_CAMERACONTROL_NODE_S2&lt;/strong&gt;](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_cameracontrol_node_s2)"><strong>KSPROPERTY_CAMERACONTROL_NODE_S2</strong></a> ，具体取决于请求是用于筛选器还是节点</p></td>
+<td><p><a href="/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_cameracontrol_s2" data-raw-source="[&lt;strong&gt;KSPROPERTY_CAMERACONTROL_S2&lt;/strong&gt;](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_cameracontrol_s2)"><strong>KSPROPERTY_CAMERACONTROL_S2</strong></a> 或 <a href="/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_cameracontrol_node_s2" data-raw-source="[&lt;strong&gt;KSPROPERTY_CAMERACONTROL_NODE_S2&lt;/strong&gt;](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_cameracontrol_node_s2)"><strong>KSPROPERTY_CAMERACONTROL_NODE_S2</strong></a> ，具体取决于请求是用于筛选器还是节点</p></td>
 <td><p>长整数对</p></td>
 </tr>
 </tbody>
@@ -69,7 +69,7 @@ KSPROPERTY \_ CAMERACONTROL \_ PANTILT 属性指定绝对平移和倾斜设置�
 
 倾斜请求时，正值会向上倾斜摄像机，负值将向下倾斜相机。
 
-<a name="remarks"></a>注解
+<a name="remarks"></a>备注
 -------
 
 [**KSPROPERTY \_ CAMERACONTROL \_ s2**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_cameracontrol_s2)或[**KSPROPERTY \_ CAMERACONTROL \_ 节点 \_ s2**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_cameracontrol_node_s2)结构的**Value1**成员指定平移设置。 **Value2**成员指定倾斜设置。
@@ -88,18 +88,16 @@ KSPROPERTY \_ CAMERACONTROL \_ PANTILT 属性指定绝对平移和倾斜设置�
 <td><p>适用于 windows Vista 和更高版本的 Windows 操作系统。</p></td>
 </tr>
 <tr class="even">
-<td><p>Header</p></td>
+<td><p>标头</p></td>
 <td>Ksmedia (包含 Ksmedia) </td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
 [**KSPROPERTY \_ CAMERACONTROL \_ S2**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_cameracontrol_s2)
 
 [**KSPROPERTY \_ CAMERACONTROL \_ 节点 \_ S2**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_cameracontrol_node_s2)
-
- 
 

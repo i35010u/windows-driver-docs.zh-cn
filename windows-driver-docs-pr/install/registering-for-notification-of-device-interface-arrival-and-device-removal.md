@@ -4,12 +4,12 @@ description: 本主题介绍用户模式应用程序或驱动程序如何注册�
 ms.assetid: 665E7881-F49C-4FC1-971C-1762B7D0C26E
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fe23bfb29474cc61e6b255ebd5b73f5e756e15d7
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 4f284011f3623896d0c8cda7e922107b4dcf87b2
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89095669"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90107502"
 ---
 # <a name="registering-for-notification-of-device-interface-arrival-and-device-removal"></a>注册获取设备接口到达和设备删除通知
 
@@ -51,17 +51,17 @@ ms.locfileid: "89095669"
    <tr class="even">
    <td align="left"><strong>CM_NOTIFY_ACTION_DEVICEQUERYREMOVEFAILED</strong></td>
    <td align="left"><p>查询删除失败，因此设备及其接口仍然有效。 若要继续向接口发送 i/o，请打开该接口的新句柄。</p>
-   <p>首先，通过调用 <a href="https://docs.microsoft.com/windows/desktop/api/cfgmgr32/nf-cfgmgr32-cm_unregister_notification" data-raw-source="[&lt;strong&gt;CM_Unregister_Notification&lt;/strong&gt;](/windows/desktop/api/cfgmgr32/nf-cfgmgr32-cm_unregister_notification)"><strong>CM_Unregister_Notification</strong></a>注销旧句柄的通知。 您必须从延迟的例程执行此操作，因为您无法从正在取消注册的通知句柄的通知回调调用 <strong>CM_Unregister_Notification</strong> 。  有关详细信息，请参阅<a href="https://docs.microsoft.com/windows/desktop/api/cfgmgr32/nf-cfgmgr32-cm_unregister_notification" data-raw-source="[&lt;strong&gt;CM_Unregister_Notification&lt;/strong&gt;](/windows/desktop/api/cfgmgr32/nf-cfgmgr32-cm_unregister_notification)"><strong>CM_Unregister_Notification</strong></a>的 "<strong>备注</strong>" 部分。</p>
-   <p>然后，在延迟例程中继续，或在通知回调中返回 <a href="https://docs.microsoft.com/windows/desktop/api/fileapi/nf-fileapi-createfilea" data-raw-source="[&lt;strong&gt;CreateFile&lt;/strong&gt;](/windows/desktop/api/fileapi/nf-fileapi-createfilea)"><strong>CreateFile</strong></a> 以创建新句柄。 然后，调用新句柄 <a href="https://docs.microsoft.com/windows/desktop/api/cfgmgr32/nf-cfgmgr32-cm_register_notification" data-raw-source="[&lt;strong&gt;CM_Register_Notification&lt;/strong&gt;](/windows/desktop/api/cfgmgr32/nf-cfgmgr32-cm_register_notification)"><strong>CM_Register_Notification</strong></a> ，并 <strong>CM_NOTIFY_FILTER_TYPE_DEVICEHANDLE</strong>。</p>
+   <p>首先，通过调用 <a href="/windows/desktop/api/cfgmgr32/nf-cfgmgr32-cm_unregister_notification" data-raw-source="[&lt;strong&gt;CM_Unregister_Notification&lt;/strong&gt;](/windows/desktop/api/cfgmgr32/nf-cfgmgr32-cm_unregister_notification)"><strong>CM_Unregister_Notification</strong></a>注销旧句柄的通知。 您必须从延迟的例程执行此操作，因为您无法从正在取消注册的通知句柄的通知回调调用 <strong>CM_Unregister_Notification</strong> 。  有关详细信息，请参阅<a href="/windows/desktop/api/cfgmgr32/nf-cfgmgr32-cm_unregister_notification" data-raw-source="[&lt;strong&gt;CM_Unregister_Notification&lt;/strong&gt;](/windows/desktop/api/cfgmgr32/nf-cfgmgr32-cm_unregister_notification)"><strong>CM_Unregister_Notification</strong></a>的 "<strong>备注</strong>" 部分。</p>
+   <p>然后，在延迟例程中继续，或在通知回调中返回 <a href="/windows/desktop/api/fileapi/nf-fileapi-createfilea" data-raw-source="[&lt;strong&gt;CreateFile&lt;/strong&gt;](/windows/desktop/api/fileapi/nf-fileapi-createfilea)"><strong>CreateFile</strong></a> 以创建新句柄。 然后，调用新句柄 <a href="/windows/desktop/api/cfgmgr32/nf-cfgmgr32-cm_register_notification" data-raw-source="[&lt;strong&gt;CM_Register_Notification&lt;/strong&gt;](/windows/desktop/api/cfgmgr32/nf-cfgmgr32-cm_register_notification)"><strong>CM_Register_Notification</strong></a> ，并 <strong>CM_NOTIFY_FILTER_TYPE_DEVICEHANDLE</strong>。</p>
    <p>请注意，如果在发送<strong>CM_NOTIFY_ACTION_DEVICEQUERYREMOVE</strong>通知后，在正在删除查询的设备上注册通知，则在未首先收到<strong>CM_NOTIFY_ACTION_DEVICEQUERYREMOVE</strong>通知的情况下，你可能会收到<strong>CM_NOTIFY_ACTION_DEVICEQUERYREMOVEFAILED</strong>通知。</p></td>
    </tr>
    <tr class="odd">
    <td align="left"><strong>CM_NOTIFY_ACTION_DEVICEREMOVEPENDING</strong></td>
-   <td align="left"><p>调用 <a href="https://docs.microsoft.com/windows/desktop/api/cfgmgr32/nf-cfgmgr32-cm_unregister_notification" data-raw-source="[&lt;strong&gt;CM_Unregister_Notification&lt;/strong&gt;](/windows/desktop/api/cfgmgr32/nf-cfgmgr32-cm_unregister_notification)"><strong>CM_Unregister_Notification</strong></a> 以注销句柄的通知。 必须从延迟例程执行此操作。  有关详细信息，请参阅<a href="https://docs.microsoft.com/windows/desktop/api/cfgmgr32/nf-cfgmgr32-cm_unregister_notification" data-raw-source="[&lt;strong&gt;CM_Unregister_Notification&lt;/strong&gt;](/windows/desktop/api/cfgmgr32/nf-cfgmgr32-cm_unregister_notification)"><strong>CM_Unregister_Notification</strong></a>的 "<strong>备注</strong>" 部分。  如果仍有设备的打开句柄，请调用 <a href="https://docs.microsoft.com/windows/desktop/api/handleapi/nf-handleapi-closehandle" data-raw-source="[&lt;strong&gt;CloseHandle&lt;/strong&gt;](/windows/desktop/api/handleapi/nf-handleapi-closehandle)"><strong>CloseHandle</strong></a> 关闭设备句柄。</p></td>
+   <td align="left"><p>调用 <a href="/windows/desktop/api/cfgmgr32/nf-cfgmgr32-cm_unregister_notification" data-raw-source="[&lt;strong&gt;CM_Unregister_Notification&lt;/strong&gt;](/windows/desktop/api/cfgmgr32/nf-cfgmgr32-cm_unregister_notification)"><strong>CM_Unregister_Notification</strong></a> 以注销句柄的通知。 必须从延迟例程执行此操作。  有关详细信息，请参阅<a href="/windows/desktop/api/cfgmgr32/nf-cfgmgr32-cm_unregister_notification" data-raw-source="[&lt;strong&gt;CM_Unregister_Notification&lt;/strong&gt;](/windows/desktop/api/cfgmgr32/nf-cfgmgr32-cm_unregister_notification)"><strong>CM_Unregister_Notification</strong></a>的 "<strong>备注</strong>" 部分。  如果仍有设备的打开句柄，请调用 <a href="/windows/desktop/api/handleapi/nf-handleapi-closehandle" data-raw-source="[&lt;strong&gt;CloseHandle&lt;/strong&gt;](/windows/desktop/api/handleapi/nf-handleapi-closehandle)"><strong>CloseHandle</strong></a> 关闭设备句柄。</p></td>
    </tr>
    <tr class="even">
    <td align="left"><strong>CM_NOTIFY_ACTION_DEVICEREMOVECOMPLETE</strong></td>
-   <td align="left"><p>调用 <a href="https://docs.microsoft.com/windows/desktop/api/cfgmgr32/nf-cfgmgr32-cm_unregister_notification" data-raw-source="[&lt;strong&gt;CM_Unregister_Notification&lt;/strong&gt;](/windows/desktop/api/cfgmgr32/nf-cfgmgr32-cm_unregister_notification)"><strong>CM_Unregister_Notification</strong></a> 以注销句柄的通知。 必须从延迟例程执行此操作。  有关详细信息，请参阅<a href="https://docs.microsoft.com/windows/desktop/api/cfgmgr32/nf-cfgmgr32-cm_unregister_notification" data-raw-source="[&lt;strong&gt;CM_Unregister_Notification&lt;/strong&gt;](/windows/desktop/api/cfgmgr32/nf-cfgmgr32-cm_unregister_notification)"><strong>CM_Unregister_Notification</strong></a>的 "<strong>备注</strong>" 部分。  如果仍有设备的打开句柄，请调用 <a href="https://docs.microsoft.com/windows/desktop/api/handleapi/nf-handleapi-closehandle" data-raw-source="[&lt;strong&gt;CloseHandle&lt;/strong&gt;](/windows/desktop/api/handleapi/nf-handleapi-closehandle)"><strong>CloseHandle</strong></a> 关闭设备句柄。</p></td>
+   <td align="left"><p>调用 <a href="/windows/desktop/api/cfgmgr32/nf-cfgmgr32-cm_unregister_notification" data-raw-source="[&lt;strong&gt;CM_Unregister_Notification&lt;/strong&gt;](/windows/desktop/api/cfgmgr32/nf-cfgmgr32-cm_unregister_notification)"><strong>CM_Unregister_Notification</strong></a> 以注销句柄的通知。 必须从延迟例程执行此操作。  有关详细信息，请参阅<a href="/windows/desktop/api/cfgmgr32/nf-cfgmgr32-cm_unregister_notification" data-raw-source="[&lt;strong&gt;CM_Unregister_Notification&lt;/strong&gt;](/windows/desktop/api/cfgmgr32/nf-cfgmgr32-cm_unregister_notification)"><strong>CM_Unregister_Notification</strong></a>的 "<strong>备注</strong>" 部分。  如果仍有设备的打开句柄，请调用 <a href="/windows/desktop/api/handleapi/nf-handleapi-closehandle" data-raw-source="[&lt;strong&gt;CloseHandle&lt;/strong&gt;](/windows/desktop/api/handleapi/nf-handleapi-closehandle)"><strong>CloseHandle</strong></a> 关闭设备句柄。</p></td>
    </tr>
    </tbody>
    </table>
@@ -80,6 +80,4 @@ ms.locfileid: "89095669"
 [**CM_Unregister_Notification**](/windows/desktop/api/cfgmgr32/nf-cfgmgr32-cm_unregister_notification)
 
 [使用设备接口](../wdf/using-device-interfaces.md)
-
- 
 

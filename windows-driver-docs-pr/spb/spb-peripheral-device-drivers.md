@@ -4,12 +4,12 @@ description: SPB 外围设备驱动程序控制连接到简单外设总线 (SPB)
 ms.assetid: 8352EBD9-D94C-4EC6-A17E-3A72DDE4C16C
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3a0c54686282f9e1277bf4cecaf9ebf63a965ca4
-ms.sourcegitcommit: c766ab74e32eb44795cbbd1a4f352d3a6a9adc14
+ms.openlocfilehash: 5437c93a834e6d06729cda2831d66fe8947eed7c
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89389537"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90106858"
 ---
 # <a name="spb-peripheral-device-drivers"></a>SPB 外围设备驱动程序
 
@@ -76,45 +76,43 @@ SpbCx 是系统提供的组件，用于管理 SPB 控制器的 i/o 请求队列�
 </thead>
 <tbody>
 <tr class="odd">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/spb/using-the-spb-i-o-request-interface" data-raw-source="[Using the SPB I/O Request Interface](./using-the-spb-i-o-request-interface.md)">使用 SPB I/O 请求接口</a></p></td>
-<td><p>从 Windows 8 开始， <a href="https://docs.microsoft.com/windows-hardware/drivers/spb/spb-framework-extension" data-raw-source="[SPB framework extension](./spb-framework-extension.md)">SPB framework 扩展</a> (SpbCx) 是系统提供的组件，它支持 <a href="https://docs.microsoft.com/previous-versions/hh698224(v=vs.85)" data-raw-source="[SPB I/O request interface](/previous-versions/hh698224(v=vs.85))">SPB i/o 请求接口</a>。 SPB 外围设备驱动程序使用此接口将 i/o 请求发送到连接到 i2c、SPI 和其他 <a href="https://docs.microsoft.com/previous-versions/hh450903(v=vs.85)" data-raw-source="[simple peripheral buses](/previous-versions/hh450903(v=vs.85))">简单外围总线</a> 的设备， (SPBs) 。</p></td>
+<td><p><a href="/windows-hardware/drivers/spb/using-the-spb-i-o-request-interface" data-raw-source="[Using the SPB I/O Request Interface](./using-the-spb-i-o-request-interface.md)">使用 SPB I/O 请求接口</a></p></td>
+<td><p>从 Windows 8 开始， <a href="/windows-hardware/drivers/spb/spb-framework-extension" data-raw-source="[SPB framework extension](./spb-framework-extension.md)">SPB framework 扩展</a> (SpbCx) 是系统提供的组件，它支持 <a href="/previous-versions/hh698224(v=vs.85)" data-raw-source="[SPB I/O request interface](/previous-versions/hh698224(v=vs.85))">SPB i/o 请求接口</a>。 SPB 外围设备驱动程序使用此接口将 i/o 请求发送到连接到 i2c、SPI 和其他 <a href="/previous-versions/hh450903(v=vs.85)" data-raw-source="[simple peripheral buses](/previous-versions/hh450903(v=vs.85))">简单外围总线</a> 的设备， (SPBs) 。</p></td>
 </tr>
 <tr class="even">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/spb/connection-ids-for-spb-connected-peripheral-devices" data-raw-source="[Connection IDs for SPB-Connected Peripheral Devices](./connection-ids-for-spb-connected-peripheral-devices.md)">SPB 连接的外围设备的连接 ID</a></p></td>
-<td><p>驱动程序可以将 i/o 请求发送到 <a href="https://docs.microsoft.com/previous-versions/hh450903(v=vs.85)" data-raw-source="[simple peripheral bus](/previous-versions/hh450903(v=vs.85))">简单外围总线</a> 上的外围设备 (SPB) 中，驱动程序必须打开与设备的逻辑连接。 通过此连接，驱动程序可以发送读写请求，以便将数据传入和传出设备。 此外，驱动程序可以将 (IOCTL) 请求的 i/o 控制发送到设备，以便执行特定于 SPB 的操作。</p></td>
+<td><p><a href="/windows-hardware/drivers/spb/connection-ids-for-spb-connected-peripheral-devices" data-raw-source="[Connection IDs for SPB-Connected Peripheral Devices](./connection-ids-for-spb-connected-peripheral-devices.md)">SPB 连接的外围设备的连接 ID</a></p></td>
+<td><p>驱动程序可以将 i/o 请求发送到 <a href="/previous-versions/hh450903(v=vs.85)" data-raw-source="[simple peripheral bus](/previous-versions/hh450903(v=vs.85))">简单外围总线</a> 上的外围设备 (SPB) 中，驱动程序必须打开与设备的逻辑连接。 通过此连接，驱动程序可以发送读写请求，以便将数据传入和传出设备。 此外，驱动程序可以将 (IOCTL) 请求的 i/o 控制发送到设备，以便执行特定于 SPB 的操作。</p></td>
 </tr>
 <tr class="odd">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/spb/spb-device-stacks" data-raw-source="[SPB Device Stacks](./spb-device-stacks.md)">SPB 设备堆栈</a></p></td>
+<td><p><a href="/windows-hardware/drivers/spb/spb-device-stacks" data-raw-source="[SPB Device Stacks](./spb-device-stacks.md)">SPB 设备堆栈</a></p></td>
 <td><p>Windows 驱动模型完全分离了用于控制外围设备的驱动程序组件 (例如，从管理总线控制器的驱动程序组件的总线上的温度传感器) ，后者可在外围设备之间传输数据和控制信息。</p></td>
 </tr>
 <tr class="even">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/spb/interrupts-from-spb-connected-peripheral-devices" data-raw-source="[Interrupts from SPB-Connected Peripheral Devices](./interrupts-from-spb-connected-peripheral-devices.md)">来自 SPB 连接的外围设备的中断</a></p></td>
-<td><p>与 PCI （如 PCI）不同， <a href="https://docs.microsoft.com/previous-versions/hh450903(v=vs.85)" data-raw-source="[simple peripheral bus](/previous-versions/hh450903(v=vs.85))">简单的外围总线</a> (SPB) （例如，I2C 或 SPI）不提供标准化的、特定于总线的方式来将中断请求传达给处理器。 与之相反，通过 SPB 连接的外围设备通过单独的硬件路径来指示某个中断，该路径位于 SPB 和 SPB 控制器外部。</p></td>
+<td><p><a href="/windows-hardware/drivers/spb/interrupts-from-spb-connected-peripheral-devices" data-raw-source="[Interrupts from SPB-Connected Peripheral Devices](./interrupts-from-spb-connected-peripheral-devices.md)">来自 SPB 连接的外围设备的中断</a></p></td>
+<td><p>与 PCI （如 PCI）不同， <a href="/previous-versions/hh450903(v=vs.85)" data-raw-source="[simple peripheral bus](/previous-versions/hh450903(v=vs.85))">简单的外围总线</a> (SPB) （例如，I2C 或 SPI）不提供标准化的、特定于总线的方式来将中断请求传达给处理器。 与之相反，通过 SPB 连接的外围设备通过单独的硬件路径来指示某个中断，该路径位于 SPB 和 SPB 控制器外部。</p></td>
 </tr>
 <tr class="odd">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/spb/hardware-resources-for-kernel-mode-spb-peripheral-drivers" data-raw-source="[Hardware Resources for Kernel-Mode SPB Peripheral Drivers](./hardware-resources-for-kernel-mode-spb-peripheral-drivers.md)">内核模式 SPB 外设驱动程序的硬件资源</a></p></td>
-<td><p>本主题中的代码示例演示如何将 <a href="https://docs.microsoft.com/windows-hardware/drivers/wdf/what-s-new-for-wdf-drivers" data-raw-source="[Kernel-Mode Driver Framework](../wdf/index.md)">内核模式驱动程序框架</a> (KMDF) 驱动程序安装到 <a href="https://docs.microsoft.com/previous-versions/hh450903(v=vs.85)" data-raw-source="[simple peripheral bus](/previous-versions/hh450903(v=vs.85))">简单外围总线</a> (SPB 上，) 如何获取操作设备所需的硬件资源。 这些资源包含驱动程序用于建立到设备的逻辑连接的信息。</p></td>
+<td><p><a href="/windows-hardware/drivers/spb/hardware-resources-for-kernel-mode-spb-peripheral-drivers" data-raw-source="[Hardware Resources for Kernel-Mode SPB Peripheral Drivers](./hardware-resources-for-kernel-mode-spb-peripheral-drivers.md)">内核模式 SPB 外设驱动程序的硬件资源</a></p></td>
+<td><p>本主题中的代码示例演示如何将 <a href="/windows-hardware/drivers/wdf/what-s-new-for-wdf-drivers" data-raw-source="[Kernel-Mode Driver Framework](../wdf/index.md)">内核模式驱动程序框架</a> (KMDF) 驱动程序安装到 <a href="/previous-versions/hh450903(v=vs.85)" data-raw-source="[simple peripheral bus](/previous-versions/hh450903(v=vs.85))">简单外围总线</a> (SPB 上，) 如何获取操作设备所需的硬件资源。 这些资源包含驱动程序用于建立到设备的逻辑连接的信息。</p></td>
 </tr>
 <tr class="even">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/spb/hardware-resources-for-user-mode-spb-peripheral-drivers" data-raw-source="[Hardware Resources for User-Mode SPB Peripheral Drivers](./hardware-resources-for-user-mode-spb-peripheral-drivers.md)">用户模式 SPB 外设驱动程序的硬件资源</a></p></td>
-<td><p>本主题中的代码示例演示了在<a href="https://docs.microsoft.com/previous-versions/hh450903(v=vs.85)" data-raw-source="[simple peripheral bus](/previous-versions/hh450903(v=vs.85))">简单外围总线</a> (SPB 上，<a href="https://docs.microsoft.com/windows-hardware/drivers/wdf/overview-of-the-umdf" data-raw-source="[User-Mode Driver Framework](../wdf/overview-of-the-umdf.md)">用户模式驱动程序框架</a>如何 (UMDF) 驱动程序，) 会获得操作设备所需的硬件资源。 这些资源包含驱动程序用于建立到设备的逻辑连接的信息。</p></td>
+<td><p><a href="/windows-hardware/drivers/spb/hardware-resources-for-user-mode-spb-peripheral-drivers" data-raw-source="[Hardware Resources for User-Mode SPB Peripheral Drivers](./hardware-resources-for-user-mode-spb-peripheral-drivers.md)">用户模式 SPB 外设驱动程序的硬件资源</a></p></td>
+<td><p>本主题中的代码示例演示了在<a href="/previous-versions/hh450903(v=vs.85)" data-raw-source="[simple peripheral bus](/previous-versions/hh450903(v=vs.85))">简单外围总线</a> (SPB 上，<a href="/windows-hardware/drivers/wdf/overview-of-the-umdf" data-raw-source="[User-Mode Driver Framework](../wdf/overview-of-the-umdf.md)">用户模式驱动程序框架</a>如何 (UMDF) 驱动程序，) 会获得操作设备所需的硬件资源。 这些资源包含驱动程序用于建立到设备的逻辑连接的信息。</p></td>
 </tr>
 <tr class="odd">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/spb/full-duplex-i-o-requests" data-raw-source="[Full-Duplex I/O Requests](./full-duplex-i-o-requests.md)">全双工 I/O 请求</a></p></td>
-<td><p>某些总线，如 SPI，支持全双工总线传输。 这些传输通过将数据同时写入设备并从同一设备读取数据来提高 i/o 性能。 为了支持全双工总线传输， <a href="https://docs.microsoft.com/previous-versions/hh450903(v=vs.85)" data-raw-source="[simple peripheral bus](/previous-versions/hh450903(v=vs.85))">简单的外围总线</a> (SPB) <a href="/previous-versions/hh698224(v=vs.85)" data-raw-source="[I/O request interface](/previous-versions/hh698224(v=vs.85))">i/o 请求接口</a> 定义 <a href="https://msdn.microsoft.com/library/windows/hardware/hh974774" data-raw-source="[&lt;strong&gt;IOCTL_SPB_FULL_DUPLEX&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/hh974774)"><strong>IOCTL_SPB_FULL_DUPLEX</strong></a> 的 i/o 控制代码 (IOCTL) 。</p></td>
+<td><p><a href="/windows-hardware/drivers/spb/full-duplex-i-o-requests" data-raw-source="[Full-Duplex I/O Requests](./full-duplex-i-o-requests.md)">全双工 I/O 请求</a></p></td>
+<td><p>某些总线，如 SPI，支持全双工总线传输。 这些传输通过将数据同时写入设备并从同一设备读取数据来提高 i/o 性能。 为了支持全双工总线传输， <a href="/previous-versions/hh450903(v=vs.85)" data-raw-source="[simple peripheral bus](/previous-versions/hh450903(v=vs.85))">简单的外围总线</a> (SPB) <a href="/previous-versions/hh698224(v=vs.85)" data-raw-source="[I/O request interface](/previous-versions/hh698224(v=vs.85))">i/o 请求接口</a> 定义 <a href="https://msdn.microsoft.com/library/windows/hardware/hh974774" data-raw-source="[&lt;strong&gt;IOCTL_SPB_FULL_DUPLEX&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/hh974774)"><strong>IOCTL_SPB_FULL_DUPLEX</strong></a> 的 i/o 控制代码 (IOCTL) 。</p></td>
 </tr>
 <tr class="even">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/spb/atomic-bus-operations" data-raw-source="[Atomic Bus Operations](./atomic-bus-operations.md)">原子总线操作</a></p></td>
+<td><p><a href="/windows-hardware/drivers/spb/atomic-bus-operations" data-raw-source="[Atomic Bus Operations](./atomic-bus-operations.md)">原子总线操作</a></p></td>
 <td><p>若要使用已连接到 SPB 的外围设备的某些硬件功能，SPB 控制器的客户端 (即，外设驱动程序) 可能需要执行与设备之间的数据传输序列作为原子总线操作。 传输序列是原子的，因为任何其他客户端都不能在总线上的设备之间传输数据，直到序列结束。</p></td>
 </tr>
 <tr class="odd">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/spb/spb-connection-locks" data-raw-source="[SPB Connection Locks](./spb-connection-locks.md)">SPB 连接锁</a></p></td>
-<td><p>连接锁可用于使两个客户端在 <a href="https://docs.microsoft.com/previous-versions/hh450903(v=vs.85)" data-raw-source="[simple peripheral bus](/previous-versions/hh450903(v=vs.85))">简单外围总线</a> (SPB) 上共享对目标外围设备的访问。 这两个客户端都可以打开到同一目标设备的逻辑连接，并在客户端要求对设备进行独占访问时使用连接锁定，以执行一系列 i/o 操作。 当一台客户端持有连接锁时，第二个客户端对该设备的请求会自动延迟，直到第一个客户端释放该锁。</p></td>
+<td><p><a href="/windows-hardware/drivers/spb/spb-connection-locks" data-raw-source="[SPB Connection Locks](./spb-connection-locks.md)">SPB 连接锁</a></p></td>
+<td><p>连接锁可用于使两个客户端在 <a href="/previous-versions/hh450903(v=vs.85)" data-raw-source="[simple peripheral bus](/previous-versions/hh450903(v=vs.85))">简单外围总线</a> (SPB) 上共享对目标外围设备的访问。 这两个客户端都可以打开到同一目标设备的逻辑连接，并在客户端要求对设备进行独占访问时使用连接锁定，以执行一系列 i/o 操作。 当一台客户端持有连接锁时，第二个客户端对该设备的请求会自动延迟，直到第一个客户端释放该锁。</p></td>
 </tr>
 </tbody>
 </table>
-
- 
 
  
 

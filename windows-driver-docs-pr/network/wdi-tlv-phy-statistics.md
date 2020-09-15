@@ -6,12 +6,12 @@ ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 WDI_TLV_PHY_STATISTICS 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 0cf08bfb4e881cbdf1406ce7af64832b29adb5c7
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: ff218e42a592c95f2ae37a82dae1dead42b22a3e
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89217825"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90107374"
 ---
 # <a name="wdi_tlv_phy_statistics"></a>WDI \_ TLV \_ PHY \_ 统计信息
 
@@ -23,7 +23,7 @@ WDI \_ tlv \_ PHY \_ 统计信息是一个 tlv，其中包含 [OID \_ WDI \_ 获
 
 0xA7
 
-## <a name="length"></a>Length
+## <a name="length"></a>长度
 
 
 Sum (所有包含的元素的大小) 。
@@ -44,7 +44,7 @@ Sum (所有包含的元素的大小) 。
 </thead>
 <tbody>
 <tr class="odd">
-<td><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wditypes/ne-wditypes-_wdi_phy_type" data-raw-source="[&lt;strong&gt;WDI_PHY_TYPE&lt;/strong&gt;](/windows-hardware/drivers/ddi/wditypes/ne-wditypes-_wdi_phy_type)"><strong>WDI_PHY_TYPE</strong></a></td>
+<td><a href="/windows-hardware/drivers/ddi/wditypes/ne-wditypes-_wdi_phy_type" data-raw-source="[&lt;strong&gt;WDI_PHY_TYPE&lt;/strong&gt;](/windows-hardware/drivers/ddi/wditypes/ne-wditypes-_wdi_phy_type)"><strong>WDI_PHY_TYPE</strong></a></td>
 <td>此 PHY 的类型。</td>
 </tr>
 <tr class="even">
@@ -150,6 +150,4 @@ Sum (所有包含的元素的大小) 。
 </tr>
 </tbody>
 </table>
-
- 
 

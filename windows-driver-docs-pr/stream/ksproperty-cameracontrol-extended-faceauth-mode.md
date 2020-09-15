@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 09/10/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: e176077c01b4c672a7d92ccc1f157144a39a590b
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 8acddeae4d3f1adf7dbcc8754d7b7b743f9e3b51
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89188382"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90106714"
 ---
 # <a name="ksproperty_cameracontrol_extended_faceauth_mode"></a>KSPROPERTY \_ CAMERACONTROL \_ 扩展 \_ FACEAUTH \_ 模式
 
@@ -36,7 +36,7 @@ ms.locfileid: "89188382"
 </colgroup>
 <thead>
 <tr class="header">
-<th>作用域</th>
+<th>范围</th>
 <th>控制</th>
 <th>类型</th>
 </tr>
@@ -69,7 +69,7 @@ ms.locfileid: "89188382"
 </colgroup>
 <thead>
 <tr class="header">
-<th>标志</th>
+<th>Flag</th>
 <th>描述</th>
 </tr>
 </thead>
@@ -124,7 +124,7 @@ ms.locfileid: "89188382"
 </tr>
 <tr class="odd">
 <td><p>大小</p></td>
-<td><p>这必须是 <strong>sizeof</strong> (<strong>KSCAMERA_EXTENDEDPROP_HEADER</strong>) + <strong>sizeof</strong> (<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_videoprocsetting" data-raw-source="[&lt;strong&gt;KSCAMERA_EXTENDEDPROP_VIDEOPROCSETTING&lt;/strong&gt;](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_videoprocsetting)"><strong>KSCAMERA_EXTENDEDPROP_VIDEOPROCSETTING</strong></a>) 。</p></td>
+<td><p>这必须是 <strong>sizeof</strong> (<strong>KSCAMERA_EXTENDEDPROP_HEADER</strong>) + <strong>sizeof</strong> (<a href="/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_videoprocsetting" data-raw-source="[&lt;strong&gt;KSCAMERA_EXTENDEDPROP_VIDEOPROCSETTING&lt;/strong&gt;](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_videoprocsetting)"><strong>KSCAMERA_EXTENDEDPROP_VIDEOPROCSETTING</strong></a>) 。</p></td>
 </tr>
 <tr class="even">
 <td><p>结果</p></td>

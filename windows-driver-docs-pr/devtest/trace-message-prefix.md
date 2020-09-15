@@ -8,12 +8,12 @@ keywords:
 - 跟踪消息前缀 WDK Tracefmt
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1ad4a4f43a5a3119929a0ac6d6798c98b0647d62
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 4509b06b3d25f4a804014cdcacce703b51367a0b
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89381913"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90107310"
 ---
 # <a name="trace-message-prefix"></a>跟踪消息前缀
 
@@ -107,13 +107,13 @@ Tracefmt 向每个跟踪消息添加一个前缀，其中包含存储在 [事件
 <td><p>%!随意!</p></td>
 <td><p>字符串</p></td>
 <td><p>显示启用跟踪消息的 <a href="trace-flags.md" data-raw-source="[trace flags](trace-flags.md)">跟踪标志</a> 的名称。</p>
-<p> (因为 <a href="https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff544918(v=vs.85)" data-raw-source="[&lt;strong&gt;DoTraceMessage&lt;/strong&gt;](/previous-versions/windows/hardware/previsioning-framework/ff544918(v=vs.85))"><strong>DoTraceMessage</strong></a> 宏会反转 flags 和 level 参数，DoTraceMessage 生成的消息将在此字段中显示 <a href="trace-level.md" data-raw-source="[trace level](trace-level.md)">跟踪级别</a> 的值。 ) </p></td>
+<p> (因为 <a href="/previous-versions/windows/hardware/previsioning-framework/ff544918(v=vs.85)" data-raw-source="[&lt;strong&gt;DoTraceMessage&lt;/strong&gt;](/previous-versions/windows/hardware/previsioning-framework/ff544918(v=vs.85))"><strong>DoTraceMessage</strong></a> 宏会反转 flags 和 level 参数，DoTraceMessage 生成的消息将在此字段中显示 <a href="trace-level.md" data-raw-source="[trace level](trace-level.md)">跟踪级别</a> 的值。 ) </p></td>
 </tr>
 <tr class="even">
 <td><p>%!调配!</p></td>
 <td><p>字符串</p></td>
 <td><p>显示启用跟踪消息的 <a href="trace-level.md" data-raw-source="[trace level](trace-level.md)">跟踪级别</a> 的值。</p>
-<p> (因为 <a href="https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff544918(v=vs.85)" data-raw-source="[&lt;strong&gt;DoTraceMessage&lt;/strong&gt;](/previous-versions/windows/hardware/previsioning-framework/ff544918(v=vs.85))"><strong>DoTraceMessage</strong></a> 宏会反转标志和级别参数，所以由 DoTraceMessage 生成的消息将在该字段中显示 <a href="trace-flags.md" data-raw-source="[trace flags](trace-flags.md)">跟踪标志</a> 的名称。 ) </p></td>
+<p> (因为 <a href="/previous-versions/windows/hardware/previsioning-framework/ff544918(v=vs.85)" data-raw-source="[&lt;strong&gt;DoTraceMessage&lt;/strong&gt;](/previous-versions/windows/hardware/previsioning-framework/ff544918(v=vs.85))"><strong>DoTraceMessage</strong></a> 宏会反转标志和级别参数，所以由 DoTraceMessage 生成的消息将在该字段中显示 <a href="trace-flags.md" data-raw-source="[trace flags](trace-flags.md)">跟踪标志</a> 的名称。 ) </p></td>
 </tr>
 <tr>
 <td><p>%!COMPNAME!</p></td>
@@ -139,6 +139,4 @@ Tracefmt 向每个跟踪消息添加一个前缀，其中包含存储在 [事件
 有关 TMF 文件内容的示例，请参阅 tracedrv 示例中的格式跟踪消息。
 
 此外， **-csv** 参数在标准 Tracefmt 前缀之前向每个跟踪消息添加不可配置的详细前缀。 有关 CSV 前缀中的字段的说明，请使用 **-csvheader** 参数。
-
- 
 

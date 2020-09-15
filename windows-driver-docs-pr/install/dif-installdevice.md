@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: e5bf0a71f91002ec662138eb3dcef7e58dceb5ab
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 26868db0c0ef43fd494a3602e694efcfbb7ac797
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89095585"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90107296"
 ---
 # <a name="dif_installdevice"></a>DIF_INSTALLDEVICE
 
@@ -61,10 +61,10 @@ DIF_INSTALLDEVICE 请求允许安装程序在安装设备之前和/或之后执�
 提供包含要安装的设备的 [设备信息集](./device-information-sets.md) 的句柄。
 
 <a href="" id="deviceinfodata"></a>*DeviceInfoData*  
-在设备信息集中提供设备的 [**SP_DEVINFO_DATA**](/windows/desktop/api/setupapi/ns-setupapi-_sp_devinfo_data) 结构的指针。
+在设备信息集中提供设备的 [**SP_DEVINFO_DATA**](/windows/win32/api/setupapi/ns-setupapi-sp_devinfo_data) 结构的指针。
 
 <a href="" id="device-installation-parameters-"></a>设备安装参数   
-与*DeviceInfoData*关联的设备安装参数 ([**SP_DEVINSTALL_PARAMS**](/windows/desktop/api/setupapi/ns-setupapi-_sp_devinstall_params_a)) 。
+与*DeviceInfoData*关联的设备安装参数 ([**SP_DEVINSTALL_PARAMS**](/windows/win32/api/setupapi/ns-setupapi-sp_devinstall_params_a)) 。
 
 <a href="" id="class-installation-parameters"></a>类安装参数  
 无
@@ -108,7 +108,7 @@ DIF_INSTALLDEVICE 请求允许安装程序在安装设备之前和/或之后执�
 
 如果 Windows 无法找到新设备的 INF 文件，则会发送 DIF_INSTALLDEVICE，尝试安装 *null 驱动程序*。 默认处理程序 (**SetupDiInstallDevice** ，或者是 [**IoReportDetectedDevice**](/windows-hardware/drivers/ddi/ntddk/nf-ntddk-ioreportdetecteddevice) 报告的非 PnP 设备 () ，在后一种情况下，Windows 将为设备安装 null 驱动程序。
 
-如果此尝试失败，则 Windows 将再次发送 DIF_INSTALLDEVICE，这次在 [**SP_DEVINSTALL_PARAMS**](/windows/desktop/api/setupapi/ns-setupapi-_sp_devinstall_params_a) 结构中设置了 DI_FLAGSEX_SETFAILEDINSTALL 标志。 在这种情况下，默认处理程序只是在设备的 **ConfigFlags** 注册表值中设置 FAILEDINSTALL 标志。 如果设置了 DI_FLAGSEX_SETFAILEDINSTALL 标志，则类安装程序必须返回 NO_ERROR 或 ERROR_DI_DO_DEFAULT 并且共同安装程序必须返回 NO_ERROR。
+如果此尝试失败，则 Windows 将再次发送 DIF_INSTALLDEVICE，这次在 [**SP_DEVINSTALL_PARAMS**](/windows/win32/api/setupapi/ns-setupapi-sp_devinstall_params_a) 结构中设置了 DI_FLAGSEX_SETFAILEDINSTALL 标志。 在这种情况下，默认处理程序只是在设备的 **ConfigFlags** 注册表值中设置 FAILEDINSTALL 标志。 如果设置了 DI_FLAGSEX_SETFAILEDINSTALL 标志，则类安装程序必须返回 NO_ERROR 或 ERROR_DI_DO_DEFAULT 并且共同安装程序必须返回 NO_ERROR。
 
 有关 DIF 代码的详细信息，请参阅 [处理 Dif 代码](./handling-dif-codes.md)。
 
@@ -150,16 +150,16 @@ DIF_INSTALLDEVICE 请求允许安装程序在安装设备之前和/或之后执�
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
 [**DIF_INSTALLDEVICEFILES**](dif-installdevicefiles.md)
 
 [**SetupDiInstallDevice**](/windows/desktop/api/setupapi/nf-setupapi-setupdiinstalldevice)
 
-[**SP_DEVINFO_DATA**](/windows/desktop/api/setupapi/ns-setupapi-_sp_devinfo_data)
+[**SP_DEVINFO_DATA**](/windows/win32/api/setupapi/ns-setupapi-sp_devinfo_data)
 
-[**SP_DEVINSTALL_PARAMS**](/windows/desktop/api/setupapi/ns-setupapi-_sp_devinstall_params_a)
+[**SP_DEVINSTALL_PARAMS**](/windows/win32/api/setupapi/ns-setupapi-sp_devinstall_params_a)
 
  
 

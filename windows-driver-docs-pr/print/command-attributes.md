@@ -13,12 +13,12 @@ keywords:
 - 参数
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c441210e363bcc0d1243f167aa84ba78f403d51a
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 5ef6f2a4992140531c67578232305d22bbe4e965
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89217811"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90107198"
 ---
 # <a name="command-attributes"></a>命令属性
 
@@ -52,7 +52,7 @@ ms.locfileid: "89217811"
 <tbody>
 <tr class="odd">
 <td><p><strong><em>CallbackID</strong></p></td>
-<td><p>正数值，传递给呈现插件的 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/prcomoem/nf-prcomoem-iprintoemuni-commandcallback" data-raw-source="[&lt;strong&gt;IPrintOemUni::CommandCallback&lt;/strong&gt;](/windows-hardware/drivers/ddi/prcomoem/nf-prcomoem-iprintoemuni-commandcallback)"><strong>IPrintOemUni：： CommandCallback</strong></a> 方法作为其 <em>dCmdCbID</em> 参数。</p></td>
+<td><p>正数值，传递给呈现插件的 <a href="/windows-hardware/drivers/ddi/prcomoem/nf-prcomoem-iprintoemuni-commandcallback" data-raw-source="[&lt;strong&gt;IPrintOemUni::CommandCallback&lt;/strong&gt;](/windows-hardware/drivers/ddi/prcomoem/nf-prcomoem-iprintoemuni-commandcallback)"><strong>IPrintOemUni：： CommandCallback</strong></a> 方法作为其 <em>dCmdCbID</em> 参数。</p></td>
 <td><p><a href="dynamically-generated-printer-commands.md" data-raw-source="[dynamically generated printer commands](dynamically-generated-printer-commands.md)">动态生成的打印机命令</a>所必需的。 如果指定了<strong> </em> Cmd</strong> ，则无效。</p></td>
 </tr>
 <tr class="even">
@@ -83,6 +83,4 @@ ms.locfileid: "89217811"
  
 
 有关示例，请参阅 [示例 GPD 文件](sample-gpd-files.md)。
-
- 
 

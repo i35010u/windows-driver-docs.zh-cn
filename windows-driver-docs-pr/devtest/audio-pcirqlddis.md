@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: baa50ce70a622b57945cdca117ef9f6a2613f968
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 60fab162787a302ee15305540389197818dc6540
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89383838"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90107082"
 ---
 # <a name="pcirqlddis-rule-audio"></a>PcIrqlDDIs 规则 (音频) 
 
@@ -46,12 +46,10 @@ PcIrqlDDIs 规则指定 PortCls 微型端口驱动程序必须在正确的 IRQL 
 <td align="left"><p>若要验证此规则，请打开 "命令提示符" 窗口。 输入 Driver Verifier 命令并指定 <strong>/domain 音频</strong>。</p>
 <p>例如：</p>
 <p><strong>verifier/domain 音频</strong>[<em>options</em>] <strong>/driver</strong> <em> &lt; yourdriver &gt; </em></p>
-<p>有关详细信息，请参阅<a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier" data-raw-source="[Driver Verifier](./driver-verifier.md)">驱动程序验证程序</a>。</p></td>
+<p>有关详细信息，请参阅<a href="/windows-hardware/drivers/devtest/driver-verifier" data-raw-source="[Driver Verifier](./driver-verifier.md)">驱动程序验证程序</a>。</p></td>
 </tr>
 </tbody>
 </table>
-
- 
 
  
 

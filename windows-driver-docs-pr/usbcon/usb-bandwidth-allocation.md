@@ -4,12 +4,12 @@ title: USB 带宽分配
 ms.date: 04/20/2017
 ms.assetid: a1533825-a28f-45eb-9a54-c7298022c385
 ms.localizationpriority: medium
-ms.openlocfilehash: 8b74ee4afed26828f3bf17a9717d5ff9364113b7
-ms.sourcegitcommit: 937974aa9bbe0262a7ffe9631593fab48c4e7492
+ms.openlocfilehash: 2250563c30e85a19f065a5a3aaa6412b392175f0
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "90010431"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90107320"
 ---
 # <a name="usb-bandwidth-allocation"></a>USB 带宽分配
 
@@ -106,7 +106,7 @@ USB 传输大小服从以下限制：
 </thead>
 <tbody>
 <tr class="odd">
-<td>控件</td>
+<td>控制</td>
 <td><p>64K，适用于 SuperSpeed 和高速 (xHCI) </p>
 <p>4K 适用于全速 (xHCI，EHCI，UHCI，OHCI) </p>
 <p>对于 UHCI，为默认终结点上的 4K;非默认控制管道上的64K</p></td>
@@ -140,7 +140,7 @@ USB 传输大小服从以下限制：
 </tr>
 <tr class="even">
 <td>量</td>
-<td><p>1024 <em> <strong>wBytesPerInterval</strong> (参阅<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/usbspec/ns-usbspec-_usb_superspeed_endpoint_companion_descriptor" data-raw-source="[&lt;strong&gt;USB_SUPERSPEED_ENDPOINT_COMPANION_DESCRIPTOR&lt;/strong&gt;](/windows-hardware/drivers/ddi/usbspec/ns-usbspec-_usb_superspeed_endpoint_companion_descriptor)"><strong>USB_SUPERSPEED_ENDPOINT_COMPANION_DESCRIPTOR</strong></a>) SUPERSPEED (xHCI) </p>
+<td><p>1024 <em> <strong>wBytesPerInterval</strong> (参阅<a href="/windows-hardware/drivers/ddi/usbspec/ns-usbspec-_usb_superspeed_endpoint_companion_descriptor" data-raw-source="[&lt;strong&gt;USB_SUPERSPEED_ENDPOINT_COMPANION_DESCRIPTOR&lt;/strong&gt;](/windows-hardware/drivers/ddi/usbspec/ns-usbspec-_usb_superspeed_endpoint_companion_descriptor)"><strong>USB_SUPERSPEED_ENDPOINT_COMPANION_DESCRIPTOR</strong></a>) SUPERSPEED (xHCI) </p>
 <p>1024 </em> <strong>MaximumPacketSize</strong> (for xHCI，EHCI) </p>
 <p>256 * <strong>MaximumPacketSize</strong> for 全速 (XHCI，EHCI) </p>
 <p>64K 的全速 (UHCI，OHCI) </p></td>
@@ -202,5 +202,3 @@ USB 传输大小服从以下限制：
 兼容的 USB 2.0/1.1 驱动程序必须将最大大小的数据包传输 (*wMaxPacketSize*) ，然后通过不超过最大大小的数据包结束传输，或者通过长度为零的数据包来界定传输的结束时间。 直到驱动程序发送一个小于 *wMaxPacketSize*的数据包，才能完成传输。 如果传输大小是最大值的倍数，则驱动程序必须发送一个长度为零的分隔数据包，以显式终止传输
 
 根据 USB 规范的要求，用长度为零的数据包来界定数据传输是设备驱动程序的责任。 系统 USB 堆栈不会自动生成这些数据包。
-
-
