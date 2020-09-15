@@ -6,12 +6,12 @@ ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 WDI_TLV_DATAPATH_CAPABILITIES 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: bb869e33087fb492e4677d1a91fc36c09d2843cc
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 2e8b90cd546d4eb4ba11677b6734fbd9dbf1fd0d
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89211515"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90105274"
 ---
 # <a name="wdi_tlv_datapath_capabilities"></a>WDI \_ TLV \_ 数据路径 \_ 功能
 
@@ -23,7 +23,7 @@ WDI \_ tlv \_ 数据路径 \_ 功能是包含数据路径功能的 tlv。
 
 0xB9
 
-## <a name="length"></a>Length
+## <a name="length"></a>长度
 
 
 Sum (所有包含的元素的大小) 。
@@ -44,7 +44,7 @@ Sum (所有包含的元素的大小) 。
 </thead>
 <tbody>
 <tr class="odd">
-<td><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/dot11wdi/ne-dot11wdi-_wdi_interconnect_type" data-raw-source="[&lt;strong&gt;WDI_INTERCONNECT_TYPE&lt;/strong&gt;](/windows-hardware/drivers/ddi/dot11wdi/ne-dot11wdi-_wdi_interconnect_type)"><strong>WDI_INTERCONNECT_TYPE</strong></a> (UINT32) </td>
+<td><a href="/windows-hardware/drivers/ddi/dot11wdi/ne-dot11wdi-_wdi_interconnect_type" data-raw-source="[&lt;strong&gt;WDI_INTERCONNECT_TYPE&lt;/strong&gt;](/windows-hardware/drivers/ddi/dot11wdi/ne-dot11wdi-_wdi_interconnect_type)"><strong>WDI_INTERCONNECT_TYPE</strong></a> (UINT32) </td>
 <td>互连类型。</td>
 </tr>
 <tr class="even">
@@ -114,6 +114,4 @@ Sum (所有包含的元素的大小) 。
 </tr>
 </tbody>
 </table>
-
- 
 

@@ -7,12 +7,12 @@ keywords:
 - PROPSETID_VIDCAP_CROSSBAR
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cb0df89400b1c3358365194a465277ad16d1d20d
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: a8fe8b1a13c892cc0288ee2e6f224458d04178ab
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89190597"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90106226"
 ---
 # <a name="crossbar-properties"></a>十字形属性
 
@@ -32,25 +32,23 @@ ms.locfileid: "89190597"
 </thead>
 <tbody>
 <tr class="odd">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-crossbar-can-route" data-raw-source="[&lt;strong&gt;KSPROPERTY_CROSSBAR_CAN_ROUTE&lt;/strong&gt;](./ksproperty-crossbar-can-route.md)"><strong>KSPROPERTY_CROSSBAR_CAN_ROUTE</strong></a></p></td>
+<td><p><a href="/windows-hardware/drivers/stream/ksproperty-crossbar-can-route" data-raw-source="[&lt;strong&gt;KSPROPERTY_CROSSBAR_CAN_ROUTE&lt;/strong&gt;](./ksproperty-crossbar-can-route.md)"><strong>KSPROPERTY_CROSSBAR_CAN_ROUTE</strong></a></p></td>
 <td><p>返回有关是否可以进行特定路由的信息。</p></td>
 </tr>
 <tr class="even">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-crossbar-caps" data-raw-source="[&lt;strong&gt;KSPROPERTY_CROSSBAR_CAPS&lt;/strong&gt;](./ksproperty-crossbar-caps.md)"><strong>KSPROPERTY_CROSSBAR_CAPS</strong></a></p></td>
+<td><p><a href="/windows-hardware/drivers/stream/ksproperty-crossbar-caps" data-raw-source="[&lt;strong&gt;KSPROPERTY_CROSSBAR_CAPS&lt;/strong&gt;](./ksproperty-crossbar-caps.md)"><strong>KSPROPERTY_CROSSBAR_CAPS</strong></a></p></td>
 <td><p>返回纵横比的功能，包括输入插针的数量和输出插针的数目。</p></td>
 </tr>
 <tr class="odd">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-crossbar-pininfo" data-raw-source="[&lt;strong&gt;KSPROPERTY_CROSSBAR_PININFO&lt;/strong&gt;](./ksproperty-crossbar-pininfo.md)"><strong>KSPROPERTY_CROSSBAR_PININFO</strong></a></p></td>
+<td><p><a href="/windows-hardware/drivers/stream/ksproperty-crossbar-pininfo" data-raw-source="[&lt;strong&gt;KSPROPERTY_CROSSBAR_PININFO&lt;/strong&gt;](./ksproperty-crossbar-pininfo.md)"><strong>KSPROPERTY_CROSSBAR_PININFO</strong></a></p></td>
 <td><p>返回 pin 信息，如数据流的方向、pin 媒体 Guid 和 pin 类型。</p></td>
 </tr>
 <tr class="even">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-crossbar-route" data-raw-source="[&lt;strong&gt;KSPROPERTY_CROSSBAR_ROUTE&lt;/strong&gt;](./ksproperty-crossbar-route.md)"><strong>KSPROPERTY_CROSSBAR_ROUTE</strong></a></p></td>
+<td><p><a href="/windows-hardware/drivers/stream/ksproperty-crossbar-route" data-raw-source="[&lt;strong&gt;KSPROPERTY_CROSSBAR_ROUTE&lt;/strong&gt;](./ksproperty-crossbar-route.md)"><strong>KSPROPERTY_CROSSBAR_ROUTE</strong></a></p></td>
 <td><p>控制特定的路由，包括要路由到哪些输出插针的输入插针。</p></td>
 </tr>
 </tbody>
 </table>
-
- 
 
  
 

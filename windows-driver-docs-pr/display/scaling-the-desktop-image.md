@@ -13,12 +13,12 @@ keywords:
 - 缩放桌面映像 WDK Windows Server 2008 R2 显示器
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cf49a928637e3e3760b443061f849dd97600c7ec
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 40bb5343081aae629bb0ff2e19edfde70f016565
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89066358"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90104648"
 ---
 # <a name="scaling-the-desktop-image"></a>缩放桌面图像
 
@@ -87,7 +87,7 @@ ms.locfileid: "89066358"
 <tr class="odd">
 <td align="left"><p>AdapterDefault</p></td>
 <td align="left"><p>适配器默认缩放值</p>
-<p>目前，tablet 系统上的默认值为 "拉伸"。 在支持 <a href="windows-vista-display-driver-model-design-guide.md" data-raw-source="[Windows Display Driver Model (WDDM)](windows-vista-display-driver-model-design-guide.md)">Windows 显示驱动程序模型 (WDDM) </a>的非平板系统上，默认值是由驱动程序定义的。 在具有支持 Windows 显示驱动程序模型的图形适配器的非平板系统上 (WDDM) ，其 <a href="https://docs.microsoft.com/windows-hardware/drivers/what-s-new-in-driver-development" data-raw-source="[features new for Windows 7](../what-s-new-in-driver-development.md)">功能为 windows 7</a>，默认值为 DC_ASPECTRATIOCENTEREDMAX。</p></td>
+<p>目前，tablet 系统上的默认值为 "拉伸"。 在支持 <a href="windows-vista-display-driver-model-design-guide.md" data-raw-source="[Windows Display Driver Model (WDDM)](windows-vista-display-driver-model-design-guide.md)">Windows 显示驱动程序模型 (WDDM) </a>的非平板系统上，默认值是由驱动程序定义的。 在具有支持 Windows 显示驱动程序模型的图形适配器的非平板系统上 (WDDM) ，其 <a href="/windows-hardware/drivers/what-s-new-in-driver-development" data-raw-source="[features new for Windows 7](../what-s-new-in-driver-development.md)">功能为 windows 7</a>，默认值为 DC_ASPECTRATIOCENTEREDMAX。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>DatabaseValue</p></td>
@@ -369,6 +369,4 @@ Microsoft DirectX 9L 和更早的运行时要求应用程序始终调用[**Chang
  
 
 通过将此信息与前面的缩放表结合使用，可以确定 DirectX 应用程序所需的缩放。
-
- 
 

@@ -8,12 +8,12 @@ keywords:
 - EVENTSETID_TUNER
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ca10e3515046d69472dd1712d9d2ff296bd67a91
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 8ccf7ca429b12add6d89294b0e5820f758860102
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89187994"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90104404"
 ---
 # <a name="tuner-events"></a>调谐器事件
 
@@ -33,7 +33,7 @@ ms.locfileid: "89187994"
 </thead>
 <tbody>
 <tr class="odd">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/stream/ksevent-tuner-changed" data-raw-source="[&lt;strong&gt;KSEVENT_TUNER_CHANGED&lt;/strong&gt;](./ksevent-tuner-changed.md)"><strong>KSEVENT_TUNER_CHANGED</strong></a></p></td>
+<td><p><a href="/windows-hardware/drivers/stream/ksevent-tuner-changed" data-raw-source="[&lt;strong&gt;KSEVENT_TUNER_CHANGED&lt;/strong&gt;](./ksevent-tuner-changed.md)"><strong>KSEVENT_TUNER_CHANGED</strong></a></p></td>
 <td><p>向 DirectShow 发出信号，指示调谐器发生了变化，例如，由于对新的电视频道进行了调整。</p></td>
 </tr>
 </tbody>
@@ -56,13 +56,11 @@ ms.locfileid: "89187994"
 </thead>
 <tbody>
 <tr class="odd">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/stream/ksevent-tuner-initiate-scan" data-raw-source="[&lt;strong&gt;KSEVENT_TUNER_INITIATE_SCAN&lt;/strong&gt;](./ksevent-tuner-initiate-scan.md)"><strong>KSEVENT_TUNER_INITIATE_SCAN</strong></a></p></td>
+<td><p><a href="/windows-hardware/drivers/stream/ksevent-tuner-initiate-scan" data-raw-source="[&lt;strong&gt;KSEVENT_TUNER_INITIATE_SCAN&lt;/strong&gt;](./ksevent-tuner-initiate-scan.md)"><strong>KSEVENT_TUNER_INITIATE_SCAN</strong></a></p></td>
 <td><p>启动信号扫描并在扫描完成时通知 DirectShow。</p></td>
 </tr>
 </tbody>
 </table>
-
- 
 
  
 

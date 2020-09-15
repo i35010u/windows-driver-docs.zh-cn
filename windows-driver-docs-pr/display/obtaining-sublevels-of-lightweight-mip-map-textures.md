@@ -7,12 +7,12 @@ keywords:
 - 轻型 MIP map 纹理 WDK DirectX 9.0，获取子级别
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a07af08b75631ae2535c457cf13d20b3dc109ddb
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 1b7f6468c1b53a3012d54a7805ad3741d59b9334
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89063850"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90106616"
 ---
 # <a name="obtaining-sublevels-of-lightweight-mip-map-textures"></a>获取轻量 MIP 贴图纹理的子级别
 
@@ -41,37 +41,35 @@ CPixel 类包含以下方法：
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/display/cpixel-computesurfacesize" data-raw-source="[&lt;strong&gt;ComputeSurfaceSize&lt;/strong&gt;](./cpixel-computesurfacesize.md)"><strong>ComputeSurfaceSize</strong></a></p></td>
+<td align="left"><p><a href="/windows-hardware/drivers/display/cpixel-computesurfacesize" data-raw-source="[&lt;strong&gt;ComputeSurfaceSize&lt;/strong&gt;](./cpixel-computesurfacesize.md)"><strong>ComputeSurfaceSize</strong></a></p></td>
 <td align="left"><p>确定分配图面所需的内存量。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/display/cpixel-computevolumesize" data-raw-source="[&lt;strong&gt;ComputeVolumeSize&lt;/strong&gt;](./cpixel-computevolumesize.md)"><strong>ComputeVolumeSize</strong></a></p></td>
+<td align="left"><p><a href="/windows-hardware/drivers/display/cpixel-computevolumesize" data-raw-source="[&lt;strong&gt;ComputeVolumeSize&lt;/strong&gt;](./cpixel-computevolumesize.md)"><strong>ComputeVolumeSize</strong></a></p></td>
 <td align="left"><p>确定分配卷所需的内存量。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/display/cpixel-computemipmapsize" data-raw-source="[&lt;strong&gt;ComputeMipMapSize&lt;/strong&gt;](./cpixel-computemipmapsize.md)"><strong>ComputeMipMapSize</strong></a></p></td>
+<td align="left"><p><a href="/windows-hardware/drivers/display/cpixel-computemipmapsize" data-raw-source="[&lt;strong&gt;ComputeMipMapSize&lt;/strong&gt;](./cpixel-computemipmapsize.md)"><strong>ComputeMipMapSize</strong></a></p></td>
 <td align="left"><p>确定分配 MIP map 纹理所需的内存量。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/display/cpixel-computemipvolumesize" data-raw-source="[&lt;strong&gt;ComputeMipVolumeSize&lt;/strong&gt;](./cpixel-computemipvolumesize.md)"><strong>ComputeMipVolumeSize</strong></a></p></td>
+<td align="left"><p><a href="/windows-hardware/drivers/display/cpixel-computemipvolumesize" data-raw-source="[&lt;strong&gt;ComputeMipVolumeSize&lt;/strong&gt;](./cpixel-computemipvolumesize.md)"><strong>ComputeMipVolumeSize</strong></a></p></td>
 <td align="left"><p>确定分配 MIP map 纹理卷所需的内存量。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/display/cpixel-computemipmapoffset" data-raw-source="[&lt;strong&gt;ComputeMipMapOffset&lt;/strong&gt;](./cpixel-computemipmapoffset.md)"><strong>ComputeMipMapOffset</strong></a></p></td>
+<td align="left"><p><a href="/windows-hardware/drivers/display/cpixel-computemipmapoffset" data-raw-source="[&lt;strong&gt;ComputeMipMapOffset&lt;/strong&gt;](./cpixel-computemipmapoffset.md)"><strong>ComputeMipMapOffset</strong></a></p></td>
 <td align="left"><p>确定 MIP 地图纹理的子偏移量。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/display/cpixel-computemipvolumeoffset" data-raw-source="[&lt;strong&gt;ComputeMipVolumeOffset&lt;/strong&gt;](./cpixel-computemipvolumeoffset.md)"><strong>ComputeMipVolumeOffset</strong></a></p></td>
+<td align="left"><p><a href="/windows-hardware/drivers/display/cpixel-computemipvolumeoffset" data-raw-source="[&lt;strong&gt;ComputeMipVolumeOffset&lt;/strong&gt;](./cpixel-computemipvolumeoffset.md)"><strong>ComputeMipVolumeOffset</strong></a></p></td>
 <td align="left"><p>确定 MIP 地图量纹理的 subvolume 偏移量。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/display/cpixel-computesurfaceoffset" data-raw-source="[&lt;strong&gt;ComputeSurfaceOffset&lt;/strong&gt;](./cpixel-computesurfaceoffset.md)"><strong>ComputeSurfaceOffset</strong></a></p></td>
+<td align="left"><p><a href="/windows-hardware/drivers/display/cpixel-computesurfaceoffset" data-raw-source="[&lt;strong&gt;ComputeSurfaceOffset&lt;/strong&gt;](./cpixel-computesurfaceoffset.md)"><strong>ComputeSurfaceOffset</strong></a></p></td>
 <td align="left"><p>确定图面的 subrectangular 偏移量。</p></td>
 </tr>
 </tbody>
 </table>
-
- 
 
  
 

@@ -4,12 +4,12 @@ description: WIA 传输常量
 ms.assetid: 69f76919-5bbb-4968-997c-2d51f19aab6b
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c3787c292f96467c15cbabaf471ec65837474fd4
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 95a2336593a0f09671ad97af2e7be7edc81c9a23
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89189877"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90106612"
 ---
 # <a name="wia-transfer-constants"></a>WIA 传输常量
 
@@ -18,7 +18,7 @@ ms.locfileid: "89189877"
 
 这些常量分为三个子组：
 
--   项类型
+-   项目类型
 
 -   回叫消息
 
@@ -42,7 +42,7 @@ ms.locfileid: "89189877"
 <tbody>
 <tr class="odd">
 <td><p><strong>WiaItemTypeTransfer</strong></p></td>
-<td><p>应在能够传输数据的所有项上设置此 <a href="https://docs.microsoft.com/windows-hardware/drivers/image/wia-ipa-item-flags" data-raw-source="[&lt;strong&gt;WIA_IPA_ITEM_FLAGS&lt;/strong&gt;](./wia-ipa-item-flags.md)"><strong>WIA_IPA_ITEM_FLAGS</strong></a> 位;也就是说，应用程序可以对设置了此位的项启动下载或上传。</p></td>
+<td><p>应在能够传输数据的所有项上设置此 <a href="/windows-hardware/drivers/image/wia-ipa-item-flags" data-raw-source="[&lt;strong&gt;WIA_IPA_ITEM_FLAGS&lt;/strong&gt;](./wia-ipa-item-flags.md)"><strong>WIA_IPA_ITEM_FLAGS</strong></a> 位;也就是说，应用程序可以对设置了此位的项启动下载或上传。</p></td>
 </tr>
 </tbody>
 </table>
@@ -136,6 +136,4 @@ ms.locfileid: "89189877"
  
 
 有关 **IWiaTransfer** 和 **IWiaTransferCallback** 接口的详细信息，请参阅 Microsoft Windows SDK 文档。
-
- 
 

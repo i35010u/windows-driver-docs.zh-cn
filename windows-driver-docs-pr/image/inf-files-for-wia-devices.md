@@ -4,12 +4,12 @@ description: WIA 设备的 INF 文件
 ms.assetid: 65eac8b5-35d2-4537-8646-a35a1cf9aced
 ms.date: 07/18/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 40e070f3475563bbd0f68d987435b750f398926e
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 0f34525c45bdaf94a7cef2e3e9a19d5f13e0736e
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89184491"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90105354"
 ---
 # <a name="inf-files-for-wia-devices"></a>WIA 设备的 INF 文件
 
@@ -93,7 +93,7 @@ ms.locfileid: "89184491"
 <p>如果值为 Message1，则会显示系统提供的消息，并将 <strong>CreateFileName</strong> 项值设置为 AUTO。</p>
 <p>适用于需要手动安装的扫描仪和照相机。</p></td>
 <td><p>可选</p>
-<p>请注意，对于即插即用设备，将忽略 <strong>PortSelect</strong> ，但设备仍必须将 <strong>CreateFileName</strong> 条目值设置为 "自动"，以便 WIA 加载设备。 使用 <a href="https://docs.microsoft.com/windows-hardware/drivers/install/inf-addreg-directive" data-raw-source="[&lt;strong&gt;INF AddReg Directive&lt;/strong&gt;](../install/inf-addreg-directive.md)"><strong>Inf AddReg 指令</strong></a> 将此条目添加到设备 inf 文件的 <a href="https://docs.microsoft.com/windows-hardware/drivers/install/inf-ddinstall-section" data-raw-source="[&lt;strong&gt;INF DDInstall Section&lt;/strong&gt;](../install/inf-ddinstall-section.md)"><strong>inf DDInstall 部分</strong></a> 。</p></td>
+<p>请注意，对于即插即用设备，将忽略 <strong>PortSelect</strong> ，但设备仍必须将 <strong>CreateFileName</strong> 条目值设置为 "自动"，以便 WIA 加载设备。 使用 <a href="/windows-hardware/drivers/install/inf-addreg-directive" data-raw-source="[&lt;strong&gt;INF AddReg Directive&lt;/strong&gt;](../install/inf-addreg-directive.md)"><strong>Inf AddReg 指令</strong></a> 将此条目添加到设备 inf 文件的 <a href="/windows-hardware/drivers/install/inf-ddinstall-section" data-raw-source="[&lt;strong&gt;INF DDInstall Section&lt;/strong&gt;](../install/inf-ddinstall-section.md)"><strong>inf DDInstall 部分</strong></a> 。</p></td>
 </tr>
 </tbody>
 </table>
@@ -305,6 +305,4 @@ ms.locfileid: "89184491"
 **备注**
 
 在为扫描仪开发 INF 文件时，可以使用 [MICROSOFT OS 描述符](/previous-versions/gg463179(v=msdn.10)) 来启用兼容 ID 功能。 当你执行此操作时，你允许一个扫描仪驱动程序与多个扫描仪模型兼容。
-
- 
 

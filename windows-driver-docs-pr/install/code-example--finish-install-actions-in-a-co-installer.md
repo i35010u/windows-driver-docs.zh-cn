@@ -7,12 +7,12 @@ keywords:
 - 共同安装程序 WDK 设备安装，完成-安装操作
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 69c2f35e46540f33094609d767fff3bb32d50e27
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 5c09b3011192a4b867b1c998cde56e9a8135e6b1
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89096063"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90106604"
 ---
 # <a name="code-example-finish-install-actions-in-a-co-installer"></a>代码示例：辅助安装程序中的 Finish-Install 操作
 
@@ -21,7 +21,7 @@ ms.locfileid: "89096063"
 
 -   当共同安装程序收到 [**DIF_NEWDEVICEWIZARD_FINISHINSTALL**](./dif-newdevicewizard-finishinstall.md) 请求时，它会调用安装程序提供的函数 *FinishInstallActionsNeeded* ，以确定是否有完成安装操作。  (此示例中未显示 *FinishInstallActionsNeeded* 函数的代码) 。
 
-    如果*FinishInstallActionsNeeded*返回**TRUE**，则共同安装程序将调用[**SetupDiGetDeviceInstallParams**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetdeviceinstallparamsa)来检索设备的设备安装参数，然后调用[**SetupDiSetDeviceInstallParams**](/windows/desktop/api/setupapi/nf-setupapi-setupdisetdeviceinstallparamsa)来设置具有 DI_FLAGSEX_FINISHINSTALL_ACTION 标志的设备的[**SP_DEVINSTALL_PARAMS**](/windows/desktop/api/setupapi/ns-setupapi-_sp_devinstall_params_a)结构的**FlagsEx**成员。 通过设置此标志，Windows 将向所有类安装程序、类共同安装程序和安装此设备的设备共同安装程序发送 [**DIF_FINISHINSTALL_ACTION**](./dif-finishinstall-action.md) 请求。 此请求将在所有安装操作完成后发送（完成安装操作除外）。
+    如果*FinishInstallActionsNeeded*返回**TRUE**，则共同安装程序将调用[**SetupDiGetDeviceInstallParams**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetdeviceinstallparamsa)来检索设备的设备安装参数，然后调用[**SetupDiSetDeviceInstallParams**](/windows/desktop/api/setupapi/nf-setupapi-setupdisetdeviceinstallparamsa)来设置具有 DI_FLAGSEX_FINISHINSTALL_ACTION 标志的设备的[**SP_DEVINSTALL_PARAMS**](/windows/win32/api/setupapi/ns-setupapi-sp_devinstall_params_a)结构的**FlagsEx**成员。 通过设置此标志，Windows 将向所有类安装程序、类共同安装程序和安装此设备的设备共同安装程序发送 [**DIF_FINISHINSTALL_ACTION**](./dif-finishinstall-action.md) 请求。 此请求将在所有安装操作完成后发送（完成安装操作除外）。
 
 -   当共同安装程序收到 DIF_FINISHINSTALL_ACTION 请求时，共同安装程序将再次调用 *FinishInstallActionsNeeded* ，以确定它是否有完成安装操作，如果是，则执行完成安装操作。 共同安装程序向用户通知完成安装操作正在进行，并等待完成安装操作完成，然后再从处理 DIF_FINISHINSTALL_ACTION 请求。
 

@@ -4,12 +4,12 @@ description: 本主题介绍所有传感器的常见传感器属性。
 ms.assetid: 3E4DD221-BA8E-446E-BA7A-EF84DFED332F
 ms.date: 01/04/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 317f24074ff48309e7f9713f8100da62289c64af
-ms.sourcegitcommit: 937974aa9bbe0262a7ffe9631593fab48c4e7492
+ms.openlocfilehash: 49be7748d73eb6c0cc77e4c02dc104ee1ee721ef
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "90010173"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90105772"
 ---
 # <a name="common-sensor-properties"></a>通用传感器属性
 
@@ -41,14 +41,14 @@ ms.locfileid: "90010173"
 <td><p>VT_CLSID</p></td>
 <td><p>R/O</p></td>
 <td><p>必需</p></td>
-<td><p>传感器的类型。 GUID 将包含与 Windows 传感器 (相同的格式，例如 SENSOR_TYPE_ACCELEROMETER_3D) 。 有关传感器类型的详细信息，请参阅 <a href="https://docs.microsoft.com/windows-hardware/drivers/sensors/about-sensor-constants" data-raw-source="[Sensor type GUIDs](./about-sensor-constants.md)">传感器类型 guid</a>。</p></td>
+<td><p>传感器的类型。 GUID 将包含与 Windows 传感器 (相同的格式，例如 SENSOR_TYPE_ACCELEROMETER_3D) 。 有关传感器类型的详细信息，请参阅 <a href="/windows-hardware/drivers/sensors/about-sensor-constants" data-raw-source="[Sensor type GUIDs](./about-sensor-constants.md)">传感器类型 guid</a>。</p></td>
 </tr>
 <tr class="even">
 <td><p>PKEY_Sensor_State</p></td>
 <td><p>VT_UI4</p></td>
 <td><p>R/O</p></td>
 <td><p>必需</p></td>
-<td><p>传感器的状态。 有关传感器状态的详细信息，请参阅 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/sensorsdef/ne-sensorsdef-sensor_state" data-raw-source="[&lt;strong&gt;SENSOR_STATE&lt;/strong&gt;](/windows-hardware/drivers/ddi/sensorsdef/ne-sensorsdef-sensor_state)"><strong>SENSOR_STATE</strong></a>。</p></td>
+<td><p>传感器的状态。 有关传感器状态的详细信息，请参阅 <a href="/windows-hardware/drivers/ddi/sensorsdef/ne-sensorsdef-sensor_state" data-raw-source="[&lt;strong&gt;SENSOR_STATE&lt;/strong&gt;](/windows-hardware/drivers/ddi/sensorsdef/ne-sensorsdef-sensor_state)"><strong>SENSOR_STATE</strong></a>。</p></td>
 </tr>
 <tr class="odd">
 <td><p>PKEY_Sensor_MinimumDataInterval_Ms</p></td>
@@ -164,6 +164,4 @@ ms.locfileid: "90010173"
 [**传感器 \_ 状态**](/windows-hardware/drivers/ddi/sensorsdef/ne-sensorsdef-sensor_state)
 
 [传感器类型 Guid](./about-sensor-constants.md)
-
- 
 

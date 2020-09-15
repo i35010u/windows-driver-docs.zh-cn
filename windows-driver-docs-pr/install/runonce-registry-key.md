@@ -5,18 +5,18 @@ ms.assetid: dbeb7be7-4d38-49e2-944c-ea95d9914ebe
 keywords:
 - RunOnce 注册表项
 - 注册表 WDK 设备安装
-- 设备安装 WDK、 注册表
-- 安装设备 WDK、 注册表
-- 设备安装程序 WDK 设备安装、 注册表
+- 设备安装 WDK，注册表
+- 安装设备 WDK、注册表
+- 设备设置 WDK 设备安装，注册表
 - 驱动程序注册表 RunOnce 密钥 WDK 设备安装
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cf05620ed9ad77c9f0113c6cb0e31bf525af3544
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ecb21b78e035012e715a3cfdf78fec7fb0541d02
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63382920"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90106484"
 ---
 # <a name="runonce-registry-key"></a>RunOnce 注册表项
 
@@ -24,47 +24,47 @@ ms.locfileid: "63382920"
 
 
 
-所有版本的 Windows 都支持注册表项， **RunOnce**，这可用于指定系统将执行其中一个命令的时间，然后删除。
+所有版本的 Windows 都支持一个注册表项 **RunOnce**，此注册表项可用于指定系统将执行一次然后删除的命令。
 
-在 Windows 8 和 Windows 8.1 **RunOnce**在设备安装过程中处理的纯软件 SWENUM 设备安装的项。 其他**RunOnce**项添加到**RunOnce**密钥。 应用下一次系统处理这些**RunOnce**密钥。 设备安装不会强制系统来处理**RunOnce**条目。
+在 Windows 8 和 Windows 8.1 中，在设备安装过程中会处理用于安装仅软件 SWENUM 设备的 **RunOnce** 条目。 其他 **runonce** 项将添加到 **runonce** 项。 它们将在系统下一次处理 **RunOnce** 密钥时应用。 设备安装不会强制系统处理 **RunOnce** 条目。
 
-在 Windows 7 和早期版本中，立即安装设备后，Windows 执行的命令存储在下**RunOnce**键，然后删除的项。 此外，每次系统启动时，它执行存储在下面的命令**RunOnce**键，然后删除的项。 因此，如果在命令放**RunOnce**密钥，您不能轻松地预测其执行时间。
+在 Windows 7 和以前的版本中，安装设备后，Windows 会立即执行存储在 **RunOnce** 项下的命令，然后删除该密钥。 此外，当系统每次启动时，它会执行存储在 **RunOnce** 项下的命令，然后删除该密钥。 因此，如果将命令放在 **RunOnce** 项下面，则无法轻松地预测执行时间。
 
-Windows 安装设备后，执行存储在该命令立即**RunOnce**键，然后删除的项。 此外，每次系统启动时，它执行存储在下面的命令**RunOnce**键，然后删除的项。 因此，如果在命令放**RunOnce**密钥，您不能轻松地预测其执行时间。
+安装设备后，Windows 会立即执行存储在 **RunOnce** 项下的命令，然后删除该密钥。 此外，当系统每次启动时，它会执行存储在 **RunOnce** 项下的命令，然后删除该密钥。 因此，如果将命令放在 **RunOnce** 项下面，则无法轻松地预测执行时间。
 
-对于设备安装**RunOnce**可以通过创建注册表项*添加注册表部分*，这通过指定[ **INF AddReg 指令**](inf-addreg-directive.md). 每个*添加注册表部分*具有以下语法：
+对于设备安装，可以通过使用通过[**INF AddReg 指令**](inf-addreg-directive.md)指定的 "*添加注册表" 部分*来创建**RunOnce**注册表项。 每个 " *添加注册表" 部分* 都具有以下语法：
 
 `reg-root, [subkey], [value-entry-name], [flags], [value]`
 
-注册表根目录 (*reg 根*) 和子项的值**RunOnce**注册表项如下所示：
+**RunOnce**注册表项的注册表根 (*reg*) 和子键值如下所示：
 
-**HKLM, "Software\\Microsoft\\Windows\\CurrentVersion\\RunOnce"**
+**HKLM，"Software \\ Microsoft \\ Windows \\ CurrentVersion \\ RunOnce"**
 
-*值的条目名称*字符串中省略**RunOnce**注册表项。 由指示的项的类型*标志*值，必须是[REG_SZ](https://docs.microsoft.com/windows/desktop/SysInfo/registry-value-types) (*标志*0x00000000 的值) 或[REG_EXPAND_SZ](https://docs.microsoft.com/windows/desktop/SysInfo/registry-value-types)(*标志*0x00010000 值)。 类型的条目[REG_SZ](https://docs.microsoft.com/windows/desktop/SysInfo/registry-value-types) （默认值），*标志*可以省略值。
+在**RunOnce**注册表项中省略了*值输入名称*字符串。 项的类型（由 *flags* 值指示）必须是 [REG_SZ](/windows/desktop/SysInfo/registry-value-types) (*标志* 值 0x00000000) 或 [REG_EXPAND_SZ](/windows/desktop/SysInfo/registry-value-types) (*flags* 值为 0x00010000) 。 对于 (默认) [REG_SZ](/windows/desktop/SysInfo/registry-value-types) 类型的条目，可以省略 *Flags* 值。
 
-*值*中的参数**RunOnce**密钥指定要执行的命令。 此参数是带引号的字符串具有以下格式：
+**RunOnce**键中的*值*参数指定要执行的命令。 此参数是采用以下格式的带引号的字符串：
 
 ```cpp
 Rundll32[.exe] DllName,EntryPoint[Arguments]
 ```
 
-默认情况下**RunOnce**执行指定的命令后删除密钥。 您可以前缀**RunOnce**密钥*值*感叹号 （！），该命令成功运行后，将延迟的键，直到删除参数。 如果没有感叹号前缀，如果指定的命令失败， **RunOnce**密钥仍将被删除，该命令将不会执行在系统启动下一次。
+默认情况下，将在执行指定命令后删除 **RunOnce** 密钥。 你可以使用感叹号 (！ ) 为 **RunOnce** *键值参数加* 上前缀，以便在命令成功运行之前延迟删除密钥。 如果指定的命令失败， **则该命令** 将仍会被删除，并且在系统下一次启动时不会执行该命令。
 
-此外，默认情况下， **RunOnce**系统开始在安全模式下，密钥将被忽略。 *值*的参数**RunOnce**密钥可以带星号前缀 (\*) 若要强制甚至在安全模式下执行的命令。
+另外，默认情况下，当系统在安全模式下启动时，将忽略 **RunOnce** 密钥。 可以在**RunOnce**密钥的*值*参数前面加上一个星号 (\*) 以强制在安全模式下执行命令。
 
-在创建时，请考虑以下准则*值*字符串条目：
+创建 *值* 字符串条目时，请考虑以下准则：
 
--   *Rundll32*无论是否可以显示其 *.exe*文件扩展名。
+-   *Rundll32.exe* 可以在其 *.exe* 文件扩展名的情况下出现。
 
--   *Dll 名称*是 DLL 或可执行映像的完整路径。 除了需要终止逗号表达式不得否则包含所有逗号。 如果提供无文件扩展名，则默认扩展名是 *.dll*。
+-   *DllName* 是 DLL 或可执行映像的完整路径。 除必需的终止逗号外，表达式不得以其他方式包含任何逗号。 如果未提供文件扩展名，则默认扩展名为 *.dll*。
 
--   *EntryPoint*中所指示的 DLL 的入口点的名称*DllName*。
+-   *EntryPoint* 是 *DLLNAME*指定的 DLL 中入口点的名称。
 
--   *参数*是可选的子字符串，其中包含任何参数，必须传递给指定的 DLL。
+-   *参数* 是一个可选的子字符串，其中包含必须传递到指定 DLL 的所有参数。
 
--   必须只有一个空格来分隔*EntryPoint*中的字符串*自变量*子字符串。
+-   只有一个空格必须将 *入口点* 字符串与 *参数* substring 分隔开来。
 
-下面的代码示例演示*添加注册表部分*条目，用于存储命令，并在其自变量**RunOnce**密钥：
+下面的代码示例演示了在**RunOnce**键下存储命令及其参数的 "*添加注册表" 部分*条目：
 
 ```cpp
 ;; WDMAud swenum install
@@ -79,27 +79,21 @@ KSNAME_Filter = "{9B365890-165F-11D0-A195-0020AFD156E4}"
 KSCATEGORY_WDMAUD = "{3E227E76-690D-11D2-8161-0000F8775BF1}"
 ```
 
-使用时，以下规则适用**RunOnce**对于设备安装的注册表项：
+使用 **RunOnce** 注册表项进行设备安装时，下列规则适用：
 
--   这些注册表项必须仅用于通过 SWENUM，软件设备枚举器枚举的仅限软件的设备的安装。
+-   这些注册表项必须仅用于 SWENUM （软件设备枚举器）所枚举的仅限软件的设备的安装。
 
--   **RunOnce**密钥必须仅包含对*Rundll32.exe*。 否则，WHQL 将未进行数字签名[驱动程序包](driver-packages.md)。
+-   **RunOnce** 密钥只能由对 *Rundll32.exe*的调用组成。 否则，WHQL 不会对 [驱动程序包](driver-packages.md)进行数字签名。
 
--   若要执行的代码必须提示用户输入。
+-   要执行的代码不得提示用户输入。
 
--   在系统上下文中执行服务器端的安装。 出于此原因，您必须确保要执行的代码包含任何安全漏洞和文件权限防止代码的恶意修改。
+-   服务器端安装在系统上下文中执行。 出于此原因，必须确定要执行的代码不包含任何安全漏洞，并且该文件权限会阻止对代码进行恶意修改。
 
--   从 Windows Vista 开始，系统将不会执行指定的命令**RunOnce**密钥如果没有管理员权限的用户登录到系统。 这可能会导致到不完整或已损坏的安装以下系统重新启动。
+-   从 Windows Vista 开始，如果没有管理员权限的用户登录到系统，则系统不会执行 **RunOnce** 密钥指定的命令。 在系统重新启动后，这可能会导致安装不完整或已损坏。
 
-    之前*设备安装应用程序*创建**RunOnce**条目，它会通知当前在系统重新启动后，具有管理员权限的用户必须登录的用户。
+    在 *设备安装应用程序* 创建 **RunOnce** 条目之前，它会通知当前用户具有管理员权限的用户必须在系统重新启动后登录。
 
-    有关详细信息，请参阅[开发应用程序在 Windows Vista 上运行的登录](https://go.microsoft.com/fwlink/p/?linkid=133224)。
-
- 
+    有关详细信息，请参阅 [开发在 Windows Vista 上登录时运行的应用程序](https://go.microsoft.com/fwlink/p/?linkid=133224)。
 
  
-
-
-
-
 

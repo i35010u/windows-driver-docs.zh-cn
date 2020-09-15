@@ -6,19 +6,19 @@ ms.assetid: a5c81db0-e753-4d91-97e4-c58ea05f5ce8
 keywords:
 - IRP_MN_STOP_DEVICE 内核模式驱动程序体系结构
 ms.localizationpriority: medium
-ms.openlocfilehash: 74b636b4ca0055302bfdcc87df0e2b54a1b96ec4
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 663bf26022804e2bdd7d04cc93722a5886d4090d
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89189315"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90104578"
 ---
 # <a name="irp_mn_stop_device"></a>IRP \_ MN \_ 停止 \_ 设备
 
 
 所有 PnP 驱动程序都必须处理此 IRP。
 
-## <a name="value"></a>值
+## <a name="value"></a>“值”
 
 0x04
 
@@ -60,7 +60,7 @@ PnP 管理器在 \_ 系统线程的上下文中以 IRQL 被动级别发送此 IR
 
 为了响应此 IRP，Windows 2000 和更高版本的驱动程序会停止设备，并释放设备使用的任何硬件资源，如 i/o 端口和中断。
 
-在 Windows 2000 和更高版本上，停止 IRP 仅用于释放设备的硬件资源，以便可以重新配置这些资源。 重新配置资源后，将重新启动设备。 停止 IRP 不是删除 IRP 的前提。 有关 PnP Irp 发送到设备的顺序的详细信息，请参阅 [即插即用](https://docs.microsoft.com/windows-hardware/drivers/kernel/implementing-plug-and-play) 。
+在 Windows 2000 和更高版本上，停止 IRP 仅用于释放设备的硬件资源，以便可以重新配置这些资源。 重新配置资源后，将重新启动设备。 停止 IRP 不是删除 IRP 的前提。 有关 PnP Irp 发送到设备的顺序的详细信息，请参阅 [即插即用](./introduction-to-plug-and-play.md) 。
 
 在 Windows 98/Me 上，还可以在启动失败之后和设备处于禁用状态时使用 "停止 IRP"。 在这些操作系统上运行的 WDM 驱动程序应停止设备，使任何传入 i/o 失败，并禁用和取消注册任何用户模式接口。
 
@@ -82,13 +82,13 @@ PnP 管理器在 \_ 系统线程的上下文中以 IRQL 被动级别发送此 IR
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Header</p></td>
+<td><p>标头</p></td>
 <td>Wdm.h（包括 Wdm.h、Ntddk.h 或 Ntifs.h）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
 [**IRP \_ MN \_ 查询 \_ 停止 \_ 设备**](irp-mn-query-stop-device.md)

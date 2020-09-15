@@ -6,19 +6,19 @@ ms.assetid: cbc5b959-0aae-4c86-b490-296965a7f158
 keywords:
 - IRP_MN_READ_CONFIG 内核模式驱动程序体系结构
 ms.localizationpriority: medium
-ms.openlocfilehash: 1f052cc47116892039cb5036c696f234dff7d2e9
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: d8d2359b79fe60c98289bfb1511b621e0c0ab4ae
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89186461"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90104636"
 ---
 # <a name="irp_mn_read_config"></a>IRP \_ MN \_ 读取 \_ 配置
 
 
 具有配置空间的总线的总线驱动程序必须为其子设备处理此请求 (子 PDOs) 。 Filter 和 function 驱动程序不处理此请求。
 
-## <a name="value"></a>值
+## <a name="value"></a>“值”
 
 0x0F
 
@@ -59,7 +59,7 @@ ULONG Length
 </colgroup>
 <thead>
 <tr class="header">
-<th>值</th>
+<th>“值”</th>
 <th>总线</th>
 <th>含义</th>
 </tr>
@@ -131,7 +131,7 @@ ULONG Length
 
 处理此请求的总线驱动程序应检查 WhichSpace 参数，以确保它包含驱动程序支持的值。
 
-请参阅 [即插即用](https://docs.microsoft.com/windows-hardware/drivers/kernel/implementing-plug-and-play) ，了解用于处理 [即插即用次要 irp](plug-and-play-minor-irps.md)的一般规则。
+请参阅 [即插即用](./introduction-to-plug-and-play.md) ，了解用于处理 [即插即用次要 irp](plug-and-play-minor-irps.md)的一般规则。
 
 **正在发送此 IRP**
 
@@ -163,13 +163,13 @@ ULONG Length
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Header</p></td>
+<td><p>标头</p></td>
 <td>Wdm.h（包括 Wdm.h、Ntddk.h 或 Ntifs.h）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
 [**IRP \_ MN \_ 查询 \_ 接口**](irp-mn-query-interface.md)

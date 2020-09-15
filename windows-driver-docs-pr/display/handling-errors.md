@@ -4,12 +4,12 @@ description: 处理错误
 ms.assetid: ac4e056e-3304-4934-887a-5cc2b87989bd
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d78cf705bf1b2c46d8cff8de60b81816355e818b
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 9cf731ab4a502aedb11972336080a65f00c46ef1
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89064798"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90104490"
 ---
 # <a name="handling-errors"></a>处理错误
 
@@ -40,7 +40,7 @@ ms.locfileid: "89064798"
 <tbody>
 <tr class="odd">
 <td align="left"><p>NoErrors</p></td>
-<td align="left"><p>驱动程序不应遇到任何错误，包括 D3DDDIERR_DEVICEREMOVED。 运行时将确定对 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_seterror_cb" data-raw-source="[&lt;strong&gt;pfnSetErrorCb&lt;/strong&gt;](/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_seterror_cb)"><strong>pfnSetErrorCb</strong></a> 的任何调用都是重要的。</p></td>
+<td align="left"><p>驱动程序不应遇到任何错误，包括 D3DDDIERR_DEVICEREMOVED。 运行时将确定对 <a href="/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_seterror_cb" data-raw-source="[&lt;strong&gt;pfnSetErrorCb&lt;/strong&gt;](/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_seterror_cb)"><strong>pfnSetErrorCb</strong></a> 的任何调用都是重要的。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>AllowDeviceRemoved</p></td>
@@ -56,7 +56,7 @@ ms.locfileid: "89064798"
 </tr>
 <tr class="odd">
 <td align="left"><p>AllowMapErrors</p></td>
-<td align="left"><p>驱动程序应检查资源争用情况。 因此，如果 D3D10_DDI_MAP_FLAG_DONOTWAIT 标志传递到驱动程序的<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_resourcemap" data-raw-source="[&lt;strong&gt;ResourceMap&lt;/strong&gt;](/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_resourcemap)"><strong>windows.applicationmodel.resources.core.resourcemap</strong></a>函数，则驱动程序可以通过<strong>pfnSetErrorCb</strong>传递 DXGI_DDI_ERR_WASSTILLDRAWING。 驱动程序还可以通过 <strong>pfnSetErrorCb</strong>传递 D3DDDIERR_DEVICEREMOVED。 运行时将确定任何其他错误代码都是关键代码。</p></td>
+<td align="left"><p>驱动程序应检查资源争用情况。 因此，如果 D3D10_DDI_MAP_FLAG_DONOTWAIT 标志传递到驱动程序的<a href="/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_resourcemap" data-raw-source="[&lt;strong&gt;ResourceMap&lt;/strong&gt;](/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_resourcemap)"><strong>windows.applicationmodel.resources.core.resourcemap</strong></a>函数，则驱动程序可以通过<strong>pfnSetErrorCb</strong>传递 DXGI_DDI_ERR_WASSTILLDRAWING。 驱动程序还可以通过 <strong>pfnSetErrorCb</strong>传递 D3DDDIERR_DEVICEREMOVED。 运行时将确定任何其他错误代码都是关键代码。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>AllowGetDataErrors</p></td>
@@ -64,7 +64,7 @@ ms.locfileid: "89064798"
 </tr>
 <tr class="odd">
 <td align="left"><p>AllowWKCheckCounterErrors</p></td>
-<td align="left"><p>驱动程序的 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_checkcounter" data-raw-source="[&lt;strong&gt;CheckCounter&lt;/strong&gt;](/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_checkcounter)"><strong>CheckCounter</strong></a> 函数应指示它是否支持运行时定义的任何计数器。 因此，该驱动程序可以通过 <strong>pfnSetErrorCb</strong>传递 DXGI_DDI_ERR_UNSUPPORTED。 运行时将确定任何其他错误代码都是关键代码。</p>
+<td align="left"><p>驱动程序的 <a href="/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_checkcounter" data-raw-source="[&lt;strong&gt;CheckCounter&lt;/strong&gt;](/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_checkcounter)"><strong>CheckCounter</strong></a> 函数应指示它是否支持运行时定义的任何计数器。 因此，该驱动程序可以通过 <strong>pfnSetErrorCb</strong>传递 DXGI_DDI_ERR_UNSUPPORTED。 运行时将确定任何其他错误代码都是关键代码。</p>
 <p>驱动程序无法返回任何检查类型函数的 D3DDDIERR_DEVICEREMOVED。</p></td>
 </tr>
 <tr class="even">
@@ -74,8 +74,6 @@ ms.locfileid: "89064798"
 </tr>
 </tbody>
 </table>
-
- 
 
  
 

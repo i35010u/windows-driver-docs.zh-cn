@@ -14,12 +14,12 @@ keywords:
 - Bootcfg 工具
 ms.date: 07/09/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 218944a478bfdd419324676600c46cf839a175ea
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 6ff573ede52c9fedf72085f2faaa90f4f1800305
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89383357"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90105914"
 ---
 # <a name="overview-of-boot-options-in-efi"></a>EFI 中的启动选项概述
 
@@ -80,7 +80,7 @@ OS Friendly Name: EFI Shell [Built-in]
 <td align="left"><pre space="preserve"><code>Timeout:   30</code></pre></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><strong>默认</strong></p></td>
+<td align="left"><p><strong>Default</strong></p></td>
 <td align="left"><p>指定默认操作系统的位置。</p></td>
 <td align="left"><pre space="preserve"><code>\Device\HarddiskVolume3\WINDOWS</code></pre></td>
 </tr>
@@ -110,7 +110,7 @@ Enterprise</code></pre></td>
 <tr class="even">
 <td align="left"><p><strong>OsLoadOptions</strong></p></td>
 <td align="left"><p>指定项的 <em>启动参数</em> 。 <em>启动参数</em> 是用于启用、禁用和配置操作系统功能的命令。 EFI 启动管理器将这些参数传递给可启动设备或系统，以进行解释和实施。</p>
-<p>有关与驱动程序调试和测试相关的启动参数的列表，请参阅 <a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/boot-options-in-a-boot-ini-file" data-raw-source="[Boot Options in a Boot.ini File](./boot-options-in-a-boot-ini-file.md)">Boot.ini 文件中的启动选项</a>。</p></td>
+<p>有关与驱动程序调试和测试相关的启动参数的列表，请参阅 <a href="/windows-hardware/drivers/devtest/boot-options-in-a-boot-ini-file" data-raw-source="[Boot Options in a Boot.ini File](./boot-options-in-a-boot-ini-file.md)">Boot.ini 文件中的启动选项</a>。</p></td>
 <td align="left"><pre space="preserve"><code>OsLoadOptions: /debug
 /debugport=COM1 /baudrate=57600</code></pre></td>
 </tr>

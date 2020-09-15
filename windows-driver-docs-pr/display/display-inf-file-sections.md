@@ -11,12 +11,12 @@ keywords:
 - 显示 INF 文件部分 WDK Windows 2000 显示
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 17989c7347f1b26d7dac64a7a453cd84366085da
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: fb01befee0b8249e5fb75c83cac3d17905d5eaa0
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89064858"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90106448"
 ---
 # <a name="display-inf-file-sections"></a>显示 INF 文件节
 
@@ -24,7 +24,7 @@ ms.locfileid: "89064858"
 ## <span id="ddk_display_inf_file_sections_gg"></span><span id="DDK_DISPLAY_INF_FILE_SECTIONS_GG"></span>
 
 
-本部分说明如何将安装信息文件 (INF 写入特定应用于图形适配器安装的) 部分。 有关 INF 文件的更多常规信息，请参阅 [Inf 文件部分和指令](https://docs.microsoft.com/windows-hardware/drivers/install/inf-file-sections-and-directives)。
+本部分说明如何将安装信息文件 (INF 写入特定应用于图形适配器安装的) 部分。 有关 INF 文件的更多常规信息，请参阅 [Inf 文件部分和指令](../install/index.md)。
 
 ### <a name="span-idddinstallsoftwaresettings_sectionspanspan-idddinstallsoftwaresettings_sectionspanspan-idddinstallsoftwaresettings_sectionspanddinstallsoftwaresettings-section"></a><span id="DDInstall.SoftwareSettings_Section"></span><span id="ddinstall.softwaresettings_section"></span><span id="DDINSTALL.SOFTWARESETTINGS_SECTION"></span>DDInstall. SoftwareSettings 部分
 
@@ -96,15 +96,15 @@ HKR,, CapabilityOverride
 </tr>
 <tr class="odd">
 <td align="left"><p>0x4</p></td>
-<td align="left"><p>禁用对 Direct3D 硬件加速的所有支持。 阻止对<a href="https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_getdriverinfo" data-raw-source="[&lt;strong&gt;DdGetDriverInfo&lt;/strong&gt;](/windows/desktop/api/ddrawint/nc-ddrawint-pdd_getdriverinfo)"><strong>DdGetDriverInfo</strong></a>的调用<em>，</em>该调用请求从连接到驱动程序的 Direct3D 功能和回调信息。</p></td>
+<td align="left"><p>禁用对 Direct3D 硬件加速的所有支持。 阻止对<a href="/windows/desktop/api/ddrawint/nc-ddrawint-pdd_getdriverinfo" data-raw-source="[&lt;strong&gt;DdGetDriverInfo&lt;/strong&gt;](/windows/desktop/api/ddrawint/nc-ddrawint-pdd_getdriverinfo)"><strong>DdGetDriverInfo</strong></a>的调用<em>，</em>该调用请求从连接到驱动程序的 Direct3D 功能和回调信息。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x8</p></td>
-<td align="left"><p>禁用对 OpenGL 可安装客户端驱动程序的所有支持 (ICD) 和 miniclient driver (MCD) 。 阻止对 <a href="https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvsetpixelformat" data-raw-source="[&lt;strong&gt;DrvSetPixelFormat&lt;/strong&gt;](/windows/desktop/api/winddi/nf-winddi-drvsetpixelformat)"><strong>DrvSetPixelFormat</strong></a>、 <a href="https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvdescribepixelformat" data-raw-source="[&lt;strong&gt;DrvDescribePixelFormat&lt;/strong&gt;](/windows/desktop/api/winddi/nf-winddi-drvdescribepixelformat)"><strong>DrvDescribePixelFormat</strong></a>和 <a href="https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvswapbuffers" data-raw-source="[&lt;strong&gt;DrvSwapBuffers&lt;/strong&gt;](/windows/desktop/api/winddi/nf-winddi-drvswapbuffers)"><strong>DrvSwapBuffers</strong></a> 的调用到达驱动程序。 还禁止 OPENGL_GETINFO、OPENGL_CMD 和 MCDFUNCS 的转义到达驱动程序。</p></td>
+<td align="left"><p>禁用对 OpenGL 可安装客户端驱动程序的所有支持 (ICD) 和 miniclient driver (MCD) 。 阻止对 <a href="/windows/desktop/api/winddi/nf-winddi-drvsetpixelformat" data-raw-source="[&lt;strong&gt;DrvSetPixelFormat&lt;/strong&gt;](/windows/desktop/api/winddi/nf-winddi-drvsetpixelformat)"><strong>DrvSetPixelFormat</strong></a>、 <a href="/windows/desktop/api/winddi/nf-winddi-drvdescribepixelformat" data-raw-source="[&lt;strong&gt;DrvDescribePixelFormat&lt;/strong&gt;](/windows/desktop/api/winddi/nf-winddi-drvdescribepixelformat)"><strong>DrvDescribePixelFormat</strong></a>和 <a href="/windows/desktop/api/winddi/nf-winddi-drvswapbuffers" data-raw-source="[&lt;strong&gt;DrvSwapBuffers&lt;/strong&gt;](/windows/desktop/api/winddi/nf-winddi-drvswapbuffers)"><strong>DrvSwapBuffers</strong></a> 的调用到达驱动程序。 还禁止 OPENGL_GETINFO、OPENGL_CMD 和 MCDFUNCS 的转义到达驱动程序。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x10</p></td>
-<td align="left"><p>禁用对驱动程序中所有转义的支持。 阻止对 <a href="https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvescape" data-raw-source="[&lt;strong&gt;DrvEscape&lt;/strong&gt;](/windows/desktop/api/winddi/nf-winddi-drvescape)"><strong>DrvEscape</strong></a> 和 <a href="https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvdrawescape" data-raw-source="[&lt;strong&gt;DrvDrawEscape&lt;/strong&gt;](/windows/desktop/api/winddi/nf-winddi-drvdrawescape)"><strong>DrvDrawEscape</strong></a> 的调用到达驱动程序。</p></td>
+<td align="left"><p>禁用对驱动程序中所有转义的支持。 阻止对 <a href="/windows/desktop/api/winddi/nf-winddi-drvescape" data-raw-source="[&lt;strong&gt;DrvEscape&lt;/strong&gt;](/windows/desktop/api/winddi/nf-winddi-drvescape)"><strong>DrvEscape</strong></a> 和 <a href="/windows/desktop/api/winddi/nf-winddi-drvdrawescape" data-raw-source="[&lt;strong&gt;DrvDrawEscape&lt;/strong&gt;](/windows/desktop/api/winddi/nf-winddi-drvdrawescape)"><strong>DrvDrawEscape</strong></a> 的调用到达驱动程序。</p></td>
 </tr>
 </tbody>
 </table>
@@ -206,6 +206,4 @@ HKLM,"SYSTEM\CurrentControlSet\Control\AGP","1AD0012A",0x00030003,04,00,00,00,00
 ```
 
 上述代码中的第二个条目指示由 HKLM 后面的字符串标识的子项将添加到注册表中的 HKEY \_ 本地 \_ 计算机根下。 与上一项一样，与此子项关联的值名称是由设备的 DeviceID 和 VendorID 组成的字符串。 标志值也相同。 值项为 AGP \_ 标志 \_ ，无 \_ 4x \_ 速率，这将禁用 agp 4x 传输速率。 请注意，与之前一样，此值项中的字节的顺序与上表中标志的值相同。
-
- 
 

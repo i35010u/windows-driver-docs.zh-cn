@@ -4,12 +4,12 @@ description: 本文为驱动程序开发人员提供了驱动程序安全核对�
 ms.assetid: 25375E02-FCA1-4E94-8D9A-AA396C909278
 ms.date: 03/13/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 950701a61bdccce926fe86130d247adf9e5f8dcb
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: eafb2200f982cf7e663aaa103f1eedab71d4a79d
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89211129"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90105734"
 ---
 # <a name="driver-security-checklist"></a>驱动程序安全清单
 
@@ -143,7 +143,7 @@ Ihv 和 Oem 可以使用安全开发生命周期 (SDL) 最佳实践和相关工�
 
 Windows 驱动程序的主要职责之一是在用户模式应用程序和系统设备之间传输数据。 下表显示了用于访问数据缓冲区的三种方法。
 
-|IOCTL 缓冲区类型 | “摘要”                                    | 更多信息 |  
+|IOCTL 缓冲区类型 | 总结                                    | 更多信息 |  
 |------------------|--------------------------------------------|-------------------------------------------------------------------------|
 | METHOD_BUFFERED  |建议用于大多数 situtations            | [使用缓冲 I/O](../kernel/using-buffered-i-o.md)
 | METHOD_IN_DIRECT 或 METHOD_OUT_DIRECT |用于某些高速硬件 i/o    |[使用直接 I/O](../kernel/using-direct-i-o.md) |
@@ -572,7 +572,7 @@ BinSkim 是一个开源工具，它会生成使用静态分析结果交换格式
 > [!TIP]
 >添加引用网络符号服务器的符号路径 (时) ，请添加本地缓存位置以指定要缓存符号的本地路径。 不这样做会极大地影响 BinSkim 的性能。 下面的示例在 d:\symbols. 中指定一个本地缓存。
 `--sympath Cache*d:\symbols;Srv*http://symweb`
-有关 sympath 的详细信息，请参阅 [Windows 调试器的符号路径](https://docs.microsoft.com/windows-hardware/drivers/debugger/symbol-path)。
+有关 sympath 的详细信息，请参阅 [Windows 调试器的符号路径](../debugger/symbol-path.md)。
 
 1. 执行以下命令来分析已编译的驱动程序二进制文件。 将目标路径更新为指向编译的驱动程序 sys.databases 文件。
 

@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: db9c316eea49044aff1011ce57435b67c95cb792
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: e68df6a9e7e369ddceba22adff06272b637e6613
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89206577"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90105694"
 ---
 # <a name="bug-check-0xda-system_pte_misuse"></a>Bug 检查0xDA：系统 \_ PTE 被 \_ 滥用
 
@@ -98,7 +98,7 @@ ms.locfileid: "89206577"
 <td align="left"><p>0x07</p></td>
 <td align="left"><p>初始映射</p></td>
 <td align="left"><p>映射的数目</p></td>
-<td align="left"><p>预留</p></td>
+<td align="left"><p>保留</p></td>
 <td align="left"><p>仅) 映射范围为双分配 (Windows 2000。</p></td>
 </tr>
 <tr class="even">
@@ -190,7 +190,7 @@ ms.locfileid: "89206577"
 <td align="left"><p>0x102</p></td>
 <td align="left"><p>第一个映射地址</p></td>
 <td align="left"><p>调用方的标识标记</p></td>
-<td align="left"><p>预留</p></td>
+<td align="left"><p>保留</p></td>
 <td align="left"><p>调用方尝试释放的映射地址空间明显为空。</p></td>
 </tr>
 <tr class="odd">
@@ -198,8 +198,8 @@ ms.locfileid: "89206577"
 <td align="left"><p>无效映射的地址</p></td>
 <td align="left"><p>调用方的标识标记</p></td>
 <td align="left"><p>映射地址空间中的映射数</p></td>
-<td align="left"><p>调用方尝试释放的映射地址空间仍保留。 <strong><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-mmunmapreservedmapping" data-raw-source="[MmUnmapReservedMapping](/windows-hardware/drivers/ddi/wdm/nf-wdm-mmunmapreservedmapping)">MmUnmapReservedMapping</a></strong></p>
-<p>必须在 <strong><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-mmfreemappingaddress" data-raw-source="[MmFreeMappingAddress](/windows-hardware/drivers/ddi/wdm/nf-wdm-mmfreemappingaddress)">MmFreeMappingAddress</a></strong>之前调用。</p></td>
+<td align="left"><p>调用方尝试释放的映射地址空间仍保留。 <strong><a href="/windows-hardware/drivers/ddi/wdm/nf-wdm-mmunmapreservedmapping" data-raw-source="[MmUnmapReservedMapping](/windows-hardware/drivers/ddi/wdm/nf-wdm-mmunmapreservedmapping)">MmUnmapReservedMapping</a></strong></p>
+<p>必须在 <strong><a href="/windows-hardware/drivers/ddi/wdm/nf-wdm-mmfreemappingaddress" data-raw-source="[MmFreeMappingAddress](/windows-hardware/drivers/ddi/wdm/nf-wdm-mmfreemappingaddress)">MmFreeMappingAddress</a></strong>之前调用。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x104</p></td>
@@ -212,7 +212,7 @@ ms.locfileid: "89206577"
 <td align="left"><p>0x105</p></td>
 <td align="left"><p>第一个映射地址</p></td>
 <td align="left"><p>调用方的标识标记</p></td>
-<td align="left"><p>预留</p></td>
+<td align="left"><p>保留</p></td>
 <td align="left"><p>调用方正在尝试将 MDL 映射到无效的映射地址空间。 调用方很可能指定了无效的地址。</p></td>
 </tr>
 <tr class="even">
@@ -220,7 +220,7 @@ ms.locfileid: "89206577"
 <td align="left"><p>第一个映射地址</p></td>
 <td align="left"><p>非空映射的地址</p></td>
 <td align="left"><p>最后一个映射地址</p></td>
-<td align="left"><p>调用方尝试将 MDL 映射到未正确保留的映射地址空间。 调用方应在调用<strong><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-mmmaplockedpageswithreservedmapping" data-raw-source="[MmMapLockedPagesWithReservedMapping](/windows-hardware/drivers/ddi/wdm/nf-wdm-mmmaplockedpageswithreservedmapping)">MmMapLockedPagesWithReservedMapping</a></strong>之前调用<strong><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-mmunmapreservedmapping" data-raw-source="[MmUnmapReservedMapping](/windows-hardware/drivers/ddi/wdm/nf-wdm-mmunmapreservedmapping)">MmUnmapReservedMapping</a></strong></p></td>
+<td align="left"><p>调用方尝试将 MDL 映射到未正确保留的映射地址空间。 调用方应在调用<strong><a href="/windows-hardware/drivers/ddi/wdm/nf-wdm-mmmaplockedpageswithreservedmapping" data-raw-source="[MmMapLockedPagesWithReservedMapping](/windows-hardware/drivers/ddi/wdm/nf-wdm-mmmaplockedpageswithreservedmapping)">MmMapLockedPagesWithReservedMapping</a></strong>之前调用<strong><a href="/windows-hardware/drivers/ddi/wdm/nf-wdm-mmunmapreservedmapping" data-raw-source="[MmUnmapReservedMapping](/windows-hardware/drivers/ddi/wdm/nf-wdm-mmunmapreservedmapping)">MmUnmapReservedMapping</a></strong></p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x108</p></td>
@@ -233,7 +233,7 @@ ms.locfileid: "89206577"
 <td align="left"><p>0x109</p></td>
 <td align="left"><p>第一个映射地址</p></td>
 <td align="left"><p>调用方的标识标记</p></td>
-<td align="left"><p>预留</p></td>
+<td align="left"><p>保留</p></td>
 <td align="left"><p>调用方正在尝试取消映射明显为空的已锁定虚拟地址空间。</p></td>
 </tr>
 <tr class="odd">
@@ -289,8 +289,8 @@ ms.locfileid: "89206577"
 <tr class="even">
 <td align="left"><p>0x302</p></td>
 <td align="left"><p>调用方尝试释放的地址。</p></td>
-<td align="left"><p>预留</p></td>
-<td align="left"><p>预留</p></td>
+<td align="left"><p>保留</p></td>
+<td align="left"><p>保留</p></td>
 <td align="left"><p>调用方正在尝试释放当前未映射的系统地址。</p></td>
 </tr>
 <tr class="odd">
@@ -339,6 +339,4 @@ ms.locfileid: "89206577"
 错误由参数1的值指示。
 
 堆栈跟踪将标识导致错误的驱动程序。
-
- 
 

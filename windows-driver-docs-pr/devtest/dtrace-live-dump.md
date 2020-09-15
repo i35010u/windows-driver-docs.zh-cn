@@ -13,12 +13,12 @@ keywords:
 - 跟踪消息格式化文件 WDK
 ms.date: 11/04/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 4a4b649f85ec6905a1dff16d10b6cf32ec67c586
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 8690451f6ec3dd7de107941aa9fb0510a0924210
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89383261"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90105048"
 ---
 # <a name="dtrace-live-dump"></a>DTrace 实时转储
 
@@ -117,7 +117,7 @@ Triggering LiveDump
 
 `reg add "HKLM\System\CurrentControlSet\Control\CrashControl" /f /t REG_DWORD /v AlwaysKeepMemoryDump /d 1`
 
-有关这些设置的详细信息，请参阅 [WER 设置](https://docs.microsoft.com/windows/win32/wer/wer-settings)。
+有关这些设置的详细信息，请参阅 [WER 设置](/windows/win32/wer/wer-settings)。
 
 ### <a name="disable-throttling"></a>禁用限制
 

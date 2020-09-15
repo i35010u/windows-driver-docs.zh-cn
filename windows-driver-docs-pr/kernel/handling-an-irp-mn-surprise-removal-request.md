@@ -7,12 +7,12 @@ keywords:
 - IRP_MN_SURPRISE_REMOVAL
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d07fd5ff296f825ac68dbb86962dcea981ce7423
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 4a93da8583ab59b3cefb3cdf3f5f58b82c9b4d8d
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89189363"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90106582"
 ---
 # <a name="handling-an-irp_mn_surprise_removal-request"></a>处理 IRP \_ MN \_ 意外 \_ 删除请求
 
@@ -133,7 +133,7 @@ PNP 设备状态值中的标志 \_ 位 \_ 定义如下。
 <thead>
 <tr class="header">
 <th>标志位</th>
-<th>描述</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>
@@ -143,7 +143,7 @@ PNP 设备状态值中的标志 \_ 位 \_ 定义如下。
 </tr>
 <tr class="even">
 <td>PNP_DEVICE_DONT_DISPLAY_IN_UI</td>
-<td><p>不要在用户界面中显示设备。 设置为在当前配置中不能使用的设备，如便携式计算机断开连接时无法使用的便携式计算机上的游戏端口。  (还会在<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_device_capabilities" data-raw-source="[&lt;strong&gt;DEVICE_CAPABILITIES&lt;/strong&gt;](/windows-hardware/drivers/ddi/wdm/ns-wdm-_device_capabilities)"><strong>DEVICE_CAPABILITIES</strong></a>结构中看到<strong>NoDisplayInUI</strong>标志。 ) </p></td>
+<td><p>不要在用户界面中显示设备。 设置为在当前配置中不能使用的设备，如便携式计算机断开连接时无法使用的便携式计算机上的游戏端口。  (还会在<a href="/windows-hardware/drivers/ddi/wdm/ns-wdm-_device_capabilities" data-raw-source="[&lt;strong&gt;DEVICE_CAPABILITIES&lt;/strong&gt;](/windows-hardware/drivers/ddi/wdm/ns-wdm-_device_capabilities)"><strong>DEVICE_CAPABILITIES</strong></a>结构中看到<strong>NoDisplayInUI</strong>标志。 ) </p></td>
 </tr>
 <tr class="odd">
 <td>PNP_DEVICE_FAILED</td>
@@ -153,7 +153,7 @@ PNP 设备状态值中的标志 \_ 位 \_ 定义如下。
 <tr class="even">
 <td>PNP_DEVICE_NOT_DISABLEABLE</td>
 <td><p>计算机启动时需要设备。 不能禁用此类设备。</p>
-<p>驱动程序为适当的系统操作所需的设备设置此位。 例如，如果驱动程序收到通知，表明设备处于寻呼路径 (<a href="irp-mn-device-usage-notification.md" data-raw-source="[&lt;strong&gt;IRP_MN_DEVICE_USAGE_NOTIFICATION&lt;/strong&gt;](irp-mn-device-usage-notification.md)"><strong>IRP_MN_DEVICE_USAGE_NOTIFICATION</strong></a> 用于 <strong>DeviceUsageTypePaging</strong>) ，则驱动程序将调用 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioinvalidatedevicestate" data-raw-source="[&lt;strong&gt;IoInvalidateDeviceState&lt;/strong&gt;](/windows-hardware/drivers/ddi/wdm/nf-wdm-ioinvalidatedevicestate)"><strong>IoInvalidateDeviceState</strong></a> 并在生成的 <strong>IRP_MN_QUERY_PNP_DEVICE_STATE</strong> 请求中设置此标志。</p>
+<p>驱动程序为适当的系统操作所需的设备设置此位。 例如，如果驱动程序收到通知，表明设备处于寻呼路径 (<a href="irp-mn-device-usage-notification.md" data-raw-source="[&lt;strong&gt;IRP_MN_DEVICE_USAGE_NOTIFICATION&lt;/strong&gt;](irp-mn-device-usage-notification.md)"><strong>IRP_MN_DEVICE_USAGE_NOTIFICATION</strong></a> 用于 <strong>DeviceUsageTypePaging</strong>) ，则驱动程序将调用 <a href="/windows-hardware/drivers/ddi/wdm/nf-wdm-ioinvalidatedevicestate" data-raw-source="[&lt;strong&gt;IoInvalidateDeviceState&lt;/strong&gt;](/windows-hardware/drivers/ddi/wdm/nf-wdm-ioinvalidatedevicestate)"><strong>IoInvalidateDeviceState</strong></a> 并在生成的 <strong>IRP_MN_QUERY_PNP_DEVICE_STATE</strong> 请求中设置此标志。</p>
 <p>如果为设备设置此位，则 PnP 管理器会将此设置传播到设备的父设备、父设备的父设备等。</p>
 <p>如果为根枚举设备设置了此项，则无法禁用或卸载设备。</p></td>
 </tr>

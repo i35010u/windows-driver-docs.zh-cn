@@ -4,12 +4,12 @@ description: SR-IOV 的标准化 INF 关键字
 ms.assetid: 5CA33B4F-E43A-4EB6-BCAB-365CA1FD3EF2
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c85bd40e6fb75167ec9c79b48e81027364f04565
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: e4620c09535f6b3f56d9931fe5239932bd3ed70d
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89214412"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90105790"
 ---
 # <a name="standardized-inf-keywords-for-sr-iov"></a>SR-IOV 的标准化 INF 关键字
 
@@ -55,7 +55,7 @@ SR-IOV 标准化 INF 关键字是枚举关键字，下表对此进行了说明�
 
  
 
-<a href="" id="value"></a>负值  
+<a href="" id="value"></a>“值”  
 与列表中的每个 **SubkeyName** 关键字关联的枚举整数值。
 
 <a href="" id="enumdesc"></a>EnumDesc  
@@ -72,7 +72,7 @@ SR-IOV 标准化 INF 关键字是枚举关键字，下表对此进行了说明�
 <tr class="header">
 <th align="left">SubkeyName</th>
 <th align="left">ParamDesc</th>
-<th align="left">值</th>
+<th align="left">“值”</th>
 <th align="left">EnumDesc</th>
 </tr>
 </thead>
@@ -141,7 +141,7 @@ PF 微型端口驱动程序的 INF 文件必须指定 SR-IOV 网络适配器上�
 <th align="left">SubkeyName</th>
 <th align="left">数据值</th>
 <th align="left">数据类型</th>
-<th align="left">说明</th>
+<th align="left">备注</th>
 </tr>
 </thead>
 <tbody>
@@ -175,7 +175,7 @@ PF 微型端口驱动程序的 INF 文件必须指定 SR-IOV 网络适配器上�
 <td align="left"><p>REG_DWORD</p></td>
 <td align="left"><p><em>n</em> 是 sr-iov 网络适配器支持的最大 PCIe 虚拟函数数 (VFs) 。</p>
 <div class="alert">
-<strong>注意</strong>  此注册表项定义网络适配器支持的最大 VFs 数。 当微型端口驱动程序调用 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismsetminiportattributes" data-raw-source="[&lt;strong&gt;NdisMSetMiniportAttributes&lt;/strong&gt;](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismsetminiportattributes)"><strong>NdisMSetMiniportAttributes</strong></a>时，它可以根据网络适配器上的可用硬件资源播发低于此值。 有关详细信息，请参阅 <a href="determining-nic-switch-capabilities.md" data-raw-source="[Determining NIC Switch Capabilities](determining-nic-switch-capabilities.md)">确定 NIC 交换机功能</a>。
+<strong>注意</strong>  此注册表项定义网络适配器支持的最大 VFs 数。 当微型端口驱动程序调用 <a href="/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismsetminiportattributes" data-raw-source="[&lt;strong&gt;NdisMSetMiniportAttributes&lt;/strong&gt;](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismsetminiportattributes)"><strong>NdisMSetMiniportAttributes</strong></a>时，它可以根据网络适配器上的可用硬件资源播发低于此值。 有关详细信息，请参阅 <a href="determining-nic-switch-capabilities.md" data-raw-source="[Determining NIC Switch Capabilities](determining-nic-switch-capabilities.md)">确定 NIC 交换机功能</a>。
 </div>
 <div>
  
@@ -196,6 +196,4 @@ HKR, NicSwitches\0, *SwitchName, 0x00000000, “Default Switch”
 有关 **AddReg** 指令的语法的详细信息，请参阅 [**INF AddReg 指令**](../install/inf-addreg-directive.md)。
 
 有关默认 NIC 交换机的详细信息，请参阅 [NIC 交换机](nic-switches.md)。
-
- 
 

@@ -7,12 +7,12 @@ keywords:
 - 从 Windows Vista 开始 OID_WDI_TASK_CREATE_PORT 网络驱动程序
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: a813afafc674269a68435c928909fda64120b5f1
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: c387114f5dc9f666ed078f2e2db41a854622cff6
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89213209"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90104170"
 ---
 # <a name="oid_wdi_task_create_port"></a>OID \_ WDI \_ 任务 \_ 创建 \_ 端口
 
@@ -49,13 +49,13 @@ OID \_ WDI \_ TASK \_ CREATE \_ PORT 请求由 IHV 组件创建新的802.11 实�
 </thead>
 <tbody>
 <tr class="odd">
-<td><a href="https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-create-port-parameters" data-raw-source="[&lt;strong&gt;WDI_TLV_CREATE_PORT_PARAMETERS&lt;/strong&gt;](./wdi-tlv-create-port-parameters.md)"><strong>WDI_TLV_CREATE_PORT_PARAMETERS</strong></a></td>
+<td><a href="/windows-hardware/drivers/network/wdi-tlv-create-port-parameters" data-raw-source="[&lt;strong&gt;WDI_TLV_CREATE_PORT_PARAMETERS&lt;/strong&gt;](./wdi-tlv-create-port-parameters.md)"><strong>WDI_TLV_CREATE_PORT_PARAMETERS</strong></a></td>
 <td></td>
 <td></td>
 <td>用于创建端口的参数。</td>
 </tr>
 <tr class="even">
-<td><a href="https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-create-port-mac-address" data-raw-source="[&lt;strong&gt;WDI_TLV_CREATE_PORT_MAC_ADDRESS&lt;/strong&gt;](./wdi-tlv-create-port-mac-address.md)"><strong>WDI_TLV_CREATE_PORT_MAC_ADDRESS</strong></a></td>
+<td><a href="/windows-hardware/drivers/network/wdi-tlv-create-port-mac-address" data-raw-source="[&lt;strong&gt;WDI_TLV_CREATE_PORT_MAC_ADDRESS&lt;/strong&gt;](./wdi-tlv-create-port-mac-address.md)"><strong>WDI_TLV_CREATE_PORT_MAC_ADDRESS</strong></a></td>
 <td></td>
 <td>X</td>
 <td><p>当在从休眠状态恢复期间，UE 重新创建非主端口时，将使用此 TLV。 如果存在此 TLV，固件必须使用此 MAC 地址来创建端口。 此 MAC 地址保证是固件在休眠之前为端口类型创建的 MAC 地址。</p>
@@ -94,6 +94,4 @@ OID \_ WDI \_ TASK \_ CREATE \_ PORT 请求由 IHV 组件创建新的802.11 实�
 </tr>
 </tbody>
 </table>
-
- 
 

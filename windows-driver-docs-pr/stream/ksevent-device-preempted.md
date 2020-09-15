@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ec5cfeb101e4dfc72ae24eb7873d2335b4dbd636
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 1964d597fc03cbd04e01f1dbd163a9a30244c570
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89186153"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90104910"
 ---
 # <a name="ksevent_device_preempted"></a>KSEVENT \_ 设备已被 \_ 抢占
 
@@ -51,15 +51,15 @@ ms.locfileid: "89186153"
 <td><p>否</p></td>
 <td><p>是</p></td>
 <td><p>筛选器</p></td>
-<td><p><a href="https://docs.microsoft.com/previous-versions/ff561744(v=vs.85)" data-raw-source="[&lt;strong&gt;KSEVENT&lt;/strong&gt;](/previous-versions/ff561744(v=vs.85))"><strong>KSEVENT</strong></a></p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-kseventdata" data-raw-source="[&lt;strong&gt;KSEVENTDATA&lt;/strong&gt;](/windows-hardware/drivers/ddi/ks/ns-ks-kseventdata)"><strong>KSEVENTDATA</strong></a></p></td>
+<td><p><a href="/previous-versions/ff561744(v=vs.85)" data-raw-source="[&lt;strong&gt;KSEVENT&lt;/strong&gt;](/previous-versions/ff561744(v=vs.85))"><strong>KSEVENT</strong></a></p></td>
+<td><p><a href="/windows-hardware/drivers/ddi/ks/ns-ks-kseventdata" data-raw-source="[&lt;strong&gt;KSEVENTDATA&lt;/strong&gt;](/windows-hardware/drivers/ddi/ks/ns-ks-kseventdata)"><strong>KSEVENTDATA</strong></a></p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-<a name="remarks"></a>注解
+<a name="remarks"></a>备注
 -------
 
 在以下情况下，将触发抢占事件。
@@ -68,12 +68,10 @@ ms.locfileid: "89186153"
 2.  第二个 Windows 应用请求捕获堆栈从第一个应用中抢占设备并为第二个应用授予控制权。
 3.  发出此请求时，驱动程序会将 **KSEVENT \_ 设备 \_ 抢先** 事件发送到两个 Windows 应用。
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
 [**KSEVENT \_ 设备**](/windows-hardware/drivers/ddi/ks/ne-ks-ksevent_device)
 
 [**KSEVENT \_ 设备 \_ 丢失**](ksevent-device-lost.md)
-
- 
 

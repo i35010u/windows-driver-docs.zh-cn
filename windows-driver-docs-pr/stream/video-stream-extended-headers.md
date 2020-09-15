@@ -9,12 +9,12 @@ keywords:
 - 标题 WDK 视频捕获
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e1c9107795144493587dbfcccc361d8f72349431
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: ea35b49af2fe0c394edc1f28bdbf198a74edeaf2
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89186259"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90104811"
 ---
 # <a name="video-stream-extended-headers"></a>视频流扩展标头
 
@@ -31,16 +31,16 @@ Stream 类视频捕获微型驱动程序通过将[**HW \_ 流 \_ 对象**](/wind
 <thead>
 <tr class="header">
 <th>结构名称</th>
-<th>目标</th>
+<th>目的</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagks_frame_info" data-raw-source="[&lt;strong&gt;KS_FRAME_INFO&lt;/strong&gt;](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagks_frame_info)"><strong>KS_FRAME_INFO</strong></a></p></td>
+<td><p><a href="/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagks_frame_info" data-raw-source="[&lt;strong&gt;KS_FRAME_INFO&lt;/strong&gt;](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagks_frame_info)"><strong>KS_FRAME_INFO</strong></a></p></td>
 <td><p>帧计数、删除帧计数、字段极性标志和 DirectDraw 表面控点。</p></td>
 </tr>
 <tr class="even">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagks_vbi_frame_info" data-raw-source="[&lt;strong&gt;KS_VBI_FRAME_INFO&lt;/strong&gt;](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagks_vbi_frame_info)"><strong>KS_VBI_FRAME_INFO</strong></a></p></td>
+<td><p><a href="/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagks_vbi_frame_info" data-raw-source="[&lt;strong&gt;KS_VBI_FRAME_INFO&lt;/strong&gt;](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagks_vbi_frame_info)"><strong>KS_VBI_FRAME_INFO</strong></a></p></td>
 <td><p>VBI 格式、频道更改信息、视频标准。</p></td>
 </tr>
 </tbody>
@@ -51,6 +51,4 @@ Stream 类视频捕获微型驱动程序通过将[**HW \_ 流 \_ 对象**](/wind
 如果 Stream 类微型驱动程序未提供此附加信息，则它应将 **StreamHeaderMediaSpecific** 设置为零。
 
 有关何时在 **StreamHeaderMediaSpecific**中指定值的详细信息，请参阅 [流类别](stream-categories.md)。
-
- 
 

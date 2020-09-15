@@ -4,12 +4,12 @@ description: 使用这些规则验证驱动程序是否正确地处理 SRB 请�
 ms.assetid: A3BF2AA3-207F-4D74-94B0-6CA215341340
 ms.date: 05/21/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: fc35c27f49e0b8e31248b7fb45aea9a94cfaec8d
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: e0294be51d926d994380bcaca1daa4a50b31a778
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89385039"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90104126"
 ---
 # <a name="srbprocessing-rule-set-storport"></a>SrbProcessing 规则集 (Storport)
 
@@ -41,19 +41,19 @@ ms.locfileid: "89385039"
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="storport-spreturnvalue.md" data-raw-source="[&lt;strong&gt;SpReturnValue&lt;/strong&gt;](storport-spreturnvalue.md)"><strong>SpReturnValue</strong></a></p></td>
-<td align="left"><p>此规则验证驱动程序的 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/storport/nc-storport-hw_find_adapter" data-raw-source="[&lt;strong&gt;HwStorFindAdapter&lt;/strong&gt;](/windows-hardware/drivers/ddi/storport/nc-storport-hw_find_adapter)"><strong>HwStorFindAdapter</strong></a> 和 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/storport/nc-storport-virtual_hw_find_adapter" data-raw-source="[&lt;strong&gt;VirtualHwStorFindAdapter&lt;/strong&gt;](/windows-hardware/drivers/ddi/storport/nc-storport-virtual_hw_find_adapter)"><strong>VirtualHwStorFindAdapter</strong></a> 实现是否返回有效状态。 有效状态为以下状态之一： <strong>SP_RETURN_FOUND</strong>、 <strong>SP_RETURN_ERROR</strong>、 <strong>SP_RETURN_BAD_CONFIG</strong>或 <strong>SP_RETURN_NOT_FOUND</strong>。</p></td>
+<td align="left"><p>此规则验证驱动程序的 <a href="/windows-hardware/drivers/ddi/storport/nc-storport-hw_find_adapter" data-raw-source="[&lt;strong&gt;HwStorFindAdapter&lt;/strong&gt;](/windows-hardware/drivers/ddi/storport/nc-storport-hw_find_adapter)"><strong>HwStorFindAdapter</strong></a> 和 <a href="/windows-hardware/drivers/ddi/storport/nc-storport-virtual_hw_find_adapter" data-raw-source="[&lt;strong&gt;VirtualHwStorFindAdapter&lt;/strong&gt;](/windows-hardware/drivers/ddi/storport/nc-storport-virtual_hw_find_adapter)"><strong>VirtualHwStorFindAdapter</strong></a> 实现是否返回有效状态。 有效状态为以下状态之一： <strong>SP_RETURN_FOUND</strong>、 <strong>SP_RETURN_ERROR</strong>、 <strong>SP_RETURN_BAD_CONFIG</strong>或 <strong>SP_RETURN_NOT_FOUND</strong>。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><a href="storportallocatepool.md" data-raw-source="[&lt;strong&gt;StorPortAllocatePool&lt;/strong&gt;](storportallocatepool.md)"><strong>StorPortAllocatePool</strong></a></p></td>
-<td align="left"><p>此规则验证微型端口是否不能尝试对已释放的缓冲区调用 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/storport/nf-storport-storportfreepool" data-raw-source="[&lt;strong&gt;StorPortFreePool&lt;/strong&gt;](/windows-hardware/drivers/ddi/storport/nf-storport-storportfreepool)"><strong>StorPortFreePool</strong></a> 。</p></td>
+<td align="left"><p>此规则验证微型端口是否不能尝试对已释放的缓冲区调用 <a href="/windows-hardware/drivers/ddi/storport/nf-storport-storportfreepool" data-raw-source="[&lt;strong&gt;StorPortFreePool&lt;/strong&gt;](/windows-hardware/drivers/ddi/storport/nf-storport-storportfreepool)"><strong>StorPortFreePool</strong></a> 。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="storport-storportallocatepool2.md" data-raw-source="[&lt;strong&gt;StorPortAllocatePool2&lt;/strong&gt;](storport-storportallocatepool2.md)"><strong>StorPortAllocatePool2</strong></a></p></td>
-<td align="left"><p>此规则验证微型端口不能尝试对已分配的缓冲区调用 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/storport/nf-storport-storportallocatepool" data-raw-source="[&lt;strong&gt;StorPortAllocatePool&lt;/strong&gt;](/windows-hardware/drivers/ddi/storport/nf-storport-storportallocatepool)"><strong>StorPortAllocatePool</strong></a> ，而无需先将其解除分配。</p></td>
+<td align="left"><p>此规则验证微型端口不能尝试对已分配的缓冲区调用 <a href="/windows-hardware/drivers/ddi/storport/nf-storport-storportallocatepool" data-raw-source="[&lt;strong&gt;StorPortAllocatePool&lt;/strong&gt;](/windows-hardware/drivers/ddi/storport/nf-storport-storportallocatepool)"><strong>StorPortAllocatePool</strong></a> ，而无需先将其解除分配。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><a href="storport-storportbuildio.md" data-raw-source="[&lt;strong&gt;StorPortBuildIo&lt;/strong&gt;](storport-storportbuildio.md)"><strong>StorPortBuildIo</strong></a></p></td>
-<td align="left"><p>此规则验证如果 StorPort 微型端口的 <a href="storport-storportbuildio.md" data-raw-source="[&lt;strong&gt;StorPortBuildIo&lt;/strong&gt;](storport-storportbuildio.md)"><strong>StorPortBuildIo</strong></a> 例程返回 <strong>FALSE</strong>，则不会将相关 SRB 传递到 <strong>StartIo</strong>。  (在这种情况下，微型端口驱动程序必须通过<strong>StorPortBuildIo</strong>或其他) 的通知类型<strong>RequestComplete</strong>调用<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/storport/nf-storport-storportnotification" data-raw-source="[&lt;strong&gt;StorPortNotification&lt;/strong&gt;](/windows-hardware/drivers/ddi/storport/nf-storport-storportnotification)"><strong>StorPortNotification</strong></a>来完成 SRB。</p></td>
+<td align="left"><p>此规则验证如果 StorPort 微型端口的 <a href="storport-storportbuildio.md" data-raw-source="[&lt;strong&gt;StorPortBuildIo&lt;/strong&gt;](storport-storportbuildio.md)"><strong>StorPortBuildIo</strong></a> 例程返回 <strong>FALSE</strong>，则不会将相关 SRB 传递到 <strong>StartIo</strong>。  (在这种情况下，微型端口驱动程序必须通过<strong>StorPortBuildIo</strong>或其他) 的通知类型<strong>RequestComplete</strong>调用<a href="/windows-hardware/drivers/ddi/storport/nf-storport-storportnotification" data-raw-source="[&lt;strong&gt;StorPortNotification&lt;/strong&gt;](/windows-hardware/drivers/ddi/storport/nf-storport-storportnotification)"><strong>StorPortNotification</strong></a>来完成 SRB。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="storport-storportcompleterequest.md" data-raw-source="[&lt;strong&gt;StorPortCompleteRequest&lt;/strong&gt;](storport-storportcompleterequest.md)"><strong>StorPortCompleteRequest</strong></a></p></td>
@@ -65,7 +65,7 @@ ms.locfileid: "89385039"
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="storport-storportfindadapter.md" data-raw-source="[&lt;strong&gt;StorPortFindAdapter&lt;/strong&gt;](storport-storportfindadapter.md)"><strong>StorPortFindAdapter</strong></a></p></td>
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/storport/nc-storport-hw_find_adapter" data-raw-source="[&lt;strong&gt;HwStorFindAdapter&lt;/strong&gt;](/windows-hardware/drivers/ddi/storport/nc-storport-hw_find_adapter)"><strong>HwStorFindAdapter</strong></a>例程必须在<strong>PORT_CONFIGURATION_INFORMATION</strong>结构中设置<strong>MaximumTransferLength</strong>和<strong>NumberOfPhysicalBreaks</strong>字段。 默认情况下，这两个字段的值都是 <strong>SP_UNINITIALIZED_VALUE</strong>。 如果这些字段中的任一字段仍设置为在<strong>FindAdapter</strong>退出时<strong>SP_UNINITIALIZED_VALUE</strong> ，则该驱动程序将无法满足规则。</p></td>
+<td align="left"><p><a href="/windows-hardware/drivers/ddi/storport/nc-storport-hw_find_adapter" data-raw-source="[&lt;strong&gt;HwStorFindAdapter&lt;/strong&gt;](/windows-hardware/drivers/ddi/storport/nc-storport-hw_find_adapter)"><strong>HwStorFindAdapter</strong></a>例程必须在<strong>PORT_CONFIGURATION_INFORMATION</strong>结构中设置<strong>MaximumTransferLength</strong>和<strong>NumberOfPhysicalBreaks</strong>字段。 默认情况下，这两个字段的值都是 <strong>SP_UNINITIALIZED_VALUE</strong>。 如果这些字段中的任一字段仍设置为在<strong>FindAdapter</strong>退出时<strong>SP_UNINITIALIZED_VALUE</strong> ，则该驱动程序将无法满足规则。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><a href="storport-storportnotification2.md" data-raw-source="[&lt;strong&gt;StorPortNotification2&lt;/strong&gt;](storport-storportnotification2.md)"><strong>StorPortNotification2</strong></a></p></td>
@@ -105,6 +105,4 @@ ms.locfileid: "89385039"
     ```
 
     有关详细信息，请参阅 [使用静态驱动程序验证器查找驱动程序中的缺陷](./using-static-driver-verifier-to-find-defects-in-drivers.md) 和 [静态驱动程序验证程序命令 (MSBuild) ](./-static-driver-verifier-commands--msbuild-.md)。
-
- 
 

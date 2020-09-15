@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f6b50c77cc1492985111c7cbfa5c990eda771274
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 0be4721afb92ccd7a3d77b641e484ab2340f7869
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89192987"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90105260"
 ---
 # <a name="ksproperty_vpconfig_videoportid"></a>KSPROPERTY \_ VPCONFIG \_ VIDEOPORTID
 
@@ -53,7 +53,7 @@ KSPROPERTY \_ VPCONFIG \_ VIDEOPORTID 属性返回 Microsoft DirectDraw 视频�
 <td><p>否</p></td>
 <td><p>是</p></td>
 <td><p>Pin</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)"><strong>KSPROPERTY</strong></a></p></td>
+<td><p><a href="/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)"><strong>KSPROPERTY</strong></a></p></td>
 <td><p>ULONG</p></td>
 </tr>
 </tbody>
@@ -83,6 +83,4 @@ KSPROPERTY \_ VPCONFIG \_ VIDEOPORTID 属性返回 Microsoft DirectDraw 视频�
 
 
 [**KSPROPERTY**](/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)
-
- 
 

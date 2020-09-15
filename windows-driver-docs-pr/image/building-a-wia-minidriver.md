@@ -4,12 +4,12 @@ description: 构建 WIA 微型驱动程序
 ms.assetid: 7a13d355-f42e-406d-8cba-4739df1af9fa
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d1a173559d1f58bf29952403497fed4e7474fa2e
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: de9ef18aee074501805796e1fbde24a17ffef610
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89192727"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90106380"
 ---
 # <a name="building-a-wia-minidriver"></a>构建 WIA 微型驱动程序
 
@@ -41,11 +41,11 @@ ms.locfileid: "89192727"
 </tr>
 <tr class="even">
 <td><p><em>stiusd</em></p></td>
-<td><p>定义所有 WIA 微型驱动程序必须实现的 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/_image/index" data-raw-source="[IStiUSD](/windows-hardware/drivers/ddi/_image/index)">IStiUSD</a> 接口。</p></td>
+<td><p>定义所有 WIA 微型驱动程序必须实现的 <a href="/windows-hardware/drivers/ddi/_image/index" data-raw-source="[IStiUSD](/windows-hardware/drivers/ddi/_image/index)">IStiUSD</a> 接口。</p></td>
 </tr>
 <tr class="odd">
 <td><p><em>wiamindr</em></p></td>
-<td><p>定义所有 WIA 微型驱动程序必须实现的 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wiamindr_lh/nn-wiamindr_lh-iwiaminidrv" data-raw-source="[IWiaMiniDrv](/windows-hardware/drivers/ddi/wiamindr_lh/nn-wiamindr_lh-iwiaminidrv)">IWiaMiniDrv</a> 接口。 WIA 微型驱动程序使用的其他接口也在此处定义。</p></td>
+<td><p>定义所有 WIA 微型驱动程序必须实现的 <a href="/windows-hardware/drivers/ddi/wiamindr_lh/nn-wiamindr_lh-iwiaminidrv" data-raw-source="[IWiaMiniDrv](/windows-hardware/drivers/ddi/wiamindr_lh/nn-wiamindr_lh-iwiaminidrv)">IWiaMiniDrv</a> 接口。 WIA 微型驱动程序使用的其他接口也在此处定义。</p></td>
 </tr>
 </tbody>
 </table>
@@ -84,6 +84,4 @@ WIA 使用下表中显示的库文件。 所有微型驱动程序都需要这些
  
 
 在生成环境中，WDK *包含* 和 *Lib* 目录应为搜索路径中的第一个目录。 这可确保使用最新版本的标头和库文件。
-
- 
 

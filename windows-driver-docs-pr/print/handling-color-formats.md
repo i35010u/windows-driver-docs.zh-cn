@@ -11,12 +11,12 @@ keywords:
 - Unidrv WDK 打印
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 18a95927cbf194db21917af9ffd3e5a59b095ad0
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 11ffa04f71cf341131290f5debaa30f0a7fbf4e7
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89209563"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90106334"
 ---
 # <a name="handling-color-formats"></a>处理颜色格式
 
@@ -60,7 +60,7 @@ ms.locfileid: "89209563"
 </tr>
 <tr class="even">
 <td><p>4</p></td>
-<td><p>1 (<a href="https://docs.microsoft.com/windows-hardware/drivers/#wdkgloss-cmyk" data-raw-source="&lt;em&gt;CMYK&lt;/em&gt;"><em>CMYK</em></a>) </p></td>
+<td><p>1 (<a href="/windows-hardware/drivers/#wdkgloss-cmyk" data-raw-source="&lt;em&gt;CMYK&lt;/em&gt;"><em>CMYK</em></a>) </p></td>
 </tr>
 </tbody>
 </table>
@@ -108,6 +108,4 @@ ms.locfileid: "89209563"
 ```
 
 在此示例中， \* **DevBPP**和 \* **DevNumOfPlanes**属性表示 Unidrv 可呈现并发送到打印机的四个平面的每个平面 CMYK 格式。 但是，在这种情况下，必须在呈现的图像上执行半色调操作才能进行打印。 必须使用[微型驱动程序提供的半色调](minidriver-supplied-halftoning.md)。
-
- 
 

@@ -6,12 +6,12 @@ keywords:
 - MPEG2_A 受限配置文件 WDK DirectX VA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 29f6c162e621caec95bcd18606839905a9579e01
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: b4ae101a74bbc611fc6681ef986dedde833487bd
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89063524"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90106566"
 ---
 # <a name="mpeg2_a"></a>MPEG2 \_ A
 
@@ -35,7 +35,7 @@ MPEG2 \_ ：配置文件由下列限制集定义：
 <thead>
 <tr class="header">
 <th align="left">结构成员</th>
-<th align="left">值</th>
+<th align="left">“值”</th>
 </tr>
 </thead>
 <tbody>
@@ -58,7 +58,7 @@ MPEG2 \_ ：配置文件由下列限制集定义：
 <thead>
 <tr class="header">
 <th align="left">结构成员</th>
-<th align="left">值</th>
+<th align="left">“值”</th>
 </tr>
 </thead>
 <tbody>
@@ -145,13 +145,13 @@ MPEG2 \_ ：配置文件由下列限制集定义：
 <thead>
 <tr class="header">
 <th align="left">wMBtype 位</th>
-<th align="left">值</th>
+<th align="left">“值”</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left"><p><em>MBscanMethod</em></p></td>
-<td align="left"><p>如果<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_configpicturedecode" data-raw-source="[&lt;strong&gt;DXVA_ConfigPictureDecode&lt;/strong&gt;](/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_configpicturedecode)"><strong>DXVA_ConfigPictureDecode</strong></a>的<strong>ConfigHostInverseScan</strong>成员等于零，则值可以为零 (之字形) 或值 1 (备用垂直) 。</p></td>
+<td align="left"><p>如果<a href="/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_configpicturedecode" data-raw-source="[&lt;strong&gt;DXVA_ConfigPictureDecode&lt;/strong&gt;](/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_configpicturedecode)"><strong>DXVA_ConfigPictureDecode</strong></a>的<strong>ConfigHostInverseScan</strong>成员等于零，则值可以为零 (之字形) 或值 1 (备用垂直) 。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>H261LoopFilter</p></td>
@@ -167,6 +167,4 @@ MPEG2 \_ ：配置文件由下列限制集定义：
 任何位流缓冲区的内容必须包含 MPEG-2 主要配置文件视频格式的数据。
 
 使用反量化矩阵时， [**DXVA \_ QmatrixData**](/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_qmatrixdata)的**bNewQmatrix**成员等于零，i = 2 和3。
-
- 
 

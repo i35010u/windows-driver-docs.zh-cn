@@ -4,12 +4,12 @@ description: SerCx2 简化了读取 (的处理 IRP_MJ_READ) 并 (IRP_MJ_WRITE �
 ms.assetid: C1B3F059-A445-4224-8316-DBF194CE6A80
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1e63c244d01446ac14f278f4840833835365f08c
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: a6c33a2768ffec969422d6b0c9f18345e2b36b92
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89186919"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90105084"
 ---
 # <a name="sercx2-io-transactions"></a>SerCx2 I/O 事务
 
@@ -25,7 +25,7 @@ SerCx2 简化了对串行控制器驱动程序的读取 ([**irp \_ mj \_ read**]
 <thead>
 <tr class="header">
 <th>主题</th>
-<th>描述</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>
@@ -35,11 +35,11 @@ SerCx2 简化了对串行控制器驱动程序的读取 ([**irp \_ mj \_ read**]
 </tr>
 <tr class="even">
 <td><p><a href="sercx2-pio-receive-transactions.md" data-raw-source="[SerCx2 PIO-Receive Transactions](sercx2-pio-receive-transactions.md)">SerCx2 PIO-Receive 事务</a></p></td>
-<td><p>SerCx2 要求所有串行控制器驱动程序都实现对使用程控 i/o (PIO) 的接收事务的支持。 若要启动 PIO 接收事务，SerCx2 将调用驱动程序的 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/sercx/nc-sercx-evt_sercx2_pio_receive_read_buffer" data-raw-source="[&lt;em&gt;EvtSerCx2PioReceiveReadBuffer&lt;/em&gt;](/windows-hardware/drivers/ddi/sercx/nc-sercx-evt_sercx2_pio_receive_read_buffer)"><em>EvtSerCx2PioReceiveReadBuffer</em></a> 事件回调函数并将读取缓冲区作为参数提供。</p></td>
+<td><p>SerCx2 要求所有串行控制器驱动程序都实现对使用程控 i/o (PIO) 的接收事务的支持。 若要启动 PIO 接收事务，SerCx2 将调用驱动程序的 <a href="/windows-hardware/drivers/ddi/sercx/nc-sercx-evt_sercx2_pio_receive_read_buffer" data-raw-source="[&lt;em&gt;EvtSerCx2PioReceiveReadBuffer&lt;/em&gt;](/windows-hardware/drivers/ddi/sercx/nc-sercx-evt_sercx2_pio_receive_read_buffer)"><em>EvtSerCx2PioReceiveReadBuffer</em></a> 事件回调函数并将读取缓冲区作为参数提供。</p></td>
 </tr>
 <tr class="odd">
 <td><p><a href="sercx2-pio-transmit-transactions.md" data-raw-source="[SerCx2 PIO-Transmit Transactions](sercx2-pio-transmit-transactions.md)">SerCx2 PIO-Transmit 事务</a></p></td>
-<td><p>SerCx2 要求所有串行控制器驱动程序实现对使用程控 i/o (PIO) 的传输事务的支持。 若要启动 PIO 传输事务，SerCx2 将调用驱动程序的 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/sercx/nc-sercx-evt_sercx2_pio_transmit_write_buffer" data-raw-source="[&lt;em&gt;EvtSerCx2PioTransmitWriteBuffer&lt;/em&gt;](/windows-hardware/drivers/ddi/sercx/nc-sercx-evt_sercx2_pio_transmit_write_buffer)"><em>EvtSerCx2PioTransmitWriteBuffer</em></a> 事件回调函数并将写入缓冲区作为参数提供。</p></td>
+<td><p>SerCx2 要求所有串行控制器驱动程序实现对使用程控 i/o (PIO) 的传输事务的支持。 若要启动 PIO 传输事务，SerCx2 将调用驱动程序的 <a href="/windows-hardware/drivers/ddi/sercx/nc-sercx-evt_sercx2_pio_transmit_write_buffer" data-raw-source="[&lt;em&gt;EvtSerCx2PioTransmitWriteBuffer&lt;/em&gt;](/windows-hardware/drivers/ddi/sercx/nc-sercx-evt_sercx2_pio_transmit_write_buffer)"><em>EvtSerCx2PioTransmitWriteBuffer</em></a> 事件回调函数并将写入缓冲区作为参数提供。</p></td>
 </tr>
 <tr class="even">
 <td><p><a href="sercx2-system-dma-receive-transactions.md" data-raw-source="[SerCx2 System-DMA-Receive Transactions](sercx2-system-dma-receive-transactions.md)">SerCx2 System-DMA-Receive 事务</a></p></td>

@@ -15,12 +15,12 @@ keywords:
 - 创建 INF 文件系统
 ms.date: 10/16/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 1bb397095863bd092a463eacdc644ff1cd6db117
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 0d80d4c9603841cb36c3ad16ba232255e72d9e36
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89065102"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90105364"
 ---
 # <a name="creating-an-inf-file-for-a-file-system-driver"></a>为文件系统驱动程序创建 INF 文件
 
@@ -28,7 +28,7 @@ Windows 安装程序和设备安装程序服务（统称为 [setupapi.log](../in
 
 文件系统驱动程序的 INF 文件提供 Setupapi.log 用于安装驱动程序的说明。 INF 文件是一个文本文件，该文件指定要运行的驱动程序必须存在的文件，以及驱动程序文件的源和目标目录。 INF 文件还包含 Setupapi.log 存储在注册表中的驱动程序配置信息，如驱动程序的启动类型和加载顺序组。
 
-有关 INF 文件及其创建方式的详细信息，请参阅 [创建 Inf 文件](../install/overview-of-inf-files.md) 和 [inf 文件部分和指令](https://docs.microsoft.com/windows-hardware/drivers/install/inf-file-sections-and-directives)。 有关签名驱动程序的常规信息，请参阅 [驱动程序签名](../install/driver-signing.md)。
+有关 INF 文件及其创建方式的详细信息，请参阅 [创建 Inf 文件](../install/overview-of-inf-files.md) 和 [inf 文件部分和指令](../install/index.md)。 有关签名驱动程序的常规信息，请参阅 [驱动程序签名](../install/driver-signing.md)。
 
 你可以创建一个 INF 文件，用于在多个版本的 Windows 操作系统上安装驱动程序。 有关创建此类 INF 文件的详细信息，请参阅 [为多个平台和操作系统创建 INF 文件](../install/creating-inf-files-for-multiple-platforms-and-operating-systems.md) 和 [创建国际 INF 文件](../install/creating-international-inf-files.md)。
 
@@ -88,9 +88,9 @@ CatalogFile =
 
 下表显示文件系统筛选器驱动程序在 " [**版本**](../install/inf-version-section.md) " 部分中应指定的值。
 
-| 条目 | 值 |
+| 条目 | “值” |
 | ----- | ----- |
-| **信号** | "$WINDOWS NT $" |
+| **签名** | "$WINDOWS NT $" |
 | **提供程序** | 在你自己的 INF 文件中，你应该指定除 Microsoft 之外的提供程序。 |
 | **DriverVer** | 请参阅[ **INF DriverVer 指令**](../install/inf-driverver-directive.md) |
 | **CatalogFile** | 将此项留空。 将来，它将包含已签名驱动程序的 WHQL 提供的编录文件的名称。 |
@@ -186,7 +186,7 @@ AddReg         = ExampleFileSystem.AddRegistry
 
 **ServiceType**条目指定服务的类型。 下表列出了 **ServiceType** 的可能值及其相应的服务类型。
 
-| 值 | 说明 |
+| “值” | 说明 |
 | ----- | ----------- |
 | 0x00000001 |  (设备驱动程序服务 SERVICE_KERNEL_DRIVER)  |
 | 0x00000002 | SERVICE_FILE_SYSTEM_DRIVER (文件系统或文件系统筛选器驱动程序服务)  |
@@ -197,7 +197,7 @@ AddReg         = ExampleFileSystem.AddRegistry
 
 **StartType**项指定启动服务的时间。 下表列出了 **StartType** 的可能值及其相应的启动类型。
 
-| 值 | 说明 |
+| “值” | 说明 |
 | ----- | ----------- |
 | 0x00000000 | SERVICE_BOOT_START |
 | 0x00000001 | SERVICE_SYSTEM_START |
@@ -213,7 +213,7 @@ AddReg         = ExampleFileSystem.AddRegistry
 
 **ErrorControl**项指定在系统启动过程中服务无法启动时要执行的操作。 下表列出了 **ErrorControl** 的可能值及其相应的错误控制值。
 
-| 值 | 说明 |
+| “值” | 说明 |
 | ----- | ----------- |
 | 0x00000000 | SERVICE_ERROR_IGNORE (记录错误并继续系统启动。 )  |
 | 0x00000001 | SERVICE_ERROR_NORMAL (记录错误、向用户显示一条消息，然后继续系统启动。 )  |

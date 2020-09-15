@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 09/11/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: c170d71497ea7cea20a217b2ab665170fc0971b7
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 578f885b59f61499e333dc5e4569eeac88cd3994
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89190521"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90104674"
 ---
 # <a name="ksproperty_cameracontrol_extended_photoconfirmation"></a>KSPROPERTY \_ CAMERACONTROL \_ 扩展 \_ PHOTOCONFIRMATION
 
@@ -35,7 +35,7 @@ ms.locfileid: "89190521"
 </colgroup>
 <thead>
 <tr class="header">
-<th>作用域</th>
+<th>范围</th>
 <th>控制</th>
 <th>类型</th>
 </tr>
@@ -82,7 +82,7 @@ ms.locfileid: "89190521"
 </tr>
 <tr class="odd">
 <td><p>大小</p></td>
-<td><p>这必须是 sizeof (<strong>KSCAMERA_EXTENDEDPROP_HEADER</strong>) + sizeof (<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_value" data-raw-source="[&lt;strong&gt;KSCAMERA_EXTENDEDPROP_VALUE&lt;/strong&gt;](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_value)"><strong>KSCAMERA_EXTENDEDPROP_VALUE</strong></a>) 。</p></td>
+<td><p>这必须是 sizeof (<strong>KSCAMERA_EXTENDEDPROP_HEADER</strong>) + sizeof (<a href="/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_value" data-raw-source="[&lt;strong&gt;KSCAMERA_EXTENDEDPROP_VALUE&lt;/strong&gt;](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_value)"><strong>KSCAMERA_EXTENDEDPROP_VALUE</strong></a>) 。</p></td>
 </tr>
 <tr class="even">
 <td><p>结果</p></td>

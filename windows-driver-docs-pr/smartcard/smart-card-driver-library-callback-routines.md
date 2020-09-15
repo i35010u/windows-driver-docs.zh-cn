@@ -10,12 +10,12 @@ keywords:
 - 供应商提供的驱动程序 WDK 智能卡，IOCTL 请求管理
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a5bf642ad4eebf85b37bec2def201e231157f8b4
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 19ecac31aba7ce311519818fcca6ce8752e1fabf
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89381445"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90106238"
 ---
 # <a name="smart-card-driver-library-callback-routines"></a>智能卡驱动程序库回调例程
 
@@ -55,37 +55,37 @@ RDF \_ 卡 \_ 电源是固定的系统定义的常量，始终对应于服务于
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff548919(v=vs.85)" data-raw-source="[&lt;em&gt;RDF_CARD_POWER&lt;/em&gt;](/previous-versions/windows/hardware/drivers/ff548919(v=vs.85))"><em>RDF_CARD_POWER</em></a></p></td>
+<td align="left"><p><a href="/previous-versions/windows/hardware/drivers/ff548919(v=vs.85)" data-raw-source="[&lt;em&gt;RDF_CARD_POWER&lt;/em&gt;](/previous-versions/windows/hardware/drivers/ff548919(v=vs.85))"><em>RDF_CARD_POWER</em></a></p></td>
 <td align="left"><p>重置或关闭插入的智能卡</p></td>
 <td align="left"><p>必需</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff548918(v=vs.85)" data-raw-source="[&lt;em&gt;RDF_CARD_EJECT&lt;/em&gt;](/previous-versions/windows/hardware/drivers/ff548918(v=vs.85))"><em>RDF_CARD_EJECT</em></a></p></td>
+<td align="left"><p><a href="/previous-versions/windows/hardware/drivers/ff548918(v=vs.85)" data-raw-source="[&lt;em&gt;RDF_CARD_EJECT&lt;/em&gt;](/previous-versions/windows/hardware/drivers/ff548918(v=vs.85))"><em>RDF_CARD_EJECT</em></a></p></td>
 <td align="left"><p>弹出插入的智能卡</p></td>
 <td align="left"><p>可选</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff548920(v=vs.85)" data-raw-source="[&lt;em&gt;RDF_CARD_TRACKING&lt;/em&gt;](/previous-versions/windows/hardware/drivers/ff548920(v=vs.85))"><em>RDF_CARD_TRACKING</em></a></p></td>
+<td align="left"><p><a href="/previous-versions/windows/hardware/drivers/ff548920(v=vs.85)" data-raw-source="[&lt;em&gt;RDF_CARD_TRACKING&lt;/em&gt;](/previous-versions/windows/hardware/drivers/ff548920(v=vs.85))"><em>RDF_CARD_TRACKING</em></a></p></td>
 <td align="left"><p>安装事件处理程序以跟踪卡的插入和删除</p></td>
 <td align="left"><p>必需</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff548921(v=vs.85)" data-raw-source="[&lt;em&gt;RDF_IOCTL_VENDOR&lt;/em&gt;](/previous-versions/windows/hardware/drivers/ff548921(v=vs.85))"><em>RDF_IOCTL_VENDOR</em></a></p></td>
+<td align="left"><p><a href="/previous-versions/windows/hardware/drivers/ff548921(v=vs.85)" data-raw-source="[&lt;em&gt;RDF_IOCTL_VENDOR&lt;/em&gt;](/previous-versions/windows/hardware/drivers/ff548921(v=vs.85))"><em>RDF_IOCTL_VENDOR</em></a></p></td>
 <td align="left"><p>执行特定于供应商的 IOCTL 操作</p></td>
 <td align="left"><p>可选</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff548922(v=vs.85)" data-raw-source="[&lt;em&gt;RDF_READER_SWALLOW&lt;/em&gt;](/previous-versions/windows/hardware/drivers/ff548922(v=vs.85))"><em>RDF_READER_SWALLOW</em></a></p></td>
+<td align="left"><p><a href="/previous-versions/windows/hardware/drivers/ff548922(v=vs.85)" data-raw-source="[&lt;em&gt;RDF_READER_SWALLOW&lt;/em&gt;](/previous-versions/windows/hardware/drivers/ff548922(v=vs.85))"><em>RDF_READER_SWALLOW</em></a></p></td>
 <td align="left"><p>机械吞并</p></td>
 <td align="left"><p>可选</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff548923(v=vs.85)" data-raw-source="[&lt;em&gt;RDF_SET_PROTOCOL&lt;/em&gt;](/previous-versions/windows/hardware/drivers/ff548923(v=vs.85))"><em>RDF_SET_PROTOCOL</em></a></p></td>
+<td align="left"><p><a href="/previous-versions/windows/hardware/drivers/ff548923(v=vs.85)" data-raw-source="[&lt;em&gt;RDF_SET_PROTOCOL&lt;/em&gt;](/previous-versions/windows/hardware/drivers/ff548923(v=vs.85))"><em>RDF_SET_PROTOCOL</em></a></p></td>
 <td align="left"><p>为卡读卡器中的卡选择传输协议</p></td>
 <td align="left"><p>必需</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff548924(v=vs.85)" data-raw-source="[&lt;em&gt;RDF_TRANSMIT&lt;/em&gt;](/previous-versions/windows/hardware/drivers/ff548924(v=vs.85))"><em>RDF_TRANSMIT</em></a></p></td>
+<td align="left"><p><a href="/previous-versions/windows/hardware/drivers/ff548924(v=vs.85)" data-raw-source="[&lt;em&gt;RDF_TRANSMIT&lt;/em&gt;](/previous-versions/windows/hardware/drivers/ff548924(v=vs.85))"><em>RDF_TRANSMIT</em></a></p></td>
 <td align="left"><p>执行数据传输</p></td>
 <td align="left"><p>必需</p></td>
 </tr>
@@ -97,6 +97,4 @@ RDF \_ 卡 \_ 电源是固定的系统定义的常量，始终对应于服务于
 当读取器驱动程序调用这些例程时，它应从输入缓冲区中检索调用参数，如 [智能卡驱动程序回调](/windows-hardware/drivers/ddi/index)中所述。 读取器驱动程序还应将输出数据存储在相应的缓冲区区域，如同一节中所述。
 
 当任何回调例程（而不是智能卡跟踪回调例程）返回 "挂起" 状态时 \_ ，智能卡库将停止处理来自读取器驱动程序的任何进一步调用。  (有关卡跟踪回调例程的信息，请参阅 [*RDF \_ 纸牌 \_ 跟踪*](/previous-versions/windows/hardware/drivers/ff548920(v=vs.85))) 。如果读取器驱动程序在此状态下尝试使用驱动程序库例程，则库例程返回状态 \_ 设备繁忙状态 \_ 。 这会有效地阻止读取器驱动程序从资源管理器处理 IOCTL 请求，因为如果读取器驱动程序无法调用 [**SmartcardDeviceControl**](/previous-versions/ff548939(v=vs.85))，则它无法处理 ioctl 请求。
-
- 
 

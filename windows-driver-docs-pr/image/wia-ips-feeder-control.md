@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 20121d7e3d692916616a22fcc2af15965a85d60b
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 816147fe871db2b3d2bdeaaa148270254b474459
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89190721"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90105352"
 ---
 # <a name="wia_ips_feeder_control"></a>WIA \_ IP \_ 进纸器 \_ 控制
 
@@ -35,7 +35,7 @@ ms.locfileid: "89190721"
 
 访问权限：读/写
 
-<a name="remarks"></a>注解
+<a name="remarks"></a>备注
 -------
 
 下表描述了 " **WIA \_ ip \_ 进纸器 \_ 控制** " 属性的有效值。
@@ -54,7 +54,7 @@ ms.locfileid: "89190721"
 <tbody>
 <tr class="odd">
 <td><p>WIA_FEEDER_CONTROL_AUTO</p></td>
-<td><p>设备控制送纸器马达操作。  (<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvacquireitemdata" data-raw-source="[&lt;strong&gt;IWiaMiniDrv::drvAcquireItemData&lt;/strong&gt;](/windows-hardware/drivers/ddi/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvacquireitemdata)"><strong>IWiaMiniDrv：:D rvacquireitemdata</strong></a> 调用) ，为每个扫描作业启动和停止了馈送器。 如果支持该属性，则这是所需的默认值。</p></td>
+<td><p>设备控制送纸器马达操作。  (<a href="/windows-hardware/drivers/ddi/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvacquireitemdata" data-raw-source="[&lt;strong&gt;IWiaMiniDrv::drvAcquireItemData&lt;/strong&gt;](/windows-hardware/drivers/ddi/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvacquireitemdata)"><strong>IWiaMiniDrv：:D rvacquireitemdata</strong></a> 调用) ，为每个扫描作业启动和停止了馈送器。 如果支持该属性，则这是所需的默认值。</p></td>
 </tr>
 <tr class="even">
 <td><p>WIA_FEEDER_CONTROL_MANUAL</p></td>
@@ -83,11 +83,9 @@ ms.locfileid: "89190721"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Header</p></td>
+<td><p>标头</p></td>
 <td>Wiadef (包含 Wiadef) </td>
 </tr>
 </tbody>
 </table>
-
- 
 

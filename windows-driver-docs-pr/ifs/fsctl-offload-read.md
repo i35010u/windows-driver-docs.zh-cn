@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 41c0fb2d5dc324bd388c5a88b26fb7db81d461fd
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: f59edea909b15e5f9438e9448a8a794fc6d0451c
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89066976"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90105190"
 ---
 # <a name="fsctl_offload_read-control-code"></a>FSCTL \_ 卸载 \_ 读取控制代码
 
@@ -81,10 +81,10 @@ ms.locfileid: "89066976"
 <p>- 或 -</p>
 <p><em>InputBufferLength</em> &lt;<strong>sizeof</strong> (FSCTL_OFFLOAD_READ_INPUT) 。</p>
 <p>- 或 -</p>
-<p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_fsctl_offload_read_input" data-raw-source="[&lt;strong&gt;FSCTL_OFFLOAD_READ_INPUT&lt;/strong&gt;](/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_fsctl_offload_read_input)"><strong>FSCTL_OFFLOAD_READ_INPUT</strong></a>中的一个或多个成员不正确：</p>
+<p><a href="/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_fsctl_offload_read_input" data-raw-source="[&lt;strong&gt;FSCTL_OFFLOAD_READ_INPUT&lt;/strong&gt;](/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_fsctl_offload_read_input)"><strong>FSCTL_OFFLOAD_READ_INPUT</strong></a>中的一个或多个成员不正确：</p>
 <strong>FileOffset</strong> 不是卷的逻辑扇区大小的倍数。
 <strong>CopyLength</strong> 不是卷的逻辑扇区大小的倍数。
-<strong>大小</strong> 不是 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_fsctl_offload_read_input" data-raw-source="[&lt;strong&gt;FSCTL_OFFLOAD_READ_INPUT&lt;/strong&gt;](/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_fsctl_offload_read_input)"><strong>FSCTL_OFFLOAD_READ_INPUT</strong></a> 结构的大小。
+<strong>大小</strong> 不是 <a href="/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_fsctl_offload_read_input" data-raw-source="[&lt;strong&gt;FSCTL_OFFLOAD_READ_INPUT&lt;/strong&gt;](/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_fsctl_offload_read_input)"><strong>FSCTL_OFFLOAD_READ_INPUT</strong></a> 结构的大小。
 <strong>FileOffset</strong> + <strong>CopyLength</strong> &gt; <strong>MAXULONGLONG</strong>。</td>
 </tr>
 <tr class="odd">
@@ -125,7 +125,7 @@ ms.locfileid: "89066976"
 </tr>
 <tr class="even">
 <td align="left"><p><strong>STATUS_END_OF_FILE</strong></p></td>
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_fsctl_offload_read_input" data-raw-source="[&lt;strong&gt;FSCTL_OFFLOAD_READ_INPUT&lt;/strong&gt;](/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_fsctl_offload_read_input)"><strong>FSCTL_OFFLOAD_READ_INPUT</strong></a>的<strong>FileOffset</strong>成员将在文件尾 (EOF) 开始后开始。</p></td>
+<td align="left"><p><a href="/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_fsctl_offload_read_input" data-raw-source="[&lt;strong&gt;FSCTL_OFFLOAD_READ_INPUT&lt;/strong&gt;](/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_fsctl_offload_read_input)"><strong>FSCTL_OFFLOAD_READ_INPUT</strong></a>的<strong>FileOffset</strong>成员将在文件尾 (EOF) 开始后开始。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>STATUS_DISMOUNTED_VOLUME</strong></p></td>
@@ -137,7 +137,7 @@ ms.locfileid: "89066976"
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>STATUS_BUFFER_TOO_SMALL</strong></p></td>
-<td align="left"><p><em>OutputBufferLength</em> 太小， <em>OutputBuffer</em> 无法接收 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_fsctl_offload_read_output" data-raw-source="[&lt;strong&gt;FSCTL_OFFLOAD_READ_OUTPUT&lt;/strong&gt;](/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_fsctl_offload_read_output)"><strong>FSCTL_OFFLOAD_READ_OUTPUT</strong></a> 结构。</p></td>
+<td align="left"><p><em>OutputBufferLength</em> 太小， <em>OutputBuffer</em> 无法接收 <a href="/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_fsctl_offload_read_output" data-raw-source="[&lt;strong&gt;FSCTL_OFFLOAD_READ_OUTPUT&lt;/strong&gt;](/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_fsctl_offload_read_output)"><strong>FSCTL_OFFLOAD_READ_OUTPUT</strong></a> 结构。</p></td>
 </tr>
 </tbody>
 </table>
@@ -181,6 +181,4 @@ ms.locfileid: "89066976"
 [**FSCTL \_ 卸载 \_ 读取 \_ 输入**](/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_fsctl_offload_read_input)
 
 [**FSCTL \_ 卸载 \_ 读取 \_ 输出**](/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_fsctl_offload_read_output)
-
- 
 

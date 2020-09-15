@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6ac8eca75697a970f83236c2af52cea8f4976fa0
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 13704347f88fc0a0c5d1378a834a3c0d22c55338
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89186545"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90105418"
 ---
 # <a name="ksproperty_extdevice_id"></a>KSPROPERTY \_ EXTDEVICE \_ ID
 
@@ -53,7 +53,7 @@ KSPROPERTY \_ EXTDEVICE \_ id 属性检索外部设备通用化系统范围内�
 <td><p>是</p></td>
 <td><p>否</p></td>
 <td><p>设备</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_extdevice_s" data-raw-source="[&lt;strong&gt;KSPROPERTY_EXTDEVICE_S&lt;/strong&gt;](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_extdevice_s)"><strong>KSPROPERTY_EXTDEVICE_S</strong></a></p></td>
+<td><p><a href="/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_extdevice_s" data-raw-source="[&lt;strong&gt;KSPROPERTY_EXTDEVICE_S&lt;/strong&gt;](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_extdevice_s)"><strong>KSPROPERTY_EXTDEVICE_S</strong></a></p></td>
 <td><p>DWORD 数组</p></td>
 </tr>
 </tbody>
@@ -90,6 +90,4 @@ KSPROPERTY **NodeUniqueID** \_ EXTDEVICE S 结构的 NodeUniqueID 成员 \_ 指�
 [**KSPROPERTY**](/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)
 
 [**KSPROPERTY \_ EXTDEVICE \_ S**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_extdevice_s)
-
- 
 

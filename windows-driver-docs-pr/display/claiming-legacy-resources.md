@@ -10,12 +10,12 @@ keywords:
 - VIDEO_HW_INITIALIZATION_DATA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c792c58e044bee09eb269b1441b47f228f0243fe
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 104398c8cb73509154a512cdd6cf5bc39d0a7ed6
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89065682"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90105302"
 ---
 # <a name="claiming-legacy-resources"></a>声明旧资源
 
@@ -43,7 +43,7 @@ ms.locfileid: "89065682"
   <tbody>
   <tr class="odd">
   <td align="left"><p><strong>HwLegacyResourceList</strong></p></td>
-  <td align="left"><p>指向 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/video/ns-video-_video_access_range" data-raw-source="[&lt;strong&gt;VIDEO_ACCESS_RANGE&lt;/strong&gt;](/windows-hardware/drivers/ddi/video/ns-video-_video_access_range)"><strong>VIDEO_ACCESS_RANGE</strong></a> 结构的数组。 每个结构都描述了 PCI 配置空间中未列出的视频适配器的设备 i/o 端口或内存范围。</p></td>
+  <td align="left"><p>指向 <a href="/windows-hardware/drivers/ddi/video/ns-video-_video_access_range" data-raw-source="[&lt;strong&gt;VIDEO_ACCESS_RANGE&lt;/strong&gt;](/windows-hardware/drivers/ddi/video/ns-video-_video_access_range)"><strong>VIDEO_ACCESS_RANGE</strong></a> 结构的数组。 每个结构都描述了 PCI 配置空间中未列出的视频适配器的设备 i/o 端口或内存范围。</p></td>
   </tr>
   <tr class="even">
   <td align="left"><p><strong>HwLegacyResourceCount</strong></p></td>
@@ -85,6 +85,4 @@ hwInitData.HwLegacyResourceCount = 3;
 ```
 
 小型端口驱动程序可以在后续 (调用中再次 "回收" 旧资源) [**VideoPortVerifyAccessRanges**](/windows-hardware/drivers/ddi/video/nf-video-videoportverifyaccessranges);但是，视频端口驱动程序将忽略对以前声明的任何资源的请求。 如果微型端口驱动程序尝试在**VideoPortVerifyAccessRanges** [**中声明**](./driverentry-of-video-miniport-driver.md)以前未在**HwLegacyResourceList**期间声明的旧访问范围，或在[*HwVidLegacyResources*](/windows-hardware/drivers/ddi/video/nc-video-pvideo_hw_legacyresources)的*LegacyResourceList*参数中返回，则系统将禁用电源管理和停靠。
-
- 
 

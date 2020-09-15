@@ -19,12 +19,12 @@ keywords:
 - SNMPEnabled
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 94c5cb62f9640193dcbd5ae2d97bbaa5701f5155
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 4b1a27ee73ae851bb082ac7cdd2c0b8d844a3572
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89209243"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90104164"
 ---
 # <a name="tcpmon-xcv-commands"></a>TCPMON Xcv 命令
 
@@ -48,7 +48,7 @@ ms.locfileid: "89209243"
 <thead>
 <tr class="header">
 <th>XcvData 参数</th>
-<th>值</th>
+<th>“值”</th>
 </tr>
 </thead>
 <tbody>
@@ -58,7 +58,7 @@ ms.locfileid: "89209243"
 </tr>
 <tr class="even">
 <td><p><em>pInputData</em></p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/tcpxcv/ns-tcpxcv-_port_data_1" data-raw-source="[&lt;strong&gt;PORT_DATA_1&lt;/strong&gt;](/windows-hardware/drivers/ddi/tcpxcv/ns-tcpxcv-_port_data_1)"><strong>PORT_DATA_1</strong></a>结构的地址</p></td>
+<td><p><a href="/windows-hardware/drivers/ddi/tcpxcv/ns-tcpxcv-_port_data_1" data-raw-source="[&lt;strong&gt;PORT_DATA_1&lt;/strong&gt;](/windows-hardware/drivers/ddi/tcpxcv/ns-tcpxcv-_port_data_1)"><strong>PORT_DATA_1</strong></a>结构的地址</p></td>
 </tr>
 <tr class="odd">
 <td><p><em>cbInputData</em></p></td>
@@ -95,7 +95,7 @@ ms.locfileid: "89209243"
 <thead>
 <tr class="header">
 <th>XcvData 参数</th>
-<th>值</th>
+<th>“值”</th>
 </tr>
 </thead>
 <tbody>
@@ -105,7 +105,7 @@ ms.locfileid: "89209243"
 </tr>
 <tr class="even">
 <td><p><em>pInputData</em></p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/tcpxcv/ns-tcpxcv-_port_data_1" data-raw-source="[&lt;strong&gt;PORT_DATA_1&lt;/strong&gt;](/windows-hardware/drivers/ddi/tcpxcv/ns-tcpxcv-_port_data_1)"><strong>PORT_DATA_1</strong></a>结构的地址</p></td>
+<td><p><a href="/windows-hardware/drivers/ddi/tcpxcv/ns-tcpxcv-_port_data_1" data-raw-source="[&lt;strong&gt;PORT_DATA_1&lt;/strong&gt;](/windows-hardware/drivers/ddi/tcpxcv/ns-tcpxcv-_port_data_1)"><strong>PORT_DATA_1</strong></a>结构的地址</p></td>
 </tr>
 <tr class="odd">
 <td><p><em>cbInputData</em></p></td>
@@ -142,7 +142,7 @@ ms.locfileid: "89209243"
 <thead>
 <tr class="header">
 <th>XcvData 参数</th>
-<th>值</th>
+<th>“值”</th>
 </tr>
 </thead>
 <tbody>
@@ -152,7 +152,7 @@ ms.locfileid: "89209243"
 </tr>
 <tr class="even">
 <td><p><em>pInputData</em></p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/tcpxcv/ns-tcpxcv-_delete_port_data_1" data-raw-source="[&lt;strong&gt;DELETE_PORT_DATA_1&lt;/strong&gt;](/windows-hardware/drivers/ddi/tcpxcv/ns-tcpxcv-_delete_port_data_1)"><strong>DELETE_PORT_DATA_1</strong></a>结构的地址</p></td>
+<td><p><a href="/windows-hardware/drivers/ddi/tcpxcv/ns-tcpxcv-_delete_port_data_1" data-raw-source="[&lt;strong&gt;DELETE_PORT_DATA_1&lt;/strong&gt;](/windows-hardware/drivers/ddi/tcpxcv/ns-tcpxcv-_delete_port_data_1)"><strong>DELETE_PORT_DATA_1</strong></a>结构的地址</p></td>
 </tr>
 <tr class="odd">
 <td><p><em>cbInputData</em></p></td>
@@ -189,7 +189,7 @@ ms.locfileid: "89209243"
 <thead>
 <tr class="header">
 <th>XcvData 参数</th>
-<th>值</th>
+<th>“值”</th>
 </tr>
 </thead>
 <tbody>
@@ -199,7 +199,7 @@ ms.locfileid: "89209243"
 </tr>
 <tr class="even">
 <td><p><em>pInputData</em></p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/tcpxcv/ns-tcpxcv-_config_info_data_1" data-raw-source="[&lt;strong&gt;CONFIG_INFO_DATA_1&lt;/strong&gt;](/windows-hardware/drivers/ddi/tcpxcv/ns-tcpxcv-_config_info_data_1)"><strong>CONFIG_INFO_DATA_1</strong></a>结构的地址</p></td>
+<td><p><a href="/windows-hardware/drivers/ddi/tcpxcv/ns-tcpxcv-_config_info_data_1" data-raw-source="[&lt;strong&gt;CONFIG_INFO_DATA_1&lt;/strong&gt;](/windows-hardware/drivers/ddi/tcpxcv/ns-tcpxcv-_config_info_data_1)"><strong>CONFIG_INFO_DATA_1</strong></a>结构的地址</p></td>
 </tr>
 <tr class="odd">
 <td><p><em>cbInputData</em></p></td>
@@ -207,7 +207,7 @@ ms.locfileid: "89209243"
 </tr>
 <tr class="even">
 <td><p><em>pOutputData</em></p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/tcpxcv/ns-tcpxcv-_port_data_1" data-raw-source="[&lt;strong&gt;PORT_DATA_1&lt;/strong&gt;](/windows-hardware/drivers/ddi/tcpxcv/ns-tcpxcv-_port_data_1)"><strong>PORT_DATA_1</strong></a>结构的地址</p></td>
+<td><p><a href="/windows-hardware/drivers/ddi/tcpxcv/ns-tcpxcv-_port_data_1" data-raw-source="[&lt;strong&gt;PORT_DATA_1&lt;/strong&gt;](/windows-hardware/drivers/ddi/tcpxcv/ns-tcpxcv-_port_data_1)"><strong>PORT_DATA_1</strong></a>结构的地址</p></td>
 </tr>
 <tr class="odd">
 <td><p><em>cbOutputData</em></p></td>
@@ -236,7 +236,7 @@ ms.locfileid: "89209243"
 <thead>
 <tr class="header">
 <th>XcvData 参数</th>
-<th>值</th>
+<th>“值”</th>
 </tr>
 </thead>
 <tbody>
@@ -283,7 +283,7 @@ ms.locfileid: "89209243"
 <thead>
 <tr class="header">
 <th>XcvData 参数</th>
-<th>值</th>
+<th>“值”</th>
 </tr>
 </thead>
 <tbody>
@@ -330,7 +330,7 @@ ms.locfileid: "89209243"
 <thead>
 <tr class="header">
 <th>XcvData 参数</th>
-<th>值</th>
+<th>“值”</th>
 </tr>
 </thead>
 <tbody>
@@ -377,7 +377,7 @@ ms.locfileid: "89209243"
 <thead>
 <tr class="header">
 <th>XcvData 参数</th>
-<th>值</th>
+<th>“值”</th>
 </tr>
 </thead>
 <tbody>
@@ -424,7 +424,7 @@ ms.locfileid: "89209243"
 <thead>
 <tr class="header">
 <th>XcvData 参数</th>
-<th>值</th>
+<th>“值”</th>
 </tr>
 </thead>
 <tbody>
@@ -471,7 +471,7 @@ ms.locfileid: "89209243"
 <thead>
 <tr class="header">
 <th>XcvData 参数</th>
-<th>值</th>
+<th>“值”</th>
 </tr>
 </thead>
 <tbody>
@@ -505,6 +505,4 @@ ms.locfileid: "89209243"
  
 
 **XcvData** \_ 如果为设备启用了 SNMP，则 XcvData 不会返回错误。 如果*cbOutputData*小于所需的值，则当 PcbOutputNeeded 为 null 时，该函数将返回错误 \_ ：无效的 \_ 参数; *pcbOutputNeeded* **NULL** \_ \_ 当*pcbOutputNeeded*非**null**时，该函数将返回错误的缓冲区。 如果 *pOutputData* 为 **NULL**，则函数返回错误 \_ \_ 参数无效。
-
- 
 

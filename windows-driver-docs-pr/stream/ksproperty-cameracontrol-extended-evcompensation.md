@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 09/10/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: aece09afd079ac2906d34d273fa2c41a55bc7cfc
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 5e21c8853b63af0b23995dc895a50f3c9188cbdb
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89186095"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90104838"
 ---
 # <a name="ksproperty_cameracontrol_extended_evcompensation"></a>KSPROPERTY \_ CAMERACONTROL \_ 扩展 \_ EVCOMPENSATION
 
@@ -50,8 +50,8 @@ EV 补偿属性允许按曝光度或区域系统的增量调整公开控制。
 <td><p>是</p></td>
 <td><p>是</p></td>
 <td><p>筛选器</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)"><strong>KSPROPERTY</strong></a></p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header" data-raw-source="[&lt;strong&gt;KSCAMERA_EXTENDEDPROP_HEADER&lt;/strong&gt;](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)"><strong>KSCAMERA_EXTENDEDPROP_HEADER</strong></a></p></td>
+<td><p><a href="/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)"><strong>KSPROPERTY</strong></a></p></td>
+<td><p><a href="/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header" data-raw-source="[&lt;strong&gt;KSCAMERA_EXTENDEDPROP_HEADER&lt;/strong&gt;](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)"><strong>KSCAMERA_EXTENDEDPROP_HEADER</strong></a></p></td>
 </tr>
 </tbody>
 </table>
@@ -64,7 +64,7 @@ EV 补偿属性允许按曝光度或区域系统的增量调整公开控制。
 
 [**KSCAMERA \_ EXTENDEDPROP \_ 标头**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)的**功能**成员包含以下一个或多个补偿设置的按位 "或" 组合。
 
-| EV 补偿单步执行                    | 描述                                                             |
+| EV 补偿单步执行                    | 说明                                                             |
 |---------------------------------------------|-------------------------------------------------------------------------|
 | KSCAMERA \_ EXTENDEDPROP \_ EVCOMP \_ SIXTHSTEP   | 在公开值的第六个 (1/6) 步骤中，EV 补偿更改。  |
 | KSCAMERA \_ EXTENDEDPROP \_ EVCOMP \_ QUARTERSTEP | EV 值的一个四 (1/4) 步骤中的 EV 补偿更改。 |

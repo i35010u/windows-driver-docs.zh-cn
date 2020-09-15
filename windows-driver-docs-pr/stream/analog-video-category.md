@@ -9,12 +9,12 @@ keywords:
 - 模拟音频 WDK 视频捕获
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 90da319b6a2c4ced05cc7a16b266f06670f8ded3
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: dd814776b4157a0b928b47cb114b10de215fd9f6
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89186853"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90105416"
 ---
 # <a name="analog-video-category"></a>模拟视频类别
 
@@ -41,11 +41,11 @@ ms.locfileid: "89186853"
 <tbody>
 <tr class="odd">
 <td><p><strong>DataRange 结构</strong></p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagks_datarange_analogvideo" data-raw-source="[&lt;strong&gt;KS_DATARANGE_ANALOGVIDEO&lt;/strong&gt;](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagks_datarange_analogvideo)"><strong>KS_DATARANGE_ANALOGVIDEO</strong></a></p></td>
+<td><p><a href="/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagks_datarange_analogvideo" data-raw-source="[&lt;strong&gt;KS_DATARANGE_ANALOGVIDEO&lt;/strong&gt;](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagks_datarange_analogvideo)"><strong>KS_DATARANGE_ANALOGVIDEO</strong></a></p></td>
 </tr>
 <tr class="even">
 <td><p><strong>DataFormat 结构</strong></p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagks_datarange_analogvideo" data-raw-source="[&lt;strong&gt;KS_DATARANGE_ANALOGVIDEO&lt;/strong&gt;](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagks_datarange_analogvideo)"><strong>KS_DATARANGE_ANALOGVIDEO</strong></a></p></td>
+<td><p><a href="/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagks_datarange_analogvideo" data-raw-source="[&lt;strong&gt;KS_DATARANGE_ANALOGVIDEO&lt;/strong&gt;](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagks_datarange_analogvideo)"><strong>KS_DATARANGE_ANALOGVIDEO</strong></a></p></td>
 </tr>
 <tr class="odd">
 <td><p><strong>MajorFormat GUID</strong></p></td>
@@ -89,6 +89,4 @@ ms.locfileid: "89186853"
 尽管模拟视频流实质上是模拟模拟视频解码器的输入，但它同时充当用于优化信息的数据传输。 在每次优化操作开始和结束时，会通过任何干预的纵横制筛选器来调整来自电视调谐器筛选器的数据包。 数据包是一个 [**KS \_ TVTUNER \_ 更改 \_ 信息**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagks_tvtuner_change_info) 结构，其中包含使用的国家/地区代码、频道、频率和模拟视频标准。
 
 捕获筛选器必须在 VBI 输出流扩展的标头中将此优化数据包传播到下游 VBI 编解码器。
-
- 
 

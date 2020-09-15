@@ -4,12 +4,12 @@ description: Windows 驱动程序工具包 (WDK) 包含通常在生成过程中�
 ms.assetid: 53A5AAC2-A608-4153-9482-D8EF3D05EF04
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7add39e8815917b9024bfbd7cde9c71528911dd5
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: e6c9a2b3080751afd55f5229866044966840e8b1
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89382761"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90104956"
 ---
 # <a name="wdk-tasks-for-msbuild"></a>MSBuild 的 WDK 任务
 
@@ -84,7 +84,7 @@ WDK 命令行工具支持大量选项。 每个选项都作为任务参数公开
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="message-compiler-task.md" data-raw-source="[Message compiler task](message-compiler-task.md)">消息编译器任务</a></p></td>
-<td align="left"><p>WDK 提供 MessageCompiler 任务，以便在使用 MSBuild 构建驱动程序时可以运行 MC.exe 工具。 有关使用 MC.exe 的信息，请参阅 <a href="https://docs.microsoft.com/windows/desktop/WES/message-compiler--mc-exe-" data-raw-source="[&lt;strong&gt;Message Compiler (MC.exe)&lt;/strong&gt;](/windows/desktop/WES/message-compiler--mc-exe-)"><strong>Message 编译器 ( # A1) </strong></a>。</p></td>
+<td align="left"><p>WDK 提供 MessageCompiler 任务，以便在使用 MSBuild 构建驱动程序时可以运行 MC.exe 工具。 有关使用 MC.exe 的信息，请参阅 <a href="/windows/desktop/WES/message-compiler--mc-exe-" data-raw-source="[&lt;strong&gt;Message Compiler (MC.exe)&lt;/strong&gt;](/windows/desktop/WES/message-compiler--mc-exe-)"><strong>Message 编译器 ( # A1) </strong></a>。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><a href="ctrpp-task.md" data-raw-source="[Ctrpp task](ctrpp-task.md)">Ctrpp 任务</a></p></td>
@@ -109,6 +109,4 @@ WDK 命令行工具支持大量选项。 每个选项都作为任务参数公开
 [Stampinf](stampinf.md)
 
 [WPP 预处理器](wpp-preprocessor.md)
-
- 
 

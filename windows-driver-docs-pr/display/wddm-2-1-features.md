@@ -4,12 +4,12 @@ description: 本部分提供有关 Windows 显示驱动程序模型 (WDDM) 版�
 ms.assetid: 7dc0d0ad-98da-4bd6-bed9-f70525b682bc
 ms.date: 01/10/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 5f4cd8b26aecdda6c4e0e28193cdf42df79434b4
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 5e0f1cbb40ee9f0bb364dc48b301b1da91bcc175
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89067008"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90104526"
 ---
 # <a name="wddm-21-features"></a>WDDM 2.1 功能
 
@@ -178,7 +178,7 @@ KMD 中的 DDI 接口版本如下所示：
 
 3. 用于 "驱动程序存储区" 安装的 WDDM 2.1 图形驱动程序 INF 发生了更改。
 
-有关详细信息，请参阅 [INF 文件部分和指令](https://docs.microsoft.com/windows-hardware/drivers/install/inf-file-sections-and-directives)。
+有关详细信息，请参阅 [INF 文件部分和指令](../install/index.md)。
 
 驱动程序文件32和64位将保留在中，并从驱动程序存储区中加载。 WoW64 文件系统重定向不适用于驱动程序存储区。 例如，如果需要，Ihv 可以通过使用标准 INF 语法来指定子文件夹（例如，唯一的驱动程序存储文件夹下的 WoW64 文件夹）。
 

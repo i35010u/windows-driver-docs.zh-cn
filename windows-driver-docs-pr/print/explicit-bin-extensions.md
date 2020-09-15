@@ -6,12 +6,12 @@ keywords:
 - 显式 bin 扩展 WDK 打印机
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b80fb23fb40dc671e0e0d4c3a58bd3f47d5efb0d
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 02a483ee68efb78874cb58318872c9eb33e8a546
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89217191"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90104166"
 ---
 # <a name="explicit-bin-extensions"></a>显式 Bin 扩展
 
@@ -31,12 +31,12 @@ ms.locfileid: "89217191"
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>name </p></td>
+<td><p><strong>name</strong></p></td>
 <td><p>Bin 的名称。</p></td>
 </tr>
 <tr class="even">
-<td><p><strong>type</strong></p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/winspool/ne-winspool-bidi_type" data-raw-source="[&lt;strong&gt;BIDI_TYPE&lt;/strong&gt;](/windows-hardware/drivers/ddi/winspool/ne-winspool-bidi_type)"><strong>BIDI_TYPE</strong></a>枚举中的枚举数。</p></td>
+<td><p>type</p></td>
+<td><p><a href="/windows-hardware/drivers/ddi/winspool/ne-winspool-bidi_type" data-raw-source="[&lt;strong&gt;BIDI_TYPE&lt;/strong&gt;](/windows-hardware/drivers/ddi/winspool/ne-winspool-bidi_type)"><strong>BIDI_TYPE</strong></a>枚举中的枚举数。</p></td>
 </tr>
 <tr class="odd">
 <td><p><strong>drvPrinterEvent</strong></p></td>
@@ -88,6 +88,4 @@ ms.locfileid: "89217191"
 ```cpp
 \Printer.Finishing.OutputBins.TopBin:Status
 ```
-
- 
 

@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: b306afa11c0c08dfee1b99a32618b64265ec2614
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 95d460f5df8e170eb6ea91cfe70196de753fb59d
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89208737"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90105506"
 ---
 # <a name="bug-check-0x15e-bugcode_ndis_driver_live_dump"></a>Bug 检查0x15E： BUGCODE \_ NDIS \_ 驱动程序 \_ 实时 \_ 转储
 
@@ -61,11 +61,11 @@ BUGCODE \_ NDIS \_ 驱动程序 \_ 实时 \_ 转储错误代码的值为0x000001
 <td align="left"><p>导致执行此实时转储的严重错误。 可能的值：</p>
 <ol>
 <li>70：由用户模式引起</li>
-<li>71：由<strong> <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismremoveminiport" data-raw-source="[NdisMRemoveMiniport](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismremoveminiport)">NdisMRemoveMiniport</a>导致</strong></li>
-<li>72： <strong><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisiminitializedeviceinstanceex" data-raw-source="[NdisIMInitializeDeviceInstanceEx](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisiminitializedeviceinstanceex)">NdisIMInitializeDeviceInstanceEx</a></strong> 失败</li>
-<li>73： <em><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_restart" data-raw-source="[MiniportRestart](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_restart)">MiniportRestart</a></em> 失败</li>
-<li>74： <a href="https://docs.microsoft.com/windows-hardware/drivers/network/oid-pnp-set-power" data-raw-source="[OID_PNP_SET_POWER (D0)](../network/oid-pnp-set-power.md)">OID_PNP_SET_POWER (D0) </a> 请求失败</li>
-<li>75： <a href="https://docs.microsoft.com/windows-hardware/drivers/network/oid-pnp-set-power" data-raw-source="[OID_PNP_SET_POWER (Dx)](../network/oid-pnp-set-power.md)">OID_PNP_SET_POWER (Dx) </a> 请求失败</li>
+<li>71：由<strong> <a href="/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismremoveminiport" data-raw-source="[NdisMRemoveMiniport](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismremoveminiport)">NdisMRemoveMiniport</a>导致</strong></li>
+<li>72： <strong><a href="/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisiminitializedeviceinstanceex" data-raw-source="[NdisIMInitializeDeviceInstanceEx](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisiminitializedeviceinstanceex)">NdisIMInitializeDeviceInstanceEx</a></strong> 失败</li>
+<li>73： <em><a href="/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_restart" data-raw-source="[MiniportRestart](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_restart)">MiniportRestart</a></em> 失败</li>
+<li>74： <a href="/windows-hardware/drivers/network/oid-pnp-set-power" data-raw-source="[OID_PNP_SET_POWER (D0)](../network/oid-pnp-set-power.md)">OID_PNP_SET_POWER (D0) </a> 请求失败</li>
+<li>75： <a href="/windows-hardware/drivers/network/oid-pnp-set-power" data-raw-source="[OID_PNP_SET_POWER (Dx)](../network/oid-pnp-set-power.md)">OID_PNP_SET_POWER (Dx) </a> 请求失败</li>
 </ol></td>
 </tr>
 <tr class="even">
@@ -115,7 +115,7 @@ BUGCODE \_ NDIS \_ 驱动程序 \_ 实时 \_ 转储错误代码的值为0x000001
 <td align="left"><p>参数4的值取决于参数2的值。 此列表中的每个数字对应于参数2中的相同数字。</p>
 <ul>
 <li>0x01：0</li>
-<li>0x02：停滞事件的 NET_PNP_EVENT_CODE。 有关这些代码的详细信息，请参阅 <strong><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_pnp_event" data-raw-source="[NET_PNP_EVENT](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_pnp_event)">NET_PNP_EVENT</a></strong>。</li>
+<li>0x02：停滞事件的 NET_PNP_EVENT_CODE。 有关这些代码的详细信息，请参阅 <strong><a href="/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_pnp_event" data-raw-source="[NET_PNP_EVENT](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_pnp_event)">NET_PNP_EVENT</a></strong>。</li>
 <li>0x03：停滞指示的 NDIS_STATUS 代码。 使用 <strong><a href="-ndiskd-help.md" data-raw-source="[!ndiskd.help](-ndiskd-help.md)">！ ndiskd</a></strong> 对其进行解码。</li>
 <li>0x04：0</li>
 <li>0x11：0</li>
@@ -154,6 +154,4 @@ BUGCODE \_ NDIS \_ 驱动程序 \_ 实时 \_ 转储错误代码的值为0x000001
 NDIS 已检测到另一个网络驱动程序中的严重问题，并已将其恢复。 尽管系统未暂停，但以后可能会导致连接问题或致命错误检测。
 
 此错误代码仅出现在 Windows 8.1 和更高版本的 Windows 中。
-
- 
 

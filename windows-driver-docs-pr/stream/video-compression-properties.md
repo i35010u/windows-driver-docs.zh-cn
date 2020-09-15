@@ -8,12 +8,12 @@ keywords:
 - PROPSETID_VIDCAP_VIDEOCOMPRESSION
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3ddb4de226d775c2bd06bb28a694b2e87d7bc019
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 2753a2fbbefca3e88418c7d5892a4e1959792b9f
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89184337"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90105156"
 ---
 # <a name="video-compression-properties"></a>视频压缩属性
 
@@ -33,37 +33,35 @@ ms.locfileid: "89184337"
 </thead>
 <tbody>
 <tr class="odd">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-videocompression-getinfo" data-raw-source="[&lt;strong&gt;KSPROPERTY_VIDEOCOMPRESSION_GETINFO&lt;/strong&gt;](./ksproperty-videocompression-getinfo.md)"><strong>KSPROPERTY_VIDEOCOMPRESSION_GETINFO</strong></a></p></td>
+<td><p><a href="/windows-hardware/drivers/stream/ksproperty-videocompression-getinfo" data-raw-source="[&lt;strong&gt;KSPROPERTY_VIDEOCOMPRESSION_GETINFO&lt;/strong&gt;](./ksproperty-videocompression-getinfo.md)"><strong>KSPROPERTY_VIDEOCOMPRESSION_GETINFO</strong></a></p></td>
 <td><p>返回有关设备的视频压缩功能的信息。</p></td>
 </tr>
 <tr class="even">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-videocompression-keyframe-rate" data-raw-source="[&lt;strong&gt;KSPROPERTY_VIDEOCOMPRESSION_KEYFRAME_RATE&lt;/strong&gt;](./ksproperty-videocompression-keyframe-rate.md)"><strong>KSPROPERTY_VIDEOCOMPRESSION_KEYFRAME_RATE</strong></a></p></td>
+<td><p><a href="/windows-hardware/drivers/stream/ksproperty-videocompression-keyframe-rate" data-raw-source="[&lt;strong&gt;KSPROPERTY_VIDEOCOMPRESSION_KEYFRAME_RATE&lt;/strong&gt;](./ksproperty-videocompression-keyframe-rate.md)"><strong>KSPROPERTY_VIDEOCOMPRESSION_KEYFRAME_RATE</strong></a></p></td>
 <td><p>控制视频压缩的关键帧速率。</p></td>
 </tr>
 <tr class="odd">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-videocompression-override-frame-size" data-raw-source="[&lt;strong&gt;KSPROPERTY_VIDEOCOMPRESSION_OVERRIDE_FRAME_SIZE&lt;/strong&gt;](./ksproperty-videocompression-override-frame-size.md)"><strong>KSPROPERTY_VIDEOCOMPRESSION_OVERRIDE_FRAME_SIZE</strong></a></p></td>
+<td><p><a href="/windows-hardware/drivers/stream/ksproperty-videocompression-override-frame-size" data-raw-source="[&lt;strong&gt;KSPROPERTY_VIDEOCOMPRESSION_OVERRIDE_FRAME_SIZE&lt;/strong&gt;](./ksproperty-videocompression-override-frame-size.md)"><strong>KSPROPERTY_VIDEOCOMPRESSION_OVERRIDE_FRAME_SIZE</strong></a></p></td>
 <td><p>指定临时的新帧大小以覆盖当前大小。</p></td>
 </tr>
 <tr class="even">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-videocompression-override-keyframe" data-raw-source="[&lt;strong&gt;KSPROPERTY_VIDEOCOMPRESSION_OVERRIDE_KEYFRAME&lt;/strong&gt;](./ksproperty-videocompression-override-keyframe.md)"><strong>KSPROPERTY_VIDEOCOMPRESSION_OVERRIDE_KEYFRAME</strong></a></p></td>
+<td><p><a href="/windows-hardware/drivers/stream/ksproperty-videocompression-override-keyframe" data-raw-source="[&lt;strong&gt;KSPROPERTY_VIDEOCOMPRESSION_OVERRIDE_KEYFRAME&lt;/strong&gt;](./ksproperty-videocompression-override-keyframe.md)"><strong>KSPROPERTY_VIDEOCOMPRESSION_OVERRIDE_KEYFRAME</strong></a></p></td>
 <td><p>指定用于重写当前速率的临时新的关键帧速率。</p></td>
 </tr>
 <tr class="odd">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-videocompression-pframes-per-keyframe" data-raw-source="[&lt;strong&gt;KSPROPERTY_VIDEOCOMPRESSION_PFRAMES_PER_KEYFRAME&lt;/strong&gt;](./ksproperty-videocompression-pframes-per-keyframe.md)"><strong>KSPROPERTY_VIDEOCOMPRESSION_PFRAMES_PER_KEYFRAME</strong></a></p></td>
+<td><p><a href="/windows-hardware/drivers/stream/ksproperty-videocompression-pframes-per-keyframe" data-raw-source="[&lt;strong&gt;KSPROPERTY_VIDEOCOMPRESSION_PFRAMES_PER_KEYFRAME&lt;/strong&gt;](./ksproperty-videocompression-pframes-per-keyframe.md)"><strong>KSPROPERTY_VIDEOCOMPRESSION_PFRAMES_PER_KEYFRAME</strong></a></p></td>
 <td><p>控制预测帧时间间隔。</p></td>
 </tr>
 <tr class="even">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-videocompression-quality" data-raw-source="[&lt;strong&gt;KSPROPERTY_VIDEOCOMPRESSION_QUALITY&lt;/strong&gt;](./ksproperty-videocompression-quality.md)"><strong>KSPROPERTY_VIDEOCOMPRESSION_QUALITY</strong></a></p></td>
+<td><p><a href="/windows-hardware/drivers/stream/ksproperty-videocompression-quality" data-raw-source="[&lt;strong&gt;KSPROPERTY_VIDEOCOMPRESSION_QUALITY&lt;/strong&gt;](./ksproperty-videocompression-quality.md)"><strong>KSPROPERTY_VIDEOCOMPRESSION_QUALITY</strong></a></p></td>
 <td><p>控制视频压缩质量设置。</p></td>
 </tr>
 <tr class="odd">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-videocompression-windowsize" data-raw-source="[&lt;strong&gt;KSPROPERTY_VIDEOCOMPRESSION_WINDOWSIZE&lt;/strong&gt;](./ksproperty-videocompression-windowsize.md)"><strong>KSPROPERTY_VIDEOCOMPRESSION_WINDOWSIZE</strong></a></p></td>
+<td><p><a href="/windows-hardware/drivers/stream/ksproperty-videocompression-windowsize" data-raw-source="[&lt;strong&gt;KSPROPERTY_VIDEOCOMPRESSION_WINDOWSIZE&lt;/strong&gt;](./ksproperty-videocompression-windowsize.md)"><strong>KSPROPERTY_VIDEOCOMPRESSION_WINDOWSIZE</strong></a></p></td>
 <td><p>控制平均视频帧的数据速率。</p></td>
 </tr>
 </tbody>
 </table>
-
- 
 
  
 

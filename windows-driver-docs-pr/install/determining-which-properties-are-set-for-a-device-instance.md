@@ -4,12 +4,12 @@ description: 确定为设备实例设置哪些属性
 ms.assetid: aeca4da5-9632-4523-aa2d-8d1c64b1eccc
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5fae5736f47a8ca217af630ee8e1733c1c1d9940
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 90761bfc16875a544d9fbb34bad92fd34576ec8a
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89095149"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90106596"
 ---
 # <a name="determining-which-properties-are-set-for-a-device-instance"></a>确定为设备实例设置哪些属性
 
@@ -19,7 +19,7 @@ ms.locfileid: "89095149"
 1.  调用 [**SetupDiGetDevicePropertyKeys**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertykeys) ，以确定为设备实例设置了多少个属性。 提供以下参数值：
 
     -   将 *DeviceInfoSet* 设置为设备信息集的句柄，其中包含要为其检索属性键列表的设备实例。
-    -   将 *DeviceInfoData* 设置为指向 [**SP_DEVINFO_DATA**](/windows/desktop/api/setupapi/ns-setupapi-_sp_devinfo_data) 结构的指针，该结构表示要为其检索属性键列表的设备实例。
+    -   将 *DeviceInfoData* 设置为指向 [**SP_DEVINFO_DATA**](/windows/win32/api/setupapi/ns-setupapi-sp_devinfo_data) 结构的指针，该结构表示要为其检索属性键列表的设备实例。
     -   将 *PropertyKeyArray* 设置为 **NULL**。
     -   将 *PropertyKeyCount* 设置为零。
     -   将 *RequiredPropertyKeyCount* 设置为指向 DWORD 类型化变量的指针。

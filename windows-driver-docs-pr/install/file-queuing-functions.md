@@ -8,12 +8,12 @@ keywords:
 - 队列文件 WDK Setupapi.log
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8e4965691e3c0c1cf618b0ae605b2446b90e0d72
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: b30b19157a7dd358659132c450175805d1d44877
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89095339"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90106418"
 ---
 # <a name="file-queuing-functions"></a>文件排队函数
 
@@ -38,65 +38,63 @@ ms.locfileid: "89095339"
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupclosefilequeue" data-raw-source="[&lt;strong&gt;SetupCloseFileQueue&lt;/strong&gt;](/windows/desktop/api/setupapi/nf-setupapi-setupclosefilequeue)"><strong>SetupCloseFileQueue</strong></a></p></td>
+<td align="left"><p><a href="/windows/desktop/api/setupapi/nf-setupapi-setupclosefilequeue" data-raw-source="[&lt;strong&gt;SetupCloseFileQueue&lt;/strong&gt;](/windows/desktop/api/setupapi/nf-setupapi-setupclosefilequeue)"><strong>SetupCloseFileQueue</strong></a></p></td>
 <td align="left"><p>销毁文件队列，以及任何未提交的文件操作。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupcommitfilequeuea" data-raw-source="[&lt;strong&gt;SetupCommitFileQueue&lt;/strong&gt;](/windows/desktop/api/setupapi/nf-setupapi-setupcommitfilequeuea)"><strong>SetupCommitFileQueue</strong></a></p></td>
+<td align="left"><p><a href="/windows/desktop/api/setupapi/nf-setupapi-setupcommitfilequeuea" data-raw-source="[&lt;strong&gt;SetupCommitFileQueue&lt;/strong&gt;](/windows/desktop/api/setupapi/nf-setupapi-setupcommitfilequeuea)"><strong>SetupCommitFileQueue</strong></a></p></td>
 <td align="left"><p>提交 (执行) 所有已排队操作。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupopenfilequeue" data-raw-source="[&lt;strong&gt;SetupOpenFileQueue&lt;/strong&gt;](/windows/desktop/api/setupapi/nf-setupapi-setupopenfilequeue)"><strong>SetupOpenFileQueue</strong></a></p></td>
+<td align="left"><p><a href="/windows/desktop/api/setupapi/nf-setupapi-setupopenfilequeue" data-raw-source="[&lt;strong&gt;SetupOpenFileQueue&lt;/strong&gt;](/windows/desktop/api/setupapi/nf-setupapi-setupopenfilequeue)"><strong>SetupOpenFileQueue</strong></a></p></td>
 <td align="left"><p>创建并返回文件队列的句柄。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setuppromptreboot" data-raw-source="[&lt;strong&gt;SetupPromptReboot&lt;/strong&gt;](/windows/desktop/api/setupapi/nf-setupapi-setuppromptreboot)"><strong>SetupPromptReboot</strong></a></p></td>
+<td align="left"><p><a href="/windows/desktop/api/setupapi/nf-setupapi-setuppromptreboot" data-raw-source="[&lt;strong&gt;SetupPromptReboot&lt;/strong&gt;](/windows/desktop/api/setupapi/nf-setupapi-setuppromptreboot)"><strong>SetupPromptReboot</strong></a></p></td>
 <td align="left"><p>如果需要，则提示用户重新启动其计算机。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupqueuecopya" data-raw-source="[&lt;strong&gt;SetupQueueCopy&lt;/strong&gt;](/windows/desktop/api/setupapi/nf-setupapi-setupqueuecopya)"><strong>SetupQueueCopy</strong></a></p></td>
+<td align="left"><p><a href="/windows/desktop/api/setupapi/nf-setupapi-setupqueuecopya" data-raw-source="[&lt;strong&gt;SetupQueueCopy&lt;/strong&gt;](/windows/desktop/api/setupapi/nf-setupapi-setupqueuecopya)"><strong>SetupQueueCopy</strong></a></p></td>
 <td align="left"><p>对指定文件进行排队以进行复制。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupqueuecopyindirecta" data-raw-source="[&lt;strong&gt;SetupQueueCopyIndirect&lt;/strong&gt;](/windows/desktop/api/setupapi/nf-setupapi-setupqueuecopyindirecta)"><strong>SetupQueueCopyIndirect</strong></a></p></td>
+<td align="left"><p><a href="/windows/desktop/api/setupapi/nf-setupapi-setupqueuecopyindirecta" data-raw-source="[&lt;strong&gt;SetupQueueCopyIndirect&lt;/strong&gt;](/windows/desktop/api/setupapi/nf-setupapi-setupqueuecopyindirecta)"><strong>SetupQueueCopyIndirect</strong></a></p></td>
 <td align="left"><p>对指定文件进行排队以进行复制，并提供文件位置和安全信息。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupqueuecopysectiona" data-raw-source="[&lt;strong&gt;SetupQueueCopySection&lt;/strong&gt;](/windows/desktop/api/setupapi/nf-setupapi-setupqueuecopysectiona)"><strong>SetupQueueCopySection</strong></a></p></td>
+<td align="left"><p><a href="/windows/desktop/api/setupapi/nf-setupapi-setupqueuecopysectiona" data-raw-source="[&lt;strong&gt;SetupQueueCopySection&lt;/strong&gt;](/windows/desktop/api/setupapi/nf-setupapi-setupqueuecopysectiona)"><strong>SetupQueueCopySection</strong></a></p></td>
 <td align="left"><p>对指定 INF 文件部分中的文件进行排队以进行复制。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupqueuedefaultcopya" data-raw-source="[&lt;strong&gt;SetupQueueDefaultCopy&lt;/strong&gt;](/windows/desktop/api/setupapi/nf-setupapi-setupqueuedefaultcopya)"><strong>SetupQueueDefaultCopy</strong></a></p></td>
+<td align="left"><p><a href="/windows/desktop/api/setupapi/nf-setupapi-setupqueuedefaultcopya" data-raw-source="[&lt;strong&gt;SetupQueueDefaultCopy&lt;/strong&gt;](/windows/desktop/api/setupapi/nf-setupapi-setupqueuedefaultcopya)"><strong>SetupQueueDefaultCopy</strong></a></p></td>
 <td align="left"><p>使用 INF 文件中包含的默认源和目标设置，对指定文件进行排队以进行复制。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupqueuedeletea" data-raw-source="[&lt;strong&gt;SetupQueueDelete&lt;/strong&gt;](/windows/desktop/api/setupapi/nf-setupapi-setupqueuedeletea)"><strong>SetupQueueDelete</strong></a></p></td>
+<td align="left"><p><a href="/windows/desktop/api/setupapi/nf-setupapi-setupqueuedeletea" data-raw-source="[&lt;strong&gt;SetupQueueDelete&lt;/strong&gt;](/windows/desktop/api/setupapi/nf-setupapi-setupqueuedeletea)"><strong>SetupQueueDelete</strong></a></p></td>
 <td align="left"><p>为要删除的指定文件排队。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupqueuedeletesectiona" data-raw-source="[&lt;strong&gt;SetupQueueDeleteSection&lt;/strong&gt;](/windows/desktop/api/setupapi/nf-setupapi-setupqueuedeletesectiona)"><strong>SetupQueueDeleteSection</strong></a></p></td>
+<td align="left"><p><a href="/windows/desktop/api/setupapi/nf-setupapi-setupqueuedeletesectiona" data-raw-source="[&lt;strong&gt;SetupQueueDeleteSection&lt;/strong&gt;](/windows/desktop/api/setupapi/nf-setupapi-setupqueuedeletesectiona)"><strong>SetupQueueDeleteSection</strong></a></p></td>
 <td align="left"><p>对 INF 文件部分中的文件进行排队以进行删除。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupqueuerenamea" data-raw-source="[&lt;strong&gt;SetupQueueRename&lt;/strong&gt;](/windows/desktop/api/setupapi/nf-setupapi-setupqueuerenamea)"><strong>SetupQueueRename</strong></a></p></td>
+<td align="left"><p><a href="/windows/desktop/api/setupapi/nf-setupapi-setupqueuerenamea" data-raw-source="[&lt;strong&gt;SetupQueueRename&lt;/strong&gt;](/windows/desktop/api/setupapi/nf-setupapi-setupqueuerenamea)"><strong>SetupQueueRename</strong></a></p></td>
 <td align="left"><p>对指定文件进行排队以进行重命名。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupqueuerenamesectiona" data-raw-source="[&lt;strong&gt;SetupQueueRenameSection&lt;/strong&gt;](/windows/desktop/api/setupapi/nf-setupapi-setupqueuerenamesectiona)"><strong>SetupQueueRenameSection</strong></a></p></td>
+<td align="left"><p><a href="/windows/desktop/api/setupapi/nf-setupapi-setupqueuerenamesectiona" data-raw-source="[&lt;strong&gt;SetupQueueRenameSection&lt;/strong&gt;](/windows/desktop/api/setupapi/nf-setupapi-setupqueuerenamesectiona)"><strong>SetupQueueRenameSection</strong></a></p></td>
 <td align="left"><p>对 INF 部分中的文件进行排队以进行重命名。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupscanfilequeuea" data-raw-source="[&lt;strong&gt;SetupScanFileQueue&lt;/strong&gt;](/windows/desktop/api/setupapi/nf-setupapi-setupscanfilequeuea)"><strong>SetupScanFileQueue</strong></a></p></td>
+<td align="left"><p><a href="/windows/desktop/api/setupapi/nf-setupapi-setupscanfilequeuea" data-raw-source="[&lt;strong&gt;SetupScanFileQueue&lt;/strong&gt;](/windows/desktop/api/setupapi/nf-setupapi-setupscanfilequeuea)"><strong>SetupScanFileQueue</strong></a></p></td>
 <td align="left"><p>扫描文件队列，并对每个队列项执行指定的操作。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupsetplatformpathoverridea" data-raw-source="[&lt;strong&gt;SetupSetPlatformPathOverride&lt;/strong&gt;](/windows/desktop/api/setupapi/nf-setupapi-setupsetplatformpathoverridea)"><strong>SetupSetPlatformPathOverride</strong></a></p></td>
+<td align="left"><p><a href="/windows/desktop/api/setupapi/nf-setupapi-setupsetplatformpathoverridea" data-raw-source="[&lt;strong&gt;SetupSetPlatformPathOverride&lt;/strong&gt;](/windows/desktop/api/setupapi/nf-setupapi-setupsetplatformpathoverridea)"><strong>SetupSetPlatformPathOverride</strong></a></p></td>
 <td align="left"><p>设置用于重写默认平台特定源路径的值。</p></td>
 </tr>
 </tbody>
 </table>
-
- 
 
  
 

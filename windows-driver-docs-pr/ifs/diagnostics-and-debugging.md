@@ -15,12 +15,12 @@ keywords:
 - 断言例程 WDK RDBSS
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4460dcd016d8b6a948c935d2c0a7aa871a77e789
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 6137bc16c94fce820d576e732e3ad0db6bea22c9
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89065336"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90104596"
 ---
 # <a name="diagnostics-and-debugging"></a>诊断和调试
 
@@ -49,21 +49,21 @@ RDBSS 提供了许多用于诊断和调试的例程。 这些例程分为两类�
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ifs/rxassert" data-raw-source="[&lt;strong&gt;RxAssert&lt;/strong&gt;](./rxassert.md)"><strong>RxAssert</strong></a></p></td>
-<td align="left"><p>如果安装了一个，则此例程会将 RDBSS 的已检查版本中的断言字符串发送到内核调试器。 使用 rxAssert 包含文件时，将重新定义 Windows 内核 <strong>RtlAssert</strong> 调用以调用此 <a href="https://docs.microsoft.com/windows-hardware/drivers/ifs/rxassert" data-raw-source="[&lt;strong&gt;RxAssert&lt;/strong&gt;](./rxassert.md)"><strong>rxAssert</strong></a> 例程。</p>
+<td align="left"><p><a href="/windows-hardware/drivers/ifs/rxassert" data-raw-source="[&lt;strong&gt;RxAssert&lt;/strong&gt;](./rxassert.md)"><strong>RxAssert</strong></a></p></td>
+<td align="left"><p>如果安装了一个，则此例程会将 RDBSS 的已检查版本中的断言字符串发送到内核调试器。 使用 rxAssert 包含文件时，将重新定义 Windows 内核 <strong>RtlAssert</strong> 调用以调用此 <a href="/windows-hardware/drivers/ifs/rxassert" data-raw-source="[&lt;strong&gt;RxAssert&lt;/strong&gt;](./rxassert.md)"><strong>rxAssert</strong></a> 例程。</p>
 <p>对于零售版本，调用此例程将会检查错误。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ifs/rxdbgbreakpoint" data-raw-source="[&lt;strong&gt;RxDbgBreakPoint&lt;/strong&gt;](./rxdbgbreakpoint.md)"><strong>RxDbgBreakPoint</strong></a></p></td>
+<td align="left"><p><a href="/windows-hardware/drivers/ifs/rxdbgbreakpoint" data-raw-source="[&lt;strong&gt;RxDbgBreakPoint&lt;/strong&gt;](./rxdbgbreakpoint.md)"><strong>RxDbgBreakPoint</strong></a></p></td>
 <td align="left"><p>如果安装了某个内核调试器，此例程会引发异常;否则，调试系统会对其进行处理。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/fcb/nf-fcb-rxptrackdereference" data-raw-source="[&lt;strong&gt;RxpTrackDereference&lt;/strong&gt;](/windows-hardware/drivers/ddi/fcb/nf-fcb-rxptrackdereference)"><strong>RxpTrackDereference</strong></a></p></td>
+<td align="left"><p><a href="/windows-hardware/drivers/ddi/fcb/nf-fcb-rxptrackdereference" data-raw-source="[&lt;strong&gt;RxpTrackDereference&lt;/strong&gt;](/windows-hardware/drivers/ddi/fcb/nf-fcb-rxptrackdereference)"><strong>RxpTrackDereference</strong></a></p></td>
 <td align="left"><p>此例程用于跟踪请求，以在检查的生成中引用 SRV_CALL、NET_ROOT、V_NET_ROOT、FOBX、FCB 和 SRV_OPEN 结构。 日志记录系统和 WMI 可访问这些引用请求的日志。 此例程不执行取消引用操作。</p>
 <p>对于零售版本，此例程不执行任何操作。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/fcb/nf-fcb-rxptrackreference" data-raw-source="[&lt;strong&gt;RxpTrackReference&lt;/strong&gt;](/windows-hardware/drivers/ddi/fcb/nf-fcb-rxptrackreference)"><strong>RxpTrackReference</strong></a></p></td>
+<td align="left"><p><a href="/windows-hardware/drivers/ddi/fcb/nf-fcb-rxptrackreference" data-raw-source="[&lt;strong&gt;RxpTrackReference&lt;/strong&gt;](/windows-hardware/drivers/ddi/fcb/nf-fcb-rxptrackreference)"><strong>RxpTrackReference</strong></a></p></td>
 <td align="left"><p>此例程用于跟踪在已检查生成中取消引用 SRV_CALL、NET_ROOT、V_NET_ROOT、FOBX、FCB 和 SRV_OPEN 结构的请求。 日志记录系统和 WMI 可访问这些取消引用请求的日志。 此例程不执行引用操作。</p>
 <p>对于零售版本，此例程不执行任何操作。</p></td>
 </tr>
@@ -146,8 +146,6 @@ RDBSS 提供了许多用于诊断和调试的例程。 这些例程分为两类�
 </tr>
 </tbody>
 </table>
-
- 
 
  
 

@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: d1507e281cb49b99625eb713c4208d1321392985
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: ccef5d13f6f6d6894de3310cc0af7017b4d0744a
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89097397"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90104194"
 ---
 # <a name="dif_addpropertypage_advanced"></a>DIF_ADDPROPERTYPAGE_ADVANCED
 
@@ -61,10 +61,10 @@ DIF_ADDPROPERTYPAGE_ADVANCED 请求允许安装程序为设备提供一个或多
 提供包含设备的 [设备信息集](./device-information-sets.md) 的句柄。
 
 <a href="" id="deviceinfodata"></a>*DeviceInfoData*  
-还可以提供一个指向 [**SP_DEVINFO_DATA**](/windows/desktop/api/setupapi/ns-setupapi-_sp_devinfo_data) 结构的指针，该结构在设备信息集中标识设备。 如果 *DeviceInfoSet* 为 **NULL**，则 Windows 将请求 [设备安装程序类](./overview-of-device-setup-classes.md)的属性页。
+还可以提供一个指向 [**SP_DEVINFO_DATA**](/windows/win32/api/setupapi/ns-setupapi-sp_devinfo_data) 结构的指针，该结构在设备信息集中标识设备。 如果 *DeviceInfoSet* 为 **NULL**，则 Windows 将请求 [设备安装程序类](./overview-of-device-setup-classes.md)的属性页。
 
 <a href="" id="device-installation-parameters-"></a>设备安装参数   
-[**SP_DEVINSTALL_PARAMS**](/windows/desktop/api/setupapi/ns-setupapi-_sp_devinstall_params_a))  (设备安装参数与*DeviceInfoData*（如果已指定）或与*DeviceInfoSet*相关联。
+[**SP_DEVINSTALL_PARAMS**](/windows/win32/api/setupapi/ns-setupapi-sp_devinstall_params_a))  (设备安装参数与*DeviceInfoData*（如果已指定）或与*DeviceInfoSet*相关联。
 
 <a href="" id="class-installation-parameters"></a>类安装参数  
 [**SP_ADDPROPERTYPAGE_DATA**](/windows/desktop/api/setupapi/ns-setupapi-_sp_newdevicewizard_data)结构与*DeviceInfoData*（如果已指定）或*DeviceInfoSet*相关联。
@@ -110,7 +110,7 @@ Windows 只显示一个驱动程序页、一个资源页和一个设备的一个
 
 如果安装程序允许用户设置需要 Windows 删除和重新启动设备的属性，则安装程序必须在 **DialogProc** 例程的设备安装参数中设置 DI_FLAGSEX_PROPCHANGE_PENDING 标志。
 
-有关如何提供设备属性页的详细信息，请参阅 [提供设备属性页](https://docs.microsoft.com/windows-hardware/drivers/install/providing-device-property-pages)。
+有关如何提供设备属性页的详细信息，请参阅 [提供设备属性页](./overview-of-device-property-pages.md)。
 
 有关 DIF 代码的详细信息，请参阅 [处理 Dif 代码](./handling-dif-codes.md)。
 
@@ -139,9 +139,7 @@ Windows 只显示一个驱动程序页、一个资源页和一个设备的一个
 
 [**SP_ADDPROPERTYPAGE_DATA**](/windows/desktop/api/setupapi/ns-setupapi-_sp_newdevicewizard_data)
 
-[**SP_DEVINFO_DATA**](/windows/desktop/api/setupapi/ns-setupapi-_sp_devinfo_data)
+[**SP_DEVINFO_DATA**](/windows/win32/api/setupapi/ns-setupapi-sp_devinfo_data)
 
-[**SP_DEVINSTALL_PARAMS**](/windows/desktop/api/setupapi/ns-setupapi-_sp_devinstall_params_a)
-
- 
+[**SP_DEVINSTALL_PARAMS**](/windows/win32/api/setupapi/ns-setupapi-sp_devinstall_params_a)
 

@@ -7,12 +7,12 @@ keywords:
 - 标准功能 WDK Unidrv
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 646e2238dc7ad78a8cf9f9de8cabfeede14369a3
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 194b1d675683415ea73c35d5fa03471a0033a038
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89213115"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90106578"
 ---
 # <a name="standard-features"></a>标准功能
 
@@ -108,7 +108,7 @@ ms.locfileid: "89213115"
 <td><p>请参阅 <a href="standard-options.md" data-raw-source="[Standard Options](standard-options.md)">标准选项</a>。</p>
 <p>不允许使用自定义选项。</p></td>
 <td><p>可选。 如果未指定，则默认方向为纵向。</p>
-<p>对于 Windows 7， <strong>MxdcGetPDEVAdjustment</strong> 函数具有用于横向旋转的新参数。 有关详细信息，请参阅 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/mxdc/nf-mxdc-mxdcgetpdevadjustment" data-raw-source="[&lt;strong&gt;MxdcXDCGetPDEVAdjustment&lt;/strong&gt;](/windows-hardware/drivers/ddi/mxdc/nf-mxdc-mxdcgetpdevadjustment)"><strong>MxdcXDCGetPDEVAdjustment</strong></a>。</p></td>
+<p>对于 Windows 7， <strong>MxdcGetPDEVAdjustment</strong> 函数具有用于横向旋转的新参数。 有关详细信息，请参阅 <a href="/windows-hardware/drivers/ddi/mxdc/nf-mxdc-mxdcgetpdevadjustment" data-raw-source="[&lt;strong&gt;MxdcXDCGetPDEVAdjustment&lt;/strong&gt;](/windows-hardware/drivers/ddi/mxdc/nf-mxdc-mxdcgetpdevadjustment)"><strong>MxdcXDCGetPDEVAdjustment</strong></a>。</p></td>
 </tr>
 <tr class="odd">
 <td><p><strong>OutputBin</strong></p></td>
@@ -144,7 +144,7 @@ ms.locfileid: "89213115"
 <td><p>可选。 另请参阅 * ResourceDLL。</p></td>
 </tr>
 <tr class="odd">
-<td><p><strong>分辨率</strong></p></td>
+<td><p><strong>解决方法</strong></p></td>
 <td><p><strong>PageResolution</strong></p></td>
 <td><p>打印分辨率</p></td>
 <td><p>所有选项都是自定义的。 另请参阅 <a href="option-attributes-for-the-resolution-feature.md" data-raw-source="[Option Attributes for the Resolution Feature](option-attributes-for-the-resolution-feature.md)">解决功能的选项属性</a>。</p></td>

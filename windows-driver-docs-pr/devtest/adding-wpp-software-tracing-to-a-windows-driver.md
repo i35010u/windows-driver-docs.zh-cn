@@ -4,12 +4,12 @@ description: 若要在跟踪提供程序中（如内核模式驱动程序或用�
 ms.assetid: 487BA8AA-950A-4F3C-9E3E-EBE1DA35D4B1
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: de46ed1b16740454692541f6a9043a970562fc9c
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 478f4974ba9776c6e7bdcbfbe9d90e6cbef6b525
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89384469"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90105848"
 ---
 # <a name="adding-wpp-software-tracing-to-a-windows-driver"></a>将 WPP 软件跟踪添加到 Windows 驱动程序
 
@@ -383,15 +383,15 @@ DllMain(
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><a href="https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff544918(v=vs.85)" data-raw-source="[&lt;strong&gt;DoTraceMessage&lt;/strong&gt;](/previous-versions/windows/hardware/previsioning-framework/ff544918(v=vs.85))"><strong>DoTraceMessage</strong></a></td>
-<td align="left"><p>这是默认的跟踪消息函数。 使用 <a href="https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff544918(v=vs.85)" data-raw-source="[&lt;strong&gt;DoTraceMessage&lt;/strong&gt;](/previous-versions/windows/hardware/previsioning-framework/ff544918(v=vs.85))"><strong>DoTraceMessage</strong></a> 的优点是已为你定义了该函数。 您可以使用在 WPP_CONFIG_GUIDS 宏中指定的跟踪标志。 使用 <strong>DoTraceMessage</strong>的缺点是，该函数只采用一个条件参数，即跟踪标志。 如果希望使用跟踪级别，以只记录错误或警告消息，则可以使用 <strong>DoDebugTrace</strong> 宏，或使用 <strong>TraceEvents</strong>，后者使用跟踪标志和跟踪级别。</p></td>
+<td align="left"><a href="/previous-versions/windows/hardware/previsioning-framework/ff544918(v=vs.85)" data-raw-source="[&lt;strong&gt;DoTraceMessage&lt;/strong&gt;](/previous-versions/windows/hardware/previsioning-framework/ff544918(v=vs.85))"><strong>DoTraceMessage</strong></a></td>
+<td align="left"><p>这是默认的跟踪消息函数。 使用 <a href="/previous-versions/windows/hardware/previsioning-framework/ff544918(v=vs.85)" data-raw-source="[&lt;strong&gt;DoTraceMessage&lt;/strong&gt;](/previous-versions/windows/hardware/previsioning-framework/ff544918(v=vs.85))"><strong>DoTraceMessage</strong></a> 的优点是已为你定义了该函数。 您可以使用在 WPP_CONFIG_GUIDS 宏中指定的跟踪标志。 使用 <strong>DoTraceMessage</strong>的缺点是，该函数只采用一个条件参数，即跟踪标志。 如果希望使用跟踪级别，以只记录错误或警告消息，则可以使用 <strong>DoDebugTrace</strong> 宏，或使用 <strong>TraceEvents</strong>，后者使用跟踪标志和跟踪级别。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><strong>TraceEvents</strong></td>
 <td align="left"><p>如果使用 Visual Studio 中的 WDF 模板创建驱动程序，这是默认的跟踪消息函数。 使用 <strong>TraceEvents</strong> 的优点是已为你定义跟踪消息函数、跟踪标志和 <a href="trace-level.md" data-raw-source="[Trace Level](trace-level.md)">跟踪级别</a> 。 此外，这些模板还包括检测功能，用于在函数进入和退出时将消息写入日志文件。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kdprint" data-raw-source="[&lt;strong&gt;KdPrint&lt;/strong&gt;](/windows-hardware/drivers/ddi/wdm/nf-wdm-kdprint)"><strong>KdPrint</strong></a>、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kdprintex" data-raw-source="[&lt;strong&gt;KdPrintEx&lt;/strong&gt;](/windows-hardware/drivers/ddi/wdm/nf-wdm-kdprintex)"><strong>KdPrintEx</strong></a>、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-dbgprint" data-raw-source="[&lt;strong&gt;DbgPrint&lt;/strong&gt;](/windows-hardware/drivers/ddi/wdm/nf-wdm-dbgprint)"><strong>DbgPrint</strong></a>、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-dbgprintex" data-raw-source="[&lt;strong&gt;DbgPrintEx&lt;/strong&gt;](/windows-hardware/drivers/ddi/wdm/nf-wdm-dbgprintex)"><strong>DbgPrintEx</strong></a></td>
+<td align="left"><a href="/windows-hardware/drivers/ddi/wdm/nf-wdm-kdprint" data-raw-source="[&lt;strong&gt;KdPrint&lt;/strong&gt;](/windows-hardware/drivers/ddi/wdm/nf-wdm-kdprint)"><strong>KdPrint</strong></a>、 <a href="/windows-hardware/drivers/ddi/wdm/nf-wdm-kdprintex" data-raw-source="[&lt;strong&gt;KdPrintEx&lt;/strong&gt;](/windows-hardware/drivers/ddi/wdm/nf-wdm-kdprintex)"><strong>KdPrintEx</strong></a>、 <a href="/windows-hardware/drivers/ddi/wdm/nf-wdm-dbgprint" data-raw-source="[&lt;strong&gt;DbgPrint&lt;/strong&gt;](/windows-hardware/drivers/ddi/wdm/nf-wdm-dbgprint)"><strong>DbgPrint</strong></a>、 <a href="/windows-hardware/drivers/ddi/wdm/nf-wdm-dbgprintex" data-raw-source="[&lt;strong&gt;DbgPrintEx&lt;/strong&gt;](/windows-hardware/drivers/ddi/wdm/nf-wdm-dbgprintex)"><strong>DbgPrintEx</strong></a></td>
 <td align="left"><p>使用调试打印功能的优点是不需要修改现有的调试打印语句。 您可以轻松地从查看调试器中的消息进行切换，以便在文件中记录跟踪消息。 如果自定义跟踪消息函数以包括其中一个调试打印功能，则无需执行任何其他操作。 使用 Logman 或 <a href="tracelog.md" data-raw-source="[Tracelog](tracelog.md)">Tracelog</a>或其他跟踪控制器创建跟踪会话时，只需为提供程序指定标志和级别。 任何满足指定条件的调试 print 语句将打印到日志中。</p></td>
 </tr>
 </tbody>

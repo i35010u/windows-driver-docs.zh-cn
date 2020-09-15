@@ -4,12 +4,12 @@ description: 设置设备实例属性值
 ms.assetid: 45f63ee3-278e-4b8c-a666-c860074fa172
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d238d960b6b666bd46170ef1061ec1e9869afd3d
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 88370697360aa0aecadadcd77c9390b8a36d4860
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89096635"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90105722"
 ---
 # <a name="setting-a-device-instance-property-value"></a>设置设备实例属性值
 
@@ -18,7 +18,7 @@ ms.locfileid: "89096635"
 
 -   将 *DeviceInfoSet* 设置为设备信息集的句柄，其中包含要为其设置属性的设备实例。
 
--   将 *DeviceInfoData* 设置为指向 [**SP_DEVINFO_DATA**](/windows/desktop/api/setupapi/ns-setupapi-_sp_devinfo_data) 结构的指针，该结构表示要为其设置属性的设备实例。
+-   将 *DeviceInfoData* 设置为指向 [**SP_DEVINFO_DATA**](/windows/win32/api/setupapi/ns-setupapi-sp_devinfo_data) 结构的指针，该结构表示要为其设置属性的设备实例。
 
 -   将 *PropertyKey* 设置为指向 [**DEVPROPKEY**](./devpropkey.md) 结构的指针，该结构表示要设置的属性。
 

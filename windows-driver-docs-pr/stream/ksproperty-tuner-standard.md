@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7aa0fabb2a253c02c819062ff186d629abe66653
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: d789b162af80a563f2d9b8ad3dbf9aef4df8cb3f
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89191265"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90105978"
 ---
 # <a name="ksproperty_tuner_standard"></a>KSPROPERTY \_ 调谐器 \_ 标准版
 
@@ -53,7 +53,7 @@ KSPROPERTY \_ 调谐器 \_ 标准属性检索当前的模拟视频标准。 必�
 <td><p>是</p></td>
 <td><p>否</p></td>
 <td><p>Pin</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_tuner_standard_s" data-raw-source="[&lt;strong&gt;KSPROPERTY_TUNER_STANDARD_S&lt;/strong&gt;](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_tuner_standard_s)"><strong>KSPROPERTY_TUNER_STANDARD_S</strong></a></p></td>
+<td><p><a href="/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_tuner_standard_s" data-raw-source="[&lt;strong&gt;KSPROPERTY_TUNER_STANDARD_S&lt;/strong&gt;](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_tuner_standard_s)"><strong>KSPROPERTY_TUNER_STANDARD_S</strong></a></p></td>
 <td><p>ULONG</p></td>
 </tr>
 </tbody>
@@ -63,7 +63,7 @@ KSPROPERTY \_ 调谐器 \_ 标准属性检索当前的模拟视频标准。 必�
 
  (操作数据) 的属性值是一个 ULONG，用于指定调谐器的优化标准。
 
-<a name="remarks"></a>注解
+<a name="remarks"></a>备注
 -------
 
 KSPROPERTY 调谐器标准版结构的 **标准** 成员 \_ \_ \_ 指定当前的模拟视频标准。
@@ -82,13 +82,13 @@ KSPROPERTY 调谐器标准版结构的 **标准** 成员 \_ \_ \_ 指定当前�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Header</p></td>
+<td><p>标头</p></td>
 <td>Ksmedia (包含 Ksmedia) </td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
 [**KSPROPERTY**](/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)
@@ -96,6 +96,4 @@ KSPROPERTY 调谐器标准版结构的 **标准** 成员 \_ \_ \_ 指定当前�
 [**KSPROPERTY \_ 调谐器 \_ 标准版 \_ S**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_tuner_standard_s)
 
 [**KSPROPERTY \_ 调谐器 \_ 模式**](ksproperty-tuner-mode.md)
-
- 
 

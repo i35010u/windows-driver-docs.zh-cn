@@ -4,12 +4,12 @@ description: 使用代理连接跟踪
 ms.assetid: 20A737D7-043D-4D05-A15D-85595E48521B
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 011b227b008668962420affd49bb0e3c686cd040
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 85ae86c9b01c4fbfd635f320145364cef12d9e28
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89215773"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90104768"
 ---
 # <a name="using-proxied-connections-tracking"></a>使用代理连接跟踪
 
@@ -60,11 +60,11 @@ FWPS \_ CONNECT \_ REQUEST0 结构包含以下重定向成员：
 <tbody>
 <tr class="odd">
 <td align="left"><p><strong>localRedirectHandle</strong></p></td>
-<td align="left"><p>标注驱动程序通过调用 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/fwpsk/nf-fwpsk-fwpsredirecthandlecreate0" data-raw-source="[&lt;strong&gt;FwpsRedirectHandleCreate0&lt;/strong&gt;](/windows-hardware/drivers/ddi/fwpsk/nf-fwpsk-fwpsredirecthandlecreate0)"><strong>FwpsRedirectHandleCreate0</strong></a> 函数创建的重定向句柄。</p></td>
+<td align="left"><p>标注驱动程序通过调用 <a href="/windows-hardware/drivers/ddi/fwpsk/nf-fwpsk-fwpsredirecthandlecreate0" data-raw-source="[&lt;strong&gt;FwpsRedirectHandleCreate0&lt;/strong&gt;](/windows-hardware/drivers/ddi/fwpsk/nf-fwpsk-fwpsredirecthandlecreate0)"><strong>FwpsRedirectHandleCreate0</strong></a> 函数创建的重定向句柄。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>localRedirectContext</strong></p></td>
-<td align="left"><p>标注驱动程序上下文区域，标注驱动程序通过调用 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exallocatepoolwithtag" data-raw-source="[&lt;strong&gt;ExAllocatePoolWithTag&lt;/strong&gt;](/windows-hardware/drivers/ddi/wdm/nf-wdm-exallocatepoolwithtag)"><strong>ExAllocatePoolWithTag</strong></a> 函数进行分配。</p></td>
+<td align="left"><p>标注驱动程序上下文区域，标注驱动程序通过调用 <a href="/windows-hardware/drivers/ddi/wdm/nf-wdm-exallocatepoolwithtag" data-raw-source="[&lt;strong&gt;ExAllocatePoolWithTag&lt;/strong&gt;](/windows-hardware/drivers/ddi/wdm/nf-wdm-exallocatepoolwithtag)"><strong>ExAllocatePoolWithTag</strong></a> 函数进行分配。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>localRedirectContextSize</strong></p></td>
@@ -88,6 +88,4 @@ FWPS \_ CONNECT \_ REQUEST0 结构包含以下重定向成员：
 如果重定向状态为 "FWPS \_ 连接被 \_ 其他重定向" \_ ，则 \_ ALE \_ 连接 \_ 重定向标注在不信任其他检查器的结果时，可以继续代理连接。
 
 如果重定向状态是 \_ \_ 先前 \_ 通过 SELF 重定向的 FWPS 连接 \_ \_ ，则 ALE \_ 连接 \_ 重定向标注不得执行重定向，即使其他检查器的结果是不可接受的。 在这种情况下，它必须允许或阻止在 ALE \_ 身份验证 \_ 连接层)  (的连接。
-
- 
 

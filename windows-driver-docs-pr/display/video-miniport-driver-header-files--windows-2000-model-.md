@@ -7,12 +7,12 @@ keywords:
 - 标头文件 WDK 视频微型端口
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f0b6d6aa0be2ae6e8cc90ef65610658c0cee5138
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 3d718af7609a3fba3f9206a301fd9b68e47a1d9c
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89063724"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90106268"
 ---
 # <a name="video-miniport-driver-header-files-windows-2000-model"></a>视频微型端口驱动程序标头文件（Windows 2000 模型）
 
@@ -48,15 +48,15 @@ Windows 2000 显示器驱动程序模型中的视频微型端口驱动程序包�
 </tr>
 <tr class="even">
 <td align="left"><p><em>ntddvdeo</em></p></td>
-<td align="left"><p>包含系统定义的 i/o 控制代码 (IOCTLs) 和 (<a href="https://docs.microsoft.com/windows-hardware/drivers/#wdkgloss-video-request-packet--vrp-" data-raw-source="&lt;em&gt;VRPs&lt;/em&gt;"><em>VRPs</em></a>) 视频微型端口驱动程序的视频请求数据包中发送的相应结构。</p></td>
+<td align="left"><p>包含系统定义的 i/o 控制代码 (IOCTLs) 和 (<a href="/windows-hardware/drivers/#wdkgloss-video-request-packet--vrp-" data-raw-source="&lt;em&gt;VRPs&lt;/em&gt;"><em>VRPs</em></a>) 视频微型端口驱动程序的视频请求数据包中发送的相应结构。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><em>tvout</em></p></td>
-<td align="left"><p>包含用于实现电视连接器和副本保护支持以及此结构中使用的常量的 <a href="https://docs.microsoft.com/windows/desktop/api/tvout/ns-tvout-_videoparameters" data-raw-source="[&lt;strong&gt;VIDEOPARAMETERS&lt;/strong&gt;](/windows/desktop/api/tvout/ns-tvout-_videoparameters)"><strong>VIDEOPARAMETERS</strong></a> 结构。</p></td>
+<td align="left"><p>包含用于实现电视连接器和副本保护支持以及此结构中使用的常量的 <a href="/windows/desktop/api/tvout/ns-tvout-_videoparameters" data-raw-source="[&lt;strong&gt;VIDEOPARAMETERS&lt;/strong&gt;](/windows/desktop/api/tvout/ns-tvout-_videoparameters)"><strong>VIDEOPARAMETERS</strong></a> 结构。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><em>视频。h</em></p></td>
-<td align="left"><p>包含 <strong>VideoPort</strong><em>Xxx</em> 和 <em>SvgaHwIoPortXxx</em> 视频端口函数声明、特定于视频的结构，如 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/video/ns-video-_video_request_packet" data-raw-source="[&lt;strong&gt;VIDEO_REQUEST_PACKET&lt;/strong&gt;](/windows-hardware/drivers/ddi/video/ns-video-_video_request_packet)"><strong>VIDEO_REQUEST_PACKET</strong></a>和 <em>HwVidXxx</em> 视频微型端口函数原型。</p></td>
+<td align="left"><p>包含 <strong>VideoPort</strong><em>Xxx</em> 和 <em>SvgaHwIoPortXxx</em> 视频端口函数声明、特定于视频的结构，如 <a href="/windows-hardware/drivers/ddi/video/ns-video-_video_request_packet" data-raw-source="[&lt;strong&gt;VIDEO_REQUEST_PACKET&lt;/strong&gt;](/windows-hardware/drivers/ddi/video/ns-video-_video_request_packet)"><strong>VIDEO_REQUEST_PACKET</strong></a>和 <em>HwVidXxx</em> 视频微型端口函数原型。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><em>videoagp</em></p></td>
@@ -68,6 +68,4 @@ Windows 2000 显示器驱动程序模型中的视频微型端口驱动程序包�
  
 
 这些标头附带了 Windows 驱动程序工具包 (WDK) 。 有关这些标头文件中的函数、结构、系统定义的 i/o 控制代码和常量的详细信息，请参阅 [GDI 函数](/windows-hardware/drivers/ddi/index)。
-
- 
 

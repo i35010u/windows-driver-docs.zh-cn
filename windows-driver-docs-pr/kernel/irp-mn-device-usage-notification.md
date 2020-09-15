@@ -6,12 +6,12 @@ ms.assetid: d8287ba2-ac0a-4407-b587-a5aa5b3617a2
 keywords:
 - IRP_MN_DEVICE_USAGE_NOTIFICATION 内核模式驱动程序体系结构
 ms.localizationpriority: medium
-ms.openlocfilehash: 5c89fec6a946dd0f740e15b28c37721c8e3d4cbd
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 5ff4f1211803ebc1ebd5ed40ce24d6b17042d640
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89185189"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90105534"
 ---
 # <a name="irp_mn_device_usage_notification"></a>IRP \_ MN \_ 设备 \_ 使用 \_ 通知
 
@@ -20,7 +20,7 @@ ms.locfileid: "89185189"
 
 如果功能驱动程序的设备可包含页面文件、转储文件或休眠文件，则它必须处理此 IRP。 如果筛选器驱动程序正在筛选的函数驱动程序处理 IRP，则筛选器驱动程序必须对其进行处理。 总线驱动程序必须为其适配器或控制器 (总线 FDO) 及其子设备处理此 IRP (子 PDOs) 。
 
-## <a name="value"></a>值
+## <a name="value"></a>“值”
 
 0x16
 
@@ -100,7 +100,7 @@ ms.locfileid: "89185189"
 
         如果状态为 \_ "成功" 并且 **InPath** 为 **TRUE**，请清除 "DO \_ POWER PAGABLE" \_ 。
 
-请参阅 [即插即用](https://docs.microsoft.com/windows-hardware/drivers/kernel/implementing-plug-and-play) ，了解用于处理 [即插即用次要 irp](plug-and-play-minor-irps.md)的一般规则。
+请参阅 [即插即用](./introduction-to-plug-and-play.md) ，了解用于处理 [即插即用次要 irp](plug-and-play-minor-irps.md)的一般规则。
 
 **支持设备上的分页、故障转储和休眠文件**
 

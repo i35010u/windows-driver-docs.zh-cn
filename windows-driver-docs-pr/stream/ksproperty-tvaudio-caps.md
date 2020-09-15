@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b6ea4230b14b7a066fb62c47524a55c506d79b92
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 07bf0b0d6357d2df2b6309c0abcf2f0eb480503e
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89190395"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90105974"
 ---
 # <a name="ksproperty_tvaudio_caps"></a>KSPROPERTY \_ TVAUDIO \_ CAP
 
@@ -53,7 +53,7 @@ KSPROPERTY \_ TVAUDIO \_ cap 属性检索 TV 音频设备的功能。 必须实�
 <td><p>是</p></td>
 <td><p>否</p></td>
 <td><p>Pin</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_tvaudio_caps_s" data-raw-source="[&lt;strong&gt;KSPROPERTY_TVAUDIO_CAPS_S&lt;/strong&gt;](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_tvaudio_caps_s)"><strong>KSPROPERTY_TVAUDIO_CAPS_S</strong></a></p></td>
+<td><p><a href="/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_tvaudio_caps_s" data-raw-source="[&lt;strong&gt;KSPROPERTY_TVAUDIO_CAPS_S&lt;/strong&gt;](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_tvaudio_caps_s)"><strong>KSPROPERTY_TVAUDIO_CAPS_S</strong></a></p></td>
 <td><p>ULONG</p></td>
 </tr>
 </tbody>
@@ -63,7 +63,7 @@ KSPROPERTY \_ TVAUDIO \_ cap 属性检索 TV 音频设备的功能。 必须实�
 
  (操作数据) 的属性值是一个 ULONG，它指定 TV 音频设备的功能，例如立体声与 mono 音频支持和多种语言功能。
 
-<a name="remarks"></a>注解
+<a name="remarks"></a>备注
 -------
 
 KSPROPERTY **Capabilities** \_ TVAUDIO \_ Cap S 结构的功能成员 \_ 指定 TV 音频设备的功能。
@@ -78,18 +78,16 @@ KSPROPERTY **Capabilities** \_ TVAUDIO \_ Cap S 结构的功能成员 \_ 指定 
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Header</p></td>
+<td><p>标头</p></td>
 <td>Ksmedia (包含 Ksmedia) </td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
 [**KSPROPERTY**](/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)
 
 [**KSPROPERTY \_ TVAUDIO \_ CAP \_ S**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_tvaudio_caps_s)
-
- 
 

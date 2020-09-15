@@ -9,12 +9,12 @@ keywords:
 - PINNAME_VIDEO_VIDEOPORT
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6e4660468d6715296ff1ed0ddc4c24ba024957f0
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 4da9e1f529365ccdfca7fa8b886605ce40c25375
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89186739"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90104808"
 ---
 # <a name="videoport-category"></a>视频端口类别
 
@@ -69,7 +69,7 @@ ms.locfileid: "89186739"
 </tr>
 <tr class="even">
 <td><p><strong>必需的事件集</strong></p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/stream/kseventsetid-vpnotify" data-raw-source="[KSEVENTSETID_VPNotify](./kseventsetid-vpnotify.md)">KSEVENTSETID_VPNotify</a></p></td>
+<td><p><a href="/windows-hardware/drivers/stream/kseventsetid-vpnotify" data-raw-source="[KSEVENTSETID_VPNotify](./kseventsetid-vpnotify.md)">KSEVENTSETID_VPNotify</a></p></td>
 </tr>
 <tr class="odd">
 <td><p><strong>DirectShow majortype</strong></p></td>
@@ -81,8 +81,6 @@ ms.locfileid: "89186739"
 </tr>
 </tbody>
 </table>
-
- 
 
  
 

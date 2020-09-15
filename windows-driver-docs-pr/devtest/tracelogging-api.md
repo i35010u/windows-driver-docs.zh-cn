@@ -4,12 +4,12 @@ description: TraceLogging API
 ms.assetid: AE93DD45-05D7-4E7A-B086-B40A6FA0904B
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8e322be266411943271eb78b3fbf76eb3d3f9049
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 668478a4b4f72c32fe6f290634b1478cc666e682
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89383081"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90106630"
 ---
 # <a name="tracelogging-api"></a>TraceLogging API
 
@@ -37,7 +37,7 @@ TraceLogging 构建于 ETW 上，并与现有工具兼容。 将继续支持使�
 <tbody>
 <tr class="odd">
 <td align="left"><p><a href="tracelogging-for-kernel-mode-drivers-and-components.md" data-raw-source="[TraceLogging for kernel-mode drivers and components](tracelogging-for-kernel-mode-drivers-and-components.md)">内核模式驱动程序和组件的 TraceLogging</a></p></td>
-<td align="left"><p>本主题介绍如何使用内核模式驱动程序和组件中的 <a href="https://docs.microsoft.com/windows/desktop/tracelogging/trace-logging-portal" data-raw-source="[TraceLogging](/windows/desktop/tracelogging/trace-logging-portal)">TraceLogging</a> API。</p></td>
+<td align="left"><p>本主题介绍如何使用内核模式驱动程序和组件中的 <a href="/windows/desktop/tracelogging/trace-logging-portal" data-raw-source="[TraceLogging](/windows/desktop/tracelogging/trace-logging-portal)">TraceLogging</a> API。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><a href="tracelogging-examples.md" data-raw-source="[TraceLogging Examples](tracelogging-examples.md)">TraceLogging 示例</a></p></td>

@@ -8,12 +8,12 @@ keywords:
 - 宏 WDK RDBSS
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b83e94dbf78e23c4d4fbfa5861f1c63539538abf
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 068375a4bd64b336934f3a635e9cf4a2f6a706ca
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89064992"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90106504"
 ---
 # <a name="macros-defined-by-rdbss"></a>RDBSS 定义的宏
 
@@ -48,7 +48,7 @@ Windows 驱动程序工具包 (WDK) 头文件中定义了许多有用的宏，�
 <tr class="odd">
 <td align="left"><p><strong>RxAllocatePoolWithTag</strong> (<em>类型</em>、 <em>大小</em>、 <em>标记</em>) </p></td>
 <td align="left"><p>在选中的生成上，此宏从池中分配包含四个字节标记的池中的内存，该标记可用于帮助捕获内存 trashing 的实例。</p>
-<p>在零售版上，此宏会直接调用 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exallocatepoolwithtag" data-raw-source="[&lt;strong&gt;ExAllocatePoolWithTag&lt;/strong&gt;](/windows-hardware/drivers/ddi/wdm/nf-wdm-exallocatepoolwithtag)"><strong>ExAllocatePoolWithTag</strong></a>。</p></td>
+<p>在零售版上，此宏会直接调用 <a href="/windows-hardware/drivers/ddi/wdm/nf-wdm-exallocatepoolwithtag" data-raw-source="[&lt;strong&gt;ExAllocatePoolWithTag&lt;/strong&gt;](/windows-hardware/drivers/ddi/wdm/nf-wdm-exallocatepoolwithtag)"><strong>ExAllocatePoolWithTag</strong></a>。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>RxCheckMemoryBlock</strong> (<em>ptr</em>) </p></td>
@@ -87,28 +87,28 @@ Windows 驱动程序工具包 (WDK) 头文件中定义了许多有用的宏，�
 </tr>
 <tr class="even">
 <td align="left"><p><strong>RxFcbAcquiredShared</strong> (<em>RXCONTEXT</em>， <em>FCB</em>) </p></td>
-<td align="left"><p>此宏检查当前线程是否有权访问共享模式下的常规资源。 此宏调用 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exisresourceacquiredsharedlite" data-raw-source="[&lt;strong&gt;ExIsResourceAcquiredSharedLite&lt;/strong&gt;](/windows-hardware/drivers/ddi/wdm/nf-wdm-exisresourceacquiredsharedlite)"><strong>ExIsResourceAcquiredSharedLite</strong></a> 例程。</p></td>
+<td align="left"><p>此宏检查当前线程是否有权访问共享模式下的常规资源。 此宏调用 <a href="/windows-hardware/drivers/ddi/wdm/nf-wdm-exisresourceacquiredsharedlite" data-raw-source="[&lt;strong&gt;ExIsResourceAcquiredSharedLite&lt;/strong&gt;](/windows-hardware/drivers/ddi/wdm/nf-wdm-exisresourceacquiredsharedlite)"><strong>ExIsResourceAcquiredSharedLite</strong></a> 例程。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>RxFillAndInstallFastIoDispatch</strong> (<em>__devobj</em>， <em>__fastiodisp</em>) </p></td>
-<td align="left"><p>此宏调用 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/mrx/nf-mrx-__rxfillandinstallfastiodispatch" data-raw-source="[&lt;strong&gt;__RxFillAndInstallFastIoDispatch&lt;/strong&gt;](/windows-hardware/drivers/ddi/mrx/nf-mrx-__rxfillandinstallfastiodispatch)"><strong>__RxFillAndInstallFastIoDispatch</strong></a> 来填写快速 i/o 调度向量，使其与正常调度 i/o 向量相同，并将其安装到与传递的设备对象关联的驱动程序对象中。</p></td>
+<td align="left"><p>此宏调用 <a href="/windows-hardware/drivers/ddi/mrx/nf-mrx-__rxfillandinstallfastiodispatch" data-raw-source="[&lt;strong&gt;__RxFillAndInstallFastIoDispatch&lt;/strong&gt;](/windows-hardware/drivers/ddi/mrx/nf-mrx-__rxfillandinstallfastiodispatch)"><strong>__RxFillAndInstallFastIoDispatch</strong></a> 来填写快速 i/o 调度向量，使其与正常调度 i/o 向量相同，并将其安装到与传递的设备对象关联的驱动程序对象中。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>RxFreePool</strong> (<em>ptr</em>) </p></td>
 <td align="left"><p>在选中的生成上，此宏释放内存池。</p>
-<p>在零售版上，此宏会直接调用 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-exfreepool" data-raw-source="[&lt;strong&gt;ExFreePool&lt;/strong&gt;](/windows-hardware/drivers/ddi/ntddk/nf-ntddk-exfreepool)"><strong>ExFreePool</strong></a>。</p></td>
+<p>在零售版上，此宏会直接调用 <a href="/windows-hardware/drivers/ddi/ntddk/nf-ntddk-exfreepool" data-raw-source="[&lt;strong&gt;ExFreePool&lt;/strong&gt;](/windows-hardware/drivers/ddi/ntddk/nf-ntddk-exfreepool)"><strong>ExFreePool</strong></a>。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>RxIsFcbAcquiredShared</strong> (<em>FCB</em>) </p></td>
-<td align="left"><p>此宏检查当前线程是否有权访问共享模式下的常规资源。 此宏调用 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exisresourceacquiredsharedlite" data-raw-source="[&lt;strong&gt;ExIsResourceAcquiredSharedLite&lt;/strong&gt;](/windows-hardware/drivers/ddi/wdm/nf-wdm-exisresourceacquiredsharedlite)"><strong>ExIsResourceAcquiredSharedLite</strong></a> 例程。</p></td>
+<td align="left"><p>此宏检查当前线程是否有权访问共享模式下的常规资源。 此宏调用 <a href="/windows-hardware/drivers/ddi/wdm/nf-wdm-exisresourceacquiredsharedlite" data-raw-source="[&lt;strong&gt;ExIsResourceAcquiredSharedLite&lt;/strong&gt;](/windows-hardware/drivers/ddi/wdm/nf-wdm-exisresourceacquiredsharedlite)"><strong>ExIsResourceAcquiredSharedLite</strong></a> 例程。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>RxIsFcbAcquiredExclusive</strong> (<em>FCB</em>) </p></td>
-<td align="left"><p>此宏检查当前线程是否有权访问独占模式下的常规资源。 此宏调用 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exisresourceacquiredexclusivelite" data-raw-source="[&lt;strong&gt;ExIsResourceAcquiredExclusiveLite&lt;/strong&gt;](/windows-hardware/drivers/ddi/wdm/nf-wdm-exisresourceacquiredexclusivelite)"><strong>ExIsResourceAcquiredExclusiveLite</strong></a> 例程。</p></td>
+<td align="left"><p>此宏检查当前线程是否有权访问独占模式下的常规资源。 此宏调用 <a href="/windows-hardware/drivers/ddi/wdm/nf-wdm-exisresourceacquiredexclusivelite" data-raw-source="[&lt;strong&gt;ExIsResourceAcquiredExclusiveLite&lt;/strong&gt;](/windows-hardware/drivers/ddi/wdm/nf-wdm-exisresourceacquiredexclusivelite)"><strong>ExIsResourceAcquiredExclusiveLite</strong></a> 例程。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>RxIsFcbAcquired</strong> (<em>FCB</em>) </p></td>
-<td align="left"><p>此宏检查当前线程是否有权访问共享或独占模式下的常规资源。 此宏将调用 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exisresourceacquiredsharedlite" data-raw-source="[&lt;strong&gt;ExIsResourceAcquiredSharedLite&lt;/strong&gt;](/windows-hardware/drivers/ddi/wdm/nf-wdm-exisresourceacquiredsharedlite)"><strong>ExIsResourceAcquiredSharedLite</strong></a> 和 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exisresourceacquiredexclusivelite" data-raw-source="[&lt;strong&gt;ExIsResourceAcquiredExclusiveLite&lt;/strong&gt;](/windows-hardware/drivers/ddi/wdm/nf-wdm-exisresourceacquiredexclusivelite)"><strong>ExIsResourceAcquiredExclusiveLite</strong></a> 例程。</p></td>
+<td align="left"><p>此宏检查当前线程是否有权访问共享或独占模式下的常规资源。 此宏将调用 <a href="/windows-hardware/drivers/ddi/wdm/nf-wdm-exisresourceacquiredsharedlite" data-raw-source="[&lt;strong&gt;ExIsResourceAcquiredSharedLite&lt;/strong&gt;](/windows-hardware/drivers/ddi/wdm/nf-wdm-exisresourceacquiredsharedlite)"><strong>ExIsResourceAcquiredSharedLite</strong></a> 和 <a href="/windows-hardware/drivers/ddi/wdm/nf-wdm-exisresourceacquiredexclusivelite" data-raw-source="[&lt;strong&gt;ExIsResourceAcquiredExclusiveLite&lt;/strong&gt;](/windows-hardware/drivers/ddi/wdm/nf-wdm-exisresourceacquiredexclusivelite)"><strong>ExIsResourceAcquiredExclusiveLite</strong></a> 例程。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>RxIsPrefixTableLockAcquired</strong> (<em>表</em>) </p></td>
@@ -120,25 +120,25 @@ Windows 驱动程序工具包 (WDK) 头文件中定义了许多有用的宏，�
 </tr>
 <tr class="even">
 <td align="left"><p><strong>RxLog</strong> (<em>参数</em>) </p></td>
-<td align="left"><p>在选中的生成上，此宏调用 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/rxlog/nf-rxlog-_rxlog" data-raw-source="[&lt;strong&gt;_RxLog&lt;/strong&gt;](/windows-hardware/drivers/ddi/rxlog/nf-rxlog-_rxlog)"><strong>_RxLog</strong></a> 例程。</p>
+<td align="left"><p>在选中的生成上，此宏调用 <a href="/windows-hardware/drivers/ddi/rxlog/nf-rxlog-_rxlog" data-raw-source="[&lt;strong&gt;_RxLog&lt;/strong&gt;](/windows-hardware/drivers/ddi/rxlog/nf-rxlog-_rxlog)"><strong>_RxLog</strong></a> 例程。</p>
 <p>在零售版上，此宏不执行任何操作。</p>
 <p>请注意， <strong>RxLog</strong> 的参数必须包含一对括号，以便在应关闭日志记录时允许转换为 null 调用。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>RxLogEvent</strong> (<em>_DeviceObject</em>、 <em>_OriginatorId</em>、 <em>_EventId</em>、 <em>_Status</em>) </p></td>
-<td align="left"><p>此宏调用 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/rxprocs/nf-rxprocs-rxlogeventdirect" data-raw-source="[&lt;strong&gt;RxLogEventDirect&lt;/strong&gt;](/windows-hardware/drivers/ddi/rxprocs/nf-rxprocs-rxlogeventdirect)"><strong>RxLogEventDirect</strong></a> 例程。</p></td>
+<td align="left"><p>此宏调用 <a href="/windows-hardware/drivers/ddi/rxprocs/nf-rxprocs-rxlogeventdirect" data-raw-source="[&lt;strong&gt;RxLogEventDirect&lt;/strong&gt;](/windows-hardware/drivers/ddi/rxprocs/nf-rxprocs-rxlogeventdirect)"><strong>RxLogEventDirect</strong></a> 例程。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>RxLogFailure</strong> (<em>_DeviceObject</em>、 <em>_OriginatorId</em>、 <em>_EventId</em>、 <em>_Status</em>) </p></td>
-<td align="left"><p>此宏调用 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/rxprocs/nf-rxprocs-rxlogeventdirect" data-raw-source="[&lt;strong&gt;RxLogEventDirect&lt;/strong&gt;](/windows-hardware/drivers/ddi/rxprocs/nf-rxprocs-rxlogeventdirect)"><strong>RxLogEventDirect</strong></a> 例程。</p></td>
+<td align="left"><p>此宏调用 <a href="/windows-hardware/drivers/ddi/rxprocs/nf-rxprocs-rxlogeventdirect" data-raw-source="[&lt;strong&gt;RxLogEventDirect&lt;/strong&gt;](/windows-hardware/drivers/ddi/rxprocs/nf-rxprocs-rxlogeventdirect)"><strong>RxLogEventDirect</strong></a> 例程。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>RxLogFailureWithBuffer</strong> (<em>_DeviceObject</em>、 <em>_OriginatorId</em>、 <em>_EventId</em>、 <em>_Status</em>、 <em>_Buffer</em>_Length <em>) </em></p></td>
-<td align="left"><p>此宏调用 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/rxprocs/nf-rxprocs-rxlogeventwithbufferdirect" data-raw-source="[&lt;strong&gt;RxLogEventWithBufferDirect&lt;/strong&gt;](/windows-hardware/drivers/ddi/rxprocs/nf-rxprocs-rxlogeventwithbufferdirect)"><strong>RxLogEventWithBufferDirect</strong></a> 例程。</p></td>
+<td align="left"><p>此宏调用 <a href="/windows-hardware/drivers/ddi/rxprocs/nf-rxprocs-rxlogeventwithbufferdirect" data-raw-source="[&lt;strong&gt;RxLogEventWithBufferDirect&lt;/strong&gt;](/windows-hardware/drivers/ddi/rxprocs/nf-rxprocs-rxlogeventwithbufferdirect)"><strong>RxLogEventWithBufferDirect</strong></a> 例程。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>RxLogRetail</strong> (<em>参数</em>) </p></td>
-<td align="left"><p>在选中的生成上，此宏调用 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/rxlog/nf-rxlog-_rxlog" data-raw-source="[&lt;strong&gt;_RxLog&lt;/strong&gt;](/windows-hardware/drivers/ddi/rxlog/nf-rxlog-_rxlog)"><strong>_RxLog</strong></a> 例程。</p>
+<td align="left"><p>在选中的生成上，此宏调用 <a href="/windows-hardware/drivers/ddi/rxlog/nf-rxlog-_rxlog" data-raw-source="[&lt;strong&gt;_RxLog&lt;/strong&gt;](/windows-hardware/drivers/ddi/rxlog/nf-rxlog-_rxlog)"><strong>_RxLog</strong></a> 例程。</p>
 <p>在零售版上，此宏不执行任何操作。</p>
 <p>请注意， <strong>RxLogRetail</strong> 的参数必须包含一对括号，以便在应关闭日志记录时允许转换为 null 调用。</p></td>
 </tr>
@@ -176,18 +176,16 @@ Windows 驱动程序工具包 (WDK) 头文件中定义了许多有用的宏，�
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>RxSynchronizeBlockingOperations</strong> (<em>RXCONTEXT</em>、<em>FCB</em>、<em>IOQUEUE</em>) </p></td>
-<td align="left"><p>此宏将阻塞 i/o 请求同步到相同的工作队列。 在 Windows Server 2003 上，此宏调用 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/rxcontx/nf-rxcontx-__rxsynchronizeblockingoperations" data-raw-source="[&lt;strong&gt;__RxSynchronizeBlockingOperations&lt;/strong&gt;](/windows-hardware/drivers/ddi/rxcontx/nf-rxcontx-__rxsynchronizeblockingoperations)"><strong>__RxSynchronizeBlockingOperations</strong></a> 例程，并将 <em>DropFcbLock</em> 参数设置为 <strong>FALSE</strong>。</p>
-<p>在 Windows XP 和 Windows 2000 上，此宏会调用 <a href="https://docs.microsoft.com/windows-hardware/drivers/ifs/--rxsynchronizeblockingoperationsmaybedroppingfcblock" data-raw-source="[&lt;strong&gt;__RxSynchronizeBlockingOperationsMaybeDroppingFcbLock&lt;/strong&gt;](./--rxsynchronizeblockingoperationsmaybedroppingfcblock.md)"><strong>__RxSynchronizeBlockingOperationsMaybeDroppingFcbLock</strong></a> 例程，并将 <em>DropFcbLock</em> 参数设置为 <strong>FALSE</strong>。</p></td>
+<td align="left"><p>此宏将阻塞 i/o 请求同步到相同的工作队列。 在 Windows Server 2003 上，此宏调用 <a href="/windows-hardware/drivers/ddi/rxcontx/nf-rxcontx-__rxsynchronizeblockingoperations" data-raw-source="[&lt;strong&gt;__RxSynchronizeBlockingOperations&lt;/strong&gt;](/windows-hardware/drivers/ddi/rxcontx/nf-rxcontx-__rxsynchronizeblockingoperations)"><strong>__RxSynchronizeBlockingOperations</strong></a> 例程，并将 <em>DropFcbLock</em> 参数设置为 <strong>FALSE</strong>。</p>
+<p>在 Windows XP 和 Windows 2000 上，此宏会调用 <a href="/windows-hardware/drivers/ifs/--rxsynchronizeblockingoperationsmaybedroppingfcblock" data-raw-source="[&lt;strong&gt;__RxSynchronizeBlockingOperationsMaybeDroppingFcbLock&lt;/strong&gt;](./--rxsynchronizeblockingoperationsmaybedroppingfcblock.md)"><strong>__RxSynchronizeBlockingOperationsMaybeDroppingFcbLock</strong></a> 例程，并将 <em>DropFcbLock</em> 参数设置为 <strong>FALSE</strong>。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>RxSynchronizeBlockingOperations</strong> (<em>RXCONTEXT</em>、<em>FCB</em>、<em>IOQUEUE</em>) </p></td>
-<td align="left"><p>此宏将阻塞 i/o 请求同步到相同的工作队列。 在 Windows Server 2003 上，此宏调用 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/rxcontx/nf-rxcontx-__rxsynchronizeblockingoperations" data-raw-source="[&lt;strong&gt;__RxSynchronizeBlockingOperations&lt;/strong&gt;](/windows-hardware/drivers/ddi/rxcontx/nf-rxcontx-__rxsynchronizeblockingoperations)"><strong>__RxSynchronizeBlockingOperations</strong></a> 例程，并将 <em>DropFcbLock</em> 参数设置为 <strong>TRUE</strong>。</p>
-<p>在 Windows XP 和 Windows 2000 上，此宏会调用 <a href="https://docs.microsoft.com/windows-hardware/drivers/ifs/--rxsynchronizeblockingoperationsmaybedroppingfcblock" data-raw-source="[&lt;strong&gt;__RxSynchronizeBlockingOperationsMaybeDroppingFcbLock&lt;/strong&gt;](./--rxsynchronizeblockingoperationsmaybedroppingfcblock.md)"><strong>__RxSynchronizeBlockingOperationsMaybeDroppingFcbLock</strong></a> 例程，并将 <em>DropFcbLock</em> 参数设置为 <strong>TRUE</strong>。</p></td>
+<td align="left"><p>此宏将阻塞 i/o 请求同步到相同的工作队列。 在 Windows Server 2003 上，此宏调用 <a href="/windows-hardware/drivers/ddi/rxcontx/nf-rxcontx-__rxsynchronizeblockingoperations" data-raw-source="[&lt;strong&gt;__RxSynchronizeBlockingOperations&lt;/strong&gt;](/windows-hardware/drivers/ddi/rxcontx/nf-rxcontx-__rxsynchronizeblockingoperations)"><strong>__RxSynchronizeBlockingOperations</strong></a> 例程，并将 <em>DropFcbLock</em> 参数设置为 <strong>TRUE</strong>。</p>
+<p>在 Windows XP 和 Windows 2000 上，此宏会调用 <a href="/windows-hardware/drivers/ifs/--rxsynchronizeblockingoperationsmaybedroppingfcblock" data-raw-source="[&lt;strong&gt;__RxSynchronizeBlockingOperationsMaybeDroppingFcbLock&lt;/strong&gt;](./--rxsynchronizeblockingoperationsmaybedroppingfcblock.md)"><strong>__RxSynchronizeBlockingOperationsMaybeDroppingFcbLock</strong></a> 例程，并将 <em>DropFcbLock</em> 参数设置为 <strong>TRUE</strong>。</p></td>
 </tr>
 </tbody>
 </table>
-
- 
 
  
 

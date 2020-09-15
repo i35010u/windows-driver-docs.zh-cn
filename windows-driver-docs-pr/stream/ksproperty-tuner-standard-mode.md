@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0c34c7404761eb674a64c113576fdce511c69578
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 5ebcd9a956f82414a1a77ad256f54875cc53c6b6
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89191267"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90105980"
 ---
 # <a name="ksproperty_tuner_standard_mode"></a>KSPROPERTY \_ 调谐器 \_ 标准 \_ 模式
 
@@ -50,7 +50,7 @@ KSPROPERTY \_ 调谐器 \_ 标准 \_ 模式属性检索一个布尔值，该值�
 <td><p>是</p></td>
 <td><p>否</p></td>
 <td><p>Pin</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_tuner_standard_mode_s" data-raw-source="[&lt;strong&gt;KSPROPERTY_TUNER_STANDARD_MODE_S&lt;/strong&gt;](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_tuner_standard_mode_s)"><strong>KSPROPERTY_TUNER_STANDARD_MODE_S</strong></a></p></td>
+<td><p><a href="/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_tuner_standard_mode_s" data-raw-source="[&lt;strong&gt;KSPROPERTY_TUNER_STANDARD_MODE_S&lt;/strong&gt;](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_tuner_standard_mode_s)"><strong>KSPROPERTY_TUNER_STANDARD_MODE_S</strong></a></p></td>
 <td><p>BOOL</p></td>
 </tr>
 </tbody>
@@ -91,6 +91,4 @@ KSPROPERTY \_ 调谐器 \_ 标准 \_ 模式属性检索一个布尔值，该值�
 [**KSPROPERTY \_ 调谐器 \_ 标准版**](ksproperty-tuner-standard.md)
 
 [**KSPROPERTY \_ 调谐器 \_ 标准 \_ 模式 \_ S**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_tuner_standard_mode_s)
-
- 
 

@@ -3,12 +3,12 @@ description: 为 USB 功能控制器开发 Windows 驱动程序的概述
 title: 为 USB 功能控制器开发 Windows 驱动程序的概述
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 009e25a75e13520542dc3aeb25b2778b669a1fa1
-ms.sourcegitcommit: 937974aa9bbe0262a7ffe9631593fab48c4e7492
+ms.openlocfilehash: 77ea1a9a4af7336be88e35a175e908b8103ab91c
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "90010559"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90104530"
 ---
 # <a name="overview-of-developing-windows-drivers-for-usb-function-controllers"></a>为 USB 功能控制器开发 Windows 驱动程序的概述
 
@@ -50,15 +50,15 @@ ms.locfileid: "90010559"
 <p>熟悉 Microsoft 提供的 USB 驱动程序堆栈：</p>
 <a href="usb-device-side-drivers-in-windows.md" data-raw-source="[USB device-side drivers in Windows](usb-device-side-drivers-in-windows.md)">Windows 中的 USB 设备端驱动程序</a>
 <p><strong>熟悉 UFX 对象和句柄</strong></p>
-<p>UFX 扩展了 WDF 对象功能，以定义其自己的特定于 USB 的 UCX 对象。 有关 WDF 对象的更多详细信息，请参阅 <a href="https://docs.microsoft.com/windows-hardware/drivers/wdf/introduction-to-framework-objects" data-raw-source="[Introduction to Framework Objects](../wdf/introduction-to-framework-objects.md)">框架对象简介</a>。</p>
+<p>UFX 扩展了 WDF 对象功能，以定义其自己的特定于 USB 的 UCX 对象。 有关 WDF 对象的更多详细信息，请参阅 <a href="/windows-hardware/drivers/wdf/introduction-to-framework-objects" data-raw-source="[Introduction to Framework Objects](../wdf/introduction-to-framework-objects.md)">框架对象简介</a>。</p>
 <p>对于排队请求，UFX 使用特定于 USB 的对象。 有关详细信息，请 <a href="ufx-objects-and-handles-used-by-a-usb-function-controller.md" data-raw-source="[UFX objects and handles used by a USB function client driver](ufx-objects-and-handles-used-by-a-usb-function-controller.md)">UFX USB 函数客户端驱动程序使用的对象和句柄</a>。</p>
 <p><strong>编写函数控制器客户端驱动程序</strong></p>
 <p>了解 UFX 的行为，该行为与客户端驱动程序交互的方式以及客户端驱动程序应实现的功能。</p>
 <p><a href="function-client-driver.md" data-raw-source="[Tasks for a function controller client driver](function-client-driver.md)">函数控制器客户端驱动程序的任务</a></p>
 <p><strong>编程参考节</strong></p>
-<p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/_usbref/#function-class-driver-reference" data-raw-source="[USB function class driver to UFX programming reference](/windows-hardware/drivers/ddi/_usbref/#function-class-driver-reference)">UFX 编程参考的 USB 函数类驱动程序</a></p>
-<p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/_usbref/#usb-function-controller-client-driver-reference" data-raw-source="[USB function controller client driver programming reference](/windows-hardware/drivers/ddi/_usbref/#usb-function-controller-client-driver-reference)">USB 函数控制器客户端驱动程序编程参考</a></p>
-<p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/_usbref/#filter-driver-for-supporting-usb-chargers" data-raw-source="[USB filter driver for supporting proprietary chargers](/windows-hardware/drivers/ddi/_usbref/#filter-driver-for-supporting-usb-chargers)">用于支持专用充电器的 USB 筛选器驱动程序</a></p></td>
+<p><a href="/windows-hardware/drivers/ddi/_usbref/#function-class-driver-reference" data-raw-source="[USB function class driver to UFX programming reference](/windows-hardware/drivers/ddi/_usbref/#function-class-driver-reference)">UFX 编程参考的 USB 函数类驱动程序</a></p>
+<p><a href="/windows-hardware/drivers/ddi/_usbref/#usb-function-controller-client-driver-reference" data-raw-source="[USB function controller client driver programming reference](/windows-hardware/drivers/ddi/_usbref/#usb-function-controller-client-driver-reference)">USB 函数控制器客户端驱动程序编程参考</a></p>
+<p><a href="/windows-hardware/drivers/ddi/_usbref/#filter-driver-for-supporting-usb-chargers" data-raw-source="[USB filter driver for supporting proprietary chargers](/windows-hardware/drivers/ddi/_usbref/#filter-driver-for-supporting-usb-chargers)">用于支持专用充电器的 USB 筛选器驱动程序</a></p></td>
 </tr>
 </tbody>
 </table>

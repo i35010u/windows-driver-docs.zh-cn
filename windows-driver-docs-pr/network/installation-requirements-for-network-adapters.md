@@ -8,12 +8,12 @@ keywords:
 - WAN WDK 网络，适配器安装要求
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d18521d53edec3da03513c7089887f91163d867d
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: f213b26ac24e5f9eca860c200a96da8eac76e81d
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89218091"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90104624"
 ---
 # <a name="installation-requirements-for-network-adapters"></a>网络适配器的安装要求
 
@@ -45,40 +45,40 @@ ms.locfileid: "89218091"
 <tbody>
 <tr class="odd">
 <td align="left"><p><a href="version-section-in-a-network-inf-file.md" data-raw-source="[Version Section](version-section-in-a-network-inf-file.md)">版本部分</a></p></td>
-<td align="left"><p>必须</p></td>
+<td align="left"><p>必需</p></td>
 <td align="left"><p><strong>类</strong>= Net</p>
 <p><strong>ClassGuid</strong>= {4D36E972-E325-11CE-BFC1-08002BE10318}</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/install/inf-sourcedisksnames-section" data-raw-source="[&lt;strong&gt;INF SourceDisksNames Section&lt;/strong&gt;](../install/inf-sourcedisksnames-section.md)"><strong>Inf SourceDisksNames 部分</strong></a>和<a href="https://docs.microsoft.com/windows-hardware/drivers/install/inf-sourcedisksfiles-section" data-raw-source="[&lt;strong&gt;INF SourceDisksFiles Section&lt;/strong&gt;](../install/inf-sourcedisksfiles-section.md)"> <strong>inf SourceDisksFiles 部分</strong></a></p></td>
+<td align="left"><p><a href="/windows-hardware/drivers/install/inf-sourcedisksnames-section" data-raw-source="[&lt;strong&gt;INF SourceDisksNames Section&lt;/strong&gt;](../install/inf-sourcedisksnames-section.md)"><strong>Inf SourceDisksNames 部分</strong></a>和<a href="/windows-hardware/drivers/install/inf-sourcedisksfiles-section" data-raw-source="[&lt;strong&gt;INF SourceDisksFiles Section&lt;/strong&gt;](../install/inf-sourcedisksfiles-section.md)"> <strong>inf SourceDisksFiles 部分</strong></a></p></td>
 <td align="left"><p>必需的 if .。。</p></td>
 <td align="left"><p>如果 INF 文件未与 Windows 2000 一起分发，则是必需的。 如果 INF 文件与 Windows 2000 一起分发，则必须在 "<strong>版本</strong>" 部分中指定<strong>LayoutFile</strong>项，并且不会使用<strong>SourceDisksNames</strong>和<strong>SourceDisksFiles</strong>部分。</p>
 <p>无特定于网络的要求。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/install/inf-destinationdirs-section" data-raw-source="[&lt;strong&gt;INF DestinationDirs Section&lt;/strong&gt;](../install/inf-destinationdirs-section.md)"><strong>INF DestinationDirs 节</strong></a></p></td>
-<td align="left"><p>必须</p></td>
+<td align="left"><p><a href="/windows-hardware/drivers/install/inf-destinationdirs-section" data-raw-source="[&lt;strong&gt;INF DestinationDirs Section&lt;/strong&gt;](../install/inf-destinationdirs-section.md)"><strong>INF DestinationDirs 节</strong></a></p></td>
+<td align="left"><p>必需</p></td>
 <td align="left"><p>无特定于网络的要求。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><a href="controlflags-section-in-a-network-inf-file.md" data-raw-source="[ControlFlags Section](controlflags-section-in-a-network-inf-file.md)">ControlFlags 部分</a></p></td>
-<td align="left"><p>必须</p></td>
+<td align="left"><p>必需</p></td>
 <td align="left"><p>必须包含由 INF 文件安装的每个即插即用 (PnP) 适配器的 <strong>ExcludeFromSelect</strong> 项。</p>
 <p>不应列出非 PnP 适配器，如非 PnP ISA 和 EISA 适配器。 请注意，Windows XP 和更高版本的操作系统不支持非 PnP ISA 适配器和 EISA 适配器。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/install/inf-manufacturer-section" data-raw-source="[&lt;strong&gt;INF Manufacturer Section&lt;/strong&gt;](../install/inf-manufacturer-section.md)"><strong>INF Manufacturer 节</strong></a></p></td>
-<td align="left"><p>必须</p></td>
+<td align="left"><p><a href="/windows-hardware/drivers/install/inf-manufacturer-section" data-raw-source="[&lt;strong&gt;INF Manufacturer Section&lt;/strong&gt;](../install/inf-manufacturer-section.md)"><strong>INF Manufacturer 节</strong></a></p></td>
+<td align="left"><p>必需</p></td>
 <td align="left"><p>无特定于网络的要求。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><a href="models-section-in-a-network-inf-file.md" data-raw-source="[Models Section](models-section-in-a-network-inf-file.md)">模型部分</a></p></td>
-<td align="left"><p>必须</p></td>
+<td align="left"><p>必需</p></td>
 <td align="left"><p><em>Hw id</em>必须与适配器提供给 PnP 管理器的硬件 id 匹配。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="ddinstall-section-in-a-network-inf-file.md" data-raw-source="[DDInstall Section](ddinstall-section-in-a-network-inf-file.md)">DDInstall 部分</a></p></td>
-<td align="left"><p>必须</p></td>
+<td align="left"><p>必需</p></td>
 <td align="left"><p><strong>特征</strong> 条目</p>
 <p>允许的值：</p>
 <p>NCF_VIRTUAL，</p>
@@ -90,12 +90,12 @@ ms.locfileid: "89218091"
 </tr>
 <tr class="even">
 <td align="left"><p><a href="ddinstall-services-section-in-a-network-inf-file.md" data-raw-source="[DDInstall.Services Section](ddinstall-services-section-in-a-network-inf-file.md)">DDInstall 部分</a></p></td>
-<td align="left"><p>必须</p></td>
+<td align="left"><p>必需</p></td>
 <td align="left"><p>无特定于网络的要求。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="add-registry-sections-in-a-network-inf-file.md" data-raw-source="[Add-registry-sections](add-registry-sections-in-a-network-inf-file.md)">添加-注册表-部分</a></p></td>
-<td align="left"><p>必须</p></td>
+<td align="left"><p>必需</p></td>
 <td align="left"><p>创建 Ndi 键</p>
 <p><a href="adding-service-related-values-to-the-ndi-key.md" data-raw-source="[Specifying service-related values](adding-service-related-values-to-the-ndi-key.md)">指定服务相关值</a></p>
 <p>仅为 LBFO 微型端口驱动程序<a href="specifying-bundle-membership.md" data-raw-source="[Specifying Bundle Membership](specifying-bundle-membership.md)">指定绑定成员身份</a> () </p>
@@ -115,8 +115,8 @@ ms.locfileid: "89218091"
 <p><a href="specifying-custom-property-pages-for-network-adapters.md" data-raw-source="[Specifying Custom Property Pages for Network Adapters](specifying-custom-property-pages-for-network-adapters.md)">指定网络适配器的自定义属性页</a></p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/install/inf-strings-section" data-raw-source="[&lt;strong&gt;INF Strings Section&lt;/strong&gt;](../install/inf-strings-section.md)"><strong>INF Strings 节</strong></a></p></td>
-<td align="left"><p>必须</p></td>
+<td align="left"><p><a href="/windows-hardware/drivers/install/inf-strings-section" data-raw-source="[&lt;strong&gt;INF Strings Section&lt;/strong&gt;](../install/inf-strings-section.md)"><strong>INF Strings 节</strong></a></p></td>
+<td align="left"><p>必需</p></td>
 <td align="left"><p>无特定于网络的要求。</p></td>
 </tr>
 </tbody>
@@ -135,8 +135,6 @@ WAN 适配器具有以下主题中所述的其他安装要求：
 [安装多协议 WAN NIC](installing-a-multiprotocol-wan-nic.md)
 
 **注意**   不支持[删除部分](remove-section-in-a-network-inf-file.md)和[网络组件的通知对象](notify-objects-for-network-components.md)。
-
- 
 
  
 

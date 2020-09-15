@@ -14,12 +14,12 @@ keywords:
 - 双重筛选 WDK 网络重定向器
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9f525e39c1f4f5ed4e2c05be4afeff3a5d2744d7
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 9fae078f8284c337c7f57d206be201148130fbb0
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89066876"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90105890"
 ---
 # <a name="mup-changes-in-microsoft-windows-vista"></a>Microsoft Windows Vista 中的 MUP 更改
 
@@ -228,7 +228,7 @@ typedef struct _QUERY_PATH_RESPONSE {
 
 当 UNC 提供程序收到 IOCTL \_ REDIR \_ 查询 \_ 路径 \_ （例如请求）时，必须确定它是否可以处理查询路径**PathName** \_ \_ 请求 EX 结构的 PathName 成员中指定的 UNC 路径 \_ 。 如果是这样，UNC 提供程序必须**LengthAccepted** \_ \_ 用它所声明的前缀的长度（以字节为单位）来更新查询路径响应结构的 LengthAccepted 成员，并完成 IRP 状态为 "成功" 的操作 \_ 。 如果提供程序无法处理指定的 UNC 路径，则它必须 \_ \_ 使用适当的 NTSTATUS 错误代码来使 IOCTL REDIR 查询 \_ 路径（例如请求）失败 \_ ， **LengthAccepted**并且不得更新查询 \_ 路径响应结构的 LengthAccepted 成员 \_ 。 在任何情况下，提供程序都不能修改任何其他成员或 **路径名** 字符串。
 
-在 Windows Vista 上，基于使用 RDBSS 的网络微重定向程序将指示支持作为 UNC 提供程序将接收此前缀声明，就像它是常规的树连接创建一样，类似于使用文件 \_ 创建 \_ 树 \_ 连接标志设置的用户模式 Createfile 调用。 RDBSS 会将 [**MRxCreateSrvCall**](/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_create_srvcall) 请求发送到网络小型重定向程序，然后调用 [**MRxSrvCallWinnerNotify**](/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_srvcall_winner_notify) 和 [**MRxCreateVNetRoot**](/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_create_v_net_root)。 调用[**MRxLowIOSubmit \[ LOWIO \_ OP \_ IOCTL \] **](https://msdn.microsoft.com/library/windows/hardware/ff550715)时，不会收到此前缀声明。 当网络微重定向器注册到 RDBSS 时，网络小型重定向器的驱动程序调度表将由 RDBSS 复制到指向内部 RDBSS 入口点。 然后，RDBSS 会接收此 IOCTL \_ REDIR \_ 查询 \_ 路径 \_ ，例如网络小型重定向器在内部接收，并调用 **MRxCreateSrvCall**、 **MRxSrvCallWinnerNotify**和 **MRxCreateVNetRoot**。 原始 IOCTL \_ REDIR \_ 查询路径 \_ ， \_ 例如 IRP 将包含在 \_ 传递到 **MRxCreateSrvCall** 例程的 RX 上下文中。 此外， \_ 将修改传递到 **MRXCREATESRVCALL** 的 RX 上下文中的以下成员：
+在 Windows Vista 上，基于使用 RDBSS 的网络微重定向程序将指示支持作为 UNC 提供程序将接收此前缀声明，就像它是常规的树连接创建一样，类似于使用文件 \_ 创建 \_ 树 \_ 连接标志设置的用户模式 Createfile 调用。 RDBSS 会将 [**MRxCreateSrvCall**](/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_create_srvcall) 请求发送到网络小型重定向程序，然后调用 [**MRxSrvCallWinnerNotify**](/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_srvcall_winner_notify) 和 [**MRxCreateVNetRoot**](/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_create_v_net_root)。 调用[**MRxLowIOSubmit \[ LOWIO \_ OP \_ IOCTL \] **](./mrxlowiosubmit-lowio-op-ioctl-.md)时，不会收到此前缀声明。 当网络微重定向器注册到 RDBSS 时，网络小型重定向器的驱动程序调度表将由 RDBSS 复制到指向内部 RDBSS 入口点。 然后，RDBSS 会接收此 IOCTL \_ REDIR \_ 查询 \_ 路径 \_ ，例如网络小型重定向器在内部接收，并调用 **MRxCreateSrvCall**、 **MRxSrvCallWinnerNotify**和 **MRxCreateVNetRoot**。 原始 IOCTL \_ REDIR \_ 查询路径 \_ ， \_ 例如 IRP 将包含在 \_ 传递到 **MRxCreateSrvCall** 例程的 RX 上下文中。 此外， \_ 将修改传递到 **MRXCREATESRVCALL** 的 RX 上下文中的以下成员：
 
 **MajorFunction** \_ \_ 即使原始 IRP 为 irp \_ mj \_ 设备 \_ 控制，MajorFunction 成员也会设置为 irp mj CREATE。
 

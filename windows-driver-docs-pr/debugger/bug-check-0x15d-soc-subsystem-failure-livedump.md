@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 9fb1512a9a73634252c05e73ffd85f56e8bb961f
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 514dcb04bece8dd832759f31fb2ec03c1496d35e
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89211823"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90106092"
 ---
 # <a name="bug-check-0x15d-soc_subsystem_failure_livedump"></a>Bug 检查0x15D： SOC \_ 子系统 \_ 故障 \_ LIVEDUMP
 
@@ -46,7 +46,7 @@ SOC \_ 子系统 \_ 故障 \_ LIVEDUMP bug 代码的值为0x0000015D。 这表�
 <tbody>
 <tr class="odd">
 <td align="left"><p>1</p></td>
-<td align="left"><p><strong><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/ns-ntddk-_soc_subsystem_failure_details" data-raw-source="[SOC_SUBSYSTEM_FAILURE_DETAILS](/windows-hardware/drivers/ddi/ntddk/ns-ntddk-_soc_subsystem_failure_details)">SOC_SUBSYSTEM_FAILURE_DETAILS</a></strong>结构的地址。</p></td>
+<td align="left"><p><strong><a href="/windows-hardware/drivers/ddi/ntddk/ns-ntddk-_soc_subsystem_failure_details" data-raw-source="[SOC_SUBSYSTEM_FAILURE_DETAILS](/windows-hardware/drivers/ddi/ntddk/ns-ntddk-_soc_subsystem_failure_details)">SOC_SUBSYSTEM_FAILURE_DETAILS</a></strong>结构的地址。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>2</p></td>
@@ -120,6 +120,4 @@ SOC \_ 子系统 \_ 故障 \_ LIVEDUMP bug 代码的值为0x0000015D。 这表�
 </tr>
 </tbody>
 </table>
-
- 
 

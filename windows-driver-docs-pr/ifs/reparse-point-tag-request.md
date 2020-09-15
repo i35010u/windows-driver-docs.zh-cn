@@ -4,12 +4,12 @@ description: 描述如何获取需要一个重分析点标记的那些文件系�
 ms.assetid: B4E4382B-4FB8-4E21-8FC4-EDDE8DD4AC77
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b8a7a3b08559a0791acc7dbeb55d9c5ed4cd7b14
-ms.sourcegitcommit: 2dd8e4262c30e3f8570e35da7b9485139b216ac8
+ms.openlocfilehash: 235f18bb4ed8f89898fb7cefeb65f4a06e91eea4
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "90027556"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90106110"
 ---
 # <a name="reparse-point-tag-request"></a>重新分析点标记请求
 
@@ -42,4 +42,4 @@ ms.locfileid: "90027556"
 
 重新分析点是 Windows 的一项强大功能，但开发人员应注意每个文件只能有一个重新分析点，而某些 Windows 机制使用重新分析点 (HSM、本机结构化存储) 。 当重新分析点标记已用于某个文件时，开发人员需要提供回退策略。
 
-有关重新 [分析点和重分析点标记](https://docs.microsoft.com/windows/win32/fileio/reparse-points)的详细信息，请参阅 Windows SDK 文档。
+有关重新 [分析点和重分析点标记](/windows/win32/fileio/reparse-points)的详细信息，请参阅 Windows SDK 文档。

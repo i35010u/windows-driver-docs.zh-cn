@@ -4,12 +4,12 @@ description: 使用这些规则验证驱动程序是否正确地处理了 OID �
 ms.assetid: 0E12778B-BB86-4387-9B8A-19E3876D6F8C
 ms.date: 05/21/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 7e530bec7fc9f8c86ad64ca43a77bb74dd677e3c
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: cdd27b93d2d62a6097cea6bb84ca43e043b1ef43
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89381385"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90105916"
 ---
 # <a name="oidprocessing-rule-set-ndis"></a>OidProcessing 规则集 (NDIS)
 
@@ -41,7 +41,7 @@ ms.locfileid: "89381385"
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="ndis-ndismnetpnpeventinoidrequest.md" data-raw-source="[&lt;strong&gt;NdisMNetPnPEventInOIDRequest&lt;/strong&gt;](ndis-ndismnetpnpeventinoidrequest.md)"><strong>NdisMNetPnPEventInOIDRequest</strong></a></p></td>
-<td align="left"><p>此规则检查 OID 请求的上下文中是否未调用 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismnetpnpevent" data-raw-source="[&lt;strong&gt;NdisMNetPnPEvent&lt;/strong&gt;](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismnetpnpevent)"><strong>NdisMNetPnPEvent</strong></a> 。</p></td>
+<td align="left"><p>此规则检查 OID 请求的上下文中是否未调用 <a href="/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismnetpnpevent" data-raw-source="[&lt;strong&gt;NdisMNetPnPEvent&lt;/strong&gt;](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismnetpnpevent)"><strong>NdisMNetPnPEvent</strong></a> 。</p></td>
 </tr>
 </tbody>
 </table>
@@ -61,6 +61,4 @@ ms.locfileid: "89381385"
     ```
 
     有关详细信息，请参阅 [使用静态驱动程序验证器查找驱动程序中的缺陷](./using-static-driver-verifier-to-find-defects-in-drivers.md) 和 [静态驱动程序验证程序命令 (MSBuild) ](./-static-driver-verifier-commands--msbuild-.md)。
-
- 
 

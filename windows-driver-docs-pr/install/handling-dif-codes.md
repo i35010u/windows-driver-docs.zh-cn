@@ -9,12 +9,12 @@ keywords:
 - 函数代码 WDK 设备安装
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8c7b76c111d9642b18299d4f6ec78515dfecad0b
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 09349ca33193340989d3d686de9e347c836c5922
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89095331"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90105552"
 ---
 # <a name="handling-dif-codes"></a>处理 DIF 代码
 
@@ -45,10 +45,10 @@ ms.locfileid: "89095331"
 *DeviceInfoSet*可能具有关联的[设备安装程序类](./overview-of-device-setup-classes.md)。 如果是这样，请调用 [**SetupDiGetDeviceInfoListClass**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetdeviceinfolistclass) 以获取类 GUID。
 
 <a href="" id="deviceinfodata"></a>*DeviceInfoData*  
-还可以提供一个指向 [**SP_DEVINFO_DATA**](/windows/desktop/api/setupapi/ns-setupapi-_sp_devinfo_data) 结构的指针，该结构在设备信息集中标识设备。
+还可以提供一个指向 [**SP_DEVINFO_DATA**](/windows/win32/api/setupapi/ns-setupapi-sp_devinfo_data) 结构的指针，该结构在设备信息集中标识设备。
 
 <a href="" id="device-installation-parameters-"></a>*设备安装参数*   
-这些间接参数以 [**SP_DEVINSTALL_PARAMS**](/windows/desktop/api/setupapi/ns-setupapi-_sp_devinstall_params_a) 结构提供设备安装的信息。 如果 *DeviceInfoData* 不为 **NULL**，则存在与 *DeviceInfoData*关联的设备安装参数。 如果 *DeviceInfoData* 为 **NULL**，则设备安装参数与 *DeviceInfoSet*相关联。
+这些间接参数以 [**SP_DEVINSTALL_PARAMS**](/windows/win32/api/setupapi/ns-setupapi-sp_devinstall_params_a) 结构提供设备安装的信息。 如果 *DeviceInfoData* 不为 **NULL**，则存在与 *DeviceInfoData*关联的设备安装参数。 如果 *DeviceInfoData* 为 **NULL**，则设备安装参数与 *DeviceInfoSet*相关联。
 
 调用 [**SetupDiGetDeviceInstallParams**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetdeviceinstallparamsa) 以获取设备安装参数。
 

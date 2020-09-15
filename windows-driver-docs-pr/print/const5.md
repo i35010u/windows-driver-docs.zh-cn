@@ -6,12 +6,12 @@ keywords:
 - Const 构造
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: af37b2246aaf9a68a0c4f7f2c867ddfe81dba638
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 1ecf085c031db26ce7b5653fd352a58615cf04a4
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89218264"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90105778"
 ---
 # <a name="const-wsd"></a>Const (WSD)
 
@@ -31,12 +31,12 @@ ms.locfileid: "89218264"
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>name </p></td>
+<td><p><strong>name</strong></p></td>
 <td><p>架构值的名称。</p></td>
 </tr>
 <tr class="even">
-<td><p><strong>type</strong></p></td>
-<td><p><strong>值</strong>特性中的数据类型， <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/winspool/ne-winspool-bidi_type" data-raw-source="[&lt;strong&gt;BIDI_TYPE&lt;/strong&gt;](/windows-hardware/drivers/ddi/winspool/ne-winspool-bidi_type)"><strong>BIDI_TYPE</strong></a>枚举中的值。</p></td>
+<td><p>type</p></td>
+<td><p><strong>值</strong>特性中的数据类型， <a href="/windows-hardware/drivers/ddi/winspool/ne-winspool-bidi_type" data-raw-source="[&lt;strong&gt;BIDI_TYPE&lt;/strong&gt;](/windows-hardware/drivers/ddi/winspool/ne-winspool-bidi_type)"><strong>BIDI_TYPE</strong></a>枚举中的值。</p></td>
 </tr>
 <tr class="odd">
 <td><p><strong>value</strong></p></td>
@@ -64,6 +64,4 @@ ms.locfileid: "89218264"
 ```cpp
 \Printer.Extension.Version:1
 ```
-
- 
 

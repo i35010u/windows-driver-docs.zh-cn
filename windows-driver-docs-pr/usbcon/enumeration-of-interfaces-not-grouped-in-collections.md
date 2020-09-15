@@ -3,12 +3,12 @@ description: 复合 USB 设备上的接口可分组到集合中或分别代表�
 title: 枚举 USB 复合设备上的接口
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ba7d0e2e257e250c2df0a8d3bf3ef4f1d295d7f6
-ms.sourcegitcommit: 15caaf6d943135efcaf9975927ff3933957acd5d
+ms.openlocfilehash: dd0f714c9ea545af66dc7f4e204fe6f9f2af7228
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88968478"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90105058"
 ---
 # <a name="enumeration-of-interfaces-on-usb-composite-devices"></a>枚举 USB 复合设备上的接口
 
@@ -25,7 +25,7 @@ ms.locfileid: "88968478"
 -   *p (4) * 是供应商分配给设备的四位数产品代码。
 -   *z (2) * 是从接口描述符的 **bInterfaceNumber** 字段中提取的接口号。
 
-一般父驱动程序还通过使用接口描述符中的信息来生成以下兼容 Id ([**USB \_ 接口 \_ 描述符**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbspec/ns-usbspec-_usb_interface_descriptor)) ：
+一般父驱动程序还通过使用接口描述符中的信息来生成以下兼容 Id ([**USB \_ 接口 \_ 描述符**](/windows-hardware/drivers/ddi/usbspec/ns-usbspec-_usb_interface_descriptor)) ：
 
 `USB\CLASS_d(2)&SUBCLASS_s(2)&PROT_p(2)`
 
@@ -44,7 +44,4 @@ ms.locfileid: "88968478"
 ## <a name="related-topics"></a>相关主题
 [枚举 USB 复合设备上的接口集合](support-for-interface-collections.md)  
 [USB 常规父驱动程序 (Usbccgp.sys)](usb-common-class-generic-parent-driver.md)  
-[Microsoft 提供的 USB 驱动程序](system-supplied-usb-drivers.md)  
-
-
-
+[Microsoft 提供的 USB 驱动程序](system-supplied-usb-drivers.md)

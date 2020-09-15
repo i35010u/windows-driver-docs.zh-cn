@@ -9,12 +9,12 @@ keywords:
 - 对象 WDK 微型重定向器
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 69d4183d057391230393c701d6f1abf9026d2e98
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 07ad208d5527acc826718615fdee9f9849acf727
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89063664"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90104214"
 ---
 # <a name="file-system-object-creation-and-deletion"></a>文件系统对象的创建和删除
 
@@ -42,69 +42,67 @@ ms.locfileid: "89063664"
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_chkfcb_calldown" data-raw-source="[&lt;strong&gt;MRxAreFilesAliased&lt;/strong&gt;](/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_chkfcb_calldown)"><strong>MRxAreFilesAliased</strong></a></td>
+<td align="left"><a href="/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_chkfcb_calldown" data-raw-source="[&lt;strong&gt;MRxAreFilesAliased&lt;/strong&gt;](/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_chkfcb_calldown)"><strong>MRxAreFilesAliased</strong></a></td>
 <td align="left"><p>如果两个 FCB 对象表示同一个文件，RDBSS 将调用此例程来查询网络微型重定向程序。 RDBSS 在处理两个看起来相同但名称不同 (MS-DOS 短名称和长名称的文件时，将调用此例程，例如) 。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><a href="https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff549841(v=vs.85)" data-raw-source="[&lt;strong&gt;MRxCleanupFobx&lt;/strong&gt;](/previous-versions/windows/hardware/drivers/ff549841(v=vs.85))"><strong>MRxCleanupFobx</strong></a></td>
+<td align="left"><a href="/previous-versions/windows/hardware/drivers/ff549841(v=vs.85)" data-raw-source="[&lt;strong&gt;MRxCleanupFobx&lt;/strong&gt;](/previous-versions/windows/hardware/drivers/ff549841(v=vs.85))"><strong>MRxCleanupFobx</strong></a></td>
 <td align="left"><p>RDBSS 调用此例程来请求网络小型重定向程序关闭文件系统对象扩展。 RDBSS 发出此调用以响应接收文件对象上的 IRP_MJ_CLEANUP。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_calldown" data-raw-source="[&lt;strong&gt;MRxCloseSrvOpen&lt;/strong&gt;](/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_calldown)"><strong>MRxCloseSrvOpen</strong></a></td>
+<td align="left"><a href="/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_calldown" data-raw-source="[&lt;strong&gt;MRxCloseSrvOpen&lt;/strong&gt;](/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_calldown)"><strong>MRxCloseSrvOpen</strong></a></td>
 <td align="left"><p>RDBSS 调用此例程来请求网络小型重定向器关闭 SRV_OPEN 的对象。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><a href="https://docs.microsoft.com/windows-hardware/drivers/ifs/mrxcollapseopen" data-raw-source="[&lt;strong&gt;MRxCollapseOpen&lt;/strong&gt;](./mrxcollapseopen.md)"><strong>MRxCollapseOpen</strong></a></td>
+<td align="left"><a href="/windows-hardware/drivers/ifs/mrxcollapseopen" data-raw-source="[&lt;strong&gt;MRxCollapseOpen&lt;/strong&gt;](./mrxcollapseopen.md)"><strong>MRxCollapseOpen</strong></a></td>
 <td align="left"><p>RDBSS 调用此例程，请求网络微重定向程序将打开的文件系统请求折叠到现有 SRV_OPEN。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><a href="https://docs.microsoft.com/windows-hardware/drivers/ifs/mrxcreate" data-raw-source="[&lt;strong&gt;MRxCreate&lt;/strong&gt;](./mrxcreate.md)"><strong>MRxCreate</strong></a></td>
+<td align="left"><a href="/windows-hardware/drivers/ifs/mrxcreate" data-raw-source="[&lt;strong&gt;MRxCreate&lt;/strong&gt;](./mrxcreate.md)"><strong>MRxCreate</strong></a></td>
 <td align="left"><p>RDBSS 调用此例程来请求网络小型重定向程序创建文件系统对象。 此调用由 RDBSS 发出，以响应接收 IRP_MJ_CREATE。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_deallocate_for_fcb" data-raw-source="[&lt;strong&gt;MRxDeallocateForFcb&lt;/strong&gt;](/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_deallocate_for_fcb)"><strong>MRxDeallocateForFcb</strong></a></td>
+<td align="left"><a href="/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_deallocate_for_fcb" data-raw-source="[&lt;strong&gt;MRxDeallocateForFcb&lt;/strong&gt;](/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_deallocate_for_fcb)"><strong>MRxDeallocateForFcb</strong></a></td>
 <td align="left"><p>RDBSS 调用此例程来请求网络小型重定向程序释放 FCB。 此调用用于响应关闭文件系统对象的请求。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_deallocate_for_fobx" data-raw-source="[&lt;strong&gt;MRxDeallocateForFobx&lt;/strong&gt;](/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_deallocate_for_fobx)"><strong>MRxDeallocateForFobx</strong></a></td>
+<td align="left"><a href="/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_deallocate_for_fobx" data-raw-source="[&lt;strong&gt;MRxDeallocateForFobx&lt;/strong&gt;](/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_deallocate_for_fobx)"><strong>MRxDeallocateForFobx</strong></a></td>
 <td align="left"><p>RDBSS 调用此例程来请求网络小型重定向程序释放 FOBX。 此调用用于响应关闭文件系统对象的请求。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_extendfile_calldown" data-raw-source="[&lt;strong&gt;MRxExtendForCache&lt;/strong&gt;](/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_extendfile_calldown)"><strong>MRxExtendForCache</strong></a></td>
+<td align="left"><a href="/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_extendfile_calldown" data-raw-source="[&lt;strong&gt;MRxExtendForCache&lt;/strong&gt;](/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_extendfile_calldown)"><strong>MRxExtendForCache</strong></a></td>
 <td align="left"><p>RDBSS 调用此例程，请求网络小型重定向程序在缓存管理器缓存文件时扩展文件。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><a href="https://docs.microsoft.com/windows-hardware/drivers/ifs/mrxextendfornoncache" data-raw-source="[&lt;strong&gt;MRxExtendForNonCache&lt;/strong&gt;](./mrxextendfornoncache.md)"><strong>MRxExtendForNonCache</strong></a></td>
+<td align="left"><a href="/windows-hardware/drivers/ifs/mrxextendfornoncache" data-raw-source="[&lt;strong&gt;MRxExtendForNonCache&lt;/strong&gt;](./mrxextendfornoncache.md)"><strong>MRxExtendForNonCache</strong></a></td>
 <td align="left"><p>RDBSS 调用此例程，请求网络小型重定向程序在缓存管理器未缓存文件时扩展文件。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><a href="https://docs.microsoft.com/windows-hardware/drivers/ifs/mrxflush" data-raw-source="[&lt;strong&gt;MRxFlush&lt;/strong&gt;](./mrxflush.md)"><strong>MRxFlush</strong></a></td>
+<td align="left"><a href="/windows-hardware/drivers/ifs/mrxflush" data-raw-source="[&lt;strong&gt;MRxFlush&lt;/strong&gt;](./mrxflush.md)"><strong>MRxFlush</strong></a></td>
 <td align="left"><p>RDBSS 调用此例程来请求网络小型重定向程序刷新文件系统对象。 RDBSS 发出此调用以响应接收 IRP_MJ_FLUSH_BUFFERS。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_forceclosed_calldown" data-raw-source="[&lt;strong&gt;MRxForceClosed&lt;/strong&gt;](/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_forceclosed_calldown)"><strong>MRxForceClosed</strong></a></td>
+<td align="left"><a href="/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_forceclosed_calldown" data-raw-source="[&lt;strong&gt;MRxForceClosed&lt;/strong&gt;](/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_forceclosed_calldown)"><strong>MRxForceClosed</strong></a></td>
 <td align="left"><p>RDBSS 调用此例程来请求网络小型重定向程序强制关闭。 当 SRV_OPEN 的条件不良好或 SRV_OPEN 标记为已关闭时，将调用此例程。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_is_lock_realizable" data-raw-source="[&lt;strong&gt;MRxIsLockRealizable&lt;/strong&gt;](/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_is_lock_realizable)"><strong>MRxIsLockRealizable</strong></a></td>
+<td align="left"><a href="/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_is_lock_realizable" data-raw-source="[&lt;strong&gt;MRxIsLockRealizable&lt;/strong&gt;](/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_is_lock_realizable)"><strong>MRxIsLockRealizable</strong></a></td>
 <td align="left"><p>RDBSS 调用此例程，请求网络最小化重定向器指示此 NET_ROOT 是否支持字节范围锁。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><a href="https://docs.microsoft.com/windows-hardware/drivers/ifs/mrxshouldtrytocollapsethisopen" data-raw-source="[&lt;strong&gt;MRxShouldTryToCollapseThisOpen&lt;/strong&gt;](./mrxshouldtrytocollapsethisopen.md)"><strong>MRxShouldTryToCollapseThisOpen</strong></a></td>
+<td align="left"><a href="/windows-hardware/drivers/ifs/mrxshouldtrytocollapsethisopen" data-raw-source="[&lt;strong&gt;MRxShouldTryToCollapseThisOpen&lt;/strong&gt;](./mrxshouldtrytocollapsethisopen.md)"><strong>MRxShouldTryToCollapseThisOpen</strong></a></td>
 <td align="left"><p>RDBSS 调用此例程，请求网络小型重定向程序指示 RDBSS 是否应尝试并将打开的请求折叠到现有的文件系统对象。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><a href="https://docs.microsoft.com/windows-hardware/drivers/ifs/mrxtruncate" data-raw-source="[&lt;strong&gt;MRxTruncate&lt;/strong&gt;](./mrxtruncate.md)"><strong>MRxTruncate</strong></a></td>
+<td align="left"><a href="/windows-hardware/drivers/ifs/mrxtruncate" data-raw-source="[&lt;strong&gt;MRxTruncate&lt;/strong&gt;](./mrxtruncate.md)"><strong>MRxTruncate</strong></a></td>
 <td align="left"><p>RDBSS 调用此例程，请求网络最小化重定向器截断文件系统对象。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><a href="https://docs.microsoft.com/windows-hardware/drivers/ifs/mrxzeroextend" data-raw-source="[&lt;strong&gt;MRxZeroExtend&lt;/strong&gt;](./mrxzeroextend.md)"><strong>MRxZeroExtend</strong></a></td>
+<td align="left"><a href="/windows-hardware/drivers/ifs/mrxzeroextend" data-raw-source="[&lt;strong&gt;MRxZeroExtend&lt;/strong&gt;](./mrxzeroextend.md)"><strong>MRxZeroExtend</strong></a></td>
 <td align="left"><p>如果文件大小大于 FCB 的有效数据长度，RDBSS 将调用此例程来请求网络最小化重定向程序扩展文件系统对象（清除时使用零）来填充文件。</p></td>
 </tr>
 </tbody>
 </table>
-
- 
 
  
 

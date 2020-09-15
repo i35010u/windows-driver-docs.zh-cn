@@ -6,12 +6,12 @@ keywords:
 - TDR (超时检测和恢复) WDK 显示，Windows 8 中的更改
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7471505d9aba464ef147bc26761d36414ef839c4
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: df08337a2e9e156eab053e57445cd162e0ed5328
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89066330"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90105686"
 ---
 # <a name="tdr-changes-in-windows-8"></a>Windows 8 中的 TDR 更改
 
@@ -37,7 +37,7 @@ ms.locfileid: "89066330"
 <td align="left">必需</td>
 </tr>
 <tr class="even">
-<td align="left"><a href="https://docs.microsoft.com/windows-hardware/test/hlk/windows-hardware-lab-kit" data-raw-source="[WHCK](/windows-hardware/test/hlk/windows-hardware-lab-kit)">WHCK</a> 要求和测试</td>
+<td align="left"><a href="/windows-hardware/test/hlk/windows-hardware-lab-kit" data-raw-source="[WHCK](/windows-hardware/test/hlk/windows-hardware-lab-kit)">WHCK</a> 要求和测试</td>
 <td align="left"><p><strong>设备 .。。TDRResiliency</strong></p></td>
 </tr>
 </tbody>
@@ -153,6 +153,4 @@ GPU 上最后完成的防护 ID 值必须始终由驱动程序维护，因为还
 有关硬件设备实现此功能时必须满足的要求的信息，请参阅相关 [WHCK 文档](/windows-hardware/test/hlk/windows-hardware-lab-kit) **TDRResiliency**。
 
 请参阅 [WDDM 1.2 功能](wddm-v1-2-features.md) ，了解 Windows 8 中添加的功能。
-
- 
 

@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3a7fbb6efc23382eddf78c3285052e1320891ac8
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: a33ac88534cc0a703b19d78caab3a355233087d5
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89188441"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90106006"
 ---
 # <a name="ksevent_tuner_initiate_scan"></a>KSEVENT \_ 调谐器 \_ 启动 \_ 扫描
 
@@ -48,15 +48,15 @@ KSEVENT \_ 调谐器 \_ 启动 \_ 扫描事件请求，驱动程序启动扫描�
 <td><p>否</p></td>
 <td><p>是</p></td>
 <td><p>Pin</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksevent_tuner_initiate_scan_s" data-raw-source="[&lt;strong&gt;KSEVENT_TUNER_INITIATE_SCAN_S&lt;/strong&gt;](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksevent_tuner_initiate_scan_s)"><strong>KSEVENT_TUNER_INITIATE_SCAN_S</strong></a></p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-kseventdata" data-raw-source="[&lt;strong&gt;KSEVENTDATA&lt;/strong&gt;](/windows-hardware/drivers/ddi/ks/ns-ks-kseventdata)"><strong>KSEVENTDATA</strong></a></p></td>
+<td><p><a href="/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksevent_tuner_initiate_scan_s" data-raw-source="[&lt;strong&gt;KSEVENT_TUNER_INITIATE_SCAN_S&lt;/strong&gt;](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksevent_tuner_initiate_scan_s)"><strong>KSEVENT_TUNER_INITIATE_SCAN_S</strong></a></p></td>
+<td><p><a href="/windows-hardware/drivers/ddi/ks/ns-ks-kseventdata" data-raw-source="[&lt;strong&gt;KSEVENTDATA&lt;/strong&gt;](/windows-hardware/drivers/ddi/ks/ns-ks-kseventdata)"><strong>KSEVENTDATA</strong></a></p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-<a name="remarks"></a>注解
+<a name="remarks"></a>备注
 -------
 
 每个扫描请求应为非阻塞。 也就是说，驱动程序在返回 control 之前不应等待扫描操作完成。 事实上，驱动程序应使用单独的线程来执行扫描操作。
@@ -79,7 +79,7 @@ Scan status 属性 [**KSPROPERTY \_ 调谐器 \_ scan \_ status**](ksproperty-tu
 
 只要发现新的通道或信号，就必须完成扫描操作。 然后，该驱动程序通过 [**KSPROPERTY \_ 调谐器 \_ 扫描 \_ 状态**](ksproperty-tuner-scan-status.md) 属性返回扫描状态。 即使驱动程序确定新找到的通道与以前应用的标准不匹配，只要找到新通道，就必须完成扫描。 应用程序必须处理新的通道信息，并且必须重新提交扫描请求以查找信号标准相同的另一个通道。
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
 [**KSEVENT \_ 调谐器 \_ 启动 \_ 扫描 \_**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksevent_tuner_initiate_scan_s)
@@ -93,6 +93,4 @@ Scan status 属性 [**KSPROPERTY \_ 调谐器 \_ scan \_ status**](ksproperty-tu
 [**KSPROPERTY \_ 调谐器 \_ 标准版**](ksproperty-tuner-standard.md)
 
 [**KSPROPERTY \_ 调谐器 \_ 标准 \_ 模式**](ksproperty-tuner-standard-mode.md)
-
- 
 

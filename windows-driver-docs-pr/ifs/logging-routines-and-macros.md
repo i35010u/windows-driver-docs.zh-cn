@@ -9,12 +9,12 @@ keywords:
 - RDBSSLOG 宏
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 09189c1ae788ed1582ad53a62a5a3641a6be01e9
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 21026d5e215b0e16c343d0fa24fa0c243e247627
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89067392"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90104788"
 ---
 # <a name="logging-routines-and-macros"></a>日志记录例程和宏
 
@@ -41,21 +41,21 @@ RDBSS 提供了许多用于日志记录的例程。 这些日志记录功能始�
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/rxprocs/nf-rxprocs-rxlogeventdirect" data-raw-source="[&lt;strong&gt;RxLogEventDirect&lt;/strong&gt;](/windows-hardware/drivers/ddi/rxprocs/nf-rxprocs-rxlogeventdirect)"><strong>RxLogEventDirect</strong></a></p></td>
+<td align="left"><p><a href="/windows-hardware/drivers/ddi/rxprocs/nf-rxprocs-rxlogeventdirect" data-raw-source="[&lt;strong&gt;RxLogEventDirect&lt;/strong&gt;](/windows-hardware/drivers/ddi/rxprocs/nf-rxprocs-rxlogeventdirect)"><strong>RxLogEventDirect</strong></a></p></td>
 <td align="left"><p>调用此例程以便向 i/o 错误日志记录错误。</p>
 <p>建议使用 <strong>RxLogFailure</strong> 或 <strong>RxLogEvent</strong> 宏，而不是直接调用此例程。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/rxprocs/nf-rxprocs-rxlogeventwithannotation" data-raw-source="[&lt;strong&gt;RxLogEventWithAnnotation&lt;/strong&gt;](/windows-hardware/drivers/ddi/rxprocs/nf-rxprocs-rxlogeventwithannotation)"><strong>RxLogEventWithAnnotation</strong></a></p></td>
+<td align="left"><p><a href="/windows-hardware/drivers/ddi/rxprocs/nf-rxprocs-rxlogeventwithannotation" data-raw-source="[&lt;strong&gt;RxLogEventWithAnnotation&lt;/strong&gt;](/windows-hardware/drivers/ddi/rxprocs/nf-rxprocs-rxlogeventwithannotation)"><strong>RxLogEventWithAnnotation</strong></a></p></td>
 <td align="left"><p>此例程分配 i/o 错误日志记录，填充日志记录，并将此记录写入 i/o 错误日志。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/rxprocs/nf-rxprocs-rxlogeventwithbufferdirect" data-raw-source="[&lt;strong&gt;RxLogEventWithBufferDirect&lt;/strong&gt;](/windows-hardware/drivers/ddi/rxprocs/nf-rxprocs-rxlogeventwithbufferdirect)"><strong>RxLogEventWithBufferDirect</strong></a></p></td>
+<td align="left"><p><a href="/windows-hardware/drivers/ddi/rxprocs/nf-rxprocs-rxlogeventwithbufferdirect" data-raw-source="[&lt;strong&gt;RxLogEventWithBufferDirect&lt;/strong&gt;](/windows-hardware/drivers/ddi/rxprocs/nf-rxprocs-rxlogeventwithbufferdirect)"><strong>RxLogEventWithBufferDirect</strong></a></p></td>
 <td align="left"><p>此例程分配 i/o 错误日志记录，填充日志记录，并将此记录写入 i/o 错误日志。 此例程将行号和状态编码为存储在 i/o 错误日志记录中的原始数据缓冲区。</p>
 <p>建议使用 <strong>RxLogFailureWithBuffer</strong> 宏，而不是直接调用此例程。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/rxlog/nf-rxlog-_rxlog" data-raw-source="[&lt;strong&gt;_RxLog&lt;/strong&gt;](/windows-hardware/drivers/ddi/rxlog/nf-rxlog-_rxlog)"><strong>_RxLog</strong></a></p></td>
+<td align="left"><p><a href="/windows-hardware/drivers/ddi/rxlog/nf-rxlog-_rxlog" data-raw-source="[&lt;strong&gt;_RxLog&lt;/strong&gt;](/windows-hardware/drivers/ddi/rxlog/nf-rxlog-_rxlog)"><strong>_RxLog</strong></a></p></td>
 <td align="left"><p>如果启用了日志记录，则此例程采用格式字符串和可变数量的参数并将用于记录的输出字符串的格式设置为 i/o 错误日志项。</p>
 <p>建议使用 <strong>RxLog</strong> 宏，而不是直接调用此例程。</p>
 <p>此例程仅适用于在 Windows Server 2003、Windows XP 和 Windows 2000 上的 RDBSS 的已检查版本。</p></td>
@@ -81,32 +81,30 @@ RDBSS 提供了许多用于日志记录的例程。 这些日志记录功能始�
 <tbody>
 <tr class="odd">
 <td align="left"><p><strong>RxLog</strong> (<em>参数</em>) </p></td>
-<td align="left"><p>在选中的生成上，此宏调用 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/rxlog/nf-rxlog-_rxlog" data-raw-source="[&lt;strong&gt;_RxLog&lt;/strong&gt;](/windows-hardware/drivers/ddi/rxlog/nf-rxlog-_rxlog)"><strong>_RxLog</strong></a> 例程。</p>
+<td align="left"><p>在选中的生成上，此宏调用 <a href="/windows-hardware/drivers/ddi/rxlog/nf-rxlog-_rxlog" data-raw-source="[&lt;strong&gt;_RxLog&lt;/strong&gt;](/windows-hardware/drivers/ddi/rxlog/nf-rxlog-_rxlog)"><strong>_RxLog</strong></a> 例程。</p>
 <p>在零售版上，此宏不执行任何操作。</p>
 <p>请注意， <strong>RxLog</strong> 的参数必须包含一对括号，以便在应关闭日志记录时允许转换为 null 调用。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>RxLogEvent</strong> (<em>_DeviceObject</em>、 <em>_OriginatorId</em>、 <em>_EventId</em>、 <em>_Status</em>) </p></td>
-<td align="left"><p>此宏调用 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/rxprocs/nf-rxprocs-rxlogeventdirect" data-raw-source="[&lt;strong&gt;RxLogEventDirect&lt;/strong&gt;](/windows-hardware/drivers/ddi/rxprocs/nf-rxprocs-rxlogeventdirect)"><strong>RxLogEventDirect</strong></a> 例程。</p></td>
+<td align="left"><p>此宏调用 <a href="/windows-hardware/drivers/ddi/rxprocs/nf-rxprocs-rxlogeventdirect" data-raw-source="[&lt;strong&gt;RxLogEventDirect&lt;/strong&gt;](/windows-hardware/drivers/ddi/rxprocs/nf-rxprocs-rxlogeventdirect)"><strong>RxLogEventDirect</strong></a> 例程。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>RxLogFailure</strong> (<em>_DeviceObject</em>、 <em>_OriginatorId</em>、 <em>_EventId</em>、 <em>_Status</em>) </p></td>
-<td align="left"><p>此宏调用 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/rxprocs/nf-rxprocs-rxlogeventdirect" data-raw-source="[&lt;strong&gt;RxLogEventDirect&lt;/strong&gt;](/windows-hardware/drivers/ddi/rxprocs/nf-rxprocs-rxlogeventdirect)"><strong>RxLogEventDirect</strong></a> 例程。</p></td>
+<td align="left"><p>此宏调用 <a href="/windows-hardware/drivers/ddi/rxprocs/nf-rxprocs-rxlogeventdirect" data-raw-source="[&lt;strong&gt;RxLogEventDirect&lt;/strong&gt;](/windows-hardware/drivers/ddi/rxprocs/nf-rxprocs-rxlogeventdirect)"><strong>RxLogEventDirect</strong></a> 例程。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>RxLogFailureWithBuffer</strong> (<em>_DeviceObject</em>、 <em>_OriginatorId</em>、 <em>_EventId</em>、 <em>_Status</em>、 <em>_Buffer</em>_Length <em>) </em></p></td>
-<td align="left"><p>此宏调用 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/rxprocs/nf-rxprocs-rxlogeventwithbufferdirect" data-raw-source="[&lt;strong&gt;RxLogEventWithBufferDirect&lt;/strong&gt;](/windows-hardware/drivers/ddi/rxprocs/nf-rxprocs-rxlogeventwithbufferdirect)"><strong>RxLogEventWithBufferDirect</strong></a> 例程。</p></td>
+<td align="left"><p>此宏调用 <a href="/windows-hardware/drivers/ddi/rxprocs/nf-rxprocs-rxlogeventwithbufferdirect" data-raw-source="[&lt;strong&gt;RxLogEventWithBufferDirect&lt;/strong&gt;](/windows-hardware/drivers/ddi/rxprocs/nf-rxprocs-rxlogeventwithbufferdirect)"><strong>RxLogEventWithBufferDirect</strong></a> 例程。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>RxLogRetail</strong> (<em>参数</em>) </p></td>
-<td align="left"><p>在选中的生成上，此宏调用 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/rxlog/nf-rxlog-_rxlog" data-raw-source="[&lt;strong&gt;_RxLog&lt;/strong&gt;](/windows-hardware/drivers/ddi/rxlog/nf-rxlog-_rxlog)"><strong>_RxLog</strong></a> 例程。</p>
+<td align="left"><p>在选中的生成上，此宏调用 <a href="/windows-hardware/drivers/ddi/rxlog/nf-rxlog-_rxlog" data-raw-source="[&lt;strong&gt;_RxLog&lt;/strong&gt;](/windows-hardware/drivers/ddi/rxlog/nf-rxlog-_rxlog)"><strong>_RxLog</strong></a> 例程。</p>
 <p>在零售版上，此宏不执行任何操作。</p>
 <p>请注意， <strong>RxLogRetail</strong> 的参数必须包含一对括号，以便在应关闭日志记录时允许转换为 null 调用。</p></td>
 </tr>
 </tbody>
 </table>
-
- 
 
  
 

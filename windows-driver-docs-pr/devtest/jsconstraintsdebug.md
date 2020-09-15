@@ -4,12 +4,12 @@ description: 'JSConstraintsDebug ( # A0) 是一个命令行工具，用于在开
 ms.assetid: 48C39A2C-7EA6-4BAA-B5E8-3B426C9697B3
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f3101d71ddc1c65fd1eee12aee714c40ed097e81
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: b597a97f4eae79d7f7a7530457cded12ec409162
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89383925"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90105130"
 ---
 # <a name="jsconstraintsdebug"></a>JSConstraintsDebug
 
@@ -27,7 +27,7 @@ JSConstraintsDebug ( # A0) 是一个命令行工具，用于在开发[V4 打印�
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>JSConstraintsDebug.exe 包含在 Microsoft Windows 驱动程序工具包 (WDK) 中。 有关获取 WDK 的信息，请参阅 <a href="https://docs.microsoft.com/windows-hardware/drivers/download-the-wdk" data-raw-source="[Windows Driver Kit downloads](../download-the-wdk.md)">Windows 驱动程序工具包下载</a>。</p></td>
+<td align="left"><p>JSConstraintsDebug.exe 包含在 Microsoft Windows 驱动程序工具包 (WDK) 中。 有关获取 WDK 的信息，请参阅 <a href="/windows-hardware/drivers/download-the-wdk" data-raw-source="[Windows Driver Kit downloads](../download-the-wdk.md)">Windows 驱动程序工具包下载</a>。</p></td>
 </tr>
 </tbody>
 </table>
@@ -169,6 +169,4 @@ JSConstraintsDebug “Contoso Printer” PrintTicket.xml Constraints.js
 ```
 JSConstraintsDebug “Contoso Printer” PrintTicket.xml PrintTicket2.xml
 ```
-
- 
 

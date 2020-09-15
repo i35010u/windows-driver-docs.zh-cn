@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 52465f0d8effd8d68a98732a45d9a660254687da
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 6b75b508506b45ede54548ae4bc718741fe56f5a
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89186543"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90104826"
 ---
 # <a name="ksproperty_mediaseeking_converttimeformat"></a>KSPROPERTY \_ MEDIASEEKING \_ CONVERTTIMEFORMAT
 
@@ -53,7 +53,7 @@ KSPROPERTY \_ MEDIASEEKING \_ CONVERTTIMEFORMAT 属性将指定的媒体时间�
 <td><p>是</p></td>
 <td><p>否</p></td>
 <td><p>无</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksp_timeformat" data-raw-source="[&lt;strong&gt;KSP_TIMEFORMAT&lt;/strong&gt;](/windows-hardware/drivers/ddi/ks/ns-ks-ksp_timeformat)"><strong>KSP_TIMEFORMAT</strong></a></p></td>
+<td><p><a href="/windows-hardware/drivers/ddi/ks/ns-ks-ksp_timeformat" data-raw-source="[&lt;strong&gt;KSP_TIMEFORMAT&lt;/strong&gt;](/windows-hardware/drivers/ddi/ks/ns-ks-ksp_timeformat)"><strong>KSP_TIMEFORMAT</strong></a></p></td>
 <td><p>LONGLONG</p></td>
 </tr>
 </tbody>
@@ -88,6 +88,4 @@ KSPROPERTY \_ MEDIASEEKING \_ CONVERTTIMEFORMAT 属性将指定的媒体时间�
 [**KSP \_ TIMEFORMAT**](/windows-hardware/drivers/ddi/ks/ns-ks-ksp_timeformat)
 
 [KSPROPSETID \_ MediaSeeking](kspropsetid-mediaseeking.md)
-
- 
 

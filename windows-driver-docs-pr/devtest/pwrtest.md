@@ -4,12 +4,12 @@ description: 电源管理测试工具 (PwrTest) 是一种测试工具，开发�
 ms.assetid: 8c242d61-6c5b-44d9-84d1-f78ef9a56a6d
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4d91424d4d0f076caa8f3731658caee9ebb57f9b
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 55bb35108bc94e01fb6e3eb21603ce356d1d7f4a
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89382311"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90105620"
 ---
 # <a name="pwrtest"></a>PwrTest
 
@@ -27,7 +27,7 @@ ms.locfileid: "89382311"
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>PwrTest.exe 包含在 Microsoft Windows 驱动程序工具包 (WDK) 中。 有关获取 WDK 的信息，请参阅 <a href="https://docs.microsoft.com/windows-hardware/drivers/download-the-wdk" data-raw-source="[Windows Driver Kit Downloads](../download-the-wdk.md)">Windows 驱动程序工具包下载</a>。</p></td>
+<td align="left"><p>PwrTest.exe 包含在 Microsoft Windows 驱动程序工具包 (WDK) 中。 有关获取 WDK 的信息，请参阅 <a href="/windows-hardware/drivers/download-the-wdk" data-raw-source="[Windows Driver Kit Downloads](../download-the-wdk.md)">Windows 驱动程序工具包下载</a>。</p></td>
 </tr>
 </tbody>
 </table>
@@ -77,6 +77,4 @@ PwrTest 功能分为不同方案。 有关这些方案的详细信息，请参�
 [预配计算机以便进行驱动程序部署和测试 (WDK 8.1)](../gettingstarted/provision-a-target-computer-wdk-8-1.md)
 
 [预配用于驱动程序部署和测试的计算机 (WDK 8) ](/previous-versions/hh698272(v=vs.85))
-
- 
 

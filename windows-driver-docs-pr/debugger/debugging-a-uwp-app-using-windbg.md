@@ -4,12 +4,12 @@ description: 您可以使用 WinDbg 调试通用 Windows 平台 (UWP) 应用程�
 ms.assetid: 1CE337AC-54C0-4EF5-A374-3ECF1D72BA60
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f932720f65c82017e0cfb3bc23c9fc249bcfd856
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 4b473708ccc5d2357b970db91f82db84e1ad069b
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89213479"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90104450"
 ---
 # <a name="debugging-a-uwp-app-using-windbg"></a>使用 WinDbg 调试 UWP 应用
 
@@ -51,7 +51,7 @@ windbg.exe -plmPackage <PLMPackageName> -plmApp <ApplicationId> [<parameters>]
 <tr class="odd">
 <td align="left">&lt;ApplicationId&gt;</td>
 <td align="left"><p>ApplicationId 位于应用程序清单文件中，可使用本主题中讨论的 querypackage 或 querypackages 命令查看。</p>
-<p>有关应用程序清单文件的详细信息，请参阅 <a href="https://docs.microsoft.com/uwp/schemas/appxpackage/appx-package-manifest" data-raw-source="[App package manifest](/uwp/schemas/appxpackage/appx-package-manifest)">应用包清单</a>。</p></td>
+<p>有关应用程序清单文件的详细信息，请参阅 <a href="/uwp/schemas/appxpackage/appx-package-manifest" data-raw-source="[App package manifest](/uwp/schemas/appxpackage/appx-package-manifest)">应用包清单</a>。</p></td>
 </tr>
 <tr class="even">
 <td align="left">[ &lt; 参数 &gt; ]</td>
@@ -150,7 +150,7 @@ windbg.exe -plmPackage <PLMPackageName> -plmBgTaskId <BackgroundTaskId>
 <tr class="odd">
 <td align="left">&lt;BackgroundTaskId&gt;</td>
 <td align="left"><p>BackgroundTaskId 可以使用 querypackages 命令查找，如下所述。</p>
-<p>有关应用程序清单文件的详细信息，请参阅 <a href="https://docs.microsoft.com/uwp/schemas/appxpackage/appx-package-manifest" data-raw-source="[App package manifest](/uwp/schemas/appxpackage/appx-package-manifest)">应用包清单</a>。</p></td>
+<p>有关应用程序清单文件的详细信息，请参阅 <a href="/uwp/schemas/appxpackage/appx-package-manifest" data-raw-source="[App package manifest](/uwp/schemas/appxpackage/appx-package-manifest)">应用包清单</a>。</p></td>
 </tr>
 </tbody>
 </table>
@@ -315,7 +315,7 @@ Createpackageapp 命令启用调试并启动 UWP 应用程序。
 <tr class="odd">
 <td align="left">&lt;ApplicationId&gt;</td>
 <td align="left"><p>可以使用 querypackage 或 querypackages 定位 ApplicationId，如本主题前面所述。</p>
-<p>有关应用程序清单文件的详细信息，请参阅 <a href="https://docs.microsoft.com/uwp/schemas/appxpackage/appx-package-manifest" data-raw-source="[App package manifest](/uwp/schemas/appxpackage/appx-package-manifest)">应用包清单</a>。</p></td>
+<p>有关应用程序清单文件的详细信息，请参阅 <a href="/uwp/schemas/appxpackage/appx-package-manifest" data-raw-source="[App package manifest](/uwp/schemas/appxpackage/appx-package-manifest)">应用包清单</a>。</p></td>
 </tr>
 <tr class="even">
 <td align="left">[ &lt; 参数 &gt; ]</td>
@@ -508,6 +508,4 @@ AppId: App
 
 
 [使用 WinDbg 进行调试](debugging-using-windbg.md)
-
- 
 

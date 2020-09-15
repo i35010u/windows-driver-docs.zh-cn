@@ -4,18 +4,18 @@ description: 如果要构建通用或移动驱动程序包，则必须使用通�
 ms.assetid: 2CBEB814-974D-4E8B-A44A-2CFAA8D4C94E
 ms.date: 04/28/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 53f8548f63b44a308a65742f9b071c2058b698f6
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: ac0268558f3cff0e097dbd28892c0615d3319e3e
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89096529"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90105718"
 ---
 # <a name="using-a-universal-inf-file"></a>使用通用 INF 文件
 
 如果要生成 [Windows 驱动](../develop/getting-started-with-windows-drivers.md) 程序包，则必须使用通用 INF 文件。 如果要生成 Windows 桌面驱动程序包，则无需使用通用 INF 文件，但建议这样做，因为性能有好处。
 
-通用 INF 文件使用适用于 Windows 驱动程序的 [INF 语法](https://docs.microsoft.com/windows-hardware/drivers/install/general-syntax-rules-for-inf-files) 的子集。 通用 INF 文件安装驱动程序并配置设备硬件，但不执行任何其他操作，例如运行共同安装程序。
+通用 INF 文件使用适用于 Windows 驱动程序的 [INF 语法](./general-syntax-rules-for-inf-files.md) 的子集。 通用 INF 文件安装驱动程序并配置设备硬件，但不执行任何其他操作，例如运行共同安装程序。
 
 ## <a name="why-is-a-universal-inf-file-required-on-non-desktop-editions-of-windows"></a>为什么 Windows 的非桌面版本上需要通用 INF 文件？
 

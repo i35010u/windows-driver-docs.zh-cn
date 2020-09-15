@@ -10,12 +10,12 @@ keywords:
 - 事件 WDK DVD 解码器
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c8c736bbba4de6de6cb0db069d8eb055a7a8fde7
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 149851d61e305425d584e042b6d663f39b64354c
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89190181"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90106098"
 ---
 # <a name="dvd-decoder-related-clock-events"></a>与 DVD 解码器相关的时钟事件
 
@@ -35,13 +35,13 @@ DVD 解码器微型驱动程序应检查是否有未完成的时钟事件。 典
 <thead>
 <tr class="header">
 <th>事件</th>
-<th>描述</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td><p>KSEVENT_CLOCK_POSITION_MARK</p></td>
-<td><p>此事件提供已超过指定的流时间的通知。 使用<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/strmini/nf-strmini-streamclassstreamnotification" data-raw-source="[&lt;strong&gt;StreamClassStreamNotification&lt;/strong&gt;](/windows-hardware/drivers/ddi/strmini/nf-strmini-streamclassstreamnotification)"><strong>StreamClassStreamNotification</strong></a>函数的<em>SignalStreamEvent</em>参数发出此事件的信号。 完成此调用后，不能将 <strong>KSEVENT_ENTRY</strong> 结构用于任何其他函数调用，包括对 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/strmini/nf-strmini-streamclassgetnextevent" data-raw-source="[&lt;strong&gt;StreamClassGetNextEvent&lt;/strong&gt;](/windows-hardware/drivers/ddi/strmini/nf-strmini-streamclassgetnextevent)"><strong>StreamClassGetNextEvent</strong></a> 函数的调用。</p></td>
+<td><p>此事件提供已超过指定的流时间的通知。 使用<a href="/windows-hardware/drivers/ddi/strmini/nf-strmini-streamclassstreamnotification" data-raw-source="[&lt;strong&gt;StreamClassStreamNotification&lt;/strong&gt;](/windows-hardware/drivers/ddi/strmini/nf-strmini-streamclassstreamnotification)"><strong>StreamClassStreamNotification</strong></a>函数的<em>SignalStreamEvent</em>参数发出此事件的信号。 完成此调用后，不能将 <strong>KSEVENT_ENTRY</strong> 结构用于任何其他函数调用，包括对 <a href="/windows-hardware/drivers/ddi/strmini/nf-strmini-streamclassgetnextevent" data-raw-source="[&lt;strong&gt;StreamClassGetNextEvent&lt;/strong&gt;](/windows-hardware/drivers/ddi/strmini/nf-strmini-streamclassgetnextevent)"><strong>StreamClassGetNextEvent</strong></a> 函数的调用。</p></td>
 </tr>
 <tr class="even">
 <td><p>KSEVENT_CLOCK_INTERVAL_MARK</p></td>
@@ -49,8 +49,6 @@ DVD 解码器微型驱动程序应检查是否有未完成的时钟事件。 典
 </tr>
 </tbody>
 </table>
-
- 
 
  
 

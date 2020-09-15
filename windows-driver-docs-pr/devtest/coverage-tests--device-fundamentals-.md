@@ -4,12 +4,12 @@ description: 设备基础覆盖率测试监视和报告各种 i/o 请求数据�
 ms.assetid: 950B124B-8B2D-4A54-AFC3-E90BBDD8D1AF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0a9aff4611a03def9824a6e0f82d4d90323d35f1
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: b2c4497a3b5b458c6c767233e9eca46ec17fb5b6
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89383729"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90106178"
 ---
 # <a name="coverage-tests-device-fundamentals"></a>覆盖范围测试（设备基础功能）
 
@@ -43,7 +43,7 @@ ms.locfileid: "89383729"
 <p><strong>测试二进制文件：</strong> DriverCoverageDisableSupport.dll</p>
 <p><strong>测试方法：</strong> DisableCoverageDataCollection</p>
 <p><strong>Parameters</strong></p>
-<p><em>DQ</em> - 请参阅 <a href="https://docs.microsoft.com/windows-hardware/drivers" data-raw-source="[Device Fundamentals Test Parameters](/windows-hardware/drivers)">设备基础测试参数</a></p></td>
+<p><em>DQ</em> - 请参阅 <a href="/windows-hardware/drivers" data-raw-source="[Device Fundamentals Test Parameters](/windows-hardware/drivers)">设备基础测试参数</a></p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><span id="Display_collected_IRP_coverage_data._"></span><span id="display_collected_irp_coverage_data._"></span><span id="DISPLAY_COLLECTED_IRP_COVERAGE_DATA._"></span>显示收集的 IRP 覆盖率数据。</p></td>
@@ -65,7 +65,7 @@ ms.locfileid: "89383729"
 <p><strong>测试二进制文件：</strong> DriverCoverageEnableSupport.dll</p>
 <p><strong>测试方法：</strong> EnableCoverageDataCollection</p>
 <p><strong>参数：</strong>无</p>
-<p><em>DQ</em> - 请参阅 <a href="https://docs.microsoft.com/windows-hardware/drivers" data-raw-source="[Device Fundamentals Test Parameters](/windows-hardware/drivers)">设备基础测试参数</a></p></td>
+<p><em>DQ</em> - 请参阅 <a href="/windows-hardware/drivers" data-raw-source="[Device Fundamentals Test Parameters](/windows-hardware/drivers)">设备基础测试参数</a></p></td>
 </tr>
 </tbody>
 </table>
@@ -90,6 +90,4 @@ ms.locfileid: "89383729"
 [Provided WDTF Simple I/O plug-ins](../wdtf/provided-wdtf-simpleio-plug-ins.md)（提供的 WDTF 简单 I/O 插件）
 
 [如何在运行时通过命令提示符测试驱动程序](/windows-hardware/drivers)
-
- 
 

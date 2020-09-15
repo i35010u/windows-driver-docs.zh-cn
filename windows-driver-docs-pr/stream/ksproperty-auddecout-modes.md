@@ -14,19 +14,19 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 58b1b02422f4f395d267eb421e48bd34dae29e33
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: f7a8eed7b74ed6f73aa44eaed4469d802cd7c61d
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89191813"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90105060"
 ---
 # <a name="ksproperty_auddecout_modes"></a>KSPROPERTY \_ AUDDECOUT \_ 模式
 
 
 KSPROPERTY \_ AUDDECOUT \_ 模式属性返回音频解码器的可用输出模式。
 
-此属性是只读的。
+此属性为只读。
 
 ## <span id="ddk_ksproperty_auddecout_modes_ks"></span><span id="DDK_KSPROPERTY_AUDDECOUT_MODES_KS"></span>
 
@@ -55,7 +55,7 @@ KSPROPERTY \_ AUDDECOUT \_ 模式属性返回音频解码器的可用输出模�
 <td><p>是</p></td>
 <td><p>否</p></td>
 <td><p>Pin</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)"><strong>KSPROPERTY</strong></a></p></td>
+<td><p><a href="/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)"><strong>KSPROPERTY</strong></a></p></td>
 <td><p>DWORD</p></td>
 </tr>
 </tbody>
@@ -65,7 +65,7 @@ KSPROPERTY \_ AUDDECOUT \_ 模式属性返回音频解码器的可用输出模�
 
 ) 操作数据 (的属性值是一个 DWORD 值，它表示音频解码器支持的音频输出模式的位掩码。
 
-<a name="remarks"></a>注解
+<a name="remarks"></a>备注
 -------
 
 属性值可以包含在 *Ksmedia* 头文件中定义的以下常量的按位 "或"：
@@ -89,16 +89,14 @@ KSPROPERTY \_ AUDDECOUT \_ 模式属性返回音频解码器的可用输出模�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Header</p></td>
+<td><p>标头</p></td>
 <td>Ksmedia (包含 Ksmedia) </td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
 [**KSPROPERTY \_ AUDDECOUT \_ 当前 \_ 模式**](ksproperty-auddecout-cur-mode.md)
-
- 
 

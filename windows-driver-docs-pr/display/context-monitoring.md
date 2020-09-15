@@ -4,12 +4,12 @@ description: 监视的隔离对象是一种高级的防护防护形式，它允�
 ms.assetid: B593FC24-3F8B-4C8A-BBF9-8EF88B748536
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 48606eb24c6582761da43d83bfed0be8c90217cb
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: e4364fef87b546dfdf9504c12da94d1eeb219dfd
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89064372"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90104702"
 ---
 # <a name="context-monitoring"></a>上下文监视
 
@@ -35,7 +35,7 @@ ms.locfileid: "89064372"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">项</th>
+<th align="left">Item</th>
 <th align="left">说明</th>
 </tr>
 </thead>
@@ -46,7 +46,7 @@ ms.locfileid: "89064372"
 </tr>
 <tr class="even">
 <td align="left"><p><span id="FenceValueCPUVirtualAddress"></span><span id="fencevaluecpuvirtualaddress"></span><span id="FENCEVALUECPUVIRTUALADDRESS"></span>FenceValueCPUVirtualAddress</p></td>
-<td align="left"><p>用于 CPU (64 位) 的防护值的只读映射。 此地址是从支持 i/o 聚合的平台上的 CPU （在其他平台上，UC (未缓存) ）的角度，映射 WB (可缓存的) 。 只需读取此内存位置，即可让 CPU 跟踪围栏进度。 不允许 CPU 写入此内存位置。 若要向该防护发出信号，需要 CPU 来调用 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_signalsynchronizationobjectfromcpucb" data-raw-source="[&lt;em&gt;SignalSynchronizationObjectFromCpuCb&lt;/em&gt;](/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_signalsynchronizationobjectfromcpucb)"><em>SignalSynchronizationObjectFromCpuCb</em></a>。</p>
+<td align="left"><p>用于 CPU (64 位) 的防护值的只读映射。 此地址是从支持 i/o 聚合的平台上的 CPU （在其他平台上，UC (未缓存) ）的角度，映射 WB (可缓存的) 。 只需读取此内存位置，即可让 CPU 跟踪围栏进度。 不允许 CPU 写入此内存位置。 若要向该防护发出信号，需要 CPU 来调用 <a href="/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_signalsynchronizationobjectfromcpucb" data-raw-source="[&lt;em&gt;SignalSynchronizationObjectFromCpuCb&lt;/em&gt;](/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_signalsynchronizationobjectfromcpucb)"><em>SignalSynchronizationObjectFromCpuCb</em></a>。</p>
 <p>支持 <em>IoMmu</em> 的适配器应使用此地址来访问 GPU。 在这种情况下，该地址将映射为读写。</p></td>
 </tr>
 <tr class="odd">
@@ -83,6 +83,4 @@ ms.locfileid: "89064372"
 
 
 添加了新的 [*WaitForSynchronizationObjectFromCpuCb*](/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_waitforsynchronizationobjectfromcpucb) ，以允许 CPU 等待监视的防护对象。 提供两种形式的等待操作。 在第一种形式中， *WaitForSynchronizationObjectFromCpuCb* 回调会阻止，直到满足等待。 在第二种形式中， *WaitForSynchronizationObjectFromCpuCb* 采用一个 CPU 事件句柄，一旦满足等待条件，就会发出信号。
-
- 
 

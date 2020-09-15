@@ -3,12 +3,12 @@ description: 本主题讨论静态流功能，并说明 USB 客户端驱动程�
 title: 如何打开和关闭 USB 大容量终结点中的静态流
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b13255096c92715d00acc43d9b653781b732199f
-ms.sourcegitcommit: 937974aa9bbe0262a7ffe9631593fab48c4e7492
+ms.openlocfilehash: d90a7dc9c24c01b310edbf2c85ec685afd12f957
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "90010549"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90104394"
 ---
 # <a name="how-to-open-and-close-static-streams-in-a-usb-bulk-endpoint"></a>如何打开和关闭 USB 大容量终结点中的静态流
 
@@ -39,7 +39,7 @@ Windows 8 中 Microsoft 提供的 USB 驱动程序堆栈支持多个流。 这�
 
   调用会检索框架的 USB 目标设备对象的 WDFUSBDEVICE 句柄。 为了对打开的流进行后续调用，需要该句柄。 通常，客户端驱动程序会在驱动程序的 [**EVT_WDF_DEVICE_PREPARE_HARDWARE**](/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_prepare_hardware) 事件回调例程中注册自身。
 
-  <strong>WDM 驱动程序： * * 调用 [</strong>USBD \_ CreateHandle * *](<https://msdn.microsoft.com/library/windows/hardware/hh406241>) 例程，使用 USB 驱动程序堆栈获取驱动程序注册的 USBD 句柄。
+  <strong>WDM 驱动程序： * * 调用 [</strong>USBD \_ CreateHandle * *](/windows-hardware/drivers/ddi/usbdlib/nf-usbdlib-usbd_createhandle) 例程，使用 USB 驱动程序堆栈获取驱动程序注册的 USBD 句柄。
 
 - 配置了设备，并为支持流的大容量终结点获取了 WDFUSBPIPE 管道句柄。 若要获取管道句柄，请对所选配置中接口的当前替代设置调用 [**WdfUsbInterfaceGetConfiguredPipe**](/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbinterfacegetconfiguredpipe) 方法。
 
@@ -53,13 +53,13 @@ Windows 8 中 Microsoft 提供的 USB 驱动程序堆栈支持多个流。 这�
 <a href="" id="open-streams"></a>
 1. 通过调用 [**WdfUsbTargetDeviceQueryUsbCapability**](/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetdevicequeryusbcapability) 方法，确定基础 USB 驱动程序堆栈和主机控制器是否支持静态流功能。 通常，客户端驱动程序会在驱动程序的 [**EVT_WDF_DEVICE_PREPARE_HARDWARE**](/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_prepare_hardware) 事件回调例程中调用例程。
 
-   <strong>WDM 驱动程序： * * 调用 [</strong>USBD \_ QueryUsbCapability <strong>](<https://msdn.microsoft.com/library/windows/hardware/hh406230>) 例程。通常，驱动程序会查询要在驱动程序的启动设备例程 ([</strong> IRP \_ MN \_ start \_ device <strong>](<https://msdn.microsoft.com/library/windows/hardware/ff551749>)) 中使用的功能。有关代码示例，请参阅 * * USBD \_ QueryUsbCapability</strong>。
+   <strong>WDM 驱动程序： * * 调用 [</strong>USBD \_ QueryUsbCapability <strong>](/previous-versions/windows/hardware/drivers/hh406230(v=vs.85)) 例程。通常，驱动程序会查询要在驱动程序的启动设备例程 ([</strong> IRP \_ MN \_ start \_ device <strong>](../kernel/irp-mn-start-device.md)) 中使用的功能。有关代码示例，请参阅 * * USBD \_ QueryUsbCapability</strong>。
 
    提供以下信息：
 
    - 对 [**WdfUsbTargetDeviceCreateWithParameters**](/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetdevicecreatewithparameters)的前一次调用中检索的 USB 设备对象的句柄，用于客户端驱动程序注册。
 
-     <strong>WDM 驱动程序： * * 传递在上一次调用中检索到 [</strong> 的 USBD 句柄USBD \_ CreateHandle * *](<https://msdn.microsoft.com/library/windows/hardware/hh406241>)。
+     <strong>WDM 驱动程序： * * 传递在上一次调用中检索到 [</strong> 的 USBD 句柄USBD \_ CreateHandle * *](/windows-hardware/drivers/ddi/usbdlib/nf-usbdlib-usbd_createhandle)。
 
      如果客户端驱动程序要使用特定功能，则驱动程序必须首先查询基础 USB 驱动程序堆栈，以确定驱动程序堆栈和主机控制器是否支持该功能。 如果支持此功能，则该驱动程序应发送请求以使用功能。 某些请求需要 URBs，例如 (步骤 5) 中讨论的流功能。 对于这些请求，请确保使用相同的句柄来查询功能和分配 URBs。 这是因为驱动程序堆栈使用句柄来跟踪驱动程序可以使用的支持的功能。
 
@@ -80,7 +80,7 @@ Windows 8 中 Microsoft 提供的 USB 驱动程序堆栈支持多个流。 这�
 4. 分配包含*n*个元素的[**USBD \_ 流 \_ 信息**](/windows-hardware/drivers/ddi/usb/ns-usb-_usbd_stream_information)结构的数组，其中*n*是要打开的流的数目。 当驱动程序使用完流之后，客户端驱动程序负责释放此数组。
 5. 通过调用 [**WdfUsbTargetDeviceCreateUrb**](/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetdevicecreateurb) 方法为打开流请求分配 URB。 如果调用成功完成，则该方法将检索 WDF 内存对象和由 USB 驱动程序堆栈分配的 [**URB**](/windows-hardware/drivers/ddi/usb/ns-usb-_urb) 结构的地址。
 
-   <strong>WDM 驱动程序： * * 调用 [</strong>USBD \_ UrbAllocate * *](<https://msdn.microsoft.com/library/windows/hardware/hh406250>) 例程。
+   <strong>WDM 驱动程序： * * 调用 [</strong>USBD \_ UrbAllocate * *](/windows-hardware/drivers/ddi/usbdlib/nf-usbdlib-usbd_urballocate) 例程。
 
 6. 为打开流请求设置 URB 的格式。 URB 使用[** \_ URB \_ 开放式 \_ 静态 \_ 流**](/windows-hardware/drivers/ddi/usb/ns-usb-_urb_open_static_streams)结构定义请求。 若要设置 URB 的格式，请执行以下操作：
    -   终结点的 USBD 管道句柄。 如果有一个 WDF 管道对象，则可以通过调用 [**WdfUsbTargetPipeWdmGetPipeHandle**](/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetpipewdmgetpipehandle) 方法获取 USBD 管道句柄。
@@ -126,7 +126,7 @@ Windows 8 中 Microsoft 提供的 USB 驱动程序堆栈支持多个流。 这�
 3.  通过调用 [**WdfUsbTargetPipeFormatRequestForUrb**](/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetpipeformatrequestforurb) 方法来设置 WDF 请求对象的格式。 在调用中，指定包含数据传输 URB 的 WDF 内存对象。 在步骤1中分配了内存对象。
 4.  通过调用 [**WdfRequestSend**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestsend) 或 [**WDFUSBTARGETPIPESENDURBSYNCHRONOUSLY**](/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetpipesendurbsynchronously)，将 URB 作为 WDF 请求发送。 如果调用 **WdfRequestSend**，则必须通过调用 [**WdfRequestSetCompletionRoutine**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestsetcompletionroutine) 来指定完成例程，以便在异步操作完成时，客户端驱动程序可以获得通知。 必须在完成例程中释放数据传输 URB。
 
-<strong>WDM 驱动程序： * * 通过调用 [</strong> 分配 URBUSBD \_ UrbAllocate <strong>](<https://msdn.microsoft.com/library/windows/hardware/hh406250>) 并将其格式化为大容量传输 (参阅 [</strong> \_ URB \_ bulk \_ 或 \_ 中断 \_ 传输 <strong>](<https://msdn.microsoft.com/library/windows/hardware/ff540352>)) 。若要设置 URB 的格式，可以 [</strong> 手动调用 UsbBuildInterruptOrBulkTransferRequest <strong>](<https://msdn.microsoft.com/library/windows/hardware/ff538953>) 或设置 URB 结构的格式。在 URB 的 * * PipeHandle 成员中指定流的句柄</strong>。
+<strong>WDM 驱动程序： * * 通过调用 [</strong> 分配 URBUSBD \_ UrbAllocate <strong>](/windows-hardware/drivers/ddi/usbdlib/nf-usbdlib-usbd_urballocate) 并将其格式化为大容量传输 (参阅 [</strong> \_ URB \_ bulk \_ 或 \_ 中断 \_ 传输 <strong>](/windows-hardware/drivers/ddi/usb/ns-usb-_urb_bulk_or_interrupt_transfer)) 。若要设置 URB 的格式，可以 [</strong> 手动调用 UsbBuildInterruptOrBulkTransferRequest <strong>](/windows-hardware/drivers/ddi/usbdlib/nf-usbdlib-usbbuildinterruptorbulktransferrequest) 或设置 URB 结构的格式。在 URB 的 * * PipeHandle 成员中指定流的句柄</strong>。
 
 ### <a name="how-to-close-static-streams"></a>如何关闭静态流
 

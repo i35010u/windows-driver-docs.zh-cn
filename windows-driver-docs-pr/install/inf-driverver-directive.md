@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 789d92b463171d35bc52ca7106a80679acab918d
-ms.sourcegitcommit: 963ee193bbc704ac8c03edb3e0e26ef32587ce64
+ms.openlocfilehash: a6086829cefd8fb3ffb03f12c7c9892621cc4e2f
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89559300"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90105344"
 ---
 # <a name="inf-driverver-directive"></a>INF DriverVer 指令
 
@@ -44,7 +44,7 @@ DriverVer=mm/dd/yyyy,w.x.y.z
 
 每个 *w*、 *x*、 *y*和 *z* 都必须是大于或等于零且小于65535的整数。
 
-对于 Windows XP SP1、Windows Server 2003 和更高版本的 Windows，安装程序也将此值与驱动程序的排名和日期结合 *使用* ，以选择设备的驱动程序。 有关详细信息，请参阅 [Windows 如何选择驱动程序](how-setup-selects-drivers.md)。
+对于 Windows XP SP1、Windows Server 2003 和更高版本的 Windows，安装程序也将此值与驱动程序的排名和日期结合 *使用* ，以选择设备的驱动程序。 有关详细信息，请参阅 [Windows 如何选择驱动程序](./how-windows-selects-a-driver-for-a-device.md)。
 
 以下点适用于 Windows 2000 和 Windows XP 的此值：
 
@@ -71,14 +71,7 @@ DriverVer=09/28/1999,5.00.2136.1
 
 [***DDInstall***](inf-ddinstall-section.md)
 
-[**版本**](inf-version-section.md)
+[**Version**](inf-version-section.md)
 
  
-
- 
-
-
-
-
-
 

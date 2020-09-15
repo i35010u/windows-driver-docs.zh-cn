@@ -4,12 +4,12 @@ description: 'XPS 转换器 ( # A0) 是一个命令行工具，用于将 XML 纸
 ms.assetid: A51F818E-AECD-4EBD-99AC-F3BD026C19D6
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d0f829afab3d976464a36a61aa151aebf9bbeb50
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: d78be9def3508eaf2312aaa514dbb6bf1bef8786
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89384259"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90105550"
 ---
 # <a name="xpsconverter"></a>XpsConverter
 
@@ -27,7 +27,7 @@ XPS 转换器 ( # A0) 是一个命令行工具，用于将 XML 纸张规格 (XPS
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>XpsConverter.exe 包含在 Microsoft Windows 驱动程序工具包 (WDK) 中。 有关获取 WDK 的信息，请参阅 <a href="https://docs.microsoft.com/windows-hardware/drivers/download-the-wdk" data-raw-source="[Windows Driver Kit Downloads](../download-the-wdk.md)">Windows 驱动程序工具包下载</a>。</p></td>
+<td align="left"><p>XpsConverter.exe 包含在 Microsoft Windows 驱动程序工具包 (WDK) 中。 有关获取 WDK 的信息，请参阅 <a href="/windows-hardware/drivers/download-the-wdk" data-raw-source="[Windows Driver Kit Downloads](../download-the-wdk.md)">Windows 驱动程序工具包下载</a>。</p></td>
 </tr>
 </tbody>
 </table>
@@ -131,6 +131,4 @@ XpsConverter /OpenXPS /InputFile=MyDoc.xps /OutputFile=ConvertedMyDoc.oxps  logg
 
 
 **isXPS.exe（isXPS 合规性工具）**
-
- 
 

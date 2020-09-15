@@ -4,12 +4,12 @@ description: 检索设备实例属性值
 ms.assetid: 4cec9132-5a28-492d-bbb1-39e388413ad0
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 52be5009d95e484af5cda8c70fe20cb6188709ac
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 5ad897a7ece839c633bb2e38add52857c6b727d5
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89095629"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90105798"
 ---
 # <a name="retrieving-a-device-instance-property-value"></a>检索设备实例属性值
 
@@ -19,7 +19,7 @@ ms.locfileid: "89095629"
 1.  调用 [**SetupDiGetDeviceProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw) 以确定属性值的数据类型和大小（以字节为单位）。 提供以下参数值：
 
     -   将 *DeviceInfoSet* 设置为设备信息集的句柄，其中包含要为其检索属性的设备实例。
-    -   将 *DeviceInfoData* 设置为指向 [**SP_DEVINFO_DATA**](/windows/desktop/api/setupapi/ns-setupapi-_sp_devinfo_data) 结构的指针，该结构表示要为其检索属性的设备实例。
+    -   将 *DeviceInfoData* 设置为指向 [**SP_DEVINFO_DATA**](/windows/win32/api/setupapi/ns-setupapi-sp_devinfo_data) 结构的指针，该结构表示要为其检索属性的设备实例。
     -   将 *PropertyKey* 设置为指向表示属性的 [**DEVPROPKEY**](./devpropkey.md) 结构的指针。
     -   将 *PropertyType* 设置为指向 [**DEVPROPTYPE**](/previous-versions/ff543546(v=vs.85))类型的变量的指针。
     -   将 *PropertyBuffer* 设置为 **NULL**。

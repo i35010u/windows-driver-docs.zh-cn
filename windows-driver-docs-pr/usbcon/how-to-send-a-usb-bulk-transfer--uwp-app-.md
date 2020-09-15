@@ -3,12 +3,12 @@ description: 了解 USB 批量传输，以及如何从 UWP 应用启动传输请
 title: 如何将发送 USB 大容量传输请求（UWP 应用）
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3d4dbb3fc1bad258f7a271174adfc81c64177da2
-ms.sourcegitcommit: 937974aa9bbe0262a7ffe9631593fab48c4e7492
+ms.openlocfilehash: a5d6e5efb54f7b32f0c0d773dfd58f6583c36b11
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "90010546"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90104158"
 ---
 # <a name="how-to-send-a-usb-bulk-transfer-request-uwp-app"></a>如何将发送 USB 大容量传输请求（UWP 应用）
 
@@ -22,7 +22,7 @@ USB 全速、高速和 SuperSpeed 设备可以支持大容量终结点。 这些
 
 应用还可以通过设置某些策略标志来修改管道的行为。 例如，对于读取请求，可以设置一个标志，该标志自动清除管道上的隔栏条件。 有关这些标志的信息，请参阅 [**UsbReadOptions**](/uwp/api/Windows.Devices.Usb.UsbReadOptions) 和 [**UsbWriteOptions**](/uwp/api/Windows.Devices.Usb.UsbWriteOptions)。
 
-## <a name="before-you-start"></a>准备工作
+## <a name="before-you-start"></a>开始之前
 
 * 必须打开设备并获得 [**UsbDevice**](/uwp/api/Windows.Devices.Usb.UsbDevice) 对象。 阅读 [如何)  (UWP 应用连接到 USB 设备 ](how-to-connect-to-a-usb-device--uwp-app-.md)。
 * 在 [CustomUsbDeviceAccess 示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CustomUsbDeviceAccess)，Scenario4 BulkPipes 文件中，可以看到本主题中所示的完整代码 \_ 。
@@ -41,36 +41,36 @@ USB 全速、高速和 SuperSpeed 设备可以支持大容量终结点。 这些
   <tbody>
     <tr>
       <tr>
-      <td rowspan="5">向大容量管道发送数据，获取对 <a href="https://docs.microsoft.com/uwp/api/Windows.Devices.Usb.UsbBulkOutPipe"><strong>UsbBulkOutPipe</strong></a>的引用。</td>
+      <td rowspan="5">向大容量管道发送数据，获取对 <a href="/uwp/api/Windows.Devices.Usb.UsbBulkOutPipe"><strong>UsbBulkOutPipe</strong></a>的引用。</td>
       </tr>
       <tr>
-      <td><a href="https://docs.microsoft.com/uwp/api/Windows.Devices.Usb.UsbInterface#Windows_Devices_Usb_UsbInterface_BulkOutPipes"><strong>UsbDevice. DefaultInterface. BulkOutPipes [n]</strong></a> 如果设备配置公开了一个 USB 接口。</td>
+      <td><a href="/uwp/api/Windows.Devices.Usb.UsbInterface#Windows_Devices_Usb_UsbInterface_BulkOutPipes"><strong>UsbDevice. DefaultInterface. BulkOutPipes [n]</strong></a> 如果设备配置公开了一个 USB 接口。</td>
       </tr>
       <tr>
-      <td><a href="https://docs.microsoft.com/uwp/api/Windows.Devices.Usb.UsbInterface#Windows_Devices_Usb_UsbInterface_BulkOutPipes"><strong>UsbDevice.Configu。UsbInterfaces [m]。BulkOutPipes [n]</strong></a>) 用于枚举设备支持的多个接口中的批量输出管道。</td>
+      <td><a href="/uwp/api/Windows.Devices.Usb.UsbInterface#Windows_Devices_Usb_UsbInterface_BulkOutPipes"><strong>UsbDevice.Configu。UsbInterfaces [m]。BulkOutPipes [n]</strong></a>) 用于枚举设备支持的多个接口中的批量输出管道。</td>
       </tr>
-       <td><a href="https://docs.microsoft.com/uwp/api/Windows.Devices.Usb.UsbInterruptOutEndpointDescriptor#Windows_Devices_Usb_UsbInterruptOutEndpointDescriptor_Pipe"><strong>UsbInterface. InterfaceSettings \[ m \] 。BulkOutEndpoints [n]。</strong></a> 用于枚举接口中设置所定义的批量输出管道的管道。</td>
+       <td><a href="/uwp/api/Windows.Devices.Usb.UsbInterruptOutEndpointDescriptor#Windows_Devices_Usb_UsbInterruptOutEndpointDescriptor_Pipe"><strong>UsbInterface. InterfaceSettings \[ m \] 。BulkOutEndpoints [n]。</strong></a> 用于枚举接口中设置所定义的批量输出管道的管道。</td>
       </tr>
       <tr>
-      <td>用于从大容量终结点的终结点描述符获取管道对象的<a href="https://docs.microsoft.com/uwp/api/Windows.Devices.Usb.UsbInterruptOutEndpointDescriptor#Windows_Devices_Usb_UsbInterruptOutEndpointDescriptor_Pipe"><strong>UsbEndpointDescriptor. AsBulkOutEndpointDescriptor。</strong></a>
+      <td>用于从大容量终结点的终结点描述符获取管道对象的<a href="/uwp/api/Windows.Devices.Usb.UsbInterruptOutEndpointDescriptor#Windows_Devices_Usb_UsbInterruptOutEndpointDescriptor_Pipe"><strong>UsbEndpointDescriptor. AsBulkOutEndpointDescriptor。</strong></a>
       </td>
       </tr>
     </tr>
     <tr>
       <tr>
-        <td rowspan="5">接收批量管道中的数据，你可以获取 <a href="https://docs.microsoft.com/uwp/api/Windows.Devices.Usb.UsbBulkInPipe"><strong>UsbBulkInPipe</strong></a> 对象</td>
+        <td rowspan="5">接收批量管道中的数据，你可以获取 <a href="/uwp/api/Windows.Devices.Usb.UsbBulkInPipe"><strong>UsbBulkInPipe</strong></a> 对象</td>
       </tr>
        <tr>
-        <td><a href="https://docs.microsoft.com/uwp/api/Windows.Devices.Usb.UsbInterface#Windows_Devices_Usb_UsbInterface_BulkInPipes"><strong>UsbDevice. DefaultInterface. BulkInPipes [n]</strong></a> 如果设备配置公开了一个 USB 接口。</td>
+        <td><a href="/uwp/api/Windows.Devices.Usb.UsbInterface#Windows_Devices_Usb_UsbInterface_BulkInPipes"><strong>UsbDevice. DefaultInterface. BulkInPipes [n]</strong></a> 如果设备配置公开了一个 USB 接口。</td>
        </tr>
        <tr>
-       <td><a href="https://docs.microsoft.com/uwp/api/Windows.Devices.Usb.UsbInterface#Windows_Devices_Usb_UsbInterface_BulkInPipes"><strong>UsbDevice.Configu。UsbInterfaces [m]。BulkInPipes [n]</strong></a> 用于枚举设备支持的多个接口中的管道。</td>
+       <td><a href="/uwp/api/Windows.Devices.Usb.UsbInterface#Windows_Devices_Usb_UsbInterface_BulkInPipes"><strong>UsbDevice.Configu。UsbInterfaces [m]。BulkInPipes [n]</strong></a> 用于枚举设备支持的多个接口中的管道。</td>
        </tr>
        <tr>
-       <td><a href="https://docs.microsoft.com/uwp/api/Windows.Devices.Usb.UsbBulkInEndpointDescriptor#Windows_Devices_Usb_UsbBulkInEndpointDescriptor_Pipe"><strong>UsbInterface. InterfaceSettings [m]。BulkInEndpoints [n]。</strong></a> 用于枚举由接口中的设置定义的管道的管道。</td>
+       <td><a href="/uwp/api/Windows.Devices.Usb.UsbBulkInEndpointDescriptor#Windows_Devices_Usb_UsbBulkInEndpointDescriptor_Pipe"><strong>UsbInterface. InterfaceSettings [m]。BulkInEndpoints [n]。</strong></a> 用于枚举由接口中的设置定义的管道的管道。</td>
        </tr>
        <tr>
-        <td>用于从大容量的终结点的终结点描述符获取管道对象的<a href="https://docs.microsoft.com/uwp/api/Windows.Devices.Usb.UsbBulkInEndpointDescriptor#Windows_Devices_Usb_UsbBulkInEndpointDescriptor_Pipe"><strong>UsbEndpointDescriptor AsBulkInEndpointDescriptor。</strong></a></td>
+        <td>用于从大容量的终结点的终结点描述符获取管道对象的<a href="/uwp/api/Windows.Devices.Usb.UsbBulkInEndpointDescriptor#Windows_Devices_Usb_UsbBulkInEndpointDescriptor_Pipe"><strong>UsbEndpointDescriptor AsBulkInEndpointDescriptor。</strong></a></td>
       </tr>
     </tr>
   </tbody>
@@ -104,9 +104,9 @@ USB 全速、高速和 SuperSpeed 设备可以支持大容量终结点。 这些
 <tr class="even">
 <td><p>发送多个具有最高效率的读取请求。 通过跳过错误检查来提高性能。</p></td>
 <td><strong>OverrideAutomaticBufferManagement</strong>
-<p>数据请求可以分为一个或多个传输，其中每个传输包含一定数量的被称为 <em>最大传输大小</em>的字节数。 对于多个传输，由于驱动程序执行的错误检查，导致两次传输排队可能会延迟。 此标志将跳过该错误检查。 若要获取最大传输大小，请使用 <a href="https://docs.microsoft.com/uwp/api/Windows.Devices.Usb.UsbBulkInPipe#Windows_Devices_Usb_UsbBulkInPipe_MaxTransferSizeBytes" data-raw-source="[&lt;strong&gt;UsbBulkInPipe.MaxTransferSizeBytes&lt;/strong&gt;](/uwp/api/Windows.Devices.Usb.UsbBulkInPipe#Windows_Devices_Usb_UsbBulkInPipe_MaxTransferSizeBytes)"><strong>UsbBulkInPipe. MaxTransferSizeBytes</strong></a> 属性。 如果请求大小为 <strong>UsbBulkInPipe. MaxTransferSizeBytes</strong>，则必须设置此标志。 注意：</p>
+<p>数据请求可以分为一个或多个传输，其中每个传输包含一定数量的被称为 <em>最大传输大小</em>的字节数。 对于多个传输，由于驱动程序执行的错误检查，导致两次传输排队可能会延迟。 此标志将跳过该错误检查。 若要获取最大传输大小，请使用 <a href="/uwp/api/Windows.Devices.Usb.UsbBulkInPipe#Windows_Devices_Usb_UsbBulkInPipe_MaxTransferSizeBytes" data-raw-source="[&lt;strong&gt;UsbBulkInPipe.MaxTransferSizeBytes&lt;/strong&gt;](/uwp/api/Windows.Devices.Usb.UsbBulkInPipe#Windows_Devices_Usb_UsbBulkInPipe_MaxTransferSizeBytes)"><strong>UsbBulkInPipe. MaxTransferSizeBytes</strong></a> 属性。 如果请求大小为 <strong>UsbBulkInPipe. MaxTransferSizeBytes</strong>，则必须设置此标志。 注意：</p>
 <p></p>
-<div class="alert">重要说明<br/><p>如果设置此标志，则必须在管道的最大数据包大小的倍数中请求数据。 该信息存储在终结点描述符中。 大小取决于设备的总线速度。 对于全速、高速和 SuperSpeed，最大数据包大小分别为64、512和1024字节。 若要获取该值，请使用 <a href="https://docs.microsoft.com/uwp/api/Windows.Devices.Usb.UsbBulkInEndpointDescriptor#Windows_Devices_Usb_UsbBulkInEndpointDescriptor_MaxPacketSize" data-raw-source="[&lt;strong&gt;UsbBulkInPipe.EndpointDescriptor.MaxPacketSize&lt;/strong&gt;](/uwp/api/Windows.Devices.Usb.UsbBulkInEndpointDescriptor#Windows_Devices_Usb_UsbBulkInEndpointDescriptor_MaxPacketSize)"><strong>UsbBulkInPipe. EndpointDescriptor. MaxPacketSize</strong></a> 属性。</p>
+<div class="alert">重要说明<br/><p>如果设置此标志，则必须在管道的最大数据包大小的倍数中请求数据。 该信息存储在终结点描述符中。 大小取决于设备的总线速度。 对于全速、高速和 SuperSpeed，最大数据包大小分别为64、512和1024字节。 若要获取该值，请使用 <a href="/uwp/api/Windows.Devices.Usb.UsbBulkInEndpointDescriptor#Windows_Devices_Usb_UsbBulkInEndpointDescriptor_MaxPacketSize" data-raw-source="[&lt;strong&gt;UsbBulkInPipe.EndpointDescriptor.MaxPacketSize&lt;/strong&gt;](/uwp/api/Windows.Devices.Usb.UsbBulkInEndpointDescriptor#Windows_Devices_Usb_UsbBulkInEndpointDescriptor_MaxPacketSize)"><strong>UsbBulkInPipe. EndpointDescriptor. MaxPacketSize</strong></a> 属性。</p>
 </div>
 <div>
 

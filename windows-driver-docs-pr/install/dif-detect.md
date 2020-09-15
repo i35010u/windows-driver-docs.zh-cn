@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 91dbaeb5b2a0e42429fb91f33219477b2b7d1d3f
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: bdd60d0b7937df5479ebf8ceb20d93d1a4d6cfdd
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89097379"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90104890"
 ---
 # <a name="dif_detect"></a>DIF_DETECT
 
@@ -142,7 +142,7 @@ DIF_DETECT 请求指示安装程序检测特定类的非 PnP 设备，并将设�
 
 [**SP_DETECTDEVICE_PARAMS**](/windows/desktop/api/setupapi/ns-setupapi-_sp_detectdevice_params)
 
-[**SP_DEVINSTALL_PARAMS**](/windows/desktop/api/setupapi/ns-setupapi-_sp_devinstall_params_a)
+[**SP_DEVINSTALL_PARAMS**](/windows/win32/api/setupapi/ns-setupapi-sp_devinstall_params_a)
 
  
 

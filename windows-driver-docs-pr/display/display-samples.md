@@ -4,12 +4,12 @@ description: 显示示例
 ms.assetid: 4595369c-20fa-4c8d-ad1d-aada97ab9fc2
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3e3918a841f55e03feeae117b372348b3c6fad80
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: f534a79962b19b16dd72761a0b0e7d8b5edaa5dd
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89064854"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90105894"
 ---
 # <a name="display-samples"></a>显示示例
 
@@ -58,7 +58,7 @@ Windows 8 Windows 7 Windows Server 2008 Windows Vista Windows Server 2003 Window
 Windows 8 Windows 7 Windows Server 2008 Windows Vista Windows Server 2003 Windows XP</td>
 <td align="left"><p>否</p></td>
 <td align="left"><p>否</p></td>
-<td align="left"><p>演示如何实现 <a href="https://docs.microsoft.com/windows-hardware/drivers/display/cpixel-support-methods-for-lightweight-mip-maps" data-raw-source="[CPixel](./cpixel-support-methods-for-lightweight-mip-maps.md)">CPixel</a> 类。</p></td>
+<td align="left"><p>演示如何实现 <a href="/windows-hardware/drivers/display/cpixel-support-methods-for-lightweight-mip-maps" data-raw-source="[CPixel](./cpixel-support-methods-for-lightweight-mip-maps.md)">CPixel</a> 类。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>镜像的镜像驱动程序 GDI 内容</p></td>
@@ -88,8 +88,6 @@ Windows 7 Windows Server 2008 Windows Vista</td>
 </tr>
 </tbody>
 </table>
-
- 
 
  
 

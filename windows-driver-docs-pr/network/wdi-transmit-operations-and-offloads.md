@@ -4,12 +4,12 @@ description: WDI 在两个 Tx 模式下的端口队列和 PeerTID 队列之一�
 ms.assetid: 9ADBDAD5-4AFA-4AFA-A829-96EB28CEBAA1
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9a369d8fb65079df2b8d5cd1a9d616ffa1cab3aa
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 955276cba436e3f0323b92c3966583dabd8b25e8
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89207121"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90104856"
 ---
 # <a name="wdi-transmit-operations-and-offloads"></a>WDI 传输操作和卸载
 
@@ -37,7 +37,7 @@ WDI 以两种 Tx 模式之一运行：端口队列和 PeerTID 队列。 目标�
 <th align="left">处理步骤</th>
 <th align="left">说明</th>
 <th align="left">所有者/适用的卸载</th>
-<th align="left">说明</th>
+<th align="left">备注</th>
 </tr>
 </thead>
 <tbody>
@@ -46,7 +46,7 @@ WDI 以两种 Tx 模式之一运行：端口队列和 PeerTID 队列。 目标�
 <td align="left"><p>Checksum、LSO。</p></td>
 <td align="left"><p>校验和是启动时可配置的卸载。 每个框架都有标志来指定适用的校验和操作。</p>
 <p>如果适用，WDI 从 TAL/目标透明地处理 LSO 分段。</p></td>
-<td align="left"><p>Checksum：目标会在 bringup 期间传递到 WDI 其校验和卸载功能作为设备 cap 的一部分。 有关功能信息，请参阅 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_tcp_ip_checksum_offload" data-raw-source="[&lt;strong&gt;NDIS_TCP_IP_CHECKSUM_OFFLOAD&lt;/strong&gt;](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_tcp_ip_checksum_offload)"><strong>NDIS_TCP_IP_CHECKSUM_OFFLOAD</strong></a>。</p>
+<td align="left"><p>Checksum：目标会在 bringup 期间传递到 WDI 其校验和卸载功能作为设备 cap 的一部分。 有关功能信息，请参阅 <a href="/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_tcp_ip_checksum_offload" data-raw-source="[&lt;strong&gt;NDIS_TCP_IP_CHECKSUM_OFFLOAD&lt;/strong&gt;](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_tcp_ip_checksum_offload)"><strong>NDIS_TCP_IP_CHECKSUM_OFFLOAD</strong></a>。</p>
 <p>如果适用，WDI 从 TAL/目标透明地处理 LSO 分段。</p></td>
 </tr>
 <tr class="even">
@@ -99,7 +99,7 @@ WDI 以两种 Tx 模式之一运行：端口队列和 PeerTID 队列。 目标�
 <td align="left"></td>
 </tr>
 <tr class="even">
-<td align="left"><p>Encryption</p></td>
+<td align="left"><p>加密</p></td>
 <td align="left"><p>使用为收件人 (或发件人指定的安全类型和安全密钥对帧内容进行加密) 为多播帧。 在适用的情况下添加安全封装。</p></td>
 <td align="left"><p>目标</p></td>
 <td align="left"><p>对于支持 FIPS 的系统，可以在主机软件中进行加密。 目标的加密被绕过。</p></td>
@@ -169,6 +169,4 @@ WDI 以两种 Tx 模式之一运行：端口队列和 PeerTID 队列。 目标�
 [**WDI \_ TLV \_ 连接 \_ 设置**](./wdi-tlv-connection-settings.md)
 
 [**WDI \_ TXRX \_ 功能**](/windows-hardware/drivers/ddi/dot11wdi/ns-dot11wdi-_wdi_txrx_target_capabilities)
-
- 
 

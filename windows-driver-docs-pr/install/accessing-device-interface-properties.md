@@ -4,12 +4,12 @@ description: 在 Windows Vista 之前访问设备接口属性
 ms.assetid: 48b47d01-ec07-49ca-a03c-c4c387dcfb19
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 07efeec034abf92bdd3eae2d4543a90119d3bfbe
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 8c3efa75bfc97dcbdcddaa75b199a25ab25b9bfe
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89097161"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90104584"
 ---
 # <a name="accessing-device-interface-properties-before-windows-vista"></a>在 Windows Vista 之前访问设备接口属性
 
@@ -36,7 +36,7 @@ Windows Server 2003、Windows XP 和 Windows 2000 支持其中大多数设备接
 
 -   将 *DeviceInfoSet* 设置为指向包含设备接口的设备信息集的指针。
 
--   将 *DeviceInterfaceData* 设置为指向标识设备接口的 [**SP_DEVICE_INTERFACE_DATA**](/windows/desktop/api/setupapi/ns-setupapi-_sp_device_interface_data) 结构的指针。
+-   将 *DeviceInterfaceData* 设置为指向标识设备接口的 [**SP_DEVICE_INTERFACE_DATA**](/windows/win32/api/setupapi/ns-setupapi-sp_device_interface_data) 结构的指针。
 
 -   将 *保留* 设置为零。
 
@@ -50,7 +50,7 @@ Windows Server 2003、Windows XP 和 Windows 2000 支持其中大多数设备接
 
 ### <a name="using-setupdienumdeviceinterfaces-to-retrieve-information-about-a-device-interface"></a><a href="" id="using-setupdienumdeviceinterfaces-to-retrieve-information-about-a-devi"></a> 使用 SetupDiEnumDeviceInterfaces 检索有关设备接口的信息
 
-若要在 Windows Server 2003、Windows XP 和 Windows 2000 上检索有关设备接口的信息，另一种方法是通过调用 [**SetupDiEnumDeviceInterfaces**](/windows/desktop/api/setupapi/nf-setupapi-setupdienumdeviceinterfaces) 来检索接口的 [**SP_DEVICE_INTERFACE_DATA**](/windows/desktop/api/setupapi/ns-setupapi-_sp_device_interface_data) 结构。 SP_DEVICE_INTERFACE_DATA 结构包含以下信息：
+若要在 Windows Server 2003、Windows XP 和 Windows 2000 上检索有关设备接口的信息，另一种方法是通过调用 [**SetupDiEnumDeviceInterfaces**](/windows/desktop/api/setupapi/nf-setupapi-setupdienumdeviceinterfaces) 来检索接口的 [**SP_DEVICE_INTERFACE_DATA**](/windows/win32/api/setupapi/ns-setupapi-sp_device_interface_data) 结构。 SP_DEVICE_INTERFACE_DATA 结构包含以下信息：
 
 -   **Flags**成员指示设备接口是否处于活动状态或已删除，以及设备是否为接口类的默认接口。
 

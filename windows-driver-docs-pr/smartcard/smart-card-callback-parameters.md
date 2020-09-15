@@ -8,12 +8,12 @@ keywords:
 - 供应商提供的驱动程序 WDK 智能卡，IOCTL 请求管理
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e9c5a6b164174379317b5a80ba1a75f605017d30
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: b9c41fd38010f76fb242e3715c3f6c5287a307cd
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89381351"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90106240"
 ---
 # <a name="smart-card-callback-parameters"></a>智能卡回调参数
 
@@ -84,7 +84,7 @@ ms.locfileid: "89381351"
 <tbody>
 <tr class="odd">
 <td align="left"><p><strong>CurrentIrp</strong></p></td>
-<td align="left"><p>接收一个指针，该指针指向每个控制请求的请求 IRP （ <a href="https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff548905(v=vs.85)" data-raw-source="[&lt;strong&gt;IOCTL_SMARTCARD_IS_ABSENT&lt;/strong&gt;](/previous-versions/windows/hardware/drivers/ff548905(v=vs.85))"><strong>IOCTL_SMARTCARD_IS_ABSENT</strong></a> 和 <a href="https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff548906(v=vs.85)" data-raw-source="[&lt;strong&gt;IOCTL_SMARTCARD_IS_PRESENT&lt;/strong&gt;](/previous-versions/windows/hardware/drivers/ff548906(v=vs.85))"><strong>IOCTL_SMARTCARD_IS_PRESENT</strong></a>除外）。</p></td>
+<td align="left"><p>接收一个指针，该指针指向每个控制请求的请求 IRP （ <a href="/previous-versions/windows/hardware/drivers/ff548905(v=vs.85)" data-raw-source="[&lt;strong&gt;IOCTL_SMARTCARD_IS_ABSENT&lt;/strong&gt;](/previous-versions/windows/hardware/drivers/ff548905(v=vs.85))"><strong>IOCTL_SMARTCARD_IS_ABSENT</strong></a> 和 <a href="/previous-versions/windows/hardware/drivers/ff548906(v=vs.85)" data-raw-source="[&lt;strong&gt;IOCTL_SMARTCARD_IS_PRESENT&lt;/strong&gt;](/previous-versions/windows/hardware/drivers/ff548906(v=vs.85))"><strong>IOCTL_SMARTCARD_IS_PRESENT</strong></a>除外）。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>NotificationIrp</strong></p></td>
@@ -92,8 +92,6 @@ ms.locfileid: "89381351"
 </tr>
 </tbody>
 </table>
-
- 
 
  
 

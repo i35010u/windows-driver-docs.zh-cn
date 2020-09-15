@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d284bcaea788560ff089bb93d1028622d7f81c39
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: d47ce504dad6cfcaab7dd3de8fd17435bd886d41
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89381761"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90106454"
 ---
 # <a name="driver-verifier-command-syntax"></a>驱动程序验证程序命令语法
 
@@ -282,7 +282,7 @@ Windows Server 2003 中引入的 (。 在 windows 7 和更高版本的 Windows �
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Decimal</th>
+<th align="left">小数</th>
 <th align="left">十六进制</th>
 <th align="left">标准设置</th>
 <th align="left">选项</th>
@@ -299,13 +299,13 @@ Windows Server 2003 中引入的 (。 在 windows 7 和更高版本的 Windows �
 <td align="left"><p>2</p></td>
 <td align="left"><p>0x2 (位 1) </p></td>
 <td align="left"><p>X</p></td>
-<td align="left"><p><a href="force-irql-checking.md" data-raw-source="[Force IRQL Checking](force-irql-checking.md)">强制 IRQL 检查</a></p></td>
+<td align="left"><p><a href="force-irql-checking.md" data-raw-source="[Force IRQL Checking](force-irql-checking.md)">强制执行 IRQL 检查</a></p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>4</p></td>
 <td align="left"><p>0x4 (位 2) </p></td>
 <td align="left"></td>
-<td align="left"><p><a href="low-resources-simulation.md" data-raw-source="[Low Resources Simulation](low-resources-simulation.md)">资源不足模拟</a></p></td>
+<td align="left"><p><a href="low-resources-simulation.md" data-raw-source="[Low Resources Simulation](low-resources-simulation.md)">低资源模拟</a></p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>8</p></td>
@@ -317,7 +317,7 @@ Windows Server 2003 中引入的 (。 在 windows 7 和更高版本的 Windows �
 <td align="left"><p>16</p></td>
 <td align="left"><p>0x10 (位 4) </p></td>
 <td align="left"><p>X</p></td>
-<td align="left"><p><a href="i-o-verification.md" data-raw-source="[I/O Verification](i-o-verification.md)">I/O 验证</a></p></td>
+<td align="left"><p><a href="i-o-verification.md" data-raw-source="[I/O Verification](i-o-verification.md)">I/o 验证</a></p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>32</p></td>
@@ -449,7 +449,7 @@ Windows Server 2003 中引入的 (。 在 windows 7 和更高版本的 Windows �
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Decimal</th>
+<th align="left">小数</th>
 <th align="left">十六进制</th>
 <th align="left">选项</th>
 </tr>
@@ -558,11 +558,11 @@ Windows Server 2003 中引入的 (。 在 windows 7 和更高版本的 Windows �
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>默认</strong> <em>ID</em></p></td>
-<td align="left"><p>将规则 <em>ID</em> 设置为其默认状态。 对于支持的规则，规则 <em>ID</em> 为 <a href="https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc4--driver-verifier-detected-violation" data-raw-source="[&lt;strong&gt;Bug Check 0xC4&lt;/strong&gt;](../debugger/bug-check-0xc4--driver-verifier-detected-violation.md)"><strong>Bug 检查 0xC4</strong></a> (DRIVER_VERIFIER_DETECTED_VIOLATION) 参数1值。</p></td>
+<td align="left"><p>将规则 <em>ID</em> 设置为其默认状态。 对于支持的规则，规则 <em>ID</em> 为 <a href="/windows-hardware/drivers/debugger/bug-check-0xc4--driver-verifier-detected-violation" data-raw-source="[&lt;strong&gt;Bug Check 0xC4&lt;/strong&gt;](../debugger/bug-check-0xc4--driver-verifier-detected-violation.md)"><strong>Bug 检查 0xC4</strong></a> (DRIVER_VERIFIER_DETECTED_VIOLATION) 参数1值。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>禁用</strong> <em>ID</em></p></td>
-<td align="left"><p>禁用指定的规则 <em>ID</em>。 对于支持的规则，规则 <em>ID</em> 为 <a href="https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc4--driver-verifier-detected-violation" data-raw-source="[&lt;strong&gt;Bug Check 0xC4&lt;/strong&gt;](../debugger/bug-check-0xc4--driver-verifier-detected-violation.md)"><strong>Bug 检查 0xC4</strong></a> (DRIVER_VERIFIER_DETECTED_VIOLATION) 参数1值。</p></td>
+<td align="left"><p>禁用指定的规则 <em>ID</em>。 对于支持的规则，规则 <em>ID</em> 为 <a href="/windows-hardware/drivers/debugger/bug-check-0xc4--driver-verifier-detected-violation" data-raw-source="[&lt;strong&gt;Bug Check 0xC4&lt;/strong&gt;](../debugger/bug-check-0xc4--driver-verifier-detected-violation.md)"><strong>Bug 检查 0xC4</strong></a> (DRIVER_VERIFIER_DETECTED_VIOLATION) 参数1值。</p></td>
 </tr>
 </tbody>
 </table>

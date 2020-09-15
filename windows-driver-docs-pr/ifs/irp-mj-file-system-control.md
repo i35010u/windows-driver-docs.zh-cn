@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b819f42d39dd3f505eec9e2f6b84485180021cc9
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: e78e464797e8d5a595a4825fe7fde25a7266adb6
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89067406"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90105280"
 ---
 # <a name="irp_mj_file_system_control-ifs"></a>\_ (IFS) 的 IRP MJ \_ 文件 \_ 系统 \_ 控制
 
@@ -56,7 +56,7 @@ IRP \_ MJ \_ 文件 \_ 系统 \_ 控制请求由 i/o 管理器和其他操作系
 </tr>
 <tr class="odd">
 <td align="left"><p>IRP_MN_USER_FS_REQUEST</p></td>
-<td align="left"><p>指示一个 FSCTL 请求，该请求可能代表一个用户模式应用程序，该应用程序调用了 Microsoft Win32 DeviceIoControl 函数或代表一个已调用 <a href="https://msdn.microsoft.com/library/windows/hardware/ff566441" data-raw-source="[&lt;strong&gt;ZwDeviceIoControlFile&lt;/strong&gt;](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-zwdeviceiocontrolfile)"><strong>ZwDeviceIoControlFile</strong></a> 或 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iobuilddeviceiocontrolrequest" data-raw-source="[&lt;strong&gt;IoBuildDeviceIoControlRequest&lt;/strong&gt;](/windows-hardware/drivers/ddi/wdm/nf-wdm-iobuilddeviceiocontrolrequest)"><strong>IoBuildDeviceIoControlRequest</strong></a>的内核模式组件。</p>
+<td align="left"><p>指示一个 FSCTL 请求，该请求可能代表一个用户模式应用程序，该应用程序调用了 Microsoft Win32 DeviceIoControl 函数或代表一个已调用 <a href="/windows-hardware/drivers/ddi/ntifs/nf-ntifs-zwdeviceiocontrolfile" data-raw-source="[&lt;strong&gt;ZwDeviceIoControlFile&lt;/strong&gt;](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-zwdeviceiocontrolfile)"><strong>ZwDeviceIoControlFile</strong></a> 或 <a href="/windows-hardware/drivers/ddi/wdm/nf-wdm-iobuilddeviceiocontrolrequest" data-raw-source="[&lt;strong&gt;IoBuildDeviceIoControlRequest&lt;/strong&gt;](/windows-hardware/drivers/ddi/wdm/nf-wdm-iobuilddeviceiocontrolrequest)"><strong>IoBuildDeviceIoControlRequest</strong></a>的内核模式组件。</p>
 <p>有关 FSCTL 请求的详细信息，请参阅 Microsoft Windows SDK 文档中的 "设备输入和输出控制代码"。</p></td>
 </tr>
 <tr class="even">
@@ -98,7 +98,7 @@ IRP \_ MJ \_ 文件 \_ 系统 \_ 控制请求由 i/o 管理器和其他操作系
 
 筛选器驱动程序应将此 IRP 传递到堆栈上的下一个较低的驱动程序。
 
-## <a name="parameters"></a>parameters
+## <a name="parameters"></a>参数
 
 
 文件系统或筛选器驱动程序与给定的 IRP 一起调用[**IoGetCurrentIrpStackLocation**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetcurrentirpstacklocation) ，以获取指向其自己的*IrpSp*[**堆栈位置**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_stack_location)的指针，如以下列表所示。  (IRP 显示为 *irp*。 ) 驱动程序可以使用在处理文件系统控制请求中的以下 irp 成员和 irp 堆栈位置设置的信息：
@@ -184,6 +184,4 @@ Irp 所指向的缓冲区大小（以字节为单位）。 * &gt; UserBuffer*。
 [**IRP**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_irp)
 
 [**ZwDeviceIoControlFile**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-zwdeviceiocontrolfile)
-
- 
 

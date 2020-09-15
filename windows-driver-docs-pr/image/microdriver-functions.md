@@ -4,12 +4,12 @@ description: 微驱动程序函数
 ms.assetid: 491b954a-8ffa-4899-8c7d-0aee409f4742
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 80f06553acd6af4730f84b006e950908564b2f41
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: a5ec860e312ffe3be5ec3adecad425ac67f675d6
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89187065"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90105602"
 ---
 # <a name="microdriver-functions"></a>微驱动程序函数
 
@@ -27,26 +27,24 @@ WIA 平板驱动程序通过调用 WIA microdriver 函数来响应来自 WIA 服
 <thead>
 <tr class="header">
 <th>函数</th>
-<th>描述</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wiamicro/nf-wiamicro-microentry" data-raw-source="[&lt;strong&gt;MicroEntry&lt;/strong&gt;](/windows-hardware/drivers/ddi/wiamicro/nf-wiamicro-microentry)"><strong>MicroEntry</strong></a></p></td>
+<td><p><a href="/windows-hardware/drivers/ddi/wiamicro/nf-wiamicro-microentry" data-raw-source="[&lt;strong&gt;MicroEntry&lt;/strong&gt;](/windows-hardware/drivers/ddi/wiamicro/nf-wiamicro-microentry)"><strong>MicroEntry</strong></a></p></td>
 <td><p>响应 WIA 平板驱动程序发送的命令。</p></td>
 </tr>
 <tr class="even">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wiamicro/nf-wiamicro-scan" data-raw-source="[&lt;strong&gt;Scan&lt;/strong&gt;](/windows-hardware/drivers/ddi/wiamicro/nf-wiamicro-scan)"><strong>扫描</strong></a></p></td>
+<td><p><a href="/windows-hardware/drivers/ddi/wiamicro/nf-wiamicro-scan" data-raw-source="[&lt;strong&gt;Scan&lt;/strong&gt;](/windows-hardware/drivers/ddi/wiamicro/nf-wiamicro-scan)"><strong>扫描</strong></a></p></td>
 <td><p>从设备读取数据并将数据返回到 WIA 平板驱动程序。</p></td>
 </tr>
 <tr class="odd">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wiamicro/nf-wiamicro-setpixelwindow" data-raw-source="[&lt;strong&gt;SetPixelWindow&lt;/strong&gt;](/windows-hardware/drivers/ddi/wiamicro/nf-wiamicro-setpixelwindow)"><strong>SetPixelWindow</strong></a></p></td>
+<td><p><a href="/windows-hardware/drivers/ddi/wiamicro/nf-wiamicro-setpixelwindow" data-raw-source="[&lt;strong&gt;SetPixelWindow&lt;/strong&gt;](/windows-hardware/drivers/ddi/wiamicro/nf-wiamicro-setpixelwindow)"><strong>SetPixelWindow</strong></a></p></td>
 <td><p>设置要扫描的区域。</p></td>
 </tr>
 </tbody>
 </table>
-
- 
 
  
 

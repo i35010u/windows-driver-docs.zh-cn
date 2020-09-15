@@ -14,12 +14,12 @@ keywords:
 - 祖先 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ee6fb9bd38accdb8aebacb553f7ff22bf30bd6bb
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 2d87b203da76c94ab845d0608a9b80fa35ef57dc
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89097389"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90105000"
 ---
 # <a name="determining-the-parent-of-a-nonpresent-device"></a>确定虚幻设备的父设备
 
@@ -63,7 +63,7 @@ ms.locfileid: "89097389"
 
 2.  调用 **RegQueryValueEx** ，以检索在设备共同安装程序中设置的输入值中保存的父设备的设备实例 ID。
 
-检索父设备的设备实例 ID 后，调用 [**SetupDiOpenDeviceInfo**](/windows/desktop/api/setupapi/nf-setupapi-setupdiopendeviceinfoa) 来获取父设备的 [**SP_DEVINFO_DATA**](/windows/desktop/api/setupapi/ns-setupapi-_sp_devinfo_data) 结构。
+检索父设备的设备实例 ID 后，调用 [**SetupDiOpenDeviceInfo**](/windows/desktop/api/setupapi/nf-setupapi-setupdiopendeviceinfoa) 来获取父设备的 [**SP_DEVINFO_DATA**](/windows/win32/api/setupapi/ns-setupapi-sp_devinfo_data) 结构。
 
 ### <a name="handling-a-chain-of-ancestors-for-a-nonpresent-device"></a><a href="" id="handling-a-chain-of-ancestors-for-a-nonpresent-device"></a> 处理 Nonpresent 设备的上级链
 

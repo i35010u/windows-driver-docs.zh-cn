@@ -4,12 +4,12 @@ description: 使用这些规则来验证驱动程序是否可以在不同的上�
 ms.assetid: 6557A741-C49F-456B-B285-DE6D171DDCEE
 ms.date: 05/21/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 1a0bf83194b0729728b3c6d23464387723af2761
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 58117596bdaf922cc77b7e79ab55ce17c811e1c4
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89383571"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90106450"
 ---
 # <a name="warning-rule-set-storport"></a>警告规则集 (Storport)
 
@@ -33,7 +33,7 @@ ms.locfileid: "89383571"
 <tbody>
 <tr class="odd">
 <td align="left"><p><a href="storport-pagedcode.md" data-raw-source="[&lt;strong&gt;PagedCode&lt;/strong&gt;](storport-pagedcode.md)"><strong>PagedCode</strong></a></p></td>
-<td align="left"><p>此规则验证在调用 <a href="https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer" data-raw-source="[&lt;strong&gt;PAGED_CODE&lt;/strong&gt;](../kernel/mm-bad-pointer.md)"><strong>PAGED_CODE</strong></a> 宏时，驱动程序的 <strong> &lt; DISPATCH_LEVEL 为 IRQL</strong>。 在 <strong>IRQL &gt; = DISPATCH_LEVEL</strong> 执行的任何代码必须位于非分页内存中，以避免导致页错误。</p></td>
+<td align="left"><p>此规则验证在调用 <a href="/windows-hardware/drivers/kernel/mm-bad-pointer" data-raw-source="[&lt;strong&gt;PAGED_CODE&lt;/strong&gt;](../kernel/mm-bad-pointer.md)"><strong>PAGED_CODE</strong></a> 宏时，驱动程序的 <strong> &lt; DISPATCH_LEVEL 为 IRQL</strong>。 在 <strong>IRQL &gt; = DISPATCH_LEVEL</strong> 执行的任何代码必须位于非分页内存中，以避免导致页错误。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><a href="storport-storportstatuspending.md" data-raw-source="[&lt;strong&gt;StorPortStatusPending&lt;/strong&gt;](storport-storportstatuspending.md)"><strong>StorPortStatusPending</strong></a></p></td>
@@ -57,6 +57,4 @@ ms.locfileid: "89383571"
     ```
 
     有关详细信息，请参阅 [使用静态驱动程序验证器查找驱动程序中的缺陷](./using-static-driver-verifier-to-find-defects-in-drivers.md) 和 [静态驱动程序验证程序命令 (MSBuild) ](./-static-driver-verifier-commands--msbuild-.md)。
-
- 
 

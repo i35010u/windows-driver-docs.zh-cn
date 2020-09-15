@@ -11,12 +11,12 @@ keywords:
 - 确定是否已接通设备 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 16c5c501464431a3e73419cc62366eb9002a6301
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 97d62158e8e9ba609b33e7a7bb4284994fb15bb7
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89097137"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90105002"
 ---
 # <a name="determining-whether-a-device-is-plugged-in"></a>确定设备是否已插入
 
@@ -47,7 +47,7 @@ ms.locfileid: "89097137"
 
 3.  查找设备的硬件 Id 和兼容 Id。
 
-    如果设备类 (假设你在第一) 步中指定了设备类，则**SetupDiGetClassDevs**将返回设备[信息集](device-information-sets.md)的句柄，其中包含已安装的所有设备（无论是否插入）。 通过对 [**SetupDiEnumDeviceInfo**](/windows/desktop/api/setupapi/nf-setupapi-setupdienumdeviceinfo) 函数进行连续调用，你可以使用此句柄枚举设备信息集中的所有设备。 每次调用都提供设备的 [**SP_DEVINFO_DATA**](/windows/desktop/api/setupapi/ns-setupapi-_sp_devinfo_data) 结构。 若要获取硬件 Id 列表，请调用 [**SetupDiGetDeviceRegistryProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetdeviceregistrypropertya) 函数，并将 *属性* 参数设置为 SPDRP_HARDWAREID。 若要获取兼容 Id 的列表，请调用相同的函数，但将 *属性* 参数设置为 SPDRP_COMPATIBLEIDS。 这两个列表都是多 SZ 字符串。
+    如果设备类 (假设你在第一) 步中指定了设备类，则**SetupDiGetClassDevs**将返回设备[信息集](device-information-sets.md)的句柄，其中包含已安装的所有设备（无论是否插入）。 通过对 [**SetupDiEnumDeviceInfo**](/windows/desktop/api/setupapi/nf-setupapi-setupdienumdeviceinfo) 函数进行连续调用，你可以使用此句柄枚举设备信息集中的所有设备。 每次调用都提供设备的 [**SP_DEVINFO_DATA**](/windows/win32/api/setupapi/ns-setupapi-sp_devinfo_data) 结构。 若要获取硬件 Id 列表，请调用 [**SetupDiGetDeviceRegistryProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetdeviceregistrypropertya) 函数，并将 *属性* 参数设置为 SPDRP_HARDWAREID。 若要获取兼容 Id 的列表，请调用相同的函数，但将 *属性* 参数设置为 SPDRP_COMPATIBLEIDS。 这两个列表都是多 SZ 字符串。
 
 4.  查找你的设备 ID 与上一步的硬件 id (或兼容 Id) 之间的匹配。
 

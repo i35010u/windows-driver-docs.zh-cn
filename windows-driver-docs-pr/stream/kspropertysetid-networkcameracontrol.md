@@ -3,12 +3,12 @@ title: KSPROPERTYSETID \_ NetworkCameraControl
 description: 定义网络摄像机属性集 ID。
 ms.date: 07/07/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 10c7079d53d164e7fee677f63c61f9ea946a3a83
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 7cd4e5c5d08cea86e0f02927b567ee2d0994f60d
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89192629"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90104454"
 ---
 # <a name="kspropertysetid_networkcameracontrol"></a>KSPROPERTYSETID \_ NetworkCameraControl
 
@@ -27,4 +27,4 @@ DEFINE_GUIDSTRUCT("0E780F09-5745-4E3A-BC9F-F226EA43A6EC", KSPROPERTYSETID_Networ
 
 [**KSPROPERTY_NETWORKCAMERACONTROL_URI**](./ksproperty-networkcameracontrol-uri.md)
 
-这些属性名称在 [KSPROPERTY_NETWORKCAMERACONTROL_PROPERTY](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ne-ksmedia-ksproperty_networkcameracontrol_property) 枚举中定义。
+这些属性名称在 [KSPROPERTY_NETWORKCAMERACONTROL_PROPERTY](/windows-hardware/drivers/ddi/ksmedia/ne-ksmedia-ksproperty_networkcameracontrol_property) 枚举中定义。

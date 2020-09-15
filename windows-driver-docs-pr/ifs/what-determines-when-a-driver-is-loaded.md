@@ -19,12 +19,12 @@ keywords:
 - 启动驱动程序 WDK 文件系统
 ms.date: 08/31/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 35da53d3a637bcac578221533978a21e88f399a0
-ms.sourcegitcommit: 2dd8e4262c30e3f8570e35da7b9485139b216ac8
+ms.openlocfilehash: 96d1ce5ae4c4d782263a6bd8e596cb19ddcc2255
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "90027574"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90106550"
 ---
 # <a name="file-system-filter-load-order"></a>文件系统筛选器加载顺序
 
@@ -53,7 +53,7 @@ Windows 操作系统基于以下内容加载文件系统筛选器驱动程序：
 
 驱动程序编写器可以通过以下任一方式在安装时指定驱动程序的启动类型：
 
-- 通过在驱动程序的 INF 文件中，在[**AddService**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addservice-directive)指令所引用的*服务安装部分*中为**StartType**条目指定所需的启动类型。 此方法在[创建筛选器驱动程序的 INF 文件](creating-an-inf-file-for-a-minifilter-driver.md)的**ServiceInstall**部分中进行了介绍。
+- 通过在驱动程序的 INF 文件中，在[**AddService**](../install/inf-addservice-directive.md)指令所引用的*服务安装部分*中为**StartType**条目指定所需的启动类型。 此方法在[创建筛选器驱动程序的 INF 文件](creating-an-inf-file-for-a-minifilter-driver.md)的**ServiceInstall**部分中进行了介绍。
 
 - 通过用户模式安装程序调用**CreateService**或**ChangeServiceConfig**时，为*dwStartType*参数传递所需的启动类型。 Microsoft Windows SDK 文档中的 **CreateService** 和 **ChangeServiceConfig** 的参考条目中介绍了此方法。
 
@@ -80,7 +80,7 @@ Windows 操作系统基于以下内容加载文件系统筛选器驱动程序：
 
 - 通过用户模式安装程序调用**CreateService**或**ChangeServiceConfig**时，为*lpLoadOrderGroup*参数传递所需的启动类型。 Microsoft Windows SDK 文档中的 **CreateService** 和 **ChangeServiceConfig** 的参考条目中介绍了此方法。
 
-有关驱动程序加载顺序和加载顺序组的更多常规信息，请参阅 [指定驱动程序加载顺序](https://docs.microsoft.com/windows-hardware/drivers/install/specifying-driver-load-order)。
+有关驱动程序加载顺序和加载顺序组的更多常规信息，请参阅 [指定驱动程序加载顺序](../install/specifying-driver-load-order.md)。
 
 ## <a name="rules-for-loading-a-filter-driver"></a>用于加载筛选器驱动程序的规则
 

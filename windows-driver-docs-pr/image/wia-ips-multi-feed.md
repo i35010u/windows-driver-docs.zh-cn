@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f76324cd732fbbeef6f572b75dd24df52f3ac7cd
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 4cef608b54c28115b3c5b7f9704ee5b5ad99d71a
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89185005"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90105150"
 ---
 # <a name="wia_ips_multi_feed"></a>WIA \_ IPS \_ 多 \_ 源
 
@@ -35,7 +35,7 @@ ms.locfileid: "89185005"
 
 访问权限：读/写
 
-<a name="remarks"></a>注解
+<a name="remarks"></a>备注
 -------
 
 下表描述了 " **WIA \_ IPS \_ 多 \_ 源** " 属性的有效值。
@@ -58,11 +58,11 @@ ms.locfileid: "89185005"
 </tr>
 <tr class="even">
 <td><p>WIA_MULTI_FEED_DETECT_STOP_ERROR</p></td>
-<td><p>设备检测多个源，停止扫描，为 <a href="wia-dps-document-handling-status.md" data-raw-source="[&lt;strong&gt;WIA_DPS_DOCUMENT_HANDLING_STATUS&lt;/strong&gt;](wia-dps-document-handling-status.md)"><strong>WIA_DPS_DOCUMENT_HANDLING_STATUS</strong></a>设置 MULTIPLE_FEED 位，并将 WIA_ERROR_MULTI_FEED 返回到 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvacquireitemdata" data-raw-source="[&lt;strong&gt;IWiaMiniDrv::drvAcquireItemData&lt;/strong&gt;](/windows-hardware/drivers/ddi/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvacquireitemdata)"><strong>IWiaMiniDrv：:d rvacquireitemdata</strong></a>。</p></td>
+<td><p>设备检测多个源，停止扫描，为 <a href="wia-dps-document-handling-status.md" data-raw-source="[&lt;strong&gt;WIA_DPS_DOCUMENT_HANDLING_STATUS&lt;/strong&gt;](wia-dps-document-handling-status.md)"><strong>WIA_DPS_DOCUMENT_HANDLING_STATUS</strong></a>设置 MULTIPLE_FEED 位，并将 WIA_ERROR_MULTI_FEED 返回到 <a href="/windows-hardware/drivers/ddi/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvacquireitemdata" data-raw-source="[&lt;strong&gt;IWiaMiniDrv::drvAcquireItemData&lt;/strong&gt;](/windows-hardware/drivers/ddi/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvacquireitemdata)"><strong>IWiaMiniDrv：:d rvacquireitemdata</strong></a>。</p></td>
 </tr>
 <tr class="odd">
 <td><p>WIA_MULTI_FEED_DETECT_STOP_SUCCESS</p></td>
-<td><p>设备检测多个源，停止扫描，为 <a href="wia-dps-document-handling-status.md" data-raw-source="[&lt;strong&gt;WIA_DPS_DOCUMENT_HANDLING_STATUS&lt;/strong&gt;](wia-dps-document-handling-status.md)"><strong>WIA_DPS_DOCUMENT_HANDLING_STATUS</strong></a>设置 MULTIPLE_FEED 位， <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvacquireitemdata" data-raw-source="[&lt;strong&gt;IWiaMiniDrv::drvAcquireItemData&lt;/strong&gt;](/windows-hardware/drivers/ddi/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvacquireitemdata)"><strong>IWiaMiniDrv：:d rvacquireitemdata</strong></a> 返回，且不会因多源而失败。</p></td>
+<td><p>设备检测多个源，停止扫描，为 <a href="wia-dps-document-handling-status.md" data-raw-source="[&lt;strong&gt;WIA_DPS_DOCUMENT_HANDLING_STATUS&lt;/strong&gt;](wia-dps-document-handling-status.md)"><strong>WIA_DPS_DOCUMENT_HANDLING_STATUS</strong></a>设置 MULTIPLE_FEED 位， <a href="/windows-hardware/drivers/ddi/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvacquireitemdata" data-raw-source="[&lt;strong&gt;IWiaMiniDrv::drvAcquireItemData&lt;/strong&gt;](/windows-hardware/drivers/ddi/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvacquireitemdata)"><strong>IWiaMiniDrv：:d rvacquireitemdata</strong></a> 返回，且不会因多源而失败。</p></td>
 </tr>
 <tr class="even">
 <td><p>WIA_MULTI_FEED_DETECT_CONTINUE</p></td>
@@ -87,11 +87,9 @@ ms.locfileid: "89185005"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Header</p></td>
+<td><p>标头</p></td>
 <td>Wiadef (包含 Wiadef) </td>
 </tr>
 </tbody>
 </table>
-
- 
 

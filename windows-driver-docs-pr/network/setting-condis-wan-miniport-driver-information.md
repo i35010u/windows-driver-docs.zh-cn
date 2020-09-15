@@ -7,12 +7,12 @@ keywords:
 - OID_WAN_CO_SET_LINK_INFO
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 94ea1614d9783f35112e8134a21b9b821e879972
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 7fb77e433b3c930678c21759763a384226714c9e
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89217480"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90104912"
 ---
 # <a name="setting-condis-wan-miniport-driver-information"></a>设置 CoNDIS WAN 微型端口驱动程序信息
 
@@ -42,8 +42,8 @@ CoNDIS WAN 微型端口驱动程序必须识别并正确响应以下 CoNDIS WAN 
 <tbody>
 <tr class="odd">
 <td align="left"><p></p>
-<a href="/windows-hardware/drivers/network/oid-wan-co-set-link-info" data-raw-source="[OID_WAN_CO_SET_LINK_INFO](/windows-hardware/drivers/network/oid-wan-co-set-link-info)">OID_WAN_CO_SET_LINK_INFO</a> 设置 VC 的信息。</td>
-<td align="left"><p>必须</p></td>
+<a href="/windows-hardware/drivers/network/oid-wan-co-set-link-info" data-raw-source="[OID_WAN_CO_SET_LINK_INFO](./oid-wan-co-set-link-info.md)">OID_WAN_CO_SET_LINK_INFO</a> 设置 VC 的信息。</td>
+<td align="left"><p>必需</p></td>
 </tr>
 </tbody>
 </table>
@@ -51,6 +51,4 @@ CoNDIS WAN 微型端口驱动程序必须识别并正确响应以下 CoNDIS WAN 
  
 
 CoNDIS WAN 微型端口驱动程序还支持 NDIS [常规对象](/previous-versions/windows/hardware/network/ff546510(v=vs.85))。 若要了解有关在 CoNDIS 微型端口驱动程序中设置信息的详细信息，请参阅 [查询或设置信息](querying-or-setting-information.md)。
-
- 
 

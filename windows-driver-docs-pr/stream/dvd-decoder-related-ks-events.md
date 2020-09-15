@@ -9,12 +9,12 @@ keywords:
 - 事件 WDK DVD 解码器
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8dda7ae58e3da85ed414f9bb13b12a5d7c367049
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 48b4ba49b095627a0a832b3978f0c8c965179bfb
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89190275"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90105076"
 ---
 # <a name="dvd-decoder-related-ks-events"></a>与 DVD 解码器相关的 KS 事件
 
@@ -39,13 +39,11 @@ ms.locfileid: "89190275"
 </thead>
 <tbody>
 <tr class="odd">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/stream/ksevent-vpnotify-formatchange" data-raw-source="[&lt;strong&gt;KSEVENT_VPNOTIFY_FORMATCHANGE&lt;/strong&gt;](./ksevent-vpnotify-formatchange.md)"><strong>KSEVENT_VPNOTIFY_FORMATCHANGE</strong></a></p></td>
+<td><p><a href="/windows-hardware/drivers/stream/ksevent-vpnotify-formatchange" data-raw-source="[&lt;strong&gt;KSEVENT_VPNOTIFY_FORMATCHANGE&lt;/strong&gt;](./ksevent-vpnotify-formatchange.md)"><strong>KSEVENT_VPNOTIFY_FORMATCHANGE</strong></a></p></td>
 <td><p>向 DirectShow 通知视频端口配置更改，如从640x480 到720x480 的分辨率更改。</p></td>
 </tr>
 </tbody>
 </table>
-
- 
 
  
 

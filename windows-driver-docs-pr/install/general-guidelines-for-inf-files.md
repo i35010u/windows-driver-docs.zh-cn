@@ -6,12 +6,12 @@ keywords:
 - INF 文件 WDK 设备安装，一般指导原则
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 37adc3f5505c9d964cf20d6c74cca24981b4e134
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 2f070248b1f8d61ef3885f093357aeaa3dc2181b
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89095725"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90106586"
 ---
 # <a name="general-guidelines-for-inf-files"></a>INF 文件常规指南
 
@@ -20,7 +20,7 @@ ms.locfileid: "89095725"
 
 INF 文件有许多常见部分，并遵循一组语法规则。 但是，它们也与 Microsoft Windows 支持的各种设备相同。 编写 INF 文件时，请参阅以下信息源：
 
--   本部分以及 [INF 文件部分和指令](inf-file-sections-and-directives.md) 参考材料。
+-   本部分以及 [INF 文件部分和指令](./index.md) 参考材料。
 
 -   设备类别的文档。
 

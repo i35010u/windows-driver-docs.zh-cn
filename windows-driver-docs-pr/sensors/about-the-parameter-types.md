@@ -4,12 +4,12 @@ description: 关于参数类型
 ms.assetid: 392ea7b9-df6f-4d47-9367-a167c0656dd4
 ms.date: 07/20/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 5ddc6a7ab84ee626a7120e1f7fb635f5de855a6c
-ms.sourcegitcommit: 937974aa9bbe0262a7ffe9631593fab48c4e7492
+ms.openlocfilehash: 0ad7876953026bf4cd0f347832df71950c1f1a66
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "90010009"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90105776"
 ---
 # <a name="about-sensor-parameter-types"></a>关于传感器参数类型
 
@@ -31,7 +31,7 @@ ms.locfileid: "90010009"
 </thead>
 <tbody>
 <tr class="odd">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-iwdffile" data-raw-source="[IWDFFile](/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-iwdffile)">IWDFFile</a></p></td>
+<td><p><a href="/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-iwdffile" data-raw-source="[IWDFFile](/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-iwdffile)">IWDFFile</a></p></td>
 <td><p>pClientFile</p></td>
 <td><p>此 UMDF COM 接口表示平台与客户端应用程序关联的文件对象。 虽然传感器方法调用始终将此类型提供为有效的接口指针，但它旨在用作应用程序的 ID。 指针包含的地址是可以标识客户端应用程序的唯一编号。 请注意，此值不同于指针本身的地址。 不要使用地址操作员 ( # A0) 来检索 ID。 使用指针本身。</p>
 <p>如果选择使用此指针来访问基础对象，请记得先通过指针调用 AddRef，并在完成后调用发布。</p></td>
@@ -68,8 +68,6 @@ ms.locfileid: "90010009"
 </tr>
 </tbody>
 </table>
-
- 
 
  
 

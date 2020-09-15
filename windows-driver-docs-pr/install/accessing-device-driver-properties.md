@@ -4,12 +4,12 @@ description: 访问设备驱动程序属性
 ms.assetid: 433ad114-46aa-470b-b529-e6b6fb7f6bd7
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 50f7f8be8a8fd605398eacc530265935b7398ffa
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: ba0527a49d2f4d583ea88656079adbcdd74ce6f8
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89096209"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90105094"
 ---
 # <a name="accessing-device-driver-properties"></a>访问设备驱动程序属性
 
@@ -34,7 +34,7 @@ Windows Server 2003、Windows XP 和 Windows 2000 还支持这些设备驱动程
 1.  调用 [**SetupDiOpenDevRegKey**](/windows/desktop/api/setupapi/nf-setupapi-setupdiopendevregkey) 可检索设备实例的软件密钥的句柄。 提供以下参数值：
 
     -   将 *DeviceInfoSet* 设置为设备信息集的句柄，其中包含要为其检索全局软件密钥的设备信息元素。
-    -   将 *DeviceInfoData* 设置为指向 [**SP_DEVINFO_DATA**](/windows/desktop/api/setupapi/ns-setupapi-_sp_devinfo_data) 结构的指针，该结构表示要为其检索全局软件密钥的设备信息元素。
+    -   将 *DeviceInfoData* 设置为指向 [**SP_DEVINFO_DATA**](/windows/win32/api/setupapi/ns-setupapi-sp_devinfo_data) 结构的指针，该结构表示要为其检索全局软件密钥的设备信息元素。
     -   将 *作用域* 设置为 DICS_FLAG_GLOBAL。
     -   将 *hwprofile 中* 设置为零。
     -   将 *KeyType* 设置为 DIREG_DRV，它将 **SetupDiOpenDevRegKey** 配置为检索设备实例的软件密钥的句柄。

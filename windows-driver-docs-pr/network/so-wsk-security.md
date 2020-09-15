@@ -6,12 +6,12 @@ ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 SO_WSK_SECURITY 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: a815280b284fa30acc4565fca5f71aa60d17ead7
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 0bf392dba097426a000d600bab6d9a1c28db0292
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89205929"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90105876"
 ---
 # <a name="so_wsk_security"></a>\_WSK \_ 安全性
 
@@ -32,7 +32,7 @@ SO \_ WSK \_ SECURITY socket 选项允许 WSK 应用程序将安全描述符应�
 <thead>
 <tr class="header">
 <th>参数</th>
-<th>值</th>
+<th>“值”</th>
 </tr>
 </thead>
 <tbody>
@@ -54,7 +54,7 @@ SO \_ WSK \_ SECURITY socket 选项允许 WSK 应用程序将安全描述符应�
 </tr>
 <tr class="odd">
 <td><p><em>InputBuffer</em></p></td>
-<td><p>指向 PSECURITY_DESCRIPTOR 类型化变量的指针。 此变量必须包含指向安全描述符缓存副本的指针，该安全描述符是通过使用<a href="wsk-cache-sd.md" data-raw-source="[&lt;strong&gt;WSK_CACHE_SD&lt;/strong&gt;](wsk-cache-sd.md)"><strong>WSK_CACHE_SD</strong></a>控制代码调用<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_control_client" data-raw-source="[&lt;strong&gt;WskControlClient&lt;/strong&gt;](/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_control_client)"><strong>WskControlClient</strong></a>函数获取的。</p></td>
+<td><p>指向 PSECURITY_DESCRIPTOR 类型化变量的指针。 此变量必须包含指向安全描述符缓存副本的指针，该安全描述符是通过使用<a href="wsk-cache-sd.md" data-raw-source="[&lt;strong&gt;WSK_CACHE_SD&lt;/strong&gt;](wsk-cache-sd.md)"><strong>WSK_CACHE_SD</strong></a>控制代码调用<a href="/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_control_client" data-raw-source="[&lt;strong&gt;WskControlClient&lt;/strong&gt;](/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_control_client)"><strong>WskControlClient</strong></a>函数获取的。</p></td>
 </tr>
 <tr class="even">
 <td><p><em>OutputSize</em></p></td>
@@ -91,7 +91,7 @@ SO \_ WSK \_ SECURITY socket 选项允许 WSK 应用程序将安全描述符应�
 <thead>
 <tr class="header">
 <th>参数</th>
-<th>值</th>
+<th>“值”</th>
 </tr>
 </thead>
 <tbody>
@@ -155,6 +155,4 @@ WSK 应用程序必须使用[**WSK \_ RELEASE \_ SD**](wsk-release-sd.md)控制�
 </tr>
 </tbody>
 </table>
-
- 
 

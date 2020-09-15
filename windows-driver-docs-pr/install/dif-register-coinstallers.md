@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 26dc6e6aabacc11b3c6fc8d11d53c442a1527baf
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: ed018dac14e66341217240145b63d802c902ec9c
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89095537"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90104782"
 ---
 # <a name="dif_register_coinstallers"></a>DIF_REGISTER_COINSTALLERS
 
@@ -61,17 +61,17 @@ DIF_REGISTER_COINSTALLERS 请求允许安装程序参与设备共同安装程序
 向 [设备信息集](./device-information-sets.md) 提供一个句柄，其中包含要为其注册共同安装程序的设备。
 
 <a href="" id="deviceinfodata"></a>*DeviceInfoData*  
-提供一个指向 [**SP_DEVINFO_DATA**](/windows/desktop/api/setupapi/ns-setupapi-_sp_devinfo_data) 结构的指针，该结构在设备信息集中标识设备。
+提供一个指向 [**SP_DEVINFO_DATA**](/windows/win32/api/setupapi/ns-setupapi-sp_devinfo_data) 结构的指针，该结构在设备信息集中标识设备。
 
 <a href="" id="device-installation-parameters-"></a>设备安装参数   
-与*DeviceInfoData*关联的设备安装参数 ([**SP_DEVINSTALL_PARAMS**](/windows/desktop/api/setupapi/ns-setupapi-_sp_devinstall_params_a)) 。
+与*DeviceInfoData*关联的设备安装参数 ([**SP_DEVINSTALL_PARAMS**](/windows/win32/api/setupapi/ns-setupapi-sp_devinstall_params_a)) 。
 
 <a href="" id="class-installation-parameters"></a>类安装参数  
 无
 
 ### <a name="installer-output"></a>安装程序输出
 
-<a href="" id="none"></a>无  
+<a href="" id="none"></a>内容  
 
 ### <a name="installer-return-value"></a>安装程序返回值
 
@@ -130,9 +130,9 @@ DIF_REGISTER_COINSTALLERS 请求允许安装程序参与设备共同安装程序
 
 [**SetupDiRegisterCoDeviceInstallers**](/windows/desktop/api/setupapi/nf-setupapi-setupdiregistercodeviceinstallers)
 
-[**SP_DEVINFO_DATA**](/windows/desktop/api/setupapi/ns-setupapi-_sp_devinfo_data)
+[**SP_DEVINFO_DATA**](/windows/win32/api/setupapi/ns-setupapi-sp_devinfo_data)
 
-[**SP_DEVINSTALL_PARAMS**](/windows/desktop/api/setupapi/ns-setupapi-_sp_devinstall_params_a)
+[**SP_DEVINSTALL_PARAMS**](/windows/win32/api/setupapi/ns-setupapi-sp_devinstall_params_a)
 
  
 

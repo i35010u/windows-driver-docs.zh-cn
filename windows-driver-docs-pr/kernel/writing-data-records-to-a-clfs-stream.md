@@ -12,12 +12,12 @@ keywords:
 - 缓冲区 WDK CLFS
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b65389d818c35a68a43777d772811f510f3e9339
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: e291d85bd99b3acd01d29d5f048190d22e18bfe0
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89183983"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90104424"
 ---
 # <a name="writing-data-records-to-a-clfs-stream"></a>将数据记录写入 CLFS 流
 
@@ -61,7 +61,7 @@ ms.locfileid: "89183983"
 </tr>
 <tr class="even">
 <td><p><em>rgWriteEntries</em></p></td>
-<td><p>指向 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_cls_write_entry" data-raw-source="[&lt;strong&gt;CLFS_WRITE_ENTRY&lt;/strong&gt;](/windows-hardware/drivers/ddi/wdm/ns-wdm-_cls_write_entry)"><strong>CLFS_WRITE_ENTRY</strong></a> 结构的指针。</p></td>
+<td><p>指向 <a href="/windows-hardware/drivers/ddi/wdm/ns-wdm-_cls_write_entry" data-raw-source="[&lt;strong&gt;CLFS_WRITE_ENTRY&lt;/strong&gt;](/windows-hardware/drivers/ddi/wdm/ns-wdm-_cls_write_entry)"><strong>CLFS_WRITE_ENTRY</strong></a> 结构的指针。</p></td>
 </tr>
 <tr class="odd">
 <td><p><em>cWriteEntries</em></p></td>
@@ -89,7 +89,7 @@ ms.locfileid: "89183983"
 </tr>
 <tr class="odd">
 <td><p><em>plsn</em></p></td>
-<td><p>指向 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_cls_lsn" data-raw-source="[&lt;strong&gt;CLFS_LSN&lt;/strong&gt;](/windows-hardware/drivers/ddi/wdm/ns-wdm-_cls_lsn)"><strong>CLFS_LSN</strong></a> 结构的指针。  (这是一个输出参数，用于接收所写入记录的 LSN ) </p></td>
+<td><p>指向 <a href="/windows-hardware/drivers/ddi/wdm/ns-wdm-_cls_lsn" data-raw-source="[&lt;strong&gt;CLFS_LSN&lt;/strong&gt;](/windows-hardware/drivers/ddi/wdm/ns-wdm-_cls_lsn)"><strong>CLFS_LSN</strong></a> 结构的指针。  (这是一个输出参数，用于接收所写入记录的 LSN ) </p></td>
 </tr>
 </tbody>
 </table>
@@ -278,6 +278,4 @@ ms.locfileid: "89183983"
  
 
 前面的表仅显示了在保留记录空间和将记录写入到 CLFS 流时的很多变化。 当你考虑其他变体时，请记住以下几点： **ClfsReserveAndAppendLog** (或) **ClfsReserveAndAppendLogAligned** 所执行的操作是原子的。 例如，可以对 **ClfsReserveAndAppendLog** 进行单一调用，将为记录保留空间并将记录写入流。  (保留的操作对，编写) 将作为一个整体或全部失败。
-
- 
 

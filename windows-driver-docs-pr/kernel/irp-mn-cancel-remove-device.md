@@ -6,19 +6,19 @@ ms.assetid: 5cadb1e2-7011-42a5-8e41-6473069b25a6
 keywords:
 - IRP_MN_CANCEL_REMOVE_DEVICE 内核模式驱动程序体系结构
 ms.localizationpriority: medium
-ms.openlocfilehash: e1f0408ca2e6b075558c14019a14f9306a51bb9d
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 94b02f39b8fed8f057f97b1a00fed0a207909539
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89188239"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90106196"
 ---
 # <a name="irp_mn_cancel_remove_device"></a>IRP \_ MN \_ 取消 \_ 删除 \_ 设备
 
 
 所有 PnP 驱动程序都必须处理此 IRP。
 
-## <a name="value"></a>值
+## <a name="value"></a>“值”
 
 0x03
 
@@ -62,7 +62,7 @@ PnP 管理器调用任何 **EventCategoryTargetDeviceChange** 通知回调，并
 
 如果文件系统已装载到设备上，则它必须撤消它为响应查询-删除通知而执行的任何操作。
 
-请参阅 [即插即用](https://docs.microsoft.com/windows-hardware/drivers/kernel/implementing-plug-and-play) ，了解有关处理删除 irp 的详细信息以及处理所有 [即插即用次要 irp](plug-and-play-minor-irps.md)的常规规则。
+请参阅 [即插即用](./introduction-to-plug-and-play.md) ，了解有关处理删除 irp 的详细信息以及处理所有 [即插即用次要 irp](plug-and-play-minor-irps.md)的常规规则。
 
 **正在发送此 IRP**
 
@@ -78,13 +78,13 @@ PnP 管理器调用任何 **EventCategoryTargetDeviceChange** 通知回调，并
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Header</p></td>
+<td><p>标头</p></td>
 <td>Wdm.h（包括 Wdm.h、Ntddk.h 或 Ntifs.h）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
 [**IoRegisterPlugPlayNotification**](/windows-hardware/drivers/ddi/wdm/nf-wdm-ioregisterplugplaynotification)

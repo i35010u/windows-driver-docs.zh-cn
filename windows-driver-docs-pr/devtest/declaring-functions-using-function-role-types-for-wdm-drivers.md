@@ -4,12 +4,12 @@ description: 使用 WDM 驱动程序的函数角色类型来声明函数
 ms.assetid: 3260b53e-82be-4dbc-8ac5-d0e52de77f9d
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6f2da65baaaf3db5ffb084ebb3b649606afd0441
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: aa293cc6985ebc47cd6bbd15bd1f09c4e5002a81
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89382123"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90106416"
 ---
 # <a name="declaring-functions-using-function-role-types-for-wdm-drivers"></a>使用 WDM 驱动程序的函数角色类型来声明函数
 
@@ -52,58 +52,58 @@ SDV 识别下表中显示的入口点的类型。
 <tbody>
 <tr class="odd">
 <td align="left"><p>DRIVER_INITIALIZE</p></td>
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_initialize" data-raw-source="[&lt;em&gt;DriverEntry&lt;/em&gt;](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_initialize)"><em>DriverEntry</em></a></p></td>
+<td align="left"><p><a href="/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_initialize" data-raw-source="[&lt;em&gt;DriverEntry&lt;/em&gt;](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_initialize)"><em>DriverEntry</em></a></p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>DRIVER_STARTIO</p></td>
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_startio" data-raw-source="[&lt;em&gt;StartIO&lt;/em&gt;](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_startio)"><em>StartIO</em></a></p></td>
+<td align="left"><p><a href="/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_startio" data-raw-source="[&lt;em&gt;StartIO&lt;/em&gt;](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_startio)"><em>StartIO</em></a></p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>DRIVER_UNLOAD</p></td>
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_unload" data-raw-source="[&lt;em&gt;Unload&lt;/em&gt;](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_unload)"><em>[</em></a></p></td>
+<td align="left"><p><a href="/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_unload" data-raw-source="[&lt;em&gt;Unload&lt;/em&gt;](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_unload)"><em>[</em></a></p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>DRIVER_ADD_DEVICE</p></td>
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_add_device" data-raw-source="[&lt;em&gt;AddDevice&lt;/em&gt;](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_add_device)"><em>AddDevice</em></a></p></td>
+<td align="left"><p><a href="/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_add_device" data-raw-source="[&lt;em&gt;AddDevice&lt;/em&gt;](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_add_device)"><em>AddDevice</em></a></p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p></p>
 <strong> (<em>Dispatch_type</em> </strong> <em>类型</em> <strong>) </strong> Dispatch_type DRIVER_DISPATCH</td>
-<td align="left"><p>驱动程序使用的调度例程 (s) 。 请参阅 <a href="https://docs.microsoft.com/windows-hardware/drivers/kernel/writing-dispatch-routines" data-raw-source="[Writing Dispatch Routines](../kernel/writing-dispatch-routines.md)">编写调度例程</a>。</p></td>
+<td align="left"><p>驱动程序使用的调度例程 (s) 。 请参阅 <a href="/windows-hardware/drivers/kernel/writing-dispatch-routines" data-raw-source="[Writing Dispatch Routines](../kernel/writing-dispatch-routines.md)">编写调度例程</a>。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>IO_COMPLETION_ROUTINE</p></td>
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-io_completion_routine" data-raw-source="[&lt;em&gt;IoCompletion&lt;/em&gt;](/windows-hardware/drivers/ddi/wdm/nc-wdm-io_completion_routine)"><em>IoCompletion</em></a></p>
+<td align="left"><p><a href="/windows-hardware/drivers/ddi/wdm/nc-wdm-io_completion_routine" data-raw-source="[&lt;em&gt;IoCompletion&lt;/em&gt;](/windows-hardware/drivers/ddi/wdm/nc-wdm-io_completion_routine)"><em>IoCompletion</em></a></p>
 <p><em>IoCompletion</em>例程是通过调用<em>IoSetCompletionRoutine</em>或<em>IoSetCompletionRoutineEx</em> ，并将函数指针作为第二个参数传递到<em>IoCompletion</em>例程来设置的。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>DRIVER_CANCEL</p></td>
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_cancel" data-raw-source="[&lt;em&gt;Cancel&lt;/em&gt;](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_cancel)"><em>取消</em></a></p>
+<td align="left"><p><a href="/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_cancel" data-raw-source="[&lt;em&gt;Cancel&lt;/em&gt;](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_cancel)"><em>取消</em></a></p>
 <p>通过调用<strong>IoSetCancelRoutine</strong>并将该函数指针作为函数的第二个参数传递到该函数的第二个参数，可设置<strong>取消</strong>例程。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>IO_DPC_ROUTINE</p></td>
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-io_dpc_routine" data-raw-source="[&lt;em&gt;DpcForIsr&lt;/em&gt;](/windows-hardware/drivers/ddi/wdm/nc-wdm-io_dpc_routine)"><em>DpcForIsr</em></a></p>
-<p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-io_dpc_routine" data-raw-source="[&lt;em&gt;DpcForIsr&lt;/em&gt;](/windows-hardware/drivers/ddi/wdm/nc-wdm-io_dpc_routine)"><em>DpcForIsr</em></a>例程通过调用<em>IoInitializeDpcRequest</em>并将函数指针作为第二个参数传递到<em>DpcForIsr</em>例程来注册。 若要将 DPC 排队，请使用同一 DPC 对象从 ISR 例程调用 <em>IoQueueDpc</em> 。</p></td>
+<td align="left"><p><a href="/windows-hardware/drivers/ddi/wdm/nc-wdm-io_dpc_routine" data-raw-source="[&lt;em&gt;DpcForIsr&lt;/em&gt;](/windows-hardware/drivers/ddi/wdm/nc-wdm-io_dpc_routine)"><em>DpcForIsr</em></a></p>
+<p><a href="/windows-hardware/drivers/ddi/wdm/nc-wdm-io_dpc_routine" data-raw-source="[&lt;em&gt;DpcForIsr&lt;/em&gt;](/windows-hardware/drivers/ddi/wdm/nc-wdm-io_dpc_routine)"><em>DpcForIsr</em></a>例程通过调用<em>IoInitializeDpcRequest</em>并将函数指针作为第二个参数传递到<em>DpcForIsr</em>例程来注册。 若要将 DPC 排队，请使用同一 DPC 对象从 ISR 例程调用 <em>IoQueueDpc</em> 。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>KDEFERRED_ROUTINE</p></td>
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-kdeferred_routine" data-raw-source="[&lt;em&gt;CustomDpc&lt;/em&gt;](/windows-hardware/drivers/ddi/wdm/nc-wdm-kdeferred_routine)"><em>CustomDpc</em></a></p>
-<p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-kdeferred_routine" data-raw-source="[&lt;em&gt;CustomDpc&lt;/em&gt;](/windows-hardware/drivers/ddi/wdm/nc-wdm-kdeferred_routine)"><em>CustomDpc</em></a>例程是通过调用<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-keinitializedpc" data-raw-source="[&lt;strong&gt;KeInitializeDpc&lt;/strong&gt;](/windows-hardware/drivers/ddi/wdm/nf-wdm-keinitializedpc)"><strong>KeInitializeDpc</strong></a>并将函数指针作为第二个参数传递到<em>CustomDpc</em>来设置的。 若要对驱动程序的 <em>CustomDpc</em> 进行排队，请使用同一 DPC 对象从 ISR 例程调用 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-keinsertqueuedpc" data-raw-source="[&lt;strong&gt;KeInsertQueueDpc&lt;/strong&gt;](/windows-hardware/drivers/ddi/wdm/nf-wdm-keinsertqueuedpc)"><strong>KeInsertQueueDpc</strong></a> 。</p></td>
+<td align="left"><p><a href="/windows-hardware/drivers/ddi/wdm/nc-wdm-kdeferred_routine" data-raw-source="[&lt;em&gt;CustomDpc&lt;/em&gt;](/windows-hardware/drivers/ddi/wdm/nc-wdm-kdeferred_routine)"><em>CustomDpc</em></a></p>
+<p><a href="/windows-hardware/drivers/ddi/wdm/nc-wdm-kdeferred_routine" data-raw-source="[&lt;em&gt;CustomDpc&lt;/em&gt;](/windows-hardware/drivers/ddi/wdm/nc-wdm-kdeferred_routine)"><em>CustomDpc</em></a>例程是通过调用<a href="/windows-hardware/drivers/ddi/wdm/nf-wdm-keinitializedpc" data-raw-source="[&lt;strong&gt;KeInitializeDpc&lt;/strong&gt;](/windows-hardware/drivers/ddi/wdm/nf-wdm-keinitializedpc)"><strong>KeInitializeDpc</strong></a>并将函数指针作为第二个参数传递到<em>CustomDpc</em>来设置的。 若要对驱动程序的 <em>CustomDpc</em> 进行排队，请使用同一 DPC 对象从 ISR 例程调用 <a href="/windows-hardware/drivers/ddi/wdm/nf-wdm-keinsertqueuedpc" data-raw-source="[&lt;strong&gt;KeInsertQueueDpc&lt;/strong&gt;](/windows-hardware/drivers/ddi/wdm/nf-wdm-keinsertqueuedpc)"><strong>KeInsertQueueDpc</strong></a> 。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>KSERVICE_ROUTINE</p></td>
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-kservice_routine" data-raw-source="[&lt;em&gt;InterruptService&lt;/em&gt;](/windows-hardware/drivers/ddi/wdm/nc-wdm-kservice_routine)"><em>InterruptService</em></a></p>
+<td align="left"><p><a href="/windows-hardware/drivers/ddi/wdm/nc-wdm-kservice_routine" data-raw-source="[&lt;em&gt;InterruptService&lt;/em&gt;](/windows-hardware/drivers/ddi/wdm/nc-wdm-kservice_routine)"><em>InterruptService</em></a></p>
 <p>InterruptService 例程 (ISR) 服务设备中断，并根据需要计划接收的数据的中断后处理。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>REQUEST_POWER_COMPLETE</p></td>
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-request_power_complete" data-raw-source="[&lt;em&gt;PowerCompletion&lt;/em&gt;](/windows-hardware/drivers/ddi/wdm/nc-wdm-request_power_complete)"><em>PowerCompletion</em></a>回调例程完成对 power IRP 的处理。 如果驱动程序在所有其他驱动程序都完成 IRP 之后需要执行其他任务，则驱动程序将在调用分配 IRP 的<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-porequestpowerirp" data-raw-source="[&lt;strong&gt;PoRequestPowerIrp&lt;/strong&gt;](/windows-hardware/drivers/ddi/wdm/nf-wdm-porequestpowerirp)"><strong>PoRequestPowerIrp</strong></a>例程期间注册一个<em>PowerCompletion</em>回调例程。</p></td>
+<td align="left"><p><a href="/windows-hardware/drivers/ddi/wdm/nc-wdm-request_power_complete" data-raw-source="[&lt;em&gt;PowerCompletion&lt;/em&gt;](/windows-hardware/drivers/ddi/wdm/nc-wdm-request_power_complete)"><em>PowerCompletion</em></a>回调例程完成对 power IRP 的处理。 如果驱动程序在所有其他驱动程序都完成 IRP 之后需要执行其他任务，则驱动程序将在调用分配 IRP 的<a href="/windows-hardware/drivers/ddi/wdm/nf-wdm-porequestpowerirp" data-raw-source="[&lt;strong&gt;PoRequestPowerIrp&lt;/strong&gt;](/windows-hardware/drivers/ddi/wdm/nf-wdm-porequestpowerirp)"><strong>PoRequestPowerIrp</strong></a>例程期间注册一个<em>PowerCompletion</em>回调例程。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>WORKER_THREAD_ROUTINE</p></td>
 <td align="left"><p><em>例程</em></p>
-<p><em>例程</em> 是在 <a href="https://docs.microsoft.com/windows-hardware/drivers/kernel/mmcreatemdl" data-raw-source="[&lt;strong&gt;ExInitializeWorkItem&lt;/strong&gt;](../kernel/mmcreatemdl.md)"><strong>ExInitializeWorkItem</strong></a> 函数的第二个参数中指定的回调例程。</p>
+<p><em>例程</em> 是在 <a href="/windows-hardware/drivers/kernel/mmcreatemdl" data-raw-source="[&lt;strong&gt;ExInitializeWorkItem&lt;/strong&gt;](../kernel/mmcreatemdl.md)"><strong>ExInitializeWorkItem</strong></a> 函数的第二个参数中指定的回调例程。</p>
 <p>仅当驱动程序调用<strong>ExQueueWorkItem</strong>将工作项添加到系统队列时，才应以这种方式声明<em>例程</em>。</p></td>
 </tr>
 </tbody>

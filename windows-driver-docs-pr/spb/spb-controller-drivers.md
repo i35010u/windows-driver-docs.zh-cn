@@ -4,12 +4,12 @@ description: SPB 控制器是一个设备，该设备控制简单外设总线 (S
 ms.assetid: 046353F9-315F-4328-8ECA-1C23AF87B4B4
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 174fd4dfbc96ecb06f87b76705a9ae25c8ff6b67
-ms.sourcegitcommit: c766ab74e32eb44795cbbd1a4f352d3a6a9adc14
+ms.openlocfilehash: 0c0b24d6a79232ef5644cfd026cefe4f0e33f3b7
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89389591"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90106190"
 ---
 # <a name="spb-controller-drivers"></a>SPB 控制器驱动程序
 
@@ -52,37 +52,35 @@ SPB 控制器驱动程序直接访问 SPB 控制器设备的硬件寄存器，�
 </thead>
 <tbody>
 <tr class="odd">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/spb/spb-framework-extension" data-raw-source="[SPB Framework Extension (SpbCx)](./spb-framework-extension.md)">SPB 框架扩展 (SpbCx)</a></p></td>
-<td><p>从 Windows 8 开始，SPB 框架扩展 (SpbCx) 是系统提供的针对 <a href="https://docs.microsoft.com/windows-hardware/drivers/wdf/what-s-new-for-wdf-drivers" data-raw-source="[Kernel-Mode Driver Framework](../wdf/index.md)">内核模式驱动程序框架</a> 的扩展 (KMDF) 。 SpbCx 与 <a href="/previous-versions/hh698221(v=vs.85)" data-raw-source="[SPB controller driver](/previous-versions/hh698221(v=vs.85))">SPB 控制器驱动程序</a> 一起工作，以对连接到 <a href="https://docs.microsoft.com/previous-versions/hh450903(v=vs.85)" data-raw-source="[simple peripheral bus](/previous-versions/hh450903(v=vs.85))">简单外围总线</a> (SPB) （如 I i2c 或 SPI）的外围设备执行 i/o 操作。</p></td>
+<td><p><a href="/windows-hardware/drivers/spb/spb-framework-extension" data-raw-source="[SPB Framework Extension (SpbCx)](./spb-framework-extension.md)">SPB 框架扩展 (SpbCx)</a></p></td>
+<td><p>从 Windows 8 开始，SPB 框架扩展 (SpbCx) 是系统提供的针对 <a href="/windows-hardware/drivers/wdf/what-s-new-for-wdf-drivers" data-raw-source="[Kernel-Mode Driver Framework](../wdf/index.md)">内核模式驱动程序框架</a> 的扩展 (KMDF) 。 SpbCx 与 <a href="/previous-versions/hh698221(v=vs.85)" data-raw-source="[SPB controller driver](/previous-versions/hh698221(v=vs.85))">SPB 控制器驱动程序</a> 一起工作，以对连接到 <a href="/previous-versions/hh450903(v=vs.85)" data-raw-source="[simple peripheral bus](/previous-versions/hh450903(v=vs.85))">简单外围总线</a> (SPB) （如 I i2c 或 SPI）的外围设备执行 i/o 操作。</p></td>
 </tr>
 <tr class="even">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/spb/spbcx-interfaces" data-raw-source="[SpbCx Interfaces](./spbcx-interfaces.md)">SpbCx 接口</a></p></td>
+<td><p><a href="/windows-hardware/drivers/spb/spbcx-interfaces" data-raw-source="[SpbCx Interfaces](./spbcx-interfaces.md)">SpbCx 接口</a></p></td>
 <td><p>SPB 框架扩展 (SpbCx) 有两个接口。 第一种是 i/o 请求接口，通过该接口，SpbCx 可接受 i/o 请求，客户端 (外围设备驱动程序) 的 SPB 控制器发送到连接到总线的外围设备。 第二个接口是设备驱动程序接口 (DDI) ，SpbCx 与 SPB 控制器驱动程序通信。</p></td>
 </tr>
 <tr class="odd">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/spb/i-o-transfer-sequences" data-raw-source="[I/O Transfer Sequences](./i-o-transfer-sequences.md)">I/O 传输序列</a></p></td>
+<td><p><a href="/windows-hardware/drivers/spb/i-o-transfer-sequences" data-raw-source="[I/O Transfer Sequences](./i-o-transfer-sequences.md)">I/O 传输序列</a></p></td>
 <td><p>SPB 框架扩展 (SpbCx) 支持 i/o 传输顺序。 I/o 传输序列是一组有序的总线传输 (读取和写入操作，作为单个原子总线操作执行) 。 I/o 传输序列中的所有传输在总线上访问相同的目标设备。</p></td>
 </tr>
 <tr class="even">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/spb/handling-client-implemented-sequences" data-raw-source="[Handling Client-Implemented Sequences](./handling-client-implemented-sequences.md)">处理客户端实现的序列</a></p></td>
-<td><p>可选的 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/spbcx/nc-spbcx-evt_spb_controller_lock" data-raw-source="[&lt;em&gt;EvtSpbControllerLock&lt;/em&gt;](/windows-hardware/drivers/ddi/spbcx/nc-spbcx-evt_spb_controller_lock)"><em>EvtSpbControllerLock</em></a> 和 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/spbcx/nc-spbcx-evt_spb_controller_unlock" data-raw-source="[&lt;em&gt;EvtSpbControllerUnlock&lt;/em&gt;](/windows-hardware/drivers/ddi/spbcx/nc-spbcx-evt_spb_controller_unlock)"><em>EvtSpbControllerUnlock</em></a> 事件回调函数执行互补运算。 <em>EvtSpbControllerLock</em>函数是用于<a href="https://msdn.microsoft.com/library/windows/hardware/hh450858" data-raw-source="[&lt;strong&gt;IOCTL_SPB_LOCK_CONTROLLER&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/hh450858)"><strong>IOCTL_SPB_LOCK_CONTROLLER</strong></a>请求的处理程序。 <em>EvtSpbControllerUnlock</em>函数是用于<a href="https://msdn.microsoft.com/library/windows/hardware/hh450859" data-raw-source="[&lt;strong&gt;IOCTL_SPB_UNLOCK_CONTROLLER&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/hh450859)"><strong>IOCTL_SPB_UNLOCK_CONTROLLER</strong></a>请求的处理程序。 客户端 (即，总线上的外围设备的驱动程序) 将这些请求发送到开始和结束 <a href="https://docs.microsoft.com/windows-hardware/drivers/spb/i-o-transfer-sequences" data-raw-source="[I/O transfer sequences](./i-o-transfer-sequences.md)">i/o 传输序列</a>。 大多数 SPB 控制器驱动程序不支持 <strong>IOCTL_SPB_LOCK_CONTROLLER</strong> 和 <strong>IOCTL_SPB_UNLOCK_CONTROLLER</strong> 请求，因此不实现 <em>EvtSpbControllerLock</em> 和 <em>EvtSpbControllerUnlock</em> 函数。</p></td>
+<td><p><a href="/windows-hardware/drivers/spb/handling-client-implemented-sequences" data-raw-source="[Handling Client-Implemented Sequences](./handling-client-implemented-sequences.md)">处理客户端实现的序列</a></p></td>
+<td><p>可选的 <a href="/windows-hardware/drivers/ddi/spbcx/nc-spbcx-evt_spb_controller_lock" data-raw-source="[&lt;em&gt;EvtSpbControllerLock&lt;/em&gt;](/windows-hardware/drivers/ddi/spbcx/nc-spbcx-evt_spb_controller_lock)"><em>EvtSpbControllerLock</em></a> 和 <a href="/windows-hardware/drivers/ddi/spbcx/nc-spbcx-evt_spb_controller_unlock" data-raw-source="[&lt;em&gt;EvtSpbControllerUnlock&lt;/em&gt;](/windows-hardware/drivers/ddi/spbcx/nc-spbcx-evt_spb_controller_unlock)"><em>EvtSpbControllerUnlock</em></a> 事件回调函数执行互补运算。 <em>EvtSpbControllerLock</em>函数是用于<a href="https://msdn.microsoft.com/library/windows/hardware/hh450858" data-raw-source="[&lt;strong&gt;IOCTL_SPB_LOCK_CONTROLLER&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/hh450858)"><strong>IOCTL_SPB_LOCK_CONTROLLER</strong></a>请求的处理程序。 <em>EvtSpbControllerUnlock</em>函数是用于<a href="https://msdn.microsoft.com/library/windows/hardware/hh450859" data-raw-source="[&lt;strong&gt;IOCTL_SPB_UNLOCK_CONTROLLER&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/hh450859)"><strong>IOCTL_SPB_UNLOCK_CONTROLLER</strong></a>请求的处理程序。 客户端 (即，总线上的外围设备的驱动程序) 将这些请求发送到开始和结束 <a href="/windows-hardware/drivers/spb/i-o-transfer-sequences" data-raw-source="[I/O transfer sequences](./i-o-transfer-sequences.md)">i/o 传输序列</a>。 大多数 SPB 控制器驱动程序不支持 <strong>IOCTL_SPB_LOCK_CONTROLLER</strong> 和 <strong>IOCTL_SPB_UNLOCK_CONTROLLER</strong> 请求，因此不实现 <em>EvtSpbControllerLock</em> 和 <em>EvtSpbControllerUnlock</em> 函数。</p></td>
 </tr>
 <tr class="odd">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/spb/using-the-spb-transfer-list-structure" data-raw-source="[Using the SPB_TRANSFER_LIST Structure for Custom IOCTLs](./using-the-spb-transfer-list-structure.md)">将 SPB_TRANSFER_LIST 结构用于自定义 IOCTL</a></p></td>
-<td><p>如果你的简单外围总线 (SPB) 控制器驱动程序支持一个或多个自定义 i/o 控件 (IOCTL) 请求，请使用 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/spb/ns-spb-spb_transfer_list" data-raw-source="[&lt;strong&gt;SPB_TRANSFER_LIST&lt;/strong&gt;](/windows-hardware/drivers/ddi/spb/ns-spb-spb_transfer_list)"><strong>SPB_TRANSFER_LIST</strong></a> 结构来描述这些请求中的读取和写入缓冲区。 此结构提供了一种统一的方法来描述请求中的缓冲区，并避免与 METHOD_BUFFERED i/o 操作相关的缓冲区复制开销。</p></td>
+<td><p><a href="/windows-hardware/drivers/spb/using-the-spb-transfer-list-structure" data-raw-source="[Using the SPB_TRANSFER_LIST Structure for Custom IOCTLs](./using-the-spb-transfer-list-structure.md)">将 SPB_TRANSFER_LIST 结构用于自定义 IOCTL</a></p></td>
+<td><p>如果你的简单外围总线 (SPB) 控制器驱动程序支持一个或多个自定义 i/o 控件 (IOCTL) 请求，请使用 <a href="/windows-hardware/drivers/ddi/spb/ns-spb-spb_transfer_list" data-raw-source="[&lt;strong&gt;SPB_TRANSFER_LIST&lt;/strong&gt;](/windows-hardware/drivers/ddi/spb/ns-spb-spb_transfer_list)"><strong>SPB_TRANSFER_LIST</strong></a> 结构来描述这些请求中的读取和写入缓冲区。 此结构提供了一种统一的方法来描述请求中的缓冲区，并避免与 METHOD_BUFFERED i/o 操作相关的缓冲区复制开销。</p></td>
 </tr>
 <tr class="even">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/spb/handling-ioctl-spb-full-duplex-requests" data-raw-source="[Handling IOCTL_SPB_FULL_DUPLEX Requests](./handling-ioctl-spb-full-duplex-requests.md)">处理 IOCTL_SPB_FULL_DUPLEX 请求</a></p></td>
+<td><p><a href="/windows-hardware/drivers/spb/handling-ioctl-spb-full-duplex-requests" data-raw-source="[Handling IOCTL_SPB_FULL_DUPLEX Requests](./handling-ioctl-spb-full-duplex-requests.md)">处理 IOCTL_SPB_FULL_DUPLEX 请求</a></p></td>
 <td><p>某些总线，如 SPI，可在总线控制器和总线上的设备之间同时进行读取和写入传输。 为了支持这些全双工传输，简单外围总线 (SPB) i/o 请求接口的定义包括 <a href="https://msdn.microsoft.com/library/windows/hardware/hh974774" data-raw-source="[&lt;strong&gt;IOCTL_SPB_FULL_DUPLEX&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/hh974774)"><strong>IOCTL_SPB_FULL_DUPLEX</strong></a> i/o 控制代码 (IOCTL) 的选项。 仅在硬件中实现全双工传输的总线控制器的 SPB 控制器驱动程序应支持 <strong>IOCTL_SPB_FULL_DUPLEX</strong> 的 IOCTL。</p></td>
 </tr>
 <tr class="odd">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/spb/how-to-get-the-connection-settings-for-a-device" data-raw-source="[How to Get the Connection Settings for a Device](./how-to-get-the-connection-settings-for-a-device.md)">如何获取设备的连接设置</a></p></td>
-<td><p>如果你的 SPB 控制器驱动程序注册了一个<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/spbcx/nc-spbcx-evt_spb_target_connect" data-raw-source="[&lt;em&gt;EvtSpbTargetConnect&lt;/em&gt;](/windows-hardware/drivers/ddi/spbcx/nc-spbcx-evt_spb_target_connect)"><em>EvtSpbTargetConnect</em></a>回调函数，则当控制器的客户端 (外设驱动程序) 发送<a href="https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-create" data-raw-source="[&lt;strong&gt;IRP_MJ_CREATE&lt;/strong&gt;](../kernel/irp-mj-create.md)"><strong>IRP_MJ_CREATE</strong></a>请求以打开与总线上的目标设备的逻辑连接时， <a href="/windows-hardware/drivers/spb/spb-framework-extension" data-raw-source="[SPB framework extension](/windows-hardware/drivers/spb/spb-framework-extension)">spb framework 扩展</a> (SpbCx) 调用此函数。 为了响应 <em>EvtSpbTargetConnect</em> 回调，SPB 控制器驱动程序应调用 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/spbcx/nf-spbcx-spbtargetgetconnectionparameters" data-raw-source="[&lt;strong&gt;SpbTargetGetConnectionParameters&lt;/strong&gt;](/windows-hardware/drivers/ddi/spbcx/nf-spbcx-spbtargetgetconnectionparameters)"><strong>SpbTargetGetConnectionParameters</strong></a> 方法来获取目标设备的连接设置。 SPB 控制器驱动程序将存储这些设置，并在以后使用它们来访问设备，以响应客户端发出的 i/o 请求。</p></td>
+<td><p><a href="/windows-hardware/drivers/spb/how-to-get-the-connection-settings-for-a-device" data-raw-source="[How to Get the Connection Settings for a Device](./how-to-get-the-connection-settings-for-a-device.md)">如何获取设备的连接设置</a></p></td>
+<td><p>如果你的 SPB 控制器驱动程序注册了一个<a href="/windows-hardware/drivers/ddi/spbcx/nc-spbcx-evt_spb_target_connect" data-raw-source="[&lt;em&gt;EvtSpbTargetConnect&lt;/em&gt;](/windows-hardware/drivers/ddi/spbcx/nc-spbcx-evt_spb_target_connect)"><em>EvtSpbTargetConnect</em></a>回调函数，则当控制器的客户端 (外设驱动程序) 发送<a href="/windows-hardware/drivers/kernel/irp-mj-create" data-raw-source="[&lt;strong&gt;IRP_MJ_CREATE&lt;/strong&gt;](../kernel/irp-mj-create.md)"><strong>IRP_MJ_CREATE</strong></a>请求以打开与总线上的目标设备的逻辑连接时， <a href="/windows-hardware/drivers/spb/spb-framework-extension" data-raw-source="[SPB framework extension](./spb-framework-extension.md)">spb framework 扩展</a> (SpbCx) 调用此函数。 为了响应 <em>EvtSpbTargetConnect</em> 回调，SPB 控制器驱动程序应调用 <a href="/windows-hardware/drivers/ddi/spbcx/nf-spbcx-spbtargetgetconnectionparameters" data-raw-source="[&lt;strong&gt;SpbTargetGetConnectionParameters&lt;/strong&gt;](/windows-hardware/drivers/ddi/spbcx/nf-spbcx-spbtargetgetconnectionparameters)"><strong>SpbTargetGetConnectionParameters</strong></a> 方法来获取目标设备的连接设置。 SPB 控制器驱动程序将存储这些设置，并在以后使用它们来访问设备，以响应客户端发出的 i/o 请求。</p></td>
 </tr>
 </tbody>
 </table>
-
- 
 
  
 

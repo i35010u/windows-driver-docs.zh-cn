@@ -7,12 +7,12 @@ keywords:
 - 从 Windows Vista 开始 OID_WDI_TASK_START_AP 网络驱动程序
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 29049cb730f2637c7d6cff3f0f3ffe212b3044a5
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: f2d0c8e1aec77d3e6c3d37109d6045cf0683ee58
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89205977"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90104862"
 ---
 # <a name="oid_wdi_task_start_ap"></a>OID \_ WDI \_ 任务 \_ 启动 \_ AP
 
@@ -21,7 +21,7 @@ OID \_ WDI \_ 任务 \_ 启动 \_ AP 请求 IHV 组件配置一个端口，以�
 
 | 对象 | 支持中止                                     | 主机驱动程序策略 (默认优先级)  | 正常执行时间 (秒)  |
 |--------|---------------------------------------------------|---------------------------------------|---------------------------------|
-| 端口   | 是。 中止必须后接 dot11 重置。 | 4                                     | 1                               |
+| Port   | 可以。 中止必须后接 dot11 重置。 | 4                                     | 1                               |
 
  
 
@@ -62,43 +62,43 @@ NDIS \_ 状态 \_ DOT11 \_ \_ 当前不可用 ap 波段 \_ * * * * \_ \_ ：目�
 </thead>
 <tbody>
 <tr class="odd">
-<td><a href="https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-ssid-list" data-raw-source="[&lt;strong&gt;WDI_TLV_SSID&lt;/strong&gt;](./wdi-tlv-ssid-list.md)"><strong>WDI_TLV_SSID</strong></a></td>
+<td><a href="/windows-hardware/drivers/network/wdi-tlv-ssid-list" data-raw-source="[&lt;strong&gt;WDI_TLV_SSID&lt;/strong&gt;](./wdi-tlv-ssid-list.md)"><strong>WDI_TLV_SSID</strong></a></td>
 <td></td>
 <td></td>
 <td>AP 要使用的 SSID。</td>
 </tr>
 <tr class="even">
-<td><a href="https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-start-ap-parameters" data-raw-source="[&lt;strong&gt;WDI_TLV_START_AP_PARAMETERS&lt;/strong&gt;](./wdi-tlv-start-ap-parameters.md)"><strong>WDI_TLV_START_AP_PARAMETERS</strong></a></td>
+<td><a href="/windows-hardware/drivers/network/wdi-tlv-start-ap-parameters" data-raw-source="[&lt;strong&gt;WDI_TLV_START_AP_PARAMETERS&lt;/strong&gt;](./wdi-tlv-start-ap-parameters.md)"><strong>WDI_TLV_START_AP_PARAMETERS</strong></a></td>
 <td></td>
 <td></td>
 <td>此任务的其他参数。</td>
 </tr>
 <tr class="odd">
-<td><a href="https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-auth-algo-list" data-raw-source="[&lt;strong&gt;WDI_TLV_AUTH_ALGO_LIST&lt;/strong&gt;](./wdi-tlv-auth-algo-list.md)"><strong>WDI_TLV_AUTH_ALGO_LIST</strong></a></td>
+<td><a href="/windows-hardware/drivers/network/wdi-tlv-auth-algo-list" data-raw-source="[&lt;strong&gt;WDI_TLV_AUTH_ALGO_LIST&lt;/strong&gt;](./wdi-tlv-auth-algo-list.md)"><strong>WDI_TLV_AUTH_ALGO_LIST</strong></a></td>
 <td></td>
 <td></td>
 <td>连接可使用的身份验证算法的列表。</td>
 </tr>
 <tr class="even">
-<td><a href="https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-multicast-cipher-algo-list" data-raw-source="[&lt;strong&gt;WDI_TLV_MULTICAST_CIPHER_ALGO_LIST&lt;/strong&gt;](./wdi-tlv-multicast-cipher-algo-list.md)"><strong>WDI_TLV_MULTICAST_CIPHER_ALGO_LIST</strong></a></td>
+<td><a href="/windows-hardware/drivers/network/wdi-tlv-multicast-cipher-algo-list" data-raw-source="[&lt;strong&gt;WDI_TLV_MULTICAST_CIPHER_ALGO_LIST&lt;/strong&gt;](./wdi-tlv-multicast-cipher-algo-list.md)"><strong>WDI_TLV_MULTICAST_CIPHER_ALGO_LIST</strong></a></td>
 <td></td>
 <td></td>
 <td>连接可以使用的多播密码算法的列表。</td>
 </tr>
 <tr class="odd">
-<td><a href="https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-unicast-cipher-algo-list" data-raw-source="[&lt;strong&gt;WDI_TLV_UNICAST_CIPHER_ALGO_LIST&lt;/strong&gt;](./wdi-tlv-unicast-cipher-algo-list.md)"><strong>WDI_TLV_UNICAST_CIPHER_ALGO_LIST</strong></a></td>
+<td><a href="/windows-hardware/drivers/network/wdi-tlv-unicast-cipher-algo-list" data-raw-source="[&lt;strong&gt;WDI_TLV_UNICAST_CIPHER_ALGO_LIST&lt;/strong&gt;](./wdi-tlv-unicast-cipher-algo-list.md)"><strong>WDI_TLV_UNICAST_CIPHER_ALGO_LIST</strong></a></td>
 <td></td>
 <td></td>
 <td>连接可以使用的多播密码算法的列表。</td>
 </tr>
 <tr class="even">
-<td><a href="https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-p2p-channel-number" data-raw-source="[&lt;strong&gt;WDI_TLV_P2P_CHANNEL_NUMBER&lt;/strong&gt;](./wdi-tlv-p2p-channel-number.md)"><strong>WDI_TLV_P2P_CHANNEL_NUMBER</strong></a></td>
+<td><a href="/windows-hardware/drivers/network/wdi-tlv-p2p-channel-number" data-raw-source="[&lt;strong&gt;WDI_TLV_P2P_CHANNEL_NUMBER&lt;/strong&gt;](./wdi-tlv-p2p-channel-number.md)"><strong>WDI_TLV_P2P_CHANNEL_NUMBER</strong></a></td>
 <td></td>
 <td>X</td>
 <td>如果已指定，则定义组构成中确定的操作通道。 仅当运行模式为 Wi-fi Direct 中转时，才可以指定此项。</td>
 </tr>
 <tr class="odd">
-<td><a href="https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-ap-band-channel" data-raw-source="[&lt;strong&gt;WDI_TLV_AP_BAND_CHANNEL&lt;/strong&gt;](./wdi-tlv-ap-band-channel.md)"><strong>WDI_TLV_AP_BAND_CHANNEL</strong></a></td>
+<td><a href="/windows-hardware/drivers/network/wdi-tlv-ap-band-channel" data-raw-source="[&lt;strong&gt;WDI_TLV_AP_BAND_CHANNEL&lt;/strong&gt;](./wdi-tlv-ap-band-channel.md)"><strong>WDI_TLV_AP_BAND_CHANNEL</strong></a></td>
 <td>X</td>
 <td>X</td>
 <td>已在 Windows 10 版本1511、WDI 版本1.0.10 中添加。
@@ -137,6 +137,4 @@ NDIS \_ 状态 \_ DOT11 \_ \_ 当前不可用 ap 波段 \_ * * * * \_ \_ ：目�
 </tr>
 </tbody>
 </table>
-
- 
 

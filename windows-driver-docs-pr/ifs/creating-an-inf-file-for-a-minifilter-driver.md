@@ -13,12 +13,12 @@ keywords:
 - AddRegistry 节 WDK 文件系统
 ms.date: 08/21/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 3b7514cd7694ab9a67bf20d3dd61fb940b521e2e
-ms.sourcegitcommit: 2dd8e4262c30e3f8570e35da7b9485139b216ac8
+ms.openlocfilehash: 92748fbe0251a87eef21d1c1ee22657185af74d9
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "90027570"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90106386"
 ---
 # <a name="creating-an-inf-file-for-a-filter-driver"></a>创建筛选器驱动程序的 INF 文件
 
@@ -26,7 +26,7 @@ ms.locfileid: "90027570"
 
 > [!NOTE]
 >
-> 从 Windows 10 版本1903开始，基元驱动程序的 INF 要求 (例如，) 的文件系统筛选器驱动程序已更改。 有关详细信息，请参阅 [创建新的基元驱动程序](https://docs.microsoft.com/windows-hardware/drivers/develop/creating-a-primitive-driver) 。
+> 从 Windows 10 版本1903开始，基元驱动程序的 INF 要求 (例如，) 的文件系统筛选器驱动程序已更改。 有关详细信息，请参阅 [创建新的基元驱动程序](../develop/creating-a-primitive-driver.md) 。
 
 筛选器驱动程序需要在 Windows 操作系统上安装一个 INF 文件。 你将在 [微筛选器示例](https://github.com/microsoft/Windows-driver-samples/tree/master/filesys/miniFilter)中找到示例 INF 文件。
 
@@ -44,9 +44,9 @@ ms.locfileid: "90027570"
 
 > [!NOTE]
 >
-> 从 Windows 10 版本1903开始， **DefaultUninstall** 和 **DefaultUninstall** 部分禁止 [ (异常) ](https://docs.microsoft.com/windows-hardware/drivers/develop/creating-a-primitive-driver#legacy-compatibility)。 这些部分在以前的操作系统版本中是可选的。
+> 从 Windows 10 版本1903开始， **DefaultUninstall** 和 **DefaultUninstall** 部分禁止 [ (异常) ](../develop/creating-a-primitive-driver.md#legacy-compatibility)。 这些部分在以前的操作系统版本中是可选的。
 >
-> Windows 系统64位版本上运行的所有驱动程序都必须在 Windows 加载它们之前进行签名。 有关详细信息，请参阅对 [驱动程序进行签名](https://docs.microsoft.com/windows-hardware/drivers/develop/signing-a-driver) 。
+> Windows 系统64位版本上运行的所有驱动程序都必须在 Windows 加载它们之前进行签名。 有关详细信息，请参阅对 [驱动程序进行签名](../develop/signing-a-driver.md) 。
 
 ## <a name="version-section-required"></a>版本部分 (必需) 
 
@@ -64,9 +64,9 @@ CatalogFile =
 
 下表显示了文件系统微筛选器驱动程序应在 " [**版本**](../install/inf-version-section.md) " 部分中指定的值。
 
-| 条目 | 值 |
+| 条目 | “值” |
 | ----- | ----- |
-| **信号** | "$WINDOWS NT $" |
+| **签名** | "$WINDOWS NT $" |
 | **类** | 请参阅 [文件系统筛选器驱动程序类和类 guid](file-system-filter-driver-classes-and-class-guids.md)。 |
 | **ClassGuid** | 请参阅 [文件系统筛选器驱动程序类和类 guid](file-system-filter-driver-classes-and-class-guids.md)。 |
 | **提供程序** | 在你自己的 INF 文件中，你应该指定除 Microsoft 之外的提供程序。 |
@@ -134,7 +134,7 @@ Dependencies   = FltMgr
 
 **StartType**项指定启动服务的时间。 下表列出了 **StartType** 的可能值及其相应的启动类型。
 
-| 值      | 说明 |
+| “值”      | 说明 |
 | -----      | ----------- |
 | 0x00000000 | SERVICE_BOOT_START |
 | 0x00000001 | SERVICE_SYSTEM_START |

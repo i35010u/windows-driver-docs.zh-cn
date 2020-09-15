@@ -4,12 +4,12 @@ description: 静态图像设备的注册表项
 ms.assetid: cedc8afc-54c4-485e-989c-481fe30d899b
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8552495d021554d2ee293c1e2128a43b21978dff
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: c80a003338d1bf6afa66612abc82d697ab616937
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89188893"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90105012"
 ---
 # <a name="registry-entries-for-still-image-devices"></a>静态图像设备的注册表项
 
@@ -31,7 +31,7 @@ Microsoft STI 利用多个注册表项，其中一些注册表项可以由供应
 </colgroup>
 <thead>
 <tr class="header">
-<th>返回的常量</th>
+<th>常数</th>
 <th>值名称字符串</th>
 <th>定义</th>
 </tr>
@@ -92,7 +92,7 @@ Microsoft STI 利用多个注册表项，其中一些注册表项可以由供应
 <p>0x1-信息性消息</p>
 <p>0x2-警告消息</p>
 <p>0x4-错误消息</p>
-<p>请参阅 <a href="https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff543807(v=vs.85)" data-raw-source="[&lt;strong&gt;IStillImage::WriteToErrorLog&lt;/strong&gt;](/previous-versions/windows/hardware/drivers/ff543807(v=vs.85))"><strong>IStillImage：： WriteToErrorLog</strong></a>。</p></td>
+<p>请参阅 <a href="/previous-versions/windows/hardware/drivers/ff543807(v=vs.85)" data-raw-source="[&lt;strong&gt;IStillImage::WriteToErrorLog&lt;/strong&gt;](/previous-versions/windows/hardware/drivers/ff543807(v=vs.85))"><strong>IStillImage：： WriteToErrorLog</strong></a>。</p></td>
 </tr>
 <tr class="even">
 <td><p><strong>HKLM\SYSTEM\CurrentControlSet\Control\StillImage\Logging\STIMON</strong></p></td>
@@ -115,8 +115,6 @@ Microsoft STI 利用多个注册表项，其中一些注册表项可以由供应
 </tr>
 </tbody>
 </table>
-
- 
 
  
 

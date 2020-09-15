@@ -6,12 +6,12 @@ ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 WDI_TLV_RECEIVE_COALESCING_CAPABILITIES 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 5df8557dc9a8bb0bd17f1f4743fa8a2554dda2a1
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: cec4fa9135d910e3a5fde13cc94401e59df22716
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89213706"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90105872"
 ---
 # <a name="wdi_tlv_receive_coalescing_capabilities"></a>WDI \_ TLV \_ 接收 \_ 合并 \_ 功能
 
@@ -23,7 +23,7 @@ WDI \_ tlv \_ 接收 \_ 合并 \_ 功能是包含硬件辅助接收筛选器功�
 
 0x9A
 
-## <a name="length"></a>Length
+## <a name="length"></a>长度
 
 
 Sum (所有包含的元素的大小) 。
@@ -80,8 +80,8 @@ Sum (所有包含的元素的大小) 。
 </dd>
 <dt>NDIS_RECEIVE_FILTER_VM_QUEUE_SUPPORTED</dt>
 <dd><p>网络适配器提供支持 VM 队列数据包筛选的最低要求。 如果启用了此标志，则该标志必须设置为使用 VMQ 或 SR-IOV 接口。</p>
-<p>有关 VM 队列数据包筛选的 VMQ 要求的详细信息，请参阅 <a href="https://docs.microsoft.com/windows-hardware/drivers/network/setting-and-clearing-vmq-filters" data-raw-source="[Setting and Clearing VMQ Filters](./setting-and-clearing-vmq-filters.md)">设置和清除 Vmq 筛选器</a>。</p>
-<p>有关 VM 队列数据包筛选的 SR-IOV 要求的详细信息，请参阅 <a href="https://docs.microsoft.com/windows-hardware/drivers/network/setting-a-receive-filter-on-a-virtual-port" data-raw-source="[Setting a Receive Filter on a Virtual Port](./setting-a-receive-filter-on-a-virtual-port.md)">设置虚拟端口上的接收筛选器</a>。</p>
+<p>有关 VM 队列数据包筛选的 VMQ 要求的详细信息，请参阅 <a href="/windows-hardware/drivers/network/setting-and-clearing-vmq-filters" data-raw-source="[Setting and Clearing VMQ Filters](./setting-and-clearing-vmq-filters.md)">设置和清除 Vmq 筛选器</a>。</p>
+<p>有关 VM 队列数据包筛选的 SR-IOV 要求的详细信息，请参阅 <a href="/windows-hardware/drivers/network/setting-a-receive-filter-on-a-virtual-port" data-raw-source="[Setting a Receive Filter on a Virtual Port](./setting-a-receive-filter-on-a-virtual-port.md)">设置虚拟端口上的接收筛选器</a>。</p>
 </dd>
 <dt>NDIS_RECEIVE_FILTER_LOOKAHEAD_SPLIT_SUPPORTED</dt>
 <dd><p>网络适配器支持 VM 队列，该队列在预测先行偏移量处拆分收到的传入数据包。 此偏移量等于或大于请求的预测先行大小。 网络适配器使用 DMA 将预测先行和后期预测数据传输到单独的共享内存段。</p>
@@ -95,8 +95,8 @@ Sum (所有包含的元素的大小) 。
 <dt>NDIS_RECEIVE_FILTER_DYNAMIC_PROCESSOR_AFFINITY_CHANGE_SUPPORTED</dt>
 <dd><p>网络适配器支持动态更改以下处理器关联属性之一：</p>
 <ul>
-<li><p>VMQ 接口中 VM 队列的处理器关联。 处理器关联通过 <a href="https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-queue-parameters" data-raw-source="[OID_RECEIVE_FILTER_QUEUE_PARAMETERS](./oid-receive-filter-queue-parameters.md)">OID_RECEIVE_FILTER_QUEUE_PARAMETERS</a>的 OID 集请求进行更改。</p></li>
-<li><p>非默认虚拟端口 (VPort) 的处理器关联，该端口是在 SR-IOV 接口中创建的，并附加到了 PCI Express (PCIe) 物理功能 (网络适配器的 "PF) "。 处理器关联通过 <a href="https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-vport-parameters" data-raw-source="[OID_NIC_SWITCH_VPORT_PARAMETERS](./oid-nic-switch-vport-parameters.md)">OID_NIC_SWITCH_VPORT_PARAMETERS</a>的 OID 集请求进行更改。</p></li>
+<li><p>VMQ 接口中 VM 队列的处理器关联。 处理器关联通过 <a href="/windows-hardware/drivers/network/oid-receive-filter-queue-parameters" data-raw-source="[OID_RECEIVE_FILTER_QUEUE_PARAMETERS](./oid-receive-filter-queue-parameters.md)">OID_RECEIVE_FILTER_QUEUE_PARAMETERS</a>的 OID 集请求进行更改。</p></li>
+<li><p>非默认虚拟端口 (VPort) 的处理器关联，该端口是在 SR-IOV 接口中创建的，并附加到了 PCI Express (PCIe) 物理功能 (网络适配器的 "PF) "。 处理器关联通过 <a href="/windows-hardware/drivers/network/oid-nic-switch-vport-parameters" data-raw-source="[OID_NIC_SWITCH_VPORT_PARAMETERS](./oid-nic-switch-vport-parameters.md)">OID_NIC_SWITCH_VPORT_PARAMETERS</a>的 OID 集请求进行更改。</p></li>
 </ul>
 </dd>
 <dt>NDIS_RECEIVE_FILTER_INTERRUPT_VECTOR_COALESCING_SUPPORTED</dt>
@@ -279,7 +279,7 @@ Sum (所有包含的元素的大小) 。
 </tr>
 <tr class="odd">
 <td>UINT32</td>
-<td>可为单个数据包合并筛选器指定的数据包标头字段上的最大测试数。 有关数据包合并的详细信息，请参阅 <a href="https://docs.microsoft.com/windows-hardware/drivers/network/ndis-packet-coalescing" data-raw-source="[NDIS Packet Coalescing](./ndis-packet-coalescing.md)">NDIS 数据包合并</a>。
+<td>可为单个数据包合并筛选器指定的数据包标头字段上的最大测试数。 有关数据包合并的详细信息，请参阅 <a href="/windows-hardware/drivers/network/ndis-packet-coalescing" data-raw-source="[NDIS Packet Coalescing](./ndis-packet-coalescing.md)">NDIS 数据包合并</a>。
 <div class="alert">
 <strong>注意</strong>   支持数据包合并的网络适配器必须支持5个或更多可为单个数据包合并筛选器指定的数据包标头字段。 如果适配器不支持数据包合并，微型端口驱动程序必须将此值设置为零。
 </div>
@@ -330,6 +330,4 @@ Sum (所有包含的元素的大小) 。
 
 
 [**NDIS \_ 接收 \_ 筛选器 \_ 功能**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_filter_capabilities)
-
- 
 

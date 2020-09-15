@@ -4,12 +4,12 @@ description: 网络协议的安装要求
 ms.assetid: 6383fec5-29ce-4aa4-8fc3-c8d95f7bd02b
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1cf0c771bd445b38cdda8f0b9b94b9ce641f1888
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 594ef77acd22d958ef704c4518b45fdf12acb3dd
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89218087"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90105788"
 ---
 # <a name="installation-requirements-for-network-protocols"></a>网络协议的安装要求
 
@@ -35,19 +35,19 @@ ms.locfileid: "89218087"
 <tbody>
 <tr class="odd">
 <td align="left"><p><a href="version-section-in-a-network-inf-file.md" data-raw-source="[Version Section](version-section-in-a-network-inf-file.md)">版本部分</a></p></td>
-<td align="left"><p>必须</p></td>
+<td align="left"><p>必需</p></td>
 <td align="left"><p><strong>类</strong>= NetTrans</p>
 <p><strong>ClassGuid</strong>= {4D36E975-E325-11CE-BFC1-08002BE10318}</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/install/inf-sourcedisksnames-section" data-raw-source="[&lt;strong&gt;INF SourceDisksNames Section&lt;/strong&gt;](../install/inf-sourcedisksnames-section.md)"><strong>Inf SourceDisksNames 部分</strong></a>和<a href="https://docs.microsoft.com/windows-hardware/drivers/install/inf-sourcedisksfiles-section" data-raw-source="[&lt;strong&gt;INF SourceDisksFiles Section&lt;/strong&gt;](../install/inf-sourcedisksfiles-section.md)"> <strong>inf SourceDisksFiles 部分</strong></a></p></td>
+<td align="left"><p><a href="/windows-hardware/drivers/install/inf-sourcedisksnames-section" data-raw-source="[&lt;strong&gt;INF SourceDisksNames Section&lt;/strong&gt;](../install/inf-sourcedisksnames-section.md)"><strong>Inf SourceDisksNames 部分</strong></a>和<a href="/windows-hardware/drivers/install/inf-sourcedisksfiles-section" data-raw-source="[&lt;strong&gt;INF SourceDisksFiles Section&lt;/strong&gt;](../install/inf-sourcedisksfiles-section.md)"> <strong>inf SourceDisksFiles 部分</strong></a></p></td>
 <td align="left"><p>必需的 if .。。</p></td>
 <td align="left"><p>如果 INF 文件未与 Windows 2000 一起分发，则是必需的。 如果 INF 文件与 Windows 2000 一起分发，则必须在 "<strong>版本</strong>" 部分中指定<strong>LayoutFile</strong>项，并且不会使用<strong>SourceDisksNames</strong>和<strong>SourceDisksFiles</strong>部分。</p>
 <p>无特定于网络的要求。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/install/inf-destinationdirs-section" data-raw-source="[&lt;strong&gt;INF DestinationDirs Section&lt;/strong&gt;](../install/inf-destinationdirs-section.md)"><strong>INF DestinationDirs 节</strong></a></p></td>
-<td align="left"><p>必须</p></td>
+<td align="left"><p><a href="/windows-hardware/drivers/install/inf-destinationdirs-section" data-raw-source="[&lt;strong&gt;INF DestinationDirs Section&lt;/strong&gt;](../install/inf-destinationdirs-section.md)"><strong>INF DestinationDirs 节</strong></a></p></td>
+<td align="left"><p>必需</p></td>
 <td align="left"><p>无特定于网络的要求。</p></td>
 </tr>
 <tr class="even">
@@ -56,18 +56,18 @@ ms.locfileid: "89218087"
 <td align="left"><p>无特定于网络的要求。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/install/inf-manufacturer-section" data-raw-source="[&lt;strong&gt;INF Manufacturer Section&lt;/strong&gt;](../install/inf-manufacturer-section.md)"><strong>INF Manufacturer 节</strong></a></p></td>
-<td align="left"><p>必须</p></td>
+<td align="left"><p><a href="/windows-hardware/drivers/install/inf-manufacturer-section" data-raw-source="[&lt;strong&gt;INF Manufacturer Section&lt;/strong&gt;](../install/inf-manufacturer-section.md)"><strong>INF Manufacturer 节</strong></a></p></td>
+<td align="left"><p>必需</p></td>
 <td align="left"><p>无特定于网络的要求。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><a href="models-section-in-a-network-inf-file.md" data-raw-source="[Models Section](models-section-in-a-network-inf-file.md)">模型部分</a></p></td>
-<td align="left"><p>必须</p></td>
+<td align="left"><p>必需</p></td>
 <td align="left"><p><em>Hw id</em>应该包含提供程序名称，后跟下划线和制造商名称或产品名称，例如： MS_DLC。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="ddinstall-section-in-a-network-inf-file.md" data-raw-source="[DDInstall Section](ddinstall-section-in-a-network-inf-file.md)">DDInstall 部分</a></p></td>
-<td align="left"><p>必须</p></td>
+<td align="left"><p>必需</p></td>
 <td align="left"><p><strong>特征</strong> 条目</p>
 <p>允许的值：</p>
 <p>NCF_HIDDEN</p>
@@ -82,7 +82,7 @@ ms.locfileid: "89218087"
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="add-registry-sections-in-a-network-inf-file.md" data-raw-source="[Add-registry-sections](add-registry-sections-in-a-network-inf-file.md)">添加-注册表-部分</a></p></td>
-<td align="left"><p>必须</p></td>
+<td align="left"><p>必需</p></td>
 <td align="left"><p>必需：</p>
 <p>创建 Ndi 键</p>
 <p><a href="specifying-binding-interfaces.md" data-raw-source="[Specifying Binding Interfaces](specifying-binding-interfaces.md)">指定绑定接口</a></p>
@@ -112,14 +112,12 @@ ms.locfileid: "89218087"
 <td align="left"><p>对于提供 Winsock 接口的协议，需要使用 <strong>winsock 安装</strong> 部分，并且 <strong>winsock-remove</strong> 部分是可选的。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/install/inf-strings-section" data-raw-source="[&lt;strong&gt;INF Strings Section&lt;/strong&gt;](../install/inf-strings-section.md)"><strong>INF Strings 节</strong></a></p></td>
-<td align="left"><p>必须</p></td>
+<td align="left"><p><a href="/windows-hardware/drivers/install/inf-strings-section" data-raw-source="[&lt;strong&gt;INF Strings Section&lt;/strong&gt;](../install/inf-strings-section.md)"><strong>INF Strings 节</strong></a></p></td>
+<td align="left"><p>必需</p></td>
 <td align="left"><p>无特定于网络的要求。</p></td>
 </tr>
 </tbody>
 </table>
-
- 
 
  
 

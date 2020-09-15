@@ -6,23 +6,23 @@ keywords:
 - INF 文件系统，创建
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 16142679f96f684f3e6870cd5c9d6452fbd94216
-ms.sourcegitcommit: 2dd8e4262c30e3f8570e35da7b9485139b216ac8
+ms.openlocfilehash: abd4a2544e8684f08397ecb848ce3fadd9e7ddf1
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "90027579"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90106394"
 ---
 # <a name="creating-an-inf-file-for-a-legacy-file-system-filter-driver"></a>为旧文件系统筛选器驱动程序创建 INF 文件
 
 > [!NOTE]
-> 为了获得最佳的可靠性和性能，请使用带有筛选器管理器支持的 [文件系统微筛选器驱动程序](https://docs.microsoft.com/windows-hardware/drivers/ifs/filter-manager-concepts) ，而不是使用旧的文件系统
+> 为了获得最佳的可靠性和性能，请使用带有筛选器管理器支持的 [文件系统微筛选器驱动程序](./filter-manager-concepts.md) ，而不是使用旧的文件系统
 
 Windows 安装程序和设备安装程序服务（统称为 [setupapi.log](../install/setupapi.md)）提供控制 Windows 安装程序和驱动程序安装的功能。 安装过程由 INF 文件控制。
 
 文件系统筛选器驱动程序的 INF 文件提供 Setupapi.log 用于安装驱动程序的说明。 INF 文件是一个文本文件，该文件指定要运行的驱动程序必须存在的文件，以及驱动程序文件的源和目标目录。 INF 文件还包含 Setupapi.log 存储在注册表中的驱动程序配置信息，如驱动程序的启动类型和加载顺序组。
 
-有关 INF 文件及其创建方式的详细信息，请参阅 [创建 Inf 文件](../install/overview-of-inf-files.md) 和 [inf 文件部分和指令](https://docs.microsoft.com/windows-hardware/drivers/install/inf-file-sections-and-directives)。 有关签名驱动程序的常规信息，请参阅 [驱动程序签名](../install/driver-signing.md)。
+有关 INF 文件及其创建方式的详细信息，请参阅 [创建 Inf 文件](../install/overview-of-inf-files.md) 和 [inf 文件部分和指令](../install/index.md)。 有关签名驱动程序的常规信息，请参阅 [驱动程序签名](../install/driver-signing.md)。
 
 你可以创建一个 INF 文件，用于在多个版本的 Windows 操作系统上安装驱动程序。 有关创建此类 INF 文件的详细信息，请参阅 [为多个平台和操作系统创建 INF 文件](../install/creating-inf-files-for-multiple-platforms-and-operating-systems.md) 和 [创建国际 INF 文件](../install/creating-international-inf-files.md)。
 
@@ -92,12 +92,12 @@ CatalogFile =
 <thead>
 <tr class="header">
 <th align="left">条目</th>
-<th align="left">值</th>
+<th align="left">“值”</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><strong>信号</strong></p></td>
+<td align="left"><p><strong>签名</strong></p></td>
 <td align="left"><p>"$WINDOWS NT $"</p></td>
 </tr>
 <tr class="even">
@@ -114,7 +114,7 @@ CatalogFile =
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>DriverVer</strong></p></td>
-<td align="left"><p>请参阅 <a href="https://docs.microsoft.com/windows-hardware/drivers/install/inf-driverver-directive" data-raw-source="[&lt;strong&gt;INF DriverVer directive&lt;/strong&gt;](../install/inf-driverver-directive.md)"><strong>INF DriverVer 指令</strong></a>。</p></td>
+<td align="left"><p>请参阅 <a href="/windows-hardware/drivers/install/inf-driverver-directive" data-raw-source="[&lt;strong&gt;INF DriverVer directive&lt;/strong&gt;](../install/inf-driverver-directive.md)"><strong>INF DriverVer 指令</strong></a>。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>CatalogFile</strong></p></td>
@@ -223,7 +223,7 @@ AddReg         = MyLegacyFilter.AddRegistry
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">值</th>
+<th align="left">“值”</th>
 <th align="left">说明</th>
 </tr>
 </thead>
@@ -260,7 +260,7 @@ AddReg         = MyLegacyFilter.AddRegistry
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">值</th>
+<th align="left">“值”</th>
 <th align="left">说明</th>
 </tr>
 </thead>
@@ -305,7 +305,7 @@ AddReg         = MyLegacyFilter.AddRegistry
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">值</th>
+<th align="left">“值”</th>
 <th align="left">操作</th>
 </tr>
 </thead>
@@ -390,6 +390,4 @@ Disk1                     = "MyLegacyFilter Source Media"
 ```
 
 可以通过创建其他特定于区域设置的字符串来创建单个国际 INF 文件[**。**](../install/inf-strings-section.md)INF 文件中的*LanguageID*部分。 有关国际 INF 文件的详细信息，请参阅 [创建国际 Inf 文件](../install/creating-international-inf-files.md)。
-
- 
 

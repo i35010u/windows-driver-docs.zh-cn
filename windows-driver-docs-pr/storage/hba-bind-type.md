@@ -4,12 +4,12 @@ description: HBA \_ 绑定 \_ 类型
 ms.assetid: a5388574-f48a-4bdc-9ffe-408fa6de1eeb
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 931dffb42e704db774708c4e48948e4e599fb410
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 8150404a89fa3ff8f3f167d9fe776df3270b6c4a
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89189043"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90105082"
 ---
 # <a name="hba_bind_type"></a>HBA \_ 绑定 \_ 类型
 
@@ -55,7 +55,7 @@ HBA \_ 绑定 \_ 类型 WMI 类限定符指示 hba 及其小型端口驱动程�
 </tr>
 <tr class="even">
 <td align="left"><p>HBA_CAN_BIND_TARGETS</p></td>
-<td align="left"><p>指示 HBA 及其小型端口驱动程序在光纤通道协议 () FCP 之间生成永久性绑定的功能，以及操作系统用于标识逻辑单元的信息，例如存储在 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_hbascsiid" data-raw-source="[&lt;strong&gt;HBAScsiID&lt;/strong&gt;](/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_hbascsiid)"><strong>HBAScsiID</strong></a>中的总线和目标编号。</p></td>
+<td align="left"><p>指示 HBA 及其小型端口驱动程序在光纤通道协议 () FCP 之间生成永久性绑定的功能，以及操作系统用于标识逻辑单元的信息，例如存储在 <a href="/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_hbascsiid" data-raw-source="[&lt;strong&gt;HBAScsiID&lt;/strong&gt;](/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_hbascsiid)"><strong>HBAScsiID</strong></a>中的总线和目标编号。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>HBA_CAN_BIND_AUTOMAP</p></td>
@@ -71,6 +71,4 @@ HBA \_ 绑定 \_ 类型 WMI 类限定符指示 hba 及其小型端口驱动程�
  
 
 通过包含 *Hbaapi* ，你的软件将有权访问与上表中的类型名称对应的一系列符号常量。 这些符号常量的定义不包含在 *Hbapiwmi* 中， (WMI 工具套件编译) 时生成的文件。
-
- 
 

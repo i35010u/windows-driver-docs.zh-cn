@@ -6,12 +6,12 @@ keywords:
 - 取消隔行扫描 WDK DirectX VA，示例函数
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1f22e7088a1bb5c8e5fa2b16c51c223d654e2f1a
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: e0d0da8f5b3e4b46e1dc526c0ac5a018dcd3686a
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89066666"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90104696"
 ---
 # <a name="sample-functions-for-deinterlacing"></a>反交错的示例函数
 
@@ -38,11 +38,11 @@ ms.locfileid: "89066666"
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/display/dxva-deinterlacecontainerdeviceclass-deinterlacequeryavailablemodes" data-raw-source="[&lt;strong&gt;DeinterlaceQueryAvailableModes&lt;/strong&gt;](./dxva-deinterlacecontainerdeviceclass-deinterlacequeryavailablemodes.md)"><strong>DeinterlaceQueryAvailableModes</strong></a></p></td>
+<td align="left"><p><a href="/windows-hardware/drivers/display/dxva-deinterlacecontainerdeviceclass-deinterlacequeryavailablemodes" data-raw-source="[&lt;strong&gt;DeinterlaceQueryAvailableModes&lt;/strong&gt;](./dxva-deinterlacecontainerdeviceclass-deinterlacequeryavailablemodes.md)"><strong>DeinterlaceQueryAvailableModes</strong></a></p></td>
 <td align="left"><p>查询可用的取消隔行扫描和帧速率转换模式。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/display/dxva-deinterlacecontainerdeviceclass-deinterlacequerymodecaps" data-raw-source="[&lt;strong&gt;DeinterlaceQueryModeCaps&lt;/strong&gt;](./dxva-deinterlacecontainerdeviceclass-deinterlacequerymodecaps.md)"><strong>DeinterlaceQueryModeCaps</strong></a></p></td>
+<td align="left"><p><a href="/windows-hardware/drivers/display/dxva-deinterlacecontainerdeviceclass-deinterlacequerymodecaps" data-raw-source="[&lt;strong&gt;DeinterlaceQueryModeCaps&lt;/strong&gt;](./dxva-deinterlacecontainerdeviceclass-deinterlacequerymodecaps.md)"><strong>DeinterlaceQueryModeCaps</strong></a></p></td>
 <td align="left"><p>查询给定取消隔行扫描和帧速率转换模式的功能。</p></td>
 </tr>
 </tbody>
@@ -67,15 +67,15 @@ ms.locfileid: "89066666"
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/display/dxva-deinterlacebobdeviceclass-deinterlaceopenstream" data-raw-source="[&lt;strong&gt;DeinterlaceOpenStream&lt;/strong&gt;](./dxva-deinterlacebobdeviceclass-deinterlaceopenstream.md)"><strong>DeinterlaceOpenStream</strong></a></p></td>
+<td align="left"><p><a href="/windows-hardware/drivers/display/dxva-deinterlacebobdeviceclass-deinterlaceopenstream" data-raw-source="[&lt;strong&gt;DeinterlaceOpenStream&lt;/strong&gt;](./dxva-deinterlacebobdeviceclass-deinterlaceopenstream.md)"><strong>DeinterlaceOpenStream</strong></a></p></td>
 <td align="left"><p>打开视频流对象。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/display/dxva-deinterlacebobdeviceclass-deinterlaceblt" data-raw-source="[&lt;strong&gt;DeinterlaceBlt&lt;/strong&gt;](./dxva-deinterlacebobdeviceclass-deinterlaceblt.md)"><strong>DeinterlaceBlt</strong></a></p></td>
+<td align="left"><p><a href="/windows-hardware/drivers/display/dxva-deinterlacebobdeviceclass-deinterlaceblt" data-raw-source="[&lt;strong&gt;DeinterlaceBlt&lt;/strong&gt;](./dxva-deinterlacebobdeviceclass-deinterlaceblt.md)"><strong>DeinterlaceBlt</strong></a></p></td>
 <td align="left"><p>提供视频流对象的位块取消隔行扫描。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/display/dxva-deinterlacebobdeviceclass-deinterlacebltex" data-raw-source="[&lt;strong&gt;DeinterlaceBltEx&lt;/strong&gt;](./dxva-deinterlacebobdeviceclass-deinterlacebltex.md)"><strong>DeinterlaceBltEx</strong></a></p></td>
+<td align="left"><p><a href="/windows-hardware/drivers/display/dxva-deinterlacebobdeviceclass-deinterlacebltex" data-raw-source="[&lt;strong&gt;DeinterlaceBltEx&lt;/strong&gt;](./dxva-deinterlacebobdeviceclass-deinterlacebltex.md)"><strong>DeinterlaceBltEx</strong></a></p></td>
 <td align="left"><p><strong>Windows Server 2003 SP1 及更高版本和 Windows XP SP2 及更高版本。</strong></p>
 <div>
  
@@ -83,7 +83,7 @@ ms.locfileid: "89066666"
 视频流顶部 Deinterlaces 视频和合成视频 substreams。</td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/display/dxva-deinterlacebobdeviceclass-deinterlaceclosestream" data-raw-source="[&lt;strong&gt;DeinterlaceCloseStream&lt;/strong&gt;](./dxva-deinterlacebobdeviceclass-deinterlaceclosestream.md)"><strong>DeinterlaceCloseStream</strong></a></p></td>
+<td align="left"><p><a href="/windows-hardware/drivers/display/dxva-deinterlacebobdeviceclass-deinterlaceclosestream" data-raw-source="[&lt;strong&gt;DeinterlaceCloseStream&lt;/strong&gt;](./dxva-deinterlacebobdeviceclass-deinterlaceclosestream.md)"><strong>DeinterlaceCloseStream</strong></a></p></td>
 <td align="left"><p>关闭视频流对象。</p></td>
 </tr>
 </tbody>
@@ -108,33 +108,31 @@ ms.locfileid: "89066666"
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/display/dxva-deinterlacecontainerdeviceclass-deinterlacequeryavailablemodes" data-raw-source="[&lt;strong&gt;DeinterlaceQueryAvailableModes&lt;/strong&gt;](./dxva-deinterlacecontainerdeviceclass-deinterlacequeryavailablemodes.md)"><strong>DeinterlaceQueryAvailableModes</strong></a></p></td>
+<td align="left"><p><a href="/windows-hardware/drivers/display/dxva-deinterlacecontainerdeviceclass-deinterlacequeryavailablemodes" data-raw-source="[&lt;strong&gt;DeinterlaceQueryAvailableModes&lt;/strong&gt;](./dxva-deinterlacecontainerdeviceclass-deinterlacequeryavailablemodes.md)"><strong>DeinterlaceQueryAvailableModes</strong></a></p></td>
 <td align="left"><p><strong>RenderMoComp</strong></p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/display/dxva-deinterlacecontainerdeviceclass-deinterlacequerymodecaps" data-raw-source="[&lt;strong&gt;DeinterlaceQueryModeCaps&lt;/strong&gt;](./dxva-deinterlacecontainerdeviceclass-deinterlacequerymodecaps.md)"><strong>DeinterlaceQueryModeCaps</strong></a></p></td>
+<td align="left"><p><a href="/windows-hardware/drivers/display/dxva-deinterlacecontainerdeviceclass-deinterlacequerymodecaps" data-raw-source="[&lt;strong&gt;DeinterlaceQueryModeCaps&lt;/strong&gt;](./dxva-deinterlacecontainerdeviceclass-deinterlacequerymodecaps.md)"><strong>DeinterlaceQueryModeCaps</strong></a></p></td>
 <td align="left"><p><strong>RenderMoComp</strong></p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/display/dxva-deinterlacebobdeviceclass-deinterlaceopenstream" data-raw-source="[&lt;strong&gt;DeinterlaceOpenStream&lt;/strong&gt;](./dxva-deinterlacebobdeviceclass-deinterlaceopenstream.md)"><strong>DeinterlaceOpenStream</strong></a></p></td>
+<td align="left"><p><a href="/windows-hardware/drivers/display/dxva-deinterlacebobdeviceclass-deinterlaceopenstream" data-raw-source="[&lt;strong&gt;DeinterlaceOpenStream&lt;/strong&gt;](./dxva-deinterlacebobdeviceclass-deinterlaceopenstream.md)"><strong>DeinterlaceOpenStream</strong></a></p></td>
 <td align="left"><p><strong>CreateMoComp</strong></p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/display/dxva-deinterlacebobdeviceclass-deinterlaceblt" data-raw-source="[&lt;strong&gt;DeinterlaceBlt&lt;/strong&gt;](./dxva-deinterlacebobdeviceclass-deinterlaceblt.md)"><strong>DeinterlaceBlt</strong></a></p></td>
+<td align="left"><p><a href="/windows-hardware/drivers/display/dxva-deinterlacebobdeviceclass-deinterlaceblt" data-raw-source="[&lt;strong&gt;DeinterlaceBlt&lt;/strong&gt;](./dxva-deinterlacebobdeviceclass-deinterlaceblt.md)"><strong>DeinterlaceBlt</strong></a></p></td>
 <td align="left"><p><strong>RenderMoComp</strong></p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/display/dxva-deinterlacebobdeviceclass-deinterlacebltex" data-raw-source="[&lt;strong&gt;DeinterlaceBltEx&lt;/strong&gt;](./dxva-deinterlacebobdeviceclass-deinterlacebltex.md)"><strong>DeinterlaceBltEx</strong></a></p></td>
+<td align="left"><p><a href="/windows-hardware/drivers/display/dxva-deinterlacebobdeviceclass-deinterlacebltex" data-raw-source="[&lt;strong&gt;DeinterlaceBltEx&lt;/strong&gt;](./dxva-deinterlacebobdeviceclass-deinterlacebltex.md)"><strong>DeinterlaceBltEx</strong></a></p></td>
 <td align="left"><p><strong>RenderMoComp</strong></p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/display/dxva-deinterlacebobdeviceclass-deinterlaceclosestream" data-raw-source="[&lt;strong&gt;DeinterlaceCloseStream&lt;/strong&gt;](./dxva-deinterlacebobdeviceclass-deinterlaceclosestream.md)"><strong>DeinterlaceCloseStream</strong></a></p></td>
+<td align="left"><p><a href="/windows-hardware/drivers/display/dxva-deinterlacebobdeviceclass-deinterlaceclosestream" data-raw-source="[&lt;strong&gt;DeinterlaceCloseStream&lt;/strong&gt;](./dxva-deinterlacebobdeviceclass-deinterlaceclosestream.md)"><strong>DeinterlaceCloseStream</strong></a></p></td>
 <td align="left"><p><strong>DestroyMoComp</strong></p></td>
 </tr>
 </tbody>
 </table>
-
- 
 
  
 

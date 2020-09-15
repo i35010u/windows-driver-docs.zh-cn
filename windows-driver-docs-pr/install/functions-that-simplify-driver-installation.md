@@ -12,12 +12,12 @@ keywords:
 - 即插即用 WDK 设备安装
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 24692945a9086ea60f741f737f600416c5b6462a
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 58a2102ccdac459cb675c3c70ca185ffc61521b9
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89095743"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90106588"
 ---
 # <a name="functions-that-simplify-driver-installation"></a>用于简化驱动程序安装的函数
 
@@ -52,7 +52,7 @@ ms.locfileid: "89095743"
 
 调用 **DiInstallDriver** 或 [**UpdateDriverForPlugAndPlayDevices**](/windows/desktop/api/newdev/nf-newdev-updatedriverforplugandplaydevicesa) 是安装应用程序为设备安装新驱动程序的最简单方法。 **DiInstallDriver** 和 **UpdateDriverForPlugAndPlayDevices** 执行相同的基本安装操作。 不过， **UpdateDriverForPlugAndPlayDevices** 支持其他安装选项。
 
-默认情况下，如果驱动程序比设备上当前安装的驱动程序更适合于设备，则 **DiInstallDriver** 仅在设备上安装驱动程序。 有关 Windows 如何选择设备驱动程序的信息，请参阅 [Windows 如何选择驱动程序](how-setup-selects-drivers.md)。
+默认情况下，如果驱动程序比设备上当前安装的驱动程序更适合于设备，则 **DiInstallDriver** 仅在设备上安装驱动程序。 有关 Windows 如何选择设备驱动程序的信息，请参阅 [Windows 如何选择驱动程序](./how-windows-selects-a-driver-for-a-device.md)。
 
 调用方还可以调用 **DiInstallDriver** 来执行以下操作：
 
@@ -99,6 +99,4 @@ ms.locfileid: "89095743"
 -   禁止显示用户界面组件。
 
 -   向调用方指示是否需要重启系统才能完成安装。
-
- 
 

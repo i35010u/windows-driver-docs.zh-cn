@@ -6,12 +6,12 @@ keywords:
 - EngExtCpp 扩展，客户端对象
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 376ad7ec4782f32087c53c63c062e21fcb6bb8c8
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: ed92f23ba38fdb7c5407f27e7307aaf6a8c49d7b
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89212247"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90105920"
 ---
 # <a name="client-objects-and-the-engine"></a>客户端对象和引擎
 
@@ -34,31 +34,31 @@ EngExtCpp 扩展通过客户端对象与 [调试器引擎](introduction.md#debug
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nn-dbgeng-idebugadvanced" data-raw-source="[IDebugAdvanced](/windows-hardware/drivers/ddi/dbgeng/nn-dbgeng-idebugadvanced)">IDebugAdvanced</a></p></td>
+<td align="left"><p><a href="/windows-hardware/drivers/ddi/dbgeng/nn-dbgeng-idebugadvanced" data-raw-source="[IDebugAdvanced](/windows-hardware/drivers/ddi/dbgeng/nn-dbgeng-idebugadvanced)">IDebugAdvanced</a></p></td>
 <td align="left"><p><strong>m_Advanced</strong></p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nn-dbgeng-idebugclient" data-raw-source="[IDebugClient](/windows-hardware/drivers/ddi/dbgeng/nn-dbgeng-idebugclient)">IDebugClient</a></p></td>
+<td align="left"><p><a href="/windows-hardware/drivers/ddi/dbgeng/nn-dbgeng-idebugclient" data-raw-source="[IDebugClient](/windows-hardware/drivers/ddi/dbgeng/nn-dbgeng-idebugclient)">IDebugClient</a></p></td>
 <td align="left"><p><strong>m_Client</strong></p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nn-dbgeng-idebugcontrol" data-raw-source="[IDebugControl](/windows-hardware/drivers/ddi/dbgeng/nn-dbgeng-idebugcontrol)">IDebugControl</a></p></td>
+<td align="left"><p><a href="/windows-hardware/drivers/ddi/dbgeng/nn-dbgeng-idebugcontrol" data-raw-source="[IDebugControl](/windows-hardware/drivers/ddi/dbgeng/nn-dbgeng-idebugcontrol)">IDebugControl</a></p></td>
 <td align="left"><p><strong>m_Control</strong></p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nn-dbgeng-idebugdataspaces" data-raw-source="[IDebugDataSpaces](/windows-hardware/drivers/ddi/dbgeng/nn-dbgeng-idebugdataspaces)">IDebugDataSpaces</a></p></td>
+<td align="left"><p><a href="/windows-hardware/drivers/ddi/dbgeng/nn-dbgeng-idebugdataspaces" data-raw-source="[IDebugDataSpaces](/windows-hardware/drivers/ddi/dbgeng/nn-dbgeng-idebugdataspaces)">IDebugDataSpaces</a></p></td>
 <td align="left"><p><strong>m_Data</strong></p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nn-dbgeng-idebugregisters" data-raw-source="[IDebugRegisters](/windows-hardware/drivers/ddi/dbgeng/nn-dbgeng-idebugregisters)">IDebugRegisters</a></p></td>
+<td align="left"><p><a href="/windows-hardware/drivers/ddi/dbgeng/nn-dbgeng-idebugregisters" data-raw-source="[IDebugRegisters](/windows-hardware/drivers/ddi/dbgeng/nn-dbgeng-idebugregisters)">IDebugRegisters</a></p></td>
 <td align="left"><p><strong>m_Registers</strong></p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nn-dbgeng-idebugsymbols" data-raw-source="[IDebugSymbols](/windows-hardware/drivers/ddi/dbgeng/nn-dbgeng-idebugsymbols)">IDebugSymbols</a></p></td>
+<td align="left"><p><a href="/windows-hardware/drivers/ddi/dbgeng/nn-dbgeng-idebugsymbols" data-raw-source="[IDebugSymbols](/windows-hardware/drivers/ddi/dbgeng/nn-dbgeng-idebugsymbols)">IDebugSymbols</a></p></td>
 <td align="left"><p><strong>m_Symbols</strong></p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nn-dbgeng-idebugsystemobjects" data-raw-source="[IDebugSystemObjects](/windows-hardware/drivers/ddi/dbgeng/nn-dbgeng-idebugsystemobjects)">IDebugSystemObjects</a></p></td>
+<td align="left"><p><a href="/windows-hardware/drivers/ddi/dbgeng/nn-dbgeng-idebugsystemobjects" data-raw-source="[IDebugSystemObjects](/windows-hardware/drivers/ddi/dbgeng/nn-dbgeng-idebugsystemobjects)">IDebugSystemObjects</a></p></td>
 <td align="left"><p><strong>m_System</strong></p></td>
 </tr>
 </tbody>
@@ -162,6 +162,4 @@ EngExtCpp 扩展通过客户端对象与 [调试器引擎](introduction.md#debug
 扩展库还可以使用方法 [**IDebugClient：： CreateClient**](/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugclient5-createclient) 或函数 [**DebugCreate**](/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-debugcreate) 或 [**DebugConnect**](/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-debugconnect)创建自己的客户端对象。
 
 有关客户端对象的概述，请参阅 [客户端对象](client-objects.md)。
-
- 
 

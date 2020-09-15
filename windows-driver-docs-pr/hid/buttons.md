@@ -4,12 +4,12 @@ description: 使用适用于 GPIO 按钮的 Microsoft 提供的按钮驱动程�
 ms.assetid: FBA8141D-8DBA-4C68-8BB5-44B3EDB7D062
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fcb55e68339e0edd5541b6d3cff0b3e21e5c273f
-ms.sourcegitcommit: 9145bffd4cc3b990a9ebff43b588db6ef2001f5d
+ms.openlocfilehash: 4cfc5208afc136a671165b2a879c9645bf6e1c0f
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/09/2020
-ms.locfileid: "89592363"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90106264"
 ---
 # <a name="hid-button-drivers"></a>HID 按钮驱动程序
 
@@ -39,7 +39,7 @@ ms.locfileid: "89592363"
 <td><p>如果要实现 GPIO 按钮，请描述系统 ACPI 中的按钮，以便 Windows 可以加载内置驱动程序 Hidinterrupt.sys，作为向操作系统报告事件的按钮驱动程序。</p>
 <ul>
 <li><a href="acpi-button-device.md" data-raw-source="[ACPI button device](acpi-button-device.md)">ACPI 按钮设备</a></li>
-<li><a href="https://docs.microsoft.com/windows-hardware/drivers/gpiobtn/button-behavior" data-raw-source="[Button Behavior](../gpiobtn/button-behavior.md)">按钮行为</a></li>
+<li><a href="/windows-hardware/drivers/gpiobtn/button-behavior" data-raw-source="[Button Behavior](../gpiobtn/button-behavior.md)">按钮行为</a></li>
 <li><a href="acpi-button-device.md#sample-buttons-acpi-for-phonetablet" data-raw-source="[Sample buttons ACPI for phone/tablet](acpi-button-device.md#acpi-button-phone)">手机/平板电脑的示例按钮 ACPI</a></li>
 <li><a href="acpi-button-device.md#sample-buttons-acpi-for-desktop" data-raw-source="[Sample buttons ACPI for desktop](acpi-button-device.md#acpi-button-desktop)">示例按钮桌面版 ACPI</a></li>
 </ul>
@@ -51,12 +51,12 @@ ms.locfileid: "89592363"
 <td><p>如果要实现非 GPIO 按钮，如需要由其他软件组件注入的 HID 格式的数据流，则可以选择写入内核模式驱动程序。 从 Windows 10 开始，你可以通过调用与虚拟 HID 框架 (VHF) 通信的编程接口来编写一个 HID 源驱动程序，并获取和设置与 HID 类驱动程序的 HID 报表。</p>
 <ul>
 <li><a href="virtual-hid-framework--vhf-.md" data-raw-source="[How to write a HID source driver that interacts with Virtual HID Framework (VHF)](virtual-hid-framework--vhf-.md)">如何编写与虚拟 HID Framework 交互 (VHF 的 HID 源驱动程序) </a></li>
-<li><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/index" data-raw-source="[Virtual HID Framework Reference](/windows-hardware/drivers/ddi/index)">虚拟 HID 框架参考</a></li>
+<li><a href="/windows-hardware/drivers/ddi/index" data-raw-source="[Virtual HID Framework Reference](/windows-hardware/drivers/ddi/index)">虚拟 HID 框架参考</a></li>
 </ul>
 <p>或者，你可以编写一个内核模式 HID 传输微型驱动程序，它受 Windows 早期版本支持。 但是，我们不建议采用这种方法，因为编写不当的 KMDF HID 传输微型驱动程序会导致系统崩溃。</p>
 <ul>
 <li><a href="transport-minidrivers.md" data-raw-source="[Transport Minidrivers](transport-minidrivers.md)">传输微型驱动程序</a></li>
-<li><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/index" data-raw-source="[HID Minidriver IOCTLs](/windows-hardware/drivers/ddi/index)">HID 微型驱动程序 IOCTLs</a></li>
+<li><a href="/windows-hardware/drivers/ddi/index" data-raw-source="[HID Minidriver IOCTLs](/windows-hardware/drivers/ddi/index)">HID 微型驱动程序 IOCTLs</a></li>
 </ul></td>
 </tr>
 <tr class="odd">
@@ -64,8 +64,8 @@ ms.locfileid: "89592363"
 <p><img src="images/hid-umdf.png" alt="HID Transport Minidriver" /></p></td>
 <td><p>如果要实现非 GPIO 按钮，则可在用户模式下编写 HID 传输微型驱动程序，而不是使用前面编写的模型。 除了内核模式驱动程序和此驱动程序中的错误之外，这些驱动程序也不会检查整个系统。</p>
 <ul>
-<li><a href="https://docs.microsoft.com/windows-hardware/drivers/wdf/creating-umdf-hid-minidrivers" data-raw-source="[Creating UMDF HID Minidrivers](../wdf/creating-umdf-hid-minidrivers.md)">创建 UMDF HID 微型驱动程序</a></li>
-<li><a href="https://docs.microsoft.com/previous-versions/hh463977(v=vs.85)" data-raw-source="[UMDF HID Minidriver IOCTLs](/previous-versions/hh463977(v=vs.85))">UMDF HID 微型驱动程序 IOCTLs</a></li>
+<li><a href="/windows-hardware/drivers/wdf/creating-umdf-hid-minidrivers" data-raw-source="[Creating UMDF HID Minidrivers](../wdf/creating-umdf-hid-minidrivers.md)">创建 UMDF HID 微型驱动程序</a></li>
+<li><a href="/previous-versions/hh463977(v=vs.85)" data-raw-source="[UMDF HID Minidriver IOCTLs](/previous-versions/hh463977(v=vs.85))">UMDF HID 微型驱动程序 IOCTLs</a></li>
 </ul></td>
 </tr>
 </tbody>

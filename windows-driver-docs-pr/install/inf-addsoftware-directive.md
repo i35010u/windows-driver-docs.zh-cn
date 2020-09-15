@@ -3,12 +3,12 @@ title: INF AddSoftware 指令
 description: AddSoftware 指令介绍了独立软件的安装。
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 43f40e2a3c3ab0bd82724d1009b2da473faf2ee0
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 1cdb40c420220e25b6dcbcab043540c99f06a815
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89096341"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90104917"
 ---
 # <a name="inf-addsoftware-directive"></a>INF AddSoftware 指令
 
@@ -92,8 +92,8 @@ SoftwareType=type-code
 不要使用 AddSoftware 来分发与设备无关的软件。 例如，不应使用 AddSoftware 安装特定于 OEM 的 PC 实用程序。
 改为使用下列选项之一在 Windows 10 的 OEM 映像中预安装应用：
 
-* 若要预安装 Win32 应用，请启动到审核模式并安装该应用。 有关详细信息，请参阅 [审核模式概述](https://docs.microsoft.com/windows-hardware/manufacture/desktop/audit-mode-overview)。
-* 若要预安装 Microsoft Store (UWP) 应用，请参阅 [适用于桌面设备的 Preinstallable 应用](https://docs.microsoft.com/windows-hardware/customize/preinstall/preinstallable-apps-for-windows-10-desktop)
+* 若要预安装 Win32 应用，请启动到审核模式并安装该应用。 有关详细信息，请参阅 [审核模式概述](/windows-hardware/manufacture/desktop/audit-mode-overview)。
+* 若要预安装 Microsoft Store (UWP) 应用，请参阅 [适用于桌面设备的 Preinstallable 应用](/windows-hardware/customize/preinstall/preinstallable-apps-for-windows-10-desktop)
 
 有关将驱动程序与通用 Windows 平台 (UWP) 应用程序配对的信息，请参阅将 [驱动程序与通用 Windows 平台 (uwp) 应用](pairing-app-and-driver-versions.md) 和 [硬件支持应用 (HSA) ：驱动程序开发人员的步骤](../devapps/hardware-support-app--hsa--steps-for-driver-developers.md)。
 

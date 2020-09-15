@@ -4,12 +4,12 @@ description: IoSpy 是一个筛选器驱动程序，用于记录有关 IOCTL 的
 ms.assetid: 5fe52fe6-97b4-477a-9450-727c5bf9bd72
 ms.date: 07/09/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 84cbe81cbf673cbf93ba20ba72815c6c20c9402a
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: ec0134f8d1b51932a9899634a0410116eb68240a
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89381985"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90104610"
 ---
 # <a name="iospy"></a>IoSpy
 
@@ -56,7 +56,7 @@ IoSpy 是一个筛选器驱动程序，用于记录有关 IOCTL 的数据以及�
 <td align="left"><p>禁用1个或多个设备上的 i/o 监视。 卸载 IoSpy 并为测试系统上的所有设备禁用 IOCTL 和 WMI 筛选。</p>
 <p><strong>测试二进制文件：</strong> Devfund_IOSpy_DisableSupport. wsc</p>
 <p><strong>测试方法：</strong> DisableIoSpy</p>
-<p><strong>参数：</strong> - 请参阅 <a href="https://docs.microsoft.com/windows-hardware/drivers" data-raw-source="[Device Fundamentals Test Parameters](/windows-hardware/drivers)">设备基础测试参数</a></p>
+<p><strong>参数：</strong> - 请参阅 <a href="/windows-hardware/drivers" data-raw-source="[Device Fundamentals Test Parameters](/windows-hardware/drivers)">设备基础测试参数</a></p>
 <p><em>DQ</em></p></td>
 </tr>
 <tr class="even">
@@ -70,7 +70,7 @@ IoSpy 是一个筛选器驱动程序，用于记录有关 IOCTL 的数据以及�
 <td align="left"><p>在测试系统上安装 IoSpy，并在一个或多个设备上启用 IOCTL 和 WMI 筛选。 DQ 参数控制将安装 IoSpy 筛选器驱动程序的设备。</p>
 <p><strong>测试二进制文件：</strong> Devfund_IOSpy_EnableSupport. wsc</p>
 <p><strong>测试方法：</strong> EnableIoSpy</p>
-<p><strong>参数：</strong> - 请参阅 <a href="https://docs.microsoft.com/windows-hardware/drivers" data-raw-source="[Device Fundamentals Test Parameters](/windows-hardware/drivers)">设备基础测试参数</a></p>
+<p><strong>参数：</strong> - 请参阅 <a href="/windows-hardware/drivers" data-raw-source="[Device Fundamentals Test Parameters](/windows-hardware/drivers)">设备基础测试参数</a></p>
 <p><em>DQ</em></p>
 <p><em>DFD</em> - 指定 IoSpy 数据文件的路径。 默认位置为%SystemDrive%\DriverTest\IoSpy</p></td>
 </tr>
@@ -84,6 +84,4 @@ IoSpy 是一个筛选器驱动程序，用于记录有关 IOCTL 的数据以及�
 在测试系统中安装 IoSpy 后，它将通过 IOCTL 和 WMI 请求发送的数据记录到为模糊测试启用的设备驱动程序的驱动程序中。 尽管 IoSpy 不分析这些请求的负载，但它确实记录了请求的详细信息，例如负载缓冲区的长度。
 
 **启用 I/o 监视**测试的*DFD*参数指定 IoSpy 数据文件的路径。 默认位置为% SystemDrive% \\ DriverTest \\ IoSpy
-
- 
 

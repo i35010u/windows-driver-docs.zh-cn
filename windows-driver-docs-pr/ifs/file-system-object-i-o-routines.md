@@ -11,12 +11,12 @@ keywords:
 - 对象 WDK 微型重定向器
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 74072a57a1455e837fbb1d9c7d496a63be4ea5fc
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: d94cf36cd2d27085ed53a7ecabbc4e276ebf1290
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89063656"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90104206"
 ---
 # <a name="file-system-object-io-routines"></a>文件系统对象 I/O 例程
 
@@ -50,45 +50,43 @@ ms.locfileid: "89063656"
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><a href="https://docs.microsoft.com/windows-hardware/drivers/ifs/mrxlowiosubmit-lowio-op-exclusivelock-" data-raw-source="[&lt;strong&gt;MRxLowIOSubmit[LOWIO_OP_EXCLUSIVELOCK]&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ifs/mrxlowiosubmit-lowio-op-exclusivelock-)"><strong>MRxLowIOSubmit [LOWIO_OP_EXCLUSIVELOCK]</strong></a></td>
+<td align="left"><a href="/windows-hardware/drivers/ifs/mrxlowiosubmit-lowio-op-exclusivelock-" data-raw-source="[&lt;strong&gt;MRxLowIOSubmit[LOWIO_OP_EXCLUSIVELOCK]&lt;/strong&gt;](./mrxlowiosubmit-lowio-op-exclusivelock-.md)"><strong>MRxLowIOSubmit [LOWIO_OP_EXCLUSIVELOCK]</strong></a></td>
 <td align="left"><p>RDBSS 调用此例程来请求网络小型重定向程序打开文件对象上的排他锁。 RDBSS 发出此调用，以响应使用次要代码 IRP_MN_LOCK 和 IrpSp &gt; 设置 SL_EXCLUSIVE_LOCK 的 IRP_MJ_LOCK_CONTROL。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><a href="https://docs.microsoft.com/windows-hardware/drivers/ifs/mrxlowiosubmit-lowio-op-fsctl-" data-raw-source="[&lt;strong&gt;MRxLowIOSubmit[LOWIO_OP_FSCTL]&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ifs/mrxlowiosubmit-lowio-op-fsctl-)"><strong>MRxLowIOSubmit [LOWIO_OP_FSCTL]</strong></a></td>
+<td align="left"><a href="/windows-hardware/drivers/ifs/mrxlowiosubmit-lowio-op-fsctl-" data-raw-source="[&lt;strong&gt;MRxLowIOSubmit[LOWIO_OP_FSCTL]&lt;/strong&gt;](./mrxlowiosubmit-lowio-op-fsctl-.md)"><strong>MRxLowIOSubmit [LOWIO_OP_FSCTL]</strong></a></td>
 <td align="left"><p>RDBSS 调用此例程以将文件系统控制请求传递到网络小型重定向程序。 RDBSS 发出此调用以响应接收 IRP_MJ_FILE_SYSTEM_CONTROL。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><a href="https://docs.microsoft.com/windows-hardware/drivers/ifs/mrxlowiosubmit-lowio-op-ioctl-" data-raw-source="[&lt;strong&gt;MRxLowIOSubmit[LOWIO_OP_IOCTL]&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ifs/mrxlowiosubmit-lowio-op-ioctl-)"><strong>MRxLowIOSubmit [LOWIO_OP_IOCTL]</strong></a></td>
+<td align="left"><a href="/windows-hardware/drivers/ifs/mrxlowiosubmit-lowio-op-ioctl-" data-raw-source="[&lt;strong&gt;MRxLowIOSubmit[LOWIO_OP_IOCTL]&lt;/strong&gt;](./mrxlowiosubmit-lowio-op-ioctl-.md)"><strong>MRxLowIOSubmit [LOWIO_OP_IOCTL]</strong></a></td>
 <td align="left"><p>RDBSS 调用此例程将 i/o 系统控制请求传递到网络小型重定向程序。 RDBSS 发出此调用以响应接收 IRP_MJ_DEVICE_CONTROL 或 IRP_MJ_INTERNAL_DEVICE_CONTROL。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><a href="https://docs.microsoft.com/windows-hardware/drivers/ifs/mrxlowiosubmit-lowio-op-notify-change-directory-" data-raw-source="[&lt;strong&gt;MRxLowIOSubmit[LOWIO_OP_NOTIFY_CHANGE_DIRECTORY]&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ifs/mrxlowiosubmit-lowio-op-notify-change-directory-)"><strong>MRxLowIOSubmit [LOWIO_OP_NOTIFY_CHANGE_DIRECTORY]</strong></a></td>
+<td align="left"><a href="/windows-hardware/drivers/ifs/mrxlowiosubmit-lowio-op-notify-change-directory-" data-raw-source="[&lt;strong&gt;MRxLowIOSubmit[LOWIO_OP_NOTIFY_CHANGE_DIRECTORY]&lt;/strong&gt;](./mrxlowiosubmit-lowio-op-notify-change-directory-.md)"><strong>MRxLowIOSubmit [LOWIO_OP_NOTIFY_CHANGE_DIRECTORY]</strong></a></td>
 <td align="left"><p>RDBSS 调用此例程向网络小型重定向程序发出请求，以执行目录更改通知操作。 RDBSS 发出此调用以响应接收 IRP_MJ_DIRECTORY_CONTROL。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><a href="https://docs.microsoft.com/windows-hardware/drivers/ifs/mrxlowiosubmit-lowio-op-read-" data-raw-source="[&lt;strong&gt;MRxLowIOSubmit[LOWIO_OP_READ]&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ifs/mrxlowiosubmit-lowio-op-read-)"><strong>MRxLowIOSubmit [LOWIO_OP_READ]</strong></a></td>
+<td align="left"><a href="/windows-hardware/drivers/ifs/mrxlowiosubmit-lowio-op-read-" data-raw-source="[&lt;strong&gt;MRxLowIOSubmit[LOWIO_OP_READ]&lt;/strong&gt;](./mrxlowiosubmit-lowio-op-read-.md)"><strong>MRxLowIOSubmit [LOWIO_OP_READ]</strong></a></td>
 <td align="left"><p>RDBSS 调用此例程向网络小型重定向程序发出读取请求。 RDBSS 发出此调用以响应接收 IRP_MJ_READ。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><a href="https://docs.microsoft.com/windows-hardware/drivers/ifs/mrxlowiosubmit-lowio-op-sharedlock-" data-raw-source="[&lt;strong&gt;MRxLowIOSubmit[LOWIO_OP_SHAREDLOCK]&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ifs/mrxlowiosubmit-lowio-op-sharedlock-)"><strong>MRxLowIOSubmit [LOWIO_OP_SHAREDLOCK]</strong></a></td>
+<td align="left"><a href="/windows-hardware/drivers/ifs/mrxlowiosubmit-lowio-op-sharedlock-" data-raw-source="[&lt;strong&gt;MRxLowIOSubmit[LOWIO_OP_SHAREDLOCK]&lt;/strong&gt;](./mrxlowiosubmit-lowio-op-sharedlock-.md)"><strong>MRxLowIOSubmit [LOWIO_OP_SHAREDLOCK]</strong></a></td>
 <td align="left"><p>RDBSS 调用此例程来请求网络重定向程序打开文件对象上的共享锁。 RDBSS 发出此调用以响应接收 IRP_MN_LOCK 次要代码为和 IrpSp 的 IRP_MJ_LOCK_CONTROL，但 &gt; 未设置 SL_EXCLUSIVE_LOCK 位。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><a href="https://docs.microsoft.com/windows-hardware/drivers/ifs/mrxlowiosubmit-lowio-op-unlock-" data-raw-source="[&lt;strong&gt;MRxLowIOSubmit[LOWIO_OP_UNLOCK]&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ifs/mrxlowiosubmit-lowio-op-unlock-)"><strong>MRxLowIOSubmit [LOWIO_OP_UNLOCK]</strong></a></td>
+<td align="left"><a href="/windows-hardware/drivers/ifs/mrxlowiosubmit-lowio-op-unlock-" data-raw-source="[&lt;strong&gt;MRxLowIOSubmit[LOWIO_OP_UNLOCK]&lt;/strong&gt;](./mrxlowiosubmit-lowio-op-unlock-.md)"><strong>MRxLowIOSubmit [LOWIO_OP_UNLOCK]</strong></a></td>
 <td align="left"><p>RDBSS 调用此例程来请求网络小型重定向程序删除文件对象上的单个锁。 RDBSS 发出此调用以响应 IRP_MN_UNLOCK_SINGLE 的次要代码接收 IRP_MJ_LOCK_CONTROL。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><a href="https://docs.microsoft.com/windows-hardware/drivers/ifs/mrxlowiosubmit-lowio-op-unlock-multiple-" data-raw-source="[&lt;strong&gt;MRxLowIOSubmit[LOWIO_OP_UNLOCK_MULTIPLE]&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ifs/mrxlowiosubmit-lowio-op-unlock-multiple-)"><strong>MRxLowIOSubmit [LOWIO_OP_UNLOCK_MULTIPLE]</strong></a></td>
+<td align="left"><a href="/windows-hardware/drivers/ifs/mrxlowiosubmit-lowio-op-unlock-multiple-" data-raw-source="[&lt;strong&gt;MRxLowIOSubmit[LOWIO_OP_UNLOCK_MULTIPLE]&lt;/strong&gt;](./mrxlowiosubmit-lowio-op-unlock-multiple-.md)"><strong>MRxLowIOSubmit [LOWIO_OP_UNLOCK_MULTIPLE]</strong></a></td>
 <td align="left"><p>RDBSS 调用此例程，请求网络小型重定向程序删除对某个文件对象持有的多个锁。 RDBSS 发出此调用以响应 IRP_MN_UNLOCK_ALL 或 IRP_MN_UNLOCK_ALL_BY_KEY 的次要代码接收 IRP_MJ_LOCK_CONTROL。 要解锁的字节范围是在 RX_CONTEXT 的 <strong>LockList</strong> 成员中指定的。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><a href="https://docs.microsoft.com/windows-hardware/drivers/ifs/mrxlowiosubmit-lowio-op-write-" data-raw-source="[&lt;strong&gt;MRxLowIOSubmit[LOWIO_OP_WRITE]&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ifs/mrxlowiosubmit-lowio-op-write-)"><strong>MRxLowIOSubmit [LOWIO_OP_WRITE]</strong></a></td>
+<td align="left"><a href="/windows-hardware/drivers/ifs/mrxlowiosubmit-lowio-op-write-" data-raw-source="[&lt;strong&gt;MRxLowIOSubmit[LOWIO_OP_WRITE]&lt;/strong&gt;](./mrxlowiosubmit-lowio-op-write-.md)"><strong>MRxLowIOSubmit [LOWIO_OP_WRITE]</strong></a></td>
 <td align="left"><p>RDBSS 调用此例程向网络小型重定向程序发出写入请求。 RDBSS 发出此调用以响应接收 IRP_MJ_WRITE。</p></td>
 </tr>
 </tbody>
 </table>
-
- 
 
  
 

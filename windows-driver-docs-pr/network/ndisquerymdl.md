@@ -6,12 +6,12 @@ ms.date: 07/18/2017
 keywords:
 - NdisQueryMdl 从 Windows Vista 开始的宏网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 77cebfd46ada93d243f8de5f421d0e47f5de8c8d
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 639f68ab80a020c73f28ff51fcbd2d6512526e49
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89213863"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90104872"
 ---
 # <a name="ndisquerymdl-macro"></a>NdisQueryMdl 宏
 
@@ -70,7 +70,7 @@ VOID NdisQueryMdl(
 <tbody>
 <tr class="odd">
 <td><p>目标平台</p></td>
-<td>“桌面”</td>
+<td>桌面型</td>
 </tr>
 <tr class="even">
 <td><p>版本</p></td>
@@ -86,7 +86,7 @@ VOID NdisQueryMdl(
 </tr>
 <tr class="odd">
 <td><p>DDI 符合性规则</p></td>
-<td><a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/ndis-irql-netbuffer-function" data-raw-source="[&lt;strong&gt;Irql_NetBuffer_Function&lt;/strong&gt;](../devtest/ndis-irql-netbuffer-function.md)"><strong>Irql_NetBuffer_Function</strong></a></td>
+<td><a href="/windows-hardware/drivers/devtest/ndis-irql-netbuffer-function" data-raw-source="[&lt;strong&gt;Irql_NetBuffer_Function&lt;/strong&gt;](../devtest/ndis-irql-netbuffer-function.md)"><strong>Irql_NetBuffer_Function</strong></a></td>
 </tr>
 </tbody>
 </table>
@@ -97,6 +97,4 @@ VOID NdisQueryMdl(
 [**MmGetSystemAddressForMdlSafe**](../kernel/mm-bad-pointer.md)
 
 [**NdisQueryBuffer**](/previous-versions/windows/hardware/network/ff554407(v=vs.85))
-
- 
 

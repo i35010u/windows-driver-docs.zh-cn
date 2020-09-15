@@ -14,12 +14,12 @@ api_type:
 - DllExport
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: dfa22d17b648121b62e14abfe40a282bca183815
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 5a5147e3a382a5117d96ea5d066e8a7d89a3025d
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89097367"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90105004"
 ---
 # <a name="installselecteddriver-function"></a>InstallSelectedDriver 函数
 
@@ -39,7 +39,7 @@ BOOL WINAPI InstallSelectedDriver(
 );
 ```
 
-<a name="parameters"></a>parameters
+<a name="parameters"></a>参数
 ----------
 
 *hwndParent* \[中\]  
@@ -82,7 +82,7 @@ BOOL WINAPI InstallSelectedDriver(
 </tr>
 <tr class="even">
 <td align="left"><strong>ERROR_IN_WOW64</strong></td>
-<td align="left"><p>调用应用程序是一个32位应用程序，该应用程序尝试在64位环境中执行，这是不允许的。 有关详细信息，请参阅 <a href="https://docs.microsoft.com/windows-hardware/drivers/install/device-installations-on-64-bit-systems" data-raw-source="[Installing Devices on 64-Bit Systems](./device-installations-on-64-bit-systems.md)">在64位系统上安装设备</a>。</p></td>
+<td align="left"><p>调用应用程序是一个32位应用程序，该应用程序尝试在64位环境中执行，这是不允许的。 有关详细信息，请参阅 <a href="/windows-hardware/drivers/install/device-installations-on-64-bit-systems" data-raw-source="[Installing Devices on 64-Bit Systems](./device-installations-on-64-bit-systems.md)">在64位系统上安装设备</a>。</p></td>
 </tr>
 </tbody>
 </table>
@@ -110,7 +110,7 @@ BOOL WINAPI InstallSelectedDriver(
 
     - 或 -
 
--   调用 [**SetupDiOpenDeviceInfo**](/windows/desktop/api/setupapi/nf-setupapi-setupdiopendeviceinfoa) ，将具有已知设备实例 ID 的设备添加到设备信息集。 **SetupDiOpenDeviceInfo** 返回 [**SP \_ lnk-devinfo \_ 数据**](/windows/desktop/api/setupapi/ns-setupapi-_sp_devinfo_data) 结构，该结构表示设备信息集中的设备。
+-   调用 [**SetupDiOpenDeviceInfo**](/windows/desktop/api/setupapi/nf-setupapi-setupdiopendeviceinfoa) ，将具有已知设备实例 ID 的设备添加到设备信息集。 **SetupDiOpenDeviceInfo** 返回 [**SP \_ lnk-devinfo \_ 数据**](/windows/win32/api/setupapi/ns-setupapi-sp_devinfo_data) 结构，该结构表示设备信息集中的设备。
 
 获取设备的 SP \_ Lnk-devinfo \_ 数据结构后，调用 [**SetupDiSetSelectedDevice**](/windows/desktop/api/setupapi/nf-setupapi-setupdisetselecteddevice) 来选择设备信息集中的设备。
 
@@ -176,6 +176,4 @@ BOOL WINAPI InstallSelectedDriver(
 [**SetupDiSetSelectedDriver**](/windows/desktop/api/setupapi/nf-setupapi-setupdisetselecteddrivera)
 
 [**UpdateDriverForPlugAndPlayDevices**](/windows/desktop/api/newdev/nf-newdev-updatedriverforplugandplaydevicesa)
-
- 
 

@@ -6,19 +6,19 @@ ms.assetid: 2807eeca-c614-469a-baeb-3d2d65416c57
 keywords:
 - IRP_MN_EJECT 内核模式驱动程序体系结构
 ms.localizationpriority: medium
-ms.openlocfilehash: df02e0bfe1674a3eac32f358594bf2604f67d50b
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 976ddbf8ca1775cf34fd15a7c03036ecef59c28e
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89185175"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90105532"
 ---
 # <a name="irp_mn_eject"></a>IRP \_ MN \_ 弹出
 
 
 总线驱动程序通常会为其子设备处理此请求， (支持设备弹出的子 PDOs) 。 函数和筛选器驱动程序不会收到此请求。
 
-## <a name="value"></a>值
+## <a name="value"></a>“值”
 
 0x11
 
@@ -60,7 +60,7 @@ PnP 管理器在 \_ 任意线程上下文中以 IRQL 被动级别发送此 IRP�
 
 为此 IRP 返回成功的任何驱动程序必须等待设备在完成 IRP 之前已弹出。
 
-请参阅 [即插即用](https://docs.microsoft.com/windows-hardware/drivers/kernel/implementing-plug-and-play) ，了解用于处理 [即插即用次要 irp](plug-and-play-minor-irps.md)的一般规则。
+请参阅 [即插即用](./introduction-to-plug-and-play.md) ，了解用于处理 [即插即用次要 irp](plug-and-play-minor-irps.md)的一般规则。
 
 **正在发送此 IRP**
 
@@ -78,13 +78,13 @@ PnP 管理器在 \_ 任意线程上下文中以 IRQL 被动级别发送此 IRP�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Header</p></td>
+<td><p>标头</p></td>
 <td>Wdm.h（包括 Wdm.h、Ntddk.h 或 Ntifs.h）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
 [**IoRequestDeviceEject**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iorequestdeviceeject)

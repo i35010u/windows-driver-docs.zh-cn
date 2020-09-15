@@ -4,12 +4,12 @@ description: CpuStress 测试将执行具有不同处理器利用率级别的设
 ms.assetid: E546C3A3-89E6-450B-90D3-4F349A3EC495
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8c0903cc0f2e21afe060b5006d60f14be18991f5
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 630a0fbbdaaff2de4db35d714d062843faf3229a
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89383227"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90104352"
 ---
 # <a name="cpustress-tests-device-fundamentals"></a>CPU 压力测试（设备基础功能）
 
@@ -36,7 +36,7 @@ CpuStress 测试将执行具有不同处理器利用率级别的设备 i/o 测�
 <td align="left"><p>此测试执行设备 i/o 测试，同时交替使用高 (HPU) 和低 (LPU) 处理器利用率级别。</p>
 <p><strong>测试二进制文件：</strong> Devfund_ProcUtil_PingPong_With_IO. wsc</p>
 <p><strong>测试方法：</strong> Device_IO_With_Varying_ProcUtil</p>
-<p><strong>参数：</strong> - 请参阅 <a href="https://docs.microsoft.com/windows-hardware/drivers" data-raw-source="[Device Fundamentals Test Parameters](/windows-hardware/drivers)">设备基础测试参数</a></p>
+<p><strong>参数：</strong> - 请参阅 <a href="/windows-hardware/drivers" data-raw-source="[Device Fundamentals Test Parameters](/windows-hardware/drivers)">设备基础测试参数</a></p>
 <p><em>DQ</em></p>
 <p><em>PingPongPeriod</em></p>
 <p><em>HPU</em></p>
@@ -48,7 +48,7 @@ CpuStress 测试将执行具有不同处理器利用率级别的设备 i/o 测�
 <td align="left"><p>此测试执行的是处理器使用率 (PU) 级别设置为固定百分比的设备 i/o 测试。</p>
 <p><strong>测试二进制文件：</strong> Devfund_ProcUtil_PingPong_With_IO. wsc</p>
 <p><strong>测试方法：</strong> Device_IO_With_Fixed_ProcUtil</p>
-<p><strong>参数：</strong> - 请参阅 <a href="https://docs.microsoft.com/windows-hardware/drivers" data-raw-source="[Device Fundamentals Test Parameters](/windows-hardware/drivers)">设备基础测试参数</a></p>
+<p><strong>参数：</strong> - 请参阅 <a href="/windows-hardware/drivers" data-raw-source="[Device Fundamentals Test Parameters](/windows-hardware/drivers)">设备基础测试参数</a></p>
 <p><em>DQ</em></p>
 <p><em>IOPeriod</em></p>
 <p><em>PU</em></p></td>
@@ -58,7 +58,7 @@ CpuStress 测试将执行具有不同处理器利用率级别的设备 i/o 测�
 <td align="left"><p>此测试通过处理器使用率进行设备 PNP 测试， (PU) 级别设置为固定百分比。</p>
 <p><strong>测试二进制文件：</strong> Devfund_ProcUtil_PingPong_With_IO. wsc</p>
 <p><strong>测试方法：</strong> Device_PNP_With_Fixed_ProcUtil</p>
-<p><strong>参数：</strong> - 请参阅 <a href="https://docs.microsoft.com/windows-hardware/drivers" data-raw-source="[Device Fundamentals Test Parameters](/windows-hardware/drivers)">设备基础测试参数</a></p>
+<p><strong>参数：</strong> - 请参阅 <a href="/windows-hardware/drivers" data-raw-source="[Device Fundamentals Test Parameters](/windows-hardware/drivers)">设备基础测试参数</a></p>
 <p><em>DQ</em></p>
 <p><em>TestCycles</em></p>
 <p><em>PU</em></p></td>
@@ -68,7 +68,7 @@ CpuStress 测试将执行具有不同处理器利用率级别的设备 i/o 测�
 <td align="left"><p>此测试通过各种睡眠状态将系统循环，处理器使用率级别设置为固定百分比。</p>
 <p><strong>测试二进制文件：</strong> Devfund_ProcUtil_PingPong_With_IO. wsc</p>
 <p><strong>测试方法：</strong> Sleep_With_Fixed_ProcUtil</p>
-<p><strong>参数：</strong> - 请参阅 <a href="https://docs.microsoft.com/windows-hardware/drivers" data-raw-source="[Device Fundamentals Test Parameters](/windows-hardware/drivers)">设备基础测试参数</a></p>
+<p><strong>参数：</strong> - 请参阅 <a href="/windows-hardware/drivers" data-raw-source="[Device Fundamentals Test Parameters](/windows-hardware/drivers)">设备基础测试参数</a></p>
 <p><em>TestCycles</em></p>
 <p><em>PU</em></p></td>
 </tr>
@@ -91,6 +91,4 @@ CpuStress 测试将执行具有不同处理器利用率级别的设备 i/o 测�
 [Provided WDTF Simple I/O plug-ins](../wdtf/provided-wdtf-simpleio-plug-ins.md)（提供的 WDTF 简单 I/O 插件）
 
 [如何在运行时通过命令提示符测试驱动程序](/windows-hardware/drivers)
-
- 
 

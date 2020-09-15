@@ -7,12 +7,12 @@ keywords:
 - 注册表 WDK 设备对象
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b59fd45159c520b2998e8371ae5f76f30e60661a
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 81c54c36ec4df2d89baa39b85a19a30770ce86f1
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89190033"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90106058"
 ---
 # <a name="setting-device-object-registry-properties-after-installation"></a>安装后设置设备对象注册表属性
 
@@ -52,7 +52,7 @@ ms.locfileid: "89190033"
 </tr>
 <tr class="even">
 <td><p>SPDRP_SECURITY</p></td>
-<td><p>作为 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_security_descriptor" data-raw-source="[&lt;strong&gt;SECURITY_DESCRIPTOR&lt;/strong&gt;](/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_security_descriptor)"><strong>SECURITY_DESCRIPTOR</strong></a> 结构的安全描述符</p></td>
+<td><p>作为 <a href="/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_security_descriptor" data-raw-source="[&lt;strong&gt;SECURITY_DESCRIPTOR&lt;/strong&gt;](/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_security_descriptor)"><strong>SECURITY_DESCRIPTOR</strong></a> 结构的安全描述符</p></td>
 </tr>
 <tr class="odd">
 <td><p>SPDRP_SECURITY_SDS</p></td>
@@ -68,6 +68,4 @@ ms.locfileid: "89190033"
 对于 Windows XP 和更高版本的操作系统，程序也可以获取和设置设备安装程序类的属性值。 使用 [**SetupDiGetClassRegistryProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetclassregistrypropertya) 和 [**SetupDiSetClassRegistryProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdisetclassregistrypropertya) 函数可获取和设置设备安装程序类的属性值。
 
 有关使用 **SetupDi * Xxx*** 函数的详细信息，请参阅 [使用设备安装函数](../install/using-device-installation-functions.md)。
-
- 
 

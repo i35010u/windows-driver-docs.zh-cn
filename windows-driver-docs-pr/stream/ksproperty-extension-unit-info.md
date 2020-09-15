@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ebb78aad116a9f1213dd853aeab90cfa32e67734
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 93215d7f6df875593eaab5dffdebe029bc381dc6
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89191413"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90105934"
 ---
 # <a name="ksproperty_extension_unit_info"></a>KSPROPERTY \_ 扩展 \_ 单元 \_ 信息
 
@@ -53,7 +53,7 @@ KSPROPERTY \_ 扩展 \_ 单元 \_ 信息属性检索扩展单元描述符的 gui
 <td><p>是</p></td>
 <td><p>否</p></td>
 <td><p>筛选器节点</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksp_node" data-raw-source="[&lt;strong&gt;KSP_NODE&lt;/strong&gt;](/windows-hardware/drivers/ddi/ks/ns-ks-ksp_node)"><strong>KSP_NODE</strong></a></p></td>
+<td><p><a href="/windows-hardware/drivers/ddi/ks/ns-ks-ksp_node" data-raw-source="[&lt;strong&gt;KSP_NODE&lt;/strong&gt;](/windows-hardware/drivers/ddi/ks/ns-ks-ksp_node)"><strong>KSP_NODE</strong></a></p></td>
 <td><p>PVOID</p></td>
 </tr>
 </tbody>

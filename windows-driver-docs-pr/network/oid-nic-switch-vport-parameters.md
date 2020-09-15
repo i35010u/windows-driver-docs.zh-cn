@@ -5,12 +5,12 @@ ms.assetid: B22C760E-F2B0-4774-A532-4044C679CD64
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_NIC_SWITCH_VPORT_PARAMETERS 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 5be4065e37a19baf5de4db0c6e0b74c9190b9c7d
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 463abaec2d6c48a126595f23e4e672f38f307b73
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89212335"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90106012"
 ---
 # <a name="oid_nic_switch_vport_parameters"></a>OID \_ NIC \_ SWITCH \_ VPORT \_ 参数
 
@@ -76,7 +76,7 @@ NDIS 或 PF 微型端口驱动程序为 OID \_ NIC \_ SWITCH \_ VPORT 参数的�
 <tbody>
 <tr class="odd">
 <td><p>NDIS_STATUS_SUCCESS</p></td>
-<td><p>请求已成功完成。 <strong>InformationBuffer</strong>指向<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_capabilities" data-raw-source="[&lt;strong&gt;NDIS_NIC_SWITCH_CAPABILITIES&lt;/strong&gt;](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_capabilities)"><strong>NDIS_NIC_SWITCH_CAPABILITIES</strong></a>结构。</p></td>
+<td><p>请求已成功完成。 <strong>InformationBuffer</strong>指向<a href="/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_capabilities" data-raw-source="[&lt;strong&gt;NDIS_NIC_SWITCH_CAPABILITIES&lt;/strong&gt;](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_capabilities)"><strong>NDIS_NIC_SWITCH_CAPABILITIES</strong></a>结构。</p></td>
 </tr>
 <tr class="even">
 <td><p>NDIS_STATUS_NOT_SUPPORTED</p></td>
@@ -84,11 +84,11 @@ NDIS 或 PF 微型端口驱动程序为 OID \_ NIC \_ SWITCH \_ VPORT 参数的�
 </tr>
 <tr class="odd">
 <td><p>NDIS_STATUS_INVALID_PARAMETER</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vport_parameters" data-raw-source="[&lt;strong&gt;NDIS_NIC_SWITCH_VPORT_PARAMETERS&lt;/strong&gt;](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vport_parameters)"><strong>NDIS_NIC_SWITCH_VPORT_PARAMETERS</strong></a>结构的一个或多个成员的值无效。</p></td>
+<td><p><a href="/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vport_parameters" data-raw-source="[&lt;strong&gt;NDIS_NIC_SWITCH_VPORT_PARAMETERS&lt;/strong&gt;](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vport_parameters)"><strong>NDIS_NIC_SWITCH_VPORT_PARAMETERS</strong></a>结构的一个或多个成员的值无效。</p></td>
 </tr>
 <tr class="even">
 <td><p>NDIS_STATUS_INVALID_LENGTH</p></td>
-<td><p>信息缓冲区太短。 NDIS 或 PF 微型端口驱动程序设置 <strong>数据。METHOD_INFORMATION。</strong> (OID 方法请求) 或数据的 BytesNeeded 成员 <strong>。SET_INFORMATION。BytesNeeded</strong> 成员 () 在 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request" data-raw-source="[&lt;strong&gt;NDIS_OID_REQUEST&lt;/strong&gt;](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)"><strong>NDIS_OID_REQUEST</strong></a> 结构中，将其设置为所需的最小缓冲区大小。</p></td>
+<td><p>信息缓冲区太短。 NDIS 或 PF 微型端口驱动程序设置 <strong>数据。METHOD_INFORMATION。</strong> (OID 方法请求) 或数据的 BytesNeeded 成员 <strong>。SET_INFORMATION。BytesNeeded</strong> 成员 () 在 <a href="/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request" data-raw-source="[&lt;strong&gt;NDIS_OID_REQUEST&lt;/strong&gt;](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)"><strong>NDIS_OID_REQUEST</strong></a> 结构中，将其设置为所需的最小缓冲区大小。</p></td>
 </tr>
 <tr class="odd">
 <td><p>NDIS_STATUS_FAILURE</p></td>
@@ -130,6 +130,4 @@ NDIS 或 PF 微型端口驱动程序为 OID \_ NIC \_ SWITCH \_ VPORT 参数的�
 [OID \_ NIC \_ 交换机 \_ CREATE \_ VPORT](oid-nic-switch-create-vport.md)
 
 [OID \_ NIC \_ 交换机 \_ 枚举 \_ VPORTS](oid-nic-switch-enum-vports.md)
-
- 
 

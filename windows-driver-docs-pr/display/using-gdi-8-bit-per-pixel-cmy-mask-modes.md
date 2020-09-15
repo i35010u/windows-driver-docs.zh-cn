@@ -10,12 +10,12 @@ keywords:
 - 8位每像素 CMY 掩码模式 WDK GDI
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 41a255763fc1e0febef9cb1cc77edb13cc2b406e
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 3fd48ca4a1c73e268eef95e7982368b4fe35226d
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89067092"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90106204"
 ---
 # <a name="using-gdi-8-bit-per-pixel-cmy-mask-modes"></a>使用 GDI 每像素 8 位 CMY 掩码模式
 
@@ -78,7 +78,7 @@ ms.locfileid: "89067092"
 <div>
  
 </div>
-值</th>
+“值”</th>
 <th align="left">CMY 模式索引
 <div>
  
@@ -186,7 +186,7 @@ ms.locfileid: "89067092"
 <div>
  
 </div>
-<strong>注意</strong>：对于这些模式，有效的组合不得具有任何青色、洋红色或黄色墨迹级别等于零。 对于这种组合， <a href="https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-ht_get8bppmaskpalette" data-raw-source="[&lt;strong&gt;HT_Get8BPPMaskPalette&lt;/strong&gt;](/windows/desktop/api/winddi/nf-winddi-ht_get8bppmaskpalette)"><strong>HT_Get8BPPMaskPalette</strong></a> 通过在其 <em>pPaletteEntry</em> 参数中返回一个零计数调色板来指示错误条件。</td>
+<strong>注意</strong>：对于这些模式，有效的组合不得具有任何青色、洋红色或黄色墨迹级别等于零。 对于这种组合， <a href="/windows/desktop/api/winddi/nf-winddi-ht_get8bppmaskpalette" data-raw-source="[&lt;strong&gt;HT_Get8BPPMaskPalette&lt;/strong&gt;](/windows/desktop/api/winddi/nf-winddi-ht_get8bppmaskpalette)"><strong>HT_Get8BPPMaskPalette</strong></a> 通过在其 <em>pPaletteEntry</em> 参数中返回一个零计数调色板来指示错误条件。</td>
 <td align="left"><p>0：黑色</p>
 <div>
  
@@ -220,7 +220,7 @@ ms.locfileid: "89067092"
 <div>
  
 </div>
-<strong>注意</strong>：对于这些模式，有效的组合不得具有任何青色、洋红色或黄色墨迹级别等于零。 对于这种组合， <a href="https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-ht_get8bppmaskpalette" data-raw-source="[&lt;strong&gt;HT_Get8BPPMaskPalette&lt;/strong&gt;](/windows/desktop/api/winddi/nf-winddi-ht_get8bppmaskpalette)"><strong>HT_Get8BPPMaskPalette</strong></a> 通过在其 <em>pPaletteEntry</em> 参数中返回一个零计数调色板来指示错误条件。</td>
+<strong>注意</strong>：对于这些模式，有效的组合不得具有任何青色、洋红色或黄色墨迹级别等于零。 对于这种组合， <a href="/windows/desktop/api/winddi/nf-winddi-ht_get8bppmaskpalette" data-raw-source="[&lt;strong&gt;HT_Get8BPPMaskPalette&lt;/strong&gt;](/windows/desktop/api/winddi/nf-winddi-ht_get8bppmaskpalette)"><strong>HT_Get8BPPMaskPalette</strong></a> 通过在其 <em>pPaletteEntry</em> 参数中返回一个零计数调色板来指示错误条件。</td>
 </tr>
 </tbody>
 </table>
@@ -431,14 +431,14 @@ ms.locfileid: "89067092"
     </tr>
     <tr class="odd">
     <td align="left"><p>141 (27) </p>
-    <p>白色</p></td>
+    <p>White</p></td>
     <td align="left"><p>0</p></td>
     <td align="left"><p>0</p></td>
     <td align="left"><p>0</p></td>
     </tr>
     <tr class="even">
     <td align="left"><p>142至255</p>
-    <p>白色</p></td>
+    <p>White</p></td>
     <td align="left"><p>0</p></td>
     <td align="left"><p>0</p></td>
     <td align="left"><p>0</p></td>
@@ -463,6 +463,4 @@ ms.locfileid: "89067092"
             |
             +-- Cyan 0-7 (Max. 8 levels)
 ```
-
- 
 

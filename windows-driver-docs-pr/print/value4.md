@@ -6,12 +6,12 @@ keywords:
 - 值构造
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5381adb888a1f9a8f4647009b9ef25e334a8c8d9
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: bf567cbe5f6ad969573bde04f629430a346bdc22
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89211875"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90106330"
 ---
 # <a name="value-tcpip"></a>Value (TCP/IP)
 
@@ -39,7 +39,7 @@ ms.locfileid: "89211875"
 <td><p> (可选) 一个布尔值，该值指示端口监视器是否向驱动程序发送通知。 <strong>TRUE</strong>值指示端口监视器向驱动程序发送通知;<strong>FALSE</strong>表示端口监视器不向驱动程序发送通知。</p></td>
 </tr>
 <tr class="odd">
-<td><p>name </p></td>
+<td><p><strong>name</strong></p></td>
 <td><p>架构值的名称。</p></td>
 </tr>
 <tr class="even">
@@ -51,8 +51,8 @@ ms.locfileid: "89211875"
 <td><p> (可选) 轮询间隔的值（以秒为单位）。 默认值为 600 秒。</p></td>
 </tr>
 <tr class="even">
-<td><p><strong>type</strong></p></td>
-<td><p>构造中的数据类型 <code> Value</code> ， <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/winspool/ne-winspool-bidi_type" data-raw-source="[&lt;strong&gt;BIDI_TYPE&lt;/strong&gt;](/windows-hardware/drivers/ddi/winspool/ne-winspool-bidi_type)"><strong>BIDI_TYPE</strong></a> 枚举中的值。</p></td>
+<td><p>type</p></td>
+<td><p>构造中的数据类型 <code> Value</code> ， <a href="/windows-hardware/drivers/ddi/winspool/ne-winspool-bidi_type" data-raw-source="[&lt;strong&gt;BIDI_TYPE&lt;/strong&gt;](/windows-hardware/drivers/ddi/winspool/ne-winspool-bidi_type)"><strong>BIDI_TYPE</strong></a> 枚举中的值。</p></td>
 </tr>
 </tbody>
 </table>
@@ -82,6 +82,4 @@ ms.locfileid: "89211875"
 ```
 
 请注意，由于 `Value` 构造包含在属性实例而不是 IndexedProperty 实例中，因此会自动向 OID 追加一个尾随零。
-
- 
 

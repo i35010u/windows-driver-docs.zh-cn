@@ -8,12 +8,12 @@ keywords:
 - 显示驱动程序中的固件模式 WDK 显示
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 023df3c741858dd7e941d7ffc18870bb120b3380
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 62802fcde59a0a73312d6c63b6cc807e23ff2341
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89066338"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90104716"
 ---
 # <a name="providing-seamless-state-transitions-in-wddm-12-and-later"></a>在 WDDM 1.2 和更高版本中提供无缝状态转换
 
@@ -39,7 +39,7 @@ ms.locfileid: "89066338"
 <td align="left">必需</td>
 </tr>
 <tr class="even">
-<td align="left"><a href="https://docs.microsoft.com/windows-hardware/test/hlk/windows-hardware-lab-kit" data-raw-source="[WHCK](/windows-hardware/test/hlk/windows-hardware-lab-kit)">WHCK</a> 要求和测试</td>
+<td align="left"><a href="/windows-hardware/test/hlk/windows-hardware-lab-kit" data-raw-source="[WHCK](/windows-hardware/test/hlk/windows-hardware-lab-kit)">WHCK</a> 要求和测试</td>
 <td align="left"><p><strong>System.web...。</strong></p>
 <p><strong>设备 .。。PnpStopStartSupport</strong></p>
 <p><strong>设备 .。。DisplayOutputControl</strong></p></td>
@@ -105,6 +105,4 @@ ms.locfileid: "89066338"
 此外，如果在关闭监视器后发生模式更改，则操作系统会按上述针对 WDDM 1.2 驱动程序的[*DxgkDdiCommitVidPn*](/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_commitvidpn)函数进行调用，另外，它会*再次*调用*DxgkDdiCommitVidPn* *pCommitVidPnArg*hFunctionalVidPn 中的空视频 (VidPN) - &gt; **hFunctionalVidPn** ，而不是*pCommitVidPnArg*标志中设置的任何标志值 - &gt; **Flags**。
 
 如果在休眠后恢复系统，并且监视同步生成仍处于启用状态，则也会发生这两个部分的调用序列。 在这种情况下，当驱动程序收到第二次调用 [*DxgkDdiCommitVidPn*](/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_commitvidpn)时，该驱动程序应不执行任何操作。
-
- 
 

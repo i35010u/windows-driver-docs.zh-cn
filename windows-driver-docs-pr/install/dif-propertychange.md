@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: e7e616060a9e826df6bb5d026ce748e9bca5b40e
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: ddfa8bc7bb9beef04ab75ccddddf9a3172a23ea2
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89094943"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90104786"
 ---
 # <a name="dif_propertychange"></a>DIF_PROPERTYCHANGE
 
@@ -30,7 +30,7 @@ DIF_PROPERTYCHANGE 请求通知安装程序设备的属性正在更改。 设备
 
 设备启用、禁用、重新启动、停止或其属性已更改时。
 
-例如，当属性页提供程序在设备的[**SP_DEVINSTALL_PARAMS**](/windows/desktop/api/setupapi/ns-setupapi-_sp_devinstall_params_a)结构的**FLAGSEX**字段中设置 DI_FLAGSEX_PROPCHANGE_PENDING 标志时，Windows 将发送此请求。
+例如，当属性页提供程序在设备的[**SP_DEVINSTALL_PARAMS**](/windows/win32/api/setupapi/ns-setupapi-sp_devinstall_params_a)结构的**FLAGSEX**字段中设置 DI_FLAGSEX_PROPCHANGE_PENDING 标志时，Windows 将发送此请求。
 
 有关在第一次启动或重新启动设备时检测到设备的详细信息，请参阅安装程序操作部分。
 
@@ -65,17 +65,17 @@ DIF_PROPERTYCHANGE 请求通知安装程序设备的属性正在更改。 设备
 提供包含设备的 [设备信息集](./device-information-sets.md) 的句柄。
 
 <a href="" id="deviceinfodata"></a>*DeviceInfoData*  
-在设备信息集中提供设备的 [**SP_DEVINFO_DATA**](/windows/desktop/api/setupapi/ns-setupapi-_sp_devinfo_data) 结构的指针。
+在设备信息集中提供设备的 [**SP_DEVINFO_DATA**](/windows/win32/api/setupapi/ns-setupapi-sp_devinfo_data) 结构的指针。
 
 <a href="" id="device-installation-parameters-"></a>设备安装参数   
-与*DeviceInfoData*关联的设备安装参数 ([**SP_DEVINSTALL_PARAMS**](/windows/desktop/api/setupapi/ns-setupapi-_sp_devinstall_params_a)) 。
+与*DeviceInfoData*关联的设备安装参数 ([**SP_DEVINSTALL_PARAMS**](/windows/win32/api/setupapi/ns-setupapi-sp_devinstall_params_a)) 。
 
 <a href="" id="class-installation-parameters"></a>类安装参数  
 [**SP_PROPCHANGE_PARAMS**](/windows/desktop/api/setupapi/ns-setupapi-_sp_propchange_params)结构与*DeviceInfoData*关联。
 
 ### <a name="installer-output"></a>安装程序输出
 
-<a href="" id="none"></a>无  
+<a href="" id="none"></a>内容  
 
 ### <a name="installer-return-value"></a>安装程序返回值
 
@@ -132,9 +132,9 @@ DIF_PROPERTYCHANGE 请求通知安装程序设备的属性正在更改。 设备
 
 [**SetupDiChangeState**](/windows/desktop/api/setupapi/nf-setupapi-setupdichangestate)
 
-[**SP_DEVINFO_DATA**](/windows/desktop/api/setupapi/ns-setupapi-_sp_devinfo_data)
+[**SP_DEVINFO_DATA**](/windows/win32/api/setupapi/ns-setupapi-sp_devinfo_data)
 
-[**SP_DEVINSTALL_PARAMS**](/windows/desktop/api/setupapi/ns-setupapi-_sp_devinstall_params_a)
+[**SP_DEVINSTALL_PARAMS**](/windows/win32/api/setupapi/ns-setupapi-sp_devinstall_params_a)
 
 [**SP_PROPCHANGE_PARAMS**](/windows/desktop/api/setupapi/ns-setupapi-_sp_propchange_params)
 

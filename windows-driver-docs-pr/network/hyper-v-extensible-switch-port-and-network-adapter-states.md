@@ -4,12 +4,12 @@ description: Hyper-V 可扩展交换机端口和网络适配器状态
 ms.assetid: 1E2075E3-D7CC-4364-ABB2-D5969DB361B5
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 71f3bf98c69b3a7216d55658ad7ed1dc96410bdb
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 6ab4ea3166ee5e68b7056ca8274cfe4112742003
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89208695"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90106466"
 ---
 # <a name="hyper-v-extensible-switch-port-and-network-adapter-states"></a>Hyper-V 可扩展交换机端口和网络适配器状态
 
@@ -136,8 +136,8 @@ Hyper-v 可扩展交换机接口管理以下组件的生存期：
 <thead>
 <tr class="header">
 <th align="left">组件状态</th>
-<th align="left">是否允许对 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-ndis_switch_reference_switch_port" data-raw-source="[&lt;em&gt;ReferenceSwitchPort&lt;/em&gt;](/windows-hardware/drivers/ddi/ndis/nc-ndis-ndis_switch_reference_switch_port)"><em>ReferenceSwitchPort</em></a> 或 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-ndis_switch_dereference_switch_port" data-raw-source="[&lt;em&gt;DereferenceSwitchPort&lt;/em&gt;](/windows-hardware/drivers/ddi/ndis/nc-ndis-ndis_switch_dereference_switch_port)"><em>DereferenceSwitchPort</em></a> 的调用？</th>
-<th align="left">是否允许对 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-ndis_switch_reference_switch_nic" data-raw-source="[&lt;em&gt;ReferenceSwitchNic&lt;/em&gt;](/windows-hardware/drivers/ddi/ndis/nc-ndis-ndis_switch_reference_switch_nic)"><em>ReferenceSwitchNic</em></a> 或 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-ndis_switch_dereference_switch_nic" data-raw-source="[&lt;em&gt;DereferenceSwitchNic&lt;/em&gt;](/windows-hardware/drivers/ddi/ndis/nc-ndis-ndis_switch_dereference_switch_nic)"><em>DereferenceSwitchNic</em></a> 的调用？</th>
+<th align="left">是否允许对 <a href="/windows-hardware/drivers/ddi/ndis/nc-ndis-ndis_switch_reference_switch_port" data-raw-source="[&lt;em&gt;ReferenceSwitchPort&lt;/em&gt;](/windows-hardware/drivers/ddi/ndis/nc-ndis-ndis_switch_reference_switch_port)"><em>ReferenceSwitchPort</em></a> 或 <a href="/windows-hardware/drivers/ddi/ndis/nc-ndis-ndis_switch_dereference_switch_port" data-raw-source="[&lt;em&gt;DereferenceSwitchPort&lt;/em&gt;](/windows-hardware/drivers/ddi/ndis/nc-ndis-ndis_switch_dereference_switch_port)"><em>DereferenceSwitchPort</em></a> 的调用？</th>
+<th align="left">是否允许对 <a href="/windows-hardware/drivers/ddi/ndis/nc-ndis-ndis_switch_reference_switch_nic" data-raw-source="[&lt;em&gt;ReferenceSwitchNic&lt;/em&gt;](/windows-hardware/drivers/ddi/ndis/nc-ndis-ndis_switch_reference_switch_nic)"><em>ReferenceSwitchNic</em></a> 或 <a href="/windows-hardware/drivers/ddi/ndis/nc-ndis-ndis_switch_dereference_switch_nic" data-raw-source="[&lt;em&gt;DereferenceSwitchNic&lt;/em&gt;](/windows-hardware/drivers/ddi/ndis/nc-ndis-ndis_switch_dereference_switch_nic)"><em>DereferenceSwitchNic</em></a> 的调用？</th>
 </tr>
 </thead>
 <tbody>
@@ -268,8 +268,6 @@ Hyper-v 可扩展交换机接口管理以下组件的生存期：
 </tr>
 </tbody>
 </table>
-
- 
 
  
 

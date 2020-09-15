@@ -12,12 +12,12 @@ keywords:
 - 子对象 WDK 视频呈现网络
 ms.date: 10/30/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 5238905732a59fda93dd7250ac395528d7647707
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: b5abcec089cfc533be5b5456459613aff60c1317
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89063438"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90106520"
 ---
 # <a name="vidpn-objects-and-interfaces"></a>VidPN 对象和接口
 
@@ -76,61 +76,61 @@ VidPN 对象包含以下子对象。
 <td align="left"><p>Vidpn (VidPN 接口) </p></td>
 <td align="left"><p>通过句柄和接口进行访问。</p>
 <p>D3DKMDT_HVIDPN</p>
-<p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/ns-d3dkmddi-_dxgk_vidpn_interface" data-raw-source="[&lt;strong&gt;DXGK_VIDPN_INTERFACE&lt;/strong&gt;](/windows-hardware/drivers/ddi/d3dkmddi/ns-d3dkmddi-_dxgk_vidpn_interface)"><strong>DXGK_VIDPN_INTERFACE</strong></a></p></td>
+<p><a href="/windows-hardware/drivers/ddi/d3dkmddi/ns-d3dkmddi-_dxgk_vidpn_interface" data-raw-source="[&lt;strong&gt;DXGK_VIDPN_INTERFACE&lt;/strong&gt;](/windows-hardware/drivers/ddi/d3dkmddi/ns-d3dkmddi-_dxgk_vidpn_interface)"><strong>DXGK_VIDPN_INTERFACE</strong></a></p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>VidPN 拓扑接口 (拓扑) </p></td>
 <td align="left"><p>通过句柄和接口进行访问。</p>
 <p>D3DKMDT_HVIDPNTOPOLOGY</p>
-<p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/ns-d3dkmddi-_dxgk_vidpntopology_interface" data-raw-source="[&lt;strong&gt;DXGK_VIDPNTOPOLOGY_INTERFACE&lt;/strong&gt;](/windows-hardware/drivers/ddi/d3dkmddi/ns-d3dkmddi-_dxgk_vidpntopology_interface)"><strong>DXGK_VIDPNTOPOLOGY_INTERFACE</strong></a></p></td>
+<p><a href="/windows-hardware/drivers/ddi/d3dkmddi/ns-d3dkmddi-_dxgk_vidpntopology_interface" data-raw-source="[&lt;strong&gt;DXGK_VIDPNTOPOLOGY_INTERFACE&lt;/strong&gt;](/windows-hardware/drivers/ddi/d3dkmddi/ns-d3dkmddi-_dxgk_vidpntopology_interface)"><strong>DXGK_VIDPNTOPOLOGY_INTERFACE</strong></a></p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>源模式设置 (VidPN 源模式集接口) </p></td>
 <td align="left"><p>通过句柄和接口进行访问。</p>
 <p>D3DKMDT_HVIDPNSOURCEMODESET</p>
-<p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/ns-d3dkmddi-_dxgk_vidpnsourcemodeset_interface" data-raw-source="[&lt;strong&gt;DXGK_VIDPNSOURCEMODESET_INTERFACE&lt;/strong&gt;](/windows-hardware/drivers/ddi/d3dkmddi/ns-d3dkmddi-_dxgk_vidpnsourcemodeset_interface)"><strong>DXGK_VIDPNSOURCEMODESET_INTERFACE</strong></a></p></td>
+<p><a href="/windows-hardware/drivers/ddi/d3dkmddi/ns-d3dkmddi-_dxgk_vidpnsourcemodeset_interface" data-raw-source="[&lt;strong&gt;DXGK_VIDPNSOURCEMODESET_INTERFACE&lt;/strong&gt;](/windows-hardware/drivers/ddi/d3dkmddi/ns-d3dkmddi-_dxgk_vidpnsourcemodeset_interface)"><strong>DXGK_VIDPNSOURCEMODESET_INTERFACE</strong></a></p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>目标模式集 (VidPN 目标模式集接口) </p></td>
 <td align="left"><p>通过句柄和接口进行访问。</p>
 <p>D3DKMDT_HVIDPNTARGETMODESET</p>
-<p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/ns-d3dkmddi-_dxgk_vidpntargetmodeset_interface" data-raw-source="[&lt;strong&gt;DXGK_VIDPNTARGETMODESET_INTERFACE&lt;/strong&gt;](/windows-hardware/drivers/ddi/d3dkmddi/ns-d3dkmddi-_dxgk_vidpntargetmodeset_interface)"><strong>DXGK_VIDPNTARGETMODESET_INTERFACE</strong></a></p></td>
+<p><a href="/windows-hardware/drivers/ddi/d3dkmddi/ns-d3dkmddi-_dxgk_vidpntargetmodeset_interface" data-raw-source="[&lt;strong&gt;DXGK_VIDPNTARGETMODESET_INTERFACE&lt;/strong&gt;](/windows-hardware/drivers/ddi/d3dkmddi/ns-d3dkmddi-_dxgk_vidpntargetmodeset_interface)"><strong>DXGK_VIDPNTARGETMODESET_INTERFACE</strong></a></p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>监视源模式集</p></td>
 <td align="left"><p>通过句柄和接口进行访问。</p>
 <p>D3DKMDT_HMONITORSOURCEMODESET</p>
-<p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/ns-d3dkmddi-_dxgk_monitorsourcemodeset_interface" data-raw-source="[&lt;strong&gt;DXGK_MONITORSOURCEMODESET_INTERFACE&lt;/strong&gt;](/windows-hardware/drivers/ddi/d3dkmddi/ns-d3dkmddi-_dxgk_monitorsourcemodeset_interface)"><strong>DXGK_MONITORSOURCEMODESET_INTERFACE</strong></a></p></td>
+<p><a href="/windows-hardware/drivers/ddi/d3dkmddi/ns-d3dkmddi-_dxgk_monitorsourcemodeset_interface" data-raw-source="[&lt;strong&gt;DXGK_MONITORSOURCEMODESET_INTERFACE&lt;/strong&gt;](/windows-hardware/drivers/ddi/d3dkmddi/ns-d3dkmddi-_dxgk_monitorsourcemodeset_interface)"><strong>DXGK_MONITORSOURCEMODESET_INTERFACE</strong></a></p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>路径</p></td>
 <td align="left"><p>通过结构指针访问。</p>
-<p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmdt/ns-d3dkmdt-_d3dkmdt_vidpn_present_path" data-raw-source="[&lt;strong&gt;D3DKMDT_VIDPN_PRESENT_PATH&lt;/strong&gt;](/windows-hardware/drivers/ddi/d3dkmdt/ns-d3dkmdt-_d3dkmdt_vidpn_present_path)"><strong>D3DKMDT_VIDPN_PRESENT_PATH</strong></a></p></td>
+<p><a href="/windows-hardware/drivers/ddi/d3dkmdt/ns-d3dkmdt-_d3dkmdt_vidpn_present_path" data-raw-source="[&lt;strong&gt;D3DKMDT_VIDPN_PRESENT_PATH&lt;/strong&gt;](/windows-hardware/drivers/ddi/d3dkmdt/ns-d3dkmdt-_d3dkmdt_vidpn_present_path)"><strong>D3DKMDT_VIDPN_PRESENT_PATH</strong></a></p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>源</p></td>
 <td align="left"><p>通过结构指针访问。</p>
-<p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmdt/ns-d3dkmdt-_d3dkmdt_video_present_source" data-raw-source="[&lt;strong&gt;D3DKMDT_VIDEO_PRESENT_SOURCE&lt;/strong&gt;](/windows-hardware/drivers/ddi/d3dkmdt/ns-d3dkmdt-_d3dkmdt_video_present_source)"><strong>D3DKMDT_VIDEO_PRESENT_SOURCE</strong></a></p></td>
+<p><a href="/windows-hardware/drivers/ddi/d3dkmdt/ns-d3dkmdt-_d3dkmdt_video_present_source" data-raw-source="[&lt;strong&gt;D3DKMDT_VIDEO_PRESENT_SOURCE&lt;/strong&gt;](/windows-hardware/drivers/ddi/d3dkmdt/ns-d3dkmdt-_d3dkmdt_video_present_source)"><strong>D3DKMDT_VIDEO_PRESENT_SOURCE</strong></a></p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>目标</p></td>
 <td align="left"><p>通过结构指针访问。</p>
-<p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmdt/ns-d3dkmdt-_d3dkmdt_video_present_target" data-raw-source="[&lt;strong&gt;D3DKMDT_VIDEO_PRESENT_TARGET&lt;/strong&gt;](/windows-hardware/drivers/ddi/d3dkmdt/ns-d3dkmdt-_d3dkmdt_video_present_target)"><strong>D3DKMDT_VIDEO_PRESENT_TARGET</strong></a></p></td>
+<p><a href="/windows-hardware/drivers/ddi/d3dkmdt/ns-d3dkmdt-_d3dkmdt_video_present_target" data-raw-source="[&lt;strong&gt;D3DKMDT_VIDEO_PRESENT_TARGET&lt;/strong&gt;](/windows-hardware/drivers/ddi/d3dkmdt/ns-d3dkmdt-_d3dkmdt_video_present_target)"><strong>D3DKMDT_VIDEO_PRESENT_TARGET</strong></a></p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>源模式</p></td>
 <td align="left"><p>通过结构指针访问。</p>
-<p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmdt/ns-d3dkmdt-_d3dkmdt_vidpn_source_mode" data-raw-source="[&lt;strong&gt;D3DKMDT_VIDPN_SOURCE_MODE&lt;/strong&gt;](/windows-hardware/drivers/ddi/d3dkmdt/ns-d3dkmdt-_d3dkmdt_vidpn_source_mode)"><strong>D3DKMDT_VIDPN_SOURCE_MODE</strong></a></p></td>
+<p><a href="/windows-hardware/drivers/ddi/d3dkmdt/ns-d3dkmdt-_d3dkmdt_vidpn_source_mode" data-raw-source="[&lt;strong&gt;D3DKMDT_VIDPN_SOURCE_MODE&lt;/strong&gt;](/windows-hardware/drivers/ddi/d3dkmdt/ns-d3dkmdt-_d3dkmdt_vidpn_source_mode)"><strong>D3DKMDT_VIDPN_SOURCE_MODE</strong></a></p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>目标模式</p></td>
 <td align="left"><p>通过结构指针访问。</p>
-<p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmdt/ns-d3dkmdt-_d3dkmdt_vidpn_target_mode" data-raw-source="[&lt;strong&gt;D3DKMDT_VIDPN_TARGET_MODE&lt;/strong&gt;](/windows-hardware/drivers/ddi/d3dkmdt/ns-d3dkmdt-_d3dkmdt_vidpn_target_mode)"><strong>D3DKMDT_VIDPN_TARGET_MODE</strong></a></p></td>
+<p><a href="/windows-hardware/drivers/ddi/d3dkmdt/ns-d3dkmdt-_d3dkmdt_vidpn_target_mode" data-raw-source="[&lt;strong&gt;D3DKMDT_VIDPN_TARGET_MODE&lt;/strong&gt;](/windows-hardware/drivers/ddi/d3dkmdt/ns-d3dkmdt-_d3dkmdt_vidpn_target_mode)"><strong>D3DKMDT_VIDPN_TARGET_MODE</strong></a></p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>监视源模式</p></td>
 <td align="left"><p>通过结构指针访问。</p>
-<p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmdt/ns-d3dkmdt-_d3dkmdt_monitor_source_mode" data-raw-source="[&lt;strong&gt;D3DKMDT_MONITOR_SOURCE_MODE&lt;/strong&gt;](/windows-hardware/drivers/ddi/d3dkmdt/ns-d3dkmdt-_d3dkmdt_monitor_source_mode)"><strong>D3DKMDT_MONITOR_SOURCE_MODE</strong></a></p></td>
+<p><a href="/windows-hardware/drivers/ddi/d3dkmdt/ns-d3dkmdt-_d3dkmdt_monitor_source_mode" data-raw-source="[&lt;strong&gt;D3DKMDT_MONITOR_SOURCE_MODE&lt;/strong&gt;](/windows-hardware/drivers/ddi/d3dkmdt/ns-d3dkmdt-_d3dkmdt_monitor_source_mode)"><strong>D3DKMDT_MONITOR_SOURCE_MODE</strong></a></p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>监视频率范围集</p></td>

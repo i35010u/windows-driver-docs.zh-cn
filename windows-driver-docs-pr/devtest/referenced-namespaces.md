@@ -10,12 +10,12 @@ keywords:
 - Web 服务 WDK 的设备配置文件
 ms.date: 05/20/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 0733e25ceb0a0ebad950da7baf7917a53e097882
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 8db409015447f427fbebaf9dd1d15fc37d4373b3
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89381921"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90105738"
 ---
 # <a name="referenced-namespaces"></a>参考的命名空间
 
@@ -36,7 +36,7 @@ ms.locfileid: "89381921"
 <tr class="header">
 <th align="left">前缀</th>
 <th align="left">命名空间</th>
-<th align="left">规格</th>
+<th align="left">规范</th>
 </tr>
 </thead>
 <tbody>
@@ -63,7 +63,7 @@ ms.locfileid: "89381921"
 <tr class="odd">
 <td align="left"><p>wse</p></td>
 <td align="left"><p><a href="https://schemas.xmlsoap.org/ws/2004/08/eventing/" data-raw-source="[https://schemas.xmlsoap.org/ws/2004/08/eventing](https://schemas.xmlsoap.org/ws/2004/08/eventing/)">https://schemas.xmlsoap.org/ws/2004/08/eventing</a></p></td>
-<td align="left"><p><a href="https://docs.microsoft.com/previous-versions/ms951233(v=msdn.10)" data-raw-source="[Web Services Eventing](/previous-versions/ms951233(v=msdn.10)">Web 服务事件</a> (WS 事件) </p></td>
+<td align="left"><p><a href="/previous-versions/ms951233(v=msdn.10)" data-raw-source="[Web Services Eventing](/previous-versions/ms951233(v=msdn.10)">Web 服务事件</a> (WS 事件) </p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>wsx</p></td>
@@ -86,6 +86,4 @@ ms.locfileid: "89381921"
  
 
 除此之外， [SOAP 消息传输优化机制还 (使用 MTOM) ](https://www.w3.org/TR/2005/REC-soap12-mtom-20050125/) 。
-
- 
 

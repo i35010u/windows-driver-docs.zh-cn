@@ -16,12 +16,12 @@ keywords:
 - 密钥 WDK KMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2823a7e3b4ac54f049674a62278e501a0c9c4f39
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 1fa6891640f27959186f44fb890025acd6155d61
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89184305"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90104654"
 ---
 # <a name="introduction-to-registry-keys-for-drivers"></a>驱动程序的注册表项简介
 
@@ -56,7 +56,5 @@ ms.locfileid: "89184305"
 
 -   [注册表树和密钥概述](../install/overview-of-registry-trees-and-keys.md)
 
--   [在驱动程序中使用注册表](https://docs.microsoft.com/windows-hardware/drivers/kernel/using-the-registry-in-a-driver)
-
- 
+-   [在驱动程序中使用注册表](../kernel/registry-key-object-routines.md)
 

@@ -6,12 +6,12 @@ keywords:
 - Const 构造
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 469c840e8e3c2ae192a7b8c799d77bf217612e54
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 6b36f92246e2a41abd9767e86849deb7c20b05a3
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89218266"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90106104"
 ---
 # <a name="const-tcpip"></a>Const (TCP/IP)
 
@@ -31,12 +31,12 @@ TCP/IP Const 构造定义必须返回的数据类型和值。 Const 用于不在
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>name </p></td>
+<td><p><strong>name</strong></p></td>
 <td><p>架构值的名称。</p></td>
 </tr>
 <tr class="even">
-<td><p><strong>type</strong></p></td>
-<td><p><strong>值</strong>特性中的数据类型， <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/winspool/ne-winspool-bidi_type" data-raw-source="[&lt;strong&gt;BIDI_TYPE&lt;/strong&gt;](/windows-hardware/drivers/ddi/winspool/ne-winspool-bidi_type)"><strong>BIDI_TYPE</strong></a>枚举中的值。</p></td>
+<td><p>type</p></td>
+<td><p><strong>值</strong>特性中的数据类型， <a href="/windows-hardware/drivers/ddi/winspool/ne-winspool-bidi_type" data-raw-source="[&lt;strong&gt;BIDI_TYPE&lt;/strong&gt;](/windows-hardware/drivers/ddi/winspool/ne-winspool-bidi_type)"><strong>BIDI_TYPE</strong></a>枚举中的值。</p></td>
 </tr>
 <tr class="odd">
 <td><p><strong>value</strong></p></td>
@@ -70,6 +70,4 @@ TCP/IP Const 构造定义必须返回的数据类型和值。 Const 用于不在
 \Printer.Extension.Version:Major
 \Printer.Extension.Version:Minor
 ```
-
- 
 

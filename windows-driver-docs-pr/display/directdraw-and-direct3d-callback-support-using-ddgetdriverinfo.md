@@ -12,12 +12,12 @@ keywords:
 ms.date: 12/06/2018
 ms.localizationpriority: medium
 ms.custom: seodec18
-ms.openlocfilehash: ed3b0206c5491aa1234f0daf50fea20901e1ce69
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: ab6d287c1391f11b4742f46af6e36b662063bdef
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89065896"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90104226"
 ---
 # <a name="directdraw-and-direct3d-callback-support-using-ddgetdriverinfo"></a>使用 DdGetDriverInfo 的 DirectDraw 和 Direct3D 回调支持
 
@@ -42,11 +42,11 @@ ms.locfileid: "89065896"
   </thead>
   <tbody>
   <tr class="odd">
-  <td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_kernelcb_syncsurface" data-raw-source="[&lt;em&gt;DdSyncSurfaceData&lt;/em&gt;](/windows/desktop/api/ddrawint/nc-ddrawint-pdd_kernelcb_syncsurface)"><em>DdSyncSurfaceData</em></a></p></td>
+  <td align="left"><p><a href="/windows/desktop/api/ddrawint/nc-ddrawint-pdd_kernelcb_syncsurface" data-raw-source="[&lt;em&gt;DdSyncSurfaceData&lt;/em&gt;](/windows/desktop/api/ddrawint/nc-ddrawint-pdd_kernelcb_syncsurface)"><em>DdSyncSurfaceData</em></a></p></td>
   <td align="left"><p>设置和修改表面数据。</p></td>
   </tr>
   <tr class="even">
-  <td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_kernelcb_syncvideoport" data-raw-source="[&lt;em&gt;DdSyncVideoPortData&lt;/em&gt;](/windows/desktop/api/ddrawint/nc-ddrawint-pdd_kernelcb_syncvideoport)"><em>DdSyncVideoPortData</em></a></p></td>
+  <td align="left"><p><a href="/windows/desktop/api/ddrawint/nc-ddrawint-pdd_kernelcb_syncvideoport" data-raw-source="[&lt;em&gt;DdSyncVideoPortData&lt;/em&gt;](/windows/desktop/api/ddrawint/nc-ddrawint-pdd_kernelcb_syncvideoport)"><em>DdSyncVideoPortData</em></a></p></td>
   <td align="left"><p> (VPE) 对象数据设置和修改视频端口扩展。</p></td>
   </tr>
   </tbody>
@@ -71,15 +71,15 @@ ms.locfileid: "89065896"
   </thead>
   <tbody>
   <tr class="odd">
-  <td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_fliptogdisurface" data-raw-source="[&lt;em&gt;DdFlipToGDISurface&lt;/em&gt;](/windows/desktop/api/ddrawint/nc-ddrawint-pdd_fliptogdisurface)"><em>DdFlipToGDISurface</em></a></p></td>
+  <td align="left"><p><a href="/windows/desktop/api/ddrawint/nc-ddrawint-pdd_fliptogdisurface" data-raw-source="[&lt;em&gt;DdFlipToGDISurface&lt;/em&gt;](/windows/desktop/api/ddrawint/nc-ddrawint-pdd_fliptogdisurface)"><em>DdFlipToGDISurface</em></a></p></td>
   <td align="left"><p>在 DirectDraw 与 GDI 图面翻转时通知驱动程序。</p></td>
   </tr>
   <tr class="even">
-  <td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_freedrivermemory" data-raw-source="[&lt;em&gt;DdFreeDriverMemory&lt;/em&gt;](/windows/desktop/api/ddrawint/nc-ddrawint-pdd_freedrivermemory)"><em>DdFreeDriverMemory</em></a></p></td>
+  <td align="left"><p><a href="/windows/desktop/api/ddrawint/nc-ddrawint-pdd_freedrivermemory" data-raw-source="[&lt;em&gt;DdFreeDriverMemory&lt;/em&gt;](/windows/desktop/api/ddrawint/nc-ddrawint-pdd_freedrivermemory)"><em>DdFreeDriverMemory</em></a></p></td>
   <td align="left"><p>释放屏幕外或非本地显示内存以满足新的分配请求。</p></td>
   </tr>
   <tr class="odd">
-  <td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_setexclusivemode" data-raw-source="[&lt;em&gt;DdSetExclusiveMode&lt;/em&gt;](/windows/desktop/api/ddrawint/nc-ddrawint-pdd_setexclusivemode)"><em>DdSetExclusiveMode</em></a></p></td>
+  <td align="left"><p><a href="/windows/desktop/api/ddrawint/nc-ddrawint-pdd_setexclusivemode" data-raw-source="[&lt;em&gt;DdSetExclusiveMode&lt;/em&gt;](/windows/desktop/api/ddrawint/nc-ddrawint-pdd_setexclusivemode)"><em>DdSetExclusiveMode</em></a></p></td>
   <td align="left"><p>DirectDraw 应用程序切换到或从独占模式切换时，通知驱动程序。</p></td>
   </tr>
   </tbody>
@@ -90,6 +90,4 @@ ms.locfileid: "89065896"
 <!-- -->
 
 -   如果驱动程序收到 GUID \_ VIDEOPORTCALLBACKS guid，它将返回指向 [**DD \_ VideoPortCallbacks**](/windows/desktop/api/ddrawint/ns-ddrawint-dd_videoportcallbacks) 结构的指针，以指示其对 [VPE 回调函数](vpe-callback-functions.md)的支持。 有关详细信息，请参阅 [视频端口扩展到 DirectX](video-port-extensions-to-directx.md)。
-
- 
 

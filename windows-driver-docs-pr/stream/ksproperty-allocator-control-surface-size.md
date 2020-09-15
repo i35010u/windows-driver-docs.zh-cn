@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0804a09708cdd8bd93a5be4e7ba0bc99d2a88838
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 7973d53c0cecc5048f052fb4aae3bdfefc41ec85
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89188375"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90106568"
 ---
 # <a name="ksproperty_allocator_control_surface_size"></a>KSPROPERTY \_ 分配器 \_ 控件 \_ 表面 \_ 大小
 
@@ -53,7 +53,7 @@ KSPROPERTY \_ 分配 \_ 器控制 \_ 面 \_ 大小属性通知提供 DirectDraw 
 <td><p>是</p></td>
 <td><p>否</p></td>
 <td><p>Pin</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_allocator_control_surface_size_s" data-raw-source="[&lt;strong&gt;KSPROPERTY_ALLOCATOR_CONTROL_SURFACE_SIZE_S&lt;/strong&gt;](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_allocator_control_surface_size_s)"><strong>KSPROPERTY_ALLOCATOR_CONTROL_SURFACE_SIZE_S</strong></a></p></td>
+<td><p><a href="/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_allocator_control_surface_size_s" data-raw-source="[&lt;strong&gt;KSPROPERTY_ALLOCATOR_CONTROL_SURFACE_SIZE_S&lt;/strong&gt;](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_allocator_control_surface_size_s)"><strong>KSPROPERTY_ALLOCATOR_CONTROL_SURFACE_SIZE_S</strong></a></p></td>
 <td><p>一对 ULONGs</p></td>
 </tr>
 </tbody>
@@ -63,7 +63,7 @@ KSPROPERTY \_ 分配 \_ 器控制 \_ 面 \_ 大小属性通知提供 DirectDraw 
 
  (操作数据) 的属性值是指定覆盖曲面的宽度和高度的一对 ULONGs。
 
-<a name="remarks"></a>注解
+<a name="remarks"></a>备注
 -------
 
 支持此属性的微型驱动程序返回一个 KSPROPERTY \_ 分配器 \_ 控制 \_ 图面 \_ 大小 \_ S 结构，该结构描述了所需覆盖面的宽度和高度。 覆盖混音器分配此大小的覆盖面。 如果此值不是 pin 连接期间在媒体大小中指定的大小，则会将视频从视频端口缩放到此大小。 无论 VGA 芯片的缩放能力如何，都不会出现视频端口的其他缩放。
@@ -80,18 +80,16 @@ KSPROPERTY \_ 分配 \_ 器控制 \_ 面 \_ 大小属性通知提供 DirectDraw 
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Header</p></td>
+<td><p>标头</p></td>
 <td>Ksmedia (包含 Ksmedia) </td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
 [**KSPROPERTY**](/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)
 
 [**KSPROPERTY \_ 分配器 \_ 控件 \_ 表面大小为 \_ \_ S**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_allocator_control_surface_size_s)
-
- 
 

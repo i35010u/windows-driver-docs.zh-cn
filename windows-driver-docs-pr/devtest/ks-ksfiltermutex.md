@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 883e4d2cd326910ecf92b4e9afbf1822a10ba7b6
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: f06520a776cff77fe0e4ba745d2250228b270199
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89384213"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90105494"
 ---
 # <a name="ksfiltermutex-rule-"></a>KsFilterMutex 规则 ( # A1
 
@@ -49,7 +49,7 @@ KsFilterMutex 规则指定一个 KS 微型端口驱动程序获取并按正确�
 <td align="left"><p>若要验证此规则，请打开 "命令提示符" 窗口。 输入 Driver Verifier 命令并指定 <strong>/domain ks</strong>。</p>
 <p>例如：</p>
 <p></p>
-<p>有关详细信息，请参阅<a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier" data-raw-source="[Driver Verifier](./driver-verifier.md)">驱动程序验证程序</a>。</p></td>
+<p>有关详细信息，请参阅<a href="/windows-hardware/drivers/devtest/driver-verifier" data-raw-source="[Driver Verifier](./driver-verifier.md)">驱动程序验证程序</a>。</p></td>
 </tr>
 </tbody>
 </table>
@@ -60,5 +60,3 @@ KsFilterMutex 规则指定一个 KS 微型端口驱动程序获取并按正确�
 --------
 
 [AVStream 中的筛选器控件互斥](../stream/filter-control-mutex-in-avstream.md)
- 
-

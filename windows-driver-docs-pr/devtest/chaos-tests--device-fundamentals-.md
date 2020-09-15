@@ -4,12 +4,12 @@ description: " (并发硬件和操作系统的混乱) 测试会同时运行各�
 ms.assetid: FA0D73DC-B0B8-4CA7-8DDC-A2C3EC106C3F
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 77373c6d184a3ca42a22c3ea728e85ea4fb074cb
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: f316f52efee5b55b14bb329668f54e5da784b89d
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89383195"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90104612"
 ---
 # <a name="chaos-tests-device-fundamentals"></a>CHAOS 测试（设备基础功能）
 
@@ -34,7 +34,7 @@ ms.locfileid: "89383195"
 <td align="left"><p><span id="Disable_Enhanced_Device_Testing__EDT__Support_"></span><span id="disable_enhanced_device_testing__edt__support_"></span><span id="DISABLE_ENHANCED_DEVICE_TESTING__EDT__SUPPORT_"></span>禁用 (EDT) 支持的增强型设备测试</p></td>
 <td align="left"><p>此测试会将测试筛选器驱动程序 ( # A0) 卸载为使用 DQ 参数指定的设备的上限。 此测试筛选器作为在此测试类别中运行测试的一部分进行安装</p>
 <p>PnP 驱动程序测试使用 EDT 筛选器驱动程序将 IRP_MN_CANCEL_REMOVE_DEVICE 发送到目标设备堆栈。</p>
-<p><strong>参数：</strong> - 请参阅 <a href="https://docs.microsoft.com/windows-hardware/drivers" data-raw-source="[Device Fundamentals Test Parameters](/windows-hardware/drivers)">设备基础测试参数</a></p>
+<p><strong>参数：</strong> - 请参阅 <a href="/windows-hardware/drivers" data-raw-source="[Device Fundamentals Test Parameters](/windows-hardware/drivers)">设备基础测试参数</a></p>
 <p><em>DQ</em></p></td>
 </tr>
 <tr class="even">
@@ -44,7 +44,7 @@ ms.locfileid: "89383195"
 <p><strong>测试二进制文件：</strong> Devfund_ChaosTest.dll</p>
 <p><strong>测试方法：</strong> RunCHAOSTest</p>
 <p><strong>Parameters</strong></p>
-<p><em>DQ</em> - 请参阅 <a href="https://docs.microsoft.com/windows-hardware/drivers" data-raw-source="[Device Fundamentals Test Parameters](/windows-hardware/drivers)">设备基础测试参数</a></p>
+<p><em>DQ</em> - 请参阅 <a href="/windows-hardware/drivers" data-raw-source="[Device Fundamentals Test Parameters](/windows-hardware/drivers)">设备基础测试参数</a></p>
 <p><em>TestPeriod</em> - 指定以分钟)  (运行测试的时间。</p></td>
 </tr>
 </tbody>
@@ -68,6 +68,4 @@ ms.locfileid: "89383195"
 [渗透压力测试（设备基础功能）](penetration-tests--device-fundamentals-.md)
 
 [PnP 测试 (设备基础) ](pnp-tests--device-fundamentals-.md)
-
- 
 

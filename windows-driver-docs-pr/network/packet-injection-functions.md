@@ -7,12 +7,12 @@ keywords:
 - 注入函数 WDK Windows 筛选平台
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b819196727ef7fce37c075621413f7e62b0df333
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 9d539d4d63cf06ceb0d7b0e0ac47ccc5562c6cfa
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89207825"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90106456"
 ---
 # <a name="packet-injection-functions"></a>数据包注入函数
 
@@ -34,32 +34,32 @@ ms.locfileid: "89207825"
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/fwpsk/nf-fwpsk-fwpsinjectforwardasync0" data-raw-source="[&lt;strong&gt;FwpsInjectForwardAsync0&lt;/strong&gt;](/windows-hardware/drivers/ddi/fwpsk/nf-fwpsk-fwpsinjectforwardasync0)"><strong>FwpsInjectForwardAsync0</strong></a></p></td>
+<td align="left"><p><a href="/windows-hardware/drivers/ddi/fwpsk/nf-fwpsk-fwpsinjectforwardasync0" data-raw-source="[&lt;strong&gt;FwpsInjectForwardAsync0&lt;/strong&gt;](/windows-hardware/drivers/ddi/fwpsk/nf-fwpsk-fwpsinjectforwardasync0)"><strong>FwpsInjectForwardAsync0</strong></a></p></td>
 <td align="left"><p>网络层</p></td>
 <td align="left"><p>转发数据路径</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/fwpsk/nf-fwpsk-fwpsinjectnetworkreceiveasync0" data-raw-source="[&lt;strong&gt;FwpsInjectNetworkReceiveAsync0&lt;/strong&gt;](/windows-hardware/drivers/ddi/fwpsk/nf-fwpsk-fwpsinjectnetworkreceiveasync0)"><strong>FwpsInjectNetworkReceiveAsync0</strong></a></p></td>
+<td align="left"><p><a href="/windows-hardware/drivers/ddi/fwpsk/nf-fwpsk-fwpsinjectnetworkreceiveasync0" data-raw-source="[&lt;strong&gt;FwpsInjectNetworkReceiveAsync0&lt;/strong&gt;](/windows-hardware/drivers/ddi/fwpsk/nf-fwpsk-fwpsinjectnetworkreceiveasync0)"><strong>FwpsInjectNetworkReceiveAsync0</strong></a></p></td>
 <td align="left"><p>网络层</p></td>
 <td align="left"><p>接收数据路径</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/fwpsk/nf-fwpsk-fwpsinjectnetworksendasync0" data-raw-source="[&lt;strong&gt;FwpsInjectNetworkSendAsync0&lt;/strong&gt;](/windows-hardware/drivers/ddi/fwpsk/nf-fwpsk-fwpsinjectnetworksendasync0)"><strong>FwpsInjectNetworkSendAsync0</strong></a></p></td>
+<td align="left"><p><a href="/windows-hardware/drivers/ddi/fwpsk/nf-fwpsk-fwpsinjectnetworksendasync0" data-raw-source="[&lt;strong&gt;FwpsInjectNetworkSendAsync0&lt;/strong&gt;](/windows-hardware/drivers/ddi/fwpsk/nf-fwpsk-fwpsinjectnetworksendasync0)"><strong>FwpsInjectNetworkSendAsync0</strong></a></p></td>
 <td align="left"><p>网络层</p></td>
 <td align="left"><p>发送数据路径</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/fwpsk/nf-fwpsk-fwpsinjecttransportreceiveasync0" data-raw-source="[&lt;strong&gt;FwpsInjectTransportReceiveAsync0&lt;/strong&gt;](/windows-hardware/drivers/ddi/fwpsk/nf-fwpsk-fwpsinjecttransportreceiveasync0)"><strong>FwpsInjectTransportReceiveAsync0</strong></a></p></td>
+<td align="left"><p><a href="/windows-hardware/drivers/ddi/fwpsk/nf-fwpsk-fwpsinjecttransportreceiveasync0" data-raw-source="[&lt;strong&gt;FwpsInjectTransportReceiveAsync0&lt;/strong&gt;](/windows-hardware/drivers/ddi/fwpsk/nf-fwpsk-fwpsinjecttransportreceiveasync0)"><strong>FwpsInjectTransportReceiveAsync0</strong></a></p></td>
 <td align="left"><p>传输数据、数据报数据、ICMP 错误或 ALE 层的数据包数据</p></td>
 <td align="left"><p>接收数据路径</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/fwpsk/nf-fwpsk-fwpsinjecttransportsendasync0" data-raw-source="[&lt;strong&gt;FwpsInjectTransportSendAsync0&lt;/strong&gt;](/windows-hardware/drivers/ddi/fwpsk/nf-fwpsk-fwpsinjecttransportsendasync0)"><strong>FwpsInjectTransportSendAsync0</strong></a></p></td>
+<td align="left"><p><a href="/windows-hardware/drivers/ddi/fwpsk/nf-fwpsk-fwpsinjecttransportsendasync0" data-raw-source="[&lt;strong&gt;FwpsInjectTransportSendAsync0&lt;/strong&gt;](/windows-hardware/drivers/ddi/fwpsk/nf-fwpsk-fwpsinjecttransportsendasync0)"><strong>FwpsInjectTransportSendAsync0</strong></a></p></td>
 <td align="left"><p>传输数据、数据报数据、ICMP 错误或 ALE 层的数据包数据</p></td>
 <td align="left"><p>发送数据路径</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/fwpsk/nf-fwpsk-fwpsstreaminjectasync0" data-raw-source="[&lt;strong&gt;FwpsStreamInjectAsync0&lt;/strong&gt;](/windows-hardware/drivers/ddi/fwpsk/nf-fwpsk-fwpsstreaminjectasync0)"><strong>FwpsStreamInjectAsync0</strong></a></p></td>
+<td align="left"><p><a href="/windows-hardware/drivers/ddi/fwpsk/nf-fwpsk-fwpsstreaminjectasync0" data-raw-source="[&lt;strong&gt;FwpsStreamInjectAsync0&lt;/strong&gt;](/windows-hardware/drivers/ddi/fwpsk/nf-fwpsk-fwpsstreaminjectasync0)"><strong>FwpsStreamInjectAsync0</strong></a></p></td>
 <td align="left"><p>TCP 数据段</p></td>
 <td align="left"><p>数据流</p></td>
 </tr>
@@ -92,8 +92,6 @@ NDIS_TCP_IP_CHECKSUM_PACKET_INFO ChecksumInfo;
 在 Windows Vista Service Pack 1 (SP1) 和 Windows Server 2008 中，如果 inMetaValues- &gt; headerIncludeHeaderLength 大于0，则传出数据包是包含 IP 标头的原始发送 reinjection。 若要执行包含 Windows Vista SP1 和 Windows Server 2008 的 IP 标头的原始发送 reinjections，必须通过 inMetaValues-headerIncludeHeaderLength 中的数量撤回克隆的数据包， &gt; 并将 inMetaValues-headerIncludeHeader 复制到 &gt; 新的扩展空间。 然后，将 FwpsInjectTransportSendAsync0 用于数据包的网络缓冲区列表，并将 FWPS \_ TRANSPORT \_ SEND \_ PARAMS0 参数设置为 **NULL**。 有关网络缓冲区列表的撤回操作的详细信息，请参阅 [撤回和高级操作](retreat-and-advance-operations.md)。
 
 **注意**   对于原始发送操作，net buffer 列表必须只包含一个网络缓冲区。 如果网络缓冲区列表包含多个网络缓冲区，则必须将网络缓冲区列表转换为一系列网络缓冲区列表，而且序列中的每个都必须包含一个网络缓冲区。 有关网络缓冲区列表管理的详细信息，请参阅 [net \_ Buffer 体系结构](net-buffer-architecture.md)。
-
- 
 
  
 

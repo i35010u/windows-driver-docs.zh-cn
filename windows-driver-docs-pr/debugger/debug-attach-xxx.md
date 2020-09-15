@@ -11,12 +11,12 @@ api_location:
 api_type:
 - HeaderDef
 ms.localizationpriority: medium
-ms.openlocfilehash: f696e7df10e3b8de10c31bae468d4e23e5bc44ef
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 7cfe80f01f3710daed2a00210f2460434191d18b
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89213489"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90106670"
 ---
 # <a name="debug_attach_xxx"></a>调试 \_ 附加 \_ XXX
 
@@ -35,7 +35,7 @@ ms.locfileid: "89213489"
 </dl>
 </td>
 <td align="left" width="60%">
-<p>附加到目标 noninvasively。  有关 noninvasive 调试的详细信息，请参阅 <a href="https://docs.microsoft.com/windows-hardware/drivers/debugger/noninvasive-debugging--user-mode-" data-raw-source="[Noninvasive Debugging (User Mode)](./noninvasive-debugging--user-mode-.md)">Noninvasive 调试 (用户模式) </a>。</p>
+<p>附加到目标 noninvasively。  有关 noninvasive 调试的详细信息，请参阅 <a href="/windows-hardware/drivers/debugger/noninvasive-debugging--user-mode-" data-raw-source="[Noninvasive Debugging (User Mode)](./noninvasive-debugging--user-mode-.md)">Noninvasive 调试 (用户模式) </a>。</p>
 <p>如果设置了此标志，则不得设置标志 DEBUG_ATTACH_EXISTING、DEBUG_ATTACH_INVASIVE_NO_INITIAL_BREAK 和 DEBUG_ATTACH_INVASIVE_RESUME_PROCESS。</p>
 </td>
 </tr>
@@ -45,7 +45,7 @@ ms.locfileid: "89213489"
 </dl>
 </td>
 <td align="left" width="60%">
-<p>重新附加到调试器已附加到的应用程序 (可能被放弃) 。  有关重新附加到目标的详细信息，请参阅 <a href="https://docs.microsoft.com/windows-hardware/drivers/debugger/-attach--attach-to-process-" data-raw-source="[.attach (Attach to Process)](./-attach--attach-to-process-.md)">。附加 (附加到进程) </a>。</p>
+<p>重新附加到调试器已附加到的应用程序 (可能被放弃) 。  有关重新附加到目标的详细信息，请参阅 <a href="/windows-hardware/drivers/debugger/-attach--attach-to-process-" data-raw-source="[.attach (Attach to Process)](./-attach--attach-to-process-.md)">。附加 (附加到进程) </a>。</p>
 <p>如果设置了此标志，则不得设置其他 DEBUG_ATTACH_<i>XXX</i> 标志。</p>
 </td>
 </tr>
@@ -97,6 +97,4 @@ ms.locfileid: "89213489"
 </tr>
 </tbody>
 </table>
-
- 
 

@@ -14,12 +14,12 @@ keywords:
 - PSN_APPLY
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b63b3d6825a9161e220b72e1502939df5754bed4
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 520e883d4f5e9255e6f8f6878250df0ecce421b0
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89095310"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90105544"
 ---
 # <a name="handling-windows-messages-for-property-pages"></a>处理属性页的 Windows 消息
 
@@ -61,7 +61,7 @@ if (SetupDiLoadClassIcon(
 
 当收到 PSN_APPLY 通知时，提供程序必须执行以下操作：
 
-1.  如果尚未执行此操作，请获取设备安装参数的指针， (设备 [**SP_DEVINSTALL_PARAMS**](/windows/desktop/api/setupapi/ns-setupapi-_sp_devinstall_params_a) 结构) 。 此结构可通过以下方式获得：调用[**SetupDiGetDeviceInstallParams**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetdeviceinstallparamsa)，传递在 PROPSHEETPAGE 结构的**lParam**成员引用的区域中传递的已保存*DeviceInfoSet*和*DeviceInfoData* 。
+1.  如果尚未执行此操作，请获取设备安装参数的指针， (设备 [**SP_DEVINSTALL_PARAMS**](/windows/win32/api/setupapi/ns-setupapi-sp_devinstall_params_a) 结构) 。 此结构可通过以下方式获得：调用[**SetupDiGetDeviceInstallParams**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetdeviceinstallparamsa)，传递在 PROPSHEETPAGE 结构的**lParam**成员引用的区域中传递的已保存*DeviceInfoSet*和*DeviceInfoData* 。
 
 2.  确保用户的更改有效。
 
@@ -69,7 +69,7 @@ if (SetupDiLoadClassIcon(
 
     但是，如果提供程序可以确保更改不需要停止和重新启动设备的驱动程序，则无需设置此标志。
 
-4.  与已更改的[**SP_DEVINSTALL_PARAMS**](/windows/desktop/api/setupapi/ns-setupapi-_sp_devinstall_params_a)结构一起调用[**SetupDiSetDeviceInstallParams**](/windows/desktop/api/setupapi/nf-setupapi-setupdisetdeviceinstallparamsa) ，以设置新参数。
+4.  与已更改的[**SP_DEVINSTALL_PARAMS**](/windows/win32/api/setupapi/ns-setupapi-sp_devinstall_params_a)结构一起调用[**SetupDiSetDeviceInstallParams**](/windows/desktop/api/setupapi/nf-setupapi-setupdisetdeviceinstallparamsa) ，以设置新参数。
 
 ### <a name="psn_reset-notifications"></a><a href="" id="psn-reset-notifications"></a>PSN_RESET 通知
 

@@ -6,12 +6,12 @@ keywords:
 - 显示驱动程序中的即插即用 WDK 显示
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3cef006f8bcfdfa9ce237916ae12f2c8739e0601
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 81ca4d6b16ad80f8e9907bf94d6ab9e34e35ff35
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89066696"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90105440"
 ---
 # <a name="plug-and-play-pnp-in-wddm-12-and-later"></a>WDDM 1.2 和更高版本中的即插即用 (PnP)
 
@@ -37,7 +37,7 @@ ms.locfileid: "89066696"
 <td align="left">必需</td>
 </tr>
 <tr class="even">
-<td align="left"><a href="https://docs.microsoft.com/windows-hardware/test/hlk/windows-hardware-lab-kit" data-raw-source="[WHCK](/windows-hardware/test/hlk/windows-hardware-lab-kit)">WHCK</a> 要求和测试</td>
+<td align="left"><a href="/windows-hardware/test/hlk/windows-hardware-lab-kit" data-raw-source="[WHCK](/windows-hardware/test/hlk/windows-hardware-lab-kit)">WHCK</a> 要求和测试</td>
 <td align="left"><p><strong>WDDM12. PnpStopStartSupport。</strong></p></td>
 </tr>
 </tbody>
@@ -122,17 +122,17 @@ ms.locfileid: "89066696"
 <tbody>
 <tr class="odd">
 <td align="left"><p><span id="Success__and_driver_returns_mode_information"></span><span id="success__and_driver_returns_mode_information"></span><span id="SUCCESS__AND_DRIVER_RETURNS_MODE_INFORMATION"></span>成功和驱动程序返回模式信息</p></td>
-<td align="left"><p>在停止驱动程序之前，必须使用基本的显示驱动程序使用当前的分辨率来设置帧缓冲区，并且当操作系统调用 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/dispmprt/nc-dispmprt-dxgkddi_stop_device_and_release_post_display_ownership" data-raw-source="[&lt;em&gt;DxgkDdiStopDeviceAndReleasePostDisplayOwnership&lt;/em&gt;](/windows-hardware/drivers/ddi/dispmprt/nc-dispmprt-dxgkddi_stop_device_and_release_post_display_ownership)"><em>DxgkDdiStopDeviceAndReleasePostDisplayOwnership</em></a> 函数时，驱动程序必须返回此信息。 保存的模式信息不必与 BIOS 兼容，基本显示器驱动程序在系统重新启动之前不会提供 BIOS 模式。</p>
-<p>如果<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/dispmprt/nc-dispmprt-dxgkddi_stop_device_and_release_post_display_ownership" data-raw-source="[&lt;em&gt;DxgkDdiStopDeviceAndReleasePostDisplayOwnership&lt;/em&gt;](/windows-hardware/drivers/ddi/dispmprt/nc-dispmprt-dxgkddi_stop_device_and_release_post_display_ownership)"><em>DxgkDdiStopDeviceAndReleasePostDisplayOwnership</em></a>返回<strong>STATUS_SUCCESS</strong>，则操作系统保证不会调用<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/dispmprt/nc-dispmprt-dxgkddi_stop_device" data-raw-source="[&lt;em&gt;DxgkDdiStopDevice&lt;/em&gt;](/windows-hardware/drivers/ddi/dispmprt/nc-dispmprt-dxgkddi_stop_device)"><em>DxgkDdiStopDevice</em></a> 。</p></td>
+<td align="left"><p>在停止驱动程序之前，必须使用基本的显示驱动程序使用当前的分辨率来设置帧缓冲区，并且当操作系统调用 <a href="/windows-hardware/drivers/ddi/dispmprt/nc-dispmprt-dxgkddi_stop_device_and_release_post_display_ownership" data-raw-source="[&lt;em&gt;DxgkDdiStopDeviceAndReleasePostDisplayOwnership&lt;/em&gt;](/windows-hardware/drivers/ddi/dispmprt/nc-dispmprt-dxgkddi_stop_device_and_release_post_display_ownership)"><em>DxgkDdiStopDeviceAndReleasePostDisplayOwnership</em></a> 函数时，驱动程序必须返回此信息。 保存的模式信息不必与 BIOS 兼容，基本显示器驱动程序在系统重新启动之前不会提供 BIOS 模式。</p>
+<p>如果<a href="/windows-hardware/drivers/ddi/dispmprt/nc-dispmprt-dxgkddi_stop_device_and_release_post_display_ownership" data-raw-source="[&lt;em&gt;DxgkDdiStopDeviceAndReleasePostDisplayOwnership&lt;/em&gt;](/windows-hardware/drivers/ddi/dispmprt/nc-dispmprt-dxgkddi_stop_device_and_release_post_display_ownership)"><em>DxgkDdiStopDeviceAndReleasePostDisplayOwnership</em></a>返回<strong>STATUS_SUCCESS</strong>，则操作系统保证不会调用<a href="/windows-hardware/drivers/ddi/dispmprt/nc-dispmprt-dxgkddi_stop_device" data-raw-source="[&lt;em&gt;DxgkDdiStopDevice&lt;/em&gt;](/windows-hardware/drivers/ddi/dispmprt/nc-dispmprt-dxgkddi_stop_device)"><em>DxgkDdiStopDevice</em></a> 。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><span id="Success__and_driver_sets_the_Width_and_Height_members_of_the_DXGK_DISPLAY_INFORMATION_structure_to_zero"></span><span id="success__and_driver_sets_the_width_and_height_members_of_the_dxgk_display_information_structure_to_zero"></span><span id="SUCCESS__AND_DRIVER_SETS_THE_WIDTH_AND_HEIGHT_MEMBERS_OF_THE_DXGK_DISPLAY_INFORMATION_STRUCTURE_TO_ZERO"></span>成功，驱动程序将<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmdt/ns-d3dkmdt-_dxgk_display_information" data-raw-source="[&lt;strong&gt;DXGK_DISPLAY_INFORMATION&lt;/strong&gt;](/windows-hardware/drivers/ddi/d3dkmdt/ns-d3dkmdt-_dxgk_display_information)"><strong>DXGK_DISPLAY_INFORMATION</strong></a>结构的<strong>宽度</strong>和<strong>高度</strong>成员设置为零</p></td>
-<td align="left"><p>仅当系统具有两个图形卡、没有监视器连接到 (当前开机自检) 设备，并且操作系统调用 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/dispmprt/nc-dispmprt-dxgkddi_stop_device_and_release_post_display_ownership" data-raw-source="[&lt;em&gt;DxgkDdiStopDeviceAndReleasePostDisplayOwnership&lt;/em&gt;](/windows-hardware/drivers/ddi/dispmprt/nc-dispmprt-dxgkddi_stop_device_and_release_post_display_ownership)"><em>DxgkDdiStopDeviceAndReleasePostDisplayOwnership</em></a> 函数来停止 post 设备时，这种情况才是可能的。</p>
+<td align="left"><p><span id="Success__and_driver_sets_the_Width_and_Height_members_of_the_DXGK_DISPLAY_INFORMATION_structure_to_zero"></span><span id="success__and_driver_sets_the_width_and_height_members_of_the_dxgk_display_information_structure_to_zero"></span><span id="SUCCESS__AND_DRIVER_SETS_THE_WIDTH_AND_HEIGHT_MEMBERS_OF_THE_DXGK_DISPLAY_INFORMATION_STRUCTURE_TO_ZERO"></span>成功，驱动程序将<a href="/windows-hardware/drivers/ddi/d3dkmdt/ns-d3dkmdt-_dxgk_display_information" data-raw-source="[&lt;strong&gt;DXGK_DISPLAY_INFORMATION&lt;/strong&gt;](/windows-hardware/drivers/ddi/d3dkmdt/ns-d3dkmdt-_dxgk_display_information)"><strong>DXGK_DISPLAY_INFORMATION</strong></a>结构的<strong>宽度</strong>和<strong>高度</strong>成员设置为零</p></td>
+<td align="left"><p>仅当系统具有两个图形卡、没有监视器连接到 (当前开机自检) 设备，并且操作系统调用 <a href="/windows-hardware/drivers/ddi/dispmprt/nc-dispmprt-dxgkddi_stop_device_and_release_post_display_ownership" data-raw-source="[&lt;em&gt;DxgkDdiStopDeviceAndReleasePostDisplayOwnership&lt;/em&gt;](/windows-hardware/drivers/ddi/dispmprt/nc-dispmprt-dxgkddi_stop_device_and_release_post_display_ownership)"><em>DxgkDdiStopDeviceAndReleasePostDisplayOwnership</em></a> 函数来停止 post 设备时，这种情况才是可能的。</p>
 <p>在这种情况下，当前显示器将继续在第二个图形适配器上运行，基本显示驱动程序在支持 POST 设备的适配器上以无外设模式运行。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><span id="Failure"></span><span id="failure"></span><span id="FAILURE"></span>否则</p></td>
-<td align="left"><p>操作系统通过 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/dispmprt/nc-dispmprt-dxgkddi_stop_device" data-raw-source="[&lt;em&gt;DxgkDdiStopDevice&lt;/em&gt;](/windows-hardware/drivers/ddi/dispmprt/nc-dispmprt-dxgkddi_stop_device)"><em>DxgkDdiStopDevice</em></a> 函数调用 Windows 7 样式 PnP 停止驱动程序接口。</p>
+<td align="left"><p>操作系统通过 <a href="/windows-hardware/drivers/ddi/dispmprt/nc-dispmprt-dxgkddi_stop_device" data-raw-source="[&lt;em&gt;DxgkDdiStopDevice&lt;/em&gt;](/windows-hardware/drivers/ddi/dispmprt/nc-dispmprt-dxgkddi_stop_device)"><em>DxgkDdiStopDevice</em></a> 函数调用 Windows 7 样式 PnP 停止驱动程序接口。</p>
 <p>对于基于 BIOS 的系统，驱动程序必须将显示设置为与 BIOS 兼容的模式。</p>
 <p>对于基于 UEFI 的系统，基本显示器驱动程序在图形适配器的无外设模式下运行。</p></td>
 </tr>
@@ -149,6 +149,4 @@ ms.locfileid: "89066696"
 有关硬件设备实现此功能时必须满足的要求的信息，请参阅 WHCK 上相关的相关 [文档](/windows-hardware/test/hlk/windows-hardware-lab-kit) 。 **PnpStopStartSupport**。
 
 请参阅 [WDDM 1.2 功能](wddm-v1-2-features.md) ，了解 Windows 8 中添加的功能。
-
- 
 

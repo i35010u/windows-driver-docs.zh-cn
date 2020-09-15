@@ -8,12 +8,12 @@ keywords:
 - EVENTSETID_CROSSBAR
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e81c3e824a9392e24bdae54edd3cbb10f7c79a3d
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 00c54cff2c732d26d4de875db185ff64cd3ed6a7
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89190601"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90106232"
 ---
 # <a name="crossbar-change-event"></a>十字形更改事件
 
@@ -33,13 +33,11 @@ ms.locfileid: "89190601"
 </thead>
 <tbody>
 <tr class="odd">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/stream/ksevent-crossbar-changed" data-raw-source="[&lt;strong&gt;KSEVENT_CROSSBAR_CHANGED&lt;/strong&gt;](./ksevent-crossbar-changed.md)"><strong>KSEVENT_CROSSBAR_CHANGED</strong></a></p></td>
+<td><p><a href="/windows-hardware/drivers/stream/ksevent-crossbar-changed" data-raw-source="[&lt;strong&gt;KSEVENT_CROSSBAR_CHANGED&lt;/strong&gt;](./ksevent-crossbar-changed.md)"><strong>KSEVENT_CROSSBAR_CHANGED</strong></a></p></td>
 <td><p>向 DirectShow 表明，由于新的 pin 路由配置，已更改了纵横比。</p></td>
 </tr>
 </tbody>
 </table>
-
- 
 
  
 

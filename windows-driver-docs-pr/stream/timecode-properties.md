@@ -8,12 +8,12 @@ keywords:
 - 磁带时间码属性 WDK 视频捕获
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6639398c7d75bf041698795d286c5458715c1429
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 28225842151a6f616fbd25deeea79cd1ff75c29b
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89188320"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90104898"
 ---
 # <a name="timecode-properties"></a>时间码属性
 
@@ -33,21 +33,19 @@ ms.locfileid: "89188320"
 </thead>
 <tbody>
 <tr class="odd">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-timecode-reader" data-raw-source="[&lt;strong&gt;KSPROPERTY_TIMECODE_READER&lt;/strong&gt;](./ksproperty-timecode-reader.md)"><strong>KSPROPERTY_TIMECODE_READER</strong></a></p></td>
+<td><p><a href="/windows-hardware/drivers/stream/ksproperty-timecode-reader" data-raw-source="[&lt;strong&gt;KSPROPERTY_TIMECODE_READER&lt;/strong&gt;](./ksproperty-timecode-reader.md)"><strong>KSPROPERTY_TIMECODE_READER</strong></a></p></td>
 <td><p>返回当前磁带位置的时间码。</p></td>
 </tr>
 <tr class="even">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-atn-reader" data-raw-source="[&lt;strong&gt;KSPROPERTY_ATN_READER&lt;/strong&gt;](./ksproperty-atn-reader.md)"><strong>KSPROPERTY_ATN_READER</strong></a></p></td>
+<td><p><a href="/windows-hardware/drivers/stream/ksproperty-atn-reader" data-raw-source="[&lt;strong&gt;KSPROPERTY_ATN_READER&lt;/strong&gt;](./ksproperty-atn-reader.md)"><strong>KSPROPERTY_ATN_READER</strong></a></p></td>
 <td><p>返回当前磁带位置的绝对磁道号。</p></td>
 </tr>
 <tr class="odd">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-rtc-reader" data-raw-source="[&lt;strong&gt;KSPROPERTY_RTC_READER&lt;/strong&gt;](./ksproperty-rtc-reader.md)"><strong>KSPROPERTY_RTC_READER</strong></a></p></td>
+<td><p><a href="/windows-hardware/drivers/stream/ksproperty-rtc-reader" data-raw-source="[&lt;strong&gt;KSPROPERTY_RTC_READER&lt;/strong&gt;](./ksproperty-rtc-reader.md)"><strong>KSPROPERTY_RTC_READER</strong></a></p></td>
 <td><p>返回当前磁带位置的相对时间计数器。</p></td>
 </tr>
 </tbody>
 </table>
-
- 
 
  
 

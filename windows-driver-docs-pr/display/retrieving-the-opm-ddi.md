@@ -6,12 +6,12 @@ keywords:
 - OPM WDK 显示，检索 DDI
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c51ee51f8f97f86326f9d515c2c5c07e874961d9
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 45e12c67dc55458d405b6edf03ff79af182bc99d
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89063484"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90106614"
 ---
 # <a name="retrieving-the-opm-ddi"></a>检索 OPM DDI
 
@@ -32,7 +32,7 @@ ms.locfileid: "89063484"
    <tr class="header">
    <th align="left">成员名称</th>
    <th align="left">成员类型</th>
-   <th align="left">值</th>
+   <th align="left">“值”</th>
    </tr>
    </thead>
    <tbody>
@@ -55,7 +55,7 @@ ms.locfileid: "89063484"
    <tr class="even">
    <td align="left"><p><strong>Interface</strong></p></td>
    <td align="left"><p>PINTERFACE</p></td>
-   <td align="left"><p>指向 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/dispmprt/ns-dispmprt-_dxgk_opm_interface" data-raw-source="[&lt;strong&gt;DXGK_OPM_INTERFACE&lt;/strong&gt;](/windows-hardware/drivers/ddi/dispmprt/ns-dispmprt-_dxgk_opm_interface)"><strong>DXGK_OPM_INTERFACE</strong></a> 结构的指针</p></td>
+   <td align="left"><p>指向 <a href="/windows-hardware/drivers/ddi/dispmprt/ns-dispmprt-_dxgk_opm_interface" data-raw-source="[&lt;strong&gt;DXGK_OPM_INTERFACE&lt;/strong&gt;](/windows-hardware/drivers/ddi/dispmprt/ns-dispmprt-_dxgk_opm_interface)"><strong>DXGK_OPM_INTERFACE</strong></a> 结构的指针</p></td>
    </tr>
    <tr class="odd">
    <td align="left"><p><strong>InterfaceSpecificData</strong></p></td>
@@ -141,6 +141,4 @@ ms.locfileid: "89063484"
    一个指针，指向显示微型端口驱动程序的 [**DxgkDdiOPMDestroyProtectedOutput**](/windows-hardware/drivers/ddi/dispmprt/nc-dispmprt-dxgkddi_opm_destroy_protected_output) 函数
 
 5. 当使用 OPM 接口完成显示微型端口驱动程序时，驱动程序将调用其 **InterfaceDereference** 例程。 在调用[**DxgkDdiRemoveDevice**](/windows-hardware/drivers/ddi/dispmprt/nc-dispmprt-dxgkddi_remove_device)函数之前，驱动程序应调用**InterfaceDereference** 。
-
- 
 

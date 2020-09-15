@@ -11,12 +11,12 @@ keywords:
 - 对象 WDK 微型重定向器
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: aff13423f47c839060397f06d5614fcc9eab7e09
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: fe14a4cbd3a8186b7678fbd0f3ba57233d49f1b6
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89063654"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90104488"
 ---
 # <a name="file-system-object-query-and-set-routines"></a>文件系统对象查询和设置例程
 
@@ -38,61 +38,59 @@ ms.locfileid: "89063654"
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_chkdir_calldown" data-raw-source="[&lt;strong&gt;MRxIsValidDirectory&lt;/strong&gt;](/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_chkdir_calldown)"><strong>MRxIsValidDirectory</strong></a></td>
+<td align="left"><a href="/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_chkdir_calldown" data-raw-source="[&lt;strong&gt;MRxIsValidDirectory&lt;/strong&gt;](/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_chkdir_calldown)"><strong>MRxIsValidDirectory</strong></a></td>
 <td align="left"><p>RDBSS 调用此例程，请求网络小型重定向程序指出路径是否为有效的目录。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><a href="https://docs.microsoft.com/windows-hardware/drivers/ifs/mrxquerydirectory" data-raw-source="[&lt;strong&gt;MRxQueryDirectory&lt;/strong&gt;](./mrxquerydirectory.md)"><strong>MRxQueryDirectory</strong></a></td>
+<td align="left"><a href="/windows-hardware/drivers/ifs/mrxquerydirectory" data-raw-source="[&lt;strong&gt;MRxQueryDirectory&lt;/strong&gt;](./mrxquerydirectory.md)"><strong>MRxQueryDirectory</strong></a></td>
 <td align="left"><p>RDBSS 调用此例程来请求一个有关文件目录系统对象的网络微重定向程序查询信息。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><a href="https://docs.microsoft.com/windows-hardware/drivers/ifs/mrxqueryeainfo" data-raw-source="[&lt;strong&gt;MRxQueryEaInfo&lt;/strong&gt;](./mrxqueryeainfo.md)"><strong>MRxQueryEaInfo</strong></a></td>
+<td align="left"><a href="/windows-hardware/drivers/ifs/mrxqueryeainfo" data-raw-source="[&lt;strong&gt;MRxQueryEaInfo&lt;/strong&gt;](./mrxqueryeainfo.md)"><strong>MRxQueryEaInfo</strong></a></td>
 <td align="left"><p>RDBSS 调用此例程来请求网络小型重定向器查询文件系统对象上的扩展属性信息。 RDBSS 发出此调用以响应接收 IRP_MJ_QUERY_EA。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><a href="https://docs.microsoft.com/windows-hardware/drivers/ifs/mrxqueryfileinfo" data-raw-source="[&lt;strong&gt;MRxQueryFileInfo&lt;/strong&gt;](./mrxqueryfileinfo.md)"><strong>MRxQueryFileInfo</strong></a></td>
+<td align="left"><a href="/windows-hardware/drivers/ifs/mrxqueryfileinfo" data-raw-source="[&lt;strong&gt;MRxQueryFileInfo&lt;/strong&gt;](./mrxqueryfileinfo.md)"><strong>MRxQueryFileInfo</strong></a></td>
 <td align="left"><p>RDBSS 调用此例程来请求一个有关文件系统对象的网络微型重定向程序查询文件信息。 RDBSS 发出此调用以响应接收 IRP_MJ_QUERY_INFORMATION。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><a href="https://docs.microsoft.com/windows-hardware/drivers/ifs/mrxqueryquotainfo" data-raw-source="[&lt;strong&gt;MRxQueryQuotaInfo&lt;/strong&gt;](./mrxqueryquotainfo.md)"><strong>MRxQueryQuotaInfo</strong></a></td>
+<td align="left"><a href="/windows-hardware/drivers/ifs/mrxqueryquotainfo" data-raw-source="[&lt;strong&gt;MRxQueryQuotaInfo&lt;/strong&gt;](./mrxqueryquotainfo.md)"><strong>MRxQueryQuotaInfo</strong></a></td>
 <td align="left"><p>RDBSS 调用此例程来请求网络小型重定向程序查询有关文件系统对象的配额信息。 RDBSS 发出此调用以响应接收 IRP_MJ_QUERY_QUOTA。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><a href="https://docs.microsoft.com/windows-hardware/drivers/ifs/mrxquerysdinfo" data-raw-source="[&lt;strong&gt;MRxQuerySdInfo&lt;/strong&gt;](./mrxquerysdinfo.md)"><strong>MRxQuerySdInfo</strong></a></td>
+<td align="left"><a href="/windows-hardware/drivers/ifs/mrxquerysdinfo" data-raw-source="[&lt;strong&gt;MRxQuerySdInfo&lt;/strong&gt;](./mrxquerysdinfo.md)"><strong>MRxQuerySdInfo</strong></a></td>
 <td align="left"><p>RDBSS 调用此例程来请求网络小型重定向程序查询有关文件系统对象的安全描述符信息。 RDBSS 发出此调用以响应接收 IRP_MJ_QUERY_SECURITY。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><a href="https://docs.microsoft.com/windows-hardware/drivers/ifs/mrxqueryvolumeinfo" data-raw-source="[&lt;strong&gt;MRxQueryVolumeInfo&lt;/strong&gt;](./mrxqueryvolumeinfo.md)"><strong>MRxQueryVolumeInfo</strong></a></td>
+<td align="left"><a href="/windows-hardware/drivers/ifs/mrxqueryvolumeinfo" data-raw-source="[&lt;strong&gt;MRxQueryVolumeInfo&lt;/strong&gt;](./mrxqueryvolumeinfo.md)"><strong>MRxQueryVolumeInfo</strong></a></td>
 <td align="left"><p>RDBSS 调用此例程来请求网络最小化重定向器查询卷信息。 RDBSS 发出此调用以响应接收 IRP_MJ_QUERY_VOLUME_INFORMATION。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><a href="https://docs.microsoft.com/windows-hardware/drivers/ifs/mrxseteainfo" data-raw-source="[&lt;strong&gt;MRxSetEaInfo&lt;/strong&gt;](./mrxseteainfo.md)"><strong>MRxSetEaInfo</strong></a></td>
+<td align="left"><a href="/windows-hardware/drivers/ifs/mrxseteainfo" data-raw-source="[&lt;strong&gt;MRxSetEaInfo&lt;/strong&gt;](./mrxseteainfo.md)"><strong>MRxSetEaInfo</strong></a></td>
 <td align="left"><p>RDBSS 调用此例程来请求网络小型重定向程序设置文件系统对象的扩展属性信息。 RDBSS 发出此调用以响应接收 IRP_MJ_SET_EA。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><a href="https://docs.microsoft.com/windows-hardware/drivers/ifs/mrxsetfileinfo" data-raw-source="[&lt;strong&gt;MRxSetFileInfo&lt;/strong&gt;](./mrxsetfileinfo.md)"><strong>MRxSetFileInfo</strong></a></td>
+<td align="left"><a href="/windows-hardware/drivers/ifs/mrxsetfileinfo" data-raw-source="[&lt;strong&gt;MRxSetFileInfo&lt;/strong&gt;](./mrxsetfileinfo.md)"><strong>MRxSetFileInfo</strong></a></td>
 <td align="left"><p>RDBSS 调用此例程来请求网络小型重定向程序在文件系统对象上设置文件信息。 RDBSS 发出此调用以响应接收 IRP_MJ_SET_INFORMATION。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><a href="https://docs.microsoft.com/windows-hardware/drivers/ifs/mrxsetfileinfoatcleanup" data-raw-source="[&lt;strong&gt;MRxSetFileInfoAtCleanup&lt;/strong&gt;](./mrxsetfileinfoatcleanup.md)"><strong>MRxSetFileInfoAtCleanup</strong></a></td>
+<td align="left"><a href="/windows-hardware/drivers/ifs/mrxsetfileinfoatcleanup" data-raw-source="[&lt;strong&gt;MRxSetFileInfoAtCleanup&lt;/strong&gt;](./mrxsetfileinfoatcleanup.md)"><strong>MRxSetFileInfoAtCleanup</strong></a></td>
 <td align="left"><p>RDBSS 调用此例程来请求网络小型重定向程序在清理时设置文件系统对象的文件信息。 当应用程序关闭句柄时，但在关闭之前，RDBSS 将在清理过程中发出此调用。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><a href="https://docs.microsoft.com/windows-hardware/drivers/ifs/mrxsetquotainfo" data-raw-source="[&lt;strong&gt;MRxSetQuotaInfo&lt;/strong&gt;](./mrxsetquotainfo.md)"><strong>MRxSetQuotaInfo</strong></a></td>
+<td align="left"><a href="/windows-hardware/drivers/ifs/mrxsetquotainfo" data-raw-source="[&lt;strong&gt;MRxSetQuotaInfo&lt;/strong&gt;](./mrxsetquotainfo.md)"><strong>MRxSetQuotaInfo</strong></a></td>
 <td align="left"><p>RDBSS 调用此例程，请求网络最小化重定向器在文件系统对象上设置配额信息。 RDBSS 发出此调用以响应接收 IRP_MJ_SET_QUOTA。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><a href="https://docs.microsoft.com/windows-hardware/drivers/ifs/mrxsetsdinfo" data-raw-source="[&lt;strong&gt;MRxSetSdInfo&lt;/strong&gt;](./mrxsetsdinfo.md)"><strong>MRxSetSdInfo</strong></a></td>
+<td align="left"><a href="/windows-hardware/drivers/ifs/mrxsetsdinfo" data-raw-source="[&lt;strong&gt;MRxSetSdInfo&lt;/strong&gt;](./mrxsetsdinfo.md)"><strong>MRxSetSdInfo</strong></a></td>
 <td align="left"><p>RDBSS 调用此例程来请求网络小型重定向程序设置文件系统对象的安全描述符信息。 RDBSS 发出此调用以响应接收 IRP_MJ_SET_SECURITY。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><a href="https://docs.microsoft.com/windows-hardware/drivers/ifs/mrxsetvolumeinfo" data-raw-source="[&lt;strong&gt;MRxSetVolumeInfo&lt;/strong&gt;](./mrxsetvolumeinfo.md)"><strong>MRxSetVolumeInfo</strong></a></td>
+<td align="left"><a href="/windows-hardware/drivers/ifs/mrxsetvolumeinfo" data-raw-source="[&lt;strong&gt;MRxSetVolumeInfo&lt;/strong&gt;](./mrxsetvolumeinfo.md)"><strong>MRxSetVolumeInfo</strong></a></td>
 <td align="left"><p>RDBSS 调用此例程来请求网络小型重定向程序设置卷信息。 RDBSS 发出此调用以响应接收 IRP_MJ_SET_VOLUME_INFORMATION。</p></td>
 </tr>
 </tbody>
 </table>
-
- 
 
  
 
