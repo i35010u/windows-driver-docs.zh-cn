@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 83603aa61cd53806fd817b4afbbdcac7e51a0d1f
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: c1f20b9b78811335b47c1b499b3b2ecd37c8b12a
+ms.sourcegitcommit: 9b4760aae390b36dbdf9e0dd729a4a643c3f7831
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 09/15/2020
-ms.locfileid: "90101978"
+ms.locfileid: "90565247"
 ---
 # <a name="ksproperty_jack_sink_info"></a>KSPROPERTY \_ 插座 \_ \_ 信息
 
@@ -60,7 +60,7 @@ KSPROPERTY \_ 插座 \_ \_ 信息属性实现为使用筛选器句柄访问的�
 
  
 
-实例数据)  (的属性值是 KSJACK \_ SINK \_ 信息结构。
+实例数据)  (属性值是 KSJACK \_ 接收器 \_ 信息结构。
 
 ### <a name="span-idreturn_valuespanspan-idreturn_valuespanspan-idreturn_valuespanreturn-value"></a><span id="Return_Value"></span><span id="return_value"></span><span id="RETURN_VALUE"></span>返回值
 

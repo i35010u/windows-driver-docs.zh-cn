@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e78e464797e8d5a595a4825fe7fde25a7266adb6
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 68447bdcb7140166727b35586b0885f8fa2a4356
+ms.sourcegitcommit: 9b4760aae390b36dbdf9e0dd729a4a643c3f7831
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 09/15/2020
-ms.locfileid: "90105280"
+ms.locfileid: "90565261"
 ---
 # <a name="irp_mj_file_system_control-ifs"></a>\_ (IFS) 的 IRP MJ \_ 文件 \_ 系统 \_ 控制
 
@@ -143,7 +143,7 @@ SL \_ 允许 \_ 原始 \_ 装载
 <a href="" id="irpsp--parameters-filesystemcontrol-fscontrolcode"></a>*IrpSp- &gt; FileSystemControl. FsControlCode*  
 要传递给目标卷的文件系统或文件系统筛选器驱动程序的 FSCTL 函数代码。 仅用于 IRP \_ MN \_ USER \_ FS \_ 请求。
 
-有关 IOCTL 和 FSCTL 请求的详细信息，请参阅在 Microsoft Windows SDK 文档中使用*内核模式体系结构指南*中的[i/o 控制代码](https://docs.microsoft.com/windows-hardware/drivers/kernel/using-i-o-control-codes)和 "设备输入和输出控制代码"。
+有关 IOCTL 和 FSCTL 请求的详细信息，请参阅在 Microsoft Windows SDK 文档中使用*内核模式体系结构指南*中的[i/o 控制代码](../kernel/introduction-to-i-o-control-codes.md)和 "设备输入和输出控制代码"。
 
 <a href="" id="irpsp--parameters-filesystemcontrol-inputbufferlength"></a>*IrpSp- &gt; FileSystemControl. InputBufferLength*  
 Irp 所指向的缓冲区大小（以字节为单位） * &gt;AssociatedIrp.SystemBuffer*。
@@ -166,7 +166,7 @@ Irp 所指向的缓冲区大小（以字节为单位）。 * &gt; UserBuffer*。
 <a href="" id="irpsp--parameters-verifyvolume-vpb"></a>*IrpSp- &gt; VerifyVolume. Vpb*  
 指向要验证的卷的 VPB 的指针。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**IO \_ 堆栈 \_ 位置**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_stack_location)
@@ -184,4 +184,3 @@ Irp 所指向的缓冲区大小（以字节为单位）。 * &gt; UserBuffer*。
 [**IRP**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_irp)
 
 [**ZwDeviceIoControlFile**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-zwdeviceiocontrolfile)
-

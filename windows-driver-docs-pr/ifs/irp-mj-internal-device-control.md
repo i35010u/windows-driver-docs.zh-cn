@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: be56967e9cb4c92d0ba2ca74df6c7bcb810afa06
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 615169905c0da782e875ee5b80b68059dcd53e87
+ms.sourcegitcommit: 9b4760aae390b36dbdf9e0dd729a4a643c3f7831
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89065939"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90565257"
 ---
 # <a name="irp_mj_internal_device_control-ifs"></a>\_ (IFS) 的 IRP MJ \_ 内部 \_ 设备 \_ 控制
 
@@ -39,7 +39,7 @@ IRP \_ MJ \_ 内部 \_ 设备 \_ 控制请求由 i/o 管理器和其他操作系
 
 筛选器驱动程序应执行任何所需的处理，并根据筛选器的性质，完成 IRP，或将其向下传递到堆栈上的下一个较低版本的驱动程序。
 
-## <a name="parameters"></a>parameters
+## <a name="parameters"></a>参数
 
 
 文件系统或筛选器驱动程序与给定的 IRP 一起调用[**IoGetCurrentIrpStackLocation**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetcurrentirpstacklocation) ，以获取指向其自己的*IrpSp*[**堆栈位置**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_stack_location)的指针，如以下列表所示。  (IRP 显示为 *irp*。 ) 驱动程序可以使用在处理设备控制请求中的以下 irp 成员和 irp 堆栈位置设置的信息：
@@ -76,7 +76,7 @@ Irp 所指向的缓冲区大小（以字节为单位） * &gt;AssociatedIrp.Syst
 <a href="" id="irpsp--parameters-deviceiocontrol-iocontrolcode"></a>*IrpSp- &gt; DeviceIoControl. IoControlCode*  
 要传递给目标设备的设备驱动程序的 IOCTL 函数代码。
 
-有关 IOCTL 请求的详细信息，请参阅 Microsoft Windows SDK 文档中的使用*内核模式体系结构指南*中的[i/o 控制代码](https://docs.microsoft.com/windows-hardware/drivers/kernel/using-i-o-control-codes)和 "设备输入和输出控制代码"。
+有关 IOCTL 请求的详细信息，请参阅 Microsoft Windows SDK 文档中的使用*内核模式体系结构指南*中的[i/o 控制代码](../kernel/introduction-to-i-o-control-codes.md)和 "设备输入和输出控制代码"。
 
 <a href="" id="irpsp--parameters-deviceiocontrol-outputbufferlength"></a>*IrpSp- &gt; DeviceIoControl. OutputBufferLength*  
 Irp 所指向的缓冲区大小（以字节为单位）。 * &gt; UserBuffer*。
@@ -103,9 +103,7 @@ Irp 所指向的缓冲区大小（以字节为单位）。 * &gt; UserBuffer*。
 
 [**IRP \_ MJ \_ 内部 \_ 设备 \_ 控制 (WDK 内核参考) **](../kernel/irp-mj-internal-device-control.md)
 
-[使用 I/O 控制代码](https://docs.microsoft.com/windows-hardware/drivers/kernel/using-i-o-control-codes)
+[使用 I/O 控制代码](../kernel/introduction-to-i-o-control-codes.md)
 
 [**ZwDeviceIoControlFile**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-zwdeviceiocontrolfile)
-
- 
 

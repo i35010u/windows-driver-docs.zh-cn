@@ -6,12 +6,12 @@ ms.assetid: fb3d4534-9c6f-4956-b702-5752f9798600
 keywords:
 - IRP_MJ_INTERNAL_DEVICE_CONTROL 内核模式驱动程序体系结构
 ms.localizationpriority: medium
-ms.openlocfilehash: 37fc6c6bee084f9de16ba0e30722db63db7272cd
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 2a3e959aa9af6b7965887d50cc4c1a343db4355f
+ms.sourcegitcommit: 9b4760aae390b36dbdf9e0dd729a4a643c3f7831
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89190313"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90565282"
 ---
 # <a name="irp_mj_internal_device_control"></a>IRP\_MJ\_INTERNAL\_DEVICE\_CONTROL
 
@@ -37,7 +37,7 @@ I/o 控制代码包含在 IRP 的 i/o 堆栈位置的 **DeviceIoControl. IoContr
 
 输出参数取决于 i/o 控制代码的值。 有关详细信息，请参阅 [I/o 控制代码的缓冲区说明](./buffer-descriptions-for-i-o-control-codes.md)。
 
-<a name="operation"></a>操作
+<a name="operation"></a>Operation
 ---------
 
 当另一个驱动程序调用[**IoBuildDeviceIoControlRequest**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iobuilddeviceiocontrolrequest)或[**IoAllocateIrp**](/windows-hardware/drivers/ddi/wdm/nf-wdm-ioallocateirp)来创建请求时，驱动程序将接收**IRP \_ MJ \_ 内部 \_ 设备 \_ 控制**请求。
@@ -46,7 +46,7 @@ I/o 控制代码包含在 IRP 的 i/o 堆栈位置的 **DeviceIoControl. IoContr
 
 请求的操作是特定于设备或驱动程序的。
 
-有关 [**irp \_ mj \_ 设备 \_ 控制**](irp-mj-device-control.md) 或 **irp \_ mj \_ 内部 \_ 设备 \_ 控制** 请求的 I/o 控制代码的常规信息，请参阅 [使用 i/o 控制代码](https://docs.microsoft.com/windows-hardware/drivers/kernel/using-i-o-control-codes)。 另请参阅 [特定于设备类型的 I/o 请求](./device-type-specific-i-o-requests.md)。
+有关 [**irp \_ mj \_ 设备 \_ 控制**](irp-mj-device-control.md) 或 **irp \_ mj \_ 内部 \_ 设备 \_ 控制** 请求的 I/o 控制代码的常规信息，请参阅 [使用 i/o 控制代码](./introduction-to-i-o-control-codes.md)。 另请参阅 [特定于设备类型的 I/o 请求](./device-type-specific-i-o-requests.md)。
 
 <a name="requirements"></a>要求
 ------------
@@ -58,7 +58,7 @@ I/o 控制代码包含在 IRP 的 i/o 堆栈位置的 **DeviceIoControl. IoContr
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Header</p></td>
+<td><p>标头</p></td>
 <td>Wdm.h（包括 Wdm.h、Ntddk.h 或 Ntifs.h）</td>
 </tr>
 </tbody>
@@ -72,6 +72,4 @@ I/o 控制代码包含在 IRP 的 i/o 堆栈位置的 **DeviceIoControl. IoContr
 [**IoAllocateIrp**](/windows-hardware/drivers/ddi/wdm/nf-wdm-ioallocateirp)
 
 [**IoBuildDeviceIoControlRequest**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iobuilddeviceiocontrolrequest)
-
- 
 

@@ -3,12 +3,12 @@ title: 在音频资源重新平衡和意外删除操作期间管理内存缓冲�
 description: 对于需要重新分配内存资源的某些 PCI 方案，将使用 PnP 重新平衡。 需要正确管理内存缓冲区以避免出现问题。
 ms.date: 12/05/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 2b1e068308e4fe7794ea608fd236b78adb3f7d29
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 35d45f3c98a8e1a0d02c826132310f31d43f10ad
+ms.sourcegitcommit: 9b4760aae390b36dbdf9e0dd729a4a643c3f7831
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89211421"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90565243"
 ---
 # <a name="managing-memory-buffers-during-audio-resource-rebalance-and-surprise-removal-operations"></a>在音频资源重新平衡和意外删除操作期间管理内存缓冲区
 
@@ -39,7 +39,7 @@ PnP "意外删除" (SR) 在设备意外从计算机中删除并且不再可用�
 
 *版本缓冲区*  
 
-[IMiniportWaveRTStream：： FreeAudioBuffer] ([IMiniportWaveRTStream：： SetState](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff536756(v=vs.85)) 或 [IMiniportWaveRTStreamNotification：： FreeBufferWithNotification](/windows-hardware/drivers/ddi/portcls/nf-portcls-iminiportwavertstreamnotification-freebufferwithnotification)
+[IMiniportWaveRTStream：： FreeAudioBuffer](/windows-hardware/drivers/ddi/portcls/nf-portcls-iminiportwavertstream-freeaudiobuffer) 或 [IMiniportWaveRTStreamNotification：： FreeBufferWithNotification](/windows-hardware/drivers/ddi/portcls/nf-portcls-iminiportwavertstreamnotification-freebufferwithnotification)
 
 请注意，portcls 微型端口驱动程序应成功将状态转换从较高的值转换为较小的值， (RUN = = 3，PAUSE = = 2，获取 = = 1，STOP = = 0) 当驱动程序在 SR/STOP (操作期间已被驱动程序停止时（即，在接近关闭句柄请求之前，SR/STOP 会) 。
 

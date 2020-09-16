@@ -10,12 +10,12 @@ keywords:
 - 用户模式驱动程序框架 WDK，内核模式客户端
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e78a691f9c36491f171bc3b6c0dd378e1f308a11
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 29d659c97ecbc64a40ce62ad5edf0d46dc5f97a0
+ms.sourcegitcommit: 9b4760aae390b36dbdf9e0dd729a4a643c3f7831
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89190799"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90565277"
 ---
 # <a name="supporting-kernel-mode-clients-in-umdf-1x-drivers"></a>支持 UMDF 1.x 驱动程序中的内核模式客户端
 
@@ -60,7 +60,7 @@ UMDF 版本1.9 及更高版本允许 UMDF 驱动程序支持 *内核模式客户
 
 -   I/o 请求的缓冲区不得包含指向其他信息的指针，因为用户模式驱动程序无法取消引用指针。
 
--   如果 i/o 请求包含指定 "两个" 缓冲区访问方法的 [i/o 控制代码](https://docs.microsoft.com/windows-hardware/drivers/kernel/using-i-o-control-codes) ，则内核模式驱动程序必须在创建 i/o 请求的应用程序的进程上下文中发送 i/o 请求。 有关如何在 UMDF 基础驱动程序中支持 "两个" 方法的详细信息，请参阅 [在 Umdf 驱动程序中使用非缓冲 i/o 和直接 i/o](./accessing-data-buffers-in-umdf-1-x-drivers.md#using-neither-buffered-i-o-nor-direct-i-o-in-umdf-drivers)。
+-   如果 i/o 请求包含指定 "两个" 缓冲区访问方法的 [i/o 控制代码](../kernel/introduction-to-i-o-control-codes.md) ，则内核模式驱动程序必须在创建 i/o 请求的应用程序的进程上下文中发送 i/o 请求。 有关如何在 UMDF 基础驱动程序中支持 "两个" 方法的详细信息，请参阅 [在 Umdf 驱动程序中使用非缓冲 i/o 和直接 i/o](./accessing-data-buffers-in-umdf-1-x-drivers.md#using-neither-buffered-i-o-nor-direct-i-o-in-umdf-drivers)。
 
 -   UMDF 驱动程序可以在用户模式下修改 i/o 请求的输出数据。 因此，内核模式驱动程序必须验证它从用户模式驱动程序接收到的任何输出数据。
 
@@ -111,6 +111,4 @@ UMDF 版本1.9 及更高版本允许 UMDF 驱动程序支持 *内核模式客户
 如果将 **UpperDriverOk** 注册表值设置为非零值，则框架允许将内核模式驱动程序加载到用户模式驱动程序之上。 内核模式驱动程序可以将用户模式应用程序的 i/o 请求转发到 UMDF 驱动程序，但内核模式驱动程序无法将内核模式下创建的 i/o 请求发送到 UMDF 驱动程序。
 
 对于 UMDF 版本1.9 及更高版本， **UpperDriverOk** 注册表值已过时，仅对现有驱动程序提供支持。 新驱动程序应使用 [UmdfKernelModeClientPolicy](specifying-wdf-directives-in-inf-files.md) 指令。
-
- 
 

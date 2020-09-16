@@ -4,12 +4,12 @@ description: WexLogger
 ms.assetid: D9F4AD08-19EA-4a6c-AD25-886FBEA334B8
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 13697f4b74205b754df6716bfeb47ffa40d2c417
-ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
+ms.openlocfilehash: 7287a1e985b89e1b880954e3b8ef1143011739a0
+ms.sourcegitcommit: 9b4760aae390b36dbdf9e0dd729a4a643c3f7831
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89402698"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90565287"
 ---
 # <a name="wexlogger"></a>WexLogger
 
@@ -42,14 +42,14 @@ LOG_OUTPUT(L"Look, a number! %d", aNumber);
 
 在托管代码中，它将如下所示：
 
-```cpp
+```cs
 Log.Comment("Rendering to the BufferView");
 Log.Comment("Render succeeded");
 ```
 
 在 JScript 中，它将如下所示：
 
-```cpp
+```js
 var log = new ActiveXObject("WEX.Logger.Log");
 log.Comment("Rendering to the BufferView");
 log.Comment("Render succeeded");
@@ -116,7 +116,7 @@ log.Comment("Render succeeded");
 | NotRun                                     | 测试未运行 |
 | 已跳过                                    | 已跳过测试 |
 | 已阻止                                    | 已阻止测试 |
-| 失败                                     | 测试失败      |
+| Failed                                     | 测试失败      |
 
 
 
@@ -329,12 +329,12 @@ WexLogger 提供一个或多个子进程登录到单个父进程的功能，导�
     ```
 
 -   如果要在 TAEF 框架之外使用 WexLogger，但没有在实验室环境中运行，则必须在调用**LogController：： InitializeLogging ( # B1**之前，将** &lt; \_ 进程 \_ 名称 &gt; \_ CMD**环境变量设置为包含此选项。 示例：
-    ```cpp
+    ```cs
     Environment.SetEnvironmentVariable("<YOUR_PROCESS_NAME>_CMD", "/enablewttlogging");
     LogController.InitializeLogging();
     ```
 
-    ```cpp
+    ```cs
     Environment.SetEnvironmentVariable("consoleapplication4_cmd", "/enablewttlogging");
     LogController.InitializeLogging();
     ```
@@ -345,12 +345,12 @@ WexLogger 提供一个或多个子进程登录到单个父进程的功能，导�
     te my.test.dll /enablewttlogging /appendwttlogging
     ```
 
-    ```cpp
+    ```cs
     Environment.SetEnvironmentVariable("<YOUR_PROCESS_NAME>_CMD", "/enablewttlogging /appendwttlogging");
     LogController.InitializeLogging();
     ```
 
-    ```cpp
+    ```cs
     Environment.SetEnvironmentVariable("consoleapplication4_cmd", "/enablewttlogging /appendwttlogging");
     LogController.InitializeLogging();
     ```
@@ -371,7 +371,7 @@ WexLogger 提供一个或多个子进程登录到单个父进程的功能，导�
 | NotRun    | 已 \_ 阻止 WTT TESTCASE \_ 结果 \_ |
 | 已跳过   | 已 \_ \_ \_ 跳过 WTT TESTCASE 结果 |
 | 已阻止   | 已 \_ 阻止 WTT TESTCASE \_ 结果 \_ |
-| 失败    | WTT \_ TESTCASE \_ 结果 \_ 失败    |
+| Failed    | WTT \_ TESTCASE \_ 结果 \_ 失败    |
 
 
 
@@ -405,12 +405,12 @@ te my.test.dll /screencaptureonerror /stacktraceonerror
 
 注意：如果在 TAEF framework 外使用 WexLogger，则必须在调用**LogController：： InitializeLogging ( # B1**之前，将** &lt; \_ 进程 \_ 名称 &gt; \_ CMD**环境变量设置为包含这些选项。 示例：
 
-```cpp
+```cs
 Environment.SetEnvironmentVariable("<YOUR_PROCESS_NAME>_CMD", "/screencaptureonerror /minidumponerror /stacktraceonerror");
 LogController.InitializeLogging();
 ```
 
-```cpp
+```cs
 Environment.SetEnvironmentVariable("consoleapplication4_cmd", "/screencaptureonerror /minidumponerror /stacktraceonerror");
 LogController.InitializeLogging();
 ```
@@ -431,7 +431,7 @@ WexLoggerErrorCallback 函数的常见用途是将错误消息写出到控制台
 
 Wex 编译为 NetFx 2/3/3.5 二进制文件，以便可将其加载到 NetFx 2/3/3.5 和 NetFx 4 进程中。 这允许 TAEF 运行 NetFx 2 以上的所有托管程序集。 如果在 TAEF 外使用 Wex，则需要为 exe 添加一个配置 [文件](/previous-versions/visualstudio/visual-studio-2008/ms229689(v=vs.90)) ，以配置 NetFx 4 运行时，以将 NetFx 2/3/3.5 二进制文件加载到其进程中。 配置文件应包含以下内容：
 
-```cpp
+```xml
 <configuration> 
     <startup useLegacyV2RuntimeActivationPolicy="true">
         <supportedRuntime version="v4.0"/>
@@ -444,13 +444,13 @@ Wex 编译为 NetFx 2/3/3.5 二进制文件，以便可将其加载到 NetFx 2/3
 
 为了使测试用例作者免于检查每个 **日志** API 调用的返回值，WexLogger 的托管层通过使用 **LoggerController. WexLoggerError** 事件报告意外的错误条件。 可以通过实现自己的 **WexLoggerErrorEventHandler** 并使用以下 c # 事件订阅的熟悉语法，随时订阅此事件：
 
-```cpp
+```cs
 LogController.WexLoggerError += new WexLoggerEventHandler(My_WexLoggerErrorHandler);
 ```
 
 下面是事件处理程序的示例：
 
-```cpp
+```cs
 static void LogController_WexLoggerError(object sender, WexLoggerErrorEventArgs e)
 {
     ConsoleColor originalColor = Console.ForegroundColor;

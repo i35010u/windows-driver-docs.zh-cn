@@ -6,12 +6,12 @@ ms.assetid: c6436b34-22bd-4e65-bfb0-b2c4d9962e29
 keywords:
 - IRP_MJ_DEVICE_CONTROL 内核模式驱动程序体系结构
 ms.localizationpriority: medium
-ms.openlocfilehash: 1289d4ed043d6336f8b94cfbd32a6b1a68686b46
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: a3aa2da1e02ecdbd1a4387bc494df288ffedbe64
+ms.sourcegitcommit: 9b4760aae390b36dbdf9e0dd729a4a643c3f7831
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89185619"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90565281"
 ---
 # <a name="irp_mj_device_control"></a>IRP\_MJ\_DEVICE\_CONTROL
 
@@ -37,7 +37,7 @@ I/o 控制代码包含在 IRP 的驱动程序 i/o 堆栈位置的 **DeviceIoCont
 
 输出参数取决于 i/o 控制代码的值。 有关详细信息，请参阅 [I/o 控制代码的缓冲区说明](./buffer-descriptions-for-i-o-control-codes.md)。
 
-<a name="operation"></a>操作
+<a name="operation"></a>Operation
 ---------
 
 驱动程序收到此 i/o 控制代码，因为用户模式线程调用了 Microsoft Win32 [**DeviceIoControl**](/windows/desktop/api/ioapiset/nf-ioapiset-deviceiocontrol) 函数，或更高级别的内核模式驱动程序已设置该请求。 用户模式驱动程序已调用 **DeviceIoControl**，传入驱动程序定义的 (（也称为 *专用*) i/o 控制代码），以从紧密耦合的内核模式设备驱动程序请求特定于设备或驱动程序的支持。
@@ -46,7 +46,7 @@ I/o 控制代码包含在 IRP 的驱动程序 i/o 堆栈位置的 **DeviceIoCont
 
 收到设备 i/o 控制请求后，设备驱动程序将检查 i/o 控制代码以确定如何满足请求。 对于大多数公共 i/o 控制代码，设备驱动程序将少量的数据传入或传出 ** &gt;AssociatedIrp.SystemBuffer**的缓冲区。
 
-有关 **irp \_ mj \_ 设备 \_ 控制** 或 [**irp \_ mj \_ 内部 \_ 设备 \_ 控制**](irp-mj-internal-device-control.md) 请求的 I/o 控制代码的常规信息，请参阅 [使用 i/o 控制代码](https://docs.microsoft.com/windows-hardware/drivers/kernel/using-i-o-control-codes)。 另请参阅 [特定于设备类型的 I/o 请求](./device-type-specific-i-o-requests.md)。
+有关 **irp \_ mj \_ 设备 \_ 控制** 或 [**irp \_ mj \_ 内部 \_ 设备 \_ 控制**](irp-mj-internal-device-control.md) 请求的 I/o 控制代码的常规信息，请参阅 [使用 i/o 控制代码](./introduction-to-i-o-control-codes.md)。 另请参阅 [特定于设备类型的 I/o 请求](./device-type-specific-i-o-requests.md)。
 
 <a name="requirements"></a>要求
 ------------
@@ -64,10 +64,8 @@ I/o 控制代码包含在 IRP 的驱动程序 i/o 堆栈位置的 **DeviceIoCont
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [*DispatchDeviceControl*](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch)
-
- 
 

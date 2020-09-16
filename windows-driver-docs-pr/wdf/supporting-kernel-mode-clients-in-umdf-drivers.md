@@ -4,12 +4,12 @@ description: 本主题介绍用户模式驱动程序框架 (UMDF) 驱动程序�
 ms.assetid: 5C0180BF-F0C7-4225-8388-C3315C282516
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ff4166c9c91ca45bdb567e8eb24e8a0245fb200a
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 48474fba4bd3960716fdb3c98ca195188a80a90a
+ms.sourcegitcommit: 9b4760aae390b36dbdf9e0dd729a4a643c3f7831
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89190791"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90565285"
 ---
 # <a name="supporting-kernel-mode-clients-in-umdf-drivers"></a>支持 UMDF 驱动程序中的内核模式客户端
 
@@ -38,13 +38,11 @@ ms.locfileid: "89190791"
 
 -   I/o 请求的缓冲区不得包含指向其他信息的指针，因为用户模式驱动程序无法取消引用指针。
 
--   如果 i/o 请求包含指定 "两个" 缓冲区访问方法的 [i/o 控制代码](https://docs.microsoft.com/windows-hardware/drivers/kernel/using-i-o-control-codes) ，则内核模式驱动程序必须在创建 i/o 请求的应用程序的进程上下文中发送 i/o 请求。 有关如何在 UMDF 驱动程序中支持 "两个" 方法的详细信息，请参阅 [管理 Umdf 驱动程序中的缓冲区访问方法](managing-buffer-access-methods-in-umdf-drivers.md)。
+-   如果 i/o 请求包含指定 "两个" 缓冲区访问方法的 [i/o 控制代码](../kernel/introduction-to-i-o-control-codes.md) ，则内核模式驱动程序必须在创建 i/o 请求的应用程序的进程上下文中发送 i/o 请求。 有关如何在 UMDF 驱动程序中支持 "两个" 方法的详细信息，请参阅 [管理 Umdf 驱动程序中的缓冲区访问方法](managing-buffer-access-methods-in-umdf-drivers.md)。
 
 -   UMDF 驱动程序可以在用户模式下修改 i/o 请求的输出数据。 因此，内核模式驱动程序必须验证它从用户模式驱动程序接收到的任何输出数据。
 
 -   通常，内核模式客户端应验证 UMDF 驱动程序传递给[**WdfRequestCompleteWithInformation**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestcompletewithinformation)的*信息*值。 如果客户端是 KMDF 驱动程序，它可以调用 [**WdfRequestGetCompletionParams**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestgetcompletionparams) 以在 IO \_ 状态块结构中获取此信息 \_ 。
 
     通常情况下，框架不验证 UMDF 驱动程序传递给 [**WdfRequestCompleteWithInformation**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestcompletewithinformation)的信息值。  (此参数通常指定传输的字节数。 ) 框架只为输出缓冲区验证信息值，并且仅对 [缓冲的 i/o](./accessing-data-buffers-in-wdf-drivers.md#direct) 数据访问方法进行验证。  (例如，如果访问方法是缓冲 i/o，则框架将验证传输的字节数是否未超过读取操作的输出缓冲区大小。 ) 
-
- 
 

@@ -8,12 +8,12 @@ keywords:
 - 错误 WDK KMDF，框架对象创建
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e4253a7bc7c73c6342c2a7771ccb4ea688603eff
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: a76e0cc02cadb74f67872e6c4061c6f8c5fccd66
+ms.sourcegitcommit: 9b4760aae390b36dbdf9e0dd729a4a643c3f7831
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89191561"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90565269"
 ---
 # <a name="framework-object-creation-errors"></a>框架对象创建错误
 
@@ -52,7 +52,5 @@ ms.locfileid: "89191561"
 
 如果框架无法为新对象分配内存，则它可能会返回状态 \_ 资源不足的情况 \_ 。
 
-单独的对象创建方法可能还会返回其他 [NTSTATUS 值](https://docs.microsoft.com/windows-hardware/drivers/kernel/ntstatus-values)。 有关每个创建方法的附加返回值的详细信息，请参阅该方法的参考页。
-
- 
+单独的对象创建方法可能还会返回其他 [NTSTATUS 值](../kernel/using-ntstatus-values.md)。 有关每个创建方法的附加返回值的详细信息，请参阅该方法的参考页。
 

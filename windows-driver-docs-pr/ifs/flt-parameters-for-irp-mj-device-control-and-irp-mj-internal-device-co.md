@@ -16,12 +16,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a014ec35c69fb377a4df508b726ce62561a0e358
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: f4d37c929c7a69c39e56b56d5a3c92a1525460ea
+ms.sourcegitcommit: 9b4760aae390b36dbdf9e0dd729a4a643c3f7831
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89065974"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90565265"
 ---
 # <a name="flt_parameters-for-irp_mj_device_control-and-irp_mj_internal_device_control-union"></a>\_Irp \_ mj \_ 设备 \_ 控制和 irp \_ mj \_ 内部 \_ 设备 \_ 控制联合的 FLT 参数
 
@@ -90,7 +90,7 @@ typedef union _FLT_PARAMETERS {
 **IoControlCode**  
 要传递给目标设备的设备驱动程序的 IOCTL 函数代码。
 
-有关 IOCTL 请求的详细信息，请参阅 Microsoft Windows SDK 文档中的使用*内核模式体系结构指南*中的[i/o 控制代码](https://docs.microsoft.com/windows-hardware/drivers/kernel/using-i-o-control-codes)和 "设备输入和输出控制代码"。  (此资源可能在某些语言和国家/地区不可用。 ) 
+有关 IOCTL 请求的详细信息，请参阅 Microsoft Windows SDK 文档中的使用*内核模式体系结构指南*中的[i/o 控制代码](../kernel/introduction-to-i-o-control-codes.md)和 "设备输入和输出控制代码"。  (此资源可能在某些语言和国家/地区不可用。 ) 
 
 **两者均未选中**  
 缓存方法为方法时使用的联合组件 \_ 。 有关缓冲方法的详细信息，请参阅在*内核模式体系结构指南*中[定义 i/o 控制代码](../kernel/defining-i-o-control-codes.md)。
@@ -156,7 +156,7 @@ IRP \_ MJ \_ 内部 \_ 设备 \_ 控制是基于 IRP 的 i/o 操作。
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**FLT \_ 回调 \_ 数据**](/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_callback_data)
@@ -190,6 +190,4 @@ IRP \_ MJ \_ 内部 \_ 设备 \_ 控制是基于 IRP 的 i/o 操作。
 [**ProbeForWrite**](/windows-hardware/drivers/ddi/wdm/nf-wdm-probeforwrite)
 
 [**ZwDeviceIoControlFile**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-zwdeviceiocontrolfile)
-
- 
 

@@ -16,12 +16,12 @@ api_type:
 - HeaderDef
 ms.date: 02/04/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 1a0367f59511a1b2e9a1243cc26be5034062c925
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 1592ffda779c5e5d3a7e6e8c79d591ad56702f5f
+ms.sourcegitcommit: 9b4760aae390b36dbdf9e0dd729a4a643c3f7831
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89065302"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90565263"
 ---
 # <a name="flt_parameters-for-irp_mj_file_system_control-union"></a>IRP_MJ_FILE_SYSTEM_CONTROL 联合的 FLT_PARAMETERS
 
@@ -95,7 +95,7 @@ typedef union _FLT_PARAMETERS {
 **FsControlCode**  
 要传递给目标设备的文件系统、文件系统筛选器或微筛选器驱动程序的 FSCTL 函数代码。
 
-有关 IOCTL 和 FSCTL 请求的详细信息，请参阅在 Microsoft Windows SDK 文档中使用*内核模式体系结构指南*中的[i/o 控制代码](https://docs.microsoft.com/windows-hardware/drivers/kernel/using-i-o-control-codes)和 "设备输入和输出控制代码"。  (此资源可能在某些语言和国家/地区不可用。 ) 
+有关 IOCTL 和 FSCTL 请求的详细信息，请参阅在 Microsoft Windows SDK 文档中使用*内核模式体系结构指南*中的[i/o 控制代码](../kernel/introduction-to-i-o-control-codes.md)和 "设备输入和输出控制代码"。  (此资源可能在某些语言和国家/地区不可用。 ) 
 
 **两者均未选中**  
 METHOD_NEITHER 缓冲方法时用于 IRP_MN_KERNEL_CALL 和 IRP_MN_USER_FS_REQUEST 操作的联合组件。 有关缓冲方法的详细信息，请参阅在*内核模式体系结构指南*中[定义 i/o 控制代码](../kernel/defining-i-o-control-codes.md)。  (此资源可能在某些语言和国家/地区不可用。 ) 
@@ -144,7 +144,7 @@ IRP_MJ_FILE_SYSTEM_CONTROL 是基于 IRP 的操作。
 **标头**： Fltkernel (包含 Fltkernel) 
 
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 [**FLT_CALLBACK_DATA**](/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_callback_data)
 
