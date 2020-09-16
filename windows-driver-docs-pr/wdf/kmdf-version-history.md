@@ -9,12 +9,12 @@ keywords:
 ms.date: 04/28/2020
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: e577ba20c005858f4db2b4b18dfa12a7a869bdda
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 5640cd507b0693d1bc123c6d990b93f6b549bde9
+ms.sourcegitcommit: 015689b4cc3a288ff4296ab0954a4e866e09c113
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89191745"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90574279"
 ---
 # <a name="kmdf-version-history"></a>KMDF 版本历史记录
 
@@ -55,6 +55,7 @@ ms.locfileid: "89191745"
 * 添加了新的 API [ **WdfDeviceSetDeviceInterfaceStateEx**](/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdevicesetdeviceinterfacestateex)
 * 改进现有 API [ **WdfDeviceGetSystemPowerAction**](/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdevicegetsystempoweraction)
 * 添加了新的 API [ **WdfPdoInitRemovePowerDependencyOnParent**](/windows-hardware/drivers/ddi/wdfpdo/nf-wdfpdo-wdfpdoinitremovepowerdependencyonparent)
+* [导向式电源管理框架简介](../kernel/introduction-to-the-directed-power-management-framework.md)
 
 ## <a name="kmdf-version-129"></a>KMDF 版本1.29
 

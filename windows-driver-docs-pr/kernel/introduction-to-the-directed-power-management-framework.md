@@ -4,12 +4,12 @@ description: 描述定向电源管理框架，或 DFx，它是 Power Framework �
 ms.assetid: 58550c57-3439-4212-b0c6-6a2fbfd38414
 ms.date: 02/21/2020
 ms.custom: 19H1
-ms.openlocfilehash: eb17fd1e593a7b0da2017fbf7228d7202ff7e028
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 7555842a4ec57f7b923db442e9726ef4b236b148
+ms.sourcegitcommit: 015689b4cc3a288ff4296ab0954a4e866e09c113
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89189345"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90574273"
 ---
 # <a name="introduction-to-the-directed-power-management-framework"></a>导向式电源管理框架简介
 
@@ -27,9 +27,11 @@ DFx 不会关闭分页或调试设备。
 
 在[WDF_DEVICE_POWER_POLICY_IDLE_SETTINGS](/windows-hardware/drivers/ddi/wdfdevice/ns-wdfdevice-_wdf_device_power_policy_idle_settings)结构中指定**SystemManagedIdleTimeout**或**SystemManagedIdleTimeoutWithHint**的 WDF 驱动程序可以通过将以下注册表项添加到[DDInstall 部分](../install/inf-ddinstall-hw-section.md)中 INF 的[AddReg 指令部分](../install/inf-addreg-directive.md)来选择 DFx：
 
-```
-HKR,"WDF","WdfDirectedPowerTransitionEnable",0x00010001,1
-```
+`HKR,"WDF","WdfDirectedPowerTransitionEnable",0x00010001,1`
+
+默认情况下，针对版本31和更高版本的 WDF 驱动程序将启用 DFx。 如果不需要，驱动程序可以通过将注册表项设置为0来选择退出 DFx： 
+
+`HKR,"WDF","WdfDirectedPowerTransitionEnable",0x00010001,0`
 
 由于请求系统管理的空闲超时会使 WDF 代表驱动程序注册 PoFx，因此在此方案中，驱动程序不需要注册到 PoFx。
 
@@ -84,7 +86,7 @@ Status = PoFxRegisterDevice(
 
 对于遵循端口/微型端口驱动程序模型的设备类，系统提供的端口驱动程序通常会处理电源策略所有权。  大多数微型端口不需要进行任何代码更改即可选择加入 DFx，因为需要相应的端口驱动程序来处理 DFx 支持。
 
-## <a name="testing"></a>测试
+## <a name="testing"></a>正在测试
 
 Microsoft 为 DFx 提供三个测试： [Windows 驱动程序工具包](../download-the-wdk.md) 中用于测试用户指定的设备的单设备测试、设备级的 hlk 测试，以及用于测试系统上所有设备的系统级的 hlk 测试。
 

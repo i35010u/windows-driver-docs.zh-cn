@@ -4,12 +4,12 @@ description: 音频处理对象的硬件卸载 (于) 可提供可能的性能增
 ms.assetid: 159DFFD2-2434-4EDC-A83C-455BA80F74C6
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a5ce1ed5c85ca73d79ccfeab606d83686e298185
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 8f5267c5ba9bffd8add68d4fd0eb970ea1b16fa7
+ms.sourcegitcommit: 83bec7b58a7033e23719fbab9960f6a6a700b0eb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89209125"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90609616"
 ---
 # <a name="hardware-offloaded-apo-effects"></a>硬件卸载 APO 效果
 
@@ -26,7 +26,7 @@ ms.locfileid: "89209125"
 
 在 Windows 8 中，音频引擎经过了重新设计，可与已被卸载到独立于计算机主音频系统但连接到计算机的主音频系统的硬件设备一起使用。 这称为硬件卸载。 有关详细信息，请参阅 [硬件卸载音频处理](hardware-offloaded-audio-processing.md)。
 
-硬件卸载功能主要针对具有较大缓冲区大小的低功率方案。 例如，在低功耗音频 (LPA 在支持系统中) 播放时，音频缓冲区大小或周期设置为1秒，以便 CPU 不会频繁唤醒以处理小缓冲区 (例如，每隔10毫秒) 。
+硬件卸载功能主要针对具有较大缓冲区大小的低功率方案。 例如，在低功耗音频 (LPA 在支持系统中) 播放时，音频缓冲区大小或周期可能设置为1秒，以便 CPU 不会频繁地唤醒以处理小缓冲区 (例如，每隔10毫秒) 。
 
 实现硬件卸载和硬件卸载音频处理可以最大限度地提高能效。
 

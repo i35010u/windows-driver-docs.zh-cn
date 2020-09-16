@@ -10,12 +10,12 @@ keywords:
 ms.date: 04/28/2020
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: ad8656493cd23d537d9391ff122375045f29595e
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 4eda1b335ac503944b6384e7eca285261ccf5dc2
+ms.sourcegitcommit: 015689b4cc3a288ff4296ab0954a4e866e09c113
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89184579"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90574281"
 ---
 # <a name="umdf-version-history"></a>UMDF 版本历史记录
 
@@ -53,6 +53,7 @@ ms.locfileid: "89184579"
 * 添加了新的 API [ **WdfDeviceSetDeviceInterfaceStateEx**](/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdevicesetdeviceinterfacestateex)
 * 改进现有 API [ **WdfDeviceGetSystemPowerAction**](/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdevicegetsystempoweraction)
 * 添加了每驱动程序 **HostProcessDbgBreakOnDriverLoad** 注册表值。 有关信息，请参阅 [用于调试 WDF 驱动程序的注册表值](./registry-values-for-debugging-kmdf-drivers.md)。
+* [导向式电源管理框架简介](../kernel/introduction-to-the-directed-power-management-framework.md)
 
 ## <a name="umdf-version-229"></a>UMDF 版本2.29
 
