@@ -34,7 +34,7 @@ DEVPKEY_Device_Parent 设备属性表示设备实例的父项的设备实例标�
 <thead>
 <tr>
 <th>Attribute</th>
-<th>值</th>
+<th>Value</th>
 </tr>
 </thead>
 <tbody>

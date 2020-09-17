@@ -5,12 +5,12 @@ ms.date: 04/20/2017
 ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
-ms.openlocfilehash: 92e9bee7c828071c0b794be7056b06b32b6fd4ff
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 9641ce84cbbd0169c94ee76515af40d6f6fc9d93
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90102178"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90717474"
 ---
 # <a name="universal-serial-bus-usb"></a>通用串行总线 (USB)
 
@@ -201,7 +201,7 @@ Windows 操作系统为 USB 主控制器、集线器以及符合官方 USB 规�
 <p>介绍应用程序如何通过调用 WinUSB 函数与 USB 设备通信。</p>
 <p><a href="how-to-write-a-windows-desktop-app-that-communicates-with-a-usb-device.md" data-raw-source="[Write a WinUSB application](how-to-write-a-windows-desktop-app-that-communicates-with-a-usb-device.md)">编写 WinUSB 应用程序</a></p>
 <p>WinUSB 函数 <ul>
-    <li><a href="/windows/desktop/api/winusb/" data-raw-source="[Winusb.h](/windows/desktop/api/winusb/)">Winusb.h</a>
+    <li><a href="/windows/win32/api/winusb/" data-raw-source="[Winusb.h](/windows/win32/api/winusb/)">Winusb.h</a>
     </li>
     <li><a href="/windows-hardware/drivers/ddi/usbioctl/" data-raw-source="[Usbioctl.h](/windows-hardware/drivers/ddi/usbioctl/)">Usbioctl.h</a>
     </li>
