@@ -9,12 +9,12 @@ keywords:
 - 初始化电池设备
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 06ede660223cf0390257c3b1d8785998f417f2fb
-ms.sourcegitcommit: 7a7e61b4147a4aa86bf820fd0b0c7681fe17e544
+ms.openlocfilehash: 77918f08bf315d98be150079f64d8013c38da314
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89056907"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90716608"
 ---
 # <a name="initializing-the-battery-class-device"></a>初始化电池类设备
 
@@ -22,23 +22,23 @@ ms.locfileid: "89056907"
 ## <span id="ddk_initializing_the_battery_class_device_dg"></span><span id="DDK_INITIALIZING_THE_BATTERY_CLASS_DEVICE_DG"></span>
 
 
-[*AddDevice*](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_add_device)例程必须初始化电池类设备，并将 miniclass 驱动程序注册到类驱动程序。 为此，miniclass 驱动程序将调用 [**BatteryClassInitializeDevice**](/windows/desktop/api/batclass/nf-batclass-batteryclassinitializedevice) 例程。 此调用向类驱动程序注册 miniclass 驱动程序，以便两个驱动程序可以使用彼此支持的例程。 此调用还会将电池设备注册到系统，以便复合电池和电源指示器可以观察到该设备。
+[*AddDevice*](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_add_device)例程必须初始化电池类设备，并将 miniclass 驱动程序注册到类驱动程序。 为此，miniclass 驱动程序将调用 [**BatteryClassInitializeDevice**](/windows/win32/api/batclass/nf-batclass-batteryclassinitializedevice) 例程。 此调用向类驱动程序注册 miniclass 驱动程序，以便两个驱动程序可以使用彼此支持的例程。 此调用还会将电池设备注册到系统，以便复合电池和电源指示器可以观察到该设备。
 
-**BatteryClassInitializeDevice** 需要一个指向 [**电池 \_ 微型端口 \_ 信息**](/windows/desktop/api/batclass/ns-batclass-battery_miniport_info) 结构的指针，该结构包含以下信息：
+**BatteryClassInitializeDevice** 需要一个指向 [**电池 \_ 微型端口 \_ 信息**](/windows/win32/api/batclass/ns-batclass-battery_miniport_info) 结构的指针，该结构包含以下信息：
 
 -   在 **MajorVersion** 和 **MinorVersion**中，此 miniclass 驱动程序支持的类驱动程序的主版本号和次版本号。
 
     版本号分别在 Batclass 中定义为电池 \_ 类 \_ 主要 \_ 版本和电池 \_ 类 \_ 次要 \_ 版本。
 
--   在 **QueryTag**中，miniclass 驱动程序的 [*BatteryMiniQueryTag*](/windows/desktop/api/batclass/nc-batclass-bclass_query_tag_callback) 例程的入口点。
+-   在 **QueryTag**中，miniclass 驱动程序的 [*BatteryMiniQueryTag*](/windows/win32/api/batclass/nc-batclass-bclass_query_tag_callback) 例程的入口点。
 
--   在 **QueryInformation**中，miniclass 驱动程序的 [*BatteryMiniQueryInformation*](/windows/desktop/api/batclass/nc-batclass-bclass_query_information_callback) 例程的入口点。
+-   在 **QueryInformation**中，miniclass 驱动程序的 [*BatteryMiniQueryInformation*](/windows/win32/api/batclass/nc-batclass-bclass_query_information_callback) 例程的入口点。
 
--   在 **SetInformation**中，miniclass 驱动程序的 [*BatteryMiniSetInformation*](/windows/desktop/api/batclass/nc-batclass-bclass_set_information_callback) 例程的入口点。
+-   在 **SetInformation**中，miniclass 驱动程序的 [*BatteryMiniSetInformation*](/windows/win32/api/batclass/nc-batclass-bclass_set_information_callback) 例程的入口点。
 
--   在 **SetStatusNotify**中，miniclass 驱动程序的 [*BatteryMiniSetStatusNotify*](/windows/desktop/api/batclass/nc-batclass-bclass_set_status_notify_callback) 例程的入口点。
+-   在 **SetStatusNotify**中，miniclass 驱动程序的 [*BatteryMiniSetStatusNotify*](/windows/win32/api/batclass/nc-batclass-bclass_set_status_notify_callback) 例程的入口点。
 
--   在 **DisableStatusNotify**中，miniclass 驱动程序的 [*BatteryMiniDisableStatusNotify*](/windows/desktop/api/batclass/nc-batclass-bclass_disable_status_notify_callback) 例程的入口点。
+-   在 **DisableStatusNotify**中，miniclass 驱动程序的 [*BatteryMiniDisableStatusNotify*](/windows/win32/api/batclass/nc-batclass-bclass_disable_status_notify_callback) 例程的入口点。
 
 -   在 **上下文**中，是指向 miniclass 驱动程序的上下文信息的指针。
 

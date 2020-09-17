@@ -4,12 +4,12 @@ description: 简单 i/o 插件是 Windows 驱动程序测试框架的扩展 (WDT
 ms.assetid: 948E8CF5-24A1-4A7C-BD18-374F989AD053
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 98b337119d9876ee0f9af47828ddbb3baff43a0f
-ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
+ms.openlocfilehash: 4b81183915f0e3708d5caf88ca9876930cfa9b81
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89402692"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90715220"
 ---
 # <a name="provided-wdtf-simple-io-plug-ins"></a>提供的 WDTF 简单 I/O 插件
 
@@ -73,7 +73,7 @@ xperf.exe -merge Audio_SimpleIo_Kernel.etl Audio_SimpleIo.etl Audio_SimpleIo _Me
 
 #### <a name="type-of-io-plug-in-performs"></a>I/o 插件的类型执行
 
-- 使用 [**BluetoothFindFirstDevice 函数**](/windows/desktop/api/bluetoothapis/nf-bluetoothapis-bluetoothfindfirstdevice) 查找蓝牙设备。
+- 使用 [**BluetoothFindFirstDevice 函数**](/windows/win32/api/bluetoothapis/nf-bluetoothapis-bluetoothfindfirstdevice) 查找蓝牙设备。
 
 ## <a name="cdrom"></a>CDROM
 
@@ -85,15 +85,15 @@ xperf.exe -merge Audio_SimpleIo_Kernel.etl Audio_SimpleIo.etl Audio_SimpleIo _Me
 
 ### <a name="type-of-io-plug-in-performs-cdrom"></a>I/o 插件的类型会执行 (CDROM) 
 
-- 在 cd-rom 上查找文件，并使用 Win32 [**ReadFile**](/windows/desktop/api/fileapi/nf-fileapi-readfile) API 执行读取操作。
+- 在 cd-rom 上查找文件，并使用 Win32 [**ReadFile**](/windows/win32/api/fileapi/nf-fileapi-readfile) API 执行读取操作。
 
 ### <a name="how-to-triage-test-failures-cdrom"></a>如何诊断 (CDROM) 的测试失败
 
 - 在测试计算机上，导航到相关的 CD/DVD 驱动器并确认你可以访问驱动器的内容。
 - Cd-rom 简单 i/o 插件在 CD/DVD 上搜索要用于执行读取的 CD/DVD 上的文件。 确保 CD/DVD 中的文件在磁盘上进行了编码。
-- 这个简单的 i/o 插件使用 Win32 [**CreateFile**](/windows/desktop/api/fileapi/nf-fileapi-createfilea)， [**WriteFile**](/windows/desktop/api/fileapi/nf-fileapi-writefile)， [**ReadFile**](/windows/desktop/api/fileapi/nf-fileapi-readfile) 函数。 返回的错误很可能是这些 Api 中的 Win32 错误代码。
+- 这个简单的 i/o 插件使用 Win32 [**CreateFile**](/windows/win32/api/fileapi/nf-fileapi-createfilea)， [**WriteFile**](/windows/win32/api/fileapi/nf-fileapi-writefile)， [**ReadFile**](/windows/win32/api/fileapi/nf-fileapi-readfile) 函数。 返回的错误很可能是这些 Api 中的 Win32 错误代码。
 
-## <a name="disk"></a>磁盘和分区
+## <a name="disk"></a>磁盘
 
 ### <a name="disk-requirements"></a>磁盘要求
 
@@ -157,7 +157,7 @@ xperf.exe -merge Audio_SimpleIo_Kernel.etl Audio_SimpleIo.etl Audio_SimpleIo _Me
 
 ### <a name="type-of-io-plug-in-performs-mobile-broadband"></a>I/o 插件的类型 (移动宽带执行) 
 
-- 使用 [**IMbnInterface 接口**](/windows/desktop/api/mbnapi/nn-mbnapi-imbninterface) 并调用 GetHomeProvider、 [**IMbnInterface：： GetInterfaceCapability 方法**](/windows/desktop/api/mbnapi/nf-mbnapi-imbninterface-getinterfacecapability)和 [**IMbnInterface：： GetReadyState 方法**](/windows/desktop/api/mbnapi/nf-mbnapi-imbninterface-getreadystate) api 来试验设备。
+- 使用 [**IMbnInterface 接口**](/windows/win32/api/mbnapi/nn-mbnapi-imbninterface) 并调用 GetHomeProvider、 [**IMbnInterface：： GetInterfaceCapability 方法**](/windows/win32/api/mbnapi/nf-mbnapi-imbninterface-getinterfacecapability)和 [**IMbnInterface：： GetReadyState 方法**](/windows/win32/api/mbnapi/nf-mbnapi-imbninterface-getreadystate) api 来试验设备。
 
 ### <a name="how-to-triage-test-failures-mobile-broadband"></a>如何诊断移动宽带 (的测试失败) 
 
@@ -212,13 +212,13 @@ xperf.exe -merge Audio_SimpleIo_Kernel.etl Audio_SimpleIo.etl Audio_SimpleIo _Me
 
 ### <a name="type-of-io-plug-in-performs-volume"></a>I/o 插件的类型执行 (卷) 
 
-- 创建名为 WDTF 的 \_ 目录 \_ ，并创建一个名为 SimpleIO 的文件。 I/o 是通过调用 [**ReadFile**](/windows/desktop/api/fileapi/nf-fileapi-readfile) 和 [**WriteFile**](/windows/desktop/api/fileapi/nf-fileapi-writefile) api 来执行的。
+- 创建名为 WDTF 的 \_ 目录 \_ ，并创建一个名为 SimpleIO 的文件。 I/o 是通过调用 [**ReadFile**](/windows/win32/api/fileapi/nf-fileapi-readfile) 和 [**WriteFile**](/windows/win32/api/fileapi/nf-fileapi-writefile) api 来执行的。
 
 ### <a name="how-to-triage-test-failures-volume"></a>如何诊断 (卷) 的测试失败
 
 - 在测试计算机上，导航到相关驱动器并确认你可以访问驱动器的内容。
 - 尝试将文件保存到驱动器。 确保可以轻松保存和访问。
-- 这个简单的 i/o 插件使用 Win32 [**CreateFile**](/windows/desktop/api/fileapi/nf-fileapi-createfilea)， [**WriteFile**](/windows/desktop/api/fileapi/nf-fileapi-writefile)， [**ReadFile**](/windows/desktop/api/fileapi/nf-fileapi-readfile) 函数。 返回的错误很可能是这些 Api 中的 Win32 错误代码。
+- 这个简单的 i/o 插件使用 Win32 [**CreateFile**](/windows/win32/api/fileapi/nf-fileapi-createfilea)， [**WriteFile**](/windows/win32/api/fileapi/nf-fileapi-writefile)， [**ReadFile**](/windows/win32/api/fileapi/nf-fileapi-readfile) 函数。 返回的错误很可能是这些 Api 中的 Win32 错误代码。
 
 ## <a name="webcam"></a>摄像头
 

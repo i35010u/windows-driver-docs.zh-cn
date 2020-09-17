@@ -13,12 +13,12 @@ keywords:
 - Dmu 微型端口驱动程序 WDK 音频
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d3959c65c0d9089f3bb11b06453269bc15573afb
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: d03ddbd43bd328f3372de78b189d4f92343bbf46
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89208129"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90714806"
 ---
 # <a name="directmusic-ddi-overview"></a>DirectMusic DDI 概述
 
@@ -32,11 +32,11 @@ ms.locfileid: "89208129"
 
 DirectMusic 使用以下用户模式接口控制用户模式合成程序，并与内核流式处理驱动程序通信：
 
-[IDirectMusicSynth](/windows/desktop/api/dmusics/nn-dmusics-idirectmusicsynth)
+[IDirectMusicSynth](/windows/win32/api/dmusics/nn-dmusics-idirectmusicsynth)
 
 这是用于实现自定义软件 synths 的用户模式接口。
 
-[IDirectMusicSynthSink](/windows/desktop/api/dmusics/nn-dmusics-idirectmusicsynthsink)
+[IDirectMusicSynthSink](/windows/win32/api/dmusics/nn-dmusics-idirectmusicsynthsink)
 
 这是在 Microsoft DirectX 6.1 和 DirectX 7 中实现自定义波形接收器的用户模式接口。 在 DirectX 8 及更高版本中，DirectMusic 始终将其专用波形接收器与用户模式合成一起使用，并且用户模式波形接收器不支持公共接口。
 

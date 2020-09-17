@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: e56536d6c20961c38754904c145541eeffa13507
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: ee629d644503420d1b31637077cf08a574500e62
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89094885"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90714666"
 ---
 # <a name="devpkey_device_instanceid"></a>DEVPKEY_Device_InstanceId
 
@@ -64,7 +64,7 @@ DEVPKEY_Device_InstanceId 设备属性表示设备的设备实例标识符。
 
 DEVPKEY_Device_InstanceId 的值由 Windows 在设备实例的安装过程中进行设置。
 
-可以调用 [**SetupDiGetDeviceProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw) 来检索设备实例的 DEVPKEY_Device_InstanceId 的值。
+可以调用 [**SetupDiGetDeviceProperty**](/windows/win32/api/setupapi/nf-setupapi-setupdigetdevicepropertyw) 来检索设备实例的 DEVPKEY_Device_InstanceId 的值。
 
 Windows Server 2003、Windows XP 和 Windows 2000 支持此属性，但不支持 DEVPKEY_Device_InstanceId 属性键。 有关如何在这些早期版本的 Windows 上检索设备实例标识符的信息，请参阅 [检索设备实例标识符](./retrieving-a-device-instance-identifier.md)。
 
@@ -74,12 +74,12 @@ Windows Server 2003、Windows XP 和 Windows 2000 支持此属性，但不支持
 **版本**： windows Vista 和更高版本的 windows **标题**： Devpkey (包含 Devpkey) 
 
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
-[**SetupDiGetDeviceInstanceId**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetdeviceinstanceida)
+[**SetupDiGetDeviceInstanceId**](/windows/win32/api/setupapi/nf-setupapi-setupdigetdeviceinstanceida)
 
-[**SetupDiGetDeviceProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)
+[**SetupDiGetDeviceProperty**](/windows/win32/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)
 
  
 

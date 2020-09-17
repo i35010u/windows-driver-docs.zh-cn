@@ -19,12 +19,12 @@ keywords:
 - WaveCyclic，筛选器
 ms.date: 05/08/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: bb9af21455cafb3bb0370e55a8f182eb487212b8
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: bbeee4bf01f26c32fd8a2ede65b0307fcc5a49f0
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89210283"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90716646"
 ---
 # <a name="wave-filters"></a>滤波器
 
@@ -32,7 +32,7 @@ ms.locfileid: "89210283"
 ## <span id="wave_filters"></span><span id="WAVE_FILTERS"></span>
 
 
-波形筛选器代表呈现和/或捕获波格式数字音频数据的设备。 通常，应用程序可以通过 DirectSound API 或 Microsoft Windows 多媒体 waveOut*xxx* 和 waveIn*Xxx* 函数访问这些设备的功能。 有关 WDM 音频驱动程序可以支持的波形格式的信息，请参阅 [**WAVEFORMATEX**](/windows/desktop/api/mmreg/ns-mmreg-twaveformatex) 和 [**WAVEFORMATEXTENSIBLE**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-waveformatextensible)。
+波形筛选器代表呈现和/或捕获波格式数字音频数据的设备。 通常，应用程序可以通过 DirectSound API 或 Microsoft Windows 多媒体 waveOut*xxx* 和 waveIn*Xxx* 函数访问这些设备的功能。 有关 WDM 音频驱动程序可以支持的波形格式的信息，请参阅 [**WAVEFORMATEX**](/windows/win32/api/mmreg/ns-mmreg-twaveformatex) 和 [**WAVEFORMATEXTENSIBLE**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-waveformatextensible)。
 
 *波形渲染*筛选器接收波形数字音频流作为输入，并将模拟音频信号 (输出到一组扬声器或外部混合器) 或 (到 S/PDIF 连接器的数字音频流（例如) ）。
 

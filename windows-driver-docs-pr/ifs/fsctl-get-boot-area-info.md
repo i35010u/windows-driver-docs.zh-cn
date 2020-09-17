@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fd40840622e63106bada9043d828e89211bd7746
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 787b187451ffcce5425121d35308d65f18471828
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90102988"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90716428"
 ---
 # <a name="fsctl_get_boot_area_info-control-code"></a>FSCTL \_ 获取 \_ 启动 \_ 区域 \_ 信息控制代码
 
@@ -91,7 +91,7 @@ ms.locfileid: "90102988"
 
  
 
-<a name="remarks"></a>注解
+<a name="remarks"></a>备注
 -------
 
 **FSCTL \_可以在 FastFAT 和 exFAT 设备上使用 "获取 \_ 启动 \_ 区域 \_ 信息** " 控制代码。 此功能支持为闪存驱动器等设备使用 BitLocker。
@@ -116,8 +116,8 @@ ms.locfileid: "90102988"
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
-[**DeviceIoControl**](/windows/desktop/api/ioapiset/nf-ioapiset-deviceiocontrol)
+[**DeviceIoControl**](/windows/win32/api/ioapiset/nf-ioapiset-deviceiocontrol)
 

@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: fc8604cd9ce23152960e3bacd501ded700c4c8ac
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: dfaa666e4201e23630f2eba05bb63294c5bceac4
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89096727"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90714616"
 ---
 # <a name="devpkey_deviceclass_devtype"></a>DEVPKEY_DeviceClass_DevType
 
@@ -70,7 +70,7 @@ DEVPKEY_DeviceClass_DevType 设备属性表示 [设备安装程序类](./overvie
 
 DEVPKEY_DeviceClass_DevType 的值是在 Ntddk 和中定义的 FILE_DEVICE_Xxx 值之一。 有关设备类型的详细信息，请参阅[**IoCreateDevice**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iocreatedevice)函数的*DeviceType*参数。
 
-可以调用 [**SetupDiGetClassProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetclasspropertyw) 或 [**SetupDiGetClassPropertyEx**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetclasspropertyexw) 来检索 DEVPKEY_DeviceClass_DevType 的值。
+可以调用 [**SetupDiGetClassProperty**](/windows/win32/api/setupapi/nf-setupapi-setupdigetclasspropertyw) 或 [**SetupDiGetClassPropertyEx**](/windows/win32/api/setupapi/nf-setupapi-setupdigetclasspropertyexw) 来检索 DEVPKEY_DeviceClass_DevType 的值。
 
 Windows Server 2003 和 Windows XP 支持此属性，但不支持 DEVPKEY_DeviceClass_DevType 属性键。 在这些早期版本的 Windows 中，可以使用 SPCRP_DEVTYPE 标识符来访问此属性的值。 有关如何访问此属性的值的信息，请参阅 [检索设备安装程序类 SPCRP_Xxx 属性](./retrieving-spcrp-xxx-properties.md)。
 
@@ -80,7 +80,7 @@ Windows Server 2003 和 Windows XP 支持此属性，但不支持 DEVPKEY_Device
 **版本**： windows Vista 和更高版本的 windows **标题**： Devpkey (包含 Devpkey) 
 
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**IoCreateDevice**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iocreatedevice)
@@ -89,9 +89,9 @@ Windows Server 2003 和 Windows XP 支持此属性，但不支持 DEVPKEY_Device
 
 [**INF ClassInstall32 节**](./inf-classinstall32-section.md)
 
-[**SetupDiGetClassProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetclasspropertyw)
+[**SetupDiGetClassProperty**](/windows/win32/api/setupapi/nf-setupapi-setupdigetclasspropertyw)
 
-[**SetupDiGetClassPropertyEx**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetclasspropertyexw)
+[**SetupDiGetClassPropertyEx**](/windows/win32/api/setupapi/nf-setupapi-setupdigetclasspropertyexw)
 
  
 

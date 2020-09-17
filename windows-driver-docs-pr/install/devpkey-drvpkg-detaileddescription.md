@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 346db5f2cb7a4cceb51aa3677f8999929b996c1f
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: b7e241cbd531ab9f38378ce8e4ecdab3284bfeda
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89095847"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90715558"
 ---
 # <a name="devpkey_drvpkg_detaileddescription"></a>DEVPKEY_DrvPkg_DetailedDescription
 
@@ -71,7 +71,7 @@ DEVPKEY_DrvPkg_DetailedDescription 设备属性表示设备实例的功能的详
 <a href="" id="paragraph-tag"></a>段落标记  
 p&lt;&gt;
 
-可以设置 AddProperty 的 DEVPKEY_DrvPkg_DetailedDescription 值，该 [**指令**](./inf-addproperty-directive.md) 包含在安装设备的 inf 文件的 [**inf *DDInstall* 部分**](./inf-ddinstall-section.md) 中。 可以通过调用 [**SetupDiGetDeviceProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)来检索 DEVPKEY_DrvPkg_DetailedDescription 的值。
+可以设置 AddProperty 的 DEVPKEY_DrvPkg_DetailedDescription 值，该 [**指令**](./inf-addproperty-directive.md) 包含在安装设备的 inf 文件的 [**inf *DDInstall* 部分**](./inf-ddinstall-section.md) 中。 可以通过调用 [**SetupDiGetDeviceProperty**](/windows/win32/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)来检索 DEVPKEY_DrvPkg_DetailedDescription 的值。
 
 下面的示例演示如何使用 INF **AddProperty** 指令为 INF *DDInstall* 部分为 "SampleDDInstallSection" 安装的设备实例设置 DEVPKEY_DrvPkg_DetailedDescription 值：
 
@@ -106,14 +106,14 @@ DeviceDetailedDescription,,,,"<xml><h1>Microsoft DiscoveryCam 530</h1><h2>Overvi
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**INF AddProperty 指令**](./inf-addproperty-directive.md)
 
 [**INF *DDInstall* 部分**](./inf-ddinstall-section.md)
 
-[**SetupDiGetDeviceProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)
+[**SetupDiGetDeviceProperty**](/windows/win32/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)
 
  
 

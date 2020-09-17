@@ -10,12 +10,12 @@ keywords:
 - 波形接收器音频，延迟时间
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a9bd8793e64719a4d5f4a715b5c4d3017fd6e8b7
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 713ec4ab0605314ec9555f8ebd619dd53fa41748
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89206677"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90716078"
 ---
 # <a name="synthesizer-latency"></a>合成器延迟
 
@@ -25,9 +25,9 @@ ms.locfileid: "89206677"
 
 合成器计时中的另一个注意事项是延迟，这是当前时间与便笺首次可以播放的时间之间的差异。 在当前采样时间，无法将 MIDI 消息提交到合成器并呈现到输出缓冲区。 应为已放入缓冲区中但尚未流式传输到波形输出设备的数据进行限制。
 
-因此，波形接收器应该实现延迟时钟，这是 (Microsoft Windows SDK 文档) 中所述的 [**IReferenceClock**](/windows/desktop/wmformat/ireferenceclock) 对象。 延迟时钟的 [**IReferenceClock：： GetTime**](/previous-versions//dd551385(v=vs.85)) 方法检索数据已写入缓冲区的采样时间，并将其转换为相对于主时钟的引用时间。 波形接收器在引用和采样时间之间进行转换， [**IDirectMusicSynthSink：： SampleToRefTime**](/windows/desktop/api/dmusics/nf-dmusics-idirectmusicsynthsink-sampletoreftime) 和 [**IDirectMusicSynthSink：： RefTimeToSample**](/windows/desktop/api/dmusics/nf-dmusics-idirectmusicsynthsink-reftimetosample)，因此在这种情况下，合成将调用 **IDirectMusicSynthSink：： RefTimeToSample** 来完成转换。
+因此，波形接收器应该实现延迟时钟，这是 (Microsoft Windows SDK 文档) 中所述的 [**IReferenceClock**](/windows/desktop/wmformat/ireferenceclock) 对象。 延迟时钟的 [**IReferenceClock：： GetTime**](/previous-versions//dd551385(v=vs.85)) 方法检索数据已写入缓冲区的采样时间，并将其转换为相对于主时钟的引用时间。 波形接收器在引用和采样时间之间进行转换， [**IDirectMusicSynthSink：： SampleToRefTime**](/windows/win32/api/dmusics/nf-dmusics-idirectmusicsynthsink-sampletoreftime) 和 [**IDirectMusicSynthSink：： RefTimeToSample**](/windows/win32/api/dmusics/nf-dmusics-idirectmusicsynthsink-reftimetosample)，因此在这种情况下，合成将调用 **IDirectMusicSynthSink：： RefTimeToSample** 来完成转换。
 
-滞后时间由波形接收器管理。 你的 [**IDirectMusicSynthSink：： GetLatencyClock**](/windows/desktop/api/dmusics/nf-dmusics-idirectmusicsynthsink-getlatencyclock) 方法的实现应输出指向延迟时钟的指针，并且此指针必须依次通过 [**IDirectMusicSynth：： GetLatencyClock**](/windows/desktop/api/dmusics/nf-dmusics-idirectmusicsynth-getlatencyclock)检索。 应用程序通过调用 [**IDirectMusicSynth：:P laybuffer**](/windows/desktop/api/dmusics/nf-dmusics-idirectmusicsynth-playbuffer) 方法，使用延迟时间来确定 MIDI 消息在传递到合成器时可以排队等待的最早时间点。
+滞后时间由波形接收器管理。 你的 [**IDirectMusicSynthSink：： GetLatencyClock**](/windows/win32/api/dmusics/nf-dmusics-idirectmusicsynthsink-getlatencyclock) 方法的实现应输出指向延迟时钟的指针，并且此指针必须依次通过 [**IDirectMusicSynth：： GetLatencyClock**](/windows/win32/api/dmusics/nf-dmusics-idirectmusicsynth-getlatencyclock)检索。 应用程序通过调用 [**IDirectMusicSynth：:P laybuffer**](/windows/win32/api/dmusics/nf-dmusics-idirectmusicsynth-playbuffer) 方法，使用延迟时间来确定 MIDI 消息在传递到合成器时可以排队等待的最早时间点。
 
 下图显示了 MIDI 消息延迟的示例。
 

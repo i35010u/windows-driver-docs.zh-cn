@@ -16,12 +16,12 @@ keywords:
 - 同步 WDK 音频
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 20ffd5b9c8a6830da6f428a7f0167e1620941583
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 7b9b41901f9da34aa98176ca62fbfbbd15cac4b1
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89208217"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90714818"
 ---
 # <a name="clock-synchronization"></a>时钟同步
 
@@ -43,13 +43,13 @@ ms.locfileid: "89208217"
 
 假设某个事件被标记为在引用时间520时播放。 合成器通过将注释向下呈示为样本并在采样时执行其所有计算来完成工作。 因此，它需要知道引用时间520在采样时转换为。 在用户模式下，波形接收器提供两个合成使用的函数：
 
-[**IDirectMusicSynthSink::SampleToRefTime**](/windows/desktop/api/dmusics/nf-dmusics-idirectmusicsynthsink-sampletoreftime)
+[**IDirectMusicSynthSink::SampleToRefTime**](/windows/win32/api/dmusics/nf-dmusics-idirectmusicsynthsink-sampletoreftime)
 
-[**IDirectMusicSynthSink::RefTimeToSample**](/windows/desktop/api/dmusics/nf-dmusics-idirectmusicsynthsink-reftimetosample)
+[**IDirectMusicSynthSink::RefTimeToSample**](/windows/win32/api/dmusics/nf-dmusics-idirectmusicsynthsink-reftimetosample)
 
 若要在这种情况下执行转换，合成会在波形接收器上调用 **IDirectMusicSynthSink：： RefTimeToSample** 。
 
-然后，波形接收器回 (例如 600) 的采样时间。 相关注释在采样时600。 然后，当该 [**IDirectMusicSynth：： Render**](/windows/desktop/api/dmusics/nf-dmusics-idirectmusicsynth-render) 方法获取由波形接收器调用以呈现流的下一部分时 (例如，从采样时间600到 800) ，该注释将在采样600时呈现到缓冲区中。
+然后，波形接收器回 (例如 600) 的采样时间。 相关注释在采样时600。 然后，当该 [**IDirectMusicSynth：： Render**](/windows/win32/api/dmusics/nf-dmusics-idirectmusicsynth-render) 方法获取由波形接收器调用以呈现流的下一部分时 (例如，从采样时间600到 800) ，该注释将在采样600时呈现到缓冲区中。
 
 **注意**   示例时间保留为64位数字，以避免滚动更新。  (DWORD 值滚动27小时。 ) 
 

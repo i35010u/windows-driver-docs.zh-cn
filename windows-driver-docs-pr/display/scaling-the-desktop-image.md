@@ -13,40 +13,40 @@ keywords:
 - 缩放桌面映像 WDK Windows Server 2008 R2 显示器
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 40bb5343081aae629bb0ff2e19edfde70f016565
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 2628e1d0e830756d7f0daf1293066bd332a1ffa9
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90104648"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90714998"
 ---
 # <a name="scaling-the-desktop-image"></a>缩放桌面图像
 
 
 本部分仅适用于 Windows 7 和更高版本，以及 windows Server 2008 R2 及更高版本的 Windows 操作系统。
 
-调用方可以使用 [**SetDisplayConfig**](/windows/desktop/api/winuser/nf-winuser-setdisplayconfig) CCD 函数将桌面映像缩放到监视器。 如果桌面和监视器使用相同的分辨率，则不需要 **SetDisplayConfig** 将桌面映像缩放到监视器。 此 **SetDisplayConfig** 操作称为 "标识缩放"。 如果桌面和监视器分辨率不同， **SetDisplayConfig** 将应用以下一种缩放类型。 监视器分辨率由 [**DISPLAYCONFIG \_ 目标 \_ 模式**](/windows/desktop/api/wingdi/ns-wingdi-displayconfig_target_mode) 结构定义。
+调用方可以使用 [**SetDisplayConfig**](/windows/win32/api/winuser/nf-winuser-setdisplayconfig) CCD 函数将桌面映像缩放到监视器。 如果桌面和监视器使用相同的分辨率，则不需要 **SetDisplayConfig** 将桌面映像缩放到监视器。 此 **SetDisplayConfig** 操作称为 "标识缩放"。 如果桌面和监视器分辨率不同， **SetDisplayConfig** 将应用以下一种缩放类型。 监视器分辨率由 [**DISPLAYCONFIG \_ 目标 \_ 模式**](/windows/win32/api/wingdi/ns-wingdi-displayconfig_target_mode) 结构定义。
 
 <span id="Centered"></span><span id="centered"></span><span id="CENTERED"></span>**界线**  
-居中缩放是一种模式，在该模式下桌面显示在监视器上，根本不进行任何缩放。 当 [**SetDisplayConfig**](/windows/desktop/api/winuser/nf-winuser-setdisplayconfig) 应用居中缩放时，黑色带区可能在桌面的上方和下方可见。 下图显示了中心缩放。
+居中缩放是一种模式，在该模式下桌面显示在监视器上，根本不进行任何缩放。 当 [**SetDisplayConfig**](/windows/win32/api/winuser/nf-winuser-setdisplayconfig) 应用居中缩放时，黑色带区可能在桌面的上方和下方可见。 下图显示了中心缩放。
 
 ![阐释中心缩放的图](images/ccd-center-scale.png)
 
 <span id="Stretched"></span><span id="stretched"></span><span id="STRETCHED"></span>**扩展**  
-拉伸缩放是一种模式，在该模式下，桌面在监视器上水平和垂直拉伸，以确保使用整个显示。 当 [**SetDisplayConfig**](/windows/desktop/api/winuser/nf-winuser-setdisplayconfig) 应用延伸缩放时，桌面上方和下方不会显示黑色带区。 但是，桌面可能会失真。 下图显示了延伸缩放。
+拉伸缩放是一种模式，在该模式下，桌面在监视器上水平和垂直拉伸，以确保使用整个显示。 当 [**SetDisplayConfig**](/windows/win32/api/winuser/nf-winuser-setdisplayconfig) 应用延伸缩放时，桌面上方和下方不会显示黑色带区。 但是，桌面可能会失真。 下图显示了延伸缩放。
 
 ![演示拉伸缩放的图](images/ccd-stretch-scale.png)
 
 <span id="Aspect-Ratio-Preserving_Stretched"></span><span id="aspect-ratio-preserving_stretched"></span><span id="ASPECT-RATIO-PRESERVING_STRETCHED"></span>**纵横比-保留延伸**  
-纵横比-保留延伸缩放是一种模式，在该模式下，桌面会在保持纵横比的同时水平和垂直拉伸。 当 [**SetDisplayConfig**](/windows/desktop/api/winuser/nf-winuser-setdisplayconfig) 应用纵横比保留延伸缩放时，黑色带区可能会显示在桌面的 *上方和下方* 或 *左侧或右侧* 。 但是，黑色带区不能同时*显示在桌面的**上方和下方*。 由于用户需要使用这种类型的缩放，因此 **SetDisplayConfig** 会将此类型的缩放作为默认值应用。 下图显示了纵横比，其中保留了延伸缩放。
+纵横比-保留延伸缩放是一种模式，在该模式下，桌面会在保持纵横比的同时水平和垂直拉伸。 当 [**SetDisplayConfig**](/windows/win32/api/winuser/nf-winuser-setdisplayconfig) 应用纵横比保留延伸缩放时，黑色带区可能会显示在桌面的 *上方和下方* 或 *左侧或右侧* 。 但是，黑色带区不能同时*显示在桌面的**上方和下方*。 由于用户需要使用这种类型的缩放，因此 **SetDisplayConfig** 会将此类型的缩放作为默认值应用。 下图显示了纵横比，其中保留了延伸缩放。
 
 ![图说明了纵横比-保留延伸比例](images/ccd-arpstretch-scale.png)
 
-缩放取决于用于路径的源和目标模式。 此外，调用方可以调用 [**SetDisplayConfig**](/windows/desktop/api/winuser/nf-winuser-setdisplayconfig) 而无需指定目标模式信息 (即，将 *modeInfoArray* 参数设置为可选，并且可以将其设置为 **NULL**) 。 因此，调用方通常无法预测 **SetDisplayConfig** 是否必须执行任何缩放。 此外，不存在 API 来获取图形适配器支持的缩放类型的完整列表。 Windows SDK) 文档中所述的[**EnumDisplaySettings**](/windows/desktop/api/winuser/nf-winuser-enumdisplaysettingsa) Win32 函数 (在 \_ 调用方请求新的 Windows 7 缩放**DEVMODE**类型时*lpDevMode*参数指向的**dmDisplayFixedOutput**成员中返回 DMDFO 默认值。
+缩放取决于用于路径的源和目标模式。 此外，调用方可以调用 [**SetDisplayConfig**](/windows/win32/api/winuser/nf-winuser-setdisplayconfig) 而无需指定目标模式信息 (即，将 *modeInfoArray* 参数设置为可选，并且可以将其设置为 **NULL**) 。 因此，调用方通常无法预测 **SetDisplayConfig** 是否必须执行任何缩放。 此外，不存在 API 来获取图形适配器支持的缩放类型的完整列表。 Windows SDK) 文档中所述的[**EnumDisplaySettings**](/windows/win32/api/winuser/nf-winuser-enumdisplaysettingsa) Win32 函数 (在 \_ 调用方请求新的 Windows 7 缩放**DEVMODE**类型时*lpDevMode*参数指向的**dmDisplayFixedOutput**成员中返回 DMDFO 默认值。
 
-调用方传递给 [**SetDisplayConfig**](/windows/desktop/api/winuser/nf-winuser-setdisplayconfig) 的缩放是缩放意向，而不是显式请求来执行缩放操作。 如果需要缩放 (例如，源和目标解析) 不同， **SetDisplayConfig** 将使用调用方提供的缩放。 如果不支持所提供的缩放， **SetDisplayConfig** 将使用图形适配器的默认缩放。 当调用方传递给 **SetDisplayConfig** 的源和目标解析相同时， **SetDisplayConfig** 始终设置标识缩放。
+调用方传递给 [**SetDisplayConfig**](/windows/win32/api/winuser/nf-winuser-setdisplayconfig) 的缩放是缩放意向，而不是显式请求来执行缩放操作。 如果需要缩放 (例如，源和目标解析) 不同， **SetDisplayConfig** 将使用调用方提供的缩放。 如果不支持所提供的缩放， **SetDisplayConfig** 将使用图形适配器的默认缩放。 当调用方传递给 **SetDisplayConfig** 的源和目标解析相同时， **SetDisplayConfig** 始终设置标识缩放。
 
-下表显示了不同的 [**SetDisplayConfig**](/windows/desktop/api/winuser/nf-winuser-setdisplayconfig) 缩放请求。
+下表显示了不同的 [**SetDisplayConfig**](/windows/win32/api/winuser/nf-winuser-setdisplayconfig) 缩放请求。
 
 <table>
 <colgroup>
@@ -220,7 +220,7 @@ DatabaseValue
 
  
 
-下表显示了调用方可以如何传递到旧的 [**ChangeDisplaySettingsEx**](/windows/desktop/api/winuser/nf-winuser-changedisplaysettingsexa)API 的缩放 (Windows SDK 文档) 映射到缩放集。
+下表显示了调用方可以如何传递到旧的 [**ChangeDisplaySettingsEx**](/windows/win32/api/winuser/nf-winuser-changedisplaysettingsexa)API 的缩放 (Windows SDK 文档) 映射到缩放集。
 
 传递给 ChangeDisplaySettingsEx 的缩放标志生成的源模式和目标模式具有相同的分辨率。结果源模式和目标模式具有不同的分辨率 **集**
 
@@ -292,7 +292,7 @@ DatabaseValue
 
  
 
-下表显示了如何从 [**EnumDisplaySettings**](/windows/desktop/api/winuser/nf-winuser-enumdisplaysettingsa)转换和返回显示配置缩放。
+下表显示了如何从 [**EnumDisplaySettings**](/windows/win32/api/winuser/nf-winuser-enumdisplaysettingsa)转换和返回显示配置缩放。
 
 <table>
 <colgroup>
@@ -337,7 +337,7 @@ DatabaseValue
 
 ### <a name="span-iddirectx_games_and_scalingspanspan-iddirectx_games_and_scalingspandirectx-games-and-scaling"></a><span id="directx_games_and_scaling"></span><span id="DIRECTX_GAMES_AND_SCALING"></span>DirectX 游戏和缩放
 
-Microsoft DirectX 9L 和更早的运行时要求应用程序始终调用[**ChangeDisplaySettingsEx**](/windows/desktop/api/winuser/nf-winuser-changedisplaysettingsexa)函数，而不是 \_ 在*LPDEVMODE*参数指向的 DEVMODE 结构的**dmFields**成员中设置 DM DISPLAYFIXEDOUTPUT。 DirectX 10 和更高版本的运行时允许应用程序选择这些应用程序传递给 **ChangeDisplaySettingsEx**的缩放。 下表显示了将缩放值映射到传递给 **ChangeDisplaySettingsEx**的缩放标志。
+Microsoft DirectX 9L 和更早的运行时要求应用程序始终调用[**ChangeDisplaySettingsEx**](/windows/win32/api/winuser/nf-winuser-changedisplaysettingsexa)函数，而不是 \_ 在*LPDEVMODE*参数指向的 DEVMODE 结构的**dmFields**成员中设置 DM DISPLAYFIXEDOUTPUT。 DirectX 10 和更高版本的运行时允许应用程序选择这些应用程序传递给 **ChangeDisplaySettingsEx**的缩放。 下表显示了将缩放值映射到传递给 **ChangeDisplaySettingsEx**的缩放标志。
 
 <table>
 <colgroup>

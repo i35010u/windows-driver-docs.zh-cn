@@ -9,12 +9,12 @@ keywords:
 - 卸载设备
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e7eac1c8c333acfb5d2e982d1d49418f7bc964ea
-ms.sourcegitcommit: 7a7e61b4147a4aa86bf820fd0b0c7681fe17e544
+ms.openlocfilehash: 066c28d4e17453b1428903a632added9811afa49
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89056855"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90716566"
 ---
 # <a name="unload-routine-of-a-battery-miniclass-driver"></a>电池微型类驱动程序的 Unload 例程
 
@@ -26,7 +26,7 @@ ms.locfileid: "89056855"
 
 *卸载*例程应该首先检查以确保所有设备已被删除，如果不是，请为其余每个设备执行以下操作：
 
-1.  调用 [**BatteryClassUnload**](/windows/desktop/api/batclass/nf-batclass-batteryclassunload) 以通知类驱动程序，miniclass 驱动程序正在卸载设备。
+1.  调用 [**BatteryClassUnload**](/windows/win32/api/batclass/nf-batclass-batteryclassunload) 以通知类驱动程序，miniclass 驱动程序正在卸载设备。
 
 2.  使用该驱动程序的接口，从较低的驱动程序（如 ACPI 驱动程序）禁用任何设备通知。
 

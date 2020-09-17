@@ -15,12 +15,12 @@ keywords:
 - 属性请求 WDK 音频
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 02a0c2f9749bea82ba71c8843b65dfa0b9540526
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: f0ec708d6d102e9be60a821e9730acb3ccd2e7dd
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89208287"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90714824"
 ---
 # <a name="audio-property-requests"></a>音频属性请求
 
@@ -28,7 +28,7 @@ ms.locfileid: "89208287"
 ## <span id="audio_property_requests"></span><span id="AUDIO_PROPERTY_REQUESTS"></span>
 
 
-Microsoft Windows 驱动模型 (WDM) 音频驱动程序的客户端可以将 [ks 属性](../stream/ks-properties.md) 请求发送到 ks 筛选器，并将该驱动程序实例化。 例如，用户模式客户端可以通过调用 [**DeviceIoControl**](/windows/desktop/api/ioapiset/nf-ioapiset-deviceiocontrol) 函数发送 KS 属性请求 (参阅 Microsoft Windows SDK 文档) 和 IOCTL KS 属性的 i/o 控制代码 \_ \_ 。 此函数将包含属性请求的 IRP 发送到指定的筛选器或固定对象。
+Microsoft Windows 驱动模型 (WDM) 音频驱动程序的客户端可以将 [ks 属性](../stream/ks-properties.md) 请求发送到 ks 筛选器，并将该驱动程序实例化。 例如，用户模式客户端可以通过调用 [**DeviceIoControl**](/windows/win32/api/ioapiset/nf-ioapiset-deviceiocontrol) 函数发送 KS 属性请求 (参阅 Microsoft Windows SDK 文档) 和 IOCTL KS 属性的 i/o 控制代码 \_ \_ 。 此函数将包含属性请求的 IRP 发送到指定的筛选器或固定对象。
 
 音频驱动程序支持获取、设置和基本-支持 (KSPROPERTY \_ 类型 \_ GET、KSPROPERTY \_ 类型 \_ 集和 KSPROPERTY \_ 类型 \_ BASICSUPPORT) 的属性的请求。 有关详细信息，请参阅 [音频驱动程序属性集](./audio-drivers-property-sets.md)。
 

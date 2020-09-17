@@ -10,12 +10,12 @@ keywords:
 - 写入超时的 WDK 串行设备
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ed169e80cbee375384607adb4de34a0e99e85690
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 4a93ddf03f7565b92d41abede01287646743d2bf
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89188569"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90715866"
 ---
 # <a name="setting-read-and-write-timeouts-for-a-serial-device"></a>设置串行设备的读取和写入超时
 
@@ -29,4 +29,4 @@ Serial.sys 中的超时操作符合 Microsoft Windows SDK 中 Windows 基础服�
 
 - Windows 驱动程序工具包 (WDK) 中的 Ntddser 标头文件中的 [**序列 \_ 超时**](/windows-hardware/drivers/ddi/ntddser/ns-ntddser-_serial_timeouts) 结构。
 
-- Windows SDK 中的 Windows 基础服务支持的 [**SetCommTimeouts**](/windows/desktop/api/winbase/nf-winbase-setcommtimeouts) 函数和 [**COMMTIMEOUTS**](/windows/desktop/api/winbase/ns-winbase-_commtimeouts) 结构。
+- Windows SDK 中的 Windows 基础服务支持的 [**SetCommTimeouts**](/windows/win32/api/winbase/nf-winbase-setcommtimeouts) 函数和 [**COMMTIMEOUTS**](/windows/win32/api/winbase/ns-winbase-_commtimeouts) 结构。

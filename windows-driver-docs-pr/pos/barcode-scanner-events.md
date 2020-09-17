@@ -4,18 +4,18 @@ description: 使用 ReadFile 描述从设备驱动程序传递到服务 (POS) AP
 ms.assetid: f0a7a525-8fea-4bce-a817-25c69cd47ddd
 ms.date: 09/07/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: caff693ed643e151953e3693713e0355e38172df
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: c8958410ac383d3919f6843e5b11024212eb655c
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89192267"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90715884"
 ---
 # <a name="barcode-scanner-events"></a>条形码扫描仪事件
 
-本部分介绍使用 [ReadFile](/windows/desktop/api/fileapi/nf-fileapi-readfile)从设备驱动程序传递到服务 (POS) API 层的事件。 本部分重点介绍条形码扫描器特定的事件。
+本部分介绍使用 [ReadFile](/windows/win32/api/fileapi/nf-fileapi-readfile)从设备驱动程序传递到服务 (POS) API 层的事件。 本部分重点介绍条形码扫描器特定的事件。
 
-## <a name="in-this-section"></a>本节内容
+## <a name="in-this-section"></a>在本节中
 
 [BarcodeScannerDataReceived](barcodescannerdatareceived.md)  
 在成功扫描事件之后发生。

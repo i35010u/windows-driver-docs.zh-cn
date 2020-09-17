@@ -11,12 +11,12 @@ keywords:
 - DDBLT_LAST_PRESENTATION
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 338b0a96e0e1f35f20d829ca1c41e60085b7cb29
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 2bff4b19ca157fb9a75958a4c35e755f313d0d73
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89066450"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90716014"
 ---
 # <a name="presentation"></a>呈现
 
@@ -24,7 +24,7 @@ ms.locfileid: "89066450"
 ## <span id="ddk_presentation_gg"></span><span id="DDK_PRESENTATION_GG"></span>
 
 
-DirectX 8.0 将 "演示" (的概念正规化，或使用户在 API 中) 可见。 以前，此操作是通过在全屏幕模式下进行页面翻转或按窗口模式 blitting 来完成的。 应用程序使用新的 **现有** API 来执行全屏翻转或窗口模式 blitting。 但是，此机制尚未在 DDI 级别公开。 运行时只需将 **当前** API 映射到 [*DdFlip*](/windows/desktop/api/ddrawint/nc-ddrawint-pdd_surfcb_flip) 或 [*DdBlt*](/windows/desktop/api/ddrawint/nc-ddrawint-pdd_surfcb_blt) DDI 入口点，具体取决于应用程序模式。
+DirectX 8.0 将 "演示" (的概念正规化，或使用户在 API 中) 可见。 以前，此操作是通过在全屏幕模式下进行页面翻转或按窗口模式 blitting 来完成的。 应用程序使用新的 **现有** API 来执行全屏翻转或窗口模式 blitting。 但是，此机制尚未在 DDI 级别公开。 运行时只需将 **当前** API 映射到 [*DdFlip*](/windows/win32/api/ddrawint/nc-ddrawint-pdd_surfcb_flip) 或 [*DdBlt*](/windows/win32/api/ddrawint/nc-ddrawint-pdd_surfcb_blt) DDI 入口点，具体取决于应用程序模式。
 
 DirectX 8.0 添加了两个新的 DirectDraw blt 标志，这些标志将作为通知出现在 blt 操作实际上是 **存在** 的一部分，因此会标记帧边界。 这些新标志是 DDBLT \_ 演示文稿和 DDBLT \_ 上一次 \_ 演示。 需要两个标志，因为剪辑可能会导致在驱动程序中调用多个 blt 操作的单个 **现有** 调用。 在这种情况下，由于 **当前** 操作而调用的所有 blts 都 \_ 将设置 DDBLT 表示标志。 但是，只有用于执行 **现有** 序列的最终 blt 才会 \_ 设置 DDBLT 上一次 \_ 显示位。 因此，如果使用 blt 实现了一个 **当前** 调用，则驱动程序会看到零个或多个 blts，并在其中 \_ 刚好有一个 blt 同时设置了 DDLT \_ 表示和 DDBLT \_ 最后一个 \_ 表示位。 应用程序永远不会设置这些标志。 仅允许运行时将这些标志传递到 blt。 此外，这些标志仅传递到支持 DirectX 8.0 DDI 的驱动程序。
 

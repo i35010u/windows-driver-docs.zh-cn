@@ -7,18 +7,18 @@ keywords:
 - 内存损坏 WDK 驱动程序验证程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9931ee43f0bc785a306db8ceb31915102b1233c3
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: d2fa9d16736d847e92144aea4daf3b25db4ee401
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89384323"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90715862"
 ---
 # <a name="special-pool-memory-corruption-detection-in-driver-verifier"></a>驱动程序验证器中的特殊池内存损坏检测
 
 内存损坏是常见的驱动程序问题。 出现错误后，驱动程序错误可能导致过长。 最常见的错误是访问已释放的内存，并分配 *n* 个字节，然后访问 *n*+ 1 个字节。
 
-若要检测内存损坏情况，驱动程序验证程序可以从特殊池分配驱动程序内存，并监视该池是否有不正确的访问权限。 为内核模式系统提供的例程（如 [**ExAllocatePoolWithTag**](/windows-hardware/drivers/ddi/wdm/nf-wdm-exallocatepoolwithtag) ）以及 GDI 系统提供的例程（如 [**EngAllocMem**](/windows/desktop/api/winddi/nf-winddi-engallocmem)）提供特殊池支持。
+若要检测内存损坏情况，驱动程序验证程序可以从特殊池分配驱动程序内存，并监视该池是否有不正确的访问权限。 为内核模式系统提供的例程（如 [**ExAllocatePoolWithTag**](/windows-hardware/drivers/ddi/wdm/nf-wdm-exallocatepoolwithtag) ）以及 GDI 系统提供的例程（如 [**EngAllocMem**](/windows/win32/api/winddi/nf-winddi-engallocmem)）提供特殊池支持。
 
 特殊池的两个对齐方式可用。 **验证结束**对齐更好于检测访问超限，**验证开始**对齐更好于检测访问不足。  (请注意，绝大多数内存损坏都是由于溢出，而不是不足。 ) 
 

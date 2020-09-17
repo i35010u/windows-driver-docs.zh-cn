@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5c6cf86c7cd1e0165853b9bb8de0e86de3128ed3
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 5aa4d58369226c97bc03e58f4feadcd667918d17
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89381393"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90716060"
 ---
 # <a name="signtool"></a>SignTool
 
@@ -29,7 +29,7 @@ SignTool ( # A0) 是一个命令行 [CryptoAPI](/windows/win32/seccrypto/cryptog
 
 ## <a name="partial-list-of-operations-options-and-arguments"></a>操作、选项和参数的部分列表
 
-### <a name="operations"></a>操作
+### <a name="operations"></a>Operations
 
 **catdb**  
 配置 SignTool 以更新目录数据库。 SignTool 可以将目录文件添加到数据库中，也可以从数据库中删除目录。 默认情况下， **catdb** 命令会将文件（其名称由 *FileName* 参数指定）添加到系统组件 (驱动程序) 数据库。
@@ -193,7 +193,7 @@ SignTool ( # A0) 是一个命令行 [CryptoAPI](/windows/win32/seccrypto/cryptog
 配置 SignTool 以验证 *FileName* 参数指定的每个文件的数字签名是否符合 [内核模式代码签名策略](../install/kernel-mode-code-signing-policy--windows-vista-and-later-.md) 和 windows Vista 和更高版本的 windows Vista 的 [PnP 设备安装签名要求](../install/pnp-device-installation-signing-requirements--windows-vista-and-later-.md) 。 如果未指定此选项，则 SignTool 仅验证签名是否符合 PnP 设备安装签名要求。
 
 **/ms**  
-使用多个验证语义。 这是 Windows 8 及更高版本上的 [**WinVerifyTrust 函数**](/windows/desktop/api/wintrust/nf-wintrust-winverifytrust) 调用的默认行为。
+使用多个验证语义。 这是 Windows 8 及更高版本上的 [**WinVerifyTrust 函数**](/windows/win32/api/wintrust/nf-wintrust-winverifytrust) 调用的默认行为。
 
 **/O** *版本*  
 按操作系统版本验证文件。 *版本*参数的格式为*PlatformID： VerMajor. VerMinor. BuildNumber*

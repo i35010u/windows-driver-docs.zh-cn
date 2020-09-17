@@ -20,12 +20,12 @@ keywords:
 - 绘制 WDK GDI，画笔
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 45ce8c815040088524392b8d253f1043074f25d1
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 9ef6483f1f62a293c2f7f7919ee9ca86f5c32de5
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89067274"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90714990"
 ---
 # <a name="realizing-brushes"></a>识别画笔
 
@@ -37,27 +37,27 @@ ms.locfileid: "89067274"
 
 驱动程序可以支持以下函数来定义画笔：
 
-[**DrvRealizeBrush**](/windows/desktop/api/winddi/nf-winddi-drvrealizebrush)
+[**DrvRealizeBrush**](/windows/win32/api/winddi/nf-winddi-drvrealizebrush)
 
-[**DrvDitherColor**](/windows/desktop/api/winddi/nf-winddi-drvdithercolor)
+[**DrvDitherColor**](/windows/win32/api/winddi/nf-winddi-drvdithercolor)
 
 画笔始终与混合模式结合使用，用于定义应如何将模式与设备图面上已有的数据混合使用。 组合数据类型包含两个打包为一个 ULONG 值的 ROP2 值。 前景 *ROP* 为最低序位字节。 下一个字节包含后台 ROP。 有关详细信息，请参阅 Microsoft Windows SDK 文档。
 
-GDI 跟踪应用程序请求使用的所有逻辑画笔。 在要求驱动程序绘制东西之前，GDI 首先发出对驱动程序函数 [**DrvRealizeBrush**](/windows/desktop/api/winddi/nf-winddi-drvrealizebrush)的调用。 这使得驱动程序可以为其自己的绘制代码计算所需模式的最佳表示形式。
+GDI 跟踪应用程序请求使用的所有逻辑画笔。 在要求驱动程序绘制东西之前，GDI 首先发出对驱动程序函数 [**DrvRealizeBrush**](/windows/win32/api/winddi/nf-winddi-drvrealizebrush)的调用。 这使得驱动程序可以为其自己的绘制代码计算所需模式的最佳表示形式。
 
-调用*DrvRealizeBrush* ，以实现) 画笔的*psoPattern* (模式定义的画笔，并通过*psoTarget* (表面实现已实现的画笔) 。 已实现的画笔包含驱动程序需要使用模式填充区域的信息和加速器。 此信息仅由驱动程序定义和使用。 画笔的驱动程序实现被写入缓冲区，该缓冲区可通过调用*DrvRealizeBrush*中的 GDI 服务函数[**BRUSHOBJ \_ pvAllocRbrush**](/windows/desktop/api/winddi/nf-winddi-brushobj_pvallocrbrush)来分配驱动程序。 GDI 将缓存所有已实现的画笔;因此，很少需要重新计算。
+调用*DrvRealizeBrush* ，以实现) 画笔的*psoPattern* (模式定义的画笔，并通过*psoTarget* (表面实现已实现的画笔) 。 已实现的画笔包含驱动程序需要使用模式填充区域的信息和加速器。 此信息仅由驱动程序定义和使用。 画笔的驱动程序实现被写入缓冲区，该缓冲区可通过调用*DrvRealizeBrush*中的 GDI 服务函数[**BRUSHOBJ \_ pvAllocRbrush**](/windows/win32/api/winddi/nf-winddi-brushobj_pvallocrbrush)来分配驱动程序。 GDI 将缓存所有已实现的画笔;因此，很少需要重新计算。
 
-在 *DrvRealizeBrush*中， **BRUSHOBJ**或标准格式的位图。 对于光栅设备，描述画笔模式的图面表示位图;对于向量设备，它始终是 [**DrvEnablePDEV**](/windows/desktop/api/winddi/nf-winddi-drvenablepdev) 函数返回的模式图面中的一个。 画笔使用的透明度掩码是一位每像素位图，其范围与模式相同。 掩码位为零表示像素被视为画笔的背景像素;也就是说，目标像素不受该特定模式像素的影响。 *DrvRealizeBrush* 使用 [**XLATEOBJ**](/windows/desktop/api/winddi/ns-winddi-_xlateobj) 结构将画笔模式中的颜色转换为设备颜色索引。
+在 *DrvRealizeBrush*中， **BRUSHOBJ**或标准格式的位图。 对于光栅设备，描述画笔模式的图面表示位图;对于向量设备，它始终是 [**DrvEnablePDEV**](/windows/win32/api/winddi/nf-winddi-drvenablepdev) 函数返回的模式图面中的一个。 画笔使用的透明度掩码是一位每像素位图，其范围与模式相同。 掩码位为零表示像素被视为画笔的背景像素;也就是说，目标像素不受该特定模式像素的影响。 *DrvRealizeBrush* 使用 [**XLATEOBJ**](/windows/win32/api/winddi/ns-winddi-_xlateobj) 结构将画笔模式中的颜色转换为设备颜色索引。
 
-当 BRUSHOBJ 结构的**iSolidColor**成员的值为0Xffffffff 并且**PvRbrush**成员为**NULL**时，驱动程序应调用 GDI 服务函数[**BRUSHOBJ \_ pvGetRbrush**](/windows/desktop/api/winddi/nf-winddi-brushobj_pvgetrbrush) 。 **BRUSHOBJ \_ pvGetRbrush** 检索指向指定画笔的驱动程序实现的指针。 如果当驱动程序调用此函数时未实现画笔，则 GDI 会自动为驱动程序实现画笔而调用 *DrvRealizeBrush* 。
+当 BRUSHOBJ 结构的**iSolidColor**成员的值为0Xffffffff 并且**PvRbrush**成员为**NULL**时，驱动程序应调用 GDI 服务函数[**BRUSHOBJ \_ pvGetRbrush**](/windows/win32/api/winddi/nf-winddi-brushobj_pvgetrbrush) 。 **BRUSHOBJ \_ pvGetRbrush** 检索指向指定画笔的驱动程序实现的指针。 如果当驱动程序调用此函数时未实现画笔，则 GDI 会自动为驱动程序实现画笔而调用 *DrvRealizeBrush* 。
 
 ### <a name="span-idditheringspanspan-idditheringspanspan-idditheringspandithering"></a><span id="Dithering"></span><span id="dithering"></span><span id="DITHERING"></span>抖动
 
 如有必要，在尝试使用无法完全在硬件上表示的纯色创建画笔时，GDI 可以请求驱动程序的帮助。 GDI 调用驱动程序函数 **DrvDitherColor**。
 
-抖动使用多种颜色的模式来接近所选颜色，其结果是设备颜色索引的数组。 使用这些颜色为其模式创建的画笔通常是给定颜色的理想近似值。 [**DrvDitherColor**](/windows/desktop/api/winddi/nf-winddi-drvdithercolor) 也可以表示不能由设备精确指定的颜色。 为此， *DrvDitherColor* 请求多种颜色的模式并创建一个接近给定纯色的画笔。
+抖动使用多种颜色的模式来接近所选颜色，其结果是设备颜色索引的数组。 使用这些颜色为其模式创建的画笔通常是给定颜色的理想近似值。 [**DrvDitherColor**](/windows/win32/api/winddi/nf-winddi-drvdithercolor) 也可以表示不能由设备精确指定的颜色。 为此， *DrvDitherColor* 请求多种颜色的模式并创建一个接近给定纯色的画笔。
 
-函数*DrvDitherColor*是可选的，仅当 GCAPS \_ 颜色 \_ 抖动或 GCAPS \_ MONO \_ 仿色功能标志设置在[**lnk-devinfo**](/windows/desktop/api/winddi/ns-winddi-tagdevinfo)结构的**flGraphicsCaps**成员中时才会调用。 *DrvDitherColor* 可以返回下表中列出的值。
+函数*DrvDitherColor*是可选的，仅当 GCAPS \_ 颜色 \_ 抖动或 GCAPS \_ MONO \_ 仿色功能标志设置在[**lnk-devinfo**](/windows/win32/api/winddi/ns-winddi-tagdevinfo)结构的**flGraphicsCaps**成员中时才会调用。 *DrvDitherColor* 可以返回下表中列出的值。
 
 <table>
 <colgroup>

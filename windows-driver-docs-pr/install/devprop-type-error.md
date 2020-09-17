@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: e8d32ca85cda28ad34e0af986395fe9d96a1f3cd
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: def32fa4532ec5752f971f991512bf315ab026bd
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89095853"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90715554"
 ---
 # <a name="devprop_type_error"></a>DEVPROP_TYPE_ERROR
 
@@ -47,7 +47,7 @@ DEVPROP_TYPE_ERROR 标识符表示 WINERROR.H 中定义的 Microsoft Win32 错�
 
 ### <a name="retrieving-the-descriptive-text-for-a-win32-error-code-value"></a>检索 Win32 错误代码值的描述性文本
 
-若要检索与 Win32 错误代码关联的描述性文本，请调用 Windows SDK) 中 (记录的 [**FormatMessage**](/windows/desktop/api/winbase/nf-winbase-formatmessage) 函数，如下所示：
+若要检索与 Win32 错误代码关联的描述性文本，请调用 Windows SDK) 中 (记录的 [**FormatMessage**](/windows/win32/api/winbase/nf-winbase-formatmessage) 函数，如下所示：
 
 -   在 *dwflags* 参数的值中包含 FORMAT_MESSAGE_FROM_SYSTEM 标志。
 
@@ -75,7 +75,7 @@ DEVPROP_TYPE_ERROR 标识符表示 WINERROR.H 中定义的 Microsoft Win32 错�
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**DEVPROP_TYPE_NTSTATUS**](devprop-type-ntstatus.md)

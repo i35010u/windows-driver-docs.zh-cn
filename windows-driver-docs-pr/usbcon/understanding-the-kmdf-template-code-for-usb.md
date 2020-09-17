@@ -3,12 +3,12 @@ description: 了解基于 KMDF 的 USB 客户端驱动程序的源代码。
 title: 'USB 客户端驱动程序代码结构 (KMDF) '
 ms.date: 06/07/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 19373056298d44d706f3ab5b355623194e0f1a3c
-ms.sourcegitcommit: 937974aa9bbe0262a7ffe9631593fab48c4e7492
+ms.openlocfilehash: 80d35d0ec62ac20f05be1a87352099a1f27c89f4
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "90009889"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90714870"
 ---
 # <a name="understanding-the-usb-client-driver-code-structure-kmdf"></a>了解 USB 客户端驱动程序代码结构 (KMDF)
 
@@ -349,7 +349,7 @@ EVT_WDF_DEVICE_PREPARE_HARDWARE MyUSBDriver_EvtDevicePrepareHardware;
 
 在 [*EvtDevicePrepareHardware*](/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_prepare_hardware)的实现中，客户端驱动程序执行特定于 USB 的初始化任务。 这些任务包括注册客户端驱动程序、初始化 USB 特定的 i/o 目标对象以及选择 USB 配置。 下表显示了框架提供的专用 i/o 目标对象。 有关详细信息，请参阅 [USB I/o 目标](../wdf/usb-i-o-targets.md)。
 
-| USB i/o 目标对象 (句柄)                    | 通过调用 ... 获取句柄。                                                          | 描述                                                                                                                                                                                                                                                                                                                                   |
+| USB i/o 目标对象 (句柄)                    | 通过调用 ... 获取句柄。                                                          | 说明                                                                                                                                                                                                                                                                                                                                   |
 |--------------------------------------------------|---------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | *USB 目标设备对象* (WDFUSBDEVICE )        | [**WdfUsbTargetDeviceCreateWithParameters**](/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetdevicecreatewithparameters) | 表示一个 USB 设备，并提供用于检索设备描述符并将控制请求发送到设备的方法。                                                                                                                                                                                                                 |
 | *USB 目标接口对象* (WDFUSBINTERFACE )  | [**WdfUsbTargetDeviceGetInterface**](/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetdevicegetinterface)             | 表示单个接口，并提供客户端驱动程序可调用以选择备用设置和检索有关设置的信息的方法。                                                                                                                                                                              |
@@ -567,7 +567,7 @@ MyUSBDriver_QueueInitialize(
 2.  为队列的 i/o 请求添加客户端驱动程序的事件回调。 在模板中，客户端驱动程序为设备 i/o 控制请求指定一个指向其事件回调的指针。
 3.  调用 [**WdfIoQueueCreate**](/windows-hardware/drivers/ddi/wdfio/nf-wdfio-wdfioqueuecreate) ，以检索由框架创建的框架队列对象的 WDFQUEUE 句柄。
 
-下面是队列机制的工作方式。 若要与 USB 设备通信，应用程序首先通过调用 **SetDixxx** 例程和 [**CreateHandle**](/windows-hardware/drivers/ddi/usbdlib/nf-usbdlib-usbd_createhandle)打开设备的句柄。 使用此句柄，应用程序将使用特定控制代码调用 [**DeviceIoControl**](/previous-versions/windows/desktop/api/deviceaccess/nn-deviceaccess-ideviceiocontrol) 函数。 根据控制代码的类型，应用程序可以在该调用中指定输入和输出缓冲区。 调用最终由 i/o 管理器接收，该管理器会创建一个 (IRP) 请求，并将其转发到客户端驱动程序。 框架截获请求，创建框架请求对象，并将其添加到框架队列对象。 在这种情况下，由于客户端驱动程序为设备 i/o 控制请求注册了其事件回调，因此框架会调用回调。 另外，由于队列对象是用 WdfIoQueueDispatchParallel 标志创建的，因此，一旦向队列中添加了该请求，就会调用该回调。
+下面是队列机制的工作方式。 若要与 USB 设备通信，应用程序首先通过调用 **SetDixxx** 例程和 [**CreateHandle**](/windows-hardware/drivers/ddi/usbdlib/nf-usbdlib-usbd_createhandle)打开设备的句柄。 使用此句柄，应用程序将使用特定控制代码调用 [**DeviceIoControl**](/previous-versions/windows/win32/api/deviceaccess/nn-deviceaccess-ideviceiocontrol) 函数。 根据控制代码的类型，应用程序可以在该调用中指定输入和输出缓冲区。 调用最终由 i/o 管理器接收，该管理器会创建一个 (IRP) 请求，并将其转发到客户端驱动程序。 框架截获请求，创建框架请求对象，并将其添加到框架队列对象。 在这种情况下，由于客户端驱动程序为设备 i/o 控制请求注册了其事件回调，因此框架会调用回调。 另外，由于队列对象是用 WdfIoQueueDispatchParallel 标志创建的，因此，一旦向队列中添加了该请求，就会调用该回调。
 
 ```ManagedCPlusPlus
 VOID

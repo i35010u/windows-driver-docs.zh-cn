@@ -9,12 +9,12 @@ keywords:
 - 受保护的视频 WDK COPP，示例函数
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 785d6de88894a26fe485d24886e2cf324e3cade5
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 5ed72f264941a4fd4936c178c352cd16f8cf7f73
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90104528"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90716246"
 ---
 # <a name="sample-functions-for-copp"></a>COPP 的示例函数
 
@@ -24,7 +24,7 @@ ms.locfileid: "90104528"
 
 **本部分仅适用于 Windows Server 2003 SP1 及更高版本以及 Windows XP SP2 及更高版本。**
 
-示例 COPP 函数演示如何实现 COPP 处理功能。 这些示例函数映射到[**DD \_ MOTIONCOMPCALLBACKS**](/windows/desktop/api/ddrawint/ns-ddrawint-dd_motioncompcallbacks)结构中定义的[运动补偿回调函数](motion-compensation-callbacks.md)。 可以 (IOCTL) 请求实现每个示例函数和相应的 COPP i/o 控制，然后使用运动补偿代码模板和视频微型端口驱动程序模板来完成实现。 有关详细信息，请参阅 [DIRECTX VA 设备的示例代码](example-code-for-directx-va-devices.md)。
+示例 COPP 函数演示如何实现 COPP 处理功能。 这些示例函数映射到[**DD \_ MOTIONCOMPCALLBACKS**](/windows/win32/api/ddrawint/ns-ddrawint-dd_motioncompcallbacks)结构中定义的[运动补偿回调函数](motion-compensation-callbacks.md)。 可以 (IOCTL) 请求实现每个示例函数和相应的 COPP i/o 控制，然后使用运动补偿代码模板和视频微型端口驱动程序模板来完成实现。 有关详细信息，请参阅 [DIRECTX VA 设备的示例代码](example-code-for-directx-va-devices.md)。
 
 ### <a name="span-idcopp_sample_functionsspanspan-idcopp_sample_functionsspanspan-idcopp_sample_functionsspancopp-sample-functions"></a><span id="COPP_Sample_Functions"></span><span id="copp_sample_functions"></span><span id="COPP_SAMPLE_FUNCTIONS"></span>COPP 示例函数
 
@@ -77,7 +77,7 @@ ms.locfileid: "90104528"
 
 ### <a name="span-idmapping_sample_functions_to_dd_motioncompcallbacksspanspan-idmapping_sample_functions_to_dd_motioncompcallbacksspanspan-idmapping_sample_functions_to_dd_motioncompcallbacksspanmapping-sample-functions-to-dd_motioncompcallbacks"></a><span id="Mapping_Sample_Functions_to_DD_MOTIONCOMPCALLBACKS"></span><span id="mapping_sample_functions_to_dd_motioncompcallbacks"></span><span id="MAPPING_SAMPLE_FUNCTIONS_TO_DD_MOTIONCOMPCALLBACKS"></span>将示例函数映射到 DD \_ MOTIONCOMPCALLBACKS
 
-本节中的示例函数通过使用 COPP IOCTL 映射到运动补偿回调函数，如下所示：也就是说，每个示例函数都在其各自的 COPP IOCTL 内调用，每个 COPP IOCTL 都将传递到其各自的运动补偿回调函数中的 [**EngDeviceIoControl**](/windows/desktop/api/winddi/nf-winddi-engdeviceiocontrol) 函数。
+本节中的示例函数通过使用 COPP IOCTL 映射到运动补偿回调函数，如下所示：也就是说，每个示例函数都在其各自的 COPP IOCTL 内调用，每个 COPP IOCTL 都将传递到其各自的运动补偿回调函数中的 [**EngDeviceIoControl**](/windows/win32/api/winddi/nf-winddi-engdeviceiocontrol) 函数。
 
 <table>
 <colgroup>

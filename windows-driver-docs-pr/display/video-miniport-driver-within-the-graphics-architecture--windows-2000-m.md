@@ -8,12 +8,12 @@ keywords:
 ms.date: 12/06/2018
 ms.localizationpriority: medium
 ms.custom: seodec18
-ms.openlocfilehash: 21575c736fef836dc4e6bb8d21ca646ad1f47a02
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 14afbc56bf362a5b0b5536d3b6752927b599881e
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89066300"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90715120"
 ---
 # <a name="video-miniport-driver-in-the-graphics-architecture-windows-2000-model"></a>Windows 2000 模型 (图形体系结构中的视频微型端口驱动程序) 
 
@@ -21,7 +21,7 @@ ms.locfileid: "89066300"
 
 ![说明基于 nt 的操作系统图形体系结构的示意图](images/2vidarch.png)
 
-每个视频微型端口驱动程序为显示驱动程序提供硬件级支持。 显示驱动程序调用 graphics engine [**EngDeviceIoControl**](/windows/desktop/api/winddi/nf-winddi-engdeviceiocontrol) 函数以从基础视频微型端口驱动程序请求支持。 接下来， **EngDeviceIoControl**调用 i/o 系统服务，通过视频端口驱动程序将请求发送到微型端口驱动程序。
+每个视频微型端口驱动程序为显示驱动程序提供硬件级支持。 显示驱动程序调用 graphics engine [**EngDeviceIoControl**](/windows/win32/api/winddi/nf-winddi-engdeviceiocontrol) 函数以从基础视频微型端口驱动程序请求支持。 接下来， **EngDeviceIoControl**调用 i/o 系统服务，通过视频端口驱动程序将请求发送到微型端口驱动程序。
 
 在大多数情况下，显示驱动程序将执行对用户可见的时间关键操作，而基础微型端口驱动程序为不常请求的操作提供支持，或为无法被中断或上下文交换机抢占到其他进程的实际时间关键操作提供支持。
 

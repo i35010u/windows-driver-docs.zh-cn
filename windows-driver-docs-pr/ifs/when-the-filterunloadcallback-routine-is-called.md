@@ -8,12 +8,12 @@ keywords:
 - 强制卸载 WDK 文件系统微筛选器
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e7e1a9a4b685bb55060337d1b85e37f0bb395077
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 04f5a10aab105d42100447e43d60fc34346a421a
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89064948"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90714952"
 ---
 # <a name="when-the-filterunloadcallback-routine-is-called"></a>调用 FilterUnloadCallback 例程时
 
@@ -23,7 +23,7 @@ ms.locfileid: "89064948"
 
 在卸载微筛选器驱动程序之前，筛选器管理器会调用微筛选器驱动程序的 [**FilterUnloadCallback**](/windows-hardware/drivers/ddi/fltkernel/nc-fltkernel-pflt_filter_unload_callback) 例程，方法如下：
 
--   *非强制卸载*。 当用户模式应用程序调用 [**FilterUnload**](/windows/desktop/api/fltuser/nf-fltuser-filterunload) 或内核模式驱动程序调用 [**FltUnloadFilter**](/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltunloadfilter)时，会发生这种类型的卸载。 在命令提示符下键入 **fltmc unload** 也会出现这种情况。
+-   *非强制卸载*。 当用户模式应用程序调用 [**FilterUnload**](/windows/win32/api/fltuser/nf-fltuser-filterunload) 或内核模式驱动程序调用 [**FltUnloadFilter**](/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltunloadfilter)时，会发生这种类型的卸载。 在命令提示符下键入 **fltmc unload** 也会出现这种情况。
 
 -   *强制卸载*。 当你在命令提示符下键入 **sc stop** 或 **net stop** 发出服务停止请求时，将发生这种类型的卸载。  (有关 **sc stop** 和 **net stop** 命令的详细信息，请单击 "开始" 菜单上的 " **帮助和支持** "。如果用户模式应用程序调用 Microsoft WIN32 **control 服务** 函数，并且将服务 \_ 控制 \_ 停止控制代码作为 *dwControl* 参数传递，也会发生这种情况 ) 。  (有关 Win32 服务功能的详细信息，请参阅 Microsoft Windows SDK 文档。 ) 
 

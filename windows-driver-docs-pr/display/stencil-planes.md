@@ -13,12 +13,12 @@ keywords:
 - decals WDK Direct3D
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e77dfa292ae53b2aa0ae521a8dc68aca27835528
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 8ba654927cdc9ffc52bc755743468064b07a6071
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89063801"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90716224"
 ---
 # <a name="stencil-planes"></a>模具平面
 
@@ -45,7 +45,7 @@ ms.locfileid: "89063801"
 
 新标志 DDPF \_ STENCILBUFFER 指示 z 缓冲区内是否存在模具位。 之前存在的 **dwZBufferBitDepth** 成员提供包括模具位在内的 z 缓冲区的总数。
 
-DirectX 6.0 和更高版本驱动程序仍应 \_ 在**dwDeviceZBufferBitDepth**中为其支持的仅 z z 缓冲区格式设置适当的 DDBD*Xx*标志。 如果不支持模具平面并且 DDBD \_ *Xx*标志可以表示所有可用的 z 缓冲区格式，则设置这些标志就足够了，因为这些标志通过**IDirect3D7：： EnumZBufferFormats**转换为 DDPIXELFORMAT。 否则，Direct3D 驱动程序必须响应使用 GUID ZPixelFormats GUID 的 [**DdGetDriverInfo**](/windows/desktop/api/ddrawint/nc-ddrawint-pdd_getdriverinfo) 查询，该查询 \_ 返回一个缓冲区，其中第一个 DWORD 指示有效 z 缓冲区 DDPIXELFORMAT 结构的数目，后跟 DDPIXELFORMAT 结构本身。
+DirectX 6.0 和更高版本驱动程序仍应 \_ 在**dwDeviceZBufferBitDepth**中为其支持的仅 z z 缓冲区格式设置适当的 DDBD*Xx*标志。 如果不支持模具平面并且 DDBD \_ *Xx*标志可以表示所有可用的 z 缓冲区格式，则设置这些标志就足够了，因为这些标志通过**IDirect3D7：： EnumZBufferFormats**转换为 DDPIXELFORMAT。 否则，Direct3D 驱动程序必须响应使用 GUID ZPixelFormats GUID 的 [**DdGetDriverInfo**](/windows/win32/api/ddrawint/nc-ddrawint-pdd_getdriverinfo) 查询，该查询 \_ 返回一个缓冲区，其中第一个 DWORD 指示有效 z 缓冲区 DDPIXELFORMAT 结构的数目，后跟 DDPIXELFORMAT 结构本身。
 
 下表显示了与模具平面关联的新渲染状态，其中列出了渲染状态、与渲染状态的值相关联的类型，以及描述。 有关这些呈现状态的更多详细信息，请参阅 DirectX SDK 文档。
 

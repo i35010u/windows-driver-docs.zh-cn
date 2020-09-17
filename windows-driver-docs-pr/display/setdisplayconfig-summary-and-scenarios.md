@@ -13,23 +13,23 @@ keywords:
 - SetDisplayConfig WDK Windows Server 2008 R2 显示
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9d48f0c268188dac9129bc5a7fea549e6050d0a7
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: a09ad978650eab1ec6f5abc3e8696385e891dad0
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89066650"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90714748"
 ---
 # <a name="setdisplayconfig-summary-and-scenarios"></a>SetDisplayConfig 摘要和方案
 
 
 本部分仅适用于 Windows 7 和更高版本，以及 windows Server 2008 R2 及更高版本的 Windows 操作系统。
 
-以下部分概述了调用方如何使用 [**SetDisplayConfig**](/windows/desktop/api/winuser/nf-winuser-setdisplayconfig) CCD 函数并提供使用 **SetDisplayConfig**的方案。
+以下部分概述了调用方如何使用 [**SetDisplayConfig**](/windows/win32/api/winuser/nf-winuser-setdisplayconfig) CCD 函数并提供使用 **SetDisplayConfig**的方案。
 
 ### <a name="span-idsetdisplayconfig_summaryspanspan-idsetdisplayconfig_summaryspansetdisplayconfig-summary"></a><span id="setdisplayconfig_summary"></span><span id="SETDISPLAYCONFIG_SUMMARY"></span>SetDisplayConfig 摘要
 
-调用方可以使用 [**SetDisplayConfig**](/windows/desktop/api/winuser/nf-winuser-setdisplayconfig) 与其他显示设置一起应用拓扑。 也就是说，调用方可以使用 **SetDisplayConfig** 来设置拓扑、布局、方向、纵横比、位深度等。 调用方可以使用 **SetDisplayConfig** 来执行以下操作：
+调用方可以使用 [**SetDisplayConfig**](/windows/win32/api/winuser/nf-winuser-setdisplayconfig) 与其他显示设置一起应用拓扑。 也就是说，调用方可以使用 **SetDisplayConfig** 来设置拓扑、布局、方向、纵横比、位深度等。 调用方可以使用 **SetDisplayConfig** 来执行以下操作：
 
 -   设置源和目标的特定拓扑。
 
@@ -47,19 +47,19 @@ ms.locfileid: "89066650"
 
 ### <a name="span-idsetdisplayconfig_scenariosspanspan-idsetdisplayconfig_scenariosspansetdisplayconfig-scenarios"></a><span id="setdisplayconfig_scenarios"></span><span id="SETDISPLAYCONFIG_SCENARIOS"></span>SetDisplayConfig 方案
 
-在以下情况下，将调用[**SetDisplayConfig**](/windows/desktop/api/winuser/nf-winuser-setdisplayconfig) ：
+在以下情况下，将调用[**SetDisplayConfig**](/windows/win32/api/winuser/nf-winuser-setdisplayconfig) ：
 
--   显示控制面板小程序调用 [**SetDisplayConfig**](/windows/desktop/api/winuser/nf-winuser-setdisplayconfig) 来测试所有可能的选项，以填充 " **multimon** " 下拉框。
+-   显示控制面板小程序调用 [**SetDisplayConfig**](/windows/win32/api/winuser/nf-winuser-setdisplayconfig) 来测试所有可能的选项，以填充 " **multimon** " 下拉框。
 
--   显示控制面板小程序调用 [**SetDisplayConfig**](/windows/desktop/api/winuser/nf-winuser-setdisplayconfig) 来应用用户从下拉菜单中选择的设置。
+-   显示控制面板小程序调用 [**SetDisplayConfig**](/windows/win32/api/winuser/nf-winuser-setdisplayconfig) 来应用用户从下拉菜单中选择的设置。
 
--   显示控制面板小程序调用 [**SetDisplayConfig**](/windows/desktop/api/winuser/nf-winuser-setdisplayconfig) 来应用用户从用户界面中选择的设置。 这些设置包括分辨率、布局、方向、缩放、主要、比特率和刷新频率。
+-   显示控制面板小程序调用 [**SetDisplayConfig**](/windows/win32/api/winuser/nf-winuser-setdisplayconfig) 来应用用户从用户界面中选择的设置。 这些设置包括分辨率、布局、方向、缩放、主要、比特率和刷新频率。
 
--   用户做出选择后，显示热键将调用 [**SetDisplayConfig**](/windows/desktop/api/winuser/nf-winuser-setdisplayconfig) ，以应用持久性数据库中的相应设置。
+-   用户做出选择后，显示热键将调用 [**SetDisplayConfig**](/windows/win32/api/winuser/nf-winuser-setdisplayconfig) ，以应用持久性数据库中的相应设置。
 
--   "控制面板" 用户界面下的任务调用 [**SetDisplayConfig**](/windows/desktop/api/winuser/nf-winuser-setdisplayconfig) 来应用适当的设置，该设置基于任务的类型。
+-   "控制面板" 用户界面下的任务调用 [**SetDisplayConfig**](/windows/win32/api/winuser/nf-winuser-setdisplayconfig) 来应用适当的设置，该设置基于任务的类型。
 
--   显示控制面板小程序调用 [**SetDisplayConfig**](/windows/desktop/api/winuser/nf-winuser-setdisplayconfig) 来启动或停止特定目标上的强制投影。
+-   显示控制面板小程序调用 [**SetDisplayConfig**](/windows/win32/api/winuser/nf-winuser-setdisplayconfig) 来启动或停止特定目标上的强制投影。
 
  
 

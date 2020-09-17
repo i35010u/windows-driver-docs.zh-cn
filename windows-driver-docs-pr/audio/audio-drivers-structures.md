@@ -4,12 +4,12 @@ description: 音频驱动程序结构
 ms.assetid: 8257342f-474a-42b3-809d-96fdeede398b
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c1a7aa1cc1420dae61ee9111202ce315c09c4a99
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: b93331c6c783f0603a70736638984e2d64373219
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89208331"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90714828"
 ---
 # <a name="audio-drivers-structures"></a>音频驱动程序结构
 
@@ -17,15 +17,15 @@ ms.locfileid: "89208331"
 
 本部分介绍了 WDM 音频微型端口驱动程序使用的结构。 结构列表如下所示：
 
-[**APO \_ REG \_ 属性**](/windows/desktop/api/audioenginebaseapo/ns-audioenginebaseapo-apo_reg_properties)
+[**APO \_ REG \_ 属性**](/windows/win32/api/audioenginebaseapo/ns-audioenginebaseapo-apo_reg_properties)
 
-[**APOInitBaseStruct**](/windows/desktop/api/audioenginebaseapo/ns-audioenginebaseapo-apoinitbasestruct)
+[**APOInitBaseStruct**](/windows/win32/api/audioenginebaseapo/ns-audioenginebaseapo-apoinitbasestruct)
 
-[**APOInitSystemEffects**](/windows/desktop/api/audioenginebaseapo/ns-audioenginebaseapo-apoinitsystemeffects)
+[**APOInitSystemEffects**](/windows/win32/api/audioenginebaseapo/ns-audioenginebaseapo-apoinitsystemeffects)
 
-[**APOInitSystemEffects2**](/windows/desktop/api/audioenginebaseapo/ns-audioenginebaseapo-apoinitsystemeffects2)
+[**APOInitSystemEffects2**](/windows/win32/api/audioenginebaseapo/ns-audioenginebaseapo-apoinitsystemeffects2)
 
-[**AudioFXExtensionParams**](/windows/desktop/api/audioenginebaseapo/ns-audioenginebaseapo-audiofxextensionparams)
+[**AudioFXExtensionParams**](/windows/win32/api/audioenginebaseapo/ns-audioenginebaseapo-audiofxextensionparams)
 
 [**DMU \_ 内核 \_ 事件**](/windows-hardware/drivers/ddi/dmusicks/ns-dmusicks-_dmus_kernel_event)
 
@@ -129,7 +129,7 @@ ms.locfileid: "89208331"
 
 [**KSP \_ DRMAUDIOSTREAM \_ ID 为**](/windows-hardware/drivers/ddi/drmk/ns-drmk-ksp_drmaudiostream_contentid)
 
-[**KSP \_ PINMODE**](/windows/desktop/api/msapofxproxy/ns-msapofxproxy-tagksp_pinmode)
+[**KSP \_ PINMODE**](/windows/win32/api/msapofxproxy/ns-msapofxproxy-tagksp_pinmode)
 
 [KSRTAUDIO 结构](/windows-hardware/drivers/ddi/ksmedia/index)
 
@@ -145,9 +145,9 @@ ms.locfileid: "89208331"
 
 [**LOOPEDSTREAMING \_ 位置 \_ 事件 \_ 数据**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-loopedstreaming_position_event_data)
 
-[**MDEVICECAPSEX**](/windows/desktop/api/mmddk/ns-mmddk-mdevicecapsex)
+[**MDEVICECAPSEX**](/windows/win32/api/mmddk/ns-mmddk-mdevicecapsex)
 
-[**MIDIOPENDESC**](/windows/desktop/api/mmddk/ns-mmddk-midiopendesc_tag)
+[**MIDIOPENDESC**](/windows/win32/api/mmddk/ns-mmddk-midiopendesc_tag)
 
 [**RTAUDIO \_ GETREADPACKET \_ 信息**](/previous-versions/windows/hardware/drivers/mt169891(v=vs.85))
 
@@ -175,8 +175,8 @@ ms.locfileid: "89208331"
 
 [**SYSAUDIO \_ 选择 \_ 图形**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-sysaudio_select_graph)
 
-[**UNCOMPRESSEDAUDIOFORMAT**](/windows/desktop/api/audiomediatype/ns-audiomediatype-uncompressedaudioformat)
+[**UNCOMPRESSEDAUDIOFORMAT**](/windows/win32/api/audiomediatype/ns-audiomediatype-uncompressedaudioformat)
 
-[**WAVEFORMATEX**](/windows/desktop/api/mmreg/ns-mmreg-twaveformatex)
+[**WAVEFORMATEX**](/windows/win32/api/mmreg/ns-mmreg-twaveformatex)
 
 [**WAVEFORMATEXTENSIBLE**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-waveformatextensible)

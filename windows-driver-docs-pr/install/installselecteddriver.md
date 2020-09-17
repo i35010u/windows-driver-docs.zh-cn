@@ -14,17 +14,17 @@ api_type:
 - DllExport
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 5a5147e3a382a5117d96ea5d066e8a7d89a3025d
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 16c4bd9aee5a6971e3e8ab05e624239703093d7f
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90105004"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90714902"
 ---
 # <a name="installselecteddriver-function"></a>InstallSelectedDriver 函数
 
 
-不推荐使用 **InstallSelectedDriver** 函数。 对于 Windows Vista 和更高版本，请改用 [**DiInstallDevice**](/windows/desktop/api/newdev/nf-newdev-diinstalldevice) 。
+不推荐使用 **InstallSelectedDriver** 函数。 对于 Windows Vista 和更高版本，请改用 [**DiInstallDevice**](/windows/win32/api/newdev/nf-newdev-diinstalldevice) 。
 
 <a name="syntax"></a>语法
 ------
@@ -89,34 +89,34 @@ BOOL WINAPI InstallSelectedDriver(
 
  
 
-<a name="remarks"></a>注解
+<a name="remarks"></a>备注
 -------
 
 若要访问 **InstallSelectedDriver**，请调用 **LoadLibrary** 以加载 *Newdev.dll* ，然后调用 **GetProcAddress** 以获取指向 **InstallSelectedDriver**的函数指针。
 
 仅当需要在特定设备上安装特定驱动程序时，才应调用 **InstallSelectedDriver** 。
 
-**重要提示**   对于 Windows Vista 和更高版本的 Windows，请调用[**DiInstallDevice**](/windows/desktop/api/newdev/nf-newdev-diinstalldevice)而不是**InstallSelectedDriver**来执行此类操作。
+**重要提示**   对于 Windows Vista 和更高版本的 Windows，请调用[**DiInstallDevice**](/windows/win32/api/newdev/nf-newdev-diinstalldevice)而不是**InstallSelectedDriver**来执行此类操作。
 
  
 
-除了需要在特定设备上安装特定驱动程序的特殊应用程序外，安装应用程序应安装与设备最匹配的驱动程序。 若要安装最符合设备的驱动程序，请调用 [**DiInstallDriver**](/windows/desktop/api/newdev/nf-newdev-diinstalldrivera) 或 [**UpdateDriverForPlugAndPlayDevices**](/windows/desktop/api/newdev/nf-newdev-updatedriverforplugandplaydevicesa)。 若要详细了解在设备上安装驱动程序所要调用的函数的详细信息，请参阅 [Setupapi.log 函数，可简化驱动程序的安装](./functions-that-simplify-driver-installation.md)。
+除了需要在特定设备上安装特定驱动程序的特殊应用程序外，安装应用程序应安装与设备最匹配的驱动程序。 若要安装最符合设备的驱动程序，请调用 [**DiInstallDriver**](/windows/win32/api/newdev/nf-newdev-diinstalldrivera) 或 [**UpdateDriverForPlugAndPlayDevices**](/windows/win32/api/newdev/nf-newdev-updatedriverforplugandplaydevicesa)。 若要详细了解在设备上安装驱动程序所要调用的函数的详细信息，请参阅 [Setupapi.log 函数，可简化驱动程序的安装](./functions-that-simplify-driver-installation.md)。
 
 在调用 **InstallSelectedDriver**之前，调用方必须获取包含设备的设备信息集，选择设备集中的设备，然后选择设备驱动程序。
 
 若要创建包含设备的设备信息集，请执行以下操作之一：
 
--   调用 [**SetupDiGetClassDevs**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetclassdevsw) 检索包含设备的设备信息集，然后调用 [**SetupDiEnumDeviceInfo**](/windows/desktop/api/setupapi/nf-setupapi-setupdienumdeviceinfo) 来枚举设备信息集中的设备。 在每次调用时， **SetupDiEnumDeviceInfo** 将 \_ 返回 \_ 表示设备信息集中的枚举设备的 SP lnk-devinfo 数据结构。 若要获取有关枚举设备的特定信息，请调用[**SetupDiGetDeviceRegistryProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetdeviceregistrypropertya) ，并提供 \_ SETUPDIENUMDEVICEINFO 返回的 SP lnk-devinfo \_ 数据**SetupDiEnumDeviceInfo**结构。
+-   调用 [**SetupDiGetClassDevs**](/windows/win32/api/setupapi/nf-setupapi-setupdigetclassdevsw) 检索包含设备的设备信息集，然后调用 [**SetupDiEnumDeviceInfo**](/windows/win32/api/setupapi/nf-setupapi-setupdienumdeviceinfo) 来枚举设备信息集中的设备。 在每次调用时， **SetupDiEnumDeviceInfo** 将 \_ 返回 \_ 表示设备信息集中的枚举设备的 SP lnk-devinfo 数据结构。 若要获取有关枚举设备的特定信息，请调用[**SetupDiGetDeviceRegistryProperty**](/windows/win32/api/setupapi/nf-setupapi-setupdigetdeviceregistrypropertya) ，并提供 \_ SETUPDIENUMDEVICEINFO 返回的 SP lnk-devinfo \_ 数据**SetupDiEnumDeviceInfo**结构。
 
     - 或 -
 
--   调用 [**SetupDiOpenDeviceInfo**](/windows/desktop/api/setupapi/nf-setupapi-setupdiopendeviceinfoa) ，将具有已知设备实例 ID 的设备添加到设备信息集。 **SetupDiOpenDeviceInfo** 返回 [**SP \_ lnk-devinfo \_ 数据**](/windows/win32/api/setupapi/ns-setupapi-sp_devinfo_data) 结构，该结构表示设备信息集中的设备。
+-   调用 [**SetupDiOpenDeviceInfo**](/windows/win32/api/setupapi/nf-setupapi-setupdiopendeviceinfoa) ，将具有已知设备实例 ID 的设备添加到设备信息集。 **SetupDiOpenDeviceInfo** 返回 [**SP \_ lnk-devinfo \_ 数据**](/windows/win32/api/setupapi/ns-setupapi-sp_devinfo_data) 结构，该结构表示设备信息集中的设备。
 
-获取设备的 SP \_ Lnk-devinfo \_ 数据结构后，调用 [**SetupDiSetSelectedDevice**](/windows/desktop/api/setupapi/nf-setupapi-setupdisetselecteddevice) 来选择设备信息集中的设备。
+获取设备的 SP \_ Lnk-devinfo \_ 数据结构后，调用 [**SetupDiSetSelectedDevice**](/windows/win32/api/setupapi/nf-setupapi-setupdisetselecteddevice) 来选择设备信息集中的设备。
 
-若要检索设备的驱动程序，请调用 [**SetupDiBuildDriverInfoList**](/windows/desktop/api/setupapi/nf-setupapi-setupdibuilddriverinfolist) 来构建设备的兼容驱动程序列表，然后调用 [**SetupDiEnumDriverInfo**](/windows/desktop/api/setupapi/nf-setupapi-setupdienumdriverinfoa) 来枚举设备的驱动程序列表中的元素。 对于每个枚举的**SetupDiEnumDriverInfo**驱动程序，SetupDiEnumDriverInfo \_ 检索 \_ 表示驱动程序的 SP DRVINFO 数据结构。 可以调用[**SetupDiGetDriverInfoDetail**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetdriverinfodetaila)来检索有关枚举的驱动程序的其他详细信息。
+若要检索设备的驱动程序，请调用 [**SetupDiBuildDriverInfoList**](/windows/win32/api/setupapi/nf-setupapi-setupdibuilddriverinfolist) 来构建设备的兼容驱动程序列表，然后调用 [**SetupDiEnumDriverInfo**](/windows/win32/api/setupapi/nf-setupapi-setupdienumdriverinfoa) 来枚举设备的驱动程序列表中的元素。 对于每个枚举的**SetupDiEnumDriverInfo**驱动程序，SetupDiEnumDriverInfo \_ 检索 \_ 表示驱动程序的 SP DRVINFO 数据结构。 可以调用[**SetupDiGetDriverInfoDetail**](/windows/win32/api/setupapi/nf-setupapi-setupdigetdriverinfodetaila)来检索有关枚举的驱动程序的其他详细信息。
 
-\_ \_ 为驱动程序获取 SP DRVINFO 数据结构后，调用[**SetupDiSetSelectedDriver**](/windows/desktop/api/setupapi/nf-setupapi-setupdisetselecteddrivera)选择设备驱动程序。
+\_ \_ 为驱动程序获取 SP DRVINFO 数据结构后，调用[**SetupDiSetSelectedDriver**](/windows/win32/api/setupapi/nf-setupapi-setupdisetselecteddrivera)选择设备驱动程序。
 
 <a name="requirements"></a>要求
 ------------
@@ -153,27 +153,27 @@ BOOL WINAPI InstallSelectedDriver(
 ## <a name="see-also"></a>请参阅
 
 
-[**DiInstallDevice**](/windows/desktop/api/newdev/nf-newdev-diinstalldevice)
+[**DiInstallDevice**](/windows/win32/api/newdev/nf-newdev-diinstalldevice)
 
-[**DiInstallDriver**](/windows/desktop/api/newdev/nf-newdev-diinstalldrivera)
+[**DiInstallDriver**](/windows/win32/api/newdev/nf-newdev-diinstalldrivera)
 
-[**SetupDiBuildDriverInfoList**](/windows/desktop/api/setupapi/nf-setupapi-setupdibuilddriverinfolist)
+[**SetupDiBuildDriverInfoList**](/windows/win32/api/setupapi/nf-setupapi-setupdibuilddriverinfolist)
 
-[**SetupDiEnumDeviceInfo**](/windows/desktop/api/setupapi/nf-setupapi-setupdienumdeviceinfo)
+[**SetupDiEnumDeviceInfo**](/windows/win32/api/setupapi/nf-setupapi-setupdienumdeviceinfo)
 
-[**SetupDiEnumDriverInfo**](/windows/desktop/api/setupapi/nf-setupapi-setupdienumdriverinfoa)
+[**SetupDiEnumDriverInfo**](/windows/win32/api/setupapi/nf-setupapi-setupdienumdriverinfoa)
 
-[**SetupDiGetClassDevs**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetclassdevsw)
+[**SetupDiGetClassDevs**](/windows/win32/api/setupapi/nf-setupapi-setupdigetclassdevsw)
 
-[**SetupDiGetDeviceRegistryProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetdeviceregistrypropertya)
+[**SetupDiGetDeviceRegistryProperty**](/windows/win32/api/setupapi/nf-setupapi-setupdigetdeviceregistrypropertya)
 
-[**SetupDiGetDriverInfoDetail**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetdriverinfodetaila)
+[**SetupDiGetDriverInfoDetail**](/windows/win32/api/setupapi/nf-setupapi-setupdigetdriverinfodetaila)
 
-[**SetupDiOpenDeviceInfo**](/windows/desktop/api/setupapi/nf-setupapi-setupdiopendeviceinfoa)
+[**SetupDiOpenDeviceInfo**](/windows/win32/api/setupapi/nf-setupapi-setupdiopendeviceinfoa)
 
-[**SetupDiSetSelectedDevice**](/windows/desktop/api/setupapi/nf-setupapi-setupdisetselecteddevice)
+[**SetupDiSetSelectedDevice**](/windows/win32/api/setupapi/nf-setupapi-setupdisetselecteddevice)
 
-[**SetupDiSetSelectedDriver**](/windows/desktop/api/setupapi/nf-setupapi-setupdisetselecteddrivera)
+[**SetupDiSetSelectedDriver**](/windows/win32/api/setupapi/nf-setupapi-setupdisetselecteddrivera)
 
-[**UpdateDriverForPlugAndPlayDevices**](/windows/desktop/api/newdev/nf-newdev-updatedriverforplugandplaydevicesa)
+[**UpdateDriverForPlugAndPlayDevices**](/windows/win32/api/newdev/nf-newdev-updatedriverforplugandplaydevicesa)
 

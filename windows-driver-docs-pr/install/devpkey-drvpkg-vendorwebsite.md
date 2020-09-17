@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 39785008a4efa96c4b1d79aa0cbe728f44708cbe
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 4d8c0eb8229059377ddf572508c2b967badbce3f
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89095943"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90715764"
 ---
 # <a name="devpkey_drvpkg_vendorwebsite"></a>DEVPKEY_DrvPkg_VendorWebSite
 
@@ -40,7 +40,7 @@ URL 可以是到供应商网站的根、网站中的网页或重定向页面的�
 http://www.microsoft.com/redirect?prod=DSC530&rev=34
 ```
 
-可以设置 AddProperty 的 DEVPKEY_DrvPkg_VendorWebSite 值，该 [**指令**](./inf-addproperty-directive.md) 包含在安装设备的 inf 文件的 [**inf DDInstall 部分**](./inf-ddinstall-section.md) 中。 可以通过调用 [**SetupDiGetDeviceProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)来检索 DEVPKEY_DrvPkg_VendorWebSite 的值。
+可以设置 AddProperty 的 DEVPKEY_DrvPkg_VendorWebSite 值，该 [**指令**](./inf-addproperty-directive.md) 包含在安装设备的 inf 文件的 [**inf DDInstall 部分**](./inf-ddinstall-section.md) 中。 可以通过调用 [**SetupDiGetDeviceProperty**](/windows/win32/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)来检索 DEVPKEY_DrvPkg_VendorWebSite 的值。
 
 下面的示例演示如何使用 INF **AddProperty** 指令为 INF *DDInstall* 部分为 "SampleDDInstallSection" 安装的设备设置 DEVPKEY_DrvPkg_VendorWebSite 属性值：
 
@@ -62,10 +62,10 @@ DeviceVendorWebsite,,,,"http://www.microsoft.com/redirect?prod=DSC530&rev=34"
 |版本|在 Windows Vista 和更高版本的 Windows 中可用。|
 |标头|Devpkey (包含 Devpkey) |
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 [**INF AddProperty 指令**](./inf-addproperty-directive.md)
 
 [**INF *DDInstall* 部分**](./inf-ddinstall-section.md)
 
-[**SetupDiGetDeviceProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)
+[**SetupDiGetDeviceProperty**](/windows/win32/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)

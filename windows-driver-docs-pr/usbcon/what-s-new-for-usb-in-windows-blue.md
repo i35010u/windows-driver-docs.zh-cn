@@ -3,12 +3,12 @@ description: 下面是 Windows 8.1 中通用串行总线 (USB) 的新增功能�
 title: Windows 8.1-USB 的新增功能
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3efba40a6cad848abe34d7814ad13744845ad002
-ms.sourcegitcommit: 937974aa9bbe0262a7ffe9631593fab48c4e7492
+ms.openlocfilehash: 7431ca04e8bf87182ebd633f634236e6e9d157bc
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "90010461"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90714860"
 ---
 # <a name="windows-81-whats-new-for-usb"></a>Windows 8.1：USB 的新增功能
 
@@ -49,7 +49,7 @@ Windows 运行时提供新的命名空间： [**Windows. usb**](/uwp/api/Windows
 <thead>
 <tr class="header">
 <th>UWP 应用示例</th>
-<th>描述</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>
@@ -88,14 +88,14 @@ Microsoft 提供的 WinUSB (内核模式驱动程序) 现在支持与 USB 设备
 
 Winusb.dll 的用户模式 DLL 公开了这些 [WinUSB 函数](/previous-versions/windows/hardware/drivers/ff540046(v=vs.85)#winusb) ，Windows 桌面应用程序可使用这些函数启动此类传输。
 
--   [**WinUsb \_ RegisterIsochBuffer**](/windows/desktop/api/winusb/nf-winusb-winusb_registerisochbuffer)
--   [**WinUsb \_ UnregisterIsochBuffer**](/windows/desktop/api/winusb/nf-winusb-winusb_unregisterisochbuffer)
--   [**WinUsb \_ WriteIsochPipeAsap**](/windows/desktop/api/winusb/nf-winusb-winusb_writeisochpipeasap)
--   [**WinUsb \_ ReadIsochPipeAsap**](/windows/desktop/api/winusb/nf-winusb-winusb_readisochpipeasap)
--   [**WinUsb \_ WriteIsochPipe**](/windows/desktop/api/winusb/nf-winusb-winusb_writeisochpipe)
--   [**WinUsb \_ ReadIsochPipe**](/windows/desktop/api/winusb/nf-winusb-winusb_readisochpipe)
--   [**WinUsb \_ GetCurrentFrameNumber**](/windows/desktop/api/winusb/nf-winusb-winusb_getcurrentframenumber)
--   [**WinUsb \_ GetAdjustedFrameNumber**](/windows/desktop/api/winusb/nf-winusb-winusb_getadjustedframenumber)
+-   [**WinUsb \_ RegisterIsochBuffer**](/windows/win32/api/winusb/nf-winusb-winusb_registerisochbuffer)
+-   [**WinUsb \_ UnregisterIsochBuffer**](/windows/win32/api/winusb/nf-winusb-winusb_unregisterisochbuffer)
+-   [**WinUsb \_ WriteIsochPipeAsap**](/windows/win32/api/winusb/nf-winusb-winusb_writeisochpipeasap)
+-   [**WinUsb \_ ReadIsochPipeAsap**](/windows/win32/api/winusb/nf-winusb-winusb_readisochpipeasap)
+-   [**WinUsb \_ WriteIsochPipe**](/windows/win32/api/winusb/nf-winusb-winusb_writeisochpipe)
+-   [**WinUsb \_ ReadIsochPipe**](/windows/win32/api/winusb/nf-winusb-winusb_readisochpipe)
+-   [**WinUsb \_ GetCurrentFrameNumber**](/windows/win32/api/winusb/nf-winusb-winusb_getcurrentframenumber)
+-   [**WinUsb \_ GetAdjustedFrameNumber**](/windows/win32/api/winusb/nf-winusb-winusb_getadjustedframenumber)
 
 ## <a name="usb-driver-stack-improvements"></a>USB 驱动程序堆栈改进
 

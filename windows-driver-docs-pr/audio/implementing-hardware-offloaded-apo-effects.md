@@ -4,12 +4,12 @@ description: 音频处理对象的硬件卸载 (于) 可提供可能的性能增
 ms.assetid: 159DFFD2-2434-4EDC-A83C-455BA80F74C6
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8f5267c5ba9bffd8add68d4fd0eb970ea1b16fa7
-ms.sourcegitcommit: 83bec7b58a7033e23719fbab9960f6a6a700b0eb
+ms.openlocfilehash: fcac15a5298309b30ecfd4a0cdf8140dfca1153e
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/16/2020
-ms.locfileid: "90609616"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90714792"
 ---
 # <a name="hardware-offloaded-apo-effects"></a>硬件卸载 APO 效果
 
@@ -42,7 +42,7 @@ ms.locfileid: "90609616"
 
 对于卸载的硬件，还必须考虑到支持的音频格式。
 
-每个 APO 实现 [**IAudioProcessingObject：： IsInputFormatSupported**](/windows/desktop/api/audioenginebaseapo/nf-audioenginebaseapo-iaudioprocessingobject-isinputformatsupported) 方法，该方法在音频图形生成过程中用于确定输出音频格式以及是否需要任何格式转换。
+每个 APO 实现 [**IAudioProcessingObject：： IsInputFormatSupported**](/windows/win32/api/audioenginebaseapo/nf-audioenginebaseapo-iaudioprocessingobject-isinputformatsupported) 方法，该方法在音频图形生成过程中用于确定输出音频格式以及是否需要任何格式转换。
 
 ```cpp
 HRESULT IsInputFormatSupported(

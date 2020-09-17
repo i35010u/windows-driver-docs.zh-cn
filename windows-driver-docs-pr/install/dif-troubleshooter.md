@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: f12eacdce2cadf0d42d5429a71084783cff8109e
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: ce32339866bb98a366a28190f00b69ad3de712fd
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90107174"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90714916"
 ---
 # <a name="dif_troubleshooter"></a>DIF_TROUBLESHOOTER
 
@@ -71,12 +71,12 @@ DIF_TROUBLESHOOTER 请求允许安装程序为设备启动疑难解答，或返�
 与*DeviceInfoData*关联的设备安装参数 ([**SP_DEVINSTALL_PARAMS**](/windows/win32/api/setupapi/ns-setupapi-sp_devinstall_params_a)) 。
 
 <a href="" id="class-installation-parameters"></a>类安装参数  
-[**SP_TROUBLESHOOTER_PARAMS**](/windows/desktop/api/setupapi/ns-setupapi-_sp_troubleshooter_params_a)结构与*DeviceInfoData*关联。
+[**SP_TROUBLESHOOTER_PARAMS**](/windows/win32/api/setupapi/ns-setupapi-_sp_troubleshooter_params_a)结构与*DeviceInfoData*关联。
 
 ### <a name="installer-output"></a>安装程序输出
 
 <a href="" id="class-installation-parameters"></a>类安装参数  
-安装程序可能会修改 [**SP_TROUBLESHOOTER_PARAMS**](/windows/desktop/api/setupapi/ns-setupapi-_sp_troubleshooter_params_a)、设置 CHM 或 HTML 文件。
+安装程序可能会修改 [**SP_TROUBLESHOOTER_PARAMS**](/windows/win32/api/setupapi/ns-setupapi-_sp_troubleshooter_params_a)、设置 CHM 或 HTML 文件。
 
 ### <a name="installer-return-value"></a>安装程序返回值
 
@@ -98,7 +98,7 @@ DIF_TROUBLESHOOTER 没有默认的处理程序，但是，如果没有安装程�
 
 ### <a name="installer-operation"></a>安装程序操作
 
-安装程序调用 [**CM_Get_DevNode_Status**](/windows/desktop/api/cfgmgr32/nf-cfgmgr32-cm_get_devnode_status) 以获取设备状态和 CM 问题代码。 根据具体的问题，安装程序可能会提供疑难解答、帮助文件或任何内容。 疑难解答可能会解决设备问题。 如果疑难解答解决了问题，则它应调用 **SetupDiCallClassInstaller** 以发送 DICS_PROPCHANGE 类型的 DIF_PROPERTYCHANGE 请求。 如果安装程序未提供设备的疑难解答，则可能会为用户提供问题解决建议的帮助文件。
+安装程序调用 [**CM_Get_DevNode_Status**](/windows/win32/api/cfgmgr32/nf-cfgmgr32-cm_get_devnode_status) 以获取设备状态和 CM 问题代码。 根据具体的问题，安装程序可能会提供疑难解答、帮助文件或任何内容。 疑难解答可能会解决设备问题。 如果疑难解答解决了问题，则它应调用 **SetupDiCallClassInstaller** 以发送 DICS_PROPCHANGE 类型的 DIF_PROPERTYCHANGE 请求。 如果安装程序未提供设备的疑难解答，则可能会为用户提供问题解决建议的帮助文件。
 
 如果没有安装程序运行自己的疑难解答，Windows 将运行 HTML 帮助向用户显示信息。 如果安装程序在类安装参数中提供了 CHM 文件，则 Windows 将显示该文件。 否则，Windows 将显示系统提供的故障排除信息。
 
@@ -129,13 +129,13 @@ DIF_TROUBLESHOOTER 没有默认的处理程序，但是，如果没有安装程�
 ## <a name="see-also"></a>请参阅
 
 
-[**CM_Get_DevNode_Status**](/windows/desktop/api/cfgmgr32/nf-cfgmgr32-cm_get_devnode_status)
+[**CM_Get_DevNode_Status**](/windows/win32/api/cfgmgr32/nf-cfgmgr32-cm_get_devnode_status)
 
 [**SP_DEVINFO_DATA**](/windows/win32/api/setupapi/ns-setupapi-sp_devinfo_data)
 
 [**SP_DEVINSTALL_PARAMS**](/windows/win32/api/setupapi/ns-setupapi-sp_devinstall_params_a)
 
-[**SP_TROUBLESHOOTER_PARAMS**](/windows/desktop/api/setupapi/ns-setupapi-_sp_troubleshooter_params_a)
+[**SP_TROUBLESHOOTER_PARAMS**](/windows/win32/api/setupapi/ns-setupapi-_sp_troubleshooter_params_a)
 
  
 

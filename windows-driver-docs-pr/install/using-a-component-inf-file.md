@@ -3,18 +3,18 @@ title: 使用组件 INF 文件
 description: 描述如何使用软件组件包括特定于设备的用户模式软件。
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 430f4bf8d4bd7374e48d6167995fed01d9830a1f
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: f1c21b0b8da4a6c3da1e35e82eee27069306030d
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89096545"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90714884"
 ---
 # <a name="using-a-component-inf-file"></a>使用组件 INF 文件
 
 如果要在 Windows 10 上包含用于设备的用户模式软件，可以使用以下选项创建与 [DCH 兼容的驱动程序](../develop/getting-started-with-windows-drivers.md)：
     
-|方法|场景|
+|方法|方案|
 |---|---|
 |[硬件支持应用 (HSA) ](../devapps/hardware-support-app--hsa--steps-for-driver-developers.md) | 作为 UWP 应用打包的设备附加软件，由 Microsoft Store 提供和提供服务。  推荐的方法。 |
 |软件组件|设备附加软件是使用 AddReg 和 CopyFiles 安装的 MSI 或 EXE 二进制文件、Win32 服务或软件。  引用的二进制文件仅在桌面版本 (Home、Pro 和 Enterprise) 上运行。  引用的二进制文件将不会在 Windows 数十上运行。|
@@ -82,15 +82,15 @@ Needs=UmPass.Services
 
 接下来，如果软件组件以通用 [目标平台](../develop/target-platforms.md)为目标，请使用以下过程：
 
-1. 使用软件组件的设备实例 ID 调用 [**CM_Locate_DevNode**](/windows/desktop/api/cfgmgr32/nf-cfgmgr32-cm_locate_devnodea) 以检索设备句柄。
-2. 调用 [**CM_Get_Parent**](/windows/desktop/api/cfgmgr32/nf-cfgmgr32-cm_get_parent) 检索该设备父对象的句柄。  此父级是使用 [INF AddComponent 指令](inf-addcomponent-directive.md)添加软件组件的设备。
-3. 然后，若要检索父级的设备实例 ID，请从[**CM_Get_Parent**](/windows/desktop/api/cfgmgr32/nf-cfgmgr32-cm_get_parent)中的句柄调用[**CM_Get_Device_ID**](/windows/desktop/api/cfgmgr32/nf-cfgmgr32-cm_get_device_idw) 。
+1. 使用软件组件的设备实例 ID 调用 [**CM_Locate_DevNode**](/windows/win32/api/cfgmgr32/nf-cfgmgr32-cm_locate_devnodea) 以检索设备句柄。
+2. 调用 [**CM_Get_Parent**](/windows/win32/api/cfgmgr32/nf-cfgmgr32-cm_get_parent) 检索该设备父对象的句柄。  此父级是使用 [INF AddComponent 指令](inf-addcomponent-directive.md)添加软件组件的设备。
+3. 然后，若要检索父级的设备实例 ID，请从[**CM_Get_Parent**](/windows/win32/api/cfgmgr32/nf-cfgmgr32-cm_get_parent)中的句柄调用[**CM_Get_Device_ID**](/windows/win32/api/cfgmgr32/nf-cfgmgr32-cm_get_device_idw) 。
 
 如果软件组件仅以桌面 [目标平台](../develop/target-platforms.md) 为目标，请使用以下过程：
 
-1. 调用 [**SetupDiCreateDeviceInfoList**](/windows/desktop/api/setupapi/nf-setupapi-setupdicreatedeviceinfolist) 创建一个空的设备信息集。
-2. 调用具有软件组件设备的设备实例 ID 的 [**SetupDiOpenDeviceInfo**](/windows/desktop/api/setupapi/nf-setupapi-setupdiopendeviceinfoa) 。
-3. 调用 [**SetupDiGetDeviceProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw) ， `DEVPKEY_Device_Parent` 以检索父的设备实例 ID。
+1. 调用 [**SetupDiCreateDeviceInfoList**](/windows/win32/api/setupapi/nf-setupapi-setupdicreatedeviceinfolist) 创建一个空的设备信息集。
+2. 调用具有软件组件设备的设备实例 ID 的 [**SetupDiOpenDeviceInfo**](/windows/win32/api/setupapi/nf-setupapi-setupdiopendeviceinfoa) 。
+3. 调用 [**SetupDiGetDeviceProperty**](/windows/win32/api/setupapi/nf-setupapi-setupdigetdevicepropertyw) ， `DEVPKEY_Device_Parent` 以检索父的设备实例 ID。
 
 ## <a name="example"></a>示例
 

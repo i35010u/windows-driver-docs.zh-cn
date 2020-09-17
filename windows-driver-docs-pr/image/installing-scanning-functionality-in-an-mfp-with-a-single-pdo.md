@@ -4,12 +4,12 @@ description: 在使用单个 PDO 的 MFP 中安装扫描功能
 ms.assetid: 002ff319-42f9-4034-9bdd-c1e771ed2ba9
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b59840a6b93b61aea2a60d3a849196cebd1d6a84
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 6f24eaf806a7a96778e4d869b239da984565fc42
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89187975"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90715798"
 ---
 # <a name="installing-scanning-functionality-in-an-mfp-with-a-single-pdo"></a>在使用单个 PDO 的 MFP 中安装扫描功能
 
@@ -25,7 +25,7 @@ Microsoft 建议多功能打印机的每个逻辑功能都应有自己的 PDO �
 
 **HKLM \\ SYSTEM \\ CurrentControlSet \\ Control \\ DeviceClasses \\ {6bdd1fc6-810f-11d0-bec7-08002be2092f} \\ &lt; *设备符号链接*&gt;**
 
-在将来的操作系统版本中，不保证此密钥保留在此位置。 若要打开此密钥，请调用 [**SetupDiOpenDeviceInterfaceRegKey**](/windows/desktop/api/setupapi/nf-setupapi-setupdiopendeviceinterfaceregkey)。
+在将来的操作系统版本中，不保证此密钥保留在此位置。 若要打开此密钥，请调用 [**SetupDiOpenDeviceInterfaceRegKey**](/windows/win32/api/setupapi/nf-setupapi-setupdiopendeviceinterfaceregkey)。
 
 WIA 服务枚举所有 Image 类 PDOs 和设备接口。 因此，新创建的设备接口将被枚举为 WIA 设备。
 

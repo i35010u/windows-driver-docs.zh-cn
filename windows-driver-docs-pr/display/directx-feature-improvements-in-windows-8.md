@@ -4,12 +4,12 @@ description: Windows 8 包含 Microsoft DirectX 功能改进，可让开发人�
 ms.assetid: 0622DA0D-41ED-4B47-B090-8D5B85E10EB3
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bb47a8ff2d3ec15e4bd975e39e2683bb064c57c0
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 656d4eac7c337559e0a7ab1966be08eca48fcbae
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89063124"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90715204"
 ---
 # <a name="directx-feature-improvements-in-windows-8"></a>Windows 8 中的 DirectX 功能改进
 
@@ -31,7 +31,7 @@ Windows 8 包含 Microsoft DirectX 功能改进，可让开发人员、最终用
 ## <a name="span-idpixelformatsspanspan-idpixelformatsspanpixel-formats-5551-565-4444"></a><span id="pixelformats"></span><span id="PIXELFORMATS"></span>像素格式 (5551、565、4444) 
 
 
-为了更好地支持使用 DirectX 在低功耗配置中使用图形，Windows 8 的 Direct3D 中必须支持来自 [**DXGI \_ 格式**](/windows/desktop/api/dxgiformat/ne-dxgiformat-dxgi_format) 枚举的以下 DirectX 9 像素格式：
+为了更好地支持使用 DirectX 在低功耗配置中使用图形，Windows 8 的 Direct3D 中必须支持来自 [**DXGI \_ 格式**](/windows/win32/api/dxgiformat/ne-dxgiformat-dxgi_format) 枚举的以下 DirectX 9 像素格式：
 
 -   **DXGI \_ FORMAT \_ B5G6R5 \_ UNORM**
 -   **DXGI \_ FORMAT \_ B5G5R5A1 \_ UNORM**
@@ -43,21 +43,21 @@ Windows 8 包含 Microsoft DirectX 功能改进，可让开发人员、最终用
 
 | 功能                       | 功能级别 9 \_ x                                      | 功能级别10。0                                             | 功能级别10。1                        | 功能级别 11 +                         |
 |----------------------------------|---------------------------------------------------------|----------------------------------------------------------------|-------------------------------------------|-------------------------------------------|
-| 类型化缓冲区                     | 否                                                      | 必选                                                       | 必选                                  | 必选                                  |
+| 类型化缓冲区                     | 否                                                      | 必需                                                       | 必需                                  | 必需                                  |
 | 输入汇编程序顶点缓冲区    | 否                                                      | 可选                                                       | 可选                                  | 可选                                  |
-| Texture1D                        | 否                                                      | 必选                                                       | 必选                                  | 必选                                  |
-| Texture2D                        | 必选                                                | 必选                                                       | 必选                                  | 必选                                  |
-| Texture3D                        | 否                                                      | 必选                                                       | 必选                                  | 必选                                  |
-| TextureCube                      | 必选                                                | 必选                                                       | 必选                                  | 必选                                  |
-| 着色器 ld\*                      | 否                                                      | 必选                                                       | 必选                                  | 必选                                  |
-| \*带有筛选) 的着色器示例 ( | 必选                                                | 必选                                                       | 必选                                  | 必选                                  |
-| 着色器 gather4                   | 否                                                      | 否                                                             | 否                                        | 必须                                  |
-| Mipmap                           | 必选                                                | 必选                                                       | 必选                                  | 必选                                  |
+| Texture1D                        | 否                                                      | 必需                                                       | 必需                                  | 必需                                  |
+| Texture2D                        | 必需                                                | 必需                                                       | 必需                                  | 必需                                  |
+| Texture3D                        | 否                                                      | 必需                                                       | 必需                                  | 必需                                  |
+| TextureCube                      | 必需                                                | 必需                                                       | 必需                                  | 必需                                  |
+| 着色器 ld\*                      | 否                                                      | 必需                                                       | 必需                                  | 必需                                  |
+| \*带有筛选) 的着色器示例 ( | 必需                                                | 必需                                                       | 必需                                  | 必需                                  |
+| 着色器 gather4                   | 否                                                      | 否                                                             | 否                                        | 必需                                  |
+| Mipmap                           | 必需                                                | 必需                                                       | 必需                                  | 必需                                  |
 | Mipmap 自动生成           | 对于565是必需的，对于4444，为可选，5551               | 对于565是必需的，对于4444，为可选，5551                      | 对于565是必需的，对于4444，为可选，5551 | 对于565是必需的，对于4444，为可选，5551 |
 | RenderTarget                     | 对于565是必需的，对于4444，则不是，5551                     | 对于565是必需的，对于4444，为可选，5551                      | 对于565是必需的，对于4444，为可选，5551 | 对于565是必需的，对于4444，为可选，5551 |
 | Blendable RenderTarget           | 对于565是必需的，对于4444，则不是，5551                     | 对于565是必需的，对于4444，为可选，5551                      | 对于565是必需的，对于4444，为可选，5551 | 对于565是必需的，对于4444，为可选，5551 |
 | UAV 类型存储                  | 否                                                      | 否                                                             | 否                                        | 可选                                  |
-| CPU 锁定                     | 必选                                                | 必选                                                       | 必选                                  | 必选                                  |
+| CPU 锁定                     | 必需                                                | 必需                                                       | 必需                                  | 必需                                  |
 | 4x MSAA                          | 可选                                                | 可选                                                       | 对于565是必需的，对于4444，为可选，5551 | 对于565是必需的，对于4444，为可选，5551 |
 | 8x MSAA                          | 可选                                                | 可选                                                       | 可选                                  | 对于565是必需的，对于4444，为可选，5551 |
 | 其他 MSAA 示例计数          | 可选                                                | 可选                                                       | 可选                                  | 可选                                  |

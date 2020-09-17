@@ -4,12 +4,12 @@ description: 在 Windows 10 中，你可以编写一个通用音频驱动程序�
 ms.assetid: F4B56B3F-792F-4887-AF0F-FFC1F000CB8F
 ms.date: 10/18/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 695d6974916fe827cd56f2a4c61476dce04b32fd
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: a5d206a67186cc8f30a2e29313ccd42724ee36eb
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89208253"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90714832"
 ---
 # <a name="universal-windows-drivers-for-audio"></a>音频的通用 Windows 驱动程序
 
@@ -95,7 +95,7 @@ Sysvad 和 SwapAPO 已转换为通用 Windows 驱动程序示例。 有关详细
 
 单独的扩展 INF 文件用于为特定系统自定义每个基本驱动程序组件。 自定义包括优化参数和其他特定于系统的设置。 有关详细信息，请参阅 [使用扩展 INF 文件](../install/using-an-extension-inf-file.md)。
 
-扩展 INF 文件必须是通用 INF 文件。 有关详细信息，请参阅 [使用通用 INF 文件](../install/using-a-universal-inf-file.md)。
+扩展 INF 文件必须是通用 INF 文件。 有关详细信息，请参阅[使用通用 INF 文件](../install/using-a-universal-inf-file.md)。
 
 有关使用 INF 文件添加软件的信息，请参阅 [使用组件 INF 文件](../install/using-a-component-inf-file.md)。
 
@@ -132,7 +132,7 @@ SYSVAD 示例中仍提供了传统的 INF 文件。
 
 ### <a name="programmatically-launching-uwp-hardware-support-apps"></a>以编程方式启动 UWP 硬件支持应用
 
-若要以编程方式启动 UWP 硬件支持应用（基于驱动程序事件） (例如，在将新的音频设备连接到) 时，请使用 Windows Shell Api。 Windows 10 Shell Api 支持基于资源激活或直接通过 [IApplicationActivationManager](/windows/desktop/api/shobjidl_core/nf-shobjidl_core-iapplicationactivationmanager-activateapplication)启动 UWP UI 的方法。 可在 [自动启动 Windows 10 UWP 应用](/windows/uwp/xbox-apps/automate-launching-uwp-apps#launch-activation)中找到有关自动启动 uwp 应用程序的更多详细信息。  
+若要以编程方式启动 UWP 硬件支持应用（基于驱动程序事件） (例如，在将新的音频设备连接到) 时，请使用 Windows Shell Api。 Windows 10 Shell Api 支持基于资源激活或直接通过 [IApplicationActivationManager](/windows/win32/api/shobjidl_core/nf-shobjidl_core-iapplicationactivationmanager-activateapplication)启动 UWP UI 的方法。 可在 [自动启动 Windows 10 UWP 应用](/windows/uwp/xbox-apps/automate-launching-uwp-apps#launch-activation)中找到有关自动启动 uwp 应用程序的更多详细信息。  
 
 ### <a name="apo-and-device-driver-vendor-use-of-the-audiomodules-api"></a>APO 和设备驱动程序供应商使用 AudioModules API
 

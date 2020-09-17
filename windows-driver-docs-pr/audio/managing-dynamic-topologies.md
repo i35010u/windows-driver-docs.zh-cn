@@ -9,12 +9,12 @@ keywords:
 - 动态 subdevices WDK 音频
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ce1b8c7f924e40f076e9eb70fb367d8f81eb9a48
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 4eb6b3431221d9c2fbcdd38fda5f35368a028b3d
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89211427"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90715394"
 ---
 # <a name="managing-dynamic-topologies"></a>管理动态拓扑
 
@@ -37,7 +37,7 @@ ms.locfileid: "89211427"
 
 当适配器驱动程序动态删除 subdevice 时，它会释放绑定到 subdevice 的内部拓扑的硬件资源。 然后，适配器驱动程序可以使用这些资源来创建具有可能不同拓扑的新 subdevice。
 
-配置新的音频 subdevice 时，适配器驱动程序会将 subdevice 的驱动程序接口注册为一个或多个 [设备接口类](../install/overview-of-device-interface-classes.md)的实例，并且 i/o 管理器会添加一个或多个注册表项，其中包含关联接口类和接口实例的符号链接。 若要访问 subdevice，用户模式客户端将从注册表中检索符号链接，并将其作为调用参数传递给 [**CreateFile**](/windows/desktop/api/fileapi/nf-fileapi-createfilea) 函数。 通常情况下，客户端是 Windows API 模块，如 Dsound.dll 或 winspool.drv，或者供应商提供的控制面板或音频实用程序。 有关 **CreateFile**的详细信息，请参阅 Microsoft Windows SDK 文档。
+配置新的音频 subdevice 时，适配器驱动程序会将 subdevice 的驱动程序接口注册为一个或多个 [设备接口类](../install/overview-of-device-interface-classes.md)的实例，并且 i/o 管理器会添加一个或多个注册表项，其中包含关联接口类和接口实例的符号链接。 若要访问 subdevice，用户模式客户端将从注册表中检索符号链接，并将其作为调用参数传递给 [**CreateFile**](/windows/win32/api/fileapi/nf-fileapi-createfilea) 函数。 通常情况下，客户端是 Windows API 模块，如 Dsound.dll 或 winspool.drv，或者供应商提供的控制面板或音频实用程序。 有关 **CreateFile**的详细信息，请参阅 Microsoft Windows SDK 文档。
 
 当微型端口驱动程序调用 [**IUnregisterSubdevice：： UnregisterSubdevice**](/windows-hardware/drivers/ddi/portcls/nf-portcls-iunregistersubdevice-unregistersubdevice) 方法来删除 subdevice 时，PortCls 系统驱动程序 ( # A0) 通知 i/o 管理器从注册表中删除关联设备接口的符号链接。 注册为设备接口删除事件的组件会在删除接口时收到通知。
 
@@ -53,7 +53,7 @@ ms.locfileid: "89211427"
 
     当用户从音频插孔中删除插头时，驱动程序可以切断服务该插孔的适配器电路的部分。
 
--   可配置性
+-   可配置
 
     删除 subdevice 后，驱动程序可以使用绑定到 subdevice 的内部拓扑的硬件资源来创建具有可能不同拓扑的新 subdevice。
 

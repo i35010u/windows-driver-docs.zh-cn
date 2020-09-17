@@ -8,12 +8,12 @@ keywords:
 - 数据交集处理程序 WDK 音频，非 PCM 波浪格式
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 47f2eaac15049552778a21f30f0a6bc9a843d8ce
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 5f0106b033daa28235538854a3ee521b940ff066
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89210443"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90715386"
 ---
 # <a name="requirements-for-a-non-pcm-pin-factory"></a>非 PCM 引脚工厂的要求
 
@@ -21,7 +21,7 @@ ms.locfileid: "89210443"
 ## <span id="requirements_for_a_non_pcm_pin_factory"></span><span id="REQUIREMENTS_FOR_A_NON_PCM_PIN_FACTORY"></span>
 
 
-在 Windows XP 和更高版本以及 Microsoft Windows Me 下，播放非 PCM [**WAVEFORMATEX**](/windows/desktop/api/mmreg/ns-mmreg-twaveformatex) 格式的驱动程序应按照以下准则公开其非 pcm pin。
+在 Windows XP 和更高版本以及 Microsoft Windows Me 下，播放非 PCM [**WAVEFORMATEX**](/windows/win32/api/mmreg/ns-mmreg-twaveformatex) 格式的驱动程序应按照以下准则公开其非 pcm pin。
 
 首先，为非 PCM 数据格式定义一个独立于任何 PCM 固定工厂的 pin 工厂。 PCM 和非 PCM 不能共享相同的单实例 pin 工厂，因为会自动将唯一的 pin 实例分配给 KMixer。 如果 pin 工厂支持多个实例，则 PCM 和非 PCM 可以共存于同一 pin 工厂。 但是，在这种情况下，不能保证在运行时，在运行时，PCM 客户端可能已分配了这些 pin 实例。 最安全的方法是为非 PCM 格式提供单独的 pin 工厂。
 

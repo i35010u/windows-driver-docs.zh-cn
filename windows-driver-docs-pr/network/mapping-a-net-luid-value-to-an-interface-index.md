@@ -12,12 +12,12 @@ keywords:
 - 本地唯一标识符 WDK 网络接口
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8e9e8dd10a78e3304454944da51904d3a9edd1d1
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 6d3cb2ce39a6f0d7aaefb5d328beca2a28d51f9b
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89212381"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90715738"
 ---
 # <a name="mapping-a-net_luid-value-to-an-interface-index"></a>将 NET \_ LUID 值映射到接口索引
 
@@ -25,7 +25,7 @@ ms.locfileid: "89212381"
 
 
 
-NDIS 提供服务来获取给定 [**NET \_ LUID**](/windows/desktop/api/ifdef/ns-ifdef-net_luid_lh) 值的接口索引，反之亦然。 请注意，NET \_ LUID 值是接口的永久性标识，与特定 NET LUID 值相对应的接口索引 \_ 可能会更改，即使计算机未重新启动 (例如，当已禁用并重新启用关联的微型端口适配器时，将更改筛选器模块，因为已禁用并重新启用了关联的微型端口适配器) 。
+NDIS 提供服务来获取给定 [**NET \_ LUID**](/windows/win32/api/ifdef/ns-ifdef-net_luid_lh) 值的接口索引，反之亦然。 请注意，NET \_ LUID 值是接口的永久性标识，与特定 NET LUID 值相对应的接口索引 \_ 可能会更改，即使计算机未重新启动 (例如，当已禁用并重新启用关联的微型端口适配器时，将更改筛选器模块，因为已禁用并重新启用了关联的微型端口适配器) 。
 
 NDIS 提供以下映射函数：
 

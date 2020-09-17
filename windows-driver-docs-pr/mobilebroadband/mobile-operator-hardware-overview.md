@@ -4,12 +4,12 @@ description: 移动运营商硬件概述
 ms.assetid: b2322972-16be-443f-b46a-7834b4d7ead0
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 560dcfa28f202712af874b297a232f8ed891e468
-ms.sourcegitcommit: 7e4d9508198a30bdc1cb6eda83852dda4e42213e
+ms.openlocfilehash: b92ce84b4978c3dc98447c4b3754a5f2f2dc1cba
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89304276"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90715748"
 ---
 # <a name="mobile-operator-hardware-overview"></a>移动运营商硬件概述
 
@@ -118,7 +118,7 @@ Windows 无线平台支持适用于应用程序的以下功能的 Api：
 
 -   注册来自特定设备的未经请求的设备事件
 
-有关详细信息，请参阅 [**IMbnDeviceService 接口**](/windows/desktop/api/mbnapi/nn-mbnapi-imbndeviceservice)。
+有关详细信息，请参阅 [**IMbnDeviceService 接口**](/windows/win32/api/mbnapi/nn-mbnapi-imbndeviceservice)。
 
 ### <a name="span-idlegacy_support_and_identity_morphingspanspan-idlegacy_support_and_identity_morphingspanspan-idlegacy_support_and_identity_morphingspanlegacy-support-and-identity-morphing"></a><span id="Legacy_support_and_identity_morphing"></span><span id="legacy_support_and_identity_morphing"></span><span id="LEGACY_SUPPORT_AND_IDENTITY_MORPHING"></span>传统支持和标识变形
 
@@ -148,7 +148,7 @@ Windows 8、Windows 8.1 和 Windows 10 支持为 Windows 7 设计的移动宽带
 
 本机 Windows 8、Windows 8.1 和 Windows 10 类驱动程序消除了外部 USB 设备最初公开为大容量存储设备的需要，因为无需安装任何驱动程序。 Windows 8、Windows 8.1 和 Windows 10 包括触发设备身份变形的功能，使设备立即显示为移动宽带设备。
 
-若要了解如何开发身份变形解决方案，请参阅 [**IMbnDeviceService 接口**](/windows/desktop/api/mbnapi/nn-mbnapi-imbndeviceservice)。\]
+若要了解如何开发身份变形解决方案，请参阅 [**IMbnDeviceService 接口**](/windows/win32/api/mbnapi/nn-mbnapi-imbndeviceservice)。\]
 
 ### <a name="span-idfirmware_update_supportspanspan-idfirmware_update_supportspanspan-idfirmware_update_supportspanfirmware-update-support"></a><span id="Firmware_update_support"></span><span id="firmware_update_support"></span><span id="FIRMWARE_UPDATE_SUPPORT"></span>固件更新支持
 

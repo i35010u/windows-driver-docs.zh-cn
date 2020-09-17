@@ -11,12 +11,12 @@ keywords:
 - 停止电池通知
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4f58222bb3e9ccb1637b86dc71fc66bf6a571fd4
-ms.sourcegitcommit: 7a7e61b4147a4aa86bf820fd0b0c7681fe17e544
+ms.openlocfilehash: b7d26db0fa1c5cc66ac27122f4932361b3cd384a
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89056867"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90716576"
 ---
 # <a name="setting-and-canceling-battery-notification"></a>设置和取消电池通知
 
@@ -24,7 +24,7 @@ ms.locfileid: "89056867"
 ## <span id="ddk_setting_and_canceling_battery_notification_dg"></span><span id="DDK_SETTING_AND_CANCELING_BATTERY_NOTIFICATION_DG"></span>
 
 
-Miniclass 驱动程序提供 [*BatteryMiniSetStatusNotify*](/windows/desktop/api/batclass/nc-batclass-bclass_set_status_notify_callback) 例程，以便类驱动程序可以请求特定条件的通知。 例程声明如下：
+Miniclass 驱动程序提供 [*BatteryMiniSetStatusNotify*](/windows/win32/api/batclass/nc-batclass-bclass_set_status_notify_callback) 例程，以便类驱动程序可以请求特定条件的通知。 例程声明如下：
 
 ```cpp
 typedef
@@ -36,13 +36,13 @@ NTSTATUS
     );
 ```
 
-*上下文*参数是指向上下文区域的指针，该上下文区域由 miniclass 驱动程序分配，并在 \_ 设备初始化时在电池微型端口信息结构中传递给类驱动程序 \_ 。 *BatteryTag*参数是之前由[*BatteryMiniQueryTag*](/windows/desktop/api/batclass/nc-batclass-bclass_query_tag_callback)返回的值。
+*上下文*参数是指向上下文区域的指针，该上下文区域由 miniclass 驱动程序分配，并在 \_ 设备初始化时在电池微型端口信息结构中传递给类驱动程序 \_ 。 *BatteryTag*参数是之前由[*BatteryMiniQueryTag*](/windows/win32/api/batclass/nc-batclass-bclass_query_tag_callback)返回的值。
 
-*BatteryNotify*参数包含一组指示电池电源条件的标志，以及一个用于定义可接受电池容量范围的一对 ULONG 值。 当电池不再满足指定的电源条件或其容量高于或低于指定的范围时，miniclass 驱动程序应调用 [**BatteryClassStatusNotify**](/windows/desktop/api/batclass/nf-batclass-batteryclassstatusnotify)。
+*BatteryNotify*参数包含一组指示电池电源条件的标志，以及一个用于定义可接受电池容量范围的一对 ULONG 值。 当电池不再满足指定的电源条件或其容量高于或低于指定的范围时，miniclass 驱动程序应调用 [**BatteryClassStatusNotify**](/windows/win32/api/batclass/nf-batclass-batteryclassstatusnotify)。
 
 *BatteryMiniSetStatusNotify*对于 \_ \_ 无法确定用于此电池的任何条件或触发器值，BatteryMiniSetStatusNotify 应返回状态。
 
-类驱动程序调用 [*BatteryMiniDisableStatusNotify*](/windows/desktop/api/batclass/nc-batclass-bclass_disable_status_notify_callback) 例程来取消 BatteryMiniSetStatusNotify 以前请求的电池状态更改的通知。 此例程声明如下：
+类驱动程序调用 [*BatteryMiniDisableStatusNotify*](/windows/win32/api/batclass/nc-batclass-bclass_disable_status_notify_callback) 例程来取消 BatteryMiniSetStatusNotify 以前请求的电池状态更改的通知。 此例程声明如下：
 
 ```cpp
 typedef

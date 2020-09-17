@@ -4,17 +4,17 @@ description: 设置设备接口属性值
 ms.assetid: 44cef4e1-9fda-44fb-b37f-342099b5f7a0
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 81d7b78ef1413c75e8ce97a266fbbccca3b2ce86
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 745f2e319e402ca9b39fe8fbeee87fe4955e495d
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90106958"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90715912"
 ---
 # <a name="setting-a-device-interface-property-value"></a>设置设备接口属性值
 
 
-若要在 Windows Vista 和更高版本的 Windows 中设置 [设备接口属性](/previous-versions/ff541409(v=vs.85)) 的值，请调用 [**SetupDiSetDeviceInterfaceProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdisetdeviceinterfacepropertyw) 并提供以下参数值：
+若要在 Windows Vista 和更高版本的 Windows 中设置 [设备接口属性](/previous-versions/ff541409(v=vs.85)) 的值，请调用 [**SetupDiSetDeviceInterfaceProperty**](/windows/win32/api/setupapi/nf-setupapi-setupdisetdeviceinterfacepropertyw) 并提供以下参数值：
 
 -   将 *DeviceInfoSet* 设置为设备信息集的句柄，其中包含要为其设置设备接口属性的设备接口。
 
@@ -32,7 +32,7 @@ ms.locfileid: "90106958"
 
 -   将 *标志* 设置为零。
 
-如果对 [**SetupDiSetDeviceInterfaceProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdisetdeviceinterfacepropertyw) 的调用成功，则 **SetupDiSetDeviceInterfaceProperty** 将设置设备类属性并返回 **TRUE**。 如果函数调用失败， **SetupDiSetDeviceInterfaceProperty** 将返回 **FALSE** ，并且对 [GetLastError](https://go.microsoft.com/fwlink/p/?linkid=169416) 的调用将返回记录的错误代码。
+如果对 [**SetupDiSetDeviceInterfaceProperty**](/windows/win32/api/setupapi/nf-setupapi-setupdisetdeviceinterfacepropertyw) 的调用成功，则 **SetupDiSetDeviceInterfaceProperty** 将设置设备类属性并返回 **TRUE**。 如果函数调用失败， **SetupDiSetDeviceInterfaceProperty** 将返回 **FALSE** ，并且对 [GetLastError](https://go.microsoft.com/fwlink/p/?linkid=169416) 的调用将返回记录的错误代码。
 
  
 

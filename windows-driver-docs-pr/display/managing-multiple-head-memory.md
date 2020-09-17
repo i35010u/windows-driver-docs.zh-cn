@@ -6,12 +6,12 @@ keywords:
 - 多头硬件 WDK DirectX 9.0，内存管理
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 42d82499a0a7e4966b283cd46ca2c58308ca2a0c
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 270b30bc4ca51c716e44c766abc13e267cd531a9
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89065720"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90715306"
 ---
 # <a name="managing-multiple-head-memory"></a>管理多头内存
 
@@ -23,9 +23,9 @@ ms.locfileid: "89065720"
 
 驱动程序必须确保主头能够分配与从属磁头关联的内存。
 
-当运行时调用驱动程序的 [*DdDestroySurface*](/windows/desktop/api/ddrawint/nc-ddrawint-pdd_surfcb_destroysurface) 函数来销毁设置 DDSCAPS2 ADDITIONALPRIMARY 功能位的从属头上的图面时 \_ ，会通知驱动程序，使从属头再次控制其视频内存管理。
+当运行时调用驱动程序的 [*DdDestroySurface*](/windows/win32/api/ddrawint/nc-ddrawint-pdd_surfcb_destroysurface) 函数来销毁设置 DDSCAPS2 ADDITIONALPRIMARY 功能位的从属头上的图面时 \_ ，会通知驱动程序，使从属头再次控制其视频内存管理。
 
-大多数情况下，在现有 DirectDraw 过程中，这种选择哪一种拥有视频内存是固有的。 具体来说：
+大多数情况下，在现有 DirectDraw 过程中，这种选择哪一种拥有视频内存是固有的。 尤其是在下列情况下：
 
 -   使用 DDSCAPS2 ADDITIONALPRIMARY 位进行 *DdCreateSurface* 调用后，运行时保证不会在从属机头上发出后续分配请求 \_ 。 因此，在任何时候，都不需要驱动程序限制其自己的视频内存池的分配。
 

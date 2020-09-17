@@ -11,12 +11,12 @@ keywords:
 - 设备安装 WDK，类型
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4e97b5f66f759fe218ff251651681f38db1360e8
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 3dd33e215e67f1091cc3637b0ba02e3173d07635
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89095191"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90715080"
 ---
 # <a name="software-first-installation"></a>软件优先安装
 
@@ -35,7 +35,7 @@ ms.locfileid: "89095191"
 
 -   如果设备处于 "热插拔" 状态，请告知用户将其插入。
 
-    如果总线未提供热插拔通知，请通过调用 [**CM_Reenumerate_DevNode**](/windows/desktop/api/cfgmgr32/nf-cfgmgr32-cm_reenumerate_devnode)来启动 reenumeration。
+    如果总线未提供热插拔通知，请通过调用 [**CM_Reenumerate_DevNode**](/windows/win32/api/cfgmgr32/nf-cfgmgr32-cm_reenumerate_devnode)来启动 reenumeration。
 
 -   如果设备无法进行热插拔，请告知用户关闭系统，插入设备，然后重新打开系统。
 

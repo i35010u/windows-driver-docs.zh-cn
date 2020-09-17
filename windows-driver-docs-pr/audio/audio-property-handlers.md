@@ -16,12 +16,12 @@ keywords:
 - 节点 WDK 音频，属性处理程序
 ms.date: 08/07/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 73aded231ef51b827c305b15fa2698747d661227
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 5d1be69787fc40b7615fba903129610c8df62d75
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89208284"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90714825"
 ---
 # <a name="audio-property-handlers"></a>音频属性处理程序
 
@@ -41,7 +41,7 @@ ms.locfileid: "89208284"
 
 微型端口驱动程序可以为每个属性指定唯一的属性处理程序例程。 但是，如果驱动程序处理几个类似的属性，有时可能会将它们合并为单个处理程序例程以便于方便。 无论是为每个属性提供唯一的处理程序，还是要将多个属性合并为单个处理程序，都是由驱动程序编写器做出的实现决策，并且应对提交属性请求的客户端是透明的。
 
-用户模式客户端可以通过调用 Microsoft Win32 函数 [**DeviceIoControl**](/windows/desktop/api/ioapiset/nf-ioapiset-deviceiocontrol) ，并将 *dwIoControlCode* 调用参数设置为 IOCTL KS 属性来发送 get、set 或基本支持的属性请求 \_ \_ 。 操作系统将此调用转换为 [**IRP**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_irp)，并将其调度到类驱动程序。 有关详细信息，请参阅 [KS 属性](../stream/ks-properties.md)。
+用户模式客户端可以通过调用 Microsoft Win32 函数 [**DeviceIoControl**](/windows/win32/api/ioapiset/nf-ioapiset-deviceiocontrol) ，并将 *dwIoControlCode* 调用参数设置为 IOCTL KS 属性来发送 get、set 或基本支持的属性请求 \_ \_ 。 操作系统将此调用转换为 [**IRP**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_irp)，并将其调度到类驱动程序。 有关详细信息，请参阅 [KS 属性](../stream/ks-properties.md)。
 
 当客户端发送 KS 属性请求 (即，IOCTL \_ KS \_ 属性 I/O 控制 IRP) 到筛选器句柄或固定句柄，则 KS 系统驱动程序 ( # A0) 将请求传递给筛选器对象或固定对象的端口驱动程序。 如果微型端口驱动程序为属性提供处理程序，则端口驱动程序会将请求转发到处理程序。 转发请求之前，端口驱动程序将属性请求中的信息转换为 [**PCPROPERTY \_ 请求**](/windows-hardware/drivers/ddi/portcls/ns-portcls-_pcproperty_request) 结构指定的格式。 端口驱动程序将此结构传递给微型端口驱动程序的处理程序。
 
@@ -49,7 +49,7 @@ PCPROPERTY 请求的 **MajorTarget** 成员 \_ 指向音频设备的主要微型
 
 对于发送到筛选器句柄的 KS 属性请求，PCPROPERTY 请求的 **MinorTarget** 成员 \_ 为 **NULL**。 如果请求发送到 pin 句柄， **MinorTarget** 将指向该 pin 的流接口。 例如，对于 WavePci 设备，这是指向流对象的 [IMiniportWavePciStream](/windows-hardware/drivers/ddi/portcls/nn-portcls-iminiportwavepcistream) 接口的指针。
 
-PCPROPERTY 请求点的 **实例** 和 **值** 成员 \_ 分别为 KS 属性请求的输入和输出缓冲区。  (缓冲区由[**DeviceIoControl**](/windows/desktop/api/ioapiset/nf-ioapiset-deviceiocontrol)函数的*lpInBuffer*和*LpOutBuffer*参数指定。 ) 这些缓冲区分别包含 (实例数据) 和属性值 (操作数据) ，如[音频驱动程序属性集中](./audio-drivers-property-sets.md)所述。 **值**成员指向输出缓冲区的开头，但**实例**指针与输入缓冲区的开头偏移。
+PCPROPERTY 请求点的 **实例** 和 **值** 成员 \_ 分别为 KS 属性请求的输入和输出缓冲区。  (缓冲区由[**DeviceIoControl**](/windows/win32/api/ioapiset/nf-ioapiset-deviceiocontrol)函数的*lpInBuffer*和*LpOutBuffer*参数指定。 ) 这些缓冲区分别包含 (实例数据) 和属性值 (操作数据) ，如[音频驱动程序属性集中](./audio-drivers-property-sets.md)所述。 **值**成员指向输出缓冲区的开头，但**实例**指针与输入缓冲区的开头偏移。
 
 输入缓冲区以 [**KSPROPERTY**](/previous-versions/ff564262(v=vs.85)) 或 [**KSNODEPROPERTY**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksnodeproperty) 结构开头。 端口驱动程序将此结构中的信息复制到 PCPROPERTY \_ 请求结构的 **Node**、 **PropertyItem**和 **Verb** 成员中。 如果任何数据遵循缓冲区中的 KSPROPERTY 或 KSNODEPROPERTY 结构，则端口驱动程序将使用指向此数据的指针加载 **实例** 成员。 否则，它会将 **实例** 设置为 **NULL**。
 

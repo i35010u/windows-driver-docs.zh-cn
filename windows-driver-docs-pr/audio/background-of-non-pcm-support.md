@@ -9,12 +9,12 @@ keywords:
 - DirectSound WDK 音频，非 PCM 支持
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3d01020d43006d09bc5437d752eef518e114630b
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: f2016b09663b77165b9fc23f1f62cca3937f96ea
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89208241"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90714822"
 ---
 # <a name="background-of-non-pcm-support"></a>非 PCM 支持的背景
 
@@ -36,7 +36,7 @@ Windows XP 及更高版本和 Windows Me 通过允许非 PCM 音频数据直接�
 
 ### <a name="span-iddirectsound_apispanspan-iddirectsound_apispanspan-iddirectsound_apispandirectsound-api"></a><span id="DirectSound_API"></span><span id="directsound_api"></span><span id="DIRECTSOUND_API"></span>DirectSound API
 
-在传统的 waveOut 驱动程序和 VxD 驱动程序上，DirectSound 支持 [**WAVEFORMATEX**](/windows/desktop/api/mmreg/ns-mmreg-twaveformatex) (但不能) PCM 格式用于主和辅助缓冲区，每个样本有8个或16位、一个或两个通道，以及 100 Hz 到 100 kHz 之间的采样速率。 当协作级别设置为 DSSCL WRITEPRIMARY 时，VxD 驱动程序可以进一步限制主缓冲区允许的格式 \_ (参阅 DIRECTX SDK 中的 **IDirectSoundBuffer：： SetFormat** 方法的说明) 。 这些限制在 Windows Me 或 Windows XP 中没有更改。
+在传统的 waveOut 驱动程序和 VxD 驱动程序上，DirectSound 支持 [**WAVEFORMATEX**](/windows/win32/api/mmreg/ns-mmreg-twaveformatex) (但不能) PCM 格式用于主和辅助缓冲区，每个样本有8个或16位、一个或两个通道，以及 100 Hz 到 100 kHz 之间的采样速率。 当协作级别设置为 DSSCL WRITEPRIMARY 时，VxD 驱动程序可以进一步限制主缓冲区允许的格式 \_ (参阅 DIRECTX SDK 中的 **IDirectSoundBuffer：： SetFormat** 方法的说明) 。 这些限制在 Windows Me 或 Windows XP 中没有更改。
 
 WDM 驱动程序可以支持 WAVEFORMATEX 和 WAVEFORMATEXTENSIBLE 形式的 PCM 格式。 对于 Windows 2000 及更高版本、Windows Me 和 Windows 98 SE，驱动程序还可以支持 \_ \_ \_ \_ LOCSOFTWARE 和 WAVEFORMATEXTENSIBLE 形式 () 混合的主和辅助 DSBCAPS 缓冲区的波形格式 IEEE 浮点格式。
 

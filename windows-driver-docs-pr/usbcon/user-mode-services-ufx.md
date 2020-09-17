@@ -3,19 +3,19 @@ description: 通过发送 i/o 控制代码 (IOCTL) 请求来创建与 GenericUSB
 title: 从用户模式服务与 GenericUSBFn.sys 通信
 ms.date: 07/26/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 1fe1133bb24170b9b8a3492664f12d4a3d6ba4df
-ms.sourcegitcommit: 937974aa9bbe0262a7ffe9631593fab48c4e7492
+ms.openlocfilehash: 1ffa3988af4270e4e2278b625434e21f38b996f3
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "90010491"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90715038"
 ---
 # <a name="communicating-with-genericusbfnsys-from-a-user-mode-service"></a>从用户模式服务与 GenericUSBFn.sys 通信 
 
 
 所有用户模式请求都将发送到 Microsoft 提供的内核模式驱动程序 GenericUSBFn.sys。 可以通过将这些 i/o 控制代码发送 (IOCTL) ，并 GenericUSBFn.sys 处理与 USB 函数驱动程序的内核模式通信，来创建与 GenericUSBFn.sys 通信的用户模式服务。
 
-在 [Genericusbfnioctl](/windows/desktop/api/genericusbfnioctl/) 中声明的 IOCTLs 用于与来自用户模式服务的 GenericUSBFn.sys 进行通信。
+在 [Genericusbfnioctl](/windows/win32/api/genericusbfnioctl/) 中声明的 IOCTLs 用于与来自用户模式服务的 GenericUSBFn.sys 进行通信。
 
 
 以下步骤描述了如何定义与 GenericUSBFn.sys 进行交互以与 USB 函数驱动程序通信的 USB 接口服务：

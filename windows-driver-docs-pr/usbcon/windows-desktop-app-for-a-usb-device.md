@@ -3,12 +3,12 @@ description: 了解应用程序如何调用 WinUSB 函数以与 USB 设备进行
 title: USB 设备的 Windows 桌面应用
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d91f680b5d9a9e3fcf0df35ccd6c345e0e35ce92
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 18a192a666b49ac85e0238c5c8cc899691226c91
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90102824"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90715230"
 ---
 # <a name="windows-desktop-app-for-a-usb-device"></a>USB 设备的 Windows 桌面应用
 
@@ -17,7 +17,7 @@ ms.locfileid: "90102824"
 
 如果使用 Winusb.sys 作为 USB 设备的功能驱动程序，则可以从应用程序中调用 [WinUSB 函数](/previous-versions/windows/hardware/drivers/ff540046(v=vs.85)#winusb) 以与设备进行通信。 这些函数由用户模式 DLL Winusb.dll 公开，用于简化通信过程。 应用程序调用等效的 WinUSB 函数，而不是构建设备 i/o 控制请求来执行标准 USB 操作 (例如配置设备、发送控制请求以及将数据传输到设备) 。
 
-Winusb.dll 使用应用程序提供的数据来构造相应的设备 i/o 控制请求，然后将请求发送到 Winusb.sys 进行处理。 若要与 USB stack 通信，WinUSB 函数会调用 [**DeviceIoControl**](/windows/desktop/api/ioapiset/nf-ioapiset-deviceiocontrol) 函数，其中包含与应用程序的请求相关联的相应 IOCTL。 请求完成后，WinUSB 函数会将 Winusb.sys (返回的任何信息（例如读取) 请求中的数据）传递回调用进程。 如果对 **DeviceIoControl** 的调用成功，它将返回一个非零值。 如果调用失败或挂起 (未立即处理) ，则 **DeviceIoControl** 将返回一个零值。 如果发生错误，应用程序可以调用 [**GetLastError**](/windows/desktop/api/errhandlingapi/nf-errhandlingapi-getlasterror) 以获取更详细的错误消息。
+Winusb.dll 使用应用程序提供的数据来构造相应的设备 i/o 控制请求，然后将请求发送到 Winusb.sys 进行处理。 若要与 USB stack 通信，WinUSB 函数会调用 [**DeviceIoControl**](/windows/win32/api/ioapiset/nf-ioapiset-deviceiocontrol) 函数，其中包含与应用程序的请求相关联的相应 IOCTL。 请求完成后，WinUSB 函数会将 Winusb.sys (返回的任何信息（例如读取) 请求中的数据）传递回调用进程。 如果对 **DeviceIoControl** 的调用成功，它将返回一个非零值。 如果调用失败或挂起 (未立即处理) ，则 **DeviceIoControl** 将返回一个零值。 如果发生错误，应用程序可以调用 [**GetLastError**](/windows/win32/api/errhandlingapi/nf-errhandlingapi-getlasterror) 以获取更详细的错误消息。
 
 使用 WinUSB 函数与设备进行通信比实现驱动程序更简单。 不过，请注意以下限制：
 
@@ -69,7 +69,7 @@ Winusb.dll 使用应用程序提供的数据来构造相应的设备 i/o 控制�
 <td><p>你可以通过以下两种方式之一编写你的第一个应用：</p>
 <ul>
 <li><p>基于包含在 Visual Studio 中的 WinUSB 模板编写你的应用程序。 有关详细信息，请参阅 <a href="how-to-write-a-windows-desktop-app-that-communicates-with-a-usb-device.md" data-raw-source="[Write a Windows desktop app based on the WinUSB template](how-to-write-a-windows-desktop-app-that-communicates-with-a-usb-device.md)">基于 WinUSB 模板编写 Windows 桌面应用</a>。</p></li>
-<li><p>调用 <a href="/windows-hardware/drivers/install/setupapi" data-raw-source="[SetupAPI](../install/setupapi.md)">setupapi.log</a> 例程以获取设备的句柄，并通过调用 <a href="/windows/desktop/api/winusb/nf-winusb-winusb_initialize" data-raw-source="[&lt;strong&gt;WinUsb_Initialize&lt;/strong&gt;](/windows/desktop/api/winusb/nf-winusb-winusb_initialize)"><strong>WinUsb_Initialize</strong></a>将其打开。 有关详细信息，请参阅 <a href="using-winusb-api-to-communicate-with-a-usb-device.md" data-raw-source="[How to Access a USB Device by Using WinUSB Functions](using-winusb-api-to-communicate-with-a-usb-device.md)">如何使用 WinUSB 功能访问 USB 设备</a>。</p></li>
+<li><p>调用 <a href="/windows-hardware/drivers/install/setupapi" data-raw-source="[SetupAPI](../install/setupapi.md)">setupapi.log</a> 例程以获取设备的句柄，并通过调用 <a href="/windows/win32/api/winusb/nf-winusb-winusb_initialize" data-raw-source="[&lt;strong&gt;WinUsb_Initialize&lt;/strong&gt;](/windows/win32/api/winusb/nf-winusb-winusb_initialize)"><strong>WinUsb_Initialize</strong></a>将其打开。 有关详细信息，请参阅 <a href="using-winusb-api-to-communicate-with-a-usb-device.md" data-raw-source="[How to Access a USB Device by Using WinUSB Functions](using-winusb-api-to-communicate-with-a-usb-device.md)">如何使用 WinUSB 功能访问 USB 设备</a>。</p></li>
 </ul></td>
 </tr>
 <tr class="even">

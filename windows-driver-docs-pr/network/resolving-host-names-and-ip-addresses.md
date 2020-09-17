@@ -10,12 +10,12 @@ keywords:
 - 传输地址 WDK Winsock 内核
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 72cafce68e3af0afb318d671e36fd7b7a0545e3e
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: b8e8f8e6374df1c0a601e5ba9d2f74b73522cb6d
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89215033"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90715516"
 ---
 # <a name="resolving-host-names-and-ip-addresses"></a>解析主机名和 IP 地址
 
@@ -28,7 +28,7 @@ ms.locfileid: "89215033"
 
 -   [**WskGetNameInfo**](/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_get_name_info)
 
-这些函数分别与用户模式函数 [**FreeAddrInfoW**](/windows/desktop/api/ws2tcpip/nf-ws2tcpip-freeaddrinfow)、 [**GetAddrInfoW**](/windows/desktop/api/ws2tcpip/nf-ws2tcpip-getaddrinfow)和 [**GetNameInfoW**](/windows/desktop/api/ws2tcpip/nf-ws2tcpip-getnameinfow)执行名称地址转换。
+这些函数分别与用户模式函数 [**FreeAddrInfoW**](/windows/win32/api/ws2tcpip/nf-ws2tcpip-freeaddrinfow)、 [**GetAddrInfoW**](/windows/win32/api/ws2tcpip/nf-ws2tcpip-getaddrinfow)和 [**GetNameInfoW**](/windows/win32/api/ws2tcpip/nf-ws2tcpip-getnameinfow)执行名称地址转换。
 
 若要利用此功能，必须使用 NTDDI \_ 版本宏设置为 NTDDI \_ WIN7 或更高版本来编译或重新编译该驱动程序。
 

@@ -7,12 +7,12 @@ keywords:
 - 网络接口 WDK，管理
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1320488d8e1514ef102ea21a7a31b7ae1b7af15c
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: aae2cb572a3504cd3d605093b94115dc249d84f3
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89216174"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90715740"
 ---
 # <a name="managing-ndis-network-interfaces"></a>管理 NDIS 网络接口
 
@@ -20,7 +20,7 @@ ms.locfileid: "89216174"
 
 
 
-NDIS 网络接口提供程序向 NDIS 注册网络接口。 在注册接口之前，接口提供程序会获取该接口的 [**NET \_ LUID**](/windows/desktop/api/ifdef/ns-ifdef-net_luid_lh) 值。 当注册时，NDIS 会将 ( 在 RFC 2863) 的 *IfIndex* 中的接口索引分配给接口。
+NDIS 网络接口提供程序向 NDIS 注册网络接口。 在注册接口之前，接口提供程序会获取该接口的 [**NET \_ LUID**](/windows/win32/api/ifdef/ns-ifdef-net_luid_lh) 值。 当注册时，NDIS 会将 ( 在 RFC 2863) 的 *IfIndex* 中的接口索引分配给接口。
 
 NDIS 还提供了一些服务，驱动程序可以使用这些服务来管理 (RFC 2863) 中的接口堆栈 *表中的* 条目。
 

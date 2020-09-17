@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: a5b1cf53858fe25319325603a08bcea1e64ce73b
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 951846d33f4593111d8f11f71a81b446cedd138c
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89095151"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90715272"
 ---
 # <a name="devpkey_device_sessionid"></a>DEVPKEY_Device_SessionId
 
@@ -70,7 +70,7 @@ DEVPKEY_Device_SessionId 设备属性表示一个值，该值指示可在其中�
 
 -   如果 DEVPKEY_Device_SessionId 属性存在并且属性的值设置为零，则只能通过服务访问设备。 会话零是一种特殊会话，其中只能运行服务。
 
-可以通过调用 [**SetupDiGetDeviceProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw) 和 [**SetupDiSetDeviceProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdisetdevicepropertyw)访问 DEVPKEY_Device_SessionId 属性。
+可以通过调用 [**SetupDiGetDeviceProperty**](/windows/win32/api/setupapi/nf-setupapi-setupdigetdevicepropertyw) 和 [**SetupDiSetDeviceProperty**](/windows/win32/api/setupapi/nf-setupapi-setupdisetdevicepropertyw)访问 DEVPKEY_Device_SessionId 属性。
 
 Windows Server 2003、Windows XP 和 Windows 2000 不支持此属性。
 
@@ -80,12 +80,12 @@ Windows Server 2003、Windows XP 和 Windows 2000 不支持此属性。
 **版本**： windows Vista 和更高版本的 windows **标题**： Devpkey (包含 Devpkey) 
 
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
-[**SetupDiGetDeviceProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)
+[**SetupDiGetDeviceProperty**](/windows/win32/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)
 
-[**SetupDiSetDeviceProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdisetdevicepropertyw)
+[**SetupDiSetDeviceProperty**](/windows/win32/api/setupapi/nf-setupapi-setupdisetdevicepropertyw)
 
  
 

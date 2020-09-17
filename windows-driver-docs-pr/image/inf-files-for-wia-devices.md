@@ -4,12 +4,12 @@ description: WIA 设备的 INF 文件
 ms.assetid: 65eac8b5-35d2-4537-8646-a35a1cf9aced
 ms.date: 07/18/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 0f34525c45bdaf94a7cef2e3e9a19d5f13e0736e
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 5ae7a1de6a227954ccd3b8b839683b67065581bb
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90105354"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90716404"
 ---
 # <a name="inf-files-for-wia-devices"></a>WIA 设备的 INF 文件
 
@@ -100,7 +100,7 @@ ms.locfileid: "90105354"
 
  
 
-**注意**   为了与设备进行通信，用户模式客户端 (微型驱动程序) 必须向 WIA 服务询问设备的文件名以及指定要创建或打开的对象的名称的字符串。  (文件名不必是磁盘文件的名称。 ) 响应此类查询，WIA 服务将从 **CreateFileName** 注册表项中获取设备的文件名。  (*usbscan.sys* 和 *scsiscan.sys* 内核模式驱动程序会创建此项，这与类安装程序一样。 ) 微型驱动程序通过调用 [**IStiDeviceControl：： GetMyDevicePortName**](/windows-hardware/drivers/ddi/stiusd/nf-stiusd-istidevicecontrol-getmydeviceportname) 方法接收此文件名。 然后，微型驱动程序可以在调用 Microsoft Windows SDK 文档) 中描述的 [**CreateFile**](/windows/desktop/api/fileapi/nf-fileapi-createfilea) (函数时使用此文件名，以打开设备的句柄。
+**注意**   为了与设备进行通信，用户模式客户端 (微型驱动程序) 必须向 WIA 服务询问设备的文件名以及指定要创建或打开的对象的名称的字符串。  (文件名不必是磁盘文件的名称。 ) 响应此类查询，WIA 服务将从 **CreateFileName** 注册表项中获取设备的文件名。  (*usbscan.sys* 和 *scsiscan.sys* 内核模式驱动程序会创建此项，这与类安装程序一样。 ) 微型驱动程序通过调用 [**IStiDeviceControl：： GetMyDevicePortName**](/windows-hardware/drivers/ddi/stiusd/nf-stiusd-istidevicecontrol-getmydeviceportname) 方法接收此文件名。 然后，微型驱动程序可以在调用 Microsoft Windows SDK 文档) 中描述的 [**CreateFile**](/windows/win32/api/fileapi/nf-fileapi-createfilea) (函数时使用此文件名，以打开设备的句柄。
 如果手动安装了设备，则类安装程序会创建 **CreateFileName** 条目，并将其值设置为依赖于端口选择页面上用户选择的值： COM*X*、LPT*X*或 AUTO。 某些设备 (网络扫描仪，例如手动安装) ，无需端口。 在这种情况下，生成的端口选择对话框会使用户感到困惑。 可以通过在设备 INF 文件的 " [**Inf DDInstall" 部分**](../install/inf-ddinstall-section.md) 添加以下条目来阻止显示此对话框：
 
  

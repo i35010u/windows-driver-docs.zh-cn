@@ -14,12 +14,12 @@ keywords:
 - 帧缓冲区中的多个银行 WDK Windows 2000 显示
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 077fb98204db1bc0cff38ead30ccdd415426080b
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 3f9d34cfb9c4d0f553931c113b2aea48b00000a2
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89064002"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90714984"
 ---
 # <a name="supporting-banked-frame-buffers"></a>支持内存库中的帧缓冲区
 
@@ -55,7 +55,7 @@ GDI 无法直接访问与存款帧缓冲区关联的 *存款内存* 。 因此�
 
 执行存款帧缓冲时，显示驱动程序可以通过检查调用的参数或通过回调到 GDI 来确定对象的边界 (目标矩形的大小) 。 从对象的边界，驱动程序可以确定对象跨越了多少个银行。 对于边框触及的每个单元，显示驱动程序会回拨到适当的 GDI draw 函数，从而更改每个调用的值。
 
-驱动程序将最初由 GDI 传递的 [**CLIPOBJ**](/windows/desktop/api/winddi/ns-winddi-_clipobj) 成员更改为与银行边界中的更改相对应。 重新定义了前和下一个扫描值，以便 GDI 不会尝试在银行的限制之外进行绘制。 银行经理获取从 GDI 获取的原始 CLIPOBJ 数据，并保留值以便以后还原。 然后，它将更改边界以提供新的 **rclBounds** 和 **rclBounds** 值，这些值描述要绘制到的银行的范围。 在银行期间，GDI 必须对大小执行剪裁，以防止绘制整个路径并覆盖当前银行的限制。
+驱动程序将最初由 GDI 传递的 [**CLIPOBJ**](/windows/win32/api/winddi/ns-winddi-_clipobj) 成员更改为与银行边界中的更改相对应。 重新定义了前和下一个扫描值，以便 GDI 不会尝试在银行的限制之外进行绘制。 银行经理获取从 GDI 获取的原始 CLIPOBJ 数据，并保留值以便以后还原。 然后，它将更改边界以提供新的 **rclBounds** 和 **rclBounds** 值，这些值描述要绘制到的银行的范围。 在银行期间，GDI 必须对大小执行剪裁，以防止绘制整个路径并覆盖当前银行的限制。
 
 如果由 GDI 传递的原始 CLIPOBJ 定义为 **NULL** 或 DC \_ 普通，则显示驱动程序将传递通过 **ENGCREATECLIP** 创建的替代 CLIPOBJ，使 GDI 能够剪辑到单个银行的范围。 如果 CLIPOBJ 非常复杂，如上图中所示，椭圆上的一个三角形剪辑对象，则显示驱动程序将使用 **rclBounds** 和 **rclBounds** 值修改复杂的 CLIPOBJ，以在两个剪辑对象之间产生累加效果。 因此，禁止 GDI 写入银行的末尾。 驱动程序还必须还原以前从 GDI 中获取的 CLIPOBJ 数据的原始界限。
 

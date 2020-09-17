@@ -9,12 +9,12 @@ keywords:
 - Windows Vista 显示器驱动程序模型 WDK，VSync 控件
 ms.date: 10/14/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: ece31a8de1ccf2276c5819f2fad18cd9e7c508c7
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 708042753e9456548d77b3b5d9f85ffd1f42c8f5
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89066340"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90715118"
 ---
 # <a name="saving-energy-with-vsync-control"></a>节能与 VSync 控制
 
@@ -42,7 +42,7 @@ ms.locfileid: "89066340"
 
   在这种情况下，KMDOD 还必须实现 [*DxgkDdiInterruptRoutine*](/windows-hardware/drivers/ddi/dispmprt/nc-dispmprt-dxgkddi_interrupt_routine) 和 [*DxgkDdiDpcRoutine*](/windows-hardware/drivers/ddi/dispmprt/nc-dispmprt-dxgkddi_dpc_routine) 函数以便向操作系统报告 VSync 中断。
 
-  此外，不能**D3DKMDT_FREQUENCY_NOTSPECIFIED** [DISPLAYCONFIG_VIDEO_SIGNAL_INFO](/windows/desktop/api/wingdi/ns-wingdi-displayconfig_video_signal_info)结构的**PixelRate**、 **hSyncFreq**和**vSyncFreq**成员的值。
+  此外，不能**D3DKMDT_FREQUENCY_NOTSPECIFIED** [DISPLAYCONFIG_VIDEO_SIGNAL_INFO](/windows/win32/api/wingdi/ns-wingdi-displayconfig_video_signal_info)结构的**PixelRate**、 **hSyncFreq**和**vSyncFreq**成员的值。
 
 - **仅显示驱动程序不支持 VSync 控件**
 
@@ -50,7 +50,7 @@ ms.locfileid: "89066340"
 
   在这种情况下，Microsoft DirectX 图形内核子系统模拟 VSync 中断的值，并基于当前模式和最后一次模拟 VSync 的时间扫描行。
 
-  此外， [DISPLAYCONFIG_VIDEO_SIGNAL_INFO](/windows/desktop/api/wingdi/ns-wingdi-displayconfig_video_signal_info)结构的**PixelRate**、 **hSyncFreq**和**vSyncFreq**成员的值必须设置为**D3DKMDT_FREQUENCY_NOTSPECIFIED**。
+  此外， [DISPLAYCONFIG_VIDEO_SIGNAL_INFO](/windows/win32/api/wingdi/ns-wingdi-displayconfig_video_signal_info)结构的**PixelRate**、 **hSyncFreq**和**vSyncFreq**成员的值必须设置为**D3DKMDT_FREQUENCY_NOTSPECIFIED**。
 
 如果未满足这些条件，DirectX 图形内核子系统将不会加载 KMDOD。
 

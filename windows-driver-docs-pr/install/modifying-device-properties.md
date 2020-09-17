@@ -8,12 +8,12 @@ keywords:
 - 修改设备属性 WDK 设备安装
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0123e13d64fbdb02cb35859cc5fe57a97c4a0035
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 2e1fd6979576e2a33fd835ba5255328f15ba4f89
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89095021"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90715538"
 ---
 # <a name="rules-for-modifying-device-properties"></a>修改设备属性的规则
 
@@ -22,7 +22,7 @@ ms.locfileid: "89095021"
 
 直接修改保留属性可能会使设备安装状态无效。 例如，如果更改了 [**DEVPKEY_Device_DeviceDesc**](./devpkey-device-devicedesc.md) ，则系统功能 (如备份、驱动程序回滚和 Windows 更新) 可能会中断。
 
-以下属性是只读的，绝不能用 [**SetupDiSetDeviceProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdisetdevicepropertyw)设置：
+以下属性是只读的，绝不能用 [**SetupDiSetDeviceProperty**](/windows/win32/api/setupapi/nf-setupapi-setupdisetdevicepropertyw)设置：
 
 -   [**DEVPKEY_Device_Address**](./devpkey-device-address.md)
 

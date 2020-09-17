@@ -4,19 +4,19 @@ description: TAEF 将测试作为本地系统运行。
 ms.assetid: E1138F36-D043-458A-8424-C649854CB7EE
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 06a1fe4efaeac246ff567baa516be8cf958832c8
-ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
+ms.openlocfilehash: 5f1e52bf8cb9d14975a1a43906d79677f5c26c92
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89402770"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90715040"
 ---
 # <a name="runas-system"></a>RunAs System
 
 
 TAEF 将测试作为本地系统运行。
 
-**注意**   作为 "本地系统" 运行的测试不应创建 (UI) 的任何用户界面。 如果测试需要创建 UI 或与 UI 交互，则需要将与 UI 相关的代码移到使用 [**CreateProcessAsUser 函数**](/windows/desktop/api/processthreadsapi/nf-processthreadsapi-createprocessasusera)在桌面上启动的独立可执行文件。
+**注意**   作为 "本地系统" 运行的测试不应创建 (UI) 的任何用户界面。 如果测试需要创建 UI 或与 UI 交互，则需要将与 UI 相关的代码移到使用 [**CreateProcessAsUser 函数**](/windows/win32/api/processthreadsapi/nf-processthreadsapi-createprocessasusera)在桌面上启动的独立可执行文件。
 
  
 

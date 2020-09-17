@@ -10,12 +10,12 @@ keywords:
 - 映射 COPP DDI WDK DirectX VA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0f7cdc1e26d6b858483e64d774ced84a803cf3fa
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: c0171f3809e308dd3282f34f3cedc743a809f29b
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89065420"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90715826"
 ---
 # <a name="mapping-the-copp-ddi-to-directdraw-and-directx-va"></a>将 COPP DDI 映射到 DirectDraw 和 DirectX VA
 
@@ -29,7 +29,7 @@ ms.locfileid: "89065420"
 
 COPP DDI 可映射到运动补偿回调函数，因为它们不使用类型化参数 (也就是说，其单个参数是指向结构) 的指针。 换句话说，传递给运动补偿回调函数的单个参数中的信息可根据其信息类型进行处理。
 
-例如，如果将 **DXVA \_ COPPGetCertificateLengthFnCode**类型的信息传递到 [*DdMoCompRender*](/windows/desktop/api/ddrawint/nc-ddrawint-pdd_mocompcb_render) 函数，则 *DdMoCompRender* 可以启动对 COPPGetCertificateLength DDI 的 [*COPP*](./coppgetcertificatelength.md) 函数的调用，以查询图形硬件使用的证书的长度（以字节为单位）。 但是，如果 **将 DXVA \_ COPPSequenceStartFnCode**类型的信息传递给 *DdMoCompRender* ，则 *DdMoCompRender* 可以启动对 COPPSequenceStart DDI 的 [*COPP*](./coppsequencestart.md) 函数的调用，以指示当前视频会话上受保护的命令和状态序列的开头。
+例如，如果将 **DXVA \_ COPPGetCertificateLengthFnCode**类型的信息传递到 [*DdMoCompRender*](/windows/win32/api/ddrawint/nc-ddrawint-pdd_mocompcb_render) 函数，则 *DdMoCompRender* 可以启动对 COPPGetCertificateLength DDI 的 [*COPP*](./coppgetcertificatelength.md) 函数的调用，以查询图形硬件使用的证书的长度（以字节为单位）。 但是，如果 **将 DXVA \_ COPPSequenceStartFnCode**类型的信息传递给 *DdMoCompRender* ，则 *DdMoCompRender* 可以启动对 COPPSequenceStart DDI 的 [*COPP*](./coppsequencestart.md) 函数的调用，以指示当前视频会话上受保护的命令和状态序列的开头。
 
 以下主题介绍了如何将 COPP DDI 映射到运动补偿回调函数：
 

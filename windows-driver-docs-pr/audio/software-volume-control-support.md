@@ -4,12 +4,12 @@ description: 软件音量控制支持
 ms.assetid: 2bdc7d01-9e47-4deb-b551-13e9cbc9c844
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: aa4fd603ce76f33c9f2a314d7ad7ea6f5e8c8f2d
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: a70106f7763684ed75c3d3779bb0af266bb3c479
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89210405"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90716100"
 ---
 # <a name="software-volume-control-support"></a>软件音量控制支持
 
@@ -24,19 +24,19 @@ ms.locfileid: "89210405"
 
 在典型的 PC 上，只会出现其中一个数据路径，因为计算机中通常会有一组音频组件。 此处显示了这两个路径用于说明目的。
 
-[**IAudioEndpointVolume**](/windows/desktop/api/endpointvolume/nn-endpointvolume-iaudioendpointvolume)接口表示音频流上音频流中的音量控件和音频终结点设备。
+[**IAudioEndpointVolume**](/windows/win32/api/endpointvolume/nn-endpointvolume-iaudioendpointvolume)接口表示音频流上音频流中的音量控件和音频终结点设备。
 
 如果存在蓝牙或 USB 音频，则会单独控制其音量控制。
 
 ## <a name="span-iddata_path_with_amplifier_presentspanspan-iddata_path_with_amplifier_presentspanspan-iddata_path_with_amplifier_presentspandata-path-with-amplifier-present"></a><span id="Data_path_with_amplifier_present"></span><span id="data_path_with_amplifier_present"></span><span id="DATA_PATH_WITH_AMPLIFIER_PRESENT"></span>具有放大器的数据路径存在
 
 
-当客户端应用程序在具有放大器且存在物理音量控制的配置中调用 [**IAudioEndpointVolume**](/windows/desktop/api/endpointvolume/nn-endpointvolume-iaudioendpointvolume) 接口时，音频驱动程序会 \_ 在拓扑筛选器中公开一个 KSNODETYPE 卷节点。 卷节点的存在使 **IAudioEndpointVolume** 知道音频信号的音量级别将由硬件修改。
+当客户端应用程序在具有放大器且存在物理音量控制的配置中调用 [**IAudioEndpointVolume**](/windows/win32/api/endpointvolume/nn-endpointvolume-iaudioendpointvolume) 接口时，音频驱动程序会 \_ 在拓扑筛选器中公开一个 KSNODETYPE 卷节点。 卷节点的存在使 **IAudioEndpointVolume** 知道音频信号的音量级别将由硬件修改。
 
 ## <a name="span-iddata_path_with_no_amplifier_presentspanspan-iddata_path_with_no_amplifier_presentspanspan-iddata_path_with_no_amplifier_presentspandata-path-with-no-amplifier-present"></a><span id="Data_path_with_no_amplifier_present"></span><span id="data_path_with_no_amplifier_present"></span><span id="DATA_PATH_WITH_NO_AMPLIFIER_PRESENT"></span>不存在放大器的数据路径
 
 
-如果不存在放大器， [**IAudioEndpointVolume**](/windows/desktop/api/endpointvolume/nn-endpointvolume-iaudioendpointvolume) 将与音频引擎配合使用来初始化 Windows 软件卷支持 APO。
+如果不存在放大器， [**IAudioEndpointVolume**](/windows/win32/api/endpointvolume/nn-endpointvolume-iaudioendpointvolume) 将与音频引擎配合使用来初始化 Windows 软件卷支持 APO。
 
 由于没有要建模的物理卷控制，因此 \_ 拓扑筛选器中不会公开 KSNODETYPE 卷节点。 卷衰减和收益由 APO 软件容量支持组件执行。
 

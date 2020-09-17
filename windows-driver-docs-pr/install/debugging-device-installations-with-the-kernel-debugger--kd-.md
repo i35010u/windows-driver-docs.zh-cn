@@ -4,12 +4,12 @@ description: 使用内核调试程序 (KD) 调试设备安装
 ms.assetid: 0967d375-2602-44d2-b4ac-8d1e112afc3f
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ad6389f7a007bb6d05abc8da3f2cc050a82121eb
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 9d45ef0a76df81e698628b9b19db1ff40c671f51
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89097147"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90715598"
 ---
 # <a name="debugging-device-installations-with-the-kernel-debugger-kd"></a>使用内核调试程序 (KD) 调试设备安装
 
@@ -74,7 +74,7 @@ kd> .reload
 kd> bp[0x10] /p @$proc kernel32!LoadLibraryExW "gu;$$><Z:\\bpcoinst.txt;g"
 ```
 
-\[ \] 开发人员可以将其限制为仅在将类安装程序和共同安装程序 dll 加载到进程中的每个 LoadLibraryEx 调用上执行程序，而不是在)  (过程中执行此程序。 由于 [**SetupDiCallClassInstaller**](/windows/desktop/api/setupapi/nf-setupapi-setupdicallclassinstaller) 是调用为某个设备注册的类安装程序和共同安装程序的例程，因此这些 dll 将在该调用期间加载到进程中。
+\[ \] 开发人员可以将其限制为仅在将类安装程序和共同安装程序 dll 加载到进程中的每个 LoadLibraryEx 调用上执行程序，而不是在)  (过程中执行此程序。 由于 [**SetupDiCallClassInstaller**](/windows/win32/api/setupapi/nf-setupapi-setupdicallclassinstaller) 是调用为某个设备注册的类安装程序和共同安装程序的例程，因此这些 dll 将在该调用期间加载到进程中。
 
 因为在从*DrvInst.exe*主机进程中卸载这些 dll 时，不应进行任何假设，所以必须确保在从*DrvInst.exe*主机进程对**SetupDiCallClassInstaller**进行的任何调用期间，断点都可以处理定位 DLL 入口点。
 
@@ -84,9 +84,9 @@ kd> bp[0x11] /p @$proc setupapi!SetupDiCallClassInstaller "be[0x10];bp[0x12] /p 
 kd> g
 ```
 
-最初禁用 (bp 0x10) 执行调试器命令程序的断点 \[ \] 。 无论何时调用 [**SetupDiCallClassInstaller**](/windows/desktop/api/setupapi/nf-setupapi-setupdicallclassinstaller) 都 (bp 0x11) ，都将启用此功能 \[ \] ，并且继续执行。 当 SetupDiCallClassInstaller 返回时，将再次禁用调试程序命令 (程序 \[ \]) ，方法是在该例程本身 (bp 0x12) 的返回地址上设置断点**SetupDiCallClassInstaller** \[ \] 。
+最初禁用 (bp 0x10) 执行调试器命令程序的断点 \[ \] 。 无论何时调用 [**SetupDiCallClassInstaller**](/windows/win32/api/setupapi/nf-setupapi-setupdicallclassinstaller) 都 (bp 0x11) ，都将启用此功能 \[ \] ，并且继续执行。 当 SetupDiCallClassInstaller 返回时，将再次禁用调试程序命令 (程序 \[ \]) ，方法是在该例程本身 (bp 0x12) 的返回地址上设置断点**SetupDiCallClassInstaller** \[ \] 。
 
-请注意，禁用调试器命令程序的断点还会自行清除，并继续执行，直到再次调用 [**SetupDiCallClassInstaller**](/windows/desktop/api/setupapi/nf-setupapi-setupdicallclassinstaller) 或直到安装程序完成，并 (bp 0x13) 中清除所有断点 \[ \] 。
+请注意，禁用调试器命令程序的断点还会自行清除，并继续执行，直到再次调用 [**SetupDiCallClassInstaller**](/windows/win32/api/setupapi/nf-setupapi-setupdicallclassinstaller) 或直到安装程序完成，并 (bp 0x13) 中清除所有断点 \[ \] 。
 
 如果在设置上述断点后开始执行，则进程将在每次调用 mycoinst 时中断！CoInstallerProc. 这允许您在核心设备安装过程中调试类安装程序或共同安装程序 DLL 的执行。
 

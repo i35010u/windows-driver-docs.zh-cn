@@ -10,12 +10,12 @@ keywords:
 - 绘制 WDK GDI，DEVMODEW 结构
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 276b79119cc3dcf369da895f4242c25f863aa1b5
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: d58be6dfc10c595c0323e6918c8fcc7298e4179c
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89063778"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90715988"
 ---
 # <a name="the-devmodew-structure"></a>DEVMODEW 结构
 
@@ -23,7 +23,7 @@ ms.locfileid: "89063778"
 ## <span id="ddk_the_devmodew_structure_gg"></span><span id="DDK_THE_DEVMODEW_STRUCTURE_GG"></span>
 
 
-[**DEVMODEW**](/windows/desktop/api/wingdi/ns-wingdi-_devicemodew)结构是 DEVMODE 结构的 Unicode 版本，如 Microsoft Windows SDK 文档中所述。  ("DEVMODEW" 上的 "W" 后缀表示 "宽" 或 Unicode 字符。 ) 虽然应用程序可以使用这两种结构，但驱动程序需要使用 DEVMODEW 结构，而不是 DEVMODE 结构。
+[**DEVMODEW**](/windows/win32/api/wingdi/ns-wingdi-_devicemodew)结构是 DEVMODE 结构的 Unicode 版本，如 Microsoft Windows SDK 文档中所述。  ("DEVMODEW" 上的 "W" 后缀表示 "宽" 或 Unicode 字符。 ) 虽然应用程序可以使用这两种结构，但驱动程序需要使用 DEVMODEW 结构，而不是 DEVMODE 结构。
 
 ### <a name="span-idpublic_and_private_membersspanspan-idpublic_and_private_membersspanpublic-and-private-members"></a><span id="public_and_private_members"></span><span id="PUBLIC_AND_PRIVATE_MEMBERS"></span>公有和私有成员
 
@@ -41,11 +41,11 @@ ms.locfileid: "89063778"
 
 -   显示驱动程序 DEVMODEW 初始化
 
-    显示驱动程序的 [**DrvGetModes**](/windows/desktop/api/winddi/nf-winddi-drvgetmodes) 入口点将 DEVMODEW 结构的所有成员初始化为零。 然后， *DrvGetModes*将显示驱动程序 DLL 的名称复制到**dmDeviceName**成员，用 DEVMODEW 结构的版本填充**dmSpecVersion**和**dmDriverVersion**成员，并将显示属性信息复制到相应成员。
+    显示驱动程序的 [**DrvGetModes**](/windows/win32/api/winddi/nf-winddi-drvgetmodes) 入口点将 DEVMODEW 结构的所有成员初始化为零。 然后， *DrvGetModes*将显示驱动程序 DLL 的名称复制到**dmDeviceName**成员，用 DEVMODEW 结构的版本填充**dmSpecVersion**和**dmDriverVersion**成员，并将显示属性信息复制到相应成员。
 
 -   打印机驱动程序 DEVMODEW 初始化
 
-    当应用程序调用 **DocumentProperties** (打印机接口 DLL 函数（在 Microsoft Windows SDK 文档) 或 [**DRVDOCUMENTPROPERTYSHEETS**](/windows-hardware/drivers/ddi/winddiui/nf-winddiui-drvdocumentpropertysheets) (基于 NT 的操作系统图形 DDI) 中介绍）时，将使用默认值创建 DEVMODEW 结构。 然后，应用程序可以自由修改任何公用 DEVMODEW 成员。 在进行任何更改后，应用程序随后应对它调用的同一函数进行第二次调用，以便将已更改的成员与驱动程序的内部 DEVMODEW 结构的成员合并。 第二次调用是必需的，因为某些更改可能无法正常工作;若要更正 DEVMODEW 结构，必须调用打印机驱动程序。 打印文档时，应用程序会将合并的 DEVMODEW 结构传递到 Microsoft Windows SDK 文档) 中所述的 **CreateDC** (，并将其传递到 [**DrvEnablePDEV**](/windows/desktop/api/winddi/nf-winddi-drvenablepdev) DDI。 当时，驱动程序的呈现 DLL 会在执行打印作业之前验证 DEVMODEW 结构并进行修复（如有必要）。
+    当应用程序调用 **DocumentProperties** (打印机接口 DLL 函数（在 Microsoft Windows SDK 文档) 或 [**DRVDOCUMENTPROPERTYSHEETS**](/windows-hardware/drivers/ddi/winddiui/nf-winddiui-drvdocumentpropertysheets) (基于 NT 的操作系统图形 DDI) 中介绍）时，将使用默认值创建 DEVMODEW 结构。 然后，应用程序可以自由修改任何公用 DEVMODEW 成员。 在进行任何更改后，应用程序随后应对它调用的同一函数进行第二次调用，以便将已更改的成员与驱动程序的内部 DEVMODEW 结构的成员合并。 第二次调用是必需的，因为某些更改可能无法正常工作;若要更正 DEVMODEW 结构，必须调用打印机驱动程序。 打印文档时，应用程序会将合并的 DEVMODEW 结构传递到 Microsoft Windows SDK 文档) 中所述的 **CreateDC** (，并将其传递到 [**DrvEnablePDEV**](/windows/win32/api/winddi/nf-winddi-drvenablepdev) DDI。 当时，驱动程序的呈现 DLL 会在执行打印作业之前验证 DEVMODEW 结构并进行修复（如有必要）。
 
 ### <a name="span-idusing_a_devmodew_structurespanspan-idusing_a_devmodew_structurespanusing-a-devmodew-structure"></a><span id="using_a_devmodew_structure"></span><span id="USING_A_DEVMODEW_STRUCTURE"></span>使用 DEVMODEW 结构
 

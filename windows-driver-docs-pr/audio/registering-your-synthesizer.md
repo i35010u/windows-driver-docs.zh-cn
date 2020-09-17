@@ -11,12 +11,12 @@ keywords:
 - 自定义 synths WDK 音频，合成器注册
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 92689280fcf4f5983d4b118b99e60649c5422b50
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 5ccc4f8fa0505d29d5183d7fdc314968091270f8
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89211331"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90716098"
 ---
 # <a name="registering-your-synthesizer"></a>注册合成器
 
@@ -24,7 +24,7 @@ ms.locfileid: "89211331"
 ## <span id="registering_your_synthesizer"></span><span id="REGISTERING_YOUR_SYNTHESIZER"></span>
 
 
-创建软件合成器后，必须将其添加到系统注册表中，以便应用程序可用作可枚举的 DirectMusic 端口。 当安装程序调用 DLL 的 [**DllRegisterServer**](/windows/desktop/api/olectl/nf-olectl-dllregisterserver) COM 函数通知 dll 将自身注册为 COM 对象时，该函数也可注册合成器。 为此，该函数通过在以下路径中创建一个项来向可用软件合成程序列表添加条目：
+创建软件合成器后，必须将其添加到系统注册表中，以便应用程序可用作可枚举的 DirectMusic 端口。 当安装程序调用 DLL 的 [**DllRegisterServer**](/windows/win32/api/olectl/nf-olectl-dllregisterserver) COM 函数通知 dll 将自身注册为 COM 对象时，该函数也可注册合成器。 为此，该函数通过在以下路径中创建一个项来向可用软件合成程序列表添加条目：
 
 ```inf
   HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\DirectMusic\SoftwareSynths
@@ -81,7 +81,7 @@ ms.locfileid: "89211331"
   }
 ```
 
-`CLSIDToStr` 是一个本地定义的函数 (未显示在前面的代码示例中，) 该函数将 CLSID 值转换为字符串。 它类似于 Microsoft Windows SDK 文档中所述的 [**StringFromCLSID**](/windows/desktop/api/combaseapi/nf-combaseapi-stringfromclsid) 函数。
+`CLSIDToStr` 是一个本地定义的函数 (未显示在前面的代码示例中，) 该函数将 CLSID 值转换为字符串。 它类似于 Microsoft Windows SDK 文档中所述的 [**StringFromCLSID**](/windows/win32/api/combaseapi/nf-combaseapi-stringfromclsid) 函数。
 
  
 

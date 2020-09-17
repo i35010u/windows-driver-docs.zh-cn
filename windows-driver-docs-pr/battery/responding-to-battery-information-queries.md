@@ -6,12 +6,12 @@ keywords:
 - 电池信息 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2c938926b5a91941cd045715b0c622e4a9823f26
-ms.sourcegitcommit: 7a7e61b4147a4aa86bf820fd0b0c7681fe17e544
+ms.openlocfilehash: ce70caad395dd410ec012ef90fff87278ffbd967
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89056865"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90716582"
 ---
 # <a name="responding-to-battery-information-queries"></a>响应电池信息查询
 
@@ -19,7 +19,7 @@ ms.locfileid: "89056865"
 ## <span id="ddk_responding_to_battery_information_queries_dg"></span><span id="DDK_RESPONDING_TO_BATTERY_INFORMATION_QUERIES_DG"></span>
 
 
-电池类驱动程序调用 [*BatteryMiniQueryInformation*](/windows/desktop/api/batclass/nc-batclass-bclass_query_information_callback) 例程以获取有关当前电池的各种信息。 此例程声明如下：
+电池类驱动程序调用 [*BatteryMiniQueryInformation*](/windows/win32/api/batclass/nc-batclass-bclass_query_information_callback) 例程以获取有关当前电池的各种信息。 此例程声明如下：
 
 ```cpp
 typedef 
@@ -35,7 +35,7 @@ NTSTATUS
     );
 ```
 
-*上下文*参数是指向上下文区域的指针，该上下文区域由 miniclass 驱动程序分配，并在设备初始化时在[**电池 \_ 微型端口 \_ 信息**](/windows/desktop/api/batclass/ns-batclass-battery_miniport_info)结构中传递给类驱动程序。 *BatteryTag*参数是之前由[*BatteryMiniQueryTag*](/windows/desktop/api/batclass/nc-batclass-bclass_query_tag_callback)返回的值。
+*上下文*参数是指向上下文区域的指针，该上下文区域由 miniclass 驱动程序分配，并在设备初始化时在[**电池 \_ 微型端口 \_ 信息**](/windows/win32/api/batclass/ns-batclass-battery_miniport_info)结构中传递给类驱动程序。 *BatteryTag*参数是之前由[*BatteryMiniQueryTag*](/windows/win32/api/batclass/nc-batclass-bclass_query_tag_callback)返回的值。
 
 *Level*参数指定所请求的信息类型。 Miniclass 驱动程序将信息格式化为 [**电池 \_ 信息**](/previous-versions/ff536283(v=vs.85)) 结构，并将其返回到 *缓冲区*提供的地址，并在 *ReturnedLength*中将其指向其长度的指针。
 

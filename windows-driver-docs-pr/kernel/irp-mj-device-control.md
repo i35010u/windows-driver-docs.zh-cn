@@ -6,12 +6,12 @@ ms.assetid: c6436b34-22bd-4e65-bfb0-b2c4d9962e29
 keywords:
 - IRP_MJ_DEVICE_CONTROL 内核模式驱动程序体系结构
 ms.localizationpriority: medium
-ms.openlocfilehash: a3aa2da1e02ecdbd1a4387bc494df288ffedbe64
-ms.sourcegitcommit: 9b4760aae390b36dbdf9e0dd729a4a643c3f7831
+ms.openlocfilehash: f44a84a4e25fab6a63567934e04377e66f330297
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90565281"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90715052"
 ---
 # <a name="irp_mj_device_control"></a>IRP\_MJ\_DEVICE\_CONTROL
 
@@ -40,7 +40,7 @@ I/o 控制代码包含在 IRP 的驱动程序 i/o 堆栈位置的 **DeviceIoCont
 <a name="operation"></a>Operation
 ---------
 
-驱动程序收到此 i/o 控制代码，因为用户模式线程调用了 Microsoft Win32 [**DeviceIoControl**](/windows/desktop/api/ioapiset/nf-ioapiset-deviceiocontrol) 函数，或更高级别的内核模式驱动程序已设置该请求。 用户模式驱动程序已调用 **DeviceIoControl**，传入驱动程序定义的 (（也称为 *专用*) i/o 控制代码），以从紧密耦合的内核模式设备驱动程序请求特定于设备或驱动程序的支持。
+驱动程序收到此 i/o 控制代码，因为用户模式线程调用了 Microsoft Win32 [**DeviceIoControl**](/windows/win32/api/ioapiset/nf-ioapiset-deviceiocontrol) 函数，或更高级别的内核模式驱动程序已设置该请求。 用户模式驱动程序已调用 **DeviceIoControl**，传入驱动程序定义的 (（也称为 *专用*) i/o 控制代码），以从紧密耦合的内核模式设备驱动程序请求特定于设备或驱动程序的支持。
 
 收到设备 i/o 控制请求后，较高级别的驱动程序通常会将 IRP 传递到下一个较低的驱动程序。 但是，这种做法有一些例外情况。 例如，如果类驱动程序的存储配置信息是从基础端口驱动程序获取的，则可能会在 \_ 不将 IRP 向下传递到相应端口驱动程序的情况下完成特定的 IOCTL*XXX*请求。
 

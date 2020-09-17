@@ -10,12 +10,12 @@ keywords:
 - 嵌入指针 WDK IOCTLs
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 84b16f83a83f167fea0b19de35f27752f2a53ad5
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: d66fb183be9b01bdb39aa9044ea64659bc5586c1
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89189547"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90716148"
 ---
 # <a name="creating-ioctl-requests-in-drivers"></a>在驱动程序中创建 IOCTL 请求
 
@@ -61,6 +61,6 @@ ms.locfileid: "89189547"
 
 -   可以通过端口驱动程序在任意线程上下文中访问专用数据缓冲区。
 
-显示驱动程序可以调用 GDI 函数 [**EngDeviceIoControl**](/windows/desktop/api/winddi/nf-winddi-engdeviceiocontrol) ，通过系统视频端口驱动程序将专用定义的特定于设备的 i/o 控制请求以及系统定义的公共 i/o 控制请求发送到相应的特定于适配器的 [视频微型端口驱动程序](../display/video-miniport-drivers-in-the-windows-2000-display-driver-model.md)。
+显示驱动程序可以调用 GDI 函数 [**EngDeviceIoControl**](/windows/win32/api/winddi/nf-winddi-engdeviceiocontrol) ，通过系统视频端口驱动程序将专用定义的特定于设备的 i/o 控制请求以及系统定义的公共 i/o 控制请求发送到相应的特定于适配器的 [视频微型端口驱动程序](../display/video-miniport-drivers-in-the-windows-2000-display-driver-model.md)。
 
-驱动程序包的任何用户模式组件都可以调用 [**DeviceIoControl**](/windows/desktop/api/ioapiset/nf-ioapiset-deviceiocontrol) ，将 i/o 控制请求发送到驱动程序堆栈。 I/o 管理器创建 [**IRP \_ MJ \_ 设备 \_ 控制**](./irp-mj-device-control.md) 请求并将其传递到最高级别的驱动程序。
+驱动程序包的任何用户模式组件都可以调用 [**DeviceIoControl**](/windows/win32/api/ioapiset/nf-ioapiset-deviceiocontrol) ，将 i/o 控制请求发送到驱动程序堆栈。 I/o 管理器创建 [**IRP \_ MJ \_ 设备 \_ 控制**](./irp-mj-device-control.md) 请求并将其传递到最高级别的驱动程序。

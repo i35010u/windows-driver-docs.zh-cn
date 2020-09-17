@@ -6,12 +6,12 @@ keywords:
 - 取消隔行扫描 WDK DirectX VA，示例函数
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e0d0da8f5b3e4b46e1dc526c0ac5a018dcd3686a
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 033ee7984ef026c69cd08d38c5dffdf73d8128dc
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90104696"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90715126"
 ---
 # <a name="sample-functions-for-deinterlacing"></a>反交错的示例函数
 
@@ -19,7 +19,7 @@ ms.locfileid: "90104696"
 ## <span id="ddk_sample_functions_for_deinterlacing_gg"></span><span id="DDK_SAMPLE_FUNCTIONS_FOR_DEINTERLACING_GG"></span>
 
 
-本部分中的示例取消隔行扫描函数说明了如何实现取消隔行扫描和帧速率转换功能。 示例函数映射到[**DD \_ MOTIONCOMPCALLBACKS**](/windows/desktop/api/ddrawint/ns-ddrawint-dd_motioncompcallbacks)结构中定义的[运动补偿回调函数](motion-compensation-callbacks.md)。 您可以实现每个示例函数，然后使用 "运动补偿代码" 模板来完成实现。 有关详细信息，请参阅 [DIRECTX VA 设备的示例代码](example-code-for-directx-va-devices.md)。
+本部分中的示例取消隔行扫描函数说明了如何实现取消隔行扫描和帧速率转换功能。 示例函数映射到[**DD \_ MOTIONCOMPCALLBACKS**](/windows/win32/api/ddrawint/ns-ddrawint-dd_motioncompcallbacks)结构中定义的[运动补偿回调函数](motion-compensation-callbacks.md)。 您可以实现每个示例函数，然后使用 "运动补偿代码" 模板来完成实现。 有关详细信息，请参阅 [DIRECTX VA 设备的示例代码](example-code-for-directx-va-devices.md)。
 
 ### <a name="span-iddeinterlace_container_device_class_sample_functionsspanspan-iddeinterlace_container_device_class_sample_functionsspanspan-iddeinterlace_container_device_class_sample_functionsspandeinterlace-container-device-class-sample-functions"></a><span id="Deinterlace_Container_Device_Class_Sample_Functions"></span><span id="deinterlace_container_device_class_sample_functions"></span><span id="DEINTERLACE_CONTAINER_DEVICE_CLASS_SAMPLE_FUNCTIONS"></span>隔行扫描容器设备类示例函数
 

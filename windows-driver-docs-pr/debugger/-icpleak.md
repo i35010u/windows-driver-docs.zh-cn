@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 223d0a4905a3802ade7ba524019aed6c27db2a6a
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: ecdf6a8bb2f34d4647d3cadc30a54fcc3697d787
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89207374"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90716540"
 ---
 # <a name="icpleak"></a>!icpleak
 
@@ -63,7 +63,7 @@ ms.locfileid: "89207374"
 <a name="remarks"></a>备注
 -------
 
-当 i/o 完成池中存在泄漏时，此扩展很有用。 如果进程通过调用 [**postqueuedcompletionstatus 期间**](/windows/desktop/FileIO/postqueuedcompletionstatus)来分配 i/o 完成数据包，但未调用 [**GetQueuedCompletionStatus**](/windows/desktop/api/ioapiset/nf-ioapiset-getqueuedcompletionstatus) 来释放它们，或者进程正在将完成项排队到端口，但没有线程检索这些项，则可能会发生 i/o 完成池溢出。 若要检测泄漏，请运行 [**！ poolused**](-poolused.md) extension 并检查 ICP pool 标记的值。 如果用于 ICP 标记的池使用非常重要，则可能会发生泄露。
+当 i/o 完成池中存在泄漏时，此扩展很有用。 如果进程通过调用 [**postqueuedcompletionstatus 期间**](/windows/desktop/FileIO/postqueuedcompletionstatus)来分配 i/o 完成数据包，但未调用 [**GetQueuedCompletionStatus**](/windows/win32/api/ioapiset/nf-ioapiset-getqueuedcompletionstatus) 来释放它们，或者进程正在将完成项排队到端口，但没有线程检索这些项，则可能会发生 i/o 完成池溢出。 若要检测泄漏，请运行 [**！ poolused**](-poolused.md) extension 并检查 ICP pool 标记的值。 如果用于 ICP 标记的池使用非常重要，则可能会发生泄露。
 
 此扩展仅适用于系统维护类型列表的情况。 如果设置了 *HandleFlag* 并且系统有多个进程，则此扩展将需要较长时间才能运行。
 

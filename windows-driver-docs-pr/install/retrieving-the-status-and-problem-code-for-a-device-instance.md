@@ -4,19 +4,19 @@ description: 检索设备实例的状态和问题代码
 ms.assetid: 22ca9ac2-fe67-427d-a6e4-f1d9cbbede52
 ms.date: 02/28/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 98f95f09a387ce8c11f55bba30885894ae0ba525
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 4827b1b485245ad357fd653dda9e8bab16c3a61a
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89094967"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90715086"
 ---
 # <a name="retrieving-the-status-and-problem-code-for-a-device-instance"></a>检索设备实例的状态和问题代码
 
 
 在 Windows Vista 和更高版本的 Windows 中， [统一设备属性模型](unified-device-property-model--windows-vista-and-later-.md) 包括设备状态属性和问题代码属性。 统一设备属性模型使用 [属性键](property-keys.md) 来表示这些属性。
 
-Windows Server 2003、Windows XP 和 Windows 2000 不支持统一属性模型的属性键，也不支持表示这些属性的相应注册表项值。 但是，可以通过调用 [**CM_Get_DevNode_Status**](/windows/desktop/api/cfgmgr32/nf-cfgmgr32-cm_get_devnode_status) 函数来检索相应的信息。 为了保持与早期版本的 Windows 的兼容性，Windows Vista 及更高版本还支持 **CM_Get_DevNode_Status**。 但是，你应该使用统一设备属性模型的属性键来访问设备驱动程序属性。
+Windows Server 2003、Windows XP 和 Windows 2000 不支持统一属性模型的属性键，也不支持表示这些属性的相应注册表项值。 但是，可以通过调用 [**CM_Get_DevNode_Status**](/windows/win32/api/cfgmgr32/nf-cfgmgr32-cm_get_devnode_status) 函数来检索相应的信息。 为了保持与早期版本的 Windows 的兼容性，Windows Vista 及更高版本还支持 **CM_Get_DevNode_Status**。 但是，你应该使用统一设备属性模型的属性键来访问设备驱动程序属性。
 
 设备驱动程序属性由用于访问 Windows Vista 和更高版本中的属性的属性键标识符列出。
 

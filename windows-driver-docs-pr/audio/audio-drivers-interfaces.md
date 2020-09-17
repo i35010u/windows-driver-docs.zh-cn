@@ -4,12 +4,12 @@ description: 音频驱动程序接口
 ms.assetid: f0c3b2b6-e38b-4088-a70d-749cd772ac4c
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b34d51fbcec61b277dda86cd463c119b386f221c
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 60d2b395f3ff0ac919b603a26685426ea93e558f
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89208339"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90714834"
 ---
 # <a name="audio-drivers-interfaces"></a>音频驱动程序接口
 
@@ -18,23 +18,23 @@ ms.locfileid: "89208339"
 
 以下主题提供有关 sAPOs 公开的接口和方法的信息。
 
-[IAudioMediaType](/windows/desktop/api/audiomediatype/nn-audiomediatype-iaudiomediatype)
+[IAudioMediaType](/windows/win32/api/audiomediatype/nn-audiomediatype-iaudiomediatype)
 
-[IAudioProcessingObject](/windows/desktop/api/audioenginebaseapo/nn-audioenginebaseapo-iaudioprocessingobject)
+[IAudioProcessingObject](/windows/win32/api/audioenginebaseapo/nn-audioenginebaseapo-iaudioprocessingobject)
 
-[IAudioProcessingObjectConfiguration](/windows/desktop/api/audioenginebaseapo/nn-audioenginebaseapo-iaudioprocessingobjectconfiguration)
+[IAudioProcessingObjectConfiguration](/windows/win32/api/audioenginebaseapo/nn-audioenginebaseapo-iaudioprocessingobjectconfiguration)
 
-[IAudioProcessingObjectRT](/windows/desktop/api/audioenginebaseapo/nn-audioenginebaseapo-iaudioprocessingobjectrt)
+[IAudioProcessingObjectRT](/windows/win32/api/audioenginebaseapo/nn-audioenginebaseapo-iaudioprocessingobjectrt)
 
 [IAudioSystemEffects2](iaudiosystemeffects2.md)
 
 [IAudioSystemEffects](iaudiosystemeffects.md)
 
-[IAudioSystemEffectsCustomFormats](/windows/desktop/api/audioenginebaseapo/nn-audioenginebaseapo-iaudiosystemeffectscustomformats)
+[IAudioSystemEffectsCustomFormats](/windows/win32/api/audioenginebaseapo/nn-audioenginebaseapo-iaudiosystemeffectscustomformats)
 
 [IKeywordDetectorOemAdapter](ikeyworddetectoroemadapter.md)
 
-[IPropertyStore](/windows/desktop/api/propsys/nn-propsys-ipropertystore)
+[IPropertyStore](/windows/win32/api/propsys/nn-propsys-ipropertystore)
 
 [音频处理对象实用工具函数](/previous-versions/windows/hardware/drivers/ff536213(v=vs.85))
 

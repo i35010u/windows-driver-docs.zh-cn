@@ -9,12 +9,12 @@ keywords:
 - 函数代码 WDK 设备安装
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 09349ca33193340989d3d686de9e347c836c5922
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 5ca8fea5edf437d48d7bf14f51a4dcfc1c30a6c6
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90105552"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90716208"
 ---
 # <a name="handling-dif-codes"></a>处理 DIF 代码
 
@@ -22,7 +22,7 @@ ms.locfileid: "90105552"
 
 
 
-*设备安装应用程序*通过调用[**SetupDiCallClassInstaller**](/windows/desktop/api/setupapi/nf-setupapi-setupdicallclassinstaller)，将[设备安装函数代码](/previous-versions/ff541307(v=vs.85)) (的 DIF 代码发送到安装程序) 。 此函数反过来调用安装程序的入口点函数。 有关安装程序入口点的说明，请参阅：
+*设备安装应用程序*通过调用[**SetupDiCallClassInstaller**](/windows/win32/api/setupapi/nf-setupapi-setupdicallclassinstaller)，将[设备安装函数代码](/previous-versions/ff541307(v=vs.85)) (的 DIF 代码发送到安装程序) 。 此函数反过来调用安装程序的入口点函数。 有关安装程序入口点的说明，请参阅：
 
 [辅助安装程序界面](co-installer-interface.md)
 
@@ -42,7 +42,7 @@ ms.locfileid: "90105552"
 
 句柄不透明。 例如，使用句柄标识在调用 **SetupDi * Xxx*** 函数时设置的设备信息。
 
-*DeviceInfoSet*可能具有关联的[设备安装程序类](./overview-of-device-setup-classes.md)。 如果是这样，请调用 [**SetupDiGetDeviceInfoListClass**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetdeviceinfolistclass) 以获取类 GUID。
+*DeviceInfoSet*可能具有关联的[设备安装程序类](./overview-of-device-setup-classes.md)。 如果是这样，请调用 [**SetupDiGetDeviceInfoListClass**](/windows/win32/api/setupapi/nf-setupapi-setupdigetdeviceinfolistclass) 以获取类 GUID。
 
 <a href="" id="deviceinfodata"></a>*DeviceInfoData*  
 还可以提供一个指向 [**SP_DEVINFO_DATA**](/windows/win32/api/setupapi/ns-setupapi-sp_devinfo_data) 结构的指针，该结构在设备信息集中标识设备。
@@ -50,14 +50,14 @@ ms.locfileid: "90105552"
 <a href="" id="device-installation-parameters-"></a>*设备安装参数*   
 这些间接参数以 [**SP_DEVINSTALL_PARAMS**](/windows/win32/api/setupapi/ns-setupapi-sp_devinstall_params_a) 结构提供设备安装的信息。 如果 *DeviceInfoData* 不为 **NULL**，则存在与 *DeviceInfoData*关联的设备安装参数。 如果 *DeviceInfoData* 为 **NULL**，则设备安装参数与 *DeviceInfoSet*相关联。
 
-调用 [**SetupDiGetDeviceInstallParams**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetdeviceinstallparamsa) 以获取设备安装参数。
+调用 [**SetupDiGetDeviceInstallParams**](/windows/win32/api/setupapi/nf-setupapi-setupdigetdeviceinstallparamsa) 以获取设备安装参数。
 
 <a href="" id="class-installation-parameters"></a>*类安装参数*  
 可选的间接参数专用于特定的 DIF 请求。 它们实质上是 "DIF 请求参数"。 例如，DIF_REMOVE 安装请求的类安装参数包含在 SP_REMOVEDEVICE_PARAMS 结构中。
 
 每个 SP_*XXX*_PARAMS 结构都从固定大小的 SP_CLASSINSTALL_HEADER 结构开始。
 
-调用 [**SetupDiGetClassInstallParams**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetclassinstallparamsa) 以获取类安装参数。
+调用 [**SetupDiGetClassInstallParams**](/windows/win32/api/setupapi/nf-setupapi-setupdigetclassinstallparamsa) 以获取类安装参数。
 
 如果某个 DIF 请求具有类安装参数，则如果该 DIF 请求指定*DeviceInfoData*) ，则会有一组与*DeviceInfoSet*关联的参数，以及与*DeviceInfoData* (关联的另一组参数。 **SetupDiGetClassInstallParams** 返回最具体的可用参数。
 
@@ -67,7 +67,7 @@ ms.locfileid: "90105552"
 <a href="" id="installer-output"></a>**安装程序输出**  
 描述此 DIF 代码所需的输出。
 
-如果安装程序修改了设备安装参数，则安装程序必须调用 [**SetupDiSetDeviceInstallParams**](/windows/desktop/api/setupapi/nf-setupapi-setupdisetdeviceinstallparamsa) 来应用更改，然后再返回。 同样，如果安装程序修改了 DIF 代码的类安装参数，则安装程序必须调用 [**SetupDiSetClassInstallParams**](/windows/desktop/api/setupapi/nf-setupapi-setupdisetclassinstallparamsa)。
+如果安装程序修改了设备安装参数，则安装程序必须调用 [**SetupDiSetDeviceInstallParams**](/windows/win32/api/setupapi/nf-setupapi-setupdisetdeviceinstallparamsa) 来应用更改，然后再返回。 同样，如果安装程序修改了 DIF 代码的类安装参数，则安装程序必须调用 [**SetupDiSetClassInstallParams**](/windows/win32/api/setupapi/nf-setupapi-setupdisetclassinstallparamsa)。
 
 <a href="" id="installer-return-value"></a>**安装程序返回值**  
 为 DIF 代码指定适当的返回值。 有关返回值的详细信息，请参阅下图。

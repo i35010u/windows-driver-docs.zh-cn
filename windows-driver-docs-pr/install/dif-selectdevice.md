@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: c8185e6d86fa1d4f033fdac161e76b68b7cdd043
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 4e7f9d7907f929e1a6e22d37d1ba1750b032adff
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90101658"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90714918"
 ---
 # <a name="dif_selectdevice"></a>DIF_SELECTDEVICE
 
@@ -71,7 +71,7 @@ DIF_SELECTDEVICE 请求允许安装程序选择设备驱动程序。
 特别要注意的是 **DriverPath**，其中包含生成驱动程序列表时要使用) INF (的位置。
 
 <a href="" id="class-installation-parameters"></a>类安装参数  
-如果*DeviceInfoData*不为**NULL**，则[**SP_SELECTDEVICE_PARAMS**](/windows/desktop/api/setupapi/ns-setupapi-_sp_selectdevice_params_a)结构与*DeviceInfoData*关联。 否则，类安装参数将作为一个整体与设备信息集相关联。
+如果*DeviceInfoData*不为**NULL**，则[**SP_SELECTDEVICE_PARAMS**](/windows/win32/api/setupapi/ns-setupapi-_sp_selectdevice_params_a)结构与*DeviceInfoData*关联。 否则，类安装参数将作为一个整体与设备信息集相关联。
 
 ### <a name="installer-output"></a>安装程序输出
 
@@ -79,7 +79,7 @@ DIF_SELECTDEVICE 请求允许安装程序选择设备驱动程序。
 安装程序可以修改设备安装参数。 但是，它不应修改 **DriverPath** 字段。
 
 <a href="" id="class-installation-parameters"></a>类安装参数  
-安装程序可以修改 [**SP_SELECTDEVICE_PARAMS**](/windows/desktop/api/setupapi/ns-setupapi-_sp_selectdevice_params_a)。 例如，安装程序可能在要求用户选择驱动程序的对话框中指定要使用的 Windows 标题和/或说明。
+安装程序可以修改 [**SP_SELECTDEVICE_PARAMS**](/windows/win32/api/setupapi/ns-setupapi-_sp_selectdevice_params_a)。 例如，安装程序可能在要求用户选择驱动程序的对话框中指定要使用的 Windows 标题和/或说明。
 
 如果安装程序设置了新的选择设备参数，而不是修改由先前的安装程序设置的参数，则安装程序必须为它未设置的字段零。
 
@@ -87,7 +87,7 @@ DIF_SELECTDEVICE 请求允许安装程序选择设备驱动程序。
 
 如果没有对此 DIF 代码执行任何操作，则它将从其预处理传递返回 NO_ERROR。 如果共同安装程序处理此 DIF 代码，则应在其预处理过程中执行此操作，并返回 NO_ERROR 或 Win32 错误代码。 在调用共同安装程序进行后处理时，已选择了驱动程序。
 
-如果类安装程序成功处理此请求，并且 [**SetupDiCallClassInstaller**](/windows/desktop/api/setupapi/nf-setupapi-setupdicallclassinstaller) 随后应调用默认处理程序，则类安装程序将返回 ERROR_DI_DO_DEFAULT。
+如果类安装程序成功处理此请求，并且 [**SetupDiCallClassInstaller**](/windows/win32/api/setupapi/nf-setupapi-setupdicallclassinstaller) 随后应调用默认处理程序，则类安装程序将返回 ERROR_DI_DO_DEFAULT。
 
 如果类安装程序成功处理此请求（包括直接调用默认处理程序），则类安装程序应返回 NO_ERROR 并且 **SetupDiCallClassInstaller** 将不会再次调用默认处理程序。
 
@@ -99,11 +99,11 @@ DIF_SELECTDEVICE 请求允许安装程序选择设备驱动程序。
 
 如果类安装程序遇到错误，则安装程序应返回相应的 Win32 错误代码，并且 **SetupDiCallClassInstaller** 将不会随后调用默认处理程序。
 
-如果相应[**SP_DEVINSTALL_PARAMS**](/windows/win32/api/setupapi/ns-setupapi-sp_devinstall_params_a)结构的**DriverPath**成员不等于**NULL**，但指定的路径位置没有有效的驱动程序，则类安装程序将返回 ERROR_DI_BAD_PATH。 如果路径位置没有驱动程序，或者存在驱动程序，但每个驱动程序的[**SP_DRVINSTALL_PARAMS**](/windows/desktop/api/setupapi/ns-setupapi-_sp_drvinstall_params)结构的**Flags**成员是通过 DN_BAD_DRIVER 标志设置的，则会发生这种情况。 为了响应此错误代码，Windows 向用户显示错误。
+如果相应[**SP_DEVINSTALL_PARAMS**](/windows/win32/api/setupapi/ns-setupapi-sp_devinstall_params_a)结构的**DriverPath**成员不等于**NULL**，但指定的路径位置没有有效的驱动程序，则类安装程序将返回 ERROR_DI_BAD_PATH。 如果路径位置没有驱动程序，或者存在驱动程序，但每个驱动程序的[**SP_DRVINSTALL_PARAMS**](/windows/win32/api/setupapi/ns-setupapi-_sp_drvinstall_params)结构的**Flags**成员是通过 DN_BAD_DRIVER 标志设置的，则会发生这种情况。 为了响应此错误代码，Windows 向用户显示错误。
 
 ### <a name="default-dif-code-handler"></a>默认的 DIF 代码处理程序
 
-[**SetupDiSelectDevice**](/windows/desktop/api/setupapi/nf-setupapi-setupdiselectdevice)
+[**SetupDiSelectDevice**](/windows/win32/api/setupapi/nf-setupapi-setupdiselectdevice)
 
 ### <a name="installer-operation"></a>安装程序操作
 
@@ -115,11 +115,11 @@ DIF_SELECTDEVICE 请求允许安装程序选择设备驱动程序。
 
 -   提供 Windows 将在选择 UI 中显示的选择字符串。
 
-    安装程序可以 ([**SP_SELECTDEVICE_PARAMS**](/windows/desktop/api/setupapi/ns-setupapi-_sp_selectdevice_params_a)) 提供类安装参数中的选择字符串。 例如，安装程序可以修改 **说明** 或窗口标题 **标题**。
+    安装程序可以 ([**SP_SELECTDEVICE_PARAMS**](/windows/win32/api/setupapi/ns-setupapi-_sp_selectdevice_params_a)) 提供类安装参数中的选择字符串。 例如，安装程序可以修改 **说明** 或窗口标题 **标题**。
 
     如果共同安装程序已提供 select 字符串，类安装程序不应提供 select 字符串。 共同安装程序可能有更多相关信息。
 
-    如果安装程序修改了 [**SP_SELECTDEVICE_PARAMS**](/windows/desktop/api/setupapi/ns-setupapi-_sp_selectdevice_params_a)，则安装程序还必须在 [**SP_DEVINSTALL_PARAMS**](/windows/win32/api/setupapi/ns-setupapi-sp_devinstall_params_a)中设置 DI_USECI_SELECTSTRINGS 标志。
+    如果安装程序修改了 [**SP_SELECTDEVICE_PARAMS**](/windows/win32/api/setupapi/ns-setupapi-_sp_selectdevice_params_a)，则安装程序还必须在 [**SP_DEVINSTALL_PARAMS**](/windows/win32/api/setupapi/ns-setupapi-sp_devinstall_params_a)中设置 DI_USECI_SELECTSTRINGS 标志。
 
     如果安装程序成功提供 select 字符串，则 Windows 仍必须调用默认处理程序。 因此，在这种情况下，共同安装程序返回 NO_ERROR 并且类安装程序返回 ERROR_DI_DO_DEFAULT。
 
@@ -137,8 +137,8 @@ DIF_SELECTDEVICE 请求允许安装程序选择设备驱动程序。
 
     安装程序通过执行以下步骤来标记错误驱动程序：
 
-    1.  通过使用 SPDIT_CLASSDRIVER 的*DriverType*调用[**SetupDiBuildDriverInfoList**](/windows/desktop/api/setupapi/nf-setupapi-setupdibuilddriverinfolist)来生成驱动程序列表。
-    2.  通过调用 [**SetupDiEnumDriverInfo**](/windows/desktop/api/setupapi/nf-setupapi-setupdienumdriverinfoa) 和 [**SetupDiGetDriverInstallParams**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetdriverinstallparamsa)获取有关列表中第一个驱动程序的信息。 如果驱动程序不适合于设备，请在参数的 " **标志** " 字段中设置 DNF_BAD_DRIVER 标志。 通过调用 [**SetupDiSetDriverInstallParams**](/windows/desktop/api/setupapi/nf-setupapi-setupdisetdriverinstallparamsa)将更改应用于参数。
+    1.  通过使用 SPDIT_CLASSDRIVER 的*DriverType*调用[**SetupDiBuildDriverInfoList**](/windows/win32/api/setupapi/nf-setupapi-setupdibuilddriverinfolist)来生成驱动程序列表。
+    2.  通过调用 [**SetupDiEnumDriverInfo**](/windows/win32/api/setupapi/nf-setupapi-setupdienumdriverinfoa) 和 [**SetupDiGetDriverInstallParams**](/windows/win32/api/setupapi/nf-setupapi-setupdigetdriverinstallparamsa)获取有关列表中第一个驱动程序的信息。 如果驱动程序不适合于设备，请在参数的 " **标志** " 字段中设置 DNF_BAD_DRIVER 标志。 通过调用 [**SetupDiSetDriverInstallParams**](/windows/win32/api/setupapi/nf-setupapi-setupdisetdriverinstallparamsa)将更改应用于参数。
     3.  重复上述步骤，直到处理完列表中的所有驱动程序。 请确保将 *MemberIndex* 参数递增为 **SetupDiEnumDriverInfo** ，如该函数的 "引用" 页中所述。
 
     安装程序可能会为驱动程序列表中的一个或多个驱动程序设置 DNF_BAD_DRIVER 标志，但安装程序不得清除该标志。
@@ -175,18 +175,18 @@ DIF_SELECTDEVICE 请求允许安装程序选择设备驱动程序。
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**DIF_NEWDEVICEWIZARD_SELECT**](dif-newdevicewizard-select.md)
 
-[**SetupDiSelectDevice**](/windows/desktop/api/setupapi/nf-setupapi-setupdiselectdevice)
+[**SetupDiSelectDevice**](/windows/win32/api/setupapi/nf-setupapi-setupdiselectdevice)
 
 [**SP_DEVINFO_DATA**](/windows/win32/api/setupapi/ns-setupapi-sp_devinfo_data)
 
 [**SP_DEVINSTALL_PARAMS**](/windows/win32/api/setupapi/ns-setupapi-sp_devinstall_params_a)
 
-[**SP_SELECTDEVICE_PARAMS**](/windows/desktop/api/setupapi/ns-setupapi-_sp_selectdevice_params_a)
+[**SP_SELECTDEVICE_PARAMS**](/windows/win32/api/setupapi/ns-setupapi-_sp_selectdevice_params_a)
 
  
 

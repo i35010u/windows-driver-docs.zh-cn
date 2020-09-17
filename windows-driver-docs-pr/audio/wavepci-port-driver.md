@@ -9,12 +9,12 @@ keywords:
 - 微型端口驱动程序 WDK 音频、端口驱动程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5351fa208570e7a9e43ac4c2cf28dfebd8b25d93
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 63b58c92c6fecf32ba1f75c06aa683878e9760b6
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89210267"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90716622"
 ---
 # <a name="wavepci-port-driver"></a>WavePci 端口驱动程序
 
@@ -36,7 +36,7 @@ WavePci 端口驱动程序向微型端口驱动程序公开 [IPortWavePci](/prev
 [**IPortWavePci：： Notify**](/windows-hardware/drivers/ddi/portcls/nf-portcls-iportwavepci-notify)
 
 通知端口驱动程序 DMA 控制器已前进到音频流中的新位置。
-WavePci 端口驱动程序还向每个微型端口驱动程序的流对象公开 [IPortWavePciStream](/windows-hardware/drivers/ddi/portcls/nn-portcls-iportwavepcistream) 接口。 IPortWavePciStream 继承基接口 [**IUnknown**](/windows/desktop/api/unknwn/nn-unknwn-iunknown)中的方法。 IPortWavePciStream 提供了以下附加方法：
+WavePci 端口驱动程序还向每个微型端口驱动程序的流对象公开 [IPortWavePciStream](/windows-hardware/drivers/ddi/portcls/nn-portcls-iportwavepcistream) 接口。 IPortWavePciStream 继承基接口 [**IUnknown**](/windows/win32/api/unknwn/nn-unknwn-iunknown)中的方法。 IPortWavePciStream 提供了以下附加方法：
 
 [**IPortWavePciStream::GetMapping**](/windows-hardware/drivers/ddi/portcls/nf-portcls-iportwavepcistream-getmapping)
 

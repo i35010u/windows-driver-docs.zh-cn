@@ -14,12 +14,12 @@ keywords:
 - 合成 WDK 音频，内核模式硬件加速
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 993fa27dc3570a0ff5564d63f8e3af70125a876f
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 8d0891c1e58b3a4bf24cd64001db781d1938b1ff
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89206665"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90716076"
 ---
 # <a name="synthesizer-miniport-driver-overview"></a>合成器微型端口驱动程序概述
 
@@ -53,7 +53,7 @@ DirectMusic 支持需要合成和接收器。 每个的默认实现都是通过 
 
 ![说明适配器驱动程序与 directmusic 系统之间的关系的关系图](images/dmkmbig.png)
 
-在最顶层，驱动程序通过 DirectMusic 端口驱动程序公开， (**IDirectMusicPort** 接口实例) 。 这就是应用程序与 DirectMusic 进行通信的方式。 此端口驱动程序通过 [**DeviceIoControl**](/windows/desktop/api/ioapiset/nf-ioapiset-deviceiocontrol) 函数的标准内核流式处理调用向下传递到 pin 实例， (Microsoft Windows SDK 文档) 中所述。
+在最顶层，驱动程序通过 DirectMusic 端口驱动程序公开， (**IDirectMusicPort** 接口实例) 。 这就是应用程序与 DirectMusic 进行通信的方式。 此端口驱动程序通过 [**DeviceIoControl**](/windows/win32/api/ioapiset/nf-ioapiset-deviceiocontrol) 函数的标准内核流式处理调用向下传递到 pin 实例， (Microsoft Windows SDK 文档) 中所述。
 
 请注意，在上图中，术语 "端口" 有两个冲突含义。 请避免使用内核模式 Dmu 端口驱动程序在上述用户模式下通过 DirectMusic API 使用术语端口。 这两个上下文中的术语具有相似但略有不同。 特别要注意的是，图顶部的 **IDirectMusicPort** 接口显示了 dmu 端口驱动程序在图下半部分中实现的单个 pin 实例的抽象。
 

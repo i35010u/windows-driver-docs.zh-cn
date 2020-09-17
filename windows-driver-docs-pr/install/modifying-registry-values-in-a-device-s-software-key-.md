@@ -7,12 +7,12 @@ keywords:
 - 修改注册表值 WDK 设备安装，设备软件密钥
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b51b5d3ea4bed5c98b1e09752a72c986be6d717a
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: a05b9e6d7d8f1d95c5e961acee9d766fa1b79186
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89095901"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90716178"
 ---
 # <a name="modifying-registry-values-in-a-devices-software-key"></a>修改设备的软件键中的注册表值
 
@@ -47,7 +47,7 @@ ms.locfileid: "89095901"
 
 若要安全修改设备的软件密钥中其他注册表项的值，请遵循以下准则：
 
--   使用 [**SetupDiGetDeviceProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw) 和 [**SetupDiSetDeviceProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdisetdevicepropertyw) 检索和设置标准或自定义属性。
+-   使用 [**SetupDiGetDeviceProperty**](/windows/win32/api/setupapi/nf-setupapi-setupdigetdevicepropertyw) 和 [**SetupDiSetDeviceProperty**](/windows/win32/api/setupapi/nf-setupapi-setupdisetdevicepropertyw) 检索和设置标准或自定义属性。
 
     有关详细信息，请参阅 [访问设备驱动程序属性](accessing-device-driver-properties.md)。
 

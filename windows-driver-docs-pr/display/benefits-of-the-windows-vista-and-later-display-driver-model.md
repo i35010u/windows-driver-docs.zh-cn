@@ -7,12 +7,12 @@ keywords:
 - Windows Vista 显示器驱动程序模型 WDK，优点
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e8b853e6d5af61864a0521cfb20fc9ccae3fa6d4
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 321d1fd962a2367d2666d3c4f0ac64e1265cfe64
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89067480"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90715376"
 ---
 # <a name="benefits-of-the-windows-display-driver-model-wddm"></a>Windows 显示驱动程序模型 (WDDM) 的优势
 
@@ -34,7 +34,7 @@ ms.locfileid: "89067480"
 
     1.  [*DdCanCreateSurface*](/previous-versions/windows/hardware/drivers/ff549213(v=vs.85))
     2.  [*DdCreateSurface*](/previous-versions/windows/hardware/drivers/ff549263(v=vs.85))
-    3.  [**D3dCreateSurfaceEx**](/windows/desktop/api/ddrawint/nc-ddrawint-pdd_createsurfaceex)
+    3.  [**D3dCreateSurfaceEx**](/windows/win32/api/ddrawint/nc-ddrawint-pdd_createsurfaceex)
 
     在 WDDM 中创建 Surface 只需要 [**CreateResource**](/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_createresource) 用户模式显示驱动程序调用，后者又会调用 [**pfnAllocateCb**](/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_allocatecb) 函数。 然后对内核模式 [**DxgkDdiCreateAllocation**](/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_createallocation) 函数进行调用。
 

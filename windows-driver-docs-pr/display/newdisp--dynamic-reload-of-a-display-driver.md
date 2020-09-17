@@ -9,12 +9,12 @@ keywords:
 - 动态重载 WDK Windows 2000 显示器的重启防护
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b73d05deafd3ebd2356d03c338bc6d588399761a
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 63c7a57953f8b986089905ad80eb581274604612
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89066468"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90715162"
 ---
 # <a name="newdisp-dynamic-reload-of-a-display-driver"></a>NewDisp：显示驱动程序的动态重新加载
 
@@ -42,7 +42,7 @@ ms.locfileid: "89066468"
 
 -   立即对原始模式执行另一个**ChangeDisplaySettings**回调，这会导致从* \\ system32*目录加载新的显示驱动程序 dll，并卸载16色 VGA 显示驱动程序 dll。
 
-如果驱动程序具有活动的 Direct3D、 [**WNDOBJ**](/windows/desktop/api/winddi/ns-winddi-_wndobj)或 [**DRIVEROBJ**](/windows/desktop/api/winddi/ns-winddi-_driverobj) 对象，则存在对驱动程序实例的引用。 当 *newdisp* 在对驱动程序实例的引用存在时运行时，将永远不会卸载旧的显示驱动程序 dll，并且将永远不会加载新的显示驱动程序 dll。
+如果驱动程序具有活动的 Direct3D、 [**WNDOBJ**](/windows/win32/api/winddi/ns-winddi-_wndobj)或 [**DRIVEROBJ**](/windows/win32/api/winddi/ns-winddi-_driverobj) 对象，则存在对驱动程序实例的引用。 当 *newdisp* 在对驱动程序实例的引用存在时运行时，将永远不会卸载旧的显示驱动程序 dll，并且将永远不会加载新的显示驱动程序 dll。
 
 *Newdisp* 依赖于动态驱动程序加载功能，该功能已添加到 Windows 2000 和更高版本，无需重新启动就重新加载驱动程序;因此，它在 Windows NT 4.0 和以前的操作系统版本上不起作用。 如果无法在图形设备上加载 VGA 驱动程序，或者本机显示驱动程序支持640x480x16 颜色模式，而不是让 VGA 驱动程序处理该模式，则它也不起作用。
 

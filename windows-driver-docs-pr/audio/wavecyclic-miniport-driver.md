@@ -8,12 +8,12 @@ keywords:
 - WaveCyclic 微型端口驱动程序 WDK 音频
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e2cdc963d40735022aa52dad72a6c9c6b1260f2f
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 72e1702067d788cb8048be3634fd56f4839d7e60
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89210273"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90716632"
 ---
 # <a name="wavecyclic-miniport-driver"></a>WaveCyclic 微型端口驱动程序
 
@@ -49,7 +49,7 @@ WaveCyclic 微型端口驱动程序应实现两个接口：
 
 创建新的流对象。
 
-流接口 [IMiniportWaveCyclicStream](/windows-hardware/drivers/ddi/portcls/nn-portcls-iminiportwavecyclicstream)继承 [**IUnknown**](/windows/desktop/api/unknwn/nn-unknwn-iunknown) 接口中的方法。 IMiniportWaveCyclicStream 提供了以下附加方法：
+流接口 [IMiniportWaveCyclicStream](/windows-hardware/drivers/ddi/portcls/nn-portcls-iminiportwavecyclicstream)继承 [**IUnknown**](/windows/win32/api/unknwn/nn-unknwn-iunknown) 接口中的方法。 IMiniportWaveCyclicStream 提供了以下附加方法：
 
 [**IMiniportWaveCyclicStream::GetPosition**](/windows-hardware/drivers/ddi/portcls/nf-portcls-iminiportwavecyclicstream-getposition)
 

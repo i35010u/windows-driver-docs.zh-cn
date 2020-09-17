@@ -4,12 +4,12 @@ description: 安装 PTP 相机
 ms.assetid: bf18a245-1344-47f1-83bc-3c369627bcdf
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8fd79d6b04025251246abc44dea6235cd10d82b0
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: ccf7b44655973f8e89089ba9edeb98854e281afb
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89184469"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90715618"
 ---
 # <a name="installing-a-ptp-camera"></a>安装 PTP 相机
 
@@ -23,7 +23,7 @@ ms.locfileid: "89184469"
 
 请注意，INF 文件包含 *sti*中的部分。 这允许 Microsoft 在需要时再对 *sti* 进行更新，而不会影响你的 inf 文件。
 
-USB 设备工作组已为静止图像照相机分配类 ID 0x06。 在将来的 Windows 版本中，Microsoft 将提供一个 INF 文件，用于加载此类 ID 的 PTP 驱动程序作为 *兼容的 id* 匹配项。 这意味着，供应商仍可以通过交付包含 *硬件 ID*的 INF 文件来加载自定义驱动程序。 Windows installer 的优先级比匹配类 ID 时的硬件 ID 更高。 如果 Windows 中未随附带有硬件 ID 的 INF 文件，则不会自动加载供应商驱动程序。 但是，CD 的自动运行程序可以调用 [**UpdateDriverForPlugAndPlayDevices**](/windows/desktop/api/newdev/nf-newdev-updatedriverforplugandplaydevicesa) 来轻松更新供应商驱动程序。
+USB 设备工作组已为静止图像照相机分配类 ID 0x06。 在将来的 Windows 版本中，Microsoft 将提供一个 INF 文件，用于加载此类 ID 的 PTP 驱动程序作为 *兼容的 id* 匹配项。 这意味着，供应商仍可以通过交付包含 *硬件 ID*的 INF 文件来加载自定义驱动程序。 Windows installer 的优先级比匹配类 ID 时的硬件 ID 更高。 如果 Windows 中未随附带有硬件 ID 的 INF 文件，则不会自动加载供应商驱动程序。 但是，CD 的自动运行程序可以调用 [**UpdateDriverForPlugAndPlayDevices**](/windows/win32/api/newdev/nf-newdev-updatedriverforplugandplaydevicesa) 来轻松更新供应商驱动程序。
 
 PTP 相机的示例 INF 文件：
 

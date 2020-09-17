@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: a95c0ebbfb610d72bc6ced62d4af24f114bdf382
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 7baf20d8ceb9d54c307ce918faf934af069e2fe3
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89096741"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90715780"
 ---
 # <a name="devpkey_device_saferemovalrequired"></a>DEVPKEY_Device_SafeRemovalRequired
 
@@ -74,7 +74,7 @@ DEVPKEY_Device_SafeRemovalRequired 设备属性表示一个布尔值，该值指
 
 -   设备实例已启动或可以被系统自动弹出。
 
--   未设置设备实例的 CM_DEVCAP_SURPRISEREMOVALOK 设备功能位。 有关设备功能的详细信息，请参阅 [**SetupDiGetDeviceRegistryProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetdeviceregistrypropertya)。
+-   未设置设备实例的 CM_DEVCAP_SURPRISEREMOVALOK 设备功能位。 有关设备功能的详细信息，请参阅 [**SetupDiGetDeviceRegistryProperty**](/windows/win32/api/setupapi/nf-setupapi-setupdigetdeviceregistrypropertya)。
 
 -   设备实例未将 [**DEVPKEY_Device_SafeRemovalRequiredOverride**](devpkey-device-saferemovalrequiredoverride.md) 设备属性设置为 DEVPROP_FALSE。
 
@@ -84,7 +84,7 @@ DEVPKEY_Device_SafeRemovalRequired 设备属性表示一个布尔值，该值指
 
 -   设备实例可以直接从其父设备实例中删除，也可以在其设备树中有可移动的祖先。
 
-可以调用 [**SetupDiGetDeviceProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw) 来检索 DEVPKEY_Device_SafeRemovalRequired 的值。
+可以调用 [**SetupDiGetDeviceProperty**](/windows/win32/api/setupapi/nf-setupapi-setupdigetdevicepropertyw) 来检索 DEVPKEY_Device_SafeRemovalRequired 的值。
 
 <a name="requirements"></a>要求
 ------------
@@ -106,14 +106,14 @@ DEVPKEY_Device_SafeRemovalRequired 设备属性表示一个布尔值，该值指
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**DEVPKEY_Device_SafeRemovalRequiredOverride**](devpkey-device-saferemovalrequiredoverride.md)
 
-[**SetupDiGetDeviceProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)
+[**SetupDiGetDeviceProperty**](/windows/win32/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)
 
-[**SetupDiGetDeviceRegistryProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetdeviceregistrypropertya)
+[**SetupDiGetDeviceRegistryProperty**](/windows/win32/api/setupapi/nf-setupapi-setupdigetdeviceregistrypropertya)
 
  
 

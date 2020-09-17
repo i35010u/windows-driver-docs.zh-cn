@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 68447bdcb7140166727b35586b0885f8fa2a4356
-ms.sourcegitcommit: 9b4760aae390b36dbdf9e0dd729a4a643c3f7831
+ms.openlocfilehash: 7cea04b8680e325afe6481f4aa42f9e904839c2d
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90565261"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90715626"
 ---
 # <a name="irp_mj_file_system_control-ifs"></a>\_ (IFS) 的 IRP MJ \_ 文件 \_ 系统 \_ 控制
 
@@ -25,7 +25,7 @@ ms.locfileid: "90565261"
 ## <a name="when-sent"></a>发送时间
 
 
-IRP \_ MJ \_ 文件 \_ 系统 \_ 控制请求由 i/o 管理器和其他操作系统组件以及其他内核模式驱动程序发送。 例如，可以在用户模式应用程序调用 Microsoft Win32 [**DeviceIoControl**](/windows/desktop/api/ioapiset/nf-ioapiset-deviceiocontrol) 函数以将文件系统 i/o 控制发送 (FSCTL) 请求时发送。
+IRP \_ MJ \_ 文件 \_ 系统 \_ 控制请求由 i/o 管理器和其他操作系统组件以及其他内核模式驱动程序发送。 例如，可以在用户模式应用程序调用 Microsoft Win32 [**DeviceIoControl**](/windows/win32/api/ioapiset/nf-ioapiset-deviceiocontrol) 函数以将文件系统 i/o 控制发送 (FSCTL) 请求时发送。
 
 ## <a name="operation-file-system-drivers"></a>操作：文件系统驱动程序
 

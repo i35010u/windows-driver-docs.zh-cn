@@ -5,12 +5,12 @@ ms.assetid: ae116b60-fed2-4e1d-98a8-9fe83f460c50
 keywords: 调试. 调试，Windbg，事后调试，实时调试，JIT 调试，AeDebug 注册表项
 ms.date: 09/17/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 11f14ca8bae8ea2bbeaa06269dc9beb1cb219043
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 68aff3f255916d0b36363acb15edf0881de4bb14
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89216716"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90715006"
 ---
 # <a name="enabling-postmortem-debugging"></a>启用事后调试
 
@@ -20,7 +20,7 @@ ms.locfileid: "89216716"
 
 **异常和断点**
 
-最常见的应用程序错误称为 "异常"。 其中包括访问冲突、被零除错误、数字溢出、CLR 异常以及许多其他类型的错误。 应用程序还可能导致断点中断。 当 Windows 无法运行应用程序 (例如，无法加载所需的模块时) 或遇到断点时，会出现这种情况。 断点可以由调试器插入到代码中，也可以通过 [**DebugBreak**](/windows/desktop/api/debugapi/nf-debugapi-debugbreak)等函数进行调用。
+最常见的应用程序错误称为 "异常"。 其中包括访问冲突、被零除错误、数字溢出、CLR 异常以及许多其他类型的错误。 应用程序还可能导致断点中断。 当 Windows 无法运行应用程序 (例如，无法加载所需的模块时) 或遇到断点时，会出现这种情况。 断点可以由调试器插入到代码中，也可以通过 [**DebugBreak**](/windows/win32/api/debugapi/nf-debugapi-debugbreak)等函数进行调用。
 
 **异常处理程序优先顺序**
 

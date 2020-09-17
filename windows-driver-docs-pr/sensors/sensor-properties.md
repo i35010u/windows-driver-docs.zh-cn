@@ -32,12 +32,12 @@ api_type:
 - HeaderDef
 ms.date: 01/04/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: b3fb33ae8cb2ccdc08badeda0a7ad932c1857f8d
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: d9a4bd2b799de2d32b14e7b0336059dab3de00bf
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90107518"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90716142"
 ---
 # <a name="sensor-properties"></a>传感器属性
 
@@ -89,7 +89,7 @@ ms.locfileid: "90107518"
 <td><span id="SENSOR_PROPERTY_CONNECTION_TYPE"></span><span id="sensor_property_connection_type"></span>
 <strong>SENSOR_PROPERTY_CONNECTION_TYPE</strong> (PID = 11) </td>
 <td><p>VT_UI4</p>
-<p>只读。 包含当前连接类型的<a href="/windows/desktop/api/sensorsapi/ne-sensorsapi-__midl___midl_itf_sensorsapi_0000_0000_0002" data-raw-source="[&lt;strong&gt;SensorConnectionType&lt;/strong&gt;](/windows/desktop/api/sensorsapi/ne-sensorsapi-__midl___midl_itf_sensorsapi_0000_0000_0002)"><strong>SensorConnectionType</strong></a>值。</p></td>
+<p>只读。 包含当前连接类型的<a href="/windows/win32/api/sensorsapi/ne-sensorsapi-__midl___midl_itf_sensorsapi_0000_0000_0002" data-raw-source="[&lt;strong&gt;SensorConnectionType&lt;/strong&gt;](/windows/win32/api/sensorsapi/ne-sensorsapi-__midl___midl_itf_sensorsapi_0000_0000_0002)"><strong>SensorConnectionType</strong></a>值。</p></td>
 </tr>
 <tr class="even">
 <td><span id="SENSOR_PROPERTY_CURRENT_REPORT_INTERVAL"></span><span id="sensor_property_current_report_interval"></span>
@@ -156,7 +156,7 @@ ms.locfileid: "90107518"
 <td><span id="SENSOR_PROPERTY_PERSISTENT_UNIQUE_ID"></span><span id="sensor_property_persistent_unique_id"></span>
 <strong>SENSOR_PROPERTY_PERSISTENT_UNIQUE_ID</strong> (PID = 5) </td>
 <td><p><strong>VT_CLSID</strong></p>
-<p>只读。 必需，static。 标识传感器的 <strong>GUID</strong> 。 对于设备上的每个传感器，此值必须是唯一的，对于在计算机上枚举的同一模型，此值必须是唯一的。 此属性包含通过调用 <a href="/windows/desktop/api/sensorsapi/nf-sensorsapi-isensor-getid" data-raw-source="[&lt;strong&gt;ISensor::GetID&lt;/strong&gt;](/windows/desktop/api/sensorsapi/nf-sensorsapi-isensor-getid)"><strong>ISensor：： GetID</strong></a> 获取的相同值。</p></td>
+<p>只读。 必需，static。 标识传感器的 <strong>GUID</strong> 。 对于设备上的每个传感器，此值必须是唯一的，对于在计算机上枚举的同一模型，此值必须是唯一的。 此属性包含通过调用 <a href="/windows/win32/api/sensorsapi/nf-sensorsapi-isensor-getid" data-raw-source="[&lt;strong&gt;ISensor::GetID&lt;/strong&gt;](/windows/win32/api/sensorsapi/nf-sensorsapi-isensor-getid)"><strong>ISensor：： GetID</strong></a> 获取的相同值。</p></td>
 </tr>
 <tr class="even">
 <td><span id="SENSOR_PROPERTY_RANGE_MAXIMUM"></span><span id="sensor_property_range_maximum"></span>
@@ -188,7 +188,7 @@ ms.locfileid: "90107518"
 <strong>SENSOR_PROPERTY_STATE</strong> (PID = 3) </td>
 <td><p>VT_UI4</p>
 <p>只读。 必需。</p>
-<p>包含当前传感器状态的<a href="/windows/desktop/api/sensorsapi/ne-sensorsapi-__midl___midl_itf_sensorsapi_0000_0000_0001" data-raw-source="[&lt;strong&gt;SensorState&lt;/strong&gt;](/windows/desktop/api/sensorsapi/ne-sensorsapi-__midl___midl_itf_sensorsapi_0000_0000_0001)"><strong>SensorState</strong></a>值。</p>
+<p>包含当前传感器状态的<a href="/windows/win32/api/sensorsapi/ne-sensorsapi-__midl___midl_itf_sensorsapi_0000_0000_0001" data-raw-source="[&lt;strong&gt;SensorState&lt;/strong&gt;](/windows/win32/api/sensorsapi/ne-sensorsapi-__midl___midl_itf_sensorsapi_0000_0000_0001)"><strong>SensorState</strong></a>值。</p>
 <div class="alert">
 <strong>注意</strong>  若要更新此属性，请通过调用 <a href="/windows-hardware/drivers/ddi/sensorsclassextension/nf-sensorsclassextension-isensorclassextension-poststatechange" data-raw-source="[&lt;strong&gt;ISensorClassExtension::PostStateChange&lt;/strong&gt;](/windows-hardware/drivers/ddi/sensorsclassextension/nf-sensorsclassextension-isensorclassextension-poststatechange)"><strong>ISensorClassExtension：:P oststatechange</strong></a>引发状态更改事件。
 </div>
@@ -261,11 +261,11 @@ ms.locfileid: "90107518"
 ## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
-[**GetProperties**](/windows/desktop/api/sensorsapi/nf-sensorsapi-isensor-getproperties)
+[**GetProperties**](/windows/win32/api/sensorsapi/nf-sensorsapi-isensor-getproperties)
 
-[**GetProperty**](/windows/desktop/api/sensorsapi/nf-sensorsapi-isensor-getproperty)
+[**GetProperty**](/windows/win32/api/sensorsapi/nf-sensorsapi-isensor-getproperty)
 
 [IPortableDeviceValues](https://go.microsoft.com/fwlink/p/?linkid=275070)
 
-[**SetProperties**](/windows/desktop/api/sensorsapi/nf-sensorsapi-isensor-setproperties)
+[**SetProperties**](/windows/win32/api/sensorsapi/nf-sensorsapi-isensor-setproperties)
 

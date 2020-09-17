@@ -4,25 +4,25 @@ description: 写入错误或警告日志条目
 ms.assetid: 80393368-7430-46ca-a53e-c94b7e8acfa0
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 678199add77f59a1911f0f281bb02ba13bcb1721
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 2f40234591c0d1ef60ad81add88c8f43132e3c5b
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89097067"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90715902"
 ---
 # <a name="writing-an-error-or-warning-log-entry"></a>写入错误或警告日志条目
 
 
-下面的示例演示应用程序通常如何调用 [**SetupWriteTextLog**](/windows/desktop/api/setupapi/nf-setupapi-setupwritetextlog) ，以便在 [setupapi.log 文本日志](setupapi-text-logs.md)中写入错误或警告条目。 但是，如果事件与 Setupapi.log 特定的错误或 Win32 错误相关联，则应用程序可以改为调用 [**SetupWriteTextLogError**](/windows/desktop/api/setupapi/nf-setupapi-setupwritetextlogerror) 。 **SetupWriteTextLogError** 便于记录和解释有关这些类型的错误的信息。
+下面的示例演示应用程序通常如何调用 [**SetupWriteTextLog**](/windows/win32/api/setupapi/nf-setupapi-setupwritetextlog) ，以便在 [setupapi.log 文本日志](setupapi-text-logs.md)中写入错误或警告条目。 但是，如果事件与 Setupapi.log 特定的错误或 Win32 错误相关联，则应用程序可以改为调用 [**SetupWriteTextLogError**](/windows/win32/api/setupapi/nf-setupapi-setupwritetextlogerror) 。 **SetupWriteTextLogError** 便于记录和解释有关这些类型的错误的信息。
 
 有关调用 **SetupWriteTextLog** 记录错误消息的信息，请参阅 [记录错误消息](#logging-an-error-message) 和有关调用 **SetupWriteTextLog** 以记录警告消息的信息，请参阅 [记录警告消息](#logging-a-warning-message)。
 
 ### <a name="logging-an-error-message"></a><a href="" id="logging-an-error-message"></a> 记录错误消息
 
-在此示例中，应用程序调用 [**SetupWriteTextLog**](/windows/desktop/api/setupapi/nf-setupapi-setupwritetextlog)，并提供以下参数值：
+在此示例中，应用程序调用 [**SetupWriteTextLog**](/windows/win32/api/setupapi/nf-setupapi-setupwritetextlog)，并提供以下参数值：
 
--   *LogToken* 设置为一个日志令牌值，该值可以通过调用 [**SetupGetThreadLogToken**](/windows/desktop/api/setupapi/nf-setupapi-setupgetthreadlogtoken) 获取，也可以是 [日志](log-tokens.md)令牌中描述的系统定义的日志令牌值之一。
+-   *LogToken* 设置为一个日志令牌值，该值可以通过调用 [**SetupGetThreadLogToken**](/windows/win32/api/setupapi/nf-setupapi-setupgetthreadlogtoken) 获取，也可以是 [日志](log-tokens.md)令牌中描述的系统定义的日志令牌值之一。
 
 -   "*类别*" 设置为 "TXTLOG_VENDOR"，指示日志条目由供应商提供的应用程序发出。 事件类别在 [启用文本日志的事件类别](enabling-event-categories-for-a-text-log.md)中进行了介绍。
 
@@ -32,7 +32,7 @@ ms.locfileid: "89097067"
 
 -   逗号分隔的列表提供变量错误代码。
 
-下面的代码调用 [**SetupWriteTextLog**](/windows/desktop/api/setupapi/nf-setupapi-setupwritetextlog) 为此示例编写日志条目：
+下面的代码调用 [**SetupWriteTextLog**](/windows/win32/api/setupapi/nf-setupapi-setupwritetextlog) 为此示例编写日志条目：
 
 ```cpp
 //The LogToken value was previously returned by call to
@@ -54,7 +54,7 @@ SetupWriteTextLog(LogToken, Category, Flags, TEXT("Application Error (%d)"),Erro
 
 ### <a name="logging-a-warning-message"></a><a href="" id="logging-a-warning-message"></a> 记录警告消息
 
-记录警告消息与记录错误消息几乎完全相同。 不同之处在于事件级别的设置。 将 *标志* 设置为 TXTLOG_WARNING 而不是 TXTLOG_ERROR。 如果按[记录错误消息](#logging-an-error-message)中所述方式调用**SetupWriteTextLog** ，则除了*Flags*设置为 TXTLOG_WARNING 和 TXTLOG_TIMESTAMP 的按位 "或"， [**SetupWriteTextLog**](/windows/desktop/api/setupapi/nf-setupapi-setupwritetextlog)将写入以下日志条目：
+记录警告消息与记录错误消息几乎完全相同。 不同之处在于事件级别的设置。 将 *标志* 设置为 TXTLOG_WARNING 而不是 TXTLOG_ERROR。 如果按[记录错误消息](#logging-an-error-message)中所述方式调用**SetupWriteTextLog** ，则除了*Flags*设置为 TXTLOG_WARNING 和 TXTLOG_TIMESTAMP 的按位 "或"， [**SetupWriteTextLog**](/windows/win32/api/setupapi/nf-setupapi-setupwritetextlog)将写入以下日志条目：
 
 ```cpp
 !  2005/02/13 22:06:28.109:    :  Application error (1111) 

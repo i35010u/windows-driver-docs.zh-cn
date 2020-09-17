@@ -4,12 +4,12 @@ description: MIDI 的音频设备消息
 ms.assetid: d3b00985-6894-41ea-b493-d0aee269d5bf
 ms.date: 04/22/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: f92b6d4ba86b23e8432133cecba54bbf591da808
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: a9f39c779d1260890e9879fb512f3292c4e6c3ff
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89208355"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90714838"
 ---
 # <a name="audio-device-messages-for-midi"></a>MIDI 的音频设备消息
 
@@ -18,7 +18,7 @@ ms.locfileid: "89208355"
 
 每个 MIDI 输入和输出驱动程序都必须有一个 [DriverProc](/windows/win32/api/mmiscapi/nc-mmiscapi-driverproc) 入口点函数，以启用或禁用该驱动程序。 此外，它还必须具有用于处理 Windows 操作系统消息的附加入口点函数。 对于 MIDI 输出驱动程序，附加入口点函数是 [**modMessage**](/previous-versions/windows/hardware/drivers/ff537532(v=vs.85))，它必须由 MIDI 设备的制造商提供。 此函数处理 WINMM.DLL 发送到 MIDI 输出驱动程序的消息。 WINMM.DLL 是一个 Windows 动态链接库 (DLL) 模块，其中包含的功能可帮助操作系统和 MIDI 输出驱动程序相互通信。 具体而言，WINMM.DLL 可帮助管理在 Windows 上运行的16位多媒体应用程序。
 
-**ModMessage**函数收到的每条消息都带有两个指向 dword 变量 (指针 \_) 的 dword PTR。 对于某些消息，其中一个参数指向包含来自客户端的其他信息的结构，或指向用于填写客户端信息的驱动程序的空结构。 这种结构的一个示例是 [**MIDIOPENDESC**](/windows/desktop/api/mmddk/ns-mmddk-midiopendesc_tag)。 MIDI 输出设备驱动程序使用另外两个结构，Windows SDK 中对它们进行了讨论。 有关这些结构的详细信息，请参阅 [MIDIHDR](/windows/win32/api/mmeapi/ns-mmeapi-midihdr) 和 [MIDIOUTCAPS](/windows/win32/api/mmeapi/ns-mmeapi-midioutcaps)。
+**ModMessage**函数收到的每条消息都带有两个指向 dword 变量 (指针 \_) 的 dword PTR。 对于某些消息，其中一个参数指向包含来自客户端的其他信息的结构，或指向用于填写客户端信息的驱动程序的空结构。 这种结构的一个示例是 [**MIDIOPENDESC**](/windows/win32/api/mmddk/ns-mmddk-midiopendesc_tag)。 MIDI 输出设备驱动程序使用另外两个结构，Windows SDK 中对它们进行了讨论。 有关这些结构的详细信息，请参阅 [MIDIHDR](/windows/win32/api/mmeapi/ns-mmeapi-midihdr) 和 [MIDIOUTCAPS](/windows/win32/api/mmeapi/ns-mmeapi-midioutcaps)。
 
 下面列出了音频设备消息和用于处理 MIDI 输出驱动程序的 **modMessage** 入口点函数：
 

@@ -20,12 +20,12 @@ keywords:
 - Dmu 端口驱动程序 WDK 音频
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f5c19522a4957bfc99c338eeafc17509ba60e29e
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 8a81320304b6e990b147e39b2e6ee9bcff7a1b3e
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89210341"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90716068"
 ---
 # <a name="synthesizers-and-wave-sinks"></a>合成器和 Wave 接收器
 
@@ -55,7 +55,7 @@ ms.locfileid: "89210341"
 
 完成这些步骤后，用户模式 DirectMusic 端口应打开并激活以供使用。 一旦这大部分驱动程序代码都在运行，就可以开始实现功能。 将用户模式 Microsoft 软件合成器的源代码用作模板并开始添加新功能。
 
-用户模式软件合成器可以实现为具有 [IDirectMusicSynth](/windows/desktop/api/dmusics/nn-dmusics-idirectmusicsynth) 接口的对象。 用户模式波形接收器可实现为具有 [IDirectMusicSynthSink](/windows/desktop/api/dmusics/nn-dmusics-idirectmusicsynthsink) 接口的对象。 有关详细信息，请参阅 [IDirectMusicSynth 和 IDirectMusicSynthSink](idirectmusicsynth-and-idirectmusicsynthsink.md)。
+用户模式软件合成器可以实现为具有 [IDirectMusicSynth](/windows/win32/api/dmusics/nn-dmusics-idirectmusicsynth) 接口的对象。 用户模式波形接收器可实现为具有 [IDirectMusicSynthSink](/windows/win32/api/dmusics/nn-dmusics-idirectmusicsynthsink) 接口的对象。 有关详细信息，请参阅 [IDirectMusicSynth 和 IDirectMusicSynthSink](idirectmusicsynth-and-idirectmusicsynthsink.md)。
 
  
 

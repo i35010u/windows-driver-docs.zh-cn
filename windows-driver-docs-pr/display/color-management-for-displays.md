@@ -13,12 +13,12 @@ keywords:
 - 校准颜色 WDK Windows 2000 显示器
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 94ec429ce1d02bf8226950844155979354b42791
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: f328050129a7dda2709ba2fb08b5426b7bfb30f0
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89065266"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90716536"
 ---
 # <a name="color-management-for-displays"></a>显示颜色管理
 
@@ -28,7 +28,7 @@ ms.locfileid: "89065266"
 
 GDI 支持 (ICM) 版本2.0 的图像颜色管理。 显示驱动程序可以使用 ICM，无需实现任何特殊代码。
 
-如果显示硬件支持 *伽玛斜坡*，则显示驱动程序应实现 [**DrvIcmSetDeviceGammaRamp**](/windows/desktop/api/winddi/nf-winddi-drvicmsetdevicegammaramp)。 需要颜色 exactness 的颜色校准应用程序使用此功能。 DirectDraw 还使用此函数允许 DirectX 应用程序（例如在 RGB 模式下执行调色板动画的游戏）控制伽玛斜坡。 有关代码示例，请参阅 *Permedia* 示例显示驱动程序。
+如果显示硬件支持 *伽玛斜坡*，则显示驱动程序应实现 [**DrvIcmSetDeviceGammaRamp**](/windows/win32/api/winddi/nf-winddi-drvicmsetdevicegammaramp)。 需要颜色 exactness 的颜色校准应用程序使用此功能。 DirectDraw 还使用此函数允许 DirectX 应用程序（例如在 RGB 模式下执行调色板动画的游戏）控制伽玛斜坡。 有关代码示例，请参阅 *Permedia* 示例显示驱动程序。
 
 **注意**   Microsoft Windows 驱动程序工具包 (WDK) 不包含 3Dlabs Permedia2 (*3dlabs.htm*) 和 3Dlabs *Permedia3 (Perm3.htm) 示例*显示驱动程序。 你可以从 Windows Server 2003 SP1 驱动程序开发工具包中获取这些示例驱动程序 (DDK) ，你可以从 WDHC 网站的 "Windows 驱动程序开发工具包" 页下载。
 

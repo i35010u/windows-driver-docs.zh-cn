@@ -4,12 +4,12 @@ description: 本主题介绍 Windows 10 中的音频延迟更改。 它涵盖了
 ms.assetid: 888AEF01-271D-41CD-8372-A47551348959
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f51e9fc42f2e1b9b898ba847734a0c5c08cbc95b
-ms.sourcegitcommit: 51cba71be022c726c04c29ba5c0360860b65d7a4
+ms.openlocfilehash: 9997a2ef1b99d54f012154146b4b10bad2688e8d
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/09/2020
-ms.locfileid: "89562193"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90715400"
 ---
 # <a name="low-latency-audio"></a>低延迟音频
 
@@ -98,7 +98,7 @@ Windows 10 在三个方面进行了增强，以减少延迟：
    b. 驱动程序已注册的所有线程和中断都 (使用有关驱动程序资源注册) 部分所述的新 DDIs。
    c. 来自应用程序的部分或全部音频线程，这些线程请求较小的缓冲区以及共享同一音频设备图形的所有应用程序 (例如，相同的信号处理模式) 与请求较小缓冲区的任何应用程序：
 4. AudioGraph 在流路径上进行回调。
-5. 如果应用程序使用 WASAPI，则仅提交给 [实时工作队列 API](/windows/desktop/ProcThread/platform-work-queue-api) 或 [**MFCreateMFByteStreamOnStreamEx**](/windows/desktop/api/mfidl/nf-mfidl-mfcreatemfbytestreamonstreamex) 的工作项，并将其标记为 "音频" 或 "ProAudio"。
+5. 如果应用程序使用 WASAPI，则仅提交给 [实时工作队列 API](/windows/desktop/ProcThread/platform-work-queue-api) 或 [**MFCreateMFByteStreamOnStreamEx**](/windows/win32/api/mfidl/nf-mfidl-mfcreatemfbytestreamonstreamex) 的工作项，并将其标记为 "音频" 或 "ProAudio"。
 
 ## <a name="api-improvements"></a>API 改进
 
@@ -148,9 +148,9 @@ CreateAudioGraphResult result = await AudioGraph.CreateAsync(settings);
 
 以上功能将在所有 Windows 设备上可用。 但是，具有足够资源和更新驱动程序的某些设备将提供比其他设备更好的用户体验。
 
-以上功能由名为 [**IAudioClient3**](/windows/desktop/api/audioclient/nn-audioclient-iaudioclient3)的新接口提供，该接口派生自 [**IAudioClient2**](/windows/desktop/api/audioclient/nn-audioclient-iaudioclient2)。
+以上功能由名为 [**IAudioClient3**](/windows/win32/api/audioclient/nn-audioclient-iaudioclient3)的新接口提供，该接口派生自 [**IAudioClient2**](/windows/win32/api/audioclient/nn-audioclient-iaudioclient2)。
 
-[**IAudioClient3**](/windows/desktop/api/audioclient/nn-audioclient-iaudioclient3) 定义以下3种方法：
+[**IAudioClient3**](/windows/win32/api/audioclient/nn-audioclient-iaudioclient3) 定义以下3种方法：
 
 |方法|说明|
 |--- |--- |
@@ -243,7 +243,7 @@ if (AUDCLNT_E_ENGINE_FORMAT_LOCKED == hr) {
 }
 ```
 
-此外，建议使用 WASAPI 的应用程序也使用 [实时工作队列 API](/windows/desktop/ProcThread/platform-work-queue-api) 或 [**MFCreateMFByteStreamOnStreamEx**](/windows/desktop/api/mfidl/nf-mfidl-mfcreatemfbytestreamonstreamex) 创建工作项，并将其标记为音频或 Pro 音频，而不是其自己的线程。 这将允许操作系统以避免非音频干扰干扰的方式对其进行管理。 相反，操作系统会自动对所有 AudioGraph 线程进行自动管理。 WASAPIAudio 示例中的以下代码片段演示如何使用 MF 工作队列 Api。
+此外，建议使用 WASAPI 的应用程序也使用 [实时工作队列 API](/windows/desktop/ProcThread/platform-work-queue-api) 或 [**MFCreateMFByteStreamOnStreamEx**](/windows/win32/api/mfidl/nf-mfidl-mfcreatemfbytestreamonstreamex) 创建工作项，并将其标记为音频或 Pro 音频，而不是其自己的线程。 这将允许操作系统以避免非音频干扰干扰的方式对其进行管理。 相反，操作系统会自动对所有 AudioGraph 线程进行自动管理。 WASAPIAudio 示例中的以下代码片段演示如何使用 MF 工作队列 Api。
 
 ```cpp
 // Specify Source Reader Attributes

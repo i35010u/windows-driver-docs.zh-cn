@@ -4,12 +4,12 @@ description: 本主题提供了 Windows 10 音频体系结构的高级摘要。
 ms.assetid: 1FC95504-18AA-4F3B-8E96-005276699694
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a44a904a7e1aeec028cce5f296fde6595bc872e4
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 4b375b292c4a281c443d58b2d0686884d83c7f96
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89206627"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90716628"
 ---
 # <a name="windows-audio-architecture"></a>Windows 音频体系结构
 
@@ -47,7 +47,7 @@ ms.locfileid: "89206627"
 建议将这些较低级别的 Api 用于音频流式处理。
 
 -   [WASAPI](/windows/desktop/CoreAudio/wasapi) (高性能，但更复杂) 
--   [IXAudio2](/windows/desktop/api/xaudio2/nn-xaudio2-ixaudio2) (通常用于游戏) 
+-   [IXAudio2](/windows/win32/api/xaudio2/nn-xaudio2-ixaudio2) (通常用于游戏) 
 -   [MIDI](/windows/desktop/Multimedia/about-midi)
 
 建议将此低级别 API 用于枚举。

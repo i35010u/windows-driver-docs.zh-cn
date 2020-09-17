@@ -11,12 +11,12 @@ keywords:
 - 延迟 WDK 音频，时钟
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 035c59e7f5bbb434404ac125d00dfa6d12e78e62
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 0ed72f15f1c72d32d3d6e0134d18973fcd35c8d2
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89210327"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90716066"
 ---
 # <a name="time-stamped-events"></a>带时间戳的事件
 
@@ -36,7 +36,7 @@ Microsoft 的 wave 接收器实现生成一个线程，该线程每隔20毫秒�
 
 PCM 缓冲区在概念上是循环的 (也就是说，它会不断地循环) 。 合成器呈现16位数字，将声音描述为缓冲区的后续切片。 每次线程 awakens 时，切片大小都略有不同，因为接收器每隔20毫秒就无法唤醒。 因此，每次线程唤醒时，它会一直运行，以确定它在返回到休眠状态之前应该在整个缓冲区中的进度。
 
-从应用程序的角度来看，合成端口驱动程序本身具有一个 [**IDirectMusicSynth：： GetLatencyClock**](/windows/desktop/api/dmusics/nf-dmusics-idirectmusicsynth-getlatencyclock) 函数，该函数可从波形接收器获取时钟。 因此有两个时钟：
+从应用程序的角度来看，合成端口驱动程序本身具有一个 [**IDirectMusicSynth：： GetLatencyClock**](/windows/win32/api/dmusics/nf-dmusics-idirectmusicsynth-getlatencyclock) 函数，该函数可从波形接收器获取时钟。 因此有两个时钟：
 
 -   每个人（包括波形接收器）侦听的主时钟。
 
@@ -46,7 +46,7 @@ PCM 缓冲区在概念上是循环的 (也就是说，它会不断地循环) 。
 
 此延迟时钟返回的时间是缓冲区可呈现到的最早时间，因为合成器已在缓冲区中的该位置上呈现。 如果合成器在其上次写入时呈现了较小的缓冲区，则延迟也会更小。
 
-因此，波形接收器对合成器调用 [**IDirectMusicSynth：： Render**](/windows/desktop/api/dmusics/nf-dmusics-idirectmusicsynth-render) ，并显示缓冲区并请求用呈现的数据进行填充。 如下图所示，合成 [**IDirectMusicSynth：:P laybuffer**](/windows/desktop/api/dmusics/nf-dmusics-idirectmusicsynth-playbuffer) 函数调用导致的所有带时间戳的事件。
+因此，波形接收器对合成器调用 [**IDirectMusicSynth：： Render**](/windows/win32/api/dmusics/nf-dmusics-idirectmusicsynth-render) ，并显示缓冲区并请求用呈现的数据进行填充。 如下图所示，合成 [**IDirectMusicSynth：:P laybuffer**](/windows/win32/api/dmusics/nf-dmusics-idirectmusicsynth-playbuffer) 函数调用导致的所有带时间戳的事件。
 
 ![阐释带有时间戳的消息的队列的关系图](images/dmevents.png)
 

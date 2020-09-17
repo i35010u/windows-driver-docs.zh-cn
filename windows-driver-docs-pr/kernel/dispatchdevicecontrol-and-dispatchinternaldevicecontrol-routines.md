@@ -13,12 +13,12 @@ keywords:
 - 设备控制调度例程 WDK 内核
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4e4f492d3b489efaeb8d2f1e9e59d21d0e2e0e24
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: ba48ea056877215bcd8ea7b9445658552c57bce1
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89185653"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90715258"
 ---
 # <a name="dispatchdevicecontrol-and-dispatchinternaldevicecontrol-routines"></a>DispatchDeviceControl 和 DispatchInternalDeviceControl 例程
 
@@ -28,7 +28,7 @@ ms.locfileid: "89185653"
 对于每种通用类型的外围设备，系统会为 **IRP \_ MJ \_ 设备 \_ 控制** 请求定义一组 i/o 控制代码。 每种类型的设备的新驱动程序必须支持这些请求。 在大多数情况下，每种类型的设备的这些公共 i/o 控制代码不会导出到用户模式应用程序。 
 
 
-其中一些系统定义的 i/o 控制代码由较高级别的驱动程序使用，通过调用 [**IoBuildDeviceIoControlRequest**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iobuilddeviceiocontrolrequest)为基础设备驱动程序创建 irp。 其他方法由 Win32 组件用来与基础设备驱动程序进行通信，方法是调用 Microsoft Windows SDK 文档中所述的 Win32 函数 [**DeviceIoControl**](/windows/desktop/api/ioapiset/nf-ioapiset-deviceiocontrol) () 这反过来会调用系统服务。 I/o 管理器设置 IRP，并将主函数代码 **IRP \_ MJ \_ 设备 \_ 控件** 和 I/o 控制代码存储在 [**IO \_ 堆栈 \_ 位置**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_stack_location) 结构中的 **DeviceIoControl. IoControlCode**。 然后，i/o 管理器会调用链中最高级别的驱动程序的 *DispatchDeviceControl* 例程。
+其中一些系统定义的 i/o 控制代码由较高级别的驱动程序使用，通过调用 [**IoBuildDeviceIoControlRequest**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iobuilddeviceiocontrolrequest)为基础设备驱动程序创建 irp。 其他方法由 Win32 组件用来与基础设备驱动程序进行通信，方法是调用 Microsoft Windows SDK 文档中所述的 Win32 函数 [**DeviceIoControl**](/windows/win32/api/ioapiset/nf-ioapiset-deviceiocontrol) () 这反过来会调用系统服务。 I/o 管理器设置 IRP，并将主函数代码 **IRP \_ MJ \_ 设备 \_ 控件** 和 I/o 控制代码存储在 [**IO \_ 堆栈 \_ 位置**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_stack_location) 结构中的 **DeviceIoControl. IoControlCode**。 然后，i/o 管理器会调用链中最高级别的驱动程序的 *DispatchDeviceControl* 例程。
 
 对于某些系统提供的驱动程序，旨在与和支持新的驱动程序，操作系统还定义了一组用于 **IRP \_ MJ \_ 内部 \_ 设备 \_ 控制** 请求的 i/o 控制代码。 在大多数情况下，这些公共 i/o 控制代码允许附加的高级驱动程序与基础设备驱动程序进行互操作。
 

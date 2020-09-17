@@ -4,12 +4,12 @@ description: 使用 SetupAPI 卸载设备和驱动程序包
 ms.assetid: e170961b-5d12-43d5-b502-3b37e6421f6e
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 552b13f499153e4e510a5e40a3c0a48153e19b63
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 1ee0511adaef1986ee7bc573e4f115b9cbe3de00
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89096386"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90715076"
 ---
 # <a name="using-setupapi-to-uninstall-devices-and-driver-packages"></a>使用 SetupAPI 卸载设备和驱动程序包
 
@@ -30,15 +30,15 @@ ms.locfileid: "89096386"
 
 使用以下方法从系统中 Setupapi.log) ：
 
--   设备安装应用程序可以通过调用 [**SetupDiCallClassInstaller**](/windows/desktop/api/setupapi/nf-setupapi-setupdicallclassinstaller) 函数来请求卸载设备。 当应用程序调用此函数以卸载设备时，它必须将 *InstallFunction* 参数设置为 [**DIF_REMOVE**](./dif-remove.md) 代码。  有关所有 DIF 代码的列表，请参阅 [设备安装函数](/previous-versions/ff541307(v=vs.85))。
+-   设备安装应用程序可以通过调用 [**SetupDiCallClassInstaller**](/windows/win32/api/setupapi/nf-setupapi-setupdicallclassinstaller) 函数来请求卸载设备。 当应用程序调用此函数以卸载设备时，它必须将 *InstallFunction* 参数设置为 [**DIF_REMOVE**](./dif-remove.md) 代码。  有关所有 DIF 代码的列表，请参阅 [设备安装函数](/previous-versions/ff541307(v=vs.85))。
 
-    如果在 DIF_REMOVE 请求的处理过程中调用 [**SetupDiRemoveDevice**](/windows/desktop/api/setupapi/nf-setupapi-setupdiremovedevice) ，则该函数将从系统中删除设备的 devnode。 它还会删除设备的硬件和软件注册表项，以及任何特定于硬件配置文件的注册表项， () 特定于配置的注册表项。
+    如果在 DIF_REMOVE 请求的处理过程中调用 [**SetupDiRemoveDevice**](/windows/win32/api/setupapi/nf-setupapi-setupdiremovedevice) ，则该函数将从系统中删除设备的 devnode。 它还会删除设备的硬件和软件注册表项，以及任何特定于硬件配置文件的注册表项， () 特定于配置的注册表项。
 
     **请注意**，  **SetupDiRemoveDevice**只能由类安装程序调用，而不能由设备安装应用程序调用。
 
     有关 DIF 代码的详细信息，请参阅 [处理 Dif 代码](handling-dif-codes.md)。
 
--   从 Windows 7 开始，设备安装应用程序可以通过调用 [**DiUninstallDevice**](/windows/desktop/api/newdev/nf-newdev-diuninstalldevice) 函数来卸载设备。 此函数类似于调用 [**SetupDiCallClassInstaller**](/windows/desktop/api/setupapi/nf-setupapi-setupdicallclassinstaller) ，并将 *InstallFunction* 参数设置为 [**DIF_REMOVE**](./dif-remove.md)。 但是，除了删除指定设备的 devnode 以外，此函数还将尝试删除在调用时系统上存在的设备的所有子 devnodes。
+-   从 Windows 7 开始，设备安装应用程序可以通过调用 [**DiUninstallDevice**](/windows/win32/api/newdev/nf-newdev-diuninstalldevice) 函数来卸载设备。 此函数类似于调用 [**SetupDiCallClassInstaller**](/windows/win32/api/setupapi/nf-setupapi-setupdicallclassinstaller) ，并将 *InstallFunction* 参数设置为 [**DIF_REMOVE**](./dif-remove.md)。 但是，除了删除指定设备的 devnode 以外，此函数还将尝试删除在调用时系统上存在的设备的所有子 devnodes。
 
 ### <a name="deleting-a-driver-package-from-the-driver-store"></a><a href="" id="deleting-a-driver-package-from-the-driver-store"></a> 从驱动程序存储区中删除驱动程序包
 

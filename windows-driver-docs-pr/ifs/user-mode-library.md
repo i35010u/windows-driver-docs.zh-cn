@@ -8,12 +8,12 @@ keywords:
 - Fltlib.dll
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 03ca180cba8a1c155ee566e1c97320d207a85053
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 53d13d925b2d69520c68f65de0060bff109308cc
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89065508"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90714956"
 ---
 # <a name="user-mode-library"></a>用户模式库
 
@@ -28,65 +28,65 @@ ms.locfileid: "89065508"
 
 筛选器管理器为用户模式应用程序提供了以下用于加载和卸载微筛选器驱动程序的支持例程：
 
-[**FilterLoad**](/windows/desktop/api/fltuser/nf-fltuser-filterload)
+[**FilterLoad**](/windows/win32/api/fltuser/nf-fltuser-filterload)
 
-[**FilterUnload**](/windows/desktop/api/fltuser/nf-fltuser-filterunload)
+[**FilterUnload**](/windows/win32/api/fltuser/nf-fltuser-filterunload)
 
 提供以下支持例程用于创建和关闭微筛选器驱动程序和实例句柄：
 
-[**FilterClose**](/windows/desktop/api/fltuser/nf-fltuser-filterclose)
+[**FilterClose**](/windows/win32/api/fltuser/nf-fltuser-filterclose)
 
-[**FilterCreate**](/windows/desktop/api/fltuser/nf-fltuser-filtercreate)
+[**FilterCreate**](/windows/win32/api/fltuser/nf-fltuser-filtercreate)
 
-[**FilterInstanceClose**](/windows/desktop/api/fltuser/nf-fltuser-filterinstanceclose)
+[**FilterInstanceClose**](/windows/win32/api/fltuser/nf-fltuser-filterinstanceclose)
 
-[**FilterInstanceCreate**](/windows/desktop/api/fltuser/nf-fltuser-filterinstancecreate)
+[**FilterInstanceCreate**](/windows/win32/api/fltuser/nf-fltuser-filterinstancecreate)
 
 提供以下支持例程用于附加和分离微筛选器驱动程序实例：
 
-[**FilterAttach**](/windows/desktop/api/fltuser/nf-fltuser-filterattach)
+[**FilterAttach**](/windows/win32/api/fltuser/nf-fltuser-filterattach)
 
-[**FilterAttachAtAltitude**](/windows/desktop/api/fltuser/nf-fltuser-filterattachataltitude)
+[**FilterAttachAtAltitude**](/windows/win32/api/fltuser/nf-fltuser-filterattachataltitude)
 
-[**FilterDetach**](/windows/desktop/api/fltuser/nf-fltuser-filterdetach)
+[**FilterDetach**](/windows/win32/api/fltuser/nf-fltuser-filterdetach)
 
 提供以下支持例程用于枚举筛选器、卷和实例：
 
-[**FilterFindFirst**](/windows/desktop/api/fltuser/nf-fltuser-filterfindfirst)
+[**FilterFindFirst**](/windows/win32/api/fltuser/nf-fltuser-filterfindfirst)
 
-[**FilterFindNext**](/windows/desktop/api/fltuser/nf-fltuser-filterfindnext)
+[**FilterFindNext**](/windows/win32/api/fltuser/nf-fltuser-filterfindnext)
 
-[**FilterInstanceFindFirst**](/windows/desktop/api/fltuser/nf-fltuser-filterinstancefindfirst)
+[**FilterInstanceFindFirst**](/windows/win32/api/fltuser/nf-fltuser-filterinstancefindfirst)
 
-[**FilterInstanceFindNext**](/windows/desktop/api/fltuser/nf-fltuser-filterinstancefindnext)
+[**FilterInstanceFindNext**](/windows/win32/api/fltuser/nf-fltuser-filterinstancefindnext)
 
-[**FilterVolumeFindFirst**](/windows/desktop/api/fltuser/nf-fltuser-filtervolumefindfirst)
+[**FilterVolumeFindFirst**](/windows/win32/api/fltuser/nf-fltuser-filtervolumefindfirst)
 
-[**FilterVolumeFindNext**](/windows/desktop/api/fltuser/nf-fltuser-filtervolumefindnext)
+[**FilterVolumeFindNext**](/windows/win32/api/fltuser/nf-fltuser-filtervolumefindnext)
 
-[**FilterVolumeInstanceFindFirst**](/windows/desktop/api/fltuser/nf-fltuser-filtervolumeinstancefindfirst)
+[**FilterVolumeInstanceFindFirst**](/windows/win32/api/fltuser/nf-fltuser-filtervolumeinstancefindfirst)
 
-[**FilterVolumeInstanceFindNext**](/windows/desktop/api/fltuser/nf-fltuser-filtervolumeinstancefindnext)
+[**FilterVolumeInstanceFindNext**](/windows/win32/api/fltuser/nf-fltuser-filtervolumeinstancefindnext)
 
 提供以下支持例程来查询信息：
 
-[**FilterGetDosName**](/windows/desktop/api/fltuser/nf-fltuser-filtergetdosname)
+[**FilterGetDosName**](/windows/win32/api/fltuser/nf-fltuser-filtergetdosname)
 
-[**FilterGetInformation**](/windows/desktop/api/fltuser/nf-fltuser-filtergetinformation)
+[**FilterGetInformation**](/windows/win32/api/fltuser/nf-fltuser-filtergetinformation)
 
-[**FilterInstanceGetInformation**](/windows/desktop/api/fltuser/nf-fltuser-filterinstancegetinformation)
+[**FilterInstanceGetInformation**](/windows/win32/api/fltuser/nf-fltuser-filterinstancegetinformation)
 
 为用户操作启动的通信提供以下支持例程：
 
-[**FilterConnectCommunicationPort**](/windows/desktop/api/fltuser/nf-fltuser-filterconnectcommunicationport)
+[**FilterConnectCommunicationPort**](/windows/win32/api/fltuser/nf-fltuser-filterconnectcommunicationport)
 
-[**FilterSendMessage**](/windows/desktop/api/fltuser/nf-fltuser-filtersendmessage)
+[**FilterSendMessage**](/windows/win32/api/fltuser/nf-fltuser-filtersendmessage)
 
 提供了以下支持例程来响应微筛选器驱动程序启动的通信：
 
-[**FilterGetMessage**](/windows/desktop/api/fltuser/nf-fltuser-filtergetmessage)
+[**FilterGetMessage**](/windows/win32/api/fltuser/nf-fltuser-filtergetmessage)
 
-[**FilterReplyMessage**](/windows/desktop/api/fltuser/nf-fltuser-filterreplymessage)
+[**FilterReplyMessage**](/windows/win32/api/fltuser/nf-fltuser-filterreplymessage)
 
  
 

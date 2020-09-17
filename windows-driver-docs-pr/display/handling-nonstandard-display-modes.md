@@ -6,12 +6,12 @@ keywords:
 - 非标准显示模式 WDK DirectX 9.0，处理
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e08bd7b1437e7441e1a4d2f7da5596d5e915789b
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 3b93a5ba15bf4f3032f663842bb2c784b9e3d6fd
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89064782"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90716452"
 ---
 # <a name="handling-nonstandard-display-modes"></a>处理非标准显示模式
 
@@ -31,7 +31,7 @@ ms.locfileid: "89064782"
 
 -   在 DirectX 主图面处于活动状态时键入 "Ctl + Alt + Del"。
 
-    在发生任何 GDI 绘图之前，内核将标准主副本指定为对驱动程序的 [*DdFlip*](/windows/desktop/api/ddrawint/nc-ddrawint-pdd_surfcb_flip) 函数的调用中的目标。 因此，在任何 GDI 绘图之前，驱动程序必须将显示设备编程为标准显示模式。 还将调用主图面的驱动程序的 [*DdDestroySurface*](/windows/desktop/api/ddrawint/nc-ddrawint-pdd_surfcb_destroysurface) 函数。 请注意，驱动程序可能会放弃 DirectX 主图面的内容。
+    在发生任何 GDI 绘图之前，内核将标准主副本指定为对驱动程序的 [*DdFlip*](/windows/win32/api/ddrawint/nc-ddrawint-pdd_surfcb_flip) 函数的调用中的目标。 因此，在任何 GDI 绘图之前，驱动程序必须将显示设备编程为标准显示模式。 还将调用主图面的驱动程序的 [*DdDestroySurface*](/windows/win32/api/ddrawint/nc-ddrawint-pdd_surfcb_destroysurface) 函数。 请注意，驱动程序可能会放弃 DirectX 主图面的内容。
 
 -   窗口模式和非标准格式
 

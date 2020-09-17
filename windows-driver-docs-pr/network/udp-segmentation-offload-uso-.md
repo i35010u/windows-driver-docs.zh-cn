@@ -9,16 +9,16 @@ keywords:
 - '关于 UDP 分段卸载 (USO) '
 ms.date: 02/27/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 7ad4177a1b6247791dfe4012208bc5b0eb67631c
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 7a965fa6d07695c0bb609f4e67e6d5345ae1782d
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89208557"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90714612"
 ---
 # <a name="udp-segmentation-offload-uso"></a>UDP 分段卸载 (USO)
 
-Windows 10 版本1912及更高版本中支持的 UDP 分段卸载 (USO) ，这是一项功能，该功能使网络接口卡 (Nic) 卸载大于最大传输单元的 UDP 数据报的分段， (MTU) 网络介质。 通过这样做，Windows 可减少与每个数据包的 TCP/IP 处理相关的 CPU 利用率。 USO 的要求类似于 [LSOv2](offloading-the-segmentation-of-large-tcp-packets.md)，后者用于 TCP 传输协议。
+Windows 10 版本2004及更高版本中支持的 UDP 分段卸载 (USO) ，这是一项功能，该功能使网络接口卡 (Nic) 卸载大于最大传输单元的 UDP 数据报的分段， (MTU) 网络介质。 通过这样做，Windows 可减少与每个数据包的 TCP/IP 处理相关的 CPU 利用率。 USO 的要求类似于 [LSOv2](offloading-the-segmentation-of-large-tcp-packets.md)，后者用于 TCP 传输协议。
 
 ## <a name="requirements-for-uso"></a>USO 的要求
 

@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d63696b114011752e28d0406230d2b29cdcccee3
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 400165d2f8884690bcb2cf3fc6204ea56321a738
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89096339"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90716182"
 ---
 # <a name="inf-classinstall32-section"></a>INF ClassInstall32 节
 
@@ -197,7 +197,7 @@ HKR,,NoInstallClass,,1
 HKR,,Icon,,"101"
 ```
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**AddProperty**](inf-addproperty-directive.md)
@@ -222,7 +222,7 @@ HKR,,Icon,,"101"
 
 [**RenFiles**](inf-renfiles-directive.md)
 
-[**SetupDiBuildClassInfoListEx**](/windows/desktop/api/setupapi/nf-setupapi-setupdibuildclassinfolistexa)
+[**SetupDiBuildClassInfoListEx**](/windows/win32/api/setupapi/nf-setupapi-setupdibuildclassinfolistexa)
 
 [**UpdateIniFields**](inf-updateinifields-directive.md)
 

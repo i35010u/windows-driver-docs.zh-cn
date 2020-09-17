@@ -7,12 +7,12 @@ keywords:
 - 电池 miniclass 驱动程序 WDK，例程
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b7a91c0077ff56a7b5cdc55ce1e4e4b48eae99e2
-ms.sourcegitcommit: 7a7e61b4147a4aa86bf820fd0b0c7681fe17e544
+ms.openlocfilehash: f011074ef3769587cf3f6cb95ee11f2f3a63ccbc
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89056937"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90716614"
 ---
 # <a name="adddevice-routine-of-a-battery-miniclass-driver"></a>电池微型类驱动程序的 AddDevice 例程
 
@@ -26,7 +26,7 @@ ms.locfileid: "89056937"
 
 1.  为电池创建 FDO，并将 FDO 连接到控制器的设备堆栈。
 
-2.  初始化 [**电池 \_ 微型端口 \_ 信息**](/windows/desktop/api/batclass/ns-batclass-battery_miniport_info) 结构并调用 [**BatteryClassInitializeDevice**](/windows/desktop/api/batclass/nf-batclass-batteryclassinitializedevice) ，将 miniclass 驱动程序注册到电池类驱动程序。
+2.  初始化 [**电池 \_ 微型端口 \_ 信息**](/windows/win32/api/batclass/ns-batclass-battery_miniport_info) 结构并调用 [**BatteryClassInitializeDevice**](/windows/win32/api/batclass/nf-batclass-batteryclassinitializedevice) ，将 miniclass 驱动程序注册到电池类驱动程序。
 
 3.  执行设备所需的任何其他初始化。
 

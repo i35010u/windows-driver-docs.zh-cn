@@ -4,12 +4,12 @@ description: PWM 控制器是 SoC 和内存映射到 SoC 地址空间的一部�
 ms.assetid: 911375A9-6761-45C1-BB5E-79BC0E4409AC
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 48994046ebe87e6d398d04bb194327a77ac1a79e
-ms.sourcegitcommit: c766ab74e32eb44795cbbd1a4f352d3a6a9adc14
+ms.openlocfilehash: 5febc2d215b1f456f889bf90bf8b3735d4951d6b
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89389577"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90715872"
 ---
 # <a name="pwm-driver-for-an-on-soc-pwm-module"></a>SoC 上 PWM 模块的 PWM 驱动程序
 若要访问脉冲宽度调制 (PWM) 控制器，该控制器是 SoC 和内存映射到 SoC 地址空间的一部分，则需要编写一个内核模式驱动程序。 驱动程序必须注册 PWM 控制器的设备类接口，以便 UWP 应用可以通过在 Pwm 命名空间中定义的 PWM WinRT Api 访问系统公开的 PWM 设备。 
@@ -487,20 +487,20 @@ PWM IOCTL 请求由应用程序或其他驱动程序发送，并以控制器或�
 
 **控制器 IOCTLs**
 
--    [**IOCTL_PWM_CONTROLLER_GET_ACTUAL_PERIOD**](/windows/desktop/api/pwm/ni-pwm-ioctl_pwm_controller_get_actual_period) 
--    [**IOCTL_PWM_CONTROLLER_GET_INFO**](/windows/desktop/api/pwm/ni-pwm-ioctl_pwm_controller_get_info) 
--    [**IOCTL_PWM_CONTROLLER_SET_DESIRED_PERIOD**](/windows/desktop/api/pwm/ni-pwm-ioctl_pwm_controller_set_desired_period)
+-    [**IOCTL_PWM_CONTROLLER_GET_ACTUAL_PERIOD**](/windows/win32/api/pwm/ni-pwm-ioctl_pwm_controller_get_actual_period) 
+-    [**IOCTL_PWM_CONTROLLER_GET_INFO**](/windows/win32/api/pwm/ni-pwm-ioctl_pwm_controller_get_info) 
+-    [**IOCTL_PWM_CONTROLLER_SET_DESIRED_PERIOD**](/windows/win32/api/pwm/ni-pwm-ioctl_pwm_controller_set_desired_period)
 
 
 **固定 IOCTLs**
 
--    [**IOCTL_PWM_PIN_GET_ACTIVE_DUTY_CYCLE_PERCENTAGE**](/windows/desktop/api/pwm/ni-pwm-ioctl_pwm_pin_get_active_duty_cycle_percentage)
--    [**IOCTL_PWM_PIN_SET_ACTIVE_DUTY_CYCLE_PERCENTAGE**](/windows/desktop/api/pwm/ni-pwm-ioctl_pwm_pin_set_active_duty_cycle_percentage)
--    [**IOCTL_PWM_PIN_GET_POLARITY**](/windows/desktop/api/pwm/ni-pwm-ioctl_pwm_pin_get_polarity)
--    [**IOCTL_PWM_PIN_SET_POLARITY**](/windows/desktop/api/pwm/ni-pwm-ioctl_pwm_pin_set_polarity)
--    [**IOCTL_PWM_PIN_START**](/windows/desktop/api/pwm/ni-pwm-ioctl_pwm_pin_start)
--    [**IOCTL_PWM_PIN_STOP**](/windows/desktop/api/pwm/ni-pwm-ioctl_pwm_pin_stop)
--    [**IOCTL_PWM_PIN_IS_STARTED**](/windows/desktop/api/pwm/ni-pwm-ioctl_pwm_pin_is_started)    
+-    [**IOCTL_PWM_PIN_GET_ACTIVE_DUTY_CYCLE_PERCENTAGE**](/windows/win32/api/pwm/ni-pwm-ioctl_pwm_pin_get_active_duty_cycle_percentage)
+-    [**IOCTL_PWM_PIN_SET_ACTIVE_DUTY_CYCLE_PERCENTAGE**](/windows/win32/api/pwm/ni-pwm-ioctl_pwm_pin_set_active_duty_cycle_percentage)
+-    [**IOCTL_PWM_PIN_GET_POLARITY**](/windows/win32/api/pwm/ni-pwm-ioctl_pwm_pin_get_polarity)
+-    [**IOCTL_PWM_PIN_SET_POLARITY**](/windows/win32/api/pwm/ni-pwm-ioctl_pwm_pin_set_polarity)
+-    [**IOCTL_PWM_PIN_START**](/windows/win32/api/pwm/ni-pwm-ioctl_pwm_pin_start)
+-    [**IOCTL_PWM_PIN_STOP**](/windows/win32/api/pwm/ni-pwm-ioctl_pwm_pin_stop)
+-    [**IOCTL_PWM_PIN_IS_STARTED**](/windows/win32/api/pwm/ni-pwm-ioctl_pwm_pin_is_started)    
 
 对于每个 IOCTL 请求，PWM drivr 必须验证以下各项： 
 

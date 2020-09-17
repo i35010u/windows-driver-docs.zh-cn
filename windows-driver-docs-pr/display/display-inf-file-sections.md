@@ -11,12 +11,12 @@ keywords:
 - 显示 INF 文件部分 WDK Windows 2000 显示
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fb01befee0b8249e5fb75c83cac3d17905d5eaa0
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 00114e5848e804474c93282c79c0bdeaaa3eda3b
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90106448"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90716292"
 ---
 # <a name="display-inf-file-sections"></a>显示 INF 文件节
 
@@ -70,7 +70,7 @@ HKR,, MemClocking
 HKR,, CapabilityOverride
 ```
 
-**CapabilityOverride**项指定显示器驱动程序的系统关闭功能。 例如，即使显示驱动程序实现了 [**DrvEscape**](/windows/desktop/api/winddi/nf-winddi-drvescape) 函数，如果在 **CapabilityOverride** 项中设置了0x10 标志，则无法使用该功能。
+**CapabilityOverride**项指定显示器驱动程序的系统关闭功能。 例如，即使显示驱动程序实现了 [**DrvEscape**](/windows/win32/api/winddi/nf-winddi-drvescape) 函数，如果在 **CapabilityOverride** 项中设置了0x10 标志，则无法使用该功能。
 
 **CapabilityOverride**注册表项的值是下表中列出的一个或多个标志的按位 "或"。
 
@@ -96,15 +96,15 @@ HKR,, CapabilityOverride
 </tr>
 <tr class="odd">
 <td align="left"><p>0x4</p></td>
-<td align="left"><p>禁用对 Direct3D 硬件加速的所有支持。 阻止对<a href="/windows/desktop/api/ddrawint/nc-ddrawint-pdd_getdriverinfo" data-raw-source="[&lt;strong&gt;DdGetDriverInfo&lt;/strong&gt;](/windows/desktop/api/ddrawint/nc-ddrawint-pdd_getdriverinfo)"><strong>DdGetDriverInfo</strong></a>的调用<em>，</em>该调用请求从连接到驱动程序的 Direct3D 功能和回调信息。</p></td>
+<td align="left"><p>禁用对 Direct3D 硬件加速的所有支持。 阻止对<a href="/windows/win32/api/ddrawint/nc-ddrawint-pdd_getdriverinfo" data-raw-source="[&lt;strong&gt;DdGetDriverInfo&lt;/strong&gt;](/windows/win32/api/ddrawint/nc-ddrawint-pdd_getdriverinfo)"><strong>DdGetDriverInfo</strong></a>的调用<em>，</em>该调用请求从连接到驱动程序的 Direct3D 功能和回调信息。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x8</p></td>
-<td align="left"><p>禁用对 OpenGL 可安装客户端驱动程序的所有支持 (ICD) 和 miniclient driver (MCD) 。 阻止对 <a href="/windows/desktop/api/winddi/nf-winddi-drvsetpixelformat" data-raw-source="[&lt;strong&gt;DrvSetPixelFormat&lt;/strong&gt;](/windows/desktop/api/winddi/nf-winddi-drvsetpixelformat)"><strong>DrvSetPixelFormat</strong></a>、 <a href="/windows/desktop/api/winddi/nf-winddi-drvdescribepixelformat" data-raw-source="[&lt;strong&gt;DrvDescribePixelFormat&lt;/strong&gt;](/windows/desktop/api/winddi/nf-winddi-drvdescribepixelformat)"><strong>DrvDescribePixelFormat</strong></a>和 <a href="/windows/desktop/api/winddi/nf-winddi-drvswapbuffers" data-raw-source="[&lt;strong&gt;DrvSwapBuffers&lt;/strong&gt;](/windows/desktop/api/winddi/nf-winddi-drvswapbuffers)"><strong>DrvSwapBuffers</strong></a> 的调用到达驱动程序。 还禁止 OPENGL_GETINFO、OPENGL_CMD 和 MCDFUNCS 的转义到达驱动程序。</p></td>
+<td align="left"><p>禁用对 OpenGL 可安装客户端驱动程序的所有支持 (ICD) 和 miniclient driver (MCD) 。 阻止对 <a href="/windows/win32/api/winddi/nf-winddi-drvsetpixelformat" data-raw-source="[&lt;strong&gt;DrvSetPixelFormat&lt;/strong&gt;](/windows/win32/api/winddi/nf-winddi-drvsetpixelformat)"><strong>DrvSetPixelFormat</strong></a>、 <a href="/windows/win32/api/winddi/nf-winddi-drvdescribepixelformat" data-raw-source="[&lt;strong&gt;DrvDescribePixelFormat&lt;/strong&gt;](/windows/win32/api/winddi/nf-winddi-drvdescribepixelformat)"><strong>DrvDescribePixelFormat</strong></a>和 <a href="/windows/win32/api/winddi/nf-winddi-drvswapbuffers" data-raw-source="[&lt;strong&gt;DrvSwapBuffers&lt;/strong&gt;](/windows/win32/api/winddi/nf-winddi-drvswapbuffers)"><strong>DrvSwapBuffers</strong></a> 的调用到达驱动程序。 还禁止 OPENGL_GETINFO、OPENGL_CMD 和 MCDFUNCS 的转义到达驱动程序。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x10</p></td>
-<td align="left"><p>禁用对驱动程序中所有转义的支持。 阻止对 <a href="/windows/desktop/api/winddi/nf-winddi-drvescape" data-raw-source="[&lt;strong&gt;DrvEscape&lt;/strong&gt;](/windows/desktop/api/winddi/nf-winddi-drvescape)"><strong>DrvEscape</strong></a> 和 <a href="/windows/desktop/api/winddi/nf-winddi-drvdrawescape" data-raw-source="[&lt;strong&gt;DrvDrawEscape&lt;/strong&gt;](/windows/desktop/api/winddi/nf-winddi-drvdrawescape)"><strong>DrvDrawEscape</strong></a> 的调用到达驱动程序。</p></td>
+<td align="left"><p>禁用对驱动程序中所有转义的支持。 阻止对 <a href="/windows/win32/api/winddi/nf-winddi-drvescape" data-raw-source="[&lt;strong&gt;DrvEscape&lt;/strong&gt;](/windows/win32/api/winddi/nf-winddi-drvescape)"><strong>DrvEscape</strong></a> 和 <a href="/windows/win32/api/winddi/nf-winddi-drvdrawescape" data-raw-source="[&lt;strong&gt;DrvDrawEscape&lt;/strong&gt;](/windows/win32/api/winddi/nf-winddi-drvdrawescape)"><strong>DrvDrawEscape</strong></a> 的调用到达驱动程序。</p></td>
 </tr>
 </tbody>
 </table>

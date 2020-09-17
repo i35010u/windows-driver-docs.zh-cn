@@ -9,19 +9,19 @@ keywords:
 - 设备接口 WDK UMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 385fc919b3afe00de8666f1e0c09b0e63ba502bd
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: fc3d5bcc0aa14f4351fe826ce9bac04d8827aa94
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89184557"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90715504"
 ---
 # <a name="using-device-interfaces-in-umdf-drivers"></a>在 UMDF 驱动程序中使用设备接口
 
 
 [!include[UMDF 1 Deprecation](../includes/umdf-1-deprecation.md)]
 
-*设备接口*是应用程序可用于访问设备即插即用 (PnP) 设备的符号链接。 用户模式应用程序可将接口的符号链接名称传递到 API 元素，例如 Microsoft Win32 [**CreateFile**](/windows/desktop/api/fileapi/nf-fileapi-createfilea) 函数。 若要获取设备接口的符号链接名称，用户模式应用程序可以调用 **SetupDi** 函数。 有关 SetupDi 函数的详细信息，请参阅 SetupDi 设备接口函数。
+*设备接口*是应用程序可用于访问设备即插即用 (PnP) 设备的符号链接。 用户模式应用程序可将接口的符号链接名称传递到 API 元素，例如 Microsoft Win32 [**CreateFile**](/windows/win32/api/fileapi/nf-fileapi-createfilea) 函数。 若要获取设备接口的符号链接名称，用户模式应用程序可以调用 **SetupDi** 函数。 有关 SetupDi 函数的详细信息，请参阅 SetupDi 设备接口函数。
 
 每个设备接口属于一个 *设备接口类*。 例如，cd-rom 设备的驱动程序堆栈可能提供属于 GUID \_ DEVINTERFACE \_ CDROM 类的接口。 Cd-rom 设备的驱动程序之一将注册 GUID \_ DEVINTERFACE CDROM 类的实例， \_ 以通知系统和应用程序提供 cd-rom 设备。 有关设备接口类的详细信息，请参阅 [设备接口简介](../install/overview-of-device-interface-classes.md)。
 

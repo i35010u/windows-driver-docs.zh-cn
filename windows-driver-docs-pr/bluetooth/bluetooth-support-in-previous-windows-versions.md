@@ -4,12 +4,12 @@ description: 以前的 Windows 版本中的蓝牙版本和配置文件支持
 ms.assetid: 5209DE94-241D-4EFA-BA00-884EC74C8C1B
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fb0502e02dd30ba42fe906205bc36c1b5fdd4596
-ms.sourcegitcommit: 937974aa9bbe0262a7ffe9631593fab48c4e7492
+ms.openlocfilehash: f0e1e49768b681d5e65448ddc8cf9a9161e32f56
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "90010579"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90716548"
 ---
 # <a name="bluetooth-version-and-profile-support-in-previous-windows-versions"></a>以前的 Windows 版本中的蓝牙版本和配置文件支持
 
@@ -62,7 +62,7 @@ Windows 对不同版本的蓝牙规范的支持取决于 Windows 版本，如下
 <th align="left">版本2.0，带有 EDR<em></th>
 <th align="left">版本2。1</th>
 <th align="left">版本2.1，带有 EDR</th>
-<th align="left">4.0 版</th>
+<th align="left">版本4。0</th>
 <th align="left">4.1 版</th>
 </tr>
 </thead>
@@ -199,7 +199,7 @@ Windows Vista 包括对蓝牙堆栈和相关软件的以下增强功能：
 <tr class="odd">
 <td align="left"><p>供应商标识符 (VID) </p></td>
 <td align="left"><p>产品标识符</p></td>
-<td align="left"><p>描述</p></td>
+<td align="left"><p>说明</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>03F0</p></td>
@@ -422,7 +422,7 @@ Windows 8 引入了新的 Api，用于通过蓝牙低能耗访问蓝牙智能外
 ## <a name="span-idwhat_programming_interfaces_were_introduced_in_windows_7_spanspan-idwhat_programming_interfaces_were_introduced_in_windows_7_spanspan-idwhat_programming_interfaces_were_introduced_in_windows_7_spanwhat-programming-interfaces-were-introduced-in-windows7"></a><span id="What_programming_interfaces_were_introduced_in_Windows_7_"></span><span id="what_programming_interfaces_were_introduced_in_windows_7_"></span><span id="WHAT_PROGRAMMING_INTERFACES_WERE_INTRODUCED_IN_WINDOWS_7_"></span>Windows 7 中引入了哪些编程接口？
 
 
-Windows 7 引入了以前的 Api 的新 Ex 版本来提供增强的功能。 例如，BluetoothAuthenticateDeviceEx 函数允许向正在进行身份验证的设备的函数调用传递带外数据。 同样， [**BluetoothRegisterForAuthenticationEx**](/windows/desktop/api/bluetoothapis/nf-bluetoothapis-bluetoothregisterforauthenticationex) 函数还包括 pin 请求和数字比较功能。 此外，当接收到发送数值比较响应的身份验证请求时，将调用 [**BluetoothSendAuthenticationResponseEx**](/windows/desktop/api/bluetoothapis/nf-bluetoothapis-bluetoothsendauthenticationresponseex) 函数。 有关这些 Api 的新 Ex 版本的详细信息，请参阅 [蓝牙功能](/windows/desktop/Bluetooth/bluetooth-functions)。
+Windows 7 引入了以前的 Api 的新 Ex 版本来提供增强的功能。 例如，BluetoothAuthenticateDeviceEx 函数允许向正在进行身份验证的设备的函数调用传递带外数据。 同样， [**BluetoothRegisterForAuthenticationEx**](/windows/win32/api/bluetoothapis/nf-bluetoothapis-bluetoothregisterforauthenticationex) 函数还包括 pin 请求和数字比较功能。 此外，当接收到发送数值比较响应的身份验证请求时，将调用 [**BluetoothSendAuthenticationResponseEx**](/windows/win32/api/bluetoothapis/nf-bluetoothapis-bluetoothsendauthenticationresponseex) 函数。 有关这些 Api 的新 Ex 版本的详细信息，请参阅 [蓝牙功能](/windows/desktop/Bluetooth/bluetooth-functions)。
 
 ## <a name="span-idwhat_programming_interfaces_were_introduced_in_windows_vista_spanspan-idwhat_programming_interfaces_were_introduced_in_windows_vista_spanspan-idwhat_programming_interfaces_were_introduced_in_windows_vista_spanwhat-programming-interfaces-were-introduced-in-windowsvista"></a><span id="What_programming_interfaces_were_introduced_in_Windows_Vista_"></span><span id="what_programming_interfaces_were_introduced_in_windows_vista_"></span><span id="WHAT_PROGRAMMING_INTERFACES_WERE_INTRODUCED_IN_WINDOWS_VISTA_"></span>Windows Vista 中引入了哪些编程接口？
 

@@ -3,12 +3,12 @@ description: 本主题提供有关活动 ID Guid 的信息、如何将这些 Gui
 title: 使用 USB ETW 跟踪中的活动 ID GUID
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1f37005eed9eb4245e5e289105c095a4e20ebe01
-ms.sourcegitcommit: 937974aa9bbe0262a7ffe9631593fab48c4e7492
+ms.openlocfilehash: 3290e36f9eb298a30c859e646141b6c382a87126
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "90010495"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90716664"
 ---
 # <a name="using-activity-id-guids-in-usb-etw-traces"></a>使用 USB ETW 跟踪中的活动 ID GUID
 
@@ -32,7 +32,7 @@ ms.locfileid: "90010495"
 ## <a name="how-to-add-an-activity-id-guid-in-an-application"></a>如何在应用程序中添加活动 ID GUID
 
 
-应用程序可以通过调用 [**EventActivityIdControl**](/windows/desktop/api/evntprov/nf-evntprov-eventactivityidcontrol)来包含活动 ID guid。 有关详细信息，请参阅 [事件跟踪函数](/windows/desktop/ETW/event-tracing-functions)。
+应用程序可以通过调用 [**EventActivityIdControl**](/windows/win32/api/evntprov/nf-evntprov-eventactivityidcontrol)来包含活动 ID guid。 有关详细信息，请参阅 [事件跟踪函数](/windows/desktop/ETW/event-tracing-functions)。
 
 此代码示例演示如何设置活动 ID GUID 并将其发送到 ETW 提供程序（UMDF 驱动程序）。
 
@@ -69,14 +69,14 @@ if(success == 0)
 }
 ```
 
-在前面的示例中，应用程序将调用 [**EventActivityIdControl**](/windows/desktop/api/evntprov/nf-evntprov-eventactivityidcontrol) 来创建活动 ID (事件 \_ 活动的 \_ ctrl \_ create \_ id) ，然后将其设置为 \_ 当前线程 (事件活动 \_ ctrl \_ 设置 \_ id) 。 应用程序通过发送驱动程序定义的 IOCTL，将活动 GUID 指定到 ETW 事件提供程序，如用户模式驱动程序， (下一节) 所述。
+在前面的示例中，应用程序将调用 [**EventActivityIdControl**](/windows/win32/api/evntprov/nf-evntprov-eventactivityidcontrol) 来创建活动 ID (事件 \_ 活动的 \_ ctrl \_ create \_ id) ，然后将其设置为 \_ 当前线程 (事件活动 \_ ctrl \_ 设置 \_ id) 。 应用程序通过发送驱动程序定义的 IOCTL，将活动 GUID 指定到 ETW 事件提供程序，如用户模式驱动程序， (下一节) 所述。
 
 事件提供程序必须发布检测清单文件 (。手册文件) 。 通过运行 [** ( # A0) 的消息编译器 **](/windows/desktop/WES/message-compiler--mc-exe-)，将生成包含事件提供程序、事件特性、通道和事件定义的头文件。 在此示例中，应用程序调用在生成的标头文件中定义的 EventWriteReadFail，以便在发生故障时编写跟踪事件消息。
 
 ## <a name="how-to-set-the-activity-id-guid-in-a-umdf-driver"></a>如何在 UMDF 驱动程序中设置活动 ID GUID
 
 
-用户模式驱动程序通过调用 [**EventActivityIdControl**](/windows/desktop/api/evntprov/nf-evntprov-eventactivityidcontrol) 创建并设置活动 ID guid，调用与应用程序调用它们的方式类似，如前一部分中所述。 这些调用将活动 ID GUID 添加到当前线程，并在线程记录事件时使用活动 ID GUID。 有关详细信息，请参阅 [使用活动标识符](../wdf/using-activity-identifiers.md)。
+用户模式驱动程序通过调用 [**EventActivityIdControl**](/windows/win32/api/evntprov/nf-evntprov-eventactivityidcontrol) 创建并设置活动 ID guid，调用与应用程序调用它们的方式类似，如前一部分中所述。 这些调用将活动 ID GUID 添加到当前线程，并在线程记录事件时使用活动 ID GUID。 有关详细信息，请参阅 [使用活动标识符](../wdf/using-activity-identifiers.md)。
 
 此示例代码演示了 UMDF 驱动程序如何设置由应用程序通过 IOCTL 创建和指定的活动 ID GUID。
 
@@ -195,7 +195,7 @@ CMyReadWriteQueue::ForwardFormattedRequest(
 }
 ```
 
-让我们看看应用程序创建的活动 ID GUID 与 [用户模式驱动程序框架](../debugger/user-mode-driver-framework-debugging.md) （ (UMDF) 客户端驱动程序）关联的方式。 当驱动程序从应用程序接收 IOCTL 请求时，它将复制私有成员中的 GUID。 在某些时候，应用程序会调用 [**ReadFile**](/windows/desktop/api/fileapi/nf-fileapi-readfile) 来执行读取操作。 框架创建请求并调用驱动程序的处理程序 ForwardFormattedRequest。 在处理程序中，驱动程序通过调用 [**EventActivityIdControl**](/windows/desktop/api/evntprov/nf-evntprov-eventactivityidcontrol) 和 EventWriteReadFail 来跟踪事件消息，来在线程上设置以前存储的活动 ID GUID。
+让我们看看应用程序创建的活动 ID GUID 与 [用户模式驱动程序框架](../debugger/user-mode-driver-framework-debugging.md) （ (UMDF) 客户端驱动程序）关联的方式。 当驱动程序从应用程序接收 IOCTL 请求时，它将复制私有成员中的 GUID。 在某些时候，应用程序会调用 [**ReadFile**](/windows/win32/api/fileapi/nf-fileapi-readfile) 来执行读取操作。 框架创建请求并调用驱动程序的处理程序 ForwardFormattedRequest。 在处理程序中，驱动程序通过调用 [**EventActivityIdControl**](/windows/win32/api/evntprov/nf-evntprov-eventactivityidcontrol) 和 EventWriteReadFail 来跟踪事件消息，来在线程上设置以前存储的活动 ID GUID。
 
 **注意**  UMDF 驱动程序还必须包含通过检测清单文件生成的标头文件。 标头文件定义编写跟踪消息的 EventWriteReadFail 的宏。
 

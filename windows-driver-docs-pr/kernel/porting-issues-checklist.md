@@ -7,12 +7,12 @@ keywords:
 - 将驱动程序移植到64位 Windows
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2e2a86cedf695f3bd79183ceab5d280febb8452b
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 9458ac090f332b95686218a73ecfbb1f881fc878
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89187901"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90715534"
 ---
 # <a name="porting-issues-checklist"></a>移植问题清单
 
@@ -145,7 +145,7 @@ ms.locfileid: "89187901"
 
 -   避免使用计算的或硬编码的指针偏移量。
 
-    使用结构时，尽可能使用 [**字段 \_ 偏移**](/windows/desktop/api/ntdef/nf-ntdef-field_offset) 宏来确定结构成员的偏移量。
+    使用结构时，尽可能使用 [**字段 \_ 偏移**](/windows/win32/api/ntdef/nf-ntdef-field_offset) 宏来确定结构成员的偏移量。
 
 -   避免使用硬编码指针或句柄值。
 
@@ -243,7 +243,7 @@ ms.locfileid: "89187901"
 
 <!-- -->
 
--   使用 [**字段 \_ 偏移**](/windows/desktop/api/ntdef/nf-ntdef-field_offset) 宏。
+-   使用 [**字段 \_ 偏移**](/windows/win32/api/ntdef/nf-ntdef-field_offset) 宏。
 
     例如：
 

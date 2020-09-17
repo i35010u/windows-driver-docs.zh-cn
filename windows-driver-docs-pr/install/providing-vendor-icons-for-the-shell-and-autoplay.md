@@ -14,12 +14,12 @@ keywords:
 - 复制图标文件
 ms.date: 04/30/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: ac171427871dacb11852f5bf30910440bf2b525f
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 5fe372d91e5e809312801660fac3cecaeb66f9e1
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89095827"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90715264"
 ---
 # <a name="providing-icons-for-a-device"></a>为设备提供图标
 
@@ -75,7 +75,7 @@ HKR, , NoMediaIcons, 0x10000, "no-media-inserted-icon-file"
 
 * `NoMediaIcons [REG_MULTI_SZ] = %SystemRoot%\system32\noicon.ico`
 
-若要从用户模式修改 **设备参数** 密钥，请使用 [**SetupDiCreateDevRegKey**](/windows/desktop/api/setupapi/nf-setupapi-setupdicreatedevregkeya) 或 [**SetupDiOpenDevRegKey**](/windows/desktop/api/setupapi/nf-setupapi-setupdiopendevregkey)。
+若要从用户模式修改 **设备参数** 密钥，请使用 [**SetupDiCreateDevRegKey**](/windows/win32/api/setupapi/nf-setupapi-setupdicreatedevregkeya) 或 [**SetupDiOpenDevRegKey**](/windows/win32/api/setupapi/nf-setupapi-setupdiopendevregkey)。
 
 在内核模式下，使用 [**IoOpenDeviceRegistryKey**](/windows-hardware/drivers/ddi/wdm/nf-wdm-ioopendeviceregistrykey)。
 

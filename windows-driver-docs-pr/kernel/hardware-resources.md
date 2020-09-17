@@ -22,12 +22,12 @@ keywords:
 - 硬件资源
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f80459f671c14209e1aae9d740d0bb2bfb42c79e
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: ede7d4b35aed51a333ba1f7f7842e6327d7f8403
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89185999"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90715898"
 ---
 # <a name="hardware-resources"></a>硬件资源
 
@@ -79,7 +79,7 @@ PnP 管理器会在注册表中存储资源需求列表和资源列表，可以�
 
 设备驱动程序负责确定与 PnP 兼容的设备的基本配置、筛选的配置和启动配置，并为响应 PnP 管理器发送的 Irp 而返回该信息。  (有关详细信息，请参阅向 [正在运行的系统中添加 PnP 设备](adding-a-pnp-device-to-a-running-system.md)。 ) 驱动程序安装软件可以创建替代配置、强制配置和对于非 PnP 设备，启动配置。 PnP 管理器维护每个设备实例的分配配置。
 
-创建每个配置时，会为每个配置分配一个优先级。 如果 PnP 管理器发现已为某个设备实例分配了多个相同类型的逻辑配置，则会先尝试使用优先级最高的逻辑配置。 如果该配置导致资源冲突，则会尝试下一个较低优先级的配置。 有关配置优先级列表的 (，请参阅 [**" \_ 添加 \_ 空 \_ 日志 \_ **](/windows/desktop/api/cfgmgr32/nf-cfgmgr32-cm_add_empty_log_conf)"。 ) 
+创建每个配置时，会为每个配置分配一个优先级。 如果 PnP 管理器发现已为某个设备实例分配了多个相同类型的逻辑配置，则会先尝试使用优先级最高的逻辑配置。 如果该配置导致资源冲突，则会尝试下一个较低优先级的配置。 有关配置优先级列表的 (，请参阅 [**" \_ 添加 \_ 空 \_ 日志 \_ **](/windows/win32/api/cfgmgr32/nf-cfgmgr32-cm_add_empty_log_conf)"。 ) 
 
  
 

@@ -6,12 +6,12 @@ keywords:
 - IPsecOV2 WDK TCP/IP 传输，关于 IPsecOV2
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f2f871db61874ec30e9a4c6ad3c13726c5d5c990
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: d7c5e2963969d7877ca046389f63260c2e771ee3
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89218071"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90715044"
 ---
 # <a name="introduction-to-ipsec-offload-version-2"></a>IPsec 卸载版本 2 简介
 
@@ -20,7 +20,7 @@ ms.locfileid: "89218071"
 
 
 
-IPsec 卸载版本 2 (IPsecOV2) 扩展 IPsec 卸载版本 1 (IPsecOV1) 中提供的服务。 有关 IPsecOV1 卸载和 IPsec 的详细信息，请参阅 [Ipsec 卸载版本 1](ipsec-offload-version-1.md)。
+IPsec 卸载版本 2 (IPsecOV2) 扩展 IPsec 卸载版本 1 (IPsecOV1) 中提供的服务。 有关 IPsecOV1 卸载和 IPsec 的详细信息，请参阅 [Ipsec 卸载版本 1](background-reading-on-ipsec.md)。
 
 NDIS 6.1 和更高版本的微型端口驱动程序报告将微型端口适配器的 IPsecOV2 卸载功能到 NDIS。 报告 IPsec 功能：
 

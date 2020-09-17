@@ -7,12 +7,12 @@ keywords:
 - stretch array.blit 操作 WDK DirectX 9。0
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 04c601035c36690e7b469fd6e900d01d8471af6c
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: e353058c69a6560a7f600979a12b8c055ee1f782
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89064538"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90714968"
 ---
 # <a name="supporting-stretch-blit-operations"></a>支持拉伸位图传送操作
 
@@ -20,7 +20,7 @@ ms.locfileid: "89064538"
 ## <span id="ddk_supporting_stretch_blit_operations_gg"></span><span id="DDK_SUPPORTING_STRETCH_BLIT_OPERATIONS_GG"></span>
 
 
-驱动程序如何执行 stretch array.blit 取决于运行该驱动程序的平台。 对于 Windows 98/Me 平台，当驱动程序的[*DdBlt*](/windows/desktop/api/ddrawint/nc-ddrawint-pdd_surfcb_blt)函数收到 array.blit 请求时，驱动程序可以从[**DD \_ rOrigSrc**](/windows/desktop/api/ddrawint/ns-ddrawint-_dd_bltdata)结构的**rOrigDest**和**BLTDATA**成员的未剪辑矩形区计算 stretch 因数，并在执行 array.blit 操作时计算计算中的因素。
+驱动程序如何执行 stretch array.blit 取决于运行该驱动程序的平台。 对于 Windows 98/Me 平台，当驱动程序的[*DdBlt*](/windows/win32/api/ddrawint/nc-ddrawint-pdd_surfcb_blt)函数收到 array.blit 请求时，驱动程序可以从[**DD \_ rOrigSrc**](/windows/win32/api/ddrawint/ns-ddrawint-_dd_bltdata)结构的**rOrigDest**和**BLTDATA**成员的未剪辑矩形区计算 stretch 因数，并在执行 array.blit 操作时计算计算中的因素。
 
 对于在基于 NT 的操作系统上使用的 DirectX 9.0 和更高版本，驱动程序可以在接收到 array.blit 请求时使用 DDBLT \_ 扩展 \_ 标志和 DDBLT \_ 扩展 \_ 表示法 \_ STRETCHFACTOR 标记（在 DD dwFlags 的 **BLTDATA** 成员中设置 \_ ）来计算和记录 stretch 因数。 该驱动程序将从 .Rsrc 和**bltFX**成员中的未剪辑源和目标矩形区，分别计算**rSrc**和成员的拉伸系数 \_ \_ \_ \_ 。 请注意，驱动程序必须从 **bltFX**中 DDBLTFX 结构的以下成员获取未剪辑目标矩形区，而不能使用 **rDest** 成员中的信息。
 

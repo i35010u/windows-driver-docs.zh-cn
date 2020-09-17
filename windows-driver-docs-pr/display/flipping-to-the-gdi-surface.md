@@ -11,12 +11,12 @@ keywords:
 - surface DirectDraw，翻转
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5217adeaad55b4569b2836d2d5778a5088aa8005
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 7aa860b3883fdb193822c63bc13c0a3b4f5d79ab
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89064254"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90716036"
 ---
 # <a name="flipping-to-the-gdi-surface"></a>交替到 GDI 图面
 
@@ -26,9 +26,9 @@ ms.locfileid: "89064254"
 
 应该实现显示驱动程序，使 GDI (桌面) 图面成为主要表面。 这样做可以让应用程序显示 GDI 呈现的内容，如对话框。 驱动程序可以使用以下方法之一，使 GDI 图面成为主要表面：
 
--   驱动程序可以将 GDI 图面包含为驱动程序的翻转链中的一个缓冲区。 建议将此方法用于使应用程序切换到 GDI 图面。 默认情况下，当应用程序发出翻转请求时，DirectDraw 会对驱动程序的 [*DdFlip*](/windows/desktop/api/ddrawint/nc-ddrawint-pdd_surfcb_flip) 函数进行调用，以便按照它们附加到链中彼此的顺序循环遍历缓冲区。 应用程序可以通过确定 GDI 图面的位置，然后通过发出适当的翻转请求数来翻转到 GDI 面。
+-   驱动程序可以将 GDI 图面包含为驱动程序的翻转链中的一个缓冲区。 建议将此方法用于使应用程序切换到 GDI 图面。 默认情况下，当应用程序发出翻转请求时，DirectDraw 会对驱动程序的 [*DdFlip*](/windows/win32/api/ddrawint/nc-ddrawint-pdd_surfcb_flip) 函数进行调用，以便按照它们附加到链中彼此的顺序循环遍历缓冲区。 应用程序可以通过确定 GDI 图面的位置，然后通过发出适当的翻转请求数来翻转到 GDI 面。
 
--   该驱动程序可以实现 [*DdFlipToGDISurface*](/windows/desktop/api/ddrawint/nc-ddrawint-pdd_fliptogdisurface) 函数，以在 DirectDraw 翻转到或从 GDI 图面翻转时接收通知。 如果驱动程序可以访问 GDI 图面，驱动程序可以在收到此通知后翻转到 GDI 图面。 使用此方法时，无需将 GDI 表面作为驱动程序的翻转链的一部分。
+-   该驱动程序可以实现 [*DdFlipToGDISurface*](/windows/win32/api/ddrawint/nc-ddrawint-pdd_fliptogdisurface) 函数，以在 DirectDraw 翻转到或从 GDI 图面翻转时接收通知。 如果驱动程序可以访问 GDI 图面，驱动程序可以在收到此通知后翻转到 GDI 图面。 使用此方法时，无需将 GDI 表面作为驱动程序的翻转链的一部分。
 
  
 

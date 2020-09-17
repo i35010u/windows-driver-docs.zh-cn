@@ -4,12 +4,12 @@ description: 图形驱动程序函数
 ms.assetid: 2e8725a1-2d98-472d-b8ec-8f451272fe77
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 71b5395e0ec3948e0571adb4b1b75b1fcb7bc559
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 50170d09cf29feb2e035159d4c681eb39f71916e
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89064190"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90716030"
 ---
 # <a name="graphics-driver-functions"></a>图形驱动程序函数
 
@@ -25,7 +25,7 @@ ms.locfileid: "89064190"
 
 [可选的图形驱动程序函数](optional-graphics-driver-functions.md)
 
-当设备驱动程序返回错误时，它通常应调用 GDI [**EngSetLastError**](/windows/desktop/api/winddi/nf-winddi-engsetlasterror) 函数以报告扩展的错误代码。 然后，应用程序可以检索错误代码。
+当设备驱动程序返回错误时，它通常应调用 GDI [**EngSetLastError**](/windows/win32/api/winddi/nf-winddi-engsetlasterror) 函数以报告扩展的错误代码。 然后，应用程序可以检索错误代码。
 
  
 

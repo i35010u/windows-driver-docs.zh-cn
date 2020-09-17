@@ -7,12 +7,12 @@ keywords:
 - 打开硬件密钥 WDK 设备安装
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: aa83ca6ef6bb5d49ffa0e7d59747a8f33175c326
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: f426b8b1b6ad20a80b78591d2eda76c300afde60
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89097323"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90714900"
 ---
 # <a name="opening-a-devices-hardware-key"></a>打开设备的硬件键
 
@@ -25,7 +25,7 @@ ms.locfileid: "89097323"
 
 若要打开或创建设备的硬件密钥，请遵循以下准则：
 
--   若要打开现有硬件密钥，请使用 [**SetupDiOpenDevRegKey**](/windows/desktop/api/setupapi/nf-setupapi-setupdiopendevregkey)。 若要创建硬件密钥，请使用 [**SetupDiCreateDevRegKey**](/windows/desktop/api/setupapi/nf-setupapi-setupdicreatedevregkeya)。 在任一情况下，都必须将 *KeyType* 参数设置为 DIREG_DEV。
+-   若要打开现有硬件密钥，请使用 [**SetupDiOpenDevRegKey**](/windows/win32/api/setupapi/nf-setupapi-setupdiopendevregkey)。 若要创建硬件密钥，请使用 [**SetupDiCreateDevRegKey**](/windows/win32/api/setupapi/nf-setupapi-setupdicreatedevregkeya)。 在任一情况下，都必须将 *KeyType* 参数设置为 DIREG_DEV。
 
     **注意**   必须将*samDesired*参数设置为所需的最小访问权限。 不能将此参数设置为 KEY_ALL_ACCESS。 有关如何为注册表访问指定访问权限的详细信息，请参阅 [安全地访问注册表项](accessing-registry-keys-safely.md)。
 

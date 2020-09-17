@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 573d0569643ec217a95acf698aba8a0991cf364d
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 1ce1eba67b3836617fc3429c12a3b6ad77ad4de8
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89096807"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90714652"
 ---
 # <a name="devpkey_device_noconnectsound"></a>DEVPKEY_Device_NoConnectSound
 
@@ -66,7 +66,7 @@ DEVPKEY_Device_NoConnectSound 的值设置为 DEVPROP_TRUE 以取消播放声音
 
 DEVPKEY_Device_NoConnectSound 属性通常由设备 INF 文件中的 [**Inf AddProperty 指令**](./inf-addproperty-directive.md) 设置。
 
-可以调用 [**SetupDiGetDeviceProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw) 或 [**SetupDiSetDeviceProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdisetdevicepropertyw) 来检索或设置 DEVPKEY_Device_NoConnectSound 的值。
+可以调用 [**SetupDiGetDeviceProperty**](/windows/win32/api/setupapi/nf-setupapi-setupdigetdevicepropertyw) 或 [**SetupDiSetDeviceProperty**](/windows/win32/api/setupapi/nf-setupapi-setupdisetdevicepropertyw) 来检索或设置 DEVPKEY_Device_NoConnectSound 的值。
 
 Windows Server 2003、Windows XP 和 Windows 2000 不支持此属性。
 
@@ -76,12 +76,12 @@ Windows Server 2003、Windows XP 和 Windows 2000 不支持此属性。
 **版本**： windows Vista 和更高版本的 windows **标题**： Devpkey (包含 Devpkey) 
 
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**INF AddProperty 指令**](./inf-addproperty-directive.md)
 
-[**SetupDiGetDeviceProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)
+[**SetupDiGetDeviceProperty**](/windows/win32/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)
 
  
 

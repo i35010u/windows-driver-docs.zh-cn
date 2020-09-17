@@ -7,12 +7,12 @@ keywords:
 - 设备设置类 WDK 设备安装，打开注册表项
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3f747eac8d0f08137e6c91e40c8a3a5f5e69be81
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: da7fc58c1af8adeceb11e4980d94dd9928f3b6dc
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89094979"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90716340"
 ---
 # <a name="opening-registry-keys-for-a-device-setup-class"></a>打开设备安装程序类的注册表项
 
@@ -21,8 +21,8 @@ ms.locfileid: "89094979"
 
 若要安全地打开 [设备安装程序类](./overview-of-device-setup-classes.md)的注册表项，请使用以下 [setupapi.log](setupapi.md) 函数之一：
 
--   [**SetupDiOpenClassRegKey**](/windows/desktop/api/setupapi/nf-setupapi-setupdiopenclassregkey)
--   [**SetupDiOpenClassRegKeyEx**](/windows/desktop/api/setupapi/nf-setupapi-setupdiopenclassregkeyexa) ，其 *Flags* 参数设置为 DIOCR_INSTALLER
+-   [**SetupDiOpenClassRegKey**](/windows/win32/api/setupapi/nf-setupapi-setupdiopenclassregkey)
+-   [**SetupDiOpenClassRegKeyEx**](/windows/win32/api/setupapi/nf-setupapi-setupdiopenclassregkeyexa) ，其 *Flags* 参数设置为 DIOCR_INSTALLER
 
  
 

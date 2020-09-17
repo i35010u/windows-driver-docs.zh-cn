@@ -7,12 +7,12 @@ keywords:
 - COPP WDK DirectX VA，从显示器驱动程序调用
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 78e02371da9ccb46f5a94178274fcb78c2394a5b
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 64b8067f66f0afb7fef1306cce364fd5910886fb
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89067470"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90715696"
 ---
 # <a name="calling-the-copp-ddi-from-the-display-driver"></a>从显示驱动程序调用 COPP DDI
 
@@ -22,7 +22,7 @@ ms.locfileid: "89067470"
 
 本部分仅适用于 Windows Server 2003 SP1 及更高版本以及 Windows XP SP2 及更高版本。
 
-显示驱动程序通过使用 COPP i/o 控件 (IOCTL) 请求，启动对视频微型端口驱动程序的 [COPP DDI](sample-functions-for-copp.md) 的调用。 显示驱动程序通过使用 COPP IOCTL 将同步 COPP 请求发送到视频微型端口驱动程序来调用 [**EngDeviceIoControl**](/windows/desktop/api/winddi/nf-winddi-engdeviceiocontrol) 函数。 图形设备接口 (GDI) 对输入和输出使用单个缓冲区来将请求传递到 i/o 子系统。 I/o 子系统将请求路由到视频端口，此端口使用视频微型端口驱动程序处理请求。
+显示驱动程序通过使用 COPP i/o 控件 (IOCTL) 请求，启动对视频微型端口驱动程序的 [COPP DDI](sample-functions-for-copp.md) 的调用。 显示驱动程序通过使用 COPP IOCTL 将同步 COPP 请求发送到视频微型端口驱动程序来调用 [**EngDeviceIoControl**](/windows/win32/api/winddi/nf-winddi-engdeviceiocontrol) 函数。 图形设备接口 (GDI) 对输入和输出使用单个缓冲区来将请求传递到 i/o 子系统。 I/o 子系统将请求路由到视频端口，此端口使用视频微型端口驱动程序处理请求。
 
 下面的示例数据结构和 IOCTLs 可用于在显示器驱动程序和视频微型端口驱动程序之间传输 COPP 信息。 根据需要，驱动程序可以使用数据结构和 IOCTLs 或创建新的结构。
 

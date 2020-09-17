@@ -12,12 +12,12 @@ keywords:
 - 现有驱动程序更新 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bba10201ec53a2d07988a3c9af62cfa131abcf8c
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 79b0547aceae7452e61d2814fc438868591ef0a2
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90107332"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90714888"
 ---
 # <a name="updating-driver-files"></a>更新驱动程序文件
 
@@ -41,12 +41,12 @@ ms.locfileid: "90107332"
 
 编写更新现有驱动程序的安装软件和 INF 文件时，请使用以下准则。
 
--   安装软件可以调用 [**UpdateDriverForPlugAndPlayDevices**](/windows/desktop/api/newdev/nf-newdev-updatedriverforplugandplaydevicesa)（提供 INF 文件和硬件 id）来更新与硬件 id 匹配的设备的驱动程序。
+-   安装软件可以调用 [**UpdateDriverForPlugAndPlayDevices**](/windows/win32/api/newdev/nf-newdev-updatedriverforplugandplaydevicesa)（提供 INF 文件和硬件 id）来更新与硬件 id 匹配的设备的驱动程序。
 
     从 Windows Vista 开始，安装软件还可以调用以下项之一来更新驱动程序：
 
-    -   [**DiInstallDriver**](/windows/desktop/api/newdev/nf-newdev-diinstalldrivera)，它预安装驱动程序，然后将驱动程序安装在驱动程序支持的系统中的设备上。
-    -   [**DiInstallDevice**](/windows/desktop/api/newdev/nf-newdev-diinstalldevice)，它从系统中存在的指定设备上的驱动程序存储区中安装指定的驱动程序。
+    -   [**DiInstallDriver**](/windows/win32/api/newdev/nf-newdev-diinstalldrivera)，它预安装驱动程序，然后将驱动程序安装在驱动程序支持的系统中的设备上。
+    -   [**DiInstallDevice**](/windows/win32/api/newdev/nf-newdev-diinstalldevice)，它从系统中存在的指定设备上的驱动程序存储区中安装指定的驱动程序。
 
     有关详细信息，请参阅 [编写设备安装应用程序](writing-a-device-installation-application.md)。
 

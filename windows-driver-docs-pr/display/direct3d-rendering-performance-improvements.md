@@ -4,12 +4,12 @@ description: Windows 显示器驱动程序模型 (WDDM) 1.3 及更高版本的�
 ms.assetid: F9AAE489-EC45-4EE6-875E-E084BB3054EE
 ms.date: 10/20/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 10da5d658ffa78d291594d1634a443801a796200
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 8d3985922ecd1f86e9821cd84748f3b57068c518
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90107308"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90716302"
 ---
 # <a name="direct3d-rendering-performance-improvements"></a>Direct3D 呈现性能改进
 
@@ -163,7 +163,7 @@ Windows 显示器驱动程序模型 (WDDM) 1.3 及更高版本的驱动程序可
 </tr>
 <tr class="even">
 <td align="left"><p><span id="SampleDesc"></span><span id="sampledesc"></span><span id="SAMPLEDESC"></span><strong>SampleDesc</strong></p></td>
-<td align="left"><p>运行时设置<a href="/windows/desktop/api/dxgicommon/ns-dxgicommon-dxgi_sample_desc" data-raw-source="[&lt;strong&gt;DXGI_SAMPLE_DESC&lt;/strong&gt;](/windows/desktop/api/dxgicommon/ns-dxgicommon-dxgi_sample_desc)"><strong>DXGI_SAMPLE_DESC</strong></a>。将成员计数为1，将<strong>质量</strong>成员<strong>计数</strong>为零。</p></td>
+<td align="left"><p>运行时设置<a href="/windows/win32/api/dxgicommon/ns-dxgicommon-dxgi_sample_desc" data-raw-source="[&lt;strong&gt;DXGI_SAMPLE_DESC&lt;/strong&gt;](/windows/win32/api/dxgicommon/ns-dxgicommon-dxgi_sample_desc)"><strong>DXGI_SAMPLE_DESC</strong></a>。将成员计数为1，将<strong>质量</strong>成员<strong>计数</strong>为零。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><span id="MipLevels"></span><span id="miplevels"></span><span id="MIPLEVELS"></span><strong>MipLevels</strong></p></td>

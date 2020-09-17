@@ -7,12 +7,12 @@ keywords:
 - IOCTLs WDK Windows 2000 显示器
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4a9661d655ca0c03e7aa64196ff7c01424444437
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: cd53b414d013950eb7f001885956796a353ecd88
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89065268"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90716318"
 ---
 # <a name="communicating-ioctls-to-the-video-miniport-driver"></a>将 IOCTL 传送到视频微型端口驱动程序
 
@@ -24,7 +24,7 @@ ms.locfileid: "89065268"
 
 ![说明显示器驱动程序/视频微型端口驱动程序通信的示意图](images/dpy2.png)
 
-显示驱动程序使用 IOCTL 调用 [**EngDeviceIoControl**](/windows/desktop/api/winddi/nf-winddi-engdeviceiocontrol) ，将同步请求发送到视频微型端口驱动程序。 对于输入和输出，GDI 使用单个缓冲区来将请求传递到 i/o 子系统。 I/o 子系统将请求路由到视频端口，此端口用于处理包含视频微型端口驱动程序的请求。
+显示驱动程序使用 IOCTL 调用 [**EngDeviceIoControl**](/windows/win32/api/winddi/nf-winddi-engdeviceiocontrol) ，将同步请求发送到视频微型端口驱动程序。 对于输入和输出，GDI 使用单个缓冲区来将请求传递到 i/o 子系统。 I/o 子系统将请求路由到视频端口，此端口用于处理包含视频微型端口驱动程序的请求。
 
 某些 IOCTL 请求要求微型端口驱动程序访问视频寄存器，其他 IOCTL 请求则存储或检索微型端口驱动程序的数据结构中的信息。 通常情况下，无请求需要视频微型端口驱动程序来执行实际的绘图操作。
 

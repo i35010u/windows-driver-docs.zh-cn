@@ -8,19 +8,19 @@ keywords:
 - 请求处理 WDK UMDF，操作流
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e4725bcd5b80f58aba8e0620233fd99f3b58a1c8
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: a5dfed5e2a9c394cc280bd16a14b9c0b927791c4
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89191751"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90716654"
 ---
 # <a name="io-request-processing-operation-flow"></a>I/O 请求处理操作流
 
 
 [!include[UMDF 1 Deprecation](../includes/umdf-1-deprecation.md)]
 
-所有 i/o 操作都发生在文件对象的上下文中 (也就是说，应用程序对 Microsoft Win32 [**CreateFile**](/windows/desktop/api/fileapi/nf-fileapi-createfilea) 和 **CloseHandle** 函数所做的调用之间将发生所有的 i/o 操作) 。 I/o 操作是应用程序所做的调用，例如 Win32 **ReadFileEx**、 **WriteFileEx**和 [**DeviceIoControl**](/windows/desktop/api/ioapiset/nf-ioapiset-deviceiocontrol) 函数。
+所有 i/o 操作都发生在文件对象的上下文中 (也就是说，应用程序对 Microsoft Win32 [**CreateFile**](/windows/win32/api/fileapi/nf-fileapi-createfilea) 和 **CloseHandle** 函数所做的调用之间将发生所有的 i/o 操作) 。 I/o 操作是应用程序所做的调用，例如 Win32 **ReadFileEx**、 **WriteFileEx**和 [**DeviceIoControl**](/windows/win32/api/ioapiset/nf-ioapiset-deviceiocontrol) 函数。
 
 以下主题显示的是在单设备堆栈和双设备堆栈中，在 UMDF 驱动程序中和从 UMDF 驱动程序开始、处理和结束的操作流：
 

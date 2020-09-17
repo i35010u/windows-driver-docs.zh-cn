@@ -6,12 +6,12 @@ keywords:
 - 筛选条件标志网络驱动程序
 ms.date: 01/07/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 28e801e8e7cdf0fec2aed644da814d3150cca221
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 0b7c49809f837caf9fe43b71f95552e873074ee0
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90106936"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90715046"
 ---
 # <a name="filtering-condition-flags"></a>筛选条件标志
 
@@ -285,7 +285,7 @@ ms.locfileid: "90106936"
 <p>0x00004000</p>
 </td>
 <td>
-<p>指示已通过调用 <a href="/windows/desktop/api/ws2tcpip/nf-ws2tcpip-wsasetsocketpeertargetname"><b>WSASetSocketPeerTargetName</b></a> 而不是使用缓存试探法来获取应用程序要连接到的对等计算机的名称。</p>
+<p>指示已通过调用 <a href="/windows/win32/api/ws2tcpip/nf-ws2tcpip-wsasetsocketpeertargetname"><b>WSASetSocketPeerTargetName</b></a> 而不是使用缓存试探法来获取应用程序要连接到的对等计算机的名称。</p>
 <p>此标志适用于 Windows Server 2008 R2、Windows 7 和更高版本的 Windows 中的以下筛选层：<dl>
 <dd>FWPM_LAYER_ALE_AUTH_CONNECT_V4</dd>
 <dd>FWPM_LAYER_ALE_AUTH_CONNECT_V6</dd>

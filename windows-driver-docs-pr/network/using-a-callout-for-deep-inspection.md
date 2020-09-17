@@ -7,12 +7,12 @@ keywords:
 - 深度检查 WDK Windows 筛选平台
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4a20e69b84805292129dff1c6e7716ceae2cce5b
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 7af1137ddb04742fb887e5585c6db7a737c18679
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89208521"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90714624"
 ---
 # <a name="using-a-callout-for-deep-inspection"></a>使用标注进行深度检测
 
@@ -112,7 +112,7 @@ VOID NTAPI
 }
 ```
 
-*Filter- &gt; action*中的值可确定标注的[classifyFn](/windows-hardware/drivers/ddi/_netvista/) callout 函数应在*ClassifyOut*参数指向的结构的**actionType**成员中返回的操作。 有关这些操作的详细信息，请参阅 [**FWPS \_ ACTION0**](/windows/desktop/api/fwpstypes/ns-fwpstypes-fwps_action0_) 结构。
+*Filter- &gt; action*中的值可确定标注的[classifyFn](/windows-hardware/drivers/ddi/_netvista/) callout 函数应在*ClassifyOut*参数指向的结构的**actionType**成员中返回的操作。 有关这些操作的详细信息，请参阅 [**FWPS \_ ACTION0**](/windows/win32/api/fwpstypes/ns-fwpstypes-fwps_action0_) 结构。
 
 如果标注必须先对其 [classifyFn](/windows-hardware/drivers/ddi/_netvista/) callout 函数之外的数据包数据执行额外的处理，才能确定是应该允许还是阻止数据，则必须在完成数据处理之前挂起数据包数据。 有关如何挂起数据包数据的信息，请参阅 [标注类型](types-of-callouts.md) 和 [**FwpsPendOperation0**](/windows-hardware/drivers/ddi/fwpsk/nf-fwpsk-fwpspendoperation0)。
 

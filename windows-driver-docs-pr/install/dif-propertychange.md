@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: ddfa8bc7bb9beef04ab75ccddddf9a3172a23ea2
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 68710359fdff6f0d98e66b8ab1927fd656fe0914
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90104786"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90715114"
 ---
 # <a name="dif_propertychange"></a>DIF_PROPERTYCHANGE
 
@@ -71,7 +71,7 @@ DIF_PROPERTYCHANGE 请求通知安装程序设备的属性正在更改。 设备
 与*DeviceInfoData*关联的设备安装参数 ([**SP_DEVINSTALL_PARAMS**](/windows/win32/api/setupapi/ns-setupapi-sp_devinstall_params_a)) 。
 
 <a href="" id="class-installation-parameters"></a>类安装参数  
-[**SP_PROPCHANGE_PARAMS**](/windows/desktop/api/setupapi/ns-setupapi-_sp_propchange_params)结构与*DeviceInfoData*关联。
+[**SP_PROPCHANGE_PARAMS**](/windows/win32/api/setupapi/ns-setupapi-_sp_propchange_params)结构与*DeviceInfoData*关联。
 
 ### <a name="installer-output"></a>安装程序输出
 
@@ -81,7 +81,7 @@ DIF_PROPERTYCHANGE 请求通知安装程序设备的属性正在更改。 设备
 
 共同安装程序可以返回 NO_ERROR、ERROR_DI_POSTPROCESSING_REQUIRED 或 Win32 错误代码。
 
-如果类安装程序成功处理此请求，并且 [**SetupDiCallClassInstaller**](/windows/desktop/api/setupapi/nf-setupapi-setupdicallclassinstaller) 随后应调用默认处理程序，则类安装程序将返回 ERROR_DI_DO_DEFAULT。
+如果类安装程序成功处理此请求，并且 [**SetupDiCallClassInstaller**](/windows/win32/api/setupapi/nf-setupapi-setupdicallclassinstaller) 随后应调用默认处理程序，则类安装程序将返回 ERROR_DI_DO_DEFAULT。
 
 如果类安装程序成功处理此请求（包括直接调用默认处理程序），则类安装程序应返回 NO_ERROR 并且 **SetupDiCallClassInstaller** 将不会再次调用默认处理程序。
 
@@ -95,13 +95,13 @@ DIF_PROPERTYCHANGE 请求通知安装程序设备的属性正在更改。 设备
 
 ### <a name="default-dif-code-handler"></a>默认的 DIF 代码处理程序
 
-[**SetupDiChangeState**](/windows/desktop/api/setupapi/nf-setupapi-setupdichangestate)
+[**SetupDiChangeState**](/windows/win32/api/setupapi/nf-setupapi-setupdichangestate)
 
 ### <a name="installer-operation"></a>安装程序操作
 
 为了响应 DIF_PROPERTYCHANGE 请求，安装程序可以参与属性更改操作。 类安装参数 (SP_PROPCHANGE_PARAMS) 指示发生了哪些更改。
 
-属性更改可能需要重新启动系统。 有关如何重新启动系统的信息，请参阅 [**SetupDiCallClassInstaller**](/windows/desktop/api/setupapi/nf-setupapi-setupdicallclassinstaller)。
+属性更改可能需要重新启动系统。 有关如何重新启动系统的信息，请参阅 [**SetupDiCallClassInstaller**](/windows/win32/api/setupapi/nf-setupapi-setupdicallclassinstaller)。
 
 当 Windows 首次发送 DIF_INSTALLDEVICE 请求来安装设备时，Windows 将启动该设备，但不会在安装过程中发送 DIF_PROPERTYCHANGE 请求。 如果在设备首次启动时必须执行自定义安装操作，并在每次重新启动设备时，安装程序或共同安装程序应处理第一次启动设备的 DIF_INSTALLDEVICE 请求，并提供一个 DIF_PROPERTYCHANGE 请求，指示状态更改操作是设备正在启动。
 
@@ -130,13 +130,13 @@ DIF_PROPERTYCHANGE 请求通知安装程序设备的属性正在更改。 设备
 ## <a name="see-also"></a>请参阅
 
 
-[**SetupDiChangeState**](/windows/desktop/api/setupapi/nf-setupapi-setupdichangestate)
+[**SetupDiChangeState**](/windows/win32/api/setupapi/nf-setupapi-setupdichangestate)
 
 [**SP_DEVINFO_DATA**](/windows/win32/api/setupapi/ns-setupapi-sp_devinfo_data)
 
 [**SP_DEVINSTALL_PARAMS**](/windows/win32/api/setupapi/ns-setupapi-sp_devinstall_params_a)
 
-[**SP_PROPCHANGE_PARAMS**](/windows/desktop/api/setupapi/ns-setupapi-_sp_propchange_params)
+[**SP_PROPCHANGE_PARAMS**](/windows/win32/api/setupapi/ns-setupapi-_sp_propchange_params)
 
  
 

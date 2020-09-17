@@ -8,16 +8,16 @@ keywords:
 - 验证正在进行的安装
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2b760cca9a05cd23bbd7e42bb06fd0b6197ad547
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: f2469792f04341e18c8022b13f71a6585028b5f8
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89097159"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90714708"
 ---
 # <a name="checking-for-in-progress-installations"></a>检查正在进行的安装
 
-*设备安装应用程序*应该确定在执行其他安装活动之前是否正在进行安装。 为了做出此决定，设备安装应用程序应调用 [**CMP_WaitNoPendingInstallEvents**](/windows/desktop/api/cfgmgr32/nf-cfgmgr32-cm_waitnopendinginstallevents)，通常为零超时值。 如果此函数的返回值指示其他安装活动处于挂起状态 (例如，"发现新硬件" 向导可能处于活动状态) ，则设备安装应用程序应该退出。
+*设备安装应用程序*应该确定在执行其他安装活动之前是否正在进行安装。 为了做出此决定，设备安装应用程序应调用 [**CMP_WaitNoPendingInstallEvents**](/windows/win32/api/cfgmgr32/nf-cfgmgr32-cm_waitnopendinginstallevents)，通常为零超时值。 如果此函数的返回值指示其他安装活动处于挂起状态 (例如，"发现新硬件" 向导可能处于活动状态) ，则设备安装应用程序应该退出。
 
 若要使 *设备安装应用程序* 与不支持 **CMP_WaitNoPendingInstallEvents**的平台兼容，应用程序应包含以下代码：
 

@@ -4,12 +4,12 @@ description: DirectMusic 用户模式合成器和合成器接收器接口
 ms.assetid: 2b25f605-d9e6-415e-8f45-08f7cdd2f625
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f725e318ce96569463f42a915499b8a839ecd4d9
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 300de362dd4b7c01131403ceec710f040d8c888f
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89208115"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90714794"
 ---
 # <a name="directmusic-user-mode-synth-and-synth-sink-interfaces"></a>DirectMusic 用户模式合成器和合成器接收器接口
 
@@ -25,9 +25,9 @@ ms.locfileid: "89208115"
 
 用户模式合成接收器的接口
 
-[IDirectMusicSynth](/windows/desktop/api/dmusics/nn-dmusics-idirectmusicsynth)
+[IDirectMusicSynth](/windows/win32/api/dmusics/nn-dmusics-idirectmusicsynth)
 
-[IDirectMusicSynthSink](/windows/desktop/api/dmusics/nn-dmusics-idirectmusicsynthsink)
+[IDirectMusicSynthSink](/windows/win32/api/dmusics/nn-dmusics-idirectmusicsynthsink)
 
  
 

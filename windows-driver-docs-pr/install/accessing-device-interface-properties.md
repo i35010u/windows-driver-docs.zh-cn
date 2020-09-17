@@ -4,12 +4,12 @@ description: 在 Windows Vista 之前访问设备接口属性
 ms.assetid: 48b47d01-ec07-49ca-a03c-c4c387dcfb19
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8c3efa75bfc97dcbdcddaa75b199a25ab25b9bfe
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: db68b4356d3c69040d9d438152014954a34d2510
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90104584"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90715934"
 ---
 # <a name="accessing-device-interface-properties-before-windows-vista"></a>在 Windows Vista 之前访问设备接口属性
 
@@ -32,7 +32,7 @@ Windows Server 2003、Windows XP 和 Windows 2000 支持其中大多数设备接
 
 ### <a name="accessing-device-interface-properties-that-have-corresponding-registry-entry-values"></a><a href="" id="accessing-device-interface-properties-that-have-corresponding-registry"></a> 访问具有相应注册表项值的设备接口属性
 
-若要使用 Windows Server 2003、Windows XP 和 Windows 2000 上的注册表项值访问设备接口属性，请先调用 [**SetupDiOpenDeviceInterfaceRegKey**](/windows/desktop/api/setupapi/nf-setupapi-setupdiopendeviceinterfaceregkey)并提供以下参数：
+若要使用 Windows Server 2003、Windows XP 和 Windows 2000 上的注册表项值访问设备接口属性，请先调用 [**SetupDiOpenDeviceInterfaceRegKey**](/windows/win32/api/setupapi/nf-setupapi-setupdiopendeviceinterfaceregkey)并提供以下参数：
 
 -   将 *DeviceInfoSet* 设置为指向包含设备接口的设备信息集的指针。
 
@@ -42,7 +42,7 @@ Windows Server 2003、Windows XP 和 Windows 2000 支持其中大多数设备接
 
 -   将 *samDesired* 设置为 REGSAM 类型的值，该值指定所需的访问权限。
 
-如果对 [**SetupDiOpenDeviceInterfaceRegKey**](/windows/desktop/api/setupapi/nf-setupapi-setupdiopendeviceinterfaceregkey) 的此调用成功，则 **SetupDiOpenDeviceInterfaceRegKey** 将返回请求的句柄。 如果函数调用失败，则 **SetupDiOpenDeviceInterfaceRegKey** 将返回 INVALID_HANDLE_VALUE 并且对 [GetLastError](https://go.microsoft.com/fwlink/p/?linkid=169416) 的调用将返回记录的错误代码。
+如果对 [**SetupDiOpenDeviceInterfaceRegKey**](/windows/win32/api/setupapi/nf-setupapi-setupdiopendeviceinterfaceregkey) 的此调用成功，则 **SetupDiOpenDeviceInterfaceRegKey** 将返回请求的句柄。 如果函数调用失败，则 **SetupDiOpenDeviceInterfaceRegKey** 将返回 INVALID_HANDLE_VALUE 并且对 [GetLastError](https://go.microsoft.com/fwlink/p/?linkid=169416) 的调用将返回记录的错误代码。
 
 检索设备接口注册表项的句柄之后，在对 [RegQueryValueEx](https://go.microsoft.com/fwlink/p/?linkid=95398) 或 [RegSetValueEx](https://go.microsoft.com/fwlink/p/?linkid=95399) 的调用中提供句柄，以检索或设置与设备接口属性相对应的注册表项值。
 
@@ -50,7 +50,7 @@ Windows Server 2003、Windows XP 和 Windows 2000 支持其中大多数设备接
 
 ### <a name="using-setupdienumdeviceinterfaces-to-retrieve-information-about-a-device-interface"></a><a href="" id="using-setupdienumdeviceinterfaces-to-retrieve-information-about-a-devi"></a> 使用 SetupDiEnumDeviceInterfaces 检索有关设备接口的信息
 
-若要在 Windows Server 2003、Windows XP 和 Windows 2000 上检索有关设备接口的信息，另一种方法是通过调用 [**SetupDiEnumDeviceInterfaces**](/windows/desktop/api/setupapi/nf-setupapi-setupdienumdeviceinterfaces) 来检索接口的 [**SP_DEVICE_INTERFACE_DATA**](/windows/win32/api/setupapi/ns-setupapi-sp_device_interface_data) 结构。 SP_DEVICE_INTERFACE_DATA 结构包含以下信息：
+若要在 Windows Server 2003、Windows XP 和 Windows 2000 上检索有关设备接口的信息，另一种方法是通过调用 [**SetupDiEnumDeviceInterfaces**](/windows/win32/api/setupapi/nf-setupapi-setupdienumdeviceinterfaces) 来检索接口的 [**SP_DEVICE_INTERFACE_DATA**](/windows/win32/api/setupapi/ns-setupapi-sp_device_interface_data) 结构。 SP_DEVICE_INTERFACE_DATA 结构包含以下信息：
 
 -   **Flags**成员指示设备接口是否处于活动状态或已删除，以及设备是否为接口类的默认接口。
 

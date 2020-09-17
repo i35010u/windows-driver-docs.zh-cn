@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ac6e3c478cc5ff3e02dbbb7ee36fb1e9e91b094c
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 595e71bf39b6056442a9421bfefd125d044faa93
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89096573"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90716186"
 ---
 # <a name="inf-addinterface-directive"></a>INF AddInterface 指令
 
@@ -84,7 +84,7 @@ AddReg=add-registry-section[, add-registry-section]...
 
 在*添加接口部分*中引用的*添加注册表部分*特定于设备、驱动程序和接口的实例。 它可能具有定义导出设备接口实例的友好名称的值输入，以便仍更高级的组件可以通过其在用户界面中的友好名称引用该接口。
 
-在此类 "*外接*程序" 部分中指定的**HKR**为设备接口指定运行时可访问状态注册表项。  在运行时，驱动程序可以通过调用 [**IoOpenDeviceInterfaceRegistryKey**](/windows-hardware/drivers/ddi/wdm/nf-wdm-ioopendeviceinterfaceregistrykey) 来检索状态注册表项的句柄，来访问此注册表项中存储的状态。  用户模式组件可以通过调用 [**CM_Open_Device_Interface_Key**](/windows/desktop/api/cfgmgr32/nf-cfgmgr32-cm_open_device_interface_keyw)来查询状态。
+在此类 "*外接*程序" 部分中指定的**HKR**为设备接口指定运行时可访问状态注册表项。  在运行时，驱动程序可以通过调用 [**IoOpenDeviceInterfaceRegistryKey**](/windows-hardware/drivers/ddi/wdm/nf-wdm-ioopendeviceinterfaceregistrykey) 来检索状态注册表项的句柄，来访问此注册表项中存储的状态。  用户模式组件可以通过调用 [**CM_Open_Device_Interface_Key**](/windows/win32/api/cfgmgr32/nf-cfgmgr32-cm_open_device_interface_keyw)来查询状态。
 
 <a name="examples"></a>示例
 --------
@@ -134,7 +134,7 @@ ESSAud.Wave.szPname="ESS AudioDrive"
 ; ... 
 ```
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**AddProperty**](inf-addproperty-directive.md)

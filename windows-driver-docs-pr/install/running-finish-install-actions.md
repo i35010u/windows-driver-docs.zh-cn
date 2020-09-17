@@ -4,12 +4,12 @@ description: 运行 Finish-Install 操作
 ms.assetid: 9a5f8e7c-ba11-4a2a-82dd-32cd91c3cc39
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 18db94aefc38a7505b182675f9e300d886671994
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: de758578e46a40bc4f2a64b1e8db20907c5eb578
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89094947"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90715082"
 ---
 # <a name="running-finish-install-actions"></a>运行 Finish-Install 操作
 
@@ -29,9 +29,9 @@ ms.locfileid: "89094947"
 
 -   当设备保持安装时，下一次管理员登录时。
 
--   如果管理员单击设备管理器的 " **操作** " 菜单上的 "扫描硬件更改" 或安装程序将在管理员的上下文中调用 [**CM_Reenumerate_DevNode**](/windows/desktop/api/cfgmgr32/nf-cfgmgr32-cm_reenumerate_devnode) 。
+-   如果管理员单击设备管理器的 " **操作** " 菜单上的 "扫描硬件更改" 或安装程序将在管理员的上下文中调用 [**CM_Reenumerate_DevNode**](/windows/win32/api/cfgmgr32/nf-cfgmgr32-cm_reenumerate_devnode) 。
 
-如果设备已标记为执行 "完成安装" 操作，则完成安装过程将调用 [**SetupDiCallClassInstaller**](/windows/desktop/api/setupapi/nf-setupapi-setupdicallclassinstaller) 将 [**DIF_FINISHINSTALL_ACTION**](./dif-finishinstall-action.md) 请求发送到设备的安装程序。
+如果设备已标记为执行 "完成安装" 操作，则完成安装过程将调用 [**SetupDiCallClassInstaller**](/windows/win32/api/setupapi/nf-setupapi-setupdicallclassinstaller) 将 [**DIF_FINISHINSTALL_ACTION**](./dif-finishinstall-action.md) 请求发送到设备的安装程序。
 
 如果安装程序已完成安装操作，则安装程序将执行 "完成-安装" 操作并返回 [**DIF_FINISHINSTALL_ACTION**](./dif-finishinstall-action.md) 请求的相应错误代码。 安装程序返回下表中的错误代码之一。
 

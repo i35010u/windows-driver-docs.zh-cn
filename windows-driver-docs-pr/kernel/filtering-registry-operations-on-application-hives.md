@@ -4,19 +4,19 @@ description: Windows Vista 中引入了对应用程序配置单元的初始支�
 ms.assetid: A8D06E25-7CC6-476A-AB55-DAFE19954347
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 8cfa42a8e0ee8c628072908d14f14ffa530703c3
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 44e66041b11eff287e69e6d23cdf175bbea8345d
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89183901"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90715896"
 ---
 # <a name="filtering-registry-operations-on-application-hives"></a>筛选针对应用程序配置单元执行的注册表操作
 
 
 Windows Vista 中引入了对应用程序配置单元的初始支持。 从 Windows 8 开始，为应用程序配置单元提供改进的支持，需要更广泛地使用应用程序配置单元。 因此，为这些版本的 Windows 开发的注册表筛选器驱动程序，特别是对于 Windows 8 及更高版本，必须注意应用程序配置单元上的注册表操作。 这些驱动程序应该有效地处理此类操作，以避免对用户体验产生负面影响。
 
-应用程序配置单元是用户模式应用程序加载的注册表配置单元，用于存储特定于应用程序的状态数据。 应用程序调用 [**RegLoadAppKey**](/windows/desktop/api/winreg/nf-winreg-regloadappkeya) 函数以加载应用程序配置单元。
+应用程序配置单元是用户模式应用程序加载的注册表配置单元，用于存储特定于应用程序的状态数据。 应用程序调用 [**RegLoadAppKey**](/windows/win32/api/winreg/nf-winreg-regloadappkeya) 函数以加载应用程序配置单元。
 
 与其他类型的注册表配置单元不同，应用程序配置单元会在注册表中加载 \\ \\ 注册表路径名称，而不是 \\ 注册表的 \\ 计算机或 \\ 注册表 \\ 用户。 \\注册表 \\ 路径名称是特别的，因为没有办法遍历此路径，尝试在注册表 A 下打开密钥会失败，并出现 \\ \\ 错误状态 " \_ 拒绝访问" 错误 \_ 。 应用程序访问应用程序 hive 中的密钥的唯一方式是使用应用程序配置单元的根密钥的句柄。 应用程序从加载 hive 的 **RegLoadAppKey** 调用获取此句柄。
 

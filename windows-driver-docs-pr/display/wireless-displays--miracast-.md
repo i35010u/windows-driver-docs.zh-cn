@@ -11,12 +11,12 @@ keywords:
 - 由 Miracast 用户模式驱动程序实现的无线显示功能
 ms.date: 10/12/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 9aa93f444552e922200f9cb4aa5756158805f016
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 2ae9913db5dec43da068aa825988ec885f65d6ef
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89063944"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90715800"
 ---
 # <a name="wireless-displays-miracast"></a>无线显示 (Miracast)
 
@@ -99,11 +99,11 @@ Windows 显示驱动程序模型 (WDDM) 1.3 和更高版本的驱动程序可以
 
 这些附加的用户模式结构和枚举支持 Miracast 显示，并是新的或更新的 Windows 8.1 的：
 
--   [**DISPLAYCONFIG \_目标 \_ 基 \_ 类型**](/windows/desktop/api/wingdi/ns-wingdi-displayconfig_target_base_type) (new) 
--   [**DISPLAYCONFIG \_添加 \_ \_ **](/windows/desktop/api/wingdi/ns-wingdi-displayconfig_video_signal_info) 了 **ADDITIONALSIGNALINFO** 子结构 (视频信号信息) 
--   [**DISPLAYCONFIG \_添加了设备 \_ 信息 \_ 类型**](/windows/desktop/api/wingdi/ne-wingdi-displayconfig_device_info_type) (**DISPLAYCONFIG \_ 设备 \_ 信息 \_ 获取 \_ 目标 \_ 基本 \_ 类型** 常量) 
+-   [**DISPLAYCONFIG \_目标 \_ 基 \_ 类型**](/windows/win32/api/wingdi/ns-wingdi-displayconfig_target_base_type) (new) 
+-   [**DISPLAYCONFIG \_添加 \_ \_ **](/windows/win32/api/wingdi/ns-wingdi-displayconfig_video_signal_info) 了 **ADDITIONALSIGNALINFO** 子结构 (视频信号信息) 
+-   [**DISPLAYCONFIG \_添加了设备 \_ 信息 \_ 类型**](/windows/win32/api/wingdi/ne-wingdi-displayconfig_device_info_type) (**DISPLAYCONFIG \_ 设备 \_ 信息 \_ 获取 \_ 目标 \_ 基本 \_ 类型** 常量) 
 -   [**D3DKMDT \_添加 \_ \_ **](/windows-hardware/drivers/ddi/d3dkmdt/ns-d3dkmdt-_d3dkmdt_video_signal_info) 了 **ADDITIONALSIGNALINFO** 子结构 (视频信号信息) 
--   [**DISPLAYCONFIG \_添加了设备 \_ 信息 \_ 类型**](/windows/desktop/api/wingdi/ne-wingdi-displayconfig_device_info_type) (**DISPLAYCONFIG \_ 设备 \_ 信息 \_ 获取 \_ 目标 \_ 基本 \_ 类型** 常量) 
+-   [**DISPLAYCONFIG \_添加了设备 \_ 信息 \_ 类型**](/windows/win32/api/wingdi/ne-wingdi-displayconfig_device_info_type) (**DISPLAYCONFIG \_ 设备 \_ 信息 \_ 获取 \_ 目标 \_ 基本 \_ 类型** 常量) 
 
 ### <a name="kernel-mode-ddis"></a>内核模式 DDIs
 

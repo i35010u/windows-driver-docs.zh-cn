@@ -4,12 +4,12 @@ description: 检索 SPCRP_Xxx 属性
 ms.assetid: a5d52da9-a593-42bd-aeaf-8ab203bc3d21
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f077e79bf8d35e2eb521b21e2daf0e41a7e871b1
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 5bdb5aab87008f47da0881e59f66a22f903a6c93
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89094974"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90715084"
 ---
 # <a name="retrieving-spcrp_xxx-properties"></a>检索 SPCRP_Xxx 属性
 
@@ -22,7 +22,7 @@ Windows Server 2003、Windows XP 和 Windows 2000 还支持其中的大多数设
 
 有关如何使用属性键访问 Windows Vista 和更高版本中的设备安装程序类属性的信息，请参阅 [访问设备类属性 (Windows vista 和更高版本) ](accessing-device-class-properties--windows-vista-and-later-.md)。
 
-若要在 Windows Server 2003、Windows XP 和 Windows 2000 上检索设备安装程序类属性，请使用 [**SetupDiGetClassRegistryProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetclassregistrypropertya) 函数。
+若要在 Windows Server 2003、Windows XP 和 Windows 2000 上检索设备安装程序类属性，请使用 [**SetupDiGetClassRegistryProperty**](/windows/win32/api/setupapi/nf-setupapi-setupdigetclassregistrypropertya) 函数。
 
 若要使用 SetupDiGetClassRegistryProperty 检索与 SPCRP_Xxx 标识符对应的属性，请执行以下步骤：
 
@@ -37,7 +37,7 @@ Windows Server 2003、Windows XP 和 Windows 2000 还支持其中的大多数设
     -   将 *MachineName* 设置为计算机的名称。
     -   将保留设置为 **NULL**。
 
-    在响应对[**SetupDiGetClassRegistryProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetclassregistrypropertya)的调用时， **SetupDiGetClassRegistryProperty**将 \* *RequiredSize*设置为检索属性值所需的缓冲区大小（以字节为单位），记录错误代码 ERROR_INSUFFICIENT_BUFFER 并返回**FALSE**。 对 [GetLastError](https://go.microsoft.com/fwlink/p/?linkid=169416) 的后续调用将返回最近记录的错误代码。
+    在响应对[**SetupDiGetClassRegistryProperty**](/windows/win32/api/setupapi/nf-setupapi-setupdigetclassregistrypropertya)的调用时， **SetupDiGetClassRegistryProperty**将 \* *RequiredSize*设置为检索属性值所需的缓冲区大小（以字节为单位），记录错误代码 ERROR_INSUFFICIENT_BUFFER 并返回**FALSE**。 对 [GetLastError](https://go.microsoft.com/fwlink/p/?linkid=169416) 的后续调用将返回最近记录的错误代码。
 
 2.  再次调用 **SetupDiGetClassRegistryProperty** 来检索属性值，并提供在第一个调用中提供的相同参数，但以下更改除外：
     -   将 *PropertyBuffer* 设置为指向接收属性值的缓冲区的指针。

@@ -6,12 +6,12 @@ keywords:
 - 双屏显示 WDK 视频微型端口
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fcca5e99b9bec6191c2b2276614531aa9880394d
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: e6ad930bcf7f6e04c5f6981aababe1ba672299c1
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89065870"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90715188"
 ---
 # <a name="enabling-dualview"></a>启用 DualView
 
@@ -30,14 +30,14 @@ ms.locfileid: "89065870"
     1.  为了响应 [**IOCTL \_ 视频 \_ 映射 \_ 视频 \_ 内存**](/windows-hardware/drivers/ddi/ntddvdeo/ni-ntddvdeo-ioctl_video_map_video_memory) 请求，应正确设置每个视图的帧缓冲区指针和长度。
     2.  应将对 [**IOCTL \_ 视频 \_ 集 \_ 当前 \_ 模式**](/windows-hardware/drivers/ddi/ntddvdeo/ni-ntddvdeo-ioctl_video_set_current_mode) 请求的响应设置为特定于辅助视图。
     3.  对 [**IOCTL \_ 视频 \_ 重置 \_ 设备**](/windows-hardware/drivers/ddi/ntddvdeo/ni-ntddvdeo-ioctl_video_reset_device) 请求的响应取决于设备是主显示器还是辅助显示器。 如果设备是主显示器，则执行任何所需的操作。 但是，如果设备为辅助显示器，则建议不要执行任何操作。
-    4.  更改对 [**IOCTL \_ 视频 \_ 共享 \_ 视频 \_ 内存**](/windows-hardware/drivers/ddi/ntddvdeo/ni-ntddvdeo-ioctl_video_share_video_memory) 请求的响应，以获取两个视图的正确映射。 请注意，对于 DirectDraw 实现，可以修改 DirectDraw 函数 [*DdMapMemory*](/windows/desktop/api/ddrawint/nc-ddrawint-pdd_mapmemory) 以获取两个视图的正确映射。
--   显示驱动程序应负责逻辑帧缓冲区地址和物理视频内存偏移量之间的调整。 这对于 DirectDraw 实现尤其重要，因为在双屏显示中，主表面可能会从内存位置0以外的任何位置启动。 显示驱动程序应通过在处理[**vmiData**](/windows/desktop/api/winddi/nf-winddi-drvgetdirectdrawinfo)时使用相应的视频内存偏移量填充**pHalInfo- &gt; VmiData. pvPrimary**和**PHalInfo- &gt; fpPrimary** ，来通知 DirectDraw。
+    4.  更改对 [**IOCTL \_ 视频 \_ 共享 \_ 视频 \_ 内存**](/windows-hardware/drivers/ddi/ntddvdeo/ni-ntddvdeo-ioctl_video_share_video_memory) 请求的响应，以获取两个视图的正确映射。 请注意，对于 DirectDraw 实现，可以修改 DirectDraw 函数 [*DdMapMemory*](/windows/win32/api/ddrawint/nc-ddrawint-pdd_mapmemory) 以获取两个视图的正确映射。
+-   显示驱动程序应负责逻辑帧缓冲区地址和物理视频内存偏移量之间的调整。 这对于 DirectDraw 实现尤其重要，因为在双屏显示中，主表面可能会从内存位置0以外的任何位置启动。 显示驱动程序应通过在处理[**vmiData**](/windows/win32/api/winddi/nf-winddi-drvgetdirectdrawinfo)时使用相应的视频内存偏移量填充**pHalInfo- &gt; VmiData. pvPrimary**和**PHalInfo- &gt; fpPrimary** ，来通知 DirectDraw。
 
 ### <a name="span-idadditional_implementation_notesspanspan-idadditional_implementation_notesspanspan-idadditional_implementation_notesspanadditional-implementation-notes"></a><span id="Additional_Implementation_Notes"></span><span id="additional_implementation_notes"></span><span id="ADDITIONAL_IMPLEMENTATION_NOTES"></span>其他实现注释
 
 -   对于主要设备对象，只调用[*HwVidInitialize*](/windows-hardware/drivers/ddi/video/nc-video-pvideo_hw_initialize)一次。 所有辅助设备对象都必须在此调用中进行初始化。
 
--   对于将*bEnable*设置为**FALSE**的[**DrvAssertMode**](/windows/desktop/api/winddi/nf-winddi-drvassertmode)调用，微型端口驱动程序应检查其他视图的状态。 它应避免关闭视频芯片，而其他视图仍处于活动状态。
+-   对于将*bEnable*设置为**FALSE**的[**DrvAssertMode**](/windows/win32/api/winddi/nf-winddi-drvassertmode)调用，微型端口驱动程序应检查其他视图的状态。 它应避免关闭视频芯片，而其他视图仍处于活动状态。
 
 -   永远不会假设绘图操作具有相同的绘图上下文 (例如，颜色深度和跨距) 。 这对于使用磁贴帧缓冲区的芯片尤其重要。
 

@@ -6,12 +6,12 @@ keywords:
 - 筛选条件标识符网络驱动程序
 ms.date: 11/08/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cb1ba4994e04d944907d9141d03dfa44ad0e800f
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: a2722a5c981855eb4b68d6cdaf0ad1a6ac0d0c22
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89215236"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90716338"
 ---
 # <a name="filtering-condition-identifiers"></a>筛选条件标识符
 
@@ -21,11 +21,11 @@ ms.locfileid: "89215236"
 |----|----|
 |FWPM_CONDITION_ARRIVAL_INTERFACE_INDEX|网络堆栈枚举的到达网络接口的索引。</br>WFP 使用到达接口来匹配此条件。 到达接口是在执行弱主机或转发之前，从网络进入 IP 堆栈入站之前，数据包看到的第一个接口。</br>出于重新授权目的，这种情况是不对称的，因为它本身就是入站条件。 这意味着，当延伸响应出站数据包上的入站连接时，WFP 将对此条件使用空值。</br>若要处理重新授权，必须使用第二个筛选器。 此第二个筛选器可以允许或阻止空值，也可以使用在这种情况下具有有效值的不同条件。 如果到达接口条件，接口条件的下一个跃点类将在出站数据包上具有有效接口。</br>请注意，此功能仅在 Windows Server 2008 R2、Windows 7 和更高版本的 Windows 中可用。|
 |FWPM_CONDITION_ARRIVAL_INTERFACE_TYPE|由 Internet 分配的编号颁发机构 (IANA) 定义的到达网络接口的类型。 有关详细信息，请参阅 [IANAifType 定义](https://www.iana.org/assignments/ianaiftype-mib/ianaiftype-mib)。</br>WFP 使用到达接口来匹配此条件。 到达接口是在执行弱主机或转发之前，从网络进入 IP 堆栈入站之前，数据包看到的第一个接口。</br>出于重新授权目的，这种情况是不对称的，因为它本身就是入站条件。 这意味着，当延伸响应出站数据包上的入站连接时，WFP 将对此条件使用空值。</br>若要处理重新授权，必须使用第二个筛选器。 此第二个筛选器可以允许或阻止空值，也可以使用在这种情况下具有有效值的不同条件。 如果到达接口条件，接口条件的下一个跃点类将在出站数据包上具有有效接口。</br>请注意，这只在 Windows Server 2008 R2、Windows 7 和更高版本的 Windows 中 v。|
-|FWPM_CONDITION_ARRIVAL_TUNNEL_TYPE|如果 IF_TYPE_TUNNEL [IP_ADAPTER_ADDRESSES](/windows/desktop/api/iptypes/ns-iptypes-_ip_adapter_addresses_lh) 结构的 IfType 成员，则为隧道使用的封装方法。 隧道类型由 IANA 定义。 有关详细信息，请参阅 [IANAifType 定义](https://www.iana.org/assignments/ianaiftype-mib/ianaiftype-mib) 和 Windows SDK [IP 帮助器](./ip-helper.md) 文档。</br>WFP 使用到达接口来匹配此条件。 到达接口是在执行弱主机或转发之前，从网络进入 IP 堆栈入站之前，数据包看到的第一个接口。</br>出于重新授权目的，这种情况是不对称的，因为它本身就是入站条件。 这意味着，当延伸响应出站数据包上的入站连接时，WFP 将对此条件使用空值。</br>若要处理重新授权，必须使用第二个筛选器。 此第二个筛选器可以允许或阻止空值，也可以使用在这种情况下具有有效值的不同条件。 如果到达接口条件，接口条件的下一个跃点类将在出站数据包上具有有效接口。</br>请注意，此功能仅在 Windows Server 2008 R2、Windows 7 和更高版本的 Windows 中可用。|
+|FWPM_CONDITION_ARRIVAL_TUNNEL_TYPE|如果 IF_TYPE_TUNNEL [IP_ADAPTER_ADDRESSES](/windows/win32/api/iptypes/ns-iptypes-_ip_adapter_addresses_lh) 结构的 IfType 成员，则为隧道使用的封装方法。 隧道类型由 IANA 定义。 有关详细信息，请参阅 [IANAifType 定义](https://www.iana.org/assignments/ianaiftype-mib/ianaiftype-mib) 和 Windows SDK [IP 帮助器](./ip-helper.md) 文档。</br>WFP 使用到达接口来匹配此条件。 到达接口是在执行弱主机或转发之前，从网络进入 IP 堆栈入站之前，数据包看到的第一个接口。</br>出于重新授权目的，这种情况是不对称的，因为它本身就是入站条件。 这意味着，当延伸响应出站数据包上的入站连接时，WFP 将对此条件使用空值。</br>若要处理重新授权，必须使用第二个筛选器。 此第二个筛选器可以允许或阻止空值，也可以使用在这种情况下具有有效值的不同条件。 如果到达接口条件，接口条件的下一个跃点类将在出站数据包上具有有效接口。</br>请注意，此功能仅在 Windows Server 2008 R2、Windows 7 和更高版本的 Windows 中可用。|
 |FWPM_CONDITION_IP_ARRIVAL_INTERFACE|与到达 IP 地址关联的网络接口的 [LUID](/windows-hardware/drivers/ddi/igpupvdev/ns-igpupvdev-_luid) 。</br>WFP 使用到达接口来匹配此条件。 到达接口是在执行弱主机或转发之前，从网络进入 IP 堆栈入站之前，数据包看到的第一个接口。</br>出于重新授权目的，这种情况是不对称的，因为它本身就是入站条件。 这意味着，当延伸响应出站数据包上的入站连接时，WFP 将对此条件使用空值。</br>若要处理重新授权，必须使用第二个筛选器。 此第二个筛选器可以允许或阻止空值，也可以使用在这种情况下具有有效值的不同条件。 如果到达接口条件，接口条件的下一个跃点类将在出站数据包上具有有效接口。</br>请注意，此功能仅在 Windows Server 2008 R2、Windows 7 和更高版本的 Windows 中可用。|
 |FWPM_CONDITION_NEXTHOP_INTERFACE_INDEX|网络堆栈枚举的到达网络接口的索引。</br>WFP 使用下一个跃点接口来匹配此条件。 下一个跃点接口是在执行弱主机或转发后，将 IP 堆栈向网络传出之前，数据包所看到的最后一个接口。</br>出于重新授权目的，这种情况是不对称的，因为它是固有的出站条件。 这意味着，当延伸响应入站数据包上的出站连接时，WFP 将对此条件使用空值。</br>若要处理重新授权，必须使用第二个筛选器。 此第二个筛选器可以允许或阻止空值，也可以使用在这种情况下具有有效值的不同条件。 对于下一个跃点接口条件，接口条件的到达类将在入站数据包上具有有效接口。</br>请注意，此功能仅在 Windows Server 2008 R2、Windows 7 和更高版本的 Windows 中可用。|
 |FWPM_CONDITION_NEXTHOP_INTERFACE_TYPE|由 Internet 分配的编号颁发机构 (IANA) 定义的到达网络接口的类型。 有关详细信息，请参阅 [IANAifType 定义](https://www.iana.org/assignments/ianaiftype-mib/ianaiftype-mib)。</br>WFP 使用下一个跃点接口来匹配此条件。 下一个跃点接口是在执行弱主机或转发后，将 IP 堆栈向网络传出之前，数据包所看到的最后一个接口。</br>出于重新授权目的，这种情况是不对称的，因为它是固有的出站条件。 这意味着，当延伸响应入站数据包上的出站连接时，WFP 将对此条件使用空值。</br>若要处理重新授权，必须使用第二个筛选器。 此第二个筛选器可以允许或阻止空值，也可以使用在这种情况下具有有效值的不同条件。 对于下一个跃点接口条件，接口条件的到达类将在入站数据包上具有有效接口。</br>请注意，此功能仅在 Windows Server 2008 R2、Windows 7 和更高版本的 Windows 中可用。|
-|FWPM_CONDITION_NEXTHOP_TUNNEL_TYPE|如果 IF_TYPE_TUNNEL [**IP_ADAPTER_ADDRESSES**](/windows/desktop/api/iptypes/ns-iptypes-_ip_adapter_addresses_lh)结构的**IfType**成员，则为隧道使用的封装方法。 隧道类型由 IANA 定义。 有关详细信息，请参阅 [IANAifType 定义](https://www.iana.org/assignments/ianaiftype-mib/ianaiftype-mib) 和 Windows SDK [IP 帮助器](./ip-helper.md) 文档。</br>WFP 使用下一个跃点接口来匹配此条件。 下一个跃点接口是在执行弱主机或转发后，将 IP 堆栈向网络传出之前，数据包所看到的最后一个接口。</br>出于重新授权目的，这种情况是不对称的，因为它是固有的出站条件。 这意味着，当延伸响应入站数据包上的出站连接时，WFP 将对此条件使用空值。</br>若要处理重新授权，必须使用第二个筛选器。 此第二个筛选器可以允许或阻止空值，也可以使用在这种情况下具有有效值的不同条件。 对于下一个跃点接口条件，接口条件的到达类将在入站数据包上具有有效接口。</br>请注意，此功能仅在 Windows Server 2008 R2、Windows 7 和更高版本的 Windows 中可用。|
+|FWPM_CONDITION_NEXTHOP_TUNNEL_TYPE|如果 IF_TYPE_TUNNEL [**IP_ADAPTER_ADDRESSES**](/windows/win32/api/iptypes/ns-iptypes-_ip_adapter_addresses_lh)结构的**IfType**成员，则为隧道使用的封装方法。 隧道类型由 IANA 定义。 有关详细信息，请参阅 [IANAifType 定义](https://www.iana.org/assignments/ianaiftype-mib/ianaiftype-mib) 和 Windows SDK [IP 帮助器](./ip-helper.md) 文档。</br>WFP 使用下一个跃点接口来匹配此条件。 下一个跃点接口是在执行弱主机或转发后，将 IP 堆栈向网络传出之前，数据包所看到的最后一个接口。</br>出于重新授权目的，这种情况是不对称的，因为它是固有的出站条件。 这意味着，当延伸响应入站数据包上的出站连接时，WFP 将对此条件使用空值。</br>若要处理重新授权，必须使用第二个筛选器。 此第二个筛选器可以允许或阻止空值，也可以使用在这种情况下具有有效值的不同条件。 对于下一个跃点接口条件，接口条件的到达类将在入站数据包上具有有效接口。</br>请注意，此功能仅在 Windows Server 2008 R2、Windows 7 和更高版本的 Windows 中可用。|
 |FWPM_CONDITION_IP_NEXTHOP_INTERFACE|与到达 IP 邮件关联的网络接口的[LUID](/windows-hardware/drivers/ddi/igpupvdev/ns-igpupvdev-_luid)</br>WFP 使用下一个跃点接口来匹配此条件。 下一个跃点接口是在执行弱主机或转发后，将 IP 堆栈向网络传出之前，数据包所看到的最后一个接口。</br>出于重新授权目的，这种情况是不对称的，因为它是固有的出站条件。 这意味着，当延伸响应入站数据包上的出站连接时，WFP 将对此条件使用空值。</br>若要处理重新授权，必须使用第二个筛选器。 此第二个筛选器可以允许或阻止空值，也可以使用在这种情况下具有有效值的不同条件。 对于下一个跃点接口条件，接口条件的到达类将在入站数据包上具有有效接口。</br>请注意，此功能仅在 Windows Server 2008 R2、Windows 7 和更高版本的 Windows 中可用。|
 |FWPM_CONDITION_IP_LOCAL_ADDRESS|本地 IP 地址。|
 |FWPM_CONDITION_IP_REMOTE_ADDRESS|远程 IP 地址。|
@@ -58,7 +58,7 @@ ms.locfileid: "89215236"
 |FWPM_CONDITION_ALE_USER_ID|本地用户的标识。|
 |FWPM_CONDITION_ALE_REMOTE_USER_ID|远程用户的标识。|
 |FWPM_CONDITION_ALE_REMOTE_MACHINE_ID|远程计算机的标识。|
-|FWPM_CONDITION_ALE_PROMISCUOUS_MODE|允许或拒绝的原始套接字模式。 可能的条件值为：</br>-SIO_RCVALL</br>-SIO_RCVALL_IGMPMCAST</br>-SIO_RCVALL_MCAST</br>有关这些原始套接字模式的说明，请参阅 Microsoft Windows SDK 文档中的 [WSAIoctl](/windows/desktop/api/winsock2/nf-winsock2-wsaioctl) 。|
+|FWPM_CONDITION_ALE_PROMISCUOUS_MODE|允许或拒绝的原始套接字模式。 可能的条件值为：</br>-SIO_RCVALL</br>-SIO_RCVALL_IGMPMCAST</br>-SIO_RCVALL_MCAST</br>有关这些原始套接字模式的说明，请参阅 Microsoft Windows SDK 文档中的 [WSAIoctl](/windows/win32/api/winsock2/nf-winsock2-wsaioctl) 。|
 |FWPM_CONDITION_ALE_SIO_FIREWALL_SYSTEM_PORT|保留以供内部使用。|
 |FWPM_CONDITION_ALE_NAP_CONTEXT|保留以供内部使用。|
 |FWPM_CONDITION_REMOTE_USER_TOKEN|远程用户的标识。|
@@ -96,18 +96,18 @@ ms.locfileid: "89215236"
 |FWPM_CONDITION_NDIS_MEDIA_TYPE|指定为 [NDIS_MEDIUM](/windows-hardware/drivers/ddi/ntddndis/ne-ntddndis-_ndis_medium) 枚举值之一的 NDIS 介质的类型。</br>**注意**  在 windows 8、Windows Server 2012 和更高版本的 Windows 中受支持。|
 |FWPM_CONDITION_NDIS_PHYSICAL_MEDIA_TYPE|指定为 NDIS_PHYSICAL_MEDIUM 枚举值之一的通信接口的物理介质的类型。</br>**注意**  在 windows 8、Windows Server 2012 和更高版本的 Windows 中受支持。|
 |FWPM_CONDITION_L2_FLAGS|用于 MAC 层的筛选条件标志组合的按位 "或"。 有关可能的标志的信息，请参阅 [筛选条件 L2 标志](filtering-condition-l2-flags.md)。</br>**注意**  在 windows 8、Windows Server 2012 和更高版本的 Windows 中受支持。|
-|FWPM_CONDITION_MAC_LOCAL_ADDRESS_TYPE|本地 MAC 地址的链接类型。 这是在 FwpmTypes 中的 [DL_ADDRESS_TYPE](/windows/desktop/api/fwpmtypes/ne-fwpmtypes-__midl___midl_itf_fwpmtypes_0000_0000_0001) 枚举中定义的值之一。</br>**注意**  在 windows 8、Windows Server 2012 和更高版本的 Windows 中受支持。|
-|FWPM_CONDITION_MAC_REMOTE_ADDRESS_TYPE|远程 MAC 地址的链接类型。 这是在 FwpmTypes 中的 [DL_ADDRESS_TYPE](/windows/desktop/api/fwpmtypes/ne-fwpmtypes-__midl___midl_itf_fwpmtypes_0000_0000_0001) 枚举中定义的值之一。</br>**注意**  在 windows 8、Windows Server 2012 和更高版本的 Windows 中受支持。|
+|FWPM_CONDITION_MAC_LOCAL_ADDRESS_TYPE|本地 MAC 地址的链接类型。 这是在 FwpmTypes 中的 [DL_ADDRESS_TYPE](/windows/win32/api/fwpmtypes/ne-fwpmtypes-__midl___midl_itf_fwpmtypes_0000_0000_0001) 枚举中定义的值之一。</br>**注意**  在 windows 8、Windows Server 2012 和更高版本的 Windows 中受支持。|
+|FWPM_CONDITION_MAC_REMOTE_ADDRESS_TYPE|远程 MAC 地址的链接类型。 这是在 FwpmTypes 中的 [DL_ADDRESS_TYPE](/windows/win32/api/fwpmtypes/ne-fwpmtypes-__midl___midl_itf_fwpmtypes_0000_0000_0001) 枚举中定义的值之一。</br>**注意**  在 windows 8、Windows Server 2012 和更高版本的 Windows 中受支持。|
 |FWPM_CONDITION_INTERFACE|与本地 MAC 地址关联的网络接口的 LUID。</br>**注意**  在 windows 8、Windows Server 2012 和更高版本的 Windows 中受支持。|
 |FWPM_CONDITION_ALE_PACKAGE_ID|AppContainer 受限包的安全标识符 (SID) 。</br>**注意**  在 windows 8、Windows Server 2012 和更高版本的 Windows 中受支持。|
 |FWPM_CONDITION_MAC_SOURCE_ADDRESS|创建 MAC 帧的网络接口的物理地址。</br>**注意**  在 windows 8、Windows Server 2012 和更高版本的 Windows 中受支持。|
 |FWPM_CONDITION_MAC_DESTINATION_ADDRESS|帧的目标网络接口的物理地址。</br>**注意**  在 windows 8、Windows Server 2012 和更高版本的 Windows 中受支持。|
-|FWPM_CONDITION_MAC_SOURCE_ADDRESS_TYPE|创建该帧的接口的 MAC 地址的链接类型。 这是在 FwpmTypes 中的 [DL_ADDRESS_TYPE](/windows/desktop/api/fwpmtypes/ne-fwpmtypes-__midl___midl_itf_fwpmtypes_0000_0000_0001) 枚举中定义的值之一。</br>**注意**  在 windows 8、Windows Server 2012 和更高版本的 Windows 中受支持。|
-|FWPM_CONDITION_MAC_DESTINATION_ADDRESS_TYPE|帧的目标接口的 MAC 地址的链接类型。 这是在 FwpmTypes 中的 [DL_ADDRESS_TYPE](/windows/desktop/api/fwpmtypes/ne-fwpmtypes-__midl___midl_itf_fwpmtypes_0000_0000_0001) 枚举中定义的值之一。</br>**注意**  在 windows 8、Windows Server 2012 和更高版本的 Windows 中受支持。|
+|FWPM_CONDITION_MAC_SOURCE_ADDRESS_TYPE|创建该帧的接口的 MAC 地址的链接类型。 这是在 FwpmTypes 中的 [DL_ADDRESS_TYPE](/windows/win32/api/fwpmtypes/ne-fwpmtypes-__midl___midl_itf_fwpmtypes_0000_0000_0001) 枚举中定义的值之一。</br>**注意**  在 windows 8、Windows Server 2012 和更高版本的 Windows 中受支持。|
+|FWPM_CONDITION_MAC_DESTINATION_ADDRESS_TYPE|帧的目标接口的 MAC 地址的链接类型。 这是在 FwpmTypes 中的 [DL_ADDRESS_TYPE](/windows/win32/api/fwpmtypes/ne-fwpmtypes-__midl___midl_itf_fwpmtypes_0000_0000_0001) 枚举中定义的值之一。</br>**注意**  在 windows 8、Windows Server 2012 和更高版本的 Windows 中受支持。|
 |FWPM_CONDITION_IP_SOURCE_PORT|传输协议源端口号。</br>**注意**  在 windows 8、Windows Server 2012 和更高版本的 Windows 中受支持。|
 |FWPM_CONDITION_IP_DESTINATION_PORT|传输协议目标端口号。</br>**注意**  在 windows 8、Windows Server 2012 和更高版本的 Windows 中受支持。|
 |FWPM_CONDITION_VSWITCH_ID|虚拟交换机的 GUID。</br>**注意**  在 windows 8、Windows Server 2012 和更高版本的 Windows 中受支持。|
-|FWPM_CONDITION_VSWITCH_NETWORK_TYPE|与虚拟交换机关联的网络的类型。 这是在 FwpTypes 中的 [FWP_VSWITCH_NETWORK_TYPE](/windows/desktop/api/fwptypes/ne-fwptypes-fwp_vswitch_network_type_) 枚举中定义的值之一。</br>**注意**  在 windows 8 和更高版本的 Windows 中受支持。|
+|FWPM_CONDITION_VSWITCH_NETWORK_TYPE|与虚拟交换机关联的网络的类型。 这是在 FwpTypes 中的 [FWP_VSWITCH_NETWORK_TYPE](/windows/win32/api/fwptypes/ne-fwptypes-fwp_vswitch_network_type_) 枚举中定义的值之一。</br>**注意**  在 windows 8 和更高版本的 Windows 中受支持。|
 |FWPM_CONDITION_VSWITCH_SOURCE_INTERFACE_ID|创建该帧的虚拟交换机的接口的 GUID。</br>**注意**  在 windows 8、Windows Server 2012 和更高版本的 Windows 中受支持。|
 |FWPM_CONDITION_VSWITCH_DESTINATION_INTERFACE_ID|帧所指向的虚拟交换机的接口的 GUID。</br>**注意**  在 windows 8 和更高版本的 Windows 中受支持。|
 |FWPM_CONDITION_VSWITCH_SOURCE_INTERFACE_TYPE|创建该帧的虚拟交换机接口的类型。 这是在 Ntddndis 中的 [NDIS_NIC_SWITCH_TYPE](/windows-hardware/drivers/ddi/ntddndis/ne-ntddndis-_ndis_nic_switch_type) 枚举中定义的值之一。</br>**注意**  在 windows 8、Windows Server 2012 和更高版本的 Windows 中受支持。|

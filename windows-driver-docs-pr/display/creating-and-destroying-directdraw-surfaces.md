@@ -16,12 +16,12 @@ keywords:
 - DdDestroySurface
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c4ead4fd046f46b462a7e29b7394c9d415951527
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: c3a248253d077983c83025430dc69fb69825086d
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89064350"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90715344"
 ---
 # <a name="creating-and-destroying-directdraw-surfaces"></a>创建和销毁 DirectDraw 图面
 
@@ -37,16 +37,16 @@ ms.locfileid: "89064350"
 
 3.  内存分配。 DirectDraw 运行时为驱动程序为响应 [*DdCreateSurface*](/previous-versions/windows/hardware/drivers/ff549263(v=vs.85)) 调用而未分配的任何图面分配内存。 以下部分更详细地介绍了此过程。
 
-4.  [**D3dCreateSurfaceEx**](/windows/desktop/api/ddrawint/nc-ddrawint-pdd_createsurfaceex)。 此函数将句柄与有问题的图面关联起来，以便以后在 DirectX[**D3dDrawPrimitives2**](/windows-hardware/drivers/ddi/d3dhal/nc-d3dhal-lpd3dhal_drawprimitives2cb) 令牌流中使用。 该驱动程序还会创建自己的由 DirectDraw 维护的 surface 结构副本。 有关 **D3dCreateSurfaceEx**的详细信息，请参阅 (DDK) 文档中的 DirectX 驱动程序开发工具包。
+4.  [**D3dCreateSurfaceEx**](/windows/win32/api/ddrawint/nc-ddrawint-pdd_createsurfaceex)。 此函数将句柄与有问题的图面关联起来，以便以后在 DirectX[**D3dDrawPrimitives2**](/windows-hardware/drivers/ddi/d3dhal/nc-d3dhal-lpd3dhal_drawprimitives2cb) 令牌流中使用。 该驱动程序还会创建自己的由 DirectDraw 维护的 surface 结构副本。 有关 **D3dCreateSurfaceEx**的详细信息，请参阅 (DDK) 文档中的 DirectX 驱动程序开发工具包。
 
-**注意**   DirectDraw 驱动程序决不能直接为 surface 分配用户模式内存 (例如，通过调用[**EngAllocUserMem**](/windows/desktop/api/winddi/nf-winddi-engallocusermem)函数) 。 相反，驱动程序可以使 DirectDraw 运行时为表面分配用户模式内存。
+**注意**   DirectDraw 驱动程序决不能直接为 surface 分配用户模式内存 (例如，通过调用[**EngAllocUserMem**](/windows/win32/api/winddi/nf-winddi-engallocusermem)函数) 。 相反，驱动程序可以使 DirectDraw 运行时为表面分配用户模式内存。
 如果驱动程序直接分配内存，则通过创建该图面的进程以外的进程来更改视频模式的后续请求可能会导致操作系统崩溃或内存泄漏。 为了使 DirectDraw 运行时分配用户模式内存，驱动程序应 \_ \_ 从其 [*DDCREATESURFACE*](/previous-versions/windows/hardware/drivers/ff549263(v=vs.85)) 函数返回 DDHAL PLEASEALLOC USERMEM 值。 有关详细信息，请参阅 " *DdCreateSurface* 引用" 页上的 "备注" 部分。
 
  
 
-仅当在创建图面期间分配或涉及到为图面分配内存时，才会通过对驱动程序的 [*DdDestroySurface*](/windows/desktop/api/ddrawint/nc-ddrawint-pdd_surfcb_destroysurface) 入口点调用来销毁表面。 如果 DirectDraw 运行时分配了内存并且驱动程序未涉及，则运行时不会调用 *DdDestroySurface*。
+仅当在创建图面期间分配或涉及到为图面分配内存时，才会通过对驱动程序的 [*DdDestroySurface*](/windows/win32/api/ddrawint/nc-ddrawint-pdd_surfcb_destroysurface) 入口点调用来销毁表面。 如果 DirectDraw 运行时分配了内存并且驱动程序未涉及，则运行时不会调用 *DdDestroySurface*。
 
-仅在创建曲面的模式持续时，它们才会保持不变。 如果存在模式更改，则会销毁驱动程序控件下的所有表面，就像驱动程序所关心的一样。 还有其他事件可能会导致所有表面以这种方式销毁。 驱动程序不需要确定 [*DdDestroySurface*](/windows/desktop/api/ddrawint/nc-ddrawint-pdd_surfcb_destroysurface) 调用的原因。
+仅在创建曲面的模式持续时，它们才会保持不变。 如果存在模式更改，则会销毁驱动程序控件下的所有表面，就像驱动程序所关心的一样。 还有其他事件可能会导致所有表面以这种方式销毁。 驱动程序不需要确定 [*DdDestroySurface*](/windows/win32/api/ddrawint/nc-ddrawint-pdd_surfcb_destroysurface) 调用的原因。
 
  
 

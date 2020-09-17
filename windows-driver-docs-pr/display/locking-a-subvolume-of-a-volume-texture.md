@@ -9,12 +9,12 @@ keywords:
 - subvolume 锁定 WDK DirectX 8。0
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fd866e6197fb50727943e9530af1c5a6bdc95ace
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 880a4e4c3cd7b288b0616b14b5f1345422159508
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89065774"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90716278"
 ---
 # <a name="locking-a-subvolume-of-a-volume-texture"></a>锁定体积纹理的子体积
 
@@ -22,7 +22,7 @@ ms.locfileid: "89065774"
 ## <span id="ddk_locking_a_subvolume_of_a_volume_texture_gg"></span><span id="DDK_LOCKING_A_SUBVOLUME_OF_A_VOLUME_TEXTURE_GG"></span>
 
 
-DirectX 8.1 引入了一项新功能，该功能允许驱动程序只锁定一 subvolume 的卷纹理。 调用驱动程序的 [*DdLock*](/windows/desktop/api/ddrawint/nc-ddrawint-pdd_surfcb_lock) 函数时，驱动程序可以通过只锁定 subvolume 而不是整个卷纹理来提高系统性能。
+DirectX 8.1 引入了一项新功能，该功能允许驱动程序只锁定一 subvolume 的卷纹理。 调用驱动程序的 [*DdLock*](/windows/win32/api/ddrawint/nc-ddrawint-pdd_surfcb_lock) 函数时，驱动程序可以通过只锁定 subvolume 而不是整个卷纹理来提高系统性能。
 
 若要指示此功能的支持，驱动程序必须 \_ 在 D3DCAPS8 结构的 **DevCaps** 成员中设置 D3DDEVCAPS SUBVOLUMELOCK 位。 驱动程序将返回 D3DCAPS8 结构来响应 **GetDriverInfo2** 查询，如 [报告 DirectX 8.0 样式 Direct3D 功能](reporting-directx-8-0-style-direct3d-capabilities.md)中所述。 支持 [GetDriverInfo2](supporting-getdriverinfo2.md)中介绍了此查询的支持。
 

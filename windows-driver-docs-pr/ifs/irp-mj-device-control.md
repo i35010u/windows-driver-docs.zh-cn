@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 01d7e1c314d1067c3321f2a0273b3eca2ea23ea0
-ms.sourcegitcommit: 9b4760aae390b36dbdf9e0dd729a4a643c3f7831
+ms.openlocfilehash: f307ad05ae87db688b5cb668ca3f0a6fa28427c0
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90565267"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90715628"
 ---
 # <a name="irp_mj_device_control-ifs"></a>\_ \_ (IFS) 的 IRP MJ 设备 \_ 控制
 
@@ -25,7 +25,7 @@ ms.locfileid: "90565267"
 ## <a name="when-sent"></a>发送时间
 
 
-IRP \_ MJ \_ 设备 \_ 控制请求由 i/o 管理器和其他操作系统组件以及其他内核模式驱动程序发送。 通常，此 IRP 代表用户模式应用程序发送，该应用程序已调用 Microsoft Win32 [**DeviceIoControl**](/windows/desktop/api/ioapiset/nf-ioapiset-deviceiocontrol) 函数或代表已调用 [**ZwDeviceIoControlFile**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-zwdeviceiocontrolfile)的内核模式组件。
+IRP \_ MJ \_ 设备 \_ 控制请求由 i/o 管理器和其他操作系统组件以及其他内核模式驱动程序发送。 通常，此 IRP 代表用户模式应用程序发送，该应用程序已调用 Microsoft Win32 [**DeviceIoControl**](/windows/win32/api/ioapiset/nf-ioapiset-deviceiocontrol) 函数或代表已调用 [**ZwDeviceIoControlFile**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-zwdeviceiocontrolfile)的内核模式组件。
 
 ## <a name="operation-file-system-drivers"></a>操作：文件系统驱动程序
 

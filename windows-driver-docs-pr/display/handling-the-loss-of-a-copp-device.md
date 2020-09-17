@@ -10,12 +10,12 @@ keywords:
 - 丢失的 COPP 设备 WDK DirectX VA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 817eb16947f818eb56c93011407f7bed43029345
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 0f570330c78a5a298009088d96163e3ed9be9715
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89065610"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90714742"
 ---
 # <a name="handling-the-loss-of-a-copp-device"></a>处理 COPP 设备丢失
 
@@ -25,7 +25,7 @@ ms.locfileid: "89065610"
 
 **本部分仅适用于 Windows Server 2003 SP1 及更高版本以及 Windows XP SP2 及更高版本。**
 
-设置为 "保护模式" 的视频会话必须处理导致 DirectX VA COPP 设备（与视频会话相关）的破坏的情况。 以下方案启动对显示驱动程序的 [*DdMoCompDestroy*](/windows/desktop/api/ddrawint/nc-ddrawint-pdd_mocompcb_destroy) 回调函数的调用，同时可能会启用视频会话的经过认证的输出连接器上的内容保护：
+设置为 "保护模式" 的视频会话必须处理导致 DirectX VA COPP 设备（与视频会话相关）的破坏的情况。 以下方案启动对显示驱动程序的 [*DdMoCompDestroy*](/windows/win32/api/ddrawint/nc-ddrawint-pdd_mocompcb_destroy) 回调函数的调用，同时可能会启用视频会话的经过认证的输出连接器上的内容保护：
 
 -   更改显示模式
 

@@ -13,23 +13,23 @@ keywords:
 - QueryDisplayConfig WDK Windows Server 2008 R2 显示
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2216cb1ca9bc0540fdc4d9b9e770b5f7e670b200
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 6f46b7090d971c0d15fab1479ddd400b63138e26
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89064642"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90715814"
 ---
 # <a name="querydisplayconfig-summary-and-scenarios"></a>QueryDisplayConfig 摘要和方案
 
 
 本部分仅适用于 Windows 7 和更高版本，以及 windows Server 2008 R2 及更高版本的 Windows 操作系统。
 
-以下部分概述了调用方如何使用 [**QueryDisplayConfig**](/windows/desktop/api/winuser/nf-winuser-querydisplayconfig) CCD 函数并提供使用 **QueryDisplayConfig**的方案。
+以下部分概述了调用方如何使用 [**QueryDisplayConfig**](/windows/win32/api/winuser/nf-winuser-querydisplayconfig) CCD 函数并提供使用 **QueryDisplayConfig**的方案。
 
 ### <a name="span-idquerydisplayconfig_summaryspanspan-idquerydisplayconfig_summaryspanquerydisplayconfig-summary"></a><span id="querydisplayconfig_summary"></span><span id="QUERYDISPLAYCONFIG_SUMMARY"></span>QueryDisplayConfig 摘要
 
-调用方可以使用 [**QueryDisplayConfig**](/windows/desktop/api/winuser/nf-winuser-querydisplayconfig) 来枚举以下任何信息：
+调用方可以使用 [**QueryDisplayConfig**](/windows/win32/api/winuser/nf-winuser-querydisplayconfig) 来枚举以下任何信息：
 
 -   当前连接的监视器集可能具有的所有单个路径。 然后，调用方可以组合路径来构造可能的拓扑。
 
@@ -43,15 +43,15 @@ ms.locfileid: "89064642"
 
 ### <a name="span-idquerydisplayconfig_scenariosspanspan-idquerydisplayconfig_scenariosspanquerydisplayconfig-scenarios"></a><span id="querydisplayconfig_scenarios"></span><span id="QUERYDISPLAYCONFIG_SCENARIOS"></span>QueryDisplayConfig 方案
 
-在以下情况下，将调用[**QueryDisplayConfig**](/windows/desktop/api/winuser/nf-winuser-querydisplayconfig) ：
+在以下情况下，将调用[**QueryDisplayConfig**](/windows/win32/api/winuser/nf-winuser-querydisplayconfig) ：
 
--   当控制面板首次启动时，显示控制面板小程序会调用 [**QueryDisplayConfig**](/windows/desktop/api/winuser/nf-winuser-querydisplayconfig) 来向控制面板的用户界面填充当前已应用的拓扑。 当前应用的拓扑包括启用强制投影时所显示的拓扑。
+-   当控制面板首次启动时，显示控制面板小程序会调用 [**QueryDisplayConfig**](/windows/win32/api/winuser/nf-winuser-querydisplayconfig) 来向控制面板的用户界面填充当前已应用的拓扑。 当前应用的拓扑包括启用强制投影时所显示的拓扑。
 
--   显示控制面板小程序调用 [**QueryDisplayConfig**](/windows/desktop/api/winuser/nf-winuser-querydisplayconfig) 来枚举所有可能的路径，以填充 **multimon** 下拉框。
+-   显示控制面板小程序调用 [**QueryDisplayConfig**](/windows/win32/api/winuser/nf-winuser-querydisplayconfig) 来枚举所有可能的路径，以填充 **multimon** 下拉框。
 
--   在开始 "控制面板" 用户界面之前，"显示" 热键会调用 [**QueryDisplayConfig**](/windows/desktop/api/winuser/nf-winuser-querydisplayconfig) 来获取显示选项 (即，当前设置的、克隆、内部、外部或扩展) 。
+-   在开始 "控制面板" 用户界面之前，"显示" 热键会调用 [**QueryDisplayConfig**](/windows/win32/api/winuser/nf-winuser-querydisplayconfig) 来获取显示选项 (即，当前设置的、克隆、内部、外部或扩展) 。
 
--   第三方应用程序可以调用 [**QueryDisplayConfig**](/windows/desktop/api/winuser/nf-winuser-querydisplayconfig) ，以查询存储在数据库中的连接显示集的当前设置。
+-   第三方应用程序可以调用 [**QueryDisplayConfig**](/windows/win32/api/winuser/nf-winuser-querydisplayconfig) ，以查询存储在数据库中的连接显示集的当前设置。
 
  
 

@@ -11,12 +11,12 @@ keywords:
 - 电池故障 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8edac1ccc956087e402d61a091ebc6b4823eb2f6
-ms.sourcegitcommit: 7a7e61b4147a4aa86bf820fd0b0c7681fe17e544
+ms.openlocfilehash: b5a9013fa32e80e3f60abef12fe7df8dad2bbe30
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89056875"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90716578"
 ---
 # <a name="responding-to-battery-status-queries"></a>响应电池状态查询
 
@@ -24,7 +24,7 @@ ms.locfileid: "89056875"
 ## <span id="ddk_responding_to_battery_status_queries_dg"></span><span id="DDK_RESPONDING_TO_BATTERY_STATUS_QUERIES_DG"></span>
 
 
-电池类驱动程序调用 miniclass 驱动程序的 [*BatteryMiniQueryStatus*](/windows/desktop/api/batclass/nc-batclass-bclass_query_status_callback) 例程，以获取电池的电源状态、容量、电压和放电速率。 下面是此例程的原型：
+电池类驱动程序调用 miniclass 驱动程序的 [*BatteryMiniQueryStatus*](/windows/win32/api/batclass/nc-batclass-bclass_query_status_callback) 例程，以获取电池的电源状态、容量、电压和放电速率。 下面是此例程的原型：
 
 ```cpp
 typedef
@@ -36,7 +36,7 @@ NTSTATUS
     );
 ```
 
-*上下文*参数是指向上下文区域的指针，该上下文区域由 miniclass 驱动程序分配，并在设备初始化时在[**电池 \_ 微型端口 \_ 信息**](/windows/desktop/api/batclass/ns-batclass-battery_miniport_info)结构中传递给类驱动程序。 *BatteryTag*参数是之前由 BatteryMiniQueryTag 返回的值。
+*上下文*参数是指向上下文区域的指针，该上下文区域由 miniclass 驱动程序分配，并在设备初始化时在[**电池 \_ 微型端口 \_ 信息**](/windows/win32/api/batclass/ns-batclass-battery_miniport_info)结构中传递给类驱动程序。 *BatteryTag*参数是之前由 BatteryMiniQueryTag 返回的值。
 
 在 "缓冲电池 \_ 状态" 结构中，miniclass 驱动程序会根据 miniclass 驱动程序可以确定的范围，将电池的电压、容量和充电/放电速率报告给你。 Miniclass 驱动程序还报告以下一个或多个常量，用于描述电池的电源状况：
 
@@ -52,7 +52,7 @@ Miniclass 驱动程序不应报告极低、正在停止电池 (电池电量 \_ �
 
 当 miniclass 驱动程序报告严重不足的电池电量时，电源管理器会假定电池故障即将用完。 如果电池提供系统电源，或者是辅助 (充电) 单元，则系统会针对严重电池执行 DC 电源策略。 电源策略的详细信息与系统不同，具体取决于硬件功能、应用程序设置和用户首选项。 通常，系统会尝试进入睡眠状态或关闭计算机。 有关详细信息，请参阅 [系统电源策略](../kernel/system-power-policy.md)。
 
-类驱动程序的 [**BatteryClassStatusNotify**](/windows/desktop/api/batclass/nf-batclass-batteryclassstatusnotify) 例程和 miniclass 驱动程序的 [*BatteryMiniQueryStatus*](/windows/desktop/api/batclass/nc-batclass-bclass_query_status_callback)、 [*BatteryMiniSetStatusNotify*](/windows/desktop/api/batclass/nc-batclass-bclass_set_status_notify_callback)和 [*BatteryMiniDisableStatusNotify*](/windows/desktop/api/batclass/nc-batclass-bclass_disable_status_notify_callback) 例程按两个驱动程序的顺序使用，以提供及时的状态信息。 有关详细信息，请参阅 [电池状态和通知例程的交互](interaction-of-battery-status-and-notification-routines.md)。
+类驱动程序的 [**BatteryClassStatusNotify**](/windows/win32/api/batclass/nf-batclass-batteryclassstatusnotify) 例程和 miniclass 驱动程序的 [*BatteryMiniQueryStatus*](/windows/win32/api/batclass/nc-batclass-bclass_query_status_callback)、 [*BatteryMiniSetStatusNotify*](/windows/win32/api/batclass/nc-batclass-bclass_set_status_notify_callback)和 [*BatteryMiniDisableStatusNotify*](/windows/win32/api/batclass/nc-batclass-bclass_disable_status_notify_callback) 例程按两个驱动程序的顺序使用，以提供及时的状态信息。 有关详细信息，请参阅 [电池状态和通知例程的交互](interaction-of-battery-status-and-notification-routines.md)。
 
  
 

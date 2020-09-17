@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f81de64180aab72f23f2d57cc5887aee5940b971
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: d9e1ab78cbc0206b8284fe3c1c6358d787c35803
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89065028"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90715632"
 ---
 # <a name="irp_mj_create-ifs"></a>IRP_MJ_CREATE (IFS) 
 
@@ -25,7 +25,7 @@ ms.locfileid: "89065028"
 
 创建新文件或目录时，或在打开现有文件、设备、目录或卷时，i/o 管理器将发送 IRP_MJ_CREATE 请求。
 
-通常，此 IRP 是代表用户模式应用程序发送的，该应用程序已调用 Microsoft Win32 函数（如 [**CreateFile**](/windows/desktop/api/fileapi/nf-fileapi-createfilea) ）或代表已调用函数（如 [**IoCreateFile**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iocreatefile)、 [**IoCreateFileSpecifyDeviceObjectHint**](/windows-hardware/drivers/ddi/ntddk/nf-ntddk-iocreatefilespecifydeviceobjecthint)、 [**ZwCreateFile**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ntcreatefile)或 [**ZwOpenFile**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ntopenfile)）的内核模式组件。
+通常，此 IRP 是代表用户模式应用程序发送的，该应用程序已调用 Microsoft Win32 函数（如 [**CreateFile**](/windows/win32/api/fileapi/nf-fileapi-createfilea) ）或代表已调用函数（如 [**IoCreateFile**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iocreatefile)、 [**IoCreateFileSpecifyDeviceObjectHint**](/windows-hardware/drivers/ddi/ntddk/nf-ntddk-iocreatefilespecifydeviceobjecthint)、 [**ZwCreateFile**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ntcreatefile)或 [**ZwOpenFile**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ntopenfile)）的内核模式组件。
 
 如果创建请求成功完成，则应用程序或内核模式组件会接收文件对象的句柄。
 
@@ -48,7 +48,7 @@ ms.locfileid: "89065028"
 > [!NOTE]
 > 当旧筛选器驱动程序在创建后回调中重新发出 create 时，它们必须释放并设置与其重新分析点相关联的缓冲区 (辅助缓冲区) 为 **NULL**。 如果旧筛选器驱动程序未释放此缓冲区并将其设置为 **NULL**，则驱动程序将泄漏内存。 微筛选器驱动程序不一定要这样做，因为筛选器管理器会为其执行此操作。
 
-## <a name="parameters"></a>parameters
+## <a name="parameters"></a>参数
 
 文件系统或筛选器驱动程序与给定的 IRP 一起调用[**IoGetCurrentIrpStackLocation**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetcurrentirpstacklocation) ，以获取指向其自己的*IrpSp*[**堆栈位置**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_stack_location)的指针，如以下列表所示。  (IRP 显示为 *irp*。 ) 驱动程序可以使用在进程创建请求中的以下 irp 成员和 irp 堆栈位置设置的信息：
 
@@ -128,7 +128,7 @@ ms.locfileid: "89065028"
 
 * *IrpSp->ShareAccess*：请求为文件提供共享访问权限的位掩码。 如果此成员为零，则请求进行独占访问。 有关详细信息，请参阅[**IoCreateFileSpecifyDeviceObjectHint**](/windows-hardware/drivers/ddi/ntddk/nf-ntddk-iocreatefilespecifydeviceobjecthint)的*ShareAccess*参数说明。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 [**ACCESS_MASK**](../kernel/access-mask.md)
 

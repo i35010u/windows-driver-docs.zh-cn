@@ -11,12 +11,12 @@ keywords:
 - 打开 HID 集合
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6755f9f1273791d8f85457503b1573f097ee03e4
-ms.sourcegitcommit: 9145bffd4cc3b990a9ebff43b588db6ef2001f5d
+ms.openlocfilehash: bddc211bd972f93109c10b95a21e8e740e2f6ca5
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/09/2020
-ms.locfileid: "89592453"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90715968"
 ---
 # <a name="finding-and-opening-a-hid-collection"></a>找到并打开 HID 集合
 
@@ -34,13 +34,13 @@ Microsoft Windows 提供了设备安装例程 ( **SetupDi * * * Xxx* 函数) 来
 
 -   调用 [**HidD \_ GetHidGuid**](/windows-hardware/drivers/ddi/hidsdi/nf-hidsdi-hidd_gethidguid) 以获取 HIDClass 设备的系统定义的 GUID。
 
--   调用 [**SetupDiGetClassDevs**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetclassdevsw) 来获取不透明设备信息集的句柄，以描述系统中当前安装的所有 [HID 集合](hid-collections.md) 所支持的设备接口。 应用程序应 \_ \_ 在传递给**SetupDiGetClassDevs**的*Flags*参数中指定 DIGCF 和 DIGCF DEVICEINTERFACE。
+-   调用 [**SetupDiGetClassDevs**](/windows/win32/api/setupapi/nf-setupapi-setupdigetclassdevsw) 来获取不透明设备信息集的句柄，以描述系统中当前安装的所有 [HID 集合](hid-collections.md) 所支持的设备接口。 应用程序应 \_ \_ 在传递给**SetupDiGetClassDevs**的*Flags*参数中指定 DIGCF 和 DIGCF DEVICEINTERFACE。
 
--   重复调用 [**SetupDiEnumDeviceInterfaces**](/windows/desktop/api/setupapi/nf-setupapi-setupdienumdeviceinterfaces) ，以检索所有可用的接口信息。
+-   重复调用 [**SetupDiEnumDeviceInterfaces**](/windows/win32/api/setupapi/nf-setupapi-setupdienumdeviceinterfaces) ，以检索所有可用的接口信息。
 
--   调用 [**SetupDiGetDeviceInterfaceDetail**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetdeviceinterfacedetaila) 将每个集合的接口信息格式化为 SP \_ 接口 \_ 设备 \_ 详细信息 \_ 数据结构。 此结构的 **DevicePath** 成员包含应用程序在 Win32 函数 [**CreateFile**](/windows/desktop/api/fileapi/nf-fileapi-createfilea) 中使用的用户模式名称，以获取 HID 集合的文件句柄。
+-   调用 [**SetupDiGetDeviceInterfaceDetail**](/windows/win32/api/setupapi/nf-setupapi-setupdigetdeviceinterfacedetaila) 将每个集合的接口信息格式化为 SP \_ 接口 \_ 设备 \_ 详细信息 \_ 数据结构。 此结构的 **DevicePath** 成员包含应用程序在 Win32 函数 [**CreateFile**](/windows/win32/api/fileapi/nf-fileapi-createfilea) 中使用的用户模式名称，以获取 HID 集合的文件句柄。
 
--   调用 [**CreateFile**](/windows/desktop/api/fileapi/nf-fileapi-createfilea) 以获取 HID 集合的文件句柄。
+-   调用 [**CreateFile**](/windows/win32/api/fileapi/nf-fileapi-createfilea) 以获取 HID 集合的文件句柄。
 
 ### <a name="kernel-mode-driver"></a>内核模式驱动程序
 

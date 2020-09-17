@@ -7,12 +7,12 @@ keywords:
 - 顶点缓冲 WDK DirectX 8.0，在 Windows 2000 上重命名
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: eb4e29145a0d7e9dad3edb956f8ce84a0f011254
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 5df43dfbbd570dd3e8bd24e797ec83dff30df330
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89066704"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90716028"
 ---
 # <a name="handling-renaming-on-windows-2000"></a>在 Windows 2000 上处理重命名
 
@@ -37,7 +37,7 @@ fpVidMem = pMap->pvVirtAddr +
 
 **pvVirtAddr** 是 AGP 堆到给定进程的用户模式映射的基址。 **fpStart** 是 AGP 堆的基的偏移量到前面所述的概念地址空间中，而 **fpHeapOffset** 是从同一概念地址空间的基开始的图面的偏移量。
 
-你的驱动程序将通过 [**DdGetDriverInfo**](/windows/desktop/api/ddrawint/nc-ddrawint-pdd_getdriverinfo) 回调通知 AGP 堆的概念基址。 当用 GUID UpdateNonLocalHeap 调用 *DdGetDriverInfo* 时 \_ ，传递的数据结构的 **fpGARTLin** 字段的值与 **fpStart**的值相同，即概念地址空间中 AGP 堆开头的基址。 遗憾的是，您的驱动程序不会收到 **pvVirtAddr** 的值通知，并且通过传递到该驱动程序的任何数据结构对该驱动程序都不可见。 因此，它的值必须从内核针对顶点缓冲区计算的 **fpVidMem** 计算。 给定内核计算的 **fpVidMem** ，只需将当前 **fpHeapOffset** 减去堆的 **fpStart**。 如果在重命名时将新内存的 **fpHeapOffset** 交换到顶点缓冲区中，则可以轻松计算 **fpVidMem** 的新值。
+你的驱动程序将通过 [**DdGetDriverInfo**](/windows/win32/api/ddrawint/nc-ddrawint-pdd_getdriverinfo) 回调通知 AGP 堆的概念基址。 当用 GUID UpdateNonLocalHeap 调用 *DdGetDriverInfo* 时 \_ ，传递的数据结构的 **fpGARTLin** 字段的值与 **fpStart**的值相同，即概念地址空间中 AGP 堆开头的基址。 遗憾的是，您的驱动程序不会收到 **pvVirtAddr** 的值通知，并且通过传递到该驱动程序的任何数据结构对该驱动程序都不可见。 因此，它的值必须从内核针对顶点缓冲区计算的 **fpVidMem** 计算。 给定内核计算的 **fpVidMem** ，只需将当前 **fpHeapOffset** 减去堆的 **fpStart**。 如果在重命名时将新内存的 **fpHeapOffset** 交换到顶点缓冲区中，则可以轻松计算 **fpVidMem** 的新值。
 
 下面的代码段演示了如何在锁定调用中为 AGP 表面计算新 **fpVidMem** 。
 
@@ -74,9 +74,9 @@ pLockData->ddRVal = DD_OK;
 return DDHAL_DRIVER_HANDLED;
 ```
 
-为了使非本地视频内存可用于用户模式进程，需要将内存提交并映射到用户模式进程。 若要确保在执行顶点缓冲区重命名时执行此操作，至关重要，使用 **Eng * * * Xxx* 函数 [**HeapVidMemAllocAligned**](/windows/desktop/api/dmemmgr/nf-dmemmgr-heapvidmemallocaligned)分配顶点缓冲区的新内存。 这可以确保在使用之前提交和映射内存。 **HeapVidMemAllocAligned** 返回 AGP 堆的概念地址空间的偏移量，因此，此指针可直接用作 **fpHeapOffset** 。
+为了使非本地视频内存可用于用户模式进程，需要将内存提交并映射到用户模式进程。 若要确保在执行顶点缓冲区重命名时执行此操作，至关重要，使用 **Eng * * * Xxx* 函数 [**HeapVidMemAllocAligned**](/windows/win32/api/dmemmgr/nf-dmemmgr-heapvidmemallocaligned)分配顶点缓冲区的新内存。 这可以确保在使用之前提交和映射内存。 **HeapVidMemAllocAligned** 返回 AGP 堆的概念地址空间的偏移量，因此，此指针可直接用作 **fpHeapOffset** 。
 
-如果驱动程序返回 DDHAL \_ 驱动程序，而该驱动程序 \_ 已处理 AGP 图面的锁定，则内核代码将在[**DD \_ LOCKDATA**](/windows/desktop/api/ddrawint/ns-ddrawint-_dd_lockdata)数据结构中将**lpSurfData**的值返回到运行时和应用程序。 如果驱动程序返回 DDHAL \_ 驱动程序 \_ NOTHANDLED，内核只是将 **fpVidMem** 的值返回到用户模式。 因此， \_ \_ 只要将 **fpVidMem** 更新为指向新的用户模式指针，就不必返回已处理的 DDHAL 驱动程序。 但是，我们建议驱动程序将设置为 **fpVidMem** 和 **LPSURFDATA** 并返回 DDHAL \_ 驱动程序已 \_ 处理。
+如果驱动程序返回 DDHAL \_ 驱动程序，而该驱动程序 \_ 已处理 AGP 图面的锁定，则内核代码将在[**DD \_ LOCKDATA**](/windows/win32/api/ddrawint/ns-ddrawint-_dd_lockdata)数据结构中将**lpSurfData**的值返回到运行时和应用程序。 如果驱动程序返回 DDHAL \_ 驱动程序 \_ NOTHANDLED，内核只是将 **fpVidMem** 的值返回到用户模式。 因此， \_ \_ 只要将 **fpVidMem** 更新为指向新的用户模式指针，就不必返回已处理的 DDHAL 驱动程序。 但是，我们建议驱动程序将设置为 **fpVidMem** 和 **LPSURFDATA** 并返回 DDHAL \_ 驱动程序已 \_ 处理。
 
  
 

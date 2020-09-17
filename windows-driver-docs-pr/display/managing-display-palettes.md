@@ -13,12 +13,12 @@ keywords:
 - RGB 颜色 WDK Windows 2000 显示
 ms.date: 10/11/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 581bec3a1f237dbb897622e0b6fda83df44bef30
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 391c70be7d828f2d5db4c2dfaed9c14f3b0b2817
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89065724"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90715308"
 ---
 # <a name="managing-display-palettes"></a>管理显示调色板
 
@@ -28,6 +28,6 @@ ms.locfileid: "89065724"
 
 **DrvSetPalette**函数向驱动程序提供*PDEV*的句柄，并请求驱动程序实现该设备的调色板。 驱动程序应设置硬件调色板，使其与给定调色板中的条目尽可能匹配。
 
-如果设备支持可以设置的调色板，则此入口点是必需的，否则不应提供此入口点。 显示驱动程序通过在 \_ [**DrvEnablePDEV**](/windows/desktop/api/winddi/nf-winddi-drvenablepdev)中返回的[lnk-devinfo](/windows/win32/api/winddi/ns-winddi-devinfo)结构的**flGraphicsCaps**字段中设置 GCAPS PALMANAGED 位，来指定其设备具有可设置的调色板。
+如果设备支持可以设置的调色板，则此入口点是必需的，否则不应提供此入口点。 显示驱动程序通过在 \_ [**DrvEnablePDEV**](/windows/win32/api/winddi/nf-winddi-drvenablepdev)中返回的[lnk-devinfo](/windows/win32/api/winddi/ns-winddi-devinfo)结构的**flGraphicsCaps**字段中设置 GCAPS PALMANAGED 位，来指定其设备具有可设置的调色板。
 
-服务例程 [PALOBJ_cGetColors](/windows/desktop/api/winddi/nf-winddi-palobj_cgetcolors) 可用于显示驱动程序。 此函数从索引调色板下载 RGB 颜色，应从 *DrvSetPalette*的实现中调用。
+服务例程 [PALOBJ_cGetColors](/windows/win32/api/winddi/nf-winddi-palobj_cgetcolors) 可用于显示驱动程序。 此函数从索引调色板下载 RGB 颜色，应从 *DrvSetPalette*的实现中调用。

@@ -9,12 +9,12 @@ keywords:
 - 设备接口类 WDK KMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5609e87e7376a0c2882d62cd81c03e8bcb862261
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 992173067cdaf60d3f1d1d56a2da2c92fe740471
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89184553"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90715224"
 ---
 # <a name="using-device-interfaces-wdf"></a>使用设备接口 (WDF) 
 
@@ -54,7 +54,7 @@ ms.locfileid: "89184553"
 
 有关如何在 UMDF 版本1驱动程序中执行此操作的信息，请参阅在 [Umdf 驱动程序中使用设备接口](using-device-interfaces-in-umdf-drivers.md#accessing-another-drivers-device-interface)。
 
-若要注册设备接口事件的通知，KMDF 驱动程序将调用 [**IoRegisterPlugPlayNotification**](/windows-hardware/drivers/ddi/wdm/nf-wdm-ioregisterplugplaynotification)，而 UMDF 2 驱动程序将调用 [**CM \_ 注册 \_ 通知**](/windows/desktop/api/cfgmgr32/nf-cfgmgr32-cm_register_notification)。 在这两种情况下，驱动程序从其 [*EvtDriverDeviceAdd*](/windows-hardware/drivers/ddi/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add) 回调函数调用适当的例程。
+若要注册设备接口事件的通知，KMDF 驱动程序将调用 [**IoRegisterPlugPlayNotification**](/windows-hardware/drivers/ddi/wdm/nf-wdm-ioregisterplugplaynotification)，而 UMDF 2 驱动程序将调用 [**CM \_ 注册 \_ 通知**](/windows/win32/api/cfgmgr32/nf-cfgmgr32-cm_register_notification)。 在这两种情况下，驱动程序从其 [*EvtDriverDeviceAdd*](/windows-hardware/drivers/ddi/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add) 回调函数调用适当的例程。
 
 下面的代码示例演示本地 UMDF 2 驱动程序如何为通知注册，然后打开远程 i/o 目标。
 
@@ -75,7 +75,7 @@ ms.locfileid: "89184553"
 
     ```
 
-2.  本地驱动程序从[*EvtDriverDeviceAdd*](/windows-hardware/drivers/ddi/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)调用[**CM \_ 注册 \_ 通知**](/windows/desktop/api/cfgmgr32/nf-cfgmgr32-cm_register_notification)，以便在设备接口可用时注册通知。 提供一个指针，该指针指向框架在设备接口可用时调用的通知回调例程。
+2.  本地驱动程序从[*EvtDriverDeviceAdd*](/windows-hardware/drivers/ddi/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)调用[**CM \_ 注册 \_ 通知**](/windows/win32/api/cfgmgr32/nf-cfgmgr32-cm_register_notification)，以便在设备接口可用时注册通知。 提供一个指针，该指针指向框架在设备接口可用时调用的通知回调例程。
     ```cpp
     DWORD cmRet;
         CM_NOTIFY_FILTER cmFilter;
@@ -149,7 +149,7 @@ ms.locfileid: "89184553"
 
     调用 [**WdfIoTargetOpen**](/windows-hardware/drivers/ddi/wdfiotarget/nf-wdfiotarget-wdfiotargetopen)时，驱动程序可以选择注册 [*EvtIoTargetQueryRemove*](/windows-hardware/drivers/ddi/wdfiotarget/nc-wdfiotarget-evt_wdf_io_target_query_remove) 回调函数以接收删除通知，以及拒绝删除。 如果驱动程序未提供 *EvtIoTargetQueryRemove*，则在删除设备时，框架会关闭 i/o 目标。
 
-    在极少数情况下，UMDF 2 驱动程序可以第二次调用 [**CM \_ 注册 \_ 通知**](/windows/desktop/api/cfgmgr32/nf-cfgmgr32-cm_register_notification) ，以注册设备删除的通知。 例如，如果驱动程序调用 [**CreateFile**](/windows/desktop/api/fileapi/nf-fileapi-createfilea) 来获取设备接口的句柄，则它应注册设备删除的通知，以便它能够正确响应查询删除尝试。 在大多数情况下，UMDF 2 驱动程序只调用 **CM \_ 注册 \_ 通知** 一次，并依赖于 WDF 对设备删除的支持。
+    在极少数情况下，UMDF 2 驱动程序可以第二次调用 [**CM \_ 注册 \_ 通知**](/windows/win32/api/cfgmgr32/nf-cfgmgr32-cm_register_notification) ，以注册设备删除的通知。 例如，如果驱动程序调用 [**CreateFile**](/windows/win32/api/fileapi/nf-fileapi-createfilea) 来获取设备接口的句柄，则它应注册设备删除的通知，以便它能够正确响应查询删除尝试。 在大多数情况下，UMDF 2 驱动程序只调用 **CM \_ 注册 \_ 通知** 一次，并依赖于 WDF 对设备删除的支持。
 
     ```cpp
     VOID 

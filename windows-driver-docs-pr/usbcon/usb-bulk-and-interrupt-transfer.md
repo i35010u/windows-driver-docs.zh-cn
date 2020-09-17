@@ -3,12 +3,12 @@ description: 本主题提供有关 USB 批量传输的简要概述。
 title: 如何将发送 USB 大容量传输请求
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 73bad559d4c4d66be4ea9d67b002c956f519b18a
-ms.sourcegitcommit: 937974aa9bbe0262a7ffe9631593fab48c4e7492
+ms.openlocfilehash: 98a6db2bd68689d49de3a4f80faf949b6ef06b5f
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "90009993"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90714636"
 ---
 # <a name="how-to-send-usb-bulk-transfer-requests"></a>如何将发送 USB 大容量传输请求
 
@@ -103,7 +103,7 @@ USB 大容量终结点可传输大量数据。 大容量传输可靠，允许硬
 ## <a name="bulk-transfer-request-example"></a>批量传输请求示例
 
 
-请考虑一个示例方案，其中应用程序需要在设备中读取或写入数据。 应用程序调用 Windows Api 来发送此类请求。 在此示例中，应用程序使用内核模式下驱动程序发布的设备接口 GUID 打开设备的句柄。 然后，应用程序调用 [**ReadFile**](/windows/desktop/api/fileapi/nf-fileapi-readfile) 或 [**WriteFile**](/windows/desktop/api/fileapi/nf-fileapi-writefile) 以启动读取或写入请求。 在该调用中，应用程序还指定一个包含要读取或写入的数据的缓冲区以及该缓冲区的长度。
+请考虑一个示例方案，其中应用程序需要在设备中读取或写入数据。 应用程序调用 Windows Api 来发送此类请求。 在此示例中，应用程序使用内核模式下驱动程序发布的设备接口 GUID 打开设备的句柄。 然后，应用程序调用 [**ReadFile**](/windows/win32/api/fileapi/nf-fileapi-readfile) 或 [**WriteFile**](/windows/win32/api/fileapi/nf-fileapi-writefile) 以启动读取或写入请求。 在该调用中，应用程序还指定一个包含要读取或写入的数据的缓冲区以及该缓冲区的长度。
 
 I/o 管理器接收请求，创建 (IRP) 的 i/o 请求数据包，并将其转发到客户端驱动程序。
 

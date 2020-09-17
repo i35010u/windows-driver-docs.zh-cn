@@ -4,12 +4,12 @@ description: 访问设备接口类属性
 ms.assetid: c9efe273-dc66-4585-8ab5-3842df1c95df
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f1f3a983cb306bfdd0b6d75ca31b9919879505aa
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 2c249131c4a41a23b3fd2807195aa8b7f99208f0
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90105014"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90715784"
 ---
 # <a name="accessing-device-interface-class-properties"></a>访问设备接口类属性
 
@@ -30,7 +30,7 @@ Windows Server 2003、Windows XP 和 Windows 2000 还支持其中的大多数设
 
 ### <a name="accessing-the-default-interface-for-a-device-interface-class"></a><a href="" id="accessing-the-default-interface-for-a-device-interface-class"></a> 访问设备接口类的默认接口
 
-若要检索设备接口类的默认接口，请调用 [**SetupDiGetClassDevs**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetclassdevsw) 并提供以下参数值：
+若要检索设备接口类的默认接口，请调用 [**SetupDiGetClassDevs**](/windows/win32/api/setupapi/nf-setupapi-setupdigetclassdevsw) 并提供以下参数值：
 
 -   将 *ClassGuid* 设置为表示要为其检索默认接口的设备接口类的 GUID。
 
@@ -42,7 +42,7 @@ Windows Server 2003、Windows XP 和 Windows 2000 还支持其中的大多数设
 
 此调用将返回包含设备信息元素的设备信息集。 返回的设备信息元素表示支持指定设备接口类的默认接口的设备。
 
-若要设置设备接口类的默认接口，请调用 [**SetupDiSetDeviceInterfaceDefault**](/windows/desktop/api/setupapi/nf-setupapi-setupdisetdeviceinterfacedefault) 并提供以下参数值：
+若要设置设备接口类的默认接口，请调用 [**SetupDiSetDeviceInterfaceDefault**](/windows/win32/api/setupapi/nf-setupapi-setupdisetdeviceinterfacedefault) 并提供以下参数值：
 
 -   将 *DeviceInfoSet* 设置为设备信息集的句柄，其中包含要设置为设备接口类的默认值的设备接口。
 
@@ -52,7 +52,7 @@ Windows Server 2003、Windows XP 和 Windows 2000 还支持其中的大多数设
 
 若要访问具有 interface 类注册表项下的相应注册表项值的设备接口类的属性，请执行以下步骤：
 
-1.  调用 [**SetupDiOpenClassRegKeyEx**](/windows/desktop/api/setupapi/nf-setupapi-setupdiopenclassregkeyexa) 函数以打开接口类注册表项，并提供以下参数值：
+1.  调用 [**SetupDiOpenClassRegKeyEx**](/windows/win32/api/setupapi/nf-setupapi-setupdiopenclassregkeyexa) 函数以打开接口类注册表项，并提供以下参数值：
 
     -   将 *ClassGuid* 设置为一个指向 GUID 的指针，该 GUID 标识所请求的类注册表项的设备接口类。
     -   将 *samDesired* 设置为 REGSAM 类型的值，该值指定所需的访问权限。
@@ -60,7 +60,7 @@ Windows Server 2003、Windows XP 和 Windows 2000 还支持其中的大多数设
     -   将 *MachineName* 设置为指向以 NULL 结尾的字符串的指针，该字符串包含要在其上打开请求的类注册表项的计算机的名称。 如果计算机是本地计算机，请将 *MachineName* 设置为 **NULL**。
     -   将 *保留* 设置为 **NULL**。
 
-    如果对 [**SetupDiOpenClassRegKeyEx**](/windows/desktop/api/setupapi/nf-setupapi-setupdiopenclassregkeyexa) 的此调用成功，则 **SetupDiOpenClassRegKeyEx** 将返回请求的句柄。 如果函数调用失败，则 **SetupDiOpenClassRegKeyEx** 将返回 INVALID_HANDLE_VALUE 并且对 [GetLastError](https://go.microsoft.com/fwlink/p/?linkid=169416) 的调用将返回记录的错误代码。
+    如果对 [**SetupDiOpenClassRegKeyEx**](/windows/win32/api/setupapi/nf-setupapi-setupdiopenclassregkeyexa) 的此调用成功，则 **SetupDiOpenClassRegKeyEx** 将返回请求的句柄。 如果函数调用失败，则 **SetupDiOpenClassRegKeyEx** 将返回 INVALID_HANDLE_VALUE 并且对 [GetLastError](https://go.microsoft.com/fwlink/p/?linkid=169416) 的调用将返回记录的错误代码。
 
 2.  在对 [RegQueryValueEx](https://go.microsoft.com/fwlink/p/?linkid=95398) 和 [RegSetValueEx](https://go.microsoft.com/fwlink/p/?linkid=95399) 的调用中提供检索到的句柄，以检索或设置与设备接口类属性相对应的注册表项值。
 

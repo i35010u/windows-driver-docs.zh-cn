@@ -4,12 +4,12 @@ description: 访问设备实例 SPDRP_Xxx 属性
 ms.assetid: 15ee51f8-1904-43ee-8bc2-311688c860e0
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 14c4a6e225ad84d0cdabea41bb50c9c620cf99e2
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 1c546500071414c38716211abfb72404e6b2d024
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90102418"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90715786"
 ---
 # <a name="accessing-device-instance-spdrp_xxx-properties"></a>访问设备实例 SPDRP_Xxx 属性
 
@@ -26,11 +26,11 @@ ms.locfileid: "90102418"
 
 若要访问与 Windows Server 2003、Windows XP 和 Windows 2000 上的 SPDRP_*Xxx* 标识符对应的设备实例属性，请使用以下 setupapi.log 函数：
 
--   [**SetupDiGetDeviceRegistryProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetdeviceregistrypropertya)
+-   [**SetupDiGetDeviceRegistryProperty**](/windows/win32/api/setupapi/nf-setupapi-setupdigetdeviceregistrypropertya)
 
     此函数检索由 SPDRP_*Xxx* 标识符指定的设备属性。
 
--   [**SetupDiSetDeviceRegistryProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdisetdeviceregistrypropertya)
+-   [**SetupDiSetDeviceRegistryProperty**](/windows/win32/api/setupapi/nf-setupapi-setupdisetdeviceregistrypropertya)
 
     此函数设置由 SPDRP_*Xxx* 标识符指定的设备属性。
 
@@ -42,13 +42,13 @@ ms.locfileid: "90102418"
 
     -   将 *DeviceInfoSet* 设置为设备信息集的句柄，其中包含要为其检索请求的属性值的设备实例。
     -   将 *DeviceInfoData* 设置为指向 [**SP_DEVINFO_DATA**](/windows/win32/api/setupapi/ns-setupapi-sp_devinfo_data) 结构的指针，该结构表示要为其检索请求的属性值的设备实例。
-    -   将 *属性* 设置为 SPDRP_*Xxx* 标识符。 有关这些标识符的列表和相应的设备属性的说明，请参阅[**SetupDiSetDeviceRegistryProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdisetdeviceregistrypropertya)附带的*属性*参数说明。
+    -   将 *属性* 设置为 SPDRP_*Xxx* 标识符。 有关这些标识符的列表和相应的设备属性的说明，请参阅[**SetupDiSetDeviceRegistryProperty**](/windows/win32/api/setupapi/nf-setupapi-setupdisetdeviceregistrypropertya)附带的*属性*参数说明。
     -   将 *PropertyRegDataType* 设置为指向 DWORD 类型化变量的指针。
     -   将 *PropertyBuffer* 设置为 **NULL**。
     -   将 *PropertyBufferSize* 设置为零。
     -   将 *RequiredSize* 设置为一个指针，该指针指向接收的 DWORD 类型化变量，该变量表示属性值的大小（以字节为单位）。
 
-    在响应对[**SetupDiSetDeviceRegistryProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdisetdeviceregistrypropertya)的调用时， **SetupDiGetDeviceRegistryProperty**将 \* *RequiredSize*设置为检索属性值所需的缓冲区大小（以字节为单位），记录错误代码 ERROR_INSUFFICIENT_BUFFER 并返回**FALSE**。 对 [GetLastError](https://go.microsoft.com/fwlink/p/?linkid=169416) 的后续调用将返回最近记录的错误代码。
+    在响应对[**SetupDiSetDeviceRegistryProperty**](/windows/win32/api/setupapi/nf-setupapi-setupdisetdeviceregistrypropertya)的调用时， **SetupDiGetDeviceRegistryProperty**将 \* *RequiredSize*设置为检索属性值所需的缓冲区大小（以字节为单位），记录错误代码 ERROR_INSUFFICIENT_BUFFER 并返回**FALSE**。 对 [GetLastError](https://go.microsoft.com/fwlink/p/?linkid=169416) 的后续调用将返回最近记录的错误代码。
 
 2.  再次调用 **SetupDiGetDeviceRegistryProperty** ，并提供在第一次调用中提供的相同参数值，但以下更改除外：
 
@@ -59,7 +59,7 @@ ms.locfileid: "90102418"
 
 ### <a name="setting-a-device-property"></a>设置设备属性
 
-若要在 Windows Server 2003、Windows XP 和 Windows 2000 上设置设备属性，请调用 [**SetupDiSetDeviceRegistryProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdisetdeviceregistrypropertya) 并提供以下参数值：
+若要在 Windows Server 2003、Windows XP 和 Windows 2000 上设置设备属性，请调用 [**SetupDiSetDeviceRegistryProperty**](/windows/win32/api/setupapi/nf-setupapi-setupdisetdeviceregistrypropertya) 并提供以下参数值：
 
 -   将 *DeviceInfoSet* 设置为设备信息集的句柄，其中包含要为其设置属性值的设备实例。
 

@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ae7aa1b5fe5dfda83ec7d8dc45675866aac238cb
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 55b353237d0365d441ccdceaeb8d7edab646f581
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89097299"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90714622"
 ---
 # <a name="inf-reboot-directive"></a>INF Reboot 指令
 
@@ -35,7 +35,7 @@ Reboot
 
 在 INF 文件中，在 Windows 上的安装过程中几乎从未指定 **reboot** 指令，因为系统会根据在设备安装过程中遇到的常见情况，自动检测重新启动系统的需求。 例如，如果文件复制操作的某个目标目标文件正在使用中，或者如果在安装过程中无法自动重新启动设备，则系统将通知调用方需要重新启动。 只有在安装了此驱动程序之后，系统本身无法自动检测到某些特定条件时，才应使用 **reboot** 指令。
 
-指定 reboot 指令后，将通知调用方系统需要重新启动系统才能完成使用此 INF 安装部分的任何设备的安装。 当通过 [**UpdateDriverForPlugAndPlayDevices**](/windows/desktop/api/newdev/nf-newdev-updatedriverforplugandplaydevicesa)、 [**DiInstallDriver**](/windows/desktop/api/newdev/nf-newdev-diinstalldrivera)或 [**DiInstallDevice**](/windows/desktop/api/newdev/nf-newdev-diinstalldevice)等函数启动安装时，这将导致这些例程的 *NeedReboot* out 参数设置为 TRUE。
+指定 reboot 指令后，将通知调用方系统需要重新启动系统才能完成使用此 INF 安装部分的任何设备的安装。 当通过 [**UpdateDriverForPlugAndPlayDevices**](/windows/win32/api/newdev/nf-newdev-updatedriverforplugandplaydevicesa)、 [**DiInstallDriver**](/windows/win32/api/newdev/nf-newdev-diinstalldrivera)或 [**DiInstallDevice**](/windows/win32/api/newdev/nf-newdev-diinstalldevice)等函数启动安装时，这将导致这些例程的 *NeedReboot* out 参数设置为 TRUE。
 
 <a name="remarks"></a>备注
 -------

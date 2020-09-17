@@ -11,12 +11,12 @@ keywords:
 - 改变指针 WDK Windows 2000 显示的形状
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ef6e17798c9c84903993f7107ab1e1039497b497
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 0a547bcd2df13cf2f293f38af58793dd0775f79e
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89064360"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90715364"
 ---
 # <a name="controlling-the-pointer-drvsetpointershape"></a>控制指针：DrvSetPointerShape
 
@@ -24,7 +24,7 @@ ms.locfileid: "89064360"
 ## <span id="ddk_controlling_the_pointer_drvsetpointershape_gg"></span><span id="DDK_CONTROLLING_THE_POINTER_DRVSETPOINTERSHAPE_GG"></span>
 
 
-如果显示驱动程序控制指针，则驱动程序必须支持 [**DrvSetPointerShape**](/windows/desktop/api/winddi/nf-winddi-drvsetpointershape) 以允许更改指针形状。 对 DrvSetPointerShape 的调用会产生以下结果：
+如果显示驱动程序控制指针，则驱动程序必须支持 [**DrvSetPointerShape**](/windows/win32/api/winddi/nf-winddi-drvsetpointershape) 以允许更改指针形状。 对 DrvSetPointerShape 的调用会产生以下结果：
 
 1.  函数删除驱动程序已在显示器上绘制的任何现有指针。
 
@@ -32,7 +32,7 @@ ms.locfileid: "89064360"
 
 3.  新指针显示在调用的参数所指示的位置。
 
-驱动程序可以调用 [**EngSetPointerShape**](/windows/desktop/api/winddi/nf-winddi-engsetpointershape) ，使 GDI 管理软件游标。
+驱动程序可以调用 [**EngSetPointerShape**](/windows/win32/api/winddi/nf-winddi-engsetpointershape) ，使 GDI 管理软件游标。
 
  
 

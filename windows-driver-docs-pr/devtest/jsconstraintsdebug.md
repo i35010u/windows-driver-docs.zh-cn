@@ -4,12 +4,12 @@ description: 'JSConstraintsDebug ( # A0) 是一个命令行工具，用于在开
 ms.assetid: 48C39A2C-7EA6-4BAA-B5E8-3B426C9697B3
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b597a97f4eae79d7f7a7530457cded12ec409162
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 8580de1fc8b86a89856d69cb6477ca09c0b33be9
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90105130"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90715216"
 ---
 # <a name="jsconstraintsdebug"></a>JSConstraintsDebug
 
@@ -36,13 +36,13 @@ JSConstraintsDebug ( # A0) 是一个命令行工具，用于在开发[V4 打印�
 
 该工具在目标驱动程序的 JavaScript 约束上针对用户提供的打印票证执行以下每个相关入口点 Api：
 
-[**PTGetPrintCapabilities**](/windows/desktop/api/prntvpt/nf-prntvpt-ptgetprintcapabilities)
+[**PTGetPrintCapabilities**](/windows/win32/api/prntvpt/nf-prntvpt-ptgetprintcapabilities)
 
-[**PTConvertDevModeToPrintTicket**](/windows/desktop/api/prntvpt/nf-prntvpt-ptconvertdevmodetoprintticket)
+[**PTConvertDevModeToPrintTicket**](/windows/win32/api/prntvpt/nf-prntvpt-ptconvertdevmodetoprintticket)
 
-[**TConvertPrintTicketToDevMode**](/windows/desktop/api/prntvpt/nf-prntvpt-ptconvertprinttickettodevmode)
+[**TConvertPrintTicketToDevMode**](/windows/win32/api/prntvpt/nf-prntvpt-ptconvertprinttickettodevmode)
 
-[**PTMergeAndValidatePrintTicket**](/windows/desktop/api/prntvpt/nf-prntvpt-ptmergeandvalidateprintticket)
+[**PTMergeAndValidatePrintTicket**](/windows/win32/api/prntvpt/nf-prntvpt-ptmergeandvalidateprintticket)
 
 在执行期间，该工具会提示输入合适的 IDE 调试器，如 Visual Studio。 选择后，约束源代码将在 JavaScript 调试器语句中打开和停止。
 

@@ -4,19 +4,19 @@ description: 本主题提供了一些代码示例，这些示例演示如何将�
 ms.assetid: 36668A17-EA56-464C-A38B-C75BE2359412
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: eb4aa94438050f03e8b0b3d4df9d86be89620328
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 01066586d7807b6eb49addda1fd6331ff2c1e535
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89096029"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90715266"
 ---
 # <a name="porting-code-from-setupapi-to-cfgmgr32"></a>将代码从 SetupApi 移植到 CfgMgr32
 
 
 本主题提供了一些代码示例，这些示例演示如何将使用 Setupapi.dll 功能的代码移植到使用 Cfgmgr32.dll。 通过迁移你的代码，你可以在通用 Windows 平台 (UWP) 上运行你的代码，此功能不支持 Setupapi.log。 UWP 支持 CfgMgr32 的子集，特别是通过 api 集公开的功能 `api-ms-win-devices-config-l1-1-0.dll` (Windows 8 及更高版本) 或 `api-ms-win-devices-config-l1-1-1.dll` (Windows 8.1 和更) 高版本的 api 集。 在 Windows 10 和更高版本中，只需链接到即可 `onecore.lib` 。
 
-若要查看上述 API 集中的函数列表，请参阅 [WINDOWS Api 集](/windows/desktop/apiindex/windows-apisets) 或 [Onecore： api-ms-win-devices-config-l1-1-1.dll](/windows/desktop/apiindex/umbrella-lib-onecore#_api-ms-win-devices-config-l1-1-1.dll)中的 api。
+若要查看上述 API 集中的函数列表，请参阅 [WINDOWS Api 集](/windows/win32/apiindex/windows-apisets) 或 [Onecore： api-ms-win-devices-config-l1-1-1.dll](/windows/win32/apiindex/umbrella-lib-onecore#_api-ms-win-devices-config-l1-1-1.dll)中的 api。
 
 以下部分包含应用程序通常使用的代码示例。
 
@@ -30,7 +30,7 @@ ms.locfileid: "89096029"
 ## <a name="get-a-list-of-present-devices-and-retrieve-a-property-for-each-device"></a>获取现有设备的列表并检索每个设备的属性
 
 
-此示例使用 [**SetupDiGetClassDevs**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetclassdevsw) 获取所有当前设备的列表，并循环访问它们以检索每个设备的设备说明。
+此示例使用 [**SetupDiGetClassDevs**](/windows/win32/api/setupapi/nf-setupapi-setupdigetclassdevsw) 获取所有当前设备的列表，并循环访问它们以检索每个设备的设备说明。
 
 ```ManagedCPlusPlus
 VOID
@@ -99,7 +99,7 @@ GetDevicePropertiesSetupapi(
 }
 ```
 
-此示例使用 [**CM_Get_Device_ID_List**](/windows/desktop/api/cfgmgr32/nf-cfgmgr32-cm_get_device_id_lista) 获取现有设备的列表，并循环访问它们以检索每个设备的设备说明。
+此示例使用 [**CM_Get_Device_ID_List**](/windows/win32/api/cfgmgr32/nf-cfgmgr32-cm_get_device_id_lista) 获取现有设备的列表，并循环访问它们以检索每个设备的设备说明。
 
 ```ManagedCPlusPlus
 VOID
@@ -201,7 +201,7 @@ GetDevicePropertiesCfgmgr32(
 ## <a name="get-a-list-of-interfaces-get-the-device-exposing-each-interface-and-get-a-property-from-the-device"></a>获取接口的列表，获取设备，公开每个接口，并从设备获取属性
 
 
-此示例使用 [**SetupDiGetClassDevs**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetclassdevsw)获取类 GUID_DEVINTERFACE_VOLUME 中所有接口的列表。 对于每个接口，它会获取公开接口的设备并获取该设备的属性。
+此示例使用 [**SetupDiGetClassDevs**](/windows/win32/api/setupapi/nf-setupapi-setupdigetclassdevsw)获取类 GUID_DEVINTERFACE_VOLUME 中所有接口的列表。 对于每个接口，它会获取公开接口的设备并获取该设备的属性。
 
 ```ManagedCPlusPlus
 VOID
@@ -289,7 +289,7 @@ GetInterfacesAndDevicePropertySetupapi(
 }
 ```
 
-此示例使用 [**CM_Get_Device_Interface_List**](/windows/desktop/api/cfgmgr32/nf-cfgmgr32-cm_get_device_interface_lista)获取类 GUID_DEVINTERFACE_VOLUME 中所有接口的列表。 对于每个接口，它会获取公开接口的设备并获取该设备的属性。
+此示例使用 [**CM_Get_Device_Interface_List**](/windows/win32/api/cfgmgr32/nf-cfgmgr32-cm_get_device_interface_lista)获取类 GUID_DEVINTERFACE_VOLUME 中所有接口的列表。 对于每个接口，它会获取公开接口的设备并获取该设备的属性。
 
 ```ManagedCPlusPlus
 VOID
@@ -420,7 +420,7 @@ GetInterfacesAndDevicePropertyCfgmgr32(
 ## <a name="get-a-property-from-a-specific-device"></a>从特定设备获取属性
 
 
-此示例使用特定设备的设备实例路径，并使用 [**SetupDiGetDeviceProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)从该路径中检索属性。
+此示例使用特定设备的设备实例路径，并使用 [**SetupDiGetDeviceProperty**](/windows/win32/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)从该路径中检索属性。
 
 ```ManagedCPlusPlus
 VOID
@@ -482,7 +482,7 @@ GetDevicePropertySpecificDeviceSetupapi(
 }
 ```
 
-此示例使用特定设备的设备实例路径，并使用 [**CM_Get_DevNode_Property**](/windows/desktop/api/cfgmgr32/nf-cfgmgr32-cm_get_devnode_propertyw)从该路径中检索属性。
+此示例使用特定设备的设备实例路径，并使用 [**CM_Get_DevNode_Property**](/windows/win32/api/cfgmgr32/nf-cfgmgr32-cm_get_devnode_propertyw)从该路径中检索属性。
 
 ```ManagedCPlusPlus
 void
@@ -535,9 +535,9 @@ GetDevicePropertySpecificDeviceCfgmgr32(
 ## <a name="disable-device"></a>禁用设备
 
 
-此示例演示如何使用 CfgMgr32 禁用设备。 若要使用 Setupapi.log 执行此操作，请将 [**SetupDiCallClassInstaller**](/windows/desktop/api/setupapi/nf-setupapi-setupdicallclassinstaller) 与 *InstallFunction* 的 **DIF_PROPERTYCHANGE**一起使用，并指定 **DICS_DISABLE**。
+此示例演示如何使用 CfgMgr32 禁用设备。 若要使用 Setupapi.log 执行此操作，请将 [**SetupDiCallClassInstaller**](/windows/win32/api/setupapi/nf-setupapi-setupdicallclassinstaller) 与 *InstallFunction* 的 **DIF_PROPERTYCHANGE**一起使用，并指定 **DICS_DISABLE**。
 
-**注意**   默认情况下，调用 [**SetupDiCallClassInstaller**](/windows/desktop/api/setupapi/nf-setupapi-setupdicallclassinstaller) 会导致设备在重新启动时始终处于禁用状态。 若要在调用 [**CM_Disable_DevNode**](/windows/desktop/api/cfgmgr32/nf-cfgmgr32-cm_disable_devnode)时跨重新启动禁用设备，则必须指定 **CM_DISABLE_PERSIST** 标志。
+**注意**   默认情况下，调用 [**SetupDiCallClassInstaller**](/windows/win32/api/setupapi/nf-setupapi-setupdicallclassinstaller) 会导致设备在重新启动时始终处于禁用状态。 若要在调用 [**CM_Disable_DevNode**](/windows/win32/api/cfgmgr32/nf-cfgmgr32-cm_disable_devnode)时跨重新启动禁用设备，则必须指定 **CM_DISABLE_PERSIST** 标志。
 
 
 
@@ -560,7 +560,7 @@ GetDevicePropertySpecificDeviceCfgmgr32(
 ## <a name="enable-device"></a>启用设备
 
 
-此示例演示如何使用 CfgMgr32 启用设备。 若要使用 Setupapi.log 执行此操作，请将 [**SetupDiCallClassInstaller**](/windows/desktop/api/setupapi/nf-setupapi-setupdicallclassinstaller) 与 *InstallFunction* 的 **DIF_PROPERTYCHANGE**一起使用，并指定 **DICS_ENABLE**。
+此示例演示如何使用 CfgMgr32 启用设备。 若要使用 Setupapi.log 执行此操作，请将 [**SetupDiCallClassInstaller**](/windows/win32/api/setupapi/nf-setupapi-setupdicallclassinstaller) 与 *InstallFunction* 的 **DIF_PROPERTYCHANGE**一起使用，并指定 **DICS_ENABLE**。
 
 ```ManagedCPlusPlus
     cr = CM_Locate_DevNode(&devinst,
@@ -581,7 +581,7 @@ GetDevicePropertySpecificDeviceCfgmgr32(
 ## <a name="restart-device"></a>重启设备
 
 
-此示例演示如何使用 CfgMgr32 重新启动设备。 若要使用 Setupapi.log 执行此操作，请将 [**SetupDiCallClassInstaller**](/windows/desktop/api/setupapi/nf-setupapi-setupdicallclassinstaller) 与 *InstallFunction* 的 **DIF_PROPERTYCHANGE**一起使用，并指定 **DICS_PROPCHANGE**。
+此示例演示如何使用 CfgMgr32 重新启动设备。 若要使用 Setupapi.log 执行此操作，请将 [**SetupDiCallClassInstaller**](/windows/win32/api/setupapi/nf-setupapi-setupdicallclassinstaller) 与 *InstallFunction* 的 **DIF_PROPERTYCHANGE**一起使用，并指定 **DICS_PROPCHANGE**。
 
 ```ManagedCPlusPlus
     cr = CM_Locate_DevNode(&devinst,

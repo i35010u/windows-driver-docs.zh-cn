@@ -17,12 +17,12 @@ keywords:
 - 驱动程序验证程序选项，监视内存调度列表 (MDL) 使用情况
 ms.date: 10/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 11db2885a4a6fed023abf2a32f4971c4cc93dec7
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 003c02c698e063feeba0f7765dea5e9e0e3a29fc
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89383301"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90714772"
 ---
 # <a name="automatic-checks"></a>自动检查
 
@@ -105,7 +105,7 @@ ms.locfileid: "89383301"
 
 同步对象必须为不可分页。 它们还必须位于全系统范围内的虚拟地址空间。
 
-图形驱动程序可以通过调用 Api （如 [**EngAllocMem**](/windows/desktop/api/winddi/nf-winddi-engallocmem)）分配会话内存。 与全局地址空间不同，每个终端服务器会话的会话地址空间都是虚拟的。 这意味着在两个不同会话的上下文中使用的同一虚拟地址引用了两个不同的对象。 Windows 内核必须能够从任何终端服务器会话访问同步对象。 尝试从其他会话引用会话内存地址具有不可预知的结果，如系统崩溃或其他会话数据的无提示损坏。
+图形驱动程序可以通过调用 Api （如 [**EngAllocMem**](/windows/win32/api/winddi/nf-winddi-engallocmem)）分配会话内存。 与全局地址空间不同，每个终端服务器会话的会话地址空间都是虚拟的。 这意味着在两个不同会话的上下文中使用的同一虚拟地址引用了两个不同的对象。 Windows 内核必须能够从任何终端服务器会话访问同步对象。 尝试从其他会话引用会话内存地址具有不可预知的结果，如系统崩溃或其他会话数据的无提示损坏。
 
 从 Windows 7 开始，当经验证的驱动程序通过调用 [**KeInitializeEvent**](/windows-hardware/drivers/ddi/wdm/nf-wdm-keinitializeevent) 或 [**KeInitializeMutex**](/windows-hardware/drivers/ddi/wdm/nf-wdm-keinitializemutex)等 api 初始化同步对象时，驱动程序验证器将检查该对象的地址是否落在会话虚拟地址空间内。 如果驱动程序验证器检测到这种错误的地址，则会发出 [**错误检查0xC4：驱动程序 \_ 验证程序 \_ 检测到 \_ 冲突**](../debugger/bug-check-0xc4--driver-verifier-detected-violation.md)，参数1值为0xDF。
 

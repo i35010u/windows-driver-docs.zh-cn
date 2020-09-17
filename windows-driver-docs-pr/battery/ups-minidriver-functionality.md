@@ -6,12 +6,12 @@ keywords:
 - 微型驱动程序 WDK，功能
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e45ccaa9f194b9fe844fdedbe09fcf36539b884c
-ms.sourcegitcommit: 7a7e61b4147a4aa86bf820fd0b0c7681fe17e544
+ms.openlocfilehash: a304fcdf75eefbd882fa9084b083187efbbb4cec
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89056870"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90716312"
 ---
 # <a name="ups-minidriver-functionality"></a>UPS 微型驱动程序功能
 
@@ -37,7 +37,7 @@ UPS 微型驱动程序必须导出以下由系统提供的 UPS 服务调用的�
 
 除了导出这些函数外，微型驱动程序还必须为 [UPS 注册表项](ups-registry-entries.md) 提供初始值，然后根据需要修改这些值以反映 UPS 状态更改。
 
-通常情况下，UPS 微型驱动程序通过 COM 端口与 UPS 单元通信，方法是调用 [**CreateFile**](/windows/desktop/api/fileapi/nf-fileapi-createfilea)、 [**ReadFile**](/windows/desktop/api/fileapi/nf-fileapi-readfile)和 [**WriteFile**](/windows/desktop/api/fileapi/nf-fileapi-writefile) 函数， () 的 Windows SDK 文档中所述。 微型驱动程序负责实现 UPS 设备支持的任何通信协议。
+通常情况下，UPS 微型驱动程序通过 COM 端口与 UPS 单元通信，方法是调用 [**CreateFile**](/windows/win32/api/fileapi/nf-fileapi-createfilea)、 [**ReadFile**](/windows/win32/api/fileapi/nf-fileapi-readfile)和 [**WriteFile**](/windows/win32/api/fileapi/nf-fileapi-writefile) 函数， () 的 Windows SDK 文档中所述。 微型驱动程序负责实现 UPS 设备支持的任何通信协议。
 
  
 

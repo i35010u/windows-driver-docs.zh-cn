@@ -4,12 +4,12 @@ description: UMDF 驱动程序的初级指南
 ms.assetid: 67EF6762-AA31-4D35-8EB3-04F9CD34C7D1
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b98220be055f47ca7f289318ee54033f68f00fcd
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 2d5f5bd63d085f0408e00f2f586d6c2674a1aef8
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89184267"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90715034"
 ---
 # <a name="session-zero-guidelines-for-umdf-drivers"></a>UMDF 驱动程序的初级指南
 
@@ -25,12 +25,12 @@ ms.locfileid: "89184267"
 
     UMDF 驱动程序可以调用 Windows 函数来执行以下任务：
 
-    -   驱动程序可以调用 **SetupDi * * Xxx* 函数来检索即插即用设备属性。 例如， [OSR USB Fx2 学习工具包的 UMDF 示例驱动程序](https://go.microsoft.com/fwlink/p/?linkid=256202) 调用 [**SetupDiGetDeviceRegistryProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetdeviceregistrypropertya) 来检索设备总线类型的 GUID。
+    -   驱动程序可以调用 **SetupDi * * Xxx* 函数来检索即插即用设备属性。 例如， [OSR USB Fx2 学习工具包的 UMDF 示例驱动程序](https://go.microsoft.com/fwlink/p/?linkid=256202) 调用 [**SetupDiGetDeviceRegistryProperty**](/windows/win32/api/setupapi/nf-setupapi-setupdigetdeviceregistrypropertya) 来检索设备总线类型的 GUID。
         **注意**   UMDF 驱动程序无法安全地调用许多 **SetupDi * * Xxx*函数，但调用检索设备节点属性的函数是安全的。
 
          
 
-    -   从手动队列检索 i/o 请求的驱动程序可能会创建一个周期性计时器以轮询队列。 例如， [WudfVhidmini](https://go.microsoft.com/fwlink/p/?linkid=256226) 示例通过调用 [**CreateThreadpoolTimer**](/windows/desktop/api/threadpoolapiset/nf-threadpoolapiset-createthreadpooltimer)来注册计时器回调例程，然后通过调用 [**SetThreadpoolTimer**](/windows/desktop/api/threadpoolapiset/nf-threadpoolapiset-setthreadpooltimer)来设置一个周期性计时器。
+    -   从手动队列检索 i/o 请求的驱动程序可能会创建一个周期性计时器以轮询队列。 例如， [WudfVhidmini](https://go.microsoft.com/fwlink/p/?linkid=256226) 示例通过调用 [**CreateThreadpoolTimer**](/windows/win32/api/threadpoolapiset/nf-threadpoolapiset-createthreadpooltimer)来注册计时器回调例程，然后通过调用 [**SetThreadpoolTimer**](/windows/win32/api/threadpoolapiset/nf-threadpoolapiset-setthreadpooltimer)来设置一个周期性计时器。
         **注意**   从版本1.11 开始，UMDF 提供对工作项的支持。 有关详细信息，请参阅 [使用工作项](using-workitems.md)。
 
          

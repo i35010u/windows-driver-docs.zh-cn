@@ -11,12 +11,12 @@ keywords:
 - 属性集 Guid WDK 音频
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 53b2d4d81700cf25fabbf2ae5eccdf18cf6467e0
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: ed31942829f74c16b5c6ce0fb1dcecb5d56d96ec
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89210349"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90716082"
 ---
 # <a name="support-for-directmusic-properties"></a>对 DirectMusic 属性的支持
 
@@ -88,7 +88,7 @@ DirectMusic 定义了以下属性集 Guid：
 
 -   在 midiOut 和 midiIn Api)  (基于 Microsoft Win32 基于句柄的多媒体调用的端口不支持任何属性。 使用 **guid \_ dmu \_ \_ ** 属性集 guid 查询端口是否是使用 Win32 多媒体调用来实现的。
 
--   对表示可插接式软件合成器的端口的属性项请求将完全在用户模式下处理。 这种类型的端口的拓扑 [是一种](/windows/desktop/api/dmusics/nn-dmusics-idirectmusicsynth) 合成器 (，) 连接到接收器节点 ([IDirectMusicSynthSink](/windows/desktop/api/dmusics/nn-dmusics-idirectmusicsynthsink) 接口) 。 首先向合成器节点提供属性请求，然后将其提供给 "接收器" 节点（如果它无法被合成器识别）。
+-   对表示可插接式软件合成器的端口的属性项请求将完全在用户模式下处理。 这种类型的端口的拓扑 [是一种](/windows/win32/api/dmusics/nn-dmusics-idirectmusicsynth) 合成器 (，) 连接到接收器节点 ([IDirectMusicSynthSink](/windows/win32/api/dmusics/nn-dmusics-idirectmusicsynthsink) 接口) 。 首先向合成器节点提供属性请求，然后将其提供给 "接收器" 节点（如果它无法被合成器识别）。
 
  
 

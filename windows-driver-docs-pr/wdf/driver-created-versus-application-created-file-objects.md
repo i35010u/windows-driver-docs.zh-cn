@@ -11,12 +11,12 @@ keywords:
 - 用户模式驱动程序 WDK UMDF，处理 i/o、驱动程序创建与应用程序创建的文件对象
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: aeb9ad6814ee7b28dda3167c6fdbf6b6e174d289
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: fbc6dfb0bb6286ceff092bdd4170bc4ea06e97dd
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90106916"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90716658"
 ---
 # <a name="driver-created-versus-application-created-file-objects"></a>驱动程序创建的文件对象与应用程序创建的文件对象
 
@@ -40,11 +40,11 @@ ms.locfileid: "90106916"
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>对 Microsoft Win32 <a href="/windows/desktop/api/fileapi/nf-fileapi-createfilea" data-raw-source="[&lt;strong&gt;CreateFile&lt;/strong&gt;](/windows/desktop/api/fileapi/nf-fileapi-createfilea)"><strong>CreateFile</strong></a> 函数的调用。</p></td>
+<td align="left"><p>对 Microsoft Win32 <a href="/windows/win32/api/fileapi/nf-fileapi-createfilea" data-raw-source="[&lt;strong&gt;CreateFile&lt;/strong&gt;](/windows/win32/api/fileapi/nf-fileapi-createfilea)"><strong>CreateFile</strong></a> 函数的调用。</p></td>
 <td align="left"><p>对其 <a href="/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iqueuecallbackcreate-oncreatefile" data-raw-source="[&lt;strong&gt;IQueueCallbackCreate::OnCreateFile&lt;/strong&gt;](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iqueuecallbackcreate-oncreatefile)"><strong>IQueueCallbackCreate：： OnCreateFile</strong></a> 方法的调用。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>对 Win32 <strong>ReadFileEx</strong>、 <strong>WriteFileEx</strong>或 <a href="/windows/desktop/api/ioapiset/nf-ioapiset-deviceiocontrol" data-raw-source="[&lt;strong&gt;DeviceIoControl&lt;/strong&gt;](/windows/desktop/api/ioapiset/nf-ioapiset-deviceiocontrol)"><strong>DeviceIoControl</strong></a> 函数的调用。</p></td>
+<td align="left"><p>对 Win32 <strong>ReadFileEx</strong>、 <strong>WriteFileEx</strong>或 <a href="/windows/win32/api/ioapiset/nf-ioapiset-deviceiocontrol" data-raw-source="[&lt;strong&gt;DeviceIoControl&lt;/strong&gt;](/windows/win32/api/ioapiset/nf-ioapiset-deviceiocontrol)"><strong>DeviceIoControl</strong></a> 函数的调用。</p></td>
 <td align="left"><p>对其 <a href="/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iqueuecallbackread-onread" data-raw-source="[&lt;strong&gt;IQueueCallbackRead::OnRead&lt;/strong&gt;](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iqueuecallbackread-onread)"><strong>IQueueCallbackRead：： OnRead</strong></a>、 <a href="/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iqueuecallbackwrite-onwrite" data-raw-source="[&lt;strong&gt;IQueueCallbackWrite::OnWrite&lt;/strong&gt;](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iqueuecallbackwrite-onwrite)"><strong>IQueueCallbackWrite：： OnWrite</strong></a>或 <a href="/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iqueuecallbackdeviceiocontrol-ondeviceiocontrol" data-raw-source="[&lt;strong&gt;IQueueCallbackDeviceIoControl::OnDeviceIoControl&lt;/strong&gt;](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iqueuecallbackdeviceiocontrol-ondeviceiocontrol)"><strong>IQueueCallbackDeviceIoControl：： OnDeviceIoControl</strong></a> 方法的调用。</p></td>
 </tr>
 <tr class="odd">

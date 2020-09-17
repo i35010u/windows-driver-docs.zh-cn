@@ -7,12 +7,12 @@ keywords:
 - 注册表 WDK 设备对象
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 81c54c36ec4df2d89baa39b85a19a30770ce86f1
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: fd4d4abce45ce574bb5736d6220d2141453352e9
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90106058"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90715756"
 ---
 # <a name="setting-device-object-registry-properties-after-installation"></a>安装后设置设备对象注册表属性
 
@@ -22,7 +22,7 @@ ms.locfileid: "90106058"
 
 用户模式程序可以使用 [设备安装功能](/previous-versions/ff541299(v=vs.85)) 为驱动程序的设备对象的属性获取或设置注册表设置。 通常，这些函数由安装软件使用，但可供任何用户模式程序使用。  (程序必须由具有管理员访问权限的用户执行。 ) 
 
-[**SetupDiGetDeviceRegistryProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetdeviceregistrypropertya)和[**SetupDiSetDeviceRegistryProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdisetdeviceregistrypropertya)函数获取并设置每个指定属性的注册表项。 *Property*参数指定要获取或设置的属性。 当) 或源缓冲区 (为属性设置属性) 时， *PropertyBuffer* 指向目标缓冲区 (。
+[**SetupDiGetDeviceRegistryProperty**](/windows/win32/api/setupapi/nf-setupapi-setupdigetdeviceregistrypropertya)和[**SetupDiSetDeviceRegistryProperty**](/windows/win32/api/setupapi/nf-setupapi-setupdisetdeviceregistrypropertya)函数获取并设置每个指定属性的注册表项。 *Property*参数指定要获取或设置的属性。 当) 或源缓冲区 (为属性设置属性) 时， *PropertyBuffer* 指向目标缓冲区 (。
 
 *Property*参数的值和实际属性的值之间的对应关系如下所示。
 
@@ -65,7 +65,7 @@ ms.locfileid: "90106058"
 
 请注意，提供了两种不同的方法来获取或设置安全描述符。 可以指定 SPDRP \_ 安全值，将安全描述符视为 **安全 \_ 描述符** 结构，或指定 SPDRP \_ security \_ SDS 将安全描述符视为 SDDL 字符串。 有关 SDDL 字符串的详细信息，请参阅 [适用于设备对象的 SDDL](sddl-for-device-objects.md)。
 
-对于 Windows XP 和更高版本的操作系统，程序也可以获取和设置设备安装程序类的属性值。 使用 [**SetupDiGetClassRegistryProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetclassregistrypropertya) 和 [**SetupDiSetClassRegistryProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdisetclassregistrypropertya) 函数可获取和设置设备安装程序类的属性值。
+对于 Windows XP 和更高版本的操作系统，程序也可以获取和设置设备安装程序类的属性值。 使用 [**SetupDiGetClassRegistryProperty**](/windows/win32/api/setupapi/nf-setupapi-setupdigetclassregistrypropertya) 和 [**SetupDiSetClassRegistryProperty**](/windows/win32/api/setupapi/nf-setupapi-setupdisetclassregistrypropertya) 函数可获取和设置设备安装程序类的属性值。
 
 有关使用 **SetupDi * Xxx*** 函数的详细信息，请参阅 [使用设备安装函数](../install/using-device-installation-functions.md)。
 

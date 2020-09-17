@@ -8,12 +8,12 @@ keywords:
 - $Kernel
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e55aa7d57fd8372791c29e5ab8e5cdb73ed57c62
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 374c83790de277c35d7dc52c5b713b4549dc4111
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89064996"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90716218"
 ---
 # <a name="kernel-extended-attributes"></a>内核扩展属性
 内核扩展属性 (内核 EA 的) 是在 Windows 8 中添加到 NTFS 的一种功能，可提高映像文件签名验证的性能。  验证映像签名是一种开销高昂的操作。 因此，存储有关以前已验证的二进制文件的信息是否已更改，或者是否会减少映像需要进行完整签名检查的实例数。
@@ -25,7 +25,7 @@ ms.locfileid: "89064996"
 建议内核 EA 至少包含以下信息：
 - USN UsnJournalID
   - **UsnJournalID**字段是一个 GUID，用于标识 USN 日志文件的当前具体化更新。  可以从每个卷的用户模式中删除和创建 USN 日志。  每次创建 USN 日志时，都会生成一个新的 **UsnJournalID** GUID。  使用此字段，你可以判断是否存在禁用了 USN 日志并且可以重新验证的时间段。
-    - 可以使用 [FSCTL_QUERY_USN_JOURNAL](/windows/desktop/api/winioctl/ni-winioctl-fsctl_query_usn_journal)检索此值。
+    - 可以使用 [FSCTL_QUERY_USN_JOURNAL](/windows/win32/api/winioctl/ni-winioctl-fsctl_query_usn_journal)检索此值。
 - USN FileUSN
   - **FileUSN**值包含对文件所做的最后一次更改的 USN ID，并在主文件表中进行跟踪，该 ID 用于给定文件 (MFT) 记录。
     - 删除 USN 日志时， **FileUSN** 将重置为零。
@@ -48,7 +48,7 @@ ms.locfileid: "89064996"
 
 
 ## <a name="querying-update-sequence-number-journal-information"></a>查询更新序列号日志信息
-即使在 IRP 的 MinorFunction 字段中设置了**IRP_MN_KERNEL_CALL**值， [FSCTL_QUERY_USN_JOURNAL](/windows/desktop/api/winioctl/ni-winioctl-fsctl_query_usn_journal)操作也需要**SE_MANAGE_VOLUME_PRIVILEGE** ，即使在从内核模式发出时也是如此。 例程 **FsRtlKernelFsControlFile** 已从内核中的 FsRtl 包导出，以便轻松地允许内核模式组件发出此 USN 请求。
+即使在 IRP 的 MinorFunction 字段中设置了**IRP_MN_KERNEL_CALL**值， [FSCTL_QUERY_USN_JOURNAL](/windows/win32/api/winioctl/ni-winioctl-fsctl_query_usn_journal)操作也需要**SE_MANAGE_VOLUME_PRIVILEGE** ，即使在从内核模式发出时也是如此。 例程 **FsRtlKernelFsControlFile** 已从内核中的 FsRtl 包导出，以便轻松地允许内核模式组件发出此 USN 请求。
 
 **注意** 从 Windows 10 开始，版本1703及更高版本，此操作不再需要 SE_MANAGE_VOLUME_PRIVILEGE。  
 
@@ -71,7 +71,7 @@ ms.locfileid: "89064996"
 ## <a name="see-also"></a>另请参阅
 [FltQueryEaFile](/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltqueryeafile)  
 [FltSetEaFile](/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltseteafile)  
-[FSCTL_QUERY_USN_JOURNAL](/windows/desktop/api/winioctl/ni-winioctl-fsctl_query_usn_journal)  
+[FSCTL_QUERY_USN_JOURNAL](/windows/win32/api/winioctl/ni-winioctl-fsctl_query_usn_journal)  
 [FsRtlQueryKernelEaFile](/previous-versions/mt807492(v=vs.85))      
 [FsRtlSetKernelEaFile](/previous-versions/mt807493(v=vs.85))  
 [ZwQueryEaFile](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-zwqueryeafile)  

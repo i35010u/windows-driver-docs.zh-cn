@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: dfae6eb37b9f3bf8e6983c0e8602f0114ad17443
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 07ea4d7e850252e5719cd82c7767b5340eec8742
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89096721"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90715270"
 ---
 # <a name="devpkey_deviceclass_dhprebalanceoptout"></a>DEVPKEY_DeviceClass_DHPRebalanceOptOut
 
@@ -59,7 +59,7 @@ DEVPKEY_DeviceClass_DHPRebalanceOptOut 设备属性表示一个值，该值指�
 
  
 
-**注释**
+**备注**
 
 在运行 Windows Server 2008 或更高版本的 Windows Server 的动态分区服务器上，每当将新处理器动态添加到系统时，操作系统就会启动系统范围的资源重新平衡。 在以下情况下，设备类将参与资源重新平衡：
 
@@ -77,7 +77,7 @@ DEVPKEY_DeviceClass_DHPRebalanceOptOut 设备属性表示一个值，该值指�
 
 此设备属性不影响设备类是否参与出于其他原因而启动的资源重新平衡。
 
-可以通过调用 [**SetupDiGetClassProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetclasspropertyw) 和 [**SetupDiSetClassProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdisetclasspropertyw)访问 DEVPKEY_DeviceClass_DHPRebalanceOptOut 属性。
+可以通过调用 [**SetupDiGetClassProperty**](/windows/win32/api/setupapi/nf-setupapi-setupdigetclasspropertyw) 和 [**SetupDiSetClassProperty**](/windows/win32/api/setupapi/nf-setupapi-setupdisetclasspropertyw)访问 DEVPKEY_DeviceClass_DHPRebalanceOptOut 属性。
 
 <a name="requirements"></a>要求
 ------------
@@ -99,12 +99,12 @@ DEVPKEY_DeviceClass_DHPRebalanceOptOut 设备属性表示一个值，该值指�
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
-[**SetupDiGetClassProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetclasspropertyw)
+[**SetupDiGetClassProperty**](/windows/win32/api/setupapi/nf-setupapi-setupdigetclasspropertyw)
 
-[**SetupDiSetClassProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdisetclasspropertyw)
+[**SetupDiSetClassProperty**](/windows/win32/api/setupapi/nf-setupapi-setupdisetclasspropertyw)
 
  
 

@@ -8,12 +8,12 @@ keywords:
 - 内存不足检查 WDK 驱动程序验证程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4e3f29cff4149f40cd2a8ead0bba72f911370198
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 856abbf58e74bc3e4763c36e06fc2a7057773dd4
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89384039"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90716538"
 ---
 # <a name="low-resources-simulation"></a>资源不足模拟
 
@@ -25,7 +25,7 @@ ms.locfileid: "89384039"
 
 从 Windows Vista 开始，低资源模拟测试还会将故障注入到 [**IoAllocateIrp**](/windows-hardware/drivers/ddi/wdm/nf-wdm-ioallocateirp)、 [**IoAllocateMdl**](/windows-hardware/drivers/ddi/wdm/nf-wdm-ioallocatemdl)、 [**IoAllocateWorkItem**](/windows-hardware/drivers/ddi/wdm/nf-wdm-ioallocateworkitem)、 [**IoAllocateErrorLogEntry**](/windows-hardware/drivers/ddi/wdm/nf-wdm-ioallocateerrorlogentry)、 [**MmAllocateContiguousMemory**](/windows-hardware/drivers/ddi/wdm/nf-wdm-mmallocatecontiguousmemory)、 [**MmAllocateContiguousMemorySpecifyCache**](/windows-hardware/drivers/ddi/wdm/nf-wdm-mmallocatecontiguousmemoryspecifycache)、 [**MmAllocatePagesForMdl**](/windows-hardware/drivers/ddi/wdm/nf-wdm-mmallocatepagesformdl)和 [**MmAllocatePagesForMdlEx**](/windows-hardware/drivers/ddi/wdm/nf-wdm-mmallocatepagesformdlex)。 此外，从 Windows Vista 开始，当低资源模拟处于启用状态时，如果将*可报警*参数设置为**TRUE** ，则对[**KeWaitForMultipleObjects**](/windows-hardware/drivers/ddi/wdm/nf-wdm-kewaitformultipleobjects)或[**KeWaitForSingleObject**](/windows-hardware/drivers/ddi/wdm/nf-wdm-kewaitforsingleobject)的调用可能会在 \_ 非特权进程的上下文中运行时返回状态警报。 这会模拟来自同一非特权应用程序中其他线程的可能的线程警报。
 
-低资源模拟测试还将错误注入到以下 GDI 函数： [**EngAllocMem**](/windows/desktop/api/winddi/nf-winddi-engallocmem)、 [**EngAllocUserMem**](/windows/desktop/api/winddi/nf-winddi-engallocusermem)、 [**EngCreateBitmap**](/windows/desktop/api/winddi/nf-winddi-engcreatebitmap)、 [**EngCreateDeviceSurface**](/windows/desktop/api/winddi/nf-winddi-engcreatedevicesurface)、 [**EngCreateDeviceBitmap**](/windows/desktop/api/winddi/nf-winddi-engcreatedevicebitmap)、 [**EngCreatePalette**](/windows/desktop/api/winddi/nf-winddi-engcreatepalette)、 [**EngCreateClip**](/windows/desktop/api/winddi/nf-winddi-engcreateclip)、 [**EngCreatePath**](/windows/desktop/api/winddi/nf-winddi-engcreatepath)、 [**EngCreateWnd**](/windows/desktop/api/winddi/nf-winddi-engcreatewnd)、 [**EngCreateDriverObj**](/windows/desktop/api/winddi/nf-winddi-engcreatedriverobj)、 [**BRUSHOBJ \_ pvAllocRbrush**](/windows/desktop/api/winddi/nf-winddi-brushobj_pvallocrbrush)和 [**CLIPOBJ \_ ppoGetPath**](/windows/desktop/api/winddi/nf-winddi-clipobj_ppogetpath)。
+低资源模拟测试还将错误注入到以下 GDI 函数： [**EngAllocMem**](/windows/win32/api/winddi/nf-winddi-engallocmem)、 [**EngAllocUserMem**](/windows/win32/api/winddi/nf-winddi-engallocusermem)、 [**EngCreateBitmap**](/windows/win32/api/winddi/nf-winddi-engcreatebitmap)、 [**EngCreateDeviceSurface**](/windows/win32/api/winddi/nf-winddi-engcreatedevicesurface)、 [**EngCreateDeviceBitmap**](/windows/win32/api/winddi/nf-winddi-engcreatedevicebitmap)、 [**EngCreatePalette**](/windows/win32/api/winddi/nf-winddi-engcreatepalette)、 [**EngCreateClip**](/windows/win32/api/winddi/nf-winddi-engcreateclip)、 [**EngCreatePath**](/windows/win32/api/winddi/nf-winddi-engcreatepath)、 [**EngCreateWnd**](/windows/win32/api/winddi/nf-winddi-engcreatewnd)、 [**EngCreateDriverObj**](/windows/win32/api/winddi/nf-winddi-engcreatedriverobj)、 [**BRUSHOBJ \_ pvAllocRbrush**](/windows/win32/api/winddi/nf-winddi-brushobj_pvallocrbrush)和 [**CLIPOBJ \_ ppoGetPath**](/windows/win32/api/winddi/nf-winddi-clipobj_ppogetpath)。
 
 在 windows 7 和更高版本的 Windows 操作系统中，"低资源" 模拟选项支持使用以下内核 Api 分配的内存：
 

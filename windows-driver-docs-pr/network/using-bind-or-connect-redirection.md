@@ -4,12 +4,12 @@ description: 使用绑定或连接重定向
 ms.assetid: 6b27a9ad-53e9-4e80-bf03-79665f8a82a0
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a6734763567486e8589be626962f56bbb28e7be9
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 89b15f8a1060b78030f3d9c72a032e4bd96df289
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89217241"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90715518"
 ---
 # <a name="using-bind-or-connect-redirection"></a>使用绑定或连接重定向
 
@@ -225,7 +225,7 @@ if(connectRequest->previousVersion->modifierFilterId != filterId)
 
 [**FWPS \_ CONNECT \_ REQUEST0**](/windows-hardware/drivers/ddi/fwpsk/ns-fwpsk-_fwps_connect_request0)结构包含名为**localRedirectTargetPID**的成员。 要使任何环回 connect 重定向有效，必须用负责重定向流的进程的 PID 来填充此字段。 此数据与引擎在 ALE 授权连接层上传递的数据相同， **FWPS \_ 元数据 \_ 字段 \_ 本地 \_ 重定向 \_ 目标 \_ ID**。
 
-从 Windows 8 开始，代理服务需要对代理服务的原始终结点发出 [**SIO \_ 查询 \_ wfp \_ 连接 \_ 重定向 \_ 记录**](./sio-query-wfp-connection-redirect-records.md) 和 [**SIO \_ 查询 \_ wfp \_ 连接 \_ 重定向 \_ 上下文**](./sio-query-wfp-connection-redirect-context.md) IOCTLs，使用 [**WSAIoctl**](/windows/desktop/api/winsock2/nf-winsock2-wsaioctl)。 此外，必须在新的 (代理) 套接字上，使用**WSAIoctl**对[**SIO \_ SET \_ WFP \_ 连接 \_ 重定向 \_ 记录**](./sio-set-wfp-connection-redirect-records.md)IOCTL 发出。
+从 Windows 8 开始，代理服务需要对代理服务的原始终结点发出 [**SIO \_ 查询 \_ wfp \_ 连接 \_ 重定向 \_ 记录**](./sio-query-wfp-connection-redirect-records.md) 和 [**SIO \_ 查询 \_ wfp \_ 连接 \_ 重定向 \_ 上下文**](./sio-query-wfp-connection-redirect-context.md) IOCTLs，使用 [**WSAIoctl**](/windows/win32/api/winsock2/nf-winsock2-wsaioctl)。 此外，必须在新的 (代理) 套接字上，使用**WSAIoctl**对[**SIO \_ SET \_ WFP \_ 连接 \_ 重定向 \_ 记录**](./sio-set-wfp-connection-redirect-records.md)IOCTL 发出。
 
 ## <a name="related-topics"></a>相关主题
 

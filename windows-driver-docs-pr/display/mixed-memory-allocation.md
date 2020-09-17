@@ -6,12 +6,12 @@ keywords:
 - 混合内存分配 WDK DirectDraw
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e002328d37e16dc34f71ab7e49f3857a6a93a7cc
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 05246db50f760a79e204c2d703a64752526a2f87
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89066028"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90715654"
 ---
 # <a name="mixed-memory-allocation"></a>混合内存分配
 
@@ -27,7 +27,7 @@ ms.locfileid: "89066028"
 
 上图显示了在主图面下面 (堆 1) 的线性内存，以及由 DirectDraw 从主表面 (堆 2) 右侧回收的矩形内存块。
 
-下面的伪代码演示如何为混合的线性和矩形内存设置 [**VIDEOMEMORY**](/windows/desktop/api/ddrawint/ns-ddrawint-_videomemory) 结构：
+下面的伪代码演示如何为混合的线性和矩形内存设置 [**VIDEOMEMORY**](/windows/win32/api/ddrawint/ns-ddrawint-_videomemory) 结构：
 
 ```cpp
 /*
@@ -86,7 +86,7 @@ static VIDEOMEMORY vidMem [] =
     vidMem[1].ddsCaps.dwCaps = 0;  // surface has no use restrictions
 ```
 
-通过确定由线性[**VIDEOMEMORY**](/windows/desktop/api/ddrawint/ns-ddrawint-_videomemory)结构的 " **fpStart** " 和 " **fpEnd** " 成员指示的 "线性内存堆" 的起点和终点来设置线性内存堆 (<strong> \[ vidMem</strong>0 <strong>\]</strong>) 。 矩形块是使用起点设置的，由矩形 VIDEOMEMORY 结构的**fpStart**成员指示 (<strong> \[ vidMem</strong>1 <strong>\]</strong>) ，width，由**dwWidth**成员指示，高度由主图面的**dwHeight**成员指示。 在设置矩形部分之前，必须先计算 **dwPitch** 成员)  (间距。 这与上一个矩形示例相同，不同之处在于，这种情况下，螺距是 VIDEOMEMORY 结构的第二个元素，而不是第一个元素。 每个新堆都需要一个新的 VIDEOMEMORY 结构。
+通过确定由线性[**VIDEOMEMORY**](/windows/win32/api/ddrawint/ns-ddrawint-_videomemory)结构的 " **fpStart** " 和 " **fpEnd** " 成员指示的 "线性内存堆" 的起点和终点来设置线性内存堆 (<strong> \[ vidMem</strong>0 <strong>\]</strong>) 。 矩形块是使用起点设置的，由矩形 VIDEOMEMORY 结构的**fpStart**成员指示 (<strong> \[ vidMem</strong>1 <strong>\]</strong>) ，width，由**dwWidth**成员指示，高度由主图面的**dwHeight**成员指示。 在设置矩形部分之前，必须先计算 **dwPitch** 成员)  (间距。 这与上一个矩形示例相同，不同之处在于，这种情况下，螺距是 VIDEOMEMORY 结构的第二个元素，而不是第一个元素。 每个新堆都需要一个新的 VIDEOMEMORY 结构。
 
 在某些情况下，反向寄存器只能处理 256 KB 边界。 在这些情况下，小堆可以占用缓存底部与后台缓冲区开头之间的空间，以允许后台缓冲区在 256 KB 边界处开始。 此示例并未显示，但可以通过将另一个元素添加到 VIDEOMEMORY 结构，并将起点设置为紧靠超过 256 KB 边界之前的缓存和结束点来实现。 此类堆应使用 DDSCAPS 后台缓冲区进行标记， \_ 以便在堆管理器查找后台缓冲区时可以跳过它。 此后台缓冲区堆 (一个对齐的) 也将标记为 DDSCAPS \_ OFFSCREENPLAIN，以防止子画面和纹理使用此堆，直到其他堆中没有可用于屏幕上的无格式表面的其他内存为止。
 

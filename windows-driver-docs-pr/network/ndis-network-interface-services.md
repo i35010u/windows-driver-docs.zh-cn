@@ -8,12 +8,12 @@ keywords:
 - 服务 WDK 网络接口
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 87cdf9ee0a367dc2acd82661b953181fc2eb81d2
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 7e115970c478ce4d618da46fc303658fb9b3bad3
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89210173"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90716322"
 ---
 # <a name="ndis-network-interface-services"></a>NDIS 网络接口服务
 
@@ -23,7 +23,7 @@ ms.locfileid: "89210173"
 
 NDIS 网络接口编程接口提供以下服务：
 
--   为每个接口 ( [**NET \_ LUID**](/windows/desktop/api/ifdef/ns-ifdef-net_luid_lh)) 生成本地唯一标识符。 NET \_ LUID 值：
+-   为每个接口 ( [**NET \_ LUID**](/windows/win32/api/ifdef/ns-ifdef-net_luid_lh)) 生成本地唯一标识符。 NET \_ LUID 值：
     -   计算机重新启动时必须保留。 \_即使关联的接口不是永久性的，接口提供程序也必须使 NET luid 持久。 例如，如果存在计算机电源故障，则此永久性允许接口提供程序释放 NET \_ LUID 索引。
     -   必须与 RFC 2863) 中 ( *IfType* 的接口类型相关联。
     -   在本地计算机上必须唯一。
@@ -31,7 +31,7 @@ NDIS 网络接口编程接口提供以下服务：
 -    (一个24位值生成本地唯一接口索引，每个接口也称为 *IfIndex* ) 。 *IfIndex* 值具有以下属性：
     -   优先级较低。 例如，NDIS 重用最低可用的接口索引。
     -   计算机重新启动时， *IfIndex*值不会持久保存。
-    -   [**NET \_ LUID**](/windows/desktop/api/ifdef/ns-ifdef-net_luid_lh)值与*IfIndex*值之间存在一对一的对应关系。
+    -   [**NET \_ LUID**](/windows/win32/api/ifdef/ns-ifdef-net_luid_lh)值与*IfIndex*值之间存在一对一的对应关系。
 -   接口索引、NET \_ LUID 值和 "友好名称" 之间的映射 (例如，) 的 "网络连接" 文件夹中显示的友好名称。
 
 -   定义驱动程序堆栈中接口的分层顺序。

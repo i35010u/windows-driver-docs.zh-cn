@@ -8,12 +8,12 @@ keywords:
 - IOCTLs WDK 电池
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 756e7be569b66c5988018ffb9df6c914df2d53fd
-ms.sourcegitcommit: 7a7e61b4147a4aa86bf820fd0b0c7681fe17e544
+ms.openlocfilehash: 2031976d276ac80d3111fef907218c50bdfaa598
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89056913"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90716612"
 ---
 # <a name="dispatchdevicecontrol-routine-of-a-battery-miniclass-driver"></a>电池微型类驱动程序的 DispatchDeviceControl 例程
 
@@ -23,21 +23,21 @@ ms.locfileid: "89056913"
 
 电源管理器通过复合电池驱动程序将设备控制 Irp (IRP \_ MJ \_ 设备 \_ 控制发送) 到 miniclass 驱动程序。 电池 miniclass 驱动程序中的 [*DispatchDeviceControl*](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch) 例程处理包含电池 IOCTLs 的 irp。
 
-在 [*DispatchDeviceControl*](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch)中，miniclass 驱动程序可以调用类驱动程序的 [**BatteryClassIoctl**](/windows/desktop/api/batclass/nf-batclass-batteryclassioctl) 例程来执行任何系统定义的设备控制任务; **BatteryClassIoctl** 处理电池的设备控制 IOCTLs。
+在 [*DispatchDeviceControl*](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch)中，miniclass 驱动程序可以调用类驱动程序的 [**BatteryClassIoctl**](/windows/win32/api/batclass/nf-batclass-batteryclassioctl) 例程来执行任何系统定义的设备控制任务; **BatteryClassIoctl** 处理电池的设备控制 IOCTLs。
 
 [*DispatchDeviceControl*](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch)例程应执行以下操作：
 
 1.  如果 miniclass 驱动程序定义任何专用 IOCTLs，请确定当前 IOCTL 是否在其中。 如果是这样，请执行请求的操作，完成 IRP，指定 IO \_ 无 \_ 增量，并跳到步骤4。
 
-2.  如果 IOCTL 不是由 miniclass 驱动程序定义的专用 IOCTL，请调用 **BatteryClassIoctl**，同时传递 IRP 和 [**BatteryClassInitializeDevice**](/windows/desktop/api/batclass/nf-batclass-batteryclassinitializedevice)返回的类句柄。 例如：
+2.  如果 IOCTL 不是由 miniclass 驱动程序定义的专用 IOCTL，请调用 **BatteryClassIoctl**，同时传递 IRP 和 [**BatteryClassInitializeDevice**](/windows/win32/api/batclass/nf-batclass-batteryclassinitializedevice)返回的类句柄。 例如：
 
     ```cpp
     Status = BatteryClassIoctl (NewBattNP->ClassHandle, Irp);
     ```
 
-    类驱动程序的 [**BatteryClassIoctl**](/windows/desktop/api/batclass/nf-batclass-batteryclassioctl)例程确定 IOCTL 是否适用于指定的电池。 如果是这样，它将调用相应的[BatteryMini*Xxx* ](/windows-hardware/drivers/ddi/_battery/)例程来满足请求，然后完成 IRP，返回状态 " \_ 成功"。 否则，它将返回 \_ 不 \_ 受支持的状态。
+    类驱动程序的 [**BatteryClassIoctl**](/windows/win32/api/batclass/nf-batclass-batteryclassioctl)例程确定 IOCTL 是否适用于指定的电池。 如果是这样，它将调用相应的[BatteryMini*Xxx* ](/windows-hardware/drivers/ddi/_battery/)例程来满足请求，然后完成 IRP，返回状态 " \_ 成功"。 否则，它将返回 \_ 不 \_ 受支持的状态。
 
-3.  如果 [**BatteryClassIoctl**](/windows/desktop/api/batclass/nf-batclass-batteryclassioctl) 返回 \_ 不 \_ 受支持的状态，指示这不是电池 IRP，请将 IRP 传递到下一个较低的驱动程序。
+3.  如果 [**BatteryClassIoctl**](/windows/win32/api/batclass/nf-batclass-batteryclassioctl) 返回 \_ 不 \_ 受支持的状态，指示这不是电池 IRP，请将 IRP 传递到下一个较低的驱动程序。
 
 4.  将返回的状态作为其自己的函数返回值传递。
 

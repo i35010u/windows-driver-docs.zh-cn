@@ -16,12 +16,12 @@ keywords:
 - D3DPRIMCAPS
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 16ca6940016422460cd50f8b336a8051f8380574
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 6398e6bc6caba1d271cf93dfdf89d4bb401e8cb0
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89066334"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90716436"
 ---
 # <a name="shading-requirements"></a>着色要求
 
@@ -91,7 +91,7 @@ D3DPSHADECAPS \_ SPECULARFLATMONO 和 D3DPSHADECAPS \_ SPECULARGOURAUDMONO 标�
 
 如果 D3DRENDERSTATE \_ COLORKEYENABLE render 状态设置为**TRUE** ，并且纹理图面设置了 DDRAWISURF HASCKEYSRCBLT 位，则会启用 Colorkeying。 \_
 
-如果 D3DRENDERSTATE \_ COLORKEYENABLE render 状态设置为 **TRUE** ，并且纹理图面具有 DDRAWISURF HASCKEYSRCBLT 位集，则启用颜色键 \_ 。  (有关详细信息，请参阅[**DD \_ surface \_ 本地**](/windows/desktop/api/ddrawint/ns-ddrawint-_dd_surface_local)结构的**DwFlags**成员。 ) 应用程序创建使用 DDSD CKSRCBLT 的纹理图面， \_ 然后使用 SetRenderState D3DRENDERSTATE 和 TRUE 调用**IDirect3DDevice7：： COLORKEYENABLE**方法 \_ 。 **TRUE** 若要发生颜色键，这两种方法都必须为 true，并且必须允许应用程序将呈现状态 **设置** 为 "true"，并且仍有选择性地为帧纹理的子集使用颜色键 (即， \_ 将 DDRAWISURF HASCKEYSRCBLT 位集) 。 驱动程序由驱动程序正确处理此行为。 有关 **IDirect3DDevice7：： SetRenderState**的详细信息，请参阅 Direct3D SDK 文档。
+如果 D3DRENDERSTATE \_ COLORKEYENABLE render 状态设置为 **TRUE** ，并且纹理图面具有 DDRAWISURF HASCKEYSRCBLT 位集，则启用颜色键 \_ 。  (有关详细信息，请参阅[**DD \_ surface \_ 本地**](/windows/win32/api/ddrawint/ns-ddrawint-_dd_surface_local)结构的**DwFlags**成员。 ) 应用程序创建使用 DDSD CKSRCBLT 的纹理图面， \_ 然后使用 SetRenderState D3DRENDERSTATE 和 TRUE 调用**IDirect3DDevice7：： COLORKEYENABLE**方法 \_ 。 **TRUE** 若要发生颜色键，这两种方法都必须为 true，并且必须允许应用程序将呈现状态 **设置** 为 "true"，并且仍有选择性地为帧纹理的子集使用颜色键 (即， \_ 将 DDRAWISURF HASCKEYSRCBLT 位集) 。 驱动程序由驱动程序正确处理此行为。 有关 **IDirect3DDevice7：： SetRenderState**的详细信息，请参阅 Direct3D SDK 文档。
 
  
 

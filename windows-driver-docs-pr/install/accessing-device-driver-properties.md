@@ -4,12 +4,12 @@ description: 访问设备驱动程序属性
 ms.assetid: 433ad114-46aa-470b-b529-e6b6fb7f6bd7
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ba0527a49d2f4d583ea88656079adbcdd74ce6f8
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: bc44de10a85ee522f425f5480391ad86773904da
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90105094"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90715954"
 ---
 # <a name="accessing-device-driver-properties"></a>访问设备驱动程序属性
 
@@ -31,7 +31,7 @@ Windows Server 2003、Windows XP 和 Windows 2000 还支持这些设备驱动程
 
 若要在 Windows Server 2003、Windows XP 和 Windows 2000 上访问设备驱动程序属性，请执行以下步骤：
 
-1.  调用 [**SetupDiOpenDevRegKey**](/windows/desktop/api/setupapi/nf-setupapi-setupdiopendevregkey) 可检索设备实例的软件密钥的句柄。 提供以下参数值：
+1.  调用 [**SetupDiOpenDevRegKey**](/windows/win32/api/setupapi/nf-setupapi-setupdiopendevregkey) 可检索设备实例的软件密钥的句柄。 提供以下参数值：
 
     -   将 *DeviceInfoSet* 设置为设备信息集的句柄，其中包含要为其检索全局软件密钥的设备信息元素。
     -   将 *DeviceInfoData* 设置为指向 [**SP_DEVINFO_DATA**](/windows/win32/api/setupapi/ns-setupapi-sp_devinfo_data) 结构的指针，该结构表示要为其检索全局软件密钥的设备信息元素。
@@ -40,7 +40,7 @@ Windows Server 2003、Windows XP 和 Windows 2000 还支持这些设备驱动程
     -   将 *KeyType* 设置为 DIREG_DRV，它将 **SetupDiOpenDevRegKey** 配置为检索设备实例的软件密钥的句柄。
     -   将 *samDesired* 设置为 REGSAM 类型的值，该值指定此密钥所需的访问权限。 对于所有访问权限，请将 *samDesired* 设置为 KEY_ALL_ACCESS。
 
-    如果对 [**SetupDiOpenDevRegKey**](/windows/desktop/api/setupapi/nf-setupapi-setupdiopendevregkey) 的调用成功，则 **SetupDiOpenDevRegKey** 将返回所请求软件密钥的句柄。 如果函数调用失败， **SetupDiOpenDevRegKey** 将返回 INVALID_HANDLE_VALUE。 对 [GetLastError](https://go.microsoft.com/fwlink/p/?linkid=169416) 的后续调用将返回最近记录的错误代码。
+    如果对 [**SetupDiOpenDevRegKey**](/windows/win32/api/setupapi/nf-setupapi-setupdiopendevregkey) 的调用成功，则 **SetupDiOpenDevRegKey** 将返回所请求软件密钥的句柄。 如果函数调用失败， **SetupDiOpenDevRegKey** 将返回 INVALID_HANDLE_VALUE。 对 [GetLastError](https://go.microsoft.com/fwlink/p/?linkid=169416) 的后续调用将返回最近记录的错误代码。
 
 2.  在对 [RegQueryValueEx](https://go.microsoft.com/fwlink/p/?linkid=95398) 或 [RegSetValueEx](https://go.microsoft.com/fwlink/p/?linkid=95399) 的调用中提供句柄，以检索或设置与设备实例驱动程序属性对应的注册表项值。
 
@@ -48,7 +48,7 @@ Windows Server 2003、Windows XP 和 Windows 2000 还支持这些设备驱动程
 
 ### <a name="using-setupdigetdriverinstallparams-to-retrieve-driver-rank"></a><a href="" id="using-setupdigetdriverinstallparams-to-retrieve-driver-rank"></a> 使用 SetupDiGetDriverInstallParams 检索驱动程序级别
 
-在 Windows Server 2003、Windows XP 和 Windows 2000 上，你可以通过调用 [**SetupDiGetDriverInstallParams**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetdriverinstallparamsa)来检索当前为设备安装的驱动程序的排名。 **SetupDiGetDriverInstallParams**检索指向输出参数*DriverInstallParams*中驱动程序的[**SP_DRVINSTALL_PARAMS**](/windows/desktop/api/setupapi/ns-setupapi-_sp_drvinstall_params)结构的指针。 检索到的 SP_DRVINSTALL_PARAMS 结构的 **排名** 成员包含驱动程序级别。
+在 Windows Server 2003、Windows XP 和 Windows 2000 上，你可以通过调用 [**SetupDiGetDriverInstallParams**](/windows/win32/api/setupapi/nf-setupapi-setupdigetdriverinstallparamsa)来检索当前为设备安装的驱动程序的排名。 **SetupDiGetDriverInstallParams**检索指向输出参数*DriverInstallParams*中驱动程序的[**SP_DRVINSTALL_PARAMS**](/windows/win32/api/setupapi/ns-setupapi-_sp_drvinstall_params)结构的指针。 检索到的 SP_DRVINSTALL_PARAMS 结构的 **排名** 成员包含驱动程序级别。
 
  
 

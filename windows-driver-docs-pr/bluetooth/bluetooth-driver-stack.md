@@ -8,12 +8,12 @@ keywords:
 - 堆积 WDK 蓝牙
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 27fcc3554a33c5a7377fa49cdfdfb9e4b8fd3057
-ms.sourcegitcommit: 937974aa9bbe0262a7ffe9631593fab48c4e7492
+ms.openlocfilehash: 2b96a26b521602d084131feb8682c163833051f3
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "90010135"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90716563"
 ---
 # <a name="bluetooth-driver-stack"></a>蓝牙驱动程序堆栈
 
@@ -27,7 +27,7 @@ ms.locfileid: "90010135"
 -   **用户模式**
     -   **用户模式应用**程序-一种用户模式应用程序，它通过已发布的 Api 访问蓝牙驱动程序堆栈。 有关详细信息，请参阅关于 Windows SDK 文档中的 [蓝牙](https://go.microsoft.com/fwlink/p/?linkid=50712) 。
 
-        **注意**   用户模式应用程序应链接到*BthProps*（而不是*IrProps*），以便使用[**BluetoothSetLocalServiceInfo**](/windows/desktop/api/bluetoothapis/nf-bluetoothapis-bluetoothsetlocalserviceinfo)等 api。
+        **注意**   用户模式应用程序应链接到*BthProps*（而不是*IrProps*），以便使用[**BluetoothSetLocalServiceInfo**](/windows/win32/api/bluetoothapis/nf-bluetoothapis-bluetoothsetlocalserviceinfo)等 api。
 
          
 

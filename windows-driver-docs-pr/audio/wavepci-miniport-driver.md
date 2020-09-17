@@ -8,12 +8,12 @@ keywords:
 - WavePci 微型端口驱动程序 WDK 音频
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2d35a4ad176397a19712955fdb4f0be54d3f88d8
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 54e5dbf183d7bfe6adb67cfe980dc985f992714f
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89210269"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90716624"
 ---
 # <a name="wavepci-miniport-driver"></a>WavePci 微型端口驱动程序
 
@@ -47,7 +47,7 @@ WavePci 微型端口驱动程序应实现两个接口：
 
 通知服务请求的微型端口驱动程序。
 
-流接口 [IMiniportWavePciStream](/windows-hardware/drivers/ddi/portcls/nn-portcls-iminiportwavepcistream)继承 [**IUnknown**](/windows/desktop/api/unknwn/nn-unknwn-iunknown) 接口中的方法。 IMiniportWavePciStream 提供了以下附加方法：
+流接口 [IMiniportWavePciStream](/windows-hardware/drivers/ddi/portcls/nn-portcls-iminiportwavepcistream)继承 [**IUnknown**](/windows/win32/api/unknwn/nn-unknwn-iunknown) 接口中的方法。 IMiniportWavePciStream 提供了以下附加方法：
 
 [**IMiniportWavePciStream::GetAllocatorFraming**](/windows-hardware/drivers/ddi/portcls/nf-portcls-iminiportwavepcistream-getallocatorframing)
 

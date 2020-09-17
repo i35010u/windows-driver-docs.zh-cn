@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: ccef5d13f6f6d6894de3310cc0af7017b4d0744a
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: d66040d5958e8e4aae1792101fe1a605620212cd
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90104194"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90714920"
 ---
 # <a name="dif_addpropertypage_advanced"></a>DIF_ADDPROPERTYPAGE_ADVANCED
 
@@ -67,7 +67,7 @@ DIF_ADDPROPERTYPAGE_ADVANCED 请求允许安装程序为设备提供一个或多
 [**SP_DEVINSTALL_PARAMS**](/windows/win32/api/setupapi/ns-setupapi-sp_devinstall_params_a))  (设备安装参数与*DeviceInfoData*（如果已指定）或与*DeviceInfoSet*相关联。
 
 <a href="" id="class-installation-parameters"></a>类安装参数  
-[**SP_ADDPROPERTYPAGE_DATA**](/windows/desktop/api/setupapi/ns-setupapi-_sp_newdevicewizard_data)结构与*DeviceInfoData*（如果已指定）或*DeviceInfoSet*相关联。
+[**SP_ADDPROPERTYPAGE_DATA**](/windows/win32/api/setupapi/ns-setupapi-_sp_newdevicewizard_data)结构与*DeviceInfoData*（如果已指定）或*DeviceInfoSet*相关联。
 
 ### <a name="installer-output"></a>安装程序输出
 
@@ -75,7 +75,7 @@ DIF_ADDPROPERTYPAGE_ADVANCED 请求允许安装程序为设备提供一个或多
 安装程序可以修改设备安装参数。
 
 <a href="" id="class-installation-parameters"></a>类安装参数  
-安装程序可以修改 [**SP_ADDPROPERTYPAGE_DATA**](/windows/desktop/api/setupapi/ns-setupapi-_sp_newdevicewizard_data) 以提供自定义页面。
+安装程序可以修改 [**SP_ADDPROPERTYPAGE_DATA**](/windows/win32/api/setupapi/ns-setupapi-_sp_newdevicewizard_data) 以提供自定义页面。
 
 ### <a name="installer-return-value"></a>安装程序返回值
 
@@ -137,7 +137,7 @@ Windows 只显示一个驱动程序页、一个资源页和一个设备的一个
 ## <a name="see-also"></a>请参阅
 
 
-[**SP_ADDPROPERTYPAGE_DATA**](/windows/desktop/api/setupapi/ns-setupapi-_sp_newdevicewizard_data)
+[**SP_ADDPROPERTYPAGE_DATA**](/windows/win32/api/setupapi/ns-setupapi-_sp_newdevicewizard_data)
 
 [**SP_DEVINFO_DATA**](/windows/win32/api/setupapi/ns-setupapi-sp_devinfo_data)
 

@@ -9,12 +9,12 @@ keywords:
 - 颜色抖动 WDK Windows 2000 显示
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d2654e51f83d4c08e7c69dbec586b61209852ff6
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: ccad81b4cc5ef698e5a815f355cfec2815a6b9f1
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89064534"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90715282"
 ---
 # <a name="supporting-the-ditheronrealize-flag"></a>支持 DitherOnRealize 标志
 
@@ -22,11 +22,11 @@ ms.locfileid: "89064534"
 ## <span id="ddk_supporting_the_ditheronrealize_flag_gg"></span><span id="DDK_SUPPORTING_THE_DITHERONREALIZE_FLAG_GG"></span>
 
 
-在较早版本的 GDI 和图形 DDI 中，需要通过 GDI 执行两次调用以使指定颜色抖动，然后为该颜色实现画笔。 例如，当应用程序请求使用抖动颜色填充矩形时，GDI 通常会调用 [**DrvBitBlt**](/windows/desktop/api/winddi/nf-winddi-drvbitblt)，同时传递矩形的范围以及要使用的 brush 对象。 然后，显示驱动程序会检查画笔，发现尚未实现该画笔，并通过 [**BRUSHOBJ \_ PVGETRBRUSH**](/windows/desktop/api/winddi/nf-winddi-brushobj_pvgetrbrush) 回调 gdi，以实现 gdi 实现的画笔。 由于显示驱动程序（而不是 GDI）执行画笔的抖动，GDI 会将最初提供的应用程序的 RGB 传递到显示驱动程序的 [**DrvDitherColor**](/windows/desktop/api/winddi/nf-winddi-drvdithercolor) 回调中的抖动。
+在较早版本的 GDI 和图形 DDI 中，需要通过 GDI 执行两次调用以使指定颜色抖动，然后为该颜色实现画笔。 例如，当应用程序请求使用抖动颜色填充矩形时，GDI 通常会调用 [**DrvBitBlt**](/windows/win32/api/winddi/nf-winddi-drvbitblt)，同时传递矩形的范围以及要使用的 brush 对象。 然后，显示驱动程序会检查画笔，发现尚未实现该画笔，并通过 [**BRUSHOBJ \_ PVGETRBRUSH**](/windows/win32/api/winddi/nf-winddi-brushobj_pvgetrbrush) 回调 gdi，以实现 gdi 实现的画笔。 由于显示驱动程序（而不是 GDI）执行画笔的抖动，GDI 会将最初提供的应用程序的 RGB 传递到显示驱动程序的 [**DrvDitherColor**](/windows/win32/api/winddi/nf-winddi-drvdithercolor) 回调中的抖动。
 
-*DrvDitherColor* 返回一个指针，该指针指向一个颜色索引数组，用于描述提供的颜色的抖动信息返回到 GDI。 GDI 会立即将此仿色信息传递回 [**DrvRealizeBrush**](/windows/desktop/api/winddi/nf-winddi-drvrealizebrush)的调用中的显示驱动程序。 实现 [**BRUSHOBJ**](/windows/desktop/api/winddi/ns-winddi-_brushobj) 后，控件会返回到 GDI，并随后返回到原始的 *DrvBitBlt* 函数。
+*DrvDitherColor* 返回一个指针，该指针指向一个颜色索引数组，用于描述提供的颜色的抖动信息返回到 GDI。 GDI 会立即将此仿色信息传递回 [**DrvRealizeBrush**](/windows/win32/api/winddi/nf-winddi-drvrealizebrush)的调用中的显示驱动程序。 实现 [**BRUSHOBJ**](/windows/win32/api/winddi/ns-winddi-_brushobj) 后，控件会返回到 GDI，并随后返回到原始的 *DrvBitBlt* 函数。
 
-若要使用上述方法完成仿色，GDI 必须先调用 *DrvDitherColor*，然后调用 *DrvRealizeBrush* ，这两个单独的函数调用。 如果 \_ 在 [**lnk-devinfo**](/windows/desktop/api/winddi/ns-winddi-tagdevinfo) 结构中设置 GCAPS DITHERONREALIZE 标志并将 *DrvRealizeBrush* 修改为有效组合这两个函数，则无需单独调用 *DrvDitherColor* ，还会保存一些内存分配。 在此方案中，如果显示驱动程序设置 GCAPS \_ DITHERONREALIZE，则 GDI 将与 RGB 一起调用 *DrvRealizeBrush* ，并在 \_ *iHatch*中设置 RB DITHERCOLOR 标志。 在 \_ *iHatch*的高位字节中设置 RB DITHERCOLOR 标志，而要抖动的 RGB 颜色包含在三个低序位字节中。 在这种情况下，需要调用 *DrvDitherColor* ，因为这两个调用的功能都放入其中。
+若要使用上述方法完成仿色，GDI 必须先调用 *DrvDitherColor*，然后调用 *DrvRealizeBrush* ，这两个单独的函数调用。 如果 \_ 在 [**lnk-devinfo**](/windows/win32/api/winddi/ns-winddi-tagdevinfo) 结构中设置 GCAPS DITHERONREALIZE 标志并将 *DrvRealizeBrush* 修改为有效组合这两个函数，则无需单独调用 *DrvDitherColor* ，还会保存一些内存分配。 在此方案中，如果显示驱动程序设置 GCAPS \_ DITHERONREALIZE，则 GDI 将与 RGB 一起调用 *DrvRealizeBrush* ，并在 \_ *iHatch*中设置 RB DITHERCOLOR 标志。 在 \_ *iHatch*的高位字节中设置 RB DITHERCOLOR 标志，而要抖动的 RGB 颜色包含在三个低序位字节中。 在这种情况下，需要调用 *DrvDitherColor* ，因为这两个调用的功能都放入其中。
 
 有关代码示例，请参阅 *Permedia* 示例显示驱动程序。
 

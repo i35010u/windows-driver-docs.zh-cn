@@ -4,17 +4,17 @@ ms.assetid: AE8ED273-2329-4E53-9FCD-5A8E863AED83
 description: 用户模式驱动程序访问 Direct3D 9 功能所需的功能。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 285f05daf3d59d3089f8a23e350bafbcb928fda5
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 7499966be54381416b344d9cda6aedd12e5251ed
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90104030"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90716002"
 ---
 # <a name="required-direct3d-9-capabilities"></a>必需的 Direct3D 9 功能
 
 
-若要使应用程序完全访问 Microsoft Direct3D 版本 9 \_ 1、9 \_ 2 和 9 3 的功能 \_ ，用户模式驱动程序必须公开某些硬件功能。 这些功能用用户模式驱动程序的[*GetCaps*](/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_getcaps)函数返回的[**D3DCAPS9**](/windows/desktop/api/d3d9caps/ns-d3d9caps-_d3dcaps9)结构来表示。 若要指示对功能的支持，驱动程序必须将 **D3DCAPS9** 的这些成员设置为所有各自标志值的按位或。
+若要使应用程序完全访问 Microsoft Direct3D 版本 9 \_ 1、9 \_ 2 和 9 3 的功能 \_ ，用户模式驱动程序必须公开某些硬件功能。 这些功能用用户模式驱动程序的[*GetCaps*](/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_getcaps)函数返回的[**D3DCAPS9**](/windows/win32/api/d3d9caps/ns-d3d9caps-_d3dcaps9)结构来表示。 若要指示对功能的支持，驱动程序必须将 **D3DCAPS9** 的这些成员设置为所有各自标志值的按位或。
 
 ## <a name="span-idminimum_capabilities_for_direct3d_level_9_1spanspan-idminimum_capabilities_for_direct3d_level_9_1spanspan-idminimum_capabilities_for_direct3d_level_9_1spanminimum-capabilities-for-direct3d-level-9_1"></a><span id="Minimum_capabilities_for_Direct3D_level_9_1"></span><span id="minimum_capabilities_for_direct3d_level_9_1"></span><span id="MINIMUM_CAPABILITIES_FOR_DIRECT3D_LEVEL_9_1"></span>Direct3D level 9 1 的最小功能 \_
 
@@ -26,7 +26,7 @@ ms.locfileid: "90104030"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left"><a href="/windows/desktop/api/d3d9caps/ns-d3d9caps-_d3dcaps9" data-raw-source="[&lt;strong&gt;D3DCAPS9&lt;/strong&gt;](/windows/desktop/api/d3d9caps/ns-d3d9caps-_d3dcaps9)"><strong>D3DCAPS9</strong></a> 成员</th>
+<th align="left"><a href="/windows/win32/api/d3d9caps/ns-d3d9caps-_d3dcaps9" data-raw-source="[&lt;strong&gt;D3DCAPS9&lt;/strong&gt;](/windows/win32/api/d3d9caps/ns-d3d9caps-_d3dcaps9)"><strong>D3DCAPS9</strong></a> 成员</th>
 <th align="left">标志值</th>
 </tr>
 </thead>
@@ -190,7 +190,7 @@ ms.locfileid: "90104030"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left"><a href="/windows/desktop/api/d3d9caps/ns-d3d9caps-_d3dcaps9" data-raw-source="[&lt;strong&gt;D3DCAPS9&lt;/strong&gt;](/windows/desktop/api/d3d9caps/ns-d3d9caps-_d3dcaps9)"><strong>D3DCAPS9</strong></a> 成员</th>
+<th align="left"><a href="/windows/win32/api/d3d9caps/ns-d3d9caps-_d3dcaps9" data-raw-source="[&lt;strong&gt;D3DCAPS9&lt;/strong&gt;](/windows/win32/api/d3d9caps/ns-d3d9caps-_d3dcaps9)"><strong>D3DCAPS9</strong></a> 成员</th>
 <th align="left">标志值</th>
 </tr>
 </thead>
@@ -265,7 +265,7 @@ ms.locfileid: "90104030"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left"><a href="/windows/desktop/api/d3d9caps/ns-d3d9caps-_d3dcaps9" data-raw-source="[&lt;strong&gt;D3DCAPS9&lt;/strong&gt;](/windows/desktop/api/d3d9caps/ns-d3d9caps-_d3dcaps9)"><strong>D3DCAPS9</strong></a> 成员</th>
+<th align="left"><a href="/windows/win32/api/d3d9caps/ns-d3d9caps-_d3dcaps9" data-raw-source="[&lt;strong&gt;D3DCAPS9&lt;/strong&gt;](/windows/win32/api/d3d9caps/ns-d3d9caps-_d3dcaps9)"><strong>D3DCAPS9</strong></a> 成员</th>
 <th align="left">标志值</th>
 </tr>
 </thead>

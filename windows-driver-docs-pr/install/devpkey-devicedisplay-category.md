@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 4e5da0ac1cb9342e50b24b5f5f2c2464e6d4eb34
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 7c9d8ca5e11085911e6a3e5f07df5fc3314fa203
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89096661"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90716388"
 ---
 # <a name="devpkey_devicedisplay_category"></a>DEVPKEY_DeviceDisplay_Category
 
@@ -74,7 +74,7 @@ DEVPKEY_DeviceDisplay_Category 设备属性表示应用于设备实例的一个�
 
 控制面板中的 " **设备和打印机** " 用户界面显示设备实例的主要和次要功能类别。 这些类别按照 DEVPKEY_DeviceDisplay_Category 设备属性中指定的顺序显示。
 
-可以通过调用 [**SetupDiGetDeviceProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)访问 DEVPKEY_DeviceDisplay_Category 属性。
+可以通过调用 [**SetupDiGetDeviceProperty**](/windows/win32/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)访问 DEVPKEY_DeviceDisplay_Category 属性。
 
 <a name="requirements"></a>要求
 ------------
@@ -96,12 +96,12 @@ DEVPKEY_DeviceDisplay_Category 设备属性表示应用于设备实例的一个�
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**Device.devicecategory**](/previous-versions/windows/hardware/metadata/ff541101(v=vs.85))
 
-[**SetupDiGetDeviceProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)
+[**SetupDiGetDeviceProperty**](/windows/win32/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)
 
  
 

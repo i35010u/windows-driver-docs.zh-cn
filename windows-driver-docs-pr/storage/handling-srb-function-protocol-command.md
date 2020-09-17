@@ -8,12 +8,12 @@ keywords:
 - SRB_FUNCTION_PROTOCOL_COMMAND
 ms.date: 05/23/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: c179e8dfd0ec9bc966f30fed70f0f9fed9b04b67
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 114cac405a19788af2399627a1c1b740ea72733f
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89190287"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90715402"
 ---
 # <a name="handling-srb_function_protocol_command"></a>处理 SRB_FUNCTION_PROTOCOL_COMMAND
 
@@ -33,7 +33,7 @@ ms.locfileid: "89190287"
 
 ## <a name="see-also"></a>另请参阅
 
-[IOCTL_STORAGE_PROTOCOL_COMMAND (*winioctl*) ](/windows/desktop/api/winioctl/ni-winioctl-ioctl_storage_protocol_command)
+[IOCTL_STORAGE_PROTOCOL_COMMAND (*winioctl*) ](/windows/win32/api/winioctl/ni-winioctl-ioctl_storage_protocol_command)
 
 [IOCTL_STORAGE_PROTOCOL_COMMAND (*ntddstor*) ](/windows-hardware/drivers/ddi/ntddstor/ni-ntddstor-ioctl_storage_protocol_command)
 

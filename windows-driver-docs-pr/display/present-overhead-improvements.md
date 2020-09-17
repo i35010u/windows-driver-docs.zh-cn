@@ -4,12 +4,12 @@ ms.assetid: 92B282D6-0D04-4352-AE03-E0A7A43711E7
 description: 对内部交换缓冲区的改进，以减少 GPU 处理负载
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5bc2b352dfde89d96e029361527ffe2a5795d17f
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 3db9b57122c994d496782f26d1577978039ff6ad
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89066458"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90715154"
 ---
 # <a name="present-overhead-improvements"></a>呈现开销提高
 
@@ -38,7 +38,7 @@ ms.locfileid: "89066458"
 ## <a name="span-idtexture_format_support_for_shared_surfacesspanspan-idtexture_format_support_for_shared_surfacesspanspan-idtexture_format_support_for_shared_surfacesspantexture-format-support-for-shared-surfaces"></a><span id="Texture_format_support_for_shared_surfaces"></span><span id="texture_format_support_for_shared_surfaces"></span><span id="TEXTURE_FORMAT_SUPPORT_FOR_SHARED_SURFACES"></span>共享图面的纹理格式支持
 
 
-驱动程序应支持从 [**DXGI \_ 格式**](/windows/desktop/api/dxgiformat/ne-dxgiformat-dxgi_format) 枚举共享资源和可共享的 backbuffers：
+驱动程序应支持从 [**DXGI \_ 格式**](/windows/win32/api/dxgiformat/ne-dxgiformat-dxgi_format) 枚举共享资源和可共享的 backbuffers：
 
 - **DXGI \_ 格式 \_ A8 \_ UNORM**
 - **DXGI \_ FORMAT \_ R8 \_ UNORM**

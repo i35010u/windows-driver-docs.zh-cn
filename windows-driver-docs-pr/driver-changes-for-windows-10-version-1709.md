@@ -5,12 +5,12 @@ ms.assetid: 68a5a513-0dab-40f7-b67f-29b76061e1ab
 ms.date: 04/14/2020
 author: EliotSeattle
 ms.localizationpriority: medium
-ms.openlocfilehash: 3222a10b91c349f55a98501fe4111b83d1fbd4b9
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: b9b0893266697ee43394cc5b5a453bdd8b8506b4
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89066554"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90716434"
 ---
 # <a name="driver-development-additions-for-windows-10-version-1709"></a>适用于 Windows 10 的驱动程序开发添加版本1709
 
@@ -29,7 +29,7 @@ ms.locfileid: "89066554"
 - [硬件通知](#hardware-notifications)
 - [Windows 内核](#windows-kernel)
 - [移动宽带](#mobile-broadband)
-- [网络](#networking)
+- [联网](#networking)
 - [虚拟化 PCI](#virtualized-pci)
 - [脉宽调制](#pulse-width-modulation-controllers)
 - [& 存储的文件系统](#file-systems-and-storage)
@@ -251,9 +251,9 @@ USB 驱动程序堆栈可以使用不区分媒体的 USB (MA-USB) 协议，通�
 
 应用程序可以使用以下 API 来启用/禁用该功能以及检索信息：
 
-- [WinUsb_GetCurrentFrameNumberAndQpc](/windows/desktop/api/winusb/nf-winusb-winusb_getcurrentframenumberandqpc)
-- [WinUsb_StartTrackingForTimeSync](/windows/desktop/api/winusb/nf-winusb-winusb_starttrackingfortimesync)
-- [WinUsb_StopTrackingForTimeSync](/windows/desktop/api/winusb/nf-winusb-winusb_stoptrackingfortimesync)
+- [WinUsb_GetCurrentFrameNumberAndQpc](/windows/win32/api/winusb/nf-winusb-winusb_getcurrentframenumberandqpc)
+- [WinUsb_StartTrackingForTimeSync](/windows/win32/api/winusb/nf-winusb-winusb_starttrackingfortimesync)
+- [WinUsb_StopTrackingForTimeSync](/windows/win32/api/winusb/nf-winusb-winusb_stoptrackingfortimesync)
 
 其他驱动程序可以发送以下 IOCTL 请求来启用/禁用该功能以及检索信息：
 

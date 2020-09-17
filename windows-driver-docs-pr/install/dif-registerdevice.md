@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 94bdf3993f7f54fc152c8b74e615f62387060f9a
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: cd7467f92c85635f25a8251cadca4cca36f957c2
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90105590"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90715098"
 ---
 # <a name="dif_registerdevice"></a>DIF_REGISTERDEVICE
 
@@ -79,7 +79,7 @@ DIF_REGISTERDEVICE 请求允许安装程序参与使用 PnP 管理器注册新�
 
 如果安装程序确定设备是一个重复设备，则会返回 ERROR_DUPLICATE_FOUND。
 
-如果类安装程序成功处理此请求，并且 [**SetupDiCallClassInstaller**](/windows/desktop/api/setupapi/nf-setupapi-setupdicallclassinstaller) 随后应调用默认处理程序，则类安装程序将返回 ERROR_DI_DO_DEFAULT。
+如果类安装程序成功处理此请求，并且 [**SetupDiCallClassInstaller**](/windows/win32/api/setupapi/nf-setupapi-setupdicallclassinstaller) 随后应调用默认处理程序，则类安装程序将返回 ERROR_DI_DO_DEFAULT。
 
 如果类安装程序成功处理此请求（包括直接调用默认处理程序），则类安装程序应返回 NO_ERROR 并且 **SetupDiCallClassInstaller** 将不会再次调用默认处理程序。
 
@@ -95,13 +95,13 @@ DIF_REGISTERDEVICE 请求允许安装程序参与使用 PnP 管理器注册新�
 
 ### <a name="default-dif-code-handler"></a>默认的 DIF 代码处理程序
 
-[**SetupDiRegisterDeviceInfo**](/windows/desktop/api/setupapi/nf-setupapi-setupdiregisterdeviceinfo)
+[**SetupDiRegisterDeviceInfo**](/windows/win32/api/setupapi/nf-setupapi-setupdiregisterdeviceinfo)
 
 ### <a name="installer-operation"></a>安装程序操作
 
 *设备安装应用程序*通常发送此 DIF 请求以便向 pnp 管理器注册非 PnP 设备。 从 Microsoft Windows 2000 开始，必须先注册非 PnP 设备，然后才能安装它们。
 
-安装程序通常会处理此 DIF 请求，以进行重复检测。 此类安装程序通常 ([**SetupDiRegisterDeviceInfo**](/windows/desktop/api/setupapi/nf-setupapi-setupdiregisterdeviceinfo)) 调用默认处理程序，并指定其检测例程。 如果注册成功且安装程序确定设备不是重复设备，安装程序将返回 NO_ERROR。
+安装程序通常会处理此 DIF 请求，以进行重复检测。 此类安装程序通常 ([**SetupDiRegisterDeviceInfo**](/windows/win32/api/setupapi/nf-setupapi-setupdiregisterdeviceinfo)) 调用默认处理程序，并指定其检测例程。 如果注册成功且安装程序确定设备不是重复设备，安装程序将返回 NO_ERROR。
 
 共同安装程序应执行任何操作以在其预处理过程中处理此 DIF 请求。 当调用共同安装程序进行后处理时，设备实例已由类安装程序或默认处理程序注册。
 
@@ -129,12 +129,12 @@ DIF_REGISTERDEVICE 请求允许安装程序参与使用 PnP 管理器注册新�
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**DIF_DETECT**](dif-detect.md)
 
-[**SetupDiRegisterDeviceInfo**](/windows/desktop/api/setupapi/nf-setupapi-setupdiregisterdeviceinfo)
+[**SetupDiRegisterDeviceInfo**](/windows/win32/api/setupapi/nf-setupapi-setupdiregisterdeviceinfo)
 
 [**SP_DEVINFO_DATA**](/windows/win32/api/setupapi/ns-setupapi-sp_devinfo_data)
 

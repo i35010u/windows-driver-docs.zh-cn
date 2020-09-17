@@ -6,12 +6,12 @@ keywords:
 - 图形 DDI 函数 WDK Windows 2000 显示
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e1bf559dfc35c48fda53c4ae880dd6b1da2dfb9e
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 07d48e6277561b8860ba4e0c551384b7fdd5691f
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90105042"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90716044"
 ---
 # <a name="conditionally-required-display-driver-functions"></a>在不同条件下需要的显示驱动程序函数
 
@@ -19,7 +19,7 @@ ms.locfileid: "90105042"
 ## <span id="ddk_conditionally_required_display_driver_functions_gg"></span><span id="DDK_CONDITIONALLY_REQUIRED_DISPLAY_DRIVER_FUNCTIONS_GG"></span>
 
 
-根据驱动程序的实现方式和基础适配器的功能，可能需要其他图形 DDI 函数。 例如，如果驱动程序管理自己的 surface (使用 [**EngCreateDeviceSurface**](/windows/desktop/api/winddi/nf-winddi-engcreatedevicesurface) 来获取 surface) 的句柄，则该驱动程序还必须至少支持以下 [绘制函数](optional-display-driver-functions.md)：
+根据驱动程序的实现方式和基础适配器的功能，可能需要其他图形 DDI 函数。 例如，如果驱动程序管理自己的 surface (使用 [**EngCreateDeviceSurface**](/windows/win32/api/winddi/nf-winddi-engcreatedevicesurface) 来获取 surface) 的句柄，则该驱动程序还必须至少支持以下 [绘制函数](optional-display-driver-functions.md)：
 
 <table>
 <colgroup>
@@ -34,15 +34,15 @@ ms.locfileid: "90105042"
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="/windows/desktop/api/winddi/nf-winddi-drvcopybits" data-raw-source="[&lt;strong&gt;DrvCopyBits&lt;/strong&gt;](/windows/desktop/api/winddi/nf-winddi-drvcopybits)"><strong>DrvCopyBits</strong></a></p></td>
+<td align="left"><p><a href="/windows/win32/api/winddi/nf-winddi-drvcopybits" data-raw-source="[&lt;strong&gt;DrvCopyBits&lt;/strong&gt;](/windows/win32/api/winddi/nf-winddi-drvcopybits)"><strong>DrvCopyBits</strong></a></p></td>
 <td align="left"><p>转换设备托管的光栅图面和 GDI 标准格式的位图。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="/windows/desktop/api/winddi/nf-winddi-drvstrokepath" data-raw-source="[&lt;strong&gt;DrvStrokePath&lt;/strong&gt;](/windows/desktop/api/winddi/nf-winddi-drvstrokepath)"><strong>DrvStrokePath</strong></a></p></td>
+<td align="left"><p><a href="/windows/win32/api/winddi/nf-winddi-drvstrokepath" data-raw-source="[&lt;strong&gt;DrvStrokePath&lt;/strong&gt;](/windows/win32/api/winddi/nf-winddi-drvstrokepath)"><strong>DrvStrokePath</strong></a></p></td>
 <td align="left"><p>绘制 (曲线或直线) 的路径。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="/windows/desktop/api/winddi/nf-winddi-drvtextout" data-raw-source="[&lt;strong&gt;DrvTextOut&lt;/strong&gt;](/windows/desktop/api/winddi/nf-winddi-drvtextout)"><strong>DrvTextOut</strong></a></p></td>
+<td align="left"><p><a href="/windows/win32/api/winddi/nf-winddi-drvtextout" data-raw-source="[&lt;strong&gt;DrvTextOut&lt;/strong&gt;](/windows/win32/api/winddi/nf-winddi-drvtextout)"><strong>DrvTextOut</strong></a></p></td>
 <td align="left"><p>呈现指定位置的一组字形。</p></td>
 </tr>
 </tbody>
@@ -54,7 +54,7 @@ ms.locfileid: "90105042"
 
  
 
-写入标准格式 *dib* 的驱动程序通常允许 GDI 管理其中的大多数或全部操作。 支持可 *设置调色板* 的显示必须支持 [**DrvSetPalette**](/windows/desktop/api/winddi/nf-winddi-drvsetpalette) 函数。
+写入标准格式 *dib* 的驱动程序通常允许 GDI 管理其中的大多数或全部操作。 支持可 *设置调色板* 的显示必须支持 [**DrvSetPalette**](/windows/win32/api/winddi/nf-winddi-drvsetpalette) 函数。
 
 <table>
 <colgroup>
@@ -69,7 +69,7 @@ ms.locfileid: "90105042"
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="/windows/desktop/api/winddi/nf-winddi-drvsetpalette" data-raw-source="[&lt;strong&gt;DrvSetPalette&lt;/strong&gt;](/windows/desktop/api/winddi/nf-winddi-drvsetpalette)"><strong>DrvSetPalette</strong></a></p></td>
+<td align="left"><p><a href="/windows/win32/api/winddi/nf-winddi-drvsetpalette" data-raw-source="[&lt;strong&gt;DrvSetPalette&lt;/strong&gt;](/windows/win32/api/winddi/nf-winddi-drvsetpalette)"><strong>DrvSetPalette</strong></a></p></td>
 <td align="left"><p>请求驱动程序实现指定设备的调色板。 驱动程序将硬件调色板设置为与给定调色板中的条目尽可能匹配。</p></td>
 </tr>
 </tbody>

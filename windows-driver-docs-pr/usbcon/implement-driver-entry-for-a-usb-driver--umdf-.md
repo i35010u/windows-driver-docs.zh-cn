@@ -3,19 +3,19 @@ description: 使用随 Microsoft Visual Studio 提供的 USB 用户模式驱动�
 title: 如何编写第一个 USB 客户端驱动程序 (UMDF)
 ms.date: 06/03/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: f29e8b5abab7d1f977db7141b1f0917d0431f4a6
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: bfd84e1e1879c8af2dcecf59cffa574d98e0ab8e
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90101558"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90716672"
 ---
 # <a name="how-to-write-your-first-usb-client-driver-umdf"></a>如何编写第一个 USB 客户端驱动程序 (UMDF)
 
 
 在本主题中，你将使用随 Microsoft Visual Studio 2019 一起提供的 **USB 用户模式驱动程序** 模板来编写基于 (UMDF) 的客户端驱动程序的用户模式驱动程序框架。 生成和安装客户端驱动程序后，你将在 **设备管理器** 中查看客户端驱动程序，并在调试器中查看驱动程序输出。
 
-在本主题中，UMDF (称为框架) 基于组件对象模型 (COM) 。 默认情况下，每个框架对象都必须实现 [**IUnknown**](/windows/desktop/api/unknwn/nn-unknwn-iunknown) 及其方法： [**QueryInterface**](/windows/desktop/api/unknwn/nf-unknwn-iunknown-queryinterface(q_))、 [**AddRef**](/windows/desktop/api/unknwn/nf-unknwn-iunknown-addref)和 [**Release**](/windows/desktop/api/unknwn/nf-unknwn-iunknown-release)。 **AddRef**和**Release**方法管理对象的生存期，因此客户端驱动程序不需要维护引用计数。 通过 **QueryInterface** 方法，客户端驱动程序可以获取指向 Windows 驱动程序框架中其他框架对象的接口指针， (WDF) 对象模型中。 框架对象执行复杂的驱动程序任务并与 Windows 交互。 某些框架对象公开的接口允许客户端驱动程序与框架交互。
+在本主题中，UMDF (称为框架) 基于组件对象模型 (COM) 。 默认情况下，每个框架对象都必须实现 [**IUnknown**](/windows/win32/api/unknwn/nn-unknwn-iunknown) 及其方法： [**QueryInterface**](/windows/win32/api/unknwn/nf-unknwn-iunknown-queryinterface(q_))、 [**AddRef**](/windows/win32/api/unknwn/nf-unknwn-iunknown-addref)和 [**Release**](/windows/win32/api/unknwn/nf-unknwn-iunknown-release)。 **AddRef**和**Release**方法管理对象的生存期，因此客户端驱动程序不需要维护引用计数。 通过 **QueryInterface** 方法，客户端驱动程序可以获取指向 Windows 驱动程序框架中其他框架对象的接口指针， (WDF) 对象模型中。 框架对象执行复杂的驱动程序任务并与 Windows 交互。 某些框架对象公开的接口允许客户端驱动程序与框架交互。
 
 基于 UMDF 的客户端驱动程序作为 (DLL) 的进程内 COM 服务器实现，而 c + + 是为 USB 设备编写客户端驱动程序的首选语言。 通常情况下，客户端驱动程序实现框架公开的多个接口。 本主题引用客户端驱动程序定义的类，该类实现作为回调类的框架接口。 在对这些类进行实例化后，生成的回调对象将与特定的框架对象合作。 这种合作关系使客户端驱动程序可以对框架报告的设备或与系统相关的事件做出响应。 每当 Windows 通知框架有关某些事件时，框架会调用客户端驱动程序的回调（如果有）。 否则，框架将继续执行事件的默认处理。 模板代码定义驱动程序、设备和队列回调类。
 
@@ -67,7 +67,7 @@ ms.locfileid: "90101558"
 
 1.  在 " **新建项目** " 对话框顶部的 "搜索" 框中，键入 " **USB"。**
 2.  在中间窗格中，选择 " **用户模式驱动程序"，USB (UMDF V2) **。
-3.  选择“下一步”  。
+3.  选择“**下一页**”。
 4.  输入项目名称，选择 "保存位置"，然后选择 " **创建**"。
 
 以下屏幕截图显示了**USB 用户模式驱动程序**模板的 "**新建项目**" 对话框。

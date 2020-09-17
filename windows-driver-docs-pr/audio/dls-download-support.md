@@ -15,12 +15,12 @@ keywords:
 - 合成 WDK 音频，可下载声音
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6a3a799b85ec54874abdbfbf5bbfb28b557ba560
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 2da7b9d7dc923064f94801da4eabb94393396424
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89208089"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90714790"
 ---
 # <a name="dls-download-support"></a>DLS 下载支持
 
@@ -28,7 +28,7 @@ ms.locfileid: "89208089"
 ## <span id="custom_dls"></span><span id="CUSTOM_DLS"></span>
 
 
-如果你正在编写自己的合成器，则还必须为 (DLS) 的可下载声音提供支持，使应用程序能够将 MIDI 注释消息转换为特定乐器声音。 具体而言，你应该实现 [**IDirectMusicSynth：:D o) **](/windows/desktop/api/dmusics/nf-dmusics-idirectmusicsynth-download) 方法，以便它可以将检测波和 articulation 数据下载到合成器。 此方法应接受 (通常来自集合文件的原始数据) 并将其存储在可供呈现引擎使用的窗体中。
+如果你正在编写自己的合成器，则还必须为 (DLS) 的可下载声音提供支持，使应用程序能够将 MIDI 注释消息转换为特定乐器声音。 具体而言，你应该实现 [**IDirectMusicSynth：:D o) **](/windows/win32/api/dmusics/nf-dmusics-idirectmusicsynth-download) 方法，以便它可以将检测波和 articulation 数据下载到合成器。 此方法应接受 (通常来自集合文件的原始数据) 并将其存储在可供呈现引擎使用的窗体中。
 
 当 DirectMusic 将 DLS 数据下载到驱动程序时，将根据几个 DirectMusic 结构定义数据缓冲区的格式。 下载的数据以两个结构开始：
 

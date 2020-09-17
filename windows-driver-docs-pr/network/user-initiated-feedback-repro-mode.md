@@ -4,12 +4,12 @@ description: 本主题介绍在 WDI 驱动程序中通过 IHV 跟踪日志记录
 ms.assetid: C9784C2D-75B1-4229-A219-748C52F430D5
 ms.date: 06/15/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: dd74d1f1b36c3f816d275ab257a5397cadbf8a33
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: bf45e774b860d1cfccc0607de6c145e0026ea929
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89211003"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90714626"
 ---
 # <a name="user-initiated-feedback---repro-mode"></a>用户发起的反馈 - 再现模式
 
@@ -87,7 +87,7 @@ IHV 可以在其 ETW 日志记录代码中注册 ETW 控制回调。 这使 IHV 
 1. 通过自动生成的代码 ETWs 的清单 `MC.exe` 。 请参阅 [编写检测清单](/windows/desktop/WES/writing-an-instrumentation-manifest) 了解更多详细信息。
     1. 以下代码片段中的标头 (etwtracingevents) 是通过创建的自动生成的 ETW 事件标头 `MC.exe` 。 假定已经生成了 ETW 事件，因此本主题并不关注此部分。
     1. 必须先定义 MCGEN_PRIVATE_ENABLE_CALLBACK_V2，然后才能包含自动生成的 ETW 标头。 否则，将不会调用该回调。
-1. 通过 [**EventRegister**](/windows/desktop/api/evntprov/nf-evntprov-eventregister) API 注册 ETW 回调。
+1. 通过 [**EventRegister**](/windows/win32/api/evntprov/nf-evntprov-eventregister) API 注册 ETW 回调。
     1. 注册跟踪提供程序时，必须将 ETW 回调提供程序传递到 **EventRegister** 函数。
 
 此代码片段显示了 ETW 回调函数的原型。

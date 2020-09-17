@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: af6971dd6e05795df8cf8db782653ac420f3b82e
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: d77f73c30545c9cdc2add3ac2bb585d8c4b3eac6
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90106756"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90715556"
 ---
 # <a name="dif_newdevicewizard_select"></a>DIF_NEWDEVICEWIZARD_SELECT
 
@@ -67,7 +67,7 @@ DIF_NEWDEVICEWIZARD_SELECT 请求允许安装程序提供 (s) 替换标准选择
 与*DeviceInfoData*关联的设备安装参数 ([**SP_DEVINSTALL_PARAMS**](/windows/win32/api/setupapi/ns-setupapi-sp_devinstall_params_a)) 。
 
 <a href="" id="class-installation-parameters"></a>类安装参数  
-[**SP_NEWDEVICEWIZARD_DATA**](/windows/desktop/api/setupapi/ns-setupapi-_sp_newdevicewizard_data)结构与*DeviceInfoData*关联。
+[**SP_NEWDEVICEWIZARD_DATA**](/windows/win32/api/setupapi/ns-setupapi-_sp_newdevicewizard_data)结构与*DeviceInfoData*关联。
 
 ### <a name="installer-output"></a>安装程序输出
 
@@ -75,7 +75,7 @@ DIF_NEWDEVICEWIZARD_SELECT 请求允许安装程序提供 (s) 替换标准选择
 安装程序可以修改设备安装参数中的标志。 Windows 在完成此 DIF 请求后不检查标志。 不过，稍后会在安装过程中检查它们。
 
 <a href="" id="class-installation-parameters"></a>类安装参数  
-安装程序可以修改 [**SP_NEWDEVICEWIZARD_DATA**](/windows/desktop/api/setupapi/ns-setupapi-_sp_newdevicewizard_data) 以提供) 的自定义页 (。
+安装程序可以修改 [**SP_NEWDEVICEWIZARD_DATA**](/windows/win32/api/setupapi/ns-setupapi-_sp_newdevicewizard_data) 以提供) 的自定义页 (。
 
 ### <a name="installer-return-value"></a>安装程序返回值
 
@@ -95,7 +95,7 @@ DIF_NEWDEVICEWIZARD_SELECT 请求允许安装程序提供 (s) 替换标准选择
 
 共同安装程序应在其后处理过程中添加自定义页面 () ，且仅当类安装程序未将自定义 (页面添加到) 时才添加。 如果类安装程序添加了)  (的页，则共同安装程序不应这样做。 否则，系统可能会要求用户选择一个驱动程序两次。
 
-如果安装程序提供自定义的 "选择" 页，则安装程序必须设置所选的驱动程序。 在安装程序支持该向导页的代码中，在用户单击 " **下一步**" 后，安装程序必须调用 [**SetupDiSetSelectedDriver**](/windows/desktop/api/setupapi/nf-setupapi-setupdisetselecteddrivera)。
+如果安装程序提供自定义的 "选择" 页，则安装程序必须设置所选的驱动程序。 在安装程序支持该向导页的代码中，在用户单击 " **下一步**" 后，安装程序必须调用 [**SetupDiSetSelectedDriver**](/windows/win32/api/setupapi/nf-setupapi-setupdisetselecteddrivera)。
 
 安装程序应在自定义向导页的 PROPSHEETPAGE 结构中提供向导97标题标题和标题副标题。 安装程序不应替换系统提供的向导标题。 请参阅 PROPSHEETPAGE 结构的相关文档的 Microsoft Windows SDK，并了解有关属性页的详细信息。
 
@@ -132,15 +132,15 @@ DIF_NEWDEVICEWIZARD_SELECT 请求允许安装程序提供 (s) 替换标准选择
 
 [**DIF_SELECTDEVICE**](dif-selectdevice.md)
 
-[**SetupDiSetSelectedDevice**](/windows/desktop/api/setupapi/nf-setupapi-setupdisetselecteddevice)
+[**SetupDiSetSelectedDevice**](/windows/win32/api/setupapi/nf-setupapi-setupdisetselecteddevice)
 
-[**SetupDiSetSelectedDriver**](/windows/desktop/api/setupapi/nf-setupapi-setupdisetselecteddrivera)
+[**SetupDiSetSelectedDriver**](/windows/win32/api/setupapi/nf-setupapi-setupdisetselecteddrivera)
 
 [**SP_DEVINFO_DATA**](/windows/win32/api/setupapi/ns-setupapi-sp_devinfo_data)
 
 [**SP_DEVINSTALL_PARAMS**](/windows/win32/api/setupapi/ns-setupapi-sp_devinstall_params_a)
 
-[**SP_NEWDEVICEWIZARD_DATA**](/windows/desktop/api/setupapi/ns-setupapi-_sp_newdevicewizard_data)
+[**SP_NEWDEVICEWIZARD_DATA**](/windows/win32/api/setupapi/ns-setupapi-_sp_newdevicewizard_data)
 
  
 

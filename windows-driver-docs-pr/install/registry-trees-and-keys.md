@@ -4,12 +4,12 @@ description: 设备和驱动程序的注册表树和项
 ms.assetid: 8f6ac7c1-f31a-4d14-8ba7-b432615db073
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bb98e31f5185e1ba979a7a3ab3dfdfb720c4df56
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: b4cf58519bb5c0ced516e1106289a7013bf7675b
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90107500"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90715760"
 ---
 # <a name="registry-trees-and-keys-for-devices-and-drivers"></a>设备和驱动程序的注册表树和项
 
@@ -28,7 +28,7 @@ ms.locfileid: "90107500"
 
 [DeviceOverrides 注册表项](deviceoverrides-registry-key.md)
 
-驱动程序必须使用 [**IoGetDeviceProperty**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetdeviceproperty) 或 [**IoOpenDeviceRegistryKey**](/windows-hardware/drivers/ddi/wdm/nf-wdm-ioopendeviceregistrykey)等系统例程访问注册表中即插即用 (PnP) 密钥。 用户模式安装组件应使用设备安装功能，如 [**SetupDiGetDeviceRegistryProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetdeviceregistrypropertya) 或 [**SetupDiOpenDevRegKey**](/windows/desktop/api/setupapi/nf-setupapi-setupdiopendevregkey)。 可以通过使用 [**Inf AddReg 指令**](inf-addreg-directive.md)从 INF 文件访问注册表。
+驱动程序必须使用 [**IoGetDeviceProperty**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetdeviceproperty) 或 [**IoOpenDeviceRegistryKey**](/windows-hardware/drivers/ddi/wdm/nf-wdm-ioopendeviceregistrykey)等系统例程访问注册表中即插即用 (PnP) 密钥。 用户模式安装组件应使用设备安装功能，如 [**SetupDiGetDeviceRegistryProperty**](/windows/win32/api/setupapi/nf-setupapi-setupdigetdeviceregistrypropertya) 或 [**SetupDiOpenDevRegKey**](/windows/win32/api/setupapi/nf-setupapi-setupdiopendevregkey)。 可以通过使用 [**Inf AddReg 指令**](inf-addreg-directive.md)从 INF 文件访问注册表。
 
 **重要**  *驱动程序不能直接访问这些注册表树和密钥。* 本部分中的注册表信息讨论仅用于调试设备安装或配置问题。
 

@@ -14,12 +14,12 @@ keywords:
 - LowerFilters
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9314a5bcd74a28a4b9cc8294a56be66204e85294
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: f29988c6a4d3fb259b9d8e3779c2bbe77ca50d81
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89097291"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90716354"
 ---
 # <a name="installing-a-filter-driver"></a>安装筛选器驱动程序
 
@@ -64,7 +64,7 @@ ServiceBinary  = %12%\cdaudio.sys
 
 ### <a name="installing-a-class-filter-driver"></a><a href="" id="ddk-installing-a-class-filter-driver-dg"></a>安装类筛选器驱动程序
 
-为安装所需的服务的设备安装程序类安装类范围内或较低级别的筛选器。 然后，应用程序可以将该服务注册为所需的设备安装程序类的上限筛选器或下限筛选器。 若要复制服务二进制文件，应用程序可以使用 **SetupInstallFilesFromInfSection**。 若要安装服务，应用程序可以使用 **SetupInstallServicesFromInfSection**。 若要将服务注册为特定设备安装程序类的上限和/或下限筛选器，应用程序将使用从[**SetupDiOpenClassRegKey**](/windows/desktop/api/setupapi/nf-setupapi-setupdiopenclassregkey)为*RelativeKeyRoot*参数检索到的注册表项句柄，为相关的每个设备安装程序类调用**SetupInstallFromInfSection** 。 例如，请考虑以下 INF 部分：
+为安装所需的服务的设备安装程序类安装类范围内或较低级别的筛选器。 然后，应用程序可以将该服务注册为所需的设备安装程序类的上限筛选器或下限筛选器。 若要复制服务二进制文件，应用程序可以使用 **SetupInstallFilesFromInfSection**。 若要安装服务，应用程序可以使用 **SetupInstallServicesFromInfSection**。 若要将服务注册为特定设备安装程序类的上限和/或下限筛选器，应用程序将使用从[**SetupDiOpenClassRegKey**](/windows/win32/api/setupapi/nf-setupapi-setupdiopenclassregkey)为*RelativeKeyRoot*参数检索到的注册表项句柄，为相关的每个设备安装程序类调用**SetupInstallFromInfSection** 。 例如，请考虑以下 INF 部分：
 
 ```cpp
 :
