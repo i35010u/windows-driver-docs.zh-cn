@@ -10,12 +10,12 @@ metadata:
   ms.prod: windows-hardware
   ms.technology: windows-devices
   services: wdk
-  ms.openlocfilehash: 5665df59028f68cf191ecc9aeb8f9f0f1a042648
-  ms.sourcegitcommit: 988d100e4d3b218a59fdac034d39a1816d145c85
+  ms.openlocfilehash: 374e05c272567cb9a45df15bdd4d5b813d5c5a04
+  ms.sourcegitcommit: a5f76805387760730faed5674d87201ec85b7dd3
   ms.translationtype: HT
   ms.contentlocale: zh-CN
-  ms.lasthandoff: 04/24/2020
-  ms.locfileid: "77145496"
+  ms.lasthandoff: 09/15/2020
+  ms.locfileid: "90112078"
 landingContent:
 - title: 硬件提交
   linkLists:
@@ -23,12 +23,12 @@ landingContent:
     links:
     - text: 创建新的驱动程序提交
       url: create-a-new-hardware-submission.md
-    - text: 管理硬件提交
+    - text: 管理你的硬件提交
       url: manage-your-hardware-submissions.md
     - text: 驱动程序外部测试
       url: driver-flighting.md
-    - text: 设备元数据
-      url: device-metadata.md
+    - text: 创建设备元数据体验
+      url: create-a-device-metadata-experience.md
 - title: 驱动程序分发
   linkLists:
   - linkListType: concept
