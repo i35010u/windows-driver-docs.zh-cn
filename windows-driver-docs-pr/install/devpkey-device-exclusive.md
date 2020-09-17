@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 073d3bb76c474e87a735b6d42782c27fe4d25585
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 25b69d2674a7c784aeb9542701c9b6a305ada3b5
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89096837"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90717046"
 ---
 # <a name="devpkey_device_exclusive"></a>DEVPKEY_Device_Exclusive
 
@@ -70,7 +70,7 @@ DEVPKEY_Device_Exclusive 设备属性表示一个布尔值，该值确定是否�
 
 您可以使用 Inf DDInstall 中包含的[**AddReg 指令**](./inf-addreg-directive.md)设置 DEVPKEY_Device_Exclusive 的值[**。 *DDInstall***](./inf-ddinstall-hw-section.md)安装设备的硬件部分。
 
-可以通过调用 [**SetupDiGetDeviceProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw) 和 [**SetupDiSetDeviceProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdisetdevicepropertyw)检索或设置 DEVPKEY_Device_Exclusive 的值。
+可以通过调用 [**SetupDiGetDeviceProperty**](/windows/win32/api/setupapi/nf-setupapi-setupdigetdevicepropertyw) 和 [**SetupDiSetDeviceProperty**](/windows/win32/api/setupapi/nf-setupapi-setupdisetdevicepropertyw)检索或设置 DEVPKEY_Device_Exclusive 的值。
 
 Windows Server 2003、Windows XP 和 Windows 2000 支持此属性，但不支持 DEVPKEY_Device_Exclusive 属性键。 相反，你可以使用相应的 SPDRP_EXCLUSIVE 标识符来访问这些早期版本的 Windows 上的属性值。 有关如何在这些早期版本的 Windows 上访问此属性值的信息，请参阅 [SPDRP_Xxx 属性访问设备实例](./accessing-device-instance-spdrp-xxx-properties.md)。
 
@@ -80,16 +80,16 @@ Windows Server 2003、Windows XP 和 Windows 2000 支持此属性，但不支持
 **版本**： windows Vista 和更高版本的 windows **标题**： Devpkey (包含 Devpkey) 
 
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**INF AddReg 指令**](./inf-addreg-directive.md)
 
 [**INF *DDInstall*。HW 部分**](./inf-ddinstall-hw-section.md)
 
-[**SetupDiGetDeviceProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)
+[**SetupDiGetDeviceProperty**](/windows/win32/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)
 
-[**SetupDiSetDeviceProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdisetdevicepropertyw)
+[**SetupDiSetDeviceProperty**](/windows/win32/api/setupapi/nf-setupapi-setupdisetdevicepropertyw)
 
  
 

@@ -12,12 +12,12 @@ keywords:
 - 回调函数 WDK 视频端口扩展
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3cb50c7a62265fa184244dd8744429b61537429a
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 9161500ba3a12dc082c3bea338156f58d74ffd2e
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90106262"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90717448"
 ---
 # <a name="vpe-callback-functions"></a>VPE 回调函数
 
@@ -40,63 +40,63 @@ ms.locfileid: "90106262"
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="/windows/desktop/api/ddrawint/nc-ddrawint-pdd_vportcb_cancreatevideoport" data-raw-source="[&lt;em&gt;DdVideoPortCanCreate&lt;/em&gt;](/windows/desktop/api/ddrawint/nc-ddrawint-pdd_vportcb_cancreatevideoport)"><em>DdVideoPortCanCreate</em></a></p></td>
+<td align="left"><p><a href="/windows/win32/api/ddrawint/nc-ddrawint-pdd_vportcb_cancreatevideoport" data-raw-source="[&lt;em&gt;DdVideoPortCanCreate&lt;/em&gt;](/windows/win32/api/ddrawint/nc-ddrawint-pdd_vportcb_cancreatevideoport)"><em>DdVideoPortCanCreate</em></a></p></td>
 <td align="left"><p>确定驱动程序是否可以支持指定说明的 DirectDraw VPE 对象。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="/windows/desktop/api/ddrawint/nc-ddrawint-pdd_vportcb_colorcontrol" data-raw-source="[&lt;em&gt;DdVideoPortColorControl&lt;/em&gt;](/windows/desktop/api/ddrawint/nc-ddrawint-pdd_vportcb_colorcontrol)"><em>DdVideoPortColorControl</em></a></p></td>
+<td align="left"><p><a href="/windows/win32/api/ddrawint/nc-ddrawint-pdd_vportcb_colorcontrol" data-raw-source="[&lt;em&gt;DdVideoPortColorControl&lt;/em&gt;](/windows/win32/api/ddrawint/nc-ddrawint-pdd_vportcb_colorcontrol)"><em>DdVideoPortColorControl</em></a></p></td>
 <td align="left"><p>获取或设置 VPE 对象的颜色控件。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="/windows/desktop/api/ddrawint/nc-ddrawint-pdd_vportcb_createvideoport" data-raw-source="[&lt;em&gt;DdVideoPortCreate&lt;/em&gt;](/windows/desktop/api/ddrawint/nc-ddrawint-pdd_vportcb_createvideoport)"><em>DdVideoPortCreate</em></a></p></td>
+<td align="left"><p><a href="/windows/win32/api/ddrawint/nc-ddrawint-pdd_vportcb_createvideoport" data-raw-source="[&lt;em&gt;DdVideoPortCreate&lt;/em&gt;](/windows/win32/api/ddrawint/nc-ddrawint-pdd_vportcb_createvideoport)"><em>DdVideoPortCreate</em></a></p></td>
 <td align="left"><p>通知驱动程序 DirectDraw 创建了 VPE 对象。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="/windows/desktop/api/ddrawint/nc-ddrawint-pdd_vportcb_destroyvport" data-raw-source="[&lt;em&gt;DdVideoPortDestroy&lt;/em&gt;](/windows/desktop/api/ddrawint/nc-ddrawint-pdd_vportcb_destroyvport)"><em>DdVideoPortDestroy</em></a></p></td>
+<td align="left"><p><a href="/windows/win32/api/ddrawint/nc-ddrawint-pdd_vportcb_destroyvport" data-raw-source="[&lt;em&gt;DdVideoPortDestroy&lt;/em&gt;](/windows/win32/api/ddrawint/nc-ddrawint-pdd_vportcb_destroyvport)"><em>DdVideoPortDestroy</em></a></p></td>
 <td align="left"><p>通知驱动程序 DirectDraw 销毁了指定的 VPE 对象。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="/windows/desktop/api/ddrawint/nc-ddrawint-pdd_vportcb_flip" data-raw-source="[&lt;em&gt;DdVideoPortFlip&lt;/em&gt;](/windows/desktop/api/ddrawint/nc-ddrawint-pdd_vportcb_flip)"><em>DdVideoPortFlip</em></a></p></td>
+<td align="left"><p><a href="/windows/win32/api/ddrawint/nc-ddrawint-pdd_vportcb_flip" data-raw-source="[&lt;em&gt;DdVideoPortFlip&lt;/em&gt;](/windows/win32/api/ddrawint/nc-ddrawint-pdd_vportcb_flip)"><em>DdVideoPortFlip</em></a></p></td>
 <td align="left"><p>执行物理翻转，导致 VPE 对象开始向新表面写入数据。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="/windows/desktop/api/ddrawint/nc-ddrawint-pdd_vportcb_getbandwidth" data-raw-source="[&lt;em&gt;DdVideoPortGetBandwidth&lt;/em&gt;](/windows/desktop/api/ddrawint/nc-ddrawint-pdd_vportcb_getbandwidth)"><em>DdVideoPortGetBandwidth</em></a></p></td>
+<td align="left"><p><a href="/windows/win32/api/ddrawint/nc-ddrawint-pdd_vportcb_getbandwidth" data-raw-source="[&lt;em&gt;DdVideoPortGetBandwidth&lt;/em&gt;](/windows/win32/api/ddrawint/nc-ddrawint-pdd_vportcb_getbandwidth)"><em>DdVideoPortGetBandwidth</em></a></p></td>
 <td align="left"><p>基于指定的 VPE 对象输出格式报告设备帧缓冲内存的带宽限制。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="/windows/desktop/api/ddrawint/nc-ddrawint-pdd_vportcb_getvportconnect" data-raw-source="[&lt;em&gt;DdVideoPortGetConnectInfo&lt;/em&gt;](/windows/desktop/api/ddrawint/nc-ddrawint-pdd_vportcb_getvportconnect)"><em>DdVideoPortGetConnectInfo</em></a></p></td>
+<td align="left"><p><a href="/windows/win32/api/ddrawint/nc-ddrawint-pdd_vportcb_getvportconnect" data-raw-source="[&lt;em&gt;DdVideoPortGetConnectInfo&lt;/em&gt;](/windows/win32/api/ddrawint/nc-ddrawint-pdd_vportcb_getvportconnect)"><em>DdVideoPortGetConnectInfo</em></a></p></td>
 <td align="left"><p>返回由指定的 VPE 对象支持的连接。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="/windows/desktop/api/ddrawint/nc-ddrawint-pdd_vportcb_getfield" data-raw-source="[&lt;em&gt;DdVideoPortGetField&lt;/em&gt;](/windows/desktop/api/ddrawint/nc-ddrawint-pdd_vportcb_getfield)"><em>DdVideoPortGetField</em></a></p></td>
+<td align="left"><p><a href="/windows/win32/api/ddrawint/nc-ddrawint-pdd_vportcb_getfield" data-raw-source="[&lt;em&gt;DdVideoPortGetField&lt;/em&gt;](/windows/win32/api/ddrawint/nc-ddrawint-pdd_vportcb_getfield)"><em>DdVideoPortGetField</em></a></p></td>
 <td align="left"><p>确定交错信号的当前字段是否为偶数或奇数。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="/windows/desktop/api/ddrawint/nc-ddrawint-pdd_vportcb_getflipstatus" data-raw-source="[&lt;em&gt;DdVideoPortGetFlipStatus&lt;/em&gt;](/windows/desktop/api/ddrawint/nc-ddrawint-pdd_vportcb_getflipstatus)"><em>DdVideoPortGetFlipStatus</em></a></p></td>
+<td align="left"><p><a href="/windows/win32/api/ddrawint/nc-ddrawint-pdd_vportcb_getflipstatus" data-raw-source="[&lt;em&gt;DdVideoPortGetFlipStatus&lt;/em&gt;](/windows/win32/api/ddrawint/nc-ddrawint-pdd_vportcb_getflipstatus)"><em>DdVideoPortGetFlipStatus</em></a></p></td>
 <td align="left"><p>确定是否已在表面上出现最近请求的翻转。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="/windows/desktop/api/ddrawint/nc-ddrawint-pdd_vportcb_getinputformats" data-raw-source="[&lt;em&gt;DdVideoPortGetInputFormats&lt;/em&gt;](/windows/desktop/api/ddrawint/nc-ddrawint-pdd_vportcb_getinputformats)"><em>DdVideoPortGetInputFormats</em></a></p></td>
+<td align="left"><p><a href="/windows/win32/api/ddrawint/nc-ddrawint-pdd_vportcb_getinputformats" data-raw-source="[&lt;em&gt;DdVideoPortGetInputFormats&lt;/em&gt;](/windows/win32/api/ddrawint/nc-ddrawint-pdd_vportcb_getinputformats)"><em>DdVideoPortGetInputFormats</em></a></p></td>
 <td align="left"><p>确定 DirectDraw VPE 对象可以接受的输入格式。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="/windows/desktop/api/ddrawint/nc-ddrawint-pdd_vportcb_getline" data-raw-source="[&lt;em&gt;DdVideoPortGetLine&lt;/em&gt;](/windows/desktop/api/ddrawint/nc-ddrawint-pdd_vportcb_getline)"><em>DdVideoPortGetLine</em></a></p></td>
+<td align="left"><p><a href="/windows/win32/api/ddrawint/nc-ddrawint-pdd_vportcb_getline" data-raw-source="[&lt;em&gt;DdVideoPortGetLine&lt;/em&gt;](/windows/win32/api/ddrawint/nc-ddrawint-pdd_vportcb_getline)"><em>DdVideoPortGetLine</em></a></p></td>
 <td align="left"><p>返回硬件视频端口的当前行号。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="/windows/desktop/api/ddrawint/nc-ddrawint-pdd_vportcb_getoutputformats" data-raw-source="[&lt;em&gt;DdVideoPortGetOutputFormats&lt;/em&gt;](/windows/desktop/api/ddrawint/nc-ddrawint-pdd_vportcb_getoutputformats)"><em>DdVideoPortGetOutputFormats</em></a></p></td>
+<td align="left"><p><a href="/windows/win32/api/ddrawint/nc-ddrawint-pdd_vportcb_getoutputformats" data-raw-source="[&lt;em&gt;DdVideoPortGetOutputFormats&lt;/em&gt;](/windows/win32/api/ddrawint/nc-ddrawint-pdd_vportcb_getoutputformats)"><em>DdVideoPortGetOutputFormats</em></a></p></td>
 <td align="left"><p>确定 VPE 对象支持的输出格式。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="/windows/desktop/api/ddrawint/nc-ddrawint-pdd_vportcb_getsignalstatus" data-raw-source="[&lt;em&gt;DdVideoPortGetSignalStatus&lt;/em&gt;](/windows/desktop/api/ddrawint/nc-ddrawint-pdd_vportcb_getsignalstatus)"><em>DdVideoPortGetSignalStatus</em></a></p></td>
+<td align="left"><p><a href="/windows/win32/api/ddrawint/nc-ddrawint-pdd_vportcb_getsignalstatus" data-raw-source="[&lt;em&gt;DdVideoPortGetSignalStatus&lt;/em&gt;](/windows/win32/api/ddrawint/nc-ddrawint-pdd_vportcb_getsignalstatus)"><em>DdVideoPortGetSignalStatus</em></a></p></td>
 <td align="left"><p>检索当前显示到硬件视频端口的视频信号的状态。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="/windows/desktop/api/ddrawint/nc-ddrawint-pdd_vportcb_update" data-raw-source="[&lt;em&gt;DdVideoPortUpdate&lt;/em&gt;](/windows/desktop/api/ddrawint/nc-ddrawint-pdd_vportcb_update)"><em>DdVideoPortUpdate</em></a></p></td>
+<td align="left"><p><a href="/windows/win32/api/ddrawint/nc-ddrawint-pdd_vportcb_update" data-raw-source="[&lt;em&gt;DdVideoPortUpdate&lt;/em&gt;](/windows/win32/api/ddrawint/nc-ddrawint-pdd_vportcb_update)"><em>DdVideoPortUpdate</em></a></p></td>
 <td align="left"><p>启动和停止 VPE 对象并修改 VPE 对象数据流。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="/windows/desktop/api/ddrawint/nc-ddrawint-pdd_vportcb_waitforsync" data-raw-source="[&lt;em&gt;DdVideoPortWaitForSync&lt;/em&gt;](/windows/desktop/api/ddrawint/nc-ddrawint-pdd_vportcb_waitforsync)"><em>DdVideoPortWaitForSync</em></a></p></td>
+<td align="left"><p><a href="/windows/win32/api/ddrawint/nc-ddrawint-pdd_vportcb_waitforsync" data-raw-source="[&lt;em&gt;DdVideoPortWaitForSync&lt;/em&gt;](/windows/win32/api/ddrawint/nc-ddrawint-pdd_vportcb_waitforsync)"><em>DdVideoPortWaitForSync</em></a></p></td>
 <td align="left"><p>等待，直到下一次垂直同步发生。</p></td>
 </tr>
 </tbody>

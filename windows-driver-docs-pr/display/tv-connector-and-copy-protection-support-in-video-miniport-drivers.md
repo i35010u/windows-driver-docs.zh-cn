@@ -13,16 +13,16 @@ keywords:
 ms.date: 12/06/2018
 ms.localizationpriority: medium
 ms.custom: seodec18
-ms.openlocfilehash: 53aae2f7925ce38719cfef37a14944cf3b07aff2
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 93ae65e57a8884bf2d19eaf213562500a774009a
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89067168"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90717578"
 ---
 # <a name="tv-connector-and-copy-protection-support-in-video-miniport-drivers"></a>视频微型端口驱动程序中的电视连接器和复制保护支持
 
-具有电视连接器的适配器的视频微型端口驱动程序必须使用[**IOCTL \_ 视频 \_ 句柄 \_ VIDEOPARAMETERS**](/windows-hardware/drivers/ddi/ntddvdeo/ni-ntddvdeo-ioctl_video_handle_videoparameters) i/o 控制代码处理[**VRPs**](/windows-hardware/drivers/ddi/video/ns-video-_video_request_packet) 。 此 IOCTL 将发送到微型端口驱动程序，以查询 TV 连接器的功能和当前设置，并复制保护硬件或设置电视连接器和复制保护硬件的功能。 微型端口驱动程序通过检查[**VIDEOPARAMETERS**](/windows/desktop/api/tvout/ns-tvout-_videoparameters)结构的**dwCommand**字段来确定要执行的操作，该字段传递在 VRP 的**InputBuffer**中。 如果微型端口驱动程序未处理此 VRP，则系统将不允许) 受保护的 Dvd 上播放 (Rovi。
+具有电视连接器的适配器的视频微型端口驱动程序必须使用[**IOCTL \_ 视频 \_ 句柄 \_ VIDEOPARAMETERS**](/windows-hardware/drivers/ddi/ntddvdeo/ni-ntddvdeo-ioctl_video_handle_videoparameters) i/o 控制代码处理[**VRPs**](/windows-hardware/drivers/ddi/video/ns-video-_video_request_packet) 。 此 IOCTL 将发送到微型端口驱动程序，以查询 TV 连接器的功能和当前设置，并复制保护硬件或设置电视连接器和复制保护硬件的功能。 微型端口驱动程序通过检查[**VIDEOPARAMETERS**](/windows/win32/api/tvout/ns-tvout-_videoparameters)结构的**dwCommand**字段来确定要执行的操作，该字段传递在 VRP 的**InputBuffer**中。 如果微型端口驱动程序未处理此 VRP，则系统将不允许) 受保护的 Dvd 上播放 (Rovi。
 
 如果将**dwCommand**设置为 VP \_ 命令 \_ GET，并且设备*不*支持电视输出，则微型端口驱动程序 \_ 在 VRP 的**STATUSBLOCK**的**Status**成员中不应返回任何错误。 它还应将 VRP 的**StatusBlock**的**信息**成员设置为 VIDEOPARAMETERS 结构的大小（以字节为单位）。 它应将 **dwFlags** 设置为零，将 **dwTVStandard** 设置为 "副总裁" \_ 电视 \_ 标准 \_ win \_ VGA，并将 **dwAvailableTVStandard** 设置为 "副总裁 \_ 电视 \_ standard \_ win vga" \_ 。
 

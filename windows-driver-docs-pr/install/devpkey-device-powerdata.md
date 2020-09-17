@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 9e4247b29ffde242ccbed38065b608ddb4433587
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: bc2d91f4381949e3259e6bba15766f4e077f3e61
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89096785"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90717422"
 ---
 # <a name="devpkey_device_powerdata"></a>DEVPKEY_Device_PowerData
 
@@ -68,7 +68,7 @@ DEVPKEY_Device_PowerData 设备属性表示有关设备实例的电源信息。
 
 Windows 设置 DEVPKEY_Device_PowerData 的值。 DEVPKEY_Device_PowerData 的值包含 [**CM_POWER_DATA**](/windows-hardware/drivers/ddi/wdm/ns-wdm-cm_power_data_s) 的结构。
 
-可以调用 [**SetupDiGetDeviceProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw) 来检索 DEVPKEY_Device_PowerData 的值。
+可以调用 [**SetupDiGetDeviceProperty**](/windows/win32/api/setupapi/nf-setupapi-setupdigetdevicepropertyw) 来检索 DEVPKEY_Device_PowerData 的值。
 
 Windows Server 2003、Windows XP 和 Windows 2000 支持此属性，但不支持 DEVPKEY_Device_PowerData 属性键。 相反，你可以使用相应的 SPDRP_DEVICE_POWER_DATA 标识符来访问这些早期版本的 Windows 上的属性值。 有关如何在这些早期版本的 Windows 上访问此属性值的信息，请参阅 [SPDRP_Xxx 属性访问设备实例](./accessing-device-instance-spdrp-xxx-properties.md)。
 
@@ -78,12 +78,12 @@ Windows Server 2003、Windows XP 和 Windows 2000 支持此属性，但不支持
 **版本**： windows Vista 和更高版本的 windows **标题**： Devpkey (包含 Devpkey) 
 
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**CM_POWER_DATA**](/windows-hardware/drivers/ddi/wdm/ns-wdm-cm_power_data_s)
 
-[**SetupDiGetDeviceProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)
+[**SetupDiGetDeviceProperty**](/windows/win32/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)
 
  
 

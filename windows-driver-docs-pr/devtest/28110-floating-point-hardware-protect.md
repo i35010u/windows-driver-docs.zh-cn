@@ -9,12 +9,12 @@ ms.date: 04/20/2017
 ms.localizationpriority: medium
 f1_keywords:
 - C28110
-ms.openlocfilehash: 51ec66d9aa3047f4c5d0ab2a522f5b91cd653b43
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 389d59e7399952cb31797b7959fefe8ce1356a85
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89384993"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90717266"
 ---
 # <a name="c28110"></a>C28110
 
@@ -36,11 +36,11 @@ ms.locfileid: "89384993"
 
  
 
-此警告仅适用于内核模式。 当代码不是由 [**KeSaveFloatingPointState**](/windows-hardware/drivers/ddi/wdm/nf-wdm-kesavefloatingpointstate) 和 [**KeRestoreFloatingPointState**](/windows-hardware/drivers/ddi/wdm/nf-wdm-kerestorefloatingpointstate)、 [**EngSaveFloatingPointState**](/windows/desktop/api/winddi/nf-winddi-engsavefloatingpointstate) 和 [**EngRestoreFloatingPointState**](/windows/desktop/api/winddi/nf-winddi-engrestorefloatingpointstate)保护时，驱动程序尝试使用 float 类型的变量或常量。
+此警告仅适用于内核模式。 当代码不是由 [**KeSaveFloatingPointState**](/windows-hardware/drivers/ddi/wdm/nf-wdm-kesavefloatingpointstate) 和 [**KeRestoreFloatingPointState**](/windows-hardware/drivers/ddi/wdm/nf-wdm-kerestorefloatingpointstate)、 [**EngSaveFloatingPointState**](/windows/win32/api/winddi/nf-winddi-engsavefloatingpointstate) 和 [**EngRestoreFloatingPointState**](/windows/win32/api/winddi/nf-winddi-engrestorefloatingpointstate)保护时，驱动程序尝试使用 float 类型的变量或常量。
 
 通常，驱动程序使用最新应用程序的浮点上下文运行，并且任何使用不受 [**KeSaveFloatingPointState**](/windows-hardware/drivers/ddi/wdm/nf-wdm-kesavefloatingpointstate) 和 [**KeRestoreFloatingPointState**](/windows-hardware/drivers/ddi/wdm/nf-wdm-kerestorefloatingpointstate) 保护的浮点的情况都可以更改其他进程的结果，并且通常会导致驱动程序中出现不正确或意外的结果。
 
-显示驱动程序应使用 [**EngSaveFloatingPointState**](/windows/desktop/api/winddi/nf-winddi-engsavefloatingpointstate) 和 [**EngRestoreFloatingPointState**](/windows/desktop/api/winddi/nf-winddi-engrestorefloatingpointstate)。
+显示驱动程序应使用 [**EngSaveFloatingPointState**](/windows/win32/api/winddi/nf-winddi-engsavefloatingpointstate) 和 [**EngRestoreFloatingPointState**](/windows/win32/api/winddi/nf-winddi-engrestorefloatingpointstate)。
 
 沿任何特定流路径检测到此错误的实例后，代码分析工具将取消后续的类似错误。 对于采用浮点类型参数或返回浮动类型的函数定义，代码分析工具不会报告此错误，因为调用方将报告使用。
 

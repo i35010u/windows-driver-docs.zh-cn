@@ -11,12 +11,12 @@ keywords:
 - 本地唯一标识符 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: da9b1b8f92d181b332de939e47b3d3f38da0a122
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: c630e7b667ee61bf3b550b71ad18e977850c50bb
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89215994"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90717002"
 ---
 # <a name="allocating-an-interface-index"></a>分配接口索引
 
@@ -24,7 +24,7 @@ ms.locfileid: "89215994"
 
 
 
-如果接口提供程序通过调用 [**NdisIfRegisterInterface**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisifregisterinterface) 函数成功注册接口，NDIS 将为该接口分配一个接口索引，并返回 *pIfIndex* 参数指定的位置处的索引值。 接口索引是在本地计算机上唯一的16位值。 在计算机重新启动后，如果接口提供程序注册了相同的 [**NET \_ LUID**](/windows/desktop/api/ifdef/ns-ifdef-net_luid_lh) 值，NDIS 不保证它将分配相同的接口索引。 接口索引值 0 (NET \_ IFINDEX \_ 未指定) 保留，并且 NDIS 不会将其分配给任何接口。
+如果接口提供程序通过调用 [**NdisIfRegisterInterface**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisifregisterinterface) 函数成功注册接口，NDIS 将为该接口分配一个接口索引，并返回 *pIfIndex* 参数指定的位置处的索引值。 接口索引是在本地计算机上唯一的16位值。 在计算机重新启动后，如果接口提供程序注册了相同的 [**NET \_ LUID**](/windows/win32/api/ifdef/ns-ifdef-net_luid_lh) 值，NDIS 不保证它将分配相同的接口索引。 接口索引值 0 (NET \_ IFINDEX \_ 未指定) 保留，并且 NDIS 不会将其分配给任何接口。
 
  
 

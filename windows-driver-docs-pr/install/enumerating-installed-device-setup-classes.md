@@ -9,12 +9,12 @@ keywords:
 - 设备安装程序类 WDK 设备安装，枚举
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b1cd494d3401a863912420aff113aca049bf0606
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 0687f39fc22d19881ecb2c654cf91a9c7600aef0
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89095375"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90717400"
 ---
 # <a name="enumerating-installed-device-setup-classes"></a>枚举已安装的设备安装程序类
 
@@ -23,13 +23,13 @@ ms.locfileid: "89095375"
 
 若要安全发现已安装的设备安装程序类，并查询和修改安装程序类的属性，请执行以下步骤：
 
-1.  使用 [**SetupDiBuildClassInfoList**](/windows/desktop/api/setupapi/nf-setupapi-setupdibuildclassinfolist) 或 [**SetupDiBuildClassInfoListEx**](/windows/desktop/api/setupapi/nf-setupapi-setupdibuildclassinfolistexa) 检索当前安装在系统上的设备安装程序类集。
+1.  使用 [**SetupDiBuildClassInfoList**](/windows/win32/api/setupapi/nf-setupapi-setupdibuildclassinfolist) 或 [**SetupDiBuildClassInfoListEx**](/windows/win32/api/setupapi/nf-setupapi-setupdibuildclassinfolistexa) 检索当前安装在系统上的设备安装程序类集。
 
-2.  使用 [**SetupDiGetClassDescription**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetclassdescriptiona) 或 [**SetupDiGetClassDescriptionEx**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetclassdescriptionexa) 检索已安装的安装程序类的说明。
+2.  使用 [**SetupDiGetClassDescription**](/windows/win32/api/setupapi/nf-setupapi-setupdigetclassdescriptiona) 或 [**SetupDiGetClassDescriptionEx**](/windows/win32/api/setupapi/nf-setupapi-setupdigetclassdescriptionexa) 检索已安装的安装程序类的说明。
 
-3.  使用 [**SetupDiGetClassRegistryProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetclassregistrypropertya) 查询安装程序类属性和 [**SetupDiSetDeviceRegistryProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdisetdeviceregistrypropertya) ，以设置安装程序类属性。
+3.  使用 [**SetupDiGetClassRegistryProperty**](/windows/win32/api/setupapi/nf-setupapi-setupdigetclassregistrypropertya) 查询安装程序类属性和 [**SetupDiSetDeviceRegistryProperty**](/windows/win32/api/setupapi/nf-setupapi-setupdisetdeviceregistrypropertya) ，以设置安装程序类属性。
 
-4.  使用 [**SetupDiOpenClassRegKey**](/windows/desktop/api/setupapi/nf-setupapi-setupdiopenclassregkey) 或 [**SetupDiOpenClassRegKeyEx**](/windows/desktop/api/setupapi/nf-setupapi-setupdiopenclassregkeyexa) 访问永久性注册表存储，以获取自定义的设备安装程序类设置。
+4.  使用 [**SetupDiOpenClassRegKey**](/windows/win32/api/setupapi/nf-setupapi-setupdiopenclassregkey) 或 [**SetupDiOpenClassRegKeyEx**](/windows/win32/api/setupapi/nf-setupapi-setupdiopenclassregkeyexa) 访问永久性注册表存储，以获取自定义的设备安装程序类设置。
 
  
 

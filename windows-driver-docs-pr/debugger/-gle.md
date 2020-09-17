@@ -14,12 +14,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: de649686abeac87b1b07655e2df11499a5a981e5
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 96999935de0da5711fb8a36c647070d015c3a254
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89209433"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90716854"
 ---
 # <a name="gle"></a>!gle
 
@@ -60,12 +60,12 @@ Ext.dll Ntsdexts.dll</td>
 
 ### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>附加信息
 
-有关 [**GetLastError**](/windows/desktop/api/errhandlingapi/nf-errhandlingapi-getlasterror) 例程的详细信息，请参阅 Micorosft Windows SDK 文档。
+有关 [**GetLastError**](/windows/win32/api/errhandlingapi/nf-errhandlingapi-getlasterror) 例程的详细信息，请参阅 Micorosft Windows SDK 文档。
 
 <a name="remarks"></a>备注
 -------
 
-**！ Gle** Extension 显示[**GetLastError**](/windows/desktop/api/errhandlingapi/nf-errhandlingapi-getlasterror)的值，并尝试对此值进行解码。
+**！ Gle** Extension 显示[**GetLastError**](/windows/win32/api/errhandlingapi/nf-errhandlingapi-getlasterror)的值，并尝试对此值进行解码。
 
 在内核模式下，仅当调试器可以读取线程环境块 (TEB) 时， **！ gle** 扩展才有效。
 

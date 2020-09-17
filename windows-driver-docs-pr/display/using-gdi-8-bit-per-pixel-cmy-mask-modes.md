@@ -10,12 +10,12 @@ keywords:
 - 8位每像素 CMY 掩码模式 WDK GDI
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3fd48ca4a1c73e268eef95e7982368b4fe35226d
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 49e911deb1dce3bdaa0e84e252e34e8d0ccfbab0
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90106204"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90717562"
 ---
 # <a name="using-gdi-8-bit-per-pixel-cmy-mask-modes"></a>使用 GDI 每像素 8 位 CMY 掩码模式
 
@@ -23,19 +23,19 @@ ms.locfileid: "90106204"
 ## <span id="ddk_using_gdi_8_bit_per_pixel_cmy_mask_modes_gg"></span><span id="DDK_USING_GDI_8_BIT_PER_PIXEL_CMY_MASK_MODES_GG"></span>
 
 
-在 Microsoft Windows 2000 中， [**HT \_ Get8BPPMaskPalette**](/windows/desktop/api/winddi/nf-winddi-ht_get8bppmaskpalette) 函数返回每像素8位单色或调色板。 在 Windows XP 和更高版本中，此函数已被修改，因此当 *Use8BPPMaskPal* 参数设置为 **TRUE**时，它还会返回已反转索引的 CMY 调色板。 返回的调色板的类型取决于*pPaletteEntry* \[ \] 调用**HT \_ Get8BPPMaskPalette**时存储在 pPaletteEntry 0 中的值。 如果*pPaletteEntry* \[ 0 \] 设置为 "RGB0"，则返回一个反转索引调色板。 如果*pPaletteEntry* \[ 0 \] 设置为0，则返回正常的 CMY 调色板。
+在 Microsoft Windows 2000 中， [**HT \_ Get8BPPMaskPalette**](/windows/win32/api/winddi/nf-winddi-ht_get8bppmaskpalette) 函数返回每像素8位单色或调色板。 在 Windows XP 和更高版本中，此函数已被修改，因此当 *Use8BPPMaskPal* 参数设置为 **TRUE**时，它还会返回已反转索引的 CMY 调色板。 返回的调色板的类型取决于*pPaletteEntry* \[ \] 调用**HT \_ Get8BPPMaskPalette**时存储在 pPaletteEntry 0 中的值。 如果*pPaletteEntry* \[ 0 \] 设置为 "RGB0"，则返回一个反转索引调色板。 如果*pPaletteEntry* \[ 0 \] 设置为0，则返回正常的 CMY 调色板。
 
 此更改的 ** \_ Get8BPPMaskPalette** 是因为当 Windows GDI 使用的 ROPs （基于调色板中的索引，而不是调色板颜色）时，它会假定调色板的索引0始终为黑色，最后一个索引始终为白色。 GDI 不检查调色板项。 此 **超线程 \_ Get8BPPMaskPalette** 中的这一更改可确保正确的 ROP 输出，而不是相反的结果。
 
 若要更正 GDI ROP 行为，Windows XP 和更高版本中的 GDI 支持特殊的 CMY 调色板组合格式，在该格式中，CMY 掩码调色板项从索引255开始 (白色) 并向下移动到索引 0 (黑色) ，而不是从索引0开始，而不是从索引 255 0 开始 (黑色) 。 CMY 反转模式还会将所有 CMY 掩码颜色项移到完整256项调色板的中间，并且调色板的开头和结尾用相等的黑色和白色项进行填充。
 
-**注意**   在下面的讨论中，术语 " *CMY" 模式*是指在以前的[**HT \_ Get8BPPMaskPalette**](/windows/desktop/api/winddi/nf-winddi-ht_get8bppmaskpalette)实现中支持的模式。 术语*CMY \_ 反转模式*是指仅在 Windows XP 和更高版本的 GDI 上支持的模式，在此模式下，当*pPaletteEntry* \[ 0 \] 设置为 "RGB0" 时，此函数将反转位掩码索引。
+**注意**   在下面的讨论中，术语 " *CMY" 模式*是指在以前的[**HT \_ Get8BPPMaskPalette**](/windows/win32/api/winddi/nf-winddi-ht_get8bppmaskpalette)实现中支持的模式。 术语*CMY \_ 反转模式*是指仅在 Windows XP 和更高版本的 GDI 上支持的模式，在此模式下，当*pPaletteEntry* \[ 0 \] 设置为 "RGB0" 时，此函数将反转位掩码索引。
 
  
 
 所有 Windows XP 和更高版本的驱动程序都需要以下步骤，这些驱动程序使用 Windows GDI 半色调8位每像素 CMY 掩码模式。 如果要开发适用于 Windows 2000 的驱动程序，应将驱动程序的使用限制为每像素8位单色调色板。
 
-1.  将[**GDIINFO**](/windows/desktop/api/winddi/ns-winddi-_gdiinfo)结构的**flHTFlags**成员设置为超线程 \_ 标志 \_ 反转 \_ 8BPP \_ 位掩码 \_ IDX，使 GDI 将以 CMY 反转模式之一呈现图像 \_ 。
+1.  将[**GDIINFO**](/windows/win32/api/winddi/ns-winddi-_gdiinfo)结构的**flHTFlags**成员设置为超线程 \_ 标志 \_ 反转 \_ 8BPP \_ 位掩码 \_ IDX，使 GDI 将以 CMY 反转模式之一呈现图像 \_ 。
 
 2.  *pPaletteEntry* \[ \] 调用**HT \_ Get8BPPMaskPalette**之前，请将 pPaletteEntry 0 设置为以下内容：
 
@@ -54,7 +54,7 @@ ms.locfileid: "90106204"
 
     此处的 *pPaletteEntry* 是指向在对 **HT \_ Get8BPPMaskPalette** 函数的调用中传递的 PALETTEENTRY 的指针。 此宏完成执行时， *pPaletteEntry* \[ 0 \] 将包含字符串 "RGB0"。
 
-3.  [**使用 Get8BPPMaskPalette \_ **](/windows/desktop/api/winddi/nf-winddi-ht_get8bppmaskpalette)在*winddi*中定义的** \_ \_ BITMASKPALRGB**宏来检查从调用中返回的*pPaletteEntry*参数。 下面的示例演示如何使用此宏。
+3.  [**使用 Get8BPPMaskPalette \_ **](/windows/win32/api/winddi/nf-winddi-ht_get8bppmaskpalette)在*winddi*中定义的** \_ \_ BITMASKPALRGB**宏来检查从调用中返回的*pPaletteEntry*参数。 下面的示例演示如何使用此宏。
 
     ```cpp
     InvCMYSupported = HT_IS_BITMASKPALRGB(pPaletteEntry)
@@ -64,7 +64,7 @@ ms.locfileid: "90106204"
 
     如果此宏返回 **FALSE**，则当前版本 *的 GDI 不* 支持反转 CMY 8 位每像素位掩码模式。 在这种情况下，GDI 仅支持较早的 CMY noninverted 模式。
 
-对于支持每像素8位 CMY 反转模式的 GDI 版本 \_ ，传递到[**HT \_ Get8BPPMaskPalette**](/windows/desktop/api/winddi/nf-winddi-ht_get8bppmaskpalette)函数的*CMYMask*参数值的含义已更改。 下表总结了这些更改：
+对于支持每像素8位 CMY 反转模式的 GDI 版本 \_ ，传递到[**HT \_ Get8BPPMaskPalette**](/windows/win32/api/winddi/nf-winddi-ht_get8bppmaskpalette)函数的*CMYMask*参数值的含义已更改。 下表总结了这些更改：
 
 <table>
 <colgroup>
@@ -78,7 +78,7 @@ ms.locfileid: "90106204"
 <div>
  
 </div>
-“值”</th>
+值</th>
 <th align="left">CMY 模式索引
 <div>
  
@@ -186,7 +186,7 @@ ms.locfileid: "90106204"
 <div>
  
 </div>
-<strong>注意</strong>：对于这些模式，有效的组合不得具有任何青色、洋红色或黄色墨迹级别等于零。 对于这种组合， <a href="/windows/desktop/api/winddi/nf-winddi-ht_get8bppmaskpalette" data-raw-source="[&lt;strong&gt;HT_Get8BPPMaskPalette&lt;/strong&gt;](/windows/desktop/api/winddi/nf-winddi-ht_get8bppmaskpalette)"><strong>HT_Get8BPPMaskPalette</strong></a> 通过在其 <em>pPaletteEntry</em> 参数中返回一个零计数调色板来指示错误条件。</td>
+<strong>注意</strong>：对于这些模式，有效的组合不得具有任何青色、洋红色或黄色墨迹级别等于零。 对于这种组合， <a href="/windows/win32/api/winddi/nf-winddi-ht_get8bppmaskpalette" data-raw-source="[&lt;strong&gt;HT_Get8BPPMaskPalette&lt;/strong&gt;](/windows/win32/api/winddi/nf-winddi-ht_get8bppmaskpalette)"><strong>HT_Get8BPPMaskPalette</strong></a> 通过在其 <em>pPaletteEntry</em> 参数中返回一个零计数调色板来指示错误条件。</td>
 <td align="left"><p>0：黑色</p>
 <div>
  
@@ -220,7 +220,7 @@ ms.locfileid: "90106204"
 <div>
  
 </div>
-<strong>注意</strong>：对于这些模式，有效的组合不得具有任何青色、洋红色或黄色墨迹级别等于零。 对于这种组合， <a href="/windows/desktop/api/winddi/nf-winddi-ht_get8bppmaskpalette" data-raw-source="[&lt;strong&gt;HT_Get8BPPMaskPalette&lt;/strong&gt;](/windows/desktop/api/winddi/nf-winddi-ht_get8bppmaskpalette)"><strong>HT_Get8BPPMaskPalette</strong></a> 通过在其 <em>pPaletteEntry</em> 参数中返回一个零计数调色板来指示错误条件。</td>
+<strong>注意</strong>：对于这些模式，有效的组合不得具有任何青色、洋红色或黄色墨迹级别等于零。 对于这种组合， <a href="/windows/win32/api/winddi/nf-winddi-ht_get8bppmaskpalette" data-raw-source="[&lt;strong&gt;HT_Get8BPPMaskPalette&lt;/strong&gt;](/windows/win32/api/winddi/nf-winddi-ht_get8bppmaskpalette)"><strong>HT_Get8BPPMaskPalette</strong></a> 通过在其 <em>pPaletteEntry</em> 参数中返回一个零计数调色板来指示错误条件。</td>
 </tr>
 </tbody>
 </table>

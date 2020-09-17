@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 02764d58bf55b733eafaff6dd3d18648be093b15
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: ec2a7f852be8ae1601efda153e825ef07e31ec08
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89095939"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90716902"
 ---
 # <a name="devpkey_name-device-instance"></a>DEVPKEY_NAME（设备实例）
 
@@ -60,7 +60,7 @@ DEVPKEY_NAME 设备属性表示设备实例的名称。
 
 如果设置**DEVPKEY_Device_FriendlyName** ，则检索到的属性值与[**DEVPKEY_Device_FriendlyName**](devpkey-device-friendlyname.md)设备属性的值相同。 否则，DEVPKEY_NAME 的值与 [**DEVPKEY_Device_DeviceDesc**](devpkey-device-devicedesc.md) 设备属性的值相同。
 
-可以调用 [**SetupDiGetDeviceProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw) 来检索 DEVPKEY_NAME 属性的值。
+可以调用 [**SetupDiGetDeviceProperty**](/windows/win32/api/setupapi/nf-setupapi-setupdigetdevicepropertyw) 来检索 DEVPKEY_NAME 属性的值。
 
 Windows Server 2003、Windows XP 和 Windows 2000 不直接支持相应的名称属性。 但是，这些早期版本的 Windows 确实支持与 DEVPKEY_Device_FriendlyName 和 DEVPKEY_Device_DeviceDesc 对应的属性。
 
@@ -84,14 +84,14 @@ Windows Server 2003、Windows XP 和 Windows 2000 不直接支持相应的名称
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**DEVPKEY_Device_DeviceDesc**](devpkey-device-devicedesc.md)
 
 [**DEVPKEY_Device_FriendlyName**](devpkey-device-friendlyname.md)
 
-[**SetupDiGetDeviceProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)
+[**SetupDiGetDeviceProperty**](/windows/win32/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)
 
  
 

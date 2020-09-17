@@ -7,12 +7,12 @@ keywords:
 - 设备安装 WDK，64位系统
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 32ccb26b7e53e87a3f025a3afa3d1a796dad3060
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 9ca2dd74a0ca1cb7d902b40fa6afdcc84a701659
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89096513"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90717124"
 ---
 # <a name="device-installations-on-64-bit-systems"></a>64 位系统上的设备安装
 
@@ -28,7 +28,7 @@ ms.locfileid: "89096513"
 
 如果要 [编写设备安装应用程序](writing-a-device-installation-application.md)，则32位版本必须是默认版本。 也就是说，32位版本应由 Microsoft Windows SDK 文档) 中描述的自动运行 (调用，使其在用户插入分发磁盘时自动启动。
 
-32位版本的应用程序必须检查 [**UpdateDriverForPlugAndPlayDevices**](/windows/desktop/api/newdev/nf-newdev-updatedriverforplugandplaydevicesa)返回的值。 如果返回值为 ERROR_IN_WOW64，则32位应用程序正在64位平台上执行，无法更新收件箱驱动程序。 相反，它必须调用 Windows SDK 文档) 中所述的 [**CreateProcess**](/windows/desktop/api/processthreadsapi/nf-processthreadsapi-createprocessa) (以启动应用程序的64位版本。 然后，64位版本可以调用 **UpdateDriverForPlugAndPlayDevices**，并指定 *FullInfPath* 参数以标识所有文件的64位版本的位置。
+32位版本的应用程序必须检查 [**UpdateDriverForPlugAndPlayDevices**](/windows/win32/api/newdev/nf-newdev-updatedriverforplugandplaydevicesa)返回的值。 如果返回值为 ERROR_IN_WOW64，则32位应用程序正在64位平台上执行，无法更新收件箱驱动程序。 相反，它必须调用 Windows SDK 文档) 中所述的 [**CreateProcess**](/windows/win32/api/processthreadsapi/nf-processthreadsapi-createprocessa) (以启动应用程序的64位版本。 然后，64位版本可以调用 **UpdateDriverForPlugAndPlayDevices**，并指定 *FullInfPath* 参数以标识所有文件的64位版本的位置。
 
  
 

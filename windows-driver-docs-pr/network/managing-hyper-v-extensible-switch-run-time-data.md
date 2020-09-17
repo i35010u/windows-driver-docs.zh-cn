@@ -4,12 +4,12 @@ description: 管理 Hyper-V 可扩展交换机运行时数据
 ms.assetid: 08A353F5-D8CB-4645-9337-8169D302F6F2
 ms.date: 12/04/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 93b6c887fd5d5d2658dc2852dc178ca87b673757
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 1a21318930f94c08d1388c3c808b72bbc051ea1e
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89211035"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90716996"
 ---
 # <a name="managing-hyper-v-extensible-switch-run-time-data"></a>管理 Hyper-V 可扩展交换机运行时数据
 
@@ -44,7 +44,7 @@ ms.locfileid: "89211035"
 1.  该扩展将 **ExtensionId** 成员设置为唯一标识该驱动程序的 GUID 值。
 2.  该扩展将 **ExtensionFriendlyName** 成员设置为驱动程序的名称。
 
-    **注意**   NDIS \_ 交换机 \_ 扩展 \_ FRIENDLYNAME 数据类型由[**IF \_ 计数 \_ 字符串**](/windows/desktop/api/ifdef/ns-ifdef-_if_counted_string_lh)结构的类型定义。 此结构定义的字符串不必以 null 结尾。 但是，字符串的长度必须设置为此结构的 **长度** 成员。 如果字符串以 NULL 结尾，则 **长度** 成员不能包含终止 NULL 字符。     
+    **注意**   NDIS \_ 交换机 \_ 扩展 \_ FRIENDLYNAME 数据类型由[**IF \_ 计数 \_ 字符串**](/windows/win32/api/ifdef/ns-ifdef-_if_counted_string_lh)结构的类型定义。 此结构定义的字符串不必以 null 结尾。 但是，字符串的长度必须设置为此结构的 **长度** 成员。 如果字符串以 NULL 结尾，则 **长度** 成员不能包含终止 NULL 字符。     
 
 3.  如果功能类与保存的运行时数据相关联，则扩展将使用唯一标识类的 GUID 来设置 **FeatureClassId** 。
 

@@ -11,12 +11,12 @@ keywords:
 - 几何线条 WDK GDI
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a9b145914af445869013ba92f99bba715957cb06
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 43a1b78d90a8f6550b3b303177e360b4df665817
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89063092"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90717518"
 ---
 # <a name="geometric-wide-lines"></a>几何宽线条
 
@@ -26,7 +26,7 @@ ms.locfileid: "89063092"
 
 *几何*线条的形状由画笔的宽度、联接样式和端帽样式以及[**XFORMOBJ**](/previous-versions/windows/hardware/drivers/ff570618(v=vs.85))结构中的当前世界到设备转换决定。 可使用纯色画笔或 nonsolid 画笔绘制线条。
 
-更高级硬件的驱动程序可能支持 [**DrvStrokePath**](/windows/desktop/api/winddi/nf-winddi-drvstrokepath) 函数中的几何宽线。 GDI 确定驱动程序是否可以通过在对 \_ [**DrvEnablePDEV**](/windows/desktop/api/winddi/nf-winddi-drvenablepdev)的调用中返回的[**LNK-DEVINFO**](/windows/desktop/api/winddi/ns-winddi-tagdevinfo)结构中测试 GCAPS GEOMETRICWIDE 功能标志来绘制包含几何行的路径。 如果驱动程序没有功能，或者如果该函数因为路径或剪辑对于设备过于复杂而无法处理操作，则 GDI 会自动将调用转换为更简单的 [**DrvFillPath**](/windows/desktop/api/winddi/nf-winddi-drvfillpath) 函数。
+更高级硬件的驱动程序可能支持 [**DrvStrokePath**](/windows/win32/api/winddi/nf-winddi-drvstrokepath) 函数中的几何宽线。 GDI 确定驱动程序是否可以通过在对 \_ [**DrvEnablePDEV**](/windows/win32/api/winddi/nf-winddi-drvenablepdev)的调用中返回的[**LNK-DEVINFO**](/windows/win32/api/winddi/ns-winddi-tagdevinfo)结构中测试 GCAPS GEOMETRICWIDE 功能标志来绘制包含几何行的路径。 如果驱动程序没有功能，或者如果该函数因为路径或剪辑对于设备过于复杂而无法处理操作，则 GDI 会自动将调用转换为更简单的 [**DrvFillPath**](/windows/win32/api/winddi/nf-winddi-drvfillpath) 函数。
 
 几何宽线具有显示驱动程序图形函数的特定含义。 如果路径包含设备坐标，则使用当前转换的逆方法转换为世界坐标。 然后，具有指定宽度的几何构造获取更宽的路径版本，并考虑联接和端帽。 此路径再次转换为设备坐标并用指定的画笔填充。
 

@@ -12,12 +12,12 @@ keywords:
 - COM 端口号 WDK 串行设备
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d7ea72afb3363a1042cbf45d1ca9bfb86a248703
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 3cce24fb1d87e1786acb374b5ce8032cf2045241
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89187115"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90717466"
 ---
 # <a name="installing-an-advanced-properties-page-for-a-com-port"></a>安装 COM 端口的高级属性页
 
@@ -27,7 +27,7 @@ ms.locfileid: "89187115"
 
 1. 实现 Microsoft Win32 属性页提供程序。 有关安装属性表对话框的一般信息，请参阅 [提供设备属性页](../install/overview-of-device-property-pages.md)。
 
-    在属性页提供程序中，调用系统提供的 [**SerialDisplayAdvancedSettings**](/windows/desktop/api/msports/nf-msports-serialdisplayadvancedsettings) 例程，该例程显示系统提供的默认对话框。
+    在属性页提供程序中，调用系统提供的 [**SerialDisplayAdvancedSettings**](/windows/win32/api/msports/nf-msports-serialdisplayadvancedsettings) 例程，该例程显示系统提供的默认对话框。
 
 2. 通过在设备的[**DDInstall 部分**](../install/inf-ddinstall-section.md)引用的 "*外接程序*" 部分中设置**EnumPropPages32**值项，安装属性页提供程序。 请参阅[**INF AddReg 指令**](../install/inf-addreg-directive.md)中的**EnumPropPages32**值项的说明。
 

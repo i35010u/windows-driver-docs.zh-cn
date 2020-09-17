@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 817ade81ff5dd67a8966cd56705f8fde5030a07e
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 2d451ac1cd9981703d955e87c5f731e9be9a2a5f
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89095601"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90717090"
 ---
 # <a name="devpkey_device_configflags"></a>DEVPKEY_Device_ConfigFlags
 
@@ -70,7 +70,7 @@ DEVPKEY_Device_ConfigFlags 设备属性表示为设备实例设置的配置标�
 
 配置标志仅供内部使用。
 
-可以调用 [**SetupDiGetDeviceProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw) 来检索 DEVPKEY_Device_ConfigFlags 的值，并调用 [**SetupDiSetDeviceProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdisetdevicepropertyw) 来设置 DEVPKEY_Device_ConfigFlags。
+可以调用 [**SetupDiGetDeviceProperty**](/windows/win32/api/setupapi/nf-setupapi-setupdigetdevicepropertyw) 来检索 DEVPKEY_Device_ConfigFlags 的值，并调用 [**SetupDiSetDeviceProperty**](/windows/win32/api/setupapi/nf-setupapi-setupdisetdevicepropertyw) 来设置 DEVPKEY_Device_ConfigFlags。
 
 
 <a name="requirements"></a>要求
@@ -79,12 +79,12 @@ DEVPKEY_Device_ConfigFlags 设备属性表示为设备实例设置的配置标�
 **版本**： windows Vista 和更高版本的 windows **标题**： Devpkey (包含 Devpkey) 
 
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
-[**SetupDiGetDeviceProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)
+[**SetupDiGetDeviceProperty**](/windows/win32/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)
 
-[**SetupDiSetDeviceProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdisetdevicepropertyw)
+[**SetupDiSetDeviceProperty**](/windows/win32/api/setupapi/nf-setupapi-setupdisetdevicepropertyw)
 
  
 

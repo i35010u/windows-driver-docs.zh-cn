@@ -10,12 +10,12 @@ keywords:
 - 用户模式处理 WDK DirectDraw
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f763376cc06d573999bfb6fd0e0b57e3324027e2
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 25002b11e48f792326da72cd09a0af00ac17aefe
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89064214"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90716940"
 ---
 # <a name="getting-the-user-mode-handles"></a>获取用户模式句柄
 
@@ -29,11 +29,11 @@ ms.locfileid: "89064214"
 
 1. 在 DirectDraw 接口上调用**QueryInterface (** <em>LpDD</em>，&*IID \_ IDirectDrawKernel*，&<em>pNewInterface</em> **) ** 。
 
-2. 调用新接口上的 [**IDirectDrawKernel：： GetKernelHandle**](/windows/desktop/api/ddkernel/nf-ddkernel-idirectdrawkernel-getkernelhandle) 方法。
+2. 调用新接口上的 [**IDirectDrawKernel：： GetKernelHandle**](/windows/win32/api/ddkernel/nf-ddkernel-idirectdrawkernel-getkernelhandle) 方法。
 
-**IDirectDrawKernel：： GetKernelHandle**方法返回 DirectDraw 对象的内核模式句柄。 若要释放句柄，请使用 [**IDirectDrawKernel：： ReleaseKernelHandle**](/windows/desktop/api/ddkernel/nf-ddkernel-idirectdrawkernel-releasekernelhandle) 方法。
+**IDirectDrawKernel：： GetKernelHandle**方法返回 DirectDraw 对象的内核模式句柄。 若要释放句柄，请使用 [**IDirectDrawKernel：： ReleaseKernelHandle**](/windows/win32/api/ddkernel/nf-ddkernel-idirectdrawkernel-releasekernelhandle) 方法。
 
-用户模式组件还可以调用 [**IDirectDrawKernel：： GetCaps**](/windows/desktop/api/ddkernel/nf-ddkernel-idirectdrawkernel-getcaps) 方法来检索 DirectDraw 对象的内核模式功能。
+用户模式组件还可以调用 [**IDirectDrawKernel：： GetCaps**](/windows/win32/api/ddkernel/nf-ddkernel-idirectdrawkernel-getcaps) 方法来检索 DirectDraw 对象的内核模式功能。
 
 ### <a name="span-idcode_samplespanspan-idcode_samplespancode-sample"></a><span id="code_sample"></span><span id="CODE_SAMPLE"></span>代码示例
 
@@ -54,9 +54,9 @@ if( ( ddRVal == DD_OK ) && ( pDDK != NULL ) )
 
 1. 调用**QueryInterface (** <em>LpSurface</em>，&*IID \_ IDirectDrawSurfaceKernel*，&<em>pDDSK</em> **) **在 DirectDrawSurface 接口上。
 
-2. 调用新接口上的 [**IDirectDrawSurfaceKernel：： GetKernelHandle**](/windows/desktop/api/ddkernel/nf-ddkernel-idirectdrawsurfacekernel-getkernelhandle) 方法。
+2. 调用新接口上的 [**IDirectDrawSurfaceKernel：： GetKernelHandle**](/windows/win32/api/ddkernel/nf-ddkernel-idirectdrawsurfacekernel-getkernelhandle) 方法。
 
-**IDirectDrawSurfaceKernel：： GetKernelHandle**方法返回 DirectDrawSurface 驱动程序的内核模式句柄。 若要释放句柄，请使用 [**IDirectDrawSurfaceKernel：： ReleaseKernelHandle**](/windows/desktop/api/ddkernel/nf-ddkernel-idirectdrawsurfacekernel-releasekernelhandle) 方法。
+**IDirectDrawSurfaceKernel：： GetKernelHandle**方法返回 DirectDrawSurface 驱动程序的内核模式句柄。 若要释放句柄，请使用 [**IDirectDrawSurfaceKernel：： ReleaseKernelHandle**](/windows/win32/api/ddkernel/nf-ddkernel-idirectdrawsurfacekernel-releasekernelhandle) 方法。
 
 ### <a name="span-idcode_sample2spanspan-idcode_sample2spancode-sample"></a><span id="code_sample2"></span><span id="CODE_SAMPLE2"></span>代码示例
 

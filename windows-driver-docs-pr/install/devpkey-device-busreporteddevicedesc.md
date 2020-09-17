@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 9c78d46ec7e6705ff9ad75bc0b141b38a70a984d
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: b9d8c9990c1229721435cc4f02a3a11958777842
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89096465"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90717116"
 ---
 # <a name="devpkey_device_busreporteddevicedesc"></a>DEVPKEY_Device_BusReportedDeviceDesc
 
@@ -64,7 +64,7 @@ DEVPKEY_Device_BusReportedDeviceDesc 设备属性表示设备实例的总线驱�
 
 DEVPKEY_Device_BusReportedDeviceDesc 的值由 Windows 即插即用设置 (PnP) ，其中包含由设备实例的总线驱动程序报告的字符串值。 在用 [**IRP_MN_QUERY_DEVICE_TEXT**](../kernel/irp-mn-query-device-text.md)进行查询时，总线驱动程序会返回此值。
 
-可以调用 [**SetupDiGetDeviceProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw) 来检索 DEVPKEY_Device_BusReportedDeviceDesc 的值。
+可以调用 [**SetupDiGetDeviceProperty**](/windows/win32/api/setupapi/nf-setupapi-setupdigetdevicepropertyw) 来检索 DEVPKEY_Device_BusReportedDeviceDesc 的值。
 
 <a name="requirements"></a>要求
 ------------
@@ -86,10 +86,10 @@ DEVPKEY_Device_BusReportedDeviceDesc 的值由 Windows 即插即用设置 (PnP) 
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
-[**SetupDiGetDeviceProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)
+[**SetupDiGetDeviceProperty**](/windows/win32/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)
 
  
 

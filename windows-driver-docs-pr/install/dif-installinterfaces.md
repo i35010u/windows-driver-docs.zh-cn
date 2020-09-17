@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 30506ef6cc7ce3d543316c4fe14150e6ebd824e0
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: c28d078252234bd512eee52d662e77818334211e
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90107292"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90717538"
 ---
 # <a name="dif_installinterfaces"></a>DIF_INSTALLINTERFACES
 
@@ -78,7 +78,7 @@ DIF_INSTALLINTERFACES 请求允许安装程序参与设备的设备接口注册�
 
 共同安装程序可以返回 NO_ERROR、ERROR_DI_POSTPROCESSING_REQUIRED 或 Win32 错误代码。
 
-如果类安装程序成功处理此请求，并且 [**SetupDiCallClassInstaller**](/windows/desktop/api/setupapi/nf-setupapi-setupdicallclassinstaller) 随后应调用默认处理程序，则类安装程序将返回 ERROR_DI_DO_DEFAULT。
+如果类安装程序成功处理此请求，并且 [**SetupDiCallClassInstaller**](/windows/win32/api/setupapi/nf-setupapi-setupdicallclassinstaller) 随后应调用默认处理程序，则类安装程序将返回 ERROR_DI_DO_DEFAULT。
 
 如果类安装程序成功处理此请求（包括直接调用默认处理程序），则类安装程序应返回 NO_ERROR 并且 **SetupDiCallClassInstaller** 将不会再次调用默认处理程序。
 
@@ -92,7 +92,7 @@ DIF_INSTALLINTERFACES 请求允许安装程序参与设备的设备接口注册�
 
 ### <a name="default-dif-code-handler"></a>默认的 DIF 代码处理程序
 
-[**SetupDiInstallDeviceInterfaces**](/windows/desktop/api/setupapi/nf-setupapi-setupdiinstalldeviceinterfaces)
+[**SetupDiInstallDeviceInterfaces**](/windows/win32/api/setupapi/nf-setupapi-setupdiinstalldeviceinterfaces)
 
 ### <a name="installer-operation"></a>安装程序操作
 
@@ -131,7 +131,7 @@ DIF_INSTALLINTERFACES 请求允许安装程序参与设备的设备接口注册�
 ## <a name="see-also"></a>请参阅
 
 
-[**SetupDiInstallDeviceInterfaces**](/windows/desktop/api/setupapi/nf-setupapi-setupdiinstalldeviceinterfaces)
+[**SetupDiInstallDeviceInterfaces**](/windows/win32/api/setupapi/nf-setupapi-setupdiinstalldeviceinterfaces)
 
 [**SP_DEVINFO_DATA**](/windows/win32/api/setupapi/ns-setupapi-sp_devinfo_data)
 

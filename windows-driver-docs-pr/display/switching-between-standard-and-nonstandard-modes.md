@@ -7,12 +7,12 @@ keywords:
 - 切换标准和非标准模式 WDK DirectX 9。0
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 09a3c5591c29873068b3ccb9f021c39deea0c21d
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: d31d3d8f04fda7caa519722266b806dafbb3fa5c
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89066556"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90717450"
 ---
 # <a name="switching-between-standard-and-nonstandard-modes"></a>在标准与非标准模式之间切换
 
@@ -40,7 +40,7 @@ DirectX 9.0 驱动程序为标准模式创建标准主表面，为非标准模�
 
 4.  驱动程序将曲面翻转为非标准格式。
 
-    显示设备输出标准格式时，应用程序会在其中一个后台缓冲区中撰写非标准图像。 此映像准备好可供显示后，运行时在调用驱动程序的 [*DdFlip*](/windows/desktop/api/ddrawint/nc-ddrawint-pdd_surfcb_flip) 函数时指定了一个非标准曲面作为目标。 然后，该驱动程序将 reprograms 显示设备输出非标准格式。
+    显示设备输出标准格式时，应用程序会在其中一个后台缓冲区中撰写非标准图像。 此映像准备好可供显示后，运行时在调用驱动程序的 [*DdFlip*](/windows/win32/api/ddrawint/nc-ddrawint-pdd_surfcb_flip) 函数时指定了一个非标准曲面作为目标。 然后，该驱动程序将 reprograms 显示设备输出非标准格式。
 
 5.  将运行应用程序。
 

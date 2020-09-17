@@ -9,12 +9,12 @@ keywords:
 - 配置文件数据 WDK 网络
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 966de49684ad0034f419f11f56e126b14eae4dd2
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 61ab539ea331d26374a863bdc85d650cf20fbf23
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89214026"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90716726"
 ---
 # <a name="accessing-profile-and-context-data"></a>访问配置文件和上下文数据
 
@@ -41,9 +41,9 @@ ms.locfileid: "89214026"
 
 对于名为**IHV \_ 通知 \_ 数据**的属性，对配置文件数据的访问是通过[IPropertyBag COM 接口](https://go.microsoft.com/fwlink/p/?linkid=56610)的**读取**和**写入**方法完成的。
 
-本机 802.11 IHV UI 扩展 DLL 通过[**IObjectWithSite：： SetSite**](/windows/desktop/api/ocidl/nf-ocidl-iobjectwithsite-setsite)方法返回的*IUnknown*指针访问[IPropertyBag COM 接口](https://go.microsoft.com/fwlink/p/?linkid=56610)。 有关详细信息，请参阅 [**IObjectWithSite**](/windows/desktop/api/ocidl/nn-ocidl-iobjectwithsite)。
+本机 802.11 IHV UI 扩展 DLL 通过[**IObjectWithSite：： SetSite**](/windows/win32/api/ocidl/nf-ocidl-iobjectwithsite-setsite)方法返回的*IUnknown*指针访问[IPropertyBag COM 接口](https://go.microsoft.com/fwlink/p/?linkid=56610)。 有关详细信息，请参阅 [**IObjectWithSite**](/windows/win32/api/ocidl/nn-ocidl-iobjectwithsite)。
 
-作为 IPropertyBag COM 接口的替代方法，本机 802.11 IHV UI 扩展 DLL 可以通过[**GetProp**](/windows/desktop/api/winuser/nf-winuser-getpropa) Win32 函数访问**ihv \_ 配置 \_ 数据**和**ihv \_ 通知 \_ 数据**属性。 在这种情况下，DLL 必须使用父窗口的句柄，如以下示例中所示：
+作为 IPropertyBag COM 接口的替代方法，本机 802.11 IHV UI 扩展 DLL 可以通过[**GetProp**](/windows/win32/api/winuser/nf-winuser-getpropa) Win32 函数访问**ihv \_ 配置 \_ 数据**和**ihv \_ 通知 \_ 数据**属性。 在这种情况下，DLL 必须使用父窗口的句柄，如以下示例中所示：
 
 ```C++
 LPWSTR lpszBuffer = (LPWSTR) GetProp(GetParent(hwndDlg), L"IHV_PROFILE_DATA");

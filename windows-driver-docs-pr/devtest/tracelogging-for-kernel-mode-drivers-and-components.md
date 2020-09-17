@@ -4,12 +4,12 @@ description: 本主题介绍如何使用内核模式驱动程序和组件中的 
 ms.assetid: 6AF8DD2C-400F-4E9D-A6DF-40A847BCBD76
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 501d039633c0e95aacd5fc5a349b9b0d6fcec39a
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: ee733525b724aa6d5ad875ba9080de96f70f8f5b
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89384867"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90716837"
 ---
 # <a name="tracelogging-for-kernel-mode-drivers-and-components"></a>内核模式驱动程序和组件的 TraceLogging
 
@@ -36,7 +36,7 @@ ms.locfileid: "89384867"
 
 ## <a name="declare-your-driver-as-a-tracelogging-provider"></a>将驱动程序声明为 TraceLogging 提供程序
 
-1. 添加 [**TRACELOGGING \_ 声明 \_ 提供程序**](/windows/desktop/api/traceloggingprovider/nf-traceloggingprovider-tracelogging_declare_provider) 宏以声明提供程序句柄变量。 宏具有以下语法：
+1. 添加 [**TRACELOGGING \_ 声明 \_ 提供程序**](/windows/win32/api/traceloggingprovider/nf-traceloggingprovider-tracelogging_declare_provider) 宏以声明提供程序句柄变量。 宏具有以下语法：
 
     ```command
     TRACELOGGING_DECLARE_PROVIDER(hProviderVariableName)
@@ -48,12 +48,12 @@ ms.locfileid: "89384867"
     TRACELOGGING_DECLARE_PROVIDER(g_hProvider);
     ```
 
-    当你在代码中稍后调用[**TRACELOGGING \_ 定义 \_ 提供程序**](/windows/desktop/api/traceloggingprovider/nf-traceloggingprovider-tracelogging_define_provider)宏时，通过[**TRACELOGGING \_ 声明 \_ 提供**](/windows/desktop/api/traceloggingprovider/nf-traceloggingprovider-tracelogging_declare_provider)程序声明的变量成为提供程序的句柄。
+    当你在代码中稍后调用[**TRACELOGGING \_ 定义 \_ 提供程序**](/windows/win32/api/traceloggingprovider/nf-traceloggingprovider-tracelogging_define_provider)宏时，通过[**TRACELOGGING \_ 声明 \_ 提供**](/windows/win32/api/traceloggingprovider/nf-traceloggingprovider-tracelogging_declare_provider)程序声明的变量成为提供程序的句柄。
 
     > [!NOTE]
     > 你可能希望将此宏放在标头文件中，以便可以在全局范围内使用 TraceLogging 提供程序的句柄。
 
-2. 添加 [**TRACELOGGING \_ 定义 \_ 提供程序**](/windows/desktop/api/traceloggingprovider/nf-traceloggingprovider-tracelogging_define_provider) 宏，并指定跟踪提供程序的名称和跟踪提供程序句柄。 句柄是您在步骤1中声明的变量。 宏的语法为：
+2. 添加 [**TRACELOGGING \_ 定义 \_ 提供程序**](/windows/win32/api/traceloggingprovider/nf-traceloggingprovider-tracelogging_define_provider) 宏，并指定跟踪提供程序的名称和跟踪提供程序句柄。 句柄是您在步骤1中声明的变量。 宏的语法为：
 
     ```command
     TRACELOGGING_DEFINE_PROVIDER(hProviderVariableName, "ProviderName", providerId [,option])
@@ -66,7 +66,7 @@ ms.locfileid: "89384867"
         (0xb3864c38, 0x4273, 0x58c5, 0x54, 0x5b, 0x8b, 0x36, 0x08, 0x34, 0x34, 0x71));
     ```
 
-    [**TRACELOGGING \_ 定义 \_ 提供程序**](/windows/desktop/api/traceloggingprovider/nf-traceloggingprovider-tracelogging_define_provider)宏为提供程序分配存储，并定义一个对应的变量，该变量是提供程序的全局句柄。 提供程序名称必须是字符串文字， (不是变量) 并且不得包含任何 " \\ 0" 字符。 只要原始句柄处于范围内，句柄的句柄和副本就有效。
+    [**TRACELOGGING \_ 定义 \_ 提供程序**](/windows/win32/api/traceloggingprovider/nf-traceloggingprovider-tracelogging_define_provider)宏为提供程序分配存储，并定义一个对应的变量，该变量是提供程序的全局句柄。 提供程序名称必须是字符串文字， (不是变量) 并且不得包含任何 " \\ 0" 字符。 只要原始句柄处于范围内，句柄的句柄和副本就有效。
 
     首次用 **TRACELOGGING \_ 定义 \_ 提供程序** 宏创建句柄时，提供程序处于未注册状态。 在此状态下，提供程序将忽略任何跟踪写入调用，直到它被注册为止。
 
@@ -98,16 +98,16 @@ TraceLoggingUnregister(g_hProvider);
 
 TraceLogging 提供了用于记录事件的宏。
 
-基本宏为 [**TraceLoggingWrite**](/windows/desktop/api/traceloggingprovider/nf-traceloggingprovider-traceloggingwrite)。 此宏具有以下语法：
+基本宏为 [**TraceLoggingWrite**](/windows/win32/api/traceloggingprovider/nf-traceloggingprovider-traceloggingwrite)。 此宏具有以下语法：
 
 ```command
 TraceLoggingWrite(g_hProvider, "EventName", args...)
 ```
 
-其中 \_ ，g hProvider 是定义的提供程序的句柄，而 "事件名称" 是一个字符串文字， (用于标识特定事件的变量) 。 与 **printf** 或 **DbgPrint**类似， **TraceLoggingWrite** 宏支持 (多达 99) 的其他参数个数。 参数 (参数) 必须是 TraceLogging 包装宏，如 [**TraceLoggingLevel**](/windows/desktop/api/traceloggingprovider/nf-traceloggingprovider-tracelogginglevel)、 [TraceLoggingInt32](/windows/desktop/tracelogging/tracelogging-wrapper-macros)或 [TraceLoggingString](/windows/desktop/tracelogging/tracelogging-wrapper-macros)。 TraceLogging 包装宏在 TraceLoggingProvider 中定义。
+其中 \_ ，g hProvider 是定义的提供程序的句柄，而 "事件名称" 是一个字符串文字， (用于标识特定事件的变量) 。 与 **printf** 或 **DbgPrint**类似， **TraceLoggingWrite** 宏支持 (多达 99) 的其他参数个数。 参数 (参数) 必须是 TraceLogging 包装宏，如 [**TraceLoggingLevel**](/windows/win32/api/traceloggingprovider/nf-traceloggingprovider-tracelogginglevel)、 [TraceLoggingInt32](/windows/desktop/tracelogging/tracelogging-wrapper-macros)或 [TraceLoggingString](/windows/desktop/tracelogging/tracelogging-wrapper-macros)。 TraceLogging 包装宏在 TraceLoggingProvider 中定义。
 
 > [!NOTE]
-> 如果使用的是 c + +，则可以使用 [**TraceLoggingValue**](/windows/desktop/api/traceloggingprovider/nf-traceloggingprovider-traceloggingvalue) 包装宏为类型自动进行调整。 如果要在 C 中编写驱动程序，则必须使用特定于类型的字段宏 (例如， **TraceLoggingInt32** 或 **TraceLoggingUnicodeString**) 。
+> 如果使用的是 c + +，则可以使用 [**TraceLoggingValue**](/windows/win32/api/traceloggingprovider/nf-traceloggingprovider-traceloggingvalue) 包装宏为类型自动进行调整。 如果要在 C 中编写驱动程序，则必须使用特定于类型的字段宏 (例如， **TraceLoggingInt32** 或 **TraceLoggingUnicodeString**) 。
 
 下面的示例记录了提供程序 hProvider 的事件 \_ 。 事件名为 "MyDriverEntryEvent"。 该宏使用 TraceLoggingPointer 和 TraceLoggingUnicodeString 包装程序将指向驱动程序对象的指针和指向跟踪日志的注册表路径。 TraceLoggingUnicodeString 包装采用一个可选名称。 在此示例中，"RegPath" 是 RegistryPath 值的名称。 如果未指定名称，则将值用作名称。
 

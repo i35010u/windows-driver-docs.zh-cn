@@ -4,12 +4,12 @@ description: 传感器和位置平台中的隐私和安全
 ms.assetid: 9defb163-4de6-46cc-b817-d3e6291137be
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 50eb701d422f7b0a7ab79fd2f967ada7b27a35c7
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 44242f65df6ea664168bcc66053f55bbb4e7f1b4
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89190729"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90717558"
 ---
 # <a name="privacy-and-security-in-the-sensor-and-location-platform"></a>传感器和位置平台中的隐私和安全
 
@@ -23,7 +23,7 @@ Windows 中的传感器和位置平台提供以下功能，以帮助确保位置
 
 - Windows 向用户提供泄露消息。 这些消息可帮助用户了解使用位置数据如何导致个人身份信息的泄露。
 
-- 使用 Location API 的桌面应用程序可以调用 [**RequestPermissions**](/windows/desktop/api/locationapi/nf-locationapi-ilocation-requestpermissions) 方法来打开系统对话框，该对话框会提示用户启用位置。
+- 使用 Location API 的桌面应用程序可以调用 [**RequestPermissions**](/windows/win32/api/locationapi/nf-locationapi-ilocation-requestpermissions) 方法来打开系统对话框，该对话框会提示用户启用位置。
 
 - 位置驱动程序使用传感器类扩展。 类扩展处理所有 i/o 请求，并确保只有具有用户权限的程序才能访问位置数据。
 

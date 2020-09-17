@@ -13,12 +13,12 @@ keywords:
 - ASSERTMSG 宏
 ms.date: 07/20/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: a3d5a30a6a5c8c13ba1e20a2c759781d2ce30c2b
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 3661211248c48f12eca1bf3a592485931b1b925e
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89214856"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90717388"
 ---
 # <a name="breaking-into-the-debugger"></a>突入调试器
 
@@ -28,7 +28,7 @@ ms.locfileid: "89214856"
 
 中断例程导致在当前进程中发生异常，以便调用线程可以向与调用进程关联的调试器发出信号。
 
-若要从用户模式程序中断到调试器，请使用 [DebugBreak 函数](/windows/desktop/api/debugapi/nf-debugapi-debugbreak)。 其原型如下所示：
+若要从用户模式程序中断到调试器，请使用 [DebugBreak 函数](/windows/win32/api/debugapi/nf-debugapi-debugbreak)。 其原型如下所示：
 
 ```cpp
 VOID DebugBreak(VOID);

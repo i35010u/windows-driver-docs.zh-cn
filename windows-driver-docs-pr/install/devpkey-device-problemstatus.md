@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 02/28/2020
-ms.openlocfilehash: 871bab970386ee124745c12cc0b380f80bf44b94
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: a4c95f8789062ea0b6890a49da85c7d104f2e9b6
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89096773"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90716762"
 ---
 # <a name="devpkey_device_problemstatus"></a>DEVPKEY_Device_ProblemStatus
 
@@ -67,7 +67,7 @@ DEVPKEY_Device_ProblemStatus 设备属性是在生成问题代码时设置的 NT
 
 有关 NTSTATUS 值的详细信息，请参阅 [使用 Ntstatus 值](../kernel/using-ntstatus-values.md)。
 
-可以调用 [**SetupDiGetDeviceProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw) 来检索 DEVPKEY_Device_ProblemStatus 的值。
+可以调用 [**SetupDiGetDeviceProperty**](/windows/win32/api/setupapi/nf-setupapi-setupdigetdevicepropertyw) 来检索 DEVPKEY_Device_ProblemStatus 的值。
 
 <a name="requirements"></a>要求
 ------------
@@ -89,12 +89,12 @@ DEVPKEY_Device_ProblemStatus 设备属性是在生成问题代码时设置的 NT
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
-[**CM_Get_DevNode_Status**](/windows/desktop/api/cfgmgr32/nf-cfgmgr32-cm_get_devnode_status)
+[**CM_Get_DevNode_Status**](/windows/win32/api/cfgmgr32/nf-cfgmgr32-cm_get_devnode_status)
 
-[**SetupDiGetDeviceProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)
+[**SetupDiGetDeviceProperty**](/windows/win32/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)
 
  
 

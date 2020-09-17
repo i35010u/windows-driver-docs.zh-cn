@@ -15,12 +15,12 @@ keywords:
 - 连接与强制目标 WDK Windows Server 2008 R2 显示
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: daed0b1e4ac4b38278a7c2d6e2f7a4c0133cceb2
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: db9795ed25f4471bf64d8164b3eb7a6dad05ee3b
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90103588"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90717228"
 ---
 # <a name="forced-versus-connected-targets"></a>强制的目标与连接的目标
 
@@ -118,7 +118,7 @@ CCD Api 介绍连接的监视器和 forceable 目标的概念。 如果 GPU 能�
 </tr>
 <tr class="even">
 <td align="left"><p>路径-持久</p></td>
-<td align="left"><p>重新启动后，此强制状态将丢失。 即使路径中的监视器是<strong>ChangeDisplaySettingsEx</strong>调用的目标，Microsoft Win32 <strong>ChangeDisplaySettingsEx</strong>函数也始终销毁所有路径保存的监视器。 如果调用方使用<em>Flags</em>参数中设置的 SDC_USE_SUPPLIED_DISPLAY_CONFIG 或 SDC_TOPOLOGY_SUPPLIED 标志来调用<a href="/windows/desktop/api/winuser/nf-winuser-setdisplayconfig" data-raw-source="[&lt;strong&gt;SetDisplayConfig&lt;/strong&gt;](/windows/desktop/api/winuser/nf-winuser-setdisplayconfig)"><strong>SetDisplayConfig</strong></a> CCD 函数，则如果新拓扑不包括监视器所在的路径，则<strong>SetDisplayConfig</strong>将删除路径保存的监视器。 对于调用方在 <em>flags</em> 参数中指定的所有其他 SDC_TOPOLOGY_XXX 标志，除非调用方还指定了 SDC_PATH_PERSIST_IF_REQUIRED 标志，并且路径在新拓扑中处于活动状态，否则， <strong>SetDisplayConfig</strong> 将删除路径持久监视器。</p></td>
+<td align="left"><p>重新启动后，此强制状态将丢失。 即使路径中的监视器是<strong>ChangeDisplaySettingsEx</strong>调用的目标，Microsoft Win32 <strong>ChangeDisplaySettingsEx</strong>函数也始终销毁所有路径保存的监视器。 如果调用方使用<em>Flags</em>参数中设置的 SDC_USE_SUPPLIED_DISPLAY_CONFIG 或 SDC_TOPOLOGY_SUPPLIED 标志来调用<a href="/windows/win32/api/winuser/nf-winuser-setdisplayconfig" data-raw-source="[&lt;strong&gt;SetDisplayConfig&lt;/strong&gt;](/windows/win32/api/winuser/nf-winuser-setdisplayconfig)"><strong>SetDisplayConfig</strong></a> CCD 函数，则如果新拓扑不包括监视器所在的路径，则<strong>SetDisplayConfig</strong>将删除路径保存的监视器。 对于调用方在 <em>flags</em> 参数中指定的所有其他 SDC_TOPOLOGY_XXX 标志，除非调用方还指定了 SDC_PATH_PERSIST_IF_REQUIRED 标志，并且路径在新拓扑中处于活动状态，否则， <strong>SetDisplayConfig</strong> 将删除路径持久监视器。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>引导持久</p></td>

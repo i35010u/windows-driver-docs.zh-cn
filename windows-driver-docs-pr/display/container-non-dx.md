@@ -4,12 +4,12 @@ description: 非 DX Api 必须更直接与驱动程序和内核交互，因此�
 ms.assetid: 6c4a6974-c67b-4710-80c6-48a5b378e088
 ms.date: 05/07/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 24857ee86138898dfbd6ca10ce9d4f177e70c032
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 39fb5755097b2d38fc5d8451db89895a55793687
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89064378"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90717380"
 ---
 # <a name="container-support-for-non-dx-apis"></a>对非 DX API 的容器支持
 
@@ -46,7 +46,7 @@ Windows 10 增加了明显影响非 DX Api 的功能，以及它们依赖的更�
 
 在 Windows 10 版本2004中，"更新" 条件比较了两部分信息：
 
-- [FileVersion](/windows/desktop/api/verrsrc/ns-verrsrc-vs_fixedfileinfo)
+- [FileVersion](/windows/win32/api/verrsrc/ns-verrsrc-vs_fixedfileinfo)
 - [LastWriteTime](/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_file_basic_information)
 
 如果目标文件以 .dll 或 .exe 后缀结尾，则会将 **FileVersion** 用作最高的比较值，在此值中，最大版本被认为是 "较新的"。
@@ -95,11 +95,11 @@ OS 将\Subdir1\Subdir2\softgpu2wow64.dll 复制 \<DriverStorePath> 到% windir% 
 
 默认适配器必须遵循操作系统中存储的用户选择，这需要：
 
-1. 通过 DXGI 的 [IDXGIFactory：： EnumAdapters](/windows/desktop/api/dxgi/nf-dxgi-idxgifactory-enumadapters)枚举适配器，因为 dxgi 是用户的选择。
+1. 通过 DXGI 的 [IDXGIFactory：： EnumAdapters](/windows/win32/api/dxgi/nf-dxgi-idxgifactory-enumadapters)枚举适配器，因为 dxgi 是用户的选择。
 适配器0根据 [用户的设置](https://blogs.windows.com/windowsexperience/2018/02/07/announcing-windows-10-insider-preview-build-17093-pc/)进行了更改。
 2. 使适配器从 [D3DKMTEnumAdapters2](/windows-hardware/drivers/ddi/d3dkmthk/nf-d3dkmthk-d3dkmtenumadapters2) 到 DXGI 的顺序匹配。
 可以通过关联两个枚举技术之间的 LUID 来匹配适配器标识。
-DXGI 通过 [IDXGIAdapter：： GetDesc](/windows/desktop/api/dxgi/nf-dxgi-idxgiadapter-getdesc)返回其 LUID。
+DXGI 通过 [IDXGIAdapter：： GetDesc](/windows/win32/api/dxgi/nf-dxgi-idxgiadapter-getdesc)返回其 LUID。
 
 ## <a name="dchu-design-modifications"></a>DCHU 设计修改
 

@@ -10,12 +10,12 @@ keywords:
 - 修饰线 WDK GDI
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 73c9e5ea1f7fdefe96fe5cfb92ae2499dcb1741e
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: bf2039de4a9424c4a7800481225f3d6a45f269bf
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89067452"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90717384"
 ---
 # <a name="cosmetic-lines"></a>装饰线条
 
@@ -92,7 +92,7 @@ ms.locfileid: "89067452"
 
 ![阐释装饰线条菱形约定的关系图](images/102-01b.png)
 
-对于呈现修饰线， [**DrvStrokePath**](/windows/desktop/api/winddi/nf-winddi-drvstrokepath) 函数遵循 GIQ 菱形约定。 [**DrvLineTo**](/windows/desktop/api/winddi/nf-winddi-drvlineto)函数是一个可选入口点，驱动程序可以将该入口点提供给 Microsoft Win32 **LineTo**函数的应用程序调用的优化。 **DrvLineTo** 比 **DrvStrokePath** 更简单，因为它仅支持整数终结点和实线修饰直线。
+对于呈现修饰线， [**DrvStrokePath**](/windows/win32/api/winddi/nf-winddi-drvstrokepath) 函数遵循 GIQ 菱形约定。 [**DrvLineTo**](/windows/win32/api/winddi/nf-winddi-drvlineto)函数是一个可选入口点，驱动程序可以将该入口点提供给 Microsoft Win32 **LineTo**函数的应用程序调用的优化。 **DrvLineTo** 比 **DrvStrokePath** 更简单，因为它仅支持整数终结点和实线修饰直线。
 
 对于支持 R2 \_ 非混合模式的光栅设备，将目标颜色更改为其逆颜色的二元光栅操作，驱动程序必须使用精确的呈现。 对于需要 GDI 和驱动程序呈现的设备，呈现也应是精确的。 这包括在某些位图上绘制 GDI 的设备，驱动程序会在其他图面上绘制 (除非这些像素太小以致) 明显差异。 这还包括请求 GDI 处理复杂剪辑的设备。
 

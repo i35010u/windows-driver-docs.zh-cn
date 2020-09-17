@@ -6,12 +6,12 @@ keywords:
 - CM_PROB_HELD_FOR_EJECT
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 039bf49ba3a183fd1ea35ee8f3e4100f8f559e02
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: f3cc92ec38314adb8b790cf09a825151e8e997ff
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89096027"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90717152"
 ---
 # <a name="code-47---cm_prob_held_for_eject"></a>代码 47 - CM_PROB_HELD_FOR_EJECT
 
@@ -31,4 +31,4 @@ ms.locfileid: "89096027"
 
 拔出设备并重新插入。 或者，选择 " **重新启动计算机** " 将重新启动计算机并使设备可用。
 
-此错误仅在以下情况下发生：用户调用热插拔程序来准备要删除的设备 (该设备调用 [**CM_Request_Device_Eject**](/windows/desktop/api/cfgmgr32/nf-cfgmgr32-cm_request_device_ejectw)) ，或者，如果用户按 (调用 [**IoRequestDeviceEject**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iorequestdeviceeject)) 的物理弹出按钮。 用户可以准备当前不可删除的设备，例如，光盘在便携式计算机和扩展坞托盘之间补漏白。
+此错误仅在以下情况下发生：用户调用热插拔程序来准备要删除的设备 (该设备调用 [**CM_Request_Device_Eject**](/windows/win32/api/cfgmgr32/nf-cfgmgr32-cm_request_device_ejectw)) ，或者，如果用户按 (调用 [**IoRequestDeviceEject**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iorequestdeviceeject)) 的物理弹出按钮。 用户可以准备当前不可删除的设备，例如，光盘在便携式计算机和扩展坞托盘之间补漏白。

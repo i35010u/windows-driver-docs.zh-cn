@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f0742fe14b42b5ca3bd21e19b34e5e17785a3491
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: c7c3e316d158e2d65a4a268d93d29308525eab4c
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89066178"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90716800"
 ---
 # <a name="fsctl_dismount_volume-control-code"></a>FSCTL \_ 卸除 \_ 音量控制代码
 
@@ -62,9 +62,9 @@ ms.locfileid: "89066178"
 <a name="remarks"></a>备注
 -------
 
-不管是否有任何其他进程正在使用该卷， **FSCTL \_ 卸载 \_ 卷** 控制代码都将尝试卸载该卷，如果这些进程未在卷上持有锁，则可能会产生不可预知的结果。 有关锁定卷的信息，请参阅 [**FSCTL \_ LOCK \_ volume**](/windows/desktop/api/winioctl/ni-winioctl-fsctl_lock_volume)。
+不管是否有任何其他进程正在使用该卷， **FSCTL \_ 卸载 \_ 卷** 控制代码都将尝试卸载该卷，如果这些进程未在卷上持有锁，则可能会产生不可预知的结果。 有关锁定卷的信息，请参阅 [**FSCTL \_ LOCK \_ volume**](/windows/win32/api/winioctl/ni-winioctl-fsctl_lock_volume)。
 
-操作系统不检测未装入的卷。 如果尝试访问未装入的卷，则操作系统将尝试装入该卷。 例如，对 [**GetLogicalDrives**](/windows/desktop/api/fileapi/nf-fileapi-getlogicaldrives) 的调用会触发操作系统来装入未装入的卷。
+操作系统不检测未装入的卷。 如果尝试访问未装入的卷，则操作系统将尝试装入该卷。 例如，对 [**GetLogicalDrives**](/windows/win32/api/fileapi/nf-fileapi-getlogicaldrives) 的调用会触发操作系统来装入未装入的卷。
 
 传递给[**ZwFsControlFile**](/previous-versions/ff566462(v=vs.85))的*FileHandle*句柄必须是为直接访问而打开的卷的句柄。 若要检索卷句柄，请调用[**ZwCreateFile**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ntcreatefile) ，并将*ObjectAttributes*参数设置为以下形式的*ObjectName* ： * \\ \\ 。 \\X：* 其中*x*是卷、软盘驱动器或 cd-rom 驱动器的驱动器号。 应用程序还必须 \_ \_ \_ \_ 在**ZwCreateFile**的*ShareAccess*参数中指定文件共享读取和文件共享写入标志。
 
@@ -88,7 +88,7 @@ ms.locfileid: "89066178"
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**FltCreateFile**](/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltcreatefile)

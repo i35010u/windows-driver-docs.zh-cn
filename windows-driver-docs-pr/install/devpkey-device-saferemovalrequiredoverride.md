@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 5f038f387b6a3e519a0c905d1e6ed2e9aacb41df
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 8b1b546eca8a2657e19a629083045efa558f35e7
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89096737"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90716754"
 ---
 # <a name="devpkey_device_saferemovalrequiredoverride"></a>DEVPKEY_Device_SafeRemovalRequiredOverride
 
@@ -74,7 +74,7 @@ DEVPKEY_Device_SafeRemovalRequiredOverride 设备属性表示设备实例的安�
 
 -   如果 DEVPKEY_Device_SafeRemovalRequiredOverride 设备属性未设置或设置为 DEVPROP_FALSE，则 PnP 会将 DEVPKEY_Device_SafeRemovalRequired 设备属性设置为使用试探法确定的值。
 
-可以通过调用 [**SetupDiGetDeviceProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)来检索 DEVPKEY_Device_SafeRemovalRequiredOverride 的值。 还可以通过调用 [**SetupDiSetDeviceProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdisetdevicepropertyw)来设置此值。
+可以通过调用 [**SetupDiGetDeviceProperty**](/windows/win32/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)来检索 DEVPKEY_Device_SafeRemovalRequiredOverride 的值。 还可以通过调用 [**SetupDiSetDeviceProperty**](/windows/win32/api/setupapi/nf-setupapi-setupdisetdevicepropertyw)来设置此值。
 
 <a name="requirements"></a>要求
 ------------
@@ -96,12 +96,12 @@ DEVPKEY_Device_SafeRemovalRequiredOverride 设备属性表示设备实例的安�
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
-[**SetupDiGetDeviceProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)
+[**SetupDiGetDeviceProperty**](/windows/win32/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)
 
-[**SetupDiSetDeviceProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdisetdevicepropertyw)
+[**SetupDiSetDeviceProperty**](/windows/win32/api/setupapi/nf-setupapi-setupdisetdevicepropertyw)
 
  
 

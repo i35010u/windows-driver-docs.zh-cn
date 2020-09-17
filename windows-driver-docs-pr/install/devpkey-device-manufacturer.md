@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 0b74b928028a5ad0cf21194963dd4a128dfc3db5
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 01463f654bb6ad5031a454b32b3ef17e91e0aaed
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89096819"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90716772"
 ---
 # <a name="devpkey_device_manufacturer"></a>DEVPKEY_Device_Manufacturer
 
@@ -68,7 +68,7 @@ DEVPKEY_DEVICE_Manufacturer 设备属性表示设备实例的制造商的名称�
 
 DEVPKEY_DEVICE_Manufacturer 的值由安装设备的 INF 文件的 " [**Inf 制造商" 部分**](./inf-manufacturer-section.md)提供的设备的*制造商标识符*输入值设置。
 
-可以调用 [**SetupDiGetDeviceProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw) 来检索 DEVPKEY_DEVICE_Manufacturer 的值。
+可以调用 [**SetupDiGetDeviceProperty**](/windows/win32/api/setupapi/nf-setupapi-setupdigetdevicepropertyw) 来检索 DEVPKEY_DEVICE_Manufacturer 的值。
 
 Windows Server 2003、Windows XP 和 Windows 2000 支持此属性，但不支持 DEVPKEY_Device_Manufacturer 属性键。 相反，你可以使用相应的 SPDRP_MFG 标识符来访问这些早期版本的 Windows 上的属性值。 有关如何在这些早期版本的 Windows 上访问此属性值的信息，请参阅 [SPDRP_Xxx 属性访问设备实例](./accessing-device-instance-spdrp-xxx-properties.md)。
 
@@ -78,12 +78,12 @@ Windows Server 2003、Windows XP 和 Windows 2000 支持此属性，但不支持
 **版本**： windows Vista 和更高版本的 windows **标题**： Devpkey (包含 Devpkey) 
 
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**INF Manufacturer 节**](./inf-manufacturer-section.md)
 
-[**SetupDiGetDeviceProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)
+[**SetupDiGetDeviceProperty**](/windows/win32/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)
 
  
 

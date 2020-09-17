@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 26868db0c0ef43fd494a3602e694efcfbb7ac797
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 4456724b3f5e69305f5e47c7cd7e7d64b7f374b1
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90107296"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90717542"
 ---
 # <a name="dif_installdevice"></a>DIF_INSTALLDEVICE
 
@@ -78,7 +78,7 @@ DIF_INSTALLDEVICE 请求允许安装程序在安装设备之前和/或之后执�
 
 共同安装程序通常返回 NO_ERROR 或 ERROR_DI_POSTPROCESSING_REQUIRED。 共同安装程序也可能返回 Win32 错误代码。
 
-如果类安装程序成功处理此请求，并且 [**SetupDiCallClassInstaller**](/windows/desktop/api/setupapi/nf-setupapi-setupdicallclassinstaller) 随后应调用默认处理程序，则类安装程序将返回 ERROR_DI_DO_DEFAULT。
+如果类安装程序成功处理此请求，并且 [**SetupDiCallClassInstaller**](/windows/win32/api/setupapi/nf-setupapi-setupdicallclassinstaller) 随后应调用默认处理程序，则类安装程序将返回 ERROR_DI_DO_DEFAULT。
 
 如果类安装程序成功处理此请求（包括直接调用默认处理程序），则类安装程序应返回 NO_ERROR 并且 **SetupDiCallClassInstaller** 将不会再次调用默认处理程序。
 
@@ -90,7 +90,7 @@ DIF_INSTALLDEVICE 请求允许安装程序在安装设备之前和/或之后执�
 
 ### <a name="default-dif-code-handler"></a>默认的 DIF 代码处理程序
 
-[**SetupDiInstallDevice**](/windows/desktop/api/setupapi/nf-setupapi-setupdiinstalldevice)
+[**SetupDiInstallDevice**](/windows/win32/api/setupapi/nf-setupapi-setupdiinstalldevice)
 
 ### <a name="installer-operation"></a>安装程序操作
 
@@ -126,7 +126,7 @@ DIF_INSTALLDEVICE 请求允许安装程序在安装设备之前和/或之后执�
 
 4.  执行所有默认安装操作（启动设备除外）完成后必须执行的操作。
 
-5.  调用 [**SetupDiRestartDevices**](/windows/desktop/api/setupapi/nf-setupapi-setupdirestartdevices) 启动设备。
+5.  调用 [**SetupDiRestartDevices**](/windows/win32/api/setupapi/nf-setupapi-setupdirestartdevices) 启动设备。
 
 6.  如果类安装程序成功完成安装操作或在安装操作失败时返回 Win32 错误，则返回 NO_ERROR。
 
@@ -155,7 +155,7 @@ DIF_INSTALLDEVICE 请求允许安装程序在安装设备之前和/或之后执�
 
 [**DIF_INSTALLDEVICEFILES**](dif-installdevicefiles.md)
 
-[**SetupDiInstallDevice**](/windows/desktop/api/setupapi/nf-setupapi-setupdiinstalldevice)
+[**SetupDiInstallDevice**](/windows/win32/api/setupapi/nf-setupapi-setupdiinstalldevice)
 
 [**SP_DEVINFO_DATA**](/windows/win32/api/setupapi/ns-setupapi-sp_devinfo_data)
 

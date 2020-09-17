@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: f59d0f53ccb049d816bbf539b8015843090f1f41
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 07a73160bc2e7137a5d67cf2280bbaee280b42a7
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89097399"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90717140"
 ---
 # <a name="cm_waitnopendinginstallevents"></a>CM_WaitNoPendingInstallEvents
 
@@ -29,4 +29,4 @@ ms.locfileid: "89097399"
 #define CM_WaitNoPendingInstallEvents CMP_WaitNoPendingInstallEvents
 ```
 
-换句话说， **CM_WaitNoPendingInstallEvents** 只是 [**CMP_WaitNoPendingInstallEvents**](/windows/desktop/api/cfgmgr32/nf-cfgmgr32-cm_waitnopendinginstallevents)的另一个名称。 由于没有名为 **CM_WaitNoPendingInstallEvents**的实际函数，因此 **GetProcAddress** 将返回 **NULL**。
+换句话说， **CM_WaitNoPendingInstallEvents** 只是 [**CMP_WaitNoPendingInstallEvents**](/windows/win32/api/cfgmgr32/nf-cfgmgr32-cm_waitnopendinginstallevents)的另一个名称。 由于没有名为 **CM_WaitNoPendingInstallEvents**的实际函数，因此 **GetProcAddress** 将返回 **NULL**。

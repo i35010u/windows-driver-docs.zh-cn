@@ -7,12 +7,12 @@ keywords:
 - Windows 筛选平台标注驱动程序 WDK，IPsec 兼容性
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7b4de322a6e4fc631a6bcbeb1fc822e0b9443b93
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 8ec0aa2d21573869d4f8729348df1c0868b79878
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89209763"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90717524"
 ---
 # <a name="developing-ipsec-compatible-callout-drivers"></a>开发 IPsec 兼容的标注驱动程序
 
@@ -69,7 +69,7 @@ FWPS \_ 层 \_ 出站 \_ IPPACKET \_ V6 \_ 丢弃
 
 1.  在 ALE 授权接收/接受层上注册标注 (**FWPS \_ 层 \_ ale \_ 身份验证接收 \_ \_ accept \_ V4**或**FWPS \_ 层 \_ ale \_ 身份验证 \_ \_ \_ **接收 accept V6) 除传输层以外，还 (FWPS \_ 层 \_ *XXX* \_ 传输 \_ V4 或 \_ V6) 。
 
-2.  若要防止内部 Windows IPsec 处理出现干扰，请将标注注册到权重低于 **FWPM \_ 子层 \_ 通用**的子子层。 使用 [**FwpmSubLayerEnum0**](/windows/desktop/api/fwpmu/nf-fwpmu-fwpmsublayerenum0) 函数可查找子层的权重。 有关此功能的信息，请参阅 Microsoft Windows SDK 中的 [Windows 筛选平台](https://go.microsoft.com/fwlink/p/?linkid=90220) 文档。
+2.  若要防止内部 Windows IPsec 处理出现干扰，请将标注注册到权重低于 **FWPM \_ 子层 \_ 通用**的子子层。 使用 [**FwpmSubLayerEnum0**](/windows/win32/api/fwpmu/nf-fwpmu-fwpmsublayerenum0) 函数可查找子层的权重。 有关此功能的信息，请参阅 Microsoft Windows SDK 中的 [Windows 筛选平台](https://go.microsoft.com/fwlink/p/?linkid=90220) 文档。
 
 3.  需要 ALE 分类的传入传输数据包必须在 ALE 授权接收/接受层上检查 (**FWPS \_ 层 \_ ale \_ 身份验证接收 \_ \_ accept \_ V4** 或 **FWPS \_ 层 \_ ale \_ 身份验证 \_ 接收 \_ accept \_ V6**) 。 必须从传入传输层允许这样的数据包。 从带有 Service Pack 1 的 Windows Vista (SP1) 和 Windows Server 2008 开始，使用 **FWPS \_ METADATA \_ 字段 \_ ALE \_ 分类 \_ 所需** 的元数据标志来确定传入数据包是否将指示 **FWPM \_ 层 \_ ale \_ 身份验证 \_ 接收 \_ accept \_ V4** 和 **FWPM \_ 层 \_ ale \_ 验证 \_ 接收 \_ 接受 \_ V6** 筛选层。 此元数据标志取代了 Windows Vista 中使用的 "已使用的 ** \_ \_ \_ \_ ALE \_ 分类** 条件" 标志。
 

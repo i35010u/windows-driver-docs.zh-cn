@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: bdd60d0b7937df5479ebf8ceb20d93d1a4d6cfdd
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 14e91d366f61ccba6e1cda70d17cfce6b19d9972
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90104890"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90717546"
 ---
 # <a name="dif_detect"></a>DIF_DETECT
 
@@ -67,7 +67,7 @@ DIF_DETECT 请求指示安装程序检测特定类的非 PnP 设备，并将设�
 有与 *DeviceInfoSet*关联的设备安装参数。
 
 <a href="" id="class-installation-parameters"></a>类安装参数  
-[**SP_DETECTDEVICE_PARAMS**](/windows/desktop/api/setupapi/ns-setupapi-_sp_detectdevice_params)结构与*DeviceInfoSet*关联。 参数包含一个回调例程，该类安装程序将调用它来指示检测操作的进度。
+[**SP_DETECTDEVICE_PARAMS**](/windows/win32/api/setupapi/ns-setupapi-_sp_detectdevice_params)结构与*DeviceInfoSet*关联。 参数包含一个回调例程，该类安装程序将调用它来指示检测操作的进度。
 
 ### <a name="installer-output"></a>安装程序输出
 
@@ -93,13 +93,13 @@ DIF_DETECT 请求指示安装程序检测特定类的非 PnP 设备，并将设�
 
 如果安装程序检测到设备，则至少应执行以下操作：
 
--   如果检测可能会花费很长的时间，请调用[**SP_DETECTDEVICE_PARAMS**](/windows/desktop/api/setupapi/ns-setupapi-_sp_detectdevice_params)类安装参数中的**DetectProgressNotify**回调例程。
+-   如果检测可能会花费很长的时间，请调用[**SP_DETECTDEVICE_PARAMS**](/windows/win32/api/setupapi/ns-setupapi-_sp_detectdevice_params)类安装参数中的**DetectProgressNotify**回调例程。
 
 -   对于安装程序检测到的每个设备，应执行以下操作：
-    -    ([**SetupDiCreateDeviceInfo**](/windows/desktop/api/setupapi/nf-setupapi-setupdicreatedeviceinfoa)) 创建设备信息元素。
+    -    ([**SetupDiCreateDeviceInfo**](/windows/win32/api/setupapi/nf-setupapi-setupdicreatedeviceinfoa)) 创建设备信息元素。
     -   为驱动程序选择提供信息。
 
-        安装程序可以手动选择设备的驱动程序，或者安装程序可以设置设备的硬件 ID，Windows 将使用该 ID 来查找设备的 INF。 安装程序通过调用*属性*值为 SPDRP_HARDWAREID 的[**SETUPDISETDEVICEREGISTRYPROPERTY**](/windows/desktop/api/setupapi/nf-setupapi-setupdisetdeviceregistrypropertya)设置硬件 ID。
+        安装程序可以手动选择设备的驱动程序，或者安装程序可以设置设备的硬件 ID，Windows 将使用该 ID 来查找设备的 INF。 安装程序通过调用*属性*值为 SPDRP_HARDWAREID 的[**SETUPDISETDEVICEREGISTRYPROPERTY**](/windows/win32/api/setupapi/nf-setupapi-setupdisetdeviceregistrypropertya)设置硬件 ID。
 
     -   可能设置了一些设备安装参数。
 
@@ -131,16 +131,16 @@ DIF_DETECT 请求指示安装程序检测特定类的非 PnP 设备，并将设�
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**DIF_DETECT**](dif-detect.md)
 
 [**DIF_FIRSTTIMESETUP**](dif-firsttimesetup.md)
 
-[**SetupDiCreateDeviceInfo**](/windows/desktop/api/setupapi/nf-setupapi-setupdicreatedeviceinfoa)
+[**SetupDiCreateDeviceInfo**](/windows/win32/api/setupapi/nf-setupapi-setupdicreatedeviceinfoa)
 
-[**SP_DETECTDEVICE_PARAMS**](/windows/desktop/api/setupapi/ns-setupapi-_sp_detectdevice_params)
+[**SP_DETECTDEVICE_PARAMS**](/windows/win32/api/setupapi/ns-setupapi-_sp_detectdevice_params)
 
 [**SP_DEVINSTALL_PARAMS**](/windows/win32/api/setupapi/ns-setupapi-sp_devinstall_params_a)
 

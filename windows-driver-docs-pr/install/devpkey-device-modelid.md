@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 335a46c332e2e44e089eeda90423db5a9378f521
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 6af919e650df1fa8ed994108172f3782277eef90
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89096809"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90717430"
 ---
 # <a name="devpkey_device_modelid"></a>DEVPKEY_Device_ModelId
 
@@ -88,14 +88,14 @@ DEVPKEY_Device_ModelId 设备属性包含设备元数据包中 [**ModelId**](/pr
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [设备元数据包](https://docs.microsoft.com/windows-hardware/drivers/install/device-metadata-packages)
 
 [**ModelID**](/previous-versions/windows/hardware/metadata/ff549295(v=vs.85))
 
-[**SetupDiGetDeviceProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)
+[**SetupDiGetDeviceProperty**](/windows/win32/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)
 
  
 

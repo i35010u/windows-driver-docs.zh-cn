@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 14ac7f96cd830dd1a8370d5a40ba0c2d75dcf33f
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 233e5ab35f6d559296cc64175f63833c2ede4ef7
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89096763"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90717418"
 ---
 # <a name="devpkey_device_removalpolicyoverride"></a>DEVPKEY_Device_RemovalPolicyOverride
 
@@ -68,7 +68,7 @@ DEVPKEY_Device_RemovalPolicyOverride 设备属性表示设备实例的删除策�
 
 DEVPKEY_Device_RemovalPolicyOverride 的值是在 Cfgmgr32 中定义的 CM_REMOVAL_POLICY_*Xxx* 值之一。
 
-可以通过调用 [**SetupDiGetDeviceProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw) 来检索 DEVPKEY_Device_RemovalPolicyOverride 的值，也可以通过调用 [**SetupDiSetDeviceProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdisetdevicepropertyw)来设置此值。
+可以通过调用 [**SetupDiGetDeviceProperty**](/windows/win32/api/setupapi/nf-setupapi-setupdigetdevicepropertyw) 来检索 DEVPKEY_Device_RemovalPolicyOverride 的值，也可以通过调用 [**SetupDiSetDeviceProperty**](/windows/win32/api/setupapi/nf-setupapi-setupdisetdevicepropertyw)来设置此值。
 
 Windows Server 2003 和 Windows XP 支持此属性，但不支持 DEVPKEY_Device_RemovalPolicyOverride 属性键。 相反，你可以使用相应的 SPDRP_REMOVAL_POLICY_OVERRIDE 标识符来访问这些早期版本的 Windows 上的属性值。 有关如何在这些早期版本的 Windows 上访问此属性值的信息，请参阅 [SPDRP_Xxx 属性访问设备实例](./accessing-device-instance-spdrp-xxx-properties.md)。
 
@@ -78,12 +78,12 @@ Windows Server 2003 和 Windows XP 支持此属性，但不支持 DEVPKEY_Device
 **版本**： windows Vista 和更高版本的 windows **标题**： Devpkey (包含 Devpkey) 
 
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
-[**SetupDiGetDeviceProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)
+[**SetupDiGetDeviceProperty**](/windows/win32/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)
 
-[**SetupDiSetDeviceProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdisetdevicepropertyw)
+[**SetupDiSetDeviceProperty**](/windows/win32/api/setupapi/nf-setupapi-setupdisetdevicepropertyw)
 
  
 

@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 97b21f36482884e9ba37673e37e4504e3a662cef
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: c4828eacc52b61ef3ced12d2c91034764fbad3da
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89096675"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90717304"
 ---
 # <a name="devpkey_deviceclass_securitysds"></a>DEVPKEY_DeviceClass_SecuritySDS
 
@@ -68,7 +68,7 @@ DEVPKEY_DeviceClass_SecuritySDS 设备属性表示 [设备安装程序类](./ove
 
 可以在安装应用程序安装设备安装程序类的过程中或之后设置 DEVPKEY_DeviceClass_SecuritySDS 的值。 有关如何设置此属性的详细信息，请参阅 [创建安全设备安装](./creating-secure-device-installations.md)。
 
-可以通过调用 [**SetupDiGetClassProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetclasspropertyw) 或 [**SetupDiGetClassPropertyEx**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetclasspropertyexw)来检索 DEVPKEY_DeviceClass_SecuritySDS 的值。 可以通过调用 [**SetupDiSetClassProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdisetclasspropertyw) 或 [**SetupDiSetClassPropertyEx**](/windows/desktop/api/setupapi/nf-setupapi-setupdisetclasspropertyexw)来设置 DEVPKEY_DeviceClass_SecuritySDS。
+可以通过调用 [**SetupDiGetClassProperty**](/windows/win32/api/setupapi/nf-setupapi-setupdigetclasspropertyw) 或 [**SetupDiGetClassPropertyEx**](/windows/win32/api/setupapi/nf-setupapi-setupdigetclasspropertyexw)来检索 DEVPKEY_DeviceClass_SecuritySDS 的值。 可以通过调用 [**SetupDiSetClassProperty**](/windows/win32/api/setupapi/nf-setupapi-setupdisetclasspropertyw) 或 [**SetupDiSetClassPropertyEx**](/windows/win32/api/setupapi/nf-setupapi-setupdisetclasspropertyexw)来设置 DEVPKEY_DeviceClass_SecuritySDS。
 
 Windows Server 2003 和 Windows XP 支持此属性，但不支持 DEVPKEY_DeviceClass_SecuritySDS 属性键。 在这些早期版本的 Windows 中，可以使用 SPCRP_SECURITY_SDS 标识符来访问此属性的值。 有关如何访问此属性的值的信息，请参阅 [检索设备安装程序类 SPCRP_Xxx 属性](./retrieving-spcrp-xxx-properties.md) 和 [设置设备安装程序类 SPCRP_Xxx 属性](./setting-spcrp-xxx-properties.md)。
 
@@ -78,16 +78,16 @@ Windows Server 2003 和 Windows XP 支持此属性，但不支持 DEVPKEY_Device
 **版本**： windows Vista 和更高版本的 windows **标题**： Devpkey (包含 Devpkey) 
 
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
-[**SetupDiGetClassProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetclasspropertyw)
+[**SetupDiGetClassProperty**](/windows/win32/api/setupapi/nf-setupapi-setupdigetclasspropertyw)
 
-[**SetupDiGetClassPropertyEx**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetclasspropertyexw)
+[**SetupDiGetClassPropertyEx**](/windows/win32/api/setupapi/nf-setupapi-setupdigetclasspropertyexw)
 
-[**SetupDiSetClassProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdisetclasspropertyw)
+[**SetupDiSetClassProperty**](/windows/win32/api/setupapi/nf-setupapi-setupdisetclasspropertyw)
 
-[**SetupDiSetClassPropertyEx**](/windows/desktop/api/setupapi/nf-setupapi-setupdisetclasspropertyexw)
+[**SetupDiSetClassPropertyEx**](/windows/win32/api/setupapi/nf-setupapi-setupdisetclasspropertyexw)
 
  
 

@@ -8,12 +8,12 @@ keywords:
 - 设备父 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9fae31ac10e512b1d10031dab6420a1f5b1fa304
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 8e5964532076535a4ac1cf779a5867a9bd94f386
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90105006"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90717314"
 ---
 # <a name="determining-the-parent-of-a-device"></a>确定设备的父设备
 
@@ -25,7 +25,7 @@ ms.locfileid: "90105006"
 
 当即插即用 (PnP) manager 在系统中配置设备时，会将设备 (*devnode*) 添加到 [设备树](../kernel/device-tree.md)中。 当 PnP 管理器从系统中删除设备时，它将从设备树中删除设备的 devnode，设备将成为 *nonpresent 设备*。  确定设备父项所用的方法取决于当前在系统中配置设备的方式，如下所示：
 
--   如果设备在设备树中具有 devnode，请使用 [**CM_Get_Parent**](/windows/desktop/api/cfgmgr32/nf-cfgmgr32-cm_get_parent) 获取其父对象的设备实例句柄。 给定设备实例句柄，可以获取设备的 [设备实例 ID](device-instance-ids.md) 和 [**SP_DEVINFO_DATA**](/windows/win32/api/setupapi/ns-setupapi-sp_devinfo_data) 结构。 有关详细信息，请参阅 [在设备树中获取设备的父级](obtaining-the-parent-of-a-device-in-the-device-tree.md)。
+-   如果设备在设备树中具有 devnode，请使用 [**CM_Get_Parent**](/windows/win32/api/cfgmgr32/nf-cfgmgr32-cm_get_parent) 获取其父对象的设备实例句柄。 给定设备实例句柄，可以获取设备的 [设备实例 ID](device-instance-ids.md) 和 [**SP_DEVINFO_DATA**](/windows/win32/api/setupapi/ns-setupapi-sp_devinfo_data) 结构。 有关详细信息，请参阅 [在设备树中获取设备的父级](obtaining-the-parent-of-a-device-in-the-device-tree.md)。
 
 -   如果设备具有与其父级的固定关系，则可以保存并检索其父项的设备实例 ID。 当设备变为 nonpresent 时，可以使用其设备实例句柄获取设备的 SP_DEVINFO_DATA 结构。 有关详细信息，请参阅 [确定 Nonpresent 设备的父级](determining-the-parent-of-a-nonpresent-device.md)。
 

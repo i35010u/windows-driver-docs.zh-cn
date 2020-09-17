@@ -10,12 +10,12 @@ keywords:
 - 功能 WDK TCP/IP 卸载
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b8c2471ae98eaaab6140cb24ce67480ad3ec997d
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: d614d6eafdb2eb3a0d2cf87a1435a88a904fa5d2
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89212729"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90717390"
 ---
 # <a name="tcpip-task-offload-overview"></a>TCP/IP 任务卸载概述
 
@@ -37,7 +37,7 @@ TCP/IP 传输可以卸载 IP 和 TCP 校验和的计算和验证。
 
 TCP/IP 传输可以为身份验证标头 (AH) 、封装安全负载 (ESP) ，或同时对这两者进行加密校验和验证。 TCP/IP 传输还可以卸载 ESP 有效负载的加密和解密，并 (UDP) 封装的 ESP 数据包来对用户数据报协议进行加密和解密。
 
-有关 IPsecOV1 的详细信息，请参阅 [IPsec 卸载版本 1](ipsec-offload-version-1.md)。
+有关 IPsecOV1 的详细信息，请参阅 [IPsec 卸载版本 1](background-reading-on-ipsec.md)。
 
 ### <a name="internet-protocol-security-ipsec-offload-version-2-ipsecov2"></a>Internet 协议安全 (IPsec) 卸载版本 2 (IPsecOV2) 
 
@@ -71,7 +71,7 @@ TCP/IP 传输支持大型发送卸载版本 1 (LSOV1) 。 通过 LSOV1，TCP/IP 
 
 ### <a name="udp-segmentation-offload-uso"></a>UDP 分段卸载 (USO)
 
-从 Windows 10 1912 版开始，Windows 支持 [UDP 分段卸载 (USO) ](udp-segmentation-offload-uso-.md)。 USO 使网卡能够卸载大于最大传输单元的 UDP 数据报的分段 (MTU) 网络介质大小。
+从 Windows 10 2004 版开始，Windows 支持 [UDP 分段卸载 (USO) ](udp-segmentation-offload-uso-.md)。 USO 使网卡能够卸载大于最大传输单元的 UDP 数据报的分段 (MTU) 网络介质大小。
 
 本节包括：
 
@@ -81,7 +81,7 @@ TCP/IP 传输支持大型发送卸载版本 1 (LSOV1) 。 通过 LSOV1，TCP/IP 
 -   [组合任务卸载的类型](combining-types-of-task-offloads.md)
 -   [使用注册表值启用和禁用任务卸载](using-registry-values-to-enable-and-disable-task-offloading.md)
 -   [卸载校验和任务](offloading-checksum-tasks.md)
--   [卸载 IPsec 任务](offloading-ipsec-tasks.md)
+-   [卸载 IPsec 任务](background-reading-on-ipsec.md)
     - \[IPsec 任务卸载功能已弃用，不应使用。\]
 -   [卸载大型 TCP 数据包的段](offloading-the-segmentation-of-large-tcp-packets.md)
 -   [UDP 分段卸载 (USO)](udp-segmentation-offload-uso-.md)

@@ -4,12 +4,12 @@ description: 访问类注册表项下的注册表项值
 ms.assetid: 771b5751-db9f-43fa-90d1-1c43918a3a80
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f7700ecab070afcb720399036b9e40cea198f217
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: d577bd3b765aed3cf27699a0e0813478b990d35e
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89096285"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90717156"
 ---
 # <a name="accessing-registry-entry-values-under-the-class-registry-key"></a>访问类注册表项下的注册表项值
 
@@ -24,7 +24,7 @@ Windows Server 2003、Windows XP 和 Windows 2000 还支持其中的大多数设
 
 若要在 Windows Server 2003、Windows XP 和 Windows 2000 上访问这些属性，请打开类注册表项，并使用 Windows 注册表功能访问对应于这些属性的注册表项值。
 
-若要检索设备安装程序类的类注册表项的句柄，请调用 [**SetupDiOpenClassRegKeyEx**](/windows/desktop/api/setupapi/nf-setupapi-setupdiopenclassregkeyexa) 函数并提供以下参数值：
+若要检索设备安装程序类的类注册表项的句柄，请调用 [**SetupDiOpenClassRegKeyEx**](/windows/win32/api/setupapi/nf-setupapi-setupdiopenclassregkeyexa) 函数并提供以下参数值：
 
 -   将 *ClassGuid* 设置为指向 GUID 的指针，该 GUID 标识所请求的类注册表项的设备安装程序类。
 
@@ -36,7 +36,7 @@ Windows Server 2003、Windows XP 和 Windows 2000 还支持其中的大多数设
 
 -   将 *保留* 设置为 **NULL**。
 
-如果对 [**SetupDiOpenClassRegKeyEx**](/windows/desktop/api/setupapi/nf-setupapi-setupdiopenclassregkeyexa) 的此调用成功，则 **SetupDiOpenClassRegKeyEx** 将返回请求的句柄。 如果函数调用失败，则 **SetupDiOpenClassRegKeyEx** 将返回 INVALID_HANDLE_VALUE 并且对 [GetLastError](https://go.microsoft.com/fwlink/p/?linkid=169416) 的调用将返回记录的错误代码。
+如果对 [**SetupDiOpenClassRegKeyEx**](/windows/win32/api/setupapi/nf-setupapi-setupdiopenclassregkeyexa) 的此调用成功，则 **SetupDiOpenClassRegKeyEx** 将返回请求的句柄。 如果函数调用失败，则 **SetupDiOpenClassRegKeyEx** 将返回 INVALID_HANDLE_VALUE 并且对 [GetLastError](https://go.microsoft.com/fwlink/p/?linkid=169416) 的调用将返回记录的错误代码。
 
 检索类注册表项的句柄之后，在对 [RegQueryValueEx](https://go.microsoft.com/fwlink/p/?linkid=95398) 和 [RegSetValueEx](https://go.microsoft.com/fwlink/p/?linkid=95399) 的调用中提供句柄，以检索或设置与设备安装程序类属性相对应的注册表项值。
 

@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 4c1cd36e87a9a51e6ed1f431d3efe79153e51e12
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 921824819e782776682daa0e9fffa575b0795134
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89096841"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90717040"
 ---
 # <a name="devpkey_device_firstinstalldate"></a>DEVPKEY_Device_FirstInstallDate
 
@@ -68,7 +68,7 @@ Windows 将 DEVPKEY_Device_FirstInstallDate 的值设置为时间戳，该时间
 
  
 
-可以调用 [**SetupDiGetDeviceProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw) 来检索 DEVPKEY_Device_FirstInstallDate 属性的值。
+可以调用 [**SetupDiGetDeviceProperty**](/windows/win32/api/setupapi/nf-setupapi-setupdigetdevicepropertyw) 来检索 DEVPKEY_Device_FirstInstallDate 属性的值。
 
 <a name="requirements"></a>要求
 ------------
@@ -90,10 +90,10 @@ Windows 将 DEVPKEY_Device_FirstInstallDate 的值设置为时间戳，该时间
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
-[**SetupDiGetDeviceProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)
+[**SetupDiGetDeviceProperty**](/windows/win32/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)
 
  
 

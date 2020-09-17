@@ -9,12 +9,12 @@ keywords:
 - SP_DEVINFO_DATA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3239f6647f227a1d4c76b066bba11dcd13d7b89c
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: c733fe9c5bb5bc8c01be2010b11446fa63e50dbb
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90105008"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90717552"
 ---
 # <a name="basic-installation-operations"></a>基本安装操作
 
@@ -24,17 +24,17 @@ ms.locfileid: "90105008"
 
 安装程序可以使用 Setupapi.log 提供的 [常规设置功能](/previous-versions/ff544985(v=vs.85)) 和 [设备安装功能](/previous-versions/ff541299(v=vs.85)) 来执行安装操作。 这些函数允许安装程序搜索 INF 文件以查找兼容的驱动程序，通过选择对话框向用户显示驱动程序选项，以及执行实际的驱动程序安装。
 
-大多数设备安装函数依赖于 [**SP_DEVINFO_DATA**](/windows/win32/api/setupapi/ns-setupapi-sp_devinfo_data) 结构中的信息来执行安装任务。 每个设备都与 SP_DEVINFO_DATA 结构相关联。 可以通过使用[**SetupDiGetClassDevs**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetclassdevsw)函数检索包含特定类中所有已安装设备的[设备信息集](device-information-sets.md) (HDEVINFO) 的句柄。 可以使用 [**SetupDiCreateDeviceInfo**](/windows/desktop/api/setupapi/nf-setupapi-setupdicreatedeviceinfoa) 函数向设备信息集添加新设备。 通过使用 [**SetupDiDestroyDeviceInfoList**](/windows/desktop/api/setupapi/nf-setupapi-setupdidestroydeviceinfolist) 函数，可以释放设备信息集中的所有 SP_DEVINFO_DATA 结构。 此函数还可释放任何可能已添加到结构中的兼容设备和类设备列表。
+大多数设备安装函数依赖于 [**SP_DEVINFO_DATA**](/windows/win32/api/setupapi/ns-setupapi-sp_devinfo_data) 结构中的信息来执行安装任务。 每个设备都与 SP_DEVINFO_DATA 结构相关联。 可以通过使用[**SetupDiGetClassDevs**](/windows/win32/api/setupapi/nf-setupapi-setupdigetclassdevsw)函数检索包含特定类中所有已安装设备的[设备信息集](device-information-sets.md) (HDEVINFO) 的句柄。 可以使用 [**SetupDiCreateDeviceInfo**](/windows/win32/api/setupapi/nf-setupapi-setupdicreatedeviceinfoa) 函数向设备信息集添加新设备。 通过使用 [**SetupDiDestroyDeviceInfoList**](/windows/win32/api/setupapi/nf-setupapi-setupdidestroydeviceinfolist) 函数，可以释放设备信息集中的所有 SP_DEVINFO_DATA 结构。 此函数还可释放任何可能已添加到结构中的兼容设备和类设备列表。
 
-通过使用 [**SetupDiBuildDriverInfoList**](/windows/desktop/api/setupapi/nf-setupapi-setupdibuilddriverinfolist) 函数，你可以生成一个列表，安装程序或用户可以从该列表中选择要安装的驱动程序或设备。 **SetupDiBuildDriverInfoList** 创建一个兼容驱动程序的列表或特定类的所有设备的列表。
+通过使用 [**SetupDiBuildDriverInfoList**](/windows/win32/api/setupapi/nf-setupapi-setupdibuilddriverinfolist) 函数，你可以生成一个列表，安装程序或用户可以从该列表中选择要安装的驱动程序或设备。 **SetupDiBuildDriverInfoList** 创建一个兼容驱动程序的列表或特定类的所有设备的列表。
 
-获得兼容驱动程序的列表后，可以通过使用 [**SetupDiSelectDevice**](/windows/desktop/api/setupapi/nf-setupapi-setupdiselectdevice) 函数提示用户从列表中进行选择。 此函数显示一个对话框，其中包含有关设备信息集中每个设备的信息。 您可以使用 [**SetupDiInstallDevice**](/windows/desktop/api/setupapi/nf-setupapi-setupdiinstalldevice) 函数安装所选的驱动程序。 此函数使用驱动程序的 INF 文件中的信息来创建任何所需的新注册表项、设置设备硬件的配置以及将驱动程序文件复制到相应的目录。
+获得兼容驱动程序的列表后，可以通过使用 [**SetupDiSelectDevice**](/windows/win32/api/setupapi/nf-setupapi-setupdiselectdevice) 函数提示用户从列表中进行选择。 此函数显示一个对话框，其中包含有关设备信息集中每个设备的信息。 您可以使用 [**SetupDiInstallDevice**](/windows/win32/api/setupapi/nf-setupapi-setupdiinstalldevice) 函数安装所选的驱动程序。 此函数使用驱动程序的 INF 文件中的信息来创建任何所需的新注册表项、设置设备硬件的配置以及将驱动程序文件复制到相应的目录。
 
-安装程序可能必须检查并设置要安装的设备的注册表项下的值。 可以使用 [**SetupDiCreateDevRegKey**](/windows/desktop/api/setupapi/nf-setupapi-setupdicreatedevregkeya) 或 [**SetupDiOpenDevRegKey**](/windows/desktop/api/setupapi/nf-setupapi-setupdiopendevregkey) 函数打开设备的硬件或驱动程序密钥。
+安装程序可能必须检查并设置要安装的设备的注册表项下的值。 可以使用 [**SetupDiCreateDevRegKey**](/windows/win32/api/setupapi/nf-setupapi-setupdicreatedevregkeya) 或 [**SetupDiOpenDevRegKey**](/windows/win32/api/setupapi/nf-setupapi-setupdiopendevregkey) 函数打开设备的硬件或驱动程序密钥。
 
-可以使用[**SetupDiInstallClass**](/windows/desktop/api/setupapi/nf-setupapi-setupdiinstallclassa)函数安装新的[设备安装程序类](./overview-of-device-setup-classes.md)。 此函数从包含 [**Inf ClassInstall32 部分**](inf-classinstall32-section.md)的 inf 文件安装新安装程序类。
+可以使用[**SetupDiInstallClass**](/windows/win32/api/setupapi/nf-setupapi-setupdiinstallclassa)函数安装新的[设备安装程序类](./overview-of-device-setup-classes.md)。 此函数从包含 [**Inf ClassInstall32 部分**](inf-classinstall32-section.md)的 inf 文件安装新安装程序类。
 
-可以使用 [**SetupDiRemoveDevice**](/windows/desktop/api/setupapi/nf-setupapi-setupdiremovedevice) 函数从系统中删除设备。 此函数删除设备的注册表项，并在可能的情况下停止设备。 如果设备无法动态停止，则该函数将设置标志，最终会导致提示用户关闭系统。
+可以使用 [**SetupDiRemoveDevice**](/windows/win32/api/setupapi/nf-setupapi-setupdiremovedevice) 函数从系统中删除设备。 此函数删除设备的注册表项，并在可能的情况下停止设备。 如果设备无法动态停止，则该函数将设置标志，最终会导致提示用户关闭系统。
 
  
 

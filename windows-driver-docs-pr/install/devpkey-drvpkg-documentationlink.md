@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 86b2c13f2052bc4d1d088467786b44ac7aaf69e5
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 10297275bd643afca0d5fb81804c9040f8cc88d2
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89095963"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90716908"
 ---
 # <a name="devpkey_drvpkg_documentationlink"></a>DEVPKEY_DrvPkg_DocumentationLink
 
@@ -60,7 +60,7 @@ Microsoft 不为由 DEVPKEY_DrvPkg_DocumentationLink 属性值指定的网页提
 The following example shows the type of HTTP request that would be sent to a web server: http://www.microsoft.com/redirect?prod=DSC530&rev34&type=docs&pver=6.0&spb=pro&olcid=0x409&pnpid=PCI%5CVEN_8086%26DEV_2533%26SUBSYS_00000000%26REV_04
 ```
 
-可以设置 AddProperty 的 DEVPKEY_DrvPkg_DocumentationLink 值，该 [**指令**](./inf-addproperty-directive.md) 包含在安装设备的 inf 文件的 [**inf *DDInstall* 部分**](./inf-ddinstall-section.md) 中。 可以通过调用 [**SetupDiGetDeviceProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)来检索 DEVPKEY_DrvPkg_DocumentationLinkproperty 的值。
+可以设置 AddProperty 的 DEVPKEY_DrvPkg_DocumentationLink 值，该 [**指令**](./inf-addproperty-directive.md) 包含在安装设备的 inf 文件的 [**inf *DDInstall* 部分**](./inf-ddinstall-section.md) 中。 可以通过调用 [**SetupDiGetDeviceProperty**](/windows/win32/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)来检索 DEVPKEY_DrvPkg_DocumentationLinkproperty 的值。
 
 下面的示例演示如何使用 INF **AddProperty** 指令为 INF *DDInstall* 部分为 "SampleDDInstallSection" 安装的设备设置 DEVPKEY_DrvPkg_DocumentationLink 值：
 
@@ -82,10 +82,10 @@ DeviceDocumentationLink,,,,"http://www.microsoft.com/redirect?prod=DSC530&rev34&
 |版本|在 Windows Vista 和更高版本的 Windows 中可用。|
 |标头|Devpkey (包含 Devpkey) |
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 [**INF AddProperty 指令**](./inf-addproperty-directive.md)
 
 [**INF *DDInstall* 部分**](./inf-ddinstall-section.md)
 
-[**SetupDiGetDeviceProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)
+[**SetupDiGetDeviceProperty**](/windows/win32/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)

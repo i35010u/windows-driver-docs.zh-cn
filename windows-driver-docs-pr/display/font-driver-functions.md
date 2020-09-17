@@ -10,12 +10,12 @@ keywords:
 - DrvUnloadFontFile
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c1947857511d59026b7d21b1d3a833fc5609ced0
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: caee00ee90b5873f8de7d471c8d0a955023da32d
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90101574"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90717346"
 ---
 # <a name="font-driver-functions"></a>字体驱动程序函数
 
@@ -38,27 +38,27 @@ ms.locfileid: "90101574"
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="/windows/desktop/api/winddi/nf-winddi-drvloadfontfile" data-raw-source="[&lt;strong&gt;DrvLoadFontFile&lt;/strong&gt;](/windows/desktop/api/winddi/nf-winddi-drvloadfontfile)"><strong>DrvLoadFontFile</strong></a></p></td>
+<td align="left"><p><a href="/windows/win32/api/winddi/nf-winddi-drvloadfontfile" data-raw-source="[&lt;strong&gt;DrvLoadFontFile&lt;/strong&gt;](/windows/win32/api/winddi/nf-winddi-drvloadfontfile)"><strong>DrvLoadFontFile</strong></a></p></td>
 <td align="left"><p>指定用于创建字体实现的文件;驱动程序必须准备要使用的文件。 字体驱动程序所必需的。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="/windows/desktop/api/winddi/nf-winddi-drvqueryadvancewidths" data-raw-source="[&lt;strong&gt;DrvQueryAdvanceWidths&lt;/strong&gt;](/windows/desktop/api/winddi/nf-winddi-drvqueryadvancewidths)"><strong>DrvQueryAdvanceWidths</strong></a></p></td>
+<td align="left"><p><a href="/windows/win32/api/winddi/nf-winddi-drvqueryadvancewidths" data-raw-source="[&lt;strong&gt;DrvQueryAdvanceWidths&lt;/strong&gt;](/windows/win32/api/winddi/nf-winddi-drvqueryadvancewidths)"><strong>DrvQueryAdvanceWidths</strong></a></p></td>
 <td align="left"><p>要求驱动程序为一组指定的字形发送 GDI 字符提前宽度。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="/windows/desktop/api/winddi/nf-winddi-drvqueryfontcaps" data-raw-source="[&lt;strong&gt;DrvQueryFontCaps&lt;/strong&gt;](/windows/desktop/api/winddi/nf-winddi-drvqueryfontcaps)"><strong>DrvQueryFontCaps</strong></a></p></td>
+<td align="left"><p><a href="/windows/win32/api/winddi/nf-winddi-drvqueryfontcaps" data-raw-source="[&lt;strong&gt;DrvQueryFontCaps&lt;/strong&gt;](/windows/win32/api/winddi/nf-winddi-drvqueryfontcaps)"><strong>DrvQueryFontCaps</strong></a></p></td>
 <td align="left"><p>将定义字体驱动程序功能的一组位复制到指定的缓冲区。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="/windows/desktop/api/winddi/nf-winddi-drvqueryfontfile" data-raw-source="[&lt;strong&gt;DrvQueryFontFile&lt;/strong&gt;](/windows/desktop/api/winddi/nf-winddi-drvqueryfontfile)"><strong>DrvQueryFontFile</strong></a></p></td>
+<td align="left"><p><a href="/windows/win32/api/winddi/nf-winddi-drvqueryfontfile" data-raw-source="[&lt;strong&gt;DrvQueryFontFile&lt;/strong&gt;](/windows/win32/api/winddi/nf-winddi-drvqueryfontfile)"><strong>DrvQueryFontFile</strong></a></p></td>
 <td align="left"><p>根据查询的模式，返回字体文件或说明性字符串中的字体数量。 字体驱动程序所必需的。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="/windows/desktop/api/winddi/nc-winddi-pfn_drvqueryglyphattrs" data-raw-source="[&lt;strong&gt;DrvQueryGlyphAttrs&lt;/strong&gt;](/windows/desktop/api/winddi/nc-winddi-pfn_drvqueryglyphattrs)"><strong>DrvQueryGlyphAttrs</strong></a></p></td>
+<td align="left"><p><a href="/windows/win32/api/winddi/nc-winddi-pfn_drvqueryglyphattrs" data-raw-source="[&lt;strong&gt;DrvQueryGlyphAttrs&lt;/strong&gt;](/windows/win32/api/winddi/nc-winddi-pfn_drvqueryglyphattrs)"><strong>DrvQueryGlyphAttrs</strong></a></p></td>
 <td align="left"><p>返回有关字体标志符号的信息。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="/windows/desktop/api/winddi/nf-winddi-drvunloadfontfile" data-raw-source="[&lt;strong&gt;DrvUnloadFontFile&lt;/strong&gt;](/windows/desktop/api/winddi/nf-winddi-drvunloadfontfile)"><strong>DrvUnloadFontFile</strong></a></p></td>
+<td align="left"><p><a href="/windows/win32/api/winddi/nf-winddi-drvunloadfontfile" data-raw-source="[&lt;strong&gt;DrvUnloadFontFile&lt;/strong&gt;](/windows/win32/api/winddi/nf-winddi-drvunloadfontfile)"><strong>DrvUnloadFontFile</strong></a></p></td>
 <td align="left"><p>通知驱动程序不再需要字体文件，以便驱动程序可以进行必要的清理。 字体驱动程序所必需的。</p></td>
 </tr>
 </tbody>

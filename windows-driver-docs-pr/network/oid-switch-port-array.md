@@ -5,12 +5,12 @@ ms.assetid: 9ED5E7A5-A23E-48E7-B8A2-9089C81851A1
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_SWITCH_PORT_ARRAY 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 89f31ef942e18dc49c902d2b84fa4763c5871fef
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 9988770fbb683b47c9735daeee42416d3f82ccf8
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90105178"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90716984"
 ---
 # <a name="oid_switch_port_array"></a>OID \_ 交换机 \_ 端口 \_ 数组
 
@@ -32,7 +32,7 @@ Hyper-v 可扩展交换机扩展)  (OID 发出对象标识符，请求 OID \_ �
 
 \_ \_ \_ 仅当 hyper-v 可扩展交换机完成激活时才必须发出 oid 交换机端口数组 oid。 有关更多详细信息，请参阅 [查询 Hyper-v 可扩展交换机配置](./querying-the-hyper-v-extensible-switch-configuration.md) 。
 
-当扩展处理返回的 [**ndis \_ 交换机 \_ 端口 \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_port_parameters) 结构时，它不能假定 **NDIS \_ 交换机 \_ 端口 \_ 参数** 结构的各个字符串成员（如 **portvalue**）以 null 值终止。 这些字符串成员的数据类型由 [**IF \_ 计数 \_ 字符串**](/windows/desktop/api/ifdef/ns-ifdef-_if_counted_string_lh) 结构的类型定义。 驱动程序必须根据此结构的 **length** 成员的值确定字符串长度。
+当扩展处理返回的 [**ndis \_ 交换机 \_ 端口 \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_port_parameters) 结构时，它不能假定 **NDIS \_ 交换机 \_ 端口 \_ 参数** 结构的各个字符串成员（如 **portvalue**）以 null 值终止。 这些字符串成员的数据类型由 [**IF \_ 计数 \_ 字符串**](/windows/win32/api/ifdef/ns-ifdef-_if_counted_string_lh) 结构的类型定义。 驱动程序必须根据此结构的 **length** 成员的值确定字符串长度。
 
 **注意**   如果字符串以 null 结尾，则**长度**成员不能包含终止 null 字符。
 
@@ -91,7 +91,7 @@ Hyper-v 可扩展交换机扩展)  (OID 发出对象标识符，请求 OID \_ �
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 ****

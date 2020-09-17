@@ -11,12 +11,12 @@ keywords:
 - DI_FLAGSEX_FINISHINSTALL_ACTION
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: eab4a45a09ad340f9a201aaf15d35d90477182e2
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 296022ded0d3e9108996c4cb50e22084700f1bfb
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89095275"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90717010"
 ---
 # <a name="how-finish-install-actions-are-processed"></a>如何处理 Finish-Install 操作
 
@@ -33,7 +33,7 @@ Windows 进程完成-在所有其他安装操作完成并且设备已启动之�
 
 Windows 完成了以下步骤来处理安装程序的完成安装操作：
 
-1.  核心设备安装结束时，Windows 将调用 [**SetupDiCallClassInstaller**](/windows/desktop/api/setupapi/nf-setupapi-setupdicallclassinstaller) 将 [**DIF_NEWDEVICEWIZARD_FINISHINSTALL**](./dif-newdevicewizard-finishinstall.md) 请求发送到设备的安装程序。
+1.  核心设备安装结束时，Windows 将调用 [**SetupDiCallClassInstaller**](/windows/win32/api/setupapi/nf-setupapi-setupdicallclassinstaller) 将 [**DIF_NEWDEVICEWIZARD_FINISHINSTALL**](./dif-newdevicewizard-finishinstall.md) 请求发送到设备的安装程序。
 
     DIF_NEWDEVICEWIZARD_FINISHINSTALL 是在核心设备安装环境和客户端上下文中都发送的唯一 DIF 代码。 因此，类安装程序、类共同安装程序或设备共同安装程序必须指示在 DIF_NEWDEVICEWIZARD_FINISHINSTALL 处理期间（而不是在 DIF_INSTALLDEVICE 处理期间）具有完成安装操作。
 
@@ -53,7 +53,7 @@ Windows 完成了以下步骤来处理安装程序的完成安装操作：
 
     如果用户在没有管理权限的情况下登录，则 Windows 将提示用户提供许可和凭据，以便在管理员上下文中运行完成安装操作。
 
-4.  当完成安装操作运行时，完成安装过程将启动并完成设备的任何完成安装向导页面，然后调用 [**SetupDiCallClassInstaller**](/windows/desktop/api/setupapi/nf-setupapi-setupdicallclassinstaller) 将 [**DIF_FINISHINSTALL_ACTION**](./dif-finishinstall-action.md) 请求发送到设备的所有安装程序，如 [运行 "完成-安装" 操作](running-finish-install-actions.md)中所述。
+4.  当完成安装操作运行时，完成安装过程将启动并完成设备的任何完成安装向导页面，然后调用 [**SetupDiCallClassInstaller**](/windows/win32/api/setupapi/nf-setupapi-setupdicallclassinstaller) 将 [**DIF_FINISHINSTALL_ACTION**](./dif-finishinstall-action.md) 请求发送到设备的所有安装程序，如 [运行 "完成-安装" 操作](running-finish-install-actions.md)中所述。
 
 5.  安装程序完成其完成安装操作后，Windows 将运行默认的 "完成安装" 操作，如 [运行默认的 "完成安装" 操作](running-the-default-finish-install-action.md)中所述。
 

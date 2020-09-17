@@ -4,12 +4,12 @@ description: Windows 8 的 WFP 更改
 ms.assetid: B83EC5A5-6169-49AB-A7EC-F2078AA0735E
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 34e5495fdf4107d758dae2703e1c906ca6d07cf9
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 79c69f73530f033f94b7b4509d8147dc684b45fb
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89217973"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90717472"
 ---
 # <a name="wfp-changes-for-windows-8"></a>Windows 8 的 WFP 更改
 
@@ -44,7 +44,7 @@ Windows 筛选平台（以 Windows 8 开头）的可用功能和行为中已进�
     - [*FWPS \_ VSWITCH \_ 运行时 \_ 状态 \_ 还原 \_ CALLBACK0*](/windows-hardware/drivers/ddi/fwpsk/nc-fwpsk-fwps_vswitch_runtime_state_restore_callback0)
     - [*FWPS \_ VSWITCH \_ 运行时 \_ 状态 \_ SAVE \_ CALLBACK0*](/windows-hardware/drivers/ddi/fwpsk/nc-fwpsk-fwps_vswitch_runtime_state_save_callback0)
 -   新结构：
-    - [**FWPS \_ FILTER2**](/windows/desktop/api/fwpstypes/ns-fwpstypes-fwps_filter2_)
+    - [**FWPS \_ FILTER2**](/windows/win32/api/fwpstypes/ns-fwpstypes-fwps_filter2_)
     - [**FWPS \_ VSWITCH \_ 事件 \_ 调度 \_ TABLE0**](/windows-hardware/drivers/ddi/fwpsk/ns-fwpsk-fwps_vswitch_event_dispatch_table0_)
 -   新枚举：
     - [**FWPS \_ 连接 \_ 重定向 \_ 状态**](/windows-hardware/drivers/ddi/fwpsk/ne-fwpsk-fwps_connection_redirect_state_)

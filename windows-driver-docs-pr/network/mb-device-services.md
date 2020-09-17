@@ -4,19 +4,19 @@ description: Windows 7 引入了 NDIS (网络设备接口规范基于) 的驱动
 ms.assetid: 7F9DFD96-2221-4F64-AC51-F336CCBED6BF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9eb464cbf7e962fb73608d4ea923bcd832d40455
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: d60144941941bfac3014ebc0f4be0cbaff6aee86
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89207498"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90717270"
 ---
 # <a name="mb-device-services"></a>MB 设备服务
 
 
 Windows 7 引入了 NDIS (网络设备接口规范基于) 的驱动程序模型，以支持移动宽带 (MB) 设备。 Windows 8 展开了模型，以便为基于 USB 的移动宽带设备实现标准化的硬件接口。 此硬件接口规范称为移动宽带接口模型 (MBIM) 。
 
-Windows 8 提供了一个适用于符合 MBIM 规范的设备的已更新类驱动程序。 此模型称为 MB 类驱动程序。 但是，没有类驱动程序可以支持 MB 设备公开的所有功能。 为了允许 IHV 合作伙伴继续创新，MB 类驱动程序提供了一种机制，如 [**IMbnDeviceService 接口**](/windows/desktop/api/mbnapi/nn-mbnapi-imbndeviceservice) ，以允许 ihv 扩展类驱动程序功能的行为。
+Windows 8 提供了一个适用于符合 MBIM 规范的设备的已更新类驱动程序。 此模型称为 MB 类驱动程序。 但是，没有类驱动程序可以支持 MB 设备公开的所有功能。 为了允许 IHV 合作伙伴继续创新，MB 类驱动程序提供了一种机制，如 [**IMbnDeviceService 接口**](/windows/win32/api/mbnapi/nn-mbnapi-imbndeviceservice) ，以允许 ihv 扩展类驱动程序功能的行为。
 
 **注意**   扩展 MB 设备服务的功能通过用户模式应用程序完成，而不是内核模式驱动程序扩展。
 

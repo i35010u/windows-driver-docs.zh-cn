@@ -3,12 +3,12 @@ description: 本主题介绍发出选择接口请求以激活 USB 接口中的�
 title: 如何在 USB 界面中选择备用设置
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 653c9eb442383020e631e9e2cbb79b218d72f376
-ms.sourcegitcommit: 937974aa9bbe0262a7ffe9631593fab48c4e7492
+ms.openlocfilehash: 2087f0ffde45ad7099b71cb843214ce59087f78e
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "90010611"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90717462"
 ---
 # <a name="how-to-select-an-alternate-setting-in-a-usb-interface"></a>如何在 USB 界面中选择备用设置
 
@@ -146,15 +146,15 @@ Exit:
     通过在循环中调用 [**IWDFUsbTargetDevice：： RetrieveUsbInterface**](/windows-hardware/drivers/ddi/wudfusb/nf-wudfusb-iwdfusbtargetdevice-retrieveusbinterface) 方法来枚举所有接口，直到该函数返回 NULL。 对于每个迭代，将成员索引递增 (从零开始) 。 循环检索指向所有枚举接口的 [**IWDFUsbInterface**](/windows-hardware/drivers/ddi/wudfusb/nn-wudfusb-iwdfusbinterface) 指针。
 
 3.  对于每个接口，请通过调用 [**IWDFUsbInterface：： GetWinUsbHandle**](/windows-hardware/drivers/ddi/wudfusb/nf-wudfusb-iwdfusbinterface-getwinusbhandle)获取 WinUSB 句柄。 下一步需要此句柄。
-4.  调用 [**WinUsb \_ GetAssociatedInterface**](/windows/desktop/api/winusb/nf-winusb-winusb_getassociatedinterface) 以获取接口的句柄。 在 *AssociatedInterfaceIndex* 参数中，在步骤2中指定索引。
+4.  调用 [**WinUsb \_ GetAssociatedInterface**](/windows/win32/api/winusb/nf-winusb-winusb_getassociatedinterface) 以获取接口的句柄。 在 *AssociatedInterfaceIndex* 参数中，在步骤2中指定索引。
 5.  确定接口中的替代设置的数目。
 
-    在循环中调用 [**WinUsb \_ QueryInterfaceSettings**](/windows/desktop/api/winusb/nf-winusb-winusb_queryinterfacesettings) 函数，并在每次迭代 (从零开始的) 递增索引。 枚举所有设置后，函数将返回错误，而不会返回 \_ \_ 更多 \_ 项。 函数还返回每个设置的接口描述符。
+    在循环中调用 [**WinUsb \_ QueryInterfaceSettings**](/windows/win32/api/winusb/nf-winusb-winusb_queryinterfacesettings) 函数，并在每次迭代 (从零开始的) 递增索引。 枚举所有设置后，函数将返回错误，而不会返回 \_ \_ 更多 \_ 项。 函数还返回每个设置的接口描述符。
 
 6.  通过使用每个接口描述符的 **bNumEndpoints** 成员中接收的值并枚举其终结点。 检查终结点描述符，确定哪个设置满足你的要求。
-7.  通过调用 [**WinUsb \_ SetCurrentAlternateSetting**](/windows/desktop/api/winusb/nf-winusb-winusb_setcurrentalternatesetting) 函数，启动一个选择接口请求。 在调用中，指定与步骤4中的索引关联的备用设置号。
-8.  通过调用 [**WinUsb \_ Free**](/windows/desktop/api/winusb/nf-winusb-winusb_free) 函数，释放在步骤4中获取的接口句柄。
-9.  通过调用 [**WinUSB \_ Free**](/windows/desktop/api/winusb/nf-winusb-winusb_free) 函数，释放在步骤3中获取的 WinUSB 句柄。
+7.  通过调用 [**WinUsb \_ SetCurrentAlternateSetting**](/windows/win32/api/winusb/nf-winusb-winusb_setcurrentalternatesetting) 函数，启动一个选择接口请求。 在调用中，指定与步骤4中的索引关联的备用设置号。
+8.  通过调用 [**WinUsb \_ Free**](/windows/win32/api/winusb/nf-winusb-winusb_free) 函数，释放在步骤4中获取的接口句柄。
+9.  通过调用 [**WinUSB \_ Free**](/windows/win32/api/winusb/nf-winusb-winusb_free) 函数，释放在步骤3中获取的 WinUSB 句柄。
 10. 如果使用完 [**IWDFUsbInterface**](/windows-hardware/drivers/ddi/wudfusb/nn-wudfusb-iwdfusbinterface) 方法，请释放在步骤2中检索到的所有接口指针。
 
 <a name="remarks"></a>备注

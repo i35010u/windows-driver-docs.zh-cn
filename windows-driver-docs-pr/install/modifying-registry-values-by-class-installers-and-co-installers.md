@@ -10,12 +10,12 @@ keywords:
 - 共同安装程序 WDK 设备安装，修改注册表值
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: af1bda8f912f1ffc6299b8ad4d64b658ec3c473b
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 5e870dab7cea31d6bbb7412b1989505439d5d68d
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89095015"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90717278"
 ---
 # <a name="modifying-registry-values-by-class-installers-and-co-installers"></a>通过类安装程序和辅助安装程序修改注册表值
 
@@ -42,7 +42,7 @@ ms.locfileid: "89095015"
 
 应遵循以下准则，以安全地修改类安装程序或共同安装程序的注册表值：
 
--   类安装程序和共同安装程序必须首先使用 [**SetupDiCreateDevRegKey**](/windows/desktop/api/setupapi/nf-setupapi-setupdicreatedevregkeya) 或 [**SetupDiOpenDevRegKey**](/windows/desktop/api/setupapi/nf-setupapi-setupdiopendevregkey) 来打开要修改的注册表项的句柄。 打开句柄后，类安装程序和共同安装程序可以使用标准注册表函数来修改注册表值。
+-   类安装程序和共同安装程序必须首先使用 [**SetupDiCreateDevRegKey**](/windows/win32/api/setupapi/nf-setupapi-setupdicreatedevregkeya) 或 [**SetupDiOpenDevRegKey**](/windows/win32/api/setupapi/nf-setupapi-setupdiopendevregkey) 来打开要修改的注册表项的句柄。 打开句柄后，类安装程序和共同安装程序可以使用标准注册表函数来修改注册表值。
 
 -   类安装程序和共同安装程序不得对设备使用 **SetupDiDeleteDevRegKey** 或 *硬件密钥* 。 有关详细信息，请参阅 [删除设备的注册表项](deleting-the-registry-keys-of-a-device.md)。
 

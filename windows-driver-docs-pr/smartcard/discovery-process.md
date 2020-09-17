@@ -4,12 +4,12 @@ description: 发现过程
 ms.assetid: 6B94CAF1-D998-4EAF-8ABB-80A21193B50F
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 58536689497360bd9db9338106e0be8c7f7338c1
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 387156e207d49778358e332ecfccc29551dab5ff
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89384009"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90716856"
 ---
 # <a name="discovery-process"></a>发现过程
 
@@ -73,7 +73,7 @@ ms.locfileid: "89384009"
 
 下表列出了发现过程使用的文件。
 
-| 命令 | 指令 () 值 |
+| Command | 指令 () 值 |
 |---------|-------------------------|
 | MF      | 0x3F00                  |
 | EF.ATR  | 0x2F01                  |
@@ -82,7 +82,7 @@ ms.locfileid: "89384009"
 
 下表列出了不同的发现进程使用的命令。
 
-| 命令      | 指令 () 值 |
+| Command      | 指令 () 值 |
 |--------------|-------------------------|
 | SELECT       | 0xA4                    |
 | 获取数据     | 0xCA                    |
@@ -123,7 +123,7 @@ ms.locfileid: "89384009"
 ## <a name="span-idwinscard_discovery_processspanspan-idwinscard_discovery_processspanspan-idwinscard_discovery_processspanwinscard-discovery-process"></a><span id="Winscard_Discovery_Process"></span><span id="winscard_discovery_process"></span><span id="WINSCARD_DISCOVERY_PROCESS"></span>Winscard 发现过程
 
 
-Winscard ( # A0) 发现进程用于将系统中的卡片与安装的微型驱动程序相关联。 调用 [**SCardListCards**](/windows/desktop/api/winscard/nf-winscard-scardlistcardsa) 或 [**SCardLocateCards**](/windows/desktop/api/winscard/nf-winscard-scardlocatecardsa) 时，将启动进程。
+Winscard ( # A0) 发现进程用于将系统中的卡片与安装的微型驱动程序相关联。 调用 [**SCardListCards**](/windows/win32/api/winscard/nf-winscard-scardlistcardsa) 或 [**SCardLocateCards**](/windows/win32/api/winscard/nf-winscard-scardlocatecardsa) 时，将启动进程。
 
 从 Windows 7 开始，下面介绍了 Winscard 发现过程：
 
@@ -188,11 +188,11 @@ Winscard ( # A0) 发现进程用于将系统中的卡片与安装的微型驱动
 
     | 条目名称                      | 类型   | 值                                     |
     |---------------------------------|--------|-------------------------------------------|
-    | 80000001                        | 字符串 | Msclmd.dll                                |
-    | ATR                             | Binary | 卡片的 ATR                                |
-    | ATRMask                         | Binary | 卡片的 ATR 掩码                           |
-    | 加密提供程序                 | 字符串 | Microsoft Base Smart Card Crypto Provider |
-    | 智能卡密钥存储提供程序 | 字符串 | Microsoft 智能卡密钥存储提供程序 |
+    | 80000001                        | String | Msclmd.dll                                |
+    | ATR                             | 二进制 | 卡片的 ATR                                |
+    | ATRMask                         | 二进制 | 卡片的 ATR 掩码                           |
+    | 加密提供程序                 | String | Microsoft Base Smart Card Crypto Provider |
+    | 智能卡密钥存储提供程序 | String | Microsoft 智能卡密钥存储提供程序 |
 
      
 

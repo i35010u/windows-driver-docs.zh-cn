@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 09213577c0c645d103fad05de5bbc808b77a13ad
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: c1082e7a8b53d6af64c15759dce078d845c957e9
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90102982"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90717544"
 ---
 # <a name="dif_firsttimesetup"></a>DIF_FIRSTTIMESETUP
 
@@ -97,7 +97,7 @@ GUI 模式安装程序发送一个 DIF_FIRSTTIMESETUP 请求，其中包含空�
 
 安装程序会根据注册表信息、通过调用内核模式检测组件来检测其安装程序类的新设备，或通过咨询 *unattend.txt* 在操作系统升级过程中运行迁移 DLL 时存储的信息。
 
-如果安装程序检测到非 PnP 设备，则安装程序应为设备选择驱动程序，如下所示：创建设备信息元素 ([**SetupDiCreateDeviceInfo**](/windows/desktop/api/setupapi/nf-setupapi-setupdicreatedeviceinfoa)) ，通过调用 [**SetupDiSetDeviceRegistryProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdisetdeviceregistrypropertya)设置 SPDRP_HARDWAREID 属性，调用 [**SetupDiBuildDriverInfoList**](/windows/desktop/api/setupapi/nf-setupapi-setupdibuilddriverinfolist)，然后调用 [**SetupDiCallClassInstaller**](/windows/desktop/api/setupapi/nf-setupapi-setupdicallclassinstaller) 发送 [**DIF_SELECTBESTCOMPATDRV**](dif-selectbestcompatdrv.md) 请求。
+如果安装程序检测到非 PnP 设备，则安装程序应为设备选择驱动程序，如下所示：创建设备信息元素 ([**SetupDiCreateDeviceInfo**](/windows/win32/api/setupapi/nf-setupapi-setupdicreatedeviceinfoa)) ，通过调用 [**SetupDiSetDeviceRegistryProperty**](/windows/win32/api/setupapi/nf-setupapi-setupdisetdeviceregistrypropertya)设置 SPDRP_HARDWAREID 属性，调用 [**SetupDiBuildDriverInfoList**](/windows/win32/api/setupapi/nf-setupapi-setupdibuilddriverinfolist)，然后调用 [**SetupDiCallClassInstaller**](/windows/win32/api/setupapi/nf-setupapi-setupdicallclassinstaller) 发送 [**DIF_SELECTBESTCOMPATDRV**](dif-selectbestcompatdrv.md) 请求。
 
 如果一个或多个安装程序检测到设备 (s) 以响应此 DIF 代码，GUI 模式安装程序将尝试安装 () 的设备。 GUI 模式安装程序将尝试安装列表中的所有设备;如果安装程序返回先前配置的设备，GUI 模式安装程序将安装两次设备。
 
@@ -134,13 +134,13 @@ GUI 模式安装程序发送一个 DIF_FIRSTTIMESETUP 请求，其中包含空�
 
 [**DIF_SELECTBESTCOMPATDRV**](dif-selectbestcompatdrv.md)
 
-[**SetupDiBuildDriverInfoList**](/windows/desktop/api/setupapi/nf-setupapi-setupdibuilddriverinfolist)
+[**SetupDiBuildDriverInfoList**](/windows/win32/api/setupapi/nf-setupapi-setupdibuilddriverinfolist)
 
-[**SetupDiCallClassInstaller**](/windows/desktop/api/setupapi/nf-setupapi-setupdicallclassinstaller)
+[**SetupDiCallClassInstaller**](/windows/win32/api/setupapi/nf-setupapi-setupdicallclassinstaller)
 
-[**SetupDiCreateDeviceInfo**](/windows/desktop/api/setupapi/nf-setupapi-setupdicreatedeviceinfoa)
+[**SetupDiCreateDeviceInfo**](/windows/win32/api/setupapi/nf-setupapi-setupdicreatedeviceinfoa)
 
-[**SetupDiSetDeviceRegistryProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdisetdeviceregistrypropertya)
+[**SetupDiSetDeviceRegistryProperty**](/windows/win32/api/setupapi/nf-setupapi-setupdisetdeviceregistrypropertya)
 
 [**SP_DEVINFO_DATA**](/windows/win32/api/setupapi/ns-setupapi-sp_devinfo_data)
 

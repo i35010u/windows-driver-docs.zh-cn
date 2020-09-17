@@ -10,12 +10,12 @@ keywords:
 - 错误代码 WDK COPP
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 271c2e29f9465c69a44e86dace2b0ad2ea332f4a
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 68cc80615ee6ff1d6545ac4d4bd8f1989f7a7a63
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89064604"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90715450"
 ---
 # <a name="returning-error-codes-from-copp-functions"></a>从 COPP 函数返回错误代码
 
@@ -48,7 +48,7 @@ COPP DDI 可以返回 E \_ FAIL 和 DDERR \_ 一般错误代码; 但是，由于
 
 每个 COPP 函数的 "备注" 部分指定 \_ COPP 函数可以报告的 DDERR 错误代码。 不应要求 COPP DDI 返回任何其他 DDERR \_ 错误代码。
 
-在将视频微型端口驱动程序中的 COPP DDI 传播到显示驱动程序时，不应使用来自 [**EngDeviceIoControl**](/windows/desktop/api/winddi/nf-winddi-engdeviceiocontrol) 函数的返回值，因为 Windows 内核会将从 IOCTL 返回的错误值处理到 **EngDeviceIoControl**。 相反，应通过**EngDeviceIoControl**的*lpInBuffer*参数传递错误消息。 有关详细信息，请参阅 [从显示器驱动程序调用 COPP DDI](calling-the-copp-ddi-from-the-display-driver.md) 和 [COPP 视频微型端口驱动程序模板](copp-video-miniport-driver-template.md) 中的示例代码和 [执行 COPP 操作](performing-copp-operations-example.md)。
+在将视频微型端口驱动程序中的 COPP DDI 传播到显示驱动程序时，不应使用来自 [**EngDeviceIoControl**](/windows/win32/api/winddi/nf-winddi-engdeviceiocontrol) 函数的返回值，因为 Windows 内核会将从 IOCTL 返回的错误值处理到 **EngDeviceIoControl**。 相反，应通过**EngDeviceIoControl**的*lpInBuffer*参数传递错误消息。 有关详细信息，请参阅 [从显示器驱动程序调用 COPP DDI](calling-the-copp-ddi-from-the-display-driver.md) 和 [COPP 视频微型端口驱动程序模板](copp-video-miniport-driver-template.md) 中的示例代码和 [执行 COPP 操作](performing-copp-operations-example.md)。
 
  
 

@@ -4,12 +4,12 @@ description: 使用活动标识符
 ms.assetid: 2B70953F-5192-4654-9506-6A84373D20B4
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 09dc4b40dd0d0374ad6949967baf032dd24fc6af
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: d10229f897357f5da9b786d003fbc05d2e28a3b4
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89184577"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90717460"
 ---
 # <a name="using-activity-identifiers"></a>使用活动标识符
 
@@ -26,7 +26,7 @@ ms.locfileid: "89184577"
 ## <a name="associating-new-requests-with-an-existing-thread"></a>将新请求与现有线程关联
 
 
-驱动程序可能会在非 i/o 调度线程或工作项中创建新的 i/o 请求。 你可以从任何对应的请求中设置此类请求的活动 ID，或使用与 i/o 调度线程关联的活动 ID。 驱动程序可以通过调用 [**EventActivityIdControl**](/windows/desktop/api/evntprov/nf-evntprov-eventactivityidcontrol) ，然后调用 [**WdfRequestSetActivityId**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestsetactivityid) 为每个新的 i/o 请求设置标识符，来检索与当前线程关联的活动 ID。
+驱动程序可能会在非 i/o 调度线程或工作项中创建新的 i/o 请求。 你可以从任何对应的请求中设置此类请求的活动 ID，或使用与 i/o 调度线程关联的活动 ID。 驱动程序可以通过调用 [**EventActivityIdControl**](/windows/win32/api/evntprov/nf-evntprov-eventactivityidcontrol) ，然后调用 [**WdfRequestSetActivityId**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestsetactivityid) 为每个新的 i/o 请求设置标识符，来检索与当前线程关联的活动 ID。
 
 如果驱动程序调用 Win32 API 来发送 i/o 请求，则它可以从原始请求中检索活动 ID，然后将其传播到该线程。 然后，i/o 管理器将与该线程关联的活动 ID 应用到它为响应请求而生成的 (Irp) 的任何 i/o 请求包。
 

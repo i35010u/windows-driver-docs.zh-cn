@@ -7,12 +7,12 @@ keywords:
 - 设备安装应用程序 WDK，指导原则
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8087da366ec9640d966ac1c58605c1ca80f9fe8c
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 16702b1754a7f21d27e8f6390da832bd8434161a
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89095323"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90716886"
 ---
 # <a name="guidelines-for-writing-device-installation-applications"></a>设备安装应用程序编写指南
 
@@ -47,7 +47,7 @@ ms.locfileid: "89095323"
 
 -   在卸载操作期间从系统中删除已安装的驱动程序文件，即使删除了硬件也是如此。
 
--   强制任何不必要的系统重新启动。 安装 PnP 设备或软件应用程序通常不需要重新启动。 [**UpdateDriverForPlugAndPlayDevices**](/windows/desktop/api/newdev/nf-newdev-updatedriverforplugandplaydevicesa)函数的*bRebootRequired*参数表示需要重新启动。
+-   强制任何不必要的系统重新启动。 安装 PnP 设备或软件应用程序通常不需要重新启动。 [**UpdateDriverForPlugAndPlayDevices**](/windows/win32/api/newdev/nf-newdev-updatedriverforplugandplaydevicesa)函数的*bRebootRequired*参数表示需要重新启动。
 
 -   使用 RunOnce 注册表项，因为这需要重新启动系统。
 

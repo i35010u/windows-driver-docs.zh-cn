@@ -7,12 +7,12 @@ keywords:
 - CDOs WDK 文件系统
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a403e2ec4724409213538d06dc9ee9044a38fcdb
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 9237190c2856d03379cf60e63ef4ae3c983343bb
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89067356"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90716798"
 ---
 # <a name="the-filter-drivers-control-device-object"></a>筛选器驱动程序的控制设备对象
 
@@ -22,7 +22,7 @@ ms.locfileid: "89067356"
 
 与创建和使用命名控件设备对象 (CDO) 所需的文件系统不同，文件系统筛选器驱动程序不需要具有 CDO。 如果是这样，则可以选择性地命名此 CDO，表示系统的筛选器驱动程序。 其作用是接收来自用户模式应用程序的 i/o 请求， (或不太常见地) 其他内核模式驱动程序，并相应地对其进行操作。
 
-大多数文件系统筛选器驱动程序创建和使用 CDO。 但是，在 CDO 上支持 i/o 请求是可选的。 若要提供此支持，筛选器驱动程序调用 [**IoCreateDevice**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iocreatedevice) 创建 CDO 时，必须提供对象的设备名称。 然后，用户模式应用程序可以通过调用 [**CreateFile**](/windows/desktop/api/fileapi/nf-fileapi-createfilea)获取已命名 CDO 的句柄，同时提供设备名称的用户模式版本。
+大多数文件系统筛选器驱动程序创建和使用 CDO。 但是，在 CDO 上支持 i/o 请求是可选的。 若要提供此支持，筛选器驱动程序调用 [**IoCreateDevice**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iocreatedevice) 创建 CDO 时，必须提供对象的设备名称。 然后，用户模式应用程序可以通过调用 [**CreateFile**](/windows/win32/api/fileapi/nf-fileapi-createfilea)获取已命名 CDO 的句柄，同时提供设备名称的用户模式版本。
 
 例如，假设有一个假想的 "MyLegacyFilter" 内核模式驱动程序。 此驱动程序可以创建名称为的 CDO：
 
@@ -36,7 +36,7 @@ ms.locfileid: "89067356"
 \\.\MyLegacyFilter
 ```
 
-当它调用 [**CreateFile**](/windows/desktop/api/fileapi/nf-fileapi-createfilea)时。
+当它调用 [**CreateFile**](/windows/win32/api/fileapi/nf-fileapi-createfilea)时。
 
 ### <a name="span-idtypes_of_i_o_requests_that_are_sent_to_the_filter_driver_s_control_devspanspan-idtypes_of_i_o_requests_that_are_sent_to_the_filter_driver_s_control_devspantypes-of-io-requests-that-are-sent-to-the-filter-drivers-control-device-object"></a><span id="types_of_i_o_requests_that_are_sent_to_the_filter_driver_s_control_dev"></span><span id="TYPES_OF_I_O_REQUESTS_THAT_ARE_SENT_TO_THE_FILTER_DRIVER_S_CONTROL_DEV"></span>发送到筛选器驱动程序的控制设备对象的 i/o 请求类型
 

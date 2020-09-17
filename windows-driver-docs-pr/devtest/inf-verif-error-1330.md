@@ -4,12 +4,12 @@ description: 'InfVerif ( # A0) 是可用于测试驱动程序 INF 文件的工�
 ms.assetid: 6F565E1C-C6FC-4637-B476-FE4E4672CCC3
 ms.date: 03/05/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: f94a5ba6ec321679e430c34a51535612b449ce73
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 9d6edd2cc03d2c616031a8af4bb2b11cfc8c032d
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89382671"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90716966"
 ---
 # <a name="infverif-error-1330---1333"></a>InfVerif 错误 1330-1333
 
@@ -129,7 +129,7 @@ HKR,, FileName1Path, "%13%\SourceFile1B"
 
 #### <a name="other-user-mode-code"></a>其他用户模式代码
 
-* [**CM_Open_DevNode_Key**](/windows/desktop/api/cfgmgr32/nf-cfgmgr32-cm_open_devnode_key)
+* [**CM_Open_DevNode_Key**](/windows/win32/api/cfgmgr32/nf-cfgmgr32-cm_open_devnode_key)
 
 > [!NOTE]
 > 在此示例中，INF 负载不会影响解决方案的文件的目标位置。  但是，若要使用最佳做法，示例使用了 [DIRID](../install/using-dirids.md) 13，因为它通过更少的文件副本提供更快的安装。  有关详细信息，请参阅 "[使用 DIRIDs](../install/using-dirids.md)" 和 "[从驱动程序存储区运行](../develop/dch-example.md#run-from-the-driver-store)"。
@@ -142,7 +142,7 @@ HKR,, FileName1Path, "%13%\SourceFile1B"
 <thead>
 <tr>
 <th>源代码</th>
-<th>备注</th>
+<th>评论</th>
 </tr>
 </thead>
 <tbody>
@@ -179,7 +179,7 @@ DesiredFileName2,SourceFile2B ; HW Version B
 <thead>
 <tr>
 <th>源代码</th>
-<th>备注</th>
+<th>评论</th>
 </tr>
 </thead>
 <tbody>

@@ -8,12 +8,12 @@ keywords:
 - 剪辑 WDK Direct3D
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6fffdac2c0533d67d9853c788b410c7d92855512
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: c601a25aa78cd13c608523228a4d1ad8ad520575
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89064180"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90716938"
 ---
 # <a name="guard-band-clipping"></a>防护带裁剪
 
@@ -21,7 +21,7 @@ ms.locfileid: "89064180"
 ## <span id="ddk_guard_band_clipping_gg"></span><span id="DDK_GUARD_BAND_CLIPPING_GG"></span>
 
 
-驱动程序发出信号，指示其在 \_ [**DdGetDriverInfo**](/windows/desktop/api/ddrawint/nc-ddrawint-pdd_getdriverinfo)中的 guid D3DExtendedCaps 防护带区是一个矩形，它可能大于视区 (甚至是呈现器目标) ，可由驱动程序自动剪切顶点。 Microsoft Direct3D 剪裁代码剪辑到此矩形而不是视口。 通过允许驱动程序指定可能较大的防护带矩形，就减少了生成新顶点的需求。 例如，只要屏幕 x 和 y 坐标范围为-2048 到2047，就可以正确呈现硬件设备。
+驱动程序发出信号，指示其在 \_ [**DdGetDriverInfo**](/windows/win32/api/ddrawint/nc-ddrawint-pdd_getdriverinfo)中的 guid D3DExtendedCaps 防护带区是一个矩形，它可能大于视区 (甚至是呈现器目标) ，可由驱动程序自动剪切顶点。 Microsoft Direct3D 剪裁代码剪辑到此矩形而不是视口。 通过允许驱动程序指定可能较大的防护带矩形，就减少了生成新顶点的需求。 例如，只要屏幕 x 和 y 坐标范围为-2048 到2047，就可以正确呈现硬件设备。
 
 对于抗锯齿式硬件，防护带剪辑也很有用，因为筛选器区域可以在呈现面范围外扩展。 这会减少在将基元裁剪到此区时可能引入的筛选错误。
 

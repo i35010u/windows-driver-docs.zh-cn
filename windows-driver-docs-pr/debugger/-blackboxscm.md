@@ -14,12 +14,12 @@ api_name:
 - blackboxscm
 api_type:
 - NA
-ms.openlocfilehash: 9c737f94d983532024230c8310d8abb45b7f11ff
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: f6fc46c6449a80b5a0ef9d24664a29e6816af5cd
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89217104"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90716976"
 ---
 # <a name="blackboxscm"></a>!blackboxscm
 
@@ -75,6 +75,6 @@ ext.dll
 
 ### <a name="span-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span>附加信息
 
-dwControl 值在 winsvc 中定义，并记录为 [LPHANDLER_FUNCTION_EX 回调函数](/windows/desktop/api/winsvc/nc-winsvc-lphandler_function_ex#parameters)的参数。
+dwControl 值在 winsvc 中定义，并记录为 [LPHANDLER_FUNCTION_EX 回调函数](/windows/win32/api/winsvc/nc-winsvc-lphandler_function_ex#parameters)的参数。
 
  

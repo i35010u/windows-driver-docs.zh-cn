@@ -7,12 +7,12 @@ keywords:
 - 自定义缩放 WDK 显示
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4883a08a70532c37279e5faeff5ab80c493f2fb7
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 62d5f6c7e8db9e5e6856ae105a44e9a0b1101458
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90107278"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90717576"
 ---
 # <a name="using-aspect-ratio-and-custom-scaling-modes"></a>使用纵横比和自定义缩放模式
 
@@ -59,7 +59,7 @@ ms.locfileid: "90107278"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left"><a href="/windows/desktop/api/winuser/nf-winuser-setdisplayconfig" data-raw-source="[&lt;strong&gt;SetDisplayConfig&lt;/strong&gt;](/windows/desktop/api/winuser/nf-winuser-setdisplayconfig)"><strong>SetDisplayConfig</strong></a> API 缩放值</th>
+<th align="left"><a href="/windows/win32/api/winuser/nf-winuser-setdisplayconfig" data-raw-source="[&lt;strong&gt;SetDisplayConfig&lt;/strong&gt;](/windows/win32/api/winuser/nf-winuser-setdisplayconfig)"><strong>SetDisplayConfig</strong></a> API 缩放值</th>
 <th align="left">DDI 缩放值</th>
 </tr>
 </thead>

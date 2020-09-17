@@ -12,12 +12,12 @@ keywords:
 - 陀螺仪
 ms.date: 02/28/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 9a140ca20b08ff972528cc5e7a0d936142b88fd3
-ms.sourcegitcommit: 9145bffd4cc3b990a9ebff43b588db6ef2001f5d
+ms.openlocfilehash: d35b60eaf4fa27c8e77f5974d5319d9e3c2807f6
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/09/2020
-ms.locfileid: "89592341"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90716812"
 ---
 # <a name="hid-application-programming-interface-api"></a>HID 应用程序编程接口 (API)
 
@@ -45,8 +45,8 @@ ms.locfileid: "89592341"
 - [HidD \_ GetInputReport](/windows-hardware/drivers/ddi/hidsdi/nf-hidsdi-hidd_getinputreport)
 - [HidD \_ SetFeature](/windows-hardware/drivers/ddi/hidsdi/nf-hidsdi-hidd_setfeature)
 - [HidD \_ SetOutputReport](/windows-hardware/drivers/ddi/hidsdi/nf-hidsdi-hidd_setoutputreport)
-- [ReadFile](/windows/desktop/api/fileapi/nf-fileapi-readfile)
-- [WriteFile](/windows/desktop/api/fileapi/nf-fileapi-writefile)
+- [ReadFile](/windows/win32/api/fileapi/nf-fileapi-readfile)
+- [WriteFile](/windows/win32/api/fileapi/nf-fileapi-writefile)
 
 ## <a name="report-creation-and-interpretation"></a>报表创建和解释
 

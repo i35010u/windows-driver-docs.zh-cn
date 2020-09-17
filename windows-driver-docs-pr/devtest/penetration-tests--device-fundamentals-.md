@@ -4,12 +4,12 @@ description: 设备基础的渗透测试执行各种形式的输入攻击，这�
 ms.assetid: 53EBAF4B-2CEF-492B-98B8-DA199FDFBC46
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7045bd9ef021c23235945d743f436cf85cdaf6f4
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 83e2d6bac929ee71ef466d500e18c9599bbd8e58
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90102468"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90717252"
 ---
 # <a name="penetration-tests-device-fundamentals"></a>渗透压力测试（设备基础功能）
 
@@ -211,8 +211,8 @@ ms.locfileid: "90102468"
 </tr>
 <tr class="even">
 <td align="left"><p><span id="Fuzz_Zero-Length_Buffer_FSCTL_test___Fuzz_Zero-Length_Buffer_IOCTL_test"></span><span id="fuzz_zero-length_buffer_fsctl_test___fuzz_zero-length_buffer_ioctl_test"></span><span id="FUZZ_ZERO-LENGTH_BUFFER_FSCTL_TEST___FUZZ_ZERO-LENGTH_BUFFER_IOCTL_TEST"></span>模糊零长度缓冲区 FSCTL 测试/模糊长度缓冲区 IOCTL 测试</p></td>
-<td align="left"><p>此测试发出一系列对 <a href="/windows/desktop/api/ioapiset/nf-ioapiset-deviceiocontrol" data-raw-source="[&lt;strong&gt;DeviceIoControl function&lt;/strong&gt;](/windows/desktop/api/ioapiset/nf-ioapiset-deviceiocontrol)"><strong>DeviceIoControl 函数</strong></a> 的调用，其中的输入和/或输出缓冲区长度为0。 该测试通过使用不同的函数代码、设备类型、数据传输方法和访问要求，生成不同的文件系统控制代码。</p>
-<p>在长度为零的缓冲区测试期间，模糊测试会发出一系列对 <a href="/windows/desktop/api/ioapiset/nf-ioapiset-deviceiocontrol" data-raw-source="[&lt;strong&gt;DeviceIoControl function&lt;/strong&gt;](/windows/desktop/api/ioapiset/nf-ioapiset-deviceiocontrol)"><strong>DeviceIoControl 函数</strong></a> 的调用，其中的输入和/或输出缓冲区长度为0。 该测试通过使用不同的函数代码、设备类型、数据传输方法和访问要求，生成不同的 i/o 控制代码。 有关 i/o 控制代码的内容的信息，请参阅 <a href="/windows-hardware/drivers/kernel/defining-i-o-control-codes" data-raw-source="[Defining I/O Control Codes](../kernel/defining-i-o-control-codes.md)">定义 I/o 控制代码</a>。</p>
+<td align="left"><p>此测试发出一系列对 <a href="/windows/win32/api/ioapiset/nf-ioapiset-deviceiocontrol" data-raw-source="[&lt;strong&gt;DeviceIoControl function&lt;/strong&gt;](/windows/win32/api/ioapiset/nf-ioapiset-deviceiocontrol)"><strong>DeviceIoControl 函数</strong></a> 的调用，其中的输入和/或输出缓冲区长度为0。 该测试通过使用不同的函数代码、设备类型、数据传输方法和访问要求，生成不同的文件系统控制代码。</p>
+<p>在长度为零的缓冲区测试期间，模糊测试会发出一系列对 <a href="/windows/win32/api/ioapiset/nf-ioapiset-deviceiocontrol" data-raw-source="[&lt;strong&gt;DeviceIoControl function&lt;/strong&gt;](/windows/win32/api/ioapiset/nf-ioapiset-deviceiocontrol)"><strong>DeviceIoControl 函数</strong></a> 的调用，其中的输入和/或输出缓冲区长度为0。 该测试通过使用不同的函数代码、设备类型、数据传输方法和访问要求，生成不同的 i/o 控制代码。 有关 i/o 控制代码的内容的信息，请参阅 <a href="/windows-hardware/drivers/kernel/defining-i-o-control-codes" data-raw-source="[Defining I/O Control Codes](../kernel/defining-i-o-control-codes.md)">定义 I/o 控制代码</a>。</p>
 <p>若要测试驱动程序对无效缓冲区指针的处理，这些用户模式调用中的缓冲区指针指定内核虚拟地址空间中的最大地址，例如 0xFFFFFC00) 。</p>
 <p>模糊测试对基本和其他打开的测试中打开的所有设备执行长度为零的缓冲区测试。 可以通过使用<em>MinFunctionCode</em>和<em>MaxFunctionCode</em>命令参数来自定义此测试，以指定调用中使用的 IOCTL 或 FSCTL 函数代码的<em>范围，并</em>指定<em>MaxDeviceType</em>调用中使用的设备类型的范围。</p>
 <p><strong>测试二进制文件：</strong> Devfund_DevicePathExerciser.dll</p>

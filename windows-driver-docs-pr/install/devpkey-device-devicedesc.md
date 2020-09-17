@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 80392b55ca45ff6e98c18b4feee47d1aee974e51
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: aad90bffd43a2617420ec7fc5beeabe7e91cfda3
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89095597"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90717086"
 ---
 # <a name="devpkey_device_devicedesc"></a>DEVPKEY_Device_DeviceDesc
 
@@ -68,7 +68,7 @@ DEVPKEY_Device_DeviceDesc 设备属性表示设备实例的说明。
 
 DEVPKEY_Device_DeviceDesc 的值由安装设备的 INF 文件的 " [**Inf 模型" 部分**](./inf-models-section.md)提供的*设备说明*条目值设置。
 
-可以调用 [**SetupDiGetDeviceProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw) 来检索 DEVPKEY_DEVICE_DeviceDesc 的值。
+可以调用 [**SetupDiGetDeviceProperty**](/windows/win32/api/setupapi/nf-setupapi-setupdigetdevicepropertyw) 来检索 DEVPKEY_DEVICE_DeviceDesc 的值。
 
 可以检索 " [**DEVPKEY_NAME**](devpkey-name--device-instance-.md) 设备实例" 属性的值，以检索设备在用户界面项中应出现的名称。
 
@@ -80,14 +80,14 @@ Windows Server 2003、Windows XP 和 Windows 2000 支持此属性，但不支持
 **版本**： windows Vista 和更高版本的 windows **标题**： Devpkey (包含 Devpkey) 
 
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**DEVPKEY_NAME（设备实例）**](devpkey-name--device-instance-.md)
 
 [**INF Models 节**](./inf-models-section.md)
 
-[**SetupDiGetDeviceProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)
+[**SetupDiGetDeviceProperty**](/windows/win32/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)
 
  
 

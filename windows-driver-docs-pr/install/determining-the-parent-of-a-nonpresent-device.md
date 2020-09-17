@@ -14,12 +14,12 @@ keywords:
 - 祖先 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2d87b203da76c94ab845d0608a9b80fa35ef57dc
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 979ac009671c300ceeefbf5f1791d05c9be630b1
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90105000"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90717308"
 ---
 # <a name="determining-the-parent-of-a-nonpresent-device"></a>确定虚幻设备的父设备
 
@@ -45,11 +45,11 @@ ms.locfileid: "90105000"
 
 ***<em>将直接父项的设备实例 ID 保存在注册表中</em>***
 
-1.  调用 [**CM_Get_Parent**](/windows/desktop/api/cfgmgr32/nf-cfgmgr32-cm_get_parent) 获取设备父设备的设备实例句柄。
+1.  调用 [**CM_Get_Parent**](/windows/win32/api/cfgmgr32/nf-cfgmgr32-cm_get_parent) 获取设备父设备的设备实例句柄。
 
-2.  使用父设备的设备实例句柄，调用 [**CM_Get_Device_ID**](/windows/desktop/api/cfgmgr32/nf-cfgmgr32-cm_get_device_idw) 获取父设备的设备实例 ID。
+2.  使用父设备的设备实例句柄，调用 [**CM_Get_Device_ID**](/windows/win32/api/cfgmgr32/nf-cfgmgr32-cm_get_device_idw) 获取父设备的设备实例 ID。
 
-3.  通过使用 DIREG_DEV 标志来调用 [**SetupDiOpenDevRegKey**](/windows/desktop/api/setupapi/nf-setupapi-setupdiopendevregkey) ，以获取设备的硬件注册表项的句柄。
+3.  通过使用 DIREG_DEV 标志来调用 [**SetupDiOpenDevRegKey**](/windows/win32/api/setupapi/nf-setupapi-setupdiopendevregkey) ，以获取设备的硬件注册表项的句柄。
 
 4.  调用 **RegSetValueEx** ，将父设备的设备实例 ID 保存在设备的硬件注册表项下的用户创建的条目值中。
 
@@ -63,7 +63,7 @@ ms.locfileid: "90105000"
 
 2.  调用 **RegQueryValueEx** ，以检索在设备共同安装程序中设置的输入值中保存的父设备的设备实例 ID。
 
-检索父设备的设备实例 ID 后，调用 [**SetupDiOpenDeviceInfo**](/windows/desktop/api/setupapi/nf-setupapi-setupdiopendeviceinfoa) 来获取父设备的 [**SP_DEVINFO_DATA**](/windows/win32/api/setupapi/ns-setupapi-sp_devinfo_data) 结构。
+检索父设备的设备实例 ID 后，调用 [**SetupDiOpenDeviceInfo**](/windows/win32/api/setupapi/nf-setupapi-setupdiopendeviceinfoa) 来获取父设备的 [**SP_DEVINFO_DATA**](/windows/win32/api/setupapi/ns-setupapi-sp_devinfo_data) 结构。
 
 ### <a name="handling-a-chain-of-ancestors-for-a-nonpresent-device"></a><a href="" id="handling-a-chain-of-ancestors-for-a-nonpresent-device"></a> 处理 Nonpresent 设备的上级链
 

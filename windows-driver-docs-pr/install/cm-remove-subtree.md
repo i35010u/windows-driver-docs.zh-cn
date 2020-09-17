@@ -12,15 +12,15 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 796d5f55d0a3e73ffb0594cbbe96ee43c6d884fa
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 51c88a852136083d6b5fffa660f4e0548be9fe0f
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89097027"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90717444"
 ---
 # <a name="cm_remove_subtree"></a>CM_Remove_SubTree
 
 此函数保留供系统使用。
 
-此功能已过时，Windows 2000 和更高版本的 Windows 不再支持此功能。 改用 [**CM_Query_And_Remove_Subtree**](/windows/desktop/api/cfgmgr32/nf-cfgmgr32-cm_query_and_remove_subtreew) 。
+此功能已过时，Windows 2000 和更高版本的 Windows 不再支持此功能。 改用 [**CM_Query_And_Remove_Subtree**](/windows/win32/api/cfgmgr32/nf-cfgmgr32-cm_query_and_remove_subtreew) 。

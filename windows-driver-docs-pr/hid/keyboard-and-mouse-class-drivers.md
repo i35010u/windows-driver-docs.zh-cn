@@ -4,12 +4,12 @@ description: 非 HID 键盘和鼠标可通过多个旧式总线进行连接，�
 ms.assetid: 0771D802-4F1D-4612-8376-ED3113DCC652
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0294cc60856a5ab31d15c5e374ea0bbd338efa75
-ms.sourcegitcommit: 9145bffd4cc3b990a9ebff43b588db6ef2001f5d
+ms.openlocfilehash: 11e06eb7acf8690b22e9af7c6d58d5ffe94de5ce
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/09/2020
-ms.locfileid: "89592465"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90716802"
 ---
 # <a name="keyboard-and-mouse-class-drivers"></a>键盘和鼠标类驱动程序
 
@@ -131,17 +131,17 @@ Kbdclass 和 Mouclass 接收到创建请求后，它们会执行以下操作来�
 
 I8042prt 支持下列内部设备控制请求，以查询有关键盘设备的信息以及设置键盘设备的参数：
 
-[**IOCTL \_ 键盘 \_ 查询 \_ 特性**](/windows/desktop/api/ntddkbd/ni-ntddkbd-ioctl_keyboard_query_attributes)
+[**IOCTL \_ 键盘 \_ 查询 \_ 特性**](/windows/win32/api/ntddkbd/ni-ntddkbd-ioctl_keyboard_query_attributes)
 
-[**IOCTL \_ 键盘 \_ 查询 \_ 指示器 \_ 转换**](/windows/desktop/api/ntddkbd/ni-ntddkbd-ioctl_keyboard_query_indicator_translation)
+[**IOCTL \_ 键盘 \_ 查询 \_ 指示器 \_ 转换**](/windows/win32/api/ntddkbd/ni-ntddkbd-ioctl_keyboard_query_indicator_translation)
 
-[**IOCTL \_ 键盘 \_ 查询 \_ 指示器**](/windows/desktop/api/ntddkbd/ni-ntddkbd-ioctl_keyboard_query_indicators)
+[**IOCTL \_ 键盘 \_ 查询 \_ 指示器**](/windows/win32/api/ntddkbd/ni-ntddkbd-ioctl_keyboard_query_indicators)
 
-[**IOCTL \_ 键盘 \_ 查询 \_ 按键**](/windows/desktop/api/ntddkbd/ni-ntddkbd-ioctl_keyboard_query_typematic)
+[**IOCTL \_ 键盘 \_ 查询 \_ 按键**](/windows/win32/api/ntddkbd/ni-ntddkbd-ioctl_keyboard_query_typematic)
 
-[**IOCTL \_ 键盘 \_ 集 \_ 指示器**](/windows/desktop/api/ntddkbd/ni-ntddkbd-ioctl_keyboard_set_indicators)
+[**IOCTL \_ 键盘 \_ 集 \_ 指示器**](/windows/win32/api/ntddkbd/ni-ntddkbd-ioctl_keyboard_set_indicators)
 
-[**IOCTL \_ 键盘 \_ SET \_ 按键**](/windows/desktop/api/ntddkbd/ni-ntddkbd-ioctl_keyboard_set_typematic)
+[**IOCTL \_ 键盘 \_ SET \_ 按键**](/windows/win32/api/ntddkbd/ni-ntddkbd-ioctl_keyboard_set_typematic)
 
 有关所有键盘设备控制请求的详细信息，请参阅 [人体学接口设备参考](/windows/win32/api/_hid/)。
 

@@ -11,12 +11,12 @@ keywords:
 - 设备特定的共同安装程序 WDK 设备安装
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4a86cbfbb60f3f837c833539ec1402655e301f9c
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: f927f18256574ca2b6967246ff6af21edc79fa27
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89097057"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90717130"
 ---
 # <a name="co-installer-operation"></a>辅助安装程序操作
 
@@ -32,9 +32,9 @@ Unshaded 框表示操作系统为 [系统提供的设备安装程序类](/previo
 
 可以为特定设备提供 (*设备特定的共同安装程序*) 或 (*类共同安装* 程序) 的设备安装程序类的共同安装程序。 仅当安装为其注册了共同安装程序的设备时，Setupapi.log 才会调用设备特定的共同安装程序。 操作系统和供应商可以为设备注册零个或多个特定于设备的共同安装程序。 当安装为其注册了共同安装程序的设备安装程序类的任何设备时，Setupapi.log 会调用类共同安装程序。 操作系统和供应商可以为设备安装程序类注册一个或多个类共同安装程序。 此外，可以为一个或多个安装程序类注册类共同安装程序。
 
-Windows 和[自定义设备安装应用程序](writing-a-device-installation-application.md)通过使用[设备安装函数代码](/previous-versions/ff541307(v=vs.85))调用[**SetupDiCallClassInstaller**](/windows/desktop/api/setupapi/nf-setupapi-setupdicallclassinstaller)来安装设备，)  (DIF 代码。
+Windows 和[自定义设备安装应用程序](writing-a-device-installation-application.md)通过使用[设备安装函数代码](/previous-versions/ff541307(v=vs.85))调用[**SetupDiCallClassInstaller**](/windows/win32/api/setupapi/nf-setupapi-setupdicallclassinstaller)来安装设备，)  (DIF 代码。
 
-在 GUI 模式安装过程中，操作系统通过 DIF 代码调用 [**SetupDiCallClassInstaller**](/windows/desktop/api/setupapi/nf-setupapi-setupdicallclassinstaller) ，以检测系统中存在的非 PnP 设备。 IHV 通常会提供共同安装程序，为 IHV 发布的非 PnP 设备执行此操作。
+在 GUI 模式安装过程中，操作系统通过 DIF 代码调用 [**SetupDiCallClassInstaller**](/windows/win32/api/setupapi/nf-setupapi-setupdicallclassinstaller) ，以检测系统中存在的非 PnP 设备。 IHV 通常会提供共同安装程序，为 IHV 发布的非 PnP 设备执行此操作。
 
 对于每个 DIF 请求， **SetupDiCallClassInstaller** 会调用注册到设备的安装程序类的任何类共同安装程序、为特定设备注册的任何设备共同安装程序，以及系统为设备的安装程序类提供的类安装程序（如果有）。
 
@@ -42,7 +42,7 @@ Windows 和[自定义设备安装应用程序](writing-a-device-installation-app
 
 类共同安装程序通常在安装设备之前注册，设备特定的共同安装程序将注册为设备安装的一部分。 因此，在设备安装过程中，类共同安装程序通常会被添加到共同安装程序列表，并为所有 DIF 请求调用。
 
-为设备 (或[**SetupDiRegisterCoDeviceInstallers**](/windows/desktop/api/setupapi/nf-setupapi-setupdiregistercodeviceinstallers)调用了) [**DIF_REGISTER_COINSTALLERS**](./dif-register-coinstallers.md)后，操作系统会将特定于设备的共同安装程序添加到共同安装程序列表中。 设备特定的共同安装程序不参与以下 DIF 请求：
+为设备 (或[**SetupDiRegisterCoDeviceInstallers**](/windows/win32/api/setupapi/nf-setupapi-setupdiregistercodeviceinstallers)调用了) [**DIF_REGISTER_COINSTALLERS**](./dif-register-coinstallers.md)后，操作系统会将特定于设备的共同安装程序添加到共同安装程序列表中。 设备特定的共同安装程序不参与以下 DIF 请求：
 
 [**DIF_ALLOW_INSTALL**](./dif-allow-install.md)
 
@@ -80,7 +80,7 @@ Windows 和[自定义设备安装应用程序](writing-a-device-installation-app
 
 4.  在调用了所有已注册的共同安装程序后， **SetupDiCallClassInstaller** 将调用系统提供的类安装程序（如果设备的安装程序类有一个安装程序）。 在此示例中，类安装程序返回 ERROR_DI_DO_DEFAULT，这是类安装程序的典型返回值。
 
-5.  **SetupDiCallClassInstaller** 调用安装请求的默认处理程序（如果有）。 DIF_INSTALLDEVICE 具有默认处理程序 [**SetupDiInstallDevice**](/windows/desktop/api/setupapi/nf-setupapi-setupdiinstalldevice)，它是 setupapi.log 的一部分。
+5.  **SetupDiCallClassInstaller** 调用安装请求的默认处理程序（如果有）。 DIF_INSTALLDEVICE 具有默认处理程序 [**SetupDiInstallDevice**](/windows/win32/api/setupapi/nf-setupapi-setupdiinstalldevice)，它是 setupapi.log 的一部分。
 
 6.  **SetupDiCallClassInstaller** 调用请求后处理的所有共同安装程序。 在此示例中，第二个类共同安装程序请求了后处理。
 

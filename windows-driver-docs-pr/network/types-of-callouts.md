@@ -7,12 +7,12 @@ keywords:
 - 标注类型 WDK Windows 筛选平台
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bf31a743b059623dc6952c14562851c6d050892c
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 4151b612517ac9aa6f3b2b88f6849689633bb1f6
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89215785"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90716882"
 ---
 # <a name="types-of-callouts"></a>标注类型
 
@@ -22,7 +22,7 @@ ms.locfileid: "89215785"
 <a href="" id="inline-inspection-callout-------"></a>**内联检查标注**   
 此类型的标注始终从[*classifyFn*](/windows-hardware/drivers/ddi/fwpsk/nc-fwpsk-fwps_callout_classify_fn0)函数返回 **.fwp \_ 操作 \_ ** ，并且不会以任何方式修改网络流量。 收集网络统计信息的标注就是这种类型的标注的示例。
 
-对于这种类型的标注， [** (的 \_ 筛选**](/windows/desktop/api/fwpstypes/ns-fwpstypes-fwps_action0_)器操作类型) 应设置为 " **.fwp \_ 操作 \_ 标注 \_ 检查** **"** 。
+对于这种类型的标注， [** (的 \_ 筛选**](/windows/win32/api/fwpstypes/ns-fwpstypes-fwps_action0_)器操作类型) 应设置为 " **.fwp \_ 操作 \_ 标注 \_ 检查** **"** 。
 
 <a href="" id="out-of-band-inspection-callout-------"></a>**带外检查标注**   
 此类型的标注不会修改网络流量。 相反，它会通过 "挂起" 所指示的数据来推迟在 *classifyFn* 函数之外完成的所有检查，然后使用其中一个 [数据包注入函数](packet-injection-functions.md)将挂起的数据重新 reinjecting 到 tcp/ip 堆栈中。 "挂起" 是通过首先克隆所指示的数据来实现的，然后从*classifyFn*函数返回包含 FWPS 的 "已**分类" 标记 " \_ \_ \_ \_ 吸收**位集" 的 **.fwp \_ 操作 \_ 块**。
@@ -47,11 +47,11 @@ ms.locfileid: "89215785"
 
 此类型的标注的筛选器操作类型应设置为 " **.Fwp \_ 操作 \_ 允许**"。
 
-有关 FWPS 的详细 **信息 \_ ， \_ \_ \_ **请参阅 [**FWPS \_ 分类 \_ OUT0**](/windows/desktop/api/fwpstypes/ns-fwpstypes-fwps_classify_out0_)。 此标志在任何 WFP 丢弃层上无效。 通过*classifyFn*函数中的**FWPS " \_ 分类 \_ \_ 标志" \_ 吸收**标志来返回带区的 **.fwp \_ 操作 \_ 块**会使数据包无提示地被丢弃，这样，数据包将不会到达任何 WFP 丢弃层，也不会导致生成审核事件。
+有关 FWPS 的详细 **信息 \_ ， \_ \_ \_ **请参阅 [**FWPS \_ 分类 \_ OUT0**](/windows/win32/api/fwpstypes/ns-fwpstypes-fwps_classify_out0_)。 此标志在任何 WFP 丢弃层上无效。 通过*classifyFn*函数中的**FWPS " \_ 分类 \_ \_ 标志" \_ 吸收**标志来返回带区的 **.fwp \_ 操作 \_ 块**会使数据包无提示地被丢弃，这样，数据包将不会到达任何 WFP 丢弃层，也不会导致生成审核事件。
 
 尽管可以修改克隆的网络缓冲区列表，例如，通过添加或删除 net buffer 或 MDLs，或者两者都必须在调用 [**FwpsFreeCloneNetBufferList0**](/windows-hardware/drivers/ddi/fwpsk/nf-fwpsk-fwpsfreeclonenetbufferlist0) 函数之前撤销此类修改。
 
-为了与执行数据包检查、数据包修改或连接重定向的其他标注共存，在使用 reference/clone-reinject 机制挂起数据包之前，标注必须 "硬"-通过在*classifyFn*函数返回的[**FWPS \_ 分类 \_ OUT0**](/windows/desktop/api/fwpstypes/ns-fwpstypes-fwps_classify_out0_)结构的**权限**成员中清除**FWPS \_ 右 \_ 操作 \_ 写入**标志来删除原始数据包。 如果在调用*classifyFn*时设置了**FWPS \_ 右 \_ 操作 \_ 写入**标志 (这意味着包可以挂起并在以后重新插入文本或修改) ，则标注不得挂起指示，不应更改当前操作类型; 并且它必须等待较高的标注来注入可能修改的克隆。
+为了与执行数据包检查、数据包修改或连接重定向的其他标注共存，在使用 reference/clone-reinject 机制挂起数据包之前，标注必须 "硬"-通过在*classifyFn*函数返回的[**FWPS \_ 分类 \_ OUT0**](/windows/win32/api/fwpstypes/ns-fwpstypes-fwps_classify_out0_)结构的**权限**成员中清除**FWPS \_ 右 \_ 操作 \_ 写入**标志来删除原始数据包。 如果在调用*classifyFn*时设置了**FWPS \_ 右 \_ 操作 \_ 写入**标志 (这意味着包可以挂起并在以后重新插入文本或修改) ，则标注不得挂起指示，不应更改当前操作类型; 并且它必须等待较高的标注来注入可能修改的克隆。
 
 只要标注 pends 分类，就应设置 **FWPS \_ 权限 \_ 操作 \_ 写入** 标志。 标注驱动程序应测试 **FWPS \_ 权限 \_ 操作 \_ 写入** 标志，以检查标注的权限以返回操作。 如果未设置此标志，则标注仍可返回 **.Fwp \_ 操作 \_ 阻止** 操作，以便否决先前标注返回的 **允许的 .fwp \_ 操作 \_ 允许** 操作。 在 [使用标注进行深层检查](using-a-callout-for-deep-inspection.md)的示例中，如果未设置标志，则函数将退出。
 

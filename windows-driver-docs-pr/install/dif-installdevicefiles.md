@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 73075a6279c97927591bd0ad57df7fafaf67369d
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 8b5d9530d7ae1674902049a40c4b755c0835b87f
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90107294"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90717540"
 ---
 # <a name="dif_installdevicefiles"></a>DIF_INSTALLDEVICEFILES
 
@@ -80,7 +80,7 @@ DIF_INSTALLDEVICEFILES 请求允许安装程序参与复制文件以支持设备
 
 共同安装程序可以返回 NO_ERROR、ERROR_DI_POSTPROCESSING_REQUIRED 或 Win32 错误代码。
 
-如果类安装程序成功处理此请求，并且 [**SetupDiCallClassInstaller**](/windows/desktop/api/setupapi/nf-setupapi-setupdicallclassinstaller) 随后应调用默认处理程序，则类安装程序将返回 ERROR_DI_DO_DEFAULT。
+如果类安装程序成功处理此请求，并且 [**SetupDiCallClassInstaller**](/windows/win32/api/setupapi/nf-setupapi-setupdicallclassinstaller) 随后应调用默认处理程序，则类安装程序将返回 ERROR_DI_DO_DEFAULT。
 
 如果类安装程序成功处理此请求（包括直接调用默认处理程序），则类安装程序应返回 NO_ERROR 并且 **SetupDiCallClassInstaller** 将不会再次调用默认处理程序。
 
@@ -94,7 +94,7 @@ DIF_INSTALLDEVICEFILES 请求允许安装程序参与复制文件以支持设备
 
 ### <a name="default-dif-code-handler"></a>默认的 DIF 代码处理程序
 
-[**SetupDiInstallDriverFiles**](/windows/desktop/api/setupapi/nf-setupapi-setupdiinstalldriverfiles)
+[**SetupDiInstallDriverFiles**](/windows/win32/api/setupapi/nf-setupapi-setupdiinstalldriverfiles)
 
 ### <a name="installer-operation"></a>安装程序操作
 
@@ -129,7 +129,7 @@ DIF_INSTALLDEVICEFILES 请求允许安装程序参与复制文件以支持设备
 ## <a name="see-also"></a>请参阅
 
 
-[**SetupDiInstallDriverFiles**](/windows/desktop/api/setupapi/nf-setupapi-setupdiinstalldriverfiles)
+[**SetupDiInstallDriverFiles**](/windows/win32/api/setupapi/nf-setupapi-setupdiinstalldriverfiles)
 
 [**SP_DEVINFO_DATA**](/windows/win32/api/setupapi/ns-setupapi-sp_devinfo_data)
 

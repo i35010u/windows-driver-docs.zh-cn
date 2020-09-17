@@ -4,12 +4,12 @@ description: 卡 PIN 操作
 ms.assetid: 7993D284-8122-4831-9C00-E53DAEB7965F
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6e44ec4547b1fe009efdc39fa7fd3dafdbb1b004
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 5d7dc1b1c8489a4d74f0ef630b5e1f741b7ba0a5
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89384711"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90717274"
 ---
 # <a name="card-pin-operations"></a>卡 PIN 操作
 
@@ -100,7 +100,7 @@ Windows 使用枚举值向用户显示一条描述当前请求的卡 PIN 的相�
 
     默认情况下，基本 CSP 显示以下预定义的字符串，这些字符串已进行了相应的本地化。
 
-    | 字符串名称        |  字符串                                          |
+    | 字符串名称        |  String                                          |
     |---------------------|--------------------------------------------------|
     | AuthenticationPin   | "请输入身份验证 PIN。"          |
     | DigitalSignaturePin | "请输入数字签名 PIN。"       |
@@ -159,8 +159,8 @@ typedef enum
 |--------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **PinCacheNormal**       | 对于此模式，将根据每个登录 ID 的每个进程的基本 CSP 缓存 PIN。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
 | **PinCacheTimed**        | 在此模式下，在指定的时间段内，在给定的时间段内，PIN 会无效， (值以秒为单位) 。 这是通过在将 PIN 添加到缓存时记录时间戳来实现的，然后验证此时间戳与访问 PIN 的时间。 这意味着 PIN 可能在缓存中的时间长于指定的时间戳，但在过期后不会使用。 在内存中加密 PIN 以使其受到保护。                                                                                                                |
-| **PinCacheNone**         | 当无法缓存 PIN 时，基本 CSP 绝不会将 PIN 添加到缓存中。 当使用 [**CryptSetProvParam**](/windows/desktop/api/wincrypt/nf-wincrypt-cryptsetprovparam) 调用基本 CSP/KSP 来设置 pin 时，会将 pin 提交到卡进行验证，但不会进行缓存。 这意味着，任何后续操作都必须在基本 CSP 事务超时过期之前发生。                                                                                                                                                                                                                  |
-| **PinCacheAlwaysPrompt** | 与 **PinCacheNone**不同，设置此缓存模式时，基本 CSP 事务超时不适用。 将从用户收集 PIN，然后在每次需要身份验证的调用之前提交到卡进行验证。 调用 [**CryptSetProvParam**](/windows/desktop/api/wincrypt/nf-wincrypt-cryptsetprovparam) 和 [**NCRYPTSETPROPERTY**](/windows/desktop/api/ncrypt/nf-ncrypt-ncryptsetproperty) 以设置 pin 返回错误 SUCCESS， \_ 而不验证和缓存 pin。 这意味着，如果调用需要身份验证，则使用无提示上下文的应用程序的调用将失败。 |
+| **PinCacheNone**         | 当无法缓存 PIN 时，基本 CSP 绝不会将 PIN 添加到缓存中。 当使用 [**CryptSetProvParam**](/windows/win32/api/wincrypt/nf-wincrypt-cryptsetprovparam) 调用基本 CSP/KSP 来设置 pin 时，会将 pin 提交到卡进行验证，但不会进行缓存。 这意味着，任何后续操作都必须在基本 CSP 事务超时过期之前发生。                                                                                                                                                                                                                  |
+| **PinCacheAlwaysPrompt** | 与 **PinCacheNone**不同，设置此缓存模式时，基本 CSP 事务超时不适用。 将从用户收集 PIN，然后在每次需要身份验证的调用之前提交到卡进行验证。 调用 [**CryptSetProvParam**](/windows/win32/api/wincrypt/nf-wincrypt-cryptsetprovparam) 和 [**NCRYPTSETPROPERTY**](/windows/win32/api/ncrypt/nf-ncrypt-ncryptsetproperty) 以设置 pin 返回错误 SUCCESS， \_ 而不验证和缓存 pin。 这意味着，如果调用需要身份验证，则使用无提示上下文的应用程序的调用将失败。 |
 
 
 

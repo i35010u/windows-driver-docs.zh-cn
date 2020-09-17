@@ -4,12 +4,12 @@ description: 本部分介绍 Windows 10 中驱动程序开发的新增功能。
 ms.assetid: 764bcd98-c123-45e2-9dd1-44d54bb1addc
 ms.date: 04/28/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 470b8084c484b72418621dac3431d900341b678e
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 385a52f57b623fb1be840cf43fd2e6bc9e3b40e6
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89066550"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90717564"
 ---
 # <a name="whats-new-in-windows-10-version-1809"></a>Windows 10 版本 1809 中的新增功能
 
@@ -172,7 +172,7 @@ MBBCx 电源管理方法已简化。
 从 Windows 10 版本 1809 开始，Windows 支持灵活链接，可让你使用单个二进制文件来以 OneCore 和桌面 SKU 为目标。
 若要启用灵活链接，请使用以下新的 SDK API：
 
-* [IsApiSetImplemented](/windows/desktop/api/apiquery2/nf-apiquery2-isapisetimplemented)
+* [IsApiSetImplemented](/windows/win32/api/apiquery2/nf-apiquery2-isapisetimplemented)
 
 此现有主题已得到增强，其中介绍了如何使用灵活链接来满足 [DCHU 驱动程序设计原则](./develop/dch-principles-best-practices.md)的 U 要求：
 

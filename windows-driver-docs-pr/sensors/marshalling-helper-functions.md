@@ -4,12 +4,12 @@ description: 本主题提供有关 sensorsutils 标头文件中的封送处理 h
 ms.assetid: AE5C70E4-1971-4BAF-AE7D-315A15F030DD
 ms.date: 07/20/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 8773f9d4d65e6e823b71f221b207f68fba4b03ce
-ms.sourcegitcommit: 937974aa9bbe0262a7ffe9631593fab48c4e7492
+ms.openlocfilehash: 256657bc9deb7fae60cb4136eb8b529c5857aee2
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "90010384"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90716866"
 ---
 # <a name="marshalling-helper-functions"></a>帮助程序函数的封送处理
 
@@ -23,10 +23,10 @@ ms.locfileid: "90010384"
 ## <a name="in-this-section"></a>在本节中
 
 
-|主题|描述|
+|主题|说明|
 |--|--|
 |[时间戳帮助程序](timestamp-helper.md)|时间戳 helper 函数由 v2 传感器驱动程序使用，并用于传感器设备驱动程序软件接口 (DDSI) 。|
-|[PropVariant 帮助程序](propvariant-helpers.md)|V2 传感器驱动程序使用 PropVariant helper 函数操作与传感器关联的 [PropVariant](/windows/desktop/api/propidl/ns-propidl-tagpropvariant) 结构。|
+|[PropVariant 帮助程序](propvariant-helpers.md)|V2 传感器驱动程序使用 PropVariant helper 函数操作与传感器关联的 [PropVariant](/windows/win32/api/propidl/ns-propidl-tagpropvariant) 结构。|
 |[集合列表帮助程序](collection-list-helpers.md)|V2 传感器驱动程序使用集合列表 helper 函数来处理 [SENSOR_COLLECTION_LIST](/windows-hardware/drivers/ddi/sensorsdef/ns-sensorsdef-sensor_collection_list) 结构。|
 |[集合列表序列化帮助程序](collection-list-serialization-helpers.md)|V2 传感器驱动程序使用集合列表序列化帮助器函数来执行对 [SENSOR_COLLECTION_LIST](/windows-hardware/drivers/ddi/sensorsdef/ns-sensorsdef-sensor_collection_list) 结构的序列化相关操作。|
 |[集合列表旧版帮助程序](collection-list-legacy-helpers.md)|V2 传感器驱动程序使用集合列表旧 helper 函数与 [SENSOR_COLLECTION_LIST](/windows-hardware/drivers/ddi/sensorsdef/ns-sensorsdef-sensor_collection_list) 结构进行交互。|

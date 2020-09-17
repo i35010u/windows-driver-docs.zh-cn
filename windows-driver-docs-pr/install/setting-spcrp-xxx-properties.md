@@ -4,12 +4,12 @@ description: 设置 SPCRP_Xxx 属性
 ms.assetid: efb0d02e-ec4c-4c1b-900b-c81f504d2919
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1dcec79183394c92371b9298d37896d5e477c0cc
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 2bfcd739555e5be7aef70e11c6ffa7482cbd2a68
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89095989"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90715428"
 ---
 # <a name="setting-spcrp_xxx-properties"></a>设置 SPCRP_Xxx 属性
 
@@ -22,7 +22,7 @@ Windows Server 2003、Windows XP 和 Windows 2000 还支持其中的大多数设
 
 有关如何使用属性键访问 Windows Vista 和更高版本中的设备安装程序类属性的信息，请参阅 [访问设备类属性 (Windows vista 和更高版本) ](accessing-device-class-properties--windows-vista-and-later-.md)。
 
-若要在 Windows Server 2003、Windows XP 和 Windows 2000 上设置设备安装程序类属性，请调用 [**SetupDiSetClassRegistryProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdisetclassregistrypropertya) 并提供以下参数值：
+若要在 Windows Server 2003、Windows XP 和 Windows 2000 上设置设备安装程序类属性，请调用 [**SetupDiSetClassRegistryProperty**](/windows/win32/api/setupapi/nf-setupapi-setupdisetclassregistrypropertya) 并提供以下参数值：
 
 -   将 *ClassGuid* 设置为指向表示要为其设置属性的设备安装程序类的 GUID 的指针。
 
@@ -36,7 +36,7 @@ Windows Server 2003、Windows XP 和 Windows 2000 还支持其中的大多数设
 
 -   将 *保留* 设置为 **NULL**。
 
-如果对 [**SetupDiSetClassRegistryProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdisetclassregistrypropertya) 的此调用成功，则 **SetupDiSetClassRegistryProperty** 将设置设备安装程序类属性并返回 **TRUE**。 如果函数调用失败， **SetupDiSetClassRegistryProperty** 将返回 **FALSE** ，并且对 [GetLastError](https://go.microsoft.com/fwlink/p/?linkid=169416) 的调用将返回最近记录的错误代码。
+如果对 [**SetupDiSetClassRegistryProperty**](/windows/win32/api/setupapi/nf-setupapi-setupdisetclassregistrypropertya) 的此调用成功，则 **SetupDiSetClassRegistryProperty** 将设置设备安装程序类属性并返回 **TRUE**。 如果函数调用失败， **SetupDiSetClassRegistryProperty** 将返回 **FALSE** ，并且对 [GetLastError](https://go.microsoft.com/fwlink/p/?linkid=169416) 的调用将返回最近记录的错误代码。
 
  
 

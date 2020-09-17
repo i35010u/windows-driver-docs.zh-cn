@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: d041193c050f897b756ddb525470138a7217eb48
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: cc7b7753c5e3c21d40496014fba231ce6ef56e3d
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90107290"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90717536"
 ---
 # <a name="dif_newdevicewizard_finishinstall"></a>DIF_NEWDEVICEWIZARD_FINISHINSTALL
 
@@ -67,7 +67,7 @@ Windows 安装设备后 ([**DIF_INSTALLDEVICE**](dif-installdevice.md) 处理) �
 与*DeviceInfoData*关联的设备安装参数 ([**SP_DEVINSTALL_PARAMS**](/windows/win32/api/setupapi/ns-setupapi-sp_devinstall_params_a)) 。
 
 <a href="" id="class-installation-parameters"></a>类安装参数  
-[**SP_NEWDEVICEWIZARD_DATA**](/windows/desktop/api/setupapi/ns-setupapi-_sp_newdevicewizard_data)结构与*DeviceInfoData*关联。
+[**SP_NEWDEVICEWIZARD_DATA**](/windows/win32/api/setupapi/ns-setupapi-_sp_newdevicewizard_data)结构与*DeviceInfoData*关联。
 
 ### <a name="installer-output"></a>安装程序输出
 
@@ -118,13 +118,13 @@ Windows 安装设备后 ([**DIF_INSTALLDEVICE**](dif-installdevice.md) 处理) �
 
 [**DIF_INSTALLDEVICE**](dif-installdevice.md)
 
-[**SetupDiChangeState**](/windows/desktop/api/setupapi/nf-setupapi-setupdichangestate)
+[**SetupDiChangeState**](/windows/win32/api/setupapi/nf-setupapi-setupdichangestate)
 
 [**SP_DEVINFO_DATA**](/windows/win32/api/setupapi/ns-setupapi-sp_devinfo_data)
 
 [**SP_DEVINSTALL_PARAMS**](/windows/win32/api/setupapi/ns-setupapi-sp_devinstall_params_a)
 
-[**SP_NEWDEVICEWIZARD_DATA**](/windows/desktop/api/setupapi/ns-setupapi-_sp_newdevicewizard_data)
+[**SP_NEWDEVICEWIZARD_DATA**](/windows/win32/api/setupapi/ns-setupapi-_sp_newdevicewizard_data)
 
  
 

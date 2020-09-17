@@ -11,19 +11,19 @@ keywords:
 - 确定是否已接通设备 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 97d62158e8e9ba609b33e7a7bb4284994fb15bb7
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 89799918893822d06dd804e7f4b30111683fa5ca
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90105002"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90717310"
 ---
 # <a name="determining-whether-a-device-is-plugged-in"></a>确定设备是否已插入
 
 
 请注意，自动运行调用的 *设备安装应用程序* 的行为必须取决于用户是要插入到硬件中还是首先插入分布介质。 由于独立硬件供应商 (Ihv) 通常提供一个分发磁盘，而一个磁盘只能有一个自动运行调用的应用程序，所以，自动运行的设备安装应用程序必须确定设备是否已插入。
 
-若要确定设备是否已插入，应用程序可以调用 [**UpdateDriverForPlugAndPlayDevices**](/windows/desktop/api/newdev/nf-newdev-updatedriverforplugandplaydevicesa) 函数，同时传递设备的硬件 ID。 如果满足以下任一条件，则会插入设备：
+若要确定设备是否已插入，应用程序可以调用 [**UpdateDriverForPlugAndPlayDevices**](/windows/win32/api/newdev/nf-newdev-updatedriverforplugandplaydevicesa) 函数，同时传递设备的硬件 ID。 如果满足以下任一条件，则会插入设备：
 
 -   该函数返回 **TRUE**。  (这还会安装设备的驱动程序。 ) 
 
@@ -43,21 +43,21 @@ ms.locfileid: "90105002"
 
 2.  找到拔出的设备。
 
-    调用 [**SetupDiGetClassDevs**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetclassdevsw) 函数。 在对此函数的调用中，清除 *Flags* 参数中的 DIGCF_PRESENT 标志。 你必须查找 *所有* 设备，而不只是显示那些设备。 可以通过在 *ClassGuid* 参数中指定特定设备类来缩小搜索结果的范围。
+    调用 [**SetupDiGetClassDevs**](/windows/win32/api/setupapi/nf-setupapi-setupdigetclassdevsw) 函数。 在对此函数的调用中，清除 *Flags* 参数中的 DIGCF_PRESENT 标志。 你必须查找 *所有* 设备，而不只是显示那些设备。 可以通过在 *ClassGuid* 参数中指定特定设备类来缩小搜索结果的范围。
 
 3.  查找设备的硬件 Id 和兼容 Id。
 
-    如果设备类 (假设你在第一) 步中指定了设备类，则**SetupDiGetClassDevs**将返回设备[信息集](device-information-sets.md)的句柄，其中包含已安装的所有设备（无论是否插入）。 通过对 [**SetupDiEnumDeviceInfo**](/windows/desktop/api/setupapi/nf-setupapi-setupdienumdeviceinfo) 函数进行连续调用，你可以使用此句柄枚举设备信息集中的所有设备。 每次调用都提供设备的 [**SP_DEVINFO_DATA**](/windows/win32/api/setupapi/ns-setupapi-sp_devinfo_data) 结构。 若要获取硬件 Id 列表，请调用 [**SetupDiGetDeviceRegistryProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetdeviceregistrypropertya) 函数，并将 *属性* 参数设置为 SPDRP_HARDWAREID。 若要获取兼容 Id 的列表，请调用相同的函数，但将 *属性* 参数设置为 SPDRP_COMPATIBLEIDS。 这两个列表都是多 SZ 字符串。
+    如果设备类 (假设你在第一) 步中指定了设备类，则**SetupDiGetClassDevs**将返回设备[信息集](device-information-sets.md)的句柄，其中包含已安装的所有设备（无论是否插入）。 通过对 [**SetupDiEnumDeviceInfo**](/windows/win32/api/setupapi/nf-setupapi-setupdienumdeviceinfo) 函数进行连续调用，你可以使用此句柄枚举设备信息集中的所有设备。 每次调用都提供设备的 [**SP_DEVINFO_DATA**](/windows/win32/api/setupapi/ns-setupapi-sp_devinfo_data) 结构。 若要获取硬件 Id 列表，请调用 [**SetupDiGetDeviceRegistryProperty**](/windows/win32/api/setupapi/nf-setupapi-setupdigetdeviceregistrypropertya) 函数，并将 *属性* 参数设置为 SPDRP_HARDWAREID。 若要获取兼容 Id 的列表，请调用相同的函数，但将 *属性* 参数设置为 SPDRP_COMPATIBLEIDS。 这两个列表都是多 SZ 字符串。
 
 4.  查找你的设备 ID 与上一步的硬件 id (或兼容 Id) 之间的匹配。
 
     请确保对设备的硬件 ID/兼容 ID 与 ID 执行完整的字符串比较。 部分比较可能导致不正确的匹配项。
 
-    找到匹配项后，调用[**CM_Get_DevNode_Status**](/windows/desktop/api/cfgmgr32/nf-cfgmgr32-cm_get_devnode_status)函数，同时传递 SP_DRVINFO_DATA。*DnDevInst*参数中的**DevInst** 。 如果此函数返回 CR_NO_SUCH_DEVINST，则该函数将确定设备是否为未附加 (，即具有一个虚拟 devnode) 。
+    找到匹配项后，调用[**CM_Get_DevNode_Status**](/windows/win32/api/cfgmgr32/nf-cfgmgr32-cm_get_devnode_status)函数，同时传递 SP_DRVINFO_DATA。*DnDevInst*参数中的**DevInst** 。 如果此函数返回 CR_NO_SUCH_DEVINST，则该函数将确定设备是否为未附加 (，即具有一个虚拟 devnode) 。
 
 5.  将设备标记为。
 
-    调用 [**SetupDiGetDeviceRegistryProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetdeviceregistrypropertya) 函数，并将 *属性* 参数设置为 SPDRP_CONFIGFLAGS。 此函数返回时， *PropertyBuffer* 参数将从注册表指向设备的 **ConfigFlags** 值。 使用 *Regstr*) 中定义的 CONFIGFLAG_REINSTALL (来执行此值的按位 or。 完成此操作后，调用 [**SetupDiSetDeviceRegistryProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdisetdeviceregistrypropertya) 函数，将 *Property* 参数设置为 SPDRP_CONFIGFLAGS，并将 *PropertyBuffer* 参数设置为设备的已修改 **CONFIGFLAGS** 值的地址。此操作会修改注册表的 **CONFIGFLAGS** 值以合并 CONFIGFLAG_REINSTALL 标志。 这会导致在下次设备 reenumerated 时重新安装该设备。
+    调用 [**SetupDiGetDeviceRegistryProperty**](/windows/win32/api/setupapi/nf-setupapi-setupdigetdeviceregistrypropertya) 函数，并将 *属性* 参数设置为 SPDRP_CONFIGFLAGS。 此函数返回时， *PropertyBuffer* 参数将从注册表指向设备的 **ConfigFlags** 值。 使用 *Regstr*) 中定义的 CONFIGFLAG_REINSTALL (来执行此值的按位 or。 完成此操作后，调用 [**SetupDiSetDeviceRegistryProperty**](/windows/win32/api/setupapi/nf-setupapi-setupdisetdeviceregistrypropertya) 函数，将 *Property* 参数设置为 SPDRP_CONFIGFLAGS，并将 *PropertyBuffer* 参数设置为设备的已修改 **CONFIGFLAGS** 值的地址。此操作会修改注册表的 **CONFIGFLAGS** 值以合并 CONFIGFLAG_REINSTALL 标志。 这会导致在下次设备 reenumerated 时重新安装该设备。
 
 6.  插入设备。
 

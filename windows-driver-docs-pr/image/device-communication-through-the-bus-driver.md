@@ -4,12 +4,12 @@ description: 通过总线驱动程序进行的设备通信
 ms.assetid: 093e95db-dc3e-467b-9163-e61d793c042e
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6e7b37a19cca0714d1a623eab1c8faa35fd12267
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 69e3ec2a7d12dbb3493966f8c204a221ffeb0ff9
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89189615"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90716788"
 ---
 # <a name="device-communication-through-the-bus-driver"></a>通过总线驱动程序进行的设备通信
 
@@ -19,7 +19,7 @@ ms.locfileid: "89189615"
 
 WIA 微型驱动程序的主要职责是与设备进行通信。 当 WIA 应用程序调用 WIA 服务时，该请求将通过 [IStiUSD](istiusd-com-interface.md) 或 [IWiaMiniDrv](/windows-hardware/drivers/ddi/wiamindr_lh/nn-wiamindr_lh-iwiaminidrv) 接口转发到 wia 微型驱动程序的接口。 在某些情况下，WIA 微型驱动程序必须查询物理设备或在设备上执行其他操作。 微型驱动程序的设备通信层负责将请求从 WIA 服务转换为设备可以理解的请求，然后通过总线驱动程序堆栈将请求发送到设备。 同样，当设备将其响应备份到总线驱动程序堆栈时，设备通信层负责将设备响应转换为 WIA 服务理解的响应。
 
-与总线驱动程序堆栈的所有通信都是通过调用 [**CreateFile**](/windows/desktop/api/fileapi/nf-fileapi-createfilea)、 **ReadFile**、 **WriteFile**和 **DeviceIoControl** 函数来执行的，如 Microsoft Windows SDK 文档中所述。 有关与总线驱动程序堆栈通信的详细信息，请参阅 [访问静止图像设备的内核模式驱动程序](accessing-kernel-mode-drivers-for-still-image-devices.md)。
+与总线驱动程序堆栈的所有通信都是通过调用 [**CreateFile**](/windows/win32/api/fileapi/nf-fileapi-createfilea)、 **ReadFile**、 **WriteFile**和 **DeviceIoControl** 函数来执行的，如 Microsoft Windows SDK 文档中所述。 有关与总线驱动程序堆栈通信的详细信息，请参阅 [访问静止图像设备的内核模式驱动程序](accessing-kernel-mode-drivers-for-still-image-devices.md)。
 
  
 

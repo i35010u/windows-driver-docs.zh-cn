@@ -15,19 +15,19 @@ keywords:
 - 命名 WDK KMDF，设备对象
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e057532669faad643a5e1c4e5fc0fd08df3a602a
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: b90f295b375ee2ae7f925a618f827a57fa2ae32d
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89184551"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90717458"
 ---
 # <a name="using-control-device-objects"></a>使用控制设备对象
 
 
 *控制设备对象*是不支持即插即用 (PnP) 或电源管理操作的框架设备对象。 驱动程序可以使用控制设备对象来表示仅限软件的虚拟设备或 *旧式硬件设备* (即，不提供 PnP 或电源管理功能) 设备。
 
-创建控制设备对象的驱动程序通常还会为设备对象创建一个符号链接。 应用程序可以通过将符号链接名称传递到 API 元素（例如 Microsoft Win32 [**CreateFile**](/windows/desktop/api/fileapi/nf-fileapi-createfilea) 函数），将 i/o 请求发送到控制设备对象。
+创建控制设备对象的驱动程序通常还会为设备对象创建一个符号链接。 应用程序可以通过将符号链接名称传递到 API 元素（例如 Microsoft Win32 [**CreateFile**](/windows/win32/api/fileapi/nf-fileapi-createfilea) 函数），将 i/o 请求发送到控制设备对象。
 
 框架不会将控制设备对象附加到 [设备堆栈](wdm-concepts-for-kmdf-drivers.md#device-stacks)。 因此，当应用程序向控制设备对象发送 i/o 请求时，i/o 管理器会直接向创建控制设备对象的驱动程序（而不是堆栈顶部的驱动程序）传递请求。  (但是，附加的驱动程序可以调用 [**IoAttachDevice**](/windows-hardware/drivers/ddi/wdm/nf-wdm-ioattachdevice) ，以将设备对象附加到控制设备对象的上方。 在这种情况下，附加的驱动程序首先接收 i/o 请求。 ) 
 

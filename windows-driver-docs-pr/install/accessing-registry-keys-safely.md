@@ -7,12 +7,12 @@ keywords:
 - 在安全的 WDK 设备安装中访问注册表项
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4dd3a6b1c97a98c0f322723ad70cd9ba0e83fed6
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 22cce21e78a0746b282c1fb8e9f5659e4eda6f35
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89096281"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90717154"
 ---
 # <a name="accessing-registry-keys-safely"></a>安全地访问注册表项
 
@@ -23,7 +23,7 @@ ms.locfileid: "89096281"
 
 -   修改关键注册表项的访问权限。
 
-外部组件出现的许多问题都是通过对注册表项的 KEY_ALL_ACCESS 访问权限而引起的。 从 Windows Server 2003 开始， [**SetupDiCreateDevRegKey**](/windows/desktop/api/setupapi/nf-setupapi-setupdicreatedevregkeya) 仅授予 KEY_READ 和 KEY_WRITE 访问权限，而不 KEY_ALL_ACCESS。 从 Windows Vista 开始，将强制实施其他 KEY_ALL_ACCESS 限制。
+外部组件出现的许多问题都是通过对注册表项的 KEY_ALL_ACCESS 访问权限而引起的。 从 Windows Server 2003 开始， [**SetupDiCreateDevRegKey**](/windows/win32/api/setupapi/nf-setupapi-setupdicreatedevregkeya) 仅授予 KEY_READ 和 KEY_WRITE 访问权限，而不 KEY_ALL_ACCESS。 从 Windows Vista 开始，将强制实施其他 KEY_ALL_ACCESS 限制。
 
 遵循以下准则以安全访问注册表项：
 
@@ -51,13 +51,13 @@ ms.locfileid: "89096281"
 
     若要安全地打开设备安装程序类密钥，请遵循以下准则：
 
-    -   请使用 [**SetupDiOpenClassRegKey**](/windows/desktop/api/setupapi/nf-setupapi-setupdiopenclassregkey)。
+    -   请使用 [**SetupDiOpenClassRegKey**](/windows/win32/api/setupapi/nf-setupapi-setupdiopenclassregkey)。
 
-    -   使用 [**SetupDiOpenClassRegKeyEx**](/windows/desktop/api/setupapi/nf-setupapi-setupdiopenclassregkeyexa) 并在 *Flags* 参数中设置 DIOCR_INSTALLER。
+    -   使用 [**SetupDiOpenClassRegKeyEx**](/windows/win32/api/setupapi/nf-setupapi-setupdiopenclassregkeyexa) 并在 *Flags* 参数中设置 DIOCR_INSTALLER。
 
 -   不要直接打开注册表中的设备接口类键。 与任何注册表项一样，设备接口类键的位置和名称在不同版本的 Windows 中可能会发生变化。
 
-    若要安全地打开设备接口类密钥，请使用 [**SetupDiOpenClassRegKeyEx**](/windows/desktop/api/setupapi/nf-setupapi-setupdiopenclassregkeyexa) 并在 *Flags* 参数中设置 DIOCR_INSTALLER。
+    若要安全地打开设备接口类密钥，请使用 [**SetupDiOpenClassRegKeyEx**](/windows/win32/api/setupapi/nf-setupapi-setupdiopenclassregkeyexa) 并在 *Flags* 参数中设置 DIOCR_INSTALLER。
 
 -   仅使用 INF 指令来修改保留供操作系统使用的注册表项。 有关详细信息，请参阅 [INF 指令摘要](summary-of-inf-directives.md)。
 

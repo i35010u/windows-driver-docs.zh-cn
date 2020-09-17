@@ -4,12 +4,12 @@ description: 如何卸载设备和驱动程序包
 ms.assetid: 0f4f0bbf-ca8f-47ef-b70b-d023bba9b842
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a7154418e42fbab624714cee27bba2635a73e210
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: d9a9d7832037a278c82f88492a79e85e14e99e0d
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89095277"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90717014"
 ---
 # <a name="how-devices-and-driver-packages-are-uninstalled"></a>如何卸载设备和驱动程序包
 
@@ -36,9 +36,9 @@ ms.locfileid: "89095277"
 
 -   设备管理器。 有关详细信息，请参阅[使用设备管理器](using-device-manager.md)。
 
--   一种设备安装应用程序，它使用[**DIF_REMOVE**](./dif-remove.md)的请求来调用[setupapi.log](setupapi.md) [**SetupDiCallClassInstaller**](/windows/desktop/api/setupapi/nf-setupapi-setupdicallclassinstaller)函数。 有关详细信息，请参阅 [使用常规安装函数](using-general-setup-functions.md)。
+-   一种设备安装应用程序，它使用[**DIF_REMOVE**](./dif-remove.md)的请求来调用[setupapi.log](setupapi.md) [**SetupDiCallClassInstaller**](/windows/win32/api/setupapi/nf-setupapi-setupdicallclassinstaller)函数。 有关详细信息，请参阅 [使用常规安装函数](using-general-setup-functions.md)。
 
--   在 windows 7 和更高版本的 Windows)  (调用 Setupapi.log [**DiUninstallDevice**](/windows/desktop/api/newdev/nf-newdev-diuninstalldevice) 函数的设备安装应用程序。 有关详细信息，请参阅 [使用设备安装功能](using-device-installation-functions.md)。
+-   在 windows 7 和更高版本的 Windows)  (调用 Setupapi.log [**DiUninstallDevice**](/windows/win32/api/newdev/nf-newdev-diuninstalldevice) 函数的设备安装应用程序。 有关详细信息，请参阅 [使用设备安装功能](using-device-installation-functions.md)。
 
 使用其中一种方法卸载设备时，即插即用 (PnP) manager 将删除在设备安装过程中创建的系统状态的子集。 例如，它删除驱动程序二进制文件与设备之间的关联。 此关联由服务控制管理器 (SCM) 为设备加载适当的驱动程序使用。
 

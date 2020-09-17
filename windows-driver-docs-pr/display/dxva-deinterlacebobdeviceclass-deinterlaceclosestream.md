@@ -15,12 +15,12 @@ api_type:
 ms.date: 12/06/2018
 ms.localizationpriority: medium
 ms.custom: seodec18
-ms.openlocfilehash: 768ebe4d3e9278e4f42b53e677a1216ca8b75777
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: d87c4d7e8e84eea0c696aaeb81d25a86de4e87c8
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89064294"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90717370"
 ---
 # <a name="dxva_deinterlacebobdeviceclassdeinterlaceclosestream-method"></a>DXVA \_ DeinterlaceBobDeviceClass：:D einterlaceclosestream 方法
 
@@ -34,7 +34,7 @@ ms.locfileid: "89064294"
 HRESULT DeinterlaceCloseStream();
 ```
 
-<a name="parameters"></a>parameters
+<a name="parameters"></a>参数
 ----------
 
 此方法没有任何参数。
@@ -47,12 +47,12 @@ HRESULT DeinterlaceCloseStream();
 <a name="remarks"></a>备注
 -------
 
-*DeinterlaceCloseStream*函数直接映射到[**DD \_ MOTIONCOMPCALLBACKS**](/windows/desktop/api/ddrawint/ns-ddrawint-dd_motioncompcallbacks)结构的**DestroyMoComp**成员，该成员指向驱动程序提供的*DdMoCompDestroy*回调。
+*DeinterlaceCloseStream*函数直接映射到[**DD \_ MOTIONCOMPCALLBACKS**](/windows/win32/api/ddrawint/ns-ddrawint-dd_motioncompcallbacks)结构的**DestroyMoComp**成员，该成员指向驱动程序提供的*DdMoCompDestroy*回调。
 
 ## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
-[**DD \_ MOTIONCOMPCALLBACKS**](/windows/desktop/api/ddrawint/ns-ddrawint-dd_motioncompcallbacks)
+[**DD \_ MOTIONCOMPCALLBACKS**](/windows/win32/api/ddrawint/ns-ddrawint-dd_motioncompcallbacks)
 
 [**DeinterlaceOpenStream**](dxva-deinterlacebobdeviceclass-deinterlaceopenstream.md)
 

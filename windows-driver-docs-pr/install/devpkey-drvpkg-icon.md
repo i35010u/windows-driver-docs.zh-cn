@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: e4b1ce213093d435a46a794e6dbc763dd56dbd51
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: da4190616118e1e79c155fc548f95344046f5fc7
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89095969"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90716740"
 ---
 # <a name="devpkey_drvpkg_icon"></a>DEVPKEY_DrvPkg_Icon
 
@@ -82,7 +82,7 @@ DEVPKEY_DrvPkg_Icon 设备属性表示 Windows 用于直观表示设备实例的
 
 -   如果提供的标识符为正（例如，值为 *n*），则 Windows 将使用该可执行文件中的资源，该文件的标识符为可执行文件中的 n + 1 最小值。 例如，如果 *n* 的值为1，则 Windows 将使用其标识符在可执行文件中的第二个最低值的资源。
 
-可以设置 AddProperty 的 DEVPKEY_DrvPkg_Icon 值，该 [**指令**](./inf-addproperty-directive.md) 包含在安装设备的 inf 文件的 [**inf *DDInstall* 部分**](./inf-ddinstall-section.md) 中。 可以通过调用 [**SetupDiGetDeviceProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)来检索 DEVPKEY_DrvPkg_Icon 的值。
+可以设置 AddProperty 的 DEVPKEY_DrvPkg_Icon 值，该 [**指令**](./inf-addproperty-directive.md) 包含在安装设备的 inf 文件的 [**inf *DDInstall* 部分**](./inf-ddinstall-section.md) 中。 可以通过调用 [**SetupDiGetDeviceProperty**](/windows/win32/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)来检索 DEVPKEY_DrvPkg_Icon 的值。
 
 下面的示例演示如何使用 INF **AddProperty** 指令为 INF *DDInstall* 部分为 "SampleDDInstallSection" 安装的设备设置 DEVPKEY_DrvPkg_Icon：
 
@@ -117,14 +117,14 @@ DeviceIcon,,,,"SomeResource.dll,-2","SomeIcon.icon"
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**INF AddProperty 指令**](./inf-addproperty-directive.md)
 
 [**INF *DDInstall* 部分**](./inf-ddinstall-section.md)
 
-[**SetupDiGetDeviceProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)
+[**SetupDiGetDeviceProperty**](/windows/win32/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)
 
  
 

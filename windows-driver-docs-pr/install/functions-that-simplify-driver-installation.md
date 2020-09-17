@@ -12,12 +12,12 @@ keywords:
 - 即插即用 WDK 设备安装
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 58a2102ccdac459cb675c3c70ca185ffc61521b9
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 056b31c9c36c1ffb7dfa3479d6f3f9358d9f6981
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90106588"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90716884"
 ---
 # <a name="functions-that-simplify-driver-installation"></a>用于简化驱动程序安装的函数
 
@@ -26,7 +26,7 @@ ms.locfileid: "90106588"
 
 ### <a name="diinstalldevice-windows-vista-and-later-versions-of-windows"></a><a href="" id="diinstalldevice--windows-vista-and-later-versions-of-windows-"></a> DiInstallDevice (windows Vista 和更高版本的 Windows) 
 
-[**DiInstallDevice**](/windows/desktop/api/newdev/nf-newdev-diinstalldevice)函数将安装特定驱动程序，该驱动程序安装在系统中的特定设备上的[驱动程序存储区](driver-store.md)中。
+[**DiInstallDevice**](/windows/win32/api/newdev/nf-newdev-diinstalldevice)函数将安装特定驱动程序，该驱动程序安装在系统中的特定设备上的[驱动程序存储区](driver-store.md)中。
 
 如果以下两个条件都成立，则安装应用程序应仅使用此函数：
 
@@ -34,7 +34,7 @@ ms.locfileid: "90106588"
 
 -   应用程序要求在设备实例上安装特定于设备实例的驱动程序。
 
-否则，安装应用程序应使用 [**DiInstallDriver**](/windows/desktop/api/newdev/nf-newdev-diinstalldrivera) 或 [**UpdateDriverForPlugAndPlayDevices**](/windows/desktop/api/newdev/nf-newdev-updatedriverforplugandplaydevicesa) 来安装最匹配设备的驱动程序。
+否则，安装应用程序应使用 [**DiInstallDriver**](/windows/win32/api/newdev/nf-newdev-diinstalldrivera) 或 [**UpdateDriverForPlugAndPlayDevices**](/windows/win32/api/newdev/nf-newdev-updatedriverforplugandplaydevicesa) 来安装最匹配设备的驱动程序。
 
 调用方还可以调用 **DiInstallDevice** 来执行以下操作：
 
@@ -48,9 +48,9 @@ ms.locfileid: "90106588"
 
 ### <a name="diinstalldriver-windows-vista-and-later-versions-of-windows"></a><a href="" id="diinstalldriver--windows-vista-and-later-versions-of-windows-"></a> DiInstallDriver (windows Vista 和更高版本的 Windows) 
 
-[**DiInstallDriver**](/windows/desktop/api/newdev/nf-newdev-diinstalldrivera)函数预安装[驱动程序存储区](driver-store.md)中的[驱动程序包](driver-packages.md)，然后在系统中出现的所有设备上安装驱动程序，该系统具有硬件 ID 或与驱动程序包匹配的兼容 ID。
+[**DiInstallDriver**](/windows/win32/api/newdev/nf-newdev-diinstalldrivera)函数预安装[驱动程序存储区](driver-store.md)中的[驱动程序包](driver-packages.md)，然后在系统中出现的所有设备上安装驱动程序，该系统具有硬件 ID 或与驱动程序包匹配的兼容 ID。
 
-调用 **DiInstallDriver** 或 [**UpdateDriverForPlugAndPlayDevices**](/windows/desktop/api/newdev/nf-newdev-updatedriverforplugandplaydevicesa) 是安装应用程序为设备安装新驱动程序的最简单方法。 **DiInstallDriver** 和 **UpdateDriverForPlugAndPlayDevices** 执行相同的基本安装操作。 不过， **UpdateDriverForPlugAndPlayDevices** 支持其他安装选项。
+调用 **DiInstallDriver** 或 [**UpdateDriverForPlugAndPlayDevices**](/windows/win32/api/newdev/nf-newdev-updatedriverforplugandplaydevicesa) 是安装应用程序为设备安装新驱动程序的最简单方法。 **DiInstallDriver** 和 **UpdateDriverForPlugAndPlayDevices** 执行相同的基本安装操作。 不过， **UpdateDriverForPlugAndPlayDevices** 支持其他安装选项。
 
 默认情况下，如果驱动程序比设备上当前安装的驱动程序更适合于设备，则 **DiInstallDriver** 仅在设备上安装驱动程序。 有关 Windows 如何选择设备驱动程序的信息，请参阅 [Windows 如何选择驱动程序](./how-windows-selects-a-driver-for-a-device.md)。
 
@@ -66,7 +66,7 @@ ms.locfileid: "90106588"
 
 ### <a name="dirollbackdriver-windows-vista-and-later-versions-of-windows"></a><a href="" id="dirollbackdriver--windows-vista-and-later-versions-of-windows-"></a> DiRollbackDriver (windows Vista 和更高版本的 Windows) 
 
-[**DiRollbackDriver**](/windows/desktop/api/newdev/nf-newdev-dirollbackdriver)函数使用为设备设置的以前安装的备份驱动程序替换设备上当前安装的驱动程序。 如果设备在更新设备的驱动程序后失败，主要提供此功能以将设备还原到工作状态。 如果用户在设备管理器的设备的驱动程序页面上单击 " **回滚驱动程序** "，则此函数将执行相同的操作。
+[**DiRollbackDriver**](/windows/win32/api/newdev/nf-newdev-dirollbackdriver)函数使用为设备设置的以前安装的备份驱动程序替换设备上当前安装的驱动程序。 如果设备在更新设备的驱动程序后失败，主要提供此功能以将设备还原到工作状态。 如果用户在设备管理器的设备的驱动程序页面上单击 " **回滚驱动程序** "，则此函数将执行相同的操作。
 
 对于一个设备，Windows 最多维护一个备份驱动程序。 在设备上成功安装了驱动程序，并且 Windows 确定设备正常运行后，windows 会立即将驱动程序设置为设备的备份驱动程序。 但是，如果驱动程序未在设备上成功安装或在安装后设备无法正常工作，则 Windows 不会将驱动程序设置为设备的备份驱动程序。
 
@@ -80,9 +80,9 @@ ms.locfileid: "90106588"
 
 ### <a name="updatedriverforplugandplaydevices"></a><a href="" id="updatedriverforplugandplaydevices"></a> UpdateDriverForPlugAndPlayDevices
 
-[**UpdateDriverForPlugAndPlayDevices**](/windows/desktop/api/newdev/nf-newdev-updatedriverforplugandplaydevicesa)函数将驱动程序安装在系统中存在的硬件 id 或兼容 ID 与驱动程序包匹配的所有设备上。
+[**UpdateDriverForPlugAndPlayDevices**](/windows/win32/api/newdev/nf-newdev-updatedriverforplugandplaydevicesa)函数将驱动程序安装在系统中存在的硬件 id 或兼容 ID 与驱动程序包匹配的所有设备上。
 
-调用此函数或 [**DiInstallDriver**](/windows/desktop/api/newdev/nf-newdev-diinstalldrivera) 是安装应用程序安装新驱动程序的最简单方法，该驱动程序是系统中设备的最佳匹配项。 **UpdateDriverForPlugAndPlayDevices**的基本操作类似于**DiInstallDriver**的操作。 不过， **UpdateDriverForPlugAndPlayDevices** 支持其他安装选项。
+调用此函数或 [**DiInstallDriver**](/windows/win32/api/newdev/nf-newdev-diinstalldrivera) 是安装应用程序安装新驱动程序的最简单方法，该驱动程序是系统中设备的最佳匹配项。 **UpdateDriverForPlugAndPlayDevices**的基本操作类似于**DiInstallDriver**的操作。 不过， **UpdateDriverForPlugAndPlayDevices** 支持其他安装选项。
 
 默认情况下，如果驱动程序比设备上当前安装的驱动程序更适合于设备，则 **UpdateDriverForPlugAndPlayDevices** 仅在设备上安装驱动程序。
 

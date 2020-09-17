@@ -4,12 +4,12 @@ description: 检索设备类属性值
 ms.assetid: 50b16bd9-7f38-4128-af8f-8b39b099931f
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f0d9cc51651b91f032d8b2f11091c1d74e404708
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: e780b118c1c8d6aa0aacb9c09c2077a7484ab0c6
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89095635"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90715438"
 ---
 # <a name="retrieving-a-device-class-property-value"></a>检索设备类属性值
 
@@ -24,7 +24,7 @@ ms.locfileid: "89095635"
 
 若要检索本地计算机上设备类属性的值，请执行以下步骤：
 
-1.  调用 [**SetupDiGetClassProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetclasspropertyw) 以确定属性值的数据类型和大小（以字节为单位）。 提供以下参数值：
+1.  调用 [**SetupDiGetClassProperty**](/windows/win32/api/setupapi/nf-setupapi-setupdigetclasspropertyw) 以确定属性值的数据类型和大小（以字节为单位）。 提供以下参数值：
 
     -   将 *ClassGuid* 设置为指向 GUID 的指针，该 GUID 标识要为其检索为设备类设置的类属性的 [设备安装程序类](./overview-of-device-setup-classes.md) 或 [设备接口类](./overview-of-device-interface-classes.md) 。
     -   将 *PropertyKey* 设置为指向表示属性的 [**DEVPROPKEY**](./devpropkey.md) 结构的指针。
@@ -34,7 +34,7 @@ ms.locfileid: "89095635"
     -   将 *RequiredSize* 设置为 DWORD 类型化变量。
     -   如果设备类是设备安装程序类，请将 *Flags* 设置为 DICLASSPROP_INSTALLER。 否则，如果设备类是设备接口类，请将 *Flags* 设置为 DICLASSPROP_INTERFACE。
 
-    在对[**SetupDiGetClassProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetclasspropertyw)的第一次调用时， **SetupDiGetClassProperty**将 \* *RequiredSize*设置为检索属性值所需的缓冲区大小（以字节为单位），记录错误代码 ERROR_INSUFFICIENT_BUFFER 并返回**FALSE**。 对 [GetLastError](https://go.microsoft.com/fwlink/p/?linkid=169416) 的后续调用将返回最近记录的错误代码。
+    在对[**SetupDiGetClassProperty**](/windows/win32/api/setupapi/nf-setupapi-setupdigetclasspropertyw)的第一次调用时， **SetupDiGetClassProperty**将 \* *RequiredSize*设置为检索属性值所需的缓冲区大小（以字节为单位），记录错误代码 ERROR_INSUFFICIENT_BUFFER 并返回**FALSE**。 对 [GetLastError](https://go.microsoft.com/fwlink/p/?linkid=169416) 的后续调用将返回最近记录的错误代码。
 
 2.  再次调用 **SetupDiGetClassProperty** ，并提供在第一次调用中提供的相同参数，但以下更改除外：
     -   将 *PropertyBuffer* 设置为指向接收属性值的缓冲区的指针。
@@ -46,7 +46,7 @@ ms.locfileid: "89095635"
 
 若要检索远程计算机上的设备类属性值，请遵循在 [本地计算机上检索设备类属性值](#retrieving-a-device-class-property-value-on-a-local-computer) 中所述的相同过程进行以下修改：
 
--   调用 [**SetupDiGetClassPropertyEx**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetclasspropertyexw) 而不是 **SetupDiGetClassProperty**。
+-   调用 [**SetupDiGetClassPropertyEx**](/windows/win32/api/setupapi/nf-setupapi-setupdigetclasspropertyexw) 而不是 **SetupDiGetClassProperty**。
 
 -   除了提供**SetupDiGetDevicePropertyEx**和**SetupDiGetClassProperty**都需要的参数值，还需要提供*MachineName*参数，该参数必须设置为指向以 NULL 结尾的字符串的指针，该字符串包含计算机的 UNC 名称，包括 \\ \\ 前缀。
 

@@ -12,12 +12,12 @@ keywords:
 - 透明 blts WDK DirectDraw
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 410fb84fc6474bf02549ffeed48f472457cae346
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: bb8c81c03499ff311e6bb00860822057cf0aeb59
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89067188"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90717584"
 ---
 # <a name="transparent-blt"></a>透明 Blt
 
@@ -31,7 +31,7 @@ ms.locfileid: "89067188"
 
 部分支持的透明 blt 的一个示例是需要使用位掩码而不只是使用颜色键的显示卡。 在这种情况下，将生成单色掩码，而不是使用颜色键来比较每个像素来确定是否复制它。 也就是说，所有像素都将与颜色键进行比较，整个图面转换为位掩码 (通常每个字节一位，具体取决于颜色深度) 。 使用 DirectDraw 时，此操作在图面解锁时完成。
 
-生成 alpha 掩码后，将其与源图面进行比较。 未在 alpha 掩码上设置的所有内容都将复制到目标图面。 这可以实现与源颜色键相同的效果，但要求首先生成掩码，而不是同时进行比较和复制。 设置颜色键时必须重新生成掩码。 它还必须在发生 blt 时检查，因为此时可以指定颜色键重写。 调用应用程序的 **Blt** 函数时，请检查颜色键是否 (传递到 Blt 的唯一颜色键重写) 与在图面上设置的颜色键相同。 如果它们相同，则不是真正的替代，无需重新生成掩码。 如果它们不同，则必须重新生成掩码。  (驱动程序的 [*DdBlt*](/windows/desktop/api/ddrawint/nc-ddrawint-pdd_surfcb_blt) 函数始终将颜色键视为替代。 ) 
+生成 alpha 掩码后，将其与源图面进行比较。 未在 alpha 掩码上设置的所有内容都将复制到目标图面。 这可以实现与源颜色键相同的效果，但要求首先生成掩码，而不是同时进行比较和复制。 设置颜色键时必须重新生成掩码。 它还必须在发生 blt 时检查，因为此时可以指定颜色键重写。 调用应用程序的 **Blt** 函数时，请检查颜色键是否 (传递到 Blt 的唯一颜色键重写) 与在图面上设置的颜色键相同。 如果它们相同，则不是真正的替代，无需重新生成掩码。 如果它们不同，则必须重新生成掩码。  (驱动程序的 [*DdBlt*](/windows/win32/api/ddrawint/nc-ddrawint-pdd_surfcb_blt) 函数始终将颜色键视为替代。 ) 
 
  
 

@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 1a2a73faf28f134e907d666b7a5734e9e3f15ecf
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 95eab7cff490158a0b19dae1fc2ba5de4732df92
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89095235"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90717074"
 ---
 # <a name="devpkey_device_dhp_rebalance_policy"></a>DEVPKEY_Device_DHP_Rebalance_Policy
 
@@ -78,7 +78,7 @@ DEVPKEY_Device_DHP_Rebalance_Policy 设备属性表示一个值，该值指示�
 
 此设备属性不影响设备是否会参与出于其他原因而启动的资源重新平衡。
 
-可以通过调用 [**SetupDiGetDeviceProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw) 和 [**SetupDiSetDeviceProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdisetdevicepropertyw)访问 DEVPKEY_Device_DHP_Rebalance_Policy 属性。
+可以通过调用 [**SetupDiGetDeviceProperty**](/windows/win32/api/setupapi/nf-setupapi-setupdigetdevicepropertyw) 和 [**SetupDiSetDeviceProperty**](/windows/win32/api/setupapi/nf-setupapi-setupdisetdevicepropertyw)访问 DEVPKEY_Device_DHP_Rebalance_Policy 属性。
 
 <a name="requirements"></a>要求
 ------------
@@ -100,12 +100,12 @@ DEVPKEY_Device_DHP_Rebalance_Policy 设备属性表示一个值，该值指示�
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
-[**SetupDiGetDeviceProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)
+[**SetupDiGetDeviceProperty**](/windows/win32/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)
 
-[**SetupDiSetDeviceProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdisetdevicepropertyw)
+[**SetupDiSetDeviceProperty**](/windows/win32/api/setupapi/nf-setupapi-setupdisetdevicepropertyw)
 
  
 

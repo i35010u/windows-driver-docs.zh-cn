@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 2c9f780dced67e5c2f6cd92f1c284860e52cb586
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: a3f0a2b62a04e90f2e682e51af67b2b7d66c1b25
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90107504"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90717486"
 ---
 # <a name="dif_powermessagewake"></a>DIF_POWERMESSAGEWAKE
 
@@ -69,12 +69,12 @@ DIF_POWERMESSAGEWAKE 请求允许安装程序提供 Windows 在设备属性的 "
 与*DeviceInfoData*关联的设备安装参数 ([**SP_DEVINSTALL_PARAMS**](/windows/win32/api/setupapi/ns-setupapi-sp_devinstall_params_a)) 。
 
 <a href="" id="class-installation-parameters"></a>类安装参数  
-[**SP_POWERMESSAGEWAKE_PARAMS**](/windows/desktop/api/setupapi/ns-setupapi-_sp_powermessagewake_params_a)结构与*DeviceInfoData*关联。
+[**SP_POWERMESSAGEWAKE_PARAMS**](/windows/win32/api/setupapi/ns-setupapi-_sp_powermessagewake_params_a)结构与*DeviceInfoData*关联。
 
 ### <a name="installer-output"></a>安装程序输出
 
 <a href="" id="class-installation-parameters"></a>类安装参数  
-安装程序可以修改 [**SP_POWERMESSAGEWAKE_PARAMS**](/windows/desktop/api/setupapi/ns-setupapi-_sp_powermessagewake_params_a) 以提供设备的电源属性页的自定义文本。
+安装程序可以修改 [**SP_POWERMESSAGEWAKE_PARAMS**](/windows/win32/api/setupapi/ns-setupapi-_sp_powermessagewake_params_a) 以提供设备的电源属性页的自定义文本。
 
 ### <a name="installer-return-value"></a>安装程序返回值
 
@@ -114,14 +114,14 @@ DIF_POWERMESSAGEWAKE 请求允许安装程序提供 Windows 在设备的电源�
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**SP_DEVINFO_DATA**](/windows/win32/api/setupapi/ns-setupapi-sp_devinfo_data)
 
 [**SP_DEVINSTALL_PARAMS**](/windows/win32/api/setupapi/ns-setupapi-sp_devinstall_params_a)
 
-[**SP_POWERMESSAGEWAKE_PARAMS**](/windows/desktop/api/setupapi/ns-setupapi-_sp_powermessagewake_params_a)
+[**SP_POWERMESSAGEWAKE_PARAMS**](/windows/win32/api/setupapi/ns-setupapi-_sp_powermessagewake_params_a)
 
  
 

@@ -4,12 +4,12 @@ description: 传输模式
 ms.assetid: 79af0d8f-dd04-4ff4-a047-f415562a16a5
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: dd0c1314eb742e63007408f9b7a179aebbafd93f
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 2e8cbab61929ced34a51515017b7b5c8e84631d2
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89192587"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90717326"
 ---
 # <a name="transfer-modes"></a>传输模式
 
@@ -29,11 +29,11 @@ ms.locfileid: "89192587"
 
 需要注意的一点是，设备通常在状态模式下以相对较长的时间打开 (例如，事件监视器会监视) 的设备事件，而在相对较短的时间内以数据模式打开， (例如，读取图像) 。 虽然静止映像体系结构一次只允许一个客户端在数据模式中打开设备，但驱动程序可能需要对设备访问进行进一步的限制。
 
-例如，如果要为连接到串行端口的设备编写驱动程序，则可能需要从驱动程序的[**IStiUSD：： LockDevice**](/windows-hardware/drivers/ddi/stiusd/nf-stiusd-istiusd-lockdevice)方法中调用[**CreateFile**](/windows/desktop/api/fileapi/nf-fileapi-createfilea) （如果设备在状态模式下打开）。 这将禁止其他应用程序使用 (可能支持其他设备的端口，) 从设备获取状态信息时。
+例如，如果要为连接到串行端口的设备编写驱动程序，则可能需要从驱动程序的[**IStiUSD：： LockDevice**](/windows-hardware/drivers/ddi/stiusd/nf-stiusd-istiusd-lockdevice)方法中调用[**CreateFile**](/windows/win32/api/fileapi/nf-fileapi-createfilea) （如果设备在状态模式下打开）。 这将禁止其他应用程序使用 (可能支持其他设备的端口，) 从设备获取状态信息时。
 
-对于连接到专用端口（如 SCSI 或 USB 总线设备）的设备，通常允许从[**IStiUSD：： Initialize**](/windows-hardware/drivers/ddi/stiusd/nf-stiusd-istiusd-initialize)内调用[**CreateFile**](/windows/desktop/api/fileapi/nf-fileapi-createfilea) （如果指定了状态模式），因为设备和端口将始终专用于一台客户端。
+对于连接到专用端口（如 SCSI 或 USB 总线设备）的设备，通常允许从[**IStiUSD：： Initialize**](/windows-hardware/drivers/ddi/stiusd/nf-stiusd-istiusd-initialize)内调用[**CreateFile**](/windows/win32/api/fileapi/nf-fileapi-createfilea) （如果指定了状态模式），因为设备和端口将始终专用于一台客户端。
 
-在数据模式中打开设备时， [**CreateFile**](/windows/desktop/api/fileapi/nf-fileapi-createfilea) 通常从 **IStiUSD： Initialize**内调用，而与总线类型无关。
+在数据模式中打开设备时， [**CreateFile**](/windows/win32/api/fileapi/nf-fileapi-createfilea) 通常从 **IStiUSD： Initialize**内调用，而与总线类型无关。
 
  
 

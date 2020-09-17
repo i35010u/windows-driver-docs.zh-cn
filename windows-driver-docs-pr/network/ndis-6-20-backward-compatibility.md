@@ -7,12 +7,12 @@ keywords:
 - 向后兼容性 WDK NDIS 6.20
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ea84bde8ff4262151552bc779e363a45d0d278f9
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: b022bedee4934d75a95024b85a167f6bfa07c761
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89207245"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90716708"
 ---
 # <a name="ndis-620-backward-compatibility"></a>NDIS 6.20 后向兼容性
 
@@ -38,7 +38,7 @@ Windows 7 之后，Microsoft Windows 版本中已弃用 NDIS 1.x 和更早版本
 
 Windows 7 之后的 Microsoft Windows 版本不支持 IrDA 微型端口驱动程序。
 
-Windows 7 之后的 Microsoft Windows 版本不支持[IPsec 任务卸载版本 1](ipsec-offload-version-1.md) 。 应更新支持 IPsec 任务卸载的所有驱动程序，以支持 [ipsec 任务卸载版本 2](./introduction-to-ipsec-offload-version-2.md)。
+Windows 7 之后的 Microsoft Windows 版本不支持[IPsec 任务卸载版本 1](background-reading-on-ipsec.md) 。 应更新支持 IPsec 任务卸载的所有驱动程序，以支持 [ipsec 任务卸载版本 2](./introduction-to-ipsec-offload-version-2.md)。
 
 Windows 7 之后的 Microsoft Windows 版本不支持筛选器中间驱动程序。 应使用 NDIS 6.0 筛选器驱动程序接口。 有关筛选器驱动程序的详细信息，请参阅 [NDIS 筛选器驱动程序](ndis-filter-drivers.md)。
 

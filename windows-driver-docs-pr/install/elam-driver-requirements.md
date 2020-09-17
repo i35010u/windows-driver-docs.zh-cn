@@ -4,12 +4,12 @@ description: 驱动程序安装必须使用现有的工具进行联机和脱机�
 ms.assetid: B00B4361-B531-4D28-A521-0F8B3B48CEA4
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5dc4a729f3dfb595cfb9752f5d428c9de41214a7
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: d5a2d3d64910f8629a6bd9b767c2f9b1a7aaf3cb
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89096169"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90716892"
 ---
 # <a name="elam-driver-requirements"></a>ELAM 驱动程序要求
 
@@ -113,7 +113,7 @@ HKLM\ELAM\<VendorName>\
 
 -   测量
 -   策略
--   Config
+-   配置
 
 ELAM 配置单元在使用后将通过早期启动反恶意软件以提高性能。 如果用户模式服务要更新签名数据，则应从文件位置 \\ Windows \\ System32 \\ config ELAM 装载 hive 文件 \\ 。 例如，可以生成一个 UUID，将其转换为字符串，并将其用作装载 hive 的唯一键。
 这些数据 Blob 的存储和检索格式将留给 ISV，但必须对签名数据进行签名，以便 AM 驱动程序可以验证数据的完整性。
@@ -166,8 +166,8 @@ ELAM 配置单元在使用后将通过早期启动反恶意软件以提高性能
 </tr>
 <tr class="even">
 <td align="left"><p>内存中的内存占用 (驱动程序 + 配置数据) </p></td>
-<td align="left"><p>空值</p></td>
-<td align="left"><p>空值</p></td>
+<td align="left"><p>不可用</p></td>
+<td align="left"><p>不可用</p></td>
 <td align="left"><p>128kB</p></td>
 </tr>
 </tbody>
@@ -200,6 +200,6 @@ PNP_INITIALIZE_BAD_DRIVERS 0x7
 ## <a name="elam-and-measured-boot"></a>ELAM 和度量启动
 
 
-如果 ELAM 驱动程序检测到策略冲突 (rootkit，如) ，则它应立即调用 [**Tbsi_Revoke_Attestation**](/windows/desktop/api/tbs/nf-tbs-tbsi_revoke_attestation) ，使指示系统处于良好状态的 PCRs 无效。 如果度量启动有问题（例如系统上没有 TPM），该函数将返回错误。
+如果 ELAM 驱动程序检测到策略冲突 (rootkit，如) ，则它应立即调用 [**Tbsi_Revoke_Attestation**](/windows/win32/api/tbs/nf-tbs-tbsi_revoke_attestation) ，使指示系统处于良好状态的 PCRs 无效。 如果度量启动有问题（例如系统上没有 TPM），该函数将返回错误。
 
 **Tbsi_Revoke_Attestation** 可从内核模式调用。 它通过未指定的值扩展 PCR [12]，并递增 TPM 中的事件计数器。 这两个操作都是必需的，因此，从此处开始创建的所有引号中的信任会断开。 因此，经过度量的启动日志不会反映 tpm 的当前状态，这是 TPM 通电后的剩余时间，远程系统将无法在系统的安全状态下形成信任。

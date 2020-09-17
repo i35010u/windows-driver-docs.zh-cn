@@ -4,12 +4,12 @@ description: 了解和配置 Windows 连接管理器
 ms.assetid: 5ef0034f-5b30-4484-a11c-ed19931484a2
 ms.date: 05/03/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 77d089948028f654f937a782d49c5021c215124f
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 146128deb04f7016755569be1ac1d67e8f4399e3
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89218475"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90717012"
 ---
 # <a name="understanding-and-configuring-windows-connection-manager"></a>了解和配置 Windows 连接管理器
 
@@ -29,7 +29,7 @@ Windows 8 中引入的自动连接管理通过查看以太网、Wi-fi 和移动�
 
 ## <a name="span-idconnection_management_policiesspanspan-idconnection_management_policiesspanspan-idconnection_management_policiesspanconnection-management-policies"></a><span id="Connection_management_policies"></span><span id="connection_management_policies"></span><span id="CONNECTION_MANAGEMENT_POLICIES"></span>连接管理策略
 
-Windows 8、Windows 8.1 和 Windows 10 提供了许多用于控制连接管理的策略。 这些策略不会在 Windows 用户界面中公开，但可以使用 [WcmSetProperty](/windows/desktop/api/wcmapi/nf-wcmapi-wcmsetproperty) API 或组策略进行配置。
+Windows 8、Windows 8.1 和 Windows 10 提供了许多用于控制连接管理的策略。 这些策略不会在 Windows 用户界面中公开，但可以使用 [WcmSetProperty](/windows/win32/api/wcmapi/nf-wcmapi-wcmsetproperty) API 或组策略进行配置。
 
 ### <a name="span-idminimize_simultaneous_connectionsspanspan-idminimize_simultaneous_connectionsspanspan-idminimize_simultaneous_connectionsspanminimize-simultaneous-connections"></a><span id="Minimize_simultaneous_connections"></span><span id="minimize_simultaneous_connections"></span><span id="MINIMIZE_SIMULTANEOUS_CONNECTIONS"></span>同时最小化连接
 
@@ -37,7 +37,7 @@ Windows 8、Windows 8.1 和 Windows 10 提供了许多用于控制连接管理�
 
 #### <a name="versions-of-windows-before-windows-10-version-1809-build-17763404"></a>Windows 10 之前的 Windows 版本1809，版本17763.404
 
-在 windows 8、Windows 8.1 和 windows 10 版本1809之前的 windows 10 版本17763.404 中，此策略是一个可以使用组策略或 [WcmSetProperty](/windows/desktop/api/wcmapi/nf-wcmapi-wcmsetproperty) API 修改的布尔值。
+在 windows 8、Windows 8.1 和 windows 10 版本1809之前的 windows 10 版本17763.404 中，此策略是一个可以使用组策略或 [WcmSetProperty](/windows/win32/api/wcmapi/nf-wcmapi-wcmsetproperty) API 修改的布尔值。
 
 如果禁用此策略，则行为类似于 Windows 7 的行为，在这种情况下，每个接口会连接到最优先的网络（在范围内），而不考虑其他接口的连接状态。
 
@@ -202,17 +202,17 @@ Windows 8、Windows 8.1 和 Windows 10 会根据用户操作自动更新首选�
 
 应用程序可以使用适当的媒体特定 API 在网络列表中创建新的配置文件：
 
--   对于 Wi-fi 网络，使用 [**WlanSetProfile**](/windows/desktop/api/wlanapi/nf-wlanapi-wlansetprofile) 函数。
+-   对于 Wi-fi 网络，使用 [**WlanSetProfile**](/windows/win32/api/wlanapi/nf-wlanapi-wlansetprofile) 函数。
 
--   对于移动宽带网络，请使用 [**IMbnConnectionProfileManager：： CreateConnectionProfile**](/windows/desktop/api/mbnapi/nf-mbnapi-imbnconnectionprofilemanager-createconnectionprofile) 方法。
+-   对于移动宽带网络，请使用 [**IMbnConnectionProfileManager：： CreateConnectionProfile**](/windows/win32/api/mbnapi/nf-mbnapi-imbnconnectionprofilemanager-createconnectionprofile) 方法。
 
-若要修改网络列表的顺序，请使用 [**WcmSetProfileList**](/windows/desktop/api/wcmapi/nf-wcmapi-wcmsetprofilelist) 函数。 不建议使用 [**WlanSetProfileList**](/windows/desktop/api/wlanapi/nf-wlanapi-wlansetprofilelist) 函数，因为它可能会以意外的方式干扰网络列表中移动宽带配置文件的位置。
+若要修改网络列表的顺序，请使用 [**WcmSetProfileList**](/windows/win32/api/wcmapi/nf-wcmapi-wcmsetprofilelist) 函数。 不建议使用 [**WlanSetProfileList**](/windows/win32/api/wlanapi/nf-wlanapi-wlansetprofilelist) 函数，因为它可能会以意外的方式干扰网络列表中移动宽带配置文件的位置。
 
 若要从网络列表中删除配置文件，请使用相应的媒体特定 API：
 
--   对于 Wi-fi 网络，使用 [**WlanDeleteProfile**](/windows/desktop/api/wlanapi/nf-wlanapi-wlandeleteprofile) 函数。
+-   对于 Wi-fi 网络，使用 [**WlanDeleteProfile**](/windows/win32/api/wlanapi/nf-wlanapi-wlandeleteprofile) 函数。
 
--   对于移动宽带网络，请使用 [**IMbnConnectionProfile：:D e) **](/windows/desktop/api/mbnapi/nf-mbnapi-imbnconnectionprofile-delete) 方法。
+-   对于移动宽带网络，请使用 [**IMbnConnectionProfile：:D e) **](/windows/win32/api/mbnapi/nf-mbnapi-imbnconnectionprofile-delete) 方法。
 
 ### <a name="span-idcommand-linespanspan-idcommand-linespanspan-idcommand-linespancommand-line"></a><span id="Command-line"></span><span id="command-line"></span><span id="COMMAND-LINE"></span>命令行
 

@@ -7,12 +7,12 @@ keywords:
 - 访问设备属性 WDK 设备安装
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 76e6e17e14a5c3e7ebb102bc5c88d6b583d9eb45
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: d21ac8e63044789132f195bc2fd7321e051313cb
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89097349"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90717559"
 ---
 # <a name="accessing-device-properties"></a>访问设备属性
 
@@ -25,13 +25,13 @@ ms.locfileid: "89097349"
 
 -   对于用户模式应用程序，请执行以下步骤：
 
-    1.  从 Windows Vista 开始，使用 [**SetupDiGetDeviceProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw) 检索设备属性，并使用具有 DEVPKEY_Xxx 属性代码的 [**SetupDiSetDeviceProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdisetdevicepropertyw) 设置设备属性。
+    1.  从 Windows Vista 开始，使用 [**SetupDiGetDeviceProperty**](/windows/win32/api/setupapi/nf-setupapi-setupdigetdevicepropertyw) 检索设备属性，并使用具有 DEVPKEY_Xxx 属性代码的 [**SetupDiSetDeviceProperty**](/windows/win32/api/setupapi/nf-setupapi-setupdisetdevicepropertyw) 设置设备属性。
 
         有关 Windows Vista 和更高版本的 Windows 上的设备实例属性的详细信息，请参阅 [ (Windows vista 和更高版本) 访问设备实例属性 ](accessing-device-instance-properties--windows-vista-and-later-.md)。
 
         **注意**   从 Windows Vista 开始，某些设备属性由操作系统保留。 有关详细信息，请参阅 [修改设备属性](modifying-device-properties.md)。
 
-    2.  在 Windows 2000、Windows XP 和 Windows Server 2003 上，使用 [**SetupDiGetDeviceRegistryProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetdeviceinterfacepropertyw) 检索设备属性，并使用具有 SPDRP_Xxx 属性代码的 [**SetupDiSetDeviceRegistryProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdisetdeviceregistrypropertya) 设置设备属性。
+    2.  在 Windows 2000、Windows XP 和 Windows Server 2003 上，使用 [**SetupDiGetDeviceRegistryProperty**](/windows/win32/api/setupapi/nf-setupapi-setupdigetdeviceinterfacepropertyw) 检索设备属性，并使用具有 SPDRP_Xxx 属性代码的 [**SetupDiSetDeviceRegistryProperty**](/windows/win32/api/setupapi/nf-setupapi-setupdisetdeviceregistrypropertya) 设置设备属性。
 
         有关 Windows 2000、Windows XP 和 Windows Server 2003 上的设备实例属性的详细信息，请参阅 [SPDRP_Xxx 属性访问设备实例](accessing-device-instance-spdrp-xxx-properties.md)。
 

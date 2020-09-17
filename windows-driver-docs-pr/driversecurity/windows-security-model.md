@@ -4,12 +4,12 @@ description: Windows 安全模型主要基于每个对象的权限，具有少�
 ms.assetid: 3A7ECA7C-1FE6-4ADB-97A9-A61C6FCE9F04
 ms.date: 02/01/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 35aaf1222cc5c42222c49a3a44066089bf26c8c4
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 55c3f221e9b4ef4cd8ca290c08c0de541099ae72
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89206771"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90717516"
 ---
 # <a name="span-idintroductionspanspan-idintroductionspanspan-idintroductionspanwindows-security-model-for-driver-developers"></a><span id="Introduction"></span><span id="introduction"></span><span id="INTRODUCTION"></span>驱动程序开发人员的 Windows 安全模型
 
@@ -46,7 +46,7 @@ Sid 由操作系统或域服务器等机构颁发。 某些 Sid 是众所周知�
 
 默认情况下，只要进程的线程与安全对象进行交互，系统就会对进程使用主访问令牌。 但是，线程可以模拟客户端帐户。 当线程模拟时，它除了具有其自己的主令牌外，还具有一个模拟令牌。 模拟标记描述线程正在模拟的用户帐户的安全上下文。 模拟在远程过程调用 (RPC) 处理中尤其常见。
 
-描述线程或进程受限安全上下文的访问令牌称为受限令牌。 *受限令牌*中的 sid 只能设置为拒绝访问，而不允许访问安全对象。 此外，令牌可以描述有限的系统范围权限集。 用户的 SID 和标识保持不变，但用户的访问权限会受到限制，而此过程使用的是受限令牌。 [CreateRestrictedToken](/windows/desktop/api/securitybaseapi/nf-securitybaseapi-createrestrictedtoken)函数创建受限制的令牌。
+描述线程或进程受限安全上下文的访问令牌称为受限令牌。 *受限令牌*中的 sid 只能设置为拒绝访问，而不允许访问安全对象。 此外，令牌可以描述有限的系统范围权限集。 用户的 SID 和标识保持不变，但用户的访问权限会受到限制，而此过程使用的是受限令牌。 [CreateRestrictedToken](/windows/win32/api/securitybaseapi/nf-securitybaseapi-createrestrictedtoken)函数创建受限制的令牌。
 
 
 ### <a name="security-descriptors"></a>安全描述符
@@ -111,12 +111,12 @@ SDDL 是一种可扩展的描述语言，可让组件以字符串格式创建 Ac
 
 **示例文件 ACL**
 
-| 权限 | SID        | Access                |
+| 权限 | SID        | 访问                |
 |------------|------------|-----------------------|
-| 允许      | 计帐 | 写入、删除         |
-| 允许      | Sales      | 追加                |
+| Allow      | 计帐 | 写入、删除         |
+| Allow      | Sales      | 追加                |
 | 拒绝       | Legal      | 追加、写入、删除 |
-| 允许      | 所有人   | 读取                  |
+| Allow      | 所有人   | 读取                  |
 
  
 

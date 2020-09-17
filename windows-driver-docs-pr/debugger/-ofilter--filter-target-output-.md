@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 3ef2547aac78840a141d641d247799bebb9164e6
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 8e5090817ff0bc448236b6305139f6ecc9d299d8
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89214860"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90716850"
 ---
 # <a name="ofilter-filter-target-output"></a>.ofilter（筛选目标输出）
 
@@ -69,14 +69,14 @@ ms.locfileid: "89214860"
 
 ### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>附加信息
 
-有关 [**OutputDebugString**](/windows/desktop/api/debugapi/nf-debugapi-outputdebugstringw) 和其他用户模式例程的详细信息，请参阅 Microsoft Windows SDK 文档。 有关 **DbgPrint**、 **DbgPrintEx**和其他内核模式例程的详细信息，请参阅 Windows 驱动程序工具包 (WDK) 。
+有关 [**OutputDebugString**](/windows/win32/api/debugapi/nf-debugapi-outputdebugstringw) 和其他用户模式例程的详细信息，请参阅 Microsoft Windows SDK 文档。 有关 **DbgPrint**、 **DbgPrintEx**和其他内核模式例程的详细信息，请参阅 Windows 驱动程序工具包 (WDK) 。
 
 <a name="remarks"></a>备注
 -------
 
 如果使用不带参数的 **ofilter** 命令，则调试器会显示当前的模式匹配条件。
 
-若要清除现有筛选器，请使用 **ofilter ""**。 此命令对用户模式例程发送的任何数据进行筛选 (例如 [**OutputDebugString**](/windows/desktop/api/debugapi/nf-debugapi-outputdebugstringw)) 和内核模式例程 (如 **DbgPrint**) 。 但是，调试器始终显示 **DbgPrompt** 发送的提示。
+若要清除现有筛选器，请使用 **ofilter ""**。 此命令对用户模式例程发送的任何数据进行筛选 (例如 [**OutputDebugString**](/windows/win32/api/debugapi/nf-debugapi-outputdebugstringw)) 和内核模式例程 (如 **DbgPrint**) 。 但是，调试器始终显示 **DbgPrompt** 发送的提示。
 
 **DbgPrintEx**和**KdPrintEx**例程提供另一种筛选不需要的调试消息的方法。
 

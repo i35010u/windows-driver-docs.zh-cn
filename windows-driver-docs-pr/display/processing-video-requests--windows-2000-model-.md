@@ -9,12 +9,12 @@ keywords:
 - HwVidStartIO
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1bf507c208257d4f36eedd0ecfd55e80f6c0fe20
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 30a65a2b5f11a181d2a6eb46afa2fe7c963abc95
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89063506"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90717186"
 ---
 # <a name="processing-video-requests-windows-2000-model"></a>处理视频请求（Windows 2000 模型）
 
@@ -24,7 +24,7 @@ ms.locfileid: "89063506"
 
 发出显示驱动程序通过视频端口驱动程序对 **EngDeviceIoControl** 的调用的所有 i/o 请求。 然后，视频端口驱动程序将调用相应的微型端口驱动程序的 [*HwVidStartIO*](/windows-hardware/drivers/ddi/video/nc-video-pvideo_hw_start_io) 函数，其中包含指向它所设置的每个 [**视频 \_ 请求 \_ 数据包**](/windows-hardware/drivers/ddi/video/ns-video-_video_request_packet) 结构的指针。 发送到*HwVidStartIO*的所有 VRPs 都将**IoControlCode**成员设置为 IOCTL \_ 视频 \_ *XXX*。
 
-视频端口驱动程序还通过发送每个微型端口驱动程序的 *HwVidStartIO* 例程一次只发送一个 VRP 来管理所有视频微型端口驱动程序的传入请求的同步。 *HwVidStartIO* 拥有每个输入 VRP，直到微型端口驱动程序完成请求的操作并返回 control。 在微型端口驱动程序完成当前 VRP 之前，视频端口驱动程序会保留给 i/o 管理器发送的任何未完成的 IRP 代码，以响应相应显示驱动程序对 [**EngDeviceIoControl**](/windows/desktop/api/winddi/nf-winddi-engdeviceiocontrol) 的后续调用。
+视频端口驱动程序还通过发送每个微型端口驱动程序的 *HwVidStartIO* 例程一次只发送一个 VRP 来管理所有视频微型端口驱动程序的传入请求的同步。 *HwVidStartIO* 拥有每个输入 VRP，直到微型端口驱动程序完成请求的操作并返回 control。 在微型端口驱动程序完成当前 VRP 之前，视频端口驱动程序会保留给 i/o 管理器发送的任何未完成的 IRP 代码，以响应相应显示驱动程序对 [**EngDeviceIoControl**](/windows/win32/api/winddi/nf-winddi-engdeviceiocontrol) 的后续调用。
 
 收到视频请求后， [*HwVidStartIO*](/windows-hardware/drivers/ddi/video/nc-video-pvideo_hw_start_io) 必须检查 VRP，处理适配器上的视频请求，在 VRP 中设置相应的状态和其他信息，并返回 **TRUE**。
 

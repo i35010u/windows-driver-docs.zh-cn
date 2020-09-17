@@ -4,12 +4,12 @@ description: 帐户预配
 ms.assetid: 3ffcd769-253f-4918-8095-a9206445a201
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ca7d5d5669dc20faa76ecf2661f516645773fac0
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 6017b4108702b716c78704d6ef2776938250ecee
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89214134"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90717394"
 ---
 # <a name="account-provisioning"></a>帐户预配
 
@@ -59,7 +59,7 @@ ms.locfileid: "89214134"
 
 预配元数据包括以下部分：
 
-- [全局](#global)
+- [全球](#global)
 
 - [激活](#activation)
 
@@ -663,7 +663,7 @@ XSD 架构在运行 Windows 8、Windows 8.1 或 Windows 10 的任何计算机上
 </CarrierProvisioning>
 ```
 
-此方法等效于调用移动宽带 API 的 [**IMbnVendorSpecificOperation：： SetVendorSpecific**](/windows/desktop/api/mbnapi/nf-mbnapi-imbnvendorspecificoperation-setvendorspecific) 方法，并将 SAFEARRAY 传递到 BLOB 内容。
+此方法等效于调用移动宽带 API 的 [**IMbnVendorSpecificOperation：： SetVendorSpecific**](/windows/win32/api/mbnapi/nf-mbnapi-imbnvendorspecificoperation-setvendorspecific) 方法，并将 SAFEARRAY 传递到 BLOB 内容。
 
 ### <a name="force-the-mobile-broadband-device-to-reconnect-to-the-network-after-provisioning-completes"></a>完成预配后，强制移动宽带设备重新连接到网络
 
@@ -720,7 +720,7 @@ XSD 架构在运行 Windows 8、Windows 8.1 或 Windows 10 的任何计算机上
 
 - 指定具有有效的使用字段组合的操作员消息规则，并直接在短信中提供更新的使用情况。
 
-## <a name="troubleshooting"></a>故障排除
+## <a name="troubleshooting"></a>疑难解答
 
 如果遇到预配问题，你可以使用以下部分来帮助你解决问题。
 

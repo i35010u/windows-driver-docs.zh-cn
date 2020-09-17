@@ -8,12 +8,12 @@ keywords:
 - 接口提供程序 WDk 网络接口
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cb201131b284a5e9276167c12d4b8e2d7485aef1
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 4f527fc8e178e536f93963e1f3f1c6d60a90bae8
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89212155"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90716700"
 ---
 # <a name="ndis-interface-provider-operations"></a>NDIS 接口提供程序操作
 
@@ -21,7 +21,7 @@ ms.locfileid: "89212155"
 
 
 
-所有 NDIS 驱动程序都可以注册为接口提供程序。 每当驱动程序 (或 NDIS 代理接口提供程序) 检测到要引入到计算机的新接口时，它都会分配 [**NET \_ LUID**](/windows/desktop/api/ifdef/ns-ifdef-net_luid_lh) 索引，注册接口，并将关联的 NET \_ luid 值保留在持久性存储中 (如注册表) 。 以下列表描述了如何将新接口引入计算机的几个示例：
+所有 NDIS 驱动程序都可以注册为接口提供程序。 每当驱动程序 (或 NDIS 代理接口提供程序) 检测到要引入到计算机的新接口时，它都会分配 [**NET \_ LUID**](/windows/win32/api/ifdef/ns-ifdef-net_luid_lh) 索引，注册接口，并将关联的 NET \_ luid 值保留在持久性存储中 (如注册表) 。 以下列表描述了如何将新接口引入计算机的几个示例：
 
 -   安装网络适配器，无论是用于中间驱动程序的虚拟适配器还是物理适配器。 在这种情况下，NDIS 代理接口提供程序管理接口。
 
@@ -29,7 +29,7 @@ ms.locfileid: "89212155"
 
 -   MUX 中间驱动程序内部绑定。 MUX 中间驱动程序应该实现 NDIS 提供程序服务来处理这种情况，因为内部接口对 NDIS 不可见。
 
-当计算机重新启动时，如果接口是持久的，则接口提供程序不应为同一接口分配新的 [**net \_ luid**](/windows/desktop/api/ifdef/ns-ifdef-net_luid_lh) ; 相反，接口提供程序应使用之前存储的 net \_ luid 值注册同一接口。 此外，即使接口不是持久的，接口提供程序也必须释放 NET \_ LUID 索引（如果存在计算机电源故障）。 因此，接口提供程序应将 NET \_ LUID 存储在持久性存储中 (例如，注册表) 。
+当计算机重新启动时，如果接口是持久的，则接口提供程序不应为同一接口分配新的 [**net \_ luid**](/windows/win32/api/ifdef/ns-ifdef-net_luid_lh) ; 相反，接口提供程序应使用之前存储的 net \_ luid 值注册同一接口。 此外，即使接口不是持久的，接口提供程序也必须释放 NET \_ LUID 索引（如果存在计算机电源故障）。 因此，接口提供程序应将 NET \_ LUID 存储在持久性存储中 (例如，注册表) 。
 
 如果接口提供程序检测到接口正在关闭，则它应取消注册接口。
 

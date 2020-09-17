@@ -12,12 +12,12 @@ keywords:
 - 剪裁 blts WDK DirectDraw
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 986741d192a120a2ade1994d429a410ea983e0ff
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 9c47a04b156532cc177fd75489172b02bb4eea30
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89065680"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90717522"
 ---
 # <a name="clip-lists"></a>剪辑列表
 
@@ -25,7 +25,7 @@ ms.locfileid: "89065680"
 ## <span id="ddk_clip_lists_gg"></span><span id="DDK_CLIP_LISTS_GG"></span>
 
 
-剪辑的 blts 绝不会传递到 Microsoft Windows 2000 和更高版本上的驱动程序。 [**DD \_ BLTDATA**](/windows/desktop/api/ddrawint/ns-ddrawint-_dd_bltdata)的**IsClipped**成员始终为**FALSE**，而剪裁列表始终为**NULL**。
+剪辑的 blts 绝不会传递到 Microsoft Windows 2000 和更高版本上的驱动程序。 [**DD \_ BLTDATA**](/windows/win32/api/ddrawint/ns-ddrawint-_dd_bltdata)的**IsClipped**成员始终为**FALSE**，而剪裁列表始终为**NULL**。
 
  
 

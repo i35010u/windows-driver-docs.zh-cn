@@ -11,12 +11,12 @@ keywords:
 - 端口 WDK，文件系统微筛选器
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6aecaae3400b0a2f011f0e8243a0c84d9f3fed77
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: b7b7c68204b7b63d621c65cedc72022adf40c6a2
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89065334"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90717164"
 ---
 # <a name="communication-between-user-mode-and-kernel-mode"></a>用户模式和内核模式之间的通信
 
@@ -45,13 +45,13 @@ ms.locfileid: "89065334"
 
 为用户模式应用程序提供了以下支持例程来与微筛选器驱动程序通信：
 
-[**FilterConnectCommunicationPort**](/windows/desktop/api/fltuser/nf-fltuser-filterconnectcommunicationport)
+[**FilterConnectCommunicationPort**](/windows/win32/api/fltuser/nf-fltuser-filterconnectcommunicationport)
 
-[**FilterGetMessage**](/windows/desktop/api/fltuser/nf-fltuser-filtergetmessage)
+[**FilterGetMessage**](/windows/win32/api/fltuser/nf-fltuser-filtergetmessage)
 
-[**FilterReplyMessage**](/windows/desktop/api/fltuser/nf-fltuser-filterreplymessage)
+[**FilterReplyMessage**](/windows/win32/api/fltuser/nf-fltuser-filterreplymessage)
 
-[**FilterSendMessage**](/windows/desktop/api/fltuser/nf-fltuser-filtersendmessage)
+[**FilterSendMessage**](/windows/win32/api/fltuser/nf-fltuser-filtersendmessage)
 
 ### <a name="span-idminifilter_driver_callback_routines_for_communication_between_user_mode_and_kernel_modespanspan-idminifilter_driver_callback_routines_for_communication_between_user_mode_and_kernel_modespanspan-idminifilter_driver_callback_routines_for_communication_between_user_mode_and_kernel_modespanminifilter-driver-callback-routines-for-communication-between-user-mode-and-kernel-mode"></a><span id="Minifilter_Driver_Callback_Routines_for_Communication_Between_User_Mode_and_Kernel_Mode"></span><span id="minifilter_driver_callback_routines_for_communication_between_user_mode_and_kernel_mode"></span><span id="MINIFILTER_DRIVER_CALLBACK_ROUTINES_FOR_COMMUNICATION_BETWEEN_USER_MODE_AND_KERNEL_MODE"></span>用于在用户模式和内核模式之间进行通信的微筛选器驱动程序回调例程
 

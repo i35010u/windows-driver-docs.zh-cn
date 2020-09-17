@@ -5,12 +5,12 @@ ms.assetid: 59e12f8d-02eb-413c-bc04-6b9b6e4adde6
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 AF_INET 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 4da9b5be8a3ad66d8392dc087d5056fdc3e08707
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: fe103e522b83ee9558544298984ea40cbdf7b122
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89212979"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90716720"
 ---
 # <a name="af_inet"></a>AF \_ INET
 
@@ -19,7 +19,7 @@ AF \_ INET address 系列是 IPv4 地址族。
 
 ### <a name="socket-address-structure"></a>套接字地址结构
 
-使用结构 [** \_ 中的 SOCKADDR**](/windows/desktop/api/ws2def/ns-ws2def-sockaddr_in) 指定 IPv4 传输地址。
+使用结构 [** \_ 中的 SOCKADDR**](/windows/win32/api/ws2def/ns-ws2def-sockaddr_in) 指定 IPv4 传输地址。
 
 ### <a name="socket-types"></a>套接字类型
 

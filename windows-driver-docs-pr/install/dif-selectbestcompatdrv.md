@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: ca8081d3f29216050351f6e50bf9070a55e249b5
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 597a59e1e2a7978a2657a5376aed5ed0f57180a1
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90107176"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90716728"
 ---
 # <a name="dif_selectbestcompatdrv"></a>DIF_SELECTBESTCOMPATDRV
 
@@ -85,7 +85,7 @@ DIF_SELECTBESTCOMPATDRV 请求允许安装程序从设备信息元素的兼容�
 
 共同安装程序可以返回 NO_ERROR、ERROR_DI_POSTPROCESSING_REQUIRED 或 Win32 错误代码。
 
-如果类安装程序成功处理此请求，并且 [**SetupDiCallClassInstaller**](/windows/desktop/api/setupapi/nf-setupapi-setupdicallclassinstaller) 随后应调用默认处理程序，则类安装程序将返回 ERROR_DI_DO_DEFAULT。
+如果类安装程序成功处理此请求，并且 [**SetupDiCallClassInstaller**](/windows/win32/api/setupapi/nf-setupapi-setupdicallclassinstaller) 随后应调用默认处理程序，则类安装程序将返回 ERROR_DI_DO_DEFAULT。
 
 如果类安装程序成功处理此请求（包括直接调用默认处理程序），则类安装程序应返回 NO_ERROR 并且 **SetupDiCallClassInstaller** 将不会再次调用默认处理程序。
 
@@ -99,7 +99,7 @@ DIF_SELECTBESTCOMPATDRV 请求允许安装程序从设备信息元素的兼容�
 
 ### <a name="default-dif-code-handler"></a>默认的 DIF 代码处理程序
 
-[**SetupDiSelectBestCompatDrv**](/windows/desktop/api/setupapi/nf-setupapi-setupdiselectbestcompatdrv)
+[**SetupDiSelectBestCompatDrv**](/windows/win32/api/setupapi/nf-setupapi-setupdiselectbestcompatdrv)
 
 ### <a name="installer-operation"></a>安装程序操作
 
@@ -113,17 +113,17 @@ DIF_SELECTBESTCOMPATDRV 请求允许安装程序从设备信息元素的兼容�
 
     例如，安装程序可能会通过将驱动程序标记 DNF_BAD_DRIVER 来删除该设备的驱动程序。 安装程序按以下步骤修改驱动程序参数：
 
-    1.  通过调用 [**SetupDiEnumDriverInfo**](/windows/desktop/api/setupapi/nf-setupapi-setupdienumdriverinfoa) 和 [**SetupDiGetDriverInstallParams**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetdriverinstallparamsa)获取有关列表中第一个驱动程序的信息。 如果需要，请修改驱动程序参数，并通过调用 [**SetupDiSetDriverInstallParams**](/windows/desktop/api/setupapi/nf-setupapi-setupdisetdriverinstallparamsa)应用该更改。
+    1.  通过调用 [**SetupDiEnumDriverInfo**](/windows/win32/api/setupapi/nf-setupapi-setupdienumdriverinfoa) 和 [**SetupDiGetDriverInstallParams**](/windows/win32/api/setupapi/nf-setupapi-setupdigetdriverinstallparamsa)获取有关列表中第一个驱动程序的信息。 如果需要，请修改驱动程序参数，并通过调用 [**SetupDiSetDriverInstallParams**](/windows/win32/api/setupapi/nf-setupapi-setupdisetdriverinstallparamsa)应用该更改。
 
         如果驱动程序是最坏的选择，请在驱动程序安装参数中将驱动程序的排名设置为0xFFFF 或更高。 查看 [Windows 如何选择驱动程序](./how-windows-selects-a-driver-for-a-device.md) 以获取详细信息。
 
-    2.  重复上述步骤，直到处理完列表中的所有驱动程序。 请确保将 *MemberIndex* 参数递增为 [**SetupDiEnumDriverInfo**](/windows/desktop/api/setupapi/nf-setupapi-setupdienumdriverinfoa) ，如该函数的 "引用" 页中所述。
+    2.  重复上述步骤，直到处理完列表中的所有驱动程序。 请确保将 *MemberIndex* 参数递增为 [**SetupDiEnumDriverInfo**](/windows/win32/api/setupapi/nf-setupapi-setupdienumdriverinfoa) ，如该函数的 "引用" 页中所述。
 
     类安装程序修改了驱动程序列表后，将返回 ERROR_DI_DO_DEFAULT。 如果共同安装程序修改了驱动程序列表，则它应在预处理中执行此操作，并返回 NO_ERROR。
 
 -   选择设备的最佳驱动程序。
 
-    此操作不太常见，但安装程序可能会为设备选择最佳驱动程序。 此类安装程序将检查每个驱动程序的数据，选择一个驱动程序，然后调用 [**SetupDiSetSelectedDriver**](/windows/desktop/api/setupapi/nf-setupapi-setupdisetselecteddrivera) 来设置该驱动程序。 安装程序设置选定的驱动程序后，它将返回 NO_ERROR。
+    此操作不太常见，但安装程序可能会为设备选择最佳驱动程序。 此类安装程序将检查每个驱动程序的数据，选择一个驱动程序，然后调用 [**SetupDiSetSelectedDriver**](/windows/win32/api/setupapi/nf-setupapi-setupdisetselecteddrivera) 来设置该驱动程序。 安装程序设置选定的驱动程序后，它将返回 NO_ERROR。
 
     如果共同安装程序选择了驱动程序，则应在后处理时执行此操作。
 
@@ -152,9 +152,9 @@ DIF_SELECTBESTCOMPATDRV 请求允许安装程序从设备信息元素的兼容�
 ## <a name="see-also"></a>请参阅
 
 
-[**SetupDiSelectBestCompatDrv**](/windows/desktop/api/setupapi/nf-setupapi-setupdiselectbestcompatdrv)
+[**SetupDiSelectBestCompatDrv**](/windows/win32/api/setupapi/nf-setupapi-setupdiselectbestcompatdrv)
 
-[**SetupDiSetSelectedDriver**](/windows/desktop/api/setupapi/nf-setupapi-setupdisetselecteddrivera)
+[**SetupDiSetSelectedDriver**](/windows/win32/api/setupapi/nf-setupapi-setupdisetselecteddrivera)
 
 [**SP_DEVINFO_DATA**](/windows/win32/api/setupapi/ns-setupapi-sp_devinfo_data)
 

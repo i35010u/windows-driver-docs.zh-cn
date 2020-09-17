@@ -7,12 +7,12 @@ keywords:
 - D3DCAPS8
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7a2c5af1685baab7ac3c5e9e84022169866668e5
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 8b1dfe0d93476294db8f88644e84987cfac600da
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89066498"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90717200"
 ---
 # <a name="minimum-capability-requirements-for-directx-80-drivers"></a>DirectX 8.0 驱动程序的最低功能要求
 
@@ -32,7 +32,7 @@ DirectX 8.0 驱动程序必须显式：
 
 -   处理新的 [**D3dDrawPrimitives2**](/windows-hardware/drivers/ddi/d3dhal/nc-d3dhal-lpd3dhal_drawprimitives2cb) (DP2) 绘制标记。
 
--   处理顶点和索引缓冲区的 [**D3dCreateSurfaceEx**](/windows/desktop/api/ddrawint/nc-ddrawint-pdd_createsurfaceex) ，即使您的驱动程序不支持视频内存顶点缓冲区创建也是如此。 系统内存顶点和索引缓冲区的句柄传递给驱动程序。
+-   处理顶点和索引缓冲区的 [**D3dCreateSurfaceEx**](/windows/win32/api/ddrawint/nc-ddrawint-pdd_createsurfaceex) ，即使您的驱动程序不支持视频内存顶点缓冲区创建也是如此。 系统内存顶点和索引缓冲区的句柄传递给驱动程序。
 
 -   \_如果硬件支持 posttransformed 顶点数据的剪辑，请设置新的 posttransformed 剪切标志 D3DPMISCCAPS CLIPTLVERT。
 

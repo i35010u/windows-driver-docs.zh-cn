@@ -15,12 +15,12 @@ api_type:
 ms.date: 12/06/2018
 ms.localizationpriority: medium
 ms.custom: seodec18
-ms.openlocfilehash: c94576f16d3f0bab71721bda29c6e22cab507ddc
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: d4b15c6c74a55b5f498a007974244c44d323e6e3
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89064292"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90717368"
 ---
 # <a name="dxva_deinterlacebobdeviceclassdeinterlaceopenstream-method"></a>DXVA \_ DeinterlaceBobDeviceClass：:D einterlaceopenstream 方法
 
@@ -36,7 +36,7 @@ HRESULT DeinterlaceOpenStream(
 );
 ```
 
-<a name="parameters"></a>parameters
+<a name="parameters"></a>参数
 ----------
 
 *lpVideoDescription* \[在中 \] ，提供指向 **DXVA \_ VideoDesc** 硬件的指针。
@@ -53,14 +53,14 @@ HRESULT DeinterlaceOpenStream(
 
 有关驱动程序如何使用 *lpVideoDescription* 参数提供的信息执行取消隔行转换或帧速率转换操作的详细信息，请参阅 [视频内容进行取消隔行扫描和帧速率转换](./video-content-for-deinterlace-and-frame-rate-conversion.md)。
 
-示例*DeinterlaceOpenStream*函数直接映射到[**DD \_ MOTIONCOMPCALLBACKS**](/windows/desktop/api/ddrawint/ns-ddrawint-dd_motioncompcallbacks)结构的**CreateMoComp**成员，其中 GUID 是请求的取消隔行扫描模式。 [**DD \_ CREATEMOCOMPDATA**](/windows/desktop/api/ddrawint/ns-ddrawint-_dd_createmocompdata)结构的**lpData**成员指向[**DXVA \_ VideoDesc**](/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_videodesc)结构。
+示例*DeinterlaceOpenStream*函数直接映射到[**DD \_ MOTIONCOMPCALLBACKS**](/windows/win32/api/ddrawint/ns-ddrawint-dd_motioncompcallbacks)结构的**CreateMoComp**成员，其中 GUID 是请求的取消隔行扫描模式。 [**DD \_ CREATEMOCOMPDATA**](/windows/win32/api/ddrawint/ns-ddrawint-_dd_createmocompdata)结构的**lpData**成员指向[**DXVA \_ VideoDesc**](/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_videodesc)结构。
 
 ## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
-[**DD \_ MOTIONCOMPCALLBACKS**](/windows/desktop/api/ddrawint/ns-ddrawint-dd_motioncompcallbacks)
+[**DD \_ MOTIONCOMPCALLBACKS**](/windows/win32/api/ddrawint/ns-ddrawint-dd_motioncompcallbacks)
 
-[**DD \_ CREATEMOCOMPDATA**](/windows/desktop/api/ddrawint/ns-ddrawint-_dd_createmocompdata)
+[**DD \_ CREATEMOCOMPDATA**](/windows/win32/api/ddrawint/ns-ddrawint-_dd_createmocompdata)
 
 [**DeinterlaceQueryAvailableModes**](dxva-deinterlacecontainerdeviceclass-deinterlacequeryavailablemodes.md)
 

@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 03eeef20627782ee639b8f21448dba280bd0c53d
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 00dab74fbb6c822fc2d42c849b32d51557ceb7bc
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89095971"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90717088"
 ---
 # <a name="devpkey_device_containerid"></a>DEVPKEY_Device_ContainerId
 
@@ -102,12 +102,12 @@ DEVPKEY_Device_ContainerId 可用于确定系统中 *devnodes* 的设备容器�
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [容器 ID](./container-ids.md)
 
-[**SetupDiGetDeviceProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)
+[**SetupDiGetDeviceProperty**](/windows/win32/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)
 
  
 

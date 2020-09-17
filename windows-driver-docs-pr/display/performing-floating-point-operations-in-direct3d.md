@@ -8,12 +8,12 @@ keywords:
 - 回调函数 WDK Direct3D
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ea4bf3e585d5e74494609619ab009c719ecc6b16
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: c41824856c6af6c44ae019390321fa73ee218783
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89067304"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90717194"
 ---
 # <a name="performing-floating-point-operations-in-direct3d"></a>在 Direct3D 中执行浮点运算
 
@@ -31,15 +31,15 @@ DirectX 运行时根据以下 Direct3D 回调函数的需要保存和还原浮�
 
 -   [**D3dDrawPrimitives2**](/windows-hardware/drivers/ddi/d3dhal/nc-d3dhal-lpd3dhal_drawprimitives2cb)
 
--   [**D3dGetDriverState**](/windows/desktop/api/ddrawint/nc-ddrawint-pdd_getdriverstate)
+-   [**D3dGetDriverState**](/windows/win32/api/ddrawint/nc-ddrawint-pdd_getdriverstate)
 
 -   [**D3dValidateTextureStageState**](/windows-hardware/drivers/ddi/d3dhal/nc-d3dhal-lpd3dhal_validatetexturestagestatecb)
 
 对于以下回调函数，Direct3D 支持的显示驱动程序必须在执行浮点运算之前保存浮点状态，并在操作完成时还原它：
 
--   [**D3dCreateSurfaceEx**](/windows/desktop/api/ddrawint/nc-ddrawint-pdd_createsurfaceex)
+-   [**D3dCreateSurfaceEx**](/windows/win32/api/ddrawint/nc-ddrawint-pdd_createsurfaceex)
 
--   [**D3dDestroyDDLocal**](/windows/desktop/api/ddrawint/nc-ddrawint-pdd_destroyddlocal)
+-   [**D3dDestroyDDLocal**](/windows/win32/api/ddrawint/nc-ddrawint-pdd_destroyddlocal)
 
 -   [D3DBuffer 回调](/windows-hardware/drivers/ddi/index)
 

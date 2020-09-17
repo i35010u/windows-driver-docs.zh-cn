@@ -7,12 +7,12 @@ keywords:
 - 接口 WDK 共同安装程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: caa28e140026f6d78731f0df783d96ef222d4d04
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 62e316ed03fe1bda5d1223416e3692b50469fc88
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89095177"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90717128"
 ---
 # <a name="co-installer-interface"></a>辅助安装程序界面
 
@@ -40,7 +40,7 @@ typedef DWORD
 提供 [设备信息集](device-information-sets.md)的句柄。
 
 <a href="" id="deviceinfodata"></a>*DeviceInfoData*  
-（可选）确定作为设备安装请求的目标的设备。 如果此参数为非**NULL**，则它将标识设备信息集中的设备信息元素。 当[**SetupDiCallClassInstaller**](/windows/desktop/api/setupapi/nf-setupapi-setupdicallclassinstaller)调用设备特定的共同安装程序时， *DeviceInfoData*为非**NULL** 。 可以通过具有 **NULL *** * DeviceInfoData （如 DIF_DETECT 或 DIF_FIRSTTIMESETUP）的 DIF 请求来调用特定于类的共同安装程序。
+（可选）确定作为设备安装请求的目标的设备。 如果此参数为非**NULL**，则它将标识设备信息集中的设备信息元素。 当[**SetupDiCallClassInstaller**](/windows/win32/api/setupapi/nf-setupapi-setupdicallclassinstaller)调用设备特定的共同安装程序时， *DeviceInfoData*为非**NULL** 。 可以通过具有 **NULL *** * DeviceInfoData （如 DIF_DETECT 或 DIF_FIRSTTIMESETUP）的 DIF 请求来调用特定于类的共同安装程序。
 
 <a href="" id="context"></a>*快捷*  
 指向 [**COINSTALLER_CONTEXT_DATA**](#coinstaller-context-data) 结构。

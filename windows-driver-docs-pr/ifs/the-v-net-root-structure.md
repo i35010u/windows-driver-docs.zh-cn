@@ -15,12 +15,12 @@ keywords:
 - 连接信息 WDK RDBSS
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a8fdd338ae73c2245c041b758742ba218d2b768c
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 93aaf86daea0fffc5c9a038c0e6b17ddcd6052f8
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89065924"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90717512"
 ---
 # <a name="the-v_net_root-structure"></a>\_.Net \_ 根结构
 
@@ -35,7 +35,7 @@ ms.locfileid: "89065924"
 \;m:\server\share\d1\d2
 ```
 
-名称的格式取决于是否存在 ( "X：" 的本地设备，例如) 与此 \_ .Net \_ 根结构关联的。 如果本地驱动器映射 (d1 \\ d2，例如) ，则本地驱动器映射将作为此[**CreateFile**](/windows/desktop/api/fileapi/nf-fileapi-createfilea) \_ .net 根结构上打开的每个 CreateFile 的前缀 \_ 。
+名称的格式取决于是否存在 ( "X：" 的本地设备，例如) 与此 \_ .Net \_ 根结构关联的。 如果本地驱动器映射 (d1 \\ d2，例如) ，则本地驱动器映射将作为此[**CreateFile**](/windows/win32/api/fileapi/nf-fileapi-createfilea) \_ .net 根结构上打开的每个 CreateFile 的前缀 \_ 。
 
 \_.Net \_ 根结构还用于提供备用凭据。 这种类型的 \_ .Net 根结构的用途 \_ 是将备用凭据作为默认凭据传播到 NET \_ root。 为此，必须没有其他引用。
 

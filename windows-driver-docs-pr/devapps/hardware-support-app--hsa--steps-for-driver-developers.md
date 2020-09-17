@@ -9,12 +9,12 @@ keywords:
 - 硬件
 ms.date: 08/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4ad0864b0a153a5d90169645ea6a87e792932b41
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: ed18b4be8bff2e7e702da55831c8f7dc217d4351
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89096569"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90717272"
 ---
 # <a name="hardware-support-app-hsa-steps-for-driver-developers"></a>硬件支持应用 (HSA) ：驱动程序开发人员的步骤
 
@@ -52,7 +52,7 @@ HSA 是 [Windows 驱动程序](../develop/getting-started-with-windows-drivers.m
 
 若要允许对具有自定义功能的 UWP 应用访问 RPC 终结点，请执行以下步骤：
 
-1. 调用 [**DeriveCapabilitySidsFromName**](/windows/desktop/api/securitybaseapi/nf-securitybaseapi-derivecapabilitysidsfromname) ，将自定义功能名称转换为 (SID) 的安全 ID。
+1. 调用 [**DeriveCapabilitySidsFromName**](/windows/win32/api/securitybaseapi/nf-securitybaseapi-derivecapabilitysidsfromname) ，将自定义功能名称转换为 (SID) 的安全 ID。
 2. 将 SID 添加到 access 允许的 ACE 以及 RPC 终结点安全描述符所需的任何其他 Sid。
 3. 使用安全描述符中的信息创建 RPC 终结点。
 

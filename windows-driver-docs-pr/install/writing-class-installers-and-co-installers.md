@@ -9,12 +9,12 @@ keywords:
 - 编写共同安装程序 WDK 设备安装
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: aa4eb6395ae3b3cd239cc28ac6a6e9e4347dcb22
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 38e84b1103be5bfe75f7e798f709bb81a1f1b05f
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89097059"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90717528"
 ---
 # <a name="writing-class-installers-and-co-installers"></a>编写类安装程序和辅助安装程序
 
@@ -53,11 +53,11 @@ ms.locfileid: "89097059"
 
 为了安全地保留设备安装程序状态，类安装程序或共同安装程序应将状态信息保存为注册表中设备 *驱动程序密钥* 内的属性。 为此，请按照下列步骤进行操作：
 
-1.  若要检索 *设备实例*的驱动程序密钥的注册表句柄，请使用 [**SetupDiOpenDevRegKey**](/windows/desktop/api/setupapi/nf-setupapi-setupdiopendevregkey) ，并将 *KeyType* 参数设置为 DIREG_DRV。
+1.  若要检索 *设备实例*的驱动程序密钥的注册表句柄，请使用 [**SetupDiOpenDevRegKey**](/windows/win32/api/setupapi/nf-setupapi-setupdiopendevregkey) ，并将 *KeyType* 参数设置为 DIREG_DRV。
 
-2.  使用 [**SetupDiGetDevicePropertyKeys**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertykeys) (检索设备实例) 或 [**SetupDiGetDeviceProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw) (的所有属性键以检索指定的设备实例属性项) 。
+2.  使用 [**SetupDiGetDevicePropertyKeys**](/windows/win32/api/setupapi/nf-setupapi-setupdigetdevicepropertykeys) (检索设备实例) 或 [**SetupDiGetDeviceProperty**](/windows/win32/api/setupapi/nf-setupapi-setupdigetdevicepropertyw) (的所有属性键以检索指定的设备实例属性项) 。
 
-3.  使用 [**SetupDiSetDeviceProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdisetdevicepropertyw) 保存设备实例属性项。
+3.  使用 [**SetupDiSetDeviceProperty**](/windows/win32/api/setupapi/nf-setupapi-setupdisetdevicepropertyw) 保存设备实例属性项。
 
 ## <a name="loading-executable-or-dll-files"></a>加载可执行文件或 DLL 文件
 

@@ -8,12 +8,12 @@ keywords:
 - 迁移显示器驱动程序模型 WDK Windows Vista
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c505d87449b5a9f5f9b9fe4ee509e860ed1dc15f
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 2eb8289c94555043813025314cc01fa5fa6438b0
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89063884"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90717202"
 ---
 # <a name="migrating-to-the-windows-display-driver-model-wddm"></a>迁移到 Windows 显示驱动程序模型 (WDDM)
 
@@ -41,7 +41,7 @@ WDDM 支持根据 XDDM 编写的显示和视频微型端口驱动程序。 但�
 
 -   用户模式显示驱动程序必须实现和导出 [**OpenAdapter**](/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_openadapter) 函数，该函数将打开图形适配器的实例。 用户模式显示驱动程序还必须实现一个 [**CreateDevice**](/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_createdevice) 函数，该函数可创建显示设备的表示形式，这些表示处理呈现状态的集合。
 
--   用户模式显示驱动程序的 [**CreateResource**](/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_createresource) 函数，以及显示微型端口驱动程序的 [**DxgkDdiCreateAllocation**](/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_createallocation) 函数，替换 D3dCreateSurfaceEx 中的 [*DdCanCreateSurface*](/previous-versions/windows/hardware/drivers/ff549213(v=vs.85))、 [*DdCreateSurface*](/previous-versions/windows/hardware/drivers/ff549263(v=vs.85))和 [**XDDM**](/windows/desktop/api/ddrawint/nc-ddrawint-pdd_createsurfaceex) 函数。
+-   用户模式显示驱动程序的 [**CreateResource**](/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_createresource) 函数，以及显示微型端口驱动程序的 [**DxgkDdiCreateAllocation**](/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_createallocation) 函数，替换 D3dCreateSurfaceEx 中的 [*DdCanCreateSurface*](/previous-versions/windows/hardware/drivers/ff549213(v=vs.85))、 [*DdCreateSurface*](/previous-versions/windows/hardware/drivers/ff549263(v=vs.85))和 [**XDDM**](/windows/win32/api/ddrawint/nc-ddrawint-pdd_createsurfaceex) 函数。
 
 -   大多数其余的用户模式显示驱动程序函数实现的功能与 XDDM 的内核模式显示驱动程序实现的功能相同：
     -   [**D3dDrawPrimitives2**](/windows-hardware/drivers/ddi/d3dhal/nc-d3dhal-lpd3dhal_drawprimitives2cb)函数和[**DP2**](/windows-hardware/drivers/ddi/d3dhal/ne-d3dhal-_d3dhal_dp2operation)操作代码

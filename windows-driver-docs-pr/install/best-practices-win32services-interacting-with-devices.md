@@ -4,12 +4,12 @@ description: Win32 服务与设备交互
 ms.assetid: 0ecc6979-25b3-41eb-8d6f-9eee3b80a56f
 ms.date: 03/02/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: f4f509c88097351f88a91ca6a99ae887884e8f2e
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 1afb05d9612a6b0439e1cfcdcf973cd574ee34e4
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89095787"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90717550"
 ---
 # <a name="win32-services-interacting-with-devices"></a>Win32 服务与设备交互
 
@@ -61,7 +61,7 @@ AddTrigger    = UserSvc_AddTrigger
 >[!NOTE] 
 >请注意，接口可能会在注册通知和查找所需设备接口之间出现。  在这种情况下，接口将在通知回调和接口列表中列出。
 
-找到所需的设备接口后，通过 [CreateFile](/windows/desktop/api/fileapi/nf-fileapi-createfilea)打开该接口的句柄。  
+找到所需的设备接口后，通过 [CreateFile](/windows/win32/api/fileapi/nf-fileapi-createfilea)打开该接口的句柄。  
 
 下一步是注册辅助的每个接口的通知，以操作和管理设备。 这可以通过使用 **CM_Register_Notification** 和 **CM_NOTIFY_FILTER_TYPE_DEVICEHANDLE** 标志来完成。  这将确保在设备消失后可以相应地释放句柄。
 

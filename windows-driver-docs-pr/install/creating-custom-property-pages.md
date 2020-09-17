@@ -4,19 +4,19 @@ description: 创建自定义属性页
 ms.assetid: 2481450f-ebb2-40e3-8a42-eabaecc1c7e4
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b10b698792ad0d2f6c4770e639439b30fc42a831
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 1b15f5437998cd6cdf76ae0699860605d3472306
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89095609"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90717442"
 ---
 # <a name="creating-custom-property-pages"></a>创建自定义属性页
 
 
 当 [设备属性页提供程序](types-of-device-property-page-providers.md) 处理为其设备或设备类创建属性页的请求时，提供程序应执行以下步骤：
 
-1.  调用 [**SetupDiGetClassInstallParams**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetclassinstallparamsa) 以获取设备的当前类安装参数。 例如：
+1.  调用 [**SetupDiGetClassInstallParams**](/windows/win32/api/setupapi/nf-setupapi-setupdigetclassinstallparamsa) 以获取设备的当前类安装参数。 例如：
 
     ```cpp
     SP_ADDPROPERTYPAGE_DATA AddPropertyPageData;
@@ -73,7 +73,7 @@ ms.locfileid: "89095609"
 
 7.  对于其他每个自定义属性页，重复步骤2到6。
 
-8.  调用 [**SetupDiSetClassInstallParams**](/windows/desktop/api/setupapi/nf-setupapi-setupdisetclassinstallparamsa) 以设置新的类安装参数，其中包括更新的属性页结构。
+8.  调用 [**SetupDiSetClassInstallParams**](/windows/win32/api/setupapi/nf-setupapi-setupdisetclassinstallparamsa) 以设置新的类安装参数，其中包括更新的属性页结构。
 
 9.  返回 NO_ERROR。
 

@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: d1292c3abf3d2374f7fc4102c7646e97833fbd08
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: b3e963053ed7bc7d8e28f52b6d7641a74dcb0e9c
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89095937"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90716896"
 ---
 # <a name="devpkey_name-device-interface"></a>DEVPKEY_NAME（设备接口）
 
@@ -60,7 +60,7 @@ DEVPKEY_NAME 的值应用于标识用户界面项中的最终用户的接口。
 
 如果设置了 DEVPKEY_DeviceInterface_FriendlyName，则 DEVPKEY_NAME 的值与 [**DEVPKEY_DeviceInterface_FriendlyName**](devpkey-deviceinterface-friendlyname.md) 设备属性的值相同。 否则，DEVPKEY_NAME 不存在。
 
-可以通过调用 [**SetupDiGetDeviceInterfaceProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetdeviceinterfacepropertyw)来检索 DEVPKEY_NAME 的值。
+可以通过调用 [**SetupDiGetDeviceInterfaceProperty**](/windows/win32/api/setupapi/nf-setupapi-setupdigetdeviceinterfacepropertyw)来检索 DEVPKEY_NAME 的值。
 
 有关设备接口的信息，请参阅 [设备接口类](./overview-of-device-interface-classes.md) 和 [**INF AddInterface 指令**](./inf-addinterface-directive.md)。
 
@@ -86,14 +86,14 @@ Windows Server 2003、Windows XP 和 Windows 2000 不直接支持相应的名称
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**DEVPKEY_DeviceInterface_FriendlyName**](devpkey-deviceinterface-friendlyname.md)
 
 [**INF AddInterface 指令**](./inf-addinterface-directive.md)
 
-[**SetupDiGetDeviceInterfaceProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetdeviceinterfacepropertyw)
+[**SetupDiGetDeviceInterfaceProperty**](/windows/win32/api/setupapi/nf-setupapi-setupdigetdeviceinterfacepropertyw)
 
  
 

@@ -10,12 +10,12 @@ keywords:
 - LIST_ENTRY
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8b82a92c5c8cc68c0ca403889f62d66523d3db7a
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: aa4a9a7ea2ff2204f70c3bb8f34eb7161bee199e
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89191837"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90717476"
 ---
 # <a name="singly-and-doubly-linked-lists"></a>单向和双向链接列表
 
@@ -25,11 +25,11 @@ ms.locfileid: "89191837"
 
 ### <a name="singly-linked-lists"></a>单向链接列表
 
-操作系统为使用 [**单个 \_ 列表 \_ 项**](/windows/desktop/api/ntdef/ns-ntdef-_single_list_entry) 结构的单个链接列表提供内置支持。 单个链接的列表包含一个列表头以及一些列表项。  (如果列表为空，则列表项的数目为零。 ) 每个列表项都表示为 **单个 \_ 列表 \_ 项** 结构。 List head 还表示为 **单个 \_ 列表 \_ 条目** 结构。
+操作系统为使用 [**单个 \_ 列表 \_ 项**](/windows/win32/api/ntdef/ns-ntdef-_single_list_entry) 结构的单个链接列表提供内置支持。 单个链接的列表包含一个列表头以及一些列表项。  (如果列表为空，则列表项的数目为零。 ) 每个列表项都表示为 **单个 \_ 列表 \_ 项** 结构。 List head 还表示为 **单个 \_ 列表 \_ 条目** 结构。
 
 每个**单一 \_ 列表 \_ 项**结构都包含指向另一个** \_ 列表 \_ 项**结构的**下**一个成员。 在表示列表头的 **单个 \_ 列表 \_ 项** 结构中， **下一** 成员指向列表中的第一项，如果列表为空，则为 NULL。 在表示列表中某个条目的 **单个 \_ 列表 \_ 条目** 结构中， **下一个** 成员指向列表的下一个条目，或者，如果此条目是列表中的最后一个条目，则为 NULL。
 
-操作单向链接列表的例程采用指向表示列表头的 [**单个 \_ 列表 \_ 项**](/windows/desktop/api/ntdef/ns-ntdef-_single_list_entry) 的指针。 它们将更新 **下一个** 指针，使其指向操作后的列表的第一个条目。
+操作单向链接列表的例程采用指向表示列表头的 [**单个 \_ 列表 \_ 项**](/windows/win32/api/ntdef/ns-ntdef-_single_list_entry) 的指针。 它们将更新 **下一个** 指针，使其指向操作后的列表的第一个条目。
 
 假设 *ListHead* 变量是一个指针，该指针指向表示列表头的 **单个 \_ 列表 \_ 项** 结构。 驱动程序操作 *ListHead* ，如下所示：
 
@@ -90,7 +90,7 @@ PopXxxEntry(PSINGLE_LIST_ENTRY ListHead)
 
 ### <a name="doubly-linked-lists"></a>双重链接列表
 
-操作系统为使用 [**列表 \_ 输入**](/windows/desktop/api/ntdef/ns-ntdef-_list_entry) 结构的双重链接列表提供内置支持。 双重链接列表由列表头和一些列表项组成。  (如果列表为空，则列表项的数目为零。 ) 每个列表项都表示为 **列表 \_ 项** 结构。 List head 还会表示为 **列表 \_ 条目** 结构。
+操作系统为使用 [**列表 \_ 输入**](/windows/win32/api/ntdef/ns-ntdef-_list_entry) 结构的双重链接列表提供内置支持。 双重链接列表由列表头和一些列表项组成。  (如果列表为空，则列表项的数目为零。 ) 每个列表项都表示为 **列表 \_ 项** 结构。 List head 还会表示为 **列表 \_ 条目** 结构。
 
 每个 **列表 \_ 项** 结构都包含一个 **Flink** 成员和一个 **闪烁** 成员。 这两个成员都是指向 **列出 \_ 条目** 结构的指针。
 
@@ -100,7 +100,7 @@ PopXxxEntry(PSINGLE_LIST_ENTRY ListHead)
 
  (虽然这种规则乍一看看起来很奇怪，但它们允许列表插入和删除操作在没有条件代码分支的情况下实现。 ) 
 
-操作双重链接列表的例程采用指向表示列表标题的 [**列表 \_ 项**](/windows/desktop/api/ntdef/ns-ntdef-_list_entry) 的指针。 这些例程将更新列表头中的 **Flink** 和 **闪光** 成员，使这些成员指向结果列表中的第一个和最后一个条目。
+操作双重链接列表的例程采用指向表示列表标题的 [**列表 \_ 项**](/windows/win32/api/ntdef/ns-ntdef-_list_entry) 的指针。 这些例程将更新列表头中的 **Flink** 和 **闪光** 成员，使这些成员指向结果列表中的第一个和最后一个条目。
 
 假设 *ListHead* 变量是一个指针，该指针指向表示列表标题的 **列表 \_ 条目** 结构。 驱动程序操作 *ListHead* ，如下所示：
 
@@ -120,7 +120,7 @@ PopXxxEntry(PSINGLE_LIST_ENTRY ListHead)
 
 -   若要将列表附加到另一个列表的尾部，请使用 [**AppendTailList**](/windows-hardware/drivers/ddi/wdm/nf-wdm-appendtaillist)。
 
-[**列表 \_ 项**](/windows/desktop/api/ntdef/ns-ntdef-_list_entry)本身只包含**闪烁**和**Flink**的成员。 若要将自己的数据存储在列表中，请将 **列表 \_ 项** 嵌入为描述列表项的结构的成员，如下所示。
+[**列表 \_ 项**](/windows/win32/api/ntdef/ns-ntdef-_list_entry)本身只包含**闪烁**和**Flink**的成员。 若要将自己的数据存储在列表中，请将 **列表 \_ 项** 嵌入为描述列表项的结构的成员，如下所示。
 
 ```cpp
 typedef struct {

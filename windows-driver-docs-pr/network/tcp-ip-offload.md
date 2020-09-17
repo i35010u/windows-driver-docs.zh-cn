@@ -13,12 +13,12 @@ keywords:
 - 包 WDK 网络，TCP/IP 卸载
 ms.date: 06/21/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 68803e54f329221257f4cb0205918f5e186f718d
-ms.sourcegitcommit: 9102e34c3322d8697dbb6f9a1d78879147a73373
+ms.openlocfilehash: ce84dfbc845e0ff513a002c5b0a2b82338bf7e3e
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87264454"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90717520"
 ---
 # <a name="tcpip-offload-overview"></a>TCP/IP 卸载概述
 
@@ -28,7 +28,7 @@ ms.locfileid: "87264454"
 
 -   校验和任务
 
--   应用程序 Internet 协议安全性（IPsec）卸载版本1
+-   应用程序 Internet 协议安全 (IPsec) 卸载版本1
 
 -   IPsec 卸载版本2
     - \[IPsec 任务卸载功能已弃用，不应使用。\]
@@ -39,7 +39,7 @@ ms.locfileid: "87264454"
 
 -   连接卸载
 
-从 Windows 10 版本1912开始，Windows 还支持 UDP 分段卸载（USO）。
+从 Windows 10 2004 版开始，Windows 还支持 UDP 分段卸载 (USO) 。
 
 从 Windows Vista 开始提供的 TCP/IP 传输支持用于 IPv4 和 IPv6 数据包的 TCP/IP 卸载服务。
 

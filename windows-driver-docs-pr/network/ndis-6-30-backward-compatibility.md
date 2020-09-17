@@ -4,12 +4,12 @@ description: NDIS 6.30 向向后兼容的功能添加了适用于 NDIS 6.20 和 
 ms.assetid: 71C2BBCF-206A-4C2D-BF9C-C4074FB9276D
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5b38e71f16577357088100ab98065e817d3e6a96
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: f801f525a8c045934f70c3845e7203343cbf1775
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89207237"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90716706"
 ---
 # <a name="ndis-630-backward-compatibility"></a>NDIS 6.30 后向兼容性
 
@@ -24,7 +24,7 @@ NDIS 6.30 向向后兼容的功能添加了适用于 NDIS 6.20 和 NDIS 6.0 驱�
 Windows 8 及更高版本不支持以下功能：
 
 -   虚拟机不再支持 TCP 烟囱卸载。 但是，它仍支持本机使用。
--   [IPsec 任务卸载版本 1](ipsec-offload-version-1.md)。 应更新支持 IPsec 任务卸载的所有驱动程序，以支持 [ipsec 任务卸载版本 2](./introduction-to-ipsec-offload-version-2.md)。
+-   [IPsec 任务卸载版本 1](background-reading-on-ipsec.md)。 应更新支持 IPsec 任务卸载的所有驱动程序，以支持 [ipsec 任务卸载版本 2](./introduction-to-ipsec-offload-version-2.md)。
 -   筛选中间驱动程序。 相反，请使用 NDIS 6。*x* 筛选器驱动程序接口。 有关筛选器驱动程序的详细信息，请参阅 [NDIS 筛选器驱动程序](ndis-filter-drivers.md)。
 -   802.11 用于模拟802.3 的驱动程序。 NDIS 802.11 驱动程序必须支持本机802.11 接口。 有关本机802.11 的详细信息，请参阅 [本机802.11 无线 LAN](/previous-versions/windows/hardware/wireless/ff560689(v=vs.85))。
 -   NDIS WAN 驱动程序。 NDIS WAN 驱动程序必须移植到 NDIS 6.0 CoNDIS WAN 驱动程序模型。 有关 CoNDIS WAN 的详细信息，请参阅 [Wan 微型端口驱动程序](wan-miniport-drivers.md)。

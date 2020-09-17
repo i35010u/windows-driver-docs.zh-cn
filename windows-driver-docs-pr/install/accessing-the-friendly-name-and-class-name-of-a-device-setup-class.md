@@ -4,12 +4,12 @@ description: 访问设备安装程序类的友好名称和类名称
 ms.assetid: 52775fc6-1c52-4bed-a943-1afcee67e7e9
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: be672779780468e988189b8037370450413eeac8
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 1df4aa1f15e742c830870c4e55555e3e6e797b22
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89096253"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90717150"
 ---
 # <a name="accessing-the-friendly-name-and-class-name-of-a-device-setup-class"></a>访问设备安装程序类的友好名称和类名称
 
@@ -18,9 +18,9 @@ ms.locfileid: "89096253"
 
 Windows Server 2003、Windows XP 和 Windows 2000 还支持以下设备安装程序类属性。 但是，这些早期版本的 Windows 不支持统一设备属性模型的属性键。 相反，这些版本的 Windows 使用以下机制来检索相应的属性信息：
 
--   调用 [**SetupDiGetClassDescriptionEx**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetclassdescriptionexa) 可检索设备安装程序类的友好名称。
+-   调用 [**SetupDiGetClassDescriptionEx**](/windows/win32/api/setupapi/nf-setupapi-setupdigetclassdescriptionexa) 可检索设备安装程序类的友好名称。
 
--   调用 [**SetupDiClassNameFromGuid**](/windows/desktop/api/setupapi/nf-setupapi-setupdiclassnamefromguida) 可检索设备安装程序类的类名。
+-   调用 [**SetupDiClassNameFromGuid**](/windows/win32/api/setupapi/nf-setupapi-setupdiclassnamefromguida) 可检索设备安装程序类的类名。
 
 为了保持与这些早期版本的 Windows 的兼容性，Windows Vista 及更高版本还支持这些机制来访问设备安装程序类的友好名称和类名。 但是，在 Windows Vista 和更高版本中，你应该使用属性键来访问这些属性。
 

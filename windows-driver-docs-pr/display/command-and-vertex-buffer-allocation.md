@@ -13,12 +13,12 @@ keywords:
 - DDSCAPS2_COMMANDBUFFER
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f0489f631a90d0124d7882edc1ed3fb629ed1add
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 088c41de521d58de856a824838861aef91769339
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89067460"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90716960"
 ---
 # <a name="command-and-vertex-buffer-allocation"></a>命令和顶点缓冲区分配
 
@@ -44,11 +44,11 @@ Direct3D 用于批处理命令的命令缓冲区。 它们可以是 multibuffere
 
 ### <a name="span-iddriver-allocated_vertex_and_command_buffersspanspan-iddriver-allocated_vertex_and_command_buffersspanspan-iddriver-allocated_vertex_and_command_buffersspandriver-allocated-vertex-and-command-buffers"></a><span id="Driver-Allocated_Vertex_and_Command_Buffers"></span><span id="driver-allocated_vertex_and_command_buffers"></span><span id="DRIVER-ALLOCATED_VERTEX_AND_COMMAND_BUFFERS"></span>驱动程序分配的顶点和命令缓冲区
 
-Direct3D 驱动程序可通过提供回调函数来选择执行顶点和命令缓冲区分配。 为了提供这些回调函数，Direct3D 驱动程序会填写[**dd \_ D3DBUFCALLBACKS**](/windows/desktop/api/ddrawint/ns-ddrawint-_dd_d3dbufcallbacks)结构，并将[**Dd \_ HALINFO**](/windows/desktop/api/ddrawint/ns-ddrawint-_dd_halinfo)结构的**lpD3DBufCallbacks**成员指向该结构。 DD \_ HALINFO 由 [**DrvGetDirectDrawInfo**](/windows/desktop/api/winddi/nf-winddi-drvgetdirectdrawinfo) 返回，以响应驱动程序的 DirectDraw 组件的初始化。 DD D3DBUFCALLBACKS 结构中报告的回调 \_ 为：
+Direct3D 驱动程序可通过提供回调函数来选择执行顶点和命令缓冲区分配。 为了提供这些回调函数，Direct3D 驱动程序会填写[**dd \_ D3DBUFCALLBACKS**](/windows/win32/api/ddrawint/ns-ddrawint-_dd_d3dbufcallbacks)结构，并将[**Dd \_ HALINFO**](/windows/win32/api/ddrawint/ns-ddrawint-_dd_halinfo)结构的**lpD3DBufCallbacks**成员指向该结构。 DD \_ HALINFO 由 [**DrvGetDirectDrawInfo**](/windows/win32/api/winddi/nf-winddi-drvgetdirectdrawinfo) 返回，以响应驱动程序的 DirectDraw 组件的初始化。 DD D3DBUFCALLBACKS 结构中报告的回调 \_ 为：
 
--   [*CanCreateD3DBuffer*](/windows/desktop/api/ddrawint/nc-ddrawint-pdd_cancreatesurface)
+-   [*CanCreateD3DBuffer*](/windows/win32/api/ddrawint/nc-ddrawint-pdd_cancreatesurface)
 
--   [*CreateD3DBuffer*](/windows/desktop/api/ddrawint/nc-ddrawint-pdd_createsurface)
+-   [*CreateD3DBuffer*](/windows/win32/api/ddrawint/nc-ddrawint-pdd_createsurface)
 
 -   [*DestroyD3DBuffer*](/previous-versions/windows/hardware/drivers/ff552754(v=vs.85))
 
@@ -58,7 +58,7 @@ Direct3D 驱动程序可通过提供回调函数来选择执行顶点和命令�
 
 这些函数的调用方式与 *DdXxxSurface* 回调 (例如 [*DdCanCreateSurface*](/previous-versions/windows/hardware/drivers/ff549213(v=vs.85))) ，并且仅在设置了 DDSCAPS EXECUTEBUFFER 标志时进行调用 \_ 。 缓冲区创建标志为 DDSCAPS \_ WRITEONLY、DDSCAPS2 \_ VERTEXBUFFER 和 DDSCAPS2 \_ COMMANDBUFFER。
 
-驱动程序通过检查为以下标志传递到**CanCreateExecuteBuffer**和**CreateExecuteBuffer**回调的[**DD \_ SURFACE \_ 本地**](/windows/desktop/api/ddrawint/ns-ddrawint-_dd_surface_local)结构的**ddsCaps**成员来确定所请求的缓冲区类型：
+驱动程序通过检查为以下标志传递到**CanCreateExecuteBuffer**和**CreateExecuteBuffer**回调的[**DD \_ SURFACE \_ 本地**](/windows/win32/api/ddrawint/ns-ddrawint-_dd_surface_local)结构的**ddsCaps**成员来确定所请求的缓冲区类型：
 
 -   DDSCAPS \_ VERTEXBUFFER 指示驱动程序应分配显式顶点缓冲区。
 

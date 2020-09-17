@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8e5160001b34f449f170cdeb051324c038b137fb
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: c8d99fb0f69c8b6fba6cb6a8e60cdec68a5d64df
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89065702"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90717446"
 ---
 # <a name="fsctl_invalidate_volumes-control-code"></a>FSCTL \_ 使 \_ 卷控制代码无效
 
@@ -31,10 +31,10 @@ ms.locfileid: "89065702"
 **参数**
 
 <a href="" id="fileobject"></a>*FileObject*  
-设备的句柄。 若要获取设备句柄，请调用 [**CreateFile**](/windows/desktop/api/fileapi/nf-fileapi-createfilea) 函数。
+设备的句柄。 若要获取设备句柄，请调用 [**CreateFile**](/windows/win32/api/fileapi/nf-fileapi-createfilea) 函数。
 
 <a href="" id="filehandle"></a>*FileHandle*  
-设备的句柄。 若要获取设备句柄，请调用 [**CreateFile**](/windows/desktop/api/fileapi/nf-fileapi-createfilea) 函数。
+设备的句柄。 若要获取设备句柄，请调用 [**CreateFile**](/windows/win32/api/fileapi/nf-fileapi-createfilea) 函数。
 
 <a href="" id="fscontrolcode"></a>*FsControlCode*  
 操作的控制代码。 使用 **FSCTL \_ 使 \_ 卷失效** ，以便执行此操作。
@@ -79,7 +79,7 @@ FAT 和 NTFS 文件系统通过响应 IRP \_ MJ \_ PNP/IRP \_ MN \_ 意外 \_ �
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**FltFsControlFile**](/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltfscontrolfile)
