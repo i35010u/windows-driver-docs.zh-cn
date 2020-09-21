@@ -4,15 +4,17 @@ description: Power Framework 延迟模糊化选项随机化线程计划，以帮
 ms.assetid: A33DEA5B-4758-456A-B4CF-F036CB511A1F
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1bd2dde0b58b852313f616bdbbdc0a13bf1adc9e
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: ab896c6317b530c14a42bcb27e8ceadef186f19c
+ms.sourcegitcommit: c8e2e10f99c015ea98a6cb8f2028638298af1e4f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89383693"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90843454"
 ---
 # <a name="power-framework-delay-fuzzing"></a>电源框架延迟模糊处理
 
+>[!Note]
+> **从 Windows 10 预览体验版本19042及更高版本开始，此检查已弃用**
 
 Power Framework 延迟模糊化选项随机化线程计划，以帮助检测使用 [电源管理框架 (PoFx) ](../kernel/overview-of-the-power-management-framework.md)的驱动程序中的并发 bug。 对于不直接利用电源管理框架 (PoFx) 的驱动程序，不建议使用此选项。
 

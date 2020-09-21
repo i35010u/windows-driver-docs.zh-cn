@@ -4,17 +4,17 @@ description: 系统低资源模拟选项注入内核模式驱动程序中的资�
 ms.assetid: A8351715-8407-4FEF-9050-2F1F2E7FC2FD
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6b7d4422e725abac188fc4b4d70531a8937c4d84
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 2d4cb0335ee4a9656e7a4b72604a40c5b92422cd
+ms.sourcegitcommit: c8e2e10f99c015ea98a6cb8f2028638298af1e4f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89384485"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90843478"
 ---
 # <a name="systematic-low-resources-simulation"></a>系统性资源不足模拟
 
-
-系统低资源模拟选项注入内核模式驱动程序中的资源故障。 此选项穿过驱动程序错误处理路径。 过去，测试这些路径是非常困难的。 系统低资源模拟选项以可预测的方式注入资源故障，这会使其发现的问题成为可重现问题。 由于错误路径容易重现，因此还可以轻松验证这些问题的修复。
+>[!Note]
+> **从 Windows 10 预览体验版本19042及更高版本开始，此检查已弃用** 系统低资源模拟选项注入内核模式驱动程序中的资源故障。 此选项穿过驱动程序错误处理路径。 过去，测试这些路径是非常困难的。 系统低资源模拟选项以可预测的方式注入资源故障，这会使其发现的问题成为可重现问题。 由于错误路径容易重现，因此还可以轻松验证这些问题的修复。
 
 为了帮助您确定错误的根本原因，提供了一个调试器扩展，它可以准确地告诉您哪些失败已注入并按何种顺序排列。
 
@@ -116,7 +116,7 @@ ms.locfileid: "89384485"
     2.  选择 " **为代码开发人员 (创建自定义设置") ** ，然后单击 " **下一步**"。
     3.  选择 " **从完整列表中选择单个设置**"。
     4.  选择 (检查) **系统低资源模拟**。
-    5.  重新启动计算机。
+    5.  重启计算机。
 
 ## <a name="span-iddebugging_bug_checks_caused_by_systematic_low_resources_simulationspanspan-iddebugging_bug_checks_caused_by_systematic_low_resources_simulationspanspan-iddebugging_bug_checks_caused_by_systematic_low_resources_simulationspandebugging-bug-checks-caused-by-systematic-low-resources-simulation"></a><span id="Debugging_bug_checks_caused_by_Systematic_low_resources_simulation"></span><span id="debugging_bug_checks_caused_by_systematic_low_resources_simulation"></span><span id="DEBUGGING_BUG_CHECKS_CAUSED_BY_SYSTEMATIC_LOW_RESOURCES_SIMULATION"></span>调试由系统低资源模拟引起的 bug 检查
 

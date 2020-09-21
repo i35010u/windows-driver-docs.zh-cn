@@ -4,12 +4,12 @@ description: DDI 相容性检查选项确定驱动程序是否正确与 Windows 
 ms.assetid: 1E536DE0-071B-4529-B228-DB5DAE71099C
 ms.date: 04/03/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 706b5ccee25cd4e9d9b614c440a5be4c6f730a0c
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 6142d4fe454eb4cd56ee2ed90f2fefd1f87a987d
+ms.sourcegitcommit: c8e2e10f99c015ea98a6cb8f2028638298af1e4f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89383905"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90843476"
 ---
 # <a name="ddi-compliance-checking"></a>DDI 合规性检查
 
@@ -121,7 +121,7 @@ DDI 相容性检查选项应用 (DDI) 使用规则的相同设备驱动程序接
     2.  选择 " **为代码开发人员 (创建自定义设置") ** ，然后单击 " **下一步**"。
     3.  选择 " **从完整列表中选择单个设置**"。
     4.  选择 (检查) **DDI 相容性检查**"。
-    5.  重新启动计算机。
+    5.  重启计算机。
 
 ## <span id="DDI_compliance_checking_additional"></span><span id="ddi_compliance_checking_additional"></span><span id="DDI_COMPLIANCE_CHECKING_ADDITIONAL"></span>
 
@@ -139,6 +139,10 @@ DDI 相容性检查选项应用 (DDI) 使用规则的相同设备驱动程序接
 - [**SpinlockRelease**](./wdm-spinlockrelease.md)
 
 ## <a name="activating-the-ddi-compliance-checking-additional-option"></a> (其他) 选项激活 DDI 相容性检查
+
+>[!Note]
+> **从 Windows 10 预览体验版本19042及更高版本开始，此检查已弃用**
+
 
 您可以通过使用驱动程序验证器管理器或 Verifier.exe 命令行，为一个或多个驱动程序激活 **额外) 规则 (DDI 相容性检查 ** 。 有关详细信息，请参阅 [选择驱动程序验证程序选项](selecting-driver-verifier-options.md)。 您必须重新启动计算机，以激活或停用 **DDI 相容性检查 (其他) ** 选项。
 
@@ -158,7 +162,7 @@ DDI 相容性检查选项应用 (DDI) 使用规则的相同设备驱动程序接
     2.  选择 " **为代码开发人员 (创建自定义设置") ** ，然后单击 " **下一步**"。
     3.  选择 " **从完整列表中选择单个设置**"。
     4.  选择 (检查) **DDI 相容性检查 (其他) **。
-    5.  重新启动计算机。
+    5.  重启计算机。
 
 ## <a name="activating-the-ddi-compliance-checking-additional-irql-option"></a>激活 DDI 相容性检查 (额外的 IRQL) 选项
 

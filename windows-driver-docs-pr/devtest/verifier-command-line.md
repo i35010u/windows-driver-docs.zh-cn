@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d47ce504dad6cfcaab7dd3de8fd17435bd886d41
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: dbe8731f69bb542d3d87777c9d1735f4b0a48fec
+ms.sourcegitcommit: c8e2e10f99c015ea98a6cb8f2028638298af1e4f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90106454"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90843474"
 ---
 # <a name="driver-verifier-command-syntax"></a>驱动程序验证程序命令语法
 
@@ -377,7 +377,7 @@ Windows Server 2003 中引入的 (。 在 windows 7 和更高版本的 Windows �
 <td align="left"><p>32768</p></td>
 <td align="left"><p>0x8000 (位 15) </p></td>
 <td align="left"></td>
-<td align="left"><p>从 Windows 8 开始 (的<a href="concurrency-stress-test.md" data-raw-source="[Power Framework Delay Fuzzing](concurrency-stress-test.md)">Power Framework 延迟模糊</a>处理) </p></td>
+<td align="left"><p>从 Windows 8) 开始使用的<a href="concurrency-stress-test.md" data-raw-source="[Power Framework Delay Fuzzing](concurrency-stress-test.md)">Power Framework 延迟模糊</a>处理 (<b> (Windows 10 有问必答 preview 版本19042及更高版本中已弃用) </b></p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>65536</p></td>
@@ -395,13 +395,13 @@ Windows Server 2003 中引入的 (。 在 windows 7 和更高版本的 Windows �
 <td align="left"><p>262144</p></td>
 <td align="left"><p>0x40000 (位 18) </p></td>
 <td align="left"></td>
-<td align="left"><p>从 Windows 8.1 开始 (<a href="systematic-low-resource-simulation.md" data-raw-source="[Systematic low resources simulation](systematic-low-resource-simulation.md)">系统低资源模拟</a>) </p></td>
+<td align="left"><p><b>Windows 10 Insider Preview 版本19042及更) 高版本中不推荐</b>使用 Windows 8.1) 的<a href="systematic-low-resource-simulation.md" data-raw-source="[Systematic low resources simulation](systematic-low-resource-simulation.md)">系统低资源模拟</a> ( (</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>524288</p></td>
 <td align="left"><p>0x80000 (位 19) </p></td>
 <td align="left"></td>
-<td align="left"><p><a href="ddi-compliance-checking.md#ddi_compliance_checking_additional" data-raw-source="[DDI compliance checking (additional)](ddi-compliance-checking.md#ddi_compliance_checking_additional)">DDI 相容性检查) 从 Windows 8.1 开始 (其他 </a> () </p></td>
+<td align="left"><p><a href="ddi-compliance-checking.md#ddi_compliance_checking_additional" data-raw-source="[DDI compliance checking (additional)](ddi-compliance-checking.md#ddi_compliance_checking_additional)">DDI 相容性检查 () </a> <b>在 Windows 10 有问必答 preview 版本19042及更高版本中不推荐使用的</b>Windows 8.1)  (的其他 () </p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>2097152</p></td>
@@ -413,7 +413,7 @@ Windows Server 2003 中引入的 (。 在 windows 7 和更高版本的 Windows �
 <td align="left"><p>8388608</p></td>
 <td align="left"><p>0x800000 (位 23) </p></td>
 <td align="left"></td>
-<td align="left"><p>从 Windows 8.1 开始 (<a href="kernel-synchronization-delay-fuzzing.md" data-raw-source="[Kernel synchronization delay fuzzing](kernel-synchronization-delay-fuzzing.md)">内核同步延迟模糊</a>处理) </p></td>
+<td align="left"><p>从 Windows 8.1) 开始 (<a href="kernel-synchronization-delay-fuzzing.md" data-raw-source="[Kernel synchronization delay fuzzing](kernel-synchronization-delay-fuzzing.md)">内核同步延迟模糊</a>处理<b>，Windows 10 有问必答 preview 版本19042及更高版本中已弃用 () </b></p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>16777216</p></td>
