@@ -5,12 +5,12 @@ ms.assetid: CD5F0913-73E4-4A04-BB56-76A59D886FF1
 ms.date: 08/21/2018
 keywords: -从 Windows Vista 开始 OID_WWAN_NETWORK_BLACKLIST 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: b1243b8a903a633eb015a1502495ad31f37b089d
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 1151d2af662d19154b79a559ec486c1ef548bcf6
+ms.sourcegitcommit: 366a15d68eb58d01a8ca6de7b982f62ac8b7deaf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89212113"
+ms.lasthandoff: 09/19/2020
+ms.locfileid: "90812008"
 ---
 # <a name="oid_wwan_network_blacklist"></a>OID_WWAN_NETWORK_BLACKLIST
 
@@ -24,7 +24,7 @@ OID_WWAN_NETWORK_BLACKLIST 获取或设置有关移动宽带 (MBB) 设备的网�
 
 完成每个查询或设置请求后，微型端口驱动程序应返回 [**NDIS_WWAN_NETWORK_BLACKLIST**](/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_network_blacklist) 结构，其中包含有关当前网络黑名单信息的信息。
 
-有关使用此 OID 的详细信息，请参阅 [MBIM_CID_MS_NETWORK_BLACKLIST](./mb-network-blacklist-operations.md#mbimcidmsnetworkblacklist)。
+有关使用此 OID 的详细信息，请参阅 [MBIM_CID_MS_NETWORK_BLACKLIST](./mb-network-blacklist-operations.md#mbim_cid_ms_network_blacklist)。
 
 ## <a name="requirements"></a>要求
 

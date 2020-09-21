@@ -4,12 +4,12 @@ description: Windows 内核宏
 ms.assetid: 91366400-3307-4F13-A839-50BA85B7F73E
 ms.localizationpriority: High
 ms.date: 10/17/2018
-ms.openlocfilehash: 571ac7ba31b7756ac4dfa82b58807c8cde97329a
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 1d8f2f6ce9bd4d0cbaa045fb47170998ead9503a
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89188231"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90717478"
 ---
 # <a name="windows-kernel-macros"></a>Windows 内核宏
 
@@ -209,7 +209,7 @@ IRQL：任何级别
 
 从 Windows 8.1 开始，**MM_BAD_POINTER** 宏在 Wdm.h 标头文件中定义。 但是，使用此宏定义的驱动程序代码可以在 Windows Vista 及更低版本的 Windows 中运行。
 
-从 Windows Vista 开始，[**MmBadPointer**](https://docs.microsoft.com/windows-hardware/drivers/kernel/mm64bitphysicaladdress) 全局变量可用作指向某个指针值（保证为无效地址）的指针。 但是，从 Windows 8.1 开始，**MmBadPointer** 已弃用；应将驱动程序更新为改用 **MM_BAD_POINTER** 宏。
+从 Windows Vista 开始，[**MmBadPointer**](./mm64bitphysicaladdress.md) 全局变量可用作指向某个指针值（保证为无效地址）的指针。 但是，从 Windows 8.1 开始，**MmBadPointer** 已弃用；应将驱动程序更新为改用 **MM_BAD_POINTER** 宏。
 
 从 Windows 8.1 开始可用。 与 Windows Vista 及更低版本的 Windows 兼容。
 
@@ -224,7 +224,7 @@ _Mdl [in]_
 
 **PMDL**
 
-指向 [**MDL**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_mdl) 结构的指针，该结构描述物理内存中虚拟内存缓冲区的布局。 有关详细信息，请参阅[使用 MDL](using-mdls.md)。
+指向 [**MDL**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_mdl) 结构的指针，该结构描述物理内存中虚拟内存缓冲区的布局。 有关详细信息，请参阅[使用 MDL](using-mdls.md)。
 
 **返回值**
 
@@ -670,7 +670,7 @@ _DestinationString [out]_
 
 **PANSI_STRING**
 
-指向要初始化的 [**ANSI_STRING**](/windows/desktop/api/ntdef/ns-ntdef-_string) 结构的指针。
+指向要初始化的 [**ANSI_STRING**](/windows/win32/api/ntdef/ns-ntdef-_string) 结构的指针。
 
 _Buffer [in]_
 
@@ -756,7 +756,7 @@ _L1 [in]_
 
 **PLUID**
 
-指定要检查的 [**LUID**](/windows/desktop/api/ntdef/ns-ntdef-_luid)。
+指定要检查的 [**LUID**](/windows/win32/api/ntdef/ns-ntdef-_luid)。
 
 **返回值**
 

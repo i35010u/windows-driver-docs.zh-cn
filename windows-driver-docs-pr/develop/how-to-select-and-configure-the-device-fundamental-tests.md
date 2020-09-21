@@ -4,12 +4,12 @@ title: 如何选择和配置设备基础功能测试
 description: 适用于 Windows 8 的 WDK 提供了一个驱动程序测试框架，其中包括一组设备基础功能测试。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b1298e1e951beef74e4087a11eb4cced0acd66d6
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 69ec75ca9b12aea83d7cd714f9d1d3669c9645ee
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89217072"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90105918"
 ---
 # <a name="how-to-select-and-configure-the-device-fundamentals-tests"></a>如何选择和配置设备基础功能测试
 
@@ -66,7 +66,7 @@ WDK 提供有两种配置的设备基础功能测试：基本和认证。 在两
 <tbody>
 <tr class="odd">
 <td align="left"><p><span id="DQ"></span><span id="dq"></span><em>DQ</em></p></td>
-<td align="left"><p>确定应当用于测试的设备。 <em>DQ</em> 参数将通过 <a href="https://docs.microsoft.com/windows-hardware/drivers/wdtf/index" data-raw-source="[&lt;strong&gt;WDTF&lt;/strong&gt;](../wdtf/index.md)"><strong>WDTF</strong></a><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/index" data-raw-source="[SDEL](/windows-hardware/drivers/ddi/index)">SDEL</a> 查询来确定目标设备。 此查询非常灵活，可用于表示任何数量的设备，从单个设备到系统中的所有设备。</p>
+<td align="left"><p>确定应当用于测试的设备。 <em>DQ</em> 参数将通过 <a href="/windows-hardware/drivers/wdtf/index" data-raw-source="[&lt;strong&gt;WDTF&lt;/strong&gt;](../wdtf/index.md)"><strong>WDTF</strong></a><a href="/windows-hardware/drivers/ddi/index" data-raw-source="[SDEL](/windows-hardware/drivers/ddi/index)">SDEL</a> 查询来确定目标设备。 此查询非常灵活，可用于表示任何数量的设备，从单个设备到系统中的所有设备。</p>
 <p>常见示例：</p>
 <p></p>
 <dl>
@@ -128,7 +128,7 @@ WDTF_SIMPLE_IO            :INFO  :  - Open(KMDFTest Device ROOT\SAMPLE\0000 ) Tr
 </tr>
 <tr class="odd">
 <td align="left"><p><span id="DoConcurrentIO"></span><span id="doconcurrentio"></span><span id="DOCONCURRENTIO"></span><em>DoConcurrentIO</em></p></td>
-<td align="left"><p>True 或 False。 执行 PnP 操作时，使用 <a href="https://docs.microsoft.com/windows-hardware/drivers/wdtf/index" data-raw-source="[WDTF](../wdtf/index.md)">WDTF</a> 并发 I/O 接口向目标设备堆栈发送 I/O 请求。</p></td>
+<td align="left"><p>True 或 False。 执行 PnP 操作时，使用 <a href="/windows-hardware/drivers/wdtf/index" data-raw-source="[WDTF](../wdtf/index.md)">WDTF</a> 并发 I/O 接口向目标设备堆栈发送 I/O 请求。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><span id="FillZeroPageWithNull"></span><span id="fillzeropagewithnull"></span><span id="FILLZEROPAGEWITHNULL"></span><em>FillZeroPageWithNull</em></p></td>
@@ -283,13 +283,13 @@ WDTF_SIMPLE_IO            :INFO  :  - Open(KMDFTest Device ROOT\SAMPLE\0000 ) Tr
 <tbody>
 <tr class="odd">
 <td align="left"><p><span id="Disable_Driver_Verifier"></span><span id="disable_driver_verifier"></span><span id="DISABLE_DRIVER_VERIFIER"></span>禁用驱动程序验证程序</p></td>
-<td align="left"><p>禁用测试计算机上的<a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier" data-raw-source="[Driver Verifier](../devtest/driver-verifier.md)">驱动程序验证程序</a>。</p>
+<td align="left"><p>禁用测试计算机上的<a href="/windows-hardware/drivers/devtest/driver-verifier" data-raw-source="[Driver Verifier](../devtest/driver-verifier.md)">驱动程序验证程序</a>。</p>
 <p><strong>参数：</strong>无</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><span id="Enable_Driver_Verifier"></span><span id="enable_driver_verifier"></span><span id="ENABLE_DRIVER_VERIFIER"></span>启用驱动程序验证程序</p></td>
-<td align="left"><p>可以使用此测试在测试计算机上为设备的所有驱动程序启用<a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier" data-raw-source="[Driver Verifier](../devtest/driver-verifier.md)">驱动程序验证程序</a>。</p>
-<p><strong>参数：</strong>-请参阅<a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier-options" data-raw-source="[Driver Verifier Options](../devtest/driver-verifier-options.md)">驱动程序验证程序选项</a>。</p></td>
+<td align="left"><p>可以使用此测试在测试计算机上为设备的所有驱动程序启用<a href="/windows-hardware/drivers/devtest/driver-verifier" data-raw-source="[Driver Verifier](../devtest/driver-verifier.md)">驱动程序验证程序</a>。</p>
+<p><strong>参数：</strong>-请参阅<a href="/windows-hardware/drivers/devtest/driver-verifier-options" data-raw-source="[Driver Verifier Options](../devtest/driver-verifier-options.md)">驱动程序验证程序选项</a>。</p></td>
 </tr>
 </tbody>
 </table>
@@ -303,5 +303,3 @@ WDTF_SIMPLE_IO            :INFO  :  - Open(KMDFTest Device ROOT\SAMPLE\0000 ) Tr
 * [设备基础功能测试](../devtest/device-fundamentals-tests.md)
 * [Provided WDTF Simple I/O plug-ins](../wdtf/provided-wdtf-simpleio-plug-ins.md)（提供的 WDTF 简单 I/O 插件）
 * [How to customize I/O for your device using the WDTF Simple I/O Action Plug-in](../wdtf/to-customize-i-o-for-your-device-using-the-wdtf-simple-i-o-action-plug-in.md)（如何使用 WDTF 简单 I/O 操作插件为设备自定义 I/O）
- 
-

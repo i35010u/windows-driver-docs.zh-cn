@@ -4,12 +4,12 @@ description: 本文为驱动程序开发人员提供了驱动程序安全核对�
 ms.assetid: 25375E02-FCA1-4E94-8D9A-AA396C909278
 ms.date: 03/13/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: eafb2200f982cf7e663aaa103f1eedab71d4a79d
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: a8ca3d1f045c2b42e53e6bb62ad391607cce90f9
+ms.sourcegitcommit: 4f0760e7df1ed3c5542c9738092e2c8165f5d6d0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90105734"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90767869"
 ---
 # <a name="driver-security-checklist"></a>驱动程序安全清单
 
@@ -193,7 +193,7 @@ Windows 驱动程序的主要职责之一是在用户模式应用程序和系统
 
 ### <a name="device-objects"></a>设备对象
 
-- 保护设备对象。 有关详细信息，请参阅 [保护设备对象](https://docs.microsoft.com/windows-hardware/drivers/kernel/securing-device-objects)。
+- 保护设备对象。 有关详细信息，请参阅 [保护设备对象](../kernel/controlling-device-access.md)。
 
 - 验证设备对象。 有关详细信息，请参阅 [无法验证设备对象](../kernel/failure-to-validate-device-objects.md)。
 
@@ -239,7 +239,7 @@ Windows 驱动程序的主要职责之一是在用户模式应用程序和系统
 
 #### <a name="handle-irp-cleanup-and-close-operations-properly"></a>正确处理 IRP 清理并关闭操作
 
-请确保了解 [**IRP \_ mj \_ 清除**](../kernel/irp-mj-cleanup.md) 和 [**irp \_ mj \_ 关闭**](../kernel/irp-mj-close.md) 请求之间的差异。 清理请求在应用程序关闭文件对象上的所有句柄之后，但有时在所有 i/o 请求完成之前到达。 完成或取消对文件对象的所有 i/o 请求后，关闭请求即可到达。 有关详细信息，请参阅下列文章：
+请确保了解 [**IRP \_ mj \_ 清除**](../kernel/irp-mj-cleanup.md) 和 [**irp \_ mj \_ 关闭**](../kernel/irp-mj-close.md) 请求之间的差异。 清理请求在应用程序关闭文件对象上的所有句柄之后，但有时在所有 i/o 请求完成之前到达。 完成或取消对文件对象的所有 i/o 请求后，关闭请求即可到达。 有关详细信息，请参阅以下文章：
 
 [DispatchCreate、DispatchClose 和 DispatchCreateClose 例程](../kernel/dispatchcreate--dispatchclose--and-dispatchcreateclose-routines.md)
 
@@ -285,7 +285,7 @@ Windows 驱动程序的主要职责之一是在用户模式应用程序和系统
 
 为了使应用程序或其他 WDF 驱动程序能够访问 PnP 设备 PDO，你应该使用设备接口。 有关详细信息，请参阅 [使用设备接口](../wdf/using-device-interfaces.md)。 设备接口用作设备堆栈 PDO 的符号链接。
 
-控制 PDO 访问权限的举世无双方法之一是在 INF 中指定一个 SDDL 字符串。 如果 SDDL 字符串不在 INF 文件中，则 Windows 将应用默认安全描述符。 有关详细信息，请参阅[为设备](../kernel/sddl-for-device-objects.md)对象[保护设备对象](https://docs.microsoft.com/windows-hardware/drivers/kernel/securing-device-objects)和 SDDL。
+控制 PDO 访问权限的举世无双方法之一是在 INF 中指定一个 SDDL 字符串。 如果 SDDL 字符串不在 INF 文件中，则 Windows 将应用默认安全描述符。 有关详细信息，请参阅[为设备](../kernel/sddl-for-device-objects.md)对象[保护设备对象](../kernel/controlling-device-access.md)和 SDDL。
 
 有关控制访问的详细信息，请参阅以下文章：
 
@@ -297,7 +297,7 @@ Windows 驱动程序的主要职责之一是在用户模式应用程序和系统
 
 如果使用的是 WDM 驱动程序，并且使用的是命名设备对象，则可以使用 [IoCreateDeviceSecure](/windows-hardware/drivers/ddi/wdmsec/nf-wdmsec-wdmlibiocreatedevicesecure) 并指定 SDDL 来保护它。 实现 [IoCreateDeviceSecure](/windows-hardware/drivers/ddi/wdmsec/nf-wdmsec-wdmlibiocreatedevicesecure) 时，请始终指定 DeviceClassGuid 的自定义类 GUID。 不应在此指定现有的类 GUID。 这样做可能会中断属于该类的其他设备的安全设置或兼容性。 有关详细信息，请参阅 [WdmlibIoCreateDeviceSecure](/windows-hardware/drivers/ddi/wdmsec/nf-wdmsec-wdmlibiocreatedevicesecure)。
 
-有关详细信息，请参阅下列文章：
+有关详细信息，请参阅以下文章：
 
 [控制设备访问权限](../kernel/controlling-device-access.md)
 
@@ -331,7 +331,7 @@ AC (Application Container)
 
 实现精细的 IOCTL 安全控制不会取代使用上述技术来管理驱动程序访问的需要。
 
-有关详细信息，请参阅下列文章：
+有关详细信息，请参阅以下文章：
 
 [定义 I/O 控制代码](../kernel/defining-i-o-control-codes.md)
 
@@ -402,7 +402,7 @@ AC (Application Container)
 - 限制对设备的 WMI 类的访问
 - 正确使用 Setupapi.log 函数
 
-有关详细信息，请参阅下列文章：
+有关详细信息，请参阅以下文章：
 
 [创建安全的设备安装](../install/creating-secure-device-installations.md)
 
@@ -450,7 +450,7 @@ AC (Application Container)
 
 选择链接的警告代码以查看其他信息。
 
-确定是否需要更改你的代码，或者是否需要添加批注以允许代码分析引擎正确遵循你的代码的意图。 有关代码批注的详细信息，请参阅 [使用 SAL 注释减少 C/c + + 代码缺陷](/visualstudio/code-quality/using-sal-annotations-to-reduce-c-cpp-code-defects?view=vs-2015) 和 [适用于 Windows 驱动程序的 SAL 2.0 批注](../devtest/sal-2-annotations-for-windows-drivers.md)。
+确定是否需要更改你的代码，或者是否需要添加批注以允许代码分析引擎正确遵循你的代码的意图。 有关代码批注的详细信息，请参阅 [使用 SAL 注释减少 C/c + + 代码缺陷](/visualstudio/code-quality/using-sal-annotations-to-reduce-c-cpp-code-defects) 和 [适用于 Windows 驱动程序的 SAL 2.0 批注](../devtest/sal-2-annotations-for-windows-drivers.md)。
 
 有关 SAL 的一般信息，请参阅 OSR 中的这篇文章。
 [https://www.osr.com/blog/2015/02/23/sal-annotations-dont-hate-im-beautiful/](https://www.osr.com/blog/2015/02/23/sal-annotations-dont-hate-im-beautiful/)
@@ -509,7 +509,7 @@ BinSkim 是一个开源工具，它会生成使用静态分析结果交换格式
 
 4. 选择已下载的 zip 文件并将其解压缩，例如 `C:\binskim-master` 。
 
-5. 确认已安装 Visual Studio。 有关下载和安装 Visual Studio 的信息，请参阅 [安装 Visual studio](/visualstudio/install/install-visual-studio?view=vs-2019)。
+5. 确认已安装 Visual Studio。 有关下载和安装 Visual Studio 的信息，请参阅 [安装 Visual studio](/visualstudio/install/install-visual-studio)。
 
 6. 打开 "Visual Studio 开发人员命令提示" 窗口，并移到你将文件解压缩到的目录。  
 
@@ -630,7 +630,7 @@ Visual Studio 中用于驱动程序项目的默认编译选项可以禁用如下
 
 [C4986-"声明"：异常规范与前面的声明不匹配](/cpp/error-messages/compiler-warnings/compiler-warning-c4986)
 
-有关编译器警告的详细信息，请参阅编译器 [警告（按编译器版本](/cpp/error-messages/compiler-warnings/compiler-warnings-by-compiler-version?view=vs-2019)）。
+有关编译器警告的详细信息，请参阅编译器 [警告（按编译器版本](/cpp/error-messages/compiler-warnings/compiler-warnings-by-compiler-version)）。
 
 ## <a name="use-additional-code-validation-tools"></a>使用其他代码验证工具
 

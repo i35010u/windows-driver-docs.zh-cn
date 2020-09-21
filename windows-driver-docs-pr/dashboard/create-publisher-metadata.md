@@ -1,16 +1,14 @@
 ---
 title: 创建发布者驱动程序元数据
 description: 介绍用于为合作伙伴中心提交创建发布者驱动程序包元数据的 API 调用。
-author: VanathiGanesh
-ms.author: vaganesh
 ms.topic: article
 ms.date: 11/06/2019
-ms.openlocfilehash: 8c87896d245c2eb4ba3502f438d1448e696d464e
-ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
+ms.openlocfilehash: f45dbf8557837ab781e3708b8680032d2c160c2a
+ms.sourcegitcommit: a5f76805387760730faed5674d87201ec85b7dd3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "77072220"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90112072"
 ---
 # <a name="create-publisher-driver-metadata"></a>创建发布者驱动程序元数据
 
@@ -24,16 +22,15 @@ ms.locfileid: "77072220"
 
 此方法具有以下语法。 请参阅以下部分，获取标头和请求正文的使用示例和描述。
 
-
 | 方法 | 请求 URI                                                                                                    |
 |:-------|:---------------------------------------------------------------------------------------------------------------|
-| POST   | https://manage.devcenter.microsoft.com/v2.0/my/hardware/products/{productID}/submissions/{submissionID}/createpublishermetadata |
+| POST   | `https://manage.devcenter.microsoft.com/v2.0/my/hardware/products/{productID}/submissions/{submissionID}/createpublishermetadata`|
 
 ### <a name="request-header"></a>请求头
 
 | Header | 类型 | 说明 |
 |:--|:--|:--|
-| Authorization | 字符串 | 必需。 Azure AD 访问令牌的格式为 **Bearer** \<token\>。 |
+| Authorization | 字符串 | 必需。 Azure AD 访问令牌的格式为 Bearer \<token\>。 |
 | accept | 字符串 | 可选。 指定内容的类型。 允许的值是“application/json” |
 
 ### <a name="request-parameters"></a>请求参数

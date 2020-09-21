@@ -7,12 +7,12 @@ keywords:
 - 命名设备对象 WDK 内核
 ms.date: 09/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7040fa777623196def2bfb0d76d21feb201adc9b
-ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
+ms.openlocfilehash: 3b555a0ecdad24f913c7ada118064554b3cab51e
+ms.sourcegitcommit: 6c42efc074ab939e7737d6c2b016d3f3a75954e1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89402858"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90741026"
 ---
 # <a name="named-device-objects"></a>命名的设备对象
 
@@ -32,14 +32,12 @@ ms.locfileid: "89402858"
 > [!IMPORTANT]
 > 如果使用命名设备对象，则可以使用 [IoCreateDeviceSecure](/windows-hardware/drivers/ddi/wdmsec/nf-wdmsec-wdmlibiocreatedevicesecure) 并指定 SDDL 来帮助保护该对象。 实现 [IoCreateDeviceSecure](/windows-hardware/drivers/ddi/wdmsec/nf-wdmsec-wdmlibiocreatedevicesecure) 时，请始终指定 DeviceClassGuid 的自定义类 GUID。 不应在此指定现有的类 GUID。 这样做可能会中断属于该类的其他设备的安全设置或兼容性。 有关详细信息，请参阅 [WdmlibIoCreateDeviceSecure](/windows-hardware/drivers/ddi/wdmsec/nf-wdmsec-wdmlibiocreatedevicesecure)。
 > 
-> 为了使应用程序或其他 WDF 驱动程序能够访问 PnP 设备，你应该使用设备接口。 有关详细信息，请参阅 [使用设备接口](../wdf/using-device-interfaces.md)。 设备接口用作设备堆栈 PDO 的符号链接。 一旦控制对 PDO 的访问权限，就可以在 INF 中指定一个 SDDL 字符串。 如果 SDDL 字符串不在 INF 文件中，则 Windows 将应用默认安全描述符。 有关详细信息，请参阅[为设备](./sddl-for-device-objects.md)对象[保护设备对象](https://docs.microsoft.com/windows-hardware/drivers/kernel/securing-device-objects)和 SDDL。
+> 为了使应用程序或其他 WDF 驱动程序能够访问 PnP 设备，你应该使用设备接口。 有关详细信息，请参阅 [使用设备接口](../wdf/using-device-interfaces.md)。 设备接口用作设备堆栈 PDO 的符号链接。 一旦控制对 PDO 的访问权限，就可以在 INF 中指定一个 SDDL 字符串。 如果 SDDL 字符串不在 INF 文件中，则 Windows 将应用默认安全描述符。 有关详细信息，请参阅[为设备](./sddl-for-device-objects.md)对象[保护设备对象](./controlling-device-access.md)和 SDDL。
 
 
-本部分包含以下小节：
+本节包含以下小节：
 
 [NT 设备名称](nt-device-names.md)
 
 [MS-DOS 设备名称](introduction-to-ms-dos-device-names.md)
-
- 
 

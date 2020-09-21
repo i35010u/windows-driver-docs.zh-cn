@@ -9,12 +9,12 @@ keywords:
 - 对象标识符 WDK 网络
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e5d5da1c3359a2b4832a249b38073e9a265f0e8a
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: aa2c71c02f34a728ac18f38e7ce6a39111d91fbd
+ms.sourcegitcommit: 366a15d68eb58d01a8ca6de7b982f62ac8b7deaf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89215082"
+ms.lasthandoff: 09/19/2020
+ms.locfileid: "90811887"
 ---
 # <a name="required-and-optional-oids-for-power-management"></a>电源管理的必需和可选 OID
 
@@ -22,7 +22,7 @@ ms.locfileid: "89215082"
 
 
 
-对于微型端口驱动程序，支持电源管理需要支持 (Oid) 的电源管理对象标识符。 有关微型端口驱动程序如何处理查询并将其设置为 Oid 的详细说明，请参阅 [获取和 SettingMiniport 驱动程序信息和 WMI 对 WMI 的支持](obtaining-and-setting-miniport-driver-information-and-ndis-support-for.md)。
+对于微型端口驱动程序，支持电源管理需要支持 (Oid) 的电源管理对象标识符。 有关微型端口驱动程序如何处理查询并将其设置为 Oid 的详细说明，请参阅 [获取和 SettingMiniport 驱动程序信息和 WMI 对 WMI 的支持](ndis-management-information-and-oids.md)。
 
 对于微型端口驱动程序有两个级别的电源管理支持：
 

@@ -12,12 +12,12 @@ keywords:
 - TAPI WDK 网络
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a007c0404b5479baca9f1563a4af4a1fdd2ee78f
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 3ef193d7ca509baa4508768507cae3288fc76a4c
+ms.sourcegitcommit: 366a15d68eb58d01a8ca6de7b982f62ac8b7deaf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89206763"
+ms.lasthandoff: 09/19/2020
+ms.locfileid: "90812022"
 ---
 # <a name="condis-wan-operations-that-support-telephonic-services"></a>支持电话服务的 CoNDIS WAN 操作
 
@@ -41,7 +41,7 @@ ms.locfileid: "89206763"
 
 [CoNDIS TAPI 关闭](condis-tapi-shutdown.md)
 
-[语音流的呼叫管理程序要求](call-manager-requirements-for-voice-streaming.md)
+[语音流的呼叫管理程序要求](responding-to-an-oid-co-tapi-line-caps-query.md)
 
 [用于通过面向连接的 NDIS 支持电话服务的非 WAN 特定扩展](non-wan-specific-extensions-to-support-telephonic-services-over-connec.md)
 

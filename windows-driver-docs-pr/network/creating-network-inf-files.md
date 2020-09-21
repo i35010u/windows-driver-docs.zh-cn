@@ -11,12 +11,12 @@ keywords:
 - 网络 INF 文件 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cced0935bef9d2a2c4d1324d32af6b663b2e9eeb
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: ea2e5e526b3475fcb42be2d067b6a3e9c1af4319
+ms.sourcegitcommit: 366a15d68eb58d01a8ca6de7b982f62ac8b7deaf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89210205"
+ms.lasthandoff: 09/19/2020
+ms.locfileid: "90811986"
 ---
 # <a name="creating-network-inf-files"></a>创建网络 INF 文件
 
@@ -32,11 +32,11 @@ INF 文件要求随网络组件类型的不同而不同。 有关每种类型的
 
 本节包括：
 
-## <a name="in-this-section"></a>本节内容
+## <a name="in-this-section"></a>在本节中
 
 
--   [网络 INF 文件中的节](sections-in-a-network-inf-file.md)
--   [网络组件的安装要求](installation-requirements-for-network-components.md)
+-   [网络 INF 文件中的节](version-section-in-a-network-inf-file.md)
+-   [网络组件的安装要求](installation-requirements-for-network-adapters.md)
 
  
 

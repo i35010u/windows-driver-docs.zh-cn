@@ -11,12 +11,12 @@ keywords:
 - 事件 WDK 网络
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 521b04e33753131c4055dbebb6cb585387c22c68
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 927de5057e51130625140fc6a651ee3e816c7126
+ms.sourcegitcommit: 366a15d68eb58d01a8ca6de7b982f62ac8b7deaf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89215178"
+ms.lasthandoff: 09/19/2020
+ms.locfileid: "90812002"
 ---
 # <a name="protocol-binding-states-and-operations"></a>协议绑定状态和操作
 
@@ -32,10 +32,10 @@ ms.locfileid: "89215178"
 <a href="" id="opening"></a>打开  
 在打开状态中，协议驱动程序为绑定分配资源并尝试打开适配器。
 
-<a href="" id="running"></a>耗尽  
+<a href="" id="running"></a>运行  
 在 "正在运行" 状态下，协议驱动程序为绑定执行发送和接收处理。
 
-<a href="" id="closing"></a>结束语  
+<a href="" id="closing"></a>关闭  
 在关闭状态下，协议驱动程序将关闭到适配器的绑定，然后释放绑定的资源。
 
 <a href="" id="pausing"></a>暂停  
@@ -68,7 +68,7 @@ ms.locfileid: "89215178"
 <th align="left">关闭</th>
 <th align="left">已暂停</th>
 <th align="left">重新启动</th>
-<th align="left">正在运行</th>
+<th align="left">运行</th>
 <th align="left">正在暂停</th>
 </tr>
 </thead>
@@ -159,7 +159,7 @@ ms.locfileid: "89215178"
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
-<td align="left"><p>正在运行</p></td>
+<td align="left"><p>运行</p></td>
 <td align="left"></td>
 <td align="left"></td>
 </tr>
@@ -180,7 +180,7 @@ ms.locfileid: "89215178"
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
-<td align="left"><p>正在运行</p></td>
+<td align="left"><p>运行</p></td>
 <td align="left"><p>正在暂停</p></td>
 </tr>
 <tr class="even">
@@ -190,7 +190,7 @@ ms.locfileid: "89215178"
 <td align="left"><p>关闭</p></td>
 <td align="left"><p>已暂停</p></td>
 <td align="left"><p>重新启动</p></td>
-<td align="left"><p>正在运行</p></td>
+<td align="left"><p>运行</p></td>
 <td align="left"><p>正在暂停</p></td>
 </tr>
 </tbody>
@@ -247,7 +247,7 @@ ms.locfileid: "89215178"
 ## <a name="related-topics"></a>相关主题
 
 
-[编写 NDIS 协议驱动程序](writing-ndis-protocol-drivers.md)
+[编写 NDIS 协议驱动程序](initializing-a-protocol-driver.md)
 
  
 

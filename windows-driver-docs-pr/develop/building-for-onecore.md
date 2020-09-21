@@ -4,12 +4,12 @@ description: 可以针对 Windows 10 之前的版本和 OneCore 版本生成单�
 ms.assetid: ee46801a-4fa5-465a-aa81-5e76eb83d315
 ms.date: 04/28/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 70fce43c92a13fbd50b6c31304fe05b8ec85f2b0
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 0d7ad8b6cbb395939fbf8918ad96e5c3df2494ab
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89066514"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90716970"
 ---
 # <a name="building-for-onecore"></a>针对 OneCore 进行构建
 
@@ -33,9 +33,9 @@ ms.locfileid: "89066514"
 
 Windows API 的一个子集可以干净地编译，但在非 Desktop 的 OneCore 版本（例如 Mobile 或 IoT）上返回运行时错误。
 
-例如，[**InstallApplication**](/windows/desktop/api/appmgmt/nf-appmgmt-installapplication) 函数在非 Desktop 的 OneCore 版本中会返回 `ERROR_ NOT_SUPPORTED`。  [ApiValidator](./validating-windows-drivers.md) 工具也会报告这些问题。 下一部分将介绍如何解决这些问题。
+例如，[**InstallApplication**](/windows/win32/api/appmgmt/nf-appmgmt-installapplication) 函数在非 Desktop 的 OneCore 版本中会返回 `ERROR_ NOT_SUPPORTED`。  [ApiValidator](./validating-windows-drivers.md) 工具也会报告这些问题。 下一部分将介绍如何解决这些问题。
 
-## <a name="fixing-apivalidator-errors-by-using-isapisetimplemented"></a>使用 [**IsApiSetImplemented**](/windows/desktop/api/apiquery2/nf-apiquery2-isapisetimplemented) 修复 ApiValidator 错误
+## <a name="fixing-apivalidator-errors-by-using-isapisetimplemented"></a>使用 [**IsApiSetImplemented**](/windows/win32/api/apiquery2/nf-apiquery2-isapisetimplemented) 修复 ApiValidator 错误
 
 如果代码调用非通用 API，可能会显示以下 [ApiValidator](./validating-windows-drivers.md) 错误：
 
@@ -45,9 +45,9 @@ Windows API 的一个子集可以干净地编译，但在非 Desktop 的 OneCore
 
 * `Error: <Binary Name> has a dependency on <Module Name><Api Name> but is missing: IsApiSetImplemented("<contract-name-for-Module>)`
     
-    上述类别中的 API 调用编译良好，但在运行时可能表现不符合预期，具体取决于目标操作系统。 若要传递 [Windows 驱动程序](./getting-started-with-windows-drivers.md)的 [API 分层要求](api-layering.md)，请使用 [IsApiSetImplemented](/windows/desktop/api/apiquery2/nf-apiquery2-isapisetimplemented) 包装这些调用。
+    上述类别中的 API 调用编译良好，但在运行时可能表现不符合预期，具体取决于目标操作系统。 若要传递 [Windows 驱动程序](./getting-started-with-windows-drivers.md)的 [API 分层要求](api-layering.md)，请使用 [IsApiSetImplemented](/windows/win32/api/apiquery2/nf-apiquery2-isapisetimplemented) 包装这些调用。
 
-这使你能够编译代码而不出错。  然后在运行时，如果目标计算机没有所需的 API，则 [**IsApiSetImplemented**](/windows/desktop/api/apiquery2/nf-apiquery2-isapisetimplemented) 将返回 FALSE。
+这使你能够编译代码而不出错。  然后在运行时，如果目标计算机没有所需的 API，则 [**IsApiSetImplemented**](/windows/win32/api/apiquery2/nf-apiquery2-isapisetimplemented) 将返回 FALSE。
 
 以下代码示例说明了如何执行此操作。
 
@@ -97,7 +97,7 @@ int __cdecl wmain(int /* argc */, PCWSTR /* argv */ [])
 
 ## <a name="code-sample-direct-usage-of-api-after-evaluating-for-existence"></a>代码示例：评估是否存在后直接使用 API
 
-此示例演示如何调用 [**IsApiSetImplemented**](/windows/desktop/api/apiquery2/nf-apiquery2-isapisetimplemented)。 此示例符合 Windows 驱动程序的 [API 分层](api-layering.md)要求，生成了以下 [ApiValidator](./validating-windows-drivers.md) 输出：
+此示例演示如何调用 [**IsApiSetImplemented**](/windows/win32/api/apiquery2/nf-apiquery2-isapisetimplemented)。 此示例符合 Windows 驱动程序的 [API 分层](api-layering.md)要求，生成了以下 [ApiValidator](./validating-windows-drivers.md) 输出：
 
 ```cpp
 ApiValidation: All binaries are Universal

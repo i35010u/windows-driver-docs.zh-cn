@@ -5,12 +5,12 @@ ms.assetid: E62AADCF-E481-40CA-98F1-BE4629C3EE35
 ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ff6b33e6322a43285509f8b2af0bbe5fd20021ab
-ms.sourcegitcommit: 4f08f5686c0bbc27d58930b993cbab1a98e3afb0
+ms.openlocfilehash: 23fe920f0b3ba625d8a7a3ca80867d524b1e328f
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/03/2020
-ms.locfileid: "89443861"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90101712"
 ---
 # <a name="publish-a-driver-to-windows-update"></a>将驱动程序发布到 Windows 更新
 
@@ -51,7 +51,7 @@ ms.locfileid: "89443861"
    </tr>
    <tr class="even">
    <td><p><strong>指定合作伙伴（如果有），使其获得对此请求的可见性</strong></p></td>
-   <td><p>输入希望其具有驱动程序和发货标签的只读权限的合作伙伴。 希望合作伙伴注意此发货标签请求时（例如当代表他们发布驱动程序时），使用此字段。 有关详细信息，请参阅<a href="https://docs.microsoft.com/previous-versions/mt786462(v=vs.85)" data-raw-source="[Publish a driver on behalf of a partner](/previous-versions/mt786462(v=vs.85))">代表合作伙伴发布驱动程序</a>。</p></td>
+   <td><p>输入希望其具有驱动程序和发货标签的只读权限的合作伙伴。 希望合作伙伴注意此发货标签请求时（例如当代表他们发布驱动程序时），使用此字段。 有关详细信息，请参阅<a href="/previous-versions/mt786462(v=vs.85)" data-raw-source="[Publish a driver on behalf of a partner](/previous-versions/mt786462(v=vs.85))">代表合作伙伴发布驱动程序</a>。</p></td>
    </tr>
    <tr class="odd">
    <td><p><strong>驱动程序推广</strong></p></td>
@@ -104,6 +104,4 @@ ms.locfileid: "89443861"
    ![提交 Windows 10 S 驱动程序时必须选中的两个复选框的屏幕截图](images/win-cloud-checkboxes.png)
 
 10. 选择“发布”  将请求发送到 Windows 更新。 如果不希望立即发布发货标签，可选择“保存”  。 以后可通过打开发货标签并选择“发布”  来发布发货标签，或者可从硬件提交页面中选择“发布所有待处理”  。 请注意，选择“发布所有待处理”  将发布所有未发布的发货标签。
-
- 
 

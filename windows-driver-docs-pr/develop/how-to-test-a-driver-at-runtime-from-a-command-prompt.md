@@ -4,12 +4,12 @@ title: 如何在运行时通过命令提示符测试驱动程序
 description: WDK 提供的设备测试组件使你能够在网络中的测试计算机上测试驱动程序。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2e5c41479213bff3fc5a534669da549eb993b03a
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: d34ab4d3fa73251bd653421df1788f78114d31ea
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89066766"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90103264"
 ---
 # <a name="how-to-test-a-driver-at-runtime-from-a-command-prompt"></a>如何在运行时通过命令提示符测试驱动程序
 
@@ -21,7 +21,7 @@ WDK 提供的设备测试组件使你能够在网络中的测试计算机上测�
 
 -   在用于开发的计算机上安装 Visual Studio 和 WDK。
 -   在 Visual Studio 中，可以配置和预配测试计算机。 配置测试计算机时，WDK 驱动程序测试框架将自动启用测试计算机进行远程调试，并传输所需的测试二进制文件和支持文件。 按照[预配计算机以便进行驱动程序部署和测试 (WDK 8.1)](../gettingstarted/provision-a-target-computer-wdk-8-1.md) 中的说明进行操作（如果尚未这样做）
--   虽然不推荐这样做，但你仍可以手动安装必要的测试组件。 请按照说明在测试计算机上安装[测试创作和执行框架 (TAEF)](../taef/index.md) 和 WDTF。 请参阅[在测试计算机上手动安装和卸载 TAEF](../taef/getting-started.md#manually-installing-and-uninstalling-taef-on-a-test-computer)和 [WDTF 快速入门](/windows-hardware/drivers/wdtf/wdtf-quick-start-)。
+-   虽然不推荐这样做，但你仍可以手动安装必要的测试组件。 请按照说明在测试计算机上安装[测试创作和执行框架 (TAEF)](../taef/index.md) 和 WDTF。 请参阅[在测试计算机上手动安装和卸载 TAEF](../taef/getting-started.md#manually-installing-and-uninstalling-taef-on-a-test-computer)和 [WDTF 快速入门](../wdtf/wdtf-quick-start-.md)。
 
 <a name="instructions"></a>说明
 ------------
@@ -63,5 +63,3 @@ Te.exe /name:"*PNPSurpriseRemoveAndRestartDevice" Devfund_PnPDTest.dll /P:"DQ=De
 * [如何在 WDK 8.1 中运行 HCK 测试套件](run-the-hck-test-suites-in-the-wdk.md)
 * [测试创作和执行框架 (TAEF)](../taef/index.md)
 * [Te.exe 命令选项](../taef/te-exe-command-line-parameters.md)
- 
-

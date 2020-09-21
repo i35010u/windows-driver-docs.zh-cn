@@ -4,12 +4,12 @@ description: Windows 合作伙伴中心 ID 定义
 ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 06671e6541098ca52a633a89a9646ce785279afe
-ms.sourcegitcommit: 4f08f5686c0bbc27d58930b993cbab1a98e3afb0
+ms.openlocfilehash: f4f59d8e0f59ddf01594f4f3ac73b0053d79a6a8
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/03/2020
-ms.locfileid: "89443909"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90101726"
 ---
 # <a name="dashboard-id-definitions"></a>仪表板 ID 定义
 
@@ -46,7 +46,7 @@ ms.locfileid: "89443909"
 </tr>
 <tr class="odd">
 <td><p>提交 ID</p></td>
-<td><p>此标识符表示你上传到产品的各个程序包。 初始提交以及所有提交更新都具有唯一标识符。 此 ID 最常用于通过产品内的驱动程序更新可接受 (DUA) 进程跟踪更新。 请参阅<a href="https://docs.microsoft.com/windows-hardware/drivers/dashboard/manage-your-hardware-submissions" data-raw-source="[Manage your hardware submissions](./manage-your-hardware-submissions.md)">管理硬件提交</a>，了解更多详细信息。 </p></td>
+<td><p>此标识符表示你上传到产品的各个程序包。 初始提交以及所有提交更新都具有唯一标识符。 此 ID 最常用于通过产品内的驱动程序更新可接受 (DUA) 进程跟踪更新。 请参阅<a href="/windows-hardware/drivers/dashboard/manage-your-hardware-submissions" data-raw-source="[Manage your hardware submissions](./manage-your-hardware-submissions.md)">管理硬件提交</a>，了解更多详细信息。 </p></td>
 </tr>
 </tbody>
 </table>

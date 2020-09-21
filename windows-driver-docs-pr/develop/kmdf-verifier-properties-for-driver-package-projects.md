@@ -4,12 +4,12 @@ title: 驱动程序包项目的 KMDF 验证程序属性
 description: 设置远程计算机上的 KMDF 验证程序的属性。  使用这些设置为测试计算机生成和部署 KMDF 驱动程序。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 58627fea3c62a1d36f91159829fca9f9f36b15c6
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 8a31e4a7ff5a797d68e45ef24e2221b089710733
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89215650"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90106528"
 ---
 # <a name="kmdf-verifier-properties-for-driver-package-projects"></a>驱动程序包项目的 KMDF 验证程序属性
 
@@ -38,7 +38,7 @@ ms.locfileid: "89215650"
 <tbody>
 <tr class="odd">
 <td align="left"><p><span id="Enable_KMDF_Verifier"></span><span id="enable_kmdf_verifier"></span><span id="ENABLE_KMDF_VERIFIER"></span><strong>启用 KMDF 验证程序</strong></p></td>
-<td align="left"><p>启用测试计算机上的 KMDF 验证程序。 可以选择“KMDF 验证始终启用”或“KMDF 验证程序关闭”。 如果未启用 KMDF 验证程序，则当 KMDF 版本为 1.9 或更高版本时，基本框架验证将作为<a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier" data-raw-source="[Driver Verifier](../devtest/driver-verifier.md)">驱动程序验证程序</a>的一部分启用。</p></td>
+<td align="left"><p>启用测试计算机上的 KMDF 验证程序。 可以选择“KMDF 验证始终启用”或“KMDF 验证程序关闭”。 如果未启用 KMDF 验证程序，则当 KMDF 版本为 1.9 或更高版本时，基本框架验证将作为<a href="/windows-hardware/drivers/devtest/driver-verifier" data-raw-source="[Driver Verifier](../devtest/driver-verifier.md)">驱动程序验证程序</a>的一部分启用。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><span id="KMDF_Service_Names"></span><span id="kmdf_service_names"></span><span id="KMDF_SERVICE_NAMES"></span><strong>KMDF 服务名称</strong></p></td>
@@ -91,5 +91,3 @@ ms.locfileid: "89215650"
 * [内核模式驱动程序框架](../wdf/index.md)
 * [驱动程序验证程序](../devtest/driver-verifier.md)
 * [将驱动程序部署到测试计算机](deploying-a-driver-to-a-test-computer.md)
- 
-

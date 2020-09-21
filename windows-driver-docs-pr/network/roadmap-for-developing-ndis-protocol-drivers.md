@@ -4,12 +4,12 @@ description: NDIS 协议驱动程序的开发路线图
 ms.assetid: b9b8d790-7755-4c52-8a76-70257aa78212
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 862e9c2638936b01f42b9552e6714e7ec42307a1
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 25ffd8ac2193151cc72184784e163bd9525f9f4f
+ms.sourcegitcommit: 366a15d68eb58d01a8ca6de7b982f62ac8b7deaf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89214476"
+ms.lasthandoff: 09/19/2020
+ms.locfileid: "90811992"
 ---
 # <a name="roadmap-for-developing-ndis-protocol-drivers"></a>NDIS 协议驱动程序的开发路线图
 
@@ -43,7 +43,7 @@ ms.locfileid: "89214476"
 - 步骤5：阅读协议驱动程序简介主题。
   [NDIS 协议驱动程序简介](introduction-to-ndis-protocol-drivers.md) 
   [协议驱动程序设计概念](protocol-driver-design-concepts.md)
-- 步骤6：阅读 [编写协议驱动程序部分](writing-ndis-protocol-drivers.md)。
+- 步骤6：阅读 [编写协议驱动程序部分](initializing-a-protocol-driver.md)。
 
   本部分概述了主要协议驱动程序接口。 这些接口包含协议驱动程序提供 (*ProtocolXxx* 函数的函数) 和 NDIS 调用来启动操作。 NDIS 提供 **ndis * Xxx*** 函数，这些函数用于执行 ndis 操作的协议驱动程序调用。
 

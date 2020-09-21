@@ -4,17 +4,17 @@ description: 网络驱动程序设计指南
 ms.assetid: 200517b2-d0a0-40cc-a5cb-9e2067e01028
 keywords:
 - 网络驱动程序 WDK
-- 联网
+- 网络
 ms.date: 04/20/2017
 ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
-ms.openlocfilehash: 511bbdba246cdb7f2210023a93e6e1a6b1aeec7d
-ms.sourcegitcommit: 988d100e4d3b218a59fdac034d39a1816d145c85
+ms.openlocfilehash: 424733b49886c6b04aed99a96b8b36bdc29564af
+ms.sourcegitcommit: 366a15d68eb58d01a8ca6de7b982f62ac8b7deaf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2020
-ms.locfileid: "63327748"
+ms.lasthandoff: 09/19/2020
+ms.locfileid: "90811970"
 ---
 # <a name="network-driver-design-guide"></a>网络驱动程序设计指南
 
@@ -32,13 +32,13 @@ ms.locfileid: "63327748"
 
 [NDIS 核心功能](ndis-core-functionality2.md)
 
-[可缩放网络](scalable-networking2.md)
+[可缩放网络](header-data-split.md)
 
 [虚拟化网络](virtualized-networking.md)
 
-[无线网络](wireless-networking2.md)
+[无线联网](wireless-networking2.md)
 
-[网络模块注册器](network-module-registrar2.md)
+[网络模块注册机构](network-module-registrar2.md)
 
 [Winsock 内核](winsock-kernel4.md)
 
@@ -52,7 +52,7 @@ ms.locfileid: "63327748"
 
 [网络驱动程序的内核模式 SDK 主题](kernel-mode-sdk-topics-for-network-drivers.md)
 
-[以前版本的网络驱动程序](previous-versions-of-network-drivers.md)
+[旧版网络驱动程序](network-drivers-prior-to-windows-vista.md)
  
 
  

@@ -1,15 +1,15 @@
 ---
-title: 由于显卡驱动程序二进制文件中的崩溃导致 TDR 且具有集成式 GPU 的计算机的巨大数量
+title: 由于显卡驱动程序二进制文件中的崩溃导致 TDR 且具有集成式 GPU 的计算机的巨大数量（生态系统）
 description: 该度量将来自 7 天滑动窗口的遥测数据聚合为大量使用集成 GPU 的计算机，这些计算机由于显卡驱动程序崩溃而发生了 TDR。
 ms.topic: article
 ms.date: 06/18/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 28c607e662358e2ea3a774b0ece09bf8a7c194f8
-ms.sourcegitcommit: 20a89aa2cb2c6385c2a49ebf78e5797c821d87ab
+ms.openlocfilehash: ce066f9322a700e4c10bf57c4acfb0d438591478
+ms.sourcegitcommit: b331d736356095f852629402bd1a0becbb396ede
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87473743"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90765316"
 ---
 # <a name="myriad-of-machines-with-integrated-gpu-that-had-a-tdr-caused-by-a-crash-in-the-graphics-driver-binary-ecosystem"></a>由于显卡驱动程序二进制文件中的崩溃导致 TDR 且具有集成式 GPU 的计算机的巨大数量（生态系统）
 

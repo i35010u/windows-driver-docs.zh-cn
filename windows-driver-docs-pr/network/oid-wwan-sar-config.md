@@ -5,12 +5,12 @@ ms.assetid: 78B049E0-A80E-42AA-9D81-D45BBCF84FCB
 ms.date: 08/17/2018
 keywords: -从 Windows Vista 开始 OID_WWAN_SAR_CONFIG 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 99fce2dfac949c3428fd8a7ebf57bc01fc9aa4ca
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: c3b75c85179ac9f3f6a64254778f5c6096480b58
+ms.sourcegitcommit: 366a15d68eb58d01a8ca6de7b982f62ac8b7deaf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89218345"
+ms.lasthandoff: 09/19/2020
+ms.locfileid: "90811983"
 ---
 # <a name="oid_wwan_sar_config"></a>OID_WWAN_SAR_CONFIG
 
@@ -24,7 +24,7 @@ OID_WWAN_SAR_CONFIG 获取或设置有关移动宽带 (MB 的信息) 设备特�
 
 完成每个查询或设置请求后，微型端口驱动程序应返回 [**NDIS_WWAN_SAR_CONFIG_INFO**](/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_sar_config_info) 结构，该结构包含设备上与移动宽带关联的所有天线的信息。
 
-有关使用此 OID 的详细信息，请参阅 [MBIM_CID_MS_SAR_CONFIG](./mb-sar-platform-support.md#mbimcidmssarconfig)。
+有关使用此 OID 的详细信息，请参阅 [MBIM_CID_MS_SAR_CONFIG](./mb-sar-platform-support.md#mbim_cid_ms_sar_config)。
 
 ## <a name="requirements"></a>要求
 

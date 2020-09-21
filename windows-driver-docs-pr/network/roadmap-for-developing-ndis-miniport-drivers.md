@@ -4,12 +4,12 @@ description: NDIS 微型端口驱动程序开发路线图
 ms.assetid: 7cb56c08-3578-49d7-a0aa-a89dc6b139ca
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: da5b50ff617d60090de466f6cc07145c0b769cbb
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: c1dce6d4395f549141f2a4d4f3f2f16371a7dff8
+ms.sourcegitcommit: 366a15d68eb58d01a8ca6de7b982f62ac8b7deaf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89214482"
+ms.lasthandoff: 09/19/2020
+ms.locfileid: "90812006"
 ---
 # <a name="roadmap-for-developing-ndis-miniport-drivers"></a>NDIS 微型端口驱动程序开发路线图
 
@@ -55,7 +55,7 @@ ms.locfileid: "89214482"
 
   其他注意事项包括扩展 [微型端口驱动程序部分](./initializing-a-miniport-driver.md)中所述的主要接口的主题。
 
-  [获取和设置 WMI 的微型端口驱动程序信息与 NDIS 支持](obtaining-and-setting-miniport-driver-information-and-ndis-support-for.md)
+  [获取和设置 WMI 的微型端口驱动程序信息与 NDIS 支持](ndis-management-information-and-oids.md)
 
   [NDIS MSI-X](ndis-msi-x.md)
 

@@ -7,12 +7,12 @@ keywords:
 - 初始化驱动程序 WDK 网络
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d45c9a88d773b75c03e43302564b9ff216e9bb64
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: f7055e2d7f7523e622d0adf959dae8c670a4638d
+ms.sourcegitcommit: 366a15d68eb58d01a8ca6de7b982f62ac8b7deaf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89208689"
+ms.lasthandoff: 09/19/2020
+ms.locfileid: "90812016"
 ---
 # <a name="easier-initialization"></a>更轻松的初始化
 
@@ -40,7 +40,7 @@ NDIS 提供与总线无关的函数调用，用于读取和写入特定于总线
 
 [编写 NDIS 微型端口驱动程序](./initializing-a-miniport-driver.md)
 
-[编写 NDIS 协议驱动程序](writing-ndis-protocol-drivers.md)
+[编写 NDIS 协议驱动程序](initializing-a-protocol-driver.md)
 
 [NDIS 筛选器驱动程序](ndis-filter-drivers.md)
 

@@ -6,12 +6,12 @@ keywords:
 - 移动电话 COM API 参考 WDK，蜂窝 COM API Windows Phone 8。1
 ms.date: 12/07/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b5471129535f43d653c9fc0421169fb46f568849
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 73d4312463777412f1b35da1b40b7e4fdf0563f4
+ms.sourcegitcommit: 366a15d68eb58d01a8ca6de7b982f62ac8b7deaf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89215262"
+ms.lasthandoff: 09/19/2020
+ms.locfileid: "90811966"
 ---
 # <a name="cellular-com-api-reference"></a>手机网络 COM API 参考
 
@@ -21,4 +21,4 @@ ms.locfileid: "89215262"
 
 ## <a name="related-topics"></a>相关主题
 
-[旧版网络驱动程序](previous-versions-of-network-drivers.md)
+[旧版网络驱动程序](network-drivers-prior-to-windows-vista.md)

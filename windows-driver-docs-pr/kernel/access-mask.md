@@ -4,12 +4,12 @@ description: 指定访问权限
 ms.assetid: 8ef4b4bb-5f4e-4095-b4ab-1182c0f75619
 ms.localizationpriority: High
 ms.date: 10/17/2018
-ms.openlocfilehash: 9903b3fe6bfe1627e30c607c4aca466c88eb078a
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: e277eb9cae2678cb2e38ef38f1e552d528b320b7
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89184795"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90104192"
 ---
 # <a name="specifying-access-rights"></a>指定访问权限
 
@@ -44,7 +44,7 @@ typedef ULONG  ACCESS_MASK;
 </tr>
 <tr class="odd">
 <td><p>SYNCHRONIZE</p></td>
-<td><p>调用方可以对对象执行等待操作。 （例如，可以将对象传递到 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kewaitformultipleobjects" data-raw-source="[&lt;strong&gt;KeWaitForMultipleObjects&lt;/strong&gt;](/windows-hardware/drivers/ddi/wdm/nf-wdm-kewaitformultipleobjects)"><strong>KeWaitForMultipleObjects</strong></a>。）</p></td>
+<td><p>调用方可以对对象执行等待操作。 （例如，可以将对象传递到 <a href="/windows-hardware/drivers/ddi/wdm/nf-wdm-kewaitformultipleobjects" data-raw-source="[&lt;strong&gt;KeWaitForMultipleObjects&lt;/strong&gt;](/windows-hardware/drivers/ddi/wdm/nf-wdm-kewaitformultipleobjects)"><strong>KeWaitForMultipleObjects</strong></a>。）</p></td>
 </tr>
 <tr class="even">
 <td><p>WRITE_DAC</p></td>

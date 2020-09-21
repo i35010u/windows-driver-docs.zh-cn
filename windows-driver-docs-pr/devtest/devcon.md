@@ -18,12 +18,12 @@ keywords:
 - 列出设备信息 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: high
-ms.openlocfilehash: 6b32bfbbdc59f2c1a468973a0bd19bd7dfc23d91
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: bb8a3893eccb2bb100b69fc470b640ff5b142282
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89384555"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90102226"
 ---
 # <a name="windows-device-console-devconexe"></a>Windows 设备控制台 (Devcon.exe)
 
@@ -46,7 +46,7 @@ DevCon 在 Microsoft Windows 2000 和更高版本的 Windows 上运行。
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>安装适用于桌面应用的 WDK、Visual Studio 和 Windows SDK 时，DevCon (Devcon.exe) 会包括在内。 有关下载工具包的信息，请参阅 <a href="https://docs.microsoft.com/windows-hardware/drivers/download-the-wdk" data-raw-source="[Windows Hardware Downloads](../download-the-wdk.md)">Windows 硬件下载</a>。</p>
+<td align="left"><p>安装适用于桌面应用的 WDK、Visual Studio 和 Windows SDK 时，DevCon (Devcon.exe) 会包括在内。 有关下载工具包的信息，请参阅 <a href="/windows-hardware/drivers/download-the-wdk" data-raw-source="[Windows Hardware Downloads](../download-the-wdk.md)">Windows 硬件下载</a>。</p>
 <p><strong>Windows 驱动程序工具包 (WDK) 8 和 Windows 驱动程序工具包 (WDK) 8.1</strong>（安装路径）</p>
 <p>%WindowsSdkDir%\tools\x64\devcon.exe</p>
 <p>%WindowsSdkDir%\tools\x86\devcon.exe</p>
@@ -117,6 +117,4 @@ Devcon 的功能包括：
 [DevCon 命令](devcon-general-commands.md)
 
 [DevCon 示例](devcon-examples.md)
-
- 
 

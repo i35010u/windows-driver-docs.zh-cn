@@ -1,55 +1,42 @@
 ---
-title: I²C 上的 HID 的电源管理
-description: 本部分介绍支持通过 I²C HID 设备的电源管理。
+title: 基于 I i2c 的 HID 电源管理
+description: 本部分介绍在 I i2c 上支持 HID 的设备的电源管理。
 ms.assetid: 00FE1248-683F-48FE-8422-E51E88224955
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 189880af31591b6eca1642bac8ab3ab536a1371c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e567781b9ea6a468336c3214eda39109a47927e7
+ms.sourcegitcommit: 8835925c6a88efc301dc5e8bd9bca87082416eb6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63372987"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90777587"
 ---
-# <a name="power-management"></a>电源管理
+# <a name="hid-power-management-over-the-i2c"></a>通过 I2C 进行的 HID 电源管理
 
-
-本部分介绍通过 I²C 传输支持 HID 设备的电源管理。
+本部分介绍了通过 I i2c 传输支持 HID 的设备的电源管理。
 
 ## <a name="power-management-and-optimization"></a>电源管理和优化
 
+Windows 8 引入了标有 *Always On、始终连接*的新电源模型。 此模式允许对清单和 Pc 进行优化以实现电源和性能。 同时，在未使用 PC 的情况下，Windows 8is 对能源消耗进行了高度优化。 例如，当屏幕被有意或不是用户活动的结果时，它可以节省电源。
 
-Windows 8 引入了新的电源模型标有*Always On、 始终连接*。 此模型允许平板电脑和 Pc 的能力和性能优化。 同时，Windows 8is 针对高度优化的情况下的功率消耗 PC 未被使用时。 例如，它可以节省电源时有意或没有用户活动的结果屏幕处于关闭状态。
-
-由于 HID 设备是 Windows 中的主要设备类，因此它们必须遵守这一新电源模型。
+由于 HID 设备是 Windows 中的主要设备类，因此它们必须遵循这一新的电源模式。
 
 ### <a name="connected-standby"></a>连接待机
 
-下面是简要总结了如何在已连接的备用电源状态的设备的行为方式。
+下面简要概述了设备在连接待机电源状态期间的行为方式。
 
-|                                                                                                                                                                 |                                              |                                           |                                                           |
-|-----------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------|-------------------------------------------|-----------------------------------------------------------|
-| 输入的源                                                                                                                                                    | 指示用户存在处于已连接待机状态 | 在连接待机中处理      | 当系统转换到的设备状态连接待机 |
-| 数字化器                                                                                                                                                       | 否                                           | 必须处理                          | D3                                                        |
-| 鼠标                                                                                                                                                           | 是                                          | 必须处理，将退出连接的待机 | D0                                                        |
-| 键盘                                                                                                                                                        | 是                                          | 必须处理，将退出连接的待机 | D0                                                        |
-| 旋转锁                                                                                                                                                   | 否                                           | 必须处理                          | D3                                                        |
-| 普通台式计算机控制的调高音量-卷下向上转发--快进-跟踪-关闭通道的通道返回跟踪-跟踪停止播放-Pause-记录- | 否                                           | 必须处理                              | D0                                                        |
+| 输入源                                                                                                                                                    | 指示用户处于连接待机状态 | 处于连接待机状态时处理      | 系统转换到连接待机状态时的设备状态 |
+|-|-|-|-|
+| 器                                                                                                                                                       | 否                                           | 不得处理                          | D3                                                        |
+| 鼠标                                                                                                                                                           | 是                                          | 必须处理，将退出连接待机 | D0                                                        |
+| 键盘                                                                                                                                                        | 是                                          | 必须处理，将退出连接待机 | D0                                                        |
+| 旋转锁定                                                                                                                                                   | 否                                           | 不得处理                          | D3                                                        |
+| 通用桌面控制-将向上移动音量-向下移动-向下移动-向下移动-向下移动一条 | 否                                           | 必须处理                              | D0                                                        |
 
- 
+有关连接备用的详细信息，请参阅 [了解连接待机](https://channel9.msdn.com/events/BUILD/BUILD2011/HW-456T) 视频。
 
-有关连接待机状态有关的详细信息请参阅[了解连接待机](https://go.microsoft.com/fwlink/p/?linkid=241608)视频。
+### <a name="supporting-connected-standby-in-hid-ic-devices"></a>支持 HID I i2c 设备中的连接待机
 
-### <a href="" id="supporting-connected-standby-in-hid-i2c-devices"></a>在 HID I²C 设备中支持连接的待机
+I i2c 总线上的设备是由高级配置和电源接口 (ACPI) 来枚举的。 作为 HID-I i2c 协议规范的一部分，"设置电源" 命令支持 HIDI ²设备的电源管理 \_ 。 此命令指示设备转换为其低功耗模式。
 
-通过高级配置和电源接口 (ACPI) 枚举 I²C 总线上的设备。 HID I²C 协议规范的一部分，HIDI²C 设备的电源管理支持通过一组\_电源命令。 此命令指示转换入和移出其低能耗模式设备。
-
-收件箱 HIDI²C 微型端口驱动程序从 HIDClass 传递 D IRP。 这允许 ACPI 来，反过来，使用电源管理设备。
-
- 
-
- 
-
-
-
-
+收件箱 HIDI i2c 微型端口驱动程序通过 HIDClass 的 D-IRP 传递。 这样，ACPI 就可以对设备进行电源管理。

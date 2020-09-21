@@ -4,12 +4,12 @@ description: UWP 移动宽带应用概述
 ms.assetid: bb02397b-0da5-4e09-be1c-8812abec6fd5
 ms.date: 07/05/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 00cb3186f4e59206f16d945986104fde95aa964f
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 14884d4d2910403d5b8edb836a944e0e044eb298
+ms.sourcegitcommit: 74a8dc9ef1da03857dec5cab8d304e2869ba54a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89209811"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90759784"
 ---
 # <a name="uwp-mobile-broadband-apps-overview"></a>UWP 移动宽带应用概述
 
@@ -71,7 +71,7 @@ UWP mobile 宽带应用是由移动运营商创作并与移动宽带连接关联
 
 下表提供了有关 MBAE 和 MO UWP 应用之间的差异的信息。
 
-|   | 目标平台 | 传递机制 | 图标检索 |
+|  应用类型 | 目标平台 | 传递机制 | 图标检索 |
 | --- | --- | --- | --- |
 | MBAE | Windows 8、Windows 8.1 或 Windows 10 | Sysdev 元数据 | Sysdev metadata 或 COSA （如果声明为配置文件的一部分） | 
 | MO UWP 应用 | Windows 10 (最好版本1803及更高版本，具有相同的 SDK 版本)  | COSA 数据库 | COSA 数据库 |

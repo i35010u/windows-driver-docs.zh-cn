@@ -3,12 +3,12 @@ title: 自定义功能常见问题
 description: 介绍 (HSA) 的硬件支持应用的自定义功能，以及它们与其他功能有何不同。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0c2451af5824c2880979a5a0e2ac9bb91c620206
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 192ba0369ed2aaadfeefed832da44b60708660cf
+ms.sourcegitcommit: 74a8dc9ef1da03857dec5cab8d304e2869ba54a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89097039"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90759786"
 ---
 # <a name="faq-on-custom-capabilities"></a>自定义功能常见问题
 
@@ -20,7 +20,7 @@ ms.locfileid: "89097039"
 
 ## <a name="whats-the-difference-between-uwp-apps-with-custom-capabilities-and-device-companion-apps-dcas"></a>具有自定义功能和设备助理应用 (DCAs) 的 UWP 应用之间有何区别？
 
-|                           | **DCA**                                                  | **具有自定义功能的 UWP 应用**|
+|    **功能**                  | **DCA**                                                  | **具有自定义功能的 UWP 应用**|
 |---------------------------|----------------------------------------------------------|-------------------------------------|
 |通信|设备方案 API (映像捕获、扫描等 ) <br>设备协议 Api (USB、HID 等 ) <br>客户驱动程序访问|                                                                              
 |信任模型|在 "容器" 级别定义<br>系统的 OEM 必须提交内部组件应用|在系统级别定义<br>系统的 OEM 必须提交内部组件应用|

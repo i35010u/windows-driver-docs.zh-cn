@@ -1,19 +1,19 @@
 ---
-title: 以前的 Windows 版本中的蓝牙版本和配置文件支持
+title: 蓝牙软件无线电开关函数原型
 description: 以前的 Windows 版本中的蓝牙版本和配置文件支持
 ms.assetid: A5A81EAA-0DC7-4725-AA0D-5C4867DDE47C
 ms.date: 02/12/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: ca411bbe2ec5ca2b522230c1ed7e201e9105ea9c
-ms.sourcegitcommit: 19ba939a139e8ad62b0086c30b2fe772a2320663
+ms.openlocfilehash: c64b14211af4d3bb10c16cf7040c4b035a7ffb9c
+ms.sourcegitcommit: b331d736356095f852629402bd1a0becbb396ede
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72681930"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90765312"
 ---
 # <a name="bluetooth-software-radio-switch-function-prototypes"></a>蓝牙软件无线电开关函数原型
 
-> 注意：从开始 Windows 8.1 供应商不再需要按照本主题中所述，在软件 DLL 中实施无线电开启/关闭功能（适用于蓝牙4.0 无线电），因为操作系统现在会处理此功能。 Windows 8.1 将忽略任何此类 DLL （即使存在）。
+> 注意：从开始 Windows 8.1 供应商不再需要按照本主题中所述的软件 DLL 中的蓝牙4.0 无线电) 实现无线电开/关功能 (，因为操作系统现在会处理此功能。 Windows 8.1 将忽略任何此类 DLL （即使存在）。
 
 对于 Windows 8，蓝牙无线收发器必须支持软件开启/关闭功能。 为了使供应商能够获得最大的灵活性，蓝牙 Media 收音机管理器支持一个插件，允许向用户公开此功能。
 
@@ -32,7 +32,7 @@ DWORD WINAPI BluetoothEnableRadio(
 
 fEnable：设置为 TRUE 将打开无线电电源。 如果设置为 FALSE，则关闭无线电电源。
 
-返回值：如果当前状态已更改为 fEnable，则返回 ERROR_SUCCESS。 否则，如果当前状态为 "未更改"，则返回 WIN32 错误代码。
+返回值：如果当前状态更改为 fEnable 的状态，则返回 ERROR_SUCCESS。 否则，如果当前状态为 "未更改"，则返回 WIN32 错误代码。
 
 - IsBluetoothRadioEnabled：收音机支持 DLL 实现 IsBluetoothRadioEnabled，使 Windows 能够确定无线电设备的电源是打开还是关闭。
 
@@ -45,23 +45,23 @@ DWORD WINAPI IsBluetoothRadioEnabled(
 
 pfEnabled：指向缓冲区的指针，用于描述无线电是打开还是关闭。
 
-返回值：如果获取了当前状态，则返回 ERROR_SUCCESS。 PfEnabled 指向的值现在包含状态。 （true 或 false）。 否则，如果未获取当前状态，将返回 WIN32 错误代码。 PfEnabled 指向的值是未定义的，不应使用
+返回值：如果获取了当前状态，则返回 ERROR_SUCCESS。 PfEnabled 指向的值现在包含状态。  (true 或 false) 。 否则，如果未获取当前状态，将返回 WIN32 错误代码。 PfEnabled 指向的值是未定义的，不应使用
 
 DLL 注册
 
-若要启用菜单和控制面板小程序中的软件单选钮控制，必须注册此支持 DLL。 将以下注册表值设置为相关 DLL 的完整路径（可能包括环境变量）。
+若要启用菜单和控制面板小程序中的软件单选钮控制，必须注册此支持 DLL。 将以下注册表值设置为完整路径 (可能包括) 到相关 DLL 的环境变量。
 
-密钥： HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\BTHPORT\Parameters\Radio 支持
+密钥： HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Services\BTHPORT\Parameters\Radio 支持
 
 值名称： "SupportDLL"
 
-值数据：（路径）
+值数据： (路径) 
 
 示例：
 
-[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\BTHPORT\Parameters\Radio 支持]
+[HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Services\BTHPORT\Parameters\Radio 支持]
 
-"SupportDLL" = "C： \\Program 文件 \\Fabrikam \\BthSupport"
+"SupportDLL" = "C： \\ Program Files \\ Fabrikam \\BthSupport.dll"
 
 需要在安全位置（如 C:\Program Files\Fabrikam.）中安装 DLL。
 
@@ -69,7 +69,7 @@ DLL 注册
 
 虽然这种设计在如何控制硬件方面具有灵活性，但 "关" 状态要求 "关闭" 不会导致无线传输/接收。 此外，建议将无线电关闭到其最低电源状态以节省能量，并将其从总线中删除，以便能够卸载蓝牙堆栈。
 
-BluetoothEnableRadio 只应在无线电状态发生更改后返回结果。 此外，由于此 DLL 扩展旨在在 Windows 中提供统一的无线电开/关基础结构，因此应该为 Windows 组件保留 DLL 的使用情况。 如果 DLL 也被非 Windows 组件使用，或者如果实现了可关闭蓝牙 Media 收音机管理器上下文外部的无线电（例如交换机）的硬件交换机，则 DLL 负责确保返回正确的结果。硬编码关闭无线功能。
+BluetoothEnableRadio 只应在无线电状态发生更改后返回结果。 此外，由于此 DLL 扩展旨在在 Windows 中提供统一的无线电开/关基础结构，因此应该为 Windows 组件保留 DLL 的使用情况。 如果非 Windows 组件也使用 DLL，则 DLL 负责确保返回正确的结果，或者，如果实现了可关闭蓝牙 Media 无线电管理器上下文外部的无线电的硬件开关 (例如，硬编码开关关闭收音机) 的电源。
 
 Windows 8 收音机管理要求 DLL 在本地服务帐户上下文中执行其指令。 在这种情况下，DLL 将在本地计算机上具有最小特权，这通常小于普通用户上下文。
 
@@ -79,21 +79,21 @@ Windows 8 收音机管理要求 DLL 在本地服务帐户上下文中执行其�
 
 注册表文件
 
-Windows 注册表编辑器版本5.00
+Windows 注册表编辑器版本 5.00
 
-[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\BthServ]
+[HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Services\BthServ]
 
-[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\BthServ\Parameters]
+[HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Services\BthServ\Parameters]
 
-[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\BthServ\Parameters\Radio 支持]
+[HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Services\BthServ\Parameters\Radio 支持]
 
-"SupportDLL" = 十六进制（2）：25，00，73，00，79，00，73，00，74，00，65，00，6d，00，72，00，6f，00，6f，\
+"SupportDLL" = hex (2) ：25，00，73，00，79，00，73，00，74，00，65，00，6d，00，72，00，6f，00，6f，\
 
 00，74，00，25，00，5c，00，73，00，79，00，73，00，74，00，65，00，6d，00，33，00，32，00，5c，00，\
 
 72，00，73，00，75，00，70，00，70，00，6f，00，72，00，74，00，2e，00，64，00，6c，00，6c，00，00，\
 
-–
+00
 
 MAKEFILE
 

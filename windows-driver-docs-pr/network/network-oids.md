@@ -9,12 +9,12 @@ keywords:
 - Oid WDK 网络，关于 Oid
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fc49196d9076d3115b9a8f0adf73e14ff4fa7735
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 5f86d5e771f2f2fdc9f4caef9804857f506e4f07
+ms.sourcegitcommit: 366a15d68eb58d01a8ca6de7b982f62ac8b7deaf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89210661"
+ms.lasthandoff: 09/19/2020
+ms.locfileid: "90811928"
 ---
 # <a name="network-oids"></a>网络 OID
 
@@ -32,7 +32,7 @@ ms.locfileid: "89210661"
 
 NDIS 将多个由小型端口驱动程序组成的系统定义 Oid 映射到全局唯一标识符 (Guid) 。 NDIS 将这些 Guid 注册到支持 (基于 Web 的内核模式下的 Microsoft Windows Management Instrumentation (WMI) ，WBEM) 应用程序。 当 WMI 客户端查询或设置其中一个 Guid 时，NDIS 会根据需要将请求转换为查询 OID 操作或集 OID 操作，然后将所有返回的信息和状态传回给 WMI。 可以将自定义 Guid 映射到自定义 Oid 或微型端口驱动程序状态。 小型端口驱动程序必须在初始化期间向 NDIS 注册自定义的 GUID 到 OID 或 GUID 到状态映射。
 
-有关查询和设置 Oid、为 WMI 创建自定义 Oid 和 NDIS 支持的详细信息，请参阅 [获取和设置适用于 wmi 的微型端口驱动程序信息和 Ndis 支持](obtaining-and-setting-miniport-driver-information-and-ndis-support-for.md)。
+有关查询和设置 Oid、为 WMI 创建自定义 Oid 和 NDIS 支持的详细信息，请参阅 [获取和设置适用于 wmi 的微型端口驱动程序信息和 Ndis 支持](ndis-management-information-and-oids.md)。
 
  
 

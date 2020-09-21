@@ -11,12 +11,12 @@ keywords:
 - 非总线主机 DMA Nic WDK 网络
 ms.date: 06/11/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 63514cc68abaf2f78f1e37cf0455b9378e0ef80f
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 21e6865a0c7996d2d9133d0c6d45aafde0bab17b
+ms.sourcegitcommit: 74a8dc9ef1da03857dec5cab8d304e2869ba54a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89210663"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90759898"
 ---
 # <a name="network-interface-card-support"></a>网络接口卡支持
 
@@ -56,7 +56,7 @@ ms.locfileid: "89210663"
 
 在虚拟机中，NDIS 微型端口驱动程序可以将仅限软件的资源作为虚拟小型端口来管理，也可以管理表示硬件资源的虚拟 NIC。 下表说明了虚拟微型端口和虚拟 NIC 之间的差异。
 
-|   | 虚拟小型端口 | 虚拟 NIC |
+|  特性 | 虚拟小型端口 | 虚拟 NIC |
 | --- | --- | --- |
 | 定义 | 映射到软件枚举的 PnP 设备的 NDIS 微型端口驱动程序。 | 由主机 OS 虚拟机监控程序管理的 NIC。 虚拟机监控程序使虚拟机认为它有一些硬件，但物理环境中实际不存在此类硬件。 |
 | 有中断 | 否 | 是 |

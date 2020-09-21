@@ -3,36 +3,26 @@ title: 轴选择
 description: 轴选择
 ms.assetid: 5ba78609-d5e7-44b1-86e8-5a677a19aadd
 keywords:
-- 游戏杆 WDK HID，轴
-- 虚拟游戏杆驱动程序 WDK HID，轴
-- VJoyD WDK HID 轴
-- 轴 WDK 游戏杆
+- 操纵杆 WDK HID，轴
+- 虚拟游戏杆驱动程序 WDK HID、轴
+- VJoyD WDK HID，轴
+- 轴 WDK 操纵杆
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ec3007bcf34e6737329a3020ff6566ff42f7fc37
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e3901b50184e88e0b759a66a2311e32c5ac9f206
+ms.sourcegitcommit: 8835925c6a88efc301dc5e8bd9bca87082416eb6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63390371"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90777601"
 ---
 # <a name="axis-selection"></a>轴选择
 
+本部分包含有关 DirectInput 如何映射轴以供 DirectInput 和 Windows 多媒体应用程序使用的信息。
 
+## <a name="windows-2000-legacy-interfaces"></a>Windows 2000，旧版接口
 
-
-
-本部分包含有关如何 DirectInput 由 DirectInput 和 Windows 多媒体应用程序映射使用的轴信息。
-
-本部分包括：
-
-[轴选择重写](axis-selection-overrides.md)
-
-[特殊大小写映射](special-case-mappings.md)
-
-### <a name="windows-2000-legacy-interfaces"></a>Windows 2000 中，旧接口
-
-在 Windows 2000 上使用 DirectX 7.0 API 时，设备驱动程序下, 表中所示公开轴的顺序进行轴分配：
+在 Windows 2000 上使用 DirectX 7.0 API 时，按设备驱动程序公开轴的顺序进行轴分配，如下表所示：
 
 <table>
 <colgroup>
@@ -42,8 +32,8 @@ ms.locfileid: "63390371"
 </colgroup>
 <thead>
 <tr class="header">
-<th>使用情况页面</th>
-<th>用法</th>
+<th>使用情况页</th>
+<th>使用情况</th>
 <th>DirectInput 轴</th>
 </tr>
 </thead>
@@ -131,13 +121,11 @@ ms.locfileid: "63390371"
 </tbody>
 </table>
 
- 
+SetDataFormat 使用这些 Guid 将请求的数据格式与设备对象匹配。 对于使用 DIRECTINPUT 版本0x0600 编译的应用程序 \_ &lt; ，如果数据格式在 \_ guid 滑块之前指定 guid ZAxis \_ (因为默认的操纵杆数据格式) 并在设备上找到 z 轴之前的滑块，则滑块将与 z 轴匹配。 这旨在提供与 HID 更好的兼容性。
 
-这些 Guid 是 SetDataFormat 用于匹配的设备对象的请求的数据格式。 对于使用 DIRECTINPUT 编译的应用程序\_版本&lt;0x0600，如果数据格式指定的 GUID\_ZAxis 之前 GUID\_（作为数据格式 does 默认游戏杆） 滑块和滑块上找到设备，才能 z 轴，则滑块将匹配作为 z 轴。 这旨在提供更好地 HID 兼容。
+## <a name="windows-9x-platforms"></a>Windows 9x 平台
 
-### <a name="windows-9x-platforms"></a>Windows 9x 平台
-
-通过在 Windows 95/98/我的 DirectX 7.0 接口，是一维到 DirectInput 轴 WinMM 轴的映射：
+通过 Windows 95/98/Me 上的 DirectX 7.0 接口，Winmm.dll 轴到 DirectInput 轴的映射为一维：
 
 <table>
 <colgroup>
@@ -146,7 +134,7 @@ ms.locfileid: "63390371"
 </colgroup>
 <thead>
 <tr class="header">
-<th>WinMM Axis</th>
+<th>Winmm.dll 轴</th>
 <th>DirectInput 分配</th>
 </tr>
 </thead>
@@ -178,17 +166,13 @@ ms.locfileid: "63390371"
 </tbody>
 </table>
 
- 
+Winmm.dll 轴通过 DirectX 8.0 接口以不同方式映射，如下所述。
 
-WinMM 轴映射以不同的方式通过 DirectX 8.0 的接口，如下所述。
+**注意**   尽管 JoyHID 尚未映射用于方向盘、加速和刹车的车辆控制用途，但它确实会检查方向盘的使用情况，如果找到，它会将设备视为 Winmm.dll car 控制器。 而且，JoyHID 的 DirectX 8.0 版本会将任何 IHV 提供的 Winmm.dll 控制器类型标志复制 (游戏工作 \_ 流服务 \_ ISYOKE、游戏工作流服务 \_ \_ ISGAMEPAD、游戏 \_ hws \_ ISCARCTRL 或游戏工作流服务 \_ \_ ISHEADTRACKER) 和按钮计数，因此，这些类型可由 IHV 在 OEMData 注册表值中进行设置。
 
-**请注意**  尽管 JoyHID.VxD 不尚未映射控制的车辆控制使用情况、 加速，刹车，它会检查控制的使用情况并如果它找到一个将设备视为 WinMM 汽车控制器。 此外，JoyHID.VxD 的 DirectX 8.0 版本将复制任何 IHV 提供 WinMM 控制器类型标志 (JOY\_工作流服务\_ISYOKE，乐趣\_工作流服务\_ISGAMEPAD，乐趣\_工作流服务\_ISCARCTRL 或乐趣\_工作流服务\_ISHEADTRACKER) 和按钮计数，因此这些类型可以由 IHV OEMData 注册表值中设置。
+DirectX 8.0 接口所做的映射不同于旧接口所进行的映射。 下表描述了 DirectX 8.0 接口中的映射。
 
- 
-
-通过 DirectX 8.0 接口所做的映射与所做的旧式界面不同。 下表描述了 DirectX 8.0 接口中的映射。
-
-对于通过 WinMM 检索的数据，默认值映射为：
+对于通过 Winmm.dll 检索到的数据，默认映射为：
 
 <table>
 <colgroup>
@@ -197,7 +181,7 @@ WinMM 轴映射以不同的方式通过 DirectX 8.0 的接口，如下所述。
 </colgroup>
 <thead>
 <tr class="header">
-<th>WinMM Axis</th>
+<th>Winmm.dll 轴</th>
 <th>DirectInput 分配</th>
 </tr>
 </thead>
@@ -229,14 +213,4 @@ WinMM 轴映射以不同的方式通过 DirectX 8.0 的接口，如下所述。
 </tbody>
 </table>
 
- 
-
-由于游戏设备上的第三个轴很少是 z 轴，这些映射帮助提供更好地与 Windows 2000，Windows XP 和 Windows 95/98/我 HID 的兼容性。
-
- 
-
- 
-
-
-
-
+因为游戏设备上的第三个轴很少是 Z 轴，所以这些映射有助于提供与 Windows 2000、Windows XP 和 Windows 95/98/Me HID 更好的兼容性。

@@ -4,12 +4,12 @@ description: 确定接收筛选功能
 ms.assetid: 11EE5987-A2DE-4388-86D0-77285453E80A
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6b146497243f87671c6230319b474ac9f0303652
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 9811d1f9738bba889fc09f4bfe6bb01f4d1358da
+ms.sourcegitcommit: 366a15d68eb58d01a8ca6de7b982f62ac8b7deaf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89210785"
+ms.lasthandoff: 09/19/2020
+ms.locfileid: "90812012"
 ---
 # <a name="determining-receive-filtering-capabilities"></a>确定接收筛选功能
 
@@ -43,7 +43,7 @@ ms.locfileid: "89210785"
 
 3.  除了 SR-IOV 外，接收筛选还用于以下接口：
 
-    -   [NDIS 数据包合并](ndis-packet-coalescing.md)。 有关如何在此接口中使用接收筛选器的详细信息，请参阅 [管理包合并接收筛选器](managing-packet-coalescing-receive-filters.md)。
+    -   [NDIS 数据包合并](ndis-packet-coalescing.md)。 有关如何在此接口中使用接收筛选器的详细信息，请参阅 [管理包合并接收筛选器](guidelines-for-managing-packet-coalescing-receive-filters.md)。
 
     -   [虚拟机队列 (VMQ)](virtual-machine-queue--vmq--in-ndis-6-20.md)。 有关如何在此接口中使用接收筛选器的详细信息，请参阅 [设置和清除 VMQ 筛选器](setting-and-clearing-vmq-filters.md)。
 

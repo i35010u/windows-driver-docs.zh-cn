@@ -7,12 +7,12 @@ keywords:
 - 安全 WDK 网络
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 840a6d2dd653210089ca865da55ccd84efeb5dd8
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 80ffeaaede84dba628eb5f54c9a971dc4edd8605
+ms.sourcegitcommit: 366a15d68eb58d01a8ca6de7b982f62ac8b7deaf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89214462"
+ms.lasthandoff: 09/19/2020
+ms.locfileid: "90811906"
 ---
 # <a name="security-issues-for-network-drivers"></a>网络驱动程序的安全问题
 
@@ -24,7 +24,7 @@ ms.locfileid: "89214462"
 
 ## <a name="oid-specific-issues"></a>OID 特定的问题
 
-- 微型端口驱动程序（在其 [*MiniportOidRequest*](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_oid_request) 或 [**MiniportCoOidRequest**](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_co_oid_request) 函数中）应验证 (OID 的任何对象标识符) 请求该驱动程序设置的值。 如果驱动程序确定要设置的值超出界限，则该设置请求应失败。 有关对象标识符的详细信息，请参阅 [获取并设置微型端口驱动程序信息和对 WMI 的 NDIS 支持](obtaining-and-setting-miniport-driver-information-and-ndis-support-for.md)。
+- 微型端口驱动程序（在其 [*MiniportOidRequest*](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_oid_request) 或 [**MiniportCoOidRequest**](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_co_oid_request) 函数中）应验证 (OID 的任何对象标识符) 请求该驱动程序设置的值。 如果驱动程序确定要设置的值超出界限，则该设置请求应失败。 有关对象标识符的详细信息，请参阅 [获取并设置微型端口驱动程序信息和对 WMI 的 NDIS 支持](ndis-management-information-and-oids.md)。
 
 - 如果中间驱动程序的 *MiniportOidRequest* 函数未将设置操作传递到基础微型端口驱动程序，则该函数应验证 OID 值。 有关详细信息，请参阅 [中间驱动程序查询和设置操作](intermediate-driver-query-and-set-operations.md)。
 

@@ -5,12 +5,12 @@ ms.assetid: 83DFEECD-468A-4A76-B881-DA22FBB3F3A6
 ms.date: 08/20/2018
 keywords: -从 Windows Vista 开始 OID_WWAN_SAR_TRANSMISSION_STATUS 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: ebb3967c9cb9c03a28b7fb46774a7e04e11c429a
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 4d0a10f0a8ff352f0a017b41933a7f2661549888
+ms.sourcegitcommit: 366a15d68eb58d01a8ca6de7b982f62ac8b7deaf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89218347"
+ms.lasthandoff: 09/19/2020
+ms.locfileid: "90812014"
 ---
 # <a name="oid_wwan_sar_transmission_status"></a>OID_WWAN_SAR_TRANSMISSION_STATUS
 
@@ -24,7 +24,7 @@ OID_WWAN_SAR_TRANSMISSION_STATUS 根据特定的吸收速率 (SAR) 传输状态�
 
 完成每个查询或设置请求后，微型端口驱动程序应返回一个 [**NDIS_WWAN_SAR_TRANSMISSION_STATUS_INFO**](/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_sar_transmission_status_info) 结构，该结构描述是否在调制解调器中启用了有关传输状态的 SAR 通知。
 
-有关使用此 OID 的详细信息，请参阅 [MBIM_CID_MS_TRANSMISSION_STATUS](./mb-sar-platform-support.md#mbimcidmstransmissionstatus)。
+有关使用此 OID 的详细信息，请参阅 [MBIM_CID_MS_TRANSMISSION_STATUS](./mb-sar-platform-support.md#mbim_cid_ms_transmission_status)。
 
 ## <a name="requirements"></a>要求
 

@@ -8,12 +8,12 @@ keywords:
 - 取消 OID 请求
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c0d297bba79efc8c00b7aa87b353cb26f7bb7032
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 48a4bd602a8d3d24c3518ade83c4e5fe76c1b3fe
+ms.sourcegitcommit: 366a15d68eb58d01a8ca6de7b982f62ac8b7deaf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89215027"
+ms.lasthandoff: 09/19/2020
+ms.locfileid: "90811886"
 ---
 # <a name="responding-to-sets-and-queries-in-an-intermediate-driver"></a>在中间驱动程序中响应设置和查询请求
 
@@ -35,7 +35,7 @@ ms.locfileid: "89215027"
 
  
 
-有关在中间驱动程序中响应集和查询的其他信息，请参阅 [获取并设置微型端口驱动程序信息和 WMI 对 WMI 的支持](obtaining-and-setting-miniport-driver-information-and-ndis-support-for.md)。
+有关在中间驱动程序中响应集和查询的其他信息，请参阅 [获取并设置微型端口驱动程序信息和 WMI 对 WMI 的支持](ndis-management-information-and-oids.md)。
 
  
 

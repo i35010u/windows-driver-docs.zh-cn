@@ -4,12 +4,12 @@ description: '本主题介绍 "高级打印设置" 浮出控件，并演示 c # 
 ms.assetid: 099BD9B2-1AA6-49A5-AB84-0AF6FA0EFB26
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 222f06d94c2d17a5664b5ce3f7c8a4d68c99ad2d
-ms.sourcegitcommit: 17c1bbc5ea0bef3bbc87794b030a073f905dc942
+ms.openlocfilehash: 30e2ea5b9c8882d80cd41ef205a6c7e7cd04d336
+ms.sourcegitcommit: 366a15d68eb58d01a8ca6de7b982f62ac8b7deaf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88802487"
+ms.lasthandoff: 09/19/2020
+ms.locfileid: "90811964"
 ---
 # <a name="how-to-customize-print-settings-uwp-device-apps"></a>如何自定义 (UWP 设备应用的打印设置) 
 
@@ -461,7 +461,7 @@ async private void OnSaveRequested(object sender, PrintTaskConfigurationSaveRequ
 
 " [打印设置和打印通知](https://go.microsoft.com/fwlink/p/?LinkID=242862) " 示例演示如何设置定义的功能，这些功能涵盖大多数打印选项。 但是，某些选项需要自定义 UI 才能获取用户指定的值。 例如，如果应用使用 "高级打印" 设置来指定自定义页面大小，则需要执行以下步骤来保存用户指定的值：
 
-1. 在应用程序激活过程中检索打印票证。 [步骤3：处理激活](#step3)中前面介绍了 "打印设置" 应用程序激活。
+1. 在应用程序激活过程中检索打印票证。 [步骤3：处理激活](#step-3-handle-activation)中前面介绍了 "打印设置" 应用程序激活。
 
 2. 检查是否指定了 "页面大小" 选项。 在 c # 或 JS 应用程序中，print helper 类可以检查此选项。 在 c + + 应用程序中，对 IPrintSchemaOption 调用 QueryInterface 以检索 IPrintSchemaPageMediaSizeOption。
 
@@ -624,7 +624,7 @@ async private void OnSaveRequested(object sender, PrintTaskConfigurationSaveRequ
 
 6. 重新连接打印机，以便 Windows 在连接设备时读取更新的设备元数据。
 
-## <a name="troubleshooting"></a>疑难解答
+## <a name="troubleshooting"></a>故障排除
 
 ### <a name="issue-advanced-print-settings-shows-default-flyout-instead-of-custom-flyout"></a>问题：高级打印设置显示默认浮出控件，而不是自定义飞出
 

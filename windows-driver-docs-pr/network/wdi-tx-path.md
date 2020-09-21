@@ -4,12 +4,12 @@ description: 本部分介绍 WDI TX 路径
 ms.assetid: 8DF3E82E-761E-4A90-A789-1CB8EE8F0377
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e56eebb053299365995d421c1637a5486fc95ee0
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 5f3605cefcf61e00604ba3052c9f3aa13a7234d8
+ms.sourcegitcommit: 74a8dc9ef1da03857dec5cab8d304e2869ba54a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89216080"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90759768"
 ---
 # <a name="wdi-tx-path"></a>WDI TX 路径
 
@@ -82,12 +82,16 @@ TxMgr 根据队列模式按以下方式计划队列。
 
 Ihv 保留范围内的由 IHV 注入的帧会映射到以下扩展的 ACs，目的是制定优先级计划。 该表按优先级提高。
 
-|              |        |        |        |        |         |         |         |         |
-|--------------|--------|--------|--------|--------|---------|---------|---------|---------|
-| 扩展 TID | 17     | 18     | 19     | 20     | 21      | 22      | 23      | 24      |
-| 扩展 AC  | AC \_ BK | AC \_ | AC \_ VI | AC \_ VO | AC \_ PR0 | AC \_ PR1 | AC \_ pr2)  | AC \_ PR3 |
-
- 
+| 扩展 TID | 扩展 AC |
+| - | - |
+| 17 | AC \_ BK |
+| 18 | AC \_ |
+| 19 | AC \_ VI |
+| 20 | AC \_ VO |
+| 21 | AC \_ PR0 |
+| 22 | AC \_ PR1 |
+| 23 | AC \_ pr2)  |
+| 24 | AC \_ PR3 |
 
 对于 WDI 端口队列，无论扩展 TID 如何，所有注入的帧都同样被视为相同。
 

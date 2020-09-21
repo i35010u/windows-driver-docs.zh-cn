@@ -4,12 +4,12 @@ description: Windows 安全模型主要基于每个对象的权限，具有少�
 ms.assetid: 3A7ECA7C-1FE6-4ADB-97A9-A61C6FCE9F04
 ms.date: 02/01/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 55c3f221e9b4ef4cd8ca290c08c0de541099ae72
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 687aab736b2b8921ce6bf0af52f00deb2f73aaef
+ms.sourcegitcommit: 6c42efc074ab939e7737d6c2b016d3f3a75954e1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 09/17/2020
-ms.locfileid: "90717516"
+ms.locfileid: "90741022"
 ---
 # <a name="span-idintroductionspanspan-idintroductionspanspan-idintroductionspanwindows-security-model-for-driver-developers"></a><span id="Introduction"></span><span id="introduction"></span><span id="INTRODUCTION"></span>驱动程序开发人员的 Windows 安全模型
 
@@ -111,7 +111,7 @@ SDDL 是一种可扩展的描述语言，可让组件以字符串格式创建 Ac
 
 **示例文件 ACL**
 
-| 权限 | SID        | 访问                |
+| 权限 | SID        | Access                |
 |------------|------------|-----------------------|
 | Allow      | 计帐 | 写入、删除         |
 | Allow      | Sales      | 追加                |
@@ -213,7 +213,7 @@ SDDL 是一种可扩展的描述语言，可让组件以字符串格式创建 Ac
 
 操作系统内核会将每个驱动程序视为具有自己的命名空间的文件系统。 因此，当调用方尝试在设备命名空间中创建对象时，i/o 管理器会检查进程是否有权使用路径中的目录。 
 
-对于 WDM 驱动程序，除非已创建指定 FILE_DEVICE_SECURE_OPEN 的设备对象，否则 i/o 管理器不会对该命名空间执行安全检查。  如果未设置 FILE_DEVICE_SECURE_OPEN，驱动程序将负责确保其命名空间的安全性。 有关详细信息，请参阅 [控制设备命名空间访问](../kernel/controlling-device-namespace-access.md) 和 [保护设备对象](https://docs.microsoft.com/windows-hardware/drivers/kernel/securing-device-objects)。
+对于 WDM 驱动程序，除非已创建指定 FILE_DEVICE_SECURE_OPEN 的设备对象，否则 i/o 管理器不会对该命名空间执行安全检查。  如果未设置 FILE_DEVICE_SECURE_OPEN，驱动程序将负责确保其命名空间的安全性。 有关详细信息，请参阅 [控制设备命名空间访问](../kernel/controlling-device-namespace-access.md) 和 [保护设备对象](../kernel/controlling-device-access.md)。
 
 对于 WDF 驱动程序，将始终设置 FILE_DEVICE_SECURE_OPEN 标志，以便在允许应用程序访问设备的命名空间中的任何名称之前，将检查设备的安全描述符。 有关详细信息，请参阅 [在 KMDF 驱动程序中控制设备访问](../wdf/controlling-device-access-in-kmdf-drivers.md)。
 
@@ -256,6 +256,6 @@ SDDL 是一种可扩展的描述语言，可让组件以字符串格式创建 Ac
 
 ### <a name="see-also"></a>另请参阅
 
-[保护设备对象](https://docs.microsoft.com/windows-hardware/drivers/kernel/securing-device-objects)
+[保护设备对象](../kernel/controlling-device-access.md)
 
 [驱动程序安全清单](driver-security-checklist.md)

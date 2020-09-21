@@ -11,16 +11,16 @@ keywords:
 - 网络接口卡 WDK 网络，s
 ms.date: 06/11/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: fc9d3c915a8ff3a0bf438649d8649d3bf9a8e4d0
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 70df22ef3a35109395dc67291ad1f457e1904238
+ms.sourcegitcommit: 366a15d68eb58d01a8ca6de7b982f62ac8b7deaf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89212379"
+ms.lasthandoff: 09/19/2020
+ms.locfileid: "90811994"
 ---
 # <a name="ndis-scattergather-dma"></a>NDIS 分散/聚合 DMA
 
-[!include[NDIS DMA ARM note](ndis-dma-arm-note.md)]
+[!include[NDIS DMA ARM note](../includes/ndis-dma-arm-note.md)]
 
 NDIS 微型端口驱动程序可以使用散播/聚集 DMA (SGDMA) 方法在 NIC 和系统内存之间传输数据。 成功的 DMA 传输要求数据的物理地址位于 NIC 支持的地址范围内。 HAL 为驱动程序提供了一种机制，用于获取 MDL 链的物理地址列表，并在必要时将数据双缓冲到一个物理地址范围。
 

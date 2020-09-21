@@ -4,12 +4,12 @@ title: 驱动程序项目的 MOF 编译器属性
 description: 托管对象格式 (MOF) 编译器 (mofcomp.exe) 用于解析 MOF 文件并将文件中定义的类和类实例添加到 WMI 存储库中。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1f86438ca816e5c0ad25b0407a5c7a2552bfa879
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: f20ee57d573fb6b260196499f99caebba789687f
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89207634"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90104152"
 ---
 # <a name="mof-compiler-properties-for-driver-projects"></a>驱动程序项目的 MOF 编译器属性
 
@@ -38,7 +38,7 @@ ms.locfileid: "89207634"
 <tbody>
 <tr class="odd">
 <td align="left"><p><span id="Additional_Options"></span><span id="additional_options"></span><span id="ADDITIONAL_OPTIONS"></span><strong>其他选项</strong></p></td>
-<td align="left"><p>指定要传递给 <a href="https://docs.microsoft.com/windows/desktop/WmiSdk/mofcomp" data-raw-source="[&lt;strong&gt;mofcomp&lt;/strong&gt;](/windows/desktop/WmiSdk/mofcomp)"><strong>mofcomp</strong></a> 工具的其他选项。</p></td>
+<td align="left"><p>指定要传递给 <a href="/windows/desktop/WmiSdk/mofcomp" data-raw-source="[&lt;strong&gt;mofcomp&lt;/strong&gt;](/windows/desktop/WmiSdk/mofcomp)"><strong>mofcomp</strong></a> 工具的其他选项。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><span id="Amendement"></span><span id="amendement"></span><span id="AMENDEMENT"></span><strong>修订</strong></p></td>
@@ -72,7 +72,7 @@ ms.locfileid: "89207634"
 <p><strong>安全更新 (-class:safeupdate)</strong> 即使存在子类，也允许更新类，只要更改不会导致与子类冲突。</p>
 <p><strong>仅更新 (-class:updateonly)</strong> 请求编译器不创建任何新类。</p>
 <p></p>
-<p>有关详细信息，请参阅 <a href="https://docs.microsoft.com/windows/desktop/WmiSdk/mofcomp" data-raw-source="[&lt;strong&gt;mofcomp&lt;/strong&gt;](/windows/desktop/WmiSdk/mofcomp)"><strong>mofcomp</strong></a>。</p></td>
+<p>有关详细信息，请参阅 <a href="/windows/desktop/WmiSdk/mofcomp" data-raw-source="[&lt;strong&gt;mofcomp&lt;/strong&gt;](/windows/desktop/WmiSdk/mofcomp)"><strong>mofcomp</strong></a>。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><span id="NamespacePath"></span><span id="namespacepath"></span><span id="NAMESPACEPATH"></span><strong>NamespacePath</strong></p></td>
@@ -105,5 +105,3 @@ ms.locfileid: "89207634"
 * [编译 MOF 文件](/windows/desktop/WmiSdk/compiling-mof-files)
 * [编译驱动程序 MOF 文件](../kernel/compiling-a-driver-s-mof-file.md)
 * [**mofcomp**](/windows/desktop/WmiSdk/mofcomp)
- 
-

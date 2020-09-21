@@ -4,12 +4,12 @@ title: 驱动程序项目的计数器清单预处理器属性
 description: 设置分析和验证计数器清单的 CTRPP 工具的属性。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fd49c391d5e95bb45fa626669d0092effc02e886
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 421fe0b864c030fdb95431512f7707362da1b8f9
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89217846"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90101612"
 ---
 # <a name="counters-manifest-preprocessor-properties-for-driver-projects"></a>驱动程序项目的计数器清单预处理器属性
 
@@ -42,7 +42,7 @@ ms.locfileid: "89217846"
 </tr>
 <tr class="even">
 <td align="left"><p><span id="Additional_Options"></span><span id="additional_options"></span><span id="ADDITIONAL_OPTIONS"></span>其他选项</p></td>
-<td align="left"><p>向 <a href="https://docs.microsoft.com/windows/desktop/PerfCtrs/ctrpp" data-raw-source="[&lt;strong&gt;CTRPP&lt;/strong&gt;](/windows/desktop/PerfCtrs/ctrpp)"><strong>CTRPP</strong></a> 工具指定其他选项。</p></td>
+<td align="left"><p>向 <a href="/windows/desktop/PerfCtrs/ctrpp" data-raw-source="[&lt;strong&gt;CTRPP&lt;/strong&gt;](/windows/desktop/PerfCtrs/ctrpp)"><strong>CTRPP</strong></a> 工具指定其他选项。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><span id="Backward_Compatibility"></span><span id="backward_compatibility"></span><span id="BACKWARD_COMPATIBILITY"></span>向后兼容</p></td>
@@ -50,7 +50,7 @@ ms.locfileid: "89217846"
 </tr>
 <tr class="even">
 <td align="left"><p><span id="Enable_Legacy"></span><span id="enable_legacy"></span><span id="ENABLE_LEGACY"></span>启用旧版</p></td>
-<td align="left"><p>还原为使用 Windows Vista 代码模板生成代码。 此选项会让 <a href="https://docs.microsoft.com/windows/desktop/PerfCtrs/ctrpp" data-raw-source="[&lt;strong&gt;CTRPP&lt;/strong&gt;](/windows/desktop/PerfCtrs/ctrpp)"><strong>CTRPP</strong></a> 生成四个输出文件：两个头文件（.h、_r.h）、一个资源文件 (.rc) 和一个源代码文件 (c)。 (<strong>-legacy</strong>)</p></td>
+<td align="left"><p>还原为使用 Windows Vista 代码模板生成代码。 此选项会让 <a href="/windows/desktop/PerfCtrs/ctrpp" data-raw-source="[&lt;strong&gt;CTRPP&lt;/strong&gt;](/windows/desktop/PerfCtrs/ctrpp)"><strong>CTRPP</strong></a> 生成四个输出文件：两个头文件（.h、_r.h）、一个资源文件 (.rc) 和一个源代码文件 (c)。 (<strong>-legacy</strong>)</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><span id="Generate_header_file_for_containing_counter_names_and_GUIDs"></span><span id="generate_header_file_for_containing_counter_names_and_guids"></span><span id="GENERATE_HEADER_FILE_FOR_CONTAINING_COUNTER_NAMES_AND_GUIDS"></span>生成包含计数器名称和 GUID 的头文件</p></td>
@@ -110,5 +110,3 @@ ms.locfileid: "89217846"
 * [**CTRPP**](/windows/desktop/PerfCtrs/ctrpp)
 * [性能计数器](/windows/desktop/PerfCtrs/performance-counters-portal)
 * [内核模式性能监视](../devtest/kernel-mode-performance-monitoring.md)
- 
-

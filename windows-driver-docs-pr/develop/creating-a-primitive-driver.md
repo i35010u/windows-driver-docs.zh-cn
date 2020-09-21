@@ -4,12 +4,12 @@ description: 通过基元驱动程序处理和管理使用基于 INF 的安装�
 ms.date: 04/16/2019
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: f94196f43c400ebd8d73a8a21f075f68219ae3d7
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 03c90ba54062db06e658bb1e29bcf58acf240a77
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89065202"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90715004"
 ---
 # <a name="creating-a-new-primitive-driver"></a>创建新的基元驱动程序
 
@@ -57,7 +57,7 @@ ms.locfileid: "89065202"
 
 ## <a name="primitive-drivers-targeting-only-windows-10-version-1903-and-later"></a>仅面向 Windows 10 版本 1903 和更高版本的基元驱动程序
 
-仅面向 Windows 10 版本 1903 和更高版本的基元驱动程序应使用 [DiInstallDriver](/windows/desktop/api/newdev/nf-newdev-diinstalldriverw) 和 [DiUninstallDriver](/windows/desktop/api/newdev/nf-newdev-diuninstalldriverw) 在驱动程序存储中正确安装和卸载其软件。
+仅面向 Windows 10 版本 1903 和更高版本的基元驱动程序应使用 [DiInstallDriver](/windows/win32/api/newdev/nf-newdev-diinstalldriverw) 和 [DiUninstallDriver](/windows/win32/api/newdev/nf-newdev-diuninstalldriverw) 在驱动程序存储中正确安装和卸载其软件。
 
 驱动程序还应使用 Dirid 13 将驱动程序存储正确指定为所需的安装目标。 有关 Dirid 的详细信息，请参阅[使用 Dirid](../install/using-dirids.md)。
 
@@ -72,7 +72,7 @@ LegacyUninstall=1
 
 \[DefaultInstall\] 和 \[DefaultUninstall\] 节中的**体系结构仍必须经过修饰**；但是，如果包含 `LegacyUninstall=1`，则 Windows 会忽略 \[DefaultUninstall\] 节（在 Windows 10 版本 1903 和更高版本中）。 这样，就可以在 INF 中包含该节，从而可以在下层的传统安装/卸载应用程序中使用该节来卸载基元驱动程序包。
 
-从 Windows 10 版本 1903 开始，如果将经过体系结构修饰的 \[DefaultInstall\] 或 \[DefaultUninstall\] 节传入 setupapi.dll 中的 [InstallHInfSection](/windows/desktop/api/setupapi/nf-setupapi-installhinfsectionw) API，则会检查驱动程序包，以确定它是否支持基元驱动程序功能。 如果它不支持基元驱动程序功能，则不会以传统方式处理指定的节，而是适当地将 INF 传递给 [DiInstallDriver](/windows/desktop/api/newdev/nf-newdev-diinstalldrivera) 或 [DiUninstallDriver](/windows/desktop/api/newdev/nf-newdev-diuninstalldriverw)。 这样，单个安装程序就可以在兼容的 OS 版本中使用基元驱动程序，并保留以往 OS 版本的支持。
+从 Windows 10 版本 1903 开始，如果将经过体系结构修饰的 \[DefaultInstall\] 或 \[DefaultUninstall\] 节传入 setupapi.dll 中的 [InstallHInfSection](/windows/win32/api/setupapi/nf-setupapi-installhinfsectionw) API，则会检查驱动程序包，以确定它是否支持基元驱动程序功能。 如果它不支持基元驱动程序功能，则不会以传统方式处理指定的节，而是适当地将 INF 传递给 [DiInstallDriver](/windows/win32/api/newdev/nf-newdev-diinstalldrivera) 或 [DiUninstallDriver](/windows/win32/api/newdev/nf-newdev-diuninstalldriverw)。 这样，单个安装程序就可以在兼容的 OS 版本中使用基元驱动程序，并保留以往 OS 版本的支持。
 
 ## <a name="converting-from-a-device-driver-inf"></a>从设备驱动程序 INF 进行转换
 

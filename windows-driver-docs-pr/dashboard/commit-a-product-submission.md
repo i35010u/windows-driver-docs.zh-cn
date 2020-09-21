@@ -1,17 +1,15 @@
 ---
 title: 确认产品提交
 description: 在 Microsoft 硬件 API 中使用此方法向合作伙伴中心确认新提交。
-author: balapv
-ms.author: balapv
 ms.date: 04/05/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 342b8c0f53a5bc38771dc29816384ef46c21938f
-ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
+ms.openlocfilehash: ec8ebe75d2762f6a2c9794a8d39b77831509d6fc
+ms.sourcegitcommit: a5f76805387760730faed5674d87201ec85b7dd3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "77072224"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90112088"
 ---
 # <a name="commit-a-product-submission"></a>确认产品提交
 
@@ -27,10 +25,9 @@ ms.locfileid: "77072224"
 
 此方法具有以下语法。 请参阅以下部分，获取标头和请求正文的使用示例和描述。
 
-
 | 方法 | 请求 URI                                                                                                    |
 |:-------|:---------------------------------------------------------------------------------------------------------------|
-| POST   | https://manage.devcenter.microsoft.com/v2.0/my/hardware/products/{productID}/submissions/{submissionID}/commit |
+| POST   | `https://manage.devcenter.microsoft.com/v2.0/my/hardware/products/{productID}/submissions/{submissionID}/commit`|
 
 此方法中的 productId 是提交所适用于的产品。 此方法中的 submssionID 是正在确认的提交。
 
@@ -38,7 +35,7 @@ ms.locfileid: "77072224"
 
 | Header | 类型 | 说明 |
 |:--|:--|:--|
-| Authorization | 字符串 | 必需。 Azure AD 访问令牌的格式为 **Bearer** \<token\>。 |
+| Authorization | 字符串 | 必需。 Azure AD 访问令牌的格式为 Bearer \<token\>。 |
 | accept | 字符串 | 可选。 指定内容的类型。 允许的值是“application/json” |
 
 ### <a name="request-parameters"></a>请求参数

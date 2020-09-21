@@ -6,12 +6,12 @@ keywords:
 - Windows Vista WDK、NDIS 5.1 网络驱动程序、Windows 2000 网络驱动程序、Windows XP 网络驱动程序之前的网络驱动程序
 ms.date: 12/07/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7fbe687d1df48b0edc457694278c4e2e22266dc7
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 20b469a670b3673704b230a9047756a573230b22
+ms.sourcegitcommit: 366a15d68eb58d01a8ca6de7b982f62ac8b7deaf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89210665"
+ms.lasthandoff: 09/19/2020
+ms.locfileid: "90811972"
 ---
 # <a name="network-drivers-prior-to-windows-vista"></a>Windows Vista 以前的网络驱动程序
 
@@ -21,4 +21,4 @@ Windows Vista 之前的网络驱动程序使用 NDIS 5.1，该版本在 Windows 
 
 ## <a name="related-topics"></a>相关主题
 
-[旧版网络驱动程序](previous-versions-of-network-drivers.md)
+[旧版网络驱动程序](network-drivers-prior-to-windows-vista.md)

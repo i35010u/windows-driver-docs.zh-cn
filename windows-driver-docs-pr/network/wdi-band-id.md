@@ -6,12 +6,12 @@ keywords:
 - WDI_BAND_ID，WDK WDI_BAND_ID 网络驱动程序
 ms.date: 11/27/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d8c5744120f400a1e73d9d8ce4f86a1c29c8724b
-ms.sourcegitcommit: ca5045a739eefd6ed14b9dbd9249b335e090c4e9
+ms.openlocfilehash: 18e4555ee2153c12c29bbed91fa79dc74801587b
+ms.sourcegitcommit: 74a8dc9ef1da03857dec5cab8d304e2869ba54a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/06/2020
-ms.locfileid: "85968240"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90759782"
 ---
 # <a name="wdi_band_id"></a>WDI_BAND_ID
 
@@ -25,7 +25,7 @@ typedef UINT32 WDI_BAND_ID;
 
 可能的带区 ID 值如下所示：
 
-| Value |   | 说明 |
+| “属性” | “值”  | 描述 |
 | --- | --- | --- |
 | WDI_BAND_ID_ANY | 0xFFFFFFFF | 所有带区 |
 | WDI_BAND_ID_2400 | 1 | 2.4 GHz |

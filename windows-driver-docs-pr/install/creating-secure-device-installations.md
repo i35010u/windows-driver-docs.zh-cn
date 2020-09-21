@@ -14,12 +14,12 @@ keywords:
 - WMI 安全 WDK 设备安装
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 02635a6c13efe3b44fefc570399d0f75ff67ee72
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 02d33084908fc2e8a1f1cf9d1cddd472290232ca
+ms.sourcegitcommit: 6c42efc074ab939e7737d6c2b016d3f3a75954e1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89097149"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90741032"
 ---
 # <a name="creating-secure-device-installations"></a>创建安全的设备安装
 
@@ -57,7 +57,7 @@ WDM 驱动程序的 INF 文件可以指定每个类或每个设备的安全设�
 
 但是，系统不会默认情况下将设备的安全描述符集应用于请求，以打开设备命名空间中的对象，其中设备命名空间包含其名称格式为* \\ 设备 \\ DeviceName \\ ObjectName*的所有对象。 若要确保对设备的命名空间中的对象的打开请求应用相同的安全设置，请为设备设置 FILE_DEVICE_SECURE_OPEN 设备特征标志。 有关安全设备访问的详细信息，请参阅 [ (Windows 驱动程序) 控制设备命名空间访问 ](../kernel/controlling-device-namespace-access.md)。 有关如何设置 FILE_DEVICE_SECURE_OPEN 设备特征标志的信息，请参阅 [ (Windows 驱动程序) 指定设备特征 ](../kernel/specifying-device-characteristics.md)。
 
-PnP 管理器在调用驱动程序的 [**AddDevice**](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_add_device) 例程后设置设备对象上的安全值。 某些 WDM 驱动程序可以在通过调用 [**IoCreateDeviceSecure**](/windows-hardware/drivers/ddi/wdmsec/nf-wdmsec-wdmlibiocreatedevicesecure)创建 (PDO) 的物理设备对象时指定设备特定的安全描述符。 有关详细信息，请参阅 [保护设备对象](https://docs.microsoft.com/windows-hardware/drivers/kernel/securing-device-objects)。
+PnP 管理器在调用驱动程序的 [**AddDevice**](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_add_device) 例程后设置设备对象上的安全值。 某些 WDM 驱动程序可以在通过调用 [**IoCreateDeviceSecure**](/windows-hardware/drivers/ddi/wdmsec/nf-wdmsec-wdmlibiocreatedevicesecure)创建 (PDO) 的物理设备对象时指定设备特定的安全描述符。 有关详细信息，请参阅 [保护设备对象](../kernel/controlling-device-access.md)。
 
 ### <a name="security-settings-for-driver-files"></a>驱动程序文件的安全设置
 
@@ -94,6 +94,4 @@ PnP 管理器在调用驱动程序的 [**AddDevice**](/windows-hardware/drivers/
 -   使用注册表编辑器查看分配给注册表项的安全设置。
 
 -   使用 **我的电脑** 查看分配给文件的安全设置。
-
- 
 

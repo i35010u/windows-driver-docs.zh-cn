@@ -4,12 +4,12 @@ title: 使用 WDK 生成驱动程序
 description: 本主题介绍了如何使用 Windows 驱动程序工具包 (WDK) 生成驱动程序。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 295d54abedf8b1beab8d6a09a487250b6955d4e6
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 6e503574f4bd08150e1fcb65cbe99b0e0fb6a583
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89217872"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90101780"
 ---
 # <a name="using-visual-studio-or-msbuild-to-build-a-driver"></a>使用 Visual Studio 或 MSBuild 生成驱动程序
 
@@ -102,7 +102,7 @@ WDK 提供了大量的命令行工具，如 [Stampinf](../devtest/stampinf.md) �
 <td align="left"><p>驱动程序包的签名属性（请参阅<a href="signing-a-driver.md" data-raw-source="[Signing a Driver](signing-a-driver.md)">为驱动程序签名</a>）</p></td>
 </tr>
 <tr class="even">
-<td align="left"><a href="counters-manifest-preprocessor-properties-for-driver-projects.md" data-raw-source="[Counters Manifest Preprocessor Properties for Driver Projects](counters-manifest-preprocessor-properties-for-driver-projects.md)">驱动程序项目的计数器清单预处理器属性</a>（适用于 <a href="https://docs.microsoft.com/windows/desktop/PerfCtrs/ctrpp" data-raw-source="[CTRPP](/windows/desktop/PerfCtrs/ctrpp)">CTRPP</a>）</td>
+<td align="left"><a href="counters-manifest-preprocessor-properties-for-driver-projects.md" data-raw-source="[Counters Manifest Preprocessor Properties for Driver Projects](counters-manifest-preprocessor-properties-for-driver-projects.md)">驱动程序项目的计数器清单预处理器属性</a>（适用于 <a href="/windows/desktop/PerfCtrs/ctrpp" data-raw-source="[CTRPP](/windows/desktop/PerfCtrs/ctrpp)">CTRPP</a>）</td>
 <td align="left"><p><a href="deployment-properties-for-driver-projects.md" data-raw-source="[Deployment Properties for Driver Package Projects](deployment-properties-for-driver-projects.md)">驱动程序包项目的部署属性</a>（请参阅<a href="deploying-a-driver-to-a-test-computer.md" data-raw-source="[Deploying a Driver to a Test Computer](deploying-a-driver-to-a-test-computer.md)">将驱动程序部署到测试计算机</a>）</p></td>
 </tr>
 <tr class="odd">
@@ -118,7 +118,7 @@ WDK 提供了大量的命令行工具，如 [Stampinf](../devtest/stampinf.md) �
 <td align="left"><p><a href="umdf-verifier-properties-for-driver-package-projects.md" data-raw-source="[UMDF Verifier Properties for Driver Package Projects](umdf-verifier-properties-for-driver-package-projects.md)">驱动程序包项目的 UMDF 验证程序属性</a></p></td>
 </tr>
 <tr class="even">
-<td align="left"><a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/wpp-preprocessor" data-raw-source="[WPP Preprocessor (WPP Tracing)](../devtest/wpp-preprocessor.md)">WPP 预处理器（WPP 跟踪）</a></td>
+<td align="left"><a href="/windows-hardware/drivers/devtest/wpp-preprocessor" data-raw-source="[WPP Preprocessor (WPP Tracing)](../devtest/wpp-preprocessor.md)">WPP 预处理器（WPP 跟踪）</a></td>
 <td align="left"><p><a href="inf2cat-properties-for-driver-package-projects.md" data-raw-source="[Inf2Cat Properties for Driver Package Projects](inf2cat-properties-for-driver-package-projects.md)">驱动程序包项目的 Inf2Cat 属性</a>（请参阅 <a href="../devtest/inf2cat.md" data-raw-source="[&lt;strong&gt;Inf2Cat&lt;/strong&gt;](../devtest/inf2cat.md)"><strong>Inf2Cat</strong></a> 工具）</p></td>
 </tr>
 </tbody>

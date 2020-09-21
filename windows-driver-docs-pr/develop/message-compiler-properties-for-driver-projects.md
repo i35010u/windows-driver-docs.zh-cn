@@ -4,12 +4,12 @@ title: 驱动程序项目的消息编译器属性
 description: 设置消息编译器 (MC.exe) 工具的属性。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4bf859b169bc369c9fd7bbe396b04d116fa6c462
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 98f02143ba89288f0af5376ae8c3602de99ccb37
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89207637"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90104154"
 ---
 # <a name="message-compiler-properties-for-driver-projects"></a>驱动程序项目的消息编译器属性
 
@@ -40,7 +40,7 @@ ms.locfileid: "89207637"
 <tbody>
 <tr class="odd">
 <td align="left"><p><span id="Additional_Options"></span><span id="additional_options"></span><span id="ADDITIONAL_OPTIONS"></span><strong>其他选项</strong></p></td>
-<td align="left"><p>指定要传递至<a href="https://docs.microsoft.com/windows/desktop/WES/message-compiler--mc-exe-" data-raw-source="[&lt;strong&gt;Message Compiler (MC.exe)&lt;/strong&gt;](/windows/desktop/WES/message-compiler--mc-exe-)"><strong>消息编译器 (MC.exe)</strong></a> 工具的其他选项。</p></td>
+<td align="left"><p>指定要传递至<a href="/windows/desktop/WES/message-compiler--mc-exe-" data-raw-source="[&lt;strong&gt;Message Compiler (MC.exe)&lt;/strong&gt;](/windows/desktop/WES/message-compiler--mc-exe-)"><strong>消息编译器 (MC.exe)</strong></a> 工具的其他选项。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><span id="Ansi_Input_File"></span><span id="ansi_input_file"></span><span id="ANSI_INPUT_FILE"></span><strong>Ansi 输入文件</strong></p></td>
@@ -179,5 +179,3 @@ ms.locfileid: "89207637"
 * [消息编译器 (MC.exe)](../devtest/message-compiler-task.md)
 * [WDK 和 Visual Studio 生成环境](../devtest/wdk-and-visual-studio-build-environment.md)消息编译器任务
 * [Windows 事件跟踪 (ETW)](../devtest/event-tracing-for-windows--etw-.md)
- 
-

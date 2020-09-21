@@ -3,12 +3,12 @@ description: 本主题提供了一些准则，用于确定是应该编写 UWP �
 title: 为 USB 设备开发 Windows 应用程序的概述
 ms.date: 04/20/2017
 ms.localizationpriority: High
-ms.openlocfilehash: 28f3a8988f9fb228f50348a48eda28b19cd84b39
-ms.sourcegitcommit: 937974aa9bbe0262a7ffe9631593fab48c4e7492
+ms.openlocfilehash: 8413d3b45324fa50018105035c5e9630ee9d7f85
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "90010293"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90715510"
 ---
 # <a name="overview-of-developing-windows-applications-for-usb-devices"></a>为 USB 设备开发 Windows 应用程序的概述
 
@@ -180,52 +180,52 @@ Windows 提供了 API 集，可用于编写与自定义 USB 设备通信的应�
 <tbody>
 <tr class="odd">
 <td>设备发现</td>
-<td>使用 <a href="https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration" data-raw-source="[&lt;strong&gt;Windows.Devices.Enumeration&lt;/strong&gt;](/uwp/api/Windows.Devices.Enumeration)">Windows.Devices.Enumeration</a> 命名空间获取 <a href="https://docs.microsoft.com/uwp/api/Windows.Devices.Usb.UsbDevice" data-raw-source="[&lt;strong&gt;UsbDevice&lt;/strong&gt;](/uwp/api/Windows.Devices.Usb.UsbDevice)">UsbDevice</a>。</td>
-<td>使用 <a href="/windows-hardware/drivers/install/setupapi" data-raw-source="[SetupAPI](/windows-hardware/drivers/install/setupapi)">SetupAPI</a> 函数和 <a href="https://docs.microsoft.com/windows/desktop/api/winusb/nf-winusb-winusb_initialize" data-raw-source="[&lt;strong&gt;WinUsb_Initialize&lt;/strong&gt;](/windows/desktop/api/winusb/nf-winusb-winusb_initialize)">WinUsb_Initialize</a> 获取 WINUSB_INTERFACE_HANDLE。</td>
+<td>使用 <a href="/uwp/api/Windows.Devices.Enumeration" data-raw-source="[&lt;strong&gt;Windows.Devices.Enumeration&lt;/strong&gt;](/uwp/api/Windows.Devices.Enumeration)">Windows.Devices.Enumeration</a> 命名空间获取 <a href="/uwp/api/Windows.Devices.Usb.UsbDevice" data-raw-source="[&lt;strong&gt;UsbDevice&lt;/strong&gt;](/uwp/api/Windows.Devices.Usb.UsbDevice)">UsbDevice</a>。</td>
+<td>使用 <a href="/windows-hardware/drivers/install/setupapi" data-raw-source="[SetupAPI](../install/setupapi.md)">SetupAPI</a> 函数和 <a href="/windows/win32/api/winusb/nf-winusb-winusb_initialize" data-raw-source="[&lt;strong&gt;WinUsb_Initialize&lt;/strong&gt;](/windows/win32/api/winusb/nf-winusb-winusb_initialize)">WinUsb_Initialize</a> 获取 WINUSB_INTERFACE_HANDLE。</td>
 </tr>
 <tr class="even">
 <td>USB 控制传输</td>
-<td><p><a href="https://docs.microsoft.com/uwp/api/Windows.Devices.Usb.UsbSetupPacket" data-raw-source="[&lt;strong&gt;UsbSetupPacket&lt;/strong&gt;](/uwp/api/Windows.Devices.Usb.UsbSetupPacket)">UsbSetupPacket</a></p>
-<p><a href="https://docs.microsoft.com/uwp/api/Windows.Devices.Usb.UsbControlRequestType" data-raw-source="[&lt;strong&gt;UsbControlRequestType&lt;/strong&gt;](/uwp/api/Windows.Devices.Usb.UsbControlRequestType)">UsbControlRequestType</a></p>
-<p><a href="https://docs.microsoft.com/uwp/api/Windows.Devices.Usb.UsbDevice#Windows_Devices_Usb_UsbDevice_SendControlInTransferAsync_Windows_Devices_Usb_UsbSetupPacket_Windows_Storage_Streams_IBuffer_" data-raw-source="[&lt;strong&gt;UsbDevice.SendControlInTransferAsync&lt;/strong&gt;](/uwp/api/Windows.Devices.Usb.UsbDevice#Windows_Devices_Usb_UsbDevice_SendControlInTransferAsync_Windows_Devices_Usb_UsbSetupPacket_Windows_Storage_Streams_IBuffer_)">UsbDevice.SendControlInTransferAsync</a></p>
-<p><a href="https://docs.microsoft.com/uwp/api/Windows.Devices.Usb.UsbDevice#Windows_Devices_Usb_UsbDevice_SendControlOutTransferAsync_Windows_Devices_Usb_UsbSetupPacket_" data-raw-source="[&lt;strong&gt;UsbDevice.SendControlOutTransferAsync&lt;/strong&gt;](/uwp/api/Windows.Devices.Usb.UsbDevice#Windows_Devices_Usb_UsbDevice_SendControlOutTransferAsync_Windows_Devices_Usb_UsbSetupPacket_)">UsbDevice.SendControlOutTransferAsync</a></p></td>
-<td><p><a href="https://docs.microsoft.com/windows/desktop/api/winusb/ns-winusb-_winusb_setup_packet" data-raw-source="[&lt;strong&gt;WINUSB_SETUP_PACKET&lt;/strong&gt;](/windows/desktop/api/winusb/ns-winusb-_winusb_setup_packet)">WINUSB_SETUP_PACKET</a></p>
-<p><a href="https://docs.microsoft.com/windows/desktop/api/winusb/nf-winusb-winusb_controltransfer" data-raw-source="[&lt;strong&gt;WinUsb_ControlTransfer&lt;/strong&gt;](/windows/desktop/api/winusb/nf-winusb-winusb_controltransfer)">WinUsb_ControlTransfer</a></p></td>
+<td><p><a href="/uwp/api/Windows.Devices.Usb.UsbSetupPacket" data-raw-source="[&lt;strong&gt;UsbSetupPacket&lt;/strong&gt;](/uwp/api/Windows.Devices.Usb.UsbSetupPacket)">UsbSetupPacket</a></p>
+<p><a href="/uwp/api/Windows.Devices.Usb.UsbControlRequestType" data-raw-source="[&lt;strong&gt;UsbControlRequestType&lt;/strong&gt;](/uwp/api/Windows.Devices.Usb.UsbControlRequestType)">UsbControlRequestType</a></p>
+<p><a href="/uwp/api/Windows.Devices.Usb.UsbDevice#Windows_Devices_Usb_UsbDevice_SendControlInTransferAsync_Windows_Devices_Usb_UsbSetupPacket_Windows_Storage_Streams_IBuffer_" data-raw-source="[&lt;strong&gt;UsbDevice.SendControlInTransferAsync&lt;/strong&gt;](/uwp/api/Windows.Devices.Usb.UsbDevice#Windows_Devices_Usb_UsbDevice_SendControlInTransferAsync_Windows_Devices_Usb_UsbSetupPacket_Windows_Storage_Streams_IBuffer_)">UsbDevice.SendControlInTransferAsync</a></p>
+<p><a href="/uwp/api/Windows.Devices.Usb.UsbDevice#Windows_Devices_Usb_UsbDevice_SendControlOutTransferAsync_Windows_Devices_Usb_UsbSetupPacket_" data-raw-source="[&lt;strong&gt;UsbDevice.SendControlOutTransferAsync&lt;/strong&gt;](/uwp/api/Windows.Devices.Usb.UsbDevice#Windows_Devices_Usb_UsbDevice_SendControlOutTransferAsync_Windows_Devices_Usb_UsbSetupPacket_)">UsbDevice.SendControlOutTransferAsync</a></p></td>
+<td><p><a href="/windows/win32/api/winusb/ns-winusb-_winusb_setup_packet" data-raw-source="[&lt;strong&gt;WINUSB_SETUP_PACKET&lt;/strong&gt;](/windows/win32/api/winusb/ns-winusb-_winusb_setup_packet)">WINUSB_SETUP_PACKET</a></p>
+<p><a href="/windows/win32/api/winusb/nf-winusb-winusb_controltransfer" data-raw-source="[&lt;strong&gt;WinUsb_ControlTransfer&lt;/strong&gt;](/windows/win32/api/winusb/nf-winusb-winusb_controltransfer)">WinUsb_ControlTransfer</a></p></td>
 </tr>
 <tr class="odd">
 <td>获取 USB 描述符</td>
-<td><p><a href="https://docs.microsoft.com/uwp/api/Windows.Devices.Usb.UsbDevice#Windows_Devices_Usb_UsbDevice_DeviceDescriptor" data-raw-source="[&lt;strong&gt;UsbDevice.DeviceDescriptor&lt;/strong&gt;](/uwp/api/Windows.Devices.Usb.UsbDevice#Windows_Devices_Usb_UsbDevice_DeviceDescriptor)">UsbDevice.DeviceDescriptor</a></p>
-<p><a href="https://docs.microsoft.com/uwp/api/Windows.Devices.Usb.UsbConfiguration#Windows_Devices_Usb_UsbConfiguration_Descriptors" data-raw-source="[&lt;strong&gt;UsbConfiguration.Descriptors&lt;/strong&gt;](/uwp/api/Windows.Devices.Usb.UsbConfiguration#Windows_Devices_Usb_UsbConfiguration_Descriptors)">UsbConfiguration.Descriptors</a></p>
-<p><a href="https://docs.microsoft.com/uwp/api/Windows.Devices.Usb.UsbInterface#Windows_Devices_Usb_UsbInterface_Descriptors" data-raw-source="[&lt;strong&gt;UsbInterface.Descriptors&lt;/strong&gt;](/uwp/api/Windows.Devices.Usb.UsbInterface#Windows_Devices_Usb_UsbInterface_Descriptors)">UsbInterface.Descriptors</a></p>
-<p><a href="https://docs.microsoft.com/uwp/api/Windows.Devices.Usb.UsbEndpointDescriptor" data-raw-source="[&lt;strong&gt;UsbEndpointDescriptor&lt;/strong&gt;](/uwp/api/Windows.Devices.Usb.UsbEndpointDescriptor)">UsbEndpointDescriptor</a></p></td>
-<td><a href="https://docs.microsoft.com/windows/desktop/api/winusb/nf-winusb-winusb_getdescriptor" data-raw-source="[&lt;strong&gt;WinUsb_GetDescriptor&lt;/strong&gt;](/windows/desktop/api/winusb/nf-winusb-winusb_getdescriptor)">WinUsb_GetDescriptor</a></td>
+<td><p><a href="/uwp/api/Windows.Devices.Usb.UsbDevice#Windows_Devices_Usb_UsbDevice_DeviceDescriptor" data-raw-source="[&lt;strong&gt;UsbDevice.DeviceDescriptor&lt;/strong&gt;](/uwp/api/Windows.Devices.Usb.UsbDevice#Windows_Devices_Usb_UsbDevice_DeviceDescriptor)">UsbDevice.DeviceDescriptor</a></p>
+<p><a href="/uwp/api/Windows.Devices.Usb.UsbConfiguration#Windows_Devices_Usb_UsbConfiguration_Descriptors" data-raw-source="[&lt;strong&gt;UsbConfiguration.Descriptors&lt;/strong&gt;](/uwp/api/Windows.Devices.Usb.UsbConfiguration#Windows_Devices_Usb_UsbConfiguration_Descriptors)">UsbConfiguration.Descriptors</a></p>
+<p><a href="/uwp/api/Windows.Devices.Usb.UsbInterface#Windows_Devices_Usb_UsbInterface_Descriptors" data-raw-source="[&lt;strong&gt;UsbInterface.Descriptors&lt;/strong&gt;](/uwp/api/Windows.Devices.Usb.UsbInterface#Windows_Devices_Usb_UsbInterface_Descriptors)">UsbInterface.Descriptors</a></p>
+<p><a href="/uwp/api/Windows.Devices.Usb.UsbEndpointDescriptor" data-raw-source="[&lt;strong&gt;UsbEndpointDescriptor&lt;/strong&gt;](/uwp/api/Windows.Devices.Usb.UsbEndpointDescriptor)">UsbEndpointDescriptor</a></p></td>
+<td><a href="/windows/win32/api/winusb/nf-winusb-winusb_getdescriptor" data-raw-source="[&lt;strong&gt;WinUsb_GetDescriptor&lt;/strong&gt;](/windows/win32/api/winusb/nf-winusb-winusb_getdescriptor)">WinUsb_GetDescriptor</a></td>
 </tr>
 <tr class="even">
 <td>发送 USB 批量传输</td>
-<td><p><a href="https://docs.microsoft.com/uwp/api/Windows.Devices.Usb.UsbBulkInPipe" data-raw-source="[&lt;strong&gt;UsbBulkInPipe&lt;/strong&gt;](/uwp/api/Windows.Devices.Usb.UsbBulkInPipe)">UsbBulkInPipe</a></p>
-<p><a href="https://docs.microsoft.com/uwp/api/Windows.Devices.Usb.UsbBulkOutPipe" data-raw-source="[&lt;strong&gt;UsbBulkOutPipe&lt;/strong&gt;](/uwp/api/Windows.Devices.Usb.UsbBulkOutPipe)">UsbBulkInPipe</a></p></td>
-<td><p><a href="https://docs.microsoft.com/windows/desktop/api/winusb/nf-winusb-winusb_readpipe" data-raw-source="[&lt;strong&gt;WinUsb_ReadPipe&lt;/strong&gt;](/windows/desktop/api/winusb/nf-winusb-winusb_readpipe)">WinUsb_ReadPipe</a></p>
-<p><a href="https://docs.microsoft.com/windows/desktop/api/winusb/nf-winusb-winusb_writepipe" data-raw-source="[&lt;strong&gt;WinUsb_WritePipe&lt;/strong&gt;](/windows/desktop/api/winusb/nf-winusb-winusb_writepipe)">WinUsb_ReadPipe</a></p></td>
+<td><p><a href="/uwp/api/Windows.Devices.Usb.UsbBulkInPipe" data-raw-source="[&lt;strong&gt;UsbBulkInPipe&lt;/strong&gt;](/uwp/api/Windows.Devices.Usb.UsbBulkInPipe)">UsbBulkInPipe</a></p>
+<p><a href="/uwp/api/Windows.Devices.Usb.UsbBulkOutPipe" data-raw-source="[&lt;strong&gt;UsbBulkOutPipe&lt;/strong&gt;](/uwp/api/Windows.Devices.Usb.UsbBulkOutPipe)">UsbBulkInPipe</a></p></td>
+<td><p><a href="/windows/win32/api/winusb/nf-winusb-winusb_readpipe" data-raw-source="[&lt;strong&gt;WinUsb_ReadPipe&lt;/strong&gt;](/windows/win32/api/winusb/nf-winusb-winusb_readpipe)">WinUsb_ReadPipe</a></p>
+<p><a href="/windows/win32/api/winusb/nf-winusb-winusb_writepipe" data-raw-source="[&lt;strong&gt;WinUsb_WritePipe&lt;/strong&gt;](/windows/win32/api/winusb/nf-winusb-winusb_writepipe)">WinUsb_ReadPipe</a></p></td>
 </tr>
 <tr class="odd">
 <td>发送 USB 中断传输</td>
-<td><p><a href="https://docs.microsoft.com/uwp/api/Windows.Devices.Usb.UsbInterruptInPipe" data-raw-source="[&lt;strong&gt;UsbInterruptInPipe&lt;/strong&gt;](/uwp/api/Windows.Devices.Usb.UsbInterruptInPipe)">UsbInterruptInPipe</a></p>
-<p><a href="https://docs.microsoft.com/uwp/api/Windows.Devices.Usb.UsbInterruptOutPipe" data-raw-source="[&lt;strong&gt;UsbInterruptOutPipe&lt;/strong&gt;](/uwp/api/Windows.Devices.Usb.UsbInterruptOutPipe)">UsbInterruptOutPipe</a></p></td>
-<td><p><a href="https://docs.microsoft.com/windows/desktop/api/winusb/nf-winusb-winusb_readpipe" data-raw-source="[&lt;strong&gt;WinUsb_ReadPipe&lt;/strong&gt;](/windows/desktop/api/winusb/nf-winusb-winusb_readpipe)">WinUsb_ReadPipe</a></p>
-<p><a href="https://docs.microsoft.com/windows/desktop/api/winusb/nf-winusb-winusb_writepipe" data-raw-source="[&lt;strong&gt;WinUsb_WritePipe&lt;/strong&gt;](/windows/desktop/api/winusb/nf-winusb-winusb_writepipe)">WinUsb_ReadPipe</a></p></td>
+<td><p><a href="/uwp/api/Windows.Devices.Usb.UsbInterruptInPipe" data-raw-source="[&lt;strong&gt;UsbInterruptInPipe&lt;/strong&gt;](/uwp/api/Windows.Devices.Usb.UsbInterruptInPipe)">UsbInterruptInPipe</a></p>
+<p><a href="/uwp/api/Windows.Devices.Usb.UsbInterruptOutPipe" data-raw-source="[&lt;strong&gt;UsbInterruptOutPipe&lt;/strong&gt;](/uwp/api/Windows.Devices.Usb.UsbInterruptOutPipe)">UsbInterruptOutPipe</a></p></td>
+<td><p><a href="/windows/win32/api/winusb/nf-winusb-winusb_readpipe" data-raw-source="[&lt;strong&gt;WinUsb_ReadPipe&lt;/strong&gt;](/windows/win32/api/winusb/nf-winusb-winusb_readpipe)">WinUsb_ReadPipe</a></p>
+<p><a href="/windows/win32/api/winusb/nf-winusb-winusb_writepipe" data-raw-source="[&lt;strong&gt;WinUsb_WritePipe&lt;/strong&gt;](/windows/win32/api/winusb/nf-winusb-winusb_writepipe)">WinUsb_ReadPipe</a></p></td>
 </tr>
 <tr class="even">
 <td>发送 USB 常时等量传输</td>
 <td>不支持。</td>
-<td><p><a href="https://docs.microsoft.com/windows/desktop/api/winusb/nf-winusb-winusb_readisochpipe" data-raw-source="[&lt;strong&gt;WinUsb_ReadIsochPipe&lt;/strong&gt;](/windows/desktop/api/winusb/nf-winusb-winusb_readisochpipe)">WinUsb_ReadIsochPipe</a></p>
-<p><a href="https://docs.microsoft.com/windows/desktop/api/winusb/nf-winusb-winusb_readisochpipeasap" data-raw-source="[&lt;strong&gt;WinUsb_ReadIsochPipeAsap&lt;/strong&gt;](/windows/desktop/api/winusb/nf-winusb-winusb_readisochpipeasap)">WinUsb_ReadIsochPipeAsap</a></p>
-<p><a href="https://docs.microsoft.com/windows/desktop/api/winusb/nf-winusb-winusb_writeisochpipe" data-raw-source="[&lt;strong&gt;WinUsb_WriteIsochPipe&lt;/strong&gt;](/windows/desktop/api/winusb/nf-winusb-winusb_writeisochpipe)">WinUsb_WriteIsochPipe</a></p>
-<p><a href="https://docs.microsoft.com/windows/desktop/api/winusb/nf-winusb-winusb_writeisochpipeasap" data-raw-source="[&lt;strong&gt;WinUsb_WriteIsochPipeAsap&lt;/strong&gt;](/windows/desktop/api/winusb/nf-winusb-winusb_writeisochpipeasap)">WinUsb_WriteIsochPipeAsap</a></p></td>
+<td><p><a href="/windows/win32/api/winusb/nf-winusb-winusb_readisochpipe" data-raw-source="[&lt;strong&gt;WinUsb_ReadIsochPipe&lt;/strong&gt;](/windows/win32/api/winusb/nf-winusb-winusb_readisochpipe)">WinUsb_ReadIsochPipe</a></p>
+<p><a href="/windows/win32/api/winusb/nf-winusb-winusb_readisochpipeasap" data-raw-source="[&lt;strong&gt;WinUsb_ReadIsochPipeAsap&lt;/strong&gt;](/windows/win32/api/winusb/nf-winusb-winusb_readisochpipeasap)">WinUsb_ReadIsochPipeAsap</a></p>
+<p><a href="/windows/win32/api/winusb/nf-winusb-winusb_writeisochpipe" data-raw-source="[&lt;strong&gt;WinUsb_WriteIsochPipe&lt;/strong&gt;](/windows/win32/api/winusb/nf-winusb-winusb_writeisochpipe)">WinUsb_WriteIsochPipe</a></p>
+<p><a href="/windows/win32/api/winusb/nf-winusb-winusb_writeisochpipeasap" data-raw-source="[&lt;strong&gt;WinUsb_WriteIsochPipeAsap&lt;/strong&gt;](/windows/win32/api/winusb/nf-winusb-winusb_writeisochpipeasap)">WinUsb_WriteIsochPipeAsap</a></p></td>
 </tr>
 <tr class="odd">
 <td>关闭设备</td>
-<td><a href="https://docs.microsoft.com/uwp/api/Windows.Devices.Usb.UsbDevice#Windows_Devices_Usb_UsbDevice_Close" data-raw-source="[&lt;strong&gt;UsbDevice.Close&lt;/strong&gt;](/uwp/api/Windows.Devices.Usb.UsbDevice#Windows_Devices_Usb_UsbDevice_Close)">UsbDevice.Close</a></td>
-<td><a href="https://docs.microsoft.com/windows/desktop/api/winusb/nf-winusb-winusb_free" data-raw-source="[&lt;strong&gt;WinUsb_Free&lt;/strong&gt;](/windows/desktop/api/winusb/nf-winusb-winusb_free)">WinUsb_Free</a></td>
+<td><a href="/uwp/api/Windows.Devices.Usb.UsbDevice#Windows_Devices_Usb_UsbDevice_Close" data-raw-source="[&lt;strong&gt;UsbDevice.Close&lt;/strong&gt;](/uwp/api/Windows.Devices.Usb.UsbDevice#Windows_Devices_Usb_UsbDevice_Close)">UsbDevice.Close</a></td>
+<td><a href="/windows/win32/api/winusb/nf-winusb-winusb_free" data-raw-source="[&lt;strong&gt;WinUsb_Free&lt;/strong&gt;](/windows/win32/api/winusb/nf-winusb-winusb_free)">WinUsb_Free</a></td>
 </tr>
 </tbody>
 </table>

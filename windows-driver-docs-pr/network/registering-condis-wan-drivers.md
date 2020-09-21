@@ -8,12 +8,12 @@ keywords:
 - 注册 CoNDIS WAN 驱动程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 508806770187b62556a47eaaaed3bdfa6f43d267
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: f9d73169793fbc56ca2f35e6c75c3dbc1b0efc19
+ms.sourcegitcommit: 366a15d68eb58d01a8ca6de7b982f62ac8b7deaf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89212009"
+ms.lasthandoff: 09/19/2020
+ms.locfileid: "90811998"
 ---
 # <a name="registering-condis-wan-drivers"></a>注册 CoNDIS WAN 驱动程序
 
@@ -37,7 +37,7 @@ NDIS 6.0 和更高版本的驱动程序必须注册 CoNDIS 回调函数，如下
 
 -   若要注册 CoNDIS *ProtocolXxx*函数，客户端或调用管理器必须从其[*ProtocolSetOptions*](/windows-hardware/drivers/ddi/ndis/nc-ndis-set_options)函数调用[**NdisSetOptionalHandlers**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndissetoptionalhandlers)函数，并且必须提供[**NDIS \_ 协议 \_ 共同 \_ 特征**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_protocol_co_characteristics)结构。 客户端还必须提供 [**ndis \_ 联合 \_ 客户端 \_ 可选 \_ 处理程序**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_co_client_optional_handlers) 结构，调用管理器还必须提供 [**ndis \_ 共同 \_ 调用 \_ 管理器 \_ 可选 \_ 处理程序**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_co_call_manager_optional_handlers) 结构。
 
-有关 CoNDIS 驱动程序注册的详细信息，请参阅 [CoNDIS registration](condis-registration.md)。
+有关 CoNDIS 驱动程序注册的详细信息，请参阅 [CoNDIS registration](condis-miniport-driver-registration.md)。
 
 .
 

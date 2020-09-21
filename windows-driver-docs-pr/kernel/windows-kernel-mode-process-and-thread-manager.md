@@ -4,12 +4,12 @@ description: Windows 内核模式进程和线程管理器
 ms.assetid: 4053c73e-190d-4ffe-8db2-f531d120ba81
 ms.localizationpriority: High
 ms.date: 10/17/2018
-ms.openlocfilehash: e3a456484eef4f959aba2a745ecb284ccab1d6ea
-ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
+ms.openlocfilehash: b0437fd4e878dabde0ea77bdb6e4c20ea6c75326
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89403484"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90715252"
 ---
 # <a name="windows-kernel-mode-process-and-thread-manager"></a>Windows 内核模式进程和线程管理器
 
@@ -54,7 +54,7 @@ Windows 内核模式进程和线程管理器处理进程中的所有线程的执
 
 下面是为了支持子系统进程而对 [进程和线程管理器例程](/windows-hardware/drivers/ddi/index)进行的更改：
 
--   WSL 类型由 [**SUBSYSTEM\_INFORMATION\_TYPE**](/windows-hardware/drivers/ddi/ntddk/ne-ntddk-_subsystem_information_type) 枚举中的 **SubsystemInformationTypeWSL** 值指示。 驱动程序可以调用 [**NtQueryInformationProcess**](/windows/desktop/api/winternl/nf-winternl-ntqueryinformationprocess) 和 [**NtQueryInformationThread**](/windows/desktop/api/winternl/nf-winternl-ntqueryinformationthread) 来确定基础子系统。 对于 WSL，这些调用会返回 **SubsystemInformationTypeWSL**。
+-   WSL 类型由 [**SUBSYSTEM\_INFORMATION\_TYPE**](/windows-hardware/drivers/ddi/ntddk/ne-ntddk-_subsystem_information_type) 枚举中的 **SubsystemInformationTypeWSL** 值指示。 驱动程序可以调用 [**NtQueryInformationProcess**](/windows/win32/api/winternl/nf-winternl-ntqueryinformationprocess) 和 [**NtQueryInformationThread**](/windows/win32/api/winternl/nf-winternl-ntqueryinformationthread) 来确定基础子系统。 对于 WSL，这些调用会返回 **SubsystemInformationTypeWSL**。
 -   其他内核模式驱动程序可以通过调用 [**PsSetCreateProcessNotifyRoutineEx2**](/windows-hardware/drivers/ddi/ntddk/nf-ntddk-pssetcreateprocessnotifyroutineex2) 来注册其回调例程，从而收到有关创建/删除子系统进程的通知。 若要获取有关创建/删除线程的通知，驱动程序可以调用 [**PsSetCreateThreadNotifyRoutineEx**](/windows-hardware/drivers/ddi/ntddk/nf-ntddk-pssetcreatethreadnotifyroutineex)，并指定 **PsCreateThreadNotifySubsystems** 作为通知的类型。
 -   [**PS\_CREATE\_NOTIFY\_INFO**](/windows-hardware/drivers/ddi/ntddk/ns-ntddk-_ps_create_notify_info) 结构已扩展为包含 **IsSubsystemProcess** 成员，该成员指示 Win32 之外的子系统。 其他成员（如 **FileObject**、**ImageFileName**、**CommandLine**）指示有关子系统进程的其他信息。 有关这些成员的行为的信息，请参阅 [**SUBSYSTEM\_INFORMATION\_TYPE**](/windows-hardware/drivers/ddi/ntddk/ne-ntddk-_subsystem_information_type)。
 

@@ -4,12 +4,12 @@ description: 本主题提供有关在 Windows 8.1 中的系统上支持内部相
 ms.assetid: 7664F0F6-BD95-4919-82E4-F6F8080C2B5B
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f3c6196695e5e5e8c5e983e69a8a1ff97969188c
-ms.sourcegitcommit: 17c1bbc5ea0bef3bbc87794b030a073f905dc942
+ms.openlocfilehash: f7650bd56ba9802010b2710ef75fb0fe96ca871f
+ms.sourcegitcommit: 74a8dc9ef1da03857dec5cab8d304e2869ba54a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88802479"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90759770"
 ---
 # <a name="identifying-the-location-of-internal-cameras-uwp-device-apps"></a>确定 (UWP 设备应用的内部照相机位置) 
 
@@ -52,7 +52,7 @@ ms.locfileid: "88802479"
 | 3                       | Right   |
 | 4                       | Front   |
 | 5                       | 返回    |
-| 6                       | 未知 |
+| 6                       | Unknown |
 
 此外，位 143:128 (垂直偏移) 和 bits 159:144 (水平偏移) 必须提供与显示器相关的相机相对位置。 此原点相对于显示组件中的本机像素寻址，并且应与横向或纵向的当前显示方向匹配。 原点是显示的左下角，其中，正水平和垂直偏移值分别向右和向上偏移。
 
@@ -116,18 +116,18 @@ Device(PRTD)
 
 InternalDeviceModification 注册表项指示至少有一个相机使用 ModelID。
 
-|注册表项名称|`InternalDeviceModification`|
+|注册表项名称|InternalDeviceModification|
 |----|----|
-|必需/可选| 必选|
-|`Path`|`HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control`|
-|格式要求|无|
+|必需/可选| 必需|
+|路径|`HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control`|
+|格式要求|None|
 |有效子项|模型 ID 注册表项 (参阅以下子项格式要求和示例) |
 
 ### <a name="model-id-registry-key"></a>模型 ID 注册表项
 
 | 注册表项名称   | 模型 ID (准确的模型 ID 值为密钥名称) |
 |----|----|
-|必需/可选|必选|
+|必需/可选|必需|
 |格式要求|密钥名称是 OEM 创建的 GUID。 它必须同时具有左括号和右括号。 |
 |有效值|硬件 ID 注册表值或 `PLD_Panel`|
 | 示例|`{43922620-DAD9-4C05-BE3F-F65B089D84D8}`|
@@ -136,7 +136,7 @@ InternalDeviceModification 注册表项指示至少有一个相机使用 ModelID
 
 |注册表值名称|HardwareIDs|
 |----|----|
-|必需/可选|必选|
+|必需/可选|必需|
 |类型|多字符串|
 |格式要求|必须包含硬件 ID 的总线前缀。 所有 "" 字符都必须替换为 "#"。|
 |示例|`USB#VID_1234&PID_ABCD&REV_0001` <br/>`PCI#VEN_ABCD&DEV_1234&SUBSYS_000`|
@@ -149,7 +149,7 @@ InternalDeviceModification 注册表项指示至少有一个相机使用 ModelID
 | 必需/可选   | 可选|
 | 类型| DWORD|
 | 格式要求 | 必须包含 HardwareID 的总线前缀。 所有 " \\ " 字符都必须替换为 " \# "。 |
-| 示例            | 4、5|
+| 示例            | 4,5|
 
 ### <a name="pld_panel-details"></a>PLD \_ 面板详细信息
 
@@ -159,7 +159,7 @@ InternalDeviceModification 注册表项指示至少有一个相机使用 ModelID
 
 在 \_ ACPI 规范中，PLD 面板注册表值定义为 \_ PLD (物理设备位置) 。 此值指示照相机在其机箱中的物理位置，必须是以下各项之一。
 
-| 值 | 说明|
+| “值” | 描述|
 |-------|----------|
 | 0     | TOP|
 | 1     | 底部|

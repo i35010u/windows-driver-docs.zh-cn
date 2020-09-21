@@ -4,18 +4,14 @@ description: 着色器相对寻址
 ms.assetid: 7f936b56-cd41-4df5-8fc0-b8a7332ca7fa
 ms.date: 01/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 2fc0819e524b918d194a6562abd74677016f39fc
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: c4e25cc31549a2e9b1f489e9cfbc72d12a4ca7d3
+ms.sourcegitcommit: 366a15d68eb58d01a8ca6de7b982f62ac8b7deaf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89066628"
+ms.lasthandoff: 09/19/2020
+ms.locfileid: "90812024"
 ---
 # <a name="shader-relative-addressing"></a>着色器相对寻址
-
-
-## <span id="ddk_shader_relative_addressing_gg"></span><span id="DDK_SHADER_RELATIVE_ADDRESSING_GG"></span>
-
 
 支持相对寻址的像素和顶点着色器版本可指定在 [目标](destination-parameter-token.md) 和 [源参数令牌](source-parameter-token.md)的第13位中使用相对寻址。 如果指定了相对寻址，则目标或源参数标记后面会出现一个额外的 DWORD 标记。
 
@@ -35,15 +31,6 @@ ms.locfileid: "89066628"
 
 地址寄存器和 aL 寄存器用于固定寄存器的相对寻址。
 
-## <a name="span-idrequirementsspanspan-idrequirementsspanspan-idrequirementsspanrequirements"></a><span id="Requirements"></span><span id="requirements"></span><span id="REQUIREMENTS"></span>要求
-
-
-在 Windows Vista 和更高版本的 Windows 操作系统中可用。
-
-## <a name="span-idrequirementsspanspan-idrequirementsspanspan-idrequirementsspanrequirements"></a><span id="Requirements"></span><span id="requirements"></span><span id="REQUIREMENTS"></span>要求
-
+## <a name="requirements"></a>要求
 
 在 Windows Vista 和更高版本的 Windows 操作系统中可用。
-
- 
-

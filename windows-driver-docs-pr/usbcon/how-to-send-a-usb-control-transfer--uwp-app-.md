@@ -3,12 +3,12 @@ description: 与 USB 设备通信的应用通常会发送多个控制传输请�
 title: 如何发送 USB 控制传输（UWP 应用）
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 126488c6c4c9f252315cfec86089b14fd9b77e2c
-ms.sourcegitcommit: 937974aa9bbe0262a7ffe9631593fab48c4e7492
+ms.openlocfilehash: 58a285bf68f4a2af48df4521d77925e2b67c336a
+ms.sourcegitcommit: 366a15d68eb58d01a8ca6de7b982f62ac8b7deaf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "90010553"
+ms.lasthandoff: 09/19/2020
+ms.locfileid: "90811916"
 ---
 # <a name="how-to-send-a-usb-control-transfer-uwp-app"></a>如何发送 USB 控制传输（UWP 应用）
 
@@ -65,15 +65,16 @@ USB 控制传输还用于获取描述符数据或发送标准命令。 但是，
 1.  创建 [**UsbSetupPacket**](/uwp/api/Windows.Devices.Usb.UsbSetupPacket) 对象。
 2.  通过设置各种属性填充 [**UsbSetupPacket**](/uwp/api/Windows.Devices.Usb.UsbSetupPacket) 对象。 此表显示了 USB 定义的安装包字段，以及对应于这些字段的属性：
 
-    | 第9.3 节中的字段     | 属性                                                                              | 描述                                                                                                                                                                                                                            |
-    |---------------------------|---------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-    | **bmRequestType** (D7)     | [**UsbControlRequestType**](/uwp/api/Windows.Devices.Usb.UsbControlRequestType#Windows_Devices_Usb_UsbControlRequestType_Direction)      | 请求的方向。 无论请求是从主机到设备， (传出将) 或设备传输到 (传输) 中的主机。                                                                                                                 |
-    | **bmRequestType** (D4)     | [**UsbControlRequestType**](/uwp/api/Windows.Devices.Usb.UsbControlRequestType#Windows_Devices_Usb_UsbControlRequestType_Recipient)      | 请求的接收方。 所有控制传输均以默认终结点为目标。 但是，收件人可能是设备、接口、终结点或其他。 有关 USB 设备、接口、终结点层次结构的详细信息，请参阅设备布局。 |
-    | **bmRequestType** (D6 .。。D5)  | [**UsbControlRequestType.ControlTransferType**](/uwp/api/Windows.Devices.Usb.UsbControlRequestType#Windows_Devices_Usb_UsbControlRequestType_ControlTransferType) | 请求的类别。 标准、类或供应商。                                                                                                                                                                                       |
-    | **bRequest**              | [**UsbSetupPacket 请求**](/uwp/api/Windows.Devices.Usb.UsbSetupPacket#Windows_Devices_Usb_UsbSetupPacket_Request)                        | 请求类型。 如果请求是标准请求，如 GET \_ 描述符请求，则该请求由 USB 规范定义。 否则，它可以由供应商定义。                                                           |
-    | **wValue**                | [**UsbSetupPacket**](/uwp/api/Windows.Devices.Usb.UsbSetupPacket#Windows_Devices_Usb_UsbSetupPacket_Value)                            | 取决于请求的类型。                                                                                                                                                                                                        |
-    | **wIndex**                | [**UsbSetupPacket**](/uwp/api/Windows.Devices.Usb.UsbSetupPacket#Windows_Devices_Usb_UsbSetupPacket_Index)                            | 取决于请求的类型。                                                                                                                                                                                                        |
-    | **wLength**               | [**UsbSetupPacket**](/uwp/api/Windows.Devices.Usb.UsbSetupPacket#Windows_Devices_Usb_UsbSetupPacket_Length)                          | 此请求中发送或接收的数据包的长度。                                                                                                                                                                            |
+| 第9.3 节中的字段 | Property | 说明 | 
+|----------------|-----------------|-------------------------| 
+| **bmRequestType** (D7)  | [**UsbControlRequestType**](/uwp/api/Windows.Devices.Usb.UsbControlRequestType#Windows_Devices_Usb_UsbControlRequestType_Direction) | 请求的方向。 无论请求是从主机到设备， (传出将) 或设备传输到 (传输) 中的主机。 |
+| **bmRequestType** (D4)  | [**UsbControlRequestType**](/uwp/api/Windows.Devices.Usb.UsbControlRequestType#Windows_Devices_Usb_UsbControlRequestType_Recipient) | 请求的接收方。 所有控制传输均以默认终结点为目标。 但是，收件人可能是设备、接口、终结点或其他。 有关 USB 设备、接口、终结点层次结构的详细信息，请参阅设备布局。 |
+| **bmRequestType** (D6 .。。D5)  | [**UsbControlRequestType.ControlTransferType**](/uwp/api/Windows.Devices.Usb.UsbControlRequestType#Windows_Devices_Usb_UsbControlRequestType_ControlTransferType) | 请求的类别。 标准、类或供应商。 |
+| **bRequest** | [**UsbSetupPacket 请求**](/uwp/api/Windows.Devices.Usb.UsbSetupPacket#Windows_Devices_Usb_UsbSetupPacket_Request) | 请求类型。 如果请求是标准请求，如 GET \_ 描述符请求，则该请求由 USB 规范定义。 否则，它可以由供应商定义。 |
+| **wValue** | [**UsbSetupPacket**](/uwp/api/Windows.Devices.Usb.UsbSetupPacket#Windows_Devices_Usb_UsbSetupPacket_Value) | 取决于请求的类型。 |
+| **wIndex** | [**UsbSetupPacket**](/uwp/api/Windows.Devices.Usb.UsbSetupPacket#Windows_Devices_Usb_UsbSetupPacket_Index) | 取决于请求的类型。 |
+| **wLength** | [**UsbSetupPacket**](/uwp/api/Windows.Devices.Usb.UsbSetupPacket#Windows_Devices_Usb_UsbSetupPacket_Length) |此请求中发送或接收的数据包的长度。|
+
 **注意**  对于某些控件传输，可能需要提供 **bmRequestType** 作为原始字节。 在这种情况下，可以在 [**UsbControlRequestType. AsByte**](/uwp/api/Windows.Devices.Usb.UsbControlRequestType#Windows_Devices_Usb_UsbControlRequestType_AsByte) 属性中设置字节。
 
 ## <a name="step-2-start-an-asynchronous-operation-to-send-the-control-transfer"></a>步骤2：启动异步操作以发送控件传输

@@ -5,12 +5,12 @@ ms.assetid: 3F433F0A-422C-46E5-B59E-8DB4AC537F01
 ms.date: 04/20/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 430edee3523834c847501f7bdde74b8b335806ba
-ms.sourcegitcommit: 4f08f5686c0bbc27d58930b993cbab1a98e3afb0
+ms.openlocfilehash: 95413846c06a7ccf5f1e5f3a39d589af507f49fb
+ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/03/2020
-ms.locfileid: "89443815"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90101748"
 ---
 # <a name="create-a-new-hardware-submission"></a>创建新硬件提交
 
@@ -67,7 +67,7 @@ ms.locfileid: "89443815"
    <tr class="odd">
    <td><p>设备元数据类别</p></td>
    <td><p>基于设备类别从默认图标列表中为你的设备选择图标。 这确定哪个图标显示在“设备和打印机”中。 如果你的设备不应出现，请选择“内部设备”。</p>
-   <p>有关使用 Windows Device Stage 提供丰富体验的信息，请参阅<a href="https://docs.microsoft.com/windows-hardware/drivers/dashboard/" data-raw-source="[Device Metadata](./index.yml)">设备元数据</a>。</p></td>
+   <p>有关使用 Windows Device Stage 提供丰富体验的信息，请参阅<a href="/windows-hardware/drivers/dashboard/" data-raw-source="[Device Metadata](./index.yml)">设备元数据</a>。</p></td>
    </tr>
    <tr class="even">
    <td><p>设备元数据型号 ID</p></td>

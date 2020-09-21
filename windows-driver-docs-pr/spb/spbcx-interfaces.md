@@ -4,12 +4,12 @@ description: SPB 框架扩展 (SpbCx) 有两个接口。
 ms.assetid: 2449BB88-1912-43F9-97E6-B56158D92E55
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 632f10d107384dcddb3962a18b2e61e2e9488222
-ms.sourcegitcommit: c766ab74e32eb44795cbbd1a4f352d3a6a9adc14
+ms.openlocfilehash: 568adfebf25dd6dac806552272c670c0809c165e
+ms.sourcegitcommit: 6c42efc074ab939e7737d6c2b016d3f3a75954e1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89389541"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90741028"
 ---
 # <a name="spbcx-interfaces"></a>SpbCx 接口
 
@@ -46,7 +46,7 @@ SpbCx DDI 使用 WDFDEVICE 对象句柄类型来表示 SPB 控制器的设备对
 
 此 SDDL 字符串限制对操作系统 (及其用户模式组件) 、Administrators 组成员和 [用户模式驱动程序框架](../wdf/overview-of-the-umdf.md) (UMDF) 驱动程序的访问权限。 有关 SDDL 字符串的详细信息，请参阅 [适用于设备对象的 SDDL](../kernel/sddl-for-device-objects.md)。
 
-此外， [*EvtSpbControllerIoOther*](/windows-hardware/drivers/ddi/spbcx/nc-spbcx-evt_spb_controller_other) 函数必须验证从用户模式客户端接收的自定义 i/o 控制请求中的所有参数。 对于所有其他 *EvtSpb*Xxx 函数，SpbCx 会在将这些参数传递到 SPB 控制器驱动程序之前，验证来自用户模式客户端的 i/o 请求中的参数。 有关设备安全的详细信息，请参阅 [保护设备对象](https://docs.microsoft.com/windows-hardware/drivers/kernel/securing-device-objects)。
+此外， [*EvtSpbControllerIoOther*](/windows-hardware/drivers/ddi/spbcx/nc-spbcx-evt_spb_controller_other) 函数必须验证从用户模式客户端接收的自定义 i/o 控制请求中的所有参数。 对于所有其他 *EvtSpb*Xxx 函数，SpbCx 会在将这些参数传递到 SPB 控制器驱动程序之前，验证来自用户模式客户端的 i/o 请求中的参数。 有关设备安全的详细信息，请参阅 [保护设备对象](../kernel/controlling-device-access.md)。
 
 返回状态代码的 SpbCx DDI 中的所有方法和回调函数返回 NTSTATUS 值。 此 DDI 中的驱动程序支持方法遵循适用于 KMDF 接口的常用约定，SpbCx 使用的所有对象都遵循 KMDF 对象的常见约定。 有关详细信息，请参阅 [框架对象简介](../wdf/introduction-to-framework-objects.md)。
 
@@ -66,6 +66,4 @@ SpbCx i/o 请求接口支持 [**ioctl \_ spb \_ 锁定 \_ 控制器**](https://m
 除了 (的 IOCTL) 代码以外，SPB 控制器驱动程序还可以支持自定义 IOCTLs。 客户端可以将 IOCTL 请求发送到代表总线上的目标设备的文件对象，这些请求到达由 SpbCx 管理的 i/o 请求队列。 如果 SpbCx 接收到一个请求，该请求包含不支持的 IOCTL 代码，则 SpbCx 会将请求直接传递到控制器驱动程序，该驱动程序将执行请求的所有处理。
 
 SpbCx i/o 请求接口的内核模式客户端可以发送处于中断请求级别的 i/o 请求， (低 \_ 级别或调度级别的 IRQL) \_ 。 用户模式客户端只能在被动级别发送 i/o 请求 \_ 。 I/o 完成可以在被动 \_ 级别或派单级别进行 \_ 。 所有 i/o 请求都可能返回 "挂起" 状态 \_ 。
-
- 
 

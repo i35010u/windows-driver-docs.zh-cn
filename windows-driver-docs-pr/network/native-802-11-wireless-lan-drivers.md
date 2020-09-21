@@ -6,12 +6,12 @@ keywords:
 - 本机802.11 无线 LAN 驱动程序 WDK、本机 Wi-fi 网络驱动程序、本机 802.11 wlan 驱动程序
 ms.date: 05/08/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: b2a562416406ec2e651b6133bdb412ad2c262123
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: a38aa72fc7a0a8935856d09c1ffd649b1e79f185
+ms.sourcegitcommit: 366a15d68eb58d01a8ca6de7b982f62ac8b7deaf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89207247"
+ms.lasthandoff: 09/19/2020
+ms.locfileid: "90811908"
 ---
 # <a name="native-80211-wireless-lan-drivers"></a>本机 802.11 无线 LAN 驱动程序
 
@@ -23,4 +23,4 @@ ms.locfileid: "89207247"
 
 [WLAN 通用驱动程序模型](wifi-universal-driver-model.md)
 
-[旧版网络驱动程序](previous-versions-of-network-drivers.md)
+[旧版网络驱动程序](network-drivers-prior-to-windows-vista.md)

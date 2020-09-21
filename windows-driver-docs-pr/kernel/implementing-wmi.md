@@ -14,12 +14,12 @@ keywords:
 - 内核模式驱动程序 WDK、WMI
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3eb8ba2a09f41b01b0bbec978bd406d834ee84a3
-ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
+ms.openlocfilehash: 8a42ca4a5bbdb27690ab7d7a68398f2ba847de60
+ms.sourcegitcommit: 6c42efc074ab939e7737d6c2b016d3f3a75954e1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89403258"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90741030"
 ---
 # <a name="implementing-wmi"></a>实现 WMI
 
@@ -31,7 +31,7 @@ ms.locfileid: "89403258"
 
 有关用户模式 WMI API 的详细信息，请参阅 Windows SDK 中的 [Windows Management Instrumentation](/windows/desktop/WmiSdk/wmi-start-page) 。
 
-如果要实现基于 KMDF 的驱动程序，请参阅 [基于框架的驱动程序中的支持 WMI](https://docs.microsoft.com/windows-hardware/drivers/wdf/supporting-wmi-in-kmdf-drivers)。
+如果要实现基于 KMDF 的驱动程序，请参阅 [基于框架的驱动程序中的支持 WMI](../wdf/introduction-to-wmi-for-kmdf-drivers.md)。
 
 本部分包括有关内核模式 WMI 的下列信息：
 
@@ -60,6 +60,4 @@ ms.locfileid: "89403258"
 [WMI 事件跟踪](wmi-event-tracing.md)
 
 [测试 WMI 驱动程序支持及排查其问题](general-techniques-for-testing-wmi-driver-support.md)
-
- 
 

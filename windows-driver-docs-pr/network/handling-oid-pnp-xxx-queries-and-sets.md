@@ -8,12 +8,12 @@ keywords:
 - 设置操作 WDK NDIS 中间
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cedadbb6c6dbc44a261e2744eb3ff804802d5269
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 6fc7538e5b74768c14c4e68da8748ef67ae2b1c3
+ms.sourcegitcommit: 366a15d68eb58d01a8ca6de7b982f62ac8b7deaf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89217620"
+ms.lasthandoff: 09/19/2020
+ms.locfileid: "90811976"
 ---
 # <a name="handling-oid_pnp_xxx-queries-and-sets"></a>处理 OID \_ PNP \_ Xxx 查询和集
 
@@ -21,7 +21,7 @@ ms.locfileid: "89217620"
 
 
 
-中间驱动程序的虚拟微型端口必须导出 [*MiniportOidRequest*](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_oid_request) 函数。 当绑定到中间驱动程序的虚拟小型端口的过量驱动程序调用[**NdisOidRequest**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisoidrequest)来查询或设置 (OID Xxx) 的信息对象时，NDIS 调用中间驱动程序的*MiniportOidRequest*函数 \_ *Xxx* 。 NDIS 还可以代表自己调用 *MiniportOidRequest* 。 有关对信息对象的集和查询的微型端口驱动程序处理的详细信息，请参阅 [获取并设置微型端口驱动程序信息和对 WMI 的 NDIS 支持](obtaining-and-setting-miniport-driver-information-and-ndis-support-for.md)。
+中间驱动程序的虚拟微型端口必须导出 [*MiniportOidRequest*](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_oid_request) 函数。 当绑定到中间驱动程序的虚拟小型端口的过量驱动程序调用[**NdisOidRequest**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisoidrequest)来查询或设置 (OID Xxx) 的信息对象时，NDIS 调用中间驱动程序的*MiniportOidRequest*函数 \_ *Xxx* 。 NDIS 还可以代表自己调用 *MiniportOidRequest* 。 有关对信息对象的集和查询的微型端口驱动程序处理的详细信息，请参阅 [获取并设置微型端口驱动程序信息和对 WMI 的 NDIS 支持](ndis-management-information-and-oids.md)。
 
 中间驱动程序应保留有关其在 [*ProtocolBindAdapterEx*](/windows-hardware/drivers/ddi/ndis/nc-ndis-protocol_bind_adapter_ex) 函数中收到的基础微型端口适配器功能的信息。 如果微型端口适配器不支持电源管理，NDIS 会将[**ndis \_ 绑定 \_ 参数**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_bind_parameters)的**PowerManagementCapabilities**成员设置为**NULL**。
 

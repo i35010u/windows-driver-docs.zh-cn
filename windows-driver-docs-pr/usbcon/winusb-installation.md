@@ -3,12 +3,12 @@ description: 将 WinUSB (Winusb.sys) 安装在设备的内核模式堆栈中，�
 title: WinUSB (Winusb.sys) 安装
 ms.date: 05/09/2018
 ms.localizationpriority: High
-ms.openlocfilehash: 3c4c5a4ea29ae00a0d81fc334dc6c3b8c85ea0fa
-ms.sourcegitcommit: 937974aa9bbe0262a7ffe9631593fab48c4e7492
+ms.openlocfilehash: 4404d74ddc16dac5a580af77192c70bcdcbad5e7
+ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "90010188"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90715228"
 ---
 # <a name="winusb-winusbsys-installation"></a>WinUSB (Winusb.sys) 安装
 
@@ -156,7 +156,7 @@ REG_MULTI_SZ = 0x00010000
 
 -   **USB\_Install.HW**：本部分是 .inf 文件中的项。 它指定设备的设备接口全局唯一标识符 (GUID)。 AddReg 指令在标准注册表值中设置指定的接口 GUID  。 当 Winusb.sys 作为设备的功能驱动程序加载时，它将读取注册表值 DeviceInterfaceGUIDs 项，并使用指定的 GUID 来表示设备接口。 在此示例中，应将 GUID 替换为专门为设备创建的 GUID。 如果设备的协议发生更改，请创建新的设备接口 GUID。
 
-    **注意**  用户模式软件必须调用 [SetupDiGetClassDevs](/windows/desktop/api/setupapi/nf-setupapi-setupdigetclassdevsw) 才能枚举与在 DeviceInterfaceGUIDs 项下指定的某个设备接口类关联的已注册设备接口  。 SetupDiGetClassDevs 返回了设备的设备句柄，然后用户模式软件必须将设备句柄传递给 [WinUsb\_Initialize](/windows/desktop/api/winusb/nf-winusb-winusb_initialize) 例程，以获取设备接口的 WinUSB 句柄   。 有关这些例程的详细信息，请参阅[如何使用 WinUSB Functions 访问 USB 设备](using-winusb-api-to-communicate-with-a-usb-device.md)。
+    **注意**  用户模式软件必须调用 [SetupDiGetClassDevs](/windows/win32/api/setupapi/nf-setupapi-setupdigetclassdevsw) 才能枚举与在 DeviceInterfaceGUIDs 项下指定的某个设备接口类关联的已注册设备接口  。 SetupDiGetClassDevs 返回了设备的设备句柄，然后用户模式软件必须将设备句柄传递给 [WinUsb\_Initialize](/windows/win32/api/winusb/nf-winusb-winusb_initialize) 例程，以获取设备接口的 WinUSB 句柄   。 有关这些例程的详细信息，请参阅[如何使用 WinUSB Functions 访问 USB 设备](using-winusb-api-to-communicate-with-a-usb-device.md)。
 
 以下 INF 在基于 x64 的系统上将 WinUSB 安装为 OSR USB FX2 板的功能驱动程序。 该示例显示了 WDF 辅助安装程序的 INF。
 

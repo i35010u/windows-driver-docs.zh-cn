@@ -5,12 +5,12 @@ ms.assetid: 6BF2E800-90A0-48FC-B702-5AD4EC318A35
 keywords: 同步 OID 请求接口，同步 OID 调用，WDK 同步 Oid，同步 OID 请求
 ms.date: 09/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fc78631d11ed6654b0b2e468b0cec2f10e466bdc
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 250a7ba2a0c1114bd7d23c89e7f6f3b4f6f66ffe
+ms.sourcegitcommit: 74a8dc9ef1da03857dec5cab8d304e2869ba54a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89212749"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90759790"
 ---
 # <a name="synchronous-oid-request-interface-in-ndis-680"></a>NDIS 6.80 中的同步 OID 请求接口
 
@@ -24,7 +24,7 @@ Windows 网络驱动程序使用 OID 请求，在 NDIS 绑定堆栈中发送控�
 
 下表描述了常规 Oid、直接 Oid 和同步 Oid 之间的差异。
 
-| | 常规 OID | 直接 OID | 同步 OID |
+| 特性 | 常规 OID | 直接 OID | 同步 OID |
 | --- | --- | --- | --- |
 | 有效负载 | [NDIS_OID_REQUEST](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request) | NDIS_OID_REQUEST | NDIS_OID_REQUEST |
 | OID 类型 | Stats、Query、Set、Method | Stats、Query、Set、Method | Stats、Query、Set、Method |

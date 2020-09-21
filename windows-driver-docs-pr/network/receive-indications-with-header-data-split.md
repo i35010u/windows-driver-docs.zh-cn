@@ -7,12 +7,12 @@ keywords:
 - 收到的数据格式 WDK 标头-数据拆分
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: db430df1aaaecc2c08a58a114585ab355ba3d862
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 972e7b4335440c196594e16b5a576038cb736f61
+ms.sourcegitcommit: 366a15d68eb58d01a8ca6de7b982f62ac8b7deaf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89215110"
+ms.lasthandoff: 09/19/2020
+ms.locfileid: "90811910"
 ---
 # <a name="receive-indications-with-header-data-split"></a>标头数据拆分的接收指示
 
@@ -24,7 +24,7 @@ ms.locfileid: "89215110"
 
 拆分框架中的标头信息决不能包括虚拟 LAN (VLAN) 标记。 标头-数据拆分要求在硬件中支持 VLAN，并需要从传入帧中删除 VLAN 标记，并将其放入[**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)结构中的**Ieee8021QNetBufferListInfo** OOB 信息。 微型端口驱动程序必须在[**NDIS \_ 微型端口 \_ 适配器 \_ 常规 \_ 属性**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_miniport_adapter_general_attributes)结构的**MacOptions**成员中指定对 VLAN 的支持，并为响应[oid \_ GEN \_ MAC \_ OPTIONS](./oid-gen-mac-options.md) OID 查询。
 
-NDIS 和过量驱动程序或用户模式应用程序使用 [oid \_ GEN \_ HD \_ SPLIT \_ PARAMETERS](./oid-gen-hd-split-parameters.md) oid 设置微型端口适配器的当前标头-数据拆分设置。 如果设置了 \_ \_ \_ \_ \_ [**Ndis \_ hd \_ SPLIT \_ PARAMETERS**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_hd_split_parameters)结构的**HDSplitCombineFlags**成员中的 ndis HD split "合并所有标头" 标志，则微型端口适配器必须合并所有拆分框架。 如果在硬件中启用了标头-数据拆分，则微型端口驱动程序必须先将标头和数据合并，然后再将帧指示到 NDIS。 有关 OID \_ GEN \_ HD \_ SPLIT \_ 参数和其他管理和配置问题的详细信息，请参阅 [标头-数据拆分管理和配置](header-data-split-administration-and-configuration.md)。
+NDIS 和过量驱动程序或用户模式应用程序使用 [oid \_ GEN \_ HD \_ SPLIT \_ PARAMETERS](./oid-gen-hd-split-parameters.md) oid 设置微型端口适配器的当前标头-数据拆分设置。 如果设置了 \_ \_ \_ \_ \_ [**Ndis \_ hd \_ SPLIT \_ PARAMETERS**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_hd_split_parameters)结构的**HDSplitCombineFlags**成员中的 ndis HD split "合并所有标头" 标志，则微型端口适配器必须合并所有拆分框架。 如果在硬件中启用了标头-数据拆分，则微型端口驱动程序必须先将标头和数据合并，然后再将帧指示到 NDIS。 有关 OID \_ GEN \_ HD \_ SPLIT \_ 参数和其他管理和配置问题的详细信息，请参阅 [标头-数据拆分管理和配置](setting-the-current-header-data-split-configuration.md)。
 
 本节包括：
 
