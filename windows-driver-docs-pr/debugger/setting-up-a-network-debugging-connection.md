@@ -9,12 +9,12 @@ keywords:
 - 通过网络电缆手动设置内核模式调试
 ms.date: 12/07/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: cf0b370633d35f70bc7cb8755157383b53601ee4
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: e27d42f6b9faa46be9a7c1c558ce674ec1889cff
+ms.sourcegitcommit: a1b2e27c3487a099180fb928f64e7ce3d94f21a8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89210859"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90846536"
 ---
 # <a name="setting-up-kdnet-network-kernel-debugging-manually"></a>手动设置 KDNET 网络内核调试
 
@@ -22,7 +22,7 @@ ms.locfileid: "89210859"
 
 > [!IMPORTANT]
 > 手动设置网络调试是一种复杂且容易出错的过程。
-> 若要自动设置网络调试，请参阅 [自动设置 KDNET 网络内核调试](setting-up-a-network-debugging-connection-automatically.md)。 **强烈**建议所有调试器用户使用 KDNET 实用程序。
+> 若要自动设置网络调试，请参阅 **[自动设置 KDNET 网络内核调试](setting-up-a-network-debugging-connection-automatically.md)**。 **强烈**建议所有调试器用户使用 KDNET 实用程序。
 
 运行调试器的计算机称为 *主机计算机*，被调试的计算机称为 *目标计算机*。 主计算机必须运行 Windows 7 或更高版本，并且目标计算机必须运行 Windows 8 或更高版本。
 
@@ -111,7 +111,7 @@ ms.locfileid: "89210859"
 
 确认主机计算机的网络适配器连接到网络集线器或使用适当的网络电缆进行切换。
 
-在主计算机上，打开 WinDbg。 在 " **文件** " 菜单上，选择 " **内核调试**"。 在 "内核调试" 对话框中，打开 " **网络** " 选项卡。输入端口号和密钥。 选择“确定”。
+在主计算机上，打开 WinDbg。 在 " **文件** " 菜单上，选择 " **内核调试**"。 在 "内核调试" 对话框中，打开 " **网络** " 选项卡。输入端口号和密钥。 选择“确定”  。
 
 你还可以通过打开命令提示符窗口并输入以下命令（其中 *n* 是你的端口号，而 *MyKey* 是设置目标计算机时由 **bcdedit** 自动生成的密钥）来启动与 WinDbg 的会话：
 
