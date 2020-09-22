@@ -2,7 +2,7 @@
 title: BCDEdit /set
 description: BCDEdit/set 命令在 Windows 7、Windows Server 2008、Windows 8、Windows 8.1、Windows 10、Windows Server 2012 和 Windows Server 2012 R2 的 Windows 启动配置数据存储 (BCD) 中设置启动项目选项值。
 ms.assetid: e66d9c55-9a44-4de2-a1a4-634c7d550735
-ms.date: 02/07/2018
+ms.date: 09/17/2020
 keywords:
 - BCDEdit /set 驱动程序开发工具
 topic_type:
@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: high
-ms.openlocfilehash: 3d23d3cb03193b83601342d5fc35b9aa82864d55
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: d56149fa77689426dd6f9053cd1f2c63aef68486
+ms.sourcegitcommit: 4f0760e7df1ed3c5542c9738092e2c8165f5d6d0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89384397"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90767867"
 ---
 # <a name="bcdedit-set"></a>BCDEdit /set
 
@@ -28,6 +28,18 @@ BCDEdit/set 命令在 Windows 启动配置数据存储 (BCD) 中设置启动项�
 
 > [!NOTE]
 > 设置 BCDEdit 选项之前，可能需要禁用或暂停计算机上的 BitLocker 和安全启动。
+
+## <a name="alternatives-to-bcdedit"></a>BCDEdit 的替代方案
+
+### <a name="settings-startup-options"></a>设置启动选项
+
+为了避免使用 BCDEdit 带来的相关风险，可以在启动选项中使用某些常见的启动选项，例如启用调试模式。  在 Windows 10 中，可以在“设置”>“更新和安全”中选择“恢复”来访问该设置。 在“高级启动”下，选择“立即重新启动”。 计算机重新启动后，选择“启动”选项。 接下来，选择“排除故障”>“高级选项”>“启动设置”，然后选择“重新启动”按钮。 计算机重新启动后，你将能够设置可用的启动选项。
+
+### <a name="system-configuration-utility"></a>系统配置实用工具
+
+尽可能地使用系统配置实用工具 (MSConfig.exe) 而不是 BCDEdit。 有关详细信息，请参阅[如何在 Windows 10 中打开 MSConfig](https://support.microsoft.com/help/4026130/windows-how-to-open-msconfig-in-windows-10)。
+
+## <a name="syntax"></a>语法
 
 ```syntax
 bcdedit  /set [{ID}] datatype value
@@ -43,7 +55,7 @@ bcdedit  /set [{ID}] datatype value
 
 *datatype* *value*  
 
-以下列表显示了一些有用的数据类型及其关联值 。
+以下列表显示了一些数据类型及其关联值 。
 
 **bootlog** \[ **yes** | **no** \]  
 启用系统初始化日志。 此日志存储在 %WINDIR% 目录中的 Ntbtlog.txt 文件中。 它包括以文本格式加载和卸载的驱动程序列表。
@@ -96,7 +108,7 @@ bcdedit  /set [{ID}] datatype value
 强制 OS 假定存在旧式电脑设备，如 CMOS 和键盘控制器。
 
 > [!NOTE]
-> 此选项应仅用于调试。 
+> 此选项应仅用于调试。
 
 **groupsize** *maxsize* 设置单个处理器组中逻辑处理器的最大数量，其中最大大小为介于 1 到 64（含）之间 2 的任意次幂。 默认情况下，处理器组的最大大小为 64 个逻辑处理器。 可以使用此启动配置设置来替代计算机处理器组的大小和组成，以便进行测试。 [处理器组](/windows/win32/procthread/processor-groups)对具有超过 64 个逻辑处理器的计算机提供支持。 此启动选项适用于 64 位版本的 Windows 7 和 Windows Server 2008 R2 及更高版本。 此启动选项对 32 位版本的 Windows 7 不起作用。
 
@@ -204,7 +216,7 @@ bcdedit /set hypervisorlaunchtype auto
 
 **novga** \[ **on** | **off** \] 禁用 OS 中的 VGA 模式。 该选项从 Windows 8 和 Windows Server 2012 开始提供。
 
-**nx** \[**Optin |OptOut | AlwaysOn |AlwaysOff**\]  
+**nx** \[**Optin \|OptOut \| AlwaysOn \|AlwaysOff**\]  
 启用、禁用和配置数据执行保护 (DEP)，这是一组硬件和软件技术，旨在防止有害代码在受保护的内存位置运行。 有关 DEP 设置的信息，请参阅[数据执行保护](/windows/desktop/Memory/data-execution-prevention)。
 
 **Optin**  
@@ -342,8 +354,6 @@ bcdedit /deletevalue groupsize
 **支持的最低客户端版本**：Windows Vista
 
 **支持的最低服务器版本**：Windows Server 2008
-
-****： 
 
 
 ## <a name="see-also"></a>另请参阅

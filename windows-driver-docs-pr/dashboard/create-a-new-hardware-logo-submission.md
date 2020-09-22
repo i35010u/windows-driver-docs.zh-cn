@@ -5,40 +5,38 @@ ms.assetid: e812eee1-768d-42d6-918e-c716b5c29ea2
 ms.topic: article
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 3543b86f5c1ceed26137740c85331c97206423e0
-ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
+ms.openlocfilehash: 881358475cc99e2aa8dd1e01e086594ea3feb474
+ms.sourcegitcommit: a5f76805387760730faed5674d87201ec85b7dd3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "69621142"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90112076"
 ---
 # <a name="create-a-new-wlk-device-certification-submission"></a>创建新的 WLK 设备认证提交
-
 
 若要准备要认证的 Windows Server 2008（及更低版本）硬件，必须创建并提交 **WQReady.xml** 文件。 提交此文件，即表示允许仪表板测试你的设备并返回有关其性能的报告。 该报告包含设备与 Windows 标准进行比较的方式的详细列表。
 
 ## <a name="creating-a-wqreadyxml-file"></a>创建 WQReady.xml 文件
 
-1.  下载 [Windows 徽标工具包 (WLK)](https://go.microsoft.com/fwlink/p/?LinkId=219237)。 请确保在要认证的每个操作系统上，使用相应认证工具包测试驱动程序。
+1. 下载 [Windows Hardware Lab Kit (HLK)](/windows-hardware/test/hlk/index/)。 请确保在要认证的每个操作系统上，使用相应认证工具包测试驱动程序。
 
-2.  打开 Winqual 提交工具 (WST) 并单击“添加”  。
+2. 打开 Winqual 提交工具 (WST) 并单击“添加”  。
 
-3.  浏览到 **.cpk** 文件（WLK 测试结果）并单击“加载”  。
+3. 浏览到 **.cpk** 文件（WLK 测试结果）并单击“加载”  。
 
-4.  如果设备不是内置设备，请输入“驱动程序包”  、“驱动程序区域设置”  和“符号(可选)”  。 **注意**：驱动程序包的相对路径加上文件名必须少于 160 个字符。 如果超过此限制，将无法处理提交操作。
+4. 如果设备不是内置设备，请输入“驱动程序包”  、“驱动程序区域设置”  和“符号(可选)”  。 **注意**：驱动程序包的相对路径加上文件名必须少于 160 个字符。 如果超过此限制，将无法处理提交操作。
 
-5.  关闭“添加 DTM 结果”  对话框。
+5. 关闭“添加 DTM 结果”  对话框。
 
-6.  你可以通过选择新条目并单击“编辑”  来编辑该条目。
+6. 你可以通过选择新条目并单击“编辑”  来编辑该条目。
 
-7.  添加所有条目后，通过单击“创建包”  创建 **.cab** 提交包。
+7. 添加所有条目后，通过单击“创建包”  创建 **.cab** 提交包。
 
-8.  如果工具发现错误，将停止打包，并以红色突出显示含有错误的条目。 要查看错误，请单击“查看错误”  。 通过单击“编辑”  并更新驱动程序或测试结果，来修复这些错误。 必须先修复所有错误，然后才能创建程序包。
+8. 如果工具发现错误，将停止打包，并以红色突出显示含有错误的条目。 要查看错误，请单击“查看错误”  。 通过单击“编辑”  并更新驱动程序或测试结果，来修复这些错误。 必须先修复所有错误，然后才能创建程序包。
 
-9.  工具将生成要提交的 **WQReady.xml** 文件。
+9. 工具将生成要提交的 **WQReady.xml** 文件。
 
-    **注意**  
-    **WQReady.xml** 是默认文件名，但是你可以重命名该文件。
+    **注意**   WQReady.xml 是默认文件名，但是你可以重命名该文件。
 
 ## <a name="submitting-your-file"></a>提交文件
 

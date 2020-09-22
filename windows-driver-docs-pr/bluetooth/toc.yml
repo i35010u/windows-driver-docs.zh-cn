@@ -110,6 +110,8 @@
               href: testing-BTP-hw-hid.md
             - name: 支持音频的无线电收发器
               href: testing-BTP-hw-audio.md
+            - name: BM-64-EVB 开发板
+              href: testing-BTP-hw-bm64.md
         - name: BTP 测试
           items:
             - name: 当前可用的 BTP 测试
@@ -120,5 +122,9 @@
               href: testing-BTP-tests-hid.md
             - name: 测试蓝牙音频
               href: testing-BTP-tests-audio.md
+            - name: 测试蓝牙音频和 HID
+              href: testing-BTP-tests-audio-hid.md
+            - name: 测试蓝牙电池
+              href: testing-BTP-tests-battery.md
 - name: 蓝牙无线收发器重置和恢复
   href: bluetooth-radio-error-recovery.md

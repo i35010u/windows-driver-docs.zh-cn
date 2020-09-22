@@ -5,12 +5,12 @@ ms.assetid: 120AA970-D981-4E7D-A9BD-68125D90A0EE
 ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 87c08d598b3cb39128933965956b52ffcd737b28
-ms.sourcegitcommit: 4f08f5686c0bbc27d58930b993cbab1a98e3afb0
+ms.openlocfilehash: ed4503e1e5b19bdfd68c6ff933e64e5108eb5778
+ms.sourcegitcommit: a5f76805387760730faed5674d87201ec85b7dd3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/03/2020
-ms.locfileid: "89443725"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90112070"
 ---
 # <a name="add-or-update-a-code-signing-certificate"></a>添加或更新代码签名证书
 
@@ -18,7 +18,7 @@ ms.locfileid: "89443725"
 
 合作伙伴中心支持将多个证书与单个帐户相关联。  如果要添加其他证书，请使用这个相同的过程。
 
-如果你首次在仪表板上注册公司，请参阅[建立新公司](/windows-hardware/drivers/dashboard/dashboard-administration)。
+如果你首次在仪表板上注册公司，请参阅[硬件仪表板计划入门](get-started-with-the-hardware-dashboard.md)。
 
 > [!IMPORTANT]
 > 已上传并用于所有合作伙伴中心提交包的证书已更改：
@@ -55,7 +55,7 @@ ms.locfileid: "89443725"
 
 * [在登录之前](./get-started-with-the-hardware-dashboard.md)
 
-* [建立新公司](/windows-hardware/drivers/dashboard/dashboard-administration)
+* [硬件仪表板计划入门](get-started-with-the-hardware-dashboard.md)
 
 * [硬件认证提交](./hardware-certification-submissions.md)
 

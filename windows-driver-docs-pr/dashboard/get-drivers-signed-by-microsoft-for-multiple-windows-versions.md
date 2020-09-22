@@ -5,12 +5,12 @@ ms.assetid: 519384F5-986C-4109-8C91-4352DEFF46F9
 ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5f91a0df04ed99077e1c9b9b42e4b955fe63a897
-ms.sourcegitcommit: bd72676caf2bf5c9738c4081c778316919b85d30
+ms.openlocfilehash: a23e192867eceb6c0a275b55e1afef727ef7da7d
+ms.sourcegitcommit: a5f76805387760730faed5674d87201ec85b7dd3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2020
-ms.locfileid: "89450202"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90112104"
 ---
 # <a name="get-drivers-signed-by-microsoft-for-multiple-windows-versions"></a>获取由 Microsoft 签名的适用于多个 Windows 版本的驱动程序
 
@@ -20,7 +20,7 @@ ms.locfileid: "89450202"
 
 有两种方法可以将仪表板提交应用到 Windows 10 和较早版本的 Windows：
 
-1. 使用 Hardware Lab Kit (HLK) 针对 Windows 10 测试你的提交，而使用硬件认证工具包 (HCK) 针对较早版本的 Windows 测试提交。 然后，创建一个包含所有[合并 HLK/HCK 测试结果](/windows-hardware/test/hlk/user/merge-packages)的仪表板提交。 在提交过程中，可以选择加入以获取适用于 Windows Vista 和 Windows XP 的免费签名，如本主题的后面部分所示。 若要选择加入 Windows Server 2008，请提供来自 [Windows 徽标工具包 (WLK)](https://www.microsoft.com/download/details.aspx?id=39359) 提交的提交 ID。 这是使提交适用于所有 Windows 版本的唯一方法。
+1. 使用 Hardware Lab Kit (HLK) 针对 Windows 10 测试你的提交，而使用硬件认证工具包 (HCK) 针对较早版本的 Windows 测试提交。 然后，创建一个包含所有[合并 HLK 测试结果](/windows-hardware/test/hlk/user/merge-packages)的仪表板提交。 在提交过程中，可以选择加入以获取适用于 Windows Vista 和 Windows XP 的免费签名，如本主题的后面部分所示。 若要选择加入 Windows Server 2008，请提供来自 [Windows Hardware Lab Kit (HLK)](/windows-hardware/test/hlk/index/) 提交的提交 ID。 这是使提交适用于所有 Windows 版本的唯一方法。
 2. 作为 HLK 和 HCK 测试的替代方法，可以自行[交叉签名](../install/cross-certificates-for-kernel-mode-code-signing.md)你的驱动程序，并将它提交到仪表板以供[验证签名](attestation-signing-a-kernel-driver-for-public-release.md)，以便它还可以在 Windows 10 上运行。 这个方法更复杂，但仍是一个有效选项。 有关如何对驱动程序进行证明签名的详细信息，请参阅[对内核驱动程序进行证明签名以便公开发布](attestation-signing-a-kernel-driver-for-public-release.md)。
 
 本主题会提供有关用于上下文的仪表板的一些背景信息，然后演练使用 HLK/HCK 的过程。

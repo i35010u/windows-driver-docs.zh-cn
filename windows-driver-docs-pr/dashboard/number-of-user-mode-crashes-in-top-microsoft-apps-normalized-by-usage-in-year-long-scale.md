@@ -1,15 +1,15 @@
 ---
-title: 热门 Microsoft 应用中的用户模式崩溃次数
+title: 热门 Microsoft 应用中用户模式的崩溃次数（生态系统）
 description: 该度量将 7 天滑动窗口中的遥测数据聚合为热门 Microsoft 应用在总运行时（以年为单位）内由显卡驱动程序引起的崩溃比率
 ms.topic: article
 ms.date: 05/20/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 12a2edfbe8ef1e13df262e49a9da1bd9e316d52b
-ms.sourcegitcommit: cb5f370b867ceab28b6b6c64a3586b0bb3831b3d
+ms.openlocfilehash: d2056e030f968784b764a746400fe34539f466e7
+ms.sourcegitcommit: b331d736356095f852629402bd1a0becbb396ede
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "86036005"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90765313"
 ---
 # <a name="number-of-user-mode-crashes-in-top-microsoft-apps-normalized-by-usage-is-less-than-or-equal-to-the-baseline-goal-ecosystem"></a>热门 Microsoft 应用中用户模式的崩溃次数（按使用时间规范化）小于或等于基线目标（生态系统）
 

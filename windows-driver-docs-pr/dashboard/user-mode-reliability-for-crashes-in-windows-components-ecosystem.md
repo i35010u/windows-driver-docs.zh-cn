@@ -1,15 +1,15 @@
 ---
-title: Windows 组件中用户模式可靠性的崩溃次数（按总体规范化）小于或等于基线目标
+title: Windows 组件中用户模式可靠性的崩溃次数（按总体规范化）小于或等于基线目标（生态系统）
 description: 该度量将 7 天滑动窗口中的遥测数据聚合为 Microsoft 组件在总运行时（以年为单位）内由显卡驱动程序引起的崩溃比率
 ms.topic: article
 ms.date: 08/08/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 45f54149f29d092c6dcc1abc48382f960ed78bc7
-ms.sourcegitcommit: cb5f370b867ceab28b6b6c64a3586b0bb3831b3d
+ms.openlocfilehash: 3e880e012866782e95083ac0188067d788c99c50
+ms.sourcegitcommit: b331d736356095f852629402bd1a0becbb396ede
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "86036009"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90765308"
 ---
 # <a name="number-of-user-mode-reliability-for-crashes-in-windows-components-photos-app-normalized-by-population-is-less-than-or-equal-to-the-baseline-goal-ecosystem"></a>Windows 组件照片应用中用户模式可靠性的崩溃次数（按总体规范化）小于或等于基线目标（生态系统）
 

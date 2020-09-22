@@ -1,15 +1,15 @@
 ---
-title: Microsoft 照片应用中用户模式可靠性的崩溃次数，小于或等于基线目标
+title: Microsoft 照片应用中用户模式可靠性的崩溃次数小于或等于基线目标（生态系统）
 description: 该度量将 7 天滑动窗口中的遥测数据聚合为 Microsoft 照片在总运行时（以年为单位）内由显卡驱动程序引起的崩溃比率
 ms.topic: article
 ms.date: 05/20/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: d7c455b0240feb1445fab05d347bdaf0d8034787
-ms.sourcegitcommit: cb5f370b867ceab28b6b6c64a3586b0bb3831b3d
+ms.openlocfilehash: 03b26de07ba3394a3f96a4609747695203067fb5
+ms.sourcegitcommit: b331d736356095f852629402bd1a0becbb396ede
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "86036021"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90765310"
 ---
 # <a name="number-of-user-mode-reliability-for-crashes-in-microsoft-photos-app-normalized-by-usage-is-less-than-or-equal-to-the-baseline-goal-ecosystem"></a>Microsoft 照片应用中用户模式可靠性的崩溃次数（按使用时间规范化）小于或等于基线目标（生态系统）
 
