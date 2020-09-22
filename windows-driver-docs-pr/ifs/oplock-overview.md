@@ -1,17 +1,17 @@
 ---
-title: 概述
-description: 概述
+title: Oplock 概述
+description: Oplock 概述
 ms.assetid: 3b2895a2-9a2e-46eb-b8fb-47d6db4a1de0
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b4089fccc06c4aeaf4b984c2e5c41950f6d4e14a
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 20b90b081477717fecfbf112ca187e2e2cdbe998
+ms.sourcegitcommit: 3ef13fe08ce81186fc3bfcc9f9627b225f9b979d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89063022"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90988915"
 ---
-# <a name="overview"></a>概述
+# <a name="oplock-overview"></a>Oplock 概述
 
 
 ## <span id="ddk_network_redirector_design_and_performance_if"></span><span id="DDK_NETWORK_REDIRECTOR_DESIGN_AND_PERFORMANCE_IF"></span>

@@ -4,12 +4,12 @@ description: 本部分介绍 Windows 10 中驱动程序开发的新增功能。
 ms.assetid: 90f7754d-be7a-408d-8b89-b173a86c4fa3
 ms.date: 04/28/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 8944b649f93c83ed3d4355d50b6edf928acc5fb7
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 8c69597cc0428d92dd0c88e55308d7c9c02085d2
+ms.sourcegitcommit: 3ef13fe08ce81186fc3bfcc9f9627b225f9b979d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89065970"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90988913"
 ---
 # <a name="whats-new-in-windows-10-version-1903"></a>Windows 10 版本1903中的新增功能
 
@@ -175,6 +175,7 @@ Windows 10 版本 1903 中添加了以下存储功能：
 
 Windows 10 版本 1903 包含 WHEA 的简化界面。  有关详细信息，请参阅以下页：
 
+* [在 Windows 10 上使用 WHEA](/windows-hardware/drivers/whea/using-whea-on-windows-10)
 * [**WheaAddErrorSourceDeviceDriver**](/windows-hardware/drivers/ddi/ntddk/nf-ntddk-wheaadderrorsourcedevicedriver)
 * [**WheaReportHwErrorDeviceDriver**](/windows-hardware/drivers/ddi/ntddk/nf-ntddk-wheareporthwerrordevicedriver)
 * [**WheaRemoveErrorSourceDeviceDriver**](/windows-hardware/drivers/ddi/ntddk/nf-ntddk-whearemoveerrorsourcedevicedriver)
