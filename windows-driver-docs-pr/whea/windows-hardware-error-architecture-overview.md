@@ -5,12 +5,12 @@ ms.assetid: 859caa70-371c-4191-baf9-52a38411164a
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 0d388ef0c714b4dd2a62669bd6b1359e375880cb
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 41854d10418336761aa43f5c0ef5a4659e37643f
+ms.sourcegitcommit: 1535a9ac3ec390340bb3c7e7bed9ac08ba1d2bdb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89210995"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "91007424"
 ---
 # <a name="windows-hardware-error-architecture-overview"></a>Windows 硬件错误体系结构概述
 
@@ -20,7 +20,6 @@ Windows 10 版本 1903 包含 WHEA 的简化界面。  有关详细信息，请�
 - [**WheaReportHwErrorDeviceDriver**](/windows-hardware/drivers/ddi/ntddk/nf-ntddk-wheareporthwerrordevicedriver)
 - [**WheaRemoveErrorSourceDeviceDriver**](/windows-hardware/drivers/ddi/ntddk/nf-ntddk-whearemoveerrorsourcedevicedriver)
 - [**WHEA_ERROR_SOURCE_CONFIGURATION_DEVICE_DRIVER**](/windows-hardware/drivers/ddi/ntddk/ns-ntddk-whea_error_source_configuration_device_driver)
-- [*WHEA_ERROR_SOURCE_READY_DEVICE_DRIVER*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nc-ntddk-_whea_error_source_ready_device_driver)
 - [*WHEA_ERROR_SOURCE_UNINITIALIZE_DEVICE_DRIVER*](/windows-hardware/drivers/ddi/ntddk/nc-ntddk-_whea_error_source_uninitialize_device_driver)
 - [*WHEA_ERROR_SOURCE_INITIALIZE_DEVICE_DRIVER*](/windows-hardware/drivers/ddi/ntddk/nc-ntddk-_whea_error_source_initialize_device_driver)
 

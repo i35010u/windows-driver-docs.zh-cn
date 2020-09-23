@@ -4,12 +4,12 @@ description: 本部分介绍 Windows 10 中驱动程序开发的新增功能。
 ms.assetid: 90f7754d-be7a-408d-8b89-b173a86c4fa3
 ms.date: 04/28/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 8c69597cc0428d92dd0c88e55308d7c9c02085d2
-ms.sourcegitcommit: 3ef13fe08ce81186fc3bfcc9f9627b225f9b979d
+ms.openlocfilehash: 516dad272db4f360ceb77393cd949899281ef0fd
+ms.sourcegitcommit: 1535a9ac3ec390340bb3c7e7bed9ac08ba1d2bdb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 09/22/2020
-ms.locfileid: "90988913"
+ms.locfileid: "91007426"
 ---
 # <a name="whats-new-in-windows-10-version-1903"></a>Windows 10 版本1903中的新增功能
 
@@ -180,7 +180,6 @@ Windows 10 版本 1903 包含 WHEA 的简化界面。  有关详细信息，请�
 * [**WheaReportHwErrorDeviceDriver**](/windows-hardware/drivers/ddi/ntddk/nf-ntddk-wheareporthwerrordevicedriver)
 * [**WheaRemoveErrorSourceDeviceDriver**](/windows-hardware/drivers/ddi/ntddk/nf-ntddk-whearemoveerrorsourcedevicedriver)
 * [**WHEA_ERROR_SOURCE_CONFIGURATION_DEVICE_DRIVER**](/windows-hardware/drivers/ddi/ntddk/ns-ntddk-whea_error_source_configuration_device_driver)
-* [*WHEA_ERROR_SOURCE_READY_DEVICE_DRIVER*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nc-ntddk-_whea_error_source_ready_device_driver)
 * [*WHEA_ERROR_SOURCE_UNINITIALIZE_DEVICE_DRIVER*](/windows-hardware/drivers/ddi/ntddk/nc-ntddk-_whea_error_source_uninitialize_device_driver)
 * [*WHEA_ERROR_SOURCE_INITIALIZE_DEVICE_DRIVER*](/windows-hardware/drivers/ddi/ntddk/nc-ntddk-_whea_error_source_initialize_device_driver)
 
