@@ -4,16 +4,16 @@ description: 使用 ACPI 生成框架 (AcpiGenFx) 库来编写用于生成 ACPI 
 ms.assetid: 46A725C3-609E-45B9-A4BD-033656208E92
 ms.date: 05/22/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 1045bcf3c0cb6430c565ae0e49732f0d72ee63ec
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 4bfbcb36773499ec92d20407e7472fdff22012a2
+ms.sourcegitcommit: d25910aed582d4da66534371a78013f1a354e716
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89189029"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91110552"
 ---
 # <a name="generate-acpi-tables-by-using-acpigenfx"></a>使用 AcpiGenFx 生成 ACPI 表
 
-## <a name="summary"></a>“摘要”
+## <a name="summary"></a>总结
 
 - 创建使用 AcpiGenFx 生成 ACPI 表的 .NET 应用
 
@@ -31,13 +31,13 @@ ms.locfileid: "89189029"
 
 使用 ACPI 生成框架 (AcpiGenFx) 库来编写用于生成 ACPI 表的应用程序。
 
-在 Windows 10 中，新的 c # 库 AcpiGenFx 使你可以更轻松地编写应用程序，该应用程序可创建用于描述平台上的硬件设备和资源的 ACPI 表，如中断控制器、SD 主机控制器、GPIO 和 i2c 设备。 通过使用框架对象公开的方法和属性，可以描述设备、资源和依赖关系，而无需知道 ACPI 表的确切语法或引用 ACPI 规范。 AcpiGenFx 会生成 ACPI 计算机语言 (ASL 独立于操作系统的) 代码，它还知道特定于 Windows 的要求。
+在 Windows 10 中，新的 c # 库 AcpiGenFx 使你可以更轻松地编写应用程序，用于创建用于描述平台上的硬件设备和资源的 ACPI 表，如中断控制器、SD 主机控制器、GPIO 和 I<sup>2</sup>C 设备。 通过使用框架对象公开的方法和属性，可以描述设备、资源和依赖关系，而无需知道 ACPI 表的确切语法或引用 ACPI 规范。 AcpiGenFx 会生成 ACPI 计算机语言 (ASL 独立于操作系统的) 代码，它还知道特定于 Windows 的要求。
 
 该应用基于这些说明生成相关 ACPI 表文件 (\* aslc 和 \* asl) 。 在生成时，AcpiGenFx 以静态方式分析平台说明，检测循环或未解析的依赖项、设备命名和 UUID 冲突、资源到控制器映射等错误。 因此，生成的 ASL 代码更易于调试，因为 AcpiGenFx 检查最常见的错误，并抽象唯一的 ACPI 实现细节。
 
 AcpiGenFx 在本质上是声明性的：其输出仅为静态数据，而不是用于生成动态运行时方法的。 如果框架未涵盖用例，如先进的外部设备电源管理，则这些方法必须在 Windows 平台扩展驱动程序中实现，或手动添加到 AcpiGenFx 生成的 ASL 代码。
 
-## <a name="before-you-begin"></a>在开始之前
+## <a name="before-you-begin"></a>开始之前
 
 在 WDK 安装的 **AcpiGenFx** 文件夹中找到以下文件。
 
@@ -68,7 +68,7 @@ AcpiGenFx 在本质上是声明性的：其输出仅为静态数据，而不是�
 
 1. 在 Visual Studio 中，打开一个新的 c # 控制台项目。
 
-1. 向 AutoAcpi.dll 程序集添加引用。 在 " **项目** " 菜单下，单击 " **添加引用**"。 单击 " **浏览** " 并导航到 AutoAcpi.dll 的位置。 单击" **确定**"。
+1. 向 AutoAcpi.dll 程序集添加引用。 在 " **项目** " 菜单下，单击 " **添加引用**"。 单击 " **浏览** " 并导航到 AutoAcpi.dll 的位置。 单击“确定”。
 
 1. 在 **解决方案资源管理器**中，展开 " **引用** " 并选择 " **acpigenfx**"。 查看对象浏览器 (**视图 &gt; 对象浏览器**) 中的对象。
 
@@ -186,12 +186,12 @@ AcpiGenFx 在本质上是声明性的：其输出仅为静态数据，而不是�
 <tr class="odd">
 <td><strong>HidOverI2C</strong></td>
 <td><strong>AddHidI2CDevice</strong></td>
-<td>添加连接到 I i2c 总线的 HID 设备。</td>
+<td>添加连接到 I<sup>2</sup>C 总线的 HID 设备。</td>
 </tr>
 <tr class="even">
 <td><strong>I2CController</strong></td>
 <td><strong>AddI2CController</strong></td>
-<td>添加 i2c 控制器和相关资源，例如中断、i/o 和事件。</td>
+<td>添加 I<sup>2</sup>个 C 控制器和相关资源，例如中断、i/o 和事件。</td>
 </tr>
 <tr class="odd">
 <td><strong>KDNet2Usb</strong></td>
@@ -270,7 +270,7 @@ mem.DebugAccessSize = DebugAccessSize.DWordAccess;
 
 在上述代码片段中，xHCI 主机控制器具有中断资源和调试支持。 它在 PEP 设备和 GPIO 控制器上具有依赖关系。 若要查看这些设备的说明，请参阅 DSDTSamples。
 
-此示例演示如何将 i2c 控制器添加到 DSDT。
+此示例演示如何将 I<sup>2</sup>C 控制器添加到 DSDT。
 
 ```cs
 I2CController i2c = Platform.AddI2CController("I2C1", "I2CCONTR", 0);
@@ -278,7 +278,7 @@ i2c.AddMemory32Fixed(true, 0xf9999000, 0x400, "");
 i2c.AddInterrupt(InterruptType.Level, InterruptActiveLevel.ActiveHigh, SharingLevel.Exclusive, 40);
 ```
 
-下面是具有 xHCI 主机和 I-I C 控制器定义的控制台应用程序的输出。
+下面是包含 xHCI host 和 I<sup>2</sup>C 控制器定义的控制台应用的输出。
 
 ```console
 
@@ -371,10 +371,7 @@ void * ReferenceDBG2Table(void) {
 
 1. 将 **SSDT** 属性设置为 true。 这向框架表明，此表是 SSDT。
 
-1. 创建设备并分配资源。 例如，对于此处显示的传感器设备，示例将调用 **AddGenericDevice** ，并指定设备名称、硬件 ID 和唯一实例。 连接到 I-C 串行总线 I2C1 的传感器设备，如 DSDT 中所述。
-
-> [!NOTE]
-> Microsoft 支持多样化的包容性环境。 在本文档中，有对单词从属的引用。 适用于 [偏置的通信](/style-guide/bias-free-communication) 的 Microsoft 风格指南将此识别为 exclusionary 的字。 这种措辞使用这种方式，因为它是当前在软件中使用的措辞。
+1. 创建设备并分配资源。 例如，对于此处显示的传感器设备，示例将调用 **AddGenericDevice** ，并指定设备名称、硬件 ID 和唯一实例。 连接到 I<sup>2</sup>C 串行总线 I2C1 的传感器设备，如 DSDT 中所述。
 
 ```asl
 namespace SSDTSample
@@ -397,8 +394,8 @@ namespace SSDTSample
             var sensor = platform.AddGenericDevice("ADXL", "ACPI\\ADXL345Acc", 1);
 
             sensor.AddI2CSerialBus(
-                SlaveAddress: 0x1d,
-                Mode: SlaveMode.ControllerInitiated,
+                TargetAddress: 0x1d,
+                Mode: TargetMode.ControllerInitiated,
                 ConnectionSpeed: 400000,
                 addressmode: AddressMode._7Bit,
                 controllername: "I2C1"
