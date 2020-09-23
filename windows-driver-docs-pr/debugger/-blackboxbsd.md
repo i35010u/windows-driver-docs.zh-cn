@@ -3,7 +3,6 @@ title: blackboxbsd
 description: Blackboxbsd 扩展显示启动状态数据 (BSD) 的辅助启动信息。
 keywords:
 - blackboxbsd Windows 调试
-ms.author: windowsdriverdev
 ms.date: 12/06/2018
 ms.topic: article
 ms.prod: windows-hardware
@@ -14,12 +13,12 @@ api_name:
 - blackboxbsd
 api_type:
 - NA
-ms.openlocfilehash: 321b777c3783d71ca12f17851efa2fa1228a6f26
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 74b8e8c3afb596a04cebce1cf8f972242b6fdff9
+ms.sourcegitcommit: e6247811ff9a07070547af3d89705dae33a2f465
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89217419"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91026394"
 ---
 # <a name="blackboxbsd"></a>!blackboxbsd
 

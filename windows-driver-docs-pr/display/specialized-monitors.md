@@ -8,18 +8,17 @@ keywords:
 - monitors
 - HMD
 - 虚拟现实
-ms.author: windowsdriverdev
 ms.date: 11/30/2018
 ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
 ms.localizationpriority: medium
-ms.openlocfilehash: 18d22fdc448505ad58cf599dd777d9b002fc438d
-ms.sourcegitcommit: 5953acfcf699397a708bcc360b9f2199115feb52
+ms.openlocfilehash: a7ab45724cae973993235e3085232d3a80c6b188
+ms.sourcegitcommit: e6247811ff9a07070547af3d89705dae33a2f465
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/13/2020
-ms.locfileid: "86292866"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91026430"
 ---
 # <a name="head-mounted-and-specialized-monitors"></a>打印头和专用监视器
 

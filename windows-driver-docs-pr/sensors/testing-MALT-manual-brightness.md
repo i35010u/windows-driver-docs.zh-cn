@@ -1,16 +1,15 @@
 ---
 title: 测试手动亮度
-author: windows-driver-content
 description: 本主题介绍如何使用 MALT (Microsoft 环境光线工具) 工具测试手动亮度。
 ms.assetid: 1a7dd439-2634-49ae-8b0c-1dec843b34d7
 ms.date: 12/13/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 44aa5449951aecdb48bb9d4383feffa5ed2a869e
-ms.sourcegitcommit: 937974aa9bbe0262a7ffe9631593fab48c4e7492
+ms.openlocfilehash: d1ff564f46967e763152d8f19c9e18f2aa506fd1
+ms.sourcegitcommit: e6247811ff9a07070547af3d89705dae33a2f465
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "90010287"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91026422"
 ---
 # <a name="testing-manual-brightness"></a>测试手动亮度
 

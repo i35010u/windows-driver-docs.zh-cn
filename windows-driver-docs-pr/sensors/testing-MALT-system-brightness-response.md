@@ -1,16 +1,15 @@
 ---
 title: 测试系统亮度响应
-author: windows-driver-content
 description: 本主题提供有关如何使用 MALT (Microsoft 环境光线工具) 作为轻测试解决方案的说明。
 ms.assetid: f0ba2628-8752-467d-abf6-6447668ac244
 ms.date: 12/13/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 4c4d8e61d8f7274f4f9bc9fd93dd65c2445770e4
-ms.sourcegitcommit: 937974aa9bbe0262a7ffe9631593fab48c4e7492
+ms.openlocfilehash: ab17810cb1af103392ee8e73276ac2d3be9760db
+ms.sourcegitcommit: e6247811ff9a07070547af3d89705dae33a2f465
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "90009779"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91026418"
 ---
 # <a name="testing-system-brightness-response"></a>测试系统亮度响应
 

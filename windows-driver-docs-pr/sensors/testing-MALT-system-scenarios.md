@@ -1,16 +1,15 @@
 ---
 title: 测试系统方案
-author: windows-driver-content
 description: 此测试重点在于确保环境光线传感器 (ALS) 在发生系统电源事件（如睡眠或休眠）后正常工作。
 ms.assetid: f2778853-ddc8-4118-aa58-9df6dab53b7a
 ms.date: 12/13/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: b3cb71044ee71fbc48c6d8e41ef3575df5b35f7a
-ms.sourcegitcommit: 937974aa9bbe0262a7ffe9631593fab48c4e7492
+ms.openlocfilehash: 807b58349ed6f78b7447fe8b40888013453bed19
+ms.sourcegitcommit: e6247811ff9a07070547af3d89705dae33a2f465
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "90009863"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91026414"
 ---
 # <a name="testing-system-scenarios"></a>测试系统方案
 

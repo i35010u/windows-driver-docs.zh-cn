@@ -3,7 +3,6 @@ title: blackboxscm
 description: Blackboxscmextension 显示服务控制管理器 (scm) 辅助启动数据。
 keywords:
 - blackboxscm Windows 调试
-ms.author: windowsdriverdev
 ms.date: 01/02/2019
 ms.topic: article
 ms.prod: windows-hardware
@@ -14,12 +13,12 @@ api_name:
 - blackboxscm
 api_type:
 - NA
-ms.openlocfilehash: f6fc46c6449a80b5a0ef9d24664a29e6816af5cd
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: a45bbe8040fc5fab163d2a42f30b2bedc6f9a4e9
+ms.sourcegitcommit: e6247811ff9a07070547af3d89705dae33a2f465
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90716976"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91026380"
 ---
 # <a name="blackboxscm"></a>!blackboxscm
 

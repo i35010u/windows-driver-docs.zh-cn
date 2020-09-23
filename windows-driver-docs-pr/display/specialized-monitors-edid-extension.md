@@ -8,18 +8,17 @@ keywords:
 - monitors
 - HMD
 - 虚拟现实
-ms.author: windowsdriverdev
 ms.date: 11/30/2018
 ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
 ms.localizationpriority: medium
-ms.openlocfilehash: 0cf904dd1f37d4ce32e5333e754930ebf7300fc9
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 1dbc7ef2b01419c10550e2589f0908d114454e31
+ms.sourcegitcommit: e6247811ff9a07070547af3d89705dae33a2f465
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89064600"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91026428"
 ---
 # <a name="edid-extension-for-head-mounted-and-specialized-monitors"></a>用于 head 装载和专用监视器的 EDID 扩展
 

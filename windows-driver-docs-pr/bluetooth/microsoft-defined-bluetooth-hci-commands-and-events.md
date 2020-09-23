@@ -4,12 +4,12 @@ description: 蓝牙主机控制器接口 (HCI) 指定主机和蓝牙无线电控
 ms.assetid: 68E34B92-155B-401E-8D90-5BD1AF036B4D
 ms.date: 02/07/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: a2793a271945ec6be0f180582669751010b353b5
-ms.sourcegitcommit: 930dc67b8b83a9e9628c54a5d1470c7f698d1824
+ms.openlocfilehash: c64764e246e85250bdca0f81cf83e3d809e5dc8f
+ms.sourcegitcommit: e6247811ff9a07070547af3d89705dae33a2f465
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/09/2020
-ms.locfileid: "89591996"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91026420"
 ---
 # <a name="microsoft-defined-bluetooth-hci-extensions"></a>Microsoft 定义的蓝牙 HCI 扩展
 
@@ -79,7 +79,7 @@ HCI_VS_MSFT_Read_Supported_Features 提供了一个位图，用于描述控制�
 <table>
   <thead>
     <tr>
-    <th>Command</th>
+    <th>命令</th>
     <th>代码</th>
     <th>命令参数</th>
     <th>返回参数</th>
@@ -107,7 +107,7 @@ HCI_VS_MSFT_Read_Supported_Features 提供了一个位图，用于描述控制�
 
 **Subcommand_opcode** (1 八进制) ：
 
-| “值”  |   参数说明 |
+| 值  |   参数说明 |
 |---|---|
 |0x00   |  HCI_VS_MSFT_Read_Supported_Features 的子命令操作码。|
 
@@ -115,20 +115,20 @@ HCI_VS_MSFT_Read_Supported_Features 提供了一个位图，用于描述控制�
 
 **状态** (1 个八进制) ：
 
-| “值”  |   参数说明 |
+| 值  |   参数说明 |
 |---|---|
 |  0x00 |  命令已成功。 |
 | 0x01&#160;-&#160;0xFF  |  命令失败。 有关详细信息，请参阅蓝牙核心规范中的 _错误代码_ 。 |
 
 **Subcommand_opcode** (1 八进制) ：
 
-| “值”  |   参数说明 |
+| 值  |   参数说明 |
 |---|---|
 |0x00   |  [HCI_VS_MSFT_Read_Supported_Features](#hci_vs_msft_read_supported_features)的子命令操作码。|
 
 **Supported_features** (8 个八进制) ：
 
-| “值”  |   参数说明 |
+| 值  |   参数说明 |
 |---|---|
 |0x00000000&#160;00000001  |控制器支持 BR/EDR 连接的 RSSI 监视功能。 此外，控制器还支持 [HCI_VS_MSFT_Read_Absolute_RSSI](#hci_vs_msft_read_absolute_rssi) 读取 BR/EDR 连接的绝对 RSSI 指标。 |
 |0x00000000&#160;00000002  |控制器支持 LE 连接的 RSSI 监视功能。 |
@@ -137,18 +137,19 @@ HCI_VS_MSFT_Read_Supported_Features 提供了一个位图，用于描述控制�
 |0x00000000&#160;00000010 |控制器支持在 P-192 和 P-256 的安全简单配对过程中验证曲线上公共 X 和 Y 坐标的有效性。 <br/>有关详细信息，请参阅 [蓝牙核心规范错误 10734](https://www.bluetooth.org/docman/handlers/downloaddoc.ashx?doc_id=447440)。|
 |0x00000000 00000020|控制器支持与其他无线电活动并发执行的 LE 广告的持续广告监视。|
 |0x00000000 00000040|保留。|
-|0x00000000 00000080|控制器支持不进行采样的 RSSI 监视 LE 扩展播发。|
-|0xFFFFFFFF&#160;FFFFFFF0|保留以供将来定义的位。 必须为零。|
+|0x00000000 00000080|保留。|
+|0x00000000 00000100|保留。|
+|0xFFFFFFFF&#160;FFFFFE00|保留以供将来定义的位。 必须为零。|
 
 **Microsoft_event_prefix_length** (1 八进制) ：
 
-| “值”  |   参数说明 |
+| 值  |   参数说明 |
 |---|---|
 |0x00&#160; &#160;0x20|在返回的 _Microsoft_event_prefix_中指定的 Microsoft 事件前缀字段中的字节数。 这是每个 Microsoft 指定的 HCI 事件开始时的常量信息的字节数。|
 
 **Microsoft_event_prefix** (可变长度) ：
 
-| “值”  |   参数说明 |
+| 值  |   参数说明 |
 |---|---|
 |事件&#160;前缀&#160;值| 要在每个 Microsoft 定义事件开始时预期的常量信息。 此信息用于将 Microsoft 定义的事件与其他自定义事件区分开来。|
 
@@ -156,7 +157,7 @@ HCI_VS_MSFT_Read_Supported_Features 提供了一个位图，用于描述控制�
 
 HCI_VS_MSFT_Monitor_Rssi 请求控制器开始监视指定连接的已测量链接 RSSI，并在连接的度量链接 RSSI 超出指定边界时生成事件。
 
-|Command|代码|命令参数|返回参数|
+|命令|代码|命令参数|返回参数|
 |---|---|---|---|
 |HCI_VS_MSFT_Read_Supported_Features|选择的基本代码 |<ul><li>Subcommand_opcode</li><li>Connection_handle</li><li>RSSI_threshold_high</li><li>RSSI_threshold_low</li><li>RSSI_threshold_low_time_interval</li><li>RSSI_sampling_period</li></ul>|<ul><li>状态</li><li>Subcommand_opcode</ul>|
 
@@ -177,38 +178,38 @@ HCI_VS_MSFT_Monitor_Rssi 请求控制器开始监视指定连接的已测量链�
 
 Subcommand_opcode (1 八进制) ：
 
-| “值”  |   参数说明 |
+| 值  |   参数说明 |
 |---|---|
 |0x01   |  HCI_VS_MSFT_Monitor_Rssi 的子命令操作码。|
 
 Connection_handle (2 个八进制) ：
 
-| “值”  |   参数说明 |
+| 值  |   参数说明 |
 |---|---|
 |0x_XXXX   |  必须监视其 RSSI 的连接的句柄。|
 
 RSSI_threshold_high (1 八进制) ：
 
-| “值”  |   参数说明 |
+| 值  |   参数说明 |
 |---|---|
 |N_ = _High&#160;RSSI 阈值&#160;值 |  预期的最大 RSSI 值。 如果观察到的 RSSI 将大于或等于此值，则控制器将生成一个事件。 对于 BR/EDR： <ul><li>范围：-128 &lt; =  _N_ &lt; = 127 (有符号整数) </li><li>Unit： dBm</li></ul>对于 LE：<ul><li>范围：-127 到 20 (带符号整数) </li><li>Unit： dBm</li></ul>|
 
 RSSI_threshold_low (1 八进制) ：
 
-| “值”  |   参数说明 |
+| 值  |   参数说明 |
 |---|---|
 |N_ = _Low&#160;RSSI 阈值&#160;值|预期的最小 RSSI 值。 如果观察到的 RSSI 小于或等于此值，则控制器将生成一个事件。 对于 BR/EDR：<ul><li>范围：-128 &lt; =  _N_ &lt; = 127 (有符号整数) </li><li>Unit： dBm</li></ul>对于 LE：<ul><li>范围：-127 到 20 (带符号整数) </li><li>Unit： dBm</li></ul>|
 
 RSSI_threshold_low_time_interval (1 八进制) ：
 
-| “值”  |   参数说明 |
+| 值  |   参数说明 |
 |---|---|
 |0x00|保留值。|
 |N_&#160;=&#160;0x01&#160;-&#160;0x3C|时间段 = _N_ * 1 secondThe 时间（秒），超过此时间后，RSSI 值应 _RSSI_threshold_low_ 低于 [HCI_VS_MSFT_Rssi_Event](#hci_vs_msft_rssi_event) 才能生成。
 
 RSSI_sampling_period (1 八进制) ：
 
-| “值”  |   参数说明 |
+| 值  |   参数说明 |
 |---|---|
 |0x00|保留值。|
 |_N_&#160;=&#160;0x01&#160;-&#160;0xFE|时间段 = _N_ * 100 millisecondsThe 采样间隔（毫秒）。|
@@ -218,7 +219,7 @@ RSSI_sampling_period (1 八进制) ：
 
 状态 (1 个八进制) ：
 
-| “值”  |   参数说明 |
+| 值  |   参数说明 |
 |---|---|
 |  0x00 |  命令已成功。 |
 | 0x01&#160;-&#160;0xFF  |  命令失败。 有关详细信息，请参阅蓝牙核心规范中的 _错误代码_ 。 |
@@ -227,7 +228,7 @@ RSSI_sampling_period (1 八进制) ：
 
 Subcommand_opcod (1 八进制) ：
 
-| “值”  |   参数说明 |
+| 值  |   参数说明 |
 |---|---|
 |0x01|HCI_VS_MSFT_Monitor_Rssi 的子命令操作码。|
 
@@ -248,7 +249,7 @@ Subcommand_opcod (1 八进制) ：
 HCI_VS_MSFT_Cancel_Monitor_Rssi 取消以前颁发的 [HCI_VS_MSFT_Monitor_Rssi](#hci_vs_msft_monitor_rssi) 命令。
 控制器应立即生成命令完成事件以响应此命令。
 
-|Command|代码|命令参数|返回参数|
+|命令|代码|命令参数|返回参数|
 |---|---|---|---|
 |HCI_VS_MSFT_Cancel_Monitor_Rssi|选择的基本代码 |<ul><li>Subcommand_opcode</li><li>Connection_handle</li>|<ul><li>状态</li><li>Subcommand_opcode</ul>|
 
@@ -256,13 +257,13 @@ HCI_VS_MSFT_Cancel_Monitor_Rssi 取消以前颁发的 [HCI_VS_MSFT_Monitor_Rssi]
 
 Subcommand_opcode (1 八进制) ：
 
-| “值”  |   参数说明 |
+| 值  |   参数说明 |
 |---|---|
 |0x02   |  HCI_VS_MSFT_Cancel_Monitor_Rssi 的子命令操作码。|
 
 Connection_handle (1 个八进制) ：
 
-| “值”  |   参数说明 |
+| 值  |   参数说明 |
 |---|---|
 |0x_XXXX   |  必须取消其 RSSI 的连接的句柄。|
 
@@ -270,14 +271,14 @@ Connection_handle (1 个八进制) ：
 
 状态 (1 个八进制) ：
 
-| “值”  |   参数说明 |
+| 值  |   参数说明 |
 |---|---|
 |  0x00 |  命令已成功。 |
 | 0x01&#160;-&#160;0xFF  |  命令失败。 有关详细信息，请参阅蓝牙核心规范中的 _错误代码_ 。 |
 
 Subcommand_opcode (1 八进制) ：
 
-| “值”  |   参数说明 |
+| 值  |   参数说明 |
 |---|---|
 |0x02|HCI_VS_MSFT_Cancel_Monitor_Rssi 的子命令操作码。|
 
@@ -294,7 +295,7 @@ HCI_VS_MSFT_LE_Monitor_Advertisement 请求控制器开始监视属于指定 RSS
 -  (IRK) 指定的标识解析密钥可用于解析播发数据包源自的设备的专用地址。
 - 指定的蓝牙地址可与接收的播发数据包匹配。
 
-|Command|代码|命令参数|返回参数|
+|命令|代码|命令参数|返回参数|
 |---|---|---|---|
 |HCI_VS_MSFT_LE_Monitor_Advertisement|选择的基本代码 |<ul><li>Subcommand_opcode</li><li>Connection_handle</li>|<ul><li>状态</li><li>Subcommand_opcode<li>Monitor_handle</li></ul>|
 
@@ -367,32 +368,32 @@ _模式数据_ 具有以下格式：
 
 Subcommand_opcode (1 八进制) ：
 
-| “值”  |   参数说明 |
+| 值  |   参数说明 |
 |---|---|
 |0x03   |  HCI_VS_MSFT_LE_Monitor_Advertisement 的子命令操作码。|
 
 RSSI_threshold_high (1 八进制) ：
 
-| “值”  |   参数说明 |
+| 值  |   参数说明 |
 |---|---|
 |高 RSSI 阈值|  预期的最大 RSSI 值。 如果观察到的 RSSI 将大于或等于此值，则控制器将生成一个事件。 对于 LE：<ul><li>范围：-127 到 20 (带符号整数) </li><li>Unit： dBm</li></ul>|
 
 RSSI_threshold_low (1 八进制) ：
 
-| “值”  |   参数说明 |
+| 值  |   参数说明 |
 |---|---|
 |低 RSSI 阈值|预期的最小 RSSI 值。 如果观察到的 RSSI 小于或等于此值，则控制器将生成一个事件。 对于 LE：<ul><li>范围：-127 到 20 (带符号整数) </li><li>Unit： dBm</li></ul>|
 
 RSSI_threshold_low_time_interval (1 八进制) ：
 
-| “值”  |   参数说明 |
+| 值  |   参数说明 |
 |---|---|
 |0x00|保留值。|
 |N_&#160;=&#160;0x01&#160;-&#160;0x3C|时间段 = _N_ * 1 秒。 RSSI 值在生成[HCI_VS_MSFT_Rssi_Event](#hci_vs_msft_rssi_event)之前_RSSI_threshold_low_的时间（以秒为单位）。
 
 RSSI_sampling_period (1 八进制) ：
 
-| “值”  |   参数说明 |
+| 值  |   参数说明 |
 |---|---|
 |0x00|控制器应将接收的所有播发传播到主机。|
 |_N_&#160;=&#160;0x01&#160;-&#160;0xFE|时间段 = _N_ * 100 毫秒。 采样间隔（毫秒）。|
@@ -400,7 +401,7 @@ RSSI_sampling_period (1 八进制) ：
 
 Condition_type (1 八进制) ：
 
-| “值”  |   参数说明 |
+| 值  |   参数说明 |
 |---|---|
 |0x01|条件是必须在播发上进行匹配的模式。|
 |0x02|条件为 UUID 类型和 UUID。|
@@ -411,13 +412,13 @@ Condition_type (1 八进制) ：
 
 Number_of_patterns (1 八进制) ：
 
-|“值” |  参数说明|
+|值 |  参数说明|
 |---|---|
 |0xXX| 在 Pattern_data 参数中指定的模式数。|
 
 Pattern_data ( # B0 3 八进制) ：
 
-|“值” |  参数说明|
+|值 |  参数说明|
 |---|---|
 |长度|此模式的长度。|
 |数据类型| 播发部分的数据类型。 这些值列在 "蓝牙分配的数字" 文档中。|
@@ -426,7 +427,7 @@ Pattern_data ( # B0 3 八进制) ：
 
 UUID_type (1 八进制) ：
 
-|“值” |  参数说明|
+|值 |  参数说明|
 |---|---|
 |0x01| UUID 是16位服务。|
 |0x02| UUID 为32位服务。|
@@ -434,19 +435,19 @@ UUID_type (1 八进制) ：
 
 UUID (2、4或16个八进制) ：
 
-|“值” |  参数说明|
+|值 |  参数说明|
 |---|---|
 |0xXXXX| <p>如果 UUID_type 为0x01，则为2个字节。<p><p>如果 UUID_type 为0x02，则为4个字节。</p><p>如果 UUID_type 为0x03，则为16字节。</p>|
 
 IRK (16 个八进制) ：
 
-| “值”  |   参数说明 |
+| 值  |   参数说明 |
 |---|---|
 |<p>0xXXXXXXXX XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX</p><p>XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX</p>|用于解析专用地址的 IRK。|
 
 Address_type (1 八进制) ：
 
-| “值”  |   参数说明 |
+| 值  |   参数说明 |
 |---|---|
 |0x00| 公用设备地址。|
 |0x01| 随机设备地址。|
@@ -454,7 +455,7 @@ Address_type (1 八进制) ：
 
 Address_type (1 八进制) ：
 
-| “值”  |   参数说明 |
+| 值  |   参数说明 |
 |---|---|
 |0xXXXXXXXXXXXX|要监视的设备的蓝牙地址。|
 
@@ -462,7 +463,7 @@ Address_type (1 八进制) ：
 
 状态 (1 个八进制) ：
 
-| “值”  |   参数说明 |
+| 值  |   参数说明 |
 |---|---|
 |  0x00 |  命令已成功。 |
 |0x07|如果控制器没有足够的内存来处理该命令，则控制器应返回内存容量。|
@@ -470,13 +471,13 @@ Address_type (1 八进制) ：
 
 Subcommand_opcode (1 八进制) ：
 
-| “值”  |   参数说明 |
+| 值  |   参数说明 |
 |---|---|
 |0x03| HCI_VS_MSFT_LE_Monitor_Advertisement 的子命令操作码。 |
 
 Monitor_handle (1 八进制) ：
 
-| “值”  |   参数说明 |
+| 值  |   参数说明 |
 |---|---|
 |0x00-0xFF|此规则的句柄。 此句柄用作 HCI_VS_MSFT_LE_Cancel_Monitor_Advertisement 取消监视播发的参数。 仅当状态为0x00 时，此参数才有效。|
 
@@ -488,7 +489,7 @@ Monitor_handle (1 八进制) ：
 
 HCI_VS_MSFT_LE_Cancel_Monitor_Advertisement 取消以前颁发的 [HCI_VS_MSFT_LE_Monitor_Advertisement](#hci_vs_msft_le_monitor_advertisement) 命令。
 
-|Command|代码|命令参数|返回参数|
+|命令|代码|命令参数|返回参数|
 |---|---|---|---|
 |HCI_VS_MSFT_LE_Cancel_Monitor_Advertisement|选择的基本代码 |<ul><li>Subcommand_opcode</li><li>Monitor_handle</li>|<ul><li>状态</li><li>Subcommand_opcode</ul>|
 
@@ -498,13 +499,13 @@ HCI_VS_MSFT_LE_Cancel_Monitor_Advertisement 取消以前颁发的 [HCI_VS_MSFT_L
 
 Subcommand_opcode (1 八进制) ：
 
-| “值”  |   参数说明 |
+| 值  |   参数说明 |
 |---|---|
 |0x04   |  HCI_VS_MSFT_LE_Cancel_Monitor_Advertisement 的子命令操作码。|
 
 Connection_handle (1 八进制) ：
 
-| “值”  |   参数说明 |
+| 值  |   参数说明 |
 |---|---|
 |0xXX| 要取消的筛选器的句柄。|
 
@@ -512,7 +513,7 @@ Connection_handle (1 八进制) ：
 
 状态 (1 个八进制) ：
 
-| “值”  |   参数说明 |
+| 值  |   参数说明 |
 |---|---|
 |  0x00 |  命令已成功。 |
 |0x07|如果控制器没有足够的内存来处理该命令，则控制器应返回内存容量。|
@@ -520,7 +521,7 @@ Connection_handle (1 八进制) ：
 
 Subcommand_opcode (1 八进制) ：
 
-| “值”  |   参数说明 |
+| 值  |   参数说明 |
 |---|---|
 |0x04| HCI_VS_MSFT_LE_Cancel_Monitor_Adver 的子命令操作码。 |
 
@@ -532,7 +533,7 @@ Subcommand_opcode (1 八进制) ：
 
 HCI_VS_MSFT_LE_Set_Advertisement_Filter_Enable 设置播发筛选器的状态。
 
-|Command|代码|命令参数|返回参数|
+|命令|代码|命令参数|返回参数|
 |---|---|---|---|
 |HCI_VS_MSFT_LE_Set_Advertisement_Filter_Enable|选择的基本代码 |<ul><li>Subcommand_opcode</li><li>启用</li>|<ul><li>状态</li><li>Subcommand_opcode</ul>|
 
@@ -550,13 +551,13 @@ HCI_VS_MSFT_LE_Set_Advertisement_Filter_Enable 设置播发筛选器的状态。
 
 Subcommand_opcode (1 八进制) ：
 
-| “值”  |   参数说明 |
+| 值  |   参数说明 |
 |---|---|
 |0x05|  HCI_VS_MSFT_LE_Set_Advertisement_Filter_Enable 的子命令操作码。|
 
 启用 (1 八进制) ：
 
-| “值”  |   参数说明 |
+| 值  |   参数说明 |
 |---|---|
 |0x00| 恢复为当前的白名单行为，但根据  [HCI_VS_MSFT_LE_Monitor_Advertisement](#hci_vs_msft_le_monitor_advertisement) 命令中的 _Condition_s 继续监视设备。|
 |0x01|在控制器上启用所有发出的 HCI_VS_MSFT_LE_Monitor_Advertisement 命令。|
@@ -565,7 +566,7 @@ Subcommand_opcode (1 八进制) ：
 
 状态 (1 个八进制) ：
 
-|“值”| 参数说明|
+|值| 参数说明|
 |---|---|
 |0x00|命令已成功。|
 |0x0C|控制器拒绝命令时，控制器应返回 _命令_ ，因为它以前看到了一个 HCI_VS_MSFT_LE_Set_Advertisement_Filter_Enable 命令，并将 " _启用_ " 设置为与此命令相同的值。|
@@ -573,7 +574,7 @@ Subcommand_opcode (1 八进制) ：
 
 Subcommand_opcode (1 八进制) ：
 
-|“值”| 参数说明|
+|值| 参数说明|
 |---|---|
 |0x05|HCI_VS_MSFT_LE_Set_Advertisement_Filter_Enable 的子命令操作码。|
 
@@ -585,7 +586,7 @@ Subcommand_opcode (1 八进制) ：
 
 HCI_VS_MSFT_Read_Absolute_RSSI 从控制器读取 BR/EDR 连接 (RSSI) 值的 **绝对** 接收信号强度指示。
 
-|Command|代码|命令参数|返回参数|
+|命令|代码|命令参数|返回参数|
 |---|---|---|---|
 |HCI_VS_MSFT_Read_Absolute_RSSI|选择的基本代码 |<ul><li>Subcommand_opcode</li><li>Handle</li>|<ul><li>状态</li><li>Subcommand_opcode</li><li>Handle</li><li>RSSI</li></ul>|
 
@@ -596,13 +597,13 @@ HCI_VS_MSFT_Read_Absolute_RSSI 从控制器读取 BR/EDR 连接 (RSSI) 值的 **
 
 Subcommand_opcode (1 八进制) ：
 
-| “值”  |   参数说明 |
+| 值  |   参数说明 |
 |---|---|
 |0x06|  HCI_VS_MSFT_Read_Absolute_RSSI 的子命令操作码。|
 
 处理 (2 个八进制) ：
 
-| “值”  |   参数说明 |
+| 值  |   参数说明 |
 |---|---|
 |0x_XXXX_|必须读取其 RSSI 的 BR/EDR 连接的句柄。|
 
@@ -610,26 +611,26 @@ Subcommand_opcode (1 八进制) ：
 
 状态 (1 个八进制) ：
 
-|“值”| 参数说明|
+|值| 参数说明|
 |---|---|
 |0x00|命令已成功。|
 |0x01-0xFF|命令失败。 有关详细信息，请参阅蓝牙核心规范中的 _错误代码_ 。|
 
 Subcommand_opcode (1 八进制) ：
 
-|“值”| 参数说明|
+|值| 参数说明|
 |---|---|
 |0x06|HCI_VS_MSFT_Read_Absolute_RSSI 的子命令操作码。|
 
 处理 (2 个八进制) ：
 
-|“值”| 参数说明|
+|值| 参数说明|
 |---|---|
 |0xXXXX| 读取其 RSSI 的 BR/EDR 连接的句柄。|
 
 RSSI (1 八进制) ：
 
-|     “值”      |                                                   参数说明                                                   |
+|     值      |                                                   参数说明                                                   |
 |----------------|--------------------------------------------------------------------------------------------------------------------------|
 | N = RSSI 值 | BR/EDR 连接的 RSSI 值。<ul><li>范围：-128 &lt; =  *N* &lt; = 127 (有符号整数) </li><li>Unit： dBm</li> |
 
@@ -659,32 +660,32 @@ HCI_VS_MSFT_RSSI_Event 指示 [HCI_VS_MSFT_Monitor_Rssi](#hci_vs_msft_monitor_rs
 
 ) Event_prefix (变量大小：
 
-|“值”| 参数说明|
+|值| 参数说明|
 |---|---|
 |事件前缀|将此事件标记为 Microsoft 定义的事件前缀。 [HCI_VS_MSFT_Read_Supported_Features](#hci_vs_msft_read_supported_features)命令返回的大小和值。|
 
 Microsoft_event_code (1 八进制) ：
 
-|“值”| 参数说明|
+|值| 参数说明|
 |---|---|
 |0x01|HCI_VS_MSFT_RSSI_Event 的事件代码。|
 
 状态 (1 个八进制) ：
 
-|“值”| 参数说明|
+|值| 参数说明|
 |---|---|
 |0x00|成功。 连接的 RSSI 值满足以下条件之一。<ul><li>RSSI 已达到或超过 _RSSI_threshold_high_。</li><li>RSSI 已达到或下降 _RSSI_threshold_low_ 超过 _RSSI_threshold_low_time_interval_ 秒。</li><li>_RSSI_sampling_period_已过期，并且生成了此事件以通知主机 RSSI 值。</li></ul>|
 |0x01&#160;-&#160;0xFF|失败。 无法再监视连接的 RSSI 值。 错误代码通常是描述基础 ACL 连接丢失原因的代码之一。|
 
 Connection_handle (2 个八进制) ：
 
-|“值”| 参数说明|
+|值| 参数说明|
 |---|---|
 |0x_XXXX_|要监视其 RSSI 的连接的句柄。|
 
 RSSI (1 八进制) ：
 
-|“值”| 参数说明|
+|值| 参数说明|
 |---|---|
 |_N_  = _RSSI&#160;值_|用于连接的已测量链接 RSSI 值。 对于 BR/EDR：<ul><li>范围：-128 &lt; =  _N_ &lt; = 127 (有符号整数) </li><li>Unit： dBm</li></ul>对于 LE：<ul><li>范围：-127 到 20 (带符号整数) </li><li>Unit： dBm</li></ul>|
 
@@ -704,19 +705,19 @@ HCI_VS_MSFT_LE_Monitor_Device_Event 指示控制器已启动或停止监视蓝�
 
 ) Event_prefix (变量大小：
 
-|“值”| 参数说明|
+|值| 参数说明|
 |---|---|
 |事件前缀|将此事件标记为 Microsoft 定义的事件前缀。 [HCI_VS_MSFT_Read_Supported_Features](#hci_vs_msft_read_supported_features)命令返回的大小和值。
 
 Microsoft_event_code (1 八进制) ：
 
-|“值”| 参数说明|
+|值| 参数说明|
 |---|---|
 |0x02|HCI_VS_MSFT_LE_Monitor_Device_Event 的事件代码。|
 
 Address_type (1 八进制) ：
 
-|“值”| 参数说明|
+|值| 参数说明|
 |---|---|
 |0x00|公用设备地址。|
 |0x01|随机设备地址。|
@@ -724,19 +725,19 @@ Address_type (1 八进制) ：
 
  (6 个 BD_ADDR) ：
 
-|“值”| 参数说明|
+|值| 参数说明|
 |---|---|
 |0x_XXXXXXXXXXXX_|设备的蓝牙地址。|
 
 Monitor_handle (1 八进制) ：
 
-|“值”| 参数说明|
+|值| 参数说明|
 |---|---|
 |0x_XX_|为 [HCI_VS_MSFT_LE_Monitor_Advertisement](#hci_vs_msft_le_monitor_advertisement) 命令指定的筛选器的句柄。|
 
 Monitor_state (1 八进制) ：
 
-|“值”| 参数说明|
+|值| 参数说明|
 |---|---|
 |0x00|控制器停止监视 _BD_ADDR_ 和 _Monitor_handle_指定的设备。|
 |0x01|控制器已开始监视 _BD_ADDR_ 和 _Monitor_handle_指定的设备。|

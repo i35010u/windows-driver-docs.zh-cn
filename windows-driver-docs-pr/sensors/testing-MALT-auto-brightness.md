@@ -1,16 +1,15 @@
 ---
 title: 测试自动亮度
-author: windows-driver-content
 description: 本主题介绍如何使用 MALT (Microsoft 环境光线工具) 工具测试自动亮度。
 ms.assetid: 0ca1a07e-ab4d-47d1-b6ab-a1aa02ee3ee6
 ms.date: 12/13/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 90e1875f280f6dedc4c74861e43326baf1eeda15
-ms.sourcegitcommit: 937974aa9bbe0262a7ffe9631593fab48c4e7492
+ms.openlocfilehash: 2576f6d6611f67ba9c38e02cc274a15a575f360e
+ms.sourcegitcommit: e6247811ff9a07070547af3d89705dae33a2f465
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "90010275"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91026426"
 ---
 # <a name="testing-auto-brightness"></a>测试自动亮度
 
