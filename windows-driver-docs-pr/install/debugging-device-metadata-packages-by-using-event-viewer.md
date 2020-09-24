@@ -4,12 +4,12 @@ description: 使用事件查看器调试设备元数据包
 ms.assetid: 168a9dd1-aab2-4497-a59d-b8fe52d8cde2
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 32e832c3960ab012452b7843a98bb5aa826f15a8
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: cbc5649c348a3c66e4595db44a4186b5512f7d8a
+ms.sourcegitcommit: 06581a21ca066ddfedab7f9bb7f2159cfac452fd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89097145"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91145463"
 ---
 # <a name="debugging-device-metadata-packages-by-using-event-viewer"></a>使用事件查看器调试设备元数据包
 
@@ -73,7 +73,7 @@ DeviceMetadata/调试通道存储在下载或处理设备元数据包期间发�
 -   设备元数据包的名称。
 
 <a href="" id="event-id--7902-error--device-metadata-package-not-signed--"></a>事件 ID：7902错误：设备元数据包未签名。   
-已安装的设备元数据包不是由 [Windows Quality Online Services (Winqual) ](https://go.microsoft.com/fwlink/p/?linkid=62651)签名的。
+已安装的设备元数据包不是由 [Windows Quality Online Services (Winqual) ](/windows-hardware/drivers/dashboard/winqual-submission-tool--winqualexe-)签名的。
 
 **注意**   仅当从 WMIS 下载设备元数据包时，才会验证该签名。
 

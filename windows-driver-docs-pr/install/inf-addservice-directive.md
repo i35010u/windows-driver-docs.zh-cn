@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8556e97a2c9c8632543b0541570afb0258ee694d
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: ef77d6c136f56f9c24b0839c06e44f783a1cf0c6
+ms.sourcegitcommit: 06581a21ca066ddfedab7f9bb7f2159cfac452fd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90716184"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91145453"
 ---
 # <a name="inf-addservice-directive"></a>INF AddService 指令
 
@@ -285,7 +285,7 @@ SubType=trigger-subtype
 
 **0x1** (SERVICE_TRIGGER_TYPE_DEVICE_INTERFACE_ARRIVAL) 指示在系统启动时，指定设备接口类的设备到达或存在时触发事件。 
 
-有关详细信息，请参阅 [SERVICE_TRIGGER 结构](/windows/win32/api/winsvc/ns-winsvc-_service_trigger)
+有关详细信息，请参阅 [SERVICE_TRIGGER 结构](/windows/win32/api/winsvc/ns-winsvc-service_trigger)
 
 **操作** =*操作-类型*
 
@@ -295,7 +295,7 @@ SubType=trigger-subtype
 
 **0x2** (SERVICE_TRIGGER_ACTION_SERVICE_STOP) 在指定的触发事件发生时停止服务。
 
-有关详细信息，请参阅 [SERVICE_TRIGGER 结构](/windows/win32/api/winsvc/ns-winsvc-_service_trigger)
+有关详细信息，请参阅 [SERVICE_TRIGGER 结构](/windows/win32/api/winsvc/ns-winsvc-service_trigger)
 
 **子类型** =*触发器-子类型*
 
@@ -303,7 +303,7 @@ SubType=trigger-subtype
 
 当 **TriggerType** 为 **0x1** 时 (SERVICE_TRIGGER_TYPE_DEVICE_INTERFACE_ARRIVAL) ， **子类型** 指定标识设备接口类的 GUID。
 
-有关详细信息，请参阅 [SERVICE_TRIGGER 结构](/windows/win32/api/winsvc/ns-winsvc-_service_trigger)。
+有关详细信息，请参阅 [SERVICE_TRIGGER 结构](/windows/win32/api/winsvc/ns-winsvc-service_trigger)。
 
 **DataItem** =*数据类型，数据*
 
@@ -311,7 +311,7 @@ SubType=trigger-subtype
 
 当 **TriggerType** 为 **0x1** (SERVICE_TRIGGER_TYPE_DEVICE_INTERFACE_ARRIVAL) 时，可以使用数据类型 **0X2** (指定可选的 DataItem，SERVICE_TRIGGER_DATA_TYPE_STRING) 将设备接口类的范围限定为特定硬件 id 或兼容 ID。
 
-有关详细信息，请参阅 [SERVICE_TRIGGER_SPECIFIC_DATA_ITEM 结构](/windows/win32/api/winsvc/ns-winsvc-_service_trigger_specific_data_item)
+有关详细信息，请参阅 [SERVICE_TRIGGER_SPECIFIC_DATA_ITEM 结构](/windows/win32/api/winsvc/ns-winsvc-service_trigger_specific_data_item)
 
 使用 **AddTrigger** 指令的最佳做法是在设备接口到达时触发服务的启动。 有关详细信息，请参阅 [Win32 服务与设备交互](./best-practices-win32services-interacting-with-devices.md)。
 
@@ -446,7 +446,7 @@ mouclass.SvcDesc = "Mouse Class Driver"
 
 DDInstall * 的参考中的示例[ * **。**](inf-ddinstall-hw-section.md)前面所述的 HW 部分还显示了**AddService**指令所引用的某些服务安装部分，以设置 PnP 上层筛选器驱动程序。
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
 [**AddReg**](inf-addreg-directive.md)

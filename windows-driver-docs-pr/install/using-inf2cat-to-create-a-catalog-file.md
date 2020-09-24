@@ -4,21 +4,17 @@ description: 使用 Inf2Cat 创建目录文件
 ms.assetid: 93dea980-eb66-40f0-ac6b-0adaf8376154
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 788e57f0c75d8e16c55aa2587e7ece4ddd0fe671
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 360d764028f0f2e5ed1fe4e76ff61428842b7656
+ms.sourcegitcommit: 06581a21ca066ddfedab7f9bb7f2159cfac452fd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89096391"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91145465"
 ---
 # <a name="using-inf2cat-to-create-a-catalog-file"></a>使用 Inf2Cat 创建目录文件
 
 
 Inf2Cat 工具可用于为具有 INF 文件的任何 [驱动程序包](driver-packages.md) 创建编录文件。 有关 Inf2Cat 及其命令行参数的详细信息，请参阅 [**Inf2Cat**](../devtest/inf2cat.md)。
-
-**注意**   在 Windows Server 2008 Windows 驱动程序工具包 (WDK) 之前，Inf2Cat 工具不是 WDK 工具的一部分。 但是，该工具随 Winqual 提交工具一起安装。 若要下载 Winqual 提交工具，请参阅 Microsoft [INF2CAT FAQ](https://go.microsoft.com/fwlink/p/?linkid=79443) 网站。 安装 Winqual 提交工具包时， [**Inf2Cat**](../devtest/inf2cat.md) 将放入系统驱动器上的程序文件 (x86) \\ Microsoft Winqual 提交工具文件夹中。
-
- 
 
 本主题讨论如何从驱动程序包的 INF 文件创建 [编录文件](catalog-files.md) 。 在此示例中，使用了 *toastpkg.inf* 示例驱动程序包的 INF 文件。 在 WDK 安装目录中，此 INF 文件被命名为 *toastpkg.inf* ，位于 *src \\ general \\ toaster \\ toastpkg.inf \\ INF* 目录中。
 

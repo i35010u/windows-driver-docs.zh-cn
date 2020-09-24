@@ -4,12 +4,12 @@ description: 访问设备驱动程序属性
 ms.assetid: 433ad114-46aa-470b-b529-e6b6fb7f6bd7
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bc44de10a85ee522f425f5480391ad86773904da
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 70e480ebe51abfd7541ca92e1021746845e6d336
+ms.sourcegitcommit: 06581a21ca066ddfedab7f9bb7f2159cfac452fd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90715954"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91145481"
 ---
 # <a name="accessing-device-driver-properties"></a>访问设备驱动程序属性
 
@@ -48,7 +48,7 @@ Windows Server 2003、Windows XP 和 Windows 2000 还支持这些设备驱动程
 
 ### <a name="using-setupdigetdriverinstallparams-to-retrieve-driver-rank"></a><a href="" id="using-setupdigetdriverinstallparams-to-retrieve-driver-rank"></a> 使用 SetupDiGetDriverInstallParams 检索驱动程序级别
 
-在 Windows Server 2003、Windows XP 和 Windows 2000 上，你可以通过调用 [**SetupDiGetDriverInstallParams**](/windows/win32/api/setupapi/nf-setupapi-setupdigetdriverinstallparamsa)来检索当前为设备安装的驱动程序的排名。 **SetupDiGetDriverInstallParams**检索指向输出参数*DriverInstallParams*中驱动程序的[**SP_DRVINSTALL_PARAMS**](/windows/win32/api/setupapi/ns-setupapi-_sp_drvinstall_params)结构的指针。 检索到的 SP_DRVINSTALL_PARAMS 结构的 **排名** 成员包含驱动程序级别。
+在 Windows Server 2003、Windows XP 和 Windows 2000 上，你可以通过调用 [**SetupDiGetDriverInstallParams**](/windows/win32/api/setupapi/nf-setupapi-setupdigetdriverinstallparamsa)来检索当前为设备安装的驱动程序的排名。 **SetupDiGetDriverInstallParams**检索指向输出参数*DriverInstallParams*中驱动程序的[**SP_DRVINSTALL_PARAMS**](/windows/win32/api/setupapi/ns-setupapi-sp_drvinstall_params)结构的指针。 检索到的 SP_DRVINSTALL_PARAMS 结构的 **排名** 成员包含驱动程序级别。
 
  
 

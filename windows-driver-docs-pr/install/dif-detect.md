@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 14e91d366f61ccba6e1cda70d17cfce6b19d9972
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 2d686acdf010606651480fd3e493753d2bb250d1
+ms.sourcegitcommit: 06581a21ca066ddfedab7f9bb7f2159cfac452fd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90717546"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91145493"
 ---
 # <a name="dif_detect"></a>DIF_DETECT
 
@@ -67,7 +67,7 @@ DIF_DETECT 请求指示安装程序检测特定类的非 PnP 设备，并将设�
 有与 *DeviceInfoSet*关联的设备安装参数。
 
 <a href="" id="class-installation-parameters"></a>类安装参数  
-[**SP_DETECTDEVICE_PARAMS**](/windows/win32/api/setupapi/ns-setupapi-_sp_detectdevice_params)结构与*DeviceInfoSet*关联。 参数包含一个回调例程，该类安装程序将调用它来指示检测操作的进度。
+[**SP_DETECTDEVICE_PARAMS**](/windows/win32/api/setupapi/ns-setupapi-sp_detectdevice_params)结构与*DeviceInfoSet*关联。 参数包含一个回调例程，该类安装程序将调用它来指示检测操作的进度。
 
 ### <a name="installer-output"></a>安装程序输出
 
@@ -93,7 +93,7 @@ DIF_DETECT 请求指示安装程序检测特定类的非 PnP 设备，并将设�
 
 如果安装程序检测到设备，则至少应执行以下操作：
 
--   如果检测可能会花费很长的时间，请调用[**SP_DETECTDEVICE_PARAMS**](/windows/win32/api/setupapi/ns-setupapi-_sp_detectdevice_params)类安装参数中的**DetectProgressNotify**回调例程。
+-   如果检测可能会花费很长的时间，请调用[**SP_DETECTDEVICE_PARAMS**](/windows/win32/api/setupapi/ns-setupapi-sp_detectdevice_params)类安装参数中的**DetectProgressNotify**回调例程。
 
 -   对于安装程序检测到的每个设备，应执行以下操作：
     -    ([**SetupDiCreateDeviceInfo**](/windows/win32/api/setupapi/nf-setupapi-setupdicreatedeviceinfoa)) 创建设备信息元素。
@@ -131,7 +131,7 @@ DIF_DETECT 请求指示安装程序检测特定类的非 PnP 设备，并将设�
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
 [**DIF_DETECT**](dif-detect.md)
@@ -140,7 +140,7 @@ DIF_DETECT 请求指示安装程序检测特定类的非 PnP 设备，并将设�
 
 [**SetupDiCreateDeviceInfo**](/windows/win32/api/setupapi/nf-setupapi-setupdicreatedeviceinfoa)
 
-[**SP_DETECTDEVICE_PARAMS**](/windows/win32/api/setupapi/ns-setupapi-_sp_detectdevice_params)
+[**SP_DETECTDEVICE_PARAMS**](/windows/win32/api/setupapi/ns-setupapi-sp_detectdevice_params)
 
 [**SP_DEVINSTALL_PARAMS**](/windows/win32/api/setupapi/ns-setupapi-sp_devinstall_params_a)
 

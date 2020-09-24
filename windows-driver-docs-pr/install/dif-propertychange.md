@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 68710359fdff6f0d98e66b8ab1927fd656fe0914
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 1a39952a47a50e6d8842e26a30511809a96cfb1b
+ms.sourcegitcommit: 06581a21ca066ddfedab7f9bb7f2159cfac452fd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90715114"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91145477"
 ---
 # <a name="dif_propertychange"></a>DIF_PROPERTYCHANGE
 
@@ -71,7 +71,7 @@ DIF_PROPERTYCHANGE 请求通知安装程序设备的属性正在更改。 设备
 与*DeviceInfoData*关联的设备安装参数 ([**SP_DEVINSTALL_PARAMS**](/windows/win32/api/setupapi/ns-setupapi-sp_devinstall_params_a)) 。
 
 <a href="" id="class-installation-parameters"></a>类安装参数  
-[**SP_PROPCHANGE_PARAMS**](/windows/win32/api/setupapi/ns-setupapi-_sp_propchange_params)结构与*DeviceInfoData*关联。
+[**SP_PROPCHANGE_PARAMS**](/windows/win32/api/setupapi/ns-setupapi-sp_propchange_params)结构与*DeviceInfoData*关联。
 
 ### <a name="installer-output"></a>安装程序输出
 
@@ -127,7 +127,7 @@ DIF_PROPERTYCHANGE 请求通知安装程序设备的属性正在更改。 设备
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
 [**SetupDiChangeState**](/windows/win32/api/setupapi/nf-setupapi-setupdichangestate)
@@ -136,7 +136,7 @@ DIF_PROPERTYCHANGE 请求通知安装程序设备的属性正在更改。 设备
 
 [**SP_DEVINSTALL_PARAMS**](/windows/win32/api/setupapi/ns-setupapi-sp_devinstall_params_a)
 
-[**SP_PROPCHANGE_PARAMS**](/windows/win32/api/setupapi/ns-setupapi-_sp_propchange_params)
+[**SP_PROPCHANGE_PARAMS**](/windows/win32/api/setupapi/ns-setupapi-sp_propchange_params)
 
  
 

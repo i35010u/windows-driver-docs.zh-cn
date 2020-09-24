@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: d27dd05a0bc92821aabb458ec17fc44cfbb84a9d
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: f05c620883517603d3d0726c7ccfb64f688de4c0
+ms.sourcegitcommit: 06581a21ca066ddfedab7f9bb7f2159cfac452fd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90714909"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91145475"
 ---
 # <a name="dif_unremove"></a>DIF_UNREMOVE
 
@@ -67,7 +67,7 @@ DIF_UNREMOVE 请求通知安装程序，Windows 将在给定的硬件配置文�
 与*DeviceInfoData*关联的设备安装参数 ([**SP_DEVINSTALL_PARAMS**](/windows/win32/api/setupapi/ns-setupapi-sp_devinstall_params_a)) 。
 
 <a href="" id="class-installation-parameters"></a>类安装参数  
-[**SP_UNREMOVEDEVICE_PARAMS**](/windows/win32/api/setupapi/ns-setupapi-_sp_unremovedevice_params)结构与*DeviceInfoData*关联。 必须将 " **作用域** " 字段设置为 "DI_UNREMOVEDEVICE_CONFIGSPECIFIC"，并且必须在 **hwprofile 中** 字段中指定硬件配置文件。
+[**SP_UNREMOVEDEVICE_PARAMS**](/windows/win32/api/setupapi/ns-setupapi-sp_unremovedevice_params)结构与*DeviceInfoData*关联。 必须将 " **作用域** " 字段设置为 "DI_UNREMOVEDEVICE_CONFIGSPECIFIC"，并且必须在 **hwprofile 中** 字段中指定硬件配置文件。
 
 ### <a name="installer-output"></a>安装程序输出
 
@@ -119,7 +119,7 @@ DIF_UNREMOVE 请求通知安装程序，Windows 将在给定的硬件配置文�
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
 [**SetupDiUnremoveDevice**](/windows/win32/api/setupapi/nf-setupapi-setupdiunremovedevice)
@@ -128,7 +128,7 @@ DIF_UNREMOVE 请求通知安装程序，Windows 将在给定的硬件配置文�
 
 [**SP_DEVINSTALL_PARAMS**](/windows/win32/api/setupapi/ns-setupapi-sp_devinstall_params_a)
 
-[**SP_UNREMOVEDEVICE_PARAMS**](/windows/win32/api/setupapi/ns-setupapi-_sp_unremovedevice_params)
+[**SP_UNREMOVEDEVICE_PARAMS**](/windows/win32/api/setupapi/ns-setupapi-sp_unremovedevice_params)
 
  
 
