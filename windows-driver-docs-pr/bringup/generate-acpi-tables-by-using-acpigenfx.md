@@ -2,16 +2,19 @@
 title: 使用 AcpiGenFx 生成 ACPI 表
 description: 使用 ACPI 生成框架 (AcpiGenFx) 库来编写用于生成 ACPI 表的应用程序。
 ms.assetid: 46A725C3-609E-45B9-A4BD-033656208E92
-ms.date: 05/22/2020
+ms.date: 09/23/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 4bfbcb36773499ec92d20407e7472fdff22012a2
-ms.sourcegitcommit: d25910aed582d4da66534371a78013f1a354e716
+ms.openlocfilehash: 48ad103d1666403e703b4c0fa33778d51ea434f8
+ms.sourcegitcommit: fc3f5f2e2ea97f25a3ae3c16f1816acbf732abb0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 09/23/2020
-ms.locfileid: "91110552"
+ms.locfileid: "91128959"
 ---
 # <a name="generate-acpi-tables-by-using-acpigenfx"></a>使用 AcpiGenFx 生成 ACPI 表
+
+> [!NOTE]
+> 本文包含对字词从属的引用，这是 Microsoft 不再使用的术语。 从软件中删除该字词后，我们会将其从本文中删除。
 
 ## <a name="summary"></a>总结
 
@@ -394,8 +397,8 @@ namespace SSDTSample
             var sensor = platform.AddGenericDevice("ADXL", "ACPI\\ADXL345Acc", 1);
 
             sensor.AddI2CSerialBus(
-                TargetAddress: 0x1d,
-                Mode: TargetMode.ControllerInitiated,
+                SlaveAddress: 0x1d,
+                Mode: SlaveMode.ControllerInitiated,
                 ConnectionSpeed: 400000,
                 addressmode: AddressMode._7Bit,
                 controllername: "I2C1"
