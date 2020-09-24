@@ -8,19 +8,19 @@ keywords:
 - 主设备 WDK 音频
 - IDmaChannel 接口
 - 通道对象 WDK 音频
-ms.date: 06/20/2020
+ms.date: 09/23/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: bdde8ff29a4e08f58631f78b9b985c1583208ceb
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 8d068f69136fb135beb4ef45edfa9921c0fbbb55
+ms.sourcegitcommit: 0c34101a0eed9f187fec03026021fff89bd233e3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89208079"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91135164"
 ---
 # <a name="dma-channel-objects"></a>DMA 通道对象
 
 > [!NOTE]
-> Microsoft 支持多样化的包容性环境。 在本文档中，有对单词从属的引用。 适用于偏置的通信的 Microsoft 风格指南将此识别为 exclusionary 的字。 这种措辞使用这种方式，因为它是当前在软件中使用的措辞。
+> Microsoft 支持各种不同的环境。 本文介绍了 [Microsoft 风格的无偏差通信的 Microsoft 风格指南](/style-guide/bias-free-communication) 的术语参考。 本文中使用的词或短语的一致性是因为它当前出现在软件中。 当软件更新为删除语言时，本文将更新为对齐。
 
 PortCls 系统驱动程序为 WaveCyclic 和 WavePci 微型端口驱动程序的优点实现了 [IDmaChannel](/windows-hardware/drivers/ddi/portcls/nn-portcls-idmachannel) 和 [IDmaChannelSlave](/windows-hardware/drivers/ddi/portcls/nn-portcls-idmachannelslave) 接口。 **IDmaChannel** 表示 dma 通道及其关联的 dma 缓冲区和缓冲区用法参数。 此外，WaveCyclic 微型端口驱动程序使用 **IDmaChannelSlave** 管理从属设备的 DMA 通道。 **IDmaChannelSlave** 继承自 **IDmaChannel**。 有关控制 DMA 操作的详细信息，请参阅 [适配器对象和 DMA](../kernel/introduction-to-adapter-objects.md)。
 

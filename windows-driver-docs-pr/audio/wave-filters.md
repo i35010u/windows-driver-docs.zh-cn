@@ -19,12 +19,12 @@ keywords:
 - WaveCyclic，筛选器
 ms.date: 05/08/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: bbeee4bf01f26c32fd8a2ede65b0307fcc5a49f0
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 0d1d4ebbceb59c84342c3390eecb8abe43137e82
+ms.sourcegitcommit: 0c34101a0eed9f187fec03026021fff89bd233e3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90716646"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91135166"
 ---
 # <a name="wave-filters"></a>滤波器
 
@@ -108,7 +108,7 @@ WavePci 筛选器实现为端口/微型端口驱动程序对。 WavePci 筛选�
 ### <a name="span-idwavecyclic_filterspanspan-idwavecyclic_filterspanwavecyclic-filters"></a><span id="wavecyclic_filter"></span><span id="WAVECYCLIC_FILTER"></span>WaveCyclic 筛选器
 
 > [!NOTE]
-> Microsoft 支持多样化的包容性环境。 在本文档中，有对单词从属的引用。 适用于偏置的通信的 Microsoft 风格指南将此识别为 exclusionary 的字。 这种措辞使用这种方式，因为它是当前在软件中使用的措辞。
+> Microsoft 支持各种不同的环境。 本文介绍了 [Microsoft 风格的无偏差通信的 Microsoft 风格指南](/style-guide/bias-free-communication) 的术语参考。 本文中使用的词或短语的一致性是因为它当前出现在软件中。 当软件更新为删除语言时，本文将更新为对齐。
 
 **注意： Windows 以前版本的 WaveCyclic 信息**
 

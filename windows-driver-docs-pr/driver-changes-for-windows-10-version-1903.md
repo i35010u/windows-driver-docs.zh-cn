@@ -4,12 +4,12 @@ description: 本部分介绍 Windows 10 中驱动程序开发的新增功能。
 ms.assetid: 90f7754d-be7a-408d-8b89-b173a86c4fa3
 ms.date: 04/28/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 516dad272db4f360ceb77393cd949899281ef0fd
-ms.sourcegitcommit: 1535a9ac3ec390340bb3c7e7bed9ac08ba1d2bdb
+ms.openlocfilehash: 5fc2f842339ef5649f2587dcac436e7f00683e15
+ms.sourcegitcommit: 0c34101a0eed9f187fec03026021fff89bd233e3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "91007426"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91135174"
 ---
 # <a name="whats-new-in-windows-10-version-1903"></a>Windows 10 版本1903中的新增功能
 
@@ -80,7 +80,7 @@ Windows 10 版本 1903 中的显示驱动程序开发的更新包括：
 
 * [Ring.h](/windows-hardware/drivers/ddi/ring/index)
 * [Ringcollection.h](/windows-hardware/drivers/ddi/ringcollection/index)
-* [Netringiterator.h](https://docs.microsoft.com/windows-hardware/drivers/ddi/netringiterator/index)
+* Netringiterator.h
 
 下面是 NetAdapterCx 内容更新的列表：
 

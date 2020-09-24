@@ -4,12 +4,12 @@ description: 本部分介绍 Windows 10 中驱动程序开发的新增功能。
 ms.assetid: 764bcd98-c123-45e2-9dd1-44d54bb1addc
 ms.date: 04/28/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 385a52f57b623fb1be840cf43fd2e6bc9e3b40e6
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: c8360524bdd0b7a96fd52ac33cb34f96704ad7fd
+ms.sourcegitcommit: 0c34101a0eed9f187fec03026021fff89bd233e3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90717564"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91135172"
 ---
 # <a name="whats-new-in-windows-10-version-1809"></a>Windows 10 版本 1809 中的新增功能
 
@@ -119,7 +119,7 @@ Windows 10 版本 1809 中的“显示”驱动程序开发的更新包括：
   * [ExReleasePushLockExclusive 宏](/windows-hardware/drivers/ddi/wdm/nf-wdm-exreleasepushlockexclusive)
   * [ExReleasePushLockShared 宏](/windows-hardware/drivers/ddi/wdm/nf-wdm-exreleasepushlockshared)
 * [KzLowerIrql](https://review.docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kzlowerirql) 和 [KzRaiseIrql](https://review.docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kzraiseirql) 已移到面向 Windows 8 和更高版本的内核组件的受支持外部 forceinline，而不依赖于转发器来实例化内联函数的特殊用例。
-* 平展 PCI 的门户桥 (FPB) 现在受支持。 有关详细信息，请参阅[官方规范](https://pcisig.com/sites/default/files/specification_documents/ECN_FPB_9_Feb_2017.pdf)。 在 [Ntddk.h](https://review.docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/) 中声明了新的 API (_PCI_FPB_*)。
+* 平展 PCI 的门户桥 (FPB) 现在受支持。 有关详细信息，请参阅官方规范的 [PCI-SIG](https://pcisig.com) 。 在 [Ntddk.h](https://review.docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/) 中声明了新的 API (_PCI_FPB_*)。
 
 ## <a name="networking"></a><a name="networking-1809"></a>网络
 
@@ -193,7 +193,7 @@ MBBCx 电源管理方法已简化。
 
 例如，根据热量状况控制设备的充电，使设备不会过热。
 
-* [编写 USB 类型 C 策略管理器客户端驱动程序](https://www.microsoft.com/windows-hardware/drivers/usbcon/policy-manager-client)
+* [编写 USB 类型 C 策略管理器客户端驱动程序](/windows-hardware/drivers/usbcon/policy-manager-client)
 * [Usbpmapi.h](/windows-hardware/drivers/ddi/usbpmapi/) 中提供了新的 API
 
 **适用于模拟 USB 设备 (UDE) - 1.1 和 USB 主控制器 (Ucx) 1.5 的新版类扩展：**

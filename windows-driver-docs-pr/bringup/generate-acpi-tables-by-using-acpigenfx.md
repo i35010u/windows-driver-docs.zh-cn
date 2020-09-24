@@ -4,17 +4,17 @@ description: 使用 ACPI 生成框架 (AcpiGenFx) 库来编写用于生成 ACPI 
 ms.assetid: 46A725C3-609E-45B9-A4BD-033656208E92
 ms.date: 09/23/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 48ad103d1666403e703b4c0fa33778d51ea434f8
-ms.sourcegitcommit: fc3f5f2e2ea97f25a3ae3c16f1816acbf732abb0
+ms.openlocfilehash: 6ead097afd361468c88a4ff0b4ad7b00c0502192
+ms.sourcegitcommit: 0c34101a0eed9f187fec03026021fff89bd233e3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/23/2020
-ms.locfileid: "91128959"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91135168"
 ---
 # <a name="generate-acpi-tables-by-using-acpigenfx"></a>使用 AcpiGenFx 生成 ACPI 表
 
 > [!NOTE]
-> 本文包含对字词从属的引用，这是 Microsoft 不再使用的术语。 从软件中删除该字词后，我们会将其从本文中删除。
+> Microsoft 支持各种不同的环境。 本文介绍了 Microsoft [风格的无偏差通信的 Microsoft 风格指南](/style-guide/bias-free-communication) 的术语参考。 本文中使用的词或短语的一致性是因为它当前出现在软件中。 当软件更新为删除语言时，本文将更新为对齐。
 
 ## <a name="summary"></a>总结
 

@@ -7,12 +7,12 @@ keywords:
 ms.date: 01/07/2019
 ms.localizationpriority: medium
 ms.custom: Vib
-ms.openlocfilehash: a7624d1d63946e84914c475cedad001714559c47
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 74780e659d901417086a56cb27cffb1b1b23d8f7
+ms.sourcegitcommit: 0c34101a0eed9f187fec03026021fff89bd233e3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89214780"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91135176"
 ---
 # <a name="device-and-adapter-initialization"></a>设备和适配器初始化
 
@@ -105,9 +105,19 @@ NetAdapterCx 客户端驱动程序在从其[*DriverEntry*](../wdf/driverentry-fo
 
 ## <a name="evt_wdf_device_prepare_hardware"></a>EVT_WDF_DEVICE_PREPARE_HARDWARE
 
-许多 NetAdapterCx 客户端驱动程序都在其 [*EVT_WDF_DEVICE_PREPARE_HARDWARE*](/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_prepare_hardware) 回调函数内启动其适配器，这在 [移动宽带类扩展客户端驱动程序](mobile-broadband-mbb-wdf-class-extension-mbbcx.md)中明显例外。 若要注册 *EVT_WDF_DEVICE_PREPARE_HARDWARE* 回调函数，NetAdapterCx 客户端驱动程序必须调用 [**WdfDeviceInitSetPnpPowerEventCallbacks**](/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceinitsetpnppowereventcallbacks)。 
+许多 NetAdapterCx 客户端驱动程序都在其 [*EVT_WDF_DEVICE_PREPARE_HARDWARE*](/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_prepare_hardware) 回调函数内启动其适配器，这在 [移动宽带类扩展客户端驱动程序](mobile-broadband-mbb-wdf-class-extension-mbbcx.md)中明显例外。 若要注册 *EVT_WDF_DEVICE_PREPARE_HARDWARE* 回调函数，NetAdapterCx 客户端驱动程序必须调用 [**WdfDeviceInitSetPnpPowerEventCallbacks**](/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceinitsetpnppowereventcallbacks)。
 
-在 [*EVT_WDF_DEVICE_PREPARE_HARDWARE*](/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_prepare_hardware)中，除其他硬件准备任务外，客户端驱动程序还必须调用 [**NetAdapterStart**](/windows-hardware/drivers/ddi/netadapter/nf-netadapter-netadapterstart)。 在执行此操作之前，驱动程序可以选择设置适配器的功能。
+ 在 [*EVT_WDF_DEVICE_PREPARE_HARDWARE*](/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_prepare_hardware)中，除其他硬件准备任务外，客户端驱动程序还会设置适配器的必需功能和可选功能。
+
+NetAdapterCx 要求客户端驱动程序设置以下功能：
+
+* 数据路径功能。 驱动程序调用 [**NetAdapterSetDataPathCapabilities**](/windows-hardware/drivers/ddi/netadapter/nf-netadapter-netadaptersetdatapathcapabilities) 来设置这些功能。 有关详细信息，请参阅 [网络数据缓冲区管理](/windows-hardware/drivers/netcx/network-data-buffer-management)。
+
+* 链接层功能。 驱动程序调用 [**NetAdapterSetDataPathCapabilities**](/windows-hardware/drivers/ddi/netadapter/nf-netadapter-netadaptersetlinklayercapabilities) 来设置这些功能。
+
+* 链接层最大传输单位 (MTU) 大小。 驱动程序调用 [**NetAdapterSetDataPathCapabilities**](/windows-hardware/drivers/ddi/netadapter/nf-netadapter-netadaptersetlinklayercapabilities) 来设置 MTU 大小。
+
+然后，该驱动程序必须调用 [**NetAdapterStart**](/windows-hardware/drivers/ddi/netadapter/nf-netadapter-netadapterstart) 以启动其适配器。
 
 下面的示例演示客户端驱动程序如何启动 GET-NETADAPTER 对象。 请注意，设置每个适配器功能方法所需的代码为了简洁明了和清晰，并简化了错误处理。
 
@@ -119,24 +129,30 @@ NETADAPTER netAdapter = deviceContext->NetAdapter;
 PMY_ADAPTER_CONTEXT adapterContext = GetMyAdapterContext(netAdapter);
 
 //
-// Optional: set adapter capabilities
+// Set required adapter capabilities
 //
 
 // Link layer capabilities
 ...
-NetAdapterSetDatapathCapabilities(netAdapter, 
-                                  &txCapabilities, 
+NetAdapterSetDatapathCapabilities(netAdapter,
+                                  &txCapabilities,
                                   &rxCapabilities);
 ...
 NetAdapterSetLinkLayerCapabilities(netAdapter,
                                    &linkLayerCapabilities);
-
+...
 NetAdapterSetLinkLayerMtuSize(netAdapter,
                               MY_MAX_PACKET_SIZE - ETHERNET_HEADER_LENGTH);
 
+//
+// Set optional adapter capabilities
+//
+
+// Link layer capabilities
+...
 NetAdapterSetPermanentLinkLayerAddress(netAdapter,
                                        &adapterContext->PermanentAddress);
-
+...
 NetAdapterSetCurrentLinkLayerAddress(netAdapter,
                                      &adapterContext->CurrentAddress);
 
@@ -158,7 +174,7 @@ NetAdapterOffloadSetChecksumCapabilities(netAdapter,
 ...
 NetAdapterOffloadSetLsoCapabilities(netAdapter,
                                     &lsoCapabilities);
-                                    ...
+...
 NetAdapterOffloadSetRscCapabilities(netAdapter,
                                     &rscCapabilities);
 
