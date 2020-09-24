@@ -10,12 +10,12 @@ ms.date: 08/23/2017
 ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
-ms.openlocfilehash: 2c1634d56d5afa15384f22920a558a5f70d5bfff
-ms.sourcegitcommit: 8835925c6a88efc301dc5e8bd9bca87082416eb6
+ms.openlocfilehash: 4204e86a15ad16285ab96575689e5b883f765a14
+ms.sourcegitcommit: 0c34101a0eed9f187fec03026021fff89bd233e3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/18/2020
-ms.locfileid: "90777579"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91135178"
 ---
 # <a name="developing-testing-and-deploying-drivers"></a>开发、测试以及部署驱动程序
 
@@ -41,7 +41,6 @@ Visual Studio 环境提供适用于以下项的模板：
 
 你将在 Windows 驱动程序文档中的以下页面上找到视频：
 
-- [HID 中的新增功能](https://docs.microsoft.com/windows-hardware/drivers/hid/what-s-new-in-hid)
 - [将 Windows Performance Toolkit (WPT) 与 WDF 配合使用](../wdf/using-the-windows-performance-toolkit--wpt--with-wdf.md)
 - [视频：在没有调试程序的情况下访问驱动程序 IFR 日志](../wdf/video--accessing-driver-ifr-logs-without-a-debugger.md)
 - [视频：使用 WDF 源代码调试驱动程序](../wdf/video--debugging-your-driver-with-wdf-source-code.md)
