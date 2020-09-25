@@ -8,19 +8,19 @@ ms.date: 07/31/2019
 ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
-ms.openlocfilehash: b5f062a9bbca99b4bb09c4fb585e7f878c47539a
-ms.sourcegitcommit: e6247811ff9a07070547af3d89705dae33a2f465
+ms.openlocfilehash: 597ddbf6cac266e20b6b522f63d80473d6ac8c10
+ms.sourcegitcommit: 29c2e6dd8a3de3c11822d990adf1edd774f8a136
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/23/2020
-ms.locfileid: "91026438"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91230051"
 ---
 # <a name="mobile-plans-walled-garden"></a>移动计划围墙花园
 
 移动计划 *围墙园* 是在客户用完了数据时支持客户的关键所在。 即使没有备用 internet 连接（如 Wi-fi），也可以通过它访问 MO 直接门户。 这将使使用者能够购买其他数据计划并管理其订阅。
 
 > [!NOTE]
-> 移动计划体系结构不支持围墙园终结点的 IP 范围。 主机名必须用于允许列表。
+> 移动计划体系结构不支持围墙园终结点的 IP 范围。 主机名必须用于 allowlisting。
 
 MO Direct web 门户和 `GetBalance` API 终结点也必须属于此围墙园。
 
@@ -28,7 +28,7 @@ MO Direct web 门户和 `GetBalance` API 终结点也必须属于此围墙园。
 
 只有少量的必需终结点对于最终用户始终是可访问的。 下表定义了围墙园所需的终结点。
 
-| URL | HTTP/HTTPS |
+| 代码 | HTTP/HTTPS |
 | --- | --- |
 | 数据市场 <span></span> 。 | https |
 | 预览版 <span></span> . 数据市场 | https |

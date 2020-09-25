@@ -4,12 +4,12 @@ description: 本部分介绍了 NDIS 6.40，并介绍了其主要的设计添加
 ms.assetid: 46DB94AA-DBAD-49E0-A1F0-FEB095E26F2C
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4fb23721bd6765d3888631746bf781909641b6ce
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 73c5ae29d034a37f36c8fa914d393684c6fc0bef
+ms.sourcegitcommit: 29c2e6dd8a3de3c11822d990adf1edd774f8a136
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90716880"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91230035"
 ---
 # <a name="introduction-to-ndis-640"></a>NDIS 6.40 简介
 
@@ -49,7 +49,7 @@ IEEE 802.11 ac 极高的吞吐量 (VHT) PHY 现在受支持。 已更新以下 D
 -   [将 NDIS 6.x 驱动程序移植到 NDIS 6.30](porting-ndis-6-x-drivers-to-ndis-6-30.md)
 -   [网络直接内核提供程序接口 (NDKPI) ](./overview-of-network-direct-kernel-provider-interface--ndkpi-.md) 设计指南
 -   [使用通用路由封装 (NVGRE) 任务卸载实现网络虚拟化](network-virtualization-using-generic-routing-encapsulation--nvgre--task-offload.md)
--   [ (RSC) 接收段合并 ](receive-segment-coalescing--rsc-.md) 设计指南
+-   [ (RSC) 接收段合并 ](overview-of-receive-segment-coalescing.md) 设计指南
 -   [开始编写 Hyper-V 可扩展交换机扩展](getting-started-writing-a-hyper-v-extensible-switch-extension.md)
 -   [NVGRE 任务卸载参考](/windows-hardware/drivers/ddi/_netvista/)
 

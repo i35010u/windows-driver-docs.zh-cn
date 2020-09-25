@@ -4,12 +4,12 @@ description: 介质断开连接时降低功耗
 ms.assetid: 592f3835-47ec-443a-9ab5-e700fed2f7f4
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 36637988c28ead4fae4b5175abef4532038f3576
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: a23d8ec8da8d2f9cc7e6078ab9c48780f0a1e366
+ms.sourcegitcommit: 29c2e6dd8a3de3c11822d990adf1edd774f8a136
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89215602"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91230013"
 ---
 # <a name="low-power-on-media-disconnect"></a>介质断开连接时降低功耗
 
@@ -79,7 +79,7 @@ ms.locfileid: "89215602"
 
 从 NDIS 6.30 开始，如果微型端口驱动程序支持 [**NDIS \_ 状态 \_ PM \_ 唤醒 \_ 原因**](./ndis-status-pm-wake-reason.md) 状态指示，则如果网络适配器唤醒系统，则必须发出此状态通知。 驱动程序在处理 oid [ \_ PNP \_ 设置 \_ ](./oid-pnp-set-power.md) 的 oid 设置请求时发出此状态通知，以将转换为全功耗 (D0) 状态。
 
-有关详细信息，请参阅 [NDIS 唤醒原因状态指示](ndis-wake-reason-status-indications.md)。
+有关详细信息，请参阅 [NDIS 唤醒原因状态指示](overview-of-ndis-wake-reason-statue-indications.md)。
 
 **注意**   如果微型端口驱动程序发出[**ndis \_ 状态 \_ PM \_ 唤醒 \_ 原因**](./ndis-status-pm-wake-reason.md)状态指示，则必须在发出[**ndis \_ 状态 \_ 链接 \_ 状态**](./ndis-status-link-state.md)状态指示之前执行此操作。
 

@@ -19,12 +19,12 @@ keywords:
 - 网络驱动程序 WDK，类型
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c51d5b85172a0aa1b798a64fcdf0744d0645aecb
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: e1972946352fc71de78863dcbdbde0a3b29099ce
+ms.sourcegitcommit: 29c2e6dd8a3de3c11822d990adf1edd774f8a136
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89212877"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91230009"
 ---
 # <a name="learning-about-miniport-drivers"></a>了解微型端口驱动程序
 
@@ -37,7 +37,7 @@ ms.locfileid: "89212877"
 <a href="" id="connectionless-miniport-drivers"></a>**无连接微型端口驱动程序**  
 如果你正在编写一个小型端口驱动程序用于控制网络接口卡 (NIC) 用于无连接网络媒体 (如以太网) ，请阅读：
 
--   [NDIS 微型端口驱动程序简介](introduction-to-ndis-miniport-drivers.md)
+-   [NDIS 微型端口驱动程序简介](deserialized-ndis-miniport-drivers.md)
 
 -   [NDIS 微型端口驱动程序](./initializing-a-miniport-driver.md)
 

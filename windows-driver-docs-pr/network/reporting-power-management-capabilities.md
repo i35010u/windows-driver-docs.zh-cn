@@ -4,12 +4,12 @@ description: 报告电源管理功能
 ms.assetid: cfacd885-e18a-44a5-939d-88e62b573ace
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c8d6b28d7147188c5c876d49f2e48a708be65e31
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: f5261b6c7a8819958d17ce908c8bd214c8f534bc
+ms.sourcegitcommit: 29c2e6dd8a3de3c11822d990adf1edd774f8a136
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89206241"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91230043"
 ---
 # <a name="reporting-power-management-capabilities"></a>报告电源管理功能
 
@@ -37,7 +37,7 @@ ms.locfileid: "89206241"
 <a href="" id="ndis-pm-wake-packet-indication-supported"></a>\_支持 NDIS PM \_ 唤醒 \_ 数据包 \_ 指示 \_  
 如果设置了此标志，网络适配器可以保存收到的数据包，该数据包导致适配器生成唤醒事件。
 
-有关此电源管理功能的详细信息，请参阅 [NDIS 唤醒原因状态指示](ndis-wake-reason-status-indications.md)。
+有关此电源管理功能的详细信息，请参阅 [NDIS 唤醒原因状态指示](overview-of-ndis-wake-reason-statue-indications.md)。
 
 <a href="" id="ndis-pm-selective-suspend-supported"></a>\_支持 NDIS PM \_ 选择性 \_ 挂起 \_  
 如果设置了此标志，则微型端口驱动程序对网络适配器支持 NDIS 选择性挂起。

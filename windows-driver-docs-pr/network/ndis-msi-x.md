@@ -13,12 +13,12 @@ keywords:
 - 中断 WDK 网络
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a8a7f5a5b2e4a39f25b6dab3278e56c017369f5f
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: b831274a733ec4a0944d25c85ef1fdafcd0c4e8c
+ms.sourcegitcommit: 29c2e6dd8a3de3c11822d990adf1edd774f8a136
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89209731"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91230031"
 ---
 # <a name="overview-of-ndis-msi-x"></a>NDIS MSI-X 概述
 
@@ -32,7 +32,7 @@ ms.locfileid: "89209731"
 
 支持 (RSS) 接收方缩放的网络接口卡 (的 Nic) ，可提供显著的性能优势。 有关接收方缩放的详细信息，请参阅 [接收方缩放](./receive-side-scaling-version-2-rssv2-.md)。
 
-有关基于行的中断的详细信息，请参阅 [管理中断](managing-interrupts.md)。
+有关基于行的中断的详细信息，请参阅 [管理中断](registering-and-deregistering-interrupts.md)。
 
 本节包括：
 

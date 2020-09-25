@@ -6,12 +6,12 @@ keywords:
 - 网络驱动程序 WDK，文档
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 933d6e6ce3a3fb080216abf95c484fa9b9211605
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 39c9fd74ceb5a65419367eb856df5922e667769b
+ms.sourcegitcommit: 29c2e6dd8a3de3c11822d990adf1edd774f8a136
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90101743"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91230041"
 ---
 # <a name="navigating-the-network-driver-design-guide"></a>在网络驱动程序设计指南中导航
 
@@ -63,7 +63,7 @@ Windows Vista 和更高版本的操作系统版本支持以下类型的基于 ND
 
 中间驱动程序还可以在将硬件配置为 *微型端口中间驱动程序*时对其进行管理。
 
-有关 Windows 网络体系结构和编程注意事项的详细信息，请参阅 [内核模式驱动程序的网络体系结构](network-architecture-for-kernel-mode-drivers.md) 和 [网络驱动程序编程注意事项](network-driver-programming-considerations.md)。
+有关 Windows 网络体系结构和编程注意事项的详细信息，请参阅 [内核模式驱动程序的网络体系结构](windows-network-architecture-and-the-osi-model.md) 和 [网络驱动程序编程注意事项](network-driver-programming-considerations.md)。
 
 有关用于安装网络组件的网络 INF 文件的详细信息，请参阅 [安装网络组件](installing-network-components.md)。 如果网络驱动程序需要通知对象（例如，为了控制绑定），请参阅 [通知对象获取网络组件](notify-objects-for-network-components.md)。
 
@@ -74,7 +74,7 @@ Windows Vista 和更高版本的操作系统版本支持以下类型的基于 ND
 <thead>  
 <tr class="header">  
 <th align="left">技术</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>

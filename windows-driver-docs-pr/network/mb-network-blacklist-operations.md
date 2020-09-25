@@ -3,20 +3,19 @@ title: MB 网络阻止列表操作
 description: MB 网络阻止列表操作
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 510c2025d5246e6fe2f42a6e3adc63d778eef5ba
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: b18df961d1e6ab99e72ef9657cc12ffd3900e4cb
+ms.sourcegitcommit: 29c2e6dd8a3de3c11822d990adf1edd774f8a136
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89213933"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91230003"
 ---
 # <a name="mb-network-blacklist-operations"></a>MB 网络阻止列表操作
 
 > [!IMPORTANT]
->
 > ### <a name="bias-free-communication"></a>无偏差通信
 >
-> Microsoft 支持多样化的包容性环境。 本文包含对 word 黑名单的引用。 Microsoft 的[无偏差通信风格指南](/style-guide/bias-free-communication)将其视为排他性单词。 本文中使用的词是为了保持一致，因为它当前是软件中出现的单词。 如果软件更新后删除了该单词，则本文也将更新以保持一致。
+> Microsoft 支持各种不同的环境。 本文介绍了 Microsoft [风格的无偏差通信的 Microsoft 风格指南](/style-guide/bias-free-communication) 的术语参考。 本文中使用的词或短语的一致性是因为它当前出现在软件中。 当软件更新为删除语言时，本文将更新为对齐。
 
 在各种情况下，设备可能需要不注册到网络，例如插入特定 SIM 卡或设备不想注册到特定网络。 为了应对这些情况，Windows 10 1703 版正在添加调制解调器接口，以使操作系统能够为 SIM 卡和网络提供程序配置黑名单。
 
@@ -38,7 +37,7 @@ UUID 值 = **3d01dcc5-fef5-4d05-0d3abef7058e9aaf**
 
 ## <a name="mbim_cid_ms_network_blacklist"></a>MBIM_CID_MS_NETWORK_BLACKLIST
 
-### <a name="description"></a>说明
+### <a name="description"></a>描述
 
 企业、用户或移动运营商可以指定 SIM 卡和网络，它们不需要调制解调器进行注册。 此命令用于 OS，以便能够在调制解调器上查询和设置黑名单。 有两个黑名单：
 
@@ -53,7 +52,7 @@ UUID 值 = **3d01dcc5-fef5-4d05-0d3abef7058e9aaf**
 
 从已完成的查询返回 MBIM_MS_NETWORK_BLACKLIST_INFO，并在 InformationBuffer 中设置消息。 对于 Query，InformationBuffer 为 NULL。
 
-#### <a name="set"></a>设置
+#### <a name="set"></a>Set
 
 对于 Set，InformationBuffer 包含 MBIM_MS_NETWORK_BLACKLIST_INFO。 在设置操作中，应为调制解调器提供一个 MNC/MCC 组合列表。 如果 SIM 卡的 IMSI 与指定的 MNC 和 MCC 值匹配，则调制解调器应从网络取消注册，并且在插入与 MNC/MCC 不匹配的新 SIM 卡之前，不应尝试重新注册。
 
@@ -63,7 +62,7 @@ UUID 值 = **3d01dcc5-fef5-4d05-0d3abef7058e9aaf**
 
 ### <a name="parameters"></a>参数
 
-| 操作 | 设置 | 查询 | 通知 |
+| Operation | Set | 查询 | 通知 |
 | --- | --- | --- | --- |
 | 命令 | MBIM_MS_NETWORK_BLACKLIST_INFO | 不适用 | 不适用 |
 | 响应 | MBIM_MS_NETWORK_BLACKLIST_INFO | MBIM_MS_NETWORK_BLACKLIST_INFO | MBIM_MS_NETWORK_BLACKLIST_INFO |
@@ -74,11 +73,11 @@ UUID 值 = **3d01dcc5-fef5-4d05-0d3abef7058e9aaf**
 
 InformationBuffer 应为 NULL，而 InformationBufferLength 应为零。
 
-#### <a name="set"></a>设置
+#### <a name="set"></a>Set
 
 以下 MBIM_MS_NETWORK_BLACKLIST_INFO 结构应在 InformationBuffer 中使用。
 
-| Offset | 大小 | 字段 | 类型 | 说明 |
+| Offset | 大小 | 字段 | 类型 | 描述 |
 | --- | --- | --- | --- | --- |
 | 0 | 4 | BlacklistState | MBIM_MS_NETWORK_BLACKLIST_STATE | 指示是否满足任何黑名单条件，导致调制解调器未向网络注册。 有关详细信息，请参阅 MBIM_MS_NETWORK_BLACKLIST_STATE 表。 |
 | 4 | 4 | Elementcount 多于 (EC)  | UINT32 | DataBuffer 中后面的 MBIM_MS_NETWORK_BLACKLIST_PROVIDER 结构的计数。 |
@@ -89,7 +88,7 @@ InformationBuffer 应为 NULL，而 InformationBufferLength 应为零。
 
 MBIM_MS_NETWORK_BLACKLIST_STATE 描述两个不同黑名单的可能状态。
 
-| 类型 | Mask | 说明 |
+| 类型 | Mask | 描述 |
 | --- | --- | --- |
 | MbimMsNetworkBlacklistStateNotActuated | 0h | 不满足这两个黑名单条件。 |
 | MbimMsNetworkBlacklistSIMProviderActuated | 1小时 | 插入的 SIM 被列入黑名单，因为其提供程序 ID 与 SIM 提供程序 ID 的黑名单匹配。 |
@@ -97,7 +96,7 @@ MBIM_MS_NETWORK_BLACKLIST_STATE 描述两个不同黑名单的可能状态。
 
 MBIM_MS_NETWORK_BLACKLIST_PROVIDER 指定黑名单的提供者。
 
-| Offset | 大小 | 字段 | 类型 | 说明 |
+| Offset | 大小 | 字段 | 类型 | 描述 |
 | --- | --- | --- | --- | --- |
 | 0 | 4 | MCC | UINT32 | 如3GPP 所指定，MCC 是 IMSI 的一部分，它指定了提供商的国家/地区。 |
 | 4 | 4 | MNC | UINT32 | 由3GPP 指定，MNC 是 IMSI 的一部分并指定提供程序的网络。 |
@@ -105,7 +104,7 @@ MBIM_MS_NETWORK_BLACKLIST_PROVIDER 指定黑名单的提供者。
 
 MBIM_MS_NETWORK_BLACKLIST_TYPE 由前面的数据结构使用。 它指定将使用这两个黑名单中的哪一个。
 
-| 类型 | 值 | 说明 |
+| 类型 | 值 | 描述 |
 | --- | --- | ---- |
 | MbimMsNetworkBlacklistTypeSIM | 0 | MCC/MNC 对用于 SIM 提供程序黑名单。 |
 | MbimMsNetworkBlacklistTypeNetwork | 1 | MCC/MNC 对用于网络提供者黑名单。 |

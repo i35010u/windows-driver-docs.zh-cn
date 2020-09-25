@@ -4,14 +4,19 @@ description: 移动宽带 (MB) 设计指南主题
 ms.assetid: d5db6b69-c5a9-41d5-88c9-7c4d1e7c9c03
 ms.date: 08/09/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 3c2f02fe0d4db337e80bb3e6ef22de1973013bbe
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: bdc56f338814f96d21facf14ecdc023df5197945
+ms.sourcegitcommit: 29c2e6dd8a3de3c11822d990adf1edd774f8a136
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89216176"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91230029"
 ---
 # <a name="mobile-broadband-mb-design-guide-topics"></a>移动宽带 (MB) 设计指南主题
+
+> [!IMPORTANT]
+> ### <a name="bias-free-communication"></a>无偏差通信
+>
+> Microsoft 支持各种不同的环境。 本文介绍了 Microsoft [风格的无偏差通信的 Microsoft 风格指南](/style-guide/bias-free-communication) 的术语参考。 本文中使用的词或短语的一致性是因为它当前出现在软件中。 当软件更新为删除语言时，本文将更新为对齐。
 
 
 移动宽带 (MB) 设计指南部分介绍了移动宽带微型端口驱动程序必须执行的操作和任务。

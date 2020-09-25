@@ -5,14 +5,19 @@ ms.assetid: CD5F0913-73E4-4A04-BB56-76A59D886FF1
 ms.date: 08/21/2018
 keywords: -从 Windows Vista 开始 OID_WWAN_NETWORK_BLACKLIST 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 1151d2af662d19154b79a559ec486c1ef548bcf6
-ms.sourcegitcommit: 366a15d68eb58d01a8ca6de7b982f62ac8b7deaf
+ms.openlocfilehash: c8a406adf09eb3e1000322f29694f4070856a49c
+ms.sourcegitcommit: 29c2e6dd8a3de3c11822d990adf1edd774f8a136
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/19/2020
-ms.locfileid: "90812008"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91230007"
 ---
 # <a name="oid_wwan_network_blacklist"></a>OID_WWAN_NETWORK_BLACKLIST
+
+> [!IMPORTANT]
+> ### <a name="bias-free-communication"></a>无偏差通信
+>
+> Microsoft 支持各种不同的环境。 本文介绍了 Microsoft [风格的无偏差通信的 Microsoft 风格指南](/style-guide/bias-free-communication) 的术语参考。 本文中使用的词或短语的一致性是因为它当前出现在软件中。 当软件更新为删除语言时，本文将更新为对齐。
 
 OID_WWAN_NETWORK_BLACKLIST 获取或设置有关移动宽带 (MBB) 设备的网络黑名单的信息。
 
@@ -30,7 +35,7 @@ OID_WWAN_NETWORK_BLACKLIST 获取或设置有关移动宽带 (MBB) 设备的网�
 
 **版本**： Windows 10，版本 1703 **头**： Ntddndis (包括 Ndis .h) 
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 [MB 网络阻止列表操作](./mb-network-blacklist-operations.md)
 

@@ -4,12 +4,12 @@ description: NDIS 中间驱动程序的开发路线图
 ms.assetid: d3bd26ff-846f-4bd2-929c-1c15dd61a122
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5045e18d3260dc10aab32c86fb7ac02f63e2ecde
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: ef6612696a145b95f3ec0304f9fd08062d70458f
+ms.sourcegitcommit: 29c2e6dd8a3de3c11822d990adf1edd774f8a136
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89214484"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91230039"
 ---
 # <a name="roadmap-for-developing-ndis-intermediate-drivers"></a>NDIS 中间驱动程序的开发路线图
 
@@ -42,7 +42,7 @@ ms.locfileid: "89214484"
 
 -   步骤5：阅读中间驱动程序、微型端口驱动程序和协议驱动程序简介主题。
     [NDIS 中间驱动程序简介](introduction-to-ndis-intermediate-drivers.md) 
-    [NDIS 微型端口驱动程序简介](introduction-to-ndis-miniport-drivers.md) 
+    [NDIS 微型端口驱动程序简介](deserialized-ndis-miniport-drivers.md) 
     [NDIS 协议驱动程序](./roadmap-for-developing-ndis-protocol-drivers.md)
 -   步骤6：阅读 [编写中间驱动程序部分](writing-ndis-intermediate-drivers.md)。
 

@@ -6,12 +6,12 @@ keywords:
 - CM_PROB_FAILED_START
 ms.date: 02/28/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 6098582a3ff386db61c4f6d92dd25925f98cae86
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 39b9c7d450fa28bc3655b1332f15a90280a983f3
+ms.sourcegitcommit: 29c2e6dd8a3de3c11822d990adf1edd774f8a136
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89097345"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91230047"
 ---
 # <a name="code-10---cm_prob_failed_start"></a>代码 10 - CM_PROB_FAILED_START
 
@@ -42,3 +42,8 @@ ms.locfileid: "89097345"
 ## <a name="for-driver-developers"></a>面向驱动程序开发人员
 
 设备堆栈中的某个驱动程序未能 [启动 IRP](../kernel/irp-mn-start-device.md)。 设备上的 [**DEVPKEY_Device_ProblemStatus**](devpkey-device-problemstatus.md) 属性应指示故障代码。
+
+如果设备驱动程序堆栈中的某个驱动程序是 UMDF 驱动程序，并且该设备上的 [**DEVPKEY_Device_ProblemStatus**](devpkey-device-problemstatus.md) 属性是 STATUS_DRIVER_PROCESS_TERMINATED 的，则此信息可能对驱动程序的所有者有帮助，以诊断问题：
+* [确定反射器终止主机进程的原因](../wdf/determining-why-the-reflector-terminated-the-host-process.md)
+* [排查 UMDF 2.0 驱动程序崩溃问题](../wdf/debugging-umdf-2-0-drivers.md)
+

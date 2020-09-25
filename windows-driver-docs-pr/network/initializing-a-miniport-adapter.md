@@ -10,12 +10,12 @@ keywords:
 - MiniportInitializeEx
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e2ba7c4fdee4278474e3638bd5b539a605c49ad4
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 22a1812be9059405a7f804ccc2da1a552a16e8aa
+ms.sourcegitcommit: 29c2e6dd8a3de3c11822d990adf1edd774f8a136
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89210727"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91230049"
 ---
 # <a name="initializing-a-miniport-adapter"></a>初始化微型端口适配器
 
@@ -59,7 +59,7 @@ ms.locfileid: "89210727"
 
 7.  共享内存。
 
-8.  中断 (参阅 [管理中断](managing-interrupts.md)) 。
+8.  中断 (参阅 [管理中断](registering-and-deregistering-interrupts.md)) 。
 
 在 [*MiniportInitializeEx*](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_initialize) 成功返回后，适配器将处于暂停状态。 NDIS 可以调用 [**MiniportRestart**](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_restart) 函数将适配器转换为正在运行状态。 有关详细信息，请参阅 [启动微型端口适配器](starting-an-adapter.md)。
 

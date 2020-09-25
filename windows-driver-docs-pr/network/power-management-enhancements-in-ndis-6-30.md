@@ -4,12 +4,12 @@ ms.assetid: A3B64252-DD6C-4715-8D4B-8D8176BC585B
 description: 介绍 NDIS 6.30 电源管理增强功能，以减少计算机能耗
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1310a377b2739b97654002987197c1c53b19f9b8
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: a535b910ba727777a2788fde0ab84b4f35e9f137
+ms.sourcegitcommit: 29c2e6dd8a3de3c11822d990adf1edd774f8a136
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89213756"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91230011"
 ---
 # <a name="power-management-enhancements-in-ndis-630"></a>NDIS 6.30 中的电源管理增强
 
@@ -36,7 +36,7 @@ NDIS 6.20 包括电源管理的新功能和改进，以降低计算机的功耗�
 
  
 
-有关详细信息，请参阅 [NDIS 唤醒原因状态指示](ndis-wake-reason-status-indications.md)。
+有关详细信息，请参阅 [NDIS 唤醒原因状态指示](overview-of-ndis-wake-reason-statue-indications.md)。
 
 ### <a name="ndis-no-pause-on-suspend"></a>挂起时不暂停 NDIS
 

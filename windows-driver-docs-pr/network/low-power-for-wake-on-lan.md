@@ -4,12 +4,12 @@ description: 在 LAN 上唤醒时离开低功耗状态
 ms.assetid: 9ab8fa19-e75a-4266-accf-4e8b2964f82e
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0c2997381d27219d777507b84ea55dedbe61a9a6
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: b1a504ac3136c22e157f00e796b8204d8443de5f
+ms.sourcegitcommit: 29c2e6dd8a3de3c11822d990adf1edd774f8a136
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89215606"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91230015"
 ---
 # <a name="low-power-for-wake-on-lan"></a>在 LAN 上唤醒时离开低功耗状态
 
@@ -57,7 +57,7 @@ LAN 唤醒 (WOL) 功能在网络适配器检测到 WOL 事件时从低功耗状�
 
 从 NDIS 6.30 开始，如果微型端口驱动程序支持 [**NDIS \_ 状态 \_ PM \_ 唤醒 \_ 原因**](./ndis-status-pm-wake-reason.md) 状态指示，则如果网络适配器唤醒系统，则必须发出此状态通知。 驱动程序在处理 oid [ \_ PNP \_ 设置 \_ ](./oid-pnp-set-power.md) 的 oid 设置请求时发出此状态通知，以将转换为全功耗 (D0) 状态。
 
-有关详细信息，请参阅 [NDIS 唤醒原因状态指示](ndis-wake-reason-status-indications.md)。
+有关详细信息，请参阅 [NDIS 唤醒原因状态指示](overview-of-ndis-wake-reason-statue-indications.md)。
 
  
 
