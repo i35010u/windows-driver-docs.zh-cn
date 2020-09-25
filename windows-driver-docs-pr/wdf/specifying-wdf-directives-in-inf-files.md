@@ -20,12 +20,12 @@ keywords:
 - UmdfDispatcher INF 指令 WDK UMDF，语法
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2e082e767ee7fe42dbcd08aee7652a22dce21cf8
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: e1cd8dccea8ab67c40cc5322bfa623d787b3b90b
+ms.sourcegitcommit: 68d0aec4c282c9c1e1ab54509c8f4575dd273d56
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90101724"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91221931"
 ---
 # <a name="specifying-wdf-directives-in-inf-files"></a>在 INF 文件中指定 WDF 指令
 
@@ -87,7 +87,6 @@ UmdfServiceOrder=UMDFSkeleton
 
 有关将 UMDF 驱动程序连接到特定类型的资源的信息，请参阅：
 
--   [将 UMDF 驱动程序连接到 GPIO i/o 引脚](https://docs.microsoft.com/windows-hardware/drivers/gpio/connecting-a-umdf-driver-to-gpio-i-o-pins)
 -   [用户模式 SPB 外设驱动程序的硬件资源](../spb/hardware-resources-for-user-mode-spb-peripheral-drivers.md)
 -   [SPB 连接的外围设备的连接 ID](../spb/connection-ids-for-spb-connected-peripheral-devices.md)
 -   [将 UMDF 外设驱动程序连接到串行端口](/previous-versions/hh406559(v=vs.85))

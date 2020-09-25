@@ -4,12 +4,12 @@ description: 蓝牙主机控制器接口 (HCI) 指定主机和蓝牙无线电控
 ms.assetid: 68E34B92-155B-401E-8D90-5BD1AF036B4D
 ms.date: 02/07/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: c64764e246e85250bdca0f81cf83e3d809e5dc8f
-ms.sourcegitcommit: e6247811ff9a07070547af3d89705dae33a2f465
+ms.openlocfilehash: b3b649c44e9acd44470933a94502f1c7095c1368
+ms.sourcegitcommit: 68d0aec4c282c9c1e1ab54509c8f4575dd273d56
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/23/2020
-ms.locfileid: "91026420"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91221947"
 ---
 # <a name="microsoft-defined-bluetooth-hci-extensions"></a>Microsoft 定义的蓝牙 HCI 扩展
 
@@ -27,7 +27,7 @@ ms.locfileid: "91026420"
 
 供应商必须通过控制器之外的方法传达所选值。 Microsoft 不指定如何获取所选代码。
 
-|HCI 命令|说明|
+|HCI 命令|描述|
 |---|---|
 |[HCI_VS_MSFT_Read_Supported_Features](#hci_vs_msft_read_supported_features) | HCI_VS_MSFT_Read_Supported_Features 提供了一个位图，用于描述控制器支持的 Microsoft 定义功能，并为控制器返回的 Microsoft 定义的事件指定前缀。|
 |[HCI_VS_MSFT_Monitor_Rssi](#hci_vs_msft_monitor_rssi) | HCI_VS_MSFT_Monitor_Rssi 请求控制器开始监视指定连接的已测量链接 RSSI，并在连接的度量链接 RSSI 超出指定边界时生成事件。|
@@ -537,7 +537,7 @@ HCI_VS_MSFT_LE_Set_Advertisement_Filter_Enable 设置播发筛选器的状态。
 |---|---|---|---|
 |HCI_VS_MSFT_LE_Set_Advertisement_Filter_Enable|选择的基本代码 |<ul><li>Subcommand_opcode</li><li>启用</li>|<ul><li>状态</li><li>Subcommand_opcode</ul>|
 
-如果 " _启用_ " 设置为0x00，则控制器应基于现有的空白列表设置将接收的播发传播到主机。 如果设备不再受到监视，控制器应继续监视当前正在监视的设备并生成 [HCI_VS_MSFT_LE_Monitor_Device_Event](#hci_vs_msft_le_monitor_device_event) ， _Monitor_state_ 设置为0。 如果正在监视新设备，控制器应生成 HCI_VS_MSFT_LE_Monitor_Device_Event，并将 _Monitor_state_ 设置为1。 主机可能会发出 HCI_VS_MSFT_LE_Set_Advertisement_Filter_Enable，并将 " _启用_ " 设置为0x01 来重新启用所有筛选条件。
+如果 " _启用_ " 设置为0x00，则控制器应基于现有允许列表设置将接收的播发传播到主机。 如果设备不再受到监视，控制器应继续监视当前正在监视的设备并生成 [HCI_VS_MSFT_LE_Monitor_Device_Event](#hci_vs_msft_le_monitor_device_event) ， _Monitor_state_ 设置为0。 如果正在监视新设备，控制器应生成 HCI_VS_MSFT_LE_Monitor_Device_Event，并将 _Monitor_state_ 设置为1。 主机可能会发出 HCI_VS_MSFT_LE_Set_Advertisement_Filter_Enable，并将 " _启用_ " 设置为0x01 来重新启用所有筛选条件。
 
 如果 _Enable_ 设置为0x01，则此命令将启用使用以前发出的 [HCI_VS_MSFT_LE_Monitor_Advertisement](#hci_vs_msft_le_monitor_advertisement) 命令设置的所有筛选器。 如果控制器不切换筛选器状态，则控制器应拒绝 HCI_VS_MSFT_LE_Set_Advertisement_Filter_Enable 命令：
 
@@ -559,7 +559,7 @@ Subcommand_opcode (1 八进制) ：
 
 | 值  |   参数说明 |
 |---|---|
-|0x00| 恢复为当前的白名单行为，但根据  [HCI_VS_MSFT_LE_Monitor_Advertisement](#hci_vs_msft_le_monitor_advertisement) 命令中的 _Condition_s 继续监视设备。|
+|0x00| 恢复为当前允许列表行为，但根据  [HCI_VS_MSFT_LE_Monitor_Advertisement](#hci_vs_msft_le_monitor_advertisement) 命令中的 _Condition_s 继续监视设备。|
 |0x01|在控制器上启用所有发出的 HCI_VS_MSFT_LE_Monitor_Advertisement 命令。|
 
 #### <a name="return_parameter"></a>Return_parameter
@@ -642,7 +642,7 @@ RSSI (1 八进制) ：
 
 所有 Microsoft 定义的蓝牙 HCI 事件均为供应商定义的事件，并使用事件代码0xFF。 Microsoft 事件的事件数据始终以字符串的常量字符串开头，以将 Microsoft 定义的事件与其他供应商定义的事件区分开来。 常量字符串的长度和值由控制器实施者定义，并在响应 [HCI_VS_MSFT_Read_Supported_Features](#hci_vs_msft_read_supported_features)时返回。
 
-|HCI 事件|说明|
+|HCI 事件|描述|
 |---|---|
 |[HCI_VS_MSFT_Rssi_Event](#hci_vs_msft_rssi_event)|HCI_VS_MSFT_RSSI_Event 指示 [HCI_VS_MSFT_Monitor_Rssi](#hci_vs_msft_monitor_rssi) 命令已完成。|
 |[HCI_VS_MSFT_LE_Monitor_Device_Event](#hci_vs_msft_le_monitor_device_event)|HCI_VS_MSFT_LE_Monitor_Device_Event 指示控制器已启动或停止监视蓝牙 LE 设备。|

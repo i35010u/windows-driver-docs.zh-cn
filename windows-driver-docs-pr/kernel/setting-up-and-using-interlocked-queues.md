@@ -8,12 +8,12 @@ keywords:
 - 驱动程序专用线程 WDK Irp
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c21f4ffbe84d09e54f9dccb0a95e20ef2d7eec16
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: f5ec54d3c324cdecdefb720df575f386e59da349
+ms.sourcegitcommit: 68d0aec4c282c9c1e1ab54509c8f4575dd273d56
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90717480"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91221941"
 ---
 # <a name="setting-up-and-using-interlocked-queues"></a>设置和使用联锁队列
 
@@ -25,7 +25,7 @@ ms.locfileid: "90717480"
 
 具有设备专用线程的驱动程序或使用执行工作线程的驱动程序（如大多数系统 FSDs）是最有可能的驱动程序类型，可用于在联锁队列中管理自己的运行时内部的 Irp 队列。 所有 PnP 驱动程序（包括 WDM 驱动程序）还必须在内部对某些 Irp 进行排队，同时执行 PnP 和电源状态转换。
 
-通常，这些驱动程序设置双向链接的互锁队列;每个 IRP 都包含类型为 [**LIST \_ 条目**](/windows/win32/api/ntdef/ns-ntdef-_list_entry)的成员，驱动程序可以使用该成员来连接当前正在持有的链接 irp。 如果某个驱动程序设置了单独链接的联锁队列，则该驱动程序无法重新排队 Irp 进行重试。
+通常，这些驱动程序设置双向链接的互锁队列;每个 IRP 都包含类型为 [**LIST \_ 条目**](/windows/win32/api/ntdef/ns-ntdef-list_entry)的成员，驱动程序可以使用该成员来连接当前正在持有的链接 irp。 如果某个驱动程序设置了单独链接的联锁队列，则该驱动程序无法重新排队 Irp 进行重试。
 
 ### <a href="" id="ddk-using-an-interlocked-queue-kg"></a>
 

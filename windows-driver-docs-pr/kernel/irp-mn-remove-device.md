@@ -6,12 +6,12 @@ ms.assetid: 0d733cbd-2da8-48a5-afc6-e1e6b8f507a1
 keywords:
 - IRP_MN_REMOVE_DEVICE 内核模式驱动程序体系结构
 ms.localizationpriority: medium
-ms.openlocfilehash: 3dda136be03da3deeb9cc90f09ca736e4d67837b
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 4d853ed8d66c9755e64cd47a81c6a663e737d631
+ms.sourcegitcommit: 68d0aec4c282c9c1e1ab54509c8f4575dd273d56
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89187277"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91221953"
 ---
 # <a name="irp_mn_remove_device"></a>IRP \_ MN \_ 删除 \_ 设备
 
@@ -53,14 +53,14 @@ PnP 管理器在 \_ 系统线程的上下文中以 IRQL 被动级别发送此 IR
 
 驱动程序必须将 **Irp- &gt; IoStatus** 设置为状态 " \_ 成功"。 驱动程序不能使此 IRP 失败。
 
-<a name="operation"></a>操作
+<a name="operation"></a>Operation
 ---------
 
 此 IRP 首先由设备堆栈顶部的驱动程序和堆栈中的每个较低的驱动程序处理。
 
 为了响应此 IRP，驱动程序将执行如下任务：关闭设备电源、删除设备的软件表示形式 (设备对象，等等) ，以及释放设备的任何资源。
 
-有关处理此 IRP 的详细信息，请参阅 [处理 irp \_ MN \_ 删除 \_ 设备请求](./handling-an-irp-mn-remove-device-request.md)。 有关支持设备删除的一般信息，请参阅 [删除设备](https://docs.microsoft.com/windows-hardware/drivers/kernel/removing-a-device)。
+有关处理此 IRP 的详细信息，请参阅 [处理 irp \_ MN \_ 删除 \_ 设备请求](./handling-an-irp-mn-remove-device-request.md)。 有关支持设备删除的一般信息，请参阅 [删除设备](https://docs.microsoft.com/windows-hardware/drivers/kernel/removing-a-device-in-a-function-driver)。
 
 **正在发送此 IRP**
 
@@ -78,7 +78,7 @@ PnP 管理器在 \_ 系统线程的上下文中以 IRQL 被动级别发送此 IR
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Header</p></td>
+<td><p>标头</p></td>
 <td>Wdm.h（包括 Wdm.h、Ntddk.h 或 Ntifs.h）</td>
 </tr>
 </tbody>

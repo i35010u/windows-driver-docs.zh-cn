@@ -6,12 +6,12 @@ ms.assetid: 32437c5a-ad92-433c-8255-83775751a44d
 keywords:
 - IRP_MN_QUERY_DEVICE_RELATIONS 内核模式驱动程序体系结构
 ms.localizationpriority: medium
-ms.openlocfilehash: 8fe427ba2bcbee29cc93593ea26c9c3e3f262a9f
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: bda08a3c478eb9094dd1cc259b2d0c0d7b260de3
+ms.sourcegitcommit: 68d0aec4c282c9c1e1ab54509c8f4575dd273d56
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90103170"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91221935"
 ---
 # <a name="irp_mn_query_device_relations"></a>IRP \_ MN \_ 查询 \_ 设备 \_ 关系
 
@@ -26,7 +26,7 @@ PnP 管理器发送此请求，以确定设备之间的某些关系。 以下类
 
 -   总线驱动程序可能会处理 (子 PDOs) 子设备的 **EjectionRelations** 请求。
 
-## <a name="value"></a>“值”
+## <a name="value"></a>值
 
 0x07
 
@@ -78,7 +78,7 @@ typedef struct _DEVICE_RELATIONS {
 } DEVICE_RELATIONS, *PDEVICE_RELATIONS;
 ```
 
-<a name="operation"></a>操作
+<a name="operation"></a>Operation
 ---------
 
 如果驱动程序在响应此 **IRP \_ MN \_ 查询 \_ 设备 \_ 关系**时返回关系，则驱动程序将从分页内存中分配一个 **设备 \_ 关系** 结构，该结构包含计数和适当数量的设备对象指针。 当不再需要该结构时，PnP 管理器会将其释放。 如果驱动程序替换了另一驱动程序分配的 **设备 \_ 关系** 结构，则驱动程序必须释放以前的结构。
@@ -119,7 +119,7 @@ typedef struct _DEVICE_RELATIONS {
 
     -   为尚未包含任何子设备的任何子设备创建一个 PDO。
 
-    -   将不在总线上的任何设备的 PDO 标记为非活动状态。 总线驱动程序不会删除此类 PDOs。有关何时删除 PDOs 的详细信息，请参阅 [删除设备](https://docs.microsoft.com/windows-hardware/drivers/kernel/removing-a-device)。
+    -   将不在总线上的任何设备的 PDO 标记为非活动状态。 总线驱动程序不会删除此类 PDOs。有关何时删除 PDOs 的详细信息，请参阅 [删除设备](https://docs.microsoft.com/windows-hardware/drivers/kernel/removing-a-device-in-a-bus-driver)。
 
     -   报告总线上存在的任何子设备。
 
@@ -229,7 +229,7 @@ PnP 管理器会将 [**irp \_ MN \_ 弹出**](irp-mn-eject.md) IRP 发送到要�
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [*AddDevice*](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_add_device)

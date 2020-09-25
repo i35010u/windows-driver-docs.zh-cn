@@ -6,12 +6,12 @@ keywords:
 - 驱动程序开发最佳做法
 ms.date: 08/06/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: e436d7f721091c891b67bf899d7fbbc2c5c2e93c
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 56f8020fceabbbebfe4b834bf3792466c3aa8a44
+ms.sourcegitcommit: 68d0aec4c282c9c1e1ab54509c8f4575dd273d56
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89185949"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91221933"
 ---
 # <a name="surface-team-driver-development-best-practices"></a>Surface 团队驱动程序开发最佳实践
 
@@ -37,14 +37,14 @@ ms.locfileid: "89185949"
 10. 不是对 WDFQUEUEs 的电源管理属性的明确。 不清楚地记录电源管理选项。 这是错误检查的主要原因0x9F： WDF 驱动程序中的 [驱动程序 \_ 电源 \_ 状态 \_ 故障](../debugger/bug-check-0x9f--driver-power-state-failure.md) 。 删除设备后，框架将在删除过程的不同阶段中从电源管理队列和非电源托管队列中清除 IO。 收到最终的 IRP \_ MN 删除设备时，将清除非电源管理的队列 \_ \_ 。 因此，如果在非电源管理的队列中保存 i/o，最好在 [EvtDeviceSelfManagedIoFlush](/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_self_managed_io_flush) 的上下文中显式清除 i/o 以避免死锁。
 11. 未遵循处理 Irp 的规则。 请参阅 [处理清理和关闭操作中的错误](./errors-in-handling-cleanup-and-close-operations.md)。
 
-### <a name="synchronization"></a>Synchronization
+### <a name="synchronization"></a>同步
 
 1. 对不需要保护的代码持有锁。 当只需对少量的操作进行保护时，请勿持有整个函数的锁。
 2. 调用的驱动程序持有锁。 这是死锁的主要原因。
 3. 使用联锁基元创建锁定方案，而不是使用适当系统提供的锁定基元，例如互斥体、信号量和旋转锁。 请参阅 [Mutex 对象](./introduction-to-mutex-objects.md)、 [信号对象](./semaphore-objects.md) 和 [旋转锁简介](./introduction-to-spin-locks.md)中的介绍。
 4. 使用旋转锁，其中某些类型的被动锁更合适。 请参阅 [快速 mutex 和受保护的 mutex](./fast-mutexes-and-guarded-mutexes.md) 和 [事件对象](./event-objects.md)。 有关锁的其他透视图，请查看 OSR 一文- [同步的状态](https://www.osr.com/nt-insider/2015-issue3/the-state-of-synchronization/)。
 5. 选择 "WDF 同步和执行级别" 模型，而无需充分了解含义。 请参阅 [使用框架锁](../wdf/using-framework-locks.md)。 除非你的驱动程序直接与硬件交互，否则请避免选择执行 WDF 同步，因为这可能会导致递归导致死锁。
-6. 在多个线程的上下文中获取 KEVENT、信号灯、ERESOURCE、UnsafeFastMutex，无需进入关键区域。 这样做可能会导致 DOS 攻击，因为持有其中一个锁定的线程可以被挂起。 请参阅 [同步技术](https://docs.microsoft.com/windows-hardware/drivers/kernel/synchronization-techniques)。
+6. 在多个线程的上下文中获取 KEVENT、信号灯、ERESOURCE、UnsafeFastMutex，无需进入关键区域。 这样做可能会导致 DOS 攻击，因为持有其中一个锁定的线程可以被挂起。 请参阅 [内核调度程序对象简介](/windows-hardware/drivers/kernel/introduction-to-kernel-dispatcher-objects)。
 7. 在事件仍在使用时，在线程堆栈上分配 KEVENT 并返回到调用方。 通常在与 [IoBuildSyncronousFsdRequest](/windows-hardware/drivers/ddi/wdm/nf-wdm-iobuildsynchronousfsdrequest) 或 [IoBuildDeviceIoControlRequest](/windows-hardware/drivers/ddi/wdm/nf-wdm-iobuilddeviceiocontrolrequest)一起使用时完成。 这些调用的调用方应确保它们不会从堆栈展开，直到在完成 IRP 后，i/o 管理器发出事件信号。
 8. 在调度例程中无限期等待。 通常，调度例程中的任何类型的等待都是一种不好的做法。
 9. 如果在删除对象之前) 等等 = = NULL，则不能正确检查该 (对象的有效性。 这通常意味着作者对控制对象生存期的代码没有充分的了解。
@@ -128,7 +128,7 @@ ms.locfileid: "89185949"
 4. 不要使用 ETW 事件来测量影响事件的性能和其他关键用户体验。 请参阅向 [内核模式驱动程序添加事件跟踪](../devtest/adding-event-tracing-to-kernel-mode-drivers.md)。
 5. 不报告事件日志中的严重错误，并正确地将设备标记为不起作用。
 
-### <a name="verification"></a>确认
+### <a name="verification"></a>验证
 
 1. 在开发和测试期间，不会同时运行带有标准设置和高级设置的驱动程序验证程序。 请参阅 [驱动程序验证](../devtest/driver-verifier.md)器。 在 "高级" 设置中，建议启用除与资源不足模拟相关的规则之外的所有规则。 更可取的方法是隔离运行低资源模拟测试，以便更轻松地调试问题。
 2. 如果未对驱动程序或设备类运行 DevFund 测试，驱动程序将成为启用了高级验证程序设置的一部分。 请参阅 [如何通过命令行运行 DevFund 测试](../devtest/run-devfund-tests-via-the-command-line.md)。

@@ -5,12 +5,12 @@ Search.SourceType: Video
 ms.assetid: 0442E4E2-DBC7-4EB0-BEB6-49EFF5132A1D
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 88e25537bf4eba3830165a0d5e20b39945fb8592
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 95cac2487f46829ce8ad1150af4680143cd0eb91
+ms.sourcegitcommit: 68d0aec4c282c9c1e1ab54509c8f4575dd273d56
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89191989"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91221945"
 ---
 # <a name="using-the-windows-performance-toolkit-wpt-with-wdf"></a>将 Windows 性能工具包 (WPT) 与 WDF 配合使用
 
@@ -167,7 +167,6 @@ WdfDevice 列包含与回调关联的 WDFDEVICE 句柄。 ActivityID 包含回�
     ```
 
 -   对于开发和测试目的，可以暂时禁用强制实施驱动程序代码签名策略。 有关详细信息，请参阅 [在开发和测试过程中安装未签名的驱动程序包](../install/installing-an-unsigned-driver-during-development-and-test.md)。
--   如果已在 Windows 10 移动设备上捕获跟踪，则需要将 MyPerfTrace 从目标设备复制到 Wpa.exe 的计算机。 可以使用 [TShell 工具](https://sysdev.microsoft.com/Hardware/oem/docs/Phone_Testing/TShell) 执行此操作。
 
 ## <a name="related-topics"></a>相关主题
 
