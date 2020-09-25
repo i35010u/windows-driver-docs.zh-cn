@@ -4,12 +4,12 @@ title: 在实验室中安装 WDK 生成环境
 description: Windows 驱动程序工具包 (WDK) 8.1 使你可以将 Visual Studio 和 WDK 的组件复制到新位置，然后通过命令行启动生成环境。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0af1f3dfdd30e1cefca9bc8d5f2d10f9ee32e10a
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: cf47ec27d9079f2b55ddb8feae5b14cc3ec9e990
+ms.sourcegitcommit: 0c34101a0eed9f187fec03026021fff89bd233e3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89206773"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91135170"
 ---
 # <a name="installing-the-wdk-81-build-environment-in-a-lab"></a>在实验室中安装 WDK 8.1 生成环境
 
@@ -27,7 +27,7 @@ Windows 驱动程序工具包 (WDK) 8.1 中提供的功能使你可以将 Visua
 
 1.  下载 [Visual Studio Professional 2013](https://go.microsoft.com/fwlink/p/?linkid=316548) 或 [Visual Studio Ultimate 2013](https://go.microsoft.com/fwlink/p/?linkid=316520)。 下载产品布局（例如，vs\_ultimate\_download.exe）。 当系统询问你是想要运行还是保存 vs\_ultimate\_download.exe 时，请选择“运行”并选择下载选项，然后将下载路径指定为 C:\\VSSetup（这将简化后续步骤）。 选择“下载”，将 DVD 布局的本地副本下载并安装到计算机上。
 2.  下载独立的 [SDK](https://go.microsoft.com/fwlink/p/?linkid=323507)。 当系统询问你是想要运行还是保存 sdksetup.exe 时，请选择“运行”，然后将下载位置指定为 C:\\Kits\\SDK。 选择“下一步”并按照说明下载独立的 SDK。
-3.  下载 [WDK 8.1](https://go.microsoft.com/fwlink/p/?linkid=317353)。 当系统询问你是想要运行还是保存 wdksetup.exe 时，请选择“运行”，然后将下载位置指定为 C:\\Kits\\WDK。 选择“下一步”并按照说明下载 WDK。 如果已在计算机上安装 WDK，则 web 安装程序将会告诉你计算机上安装的功能已处于最新状态。 若要下载 WDK 设置文件以便能够部署生成环境，请选择“下一步”并指定 C:\\Kits\\WDK 路径。
+3.  下载 [WDK 8.1](../other-wdk-downloads.md)。 当系统询问你是想要运行还是保存 wdksetup.exe 时，请选择“运行”，然后将下载位置指定为 C:\\Kits\\WDK。 选择“下一步”并按照说明下载 WDK。 如果已在计算机上安装 WDK，则 web 安装程序将会告诉你计算机上安装的功能已处于最新状态。 若要下载 WDK 设置文件以便能够部署生成环境，请选择“下一步”并指定 C:\\Kits\\WDK 路径。
 
 ## <a name="span-iddownload_scriptspanspan-iddownload_scriptspan2-download-the-buildlabsupport-files"></a><span id="download_script"></span><span id="DOWNLOAD_SCRIPT"></span>2.下载 BuildLabSupport 文件
 

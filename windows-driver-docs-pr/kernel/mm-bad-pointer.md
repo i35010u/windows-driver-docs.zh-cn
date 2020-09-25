@@ -4,12 +4,12 @@ description: Windows 内核宏
 ms.assetid: 91366400-3307-4F13-A839-50BA85B7F73E
 ms.localizationpriority: High
 ms.date: 10/17/2018
-ms.openlocfilehash: 1d8f2f6ce9bd4d0cbaa045fb47170998ead9503a
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: fbe59c8b4eedec75394bd2f74b60f638ada832af
+ms.sourcegitcommit: 68d0aec4c282c9c1e1ab54509c8f4575dd273d56
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90717478"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91221937"
 ---
 # <a name="windows-kernel-macros"></a>Windows 内核宏
 
@@ -670,7 +670,7 @@ _DestinationString [out]_
 
 **PANSI_STRING**
 
-指向要初始化的 [**ANSI_STRING**](/windows/win32/api/ntdef/ns-ntdef-_string) 结构的指针。
+指向要初始化的 [**ANSI_STRING**](/windows/win32/api/ntdef/ns-ntdef-string) 结构的指针。
 
 _Buffer [in]_
 
@@ -756,7 +756,7 @@ _L1 [in]_
 
 **PLUID**
 
-指定要检查的 [**LUID**](/windows/win32/api/ntdef/ns-ntdef-_luid)。
+指定要检查的 [**LUID**](/windows/win32/api/ntdef/ns-ntdef-luid)。
 
 **返回值**
 

@@ -4,12 +4,12 @@ description: 此页面介绍了驱动程序隔离，这是 Windows 驱动程序�
 ms.date: 10/01/2019
 ms.assetid: 3955fb29-ee49-4c3e-ac6d-700dcba3f884
 ms.localizationpriority: medium
-ms.openlocfilehash: d4b8e4f0f78260a6fb4d71d3f4fde8720e80659b
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 06f29fb23f9d472432467d5e631a3bb649206902
+ms.sourcegitcommit: e6247811ff9a07070547af3d89705dae33a2f465
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90715720"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91026381"
 ---
 # <a name="driver-package-isolation"></a>驱动程序包隔离
 
@@ -39,10 +39,10 @@ bRet = GetModuleHandleExW(GET_MODULE_HANDLE_EX_FLAG_FROM_ADDRESS,
                          (PCWSTR)&DriverEntry,
                          &handleModule);
 if (bRet) {
-   winErr = GetModuleFileNameW(handleModule,
-                               path,
-                               pathLength);
-     …
+    charsWritten = GetModuleFileNameW(handleModule,
+                                      path,
+                                      pathLength);
+    …
 ```
 
 WDM 或 KMDF 驱动程序从 DriverStore 中运行并需要从其驱动程序包访问其他文件，它可以使用 [IoQueryFullDriverPath](/windows-hardware/drivers/ddi/ntddk/nf-ntddk-ioqueryfulldriverpath) 来查找它的路径、获取加载它的目录路径以及查找与该路径相关的配置文件。

@@ -4,12 +4,12 @@ title: 验证通用 Windows 驱动程序
 description: 可以使用 ApiValidator.exe 工具验证驱动程序调用的 API 是否对通用 Windows 驱动程序有效。
 ms.date: 04/28/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 86c407f50cd38317f9a4620d24f072fc054c68bb
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: f0906a8555c213353954c336306e0b950e55e400
+ms.sourcegitcommit: 0c34101a0eed9f187fec03026021fff89bd233e3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89211133"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91135152"
 ---
 # <a name="validating-windows-drivers"></a>验证 Windows 驱动程序
 
@@ -65,7 +65,7 @@ Error   10  error MSB3721: The command ""C:\Program Files (x86)\Windows Kits\10\
 
 2.  一次删除或替换一个不允许的 API 调用，并重新运行此工具，直到没有错误。
 
-3.  在某些情况下，可以使用仅用于桌面的 DDI 参考页列出的备用 DDI 替换这些调用。 如果找不到适合的替换项，请[提交反馈](https://go.microsoft.com/fwlink/p/?linkid=529549)。  如果没有适合的替换项，可能必须编写解决方法代码。  如果需要，可以从 WDK 中的驱动程序模板开始编写新的 Windows 驱动程序。
+3.  在某些情况下，可以使用仅用于桌面的 DDI 参考页列出的备用 DDI 替换这些调用。 如果没有适合的替换项，可能必须编写解决方法代码。  如果需要，可以从 WDK 中的驱动程序模板开始编写新的 Windows 驱动程序。
 
 如果看到如下所示的错误，请参阅[针对 OneCore 生成](building-for-onecore.md)中的指南。
 
