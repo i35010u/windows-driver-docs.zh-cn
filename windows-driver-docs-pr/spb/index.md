@@ -6,13 +6,12 @@ ms.date: 04/20/2017
 ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
-author: EliotSeattle
-ms.openlocfilehash: 0f2ad623ea1a9fe41c2da8cc0391f059ac894ef6
-ms.sourcegitcommit: c766ab74e32eb44795cbbd1a4f352d3a6a9adc14
+ms.openlocfilehash: c983f7612d8b1a7e24a1e4f3871d6d30de65e2d6
+ms.sourcegitcommit: ee3e2259aafc844cc43cce62299a72649cf89212
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89389565"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91353652"
 ---
 # <a name="simple-peripheral-bus-spb-driver-design-guide"></a>简单外设总线 (SPB) 驱动程序设计指南
 

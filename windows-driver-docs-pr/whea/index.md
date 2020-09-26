@@ -14,13 +14,12 @@ ms.date: 04/20/2017
 ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
-author: EliotSeattle
-ms.openlocfilehash: bed509c8eddbd24535e4e96b244febe2941db16c
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 47fff24f4ff6d037d5492b3bb5a52fa857c54a6b
+ms.sourcegitcommit: acef3c512676aad3aed1934cbe3d0f16e6d37619
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89209481"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91372934"
 ---
 # <a name="windows-hardware-error-architecture-whea-design-guide"></a>Windows 硬件错误体系结构 (WHEA) 设计指南
 

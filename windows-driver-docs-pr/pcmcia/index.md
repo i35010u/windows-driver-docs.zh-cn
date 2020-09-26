@@ -12,13 +12,12 @@ ms.date: 04/20/2017
 ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
-author: EliotSeattle
-ms.openlocfilehash: 396d0ba416c4bf880c2f2b84922f1acc471dfab2
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 2bb632a998f9f60e4f707c6f5290f49906aec5ca
+ms.sourcegitcommit: ee3e2259aafc844cc43cce62299a72649cf89212
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89384807"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91353600"
 ---
 # <a name="pcmcia-bus-driver-design-guide"></a>PCMCIA 总线驱动程序设计指南
 

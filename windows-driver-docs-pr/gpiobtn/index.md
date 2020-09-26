@@ -6,13 +6,12 @@ ms.date: 06/16/2017
 ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
-author: EliotSeattle
-ms.openlocfilehash: 9155ecee0899ad993b350ee28704daac2ceee876
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 1425f1bbf9ab97c7810835a315b0430af2805196
+ms.sourcegitcommit: ee3e2259aafc844cc43cce62299a72649cf89212
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89383735"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91353660"
 ---
 # <a name="hardware-notifications-design-guide"></a>硬件通知设计指南
 

@@ -6,13 +6,12 @@ ms.date: 04/20/2017
 ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
-author: EliotSeattle
-ms.openlocfilehash: ef8057726cf83f327cace3e85b0e92d86447c913
-ms.sourcegitcommit: 988d100e4d3b218a59fdac034d39a1816d145c85
+ms.openlocfilehash: 0e330dcf77260c4b12d1f9d58a99f3c3690a78e4
+ms.sourcegitcommit: ee3e2259aafc844cc43cce62299a72649cf89212
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2020
-ms.locfileid: "68473393"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91353658"
 ---
 # <a name="test-authoring-and-execution-framework-taef"></a>测试授权和执行框架 (TAEF)
 

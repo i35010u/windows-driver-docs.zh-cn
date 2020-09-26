@@ -6,13 +6,12 @@ ms.date: 04/20/2017
 ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
-author: EliotSeattle
-ms.openlocfilehash: 398acfa41d8fbe74f7e565e9f12b40ba61a1ae7e
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: b5076070e6c2c884a28f3a146363da2a9aee76e4
+ms.sourcegitcommit: ee3e2259aafc844cc43cce62299a72649cf89212
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89383555"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91353654"
 ---
 # <a name="partner-app-development"></a>合作伙伴应用开发
 

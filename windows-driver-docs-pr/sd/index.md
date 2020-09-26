@@ -11,13 +11,12 @@ ms.date: 04/20/2017
 ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
-author: EliotSeattle
-ms.openlocfilehash: 544048d5b11dec19fd1131b9b789a4f87c4b0b7d
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: b927f965a5721e6a7341935bdf596992a630a8fb
+ms.sourcegitcommit: ee3e2259aafc844cc43cce62299a72649cf89212
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89384187"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91353650"
 ---
 # <a name="sd-bus-driver-design-guide"></a>SD 总线驱动程序设计指南
 

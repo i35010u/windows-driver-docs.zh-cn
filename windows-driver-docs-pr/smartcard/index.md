@@ -8,21 +8,20 @@ ms.date: 04/20/2017
 ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
-author: EliotSeattle
-ms.openlocfilehash: e7ce1af5b932e117a1a1d81b0e333bf9ccd0b3f7
-ms.sourcegitcommit: 988d100e4d3b218a59fdac034d39a1816d145c85
+ms.openlocfilehash: 67947a5732d1dadc60e54b90d3d7a1d33da4df1f
+ms.sourcegitcommit: ee3e2259aafc844cc43cce62299a72649cf89212
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2020
-ms.locfileid: "68473550"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91353598"
 ---
 # <a name="smart-card-reader-devices-design-guide"></a>智能卡读卡器设备设计指南
 
 有关为智能卡读卡器设备开发驱动程序的设计指南。
 
-## <a name="in-this-section"></a>本部分内容
+## <a name="in-this-section"></a>在本节中
 
-|主题|描述|
+|主题|说明|
 |----|----|
 |[智能卡驱动程序环境](smart-card-driver-environment.md)|描述智能卡读卡器驱动程序的标准环境。|
 |[智能卡读卡器驱动程序中的 IOCTL 请求管理](management-of-ioctl-requests-in-a-smart-card-reader-driver.md)|说明读卡器驱动程序管理 IOCTL 请求的方式、回调例程机制的工作方式以及读卡器驱动程序必须执行哪些操作来初始化其回调例程。|

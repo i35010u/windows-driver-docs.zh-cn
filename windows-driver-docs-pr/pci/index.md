@@ -17,13 +17,12 @@ ms.date: 04/20/2017
 ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
-author: EliotSeattle
-ms.openlocfilehash: d25e16b0efce23bdb0e803e55ce1a58724b52013
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: a998761928f579b753a18f4e87214fe1bda16875
+ms.sourcegitcommit: ee3e2259aafc844cc43cce62299a72649cf89212
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89384783"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91353644"
 ---
 # <a name="pci-driver-programming-guide"></a>PCI 驱动程序编程指南
 

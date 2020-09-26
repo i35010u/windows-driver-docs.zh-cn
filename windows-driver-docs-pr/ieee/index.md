@@ -10,13 +10,12 @@ ms.date: 04/20/2017
 ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
-author: EliotSeattle
-ms.openlocfilehash: 1ab12006ee8ce91199a0c721a416909b4d55f5c7
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: dbd2bf2a7230fb3109f0f17065391f9d52ee416d
+ms.sourcegitcommit: ee3e2259aafc844cc43cce62299a72649cf89212
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89382221"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91353638"
 ---
 # <a name="ieee-1394-bus-driver-design-guide"></a>IEEE 1394 总线驱动程序设计指南
 

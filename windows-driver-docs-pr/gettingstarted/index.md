@@ -9,13 +9,12 @@ ms.date: 04/20/2017
 ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
-author: EliotSeattle
-ms.openlocfilehash: 205c5bd90f1fd3d31fee5a0a6582aac020240c9d
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 33409cc8d97e5467e0682f920f4cc353803176cf
+ms.sourcegitcommit: ee3e2259aafc844cc43cce62299a72649cf89212
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89382131"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91353612"
 ---
 # <a name="getting-started-with-windows-drivers"></a>Windows 驱动程序入门
 
