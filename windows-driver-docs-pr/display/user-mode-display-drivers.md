@@ -10,20 +10,19 @@ keywords:
 - Direct3D WDK 显示
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 369c03f8220e2702c27db4337cf3343a932f6533
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 9cb3555b1ab291e53e3c3521eb4b82c9ecec2151
+ms.sourcegitcommit: ee3e2259aafc844cc43cce62299a72649cf89212
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89067158"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91353592"
 ---
 # <a name="user-mode-display-drivers"></a>用户模式显示驱动程序
 
 
 ## <span id="ddk_user_mode_display_drivers_gg"></span><span id="DDK_USER_MODE_DISPLAY_DRIVERS_GG"></span>
 
-
-图形硬件供应商必须为其显示适配器编写用户模式显示驱动程序。 用户模式显示驱动程序是一个动态链接库， (DLL) 由 Microsoft Direct3D 运行时加载。 用户模式显示驱动程序至少必须支持 [Direct3D 版本 9 DDI](/windows-hardware/drivers/ddi/d3dumddi/index)。 用户模式显示驱动程序还可以支持 [Direct3D 版本 10 DDI](/windows-hardware/drivers/ddi/index)。 用户模式显示驱动程序可包含一个 DLL，该 DLL 支持 Direct3D 版本 9 DDI 和 Direct3D 版本 10 DDI，也可以包含两个单独的 Dll，一个用于版本9，另一个用于 Direct3D DDI 的第10版。 以下主题讨论用户模式显示驱动程序的各个方面：
+图形硬件供应商必须为其显示适配器编写用户模式显示驱动程序。 用户模式显示驱动程序是一个动态链接库， (DLL) 由 Microsoft Direct3D 运行时加载。 用户模式显示驱动程序至少必须支持 [Direct3D 版本 9 DDI](/windows-hardware/drivers/ddi/d3dumddi/index)。 用户模式显示驱动程序还可以支持 [Direct3D 版本 10 DDI](/windows-hardware/drivers/ddi/d3d10umddi/)。 用户模式显示驱动程序可包含一个 DLL，该 DLL 支持 Direct3D 版本 9 DDI 和 Direct3D 版本 10 DDI，也可以包含两个单独的 Dll，一个用于版本9，另一个用于 Direct3D DDI 的第10版。 以下主题讨论用户模式显示驱动程序的各个方面：
 
 [返回从运行时函数收到的错误代码](returning-error-codes-received-from-runtime-functions.md)
 

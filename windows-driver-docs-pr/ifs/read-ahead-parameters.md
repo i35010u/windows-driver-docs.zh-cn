@@ -7,20 +7,19 @@ keywords:
 topic_type:
 - apiref
 api_name:
-- read_ahead_parame3ters
+- read_ahead_parameters
 api_location:
 - NtosKrnl.exe
 api_type:
 - DllExport
-ms.author: eliotgra
 ms.date: 09/14/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e909d6a84af48f41caa21016a3b651a05029e57e
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 04d3d9d17612161bdb67be01a35f61cc723d1671
+ms.sourcegitcommit: acef3c512676aad3aed1934cbe3d0f16e6d37619
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89067370"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91372936"
 ---
 # <a name="read_ahead_parameters-structure"></a>READ_AHEAD_PARAMETERS 结构
 

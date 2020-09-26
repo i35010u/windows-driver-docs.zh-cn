@@ -1,6 +1,5 @@
 ---
 title: NFC CX 快速入门指南
-author: EliotSeattle
 description: 使用 NFC 类扩展编写 NFC 功能驱动程序的快速入门指南。
 keywords:
 - NFC
@@ -9,18 +8,17 @@ keywords:
 - 近场邻近感应
 - NFP
 - CX
-ms.author: eliotgra
 ms.date: 12/10/2018
 ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
 ms.localizationpriority: low
-ms.openlocfilehash: 384342faf2afc34da2ec177786eb195b3e429225
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 0701865461e3201b1392bf3c17c1a60fdf84943b
+ms.sourcegitcommit: ee3e2259aafc844cc43cce62299a72649cf89212
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89382503"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91353614"
 ---
 # <a name="nfc-cx-quick-start-guide"></a>NFC CX 快速入门指南
 
@@ -52,7 +50,7 @@ GitHub 上提供了此示例代码的完整版本： [NFC CX 客户端驱动程�
 
     在 **“文件”** 菜单上，指向 **“新建”** ，再单击 **“项目”** 。 在 " **Visual C++** " 节点的 " **Windows 驱动程序**" 下，单击 " **WDF**"，然后单击 " **用户模式驱动程序"，空 (UMDF V2) **
 
-    ![image](images/quick-start-new-project.png)
+    ![图像](images/quick-start-new-project.png)
 
 2. 打开 INF 文件。
 
@@ -109,7 +107,7 @@ GitHub 上提供了此示例代码的完整版本： [NFC CX 客户端驱动程�
     3. 确保将 **平台** 设置为 `All Platforms` 。
     4. 将 **NFC 类扩展的链接** 设置为 `Yes` 。
 
-    ![image](images/quick-start-link-to-nfc-cx.png)
+    ![图像](images/quick-start-link-to-nfc-cx.png)
 
 7. 将名为 `Driver.cpp` 的文件添加到项目。
 
@@ -426,6 +424,6 @@ GitHub 上提供了此示例代码的完整版本： [NFC CX 客户端驱动程�
     - [GPIO 中断](../gpio/gpio-interrupts.md)事件回调。  (I<sup>2</sup>C 和 SPI) 
     - [USB 连续读取器](../usbcon/how-to-use-the-continous-reader-for-getting-data-from-a-usb-endpoint--umdf-.md)回调。
 
-## <a name="logging"></a>日志记录
+## <a name="logging"></a>Logging
 
 请考虑将日志记录添加到客户端驱动程序，以便更轻松地进行调试。 [ETW 跟踪](../devtest/event-tracing-for-windows--etw-.md)和[WPP 跟踪](../devtest/wpp-software-tracing.md)都是不错的选择。

@@ -12,12 +12,12 @@ keywords:
 - 包 WDK 网络，返回
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3aba9cb30d3f10d9731c1e5b240616278db06099
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 0278085bdacc9e838faf1fd16e71d9ffbe3cfe9e
+ms.sourcegitcommit: ee3e2259aafc844cc43cce62299a72649cf89212
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89216942"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91353642"
 ---
 # <a name="receiving-network-data"></a>接收网络数据
 

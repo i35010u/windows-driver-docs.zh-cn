@@ -1,17 +1,16 @@
 ---
 title: 不同的 IRP 处理方法 - 速查表
-author: kaushika-msft
 description: 处理 Irp 的不同方法
 keywords:
 - Irp WDK 内核，处理 Irp
 ms.date: 12/07/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a105fb50e4d77be1e6429308fa162b622b38f7e2
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: f63a9e86105e7eee294f3fd68e344f77853e71f8
+ms.sourcegitcommit: ee3e2259aafc844cc43cce62299a72649cf89212
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89185661"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91353636"
 ---
 # <a name="different-ways-of-handling-irps---cheat-sheet"></a>不同的 IRP 处理方法 - 速查表 
 
@@ -154,7 +153,7 @@ CompletionRoutine_2(
 
 ```cpp
 NTSTATUS
-DispathRoutine_3(
+DispatchRoutine_3(
     IN PDEVICE_OBJECT DeviceObject,
     IN PIRP Irp
     )

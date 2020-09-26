@@ -1,6 +1,5 @@
 ---
 title: INF DDInstall.Events 节
-author: andylsn
 description: 每个模型的 DDInstall 节都包含一个或多个 INF AddEventProvider 指令，这些指令引用 INF 文件中其他由 INF 编写器定义的部分。
 ms.assetid: ''
 keywords:
@@ -13,12 +12,12 @@ api_type:
 - NA
 ms.date: 06/04/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 7acc3d2f007a003df02e99f2731c4b4254fa15b5
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 504ef7bc614fe393bda40d1525538b57387b5432
+ms.sourcegitcommit: ee3e2259aafc844cc43cce62299a72649cf89212
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89097127"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91353646"
 ---
 # <a name="inf-ddinstallevents-section"></a>INF DDInstall.Events 节
 
@@ -55,7 +54,7 @@ AddEventProvider={ProviderGUID},event-provider-install-section
 
 不能嵌套**需求**条目。 有关其用法的 **需求** 条目和限制的详细信息，请参阅 [指定设备文件的源位置和目标位置](specifying-the-source-and-target-locations-for-device-files.md)。
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
 <em>DDInstall</em>**。事件** 部分应该与相关的 [***DDInstall***](inf-ddinstall-section.md) 部分具有相同的平台和操作系统修饰。 例如，**ntx86**节<em>会</em>有一个相应的<em>安装节名称</em>**. ntx86。事件**部分。

@@ -4,16 +4,15 @@ ms.assetid: AA053196-F331-4CBE-B032-4E9CBEAC699C
 title: 配置和查询音频设备模块
 label: Configure and query audio device modules
 template: ''
-ms.author: drewbat
 ms.date: 06/28/2017
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: b15d9b53aff86862b3216f7232404b1a1cf26721
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 825358f22f766fee765443f382553a79201fa4b8
+ms.sourcegitcommit: acef3c512676aad3aed1934cbe3d0f16e6d37619
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89208211"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91372914"
 ---
 # <a name="configure-and-query-audio-device-modules"></a>配置和查询音频设备模块 
 

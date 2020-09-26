@@ -1,6 +1,5 @@
 ---
 title: INF AddEventProvider 指令
-author: andylsn
 description: AddEventProvider 指令用于 INF DDInstall 部分中。
 ms.assetid: ''
 keywords:
@@ -13,12 +12,12 @@ api_type:
 - NA
 ms.date: 06/04/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 2fb5fa2ebe0f88bf1dc4d7b566c380e3b3656e3d
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: b904c4812dd141275b3804b644b430f8fc06bb9e
+ms.sourcegitcommit: ee3e2259aafc844cc43cce62299a72649cf89212
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89097177"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91353606"
 ---
 # <a name="inf-addeventprovider-directive"></a>INF AddEventProvider 指令
 
@@ -40,7 +39,7 @@ AddEventProvider={ProviderGUID},event-provider-install-section
 <a href="" id="event-provider-install-section"></a>*事件提供程序-安装-部分*  
 引用由 INF 写入方定义的部分，其中包含为此设备 (或设备) 注册提供程序的信息。 有关详细信息，请参阅下面的 " **备注** " 部分。
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
 系统定义和不区分大小写的扩展可以插入 <em>DDInstall</em>**。事件** 部分，其中包含跨操作系统系统和/或跨平台 INF 文件中的 **AddEventProvider** 指令，用于指定特定于平台或特定于操作系统的安装。
