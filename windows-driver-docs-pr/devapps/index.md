@@ -6,18 +6,17 @@ ms.date: 04/20/2017
 ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
-author: EliotSeattle
-ms.openlocfilehash: 0e212c0b156b0ec25e87ccb52e3eebacec6d0a58
-ms.sourcegitcommit: 988d100e4d3b218a59fdac034d39a1816d145c85
+ms.openlocfilehash: 15ef894640b5bfe64eba1c3e04bec1d50346f679
+ms.sourcegitcommit: ee3e2259aafc844cc43cce62299a72649cf89212
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2020
-ms.locfileid: "68995408"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91353594"
 ---
 # <a name="uwp-device-apps"></a>UWP 设备应用
 
 
-## <a name="span-idpurposespanpurpose"></a><span id="purpose"></span>用途
+## <a name="span-idpurposespanpurpose"></a><span id="purpose"></span>目的
 
 
 设备制造商可以创建用作设备配套的 UWP 设备应用。 UWP 设备应用的功能超出常规的 UWP 应用，可执行特权操作，例如固件更新。 此外，UWP 设备应用可以从自动播放开始（其可以使用的设备数量超出其他应用）、在第一次连接设备时自动进行安装，并可扩展内置于 Windows 8.1 和 Windows 10 中的打印机和相机体验。
@@ -59,7 +58,7 @@ ms.locfileid: "68995408"
 <td align="left"><p>在 Windows 8.1 中，UWP 应用可以使用设备后台任务来同步外围设备上的数据。 如果应用与设备元数据相关联，则该 UWP 设备应用还可以使用设备后台代理进行设备更新，例如固件更新。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="uwp-device-apps-for-printers.md" data-raw-source="[UWP device apps for printers](uwp-device-apps-for-printers.md)">打印机的 UWP 设备应用</a></p></td>
+<td align="left"><p><a href="uwp-device-apps-for-printers.md" data-raw-source="[UWP device apps for printers](uwp-device-apps-for-printers.md)">适用于打印机的 UWP 设备应用</a></p></td>
 <td align="left"><p>此部分介绍打印机的 UWP 设备应用。</p></td>
 </tr>
 <tr class="odd">
