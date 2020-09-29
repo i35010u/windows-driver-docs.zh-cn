@@ -15,12 +15,12 @@ ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
 ms.custom: 19H1
-ms.openlocfilehash: da36860d62fb36ca27658f0bc10372b3ad325f82
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 022a41ca19cb453d18e4114857972549ce9727f8
+ms.sourcegitcommit: 68d0aec4c282c9c1e1ab54509c8f4575dd273d56
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89185855"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91221893"
 ---
 # <a name="whats-new-for-wdf-drivers-in-windows10"></a>Windows 10 中的 WDF 驱动程序新增功能
 
@@ -98,7 +98,7 @@ Windows 10 版本 1903（2019 年 3 月更新，19H1）包括内核模式驱动
 ## <a name="automatic-source-level-debugging-of-framework-code"></a>自动对框架代码进行源级别调试
 
 
-使用 WinDbg 调试 Windows 10 上的 WDF 驱动程序时，WinDbg 会自动从 Microsoft 的公共 GitHub 存储库检索框架源代码。 可以通过此功能在调试时单步执行 WDF 源代码，了解框架的内部结构，不需将源代码下载到本地计算机。 有关详细信息，请参阅 [New support for source-level debugging of WDF code in Windows 10](https://go.microsoft.com/fwlink/p/?LinkId=618534)（全新支持：在 Windows 10 中对 WDF 代码进行源级别调试）、[Debugging with WDF Source](https://go.microsoft.com/fwlink/p/?LinkId=618535)（通过 WDF 源进行调试）并观看[视频：使用 WDF 源代码调试驱动程序](video--debugging-your-driver-with-wdf-source-code.md)。
+使用 WinDbg 调试 Windows 10 上的 WDF 驱动程序时，WinDbg 会自动从 Microsoft 的公共 GitHub 存储库检索框架源代码。 可以通过此功能在调试时单步执行 WDF 源代码，了解框架的内部结构，不需将源代码下载到本地计算机。 有关详细信息，请参阅[使用 WDF 源进行调试](https://go.microsoft.com/fwlink/p/?LinkId=618535)和[视频：使用 WDF 源代码调试驱动程序](video--debugging-your-driver-with-wdf-source-code.md)。
 
 ## <a name="universal-driver-compliance"></a>通用驱动程序符合性
 
@@ -143,7 +143,7 @@ Windows 10 版本 1903（2019 年 3 月更新，19H1）包括内核模式驱动
 
 可以使用 Windows 性能工具包 (WPT) 查看给定的 KMDF 或 UMDF 2 驱动程序的性能数据。 启用跟踪时，框架会针对 I/O、PnP 和电源回调路径生成 ETW 事件。 然后，你可以在 Windows Performance Analyzer (WPA) 中查看各种图，了解 I/O 吞吐率、CPU 使用率和回调性能。 WPT 包括在 Windows 评估和部署工具包 (ADK) 中。
 
-有关详细信息，请参阅 [New Performance Tools for WDF Drivers in Windows 10]( https://go.microsoft.com/fwlink/p/?LinkId=618537)（Windows 10 中用于 WDF 驱动程序的全新性能工具）和[将 Windows 性能工具包 (WPT) 与 WDF 配合使用](using-the-windows-performance-toolkit--wpt--with-wdf.md)。
+有关详细信息，请参阅[将 Windows Performance Toolkit (WPT) 与 WDF 配合使用](using-the-windows-performance-toolkit--wpt--with-wdf.md)。
 
 ## <a name="additional-support-for-hid-drivers-in-umdf"></a>针对 UMDF 中的 HID 驱动程序的其他支持
 

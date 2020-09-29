@@ -9,12 +9,12 @@ keywords:
 ms.date: 05/07/2018
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 18a8bf1b5d0e2939bb89777780e91668491d191e
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: c19658c6f906c39dc1e1279ef98d14f6ad14be2f
+ms.sourcegitcommit: 68d0aec4c282c9c1e1ab54509c8f4575dd273d56
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89064938"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91221961"
 ---
 # <a name="other-wdk-downloads"></a>其他 WDK 下载
 
@@ -70,7 +70,7 @@ WDK 与 Visual Studio 和 Windows 调试工具 (WinDbg) 集成在一起。 此�
 | Windows 10 版本 1709 | [适用于 Windows 10 版本 1709 的 WDK](https://go.microsoft.com/fwlink/p/?linkid=859232) |
 | Windows 10 版本 1703 | [适用于 Windows 10 版本 1703 的 WDK](https://go.microsoft.com/fwlink/p/?LinkID=845980) |
 | Windows 10 版本 1607 | [适用于 Windows 10 版本 1607 的 WDK](https://go.microsoft.com/fwlink/p/?LinkId=526733)                |
-| Windows 8.1 更新       | [WDK 8.1 更新](https://go.microsoft.com/fwlink/p/?LinkId=393659)（仅英语） <br/>[WDK 8.1 更新测试包](https://go.microsoft.com/fwlink/p/?LinkID=393660)（仅英语） <br/>[WDK 8.1 示例](https://go.microsoft.com/fwlink/p/?LinkId=618052) |
+| Windows 8.1 更新       | WDK 8.1 更新（仅英语版）- 暂时不可用<br/>WDK 8.1 更新测试包（仅英语版）- 暂时不可用 <br/>[WDK 8.1 示例](https://go.microsoft.com/fwlink/p/?LinkId=618052) |
 | Windows 8                | [WDK 8](https://go.microsoft.com/fwlink/p/?LinkID=324284)（仅英语） <br/>[WDK 8 可再发行组件](https://go.microsoft.com/fwlink/p/?LinkID=253170)（仅英语） <br/>[WDK 8 示例](https://go.microsoft.com/fwlink/p/?LinkId=616509) |
 | Windows XP <br/>Windows Server 2003 | [WDK 7.1.0](https://www.microsoft.com/download/confirmation.aspx?id=11800) |
 
