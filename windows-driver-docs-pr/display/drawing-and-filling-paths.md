@@ -10,12 +10,12 @@ keywords:
 - 路径 WDK GDI
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: db7b6d2df1296f51b170aa55fdad3bd3c950f8a4
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 258d33e0fb317a1261517fec6920378d95c10238
+ms.sourcegitcommit: f8619f20a0903dd64f8641a5266ecad6df5f1d57
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90717378"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91424052"
 ---
 # <a name="drawing-and-filling-paths"></a>绘制和填充路径
 
@@ -23,7 +23,7 @@ ms.locfileid: "90717378"
 ## <span id="ddk_drawing_and_filling_paths_gg"></span><span id="DDK_DRAWING_AND_FILLING_PATHS_GG"></span>
 
 
-图形驱动程序将路径视为由路径对象定义的一系列线条和/或曲线 ([**PATHOBJ**](/windows/win32/api/winddi/ns-winddi-_pathobj) 结构) 。 为了处理已关闭的路径，驱动程序支持函数 [**DrvFillPath**](/windows/win32/api/winddi/nf-winddi-drvfillpath)。
+图形驱动程序将路径视为由路径对象定义的一系列线条和/或曲线 ([**PATHOBJ**](/windows/win32/api/winddi/ns-winddi-pathobj) 结构) 。 为了处理已关闭的路径，驱动程序支持函数 [**DrvFillPath**](/windows/win32/api/winddi/nf-winddi-drvfillpath)。
 
 GDI 可以调用 [**DrvFillPath**](/windows/win32/api/winddi/nf-winddi-drvfillpath) 来填充设备管理的图面上的路径。 GDI 将填充要求与 [**lnk-devinfo**](/windows/win32/api/winddi/ns-winddi-tagdevinfo) 结构的标志 GCAPS \_ 贝塞尔、GCAPS \_ ALTERNATEFILL 和 GCAPS WINDINGFILL 进行比较 \_ ，以决定是否调用驱动程序。 如果 GDI 调用了驱动程序，则驱动程序将执行操作或返回，通知 GDI：请求的路径或剪辑太复杂，无法由设备处理。 在后一种情况下，GDI 会将请求分解为几个简单的操作。
 

@@ -5,12 +5,12 @@ ms.assetid: fa00d449-6ec0-4e72-8d9c-a453a0b1f3e9
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_GEN_OPERATIONAL_STATUS 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 26c9e91950bb01ce18bcfa2930e88a02506f3009
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 331bf89e091be2224d9d23bb76a8bf5b5e98c379
+ms.sourcegitcommit: f8619f20a0903dd64f8641a5266ecad6df5f1d57
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90715242"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91423664"
 ---
 # <a name="oid_gen_operational_status"></a>OID \_ 生成 \_ 操作 \_ 状态
 
@@ -30,7 +30,7 @@ ms.locfileid: "90715242"
 
 NDIS 处理微型端口适配器和筛选器模块的此 OID，仅 [ndis 网络接口](./ndis-network-interfaces2.md) 提供程序接收此 oid 查询。
 
-如果查询成功，接口提供程序将返回 NDIS \_ 状态 \_ SUCCESS，查询的结果可以是 [**NET \_ IF \_ 操作系统 \_ STATUS**](/windows/win32/api/ifdef/ne-ifdef-_net_if_oper_status) 枚举中的值之一。
+如果查询成功，接口提供程序将返回 NDIS \_ 状态 \_ SUCCESS，查询的结果可以是 [**NET \_ IF \_ 操作系统 \_ STATUS**](/windows/win32/api/ifdef/ne-ifdef-net_if_oper_status) 枚举中的值之一。
 
 <a name="requirements"></a>要求
 ------------
@@ -48,10 +48,10 @@ NDIS 处理微型端口适配器和筛选器模块的此 OID，仅 [ndis 网络�
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
-[**NET \_ IF \_ 操作系统 \_**](/windows/win32/api/ifdef/ne-ifdef-_net_if_oper_status)
+[**NET \_ IF \_ 操作系统 \_**](/windows/win32/api/ifdef/ne-ifdef-net_if_oper_status)
 
 [NDIS 网络接口 Oid](./ndis-network-interface-oids.md)
 

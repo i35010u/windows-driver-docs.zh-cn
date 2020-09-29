@@ -13,12 +13,12 @@ keywords:
 - 图形 WDK Windows 2000 显示
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0d4b4e5aabaa086e9d80749e0668b29c948b8fbe
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: ccb4fe1f48d43b030d972c2d68b7f39b2695bf65
+ms.sourcegitcommit: f8619f20a0903dd64f8641a5266ecad6df5f1d57
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90715468"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91423736"
 ---
 # <a name="directdraw"></a>DirectDraw
 
@@ -36,7 +36,7 @@ ms.locfileid: "90715468"
 
 -   当驱动程序 (VPE) 支持 DirectDraw 视频端口扩展时，将使用*dvp。*
 
--   当视频微型端口驱动程序包括对内核模式视频传输的支持、DxApi 接口 (由[**DxApi \_ 接口**](/windows/win32/api/dxmini/ns-dxmini-_dxapi_interface)结构) 指定的函数时，将使用*dxmini* 。
+-   当视频微型端口驱动程序包括对内核模式视频传输的支持、DxApi 接口 (由[**DxApi \_ 接口**](/windows/win32/api/dxmini/ns-dxmini-dxapi_interface)结构) 指定的函数时，将使用*dxmini* 。
 
 -   视频捕获驱动程序使用*ddkmapi*来访问[**DxApi**](/windows-hardware/drivers/ddi/dxapi/nf-dxapi-dxapi)函数。 DirectDraw 又会调用 DxApi 接口。
 

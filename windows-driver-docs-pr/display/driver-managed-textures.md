@@ -8,12 +8,12 @@ keywords:
 - 可管理的纹理 WDK Direct3D
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6e5e4104ed76553500dc82999519779eaaadce6f
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 460415d26fca3fa19726f8e627fd00546c0f930e
+ms.sourcegitcommit: f8619f20a0903dd64f8641a5266ecad6df5f1d57
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90716500"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91424016"
 ---
 # <a name="driver-managed-textures"></a>驱动程序管理的纹理
 
@@ -21,9 +21,9 @@ ms.locfileid: "90716500"
 ## <span id="ddk_driver_managed_textures_gg"></span><span id="DDK_DRIVER_MANAGED_TEXTURES_GG"></span>
 
 
-驱动程序可以管理已标记为可管理的纹理。 \_在**lpSurfMore- &gt; ddCapsEx**所引用的结构的**DWCAPS2**成员中，使用 DDSCAPS2 TEXTUREMANAGE 标志将这些 DirectDrawSurface 对象标记为可管理。  (**lpSurfMore** 和 **DdCapsEx** 分别是 [**DD \_ surface \_ LOCAL**](/windows/win32/api/ddrawint/ns-ddrawint-_dd_surface_local) 和 [**dd \_ surface surface \_ **](/windows/win32/api/ddrawint/ns-ddrawint-_dd_surface_more) 结构的成员。 ) 
+驱动程序可以管理已标记为可管理的纹理。 \_在**lpSurfMore- &gt; ddCapsEx**所引用的结构的**DWCAPS2**成员中，使用 DDSCAPS2 TEXTUREMANAGE 标志将这些 DirectDrawSurface 对象标记为可管理。  (**lpSurfMore** 和 **DdCapsEx** 分别是 [**DD \_ surface \_ LOCAL**](/windows/win32/api/ddrawint/ns-ddrawint-dd_surface_local) 和 [**dd \_ surface surface \_ **](/windows/win32/api/ddrawint/ns-ddrawint-dd_surface_more) 结构的成员。 ) 
 
-驱动程序通过将[**DDCORECAPS**](/windows/win32/api/ddrawi/ns-ddrawi-_ddcorecaps)结构的**dwCaps2**成员设置为 DDCAPS2 CANMANAGETEXTURE 位，来支持驱动程序托管纹理 \_ 。 驱动程序在[**DD \_ HALINFO**](/windows/win32/api/ddrawint/ns-ddrawint-_dd_halinfo)结构的**ddCaps**成员中指定此 DDCORECAPS 结构。 DD \_ HALINFO 由 [**DrvGetDirectDrawInfo**](/windows/win32/api/winddi/nf-winddi-drvgetdirectdrawinfo) 返回，以响应驱动程序的 DirectDraw 组件的初始化。
+驱动程序通过将[**DDCORECAPS**](/windows/win32/api/ddrawi/ns-ddrawi-ddcorecaps)结构的**dwCaps2**成员设置为 DDCAPS2 CANMANAGETEXTURE 位，来支持驱动程序托管纹理 \_ 。 驱动程序在[**DD \_ HALINFO**](/windows/win32/api/ddrawint/ns-ddrawint-dd_halinfo)结构的**ddCaps**成员中指定此 DDCORECAPS 结构。 DD \_ HALINFO 由 [**DrvGetDirectDrawInfo**](/windows/win32/api/winddi/nf-winddi-drvgetdirectdrawinfo) 返回，以响应驱动程序的 DirectDraw 组件的初始化。
 
 然后，该驱动程序可以采用 "延迟" 方式在视频或非本地内存中创建必要的图面。 也就是说，驱动程序将纹理置于后备面中，直到它需要它们，这刚好在对使用纹理的基元进行光栅化之前。
 

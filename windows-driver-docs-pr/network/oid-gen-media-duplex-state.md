@@ -5,12 +5,12 @@ ms.assetid: 63776227-dc48-4506-888f-c4b944837c4c
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_GEN_MEDIA_DUPLEX_STATE 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 140739058282902256321f34592f4afaa136200c
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: c9f7f99fc519e25de307b99770324629d1ff6a84
+ms.sourcegitcommit: f8619f20a0903dd64f8641a5266ecad6df5f1d57
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90714868"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91423458"
 ---
 # <a name="oid_gen_media_duplex_state"></a>OID \_ 生成 \_ 介质 \_ 双工 \_ 状态
 
@@ -30,7 +30,7 @@ ms.locfileid: "90714868"
 
 NDIS 使用此 OID 查询 [NDIS 网络接口](./ndis-network-interfaces2.md) 提供程序的双工状态。 只有 NDIS 接口提供程序（而不是微型端口驱动程序或筛选器驱动程序）才能支持此 OID 作为 OID 请求。
 
-如果查询成功，接口提供程序将返回 NDIS \_ 状态 \_ 成功，并且查询的结果可能是 [**NET \_ IF \_ MEDIA \_ 全双工 \_ 状态**](/windows/win32/api/ifdef/ne-ifdef-_net_if_media_duplex_state) 枚举中的值之一。
+如果查询成功，接口提供程序将返回 NDIS \_ 状态 \_ 成功，并且查询的结果可能是 [**NET \_ IF \_ MEDIA \_ 全双工 \_ 状态**](/windows/win32/api/ifdef/ne-ifdef-net_if_media_duplex_state) 枚举中的值之一。
 
 微型端口驱动程序在初始化期间提供媒体双工状态，并提供具有状态指示的更新。
 
@@ -52,12 +52,12 @@ NDIS 使用此 OID 查询 [NDIS 网络接口](./ndis-network-interfaces2.md) 提
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
 [**NDIS \_ 微型端口 \_ 适配器 \_ 常规 \_ 属性**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_miniport_adapter_general_attributes)
 
-[**NET \_ IF \_ MEDIA \_ 全双工 \_ 状态**](/windows/win32/api/ifdef/ne-ifdef-_net_if_media_duplex_state)
+[**NET \_ IF \_ MEDIA \_ 全双工 \_ 状态**](/windows/win32/api/ifdef/ne-ifdef-net_if_media_duplex_state)
 
 [**NdisMSetMiniportAttributes**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismsetminiportattributes)
 

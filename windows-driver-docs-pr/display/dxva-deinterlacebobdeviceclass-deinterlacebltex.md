@@ -14,12 +14,12 @@ api_type:
 - COM
 ms.date: 01/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 270d075d7172bfca1fd791345230051ea0a01947
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 9f5c0d8ffd7e3fb36e7984fb7e1ab9c636861a74
+ms.sourcegitcommit: f8619f20a0903dd64f8641a5266ecad6df5f1d57
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90717372"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91423570"
 ---
 # <a name="dxva_deinterlacebobdeviceclassdeinterlacebltex-method"></a>DXVA \_ DeinterlaceBobDeviceClass：:D einterlacebltex 方法
 
@@ -43,7 +43,7 @@ HRESULT DeinterlaceBltEx(
 );
 ```
 
-<a name="parameters"></a>参数
+<a name="parameters"></a>parameters
 ----------
 
 *rtTargetFrame* \[在 \] 输入帧序列中提供输出帧的位置。 如果执行了纯取消隔行扫描，则目标时间应与某个**rtStart**的时间或中点时间一致 (也就是说， (**rtStart** + **rtEnd**) /2) 示例，如[**DXVA \_ VideoSample2**](/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_videosample2)结构中所定义。
@@ -88,7 +88,7 @@ HRESULT DeinterlaceBltEx(
 
 *DwNumSurfaces*参数指示*lpDDSrcSurface*数组中的元素数。 视频参考示例首先位于数组中，后面是以 Z 顺序显示的视频 substreams。 有关详细信息，请参阅 [输入缓冲区顺序](./input-buffer-order.md)。 驱动程序接收的视频 substreams 数的范围为0到15。 调用 **DeinterlaceBltEx** 时，驱动程序通常会收到0个或1个视频 substreams。 但是，必须实现该驱动程序，以便它可以处理多个视频 substreams。
 
-**DeinterlaceBltEx**函数直接映射到[**DD \_ MOTIONCOMPCALLBACKS**](/windows/win32/api/ddrawint/ns-ddrawint-dd_motioncompcallbacks)结构的**RenderMoComp**成员的调用。 **RenderMoComp**成员指向显示驱动程序提供的、引用[**DD \_ RENDERMOCOMPDATA**](/windows/win32/api/ddrawint/ns-ddrawint-_dd_rendermocompdata)结构的函数。 \_按如下所示填充 DD RENDERMOCOMPDATA 结构。
+**DeinterlaceBltEx**函数直接映射到[**DD \_ MOTIONCOMPCALLBACKS**](/windows/win32/api/ddrawint/ns-ddrawint-dd_motioncompcallbacks)结构的**RenderMoComp**成员的调用。 **RenderMoComp**成员指向显示驱动程序提供的、引用[**DD \_ RENDERMOCOMPDATA**](/windows/win32/api/ddrawint/ns-ddrawint-dd_rendermocompdata)结构的函数。 \_按如下所示填充 DD RENDERMOCOMPDATA 结构。
 
 <table>
 <colgroup>
@@ -108,7 +108,7 @@ HRESULT DeinterlaceBltEx(
 </tr>
 <tr class="even">
 <td align="left"><p><strong>lpBufferInfo</strong></p></td>
-<td align="left"><p>指向 <a href="/windows/win32/api/ddrawint/ns-ddrawint-_ddmocompbufferinfo" data-raw-source="[&lt;strong&gt;DDMOCOMPBUFFERINFO&lt;/strong&gt;](/windows/win32/api/ddrawint/ns-ddrawint-_ddmocompbufferinfo)"><strong>DDMOCOMPBUFFERINFO</strong></a> 结构的数组，每个输入引用源示例或子流示例各有一个，一个用于目标示例。 目标示例是数组的第一个元素。</p></td>
+<td align="left"><p>指向 <a href="/windows/win32/api/ddrawint/ns-ddrawint-ddmocompbufferinfo" data-raw-source="[&lt;strong&gt;DDMOCOMPBUFFERINFO&lt;/strong&gt;](/windows/win32/api/ddrawint/ns-ddrawint-_ddmocompbufferinfo)"><strong>DDMOCOMPBUFFERINFO</strong></a> 结构的数组，每个输入引用源示例或子流示例各有一个，一个用于目标示例。 目标示例是数组的第一个元素。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>dwFunction</strong></p></td>
@@ -162,9 +162,9 @@ HRESULT DeinterlaceBltEx(
 
 [**DXVA \_ VideoSample2**](/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_videosample2)
 
-[**DDMOCOMPBUFFERINFO**](/windows/win32/api/ddrawint/ns-ddrawint-_ddmocompbufferinfo)
+[**DDMOCOMPBUFFERINFO**](/windows/win32/api/ddrawint/ns-ddrawint-ddmocompbufferinfo)
 
 [**DD \_ MOTIONCOMPCALLBACKS**](/windows/win32/api/ddrawint/ns-ddrawint-dd_motioncompcallbacks)
 
-[**DD \_ RENDERMOCOMPDATA**](/windows/win32/api/ddrawint/ns-ddrawint-_dd_rendermocompdata)
+[**DD \_ RENDERMOCOMPDATA**](/windows/win32/api/ddrawint/ns-ddrawint-dd_rendermocompdata)
 

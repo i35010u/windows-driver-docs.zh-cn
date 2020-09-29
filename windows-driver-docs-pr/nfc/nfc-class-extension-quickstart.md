@@ -13,12 +13,12 @@ ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
 ms.localizationpriority: low
-ms.openlocfilehash: 0701865461e3201b1392bf3c17c1a60fdf84943b
-ms.sourcegitcommit: ee3e2259aafc844cc43cce62299a72649cf89212
+ms.openlocfilehash: 11510806382926548d0423d61ae1f4c809698d56
+ms.sourcegitcommit: f8619f20a0903dd64f8641a5266ecad6df5f1d57
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91353614"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91423511"
 ---
 # <a name="nfc-cx-quick-start-guide"></a>NFC CX 快速入门指南
 
@@ -50,7 +50,7 @@ GitHub 上提供了此示例代码的完整版本： [NFC CX 客户端驱动程�
 
     在 **“文件”** 菜单上，指向 **“新建”** ，再单击 **“项目”** 。 在 " **Visual C++** " 节点的 " **Windows 驱动程序**" 下，单击 " **WDF**"，然后单击 " **用户模式驱动程序"，空 (UMDF V2) **
 
-    ![图像](images/quick-start-new-project.png)
+    ![Visual Studio "新建项目" 对话框。 选中 "用户模式驱动程序，空 (UMDF V2) "。 ](images/quick-start-new-project.png)
 
 2. 打开 INF 文件。
 
@@ -69,7 +69,7 @@ GitHub 上提供了此示例代码的完整版本： [NFC CX 客户端驱动程�
         HKR,,Icon,,"-10"
         ```
 
-    2. 在 `[Strings]` 部分中，删除以下行。 
+    2. 在 `[Strings]` 部分中，删除以下行。
 
         ```inf
         ClassName="Samples" ; TODO: edit ClassName
@@ -79,7 +79,7 @@ GitHub 上提供了此示例代码的完整版本： [NFC CX 客户端驱动程�
 
     1. 将的值更改 `Class` 为 `Proximity`
     2. 将的值更改 `ClassGuid` 为 `{5630831C-06C9-4856-B327-F5D32586E060}`
-        - 这是邻近感应设备类的 GUID。
+        * 这是邻近感应设备类的 GUID。
 
     ```ini
     [Version]
@@ -107,7 +107,7 @@ GitHub 上提供了此示例代码的完整版本： [NFC CX 客户端驱动程�
     3. 确保将 **平台** 设置为 `All Platforms` 。
     4. 将 **NFC 类扩展的链接** 设置为 `Yes` 。
 
-    ![图像](images/quick-start-link-to-nfc-cx.png)
+    ![Visual Studio 对话框： MyNfcDriver 属性页，显示 "链接到 NFC 类扩展" 设置为 "是"。](images/quick-start-link-to-nfc-cx.png)
 
 7. 将名为 `Driver.cpp` 的文件添加到项目。
 
@@ -127,7 +127,7 @@ GitHub 上提供了此示例代码的完整版本： [NFC CX 客户端驱动程�
     {
         NTSTATUS status = STATUS_SUCCESS;
 
-        // Specify `DeviceContext::AddDevice` as the 
+        // Specify `DeviceContext::AddDevice` as the
         // `EvtDriverDeviceAdd` function for the driver.
         WDF_DRIVER_CONFIG driverConfig;
         WDF_DRIVER_CONFIG_INIT(&driverConfig, DeviceContext::AddDevice);
@@ -413,7 +413,7 @@ GitHub 上提供了此示例代码的完整版本： [NFC CX 客户端驱动程�
 
         // FIX ME: Use the NCI packet in some way.
 
-        // FIX ME: Call `WdfRequestComplete` on `Request` with failure 
+        // FIX ME: Call `WdfRequestComplete` on `Request` with failure
         // or success `NTSTATUS` code.
     };
     ```
@@ -421,9 +421,9 @@ GitHub 上提供了此示例代码的完整版本： [NFC CX 客户端驱动程�
 21. [`NfcCxNciReadNotification`](/windows-hardware/drivers/ddi/nfccx/nf-nfccx-nfccxncireadnotification)当 NFC 控制器具有应发送到 NFC CX 的 NCI 数据包时，调用函数。 通常在硬件事件回调中完成此操作。
 
     例如：
-    - [GPIO 中断](../gpio/gpio-interrupts.md)事件回调。  (I<sup>2</sup>C 和 SPI) 
-    - [USB 连续读取器](../usbcon/how-to-use-the-continous-reader-for-getting-data-from-a-usb-endpoint--umdf-.md)回调。
+    * [GPIO 中断](../gpio/gpio-interrupts.md)事件回调。  (I<sup>2</sup>C 和 SPI) 
+    * [USB 连续读取器](../usbcon/how-to-use-the-continous-reader-for-getting-data-from-a-usb-endpoint--umdf-.md)回调。
 
-## <a name="logging"></a>Logging
+## <a name="logging"></a>日志记录
 
 请考虑将日志记录添加到客户端驱动程序，以便更轻松地进行调试。 [ETW 跟踪](../devtest/event-tracing-for-windows--etw-.md)和[WPP 跟踪](../devtest/wpp-software-tracing.md)都是不错的选择。

@@ -1,71 +1,23 @@
 ---
 title: 各种外形规格的实现需求
-description: 本主题介绍各种外形规格的实现需求。
+description: 本主题介绍各种外形规格的实现要求。
 ms.assetid: F14E9811-B432-409B-B7AD-262C2DD76C25
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 5258792f41cd95ad657126de2226c193a78b4f20
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9a20b9e3bc7e4490cf5e0515a28a9acd1d32ebda
+ms.sourcegitcommit: f8619f20a0903dd64f8641a5266ecad6df5f1d57
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63323285"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91424049"
 ---
 # <a name="implementation-requirements-for-various-form-factors"></a>各种外形规格的实现需求
 
+本主题介绍各种外形规格的实现要求。
 
-本主题介绍各种外形规格的实现需求。
-
-<table>
-<colgroup>
-<col width="25%" />
-<col width="25%" />
-<col width="25%" />
-<col width="25%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th align="left"></th>
-<th align="left">外形尺寸</th>
-<th align="left">定义</th>
-<th align="left">GPIO 指示器实现要求</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left"><p><img src="images/slate.jpg" alt="Slate" /></p></td>
-<td align="left">静态图像</td>
-<td align="left">使用任何可附加键盘的平板电脑外形规格</td>
-<td align="left">提供静态停靠附件时，必须实现停靠的指示器。</td>
-</tr>
-<tr class="even">
-<td align="left"><p><img src="images/laptop.jpg" alt="Laptop" /></p></td>
-<td align="left">便携式计算机</td>
-<td align="left">永久连接始终是可用于键入的键盘。</td>
-<td align="left">以静态方式将模式设置为便携式计算机。</td>
-</tr>
-<tr class="odd">
-<td align="left"><p><img src="images/convertible.jpg" alt="Convertible" /></p></td>
-<td align="left">变形本</td>
-<td align="left">可用作一台平板电脑或平板电脑的系统。 可以分离、 翻转或 swivelled 键盘。</td>
-<td align="left"><p>实现的便携式计算机/盖板指示器。</p>
-<p>如果保持静止的停靠附件不可用，还必须实现停靠的指示器。</p></td>
-</tr>
-<tr class="even">
-<td align="left"><p><img src="images/allinone.jpg" alt="All-in-One" /></p></td>
-<td align="left">-一体</td>
-<td align="left">中等大小桌面/部 portable 系统具有附件作为附加的键盘。</td>
-<td align="left">没有必需的因为键盘是可选的附件的实现。</td>
-</tr>
-</tbody>
-</table>
-
- 
-
- 
-
- 
-
-
-
-
+|外形规格|外形规格名称|定义|GPIO 指标实现要求|
+|----|----|----|----|
+|![石板外形规格](images/slate.jpg)|平板|无附加键盘的 Tablet 外形规格|如果有固定的插接附件，则必须实现坞指示器。|
+|![便携式计算机外形规格](images/laptop.jpg)|便携式计算机|永久连接的键盘，始终可以键入。|以静态方式将模式设置为便携式计算机。|
+|![可转换外形规格](images/convertible.jpg)|敞篷车|可用作平板或平板电脑的系统。 可以分离、翻转或 swivelled 键盘。|实现笔记本电脑/石板指示器。</br>如果有固定的插接附件，则还必须实现坞指示器。|
+|![一体型外形规格](images/allinone.jpg)|一体|中型台式机/半便携系统，具有作为附件连接的键盘。|不需要实现，因为键盘是可选的附件。|

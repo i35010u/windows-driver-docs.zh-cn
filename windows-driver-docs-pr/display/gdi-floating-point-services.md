@@ -9,12 +9,12 @@ keywords:
 - 浮点运算 WDK GDI
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 87cdf1eb4be61050f912e96b15a92ce215eba436
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 39f10c806d97ef943264a061d7de8ea60172c3af
+ms.sourcegitcommit: f8619f20a0903dd64f8641a5266ecad6df5f1d57
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90717594"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91423628"
 ---
 # <a name="gdi-floating-point-services"></a>GDI 浮点服务
 
@@ -24,7 +24,7 @@ ms.locfileid: "90717594"
 
 内核模式图形驱动程序必须在调用 GDI 提供的 [**EngSaveFloatingPointState**](/windows/win32/api/winddi/nf-winddi-engsavefloatingpointstate) 和 [**EngRestoreFloatingPointState**](/windows/win32/api/winddi/nf-winddi-engrestorefloatingpointstate) 例程之间执行所有浮点运算。
 
-如果硬件具有浮点处理器，则驱动程序可以直接执行浮点运算。 否则，驱动程序可以使用下表中所示的 GDI [**FLOATOBJ**](/windows/win32/api/winddi/ns-winddi-_floatobj) 服务来模拟浮点运算。 无论采用哪种处理器类型，驱动程序在声明浮点值时都应使用 FLOATL 数据类型。
+如果硬件具有浮点处理器，则驱动程序可以直接执行浮点运算。 否则，驱动程序可以使用下表中所示的 GDI [**FLOATOBJ**](/windows/win32/api/winddi/ns-winddi-floatobj) 服务来模拟浮点运算。 无论采用哪种处理器类型，驱动程序在声明浮点值时都应使用 FLOATL 数据类型。
 
 <table>
 <colgroup>

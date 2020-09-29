@@ -11,12 +11,12 @@ keywords:
 - 注册表-密钥对象 WDK 内核的句柄
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3930834ecf7265cc333f516c9b98a4c0ccda4852
-ms.sourcegitcommit: a5f76805387760730faed5674d87201ec85b7dd3
+ms.openlocfilehash: e2a6c36e8c1e84a93f731f2243adf0f3525b2f73
+ms.sourcegitcommit: f8619f20a0903dd64f8641a5266ecad6df5f1d57
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90112098"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91423532"
 ---
 # <a name="opening-a-handle-to-a-registry-key-object"></a>打开注册表项对象的句柄
 
@@ -26,7 +26,7 @@ ms.locfileid: "90112098"
 
 若要打开注册表项对象的句柄，请执行以下两步过程：
 
-1.  创建 [**对象 \_ 属性**](/windows/win32/api/ntdef/ns-ntdef-_object_attributes) 结构，并通过调用 [**InitializeObjectAttributes**](/windows/win32/api/ntdef/nf-ntdef-initializeobjectattributes)对其进行初始化。 指定要作为 *ObjectName* 参数 **InitializeObjectAttributes**的密钥的名称。
+1.  创建 [**对象 \_ 属性**](/windows/win32/api/ntdef/ns-ntdef-object_attributes) 结构，并通过调用 [**InitializeObjectAttributes**](/windows/win32/api/ntdef/nf-ntdef-initializeobjectattributes)对其进行初始化。 指定要作为 *ObjectName* 参数 **InitializeObjectAttributes**的密钥的名称。
 
     如果将**NULL**作为*RootDirectory*参数传递给**InitializeObjectAttributes**，则*ObjectName*必须是注册表项的完整路径（从** \\ 注册表**开始）。 否则， *RootDirectory* 必须是密钥的开放句柄，并且 *ObjectName* 是相对于该密钥的路径。
 
@@ -41,7 +41,7 @@ ms.locfileid: "90112098"
 </colgroup>
 <thead>
 <tr class="header">
-<th>操作</th>
+<th>Operation</th>
 <th>必需的访问权限</th>
 </tr>
 </thead>

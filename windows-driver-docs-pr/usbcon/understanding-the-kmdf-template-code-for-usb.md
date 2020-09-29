@@ -3,12 +3,12 @@ description: 了解基于 KMDF 的 USB 客户端驱动程序的源代码。
 title: 'USB 客户端驱动程序代码结构 (KMDF) '
 ms.date: 06/07/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 80d35d0ec62ac20f05be1a87352099a1f27c89f4
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: cb8efa09ab6b54555c5b43002727652e1e7f994a
+ms.sourcegitcommit: f8619f20a0903dd64f8641a5266ecad6df5f1d57
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90714870"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91423902"
 ---
 # <a name="understanding-the-usb-client-driver-code-structure-kmdf"></a>了解 USB 客户端驱动程序代码结构 (KMDF)
 
@@ -567,7 +567,7 @@ MyUSBDriver_QueueInitialize(
 2.  为队列的 i/o 请求添加客户端驱动程序的事件回调。 在模板中，客户端驱动程序为设备 i/o 控制请求指定一个指向其事件回调的指针。
 3.  调用 [**WdfIoQueueCreate**](/windows-hardware/drivers/ddi/wdfio/nf-wdfio-wdfioqueuecreate) ，以检索由框架创建的框架队列对象的 WDFQUEUE 句柄。
 
-下面是队列机制的工作方式。 若要与 USB 设备通信，应用程序首先通过调用 **SetDixxx** 例程和 [**CreateHandle**](/windows-hardware/drivers/ddi/usbdlib/nf-usbdlib-usbd_createhandle)打开设备的句柄。 使用此句柄，应用程序将使用特定控制代码调用 [**DeviceIoControl**](/previous-versions/windows/win32/api/deviceaccess/nn-deviceaccess-ideviceiocontrol) 函数。 根据控制代码的类型，应用程序可以在该调用中指定输入和输出缓冲区。 调用最终由 i/o 管理器接收，该管理器会创建一个 (IRP) 请求，并将其转发到客户端驱动程序。 框架截获请求，创建框架请求对象，并将其添加到框架队列对象。 在这种情况下，由于客户端驱动程序为设备 i/o 控制请求注册了其事件回调，因此框架会调用回调。 另外，由于队列对象是用 WdfIoQueueDispatchParallel 标志创建的，因此，一旦向队列中添加了该请求，就会调用该回调。
+下面是队列机制的工作方式。 若要与 USB 设备通信，应用程序首先通过调用 **SetDixxx** 例程和 [**CreateHandle**](/windows-hardware/drivers/ddi/usbdlib/nf-usbdlib-usbd_createhandle)打开设备的句柄。 使用此句柄，应用程序将使用特定控制代码调用 [**DeviceIoControl**](/windows/win32/api/ioapiset/nf-ioapiset-deviceiocontrol) 函数。 根据控制代码的类型，应用程序可以在该调用中指定输入和输出缓冲区。 调用最终由 i/o 管理器接收，该管理器会创建一个 (IRP) 请求，并将其转发到客户端驱动程序。 框架截获请求，创建框架请求对象，并将其添加到框架队列对象。 在这种情况下，由于客户端驱动程序为设备 i/o 控制请求注册了其事件回调，因此框架会调用回调。 另外，由于队列对象是用 WdfIoQueueDispatchParallel 标志创建的，因此，一旦向队列中添加了该请求，就会调用该回调。
 
 ```ManagedCPlusPlus
 VOID

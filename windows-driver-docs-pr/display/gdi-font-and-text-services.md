@@ -13,12 +13,12 @@ keywords:
 - 文本输出 WDK GDI
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1f446a97e7b0f2ba07182f82f3370190dd47680f
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: e1da7cc081e2dcccc49ed2e462c2ba694bd3c7d3
+ms.sourcegitcommit: f8619f20a0903dd64f8641a5266ecad6df5f1d57
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90717592"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91423624"
 ---
 # <a name="gdi-font-and-text-services"></a>GDI 字体和文本服务
 
@@ -26,7 +26,7 @@ ms.locfileid: "90717592"
 ## <span id="ddk_gdi_font_and_text_services_gg"></span><span id="DDK_GDI_FONT_AND_TEXT_SERVICES_GG"></span>
 
 
-GDI 为字体管理和文本输出提供支持。 [**FONTOBJ**](/windows/win32/api/winddi/ns-winddi-_fontobj)结构和相关函数为驱动程序授予对特定字体实例的访问权限。 若要支持文本输出，驱动程序可以访问 [**STROBJ**](/windows/win32/api/winddi/ns-winddi-_strobj) 结构和相关函数。 下表列出了 FONTOBJ 和 STROBJ 相关的函数。
+GDI 为字体管理和文本输出提供支持。 [**FONTOBJ**](/windows/win32/api/winddi/ns-winddi-fontobj)结构和相关函数为驱动程序授予对特定字体实例的访问权限。 若要支持文本输出，驱动程序可以访问 [**STROBJ**](/windows/win32/api/winddi/ns-winddi-strobj) 结构和相关函数。 下表列出了 FONTOBJ 和 STROBJ 相关的函数。
 
 <table>
 <colgroup>
@@ -78,11 +78,11 @@ GDI 为字体管理和文本输出提供支持。 [**FONTOBJ**](/windows/win32/a
 </tr>
 <tr class="even">
 <td align="left"><p><a href="/windows/win32/api/winddi/nf-winddi-fontobj_pfdg" data-raw-source="[&lt;strong&gt;FONTOBJ_pfdg&lt;/strong&gt;](/windows/win32/api/winddi/nf-winddi-fontobj_pfdg)"><strong>FONTOBJ_pfdg</strong></a></p></td>
-<td align="left"><p>检索指向与指定字体关联的 <a href="/windows/win32/api/winddi/ns-winddi-_fd_glyphset" data-raw-source="[&lt;strong&gt;FD_GLYPHSET&lt;/strong&gt;](/windows/win32/api/winddi/ns-winddi-_fd_glyphset)"><strong>FD_GLYPHSET</strong></a> 结构的指针。</p></td>
+<td align="left"><p>检索指向与指定字体关联的 <a href="/windows/win32/api/winddi/ns-winddi-fd_glyphset" data-raw-source="[&lt;strong&gt;FD_GLYPHSET&lt;/strong&gt;](/windows/win32/api/winddi/ns-winddi-_fd_glyphset)"><strong>FD_GLYPHSET</strong></a> 结构的指针。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="/windows/win32/api/winddi/nf-winddi-fontobj_pifi" data-raw-source="[&lt;strong&gt;FONTOBJ_pifi&lt;/strong&gt;](/windows/win32/api/winddi/nf-winddi-fontobj_pifi)"><strong>FONTOBJ_pifi</strong></a></p></td>
-<td align="left"><p>检索指向描述关联字体的 <a href="/windows/win32/api/winddi/ns-winddi-_ifimetrics" data-raw-source="[&lt;strong&gt;IFIMETRICS&lt;/strong&gt;](/windows/win32/api/winddi/ns-winddi-_ifimetrics)"><strong>IFIMETRICS</strong></a> 结构的指针。</p></td>
+<td align="left"><p>检索指向描述关联字体的 <a href="/windows/win32/api/winddi/ns-winddi-ifimetrics" data-raw-source="[&lt;strong&gt;IFIMETRICS&lt;/strong&gt;](/windows/win32/api/winddi/ns-winddi-_ifimetrics)"><strong>IFIMETRICS</strong></a> 结构的指针。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><a href="/windows/win32/api/winddi/nf-winddi-fontobj_pjopentypetablepointer" data-raw-source="[&lt;strong&gt;FONTOBJ_pjOpenTypeTablePointer&lt;/strong&gt;](/windows/win32/api/winddi/nf-winddi-fontobj_pjopentypetablepointer)"><strong>FONTOBJ_pjOpenTypeTablePointer</strong></a></p></td>
@@ -130,7 +130,7 @@ GDI 为字体管理和文本输出提供支持。 [**FONTOBJ**](/windows/win32/a
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="/windows/win32/api/winddi/nf-winddi-strobj_venumstart" data-raw-source="[&lt;strong&gt;STROBJ_vEnumStart&lt;/strong&gt;](/windows/win32/api/winddi/nf-winddi-strobj_venumstart)"><strong>STROBJ_vEnumStart</strong></a></p></td>
-<td align="left"><p>为指定的 STROBJ 重新启动 <a href="/windows/win32/api/winddi/ns-winddi-_glyphpos" data-raw-source="[&lt;strong&gt;GLYPHPOS&lt;/strong&gt;](/windows/win32/api/winddi/ns-winddi-_glyphpos)"><strong>GLYPHPOS</strong></a> 数组的枚举。 此函数应在后续枚举之前由驱动程序调用。</p></td>
+<td align="left"><p>为指定的 STROBJ 重新启动 <a href="/windows/win32/api/winddi/ns-winddi-glyphpos" data-raw-source="[&lt;strong&gt;GLYPHPOS&lt;/strong&gt;](/windows/win32/api/winddi/ns-winddi-_glyphpos)"><strong>GLYPHPOS</strong></a> 数组的枚举。 此函数应在后续枚举之前由驱动程序调用。</p></td>
 </tr>
 </tbody>
 </table>

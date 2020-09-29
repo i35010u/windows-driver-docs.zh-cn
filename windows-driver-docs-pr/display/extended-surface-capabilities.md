@@ -14,12 +14,12 @@ keywords:
 - DD_MORESURFACECAPS
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c69f6fbf15e223bdf6f832837c4465a076099b5d
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 59b38ee55532acc18089a0e3f70481dee47b0d09
+ms.sourcegitcommit: f8619f20a0903dd64f8641a5266ecad6df5f1d57
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90715846"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91423704"
 ---
 # <a name="extended-surface-capabilities"></a>扩展图面功能
 
@@ -27,7 +27,7 @@ ms.locfileid: "90715846"
 ## <span id="ddk_extended_surface_capabilities_gg"></span><span id="DDK_EXTENDED_SURFACE_CAPABILITIES_GG"></span>
 
 
-从 Microsoft DirectX 6.0 开始，Microsoft DirectDraw 包含先前版本中的表面功能。 这些扩展功能要求添加几个新结构，尤其是 [**DDSCAPS2**](/previous-versions/windows/hardware/drivers/ff550292(v=vs.85)) 和 [**DD \_ MORESURFACECAPS**](/windows/win32/api/ddrawint/ns-ddrawint-_dd_moresurfacecaps) 结构。 DDSCAPS2 结构包含最初在[**DDSCAPS**](/previous-versions/windows/hardware/drivers/ff550286(v=vs.85))结构中找到的**dwCaps**成员，还包含三个新成员： **dwCaps2**、 **dwCaps3**和**dwCaps4**。 在 DirectDraw 中，只有 **dwCaps2** 用于 DirectX 6.0。 **DDSCAPS2**结构的最后三个成员也按 DDSCAPSEX 结构进行了相同的排列。
+从 Microsoft DirectX 6.0 开始，Microsoft DirectDraw 包含先前版本中的表面功能。 这些扩展功能要求添加几个新结构，尤其是 [**DDSCAPS2**](/previous-versions/windows/hardware/drivers/ff550292(v=vs.85)) 和 [**DD \_ MORESURFACECAPS**](/windows/win32/api/ddrawint/ns-ddrawint-dd_moresurfacecaps) 结构。 DDSCAPS2 结构包含最初在[**DDSCAPS**](/previous-versions/windows/hardware/drivers/ff550286(v=vs.85))结构中找到的**dwCaps**成员，还包含三个新成员： **dwCaps2**、 **dwCaps3**和**dwCaps4**。 在 DirectDraw 中，只有 **dwCaps2** 用于 DirectX 6.0。 **DDSCAPS2**结构的最后三个成员也按 DDSCAPSEX 结构进行了相同的排列。
 
  
 

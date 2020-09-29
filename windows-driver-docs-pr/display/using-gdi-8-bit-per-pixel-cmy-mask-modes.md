@@ -10,12 +10,12 @@ keywords:
 - 8位每像素 CMY 掩码模式 WDK GDI
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 49e911deb1dce3bdaa0e84e252e34e8d0ccfbab0
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: f765c717c8f4c45656ada26b9b0bd381f330e39a
+ms.sourcegitcommit: f8619f20a0903dd64f8641a5266ecad6df5f1d57
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90717562"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91423526"
 ---
 # <a name="using-gdi-8-bit-per-pixel-cmy-mask-modes"></a>使用 GDI 每像素 8 位 CMY 掩码模式
 
@@ -35,7 +35,7 @@ ms.locfileid: "90717562"
 
 所有 Windows XP 和更高版本的驱动程序都需要以下步骤，这些驱动程序使用 Windows GDI 半色调8位每像素 CMY 掩码模式。 如果要开发适用于 Windows 2000 的驱动程序，应将驱动程序的使用限制为每像素8位单色调色板。
 
-1.  将[**GDIINFO**](/windows/win32/api/winddi/ns-winddi-_gdiinfo)结构的**flHTFlags**成员设置为超线程 \_ 标志 \_ 反转 \_ 8BPP \_ 位掩码 \_ IDX，使 GDI 将以 CMY 反转模式之一呈现图像 \_ 。
+1.  将[**GDIINFO**](/windows/win32/api/winddi/ns-winddi-gdiinfo)结构的**flHTFlags**成员设置为超线程 \_ 标志 \_ 反转 \_ 8BPP \_ 位掩码 \_ IDX，使 GDI 将以 CMY 反转模式之一呈现图像 \_ 。
 
 2.  *pPaletteEntry* \[ \] 调用**HT \_ Get8BPPMaskPalette**之前，请将 pPaletteEntry 0 设置为以下内容：
 

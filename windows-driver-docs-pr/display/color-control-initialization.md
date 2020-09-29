@@ -12,12 +12,12 @@ keywords:
 - 亮度 WDK DirectDraw
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 174f20b5fe90e49b05a7b75a1bb0bbba5be5173d
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 0e9d7e2fb2a049c773dbae149bbd02c0b7178071
+ms.sourcegitcommit: f8619f20a0903dd64f8641a5266ecad6df5f1d57
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90716532"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91424060"
 ---
 # <a name="color-control-initialization"></a>颜色控制初始化
 
@@ -27,11 +27,11 @@ ms.locfileid: "90716532"
 
 驱动程序的 [*DdControlColor*](/windows/win32/api/ddrawint/nc-ddrawint-pdd_colorcb_colorcontrol) 函数控制叠加和/或主图面的亮度/亮度控件。 若要启用颜色控制功能，Microsoft DirectDraw HAL 必须在初始化时执行以下操作：
 
--   如果覆盖面和/或主表面包含颜色控件，请 \_ \_ 在嵌入在[**DD \_ DwCaps2**](/windows/win32/api/ddrawint/ns-ddrawint-_dd_halinfo)结构中的[**DDCORECAPS**](/windows/win32/api/ddrawi/ns-ddrawi-_ddcorecaps)结构的**HALINFO**成员中设置 DDCAPS2 COLORCONTROLOVERLAY 和/或 DDCAPS2 COLORCONTROLPRIMAY 标志。
+-   如果覆盖面和/或主表面包含颜色控件，请 \_ \_ 在嵌入在[**DD \_ DwCaps2**](/windows/win32/api/ddrawint/ns-ddrawint-dd_halinfo)结构中的[**DDCORECAPS**](/windows/win32/api/ddrawi/ns-ddrawi-ddcorecaps)结构的**HALINFO**成员中设置 DDCAPS2 COLORCONTROLOVERLAY 和/或 DDCAPS2 COLORCONTROLPRIMAY 标志。
 
 -   驱动程序必须在 DD HALINFO 结构中指定一个函数 \_ ，该函数用于获取其他信息。 [**DdGetDriverInfo**](/windows/win32/api/ddrawint/nc-ddrawint-pdd_getdriverinfo)中对此进行了介绍。
 
--   必须用指定的 GUID ColorControlCallbacks GUID 调用 [**DdGetDriverInfo**](/windows/win32/api/ddrawint/nc-ddrawint-pdd_getdriverinfo) 回调 \_ 。 驱动程序必须使用适当的驱动程序回调和 flags 集填充 [**DD \_ COLORCONTROLCALLBACKS**](/windows/win32/api/ddrawint/ns-ddrawint-_dd_colorcontrolcallbacks) 结构，然后将该结构复制到输入结构的 **lpvData** 成员。
+-   必须用指定的 GUID ColorControlCallbacks GUID 调用 [**DdGetDriverInfo**](/windows/win32/api/ddrawint/nc-ddrawint-pdd_getdriverinfo) 回调 \_ 。 驱动程序必须使用适当的驱动程序回调和 flags 集填充 [**DD \_ COLORCONTROLCALLBACKS**](/windows/win32/api/ddrawint/ns-ddrawint-dd_colorcontrolcallbacks) 结构，然后将该结构复制到输入结构的 **lpvData** 成员。
 
  
 

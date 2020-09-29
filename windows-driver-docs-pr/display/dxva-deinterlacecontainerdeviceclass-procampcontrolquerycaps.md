@@ -17,12 +17,12 @@ api_type:
 ms.date: 12/06/2018
 ms.localizationpriority: medium
 ms.custom: seodec18
-ms.openlocfilehash: 4105a2c0805d27aab74ed454fade7dbe8b94d4d5
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: abf86a1c6fce3cc5a1f7a3199f66f5637e518d18
+ms.sourcegitcommit: f8619f20a0903dd64f8641a5266ecad6df5f1d57
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90717362"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91423564"
 ---
 # <a name="dxva_deinterlacecontainerdeviceclassprocampcontrolquerycaps-method"></a>DXVA \_ DeinterlaceContainerDeviceClass：:P rocampcontrolquerycaps 方法
 
@@ -39,7 +39,7 @@ HRESULT ProcAmpControlQueryCaps(
 );
 ```
 
-<a name="parameters"></a>参数
+<a name="parameters"></a>parameters
 ----------
 
 *lpVideoDescription* \[在中， \] 提供指向 [**DXVA \_ VideoDesc**](/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_videodesc) 结构的指针，该结构定义要处理的视频的 ProcAmp 控制参数。
@@ -56,7 +56,7 @@ HRESULT ProcAmpControlQueryCaps(
 
 驱动程序将其功能报告给 ProcAmp 控件模式的用户模式组件，该组件位于*lpProcAmpCaps*指向的[**DXVA \_ ProcAmpControlCaps**](/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_procampcontrolcaps)结构中。
 
-示例*ProcAmpControlQueryCaps*函数直接映射到[**DD \_ MOTIONCOMPCALLBACKS**](/windows/win32/api/ddrawint/ns-ddrawint-dd_motioncompcallbacks)结构的**RenderMoComp**成员的调用。 **RenderMoComp**函数指向驱动程序提供的*DdMoCompRender*回调，该回调引用[**DD \_ RENDERMOCOMPDATA**](/windows/win32/api/ddrawint/ns-ddrawint-_dd_rendermocompdata)结构。 \_按如下所示填充 DD RENDERMOCOMPDATA 结构。
+示例*ProcAmpControlQueryCaps*函数直接映射到[**DD \_ MOTIONCOMPCALLBACKS**](/windows/win32/api/ddrawint/ns-ddrawint-dd_motioncompcallbacks)结构的**RenderMoComp**成员的调用。 **RenderMoComp**函数指向驱动程序提供的*DdMoCompRender*回调，该回调引用[**DD \_ RENDERMOCOMPDATA**](/windows/win32/api/ddrawint/ns-ddrawint-dd_rendermocompdata)结构。 \_按如下所示填充 DD RENDERMOCOMPDATA 结构。
 
 <table>
 <colgroup>
@@ -154,5 +154,5 @@ DXVA_DeinterlaceContainerDeviceClass::ProcAmpControlQueryCaps(
 
 [**DD \_ MOTIONCOMPCALLBACKS**](/windows/win32/api/ddrawint/ns-ddrawint-dd_motioncompcallbacks)
 
-[**DD \_ RENDERMOCOMPDATA**](/windows/win32/api/ddrawint/ns-ddrawint-_dd_rendermocompdata)
+[**DD \_ RENDERMOCOMPDATA**](/windows/win32/api/ddrawint/ns-ddrawint-dd_rendermocompdata)
 

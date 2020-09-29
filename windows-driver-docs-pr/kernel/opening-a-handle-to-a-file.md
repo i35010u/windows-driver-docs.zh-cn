@@ -11,12 +11,12 @@ keywords:
 - 正在打开文件的句柄
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 13e64a5d536f43b7bbac72e4c42cb4c82c32309f
-ms.sourcegitcommit: a5f76805387760730faed5674d87201ec85b7dd3
+ms.openlocfilehash: fb7fd2bf9fde2013e03f1c380d3fbdd6d11c4fbd
+ms.sourcegitcommit: f8619f20a0903dd64f8641a5266ecad6df5f1d57
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90112100"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91423534"
 ---
 # <a name="opening-a-handle-to-a-file"></a>打开文件的句柄
 
@@ -26,7 +26,7 @@ ms.locfileid: "90112100"
 
 若要打开文件的句柄，请执行以下步骤：
 
-1.  创建 [**对象 \_ 属性**](/windows/win32/api/ntdef/ns-ntdef-_object_attributes) 结构，并调用 [**InitializeObjectAttributes**](/windows/win32/api/ntdef/nf-ntdef-initializeobjectattributes) 宏来初始化该结构。 将文件的对象名称指定为**InitializeObjectAttributes**的*ObjectName*参数。
+1.  创建 [**对象 \_ 属性**](/windows/win32/api/ntdef/ns-ntdef-object_attributes) 结构，并调用 [**InitializeObjectAttributes**](/windows/win32/api/ntdef/nf-ntdef-initializeobjectattributes) 宏来初始化该结构。 将文件的对象名称指定为**InitializeObjectAttributes**的*ObjectName*参数。
 
 2.  通过将 **对象 \_ 特性** 结构传递到 [**IoCreateFile**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iocreatefile)、 [**ZwCreateFile**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ntcreatefile)或 [**ZwOpenFile**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ntopenfile)，打开文件的句柄。
 
@@ -45,7 +45,7 @@ ms.locfileid: "90112100"
 </colgroup>
 <thead>
 <tr class="header">
-<th>操作</th>
+<th>Operation</th>
 <th>必需的访问权限</th>
 </tr>
 </thead>

@@ -7,12 +7,12 @@ keywords:
 - 用户模式内存 WDK Windows 2000 显示，异常处理
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 55894e7accdcc0d985b77069035fac2dfc2fcbca
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 039861dbf497b1410bde179940bf79474154ebb1
+ms.sourcegitcommit: f8619f20a0903dd64f8641a5266ecad6df5f1d57
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90716946"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91423816"
 ---
 # <a name="exception-handling-when-accessing-user-mode-memory"></a>访问用户模式内存时处理异常
 
@@ -36,7 +36,7 @@ ms.locfileid: "90716946"
 
 -   该驱动程序将更新 D3DHAL DRAWPRIMITIVES2DATA 点的 **lpdwRStates** 成员的呈现状态数组 \_ 。 驱动程序在调用其 *D3dDrawPrimitives2* 函数时更新此数组。
 
--   驱动程序在调用其[**D3dGetDriverState**](/windows/win32/api/ddrawint/nc-ddrawint-pdd_getdriverstate)函数的过程中，在[**DD \_ GETDRIVERSTATEDATA**](/windows/win32/api/ddrawint/ns-ddrawint-_dd_getdriverstatedata)结构的**lpdwStates**成员上更新其状态。
+-   驱动程序在调用其[**D3dGetDriverState**](/windows/win32/api/ddrawint/nc-ddrawint-pdd_getdriverstate)函数的过程中，在[**DD \_ GETDRIVERSTATEDATA**](/windows/win32/api/ddrawint/ns-ddrawint-dd_getdriverstatedata)结构的**lpdwStates**成员上更新其状态。
 
 -   驱动程序位块传输或访问在用户内存中分配的系统纹理。
 

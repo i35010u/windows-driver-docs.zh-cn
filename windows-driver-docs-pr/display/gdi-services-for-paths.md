@@ -10,12 +10,12 @@ keywords:
 - 填充路径 WDK GDI
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b24319365daba3c5d83a3dd16a9a2d7f10923440
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 02b3435b191e348ff033e87949210e539127e90c
+ms.sourcegitcommit: f8619f20a0903dd64f8641a5266ecad6df5f1d57
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90715330"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91423982"
 ---
 # <a name="gdi-services-for-paths"></a>路径的 GDI 服务
 
@@ -23,7 +23,7 @@ ms.locfileid: "90715330"
 ## <span id="ddk_gdi_services_for_paths_gg"></span><span id="DDK_GDI_SERVICES_FOR_PATHS_GG"></span>
 
 
-为了帮助矢量设备填充复杂区域，其驱动程序可以调用下表中列出的用于创建、修改和枚举路径的引擎函数。 驱动程序可以通过 [**PATHOBJ**](/windows/win32/api/winddi/ns-winddi-_pathobj) 结构访问路径。
+为了帮助矢量设备填充复杂区域，其驱动程序可以调用下表中列出的用于创建、修改和枚举路径的引擎函数。 驱动程序可以通过 [**PATHOBJ**](/windows/win32/api/winddi/ns-winddi-pathobj) 结构访问路径。
 
 <table>
 <colgroup>
@@ -51,7 +51,7 @@ ms.locfileid: "90715330"
 </tr>
 <tr class="even">
 <td align="left"><p><a href="/windows/win32/api/winddi/nf-winddi-pathobj_benum" data-raw-source="[&lt;strong&gt;PATHOBJ_bEnum&lt;/strong&gt;](/windows/win32/api/winddi/nf-winddi-pathobj_benum)"><strong>PATHOBJ_bEnum</strong></a></p></td>
-<td align="left"><p>检索路径中的下一个 <a href="/windows/win32/api/winddi/ns-winddi-_pathdata" data-raw-source="[&lt;strong&gt;PATHDATA&lt;/strong&gt;](/windows/win32/api/winddi/ns-winddi-_pathdata)"><strong>PATHDATA</strong></a> 记录。 每条记录描述全部或部分子路径。</p></td>
+<td align="left"><p>检索路径中的下一个 <a href="/windows/win32/api/winddi/ns-winddi-pathdata" data-raw-source="[&lt;strong&gt;PATHDATA&lt;/strong&gt;](/windows/win32/api/winddi/ns-winddi-_pathdata)"><strong>PATHDATA</strong></a> 记录。 每条记录描述全部或部分子路径。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="/windows/win32/api/winddi/nf-winddi-pathobj_benumcliplines" data-raw-source="[&lt;strong&gt;PATHOBJ_bEnumClipLines&lt;/strong&gt;](/windows/win32/api/winddi/nf-winddi-pathobj_benumcliplines)"><strong>PATHOBJ_bEnumClipLines</strong></a></p></td>
@@ -59,7 +59,7 @@ ms.locfileid: "90715330"
 </tr>
 <tr class="even">
 <td align="left"><p><a href="/windows/win32/api/winddi/nf-winddi-pathobj_bmoveto" data-raw-source="[&lt;strong&gt;PATHOBJ_bMoveTo&lt;/strong&gt;](/windows/win32/api/winddi/nf-winddi-pathobj_bmoveto)"><strong>PATHOBJ_bMoveTo</strong></a></p></td>
-<td align="left"><p>更改 <a href="/windows/win32/api/winddi/ns-winddi-_pathobj" data-raw-source="[&lt;strong&gt;PATHOBJ&lt;/strong&gt;](/windows/win32/api/winddi/ns-winddi-_pathobj)"><strong>PATHOBJ</strong></a>定义路径中的当前位置。</p></td>
+<td align="left"><p>更改 <a href="/windows/win32/api/winddi/ns-winddi-pathobj" data-raw-source="[&lt;strong&gt;PATHOBJ&lt;/strong&gt;](/windows/win32/api/winddi/ns-winddi-_pathobj)"><strong>PATHOBJ</strong></a>定义路径中的当前位置。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="/windows/win32/api/winddi/nf-winddi-pathobj_bpolybezierto" data-raw-source="[&lt;strong&gt;PATHOBJ_bPolyBezierTo&lt;/strong&gt;](/windows/win32/api/winddi/nf-winddi-pathobj_bpolybezierto)"><strong>PATHOBJ_bPolyBezierTo</strong></a></p></td>
@@ -71,7 +71,7 @@ ms.locfileid: "90715330"
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="/windows/win32/api/winddi/nf-winddi-pathobj_venumstart" data-raw-source="[&lt;strong&gt;PATHOBJ_vEnumStart&lt;/strong&gt;](/windows/win32/api/winddi/nf-winddi-pathobj_venumstart)"><strong>PATHOBJ_vEnumStart</strong></a></p></td>
-<td align="left"><p>通知 <a href="/windows/win32/api/winddi/ns-winddi-_pathobj" data-raw-source="[&lt;strong&gt;PATHOBJ&lt;/strong&gt;](/windows/win32/api/winddi/ns-winddi-_pathobj)"><strong>PATHOBJ</strong></a> 驱动程序将开始调用 <strong>PATHOBJ_bEnum</strong> 来枚举指定路径中的曲线。 如果重启枚举，则必须调用此函数。</p></td>
+<td align="left"><p>通知 <a href="/windows/win32/api/winddi/ns-winddi-pathobj" data-raw-source="[&lt;strong&gt;PATHOBJ&lt;/strong&gt;](/windows/win32/api/winddi/ns-winddi-_pathobj)"><strong>PATHOBJ</strong></a> 驱动程序将开始调用 <strong>PATHOBJ_bEnum</strong> 来枚举指定路径中的曲线。 如果重启枚举，则必须调用此函数。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><a href="/windows/win32/api/winddi/nf-winddi-pathobj_venumstartcliplines" data-raw-source="[&lt;strong&gt;PATHOBJ_vEnumStartClipLines&lt;/strong&gt;](/windows/win32/api/winddi/nf-winddi-pathobj_venumstartcliplines)"><strong>PATHOBJ_vEnumStartClipLines</strong></a></p></td>

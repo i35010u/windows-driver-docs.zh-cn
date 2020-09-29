@@ -4,12 +4,12 @@ description: 本部分介绍了 NDIS 6.40，并介绍了其主要的设计添加
 ms.assetid: 46DB94AA-DBAD-49E0-A1F0-FEB095E26F2C
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 73c5ae29d034a37f36c8fa914d393684c6fc0bef
-ms.sourcegitcommit: 29c2e6dd8a3de3c11822d990adf1edd774f8a136
+ms.openlocfilehash: c4e08e1d4acaeac6bc749b41a3a3a5891f484c7b
+ms.sourcegitcommit: f8619f20a0903dd64f8641a5266ecad6df5f1d57
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91230035"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91423756"
 ---
 # <a name="introduction-to-ndis-640"></a>NDIS 6.40 简介
 
@@ -29,7 +29,7 @@ NDKPI 1.2 将以下新元素添加到 NDKPI DDI：
 - *NdkGetCqResultsEx* ([*NDK \_ FN \_ GET \_ CQ \_ 结果， \_ 如*](/windows-hardware/drivers/ddi/ndkpi/nc-ndkpi-ndk_fn_get_cq_results_ex)) 函数
 - [**NDK \_结果 \_ EX**](/windows-hardware/drivers/ddi/ndkpi/ns-ndkpi-_ndk_result_ex) 结构
 - 新请求回调 *标志* 值： **NDK \_ 操作 \_ 标志 \_ 延迟**
-- 新 [**NDK \_ 适配器 \_ 信息**](/windows/win32/api/ndkinfo/ns-ndkinfo-_ndk_adapter_info)**AdapterFlags** 值： **ndk \_ 适配器 \_ 标志 \_ RDMA \_ 支持 RDMA 读取 \_ 本地 \_ 无效 \_ **
+- 新 [**NDK \_ 适配器 \_ 信息**](/windows/win32/api/ndkinfo/ns-ndkinfo-ndk_adapter_info)**AdapterFlags** 值： **ndk \_ 适配器 \_ 标志 \_ RDMA \_ 支持 RDMA 读取 \_ 本地 \_ 无效 \_ **
 
 ### <a name="native-80211-wireless-lan"></a>本机802.11 无线 LAN
 

@@ -6,12 +6,12 @@ keywords:
 - 矩形内存分配 WDK DirectDraw
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0ecde9d1178cd165ef4f4d61b24c454a105e6cd8
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 628445b0ee9fc3c6b2fa538602ee4e6d8bb51bb6
+ms.sourcegitcommit: f8619f20a0903dd64f8641a5266ecad6df5f1d57
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90714995"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91423832"
 ---
 # <a name="rectangular-memory-allocation"></a>矩形内存分配
 
@@ -33,9 +33,9 @@ ms.locfileid: "90714995"
 
 ![阐释矩形内存分配的关系图](images/ddfig5.png)
 
-在上图中，通过将主图面的宽度添加到主表面的起始地址来计算矩形堆的[**VIDEOMEMORY**](/windows/win32/api/ddrawint/ns-ddrawint-_videomemory)结构) 的**fpStart**成员指定的 (起点。 还会计算宽度和高度，以给出矩形堆的尺寸。 如果任何内存仍低于 Windows 缓存，则可以在此处创建一个堆。
+在上图中，通过将主图面的宽度添加到主表面的起始地址来计算矩形堆的[**VIDEOMEMORY**](/windows/win32/api/ddrawint/ns-ddrawint-videomemory)结构) 的**fpStart**成员指定的 (起点。 还会计算宽度和高度，以给出矩形堆的尺寸。 如果任何内存仍低于 Windows 缓存，则可以在此处创建一个堆。
 
-下面的伪代码演示如何为矩形内存设置 [**VIDEOMEMORY**](/windows/win32/api/ddrawint/ns-ddrawint-_videomemory) 结构：
+下面的伪代码演示如何为矩形内存设置 [**VIDEOMEMORY**](/windows/win32/api/ddrawint/ns-ddrawint-videomemory) 结构：
 
 ```cpp
 /*

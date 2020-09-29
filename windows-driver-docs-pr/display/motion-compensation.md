@@ -12,12 +12,12 @@ keywords:
 - 数字视频解码 WDK DirectDraw
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d0ae8bbe1c9d5e4c37c6c663b1415872eb62b7cb
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 55e586260b57ea70336f41d9e331e41a91be6486
+ms.sourcegitcommit: f8619f20a0903dd64f8641a5266ecad6df5f1d57
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90715172"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91423548"
 ---
 # <a name="motion-compensation"></a>运动补偿
 
@@ -31,9 +31,9 @@ ms.locfileid: "90715172"
 
 若要启用动作补偿功能，驱动程序必须执行以下步骤：
 
--   在调用[**DrvGetDirectDrawInfo**](/windows/win32/api/winddi/nf-winddi-drvgetdirectdrawinfo)时，实现[**DdGetDriverInfo**](/windows/win32/api/ddrawint/nc-ddrawint-pdd_getdriverinfo)函数并将[**DD \_ HALINFO**](/windows/win32/api/ddrawint/ns-ddrawint-_dd_halinfo)结构的**GetDriverInfo**成员设置为指向此函数。 驱动程序的 *DdGetDriverInfo* 函数必须分析 GUID \_ MotionCompCallbacks guid。
+-   在调用[**DrvGetDirectDrawInfo**](/windows/win32/api/winddi/nf-winddi-drvgetdirectdrawinfo)时，实现[**DdGetDriverInfo**](/windows/win32/api/ddrawint/nc-ddrawint-pdd_getdriverinfo)函数并将[**DD \_ HALINFO**](/windows/win32/api/ddrawint/ns-ddrawint-dd_halinfo)结构的**GetDriverInfo**成员设置为指向此函数。 驱动程序的 *DdGetDriverInfo* 函数必须分析 GUID \_ MotionCompCallbacks guid。
 
--   使用 GUID MOTIONCOMPCALLBACKS GUID 调用*DdGetDriverInfo*函数时，使用适当的驱动程序回调指针和回调类型标志来填充[**DD \_ MOTIONCOMPCALLBACKS**](/windows/win32/api/ddrawint/ns-ddrawint-dd_motioncompcallbacks)结构 \_ 。 然后，该驱动程序必须将此初始化的结构复制到 Microsoft DirectDraw 分配的缓冲区，该缓冲区中[**DD \_ GETDRIVERINFODATA**](/windows/win32/api/ddrawint/ns-ddrawint-_dd_getdriverinfodata)结构的**lpvData**成员指向的位置，并返回写入缓冲区的**dwActualSize**中的字节数。
+-   使用 GUID MOTIONCOMPCALLBACKS GUID 调用*DdGetDriverInfo*函数时，使用适当的驱动程序回调指针和回调类型标志来填充[**DD \_ MOTIONCOMPCALLBACKS**](/windows/win32/api/ddrawint/ns-ddrawint-dd_motioncompcallbacks)结构 \_ 。 然后，该驱动程序必须将此初始化的结构复制到 Microsoft DirectDraw 分配的缓冲区，该缓冲区中[**DD \_ GETDRIVERINFODATA**](/windows/win32/api/ddrawint/ns-ddrawint-dd_getdriverinfodata)结构的**lpvData**成员指向的位置，并返回写入缓冲区的**dwActualSize**中的字节数。
 
  
 

@@ -8,12 +8,12 @@ keywords:
 - 绘制 WDK GDI，支持的绘图服务
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 69588d57025c29afb5fa5c185d64046b6aa0fb32
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 5d0737cdcf8d8d3d5444630acb77ba71df462471
+ms.sourcegitcommit: f8619f20a0903dd64f8641a5266ecad6df5f1d57
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90716488"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91423654"
 ---
 # <a name="gdi-drawing-and-related-services"></a>GDI 绘图和相关服务
 
@@ -21,7 +21,7 @@ ms.locfileid: "90716488"
 ## <span id="ddk_gdi_drawing_and_related_services_gg"></span><span id="DDK_GDI_DRAWING_AND_RELATED_SERVICES_GG"></span>
 
 
-为了支持 [**CLIPOBJ**](/windows/win32/api/winddi/ns-winddi-_clipobj)、 [**BRUSHOBJ**](/windows/win32/api/winddi/ns-winddi-_brushobj)和 [**XFORMOBJ**](/previous-versions/windows/hardware/drivers/ff570618(v=vs.85)) 结构，GDI 提供了几个在下表中列出的绘图服务。
+为了支持 [**CLIPOBJ**](/windows/win32/api/winddi/ns-winddi-clipobj)、 [**BRUSHOBJ**](/windows/win32/api/winddi/ns-winddi-brushobj)和 [**XFORMOBJ**](/previous-versions/windows/hardware/drivers/ff570618(v=vs.85)) 结构，GDI 提供了几个在下表中列出的绘图服务。
 
 <table>
 <colgroup>
@@ -81,7 +81,7 @@ ms.locfileid: "90716488"
 </tr>
 <tr class="even">
 <td align="left"><p><a href="/windows/win32/api/winddi/nf-winddi-engcreateclip" data-raw-source="[&lt;strong&gt;EngCreateClip&lt;/strong&gt;](/windows/win32/api/winddi/nf-winddi-engcreateclip)"><strong>EngCreateClip</strong></a></p></td>
-<td align="left"><p>为驱动程序的临时使用分配 <a href="/windows/win32/api/winddi/ns-winddi-_clipobj" data-raw-source="[&lt;strong&gt;CLIPOBJ&lt;/strong&gt;](/windows/win32/api/winddi/ns-winddi-_clipobj)"><strong>CLIPOBJ</strong></a> 。 当不再需要驱动程序时，驱动程序应调用 <a href="/windows/win32/api/winddi/nf-winddi-engdeleteclip" data-raw-source="[&lt;strong&gt;EngDeleteClip&lt;/strong&gt;](/windows/win32/api/winddi/nf-winddi-engdeleteclip)"><strong>EngDeleteClip</strong></a> 函数将其删除。</p></td>
+<td align="left"><p>为驱动程序的临时使用分配 <a href="/windows/win32/api/winddi/ns-winddi-clipobj" data-raw-source="[&lt;strong&gt;CLIPOBJ&lt;/strong&gt;](/windows/win32/api/winddi/ns-winddi-_clipobj)"><strong>CLIPOBJ</strong></a> 。 当不再需要驱动程序时，驱动程序应调用 <a href="/windows/win32/api/winddi/nf-winddi-engdeleteclip" data-raw-source="[&lt;strong&gt;EngDeleteClip&lt;/strong&gt;](/windows/win32/api/winddi/nf-winddi-engdeleteclip)"><strong>EngDeleteClip</strong></a> 函数将其删除。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="/windows/win32/api/winddi/nf-winddi-engdeleteclip" data-raw-source="[&lt;strong&gt;EngDeleteClip&lt;/strong&gt;](/windows/win32/api/winddi/nf-winddi-engdeleteclip)"><strong>EngDeleteClip</strong></a></p></td>

@@ -12,12 +12,12 @@ keywords:
 - rasterizers WDK DirectDraw
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 38c808dbae572dff00030ca0cdd2ee5b09c2f433
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 56b5723d57cb4f612b22f3becc659c9841d5ba32
+ms.sourcegitcommit: f8619f20a0903dd64f8641a5266ecad6df5f1d57
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90717572"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91423494"
 ---
 # <a name="using-compressed-texture-surfaces"></a>使用压缩纹理图面
 
@@ -25,7 +25,7 @@ ms.locfileid: "90717572"
 ## <span id="ddk_using_compressed_texture_surfaces_gg"></span><span id="DDK_USING_COMPRESSED_TEXTURE_SURFACES_GG"></span>
 
 
-如果在 \_ [**dwCaps2**](/windows/win32/api/ddrawi/ns-ddrawi-_ddcorecaps)结构的**DDCORECAPS**成员中设置 DDCAPS2 COPYFOURCC 标志，则 DirectDraw 仅调用驱动程序在同一 DXT 类型的两个表面之间执行 blt。 如果未设置此标志，则 DirectDraw HEL 将执行 blt。 这对于实现表面到显示复制 blts 非常重要，因为这是一种机制，通过该机制，可以从 (系统内存) 表面下载纹理以显示内存。 因此，公开 DXT 纹理图面的实际要求您的驱动程序支持 DDCAPS2 \_ COPYFOURCC 标志。
+如果在 \_ [**dwCaps2**](/windows/win32/api/ddrawi/ns-ddrawi-ddcorecaps)结构的**DDCORECAPS**成员中设置 DDCAPS2 COPYFOURCC 标志，则 DirectDraw 仅调用驱动程序在同一 DXT 类型的两个表面之间执行 blt。 如果未设置此标志，则 DirectDraw HEL 将执行 blt。 这对于实现表面到显示复制 blts 非常重要，因为这是一种机制，通过该机制，可以从 (系统内存) 表面下载纹理以显示内存。 因此，公开 DXT 纹理图面的实际要求您的驱动程序支持 DDCAPS2 \_ COPYFOURCC 标志。
 
 DDCAPS2 \_ COPYFOURCC 标志有一些其他含义。 你的驱动程序必须能够在 FOURCC 格式之间执行至少具有以下属性的 blt：
 
@@ -51,7 +51,7 @@ DDCAPS2 \_ COPYFOURCC 标志有一些其他含义。 你的驱动程序必须能
 
 DirectDraw DDCAPS \_ CANBLTSYSMEM 功能位的语义意味着从系统内存中的所有 blts 调用显示驱动程序以显示内存。 因此，可以将此类 blts 的驱动程序从 DXT 表面调用到非 DXT 图面。 在这种情况下，唯一的要求是驱动程序返回 DDHAL \_ driver \_ NOTHANDLED （如果它无法执行解压缩）。 这会导致 DirectDraw 将 \_ 不支持的 DDERR 错误代码传播到应用程序。 可以从系统内存中实现 blts 的解压缩，以显示驱动程序中的内存，但这对于 DirectX 6.0 和更高版本不是必需的。
 
-DirectDraw 显示内存分配例程不处理像素格式注意事项。 例如， [**HeapVidMemAllocAligned**](/windows/win32/api/dmemmgr/nf-dmemmgr-heapvidmemallocaligned)需要字节计数作为其输入参数。 同样，DDHAL \_ PLEASEALLOC \_ 块 (查看[**dd \_ Surface \_ 全局**](/windows/win32/api/ddrawint/ns-ddrawint-_dd_surface_global)结构的**fpVidMem**成员) 表示 dd surface global 结构的**dwBlockSizeX**和**dwBlockSizeY**成员分别为 \_ \_ 字节和行计数。 因此，如果您的驱动程序使用这两种机制来通过 DirectDraw 分配器分配显示内存，则您的驱动程序必须能够自行计算 DXT 的内存消耗量（以字节为单位）。 下面的示例演示了执行此计算的一种方法：
+DirectDraw 显示内存分配例程不处理像素格式注意事项。 例如， [**HeapVidMemAllocAligned**](/windows/win32/api/dmemmgr/nf-dmemmgr-heapvidmemallocaligned)需要字节计数作为其输入参数。 同样，DDHAL \_ PLEASEALLOC \_ 块 (查看[**dd \_ Surface \_ 全局**](/windows/win32/api/ddrawint/ns-ddrawint-dd_surface_global)结构的**fpVidMem**成员) 表示 dd surface global 结构的**dwBlockSizeX**和**dwBlockSizeY**成员分别为 \_ \_ 字节和行计数。 因此，如果您的驱动程序使用这两种机制来通过 DirectDraw 分配器分配显示内存，则您的驱动程序必须能够自行计算 DXT 的内存消耗量（以字节为单位）。 下面的示例演示了执行此计算的一种方法：
 
 ```cpp
 DWORD dx, dy;

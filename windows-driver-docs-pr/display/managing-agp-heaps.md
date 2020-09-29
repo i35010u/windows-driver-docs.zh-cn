@@ -13,12 +13,12 @@ keywords:
 - GetDriverInfo2
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1ebd2b09b1b4f3ac6f16858b275e83109aa3a36e
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 46f7bdea84febd41fe58ddedbea0b9d2c1b26228
+ms.sourcegitcommit: f8619f20a0903dd64f8641a5266ecad6df5f1d57
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90715178"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91423602"
 ---
 # <a name="managing-agp-heaps"></a>管理 AGP 堆
 
@@ -38,7 +38,7 @@ ms.locfileid: "90715178"
 
 有关 **GetDriverInfo2** 请求的详细信息，请参阅 [支持 GetDriverInfo2](supporting-getdriverinfo2.md)。
 
-当创建显示设备时，显示驱动程序将收到具有**GetDriverInfo2** D3DGDI2 \_ 类型 "延迟 AGP 感知通知" 的 GetDriverInfo2 请求 \_ \_ \_ ，驱动程序使用该通知来确定它是否应禁用其他处理 AGP 堆的机制，而改用 D3DGDI2 \_ 类型 " \_ 自由 \_ 延迟 agp" 和 "D3DGDI2 类型" " \_ \_ \_ 延迟 \_ agp \_ 释放运行时随后发送的通知"。 在 D3DGDI2 \_ 类型 " \_ 延迟 \_ agp \_ 识别通知" 中，DirectX 运行时提供指向[**Dd \_ GETDRIVERINFODATA**](/windows/win32/api/ddrawint/ns-ddrawint-_dd_getdriverinfodata)数据结构的**lpvData**成员中[**dd \_ 延迟 \_ AGP \_ 感知 \_ 数据**](/windows-hardware/drivers/ddi/d3dhal/ns-d3dhal-_dd_deferred_agp_aware_data)结构的指针。
+当创建显示设备时，显示驱动程序将收到具有**GetDriverInfo2** D3DGDI2 \_ 类型 "延迟 AGP 感知通知" 的 GetDriverInfo2 请求 \_ \_ \_ ，驱动程序使用该通知来确定它是否应禁用其他处理 AGP 堆的机制，而改用 D3DGDI2 \_ 类型 " \_ 自由 \_ 延迟 agp" 和 "D3DGDI2 类型" " \_ \_ \_ 延迟 \_ agp \_ 释放运行时随后发送的通知"。 在 D3DGDI2 \_ 类型 " \_ 延迟 \_ agp \_ 识别通知" 中，DirectX 运行时提供指向[**Dd \_ GETDRIVERINFODATA**](/windows/win32/api/ddrawint/ns-ddrawint-dd_getdriverinfodata)数据结构的**lpvData**成员中[**dd \_ 延迟 \_ AGP \_ 感知 \_ 数据**](/windows-hardware/drivers/ddi/d3dhal/ns-d3dhal-_dd_deferred_agp_aware_data)结构的指针。
 
 该驱动程序有时会接收到 D3DGDI2 类型的 **GetDriverInfo2** 请求 \_ \_ \_ \_ 。 仅当运行时执行显示模式更改时，DirectX 运行时才会发送此通知。 驱动程序应检查进程标识符 (PID) ，该进程会根据创建该图面的进程对其进行销毁。 如果 Pid 不同，驱动程序不应销毁 AGP 内存的用户模式映射，因为应用程序可能仍在使用内存。
 

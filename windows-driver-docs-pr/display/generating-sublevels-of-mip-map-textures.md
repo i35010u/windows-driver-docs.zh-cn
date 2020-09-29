@@ -7,12 +7,12 @@ keywords:
 - MIP 地图9.0 纹理的子层
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 59bde436396e099a188caa2e786ebb44b545ac01
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 5be2355d8530eb5a642ccbd770e620e85dd24353
+ms.sourcegitcommit: f8619f20a0903dd64f8641a5266ecad6df5f1d57
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90716464"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91423938"
 ---
 # <a name="generating-sublevels-of-mip-map-textures"></a>生成 MIP 贴图纹理的子级别
 
@@ -20,7 +20,7 @@ ms.locfileid: "90716464"
 ## <span id="ddk_generating_sublevels_of_mip_map_textures_gg"></span><span id="DDK_GENERATING_SUBLEVELS_OF_MIP_MAP_TEXTURES_GG"></span>
 
 
-显示驱动程序指示支持通过设置 \_ [**DDCORECAPS**](/windows/win32/api/ddrawi/ns-ddrawi-_ddcorecaps)结构的**dwCaps2**成员的 DDCAPS2 CANAUTOGENMIPMAP 位来自动生成 MIP 地图纹理的子级别。 驱动程序在[**DD \_ HALINFO**](/windows/win32/api/ddrawint/ns-ddrawint-_dd_halinfo)结构的**ddCaps**成员中指定此 DDCORECAPS 结构。 DD \_ HALINFO 由驱动程序的 [**DrvGetDirectDrawInfo**](/windows/win32/api/winddi/nf-winddi-drvgetdirectdrawinfo) 函数返回。 显示驱动程序还指示特定的 surface 格式是否支持通过 \_ \_ 在格式的[**DDPIXELFORMAT**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-_ddpixelformat)结构的**dwOperations**成员中设置 D3DFORMAT OP AUTOGENMIPMAP 标志来自动生成子层。
+显示驱动程序指示支持通过设置 \_ [**DDCORECAPS**](/windows/win32/api/ddrawi/ns-ddrawi-ddcorecaps)结构的**dwCaps2**成员的 DDCAPS2 CANAUTOGENMIPMAP 位来自动生成 MIP 地图纹理的子级别。 驱动程序在[**DD \_ HALINFO**](/windows/win32/api/ddrawint/ns-ddrawint-dd_halinfo)结构的**ddCaps**成员中指定此 DDCORECAPS 结构。 DD \_ HALINFO 由驱动程序的 [**DrvGetDirectDrawInfo**](/windows/win32/api/winddi/nf-winddi-drvgetdirectdrawinfo) 函数返回。 显示驱动程序还指示特定的 surface 格式是否支持通过 \_ \_ 在格式的[**DDPIXELFORMAT**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-_ddpixelformat)结构的**dwOperations**成员中设置 D3DFORMAT OP AUTOGENMIPMAP 标志来自动生成子层。
 
 创建纹理图面时，Direct3D 运行时将 \_ DDSCAPSEX ([**DDSCAPS2**](/previous-versions/windows/hardware/drivers/ff550292(v=vs.85))) 结构的**dwCaps3**成员的 DDSCAPS3 AUTOGENMIPMAP 位设置为，以指示可以自动生成此纹理的 MIP 映射子级别。 如果 Direct3D 指示某些纹理自动生成其 MIP 地图子级别，而某些纹理未自动生成，则驱动程序只能对这些纹理 (D3DDP2OP TEXBLT) 执行 array.blit 操作， \_ 如以下方案所述：
 

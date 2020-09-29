@@ -17,12 +17,12 @@ api_type:
 ms.date: 12/06/2018
 ms.localizationpriority: medium
 ms.custom: seodec18
-ms.openlocfilehash: bc2e49d35589477513fc49b12f814e9e889293e6
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 0449944eb3e5c0670202d2bcb568ff99e7981eb0
+ms.sourcegitcommit: f8619f20a0903dd64f8641a5266ecad6df5f1d57
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90717364"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91423884"
 ---
 # <a name="dxva_deinterlacecontainerdeviceclassdeinterlacequerymodecaps-method"></a>DXVA \_ DeinterlaceContainerDeviceClass：:D einterlacequerymodecaps 方法
 
@@ -40,7 +40,7 @@ HRESULT DeinterlaceQueryModeCaps(
 );
 ```
 
-<a name="parameters"></a>参数
+<a name="parameters"></a>parameters
 ----------
 
 *pGuidDeinterlaceMode* \[在中， \] 提供指向用于指定取消隔行扫描模式的 GUID 的指针。
@@ -67,7 +67,7 @@ HRESULT DeinterlaceQueryModeCaps(
 
 **将 RenderMoComp 映射到 *DeinterlaceQueryModeCaps***
 
-**DeinterlaceQueryModeCaps**函数直接映射到[**DD \_ MOTIONCOMPCALLBACKS**](/windows/win32/api/ddrawint/ns-ddrawint-dd_motioncompcallbacks)结构的**RenderMoComp**成员的调用。 **RenderMoComp**成员指向显示驱动程序提供的、引用[**DD \_ RENDERMOCOMPDATA**](/windows/win32/api/ddrawint/ns-ddrawint-_dd_rendermocompdata)结构的函数。
+**DeinterlaceQueryModeCaps**函数直接映射到[**DD \_ MOTIONCOMPCALLBACKS**](/windows/win32/api/ddrawint/ns-ddrawint-dd_motioncompcallbacks)结构的**RenderMoComp**成员的调用。 **RenderMoComp**成员指向显示驱动程序提供的、引用[**DD \_ RENDERMOCOMPDATA**](/windows/win32/api/ddrawint/ns-ddrawint-dd_rendermocompdata)结构的函数。
 
 在未首先调用显示驱动程序提供的**BeginMoCompFrame**或**EndMoCompFrame**函数的情况下调用**RenderMoComp**回调。
 
@@ -135,7 +135,7 @@ HRESULT DeinterlaceQueryModeCaps(
 
 [**DD \_ MOTIONCOMPCALLBACKS**](/windows/win32/api/ddrawint/ns-ddrawint-dd_motioncompcallbacks)
 
-[**DD \_ RENDERMOCOMPDATA**](/windows/win32/api/ddrawint/ns-ddrawint-_dd_rendermocompdata)
+[**DD \_ RENDERMOCOMPDATA**](/windows/win32/api/ddrawint/ns-ddrawint-dd_rendermocompdata)
 
 [**DeinterlaceQueryAvailableModes**](dxva-deinterlacecontainerdeviceclass-deinterlacequeryavailablemodes.md)
 

@@ -7,12 +7,12 @@ keywords:
 - 用户模式组件调用 WDK DirectX VA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4ab4a2ce9785ef83c8f67280a9a7561e7dd27e4b
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 15b9ec5d0a7533a2520eaf55ee1e65b1429a8582
+ms.sourcegitcommit: f8619f20a0903dd64f8641a5266ecad6df5f1d57
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90715702"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91423914"
 ---
 # <a name="calling-the-copp-ddi-from-a-user-mode-component"></a>从用户模式组件调用 COPP DDI
 
@@ -32,7 +32,7 @@ ms.locfileid: "90715702"
 
 1.  将 VMR 添加到筛选器图时，它将启动对显示驱动程序提供的 [*DdMoCompGetGuids*](/windows/win32/api/ddrawint/nc-ddrawint-pdd_mocompcb_getguids) 回调函数的调用，以检索该驱动程序支持的设备的列表。 DD MOTIONCOMPCALLBACKS 结构的 **GetMoCompGuids** 成员 \_ 指向此回调函数。 有关筛选器关系图的详细信息，请参阅 [KS 微型驱动程序体系结构](../stream/ks-minidriver-architecture.md)。
 
-2.  如果 DirectX VA COPP 设备 GUID 存在，则 VMR 将启动对 [*DdMoCompCreate*](/windows/win32/api/ddrawint/nc-ddrawint-pdd_mocompcb_create) 回调函数的调用，以在当前视频会话上初始化 COPP 设备。 DD MOTIONCOMPCALLBACKS 的 **CreateMoComp** 成员指向 \_ 回调函数。 在*DdMoCompCreate*调用中，指向 COPP 设备 GUID 的指针是在[**DD \_ CREATEMOCOMPDATA**](/windows/win32/api/ddrawint/ns-ddrawint-_dd_createmocompdata)结构的**lpGuid**成员中指定的。 COPP 设备 GUID 定义如下：
+2.  如果 DirectX VA COPP 设备 GUID 存在，则 VMR 将启动对 [*DdMoCompCreate*](/windows/win32/api/ddrawint/nc-ddrawint-pdd_mocompcb_create) 回调函数的调用，以在当前视频会话上初始化 COPP 设备。 DD MOTIONCOMPCALLBACKS 的 **CreateMoComp** 成员指向 \_ 回调函数。 在*DdMoCompCreate*调用中，指向 COPP 设备 GUID 的指针是在[**DD \_ CREATEMOCOMPDATA**](/windows/win32/api/ddrawint/ns-ddrawint-dd_createmocompdata)结构的**lpGuid**成员中指定的。 COPP 设备 GUID 定义如下：
 
     ```cpp
     DEFINE_GUID(DXVA_COPPDevice, 0xd2457add,0x8999,0x45ed,0x8a,0x8a,0xd1,0xaa,0x04,0x7b,0xa4,0xd5);
@@ -40,7 +40,7 @@ ms.locfileid: "90715702"
 
     显示驱动程序必须使用 COPP IOCTL 与视频微型端口驱动程序通信。 如果视频微型端口驱动程序实现了 [*COPPOpenVideoSession*](./coppopenvideosession.md) 示例函数，则 [*DdMoCompCreate*](/windows/win32/api/ddrawint/nc-ddrawint-pdd_mocompcb_create) 回调函数将启动对 **COPPOpenVideoSession**的调用。
 
-3.  若要确定应对当前视频会话使用的可变长度图形硬件证书的长度，VMR 将启动对显示驱动程序提供的 [*DdMoCompRender*](/windows/win32/api/ddrawint/nc-ddrawint-pdd_mocompcb_render) 回调函数的调用。 [**DD \_ MOTIONCOMPCALLBACKS**](/windows/win32/api/ddrawint/ns-ddrawint-dd_motioncompcallbacks)的**RenderMoComp**成员指向回调函数。 在**DdMoCompRender**调用中， [**DD \_ RENDERMOCOMPDATA**](/windows/win32/api/ddrawint/ns-ddrawint-_dd_rendermocompdata)的**dwFunction**成员设置为*COPPGetCertificateLengthFnCode*) 中定义的**DXVA \_ DXVA** (值。 显示驱动程序在此调用中不会收到任何输入;也就是说，DD RENDERMOCOMPDATA 的 **lpInputData** 成员 \_ 为 **NULL**。 显示驱动程序通过 DD RENDERMOCOMPDATA 的 **lpOutputData** 成员返回证书的长度 \_ 。 **lpOutputData** 指向 DWORD 数据类型。
+3.  若要确定应对当前视频会话使用的可变长度图形硬件证书的长度，VMR 将启动对显示驱动程序提供的 [*DdMoCompRender*](/windows/win32/api/ddrawint/nc-ddrawint-pdd_mocompcb_render) 回调函数的调用。 [**DD \_ MOTIONCOMPCALLBACKS**](/windows/win32/api/ddrawint/ns-ddrawint-dd_motioncompcallbacks)的**RenderMoComp**成员指向回调函数。 在**DdMoCompRender**调用中， [**DD \_ RENDERMOCOMPDATA**](/windows/win32/api/ddrawint/ns-ddrawint-dd_rendermocompdata)的**dwFunction**成员设置为*COPPGetCertificateLengthFnCode*) 中定义的**DXVA \_ DXVA** (值。 显示驱动程序在此调用中不会收到任何输入;也就是说，DD RENDERMOCOMPDATA 的 **lpInputData** 成员 \_ 为 **NULL**。 显示驱动程序通过 DD RENDERMOCOMPDATA 的 **lpOutputData** 成员返回证书的长度 \_ 。 **lpOutputData** 指向 DWORD 数据类型。
 
     显示驱动程序必须使用 COPP IOCTL 与视频微型端口驱动程序通信。 如果视频微型端口驱动程序实现了 [*COPPGetCertificateLength*](./coppgetcertificatelength.md) 示例函数，则 **DdMoCompRender** 回调函数将启动对 *COPPGetCertificateLength*的调用。
 

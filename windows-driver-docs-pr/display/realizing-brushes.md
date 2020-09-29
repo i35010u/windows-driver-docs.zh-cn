@@ -20,12 +20,12 @@ keywords:
 - 绘制 WDK GDI，画笔
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9ef6483f1f62a293c2f7f7919ee9ca86f5c32de5
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: c3e1ab609d1315251466f571f83de7d2d28c9970
+ms.sourcegitcommit: f8619f20a0903dd64f8641a5266ecad6df5f1d57
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90714990"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91423834"
 ---
 # <a name="realizing-brushes"></a>识别画笔
 
@@ -47,7 +47,7 @@ GDI 跟踪应用程序请求使用的所有逻辑画笔。 在要求驱动程序
 
 调用*DrvRealizeBrush* ，以实现) 画笔的*psoPattern* (模式定义的画笔，并通过*psoTarget* (表面实现已实现的画笔) 。 已实现的画笔包含驱动程序需要使用模式填充区域的信息和加速器。 此信息仅由驱动程序定义和使用。 画笔的驱动程序实现被写入缓冲区，该缓冲区可通过调用*DrvRealizeBrush*中的 GDI 服务函数[**BRUSHOBJ \_ pvAllocRbrush**](/windows/win32/api/winddi/nf-winddi-brushobj_pvallocrbrush)来分配驱动程序。 GDI 将缓存所有已实现的画笔;因此，很少需要重新计算。
 
-在 *DrvRealizeBrush*中， **BRUSHOBJ**或标准格式的位图。 对于光栅设备，描述画笔模式的图面表示位图;对于向量设备，它始终是 [**DrvEnablePDEV**](/windows/win32/api/winddi/nf-winddi-drvenablepdev) 函数返回的模式图面中的一个。 画笔使用的透明度掩码是一位每像素位图，其范围与模式相同。 掩码位为零表示像素被视为画笔的背景像素;也就是说，目标像素不受该特定模式像素的影响。 *DrvRealizeBrush* 使用 [**XLATEOBJ**](/windows/win32/api/winddi/ns-winddi-_xlateobj) 结构将画笔模式中的颜色转换为设备颜色索引。
+在 *DrvRealizeBrush*中， **BRUSHOBJ**或标准格式的位图。 对于光栅设备，描述画笔模式的图面表示位图;对于向量设备，它始终是 [**DrvEnablePDEV**](/windows/win32/api/winddi/nf-winddi-drvenablepdev) 函数返回的模式图面中的一个。 画笔使用的透明度掩码是一位每像素位图，其范围与模式相同。 掩码位为零表示像素被视为画笔的背景像素;也就是说，目标像素不受该特定模式像素的影响。 *DrvRealizeBrush* 使用 [**XLATEOBJ**](/windows/win32/api/winddi/ns-winddi-xlateobj) 结构将画笔模式中的颜色转换为设备颜色索引。
 
 当 BRUSHOBJ 结构的**iSolidColor**成员的值为0Xffffffff 并且**PvRbrush**成员为**NULL**时，驱动程序应调用 GDI 服务函数[**BRUSHOBJ \_ pvGetRbrush**](/windows/win32/api/winddi/nf-winddi-brushobj_pvgetrbrush) 。 **BRUSHOBJ \_ pvGetRbrush** 检索指向指定画笔的驱动程序实现的指针。 如果当驱动程序调用此函数时未实现画笔，则 GDI 会自动为驱动程序实现画笔而调用 *DrvRealizeBrush* 。
 

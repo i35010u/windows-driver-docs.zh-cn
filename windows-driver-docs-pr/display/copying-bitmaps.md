@@ -15,12 +15,12 @@ keywords:
 - 拉伸 WDK Windows 2000 显示器
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: da018431eb5b6130b7dfe5763cf4b74c388b8de2
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 92da0c35c408f50ff9ee7979ece9d831578d9e18
+ms.sourcegitcommit: f8619f20a0903dd64f8641a5266ecad6df5f1d57
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90717382"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91423954"
 ---
 # <a name="copying-bitmaps"></a>复制位图
 
@@ -66,7 +66,7 @@ GDI 从其模拟操作调用 [**DrvCopyBits**](/windows/win32/api/winddi/nf-wind
 
 -   允许任意剪裁。
 
-驱动程序可以使用 GDI [**CLIPOBJ**](/windows/win32/api/winddi/ns-winddi-_clipobj) 枚举服务来减少对一系列剪辑矩形的剪辑。 GDI 向下传递翻译向量（ [**XLATEOBJ**](/windows/win32/api/winddi/ns-winddi-_xlateobj) 结构），以帮助在源和目标曲面之间进行颜色索引转换。
+驱动程序可以使用 GDI [**CLIPOBJ**](/windows/win32/api/winddi/ns-winddi-clipobj) 枚举服务来减少对一系列剪辑矩形的剪辑。 GDI 向下传递翻译向量（ [**XLATEOBJ**](/windows/win32/api/winddi/ns-winddi-xlateobj) 结构），以帮助在源和目标曲面之间进行颜色索引转换。
 
 如果设备表面被组织为标准格式的与 *设备无关的位图 (DIB) *，则驱动程序只能支持简单传输。 如果调用的是一个复杂的 ROP，则驱动程序可以通过调用 [**EngCopyBits**](/windows/win32/api/winddi/nf-winddi-engcopybits) 函数来使阻止传输请求返回到 GDI。 这允许 GDI 将调用分解为驱动程序可以执行的更简单的函数。
 
@@ -78,13 +78,13 @@ GDI 从其模拟操作调用 [**DrvCopyBits**](/windows/win32/api/winddi/nf-wind
 
 [**DrvStretchBlt**](/windows/win32/api/winddi/nf-winddi-drvstretchblt) 还允许驱动程序在 GDI 位图上写入，特别是当驱动程序可以执行半色调操作时。 函数还允许将相同的半色调算法应用于 GDI 位图和设备图面。
 
-[**DrvStretchBlt**](/windows/win32/api/winddi/nf-winddi-drvstretchblt) 将几何源矩形精确地映射到几何目标矩形。 源是一个矩形，其中的角从给定的整数坐标 (-0.5，-0.5) 。 函数参数中指定的点位于与像素中心对应的整数坐标。 由两个这类点定义的矩形被视为几何，其中两个顶点的坐标是给定点，但从每个坐标中减去了0.5。  (GDI [**POINTL**](/windows/win32/api/windef/ns-windef-_pointl) 结构使用简写表示法来指定这些小数坐标顶点。 ) 请注意，任何此类矩形的边缘永远不会与像素相交，但会绕一组像素。 该矩形内的像素是下右排边框的普通像素。
+[**DrvStretchBlt**](/windows/win32/api/winddi/nf-winddi-drvstretchblt) 将几何源矩形精确地映射到几何目标矩形。 源是一个矩形，其中的角从给定的整数坐标 (-0.5，-0.5) 。 函数参数中指定的点位于与像素中心对应的整数坐标。 由两个这类点定义的矩形被视为几何，其中两个顶点的坐标是给定点，但从每个坐标中减去了0.5。  (GDI [**POINTL**](/windows/win32/api/windef/ns-windef-pointl) 结构使用简写表示法来指定这些小数坐标顶点。 ) 请注意，任何此类矩形的边缘永远不会与像素相交，但会绕一组像素。 该矩形内的像素是下右排边框的普通像素。
 
 定义源矩形角的点具有序顺序;不能为 [**DrvStretchBlt**](/windows/win32/api/winddi/nf-winddi-drvstretchblt) 提供空的源矩形。 与 [**DrvBitBlt**](/windows/win32/api/winddi/nf-winddi-drvbitblt)不同，可以使用单个剪辑矩形调用 **DrvStretchBlt** ，以防止剪裁输出时出现舍入错误。
 
 目标矩形由两个整数点定义。 这些点不会有序排序，这意味着第二个点的坐标并不一定大于第一个点的坐标。 这些点所描述的源矩形不包括下边缘和右边缘。 由于此矩形的顺序不正确， [**DrvStretchBlt**](/windows/win32/api/winddi/nf-winddi-drvstretchblt) 有时必须在两个 x 坐标和/或两个 y 坐标中执行倒置。  (驱动程序不得尝试读取不在源图面) 上的像素。 不能使用空目标矩形调用**DrvStretchBlt** 。
 
-对于颜色转换， [**DrvStretchBlt**](/windows/win32/api/winddi/nf-winddi-drvstretchblt)向[**XLATEOBJ**](/windows/win32/api/winddi/ns-winddi-_xlateobj)结构提供一个指针*pxlo*，用于在源和目标曲面之间进行转换。 可以查询 XLATEOBJ 结构来查找任何源索引的目标索引。 对于高质量拉伸块传输，在某些情况下需要 **DrvStretchBlt** 来插入颜色。 **DrvStretchBlt** 还使用 COLORADJUSTMENT 结构定义要在延伸位之前应用于源位图的颜色调整值。
+对于颜色转换， [**DrvStretchBlt**](/windows/win32/api/winddi/nf-winddi-drvstretchblt)向[**XLATEOBJ**](/windows/win32/api/winddi/ns-winddi-xlateobj)结构提供一个指针*pxlo*，用于在源和目标曲面之间进行转换。 可以查询 XLATEOBJ 结构来查找任何源索引的目标索引。 对于高质量拉伸块传输，在某些情况下需要 **DrvStretchBlt** 来插入颜色。 **DrvStretchBlt** 还使用 COLORADJUSTMENT 结构定义要在延伸位之前应用于源位图的颜色调整值。
 
 [**DrvStretchBlt**](/windows/win32/api/winddi/nf-winddi-drvstretchblt) 使用 *iMode* 参数定义要将源像素合并为输出的方式。 特别是， *iMode* 提供了半色调选项，该选项允许驱动程序使用输出图面中的像素组来接近输出的颜色或灰色级别。 对 COLORADJUSTMENT 结构所做的更改将在下一次 **DrvStretchBlt** 调用后传递给驱动程序， *IMODE* 为半色调。 此外，如果驱动程序需要 GDI 来处理 GDI 位图的半色调，则驱动程序将 **DrvStretchBlt**，将 *iMode* 参数设置为半色调，并将其返回 [**EngStretchBlt**](/windows/win32/api/winddi/nf-winddi-engstretchblt)。
 

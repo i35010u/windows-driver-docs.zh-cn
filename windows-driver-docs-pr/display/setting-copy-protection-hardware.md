@@ -6,12 +6,12 @@ keywords:
 - 复制保护 WDK 视频微型端口，设置
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b352042501431bb863fc42222812db5b7f262f0c
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: d1656bd4c9995deeaa2114f5dcc2c96a1f5a06eb
+ms.sourcegitcommit: f8619f20a0903dd64f8641a5266ecad6df5f1d57
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90714740"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91423718"
 ---
 # <a name="setting-copy-protection-hardware"></a>设置复制保护硬件
 
@@ -19,7 +19,7 @@ ms.locfileid: "90714740"
 ## <span id="ddk_setting_copy_protection_hardware_gg"></span><span id="DDK_SETTING_COPY_PROTECTION_HARDWARE_GG"></span>
 
 
-在 \_ \_ vp 命令获取中，在 [**VIDEOPARAMETERS**](/windows/win32/api/tvout/ns-tvout-_videoparameters)的 **dwFlags** 成员中保护的、返回的带 vp 标志的微型端口驱动程序 \_ \_ 应执行以下操作，以响应 VP \_ 命令 \_ 集命令，具体取决于 VIDEOPARAMETERS 结构的 **dwCPCommand** 成员：
+在 \_ \_ vp 命令获取中，在 [**VIDEOPARAMETERS**](/windows/win32/api/tvout/ns-tvout-videoparameters)的 **dwFlags** 成员中保护的、返回的带 vp 标志的微型端口驱动程序 \_ \_ 应执行以下操作，以响应 VP \_ 命令 \_ 集命令，具体取决于 VIDEOPARAMETERS 结构的 **dwCPCommand** 成员：
 
 -   如果 **dwCPCommand** 是将 \_ CP \_ CMD \_ ACTIVATE 激活，微型端口驱动程序应打开复制保护，并在 **dwCPKey**中生成并返回唯一的复制保护密钥。
 

@@ -4,12 +4,12 @@ description: Windows 7 的 WFP 更改
 ms.assetid: c7b15182-592a-4cdb-98aa-5283ed2f51a0
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 27de037b06f6adc9303924f0e95bd6806250ad57
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 355e2993d432ebf824b64cd55e7d17d10541d079
+ms.sourcegitcommit: f8619f20a0903dd64f8641a5266ecad6df5f1d57
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90714618"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91423582"
 ---
 # <a name="wfp-changes-for-windows-7"></a>Windows 7 的 WFP 更改
 
@@ -39,8 +39,8 @@ Windows 筛选平台的可用功能和行为中已进行了一些更改，以 Wi
     - [**FwpsAleEndpointGetSecurityInfo0**](/windows-hardware/drivers/ddi/fwpsk/nf-fwpsk-fwpsaleendpointgetsecurityinfo0)
     - [**FwpsAleEndpointSetSecurityInfo0**](/windows-hardware/drivers/ddi/fwpsk/nf-fwpsk-fwpsaleendpointsetsecurityinfo0)
 -   新的结构和枚举：
-    - [**FWPS \_ ALE \_ 终结点 \_ 枚举 \_ TEMPLATE0**](/windows/win32/api/fwpstypes/ns-fwpstypes-fwps_ale_endpoint_enum_template0_)
-    - [**FWPS \_ ALE \_ 终结点 \_ PROPERTIES0**](/windows/win32/api/fwpstypes/ns-fwpstypes-fwps_ale_endpoint_properties0_)
+    - [**FWPS \_ ALE \_ 终结点 \_ 枚举 \_ TEMPLATE0**](/windows/win32/api/fwpstypes/ns-fwpstypes-fwps_ale_endpoint_enum_template0)
+    - [**FWPS \_ ALE \_ 终结点 \_ PROPERTIES0**](/windows/win32/api/fwpstypes/ns-fwpstypes-fwps_ale_endpoint_properties0)
     - [**FWPS \_ 绑定 \_ REQUEST0**](/windows-hardware/drivers/ddi/fwpsk/ns-fwpsk-_fwps_bind_request0)
     - [**FWPS \_ CALLOUT1**](/windows-hardware/drivers/ddi/fwpsk/ns-fwpsk-fwps_callout1_)
     - [**FWPS \_ CONNECT \_ REQUEST0**](/windows-hardware/drivers/ddi/fwpsk/ns-fwpsk-_fwps_connect_request0)
@@ -59,7 +59,7 @@ Windows 筛选平台的可用功能和行为中已进行了一些更改，以 Wi
     - [**FWPS \_ 字段 \_ 出站 \_ MAC \_ 帧 \_ 802 \_ 3**](/windows-hardware/drivers/ddi/fwpsk/ne-fwpsk-fwps_fields_outbound_mac_frame_ethernet_)
     - [**FWPS \_ 字段 \_ 流 \_ 数据包 \_ V4**](/windows-hardware/drivers/ddi/fwpsk/ne-fwpsk-fwps_fields_stream_packet_v4_)
     - [**FWPS \_ 字段 \_ 流 \_ 包 \_ V6**](/windows-hardware/drivers/ddi/fwpsk/ne-fwpsk-fwps_fields_stream_packet_v6_)
-    - [**FWPS \_ FILTER1**](/windows/win32/api/fwpstypes/ns-fwpstypes-fwps_filter1_)
+    - [**FWPS \_ FILTER1**](/windows/win32/api/fwpstypes/ns-fwpstypes-fwps_filter1)
     - [**FWPS \_ NET \_ BUFFER \_ LIST \_ 事件 \_ TYPE0**](/windows-hardware/drivers/ddi/fwpsk/ne-fwpsk-fwps_net_buffer_list_event_type0_)
     - [**FWPS \_ TRANSPORT \_ SEND \_ PARAMS1**](/windows-hardware/drivers/ddi/fwpsk/ns-fwpsk-fwps_transport_send_params1_)
 -   新文档主题：

@@ -8,12 +8,12 @@ keywords:
 - 流式传输数据深层检查 WDK Windows 筛选平台
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cf5367f5172e50ac6175aa2ca7b3ab47ca13837f
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 3c81a8fcba4759da5656cbd8ae98e7fc219a95da
+ms.sourcegitcommit: f8619f20a0903dd64f8641a5266ecad6df5f1d57
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90715730"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91423592"
 ---
 # <a name="using-a-callout-for-deep-inspection-of-stream-data"></a>使用标注进行流数据深度检测
 
@@ -134,7 +134,7 @@ VOID NTAPI
 }
 ```
 
-*Filter- &gt; action*中的值可确定标注的[classifyFn](/windows-hardware/drivers/ddi/_netvista/) callout 函数应在*ClassifyOut*参数指向的结构的**actionType**成员中返回的操作。 有关这些操作的详细信息，请参阅 [**FWPS \_ ACTION0**](/windows/win32/api/fwpstypes/ns-fwpstypes-fwps_action0_) 结构。
+*Filter- &gt; action*中的值可确定标注的[classifyFn](/windows-hardware/drivers/ddi/_netvista/) callout 函数应在*ClassifyOut*参数指向的结构的**actionType**成员中返回的操作。 有关这些操作的详细信息，请参阅 [**FWPS \_ ACTION0**](/windows/win32/api/fwpstypes/ns-fwpstypes-fwps_action0) 结构。
 
 有关数据包和流数据检查的详细信息，请参阅 [检查数据包和流数据](inspecting-packet-and-stream-data.md)。
 

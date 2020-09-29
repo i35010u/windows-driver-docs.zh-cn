@@ -8,12 +8,12 @@ keywords:
 - 绘制 WDK GDI、驱动程序相关服务
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ecb06e290e35cfff7ad1f817ce0fe7c43235827c
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 267b707a90d420efcb593ae148c4995169b5b080
+ms.sourcegitcommit: f8619f20a0903dd64f8641a5266ecad6df5f1d57
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90716486"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91423652"
 ---
 # <a name="gdi-driver-related-services"></a>GDI 驱动程序相关服务
 
@@ -37,7 +37,7 @@ ms.locfileid: "90716486"
 <tbody>
 <tr class="odd">
 <td align="left"><p><a href="/windows/win32/api/winddi/nf-winddi-engcreatedriverobj" data-raw-source="[&lt;strong&gt;EngCreateDriverObj&lt;/strong&gt;](/windows/win32/api/winddi/nf-winddi-engcreatedriverobj)"><strong>EngCreateDriverObj</strong></a></p></td>
-<td align="left"><p>创建 <a href="/windows/win32/api/winddi/ns-winddi-_driverobj" data-raw-source="[&lt;strong&gt;DRIVEROBJ&lt;/strong&gt;](/windows/win32/api/winddi/ns-winddi-_driverobj)"><strong>DRIVEROBJ</strong></a> 结构。 此结构用于跟踪设备托管的资源，如果在资源分配进程终止的情况下终止该资源，则该资源必须释放。</p></td>
+<td align="left"><p>创建 <a href="/windows/win32/api/winddi/ns-winddi-driverobj" data-raw-source="[&lt;strong&gt;DRIVEROBJ&lt;/strong&gt;](/windows/win32/api/winddi/ns-winddi-_driverobj)"><strong>DRIVEROBJ</strong></a> 结构。 此结构用于跟踪设备托管的资源，如果在资源分配进程终止的情况下终止该资源，则该资源必须释放。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><a href="/windows/win32/api/winddi/nf-winddi-engdeletedriverobj" data-raw-source="[&lt;strong&gt;EngDeleteDriverObj&lt;/strong&gt;](/windows/win32/api/winddi/nf-winddi-engdeletedriverobj)"><strong>EngDeleteDriverObj</strong></a></p></td>

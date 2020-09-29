@@ -12,12 +12,12 @@ keywords:
 - 绘制 WDK GDI，PDEV 清理
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d37d7da53985e7cb3a90a2f697e000036834666e
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 358ab6223b5bdb0c3ee3bca1eefd1911fd3aa656
+ms.sourcegitcommit: f8619f20a0903dd64f8641a5266ecad6df5f1d57
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90716254"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91424048"
 ---
 # <a name="pdev-initialization-and-cleanup"></a>PDEV 初始化和清理
 
@@ -29,7 +29,7 @@ ms.locfileid: "90716254"
 
 -   **硬件类型**：作为驱动程序的一个示例，该驱动程序支持硬件类型所述的 PDEV，一个驱动程序可以支持 LaserWhiz、LaserWhiz II 和 LaserWhiz 超级打印机。 GDI 传递的设备名称指定从支持驱动程序的设备总数中请求的逻辑设备。
 
--   **逻辑地址**：单个驱动程序可以支持连接到 LPT1、COM2 的打印机和名为 \\ \\ SERVER1 PSLASER 的服务器 \\ ，例如。 此外，可以同时支持多个 VGA 显示的显示驱动程序可以通过端口号来区分它们，如0x3CE、0x2CE 等。 打印机的逻辑地址和其他硬复制输出设备由 GDI 确定; [**EngWritePrinter**](/windows/win32/api/winddi/nf-winddi-engwriteprinter) 函数将输出定向到适当的目标。 显示可以隐式确定其自己的逻辑地址，也可以从 [**DEVMODEW**](/windows/win32/api/wingdi/ns-wingdi-_devicemodew)的 private 部分中检索该地址。
+-   **逻辑地址**：单个驱动程序可以支持连接到 LPT1、COM2 的打印机和名为 \\ \\ SERVER1 PSLASER 的服务器 \\ ，例如。 此外，可以同时支持多个 VGA 显示的显示驱动程序可以通过端口号来区分它们，如0x3CE、0x2CE 等。 打印机的逻辑地址和其他硬复制输出设备由 GDI 确定; [**EngWritePrinter**](/windows/win32/api/winddi/nf-winddi-engwriteprinter) 函数将输出定向到适当的目标。 显示可以隐式确定其自己的逻辑地址，也可以从 [**DEVMODEW**](/windows/win32/api/wingdi/ns-wingdi-devicemodew)的 private 部分中检索该地址。
 
     DEVMODEW 结构为驱动程序提供所需的环境设置，例如设备的名称和特定于打印机或显示驱动程序的其他信息。
 
@@ -37,7 +37,7 @@ ms.locfileid: "90716254"
 
 为响应对 *DrvEnablePDEV*的调用，驱动程序会通过几个结构将有关硬件设备功能的信息返回到 GDI。
 
-在 GDI 调用*DrvEnablePDEV*之前， [**GDIINFO**](/windows/win32/api/winddi/ns-winddi-_gdiinfo)结构为零填充。 驱动程序会在 GDIINFO 中填入以下信息，以将以下信息传达给 GDI：
+在 GDI 调用*DrvEnablePDEV*之前， [**GDIINFO**](/windows/win32/api/winddi/ns-winddi-gdiinfo)结构为零填充。 驱动程序会在 GDIINFO 中填入以下信息，以将以下信息传达给 GDI：
 
 -   驱动程序版本号
 

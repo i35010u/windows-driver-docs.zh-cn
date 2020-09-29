@@ -15,12 +15,12 @@ api_type:
 ms.date: 12/06/2018
 ms.localizationpriority: medium
 ms.custom: seodec18
-ms.openlocfilehash: caa2a639973cf092bf62fc3caf00d9b32239ef19
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 4be520b3340d4afefe502878746ace7a66ad5365
+ms.sourcegitcommit: f8619f20a0903dd64f8641a5266ecad6df5f1d57
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90717366"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91423886"
 ---
 # <a name="dxva_deinterlacecontainerdeviceclassdeinterlacequeryavailablemodes-method"></a>DXVA \_ DeinterlaceContainerDeviceClass：:D einterlacequeryavailablemodes 方法
 
@@ -38,7 +38,7 @@ HRESULT DeinterlaceQueryAvailableModes(
 );
 ```
 
-<a name="parameters"></a>参数
+<a name="parameters"></a>parameters
 ----------
 
 *lpVideoDescription* \[在中， \] 提供指向 [**DXVA \_ VideoDesc**](/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_videodesc) 结构的指针，该结构包含要执行的取消隔行扫描或帧速率转换的视频流的说明。
@@ -61,11 +61,11 @@ HRESULT DeinterlaceQueryAvailableModes(
 
 所有驱动程序都应该能够使用现有的 *位块传输* (blt) 硬件支持 bob 模式。 有关模式的详细信息，请参阅 [隔行扫描模式](./deinterlace-modes.md) 和 [帧速率转换模式](./frame-rate-conversion-modes.md) 主题。
 
-驱动程序将 (模式返回 Guid，以响应 *VMR*的请求) 。 驱动程序将响应其 [*DdMoCompRender*](/windows/win32/api/ddrawint/nc-ddrawint-pdd_mocompcb_render) 回调函数的调用。 驱动程序通过[**DD \_ RENDERMOCOMPDATA**](/windows/win32/api/ddrawint/ns-ddrawint-_dd_rendermocompdata)结构的**lpOutputData**成员返回 Guid， *DdMoCompRender*指向的*lpRenderData*参数。 **LpOutputData**成员指向[**DXVA \_ DeinterlaceQueryAvailableModes**](/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_deinterlacequeryavailablemodes)结构，该结构包含**guid**成员中的 guid 数组。
+驱动程序将 (模式返回 Guid，以响应 *VMR*的请求) 。 驱动程序将响应其 [*DdMoCompRender*](/windows/win32/api/ddrawint/nc-ddrawint-pdd_mocompcb_render) 回调函数的调用。 驱动程序通过[**DD \_ RENDERMOCOMPDATA**](/windows/win32/api/ddrawint/ns-ddrawint-dd_rendermocompdata)结构的**lpOutputData**成员返回 Guid， *DdMoCompRender*指向的*lpRenderData*参数。 **LpOutputData**成员指向[**DXVA \_ DeinterlaceQueryAvailableModes**](/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_deinterlacequeryavailablemodes)结构，该结构包含**guid**成员中的 guid 数组。
 
 **将 RenderMoComp 映射到** ***DeinterlaceQueryAvailableModes***
 
-示例*DeinterlaceQueryAvailableModes*函数直接映射到[**DD \_ MOTIONCOMPCALLBACKS**](/windows/win32/api/ddrawint/ns-ddrawint-dd_motioncompcallbacks)结构的**RenderMoComp**成员的调用。 **RenderMoComp**成员指向显示驱动程序提供的、引用[**DD \_ RENDERMOCOMPDATA**](/windows/win32/api/ddrawint/ns-ddrawint-_dd_rendermocompdata)结构的函数。
+示例*DeinterlaceQueryAvailableModes*函数直接映射到[**DD \_ MOTIONCOMPCALLBACKS**](/windows/win32/api/ddrawint/ns-ddrawint-dd_motioncompcallbacks)结构的**RenderMoComp**成员的调用。 **RenderMoComp**成员指向显示驱动程序提供的、引用[**DD \_ RENDERMOCOMPDATA**](/windows/win32/api/ddrawint/ns-ddrawint-dd_rendermocompdata)结构的函数。
 
 在未首先调用显示驱动程序提供的**BeginMoCompFrame**或**EndMoCompFrame**函数的情况下调用**RenderMoComp**回调。
 
@@ -115,7 +115,7 @@ HRESULT DeinterlaceQueryAvailableModes(
 
 [**DD \_ MOTIONCOMPCALLBACKS**](/windows/win32/api/ddrawint/ns-ddrawint-dd_motioncompcallbacks)
 
-[**DD \_ RENDERMOCOMPDATA**](/windows/win32/api/ddrawint/ns-ddrawint-_dd_rendermocompdata)
+[**DD \_ RENDERMOCOMPDATA**](/windows/win32/api/ddrawint/ns-ddrawint-dd_rendermocompdata)
 
 [**DeinterlaceQueryModeCaps**](dxva-deinterlacecontainerdeviceclass-deinterlacequerymodecaps.md)
 

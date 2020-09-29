@@ -7,12 +7,12 @@ keywords:
 - surface 处理 WDK Direct3D
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 45b2db61884e382c6c2830a4e7de25e7c7040f37
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 0503563b5cb1a441ed9f059526a0d5685654c3ec
+ms.sourcegitcommit: f8619f20a0903dd64f8641a5266ecad6df5f1d57
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90716298"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91423992"
 ---
 # <a name="direct3d-surface-handles"></a>Direct3D 图面句柄
 
@@ -26,7 +26,7 @@ Microsoft DirectX 7.0 设备驱动程序接口 (DDI) 旨在促进这样一种模
 
 在命令流中嵌入的句柄引用了表面。 在这些高频操作中，驱动程序可以在图面上查找自己的图面表示形式，而无需通过 helper 函数（如 [**EngLockDirectDrawSurface**](/windows/win32/api/winddi/nf-winddi-englockdirectdrawsurface)）锁定曲面。
 
-分配这些句柄的机制是名为 " [**D3dCreateSurfaceEx**](/windows/win32/api/ddrawint/nc-ddrawint-pdd_createsurfaceex)" 的驱动程序入口点。 此入口点在调用现有的 [*DdCanCreateSurface*](/previous-versions/windows/hardware/drivers/ff549213(v=vs.85)) 和 [*DdCreateSurface*](/previous-versions/windows/hardware/drivers/ff549263(v=vs.85)) 入口点之后，以及在视频内存地址和句柄已分配给表面之后直接调用。 在 **D3dCreateSurfaceEx** 时，驱动程序将所有相关信息从 DirectDraw 运行时的 surface 结构副本复制到其自身的 surface 结构。 驱动程序端副本对于诸如大小、格式和 **fpVidMem** 之类的图面 [** \_ 图面图面 \_ **](/windows/win32/api/ddrawint/ns-ddrawint-_dd_surface_global) 结构) 的成员 (是必需的。
+分配这些句柄的机制是名为 " [**D3dCreateSurfaceEx**](/windows/win32/api/ddrawint/nc-ddrawint-pdd_createsurfaceex)" 的驱动程序入口点。 此入口点在调用现有的 [*DdCanCreateSurface*](/previous-versions/windows/hardware/drivers/ff549213(v=vs.85)) 和 [*DdCreateSurface*](/previous-versions/windows/hardware/drivers/ff549263(v=vs.85)) 入口点之后，以及在视频内存地址和句柄已分配给表面之后直接调用。 在 **D3dCreateSurfaceEx** 时，驱动程序将所有相关信息从 DirectDraw 运行时的 surface 结构副本复制到其自身的 surface 结构。 驱动程序端副本对于诸如大小、格式和 **fpVidMem** 之类的图面 [** \_ 图面图面 \_ **](/windows/win32/api/ddrawint/ns-ddrawint-dd_surface_global) 结构) 的成员 (是必需的。
 
 对于每个设备和每个进程，句柄都保证是唯一的。 句柄对于每个上下文都是唯一的，因此，对于在 [创建驱动程序端表面结构](creating-driver-side-surface-structures.md)时更详细地讨论的驱动程序，这有一些意义。
 

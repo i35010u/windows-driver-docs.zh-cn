@@ -7,12 +7,12 @@ keywords:
 - 顶点缓冲 WDK DirectX 8.0，在 Windows 2000 上重命名
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5df43dfbbd570dd3e8bd24e797ec83dff30df330
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 3e612b41ea5f5ad3e3018c3d2ad85e93d1b34fc3
+ms.sourcegitcommit: f8619f20a0903dd64f8641a5266ecad6df5f1d57
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90716028"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91423620"
 ---
 # <a name="handling-renaming-on-windows-2000"></a>在 Windows 2000 上处理重命名
 
@@ -76,7 +76,7 @@ return DDHAL_DRIVER_HANDLED;
 
 为了使非本地视频内存可用于用户模式进程，需要将内存提交并映射到用户模式进程。 若要确保在执行顶点缓冲区重命名时执行此操作，至关重要，使用 **Eng * * * Xxx* 函数 [**HeapVidMemAllocAligned**](/windows/win32/api/dmemmgr/nf-dmemmgr-heapvidmemallocaligned)分配顶点缓冲区的新内存。 这可以确保在使用之前提交和映射内存。 **HeapVidMemAllocAligned** 返回 AGP 堆的概念地址空间的偏移量，因此，此指针可直接用作 **fpHeapOffset** 。
 
-如果驱动程序返回 DDHAL \_ 驱动程序，而该驱动程序 \_ 已处理 AGP 图面的锁定，则内核代码将在[**DD \_ LOCKDATA**](/windows/win32/api/ddrawint/ns-ddrawint-_dd_lockdata)数据结构中将**lpSurfData**的值返回到运行时和应用程序。 如果驱动程序返回 DDHAL \_ 驱动程序 \_ NOTHANDLED，内核只是将 **fpVidMem** 的值返回到用户模式。 因此， \_ \_ 只要将 **fpVidMem** 更新为指向新的用户模式指针，就不必返回已处理的 DDHAL 驱动程序。 但是，我们建议驱动程序将设置为 **fpVidMem** 和 **LPSURFDATA** 并返回 DDHAL \_ 驱动程序已 \_ 处理。
+如果驱动程序返回 DDHAL \_ 驱动程序，而该驱动程序 \_ 已处理 AGP 图面的锁定，则内核代码将在[**DD \_ LOCKDATA**](/windows/win32/api/ddrawint/ns-ddrawint-dd_lockdata)数据结构中将**lpSurfData**的值返回到运行时和应用程序。 如果驱动程序返回 DDHAL \_ 驱动程序 \_ NOTHANDLED，内核只是将 **fpVidMem** 的值返回到用户模式。 因此， \_ \_ 只要将 **fpVidMem** 更新为指向新的用户模式指针，就不必返回已处理的 DDHAL 驱动程序。 但是，我们建议驱动程序将设置为 **fpVidMem** 和 **LPSURFDATA** 并返回 DDHAL \_ 驱动程序已 \_ 处理。
 
  
 

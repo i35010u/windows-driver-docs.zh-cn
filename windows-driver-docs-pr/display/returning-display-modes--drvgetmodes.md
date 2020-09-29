@@ -10,12 +10,12 @@ keywords:
 - 显示模式 WDK Windows 2000 显示
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4ec3ade17cd75b3d2a109b60d660331da6b1bdeb
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: f1b59e2ffba27221ae818f08425a5d559241a73e
+ms.sourcegitcommit: f8619f20a0903dd64f8641a5266ecad6df5f1d57
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90715810"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91423936"
 ---
 # <a name="returning-display-modes-drvgetmodes"></a>返回显示模式：DrvGetModes
 
@@ -23,7 +23,7 @@ ms.locfileid: "90715810"
 ## <span id="ddk_returning_display_modes_drvgetmodes_gg"></span><span id="DDK_RETURNING_DISPLAY_MODES_DRVGETMODES_GG"></span>
 
 
-显示驱动程序还必须支持 [**DrvGetModes**](/windows/win32/api/winddi/nf-winddi-drvgetmodes)。 此函数为 GDI 提供指向 [**DEVMODEW**](/windows/win32/api/wingdi/ns-wingdi-_devicemodew) 结构数组的指针。 结构为其支持的各种模式定义显示的属性，包括) 的维度 (、像素数、平面数、每个平面的位数、颜色信息等。
+显示驱动程序还必须支持 [**DrvGetModes**](/windows/win32/api/winddi/nf-winddi-drvgetmodes)。 此函数为 GDI 提供指向 [**DEVMODEW**](/windows/win32/api/wingdi/ns-wingdi-devicemodew) 结构数组的指针。 结构为其支持的各种模式定义显示的属性，包括) 的维度 (、像素数、平面数、每个平面的位数、颜色信息等。
 
 在调用 [**DrvGetModes**](/windows/win32/api/winddi/nf-winddi-drvgetmodes) 函数时，驱动程序将可用显示模式写入内存的顺序可能会影响 Windows 选择的最终显示模式。 通常情况下，如果应用程序未指定默认模式，则系统将在驱动程序提供的列表中选择第一个匹配模式。
 
@@ -39,11 +39,11 @@ ms.locfileid: "90715810"
 
 **Ansi-c.** 600x800x32bpp@60Hz DMDO \_ 90 DMDFO \_ CENTER
 
-**2-d.** 600x800x32bpp@60Hz DMDO \_ 270 DMDFO \_ CENTER
+**D.** 600x800x32bpp@60Hz DMDO \_ 270 DMDFO \_ CENTER
 
 **Case 1**
 
-如果应用程序尝试将监视器设置为 600x800x32bpp@60Hz ，但 \_ \_ 没有在[**DEVMODEW**](/windows/win32/api/wingdi/ns-wingdi-_devicemodew)的**dmFields**成员中设置 dm DISPLAYORIENTATION 和 dm DISPLAYFIXEDOUTPUT 标志，则系统必须选择方向和固定输出模式。 在这种情况下，系统会选择显示模式 C，因为它是与当前 DMDFO CENTER 设置匹配的第一个列出的模式 \_ 。
+如果应用程序尝试将监视器设置为 600x800x32bpp@60Hz ，但 \_ \_ 没有在[**DEVMODEW**](/windows/win32/api/wingdi/ns-wingdi-devicemodew)的**dmFields**成员中设置 dm DISPLAYORIENTATION 和 dm DISPLAYFIXEDOUTPUT 标志，则系统必须选择方向和固定输出模式。 在这种情况下，系统会选择显示模式 C，因为它是与当前 DMDFO CENTER 设置匹配的第一个列出的模式 \_ 。
 
 **Case 2**
 
@@ -71,7 +71,7 @@ ms.locfileid: "90715810"
 
 **Ansi-c.** 800x600x32bpp@60Hz DMDO \_ 默认 DMDFO \_ 中心
 
-**2-d.** 800x600x32bpp@60Hz DMDO \_ 默认 DMDFO \_ STRETCH
+**D.** 800x600x32bpp@60Hz DMDO \_ 默认 DMDFO \_ STRETCH
 
 在这种情况下，如果应用程序尝试将监视器设置为 800x600x32bpp@60Hz ，系统会选择 "显示模式 D"。
 

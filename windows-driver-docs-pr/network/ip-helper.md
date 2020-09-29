@@ -8,12 +8,12 @@ keywords:
 - 网络驱动程序 WDK，IP 帮助程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 94f60610572bf5113708c732ab1282e69982f87b
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 34b13150ed18539caf3be52858396e7e8f732dcd
+ms.sourcegitcommit: f8619f20a0903dd64f8641a5266ecad6df5f1d57
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90715744"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91423818"
 ---
 # <a name="ip-helper-overview"></a>IP 帮助程序概述
 
@@ -557,7 +557,7 @@ IP 帮助程序文档广泛使用术语 "适配器" 和 "接口"。 *适配器*�
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="/windows/win32/api/netioapi/ne-netioapi-_mib_if_table_level" data-raw-source="[&lt;strong&gt;MIB_IF_TABLE_LEVEL&lt;/strong&gt;](/windows/win32/api/netioapi/ne-netioapi-_mib_if_table_level)"><strong>MIB_IF_TABLE_LEVEL</strong></a></p></td>
+<td align="left"><p><a href="/windows/win32/api/netioapi/ne-netioapi-mib_if_table_level" data-raw-source="[&lt;strong&gt;MIB_IF_TABLE_LEVEL&lt;/strong&gt;](/windows/win32/api/netioapi/ne-netioapi-_mib_if_table_level)"><strong>MIB_IF_TABLE_LEVEL</strong></a></p></td>
 <td align="left"><p>定义要检索的接口信息的级别。</p></td>
 </tr>
 <tr class="even">
@@ -592,11 +592,11 @@ IP 帮助程序文档广泛使用术语 "适配器" 和 "接口"。 *适配器*�
 <td align="left"><p>定义重复地址检测 (DAD) 状态。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="/windows/win32/api/nldef/ne-nldef-_nl_link_local_address_behavior" data-raw-source="[&lt;strong&gt;NL_LINK_LOCAL_ADDRESS_BEHAVIOR&lt;/strong&gt;](/windows/win32/api/nldef/ne-nldef-_nl_link_local_address_behavior)"><strong>NL_LINK_LOCAL_ADDRESS_BEHAVIOR</strong></a></p></td>
+<td align="left"><p><a href="/windows/win32/api/nldef/ne-nldef-nl_link_local_address_behavior" data-raw-source="[&lt;strong&gt;NL_LINK_LOCAL_ADDRESS_BEHAVIOR&lt;/strong&gt;](/windows/win32/api/nldef/ne-nldef-_nl_link_local_address_behavior)"><strong>NL_LINK_LOCAL_ADDRESS_BEHAVIOR</strong></a></p></td>
 <td align="left"><p>定义链接本地地址行为。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="/windows/win32/api/nldef/ne-nldef-_nl_neighbor_state" data-raw-source="[&lt;strong&gt;NL_NEIGHBOR_STATE&lt;/strong&gt;](/windows/win32/api/nldef/ne-nldef-_nl_neighbor_state)"><strong>NL_NEIGHBOR_STATE</strong></a></p></td>
+<td align="left"><p><a href="/windows/win32/api/nldef/ne-nldef-nl_neighbor_state" data-raw-source="[&lt;strong&gt;NL_NEIGHBOR_STATE&lt;/strong&gt;](/windows/win32/api/nldef/ne-nldef-_nl_neighbor_state)"><strong>NL_NEIGHBOR_STATE</strong></a></p></td>
 <td align="left"><p>定义网络层邻域 IP 地址的状态，如 RFC 2461 中所述的7.3.2 部分中所述。</p></td>
 </tr>
 <tr class="odd">
@@ -604,7 +604,7 @@ IP 帮助程序文档广泛使用术语 "适配器" 和 "接口"。 *适配器*�
 <td align="left"><p>定义 IP 地址的前缀或网络部分的源。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="/windows/win32/api/nldef/ne-nldef-_nl_route_origin" data-raw-source="[&lt;strong&gt;NL_ROUTE_ORIGIN&lt;/strong&gt;](/windows/win32/api/nldef/ne-nldef-_nl_route_origin)"><strong>NL_ROUTE_ORIGIN</strong></a></p></td>
+<td align="left"><p><a href="/windows/win32/api/nldef/ne-nldef-nl_route_origin" data-raw-source="[&lt;strong&gt;NL_ROUTE_ORIGIN&lt;/strong&gt;](/windows/win32/api/nldef/ne-nldef-_nl_route_origin)"><strong>NL_ROUTE_ORIGIN</strong></a></p></td>
 <td align="left"><p>定义 IP 路由的源。</p></td>
 </tr>
 <tr class="odd">
@@ -612,7 +612,7 @@ IP 帮助程序文档广泛使用术语 "适配器" 和 "接口"。 *适配器*�
 <td align="left"><p>定义将 IP 路由添加到的路由机制，如 RFC 4292 中所述。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="/windows/win32/api/nldef/ne-nldef-_nl_router_discovery_behavior" data-raw-source="[&lt;strong&gt;NL_ROUTER_DISCOVERY_BEHAVIOR&lt;/strong&gt;](/windows/win32/api/nldef/ne-nldef-_nl_router_discovery_behavior)"><strong>NL_ROUTER_DISCOVERY_BEHAVIOR</strong></a></p></td>
+<td align="left"><p><a href="/windows/win32/api/nldef/ne-nldef-nl_router_discovery_behavior" data-raw-source="[&lt;strong&gt;NL_ROUTER_DISCOVERY_BEHAVIOR&lt;/strong&gt;](/windows/win32/api/nldef/ne-nldef-_nl_router_discovery_behavior)"><strong>NL_ROUTER_DISCOVERY_BEHAVIOR</strong></a></p></td>
 <td align="left"><p>定义路由器发现行为，如 RFC 2461 中所述。</p></td>
 </tr>
 <tr class="odd">

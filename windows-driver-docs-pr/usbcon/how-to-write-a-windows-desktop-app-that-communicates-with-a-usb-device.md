@@ -3,12 +3,12 @@ description: 编写与 USB 设备通信的 Windows 桌面应用程序的最简�
 title: 编写基于 WinUSB 模板的 Windows 桌面应用
 ms.date: 07/16/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 04334817bcfafb8f63094d3d9cbe983e0e3667b1
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 03fb3be20aaeb4be827190482a5f99ff23db6802
+ms.sourcegitcommit: f8619f20a0903dd64f8641a5266ecad6df5f1d57
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90716690"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91423848"
 ---
 # <a name="write-a-windows-desktop-app-based-on-the-winusb-template"></a>编写基于 WinUSB 模板的 Windows 桌面应用
 
@@ -25,7 +25,7 @@ ms.locfileid: "90716690"
 
 1. 在 " **新建项目** " 对话框顶部的 "搜索" 框中，键入 " **USB"。**
 2. 在中间窗格中，选择 " **WinUSB Application (通用) **"。
-3. 选择“**下一页**”。
+3. 选择“下一步”  。
 4. 输入项目名称，选择 "保存位置"，然后选择 " **创建**"。
 
     以下屏幕截图显示了 WinUSB 应用程序的 " **新建项目** " 对话框 ** (通用) ** 模板。
@@ -48,7 +48,7 @@ ms.locfileid: "90716690"
 
 6. 在 " **新建项目** " 对话框顶部的 "搜索" 框中，再次键入 " **USB"。**
 7. 在中间窗格中，选择 " **WINUSB INF 驱动程序包**"。
-8. 选择“**下一页**”。
+8. 选择“下一步”  。
 9. 输入项目名称，然后选择 " **创建**"。
 
     以下屏幕截图显示了**WINUSB INF 驱动程序包**模板的 "**新建项目**" 对话框。
@@ -363,10 +363,10 @@ Return value:
 
     或者，您可以调用 [**SetupDiEnumDeviceInfo**](/windows/win32/api/setupapi/nf-setupapi-setupdienumdeviceinfo) 来枚举设备信息集，并返回由调用方分配的 [**SP \_ lnk-devinfo \_ 数据**](/windows/win32/api/setupapi/ns-setupapi-sp_devinfo_data) 结构中的索引指定的设备接口元素的相关信息。 然后，你可以在[**SetupDiEnumDeviceInterfaces**](/windows/win32/api/setupapi/nf-setupapi-setupdienumdeviceinterfaces)函数的*DeviceInfoData*参数中传递对此结构的引用。
 
-3. [**SetupDiGetDeviceInterfaceDetail**](/windows/win32/api/setupapi/nf-setupapi-setupdigetdeviceinterfacedetaila) 获取设备接口的详细数据。 该信息在 [**SP \_ 设备 \_ 接口 \_ 详细信息 \_ 数据**](/windows/win32/api/setupapi/ns-setupapi-_sp_device_interface_detail_data_a) 结构中返回。 由于 **SP \_ 设备 \_ 接口 \_ 详细信息 \_ 数据** 结构的大小不同， **SetupDiGetDeviceInterfaceDetail** 调用了两次。 第一次调用获取为 **SP \_ 设备 \_ 接口 \_ 详细信息 \_ 数据** 结构分配的缓冲区大小。 第二次调用用有关接口的详细信息填充分配的缓冲区。
+3. [**SetupDiGetDeviceInterfaceDetail**](/windows/win32/api/setupapi/nf-setupapi-setupdigetdeviceinterfacedetaila) 获取设备接口的详细数据。 该信息在 [**SP \_ 设备 \_ 接口 \_ 详细信息 \_ 数据**](/windows/win32/api/setupapi/ns-setupapi-sp_device_interface_detail_data_a) 结构中返回。 由于 **SP \_ 设备 \_ 接口 \_ 详细信息 \_ 数据** 结构的大小不同， **SetupDiGetDeviceInterfaceDetail** 调用了两次。 第一次调用获取为 **SP \_ 设备 \_ 接口 \_ 详细信息 \_ 数据** 结构分配的缓冲区大小。 第二次调用用有关接口的详细信息填充分配的缓冲区。
    1. 调用 [**SetupDiGetDeviceInterfaceDetail**](/windows/win32/api/setupapi/nf-setupapi-setupdigetdeviceinterfacedetaila) ，并将 *DeviceInterfaceDetailData* 参数设置为 **NULL**。 函数在 *requiredlength* 参数中返回正确的缓冲区大小。 此调用失败，出现错误 \_ \_ 缓冲区错误代码。 应为此错误代码。
-   2. 基于在*requiredlength*参数中检索到的正确缓冲区大小为[**SP \_ 设备 \_ 接口 \_ 详细信息 \_ 数据**](/windows/win32/api/setupapi/ns-setupapi-_sp_device_interface_detail_data_a)结构分配内存。
-   3. 再次调用 [**SetupDiGetDeviceInterfaceDetail**](/windows/win32/api/setupapi/nf-setupapi-setupdigetdeviceinterfacedetaila) ，并向其传递对 *DeviceInterfaceDetailData* 参数中已初始化结构的引用。 当函数返回时，该结构将填充有关接口的详细信息。 设备路径在 [**SP \_ 设备 \_ 接口 \_ 详细信息 \_ 数据**](/windows/win32/api/setupapi/ns-setupapi-_sp_device_interface_detail_data_a) 结构的 **DevicePath** 成员中。
+   2. 基于在*requiredlength*参数中检索到的正确缓冲区大小为[**SP \_ 设备 \_ 接口 \_ 详细信息 \_ 数据**](/windows/win32/api/setupapi/ns-setupapi-sp_device_interface_detail_data_a)结构分配内存。
+   3. 再次调用 [**SetupDiGetDeviceInterfaceDetail**](/windows/win32/api/setupapi/nf-setupapi-setupdigetdeviceinterfacedetaila) ，并向其传递对 *DeviceInterfaceDetailData* 参数中已初始化结构的引用。 当函数返回时，该结构将填充有关接口的详细信息。 设备路径在 [**SP \_ 设备 \_ 接口 \_ 详细信息 \_ 数据**](/windows/win32/api/setupapi/ns-setupapi-sp_device_interface_detail_data_a) 结构的 **DevicePath** 成员中。
 
 ### <a name="creating-a-file-handle-for-the-device"></a>为设备创建文件句柄
 

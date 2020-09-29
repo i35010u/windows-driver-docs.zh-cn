@@ -14,12 +14,12 @@ api_type:
 - COM
 ms.date: 01/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: ee9656c91928eb00d2bbc483e4ec63c1ecce11a5
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 0503029be99ebcb9f5f8a6a13da9f0e1da7a8d71
+ms.sourcegitcommit: f8619f20a0903dd64f8641a5266ecad6df5f1d57
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90717358"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91423866"
 ---
 # <a name="dxva_procampcontroldeviceclassprocampcontrolblt-method"></a>DXVA \_ ProcAmpControlDeviceClass：:P rocampcontrolblt 方法
 
@@ -37,7 +37,7 @@ HRESULT ProcAmpControlBlt(
 );
 ```
 
-<a name="parameters"></a>参数
+<a name="parameters"></a>parameters
 ----------
 
 *lpDDSDstSurface* \[在中， \] 提供指向目标图面的指针。
@@ -58,7 +58,7 @@ HRESULT ProcAmpControlBlt(
 
 目标图面可以是离线平面、D3D 渲染器目标、D3D 纹理或同时也是渲染器目标的 D3D 纹理。 目标图面将始终在本地视频内存中分配。 \_除非在 ProcAmp 调整过程中执行了 YUV 到 RGB 的颜色空间转换，否则目标图面的像素格式将为 DXVA ProcAmpControlCaps 结构中所指示的格式。 在这种情况下，目标表面格式将为 RGB 格式，每个颜色组件的精度至少为8位。
 
-示例*ProcAmpControlBlt*函数直接映射到[**DD \_ MOTIONCOMPCALLBACKS**](/windows/win32/api/ddrawint/ns-ddrawint-dd_motioncompcallbacks)结构的**RenderMoComp**成员的调用。 **RenderMoComp**成员指向驱动程序提供的*DdMoCompRender*回调，该回调引用[**DD \_ RENDERMOCOMPDATA**](/windows/win32/api/ddrawint/ns-ddrawint-_dd_rendermocompdata)结构。 \_按如下所示填充 DD RENDERMOCOMPDATA 结构。
+示例*ProcAmpControlBlt*函数直接映射到[**DD \_ MOTIONCOMPCALLBACKS**](/windows/win32/api/ddrawint/ns-ddrawint-dd_motioncompcallbacks)结构的**RenderMoComp**成员的调用。 **RenderMoComp**成员指向驱动程序提供的*DdMoCompRender*回调，该回调引用[**DD \_ RENDERMOCOMPDATA**](/windows/win32/api/ddrawint/ns-ddrawint-dd_rendermocompdata)结构。 \_按如下所示填充 DD RENDERMOCOMPDATA 结构。
 
 <table>
 <colgroup>
@@ -110,5 +110,5 @@ HRESULT ProcAmpControlBlt(
 
 [**DD \_ MOTIONCOMPCALLBACKS**](/windows/win32/api/ddrawint/ns-ddrawint-dd_motioncompcallbacks)
 
-[**DD \_ CREATEMOCOMPDATA**](/windows/win32/api/ddrawint/ns-ddrawint-_dd_createmocompdata)
+[**DD \_ CREATEMOCOMPDATA**](/windows/win32/api/ddrawint/ns-ddrawint-dd_createmocompdata)
 

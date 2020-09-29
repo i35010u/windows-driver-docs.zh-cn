@@ -7,12 +7,12 @@ keywords:
 - 标头文件 WDK 视频微型端口
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8e241b5de931f07ffc1747663e721e447d169394
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: e7294bb5d17b1d29091eaf99c0ff58102109afc2
+ms.sourcegitcommit: f8619f20a0903dd64f8641a5266ecad6df5f1d57
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90717328"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91423930"
 ---
 # <a name="video-miniport-driver-header-files-windows-2000-model"></a>视频微型端口驱动程序标头文件（Windows 2000 模型）
 
@@ -52,7 +52,7 @@ Windows 2000 显示器驱动程序模型中的视频微型端口驱动程序包�
 </tr>
 <tr class="odd">
 <td align="left"><p><em>tvout</em></p></td>
-<td align="left"><p>包含用于实现电视连接器和副本保护支持以及此结构中使用的常量的 <a href="/windows/win32/api/tvout/ns-tvout-_videoparameters" data-raw-source="[&lt;strong&gt;VIDEOPARAMETERS&lt;/strong&gt;](/windows/win32/api/tvout/ns-tvout-_videoparameters)"><strong>VIDEOPARAMETERS</strong></a> 结构。</p></td>
+<td align="left"><p>包含用于实现电视连接器和副本保护支持以及此结构中使用的常量的 <a href="/windows/win32/api/tvout/ns-tvout-videoparameters" data-raw-source="[&lt;strong&gt;VIDEOPARAMETERS&lt;/strong&gt;](/windows/win32/api/tvout/ns-tvout-_videoparameters)"><strong>VIDEOPARAMETERS</strong></a> 结构。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><em>视频。h</em></p></td>

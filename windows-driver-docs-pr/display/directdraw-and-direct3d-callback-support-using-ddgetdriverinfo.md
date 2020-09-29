@@ -12,20 +12,20 @@ keywords:
 ms.date: 12/06/2018
 ms.localizationpriority: medium
 ms.custom: seodec18
-ms.openlocfilehash: ae8b88c113dd769b7568b727120f03324c751be7
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 681add3f7f4dff432728a22a44cd4b31eb431ae2
+ms.sourcegitcommit: f8619f20a0903dd64f8641a5266ecad6df5f1d57
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90716516"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91423740"
 ---
 # <a name="directdraw-and-direct3d-callback-support-using-ddgetdriverinfo"></a>使用 DdGetDriverInfo 的 DirectDraw 和 Direct3D 回调支持
 
-显示驱动程序可以实现 [**DdGetDriverInfo**](/windows/win32/api/ddrawint/nc-ddrawint-pdd_getdriverinfo) 函数，以指示各种 DirectDraw 和 Direct3D 回调支持。 回调支持是由驱动程序在[**DD \_ GETDRIVERINFODATA**](/windows/win32/api/ddrawint/ns-ddrawint-_dd_getdriverinfodata)结构的**guidInfo**成员中接收到的、 *lpGetDriverInfo*参数指向的 guid。 驱动程序返回指向 **lpvData** 成员中的结构的指针，该结构指定 DirectDraw 或 Direct3D 回叫支持。
+显示驱动程序可以实现 [**DdGetDriverInfo**](/windows/win32/api/ddrawint/nc-ddrawint-pdd_getdriverinfo) 函数，以指示各种 DirectDraw 和 Direct3D 回调支持。 回调支持是由驱动程序在[**DD \_ GETDRIVERINFODATA**](/windows/win32/api/ddrawint/ns-ddrawint-dd_getdriverinfodata)结构的**guidInfo**成员中接收到的、 *lpGetDriverInfo*参数指向的 guid。 驱动程序返回指向 **lpvData** 成员中的结构的指针，该结构指定 DirectDraw 或 Direct3D 回叫支持。
 
-- 如果驱动程序收到 GUID \_ COLORCONTROLCALLBACKS guid，则返回指向 [**DD \_ ColorControlCallbacks**](/windows/win32/api/ddrawint/ns-ddrawint-_dd_colorcontrolcallbacks) 结构的指针。 如果支持 [颜色控制](color-control-initialization.md)，驱动程序将填充 DD COLORCONTROLCALLBACKS 的 **ColorControl** 成员， \_ 以指定其 [*DdControlColor*](/windows/win32/api/ddrawint/nc-ddrawint-pdd_colorcb_colorcontrol) 回调函数。
+- 如果驱动程序收到 GUID \_ COLORCONTROLCALLBACKS guid，则返回指向 [**DD \_ ColorControlCallbacks**](/windows/win32/api/ddrawint/ns-ddrawint-dd_colorcontrolcallbacks) 结构的指针。 如果支持 [颜色控制](color-control-initialization.md)，驱动程序将填充 DD COLORCONTROLCALLBACKS 的 **ColorControl** 成员， \_ 以指定其 [*DdControlColor*](/windows/win32/api/ddrawint/nc-ddrawint-pdd_colorcb_colorcontrol) 回调函数。
 
-- 如果驱动程序收到 GUID \_ D3DCallbacks、guid \_ D3DCALLBACKS3 或 GUID \_ Miscellaneous2Callbacks guid，它将返回指向 [**D3DHAL \_ 回调**](/windows-hardware/drivers/ddi/d3dhal/ns-d3dhal-_d3dhal_callbacks)、 [**D3DHAL \_ CALLBACKS3**](/windows-hardware/drivers/ddi/d3dhal/ns-d3dhal-_d3dhal_callbacks3)或 [**DD \_ Miscellaneous2Callbacks**](/windows/win32/api/ddrawint/ns-ddrawint-_dd_miscellaneous2callbacks) 结构的指针。 驱动程序使用这些结构来指示其 [Direct3D 回叫支持](driver-functions-to-support-direct3d.md)。 有关详细信息，请参阅 [DIRECT3D DDI](direct3d.md)。
+- 如果驱动程序收到 GUID \_ D3DCallbacks、guid \_ D3DCALLBACKS3 或 GUID \_ Miscellaneous2Callbacks guid，它将返回指向 [**D3DHAL \_ 回调**](/windows-hardware/drivers/ddi/d3dhal/ns-d3dhal-_d3dhal_callbacks)、 [**D3DHAL \_ CALLBACKS3**](/windows-hardware/drivers/ddi/d3dhal/ns-d3dhal-_d3dhal_callbacks3)或 [**DD \_ Miscellaneous2Callbacks**](/windows/win32/api/ddrawint/ns-ddrawint-dd_miscellaneous2callbacks) 结构的指针。 驱动程序使用这些结构来指示其 [Direct3D 回叫支持](driver-functions-to-support-direct3d.md)。 有关详细信息，请参阅 [DIRECT3D DDI](direct3d.md)。
 
 - 如果驱动程序收到 GUID \_ KERNELCALLBACKS guid，则返回指向 [**DD \_ KernelCallbacks**](/windows/win32/api/ddrawint/ns-ddrawint-dd_kernelcallbacks) 结构的指针。 驱动程序将填充 DD KERNELCALLBACKS 的成员， \_ 以指示它支持以下回调函数。
 
@@ -52,11 +52,11 @@ ms.locfileid: "90716516"
   </tbody>
   </table>
 
-- 如果驱动程序收到 GUID \_ MISCELLANEOUSCALLBACKS guid，则返回指向 [**DD \_ MiscellaneousCallbacks**](/windows/win32/api/ddrawint/ns-ddrawint-_dd_miscellaneouscallbacks) 结构的指针。 如果它支持 [*DdGetAvailDriverMemory*](/windows/win32/api/ddrawint/nc-ddrawint-pdd_getavaildrivermemory) 回调函数，则驱动程序将填充 DD MISCELLANEOUSCALLBACKS 的 *DdGetAvailDriverMemory* 成员 \_ 以指定 *DdGetAvailDriverMemory*。
+- 如果驱动程序收到 GUID \_ MISCELLANEOUSCALLBACKS guid，则返回指向 [**DD \_ MiscellaneousCallbacks**](/windows/win32/api/ddrawint/ns-ddrawint-dd_miscellaneouscallbacks) 结构的指针。 如果它支持 [*DdGetAvailDriverMemory*](/windows/win32/api/ddrawint/nc-ddrawint-pdd_getavaildrivermemory) 回调函数，则驱动程序将填充 DD MISCELLANEOUSCALLBACKS 的 *DdGetAvailDriverMemory* 成员 \_ 以指定 *DdGetAvailDriverMemory*。
 
 - 如果驱动程序收到 GUID \_ MOTIONCOMPCALLBACKS guid，它将返回一个指向 [**DD \_ MotionCompCallbacks**](/windows/win32/api/ddrawint/ns-ddrawint-dd_motioncompcallbacks) 结构的指针，以指示其对 [运动补偿回调](motion-compensation-callbacks.md)的支持。 有关详细信息，请参阅 [压缩的视频解码](compressed-video-decoding.md)。
 
-- 如果驱动程序收到 GUID \_ NTCALLBACKS guid，则返回指向 [**DD \_ NTCallbacks**](/windows/win32/api/ddrawint/ns-ddrawint-_dd_ntcallbacks) 结构的指针。 驱动程序将填充 DD NTCALLBACKS 的成员， \_ 以指示它支持以下回调函数。
+- 如果驱动程序收到 GUID \_ NTCALLBACKS guid，则返回指向 [**DD \_ NTCallbacks**](/windows/win32/api/ddrawint/ns-ddrawint-dd_ntcallbacks) 结构的指针。 驱动程序将填充 DD NTCALLBACKS 的成员， \_ 以指示它支持以下回调函数。
 
   <table>
   <colgroup>

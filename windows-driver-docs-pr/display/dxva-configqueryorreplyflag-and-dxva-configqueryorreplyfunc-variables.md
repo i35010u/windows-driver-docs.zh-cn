@@ -20,12 +20,12 @@ keywords:
 ms.date: 12/06/2018
 ms.localizationpriority: medium
 ms.custom: seodec18
-ms.openlocfilehash: 3db05b39c1bcee54c7dfb573efffa7eb3d70d06e
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 3d4b925066005dcc792d1eb79ddd3fdf4d16613a
+ms.sourcegitcommit: f8619f20a0903dd64f8641a5266ecad6df5f1d57
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90717236"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91423892"
 ---
 # <a name="dxva_configqueryorreplyflag-and-dxva_configqueryorreplyfunc-variables"></a>DXVA \_ ConfigQueryOrReplyFlag 和 DXVA \_ ConfigQueryorReplyFunc 变量
 
@@ -139,7 +139,7 @@ ms.locfileid: "90717236"
 
 *DXVA \_ EncryptProtocolFunc* DWORD 变量的最高有效24位设置如下：
 
--   0xFFFF00 在调用[*DdMoCompRender*](/windows/win32/api/ddrawint/nc-ddrawint-pdd_mocompcb_render)的[**DD \_ RENDERMOCOMPDATA**](/windows/win32/api/ddrawint/ns-ddrawint-_dd_rendermocompdata)结构的**dwFunction**成员中由主机软件解码器发送时。
+-   0xFFFF00 在调用[*DdMoCompRender*](/windows/win32/api/ddrawint/nc-ddrawint-pdd_mocompcb_render)的[**DD \_ RENDERMOCOMPDATA**](/windows/win32/api/ddrawint/ns-ddrawint-dd_rendermocompdata)结构的**dwFunction**成员中由主机软件解码器发送时。
 
 -   0xFFFF08 由视频加速器在[**DXVA \_ EncryptProtocolHeader**](/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_encryptprotocolheader)结构的**dwFunction**成员中发送。
 
@@ -147,7 +147,7 @@ ms.locfileid: "90717236"
 
 ### <a name="span-idspecifying_an_operation_to_be_performed_by_ddmocomprenderspanspan-idspecifying_an_operation_to_be_performed_by_ddmocomprenderspanspan-idspecifying_an_operation_to_be_performed_by_ddmocomprenderspanspecifying-an-operation-to-be-performed-by-ddmocomprender"></a><span id="Specifying_an_Operation_to_be_Performed_by_DdMoCompRender"></span><span id="specifying_an_operation_to_be_performed_by_ddmocomprender"></span><span id="SPECIFYING_AN_OPERATION_TO_BE_PERFORMED_BY_DDMOCOMPRENDER"></span>指定 DdMoCompRender 执行的操作
 
-当使用*bDXVA \_ func*来指示要执行的实际操作 (压缩的图片解码、alpha 混合数据加载、alpha 混合组合或图片重新采样) 时，通过在对[*RENDERMOCOMPDATA*](/windows/win32/api/ddrawint/nc-ddrawint-pdd_mocompcb_render)的调用中，将*bDXVA \_ Func*包含在[**DD \_ DdMoCompRender**](/windows/win32/api/ddrawint/ns-ddrawint-_dd_rendermocompdata)结构的**dwFunction**成员的一系列*bDXVA \_ Func*字节值中。 第一个 *bDXVA \_ Func* 操作是在最重要的字节中指定的，下一个操作是在下一个最重要的字节中指定的，依此类推。 **DwFunction**的剩余字节数设置为零。
+当使用*bDXVA \_ func*来指示要执行的实际操作 (压缩的图片解码、alpha 混合数据加载、alpha 混合组合或图片重新采样) 时，通过在对[*RENDERMOCOMPDATA*](/windows/win32/api/ddrawint/nc-ddrawint-pdd_mocompcb_render)的调用中，将*bDXVA \_ Func*包含在[**DD \_ DdMoCompRender**](/windows/win32/api/ddrawint/ns-ddrawint-dd_rendermocompdata)结构的**dwFunction**成员的一系列*bDXVA \_ Func*字节值中。 第一个 *bDXVA \_ Func* 操作是在最重要的字节中指定的，下一个操作是在下一个最重要的字节中指定的，依此类推。 **DwFunction**的剩余字节数设置为零。
 
  
 

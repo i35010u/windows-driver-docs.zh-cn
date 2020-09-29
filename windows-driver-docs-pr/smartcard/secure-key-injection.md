@@ -4,12 +4,12 @@ description: 安全密钥注入
 ms.assetid: 21F8ED59-B04C-40D3-AEED-015890798215
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e0e627c6440205ca7cedfef9983c26de351bfc67
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: bc9130dab72d159070435decb258a453ed940979
+ms.sourcegitcommit: f8619f20a0903dd64f8641a5266ecad6df5f1d57
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90715420"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91423844"
 ---
 # <a name="secure-key-injection"></a>安全密钥注入
 
@@ -109,7 +109,7 @@ typedef ULONG_PTR  CARD_KEY_HANDLE;
 16. 通过使用卡支持的算法之一，服务器应用程序 (S1) 生成对称密钥。 对称密钥 S1 通过版 k1 进行加密并返回到客户端应用程序。 服务器应用程序还会返回有关加密算法和用于加密 S1 的填充类型的信息。
 17. 客户端应用程序使用加密密钥数据 BLOB 以及对版 k1 的引用以及用于解密 BLOB 的任何空白信息调用 [**CardImportSessionKey**](/previous-versions/dn468731(v=vs.85)) 。
 
-    有关密钥数据 Blob 的详细信息，请参阅 [**BCRYPT \_ key \_ data \_ BLOB \_ HEADER**](/windows/win32/api/bcrypt/ns-bcrypt-_bcrypt_key_data_blob_header)。
+    有关密钥数据 Blob 的详细信息，请参阅 [**BCRYPT \_ key \_ data \_ BLOB \_ HEADER**](/windows/win32/api/bcrypt/ns-bcrypt-bcrypt_key_data_blob_header)。
 
 18. 微型驱动程序将加密的 BLOB 数据传递到智能卡进行解密。
 19. 解密对称密钥后，智能卡会将对对称密钥的引用返回到微型驱动程序。

@@ -17,12 +17,12 @@ keywords:
 ms.date: 12/06/2018
 ms.localizationpriority: medium
 ms.custom: seodec18
-ms.openlocfilehash: 7fdd9b73d122578ea3879276819d16d4a9ecf68c
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: e87b0a44d9a129e030fbbd0105c1871be344411a
+ms.sourcegitcommit: f8619f20a0903dd64f8641a5266ecad6df5f1d57
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90716928"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91423856"
 ---
 # <a name="handling-compressed-texture-surfaces-created-in-system-memory"></a>处理在系统内存中创建的压缩纹理图面
 
@@ -43,7 +43,7 @@ RealWidth = (Width / Block size) * 4;
 RealHeight = Height * 4;
 ```
 
-驱动程序应将还原的宽度和高度值分配给内核的 [**DD \_ 表面 \_ 全局**](/windows/win32/api/ddrawint/ns-ddrawint-_dd_surface_global) surface 结构中的成员。 这样做可以防止 DirectDraw 内核模式运行时拒绝 DXT 纹理下载 blts，因为宽度和高度值不匹配。 也就是说，如果驱动程序在 DD surface GLOBAL 的 **wWidth** 和 **wHeight** 成员中保留了修改后的大小 \_ \_ ，则 DirectDraw 内核模式运行时将拒绝从已更改的系统内存图面到视频内存图面的 blt，因为源的宽度和高度在改变的 DD \_ 表面全局大小看来为 "外部" \_ 。
+驱动程序应将还原的宽度和高度值分配给内核的 [**DD \_ 表面 \_ 全局**](/windows/win32/api/ddrawint/ns-ddrawint-dd_surface_global) surface 结构中的成员。 这样做可以防止 DirectDraw 内核模式运行时拒绝 DXT 纹理下载 blts，因为宽度和高度值不匹配。 也就是说，如果驱动程序在 DD surface GLOBAL 的 **wWidth** 和 **wHeight** 成员中保留了修改后的大小 \_ \_ ，则 DirectDraw 内核模式运行时将拒绝从已更改的系统内存图面到视频内存图面的 blt，因为源的宽度和高度在改变的 DD \_ 表面全局大小看来为 "外部" \_ 。
 
  
 

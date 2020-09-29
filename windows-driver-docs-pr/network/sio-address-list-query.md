@@ -5,12 +5,12 @@ ms.assetid: c50520a3-6ba3-448e-bbb4-bf3425dcbc41
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 SIO_ADDRESS_LIST_QUERY 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: b413431bec3ef31c25eef28b2b3d7e79939e33d7
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 32e60b6db92ff0cdba0c8c9858a7090d5dfd259a
+ms.sourcegitcommit: f8619f20a0903dd64f8641a5266ecad6df5f1d57
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90715520"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91423630"
 ---
 # <a name="sio_address_list_query"></a>SIO \_ 地址 \_ 列表 \_ 查询
 
@@ -70,7 +70,7 @@ SIO \_ ADDRESS \_ LIST \_ QUERY socket i/o CONTROL 操作允许 WSK 应用程序
 
 在调用 **WskControlSocket** 函数来查询套接字地址系列的本地传输地址的当前列表时，WSK 应用程序不指定指向 IRP 的指针。
 
-如果对 **WskControlSocket** 函数的调用成功，则输出缓冲区包含 [**套接字 \_ 地址 \_ 列表**](/windows/win32/api/ws2def/ns-ws2def-_socket_address_list) 结构，后跟套接字地址系列的每个本地传输地址的 SOCKADDR 结构。
+如果对 **WskControlSocket** 函数的调用成功，则输出缓冲区包含 [**套接字 \_ 地址 \_ 列表**](/windows/win32/api/ws2def/ns-ws2def-socket_address_list) 结构，后跟套接字地址系列的每个本地传输地址的 SOCKADDR 结构。
 
 如果 **WskControlSocket** 函数返回状态 \_ 缓冲区 \_ 溢出，则由 *OutputSizeReturned* 参数指向的变量包含的输出缓冲区大小（以字节为单位），该大小需要包含套接字地址系列的本地传输地址的完整列表。
 

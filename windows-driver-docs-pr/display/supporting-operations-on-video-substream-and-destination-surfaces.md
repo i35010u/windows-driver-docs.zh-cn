@@ -12,12 +12,12 @@ keywords:
 ms.date: 12/06/2018
 ms.localizationpriority: medium
 ms.custom: seodec18
-ms.openlocfilehash: b1c672484ef232bef38872c5265921b9493374d6
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 3af1326d2156e8506e737cdf932c1b2401b63362
+ms.sourcegitcommit: f8619f20a0903dd64f8641a5266ecad6df5f1d57
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90717456"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91423966"
 ---
 # <a name="operations-on-video-substream-and-destination-surfaces"></a>针对视频子流和目标图面的操作
 
@@ -56,7 +56,7 @@ Line21 隐藏式字幕解码器和 teletext 解码器创建包含一系列缓存
 
 因此，驱动程序的 [*DdBlt*](/windows/win32/api/ddrawint/nc-ddrawint-pdd_surfcb_blt) 函数应支持将任何 FOURCC 图面复制到相同 FOURCC 格式的视频子流表面。
 
-驱动程序应指示它支持通过 \_ 在[**DDCORECAPS**](/windows/win32/api/ddrawi/ns-ddrawi-_ddcorecaps)结构的**DWCAPS2**成员中设置 DDCAPS2 COPYFOURCC 标志来复制 FOURCC 格式。 驱动程序在[**DD \_ HALINFO**](/windows/win32/api/ddrawint/ns-ddrawint-_dd_halinfo)结构的**DDCAPS**成员中指定 DDCORECAPS 结构。 DD \_ HALINFO 由驱动程序的 [**DrvGetDirectDrawInfo**](/windows/win32/api/winddi/nf-winddi-drvgetdirectdrawinfo) 函数返回。
+驱动程序应指示它支持通过 \_ 在[**DDCORECAPS**](/windows/win32/api/ddrawi/ns-ddrawi-ddcorecaps)结构的**DWCAPS2**成员中设置 DDCAPS2 COPYFOURCC 标志来复制 FOURCC 格式。 驱动程序在[**DD \_ HALINFO**](/windows/win32/api/ddrawint/ns-ddrawint-dd_halinfo)结构的**DDCAPS**成员中指定 DDCORECAPS 结构。 DD \_ HALINFO 由驱动程序的 [**DrvGetDirectDrawInfo**](/windows/win32/api/winddi/nf-winddi-drvgetdirectdrawinfo) 函数返回。
 
 在 FOURCC 视频子流表面复制操作中，驱动程序不应执行拉伸或颜色空间转换操作。
 

@@ -10,12 +10,12 @@ keywords:
 - 绘制 WDK GDI，DEVMODEW 结构
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d58be6dfc10c595c0323e6918c8fcc7298e4179c
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: d183fd72e6e981631b895f136aef52c6bb8741c4
+ms.sourcegitcommit: f8619f20a0903dd64f8641a5266ecad6df5f1d57
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90715988"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91423462"
 ---
 # <a name="the-devmodew-structure"></a>DEVMODEW 结构
 
@@ -23,7 +23,7 @@ ms.locfileid: "90715988"
 ## <span id="ddk_the_devmodew_structure_gg"></span><span id="DDK_THE_DEVMODEW_STRUCTURE_GG"></span>
 
 
-[**DEVMODEW**](/windows/win32/api/wingdi/ns-wingdi-_devicemodew)结构是 DEVMODE 结构的 Unicode 版本，如 Microsoft Windows SDK 文档中所述。  ("DEVMODEW" 上的 "W" 后缀表示 "宽" 或 Unicode 字符。 ) 虽然应用程序可以使用这两种结构，但驱动程序需要使用 DEVMODEW 结构，而不是 DEVMODE 结构。
+[**DEVMODEW**](/windows/win32/api/wingdi/ns-wingdi-devicemodew)结构是 DEVMODE 结构的 Unicode 版本，如 Microsoft Windows SDK 文档中所述。  ("DEVMODEW" 上的 "W" 后缀表示 "宽" 或 Unicode 字符。 ) 虽然应用程序可以使用这两种结构，但驱动程序需要使用 DEVMODEW 结构，而不是 DEVMODE 结构。
 
 ### <a name="span-idpublic_and_private_membersspanspan-idpublic_and_private_membersspanpublic-and-private-members"></a><span id="public_and_private_members"></span><span id="PUBLIC_AND_PRIVATE_MEMBERS"></span>公有和私有成员
 

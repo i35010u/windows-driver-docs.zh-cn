@@ -3,12 +3,12 @@ description: 了解基于 UMDF 的 USB 客户端驱动程序的源代码。
 title: 'USB 客户端驱动程序代码结构 (UMDF) '
 ms.date: 06/07/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: e939a3cbf6815e53050d15b7e9aeaa3897199f9b
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 0e3b1cc958ca4133ef0e93fa74af83f3611e4d4a
+ms.sourcegitcommit: f8619f20a0903dd64f8641a5266ecad6df5f1d57
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90715236"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91423706"
 ---
 # <a name="understanding-the-usb-client-driver-code-structure-umdf"></a>了解 USB 客户端驱动程序代码结构 (UMDF) 
 
@@ -832,7 +832,7 @@ Exit:
 }
 ```
 
-让我们看看队列机制是如何工作的。 若要与 USB 设备通信，应用程序首先会打开设备的句柄，并通过使用特定控制代码调用 [**DeviceIoControl**](/previous-versions/windows/win32/api/deviceaccess/nn-deviceaccess-ideviceiocontrol) 函数来发送设备 i/o 控制请求。 根据控制代码的类型，应用程序可以在该调用中指定输入和输出缓冲区。 调用最终由 i/o 管理器接收，通知框架。 框架创建框架请求对象并将其添加到框架队列对象。 在模板代码中，因为队列对象是用 WdfIoQueueDispatchParallel 标志创建的，所以，一旦向队列中添加了该请求，就会调用该回调。
+让我们看看队列机制是如何工作的。 若要与 USB 设备通信，应用程序首先会打开设备的句柄，并通过使用特定控制代码调用 [**DeviceIoControl**](/windows/win32/api/ioapiset/nf-ioapiset-deviceiocontrol) 函数来发送设备 i/o 控制请求。 根据控制代码的类型，应用程序可以在该调用中指定输入和输出缓冲区。 调用最终由 i/o 管理器接收，通知框架。 框架创建框架请求对象并将其添加到框架队列对象。 在模板代码中，因为队列对象是用 WdfIoQueueDispatchParallel 标志创建的，所以，一旦向队列中添加了该请求，就会调用该回调。
 
 当框架调用客户端驱动程序的事件回调时，它会将句柄传递给包含请求 (的框架请求对象及其输入和输出缓冲区) 应用程序发送。 此外，它还向包含该请求的框架队列对象发送句柄。 在事件回调中，客户端驱动程序会根据需要处理请求。 模板代码只完成请求。 客户端驱动程序可以执行更多涉及的任务。 例如，如果应用程序请求某些设备信息，则在事件回调中，客户端驱动程序可以创建 USB 控制请求并将其发送到 USB 驱动程序堆栈以检索请求的设备信息。 Usb 控件 [传输](usb-control-transfer.md)中讨论了 usb 控制请求。
 

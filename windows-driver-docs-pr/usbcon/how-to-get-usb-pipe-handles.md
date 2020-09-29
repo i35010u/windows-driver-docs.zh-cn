@@ -3,12 +3,12 @@ description: 本主题概述了 USB 管道，并介绍了 USB 客户端驱动程
 title: 如何枚举 USB 管道
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 250002cf18b82306549692f956e6f74dcc220fc9
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 886c80aed9a86f54dbc508a6b3dd5b7c5345b6a4
+ms.sourcegitcommit: f8619f20a0903dd64f8641a5266ecad6df5f1d57
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90717464"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91423496"
 ---
 # <a name="how-to-enumerate-usb-pipes"></a>如何枚举 USB 管道
 
@@ -61,7 +61,7 @@ Windows Driver Foundation (WDF) 在 [内核模式驱动程序框架](../wdf/inde
 
     对于 UMDF 客户端驱动程序，框架为该配置中的每个接口选择第一个配置和默认备用设置。
 
-<a name="instructions"></a>Instructions
+<a name="instructions"></a>说明
 ------------
 
 ### <a name="getting-usb-pipe-handles---kmdf-client-driver"></a>获取 USB 管道句柄-KMDF 客户端驱动程序
@@ -702,7 +702,7 @@ HRESULT  CMyDevice::CreateUsbIoTargets()
 }  
 ```
 
-在 UMDF 中，客户端驱动程序使用管道索引发送数据传输请求。 当管道索引为设置中的终结点打开管道时，它由 USB 驱动程序堆栈分配。 若要获取管道索引，请调用[**IWDFUsbTargetPipe：： GetInformation**](/windows-hardware/drivers/ddi/wudfusb/nf-wudfusb-iwdfusbtargetpipe-getinformation) 方法。 方法填充 [**WINUSB \_ 管道 \_ 信息**](/windows/win32/api/winusbio/ns-winusbio-_winusb_pipe_information) 结构。 **PipeId**值指示管道索引。
+在 UMDF 中，客户端驱动程序使用管道索引发送数据传输请求。 当管道索引为设置中的终结点打开管道时，它由 USB 驱动程序堆栈分配。 若要获取管道索引，请调用[**IWDFUsbTargetPipe：： GetInformation**](/windows-hardware/drivers/ddi/wudfusb/nf-wudfusb-iwdfusbtargetpipe-getinformation) 方法。 方法填充 [**WINUSB \_ 管道 \_ 信息**](/windows/win32/api/winusbio/ns-winusbio-winusb_pipe_information) 结构。 **PipeId**值指示管道索引。
 
 在目标管道上执行读取和写入操作的一种方法是调用 [**IWDFUsbInterface：： GetWinUsbHandle**](/windows-hardware/drivers/ddi/wudfusb/nf-wudfusb-iwdfusbinterface-getwinusbhandle) 以获取 WinUSB 句柄，然后调用 [WinUSB 函数](/previous-versions/windows/hardware/drivers/ff540046(v=vs.85)#winusb)。 例如，驱动程序可以调用 [**WinUsb \_ ReadPipe**](/windows/win32/api/winusb/nf-winusb-winusb_readpipe) 或 [**WinUsb \_ WritePipe**](/windows/win32/api/winusb/nf-winusb-winusb_writepipe) 函数。 在这些函数调用中，驱动程序必须指定管道索引。 有关详细信息，请参阅 [如何使用 WinUSB 功能访问 USB 设备](using-winusb-api-to-communicate-with-a-usb-device.md)。
 

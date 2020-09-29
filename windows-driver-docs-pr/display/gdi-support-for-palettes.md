@@ -13,12 +13,12 @@ keywords:
 - 颜色索引 WDK GDI
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5999cbc1927c10e7ab77c5d067eb318c66b73f7f
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 593cc6ee60467e766ab9da4f0c446d88027e0c8c
+ms.sourcegitcommit: f8619f20a0903dd64f8641a5266ecad6df5f1d57
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90716836"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91423980"
 ---
 # <a name="gdi-support-for-palettes"></a>调色板的 GDI 支持
 
@@ -30,7 +30,7 @@ GDI 可以完成与调色板管理有关的大部分工作。 当 GDI 调用 [**
 
 调色板有效地将32位 *颜色索引* 映射为24位 RGB 颜色值，这是 GDI 使用调色板的方式。 驱动程序指定其调色板，以便 GDI 可以确定不同的颜色索引在设备上的显示方式。
 
-驱动程序无需处理大多数调色板操作和计算，只要它使用 GDI 提供的 [**XLATEOBJ**](/windows/win32/api/winddi/ns-winddi-_xlateobj) 。
+驱动程序无需处理大多数调色板操作和计算，只要它使用 GDI 提供的 [**XLATEOBJ**](/windows/win32/api/winddi/ns-winddi-xlateobj) 。
 
 如果设备支持可修改的调色板，则它应实现函数 [**DrvSetPalette**](/windows/win32/api/winddi/nf-winddi-drvsetpalette)。 当应用程序更改设备的调色板并将生成的新调色板传递到驱动程序时，GDI 将调用 *DrvSetPalette* 。 驱动程序应设置其内部硬件调色板，使其尽可能与新调色板匹配。
 
@@ -61,7 +61,7 @@ GDI 可以完成与调色板管理有关的大部分工作。 当 GDI 调用 [**
 
  
 
-GDI 通常会反向使用调色板映射。 也就是说，应用程序为绘图和 GDI 指定 RGB 颜色必须找到导致设备显示该颜色的颜色索引。 正如下表中所示，GDI 提供了两个主要的调色板服务函数用于创建和删除调色板，还提供了一些与 [**PALOBJ**](/windows/win32/api/winddi/ns-winddi-_palobj) 和 [**XLATEOBJ**](/windows/win32/api/winddi/ns-winddi-_xlateobj) 相关的服务功能，用于在两个调色板之间转换颜色索引。
+GDI 通常会反向使用调色板映射。 也就是说，应用程序为绘图和 GDI 指定 RGB 颜色必须找到导致设备显示该颜色的颜色索引。 正如下表中所示，GDI 提供了两个主要的调色板服务函数用于创建和删除调色板，还提供了一些与 [**PALOBJ**](/windows/win32/api/winddi/ns-winddi-palobj) 和 [**XLATEOBJ**](/windows/win32/api/winddi/ns-winddi-xlateobj) 相关的服务功能，用于在两个调色板之间转换颜色索引。
 
 <table>
 <colgroup>

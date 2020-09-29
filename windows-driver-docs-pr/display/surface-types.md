@@ -13,12 +13,12 @@ keywords:
 - 与设备无关的位图 WDK GDI
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: eec39e698adb89ac62604145b690b9cc2710ad56
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: cd3291d2f175b610cb885f84a67b78bce8b6b903
+ms.sourcegitcommit: f8619f20a0903dd64f8641a5266ecad6df5f1d57
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90717452"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91423638"
 ---
 # <a name="surface-types"></a>图面类型
 
@@ -56,7 +56,7 @@ ms.locfileid: "90717452"
 
 -   是通过调用设备驱动程序的 [**DrvCreateDeviceBitmap**](/windows/win32/api/winddi/nf-winddi-drvcreatedevicebitmap) 函数创建的。
 
--   具有关联的设备句柄到 surface (DHSURF;有关详细信息，请参阅 [**SURFOBJ**](/windows/win32/api/winddi/ns-winddi-_surfobj)) 。
+-   具有关联的设备句柄到 surface (DHSURF;有关详细信息，请参阅 [**SURFOBJ**](/windows/win32/api/winddi/ns-winddi-surfobj)) 。
 
 -   可以是不 *透明* 的，也可以是 *nonopaque*。
 

@@ -17,12 +17,12 @@ api_type:
 ms.date: 12/06/2018
 ms.localizationpriority: medium
 ms.custom: seodec18
-ms.openlocfilehash: 7c6802d9ec9d0c2d78c90eb5a13da5ce8669b8f2
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 7f5c69c8668ff25fc7e3ad36c5e1d517bf2d5cb1
+ms.sourcegitcommit: f8619f20a0903dd64f8641a5266ecad6df5f1d57
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90717360"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91423872"
 ---
 # <a name="dxva_deinterlacecontainerdeviceclassprocampcontrolqueryrange-method"></a>DXVA \_ DeinterlaceContainerDeviceClass：:P rocampcontrolqueryrange 方法
 
@@ -40,7 +40,7 @@ HRESULT ProcAmpControlQueryRange(
 );
 ```
 
-<a name="parameters"></a>参数
+<a name="parameters"></a>parameters
 ----------
 
 *VideoProperty* \[在中， \] 标识驱动程序应为其返回信息的 ProcAmp 控件属性。 下面是此参数的可能值。
@@ -94,7 +94,7 @@ HRESULT ProcAmpControlQueryRange(
 
 有关 ProcAmp 属性的详细信息，请参阅 [ProcAmp properties](./procamp-properties.md)。
 
-示例**ProcAmpControlQueryRange**函数直接映射到[**DD \_ MOTIONCOMPCALLBACKS**](/windows/win32/api/ddrawint/ns-ddrawint-dd_motioncompcallbacks)结构的**RenderMoComp**成员的调用。 **RenderMoComp**成员指向驱动程序提供的[**DdMoCompRender**](/windows/win32/api/ddrawint/nc-ddrawint-pdd_mocompcb_render)回调，该回调引用[**DD \_ RENDERMOCOMPDATA**](/windows/win32/api/ddrawint/ns-ddrawint-_dd_rendermocompdata)结构。 \_按如下所示填充 DD RENDERMOCOMPDATA 结构。
+示例**ProcAmpControlQueryRange**函数直接映射到[**DD \_ MOTIONCOMPCALLBACKS**](/windows/win32/api/ddrawint/ns-ddrawint-dd_motioncompcallbacks)结构的**RenderMoComp**成员的调用。 **RenderMoComp**成员指向驱动程序提供的[**DdMoCompRender**](/windows/win32/api/ddrawint/nc-ddrawint-pdd_mocompcb_render)回调，该回调引用[**DD \_ RENDERMOCOMPDATA**](/windows/win32/api/ddrawint/ns-ddrawint-dd_rendermocompdata)结构。 \_按如下所示填充 DD RENDERMOCOMPDATA 结构。
 
 <table>
 <colgroup>

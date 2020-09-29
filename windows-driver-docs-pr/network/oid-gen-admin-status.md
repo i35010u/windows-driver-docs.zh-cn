@@ -5,12 +5,12 @@ ms.assetid: e8f45521-7419-4c11-b84b-36d4d3306fc2
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_GEN_ADMIN_STATUS 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: d220343e56ee1684631328852740997fe2e72200
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 36dc9afb06d7f1f4c9615b82905746c121bcee3b
+ms.sourcegitcommit: f8619f20a0903dd64f8641a5266ecad6df5f1d57
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90716316"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91423666"
 ---
 # <a name="oid_gen_admin_status"></a>OID \_ 生成 \_ 管理员 \_ 状态
 
@@ -32,7 +32,7 @@ ms.locfileid: "90716316"
 
 只有 [NDIS 网络接口](./ndis-network-interfaces2.md) 提供程序（因此不是微型端口驱动程序或筛选器驱动程序）才能支持此 OID 作为 oid 请求。
 
-如果查询成功，接口提供程序将返回 NDIS \_ 状态 \_ SUCCESS，查询的结果可以是 [**NET \_ IF \_ ADMIN \_ STATUS**](/windows/win32/api/ifdef/ne-ifdef-_net_if_admin_status) 枚举中的值之一。
+如果查询成功，接口提供程序将返回 NDIS \_ 状态 \_ SUCCESS，查询的结果可以是 [**NET \_ IF \_ ADMIN \_ STATUS**](/windows/win32/api/ifdef/ne-ifdef-net_if_admin_status) 枚举中的值之一。
 
 <a name="requirements"></a>要求
 ------------
@@ -50,10 +50,10 @@ ms.locfileid: "90716316"
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
-[**NET \_ IF \_ 管理员 \_ 状态**](/windows/win32/api/ifdef/ne-ifdef-_net_if_admin_status)
+[**NET \_ IF \_ 管理员 \_ 状态**](/windows/win32/api/ifdef/ne-ifdef-net_if_admin_status)
 
 [NDIS 网络接口 Oid](./ndis-network-interface-oids.md)
 

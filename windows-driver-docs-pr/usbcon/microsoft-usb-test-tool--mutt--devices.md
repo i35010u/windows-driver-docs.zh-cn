@@ -3,12 +3,12 @@ description: Microsoft USB 测试工具 (MUTT) 是设备的集合，用于测试
 title: Microsoft USB 测试工具 (MUTT) 设备的概述
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4a826877933940a50fd90e8112da395c500eb2a3
-ms.sourcegitcommit: 937974aa9bbe0262a7ffe9631593fab48c4e7492
+ms.openlocfilehash: 737309806d13d7db35071f16717ae1c38884a38a
+ms.sourcegitcommit: f8619f20a0903dd64f8641a5266ecad6df5f1d57
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "90010285"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91423728"
 ---
 # <a name="overview-of-microsoft-usb-test-tool-mutt-devices"></a>Microsoft USB 测试工具 (MUTT) 设备的概述
 
@@ -34,8 +34,6 @@ Microsoft USB 测试工具 (MUTT) 是设备的集合，用于测试 USB 硬件�
 
 <a href="" id="supermutt"></a>SuperMUTT  
 [JJG 技术]( https://go.microsoft.com/fwlink/p/?linkid=618287)
-
-[Pactron](https://pactronstore.com/products/supermutt.mdl)
 
 <a href="" id="supermutt-pack"></a>SuperMUTT 包  
 [通过实验室](https://go.microsoft.com/fwlink/p/?linkid=618285)

@@ -11,12 +11,12 @@ keywords:
 - 共享对象处理 WDK
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 898d760d7860a3f1b71eec1c29e6f2074f103504
-ms.sourcegitcommit: a5f76805387760730faed5674d87201ec85b7dd3
+ms.openlocfilehash: 3ff25a0639238dd66553571af0d7393dcbb35148
+ms.sourcegitcommit: f8619f20a0903dd64f8641a5266ecad6df5f1d57
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90112102"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91423636"
 ---
 # <a name="object-handles"></a>对象句柄
 
@@ -77,7 +77,7 @@ ms.locfileid: "90112102"
 
 当驱动程序不再需要访问该对象时，它将调用 [**ZwClose**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ntclose) 例程来关闭该句柄。 这适用于上表中列出的所有对象类型。
 
-提供句柄的大多数例程将 [**对象 \_ 属性**](/windows/win32/api/ntdef/ns-ntdef-_object_attributes) 结构作为参数。 此结构可用于为句柄指定属性。
+提供句柄的大多数例程将 [**对象 \_ 属性**](/windows/win32/api/ntdef/ns-ntdef-object_attributes) 结构作为参数。 此结构可用于为句柄指定属性。
 
 驱动程序可以指定下列句柄属性：
 

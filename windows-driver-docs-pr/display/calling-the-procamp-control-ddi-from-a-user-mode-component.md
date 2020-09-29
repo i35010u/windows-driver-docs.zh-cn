@@ -8,12 +8,12 @@ keywords:
 - ProcAmp WDK DirectX VA，从用户模式组件调用
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 39400f33ba8916fcea597c8cb32b6617edeb8a58
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 28b78d69edbcd3dd582e82abe4ae762b0549efc7
+ms.sourcegitcommit: f8619f20a0903dd64f8641a5266ecad6df5f1d57
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90715684"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91424064"
 ---
 # <a name="calling-the-procamp-control-ddi-from-a-user-mode-component"></a>从用户模式组件调用 ProcAmp 控制 DDI
 
@@ -31,13 +31,13 @@ ms.locfileid: "90715684"
 
 1.  将 VMR 添加到筛选器图时，它将启动对驱动程序提供的 [*DdMoCompGetGuids*](/windows/win32/api/ddrawint/nc-ddrawint-pdd_mocompcb_getguids) 回调函数的调用，以检索该驱动程序支持的设备的列表。 DD MOTIONCOMPCALLBACKS 的 **GetMoCompGuids** 成员指向 \_ 此回调函数。 有关筛选器关系图的详细信息，请参阅 [KS 微型驱动程序体系结构](../stream/ks-minidriver-architecture.md)。
 
-2.  如果隔行扫描容器设备 GUID 存在，VMR 将启动对 [*DdMoCompCreate*](/windows/win32/api/ddrawint/nc-ddrawint-pdd_mocompcb_create) 回调函数的调用，以创建设备的实例。 DD MOTIONCOMPCALLBACKS 的 **CreateMoComp** 成员指向 \_ 回调函数。 在**DdMoCompCreate**调用中，指向容器设备 GUID 的指针是在[**DD \_ CREATEMOCOMPDATA**](/windows/win32/api/ddrawint/ns-ddrawint-_dd_createmocompdata)结构的**lpGuid**成员中指定的。 容器设备 GUID 定义如下：
+2.  如果隔行扫描容器设备 GUID 存在，VMR 将启动对 [*DdMoCompCreate*](/windows/win32/api/ddrawint/nc-ddrawint-pdd_mocompcb_create) 回调函数的调用，以创建设备的实例。 DD MOTIONCOMPCALLBACKS 的 **CreateMoComp** 成员指向 \_ 回调函数。 在**DdMoCompCreate**调用中，指向容器设备 GUID 的指针是在[**DD \_ CREATEMOCOMPDATA**](/windows/win32/api/ddrawint/ns-ddrawint-dd_createmocompdata)结构的**lpGuid**成员中指定的。 容器设备 GUID 定义如下：
 
     ```cpp
     DEFINE_GUID(DXVA_DeinterlaceContainerDevice, 0x0e85cb93,0x3046,0x4ff0,0xae,0xcc,0xd5,0x8c,0xb5,0xf0,0x35,0xfd);
     ```
 
-3.  若要确定 ProcAmp 控制设备的功能，VMR 启动对驱动程序提供的 [*DdMoCompRender*](/windows/win32/api/ddrawint/nc-ddrawint-pdd_mocompcb_render) 回调函数的调用。 DD MOTIONCOMPCALLBACKS 的 **RenderMoComp** 成员指向 \_ 回调函数。 在**DdMoCompRender**调用中， *DXVA*) 中定义的**DXVA \_ ProcAmpControlQueryCapsFnCode**常量 (在[**DD \_ dwFunction**](/windows/win32/api/ddrawint/ns-ddrawint-_dd_rendermocompdata)结构的**RENDERMOCOMPDATA**成员中进行了设置。 DD RENDERMOCOMPDATA 的 **lpInputData** 成员 \_ 通过指向 [**DXVA \_ VideoDesc**](/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_videodesc) 结构将输入参数传递给驱动程序。 驱动程序通过 DD RENDERMOCOMPDATA 的 **lpOutputData** 成员返回其输出 \_ ; **lpOutputData** 指向 [**DXVA \_ ProcAmpControlCaps**](/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_procampcontrolcaps) 结构。
+3.  若要确定 ProcAmp 控制设备的功能，VMR 启动对驱动程序提供的 [*DdMoCompRender*](/windows/win32/api/ddrawint/nc-ddrawint-pdd_mocompcb_render) 回调函数的调用。 DD MOTIONCOMPCALLBACKS 的 **RenderMoComp** 成员指向 \_ 回调函数。 在**DdMoCompRender**调用中， *DXVA*) 中定义的**DXVA \_ ProcAmpControlQueryCapsFnCode**常量 (在[**DD \_ dwFunction**](/windows/win32/api/ddrawint/ns-ddrawint-dd_rendermocompdata)结构的**RENDERMOCOMPDATA**成员中进行了设置。 DD RENDERMOCOMPDATA 的 **lpInputData** 成员 \_ 通过指向 [**DXVA \_ VideoDesc**](/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_videodesc) 结构将输入参数传递给驱动程序。 驱动程序通过 DD RENDERMOCOMPDATA 的 **lpOutputData** 成员返回其输出 \_ ; **lpOutputData** 指向 [**DXVA \_ ProcAmpControlCaps**](/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_procampcontrolcaps) 结构。
 
     如果驱动程序实现了 [**ProcAmpControlQueryCaps**](./dxva-deinterlacecontainerdeviceclass-procampcontrolquerycaps.md) 示例函数， [*DdMoCompRender*](/windows/win32/api/ddrawint/nc-ddrawint-pdd_mocompcb_render) 回调函数将调用 **ProcAmpControlQueryCaps**。
 
@@ -53,7 +53,7 @@ ms.locfileid: "90715684"
 
     如果驱动程序实现了 [**ProcAmpControlOpenStream**](./dxva-procampcontroldeviceclass-procampcontrolopenstream.md) 示例函数， [*DdMoCompCreate*](/windows/win32/api/ddrawint/nc-ddrawint-pdd_mocompcb_create) 回调函数将调用 **ProcAmpControlOpenStream**。
 
-6.  对于每个 ProcAmp 调整操作，VMR 将启动对驱动程序提供的 **DdMoCompRender**回调函数的调用。 在**DdMoCompRender**调用中， *DXVA*) 中定义的**DXVA \_ ProcAmpControlQueryCapsFnCode**常量 (在[**DD \_ dwFunction**](/windows/win32/api/ddrawint/ns-ddrawint-_dd_rendermocompdata)的**RENDERMOCOMPDATA**成员中进行了设置。 DD RENDERMOCOMPDATA 的 **lpBufferInfo** 成员指向 \_ 描述目标和源表面的两个缓冲区的数组。 DD RENDERMOCOMPDATA 的 **lpInputData** 成员 \_ 通过指向已完成的 [**DXVA \_ ProcAmpControlBlt**](/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_procampcontrolblt) 结构将输入参数传递给驱动程序。 驱动程序未返回任何输出;也就是说，DD RENDERMOCOMPDATA 的 **lpOutputData** 成员 \_ 为 **NULL**。
+6.  对于每个 ProcAmp 调整操作，VMR 将启动对驱动程序提供的 **DdMoCompRender**回调函数的调用。 在**DdMoCompRender**调用中， *DXVA*) 中定义的**DXVA \_ ProcAmpControlQueryCapsFnCode**常量 (在[**DD \_ dwFunction**](/windows/win32/api/ddrawint/ns-ddrawint-dd_rendermocompdata)的**RENDERMOCOMPDATA**成员中进行了设置。 DD RENDERMOCOMPDATA 的 **lpBufferInfo** 成员指向 \_ 描述目标和源表面的两个缓冲区的数组。 DD RENDERMOCOMPDATA 的 **lpInputData** 成员 \_ 通过指向已完成的 [**DXVA \_ ProcAmpControlBlt**](/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_procampcontrolblt) 结构将输入参数传递给驱动程序。 驱动程序未返回任何输出;也就是说，DD RENDERMOCOMPDATA 的 **lpOutputData** 成员 \_ 为 **NULL**。
 
     如果驱动程序实现了 [**ProcAmpControlBlt**](./dxva-procampcontroldeviceclass-procampcontrolblt.md) 示例函数， **DdMoCompRender** 回调函数将调用 **ProcAmpControlBlt**。
 

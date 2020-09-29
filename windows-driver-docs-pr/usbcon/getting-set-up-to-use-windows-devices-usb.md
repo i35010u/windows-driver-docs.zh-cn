@@ -3,12 +3,12 @@ description: 从 Windows 8.1 开始，WinUSB 函数集具有 Api，使桌面应�
 title: 发送来自 UWP 桌面应用的 USB 常时等量传输
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8180cea840ab258034aba2abb0152c0d263a629a
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 26e995f853ea634a856f416374c853993a672ca1
+ms.sourcegitcommit: f8619f20a0903dd64f8641a5266ecad6df5f1d57
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90716132"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91423790"
 ---
 # <a name="send-usb-isochronous-transfers-from-a-winusb-desktop-app"></a>发送来自 UWP 桌面应用的 USB 常时等量传输
 
@@ -66,7 +66,7 @@ USB 设备可以支持同步终结点以稳定的速率（如使用音频/视频
 
 用于发送读取和写入传输的函数调用类似。 应用分配一个足够大的传输缓冲区来容纳所有三次传输。 应用通过调用 [**WinUsb \_ RegisterIsochBuffer**](/windows/win32/api/winusb/nf-winusb-winusb_registerisochbuffer)为特定管道注册缓冲区。 调用返回用于发送传输的注册句柄。 缓冲区将用于后续传输，并调整缓冲区中的偏移量，以发送或接收下一组数据。
 
-示例中的所有传输都是异步发送的。 为此，应用程序分配有三个元素的 [**重叠**](/windows/win32/api/shobjidl/ns-shobjidl-_overlapped) 结构数组，每个元素对应一个传输。 此应用提供事件，以便在传输完成时获得通知，并检索操作的结果。 为此，在数组中的每个 **重叠** 结构中，应用程序分配一个事件并在 **hEvent** 成员中设置句柄。
+示例中的所有传输都是异步发送的。 为此，应用程序分配有三个元素的 [**重叠**](/windows/win32/api/shobjidl/ns-shobjidl-overlapped) 结构数组，每个元素对应一个传输。 此应用提供事件，以便在传输完成时获得通知，并检索操作的结果。 为此，在数组中的每个 **重叠** 结构中，应用程序分配一个事件并在 **hEvent** 成员中设置句柄。
 
 此图显示了使用 [**WinUsb \_ ReadIsochPipeAsap**](/windows/win32/api/winusb/nf-winusb-winusb_readisochpipeasap) 函数进行三次读传输。 此调用指定每个传输的偏移量和长度。 *ContinueStream*参数值为 FALSE，表示新流。 之后，该应用请求将后续传输立即计划在上一个请求的最后一帧之后，以允许连续流式传输数据。 按帧数计算每帧帧数的同步数据包数 \* ; 8 \* 10。 对于此调用，应用无需担心如何计算开始帧号。
 
@@ -96,7 +96,7 @@ USB 设备可以支持同步终结点以稳定的速率（如使用音频/视频
 
 1.  通过调用 [**WinUsb \_ QueryInterfaceSettings**](/windows/win32/api/winusb/nf-winusb-winusb_queryinterfacesettings)获取具有同步终结点的 USB 接口。
 2.  枚举定义终结点的接口设置的管道。
-3.  对于每个终结点，通过调用[**WINUSB \_ QueryPipeEx**](/windows/win32/api/winusb/nf-winusb-winusb_querypipeex)获取[**WINUSB \_ 管道 \_ 信息 \_ EX**](/windows/win32/api/winusbio/ns-winusbio-_winusb_pipe_information_ex)结构中的关联管道属性。 检索到的 **WINUSB \_ 管道 \_ 信息 \_ EX** 结构，其中包含有关同步管道的信息。 结构包含有关管道、类型、id 等的信息。
+3.  对于每个终结点，通过调用[**WINUSB \_ QueryPipeEx**](/windows/win32/api/winusb/nf-winusb-winusb_querypipeex)获取[**WINUSB \_ 管道 \_ 信息 \_ EX**](/windows/win32/api/winusbio/ns-winusbio-winusb_pipe_information_ex)结构中的关联管道属性。 检索到的 **WINUSB \_ 管道 \_ 信息 \_ EX** 结构，其中包含有关同步管道的信息。 结构包含有关管道、类型、id 等的信息。
 4.  检查结构成员，以确定它是否是必须用于传输的管道。 如果为，则存储 **PipeId** 值。 在模板代码中，将成员添加到设备 \_ 数据结构，该结构是在设备中定义的。
 
 此示例演示如何确定活动设置是否具有同步终结点并获取有关它们的信息。 在此示例中，该设备是 SuperMUTT 设备。 设备在默认接口中有两个同步终结点，即备用设置1。
@@ -176,7 +176,7 @@ SuperMUTT 设备在默认接口中定义其同步终结点，其设置为1。 �
 
 -   **传输大小**
 
-    1.  从检索到的 [**WINUSB \_ 管道 \_ 信息 \_ EX**](/windows/win32/api/winusbio/ns-winusbio-_winusb_pipe_information_ex) 结构，获取 **MaximumBytesPerInterval** 和 **Interval** 值。
+    1.  从检索到的 [**WINUSB \_ 管道 \_ 信息 \_ EX**](/windows/win32/api/winusbio/ns-winusbio-winusb_pipe_information_ex) 结构，获取 **MaximumBytesPerInterval** 和 **Interval** 值。
     2.  根据要发送或接收的同步数据量，计算传输大小。 例如，请考虑以下计算：
 
         ` TransferSize = ISOCH_DATA_SIZE_MS * pipeInfoEx.MaximumBytesPerInterval * (8 / pipeInfoEx.Interval);             `
@@ -255,7 +255,7 @@ else if (pipe.PipeType == UsbdPipeTypeIsochronous)
 ...
 ```
 
-在前面的代码中，应用程序从[**WINUSB \_ 管道 \_ 信息 \_ **](/windows/win32/api/winusbio/ns-winusbio-_winusb_pipe_information_ex)获取**间隔**和**MaximumBytesPerInterval** ，以计算读取传输所需的传输大小和同步数据包的数量。 对于同步终结点， **Interval** 为1。 该值指示帧的所有 microframes 都带有数据。 基于这一点，若要发送10毫秒的数据，需要10帧，总传输大小为 10 \* 1024 \* 8 字节，80同步数据包，每个1024字节长。
+在前面的代码中，应用程序从[**WINUSB \_ 管道 \_ 信息 \_ **](/windows/win32/api/winusbio/ns-winusbio-winusb_pipe_information_ex)获取**间隔**和**MaximumBytesPerInterval** ，以计算读取传输所需的传输大小和同步数据包的数量。 对于同步终结点， **Interval** 为1。 该值指示帧的所有 microframes 都带有数据。 基于这一点，若要发送10毫秒的数据，需要10帧，总传输大小为 10 \* 1024 \* 8 字节，80同步数据包，每个1024字节长。
 
 ## <a name="step-3-send-a-write-transfer-to-send-data-to-an-isochronous-out-endpoint"></a>步骤3：发送写入传输以将数据发送到同步输出终结点
 
@@ -263,7 +263,7 @@ else if (pipe.PipeType == UsbdPipeTypeIsochronous)
 此过程总结了将数据写入同步终结点的步骤。
 
 1.  分配包含要发送的数据的缓冲区。
-2.  如果要以异步方式发送数据，请分配并初始化包含调用方分配的事件对象的句柄的 [**重叠**](/windows/win32/api/shobjidl/ns-shobjidl-_overlapped) 结构。 结构必须初始化为零，否则调用将失败。
+2.  如果要以异步方式发送数据，请分配并初始化包含调用方分配的事件对象的句柄的 [**重叠**](/windows/win32/api/shobjidl/ns-shobjidl-overlapped) 结构。 结构必须初始化为零，否则调用将失败。
 3.  通过调用 [**WinUsb \_ RegisterIsochBuffer**](/windows/win32/api/winusb/nf-winusb-winusb_registerisochbuffer)注册缓冲区。
 4.  通过调用 [**WinUsb \_ WriteIsochPipeAsap**](/windows/win32/api/winusb/nf-winusb-winusb_writeisochpipeasap)开始传输。 如果要手动指定传输数据的帧，请改为调用 [**WinUsb \_ WriteIsochPipe**](/windows/win32/api/winusb/nf-winusb-winusb_writeisochpipe) 。
 5.  通过调用 [**WinUsb \_ getoverlappedresult 期间**](/windows/win32/api/winusb/nf-winusb-winusb_getoverlappedresult)获取传输结果。
@@ -469,7 +469,7 @@ Error:
 此过程汇总了从同步终结点读取数据的步骤。
 
 1.  分配将在传输结束时接收数据的传输缓冲区。 缓冲区的大小必须基于步骤2中的传输大小计算。 传输缓冲区必须以帧边界结束。
-2.  如果要以异步方式发送数据，请将包含句柄的 [**重叠**](/windows/win32/api/shobjidl/ns-shobjidl-_overlapped) 结构分配给调用方分配的事件对象。 结构必须初始化为零，否则调用将失败。
+2.  如果要以异步方式发送数据，请将包含句柄的 [**重叠**](/windows/win32/api/shobjidl/ns-shobjidl-overlapped) 结构分配给调用方分配的事件对象。 结构必须初始化为零，否则调用将失败。
 3.  通过调用 [**WinUsb \_ RegisterIsochBuffer**](/windows/win32/api/winusb/nf-winusb-winusb_registerisochbuffer)注册缓冲区。
 4.  根据步骤2中计算的同步数据包数， ([**USBD \_ ISO \_ 数据包 \_ 描述符**](/windows-hardware/drivers/ddi/usb/ns-usb-_usbd_iso_packet_descriptor)) 分配一个同步数据包数组。
 5.  通过调用 [**WinUsb \_ ReadIsochPipeAsap**](/windows/win32/api/winusb/nf-winusb-winusb_readisochpipeasap)开始传输。 如果要手动指定将传输数据的开始帧，请改为调用 [**WinUsb \_ ReadIsochPipe**](/windows/win32/api/winusb/nf-winusb-winusb_readisochpipe) 。

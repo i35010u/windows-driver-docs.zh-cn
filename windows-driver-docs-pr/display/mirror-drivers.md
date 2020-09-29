@@ -13,12 +13,12 @@ keywords:
 - 辅助技术和镜像驱动程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c8c0aa7961ff22b05b7f412ac8d0ea5078ef19d7
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: e1b265718e51cbe78786e3edec110d9b6fbf1b7d
+ms.sourcegitcommit: f8619f20a0903dd64f8641a5266ecad6df5f1d57
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90715649"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91423553"
 ---
 # <a name="mirror-drivers"></a>镜像驱动程序
 
@@ -106,7 +106,7 @@ GDI 支持 *虚拟桌面* ，并提供在镜像设备上复制部分虚拟桌面
 
 -   建议使用用户模式服务来维护镜像驱动程序的设置。 此应用程序可确保在启动时正确加载该驱动程序，并且它可以通过使用 WM DISPLAYCHANGE 消息获取显示更改通知，对桌面的更改做出适当的响应 \_ 。
 
--   GDI 为与驱动程序的边框相交的任何2D 图形 DDI 绘图操作调用镜像驱动程序。 请注意，如果图面为设备格式位图，则 GDI 不会执行边框检查;也就是说，如果 [**SURFOBJ**](/windows/win32/api/winddi/ns-winddi-_surfobj) 具有 **iType** 的 s \_ DEVBITMAP。
+-   GDI 为与驱动程序的边框相交的任何2D 图形 DDI 绘图操作调用镜像驱动程序。 请注意，如果图面为设备格式位图，则 GDI 不会执行边框检查;也就是说，如果 [**SURFOBJ**](/windows/win32/api/winddi/ns-winddi-surfobj) 具有 **iType** 的 s \_ DEVBITMAP。
 
 -   与往常一样，必须在不使用全局变量的情况下实现镜像驱动程序。 该特定驱动程序的 *PDEV* 中必须存在所有状态。 GDI 将为视频微型端口驱动程序创建的每个硬件设备扩展调用 [**DrvEnablePDEV**](/windows/win32/api/winddi/nf-winddi-drvenablepdev) 。
 
@@ -118,7 +118,7 @@ GDI 支持 *虚拟桌面* ，并提供在镜像设备上复制部分虚拟桌面
 
 -   镜像驱动程序可以通过实现 [**DrvRealizeBrush**](/windows/win32/api/winddi/nf-winddi-drvrealizebrush)（可选）支持画笔实现。
 
-GDI 允许在单个和多个监视器系统上同时运行同一驱动程序。 多监视器系统中的驱动程序只需跟踪其在全局桌面中的位置。 在发生 Win32 **ChangeDisplaySettings** 调用时，GDI 为驱动程序提供了此位置，例如，当用户使用控制面板中的 "显示" 程序动态更改监视器在桌面上的位置时。 当发生这种更改时，GDI 会相应地更新[**DEVMODEW**](/windows/win32/api/wingdi/ns-wingdi-_devicemodew)结构的**dmPosition**成员。 驱动程序可以通过实现 [**DrvNotify**](/windows/win32/api/winddi/nf-winddi-drvnotify)来接收此类更改的通知。 有关详细信息，请参阅 [镜像驱动程序安装](mirror-driver-installation.md) 。
+GDI 允许在单个和多个监视器系统上同时运行同一驱动程序。 多监视器系统中的驱动程序只需跟踪其在全局桌面中的位置。 在发生 Win32 **ChangeDisplaySettings** 调用时，GDI 为驱动程序提供了此位置，例如，当用户使用控制面板中的 "显示" 程序动态更改监视器在桌面上的位置时。 当发生这种更改时，GDI 会相应地更新[**DEVMODEW**](/windows/win32/api/wingdi/ns-wingdi-devicemodew)结构的**dmPosition**成员。 驱动程序可以通过实现 [**DrvNotify**](/windows/win32/api/winddi/nf-winddi-drvnotify)来接收此类更改的通知。 有关详细信息，请参阅 [镜像驱动程序安装](mirror-driver-installation.md) 。
 
 > [!NOTE]
 >

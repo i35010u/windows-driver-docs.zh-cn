@@ -15,12 +15,12 @@ keywords:
 - 物理堆 DirectDraw
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0cc8b352efe4b47287f229d98c3b1d08e3fe4f29
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 3cf2180f0566a5e032b4a707c511a55a655826de
+ms.sourcegitcommit: f8619f20a0903dd64f8641a5266ecad6df5f1d57
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90715160"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91423714"
 ---
 # <a name="notification-of-actual-heap-base-addresses"></a>实际堆基址的通知
 
@@ -36,14 +36,14 @@ ms.locfileid: "90715160"
 
 -   GUID \_ UpdateNonLocalHeap
 
-GUID \_ GetHeapAlignment 向驱动程序发出信号，以便收集有关传递给它的任何 DirectDraw 堆的堆对齐信息。 使用 [**DD \_ GETHEAPALIGNMENTDATA**](/windows/win32/api/dmemmgr/ns-dmemmgr-_dd_getheapalignmentdata) 结构将堆信息传递给驱动程序。 GUID \_ GetHeapAlignment 定义为：
+GUID \_ GetHeapAlignment 向驱动程序发出信号，以便收集有关传递给它的任何 DirectDraw 堆的堆对齐信息。 使用 [**DD \_ GETHEAPALIGNMENTDATA**](/windows/win32/api/dmemmgr/ns-dmemmgr-dd_getheapalignmentdata) 结构将堆信息传递给驱动程序。 GUID \_ GetHeapAlignment 定义为：
 
 ```cpp
 DEFINE_GUID( GUID_GetHeapAlignment,
     0x42e02f16, 0x7b41, 0x11d2, 0x8b, 0xff, 0x0, 0xa0, 0xc9, 0x83, 0xea, 0xf6);
 ```
 
-GUID \_ UpdateNonLocalHeap 使用 DirectDraw 提供的非本地堆结构发出信号，指示驱动程序使用堆信息更新其内部状态。 此信息包含在 [**DD \_ UPDATENONLOCALHEAPDATA**](/windows/win32/api/ddrawint/ns-ddrawint-_dd_updatenonlocalheapdata) 结构中。 GUID \_ UpdateNonLocalHeap 定义为：
+GUID \_ UpdateNonLocalHeap 使用 DirectDraw 提供的非本地堆结构发出信号，指示驱动程序使用堆信息更新其内部状态。 此信息包含在 [**DD \_ UPDATENONLOCALHEAPDATA**](/windows/win32/api/ddrawint/ns-ddrawint-dd_updatenonlocalheapdata) 结构中。 GUID \_ UpdateNonLocalHeap 定义为：
 
 ```cpp
 DEFINE_GUID( GUID_UpdateNonLocalHeap,

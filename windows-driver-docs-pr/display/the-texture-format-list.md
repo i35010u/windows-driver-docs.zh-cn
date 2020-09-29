@@ -8,12 +8,12 @@ keywords:
 - DPIXELFORMAT
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d2871088a069781d9f7bf9f2a447c245ad8f2a81
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 60b584031db0c076b7fd1b7f7e345a56bbf44113
+ms.sourcegitcommit: f8619f20a0903dd64f8641a5266ecad6df5f1d57
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90715970"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91423460"
 ---
 # <a name="the-texture-format-list"></a>纹理格式列表
 
@@ -33,7 +33,7 @@ DirectX 8.0 DDI 样式表面格式使用 **GetDriverInfo2**报告。 运行时�
 
 若要处理 D3DGDI2 \_ 类型 \_ GETFORMATCOUNT，驱动程序必须在[**DD \_ GETFORMATCOUNTDATA**](/windows-hardware/drivers/ddi/d3dhal/ns-d3dhal-_dd_getformatcountdata)的**dwFormatCount**字段中存储它支持的 DirectX 8.0 DDI 样式表面格式的数目。
 
-当运行时从驱动程序接收到受支持的格式的数目时，它将同时查询每种表面格式，同时还会为 D3DGDI2 类型 Iformatprovider.getformat 类型的 **GetDriverInfo2** 查询 \_ \_ 。 [**Dd \_ GETDRIVERINFODATA**](/windows/win32/api/ddrawint/ns-ddrawint-_dd_getdriverinfodata)数据结构的**lpvData**字段指向的数据结构为，在本例中为[**dd \_ GETFORMATDATA**](/windows-hardware/drivers/ddi/d3dhal/ns-d3dhal-_dd_getformatdata)。
+当运行时从驱动程序接收到受支持的格式的数目时，它将同时查询每种表面格式，同时还会为 D3DGDI2 类型 Iformatprovider.getformat 类型的 **GetDriverInfo2** 查询 \_ \_ 。 [**Dd \_ GETDRIVERINFODATA**](/windows/win32/api/ddrawint/ns-ddrawint-dd_getdriverinfodata)数据结构的**lpvData**字段指向的数据结构为，在本例中为[**dd \_ GETFORMATDATA**](/windows-hardware/drivers/ddi/d3dhal/ns-d3dhal-_dd_getformatdata)。
 
 DirectX 8.0 运行时扫描驱动程序报告的纹理格式列表，检查每个像素格式的 **dwFlags** 字段。 如果任何纹理格式的 **dwFlags** 设置为 DDPF \_ D3DFORMAT，则运行时将此纹理格式列表标识为 DX8 样式，并筛选像素格式未标记为 DDPF D3DFORMAT 的所有纹理格式 \_ 。 此外，DX7 运行时将筛选 DDPF D3DFORMAT 集的任何纹理格式 \_ 。 因此，支持 DX8 DDI 的驱动程序可以返回一个纹理格式列表，其中包含每个受支持格式的两个项，一种是在旧样式中指定，另一个在新样式中。 DX8 运行时使用在新样式中指定的格式，DX7 运行时使用旧样式中指定的格式。
 

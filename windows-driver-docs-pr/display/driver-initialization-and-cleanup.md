@@ -11,12 +11,12 @@ keywords:
 - 绘制 WDK GDI，清理
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5f930b0298d5630705464f5cd24d47c664dc15ae
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 845996484602afb058b325308825726562f7ac8a
+ms.sourcegitcommit: f8619f20a0903dd64f8641a5266ecad6df5f1d57
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90716504"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91424024"
 ---
 # <a name="driver-initialization-and-cleanup"></a>驱动程序初始化和清理
 
@@ -35,7 +35,7 @@ ms.locfileid: "90716504"
     </colgroup>
     <thead>
     <tr class="header">
-    <th align="left">返回的常量</th>
+    <th align="left">常数</th>
     <th align="left">操作系统版本</th>
     </tr>
     </thead>
@@ -61,7 +61,7 @@ ms.locfileid: "90716504"
 
 -   **C**成员包含数组中的 DRVFN 结构数。
 
--   **Pdrvfn**成员指向[**DRVFN**](/windows/win32/api/winddi/ns-winddi-_drvfn)结构的数组，其中列出了支持的函数及其索引。
+-   **Pdrvfn**成员指向[**DRVFN**](/windows/win32/api/winddi/ns-winddi-drvfn)结构的数组，其中列出了支持的函数及其索引。
 
 对于 GDI 若要调用除驱动程序的 enable 和 disable 函数之外的其他函数，驱动程序必须使该函数的名称和位置对 GDI 可用。
 
