@@ -12,12 +12,12 @@ keywords:
 - NDIS 网络接口
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7b6ec0d9498070a4b9c5ae7d441f5fa24e190548
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 7aa9991b0967236eb0c04aa854c11a026b0c47f7
+ms.sourcegitcommit: eba1bbec165d56f64d4c1ab5c3f7465dcd299ae3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90717276"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91510578"
 ---
 # <a name="mapping-of-ndis-network-interfaces-to-ndis-oids"></a>将 NDIS 网络接口映射到 NDIS OID
 
@@ -33,7 +33,7 @@ NDIS 代理接口提供程序还代表小型端口适配器和筛选器模块生
 
 除了特定于接口提供程序的 Oid 以外，接口提供程序还必须支持 NDIS 可用于获取接口信息的其他 NDIS Oid。 NDIS 可以向提供程序颁发这些 Oid，提供程序可以颁发这些 Oid （如有必要）从基础接口中收集信息。
 
-**注意**   NDIS 定义 RFC 2863 中未包含的其他统计信息。 有关将 NDIS 支持的所有接口统计信息映射到 Oid 的列表，请参阅 [**NDIS \_ 接口 \_ 信息**](/windows/win32/api/ifdef/ns-ifdef-_ndis_interface_information) 结构的成员。 本主题中的表为尝试将规范与 NDIS 实现相关的读取器定义为 RFC 2863 规范中定义的统计信息进行了映射。
+**注意**   NDIS 定义 RFC 2863 中未包含的其他统计信息。 有关将 NDIS 支持的所有接口统计信息映射到 Oid 的列表，请参阅 [**NDIS \_ 接口 \_ 信息**](/windows/win32/api/ifdef/ns-ifdef-ndis_interface_information) 结构的成员。 本主题中的表为尝试将规范与 NDIS 实现相关的读取器定义为 RFC 2863 规范中定义的统计信息进行了映射。
 
  
 

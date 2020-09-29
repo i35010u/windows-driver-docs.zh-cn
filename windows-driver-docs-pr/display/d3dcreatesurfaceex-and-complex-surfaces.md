@@ -11,12 +11,12 @@ keywords:
 - surface 附件 WDK Direct3D
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6b330863ec6f194f964a6c8a7e8ce44d9c03b9a3
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 6ae70eff341f0d969d310e246e697e37406b2493
+ms.sourcegitcommit: eba1bbec165d56f64d4c1ab5c3f7465dcd299ae3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90715490"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91510592"
 ---
 # <a name="d3dcreatesurfaceex-and-complex-surfaces"></a>D3dCreateSurfaceEx 和复杂图面
 
@@ -30,7 +30,7 @@ DirectDraw 图面附件有两种类型：隐式和显式。 隐式附件在复�
 
 DirectX 运行时如何以及何时调用驱动程序的 [**D3dCreateSurfaceEx**](/windows/win32/api/ddrawint/nc-ddrawint-pdd_createsurfaceex) 函数，以及驱动程序如何处理图面取决于这些曲面是隐式连接还是显式附加。 如果显式附加了两个图面，则这两个图面都是通过单独的 **CreateSurface** 调用创建的，并且每个图面都将导致在表面附件建立前对 **D3dCreateSurfaceEx** 的调用。 但对于隐式附加的图面，只会对整个曲面链进行单个 **CreateSurface** 和 **D3dCreateSurfaceEx** 调用。 因此，在处理 **D3dCreateSurfaceEx** 调用时，驱动程序必须运行附加的图面列表以标识图柄，并为每个附加表面创建驱动程序端数据结构。 但是，附加 surface 列表可能包含隐式和显式连接的表面。 该驱动程序已被 **D3dCreateSurfaceEx** 的显式附加表面通知，并且可能不希望再次处理此类表面。
 
-驱动程序可以通过 \_ 存储在[**DD \_ ATTACHLIST**](/windows/win32/api/ddrawint/ns-ddrawint-_dd_attachlist)数据结构的**dwFlags**字段中的 DDAL 隐式标志来区分隐式和显式附件。 如果 \_ 在 **dwFlags** 字段中设置了 DDAL 隐式，则附件是隐式的，并且不会为附加表面显示单独的 [**D3dCreateSurfaceEx**](/windows/win32/api/ddrawint/nc-ddrawint-pdd_createsurfaceex) 调用。 如果未设置此标志，则附件是显式的，附加的图面将导致其自己的 **D3dCreateSurfaceEx** 调用。 通过检查此标志，驱动程序可以确定它是否必须处理连接的表面作为父图面的 **D3dCreateSurfaceEx** 调用的一部分，或者是否为附加的表面进行了单独的 **D3dCreateSurfaceEx** 调用。
+驱动程序可以通过 \_ 存储在[**DD \_ ATTACHLIST**](/windows/win32/api/ddrawint/ns-ddrawint-dd_attachlist)数据结构的**dwFlags**字段中的 DDAL 隐式标志来区分隐式和显式附件。 如果 \_ 在 **dwFlags** 字段中设置了 DDAL 隐式，则附件是隐式的，并且不会为附加表面显示单独的 [**D3dCreateSurfaceEx**](/windows/win32/api/ddrawint/nc-ddrawint-pdd_createsurfaceex) 调用。 如果未设置此标志，则附件是显式的，附加的图面将导致其自己的 **D3dCreateSurfaceEx** 调用。 通过检查此标志，驱动程序可以确定它是否必须处理连接的表面作为父图面的 **D3dCreateSurfaceEx** 调用的一部分，或者是否为附加的表面进行了单独的 **D3dCreateSurfaceEx** 调用。
 
 有关详细信息，请参阅 [DirectDraw 驱动程序基础](directdraw-driver-fundamentals.md) 中有关 surface 附件的部分，并查看 [**D3dCreateSurfaceEx**](/windows/win32/api/ddrawint/nc-ddrawint-pdd_createsurfaceex)中包含的示例代码。
 

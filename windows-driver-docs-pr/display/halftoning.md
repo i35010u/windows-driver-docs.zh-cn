@@ -11,12 +11,12 @@ keywords:
 - 大小 WDK GDI 半色调
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e7a2e5b0330e4ee2bc888a74814989afa2804cf5
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: e99ddb1f2d27578ad14659a2f033d834d6e1fa23
+ms.sourcegitcommit: eba1bbec165d56f64d4c1ab5c3f7465dcd299ae3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90716930"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91510624"
 ---
 # <a name="halftoning"></a>半色调
 
@@ -28,11 +28,11 @@ ms.locfileid: "90716930"
 
 在计算机上，大部分打印或屏幕底纹也使用固定单元像素大小。 若要模拟可变点大小，可通过组合群集像素来模拟半色调屏幕。 GDI 包含了半色调默认参数，可提供良好的第一个近似值。 其他特定于设备的信息可添加到系统中，以改进输出。
 
-驱动程序通过[**DrvEnablePDEV**](/windows/win32/api/winddi/nf-winddi-drvenablepdev)函数返回的[**GDIINFO**](/windows/win32/api/winddi/ns-winddi-_gdiinfo)结构向 gdi 发送与设备相关的规范，gdi 需要执行半色调。 驱动程序通过 GDIINFO 的 **ulHTPatternSize** 成员指定模式大小，此成员定义半色调的首选输出格式。 对于特定设备，半色调与半色调模式大小相关。 GDI 提供了许多预定义的模式大小（从 2 x 2 到 16 x 16）。
+驱动程序通过[**DrvEnablePDEV**](/windows/win32/api/winddi/nf-winddi-drvenablepdev)函数返回的[**GDIINFO**](/windows/win32/api/winddi/ns-winddi-gdiinfo)结构向 gdi 发送与设备相关的规范，gdi 需要执行半色调。 驱动程序通过 GDIINFO 的 **ulHTPatternSize** 成员指定模式大小，此成员定义半色调的首选输出格式。 对于特定设备，半色调与半色调模式大小相关。 GDI 提供了许多预定义的模式大小（从 2 x 2 到 16 x 16）。
 
 对于每个标准模式大小，还会有一个修改后的版本。 它由 \_ 标准模式大小名称上的后缀 "M" 标识。 例如，标准 6 x 6 模式的定义名称为 HT \_ PATSIZE \_ 6x6，而修改后的 6 x 6 模式的名称为 ht \_ PATSIZE \_ 6x6 \_ M) 。 修改后的版本提供了更多的颜色分辨率，但可能会产生水平或垂直噪音的副作用。 此外，由于每种模式大小都与设备分辨率相关，因此适当的模式大小取决于特定的设备。
 
-模式大小 (空间解析) 和颜色解析之间的权衡取决于模式大小。 较大的半色调模式产生更好的颜色分辨率，而较小的模式则会产生最佳的空间分辨率。 确定最佳的模式大小通常是一种试验和错误。 有关详细信息，请参阅 [**GDIINFO**](/windows/win32/api/winddi/ns-winddi-_gdiinfo)。
+模式大小 (空间解析) 和颜色解析之间的权衡取决于模式大小。 较大的半色调模式产生更好的颜色分辨率，而较小的模式则会产生最佳的空间分辨率。 确定最佳的模式大小通常是一种试验和错误。 有关详细信息，请参阅 [**GDIINFO**](/windows/win32/api/winddi/ns-winddi-gdiinfo)。
 
 影响半色调的 GDIINFO 结构成员的另一个是 **flHTFlags**，其中包含描述半色调所需设备分辨率的标志。
 

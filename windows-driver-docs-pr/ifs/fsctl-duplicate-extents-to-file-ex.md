@@ -15,12 +15,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 741a5fd8a6491062cb36bf69056dada0c905ee94
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 94d662c4e1677b1b71979bad30126884d46715bf
+ms.sourcegitcommit: eba1bbec165d56f64d4c1ab5c3f7465dcd299ae3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90716796"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91510604"
 ---
 # <a name="fsctl_duplicate_extents_to_file_ex-control-code"></a>\_将重复 \_ 区 FSCTL \_ 到 \_ 文件 \_ EX 控制代码
 
@@ -73,11 +73,11 @@ BOOL
 如果 *lpOverlapped* 不为 **null**，则 *lpBytesReturned* 可以为 **null**。 如果此参数不为 **NULL** ，并且操作返回数据，则在重叠操作完成之前， *lpBytesReturned* 是无意义的。 若要检索返回的字节数，请调用 [**getoverlappedresult 期间**](/windows/win32/api/ioapiset/nf-ioapiset-getoverlappedresult)。 如果 *hDevice* 参数与 i/o 完成端口关联，则可以通过调用 [**GetQueuedCompletionStatus**](/windows/win32/api/ioapiset/nf-ioapiset-getqueuedcompletionstatus)检索返回的字节数。
 
 *lpOverlapped* \[中\]  
-指向 [**重叠**](/windows/win32/api/minwinbase/ns-minwinbase-_overlapped) 的结构的指针。
+指向 [**重叠**](/windows/win32/api/minwinbase/ns-minwinbase-overlapped) 的结构的指针。
 
 如果在未指定**文件 \_ 标志 \_ 重叠**的情况下打开*hDevice* ，则将忽略*lpOverlapped* 。
 
-如果使用**FILE \_ 标记 \_ 交叠**标志打开*hDevice* ，则操作将作为 (异步) 操作的重叠进行。 在这种情况下， *lpOverlapped* 必须指向包含事件对象句柄的有效 [**重叠**](/windows/win32/api/minwinbase/ns-minwinbase-_overlapped) 结构。 否则，函数将会失败。
+如果使用**FILE \_ 标记 \_ 交叠**标志打开*hDevice* ，则操作将作为 (异步) 操作的重叠进行。 在这种情况下， *lpOverlapped* 必须指向包含事件对象句柄的有效 [**重叠**](/windows/win32/api/minwinbase/ns-minwinbase-overlapped) 结构。 否则，函数将会失败。
 
 对于重叠操作， [**DeviceIoControl**](/windows/win32/api/ioapiset/nf-ioapiset-deviceiocontrol) 将立即返回，并且在操作完成后会发出事件对象。 否则，在操作完成或发生错误之前，函数不会返回。
 
@@ -88,7 +88,7 @@ BOOL
 
 如果操作失败或挂起，则 [**DeviceIoControl**](/windows/win32/api/ioapiset/nf-ioapiset-deviceiocontrol) 将返回零。 若要获取扩展的错误信息，请调用 [**GetLastError**](/windows/win32/api/errhandlingapi/nf-errhandlingapi-getlasterror)。
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
 有关此操作上的重叠 i/o 的含义，请参阅 [**DeviceIoControl**](/windows/win32/api/ioapiset/nf-ioapiset-deviceiocontrol) 主题的 "备注" 部分。
