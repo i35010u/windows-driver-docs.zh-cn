@@ -1,6 +1,6 @@
 ---
 title: 用户拔出设备
-description: 用户拔出设备
+description: 了解当用户使用拔出或弹出硬件) 或 "意外删除" (通过 "有序删除" 断开设备时发生的情况。
 ms.assetid: 85e69401-0128-4641-aa0f-fd7c4f22f395
 keywords:
 - PnP WDK KMDF，拔出设备
@@ -13,12 +13,12 @@ keywords:
 - 弹出设备 WDK KMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c95571624afcc56c767a21181c32e6fd531c2aa3
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 6f861b3047aac8e2dbe31527a5bf5d12c0fa0a22
+ms.sourcegitcommit: 2aedb606f9f14e74687f0d3da60e14fc6ffffa7e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89192127"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91544414"
 ---
 # <a name="a-user-unplugs-a-device"></a>用户拔出设备
 

@@ -1,17 +1,17 @@
 ---
 title: IRP_MN_QUERY_STOP_DEVICE
-description: 所有 PnP 驱动程序都必须处理此 IRP。
+description: 了解 "IRP_MN_QUERY_STOP_DEVICE" 内核模式驱动程序体系结构。 所有 PnP 驱动程序都必须处理此 IRP。
 ms.date: 08/12/2017
 ms.assetid: 22f58964-23a0-4307-a748-9c1620e30871
 keywords:
 - IRP_MN_QUERY_STOP_DEVICE 内核模式驱动程序体系结构
 ms.localizationpriority: medium
-ms.openlocfilehash: 1e8aef1c3e2f16770873073602c3077ee387af9e
-ms.sourcegitcommit: 68d0aec4c282c9c1e1ab54509c8f4575dd273d56
+ms.openlocfilehash: a7496870afc1aedd874065e695a71e14a7905939
+ms.sourcegitcommit: 2aedb606f9f14e74687f0d3da60e14fc6ffffa7e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91221891"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91544406"
 ---
 # <a name="irp_mn_query_stop_device"></a>IRP \_ MN \_ 查询 \_ 停止 \_ 设备
 
@@ -39,12 +39,12 @@ PnP 管理器在 \_ 系统线程的上下文中以 IRQL 被动级别发送此 IR
 ## <a name="input-parameters"></a>输入参数
 
 
-无
+None
 
 ## <a name="output-parameters"></a>输出参数
 
 
-无
+None
 
 ## <a name="io-status-block"></a>I/o 状态块
 

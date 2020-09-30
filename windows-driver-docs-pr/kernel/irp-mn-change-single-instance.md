@@ -1,17 +1,17 @@
 ---
 title: IRP_MN_CHANGE_SINGLE_INSTANCE
-description: 支持 WMI 的所有驱动程序都必须处理此 IRP。
+description: 了解 "IRP_MN_CHANGE_SINGLE_INSTANCE"。 所有支持 WMI 的驱动程序都必须处理此 IRP。
 ms.date: 08/12/2017
 ms.assetid: 180d40a4-b300-4801-b9da-9239500ca15f
 keywords:
 - IRP_MN_CHANGE_SINGLE_INSTANCE 内核模式驱动程序体系结构
 ms.localizationpriority: medium
-ms.openlocfilehash: 12e20b11be71dfe7a6cb62d27b4b1288706a9dd9
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 94db57cddc160789428c94a729f7fd3822c0eba5
+ms.sourcegitcommit: 2aedb606f9f14e74687f0d3da60e14fc6ffffa7e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89188235"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91544418"
 ---
 # <a name="irp_mn_change_single_instance"></a>IRP \_ MN \_ 更改 \_ 单一 \_ 实例
 
@@ -65,7 +65,7 @@ WNODE**指向标识**实例的[** \_ 单个 \_ 实例**](/windows-hardware/drive
 
 成功时，驱动程序将 **Irp- &gt; IoStatus** 设置为零。
 
-<a name="operation"></a>操作
+<a name="operation"></a>Operation
 ---------
 
 如果驱动程序通过调用 [**WmiSystemControl**](/windows-hardware/drivers/ddi/wmilib/nf-wmilib-wmisystemcontrol)来处理 WMI irp，则该例程将调用驱动程序的 [*DpWmiSetDataBlock*](/windows-hardware/drivers/ddi/wmilib/nc-wmilib-wmi_set_datablock_callback) 例程， \_ 或 \_ \_ 仅当驱动程序未定义例程时返回状态 WMI READ。
@@ -108,7 +108,7 @@ WNODE**指向标识**实例的[** \_ 单个 \_ 实例**](/windows-hardware/drive
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Header</p></td>
+<td><p>标头</p></td>
 <td>Wdm.h（包括 Wdm.h、Ntddk.h 或 Ntifs.h）</td>
 </tr>
 </tbody>

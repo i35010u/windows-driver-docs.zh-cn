@@ -1,15 +1,20 @@
 ---
 title: IddCx 对象
-description: IddCx 使用可扩展的 UMDF 对象模型来表示图形对象，以下各节将对这些对象进行介绍。
+description: IddCx 使用可扩展的 UMDF 对象模型来表示图形对象。
 ms.assetid: B4D40C6B-DCEF-4661-9DF2-411326870014
 ms.date: 07/17/2020
+keywords:
+- 间接显示驱动程序对象
+- IDD 对象
+- 间接显示驱动程序，UMDF 对象
+- IDD 对象
 ms.localizationpriority: medium
-ms.openlocfilehash: deed69275fc5940b5c672533963477c3a98082d5
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: cd8d6d5d1f13f5c994ed61f435bff94528b990e8
+ms.sourcegitcommit: 2aedb606f9f14e74687f0d3da60e14fc6ffffa7e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89064104"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91544416"
 ---
 # <a name="iddcx-objects"></a>IddCx 对象
 

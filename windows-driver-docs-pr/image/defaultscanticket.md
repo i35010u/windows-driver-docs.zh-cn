@@ -1,9 +1,9 @@
 ---
 title: DefaultScanTicket 元素
-description: .
+description: 了解 "DefaultScanTicket" 元素。 查看代码示例和其他可用资源。
 ms.assetid: 1c0f15c8-b14f-4607-8655-36e1397082e6
 keywords:
-- DefaultScanTicket 元素成像设备
+- DefaultScanTicket 元素图像设备
 topic_type:
 - apiref
 api_name:
@@ -12,17 +12,17 @@ api_type:
 - Schema
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 653d82cba1a9f68ddea76f0a124482c263b1ceea
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 366e55805ad20818c2530a0922eb04f4d33db0d0
+ms.sourcegitcommit: 2aedb606f9f14e74687f0d3da60e14fc6ffffa7e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63364583"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91544412"
 ---
 # <a name="defaultscanticket-element"></a>DefaultScanTicket 元素
 
 
-<a name="usage"></a>用法
+<a name="usage"></a>使用情况
 -----
 
 ```xml
@@ -31,7 +31,7 @@ ms.locfileid: "63364583"
 </wscn:DefaultScanTicket>
 ```
 
-<a name="attributes"></a>特性
+<a name="attributes"></a>属性
 ----------
 
 没有特性。
@@ -75,22 +75,22 @@ ms.locfileid: "63364583"
 <td><p><a href="elementchanges.md" data-raw-source="[&lt;strong&gt;ElementChanges&lt;/strong&gt;](elementchanges.md)"><strong>ElementChanges</strong></a></p></td>
 </tr>
 <tr class="even">
-<td><p><a href="elementdata-for-scannerelements-element.md" data-raw-source="[&lt;strong&gt;ElementData Element for ScannerElements&lt;/strong&gt;](elementdata-for-scannerelements-element.md)"><strong>ScannerElements ElementData 元素</strong></a></p></td>
+<td><p><a href="elementdata-for-scannerelements-element.md" data-raw-source="[&lt;strong&gt;ElementData Element for ScannerElements&lt;/strong&gt;](elementdata-for-scannerelements-element.md)"><strong>ScannerElements 的 ElementData 元素</strong></a></p></td>
 </tr>
 </tbody>
 </table>
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
-**DefaultScanTicket**元素是实例[ **ScanTicket** ](scanticket.md)元素。 **DefaultScanTicket**描述的默认值时不包含特定的处理元素创建一个作业，WSD 扫描服务要应用于当前集。
+**DefaultScanTicket**元素是[**ScanTicket**](scanticket.md)元素的实例。 **DefaultScanTicket** 描述了创建作业时，WSD 扫描服务将应用的当前默认值集，而无需指定处理元素。
 
-客户端可以请求的扫描程序**DefaultScanTicket**通过元素[ **GetScannerElementsRequest** ](getscannerelementsrequest.md)操作以及如何将它不会出错请求时扫描通过作业[ **CreateScanJobRequest** ](createscanjobrequest.md)操作。 **DefaultScanTicket**将包含的所有值**ScanTicket**设备支持的选项。
+客户端可以通过[**GetScannerElementsRequest**](getscannerelementsrequest.md)操作请求扫描程序的**DefaultScanTicket**元素，然后在通过[**CreateScanJobRequest**](createscanjobrequest.md)操作请求扫描作业时使用该元素而不会出错。 **DefaultScanTicket**将包含设备支持的所有**ScanTicket**选项的值。
 
 <a name="examples"></a>示例
 --------
 
-下面的代码示例显示了示例 DefaultScanTicket。
+下面的代码示例演示了一个示例 DefaultScanTicket。
 
 ```xml
 <wscn:DefaultScanTicket>
@@ -148,7 +148,7 @@ ms.locfileid: "63364583"
 
 [**ElementChanges**](elementchanges.md)
 
-[**ScannerElements ElementData 元素**](elementdata-for-scannerelements-element.md)
+[**ScannerElements 的 ElementData 元素**](elementdata-for-scannerelements-element.md)
 
 [**GetScannerElementsRequest**](getscannerelementsrequest.md)
 

@@ -1,17 +1,17 @@
 ---
 title: IRP_MN_QUERY_SINGLE_INSTANCE
-description: 支持 WMI 的所有驱动程序都必须处理此 IRP。
+description: 了解 "IRP_MN_QUERY_SINGLE_INSTANCE" 内核模式驱动程序体系结构。 支持 WMI 的所有驱动程序都必须处理此 IRP。
 ms.date: 08/12/2017
 ms.assetid: 104b6b3e-aa5d-437f-8236-02e4abb1ba46
 keywords:
 - IRP_MN_QUERY_SINGLE_INSTANCE 内核模式驱动程序体系结构
 ms.localizationpriority: medium
-ms.openlocfilehash: 37b6f07118d8d3870b5c7051c0f0bbaf9ba2dd21
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 14f31d6bcb59c7319aeeda564702d42e94a18d95
+ms.sourcegitcommit: 2aedb606f9f14e74687f0d3da60e14fc6ffffa7e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89186469"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91544408"
 ---
 # <a name="irp_mn_query_single_instance"></a>IRP \_ MN \_ 查询 \_ 单一 \_ 实例
 
@@ -73,7 +73,7 @@ WNODE**指示非**分页缓冲区的最大大小，该缓冲区位于**Parameter
 
 成功时，驱动程序将 ** &gt; IoStatus** 设置为输入到 **WnodeHeader**的值。 此值包括静态实例名称的长度。
 
-<a name="operation"></a>操作
+<a name="operation"></a>Operation
 ---------
 
 驱动程序可以通过调用 [**WmiSystemControl**](/windows-hardware/drivers/ddi/wmilib/nf-wmilib-wmisystemcontrol) 或处理 IRP 本身来处理 wmi irp，如 [处理 WMI 请求](./handling-wmi-requests.md)中所述。
@@ -114,7 +114,7 @@ WNODE**指示非**分页缓冲区的最大大小，该缓冲区位于**Parameter
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Header</p></td>
+<td><p>标头</p></td>
 <td>Wdm.h（包括 Wdm.h、Ntddk.h 或 Ntifs.h）</td>
 </tr>
 </tbody>

@@ -1,17 +1,17 @@
 ---
 title: IRP_MN_DISABLE_EVENTS
-description: 注册一个或多个事件块的任何 WMI 驱动程序都必须处理此 IRP。
+description: 了解 "IRP_MN_DISABLE_EVENTS" 内核模式驱动程序体系结构。 注册一个或多个事件块的任何 WMI 驱动程序都必须处理此 IRP。
 ms.date: 08/12/2017
 ms.assetid: 3187643b-27d7-4a6d-8fbe-4f8eb6c251ed
 keywords:
 - IRP_MN_DISABLE_EVENTS 内核模式驱动程序体系结构
 ms.localizationpriority: medium
-ms.openlocfilehash: 1c36116a1c22ff9955e300b3c45b32b2022eb488
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: b6bd81456031524c9c2fe6de0052c8704d77fc41
+ms.sourcegitcommit: 2aedb606f9f14e74687f0d3da60e14fc6ffffa7e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89185177"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91544384"
 ---
 # <a name="irp_mn_disable_events"></a>IRP \_ MN \_ 禁用 \_ 事件
 
@@ -57,7 +57,7 @@ WMI \_ 在任意线程上下文中以 IRQL = 被动级别发送此 IRP。
 
 成功时，驱动程序将 **Irp- &gt; IoStatus** 设置为零。
 
-<a name="operation"></a>操作
+<a name="operation"></a>Operation
 ---------
 
 驱动程序可以通过调用 [**WmiSystemControl**](/windows-hardware/drivers/ddi/wmilib/nf-wmilib-wmisystemcontrol) 或处理 IRP 本身来处理 wmi irp，如 [处理 WMI 请求](./handling-wmi-requests.md)中所述。
@@ -84,7 +84,7 @@ WMI \_ 在任意线程上下文中以 IRQL = 被动级别发送此 IRP。
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Header</p></td>
+<td><p>标头</p></td>
 <td>Wdm.h（包括 Wdm.h、Ntddk.h 或 Ntifs.h）</td>
 </tr>
 </tbody>

@@ -1,6 +1,6 @@
 ---
 title: 用户插入设备
-description: 用户插入设备
+description: 了解用户插入设备后会发生什么情况。 在示例方案中，"设备" 节点包含 KMDF 总线驱动程序。
 ms.assetid: cc047c05-f3aa-4423-98fc-cafd7777e104
 keywords:
 - PnP WDK KMDF，插入设备
@@ -9,12 +9,12 @@ keywords:
 - 添加设备 WDK KMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d154f12196eea3a9c8c877bdf180a595a8f362b4
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: bcc15623072a860364be0987f5a150ddd791ba7a
+ms.sourcegitcommit: 2aedb606f9f14e74687f0d3da60e14fc6ffffa7e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89189721"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91544424"
 ---
 # <a name="a-user-plugs-in-a-device"></a>用户插入设备
 

@@ -1,15 +1,15 @@
 ---
 title: 蓝牙软件无线电开关函数原型
-description: 以前的 Windows 版本中的蓝牙版本和配置文件支持
+description: 了解以前的 windows 版本中的蓝牙版本和配置文件支持。 请参阅要求、建议和代码示例。
 ms.assetid: A5A81EAA-0DC7-4725-AA0D-5C4867DDE47C
 ms.date: 02/12/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: c64b14211af4d3bb10c16cf7040c4b035a7ffb9c
-ms.sourcegitcommit: b331d736356095f852629402bd1a0becbb396ede
+ms.openlocfilehash: f1254083fc3c202660add7a34a13a93a44c3b15b
+ms.sourcegitcommit: 2aedb606f9f14e74687f0d3da60e14fc6ffffa7e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/18/2020
-ms.locfileid: "90765312"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91544332"
 ---
 # <a name="bluetooth-software-radio-switch-function-prototypes"></a>蓝牙软件无线电开关函数原型
 

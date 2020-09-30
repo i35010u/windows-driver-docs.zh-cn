@@ -1,17 +1,17 @@
 ---
 title: IRP_MN_REMOVE_DEVICE
-description: 所有 PnP 驱动程序都必须处理此 IRP。
+description: 了解 "IRP_MN_REMOVE_DEVICE" 内核模式驱动程序体系结构。 所有 PnP 驱动程序都必须处理此 IRP。
 ms.date: 08/12/2017
 ms.assetid: 0d733cbd-2da8-48a5-afc6-e1e6b8f507a1
 keywords:
 - IRP_MN_REMOVE_DEVICE 内核模式驱动程序体系结构
 ms.localizationpriority: medium
-ms.openlocfilehash: 4d853ed8d66c9755e64cd47a81c6a663e737d631
-ms.sourcegitcommit: 68d0aec4c282c9c1e1ab54509c8f4575dd273d56
+ms.openlocfilehash: aaab2ee59e23c6e1cc5e6ac3c31473c65ba3ba0a
+ms.sourcegitcommit: 2aedb606f9f14e74687f0d3da60e14fc6ffffa7e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91221953"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91544404"
 ---
 # <a name="irp_mn_remove_device"></a>IRP \_ MN \_ 删除 \_ 设备
 
@@ -41,12 +41,12 @@ PnP 管理器在 \_ 系统线程的上下文中以 IRQL 被动级别发送此 IR
 ## <a name="input-parameters"></a>输入参数
 
 
-无
+None
 
 ## <a name="output-parameters"></a>输出参数
 
 
-无
+None
 
 ## <a name="io-status-block"></a>I/o 状态块
 

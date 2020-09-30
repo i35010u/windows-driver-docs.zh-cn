@@ -11,12 +11,12 @@ keywords:
 - surface 启用和禁用 WDK GDI
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1a7e9f0365fff9292e4a0bd5ad6686edb976a810
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 28c563a3f3c35d21aafcce5088ae05372481a890
+ms.sourcegitcommit: 2aedb606f9f14e74687f0d3da60e14fc6ffffa7e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90716834"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91544378"
 ---
 # <a name="gdi-support-for-surfaces"></a>图面的 GDI 支持
 
@@ -60,7 +60,7 @@ ms.locfileid: "90716834"
 </tr>
 <tr class="even">
 <td align="left"><p><a href="/windows/win32/api/winddi/nf-winddi-engcreatewnd" data-raw-source="[&lt;strong&gt;EngCreateWnd&lt;/strong&gt;](/windows/win32/api/winddi/nf-winddi-engcreatewnd)"><strong>EngCreateWnd</strong></a></p></td>
-<td align="left"><p>在指定表面上创建 <a href="/windows/win32/api/winddi/ns-winddi-_wndobj" data-raw-source="[&lt;strong&gt;WNDOBJ&lt;/strong&gt;](/windows/win32/api/winddi/ns-winddi-_wndobj)"><strong>WNDOBJ</strong></a> 结构。</p></td>
+<td align="left"><p>在指定表面上创建 <a href="/windows/win32/api/winddi/ns-winddi-wndobj" data-raw-source="[&lt;strong&gt;WNDOBJ&lt;/strong&gt;](/windows/win32/api/winddi/ns-winddi-_wndobj)"><strong>WNDOBJ</strong></a> 结构。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="/windows/win32/api/winddi/nf-winddi-engdeletesurface" data-raw-source="[&lt;strong&gt;EngDeleteSurface&lt;/strong&gt;](/windows/win32/api/winddi/nf-winddi-engdeletesurface)"><strong>EngDeleteSurface</strong></a></p></td>
@@ -68,7 +68,7 @@ ms.locfileid: "90716834"
 </tr>
 <tr class="even">
 <td align="left"><p><a href="/windows/win32/api/winddi/nf-winddi-engdeletewnd" data-raw-source="[&lt;strong&gt;EngDeleteWnd&lt;/strong&gt;](/windows/win32/api/winddi/nf-winddi-engdeletewnd)"><strong>EngDeleteWnd</strong></a></p></td>
-<td align="left"><p>删除 <a href="/windows/win32/api/winddi/ns-winddi-_wndobj" data-raw-source="[&lt;strong&gt;WNDOBJ&lt;/strong&gt;](/windows/win32/api/winddi/ns-winddi-_wndobj)"><strong>WNDOBJ</strong></a> 结构。</p></td>
+<td align="left"><p>删除 <a href="/windows/win32/api/winddi/ns-winddi-wndobj" data-raw-source="[&lt;strong&gt;WNDOBJ&lt;/strong&gt;](/windows/win32/api/winddi/ns-winddi-_wndobj)"><strong>WNDOBJ</strong></a> 结构。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="/windows/win32/api/winddi/nf-winddi-engerasesurface" data-raw-source="[&lt;strong&gt;EngEraseSurface&lt;/strong&gt;](/windows/win32/api/winddi/nf-winddi-engerasesurface)"><strong>EngEraseSurface</strong></a></p></td>
@@ -80,7 +80,7 @@ ms.locfileid: "90716834"
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="/windows/win32/api/winddi/nf-winddi-englocksurface" data-raw-source="[&lt;strong&gt;EngLockSurface&lt;/strong&gt;](/windows/win32/api/winddi/nf-winddi-englocksurface)"><strong>EngLockSurface</strong></a></p></td>
-<td align="left"><p>为驱动程序提供对创建的图面的访问权限，方法是为该图面创建一个 (<a href="/windows/win32/api/winddi/ns-winddi-_surfobj" data-raw-source="[&lt;strong&gt;SURFOBJ&lt;/strong&gt;](/windows/win32/api/winddi/ns-winddi-_surfobj)"><strong>SURFOBJ</strong></a>) 的用户对象。  (<a href="surface-negotiation.md" data-raw-source="[primary surface](surface-negotiation.md)">主要表面</a> 未锁定。 ) </p></td>
+<td align="left"><p>为驱动程序提供对创建的图面的访问权限，方法是为该图面创建一个 (<a href="/windows/win32/api/winddi/ns-winddi-surfobj" data-raw-source="[&lt;strong&gt;SURFOBJ&lt;/strong&gt;](/windows/win32/api/winddi/ns-winddi-_surfobj)"><strong>SURFOBJ</strong></a>) 的用户对象。  (<a href="surface-negotiation.md" data-raw-source="[primary surface](surface-negotiation.md)">主要表面</a> 未锁定。 ) </p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><a href="/windows/win32/api/winddi/nf-winddi-engmarkbandingsurface" data-raw-source="[&lt;strong&gt;EngMarkBandingSurface&lt;/strong&gt;](/windows/win32/api/winddi/nf-winddi-engmarkbandingsurface)"><strong>EngMarkBandingSurface</strong></a></p></td>

@@ -4,15 +4,14 @@ description: NDIS 微型端口驱动程序开发路线图
 ms.assetid: 7cb56c08-3578-49d7-a0aa-a89dc6b139ca
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c1dce6d4395f549141f2a4d4f3f2f16371a7dff8
-ms.sourcegitcommit: 366a15d68eb58d01a8ca6de7b982f62ac8b7deaf
+ms.openlocfilehash: 3f068b520110d3029534e6ebd17eabc2e089d1b3
+ms.sourcegitcommit: 2aedb606f9f14e74687f0d3da60e14fc6ffffa7e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/19/2020
-ms.locfileid: "90812006"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91544398"
 ---
 # <a name="roadmap-for-developing-ndis-miniport-drivers"></a>NDIS 微型端口驱动程序开发路线图
-
 
 若要创建网络驱动程序接口规范 (NDIS) 微型端口驱动程序包，请执行以下步骤：
 
@@ -77,21 +76,18 @@ ms.locfileid: "90812006"
 
   如果要移植现有驱动程序，请参阅移植指南：
 
-  -   [将 NDIS 1.x 驱动程序移植到 NDIS 6。0](/previous-versions/windows/hardware/network/porting-ndis-5-x-drivers-to-ndis-6-0)
-  -   [将 NDIS 6.x 驱动程序移植到 NDIS 6.20](porting-ndis-6-x-drivers-to-ndis-6-20.md)
-  -   [将 NDIS 6.x 驱动程序移植到 NDIS 6.30](porting-ndis-6-x-drivers-to-ndis-6-30.md)
+  - [将 NDIS 1.x 驱动程序移植到 NDIS 6。0](/previous-versions/windows/hardware/network/porting-ndis-5-x-drivers-to-ndis-6-0)
+  - [将 NDIS 6.x 驱动程序移植到 NDIS 6.20](porting-ndis-6-x-drivers-to-ndis-6-20.md)
+  - [将 NDIS 6.x 驱动程序移植到 NDIS 6.30](porting-ndis-6-x-drivers-to-ndis-6-30.md)
 
   有关迭代生成、测试和调试的详细信息，请参阅 [生成、调试和测试过程的概述](/windows-hardware/drivers)。 此过程有助于确保构建一个可正常工作的驱动程序。
 
 - 步骤10：为驱动程序创建驱动程序包。
 
-  有关如何安装驱动程序的详细信息，请参阅 [提供驱动程序包](/windows-hardware/drivers)。 有关如何安装 NDIS 驱动程序的详细信息，请参阅 [安装和升级网络组件](installing-and-upgrading-network-components.md)。
+  有关如何安装驱动程序的详细信息，请参阅 [提供驱动程序包](/windows-hardware/drivers)。 有关如何安装 NDIS 驱动程序的详细信息，请参阅 [用于安装网络组件的组件和文件](components-and-files-used-for-network-component-installation.md) 和 [通知网络组件对象](notify-objects-for-network-components.md)。
 
 - 步骤11：对驱动程序进行签名和分发。
 
   最后一步是对 (可选) 进行签名，然后分发驱动程序。 如果你的驱动程序满足为 [Windows 硬件认证工具包 ](https://go.microsoft.com/fwlink/p/?LinkId=733613)定义的质量标准 (HCK) ，你可以通过 Microsoft Windows 更新计划分发该驱动程序。 有关如何分发驱动程序的详细信息，请参阅 [分发驱动程序](/windows-hardware/drivers)。
 
 这些是基本步骤。 根据单个驱动程序的需要，可能需要执行其他步骤。
-
- 
-

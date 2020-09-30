@@ -1,17 +1,17 @@
 ---
 title: IRP_MN_START_DEVICE
-description: 所有 PnP 驱动程序都必须处理此 IRP。
+description: 了解 "IRP_MN_START_DEVICE" 内核模式驱动程序体系结构。 所有 PnP 驱动程序都必须处理此 IRP。
 ms.date: 08/12/2017
 ms.assetid: 0aac1346-b5c7-4dcc-ab86-03e8fd151505
 keywords:
 - IRP_MN_START_DEVICE 内核模式驱动程序体系结构
 ms.localizationpriority: medium
-ms.openlocfilehash: c61ecbf09a883af2a76e41a1a0c22c3aece93dae
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: d285e3a9d0f9d5e8635bc9d84dd4ac69520242e7
+ms.sourcegitcommit: 2aedb606f9f14e74687f0d3da60e14fc6ffffa7e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89189341"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91544402"
 ---
 # <a name="irp_mn_start_device"></a>IRP \_ MN \_ 启动 \_ 设备
 
@@ -46,7 +46,7 @@ PnP 管理器在 \_ 系统线程的上下文中以 IRQL 被动级别发送此 IR
 ## <a name="output-parameters"></a>输出参数
 
 
-无
+None
 
 ## <a name="io-status-block"></a>I/o 状态块
 
@@ -55,7 +55,7 @@ PnP 管理器在 \_ 系统线程的上下文中以 IRQL 被动级别发送此 IR
 
 如果驱动程序需要一段时间才能对设备运行其启动操作，则可以将 IRP 标记为 "挂起" 并返回 "挂起" 状态 \_ 。
 
-<a name="operation"></a>操作
+<a name="operation"></a>Operation
 ---------
 
 此 IRP 必须首先由设备的父总线驱动程序处理，然后由设备堆栈中的每个更高的驱动程序处理。
@@ -82,7 +82,7 @@ PnP 管理器在 \_ 系统线程的上下文中以 IRQL 被动级别发送此 IR
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Header</p></td>
+<td><p>标头</p></td>
 <td>Wdm.h（包括 Wdm.h、Ntddk.h 或 Ntifs.h）</td>
 </tr>
 </tbody>

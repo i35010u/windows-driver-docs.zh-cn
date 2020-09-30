@@ -3,13 +3,16 @@ title: 调试间接显示驱动程序
 description: 介绍间接显示驱动程序的调试技术
 ms.assetid: a343812d-03d0-4a95-9c36-7e6b5a404088
 ms.date: 07/17/2020
+keywords:
+- 间接显示驱动程序，调试
+- IDDs，调试
 ms.localizationpriority: medium
-ms.openlocfilehash: 7a6725c8bc6c75543d3a4d4ac5585ec177c83a5b
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 15f7503cff1f981590a4adb6b7e48b0e7862ce20
+ms.sourcegitcommit: 2aedb606f9f14e74687f0d3da60e14fc6ffffa7e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89064776"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91544382"
 ---
 # <a name="debugging-indirect-display-drivers"></a>调试间接显示驱动程序
 
