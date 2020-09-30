@@ -1,6 +1,6 @@
 ---
 title: 启用和禁用中断
-description: 启用和禁用中断
+description: 了解如何启用和禁用中断。 驱动程序必须为中断提供 "EvtInterruptEnable" 和 "EvtInterruptDisable" 回调函数。
 ms.assetid: 432907e7-05a3-4a99-a291-33bd1eefa94c
 keywords:
 - 硬件中断 WDK KMDF，启用
@@ -11,12 +11,12 @@ keywords:
 - 状态信息 WDK KMDF，禁用中断
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7d1d12b9d225e1854953ad1ea385e89db493c939
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: e68e6a38ad4cc76dc204d4d2b72200d52843ac86
+ms.sourcegitcommit: f1d6c2d0cdbecdc69ba65ed3b530755fc73c8e5e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89191747"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91590371"
 ---
 # <a name="enabling-and-disabling-interrupts"></a>启用和禁用中断
 

@@ -1,24 +1,24 @@
 ---
 title: 全局热量管理
-description: 处理 IRP_MN_SURPRISE_REMOVAL 请求
+description: 了解 GUID_THERMAL_COOLING_INTERFACE 驱动程序接口及其在全局热量管理中的使用方式。
 ms.assetid: 3CBF44B2-891A-4B68-97F6-3563EC0D5122
 keywords:
 - 全局热量管理
-- 温度
+- 散热
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3177ded380484b2f4661582cc643680672eaa4bd
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b50edd411d07009d1339923af747eade4d040f2a
+ms.sourcegitcommit: f1d6c2d0cdbecdc69ba65ed3b530755fc73c8e5e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63359906"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91590397"
 ---
 # <a name="global-thermal-management"></a>全局热量管理 
 
-可通过 GUID_THERMAL_COOLING_INTERFACE 驱动程序接口的设备驱动程序参与全局热量管理跨多个中的硬件平台的设备。 在此界面，具有热量管理功能的设备的驱动程序执行的回调例程。 操作系统将调用这些例程可以动态地管理用户活动和环境条件中的响应的更改在平台中的散热级别。
+GUID_THERMAL_COOLING_INTERFACE 驱动程序接口允许设备驱动程序在硬件平台中的各种设备上参与全局热量管理。 具有热量管理功能的设备的驱动程序实现此接口中的回调例程。 操作系统调用这些例程来动态管理平台中的热量级别，以响应用户活动和环境条件的变化。
 
-通过防止过热，Windows 热量管理保留设备可靠地运行，并阻止用户可访问的图面变得 uncomfortably 热门。 Windows 智能地平衡的温度级别要求在平台中的设备的可扩展平台可以靠电池电量的时间和维护始终处于打开和始终连接的计算机的外观。
+通过防止过热，Windows 热量管理可使设备可靠运行，并防止用户可访问的表面变为 uncomfortably 热。 Windows 智能地平衡了平台中设备的热量级别要求，延长了平台处理电池电量的时间，并保持了始终开机和始终连接的计算机的外观。
 
-有关详细信息，请参阅[设备级别的热量管理](device-level-thermal-management.md)。
+有关详细信息，请参阅 [设备级热量管理](device-level-thermal-management.md)。
 

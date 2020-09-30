@@ -1,15 +1,15 @@
 ---
 title: InfVerif
-description: 'InfVerif ( # A0) 是可用于测试驱动程序 INF 文件的工具。 除了报告 INF 语法问题外，该工具还报告 INF 文件是否是通用的。'
+description: '了解 InfVerif ( # A0) 工具。 你可以使用此工具来测试驱动程序 INF 文件，或查明 INF 文件是否是通用的。'
 ms.assetid: 6F565E1C-C6FC-4637-B476-FE4E4672CCC3
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f053e05dcf9cb6592acb4580b74e3c6b9b7a135d
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 4aea0f0827614e5e4b2cd44ae182e73142d005fe
+ms.sourcegitcommit: f1d6c2d0cdbecdc69ba65ed3b530755fc73c8e5e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89383725"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91590377"
 ---
 # <a name="infverif"></a>InfVerif
 

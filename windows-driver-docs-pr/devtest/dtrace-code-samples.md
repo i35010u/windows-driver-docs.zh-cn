@@ -1,6 +1,6 @@
 ---
 title: DTrace 代码示例
-description: DTrace 支持 D 编程语言。 本主题提供了 D 代码示例。
+description: 了解支持 D 编程语言的 DTrace。 请参阅代码示例并查看附加的可用支持。
 ms.assetid: abf23d76-423d-4d1e-afde-83739015bbff
 keywords:
 - DTrace WDK
@@ -13,12 +13,12 @@ keywords:
 - 跟踪消息格式化文件 WDK
 ms.date: 11/04/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 050cd2eadcd1b6f84a950f99f967557cbd535d04
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 42e85a1373e65bfe7a1a7ab6a143445fd1a2399a
+ms.sourcegitcommit: f1d6c2d0cdbecdc69ba65ed3b530755fc73c8e5e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89383269"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91590378"
 ---
 # <a name="dtrace-code-samples"></a>DTrace 代码示例
 

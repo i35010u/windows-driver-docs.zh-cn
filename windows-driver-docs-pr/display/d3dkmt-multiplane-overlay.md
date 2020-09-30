@@ -1,6 +1,6 @@
 ---
-title: D3DKMT\_MULTIPLANE\_覆盖结构
-description: 保留供系统使用。 不要在您的驱动程序中使用。
+title: D3DKMT \_ MULTIPLANE \_ 覆盖结构
+description: 了解 D3DKMT \_ MULTIPLANE \_ 覆盖结构，该结构已保留供系统使用。 请勿在您的驱动程序中使用。
 ms.assetid: 54773231-6240-4f44-9aff-706616af68b6
 keywords:
 - D3DKMT_MULTIPLANE_OVERLAY 结构显示设备
@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.date: 01/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: bb52e7c75bae01ae4b436982bd0cb9f7826690e9
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a746f6f313e69c997d43839caa3aaf6b2980037f
+ms.sourcegitcommit: f1d6c2d0cdbecdc69ba65ed3b530755fc73c8e5e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63382661"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91590389"
 ---
-# <a name="d3dkmtmultiplaneoverlay-structure"></a>D3DKMT\_MULTIPLANE\_覆盖结构
+# <a name="d3dkmt_multiplane_overlay-structure"></a>D3DKMT \_ MULTIPLANE \_ 覆盖结构
 
 
-保留供系统使用。 不要在您的驱动程序中使用。
+预留给系统使用。 请勿在您的驱动程序中使用。
 
 <a name="syntax"></a>语法
 ------
@@ -43,7 +43,7 @@ typedef struct D3DKMT_MULTIPLANE_OVERLAY {
 
 **LayerIndex**
 
-**Enabled**
+**已启用**
 
 **hAllocation**
 
@@ -67,8 +67,8 @@ typedef struct D3DKMT_MULTIPLANE_OVERLAY {
 <td align="left"><p>Windows Server 2012</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>Header</p></td>
-<td align="left">D3dkmthk.h</td>
+<td align="left"><p>标头</p></td>
+<td align="left">D3dkmthk</td>
 </tr>
 </tbody>
 </table>

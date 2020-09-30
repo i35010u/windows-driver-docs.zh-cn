@@ -1,6 +1,6 @@
 ---
-title: D3DKMT\_DESTROY\_OUTPUTDUPL 结构
-description: 保留供系统使用。 不要在您的驱动程序中使用。
+title: D3DKMT \_ 销毁 \_ OUTPUTDUPL 结构
+description: 了解 D3DKMT \_ 销毁 \_ OUTPUTDUPL 结构，该结构保留供系统使用。 请勿在您的驱动程序中使用。
 ms.assetid: ced3face-7f07-459f-8644-0062cd5db805
 keywords:
 - D3DKMT_DESTROY_OUTPUTDUPL 结构显示设备
@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.date: 01/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 5703b027077ec0adf5c0e782b88096529b71a065
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 23b8d78c69ea9a1f27d407fe9ba883af5cdd170f
+ms.sourcegitcommit: f1d6c2d0cdbecdc69ba65ed3b530755fc73c8e5e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63382949"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91590395"
 ---
-# <a name="d3dkmtdestroyoutputdupl-structure"></a>D3DKMT\_DESTROY\_OUTPUTDUPL 结构
+# <a name="d3dkmt_destroy_outputdupl-structure"></a>D3DKMT \_ 销毁 \_ OUTPUTDUPL 结构
 
 
-保留供系统使用。 不要在您的驱动程序中使用。
+预留给系统使用。 请勿在您的驱动程序中使用。
 
 <a name="syntax"></a>语法
 ------
@@ -64,8 +64,8 @@ typedef struct _D3DKMT_DESTROY_OUTPUTDUPL {
 <td align="left"><p>Windows Server 2012</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>Header</p></td>
-<td align="left">D3dkmthk.h （包括 D3dkmthk.h）</td>
+<td align="left"><p>标头</p></td>
+<td align="left">D3dkmthk (包含 D3dkmthk) </td>
 </tr>
 </tbody>
 </table>

@@ -1,18 +1,18 @@
 ---
 title: 创建设备对象
-description: 创建设备对象
+description: 了解如何为 WDM 函数和筛选器驱动程序、WDM 总线驱动程序和非 WDM 驱动程序创建设备对象。
 ms.assetid: 3eda8eb2-8a83-4753-a099-2531bfb9aeeb
 keywords:
 - 设备对象 WDK 内核，创建
 - 非 WDM 驱动程序设备对象 WDK 内核
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 03e86257786a37fe156f90cdfa901e877a48a69d
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: f19f6f4faaded355b5de0520ae6335d80c1c326c
+ms.sourcegitcommit: f1d6c2d0cdbecdc69ba65ed3b530755fc73c8e5e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89189815"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91590399"
 ---
 # <a name="creating-a-device-object"></a>创建设备对象
 

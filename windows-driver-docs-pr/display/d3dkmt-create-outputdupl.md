@@ -1,6 +1,6 @@
 ---
-title: D3DKMT\_创建\_OUTPUTDUPL 结构
-description: 保留供系统使用。 不要在您的驱动程序中使用。
+title: D3DKMT \_ 创建 \_ OUTPUTDUPL 结构
+description: 了解 D3DKMT \_ CREATE \_ OUTPUTDUPL 结构，它是为系统使用而保留的。 请勿在您的驱动程序中使用。
 ms.assetid: 3fdbf129-331d-4dd5-a417-79c88b7e7947
 keywords:
 - D3DKMT_CREATE_OUTPUTDUPL 结构显示设备
@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.date: 01/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 58fcae3dd7aaa378688ea55fa177eeb3b66d1522
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9c1f917f79e786fd3177cf896c955b434e5ed129
+ms.sourcegitcommit: f1d6c2d0cdbecdc69ba65ed3b530755fc73c8e5e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63382954"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91590365"
 ---
-# <a name="d3dkmtcreateoutputdupl-structure"></a>D3DKMT\_创建\_OUTPUTDUPL 结构
+# <a name="d3dkmt_create_outputdupl-structure"></a>D3DKMT \_ 创建 \_ OUTPUTDUPL 结构
 
 
-保留供系统使用。 不要在您的驱动程序中使用。
+预留给系统使用。 请勿在您的驱动程序中使用。
 
 <a name="syntax"></a>语法
 ------
@@ -70,8 +70,8 @@ typedef struct _D3DKMT_CREATE_OUTPUTDUPL {
 <td align="left"><p>Windows Server 2012</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>Header</p></td>
-<td align="left">D3dkmthk.h （包括 D3dkmthk.h）</td>
+<td align="left"><p>标头</p></td>
+<td align="left">D3dkmthk (包含 D3dkmthk) </td>
 </tr>
 </tbody>
 </table>

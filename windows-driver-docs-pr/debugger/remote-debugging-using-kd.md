@@ -1,58 +1,58 @@
 ---
 title: 使用 KD 进行远程调试
-description: 远程调试涉及两个调试器运行在两个不同的位置。
+description: 了解如何使用 KD 进行远程调试。 远程调试涉及两个在两个不同位置运行的调试器。
 ms.assetid: 274CAB1D-DD3B-4ACD-919C-8B8C253BCE50
 ms.date: 05/03/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: cb9663cd1b172140bb461d55cc2e1748645facb4
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2009e7e3e332e40b046ae6d6d2ae314c4225e6ef
+ms.sourcegitcommit: f1d6c2d0cdbecdc69ba65ed3b530755fc73c8e5e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63353545"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91590381"
 ---
 # <a name="remote-debugging-using-kd"></a>使用 KD 进行远程调试
 
 
-远程调试涉及两个调试器运行在两个不同的位置。 调用调试器执行的调试*调试服务器*。 第二个调试器中，称为*调试客户端*，控制从远程位置的调试会话。 若要建立的远程会话，必须首先设置调试服务器并随后激活调试客户端。
+远程调试涉及两个在两个不同位置运行的调试器。 执行调试的调试器称为 *调试服务器*。 第二个调试器（称为 *调试客户端*）从远程位置控制调试会话。 若要建立远程会话，必须首先设置调试服务器，然后激活调试客户端。
 
-当你想要涉及中查看的问题，一台 PC 进行调试的其他人时，远程调试很有用。
+如果您想要让其他人在计算机上进行调试，则可以使用远程调试。
 
-正在调试的代码可能正在运行的调试服务器在同一计算机上运行，或它可能在单独的计算机上运行。 如果调试服务器执行用户模式下调试，则正在调试的进程可以在调试服务器所在的计算机上运行。 如果在调试服务器执行的内核模式调试，然后在单独的目标计算机上通常运行正在调试的代码。
+正在调试的代码可以在运行调试服务器的同一台计算机上运行，也可以在单独的计算机上运行。 如果调试服务器正在执行用户模式调试，则正在调试的进程可以与调试服务器在同一台计算机上运行。 如果调试服务器正在执行内核模式调试，则所调试的代码通常会在单独的目标计算机上运行。
 
-下图说明了当内核模式调试的单独的目标计算机运行的代码执行的主机计算机上，运行的调试服务器的远程会话。
+下图说明了一个远程会话，在该会话中运行的调试服务器在主计算机上执行的是对在单独的目标计算机上运行的代码进行内核模式调试。
 
-![图示显示远程、 主机和目标计算机](images/clientservertarget.png)
+![显示远程计算机、主机计算机和目标计算机的关系图](images/clientservertarget.png)
 
-有多个可用于远程调试连接的传输协议：TCP、 NPIPE、 SPIPE、 SSL 和 COM 端口。 假设你已选择使用 TCP 作为协议，并且已选择要用作 KD 调试客户端和调试服务器。 可以使用以下过程来建立远程内核模式调试会话：
+远程调试连接可以使用几种传输协议： TCP、NPIPE、SPIPE、SSL 和 COM 端口。 假设您已选择使用 TCP 作为协议，并且您已选择将 KD 用作调试客户端和调试服务器。 你可以使用以下过程建立远程内核模式调试会话：
 
-1. 主计算机上打开 KD 并建立与目标计算机的内核模式调试会话。 (请参阅[执行内核模式调试使用 KD](performing-kernel-mode-debugging-using-kd.md)。)
-2. 在中中断通过按 CRTL 中断。
+1. 在主计算机上，打开 KD 并建立与目标计算机的内核模式调试会话。  (参阅 [使用 KD 执行内核模式调试](performing-kernel-mode-debugging-using-kd.md)) 
+2. 按 CRTL 中断。
 3. 输入以下命令。
 
-   **.server tcp:port=5005**
+   **。 server tcp： port = 5005**
 
-   **请注意**5005 的端口号是任意的。 你选择的端口号。
+   **注意**  端口号5005是任意的。 端口号是你的选择。
 
      
 
-4. KD 将使用与以下类似的输出响应。
+4. KD 将响应与下面类似的输出。
 
    ```dbgcmd
    Server started.  Client can connect with any of these command lines
    0: <debugger> -remote tcp:Port=5005,Server=YourHostComputer
    ```
 
-5. 在远程计算机上打开命令提示符窗口，并输入以下命令。
+5. 在远程计算机上，打开命令提示符窗口，然后输入以下命令。
 
-   **kd -remote tcp:Port=5005,Server=**<em>YourHostComputer</em>
+   **kd-remote tcp： Port = 5005，Server =**<em>YourHostComputer</em>
 
-   其中*YourHostComputer*是您正在运行调试服务器的主机计算机的名称。
+   其中， *YourHostComputer* 是运行调试服务器的主计算机的名称。
 
-## <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>其他信息
+## <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>附加信息
 
 
-有关启动 KD （建立远程调试） 在命令行的完整信息，请参阅[ **KD 命令行选项**](kd-command-line-options.md)。
+有关启动 KD (并在命令行中建立远程调试) 的完整信息，请参阅 [**KD 命令行选项**](kd-command-line-options.md)。
 
  
 

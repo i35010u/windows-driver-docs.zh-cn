@@ -1,6 +1,6 @@
 ---
-title: D3DKMT\_MULTIPLANE\_覆盖\_属性结构
-description: 保留供系统使用。 不要在您的驱动程序中使用。
+title: D3DKMT \_ MULTIPLANE \_ 覆盖 \_ 特性结构
+description: 了解 D3DKMT \_ MULTIPLANE \_ 覆盖 \_ 特性结构，它是为系统使用而保留的。 请勿在您的驱动程序中使用。
 ms.assetid: 07abf207-62ab-42d1-84b0-74815d1d42b8
 keywords:
 - D3DKMT_MULTIPLANE_OVERLAY_ATTRIBUTES 结构显示设备
@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.date: 01/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 392b40acbda1732a860c5918685e4b2f016df2ea
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8c52bb6dd8fd4d9d36f5ce26abaeef1c0d795016
+ms.sourcegitcommit: f1d6c2d0cdbecdc69ba65ed3b530755fc73c8e5e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63382946"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91590393"
 ---
-# <a name="d3dkmtmultiplaneoverlayattributes-structure"></a>D3DKMT\_MULTIPLANE\_覆盖\_属性结构
+# <a name="d3dkmt_multiplane_overlay_attributes-structure"></a>D3DKMT \_ MULTIPLANE \_ 覆盖 \_ 特性结构
 
 
-保留供系统使用。 不要在您的驱动程序中使用。
+预留给系统使用。 请勿在您的驱动程序中使用。
 
 <a name="syntax"></a>语法
 ------
@@ -61,7 +61,7 @@ typedef struct D3DKMT_MULTIPLANE_OVERLAY_ATTRIBUTES {
 <a name="members"></a>成员
 -------
 
-**标志**
+**标记**
 
 **SrcRect**
 
@@ -71,7 +71,7 @@ typedef struct D3DKMT_MULTIPLANE_OVERLAY_ATTRIBUTES {
 
 **旋转**
 
-**blend**
+**Blend**
 
 **DirtyRectCount**
 
@@ -113,8 +113,8 @@ typedef struct D3DKMT_MULTIPLANE_OVERLAY_ATTRIBUTES {
 <td align="left"><p>Windows Server 2012</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>Header</p></td>
-<td align="left">D3dkmthk.h</td>
+<td align="left"><p>标头</p></td>
+<td align="left">D3dkmthk</td>
 </tr>
 </tbody>
 </table>

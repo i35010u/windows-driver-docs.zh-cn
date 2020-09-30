@@ -1,6 +1,6 @@
 ---
 title: 创建中断对象
-description: 创建中断对象
+description: 了解如何创建中断对象。 驱动程序可以从 "EvtDriverDeviceAdd" 和 "EvtDevicePrepareHardware" 回调函数创建中断对象。
 ms.assetid: 8bea7498-9fee-4d84-9e6b-976102c54876
 keywords:
 - 硬件中断 WDK KMDF，对象创建
@@ -9,12 +9,12 @@ keywords:
 - Msi WDK KMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b4181a667ea5a1e6ea14ac6bed15e47c3782ecc9
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: a4d24cc032f462c51f7f955599837dd8a81a8df1
+ms.sourcegitcommit: f1d6c2d0cdbecdc69ba65ed3b530755fc73c8e5e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89193131"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91590366"
 ---
 # <a name="creating-an-interrupt-object"></a>创建中断对象
 
