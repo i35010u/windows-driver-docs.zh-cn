@@ -3,12 +3,12 @@ description: 在本主题中，你将使用随 Microsoft Visual Studio Professio
 title: 如何编写第一个 USB 客户端驱动程序 (KMDF)
 ms.date: 06/07/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 3b059ca2066278d07afb7f516139c83faef31679
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 7d11dd381cede0b0ea123b356a1a11a9dda41562
+ms.sourcegitcommit: d965aed20311ab46f05ca944c565053b5a22df2b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90101746"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91554221"
 ---
 # <a name="how-to-write-your-first-usb-client-driver-kmdf"></a>如何编写第一个 USB 客户端驱动程序 (KMDF)
 
@@ -40,7 +40,7 @@ ms.locfileid: "90101746"
 
 如果你不熟悉 USB 驱动程序开发，请使用 OSR USB FX2 学习工具包来研究 WDK 附带的 USB 示例。 可以从 [OSR Online](https://www.osronline.com/)获取学习工具包。 它包含 USB FX2 设备以及实现客户端驱动程序所需的所有硬件规范。
 
-还可以 (MUTT) 设备获取 Microsoft USB 测试工具。 可以从 [JJG 技术](https://jjgtechnologies.com/mutt.md)购买 MUTT 硬件。 设备未安装安装的固件。 若要安装固件，请从 [该网站](./index.md) 下载 MUTT 软件包并运行 MUTTUtil.exe。 有关详细信息，请参阅包附带的文档。
+还可以 (MUTT) 设备获取 Microsoft USB 测试工具。 可以从 [JJG 技术](http://www.jjgtechnologies.com/mutt.htm)购买 MUTT 硬件。 设备未安装安装的固件。 若要安装固件，请从 [该网站](./index.md) 下载 MUTT 软件包并运行 MUTTUtil.exe。 有关详细信息，请参阅包附带的文档。
 
 **建议阅读**
 

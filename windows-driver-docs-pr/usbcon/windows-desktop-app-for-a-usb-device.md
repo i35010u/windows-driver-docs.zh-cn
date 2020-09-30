@@ -3,12 +3,12 @@ description: 了解应用程序如何调用 WinUSB 函数以与 USB 设备进行
 title: USB 设备的 Windows 桌面应用
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 18a192a666b49ac85e0238c5c8cc899691226c91
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 8a16a8d62040154db6680ec7232d935db8dbd8e0
+ms.sourcegitcommit: d965aed20311ab46f05ca944c565053b5a22df2b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90715230"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91554217"
 ---
 # <a name="windows-desktop-app-for-a-usb-device"></a>USB 设备的 Windows 桌面应用
 
@@ -61,7 +61,7 @@ Winusb.dll 使用应用程序提供的数据来构造相应的设备 i/o 控制�
 <td><p>出于学习目的，最常用的选项包括：</p>
 <ul>
 <li>OSR USB FX2 学习工具包。 此工具包最适合学习本文档集中包括的 USB 示例。 可以从 <a href="https://www.osronline.com/" data-raw-source="[OSR Online](https://www.osronline.com/)">OSR Online</a>获取学习工具包。</li>
-<li>Microsoft USB 测试工具 (MUTT) 设备。 可以从 <a href="https://jjgtechnologies.com/mutt.md" data-raw-source="[JJG Technologies](https://jjgtechnologies.com/mutt.md)">JJG 技术</a>购买 MUTT 硬件。 设备未安装安装的固件。 若要安装固件，请从 <a href="mutt-software-package.md" data-raw-source="[this Web site](mutt-software-package.md)">该网站</a> 下载 MUTT 软件包并运行 MUTTUtil.exe。 有关详细信息，请参阅包附带的文档。</li>
+<li>Microsoft USB 测试工具 (MUTT) 设备。 可以从 <a href="http://www.jjgtechnologies.com/mutt.htm" data-raw-source="[JJG Technologies](http://www.jjgtechnologies.com/mutt.htm)">JJG 技术</a>购买 MUTT 硬件。 设备未安装安装的固件。 若要安装固件，请从 <a href="mutt-software-package.md" data-raw-source="[this Web site](mutt-software-package.md)">该网站</a> 下载 MUTT 软件包并运行 MUTTUtil.exe。 有关详细信息，请参阅包附带的文档。</li>
 </ul></td>
 </tr>
 <tr class="odd">

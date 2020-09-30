@@ -3,12 +3,12 @@ description: 下面是 Windows 8.1 中通用串行总线 (USB) 的新增功能�
 title: Windows 8.1-USB 的新增功能
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7431ca04e8bf87182ebd633f634236e6e9d157bc
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 60058a2169bedc092c6b2003055feca9f5fce321
+ms.sourcegitcommit: d965aed20311ab46f05ca944c565053b5a22df2b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90714860"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91554219"
 ---
 # <a name="windows-81-whats-new-for-usb"></a>Windows 8.1：USB 的新增功能
 
@@ -120,7 +120,7 @@ Winusb.dll 的用户模式 DLL 公开了这些 [WinUSB 函数](/previous-version
     -   [USB 3.0 挂起测试](/previous-versions/windows/hardware/hck/jj125210(v=vs.85))
 -   MUTT 和 SuperMUTT 设备现在为 USB-IF 合规性设备。 设备和随附的软件包会集成到 HCK 套件的 USB 测试。 它们提供的自动化测试可以在 USB 控制器、设备和系统的开发周期中使用，尤其是在进行压力测试时使用。
 
-    可以从 [JJG 技术](https://jjgtechnologies.com/mutt.md)购买 MUTT 硬件。 设备未安装安装的固件。 若要安装固件，请从 [该网站](./index.md) 下载 MUTT 软件包并运行 MUTTUtil.exe。 有关详细信息，请参阅包附带的文档。
+    可以从 [JJG 技术](http://www.jjgtechnologies.com/mutt.htm)购买 MUTT 硬件。 设备未安装安装的固件。 若要安装固件，请从 [该网站](./index.md) 下载 MUTT 软件包并运行 MUTTUtil.exe。 有关详细信息，请参阅包附带的文档。
 
 ## <a name="improved-usb-diagnostic-tools-and-debugger-extensions"></a>改进的 USB 诊断工具和调试器扩展
 
