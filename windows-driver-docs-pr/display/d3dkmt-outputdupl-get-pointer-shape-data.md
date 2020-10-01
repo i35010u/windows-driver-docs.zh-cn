@@ -1,6 +1,6 @@
 ---
-title: D3DKMT\_OUTPUTDUPL\_获取\_指针\_形状\_数据结构
-description: 保留供系统使用。 不要在您的驱动程序中使用。
+title: D3DKMT \_ OUTPUTDUPL \_ 获取 \_ 指针 \_ 形状 \_ 数据结构
+description: 了解 D3DKMT \_ OUTPUTDUPL \_ 获取 \_ 指针 \_ 形状 \_ 数据结构，该结构已保留供系统使用。 请勿在您的驱动程序中使用。
 ms.assetid: 31502888-88b0-49c2-8f03-63bb31886931
 keywords:
 - D3DKMT_OUTPUTDUPL_GET_POINTER_SHAPE_DATA 结构显示设备
@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.date: 01/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 4ef1b97c96339ed747f8dac108230f325fa606c7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: bcff5a2cb38a50f19149f119900d9db9f2276bce
+ms.sourcegitcommit: fc94eb0d5a41ef81c1b3ab91ad725386db0be0c2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63346246"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91603593"
 ---
-# <a name="d3dkmtoutputduplgetpointershapedata-structure"></a>D3DKMT\_OUTPUTDUPL\_获取\_指针\_形状\_数据结构
+# <a name="d3dkmt_outputdupl_get_pointer_shape_data-structure"></a>D3DKMT \_ OUTPUTDUPL \_ 获取 \_ 指针 \_ 形状 \_ 数据结构
 
 
-保留供系统使用。 不要在您的驱动程序中使用。
+预留给系统使用。 请勿在您的驱动程序中使用。
 
 <a name="syntax"></a>语法
 ------
@@ -73,8 +73,8 @@ typedef struct _D3DKMT_OUTPUTDUPL_GET_POINTER_SHAPE_DATA {
 <td align="left"><p>Windows Server 2012</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>Header</p></td>
-<td align="left">D3dkmthk.h （包括 D3dkmthk.h）</td>
+<td align="left"><p>标头</p></td>
+<td align="left">D3dkmthk (包含 D3dkmthk) </td>
 </tr>
 </tbody>
 </table>

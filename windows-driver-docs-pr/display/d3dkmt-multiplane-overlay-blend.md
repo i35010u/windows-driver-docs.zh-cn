@@ -1,6 +1,6 @@
 ---
-title: D3DKMT\_MULTIPLANE\_覆盖\_BLEND 枚举
-description: 保留供系统使用。 不要在您的驱动程序中使用。
+title: D3DKMT \_ MULTIPLANE \_ 叠加 \_ 混合枚举
+description: 了解 \_ \_ \_ 保留供系统使用的 D3DKMT MULTIPLANE 叠加混合枚举。 请勿在您的驱动程序中使用。
 ms.assetid: f0d181a6-f9cc-4e21-a971-7192e245a5c7
 keywords:
 - D3DKMT_MULTIPLANE_OVERLAY_BLEND 枚举显示设备
@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.date: 01/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 8de15fafc4da3e7f2e79dbfa20207d34fea0d08c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f069b680e0dd2710a094ca01b947482e95a066a8
+ms.sourcegitcommit: fc94eb0d5a41ef81c1b3ab91ad725386db0be0c2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63382948"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91603675"
 ---
-# <a name="d3dkmtmultiplaneoverlayblend-enumeration"></a>D3DKMT\_MULTIPLANE\_覆盖\_BLEND 枚举
+# <a name="d3dkmt_multiplane_overlay_blend-enumeration"></a>D3DKMT \_ MULTIPLANE \_ 叠加 \_ 混合枚举
 
 
-保留供系统使用。 不要在您的驱动程序中使用。
+预留给系统使用。 请勿在您的驱动程序中使用。
 
 <a name="syntax"></a>语法
 ------
@@ -39,9 +39,9 @@ typedef enum D3DKMT_MULTIPLANE_OVERLAY_BLEND {
 <a name="constants"></a>常量
 ---------
 
-<span id="D3DKMT_MULTIPLANE_OVERLAY_BLEND_OPAQUE"></span><span id="d3dkmt_multiplane_overlay_blend_opaque"></span>**D3DKMT\_MULTIPLANE\_覆盖\_BLEND\_不透明**
+<span id="D3DKMT_MULTIPLANE_OVERLAY_BLEND_OPAQUE"></span><span id="d3dkmt_multiplane_overlay_blend_opaque"></span>**D3DKMT \_ MULTIPLANE \_ 叠加 \_ 混合不 \_ 透明**
 
-<span id="D3DKMT_MULTIPLANE_OVERLAY_BLEND_ALPHABLEND"></span><span id="d3dkmt_multiplane_overlay_blend_alphablend"></span>**D3DKMT\_MULTIPLANE\_覆盖\_BLEND\_ALPHABLEND**
+<span id="D3DKMT_MULTIPLANE_OVERLAY_BLEND_ALPHABLEND"></span><span id="d3dkmt_multiplane_overlay_blend_alphablend"></span>**D3DKMT \_ MULTIPLANE \_ 叠加 \_ \_ ALPHABLEND**
 
 <a name="requirements"></a>要求
 ------------
@@ -61,8 +61,8 @@ typedef enum D3DKMT_MULTIPLANE_OVERLAY_BLEND {
 <td align="left"><p>Windows Server 2012</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>Header</p></td>
-<td align="left">D3dkmthk.h</td>
+<td align="left"><p>标头</p></td>
+<td align="left">D3dkmthk</td>
 </tr>
 </tbody>
 </table>

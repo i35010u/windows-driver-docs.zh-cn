@@ -1,6 +1,6 @@
 ---
-title: D3DKMT\_存在\_MULTIPLANE\_覆盖结构
-description: 保留供系统使用。 不要在您的驱动程序中使用。
+title: D3DKMT \_ 存在 \_ MULTIPLANE \_ 覆盖结构
+description: 了解 D3DKMT 存在的 \_ \_ MULTIPLANE \_ 覆盖结构，该结构已保留供系统使用。 请勿在您的驱动程序中使用。
 ms.assetid: 2526ccce-826a-4e8f-ab15-639510b1d5cf
 keywords:
 - D3DKMT_PRESENT_MULTIPLANE_OVERLAY 结构显示设备
@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.date: 01/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: bc406f672581819e08752986980c086187797e89
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f38b6ce64ab50ad6eb4b5881586d229f083e2f13
+ms.sourcegitcommit: fc94eb0d5a41ef81c1b3ab91ad725386db0be0c2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63331301"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91603637"
 ---
-# <a name="d3dkmtpresentmultiplaneoverlay-structure"></a>D3DKMT\_存在\_MULTIPLANE\_覆盖结构
+# <a name="d3dkmt_present_multiplane_overlay-structure"></a>D3DKMT \_ 存在 \_ MULTIPLANE \_ 覆盖结构
 
 
-保留供系统使用。 不要在您的驱动程序中使用。
+预留给系统使用。 请勿在您的驱动程序中使用。
 
 <a name="syntax"></a>语法
 ------
@@ -64,7 +64,7 @@ typedef struct D3DKMT_PRESENT_MULTIPLANE_OVERLAY {
 
 **FlipInterval**
 
-**标志**
+**标记**
 
 **PresentPlaneCount**
 
@@ -90,8 +90,8 @@ typedef struct D3DKMT_PRESENT_MULTIPLANE_OVERLAY {
 <td align="left"><p>Windows Server 2012</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>Header</p></td>
-<td align="left">D3dkmthk.h</td>
+<td align="left"><p>标头</p></td>
+<td align="left">D3dkmthk</td>
 </tr>
 </tbody>
 </table>

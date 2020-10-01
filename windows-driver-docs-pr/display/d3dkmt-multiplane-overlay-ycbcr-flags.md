@@ -1,6 +1,6 @@
 ---
-title: D3DKMT\_MULTIPLANE\_覆盖\_YCbCr\_标志枚举
-description: 保留供系统使用。 不要在您的驱动程序中使用。
+title: D3DKMT \_ MULTIPLANE \_ 叠加 \_ YCbCr \_ 标志枚举
+description: 了解 D3DKMT \_ MULTIPLANE \_ 叠加 \_ YCbCr \_ 标志枚举，该枚举是保留供系统使用的。 请勿在您的驱动程序中使用。
 ms.assetid: 3bfcd424-961f-4efe-a928-2ee7fbd29f4a
 keywords:
 - D3DKMT_MULTIPLANE_OVERLAY_YCbCr_FLAGS 枚举显示设备
@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.date: 01/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 7c8df65c301e2e29be02499ac51ab399c9e9368e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f4736260532e9f9bdf0aa34175ce537a7ca9de59
+ms.sourcegitcommit: fc94eb0d5a41ef81c1b3ab91ad725386db0be0c2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63391254"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91603604"
 ---
-# <a name="d3dkmtmultiplaneoverlayycbcrflags-enumeration"></a>D3DKMT\_MULTIPLANE\_覆盖\_YCbCr\_标志枚举
+# <a name="d3dkmt_multiplane_overlay_ycbcr_flags-enumeration"></a>D3DKMT \_ MULTIPLANE \_ 叠加 \_ YCbCr \_ 标志枚举
 
 
-保留供系统使用。 不要在您的驱动程序中使用。
+预留给系统使用。 请勿在您的驱动程序中使用。
 
 <a name="syntax"></a>语法
 ------
@@ -40,11 +40,11 @@ typedef enum D3DKMT_MULTIPLANE_OVERLAY_YCbCr_FLAGS {
 <a name="constants"></a>常量
 ---------
 
-<span id="D3DKMT_MULTIPLANE_OVERLAY_YCbCr_FLAG_NOMINAL_RANGE"></span><span id="d3dkmt_multiplane_overlay_ycbcr_flag_nominal_range"></span><span id="D3DKMT_MULTIPLANE_OVERLAY_YCBCR_FLAG_NOMINAL_RANGE"></span>**D3DKMT\_MULTIPLANE\_OVERLAY\_YCbCr\_FLAG\_NOMINAL\_RANGE**
+<span id="D3DKMT_MULTIPLANE_OVERLAY_YCbCr_FLAG_NOMINAL_RANGE"></span><span id="d3dkmt_multiplane_overlay_ycbcr_flag_nominal_range"></span><span id="D3DKMT_MULTIPLANE_OVERLAY_YCBCR_FLAG_NOMINAL_RANGE"></span>**D3DKMT \_ MULTIPLANE \_ 叠加 \_ YCbCr \_ 标记 \_ 标称 \_ 范围**
 
-<span id="D3DKMT_MULTIPLANE_OVERLAY_YCbCr_FLAG_BT709"></span><span id="d3dkmt_multiplane_overlay_ycbcr_flag_bt709"></span><span id="D3DKMT_MULTIPLANE_OVERLAY_YCBCR_FLAG_BT709"></span>**D3DKMT\_MULTIPLANE\_OVERLAY\_YCbCr\_FLAG\_BT709**
+<span id="D3DKMT_MULTIPLANE_OVERLAY_YCbCr_FLAG_BT709"></span><span id="d3dkmt_multiplane_overlay_ycbcr_flag_bt709"></span><span id="D3DKMT_MULTIPLANE_OVERLAY_YCBCR_FLAG_BT709"></span>**D3DKMT \_ MULTIPLANE \_ 叠加 \_ YCbCr \_ 标志 \_ BT709**
 
-<span id="D3DKMT_MULTIPLANE_OVERLAY_YCbCr_FLAG_xvYCC"></span><span id="d3dkmt_multiplane_overlay_ycbcr_flag_xvycc"></span><span id="D3DKMT_MULTIPLANE_OVERLAY_YCBCR_FLAG_XVYCC"></span>**D3DKMT\_MULTIPLANE\_OVERLAY\_YCbCr\_FLAG\_xvYCC**
+<span id="D3DKMT_MULTIPLANE_OVERLAY_YCbCr_FLAG_xvYCC"></span><span id="d3dkmt_multiplane_overlay_ycbcr_flag_xvycc"></span><span id="D3DKMT_MULTIPLANE_OVERLAY_YCBCR_FLAG_XVYCC"></span>**D3DKMT \_ MULTIPLANE \_ 叠加 \_ YCbCr \_ 标志 \_ xvYCC**
 
 <a name="requirements"></a>要求
 ------------
@@ -64,8 +64,8 @@ typedef enum D3DKMT_MULTIPLANE_OVERLAY_YCbCr_FLAGS {
 <td align="left"><p>Windows Server 2012</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>Header</p></td>
-<td align="left">D3dkmthk.h</td>
+<td align="left"><p>标头</p></td>
+<td align="left">D3dkmthk</td>
 </tr>
 </tbody>
 </table>

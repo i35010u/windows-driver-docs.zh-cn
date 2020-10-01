@@ -1,6 +1,6 @@
 ---
-title: D3DKMT\_SCATTERBLT 结构
-description: 保留供系统使用。 不要在您的驱动程序中使用。
+title: D3DKMT \_ SCATTERBLT 结构
+description: 了解 \_ 保留供系统使用的 D3DKMT SCATTERBLT 结构。 请勿在您的驱动程序中使用。
 ms.assetid: 94463e11-8a18-4d23-b7b6-d2486dc7dc9d
 keywords:
 - D3DKMT_SCATTERBLT 结构显示设备
@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.date: 01/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 686d7444d69872df34d30984cfba3ac869d4f5be
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 29ec73be0a720e662fe62691c7a6b0f6596a1cc3
+ms.sourcegitcommit: fc94eb0d5a41ef81c1b3ab91ad725386db0be0c2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63351769"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91603633"
 ---
-# <a name="d3dkmtscatterblt-structure"></a>D3DKMT\_SCATTERBLT 结构
+# <a name="d3dkmt_scatterblt-structure"></a>D3DKMT \_ SCATTERBLT 结构
 
 
-保留供系统使用。 不要在您的驱动程序中使用。
+预留给系统使用。 请勿在您的驱动程序中使用。
 
 <a name="syntax"></a>语法
 ------
@@ -70,8 +70,8 @@ typedef struct _D3DKMT_SCATTERBLT {
 <td align="left"><p>Windows Server 2012</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>Header</p></td>
-<td align="left">D3dkmthk.h （包括 D3dkmthk.h）</td>
+<td align="left"><p>标头</p></td>
+<td align="left">D3dkmthk (包含 D3dkmthk) </td>
 </tr>
 </tbody>
 </table>

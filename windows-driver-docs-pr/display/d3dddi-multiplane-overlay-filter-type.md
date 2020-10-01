@@ -1,6 +1,6 @@
 ---
 title: D3DDDI \_ MULTIPLANE \_ 覆盖 \_ 筛选器 \_ 类型枚举
-description: 预留给系统使用。 不要在您的驱动程序中使用它。请注意，此结构仅在随 Windows 8 随附的 Windows 驱动程序工具包（WDK）版本8随附的 D3dumddi 标头中可用。 它已从标头的更高版本中删除。.
+description: 了解 D3DDDI \_ MULTIPLANE \_ 覆盖 \_ 筛选器 \_ 类型枚举，它是为系统使用而保留的。 不要在您的驱动程序中使用它。
 ms.assetid: ceca0ed8-7d46-45e1-86cb-3d0506d26328
 keywords:
 - D3DDDI_MULTIPLANE_OVERLAY_FILTER_TYPE 枚举显示设备
@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 01/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 718cfd5e6e6f0cfe54e50aebbc94a21758240877
-ms.sourcegitcommit: 2f37e8de9759164804a3b1c7f5c9e497a607539b
+ms.openlocfilehash: 764d1c920e1a3e2d58d073dc89e4fae17b943180
+ms.sourcegitcommit: fc94eb0d5a41ef81c1b3ab91ad725386db0be0c2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/26/2020
-ms.locfileid: "83852130"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91603665"
 ---
 # <a name="d3dddi_multiplane_overlay_filter_type-enumeration"></a>D3DDDI \_ MULTIPLANE \_ 覆盖 \_ 筛选器 \_ 类型枚举
 
@@ -27,7 +27,7 @@ ms.locfileid: "83852130"
 预留给系统使用。 不要在您的驱动程序中使用它。
 
 > [!NOTE]
-> 此结构仅在随 Windows 8 随附的 Windows 驱动程序工具包（WDK）版本8随附的 D3dumddi 标头中可用。 它已从标头的更高版本中删除。
+> 此结构仅在随 windows 8) 版本8随附的 Windows 驱动程序工具包 (的 D3dumddi 标头中提供。 它已从标头的更高版本中删除。
 
  
 
@@ -75,7 +75,7 @@ typedef enum _D3DDDI_MULTIPLANE_OVERLAY_FILTER_TYPE {
 <td align="left"><p>Windows Server 2012</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>Header</p></td>
+<td align="left"><p>标头</p></td>
 <td align="left">D3dumddi</td>
 </tr>
 </tbody>

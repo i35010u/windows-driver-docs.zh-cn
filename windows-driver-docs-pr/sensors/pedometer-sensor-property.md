@@ -1,45 +1,24 @@
 ---
 title: 计步器传感器属性
-description: 计步器属性键。
+description: Pedometer 的属性键。
 ms.assetid: 91A47EEE-094B-47AE-B2B9-E7A32F33FA11
 ms.date: 07/20/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 6dd8fcd5732a9b78ecb2d30f8959b571ec4c753b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 49437747b0b09031ee4c3b6e9c32f198bf2f3303
+ms.sourcegitcommit: fc94eb0d5a41ef81c1b3ab91ad725386db0be0c2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63330123"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91603696"
 ---
 # <a name="pedometer-sensor-property"></a>计步器传感器属性
 
+Pedometer 的属性键。
 
-计步器属性键。
+| 属性键 | 类型 | Access (R/O，R/W)  | 必需/可选 | 说明 |
+| --- | --- | --- | --- | --- |
+|PKEY_SensorData_SupportedStepTypes|VT_UI4|R/O|必须|支持的步骤类型。|
 
-|属性键|在任务栏的搜索框中键入|访问 （R/O，R/W） |必需/可选|描述|
-|--|--|--|--|--|
-|PKEY_SensorData_SupportedStepTypes|VT_UI4|R/O|必需|受支持的步骤类型。|
+有关 " **类型** " 列中显示的数据类型的详细信息，请参阅 [PROPVARIANT 结构](/windows/win32/api/propidlbase/ns-propidlbase-propvariant)。
 
- 
-
-有关数据类型的详细信息中所示**类型**列中，请参阅[PROPVARIANT 结构](https://go.microsoft.com/fwlink/p/?linkid=313395)。
-
-## <a name="requirements"></a>要求
-
-
-**标头：** Sensorsdef.h
-
-## <a name="related-topics"></a>相关主题
-
-
-[其他传感器属性](other-sensor-properties.md)
-
- 
-
- 
-
-
-
-
-
-
+**标头：** Sensorsdef

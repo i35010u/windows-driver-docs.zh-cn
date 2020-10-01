@@ -1,6 +1,6 @@
 ---
-title: DXGKMT\_MULTIPLANE\_覆盖\_立体声\_翻转\_模式枚举
-description: 保留供系统使用。 不要使用它在您的驱动程序中。
+title: DXGKMT \_ MULTIPLANE \_ 叠加 \_ 立体声 \_ 翻转 \_ 模式枚举
+description: 了解 DXGKMT \_ MULTIPLANE \_ 叠加 \_ 立体声 \_ 翻转 \_ 模式枚举，它是为系统使用而保留的。 不要在您的驱动程序中使用它。
 ms.assetid: 17d77f4f-e1ad-45d6-9cba-1dfcaea2577b
 keywords:
 - DXGKMT_MULTIPLANE_OVERLAY_STEREO_FLIP_MODE 枚举显示设备
@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.date: 01/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 93be0f79d9b13d4a599535dde514736bc518f9c4
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9cbe20f6f09227161738b2ab5c6714167235a81f
+ms.sourcegitcommit: fc94eb0d5a41ef81c1b3ab91ad725386db0be0c2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63370820"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91603641"
 ---
-# <a name="dxgkmtmultiplaneoverlaystereoflipmode-enumeration"></a>DXGKMT\_MULTIPLANE\_覆盖\_立体声\_翻转\_模式枚举
+# <a name="dxgkmt_multiplane_overlay_stereo_flip_mode-enumeration"></a>DXGKMT \_ MULTIPLANE \_ 叠加 \_ 立体声 \_ 翻转 \_ 模式枚举
 
 
-保留供系统使用。 不要使用它在您的驱动程序中。
+预留给系统使用。 不要在您的驱动程序中使用它。
 
 <a name="syntax"></a>语法
 ------
@@ -40,11 +40,11 @@ typedef enum _DXGKMT_MULTIPLANE_OVERLAY_STEREO_FLIP_MODE {
 <a name="constants"></a>常量
 ---------
 
-<span id="DXGKMT_MULTIPLANE_OVERLAY_STEREO_FLIP_NONE"></span><span id="dxgkmt_multiplane_overlay_stereo_flip_none"></span>**DXGKMT\_MULTIPLANE\_覆盖\_立体声\_翻转\_NONE**
+<span id="DXGKMT_MULTIPLANE_OVERLAY_STEREO_FLIP_NONE"></span><span id="dxgkmt_multiplane_overlay_stereo_flip_none"></span>**DXGKMT \_ MULTIPLANE \_ 叠加 \_ 立体声 \_ 翻转 \_ 无**
 
-<span id="DXGKMT_MULTIPLANE_OVERLAY_STEREO_FLIP_FRAME0"></span><span id="dxgkmt_multiplane_overlay_stereo_flip_frame0"></span>**DXGKMT\_MULTIPLANE\_OVERLAY\_STEREO\_FLIP\_FRAME0**
+<span id="DXGKMT_MULTIPLANE_OVERLAY_STEREO_FLIP_FRAME0"></span><span id="dxgkmt_multiplane_overlay_stereo_flip_frame0"></span>**DXGKMT \_ MULTIPLANE \_ 叠加 \_ 立体声 \_ 翻转 \_ FRAME0**
 
-<span id="DXGKMT_MULTIPLANE_OVERLAY_STEREO_FLIP_FRAME1"></span><span id="dxgkmt_multiplane_overlay_stereo_flip_frame1"></span>**DXGKMT\_MULTIPLANE\_OVERLAY\_STEREO\_FLIP\_FRAME1**
+<span id="DXGKMT_MULTIPLANE_OVERLAY_STEREO_FLIP_FRAME1"></span><span id="dxgkmt_multiplane_overlay_stereo_flip_frame1"></span>**DXGKMT \_ MULTIPLANE \_ 叠加 \_ 立体声 \_ 翻转 \_ FRAME1**
 
 <a name="requirements"></a>要求
 ------------
@@ -64,8 +64,8 @@ typedef enum _DXGKMT_MULTIPLANE_OVERLAY_STEREO_FLIP_MODE {
 <td align="left"><p>Windows Server 2012</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>Header</p></td>
-<td align="left">D3dkmthk.h</td>
+<td align="left"><p>标头</p></td>
+<td align="left">D3dkmthk</td>
 </tr>
 </tbody>
 </table>

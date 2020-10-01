@@ -1,6 +1,6 @@
 ---
 title: 同步中断代码
-description: 同步中断代码
+description: 了解同步中断代码的相关信息。 查看使硬件中断的驱动程序代码变得复杂的因素，并查看用于避免这些问题的规则。
 ms.assetid: a24477dc-f75d-4ab6-8695-d8a85247e276
 keywords:
 - 硬件中断 WDK KMDF，同步
@@ -8,12 +8,12 @@ keywords:
 - 同步 WDK 中断
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 53687aa92d34218feac175c171518f5961172bd3
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: cc775e22406f6f3eb664033553ef9a866dadf9fd
+ms.sourcegitcommit: fc94eb0d5a41ef81c1b3ab91ad725386db0be0c2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89191987"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91603617"
 ---
 # <a name="synchronizing-interrupt-code"></a>同步中断代码
 

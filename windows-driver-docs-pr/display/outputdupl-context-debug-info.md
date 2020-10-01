@@ -1,6 +1,6 @@
 ---
-title: OUTPUTDUPL\_上下文\_调试\_信息结构
-description: 保留供系统使用。 不要在您的驱动程序中使用。
+title: OUTPUTDUPL \_ 上下文 \_ 调试 \_ 信息结构
+description: 了解 OUTPUTDUPL \_ 上下文 \_ 调试 \_ 信息结构，该结构已保留供系统使用。 请勿在您的驱动程序中使用。
 ms.assetid: 9b8915a2-e62e-474a-ac03-199ce6d252c2
 keywords:
 - OUTPUTDUPL_CONTEXT_DEBUG_INFO 结构显示设备
@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.date: 01/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: bc91f429563af15195dd15a557f472102c518928
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2abff311b24097701390136b2f69a3531d38f0af
+ms.sourcegitcommit: fc94eb0d5a41ef81c1b3ab91ad725386db0be0c2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63358345"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91603700"
 ---
-# <a name="outputduplcontextdebuginfo-structure"></a>OUTPUTDUPL\_上下文\_调试\_信息结构
+# <a name="outputdupl_context_debug_info-structure"></a>OUTPUTDUPL \_ 上下文 \_ 调试 \_ 信息结构
 
 
-保留供系统使用。 不要在您的驱动程序中使用。
+预留给系统使用。 请勿在您的驱动程序中使用。
 
 <a name="syntax"></a>语法
 ------
@@ -43,7 +43,7 @@ typedef struct _OUTPUTDUPL_CONTEXT_DEBUG_INFO {
 <a name="members"></a>成员
 -------
 
-**状态**
+**Status**
 
 **ProcessID**
 
@@ -73,8 +73,8 @@ typedef struct _OUTPUTDUPL_CONTEXT_DEBUG_INFO {
 <td align="left"><p>Windows Server 2012</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>Header</p></td>
-<td align="left">D3dkmthk.h （包括 D3dkmthk.h）</td>
+<td align="left"><p>标头</p></td>
+<td align="left">D3dkmthk (包含 D3dkmthk) </td>
 </tr>
 </tbody>
 </table>

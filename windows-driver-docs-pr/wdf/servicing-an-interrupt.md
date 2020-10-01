@@ -1,6 +1,6 @@
 ---
 title: 为中断提供服务
-description: 为中断提供服务
+description: 了解如何为 DIRQL 中断服务。 为中断提供服务可能包含两个或两个步骤。
 ms.assetid: b6306d2c-a7be-4fc3-8123-4d2b5c60c988
 keywords:
 - 硬件中断 WDK KMDF，维护服务
@@ -11,12 +11,12 @@ keywords:
 - 延迟的过程调用 WDK KMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2a803b272a2d5f5581c30365acd4835f9e7e6a3c
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 02082f794cc1d47e1262fe9401b830a0f6172cc4
+ms.sourcegitcommit: fc94eb0d5a41ef81c1b3ab91ad725386db0be0c2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89184263"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91603556"
 ---
 # <a name="servicing-an-interrupt"></a>为中断提供服务
 

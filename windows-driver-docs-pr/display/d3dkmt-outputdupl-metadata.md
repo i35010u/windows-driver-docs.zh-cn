@@ -1,6 +1,6 @@
 ---
-title: D3DKMT\_OUTPUTDUPL\_元数据结构
-description: 保留供系统使用。 不要在您的驱动程序中使用。
+title: D3DKMT \_ OUTPUTDUPL \_ 元数据结构
+description: 了解 D3DKMT \_ OUTPUTDUPL \_ 元数据结构，该结构已保留供系统使用。 请勿在您的驱动程序中使用。
 ms.assetid: abf4f00a-05bb-48f6-989e-f1b453fb0708
 keywords:
 - D3DKMT_OUTPUTDUPL_METADATA 结构显示设备
@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.date: 01/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: df6a9b410a7498c3aadc31a68435af08c19b9836
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3e67a8379c48f6d23708477ce84f54cba36e56b0
+ms.sourcegitcommit: fc94eb0d5a41ef81c1b3ab91ad725386db0be0c2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63346234"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91603664"
 ---
-# <a name="d3dkmtoutputduplmetadata-structure"></a>D3DKMT\_OUTPUTDUPL\_元数据结构
+# <a name="d3dkmt_outputdupl_metadata-structure"></a>D3DKMT \_ OUTPUTDUPL \_ 元数据结构
 
 
-保留供系统使用。 不要在您的驱动程序中使用。
+预留给系统使用。 请勿在您的驱动程序中使用。
 
 <a name="syntax"></a>语法
 ------
@@ -47,7 +47,7 @@ typedef struct _D3DKMT_OUTPUTDUPL_METADATA {
 
 **VidPnSourceId**
 
-**Type**
+**类型**
 
 **BufferSizeSupplied**
 
@@ -73,8 +73,8 @@ typedef struct _D3DKMT_OUTPUTDUPL_METADATA {
 <td align="left"><p>Windows Server 2012</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>Header</p></td>
-<td align="left">D3dkmthk.h （包括 D3dkmthk.h）</td>
+<td align="left"><p>标头</p></td>
+<td align="left">D3dkmthk (包含 D3dkmthk) </td>
 </tr>
 </tbody>
 </table>

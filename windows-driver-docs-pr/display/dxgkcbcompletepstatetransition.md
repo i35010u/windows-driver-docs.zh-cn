@@ -1,6 +1,6 @@
 ---
-title: DXGKCB\_COMPLETEPSTATETRANSITION 回调函数
-description: 保留供系统使用。 不要使用它在您的驱动程序中。
+title: DXGKCB \_ COMPLETEPSTATETRANSITION 回调函数
+description: 了解 DXGKCB \_ COMPLETEPSTATETRANSITION 回调函数，该函数保留供系统使用。 不要在您的驱动程序中使用它。
 ms.assetid: F0EF1B1F-58C3-4D6D-BF9A-0621CC82ED6B
 keywords:
 - DxgkCbCompletePStateTransition 回调函数显示设备
@@ -15,17 +15,17 @@ api_type:
 - UserDefined
 ms.date: 01/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 58b1f3961f8ca78a1fb625b079315dfc23b69b96
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 926b0f1b6eaaa6fa4372f2bb43a8cd67db50681a
+ms.sourcegitcommit: fc94eb0d5a41ef81c1b3ab91ad725386db0be0c2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63341103"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91603690"
 ---
-# <a name="dxgkcbcompletepstatetransition-callback-function"></a>DXGKCB\_COMPLETEPSTATETRANSITION 回调函数
+# <a name="dxgkcb_completepstatetransition-callback-function"></a>DXGKCB \_ COMPLETEPSTATETRANSITION 回调函数
 
 
-保留供系统使用。 不要使用它在您的驱动程序中。
+预留给系统使用。 不要在您的驱动程序中使用它。
 
 <a name="syntax"></a>语法
 ------
@@ -41,14 +41,14 @@ VOID APIENTRY CALLBACK* DxgkCbCompletePStateTransition(
 { ... }
 ```
 
-<a name="parameters"></a>Parameters
+<a name="parameters"></a>parameters
 ----------
 
-*hAdapter* \[in\]
+*hAdapter* \[中\]
 
-*ComponentIndex* \[in\]
+*ComponentIndex* \[中\]
 
-*CompletedPState* \[in\]
+*CompletedPState* \[中\]
 
 <a name="return-value"></a>返回值
 ------------
@@ -66,7 +66,7 @@ VOID APIENTRY CALLBACK* DxgkCbCompletePStateTransition(
 <tbody>
 <tr class="odd">
 <td align="left"><p>最低受支持的客户端</p></td>
-<td align="left"><p>Windows 8.1</p></td>
+<td align="left"><p>Windows 8.1</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>最低受支持的服务器</p></td>
@@ -74,15 +74,15 @@ VOID APIENTRY CALLBACK* DxgkCbCompletePStateTransition(
 </tr>
 <tr class="odd">
 <td align="left"><p>目标平台</p></td>
-<td align="left">桌面设备</td>
+<td align="left">桌面型</td>
 </tr>
 <tr class="even">
-<td align="left"><p>Header</p></td>
-<td align="left">D3dkmddi.h （包括 D3dkmddi.h）</td>
+<td align="left"><p>标头</p></td>
+<td align="left">D3dkmddi (包含 D3dkmddi) </td>
 </tr>
 <tr class="odd">
 <td align="left"><p>IRQL</p></td>
-<td align="left"><p>&lt;=DISPATCH_LEVEL</p></td>
+<td align="left"><p>&lt;= DISPATCH_LEVEL</p></td>
 </tr>
 </tbody>
 </table>

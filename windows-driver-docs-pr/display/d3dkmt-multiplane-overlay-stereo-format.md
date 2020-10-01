@@ -1,6 +1,6 @@
 ---
-title: D3DKMT\_MULTIPLANE\_覆盖\_立体声\_格式枚举
-description: 保留供系统使用。 不要在您的驱动程序中使用。
+title: D3DKMT \_ MULTIPLANE \_ 叠加 \_ 立体声 \_ 格式枚举
+description: 了解 D3DKMT \_ MULTIPLANE \_ 叠加 \_ 立体声 \_ 格式枚举，它保留供系统使用。 请勿在您的驱动程序中使用。
 ms.assetid: dd26ac4b-ecef-4b4d-a050-d3e429ff0542
 keywords:
 - D3DKMT_MULTIPLANE_OVERLAY_STEREO_FORMAT 枚举显示设备
@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.date: 01/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 69b8bf854f4365b10048906c84efb2f34b0260f4
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6a67f18e74faea98569c0e32384e87b85380089c
+ms.sourcegitcommit: fc94eb0d5a41ef81c1b3ab91ad725386db0be0c2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63382662"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91603545"
 ---
-# <a name="d3dkmtmultiplaneoverlaystereoformat-enumeration"></a>D3DKMT\_MULTIPLANE\_覆盖\_立体声\_格式枚举
+# <a name="d3dkmt_multiplane_overlay_stereo_format-enumeration"></a>D3DKMT \_ MULTIPLANE \_ 叠加 \_ 立体声 \_ 格式枚举
 
 
-保留供系统使用。 不要在您的驱动程序中使用。
+预留给系统使用。 请勿在您的驱动程序中使用。
 
 <a name="syntax"></a>语法
 ------
@@ -45,21 +45,21 @@ typedef enum D3DKMT_MULTIPLANE_OVERLAY_STEREO_FORMAT {
 <a name="constants"></a>常量
 ---------
 
-<span id="DXGKMT_MULTIPLANE_OVERLAY_STEREO_FORMAT_MONO"></span><span id="dxgkmt_multiplane_overlay_stereo_format_mono"></span>**DXGKMT\_MULTIPLANE\_覆盖\_立体声\_格式\_MONO**
+<span id="DXGKMT_MULTIPLANE_OVERLAY_STEREO_FORMAT_MONO"></span><span id="dxgkmt_multiplane_overlay_stereo_format_mono"></span>**DXGKMT \_ MULTIPLANE \_ 叠加 \_ 立体声 \_ 格式 \_ MONO**
 
-<span id="D3DKMT_MULTIPLANE_OVERLAY_STEREO_FORMAT_HORIZONTAL"></span><span id="d3dkmt_multiplane_overlay_stereo_format_horizontal"></span>**D3DKMT\_MULTIPLANE\_覆盖\_立体声\_格式\_水平**
+<span id="D3DKMT_MULTIPLANE_OVERLAY_STEREO_FORMAT_HORIZONTAL"></span><span id="d3dkmt_multiplane_overlay_stereo_format_horizontal"></span>**D3DKMT \_ MULTIPLANE \_ 叠加 \_ 立体声 \_ 格式（ \_ 水平）**
 
-<span id="D3DKMT_MULTIPLANE_OVERLAY_STEREO_FORMAT_VERTICAL"></span><span id="d3dkmt_multiplane_overlay_stereo_format_vertical"></span>**D3DKMT\_MULTIPLANE\_覆盖\_立体声\_格式\_垂直**
+<span id="D3DKMT_MULTIPLANE_OVERLAY_STEREO_FORMAT_VERTICAL"></span><span id="d3dkmt_multiplane_overlay_stereo_format_vertical"></span>**D3DKMT \_ MULTIPLANE \_ 叠加 \_ 立体声 \_ 格式 \_ 竖**
 
-<span id="DXGKMT_MULTIPLANE_OVERLAY_STEREO_FORMAT_SEPARATE"></span><span id="dxgkmt_multiplane_overlay_stereo_format_separate"></span>**DXGKMT\_MULTIPLANE\_覆盖\_立体声\_格式\_单独**
+<span id="DXGKMT_MULTIPLANE_OVERLAY_STEREO_FORMAT_SEPARATE"></span><span id="dxgkmt_multiplane_overlay_stereo_format_separate"></span>**DXGKMT \_ MULTIPLANE \_ 叠加 \_ 立体声 \_ 格式 \_**
 
-<span id="DXGKMT_MULTIPLANE_OVERLAY_STEREO_FORMAT_MONO_OFFSET"></span><span id="dxgkmt_multiplane_overlay_stereo_format_mono_offset"></span>**DXGKMT\_MULTIPLANE\_覆盖\_立体声\_格式\_MONO\_偏移量**
+<span id="DXGKMT_MULTIPLANE_OVERLAY_STEREO_FORMAT_MONO_OFFSET"></span><span id="dxgkmt_multiplane_overlay_stereo_format_mono_offset"></span>**DXGKMT \_ MULTIPLANE \_ 叠加 \_ 立体声 \_ 格式 \_ MONO \_ 偏移**
 
-<span id="DXGKMT_MULTIPLANE_OVERLAY_STEREO_FORMAT_ROW_INTERLEAVED"></span><span id="dxgkmt_multiplane_overlay_stereo_format_row_interleaved"></span>**DXGKMT\_MULTIPLANE\_覆盖\_立体声\_格式\_行\_交叉存取**
+<span id="DXGKMT_MULTIPLANE_OVERLAY_STEREO_FORMAT_ROW_INTERLEAVED"></span><span id="dxgkmt_multiplane_overlay_stereo_format_row_interleaved"></span>**DXGKMT \_ MULTIPLANE \_ 叠加 \_ 立体声 \_ 格式 \_ 行 \_ 交错**
 
-<span id="DXGKMT_MULTIPLANE_OVERLAY_STEREO_FORMAT_COLUMN_INTERLEAVED"></span><span id="dxgkmt_multiplane_overlay_stereo_format_column_interleaved"></span>**DXGKMT\_MULTIPLANE\_覆盖\_立体声\_格式\_列\_交叉存取**
+<span id="DXGKMT_MULTIPLANE_OVERLAY_STEREO_FORMAT_COLUMN_INTERLEAVED"></span><span id="dxgkmt_multiplane_overlay_stereo_format_column_interleaved"></span>**DXGKMT \_ MULTIPLANE \_ 叠加 \_ 立体声 \_ 格式 \_ 列 \_ 交错**
 
-<span id="DXGKMT_MULTIPLANE_OVERLAY_STEREO_FORMAT_CHECKERBOARD"></span><span id="dxgkmt_multiplane_overlay_stereo_format_checkerboard"></span>**DXGKMT\_MULTIPLANE\_覆盖\_立体声\_格式\_棋盘**
+<span id="DXGKMT_MULTIPLANE_OVERLAY_STEREO_FORMAT_CHECKERBOARD"></span><span id="dxgkmt_multiplane_overlay_stereo_format_checkerboard"></span>**DXGKMT \_ MULTIPLANE \_ 叠加 \_ 立体声 \_ 格式 \_ 棋盘**
 
 <a name="requirements"></a>要求
 ------------
@@ -79,8 +79,8 @@ typedef enum D3DKMT_MULTIPLANE_OVERLAY_STEREO_FORMAT {
 <td align="left"><p>Windows Server 2012</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>Header</p></td>
-<td align="left">D3dkmthk.h</td>
+<td align="left"><p>标头</p></td>
+<td align="left">D3dkmthk</td>
 </tr>
 </tbody>
 </table>

@@ -1,6 +1,6 @@
 ---
-title: D3DKMT\_OUTPUTDUPL\_FRAMEINFO 结构
-description: 保留供系统使用。 不要在您的驱动程序中使用。
+title: D3DKMT \_ OUTPUTDUPL \_ FRAMEINFO 结构
+description: 了解 D3DKMT \_ OUTPUTDUPL \_ FRAMEINFO 结构，它是保留供系统使用的。 请勿在您的驱动程序中使用。
 ms.assetid: e35389b2-52aa-4481-a5d7-6c45c795885f
 keywords:
 - D3DKMT_OUTPUTDUPL_FRAMEINFO 结构显示设备
@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.date: 01/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 31932a1d3da957249e64552f17d86ad5df714971
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d7d3480b9e752c8e904d0af5af920988fe31d2cb
+ms.sourcegitcommit: fc94eb0d5a41ef81c1b3ab91ad725386db0be0c2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63346259"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91603597"
 ---
-# <a name="d3dkmtoutputduplframeinfo-structure"></a>D3DKMT\_OUTPUTDUPL\_FRAMEINFO 结构
+# <a name="d3dkmt_outputdupl_frameinfo-structure"></a>D3DKMT \_ OUTPUTDUPL \_ FRAMEINFO 结构
 
 
-保留供系统使用。 不要在您的驱动程序中使用。
+预留给系统使用。 请勿在您的驱动程序中使用。
 
 <a name="syntax"></a>语法
 ------
@@ -79,8 +79,8 @@ typedef struct _D3DKMT_OUTPUTDUPL_FRAMEINFO {
 <td align="left"><p>Windows Server 2012</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>Header</p></td>
-<td align="left">D3dkmthk.h （包括 D3dkmthk.h）</td>
+<td align="left"><p>标头</p></td>
+<td align="left">D3dkmthk (包含 D3dkmthk) </td>
 </tr>
 </tbody>
 </table>

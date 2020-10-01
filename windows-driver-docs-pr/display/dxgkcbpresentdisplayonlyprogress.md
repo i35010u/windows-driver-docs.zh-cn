@@ -1,6 +1,6 @@
 ---
-title: DXGKCB\_存在\_DISPLAYONLY\_进度回调函数
-description: 保留供系统使用。 不要使用它在您的驱动程序中。
+title: DXGKCB \_ 存在 \_ DISPLAYONLY \_ 进度回调函数
+description: 了解 DXGKCB 存在的 \_ \_ DISPLAYONLY \_ 进度回调函数，该函数保留供系统使用。 不要在您的驱动程序中使用它。
 ms.assetid: 8970246b-b46f-464f-93b2-973cc351ed07
 keywords:
 - pfnPresentDisplayOnlyProgress 回调函数显示设备
@@ -15,17 +15,17 @@ api_type:
 - UserDefined
 ms.date: 01/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 67306955be711f55f169aa36727f6293e779e39d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2bf3a3ad0e0acb51b36f74580b7c4b78a1d90537
+ms.sourcegitcommit: fc94eb0d5a41ef81c1b3ab91ad725386db0be0c2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63323155"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91603565"
 ---
-# <a name="dxgkcbpresentdisplayonlyprogress-callback-function"></a>DXGKCB\_存在\_DISPLAYONLY\_进度回调函数
+# <a name="dxgkcb_present_displayonly_progress-callback-function"></a>DXGKCB \_ 存在 \_ DISPLAYONLY \_ 进度回调函数
 
 
-保留供系统使用。 不要使用它在您的驱动程序中。
+预留给系统使用。 不要在您的驱动程序中使用它。
 
 <a name="syntax"></a>语法
 ------
@@ -40,12 +40,12 @@ void APIENTRY CALLBACK* pfnPresentDisplayOnlyProgress(
 { ... }
 ```
 
-<a name="parameters"></a>Parameters
+<a name="parameters"></a>parameters
 ----------
 
-*hAdapter* \[in\]
+*hAdapter* \[中\]
 
-*pProgress* \[in\]
+*pProgress* \[中\]
 
 <a name="return-value"></a>返回值
 ------------
@@ -71,11 +71,11 @@ void APIENTRY CALLBACK* pfnPresentDisplayOnlyProgress(
 </tr>
 <tr class="odd">
 <td align="left"><p>目标平台</p></td>
-<td align="left">桌面设备</td>
+<td align="left">桌面型</td>
 </tr>
 <tr class="even">
-<td align="left"><p>Header</p></td>
-<td align="left">D3dkmddi.h</td>
+<td align="left"><p>标头</p></td>
+<td align="left">D3dkmddi</td>
 </tr>
 </tbody>
 </table>

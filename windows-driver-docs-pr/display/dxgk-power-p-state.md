@@ -1,10 +1,10 @@
 ---
-title: DXGK\_电源\_P\_状态结构
-description: 保留供系统使用。 不要使用它在您的驱动程序中。
+title: DXGK \_ POWER \_ P \_ 状态结构
+description: 了解 DXGK \_ POWER \_ P \_ 状态结构，它保留供系统使用。 不要在您的驱动程序中使用它。
 ms.assetid: F4612284-36C8-49C4-914D-43C32489EABD
 keywords:
 - DXGK_POWER_P_STATE 结构显示设备
-- PDXGK_POWER_P_STATE 结构指针的显示设备
+- PDXGK_POWER_P_STATE 结构指针显示设备
 topic_type:
 - apiref
 api_name:
@@ -15,17 +15,17 @@ api_type:
 - HeaderDef
 ms.date: 01/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 216d30e15ceb8690160bc0655371d24bcaef7b65
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6ed3a16941eb8dd324c7597edb854ad774fe92ec
+ms.sourcegitcommit: fc94eb0d5a41ef81c1b3ab91ad725386db0be0c2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63350301"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91603694"
 ---
-# <a name="dxgkpowerpstate-structure"></a>DXGK\_电源\_P\_状态结构
+# <a name="dxgk_power_p_state-structure"></a>DXGK \_ POWER \_ P \_ 状态结构
 
 
-保留供系统使用。 不要使用它在您的驱动程序中。
+预留给系统使用。 不要在您的驱动程序中使用它。
 
 <a name="syntax"></a>语法
 ------
@@ -61,15 +61,15 @@ typedef struct _DXGK_POWER_P_STATE {
 <tbody>
 <tr class="odd">
 <td align="left"><p>最低受支持的客户端</p></td>
-<td align="left"><p>Windows 8.1</p></td>
+<td align="left"><p>Windows 8.1</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>最低受支持的服务器</p></td>
 <td align="left"><p>Windows Server 2012 R2</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>Header</p></td>
-<td align="left">D3dkmddi.h （包括 D3dkmddi.h）</td>
+<td align="left"><p>标头</p></td>
+<td align="left">D3dkmddi (包含 D3dkmddi) </td>
 </tr>
 </tbody>
 </table>

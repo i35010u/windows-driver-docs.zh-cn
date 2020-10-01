@@ -1,6 +1,6 @@
 ---
 title: DXGKDDISETPOWERPSTATE 回调函数
-description: 保留供系统使用。 不要使用它在您的驱动程序中。
+description: 了解 DXGKDDISETPOWERPSTATE 回调函数，该函数保留供系统使用。 不要在您的驱动程序中使用它。
 ms.assetid: 58DB4615-BD52-4003-8D60-0881E87C7BD3
 keywords:
 - DxgkDdiSetPowerPState 回调函数显示设备
@@ -15,17 +15,17 @@ api_type:
 - UserDefined
 ms.date: 01/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 92559d4af52b9fada84e09620f4ddfda49c6670b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 3ad97add6b7a1b9170a36d7371d1bfdc2a63e582
+ms.sourcegitcommit: fc94eb0d5a41ef81c1b3ab91ad725386db0be0c2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56562671"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91603643"
 ---
 # <a name="dxgkddisetpowerpstate-callback-function"></a>DXGKDDISETPOWERPSTATE 回调函数
 
 
-保留供系统使用。 不要使用它在您的驱动程序中。
+预留给系统使用。 不要在您的驱动程序中使用它。
 
 <a name="syntax"></a>语法
 ------
@@ -41,14 +41,14 @@ NTSTATUS APIENTRY DxgkDdiSetPowerPState(
 { ... }
 ```
 
-<a name="parameters"></a>Parameters
+<a name="parameters"></a>parameters
 ----------
 
-*DriverContext* \[in\]
+*DriverContext* \[中\]
 
-*ComponentIndex* \[in\]
+*ComponentIndex* \[中\]
 
-*RequestedComponentPState* \[in\]
+*RequestedComponentPState* \[中\]
 
 <a name="requirements"></a>要求
 ------------
@@ -61,7 +61,7 @@ NTSTATUS APIENTRY DxgkDdiSetPowerPState(
 <tbody>
 <tr class="odd">
 <td align="left"><p>最低受支持的客户端</p></td>
-<td align="left"><p>Windows 8.1</p></td>
+<td align="left"><p>Windows 8.1</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>最低受支持的服务器</p></td>
@@ -69,11 +69,11 @@ NTSTATUS APIENTRY DxgkDdiSetPowerPState(
 </tr>
 <tr class="odd">
 <td align="left"><p>目标平台</p></td>
-<td align="left">桌面设备</td>
+<td align="left">桌面型</td>
 </tr>
 <tr class="even">
-<td align="left"><p>Header</p></td>
-<td align="left">D3dkmddi.h</td>
+<td align="left"><p>标头</p></td>
+<td align="left">D3dkmddi</td>
 </tr>
 <tr class="odd">
 <td align="left"><p>IRQL</p></td>

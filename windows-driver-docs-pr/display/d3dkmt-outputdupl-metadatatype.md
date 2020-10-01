@@ -1,6 +1,6 @@
 ---
-title: D3DKMT\_OUTPUTDUPL\_METADATATYPE 枚举
-description: 保留供系统使用。 不要在您的驱动程序中使用。
+title: D3DKMT \_ OUTPUTDUPL \_ METADATATYPE 枚举
+description: 了解 D3DKMT \_ OUTPUTDUPL \_ METADATATYPE 枚举，它保留供系统使用。 请勿在您的驱动程序中使用。
 ms.assetid: 662ddca6-628a-48e7-82dd-344f6bcfb1b1
 keywords:
 - D3DKMT_OUTPUTDUPL_METADATATYPE 枚举显示设备
@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.date: 01/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 6f5baa3e6ee8d4719e79b2174dde8ba6749f9934
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: fa9ef2c6e5c104c788cf4f2f905abe5f52f4fbca
+ms.sourcegitcommit: fc94eb0d5a41ef81c1b3ab91ad725386db0be0c2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63379732"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91603542"
 ---
-# <a name="d3dkmtoutputduplmetadatatype-enumeration"></a>D3DKMT\_OUTPUTDUPL\_METADATATYPE 枚举
+# <a name="d3dkmt_outputdupl_metadatatype-enumeration"></a>D3DKMT \_ OUTPUTDUPL \_ METADATATYPE 枚举
 
 
-保留供系统使用。 不要在您的驱动程序中使用。
+预留给系统使用。 请勿在您的驱动程序中使用。
 
 <a name="syntax"></a>语法
 ------
@@ -39,9 +39,9 @@ typedef enum _D3DKMT_OUTPUTDUPL_METADATATYPE {
 <a name="constants"></a>常量
 ---------
 
-<span id="D3DKMT_OUTPUTDUPL_METADATATYPE_DIRTY_RECTS"></span><span id="d3dkmt_outputdupl_metadatatype_dirty_rects"></span>**D3DKMT\_OUTPUTDUPL\_METADATATYPE\_DIRTY\_RECTS**
+<span id="D3DKMT_OUTPUTDUPL_METADATATYPE_DIRTY_RECTS"></span><span id="d3dkmt_outputdupl_metadatatype_dirty_rects"></span>**D3DKMT \_ OUTPUTDUPL \_ METADATATYPE \_ 脏 \_ rect**
 
-<span id="D3DKMT_OUTPUTDUPL_METADATATYPE_MOVE_RECTS"></span><span id="d3dkmt_outputdupl_metadatatype_move_rects"></span>**D3DKMT\_OUTPUTDUPL\_METADATATYPE\_MOVE\_RECTS**
+<span id="D3DKMT_OUTPUTDUPL_METADATATYPE_MOVE_RECTS"></span><span id="d3dkmt_outputdupl_metadatatype_move_rects"></span>**D3DKMT \_ OUTPUTDUPL \_ METADATATYPE \_ MOVE \_ rect**
 
 <a name="requirements"></a>要求
 ------------
@@ -61,8 +61,8 @@ typedef enum _D3DKMT_OUTPUTDUPL_METADATATYPE {
 <td align="left"><p>Windows Server 2012</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>Header</p></td>
-<td align="left">D3dkmthk.h （包括 D3dkmthk.h）</td>
+<td align="left"><p>标头</p></td>
+<td align="left">D3dkmthk (包含 D3dkmthk) </td>
 </tr>
 </tbody>
 </table>

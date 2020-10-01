@@ -1,6 +1,6 @@
 ---
-title: D3DKMT\_PINDIRECTFLIPRESOURCES 结构
-description: 保留供系统使用。 不要在您的驱动程序中使用。
+title: D3DKMT \_ PINDIRECTFLIPRESOURCES 结构
+description: 了解 \_ 保留供系统使用的 D3DKMT PINDIRECTFLIPRESOURCES 结构。 请勿在您的驱动程序中使用。
 ms.assetid: c5c79876-a9b5-44fa-9545-3995118520d0
 keywords:
 - D3DKMT_PINDIRECTFLIPRESOURCES 结构显示设备
@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.date: 01/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 168cfc9304dd97130ff29ab6cd9d75a39e664db7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e7ceeeb05619f888e10b4b379e9745e981c655a3
+ms.sourcegitcommit: fc94eb0d5a41ef81c1b3ab91ad725386db0be0c2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63379737"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91603639"
 ---
-# <a name="d3dkmtpindirectflipresources-structure"></a>D3DKMT\_PINDIRECTFLIPRESOURCES 结构
+# <a name="d3dkmt_pindirectflipresources-structure"></a>D3DKMT \_ PINDIRECTFLIPRESOURCES 结构
 
 
-保留供系统使用。 不要在您的驱动程序中使用。
+预留给系统使用。 请勿在您的驱动程序中使用。
 
 <a name="syntax"></a>语法
 ------
@@ -64,8 +64,8 @@ typedef struct _D3DKMT_PINDIRECTFLIPRESOURCES {
 <td align="left"><p>Windows Server 2012</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>Header</p></td>
-<td align="left">D3dkmthk.h （包括 D3dkmthk.h）</td>
+<td align="left"><p>标头</p></td>
+<td align="left">D3dkmthk (包含 D3dkmthk) </td>
 </tr>
 </tbody>
 </table>

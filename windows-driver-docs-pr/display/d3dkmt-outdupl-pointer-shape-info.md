@@ -1,6 +1,6 @@
 ---
-title: D3DKMT\_OUTDUPL\_指针\_形状\_信息结构
-description: 保留供系统使用。 不要在您的驱动程序中使用。
+title: D3DKMT \_ OUTDUPL \_ 指针 \_ 形状 \_ 信息结构
+description: 了解 D3DKMT \_ OUTDUPL \_ 指针 \_ 形状 \_ 信息结构，该结构已保留供系统使用。 请勿在您的驱动程序中使用。
 ms.assetid: fc72fe82-8807-44ac-b9da-8f84d38c45bf
 keywords:
 - D3DKMT_OUTDUPL_POINTER_SHAPE_INFO 结构显示设备
@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.date: 01/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 0b9d13dfbcd76612c2de97d8c1b4f104e64efa40
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9f748b000e9e7a61fffcfa2b08e9d77655f62c84
+ms.sourcegitcommit: fc94eb0d5a41ef81c1b3ab91ad725386db0be0c2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63341551"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91603596"
 ---
-# <a name="d3dkmtoutduplpointershapeinfo-structure"></a>D3DKMT\_OUTDUPL\_指针\_形状\_信息结构
+# <a name="d3dkmt_outdupl_pointer_shape_info-structure"></a>D3DKMT \_ OUTDUPL \_ 指针 \_ 形状 \_ 信息结构
 
 
-保留供系统使用。 不要在您的驱动程序中使用。
+预留给系统使用。 请勿在您的驱动程序中使用。
 
 <a name="syntax"></a>语法
 ------
@@ -42,15 +42,15 @@ typedef struct _D3DKMT_OUTDUPL_POINTER_SHAPE_INFO {
 <a name="members"></a>成员
 -------
 
-**Type**
+**类型**
 
-**Width**
+Width 
 
-**Height**
+Height 
 
-**Pitch**
+**音调**
 
-**HotSpot**
+**地区**
 
 <a name="requirements"></a>要求
 ------------
@@ -70,8 +70,8 @@ typedef struct _D3DKMT_OUTDUPL_POINTER_SHAPE_INFO {
 <td align="left"><p>Windows Server 2012</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>Header</p></td>
-<td align="left">D3dkmthk.h （包括 D3dkmthk.h）</td>
+<td align="left"><p>标头</p></td>
+<td align="left">D3dkmthk (包含 D3dkmthk) </td>
 </tr>
 </tbody>
 </table>
