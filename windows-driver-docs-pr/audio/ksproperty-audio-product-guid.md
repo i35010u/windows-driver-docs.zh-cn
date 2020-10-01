@@ -1,6 +1,6 @@
 ---
-title: KSPROPERTY\_音频\_产品\_GUID
-description: 此参数名称保留供将来使用。
+title: KSPROPERTY \_ 音频 \_ 产品 \_ GUID
+description: 了解 KSPROPERTY \_ AUDIO \_ PRODUCT \_ GUID 参数。 此参数名称保留供将来使用。
 ms.assetid: 891b0062-3879-4402-999b-85759c7920a8
 keywords:
 - KSPROPERTY_AUDIO_PRODUCT_GUID 音频设备
@@ -12,14 +12,14 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 37b22cc004393b5da9d1ec86a0cd0f062645f08e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ad30045c5da779ad2cf197062f1bd19cd4280ea8
+ms.sourcegitcommit: cccf9ba62af357aad1016addbbf6c42c7f564412
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63332923"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91606432"
 ---
-# <a name="kspropertyaudioproductguid"></a>KSPROPERTY\_音频\_产品\_GUID
+# <a name="ksproperty_audio_product_guid"></a>KSPROPERTY \_ 音频 \_ 产品 \_ GUID
 
 
 此参数名称保留供将来使用。

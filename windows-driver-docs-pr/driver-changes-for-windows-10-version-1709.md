@@ -1,16 +1,16 @@
 ---
 title: Windows 10 版本 1709 的驱动程序开发变更
-description: 本部分介绍 Windows 10 中驱动程序开发的新增功能。
+description: 了解 Windows 10 中用于驱动程序开发的新功能，例如 Windows 调试器的新内容集。
 ms.assetid: 68a5a513-0dab-40f7-b67f-29b76061e1ab
 ms.date: 04/14/2020
 author: EliotSeattle
 ms.localizationpriority: medium
-ms.openlocfilehash: b9b0893266697ee43394cc5b5a453bdd8b8506b4
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: fb341d67a991434c2818bfdcc32ac7c9d3157c1d
+ms.sourcegitcommit: cccf9ba62af357aad1016addbbf6c42c7f564412
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90716434"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91606455"
 ---
 # <a name="driver-development-additions-for-windows-10-version-1709"></a>适用于 Windows 10 的驱动程序开发添加版本1709
 

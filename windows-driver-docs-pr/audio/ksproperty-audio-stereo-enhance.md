@@ -1,6 +1,6 @@
 ---
-title: KSPROPERTY\_音频\_立体声\_增强
-description: 此参数名称保留供将来使用。
+title: KSPROPERTY \_ 音频 \_ 立体声 \_ 增强
+description: 了解 KSPROPERTY \_ AUDIO \_ 立体声 \_ 增强参数。 此参数名称保留供将来使用。
 ms.assetid: 5ec223ec-a3cf-4613-9fb1-e5dc9424993a
 keywords:
 - KSPROPERTY_AUDIO_STEREO_ENHANCE 音频设备
@@ -12,14 +12,14 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 026894f23cbe82ba84f8d7c139571bae193de8c3
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a3d4fff5f5f6094ce4e8e39174ca2f66fc8622e6
+ms.sourcegitcommit: cccf9ba62af357aad1016addbbf6c42c7f564412
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63332933"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91606430"
 ---
-# <a name="kspropertyaudiostereoenhance"></a>KSPROPERTY\_音频\_立体声\_增强
+# <a name="ksproperty_audio_stereo_enhance"></a>KSPROPERTY \_ 音频 \_ 立体声 \_ 增强
 
 
 此参数名称保留供将来使用。

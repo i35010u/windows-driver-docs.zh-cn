@@ -1,6 +1,6 @@
 ---
 title: PnP 管理器重新分发系统资源
-description: PnP 管理器重新分发系统资源
+description: 了解 PnP 管理器如何重新分配系统资源。 当用户添加的设备需要在其他位置分配资源时，会发生这种情况。
 ms.assetid: fc88ae0a-5b78-4292-a101-29d2fc383555
 keywords:
 - PnP WDK KMDF，重新分发资源
@@ -11,12 +11,12 @@ keywords:
 - 开机序列 WDK KMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 952270ec663ff81831b1920305c61094b9197e62
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: eddebcbbe6fa8b39d22e23665fe55b1e6bdadbaf
+ms.sourcegitcommit: cccf9ba62af357aad1016addbbf6c42c7f564412
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89191393"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91606449"
 ---
 # <a name="the-pnp-manager-redistributes-system-resources"></a>PnP 管理器重新分发系统资源
 

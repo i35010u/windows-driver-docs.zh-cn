@@ -1,15 +1,15 @@
 ---
 title: 默认规则集 (KMDF)
-description: 默认 (规则集) 指定在分析驱动程序时要使用的建议的规则集。
+description: 了解 (KMDF) 的默认规则集，它指定了在分析驱动程序时要使用的建议规则集。
 ms.assetid: A86161C6-52E8-457B-9C75-100D36796183
 ms.date: 05/21/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: c56f82775404202ddc04f1ea8c959a96104cb585
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 78635d2230910aa4a1bf69ef7ca5eb2224887ee0
+ms.sourcegitcommit: cccf9ba62af357aad1016addbbf6c42c7f564412
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89385061"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91606492"
 ---
 # <a name="default-rule-set-kmdf"></a>默认规则集 (KMDF)
 

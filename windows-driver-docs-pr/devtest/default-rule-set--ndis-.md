@@ -1,15 +1,15 @@
 ---
 title: 默认规则集 (NDIS)
-description: 默认 (规则集) 指定在分析驱动程序时要使用的建议的规则集。
+description: 了解 (NDIS) 的默认规则集，它指定了在分析驱动程序时要使用的建议规则集。
 ms.assetid: ED809122-5938-4087-AAB8-0D3EB6DB1092
 ms.date: 05/21/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: af755db6ac64df126cf66c63b4fc93b78f0eaae3
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 093dd4a7ae25a9bc0cda6bed8c9c3f581c3ff490
+ms.sourcegitcommit: cccf9ba62af357aad1016addbbf6c42c7f564412
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89383671"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91606493"
 ---
 # <a name="default-rule-set-ndis"></a>默认规则集 (NDIS)
 

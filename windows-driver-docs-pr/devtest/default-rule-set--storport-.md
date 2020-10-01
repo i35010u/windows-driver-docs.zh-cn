@@ -1,15 +1,15 @@
 ---
 title: 默认规则集 (Storport)
-description: 默认 (规则集) 指定在分析驱动程序时要使用的建议的规则集。
+description: 了解 (Storport) 的默认规则集，它指定在分析驱动程序时要使用的建议规则集。
 ms.assetid: 8310E393-4CA7-4701-8BBC-6E758C927FBE
 ms.date: 05/21/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 3355ae362947d369d0a3a052a56651859e87b2fa
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 360533294c511b9c8027ea2ec7fa9e999cab7247
+ms.sourcegitcommit: cccf9ba62af357aad1016addbbf6c42c7f564412
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89384121"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91606486"
 ---
 # <a name="default-rule-set-storport"></a>默认规则集 (Storport)
 

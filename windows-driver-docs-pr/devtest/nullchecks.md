@@ -1,6 +1,6 @@
 ---
 title: 'NullCheck 规则 (storport) '
-description: NullCheck 规则验证驱动程序代码中的 NULL 值是否在稍后的驱动程序中未被引用。
+description: 了解 (storport) 的 NullCheck 规则。 此规则验证驱动程序代码中的 NULL 值是否在稍后的驱动程序中未被引用。
 ms.assetid: 9322B5F8-6681-4000-A64C-E66D2D4A5D6D
 ms.date: 05/21/2018
 keywords:
@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 442f64bc55999fb138b247292072eeb727392619
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 8ff4d8b70507d93c3cf9a4ecf4cec752c046ee5f
+ms.sourcegitcommit: cccf9ba62af357aad1016addbbf6c42c7f564412
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90103500"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91606457"
 ---
 # <a name="nullcheck-rule-storport"></a>NullCheck 规则 (storport) 
 
