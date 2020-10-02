@@ -2,14 +2,14 @@
 title: ACPI 系统说明表
 description: " (ACPI) 硬件规范的高级配置和电源接口的实现在基于 SoC 的平台上不是必需的，但很多 ACPI 软件规范都是 (或) 必需的。"
 ms.assetid: 6EFCD288-031D-46BB-ABF3-8ADB53E7B4B1
-ms.date: 05/20/2020
+ms.date: 10/02/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: d975761be8dc3f1b7a949874f2220825eabb8845
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 74f9fb2d34fee98e4a11e81fe382a819f2ba7a56
+ms.sourcegitcommit: b3e38d06762246c77cedd8e82d740ebea104c538
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89382129"
+ms.lasthandoff: 10/02/2020
+ms.locfileid: "91662445"
 ---
 # <a name="acpi-system-description-tables"></a>ACPI 系统说明表
 
@@ -82,7 +82,7 @@ CSRT 描述 Csr 的资源组，其中每个资源组标识特定类型的硬件�
 
 有关详细信息，请参阅 [核心系统资源表 (CSRT) 规范](https://acpica.org/related-documents)。
 
-## <a name="debug-port-table-2-dbg2"></a>调试端口表 2 (DBG2) 
+## <a name="debug-port-table-2-dbg2"></a>调试端口表 2 (DBG2)
 
 Microsoft 需要在所有系统上都有调试端口。 为了描述内置于平台)  (s 调试端口，Microsoft 定义了用于 ACPI 的调试端口表 2 (DBG2) 。 此表指定一个或多个独立端口 (s) 用于调试目的。 如果存在 DBG2 表，则指示该平台至少包含一个调试端口。 此表包含有关调试端口)  (的标识和配置的信息。 该表位于具有其他 ACPI 表的系统内存中，并且必须在 ACPI RSDT 表中进行引用。
 
@@ -108,6 +108,12 @@ Windows SMM 安全缓解表 (WSMT) 规范包含高级配置和电源接口 (ACPI
 
 Windows Server 2016
 
-Windows 10 版本1607
+Windows 10 版本 1607
 
-有关详细信息，请参阅 [WINDOWS SMM 安全缓解表 (WSMT) 规范 (.docx 下载) ](https://go.microsoft.com/fwlink/p/?LinkId=786943)。
+有关详细信息，请参阅 [WINDOWS SMM 安全缓解表 (WSMT) 规范 (.docx 下载) ](https://download.microsoft.com/download/1/8/A/18A21244-EB67-4538-BAA2-1A54E0E490B6/WSMT.docx)。
+
+## <a name="iscsi-boot-firmware-table-ibft"></a>iSCSI Boot 固件表 (iBFT) 
+
+ISCSI 启动固件 (iBF) Table (iBFT) 是一个信息块，其中包含可用于 iSCSI 启动过程的各种参数。 IBFT 是将 iBF 参数值传达给操作系统的机制。 IBF 在 iBFT 中生成并填充。 IBFT 可用于 Windows 操作系统，以实现一致的启动进程流。
+
+有关详细信息，请参阅 [ISCSI Boot 固件表 (iBFT) 规范 (.docx 下载) ](https://download.microsoft.com/download/7/e/7/7e7662cf-cbea-470b-a97e-ce7ce0d98dc2/iBFT.docx)。

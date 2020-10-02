@@ -13,12 +13,12 @@ ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
 ms.localizationpriority: low
-ms.openlocfilehash: 11510806382926548d0423d61ae1f4c809698d56
-ms.sourcegitcommit: f8619f20a0903dd64f8641a5266ecad6df5f1d57
+ms.openlocfilehash: 985731a86782e9856a5dc28d7cd4050e86ae93b9
+ms.sourcegitcommit: b3e38d06762246c77cedd8e82d740ebea104c538
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91423511"
+ms.lasthandoff: 10/02/2020
+ms.locfileid: "91662425"
 ---
 # <a name="nfc-cx-quick-start-guide"></a>NFC CX 快速入门指南
 
@@ -27,7 +27,7 @@ ms.locfileid: "91423511"
 > [!NOTE]
 > 在其实现中使用类扩展驱动程序的驱动程序称为 "客户端驱动程序"。 这就是类扩展驱动程序的客户端。
 
-## <a name="prerequisites"></a>先决条件
+## <a name="prerequisites"></a>必备条件
 
 * NFC 控制器的固件必须实现 NFC 论坛的 [Nfc 控制器接口 (NCI) ](https://nfc-forum.org/our-work/specifications-and-application-documents/specifications/nfc-controller-interface-nci-specification/) 协议。
 * [Visual Studio 2017](https://visualstudio.microsoft.com/downloads/?utm_content=download+vs2017) (或更高版本) 。
@@ -50,7 +50,7 @@ GitHub 上提供了此示例代码的完整版本： [NFC CX 客户端驱动程�
 
     在 **“文件”** 菜单上，指向 **“新建”** ，再单击 **“项目”** 。 在 " **Visual C++** " 节点的 " **Windows 驱动程序**" 下，单击 " **WDF**"，然后单击 " **用户模式驱动程序"，空 (UMDF V2) **
 
-    ![Visual Studio "新建项目" 对话框。 选中 "用户模式驱动程序，空 (UMDF V2) "。 ](images/quick-start-new-project.png)
+    ![此屏幕截图显示 Visual Studio "新建项目" 对话框，其中包含 "用户模式驱动程序，空 (UMDF V2) "。](images/quick-start-new-project.png)
 
 2. 打开 INF 文件。
 

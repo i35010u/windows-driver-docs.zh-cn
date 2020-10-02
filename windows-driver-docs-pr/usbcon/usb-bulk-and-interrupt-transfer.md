@@ -3,12 +3,12 @@ description: 本主题提供有关 USB 批量传输的简要概述。
 title: 如何将发送 USB 大容量传输请求
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 98a6db2bd68689d49de3a4f80faf949b6ef06b5f
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 41e3385e4fd53ed1573c9a59531f6e3ae778a471
+ms.sourcegitcommit: b3e38d06762246c77cedd8e82d740ebea104c538
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90714636"
+ms.lasthandoff: 10/02/2020
+ms.locfileid: "91662417"
 ---
 # <a name="how-to-send-usb-bulk-transfer-requests"></a>如何将发送 USB 大容量传输请求
 
@@ -51,7 +51,7 @@ USB 大容量终结点可传输大量数据。 大容量传输可靠，允许硬
 
 此分析器跟踪高速显示一个示例大容量事务。
 
-![示例数据事务的跟踪。](images/bulk-out-hs.png)
+![显示示例大容量分析器事务跟踪的屏幕截图。](images/bulk-out-hs.png)
 
 在前面的跟踪中，主机会通过将 PID 设置为 OUT (OUT token) 发送令牌数据包，来发起向高速大容量终结点的批量传输。 数据包包含设备和目标终结点的地址。 在输出数据包之后，主机将发送包含大容量有效负载的数据包。 如果终结点接受传入的数据，则会发送 ACK 数据包。 在此示例中，我们可以看到主机向设备地址发送了31个字节： 1;终结点地址：2。
 
@@ -59,7 +59,7 @@ USB 大容量终结点可传输大量数据。 大容量传输可靠，允许硬
 
 此分析器跟踪显示一个 SuperSpeed bulk transaction 示例。
 
-![示例数据事务的跟踪。](images/bulk-out.png)
+![显示 SuperSpeed bulk data transaction 示例跟踪的屏幕截图。](images/bulk-out.png)
 
 在前面的跟踪中，主机通过发送数据包对 SuperSpeed 大容量终结点发起 OUT transaction。 数据包包含批量有效负载、设备和终结点地址。 在此示例中，我们可以看到主机向设备地址发送了31个字节： 4;终结点地址：2。
 
@@ -69,7 +69,7 @@ USB 大容量终结点可传输大量数据。 大容量传输可靠，允许硬
 
 此分析器跟踪快速显示了事务中的一个示例。
 
-![示例数据事务的跟踪。](images/bulk-in-hs.png)
+![显示数据事务中的示例的跟踪的屏幕截图。](images/bulk-in-hs.png)
 
 在前面的跟踪中，主机将通过在令牌)  (中发送 PID 设置为的令牌数据包来启动该事务。 然后，设备将使用大容量有效负载发送数据包。 如果该终结点没有要发送的数据或尚未准备好发送数据，则该设备可以发送 NAK 握手数据包。 主机会重试传入传输，直至接收到设备收到的 ACK 数据包为止。 该 ACK 数据包表示设备已接受数据。
 
@@ -121,7 +121,7 @@ I/o 管理器接收请求，创建 (IRP) 的 i/o 请求数据包，并将其转�
 
 如果使用的不是流，则可以使用 KMDF 定义的方法发送请求，如以下过程中所述：
 
-### <a name="prerequisites"></a>先决条件
+### <a name="prerequisites"></a>必备条件
 
 在开始之前，请确保你具有以下信息：
 

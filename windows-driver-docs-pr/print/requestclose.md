@@ -12,32 +12,38 @@ api_type:
 - Schema
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c9541b545622da30f54c10438a6b54e3d2868849
-ms.sourcegitcommit: ab64169b631da4db3f0b895600f1c38a22cb7e2e
+ms.openlocfilehash: 012a86dcc2f90c90dbf1b84f29030530f93fea9e
+ms.sourcegitcommit: b3e38d06762246c77cedd8e82d740ebea104c538
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75652997"
+ms.lasthandoff: 10/02/2020
+ms.locfileid: "91662431"
 ---
 # <a name="requestclose-element"></a>requestClose 元素
 
-可选的**requestClose**元素用于在客户端计算机上关闭事件通知消息。
+可选的 **requestClose** 元素用于在客户端计算机上关闭事件通知消息。
 
-**RequestClose**元素在*asyncui*命名空间中的此 URI 上定义： [https://schemas.microsoft.com/2003/print/asyncui/v1/request](https://schemas.microsoft.com/2003/print/asyncui/v1/request)。 （此资源可能在某些语言和国家/地区不可用。）
+**RequestClose**元素在*asyncui*命名空间中的此 URI 处定义：
 
-## <a name="usage"></a>Usage
+```xml
+https://schemas.microsoft.com/2003/print/asyncui/v1/request
+```
+
+此资源可能在某些语言和国家/地区不可用。
+
+## <a name="usage"></a>使用情况
 
 ```xml
 <requestClose/>
 ```
 
-## <a name="attributes"></a>属性
+## <a name="attributes"></a>特性
 
 没有特性。
 
 ## <a name="child-elements"></a>子元素
 
-没有子元素。
+没有任何子元素。
 
 ## <a name="parent-elements"></a>父元素
 
@@ -49,7 +55,7 @@ ms.locfileid: "75652997"
 <thead>
 <tr class="header">
 <th>元素</th>
-<th>描述</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>
@@ -79,7 +85,7 @@ ms.locfileid: "75652997"
   </asyncPrintUIResponse>
 ```
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 [asyncPrintUIRequest](asyncprintuirequest.md)
 

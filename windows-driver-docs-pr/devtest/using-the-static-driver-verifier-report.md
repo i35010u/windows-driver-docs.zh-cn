@@ -23,12 +23,12 @@ keywords:
 - SDV WDK，静态驱动程序验证程序报告
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6d9b4d19252fa3422e53b37f9fe941a02c1b53bf
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 2426d159be1a58a2f9eb654bc92475cd138a0d28
+ms.sourcegitcommit: b3e38d06762246c77cedd8e82d740ebea104c538
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89383931"
+ms.lasthandoff: 10/02/2020
+ms.locfileid: "91662429"
 ---
 # <a name="using-the-static-driver-verifier-report"></a>使用静态驱动程序验证程序报告
 
@@ -47,7 +47,7 @@ SDV 报表是验证结果的交互式显示。 本部分介绍如何使用 SDV �
 
 以下屏幕截图显示了 "静态驱动程序验证程序" 报表页。
 
-![静态驱动程序验证程序报表页的屏幕截图](images/sdv-defectviewer.png)
+![显示 "静态驱动程序验证程序报表页" 的屏幕截图。](images/sdv-defectviewer.png)
 
 ### <a name="span-idreview_the_rulespanspan-idreview_the_rulespanreview-the-rule"></a><span id="review_the_rule"></span><span id="REVIEW_THE_RULE"></span>查看规则
 

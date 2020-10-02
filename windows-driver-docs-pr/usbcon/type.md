@@ -3,12 +3,12 @@ description: 本主题说明如何测试启用了 USB 类型 C 的系统和 Wind
 title: USB 类型 C 手动互操作性测试过程
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 85bbfabee023616d2a2dad09a5defeba2a31205b
-ms.sourcegitcommit: 937974aa9bbe0262a7ffe9631593fab48c4e7492
+ms.openlocfilehash: 719d6806226dbea12e338c2b44fab5892c573980
+ms.sourcegitcommit: b3e38d06762246c77cedd8e82d740ebea104c538
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "90009815"
+ms.lasthandoff: 10/02/2020
+ms.locfileid: "91662473"
 ---
 # <a name="usb-type-c-manual-interoperability-test-procedures"></a>USB 类型 C 手动互操作性测试过程
 
@@ -284,7 +284,7 @@ USB 类型 C 互操作性测试过程分为两部分：功能测试 (FT) 和压�
 1.  重新启动测试系统。
 2.  通过使用 USB 类型 C A/V 适配器，连接 A/V 适配器的所有端口，以便可以使用下图中所示的所有功能：
 
-    ![usb 类型-c a/v 适配器配置](images/typec5.png)
+    ![显示 U S B 类型 C A/V 适配器配置的关系图。](images/typec5.png)
 
 3.  如果待测试系统中有其他 USB 类型 C 端口，请重复步骤2。
 4.  在测试 [期间，通过 IO 运行 DF-睡眠]( https://go.microsoft.com/fwlink/p/?LinkId=623314) 。
@@ -466,7 +466,7 @@ logman stop usbtrace -ets
 
 若要在设备管理器中的 USB 设备上禁用选择性挂起，请首先在设备树中查找设备节点。 在此示例中，在如下所示的集线器上禁用选择性挂起：
 
-![“设备管理器”](images/typec-device-mgr.png)
+![显示在 "设备管理器" 中选择的 "通用 U S B 中心" 的屏幕截图。](images/typec-device-mgr.png)
 
 右键单击该设备，然后选择 " **属性**"。 然后选择 " **电源管理** " 选项卡。
 

@@ -5,12 +5,12 @@ Search.SourceType: Video
 ms.assetid: 0442E4E2-DBC7-4EB0-BEB6-49EFF5132A1D
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 95cac2487f46829ce8ad1150af4680143cd0eb91
-ms.sourcegitcommit: 68d0aec4c282c9c1e1ab54509c8f4575dd273d56
+ms.openlocfilehash: 339e8f0bccaee0c99e2997e55c5a83c1fa356aa1
+ms.sourcegitcommit: b3e38d06762246c77cedd8e82d740ebea104c538
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91221945"
+ms.lasthandoff: 10/02/2020
+ms.locfileid: "91662461"
 ---
 # <a name="using-the-windows-performance-toolkit-wpt-with-wdf"></a>将 Windows 性能工具包 (WPT) 与 WDF 配合使用
 
@@ -92,7 +92,7 @@ WPT 可以通过两种方式显示 WDF i/o 请求的完成吞吐量：
 
 以下屏幕截图显示了用于 CPU 和 UMDF i/o 请求性能的示例摘要图表和表。 在 UMDF i/o 请求完成速率图中，每秒的请求数将显示在 y 轴上。
 
-![用于 umdf i/o 请求性能的关系图](images/WpaUMDFIoCapture-Narrow.PNG)
+![屏幕截图，显示 "U M D F i/o 请求" 和 "C P U 用法 (采样) " 的示例摘要图表。](images/WpaUMDFIoCapture-Narrow.PNG)
 
 在 [摘要表](/previous-versions/windows/it-pro/windows-8.1-and-8/hh448109(v=win.10))中，大多数列都一目了然，但要注意一些事项。 WdfDevice 列包含与 i/o 请求关联的 WDFDEVICE 句柄。 ActivityID 包含 i/o 请求的唯一标识符。 框架在向驱动程序提供 i/o 请求时创建此标识符。 如果活动标识符已经与相应的 IRP 关联，则框架将使用该标识符。 有关详细信息，请参阅 [使用活动标识符](using-activity-identifiers.md)。
 

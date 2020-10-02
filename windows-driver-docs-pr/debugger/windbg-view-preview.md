@@ -3,12 +3,12 @@ title: WinDbg 预览-"查看" 菜单
 description: 本部分介绍如何使用 "视图" 菜单。
 ms.date: 07/02/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 8ec196b6f1cf452a47fb756929b3d2bd26d55cd0
-ms.sourcegitcommit: f788aa204a3923f9023d8690488459a4d9bc2495
+ms.openlocfilehash: 877e3b645971f56e91e7c21d22388399faba61f8
+ms.sourcegitcommit: b3e38d06762246c77cedd8e82d740ebea104c538
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86141307"
+ms.lasthandoff: 10/02/2020
+ms.locfileid: "91662469"
 ---
 # <a name="windbg-preview---view-menu"></a>WinDbg 预览-"查看" 菜单
 
@@ -22,13 +22,13 @@ ms.locfileid: "86141307"
 
 ## <a name="command"></a>命令
 
-命令窗口允许你输入调试器命令。 有关调试器命令的详细信息，请参阅[调试器命令](debugger-commands.md)。
+命令窗口允许你输入调试器命令。 有关调试器命令的详细信息，请参阅 [调试器命令](debugger-commands.md)。
 
 ## <a name="watch"></a>监视
 
 在 "监视" 窗口中，可以监视本地变量和注册。 
 
-"局部变量" 和 "监视" 窗口均基于 dx 命令使用的数据模型。 这意味着，"局部变量" 和 "监视" 窗口将受益于已加载的任何 NatVis 或 JavaScript 扩展，并支持完整的 LINQ 查询，就像 dx 命令一样。 有关数据模型的详细信息，请参阅[WinDbg 预览-数据模型](windbg-data-model-preview.md)。
+"局部变量" 和 "监视" 窗口均基于 dx 命令使用的数据模型。 这意味着，"局部变量" 和 "监视" 窗口将受益于已加载的任何 NatVis 或 JavaScript 扩展，并支持完整的 LINQ 查询，就像 dx 命令一样。 有关数据模型的详细信息，请参阅 [WinDbg 预览-数据模型](windbg-data-model-preview.md)。
 
 ## <a name="locals"></a>局部变量
 
@@ -42,7 +42,7 @@ ms.locfileid: "86141307"
 
 ## <a name="memory"></a>内存
 
-使用 "内存" 窗口显示内存位置。 除了提供内存地址外，还可以使用伪寄存器值（如 $scopeip 和 $eventip）来检查内存。 预先追加 @ 符号以使用 "内存" 窗口中的伪寄存器值，例如 `@$scopeip` 。 有关详细信息，请参阅[伪寄存器语法](pseudo-register-syntax.md)
+使用 "内存" 窗口显示内存位置。 除了提供内存地址外，还可以使用伪寄存器值（如 $scopeip 和 $eventip）来检查内存。 预先追加 @ 符号以使用 "内存" 窗口中的伪寄存器值，例如 `@$scopeip` 。 有关详细信息，请参阅 [伪寄存器语法](pseudo-register-syntax.md)
 
 ## <a name="stack"></a>堆栈
 
@@ -52,7 +52,7 @@ ms.locfileid: "86141307"
 
 "反汇编" 窗口将突出显示当前指令并在滚动时保留该位置。 
 
-![ 调试器中的 "反汇编" 窗口](images/windbgx-disassembly.png)
+![显示调试器中的 "反汇编" 窗口的屏幕截图。](images/windbgx-disassembly.png)
 
 ## <a name="threads"></a>线程数
 
@@ -68,15 +68,15 @@ ms.locfileid: "86141307"
 
  此日志为 WinDbg 预览版。 可以查看它来监视长时间运行的进程，并对调试器本身进行故障排除。
 
- 可以使用 logopen 命令继续创建传统的调试器命令日志。 有关此方面的详细信息，请参阅[在 WinDbg 中保留日志文件](keeping-a-log-file-in-windbg.md)。
+ 可以使用 logopen 命令继续创建传统的调试器命令日志。 有关此方面的详细信息，请参阅 [在 WinDbg 中保留日志文件](keeping-a-log-file-in-windbg.md)。
 
-## <a name="notes"></a>说明
+## <a name="notes"></a>备注
 
 使用 "注释" 选项可打开 "便笺拍摄" 窗口。
 
 ## <a name="timelines"></a>时间线
 
-使用时间线打开或将焦点移到 "时间线" 窗口。 有关时间线的详细信息，请参阅[WinDbg 预览-时间线](windbg-timeline-preview.md)。
+使用时间线打开或将焦点移到 "时间线" 窗口。 有关时间线的详细信息，请参阅 [WinDbg 预览-时间线](windbg-timeline-preview.md)。
 
 ## <a name="modules"></a>模块
 

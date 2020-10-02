@@ -12,20 +12,26 @@ api_type:
 - Schema
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 55b88c74c27bba4f9fb1426129609cb39b24ecb3
-ms.sourcegitcommit: ab64169b631da4db3f0b895600f1c38a22cb7e2e
+ms.openlocfilehash: aac1479b453a1795d5188c74abe279f6e8a3d7fe
+ms.sourcegitcommit: b3e38d06762246c77cedd8e82d740ebea104c538
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75652935"
+ms.lasthandoff: 10/02/2020
+ms.locfileid: "91662479"
 ---
 # <a name="asyncprintuirequest-element"></a>asyncPrintUIRequest 元素
 
-必需的**asyncPrintUIRequest**元素描述由打印机驱动程序发出的请求，以在客户端计算机上创建消息。
+必需的 **asyncPrintUIRequest** 元素描述由打印机驱动程序发出的请求，以在客户端计算机上创建消息。
 
-**AsyncPrintUIRequest**元素在*asyncui*命名空间中的此 URI 上定义： [https://schemas.microsoft.com/2003/print/asyncui/v1/request](https://schemas.microsoft.com/2003/print/asyncui/v1/request)。
+**AsyncPrintUIRequest**元素在*asyncui*命名空间中的此 URI 处定义：
 
-## <a name="usage"></a>Usage
+```xml
+https://schemas.microsoft.com/2003/print/asyncui/v1/request
+```
+
+此资源可能在某些语言和国家/地区不可用。
+
+## <a name="usage"></a>使用情况
 
 ```xml
 <asyncPrintUIRequest>
@@ -33,7 +39,7 @@ ms.locfileid: "75652935"
 </asyncPrintUIRequest>
 ```
 
-## <a name="attributes"></a>属性
+## <a name="attributes"></a>特性
 
 没有特性。
 
@@ -47,7 +53,7 @@ ms.locfileid: "75652935"
 <thead>
 <tr class="header">
 <th>元素</th>
-<th>描述</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>
@@ -70,7 +76,7 @@ ms.locfileid: "75652935"
 
 ## <a name="examples"></a>示例
 
-下面的代码示例演示如何使用**asyncPrintUIRequest**元素。
+下面的代码示例演示如何使用 **asyncPrintUIRequest** 元素。
 
 ```xml
 <?xml version="1.0" ?>
@@ -90,7 +96,7 @@ ms.locfileid: "75652935"
   </asyncPrintUIRequest>
 ```
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 [**requestClose**](requestclose.md)
 

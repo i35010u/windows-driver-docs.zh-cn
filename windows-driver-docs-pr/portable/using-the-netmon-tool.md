@@ -3,12 +3,12 @@ description: '网络监视器工具 ( # A0) 是一个基于 Windows 的应用程
 title: 使用网络监视器工具
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: da1d52649a8765581c1b6220031407e008c30054
-ms.sourcegitcommit: 15caaf6d943135efcaf9975927ff3933957acd5d
+ms.openlocfilehash: 569948ec02c1637bdc5b6d560fd82664ee75049b
+ms.sourcegitcommit: b3e38d06762246c77cedd8e82d740ebea104c538
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88969342"
+ms.lasthandoff: 10/02/2020
+ms.locfileid: "91662455"
 ---
 # <a name="using-the-network-monitor-tool"></a>使用网络监视器工具
 
@@ -82,7 +82,7 @@ logman stop -ets WPD
 
 下图显示了 API 级别的 WPDAPI 请求。 请求以 MTP 请求的形式传播 (s) ，该请求将到达传输，然后向上冒泡。
 
-![查看跟踪](images/framesummary1.png)
+![显示 "帧摘要" 窗口的屏幕截图，其中包含用于不同跟踪层的标注。](images/framesummary1.png)
 
 - 传输级日志记录在数据阶段不记录实际数据。 检查在 **GetDeviceInfo** 或 **SendObjectPropList**等命令期间发送或接收的数据集的 WPDMTP 响应消息。
 - 如果在 " **帧摘要** " 窗口中选择 WPDMTP 响应行，则相应的项将在 " **帧详细信息** " 窗口中展开。

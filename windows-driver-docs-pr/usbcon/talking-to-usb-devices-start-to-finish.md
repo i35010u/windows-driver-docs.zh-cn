@@ -3,12 +3,12 @@ description: 使用 Windows 8.1 中引入的 Windows 运行时 Api 编写允许�
 title: 与 USB 设备通信，从开始到完成（UWP 应用）
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8a0a5e3e3f86d57fbe338cf3a00a3fabc11b1043
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 0a90210ce1968b185f044a85f453bebe7b1504c3
+ms.sourcegitcommit: b3e38d06762246c77cedd8e82d740ebea104c538
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90102834"
+ms.lasthandoff: 10/02/2020
+ms.locfileid: "91662475"
 ---
 # <a name="talking-to-usb-devices-start-to-finish-uwp-app"></a>与 USB 设备通信，从开始到完成（UWP 应用）
 
@@ -30,7 +30,7 @@ ms.locfileid: "90102834"
 
 按照本部分中的步骤或直接跳到 [自定义 USB 设备访问示例](https://go.microsoft.com/fwlink/p/?linkid=309716)。 随附示例实现了本文中的所有步骤，但若要继续操作，我们不会演练代码。 某些步骤 **在 "示例" 部分中找到了它** ，可帮助你快速找到代码。 该示例的源文件结构简单明了，因此您可以轻松地查找代码，而无需向下钻取多层源文件。 但您可能希望以不同的方式分解和组织您自己的项目。
 
-## <a name="in-this-section"></a>在本节中
+## <a name="in-this-section"></a>在此部分中
 
 
 -   [**步骤 1**-将 Microsoft 提供的 WinUSB 驱动程序安装为设备的函数驱动程序。](#step1)
@@ -295,7 +295,7 @@ ms.locfileid: "90102834"
 <ol>
 <li>在设备元数据包中，必须指定设备应如何响应自动播放通知。 在 " <strong>Windows 信息</strong> " 选项卡上，选择 " <strong>UWP 设备应用</strong> " 选项，然后输入应用信息，如下所示：</li>
 <li><p>在应用程序清单中，添加 <strong>自动播放设备</strong> 声明和启动信息，如下所示：</p>
-<p><img src="images/autoplay.png" alt="AutoPlay" /></p></li>
+<p><img src="images/autoplay.png" alt="Screenshot that shows the app manifest with 'Declarations' selected and 'AutoPlay Device' added." /></p></li>
 <li>在 App 类的 OnActivated 方法中，检查设备是否激活了该应用。 如果是，则该方法接收包含 <a href="/uwp/api/Windows.Devices.Enumeration.DeviceInformation#Windows_Devices_Enumeration_DeviceInformation_Id" data-raw-source="[&lt;strong&gt;DeviceInformation.Id&lt;/strong&gt;](/uwp/api/Windows.Devices.Enumeration.DeviceInformation#Windows_Devices_Enumeration_DeviceInformation_Id)"><strong>DeviceInformation.Id</strong></a> 属性值的 DeviceEventArgs 参数值。 这与步骤6中所述的值相同<a href="#step6" data-raw-source="[&lt;strong&gt;Step 6&lt;/strong&gt;—Extend the app to open the device for communication](#step6)"> <strong>Step 6</strong>，即扩展应用程序以打开设备进行通信</a>。</li>
 </ol>
 <p><strong>在示例中找到它：</strong> 查看名为自动播放的文件。 有关 JavaScript，请参阅 default.js。</p></td>

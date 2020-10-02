@@ -4,12 +4,12 @@ description: Windows 8.1 包括对受保护打印的支持，它允许用户在�
 ms.assetid: 43569030-224F-46C6-963F-FC3BE24A0FB3
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e4a485f8d283094809654a9c58deb592d2215c41
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 4fd56f5f55fc395c604c41dd355c8f6a8f198e7b
+ms.sourcegitcommit: b3e38d06762246c77cedd8e82d740ebea104c538
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89217743"
+ms.lasthandoff: 10/02/2020
+ms.locfileid: "91662439"
 ---
 # <a name="driver-support-for-protected-printing"></a>受保护打印的驱动程序支持
 
@@ -19,7 +19,11 @@ Windows 8.1 还允许管理员指定默认 PIN，以减少与打印出来但用�
 
 ## <a name="print-schema-changes"></a>打印架构更改
 
-Windows 8.1 引入了新的打印架构关键字，你可以在 PrintTicket 和 PrintCapabilities 文档中使用这些关键字来指定受保护的打印。 这些关键字是在新的 *printschemakeywordsv11* 命名空间中定义的。 下面是此命名空间的 URI： [https://schemas.microsoft.com/windows/2013/05/printing/printschemakeywordsv11](https://schemas.microsoft.com/windows/2013/05/printing/printschemakeywordsv11) 。
+Windows 8.1 引入了新的打印架构关键字，你可以在 PrintTicket 和 PrintCapabilities 文档中使用这些关键字来指定受保护的打印。 这些关键字是在新的 *printschemakeywordsv11* 命名空间中定义的。 下面是此命名空间的 URI：
+
+```xml
+https://schemas.microsoft.com/windows/2013/05/printing/printschemakeywordsv11
+```
 
 若要查看如何在 PrintTicket 文件中指定受保护的打印，请参阅 [用于固定打印的示例 PrintTicket 文件](sample-printticket-file-for-pin-printing.md)。 若要了解如何在 PrintCapabilities 文件中指定受保护的打印，请参阅 [用于 PIN 打印的示例 PrintCapabilities 文件](sample-printcapabilities-file-for-pin-printing.md)。
 
@@ -188,21 +192,21 @@ PPD \* 功能 JobPasscode \* 选项
 *%******************************************************************************
 *Feature: JobPasscode
 {
-    *Name: ”Job Passcode”
+    *Name: "Job Passcode"
     *DefaultOption: OFF
     *ConcealFromUI: TRUE
-    *PrintSchemaKeywordMap: “JobPasscode”
+    *PrintSchemaKeywordMap: "JobPasscode"
 
     *Option: OFF
     {
-     *PrintSchemaKeywordMap: “Off”
-        *Name: ”Off”
+     *PrintSchemaKeywordMap: "Off"
+        *Name: "Off"
     }
 
     *Option: ON
     {
-     *PrintSchemaKeywordMap: “On”
-        *Name: ”On”
+     *PrintSchemaKeywordMap: "On"
+        *Name: "On"
     }
 }
 

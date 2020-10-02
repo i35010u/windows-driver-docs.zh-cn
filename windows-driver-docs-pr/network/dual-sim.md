@@ -4,12 +4,12 @@ description: SIM 双卡
 ms.assetid: 18521fec-c9fb-48d0-9de2-d0482e4807d6
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 43405ab1406d7908305717133e6106be01079fc3
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: a2b15390660342f986b176704362e81984cd0ec2
+ms.sourcegitcommit: b3e38d06762246c77cedd8e82d740ebea104c538
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89215250"
+ms.lasthandoff: 10/02/2020
+ms.locfileid: "91662459"
 ---
 # <a name="dual-sim"></a>SIM 双卡
 
@@ -29,7 +29,7 @@ Windows Phone 8.1 GDR1 增加了对 C + G 的支持。
 
 对于其无线电类型为 W/G + G 的手机，一个执行器是支持/G 的，一个执行器支持 G。 根据用户选择用于数据行的 UICC 槽，该槽自动与更具功能的 W/G 执行器关联。 以下关系图显示了两个可能的执行器关联，具体取决于用户为数据行选择的 UICC 槽。
 
-![hwcomponents \- dualsim \- logicalview \- 1](images/hwcomponents-dualsim-logicalview.png)![hwcomponents \- dualsim \- logicalview \- 2](images/hwcomponents-dualsim-logicalview-2.png)
+![hwcomponents \- dualsim \- logicalview \- 1](images/hwcomponents-dualsim-logicalview.png) ![显示第二个可能的执行器关联的关系图。](images/hwcomponents-dualsim-logicalview-2.png)
 
 ### <a name="cg"></a>C + G
 

@@ -4,14 +4,14 @@ description: 本附录介绍了在 Windows Vista 中的新硬件上安装内置 
 ms.assetid: 399514FD-2BD8-4DC2-8446-F5EEB4120876
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8d1915362c8a503962ab9aeb0726740c859d90c3
-ms.sourcegitcommit: f610410e1500f0b0a4ca008b52679688ab51033d
+ms.openlocfilehash: e168c8833d27039b0cb3bc6bb700b0888b37ebca
+ms.sourcegitcommit: b3e38d06762246c77cedd8e82d740ebea104c538
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/15/2020
-ms.locfileid: "88253030"
+ms.lasthandoff: 10/02/2020
+ms.locfileid: "91662371"
 ---
-# <a name="appendix-a-how-to-install-an-in-box-bluetooth-driver-on-new-hardware-in-windows-vista"></a>附录 A：如何在 Windows Vista 中的新硬件上安装内置蓝牙驱动程序
+# <a name="appendix-a-how-to-install-an-in-box-bluetooth-driver-on-new-hardware-in-windows-vista"></a>附录 A：如何在 Windows Vista 中的新硬件上安装内置的蓝牙驱动程序
 
 
 本附录介绍了强制 Windows Vista 随附的蓝牙驱动程序在新的蓝牙收音机上安装的过程。 尽管有些细节有所不同，但 Windows XP SP2 使用类似的过程。
@@ -26,7 +26,7 @@ ms.locfileid: "88253030"
 
 在 " **其他设备**" 下的 "设备管理器设备列表中找到蓝牙收音机的条目。 在下图中，无线电的名称为 "UGT"。 在某些便携式计算机上，可能需要先使用组合键（如 Fn + F5）来打开蓝牙收音机。
 
-![蓝牙更新驱动程序软件 vista](images/bthnewhwstep1.jpg)
+![屏幕截图显示 "设备管理器" 右键单击 "U G T" 并单击 "更新驱动程序软件 ..."选择.](images/bthnewhwstep1.jpg)
 
 若要验证所选设备是否为蓝牙无线电，请选择并按住 (或右键单击) 设备名称，然后选择 " **属性** " 以显示 " **属性** " 对话框。 在 " **详细信息** " 选项卡上，验证设备是否具有蓝牙无线电的兼容 ID：
 
@@ -35,13 +35,13 @@ USB \\ 类 \_ E0&子类 \_ 01&Prot \_ 01
 
 选择并按住 (或右键单击蓝牙单选节点) ，然后选择 " **更新驱动程序软件**"。 若要转到下图中的页面，请选择 **"浏览计算机以查找驱动程序软件**"。 若要手动选择驱动程序，请选择 " **让我从计算机上的设备驱动程序列表中**选择"。
 
-![蓝牙更新驱动程序软件 vista](images/bthnewhwstep2.jpg)
+![显示 "更新驱动程序软件-U G T" 窗口的屏幕截图。](images/bthnewhwstep2.jpg)
 
 ### <a name="span-idstep_3__select_the_generic_bluetooth_driverspanspan-idstep_3__select_the_generic_bluetooth_driverspanspan-idstep_3__select_the_generic_bluetooth_driverspanstep-3-select-the-generic-bluetooth-driver"></a><span id="Step_3__Select_the_Generic_Bluetooth_Driver"></span><span id="step_3__select_the_generic_bluetooth_driver"></span><span id="STEP_3__SELECT_THE_GENERIC_BLUETOOTH_DRIVER"></span>步骤3：选择通用蓝牙驱动程序
 
 更新驱动程序软件向导接下来显示可用驱动程序的列表。 选择 " **蓝牙无线电收发** 器"，然后选择与系统匹配的蓝牙无线电，如下图所示。 如果不确定要使用的驱动程序，可以使用通用驱动程序进行测试。 为此，请选择 " **通用适配器** 作为制造商"，并选择 **通用蓝牙适配器** 作为 "型号"。
 
-![蓝牙更新驱动程序软件 vista](images/bthnewhwstep3.jpg)
+![屏幕截图，显示在 "模型" 窗格中选择 "通用蓝牙适配器" 的 "更新驱动程序软件-U G T" 窗口。](images/bthnewhwstep3.jpg)
 
 选择驱动程序后，向导会要求你确认是否要在新的蓝牙无线电上安装指定的驱动程序。 如果尝试在非蓝牙无线电设备上安装蓝牙驱动程序，该驱动程序可能不会启动。
 

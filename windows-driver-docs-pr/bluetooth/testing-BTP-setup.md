@@ -4,12 +4,12 @@ description: 如何设置 Microsoft 蓝牙测试平台安装程序
 ms.date: 2/14/2020
 ms.assetid: 85ac7c5b-b5f7-49e0-85f8-72e191c00974
 ms.localizationpriority: medium
-ms.openlocfilehash: caead2c2a23941e4691b74084d3c2ec60942f973
-ms.sourcegitcommit: 937974aa9bbe0262a7ffe9631593fab48c4e7492
+ms.openlocfilehash: c008a2f9d588301b522fd99c91fb358dbe4d56be
+ms.sourcegitcommit: b3e38d06762246c77cedd8e82d740ebea104c538
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "90010141"
+ms.lasthandoff: 10/02/2020
+ms.locfileid: "91662395"
 ---
 # <a name="setting-up-the-bluetooth-test-platform-btp"></a>设置蓝牙测试平台 (BTP) 
 
@@ -19,7 +19,7 @@ ms.locfileid: "90010141"
 
 使用提供的 USB A 到 B 电缆，将 Traduci 插入测试 (SUT) 的系统上的 USB 端口。 如果将 Traduci 直接插入 PC 上的某个端口，并且 Traduci 由 [9v，2a power adapter](https://www.digikey.com/product-detail/en/qualtek/QFWB-18-9-US01/Q1181-ND/8260129) 通过 USB 连接器右侧的圆筒形连接器供电，则性能最佳。 请勿将 Traduci 连接到 USB 集线器。
 
-![显示 USB 和电源端口的 Traduci](images/Traduci_USBPortSidejpg.jpg)
+![显示 USB 和电源端口的 Traduci 电路板的倾斜侧视图。](images/Traduci_USBPortSidejpg.jpg)
 
 ### <a name="connecting-peripherals-to-the-traduci"></a>将外围设备连接到 Traduci
 

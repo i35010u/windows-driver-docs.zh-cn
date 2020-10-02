@@ -12,20 +12,26 @@ api_type:
 - Schema
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e58f0806bbd16ead88d6486bb679c6ed0902ad76
-ms.sourcegitcommit: ab64169b631da4db3f0b895600f1c38a22cb7e2e
+ms.openlocfilehash: 83f1f2c3fd933d259c360c5157db2b4c436c8ceb
+ms.sourcegitcommit: b3e38d06762246c77cedd8e82d740ebea104c538
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75652850"
+ms.lasthandoff: 10/02/2020
+ms.locfileid: "91662449"
 ---
 # <a name="messageboxui-element"></a>messageBoxUI 元素
 
-可选的**messageBoxUI**元素用于在客户端计算机上显示消息框。
+可选的 **messageBoxUI** 元素用于在客户端计算机上显示消息框。
 
-**MessageBoxUI**元素在*asyncui*命名空间中的此 URI 上定义： [https://schemas.microsoft.com/2003/print/asyncui/v1/request](https://schemas.microsoft.com/2003/print/asyncui/v1/request)。 （此资源可能在某些语言和国家/地区不可用。）
+**MessageBoxUI**元素在*asyncui*命名空间中的此 URI 处定义：
 
-## <a name="usage"></a>Usage
+```xml
+https://schemas.microsoft.com/2003/print/asyncui/v1/request
+```
+
+此资源可能在某些语言和国家/地区不可用。
+
+## <a name="usage"></a>使用情况
 
 ```xml
 <messageBoxUI>
@@ -33,7 +39,7 @@ ms.locfileid: "75652850"
 </messageBoxUI>
 ```
 
-## <a name="attributes"></a>属性
+## <a name="attributes"></a>特性
 
 没有特性。
 
@@ -47,7 +53,7 @@ ms.locfileid: "75652850"
 <thead>
 <tr class="header">
 <th>元素</th>
-<th>描述</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>
@@ -57,7 +63,7 @@ ms.locfileid: "75652850"
 <p>一个可选元素，用于在消息框中将位图图像显示在正文文本的左侧。</p></td>
 </tr>
 <tr class="even">
-<td><p><a href="body.md" data-raw-source="[&lt;strong&gt;body&lt;/strong&gt;](body.md)"><strong>body</strong></a></p></td>
+<td><p><a href="body.md" data-raw-source="[&lt;strong&gt;body&lt;/strong&gt;](body.md)"><strong>大量</strong></a></p></td>
 <td><p></p>
 <p>一个必需的元素，它提供在事件通知消息中显示的文本。 此文本应提供有关打印机事件的用户特定详细信息。</p></td>
 </tr>
@@ -84,7 +90,7 @@ ms.locfileid: "75652850"
 <thead>
 <tr class="header">
 <th>元素</th>
-<th>描述</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>
@@ -98,7 +104,7 @@ ms.locfileid: "75652850"
 
 ## <a name="remarks"></a>备注
 
-有关显示如何将 **"确定"** 按钮和 "**取消**" 按钮设置为消息框的代码示例，请参阅[**按钮**](button.md)。 请参阅 "**示例**" 部分，了解有关如何捕获按钮-单击消息框的信息。
+有关显示如何将 **"确定"** 按钮和 "**取消**" 按钮设置为消息框的代码示例，请参阅[**按钮**](button.md)。 请参阅 " **示例** " 部分，了解有关如何捕获按钮-单击消息框的信息。
 
 ## <a name="examples"></a>示例
 
@@ -117,13 +123,13 @@ ms.locfileid: "75652850"
   </asyncPrintUIResponse>
 ```
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
-[bitmap](bitmap.md)
+[位图](bitmap.md)
 
 [body](body.md)
 
-[button](button.md)
+[鼠标](button.md)
 
 [buttons](buttons.md)
 

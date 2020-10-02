@@ -4,12 +4,12 @@ description: 设计移动宽带应用中的消息
 ms.assetid: 314fd479-7dcf-4559-a195-26e4c020446c
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b31aa184bc96472fbfa485307501ece53de2b8ec
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 0ac9a96684415f23ae03364b6b4de5234c36a5e0
+ms.sourcegitcommit: b3e38d06762246c77cedd8e82d740ebea104c538
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89215333"
+ms.lasthandoff: 10/02/2020
+ms.locfileid: "91662423"
 ---
 # <a name="design-messages-in-a-mobile-broadband-app"></a>设计移动宽带应用中的消息
 
@@ -18,7 +18,7 @@ ms.locfileid: "89215333"
 
 不应在 "消息" 部分中显示用户到用户的聊天文本消息、促销和广告，并将其与操作员通知和警报混合在一起，因为客户可能会错过重要的操作员通知。 可以在应用布局中显示促销和广告，并将用户到用户聊天文本消息显示在用户界面的单独部分中。
 
-![message](images/message.png)
+![屏幕截图，显示 "消息" 窗口的示例。](images/message.png)
 
 下表显示了一些示例操作员消息和警报。
 

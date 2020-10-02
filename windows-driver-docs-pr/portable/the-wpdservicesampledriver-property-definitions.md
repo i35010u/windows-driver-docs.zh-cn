@@ -3,12 +3,12 @@ description: 定义服务属性
 title: 定义服务属性
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9aa3ab2af50f44ee896c26971856adb4bcc994c0
-ms.sourcegitcommit: 15caaf6d943135efcaf9975927ff3933957acd5d
+ms.openlocfilehash: 8cf4a6e2e47b8b45f1ec04e740754a1b41893fcb
+ms.sourcegitcommit: b3e38d06762246c77cedd8e82d740ebea104c538
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88969580"
+ms.lasthandoff: 10/02/2020
+ms.locfileid: "91662419"
 ---
 # <a name="defining-the-service-properties"></a>定义服务属性
 
@@ -17,7 +17,7 @@ WPD 属性是对象描述元数据。 本部分介绍了示例驱动程序支持
 
 WDK 包含用于 WPD 驱动程序开发人员的多个工具。 *WpdInfo.exe*使用其中一种工具，开发人员可以检查由给定驱动程序公开的对象和属性。 以下 *WpdInfo.exe* 工具的图像显示了驱动程序中的 "联系人" 服务对象支持的属性：
 
-![wpd 信息工具](images/wpd_info_service_root.png)
+![屏幕截图，显示 W P D 信息工具和支持的属性。](images/wpd_info_service_root.png)
 
 在上图中，最左侧窗格中的最左侧列列出了驱动程序支持的对象。 中间窗格列出了联系人服务对象的驱动程序支持的14个属性。 此窗格中的第一列列出属性名称，第二列列出属性的值，第三列列出类型，依此类推。 下窗格显示了驱动程序支持的事件返回的信息。
 

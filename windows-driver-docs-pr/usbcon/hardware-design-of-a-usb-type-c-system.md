@@ -3,12 +3,12 @@ description: 下面是 USB 类型 C 系统的一些示例设计。
 title: USB 类型 C 系统的硬件设计
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1b3e0711ca9239fc5afecbeb19ed4bc88eec9e20
-ms.sourcegitcommit: 937974aa9bbe0262a7ffe9631593fab48c4e7492
+ms.openlocfilehash: b6bf3cd1056667c592c3c172fedeb4cf2a3a7d92
+ms.sourcegitcommit: b3e38d06762246c77cedd8e82d740ebea104c538
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "90010339"
+ms.lasthandoff: 10/02/2020
+ms.locfileid: "91662333"
 ---
 # <a name="hardware-design-usb-type-c-systems"></a>硬件设计：USB 类型 C 系统
 
@@ -36,7 +36,7 @@ ms.locfileid: "90010339"
 
 下面是带有嵌入式控制器的 USB 类型 C 系统的示例：
 
-![usb 类型 c 硬件设计示例嵌入式控制器设备](images/type-c-hw1.png)
+![显示嵌入式控制器设备的 U S B 类型 C 硬件设计示例的关系图。](images/type-c-hw1.png)
 
 下面是另一个视图：
 

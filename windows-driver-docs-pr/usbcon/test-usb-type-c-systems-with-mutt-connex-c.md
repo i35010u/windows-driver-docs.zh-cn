@@ -3,12 +3,12 @@ description: MUTT 连接试验类型 C (USB Type-C ConnEx) 硬件板是 Arduino 
 title: 通过 USB 类型 C ConnEx 测试 USB 类型 C 系统
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cb0c8f31447cd147019299ea46a489180b797051
-ms.sourcegitcommit: 7a7e61b4147a4aa86bf820fd0b0c7681fe17e544
+ms.openlocfilehash: b1bf7140606f6e52b17177e72d7436199f3309c2
+ms.sourcegitcommit: b3e38d06762246c77cedd8e82d740ebea104c538
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89056917"
+ms.lasthandoff: 10/02/2020
+ms.locfileid: "91662481"
 ---
 # <a name="test-usb-type-c-systems-with-usb-type-c-connex"></a>通过 USB 类型 C ConnEx 测试 USB 类型 C 系统
 
@@ -32,7 +32,7 @@ ms.locfileid: "89056917"
 
 -   2016 年 2 月
 
-\[某些信息与预发布的产品相关，这些信息可能会在正式发布之前进行重大修改。 对于此处提供的信息，Microsoft 不作任何明示或暗示的担保。\]
+\[某些信息与预发布的产品相关，这些信息可能会在正式发布之前进行重大修改。 Microsoft 对此处提供的信息不提供任何明示或暗示的保证。\]
 
 MUTT 连接试验类型 C (USB Type-C ConnEx) 硬件板是 Arduino 板的自定义盾牌。 盾牌提供了一个四对一交换机，用于自动执行 USB 类型 C 方案的互操作性测试。
 
@@ -55,7 +55,7 @@ MUTT 连接试验类型 C (USB Type-C ConnEx) 硬件板是 Arduino 板的自定�
 
     [Arduino 兆位 2560 R3](https://go.microsoft.com/fwlink/p/?LinkId=733526) 用作测试设置的微控制器。 可以从 [Arduino 商店](https://go.microsoft.com/fwlink/p/?LinkId=733526)购买此板。
 
-    ![arduino](images/arduino.png)
+    ![显示 Arduino 万像素 2560 R3 板。](images/arduino.png)
 
 -   **适用于微控制器的电源适配器**。
 
@@ -146,7 +146,7 @@ MUTT 连接试验类型 C (USB Type-C ConnEx) 硬件板是 Arduino 板的自定�
 
     如果 USB 类型 C ConnEx 未汇编，则继续执行步骤1。 如果 USB 类型 C ConnEx 已汇编，则继续执行步骤2。
 
-    **警告** ![](images/caution.png)请注意，必须小心执行此步骤，因为 pin 非常弯曲。  
+    **警告** :::image type="icon" source="images/caution.png":::必须小心执行此步骤，因为 pin 非常弯曲。  
 
 
 
@@ -166,7 +166,7 @@ MUTT 连接试验类型 C (USB Type-C ConnEx) 硬件板是 Arduino 板的自定�
 
     5秒钟后，LCD 显示屏显示当前和电压。
 
-    ![固件启动前的 USB 类型-C ConnEx](images/connexc-connect2.png)![固件启动前的 USB 类型-C ConnEx](images/connexc-connect3.png)
+    ![显示 USB 类型 C ConnEx，但不显示 LCD 显示屏上的任何内容](images/connexc-connect2.png)![显示 LCD 显示屏上带有 "4.27 V" 和 "-0.017 A" 的 USB 类型 C ConnEx。](images/connexc-connect3.png)
 
     如果你没有看到如上图所示的显示，请确保已正确装配设备。
 
@@ -219,7 +219,7 @@ MUTT 连接试验类型 C (USB Type-C ConnEx) 硬件板是 Arduino 板的自定�
 </colgroup>
 <thead>
 <tr class="header">
-<th>用例</th>
+<th>使用案例</th>
 <th>选项</th>
 <th>说明</th>
 </tr>
@@ -415,7 +415,7 @@ USB 类型 C 互操作性测试过程分为两部分：功能测试 (FT) 和压�
 
 ![ft 案例1：设备枚举](images/ft1.png)
 
-| Port   | 设备                                                                              |
+| 端口   | 设备                                                                              |
 |--------|-------------------------------------------------------------------------------------|
 | **J1** | SUT.                                                                                |
 | **J2** | 使用 usb 类型 c 端口连接的 PC，使用 USB 类型 C 电缆进行连接。              |
@@ -440,7 +440,7 @@ USB 类型 C 互操作性测试过程分为两部分：功能测试 (FT) 和压�
 
 ![ft 案例2：备用模式协商](images/ft2.png)
 
-| Port   | 设备                                                                              |
+| 端口   | 设备                                                                              |
 |--------|-------------------------------------------------------------------------------------|
 | **J1** | SUT.                                                                                |
 | **J2** | DisplayPort 到 USB 类型-C 转换器。                                                   |
@@ -465,7 +465,7 @@ USB 类型 C 互操作性测试过程分为两部分：功能测试 (FT) 和压�
 
 ![ft 案例3：充电和电源传输 (pd) ](images/ft3.png)
 
-| Port   | 设备               |
+| 端口   | 设备               |
 |--------|----------------------|
 | **J1** | SUT.                 |
 | **J2** | 无。                |
@@ -503,7 +503,7 @@ USB 类型 C 互操作性测试过程分为两部分：功能测试 (FT) 和压�
 
 ![ft 案例4：角色交换](images/ft4.png)
 
-| Port   | 设备                                                                              |
+| 端口   | 设备                                                                              |
 |--------|-------------------------------------------------------------------------------------|
 | **J1** | SUT.                                                                                |
 | **J2** | 使用 usb 类型 c 端口连接的 PC，使用 USB 类型 C 电缆进行连接。              |
@@ -533,7 +533,7 @@ USB 类型 C 互操作性测试过程分为两部分：功能测试 (FT) 和压�
 
 ![st 案例1：设备枚举](images/ft1.png)
 
-| Port   | 设备                                                                              |
+| 端口   | 设备                                                                              |
 |--------|-------------------------------------------------------------------------------------|
 | **J1** | SUT.                                                                                |
 | **J2** | 使用 usb 类型 c 端口连接的 PC，使用 USB 类型 C 电缆进行连接。              |
@@ -561,7 +561,7 @@ USB 类型 C 互操作性测试过程分为两部分：功能测试 (FT) 和压�
 
 ![st 案例2：充电和电源传递 (pd) ](images/ft3.png)
 
-| Port   | 设备               |
+| 端口   | 设备               |
 |--------|----------------------|
 | **J1** | SUT.                 |
 | **J2** | 无。                |

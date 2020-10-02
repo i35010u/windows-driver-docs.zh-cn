@@ -3,12 +3,12 @@ title: 时间旅行调试 - 记录跟踪
 description: 本部分介绍如何记录时间行程跟踪。
 ms.date: 01/23/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: b7a45d1371b895b28b4707a49a000864dd6f808d
-ms.sourcegitcommit: 17c1bbc5ea0bef3bbc87794b030a073f905dc942
+ms.openlocfilehash: fb34aef5cf89ef11d18d94ff8d71d8f8eff61635
+ms.sourcegitcommit: b3e38d06762246c77cedd8e82d740ebea104c538
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88802709"
+ms.lasthandoff: 10/02/2020
+ms.locfileid: "91662463"
 ---
 #  <a name="time-travel-debugging---record-a-trace"></a>时间旅行调试 - 记录跟踪
 
@@ -36,7 +36,7 @@ ms.locfileid: "88802709"
 
 6. 此时将显示 "记录" 对话框，指示正在记录跟踪。
 
-    ![显示停止和调试以及取消选项的 TTD 录制弹出窗口](images/ttd-recording-pop-up-dialog.png)
+    ![显示 TTD 录制弹出窗口 "停止和调试" 和 "取消" 按钮的屏幕截图。](images/ttd-recording-pop-up-dialog.png)
 
 7. 有关记录的信息，请参阅 [如何记录](#HOWTORECORD) 。
 

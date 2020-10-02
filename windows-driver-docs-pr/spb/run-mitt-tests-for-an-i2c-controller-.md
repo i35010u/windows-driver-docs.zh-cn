@@ -4,12 +4,12 @@ description: MITT 软件包中包含的 i2c 测试模块可用于测试 i2c 控�
 ms.assetid: E40B9ABB-B119-4EC1-A383-EB96CC350A25
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8f5217b56c2eb7fc40be06922a219fe10f3a317e
-ms.sourcegitcommit: c766ab74e32eb44795cbbd1a4f352d3a6a9adc14
+ms.openlocfilehash: 9138571fe4a19848e07be710d38b07d13827bd11
+ms.sourcegitcommit: b3e38d06762246c77cedd8e82d740ebea104c538
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89389599"
+ms.lasthandoff: 10/02/2020
+ms.locfileid: "91662338"
 ---
 # <a name="i2c-controller-tests-in-mitt"></a>MITT 中的 I2C 控制器测试
 
@@ -18,7 +18,7 @@ ms.locfileid: "89389599"
 
 -   2015年1月
 
-**适用于：**
+**适用对象：**
 
 -   Windows 8.1
 
@@ -166,13 +166,13 @@ Device(TP5) {
 3.  将 Muttutil.dll 和 Mitti2ctest.dll 从 MITT 软件包复制到文件夹。
 4.  使用 **/list** 选项查看所有 MITT I I C 测试：
 
-    ![mitt i2c 命令](images/mitt-i2c-cmds.png)
+    ![屏幕截图，在 "命令提示符" 中显示 MITT i 2 c 测试的列表。](images/mitt-i2c-cmds.png)
 
 你现在已准备好运行 i2c 测试。 可以一次运行一个测试，也可以一次性运行测试，也可以手动运行测试。
 
 - 使用 **/name： * &lt; test name &gt; *** 选项运行单个测试。 此命令运行 BasicIORead 测试：
 
-  ![mitt i2c 命令](images/mitt-i2c-cmds1.png)
+  ![在 "命令提示符" 中显示单个测试运行的命令的屏幕截图。](images/mitt-i2c-cmds1.png)
 
 - 使用此命令运行所有测试：
 

@@ -3,12 +3,12 @@ description: 本主题说明如何使用 Netmon 来举例说明如何使用事�
 title: 如何在 Netmon 中查看 USB ETW 跟踪
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 78710e3b153cc5d6112989bc4005166d21ed06a6
-ms.sourcegitcommit: 15caaf6d943135efcaf9975927ff3933957acd5d
+ms.openlocfilehash: 0024c7a4b8866d0d7428457afbc322601007d227
+ms.sourcegitcommit: b3e38d06762246c77cedd8e82d740ebea104c538
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88968852"
+ms.lasthandoff: 10/02/2020
+ms.locfileid: "91662415"
 ---
 # <a name="how-to-view-a-usb-etw-trace-in-netmon"></a>如何在 Netmon 中查看 USB ETW 跟踪
 
@@ -26,7 +26,7 @@ ms.locfileid: "88968852"
 
 事件跟踪由单个事件组成，每个事件都指示驱动程序堆栈中发生的情况。 每个事件都符合驱动程序堆栈定义的多种类型中的一种。
 
-![microsoft 网络监视器](images/netmon-ui-intro.png)
+![屏幕截图，显示 "Netmon" 窗口，其中包含在 "帧摘要" 中选择的事件。](images/netmon-ui-intro.png)
 
 观察 " **帧摘要** " 窗格中列出的事件。 上图显示了来自 USB 2.0 驱动程序堆栈的能够。 注意此窗格中的以下各列：
 
@@ -43,7 +43,7 @@ Usb 2.0 驱动程序堆栈中的重要事件类型也是在 USB 3.0 驱动程序
 
 对于 USB 2.0 驱动程序堆栈事件类型，" **帧详细信息** " 窗格显示 idVendor (也称为 usb VID) 和 idProduct (也称为 usb PID) 。 此图像显示连接到 USB 2.0 主机控制器的 USB 2.0 设备的事件跟踪。
 
-![microsoft 网络监视器](images/vid-pid-usb2-0.png)
+![屏幕截图，显示 "Netmon" 窗口，其中包含连接到 "帧详细信息" 窗格中的 u b 主机控制器的 U B 设备的事件跟踪。](images/vid-pid-usb2-0.png)
 
 对于 USB 3.0 驱动程序堆栈事件类型，" **帧详细信息** " 窗格不包含 IdVendor 或 idPid。 可以通过将新列添加到 " **帧摘要** " 窗格中来获取该信息，如图所示。
 

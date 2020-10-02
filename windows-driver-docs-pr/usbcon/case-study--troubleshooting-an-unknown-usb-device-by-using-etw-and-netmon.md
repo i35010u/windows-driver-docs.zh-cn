@@ -3,12 +3,12 @@ description: 提供有关如何使用 USB ETW 和 Netmon 排查 Windows 无法�
 title: 案例研究-排查未知 USB 设备问题
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3295772d94514d2b7b33de4900236e3de24095e9
-ms.sourcegitcommit: 937974aa9bbe0262a7ffe9631593fab48c4e7492
+ms.openlocfilehash: f6a1cc7187168ddaa999b2327535eaa58450e5fd
+ms.sourcegitcommit: b3e38d06762246c77cedd8e82d740ebea104c538
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "90009919"
+ms.lasthandoff: 10/02/2020
+ms.locfileid: "91662349"
 ---
 # <a name="case-study-troubleshooting-an-unknown-usb-device-by-using-etw-and-netmon"></a>案例研究：使用 ETW 和 Netmon 排查未知 USB 设备的问题
 
@@ -42,7 +42,7 @@ ms.locfileid: "90009919"
 1. 运行 Netmon，单击 "文件"-" ** &gt; &gt; 捕获**"，然后选择文件。
 2. 在 " **帧摘要** " 窗格中选择第一个事件，该事件具有 SystemTrace 说明。 此图显示了在选择第一个事件时屏幕的外观。
 
-    ![microsoft 网络监视器](images/devicefailure-etl.png)
+    ![选择第一个事件后显示 "Microsoft 网络监视器" 窗口的屏幕截图。](images/devicefailure-etl.png)
 
 3. 若要自定义 Netmon 显示的列，请右键单击列名称，然后选择 " **选择列**"。
 4. 第一个事件（标识为 **SystemTrace**类型）包含有关日志的常规信息。 你可以展开 " **帧详细** 信息" 窗格中的信息树，以查看丢失的事件数和跟踪开始时间等信息。
@@ -57,7 +57,7 @@ USB 集线器和 USB 端口驱动程序都记录摘要事件。 记录事件的�
 
 在此示例中，启动跟踪时，目标设备未连接到系统，因此你现在可以跳过设备摘要事件。
 
-![microsoft 网络监视器](images/devicefailure-etl1.png)
+![显示跟踪开始时未连接的 "帧摘要" 中所选的感兴趣设备的屏幕截图。](images/devicefailure-etl1.png)
 
 ## <a name="event-description-and-data-payload"></a>事件说明和数据负载
 
@@ -97,7 +97,7 @@ USB 集线器驱动程序使用 **fid \_ USBHUB \_ 集线器** 结构来描述 U
 
 对于通过一个或多个附加 USB 集线器连接的 USB 设备，集线器端口号列表以根集线器端口开头，并继续以从根中心) 的距离 (的其他集线器继续。 忽略任何零。 例如：
 
-| 示例值|描述|
+| 示例值|说明|
 |----|----|
 |[0，0，0，0，0，0]|事件指的是 (计算机上的端口的根集线器，由 USB 主机控制器) 直接控制。|
 |[3，0，0，0，0，0]|事件是指插入到根集线器端口号3的集线器或设备。|
@@ -117,7 +117,7 @@ USB 集线器驱动程序使用 **fid \_ USBHUB \_ 集线器** 结构来描述 U
 
 USB 错误筛选器将事件列表缩小到仅符合下表中所示的条件的事件列表。
 
-|筛选文本|描述|
+|筛选文本|说明|
 |-----|----|
 | (USBPort_MicrosoftWindowsUSBUSBPORT 和 NetEvent = = 34) |具有 opcode 34 的 USB 端口事件是端口错误。|
 | (USBHub_MicrosoftWindowsUSBUSBHUB 和 NetEvent = = 11) |具有 opcode 11 的 USB 集线器事件是集线器错误。|
@@ -126,7 +126,7 @@ USB 错误筛选器将事件列表缩小到仅符合下表中所示的条件的�
 
 此图显示了将 USB 错误筛选器应用于示例跟踪日志后，在 " **帧摘要** " 窗格中显示的较小事件集。
 
-![microsoft 网络监视器](images/devicefailure-etl2.png)
+![显示 USB 错误筛选器后，在 "帧摘要" 窗格中显示一组事件的屏幕截图。](images/devicefailure-etl2.png)
 
 若要查看错误序列的概述，可以简单地查看每个错误事件。 需要注意的重要字段包括 **fid \_ NtStatus**、 **fid \_ UsbdStatus**和 **fid \_ DebugText**。 有关详细信息，请参阅 [了解错误事件和状态代码](#understanding-error-events-and-status-codes)。 若要关闭筛选器，请单击 "**显示筛选器**" 窗格中的 "**删除**" 按钮。
 

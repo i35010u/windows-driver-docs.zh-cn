@@ -3,18 +3,18 @@ description: 编写与 USB 设备通信的 Windows 桌面应用程序的最简�
 title: 编写基于 WinUSB 模板的 Windows 桌面应用
 ms.date: 07/16/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 03fb3be20aaeb4be827190482a5f99ff23db6802
-ms.sourcegitcommit: f8619f20a0903dd64f8641a5266ecad6df5f1d57
+ms.openlocfilehash: a7eac40b0d401a2f90330891752baab97a44a0ba
+ms.sourcegitcommit: b3e38d06762246c77cedd8e82d740ebea104c538
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91423848"
+ms.lasthandoff: 10/02/2020
+ms.locfileid: "91662483"
 ---
 # <a name="write-a-windows-desktop-app-based-on-the-winusb-template"></a>编写基于 WinUSB 模板的 Windows 桌面应用
 
 编写与 USB 设备通信的 Windows 桌面应用程序的最简单方法是使用 C/c + + WinUSB 模板。 对于此模板，需要一个集成的环境，其中包含 Windows 驱动程序工具包 (WDK)  (，其中包含适用于 Windows 的调试工具) 以及 Microsoft Visual Studio 的专业版或旗舰版 (。 您可以使用模板作为起点。
 
-## <a name="prerequisites"></a>先决条件
+## <a name="prerequisites"></a>必备条件
 
 - 若要设置集成开发环境，请首先安装 Microsoft Visual Studio Ultimate 2019 或 Microsoft Visual Studio Professional 2019，然后安装 WDK。 可以在 [WDK 下载页](../download-the-wdk.md)上找到有关如何设置 Visual STUDIO 和 wdk 的信息。
 - 安装 WDK 时包含 Windows 调试工具。 有关详细信息，请参阅 [下载和安装适用于 Windows 的调试工具](https://go.microsoft.com/fwlink/p/?linkid=235427)。
@@ -25,7 +25,7 @@ ms.locfileid: "91423848"
 
 1. 在 " **新建项目** " 对话框顶部的 "搜索" 框中，键入 " **USB"。**
 2. 在中间窗格中，选择 " **WinUSB Application (通用) **"。
-3. 选择“下一步”  。
+3. 选择“**下一页**”。
 4. 输入项目名称，选择 "保存位置"，然后选择 " **创建**"。
 
     以下屏幕截图显示了 WinUSB 应用程序的 " **新建项目** " 对话框 ** (通用) ** 模板。
@@ -48,7 +48,7 @@ ms.locfileid: "91423848"
 
 6. 在 " **新建项目** " 对话框顶部的 "搜索" 框中，再次键入 " **USB"。**
 7. 在中间窗格中，选择 " **WINUSB INF 驱动程序包**"。
-8. 选择“下一步”  。
+8. 选择“**下一页**”。
 9. 输入项目名称，然后选择 " **创建**"。
 
     以下屏幕截图显示了**WINUSB INF 驱动程序包**模板的 "**新建项目**" 对话框。
@@ -70,7 +70,7 @@ ms.locfileid: "91423848"
 11. 将 VID \_ vvvv&PID \_ pppp 替换为设备的硬件 ID。 从设备管理器获取硬件 ID。 在设备管理器中，查看设备属性。 在 " **详细信息** " 选项卡上，查看 " **硬件 id** " 属性值。
 12. 在 " **解决方案资源管理器** " 窗口中，选择并按住 (或右键单击) **解决方案 "USB Application1" (2 个项目) **，然后选择 " **Configuration Manager**"。 为应用程序项目和包项目选择配置和平台。 在此练习中，我们选择 "调试" 和 "x64"，如下面的屏幕截图所示。
 
-![winusb 应用程序模板](images/winusb-template-configuration-manager.png)
+![显示 "Configuration Manager" 窗口的屏幕截图，其中选择了 "调试" 和 "x64"。](images/winusb-template-configuration-manager.png)
 
 ## <a name="building-deploying-and-debugging-the-project"></a>生成、部署和调试项目
 

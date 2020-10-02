@@ -3,12 +3,12 @@ description: 本主题介绍如何在 Xperf 中查看 USB 事件跟踪。
 title: 在 Xperf 中查看 USB 事件跟踪
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d61bba89ff79ac1a991035465ad4b28120f304ba
-ms.sourcegitcommit: 15caaf6d943135efcaf9975927ff3933957acd5d
+ms.openlocfilehash: 0b4adaf758303d5554e7786328b4f9396c0fb7a0
+ms.sourcegitcommit: b3e38d06762246c77cedd8e82d740ebea104c538
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88969076"
+ms.lasthandoff: 10/02/2020
+ms.locfileid: "91662367"
 ---
 # <a name="viewing-a-usb-event-trace-in-xperf"></a>在 Xperf 中查看 USB 事件跟踪
 
@@ -23,13 +23,13 @@ xperf usb.etl
 
 Xperf 以图形形式显示事件的视图。 初始视图是一个时间线视图，其中每个菱形表示此图像中的一个或多个事件。 菱形按事件提供程序进行颜色编码。
 
-![windows 性能分析器-xperf](images/xperf.png)
+![显示 "Windows 性能分析器" 窗口显示 "时间线" 视图的屏幕截图。](images/xperf.png)
 
 时间线视图以图形方式显示事件活动的群集。 在图形视图中，可以很容易地以1秒的时间间隔来查看事件活动的周期性性质，因为此示例跟踪中的设备摘要事件之后，USB 大容量存储设备发生了 USB 传输请求。
 
 可以将鼠标指针移动到时间线的各个部分并放大。 此图显示了在跟踪非常简单的设备摘要事件上进行的放大。
 
-![windows 性能分析器-xperf](images/xperf1.png)
+![显示 "时间线" 视图并打开 "ProviderIDs" 窗口的屏幕截图。](images/xperf1.png)
 
 您可以在电子表格窗体中显示整个跟踪的事件摘要表，也可以仅在所选间隔内显示此图像中显示的时间间隔。
 

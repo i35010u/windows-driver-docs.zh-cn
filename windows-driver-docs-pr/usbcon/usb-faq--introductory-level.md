@@ -3,12 +3,12 @@ description: 本主题为驱动程序开发人员提供了一些常见问题，�
 title: Windows 中的 USB - 常见问题解答
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 35a44d48f5681d1e607b722d031c905993825786
-ms.sourcegitcommit: 937974aa9bbe0262a7ffe9631593fab48c4e7492
+ms.openlocfilehash: 004234c434dc5d610edcb235a70e767e27f16140
+ms.sourcegitcommit: b3e38d06762246c77cedd8e82d740ebea104c538
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "90010065"
+ms.lasthandoff: 10/02/2020
+ms.locfileid: "91662357"
 ---
 # <a name="usb-in-windows---faq"></a>Windows 中的 USB - 常见问题解答
 
@@ -135,21 +135,21 @@ USB 3.0 xHCI 主机控制器完全向后兼容所有 USB 设备速度、SuperSpe
 
 此图像显示 USB 3.0 设备在 SuperSpeed 上运行时的 UI 消息。
 
-![superspeed usb 设备在 superspeed 上运行 ](images/usb-superspeed.jpg)
+![显示 "PC 设置" 的屏幕截图，其中选择了 "设备" 并且突出显示了 "U S B 3.0 RAIDrive"。](images/usb-superspeed.jpg)
 
 此图像显示 USB 设备在低于 SuperSpeed 的总线速度下运行时的 UI 消息。
 
-![superspeed usb 设备高速操作 ](images/usb-high-speed.jpg)
+![屏幕截图显示选定的 "设备" 和 "U S B 3.0 RAIDrive"，突出显示 "设备在连接到 U S B 3.0 时可以更快地执行速度"。](images/usb-high-speed.jpg)
 
 你可以在设备和打印机中查看类似消息，如以下图像中所示。
 
-![superspeed usb 设备在 superspeed 上运行](images/usb-superspeed-devices.jpg)
+![显示 "存储设备和打印机" 的屏幕截图，其中所选设备显示 "已连接到 U S B 3.0" 消息。](images/usb-superspeed-devices.jpg)
 
 ![superspeed 设备以高速运行](images/usb-high-speed-devices.jpg)
 
 如果 USB 3.0 设备是存储设备，Windows 资源管理器会在选择卷标签时显示类似消息，如下所示。 请注意，必须选择 " **视图 &gt; 详细信息** " 窗格，才能显示该消息。
 
-![superspeed usb 设备在 superspeed 上运行 ](images/usb-superspeed-storage-device.jpg)
+![屏幕截图显示在 "资源管理器" 中选择的 superspeed U S B 设备，并在 "详细信息" 窗格中突出显示 "连接到 U S B 3.0" 消息。 ](images/usb-superspeed-storage-device.jpg)
 
 ![superspeed usb 设备高速操作](images/usb-high-speed-storage-device.jpg)
 
@@ -193,7 +193,7 @@ USB 3.0 xHCI 主机控制器完全向后兼容所有 USB 设备速度、SuperSpe
 
 ## <a name="is-it-possible-to-have-a-composite-and-a-compound-device-in-one-piece-of-hardware"></a>是否可以在一个硬件中创建复合设备和复合设备？
 
-是的。 具有三端口总线供电集线器的 Microsoft 自然键盘专业人员是复合复合 USB 设备的一个示例。 设备已将复合设备连接到端口1。 另外两个端口向最终用户公开。
+是。 具有三端口总线供电集线器的 Microsoft 自然键盘专业人员是复合复合 USB 设备的一个示例。 设备已将复合设备连接到端口1。 另外两个端口向最终用户公开。
 
 附加到端口1的设备是低速复合设备。 设备有两个接口，两者都符合 (HID) 的用户界面设备的 USB 标准设备类定义。 复合设备提供两个 HID 接口，而不是通过使用顶级集合在单个 HID 接口上对所有集合进行多路复用。 选择此设计是为了与较旧的 BIOSs 兼容。
 
@@ -392,7 +392,7 @@ Microsoft 为大多数设备类型提供系统定义的安装程序类。 系统
 
 下面列出了支持选择性挂起的 Windows 8 中的 USB 类驱动程序：
 
-- 蓝牙
+- Bluetooth
 
     此驱动程序可以有选择地在运行 Windows XP Service Pack 2 和更高版本的 Windows 的计算机上挂起设备。 驱动程序要求蓝牙收音机设置配置描述符中的自驱动和远程唤醒位。 当不存在活动的蓝牙连接时，驱动程序会有选择地挂起 (D2) 蓝牙收音机。
 
@@ -595,7 +595,7 @@ Needs = Composite.Dev
 
 ## <a name="does-windows-support-interface-association-descriptors"></a>Windows 是否支持接口关联描述符？
 
-是的。 USB 2.0 接口关联描述符 (IAD) 工程更改通知 (ECN) 引入了新的标准方法，用于描述函数中的一组接口及其备用设置。 IAD 可用于标识一个函数中的两个或多个连续接口和备用设置。
+是。 USB 2.0 接口关联描述符 (IAD) 工程更改通知 (ECN) 引入了新的标准方法，用于描述函数中的一组接口及其备用设置。 IAD 可用于标识一个函数中的两个或多个连续接口和备用设置。
 
 Microsoft 目前正在使用 Ihv 来开发支持 IAD 的设备。 以下操作系统支持 IAD：
 
@@ -609,7 +609,7 @@ Windows 附带的 USB 3.0 驱动程序堆栈支持此功能。
 
 ## <a name="can-a-driver-have-more-than-one-urb-in-an-irp"></a>某个驱动程序是否可以在 IRP 中具有多个 URB？
 
-不是。 Windows 附带的 USB stack 不支持此功能。
+否。 Windows 附带的 USB stack 不支持此功能。
 
 ## <a name="does-windows-support-usb-composite-hubs"></a>Windows 是否支持 USB 复合中心？
 
