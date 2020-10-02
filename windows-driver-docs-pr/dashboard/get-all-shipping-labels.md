@@ -1,16 +1,14 @@
 ---
 title: 获取提交的所有发货标签的数据
 description: Microsoft 硬件 API 中的这些方法可获取注册到硬件仪表板帐户的硬件产品的发货标签。
-author: balapv
-ms.author: balapv
 ms.topic: article
 ms.date: 08/21/2018
-ms.openlocfilehash: 4f5f1626ee3cb79eec1e8ee76e7cdaa752b13668
-ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
+ms.openlocfilehash: b4bc1083ede54dd9c65a5f19bb15c578491bdfdc
+ms.sourcegitcommit: acef3c512676aad3aed1934cbe3d0f16e6d37619
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "77072202"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91372924"
 ---
 # <a name="get-all-shipping-labels"></a>获取所有发货标签
 

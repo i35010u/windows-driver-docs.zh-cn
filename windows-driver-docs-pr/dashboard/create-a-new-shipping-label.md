@@ -1,16 +1,14 @@
 ---
 title: 创建新的发货标签
 description: 此方法演示如何在 Microsoft 硬件 API 中创建新的发货标签。
-author: balapv
-ms.author: balapv
 ms.topic: article
 ms.date: 08/21/2018
-ms.openlocfilehash: 6febf7bad14ccb343c45c81ed23abc09ddbb57f1
-ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
+ms.openlocfilehash: 34d2fd8695bd16a0d8c324dc883838dc2230e0ea
+ms.sourcegitcommit: acef3c512676aad3aed1934cbe3d0f16e6d37619
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "77072218"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91372884"
 ---
 # <a name="create-a-new-shipping-label"></a>创建新的发货标签
 
@@ -34,7 +32,7 @@ ms.locfileid: "77072218"
 
 | Header | 类型 | 说明 |
 |:--|:--|:--|
-| Authorization | 字符串 | 必需。 Azure AD 访问令牌的格式为 **Bearer** \<token\>。 |
+| Authorization | 字符串 | 必需。 Azure AD 访问令牌的格式为 Bearer \<token\>。 |
 | 接受 | 字符串 | 可选。 指定内容的类型。 允许的值是“application/json” |
 
 

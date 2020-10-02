@@ -1,17 +1,15 @@
 ---
 title: 更新提交数据
 description: Microsoft 硬件 API 中的此方法可更新提交的详细信息。
-author: balapv
-ms.author: balapv
 ms.topic: article
 ms.date: 04/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 9303d6b4df89a80259b447e68eb7247c91ba1b90
-ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
+ms.openlocfilehash: f437a33de00087ab9cc054a28c06453e66606ef5
+ms.sourcegitcommit: acef3c512676aad3aed1934cbe3d0f16e6d37619
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "77072150"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91372904"
 ---
 # <a name="update-submission-data"></a>更新提交数据 
 
@@ -32,7 +30,7 @@ ms.locfileid: "77072150"
 
 | Header | 类型 | 说明 |
 |:--|:--|:--|
-|Authorization | 字符串 | 必需。 Azure AD 访问令牌的格式为 **Bearer** \<token\>。 |
+|Authorization | 字符串 | 必需。 Azure AD 访问令牌的格式为 Bearer \<token\>。 |
 | accept | 字符串 | 可选。 指定内容的类型。 允许的值是“application/json” |
 
 ### <a name="request-parameters"></a>请求参数

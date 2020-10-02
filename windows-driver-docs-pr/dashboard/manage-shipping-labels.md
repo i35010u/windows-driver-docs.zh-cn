@@ -1,16 +1,14 @@
 ---
 title: 管理发货标签
 description: 本文档包含有关如何在硬件仪表板中创建或更新驱动程序提交的发货标签的信息
-author: balapv
-ms.author: balapv
 ms.topic: article
 ms.date: 08/23/2018
-ms.openlocfilehash: 37b268df879ad4d591fcaab034699fd45096d86d
-ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
+ms.openlocfilehash: c418bdecc994801f2b47f12465e876763ba6f423
+ms.sourcegitcommit: acef3c512676aad3aed1934cbe3d0f16e6d37619
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "77072156"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91372912"
 ---
 # <a name="manage-shipping-labels"></a>管理发货标签
 

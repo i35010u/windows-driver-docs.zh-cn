@@ -1,17 +1,15 @@
 ---
 title: 更新产品数据
 description: Microsoft 硬件 API 中的此方法可更新产品的详细信息。
-author: balapv
-ms.author: balapv
 ms.topic: article
 ms.date: 04/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: f9d2a835b10dec14903b21cb291faee22b643b95
-ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
+ms.openlocfilehash: 3b5ba3077a3caff8343818f0b50de696fe8f3dcd
+ms.sourcegitcommit: acef3c512676aad3aed1934cbe3d0f16e6d37619
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "77072184"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91372906"
 ---
 # <a name="update-product-data"></a>更新产品数据  
 使用 Microsoft 硬件 API 中的此方法可更新产品的详细信息。 使用此方法之前，请确保已创建了产品。 有关详细信息，请参阅[创建新产品](create-a-new-product.md)。 
@@ -31,7 +29,7 @@ ms.locfileid: "77072184"
 
 | Header | 类型 | 说明 |
 |:--|:--|:--|
-| Authorization | 字符串    | 必需。 Azure AD 访问令牌的格式为 **Bearer** \<token\>。 |
+| Authorization | 字符串    | 必需。 Azure AD 访问令牌的格式为 Bearer \<token\>。 |
 | accept |  字符串 | 可选。 指定内容的类型。 允许的值是“application/json” |
 
 ### <a name="request-parameters"></a>请求参数

@@ -1,16 +1,14 @@
 ---
 title: 驱动程序包元数据
 description: 介绍合作伙伴中心提交的驱动程序包元数据的结构。
-author: balapv
-ms.author: balapv
 ms.topic: article
 ms.date: 08/21/2018
-ms.openlocfilehash: 7906f735d41a063b329ca2b66ad0bf2a95721654
-ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
+ms.openlocfilehash: a80b7c83227c98c5aa191d5ba4d6123380b2cf9a
+ms.sourcegitcommit: acef3c512676aad3aed1934cbe3d0f16e6d37619
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "73801165"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91372930"
 ---
 # <a name="driver-package-metadata"></a>驱动程序包元数据
 

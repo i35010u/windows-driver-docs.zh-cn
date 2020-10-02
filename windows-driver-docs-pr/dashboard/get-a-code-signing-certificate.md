@@ -5,12 +5,12 @@ ms.assetid: 6CF4111A-C645-40F5-8D45-55F46B3C0740
 ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f8896c707de4793de1363604c41f0dcc88308b39
-ms.sourcegitcommit: 4f08f5686c0bbc27d58930b993cbab1a98e3afb0
+ms.openlocfilehash: 45093059ca78c975aee31457658e31bfa3534458
+ms.sourcegitcommit: f8619f20a0903dd64f8641a5266ecad6df5f1d57
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/03/2020
-ms.locfileid: "89443873"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91423481"
 ---
 # <a name="get-a-code-signing-certificate"></a>获取代码签名证书
 

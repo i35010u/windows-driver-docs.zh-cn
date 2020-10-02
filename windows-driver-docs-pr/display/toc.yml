@@ -630,12 +630,24 @@
           href: enumerating-cofunctional-vidpn-source-and-target-modes.md
         - name: 确定显示适配器的 VidPN 支持
           href: determining-whether-a-vidpn-is-supported-on-a-display-adapter.md
-    - name: 间接显示驱动程序模型概述
+    - name: 间接显示驱动程序 (IDD)
       items:
-        - name: 间接显示驱动程序模型概述
+        - name: IDD 概述
           href: indirect-display-driver-model-overview.md
         - name: IddCx 对象
           href: iddcx-objects.md
+        - name: IddCx v1.4 更新
+          items:
+            - name: IddCx 1.4 及更高版本的更新
+              href: iddcx1.4-updates.md
+            - name: 控制台和远程 IDD 的 IddCx 1.4 更新
+              href: iddcx1.4-updates-for-console-and-remote-idds.md
+            - name: 远程 IDD 的 IddCx 1.4 更新
+              href: iddcx1.4-updates-for-remote-idds.md
+            - name: 生成 IddCx v1.4 驱动程序
+              href: building-iddcx1.4-drivers.md
+        - name: EvtIddCxMonitorAssignSwapChain 错误处理
+          href: idd-evtiddcxmonitorassignswapchain-error-handling.md
         - name: 调试间接显示驱动程序
           href: indirect-display-debugging.md
     - name: Windows 显示驱动程序模型 (WDDM) 中的任务

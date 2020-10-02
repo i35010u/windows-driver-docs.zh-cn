@@ -7,15 +7,14 @@ keywords:
 - Insider Preview
 - 下载
 - 驱动程序
-ms.author: eliotgra
 ms.date: 07/11/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 77c1af4707e9039943176387c0107fb0b56f7df6
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: f01025035d91ad65052f60b5a38df08cc5a23d35
+ms.sourcegitcommit: acef3c512676aad3aed1934cbe3d0f16e6d37619
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89065284"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91372916"
 ---
 # <a name="installing-preview-versions-of-the-windows-driver-kit-wdk"></a>安装 Windows 驱动程序工具包 (WDK) 的预览版本
 

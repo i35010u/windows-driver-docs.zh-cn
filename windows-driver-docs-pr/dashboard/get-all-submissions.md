@@ -1,17 +1,15 @@
 ---
 title: 获取所有提交
 description: Microsoft 硬件 API 中的此方法会检索产品的所有提交的数据。
-author: balapv
-ms.author: balapv
 ms.topic: article
 ms.date: 04/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: aad98eb7801aec7062ea2cc670fa779298e04617
-ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
+ms.openlocfilehash: 67a5561cfc32820f3b0110b4c5a808dd3569277c
+ms.sourcegitcommit: acef3c512676aad3aed1934cbe3d0f16e6d37619
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "77072200"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91372920"
 ---
 # <a name="get-all-submissions"></a>获取所有提交
 
@@ -33,7 +31,7 @@ ms.locfileid: "77072200"
 
 |Header|类型|说明
 |:--|:--|:--|
-|Authorization|字符串|必需。 Azure AD 访问令牌的格式为 **Bearer** \<token\>。|
+|Authorization|字符串|必需。 Azure AD 访问令牌的格式为 Bearer \<token\>。|
 |accept|字符串|可选。 指定内容的类型。 允许的值是“application/json”|
 
 ### <a name="request-parameters"></a>请求参数

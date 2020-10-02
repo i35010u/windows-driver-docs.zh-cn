@@ -1,18 +1,16 @@
 ---
 title: 静态驱动程序验证程序已知问题
 description: ''
-author: selerner
-ms.author: selerner
 ms.date: 11/07/2018
 ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
-ms.openlocfilehash: fb1f5007fe0285e0b55c2096ceaacacd713566af
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 0c1dec8b3f8cac29582c5d5bdf087ad53a5863a2
+ms.sourcegitcommit: ee3e2259aafc844cc43cce62299a72649cf89212
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89066744"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91353604"
 ---
 # <a name="static-driver-verifier-known-issues---windows-10-version-1809"></a>静态驱动程序验证程序的已知问题 - Windows 10 版本1809
 

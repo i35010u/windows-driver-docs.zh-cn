@@ -3,12 +3,12 @@ description: 本主题包括一个详细演练，用于说明如何使用 WinUSB
 title: 如何通过 WinUSB 函数访问 USB 设备
 ms.date: 04/20/2017
 ms.localizationpriority: High
-ms.openlocfilehash: 88882b49e0a8c764081c8653ccbf6188971eaf65
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 063b64019d039c2904e5891e573d036ff1de0ae0
+ms.sourcegitcommit: f8619f20a0903dd64f8641a5266ecad6df5f1d57
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90716112"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91423530"
 ---
 # <a name="how-to-access-a-usb-device-by-using-winusb-functions"></a>如何通过 WinUSB 函数访问 USB 设备
 
@@ -69,9 +69,9 @@ ms.locfileid: "90716112"
 
 -   终结点
 
-    调用 [**WinUsb\_QueryPipe**](/windows/win32/api/winusb/nf-winusb-winusb_querypipe) 获取有关每个接口上每个终结点的信息。 **WinUsb\_QueryPipe** 使用有关指定终结点的管道的信息填充调用方分配的 [**WINUSB\_PIPE\_INFORMATION**](/windows/win32/api/winusbio/ns-winusbio-_winusb_pipe_information) 结构。 终结点的管道由从零开始的索引标识，并且必须小于在上一次调用 [**WinUsb\_QueryInterfaceSettings**](/windows/win32/api/winusb/nf-winusb-winusb_queryinterfacesettings) 时检索到的接口描述符的 **bNumEndpoints** 成员中的值。 OSR Fx2 设备有一个具有三个终结点的接口。 对于此设备，函数的 *AlternateInterfaceNumber* 参数设置为 0，*PipeIndex* 参数的值的值在 0 到 2 之间变动。
+    调用 [**WinUsb\_QueryPipe**](/windows/win32/api/winusb/nf-winusb-winusb_querypipe) 获取有关每个接口上每个终结点的信息。 **WinUsb\_QueryPipe** 使用有关指定终结点的管道的信息填充调用方分配的 [**WINUSB\_PIPE\_INFORMATION**](/windows/win32/api/winusbio/ns-winusbio-winusb_pipe_information) 结构。 终结点的管道由从零开始的索引标识，并且必须小于在上一次调用 [**WinUsb\_QueryInterfaceSettings**](/windows/win32/api/winusb/nf-winusb-winusb_queryinterfacesettings) 时检索到的接口描述符的 **bNumEndpoints** 成员中的值。 OSR Fx2 设备有一个具有三个终结点的接口。 对于此设备，函数的 *AlternateInterfaceNumber* 参数设置为 0，*PipeIndex* 参数的值的值在 0 到 2 之间变动。
 
-    若要确定管道类型，请检查 [**WINUSB\_PIPE\_INFORMATION**](/windows/win32/api/winusbio/ns-winusbio-_winusb_pipe_information) 结构的 **PipeInfo** 成员。 此成员设置为 [**USBD\_PIPE\_TYPE**](/windows-hardware/drivers/ddi/usb/ne-usb-_usbd_pipe_type) 枚举值之一：UsbdPipeTypeControl、UsbdPipeTypeIsochronous、UsbdPipeTypeBulk 或 UsbdPipeTypeInterrupt。 OSR USB FX2 设备支持一个中断管道、一个批量传入管道和一个批量传出管道，因此 **PipeInfo** 设置为 UsbdPipeTypeInterrupt 或 UsbdPipeTypeBulk。 UsbdPipeTypeBulk 值标识批量管道，但不提供管道的方向。 方向信息会编码到管道地址的高位中，该地址存储在 **WINUSB\_PIPE\_INFORMATION** 结构的 **PipeId** 成员中。 确定管道方向的最简单方法是将 **PipeId** 值传递到 Usb100.h 中的以下宏之一：
+    若要确定管道类型，请检查 [**WINUSB\_PIPE\_INFORMATION**](/windows/win32/api/winusbio/ns-winusbio-winusb_pipe_information) 结构的 **PipeInfo** 成员。 此成员设置为 [**USBD\_PIPE\_TYPE**](/windows-hardware/drivers/ddi/usb/ne-usb-_usbd_pipe_type) 枚举值之一：UsbdPipeTypeControl、UsbdPipeTypeIsochronous、UsbdPipeTypeBulk 或 UsbdPipeTypeInterrupt。 OSR USB FX2 设备支持一个中断管道、一个批量传入管道和一个批量传出管道，因此 **PipeInfo** 设置为 UsbdPipeTypeInterrupt 或 UsbdPipeTypeBulk。 UsbdPipeTypeBulk 值标识批量管道，但不提供管道的方向。 方向信息会编码到管道地址的高位中，该地址存储在 **WINUSB\_PIPE\_INFORMATION** 结构的 **PipeId** 成员中。 确定管道方向的最简单方法是将 **PipeId** 值传递到 Usb100.h 中的以下宏之一：
 
     -   如果方向为 in，则 `USB_ENDPOINT_DIRECTION_IN (PipeId)` 宏将返回 **TRUE**。
     -   如果方向为 out，则 `USB_ENDPOINT_DIRECTION_OUT(PipeId)` 宏将返回 **TRUE**。
@@ -208,7 +208,7 @@ done:
 **使用以下步骤发出控制请求。**
 
 1.  分配一个 1 字节数据缓冲区，并将数据加载到通过设置相应位来指定应点亮的元素的缓冲区中。
-2.  在调用方分配的 [**WINUSB\_SETUP\_PACKET**](/windows/win32/api/winusb/ns-winusb-_winusb_setup_packet) 结构中构造一个设置数据包。 将成员初始化，以便表示请求类型和数据，如下所示：
+2.  在调用方分配的 [**WINUSB\_SETUP\_PACKET**](/windows/win32/api/winusb/ns-winusb-winusb_setup_packet) 结构中构造一个设置数据包。 将成员初始化，以便表示请求类型和数据，如下所示：
     -   **RequestType** 成员指定请求方向。 它设置为 0，表示主机到设备的数据传输。 对于设备到主机的传输，请将 RequestType 设置为 1。
     -   **Request** 成员已针对此请求设置为供应商定义的代码 0xD8。 为方便起见，它被定义为 SET\_BARGRAPH\_DISPLAY。
     -   **Length** 成员设置为数据缓冲区的大小。

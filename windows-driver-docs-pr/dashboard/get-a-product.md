@@ -1,17 +1,15 @@
 ---
 title: 获取产品
 description: Microsoft 硬件 API 中的此方法可检索注册到 Windows 开发人员中心帐户的特定产品的数据。
-author: balapv
-ms.author: balapv
 ms.topic: article
 ms.date: 04/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 349dcb2238ba7dedf71f28c8bf02cea57a770516
-ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
+ms.openlocfilehash: 0ebc0e2f78464a35a8a24a395c61b53f02657cd7
+ms.sourcegitcommit: acef3c512676aad3aed1934cbe3d0f16e6d37619
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "77072216"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91372928"
 ---
 # <a name="get-a-product"></a>获取一个产品
 
@@ -33,7 +31,7 @@ ms.locfileid: "77072216"
 
 | Header | 类型 | 说明 |
 |:--|:--|:--|
-| 授权 | 字符串 | 必需。 Azure AD 访问令牌的格式为 **Bearer** \<token\>。 |
+| 授权 | 字符串 | 必需。 Azure AD 访问令牌的格式为 Bearer \<token\>。 |
 | accept | 字符串 | 可选。 指定内容的类型。 允许的值是“application/json” |
 
 

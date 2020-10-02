@@ -1,15 +1,14 @@
 ---
 title: 使用企业版 WDK 10
 description: 介绍如何设置基于命令行的环境，以便组织使用 WDK。
-author: Dansimp
 ms.date: 08/25/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5e9e33f060005766705cd185da0c6f91784f5063
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 66ff7c0eaafd4f96cc5cb33faafe5ceffa168611
+ms.sourcegitcommit: ee3e2259aafc844cc43cce62299a72649cf89212
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89063560"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91353656"
 ---
 # <a name="using-the-enterprise-wdk-10"></a>使用企业版 WDK 10
 

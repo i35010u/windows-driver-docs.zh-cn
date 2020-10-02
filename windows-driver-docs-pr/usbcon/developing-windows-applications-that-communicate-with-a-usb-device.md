@@ -3,12 +3,12 @@ description: 本主题提供了一些准则，用于确定是应该编写 UWP �
 title: 为 USB 设备开发 Windows 应用程序的概述
 ms.date: 04/20/2017
 ms.localizationpriority: High
-ms.openlocfilehash: 8413d3b45324fa50018105035c5e9630ee9d7f85
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 76adbaf9dd61f57344de8f9265641814a106e9e9
+ms.sourcegitcommit: f8619f20a0903dd64f8641a5266ecad6df5f1d57
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90715510"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91423516"
 ---
 # <a name="overview-of-developing-windows-applications-for-usb-devices"></a>为 USB 设备开发 Windows 应用程序的概述
 
@@ -189,7 +189,7 @@ Windows 提供了 API 集，可用于编写与自定义 USB 设备通信的应�
 <p><a href="/uwp/api/Windows.Devices.Usb.UsbControlRequestType" data-raw-source="[&lt;strong&gt;UsbControlRequestType&lt;/strong&gt;](/uwp/api/Windows.Devices.Usb.UsbControlRequestType)">UsbControlRequestType</a></p>
 <p><a href="/uwp/api/Windows.Devices.Usb.UsbDevice#Windows_Devices_Usb_UsbDevice_SendControlInTransferAsync_Windows_Devices_Usb_UsbSetupPacket_Windows_Storage_Streams_IBuffer_" data-raw-source="[&lt;strong&gt;UsbDevice.SendControlInTransferAsync&lt;/strong&gt;](/uwp/api/Windows.Devices.Usb.UsbDevice#Windows_Devices_Usb_UsbDevice_SendControlInTransferAsync_Windows_Devices_Usb_UsbSetupPacket_Windows_Storage_Streams_IBuffer_)">UsbDevice.SendControlInTransferAsync</a></p>
 <p><a href="/uwp/api/Windows.Devices.Usb.UsbDevice#Windows_Devices_Usb_UsbDevice_SendControlOutTransferAsync_Windows_Devices_Usb_UsbSetupPacket_" data-raw-source="[&lt;strong&gt;UsbDevice.SendControlOutTransferAsync&lt;/strong&gt;](/uwp/api/Windows.Devices.Usb.UsbDevice#Windows_Devices_Usb_UsbDevice_SendControlOutTransferAsync_Windows_Devices_Usb_UsbSetupPacket_)">UsbDevice.SendControlOutTransferAsync</a></p></td>
-<td><p><a href="/windows/win32/api/winusb/ns-winusb-_winusb_setup_packet" data-raw-source="[&lt;strong&gt;WINUSB_SETUP_PACKET&lt;/strong&gt;](/windows/win32/api/winusb/ns-winusb-_winusb_setup_packet)">WINUSB_SETUP_PACKET</a></p>
+<td><p><a href="/windows/win32/api/winusb/ns-winusb-winusb_setup_packet" data-raw-source="[&lt;strong&gt;WINUSB_SETUP_PACKET&lt;/strong&gt;](/windows/win32/api/winusb/ns-winusb-_winusb_setup_packet)">WINUSB_SETUP_PACKET</a></p>
 <p><a href="/windows/win32/api/winusb/nf-winusb-winusb_controltransfer" data-raw-source="[&lt;strong&gt;WinUsb_ControlTransfer&lt;/strong&gt;](/windows/win32/api/winusb/nf-winusb-winusb_controltransfer)">WinUsb_ControlTransfer</a></p></td>
 </tr>
 <tr class="odd">

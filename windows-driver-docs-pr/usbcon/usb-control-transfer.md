@@ -3,12 +3,12 @@ description: 本主题介绍控制传输的结构以及客户端驱动程序应�
 title: 如何发送 USB 控制传输
 ms.date: 04/20/2017
 ms.localizationpriority: High
-ms.openlocfilehash: 621f365f1a23b6d2d9758ceb4572fe9b65fad0c9
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: e8de69e8b5989d93860a041471689f7439985c13
+ms.sourcegitcommit: f8619f20a0903dd64f8641a5266ecad6df5f1d57
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90717468"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91423568"
 ---
 # <a name="how-to-send-a-usb-control-transfer"></a>如何发送 USB 控制传输
 
@@ -368,7 +368,7 @@ Microsoft 提供的 USB 堆栈处理与设备进行的所有协议通信，如�
 <ul>
 <li><a href="/windows-hardware/drivers/ddi/wudfusb/nf-wudfusb-iwdfusbtargetdevice-retrievedescriptor" data-raw-source="[&lt;strong&gt;IWDFUsbTargetDevice::RetrieveDescriptor&lt;/strong&gt;](/windows-hardware/drivers/ddi/wudfusb/nf-wudfusb-iwdfusbtargetdevice-retrievedescriptor)"><strong>IWDFUsbTargetDevice::RetrieveDescriptor</strong></a></li>
 <li><a href="/windows-hardware/drivers/ddi/wudfusb/nf-wudfusb-iwdfusbinterface-getinterfacedescriptor" data-raw-source="[&lt;strong&gt;IWDFUsbInterface::GetInterfaceDescriptor&lt;/strong&gt;](/windows-hardware/drivers/ddi/wudfusb/nf-wudfusb-iwdfusbinterface-getinterfacedescriptor)"><strong>IWDFUsbInterface::GetInterfaceDescriptor</strong></a></li>
-<li><a href="/windows-hardware/drivers/ddi/wudfusb/nf-wudfusb-iwdfusbtargetpipe-getinformation" data-raw-source="[&lt;strong&gt;IWDFUsbTargetPipe::GetInformation&lt;/strong&gt;](/windows-hardware/drivers/ddi/wudfusb/nf-wudfusb-iwdfusbtargetpipe-getinformation)"><strong>IWDFUsbTargetPipe::GetInformation</strong></a>。 此方法返回 <a href="/windows/win32/api/winusbio/ns-winusbio-_winusb_pipe_information" data-raw-source="[&lt;strong&gt;WINUSB_PIPE_INFORMATION&lt;/strong&gt;](/windows/win32/api/winusbio/ns-winusbio-_winusb_pipe_information)"><strong>WINUSB_PIPE_INFORMATION</strong></a> 结构中的终结点描述符字段。</li>
+<li><a href="/windows-hardware/drivers/ddi/wudfusb/nf-wudfusb-iwdfusbtargetpipe-getinformation" data-raw-source="[&lt;strong&gt;IWDFUsbTargetPipe::GetInformation&lt;/strong&gt;](/windows-hardware/drivers/ddi/wudfusb/nf-wudfusb-iwdfusbtargetpipe-getinformation)"><strong>IWDFUsbTargetPipe::GetInformation</strong></a>。 此方法返回 <a href="/windows/win32/api/winusbio/ns-winusbio-winusb_pipe_information" data-raw-source="[&lt;strong&gt;WINUSB_PIPE_INFORMATION&lt;/strong&gt;](/windows/win32/api/winusbio/ns-winusbio-_winusb_pipe_information)"><strong>WINUSB_PIPE_INFORMATION</strong></a> 结构中的终结点描述符字段。</li>
 </ul></td>
 <td><p><a href="/windows-hardware/drivers/ddi/usb/ns-usb-_urb_control_descriptor_request" data-raw-source="[&lt;strong&gt;_URB_CONTROL_DESCRIPTOR_REQUEST&lt;/strong&gt;](/windows-hardware/drivers/ddi/usb/ns-usb-_urb_control_descriptor_request)"><strong>_URB_CONTROL_DESCRIPTOR_REQUEST</strong></a></p>
 <p>(<a href="/previous-versions/ff538943(v=vs.85)" data-raw-source="[&lt;strong&gt;UsbBuildGetDescriptorRequest&lt;/strong&gt;](/previous-versions/ff538943(v=vs.85))"><strong>UsbBuildGetDescriptorRequest</strong></a>)</p>
