@@ -1,6 +1,6 @@
-- name: 通用传感器驱动程序模型
-  href: overview-of-converged-sensor-driver-model.md
-- name: Windows 传感器编程指南
+- name: 传感器驱动程序设计指南
+  href: index.md
+- name: Windows 传感器设计指南
   items:
     - name: 传感器类型
       href: sensor-types.md
@@ -144,62 +144,58 @@
           href: testing-MALT-system-scenarios.md
         - name: 微型控制器命令
           href: testing-MALT-microcontroller-commands.md
-- name: 以前的版本
+- name: 早期版本
   items:
     - name: Windows 8.1 全新传感器功能和改进
       href: new-sensor-features-and-improvements-for-windows-8-1.md
     - name: Windows 8.1 传感器驱动程序设计指南
       items:
-        - name: Windows 中的传感器和位置平台简介
-          href: introduction-to-the-sensor-and-location-platform-in-windows.md
-        - name: 传感器驱动程序概述
+        - name: 体系结构概述
+          href: architecture-overview-for-sensor-drivers.md
+        - name: 关于传感器类扩展
+          href: about-the-sensor-class-extension.md
+        - name: 关于接口
           items:
-            - name: 体系结构概述
-              href: architecture-overview-for-sensor-drivers.md
-            - name: 关于传感器类扩展
-              href: about-the-sensor-class-extension.md
-            - name: 关于接口
+            - name: 关于 ISensorClassExtension
+              href: about-isensorclassextension.md
+            - name: 关于 ISensorDriver
+              href: about-isensordriver.md
+            - name: 关于参数类型
+              href: about-the-parameter-types.md
+        - name: 关于传感器驱动程序事件
+          href: about-sensor-driver-events.md
+        - name: 传感器常量
+          items:
+            - name: 传感器常量概述
+              href: about-sensor-constants.md
+            - name: 事件常量
+              href: event-constants.md
+            - name: 传感器属性
+              href: sensor-properties.md
+            - name: 传感器图标常量
+              href: sensor-icon-constants.md
+            - name: 传感器类别、类型和数据字段
               items:
-                - name: 关于 ISensorClassExtension
-                  href: about-isensorclassextension.md
-                - name: 关于 ISensorDriver
-                  href: about-isensordriver.md
-                - name: 关于参数类型
-                  href: about-the-parameter-types.md
-            - name: 关于传感器驱动程序事件
-              href: about-sensor-driver-events.md
-            - name: 传感器常量
-              items:
-                - name: 传感器常量概述
-                  href: about-sensor-constants.md
-                - name: 事件常量
-                  href: event-constants.md
-                - name: 传感器属性
-                  href: sensor-properties.md
-                - name: 传感器图标常量
-                  href: sensor-icon-constants.md
-                - name: 传感器类别、类型和数据字段
-                  items:
-                    - name: SENSOR_CATEGORY_ALL
-                      href: sensor-category-all.md
-                    - name: SENSOR_CATEGORY_BIOMETRIC
-                      href: sensor-category-biometric.md
-                    - name: SENSOR_CATEGORY_ELECTRICAL
-                      href: sensor-category-electrical.md
-                    - name: SENSOR_CATEGORY_ENVIRONMENTAL
-                      href: sensor-category-environmental.md
-                    - name: SENSOR_CATEGORY_LIGHT
-                      href: sensor-category-light.md
-                    - name: SENSOR_CATEGORY_LOCATION
-                      href: sensor-category-loc.md
-                    - name: SENSOR_CATEGORY_MECHANICAL
-                      href: sensor-category-mechanical.md
-                    - name: SENSOR_CATEGORY_MOTION
-                      href: sensor-category-motion.md
-                    - name: SENSOR_CATEGORY_ORIENTATION
-                      href: sensor-category-orientation.md
-                    - name: SENSOR_CATEGORY_SCANNER
-                      href: sensor-category-scanner.md
+                - name: SENSOR_CATEGORY_ALL
+                  href: sensor-category-all.md
+                - name: SENSOR_CATEGORY_BIOMETRIC
+                  href: sensor-category-biometric.md
+                - name: SENSOR_CATEGORY_ELECTRICAL
+                  href: sensor-category-electrical.md
+                - name: SENSOR_CATEGORY_ENVIRONMENTAL
+                  href: sensor-category-environmental.md
+                - name: SENSOR_CATEGORY_LIGHT
+                  href: sensor-category-light.md
+                - name: SENSOR_CATEGORY_LOCATION
+                  href: sensor-category-loc.md
+                - name: SENSOR_CATEGORY_MECHANICAL
+                  href: sensor-category-mechanical.md
+                - name: SENSOR_CATEGORY_MOTION
+                  href: sensor-category-motion.md
+                - name: SENSOR_CATEGORY_ORIENTATION
+                  href: sensor-category-orientation.md
+                - name: SENSOR_CATEGORY_SCANNER
+                  href: sensor-category-scanner.md
     - name: Windows 8.1 传感器驱动程序编程指南
       items:
         - name: 编写传感器驱动程序的注意事项
