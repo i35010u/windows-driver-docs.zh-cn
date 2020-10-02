@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 04fc202a16924d0e9d1128d010c2d12cae7e71b6
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 6c27f424291ac2c80e5f2d1832a07fcf3b194c41
+ms.sourcegitcommit: 372464be981a39781c71049126f36891cb5d0cad
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90102122"
+ms.lasthandoff: 10/02/2020
+ms.locfileid: "91646011"
 ---
 # <a name="ksproperty_audio_demux_dest"></a>KSPROPERTY \_ AUDIO \_ 多路分解器 \_ DEST
 
@@ -67,10 +67,10 @@ KSPROPERTY \_ AUDIO \_ 多路分解器 \_ DEST 属性指定信号分离器定向
 
 KSPROPERTY \_ 音频 \_ 多路分解器 \_ DEST 属性请求返回状态 " \_ 成功" 以指示该请求已成功完成。 否则，请求将返回相应的错误状态代码。
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
-Pin ID 标识多路分解器节点上的逻辑 pin。 有关筛选器内某个节点上的逻辑插针 Id 的讨论，请参阅 [**PCCONNECTION \_ 描述符**](/previous-versions/windows/hardware/drivers/ff537688(v=vs.85))。
+Pin ID 标识多路分解器节点上的逻辑 pin。 有关筛选器内某个节点上的逻辑插针 Id 的讨论，请参阅 [**PCCONNECTION \_ 描述符**](/windows-hardware/drivers/ddi/portcls/ns-portcls-_pcconnection_descriptor)。
 
 <a name="requirements"></a>要求
 ------------
@@ -95,5 +95,5 @@ Pin ID 标识多路分解器节点上的逻辑 pin。 有关筛选器内某个�
 
 [**KSNODEPROPERTY**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksnodeproperty)
 
-[**PCCONNECTION \_ 描述符**](/previous-versions/windows/hardware/drivers/ff537688(v=vs.85))
+[**PCCONNECTION \_ 描述符**](/windows-hardware/drivers/ddi/portcls/ns-portcls-_pcconnection_descriptor)
 

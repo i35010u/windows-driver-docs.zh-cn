@@ -4,12 +4,12 @@ description: UsePositionLock 注册表值更改 PortCls 序列化其 i/o 的方�
 ms.assetid: AD5AF873-4129-4C82-B251-0469CF6149E9
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 126d562d002b8b87529a98aa027684af9797cdd9
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: bc98ddda33b937a9d6e2e22daaa82f85ca75b256
+ms.sourcegitcommit: 372464be981a39781c71049126f36891cb5d0cad
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89210312"
+ms.lasthandoff: 10/02/2020
+ms.locfileid: "91646059"
 ---
 # <a name="usepositionlock"></a>UsePositionLock
 
@@ -58,7 +58,7 @@ HKR, DispatchSettings, UsePositionLock, 3, 01, 00, 00, 00
 
 -   [**IMiniportWaveRTOutputStream::GetPacketCount**](/windows-hardware/drivers/ddi/portcls/nf-portcls-iminiportwavertoutputstream-getpacketcount)
 
--   [**IMiniportWaveRTStream::GetPosition**](/previous-versions/windows/hardware/drivers/ff536749(v=vs.85))
+-   [**IMiniportWaveRTStream::GetPosition**](/windows-hardware/drivers/ddi/portcls/nf-portcls-iminiportwavertstream-getposition)
 
  
 

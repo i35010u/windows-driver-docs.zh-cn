@@ -1,15 +1,15 @@
 ---
 title: Irql rule set (WDM)
-description: 使用这些规则验证你的驱动程序是否在所需的 IRQL 上进行 DDI 调用。不遵循 IRQL 规则的驱动程序可能会导致在操作过程中出现严重问题，从而导致死锁情况或计算机崩溃。
+description: 了解如何使用 (WDM) 的规则来验证驱动程序是否在所需的 IRQL 上进行 DDI 调用。 此外，还将了解如何选择 IRQL 规则集。
 ms.assetid: 40C17906-58D5-4023-A549-0164C3A92A06
 ms.date: 05/21/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 4c7de875902ffa0edb276b75001acc623edad6e1
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 9f34c11de44e4f74898ee9df429d5a7c31aa9615
+ms.sourcegitcommit: 372464be981a39781c71049126f36891cb5d0cad
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90105132"
+ms.lasthandoff: 10/02/2020
+ms.locfileid: "91645959"
 ---
 # <a name="irql-rule-set-wdm"></a>Irql rule set (WDM)
 

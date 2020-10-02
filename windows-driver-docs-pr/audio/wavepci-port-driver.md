@@ -9,12 +9,12 @@ keywords:
 - 微型端口驱动程序 WDK 音频、端口驱动程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 63b58c92c6fecf32ba1f75c06aa683878e9760b6
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 7585af33a8b54e43b90781f6603cdd2098510597
+ms.sourcegitcommit: 372464be981a39781c71049126f36891cb5d0cad
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90716622"
+ms.lasthandoff: 10/02/2020
+ms.locfileid: "91646057"
 ---
 # <a name="wavepci-port-driver"></a>WavePci 端口驱动程序
 
@@ -28,7 +28,7 @@ ms.locfileid: "90716622"
 
 WavePci 端口驱动程序可通过音频设备管理波形流的播放或录制，该设备可执行与物理内存中的任何位置之间的散播/聚集 DMA 传输。 使用散播/聚集 DMA，设备可以处理由一系列映射组成的缓冲区中的音频数据。 每个映射都是物理上连续内存的块，但后续映射不一定彼此相邻。 WavePci 兼容设备是音频适配器上的硬件功能。 通常，适配器是主板上的集成芯片组的一部分，或者安装在插入到主板 PCI 插槽的音频卡上。 适配器驱动程序提供了相应的 [WavePci 微型端口驱动程序，该驱动程序](wavepci-miniport-driver.md) 绑定到 WavePci 端口驱动程序对象，以形成可捕获或呈现波形流的 [波形筛选器](wave-filters.md) 。
 
-WavePci 端口驱动程序向微型端口驱动程序公开 [IPortWavePci](/previous-versions/windows/hardware/drivers/ff536905(v=vs.85)) 接口。 IPortWavePci 继承基接口 [IPort](/windows-hardware/drivers/ddi/portcls/nn-portcls-iport)中的方法。 此外，IPortWavePci 提供了以下方法：
+WavePci 端口驱动程序向微型端口驱动程序公开 [IPortWavePci](/windows-hardware/drivers/ddi/portcls/nn-portcls-iportwavepci) 接口。 IPortWavePci 继承基接口 [IPort](/windows-hardware/drivers/ddi/portcls/nn-portcls-iport)中的方法。 此外，IPortWavePci 提供了以下方法：
 
 [**IPortWavePci::NewMasterDmaChannel**](/windows-hardware/drivers/ddi/portcls/nf-portcls-iportwavepci-newmasterdmachannel)
 
@@ -49,7 +49,7 @@ WavePci 端口驱动程序还向每个微型端口驱动程序的流对象公开
 终止 i/o 数据包，即使它仅部分填充了捕获数据。
 I/o 数据包是音频缓冲区的一部分，其中包含与特定映射 IRP 关联的所有映射。
 
-WavePci 端口和微型端口对象通过各自的 [IPortWavePci](/previous-versions/windows/hardware/drivers/ff536905(v=vs.85)) 和 [IMiniportWavePci](/windows-hardware/drivers/ddi/portcls/nn-portcls-iminiportwavepci) 接口相互通信。 此外，WavePci 端口和微型端口流对象通过其各自的 [IPortWavePciStream](/windows-hardware/drivers/ddi/portcls/nn-portcls-iportwavepcistream) 和 [IMiniportWavePciStream](/windows-hardware/drivers/ddi/portcls/nn-portcls-iminiportwavepcistream) 接口相互通信。
+WavePci 端口和微型端口对象通过各自的 [IPortWavePci](/windows-hardware/drivers/ddi/portcls/nn-portcls-iportwavepci) 和 [IMiniportWavePci](/windows-hardware/drivers/ddi/portcls/nn-portcls-iminiportwavepci) 接口相互通信。 此外，WavePci 端口和微型端口流对象通过其各自的 [IPortWavePciStream](/windows-hardware/drivers/ddi/portcls/nn-portcls-iportwavepcistream) 和 [IMiniportWavePciStream](/windows-hardware/drivers/ddi/portcls/nn-portcls-iminiportwavepcistream) 接口相互通信。
 
  
 

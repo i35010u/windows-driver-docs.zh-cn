@@ -1,23 +1,23 @@
 ---
-title: Windows 10 版本1703中的网络内核调试支持的以太网 Nic （Redstone 2）版本15063
-description: 当目标计算机运行 Windows 时，可以通过以太网网络电缆进行内核调试。 目标计算机必须具有支持的网络接口卡（NIC）或网络适配器。
+title: Windows 10 版本 1703 (Redstone 2) 版本15063中的网络内核调试支持的以太网 Nic
+description: 了解当目标计算机运行的是 Windows 10 版本1703时，通过以太网网络电缆进行内核调试。
 ms.assetid: 3A84C721-EB58-4B32-AAA6-764494190D30
 ms.date: 06/03/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: bdbbcf688a10c41eb1c1a8880937b3897d7827ca
-ms.sourcegitcommit: 8596782b07c8a71adf38fc2c2da68b75ba0a1259
+ms.openlocfilehash: 93eadb111ef5216001c1aea0c945eaf84019778e
+ms.sourcegitcommit: 372464be981a39781c71049126f36891cb5d0cad
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85600952"
+ms.lasthandoff: 10/02/2020
+ms.locfileid: "91646093"
 ---
-# <a name="supported-ethernet-nics-for-network-kernel-debugging-in-windows-10-version-1703-redstone-2-build-15063"></a>Windows 10 版本1703中的网络内核调试支持的以太网 Nic （Redstone 2）版本15063
+# <a name="supported-ethernet-nics-for-network-kernel-debugging-in-windows-10-version-1703-redstone-2-build-15063"></a>Windows 10 版本 1703 (Redstone 2) 版本15063中的网络内核调试支持的以太网 Nic
 
-若要通过以太网网络电缆进行内核调试，目标计算机必须具有支持的网络接口卡（NIC）。
+若要通过以太网网络电缆进行内核调试，目标计算机必须具有支持的网络接口卡 (NIC) 。
 
-在内核调试过程中，运行调试器的计算机称为*主机计算机*，被调试的计算机称为*目标计算机*。 有关详细信息，请参阅[自动设置 KDNET 网络内核调试](setting-up-a-network-debugging-connection-automatically.md)。
+在内核调试过程中，运行调试器的计算机称为 *主机计算机*，被调试的计算机称为 *目标计算机*。 有关详细信息，请参阅 [自动设置 KDNET 网络内核调试](setting-up-a-network-debugging-connection-automatically.md)。
 
-有关支持的网络适配器的常规信息，请参阅[Windows 10 中的网络内核调试支持的以太网 nic](supported-ethernet-nics-for-network-kernel-debugging-in-windows-10.md)。
+有关支持的网络适配器的常规信息，请参阅 [Windows 10 中的网络内核调试支持的以太网 nic](supported-ethernet-nics-for-network-kernel-debugging-in-windows-10.md)。
 
 **版本信息**
 

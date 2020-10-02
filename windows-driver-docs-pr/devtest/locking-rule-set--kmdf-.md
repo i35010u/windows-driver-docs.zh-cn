@@ -1,15 +1,15 @@
 ---
 title: 锁定规则集 (KMDF)
-description: 使用这些规则验证驱动程序是否正确管理共享资源。
+description: 了解如何使用 (KMDF) 的规则来验证驱动程序是否正确管理共享资源，以及如何选择锁定规则集。
 ms.assetid: B6DD41A5-E7E5-4070-8752-68E26804A5D5
 ms.date: 05/21/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 1e7be62baeb424f7a8ab10a0be029fcf02d56277
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: b0059780fe55bf2a9e1d2f317af84df122ccdc74
+ms.sourcegitcommit: 372464be981a39781c71049126f36891cb5d0cad
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90103408"
+ms.lasthandoff: 10/02/2020
+ms.locfileid: "91646111"
 ---
 # <a name="locking-rule-set-kmdf"></a>锁定规则集 (KMDF)
 

@@ -1,15 +1,15 @@
 ---
 title: 警告规则集 (NDIS)
-description: 使用这些规则来验证驱动程序是否可以在不同的上下文中正确处理 Irp，并遵循 Microsoft 推荐的最佳做法。
+description: 了解如何使用规则 (NDIS) 验证驱动程序是否可以在不同的上下文中正确处理 Irp，并遵循 Microsoft 推荐的最佳做法。
 ms.assetid: 454FB042-76FA-4A46-9549-4DE8BF52A2D3
 ms.date: 05/21/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 1df04c545fdc07f2b7181b54d0f183cbe38d4b86
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: d2add2098982bf58381034fb3c856348c8760f61
+ms.sourcegitcommit: 372464be981a39781c71049126f36891cb5d0cad
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89383577"
+ms.lasthandoff: 10/02/2020
+ms.locfileid: "91645999"
 ---
 # <a name="warning-rule-set-ndis"></a>警告规则集 (NDIS)
 

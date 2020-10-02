@@ -1,15 +1,15 @@
 ---
 title: 警告规则集 (KMDF)
-description: 使用这些规则来验证驱动程序是否可以在不同的上下文中正确处理 Irp，并遵循 Microsoft 推荐的最佳做法。
+description: 了解如何使用 (KDMF) 的规则来验证驱动程序是否可以在不同的上下文中正确处理 Irp，并遵循 Microsoft 推荐的最佳做法。
 ms.assetid: 0C012253-9FBD-4B5C-9A93-AF72405EF3E4
 ms.date: 05/21/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 7b879bdc249412a7dd43a986a47f29334cd8f7e5
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 301f39960baa4dff047cfe965e54b4c449253ca2
+ms.sourcegitcommit: 372464be981a39781c71049126f36891cb5d0cad
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90106452"
+ms.lasthandoff: 10/02/2020
+ms.locfileid: "91646001"
 ---
 # <a name="warning-rule-set-kmdf"></a>警告规则集 (KMDF)
 

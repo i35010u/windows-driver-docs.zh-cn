@@ -1,15 +1,15 @@
 ---
 title: Windows 10 版本 1903 的驱动程序开发变更
-description: 本部分介绍 Windows 10 中驱动程序开发的新增功能。
+description: 了解 Windows 10 中用于驱动程序开发的新功能，如相机驱动程序功能 IR Torch 和 USB 视频类1.5 扩展。
 ms.assetid: 90f7754d-be7a-408d-8b89-b173a86c4fa3
 ms.date: 04/28/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 5fc2f842339ef5649f2587dcac436e7f00683e15
-ms.sourcegitcommit: 0c34101a0eed9f187fec03026021fff89bd233e3
+ms.openlocfilehash: d07ef6725511d42e6336934b52988be51996d188
+ms.sourcegitcommit: 372464be981a39781c71049126f36891cb5d0cad
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91135174"
+ms.lasthandoff: 10/02/2020
+ms.locfileid: "91646121"
 ---
 # <a name="whats-new-in-windows-10-version-1903"></a>Windows 10 版本1903中的新增功能
 

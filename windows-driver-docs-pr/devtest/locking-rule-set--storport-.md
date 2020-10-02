@@ -1,15 +1,15 @@
 ---
 title: 锁定规则集 (Storport)
-description: 使用这些规则验证驱动程序是否正确管理共享资源。
+description: 了解如何使用 (Storport) 的规则来验证驱动程序是否正确管理共享资源，以及如何选择锁定规则集。
 ms.assetid: FBB75F07-E689-4B7C-B053-E0B6A3772764
 ms.date: 05/21/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 22b4f4b285748083118972cc6b979e969d0f1049
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: e76cb5db7cf49066f90f179ee62e72a9ae8a5191
+ms.sourcegitcommit: 372464be981a39781c71049126f36891cb5d0cad
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90103402"
+ms.lasthandoff: 10/02/2020
+ms.locfileid: "91646107"
 ---
 # <a name="locking-rule-set-storport"></a>锁定规则集 (Storport)
 

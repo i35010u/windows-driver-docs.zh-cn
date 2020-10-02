@@ -18,12 +18,12 @@ keywords:
 - 预提取偏移
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fc9f930357863612b3f0ce91d5c141587e179e4b
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 2465e99c0e8b4d2610c4b456b933f758b2cac8d5
+ms.sourcegitcommit: 372464be981a39781c71049126f36891cb5d0cad
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89210459"
+ms.lasthandoff: 10/02/2020
+ms.locfileid: "91646039"
 ---
 # <a name="portcls-support-by-operating-system"></a>操作系统提供的 PortCls 支持
 
@@ -141,7 +141,7 @@ ms.locfileid: "89210459"
 
 [IPortWaveCyclic](/windows-hardware/drivers/ddi/portcls/nn-portcls-iportwavecyclic)
 
-[IPortWavePci](/previous-versions/windows/hardware/drivers/ff536905(v=vs.85))
+[IPortWavePci](/windows-hardware/drivers/ddi/portcls/nn-portcls-iportwavepci)
 
 \*\*[IPortWaveRT](/windows-hardware/drivers/ddi/portcls/nn-portcls-iportwavert)
 

@@ -15,12 +15,12 @@ keywords:
 - 节点 pin 分配 WDK 音频
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5814af88fde2fd89c52118e97bbd601bdf84065c
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 6322a0c2e7da665e0f5f75af058148c066201fa7
+ms.sourcegitcommit: 372464be981a39781c71049126f36891cb5d0cad
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89208021"
+ms.lasthandoff: 10/02/2020
+ms.locfileid: "91646003"
 ---
 # <a name="exposing-hardware-accelerated-capture-effects"></a>公开硬件加速捕获效果
 
@@ -78,7 +78,7 @@ PCM 微型端口驱动程序以捕获流的拓扑形式为满足此附加要求�
 
 ### <a name="span-idaec_node_pin_assignmentsspanspan-idaec_node_pin_assignmentsspanspan-idaec_node_pin_assignmentsspanaec-node-pin-assignments"></a><span id="AEC_Node_Pin_Assignments"></span><span id="aec_node_pin_assignments"></span><span id="AEC_NODE_PIN_ASSIGNMENTS"></span>AEC 节点 Pin 分配
 
-适配器驱动程序使用 [**PCCONNECTION \_ 描述符**](/previous-versions/windows/hardware/drivers/ff537688(v=vs.85)) 结构的数组指定筛选器中的连接。 每个数组元素描述一个连接，该连接可以是节点到节点、节点到 pin 或 pin 到 pin。 有关详细信息，请参阅 [节点和连接](nodes-and-connections.md)。
+适配器驱动程序使用 [**PCCONNECTION \_ 描述符**](/windows-hardware/drivers/ddi/portcls/ns-portcls-_pcconnection_descriptor) 结构的数组指定筛选器中的连接。 每个数组元素描述一个连接，该连接可以是节点到节点、节点到 pin 或 pin 到 pin。 有关详细信息，请参阅 [节点和连接](nodes-and-connections.md)。
 
 若要使用 PCCONNECTION \_ 描述符结构，驱动程序编写器会将 "逻辑" pin 分配给节点。 这些是节点本身的 "固定"，只用于指定筛选器内的连接。 这与用于连接到其他筛选器的筛选器上的外部 pin 不同。
 

@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b76217f49ef6595b408fe66ba631582e0a6a26da
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: e94adb3aa88e8a8ec8bbbaa09fea0bface3558c9
+ms.sourcegitcommit: 372464be981a39781c71049126f36891cb5d0cad
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90102088"
+ms.lasthandoff: 10/02/2020
+ms.locfileid: "91645965"
 ---
 # <a name="ksproperty_audio_mux_source"></a>KSPROPERTY \_ 音频 \_ MUX \_ 源
 
@@ -67,10 +67,10 @@ KSPROPERTY \_ 音频 \_ MUX \_ source 属性指定多路复用器的输出流的
 
 KSPROPERTY \_ 音频 \_ MUX \_ 源属性请求返回状态 " \_ 成功" 以指示已成功完成。 否则，请求将返回相应的错误状态代码。
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
-Pin ID 标识 MUX 节点上的逻辑 pin。 有关筛选器内某个节点上的逻辑插针 Id 的讨论，请参阅 [**PCCONNECTION \_ 描述符**](/previous-versions/windows/hardware/drivers/ff537688(v=vs.85))。
+Pin ID 标识 MUX 节点上的逻辑 pin。 有关筛选器内某个节点上的逻辑插针 Id 的讨论，请参阅 [**PCCONNECTION \_ 描述符**](/windows-hardware/drivers/ddi/portcls/ns-portcls-_pcconnection_descriptor)。
 
 <a name="requirements"></a>要求
 ------------
@@ -95,5 +95,5 @@ Pin ID 标识 MUX 节点上的逻辑 pin。 有关筛选器内某个节点上的
 
 [**KSNODEPROPERTY**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksnodeproperty)
 
-[**PCCONNECTION \_ 描述符**](/previous-versions/windows/hardware/drivers/ff537688(v=vs.85))
+[**PCCONNECTION \_ 描述符**](/windows-hardware/drivers/ddi/portcls/ns-portcls-_pcconnection_descriptor)
 

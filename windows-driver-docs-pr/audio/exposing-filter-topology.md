@@ -10,12 +10,12 @@ keywords:
 - 音频筛选 WDK 音频，露出拓扑
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 891efe8ca31977fc78cf2a5e7cd7ac8a6f137881
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 3b66c5390de19a0e1495d660fe1bea98b3b944ac
+ms.sourcegitcommit: 372464be981a39781c71049126f36891cb5d0cad
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89208033"
+ms.lasthandoff: 10/02/2020
+ms.locfileid: "91645971"
 ---
 # <a name="exposing-filter-topology"></a>公开筛选器拓扑
 
@@ -29,7 +29,7 @@ ms.locfileid: "89208033"
 
 -   节点在 [**PCNODE \_ 描述符**](/windows-hardware/drivers/ddi/portcls/ns-portcls-pcnode_descriptor) 结构的静态数组中指定。 每个节点的 ID 都是其在数组中的序号。
 
--   连接 (插针、固定到节点或节点到节点) 在 [**PCCONNECTION \_ 描述符**](/previous-versions/windows/hardware/drivers/ff537688(v=vs.85)) 结构的静态数组中指定。
+-   连接 (插针、固定到节点或节点到节点) 在 [**PCCONNECTION \_ 描述符**](/windows-hardware/drivers/ddi/portcls/ns-portcls-_pcconnection_descriptor) 结构的静态数组中指定。
 
 微型端口驱动程序在从其[**IMiniport：： GetDescription**](/windows-hardware/drivers/ddi/portcls/nf-portcls-iminiport-getdescription)方法输出的[**PCFILTER \_ 描述符**](/windows-hardware/drivers/ddi/portcls/ns-portcls-pcfilter_descriptor)结构中公开这三个数组。
 

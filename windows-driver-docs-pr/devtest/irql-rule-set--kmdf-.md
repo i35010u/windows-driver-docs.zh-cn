@@ -1,15 +1,15 @@
 ---
 title: Irql 规则集 (KMDF)
-description: 使用这些规则验证你的驱动程序是否在所需的 IRQL 上进行 DDI 调用。不遵循 IRQL 规则的驱动程序可能会导致在操作过程中出现严重问题，从而导致死锁情况或计算机崩溃。
+description: 了解如何使用 (KMDF) 的规则来验证驱动程序是否在所需的 IRQL 上进行 DDI 调用。 此外，还将了解如何选择 IRQL 规则集。
 ms.assetid: B02D196F-E8D5-4FE9-8983-AD08EAE00DE5
 ms.date: 05/21/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 4507e1dcccb97e3902fc2108c7c73964cd81e9e5
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 0933dbc346d363e252dc2983f254a3f851605b97
+ms.sourcegitcommit: 372464be981a39781c71049126f36891cb5d0cad
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90105402"
+ms.lasthandoff: 10/02/2020
+ms.locfileid: "91646135"
 ---
 # <a name="irql-rule-set-kmdf"></a>Irql 规则集 (KMDF)
 

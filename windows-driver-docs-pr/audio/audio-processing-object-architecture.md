@@ -4,12 +4,12 @@ description: 音频处理对象的体系结构用于 Windows 音频流的基于�
 ms.assetid: 2F57B4C7-8C83-4DDF-BFAF-B9308752E91D
 ms.date: 10/18/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 194456691708c58be427e8c2d3f1757e2a2341d1
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 7b0e8f17d1bf0a60344ac04f7997a578bf20c7a9
+ms.sourcegitcommit: 372464be981a39781c71049126f36891cb5d0cad
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89208305"
+ms.lasthandoff: 10/02/2020
+ms.locfileid: "91645973"
 ---
 # <a name="audio-processing-object-architecture"></a>音频处理对象体系结构
 
@@ -36,7 +36,7 @@ Windows 允许 Oem 和第三方音频硬件制造商将自定义数字信号处�
 在硬件 DSP 中应用的任何效果都需要通过代理 APO 播发。 Microsoft 提供了默认的代理 APO ( # A0) 。 若要使用 Microsoft 提供的 APO，必须支持此属性集和属性。
 
 -   [KSPROPSETID \_ AudioEffectsDiscovery](./kspropsetid-audioeffectsdiscovery.md)
--   [KSPROPERTY \_ AUDIOEFFECTSDISCOVERY \_ EFFECTSLIST](/previous-versions/windows/hardware/drivers/dn457706(v=vs.85))
+-   [KSPROPERTY \_ AUDIOEFFECTSDISCOVERY \_ EFFECTSLIST](./ksproperty-audioeffectsdiscovery-effectslist.md)
 
 或者，您可以实现自己的代理 APO。
 

@@ -13,12 +13,12 @@ keywords:
 - 流接口 WDK 音频
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 51e8e9a36ff094d360d1f654afe34780c70ce2c0
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 697eea92eed4b7c212716e684740c3a8e951950e
+ms.sourcegitcommit: 372464be981a39781c71049126f36891cb5d0cad
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90101800"
+ms.lasthandoff: 10/02/2020
+ms.locfileid: "91646053"
 ---
 # <a name="miniport-interfaces"></a>微型端口接口
 
@@ -69,7 +69,7 @@ ms.locfileid: "90101800"
 </tr>
 <tr class="even">
 <td align="left"><p>WavePci</p></td>
-<td align="left"><p><a href="/previous-versions/windows/hardware/drivers/ff536905(v=vs.85)" data-raw-source="[IPortWavePci](/previous-versions/windows/hardware/drivers/ff536905(v=vs.85))">IPortWavePci</a></p></td>
+<td align="left"><p><a href="/windows-hardware/drivers/ddi/portcls/nn-portcls-iportwavepci" data-raw-source="[IPortWavePci](/windows-hardware/drivers/ddi/portcls/nn-portcls-iportwavepci)">IPortWavePci</a></p></td>
 <td align="left"><p><a href="/windows-hardware/drivers/ddi/portcls/nn-portcls-iminiportwavepci" data-raw-source="[IMiniportWavePci](/windows-hardware/drivers/ddi/portcls/nn-portcls-iminiportwavepci)">IMiniportWavePci</a></p></td>
 </tr>
 <tr class="odd">

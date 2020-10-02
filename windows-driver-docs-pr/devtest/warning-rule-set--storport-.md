@@ -1,15 +1,15 @@
 ---
 title: 警告规则集 (Storport)
-description: 使用这些规则来验证驱动程序是否可以在不同的上下文中正确处理 Irp，并遵循 Microsoft 推荐的最佳做法。
+description: 了解如何使用 (Storport) 的规则来验证驱动程序是否可以在不同的上下文中正确处理 Irp，并遵循 Microsoft 推荐的最佳做法。
 ms.assetid: 6557A741-C49F-456B-B285-DE6D171DDCEE
 ms.date: 05/21/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 58117596bdaf922cc77b7e79ab55ce17c811e1c4
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: ad72b7319c8a582c832dca41a7532024086d63b5
+ms.sourcegitcommit: 372464be981a39781c71049126f36891cb5d0cad
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90106450"
+ms.lasthandoff: 10/02/2020
+ms.locfileid: "91645997"
 ---
 # <a name="warning-rule-set-storport"></a>警告规则集 (Storport)
 

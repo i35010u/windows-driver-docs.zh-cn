@@ -1,16 +1,16 @@
 ---
 title: 微型端口适配器同步 OID 请求
-description: 本主题介绍微型端口适配器同步 OID 请求
+description: 了解微型端口适配器同步 OID 请求。 查看一个表，其中显示了同步 OID 和标准 OID 请求接口之间的关系。
 ms.assetid: E169972C-2EFF-4005-B279-9EFC53B431E2
 keywords: 微型端口适配器同步 OID 请求接口，微型端口适配器同步 OID 调用，WDK 微型端口适配器同步 oid，微型端口适配器同步 OID 请求
 ms.date: 09/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 93f31469518ee4b290cd465ad56071a095eb6765
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 0b5b2e9d5798213f343805f2d0cf78a238d9ed85
+ms.sourcegitcommit: 372464be981a39781c71049126f36891cb5d0cad
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89215566"
+ms.lasthandoff: 10/02/2020
+ms.locfileid: "91646131"
 ---
 # <a name="miniport-adapter-synchronous-oid-requests"></a>微型端口适配器同步 OID 请求
 

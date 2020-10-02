@@ -1,15 +1,15 @@
 ---
 title: Windows 10 版本 1803 的驱动程序开发变更
-description: 本部分介绍 Windows 10 中驱动程序开发的新增功能。
+description: 了解 Windows 10 中用于驱动程序开发的新功能，如对蓝牙 Swift 对的支持。
 ms.assetid: 73ba8c40-d605-4dba-a965-0a87d80b9126
 ms.date: 04/28/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: fa3811172b72c28bd696a41d11be1fd2cef3a999
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 93958b7f91834c2bb23a03d9d6e1f5ce4c3fe4cc
+ms.sourcegitcommit: 372464be981a39781c71049126f36891cb5d0cad
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89066552"
+ms.lasthandoff: 10/02/2020
+ms.locfileid: "91646125"
 ---
 # <a name="whats-new-in-windows-10-version-1803"></a>Windows 10 版本 1803 中的新增功能
 

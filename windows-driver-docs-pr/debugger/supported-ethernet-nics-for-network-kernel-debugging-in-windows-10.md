@@ -1,15 +1,15 @@
 ---
 title: Windows 10 中的网络内核调试支持的以太网 NIC
-description: 当目标计算机运行 Windows 时，可以通过以太网网络电缆进行内核调试。 目标计算机必须具有支持的网络接口卡 (NIC) 或网络适配器。
+description: 了解当目标计算机运行 Windows 10 时通过以太网网络电缆进行内核调试。
 ms.assetid: F98A7ACE-DD04-423C-A438-89E21363C693
 ms.date: 06/12/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 4cba196086f8387971f177c04eaa5dfb88e7de08
-ms.sourcegitcommit: 17c1bbc5ea0bef3bbc87794b030a073f905dc942
+ms.openlocfilehash: 89068f34a310f8e69edcffcb9a55e59df9fd456d
+ms.sourcegitcommit: 372464be981a39781c71049126f36891cb5d0cad
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88802673"
+ms.lasthandoff: 10/02/2020
+ms.locfileid: "91646037"
 ---
 # <a name="supported-ethernet-nics-for-network-kernel-debugging-in-windows-10"></a>Windows 10 中的网络内核调试支持的以太网 NIC
 

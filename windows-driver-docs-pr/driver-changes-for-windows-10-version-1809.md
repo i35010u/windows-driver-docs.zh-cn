@@ -1,15 +1,15 @@
 ---
 title: Windows 10 版本 1809 的驱动程序开发变更
-description: 本部分介绍 Windows 10 中驱动程序开发的新增功能。
+description: 了解 Windows 10 1809 版中的驱动程序开发的新功能 (Windows 10 10 月2018更新) 。
 ms.assetid: 764bcd98-c123-45e2-9dd1-44d54bb1addc
 ms.date: 04/28/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: c8360524bdd0b7a96fd52ac33cb34f96704ad7fd
-ms.sourcegitcommit: 0c34101a0eed9f187fec03026021fff89bd233e3
+ms.openlocfilehash: 47d1bc5d71a8456818ed4f86b5071a3c0975f45f
+ms.sourcegitcommit: 372464be981a39781c71049126f36891cb5d0cad
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91135172"
+ms.lasthandoff: 10/02/2020
+ms.locfileid: "91646123"
 ---
 # <a name="whats-new-in-windows-10-version-1809"></a>Windows 10 版本 1809 中的新增功能
 

@@ -1,15 +1,15 @@
 ---
 title: 锁定规则集 (NDIS)
-description: 使用这些规则验证驱动程序是否正确管理共享资源。
+description: 了解如何使用规则 (NDIS) 验证驱动程序是否正确管理共享资源，以及如何选择锁定规则集。
 ms.assetid: 1123A246-7833-4EAB-B1B8-0C71413CE86B
 ms.date: 05/21/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: d236b67fc4674f196389c841ec6d8b5c26d7ec1c
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: d280c4cc78879d538180042071b5ba1a2ea2f30f
+ms.sourcegitcommit: 372464be981a39781c71049126f36891cb5d0cad
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90103406"
+ms.lasthandoff: 10/02/2020
+ms.locfileid: "91646109"
 ---
 # <a name="locking-rule-set-ndis"></a>锁定规则集 (NDIS)
 

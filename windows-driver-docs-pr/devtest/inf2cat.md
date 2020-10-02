@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a21c66a41b19952829dde2ee87bb94ddb62436ca
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: cb0b2d869177d7b705162aae7bc03a612641f0d2
+ms.sourcegitcommit: 372464be981a39781c71049126f36891cb5d0cad
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89383509"
+ms.lasthandoff: 10/02/2020
+ms.locfileid: "91646083"
 ---
 # <a name="inf2cat"></a>Inf2Cat
 
@@ -37,16 +37,19 @@ Inf2Cat 工具位于 Program Files \\ Windows 工具包 \\ 8.0 \\ Bin \\ x86 或
 
 ## <a name="switches-and-arguments"></a>开关和参数
 
-**/driver：**<em>PackagePath</em>  
+### <a name="driverpackagepath"></a>/driver：*PackagePath*
+
 指定包含驱动程序包 INF 文件的目录的路径。 如果指定的目录包含多个驱动程序包的 INF 文件，Inf2Cat 将为每个驱动程序包创建编录文件。
 
 > [!NOTE]
 > 可以使用 **/drv：** 开关代替 **/driver：** 开关。
 
-**/nocat**  
+### <a name="nocat"></a>/nocat
+
 将 Inf2Cat 配置为验证 [驱动程序包](../install/driver-packages.md) 是否符合指定 Windows 版本的签名要求，但不生成目录文件。
 
-**/os：**<em>WindowsVersionList</em>  
+### <a name="oswindowsversionlist"></a>/os：*WindowsVersionList*
+  
 将 Inf2Cat 配置为验证 [驱动程序包的](../install/driver-packages.md) INF 文件是否符合 *WindowsVersionList*指定的 Windows 版本的签名要求。 *WindowsVersionList* 是一个以逗号分隔的列表，其中包含一个或多个以下版本标识符。
 
 |Windows 版本|版本标识符|
@@ -102,27 +105,30 @@ Inf2Cat 工具位于 Program Files \\ Windows 工具包 \\ 8.0 \\ Bin \\ x86 或
 
 Inf2Cat 忽略版本标识符字符串的字母字符的大小写。 例如，vista \_ x64 和 vista \_ x64 都是适用于 Windows Vista x64 版本的有效标识符。
 
-**/uselocaltime**  
+### <a name="uselocaltime"></a>/uselocaltime
+
 在运行驱动程序时间戳验证测试时使用本地时区。 默认情况下，使用 UTC。
 
-**/nocat**  
-禁止 () 创建目录。
+### <a name="verbose"></a>/verbose
 
-**/verbose**  
 配置 Inf2Cat 以在命令窗口中显示详细信息。
 
-**/?**  
+### <a name=""></a>/?
+
 配置 Inf2Cat 以在命令窗口中显示帮助信息。
 
-**/drm**  
+### <a name="drm"></a>/drm
+
 *不推荐使用的命令行参数。*  
 将 drm 签名特性添加到 .inf 文件中以添加 drm 签名属性。
 
-**/pe**  
+### <a name="pe"></a>/pe
+
 *不推荐使用的命令行参数。*  
 将 petrust 签名特性添加到 .inf 文件中，以添加 petrust 签名特性。
 
-**/pageHashes**  
+### <a name="pagehashes"></a>/pageHashes
+
 在文件中包含页面哈希。  可选择性地后跟文件列表。
 
 ## <a name="comments"></a>注释
@@ -133,9 +139,9 @@ Inf2Cat 工具已替换 Windows Vista 之前的 WDK 版本中包含的 Signabili
 
 Inf2Cat 工具将检查 [驱动程序包](../install/driver-packages.md) 的 .inf 文件中的结构错误，并验证驱动程序包是否可以进行数字签名。 只有在 INF 文件中引用的所有文件都存在并且源文件位于正确的位置时，才能对驱动程序包进行签名。 如果无法对 INF 文件进行签名，或者如果它包含结构性错误，则驱动程序包可能未正确安装，或者在安装过程中可能会错误地显示 "驱动程序签名警告" 对话框。
 
-只有在驱动程序包的 INF 文件中指定了目录文件，并且目录文件适用于一个或多个指定的 Windows 版本时，Inf2Cat 才会生成 [目录](../install/catalog-files.md) 文件。 如果 INF 文件的 [**Inf 版本部分**](../install/inf-version-section.md) 仅提供 **CatalogFile =**<em>filename.cat</em> 指令，则该目录文件适用于整个驱动程序包。 为了支持[跨平台安装](../install/creating-inf-files-for-multiple-platforms-and-operating-systems.md)，INF 文件应包含**CatalogFile。**<em>PlatformExtension</em> **=**<em>unique-filename.cat</em>指令。
+只有在驱动程序包的 INF 文件中指定了目录文件，并且目录文件适用于一个或多个指定的 Windows 版本时，Inf2Cat 才会生成 [目录](../install/catalog-files.md) 文件。 如果 INF 文件的 [**Inf 版本部分**](../install/inf-version-section.md) 仅提供 CatalogFile =*filename.cat* 指令，则该目录文件适用于整个驱动程序包。 为了支持[跨平台安装](../install/creating-inf-files-for-multiple-platforms-and-operating-systems.md)，INF 文件应包含 CatalogFile。*PlatformExtension* =*unique-filename.cat*指令。
 
-有关签署驱动程序包的详细信息，请参阅 [驱动程序签名](../install/driver-signing.md) 和 [设备和驱动程序安装基本主题](https://docs.microsoft.com/windows-hardware/drivers/install/device-and-driver-installation-fundamental-topics)。
+有关对驱动程序包进行签名的详细信息，请参阅 [驱动程序签名](../install/driver-signing.md)。
 
 ## <a name="examples"></a>示例
 

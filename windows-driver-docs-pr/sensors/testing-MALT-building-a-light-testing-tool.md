@@ -1,15 +1,15 @@
 ---
 title: " (MALT) 构建轻型测试工具"
-description: 本主题提供有关如何使用 MALT (Microsoft 环境光线工具) 作为轻测试解决方案的说明。
+description: 了解如何构建 MALT (Microsoft 环境光线工具) ，用于测试和校准屏幕亮度。
 ms.assetid: d045b771-b536-457c-897b-ecb6517bf0a8
 ms.date: 12/13/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 3e1ab774f6d049b7bd5f2a0699a9de15b7e946f1
-ms.sourcegitcommit: e6247811ff9a07070547af3d89705dae33a2f465
+ms.openlocfilehash: e27fce09398d1fcb17c74f2ca95eb17bf607266d
+ms.sourcegitcommit: 372464be981a39781c71049126f36891cb5d0cad
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/23/2020
-ms.locfileid: "91026442"
+ms.lasthandoff: 10/02/2020
+ms.locfileid: "91645977"
 ---
 # <a name="building-a-light-testing-tool-malt"></a> (MALT) 构建轻型测试工具
 

@@ -2,14 +2,14 @@
 title: WaveRT 微型端口驱动程序
 description: WaveRT 微型端口驱动程序
 ms.assetid: 154dc921-424f-4021-8f17-5482ceef99a8
-ms.date: 04/20/2017
+ms.date: 10/01/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: f91f04e5f652e62d7cc0ed59cedefe09bae7256c
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 4cc8738271105249b783fafda7063c06e2854a68
+ms.sourcegitcommit: 372464be981a39781c71049126f36891cb5d0cad
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90716620"
+ms.lasthandoff: 10/02/2020
+ms.locfileid: "91646051"
 ---
 # <a name="wavert-miniport-driver"></a>WaveRT 微型端口驱动程序
 
@@ -44,37 +44,32 @@ WaveRT 微型端口驱动程序必须实现两个接口：
 
 [IMiniportWaveRTStream](/windows-hardware/drivers/ddi/portcls/nn-portcls-iminiportwavertstream)接口继承[**IUnknown**](/windows/win32/api/unknwn/nn-unknwn-iunknown)接口中的方法。 IMiniportWaveRTStream 提供了以下附加方法：
 
-[**IMiniportWaveRTStream::AllocateAudioBuffer**](/previous-versions/windows/hardware/drivers/ff536744(v=vs.85))
+[**IMiniportWaveRTStream：： AllocateAudioBuffer**](/windows-hardware/drivers/ddi/portcls/nf-portcls-iminiportwavertstream-allocateaudiobuffer) 分配音频数据的循环缓冲区。
 
-分配音频数据的循环缓冲区。
+[**IMiniportWaveRTStream::FreeAudioBuffer**](/windows-hardware/drivers/ddi/portcls/nf-portcls-iminiportwavertstream-freeaudiobuffer)
 
-[**IMiniportWaveRTStream::FreeAudioBuffer**](/previous-versions/windows/hardware/drivers/ff536745(v=vs.85))
+释放以前使用对 [**IMiniportWaveRTStream：： AllocateAudioBuffer**](/windows-hardware/drivers/ddi/portcls/nf-portcls-iminiportwavertstream-allocateaudiobuffer)的调用分配的音频缓冲区。
 
-释放以前使用对 [**IMiniportWaveRTStream：： AllocateAudioBuffer**](/previous-versions/windows/hardware/drivers/ff536744(v=vs.85))的调用分配的音频缓冲区。
-
-[**IMiniportWaveRTStream::GetClockRegister**](/previous-versions/windows/hardware/drivers/ff536746(v=vs.85))
+[**IMiniportWaveRTStream::GetClockRegister**](/windows-hardware/drivers/ddi/portcls/nf-portcls-iminiportwavertstream-getclockregister)
 
 检索端口驱动程序必须用于向音频子系统及其客户端公开时钟寄存器的信息。
 
-[**IMiniportWaveRTStream::GetHWLatency**](/previous-versions/windows/hardware/drivers/ff536747(v=vs.85))
+[**IMiniportWaveRTStream::GetHWLatency**](/windows-hardware/drivers/ddi/portcls/nf-portcls-iminiportwavertstream-gethwlatency)
 
 检索有关音频硬件中的流延迟源的信息。
 
-[**IMiniportWaveRTStream::GetPosition**](/previous-versions/windows/hardware/drivers/ff536749(v=vs.85))
+[**IMiniportWaveRTStream::GetPosition**](/windows-hardware/drivers/ddi/portcls/nf-portcls-iminiportwavertstream-getposition)
 
 检索当前的播放位置或记录位置作为缓冲区开头的字节偏移量。
 
-[**IMiniportWaveRTStream::GetPositionRegister**](/previous-versions/windows/hardware/drivers/ff536752(v=vs.85))
+[**IMiniportWaveRTStream::GetPositionRegister**](/windows-hardware/drivers/ddi/portcls/nf-portcls-iminiportwavertstream-getpositionregister)
 
 检索端口驱动程序必须用于向音频子系统及其客户端公开位置注册的信息。
 
-[**IMiniportWaveRTStream::SetFormat**](/previous-versions/windows/hardware/drivers/ff536753(v=vs.85))
+[**IMiniportWaveRTStream::SetFormat**](/windows-hardware/drivers/ddi/portcls/nf-portcls-iminiportwavertstream-setformat)
 
 设置波形流的数据格式。
 
-[**IMiniportWaveRTStream：： SetState**](/previous-versions/windows/hardware/drivers/ff536756(v=vs.85))
+[**IMiniportWaveRTStream：： SetState**](/windows-hardware/drivers/ddi/portcls/nf-portcls-iminiportwavertstream-setstate)
 
 更改音频流的传输状态。
-
- 
-

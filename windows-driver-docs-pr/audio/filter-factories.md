@@ -12,12 +12,12 @@ keywords:
 - 实例化对 WDK 音频的筛选器
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: dcf93c2d0b7ae9bdd2875309e2f84ad540294c9a
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: a1c856196aa1e4362ce41513884e1dd0e174f2a2
+ms.sourcegitcommit: 372464be981a39781c71049126f36891cb5d0cad
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89209231"
+ms.lasthandoff: 10/02/2020
+ms.locfileid: "91645987"
 ---
 # <a name="filter-factories"></a>筛选器工厂
 
@@ -51,7 +51,7 @@ ms.locfileid: "89209231"
 
 [**PCNODE \_ 描述符**](/windows-hardware/drivers/ddi/portcls/ns-portcls-pcnode_descriptor)
 
-[**PCCONNECTION \_ 描述符**](/previous-versions/windows/hardware/drivers/ff537688(v=vs.85))
+[**PCCONNECTION \_ 描述符**](/windows-hardware/drivers/ddi/portcls/ns-portcls-_pcconnection_descriptor)
 
 若要从微型端口驱动程序获取筛选器描述符，端口驱动程序将调用 [**IMiniport：： GetDescription**](/windows-hardware/drivers/ddi/portcls/nf-portcls-iminiport-getdescription) 方法。
 

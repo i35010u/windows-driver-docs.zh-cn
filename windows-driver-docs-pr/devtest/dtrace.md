@@ -13,12 +13,12 @@ keywords:
 - 跟踪消息格式化文件 WDK
 ms.date: 11/14/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 1911cf1732ce9ebc5ca356b05ce4e25f721f56d0
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 3bee4d103a3628d66af26741b886f0d4adbd1a29
+ms.sourcegitcommit: 372464be981a39781c71049126f36891cb5d0cad
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90106806"
+ms.lasthandoff: 10/02/2020
+ms.locfileid: "91646020"
 ---
 # <a name="dtrace-on-windows"></a>Windows 上的 DTrace
 
@@ -49,8 +49,8 @@ Windows Github 站点上的 DTrace 位于此处：
 
 使用反馈中心请求新功能，或使用 Windows DTrace 报告任何问题或错误。
 
-1. 通过选择此链接从 Windows 电脑启动反馈中心 [https://windows-feedback:?contextid=1053](https://windows-feedback:?contextid=1053) 。
-2. 选择 " *添加新反馈*"。
+1. 启动反馈中心。 单击 "搜索"，输入 " *反馈*"，然后选择 " **反馈中心**"。
+2. 选择 " *建议功能* " 或 " *报告问题*"。
 3. 提供问题的详细特定说明或建议。
 
 ## <a name="dtrace-windows-extensions"></a>DTrace Windows 扩展
@@ -176,17 +176,15 @@ Traceext.sys (跟踪扩展) 是一个 Windows 内核扩展驱动程序，它允�
 
    适用于19H1 的 DTrace 存档版本适用于 [Windows 上存档的下载 dtrace](https://www.microsoft.com/download/58091)。 请注意，不再支持此版本的 DTrace。
 
+2. 下载 MSI 安装文件 (从 Microsoft 下载中心 [下载 Windows) 上的 DTrace](https://www.microsoft.com/download/details.aspx?id=100441) 。
 
-1. 从 Microsoft 下载中心下载 MSI 安装文件- [在 Windows 上下载 DTrace](https://www.microsoft.com/download/details.aspx?id=100441)。
-
-
-2. 选择 "完全安装"。
+3. 选择 "完全安装"。
 
     > [!IMPORTANT]
     > 使用 bcdedit 更改启动信息之前，你可能需要在测试电脑上暂时挂起 Windows 安全功能，如 Patchguard、BitLocker 和安全启动。
     > 当安全功能处于禁用状态时，在测试完成后重新启用这些安全功能，并对测试 PC 进行适当的管理。
 
-3. 使用 bcdedit 命令在计算机上启用 DTrace。  
+4. 使用 bcdedit 命令在计算机上启用 DTrace。  
 
 ```cmd
 bcdedit /set dtrace ON
@@ -209,7 +207,7 @@ REG ADD HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\DeviceGuard\ /v Enab
 
 ```cmd
 mkdir c:\symbols
-set _NT_SYMBOL_PATH=srv*C:\symbols*https://msdl.microsoft.com/download/symbols 
+set _NT_SYMBOL_PATH=srv*C:\symbols*https://msdl.microsoft.com/download/symbols
 ```
 
 有关符号路径的详细信息，请参阅 [Windows 调试器的符号路径](../debugger/symbol-path.md)。

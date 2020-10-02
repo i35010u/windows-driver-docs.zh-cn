@@ -1,14 +1,14 @@
 ---
 title: 在音频资源重新平衡和意外删除操作期间管理内存缓冲区
 description: 对于需要重新分配内存资源的某些 PCI 方案，将使用 PnP 重新平衡。 需要正确管理内存缓冲区以避免出现问题。
-ms.date: 12/05/2019
+ms.date: 10/01/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 35d45f3c98a8e1a0d02c826132310f31d43f10ad
-ms.sourcegitcommit: 9b4760aae390b36dbdf9e0dd729a4a643c3f7831
+ms.openlocfilehash: e388b62a0035a87dad890c03418bd6ed11b18c3a
+ms.sourcegitcommit: 372464be981a39781c71049126f36891cb5d0cad
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90565243"
+ms.lasthandoff: 10/02/2020
+ms.locfileid: "91646049"
 ---
 # <a name="managing-memory-buffers-during-audio-resource-rebalance-and-surprise-removal-operations"></a>在音频资源重新平衡和意外删除操作期间管理内存缓冲区
 
@@ -35,7 +35,7 @@ PnP "意外删除" (SR) 在设备意外从计算机中删除并且不再可用�
 
 如果流尚未处于 "停止" 状态，则*设置流状态* (。 ) 
 
-[IMiniportWaveRTStream：： SetState](/previous-versions/windows/hardware/drivers/ff536756(v=vs.85))
+[IMiniportWaveRTStream：： SetState](/windows-hardware/drivers/ddi/portcls/nf-portcls-iminiportwavertstream-setstate)
 
 *版本缓冲区*  
 
@@ -47,7 +47,7 @@ PnP "意外删除" (SR) 在设备意外从计算机中删除并且不再可用�
 
 当在正常操作过程中关闭流时，portcls 会调用波形 RT 的回调，使驱动程序停止其 DMA 操作并释放其关联的缓冲区：
 
-[IMiniportWaveRTStream：： SetState](/previous-versions/windows/hardware/drivers/ff536756(v=vs.85)) -> SETDMAENGINESTATE (HD 音频总线 DDI) 。 采取操作来启动/暂停 DMA。
+[IMiniportWaveRTStream：： SetState](/windows-hardware/drivers/ddi/portcls/nf-portcls-iminiportwavertstream-setstate) -> SETDMAENGINESTATE (HD 音频总线 DDI) 。 采取操作来启动/暂停 DMA。
 
 [IMiniportWaveRTStream：： FreeAudioBuffer](/windows-hardware/drivers/ddi/portcls/nf-portcls-iminiportwavertstream-freeaudiobuffer) 或 [IMiniportWaveRTStreamNotification：： FreeBufferWithNotification](/windows-hardware/drivers/ddi/portcls/nf-portcls-iminiportwavertstreamnotification-freebufferwithnotification)-> FreeDmaBuffer (HD 音频总线 DDI) 。
 

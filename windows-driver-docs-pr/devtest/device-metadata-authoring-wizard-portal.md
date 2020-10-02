@@ -9,20 +9,18 @@ keywords:
 - 设备元数据创作工具文档
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8e14a8dbe34c54776958e1860a2ccbb4db9f0890
-ms.sourcegitcommit: cbcb712a9f1f62c7d67e1b98097a0d8d24bd0c71
+ms.openlocfilehash: 761048e40bb455bdf0f84514d33302f2ed387246
+ms.sourcegitcommit: 372464be981a39781c71049126f36891cb5d0cad
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83769623"
+ms.lasthandoff: 10/02/2020
+ms.locfileid: "91646105"
 ---
 # <a name="device-metadata-authoring-wizard"></a>设备元数据创作向导
 
+\[本主题介绍 Windows 驱动程序工具包 (WDK) 8 中提供的设备元数据创作工具。 如果正在开发 Windows 8.1 设备体验，请使用 [Microsoft Visual Studio 2013 和 Windows 驱动程序工具包](https://www.microsoft.com/download/details.aspx?id=42273)随附的设备元数据创作向导 (WDK) 8.1。 \]
 
-\[本主题介绍 Windows 驱动程序工具包（WDK）8中提供的设备元数据创作工具。 如果正在开发 Windows 8.1 设备体验，请使用[Microsoft Visual Studio 2013 和 Windows 驱动程序工具包（WDK） 8.1](https://www.microsoft.com/download/details.aspx?id=42273)中提供的设备元数据创作向导。 \]
-
-## <a name="span-idpurposespanpurpose"></a><span id="purpose"></span>目的
-
+## <a name="purpose"></a>用途
 
 设备元数据创作向导是一种工具，设备制造商和服务操作员可使用此工具为其设备和服务开发元数据包。 此元数据包提供向 Windows 用户显示的信息，包括设备或服务的照片照片图标和名称。
 
@@ -30,26 +28,15 @@ ms.locfileid: "83769623"
 
 使用工具为设备或服务定义这些元素后，可以将最终包提交给 Microsoft 进行验证。
 
-## <a name="span-idin_this_sectionspanin-this-section"></a><span id="in_this_section"></span>本部分内容
+## <a name="in-this-section"></a>在此部分中
 
+- [安装设备元数据创作向导](installing-the-device-metadata-authoring-wizard.md)
+- [使用设备元数据创作向导](using-the-authoring-tool.md)
+- [使用移动宽带元数据创作向导](using-the-mobile-broadband-tool.md)
+- [排查元数据创作向导的问题](troubleshooting.md)
+- [XML 参考](xml-reference.md)
+- [其他资源](additional-resources.md)
 
--   [安装设备元数据创作向导](installing-the-device-metadata-authoring-wizard.md)
--   [使用设备元数据创作向导](using-the-authoring-tool.md)
--   [使用移动宽带元数据创作向导](using-the-mobile-broadband-tool.md)
--   [排查元数据创作向导的问题](troubleshooting.md)
--   [XML 参考](xml-reference.md)
--   [其他资源](additional-resources.md)
+## <a name="developer-audience"></a>开发人员受众
 
-## <a name="span-iddeveloper_audience_headingspandeveloper-audience"></a><span id="developer_audience_heading"></span>开发人员受众
-
-
-设备元数据创作向导旨在供独立硬件供应商（Ihv）、原始设备制造商（Oem）和移动宽带运营商使用。
-
- 
-
- 
-
-
-
-
-
+设备元数据创作向导设计用于独立硬件供应商 (Ihv) 、原始设备制造商 (Oem) 和移动宽带运营商。

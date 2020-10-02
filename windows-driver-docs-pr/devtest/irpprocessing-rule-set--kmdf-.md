@@ -1,15 +1,15 @@
 ---
 title: IrpProcessing 规则集 (KMDF)
-description: 使用这些规则验证你的驱动程序是否正确处理 (IRP) 的 i/o 请求包。
+description: 了解如何使用 (KMDF) 的规则来验证驱动程序是否正确地处理 i/o 请求数据包 (IRP) 。
 ms.assetid: B403F21E-FE35-4A57-92DB-C78FDC1488BD
 ms.date: 05/21/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 692c79bf5fe30ac7ce42d40273870e072400f84d
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 7946b6a2aa078e97f720cc86c0a40577cc51770b
+ms.sourcegitcommit: 372464be981a39781c71049126f36891cb5d0cad
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90101758"
+ms.lasthandoff: 10/02/2020
+ms.locfileid: "91646129"
 ---
 # <a name="irpprocessing-rule-set-kmdf"></a>IrpProcessing 规则集 (KMDF)
 
