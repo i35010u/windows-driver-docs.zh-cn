@@ -6,32 +6,32 @@ keywords:
 - Windows 筛选平台常量网络驱动程序
 ms.date: 11/07/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bf9739986639f77d014510098cc35a32c140f987
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: f106f520f6d0a119b011bcd00f29841bbd38af86
+ms.sourcegitcommit: e2de6b9ffb5c7356deb864f9da879533f49b25bf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89218286"
+ms.lasthandoff: 10/03/2020
+ms.locfileid: "91702644"
 ---
 # <a name="windows-filtering-platform-constants"></a>Windows 筛选平台常量
 
 本部分介绍 Windows 筛选平台标注驱动程序中使用的常量。
 
-## <a name="in-this-section"></a>本节内容
+## <a name="in-this-section"></a>在此部分中
 
 [内置的标注标识符](built-in-callout-identifiers.md)
 
-[筛选层标识符](filtering-layer-identifiers.md)
+[筛选层标识符](management-filtering-layer-identifiers.md)
 
-[筛选条件](filtering-conditions.md)
+[筛选条件](filtering-condition-identifiers.md)
 
-[元数据字段](metadata-fields.md)
+[元数据字段](metadata-field-identifiers.md)
 
 [数据字段标识符](data-field-identifiers.md)
 
 [数据偏移位置](data-offset-positions.md)
 
-[丢弃原因标识符](discard-reason-identifiers.md)
+[丢弃原因标识符](general-discard-reasons.md)
 
 ## <a name="related-topics"></a>相关主题
 

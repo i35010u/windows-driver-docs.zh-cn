@@ -10,12 +10,12 @@ keywords:
 - 标头-数据拆分提供程序 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9c2d88d641b420daf73aff6457cba39df7246cb3
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: a29aa242ad1b90ce081f865a8c446a7ae54477ed
+ms.sourcegitcommit: e2de6b9ffb5c7356deb864f9da879533f49b25bf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89207193"
+ms.lasthandoff: 10/03/2020
+ms.locfileid: "91702648"
 ---
 # <a name="splitting-ethernet-frames-overview"></a>拆分以太网帧概述
 
@@ -51,7 +51,7 @@ ms.locfileid: "89207193"
 
 [在 UDP 有效负载中拆分帧](splitting-frames-at-the-udp-payload.md)
 
-[拆分除 TCP 和 UDP 以外的帧](splitting-frames-other-than-tcp-and-udp.md)
+[拆分除 TCP 和 UDP 以外的帧](splitting-icmp-frames-and-other-upper-layer-protocol-frames.md)
 
  
 

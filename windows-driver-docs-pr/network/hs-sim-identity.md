@@ -7,12 +7,12 @@ keywords:
 - 从 Windows Vista 开始 PHS_SIM_IDENTITY 结构指针网络驱动程序
 ms.date: 07/31/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4eae7494769d6eb9290d545d9a16d6a09d3cb36c
-ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
+ms.openlocfilehash: 073f1810adf5baaea5d691232aeebd8e3c67852b
+ms.sourcegitcommit: e2de6b9ffb5c7356deb864f9da879533f49b25bf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89402974"
+ms.lasthandoff: 10/03/2020
+ms.locfileid: "91702672"
 ---
 # <a name="hs_sim_identity-structure"></a>HS \_ SIM \_ 标识结构
 
@@ -74,16 +74,9 @@ EAP 身份验证方法。
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Header</p></td>
+<td><p>标头</p></td>
 <td>Hotspotoffloadplugin (包含 Hotspotoffloadplugin) </td>
 </tr>
 </tbody>
 </table>
-
-## <a name="see-also"></a>另请参阅
-
-
-[可扩展身份验证协议](/previous-versions/windows/desktop/eap/eap-start-page)
-
- 
 

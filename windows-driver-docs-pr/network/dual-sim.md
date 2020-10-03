@@ -4,12 +4,12 @@ description: SIM 双卡
 ms.assetid: 18521fec-c9fb-48d0-9de2-d0482e4807d6
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a2b15390660342f986b176704362e81984cd0ec2
-ms.sourcegitcommit: b3e38d06762246c77cedd8e82d740ebea104c538
+ms.openlocfilehash: 0e504e2b06a4f4eb7d8d766197a2bccb20223069
+ms.sourcegitcommit: e2de6b9ffb5c7356deb864f9da879533f49b25bf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/02/2020
-ms.locfileid: "91662459"
+ms.lasthandoff: 10/03/2020
+ms.locfileid: "91702658"
 ---
 # <a name="dual-sim"></a>SIM 双卡
 
@@ -34,8 +34,6 @@ Windows Phone 8.1 GDR1 增加了对 C + G 的支持。
 ### <a name="cg"></a>C + G
 
 对于无线电类型为 C + G 的手机，包含 CDMA UICC 的槽始终使用执行器0。 如果有两个 GSM UICCs，则为数据行选择的 UICC 与执行器0相关联。
-
-有关配置 C + G 的详细信息，请参阅 [配置 c + g 双重 SIM 设置](/windows-hardware/customize/mobile/mcsf/configure-c-g-dual-sim-settings)。
 
 ## <a name="uicc-swapping"></a>UICC 交换
 
