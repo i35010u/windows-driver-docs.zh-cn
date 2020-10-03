@@ -7,12 +7,12 @@ keywords:
 - 网络驱动程序接口规范 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3a2211f732b6fac21d0a8796a0a499365dcf8068
-ms.sourcegitcommit: 2aedb606f9f14e74687f0d3da60e14fc6ffffa7e
+ms.openlocfilehash: d9edbce06861945501158920dad1b66c9926a213
+ms.sourcegitcommit: 29fee075ccc0a4eb1bf304cca4c04a6e57449d9d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91544430"
+ms.lasthandoff: 10/02/2020
+ms.locfileid: "91671231"
 ---
 # <a name="ndis-drivers-and-services"></a>NDIS 驱动程序和服务
 
@@ -20,7 +20,7 @@ NDIS 驱动程序和服务部分介绍了四种主要类型的内核模式网络
 
 本节包括：
 
-[NDIS 微型端口驱动程序](ndis-miniport-drivers.md)
+[NDIS 微型端口驱动程序](roadmap-for-developing-ndis-miniport-drivers.md)
 
 [NDIS 协议驱动程序](./roadmap-for-developing-ndis-protocol-drivers.md)
 
@@ -32,16 +32,16 @@ NDIS 驱动程序和服务部分介绍了四种主要类型的内核模式网络
 
 [NDIS 网络接口](ndis-network-interfaces2.md)
 
-[NDIS 端口](ndis-ports.md)
+[NDIS 端口](overview-of-ndis-ports.md)
 
-[NDIS 电源管理](ndis-power-management.md)
+[NDIS 电源管理](power-management--ndis-6-30-.md)
 
 [数据中心桥接的 NDIS QoS](ndis-qos-for-data-center-bridging.md)
 
-[NDIS 计时器服务](ndis-timer-services2.md)
+[NDIS 计时器服务](initializing-ndis-timers.md)
 
-[其他 NDIS 函数](miscellaneous-ndis-functions.md)
+[其他 NDIS 函数](ndis-configuration-functions.md)
 
-[NDIS 核心功能 OID](ndis-core-functionality-oids.md)
+[NDIS 核心功能 OID](ndis-general-statistics-oids.md)
 
-[NDIS 核心功能状态指示](ndis-core-functionality-status-indications.md)
+[NDIS 核心功能状态指示](ndis-general-status-indications.md)

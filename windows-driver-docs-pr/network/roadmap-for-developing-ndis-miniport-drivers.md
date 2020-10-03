@@ -4,12 +4,12 @@ description: NDIS 微型端口驱动程序开发路线图
 ms.assetid: 7cb56c08-3578-49d7-a0aa-a89dc6b139ca
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3f068b520110d3029534e6ebd17eabc2e089d1b3
-ms.sourcegitcommit: 2aedb606f9f14e74687f0d3da60e14fc6ffffa7e
+ms.openlocfilehash: f63b8a94048ce66db19bd1e3ebbb8d1dd28d353b
+ms.sourcegitcommit: 29fee075ccc0a4eb1bf304cca4c04a6e57449d9d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91544398"
+ms.lasthandoff: 10/02/2020
+ms.locfileid: "91671233"
 ---
 # <a name="roadmap-for-developing-ndis-miniport-drivers"></a>NDIS 微型端口驱动程序开发路线图
 
@@ -40,10 +40,9 @@ ms.locfileid: "91544398"
   构建驱动程序不同于构建用户模式应用程序。 有关 Windows 驱动程序生成、调试和测试过程、驱动程序签名和 [Windows 硬件认证工具包 (HCK) ](https://go.microsoft.com/fwlink/p/?LinkId=733613) 测试的详细信息，请参阅 [生成、调试和测试驱动程序](/windows-hardware/drivers)。 有关生成、测试、验证和调试工具的详细信息，请参阅 [驱动程序开发工具](../devtest/index.md)。
 
 - 步骤5：阅读微型端口驱动程序简介主题。
-  [NDIS 微型端口驱动程序](types-of-ndis-miniport-drivers.md) 
+  [NDIS 微型端口驱动程序](deserialized-ndis-miniport-drivers.md) 
    的类型[网络接口卡支持](network-interface-card-support.md) 
-  [微型端口驱动程序代码](important-features-of-miniport-driver-code.md) 
-   的重要功能[示例 NDIS 微型端口驱动程序](sample-ndis-miniport-drivers.md)
+  [示例 NDIS 微型端口驱动程序](sample-ndis-miniport-drivers.md)
 - 步骤6：阅读 [写入微型端口驱动程序部分](./initializing-a-miniport-driver.md)。
 
   本部分概述了主要微型端口驱动程序接口。 这些接口包含了微型端口驱动程序提供 (*MiniportXxx* 函数的函数) 和 NDIS 调用来启动操作。 NDIS 为 **ndis * Xxx*** 函数提供了微型端口驱动程序调用来执行 Ndis 操作的函数。
@@ -60,11 +59,11 @@ ms.locfileid: "91544398"
 
   [NDIS 分散/聚合 DMA](ndis-scatter-gather-dma.md)
 
-  [NDIS 电源管理](ndis-power-management.md)
+  [NDIS 电源管理](power-management--ndis-6-30-.md)
 
-  [NDIS 微型端口驱动程序的即插即用](plug-and-play-for-ndis-miniport-drivers.md)
+  [NDIS 微型端口驱动程序的即插即用](exporting-a-miniportdevicepnpeventnotify-function.md)
 
-  [重置、停止和关闭函数](reset--halt--and-shutdown-functions.md)
+  [重置、停止和关闭函数](hardware-reset.md)
 
   [具有 WDM 下接口的微型端口驱动程序](./miniport-drivers-with-a-wdm-lower-interface.md)
 

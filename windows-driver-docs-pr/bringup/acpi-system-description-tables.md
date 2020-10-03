@@ -4,12 +4,12 @@ description: " (ACPI) 硬件规范的高级配置和电源接口的实现在基�
 ms.assetid: 6EFCD288-031D-46BB-ABF3-8ADB53E7B4B1
 ms.date: 10/02/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 74f9fb2d34fee98e4a11e81fe382a819f2ba7a56
-ms.sourcegitcommit: b3e38d06762246c77cedd8e82d740ebea104c538
+ms.openlocfilehash: e7d73b0ca4dc0dd24baee1f35e49113e0a672a0c
+ms.sourcegitcommit: 29fee075ccc0a4eb1bf304cca4c04a6e57449d9d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 10/02/2020
-ms.locfileid: "91662445"
+ms.locfileid: "91671229"
 ---
 # <a name="acpi-system-description-tables"></a>ACPI 系统说明表
 
@@ -116,4 +116,4 @@ Windows 10 版本 1607
 
 ISCSI 启动固件 (iBF) Table (iBFT) 是一个信息块，其中包含可用于 iSCSI 启动过程的各种参数。 IBFT 是将 iBF 参数值传达给操作系统的机制。 IBF 在 iBFT 中生成并填充。 IBFT 可用于 Windows 操作系统，以实现一致的启动进程流。
 
-有关详细信息，请参阅 [ISCSI Boot 固件表 (iBFT) 规范 (.docx 下载) ](https://download.microsoft.com/download/7/e/7/7e7662cf-cbea-470b-a97e-ce7ce0d98dc2/iBFT.docx)。
+有关详细信息，请参阅 [ISCSI Boot 固件表 (iBFT) 规范 (.docx 下载) ](https://download.microsoft.com/download/1/e/5/1e5a2287-366c-431a-8e05-b958540230b1/iBFT.docx)。
