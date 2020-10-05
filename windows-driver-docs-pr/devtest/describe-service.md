@@ -6,12 +6,12 @@ keywords:
 - 在移动宽带元数据创作向导中描述服务
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c534f5e39b94e4a9df83df057dd2740a1188941c
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 4bf0caaab67eea403aef7eb505e498813ab939d2
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89382931"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91732759"
 ---
 # <a name="describe-your-service-in-the-mobile-broadband-metadata-authoring-wizard"></a>在移动宽带元数据创作向导中描述服务
 
@@ -29,4 +29,4 @@ ms.locfileid: "89382931"
 - **说明 1**。 此可选字段未在 Windows 8 中使用。
 - **描述 2**。 此可选字段未在 Windows 8 中使用。
 
-有关元数据属性的详细信息，请参阅 [服务元数据包架构参考](https://docs.microsoft.com/windows-hardware/drivers/mobilebroadband/service-metadata-package-schema-reference)。
+有关元数据属性的详细信息，请参阅 [服务元数据包架构参考](../mobilebroadband/mobilebroadbandinfo-xml-schema.md)。

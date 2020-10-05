@@ -13,12 +13,12 @@ keywords:
 - 辅助技术和镜像驱动程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e1b265718e51cbe78786e3edec110d9b6fbf1b7d
-ms.sourcegitcommit: f8619f20a0903dd64f8641a5266ecad6df5f1d57
+ms.openlocfilehash: 7db5dcd328e6c5ae61451f9a58a10fea1c218005
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91423553"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91734083"
 ---
 # <a name="mirror-drivers"></a>镜像驱动程序
 
@@ -34,7 +34,7 @@ ms.locfileid: "91423553"
 
 从 Windows 8 开始，镜像驱动程序将不会安装在系统上。 本节中所述的镜像驱动程序将仅在早期版本的 Windows 上安装和运行。
 
-但是，从 Windows 8 开始，可以使用一种特殊的 GDI 辅助功能驱动程序模型，开发人员需要为残障或障碍客户提供 [*辅助技术*](https://go.microsoft.com/fwlink/p/?linkid=248209) 中的镜像驱动程序功能。 若要了解有关此特殊驱动程序模型的详细信息，请联系 <acc_driver@microsoft.com> 。
+但是，从 Windows 8 开始，可以使用一种特殊的 GDI 辅助功能驱动程序模型，开发人员需要为残障或障碍客户提供 [*辅助技术*](/windows/apps/accessibility) 中的镜像驱动程序功能。 若要了解有关此特殊驱动程序模型的详细信息，请联系 <acc_driver@microsoft.com> 。
 
 基于镜像驱动程序体系结构的 *远程显示驱动程序* 模型也可以从 windows 8 开始运行，但在 windows 10 版本2004中已删除。 有关详细信息，请参阅 [远程显示驱动程序](remote-display-drivers.md)。
 

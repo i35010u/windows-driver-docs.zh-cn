@@ -3,12 +3,12 @@ description: 本主题为驱动程序开发人员提供了一些常见问题，�
 title: Windows 中的 USB - 常见问题解答
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 004234c434dc5d610edcb235a70e767e27f16140
-ms.sourcegitcommit: b3e38d06762246c77cedd8e82d740ebea104c538
+ms.openlocfilehash: 28b754c7edc731b1785950ea7b4b81161014aea2
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/02/2020
-ms.locfileid: "91662357"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91733317"
 ---
 # <a name="usb-in-windows---faq"></a>Windows 中的 USB - 常见问题解答
 
@@ -117,7 +117,7 @@ USB 3.0 xHCI 主机控制器完全向后兼容所有 USB 设备速度、SuperSpe
 
 如果 USB 2.0 端口通过 USB 2.0 集线器连接到 EHCI 控制器，则流量将通过 EHCI 控制器进行，并加载 USB 2.0 驱动程序堆栈。
 
-有关 USB 驱动程序堆栈中的驱动程序的详细信息，请参阅 [Windows 中的 USB 主机端驱动程序](https://go.microsoft.com/fwlink/p/?linkid=320134)。
+有关 USB 驱动程序堆栈中的驱动程序的详细信息，请参阅 [Windows 中的 USB 主机端驱动程序](/windows-hardware/drivers/ddi/)。
 
 如果 PC 的 USB 2.0 端口使用配套控制器，则端口路由到的主机控制器取决于设备速度。 例如，低速设备通过 UHCI 或 OHCI 控制器进行连接，并使用 USBUHCI 或 USBOHCI 驱动程序。 计算机将高速设备路由到 EHCI 控制器，因此，Windows 使用 USBEHCI 驱动程序。
 
@@ -153,11 +153,11 @@ USB 3.0 xHCI 主机控制器完全向后兼容所有 USB 设备速度、SuperSpe
 
 ![superspeed usb 设备高速操作](images/usb-high-speed-storage-device.jpg)
 
-如果你正在编写设备驱动程序，则 [USBView](https://go.microsoft.com/fwlink/p/?linkid=320135) 工具（包含在 Windows 驱动程序工具包 (WDK) 中）非常有用。 对于 Windows 8 WDK，Microsoft 更新了 USBView 以显示 SuperSpeed USB 信息。 你可以使用此工具来确定你的设备是否在 SuperSpeed 上运行。 此图显示了在 USBView 的 SuperSpeed 中运行的 USB 3.0 设备。
+如果你正在编写设备驱动程序，则 [USBView](../debugger/usbview.md) 工具（包含在 Windows 驱动程序工具包 (WDK) 中）非常有用。 对于 Windows 8 WDK，Microsoft 更新了 USBView 以显示 SuperSpeed USB 信息。 你可以使用此工具来确定你的设备是否在 SuperSpeed 上运行。 此图显示了在 USBView 的 SuperSpeed 中运行的 USB 3.0 设备。
 
 ![superspeed usb 设备在 superspeed 上运行](images/usb-superspeed-usbview.jpg)
 
-如果你是设备驱动程序开发人员，则 [USB 驱动程序堆栈](https://go.microsoft.com/fwlink/p/?linkid=320134) 会公开称为 [IOCTL \_ usb \_ 获取 \_ 节点 \_ 连接信息 \_ \_ \_ ](https://go.microsoft.com/fwlink/p/?linkid=320136)的新 IOCTL，例如 V2，你可以使用它来查询 USB 3.0 设备的速度信息。
+如果你是设备驱动程序开发人员，则 [USB 驱动程序堆栈](/windows-hardware/drivers/ddi/) 会公开称为 [IOCTL \_ usb \_ 获取 \_ 节点 \_ 连接信息 \_ \_ \_ ](/windows-hardware/drivers/ddi/usbioctl/ni-usbioctl-ioctl_usb_get_node_connection_information_ex_v2)的新 IOCTL，例如 V2，你可以使用它来查询 USB 3.0 设备的速度信息。
 
 ## <a name="why-isnt-my-superspeed-usb-device-faster-than-an-equivalent-high-speed-usb-device"></a>为什么 SuperSpeed USB 设备不能比等效的高速 USB 设备更快？
 
@@ -193,7 +193,7 @@ USB 3.0 xHCI 主机控制器完全向后兼容所有 USB 设备速度、SuperSpe
 
 ## <a name="is-it-possible-to-have-a-composite-and-a-compound-device-in-one-piece-of-hardware"></a>是否可以在一个硬件中创建复合设备和复合设备？
 
-是。 具有三端口总线供电集线器的 Microsoft 自然键盘专业人员是复合复合 USB 设备的一个示例。 设备已将复合设备连接到端口1。 另外两个端口向最终用户公开。
+是的。 具有三端口总线供电集线器的 Microsoft 自然键盘专业人员是复合复合 USB 设备的一个示例。 设备已将复合设备连接到端口1。 另外两个端口向最终用户公开。
 
 附加到端口1的设备是低速复合设备。 设备有两个接口，两者都符合 (HID) 的用户界面设备的 USB 标准设备类定义。 复合设备提供两个 HID 接口，而不是通过使用顶级集合在单个 HID 接口上对所有集合进行多路复用。 选择此设计是为了与较旧的 BIOSs 兼容。
 
@@ -365,8 +365,8 @@ Windows 支持将 USB 设备工作组 (DWG) 的多个 USB 类定义。 有关 US
 
 Microsoft 为大多数设备类型提供系统定义的安装程序类。 系统定义的安装程序类 Guid 是在 Devguid 中定义的。 有关其他信息，请参阅 WDK。 有关 Windows 类 Guid 的列表，请参阅以下主题：
 
-- [为供应商提供的系统定义的设备安装程序类](https://go.microsoft.com/fwlink/p/?linkid=320141)
-- [保留给系统使用的系统定义的设备安装程序类](https://go.microsoft.com/fwlink/p/?linkid=320142)
+- [为供应商提供的系统定义的设备安装程序类](../install/system-defined-device-setup-classes-available-to-vendors.md)
+- [保留给系统使用的系统定义的设备安装程序类](../install/system-defined-device-setup-classes-reserved-for-system-use.md)
 
 独立硬件供应商必须使用与 USB 设备类型（而不是总线类型）关联的安装程序类。 如果要开发的设备类型的 Microsoft 尚未提供现有的类 GUID，则可以定义新的设备安装程序类。
 
@@ -595,7 +595,7 @@ Needs = Composite.Dev
 
 ## <a name="does-windows-support-interface-association-descriptors"></a>Windows 是否支持接口关联描述符？
 
-是。 USB 2.0 接口关联描述符 (IAD) 工程更改通知 (ECN) 引入了新的标准方法，用于描述函数中的一组接口及其备用设置。 IAD 可用于标识一个函数中的两个或多个连续接口和备用设置。
+是的。 USB 2.0 接口关联描述符 (IAD) 工程更改通知 (ECN) 引入了新的标准方法，用于描述函数中的一组接口及其备用设置。 IAD 可用于标识一个函数中的两个或多个连续接口和备用设置。
 
 Microsoft 目前正在使用 Ihv 来开发支持 IAD 的设备。 以下操作系统支持 IAD：
 
@@ -609,7 +609,7 @@ Windows 附带的 USB 3.0 驱动程序堆栈支持此功能。
 
 ## <a name="can-a-driver-have-more-than-one-urb-in-an-irp"></a>某个驱动程序是否可以在 IRP 中具有多个 URB？
 
-否。 Windows 附带的 USB stack 不支持此功能。
+不是。 Windows 附带的 USB stack 不支持此功能。
 
 ## <a name="does-windows-support-usb-composite-hubs"></a>Windows 是否支持 USB 复合中心？
 

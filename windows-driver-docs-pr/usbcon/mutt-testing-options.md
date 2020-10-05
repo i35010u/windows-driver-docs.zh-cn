@@ -3,12 +3,12 @@ description: 使用 MUTT 设备之前，必须准备测试系统。
 title: 如何准备测试系统以运行 MUTT 测试工具
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 987a3b5227fbaffb0edae4fb15e38e84c858585d
-ms.sourcegitcommit: 937974aa9bbe0262a7ffe9631593fab48c4e7492
+ms.openlocfilehash: f85755e3ac6c669a35da9ab8049e486ce35b4221
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "90009829"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91732767"
 ---
 # <a name="how-to-prepare-the-test-system-to-run-mutt-test-tools"></a>如何准备测试系统以运行 MUTT 测试工具
 
@@ -35,7 +35,7 @@ ms.locfileid: "90009829"
 
 1.  将测试系统连接到内核调试器。
 
-    有关详细信息，请参阅 [下载并安装适用于 windows](https://go.microsoft.com/fwlink/p/?linkid=236405) 和 [Windows 调试](https://go.microsoft.com/fwlink/p/?linkid=242503)的调试工具。
+    有关详细信息，请参阅 [下载并安装适用于 windows](../download-the-wdk.md) 和 [Windows 调试](../debugger/index.md)的调试工具。
 
 2.  将 MUTT 设备连接到主机控制器或集线器的每个可用端口进行测试。
 

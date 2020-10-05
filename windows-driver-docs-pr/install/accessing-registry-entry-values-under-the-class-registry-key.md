@@ -4,12 +4,12 @@ description: 访问类注册表项下的注册表项值
 ms.assetid: 771b5751-db9f-43fa-90d1-1c43918a3a80
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d577bd3b765aed3cf27699a0e0813478b990d35e
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 9570d9debd51e2863a010edd32556ac77a66ce2a
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90717156"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91734359"
 ---
 # <a name="accessing-registry-entry-values-under-the-class-registry-key"></a>访问类注册表项下的注册表项值
 
@@ -36,11 +36,9 @@ Windows Server 2003、Windows XP 和 Windows 2000 还支持其中的大多数设
 
 -   将 *保留* 设置为 **NULL**。
 
-如果对 [**SetupDiOpenClassRegKeyEx**](/windows/win32/api/setupapi/nf-setupapi-setupdiopenclassregkeyexa) 的此调用成功，则 **SetupDiOpenClassRegKeyEx** 将返回请求的句柄。 如果函数调用失败，则 **SetupDiOpenClassRegKeyEx** 将返回 INVALID_HANDLE_VALUE 并且对 [GetLastError](https://go.microsoft.com/fwlink/p/?linkid=169416) 的调用将返回记录的错误代码。
+如果对 [**SetupDiOpenClassRegKeyEx**](/windows/win32/api/setupapi/nf-setupapi-setupdiopenclassregkeyexa) 的此调用成功，则 **SetupDiOpenClassRegKeyEx** 将返回请求的句柄。 如果函数调用失败，则 **SetupDiOpenClassRegKeyEx** 将返回 INVALID_HANDLE_VALUE 并且对 [GetLastError](/windows/win32/api/errhandlingapi/nf-errhandlingapi-getlasterror) 的调用将返回记录的错误代码。
 
-检索类注册表项的句柄之后，在对 [RegQueryValueEx](https://go.microsoft.com/fwlink/p/?linkid=95398) 和 [RegSetValueEx](https://go.microsoft.com/fwlink/p/?linkid=95399) 的调用中提供句柄，以检索或设置与设备安装程序类属性相对应的注册表项值。
+检索类注册表项的句柄之后，在对 [RegQueryValueEx](/windows/win32/api/winreg/nf-winreg-regqueryvalueexa) 和 [RegSetValueEx](/windows/win32/api/winreg/nf-winreg-regsetvalueexa) 的调用中提供句柄，以检索或设置与设备安装程序类属性相对应的注册表项值。
 
-调用 [RegCloseKey](https://go.microsoft.com/fwlink/p/?linkid=194543) 函数可在不再需要访问密钥后关闭类注册表项。
-
- 
+调用 [RegCloseKey](/windows/win32/api/winreg/nf-winreg-regclosekey) 函数可在不再需要访问密钥后关闭类注册表项。
 

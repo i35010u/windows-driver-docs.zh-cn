@@ -9,17 +9,17 @@ keywords:
 - 微型端口驱动程序 WDK 存储，ATA 微型端口驱动程序
 ms.date: 10/08/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 6800f55cdcdd0de004a2da9b32200ff52a1547cf
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 4b7c1fe645737f7ef86b8179ed34f35efdc32c90
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89192895"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91733723"
 ---
 # <a name="ata-miniport-drivers"></a>ATA 微型端口驱动程序
 
 > [!NOTE]
-> ATA 端口驱动程序和 ATA 微型端口驱动程序模型可能会在将来更改或不可用。 相反，我们建议使用 [storport 驱动](https://docs.microsoft.com/windows-hardware/drivers/storage/storport-driver) 程序和 [storport 微型端口](./storport-miniport-drivers.md) 驱动程序模型。
+> ATA 端口驱动程序和 ATA 微型端口驱动程序模型可能会在将来更改或不可用。 相反，我们建议使用 [storport 驱动](./storport-driver-overview.md) 程序和 [storport 微型端口](./storport-miniport-drivers.md) 驱动程序模型。
 
 ATA 微型端口驱动程序适用于 ATA 端口驱动程序。 此页列出 ATA 端口驱动程序调用的 ATA 微型端口驱动程序中实现的例程。 有关 ATA 微型端口驱动程序可调用的系统提供的 ATA 端口驱动程序例程的列表，请参阅 [Ata 端口驱动程序支持例程](ata-port-driver-support-routines.md) 。
 

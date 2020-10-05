@@ -4,12 +4,12 @@ description: Oplock 概述
 ms.assetid: 3b2895a2-9a2e-46eb-b8fb-47d6db4a1de0
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 20b90b081477717fecfbf112ca187e2e2cdbe998
-ms.sourcegitcommit: 3ef13fe08ce81186fc3bfcc9f9627b225f9b979d
+ms.openlocfilehash: a98fb421affe60527a61efa80097c52afd5ce08b
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90988915"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91733289"
 ---
 # <a name="oplock-overview"></a>Oplock 概述
 
@@ -49,9 +49,7 @@ Oplock 在流句柄上授予。 这意味着，对某个给定的流打开将授
 
 请记住，oplock 项存在于句柄上，并在创建句柄时 "put" 句柄。 即使未授予任何 oplock，你也可以将句柄与 oplock 项关联。
 
-**注意**   更准确地说，oplock 键与流句柄所引用的[**文件 \_ 对象**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_file_object)结构相关联。 当复制句柄时，这种区别很重要，例如 with [DuplicateHandle](https://go.microsoft.com/fwlink/p/?linkid=124237)。 每个重复的句柄都引用相同的基础 **文件 \_ 对象** 结构。
-
- 
+**注意**   更准确地说，oplock 键与流句柄所引用的[**文件 \_ 对象**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_file_object)结构相关联。 当复制句柄时，这种区别很重要，例如 with [DuplicateHandle](/windows/win32/api/handleapi/nf-handleapi-duplicatehandle)。 每个重复的句柄都引用相同的基础 **文件 \_ 对象** 结构。
 
  
 

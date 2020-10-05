@@ -9,12 +9,12 @@ keywords:
 - 缓冲区 WDK KMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f14d068af1f218d382d13fe165c4bcebd662f476
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: e856a1fb0cc150e8bb1643e1e43a046f03a5efce
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89184569"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91732571"
 ---
 # <a name="using-common-buffers"></a>使用常用缓冲区
 
@@ -36,7 +36,7 @@ DMA 设备的驱动程序有时必须分配设备和驱动程序都可以访问�
 
 -   调用 [**WdfCommonBufferGetAlignedVirtualAddress**](/windows-hardware/drivers/ddi/wdfcommonbuffer/nf-wdfcommonbuffer-wdfcommonbuffergetalignedvirtualaddress) 以获取缓冲区的虚拟地址，驱动程序可以访问该地址。
 
-下面的代码示例是从[PLX9x5x](https://go.microsoft.com/fwlink/p/?linkid=256157)示例的*Init .c*文件中获取的。 此代码显示了 KMDF 驱动程序如何分配通用缓冲空间。
+下面的代码示例是从[PLX9x5x](/samples/browse/)示例的*Init .c*文件中获取的。 此代码显示了 KMDF 驱动程序如何分配通用缓冲空间。
 
 ```cpp
 // Allocate common buffer for building writes

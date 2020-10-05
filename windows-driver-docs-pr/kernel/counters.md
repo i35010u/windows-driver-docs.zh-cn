@@ -8,12 +8,12 @@ keywords:
 - 统计值 WDK 内核
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2a5316a655e8db5657931a319373c8f92b3d5980
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 008644820429cd0018b1356b61169edff570ac0d
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89189811"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91732727"
 ---
 # <a name="counters"></a>计数器
 
@@ -23,7 +23,7 @@ ms.locfileid: "89189811"
 
 系统提供了若干返回各种计数值的驱动程序支持例程。
 
-[**KeQuerySystemTime**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kequerysystemtime)
+[**KeQuerySystemTime**](/windows-hardware/drivers/ddi/wdm/nf-wdm-kequerysystemtime)
 
 [**KeQueryInterruptTime**](/windows-hardware/drivers/ddi/wdm/nf-wdm-kequeryinterrupttime)
 
@@ -34,6 +34,4 @@ ms.locfileid: "89189811"
 [**KeQueryPerformanceCounter**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-kequeryperformancecounter)
 
 [**KeQueryTimeIncrement**](/windows-hardware/drivers/ddi/wdm/nf-wdm-kequerytimeincrement)
-
- 
 

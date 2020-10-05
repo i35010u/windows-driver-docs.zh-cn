@@ -5,12 +5,12 @@ ms.assetid: ec3e119e-662f-48a6-8c68-20da20590b24
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_RECEIVE_FILTER_SET_FILTER 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 13f1adc8b73f8b7ef2f7646129a8dacbdd1b3ed2
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 82ec5b468b2f7bad15c0cbf3779ea95d70c6dc36
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89206031"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91734179"
 ---
 # <a name="oid_receive_filter_set_filter"></a>OID \_ 接收 \_ 筛选器 \_ 集 \_ 筛选器
 
@@ -29,7 +29,7 @@ ms.locfileid: "89206031"
 
 NDIS 接收筛选器在以下 NDIS 接口中使用：
 
--   [NDIS 数据包合并](./ndis-packet-coalescing.md)。 有关如何在此接口中使用接收筛选器的详细信息，请参阅 [管理包合并接收筛选器](https://docs.microsoft.com/windows-hardware/drivers/network/managing-packet-coalescing-receive-filters)。
+-   [NDIS 数据包合并](./ndis-packet-coalescing.md)。 有关如何在此接口中使用接收筛选器的详细信息，请参阅 [管理包合并接收筛选器](./guidelines-for-managing-packet-coalescing-receive-filters.md)。
 
 -   [单个根 I/o 虚拟化 (sr-iov) ](./single-root-i-o-virtualization--sr-iov-.md)。 有关如何在此接口中使用接收筛选器的详细信息，请参阅 [设置虚拟端口上的接收筛选器](./setting-a-receive-filter-on-a-virtual-port.md)。
 

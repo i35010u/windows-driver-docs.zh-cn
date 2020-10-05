@@ -1,33 +1,33 @@
 ---
 title: 在 Windows 8.1 中创建设备后台任务
-description: 本主题介绍如何创建使用 DeviceUseTrigger 或 DeviceServicingTrigger 设备后台任务。
+description: 本主题介绍如何创建使用 DeviceUseTrigger 或 DeviceServicingTrigger 的设备后台任务。
 ms.assetid: 34263DB8-BB42-480B-AF7F-CC45772E6E84
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f47e173582c5007bb8ac90310926fd19ff49a2d1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2f790d0573efd3d49a295047f699ce357dd7504c
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63330669"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91732955"
 ---
-# <a name="creating-a-device-background-task-in-windows-81-uwp-device-apps"></a>在 Windows 8.1 （UWP 设备应用） 中创建设备后台任务
+# <a name="creating-a-device-background-task-in-windows-81-uwp-device-apps"></a>在 Windows 8.1 (UWP 设备应用中创建设备后台任务) 
 
 
-在 Windows 8.1，UWP 应用可以同步外围设备上的数据。 如果你的应用程序与设备元数据，该 UWP 设备应用还可以执行设备更新，例如固件更新。 本主题介绍如何创建使用的设备后台任务[DeviceUseTrigger](https://go.microsoft.com/fwlink/p/?LinkID=308967)或[DeviceServicingTrigger](https://go.microsoft.com/fwlink/p/?LinkID=308965)。 正在同步，并更新，设备使用这些触发器的后台代理将受到策略，确保用户同意和帮助保留的电池使用寿命，在设备时。 有关设备后台任务的详细信息，请参阅[设备同步和适用于 UWP 的设备应用程序更新](device-sync-and-update-for-uwp-device-apps.md)。
+在 Windows 8.1 中，UWP 应用可以同步外围设备上的数据。 如果你的应用程序与设备元数据相关联，则 UWP 设备应用还可以执行设备更新，例如固件更新。 本主题介绍如何创建使用 [DeviceUseTrigger](/uwp/api/Windows.ApplicationModel.Background.DeviceUseTrigger) 或 [DeviceServicingTrigger](/uwp/api/Windows.ApplicationModel.Background.DeviceServicingTrigger)的设备后台任务。 使用这些触发器的设备后台代理需遵守确保用户同意的策略，并在同步和更新设备时帮助保持电池寿命。 有关设备后台任务的详细信息，请参阅 [UWP 设备应用的设备同步和更新](device-sync-and-update-for-uwp-device-apps.md)。
 
-**请注意**本主题对应于[自定义 USB 设备示例](https://go.microsoft.com/fwlink/p/?LinkId=301975 )。 自定义 USB 设备示例演示一个执行 DeviceUseTrigger 与设备同步的后台任务。 若要查看执行 DeviceServicingTrigger 的固件更新的后台任务的示例，请下载[固件更新 USB 设备示例](https://go.microsoft.com/fwlink/p/?LinkId=309186)。
-
-
-
-尽管设备背景中的任务[自定义 USB 设备示例](https://go.microsoft.com/fwlink/p/?LinkId=301975 )功能 DeviceUseTrigger，本主题中介绍的所有内容也应用于设备的后台任务，使用 DeviceServicingTrigger。 使用两个触发器的唯一区别是所做的 Windows 策略检查。
-
-## <a name="span-idtheappmanifestspanspan-idtheappmanifestspanspan-idtheappmanifestspanthe-app-manifest"></a><span id="The_app_manifest"></span><span id="the_app_manifest"></span><span id="THE_APP_MANIFEST"></span>应用程序清单
+**注意**  本主题对应于 [自定义 USB 设备示例](https://go.microsoft.com/fwlink/p/?LinkId=301975 )。 自定义 USB 设备示例演示了使用 DeviceUseTrigger 执行设备同步的后台任务。 若要查看使用 DeviceServicingTrigger 执行固件更新的后台任务的示例，请下载 [固件更新 USB 设备示例](/samples/browse/)。
 
 
-若要使用的设备后台任务，您的应用程序必须在前台应用程序的应用清单文件中声明，如完成的系统触发后台任务。 有关详细信息，请参阅[设备同步和适用于 UWP 的设备应用程序更新](device-sync-and-update-for-uwp-device-apps.md)。
 
-在此示例中的应用程序包清单文件中，从**DeviceLibrary.SyncContent**是从前台应用程序入口点。 **DeviceLibrary.SyncContent**是使用的后台任务的入口点[DeviceUseTrigger](https://go.microsoft.com/fwlink/p/?LinkID=308967)。
+尽管 [自定义 USB 设备示例](https://go.microsoft.com/fwlink/p/?LinkId=301975 ) 中的设备后台任务具有 DeviceUseTrigger，但本主题中讨论的所有内容也可应用于使用 DeviceServicingTrigger 的设备后台任务。 使用这两个触发器的唯一区别是 Windows 进行的策略检查。
+
+## <a name="span-idthe_app_manifestspanspan-idthe_app_manifestspanspan-idthe_app_manifestspanthe-app-manifest"></a><span id="The_app_manifest"></span><span id="the_app_manifest"></span><span id="THE_APP_MANIFEST"></span>应用程序清单
+
+
+若要使用设备后台任务，你的应用程序必须在前台应用程序的应用程序清单文件中声明它，就像是针对系统触发的后台任务完成的。 有关详细信息，请参阅 [UWP 设备应用的设备同步和更新](device-sync-and-update-for-uwp-device-apps.md)。
+
+在此示例中，从应用程序包清单文件， **DeviceLibrary. SyncContent** 是前台应用的入口点。 **DeviceLibrary. SyncContent** 是使用 [DeviceUseTrigger](/uwp/api/Windows.ApplicationModel.Background.DeviceUseTrigger)的后台任务的入口点。
 
 ```XML
 <Extensions>
@@ -39,90 +39,80 @@ ms.locfileid: "63330669"
 </Extensions>
 ```
 
-## <a name="span-idthedevicebackgroundtaskspanspan-idthedevicebackgroundtaskspanspan-idthedevicebackgroundtaskspanthe-device-background-task"></a><span id="The_device_background_task"></span><span id="the_device_background_task"></span><span id="THE_DEVICE_BACKGROUND_TASK"></span>设备后台任务
+## <a name="span-idthe_device_background_taskspanspan-idthe_device_background_taskspanspan-idthe_device_background_taskspanthe-device-background-task"></a><span id="The_device_background_task"></span><span id="the_device_background_task"></span><span id="THE_DEVICE_BACKGROUND_TASK"></span>设备后台任务
 
 
-设备后台任务类实现`IBackgroundTask`接口并包含到任一同步创建或更新外围设备的实际代码。 触发后台任务时，从你的应用的应用程序清单中提供的入口点执行后台任务类。
+设备后台任务类实现 `IBackgroundTask` 接口，并包含您创建的用于同步或更新外围设备的实际代码。 当后台任务触发时，将执行后台任务类，并从应用程序的应用程序清单中提供的入口点执行。
 
-中的设备背景类[自定义 USB 设备示例](https://go.microsoft.com/fwlink/p/?LinkId=301975 )包含用于执行同步到 USB 设备使用的代码[DeviceUseTrigger](https://go.microsoft.com/fwlink/p/?LinkID=308967)后台任务。 有关完整详细信息，下载的示例。 有关实现详细信息`IBackgroundTask`，请参阅 Windows 的后台任务基础结构[支持使用后台任务对应用程序](https://go.microsoft.com/fwlink/p/?LinkID=254337)。
+[自定义 USB 设备示例](https://go.microsoft.com/fwlink/p/?LinkId=301975 )中的 device background 类包含使用[DeviceUseTrigger](/uwp/api/Windows.ApplicationModel.Background.DeviceUseTrigger)后台任务执行到 USB 设备的同步的代码。 有关完整的详细信息，请下载该示例。 有关实现 `IBackgroundTask` 和 Windows 的后台任务基础结构的详细信息，请参阅 [支持应用的后台任务](/previous-versions/windows/apps/hh977056(v=win.10))。
 
-密钥部分中的设备后台任务[自定义 USB 设备示例](https://go.microsoft.com/fwlink/p/?LinkId=301975 )包括：
+[自定义 USB 设备](https://go.microsoft.com/fwlink/p/?LinkId=301975 )中的设备后台任务的关键部分包括：
 
-1.  `IoSyncBackgroundTask`类实现`IBackgroundTask`Windows 后台任务基础结构所需的接口。
+1.  `IoSyncBackgroundTask`类实现 `IBackgroundTask` Windows 后台任务基础结构所需的接口。
 
-2.  `IoSyncBackgroundTask`类获取`DeviceUseDetails`实例传递给中的类`IoSyncBackgroundTask`类的 Run 方法，并使用此实例与报表进行备份到 Microsoft Store 应用，以及如何取消事件注册。
+2.  `IoSyncBackgroundTask`类获取 `DeviceUseDetails` 传递给类的 Run 方法中的类的实例 `IoSyncBackgroundTask` ，并使用此实例向 Microsoft Store 的应用程序报告进度并注册取消事件。
 
-3.  `IoSyncBackgroundTask`类的 Run 方法还会调用私有`OpenDevice`和`WriteToDeviceAsync`方法来实现后台设备同步的代码。
+3.  `IoSyncBackgroundTask`类的 Run 方法还 `OpenDevice` `WriteToDeviceAsync` 会调用实现后台设备同步代码的私有方法和方法。
 
-## <a name="span-idtheforegroundappspanspan-idtheforegroundappspanspan-idtheforegroundappspanthe-foreground-app"></a><span id="The_foreground_app"></span><span id="the_foreground_app"></span><span id="THE_FOREGROUND_APP"></span>前台应用程序
-
-
-在前台应用程序[自定义 USB 设备示例](https://go.microsoft.com/fwlink/p/?LinkId=301975 )注册，并触发使用的设备后台任务[DeviceUseTrigger](https://go.microsoft.com/fwlink/p/?LinkID=308967)。 本部分概述了前台应用程序进行注册，触发器并将处理设备后台任务的进度的步骤。
-
-在前台应用程序[自定义 USB 设备示例](https://go.microsoft.com/fwlink/p/?LinkId=301975 )将执行以下步骤以使用设备后台任务：
-
-1.  创建新[DeviceUseTrigger](https://go.microsoft.com/fwlink/p/?LinkID=308967)和`BackgroundTaskRegistration`对象。
-
-2.  检查以确定的任何后台任务之前是否已注册此应用，并通过调用取消它们[BackgroundTaskRegistration.Unregister](https://go.microsoft.com/fwlink/p/?LinkId=309315)任务方法。
-
-3.  私有`SetupBackgroundTask`方法与设备注册将同步的后台任务。 `SetupBackgroundTask`方法从调用`SyncWithDeviceAsync`下一步中的方法。
-
-    1.  初始化`DeviceUseTrigger`并将其保存以供将来使用。
-    2.  创建一个新`BackgroundTaskBuilder`对象，并使用其`Name`，`TaskEntryPoint`并`SetTrigger`属性和方法来注册应用程序的`DeviceUseTrigger`对象和后台任务名称。 `BackgroundTaskBuilder`对象的`TaskEntryPoint`属性设置为触发后台任务时都会运行的后台任务类的全名。
-    3.  注册的完成和从后台任务的进度事件，以便前台应用程序可以向用户提供完成和正在进行更新。
-
-4.  私有`SyncWithDeviceAsync`方法注册的后台任务，将设备与同步启动后台同步。
-
-    1.  调用`SetupBackgroundTask`前一步骤中的方法，并注册该设备将同步的后台任务。
-    2.  调用私有`StartSyncBackgroundTaskAsync`启动后台任务的方法。 方法关闭设备以确保后台任务的应用程序的句柄可以在启动时打开设备。
-
-        **重要**后台任务将需要打开设备以执行更新，因此前台应用程序必须关闭其连接到设备之前，调用`RequestAsync`。
+## <a name="span-idthe_foreground_appspanspan-idthe_foreground_appspanspan-idthe_foreground_appspanthe-foreground-app"></a><span id="The_foreground_app"></span><span id="the_foreground_app"></span><span id="THE_FOREGROUND_APP"></span>前景应用
 
 
+[自定义 USB 设备示例](https://go.microsoft.com/fwlink/p/?LinkId=301975 )中的前台应用会注册并触发使用[DeviceUseTrigger](/uwp/api/Windows.ApplicationModel.Background.DeviceUseTrigger)的设备后台任务。 本部分概述了前台应用注册、触发和处理设备后台任务的进度所需的步骤。
 
+[自定义 USB 设备示例](https://go.microsoft.com/fwlink/p/?LinkId=301975 )中的前景应用执行以下步骤以使用设备后台任务：
 
-    下一步，`StartSyncBackgroundTaskAsync`方法调用`DeviceUseTrigger`对象的`RequestAsync`方法，这将启动触发后台任务，并返回`DeviceTriggerResults`对象从`RequestAsync`用于确定是否已成功启动后台任务。
+1.  创建新的 [DeviceUseTrigger](/uwp/api/Windows.ApplicationModel.Background.DeviceUseTrigger) 和 `BackgroundTaskRegistration` 对象。
 
-    **重要**Windows 进行检查以确保所有必需的任务启动策略检查已完成。 如果所有策略都检查都已完成更新操作现在作为后台任务之外前台应用程序，可通过应用程序安全地挂起操作正在进行时运行。 Windows 还将强制执行任何运行时要求，并取消后台任务，如果不再满足这些要求。
+2.  检查此应用是否之前已注册了任何后台任务，并通过对任务调用 [BackgroundTaskRegistration](/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskRegistration) 方法来取消它们。
+
+3.  私有 `SetupBackgroundTask` 方法注册将与设备同步的后台任务。 在 `SetupBackgroundTask` `SyncWithDeviceAsync` 下一步中，从方法调用方法。
+
+    1.  初始化 `DeviceUseTrigger` 并保存它以供以后使用。
+    2.  创建一个新的 `BackgroundTaskBuilder` 对象，并使用其 `Name` 、 `TaskEntryPoint` 和 `SetTrigger` 属性和方法来注册应用程序的 `DeviceUseTrigger` 对象和后台任务名称。 `BackgroundTaskBuilder`对象的 `TaskEntryPoint` 属性设置为触发后台任务时要运行的后台任务类的全名。
+    3.  在后台任务中注册完成和进度事件，使前台应用程序可以为用户提供完成和进度更新。
+
+4.  私有 `SyncWithDeviceAsync` 方法将注册将与设备同步的后台任务，并启动后台同步。
+
+    1.  `SetupBackgroundTask`从上一步中调用方法，并注册将与设备同步的后台任务。
+    2.  调用私有 `StartSyncBackgroundTaskAsync` 方法，该方法可启动后台任务。 该方法将关闭应用程序的设备句柄，以确保后台任务在启动时能够打开设备。
+
+        **重要提示**  后台任务需要打开设备以执行更新，因此，在调用之前，前台应用程序必须关闭与设备的连接 `RequestAsync` 。
 
 
 
-3.  最后，`SyncWithDeviceAsync`方法使用`DeviceTriggerResults`从返回的对象`StartSyncBackgroundTaskAsync`以确定是否已成功启动后台任务。 Switch 语句用于检查的结果 `DeviceTriggerResults`
+
+    接下来，该 `StartSyncBackgroundTaskAsync` 方法调用 `DeviceUseTrigger` 对象的 `RequestAsync` 方法，该方法将触发后台任务并返回 `DeviceTriggerResults` 对象，该对象 `RequestAsync` 用于确定后台任务是否成功启动。
+
+    **重要提示**  Windows 将进行检查以确保所有必要的任务启动策略检查已完成。 如果所有策略检查都已完成，则更新操作现在作为前台应用的后台任务运行，从而允许在操作正在进行时安全挂起应用。 如果不再满足这些要求，Windows 还将强制实施任何运行时要求并取消后台任务。
 
 
-5.  前台应用程序实现私有`OnSyncWithDeviceProgress`事件处理程序将从设备后台任务的进度更新应用程序 UI。
 
-6.  前台应用程序实现私有`OnSyncWithDeviceCompleted`事件处理程序以处理从后台任务转换为前台应用程序时的后台任务已完成。
-
-    1.  使用`CheckResults`方法的`BackgroundTaskCompletedEventArgs`对象，以确定是否的后台任务引发任何异常。
-    2.  现在，后台任务已完成并更新 UI 以通知用户，前台应用程序重新打开适用于使用的设备应用程序的情况。
-
-7.  前台应用程序实现专用按钮单击事件处理程序从用户界面来启动和取消后台任务。
-
-    1.  私有`Sync_Click`事件处理程序调用`SyncWithDeviceAsync`上一步骤中所述的方法。
-    2.  私有`CancelSync_Click`事件处理程序调用私有`CancelSyncWithDevice`方法来取消后台任务。
-
-8.  私有`CancelSyncWithDevice`方法中注销，并取消任何活动设备同步，因此可以通过重新打开该设备[BackgroundTaskRegistration.Unregister](https://go.microsoft.com/fwlink/p/?LinkId=309315)方法。
-
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
+3.  最后，此 `SyncWithDeviceAsync` 方法使用 `DeviceTriggerResults` 从返回的对象 `StartSyncBackgroundTaskAsync` 来确定是否已成功启动后台任务。 Switch 语句用于检查中的结果 `DeviceTriggerResults`
 
 
-[自定义的 USB 设备示例](https://go.microsoft.com/fwlink/p/?LinkId=301975 )
+5.  前景应用实现一个专用 `OnSyncWithDeviceProgress` 事件处理程序，该处理程序将使用设备后台任务中的进度更新应用程序 UI。
 
-[固件更新 USB 设备示例](https://go.microsoft.com/fwlink/p/?LinkId=309186)
+6.  前台应用实现了一个专用 `OnSyncWithDeviceCompleted` 事件处理程序，用于处理后台任务完成时从后台任务过渡到前台应用的操作。
+
+    1.  使用 `CheckResults` 对象的方法 `BackgroundTaskCompletedEventArgs` 来确定由后台任务引发的任何异常。
+    2.  前台应用会重新打开设备供应用使用，现在后台任务已完成，并更新 UI 以通知用户。
+
+7.  前景应用实现专用按钮单击 UI 中的事件处理程序以启动和取消后台任务。
+
+    1.  专用 `Sync_Click` 事件处理程序调用 `SyncWithDeviceAsync` 前面步骤中描述的方法。
+    2.  专用 `CancelSync_Click` 事件处理程序调用私有 `CancelSyncWithDevice` 方法来取消后台任务。
+
+8.  私有 `CancelSyncWithDevice` 方法取消注册并取消任何活动设备同步，以便可以使用 [BackgroundTaskRegistration](/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskRegistration) 方法重新打开设备。
+
+## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
+
+
+[自定义 USB 设备示例](https://go.microsoft.com/fwlink/p/?LinkId=301975 )
+
+[固件更新 USB 设备示例](/samples/browse/)
 
 [UWP 设备应用的设备同步和更新](device-sync-and-update-for-uwp-device-apps.md)
 
-[启动、 恢复和多任务](https://go.microsoft.com/fwlink/p/?LinkId=309316)
+[Launching, resuming, and multitasking](/previous-versions/windows/apps/hh770837(v=win.10))
 
-[支持使用后台任务对应用程序](https://go.microsoft.com/fwlink/p/?LinkID=254337)
-
-
-
-
-
-
-
-
-
-
+[通过后台任务支持您的应用程序](/previous-versions/windows/apps/hh977056(v=win.10))

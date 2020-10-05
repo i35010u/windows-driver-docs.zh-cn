@@ -3,12 +3,12 @@ description: 控制器测试的目标是从集线器和设备生成一组完整�
 title: USB 主机控制器测试与 MUTT 设备
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b7555aaa7e368e5a50ffd6439164edcc8f9cf31e
-ms.sourcegitcommit: 937974aa9bbe0262a7ffe9631593fab48c4e7492
+ms.openlocfilehash: 1196792e09953e2505aa1a2f09f31ffc38155413
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "90009967"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91734329"
 ---
 # <a name="usb-host-controller-testing-with-mutt-devices"></a>USB 主机控制器测试与 MUTT 设备
 
@@ -30,7 +30,7 @@ ms.locfileid: "90009967"
 -   在 MUTT 设备附带的设备连接到 USB 控制器的建议配置中时，MUTT 应力和传输测试。 **RunTest.bat** 同时运行压力测试和传输测试。 请参阅 [如何为 MUTT 设备运行压力和传输性能测试](how-to-run-stress-and-transfer-and-super-mutt-performance-tests-for-mutt-devices.md)。
 -   SuperMUTT 性能测试。 请参阅 [如何运行超级 MUTT 性能测试](how-to-run-stress-and-transfer-and-super-mutt-performance-tests-for-mutt-devices.md#supermutt-perf)。
 -   设备基础测试。 有关详细信息，请参阅 [如何在 Visual Studio FOR MUTT 设备中运行 devfund 测试](how-to-run-device-fundamental-tests-in-visual-studio-for-connected-mutt-devices.md)。
--   控制器 Windows 硬件认证工具包测试。 有关详细信息，请参阅 [USB-IF 认证验证测试 (控制器) ](https://go.microsoft.com/fwlink/p/?linkid=316509)。
+-   控制器 Windows 硬件认证工具包测试。 有关详细信息，请参阅 [USB-IF 认证验证测试 (控制器) ](/previous-versions/windows/hardware/hck/jj124634(v=vs.85))。
 -   宿主控制器的手动测试用例，如部分的 Windows 测试指南文档中所示。
 
 ## <a name="topologies-for-usb-host-controller-testing-with-mutt-devices"></a>用于通过 MUTT 设备进行 USB 主机控制器测试的拓扑

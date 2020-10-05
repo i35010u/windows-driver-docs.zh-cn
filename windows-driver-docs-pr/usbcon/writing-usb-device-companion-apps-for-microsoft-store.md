@@ -3,12 +3,12 @@ description: Windows. u 命名空间提供 Api 以与外部 USB 设备进行通�
 title: USB 设备的 UWP 应用
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 30bd5cd719cad00928b6a1924533248087b7bcbc
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 8286300345fa1cf40baa41cb9ec532ec58cc6019
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90106924"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91733013"
 ---
 # <a name="uwp-app-for-a-usb-device"></a>USB 设备的 UWP 应用
 
@@ -71,9 +71,9 @@ Windows [**应用**](/uwp/api/Windows.Devices.Usb) 程序提供了一种方法�
 ## <a name="usb-samples"></a>USB 示例
 
 
--   [自定义 USB 设备访问示例](https://go.microsoft.com/fwlink/p/?linkid=309716)
--   [USB CDC 控制示例](https://go.microsoft.com/fwlink/p/?linkid=309716)
--   [固件更新 USB 设备示例](https://go.microsoft.com/fwlink/p/?linkid=309716)
+-   [自定义 USB 设备访问示例](/samples/browse/)
+-   [USB CDC 控制示例](/samples/browse/)
+-   [固件更新 USB 设备示例](/samples/browse/)
 
 ## <a name="what-are-the-limitations-of-the-namespace"></a>命名空间的限制是什么？
 

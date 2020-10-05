@@ -4,12 +4,12 @@ description: 关于参数类型
 ms.assetid: 392ea7b9-df6f-4d47-9367-a167c0656dd4
 ms.date: 07/20/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 0ad7876953026bf4cd0f347832df71950c1f1a66
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: a1631b4ba30182f1374d7cdc1227c0be8bb1fd39
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90105776"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91734149"
 ---
 # <a name="about-sensor-parameter-types"></a>关于传感器参数类型
 
@@ -42,7 +42,7 @@ ms.locfileid: "90105776"
 <td><p>此字符串是由特定传感器的驱动程序提供的唯一 ID。 对于特定设备上的每个传感器，此 ID 必须是唯一的。</p></td>
 </tr>
 <tr class="odd">
-<td><p><a href="https://go.microsoft.com/fwlink/p/?linkid=131486" data-raw-source="[IPortableDeviceValues](https://go.microsoft.com/fwlink/p/?linkid=131486)">IPortableDeviceValues</a></p></td>
+<td><p><a href="/windows-hardware/drivers/ddi/portabledevicetypes/nn-portabledevicetypes-iportabledevicevalues" data-raw-source="[IPortableDeviceValues](/windows-hardware/drivers/ddi/portabledevicetypes/nn-portabledevicetypes-iportabledevicevalues)">IPortableDeviceValues</a></p></td>
 <td><p>ppDataValues</p>
 <p>ppPropertyValues</p>
 <p>pPropertiesToSet</p>
@@ -51,23 +51,21 @@ ms.locfileid: "90105776"
 <p>如果需要新的对象，可以通过使用 <strong>CLSID_PortableDeviceValues</strong>调用 CoCreateInstance，从方法检索此接口。</p></td>
 </tr>
 <tr class="even">
-<td><p><a href="https://go.microsoft.com/fwlink/p/?linkid=131487" data-raw-source="[IPortableDeviceValuesCollection](https://go.microsoft.com/fwlink/p/?linkid=131487)">IPortableDeviceValuesCollection</a></p></td>
+<td><p><a href="/windows-hardware/drivers/ddi/portabledevicetypes/nn-portabledevicetypes-iportabledevicevaluescollection" data-raw-source="[IPortableDeviceValuesCollection](/windows-hardware/drivers/ddi/portabledevicetypes/nn-portabledevicetypes-iportabledevicevaluescollection)">IPortableDeviceValuesCollection</a></p></td>
 <td><p>pEventCollection</p>
 <p>ppSensorObjectCollection</p></td>
-<td><p>此 WPD 接口包含 <a href="https://go.microsoft.com/fwlink/p/?linkid=131486" data-raw-source="[IPortableDeviceValues](https://go.microsoft.com/fwlink/p/?linkid=131486)">IPortableDeviceValues</a> 对象的集合。 使用此接口的 DDI 方法使你能够同时提供多个数据集，例如多个事件或多个传感器的相关信息。</p>
+<td><p>此 WPD 接口包含 <a href="/windows-hardware/drivers/ddi/portabledevicetypes/nn-portabledevicetypes-iportabledevicevalues" data-raw-source="[IPortableDeviceValues](/windows-hardware/drivers/ddi/portabledevicetypes/nn-portabledevicetypes-iportabledevicevalues)">IPortableDeviceValues</a> 对象的集合。 使用此接口的 DDI 方法使你能够同时提供多个数据集，例如多个事件或多个传感器的相关信息。</p>
 <p>如果需要新的对象，可以通过使用 <strong>CLSID_PortableDeviceValuesCollection</strong>调用 CoCreateInstance，从方法检索此接口。</p></td>
 </tr>
 <tr class="odd">
-<td><p><a href="https://go.microsoft.com/fwlink/p/?linkid=131484" data-raw-source="[IPortableDeviceKeyCollection](https://go.microsoft.com/fwlink/p/?linkid=131484)">IPortableDeviceKeyCollection</a></p></td>
+<td><p><a href="/windows-hardware/drivers/ddi/portabledevicetypes/nn-portabledevicetypes-iportabledevicekeycollection" data-raw-source="[IPortableDeviceKeyCollection](/windows-hardware/drivers/ddi/portabledevicetypes/nn-portabledevicetypes-iportabledevicekeycollection)">IPortableDeviceKeyCollection</a></p></td>
 <td><p>pDataFields</p>
 <p>pProperties</p>
 <p>ppSupportedDataFields</p>
 <p>ppSupportedProperties</p></td>
-<td><p>此 WPD 接口包含 <strong>PROPERTYKEY</strong>的集合。 这些键表示可以由 <a href="https://go.microsoft.com/fwlink/p/?linkid=131486" data-raw-source="[IPortableDeviceValues](https://go.microsoft.com/fwlink/p/?linkid=131486)">IPortableDeviceValues</a>存储的属性名称。 DDI 使用此集合对象来设置和检索属性名称集或单个名称。</p>
+<td><p>此 WPD 接口包含 <strong>PROPERTYKEY</strong>的集合。 这些键表示可以由 <a href="/windows-hardware/drivers/ddi/portabledevicetypes/nn-portabledevicetypes-iportabledevicevalues" data-raw-source="[IPortableDeviceValues](/windows-hardware/drivers/ddi/portabledevicetypes/nn-portabledevicetypes-iportabledevicevalues)">IPortableDeviceValues</a>存储的属性名称。 DDI 使用此集合对象来设置和检索属性名称集或单个名称。</p>
 <p>如果需要新的对象，可以通过使用 <strong>CLSID_PortableDeviceKeyCollection</strong>调用 CoCreateInstance，从方法检索此接口。</p></td>
 </tr>
 </tbody>
 </table>
-
- 
 

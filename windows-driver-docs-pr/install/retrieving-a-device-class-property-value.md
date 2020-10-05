@@ -4,12 +4,12 @@ description: 检索设备类属性值
 ms.assetid: 50b16bd9-7f38-4128-af8f-8b39b099931f
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e780b118c1c8d6aa0aacb9c09c2077a7484ab0c6
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: e58acf71d44fd48a2f3c7f727deba680ffaee394
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90715438"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91732515"
 ---
 # <a name="retrieving-a-device-class-property-value"></a>检索设备类属性值
 
@@ -34,13 +34,13 @@ ms.locfileid: "90715438"
     -   将 *RequiredSize* 设置为 DWORD 类型化变量。
     -   如果设备类是设备安装程序类，请将 *Flags* 设置为 DICLASSPROP_INSTALLER。 否则，如果设备类是设备接口类，请将 *Flags* 设置为 DICLASSPROP_INTERFACE。
 
-    在对[**SetupDiGetClassProperty**](/windows/win32/api/setupapi/nf-setupapi-setupdigetclasspropertyw)的第一次调用时， **SetupDiGetClassProperty**将 \* *RequiredSize*设置为检索属性值所需的缓冲区大小（以字节为单位），记录错误代码 ERROR_INSUFFICIENT_BUFFER 并返回**FALSE**。 对 [GetLastError](https://go.microsoft.com/fwlink/p/?linkid=169416) 的后续调用将返回最近记录的错误代码。
+    在对[**SetupDiGetClassProperty**](/windows/win32/api/setupapi/nf-setupapi-setupdigetclasspropertyw)的第一次调用时， **SetupDiGetClassProperty**将 \* *RequiredSize*设置为检索属性值所需的缓冲区大小（以字节为单位），记录错误代码 ERROR_INSUFFICIENT_BUFFER 并返回**FALSE**。 对 [GetLastError](/windows/win32/api/errhandlingapi/nf-errhandlingapi-getlasterror) 的后续调用将返回最近记录的错误代码。
 
 2.  再次调用 **SetupDiGetClassProperty** ，并提供在第一次调用中提供的相同参数，但以下更改除外：
     -   将 *PropertyBuffer* 设置为指向接收属性值的缓冲区的指针。
     -   将 *PropertyBufferSize* 设置为 *PropertyBuffer* 缓冲区的所需大小（以字节为单位）。 第一次调用**SetupDiGetClassProperty**时，检索到 RequiredSize 中的*PropertyBuffer*缓冲区的所需大小 \* *RequiredSize*。
 
-如果对**SetupDiGetClassProperty**的第二次调用成功，则**SetupDiGetClassProperty**将 \* *PropertyType*设置为属性的属性数据类型标识符，将*PropertyBuffer*缓冲区设置为属性值，将 \* *RequiredSize*设置为检索到的属性值的大小（以字节为单位），并返回**TRUE**。 如果函数调用失败， **SetupDiGetDeviceProperty** 将返回 **FALSE** ，并且对 [GetLastError](https://go.microsoft.com/fwlink/p/?linkid=169416) 的调用将返回记录的错误代码。
+如果对**SetupDiGetClassProperty**的第二次调用成功，则**SetupDiGetClassProperty**将 \* *PropertyType*设置为属性的属性数据类型标识符，将*PropertyBuffer*缓冲区设置为属性值，将 \* *RequiredSize*设置为检索到的属性值的大小（以字节为单位），并返回**TRUE**。 如果函数调用失败， **SetupDiGetDeviceProperty** 将返回 **FALSE** ，并且对 [GetLastError](/windows/win32/api/errhandlingapi/nf-errhandlingapi-getlasterror) 的调用将返回记录的错误代码。
 
 ### <a name="retrieving-a-device-class-property-value-on-a-remote-computer"></a><a href="" id="retrieving-a-device-class-property-value-on-a-remote-computer"></a> 检索远程计算机上的设备类属性值
 
@@ -49,6 +49,4 @@ ms.locfileid: "90715438"
 -   调用 [**SetupDiGetClassPropertyEx**](/windows/win32/api/setupapi/nf-setupapi-setupdigetclasspropertyexw) 而不是 **SetupDiGetClassProperty**。
 
 -   除了提供**SetupDiGetDevicePropertyEx**和**SetupDiGetClassProperty**都需要的参数值，还需要提供*MachineName*参数，该参数必须设置为指向以 NULL 结尾的字符串的指针，该字符串包含计算机的 UNC 名称，包括 \\ \\ 前缀。
-
- 
 

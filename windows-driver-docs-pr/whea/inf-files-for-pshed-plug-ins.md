@@ -8,19 +8,19 @@ keywords:
 - INF 文件 WDK WHEA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 45f51a1da1e8c4385814c1206379bd99d930b480
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 382793bdbfde473d2188b0720b8252cc0121abda
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89209479"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91733092"
 ---
 # <a name="inf-files-for-pshed-plug-ins"></a>PSHED 插件的 INF 文件
 
 
-PSHED 插件由 [ (INF) 文件的信息](https://docs.microsoft.com/windows-hardware/drivers/install/inf-files)安装。 用于 PSHED 插件的 INF 文件包含以下标准 INF 文件部分：
+PSHED 插件由 [ (INF) 文件的信息](../install/overview-of-inf-files.md)安装。 用于 PSHED 插件的 INF 文件包含以下标准 INF 文件部分：
 
-[**INF Version 节**](../install/inf-version-section.md)
+[**INF 版本部分**](../install/inf-version-section.md)
 
 [**INF SourceDisksNames 节**](../install/inf-sourcedisksnames-section.md)
 
@@ -104,6 +104,4 @@ ServiceBinary = %12%\%FileName%
 %ServiceDesc% = "Example PSHED Plug-In"
 %PSHEDControlPath% = "System\CurrentControlSet\Control\PSHED\Plugins"
 ```
-
- 
 

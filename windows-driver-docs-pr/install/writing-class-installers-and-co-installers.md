@@ -9,12 +9,12 @@ keywords:
 - 编写共同安装程序 WDK 设备安装
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 38e84b1103be5bfe75f7e798f709bb81a1f1b05f
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: cf52b323101405a8f7a1d331e25c1eaf5f0fc404
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90717528"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91732813"
 ---
 # <a name="writing-class-installers-and-co-installers"></a>编写类安装程序和辅助安装程序
 
@@ -75,7 +75,5 @@ ms.locfileid: "90717528"
 
 在设备安装过程中，Windows 无法跟踪其他进程，也无法确定其执行时间或完成时间。 例如，当进程执行关键操作时，Windows 可以启动或停止设备或启动系统重新启动。
 
-在大多数情况下， *共同安装程序* 不应启动其他进程或服务。 但是，安装程序可以通过从通过[完成-安装操作](finish-install-actions--windows-vista-and-later-.md)显示的函数或对话框调用[CreateProcess](https://go.microsoft.com/fwlink/p/?linkid=194524)来安全地启动其他进程。 安装程序不得允许用户在对话框或过程中继续操作，直到创建的进程退出。
-
- 
+在大多数情况下， *共同安装程序* 不应启动其他进程或服务。 但是，安装程序可以通过从通过[完成-安装操作](finish-install-actions--windows-vista-and-later-.md)显示的函数或对话框调用[CreateProcess](/windows/win32/api/processthreadsapi/nf-processthreadsapi-createprocessa)来安全地启动其他进程。 安装程序不得允许用户在对话框或过程中继续操作，直到创建的进程退出。
 

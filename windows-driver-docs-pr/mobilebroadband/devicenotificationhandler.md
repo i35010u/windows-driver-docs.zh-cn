@@ -4,18 +4,18 @@ description: DeviceNotificationHandler
 ms.assetid: 04c4edb5-6dd1-4810-b23a-4f7ddc8af338
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 851629473690b9437a10e2a485397c9c7c6ddbe0
-ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
+ms.openlocfilehash: 842e008991f131b94af3df8f03403f274190ce7b
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89403416"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91733145"
 ---
 # <a name="devicenotificationhandler"></a>DeviceNotificationHandler
 
 [!include[MBAE deprecation warning](../includes/mbae-deprecation-warning.md)]
 
-DeviceNotificationHandler 元素指定设备通知处理程序。 设备通知处理程序允许您运行代码来响应事件，例如移动网络操作员管理 SMS 或 USSD 通知，即使 Microsoft Store 应用程序未运行也是如此。 有关实现通知处理程序的详细信息，请参阅 [移动运营商通知](https://go.microsoft.com/fwlink/?linkid=242062) 白皮书。
+DeviceNotificationHandler 元素指定设备通知处理程序。 设备通知处理程序允许您运行代码来响应事件，例如移动网络操作员管理 SMS 或 USSD 通知，即使 Microsoft Store 应用程序未运行也是如此。 有关实现通知处理程序的详细信息，请参阅 [移动运营商通知](./enabling-mobile-operator-notifications-and-system-events.md) 白皮书。
 
 ## <a name="span-idusagespanspan-idusagespanspan-idusagespanusage"></a><span id="Usage"></span><span id="usage"></span><span id="USAGE"></span>使用情况
 
@@ -36,9 +36,9 @@ DeviceNotificationHandler 元素指定设备通知处理程序。 设备通知�
 </colgroup>
 <thead>
 <tr class="header">
-<th>Attribute</th>
+<th>属性</th>
 <th>类型</th>
-<th>必选</th>
+<th>必须</th>
 <th>说明</th>
 </tr>
 </thead>
@@ -113,10 +113,4 @@ DeviceNotificationHandler 元素指定设备通知处理程序。 设备通知�
 DeviceNotificationHandler 元素是可选的。
 
  
-
- 
-
-
-
-
 

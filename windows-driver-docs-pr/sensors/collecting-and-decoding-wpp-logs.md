@@ -4,12 +4,12 @@ description: 本主题提供有关为传感器类扩展 (CX) 跟踪提供程序�
 ms.assetid: 174CDE37-D0D1-44BF-AD50-5A90C989FDE2
 ms.date: 07/20/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: a4534e5d13d1094b91ca9fb879112c5eabce2e0f
-ms.sourcegitcommit: 937974aa9bbe0262a7ffe9631593fab48c4e7492
+ms.openlocfilehash: 5ab1e5affcd24dc6c7aa521f8a81702f3e030812
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "90010587"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91734411"
 ---
 # <a name="collecting-and-decoding-wpp-logs"></a>收集和解码 WPP 日志
 
@@ -66,7 +66,7 @@ TRACE_LEVEL_PERF            6
 ## <a name="tracelog-macros"></a>Tracelog 宏
 
 
-下面是 WPP 宏及其关联的跟踪级别和跟踪标志。 MSG 参数是为 printf 函数定义的标准格式字符串。 合作伙伴还可以使用 WPP 扩展格式字符串。 有关此内容的详细信息，请参阅 MSD 上的 [WPP 扩展格式字符串](https://go.microsoft.com/fwlink/p/?linkid=324276) 主题。 换行符也包含在消息中，因此 \\ 不需要 "n"。
+下面是 WPP 宏及其关联的跟踪级别和跟踪标志。 MSG 参数是为 printf 函数定义的标准格式字符串。 合作伙伴还可以使用 WPP 扩展格式字符串。 有关此内容的详细信息，请参阅 MSD 上的 [WPP 扩展格式字符串](../devtest/what-are-the-wpp-extended-format-specification-strings-.md) 主题。 换行符也包含在消息中，因此 \\ 不需要 "n"。
 
 <table>
 <colgroup>
@@ -78,8 +78,8 @@ TRACE_LEVEL_PERF            6
 <thead>
 <tr class="header">
 <th>宏</th>
-<th>级别</th>
-<th>Flag</th>
+<th>Level</th>
+<th>标志</th>
 <th>参数</th>
 </tr>
 </thead>
@@ -111,7 +111,7 @@ TRACE_LEVEL_PERF            6
 <tr class="odd">
 <td><p>TraceVerbos</p></td>
 <td><p>TRACE_LEVEL_VERBOSE</p></td>
-<td><p>详细</p></td>
+<td><p>“详细”</p></td>
 <td><p>缺少</p></td>
 </tr>
 <tr class="even">
@@ -136,7 +136,7 @@ TRACE_LEVEL_PERF            6
 <td><p>CLX_FunctionEnter</p></td>
 <td><p>TRACE_LEVEL_VERBOSE</p></td>
 <td><p>EntryExit</p></td>
-<td><p>不可用</p></td>
+<td><p>空值</p></td>
 </tr>
 <tr class="even">
 <td><p>CLX_FunctionExit</p></td>
@@ -148,7 +148,7 @@ TRACE_LEVEL_PERF            6
 <td><p>SENSOR_FunctionEnter</p></td>
 <td><p>TRACE_LEVEL_VERBOSE</p></td>
 <td><p>EntryExit</p></td>
-<td><p>不可用</p></td>
+<td><p>空值</p></td>
 </tr>
 <tr class="even">
 <td><p>SENSOR_FunctionExit</p></td>
@@ -164,9 +164,7 @@ TRACE_LEVEL_PERF            6
 ## <a name="decoding-etl-logs"></a>解码 ETL 日志
 
 
-Tracefmt 工具用于解码 ETL 日志。 有关此工具的详细信息，请参阅 [Tracefmt](https://go.microsoft.com/fwlink/p/?linkid=324212)。
+Tracefmt 工具用于解码 ETL 日志。 有关此工具的详细信息，请参阅 [Tracefmt](../devtest/tracefmt.md)。
 
 如果要对传感器驱动程序进行更广泛的测试，请参阅 [测试通用传感器驱动程序] (test-your-universal-sensor-driver.md。
-
- 
 

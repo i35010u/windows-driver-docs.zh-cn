@@ -3,12 +3,12 @@ description: 下面是 Windows 8.1 中通用串行总线 (USB) 的新增功能�
 title: Windows 8.1-USB 的新增功能
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 60058a2169bedc092c6b2003055feca9f5fce321
-ms.sourcegitcommit: d965aed20311ab46f05ca944c565053b5a22df2b
+ms.openlocfilehash: ee508d2f3cb65f2f5afc07db7c0b1558f048d2a8
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91554219"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91734117"
 ---
 # <a name="windows-81-whats-new-for-usb"></a>Windows 8.1：USB 的新增功能
 
@@ -54,15 +54,15 @@ Windows 运行时提供新的命名空间： [**Windows. usb**](/uwp/api/Windows
 </thead>
 <tbody>
 <tr class="odd">
-<td><p><a href="" id="custom-usb-device-access-sample"></a><a href="https://go.microsoft.com/fwlink/p/?linkid=309716" data-raw-source="[Custom USB device access sample](https://go.microsoft.com/fwlink/p/?linkid=309716)">自定义 USB 设备访问示例</a></p></td>
+<td><p><a href="" id="custom-usb-device-access-sample"></a><a href="/samples/browse/" data-raw-source="[Custom USB device access sample](/samples/browse/)">自定义 USB 设备访问示例</a></p></td>
 <td><p>此示例演示如何与 USB 设备通信。 该示例可以与 OSR USB FX2 学习工具包和 SuperMUTT 设备通信。</p></td>
 </tr>
 <tr class="even">
-<td><p><a href="" id="usb-cdc-control-sample"></a><a href="https://go.microsoft.com/fwlink/p/?linkid=309716" data-raw-source="[USB CDC Control sample](https://go.microsoft.com/fwlink/p/?linkid=309716)">USB CDC 控制示例</a></p></td>
+<td><p><a href="" id="usb-cdc-control-sample"></a><a href="/samples/browse/" data-raw-source="[USB CDC Control sample](/samples/browse/)">USB CDC 控制示例</a></p></td>
 <td><p>此示例演示如何与 USB CDC (通信设备类) 设备通信，并通过串行端口（例如 USB 串行转换器电缆）发送和接收数据。</p></td>
 </tr>
 <tr class="odd">
-<td><p><a href="" id="firmware-update-usb-device-sample"></a><a href="https://go.microsoft.com/fwlink/p/?linkid=309716" data-raw-source="[Firmware Update USB Device sample](https://go.microsoft.com/fwlink/p/?linkid=309716)">固件更新 USB 设备示例</a></p></td>
+<td><p><a href="" id="firmware-update-usb-device-sample"></a><a href="/samples/browse/" data-raw-source="[Firmware Update USB Device sample](/samples/browse/)">固件更新 USB 设备示例</a></p></td>
 <td><p>此示例演示 UWP 应用如何可以更新 USB 设备的固件。 更新操作作为后台任务运行。</p></td>
 </tr>
 </tbody>

@@ -3,7 +3,7 @@ title: 查询系统事件日志中的硬件错误事件
 description: 查询系统事件日志中的硬件错误事件
 ms.assetid: e2290a1b-6fde-4843-9c52-17279f93a887
 keywords:
-- WDK WHEA，查询系统事件日志的事件
+- 事件 WDK WHEA，查询系统事件日志
 - 查询系统事件日志 WDK WHEA
 - 记录 WDK WHEA
 - WHEA WDK，查询系统事件日志
@@ -11,25 +11,25 @@ keywords:
 - 事件日志 WDK WHEA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: af9ba4cbe7d86f10285c774ddbe00a887d483d78
-ms.sourcegitcommit: cffd3bab903ac0a2412cc7df91584278e4fef179
+ms.openlocfilehash: 1dd6a23e29452131b43355b87426b2e52538e650
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67467826"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91733601"
 ---
 # <a name="querying-the-system-event-log-for-hardware-error-events"></a>查询系统事件日志中的硬件错误事件
 
 
-记录硬件错误事件提供程序的名称如下所示：
+记录硬件错误事件的提供程序的名称如下所示：
 
--   **Microsoft Windows 内核 WHEA** (Windows Vista)。
+-   **WHEA** (windows Vista) 。
 
--   **Microsoft Windows WHEA 记录器**（Windows Server 2008、 Windows Vista SP1 和更高版本）。
+-   **WHEA** (windows Server 2008、WINDOWS Vista SP1 及更高版本) 的记录器。
 
 ### <a name="windows-vista"></a>Windows Vista
 
-下面的代码示例显示如何查询系统事件日志，以检索 WHEA 以前未记录任何硬件错误事件。
+下面的代码示例演示如何查询系统事件日志，以检索先前由 WHEA 记录的任何硬件错误事件。
 
 ```cpp
 // Function to query the event log for hardware error events
@@ -74,9 +74,9 @@ VOID QueryHwErrorEvents(VOID) {
 }
 ```
 
-### <a name="windows-server-2008-windows-vista-sp1-and-later-versions"></a>Windows Server 2008、 Windows Vista SP1 和更高版本
+### <a name="windows-server-2008-windows-vista-sp1-and-later-versions"></a>Windows Server 2008、Windows Vista SP1 及更高版本
 
-下面的代码示例显示如何查询系统事件日志，以检索 WHEA 以前未记录任何硬件错误事件。
+下面的代码示例演示如何查询系统事件日志，以检索先前由 WHEA 记录的任何硬件错误事件。
 
 ```cpp
 // Function to query the event log for hardware error events
@@ -121,14 +121,9 @@ VOID QueryHwErrorEvents(VOID) {
 }
 ```
 
-**请注意**  的所有**Evt_Xxx_** 函数和 EVT\_*XXX*上一示例中使用的数据类型均记录在[Windows 事件日志](https://go.microsoft.com/fwlink/p/?linkid=81187)Microsoft Windows SDK 文档中的部分。
+**注意**   **Evt_Xxx_** \_ Microsoft Windows SDK 文档中的[Windows 事件日志](/windows/win32/wes/windows-event-log)部分介绍了前面的示例中使用的所有 Evt_Xxx_ 函数和 .evt*Xxx*数据类型。
 
  
 
  
-
- 
-
-
-
 

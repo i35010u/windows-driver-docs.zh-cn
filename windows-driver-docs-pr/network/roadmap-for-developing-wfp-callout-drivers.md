@@ -4,12 +4,12 @@ description: WFP 标注驱动程序开发路线图
 ms.assetid: 98c857d9-e4a6-4a7f-8427-642763864f3e
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3c42d19ea649e92b43b8c39b1ee69d40811ca7a0
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 95edfcfb769d73c352d74805f523d2b682523699
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89211601"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91734228"
 ---
 # <a name="roadmap-for-developing-wfp-callout-drivers"></a>WFP 标注驱动程序开发路线图
 
@@ -26,11 +26,11 @@ ms.locfileid: "89211601"
 
 -   步骤3：确定适用于 WFP 标注驱动程序的 Windows 驱动程序模型。
 
-    可以通过使用 Windows 驱动模型 (WDM) 或内核模式驱动程序框架 (KMDF) 来编写 WFP 标注驱动程序。 有关如何选择驱动程序模型的详细信息，请参阅 [选择驱动程序模型](../gettingstarted/choosing-a-driver-model.md)。 有关 WDM 的详细信息，请参阅 [Windows 驱动程序简介](https://docs.microsoft.com/windows-hardware/drivers/kernel/introduction-to-windows-drivers) 和 [编写 WDM 驱动程序](../kernel/writing-wdm-drivers.md)。 有关 KMDF 的详细信息，请参阅 [WDF 驱动程序开发指南](../wdf/index.md)。
+    可以通过使用 Windows 驱动模型 (WDM) 或内核模式驱动程序框架 (KMDF) 来编写 WFP 标注驱动程序。 有关如何选择驱动程序模型的详细信息，请参阅 [选择驱动程序模型](../gettingstarted/choosing-a-driver-model.md)。 有关 WDM 的详细信息，请参阅 [Windows 驱动程序简介](../kernel/overview-of-windows-components.md) 和 [编写 WDM 驱动程序](../kernel/writing-wdm-drivers.md)。 有关 KMDF 的详细信息，请参阅 [WDF 驱动程序开发指南](../wdf/index.md)。
 
 -   步骤4：确定其他 Windows 驱动程序设计决策。
 
-    有关如何进行其他 Windows 设计决策的信息，请参阅 [创建可靠的内核模式驱动程序](../kernel/creating-reliable-kernel-mode-drivers.md)、 [64 位驱动程序的编程问题](https://docs.microsoft.com/windows-hardware/drivers/kernel/programming-issues-for-64-bit-drivers)以及 [创建国际 INF 文件](../install/creating-international-inf-files.md)。
+    有关如何进行其他 Windows 设计决策的信息，请参阅 [创建可靠的内核模式驱动程序](../kernel/creating-reliable-kernel-mode-drivers.md)、 [64 位驱动程序的编程问题](../kernel/porting-your-driver-to-64-bit-windows.md)以及 [创建国际 INF 文件](../install/creating-international-inf-files.md)。
 
 -   步骤5：了解 Windows 驱动程序的生成、测试和调试过程和工具。
 
@@ -55,6 +55,4 @@ ms.locfileid: "89211601"
     最后一步是对 (可选) 进行签名，然后分发驱动程序。 如果你的驱动程序满足为 [Windows 硬件认证工具包 ](https://go.microsoft.com/fwlink/p/?LinkId=733613)定义的质量标准 (HCK) ，你可以通过 Microsoft Windows 更新计划分发该驱动程序。 有关如何分发驱动程序的详细信息，请参阅 [分发驱动程序](/windows-hardware/drivers)。
 
 这些是基本步骤。 根据单个驱动程序的需要，可能需要执行其他步骤。
-
- 
 

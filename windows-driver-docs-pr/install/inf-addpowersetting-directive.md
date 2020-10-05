@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7c3b310f02fa9ce1b8066e525fa07cc38d991b54
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: d22412084c56a59f9ac725df82f1c7bab0c7bc06
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89096555"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91732845"
 ---
 # <a name="inf-addpowersetting-directive"></a>INF AddPowerSetting 指令
 
@@ -260,7 +260,7 @@ range-minimum-value + k*range-increment
 <a href="" id="comment"></a>*条*  
 可用于帮助调试或提供有关设置的其他注释的可选值。 对于字符串资源，电源管理器不会结合或显示带有指定资源字符串的注释字符串。
 
-有关如何指定非特定语言的注册表值的详细信息，请参阅 [呈现 Shell 和注册表字符串](https://go.microsoft.com/fwlink/p/?linkid=70407)。
+有关如何指定非特定语言的注册表值的详细信息，请参阅 [呈现 Shell 和注册表字符串](/previous-versions//ms776232(v=vs.85))。
 
 <a name="examples"></a>示例
 --------
@@ -337,6 +337,4 @@ DC = 1
 [***DDInstall*.接口**](inf-ddinstall-interfaces-section.md)
 
 [***DDInstall*.服务器**](inf-ddinstall-services-section.md)
-
- 
 

@@ -6,12 +6,12 @@ keywords:
 - INF 文件系统，创建
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: abd4a2544e8684f08397ecb848ce3fadd9e7ddf1
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 4a216c2c1c199ea0bb649eb253252c8954396e03
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90106394"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91734535"
 ---
 # <a name="creating-an-inf-file-for-a-legacy-file-system-filter-driver"></a>为旧文件系统筛选器驱动程序创建 INF 文件
 
@@ -32,7 +32,7 @@ Windows 安装程序和设备安装程序服务（统称为 [setupapi.log](../in
 
 -   位于 WDK 安装目录的 bin SelfSign 目录中的 [**SignTool**](../devtest/signtool.md) 命令行工具 \\ \\ 可用于直接 "嵌入签名" 驱动程序的可执行文件。 出于性能方面的考虑，启动驱动程序必须包含一个嵌入签名。
 
--   给定一个 INF 文件后，可以使用 [**Inf2Cat**](../devtest/inf2cat.md) 命令行工具为驱动程序包创建编录 ( 类) 文件。 只有目录文件才能接收 [WHQL](https://go.microsoft.com/fwlink/p/?linkid=8705) 徽标签名。
+-   给定一个 INF 文件后，可以使用 [**Inf2Cat**](../devtest/inf2cat.md) 命令行工具为驱动程序包创建编录 ( 类) 文件。 只有目录文件才能接收 [WHQL](/previous-versions/windows/hardware/hck/jj124227(v=vs.85)) 徽标签名。
 
 -   使用管理员权限时，仍可以在从 Windows Vista 开始的基于 x64 的系统上安装未签名的驱动程序。 但是，驱动程序将无法加载 (，因此执行) ，因为它是无符号的。
 
@@ -92,12 +92,12 @@ CatalogFile =
 <thead>
 <tr class="header">
 <th align="left">条目</th>
-<th align="left">“值”</th>
+<th align="left">值</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><strong>签名</strong></p></td>
+<td align="left"><p><strong>信号</strong></p></td>
 <td align="left"><p>"$WINDOWS NT $"</p></td>
 </tr>
 <tr class="even">
@@ -223,7 +223,7 @@ AddReg         = MyLegacyFilter.AddRegistry
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">“值”</th>
+<th align="left">值</th>
 <th align="left">说明</th>
 </tr>
 </thead>
@@ -260,7 +260,7 @@ AddReg         = MyLegacyFilter.AddRegistry
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">“值”</th>
+<th align="left">值</th>
 <th align="left">说明</th>
 </tr>
 </thead>
@@ -305,7 +305,7 @@ AddReg         = MyLegacyFilter.AddRegistry
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">“值”</th>
+<th align="left">值</th>
 <th align="left">操作</th>
 </tr>
 </thead>
@@ -390,4 +390,3 @@ Disk1                     = "MyLegacyFilter Source Media"
 ```
 
 可以通过创建其他特定于区域设置的字符串来创建单个国际 INF 文件[**。**](../install/inf-strings-section.md)INF 文件中的*LanguageID*部分。 有关国际 INF 文件的详细信息，请参阅 [创建国际 Inf 文件](../install/creating-international-inf-files.md)。
-

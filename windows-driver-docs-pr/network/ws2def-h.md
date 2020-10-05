@@ -6,12 +6,12 @@ keywords:
 - Ws2def 网络驱动程序
 ms.date: 08/08/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6e4592ef434b81aa984c8a530d96c79344bb926b
-ms.sourcegitcommit: 29c2e6dd8a3de3c11822d990adf1edd774f8a136
+ms.openlocfilehash: 00836acd7b144aa117b11497816b0ee71a89d604
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91238775"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91734230"
 ---
 # <a name="ws2defh"></a>Ws2def.h
 
@@ -22,9 +22,9 @@ Ws2def 标头包含 Winsock2 规范的定义。 它包含在 Winsock2. h 中。 
 > [!IMPORTANT]
 > 本部分的主题包含以下内容的页面：定义、宏、Oid、状态指示和其他不属于网络驱动程序引用 (结构、枚举、函数和回调) 的数据结构。 
 >
-> 有关此标头的网络驱动程序参考的详细信息，请参阅 [Ws2def (reference) ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/mt808757(v=vs.85))。
+> 有关此标头的网络驱动程序参考的详细信息，请参阅 [Ws2def (reference) ](/previous-versions/windows/hardware/drivers/mt808757(v=vs.85))。
 
-## <a name="in-this-section"></a>在本节中
+## <a name="in-this-section"></a>在此部分中
 
 * [AF_INET](af-inet.md)
 * [AF_INET6](af-inet6.md)
@@ -36,6 +36,3 @@ Ws2def 标头包含 Winsock2 规范的定义。 它包含在 Winsock2. h 中。 
 * [SO_KEEPALIVE](so-keepalive.md)
 * [SO_RCVBUF](so-rcvbuf.md)
 * [SO_REUSEADDR](so-reuseaddr.md)
-
-
-

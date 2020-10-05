@@ -3,12 +3,12 @@ description: 在 Windows 8.1 中，可以编写与 USB 设备交互的 UWP 应�
 title: 如何连接到 USB 设备（UWP 应用）
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ce3edd0615594e62dd89f3610a70e048214b1576
-ms.sourcegitcommit: 937974aa9bbe0262a7ffe9631593fab48c4e7492
+ms.openlocfilehash: 2ea6c056698eae0c41603df6268fdeb5d62de7dd
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "90009883"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91733609"
 ---
 # <a name="how-to-connect-to-a-usb-device-uwp-app"></a>如何连接到 USB 设备（UWP 应用）
 
@@ -29,7 +29,7 @@ ms.locfileid: "90009883"
 ## <a name="before-you-start"></a>开始之前...
 
 
--   这是一个系列中的第一个主题。 开始本教程之前，必须已创建一个可在本教程中扩展的基本 Visual Studio 项目。 有关详细信息，请阅读 [UWP 应用](https://go.microsoft.com/fwlink/p/?linkid=617681) 入门。
+-   这是一个系列中的第一个主题。 开始本教程之前，必须已创建一个可在本教程中扩展的基本 Visual Studio 项目。 有关详细信息，请阅读 [UWP 应用](/windows/uwp/get-started/) 入门。
 -   代码示例基于 CustomUsbDeviceAccess 示例。 您可以从此代码库页下载完整的示例。
 -   本教程中使用的 USB 设备是 SuperMUTT 设备。
 -   为了使用 [**windows. u**](/uwp/api/Windows.Devices.Usb) 命名空间来编写与 Usb 设备交互的 windows 应用程序，设备必须将 Winusb.sys 驱动程序加载为其函数驱动程序。 Winusb.sys 由 Microsoft 提供，并包含在** \\ windows \\ System32 \\ 驱动程序**文件夹中的 windows 中。
@@ -55,7 +55,7 @@ ms.locfileid: "90009883"
 
 但是，在 Winusb.sys 的情况下，它可以通过以下两种方式之一提供，而不是驱动程序公开设备接口 GUID：
 
--   在设备的 MS OS 描述符中。 设备制造商将 **DeviceInterfaceGUID** 设置为设备中扩展属性描述符中的自定义属性。 有关更多详细信息，请参阅 [MICROSOFT OS 描述符](https://go.microsoft.com/fwlink/p/?linkid=617682)中的 "扩展属性描述符" 文档。
+-   在设备的 MS OS 描述符中。 设备制造商将 **DeviceInterfaceGUID** 设置为设备中扩展属性描述符中的自定义属性。 有关更多详细信息，请参阅 [MICROSOFT OS 描述符](/previous-versions/gg463179(v=msdn.10))中的 "扩展属性描述符" 文档。
 -   如果通过自定义 INF 手动安装 Winusb.sys，则 INF 会在 INF 中注册一个 GUID。 请参阅 [WinUSB ( # A0) 安装](winusb-installation.md)。
 
 如果找到设备的设备接口 GUID，则 UWP 应用可查找与该设备接口 GUID 匹配的所有设备。
@@ -211,6 +211,4 @@ void CreateSuperMuttDeviceWatcher(void)
 C + + 应用程序必须使用 **delete** 关键字发布引用。 C #/VB 应用程序必须调用 [**UsbDevice**](/uwp/api/Windows.Devices.Usb.UsbDevice#Windows_Devices_Usb_UsbDevice_Dispose) 方法。 JavaScript 应用程序必须调用 [**UsbDevice**](/uwp/api/Windows.Devices.Usb.UsbDevice#Windows_Devices_Usb_UsbDevice_Close)。
 
 如果设备正在使用或找不到， [**FromIdAsync**](/uwp/api/Windows.Devices.Usb.UsbDevice#Windows_Devices_Usb_UsbDevice_FromIdAsync_System_String_) 将失败。
-
- 
 

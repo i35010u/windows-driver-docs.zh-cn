@@ -7,12 +7,12 @@ keywords:
 - 设备接口类 WDK 设备安装
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d299961145fef18b59a804bcfd11e5a2833f111d
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: a11bde08e76039464611d2d774d6e18238c8ac12
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89096543"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91733665"
 ---
 # <a name="using-a-device-interface"></a>使用设备接口
 
@@ -32,7 +32,5 @@ ms.locfileid: "89096543"
 
 2.  获取一个指针，该指针指向与接口的实例相对应的设备或文件对象。
 
-    若要访问特定设备对象，驱动程序必须调用 [**plxntb**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetdeviceobjectpointer)，并在 *ObjectName* 参数中传递所需接口的 Unicode 字符串。 若要访问文件对象，驱动程序必须调用 [**InitializeObjectAttributes**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfwdm/nf-wudfwdm-initializeobjectattributes)，在 *ObjectName* 参数中传递 Unicode 字符串，然后在对 [**ZwCreateFile**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ntcreatefile)的调用中传递已成功初始化的属性结构。
-
- 
+    若要访问特定设备对象，驱动程序必须调用 [**plxntb**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetdeviceobjectpointer)，并在 *ObjectName* 参数中传递所需接口的 Unicode 字符串。 若要访问文件对象，驱动程序必须调用 [**InitializeObjectAttributes**](/windows-hardware/drivers/ddi/wudfwdm/nf-wudfwdm-initializeobjectattributes)，在 *ObjectName* 参数中传递 Unicode 字符串，然后在对 [**ZwCreateFile**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ntcreatefile)的调用中传递已成功初始化的属性结构。
 

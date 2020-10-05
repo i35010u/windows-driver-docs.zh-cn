@@ -3,12 +3,12 @@ description: 本部分介绍 USB 驱动程序开发。
 title: USB 客户端驱动程序开发的首要步骤
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: dfa6520f2aefa34657bfa85ef9ec108f43b87be5
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 573f3143530a67b9447c3ae596a8110b9a33b831
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90102904"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91734327"
 ---
 # <a name="first-steps-for-usb-client-driver-development"></a>USB 客户端驱动程序开发的首要步骤
 
@@ -41,12 +41,12 @@ ms.locfileid: "90102904"
 <td><ul>
 <li>具有 USB 设备及其硬件规范。 该规范描述了设备功能和支持的供应商命令。 使用规范来确定设备驱动程序的功能以及相关的设计决策。</li>
 <li>如果你不熟悉 USB 驱动程序开发，请使用 OSR USB FX2 学习工具包。 此工具包最适合学习本文档集中包括的 USB 示例。 可以从 <a href="https://go.microsoft.com/fwlink/p/?linkid=617553" data-raw-source="[OSR Online](https://go.microsoft.com/fwlink/p/?linkid=617553)">OSR Online</a>获取学习工具包。</li>
-<li>使用 Microsoft USB 测试工具 (MUTT) 设备。 可以从 <a href="https://go.microsoft.com/fwlink/p/?linkid=617554" data-raw-source="[JJG Technologies](https://go.microsoft.com/fwlink/p/?linkid=617554)">JJG 技术</a>购买 MUTT 硬件。 设备未安装安装的固件。 若要安装固件，请 <a href="https://go.microsoft.com/fwlink/p/?linkid=617555" data-raw-source="[download the MUTT software package](https://go.microsoft.com/fwlink/p/?linkid=617555)">下载 MUTT</a>软件包，并运行 MUTTUtil.exe。 有关详细信息，请参阅包附带的文档。</li>
+<li>使用 Microsoft USB 测试工具 (MUTT) 设备。 可以从 <a href="https://go.microsoft.com/fwlink/p/?linkid=617554" data-raw-source="[JJG Technologies](https://go.microsoft.com/fwlink/p/?linkid=617554)">JJG 技术</a>购买 MUTT 硬件。 设备未安装安装的固件。 若要安装固件，请 <a href="/windows-hardware/drivers/usbcon/" data-raw-source="[download the MUTT software package](./index.md)">下载 MUTT</a>软件包，并运行 MUTTUtil.exe。 有关详细信息，请参阅包附带的文档。</li>
 </ul></td>
 </tr>
 <tr class="odd">
 <td><p><strong>步骤 3</strong>-研究 <a href="usb-device-layout.md" data-raw-source="[USB device layout](usb-device-layout.md)">usb 设备布局</a> 和相关 <a href="usb-descriptors.md" data-raw-source="[USB descriptors](usb-descriptors.md)">usb 描述符</a>。</p></td>
-<td>通过阅读配置描述符、每个受支持的备用设置的接口描述符及其终结点描述符来描述你的设备功能。 通过使用 <a href="https://go.microsoft.com/fwlink/p/?linkid=617556" data-raw-source="[USBView](https://go.microsoft.com/fwlink/p/?linkid=617556)">USBView</a>，你可以浏览所有 usb 控制器和连接到它们的 usb 设备，还可以检查设备配置。</td>
+<td>通过阅读配置描述符、每个受支持的备用设置的接口描述符及其终结点描述符来描述你的设备功能。 通过使用 <a href="/windows-hardware/drivers/debugger/usbview" data-raw-source="[USBView](../debugger/usbview.md)">USBView</a>，你可以浏览所有 usb 控制器和连接到它们的 usb 设备，还可以检查设备配置。</td>
 </tr>
 <tr class="even">
 <td><p><strong>步骤 4</strong>-<a href="winusb-considerations.md" data-raw-source="[Choose a driver model for developing a USB client driver](winusb-considerations.md)">选择用于开发 USB 客户端驱动程序的驱动程序模型</a>。</p></td>
@@ -114,11 +114,11 @@ ms.locfileid: "90102904"
 <a href="" id="osr-online-lists---ntdev"></a>[OSR Online 列表-ntdev](https://go.microsoft.com/fwlink/p/?linkid=617582)  
 由 [OSR Online](https://go.microsoft.com/fwlink/p/?linkid=617590) 管理的讨论列表，适用于内核模式驱动程序开发人员。
 
-<a href="" id="usb-technologies"></a>[USB 技术](https://go.microsoft.com/fwlink/p/?linkid=617583)  
+<a href="" id="usb-technologies"></a>[USB 技术](../index.yml)  
 各种基于常见问题的资源，这些问题由不熟悉 Windows 操作系统的 USB 设备和驱动程序开发的开发人员提出。
 
 <a href="" id="windows-dev-center-for-hardware-development"></a>[用于硬件开发的 Windows 开发人员中心](https://go.microsoft.com/fwlink/p/?linkid=617584)  
-[下载用于驱动程序开发的最新工具](https://go.microsoft.com/fwlink/p/?linkid=617585)，通过 [windows 认证计划](https://go.microsoft.com/fwlink/p/?linkid=617591)确保你的产品可靠且与 windows 兼容，并了解 [windows 驱动程序示例](https://go.microsoft.com/fwlink/p/?LinkId=616507)。
+[下载用于驱动程序开发的最新工具](https://go.microsoft.com/fwlink/p/?linkid=617585)，通过 [windows 认证计划](/previous-versions/windows/hardware/hck/jj124227(v=vs.85))确保你的产品可靠且与 windows 兼容，并了解 [windows 驱动程序示例](https://go.microsoft.com/fwlink/p/?LinkId=616507)。
 
 ## <a name="related-topics"></a>相关主题
 [ (USB) 驱动程序的通用串行总线](../index.yml)  

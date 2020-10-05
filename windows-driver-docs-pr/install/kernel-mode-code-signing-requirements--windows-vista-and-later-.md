@@ -11,12 +11,12 @@ keywords:
 - 内核模式驱动程序签名 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c55624a8d1edea10ac43b247b53d363644233b8c
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: e096bcaf5206f681a9cfa8c34d9d47ea77e826af
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89096331"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91733503"
 ---
 # <a name="kernel-mode-code-signing-requirements"></a>内核模式代码签名要求
 
@@ -45,7 +45,7 @@ ms.locfileid: "89096331"
 <a href="" id="32-bit-versions-of-windows"></a>**32位版本的 Windows**  
 Windows Vista 和更高版本的 Windows 仅对以下驱动程序强制实施内核模式驱动程序签名策略：
 
--   流式传输受保护媒体的驱动程序。 有关这些要求的详细信息，请参阅 [Windows Vista 和更高版本 (受保护媒体组件的代码签名) ](https://go.microsoft.com/fwlink/p/?linkid=69258)
+-   流式传输受保护媒体的驱动程序。 有关这些要求的详细信息，请参阅 [Windows Vista 和更高版本 (受保护媒体组件的代码签名) ](/windows-hardware/test/hlk/)
 
 -   内核模式 *启动-启动驱动程序*。
 
@@ -61,9 +61,7 @@ Windows Vista 和更高版本的 Windows 仅对以下驱动程序强制实施内
 <a href="" id="32-bit-versions-of-windows"></a>**32位版本的 Windows**  
 Windows Vista 和更高版本的 Windows 仅对以下驱动程序强制实施内核模式驱动程序签名策略：
 
--   流式传输受保护媒体的驱动程序。 有关这些要求的详细信息，请参阅 [Windows Vista 和更高版本 (受保护媒体组件的代码签名) ](https://go.microsoft.com/fwlink/p/?linkid=69258)
+-   流式传输受保护媒体的驱动程序。 有关这些要求的详细信息，请参阅 [Windows Vista 和更高版本 (受保护媒体组件的代码签名) ](/windows-hardware/test/hlk/)
 
 -   内核模式 *启动-启动驱动程序*。
-
- 
 

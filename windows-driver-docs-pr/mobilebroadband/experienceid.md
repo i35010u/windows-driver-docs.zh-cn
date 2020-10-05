@@ -4,12 +4,12 @@ description: ExperienceID
 ms.assetid: 550527ae-fef9-46c6-816b-d842fe472b68
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 71a8071cf19b3bbce089672b52d4280810e7977b
-ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
+ms.openlocfilehash: b859a06202ad97e08c9f1d6c0e4d36d207acef63
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89403402"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91734437"
 ---
 # <a name="experienceid"></a>ExperienceID
 
@@ -79,13 +79,7 @@ ExperienceID 元素指定表示设备体验的 GUID。 此 GUID 用于为与包�
 
 在 Windows 8.1 和 Windows 10 中，ExperienceID 是由 Windows 开发人员中心仪表板上的 "服务元数据" 向导创建的。
 
-在 Windows 8 中，ExperienceID 可以由服务元数据开发人员指定，也可以使用 [设备元数据创作向导](https://go.microsoft.com/fwlink/?linkid=620032)自动生成并添加到服务元数据中。 如果服务元数据包中未指定 ExperienceID，Windows 开发人员中心仪表板将创建一个 GUID，并在移动网络操作员或移动虚拟网络操作员提交服务元数据包时，更新元数据包内的 ExperienceID 元素。
+在 Windows 8 中，ExperienceID 可以由服务元数据开发人员指定，也可以使用 [设备元数据创作向导](../devtest/device-metadata-authoring-wizard-portal.md)自动生成并添加到服务元数据中。 如果服务元数据包中未指定 ExperienceID，Windows 开发人员中心仪表板将创建一个 GUID，并在移动网络操作员或移动虚拟网络操作员提交服务元数据包时，更新元数据包内的 ExperienceID 元素。
 
  
-
- 
-
-
-
-
 

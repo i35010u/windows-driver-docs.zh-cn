@@ -4,12 +4,12 @@ description: 访问设备实例 SPDRP_Xxx 属性
 ms.assetid: 15ee51f8-1904-43ee-8bc2-311688c860e0
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1c546500071414c38716211abfb72404e6b2d024
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 894fe73429e23d0558530ca1110c8897edc5e6c0
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90715786"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91733983"
 ---
 # <a name="accessing-device-instance-spdrp_xxx-properties"></a>访问设备实例 SPDRP_Xxx 属性
 
@@ -48,14 +48,14 @@ ms.locfileid: "90715786"
     -   将 *PropertyBufferSize* 设置为零。
     -   将 *RequiredSize* 设置为一个指针，该指针指向接收的 DWORD 类型化变量，该变量表示属性值的大小（以字节为单位）。
 
-    在响应对[**SetupDiSetDeviceRegistryProperty**](/windows/win32/api/setupapi/nf-setupapi-setupdisetdeviceregistrypropertya)的调用时， **SetupDiGetDeviceRegistryProperty**将 \* *RequiredSize*设置为检索属性值所需的缓冲区大小（以字节为单位），记录错误代码 ERROR_INSUFFICIENT_BUFFER 并返回**FALSE**。 对 [GetLastError](https://go.microsoft.com/fwlink/p/?linkid=169416) 的后续调用将返回最近记录的错误代码。
+    在响应对[**SetupDiSetDeviceRegistryProperty**](/windows/win32/api/setupapi/nf-setupapi-setupdisetdeviceregistrypropertya)的调用时， **SetupDiGetDeviceRegistryProperty**将 \* *RequiredSize*设置为检索属性值所需的缓冲区大小（以字节为单位），记录错误代码 ERROR_INSUFFICIENT_BUFFER 并返回**FALSE**。 对 [GetLastError](/windows/win32/api/errhandlingapi/nf-errhandlingapi-getlasterror) 的后续调用将返回最近记录的错误代码。
 
 2.  再次调用 **SetupDiGetDeviceRegistryProperty** ，并提供在第一次调用中提供的相同参数值，但以下更改除外：
 
     -   将 *PropertyBuffer* 设置为指向字节类型缓冲区的指针，该缓冲区接收请求的属性值。
     -   将 *PropertyBufferSize* 设置为 *PropertyBuffer* 缓冲区的大小（以字节为单位）。 第一次调用**SetupDiGetDeviceRegistryProperty**时，检索到 RequiredSize 中的 PropertyBuffer 缓冲区的所需大小 \* *RequiredSize*。
 
-    如果对**SetupDiGetDeviceRegistryProperty**的第二次调用成功，则**SetupDiGetDeviceRegistryProperty**将 \* *PropertyRegDataType*设置为属性值的注册表数据类型，将*PropertyBuffer*缓冲区设置为属性值，将 \* *RequiredSize*设置为检索到的属性值的大小（以字节为单位），并返回**TRUE**。 如果函数调用失败， **SetupDiGetDeviceRegistryProperty** 将返回 **FALSE** ，并且对 [GetLastError](https://go.microsoft.com/fwlink/p/?linkid=169416) 的调用将返回记录的错误代码。
+    如果对**SetupDiGetDeviceRegistryProperty**的第二次调用成功，则**SetupDiGetDeviceRegistryProperty**将 \* *PropertyRegDataType*设置为属性值的注册表数据类型，将*PropertyBuffer*缓冲区设置为属性值，将 \* *RequiredSize*设置为检索到的属性值的大小（以字节为单位），并返回**TRUE**。 如果函数调用失败， **SetupDiGetDeviceRegistryProperty** 将返回 **FALSE** ，并且对 [GetLastError](/windows/win32/api/errhandlingapi/nf-errhandlingapi-getlasterror) 的调用将返回记录的错误代码。
 
 ### <a name="setting-a-device-property"></a>设置设备属性
 
@@ -71,7 +71,5 @@ ms.locfileid: "90715786"
 
 -   将 *PropertyBufferSize* 设置为 *PropertyBuffer* 缓冲区中提供的属性值的大小（以字节为单位）。
 
-如果对 **SetupDiSetDeviceRegistryProperty** 的此调用成功，则 **SetupDiSetDeviceRegistryProperty** 将设置设备实例属性并返回 **TRUE**。 如果函数调用失败， **SetupDiSetDeviceRegistryProperty** 将返回 **FALSE** ，并且对 [GetLastError](https://go.microsoft.com/fwlink/p/?linkid=169416) 的调用将返回记录的错误代码。
-
- 
+如果对 **SetupDiSetDeviceRegistryProperty** 的此调用成功，则 **SetupDiSetDeviceRegistryProperty** 将设置设备实例属性并返回 **TRUE**。 如果函数调用失败， **SetupDiSetDeviceRegistryProperty** 将返回 **FALSE** ，并且对 [GetLastError](/windows/win32/api/errhandlingapi/nf-errhandlingapi-getlasterror) 的调用将返回记录的错误代码。
 

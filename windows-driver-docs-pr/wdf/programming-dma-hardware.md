@@ -10,12 +10,12 @@ keywords:
 - 启动 DMA 传输 WDK KMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 72f8f8921120d313fcdc743bd4d6d2ad54d22983
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 4362128247bc3156582bc59e8455341a5ee4289a
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89185527"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91732591"
 ---
 # <a name="programming-dma-hardware"></a>对 DMA 硬件编程
 
@@ -53,7 +53,7 @@ ms.locfileid: "89185527"
 
 4.  返回 **FALSE**。
 
-下面的代码示例演示了步骤1和步骤4，这些代码示例摘自*读取 .c*文件中读取请求的[PLX9x5x](https://go.microsoft.com/fwlink/p/?linkid=256157)示例的[*EvtProgramDma*](/windows-hardware/drivers/ddi/wdfdmatransaction/nc-wdfdmatransaction-evt_wdf_program_dma)回调函数。
+下面的代码示例演示了步骤1和步骤4，这些代码示例摘自*读取 .c*文件中读取请求的[PLX9x5x](/samples/browse/)示例的[*EvtProgramDma*](/windows-hardware/drivers/ddi/wdfdmatransaction/nc-wdfdmatransaction-evt_wdf_program_dma)回调函数。
 
 ```cpp
     // If errors occur in the EvtProgramDma callback,

@@ -8,12 +8,12 @@ keywords:
 - 证书存储 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 30938bed175a6bee8a8b99fefeb435453f59391e
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: ee2c1ee8b3427dedfbb2ad900f4917154578c93a
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89097193"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91732609"
 ---
 # <a name="trusted-publishers-certificate-store"></a>受信任的发布者证书存储
 
@@ -44,7 +44,5 @@ ms.locfileid: "89097193"
 
 有关如何使用组策略在企业中部署 Authenticode 证书证书的详细信息，请参阅自述文件*Selfsign_readme.htm**中的自述 \\ \\ \\ *文件。
 
-有关证书存储的详细信息，请参阅 [代码签名最佳做法](https://go.microsoft.com/fwlink/p/?linkid=68250) 网站。
-
- 
+有关证书存储的详细信息，请参阅 [代码签名最佳做法](/windows-hardware/test/hlk/) 网站。
 

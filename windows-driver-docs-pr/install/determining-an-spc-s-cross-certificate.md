@@ -4,52 +4,46 @@ description: 确定 SPC 的交叉证书
 ms.assetid: e54c6c69-6b80-4a03-b4ff-e46d565a56d9
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5ab1438a4a3849dac0d38c0346b8eaee526e71c4
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e90e7984a3d9653fb1676294eccbe77f004b40fc
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63368089"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91733975"
 ---
 # <a name="determining-an-spcs-cross-certificate"></a>确定 SPC 的交叉证书
 
 
-除了从商业证书颁发机构 (CA) 获取软件发布者证书 (SPC)，必须获取交叉证书的 Microsoft 问题。 交叉证书用于验证颁发一个 SPC 的 CA 受信任的根颁发机构。 交叉证书和一个 SPC 所需的版本签名。
+除了从商业证书颁发机构 (CA) 获取软件发行者证书 (SPC) ，你必须获取 Microsoft 颁发的交叉证书。 使用交叉证书来验证颁发 SPC 的 CA 是否为受信任的根证书颁发机构。 发布签名需要使用交叉证书和 SPC。
 
-交叉证书是由另一个 CA 的根证书的公钥进行签名的 CA 颁发的 X.509 证书。 交叉证书允许具有单个受信任的 Microsoft 的根颁发机构，但也提供灵活地扩展到商业 Ca 颁发 SPCs 的信任链的内核。
+交叉证书是由 CA 颁发的 x.509 证书，用于对另一 CA 的根证书的公钥进行签名。 跨证书允许内核具有单个受信任的 Microsoft 根证书颁发机构，还可以灵活地将信任链扩展到颁发 SPCs 的商业 Ca。
 
-您可以确定哪些交叉证书所需的版本签名之前，必须首先导入个人信息交换 (。*pfx*) 文件，将软件发布者证书 (SPC) 和其专用和公共密钥存储到的个人证书存储。 有关此过程的详细信息，请参阅[证书存储区导入一个 SPC](importing-an-spc-into-a-certificate-store.md)。
+必须首先导入个人信息交换 (，然后才能确定发布签名所需的交叉证书。*pfx*) 文件，用于将软件发行者证书 (SPC) 及其私钥和公钥存储到个人证书存储区中。 有关此过程的详细信息，请参阅 [将 SPC 导入到证书存储中](importing-an-spc-into-a-certificate-store.md)。
 
-一次 *.pfx*文件导入到签名的计算机上的个人存储中，执行以下操作以确定其交叉证书，可用于你 SPC 版本签名。
+一旦将 *.pfx* 文件导入到签名计算机上的 "个人" 存储区中，请执行以下操作以确定可以将哪种交叉证书与 SPC 一起用于发布签名。
 
-1.  单击**启动**，然后单击**运行**。
+1.  单击 " **开始** "，然后单击 " **运行**"。
 
-2.  若要启动 MMC 证书管理单元中，键入 Certmgr.msc 并按**Enter**密钥。
+2.  若要启动 MMC 证书管理单元，请键入 Certmgr.msc，然后按 **enter** 键。
 
-3.  在证书存储中找到签名证书。 证书应列在以下位置，具体取决于安装的方式之一：
+3.  在证书存储中找到签名证书。 此证书应列在下列位置之一中，具体取决于它的安装方式：
 
-    -   当前用户-&gt;个人-&gt;证书存储区
-    -   本地计算机-&gt;证书存储区
+    -   当前用户- &gt; 个人 &gt; 证书存储
+    -   本地计算机- &gt; 证书存储
 
-4.  若要打开**证书**单击证书对话框中，双精度。
+4.  若要打开 " **证书** " 对话框，请双击该证书。
 
-5.  在中**证书**对话框中，选择**证书路径**卡，并选择证书路径中的最顶层的证书。
+5.  在 " **证书** " 对话框中，选择 " **证书路径** " 选项卡，然后在证书路径中选择最顶层的证书。
 
-    这是创作你的证书的颁发根的 CA。
+    这是颁发证书的根证书的 CA。
 
-6.  若要查看的根颁发机构证书，请选择**查看证书**，然后单击**详细信息**属性选项卡。
+6.  若要查看根证书颁发机构证书，请选择 " **查看证书**"，然后单击 " **详细信息** 属性" 选项卡。
 
-7.  查找**颁发者名称**并**指纹**此证书的颁发 ca。 在的"根颁发机构交叉证书列表"部分中找到相应的交叉证书[Microsoft 交叉证书的 Windows Vista 内核模式代码签名](https://go.microsoft.com/fwlink/p/?linkid=190544)白皮书。
+7.  查找此证书的颁发 CA 的 **颁发者名称** 和 **指纹** 。 在 [适用于 Windows Vista 内核模式代码签名的 Microsoft 交叉证书](/windows-hardware/test/hlk/) 白皮书中的 "根机构交叉证书列表" 部分找到相应的交叉证书。
 
-8.  从"根颁发机构交叉证书列表"部分下载相关的交叉证书并进行数字签名时使用此交叉证书[驱动程序包](driver-packages.md)。
+8.  从 "根机构交叉证书列表" 部分下载相关的交叉证书，并在对 [驱动程序包](driver-packages.md)进行数字签名时使用此交叉证书。
 
-有关 SPCs 和他们管理的详细信息，请参阅[软件发布者证书 (SPC)](software-publisher-certificate.md)。
-
- 
+有关 SPCs 及其管理的详细信息，请参阅 [软件发行者证书 (SPC) ](software-publisher-certificate.md)。
 
  
-
-
-
-
 

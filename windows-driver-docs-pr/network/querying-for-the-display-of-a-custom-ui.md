@@ -7,12 +7,12 @@ keywords:
 - 查询自定义 UI 显示
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d29ff9569e3579b8c6019142b34dc3291fc5404e
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: e504601f33cde2c281578bc42ec05f376ab0d11b
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89212075"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91734161"
 ---
 # <a name="querying-for-the-display-of-a-custom-ui"></a>查询自定义 UI 的显示
 
@@ -39,7 +39,7 @@ IHV 扩展 DLL 完成后关联操作的连接阶段。 有关后处理后操作�
 
 -   类 ID (在本机 802.11 IHV UI 扩展 DLL 中实现的 **IWizardExtension** COM 接口的 CLSID) 。 CLSID 用于请求 DLL 支持的特定自定义 UI。
 
-    有关 **IWizardExtension** com 接口的详细信息，请参阅 [IWizardExtension com interface](https://go.microsoft.com/fwlink/p/?linkid=56607)。
+    有关 **IWizardExtension** com 接口的详细信息，请参阅 [IWizardExtension com interface](/windows/win32/api/shobjidl/nn-shobjidl-iwizardextension)。
 
 -   包含由独立硬件供应商 (IHV 定义的专有格式的数据的缓冲区) 并由指定的 **IWizardExtension** COM 接口处理。 例如，缓冲区可能包含自定义 UI 中显示的默认值。
 

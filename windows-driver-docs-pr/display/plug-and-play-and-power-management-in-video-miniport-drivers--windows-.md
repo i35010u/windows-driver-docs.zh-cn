@@ -11,12 +11,12 @@ keywords:
 ms.date: 12/06/2018
 ms.localizationpriority: medium
 ms.custom: seodec18
-ms.openlocfilehash: 312f25d5c2120de9f990419ed6753c039fb8947e
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 2064bfe6d56e9a51405f9fbedf208a741fe2c96c
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89063512"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91734077"
 ---
 # <a name="power-management-and-plug-and-play-in-video-miniport-drivers-windows-2000-model"></a>视频微型端口驱动程序中的电源管理和即插即用（Windows 2000 模型）
 
@@ -38,7 +38,5 @@ ms.locfileid: "89063512"
 
 当系统正在运行时，不能从系统中删除旧微型端口驱动程序的图形适配器，也不能在添加到正在运行的系统时，自动检测到旧版微型端口驱动程序。
 
-有关检测适配器的子设备并与之通信的详细信息，请参阅 [显示适配器 (Windows 2000 型号的子设备) ](child-devices-of-the-display-adapter--windows-2000-model-.md) 。 有关即插即用驱动程序的常规信息，请参阅 [即插即用](https://docs.microsoft.com/windows-hardware/drivers/kernel/implementing-plug-and-play)。
-
- 
+有关检测适配器的子设备并与之通信的详细信息，请参阅 [显示适配器 (Windows 2000 型号的子设备) ](child-devices-of-the-display-adapter--windows-2000-model-.md) 。 有关即插即用驱动程序的常规信息，请参阅 [即插即用](../kernel/introduction-to-plug-and-play.md)。
 

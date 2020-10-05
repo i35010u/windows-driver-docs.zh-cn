@@ -10,17 +10,17 @@ keywords:
 - 自定义音频驱动程序 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a8fc55f232dd8be892a7a823fcf75b7b449cc4ce
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 98cbd3fcfb4bf18b6b8d047423aa74cafa92bc4e
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89209219"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91733229"
 ---
 # <a name="wdm-audio-drivers-overview"></a>WDM 音频驱动程序概述
 
 
-[Windows 驱动模型](https://docs.microsoft.com/windows-hardware/drivers/kernel/windows-driver-model) (WDM) 音频驱动程序使用 [内核流式处理](../stream/kernel-streaming.md) (KS) 组件，这些组件在内核模式下运行，并且是操作系统的一部分。
+[Windows 驱动模型](../kernel/writing-wdm-drivers.md) (WDM) 音频驱动程序使用 [内核流式处理](../stream/kernel-streaming.md) (KS) 组件，这些组件在内核模式下运行，并且是操作系统的一部分。
 
 硬件供应商应该在开始开发基于 Windows 的音频硬件设备之前做出多种设计决策。
 
@@ -45,6 +45,4 @@ ms.locfileid: "89209219"
 [指定拓扑](specifying-the-topology.md)
 
 [指定引脚数据范围](specifying-pin-data-ranges.md)
-
- 
 

@@ -4,12 +4,12 @@ description: 内存缓冲区生命周期
 ms.assetid: abf43bf5-a4a3-4aeb-9ec5-3458252933d5
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: df28dd87c030676a97bf4bef14e4b9b8d1c89574
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 43f1c4245044babf93efccbe70810ec21c110f9f
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89193107"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91734315"
 ---
 # <a name="memory-buffer-life-cycle"></a>内存缓冲区生命周期
 
@@ -143,4 +143,4 @@ RequestCompletionRoutine(
 
 驱动程序可以重复使用它创建的请求对象，但必须在每次重复使用之前通过调用 [**WdfRequestReuse**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestreuse) 来重新初始化每个此类对象。 有关详细信息，请参阅 [重复使用框架请求对象](reusing-framework-request-objects.md)。
 
-有关重新初始化请求对象的代码示例，请参阅随 KMDF 版本一起提供的 [Toaster](https://go.microsoft.com/fwlink/p/?linkid=256195) 和 [NdisEdge](https://go.microsoft.com/fwlink/p/?linkid=256154) 示例。
+有关重新初始化请求对象的代码示例，请参阅随 KMDF 版本一起提供的 [Toaster](/samples/browse/) 和 [NdisEdge](/samples/browse/) 示例。

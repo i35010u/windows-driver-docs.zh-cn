@@ -1,86 +1,80 @@
 ---
-title: 开始使用 UWP 设备应用程序
+title: UWP 设备应用入门
 description: 从这里开始构建 UWP 设备应用。
 ms.assetid: 6280E9CC-422B-4100-8B38-07BADD6A578A
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d4189c4b4978a106f21e8197889cb4107a7b3e75
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d4fe8fdecaa3d7146deeed8c8146dd3bc8b1630e
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63387959"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91732965"
 ---
-# <a name="getting-started-with-uwp-device-apps"></a>开始使用 UWP 设备应用程序
+# <a name="getting-started-with-uwp-device-apps"></a>UWP 设备应用入门
 
 
 从这里开始构建 UWP 设备应用。
 
-![开始使用 windows 应用商店设备应用程序](images/devices-diagram-350x350.png)
+![windows 应用商店设备应用入门](images/devices-diagram-350x350.png)
 
-设备制造商可以创建用作设备配套的 UWP 设备应用。 UWP 设备应用的功能超出常规的 UWP 应用，可执行特权操作，例如固件更新。 此外，UWP 设备应用程序可以从自动播放开始 （在多个设备不是其他应用程序也能）、 自动安装第一次设备连接，和扩展内置于 Windows 的打印机和相机体验。
+设备制造商可以创建用作设备配套的 UWP 设备应用。 UWP 设备应用的功能超出常规的 UWP 应用，可执行特权操作，例如固件更新。 而且，UWP 设备应用程序可以从自动播放 (在更多设备上启动，而不能) 、首次连接设备时自动安装，并扩展 Windows 中内置的打印机和照相机体验。
 
-**请注意**  Windows 运行时设备 Api 不需要的设备元数据。 这意味着您的应用程序不必是一个 UWP 设备应用来使用它们。 UWP 应用可以使用这些 Api 来访问 USB、 人体学接口设备 (HID)、 蓝牙设备和的详细信息。 有关详细信息，请参阅[集成设备](https://go.microsoft.com/fwlink/p/?LinkId=533279)。
-
- 
-
-若要了解 UWP 移动宽带应用，请参阅 [Mobile Broadband](https://go.microsoft.com/fwlink/p/?LinkID=301754)（移动宽带）。
-
-## <a name="span-id1getsetupspanspan-id1getsetupspan1-get-set-up"></a><span id="1._get_set_up"></span><span id="1._GET_SET_UP"></span>1.准备工作
-
-
-若要开发 UWP 设备应用： 需要 Microsoft Visual Studio 中，为开发 UWP 应用和设备元数据创建向导，为开发设备元数据。
-
-**请注意**  开发 UWP 应用在 Windows 10 的设备应用程序，下载 Microsoft Visual Studio 2017 和 Windows Driver Kit (WDK) 10。 [成为 Windows 预览体验获取工具包和工具](https://go.microsoft.com/fwlink/p/?LinkId=526775)
+**注意**   Windows 运行时设备 Api 不需要设备元数据。 这意味着你的应用程序无需成为 UWP 设备应用即可使用它们。 UWP 应用可以使用这些 Api 来访问 USB、人体学接口设备 (HID) 、Bluetooth 设备等。 有关详细信息，请参阅 [集成设备](/previous-versions/windows/apps/dn263141(v=win.10))。
 
  
 
-### <a name="span-idifyourealsodevelopingdriversspanspan-idifyourealsodevelopingdriversspanspan-idifyourealsodevelopingdriversspanif-youre-also-developing-drivers"></a><span id="If_you_re_also_developing_drivers"></span><span id="if_you_re_also_developing_drivers"></span><span id="IF_YOU_RE_ALSO_DEVELOPING_DRIVERS"></span>如果您还开发驱动程序
+若要了解 UWP 移动宽带应用，请参阅 [Mobile Broadband](../mobilebroadband/index.md)（移动宽带）。
 
-如果要开发除 UWP 设备应用程序的 Windows 驱动程序，使用 Microsoft Visual Studio Professional 或 Microsoft Visual Studio Ultimate 创建 UWP 设备应用程序。 这些版本包括新的设备元数据创建向导和，也需要通过 Windows Driver Kit (WDK) 8.1。
+## <a name="span-id1_get_set_upspanspan-id1_get_set_upspan1-get-set-up"></a><span id="1._get_set_up"></span><span id="1._GET_SET_UP"></span>1. 获取设置
 
-1.  [下载 Visual Studio 专业版或 Visual Studio 旗舰版](https://go.microsoft.com/fwlink/p/?LinkId=302196)
-2.  [下载 WDK 8.1](https://go.microsoft.com/fwlink/p/?LinkId=302196)
 
-### <a name="span-idifyourenotgoingtobedevelopingdriversspanspan-idifyourenotgoingtobedevelopingdriversspanspan-idifyourenotgoingtobedevelopingdriversspanif-youre-not-going-to-be-developing-drivers"></a><span id="If_you_re_not_going_to_be_developing_drivers"></span><span id="if_you_re_not_going_to_be_developing_drivers"></span><span id="IF_YOU_RE_NOT_GOING_TO_BE_DEVELOPING_DRIVERS"></span>如果您不打算开发驱动程序
+若要开发 UWP 设备应用：需要 Microsoft Visual Studio、开发 UWP 应用以及设备元数据创作向导来开发设备元数据。
 
-如果您不需要开发驱动程序，可以使用 Microsoft Visual Studio Express 2015 for Windows 创建 UWP 设备应用程序。 但此版本的 Visual Studio 安装不包括设备元数据创建向导的 sdk 版本。 若要获取新的设备元数据创建向导，还必须下载独立 Windows 8.1 SDK。
+**注意**   若要在 Windows 10 中开发 UWP 设备应用，请 (WDK) Microsoft Visual Studio 下载2017和 Windows 驱动程序工具包。 [成为 Windows 有问必答，获取工具包和工具](https://go.microsoft.com/fwlink/p/?LinkId=526775)
 
-1.  [下载 Visual Studio Express 2015 for Windows 10](https://visualstudio.microsoft.com/vs/express/)
+ 
+
+### <a name="span-idif_you_re_also_developing_driversspanspan-idif_you_re_also_developing_driversspanspan-idif_you_re_also_developing_driversspanif-youre-also-developing-drivers"></a><span id="If_you_re_also_developing_drivers"></span><span id="if_you_re_also_developing_drivers"></span><span id="IF_YOU_RE_ALSO_DEVELOPING_DRIVERS"></span>如果还在开发驱动程序
+
+如果要开发 Windows 驱动程序以及 UWP 设备应用，请使用 Microsoft Visual Studio Professional 或 Microsoft Visual Studio Ultimate 来创建 UWP 设备应用。 这些版本包括新的设备元数据创作向导，Windows 驱动程序工具包也需要该向导 (WDK) 8.1。
+
+1.  [下载 Visual Studio Professional 或 Visual Studio Ultimate](https://go.microsoft.com/fwlink/p/?LinkId=302196)
+2.  [下载 WDK 8。1](https://go.microsoft.com/fwlink/p/?LinkId=302196)
+
+### <a name="span-idif_you_re_not_going_to_be_developing_driversspanspan-idif_you_re_not_going_to_be_developing_driversspanspan-idif_you_re_not_going_to_be_developing_driversspanif-youre-not-going-to-be-developing-drivers"></a><span id="If_you_re_not_going_to_be_developing_drivers"></span><span id="if_you_re_not_going_to_be_developing_drivers"></span><span id="IF_YOU_RE_NOT_GOING_TO_BE_DEVELOPING_DRIVERS"></span>如果不打算开发驱动程序
+
+如果不需要开发驱动程序，可以使用适用于 Windows 的 Microsoft Visual Studio Express 2015 来创建 UWP 设备应用。 但此版本的 Visual Studio 安装不包括设备元数据创作向导的 SDK 版本。 若要获取新的设备元数据创作向导，还必须下载独立 Windows 8.1 SDK。
+
+1.  [下载适用于 Windows 10 的 Visual Studio Express 2015](https://visualstudio.microsoft.com/vs/express/)
 2.  [下载独立 Windows 8.1 SDK](https://go.microsoft.com/fwlink/p/?LinkId=302196)
 
-## <a name="span-id2buildsomeregularwindowsstoreappsspanspan-id2buildsomeregularwindowsstoreappsspan2-build-some-regular-uwp-apps"></a><span id="2._build_some_regular_windows_store_apps"></span><span id="2._BUILD_SOME_REGULAR_WINDOWS_STORE_APPS"></span>2.生成一些常规的 UWP 应用
+## <a name="span-id2_build_some_regular_windows_store_appsspanspan-id2_build_some_regular_windows_store_appsspan2-build-some-regular-uwp-apps"></a><span id="2._build_some_regular_windows_store_apps"></span><span id="2._BUILD_SOME_REGULAR_WINDOWS_STORE_APPS"></span>2. 生成一些常规 UWP 应用
 
 
-UWP 设备应用程序是一种特殊的 UWP 应用。 因此，开发第一个 UWP 设备应用程序之前，完成设置以生成一些常规的 UWP 应用。
+UWP 设备应用是一种特殊类型的 UWP 应用。 因此，在开发第一个 UWP 设备应用之前，请设置生成一些常规 UWP 应用。
 
--   [注册-Microsoft Store 开发人员帐户注册](https://go.microsoft.com/fwlink/p/?LinkId=302197)
--   [开始使用 Microsoft Visual Studio](https://go.microsoft.com/fwlink/p/?LinkID=267230)
--   请参阅[Microsoft Store 设计原则](https://go.microsoft.com/fwlink/p/?LinkID=299845)
+-   [注册-注册 Microsoft Store 开发人员帐户](https://go.microsoft.com/fwlink/p/?LinkId=302197)
+-   [Microsoft Visual Studio 入门](/previous-versions/windows/apps/br211384(v=win.10))
+-   请参阅 [Microsoft Store 设计原则](https://go.microsoft.com/fwlink/p/?LinkID=299845)
 
-## <a name="span-id3learnwhatmakeswindowsstoredeviceappsspecialspanspan-id3learnwhatmakeswindowsstoredeviceappsspecialspan3-learn-what-makes-uwp-device-apps-special"></a><span id="3._learn_what_makes_windows_store_device_apps_special"></span><span id="3._LEARN_WHAT_MAKES_WINDOWS_STORE_DEVICE_APPS_SPECIAL"></span>3.了解是什么使 UWP 设备应用特殊
-
-
-了解如何使用 UWP 设备应用和所需构建一个特殊内容。
-
--   [满足 UWP 设备应用程序](meet-uwp-device-apps.md)
--   [构建 UWP 设备应用程序](the-workflow.md)
-
-## <a name="span-id4downloadsamplesspanspan-id4downloadsamplesspan4-download-samples"></a><span id="4._download_samples"></span><span id="4._DOWNLOAD_SAMPLES"></span>4.下载示例
+## <a name="span-id3_learn_what_makes_windows_store_device_apps_specialspanspan-id3_learn_what_makes_windows_store_device_apps_specialspan3-learn-what-makes-uwp-device-apps-special"></a><span id="3._learn_what_makes_windows_store_device_apps_special"></span><span id="3._LEARN_WHAT_MAKES_WINDOWS_STORE_DEVICE_APPS_SPECIAL"></span>3. 了解如何实现 UWP 设备应用的特殊功能
 
 
-你可以找到与设备相关示例[设备和传感器](https://go.microsoft.com/fwlink/p/?LinkID=302213)示例库中的关键字。 了解如何在完整示例的上下文中使用 Api。 您可以告知 UWP 设备应用，因为它包含一个 StoreManifest.xml 文件，将其与设备元数据关联。 这些示例都标记有[UWP 设备应用](https://go.microsoft.com/fwlink/p/?LinkID=299847)关键字。
+了解可以对 UWP 设备应用执行的特殊操作以及生成该应用所要执行的操作。
 
-## <a name="span-id4buildyourownwindowsstoredeviceappspanspan-id4buildyourownwindowsstoredeviceappspan4-build-your-own-uwp-device-app"></a><span id="4._build_your_own_windows_store_device_app"></span><span id="4._BUILD_YOUR_OWN_WINDOWS_STORE_DEVICE_APP"></span>4.构建 UWP 设备应用
+-   [初识 UWP 设备应用](meet-uwp-device-apps.md)
+-   [构建 UWP 设备应用](the-workflow.md)
+
+## <a name="span-id4_download_samplesspanspan-id4_download_samplesspan4-download-samples"></a><span id="4._download_samples"></span><span id="4._DOWNLOAD_SAMPLES"></span>4. 下载示例
 
 
-若要开始，请参阅[构建循序渐进的 UWP 设备应用程序](build-a-uwp-device-app-step-by-step.md)。
+可以在示例库中找到设备相关的示例以及 [设备和传感器](/samples/browse/) 关键字。 了解如何在完整示例的上下文中使用 Api。 可以告诉 UWP 设备应用，因为它包含一个将其与设备元数据关联的 StoreManifest.xml 文件。 这些示例用 [UWP 设备应用](/samples/browse/) 关键字进行标记。
 
- 
+## <a name="span-id4_build_your_own_windows_store_device_appspanspan-id4_build_your_own_windows_store_device_appspan4-build-your-own-uwp-device-app"></a><span id="4._build_your_own_windows_store_device_app"></span><span id="4._BUILD_YOUR_OWN_WINDOWS_STORE_DEVICE_APP"></span>4. 构建你自己的 UWP 设备应用
+
+
+若要开始，请参阅分步 [构建 UWP 设备应用](build-a-uwp-device-app-step-by-step.md)。
 
  
-
-
-
-
 

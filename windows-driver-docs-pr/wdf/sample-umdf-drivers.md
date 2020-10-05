@@ -4,12 +4,12 @@ description: 本主题列出了可用的用户模式驱动程序框架 (UMDF) �
 ms.assetid: 9C8576E1-4CC7-4A7E-A822-C6BBFDC7482D
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2529baa73f85d876ad44e0fb67406efa15ec3334
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 866a0950972fab08d57a8728bb0c699229b33001
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89189629"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91733605"
 ---
 # <a name="sample-umdf-drivers"></a>示例 UMDF 驱动程序
 
@@ -27,7 +27,7 @@ ms.locfileid: "89189629"
 ## <a name="umdf-1-samples"></a>UMDF 1 示例
 
 -   [GPIO 示例驱动程序](https://github.com/Microsoft/Windows-driver-samples/tree/master/gpio/samples)
--   已在 Windows 8.1 中删除 (Fx2Hid) 示例的 HID 客户端示例驱动程序。 如果你正在编写与 HID 设备通信的通用 Windows 应用，你将使用 Windows 自定义命名空间直接访问设备的 HID 集合。 有关详细信息，请参阅 [自定义驱动程序访问](https://go.microsoft.com/fwlink/p/?LinkId=618584) 示例应用和 [HidUsbFx2](https://github.com/Microsoft/Windows-driver-samples/tree/master/hid/hidusbfx2) 示例驱动程序。 如果要编写访问 HID 集合的 Win32 应用程序，请参阅 [HClient 示例应用程序](https://github.com/Microsoft/Windows-driver-samples/tree/master/hid/hclient)。
+-   已在 Windows 8.1 中删除 (Fx2Hid) 示例的 HID 客户端示例驱动程序。 如果你正在编写与 HID 设备通信的通用 Windows 应用，你将使用 Windows 自定义命名空间直接访问设备的 HID 集合。 有关详细信息，请参阅 [自定义驱动程序访问](/samples/browse/) 示例应用和 [HidUsbFx2](https://github.com/Microsoft/Windows-driver-samples/tree/master/hid/hidusbfx2) 示例驱动程序。 如果要编写访问 HID 集合的 Win32 应用程序，请参阅 [HClient 示例应用程序](https://github.com/Microsoft/Windows-driver-samples/tree/master/hid/hclient)。
 -   [近字段近程示例驱动程序](https://github.com/Microsoft/Windows-driver-samples/tree/master/nfp/net)
 -   [用于 OSR USB-FX2 的 KMDF 函数驱动程序之上的示例 UMDF 筛选器驱动程序](https://github.com/Microsoft/Windows-driver-samples/tree/master/usb/umdf_filter_kmdf)
 -   [OSR USB-FX2 的示例 UMDF 函数驱动程序](https://github.com/Microsoft/Windows-driver-samples/tree/master/usb/umdf_fx2)

@@ -4,12 +4,12 @@ description: 介绍容器 ID 支持，显示嵌入到显示或监视设备内的
 ms.assetid: 3149C156-34F4-4C55-AE77-1CC40C2B35BC
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6296df9007abb91766ea4b46ff7c3f484b4c7bf9
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: db394cbcd34330d9cbed0a9c2f4b84ae04bc3e4f
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89064388"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91732883"
 ---
 # <a name="container-id-support-for-displays"></a>显示设备的容器 ID 支持
 
@@ -44,7 +44,7 @@ ms.locfileid: "89064388"
 
 !["设备和打印机" 文件夹的可视化表示形式](images/visualdevicesprintersfolder.jpg)
 
-在 Windows 7 中，Microsoft 引入了设备的 *容器 ID* 的概念： "系统提供的设备标识字符串，用于对与计算机上安装的单一功能或多功能设备关联的功能设备进行唯一的分组。"  (参阅 [容器 id](https://go.microsoft.com/fwlink/p/?linkid=327784)。在将设备包含相同容器 Id 时，) 将设备分组。
+在 Windows 7 中，Microsoft 引入了设备的 *容器 ID* 的概念： "系统提供的设备标识字符串，用于对与计算机上安装的单一功能或多功能设备关联的功能设备进行唯一的分组。"  (参阅 [容器 id](../install/container-ids.md)。在将设备包含相同容器 Id 时，) 将设备分组。
 
 为了使容器 ID 概念成功，Windows 中的所有设备类必须支持它，并且整个生态系统都需要在硬件中实现它。 在 Windows 7 中，如果插入了多个支持音频的监视器，用户将无法轻松确定哪些显示映射到哪些音频终结点。 触控数字化器存在相同的难度。 在 Windows 8 中，显示设备类添加了对容器 ID 的支持。 这使得显示设备的所有功能都可以报告相同的容器 ID 并在 Windows 用户界面和 Api 中以可视方式配对。
 
@@ -70,6 +70,4 @@ ms.locfileid: "89064388"
 有关硬件设备实现此功能时必须满足的要求的信息，请参阅相关 [WHCK 文档](/windows-hardware/test/hlk/windows-hardware-lab-kit) ，  [了解监视容器 ID 的功能测试](/windows-hardware/test/hlk/testref/2f657caa-368c-4531-8cec-8faf475125f4)。
 
 请参阅 [WDDM 1.2 功能](wddm-v1-2-features.md) ，了解 Windows 8 中添加的功能。
-
- 
 

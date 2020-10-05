@@ -6,12 +6,12 @@ keywords:
 - IoCompletion
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6f1071b1d7ecfd9d826059f02d0f5133bd1dbe30
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 1c52cca3650ea2077d13e4330145e0b263c1688c
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89185741"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91734409"
 ---
 # <a name="storage-class-drivers-iocompletion-routines"></a>存储类驱动程序的 IoCompletion 例程
 
@@ -23,7 +23,7 @@ ms.locfileid: "89185741"
 
 如 [存储类驱动程序的 BuildRequest 例程](storage-class-driver-s-buildrequest-routine.md)中所述，存储类驱动程序负责释放为 SRBs 分配的内存，无论是返回后备链表列表还是非分页池。 与任何其他更高级的内核模式驱动程序一样，它们还负责释放它们分配的任何 Irp，如用于拆分传输请求的 IRP，如 [存储类驱动程序的 SplitTransferRequest 例程](storage-class-driver-s-splittransferrequest-routine.md)中所述。
 
-类驱动程序的 *IoCompletion* 例程最终负责确保设置了 i/o 状态块并完成了原始 IRP 的设置。 请注意，完成 IRP 可能包括将 SRB 的 **ScsiStatus** 成员中返回的错误或 **SenseInfoBuffer** 成员转换为 NTSTATUS 类型值和/或记录错误，如在 [调度例程中完成 irp](https://docs.microsoft.com/windows-hardware/drivers/kernel/completing-irps-in-dispatch-routines)中所述。
+类驱动程序的 *IoCompletion* 例程最终负责确保设置了 i/o 状态块并完成了原始 IRP 的设置。 请注意，完成 IRP 可能包括将 SRB 的 **ScsiStatus** 成员中返回的错误或 **SenseInfoBuffer** 成员转换为 NTSTATUS 类型值和/或记录错误，如在 [调度例程中完成 irp](../kernel/how-to-complete-an-irp-in-a-dispatch-routine.md)中所述。
 
 当处理请求时出现某些类型的错误时，存储端口驱动程序会将目标逻辑单元的内部队列冻结 (LU) 并 \_ 在请求完成时设置 SRB 状态 \_ 队列 \_ 冻结。 因此，类驱动程序通常有内部例程来更改其设备 i/o 请求的队列状态。 有关详细信息，请参阅 [存储类驱动程序的 ReleaseQueue 例程](storage-class-driver-s-releasequeue-routine.md)。
 
@@ -32,6 +32,4 @@ ms.locfileid: "89185741"
 存储类驱动程序负责重试因目标控制器错误、总线重置或请求超时而失败的请求。 当端口驱动程序返回一个特定请求，并将其**SrbStatus**设置为指示这种错误时，该类驱动程序可以从其*IoCompletion*例程调用*RetryRequest*例程，也可以从其*InterpretRequestSense*例程调用它。 有关详细信息，请参阅 [存储类驱动程序的 RetryRequest 例程](storage-class-driver-s-retryrequest-routine.md)。
 
 有关 *IoCompletion* 例程的一般信息，请参阅 [完成 irp](../kernel/completing-irps.md)。
-
- 
 

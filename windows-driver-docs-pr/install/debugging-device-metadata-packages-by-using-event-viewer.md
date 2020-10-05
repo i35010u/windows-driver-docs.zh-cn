@@ -4,12 +4,12 @@ description: 使用事件查看器调试设备元数据包
 ms.assetid: 168a9dd1-aab2-4497-a59d-b8fe52d8cde2
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cbc5649c348a3c66e4595db44a4186b5512f7d8a
-ms.sourcegitcommit: 06581a21ca066ddfedab7f9bb7f2159cfac452fd
+ms.openlocfilehash: 597fe712e89c3d88d2813faad3ae532671520c40
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91145463"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91734185"
 ---
 # <a name="debugging-device-metadata-packages-by-using-event-viewer"></a>使用事件查看器调试设备元数据包
 
@@ -73,7 +73,7 @@ DeviceMetadata/调试通道存储在下载或处理设备元数据包期间发�
 -   设备元数据包的名称。
 
 <a href="" id="event-id--7902-error--device-metadata-package-not-signed--"></a>事件 ID：7902错误：设备元数据包未签名。   
-已安装的设备元数据包不是由 [Windows Quality Online Services (Winqual) ](/windows-hardware/drivers/dashboard/winqual-submission-tool--winqualexe-)签名的。
+已安装的设备元数据包不是由 [Windows Quality Online Services (Winqual) ](../dashboard/winqual-submission-tool--winqualexe-.md)签名的。
 
 **注意**   仅当从 WMIS 下载设备元数据包时，才会验证该签名。
 
@@ -127,6 +127,4 @@ DMRC 在下载从 WMIS 打包的设备元数据时遇到网络错误。
 -   应用程序特定的错误代码。 有关这些错误代码的详细信息，请参阅 [设备元数据错误代码](device-metadata-error-codes.md)。
 
 -   出现网络错误时的 HTTP 状态代码。
-
- 
 

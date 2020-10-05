@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c1f8d93de21768a48894042887fd759e6c6f5f2a
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: c6415f5a4bd163b9458d252a3e54e18ff6e59ef3
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89063065"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91733584"
 ---
 # <a name="irp_mj_pnp-ifs"></a>IRP \_ MJ \_ PNP (IFS) 
 
@@ -27,7 +27,7 @@ ms.locfileid: "89063065"
 
 \_ \_ 当系统上发生即插即用活动时，即插即用管理器将发送 IRP MJ PNP 请求。 其他操作系统组件以及其他内核模式驱动程序还可以发送某些 IRP \_ MJ \_ PNP 请求，具体取决于次要函数代码。
 
-有关即插即用的对驱动程序的 IRP 处理要求的详细信息，请参阅 [即插即用](https://docs.microsoft.com/windows-hardware/drivers/kernel/implementing-plug-and-play)。
+有关即插即用的对驱动程序的 IRP 处理要求的详细信息，请参阅 [即插即用](../kernel/introduction-to-plug-and-play.md)。
 
 有关 IRP \_ MJ \_ PNP 次要功能代码的参考信息，请参阅 [即插即用次 irp](../kernel/plug-and-play-minor-irps.md)。
 
@@ -97,7 +97,7 @@ ms.locfileid: "89063065"
 
     -   如果筛选器在队列中持有 Irp，则它可能会失败或将其向下传递到堆栈 (会由存储设备堆栈) 失败。
 
-## <a name="parameters"></a>parameters
+## <a name="parameters"></a>参数
 
 
 文件系统或筛选器驱动程序与给定的 IRP 一起调用[**IoGetCurrentIrpStackLocation**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetcurrentirpstacklocation) ，以获取指向其自己的*IrpSp*[**堆栈位置**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_stack_location)的指针，如以下列表所示。  (IRP 显示为 *irp*。 ) 驱动程序可以使用在处理即插即用请求中的以下 irp 成员和 irp 堆栈位置设置的信息：
@@ -145,6 +145,4 @@ ms.locfileid: "89063065"
 [**IRP \_ MN \_ 启动 \_ 设备**](../kernel/irp-mn-start-device.md)
 
 [**IRP \_ MN \_ 意外 \_ 删除**](../kernel/irp-mn-surprise-removal.md)
-
- 
 

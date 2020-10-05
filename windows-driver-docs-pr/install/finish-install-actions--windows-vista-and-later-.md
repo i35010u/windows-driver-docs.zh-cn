@@ -10,12 +10,12 @@ keywords:
 - 共同安装程序 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bd6f4826f50520d23eac26ade7c53b43241d9836
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 2674d3a0af65a22dc64a10ab1253347ec4a94097
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89095533"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91732871"
 ---
 # <a name="finish-install-actions"></a>Finish-Install 操作
 
@@ -32,7 +32,7 @@ ms.locfileid: "89095533"
 
 在 Windows 8 及更高版本中，"完成-安装" 操作不会在设备安装过程中自动运行，并且已删除 [**SetupDiFinishInstallAction**](/previous-versions/windows/hardware/previsioning-framework/ff551022(v=vs.85)) 函数。 相反，管理员 (或可以向 UAC 提示符提供管理员凭据) 的受限用户必须转到操作中心并处理 "完成安装设备软件" 维护项目，才能运行 "完成-安装" 操作。 在此之前，"完成-安装" 操作将不会运行。 例如，如果用户插入安装包含 "完成安装" 操作的驱动程序的设备，则 "完成-安装" 操作将不会在该时间自动运行。 相反，当用户手动启动 "完成-安装" 操作时，将在稍后的某个时间点运行该操作。 此后，当 Windows 运行 "完成-安装" 操作时，该操作将运行该单一机会。 如果操作失败，则必须采取适当的措施来允许用户重试并稍后完成。 同样，还可以使用 "完成-安装" 操作来安装应随附驱动程序的支持软件，但也不会自动安装它。
 
-或者，根据你的方案，在 Windows 8 及更高版本中，你可以使用新的设备应用模型。 有关设备应用的详细信息，请参阅 [设计良好的硬件体验](https://go.microsoft.com/fwlink/p/?linkid=227833)。
+或者，根据你的方案，在 Windows 8 及更高版本中，你可以使用新的设备应用模型。 有关设备应用的详细信息，请参阅 [设计良好的硬件体验](/windows-hardware/design/)。
 
 完成-安装操作在以下情况下很有用：
 
@@ -53,6 +53,4 @@ ms.locfileid: "89095533"
 [实施 Finish-Install 操作](implementing-finish-install-actions.md)
 
 [如何处理 Finish-Install 操作](how-finish-install-actions-are-processed.md)
-
- 
 

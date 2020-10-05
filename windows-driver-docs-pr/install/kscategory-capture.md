@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: f96c8202d81dd4750ae58c48ae97bbeb314e4195
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: e0db0c0e42c57ff47f033d221ebf09bec4000558
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89097261"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91732834"
 ---
 # <a name="kscategory_capture"></a>KSCATEGORY_CAPTURE
 
@@ -33,7 +33,7 @@ KSCATEGORY_CAPTURE [设备接口类](./overview-of-device-interface-classes.md) 
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Attribute</th>
+<th align="left">属性</th>
 <th align="left">设置</th>
 </tr>
 </thead>
@@ -56,7 +56,7 @@ KSCATEGORY_CAPTURE [设备接口类](./overview-of-device-interface-classes.md) 
 
 KS 设备的驱动程序将注册 KSCATEGORY_CAPTURE 的实例，以指示设备支持 KSCATEGORY_CAPTURE 功能类别。
 
-有关如何在 INF 文件中注册此功能类别的信息，请参阅 *Ac97smpl* inf 文件，该文件包含在 WDK 中提供的 [交流电 "97 示例驱动程序](https://go.microsoft.com/fwlink/p/?linkid=256075) " 中。
+有关如何在 INF 文件中注册此功能类别的信息，请参阅 *Ac97smpl* inf 文件，该文件包含在 WDK 中提供的 [交流电 "97 示例驱动程序](/samples/browse/) " 中。
 
 有关音频适配器的设备接口类的信息，请参阅 [安装音频适配器的设备接口](../audio/installing-device-interfaces-for-an-audio-adapter.md)。
 
@@ -75,6 +75,4 @@ KS 设备的驱动程序将注册 KSCATEGORY_CAPTURE 的实例，以指示设备
 </tr>
 </tbody>
 </table>
-
- 
 

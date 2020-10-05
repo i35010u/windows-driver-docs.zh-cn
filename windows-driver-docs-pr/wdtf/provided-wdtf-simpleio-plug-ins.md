@@ -4,12 +4,12 @@ description: 简单 i/o 插件是 Windows 驱动程序测试框架的扩展 (WDT
 ms.assetid: 948E8CF5-24A1-4A7C-BD18-374F989AD053
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4b81183915f0e3708d5caf88ca9876930cfa9b81
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: ebbc6f369e4468224e86f280b6757bf9f50dbe60
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90715220"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91732565"
 ---
 # <a name="provided-wdtf-simple-io-plug-ins"></a>提供的 WDTF 简单 I/O 插件
 
@@ -65,7 +65,7 @@ xperf.exe -merge Audio_SimpleIo_Kernel.etl Audio_SimpleIo.etl Audio_SimpleIo _Me
 
 - 查看合并的跟踪文件，其中包含 Xperf (**xperfview**) 。
 
-## <a name="bluetooth"></a>蓝牙
+## <a name="bluetooth"></a>Bluetooth
 
 ### <a name="bluetooth-requirements"></a>蓝牙要求
 
@@ -201,7 +201,7 @@ xperf.exe -merge Audio_SimpleIo_Kernel.etl Audio_SimpleIo.etl Audio_SimpleIo _Me
 
 - GPS 设备必须在具有适当 GPS 信号的位置进行测试。
 
-## <a name="volume"></a>Volume
+## <a name="volume"></a>数据量(Volume)
 
 ### <a name="requirements-volume"></a> (卷) 的要求
 
@@ -237,15 +237,15 @@ xperf.exe -merge Audio_SimpleIo_Kernel.etl Audio_SimpleIo.etl Audio_SimpleIo _Me
 
 ### <a name="requirements-wlan"></a> (WLAN) 的要求
 
-- 请参阅 HCK 文档中 [由设备基础测试记录的 WLAN SimpleIO 插件故障疑难解答](https://go.microsoft.com/fwlink/p/?linkid=309556) 。
+- 请参阅 HCK 文档中 [由设备基础测试记录的 WLAN SimpleIO 插件故障疑难解答](/previous-versions/windows/hardware/hck/dn260302(v=vs.85)) 。
 
 ### <a name="type-of-io-plug-in-performs-wlan"></a>I/o 插件的类型 (WLAN) 
 
-- 请参阅 HCK 文档中 [由设备基础测试记录的 WLAN SimpleIO 插件故障疑难解答](https://go.microsoft.com/fwlink/p/?linkid=309556) 。
+- 请参阅 HCK 文档中 [由设备基础测试记录的 WLAN SimpleIO 插件故障疑难解答](/previous-versions/windows/hardware/hck/dn260302(v=vs.85)) 。
 
 ### <a name="how-to-triage-test-failures-wlan"></a>如何诊断 (WLAN) 的测试失败
 
-- 请参阅 HCK 文档中 [由设备基础测试记录的 WLAN SimpleIO 插件故障疑难解答](https://go.microsoft.com/fwlink/p/?linkid=309556) 。
+- 请参阅 HCK 文档中 [由设备基础测试记录的 WLAN SimpleIO 插件故障疑难解答](/previous-versions/windows/hardware/hck/dn260302(v=vs.85)) 。
 
 ## <a name="usb-controller-and-hub-with-mutt"></a>USB 控制器和集线器与 Mutt
 

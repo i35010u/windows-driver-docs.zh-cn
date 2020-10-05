@@ -1,5 +1,5 @@
 ---
-title: 适用于控制台和远程 IDDs 的 IddCx 1.4 更新
+title: 控制台和远程 IDD 的 IddCx 1.4 更新
 description: 适用于控制台和远程间接显示驱动程序的 IddCx 版本1.4 更新
 ms.assetid: 4823bb0a-3631-4232-93b4-ceb3c01b0b85
 ms.date: 09/28/2020
@@ -11,14 +11,14 @@ keywords:
 - 远程间接显示驱动程序
 - 远程 IDD
 ms.localizationpriority: medium
-ms.openlocfilehash: 11c19da2f575a0fff4168c6e1793525111904919
-ms.sourcegitcommit: 2aedb606f9f14e74687f0d3da60e14fc6ffffa7e
+ms.openlocfilehash: 4b98fb55e38ca0f4248e23a1de2526c0071ecbfd
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91544845"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91732553"
 ---
-# <a name="iddcx-14-updates-for-console-and-remote-idds"></a>适用于控制台和远程 IDDs 的 IddCx 1.4 更新
+# <a name="iddcx-14-updates-for-console-and-remote-idds"></a>控制台和远程 IDD 的 IddCx 1.4 更新
 
 以下 IddCx 版本1.4 更新适用于控制台和远程间接显示驱动程序 (IDDs) 。
 
@@ -38,10 +38,10 @@ Windows 的 "设置" 应用程序中还提供了 "图形设置" 页，该页面�
 
 | IDD 的 GPU pref\* | 用户/OS pref\*\* | DWM 的枚举\+ | 应用的枚举\+\+ | Intel 路径 ~ | Nvidia 路径 ~ ~ | 存在 GPU ^ |
 | ----------------- | ------ | ------ | ------ | -------------------- | -------------------- | ------ |
-| **无或 Intel** | 系统 | Intel  | Intel  | 同一适配器         | 混合跨适配器 | Intel  |
+| **无或 Intel** | System | Intel  | Intel  | 同一适配器         | 混合跨适配器 | Intel  |
 | **无或 Intel** | 电源  | Intel  | Intel  | 同一适配器         | 混合跨适配器 | Intel  |
 | **无或 Intel** | 性能   | Intel  | Nvidia | 同一适配器         | 混合跨适配器 | Intel  |
-| **Nvidia**        | 系统 | Nvidia | Nvidia | 混合跨适配器 | 同一适配器         | Nvidia |
+| **Nvidia**        | System | Nvidia | Nvidia | 混合跨适配器 | 同一适配器         | Nvidia |
 | **Nvidia**        | 电源  | Nvidia | Intel  | 混合跨适配器 | 同一适配器         | Nvidia |
 | **Nvidia**        | 性能   | Nvidia | Nvidia | 混合跨适配器 | 同一适配器         | Nvidia |
 
@@ -61,7 +61,7 @@ Windows 的 "设置" 应用程序中还提供了 "图形设置" 页，该页面�
 
 ## <a name="for-edid-less-scenarios-add-evt_idd_cx_monitor_get_physical_size-to-provide-the-physical-width-and-height-of-the-monitor"></a>对于无 EDID 方案，请添加 EVT_IDD_CX_MONITOR_GET_PHYSICAL_SIZE 以提供监视器的物理宽度和高度
 
-有时，IDD 需要提供物理监视器大小（即使在监视器说明不可用时） (例如，在将非 Windows 平台用作监视器) 时也是如此。 与其他桌面配置属性不同，监视器的物理大小是监视器的一个功能，因此，一旦添加监视器，就无法更改。 如果 IDD 提供了监视器说明，则操作系统将从该说明中获取物理大小。 如果 IDD 无法提供说明，操作系统将调用可选的 [**EVT_IDD_CX_MONITOR_GET_PHYSICAL_SIZE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/iddcx/nc-iddcx-evt_idd_cx_monitor_get_physical_size) 驱动程序回调来检索物理大小。 此回调作为 [**IddCxMonitorArrival**](https://docs.microsoft.com/windows-hardware/drivers/ddi/iddcx/nf-iddcx-iddcxmonitorarrival) 调用的一部分进行调用。
+有时，IDD 需要提供物理监视器大小（即使在监视器说明不可用时） (例如，在将非 Windows 平台用作监视器) 时也是如此。 与其他桌面配置属性不同，监视器的物理大小是监视器的一个功能，因此，一旦添加监视器，就无法更改。 如果 IDD 提供了监视器说明，则操作系统将从该说明中获取物理大小。 如果 IDD 无法提供说明，操作系统将调用可选的 [**EVT_IDD_CX_MONITOR_GET_PHYSICAL_SIZE**](/windows-hardware/drivers/ddi/iddcx/nc-iddcx-evt_idd_cx_monitor_get_physical_size) 驱动程序回调来检索物理大小。 此回调作为 [**IddCxMonitorArrival**](/windows-hardware/drivers/ddi/iddcx/nf-iddcx-iddcxmonitorarrival) 调用的一部分进行调用。
 
 ## <a name="build-iddcx-v14-drivers-that-run-on-multiple-versions-of-iddcx"></a>生成在多个版本的 IddCx 上运行的 IddCx 1.4 驱动程序
 

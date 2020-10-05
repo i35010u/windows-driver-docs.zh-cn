@@ -7,12 +7,12 @@ keywords:
 - 在安全的 WDK 设备安装中访问注册表项
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 22cce21e78a0746b282c1fb8e9f5659e4eda6f35
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 006d6478b74e2c703940e8aa018c3ba0f6ef84d8
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90717154"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91734279"
 ---
 # <a name="accessing-registry-keys-safely"></a>安全地访问注册表项
 
@@ -63,7 +63,5 @@ ms.locfileid: "90717154"
 
 -   *类安装* 程序和 *共同安装程序* 不能调用注册表功能来创建、更改或删除保留供操作系统使用的注册表值。
 
-有关注册表项的访问权限的详细信息，请参阅 [注册表项安全性和访问权限](https://go.microsoft.com/fwlink/p/?linkid=194542)。
-
- 
+有关注册表项的访问权限的详细信息，请参阅 [注册表项安全性和访问权限](/windows/win32/sysinfo/registry-key-security-and-access-rights)。
 

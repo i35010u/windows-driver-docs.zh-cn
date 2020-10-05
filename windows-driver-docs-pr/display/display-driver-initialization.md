@@ -7,12 +7,12 @@ keywords:
 - 初始化显示驱动程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2e78ef97c12773e5e24e2b46b8c34806ec6b0fb1
-ms.sourcegitcommit: eba1bbec165d56f64d4c1ab5c3f7465dcd299ae3
+ms.openlocfilehash: 7796ed99439bf426033ea0b48ade2c3c8c8db5a4
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91510620"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91734547"
 ---
 # <a name="display-driver-initialization"></a>显示驱动程序初始化
 
@@ -54,7 +54,4 @@ ms.locfileid: "91510620"
 
 显示驱动程序必须实现 [**DrvNotify**](/windows/win32/api/winddi/nf-winddi-drvnotify) 才能接收通知事件，特别是 DN \_ 绘图 \_ 开始事件。 GDI 在开始绘制之前立即发送此事件，因此它可用于确定缓存何时可以初始化。
 
-有关启动过程的详细信息，请参阅 " [即插即用](https://docs.microsoft.com/windows-hardware/drivers/kernel/implementing-plug-and-play) " 部分。
-
-
-
+有关启动过程的详细信息，请参阅 " [即插即用](../kernel/introduction-to-plug-and-play.md) " 部分。

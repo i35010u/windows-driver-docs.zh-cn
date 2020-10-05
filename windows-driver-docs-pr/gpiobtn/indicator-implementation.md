@@ -4,12 +4,12 @@ description: 本主题介绍指标实现。
 ms.assetid: 60BCE8C7-416E-4D5B-9B32-9B398CEA6A8A
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 21e2cb936c3dc6feea73d50da32beadcb3f44583
-ms.sourcegitcommit: 67efcd26f7be8f50c92b141ccd14c9c68f4412d8
+ms.openlocfilehash: 26d2b4453de14da59d7ae3b4e79e0b6058c89ac7
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88902543"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91734087"
 ---
 # <a name="indicator-implementation"></a>指示器实现
 
@@ -39,7 +39,7 @@ ms.locfileid: "88902543"
 
 图2笔记本电脑实现选项
 
-使用 ConvertibleSlateMode [无人参与 Windows 安装程序](https://go.microsoft.com/fwlink/p/?linkid=276788) 设置，oem 可以在不实现注入机制的情况下将 clamshells 以静态方式标记为作为图像自定义的便携式计算机模式。
+使用 ConvertibleSlateMode [无人参与 Windows 安装程序](/previous-versions/windows/it-pro/windows-8.1-and-8/ff699026(v=win.10)) 设置，oem 可以在不实现注入机制的情况下将 clamshells 以静态方式标记为作为图像自定义的便携式计算机模式。
 
 此功能面向具有永久连接键盘 (的触摸屏系统，用户可以随时使用) 。 此处提供的示例是没有可用的 GPIO 指示器/注入的触摸屏 clamshell。
 

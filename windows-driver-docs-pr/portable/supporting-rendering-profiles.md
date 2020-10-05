@@ -3,19 +3,19 @@ description: 支持呈现配置文件
 title: 支持呈现配置文件
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 512a154e12764ee4f42ffdc8d8ea19e62226ed69
-ms.sourcegitcommit: 15caaf6d943135efcaf9975927ff3933957acd5d
+ms.openlocfilehash: c34db368980ac0435cf99dce3b976caf94238eb5
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88969470"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91732811"
 ---
 # <a name="supporting-rendering-profiles"></a>支持呈现配置文件
 
 
 音频或视频设备可能支持特定的渲染配置文件。 例如，音频流式处理设备可能会在多个通道上按特定比特率流式传输特定类型的内容。 内容类型、流式比特率和通道计数称为 *呈现配置文件*。
 
-WPD 应用程序通常会从驱动程序中检索呈现配置文件。 有关应用程序如何检索呈现配置文件的详细信息，请参阅 WPD SDK 中的 [检索设备支持的呈现功能](https://go.microsoft.com/fwlink/p/?linkid=150363) 主题。
+WPD 应用程序通常会从驱动程序中检索呈现配置文件。 有关应用程序如何检索呈现配置文件的详细信息，请参阅 WPD SDK 中的 [检索设备支持的呈现功能](/previous-versions//ms740263(v=vs.85)) 主题。
 
 本主题介绍 WpdWudfSampleDriver 驱动程序如何实现对 *帮助程序 .cpp* 模块中音频流的支持。
 
@@ -154,9 +154,4 @@ HRESULT GetPreferredAudioProfile(
 ```
 
  
-
- 
-
-
-
 

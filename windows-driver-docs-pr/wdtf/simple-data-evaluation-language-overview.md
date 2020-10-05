@@ -17,16 +17,16 @@ keywords:
 - 布尔逻辑 WDK WDTF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 16284065f9defca13539bf85c36957041b1fa48d
-ms.sourcegitcommit: bd72676caf2bf5c9738c4081c778316919b85d30
+ms.openlocfilehash: 2149d09094b88e2322cced24cbd545aa70c75352
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2020
-ms.locfileid: "89450200"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91733017"
 ---
 # <a name="simple-data-evaluation-language-overview"></a>简单数据评估语言概述
 
-WDTF 包括一个简单的查询语言，用于简化基于属性或关系收集目标的任务。 简单的数据计算语言 (SDEL) 与 XPath 类似。 有关 XPath 的详细信息，请参阅 [Xpath 参考](https://go.microsoft.com/fwlink/p/?linkid=33165)。
+WDTF 包括一个简单的查询语言，用于简化基于属性或关系收集目标的任务。 简单的数据计算语言 (SDEL) 与 XPath 类似。 有关 XPath 的详细信息，请参阅 [Xpath 参考](/previous-versions/dotnet/netframework-4.0/ms256115(v=vs.100))。
 
 本主题中的以下部分介绍了如何使用 SDEL。
 

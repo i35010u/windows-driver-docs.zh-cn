@@ -6,12 +6,12 @@ ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 WDI_TLV_BSS_ENTRY_AGE_INFO 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 1b231c4c75a20d1be8e08a6ae445e2ec4fd95b18
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 7809facf4090c07f44524f52215f53e9c2283a0a
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90105092"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91733139"
 ---
 # <a name="wdi_tlv_bss_entry_age_info"></a>WDI \_ TLV \_ BSS \_ 条目 \_ AGE \_ 信息
 
@@ -45,7 +45,7 @@ Sum (所有包含的元素的大小) 。
 <tbody>
 <tr class="odd">
 <td>UINT64</td>
-<td>此 BSS 条目最近发现时的时间戳。 应通过 <a href="/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisgetcurrentsystemtime" data-raw-source="[&lt;strong&gt;NdisGetCurrentSystemTime&lt;/strong&gt;](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisgetcurrentsystemtime)"><strong>NdisGetCurrentSystemTime</strong></a> 或 <a href="/windows-hardware/drivers/ddi/wdm/nf-wdm-kequerysystemtime" data-raw-source="[&lt;strong&gt;KeQuerySystemTime&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kequerysystemtime)"><strong>KeQuerySystemTime</strong></a>获取时间戳。</td>
+<td>此 BSS 条目最近发现时的时间戳。 应通过 <a href="/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisgetcurrentsystemtime" data-raw-source="[&lt;strong&gt;NdisGetCurrentSystemTime&lt;/strong&gt;](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisgetcurrentsystemtime)"><strong>NdisGetCurrentSystemTime</strong></a> 或 <a href="/windows-hardware/drivers/ddi/wdm/nf-wdm-kequerysystemtime" data-raw-source="[&lt;strong&gt;KeQuerySystemTime&lt;/strong&gt;](/windows-hardware/drivers/ddi/wdm/nf-wdm-kequerysystemtime)"><strong>KeQuerySystemTime</strong></a>获取时间戳。</td>
 </tr>
 <tr class="even">
 <td>UINT8</td>
@@ -80,4 +80,3 @@ Sum (所有包含的元素的大小) 。
 </tr>
 </tbody>
 </table>
-

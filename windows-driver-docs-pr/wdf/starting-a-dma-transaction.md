@@ -10,12 +10,12 @@ keywords:
 - 散播/聚集 DMA WDK KMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 17b04f24c576836a45d4b6c6adca2808ec15f16f
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: a9dbd8b0bf65b54be06aa11227e1c3088def4389
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89190835"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91734321"
 ---
 # <a name="starting-a-dma-transaction"></a>启动 DMA 事务
 
@@ -29,7 +29,7 @@ ms.locfileid: "89190835"
 
 在您的驱动程序调用 **WdfDmaTransactionExecute**之前，驱动程序必须存储 DMA 事务句柄，以便以后当驱动程序完成与该事务关联的每个 DMA 传输时可以检索该句柄。 存储事务句柄的好位置是框架对象的上下文内存，通常是设备的框架设备对象。 有关使用对象上下文内存的详细信息，请参阅 [框架对象上下文空间](framework-object-context-space.md)。
 
-[PLX9x5x](https://go.microsoft.com/fwlink/p/?linkid=256157)示例中的以下代码示例演示如何初始化并执行 DMA 事务。 此代码将出现在 *Read .c* 文件中。
+[PLX9x5x](/samples/browse/)示例中的以下代码示例演示如何初始化并执行 DMA 事务。 此代码将出现在 *Read .c* 文件中。
 
 ```cpp
 VOID PLxEvtIoRead(

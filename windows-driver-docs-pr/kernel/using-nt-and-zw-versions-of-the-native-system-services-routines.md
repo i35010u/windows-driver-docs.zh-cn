@@ -6,19 +6,19 @@ keywords:
 - 本机系统服务 API WDK
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1d2edacb7b495c8c5704d1dade4ccc01638d6951
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: d90bccaba7e90ee8f0ae605eee64ae472779bf62
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89190971"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91733409"
 ---
 # <a name="using-nt-and-zw-versions-of-the-native-system-services-routines"></a>使用本机系统服务例程的 Nt 和 Zw 版本
 
 
 Windows native 操作系统服务 API 实现为在内核模式下运行的一组例程。 这些例程的名称以前缀 **Nt** 或 **Zw**开头。 内核模式驱动程序可以直接调用这些例程。 用户模式应用程序可以通过使用系统调用来访问这些例程。
 
-除了几个例外，每个本机系统服务例程有两个略有不同的版本，但前缀不同。 例如，对 [NtCreateFile](https://go.microsoft.com/fwlink/p/?linkid=157250) 和 [**ZwCreateFile**](/windows-hardware/drivers/ddi/wdm/nf-wdm-zwcreatefile) 的调用执行类似的操作，事实上，它是由相同的内核模式系统例程提供服务的。 对于用户模式下的系统调用，例程的 **Nt** 版本和 **Zw** 版本的行为相同。 对于来自内核模式驱动程序的调用，例程的 **Nt** 和 **Zw** 版本不同于它们处理调用方传递到例程的参数值的方式。
+除了几个例外，每个本机系统服务例程有两个略有不同的版本，但前缀不同。 例如，对 [NtCreateFile](/windows/win32/api/winternl/nf-winternl-ntcreatefile) 和 [**ZwCreateFile**](/windows-hardware/drivers/ddi/wdm/nf-wdm-zwcreatefile) 的调用执行类似的操作，事实上，它是由相同的内核模式系统例程提供服务的。 对于用户模式下的系统调用，例程的 **Nt** 版本和 **Zw** 版本的行为相同。 对于来自内核模式驱动程序的调用，例程的 **Nt** 和 **Zw** 版本不同于它们处理调用方传递到例程的参数值的方式。
 
 内核模式驱动程序调用本机系统服务例程的 **Zw** 版本，以通知例程参数来自受信任的内核模式源。 在这种情况下，例程假定它可以安全地使用参数，而无需首先对其进行验证。 但是，如果参数可能来自用户模式源或内核模式源，则驱动程序将调用例程的 **Nt** 版本，该版本根据调用线程的历史记录来确定参数是在用户模式下还是在内核模式下生成的。 有关例程如何区分内核模式参数中的用户模式参数的详细信息，请参阅 [**PreviousMode**](previousmode.md)。
 
@@ -39,6 +39,4 @@ Windows native 操作系统服务 API 实现为在内核模式下运行的一组
 [指定访问权限](access-mask.md)
 
 [NtXxx 例程](ntxxx-routines.md)
-
- 
 

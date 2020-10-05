@@ -3,12 +3,12 @@ description: 支持的方案
 title: 支持的方案
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 79451a2883a2f883b6af35446801a0b1cc79cb89
-ms.sourcegitcommit: 15caaf6d943135efcaf9975927ff3933957acd5d
+ms.openlocfilehash: 8f2f06c781bc169d201a11b92cba22a26ca9e341
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88969554"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91734343"
 ---
 # <a name="supported-scenarios"></a>支持的方案
 
@@ -25,7 +25,7 @@ WPD 提供必要的基础结构，用于标准化连接到运行 Windows 的计�
 ## <a name="span-idbrowsing_device_contentsspanspan-idbrowsing_device_contentsspanspan-idbrowsing_device_contentsspanbrowsing-device-contents"></a><span id="Browsing_Device_Contents"></span><span id="browsing_device_contents"></span><span id="BROWSING_DEVICE_CONTENTS"></span>浏览设备内容
 
 
-使用 WPD 命名空间，用户可以将 Windows 文件管理方法应用于任何类型的便携设备。  (有关如何在 WPD 应用程序中实现上下文菜单和属性页扩展的详细信息，请参阅 [WPD SDK](https://go.microsoft.com/fwlink/p/?linkid=178695)中的 Windows 便携设备编程指南。 ) 
+使用 WPD 命名空间，用户可以将 Windows 文件管理方法应用于任何类型的便携设备。  (有关如何在 WPD 应用程序中实现上下文菜单和属性页扩展的详细信息，请参阅 [WPD SDK](/windows/win32/windows-portable-devices)中的 Windows 便携设备编程指南。 ) 
 
 ## <a name="span-iddevice_controlspanspan-iddevice_controlspanspan-iddevice_controlspandevice-control"></a><span id="Device_Control"></span><span id="device_control"></span><span id="DEVICE_CONTROL"></span>设备控制
 
@@ -43,10 +43,4 @@ WPD 基础结构提供高度可扩展的设备表示形式和控制机制。 这
 [**WPD 驱动程序概述**](wpd-drivers-overview.md)
 
  
-
- 
-
-
-
-
 

@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: f2f41f8869091fa0d063d3495e6ad470fee79e4b
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 0347b69515ca0fb1da25b4110afd3c1c90af2713
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89095487"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91732832"
 ---
 # <a name="kscategory_audio"></a>KSCATEGORY_AUDIO
 
@@ -33,7 +33,7 @@ ms.locfileid: "89095487"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Attribute</th>
+<th align="left">属性</th>
 <th align="left">设置</th>
 </tr>
 </thead>
@@ -58,7 +58,7 @@ ms.locfileid: "89095487"
 
 有关音频适配器的设备接口类的信息，请参阅 [安装音频适配器的设备接口](../audio/installing-device-interfaces-for-an-audio-adapter.md)。
 
-有关如何在 INF 文件中注册此功能类别的信息，请参阅帮助文件 *INFViewer.html* 和 *ac97smpl*，这些文件包含在 WDK 中的 [AC ' 97 示例驱动程序](https://go.microsoft.com/fwlink/p/?linkid=256075) 中。
+有关如何在 INF 文件中注册此功能类别的信息，请参阅帮助文件 *INFViewer.html* 和 *ac97smpl*，这些文件包含在 WDK 中的 [AC ' 97 示例驱动程序](/samples/browse/) 中。
 
 <a name="requirements"></a>要求
 ------------
@@ -75,6 +75,4 @@ ms.locfileid: "89095487"
 </tr>
 </tbody>
 </table>
-
- 
 

@@ -9,19 +9,19 @@ keywords:
 - 基于框架的驱动程序 WDK KMDF，开发步骤
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c0ad54c3c8db9b13c9ef59a39df5676262ae7bf7
-ms.sourcegitcommit: 057b72e8a44ba8f4282e072edc7be0b7e9341d2a
+ms.openlocfilehash: ea42a056a26964a80e8166e4ff118596cec18fc3
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/03/2020
-ms.locfileid: "89412472"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91732568"
 ---
 # <a name="using-wdf-to-develop-a-driver"></a>使用 WDF 开发驱动程序
 
 
 本主题提供了用于开发 (KMDF) 驱动程序的内核模式驱动程序框架的框架对象的高级概述。 除了指出的情况外，你将使用相同的对象在 UMDF 版本2中从开始开发用户模式驱动程序框架 (UMDF) 驱动程序。
 
-Windows 驱动程序框架 (WDF) 驱动程序由基于框架的驱动程序所使用的[Windows 驱动程序框架对象](./introduction-to-framework-objects.md)定义的[**DriverEntry 例程**](./driverentry-for-kmdf-drivers.md)和一组事件回调函数组成。 回调函数调用框架导出的对象方法。 Windows 驱动程序工具包 (WDK) 包含示例 WDF 驱动程序，用于演示如何实现驱动程序的事件回调函数。 你可以从 [Windows 开发人员中心-硬件](https://go.microsoft.com/fwlink/p/?linkid=256387)下载这些示例。 有关可用示例的详细信息，请参阅 [KMDF 驱动程序](sample-kmdf-drivers.md) 和 [示例 UMDF 驱动程序](sample-umdf-drivers.md)示例。
+Windows 驱动程序框架 (WDF) 驱动程序由基于框架的驱动程序所使用的[Windows 驱动程序框架对象](./introduction-to-framework-objects.md)定义的[**DriverEntry 例程**](./driverentry-for-kmdf-drivers.md)和一组事件回调函数组成。 回调函数调用框架导出的对象方法。 Windows 驱动程序工具包 (WDK) 包含示例 WDF 驱动程序，用于演示如何实现驱动程序的事件回调函数。 你可以从 [Windows 开发人员中心-硬件](/samples/browse/)下载这些示例。 有关可用示例的详细信息，请参阅 [KMDF 驱动程序](sample-kmdf-drivers.md) 和 [示例 UMDF 驱动程序](sample-umdf-drivers.md)示例。
 
 创建 WDF 驱动程序时，通常会执行以下操作：
 
@@ -72,6 +72,4 @@ Windows 驱动程序框架 (WDF) 驱动程序由基于框架的驱动程序所�
 -   使用框架提供的其他对象和功能。
 
     该框架提供了驱动程序可以使用的其他对象。 有关这些对象的详细信息，请参阅 [WDF 支持对象](./using-memory-buffers.md)。
-
- 
 

@@ -4,69 +4,63 @@ description: 如何为 USB 设备分配容器 ID
 ms.assetid: 769f9486-d179-44f0-9fd1-b3e737143ced
 ms.date: 05/09/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: a5298352c7941dba1511c0a5fe942b48cfde7992
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4018693ac368c14f6c951ad4b3e7b9befc425704
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63386972"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91733266"
 ---
 # <a name="how-usb-devices-are-assigned-container-ids"></a>如何为 USB 设备分配容器 ID
 
 
-对于连接到计算机通过通用串行总线 (USB) 设备，下列流程图显示了用于将容器 ID 分配给 USB 设备节点的启发式方法 (*devnode*)。
+对于通过通用串行总线 (USB) 连接到计算机的设备，以下流程图显示了用于将容器 ID 分配到 USB 设备节点的启发式 (*devnode*) 。
 
-![流程图，显示了 usb devnodes 容器 id 启发式方法](images/containerid-6.png)
+![说明 usb devnodes 的容器 id 试探法的流程图](images/containerid-6.png)
 
-此启发式方法使用从多个源的信息以确定是否满足有关 USB devnode 以下项之一：
+此试探法使用来自多个来源的信息来确定是否有以下有关 USB devnode 的情况：
 
--   Devnode 是否表示 USB 总线上的新设备？ 如果为 true，devnode 会收到一个新的容器 id。
+-   Devnode 是否表示 USB 总线上的新设备？ 如果为 true，则 devnode 将接收到新的容器 ID。
 
--   是现有设备的子 devnode devnode？ 如果为 true，devnode 会继承父 devnode 的容器 ID。
+-   Devnode 是否为现有设备的子 devnode？ 如果为 true，则 devnode 将继承父 devnode 的容器 ID。
 
-以下几种方式生成 USB 设备的容器 ID。 此决定基于设备中包含的信息。 从 ACPI 设置、 USB 总线驱动程序和 USB 集线器检索此信息。
+USB 设备的容器 ID 通过多种方式生成。 此决定基于设备中包含的信息。 此信息是从 ACPI 设置、USB 总线驱动程序和 USB 集线器检索的。
 
-此启发式方法遵循 USB 总线上的插即用 (PnP) 管理器枚举每个 devnode 这些步骤。
+此试探法针对即插即用 (PnP) manager 在 USB 总线上枚举的每个 devnode 执行这些步骤。
 
-1.  USB 设备通过 USB 总线驱动程序查询后，可以报告通过 Microsoft 操作系统 (OS) 的容器 ID **ContainerID**描述符。
+1.  当 USB 总线驱动程序查询时，USB 设备可以通过 Microsoft 操作系统 (OS) **ContainerID** 描述符报告容器 ID。
 
-    操作系统从 Windows 7 开始，支持 Microsoft 操作系统**ContainerID**描述符。 通过此说明符，独立硬件供应商 (IHV) 可以精确地指定设备的容器 ID。 因此，在安装设备的容器 ID 是唯一的不会更改每台计算机上的设备。 此外，如果报告 Microsoft OS **ContainerID**描述符，设备将指示对操作系统所有枚举的 devnodes 属于同一个物理设备。
+    从 Windows 7 开始，操作系统支持 Microsoft 操作系统 **ContainerID** 描述符。 通过此描述符，独立硬件供应商 (IHV) 可以准确指定设备的容器 ID。 因此，设备的容器 ID 是唯一的，不会在设备安装到的每台计算机上更改。 此外，如果它报告了 Microsoft 操作系统 **ContainerID** 描述符，则设备向操作系统指示所有枚举的 devnodes 都属于同一物理设备。
 
-    Microsoft OS **ContainerID**旨在使用在支持的多个系统总线通过在设备的同时连接的设备中的描述符。 例如，打印机可能使用插扩展 (PNP-X) 支持同时 USB 和 IP 网络连接。 通过使用单个 Microsoft OS **ContainerID**描述符，这两个传输报告 ID 相同的容器。 因此，即插即用管理器确定枚举每个总线 devnodes 属于同一个物理设备。
+    Microsoft 操作系统 **ContainerID** 描述符旨在用于支持通过多个系统总线同时连接设备的设备。 例如，打印机可以通过使用 (Pnp-x) 即插即用扩展来支持同时进行的 USB 和 IP 网络连接。 通过使用单个 Microsoft 操作系统 **ContainerID** 描述符，在这两个传输上报告相同的容器 ID。 因此，PnP 管理器会确定每个总线枚举的 devnodes 是同一个物理设备的一部分。
 
-    有关 Microsoft 操作系统的详细信息**ContainerID**描述符，请参阅[Microsoft OS 描述符](https://go.microsoft.com/fwlink/p/?linkid=142397)。
+    有关 Microsoft 操作系统 **ContainerID** 描述符的详细信息，请参阅 [microsoft os 描述符](/previous-versions/gg463179(v=msdn.10))。
 
-2.  如果 USB 设备不报告 Microsoft OS **ContainerID**描述符，USB 集线器驱动程序查询 ACPI 来确定设备是否已附加到一个面向外部的端口。
+2.  如果 USB 设备未报告 Microsoft 操作系统 **ContainerID** 描述符，则 usb 集线器驱动程序将查询 ACPI 以确定设备是否已连接到面向外部的端口。
 
-    操作系统尝试查找 ACPI 地址 (**_ADR**) 与设备连接的 USB 端口的地址相匹配的对象。 如果找到匹配的地址对象，则操作系统将执行以下步骤：
+    操作系统尝试查找 ACPI 地址 (**_ADR** 与设备连接到的 USB 端口的地址相匹配的) 对象。 如果找到匹配的地址对象，则操作系统将执行以下步骤：
 
-    -   USB 端口功能 (**_UPC**) 对象查询并**PortIsConnectable**检查值。 如果**PortIsConnectable**具有非零值 0xff，可以使用该端口来连接外部设备。 因此，连接到此端口的任何设备必须是外部的计算机。
+    -   查询 (**_UPC**) 对象的 USB 端口功能，并选中 **PortIsConnectable** 值。 如果 **PortIsConnectable** 的值为非零值，则可以使用端口来连接外部设备。 因此，连接到此端口的任何设备都必须在计算机外部。
 
-    -   如果在计算机实现 ACPI 3.0 和**PortIsConnectable**字节为非零值，操作系统将此外查询的物理位置描述 (**_PLD**) 对象。 如果操作系统会检查**UserVisible**位 （64 位） 上设置 **_PLD**对象。 这是作为额外检查以确保该端口可连接和外部对用户可见。
+    -   如果计算机实现了 ACPI 3.0，并且 **PortIsConnectable** 字节为非零，则操作系统将另外查询物理位置说明 (**_PLD**) 对象。 操作系统检查是否在 **_PLD**对象上设置了**UserVisible**位 (位 64) 。 它将执行此项检查以确保端口既可连接，又可在外部对用户可见。
 
-    如果从 ACPI 收集的信息指示外部设备，即插即用 manager 会生成设备的容器 ID。 **ContainedID**值是设备的 USB 序列号的哈希或随机生成的值。 Devnode 分配此容器 id。
+    如果从 ACPI 收集的信息指示设备为外部设备，则 PnP 管理器将为设备生成容器 ID。 **ContainedID**值可以是设备的 USB 序列号或随机生成的值的哈希值。 已为 devnode 分配此容器 ID。
 
-    **请注意**  devnode 的操作系统决定是否在计算机的内部设备，如果将继承父 devnode，这是计算机本身的容器 ID （在这种情况下） 的容器 ID。
+    **注意**   如果操作系统确定设备在计算机内部运行，则 devnode 将继承父 devnode 的容器 ID，在这种情况下 (，) 是计算机本身的容器 ID。
 
      
 
-3.  如果未返回 ACPI **_ADR**与设备连接到 USB 端口地址相匹配的对象，即插即用管理器生成基于 devnode 可移动状态的容器 ID。
+3.  如果 ACPI 未返回与设备连接到的 USB 端口地址相匹配的 **_ADR** 对象，PnP 管理器将基于 devnode 的可移动状态生成容器 ID。
 
-    USB 集线器驱动程序查询 USB **RemoveAndPowerMask**描述符从中心，并检查是否**DeviceRemovable**位设置为设备连接到端口。 如果**DeviceRemovable**设置位，连接到该端口的设备从中心可移动。 如果**DeviceRemovable**未设置位，连接到该端口的设备是 not 可移动从中心。
+    USB 集线器驱动程序从中心查询 USB **RemoveAndPowerMask** 描述符，并检查是否为设备连接到的端口设置了 **DeviceRemovable** 位。 如果设置了 **DeviceRemovable** 位，则连接到该端口的设备将从中心可移动。 如果未设置 **DeviceRemovable** 位，则连接到该端口的设备将无法从中心移动。
 
-    USB 总线驱动程序向生成的即插即用管理器报告端口可移动/not-可移动状态**ContainerId**为 devnode 通过以下步骤：
+    USB 总线驱动程序向 PnP 管理器报告端口可移动/非可移动状态，后者通过以下步骤为 devnode 生成 **ContainerId** ：
 
-    -   如果中心指示连接到给定的端口的设备从中心可移动，即插即用管理器确定设备附加到此端口是外部的计算机。 任一哈希的 USB 序列号的设备，则会生成 devnode 的容器 ID 或随机生成的值。
+    -   如果集线器指示连接到给定端口的设备是从中心可移动的，则 PnP 管理器会确定连接到此端口的设备在计算机外部。 为 devnode 生成的容器 ID 是设备的 USB 序列号的哈希，或是随机生成的值。
 
-    -   如果中心指示，连接到给定的端口的设备不是从中心可移动，即插即用管理器确定设备附加到此端口是子功能的多功能设备。 在这种情况下，devnode 继承父 devnode 的容器 ID。
+    -   如果中心指示连接到给定端口的设备不能从集线器中移除，则 PnP 管理器会确定连接到此端口的设备是多功能设备的子功能。 在这种情况下，devnode 继承父 devnode 的容器 ID。
 
-ACPI 3.0 接口的详细信息，请参阅[高级配置和电源接口规范修订 3.0b](https://go.microsoft.com/fwlink/p/?linkid=145427)。
-
- 
+有关 ACPI 3.0 接口的详细信息，请参阅 [高级配置和电源接口规范修订版本 3.0 b](https://go.microsoft.com/fwlink/p/?linkid=145427)。
 
  
-
-
-
-
 

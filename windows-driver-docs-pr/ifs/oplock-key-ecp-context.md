@@ -15,12 +15,12 @@ api_type:
 - HeaderDef
 ms.date: 11/08/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 1bee4d162a840004804af567ffb3a230eaddbb53
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 2d7cf0bcb1684b44a04eb7c9b4866b7dc673ef8d
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89067378"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91733290"
 ---
 # <a name="oplock_key_ecp_context-structure"></a>OPLOCK_KEY_ECP_CONTEXT 结构
 
@@ -40,12 +40,12 @@ typedef struct _OPLOCK_KEY_ECP_CONTEXT {
 **OplockKey**  
 Oplock 项的 GUID。 此 GUID 在不同的句柄之间共享，并将其标识为属于相同的客户端缓存。 当两个句柄共享同一个 oplock 键时，在一个句柄上执行的请求将不会中断另一个句柄上的未完成 oplock。
 
-**预留**  
+**保护**  
 保留。 必须设置为零。
 
 ## <a name="remarks"></a>备注
 
-有关如何使用 ECPs 在创建文件时将附加信息与文件相关联的信息，请参阅将 [额外的 Create 参数与 IRP_MJ_CREATE 操作一起使用](https://docs.microsoft.com/windows-hardware/drivers/ifs/using-extra-create-parameters-with-an-irp-mj-create-operation)。
+有关如何使用 ECPs 在创建文件时将附加信息与文件相关联的信息，请参阅将 [额外的 Create 参数与 IRP_MJ_CREATE 操作一起使用](./using-ecps-to-process-irp-mj-create-operations-in-a-file-system-minifilter.md)。
 
 如果微筛选器看到上方的 ECP，则不应更改 OPLOCK_KEY_ECP_CONTEXT 结构的内容。 你应使用它来仅检索有关 oplock 密钥 ECP 的信息。 有关此问题的详细信息，请参阅 [系统定义的 ECPs](./system-defined-ecps.md)。
 

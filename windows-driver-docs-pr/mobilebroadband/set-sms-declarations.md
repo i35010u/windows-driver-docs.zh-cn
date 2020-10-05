@@ -4,22 +4,22 @@ description: 设置短信声明
 ms.assetid: fad7fb60-eb08-43e9-bc58-afb8d6b5633c
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 14710d0bd2e4c8f5a769a83c57607d0873c005c4
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c2d792aecce0cb52773392c4bde341e9694ba9e8
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63326022"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91734537"
 ---
 # <a name="set-sms-declarations"></a>设置短信声明
 
 
-## <a name="span-idsmsdevicecapabilitydeclarationinpackagemanifestspanspan-idsmsdevicecapabilitydeclarationinpackagemanifestspanspan-idsmsdevicecapabilitydeclarationinpackagemanifestspansms-device-capability-declaration-in-package-manifest"></a><span id="SMS_device_capability_declaration_in_package_manifest"></span><span id="sms_device_capability_declaration_in_package_manifest"></span><span id="SMS_DEVICE_CAPABILITY_DECLARATION_IN_PACKAGE_MANIFEST"></span>包清单中的短信设备功能声明
+## <a name="span-idsms_device_capability_declaration_in_package_manifestspanspan-idsms_device_capability_declaration_in_package_manifestspanspan-idsms_device_capability_declaration_in_package_manifestspansms-device-capability-declaration-in-package-manifest"></a><span id="SMS_device_capability_declaration_in_package_manifest"></span><span id="sms_device_capability_declaration_in_package_manifest"></span><span id="SMS_DEVICE_CAPABILITY_DECLARATION_IN_PACKAGE_MANIFEST"></span>包清单中的 SMS 设备功能声明
 
 
-使用 SMS 的 UWP 应用必须声明其在 Visual Studio 中的包清单中的短信功能。
+使用 SMS 的 UWP 应用必须在其在 Visual Studio 中的包清单中声明 SMS 功能。
 
-示例**package.appxmanifest**:
+示例 **appxmanifest.xml**：
 
 ``` syntax
   <Capabilities>
@@ -27,14 +27,14 @@ ms.locfileid: "63326022"
   </Capabilities>
 ```
 
-有关详细信息，请参阅[应用功能声明 （UWP 应用）](https://go.microsoft.com/fwlink/p/?linkid=317125)。
+有关详细信息，请参阅 [ (UWP apps) 的应用功能声明 ](/previous-versions/windows/apps/hh464936(v=win.10))。
 
-## <a name="span-idsmsappdeclarationindevicemetadataspanspan-idsmsappdeclarationindevicemetadataspanspan-idsmsappdeclarationindevicemetadataspansms-app-declaration-in-device-metadata"></a><span id="SMS_app_declaration_in_device_metadata"></span><span id="sms_app_declaration_in_device_metadata"></span><span id="SMS_APP_DECLARATION_IN_DEVICE_METADATA"></span>设备元数据中的短信应用程序声明
+## <a name="span-idsms_app_declaration_in_device_metadataspanspan-idsms_app_declaration_in_device_metadataspanspan-idsms_app_declaration_in_device_metadataspansms-app-declaration-in-device-metadata"></a><span id="SMS_app_declaration_in_device_metadata"></span><span id="sms_app_declaration_in_device_metadata"></span><span id="SMS_APP_DECLARATION_IN_DEVICE_METADATA"></span>设备元数据中的 SMS 应用声明
 
 
-移动宽带设备可以确定哪些应用它信任发送和接收 SMS 消息。 若要执行此操作，它将添加它信任中的包名[服务元数据](service-metadata.md)，以下条目中所示：
+移动宽带设备可以确定它信任哪些应用来发送和接收短信。 为此，它会将它信任的包名称添加到 [服务元数据](service-metadata.md)中，如以下条目所示：
 
-**\\Package\\SoftwareInformation\\SoftwareInfo.xml**
+**\\包 \\ SoftwareInformation \\SoftwareInfo.xml**
 
 ``` syntax
 <PrivilegedApplications>
@@ -43,17 +43,10 @@ ms.locfileid: "63326022"
   </Package>
 ```
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
+## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
-[开发 SMS 应用程序](developing-sms-apps.md)
-
- 
+[开发短信应用](developing-sms-apps.md)
 
  
-
-
-
-
-
 

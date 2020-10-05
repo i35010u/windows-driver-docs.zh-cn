@@ -4,12 +4,12 @@ description: 本主题介绍如何使用 Windows 驱动程序框架 (WDF)  (HID)
 ms.assetid: 4FEDFE4B-F3B2-4B34-80DC-84BFFA4C612B
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 47ba3dbf1ec5809ca57837fe7b92cf228543c142
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: dec7338aaf76229f893c1e8a79639fd4d808a7fc
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89184333"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91732595"
 ---
 # <a name="creating-wdf-hid-minidrivers"></a>创建 WDF HID 微型驱动程序
 
@@ -46,7 +46,7 @@ ms.locfileid: "89184333"
     UmdfFsContextUsePolicy = CanUseFsContext2
     ```
 
-如果要编写适用于 Windows 7 的 UMDF HID 微型驱动程序，请下载 [Windows 驱动程序工具包 (WDK) 8.1](https://go.microsoft.com/fwlink/p/?LinkId=733614) 获取 *HidUmdf.sys*的源代码。 然后，写入 UMDF 1.11 驱动程序，并在驱动程序包中包含 *HidUmdf.sys* 和 UMDF 1.11。
+如果要编写适用于 Windows 7 的 UMDF HID 微型驱动程序，请下载 [Windows 驱动程序工具包 (WDK) 8.1](../download-the-wdk.md) 获取 *HidUmdf.sys*的源代码。 然后，写入 UMDF 1.11 驱动程序，并在驱动程序包中包含 *HidUmdf.sys* 和 UMDF 1.11。
 
 ## <a name="architecture"></a>体系结构
 
@@ -59,8 +59,6 @@ HID 类驱动程序 (*HidClass.sys*) ，而框架提供了冲突的 WDM 调度�
 
 ** ![ 驱动程序堆栈中 hidumdf.sys 的位置](images/UMDF-basedHIDMinidrivers.png)**： ![ 驱动程序堆栈中 mshidkmdf.sys 的位置](images/Framework-basedHIDMinidrivers.png)
 
-
- 
 
  
 

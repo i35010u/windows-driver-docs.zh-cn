@@ -8,12 +8,12 @@ keywords:
 - 全局取消旋转锁定 WDK 内核
 ms.date: 05/09/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 167fb246a151c0affeaabe4529566e732b63d1ef
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: edad6fc43e8e98327821bd0a51ac42f0766a5555
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89186185"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91733478"
 ---
 # <a name="using-a-driver-supplied-spin-lock"></a>使用驱动程序提供的自旋锁
 
@@ -195,7 +195,5 @@ VOID IrpCancelRoutine(IN PDEVICE_OBJECT DeviceObject, IN PIRP Irp)
 
 在调用 *取消* 例程之前，i/o 管理器始终获取全局取消旋转锁，因此 *取消* 例程的第一个任务是释放此自旋锁。 然后，它获取保护该驱动程序的 Irp 队列的自旋锁，从队列中删除当前 IRP，释放其旋转锁定，完成已取消状态的 IRP \_ 并且不提升优先级，然后返回。
 
-有关取消旋转锁定的详细信息，请参阅 [Windows 驱动程序中的取消逻辑](https://go.microsoft.com/fwlink/p/?linkid=59531) 白皮书。
-
- 
+有关取消旋转锁定的详细信息，请参阅 [Windows 驱动程序中的取消逻辑](/previous-versions/windows/hardware/design/dn653289(v=vs.85)) 白皮书。
 

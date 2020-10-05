@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 20bd641d9bbe33c0db65f5dfe0471defb6453bf0
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 0995b631ac32c1dd8b6c6729ac3ccd0a2b6f5708
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89096015"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91732635"
 ---
 # <a name="kscategory_render"></a>KSCATEGORY_RENDER
 
@@ -33,7 +33,7 @@ KSCATEGORY_RENDER [设备接口类](./overview-of-device-interface-classes.md) �
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Attribute</th>
+<th align="left">属性</th>
 <th align="left">设置</th>
 </tr>
 </thead>
@@ -56,7 +56,7 @@ KSCATEGORY_RENDER [设备接口类](./overview-of-device-interface-classes.md) �
 
 适用于 KS 音频适配器设备的驱动程序注册 KSCATEGORY_RENDER 的实例，以指示设备支持 KSCATEGORY_RENDER 功能类别。
 
-有关如何在 INF 文件中注册此功能类别的信息，请参阅在 WDK 中随附[AC ' 97 示例驱动程序](https://go.microsoft.com/fwlink/p/?linkid=256075)的 Inf 文件*Ac97smpl。*
+有关如何在 INF 文件中注册此功能类别的信息，请参阅在 WDK 中随附[AC ' 97 示例驱动程序](/samples/browse/)的 Inf 文件*Ac97smpl。*
 
 有关音频适配器的设备接口类的信息，请参阅 [安装音频适配器的设备接口](../audio/installing-device-interfaces-for-an-audio-adapter.md) 和 [**KSPROPERTY_TOPOLOGY_CATEGORIES**](../stream/ksproperty-topology-categories.md)。
 
@@ -75,6 +75,4 @@ KSCATEGORY_RENDER [设备接口类](./overview-of-device-interface-classes.md) �
 </tr>
 </tbody>
 </table>
-
- 
 

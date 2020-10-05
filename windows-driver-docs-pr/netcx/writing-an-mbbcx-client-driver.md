@@ -6,12 +6,12 @@ keywords:
 - Mobile 宽带 (MBB) WDF 类扩展，MBBCx，Mobile 宽带 NetAdapterCx
 ms.date: 03/19/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 0eae7cadbe7ba4d7e68aa529ae38ef05b1a90124
-ms.sourcegitcommit: 29fee075ccc0a4eb1bf304cca4c04a6e57449d9d
+ms.openlocfilehash: 081893b080b0ddd29c8aa821e9cd961b5f5186f0
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/02/2020
-ms.locfileid: "91671237"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91732731"
 ---
 # <a name="writing-an-mbbcx-client-driver"></a>编写 MBBCx 客户端驱动程序
 
@@ -66,7 +66,7 @@ MBBCx 客户端驱动程序的 INF 文件与其他 NetAdapterCx 客户端驱动�
 
 MBBCx 使用在 MBIM 规范 Rev 1.0 中定义的标准 MBIM 控制命令，第8、9和10部分用于控制平面。 通过一组由 MBBCx 提供的客户端驱动程序和 Api 提供的回调函数来交换命令和响应。 MBBCx 通过使用以下函数调用来模拟 MBIM 设备的操作模型，如 MBIM 规范 Rev 5.3 1.0 中所定义的：
 
-- MBBCx 通过调用其 [*EvtMbbDeviceSendMbimFragment*](https://docs.microsoft.com/windows-hardware/drivers/ddi/mbbcx/nc-mbbcx-evt_mbb_device_send_mbim_fragment) 回调函数向客户端驱动程序发送 MBIM 命令消息。 客户端驱动程序通过调用 [**MbbRequestComplete**](/windows-hardware/drivers/ddi/mbbcx/nf-mbbcx-mbbrequestcomplete)以异步方式完成此发送请求。
+- MBBCx 通过调用其 [*EvtMbbDeviceSendMbimFragment*](/windows-hardware/drivers/ddi/mbbcx/nc-mbbcx-evt_mbb_device_send_mbim_fragment) 回调函数向客户端驱动程序发送 MBIM 命令消息。 客户端驱动程序通过调用 [**MbbRequestComplete**](/windows-hardware/drivers/ddi/mbbcx/nf-mbbcx-mbbrequestcomplete)以异步方式完成此发送请求。
 - 客户端驱动程序通过调用 [**MbbDeviceResponseAvailable**](/windows-hardware/drivers/ddi/mbbcx/nf-mbbcx-mbbdeviceresponseavailable)来通知结果的可用性。
 - MBBCx 通过调用其 [*EvtMbbDeviceReceiveMbimFragment*](/windows-hardware/drivers/ddi/mbbcx/nc-mbbcx-evt_mbb_device_receive_mbim_fragment) 回调函数从客户端驱动程序中提取 MBIM 响应消息。 客户端驱动程序通过调用 [**MbbRequestCompleteWithInformation**](/windows-hardware/drivers/ddi/mbbcx/nf-mbbcx-mbbrequestcompletewithinformation)以异步方式完成此获取响应请求。
 - MBB 客户端驱动程序可能会通过调用 **MbbDeviceResponseAvailable**通知 MBBCx 未经请求的设备事件。 然后，MBBCx 将从客户端驱动程序中检索信息，类似于获取 MBIM 响应消息的方式。

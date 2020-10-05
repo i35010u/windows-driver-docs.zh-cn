@@ -1,51 +1,51 @@
 ---
 title: 如何在 UWP 设备应用中显示打印机状态
-description: 本主题使用C#版本的打印设置和打印通知示例来演示如何进行查询的打印机状态并将其显示。
+description: '本主题使用 "打印设置" 和 "打印通知" 示例的 c # 版本来演示如何查询打印机状态并显示该状态。'
 ms.assetid: 91AD1B3B-0D0B-4FB6-8A0F-4943143D8FCE
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b8770e6e44f9433c009bcac80e5b26c2e13d1b76
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: dc5ebad4eb16539478b09a6e2e647b74c420eb1e
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63387925"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91732921"
 ---
 # <a name="how-to-display-printer-status-in-a-uwp-device-app"></a>如何在 UWP 设备应用中显示打印机状态
 
 
-在 Windows 8.1，用户可以查看从 UWP 设备应用的现代 UI 其打印机状态。 本主题使用C#的版本[打印设置和打印通知](https://go.microsoft.com/fwlink/p/?LinkID=242862)示例，用于演示如何查询打印机状态并将其显示。 若要在一般情况下了解有关 UWP 的设备应用程序的详细信息，请参阅[满足 UWP 设备应用](meet-uwp-device-apps.md)。
+在 Windows 8.1 中，用户可以从 UWP 设备应用的新式 UI 检查其打印机状态。 本主题使用 " [打印设置" 和 "打印通知](https://go.microsoft.com/fwlink/p/?LinkID=242862) " 示例的 c # 版本来演示如何查询打印机状态并显示该状态。 若要详细了解 UWP 设备应用的详细信息，请参阅了解 [uwp 设备应用](meet-uwp-device-apps.md)。
 
-C#的版本[打印设置和打印通知](https://go.microsoft.com/fwlink/p/?LinkID=242862)的示例使用**InkLevel.xaml**页后，可以演示如何获取打印机状态 （在此情况下，墨迹级别） 并将其显示。 打印帮助器类用于创建设备上下文 (IPrinterExtensionContext)，并执行设备查询。 **PrinterHelperClass.cs**文件位于**DeviceAppForPrintersLibrary**项目，然后使用 Api 中定义**PrinterExtensionLibrary**项目。 打印机扩展库提供了方便地访问 v4 打印驱动程序的打印机扩展插件接口。 有关详细信息，请参阅[打印机扩展库概述](printer-extension-library-overview.md)。
+C # 版本的 " [打印设置" 和 "打印通知](https://go.microsoft.com/fwlink/p/?LinkID=242862) " 示例使用 " **InkLevel** " 页演示如何 (在这种情况下，墨迹级别) 并显示打印机状态。 打印帮助程序类用于创建设备上下文 (IPrinterExtensionContext) 并执行设备查询。 **PrinterHelperClass.cs**文件在**DeviceAppForPrintersLibrary**项目中，并使用**PrinterExtensionLibrary**项目中定义的 api。 打印机扩展库提供了一种便捷的方式来访问 v4 打印驱动程序的打印机扩展接口。 有关详细信息，请参阅 [打印机扩展库概述](printer-extension-library-overview.md)。
 
-**请注意**  本主题中所示的代码示例基于C#的版本[打印设置和打印通知](https://go.microsoft.com/fwlink/p/?LinkID=242862)示例。 此示例也会出现在 JavaScript 和C++。 请注意，由于C++可以直接访问 COMC++示例的版本不包括代码库项目。 下载示例，请参阅最新版本的代码。
+**注意**   本主题中所示的代码示例基于 c # 版本的[打印设置和打印通知](https://go.microsoft.com/fwlink/p/?LinkID=242862)示例。 此示例在 JavaScript 和 c + + 中也可用。 请注意，由于 c + + 可以直接访问 COM，因此该示例的 c + + 版本不包括代码库项目。 下载示例以查看最新版本的代码。
 
  
 
 ## <a name="span-idprerequisitesspanspan-idprerequisitesspanspan-idprerequisitesspanprerequisites"></a><span id="Prerequisites"></span><span id="prerequisites"></span><span id="PREREQUISITES"></span>先决条件
 
 
-开始之前：
+准备工作：
 
-1.  请确保使用 v4 打印驱动程序安装您的打印机。 有关详细信息，请参阅[开发 v4 打印驱动程序](https://go.microsoft.com/fwlink/p/?LinkId=314231)。
-2.  获取对开发计算机设置。 请参阅[入门](getting-started.md)有关下载工具和创建开发人员帐户信息。
-3.  将你的应用与应用商店相关联。 请参阅本主题中的[步骤 1：创建 UWP 设备应用](step-1--create-a-uwp-device-app.md)有关的信息。
-4.  创建设备元数据为您将其与您的应用程序关联的打印机。 请参阅[步骤 2:创建设备元数据](step-2--create-device-metadata.md)有关的详细信息。
-5.  如果您正在编写您编写的应用程序与C#或 JavaScript 中，添加**PrinterExtensionLibrary**并**DeviceAppForPrintersLibrary**到您 UWP 设备应用程序解决方案的项目。 您可以找到这些项目中的每个[打印设置和打印通知](https://go.microsoft.com/fwlink/p/?LinkID=242862)示例。
-    **请注意**  由于C++可以直接访问 COMC++应用程序不需要单独的库以使用基于 COM 的打印机设备上下文。
+1.  请确保您的打印机是使用 v4 打印驱动程序安装的。 有关详细信息，请参阅 [开发 v4 打印驱动程序](../print/v4-printer-driver.md)。
+2.  设置开发 PC。 有关下载工具和创建开发人员帐户的信息[，请参阅入门。](getting-started.md)
+3.  将应用与应用商店相关联。 请参阅 [步骤1：创建 UWP 设备应用](step-1--create-a-uwp-device-app.md) 了解相关信息。
+4.  为打印机创建将其与应用程序关联的设备元数据。 有关详细信息，请参阅 [步骤2：创建设备元数据](step-2--create-device-metadata.md) 。
+5.  如果正在编写的是用 c # 或 JavaScript 编写应用，请将 **PrinterExtensionLibrary** 和 **DeviceAppForPrintersLibrary** 项目添加到 UWP 设备应用解决方案。 可以在 " [打印设置" 和 "打印通知](https://go.microsoft.com/fwlink/p/?LinkID=242862) " 示例中找到这些项目。
+    **注意**   由于 c + + 可以直接访问 COM，因此，c + + 应用不需要单独的库即可使用基于 COM 的打印机设备上下文。
 
      
 
-## <a name="span-idstep1findtheprinterspanspan-idstep1findtheprinterspanspan-idstep1findtheprinterspanstep-1-find-the-printer"></a><span id="Step_1__Find_the_printer"></span><span id="step_1__find_the_printer"></span><span id="STEP_1__FIND_THE_PRINTER"></span>步骤 1：查找打印机
+## <a name="span-idstep_1__find_the_printerspanspan-idstep_1__find_the_printerspanspan-idstep_1__find_the_printerspanstep-1-find-the-printer"></a><span id="Step_1__Find_the_printer"></span><span id="step_1__find_the_printer"></span><span id="STEP_1__FIND_THE_PRINTER"></span>步骤1：查找打印机
 
 
-可以创建设备上下文之前，应用程序需要确定打印机的设备 ID。 若要执行此操作，该示例使用`EnumerateAssociatedPrinters`方法搜索通过连接到 PC 的所有打印机。 然后它会检查每个打印机的容器，并通过比较每个容器 PackageFamilyName 属性查找的关联。
+在可以创建设备上下文之前，应用需要确定打印机的设备 ID。 为此，该示例使用 `EnumerateAssociatedPrinters` 方法来搜索附加到电脑的所有打印机。 然后，它会检查每个打印机的容器，并通过比较每个容器的 PackageFamilyName 属性来查找关联。
 
-**请注意**  可以下找到与您的应用程序相关联的设备的 System.Devices.AppPackageFamilyName**打包**在清单设计器在 Microsoft Visual Studio 中的选项卡。
+**注意**   与应用关联的设备的 AppPackageFamilyName 可以在 Microsoft Visual Studio 中的清单设计器的 "**打包**" 选项卡下找到。
 
  
 
-此示例演示`EnumerateAssociatedPrinters`方法从**InkLevel.xaml.cs**文件：
+此示例显示了 `EnumerateAssociatedPrinters` **InkLevel.xaml.cs** 文件中的方法：
 
 ```CSharp
 async void EnumerateAssociatedPrinters(object sender, RoutedEventArgs e)
@@ -75,9 +75,9 @@ async void EnumerateAssociatedPrinters(object sender, RoutedEventArgs e)
 }
 ```
 
-`FindAssociation`调用的方法`EnumerateAssociatedPrinters`，检查打印机是否与当前应用程序相关联。 换而言之，此方法检查该应用程序是否 UWP 设备应用。 在本地 PC 上的设备元数据中定义的应用程序和打印机时存在此关联。
+`FindAssociation`方法（由调用 `EnumerateAssociatedPrinters` ）检查打印机是否与当前应用程序关联。 换句话说，此方法检查应用是否为 UWP 设备应用。 当在本地 PC 上的设备元数据中定义了应用和打印机时，就存在此关联。
 
-此示例演示`FindAssociation`方法从**InkLevel.xaml.cs**文件：
+此示例显示了 `FindAssociation` **InkLevel.xaml.cs** 文件中的方法：
 
 ```CSharp
 async void FindAssociation(DeviceInformation deviceInfo, string containerId)
@@ -113,9 +113,9 @@ async void FindAssociation(DeviceInformation deviceInfo, string containerId)
 }
 ```
 
-当找到关联时，`FindAssociation`方法使用`AddToList`方法将设备 ID 添加到一组相关联的设备 Id。 这些 Id 存储在名为一个组合框`AssociatedPrinters`。
+找到关联时， `FindAssociation` 方法使用 `AddToList` 方法将设备 id 添加到关联的设备 id 列表。 这些 Id 存储在名为的组合框中 `AssociatedPrinters` 。
 
-此示例演示`AddToList`方法从**InkLevel.xaml.cs**文件：
+此示例显示了 `AddToList` **InkLevel.xaml.cs** 文件中的方法：
 
 ```CSharp
 void AddToList(DeviceInformation deviceInfo)
@@ -134,16 +134,16 @@ void AddToList(DeviceInformation deviceInfo)
 }
 ```
 
-## <a name="span-idstep2displaythestatusspanspan-idstep2displaythestatusspanspan-idstep2displaythestatusspanstep-2-display-the-status"></a><span id="Step_2__Display_the_status"></span><span id="step_2__display_the_status"></span><span id="STEP_2__DISPLAY_THE_STATUS"></span>步骤 2：显示的状态
+## <a name="span-idstep_2__display_the_statusspanspan-idstep_2__display_the_statusspanspan-idstep_2__display_the_statusspanstep-2-display-the-status"></a><span id="Step_2__Display_the_status"></span><span id="step_2__display_the_status"></span><span id="STEP_2__DISPLAY_THE_STATUS"></span>步骤2：显示状态
 
 
-`GetInkStatus`方法使用异步基于事件的模式以请求信息从打印机。 此方法使用关联的设备 ID 以获取可用于获取设备状态的设备上下文。 对调用`printHelper.SendInkLevelQuery()`方法启动设备查询。 当响应返回时，则`OnInkLevelReceived`调用方法和 UI 更新。
+`GetInkStatus`方法使用基于事件的异步模式来请求打印机的信息。 此方法使用关联的设备 ID 来获取可用于获取设备状态的设备上下文。 对方法的调用将 `printHelper.SendInkLevelQuery()` 启动设备查询。 当响应返回时，将 `OnInkLevelReceived` 调用方法并更新 UI。
 
-**请注意**  此C#示例遵循比 JavaScript 示例中，不同的模式，因为C#可让你需要将调度程序发送到 PrintHelperClass，以便它可以发送到 UI 线程上的事件消息。
+**注意**   此 c # 示例遵循的模式与 JavaScript 示例不同，因为 c # 允许向 PrintHelperClass 发送调度程序，以便它可以将事件消息回发到 UI 线程。
 
  
 
-此示例演示`GetInkStatus`并`OnInkLevelReceived`方法从**InkLevel.xaml.cs**文件：
+此示例显示了 `GetInkStatus` `OnInkLevelReceived` **InkLevel.xaml.cs** 文件中的和方法：
 
 ```CSharp
 void GetInkStatus(object sender, RoutedEventArgs e)
@@ -194,9 +194,9 @@ private void OnInkLevelReceived(object sender, string response)
 }
 ```
 
-打印帮助器类负责将 Bidi 查询发送到设备和接收响应。
+Print helper 类负责向设备发送双向查询并接收响应。
 
-此示例演示`SendInkLevelQuery`方法和其他人，从**PrintHelperClass.cs**文件。 请注意，只有一部分打印帮助器类方法如下所示。 下载[打印设置和打印通知](https://go.microsoft.com/fwlink/p/?LinkID=242862)示例，请参阅完整代码。
+此示例显示了 `SendInkLevelQuery` **PrintHelperClass.cs** 文件中的方法和其他方法。 请注意，此处只显示某些打印帮助程序类方法。 下载 " [打印设置" 和 "打印通知](https://go.microsoft.com/fwlink/p/?LinkID=242862) " 示例以查看完整代码。
 
 ```CSharp
 public void SendInkLevelQuery()
@@ -250,86 +250,79 @@ private string InvalidHResult(int result)
 ## <a name="span-idtestingspanspan-idtestingspanspan-idtestingspantesting"></a><span id="Testing"></span><span id="testing"></span><span id="TESTING"></span>测试
 
 
-你可以测试 UWP 设备应用之前，它必须链接到您的打印机使用的设备元数据。
+在可以测试 UWP 设备应用之前，必须使用设备元数据将其链接到您的打印机。
 
--   需要打印机的位置，若要向其中添加设备应用信息的设备元数据包的副本。 如果没有设备元数据，您可以使用生成它**设备元数据创建向导**主题中所述[步骤 2:创建 UWP 设备应用的设备元数据](https://go.microsoft.com/fwlink/p/?LinkId=313644)。
+-   你需要打印机的设备元数据包的副本，以便向其添加设备应用信息。 如果没有设备元数据，可以使用 **设备元数据创作向导** 生成它，如 " [步骤2：创建 UWP 设备的设备元数据](./step-2--create-device-metadata.md)" 主题中所述。
 
-    **请注意**  若要使用**设备元数据创建向导**，则必须安装 Microsoft Visual Studio Professional，Microsoft Visual Studio Ultimate，或[独立 SDK 的 Windows 8.1](https://go.microsoft.com/fwlink/p/?linkid=309209)之前完成本主题中的步骤。 安装 Microsoft Visual Studio Express 的 Windows 安装不包括在向导的 sdk 版本。
+    **注意**   若要使用**设备元数据创作向导**，在完成本主题中的步骤之前，必须安装 Microsoft Visual Studio Professional、Microsoft Visual Studio Ultimate 或[独立的 SDK for Windows 8.1](https://go.microsoft.com/fwlink/p/?linkid=309209)。 为 Windows 安装 Microsoft Visual Studio Express 会安装不包括向导的 SDK 版本。
 
      
 
-以下步骤生成您的应用程序并安装设备元数据。
+以下步骤生成应用并安装设备元数据。
 
 1.  启用测试签名。
-    1.  启动**设备元数据创建向导**从 *%programfiles （x86） %*\\Windows 工具包\\8.1\\bin\\x86，通过双击**DeviceMetadataWizard.exe**
-    2.  从**工具**菜单中，选择**启用测试签名**。
+    1.  双击 "DeviceMetadataWizard.exe，从 *% ProgramFiles (x86) %* Windows 工具包 8.1 bin **X86 启动设备元数据创作向导** \\ \\ \\ \\ **DeviceMetadataWizard.exe**
+    2.  从 " **工具** " 菜单中，选择 " **启用测试签名**"。
 
 2.  重新启动计算机
-3.  通过打开解决方案 (.sln) 文件生成解决方案。 按 F7，或转至**生成-&gt;生成解决方案**从顶部菜单中加载示例之后。
+3.  通过打开解决方案 ( .sln) 文件来生成解决方案。 加载示例后，按 F7 或从顶部菜单中转到 " **生成- &gt; 生成解决方案** "。
 
-4.  断开连接并卸载打印机。 此步骤是必需的以便 Windows 将在下一次检测到设备读取更新的设备元数据。
-5.  编辑并保存设备元数据。 要链接到你的设备的设备应用，必须将设备应用与你的设备进行关联。
-    **请注意**  如果尚未创建设备元数据，请参阅[步骤 2:创建 UWP 设备应用的设备元数据](https://go.microsoft.com/fwlink/p/?LinkId=313644)。
+4.  断开连接并卸载打印机。 此步骤是必需的，以便 Windows 将在下一次检测到设备时读取更新的设备元数据。
+5.  编辑并保存设备元数据。 若要将设备应用链接到设备，你必须将设备应用关联到设备。
+    **注意**   如果尚未创建设备元数据，请参阅[步骤2：创建 UWP 设备应用的设备元数据](./step-2--create-device-metadata.md)。
 
      
 
-    1.  如果**设备元数据创建向导**未打开，启动从 *%programfiles （x86） %*\\Windows 工具包\\8.1\\bin\\x86，也可由双击**DeviceMetadataWizard.exe**。
-    2.  单击**编辑设备元数据**。 这样就可以编辑现有的设备元数据包。
-    3.  在中**打开**对话框框中，找到与 UWP 设备应用程序相关联的设备元数据包。 (它具有**devicemetadata ms**文件扩展名。)
-    4.  上**指定 UWP 设备应用信息**页上，输入中的 Microsoft Store 应用信息**UWP 设备应用**框。 单击**导入 UWP 应用程序清单文件**自动输入**包名称**，**发布服务器的名称**，以及**UWP 应用程序 ID**。
-    5.  如果您的应用程序注册的打印机通知，填写**通知处理程序**框。 在中**事件 ID**，输入打印事件处理程序的名称。 在中**事件资产**，输入该代码所在的位置的文件的名称。
+    1.  如果**设备元数据创作向导**尚未打开，请通过双击 "DeviceMetadataWizard.exe" 从 *% ProgramFiles (x86) %* \\ Windows 工具包 \\ 8.1 \\ bin \\ x86 **DeviceMetadataWizard.exe**启动它。
+    2.  单击 " **编辑设备元数据**"。 这将允许你编辑现有的设备元数据包。
+    3.  在 " **打开** " 对话框中，找到与 UWP 设备应用关联的设备元数据包。  (其文件扩展名为 **devicemetadata** 。 ) 
+    4.  在 " **指定 uwp 设备应用信息** " 页上，在 " **UWP 设备应用** " 框中输入 Microsoft Store 应用信息。 单击 " **导入 UWP 应用程序清单文件** " 以自动输入 **包名称**、 **发布者名称**和 **UWP 应用 ID**。
+    5.  如果你的应用正在注册打印机通知，请填写 **通知处理程序** 框。 在 " **事件 ID**" 中，输入打印事件处理程序的名称。 在 " **事件资产**" 中，输入代码所在的文件的名称。
 
-    6.  完成后，单击**下一步**直至到达**完成**页。
-    7.  上**查看设备元数据包**页面上，确保所有设置都正确，然后选择**复制到本地计算机上的元数据存储设备元数据包**复选框。 然后单击**保存**。
+    6.  完成后，单击 " **下一步** "，直到到达 " **完成** " 页。
+    7.  在 " **查看设备元数据包** " 页上，确保所有设置均正确，并选中 "将 **设备元数据包复制到本地计算机上的元数据存储区** " 复选框。 然后单击“保存”  。
 
-6.  重新连接您的打印机，以便在设备连接时，该 Windows 读取更新的设备元数据。
+6.  重新连接打印机，以便 Windows 在连接设备时读取更新的设备元数据。
 
 ## <a name="span-idtroubleshootingspanspan-idtroubleshootingspanspan-idtroubleshootingspantroubleshooting"></a><span id="Troubleshooting"></span><span id="troubleshooting"></span><span id="TROUBLESHOOTING"></span>故障排除
 
 
-### <a name="span-idissuecantfindprinterwhenenumeratingdevicesassociatedwiththeappspanspan-idissuecantfindprinterwhenenumeratingdevicesassociatedwiththeappspanspan-idissuecantfindprinterwhenenumeratingdevicesassociatedwiththeappspanissue-cant-find-printer-when-enumerating-devices-associated-with-the-app"></a><span id="Issue__Can_t_find_printer_when_enumerating_devices_associated_with_the_app"></span><span id="issue__can_t_find_printer_when_enumerating_devices_associated_with_the_app"></span><span id="ISSUE__CAN_T_FIND_PRINTER_WHEN_ENUMERATING_DEVICES_ASSOCIATED_WITH_THE_APP"></span>问题：枚举与应用关联的设备时找不到打印机
+### <a name="span-idissue__can_t_find_printer_when_enumerating_devices_associated_with_the_appspanspan-idissue__can_t_find_printer_when_enumerating_devices_associated_with_the_appspanspan-idissue__can_t_find_printer_when_enumerating_devices_associated_with_the_appspanissue-cant-find-printer-when-enumerating-devices-associated-with-the-app"></a><span id="Issue__Can_t_find_printer_when_enumerating_devices_associated_with_the_app"></span><span id="issue__can_t_find_printer_when_enumerating_devices_associated_with_the_app"></span><span id="ISSUE__CAN_T_FIND_PRINTER_WHEN_ENUMERATING_DEVICES_ASSOCIATED_WITH_THE_APP"></span>问题：枚举与应用关联的设备时找不到打印机
 
-如果您的打印机枚举关联的打印机时找不到...
+如果在枚举关联的打印机时找不到打印机 .。。
 
--   **可能的原因：** 未打开测试签名。 请参阅本主题了解如何将其打开的调试部分。
+-   **可能的原因：** 未启用测试签名。 请参阅本主题中的调试部分，了解有关如何打开它的信息。
 
--   **可能的原因：** 应用程序不查询的正确包系列名称。 检查你的代码中的包系列名称。 打开**package.appxmanifest** Microsoft Visual Studio 并确保在包系列名称要查询的匹配中的一个**打包**选项卡上，包系列名称字段中的。
+-   **可能的原因：** 应用未查询正确的包系列名称。 在代码中检查包系列名称。 在 Microsoft Visual Studio 中打开 **appxmanifest.xml** ，并确保要查询的包系列名称与 " **打包** " 选项卡上的 "包系列名称" 字段中的相同。
 
--   **可能的原因：** 设备元数据所关联的包系列名称。 使用**设备元数据创建向导**要打开设备元数据并检查包系列名称。 从启动该向导 *%programfiles （x86） %*\\Windows 工具包\\8.1\\bin\\x86，通过双击**DeviceMetadataWizard.exe**。
+-   **可能的原因：** 设备元数据不与包系列名称关联。 使用 **设备元数据创作向导** 打开设备元数据，并检查包系列名称。 双击DeviceMetadataWizard.exe，从 *% ProgramFiles (x86) %* \\ Windows 工具包 \\ 8.1 \\ bin \\ x86 **DeviceMetadataWizard.exe**启动向导。
 
-### <a name="span-idissuefoundprinterassociatedwiththeappbutcantquerybidiinfospanspan-idissuefoundprinterassociatedwiththeappbutcantquerybidiinfospanspan-idissuefoundprinterassociatedwiththeappbutcantquerybidiinfospanissue-found-printer-associated-with-the-app-but-cant-query-bidi-info"></a><span id="Issue__Found_printer_associated_with_the_app__but_can_t_query_Bidi_info"></span><span id="issue__found_printer_associated_with_the_app__but_can_t_query_bidi_info"></span><span id="ISSUE__FOUND_PRINTER_ASSOCIATED_WITH_THE_APP__BUT_CAN_T_QUERY_BIDI_INFO"></span>问题：找到与应用关联的打印机，但不能查询 Bidi 信息
+### <a name="span-idissue__found_printer_associated_with_the_app__but_can_t_query_bidi_infospanspan-idissue__found_printer_associated_with_the_app__but_can_t_query_bidi_infospanspan-idissue__found_printer_associated_with_the_app__but_can_t_query_bidi_infospanissue-found-printer-associated-with-the-app-but-cant-query-bidi-info"></a><span id="Issue__Found_printer_associated_with_the_app__but_can_t_query_Bidi_info"></span><span id="issue__found_printer_associated_with_the_app__but_can_t_query_bidi_info"></span><span id="ISSUE__FOUND_PRINTER_ASSOCIATED_WITH_THE_APP__BUT_CAN_T_QUERY_BIDI_INFO"></span>问题：找到了与应用关联的打印机，但无法查询双向信息
 
-如果找到了您的打印机时枚举关联的打印机，但 Bidi 查询将返回错误...
+如果在枚举关联的打印机时找到了您的打印机，但双向查询返回错误 .。。
 
--   **可能的原因：** 错误的包系列名称。 检查你的代码中的包系列名称。 打开**package.appxmanifest**在 Visual Studio 并确保包系列名称要查询的匹配中的一个**打包**选项卡上，包系列名称字段中的。
+-   **可能的原因：** 包系列名称错误。 在代码中检查包系列名称。 在 Visual Studio 中打开 **appxmanifest.xml** ，并确保要查询的包系列名称与 " **打包** " 选项卡上的 "包系列名称" 字段中的相同。
 
--   **可能的原因：** 使用 v3 打印机，而不是 v4 打印机安装打印机。 若要查看安装的版本，请打开 PowerShell 并键入以下命令：
+-   **可能的原因：** 使用 v3 打印机（而不是 v4 打印机）安装打印机。 若要查看安装的版本，请打开 PowerShell，然后键入以下命令：
 
     ```PowerShell
     get-printer | Select Name, {(get-printerdriver -Name $_.DriverName).MajorVersion}
     ```
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
+## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
-[开发 v4 打印驱动程序](https://go.microsoft.com/fwlink/p/?LinkId=314231)
+[开发 v4 打印驱动程序](../print/v4-printer-driver.md)
 
-[打印机扩展插件接口 （v4 打印驱动程序）](https://go.microsoft.com/fwlink/p/?LinkID=299887)
+[ (v4 打印驱动程序的打印机扩展接口) ](/windows-hardware/drivers/ddi/_print/)
 
-[双向通信](https://go.microsoft.com/fwlink/p/?LinkId=317192)
+[双向通信](../print/bidirectional-communication.md)
 
 [UWP 应用入门](getting-started.md)
 
-[创建 UWP 设备应用程序 （分步指南）](step-1--create-a-uwp-device-app.md)
+[ (分步指南创建 UWP 设备应用) ](step-1--create-a-uwp-device-app.md)
 
-[创建设备元数据对 UWP 设备应用 （分步指南）](step-2--create-device-metadata.md)
-
- 
+[ (分步指南创建 UWP 设备应用的设备元数据) ](step-2--create-device-metadata.md)
 
  
-
-
-
-
-
 

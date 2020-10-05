@@ -7,19 +7,19 @@ keywords:
 - 散点/集合列表 WDK ATA 端口驱动程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4866ae879bb6e9e7282b58d2d7dce4ca708d5593
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 0701e5bf327d90da0340cd39226c7345ef8dab48
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89190667"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91733039"
 ---
 # <a name="access-to-scattergather-lists-in-the-ata-port-io-model"></a>访问 ATA 端口 I/O 模型中的分散/聚合列表
 
 
 ## <span id="ddk_access_to_scatter_gather_lists_in_the_ata_port_i_o_model_kg"></span><span id="DDK_ACCESS_TO_SCATTER_GATHER_LISTS_IN_THE_ATA_PORT_I_O_MODEL_KG"></span>
 
-**注意** ATA 端口驱动程序和 ATA 微型端口驱动程序模型可能会在将来更改或不可用。 相反，我们建议使用 [storport 驱动](https://docs.microsoft.com/windows-hardware/drivers/storage/storport-driver) 程序和 [storport 微型端口](./storport-miniport-drivers.md) 驱动程序模型。
+**注意** ATA 端口驱动程序和 ATA 微型端口驱动程序模型可能会在将来更改或不可用。 相反，我们建议使用 [storport 驱动](./storport-driver-overview.md) 程序和 [storport 微型端口](./storport-miniport-drivers.md) 驱动程序模型。
 
 
 
@@ -32,6 +32,4 @@ ATA 端口微型端口驱动程序可以使用 [**AtaPortGetScatterGatherList**]
 微型端口驱动程序不必释放 **AtaPortGetScatterGatherList** 返回的散点/集合列表的内存。
 
 如果需要，微型端口驱动程序的 [**IdeHwBuildIo**](/windows-hardware/drivers/ddi/irb/nc-irb-ide_hw_buildio) 例程应转换散点/集合列表。
-
- 
 

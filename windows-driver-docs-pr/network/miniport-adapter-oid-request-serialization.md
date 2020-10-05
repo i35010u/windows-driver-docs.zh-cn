@@ -9,12 +9,12 @@ keywords:
 - OID 序列化
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5162d114c06281be81db9b825f46beec414e746e
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: f06b513f2f61740aed104dfc950683d87181dfc6
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89218011"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91733381"
 ---
 # <a name="miniport-adapter-oid-request-serialization"></a>微型端口适配器 OID 请求序列化
 
@@ -34,4 +34,4 @@ ms.locfileid: "89218011"
 
 有关 WDI UE 挂机检测的详细信息，请参阅 [ue 挂检测：步骤 1-14](./wdi-ue-hang-detection--step-1-to-step-14.md)。
 
-有关 NDIS 中 OID 请求的详细信息，请参阅在 NDIS 博客上 [简化 oid 请求处理程序](https://go.microsoft.com/fwlink/p/?linkid=846658) 。
+有关 NDIS 中 OID 请求的详细信息，请参阅在 NDIS 博客上 [简化 oid 请求处理程序](/archive/blogs/ndis/simplifying-your-oid-request-handler) 。

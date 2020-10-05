@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 8f9aca0ed7f85d770e8d0daafee67d6769ab6851
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 7193165253053bba8b8691ef5a5689ff775f7db3
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89095511"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91732542"
 ---
 # <a name="floppyclassguid"></a>FloppyClassGuid
 
@@ -29,7 +29,7 @@ FloppyClassGuid 是适用于软盘[存储设备](../storage/index.md)的[设备�
 <a name="remarks"></a>备注
 -------
 
-WDK 中的存储 [示例](https://go.microsoft.com/fwlink/p/?LinkId=618052) 包括使用 FloppyClassGuid 注册此设备接口类的实例的 [软盘驱动程序](https://go.microsoft.com/fwlink/p/?linkid=256192) 示例。
+WDK 中的存储 [示例](https://go.microsoft.com/fwlink/p/?LinkId=618052) 包括使用 FloppyClassGuid 注册此设备接口类的实例的 [软盘驱动程序](/samples/browse/) 示例。
 
 <a name="requirements"></a>要求
 ------------
@@ -55,6 +55,4 @@ WDK 中的存储 [示例](https://go.microsoft.com/fwlink/p/?LinkId=618052) 包�
 
 
 [**GUID_DEVINTERFACE_FLOPPY**](guid-devinterface-floppy.md)
-
- 
 

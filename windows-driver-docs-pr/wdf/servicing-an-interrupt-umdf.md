@@ -4,12 +4,12 @@ description: 为中断提供服务
 ms.assetid: 79BA75B3-E10F-4AC1-A2C5-A502BF821188
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8f33efd2145ea1cd8178634cd8e9d9324bd2f361
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 7ae8b6585dad10b53afe44feb95b3728df80bb9d
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89184279"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91732593"
 ---
 # <a name="servicing-an-interrupt-umdf-1"></a>在 UMDF 1) 上维护中断 (
 
@@ -33,7 +33,5 @@ ms.locfileid: "89184279"
 
 驱动程序通常会在其 [*OnInterruptWorkItem*](/windows-hardware/drivers/ddi/wudfinterrupt/nc-wudfinterrupt-wudf_interrupt_workitem) 或 [*OnWorkItem*](/windows-hardware/drivers/ddi/wudfworkitem/nc-wudfworkitem-wudf_workitem_function) 回调函数中完成 i/o 请求。
 
-有关处理中断的 UMDF 驱动程序的示例，请参阅 [SpbAccelerometer](https://go.microsoft.com/fwlink/p/?linkid=256189) 示例驱动程序，可从 WINDOWS 8 WDK 开始使用。
-
- 
+有关处理中断的 UMDF 驱动程序的示例，请参阅 [SpbAccelerometer](/samples/browse/) 示例驱动程序，可从 WINDOWS 8 WDK 开始使用。
 

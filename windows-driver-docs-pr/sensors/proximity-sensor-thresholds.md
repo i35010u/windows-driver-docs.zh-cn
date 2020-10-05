@@ -4,12 +4,12 @@ description: 本主题提供有关邻近感应传感器阈值的信息。
 ms.assetid: AD93421B-4787-4E56-B01D-58027EFEAC2D
 ms.date: 07/20/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 2b32ec8cfb3c43c9389c312ea6176d9e0255b4ac
-ms.sourcegitcommit: 937974aa9bbe0262a7ffe9631593fab48c4e7492
+ms.openlocfilehash: e73ebbf96361c0e9f40e09c02074a35017ce9b2a
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "90010639"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91733133"
 ---
 # <a name="proximity-sensor-thresholds"></a>邻近感应传感器阈值
 
@@ -23,4 +23,4 @@ ms.locfileid: "90010639"
 ## <a name="related-topics"></a>相关主题
 
 
-[PROPVARIANT 结构](https://go.microsoft.com/fwlink/p/?linkid=313395)
+[PROPVARIANT 结构](/windows/win32/api/propidlbase/ns-propidlbase-propvariant)

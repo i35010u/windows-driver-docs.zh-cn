@@ -4,12 +4,12 @@ description: Windows 8 通过 HID 微型端口类驱动程序引入了对常规 
 ms.assetid: E073E15A-7068-43D0-9DBA-7DD2E7FE2993
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 0979a3b2e79c8713d9ff8c04303927bcd7f97b6e
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 60602118f2672e873db92d59335bf67e1972a303
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90107096"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91733292"
 ---
 # <a name="gpio-buttons-and-indicators-implementation-guide"></a>GPIO 按钮和指示器实现指南
 
@@ -68,7 +68,7 @@ Windows 8 通过 HID 微型端口类驱动程序引入了对常规 I/O (GPIO) �
 
 -   增加了日志记录以加速调查。
 -   改进了同步和错误处理以增强可靠性。
--   新的 ConvertibleSlateMode [无人参与 Windows 安装程序](https://go.microsoft.com/fwlink/p/?linkid=276788) 在非 GPIO 便携式计算机上用于静态地将模式设置为便携式计算机作为 OEM 映像自定义的一部分。
+-   新的 ConvertibleSlateMode [无人参与 Windows 安装程序](/previous-versions/windows/it-pro/windows-8.1-and-8/ff699026(v=win.10)) 在非 GPIO 便携式计算机上用于静态地将模式设置为便携式计算机作为 OEM 映像自定义的一部分。
 
 有关 GPIO 按钮和指标实现的问题，请发送电子邮件至 Microsoft 支持组，网址为 dockingsupport@microsoft.com 。
 
@@ -76,12 +76,12 @@ Windows 8 通过 HID 微型端口类驱动程序引入了对常规 I/O (GPIO) �
 [电源按钮行为和实现](/collaborate/connect-redirect?DownloadID=47452)  
 [连接备用唤醒源](/collaborate/connect-redirect?DownloadID=49891)  
 [ACPI 设计指南](/collaborate/connect-redirect?DownloadID=48755)  
-[GetSystemMetrics 函数](https://go.microsoft.com/fwlink/p/?linkid=324686)  
-[Windows 8 中的键盘增强功能](https://go.microsoft.com/fwlink/p/?linkid=324536)  
+[GetSystemMetrics 函数](/windows/win32/api/winuser/nf-winuser-getsystemmetrics)  
+[Windows 8 中的键盘增强功能](/previous-versions/windows/hardware/design/dn613956(v=vs.85))  
 [Windows 硬件兼容性计划](/windows-hardware/design/compatibility/index)  
-[Windows 桌面应用程序的认证要求](https://go.microsoft.com/fwlink/p/?linkid=306131)  
-[基于 I i2c 的 HID](https://go.microsoft.com/fwlink/p/?linkid=324690)  
+[Windows 桌面应用程序的认证要求](/windows/win32/win_cert/certification-requirements-for-windows-desktop-apps)  
+[基于 I i2c 的 HID](../hid/hid-over-i2c-guide.md)  
 [MITT 中的 GPIO 测试](../spb/gpio-tests-in-mitt.md)  
-[Windows 系统映像管理器技术参考](https://go.microsoft.com/fwlink/p/?linkid=324691)  
-[无人参与 Windows 安装参考](https://go.microsoft.com/fwlink/p/?linkid=276788)  
+[Windows 系统映像管理器技术参考](/previous-versions/windows/it-pro/windows-vista/cc722301(v=ws.10))  
+[无人参与 Windows 安装参考](/previous-versions/windows/it-pro/windows-8.1-and-8/ff699026(v=win.10))  
 [Windows 驱动程序工具包 (WDK) 8。1](https://go.microsoft.com/fwlink/p/?linkid=310164)

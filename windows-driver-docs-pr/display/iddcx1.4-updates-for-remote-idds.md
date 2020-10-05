@@ -1,5 +1,5 @@
 ---
-title: 远程 IDDs 的 IddCx 1.4 更新
+title: 远程 IDD 的 IddCx 1.4 更新
 description: 远程间接显示驱动程序的 IddCx 版本1.4 更新
 ms.assetid: 4e065381-f1cd-401a-9844-f85eaf414b5f
 ms.date: 09/28/2020
@@ -9,14 +9,14 @@ keywords:
 - 远程间接显示驱动程序
 - 远程 IDD
 ms.localizationpriority: medium
-ms.openlocfilehash: 80c35896211c5490bfd6861037cb78ef1361927f
-ms.sourcegitcommit: 2aedb606f9f14e74687f0d3da60e14fc6ffffa7e
+ms.openlocfilehash: d066cbc2cd36d4768094a324a84ae793adda38f8
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91544839"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91732551"
 ---
-# <a name="iddcx-14-updates-for-remote-idds"></a>远程 IDDs 的 IddCx 1.4 更新
+# <a name="iddcx-14-updates-for-remote-idds"></a>远程 IDD 的 IddCx 1.4 更新
 
 以下 IddCx 版本1.4 更新仅适用于远程间接显示驱动程序 (IDDs) 。
 
@@ -31,7 +31,7 @@ IDD 声明它要通过设置[**IDDCX_ADAPTER_CAPS**](/windows-hardware/drivers/d
 
 ### <a name="installation-recommendations-for-remote-idds"></a>远程 IDDs 的安装建议
 
-使用 UMDF，驱动程序可以在其 INF 文件中使用**UmdfHostProcessSharing**和**DeviceGroupId**之类的指令控制[设备池选项](/windows-hardware/drivers/wdf/using-device-pooling-in-umdf-drivers)。 由于某些锁争用问题，强烈建议 remote IDDs 将 **UmdfHostProcessSharing** 指令设置为 **ProcessSharingDisabled**。 此设置将为每个会话配置远程 IDD，使其在其自己的进程中。
+使用 UMDF，驱动程序可以在其 INF 文件中使用**UmdfHostProcessSharing**和**DeviceGroupId**之类的指令控制[设备池选项](../wdf/using-device-pooling-in-umdf-drivers.md)。 由于某些锁争用问题，强烈建议 remote IDDs 将 **UmdfHostProcessSharing** 指令设置为 **ProcessSharingDisabled**。 此设置将为每个会话配置远程 IDD，使其在其自己的进程中。
 
 ### <a name="additional-restrictions-on-existing-iddcx-features-for-remote-idds"></a>针对远程 IDDs 的现有 IddCx 功能的其他限制
 
@@ -92,9 +92,9 @@ If added monitor is part of the current display configuration
 
 | 驱动程序操作 | 当前显示拓扑 | 当前连接的监视器| 当前处于活动状态的监视器 | 说明 |
 | ------------------------- | ---------- | ---------- | ---------- | -------------------- |
-|                           | 无       | None       | None       | 会话启动配置 |
-| IddCxMonitorArrival (Mon1)  | None       | Mon1       | None       | 无活动显示配置，因此没有任何更改 |
-| IddCxMonitorArrival (Mon2)  | None       | Mon1, Mon2 | None       | 在显示配置中仍无更改 |
+|                           | 无       | 无       | 无       | 会话启动配置 |
+| IddCxMonitorArrival (Mon1)  | 无       | Mon1       | 无       | 无活动显示配置，因此没有任何更改 |
+| IddCxMonitorArrival (Mon2)  | 无       | Mon1, Mon2 | 无       | 在显示配置中仍无更改 |
 | IddCxDisplayConfigUpdate  | Mon1, Mon2 | Mon1, Mon2 | Mon1, Mon2 | 在所有监视器均已连接的情况下，设置配置 |
 
 注意：在为同一结果添加监视器之前，驱动程序可能已调用 **IddCxDisplayConfigUpdate** 。
@@ -119,7 +119,7 @@ If added monitor is part of the current display configuration
 | 驱动程序操作 | 当前显示拓扑 | 当前连接的监视器| 当前处于活动状态的监视器 | 注释 |
 | ------------------------------------------- | ---------------------- | ---------- | ---------- | -------------------- |
 |                                             | Mon1 10x7 , Mon2 19x10 | Mon1, Mon2 | Mon1, Mon2 | 正在启动配置 |
-| IddCxMonitorUpdateModes (Mon1 支持 16x9)  | None                   | Mon1, Mon2 | None       | Mon1 到16x9 的更新模式列表 |
+| IddCxMonitorUpdateModes (Mon1 支持 16x9)  | 无                   | Mon1, Mon2 | 无       | Mon1 到16x9 的更新模式列表 |
 | IddCxDisplayConfigUpdate ( # A1                  | Mon1 16x9，Mon2 19x10  | Mon1, Mon2 | Mon1, Mon2 | 将 Mon1 的 config 设置为16x9 |
 
 ### <a name="handling-iddcxdisplayconfigupdate-errors"></a>处理 IddCxDisplayConfigUpdate 错误

@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: e0ac47d89b53d2d83eafd2c2b6a128c843e9132b
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 3b37a986c9b2bfa14546ac04599bfe0f0f02ed22
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89210871"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91734319"
 ---
 # <a name="wdfkdwdfcrashdump"></a>!wdfkd.wdfcrashdump
 
@@ -127,7 +127,7 @@ Listing all drivers loaded in this host process at the time of the failure:
 
 **其他信息**
 
-有关为驱动程序启用即时跟踪记录器的信息，请参阅 [使用即时 Trace 录像机 (IFR) 在 KMDF 和 UMDF 2 驱动程序中](../wdf/using-wpp-software-tracing-in-kmdf-and-umdf-2-drivers.md)。 有关调试 WDF 驱动程序的详细信息，请参阅 [调试 Wdf 驱动程序](https://docs.microsoft.com/windows-hardware/drivers/wdf/debugging-a-wdf-driver)。 有关 KMDF 调试的信息，请参阅 [内核模式驱动程序框架调试](kernel-mode-driver-framework-debugging.md)。
+有关为驱动程序启用即时跟踪记录器的信息，请参阅 [使用即时 Trace 录像机 (IFR) 在 KMDF 和 UMDF 2 驱动程序中](../wdf/using-wpp-software-tracing-in-kmdf-and-umdf-2-drivers.md)。 有关调试 WDF 驱动程序的详细信息，请参阅 [调试 Wdf 驱动程序](./debug-universal-drivers---step-by-step-lab--echo-kernel-mode-.md)。 有关 KMDF 调试的信息，请参阅 [内核模式驱动程序框架调试](kernel-mode-driver-framework-debugging.md)。
 
 ## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅
 
@@ -135,6 +135,4 @@ Listing all drivers loaded in this host process at the time of the failure:
 [**!wdfkd.wdflogdump**](-wdfkd-wdflogdump.md)
 
 [**!wdfkd.wdfsettraceprefix**](-wdfkd-wdfsettraceprefix.md)
-
- 
 

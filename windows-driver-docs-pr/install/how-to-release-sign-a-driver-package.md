@@ -14,12 +14,12 @@ keywords:
 - 版本签名驱动程序包 WDK，关于测试签名驱动程序包
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 240522ea28c2382cc4275b96a6b69481b501ae96
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 8ef022b9339b1456e6d312a936a549f953cbdc47
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89095265"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91733264"
 ---
 # <a name="how-to-release-sign-a-driver-package"></a>如何对驱动程序包进行发布签名
 
@@ -36,7 +36,7 @@ ms.locfileid: "89095265"
 
 本节中的每个主题都介绍了发布签名过程中的一个单独过程，并提供了有关该过程的相关一般信息。 此外，每个主题都指向提供有关过程的详细信息的其他主题。
 
-**注意**   本部分讨论驱动程序发行者必须手动对驱动程序包进行发布签名时所涉及的步骤。 [硬件认证工具包 (HCK) ](https://go.microsoft.com/fwlink/p/?linkid=227016)包含各种设备类型的[测试类别](https://go.microsoft.com/fwlink/p/?linkid=189178)。 如果此列表中包含设备类型的测试类别，则驱动程序发行者应为驱动程序包获取 [WHQL 版本签名](whql-release-signature.md) ，而不是手动对驱动程序包进行发布签名。
+**注意**   本部分讨论驱动程序发行者必须手动对驱动程序包进行发布签名时所涉及的步骤。 [硬件认证工具包 (HCK) ](https://go.microsoft.com/fwlink/p/?linkid=227016)包含各种设备类型的[测试类别](/windows-hardware/test/hlk/)。 如果此列表中包含设备类型的测试类别，则驱动程序发行者应为驱动程序包获取 [WHQL 版本签名](whql-release-signature.md) ，而不是手动对驱动程序包进行发布签名。
 
  
 
@@ -65,6 +65,4 @@ ms.locfileid: "89095265"
 [配置支持发布签名的计算机](configuring-a-computer-to-support-release-signing.md)
 
 [安装进行了发布签名的驱动程序包](installing-a-release-signed-driver-package.md)
-
- 
 

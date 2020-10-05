@@ -8,12 +8,12 @@ keywords:
 - 电池 miniclass 驱动程序 WDK，功能
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f801ab73ecfd2950bc39ccfe222c396b187a3c30
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 7027ac388d4176a6a8e337335251857586e3f414
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90716572"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91733541"
 ---
 # <a name="supplying-required-battery-miniclass-driver-functionality"></a>提供所需的电池微型类驱动程序功能
 
@@ -21,7 +21,7 @@ ms.locfileid: "90716572"
 ## <span id="ddk_supplying_required_battery_miniclass_driver_functionality_dg"></span><span id="DDK_SUPPLYING_REQUIRED_BATTERY_MINICLASS_DRIVER_FUNCTIONALITY_DG"></span>
 
 
-除了支持 [即插即用](https://docs.microsoft.com/windows-hardware/drivers/kernel/implementing-plug-and-play)所需的例程以外，电池 miniclass 驱动程序必须具有以下例程：
+除了支持 [即插即用](../kernel/introduction-to-plug-and-play.md)所需的例程以外，电池 miniclass 驱动程序必须具有以下例程：
 
 [DriverEntry](driverentry-routine-of-a-battery-miniclass-driver.md)
 
@@ -54,6 +54,4 @@ ms.locfileid: "90716572"
 -   Batclass
 
 -   Ntddk 或 Wdm
-
- 
 

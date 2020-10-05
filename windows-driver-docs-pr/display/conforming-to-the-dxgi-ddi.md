@@ -3,53 +3,47 @@ title: 符合 DXGI DDI
 description: 符合 DXGI DDI
 ms.assetid: 1c789f57-003e-4b29-9a81-dbf194670664
 keywords:
-- Direct3D 11 版 WDK Windows 7 显示，DXGI DDI 符合性
-- Direct3D 11 版 WDK Windows Server 2008 R2 显示，DXGI DDI 符合性
-- DirectX 图形基础结构 DDI 符合性 WDK Windows 7 显示
-- DirectX 图形基础结构 DDI 符合性 WDK Windows Server 2008 R2 显示
-- DXGI DDI 符合性 WDK Windows 7 显示
-- DXGI DDI 符合性 WDK Windows Server 2008 R2 显示
+- Direct3D 版本 11 WDK Windows 7 显示，DXGI DDI 一致性
+- Direct3D 版本 11 WDK Windows Server 2008 R2 显示，DXGI DDI 一致性
+- DirectX 图形基础结构 DDI 一致性 WDK Windows 7 显示
+- DirectX 图形基础结构 DDI 一致性 WDK Windows Server 2008 R2 显示
+- DXGI DDI 一致性 WDK Windows 7 显示
+- DXGI DDI 一致性 WDK Windows Server 2008 R2 显示
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 182fbb7d58a4588850560a912245fa82d7fe799b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b3b393269a49c889762f44a7d49bd0f1cf334492
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63355353"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91733700"
 ---
 # <a name="conforming-to-the-dxgi-ddi"></a>符合 DXGI DDI
 
 
-本部分仅适用于 Windows 7 及更高版本、 和 Windows Server 2008 R2 和更高版本的 Windows 操作系统。
+本部分仅适用于 Windows 7 和更高版本，以及 windows Server 2008 R2 及更高版本的 Windows 操作系统。
 
-Direct3D 版本 11 DDI 符合[DirectX 图形基础结构 (DXGI) DDI 的](directx-graphics-infrastructure-ddi.md)资源接口、 设备枚举和演示文稿的定义。
+Direct3D 版本 11 DDI 符合 [DirectX 图形基础结构 (DXGI) DDI 的](directx-graphics-infrastructure-ddi.md) 资源接口定义、设备枚举和演示。
 
-### <a name="span-idpresentationspanspan-idpresentationspanpresentation"></a><span id="presentation"></span><span id="PRESENTATION"></span>演示文稿
+### <a name="span-idpresentationspanspan-idpresentationspanpresentation"></a><span id="presentation"></span><span id="PRESENTATION"></span>呈现
 
-Direct3D 11 版的设备必须支持来自任何扫描扩展支持格式的演示文稿，因为用户模式显示驱动程序将要求要向其字段存在操作通过调用颜色转换为其显示微型端口驱动程序 （内核模式驱动程序）从任何其他扫描扩展格式和还为标准 GDI 扫描带格式的扫描扩展格式。 这些扫描扩展格式所知的以下值从 DXGI\_格式枚举：
+由于 Direct3D 版本11设备必须支持任何支持扫描的格式的表示形式，因此，用户模式显示的驱动程序将需要通过其显示的微型端口驱动程序 (内核模式驱动程序的显示操作，) 该驱动程序调用从任何扫描格式转换为任何其他扫描格式的颜色转换，以及标准的 GDI 扫描格式。 这些扫描格式由 DXGI 格式枚举中的以下值识别 \_ ：
 
--   DXGI\_FORMAT\_B5G6R5\_UNORM
+-   DXGI \_ FORMAT \_ B5G6R5 \_ UNORM
 
--   DXGI\_FORMAT\_B5G5R5A1\_UNORM
+-   DXGI \_ FORMAT \_ B5G5R5A1 \_ UNORM
 
--   DXGI\_FORMAT\_B8G8R8A8\_UNORM
+-   DXGI \_ FORMAT \_ B8G8R8A8 \_ UNORM
 
--   DXGI\_FORMAT\_B8G8R8X8\_UNORM
+-   DXGI \_ FORMAT \_ B8G8R8X8 \_ UNORM
 
-使用 Direct3D 版本 11 的后台缓冲区限制 DDI。 如果 DXGI\_使用情况\_后台缓冲区 (从[DXGI\_用法](https://go.microsoft.com/fwlink/p/?linkid=122799)枚举)，则只有其他 DXGI 用法允许如下：
+Direct3D 版本 11 DDI 存在回退缓冲区限制。 如果设置了 dxgi 使用情况 \_ \_ 枚举 [ \_ ](/windows/win32/direct3ddxgi/dxgi-usage) 中的 dxgi 使用后台缓冲区 () 已设置，则只允许使用以下方法：
 
--   DXGI\_使用情况\_SHADERINPUT，映射到 D3D11\_绑定\_着色器\_资源
+-   DXGI \_ 使用 \_ SHADERINPUT，它映射到 D3D11 \_ 绑定 \_ 着色器 \_ 资源
 
--   DXGI\_使用情况\_呈现\_目标\_输出，它将映射到 D3D11\_绑定\_呈现\_目标
+-   DXGI \_ 使用情况 \_ 呈现 \_ 目标 \_ 输出，映射到 D3D11 \_ 绑定 \_ 呈现器 \_ 目标
 
-请注意，无 CPU 访问标志允许的后台缓冲区。
-
- 
+请注意，不允许对后台缓冲区使用任何 CPU 访问标志。
 
  
-
-
-
-
 

@@ -3,12 +3,12 @@ description: 本部分提供了 USB 外围设备制造商的链接。
 title: 为 Windows 构建 USB 设备的概述
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bfaf7f37b397bc8e0e67eeffa39c77b3b2538dd5
-ms.sourcegitcommit: 937974aa9bbe0262a7ffe9631593fab48c4e7492
+ms.openlocfilehash: 69049a4ecb8cf38125ac2fd6272a08e9963b736b
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "90010302"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91733465"
 ---
 # <a name="overview-of-building-usb-devices-for-windows"></a>为 Windows 构建 USB 设备的概述
 
@@ -32,14 +32,14 @@ USB 设备将标准描述符存储在设备及其接口和终结点的固件中�
 
 IHV 可以使用 Microsoft OS 描述符将信息存储在固件中，而不是单独提供。 窗口通过读取 Microsoft OS 描述符来检索该信息，并使用它来安装和配置设备，而无需任何用户交互。 请参阅 [MICROSOFT OS 描述符以获取 USB 设备](microsoft-defined-usb-descriptors.md)。
 
-[Microsoft OS 1.0 描述符规范](https://go.microsoft.com/fwlink/p/?linkid=617519)  
+[Microsoft OS 1.0 描述符规范](/previous-versions/gg463179(v=msdn.10))  
 本文档介绍 Microsoft 操作系统描述符。 它包含 OS 字符串描述符、扩展属性 OS 功能描述符和 OS 功能描述符格式的规范。
 
 [Microsoft OS 2.0 描述符规范](./microsoft-os-2-0-descriptors-specification.md)  
 本文档定义并说明 Microsoft OS 描述符版本2.0 的实现。 Microsoft 操作系统2.0 描述符的目标是解决操作系统描述符版本1.0 的限制和可靠性问题，并为 USB 设备启用特定于 Windows 的新功能。
 
 [使用 Microsoft OS 描述符将 Winusb.sys 作为函数驱动程序加载](automatic-installation-of-winusb.md)  
-IHV 可以定义某些 Microsoft 操作系统 (OS) 功能描述符，将兼容的 ID 报告为 "WINUSB"。 这些描述符允许 Windows 将 Winusb.sys 加载为设备的函数驱动程序，而无需使用自定义的 INF 文件。 有关如何定义兼容 ID 的示例，请参阅扩展兼容 ID OS 功能描述符规范的 "示例" 部分。 该规范包含在 [MICROSOFT 操作系统1.0 描述符规范](https://go.microsoft.com/fwlink/p/?linkid=617519)的下载中。
+IHV 可以定义某些 Microsoft 操作系统 (OS) 功能描述符，将兼容的 ID 报告为 "WINUSB"。 这些描述符允许 Windows 将 Winusb.sys 加载为设备的函数驱动程序，而无需使用自定义的 INF 文件。 有关如何定义兼容 ID 的示例，请参阅扩展兼容 ID OS 功能描述符规范的 "示例" 部分。 该规范包含在 [MICROSOFT 操作系统1.0 描述符规范](/previous-versions/gg463179(v=msdn.10))的下载中。
 
 ## <a name="setting-a-container-id"></a>设置容器 ID
 

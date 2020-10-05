@@ -4,19 +4,19 @@ description: UWP 设备应用允许设备制造商通过相机驱动程序 MFT �
 ms.assetid: 079CB01E-D16C-4597-8F08-BD75F1D02427
 ms.date: 09/14/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6b1588c1ce77cdbdf85d6d5f4eeca1f559ba049b
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 252562c5915abcbe8ccc4e381e65676a94d81e0f
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89095185"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91734471"
 ---
 # <a name="creating-a-camera-driver-mft-for-a-uwp-device-app"></a>为 UWP 设备应用创建照相机驱动程序 MFT
 
 > [!IMPORTANT]
 > 本主题已被弃用。 请参阅 [设备 MFT 设计指南](../stream/dmft-design.md) 了解更新的指南。
 
-UWP 设备应用允许设备制造商通过相机驱动程序 MFT 将自定义设置和特殊效果应用于照相机的视频流 (media foundation 转换) 。 本主题介绍了驱动程序 MFTs，并使用了 [驱动程序 MFT](https://go.microsoft.com/fwlink/p/?LinkID=251566) 示例演示如何创建一个。 若要详细了解 UWP 设备应用的详细信息，请参阅了解 [uwp 设备应用](meet-uwp-device-apps.md)。
+UWP 设备应用允许设备制造商通过相机驱动程序 MFT 将自定义设置和特殊效果应用于照相机的视频流 (media foundation 转换) 。 本主题介绍了驱动程序 MFTs，并使用了 [驱动程序 MFT](/samples/browse/) 示例演示如何创建一个。 若要详细了解 UWP 设备应用的详细信息，请参阅了解 [uwp 设备应用](meet-uwp-device-apps.md)。
 
 ## <a name="the-driver-mft"></a>驱动程序 MFT
 
@@ -28,9 +28,9 @@ UWP 设备应用不需要驱动程序 MFT。 设备制造商可以选择在不�
 
 ### <a name="how-a-driver-mft-is-used"></a>如何使用驱动程序 MFT
 
-照相机的 UWP 设备应用在不同于从 [CameraCaptureUI](https://go.microsoft.com/fwlink/p/?LinkId=317985) API 调用它的 Microsoft Store 应用程序的进程中运行。 要使 Microsoft Store 设备应用控制驱动程序 MFT，必须在不同的进程空间中出现一系列特定的事件。
+照相机的 UWP 设备应用在不同于从 [CameraCaptureUI](/uwp/api/Windows.Media.Capture.CameraCaptureUI) API 调用它的 Microsoft Store 应用程序的进程中运行。 要使 Microsoft Store 设备应用控制驱动程序 MFT，必须在不同的进程空间中出现一系列特定的事件。
 
-1. UWP 应用想要捕获照片，因此它将调用 [CaptureFileAsync](https://go.microsoft.com/fwlink/p/?LinkId=317986) 方法
+1. UWP 应用想要捕获照片，因此它将调用 [CaptureFileAsync](/uwp/api/Windows.Media.Capture.CameraCaptureUI) 方法
 2. Windows 请求驱动程序 MFT 指针和相机的设备 ID
 3. 将驱动程序 MFT 指针传递到设置主机
 4. 主机会查询与相机关联的 Microsoft Store 设备应用的应用 ID 的设备属性 (每个设备的元数据) 
@@ -42,7 +42,7 @@ UWP 设备应用不需要驱动程序 MFT。 设备制造商可以选择在不�
 
 ### <a name="avstream-driver-model-requirement"></a>AvStream 驱动程序模型要求
 
-照相机的驱动程序必须使用 AvStream 驱动程序模型。 有关 AVStream 驱动程序模型的详细信息，请参阅 [AVStream 微型驱动程序 Design Guide](https://go.microsoft.com/fwlink/p/?LinkID=228585)。
+照相机的驱动程序必须使用 AvStream 驱动程序模型。 有关 AVStream 驱动程序模型的详细信息，请参阅 [AVStream 微型驱动程序 Design Guide](../stream/avstream-minidrivers-design-guide.md)。
 
 ### <a name="how-the-driver-mft-is-exposed-to-apps"></a>如何将驱动程序 MFT 公开给应用
 
@@ -62,7 +62,7 @@ UWP 设备应用不需要驱动程序 MFT。 设备制造商可以选择在不�
         video.play();
     ```
 
-- 使用 Windows 运行时的 UWP 应用中的 MediaCapture API。 有关如何使用此 API 的详细信息，请参阅 [媒体捕获](https://go.microsoft.com/fwlink/p/?LinkId=243997) 示例。
+- 使用 Windows 运行时的 UWP 应用中的 MediaCapture API。 有关如何使用此 API 的详细信息，请参阅 [媒体捕获](/samples/browse/) 示例。
 
 - 媒体基础的源读取器，用于处理媒体数据的应用程序。 调用时，驱动程序 MFT 将向应用程序公开，作为第一个 (第0个) MFT `IMFSourceReaderEx::GetTransformForStream` 。 将返回的类别为 `MFT_CATEGORY_VIDEO_EFFECT` 。
 
@@ -74,7 +74,7 @@ UWP 设备应用不需要驱动程序 MFT。 设备制造商可以选择在不�
 
 ## <a name="driver-mft-implementation"></a>驱动程序 MFT 实现
 
-本部分提供了有关实施驱动程序 MFT 的信息。 有关与 UWP 设备应用一起工作的驱动程序 MFT 的完整示例，请参阅 [驱动程序 mft](https://go.microsoft.com/fwlink/p/?LinkID=251566) 示例。
+本部分提供了有关实施驱动程序 MFT 的信息。 有关与 UWP 设备应用一起工作的驱动程序 MFT 的完整示例，请参阅 [驱动程序 mft](/samples/browse/) 示例。
 
 ### <a name="development-tools"></a>开发工具
 
@@ -107,7 +107,7 @@ HRESULT CDriverMft::GetAttributes(IMFAttributes** ppAttributes)
 }
 ```
 
-在此示例中， `MFT_CONNECTED_STREAM_ATTRIBUTE` 驱动程序 MFT 的属性存储中的设置为指向设备源流的属性存储。 请参阅 [硬件握手序列](https://go.microsoft.com/fwlink/p/?LinkId=320139) ，详细了解如何设置照相机与 MFT 之间的通信。
+在此示例中， `MFT_CONNECTED_STREAM_ATTRIBUTE` 驱动程序 MFT 的属性存储中的设置为指向设备源流的属性存储。 请参阅 [硬件握手序列](/windows/win32/medfound/hardware-mfts) ，详细了解如何设置照相机与 MFT 之间的通信。
 
 ### <a name="how-to-access-device-source-information"></a>如何访问设备源信息
 
@@ -137,7 +137,7 @@ if(!m_pSourceTransform && m_pInputAttributes) {
 
 ### <a name="header-files-to-include"></a>要包含的头文件
 
-需要包含 `IInspectable` `IMFTransform` 驱动程序 MFT 必须实现的和方法的标头文件。 有关要包括的标头文件的列表，请参阅[适用于照相机的 UWP 设备应用](https://go.microsoft.com/fwlink/p/?LinkID=227865)示例的**SampleMFT0**目录中的**stdafx.h。**
+需要包含 `IInspectable` `IMFTransform` 驱动程序 MFT 必须实现的和方法的标头文件。 有关要包括的标头文件的列表，请参阅[适用于照相机的 UWP 设备应用](/samples/browse/)示例的**SampleMFT0**目录中的**stdafx.h。**
 
 ```cpp
 // required for IInspectable
@@ -249,13 +249,13 @@ library SampleMft0Lib
 
 ### <a name="creating-a-proxy"></a>创建代理
 
-驱动程序 MFT 是进程外服务器。 若要在 UWP 设备应用中使用它，必须在代理中提供封送支持，以便可以跨进程边界使用驱动程序 MFT 接口。 可以在 [驱动程序 MFT](https://go.microsoft.com/fwlink/p/?LinkID=251566) 示例中找到此示例。 该示例使用 MIDL 编译器生成无存根代理。
+驱动程序 MFT 是进程外服务器。 若要在 UWP 设备应用中使用它，必须在代理中提供封送支持，以便可以跨进程边界使用驱动程序 MFT 接口。 可以在 [驱动程序 MFT](/samples/browse/) 示例中找到此示例。 该示例使用 MIDL 编译器生成无存根代理。
 
 ### <a name="exposing-the-driver-mft-to-apps"></a>向应用程序公开驱动程序 MFT
 
 若要在 c # 或 JavaScript 中编写与驱动程序 MFT 交互的 UWP 设备应用，需要在 Microsoft Store 设备应用的 Microsoft Visual Studio 项目中创建一个附加组件。 此组件是一个包装，该包装程序在 Microsoft Store 设备应用程序可见的 Windows 运行时组件中公开驱动程序 MFT 接口。
 
-[适用于照相机的 UWP 设备应用](https://go.microsoft.com/fwlink/p/?LinkID=227865)示例中的包装子项目提供了一个示例，说明如何向 Windows 运行时公开驱动程序 MFT，以便可以从使用 c # 或 JavaScript 实现的 UWP 设备应用程序中使用它。 它设计为与 [驱动程序 MFT](https://go.microsoft.com/fwlink/p/?LinkID=251566) 示例一起使用。 请参阅 [驱动程序 MFT](https://go.microsoft.com/fwlink/p/?LinkID=251566) 示例页，获取有关安装、运行和测试示例的分步指南。
+[适用于照相机的 UWP 设备应用](/samples/browse/)示例中的包装子项目提供了一个示例，说明如何向 Windows 运行时公开驱动程序 MFT，以便可以从使用 c # 或 JavaScript 实现的 UWP 设备应用程序中使用它。 它设计为与 [驱动程序 MFT](/samples/browse/) 示例一起使用。 请参阅 [驱动程序 MFT](/samples/browse/) 示例页，获取有关安装、运行和测试示例的分步指南。
 
 ## <a name="installing-and-registering-the-driver-mft"></a>安装和注册驱动程序 MFT
 
@@ -325,10 +325,10 @@ KSCATEGORY_CAPTURE:
 
 [UWP 设备应用的自动安装](auto-install-for-uwp-device-apps.md)
 
-[硬件握手序列 (硬件 MFTs) ](https://go.microsoft.com/fwlink/p/?LinkId=320139)
+[硬件握手序列 (硬件 MFTs) ](/windows/win32/medfound/hardware-mfts)
 
-[AVStream 微型驱动程序设计指南](https://go.microsoft.com/fwlink/p/?LinkID=228585)
+[AVStream 微型驱动程序设计指南](../stream/avstream-minidrivers-design-guide.md)
 
-[适用于照相机的 UWP 设备应用示例](https://go.microsoft.com/fwlink/p/?LinkID=227865)
+[适用于照相机的 UWP 设备应用示例](/samples/browse/)
 
-[驱动程序 MFT 示例](https://go.microsoft.com/fwlink/p/?LinkID=251566)
+[驱动程序 MFT 示例](/samples/browse/)

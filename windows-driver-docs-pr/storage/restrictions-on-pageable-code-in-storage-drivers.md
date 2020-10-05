@@ -9,12 +9,12 @@ keywords:
 - 分页路径 WDK 存储
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 58921f50aa88233a25d9a84a63846af61159f350
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 19975b687116a1a5f7ea1f53f46c3f94ee699a0a
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89191113"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91732765"
 ---
 # <a name="restrictions-on-pageable-code-in-storage-drivers"></a>对存储驱动程序中的可分页代码的限制
 
@@ -32,7 +32,5 @@ ms.locfileid: "89191113"
 
 特别注意事项适用于在寻呼路径中管理存储设备的驱动程序。 如果驱动程序参与了页面文件的 i/o 操作，则该驱动程序位于 "分页路径" 中。 当存储驱动程序在分页路径中时，IRP [**DispatchPower**](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch) \_ MJ 电源请求的 DispatchPower 例程 \_ 不得是可分页的。
 
-默认情况下，内核模式驱动程序的代码是不可分页的，并且内核模式驱动程序使用的全局内存也不能分页。 有关如何使代码可分页的详细信息，请参阅 [使驱动程序代码或数据可分页](https://docs.microsoft.com/windows-hardware/drivers/kernel/making-driver-code-or-data-pageable)。
-
- 
+默认情况下，内核模式驱动程序的代码是不可分页的，并且内核模式驱动程序使用的全局内存也不能分页。 有关如何使代码可分页的详细信息，请参阅 [使驱动程序代码或数据可分页](../kernel/detecting-code-that-can-be-pageable.md)。
 

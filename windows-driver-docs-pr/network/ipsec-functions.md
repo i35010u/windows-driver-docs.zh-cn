@@ -1,23 +1,23 @@
 ---
 title: IPsec 函数
-description: 本部分介绍 Windows 筛选平台标注驱动程序的 IPsec 函数。
+description: 本部分介绍适用于 Windows 筛选平台标注驱动程序的 IPsec 功能。
 ms.assetid: c457f036-84be-47fd-8cfe-9ac867111ca5
 keywords:
 - IPsec 函数网络驱动程序
 ms.date: 11/07/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5ec18b25dfa268ac1762e95856ccc611fabc0961
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2c3da12de2c7a6c07e8f8d3f1e0e906870c3235d
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63327695"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91734433"
 ---
 # <a name="ipsec-functions"></a>IPsec 函数
 
-以下函数的语义是完全相同，但返回类型而不是 Win32 错误代码的 NTSTATUS 代码从用户模式应用程序中调用时从标注驱动程序，因为调用时。 每个函数的说明，请参阅[Windows 筛选平台](https://go.microsoft.com/fwlink/p/?linkid=210226)Microsoft Windows SDK 文档中的部分。
+在从标注驱动程序调用时，以下函数的语义完全相同，不同之处在于，返回类型是一个 NTSTATUS 代码，而不是 Win32 错误代码。 有关每个函数的说明，请参阅 Microsoft Windows SDK 文档中的 [Windows 筛选平台](/windows/win32/fwp/windows-filtering-platform-start-page) 部分。
 
-这些函数的调用方必须运行在 IRQL = passive_level 调用。
+这些函数的调用方必须在 IRQL = PASSIVE_LEVEL 上运行。
 
 - FwpmIPsecTunnelAdd0
 - FwpmIPsecTunnelDeleteByKey0
@@ -37,4 +37,3 @@ ms.locfileid: "63327695"
 - IPsecSaDbSetSecurityInfo0
 - IPsecSaDestroyEnumHandle0
 - IPsecSaEnum0
-

@@ -10,12 +10,12 @@ keywords:
 - 签名 WDK，Authenticode
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e158385e52398c8363215806dd0a3dc0fd519b9b
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 3f08d6f58e366475dc313a666772419daf24b1ae
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89095101"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91732721"
 ---
 # <a name="authenticode-digital-signatures"></a>验证码数字签名
 
@@ -32,9 +32,7 @@ Authenticode 代码签名不会改变驱动程序的可执行部分。 相反，
 
 -   对于经过数字签名的 [目录文件](catalog-files.md) (*类*) ，签名过程需要从 [驱动程序包](driver-packages.md)中每个文件的内容生成文件哈希值。 此哈希值包含在目录文件中。 然后，使用嵌入的签名对该目录文件进行签名。 通过这种方式，目录文件是一种分离签名。
 
-**注意**   [硬件认证工具包 (HCK) ](https://go.microsoft.com/fwlink/p/?linkid=227016)包含各种设备类型的测试类别。 可在 [HLK API 参考](/windows-hardware/test/hlk/api/hlk-api-reference)中找到测试类别的列表。 如果此列表中包含设备类型的测试类别，则软件发行者应为[驱动程序包](driver-packages.md)获取[WHQL 版本签名](whql-release-signature.md)，但如果 HCK 没有设备类型的测试程序，则软件发布者可以使用 Microsoft Authenticode 技术对驱动程序包进行签名。 有关此过程的详细信息，请参阅 [签署公用版驱动程序](signing-drivers-for-public-release--windows-vista-and-later-.md)。
-
- 
+**注意**   [硬件认证工具包 (HCK) ](/previous-versions/windows/hardware/hck/jj124227(v=vs.85))包含各种设备类型的测试类别。 可在 [HLK API 参考](/windows-hardware/test/hlk/api/hlk-api-reference)中找到测试类别的列表。 如果此列表中包含设备类型的测试类别，则软件发行者应为[驱动程序包](driver-packages.md)获取[WHQL 版本签名](whql-release-signature.md)，但如果 HCK 没有设备类型的测试程序，则软件发布者可以使用 Microsoft Authenticode 技术对驱动程序包进行签名。 有关此过程的详细信息，请参阅 [签署公用版驱动程序](signing-drivers-for-public-release--windows-vista-and-later-.md)。
 
  
 

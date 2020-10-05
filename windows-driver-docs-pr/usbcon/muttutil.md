@@ -3,12 +3,12 @@ description: MuttUtil 在 MUTT 设备上执行各种任务。
 title: MuttUtil
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 09585cb417ed393c98bfa41e692b8f0e48cffa59
-ms.sourcegitcommit: 15caaf6d943135efcaf9975927ff3933957acd5d
+ms.openlocfilehash: 4f292793d905158eeb4032d7b14779cdb3e26a06
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88969316"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91733460"
 ---
 # <a name="muttutil"></a>MuttUtil
 
@@ -22,7 +22,7 @@ MuttUtil 在 [MUTT 设备](microsoft-usb-test-tool--mutt--devices.md)上执行�
 -   将设备配置为在指定的时间段后发送恢复唤醒信号。
 -   对于 MUTT Pack，它会将集线器设置为全速或高速操作;作为单 TT 或多 TT 中心。
 
-MuttUtil 嵌入在所包含的测试脚本的安装部分，以确保将测试设备正确地升级到最新的固件。 该工具包含在 [MUTT](https://go.microsoft.com/fwlink/p/?linkid=617710)软件包中。
+MuttUtil 嵌入在所包含的测试脚本的安装部分，以确保将测试设备正确地升级到最新的固件。 该工具包含在 [MUTT](./index.md)软件包中。
 
 ## <a name="how-to-run-muttutil"></a>如何运行 MuttUtil
 
@@ -51,7 +51,7 @@ MUTT Pack 设备的问题代码28表示没有为设备加载任何驱动程序�
 
 **更改 MUTT 设备的个性**
 
-MUTT 设备也用作 [USB UWP 应用示例](https://go.microsoft.com/fwlink/p/?linkid=309716)的测试设备。 对于这种情况，必须通过运行选项来更新固件 `-SetWinRTUsb` 。 在此练习中，SuperMUTT 设备设置为 WinRT 个性。
+MUTT 设备也用作 [USB UWP 应用示例](/samples/browse/)的测试设备。 对于这种情况，必须通过运行选项来更新固件 `-SetWinRTUsb` 。 在此练习中，SuperMUTT 设备设置为 WinRT 个性。
 
 若要将其更改回 MUTT 个性，请使用此命令：
 
@@ -73,7 +73,7 @@ Return value: 1
 
 **安装 MUTT 设备的驱动程序**
 
-指定包含安装信息的驱动程序的 INF 文件。 例如，应用于对象的
+指定包含安装信息的驱动程序的 INF 文件。 例如，
 
 `MUTTUtil.exe -UpdateDriver USBTCD.inf`
 
@@ -87,7 +87,7 @@ DEVICE :  0 : USB\VID_045E&PID_078F&REV_0034 :             0  : USBTCD
 Return value: 1
 ```
 
-上述命令将现有驱动程序替换为指定的 USBTCD.sys 驱动程序。 驱动程序包含在 [MUTT](https://go.microsoft.com/fwlink/p/?linkid=617710)软件包中。
+上述命令将现有驱动程序替换为指定的 USBTCD.sys 驱动程序。 驱动程序包含在 [MUTT](./index.md)软件包中。
 
 如果附加了多个 MUTT 设备，则可以同时更新驱动程序。
 
@@ -185,7 +185,4 @@ Return value: 1
 ## <a name="related-topics"></a>相关主题
 [USB 测试工具](usb-test-tools.md)  
 [MUTT 软件包中的工具](mutt-software-package.md)  
-[Microsoft USB 测试工具 (MUTT) 设备](microsoft-usb-test-tool--mutt--devices.md)  
-
-
-
+[Microsoft USB 测试工具 (MUTT) 设备](microsoft-usb-test-tool--mutt--devices.md)

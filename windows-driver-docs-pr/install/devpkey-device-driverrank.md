@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: f4e3f5b61708d4a84a4a10ba104c2468eca5426e
-ms.sourcegitcommit: 06581a21ca066ddfedab7f9bb7f2159cfac452fd
+ms.openlocfilehash: 418408b804bb2fab4a8e5961b219544e66c31e45
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91145487"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91733003"
 ---
 # <a name="devpkey_device_driverrank"></a>DEVPKEY_Device_DriverRank
 
@@ -68,7 +68,7 @@ Windows 设置 DEVPKEY_Device_DriverRank 的值。
 
 Windows Server 2003、Windows XP 和 Windows 2000 支持此属性，但不支持 DEVPKEY_Device_DriverRank 属性键。 有关如何在这些早期版本的 Windows 上访问此属性的信息，请参阅 [访问设备驱动程序属性](./accessing-device-driver-properties.md)。
 
-有关驱动程序级别的信息，请参阅 [Windows 如何对驱动程序进行排名](https://docs.microsoft.com/windows-hardware/drivers/install/how-setup-ranks-drivers)。
+有关驱动程序级别的信息，请参阅 [Windows 如何对驱动程序进行排名](./how-setup-ranks-drivers--windows-vista-and-later-.md)。
 
 <a name="requirements"></a>要求
 ------------
@@ -84,6 +84,4 @@ Windows Server 2003、Windows XP 和 Windows 2000 支持此属性，但不支持
 [**SetupDiGetDriverInstallParams**](/windows/win32/api/setupapi/nf-setupapi-setupdigetdriverinstallparamsa)
 
 [**SP_DRVINSTALL_PARAMS**](/windows/win32/api/setupapi/ns-setupapi-sp_drvinstall_params)
-
- 
 

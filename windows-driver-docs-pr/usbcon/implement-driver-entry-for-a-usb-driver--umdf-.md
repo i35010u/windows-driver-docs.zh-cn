@@ -3,12 +3,12 @@ description: 使用随 Microsoft Visual Studio 提供的 USB 用户模式驱动�
 title: 如何编写第一个 USB 客户端驱动程序 (UMDF)
 ms.date: 06/03/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: bfd84e1e1879c8af2dcecf59cffa574d98e0ab8e
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 792931e410045fb74cc614ae704f3e525089ae11
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90716672"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91733567"
 ---
 # <a name="how-to-write-your-first-usb-client-driver-umdf"></a>如何编写第一个 USB 客户端驱动程序 (UMDF)
 
@@ -39,7 +39,7 @@ ms.locfileid: "90716672"
 
     工具包包括开发、构建和调试 USB 客户端驱动程序所需的标头、库、工具、文档和调试工具。 可以从 [如何获取 wdk](https://go.microsoft.com/fwlink/p/?linkid=617585)获取最新版本的 wdk。
 
--   您的主计算机具有适用于 Windows 的调试工具的最新版本。 可以从 WDK 获取最新版本，也可以 [下载和安装适用于 Windows 的调试工具](https://go.microsoft.com/fwlink/p/?linkid=617701)。
+-   您的主计算机具有适用于 Windows 的调试工具的最新版本。 可以从 WDK 获取最新版本，也可以 [下载和安装适用于 Windows 的调试工具](../download-the-wdk.md)。
 -   如果你使用两台计算机，则必须为用户模式调试配置主机和目标计算机。 有关详细信息，请参阅 [在 Visual Studio 中设置用户模式调试](../debugger/setting-up-user-mode-debugging-in-visual-studio.md)。
 
 **硬件要求**
@@ -54,7 +54,7 @@ ms.locfileid: "90716672"
 -   [设备节点和设备堆栈](../gettingstarted/device-nodes-and-device-stacks.md)
 -   [Windows 驱动程序入门](../gettingstarted/index.md)
 -   [用户模式驱动程序框架](../debugger/user-mode-driver-framework-debugging.md)
--   *使用 Windows Driver Foundation 开发驱动程序*，由 "Orwick" 和 "专家 Smith" 编写。 有关详细信息，请参阅 [通过 WDF 开发驱动程序](https://go.microsoft.com/fwlink/p/?linkid=617702)。
+-   *使用 Windows Driver Foundation 开发驱动程序*，由 "Orwick" 和 "专家 Smith" 编写。 有关详细信息，请参阅 [通过 WDF 开发驱动程序](../wdf/developing-drivers-with-wdf.md)。
 
 <a name="instructions"></a>Instructions
 ------------

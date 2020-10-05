@@ -4,12 +4,12 @@ description: Windows 内核的已过时例程
 ms.assetid: 876f48be-1d8f-4c65-bc84-e35c31919c47
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 8b98784b9d42022d92fcda840414d7d3f94f8418
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 41b93fb15762539f3050e36a21558a6b6cd50ed9
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90106242"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91733147"
 ---
 # <a name="windows-kernel-obsolete-routines"></a>Windows 内核的已过时例程
 
@@ -78,7 +78,7 @@ ms.locfileid: "90106242"
 </tr>
 <tr class="odd">
 <td><strong>ExInterlockedExchangeAddLargeInteger</strong></td>
-<td><p>有关以原子方式添加 2 64 位数字的详细信息，请参阅 <a href="https://go.microsoft.com/fwlink/p/?linkid=71056" data-raw-source="[InterlockedExchangeAdd64](https://go.microsoft.com/fwlink/p/?linkid=71056)">InterlockedExchangeAdd64</a>。</p></td>
+<td><p>有关以原子方式添加 2 64 位数字的详细信息，请参阅 <a href="/windows/win32/api/winnt/nf-winnt-interlockedexchangeadd64" data-raw-source="[InterlockedExchangeAdd64](/windows/win32/api/winnt/nf-winnt-interlockedexchangeadd64)">InterlockedExchangeAdd64</a>。</p></td>
 </tr>
 <tr class="even">
 <td><strong>ExInterlockedExchangeUlong</strong></td>
@@ -196,7 +196,7 @@ ms.locfileid: "90106242"
 [**FreeAdapterChannel**](/windows-hardware/drivers/ddi/wdm/nc-wdm-pfree_adapter_channel)  
 [**FreeMapRegisters**](/windows-hardware/drivers/ddi/wdm/nc-wdm-pfree_map_registers)  
 [**GetDmaAlignment**](/windows-hardware/drivers/ddi/wdm/nc-wdm-pget_dma_alignment)  
-[InterlockedExchangeAdd64](https://go.microsoft.com/fwlink/p/?linkid=71056)  
+[InterlockedExchangeAdd64](/windows/win32/api/winnt/nf-winnt-interlockedexchangeadd64)  
 [**IoAllocateMdl**](/windows-hardware/drivers/ddi/wdm/nf-wdm-ioallocatemdl)  
 [**IoAllocateWorkItem**](/windows-hardware/drivers/ddi/wdm/nf-wdm-ioallocateworkitem)  
 [**IoAttachDeviceToDeviceStack**](/windows-hardware/drivers/ddi/wdm/nf-wdm-ioattachdevicetodevicestack)  

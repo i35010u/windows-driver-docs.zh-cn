@@ -6,12 +6,12 @@ keywords:
 - 设备接口 WDK 设备安装，访问属性
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e8f44bade4046fc439c1e0699580010ed1b760e5
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 014a12505fe25c5a1238305cb3c08ff78aa2c1a0
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90714941"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91734275"
 ---
 # <a name="accessing-the-properties-of-installed-device-interfaces"></a>访问已安装设备接口的属性
 
@@ -30,9 +30,7 @@ ms.locfileid: "90714941"
 
     3.  使用持久性注册表存储作为设备接口类的自定义设置。 为此，请使用 [**SetupDiCreateDeviceInterfaceRegKey**](/windows/win32/api/setupapi/nf-setupapi-setupdicreatedeviceinterfaceregkeya) (创建新的注册表项) 或 [**SetupDiOpenDeviceInterfaceRegKey**](/windows/win32/api/setupapi/nf-setupapi-setupdiopendeviceinterfaceregkey) (，以打开现有注册表项) 。
 
-        若要保存自定义设置，请在创建或打开注册表项后使用 [RegCloseKey](https://go.microsoft.com/fwlink/p/?linkid=194543) 。
+        若要保存自定义设置，请在创建或打开注册表项后使用 [RegCloseKey](/windows/win32/api/winreg/nf-winreg-regclosekey) 。
 
 -   内核模式驱动程序应使用 [**IoOpenDeviceInterfaceRegistryKey**](/windows-hardware/drivers/ddi/wdm/nf-wdm-ioopendeviceinterfaceregistrykey) 来打开设备接口类的注册表项。
-
- 
 

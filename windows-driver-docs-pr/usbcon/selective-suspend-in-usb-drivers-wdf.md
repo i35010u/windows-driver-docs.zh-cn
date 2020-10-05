@@ -3,12 +3,12 @@ description: USB 函数驱动程序通过实现 USB 选择性挂起来支持运�
 title: USB 驱动程序 (WDF) 中的选择性挂起
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1a57f1e289de7d7299900b7a962ea2c91b0bf928
-ms.sourcegitcommit: 15caaf6d943135efcaf9975927ff3933957acd5d
+ms.openlocfilehash: 9c991718d040e2e8e034ceec4948cf016c7e7b83
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88969576"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91732613"
 ---
 # <a name="selective-suspend-in-usb-drivers-wdf"></a>USB 驱动程序 (WDF) 中的选择性挂起
 
@@ -91,11 +91,8 @@ USB 函数驱动程序应通过 WDF 为其单独的设备功能实现选择性�
 
 ## <a name="related-topics"></a>相关主题
 [Windows 驱动程序框架 (WDF)](https://go.microsoft.com/fwlink/p/?linkid=53698)  
-[即插即用-体系结构和驱动程序支持](https://go.microsoft.com/fwlink/p/?linkid=320985)  
-[KMDF 驱动程序中的 PnP 和电源管理](https://go.microsoft.com/fwlink/p/?linkid=320986)  
-[当 WDF 驱动程序可以使用电源管理的 i/o 队列时](https://go.microsoft.com/fwlink/p/?linkid=320987)  
-[用 WDF 编写 USB 驱动程序](https://go.microsoft.com/fwlink/p/?linkid=320988)  
-[在 USB 客户端驱动程序中实施电源管理](https://go.microsoft.com/fwlink/p/?linkid=320989)  
-
-
-
+[即插即用-体系结构和驱动程序支持](/previous-versions/windows/hardware/design/dn614609(v=vs.85))  
+[KMDF 驱动程序中的 PnP 和电源管理](../wdf/index.md)  
+[当 WDF 驱动程序可以使用电源管理的 i/o 队列时](/previous-versions/windows/hardware/design/dn614013(v=vs.85))  
+[用 WDF 编写 USB 驱动程序](/windows-hardware/drivers/ddi/)  
+[在 USB 客户端驱动程序中实施电源管理](/windows-hardware/drivers/ddi/)

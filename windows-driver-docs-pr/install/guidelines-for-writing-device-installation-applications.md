@@ -7,12 +7,12 @@ keywords:
 - 设备安装应用程序 WDK，指导原则
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 16702b1754a7f21d27e8f6390da832bd8434161a
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: b7f0c1faf347c878016d6b7fecd73ff01c894ad6
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90716886"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91733285"
 ---
 # <a name="guidelines-for-writing-device-installation-applications"></a>设备安装应用程序编写指南
 
@@ -33,7 +33,7 @@ ms.locfileid: "90716886"
 
 -   [安装特定于设备的应用程序](installing-device-specific-applications.md)
 
-    **注意**   我们强烈建议你将特定于设备的应用程序提交到适用于软件[ (HCK) 的适当硬件认证工具包](https://go.microsoft.com/fwlink/p/?linkid=227016)。 有关详细信息，请参阅 [Microsoft 开发人员网络](https://go.microsoft.com/fwlink/p/?linkid=8714) 网站。
+    **注意**   我们强烈建议你将特定于设备的应用程序提交到适用于软件[ (HCK) 的适当硬件认证工具包](/previous-versions/windows/hardware/hck/jj124227(v=vs.85))。 有关详细信息，请参阅 [Microsoft 开发人员网络](https://go.microsoft.com/fwlink/p/?linkid=8714) 网站。
 
      
 
@@ -62,6 +62,4 @@ ms.locfileid: "90716886"
 -   使用 *win.ini* 条目开始设备安装应用程序。
 
 -   强制用户安装任何设备特定的应用程序，除非该设备在没有应用程序的情况下将无法运行。 例如，如果收件箱应用程序不支持此类功能，则可能包括用于设置可配置键盘密钥或设置调制解调器的国家/地区代码的实用程序。
-
- 
 

@@ -6,12 +6,12 @@ keywords:
 - 在移动宽带元数据创作向导中添加硬件 ID
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c8b3ca29c7781f7f048bfb864350dd4e6a15153a
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 21d6dd1a8c952de0324d7475194d953f7bae1ebd
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89384573"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91734095"
 ---
 # <a name="add-hardware-ids-in-the-mobile-broadband-metadata-authoring-wizard"></a>在移动宽带元数据创作向导中添加硬件 ID
 
@@ -87,6 +87,6 @@ ms.locfileid: "89384573"
 
 4. 单击 **"确定"** 以返回到 " **关联** " 选项卡。
 
-有关每种服务样式的硬件 ID 的详细信息，请参阅 [Windows 8 的服务元数据包架构参考](https://docs.microsoft.com/windows-hardware/drivers/mobilebroadband/service-metadata-package-schema-reference)。
+有关每种服务样式的硬件 ID 的详细信息，请参阅 [Windows 8 的服务元数据包架构参考](../mobilebroadband/mobilebroadbandinfo-xml-schema.md)。
 
 有关匹配的详细信息，请参阅 [提供 mvno 体验](../mobilebroadband/delivering-experiences-for-mvnos.md)。

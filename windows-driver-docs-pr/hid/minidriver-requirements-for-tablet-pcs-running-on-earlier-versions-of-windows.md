@@ -4,12 +4,12 @@ description: 介绍供应商提供的用于笔设备和按钮设备的 HID 微�
 ms.assetid: 89BE7E13-4D46-4265-9522-D5A51999F633
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4045798f9710c0dd46f8c7136d0e6a7e983fa8ea
-ms.sourcegitcommit: 9145bffd4cc3b990a9ebff43b588db6ef2001f5d
+ms.openlocfilehash: b561ea83ff352272f9578d434a46700a1f819e12
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/09/2020
-ms.locfileid: "89592385"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91734399"
 ---
 # <a name="minidriver-requirements-for-tablet-pcs-running-on-earlier-versions-of-windows"></a>在早期版本的 Windows 上运行的 tablet Pc 的微型驱动程序要求
 
@@ -21,7 +21,7 @@ ms.locfileid: "89592385"
 -   笔设备与 Tablet PC 的 LCD 显示器集成，用于捕获触笔的运动。
 -   对笔设备进行了补充的按钮设备，用于捕获按钮输入。 有关 Tablet PC 的详细信息，请参阅 Windows XP Tablet PC Edition 网站
 
-有关 Tablet PC 的详细信息，请参阅 [WINDOWS XP TABLET Pc Edition](https://go.microsoft.com/fwlink/p/?linkid=275069) 网站。
+有关 Tablet PC 的详细信息，请参阅 [WINDOWS XP TABLET Pc Edition](/previous-versions/ms950406(v=msdn.10)) 网站。
 
 有关系统提供的支持 Tablet PC 的软件的详细信息，请参阅 Microsoft Windows SDK 中的 Tablet PC 文档。
 
@@ -52,6 +52,4 @@ Tablet PC 按钮设备补充了 Tablet PC 上的笔输入。 按钮设备支持�
 -   提供 "使用情况" 页为通用桌面并且其使用情况为键盘的顶级集合 (参阅 [HID 用法](hid-usages.md)) 。 键盘集合仅用于报告 SAS 按钮事件。 按下 SAS 按钮后，必须报告以下用法： "左"、"左 Alt" 和 "删除"。
 
 -   提供 "使用情况" 页为通用桌面并且其使用情况为 Tablet PC 系统控件的顶级集合。 按钮事件的报告方法是使用 "使用情况" 页为 "button" 的按钮数组，使用值范围从1到按钮数目。
-
- 
 

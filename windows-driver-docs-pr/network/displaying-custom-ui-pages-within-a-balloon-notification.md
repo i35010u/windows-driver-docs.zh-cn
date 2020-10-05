@@ -7,12 +7,12 @@ keywords:
 - 气球通知 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ed835fa17e6b0cb8f643d028c7be0242147e8dfa
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 6e19a7a0e1d1486517569d8267754c2c899ffdff
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89210199"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91732519"
 ---
 # <a name="displaying-custom-ui-pages-within-a-balloon-notification"></a>在气球通知中显示自定义 UI 页
 
@@ -41,11 +41,11 @@ ms.locfileid: "89210199"
 
     当操作系统调用 **IWizardExtension：： AddPages** 方法时，本机 802.11 IHV UI 扩展 DLL 返回表示自定义 UI 页面的 PROPSHEETPAGE 结构的句柄数组。
 
-    有关 **IWizardExtension** com 接口的详细信息，请参阅 [IWizardExtension com interface](https://go.microsoft.com/fwlink/p/?linkid=56607)。 有关 PROPSHEETPAGE 结构的详细信息，请参阅 Microsoft Windows SDK 中的文档。
+    有关 **IWizardExtension** com 接口的详细信息，请参阅 [IWizardExtension com interface](/windows/win32/api/shobjidl/nn-shobjidl-iwizardextension)。 有关 PROPSHEETPAGE 结构的详细信息，请参阅 Microsoft Windows SDK 中的文档。
 
-5.  通过 **IWizardSite** COM 接口，按本机 802.11 IHV UI 扩展 DLL 指定的方式浏览 UI 页。 有关此接口的详细信息，请参阅 [IWIZARDSITE COM interface](https://go.microsoft.com/fwlink/p/?linkid=56608)。
+5.  通过 **IWizardSite** COM 接口，按本机 802.11 IHV UI 扩展 DLL 指定的方式浏览 UI 页。 有关此接口的详细信息，请参阅 [IWIZARDSITE COM interface](/windows/win32/api/shobjidl/nn-shobjidl-iwizardsite)。
 
-显示自定义 UI 时，本机 802.11 IHV UI 扩展 DLL 可以通过 [IPROPERTYBAG COM 接口](https://go.microsoft.com/fwlink/p/?linkid=56610)读取或写入特定于上下文的数据。 有关此过程的详细信息，请参阅 [访问配置文件和上下文数据](accessing-profile-and-context-data.md)。 自定义 UI 的显示完成后，本机 802.11 IHV UI 扩展 DLL 可通过调用 **WlanSendUIResponse** 将用户输入的响应数据返回到本机 802.11 IHV 扩展 dll。 DLL 传入 UI 请求的 GUID，以及指向包含响应数据的缓冲区的指针。
+显示自定义 UI 时，本机 802.11 IHV UI 扩展 DLL 可以通过 [IPROPERTYBAG COM 接口](/previous-versions/windows/internet-explorer/ie-developer/platform-apis/aa768196(v=vs.85))读取或写入特定于上下文的数据。 有关此过程的详细信息，请参阅 [访问配置文件和上下文数据](accessing-profile-and-context-data.md)。 自定义 UI 的显示完成后，本机 802.11 IHV UI 扩展 DLL 可通过调用 **WlanSendUIResponse** 将用户输入的响应数据返回到本机 802.11 IHV 扩展 dll。 DLL 传入 UI 请求的 GUID，以及指向包含响应数据的缓冲区的指针。
 
 在本机 802.11 IHV UI 扩展 DLLcalls **WlanSendUIResponse**后，操作系统将调用本机 802.11 IHV 扩展 DLL 的 [*Dot11ExtIhvProcessUIResponse*](/windows-hardware/drivers/ddi/wlanihv/nc-wlanihv-dot11extihv_process_ui_response) IHV 处理程序函数来转发自定义 UI 的响应数据。
 

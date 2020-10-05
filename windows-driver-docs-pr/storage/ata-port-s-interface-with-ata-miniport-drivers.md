@@ -8,12 +8,12 @@ keywords:
 - 微型端口驱动程序 WDK 存储，ATA 微型端口驱动程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a9907f690cbabb8c024b5825864fab692050c7ff
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: ae20bc453a84f05773ff2481b09351615bcb28c9
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89192435"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91733019"
 ---
 # <a name="ata-ports-interface-with-ata-miniport-drivers"></a>ATA 端口的可以与 ATA 微型端口驱动程序交互的接口
 
@@ -21,7 +21,7 @@ ms.locfileid: "89192435"
 ## <span id="ddk_ata_ports_interface_with_ata_minport_drivers_kg"></span><span id="DDK_ATA_PORTS_INTERFACE_WITH_ATA_MINPORT_DRIVERS_KG"></span>
 
 
-**注意** ATA 端口驱动程序和 ATA 微型端口驱动程序模型可能会在将来更改或不可用。 相反，我们建议使用 [storport 驱动](https://docs.microsoft.com/windows-hardware/drivers/storage/storport-driver) 程序和 [storport 微型端口](./storport-miniport-drivers.md) 驱动程序模型。
+**注意** ATA 端口驱动程序和 ATA 微型端口驱动程序模型可能会在将来更改或不可用。 相反，我们建议使用 [storport 驱动](./storport-driver-overview.md) 程序和 [storport 微型端口](./storport-miniport-drivers.md) 驱动程序模型。
 
 
 在 Windows Vista 和更高版本的 Windows 的 IDE 体系结构中，有四个系统提供的 IDE 驱动程序：
@@ -65,6 +65,4 @@ ATA 微型端口驱动程序初始化控制器接口后，端口驱动程序会�
 ![同时实现控制器和通道接口的供应商微型端口驱动程序](images/ataport2.png)
 
 实现通道接口的 ATA 微型端口驱动程序向控制器驱动程序公开控制器和通道管理例程， (*Pciidex.sys*) 。 出于性能方面的原因， *Pciidex.sys* 将通道管理入口点传递给 ata 端口驱动程序，ata 端口驱动程序会直接调用 ata 微型端口驱动程序的通道管理例程，而不会 *Pciidex.sys*的中介。 *Pciidex.sys*驱动程序调用 ATA 微型端口驱动程序的控制器例程。
-
- 
 

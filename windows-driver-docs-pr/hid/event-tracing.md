@@ -4,17 +4,17 @@ description: 可以使用 Windows 的事件跟踪 (ETW) 或 Windows 软件跟踪
 ms.assetid: F23E5516-36B9-478E-90D3-54D1C52CB467
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 341b0e6ddd8f3f7a5c78d5dbe2db4ef0f2e43103
-ms.sourcegitcommit: 9145bffd4cc3b990a9ebff43b588db6ef2001f5d
+ms.openlocfilehash: 340276608dfd017d5c06e7a3ddc79557d8404504
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/09/2020
-ms.locfileid: "89592329"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91734079"
 ---
 # <a name="event-tracing"></a>事件跟踪
 
 
-可以使用 Windows 的事件跟踪 (ETW) 或 Windows 软件跟踪预处理器 (WPP) 跟踪 HID over i2c 设备驱动程序中的操作。 有关 ETW 的详细信息，请参阅 Windows 开发参考中的 [事件跟踪](https://go.microsoft.com/fwlink/p/?linkid=256040) 主题。 有关 WPP 的详细信息，请参阅 [Wpp Software](../devtest/wpp-software-tracing.md) [Trace 和即时 TRACE 录像机 (IFR) 用于日志记录跟踪](../devtest/using-wpp-recorder.md)。
+可以使用 Windows 的事件跟踪 (ETW) 或 Windows 软件跟踪预处理器 (WPP) 跟踪 HID over i2c 设备驱动程序中的操作。 有关 ETW 的详细信息，请参阅 Windows 开发参考中的 [事件跟踪](/windows/win32/etw/event-tracing-portal) 主题。 有关 WPP 的详细信息，请参阅 [Wpp Software](../devtest/wpp-software-tracing.md) [Trace 和即时 TRACE 录像机 (IFR) 用于日志记录跟踪](../devtest/using-wpp-recorder.md)。
 
 ## <a name="using-the-inflight-trace-recorder-ifr"></a>使用即时 Trace 录像机 (IFR) 
 
@@ -64,6 +64,4 @@ Logman delete -n HIDI2C_ETW
 ```
 
 生成的跟踪日志可以通过工具（如 **Xperf** 或 **Windows 性能分析器** (WPA) ）进行分析。
-
- 
 

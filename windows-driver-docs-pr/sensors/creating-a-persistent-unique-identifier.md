@@ -4,17 +4,17 @@ description: '为传感器创建持久的唯一标识符 (早期版本) '
 ms.assetid: 09ff583e-6bb5-4812-ae3b-970dac671e39
 ms.date: 07/20/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 39523a9688dbca27f4d07bf25a4bbbb593b2e758
-ms.sourcegitcommit: 937974aa9bbe0262a7ffe9631593fab48c4e7492
+ms.openlocfilehash: 1359b5ac40ea925b55f1eb07958e27190767c201
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "90010203"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91734519"
 ---
 # <a name="creating-a-persistent-unique-identifier-for-a-sensor-previous-version"></a>为传感器创建持久的唯一标识符 (早期版本) 
 
 
-驱动程序必须为每个传感器 (PUID) 创建永久唯一标识符。 PUID 是跨会话存储并在设备上唯一标识该对象的 GUID 值。 当查询名为传感器 \_ 属性 \_ 持久 \_ 唯一 ID 的属性时，驱动程序必须返回 PUID 值 \_ 。 如果设备包含多个传感器，则必须为每个传感器分配其自己的 PUID。 应用程序可以通过调用传感器 API 中的 [ISensor：： GetID](https://go.microsoft.com/fwlink/p/?linkid=157812) 方法来检索此 ID。
+驱动程序必须为每个传感器 (PUID) 创建永久唯一标识符。 PUID 是跨会话存储并在设备上唯一标识该对象的 GUID 值。 当查询名为传感器 \_ 属性 \_ 持久 \_ 唯一 ID 的属性时，驱动程序必须返回 PUID 值 \_ 。 如果设备包含多个传感器，则必须为每个传感器分配其自己的 PUID。 应用程序可以通过调用传感器 API 中的 [ISensor：： GetID](/windows/win32/api/sensorsapi/nf-sensorsapi-isensor-getid) 方法来检索此 ID。
 
 当传感器第一次连接到计算机时，应该为每个传感器创建新的 PUID，并存储此值供以后使用。
 

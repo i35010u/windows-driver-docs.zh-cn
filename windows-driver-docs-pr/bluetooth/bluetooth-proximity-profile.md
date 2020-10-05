@@ -4,12 +4,12 @@ description: 邻近配置文件定义了两个角色，旨在允许设备检测�
 ms.assetid: 6BA67CA4-AAE4-4D01-97A4-65970704E7ED
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d2bbf1a7c65df3f94857aadd3e51460e4d796f7b
-ms.sourcegitcommit: 937974aa9bbe0262a7ffe9631593fab48c4e7492
+ms.openlocfilehash: 792b0e2da5b9129828de1ec7dc61121f6369b0e5
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "90009917"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91733437"
 ---
 # <a name="bluetooth-proximity-profile"></a>蓝牙邻近感应配置文件
 
@@ -93,7 +93,7 @@ ms.locfileid: "90009917"
 
 使用这些 Api 可以访问特定服务及其对象 (例如包括的服务、特征和描述符) ，以及读写功能。
 
-[蓝牙通用属性配置文件-心率服务](https://go.microsoft.com/fwlink/p/?linkid=301978)示例演示了其中的一些方法。
+[蓝牙通用属性配置文件-心率服务](/samples/browse/)示例演示了其中的一些方法。
 
 ## <a name="span-idusing_power_efficientlyspanspan-idusing_power_efficientlyspanspan-idusing_power_efficientlyspanusing-power-efficiently"></a><span id="Using_Power_Efficiently"></span><span id="using_power_efficiently"></span><span id="USING_POWER_EFFICIENTLY"></span>有效使用电源
 
@@ -107,6 +107,4 @@ ms.locfileid: "90009917"
  
 
 有关电源注意事项的详细信息，请参阅 [邻近分析实现细节](proximity-profile-implementation-details.md)。
-
- 
 

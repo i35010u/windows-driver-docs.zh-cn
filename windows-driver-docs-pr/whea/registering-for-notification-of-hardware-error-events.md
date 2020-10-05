@@ -6,33 +6,33 @@ keywords:
 - 事件 WDK WHEA，注册通知
 - 注册硬件事件通知
 - 通知 WDK WHEA
-- WHEA WDK，注册的事件通知
-- Windows 硬件错误体系结构 WDK，注册的事件通知
+- WHEA WDK，注册事件通知
+- Windows 硬件错误体系结构 WDK，注册事件通知
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ab7fc5a19fdfade3d64daaae0bc842057080e641
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a8756a4c453c09154e88310c72df5b5c13718915
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63340677"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91733385"
 ---
 # <a name="registering-for-notification-of-hardware-error-events"></a>注册获取硬件错误事件通知
 
 
-若要注册以获得有关新的硬件错误事件的通知，应用程序创建由 WHEA 提供程序引发的所有事件的订阅。 WHEA 提供程序的名称是**Microsoft Windows 内核 WHEA**。
+若要注册以获得有关新硬件错误事件的通知，应用程序将创建对 WHEA 提供程序引发的所有事件的订阅。 WHEA 提供程序的名称是 **WHEA**。
 
-WHEA 提供程序将硬件错误事件引发的通道是按如下所示：
+WHEA 提供程序引发硬件错误事件的通道如下所示：
 
--   **系统**通道 (Windows Vista)。
+-   **System**信道 (Windows Vista) 。
 
--   **Microsoft Windows 内核 WHEA**通道 （Windows Server 2008 和 Windows Vista SP1）。
+-   **WHEA**信道 (windows Server 2008 和 WINDOWS Vista SP1) 。
 
--   **Microsoft-Windows-内核的 WHEA/错误**通道 （Windows 7 和更高版本）。
+-   Windows 7 及更高版本)  (**WHEA/Errors** 通道。
 
 ### <a name="windows-vista"></a>Windows Vista
 
-下面的代码示例演示如何注册此版本的 Windows 的新硬件错误事件的通知。
+下面的代码示例演示如何注册此版本 Windows 的新硬件错误事件的通知。
 
 ```cpp
 // Prototype for the notification callback function
@@ -92,9 +92,9 @@ VOID UnsubscribeHwErrorEvents(EVT_HANDLE SubHandle)
 }
 ```
 
-### <a name="windows-server-2008-windows-vista-sp1-and-later-versions"></a>Windows Server 2008、 Windows Vista SP1 和更高版本
+### <a name="windows-server-2008-windows-vista-sp1-and-later-versions"></a>Windows Server 2008、Windows Vista SP1 及更高版本
 
-下面的代码示例演示如何注册新的这些版本的 Windows 的硬件错误事件的通知。
+下面的代码示例演示如何为这些版本的 Windows 注册新硬件错误事件的通知。
 
 ```cpp
 // Prototype for the notification callback function
@@ -168,14 +168,9 @@ VOID UnsubscribeHwErrorEvents(EVT_HANDLE SubHandle)
 }
 ```
 
-**请注意**  的所有**Evt * Xxx*** 函数和 EVT\_*XXX*上一示例中使用的数据类型均记录在[Windows 事件日志](https://go.microsoft.com/fwlink/p/?linkid=81187)Microsoft Windows SDK 文档中的部分。
+**注意**   在**Evt*Xxx** \_ Microsoft Windows SDK 文档的[Windows 事件日志](/windows/win32/wes/windows-event-log)部分中介绍了前面的示例中使用的所有 .evt * Xxx * 函数和 .evt*Xxx*数据类型。
 
  
 
  
-
- 
-
-
-
 

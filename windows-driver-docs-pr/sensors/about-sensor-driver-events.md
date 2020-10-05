@@ -4,12 +4,12 @@ description: 关于传感器驱动程序事件
 ms.assetid: 1e747743-f701-4854-92be-7b55c39fee08
 ms.date: 07/20/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 220fbe45f14159e2277f74690a499cf2dd88a3b8
-ms.sourcegitcommit: 937974aa9bbe0262a7ffe9631593fab48c4e7492
+ms.openlocfilehash: 93ca807a324114b5a03a8788a6de646109654267
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "90010571"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91734413"
 ---
 # <a name="about-sensor-driver-events"></a>关于传感器驱动程序事件
 
@@ -34,7 +34,7 @@ ms.locfileid: "90010571"
 
 传感器平台定义以下传感器事件类型标识符。
 
-| 名称 | 描述 |
+| 名称 | 说明 |
 | --- | --- |
 | SENSOR_EVENT_DATA_UPDATED | 指示新数据可用。
 | SENSOR_EVENT_PROPERTY_CHANGED| 指示属性值已更改。|
@@ -45,14 +45,14 @@ ms.locfileid: "90010571"
 
 传感器平台定义了以下 **PROPERTYKEYs** 来识别传感器事件的参数。
 
-| 名称 | 描述 |
+| 名称 | 说明 |
 | --- | --- |
 | SENSOR_EVENT_PARAMETER_EVENT_ID| 指示 IPortableDeviceValues 中的 GUID 值是事件类型 ID，如 SENSOR_EVENT_DATA_UPDATED。|
 | SENSOR_EVENT_PARAMETER_STATE| 指示 IPortableDeviceValues 中的无符号整数值为传感器状态，如 SENSOR_STATE_READY。<br>**注意** 若要引发状态更改事件，请调用 [ISensorClass 扩展：:P oststatechange](/windows-hardware/drivers/ddi/sensorsclassextension/nf-sensorsclassextension-isensorclassextension-poststatechange)。 无需显式指定 SENSOR_EVENT_PARAMETER_STATE 引发事件。|
 
 ## <a name="other-events"></a>其他事件
 
-传感器驱动程序通过调用传感器类扩展的 [**ISensorClassExtension：:P ostevent**](/windows-hardware/drivers/ddi/sensorsclassextension/nf-sensorsclassextension-isensorclassextension-postevent) 方法来引发所有其他类型的事件。 此方法提供了一种通用的可扩展方法，用于引发与操作状态无关的传感器事件。 对 **PostEvent** 的每次调用都包含指向 [IPortableDeviceValuesCollection](https://go.microsoft.com/fwlink/p/?linkid=131487)的指针。 此集合中的每个[IPortableDeviceValues](https://go.microsoft.com/fwlink/p/?linkid=131486)对象都包含 "传感器**GUID** \_ 事件 \_ 参数 \_ 事件 ID" \_ 属性（用于标识事件类型）和可选数据字段值（其中包含事件数据）的 GUID 值。 例如，具有新城市数据的 GPS 驱动程序将使用更新的传感器 \_ 事件 \_ 数据 \_ 事件 ID，并为传感器 \_ 数据 \_ 类型 \_ city 属性键提供一个字符串值。
+传感器驱动程序通过调用传感器类扩展的 [**ISensorClassExtension：:P ostevent**](/windows-hardware/drivers/ddi/sensorsclassextension/nf-sensorsclassextension-isensorclassextension-postevent) 方法来引发所有其他类型的事件。 此方法提供了一种通用的可扩展方法，用于引发与操作状态无关的传感器事件。 对 **PostEvent** 的每次调用都包含指向 [IPortableDeviceValuesCollection](/windows-hardware/drivers/ddi/portabledevicetypes/nn-portabledevicetypes-iportabledevicevaluescollection)的指针。 此集合中的每个[IPortableDeviceValues](/windows-hardware/drivers/ddi/portabledevicetypes/nn-portabledevicetypes-iportabledevicevalues)对象都包含 "传感器**GUID** \_ 事件 \_ 参数 \_ 事件 ID" \_ 属性（用于标识事件类型）和可选数据字段值（其中包含事件数据）的 GUID 值。 例如，具有新城市数据的 GPS 驱动程序将使用更新的传感器 \_ 事件 \_ 数据 \_ 事件 ID，并为传感器 \_ 数据 \_ 类型 \_ city 属性键提供一个字符串值。
 
 驱动程序发布事件后，传感器类扩展会将事件和任何关联的数据转发到传感器 API。
 

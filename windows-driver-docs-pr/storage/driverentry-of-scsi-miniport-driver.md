@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: bd6046e947593eae1c345ef5ee2ff56715770092
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 943b7acc60e3e7a852f1e3be42a25f8fb84dd7f5
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89191315"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91734491"
 ---
 # <a name="driverentry-of-scsi-miniport-driver-routine"></a>DriverEntry SCSI 微型端口驱动程序例程
 
@@ -25,7 +25,7 @@ ms.locfileid: "89191315"
 每个微型端口驱动程序必须有一个显式命名为 **DriverEntry** 的例程才能加载。
 
 > [!NOTE]
-> SCSI 端口驱动程序和 SCSI 微型端口驱动程序模型可能会在将来更改或不可用。 相反，我们建议使用 [storport 驱动](https://docs.microsoft.com/windows-hardware/drivers/storage/storport-driver) 程序和 [storport 微型端口](./storport-miniport-drivers.md) 驱动程序模型。
+> SCSI 端口驱动程序和 SCSI 微型端口驱动程序模型可能会在将来更改或不可用。 相反，我们建议使用 [storport 驱动](./storport-driver-overview.md) 程序和 [storport 微型端口](./storport-miniport-drivers.md) 驱动程序模型。
 
  
 
@@ -53,7 +53,7 @@ ULONG DriverEntry(
 
 **DriverEntry** 返回 **ScsiPortInitialize**返回的值。 如果多次调用 **ScsiPortInitialize** ，则 **DriverEntry** 将返回 **ScsiPortInitialize**返回的最小值。
 
-<a name="remarks"></a>注解
+<a name="remarks"></a>备注
 -------
 
 微型端口驱动程序的 **DriverEntry** 例程在堆栈上分配内存，并 \_ 使用零初始化 HW 初始化 \_ 数据结构。 **DriverEntry**在 \_ \_ 用适用于) 微型端口驱动程序支持的 HBA (的值初始化之前，DriverEntry 的所有成员必须为零。
@@ -70,6 +70,4 @@ ULONG DriverEntry(
 [*HwScsiFindAdapter*](/previous-versions/windows/hardware/drivers/ff557300(v=vs.85))
 
 [**ScsiPortInitialize**](/windows-hardware/drivers/ddi/srb/nf-srb-scsiportinitialize)
-
- 
 

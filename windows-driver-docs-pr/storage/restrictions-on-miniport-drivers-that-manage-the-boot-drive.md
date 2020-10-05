@@ -10,12 +10,12 @@ keywords:
 - 转储模式 WDK 存储
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 969bde33941692aebbe4f5138742264606c1823b
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: ea71d529fa02e5afd4f2e44952ce295f1fde450b
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89193165"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91733717"
 ---
 # <a name="restrictions-on-miniport-drivers-that-manage-the-boot-drive"></a>对管理启动驱动器的微型端口驱动程序的限制
 
@@ -48,7 +48,7 @@ StorPort 微型端口驱动程序不得尝试使用[**StorPortInitializeDpc**](/
 
 ### <a name="span-idpollingspanspan-idpollingspanpolling-and-time-checking"></a><span id="polling"></span><span id="POLLING"></span>轮询和时间检查
 
-小型端口驱动程序不得依赖于时间检查例程，如在转储模式下运行时的 [**ScsiPortQuerySystemTime**](/windows-hardware/drivers/ddi/srb/nf-srb-scsiportquerysystemtime) 或 [**StorPortQuerySystemTime**](/windows-hardware/drivers/ddi/storport/nf-storport-storportquerysystemtime) 。 由于微型端口驱动程序应始终使用端口驱动程序库例程来检查时间，因此最适用于微型端口驱动程序的最佳做法是在任何时候都排除使用 [**KeQuerySystemTime**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kequerysystemtime) 例程。
+小型端口驱动程序不得依赖于时间检查例程，如在转储模式下运行时的 [**ScsiPortQuerySystemTime**](/windows-hardware/drivers/ddi/srb/nf-srb-scsiportquerysystemtime) 或 [**StorPortQuerySystemTime**](/windows-hardware/drivers/ddi/storport/nf-storport-storportquerysystemtime) 。 由于微型端口驱动程序应始终使用端口驱动程序库例程来检查时间，因此最适用于微型端口驱动程序的最佳做法是在任何时候都排除使用 [**KeQuerySystemTime**](/windows-hardware/drivers/ddi/wdm/nf-wdm-kequerysystemtime) 例程。
 
 ### <a name="span-idirqlspanspan-idirqlspaninterrupt-request-level"></a><span id="irql"></span><span id="IRQL"></span>中断请求级别
 
@@ -65,6 +65,4 @@ StorPort 微型端口驱动程序不得尝试使用[**StorPortInitializeDpc**](/
 -   在调用[**HwStorFindAdapter**](/windows-hardware/drivers/ddi/storport/nc-storport-hw_find_adapter)或[*HwScsiFindAdapter*](/previous-versions/windows/hardware/drivers/ff557300(v=vs.85))例程时，磁盘转储端口驱动程序会在*ArgumentString*参数中传递字符串 "dump = 1"。
 
 在调试程序中查看处于转储模式的存储微型端口驱动程序的映像时，驱动程序名称将具有 "dump \_ " 前缀。 如果微型端口驱动程序处于休眠模式，则驱动程序名称将具有前缀 "hiber \_ "。
-
- 
 

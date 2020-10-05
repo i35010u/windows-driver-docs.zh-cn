@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: c284f3284692303ae3466a8f0ff327ce53af7cac
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: deb561684d55230630741a1ea48a0070466afd9b
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89096891"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91732855"
 ---
 # <a name="guid_devinterface_usb_host_controller"></a>GUID_DEVINTERFACE_USB_HOST_CONTROLLER
 
@@ -33,7 +33,7 @@ ms.locfileid: "89096891"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Attribute</th>
+<th align="left">属性</th>
 <th align="left">设置</th>
 </tr>
 </thead>
@@ -56,7 +56,7 @@ ms.locfileid: "89096891"
 
 系统提供的 USB 主机控制器端口驱动程序将注册 GUID_DEVINTERFACE_USB_HOST_CONTROLLER 的实例，以通知操作系统和存在 USB 主机控制器的应用程序。
 
-Microsoft Windows 驱动程序工具包 (WDK) 包含 [USBVIEW 示例应用程序](https://go.microsoft.com/fwlink/p/?linkid=256205)。 USBVIEW 使用已过时的标识符 [**GUID_CLASS_USB_HOST_CONTROLLER**](guid-class-usb-host-controller.md) 来枚举此设备接口类的实例。
+Microsoft Windows 驱动程序工具包 (WDK) 包含 [USBVIEW 示例应用程序](/samples/browse/)。 USBVIEW 使用已过时的标识符 [**GUID_CLASS_USB_HOST_CONTROLLER**](guid-class-usb-host-controller.md) 来枚举此设备接口类的实例。
 
 必须包含 initguid.h，然后才能包含使用 DEFINE_GUID 宏声明 GUID 的任何标头。
 
@@ -84,6 +84,4 @@ Microsoft Windows 驱动程序工具包 (WDK) 包含 [USBVIEW 示例应用程序
 [**GUID_DEVINTERFACE_USB_DEVICE**](guid-devinterface-usb-device.md)
 
 [**GUID_DEVINTERFACE_USB_HUB**](guid-devinterface-usb-hub.md)
-
- 
 

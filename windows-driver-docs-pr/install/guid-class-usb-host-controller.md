@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: c361a883c02bf23d73646fc5878f62eedfc80ab6
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: d32c6cfb010daaf79efe8f7485fe633a0cc8da9c
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89097007"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91733519"
 ---
 # <a name="guid_class_usb_host_controller"></a>GUID_CLASS_USB_HOST_CONTROLLER
 
@@ -29,7 +29,7 @@ GUID_CLASS_USB_HOST_CONTROLLER 是[USB](../index.yml)主机控制器设备的[�
 <a name="remarks"></a>备注
 -------
 
-Microsoft Windows 驱动程序工具包 (WDK) 包含 [USBVIEW 示例应用程序](https://go.microsoft.com/fwlink/p/?linkid=256205)。 USBVIEW 示例使用 GUID_CLASS_USB_HOST_CONTROLLER 枚举 GUID_CLASS_USB_HOST_CONTROLLER 设备接口类的实例。
+Microsoft Windows 驱动程序工具包 (WDK) 包含 [USBVIEW 示例应用程序](/samples/browse/)。 USBVIEW 示例使用 GUID_CLASS_USB_HOST_CONTROLLER 枚举 GUID_CLASS_USB_HOST_CONTROLLER 设备接口类的实例。
 
 <a name="requirements"></a>要求
 ------------
@@ -55,6 +55,4 @@ Microsoft Windows 驱动程序工具包 (WDK) 包含 [USBVIEW 示例应用程序
 
 
 [**GUID_DEVINTERFACE_USB_HOST_CONTROLLER**](guid-devinterface-usb-host-controller.md)
-
- 
 

@@ -4,12 +4,12 @@ description: 完成测试签名并验证驱动程序是否已准备好进行发�
 ms.assetid: 71499A0A-95D0-411C-84D1-C4B91FA4E6B1
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e70ef9a059f996f255dd9976ad9bf5aaca8e1d47
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 21ff18559326d2677c1fe02757d8c38577f876df
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89095637"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91732539"
 ---
 # <a name="release-signing"></a>发布签名
 
@@ -115,7 +115,7 @@ CA 可能会颁发包含所需证书信息的 *.pfx* 文件。 如果是这样�
 
 *从*将 [SPC 导入到证书存储区](importing-an-spc-into-a-certificate-store.md)摘录：
 
-从 Windows Vista 开始，将 *.pfx* 文件导入到本地个人证书存储中的另一种方法是使用 [CertUtil](https://go.microsoft.com/fwlink/p/?linkid=168888) 命令行实用程序。 以下命令行示例使用 CertUtil 将 *abc* 文件导入到个人证书存储中：
+从 Windows Vista 开始，将 *.pfx* 文件导入到本地个人证书存储中的另一种方法是使用 [CertUtil](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc732443(v=ws.10)) 命令行实用程序。 以下命令行示例使用 CertUtil 将 *abc* 文件导入到个人证书存储中：
 
 ```cpp
 certutil -user -p pfxpassword -importPFX abc.pfx

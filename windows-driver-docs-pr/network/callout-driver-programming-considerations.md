@@ -10,12 +10,12 @@ keywords:
 - 用户模式标注驱动程序 WDK Windows 筛选平台
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 463cc5a3351a44626d4cf49a12680dc0cc89d882
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 029151229e9abc3c442f972c0584ddd55b401f75
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89212549"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91734511"
 ---
 # <a name="callout-driver-programming-considerations"></a>标注驱动程序编程注意事项
 
@@ -24,7 +24,7 @@ ms.locfileid: "89212549"
 
 ### <a name="user-mode-vs-kernel-mode"></a><a href="" id="user-mode-vs--kernel-mode"></a>用户模式与内核模式
 
-如果可以使用 Windows 筛选平台中内置的标准筛选功能来执行所需的筛选，则 (Isv) 的独立软件供应商应该编写用户模式管理应用程序来配置筛选器引擎，而不是编写内核模式标注驱动程序。 仅当必须以标准内置筛选功能无法处理的方式处理网络数据时，才应编写内核模式标注驱动程序。 有关如何编写用户模式 Windows 筛选平台管理应用程序的信息，请参阅 Microsoft Windows SDK 中的 [Windows 筛选平台](https://go.microsoft.com/fwlink/p/?linkid=90220) 文档。
+如果可以使用 Windows 筛选平台中内置的标准筛选功能来执行所需的筛选，则 (Isv) 的独立软件供应商应该编写用户模式管理应用程序来配置筛选器引擎，而不是编写内核模式标注驱动程序。 仅当必须以标准内置筛选功能无法处理的方式处理网络数据时，才应编写内核模式标注驱动程序。 有关如何编写用户模式 Windows 筛选平台管理应用程序的信息，请参阅 Microsoft Windows SDK 中的 [Windows 筛选平台](/windows/win32/fwp/windows-filtering-platform-start-page) 文档。
 
 ### <a name="choice-of-filtering-layer"></a>筛选层的选择
 
@@ -56,6 +56,4 @@ ms.locfileid: "89212549"
 
 
 [Windows 筛选平台标注驱动程序](windows-filtering-platform-callout-drivers2.md)
-
- 
 

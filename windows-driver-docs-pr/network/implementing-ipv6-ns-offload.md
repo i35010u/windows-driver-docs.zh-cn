@@ -4,12 +4,12 @@ description: 本部分介绍如何实现 (NS) 卸载的 IPv6 邻居请求
 ms.assetid: 48AACE46-4D39-49ED-90AD-F73E27D0CDBE
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f1b962264a72f6a6f57486e0c4cc2c0ceda5dfa5
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: ee75bcee4293ee5a3eab4c3d3f282c22f7fea9e8
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89217612"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91733401"
 ---
 # <a name="implementing-ipv6-ns-offload"></a>实现 IPv6 NS 卸载
 
@@ -25,7 +25,7 @@ NDIS 协议驱动程序将 (NS) 卸载请求的 IPv6 邻居请求作为 [OID \_ 
 
  
 
-**注意**   某些 Windows 硬件认证要求，如**PowMgmtNDIS**和**WoWLAN。 ImplementWakeOnWLAN**，指定微型端口适配器必须支持至少2个 NS 卸载请求，即 "至少"。  (换言之，为了满足这些要求， **NumNSOffloadIPv6Addresses** 的值必须至少为2。 ) 有关详细信息，请参阅 [Windows 8 硬件认证要求](https://go.microsoft.com/fwlink/p/?linkid=268621)。
+**注意**   某些 Windows 硬件认证要求，如**PowMgmtNDIS**和**WoWLAN。 ImplementWakeOnWLAN**，指定微型端口适配器必须支持至少2个 NS 卸载请求，即 "至少"。  (换言之，为了满足这些要求， **NumNSOffloadIPv6Addresses** 的值必须至少为2。 ) 有关详细信息，请参阅 [Windows 8 硬件认证要求](/previous-versions/windows/hardware/cert-program/)。
 
  
 
@@ -54,7 +54,7 @@ NS 消息格式在 [RFC 4861](https://go.microsoft.com/fwlink/p/?linkid=268370) 
 <tr class="header">
 <th align="left">字段</th>
 <th align="left">匹配值</th>
-<th align="left">说明</th>
+<th align="left">注释</th>
 </tr>
 </thead>
 <tbody>
@@ -126,7 +126,7 @@ NS 消息格式在 [RFC 4861](https://go.microsoft.com/fwlink/p/?linkid=268370) 
 <tr class="header">
 <th align="left">字段</th>
 <th align="left">值</th>
-<th align="left">说明</th>
+<th align="left">注释</th>
 </tr>
 </thead>
 <tbody>
@@ -202,8 +202,6 @@ NS 消息格式在 [RFC 4861](https://go.microsoft.com/fwlink/p/?linkid=268370) 
 </tr>
 </tbody>
 </table>
-
- 
 
  
 

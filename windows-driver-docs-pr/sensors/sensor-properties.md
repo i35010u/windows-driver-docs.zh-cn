@@ -32,12 +32,12 @@ api_type:
 - HeaderDef
 ms.date: 01/04/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: f24c786004599f08ead29a7f5920ed9d28eef5a1
-ms.sourcegitcommit: f8619f20a0903dd64f8641a5266ecad6df5f1d57
+ms.openlocfilehash: 9e6ff4a8d766c4d9255e086c5c6ec18b31294ea4
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91423502"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91733735"
 ---
 # <a name="sensor-properties"></a>传感器属性
 
@@ -72,7 +72,7 @@ ms.locfileid: "91423502"
 <td><span id="SENSOR_PROPERTY_ACCURACY_"></span><span id="sensor_property_accuracy_"></span>
 <strong>SENSOR_PROPERTY_ACCURACY</strong> (PID = 17) </td>
 <td><p>VT_UNKNOWN</p>
-<p>只读。 包含传感器数据类型名称及其关联准确性的<a href="https://go.microsoft.com/fwlink/p/?linkid=134660" data-raw-source="[IPortableDeviceValues](https://go.microsoft.com/fwlink/p/?linkid=134660)">IPortableDeviceValues</a>对象。 准确性值表示可能与真实值之间的差异。 使用与数据字段相同的单位表示准确性值，但在其他情况下也是如此。</p></td>
+<p>只读。 包含传感器数据类型名称及其关联准确性的<a href="/previous-versions//ms740012(v=vs.85)" data-raw-source="[IPortableDeviceValues](/previous-versions//ms740012(v=vs.85))">IPortableDeviceValues</a>对象。 准确性值表示可能与真实值之间的差异。 使用与数据字段相同的单位表示准确性值，但在其他情况下也是如此。</p></td>
 </tr>
 <tr class="even">
 <td><span id="SENSOR_PROPERTY_CHANGE_SENSITIVITY"></span><span id="sensor_property_change_sensitivity"></span>
@@ -265,7 +265,6 @@ ms.locfileid: "91423502"
 
 [**GetProperty**](/windows/win32/api/sensorsapi/nf-sensorsapi-isensor-getproperty)
 
-[IPortableDeviceValues](https://go.microsoft.com/fwlink/p/?linkid=275070)
+[IPortableDeviceValues](/windows/win32/wpd_sdk/iportabledevicevalues)
 
 [**SetProperties**](/windows/win32/api/sensorsapi/nf-sensorsapi-isensor-setproperties)
-

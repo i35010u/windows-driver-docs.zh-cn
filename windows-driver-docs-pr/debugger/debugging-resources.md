@@ -4,12 +4,12 @@ description: 使用 Windows 调试工具调试 Windows 系统上的驱动程序�
 ms.assetid: F2111416-EC6C-4967-B123-9A6101040561
 ms.date: 12/09/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 000c57a3ca122cde87fb3883b86d6df39f8d45d9
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 87545d48c8ca0be688ca39dfaab44d365396e171
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89212591"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91732959"
 ---
 # <a name="debugging-resources"></a>调试资源
 
@@ -29,7 +29,7 @@ ms.locfileid: "89212591"
 - [高级驱动程序调试：第2部分 \[ 媒体文件\]](https://download.microsoft.com/download/B/1/6/B161948D-EDE1-4AEF-8776-AD485CDDCD9E/TDDR05004.wvx)
 - [避免调试器搜索不需要的符号](./avoiding-debugger-searches-for-unneeded-symbols.md)
 - [调试内核模式驱动程序框架驱动程序](../wdf/debugging-kernel-mode-driver-framework-drivers.md)
-- [调试 WDF 驱动程序](https://docs.microsoft.com/windows-hardware/drivers/wdf/debugging-a-wdf-driver)
+- [调试 WDF 驱动程序](./debug-universal-drivers---step-by-step-lab--echo-kernel-mode-.md)
 - [BCDEdit /dbgsettings](../devtest/bcdedit--dbgsettings.md)
 -  [用于调试驱动程序的工具](../devtest/tools-for-debugging-drivers.md) (WDK 文档) 
 

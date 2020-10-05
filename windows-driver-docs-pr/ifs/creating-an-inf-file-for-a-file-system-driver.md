@@ -15,12 +15,12 @@ keywords:
 - 创建 INF 文件系统
 ms.date: 10/16/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 0d80d4c9603841cb36c3ad16ba232255e72d9e36
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 364be2467ecfe7048fb91f88a196007bcaa1b6f7
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90105364"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91734539"
 ---
 # <a name="creating-an-inf-file-for-a-file-system-driver"></a>为文件系统驱动程序创建 INF 文件
 
@@ -38,7 +38,7 @@ Windows 安装程序和设备安装程序服务（统称为 [setupapi.log](../in
 
 - 位于 WDK 安装目录的 \bin\SelfSign 目录中的 [**SignTool**](../devtest/signtool.md) 命令行工具可用于直接 "嵌入签名" 驱动程序的可执行文件。 出于性能方面的考虑，启动驱动程序必须包含一个嵌入签名。
 
-- 给定一个 INF 文件后，可以使用 [**Inf2Cat**](../devtest/inf2cat.md) 命令行工具为驱动程序包创建编录 ( 类) 文件。 只有目录文件才能接收 [WHQL](https://go.microsoft.com/fwlink/p/?linkid=8705) 徽标签名。
+- 给定一个 INF 文件后，可以使用 [**Inf2Cat**](../devtest/inf2cat.md) 命令行工具为驱动程序包创建编录 ( 类) 文件。 只有目录文件才能接收 [WHQL](/previous-versions/windows/hardware/hck/jj124227(v=vs.85)) 徽标签名。
 
 - 使用管理员权限时，仍可以在从 Windows Vista 开始的基于 x64 的系统上安装未签名的驱动程序。 但是，驱动程序将无法加载 (，因此执行) ，因为它是无符号的。
 
@@ -88,9 +88,9 @@ CatalogFile =
 
 下表显示文件系统筛选器驱动程序在 " [**版本**](../install/inf-version-section.md) " 部分中应指定的值。
 
-| 条目 | “值” |
+| 条目 | 值 |
 | ----- | ----- |
-| **签名** | "$WINDOWS NT $" |
+| **信号** | "$WINDOWS NT $" |
 | **提供程序** | 在你自己的 INF 文件中，你应该指定除 Microsoft 之外的提供程序。 |
 | **DriverVer** | 请参阅[ **INF DriverVer 指令**](../install/inf-driverver-directive.md) |
 | **CatalogFile** | 将此项留空。 将来，它将包含已签名驱动程序的 WHQL 提供的编录文件的名称。 |
@@ -186,7 +186,7 @@ AddReg         = ExampleFileSystem.AddRegistry
 
 **ServiceType**条目指定服务的类型。 下表列出了 **ServiceType** 的可能值及其相应的服务类型。
 
-| “值” | 说明 |
+| 值 | 说明 |
 | ----- | ----------- |
 | 0x00000001 |  (设备驱动程序服务 SERVICE_KERNEL_DRIVER)  |
 | 0x00000002 | SERVICE_FILE_SYSTEM_DRIVER (文件系统或文件系统筛选器驱动程序服务)  |
@@ -197,7 +197,7 @@ AddReg         = ExampleFileSystem.AddRegistry
 
 **StartType**项指定启动服务的时间。 下表列出了 **StartType** 的可能值及其相应的启动类型。
 
-| “值” | 说明 |
+| 值 | 说明 |
 | ----- | ----------- |
 | 0x00000000 | SERVICE_BOOT_START |
 | 0x00000001 | SERVICE_SYSTEM_START |
@@ -213,7 +213,7 @@ AddReg         = ExampleFileSystem.AddRegistry
 
 **ErrorControl**项指定在系统启动过程中服务无法启动时要执行的操作。 下表列出了 **ErrorControl** 的可能值及其相应的错误控制值。
 
-| “值” | 说明 |
+| 值 | 说明 |
 | ----- | ----------- |
 | 0x00000000 | SERVICE_ERROR_IGNORE (记录错误并继续系统启动。 )  |
 | 0x00000001 | SERVICE_ERROR_NORMAL (记录错误、向用户显示一条消息，然后继续系统启动。 )  |

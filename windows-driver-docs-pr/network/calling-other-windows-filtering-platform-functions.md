@@ -10,12 +10,12 @@ keywords:
 - 用户模式标注驱动程序 WDK Windows 筛选平台
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 064ef27f682457909153f11e6418d6f652aac00c
-ms.sourcegitcommit: e2de6b9ffb5c7356deb864f9da879533f49b25bf
+ms.openlocfilehash: cbdfcdd1490f9c036c8b4480b11baf7f945ff178
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/03/2020
-ms.locfileid: "91702668"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91734257"
 ---
 # <a name="calling-other-windows-filtering-platform-functions"></a>调用其他 Windows 筛选平台函数
 
@@ -28,13 +28,7 @@ ms.locfileid: "91702668"
 
 [关闭与筛选器引擎建立的会话](closing-a-session-to-the-filter-engine.md)
 
-有关可从标注驱动程序调用的其他 Windows 筛选平台功能的列表，请参阅 [其他 Windows 筛选平台函数](calling-other-windows-filtering-platform-functions.md)。 有关如何使用这些函数的详细信息，请参阅 Microsoft Windows SDK 中的 [Windows 筛选平台](https://go.microsoft.com/fwlink/p/?linkid=90220) 文档。
+有关可从标注驱动程序调用的其他 Windows 筛选平台功能的列表，请参阅 [其他 Windows 筛选平台函数](calling-other-windows-filtering-platform-functions.md)。 有关如何使用这些函数的详细信息，请参阅 Microsoft Windows SDK 中的 [Windows 筛选平台](/windows/win32/fwp/windows-filtering-platform-start-page) 文档。
 
  
-
- 
-
-
-
-
 

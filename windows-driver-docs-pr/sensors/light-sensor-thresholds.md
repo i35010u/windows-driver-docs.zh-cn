@@ -4,23 +4,23 @@ description: 本主题提供有关光线传感器阈值的信息。
 ms.assetid: A120601A-A5CE-4778-94A9-97E71B721E9B
 ms.date: 07/20/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: d1fd5ab9f670c506584313dcf79ffb7241f71b94
-ms.sourcegitcommit: 937974aa9bbe0262a7ffe9631593fab48c4e7492
+ms.openlocfilehash: 442700be4d1eb23d107b02d32426aeea927d9b20
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "90010229"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91732783"
 ---
 # <a name="light-sensor-thresholds"></a>光传感器阈值
 
 
 本主题提供有关光线传感器阈值的信息。
 
-下表显示了光传感器的驱动程序默认阈值。 光源传感器的默认间隔为 10 Hz。 有关 "类型" 列中显示的类型的详细信息，请参阅 [PROPVARIANT 结构](https://go.microsoft.com/fwlink/p/?linkid=313395)。
+下表显示了光传感器的驱动程序默认阈值。 光源传感器的默认间隔为 10 Hz。 有关 "类型" 列中显示的类型的详细信息，请参阅 [PROPVARIANT 结构](/windows/win32/api/propidlbase/ns-propidlbase-propvariant)。
 
 |属性键|类型|必需/可选|默认值|说明|
 |---|---|---|---|---|
-|PKEY_SensorData_LightLevel_Lux|VT_R4|必需|0.25 f|达到阈值时所需的 illuminance 更改的最小值，以 lux 的百分比度量。 如果值为 0.25 f，则表示 illuminance 中的更改了25%。|
+|PKEY_SensorData_LightLevel_Lux|VT_R4|必须|0.25 f|达到阈值时所需的 illuminance 更改的最小值，以 lux 的百分比度量。 如果值为 0.25 f，则表示 illuminance 中的更改了25%。|
 |PKEY_SensorData_LightLevel_Lux_Threshold_AbsoluteDifference|VT_R4|可选|1.0f|达到阈值时所需的 illuminance 更改的最小值，以 lux 度量。 值为 1.0 f 表示 illuminance 中的 lux 更改。 <br>__注意：__ 强烈建议在便携设备上实施此阈值，因为它有助于降低环境轻型环境中的电池电量消耗。|
 |PKEY_SensorData_LightChromaticityX|VT_R4|如果支持颜色，则为必需。 可选，否则|0.01 f|达到阈值时所需的 CIE 1931 x 颜色坐标的最小更改量，表示为绝对差值。|
 |PKEY_SensorData_LightChromaticityY|VT_R4|如果支持颜色，则为必需。 可选，否则|0.01 f|达到阈值时所需的 CIE 1931 y 颜色坐标的最小更改量，以绝对差值表示。|
@@ -51,5 +51,4 @@ ms.locfileid: "90010229"
 ## <a name="related-topics"></a>相关主题
 
 
-[PROPVARIANT 结构](https://go.microsoft.com/fwlink/p/?linkid=313395)
-
+[PROPVARIANT 结构](/windows/win32/api/propidlbase/ns-propidlbase-propvariant)

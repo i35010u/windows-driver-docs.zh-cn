@@ -6,12 +6,12 @@ keywords:
 - 设备元数据包 WDK，关于
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4ebfd24096445b74471017b5d20d256846eaee7a
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 396705b8d94f86efe396728d3a8fea43d5eacb99
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89095997"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91733497"
 ---
 # <a name="overview-of-device-metadata-packages"></a>设备元数据包概述
 
@@ -49,7 +49,7 @@ ms.locfileid: "89095997"
 
 此数据的格式基于 [WINDOWSINFO XML 架构](/previous-versions/windows/hardware/metadata/ff553992(v=vs.85))。
 
-每个设备元数据包都通过使用 Cabarc (*Cabarc.exe*) "工具，将其组件压缩到一个文件中。 有关此工具的详细信息，请参阅 [Cabarc 概述](https://go.microsoft.com/fwlink/p/?linkid=145395) 网站。
+每个设备元数据包都通过使用 Cabarc (*Cabarc.exe*) "工具，将其组件压缩到一个文件中。 有关此工具的详细信息，请参阅 [Cabarc 概述](/previous-versions/windows/it-pro/windows-server-2003/cc781787(v=ws.10)) 网站。
 
 设备元数据包的文件名使用以下命名约定：
 
@@ -60,6 +60,4 @@ ms.locfileid: "89095997"
 * &lt; Guid &gt; *文件前缀是为设备元数据包创建 (guid) 的全局唯一标识符。 每个元数据包文件名的 GUID 都必须是唯一的。 当你创建新的或已修改的元数据包时，你必须创建新的 GUID，即使更改很小。
 
 有关详细信息，请参阅 [构建设备元数据包](building-device-metadata-packages.md)。
-
- 
 

@@ -8,17 +8,17 @@ keywords:
 - 元数据服务器 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 817b484d80b17ff7d586f4eed37d3b01de58843f
-ms.sourcegitcommit: 06581a21ca066ddfedab7f9bb7f2159cfac452fd
+ms.openlocfilehash: f7fdb123dd2c7ac918f2801c4c7788421b9cde16
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91145489"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91734267"
 ---
 # <a name="windows-metadata-and-internet-services"></a>Windows 元数据和 Internet 服务
 
 
-Windows 元数据和 Internet 服务 (WMIS) 管理 Oem 通过 Internet 提交给 [Windows 优质 Online Services (Winqual) ](/windows-hardware/drivers/dashboard/) 网站的设备元数据包。 使用 Winqual 站点，可以为 Windows 认证硬件设备和软件应用程序。
+Windows 元数据和 Internet 服务 (WMIS) 管理 Oem 通过 Internet 提交给 [Windows 优质 Online Services (Winqual) ](../dashboard/index.yml) 网站的设备元数据包。 使用 Winqual 站点，可以为 Windows 认证硬件设备和软件应用程序。
 
 当 OEM 提交设备元数据包时，Winqual 完成以下过程：
 
@@ -29,10 +29,4 @@ Windows 元数据和 Internet 服务 (WMIS) 管理 Oem 通过 Internet 提交给
 在 windows 7 和更高版本的 Windows 中，操作系统使用 WMIS 来发现、索引和匹配连接到计算机的特定设备的设备元数据包。 有关此过程的详细信息，请参阅 [从 WMIS 安装设备元数据包](installing-device-metadata-packages-from-wmis.md)。
 
  
-
- 
-
-
-
-
 

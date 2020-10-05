@@ -6,12 +6,12 @@ ms.assetid: 9d4e1c2e-73ad-4fc3-99e6-391a64edfa5c
 keywords:
 - IRP_MN_QUERY_ALL_DATA 内核模式驱动程序体系结构
 ms.localizationpriority: medium
-ms.openlocfilehash: a0fa474514018b08432469cac4cc053e21b4e694
-ms.sourcegitcommit: 2aedb606f9f14e74687f0d3da60e14fc6ffffa7e
+ms.openlocfilehash: 8a8491f06ca40f4d936aae846da5f4e6142c4779
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91544432"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91732981"
 ---
 # <a name="irp_mn_query_all_data"></a>IRP \_ MN \_ 查询 \_ 所有 \_ 数据
 
@@ -77,7 +77,7 @@ IRP 中的**参数. ProviderId。** IRP 中的驱动程序的 i/o 堆栈位置�
 
 成功时，驱动程序将**Irp- &gt; IoStatus**设置为写入**缓冲区中的字节数。**
 
-<a name="operation"></a>Operation
+<a name="operation"></a>操作
 ---------
 
 驱动程序可以通过调用 [**WmiSystemControl**](/windows-hardware/drivers/ddi/wmilib/nf-wmilib-wmisystemcontrol) 或处理 IRP 本身来处理 wmi irp，如 [处理 WMI 请求](./handling-wmi-requests.md)中所述。
@@ -110,20 +110,18 @@ IRP 中的**参数. ProviderId。** IRP 中的驱动程序的 i/o 堆栈位置�
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
 [*DpWmiQueryDataBlock*](/windows-hardware/drivers/ddi/wmilib/nc-wmilib-wmi_query_datablock_callback)
 
 [**IoWMIRegistrationControl**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iowmiregistrationcontrol)
 
-[**KeQuerySystemTime**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kequerysystemtime)
+[**KeQuerySystemTime**](/windows-hardware/drivers/ddi/wdm/nf-wdm-kequerysystemtime)
 
 [**WMILIB \_ 上下文**](/windows-hardware/drivers/ddi/wmilib/ns-wmilib-_wmilib_context)
 
 [**WmiSystemControl**](/windows-hardware/drivers/ddi/wmilib/nf-wmilib-wmisystemcontrol)
 
 [**WNODE \_ 所有 \_ 数据**](/windows-hardware/drivers/ddi/wmistr/ns-wmistr-tagwnode_all_data)
-
- 
 

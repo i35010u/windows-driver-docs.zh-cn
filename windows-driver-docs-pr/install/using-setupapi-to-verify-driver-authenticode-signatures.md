@@ -11,12 +11,12 @@ keywords:
 - 检查 Authenticode 签名
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0aa6f0da8014d3f9c48f3fb90f80417a3e489ab5
-ms.sourcegitcommit: 06581a21ca066ddfedab7f9bb7f2159cfac452fd
+ms.openlocfilehash: bef01cf96873fe824f2d09a42a64bca6593f636d
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91145483"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91732723"
 ---
 # <a name="using-setupapi-to-verify-driver-authenticode-signatures"></a>使用 SetupAPI 验证驱动程序验证码签名
 
@@ -38,7 +38,7 @@ ms.locfileid: "91145483"
 
 2.  检查函数返回的错误代码。
 
-    如果 INF 文件不是系统提供的，并且没有有效的 WHQL 数字签名，但它具有有效的 Authenticode 签名，则 **SetupVerifyInfFile** 将返回 **FALSE** ，且 [GetLastError](https://go.microsoft.com/fwlink/p/?linkid=169416) 返回以下错误代码之一：
+    如果 INF 文件不是系统提供的，并且没有有效的 WHQL 数字签名，但它具有有效的 Authenticode 签名，则 **SetupVerifyInfFile** 将返回 **FALSE** ，且 [GetLastError](/windows/win32/api/errhandlingapi/nf-errhandlingapi-getlasterror) 返回以下错误代码之一：
 
     <a href="" id="error-authenticode-trusted-publisher"></a>ERROR_AUTHENTICODE_TRUSTED_PUBLISHER  
     指示发布服务器受信任，因为发行者的证书安装在 " [受信任的发行者" 证书存储](trusted-publishers-certificate-store.md)中。
@@ -67,6 +67,4 @@ ms.locfileid: "91145483"
 但请注意，版本不是在 **版本** 成员中设置的。
 
 **SetupScanFileQueue** 按照本主题中前面所述的 **SetupVerifyInfFile**设置 ERROR_AUTHENTICODE_Xxx 错误代码。
-
- 
 

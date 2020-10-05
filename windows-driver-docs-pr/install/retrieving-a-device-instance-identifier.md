@@ -4,12 +4,12 @@ description: 检索设备实例标识符
 ms.assetid: 6382fdf6-109a-430a-b6b5-322d3eebc4a1
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 41c96e932a15fbad8283a5f0ed8758352116ee0f
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 3e33b84bb58e9bfa43714397c0461ca030e6ea8f
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90715436"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91732611"
 ---
 # <a name="retrieving-a-device-instance-identifier"></a>检索设备实例标识符
 
@@ -30,13 +30,11 @@ Windows Server 2003、Windows XP 和 Windows 2000 还支持此属性。 但是�
     -   将 *DeviceInstanceIdSize* 设置为零。
     -   将 *RequiredSize* 设置为指向 DWORD 类型的变量的指针，该变量接收存储以 NULL 结尾的设备实例标识符所需的字符数。
 
-    在对[**SetupDiGetDeviceInstanceId**](/windows/win32/api/setupapi/nf-setupapi-setupdigetdeviceinstanceida)的第一次调用时， **SetupDiGetDeviceInstanceId**将 \* *RequiredSize*设置为检索属性值所需的缓冲区大小（以字节为单位），记录错误代码 ERROR_INSUFFICIENT_BUFFER 并返回**FALSE**。 对 [GetLastError](https://go.microsoft.com/fwlink/p/?linkid=169416) 的后续调用将返回最近记录的错误代码。
+    在对[**SetupDiGetDeviceInstanceId**](/windows/win32/api/setupapi/nf-setupapi-setupdigetdeviceinstanceida)的第一次调用时， **SetupDiGetDeviceInstanceId**将 \* *RequiredSize*设置为检索属性值所需的缓冲区大小（以字节为单位），记录错误代码 ERROR_INSUFFICIENT_BUFFER 并返回**FALSE**。 对 [GetLastError](/windows/win32/api/errhandlingapi/nf-errhandlingapi-getlasterror) 的后续调用将返回最近记录的错误代码。
 
 2.  再次调用 **SetupDiGetDeviceInstanceId** ，并提供在第一次调用中提供的相同参数值，但以下更改除外：
     -   将 *DeviceInstanceId* 设置为指向字符串缓冲区的指针，该字符串缓冲区接收与设备信息元素关联的以 NULL 结尾的设备实例标识符。
     -   将 *DeviceInstanceIdSize* 设置为 *DeviceInstanceId* 缓冲区的大小（以字符为字符）。 第一次调用**SetupDiGetDeviceInstanceId**时，检索到 RequiredSize 中的*DeviceInstanceId*缓冲区的所需大小 \* *RequiredSize*。
 
-如果对**SetupDiGetDeviceInstanceId**的第二次调用成功，则**SetupDiGetDeviceInstanceId**将*DeviceInstanceId*缓冲区设置为设备实例标识符，将 \* *RequiredSize*设置为检索到的设备实例标识符的大小（以字符为字符），并返回**TRUE**。 如果函数调用失败， **SetupDiGetDeviceInstanceId** 将返回 **FALSE** ，并且对 [GetLastError](https://go.microsoft.com/fwlink/p/?linkid=169416) 的调用将返回记录的错误代码。
-
- 
+如果对**SetupDiGetDeviceInstanceId**的第二次调用成功，则**SetupDiGetDeviceInstanceId**将*DeviceInstanceId*缓冲区设置为设备实例标识符，将 \* *RequiredSize*设置为检索到的设备实例标识符的大小（以字符为字符），并返回**TRUE**。 如果函数调用失败， **SetupDiGetDeviceInstanceId** 将返回 **FALSE** ，并且对 [GetLastError](/windows/win32/api/errhandlingapi/nf-errhandlingapi-getlasterror) 的调用将返回记录的错误代码。
 

@@ -4,12 +4,12 @@ description: '本主题介绍打印通知，并演示 c # 版本的打印设置�
 ms.assetid: 39A06A8A-5603-44AB-8884-C12B8E2F1A45
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 094815c1d939061a81d60553ea6ee6f71af233ee
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: e912b20b88b394848f430453be6b73c8e58e901e
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89097183"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91732915"
 ---
 # <a name="working-with-print-notifications-in-a-uwp-device-app"></a>在 UWP 设备应用中使用打印通知
 
@@ -25,25 +25,25 @@ ms.locfileid: "89097183"
 打印通知让 UWP 设备应用在打印时通知用户重要的打印机事件，例如卡纸、打开打印机门、墨水不足或打印机缺纸错误。 当打印机触发通知时，系统事件代理会运行应用的后台任务。 后台任务可保存通知详细信息、发送 toast、更新磁贴、更新徽章或不执行任何操作。 通过保存通知详细信息，你的应用程序可以提供一种体验，帮助用户了解和修复其打印机问题。
 
 >[!NOTE]
->打印机制造商必须在其 v4 打印驱动程序中实现双向和 DriverEvent XML 文件，才能在其 UWP 设备应用中使用打印通知。 有关详细信息，请参阅 [双向通信](https://go.microsoft.com/fwlink/p/?LinkId=317192)。
+>打印机制造商必须在其 v4 打印驱动程序中实现双向和 DriverEvent XML 文件，才能在其 UWP 设备应用中使用打印通知。 有关详细信息，请参阅 [双向通信](../print/bidirectional-communication.md)。
 
 如果发生 DriverEvent，并启动了 UWP 设备应用的后台任务，则该应用具有几个选项来执行此操作。 有关导致任务启动的流的更多详细信息，请参阅 [自定义 UI 的驱动程序支持](../print/driver-support-for-customized-ui.md)。
 
 后台任务可以选择：
 
 - 不执行任何操作
-- 将通知详细信息保存到 [本地应用数据存储](https://go.microsoft.com/fwlink/p/?LinkId=317216)
-- 更新 [UWP 应用磁贴通知](https://go.microsoft.com/fwlink/p/?LinkId=317195)
-- 更新 [UWP 应用通知徽章](https://go.microsoft.com/fwlink/p/?LinkId=317196)
-- 发送 [UWP 应用 toast 通知](https://go.microsoft.com/fwlink/p/?LinkId=317197)
+- 将通知详细信息保存到 [本地应用数据存储](/previous-versions/windows/apps/hh700361(v=win.10))
+- 更新 [UWP 应用磁贴通知](/previous-versions/windows/apps/hh779724(v=win.10))
+- 更新 [UWP 应用通知徽章](/previous-versions/windows/apps/hh779719(v=win.10))
+- 发送 [UWP 应用 toast 通知](/previous-versions/windows/apps/hh779727(v=win.10))
 
-磁贴通知或 toast 通知可以让用户方便地启动前景应用。 启动前台应用时，它可以使用 `OnLaunched` **App.xaml.cs** 中的方法来检查磁贴或 toast 是否已启动。 如果是，则前景应用可以访问 [本地应用程序数据存储](https://go.microsoft.com/fwlink/p/?LinkId=317216)中的任何打印通知详细信息。
+磁贴通知或 toast 通知可以让用户方便地启动前景应用。 启动前台应用时，它可以使用 `OnLaunched` **App.xaml.cs** 中的方法来检查磁贴或 toast 是否已启动。 如果是，则前景应用可以访问 [本地应用程序数据存储](/previous-versions/windows/apps/hh700361(v=win.10))中的任何打印通知详细信息。
 
 ## <a name="prerequisites"></a>先决条件
 
 准备工作：
 
-1. 请确保您的打印机是使用 v4 打印驱动程序安装的。 有关详细信息，请参阅 [开发 v4 打印驱动程序](https://go.microsoft.com/fwlink/p/?LinkId=314231)。
+1. 请确保您的打印机是使用 v4 打印驱动程序安装的。 有关详细信息，请参阅 [开发 v4 打印驱动程序](../print/v4-printer-driver.md)。
 2. 设置开发 PC。 有关下载工具和创建开发人员帐户的信息[，请参阅入门。](getting-started.md)
 3. 将应用与应用商店相关联。 请参阅 [创建 UWP 设备应用](step-1--create-a-uwp-device-app.md) 了解相关信息。
 4. 为打印机创建将其与应用程序关联的设备元数据。 有关详细信息，请参阅 [创建设备元数据](step-2--create-device-metadata.md) 。
@@ -112,13 +112,13 @@ ms.locfileid: "89097183"
 
 在设计磁贴和徽章体验之前，请务必查看 Microsoft Store 应用准则。 本指南可帮助确保你的应用程序提供与其他 UWP 应用一致的直观体验。
 
-- [磁贴和锁屏提醒指南](https://go.microsoft.com/fwlink/p/?LinkId=317194)
-- [Toast 通知指南](https://go.microsoft.com/fwlink/p/?LinkId=317193)
+- [磁贴和锁屏提醒指南](/windows/uwp/design/shell/tiles-and-notifications/creating-tiles)
+- [Toast 通知指南](/windows/uwp/design/shell/tiles-and-notifications/)
 
 在应用程序的主页上，请记住，Windows 8.1 可以在单个监视器上以各种大小显示多个应用。 请参阅以下准则，详细了解应用程序如何在屏幕大小、窗口大小和方向之间进行适当的重新排列。
 
 - [窗口大小和屏幕缩放的准则](https://go.microsoft.com/fwlink/p/?LinkId=311830)
-- [将窗口调整为高度和缩小布局的准则](https://go.microsoft.com/fwlink/p/?LinkId=311831)
+- [将窗口调整为高度和缩小布局的准则](/previous-versions/windows/hh465371(v=win.10))
 
 ### <a name="best-practices"></a>最佳做法
 
@@ -139,7 +139,7 @@ ms.locfileid: "89097183"
 
 ### <a name="saving-notification-details"></a>正在保存通知详细信息
 
-后台任务不能直接启动前景应用，只有用户可以：从磁贴、toast 或开始。 因此，为了确保前景应用可以访问打印通知的详细信息，后台任务会将其保存到本地存储中。 有关使用本地存储的详细信息，请参阅 [快速入门：本地应用数据](https://go.microsoft.com/fwlink/p/?LinkId=317216)。
+后台任务不能直接启动前景应用，只有用户可以：从磁贴、toast 或开始。 因此，为了确保前景应用可以访问打印通知的详细信息，后台任务会将其保存到本地存储中。 有关使用本地存储的详细信息，请参阅 [快速入门：本地应用数据](/previous-versions/windows/apps/hh700361(v=win.10))。
 
 当触发打印通知时，Windows 通过调用其方法来运行后台任务 `Run` 。 通过必须强制转换为类型 PrintNotificationEventDetails 的方法参数，将通知数据传递给后台任务。 `PrinterName` `EventData` 该对象的和属性分别携带打印机名称和双向消息。
 
@@ -162,7 +162,7 @@ public void Run(Windows.ApplicationModel.Background.IBackgroundTaskInstance task
 
 ### <a name="updating-a-tile"></a>更新磁贴
 
-将打印通知详细信息发送到方法时 `UpdateTile` ，示例的后台任务演示如何在磁贴上显示它们。 有关磁贴的详细信息，请参阅 [磁贴和磁贴通知概述](https://go.microsoft.com/fwlink/p/?LinkId=317195)。
+将打印通知详细信息发送到方法时 `UpdateTile` ，示例的后台任务演示如何在磁贴上显示它们。 有关磁贴的详细信息，请参阅 [磁贴和磁贴通知概述](/previous-versions/windows/apps/hh779724(v=win.10))。
 
 此示例显示了 `UpdateTile` **PrintBackgroundTask.cs** 文件中的后台任务的方法。
 
@@ -185,7 +185,7 @@ void UpdateTile(string printerName, string bidiMessage)
 
 ### <a name="updating-a-badge"></a>更新徽章
 
-`UpdateBadge`方法演示如何使用 BadgeNotification 类更新徽章。 有关磁贴的详细信息，请参阅 [徽章概述](https://go.microsoft.com/fwlink/p/?LinkId=317196)。
+`UpdateBadge`方法演示如何使用 BadgeNotification 类更新徽章。 有关磁贴的详细信息，请参阅 [徽章概述](/previous-versions/windows/apps/hh779719(v=win.10))。
 
 此示例显示了 `UpdateBadge` **PrintBackgroundTask.cs** 文件中的后台任务的方法。
 
@@ -203,7 +203,7 @@ void UpdateBadge()
 
 ### <a name="raising-a-toast"></a>引发 toast
 
-Toast 通知是用户的一条暂时性消息，其中包含相关的、区分时间的信息，并提供对应用中相关内容的快速访问。 应向用户查看 Toast 通知，以返回到你的应用程序，使其继续关注感兴趣的内容。 有关详细信息，请参阅 [Toast 通知概述](https://go.microsoft.com/fwlink/p/?LinkId=317197)。
+Toast 通知是用户的一条暂时性消息，其中包含相关的、区分时间的信息，并提供对应用中相关内容的快速访问。 应向用户查看 Toast 通知，以返回到你的应用程序，使其继续关注感兴趣的内容。 有关详细信息，请参阅 [Toast 通知概述](/previous-versions/windows/apps/hh779727(v=win.10))。
 
 若要启用 toast 通知，应用程序需要在应用程序包清单中注册该应用程序支持 toast 功能。 在 `VisualElements` 元素中，将 `ToastCapable` 属性设置为 true。
 
@@ -254,7 +254,7 @@ void ShowToast(string title, string body)
 
 ## <a name="step-5-handle-activation"></a>步骤5：处理激活
 
-打印通知触发后台任务后，可以通过点击 toast 通知或磁贴来启动应用。 如果你的应用已从任一激活，则通过属性将参数传递给应用 `LaunchActivatedEventArgs.arguments` 。 有关激活和 Microsoft Store 应用生命周期的详细信息，请参阅 [应用程序生命](https://go.microsoft.com/fwlink/p/?LinkId=317387)周期。
+打印通知触发后台任务后，可以通过点击 toast 通知或磁贴来启动应用。 如果你的应用已从任一激活，则通过属性将参数传递给应用 `LaunchActivatedEventArgs.arguments` 。 有关激活和 Microsoft Store 应用生命周期的详细信息，请参阅 [应用程序生命](/previous-versions/windows/apps/hh464925(v=win.10))周期。
 
 若要确定应用程序是否已在这种情况下激活，请处理 `OnLaunched` 事件，并检查传递给事件处理程序的事件参数。 如果事件参数为 null，则该应用程序已由用户从开始激活。 如果事件参数不为 null，则从 toast 或磁贴启动应用。
 
@@ -310,7 +310,7 @@ protected override async void OnLaunched(LaunchActivatedEventArgs args)
 
 ## <a name="step-6-access-notification-details"></a>步骤6：访问通知详细信息
 
-由于后台任务不能直接启动前景应用，因此需要将打印通知详细信息保存到应用的设置，以便前景应用可以访问它们。 有关使用本地存储的详细信息，请参阅 [快速入门：本地应用数据](https://go.microsoft.com/fwlink/p/?LinkId=317216)。
+由于后台任务不能直接启动前景应用，因此需要将打印通知详细信息保存到应用的设置，以便前景应用可以访问它们。 有关使用本地存储的详细信息，请参阅 [快速入门：本地应用数据](/previous-versions/windows/apps/hh700361(v=win.10))。
 
 此示例显示如何从 " [打印设置" 和 "打印通知](https://go.microsoft.com/fwlink/p/?LinkID=242862) " 示例的 "应用设置" 中检索打印机名称和双向消息。 此代码来自 `DisplayBackgroundTaskTriggerDetails` **InkLevel.xaml.cs** 文件的方法。 请注意，键索引值 `keyPrinterName` 和 `keyAsyncUIXML` 是在后台任务 **PrintBackgroundTask.cs**中使用的字符串常量。
 
@@ -348,7 +348,7 @@ void DisplayBackgroundTaskTriggerDetails()
 
 在可以测试 UWP 设备应用之前，必须使用设备元数据将其链接到您的打印机。
 
-- 你需要打印机的设备元数据包的副本，以便向其添加设备应用信息。 如果没有设备元数据，可以使用 **设备元数据创作向导** 生成它，如主题为 [UWP 设备应用创建设备元数据](https://go.microsoft.com/fwlink/p/?LinkId=313644)中所述。
+- 你需要打印机的设备元数据包的副本，以便向其添加设备应用信息。 如果没有设备元数据，可以使用 **设备元数据创作向导** 生成它，如主题为 [UWP 设备应用创建设备元数据](./step-2--create-device-metadata.md)中所述。
 
 >[!NOTE]
 >若要使用 **设备元数据创作向导**，在完成本主题中的步骤之前，必须安装 Microsoft Visual Studio Professional、Microsoft Visual Studio Ultimate 或 [独立的 SDK for Windows 8.1](https://go.microsoft.com/fwlink/p/?linkid=309209)。 为 Windows 安装 Microsoft Visual Studio Express 会安装不包括向导的 SDK 版本。
@@ -365,7 +365,7 @@ void DisplayBackgroundTaskTriggerDetails()
 4. 断开连接并卸载打印机。 此步骤是必需的，以便 Windows 将在下一次检测到设备时读取更新的设备元数据。
 5. 编辑并保存设备元数据。 若要将设备应用链接到设备，你必须将设备应用关联到设备。
     >[!NOTE]
-    >如果尚未创建设备元数据，请参阅 [为 UWP 设备应用创建设备元数据](https://go.microsoft.com/fwlink/p/?LinkId=313644)。
+    >如果尚未创建设备元数据，请参阅 [为 UWP 设备应用创建设备元数据](./step-2--create-device-metadata.md)。
 
     1. 如果**设备元数据创作向导**尚未打开，请通过双击 "DeviceMetadataWizard.exe" 从 *% ProgramFiles (x86) %* \\ Windows 工具包 \\ 8.1 \\ bin \\ x86 **DeviceMetadataWizard.exe**启动它。
     2. 单击 " **编辑设备元数据**"。 这将允许你编辑现有的设备元数据包。
@@ -378,7 +378,7 @@ void DisplayBackgroundTaskTriggerDetails()
 
 6. 重新连接打印机，以便 Windows 在连接设备时读取更新的设备元数据。
 
-## <a name="troubleshooting"></a>故障排除
+## <a name="troubleshooting"></a>疑难解答
 
 ### <a name="issue-no-default-toast-notification-appears"></a>问题：未显示默认 toast 通知
 
@@ -394,7 +394,7 @@ void DisplayBackgroundTaskTriggerDetails()
 
 - **可能的原因：** 后台任务 () 的入口点 `IBackgroundTask` 与前台应用在同一项目中。 这是不允许的。 分离出用于后台任务处理程序的一个全新的类。
 
-- **可能的原因：** 作为应用中的通知入口点的类在清单或设备元数据中不正确地给定，导致应用在 backgroundhost 内崩溃，而不显示任何 toast。 查看以下内容：
+- **可能的原因：** 作为应用中的通知入口点的类在清单或设备元数据中不正确地给定，导致应用在 backgroundhost 内崩溃，而不显示任何 toast。 检查下列项目：
 
   - 请确保在清单设计器的 " **声明** " 选项卡中正确地提供了入口点。 它应采用命名空间. 类的形式，适用于 c # 和 c + +。 对于 JavaScript，它应为 .js 文件的相对目录路径。
   - JavaScript 应用在完成后应调用 close ( # A1。
@@ -407,19 +407,19 @@ void DisplayBackgroundTaskTriggerDetails()
 
 [ (UWP 应用的磁贴和磁贴通知概述) ](/previous-versions/windows/apps/hh779724(v=win.10))
 
-[磁贴和徽章 (UWP 应用的指南和清单) ](https://go.microsoft.com/fwlink/p/?LinkId=317194)
+[磁贴和徽章 (UWP 应用的指南和清单) ](/windows/uwp/design/shell/tiles-and-notifications/creating-tiles)
 
-[UWP 通知概述 (UWP 应用) ](https://go.microsoft.com/fwlink/p/?LinkId=317197)
+[UWP 通知概述 (UWP 应用) ](/previous-versions/windows/apps/hh779727(v=win.10))
 
-[ (UWP 应用的 toast 通知的指导原则和清单) ](https://go.microsoft.com/fwlink/p/?LinkId=317193)
+[ (UWP 应用的 toast 通知的指导原则和清单) ](/windows/uwp/design/shell/tiles-and-notifications/)
 
 [自定义 UI 的驱动程序支持](../print/driver-support-for-customized-ui.md)
 
-[开发 v4 打印驱动程序](https://go.microsoft.com/fwlink/p/?LinkId=314231)
+[开发 v4 打印驱动程序](../print/v4-printer-driver.md)
 
-[ (v4 打印驱动程序的打印机扩展接口) ](https://go.microsoft.com/fwlink/p/?LinkID=299887)
+[ (v4 打印驱动程序的打印机扩展接口) ](/windows-hardware/drivers/ddi/_print/)
 
-[双向通信](https://go.microsoft.com/fwlink/p/?LinkId=317192)
+[双向通信](../print/bidirectional-communication.md)
 
 [UWP 应用入门](getting-started.md)
 

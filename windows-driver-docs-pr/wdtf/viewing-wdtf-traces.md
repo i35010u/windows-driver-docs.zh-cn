@@ -8,16 +8,16 @@ keywords:
 - 跟踪 WDK WDTF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 867c2ed84c62e7ecfbb1bbead9dbd2b845671d4a
-ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
+ms.openlocfilehash: 524e924c519c7e5787ae0ee97050ab1fccaea525
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89403534"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91733702"
 ---
 # <a name="enabling-and-viewing-wdtf-traces"></a>启用和查看 WDTF 跟踪
 
-WDTF *跟踪* 是指在 WDTF 对象内部发生的报告事件。 由于 WDTF 经过大量检测，因此所有 WDTF 对象都在运行时提供跟踪信息。 WDTF 使用 [WPP 软件跟踪](../devtest/wpp-software-tracing.md)处理跟踪。 此类跟踪是一种标准化格式，可使用 WDK 工具（包括 [TraceView](../devtest/using-traceview.md)）进行读取。 本主题介绍了如何使用 [Logman](https://go.microsoft.com/fwlink/p/?linkid=136332) 和 [Tracefmt](../devtest/tracefmt.md) 查看 WDTF 运行时跟踪。 本主题还讨论了如何以编程方式配置 WDTF 跟踪级别。
+WDTF *跟踪* 是指在 WDTF 对象内部发生的报告事件。 由于 WDTF 经过大量检测，因此所有 WDTF 对象都在运行时提供跟踪信息。 WDTF 使用 [WPP 软件跟踪](../devtest/wpp-software-tracing.md)处理跟踪。 此类跟踪是一种标准化格式，可使用 WDK 工具（包括 [TraceView](../devtest/using-traceview.md)）进行读取。 本主题介绍了如何使用 [Logman](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/cc753820(v=ws.11)) 和 [Tracefmt](../devtest/tracefmt.md) 查看 WDTF 运行时跟踪。 本主题还讨论了如何以编程方式配置 WDTF 跟踪级别。
 
 ## <a name="how-to-collect-and-save-wdtf-traces"></a>如何收集和保存 WDTF 跟踪
 
@@ -34,7 +34,7 @@ WDTF *跟踪* 是指在 WDTF 对象内部发生的报告事件。 由于 WDTF �
 
 2. 重新启动计算机。
 
-有关其他选项的信息，请参阅 [Logman](https://go.microsoft.com/fwlink/p/?linkid=136332) ( # A0) 。 有关创建跟踪季节的信息，请参阅 [配置和启动自动记录器会话](/windows/desktop/ETW/configuring-and-starting-an-autologger-session)。
+有关其他选项的信息，请参阅 [Logman](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/cc753820(v=ws.11)) ( # A0) 。 有关创建跟踪季节的信息，请参阅 [配置和启动自动记录器会话](/windows/desktop/ETW/configuring-and-starting-an-autologger-session)。
 
 ### <a name="to-stop-collecting-wdtf-traces-and-save-log-files"></a>停止收集 WDTF 跟踪并保存日志文件
 
@@ -99,7 +99,7 @@ WDTF 提供了一组可配置的 [**TTraceLevel**](/windows-hardware/drivers/ddi
 ## <a name="related-topics"></a>相关主题
 
 [配置和启动自动记录器会话](/windows/desktop/ETW/configuring-and-starting-an-autologger-session)  
-[Logman](https://go.microsoft.com/fwlink/p/?linkid=136332)  
+[Logman](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/cc753820(v=ws.11))  
 [Tracefmt](../devtest/tracefmt.md)  
 [TraceView](../devtest/using-traceview.md)  
 [WPP 软件跟踪](../devtest/wpp-software-tracing.md)

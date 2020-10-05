@@ -3,12 +3,12 @@ description: 使用 Windows 8.1 中引入的 Windows 运行时 Api 编写允许�
 title: 与 USB 设备通信，从开始到完成（UWP 应用）
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0a90210ce1968b185f044a85f453bebe7b1504c3
-ms.sourcegitcommit: b3e38d06762246c77cedd8e82d740ebea104c538
+ms.openlocfilehash: 9fd6eb72cbd9bca6ff0309625d84e21453e6a6f0
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/02/2020
-ms.locfileid: "91662475"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91732597"
 ---
 # <a name="talking-to-usb-devices-start-to-finish-uwp-app"></a>与 USB 设备通信，从开始到完成（UWP 应用）
 
@@ -16,7 +16,7 @@ ms.locfileid: "91662475"
 **摘要**
 
 -   用于创建与 USB 设备通信的 UWP 应用的端到端演练
--   **伴生示例**： [自定义 USB 设备访问示例](https://go.microsoft.com/fwlink/p/?linkid=309716)
+-   **伴生示例**： [自定义 USB 设备访问示例](/samples/browse/)
 
 **重要的 API**
 
@@ -28,7 +28,7 @@ ms.locfileid: "91662475"
 
 本文介绍如何使用 c + +、c # 或 Visual Basic 应用程序的 UWP 应用程序如何实现这些任务，并链接到演示如何使用 [**Windows**](/uwp/api/Windows.Devices.Usb)中包含的类的示例。 我们将通过应用程序清单中所需的设备功能，以及在连接设备时如何启动应用。 同时，我们还将介绍如何在后台运行数据传输任务，即使应用程序已暂停以节省电池寿命。
 
-按照本部分中的步骤或直接跳到 [自定义 USB 设备访问示例](https://go.microsoft.com/fwlink/p/?linkid=309716)。 随附示例实现了本文中的所有步骤，但若要继续操作，我们不会演练代码。 某些步骤 **在 "示例" 部分中找到了它** ，可帮助你快速找到代码。 该示例的源文件结构简单明了，因此您可以轻松地查找代码，而无需向下钻取多层源文件。 但您可能希望以不同的方式分解和组织您自己的项目。
+按照本部分中的步骤或直接跳到 [自定义 USB 设备访问示例](/samples/browse/)。 随附示例实现了本文中的所有步骤，但若要继续操作，我们不会演练代码。 某些步骤 **在 "示例" 部分中找到了它** ，可帮助你快速找到代码。 该示例的源文件结构简单明了，因此您可以轻松地查找代码，而无需向下钻取多层源文件。 但您可能希望以不同的方式分解和组织您自己的项目。
 
 ## <a name="in-this-section"></a>在此部分中
 
@@ -112,7 +112,7 @@ ms.locfileid: "91662475"
 <tr class="even">
 <td><a href="" id="step4"></a>
 <p><strong>步骤 4</strong>-创建可在本教程中扩展的基本 Visual Studio 2013 项目。</p></td>
-<td>有关详细信息，请参阅 <a href="https://go.microsoft.com/fwlink/p/?linkid=617681" data-raw-source="[Getting started with UWP apps](https://go.microsoft.com/fwlink/p/?linkid=617681)">UWP 应用</a>入门。</td>
+<td>有关详细信息，请参阅 <a href="/windows/uwp/get-started/" data-raw-source="[Getting started with UWP apps](/windows/uwp/get-started/)">UWP 应用</a>入门。</td>
 </tr>
 <tr class="odd">
 <td><a href="" id="step5"></a>
@@ -170,7 +170,7 @@ ms.locfileid: "91662475"
 <td><a href="" id="step7"></a>
 <p><strong>步骤 7</strong> (建议) -研究 <a href="usb-device-layout.md" data-raw-source="[USB device layout](usb-device-layout.md)">USB 设备布局</a>。</p></td>
 <td><p>查看有关配置设备和执行数据传输的基本 USB 概念： <a href="usb-concepts-for-all-developers.md" data-raw-source="[Concepts for all USB developers](usb-concepts-for-all-developers.md)">所有 usb 开发人员的概念</a>。</p>
-<p>查看设备配置描述符、每个受支持的备用设置及其终结点描述符的接口描述符。 通过使用 <a href="https://go.microsoft.com/fwlink/p/?linkid=617721" data-raw-source="[USBView](https://go.microsoft.com/fwlink/p/?linkid=617721)">USBView</a>，你可以浏览所有 usb 控制器和连接到它们的 usb 设备，还可以检查设备配置。</p></td>
+<p>查看设备配置描述符、每个受支持的备用设置及其终结点描述符的接口描述符。 通过使用 <a href="/windows-hardware/drivers/debugger/usbview" data-raw-source="[USBView](../debugger/usbview.md)">USBView</a>，你可以浏览所有 usb 控制器和连接到它们的 usb 设备，还可以检查设备配置。</p></td>
 </tr>
 <tr class="even">
 <td><a href="" id="step8"></a>
@@ -386,8 +386,8 @@ ms.locfileid: "91662475"
 
 **相关示例**
 
--   [USB CDC 控制示例](https://go.microsoft.com/fwlink/p/?linkid=309716)
--   [固件更新 USB 设备示例](https://go.microsoft.com/fwlink/p/?linkid=309716)
+-   [USB CDC 控制示例](/samples/browse/)
+-   [固件更新 USB 设备示例](/samples/browse/)
 
 [UWP 应用 UI，开始 (XAML) ](/previous-versions/windows/apps/dn263191(v=win.10))
 
@@ -400,4 +400,3 @@ ms.locfileid: "91662475"
 [异步编程（UWP 应用）](/previous-versions/windows/apps/hh464924(v=win.10))
 
 了解如何使你的应用程序在执行可能需要较长时间的操作时保持响应。
-

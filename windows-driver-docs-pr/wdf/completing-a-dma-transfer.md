@@ -9,12 +9,12 @@ keywords:
 - 完成 DMA 传输 WDK KMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f8920b7ef1adde0766a9a1fd31ae171dd36d0ab0
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: c3dee160ea14261821186516e23216f1a8a43e5a
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89184319"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91733091"
 ---
 # <a name="completing-a-dma-transfer"></a>完成 DMA 传输
 
@@ -26,7 +26,7 @@ ms.locfileid: "89184319"
 
 通常，驱动程序的 [*EvtInterruptDpc*](/windows-hardware/drivers/ddi/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_dpc) 回调函数完成每个 DMA 传输的处理。
 
-首先，因为多个 DMA 事务可以同时进行，所以 [*EvtInterruptDpc*](/windows-hardware/drivers/ddi/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_dpc) 回调函数必须确定完成的传输与哪个 dma 事务相关联。 回调函数可以通过检索驱动程序 [启动 DMA 事务](starting-a-dma-transaction.md)时存储的事务句柄来实现此目的。 若要检索设备扩展， [PLX9x5x](https://go.microsoft.com/fwlink/p/?linkid=256157) 示例在其 Private .h 头文件中定义了一个名为 **PLxGetDeviceContext** 的函数：
+首先，因为多个 DMA 事务可以同时进行，所以 [*EvtInterruptDpc*](/windows-hardware/drivers/ddi/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_dpc) 回调函数必须确定完成的传输与哪个 dma 事务相关联。 回调函数可以通过检索驱动程序 [启动 DMA 事务](starting-a-dma-transaction.md)时存储的事务句柄来实现此目的。 若要检索设备扩展， [PLX9x5x](/samples/browse/) 示例在其 Private .h 头文件中定义了一个名为 **PLxGetDeviceContext** 的函数：
 
 ```cpp
 WDF_DECLARE_CONTEXT_TYPE_WITH_NAME(DEVICE_EXTENSION, PLxGetDeviceContext)
@@ -68,6 +68,4 @@ dmaTransaction = devExt->WriteDmaTransaction;
 如果 [*EvtInterruptDpc*](/windows-hardware/drivers/ddi/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_dpc) 回调函数检测到错误，通常是由于计时器过期或硬件中断发出传输错误，驱动程序可以重新启动事务的当前传输。
 
 若要重新启动事务的当前传输，驱动程序的 [*EvtInterruptDpc*](/windows-hardware/drivers/ddi/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_dpc) 回调函数可以调用 [**WdfDmaTransactionDmaCompletedWithLength**](/windows-hardware/drivers/ddi/wdfdmatransaction/nf-wdfdmatransaction-wdfdmatransactiondmacompletedwithlength) ，并将 *TransferredLength* 参数设置为零。
-
- 
 

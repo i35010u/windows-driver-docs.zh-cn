@@ -7,12 +7,12 @@ keywords:
 - 访问设备属性 WDK 设备安装
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d21ac8e63044789132f195bc2fd7321e051313cb
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 473ccd2348eae544ea2c776a5e1baab46c431899
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90717559"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91733979"
 ---
 # <a name="accessing-device-properties"></a>访问设备属性
 
@@ -39,9 +39,7 @@ ms.locfileid: "90717559"
 
         **注意**   在卸载设备之前，硬件密钥会一直保存在注册表中。 [设备安装组件](/previous-versions/ff541277(v=vs.85))在驱动程序升级过程中可以移动或清除软件密钥
 
-        若要保存自定义设置，请在创建或打开注册表项后使用 [RegCloseKey](https://go.microsoft.com/fwlink/p/?linkid=194543) 。
+        若要保存自定义设置，请在创建或打开注册表项后使用 [RegCloseKey](/windows/win32/api/winreg/nf-winreg-regclosekey) 。
 
 -   对于内核模式驱动程序，请使用 [**IoGetDeviceProperty**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetdeviceproperty) 访问设备属性。
-
- 
 

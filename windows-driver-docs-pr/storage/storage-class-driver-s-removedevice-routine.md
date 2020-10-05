@@ -7,12 +7,12 @@ keywords:
 - 查询-删除请求 WDK 存储
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 40e6a16b6be95be3e060789457b18916c2663137
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 20d122765dfbfbd15b69b655acb1c90e1b913d7d
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89193061"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91732755"
 ---
 # <a name="storage-class-drivers-removedevice-routine"></a>存储类驱动程序的 RemoveDevice 例程
 
@@ -46,7 +46,5 @@ ms.locfileid: "89193061"
 
 即使在设备对象被删除后，如果它有非零引用计数，设备对象在系统中仍保持不变，直到其引用计数变为零时，才会以静默方式消失。 存储类驱动程序在删除设备对象之后不得尝试使用设备对象指针。
 
-有关处理删除请求的详细信息，请参阅 [删除设备](https://docs.microsoft.com/windows-hardware/drivers/kernel/removing-a-device)。
-
- 
+有关处理删除请求的详细信息，请参阅 [删除设备](../kernel/understanding-when-remove-irps-are-issued.md)。
 

@@ -3,12 +3,12 @@ description: 本主题说明如何测试启用了 USB 类型 C 的系统和 Wind
 title: USB 类型 C 手动互操作性测试过程
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 719d6806226dbea12e338c2b44fab5892c573980
-ms.sourcegitcommit: b3e38d06762246c77cedd8e82d740ebea104c538
+ms.openlocfilehash: 7ec16049577b5260fd5004caf0eea6c251f733c5
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/02/2020
-ms.locfileid: "91662473"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91734224"
 ---
 # <a name="usb-type-c-manual-interoperability-test-procedures"></a>USB 类型 C 手动互操作性测试过程
 
@@ -174,7 +174,7 @@ USB 类型 C 互操作性测试过程分为两部分：功能测试 (FT) 和压�
 
 可以从以下来源找到选择性挂起的其他信息：
 
--   [为 HID 启用选择性挂起](https://go.microsoft.com/fwlink/p/?LinkId=623307)
+-   [为 HID 启用选择性挂起](/previous-versions/windows/hardware/design/dn613941(v=vs.85))
 -   [基于 USB 的 HID 设备的选择性挂起](../hid/selective-suspend-for-hid-over-usb-devices.md)
 -   [揭密选择性挂起]( https://go.microsoft.com/fwlink/p/?LinkId=623308)
 
@@ -263,7 +263,7 @@ USB 类型 C 互操作性测试过程分为两部分：功能测试 (FT) 和压�
 
 1.  重新启动测试系统。
 2.  插入 USB SuperMUTT 设备以显示 USB 类型 C 端口。
-3.  运行 [DF-重新启动并](https://go.microsoft.com/fwlink/p/?LinkId=623312) 在测试前后进行 IO 重启。
+3.  运行 [DF-重新启动并](/previous-versions/windows/hardware/hck/dn293550(v=vs.85)) 在测试前后进行 IO 重启。
 4.  使用 USB 类型 C 测试设备重复步骤3。
 
 ## <a name="st-case-3-plug-and-play"></a><a href="" id="st3"></a>ST Case 3：即插即用
@@ -487,6 +487,4 @@ USB 类型 C 电缆旨在维持用户功能，而不考虑电缆方向。 翻转
 -   测试列表 (按顺序) 在失败测试之前执行。
 -   此列表必须指定失败或通过的测试。
 -   用于测试的系统、设备、停靠或集线器。 包含品牌、型号和网站，以便我们可以根据需要获取其他信息。
-
- 
 

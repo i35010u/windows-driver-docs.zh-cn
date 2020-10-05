@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: d7d58d1faa80e4e4641ac3030cdb8d6952baf8cc
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: f86bbdd0723f04b191edae32f0d299f87a45ab5a
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89096871"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91733511"
 ---
 # <a name="guid_devinterface_wpd"></a>GUID_DEVINTERFACE_WPD
 
 
-GUID_DEVINTERFACE_WPD [设备接口类](./overview-of-device-interface-classes.md) 是 (WPD) 的 [Windows 便携设备](https://go.microsoft.com/fwlink/p/?linkid=106527) 定义的。
+GUID_DEVINTERFACE_WPD [设备接口类](./overview-of-device-interface-classes.md) 是 (WPD) 的 [Windows 便携设备](/previous-versions//ff597729(v=vs.85)) 定义的。
 
 <table>
 <colgroup>
@@ -33,7 +33,7 @@ GUID_DEVINTERFACE_WPD [设备接口类](./overview-of-device-interface-classes.m
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Attribute</th>
+<th align="left">属性</th>
 <th align="left">设置</th>
 </tr>
 </thead>
@@ -88,6 +88,4 @@ WPD 类扩展组件为使用 WPD 类扩展的 WPD 驱动程序注册此设备接
 
 
 [**GUID_DEVINTERFACE_WPD_PRIVATE**](guid-devinterface-wpd-private.md)
-
- 
 

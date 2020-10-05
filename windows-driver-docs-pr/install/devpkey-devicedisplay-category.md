@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 7c9d8ca5e11085911e6a3e5f07df5fc3314fa203
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 43c18cd21ad9037be0b707961405501cf5d56522
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90716388"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91732549"
 ---
 # <a name="devpkey_devicedisplay_category"></a>DEVPKEY_DeviceDisplay_Category
 
@@ -33,7 +33,7 @@ DEVPKEY_DeviceDisplay_Category 设备属性表示应用于设备实例的一个�
 </colgroup>
 <thead>
 <tr>
-<th>Attribute</th>
+<th>属性</th>
 <th>值</th>
 </tr>
 </thead>
@@ -62,9 +62,9 @@ DEVPKEY_DeviceDisplay_Category 设备属性表示应用于设备实例的一个�
 <a name="remarks"></a>备注
 -------
 
-物理设备的设备类别通过[设备元数据包](https://docs.microsoft.com/windows-hardware/drivers/install/device-metadata-packages)中的[**device.devicecategory**](/previous-versions/windows/hardware/metadata/ff541101(v=vs.85)) XML 元素进行指定。 系统中该设备的每个实例都继承该物理设备的设备类别。
+物理设备的设备类别通过[设备元数据包](./overview-of-device-metadata-packages.md)中的[**device.devicecategory**](/previous-versions/windows/hardware/metadata/ff541101(v=vs.85)) XML 元素进行指定。 系统中该设备的每个实例都继承该物理设备的设备类别。
 
-每台物理设备可以在 [设备元数据包](https://docs.microsoft.com/windows-hardware/drivers/install/device-metadata-packages)中指定一个或多个功能类别。 Windows 设备和打印机使用每个类别将设备实例组合到识别的设备类别之一中。
+每台物理设备可以在 [设备元数据包](./overview-of-device-metadata-packages.md)中指定一个或多个功能类别。 Windows 设备和打印机使用每个类别将设备实例组合到识别的设备类别之一中。
 
 对于设备支持的每个硬件功能，多功能设备通常会标识多个功能类别。 例如，多功能设备可以标识打印机、传真、扫描仪和可移动存储设备功能的功能类别。
 
@@ -96,12 +96,10 @@ DEVPKEY_DeviceDisplay_Category 设备属性表示应用于设备实例的一个�
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
 [**Device.devicecategory**](/previous-versions/windows/hardware/metadata/ff541101(v=vs.85))
 
 [**SetupDiGetDeviceProperty**](/windows/win32/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)
-
- 
 

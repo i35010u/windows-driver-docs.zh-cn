@@ -11,12 +11,12 @@ keywords:
 - 适用于 Windows 的 HID 鼠标驱动程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1dee561e941d9710ed0d371fdd0c7cb30d4e40dc
-ms.sourcegitcommit: 937974aa9bbe0262a7ffe9631593fab48c4e7492
+ms.openlocfilehash: daececace40b87a268a81deec03796c598c18e55
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "90010599"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91734397"
 ---
 # <a name="keyboard-and-mouse-hid-client-drivers"></a>键盘和鼠标 HID 客户端驱动程序
 
@@ -95,7 +95,7 @@ Microsoft 为 Ihv 编写驱动程序提供以下指导：
 
 - Windows 驱动程序开发工具包中的键盘头文件 kdb (DDK) ，它记录有关键盘布局的一般信息。
 
-- 示例键盘 [布局](https://go.microsoft.com/fwlink/p/?linkid=256128)。
+- 示例键盘 [布局](/samples/browse/)。
 
 若要可视化特定键盘的布局，请参阅 [Windows 键盘布局](/globalization/windows-keyboard-layouts)。
 
@@ -105,7 +105,7 @@ Microsoft 为 Ihv 编写驱动程序提供以下指导：
 
 下表列出了不同客户端版本的 Windows 操作系统所支持的功能。
 
-|特性|Windows XP|Windows Vista|Windows 7|Windows 8 及更高版本|
+|功能|Windows XP|Windows Vista|Windows 7|Windows 8 及更高版本|
 |----|----|----|----|----|
 |按钮1-5|支持 (P/2 & HID) |支持的 (PS/2 & HID) |支持的 (PS/2 & HID) |支持的 (PS/2 & HID) |
 |垂直滚轮|支持的 (PS/2 & HID) |支持的 (PS/2 & HID) |支持的 (PS/2 & HID) |支持的 (PS/2 & HID) |
@@ -123,7 +123,7 @@ Windows 用于激活新 4&5 按钮 + 滚轮模式的方法是用于在智能鼠�
 
 #### <a name="standard-ps2-compatible-mouse-data-packet-format-2-buttons"></a>标准 PS/2 兼容的鼠标数据数据包格式 (2 个按钮) 
 
-|Byte|D7|D6|D5|D4|D3|D2|D1|D0|评论|
+|Byte|D7|D6|D5|D4|D3|D2|D1|D0|备注|
 |------|-------|-------|-------|-------|-----|-----|-----|-----|-----|
 | 1    | Yover | Xover | Ysign | Xsign | 标记 | M   | R   | L   | X/Y overvlows 和符号、按钮 |
 | 2    | X 7    | X6    | X5    | X4    | X3  | X2  | X1  | X0  | X 数据字节                      |
@@ -134,7 +134,7 @@ Windows 用于激活新 4&5 按钮 + 滚轮模式的方法是用于在智能鼠�
 
 #### <a name="standard-ps2-compatible-mouse-data-packet-format-3-buttons--verticalwheel"></a>标准 PS/2 兼容的鼠标数据包格式 (3 个按钮 + VerticalWheel) 
 
-| Byte | D7  | D6  | D5    | D4    | D3  | D2  | D1  | D0  | 评论                     |
+| Byte | D7  | D6  | D5    | D4    | D3  | D2  | D1  | D0  | 备注                     |
 |------|-----|-----|-------|-------|-----|-----|-----|-----|-----------------------------|
 | 1    | 0   | 0   | Ysign | Xsign | 1   | M   | R   | L   | X/Y 号和 R/L/M 按钮 |
 | 2    | X 7  | X6  | X5    | X4    | X3  | X2  | X1  | X0  | X 数据字节                 |
@@ -143,7 +143,7 @@ Windows 用于激活新 4&5 按钮 + 滚轮模式的方法是用于在智能鼠�
 
 #### <a name="standard-ps2-compatible-mouse-data-packet-format-5-buttons--verticalwheel"></a>标准 PS/2 兼容的鼠标数据包格式 (5 个按钮 + VerticalWheel) 
 
-| Byte | D7  | D6  | D5    | D4    | D3  | D2  | D1  | D0  | 评论                               |
+| Byte | D7  | D6  | D5    | D4    | D3  | D2  | D1  | D0  | 备注                               |
 |------|-----|-----|-------|-------|-----|-----|-----|-----|---------------------------------------|
 | 1    | 0   | 0   | Ysign | Xsign | 1   | M   | R   | L   | X/Y 号和 R/L/M 按钮           |
 | 2    | X 7  | X6  | X5    | X4    | X3  | X2  | X1  | X0  | X 数据字节                           |
@@ -170,7 +170,7 @@ Kbfiltr 旨在与 Kbdclass 配合使用，这是用于键盘设备和 I8042prt �
 
 - Ntddkbd WDK 标头文件。
 
-- 示例 [Kbfiltr](https://go.microsoft.com/fwlink/p/?linkid=256125) 源代码。
+- 示例 [Kbfiltr](/samples/browse/) 源代码。
 
 ### <a name="kbfiltr-ioctls"></a>Kbfiltr IOCTLs
 

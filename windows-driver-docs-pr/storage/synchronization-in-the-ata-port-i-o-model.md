@@ -7,12 +7,12 @@ keywords:
 - 同步 WDK ATA 端口驱动程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 53cac31488f245a3ba9e8f5478631f6b27844cec
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 2f2ffa6ce4bb3e0db81684d254285baf109da355
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89188786"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91732692"
 ---
 # <a name="synchronization-in-the-ata-port-io-model"></a>ATA 端口 I/O 模型中的同步
 
@@ -20,7 +20,7 @@ ms.locfileid: "89188786"
 ## <span id="ddk_synchronization_in_the_ata_port_i_o_model_kg"></span><span id="DDK_SYNCHRONIZATION_IN_THE_ATA_PORT_I_O_MODEL_KG"></span>
 
 
-**注意** ATA 端口驱动程序和 ATA 微型端口驱动程序模型可能会在将来更改或不可用。 相反，我们建议使用 [storport 驱动](https://docs.microsoft.com/windows-hardware/drivers/storage/storport-driver) 程序和 [storport 微型端口](./storport-miniport-drivers.md) 驱动程序模型。
+**注意** ATA 端口驱动程序和 ATA 微型端口驱动程序模型可能会在将来更改或不可用。 相反，我们建议使用 [storport 驱动](./storport-driver-overview.md) 程序和 [storport 微型端口](./storport-miniport-drivers.md) 驱动程序模型。
 
 
 ATA 端口驱动程序可以配置为通过 ATA 微型端口驱动程序例程来同步对关键数据结构（例如设备扩展）的访问。 中断处理程序的访问与其他微型端口驱动程序例程的访问是同步的，因为这些访问可能发生在不同的线程上下文中。
@@ -120,6 +120,4 @@ DIRQL
 即使 **SyncWithIsr** 设置为 **FALSE**，微型端口驱动程序也可以通过调用 [**AtaPortRequestSynchronizedRoutine**](/windows-hardware/drivers/ddi/irb/nf-irb-ataportrequestsynchronizedroutine) 并向其传递一个指向回调例程的指针，来将回调例程与中断处理程序同步。
 
 同步基于每个通道。 因此，在同步通道上，不会同时执行两个小型端口驱动程序例程，而在单独的同步通道上运行的例程可以并发执行。
-
- 
 

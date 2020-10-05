@@ -4,12 +4,12 @@ description: 了解如何编写将 HID 数据报告给操作系统的 HID 源驱
 ms.assetid: 26964963-792F-4529-B4FC-110BF5C65B35
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b1a4e2bd5790340cb7feb63a5dbe075164a7a134
-ms.sourcegitcommit: 9145bffd4cc3b990a9ebff43b588db6ef2001f5d
+ms.openlocfilehash: df3094bdf985daa628ec8d9252ff74a20967dbe1
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/09/2020
-ms.locfileid: "89592443"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91734054"
 ---
 # <a name="write-a-hid-source-driver-by-using-virtual-hid-framework-vhf"></a>使用虚拟 HID 框架 (VHF) 编写 HID 源驱动程序
 
@@ -49,7 +49,7 @@ HID 输入设备（例如键盘、鼠标、笔、触摸或按钮）会将不同�
 
 ** (驱动程序的 HID 源驱动程序) **
 
-HID 源驱动程序链接到 Vhfkm，并在其生成项目中包括 Vhf。 该驱动程序可以通过使用 [Windows 驱动模型](https://docs.microsoft.com/windows-hardware/drivers/kernel/windows-driver-model) (WDM) 或内核模式驱动程序框架 (KMDF) （这是 [Windows 驱动程序框架 (WDF) ](../what-s-new-in-driver-development.md)的一部分）编写的。 驱动程序可以作为筛选器驱动程序或设备堆栈中的函数驱动程序加载。
+HID 源驱动程序链接到 Vhfkm，并在其生成项目中包括 Vhf。 该驱动程序可以通过使用 [Windows 驱动模型](../kernel/writing-wdm-drivers.md) (WDM) 或内核模式驱动程序框架 (KMDF) （这是 [Windows 驱动程序框架 (WDF) ](../what-s-new-in-driver-development.md)的一部分）编写的。 驱动程序可以作为筛选器驱动程序或设备堆栈中的函数驱动程序加载。
 
 **VHF 静态库 (vhfkm) **
 

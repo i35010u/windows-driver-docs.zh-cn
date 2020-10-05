@@ -7,12 +7,12 @@ keywords:
 - 删除注册表项 WDK 设备安装
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5aeca4e1c15e92aa239d451a70f269f8a9693ff1
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: bd30f207e46920c9999edecef42638902362d280
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90717126"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91734361"
 ---
 # <a name="deleting-the-registry-keys-of-a-device"></a>删除设备的注册表项
 
@@ -35,9 +35,7 @@ ms.locfileid: "90717126"
 
 不应假设设备注册表项是否存在。 卸载设备后，系统会自动删除设备的所有软件和硬件密钥。
 
-可以通过使用标准注册表功能，安全地创建和删除硬件或软件密钥下的注册表子项。 通过使用这些函数，可避免系统和其他组件之间的命名冲突。 此外，如果使用这些函数创建子项，子项将继承父注册表项的默认权限。 有关详细信息，请参阅 [打开、创建和关闭密钥](https://go.microsoft.com/fwlink/p/?linkid=194541)。
+可以通过使用标准注册表功能，安全地创建和删除硬件或软件密钥下的注册表子项。 通过使用这些函数，可避免系统和其他组件之间的命名冲突。 此外，如果使用这些函数创建子项，子项将继承父注册表项的默认权限。 有关详细信息，请参阅 [打开、创建和关闭密钥](/windows/win32/sysinfo/opening-creating-and-closing-keys)。
 
-有关标准注册表函数的详细信息，请参阅 [注册表函数](https://go.microsoft.com/fwlink/p/?linkid=194529)。
-
- 
+有关标准注册表函数的详细信息，请参阅 [注册表函数](/windows/win32/sysinfo/registry-functions)。
 

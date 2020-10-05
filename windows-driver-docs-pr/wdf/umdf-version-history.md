@@ -10,12 +10,12 @@ keywords:
 ms.date: 04/28/2020
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 4eda1b335ac503944b6384e7eca285261ccf5dc2
-ms.sourcegitcommit: 015689b4cc3a288ff4296ab0954a4e866e09c113
+ms.openlocfilehash: 12a42817590c870ba16c8e99a89324019e3d29ce
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90574281"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91733011"
 ---
 # <a name="umdf-version-history"></a>UMDF 版本历史记录
 
@@ -215,7 +215,7 @@ UMDF 版本2.19 没有更改或添加。
 
 -   增强了对 [支持基于 UMDF 的驱动程序中的空闲电源](supporting-idle-power-down-in-umdf-drivers.md)的支持。 此框架现在可以使设备处于空闲超时期限到期时处于 D3cold 电源状态。 当系统恢复到其工作 (S0) 状态时，框架还可能会导致设备返回到其工作 (D0) 状态。
 
--   以下示例是 UMDF 1.11： [WudfVhidmini](https://go.microsoft.com/fwlink/p/?linkid=256226)， [NetNfpProvider](https://go.microsoft.com/fwlink/p/?linkid=256147)中的新示例。
+-   以下示例是 UMDF 1.11： [WudfVhidmini](/samples/browse/)， [NetNfpProvider](/samples/browse/)中的新示例。
 
 ## <a name="umdf-version-19"></a>UMDF 版本1。9
 
@@ -273,6 +273,4 @@ UMDF 版本2.19 没有更改或添加。
 -   增强了[取消 i/o 请求](canceling-i-o-requests.md)的功能
 
 -   增强了对[注册表](./using-the-registry-in-umdf-1-x-drivers.md)的访问权限
-
- 
 

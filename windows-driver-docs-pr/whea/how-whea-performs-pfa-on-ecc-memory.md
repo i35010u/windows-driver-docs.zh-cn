@@ -11,12 +11,12 @@ keywords:
 - LLHEH WDK WHEA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2642f600783aeb542c771775b99617e2d197bf12
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: b356ae4bde9fe9333961b781ff97564e313b4d0b
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89209485"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91733225"
 ---
 # <a name="how-whea-performs-pfa-on-ecc-memory"></a>WHEA 如何在 ECC 内存上执行 PFA
 
@@ -55,4 +55,4 @@ ms.locfileid: "89209485"
 
 有关 WHEA 的 PFA 注册表值的详细信息，请参阅 [WHEA 策略设置](whea-pfa-registry-settings.md)。
 
-有关系统内存管理器的详细信息，请参阅 Windows SDK 文档中的 [内存管理](https://go.microsoft.com/fwlink/p/?linkid=140723) 。
+有关系统内存管理器的详细信息，请参阅 Windows SDK 文档中的 [内存管理](/windows/win32/memory/memory-management) 。

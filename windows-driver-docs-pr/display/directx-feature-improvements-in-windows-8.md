@@ -4,12 +4,12 @@ description: Windows 8 包含 Microsoft DirectX 功能改进，可让开发人�
 ms.assetid: 0622DA0D-41ED-4B47-B090-8D5B85E10EB3
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 656d4eac7c337559e0a7ab1966be08eca48fcbae
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: c562cdb8faea8de134821a4b189180be94d606b7
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90715204"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91732881"
 ---
 # <a name="directx-feature-improvements-in-windows-8"></a>Windows 8 中的 DirectX 功能改进
 
@@ -43,21 +43,21 @@ Windows 8 包含 Microsoft DirectX 功能改进，可让开发人员、最终用
 
 | 功能                       | 功能级别 9 \_ x                                      | 功能级别10。0                                             | 功能级别10。1                        | 功能级别 11 +                         |
 |----------------------------------|---------------------------------------------------------|----------------------------------------------------------------|-------------------------------------------|-------------------------------------------|
-| 类型化缓冲区                     | 否                                                      | 必需                                                       | 必需                                  | 必需                                  |
+| 类型化缓冲区                     | 否                                                      | 必选                                                       | 必选                                  | 必需                                  |
 | 输入汇编程序顶点缓冲区    | 否                                                      | 可选                                                       | 可选                                  | 可选                                  |
-| Texture1D                        | 否                                                      | 必需                                                       | 必需                                  | 必需                                  |
-| Texture2D                        | 必需                                                | 必需                                                       | 必需                                  | 必需                                  |
-| Texture3D                        | 否                                                      | 必需                                                       | 必需                                  | 必需                                  |
-| TextureCube                      | 必需                                                | 必需                                                       | 必需                                  | 必需                                  |
-| 着色器 ld\*                      | 否                                                      | 必需                                                       | 必需                                  | 必需                                  |
-| \*带有筛选) 的着色器示例 ( | 必需                                                | 必需                                                       | 必需                                  | 必需                                  |
-| 着色器 gather4                   | 否                                                      | 否                                                             | 否                                        | 必需                                  |
-| Mipmap                           | 必需                                                | 必需                                                       | 必需                                  | 必需                                  |
+| Texture1D                        | 否                                                      | 必选                                                       | 必选                                  | 必需                                  |
+| Texture2D                        | 必选                                                | 必选                                                       | 必选                                  | 必需                                  |
+| Texture3D                        | 否                                                      | 必选                                                       | 必选                                  | 必需                                  |
+| TextureCube                      | 必选                                                | 必选                                                       | 必选                                  | 必需                                  |
+| 着色器 ld\*                      | 否                                                      | 必选                                                       | 必选                                  | 必需                                  |
+| \*带有筛选) 的着色器示例 ( | 必选                                                | 必选                                                       | 必选                                  | 必需                                  |
+| 着色器 gather4                   | 否                                                      | 否                                                             | 否                                        | 必须                                  |
+| Mipmap                           | 必选                                                | 必选                                                       | 必选                                  | 必需                                  |
 | Mipmap 自动生成           | 对于565是必需的，对于4444，为可选，5551               | 对于565是必需的，对于4444，为可选，5551                      | 对于565是必需的，对于4444，为可选，5551 | 对于565是必需的，对于4444，为可选，5551 |
 | RenderTarget                     | 对于565是必需的，对于4444，则不是，5551                     | 对于565是必需的，对于4444，为可选，5551                      | 对于565是必需的，对于4444，为可选，5551 | 对于565是必需的，对于4444，为可选，5551 |
 | Blendable RenderTarget           | 对于565是必需的，对于4444，则不是，5551                     | 对于565是必需的，对于4444，为可选，5551                      | 对于565是必需的，对于4444，为可选，5551 | 对于565是必需的，对于4444，为可选，5551 |
 | UAV 类型存储                  | 否                                                      | 否                                                             | 否                                        | 可选                                  |
-| CPU 锁定                     | 必需                                                | 必需                                                       | 必需                                  | 必需                                  |
+| CPU 锁定                     | 必选                                                | 必选                                                       | 必选                                  | 必需                                  |
 | 4x MSAA                          | 可选                                                | 可选                                                       | 对于565是必需的，对于4444，为可选，5551 | 对于565是必需的，对于4444，为可选，5551 |
 | 8x MSAA                          | 可选                                                | 可选                                                       | 可选                                  | 对于565是必需的，对于4444，为可选，5551 |
 | 其他 MSAA 示例计数          | 可选                                                | 可选                                                       | 可选                                  | 可选                                  |
@@ -141,7 +141,7 @@ DirectX 10 (或更高) 功能的图形硬件必须支持纹理阵列的跨进程
 
 此要求可确保立体声应用程序不会在 mono 模式下出现故障。 例如：即使对于系统上未启用立体声的情况，应用程序也应该能够创建立体声交换链或遍布缓冲器作为渲染目标，然后调用 " **现有**"。 在这种情况下，只 (中显示左视图，或者如果设置了*首选*的   Microsoft DirectX 图形基础结构 (DXGI) 存在标志，则只) 右视图。
 
-因此，WDDM 1.2 驱动程序 (完整的图形 & 呈现设备) 必须支持 Direct3D 11 Api，方法是为纹理数组添加跨进程共享支持。 在早期版本中，跨进程共享资源只能是单层图面。 在 Windows 8 中，共享阵列的最大大小是 (的两个元素，这些元素对于立体声) 来说已经足够了。 有关此要求的详细信息，请参阅 **¦ Stereoscopic3DArraySupport** In [Windows 硬件认证要求](https://go.microsoft.com/fwlink/p/?linkid=324537)。 其他相关的 Microsoft WindowsWindowsWindows HCK 要求是 **¦ ProcessingStereoscopicVideoContent** 和 **Stereoscopic3DModes**。
+因此，WDDM 1.2 驱动程序 (完整的图形 & 呈现设备) 必须支持 Direct3D 11 Api，方法是为纹理数组添加跨进程共享支持。 在早期版本中，跨进程共享资源只能是单层图面。 在 Windows 8 中，共享阵列的最大大小是 (的两个元素，这些元素对于立体声) 来说已经足够了。 有关此要求的详细信息，请参阅 **¦ Stereoscopic3DArraySupport** In [Windows 硬件认证要求](/previous-versions/windows/hardware/cert-program/)。 其他相关的 Microsoft WindowsWindowsWindows HCK 要求是 **¦ ProcessingStereoscopicVideoContent** 和 **Stereoscopic3DModes**。
 
 ## <a name="span-idunorderedspanspan-idunorderedspanuavs-with-multi-sample-anti-alias-sample-access"></a><span id="unordered"></span><span id="UNORDERED"></span>具有多样本抗锯齿示例访问的 Uav
 
@@ -228,6 +228,4 @@ Tileable copy 操作允许应用程序通知实现：图像源和目标是像素
 -   [**D3DDDICAPS \_ 着色器 \_ 最小 \_ 精度**](/windows-hardware/drivers/ddi/d3dumddi/ne-d3dumddi-d3dddicaps_shader_min_precision)
 -   [**D3DDDICAPS \_ 着色器 \_ 最小 \_ 精度 \_ 支持**](/windows-hardware/drivers/ddi/d3dumddi/ns-d3dumddi-d3dddicaps_shader_min_precision_support)
 -   [**D3DDDICAPS \_ 类型**](/windows-hardware/drivers/ddi/d3dumddi/ne-d3dumddi-_d3dddicaps_type)
-
- 
 

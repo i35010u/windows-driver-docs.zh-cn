@@ -4,12 +4,12 @@ description: 访问设备接口类属性
 ms.assetid: c9efe273-dc66-4585-8ab5-3842df1c95df
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2c249131c4a41a23b3fd2807195aa8b7f99208f0
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 9d8e2288ced454073ada03e97f6850bcf2044307
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90715784"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91733981"
 ---
 # <a name="accessing-device-interface-class-properties"></a>访问设备接口类属性
 
@@ -60,13 +60,11 @@ Windows Server 2003、Windows XP 和 Windows 2000 还支持其中的大多数设
     -   将 *MachineName* 设置为指向以 NULL 结尾的字符串的指针，该字符串包含要在其上打开请求的类注册表项的计算机的名称。 如果计算机是本地计算机，请将 *MachineName* 设置为 **NULL**。
     -   将 *保留* 设置为 **NULL**。
 
-    如果对 [**SetupDiOpenClassRegKeyEx**](/windows/win32/api/setupapi/nf-setupapi-setupdiopenclassregkeyexa) 的此调用成功，则 **SetupDiOpenClassRegKeyEx** 将返回请求的句柄。 如果函数调用失败，则 **SetupDiOpenClassRegKeyEx** 将返回 INVALID_HANDLE_VALUE 并且对 [GetLastError](https://go.microsoft.com/fwlink/p/?linkid=169416) 的调用将返回记录的错误代码。
+    如果对 [**SetupDiOpenClassRegKeyEx**](/windows/win32/api/setupapi/nf-setupapi-setupdiopenclassregkeyexa) 的此调用成功，则 **SetupDiOpenClassRegKeyEx** 将返回请求的句柄。 如果函数调用失败，则 **SetupDiOpenClassRegKeyEx** 将返回 INVALID_HANDLE_VALUE 并且对 [GetLastError](/windows/win32/api/errhandlingapi/nf-errhandlingapi-getlasterror) 的调用将返回记录的错误代码。
 
-2.  在对 [RegQueryValueEx](https://go.microsoft.com/fwlink/p/?linkid=95398) 和 [RegSetValueEx](https://go.microsoft.com/fwlink/p/?linkid=95399) 的调用中提供检索到的句柄，以检索或设置与设备接口类属性相对应的注册表项值。
+2.  在对 [RegQueryValueEx](/windows/win32/api/winreg/nf-winreg-regqueryvalueexa) 和 [RegSetValueEx](/windows/win32/api/winreg/nf-winreg-regsetvalueexa) 的调用中提供检索到的句柄，以检索或设置与设备接口类属性相对应的注册表项值。
 
-3.  调用 [RegCloseKey](https://go.microsoft.com/fwlink/p/?linkid=194543) 函数可在不再需要访问密钥后关闭类注册表项。
+3.  调用 [RegCloseKey](/windows/win32/api/winreg/nf-winreg-regclosekey) 函数可在不再需要访问密钥后关闭类注册表项。
 
 有关如何安装和使用设备接口的信息，请参阅 [设备接口类](./overview-of-device-interface-classes.md) 和 [**INF AddInterface 指令**](inf-addinterface-directive.md)。
-
- 
 

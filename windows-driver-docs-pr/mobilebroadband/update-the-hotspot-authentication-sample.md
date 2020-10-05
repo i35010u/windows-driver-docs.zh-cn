@@ -4,17 +4,17 @@ description: 更新热点身份验证示例
 ms.assetid: 68ebcdee-7b21-4177-b032-ba725ad2aee4
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 207b91960127ce4cef4cef4c0219556c7c106b6b
-ms.sourcegitcommit: 7e4d9508198a30bdc1cb6eda83852dda4e42213e
+ms.openlocfilehash: 0ec45c37f5445cdd2b343cc7ced1cf664f71efc8
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89304312"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91734533"
 ---
 # <a name="update-the-hotspot-authentication-sample"></a>更新热点身份验证示例
 
 
-[热点身份验证示例](https://go.microsoft.com/fwlink/p/?linkid=313215)项目使用默认的运营商 ID 和应用程序家族名称。 若要在自己的测试环境中使用此示例，必须更改以下项：
+[热点身份验证示例](/samples/browse/)项目使用默认的运营商 ID 和应用程序家族名称。 若要在自己的测试环境中使用此示例，必须更改以下项：
 
 -   **更新你的运营商 ID** 如果要发布移动宽带应用，这应该是与应用和服务元数据关联的体验 ID。 如果你是仅 Wi-fi 操作员，则生成新的 GUID 作为你的公司 ID。
 
@@ -36,11 +36,4 @@ ms.locfileid: "89304312"
 [热点身份验证应用入门](review-the-hotspot-authentication-sample.md)
 
  
-
- 
-
-
-
-
-
 

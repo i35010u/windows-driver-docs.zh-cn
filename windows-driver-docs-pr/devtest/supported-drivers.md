@@ -9,12 +9,12 @@ keywords:
 - 函数原型 WDK 静态驱动程序验证程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7d1e4addfd60431623ef7217003180818c98e656
-ms.sourcegitcommit: e2de6b9ffb5c7356deb864f9da879533f49b25bf
+ms.openlocfilehash: 0058a56201d21ce3269c160a0ffdc8a3c3d278f5
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/03/2020
-ms.locfileid: "91702612"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91732629"
 ---
 # <a name="supported-drivers"></a>支持的驱动程序
 
@@ -46,7 +46,7 @@ SDV 只能验证具有以下特征的驱动程序：
 
 - 包括 Wdm .h 或 Ntddk (Ntddk 是) 的子集。
 
-- 使用 [设备对象简介](https://docs.microsoft.com/windows-hardware/drivers/kernel/introduction-to-device-objects) 和后面所述的方法创建设备对象。
+- 使用 [设备对象简介](../kernel/introduction-to-device-objects.md) 和后面所述的方法创建设备对象。
 
 - 有一个在 [编写卸载例程](../kernel/writing-an-unload-routine.md)时按建议编写的 unload 例程。
 
@@ -70,7 +70,7 @@ SDV 只能验证具有以下特征的驱动程序：
 
 此外，SDV 可以验证支持的驱动程序：
 
-- [即插即用](https://docs.microsoft.com/windows-hardware/drivers/kernel/implementing-plug-and-play)。
+- [即插即用](../kernel/introduction-to-plug-and-play.md)。
 
 - [电源管理](../kernel/introduction-to-power-management.md)。
 

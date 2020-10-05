@@ -3,12 +3,12 @@ description: 设备测试的目的是针对各种集线器方案和系统电源�
 title: USB 设备测试与 MUTT 设备
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c4c0485c4a08d278788428f32bf144a8f51627a5
-ms.sourcegitcommit: 937974aa9bbe0262a7ffe9631593fab48c4e7492
+ms.openlocfilehash: 4392beba0a3d625d3806443fd45ed3eb254d3108
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "90009849"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91734135"
 ---
 # <a name="usb-device-testing-with-mutt-devices"></a>USB 设备测试与 MUTT 设备
 
@@ -28,7 +28,7 @@ ms.locfileid: "90009849"
 
 -   如果是电气测试，则为 USB。 所有测试都是以协议和状态为重点的。 有关电气测试的详细信息，请参阅 [USB-IF 合规性计划](https://www.usb.org/compliance) 。
 -   设备基础测试。 有关详细信息，请参阅 [如何在 Visual Studio FOR MUTT 设备中运行 devfund 测试](how-to-run-device-fundamental-tests-in-visual-studio-for-connected-mutt-devices.md)。
--   控制器 Windows 硬件认证工具包测试。 有关详细信息，请参阅 [USB-IF 认证验证测试 (控制器) ](https://go.microsoft.com/fwlink/p/?linkid=316509)。
+-   控制器 Windows 硬件认证工具包测试。 有关详细信息，请参阅 [USB-IF 认证验证测试 (控制器) ](/previous-versions/windows/hardware/hck/jj124634(v=vs.85))。
 -   宿主控制器的手动测试用例，如部分的 Windows 测试指南文档中所示。
 
 ## <a name="topologies-for-testing-usb-devices"></a>用于测试 USB 设备的拓扑

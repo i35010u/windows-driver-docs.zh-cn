@@ -4,12 +4,12 @@ description: 本部分提供有关 Windows 合成传感器驱动程序堆栈的�
 ms.assetid: B53D76AC-127C-4B5A-B908-A647D2B3F164
 ms.date: 07/20/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 9459651232f51161b12da531a6b5b7c062a82bbf
-ms.sourcegitcommit: 937974aa9bbe0262a7ffe9631593fab48c4e7492
+ms.openlocfilehash: f870c69122d8f79f637eddd4b8acc784d6b10985
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "90010283"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91733055"
 ---
 # <a name="fusion-sensor-implementation-details"></a>合成传感器实现细节
 
@@ -59,7 +59,5 @@ The following structures and enumerations are used by the fusion data part of th
 
 -   [**MATRIX3X3**](./index.md)
 
--   [Fusion sensor enumerations](https://go.microsoft.com/fwlink/p/?linkid=839352) and [Fusion sensor structures](https://go.microsoft.com/fwlink/p/?linkid=839355) provide information about the entire sensor fusion data structure, which include the attitude (in multiple formats) and the linear acceleration, and the compass data.
+-   [Fusion sensor enumerations](./index.md) and [Fusion sensor structures](./index.md) provide information about the entire sensor fusion data structure, which include the attitude (in multiple formats) and the linear acceleration, and the compass data.
 -->
- 
-

@@ -4,12 +4,12 @@ description: '本部分提供了 MB 接口型号 (MBIM 的补充信息) '
 ms.assetid: 577BCF39-868B-44F5-A5C0-75E28689C2B6
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 30f2ce588106e5e1253519d606225a51eeacb265
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 847c234ac592d38de3fd650bd03a459ce04420b3
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89207897"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91733927"
 ---
 # <a name="mb-interface-model-supplement"></a>MB 接口模型补充
 
@@ -150,7 +150,7 @@ Microsoft 操作系统字符串描述符的结构在版本1.00 中是固定的�
 
 以下约束适用于 Microsoft OS 字符串描述符及其检索：
 
--   若要存储符合 Microsoft OS 描述符规范的信息，该设备必须有一个且仅有一个 Microsoft 操作系统字符串描述符，该描述符符合 [MICROSOFT 操作系统描述符](https://go.microsoft.com/fwlink/p/?linkid=308932)中列出的信息。
+-   若要存储符合 Microsoft OS 描述符规范的信息，该设备必须有一个且仅有一个 Microsoft 操作系统字符串描述符，该描述符符合 [MICROSOFT 操作系统描述符](/previous-versions/gg463179(v=msdn.10))中列出的信息。
 -   设备供应商可以在 Microsoft OS 字符串描述符的 **bMS \_ VendorCode** 字段中随意使用任何值
 
 **功能描述符**
@@ -188,7 +188,7 @@ Microsoft 操作系统字符串描述符的结构在版本1.00 中是固定的�
 <td align="left"><p>GET_MS_DESCRIPTOR</p></td>
 <td align="left"><p>X</p></td>
 <td align="left"><p>功能索引</p></td>
-<td align="left"><p>Length</p></td>
+<td align="left"><p>长度</p></td>
 <td align="left"><p>返回描述符</p></td>
 </tr>
 </tbody>
@@ -202,7 +202,7 @@ Microsoft 操作系统字符串描述符的结构在版本1.00 中是固定的�
 
 " **WValue** " 字段设置为 "特殊用途"，并被分解为高字节和低字节。 高字节用于存储接口号。 这对于基于每个接口存储功能描述符至关重要，特别是对于复合设备或具有 [多个接口](/windows-hardware/drivers/ddi/index)的设备。 在大多数情况下，将使用 interface 0。 低字节用于存储页码。 此功能可防止描述符的大小边界为 64 KB (**wLength** 字段大小设置的限制) 。 将使用初始设置为零的页面值提取描述符。 如果收到 (大小为 64 KB) 的完整描述符，则页面值将以1递增，此时将再次发送对描述符的请求 (，并) 增加的页面值。 此过程将重复，直至收到大小小于 64 KB 的描述符。 请注意，最大页数为255，表示描述符大小限制为 16 MB。
 
-**WIndex**字段存储正在检索的 Microsoft OS 功能描述符的功能索引号。 Microsoft 将维护此 Microsoft OS 功能描述符和索引列表。 若要了解有关 Microsoft OS 功能描述符的详细信息，请参阅 [MICROSOFT Os 描述符](https://go.microsoft.com/fwlink/p/?linkid=308932)。
+**WIndex**字段存储正在检索的 Microsoft OS 功能描述符的功能索引号。 Microsoft 将维护此 Microsoft OS 功能描述符和索引列表。 若要了解有关 Microsoft OS 功能描述符的详细信息，请参阅 [MICROSOFT Os 描述符](/previous-versions/gg463179(v=msdn.10))。
 
 **WLength**字段指定要提取的描述符的长度。 如果描述符的长度超过了在 **wLength** 字段中指定的字节数，则仅返回描述符的初始字节数。 如果其短于在 **wLength** 字段中指定的值，则返回短的数据包。
 
@@ -611,6 +611,4 @@ Microsoft 操作系统字符串描述符的结构在版本1.00 中是固定的�
  
 
 自定义属性部分的²偏移量已重置为零。 若要计算字段相对于扩展配置描述符开头的偏移量，请添加其前面的部分的长度。
-
- 
 

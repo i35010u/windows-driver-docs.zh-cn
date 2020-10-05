@@ -6,33 +6,27 @@ keywords:
 - 生物识别驱动程序 WDK，硬件注意事项
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7b6078cc591e97111c05150c36511d7c013d3143
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: cbdf8aa3390f0db3fd7f86fbcad28a9700abb821
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63328405"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91733537"
 ---
 # <a name="hardware-considerations-for-biometric-drivers"></a>生物识别驱动程序的硬件注意事项
 
 
 使用 WBDI 框架的生物识别设备应满足以下要求：
 
--   基于 WBDI 的驱动程序应遵循[说明 0010 准则](https://go.microsoft.com/fwlink/p/?linkid=26140)终端服务重定向。
+-   基于 WBDI 的驱动程序应遵循终端服务重定向的 [DEVFUND-0010 指导原则](/windows-hardware/test/hlk/) 。
 
-    此要求规定在设备和其驱动程序必须通过即插即用设备重定向框架支持通过终端服务会话重定向。
+    此要求表明设备及其驱动程序必须支持通过 PnP 设备重定向框架通过终端服务会话重定向。
 
--   生物识别设备应具有足够大，缓存中完整功能完全扫描，并挂起模式的内部缓冲区。
+-   生物识别设备应该具有足够大的内部缓冲区，以便缓存完全电源和挂起模式下的完全扫描。
 
-    更大的缓冲区大小可能意味着较少的依赖关系以及在系统恢复期间处理的扫描中处理的常规扫描期间的时间安排。
+    较大的缓冲区大小可能意味着在常规扫描处理期间依赖时间更少，在系统恢复过程中，还可以扫描处理。
 
--   设备应该能够输入捕获模式，而无需额外的命令在扫描期间从主机使内部状态过渡。
-
- 
+-   设备应能够进入捕获模式并在扫描过程中进行内部状态转换，而无需主机的额外命令。
 
  
-
-
-
-
 

@@ -8,12 +8,12 @@ keywords:
 - 设备驱动程序 WDK 文件系统
 ms.date: 10/16/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: a187ba6b9cf1305a5e6a59daeed67abba189704c
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 2c2552f062dce96f481496221289b4e3d5d6bb40
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89063334"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91733578"
 ---
 # <a name="how-file-system-filter-drivers-are-different-from-device-drivers"></a>文件系统筛选器驱动程序与设备驱动程序的差异在哪里
 
@@ -25,7 +25,7 @@ Microsoft Windows 操作系统中的文件系统筛选器驱动程序和设备�
 
 - **无 WDM**
 
-  文件系统筛选器驱动程序不能 (WDM) 驱动程序上 Windows 驱动模型。 Microsoft [Windows 驱动模型](https://docs.microsoft.com/windows-hardware/drivers/kernel/windows-driver-model) 仅适用于设备驱动程序。
+  文件系统筛选器驱动程序不能 (WDM) 驱动程序上 Windows 驱动模型。 Microsoft [Windows 驱动模型](../kernel/writing-wdm-drivers.md) 仅适用于设备驱动程序。
 
 - **无 AddDevice 或 StartIo**
 

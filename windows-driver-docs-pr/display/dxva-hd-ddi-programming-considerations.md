@@ -9,12 +9,12 @@ keywords:
 - 高清晰视频 WDK Server 2008 R2 显示，DXVA，编程注意事项
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c196caf4797abd694d99c755240c922c1a77f985
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: c0ec6a03144b4a687840baa5023fb636a6b7ebaa
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89065466"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91732631"
 ---
 # <a name="dxva-hd-ddi-programming-considerations"></a>DXVA-HD DDI 编程注意事项
 
@@ -23,7 +23,7 @@ ms.locfileid: "89065466"
 
 在用户模式显示驱动程序中实现 [DXVA-HD DDI](dxva-hd-ddi.md) 时，应考虑以下编程技巧：
 
--   驱动程序必须将 \_ [D3DCAPS9](https://go.microsoft.com/fwlink/p/?linkid=122122)结构**CAPS3**成员中的 D3DCAPS3 DXVAHD (0x00000400L) 位设置为指示它支持 DXVA-hd DDI，否则 Direct3D 运行时将无法调用[**CREATEVIDEOPROCESSOR**](/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_dxvahd_createvideoprocessor)函数来创建 DXVA-hd 设备。 DirectX 9.0 SDK 文档中介绍了 D3DCAPS9 结构。 驱动程序将 D3DCAPS3 \_ DXVAHD 位设置为响应其[**GetCaps**](/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_getcaps)函数的调用，其中 D3DDDICAPS \_ GETD3D9CAPS 值是在 D3DDDIARG 参数指向的[**GetCaps \_ pData**](/windows-hardware/drivers/ddi/d3dumddi/ns-d3dumddi-_d3dddiarg_getcaps)结构的**Type**成员中设置的。 *pData*
+-   驱动程序必须将 \_ [D3DCAPS9](/windows/win32/api/d3d9caps/ns-d3d9caps-d3dcaps9)结构**CAPS3**成员中的 D3DCAPS3 DXVAHD (0x00000400L) 位设置为指示它支持 DXVA-hd DDI，否则 Direct3D 运行时将无法调用[**CREATEVIDEOPROCESSOR**](/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_dxvahd_createvideoprocessor)函数来创建 DXVA-hd 设备。 DirectX 9.0 SDK 文档中介绍了 D3DCAPS9 结构。 驱动程序将 D3DCAPS3 \_ DXVAHD 位设置为响应其[**GetCaps**](/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_getcaps)函数的调用，其中 D3DDDICAPS \_ GETD3D9CAPS 值是在 D3DDDIARG 参数指向的[**GetCaps \_ pData**](/windows-hardware/drivers/ddi/d3dumddi/ns-d3dumddi-_d3dddiarg_getcaps)结构的**Type**成员中设置的。 *pData*
 
 -   \_ \_ \_ \_ \_ 应用程序级 DXVAHD 表面类型枚举的 DXVAHD 表面类型视频输入私有 \_ 值 \_ 没有相应的 DDI 值。 应用程序为 \_ \_ \_ \_ \_ 以不同格式类型为 CPU 或着色器基础视频处理器插件分配的离屏普通表面设置 DXVAHD 表面类型的视频输入专用值。
 
@@ -42,6 +42,4 @@ ms.locfileid: "89065466"
 -   [**DXVAHDDDI \_ 筛选 \_ 范围 \_ 数据**](/windows-hardware/drivers/ddi/d3dumddi/ns-d3dumddi-_dxvahdddi_filter_range_data)结构的**乘数**成员为浮点值。 驱动程序应使用一个值，该值可精确表示为以2为底的小数部分。 例如，0.25 可以完全表示为以2为底的小数，但0.1 不能。
 
 -   任何 [DXVA 的 DDI](dxva-hd-ddi.md) 函数应返回 S \_ OK、E \_ INVALIDARG 或 E \_ OUTOFMEMORY。
-
- 
 

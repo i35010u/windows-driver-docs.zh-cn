@@ -4,12 +4,12 @@ description: 若要运行 MITT 测试，必须在新的 MITT 板上安装 MITT �
 ms.assetid: 4467B82F-7B06-430B-A0CB-A6825045E5F4
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3e0531614051da76bdc5b86e932262a540f8301e
-ms.sourcegitcommit: b3e38d06762246c77cedd8e82d740ebea104c538
+ms.openlocfilehash: 2878ec9da9a63592d2e7429fa430acd91c278a3a
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/02/2020
-ms.locfileid: "91662457"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91733921"
 ---
 # <a name="get-started-with-mitt"></a>MITT 入门
 
@@ -54,7 +54,7 @@ ms.locfileid: "91662457"
 
 若要运行 MITT 测试，需要 (WDTF) 的 Windows 驱动程序测试框架。 在 (WDK) 上安装 Windows 驱动程序工具包时，将自动安装运行时。 有关完整的安装说明，请按照 [WDTF 运行时库](/windows-hardware/drivers/ddi/index)中所述的步骤进行操作。
 
-**下载位置**： [WDK 和 WinDbg 下载](https://go.microsoft.com/fwlink/p/?LinkId=733614)
+**下载位置**： [WDK 和 WinDbg 下载](../download-the-wdk.md)
 
 运行时安装在此处% ProgramFiles (x86) % \\ Windows 工具包 \\ 8.1 \\ 测试 \\ 运行时 \\ TAEF
 

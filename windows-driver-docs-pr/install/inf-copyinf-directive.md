@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0bb0fdfcb82ce18d87374c81fae6135a0c5b9130
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: d8311cc88090c90c9001cd34b79e8db08ffa1e82
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90714614"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91733955"
 ---
 # <a name="inf-copyinf-directive"></a>INF CopyINF 指令
 
@@ -56,7 +56,7 @@ Microsoft Windows XP 和更高版本的 Windows 中提供了 **CopyINF** 指令�
 
 -   **CopyINF**指令会使指定 INF 文件引用的完整[驱动程序包](driver-packages.md)复制到[驱动程序存储区](driver-store.md)中。 这是为了支持多功能驱动程序包的部署所必需的，因为在实际安装设备时原始源媒体可能不可用。 如果指定 INF 文件引用的驱动程序包已存在于驱动程序存储区中，则将忽略在 **CopyINF** 指令中指定的 inf 文件。
 
--   在驱动程序存储区导入过程中（而不是在设备安装期间）处理 **CopyINF** 指令。 这意味着，在 Windows Vista 和更高版本的 Windows 上调用 [SetupCopyOEMInf](https://go.microsoft.com/fwlink/p/?linkid=194252) 会导致在该时间处理指定 INF 文件中的所有 **CopyINF** 指令。 对于包含在指定 INF 文件中的每个 **CopyINF** 指令，将以递归方式发生，直到所有引用的驱动程序包都复制到驱动程序存储区中。
+-   在驱动程序存储区导入过程中（而不是在设备安装期间）处理 **CopyINF** 指令。 这意味着，在 Windows Vista 和更高版本的 Windows 上调用 [SetupCopyOEMInf](/windows/win32/api/setupapi/nf-setupapi-setupcopyoeminfa) 会导致在该时间处理指定 INF 文件中的所有 **CopyINF** 指令。 对于包含在指定 INF 文件中的每个 **CopyINF** 指令，将以递归方式发生，直到所有引用的驱动程序包都复制到驱动程序存储区中。
 
 从 Windows 10 版本1511开始，在某些情况下 (例如，运行 Windows 更新或一些对 [**DiInstallDevice**](/windows/win32/api/newdev/nf-newdev-diinstalldevice)) 的调用），也会在适用的设备上安装 inf （通过 **CopyINF** 复制）。
 
@@ -69,6 +69,4 @@ Microsoft Windows XP 和更高版本的 Windows 中提供了 **CopyINF** 指令�
 [MyMfDevice.NTx86]
 CopyINF = Sound.INF
 ```
-
- 
 

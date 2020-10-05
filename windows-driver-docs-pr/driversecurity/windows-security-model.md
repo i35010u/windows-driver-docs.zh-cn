@@ -4,12 +4,12 @@ description: Windows 安全模型主要基于每个对象的权限，具有少�
 ms.assetid: 3A7ECA7C-1FE6-4ADB-97A9-A61C6FCE9F04
 ms.date: 02/01/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 687aab736b2b8921ce6bf0af52f00deb2f73aaef
-ms.sourcegitcommit: 6c42efc074ab939e7737d6c2b016d3f3a75954e1
+ms.openlocfilehash: 4c7b7e36b46bb18e8539f6406728f65dabc500ac
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90741022"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91734307"
 ---
 # <a name="span-idintroductionspanspan-idintroductionspanspan-idintroductionspanwindows-security-model-for-driver-developers"></a><span id="Introduction"></span><span id="introduction"></span><span id="INTRODUCTION"></span>驱动程序开发人员的 Windows 安全模型
 
@@ -113,10 +113,10 @@ SDDL 是一种可扩展的描述语言，可让组件以字符串格式创建 Ac
 
 | 权限 | SID        | Access                |
 |------------|------------|-----------------------|
-| Allow      | 计帐 | 写入、删除         |
-| Allow      | Sales      | 追加                |
+| 允许      | 计帐 | 写入、删除         |
+| 允许      | Sales      | 附加                |
 | 拒绝       | Legal      | 追加、写入、删除 |
-| Allow      | 所有人   | 读取                  |
+| 允许      | 所有人   | 读取                  |
 
  
 
@@ -207,7 +207,7 @@ SDDL 是一种可扩展的描述语言，可让组件以字符串格式创建 Ac
 
 在分析文件名时，i/o 管理器会检查遍历权限。 如果文件名为符号链接，则 i/o 管理器会将其解析为完整路径，然后检查遍历权限（从根开始）。 例如，假设符号链接 \\ DosDevices \\ D 映射到 Windows NT 设备名称 \\ device \\ CDROM0。 该进程必须具有设备目录的遍历权限 \\ 。
 
-有关详细信息，请参阅 [对象句柄](../kernel/object-handles.md) 和 [对象安全](https://docs.microsoft.com/windows-hardware/drivers/kernel/object-security)。
+有关详细信息，请参阅 [对象句柄](../kernel/object-handles.md) 和 [对象安全](../kernel/access-rights.md)。
 
 ### <a name="span-iddriverspanspan-iddriverspansecurity-checks-in-the-driver"></a><span id="driver"></span><span id="DRIVER"></span>驱动程序中的安全检查
 

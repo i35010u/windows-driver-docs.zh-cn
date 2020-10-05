@@ -4,12 +4,12 @@ description: NDIS 微型端口驱动程序开发路线图
 ms.assetid: 7cb56c08-3578-49d7-a0aa-a89dc6b139ca
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f63b8a94048ce66db19bd1e3ebbb8d1dd28d353b
-ms.sourcegitcommit: 29fee075ccc0a4eb1bf304cca4c04a6e57449d9d
+ms.openlocfilehash: 9eca999e97839183bb6a52671d869997c97403de
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/02/2020
-ms.locfileid: "91671233"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91734250"
 ---
 # <a name="roadmap-for-developing-ndis-miniport-drivers"></a>NDIS 微型端口驱动程序开发路线图
 
@@ -33,7 +33,7 @@ ms.locfileid: "91671233"
 
 - 步骤3：确定其他 Windows 驱动程序设计决策。
 
-  有关如何进行其他 Windows 设计决策的详细信息，请参阅 [创建可靠的内核模式驱动程序](../kernel/creating-reliable-kernel-mode-drivers.md)、 [64 位驱动程序的编程问题](https://docs.microsoft.com/windows-hardware/drivers/kernel/programming-issues-for-64-bit-drivers)以及 [创建国际 INF 文件](../install/creating-international-inf-files.md)。
+  有关如何进行其他 Windows 设计决策的详细信息，请参阅 [创建可靠的内核模式驱动程序](../kernel/creating-reliable-kernel-mode-drivers.md)、 [64 位驱动程序的编程问题](../kernel/porting-your-driver-to-64-bit-windows.md)以及 [创建国际 INF 文件](../install/creating-international-inf-files.md)。
 
 - 步骤4：了解 Windows 驱动程序的生成、测试和调试过程和工具。
 

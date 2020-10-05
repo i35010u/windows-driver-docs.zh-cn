@@ -14,12 +14,12 @@ keywords:
 - 证书 WDK，关于数字签名
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 17c9bbd98af239fc7971a2086f92f75a8a15e1ec
-ms.sourcegitcommit: 057b72e8a44ba8f4282e072edc7be0b7e9341d2a
+ms.openlocfilehash: 7b3db6ceb0bd00145d815e02ffe8be1eddb0e3bf
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/03/2020
-ms.locfileid: "89412484"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91733525"
 ---
 # <a name="digital-signatures"></a>数字签名
 
@@ -58,13 +58,7 @@ Windows 使用有效的数字签名来验证以下各项：
 
 有关即插即用 (PnP) 设备安装如何使用[驱动程序包](driver-packages.md)的 [目录文件](catalog-files.md)的数字签名的详细信息，请参阅[数字签名和 PnP 设备安装](digital-signatures-and-pnp-device-installation--windows-vista-and-late.md)。
 
-有关 Microsoft 公钥基础结构技术、代码签名和数字签名的详细信息，请参阅 [代码签名简介](https://go.microsoft.com/fwlink/p/?linkid=104071) 和 [代码签名最佳做法](https://go.microsoft.com/fwlink/p/?linkid=68250)。
+有关 Microsoft 公钥基础结构技术、代码签名和数字签名的详细信息，请参阅 [代码签名简介](/previous-versions/windows/internet-explorer/ie-developer/platform-apis/ms537361(v=vs.85)) 和 [代码签名最佳做法](/windows-hardware/test/hlk/)。
 
  
-
- 
-
-
-
-
 

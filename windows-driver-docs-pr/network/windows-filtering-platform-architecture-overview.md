@@ -9,17 +9,17 @@ keywords:
 - 标注驱动程序 WDK Windows 筛选平台，平台体系结构
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bf9ee3bbc294fc914bb5e707e4931b01c9bfb4b6
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 670354bb487bb10cbe558be4b52ce0114cc7d70b
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89217969"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91734159"
 ---
 # <a name="windows-filtering-platform-architecture-overview"></a>Windows 筛选平台体系结构概述
 
 
-本部分提供 Windows 筛选平台体系结构的简要概述。 有关 Windows 筛选平台体系结构的更详尽的讨论，请参阅 Microsoft Windows SDK 中的 [Windows 筛选平台](https://go.microsoft.com/fwlink/p/?linkid=90220) 文档。
+本部分提供 Windows 筛选平台体系结构的简要概述。 有关 Windows 筛选平台体系结构的更详尽的讨论，请参阅 Microsoft Windows SDK 中的 [Windows 筛选平台](/windows/win32/fwp/windows-filtering-platform-start-page) 文档。
 
 下图显示了 Windows 筛选平台的基本体系结构。
 
@@ -30,6 +30,4 @@ ms.locfileid: "89217969"
 [标注驱动程序](callout-driver.md) 通过向筛选器引擎注册一个或多个 [标注](callout.md) 来提供附加的筛选功能。 筛选器引擎中的[筛选](filter.md)器可以指定筛选器操作的标注。 在这种情况下，筛选器引擎会将网络数据传递到指定的标注进行其他处理。
 
 Windows 筛选平台包含多个内置的标注。 有关其中每个标注的说明，请参阅 [内置标注标识符](./built-in-callout-identifiers.md) 。
-
- 
 

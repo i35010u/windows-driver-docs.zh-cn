@@ -6,12 +6,12 @@ keywords:
 - 驱动程序开发最佳做法
 ms.date: 08/06/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 56f8020fceabbbebfe4b834bf3792466c3aa8a44
-ms.sourcegitcommit: 68d0aec4c282c9c1e1ab54509c8f4575dd273d56
+ms.openlocfilehash: d8c70db0169a380319855e0fa8a8304e3f4731b4
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91221933"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91734431"
 ---
 # <a name="surface-team-driver-development-best-practices"></a>Surface 团队驱动程序开发最佳实践
 
@@ -44,7 +44,7 @@ ms.locfileid: "91221933"
 3. 使用联锁基元创建锁定方案，而不是使用适当系统提供的锁定基元，例如互斥体、信号量和旋转锁。 请参阅 [Mutex 对象](./introduction-to-mutex-objects.md)、 [信号对象](./semaphore-objects.md) 和 [旋转锁简介](./introduction-to-spin-locks.md)中的介绍。
 4. 使用旋转锁，其中某些类型的被动锁更合适。 请参阅 [快速 mutex 和受保护的 mutex](./fast-mutexes-and-guarded-mutexes.md) 和 [事件对象](./event-objects.md)。 有关锁的其他透视图，请查看 OSR 一文- [同步的状态](https://www.osr.com/nt-insider/2015-issue3/the-state-of-synchronization/)。
 5. 选择 "WDF 同步和执行级别" 模型，而无需充分了解含义。 请参阅 [使用框架锁](../wdf/using-framework-locks.md)。 除非你的驱动程序直接与硬件交互，否则请避免选择执行 WDF 同步，因为这可能会导致递归导致死锁。
-6. 在多个线程的上下文中获取 KEVENT、信号灯、ERESOURCE、UnsafeFastMutex，无需进入关键区域。 这样做可能会导致 DOS 攻击，因为持有其中一个锁定的线程可以被挂起。 请参阅 [内核调度程序对象简介](/windows-hardware/drivers/kernel/introduction-to-kernel-dispatcher-objects)。
+6. 在多个线程的上下文中获取 KEVENT、信号灯、ERESOURCE、UnsafeFastMutex，无需进入关键区域。 这样做可能会导致 DOS 攻击，因为持有其中一个锁定的线程可以被挂起。 请参阅 [内核调度程序对象简介](./introduction-to-kernel-dispatcher-objects.md)。
 7. 在事件仍在使用时，在线程堆栈上分配 KEVENT 并返回到调用方。 通常在与 [IoBuildSyncronousFsdRequest](/windows-hardware/drivers/ddi/wdm/nf-wdm-iobuildsynchronousfsdrequest) 或 [IoBuildDeviceIoControlRequest](/windows-hardware/drivers/ddi/wdm/nf-wdm-iobuilddeviceiocontrolrequest)一起使用时完成。 这些调用的调用方应确保它们不会从堆栈展开，直到在完成 IRP 后，i/o 管理器发出事件信号。
 8. 在调度例程中无限期等待。 通常，调度例程中的任何类型的等待都是一种不好的做法。
 9. 如果在删除对象之前) 等等 = = NULL，则不能正确检查该 (对象的有效性。 这通常意味着作者对控制对象生存期的代码没有充分的了解。

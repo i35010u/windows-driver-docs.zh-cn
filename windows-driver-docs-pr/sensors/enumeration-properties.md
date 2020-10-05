@@ -4,12 +4,12 @@ description: 本主题介绍 PnP 驱动程序存储区中可用的静态传感�
 ms.assetid: E4663410-375F-48B9-A9E4-6E608FA8D2FF
 ms.date: 01/04/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: f22a2700bbc78e05a5f346644ae19b1cd6b169a5
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: e410fd57060206af7169921f6728d80b30932494
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90107324"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91733048"
 ---
 # <a name="enumeration-properties"></a>枚举属性
 
@@ -18,7 +18,7 @@ ms.locfileid: "90107324"
 
 下表显示了静态传感器属性。 调用 [SensorsCxSensorCreate](/windows-hardware/drivers/ddi/sensorscx/nf-sensorscx-sensorscxsensorcreate) 时，) 扩展 (CX 为每个传感器写入这些属性。 客户端应用程序可以使用这些属性在 Windows 设备上搜索传感器。
 
-有关 " **类型** " 列中显示的数据类型的详细信息，请参阅 [PROPVARIANT 结构](https://go.microsoft.com/fwlink/p/?linkid=313395)。
+有关 " **类型** " 列中显示的数据类型的详细信息，请参阅 [PROPVARIANT 结构](/windows/win32/api/propidlbase/ns-propidlbase-propvariant)。
 
 <table>
 <colgroup>
@@ -32,20 +32,20 @@ ms.locfileid: "90107324"
 <th>属性键</th>
 <th>类型</th>
 <th>必需/可选</th>
-<th><strong>描述</strong></th>
+<th><strong>说明</strong></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td><p>DEVPKEY_Sensor_Type</p></td>
 <td><p>VT_CLSID</p></td>
-<td><p>必需</p></td>
+<td><p>必须</p></td>
 <td><p>标识传感器类型的 GUID。 有关传感器类型的详细信息，请参阅 <a href="/windows-hardware/drivers/sensors/about-sensor-constants" data-raw-source="[Sensor type GUIDs](./about-sensor-constants.md)">传感器类型 guid</a>。</p></td>
 </tr>
 <tr class="even">
 <td><p>DEVPKEY_Sensor_Category</p></td>
 <td><p>VT_CLSID</p></td>
-<td><p>必需</p></td>
+<td><p>必须</p></td>
 <td><p>传感器类别。 这是为了在需要时与桌面 v1 堆栈向后兼容。</p></td>
 </tr>
 <tr class="odd">
@@ -71,19 +71,19 @@ ms.locfileid: "90107324"
 <tr class="even">
 <td><p>DEVPKEY_Sensor_Manufacturer</p></td>
 <td><p>VT_LPWSTR</p></td>
-<td><p>必需</p></td>
+<td><p>必须</p></td>
 <td><p>传感器的制造商。</p></td>
 </tr>
 <tr class="odd">
 <td><p>DEVPKEY_Sensor_Model</p></td>
 <td><p>VT_LPWSTR</p></td>
-<td><p>必需</p></td>
+<td><p>必须</p></td>
 <td><p>传感器的模型。</p></td>
 </tr>
 <tr class="even">
 <td><p>DEVPKEY_Sensor_PersistentUniqueId</p></td>
 <td><p>VT_CLSID</p></td>
-<td><p>必需</p></td>
+<td><p>必须</p></td>
 <td><p>标识传感器的 GUID。 对于设备上相同型号的每个传感器，此值必须是唯一的。 此要求适用于内部和外部连接的传感器。</p></td>
 </tr>
 <tr class="odd">
@@ -113,13 +113,12 @@ ms.locfileid: "90107324"
 ## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
-[PROPVARIANT 结构](https://go.microsoft.com/fwlink/p/?linkid=313395)
+[PROPVARIANT 结构](/windows/win32/api/propidlbase/ns-propidlbase-propvariant)
 
 [**SensorConnectionType**](/windows-hardware/drivers/ddi/sensorsclassextension/ne-sensorsclassextension-__midl___midl_itf_windowssensorclassextension_0000_0000_0002)
 
 [SensorsCxSensorCreate](/windows-hardware/drivers/ddi/sensorscx/nf-sensorscx-sensorscxsensorcreate)
 
-[传感器属性](sensor-properties2.md)
+[传感器属性](./common-sensor-properties.md)
 
 [传感器类型 Guid](./about-sensor-constants.md)
-

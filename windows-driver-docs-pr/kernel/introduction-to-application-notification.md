@@ -4,42 +4,37 @@ description: 应用程序通知简介
 ms.assetid: c115eb29-8bd2-40f7-b979-cff386bdc9aa
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: a01abb24cf2e1c9de3de5c1afea43c8f2d427bde
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: cd5ddcf7dc0f90770b0d4ab11b3b4f4f560732f0
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63341039"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91733065"
 ---
 # <a name="introduction-to-application-notification"></a>应用程序通知简介
 
 
-从 Windows Server 2008 开始，处理器和内存模块被视为插 (PnP) 设备。 因此，操作系统使用的即插即用通知机制的应用程序通知。 即插即用通知机制发送 WM\_DEVICECHANGE 窗口消息，用户模式应用程序以通知有关更改硬件分区中的硬件的应用程序。
+从 Windows Server 2008 开始，会将处理器和内存模块视为即插即用 (PnP) 设备。 因此，操作系统使用应用程序通知的 PnP 通知机制。 PnP 通知机制将 WM \_ DEVICECHANGE 窗口消息发送到用户模式的应用程序，以通知应用程序对硬件分区中的硬件所做的更改。
 
-当新的处理器或内存模块添加到硬件分区时，操作系统将在此通知操作系统已启动新的处理器或内存设备后发送到用户模式应用程序。 对于新的处理器，操作系统不发送此消息可直到在它后面的用户模式应用程序已开始计划新的处理器上的线程。
+当将新的处理器或内存模块添加到硬件分区时，操作系统启动了新的处理器或内存设备后，操作系统会将此通知发送到用户模式应用程序。 对于新的处理器，操作系统在开始计划新处理器上的线程之前，不会将此消息发送给用户模式应用程序。
 
-**请注意**  是异步的所有即插即用通知。 因此，这些通知可能无法由接收用户模式应用程序，直到一段时间后在操作系统已启动的处理器或内存模块。
+**注意**   所有 PnP 通知都是异步的。 因此，用户模式应用程序在操作系统启动处理器或内存模块之前，可能不会收到这些通知。
 
  
 
-当在用户模式应用程序收到此通知时，它可以相应地调整某些或所有以下各项：
+当用户模式应用程序收到此通知时，它可以相应地调整部分或全部以下项：
 
 -   每个处理器的内存分配
 
--   中的应用程序的线程池的线程数
+-   应用程序的线程池中的线程数
 
 -   内存缓冲区分配
 
 -   负载平衡算法
 
-在用户模式应用程序可以获取通过调用是硬件分区中的物理内存量[GlobalMemoryStatusEx](https://go.microsoft.com/fwlink/p/?linkid=97891)函数。 有关详细信息**GlobalMemoryStatusEx**函数中，请参阅 Microsoft Windows SDK 文档。
+用户模式应用程序可以通过调用 [GlobalMemoryStatusEx](/windows/win32/api/sysinfoapi/nf-sysinfoapi-globalmemorystatusex) 函数获取硬件分区中的物理内存量。 有关 **GlobalMemoryStatusEx** 函数的详细信息，请参阅 Microsoft Windows SDK 文档。
 
-在用户模式应用程序必须注册以接收应用程序通知操作系统。 有关详细信息，请参阅[注册应用程序通知](registering-for-application-notification.md)。
-
- 
+用户模式应用程序必须向操作系统注册，以接收应用程序通知。 有关详细信息，请参阅 [注册应用程序通知](registering-for-application-notification.md)。
 
  
-
-
-
 

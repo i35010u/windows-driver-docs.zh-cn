@@ -7,12 +7,12 @@ keywords:
 ms.date: 01/07/2019
 ms.localizationpriority: medium
 ms.custom: Vib
-ms.openlocfilehash: 74780e659d901417086a56cb27cffb1b1b23d8f7
-ms.sourcegitcommit: 0c34101a0eed9f187fec03026021fff89bd233e3
+ms.openlocfilehash: 86f54886cfaf245db3d89fc9e2a48507ed18e5bf
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91135176"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91733258"
 ---
 # <a name="device-and-adapter-initialization"></a>设备和适配器初始化
 
@@ -111,7 +111,7 @@ NetAdapterCx 客户端驱动程序在从其[*DriverEntry*](../wdf/driverentry-fo
 
 NetAdapterCx 要求客户端驱动程序设置以下功能：
 
-* 数据路径功能。 驱动程序调用 [**NetAdapterSetDataPathCapabilities**](/windows-hardware/drivers/ddi/netadapter/nf-netadapter-netadaptersetdatapathcapabilities) 来设置这些功能。 有关详细信息，请参阅 [网络数据缓冲区管理](/windows-hardware/drivers/netcx/network-data-buffer-management)。
+* 数据路径功能。 驱动程序调用 [**NetAdapterSetDataPathCapabilities**](/windows-hardware/drivers/ddi/netadapter/nf-netadapter-netadaptersetdatapathcapabilities) 来设置这些功能。 有关详细信息，请参阅 [网络数据缓冲区管理](./network-data-buffer-management.md)。
 
 * 链接层功能。 驱动程序调用 [**NetAdapterSetDataPathCapabilities**](/windows-hardware/drivers/ddi/netadapter/nf-netadapter-netadaptersetlinklayercapabilities) 来设置这些功能。
 

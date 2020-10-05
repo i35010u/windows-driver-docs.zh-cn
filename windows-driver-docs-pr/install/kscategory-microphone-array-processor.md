@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: d762f0efb145e053ecafe84179cc350c986fd70e
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: fe1b816300ecf822036195a5f98c80feaf737469
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89095011"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91733953"
 ---
 # <a name="kscategory_microphone_array_processor"></a>KSCATEGORY_MICROPHONE_ARRAY_PROCESSOR
 
@@ -33,7 +33,7 @@ KSCATEGORY_MICROPHONE_ARRAY_PROCESSOR [设备接口类](./overview-of-device-int
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Attribute</th>
+<th align="left">属性</th>
 <th align="left">设置</th>
 </tr>
 </thead>
@@ -58,7 +58,7 @@ KS 设备的驱动程序将注册 KSCATEGORY_MICROPHONE_ARRAY_PROCESSOR 的实�
 
 有关音频设备功能类别的详细信息，请参阅 [安装音频适配器的设备接口](../audio/installing-device-interfaces-for-an-audio-adapter.md) 和 [**KSPROPERTY_TOPOLOGY_CATEGORIES**](../stream/ksproperty-topology-categories.md)。
 
-有关如何在 Windows Vista 中处理麦克风阵列的详细信息，请参阅 Windows vista [中的麦克风阵列支持](https://go.microsoft.com/fwlink/p/?linkid=120592) 和 [如何构建和使用适用于 Windows Vista 的麦克风阵列](https://go.microsoft.com/fwlink/p/?linkid=120593) 白皮书。
+有关如何在 Windows Vista 中处理麦克风阵列的详细信息，请参阅 Windows vista [中的麦克风阵列支持](/previous-versions/windows/hardware/design/dn613960(v=vs.85)) 和 [如何构建和使用适用于 Windows Vista 的麦克风阵列](/previous-versions/windows/hardware/design/dn613960(v=vs.85)) 白皮书。
 
 <a name="requirements"></a>要求
 ------------
@@ -84,6 +84,4 @@ KS 设备的驱动程序将注册 KSCATEGORY_MICROPHONE_ARRAY_PROCESSOR 的实�
 
 
 [**KSPROPERTY_TOPOLOGY_CATEGORIES**](../stream/ksproperty-topology-categories.md)
-
- 
 

@@ -6,12 +6,12 @@ keywords:
 - IRP 调度例程 WDK 文件系统，约束
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 38d21976872d69e643bae2633f76ca77ec2082ae
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 95c87a7aedd53b1d09282e3618d11cd69b7027a3
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89065114"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91734541"
 ---
 # <a name="constraints-on-dispatch-routines"></a>调度例程的约束
 
@@ -35,7 +35,7 @@ ms.locfileid: "89065114"
 
 ### <a name="span-idconstraints_on_processing_irpsspanspan-idconstraints_on_processing_irpsspanspan-idconstraints_on_processing_irpsspanconstraints-on-processing-irps"></a><span id="Constraints_on_Processing_IRPs"></span><span id="constraints_on_processing_irps"></span><span id="CONSTRAINTS_ON_PROCESSING_IRPS"></span>处理 Irp 的约束
 
--   如果 IRP 参数包含任何用户空间地址，则必须在使用之前对其进行验证。 有关详细信息，请参阅 [缓冲 i/o 中的错误](https://docs.microsoft.com/windows-hardware/drivers/kernel/errors-in-buffered-i-o)。
+-   如果 IRP 参数包含任何用户空间地址，则必须在使用之前对其进行验证。 有关详细信息，请参阅 [缓冲 i/o 中的错误](../kernel/failure-to-check-the-size-of-buffers.md)。
 
 -   此外，如果 IRP 包含从32位平台发送到64位平台的 IOCTL 或 FSCTL 缓冲区，则可能需要 thunked 缓冲区内容。 有关详细信息，请参阅 [64 位驱动程序中的支持32位 i/o](../kernel/supporting-32-bit-i-o-in-your-64-bit-driver.md)。
 
@@ -82,6 +82,4 @@ ms.locfileid: "89065114"
 ### <a name="span-idconstraints_on_posting_irps_to_a_work_queuespanspan-idconstraints_on_posting_irps_to_a_work_queuespanspan-idconstraints_on_posting_irps_to_a_work_queuespanconstraints-on-posting-irps-to-a-work-queue"></a><span id="Constraints_on_Posting_IRPs_to_a_Work_Queue"></span><span id="constraints_on_posting_irps_to_a_work_queue"></span><span id="CONSTRAINTS_ON_POSTING_IRPS_TO_A_WORK_QUEUE"></span>将 Irp 发送到工作队列的约束
 
 -   如果调度例程将 Irp 发送到工作队列，则必须先调用 [**也**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iomarkirppending) ，然后才能将每个 irp 发送到工作队列。 否则，IRP 可以取消排队，由其他驱动程序例程完成，并在调用 **也** 之前由系统释放，从而导致崩溃。
-
- 
 

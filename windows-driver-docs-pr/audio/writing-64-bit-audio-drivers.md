@@ -7,12 +7,12 @@ keywords:
 - 64位 WDK 音频
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 19cd2b66fb50d481aa9f15ac077202a955ba3a92
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 498670d4444f69b9cd461c10b13c418cf7b44fef
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89206607"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91733539"
 ---
 # <a name="writing-64-bit-audio-drivers"></a>编写 64 位音频驱动程序
 
@@ -20,7 +20,7 @@ ms.locfileid: "89206607"
 ## <span id="writing_64_bit_audio_drivers"></span><span id="WRITING_64_BIT_AUDIO_DRIVERS"></span>
 
 
-如果你正在编写64位驱动程序或编写可编译为在32和64位系统上运行的驱动程序，请遵循 [驱动程序编程方法](https://docs.microsoft.com/windows-hardware/drivers/kernel/miscellaneous-driver-programming-techniques)中的迁移指南。 下面介绍了编写64位音频驱动程序时可能会遇到的一些缺陷。
+如果你正在编写64位驱动程序或编写可编译为在32和64位系统上运行的驱动程序，请遵循 [驱动程序编程方法](../kernel/using-ntstatus-values.md)中的迁移指南。 下面介绍了编写64位音频驱动程序时可能会遇到的一些缺陷。
 
 首先，在现有32位驱动程序代码中查找的潜在问题是指针类型和整数类型（如 DWORD 或 ULONG）之间的转换。 具有为32位计算机编写代码的程序员可能用于假设指针值适合 DWORD 值或 ULONG。 对于64位代码，此假设是危险的。 将指针转换为类型 DWORD 或 ULONG 可能导致截断64位指针。 更好的方法是将指针转换为类型 DWORD \_ ptr 或 ULONG \_ ptr。 类型为 DWORD \_ ptr 或 ULONG ptr 的无符号整数 \_ 始终足够大以存储整个指针，无论代码是针对32还是64位计算机编译的。
 
@@ -69,6 +69,4 @@ ms.locfileid: "89206607"
 ```
 
 这是首选方案，尽管 `ulSlotPhysAddr` 可能表示只是32而不是64位的硬件寄存器的值。 有关在指针和整数类型之间进行转换的所有新的 Win64 helper 函数的列表，请参阅 [新的数据类型](../kernel/the-new-data-types.md)。
-
- 
 

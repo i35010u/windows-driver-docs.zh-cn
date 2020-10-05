@@ -14,12 +14,12 @@ keywords:
 - release 签名 WDK，关于发布签名
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 511a6cd1844a52e2d656a8bc1e419a6d47a8b8d7
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: a0a476e6a3b8ba41ddd5e889bdd4e14bc7ad722f
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89095639"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91733487"
 ---
 # <a name="release-signing-driver-packages"></a>对驱动程序包进行发布签名
 
@@ -50,7 +50,7 @@ ms.locfileid: "89095639"
 
 若要符合 Windows Vista 和更高版本的 Windows 的 [PnP 设备安装签名要求](pnp-device-installation-signing-requirements--windows-vista-and-later-.md) ，你必须获取已签名的 [目录文件](catalog-files.md) 或对 [驱动程序包](driver-packages.md)的编录文件进行签名。 如果驱动程序文件还将包含嵌入的签名，则在对驱动程序包的目录文件进行签名之前，将签名嵌入驱动程序文件中。
 
-如果 [硬件认证工具包 (HCK) ](https://go.microsoft.com/fwlink/p/?linkid=227016) 包含驱动程序的测试程序，请获取驱动程序包的 [WHQL 版本签名](whql-release-signature.md) 。 如果 HCK 没有适用于该驱动程序的测试程序，请 [创建一个编录文件](creating-a-catalog-file-for-a-pnp-driver-package.md) ，并按如下所示对该 [目录文件](catalog-files.md) 进行签名：
+如果 [硬件认证工具包 (HCK) ](/previous-versions/windows/hardware/hck/jj124227(v=vs.85)) 包含驱动程序的测试程序，请获取驱动程序包的 [WHQL 版本签名](whql-release-signature.md) 。 如果 HCK 没有适用于该驱动程序的测试程序，请 [创建一个编录文件](creating-a-catalog-file-for-a-pnp-driver-package.md) ，并按如下所示对该 [目录文件](catalog-files.md) 进行签名：
 
 **为64位版本的目录文件签名**
 
@@ -115,6 +115,4 @@ PnP 设备安装签名要求不适用于非 PnP 驱动程序。
 3.  [验证编录文件的 SPC 签名](verifying-the-spc-signature-of-a-catalog-file.md)。
 
 如果此类型的驱动程序具有已签名的 [目录文件](catalog-files.md) 而不是嵌入的签名，则安装驱动程序的安装应用程序必须在系统组件和驱动程序数据库中安装目录文件。 有关详细信息，请参阅为 [非 PnP 驱动程序安装发布签名的目录文件](installing-a-release-signed-catalog-file-for-a-non-pnp-driver.md)。
-
- 
 

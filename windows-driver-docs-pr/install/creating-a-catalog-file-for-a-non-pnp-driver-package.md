@@ -4,23 +4,23 @@ description: 为非 PnP 驱动程序包创建目录文件
 ms.assetid: b40a6f42-53a8-468f-abf1-335c5ead3cbd
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d8b6acf6226017449c60cb06c728fe7d14a3dbbc
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 7e25c0d5d789076d046873cfc6d693a32daecbcf
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89096433"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91733179"
 ---
 # <a name="creating-a-catalog-file-for-a-non-pnp-driver-package"></a>为非 PnP 驱动程序包创建目录文件
 
 
-可以使用[MakeCat](https://go.microsoft.com/fwlink/p/?linkid=104922)工具为非 PnP[驱动程序包](driver-packages.md)创建[编录文件](catalog-files.md)。
+可以使用[MakeCat](/windows/win32/seccrypto/makecat)工具为非 PnP[驱动程序包](driver-packages.md)创建[编录文件](catalog-files.md)。
 
 **注意**   只有使用 MakeCat 工具才能为未使用 INF 文件安装的驱动程序包创建编录文件。 如果使用 INF 文件安装了驱动程序包，请使用 [**Inf2Cat**](../devtest/inf2cat.md) 工具创建编录文件。 Inf2Cat 自动包括在包的 INF 文件中引用的驱动程序包中的所有文件。 有关如何使用 Inf2Cat 工具的详细信息，请参阅 [使用 Inf2Cat 创建编录文件](using-inf2cat-to-create-a-catalog-file.md)。
 
  
 
-若要创建目录文件，必须先手动 ( 创建目录定义文件。描述目录标头属性和文件项的) *。* 创建此文件后，你可以运行 [MakeCat](https://go.microsoft.com/fwlink/p/?linkid=104922) 工具来创建编录文件
+若要创建目录文件，必须先手动 ( 创建目录定义文件。描述目录标头属性和文件项的) *。* 创建此文件后，你可以运行 [MakeCat](/windows/win32/seccrypto/makecat) 工具来创建编录文件
 
 ### <a name="creating-a-catalog-file"></a>创建编录文件
 
@@ -28,7 +28,7 @@ ms.locfileid: "89096433"
 
 1.  使用文本编辑器创建。*cdf* 文件，其中列出了要创建的 [目录文件](catalog-files.md) 的名称、其属性以及要在目录文件中列出的文件的名称。
 
-2.  使用 [MakeCat](https://go.microsoft.com/fwlink/p/?linkid=104922) 命令行工具创建编录文件。 有关 MakeCat 工具的详细信息，请参阅 [使用 MakeCat](https://go.microsoft.com/fwlink/p/?linkid=70086) 网站。
+2.  使用 [MakeCat](/windows/win32/seccrypto/makecat) 命令行工具创建编录文件。 有关 MakeCat 工具的详细信息，请参阅 [使用 MakeCat](/windows/win32/seccrypto/using-makecat) 网站。
 
 3.  在将安装驱动程序的计算机上安装目录文件。
 
@@ -71,7 +71,7 @@ CATATTR1=0x10010001:OSAttr:2:6.0
 <hash>File2=File2
 ```
 
-下面介绍了本示例中使用的选项。 有关这些选项的详细信息，请参阅 [MakeCat](https://go.microsoft.com/fwlink/p/?linkid=104922) 网站。
+下面介绍了本示例中使用的选项。 有关这些选项的详细信息，请参阅 [MakeCat](/windows/win32/seccrypto/makecat) 网站。
 
 <a href="" id="name-good-cat"></a>名称 = 好的 .cat  
 指定 (*Good.cat*) 的目录文件的名称。
@@ -117,6 +117,4 @@ OSAttr 特性指定其签名要求与 [驱动程序包](driver-packages.md)兼�
 ```cpp
 MakeCat -v Good.cdf
 ```
-
- 
 

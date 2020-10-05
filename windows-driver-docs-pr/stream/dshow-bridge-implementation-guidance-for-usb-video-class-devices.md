@@ -3,12 +3,12 @@ title: 适用于 UVC 设备的 DShow 桥实现指南
 description: 提供 UVC 设备的 DShow Bridge 实现指南。
 ms.date: 05/17/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: ab250566c226e26ecbbf751e057182150dcda68e
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: dcef6cb76a118c808aacbf92bd805bf105b02b1f
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89185415"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91732769"
 ---
 # <a name="dshow-bridge-implementation-guidance-for-uvc-devices"></a>适用于 UVC 设备的 DShow 桥实现指南
 
@@ -68,7 +68,7 @@ Ihv 和 Oem 可能需要用于管理 DShow 管道的策略的例外。 合作伙
 
 标头部分描述了整个扩展属性说明符，其中包括总长度和版本号。
 
-| Offset | 字段      | 大小（字节） | 值      | 描述                     |
+| Offset | 字段      | 大小（字节） | 值      | 说明                     |
 |--------|------------|--------------|------------|---------------------------------|
 | 0      | dwLength   | 4            | 0x0000004c | 76 decimal                      |
 | 4      | bcdVersion | 2            | 0x0100     | 版本 1.0                     |
@@ -136,12 +136,9 @@ UCHAR Example2\_MSOS20DescriptorSetForFutureWindows\[0x48\] =
     0x6F, 0x00, 0x6E, 0x00,
     0x00, 0x00, 0x00, 0x00,
     0x04, 0x00,                 // wPropertyDataLength – 4 bytes
-    0x00, 0x00, 0x00, 0x00      // PropertyData – 0x00000003 (see note below)
+    0x00, 0x00, 0x00, 0x00      // PropertyData – 0x00000003 (DShow Bridge is enabled and MJPEG is decoded in FrameServer)
 }
 ```
-
-> [!NOTE]
-> 0x00000003：-DShow Bridge 已启用并在 FrameServer 中解码 MJPEG，例如源
 
 ### <a name="resources"></a>资源
 

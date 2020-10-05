@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: aebdaaf5f45aa48322f8a5371ff028819cf6bf2d
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 0d91763fa4dc60b983f9ced9e7e26f3a4bd8a261
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89188713"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91732589"
 ---
 # <a name="driverentry-for-wdf-drivers-routine"></a>WDF 驱动程序例程的 DriverEntry
 
@@ -43,14 +43,14 @@ NTSTATUS DriverEntry(
 指向 [**驱动程序 \_ 对象**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_driver_object) 结构的指针，该结构表示驱动程序的 WDM 驱动程序对象。
 
 *RegistryPath* \[中\]  
-指向 [**UNICODE \_ 字符串**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfwdm/ns-wudfwdm-_unicode_string) 结构的指针，该字符串结构指定注册表中驱动程序的 [Parameters 项](./introduction-to-registry-keys-for-drivers.md) 的路径。
+指向 [**UNICODE \_ 字符串**](/windows-hardware/drivers/ddi/wudfwdm/ns-wudfwdm-_unicode_string) 结构的指针，该字符串结构指定注册表中驱动程序的 [Parameters 项](./introduction-to-registry-keys-for-drivers.md) 的路径。
 
 <a name="return-value"></a>返回值
 ------------
 
 如果例程成功，则它必须返回状态 " \_ 成功"。 否则，它必须返回在 *ntstatus*中定义的错误状态值之一。
 
-<a name="remarks"></a>注解
+<a name="remarks"></a>备注
 -------
 
 与所有 WDM 驱动程序一样，基于框架的驱动程序必须具有 **DriverEntry** 例程，该例程是在加载驱动程序后调用的。 基于框架的驱动程序的 **DriverEntry** 例程必须：
@@ -187,12 +187,10 @@ DriverEntry(
 }
 ```
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
 [**WdfDriverCreate**](/windows-hardware/drivers/ddi/wdfdriver/nf-wdfdriver-wdfdrivercreate)
 
 [*EvtDriverDeviceAdd*](/windows-hardware/drivers/ddi/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)
-
- 
 

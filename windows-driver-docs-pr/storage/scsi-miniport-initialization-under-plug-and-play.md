@@ -10,12 +10,12 @@ keywords:
 - SCSI 微型端口驱动程序 WDK 存储，初始化
 ms.date: 10/08/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 5d060f37a54ab9b6f648823426de5b0205401229
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: cd03df5bce0405b8b0a897673d51c7f4cc03666a
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89187779"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91734489"
 ---
 # <a name="scsi-miniport-initialization-under-plug-and-play"></a>在即插即用下进行的 SCSI 微型端口初始化
 
@@ -29,4 +29,4 @@ ms.locfileid: "89187779"
 
 可能要求已作为即插即用驱动程序启动的微型端口驱动程序检测 nonenumerable 总线上的设备。 这包括总线，如 ISA，这要求总线上的微型端口驱动程序发出命令来查找 HBA。 此类检测中的设备会记录在注册表中，并在下次启动系统时作为即插即用设备进行初始化。
 
-有关即插即用的详细信息，请参阅 [即插即用](https://docs.microsoft.com/windows-hardware/drivers/kernel/implementing-plug-and-play)。
+有关即插即用的详细信息，请参阅 [即插即用](../kernel/introduction-to-plug-and-play.md)。

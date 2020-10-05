@@ -11,12 +11,12 @@ keywords:
 - 安全字符串函数 WDK
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4cb386f4c92bbcc2133be9ca330464af2d4547c5
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: f98c72f45a6b16d1bc8eab1d984d471aaf79cfcb
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72828307"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91732983"
 ---
 # <a name="importing-kernel-mode-safe-string-functions"></a>导入内核模式安全字符串函数
 
@@ -26,7 +26,7 @@ ms.locfileid: "72828307"
 
 从 Windows XP 开始，内核模式安全字符串库可用作在 Ntstrsafe.h 而头文件中定义的内联函数的集合。
 
-### <a href="" id="to-use-the-inline-versions-of-the-kernel-mode--safe-string-functions"></a>使用内核模式安全字符串函数
+### <a name="to-use-the-kernel-mode-safe-string-functions"></a><a href="" id="to-use-the-inline-versions-of-the-kernel-mode--safe-string-functions"></a>使用内核模式安全字符串函数
 
 包括头文件，如下所示。
 
@@ -52,11 +52,11 @@ ms.locfileid: "72828307"
 #define NTSTRSAFE_NO_CB_FUNCTIONS
 ```
 
-可以定义 NTSTRSAFE.H 而\_NO\_CB\_函数或 NTSTRSAFE.H 而\_无\_CCH\_函数，但不能同时定义两者。
+你可以定义 NTSTRSAFE.H 而 \_ \_ \_ 或 Ntstrsafe.h 而 \_ no \_ CCH \_ 函数，但不能同时定义这两者。
 
-您可以使[**UNICODE\_字符串**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfwdm/ns-wudfwdm-_unicode_string)结构函数不可用。
+您可以使 [**UNICODE \_ 字符串**](/windows-hardware/drivers/ddi/wudfwdm/ns-wudfwdm-_unicode_string) 结构函数不可用。
 
-### <a href="" id="to-make-unicode-string-structure-functions-unavailable"></a>使 UNICODE\_字符串结构函数不可用
+### <a name="to-make-unicode_string-structure-functions-unavailable"></a><a href="" id="to-make-unicode-string-structure-functions-unavailable"></a>使 UNICODE \_ 字符串结构函数不可用
 
 在包含 Ntstrsafe.h 而头文件之前，请在代码中包含以下行。
 
@@ -64,9 +64,9 @@ ms.locfileid: "72828307"
 #define NTSTRSAFE_NO_UNICODE_STRING_FUNCTIONS
 ```
 
-任何 ANSI 或 Unicode 字符串可包含的最大字符数都是 NTSTRSAFE.H 而\_MAX\_CCH。 **Unicode\_字符串**结构可包含的最大字符数\_UNICODE\_STRING\_MAX\_CCH。 这些常量在 Ntstrsafe.h 而中定义。
+任何 ANSI 或 Unicode 字符串可包含的最大字符数为 NTSTRSAFE.H 而 \_ MAX \_ CCH。 **Unicode \_ 字符串**结构可包含的最大字符数为 Ntstrsafe.h 而 \_ unicode \_ string \_ MAX \_ CCH。 这些常量在 Ntstrsafe.h 而中定义。
 
-通过在代码中包含以下行，你的驱动程序可以通过在代码中包含以下行，将较小的值分配给 NTSTRSAFE.H 而\_最大\_CCH 和 NTSTRSAFE.H 而\_UNICODE\_字符串\_
+通过在代码中包含以下行，你的驱动程序可以 \_ \_ \_ \_ \_ \_ 通过在代码中包含以下行，将较小的值分配给 Ntstrsafe.h 而 max CCH 和 ntstrsafe.h 而 UNICODE STRING MAX CCH。
 
 ```cpp
 #define NTSTRSAFE_MAX_CCH  <new-value>
@@ -76,9 +76,4 @@ ms.locfileid: "72828307"
 Ntstrsafe.h 而中的指令验证新值是否不大于默认值。
 
  
-
- 
-
-
-
 

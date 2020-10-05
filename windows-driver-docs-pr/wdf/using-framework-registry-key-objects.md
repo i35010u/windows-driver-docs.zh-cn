@@ -14,12 +14,12 @@ keywords:
 - 删除注册表项 WDK KMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 77596e443517054aeb83ab19c398ca7cfb2be8f0
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 29045fbb786494df7afd9a092f3ea841ae3b79f2
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89187761"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91733095"
 ---
 # <a name="using-framework-registry-key-objects"></a>使用框架注册表项对象
 
@@ -42,7 +42,7 @@ ms.locfileid: "89187761"
 检索当前分配给字符串类型的值名称的字符串数据，并将该字符串分配给指定的框架字符串对象。
 
 <a href="" id="---------wdfregistryqueryunicodestring--------"></a>[**WdfRegistryQueryUnicodeString**](/windows-hardware/drivers/ddi/wdfregistry/nf-wdfregistry-wdfregistryqueryunicodestring)  
-检索当前分配给字符串类型的值名称的字符串数据，并将该字符串复制到指定的 [**UNICODE \_ 字符串**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfwdm/ns-wudfwdm-_unicode_string) 结构。
+检索当前分配给字符串类型的值名称的字符串数据，并将该字符串复制到指定的 [**UNICODE \_ 字符串**](/windows-hardware/drivers/ddi/wudfwdm/ns-wudfwdm-_unicode_string) 结构。
 
 <a href="" id="---------wdfregistryqueryulong--------"></a>[**WdfRegistryQueryULong**](/windows-hardware/drivers/ddi/wdfregistry/nf-wdfregistry-wdfregistryqueryulong)  
 检索当前分配给值名称的无符号长词 (REG \_ DWORD) 数据，并将数据复制到指定位置。
@@ -75,6 +75,4 @@ ms.locfileid: "89187761"
 若要获取有关注册表的 WDM 信息，驱动程序可以调用 [**WdfRegistryWdmGetHandle**](/windows-hardware/drivers/ddi/wdfregistry/nf-wdfregistry-wdfregistrywdmgethandle)，这会将一个 WDM 句柄返回到框架注册表项对象表示的注册表项。
 
 驱动程序访问完注册表项后，必须调用 [**WdfRegistryClose**](/windows-hardware/drivers/ddi/wdfregistry/nf-wdfregistry-wdfregistryclose) 或 [**WdfObjectDelete**](/windows-hardware/drivers/ddi/wdfobject/nf-wdfobject-wdfobjectdelete) 来关闭该项并删除注册表项对象。
-
- 
 

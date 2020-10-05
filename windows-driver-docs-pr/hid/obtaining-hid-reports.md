@@ -10,12 +10,12 @@ keywords:
 - HID 报告 WDK，获取
 ms.date: 09/10/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 697875e66da157459e9753a718b6826d9a6e9d57
-ms.sourcegitcommit: 8835925c6a88efc301dc5e8bd9bca87082416eb6
+ms.openlocfilehash: 3a9342959afe1ba89a801f0fd36716e56435aa2f
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/18/2020
-ms.locfileid: "90777595"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91734375"
 ---
 # <a name="obtaining-hid-reports"></a>获取 HID 报告
 
@@ -43,15 +43,15 @@ ms.locfileid: "90777595"
 
 ## <a name="obtaining-hid-reports-by-kernel-mode-drivers"></a>通过内核模式驱动程序获取 HID 报表
 
-本主题讨论内核模式驱动程序应如何使用 [IRP_MJ_READ](/windows-hardware/drivers/ifs/irp-mj-read) 请求作为持续获取 HID 输入报告的主要方法。
+本主题讨论内核模式驱动程序应如何使用 [IRP_MJ_READ](../ifs/irp-mj-read.md) 请求作为持续获取 HID 输入报告的主要方法。
 
 连续读取请求按从集合接收输入报告的顺序返回输入报告。 驱动程序还可以使用 **IOCTL_HID_GET_Xxx** 请求来获取输入和功能报告。 但是，驱动程序应仅使用这些 i/o 请求来获取设备的当前状态。 如果驱动程序尝试使用 [IOCTL_HID_GET_INPUT_REPORT](/windows-hardware/drivers/ddi/hidclass/ni-hidclass-ioctl_hid_get_input_report) 连续获取输入报告，则报告可能会丢失。 此外，某些设备可能不支持 **IOCTL_HID_GET_INPUT_REPORT**，如果使用此请求，则将不会响应。
 
 ### <a name="using-irp_mj_read-requests"></a>使用 IRP_MJ_READ 请求
 
-对于 Windows XP 及更高版本的非 WDM Windows 2000 驱动程序和驱动程序，可以对设备使用单个 IRP 来处理所有读取请求。 但是，Windows 2000 WDM 驱动程序必须为每个读取请求分配新的 IRP。 有关如何使用和重用 Irp 的一般信息，请参阅 [处理 irp](/windows-hardware/drivers/kernel/handling-irps) 和 [重用 irp](/windows-hardware/drivers/kernel/reusing-irps)。
+对于 Windows XP 及更高版本的非 WDM Windows 2000 驱动程序和驱动程序，可以对设备使用单个 IRP 来处理所有读取请求。 但是，Windows 2000 WDM 驱动程序必须为每个读取请求分配新的 IRP。 有关如何使用和重用 Irp 的一般信息，请参阅 [处理 irp](../kernel/handling-irps.md) 和 [重用 irp](../kernel/reusing-irps.md)。
 
-如果驱动程序重用 IRP，则 IRP 的 [IoCompletion](/windows-hardware/drivers/ddi/wdm/nc-wdm-io_completion_routine) 例程应完成状态为 **STATUS_MORE_PROCESSING_REQUIRED** (的请求，而不释放 irp) 。 当驱动程序不再需要 IRP 时，应通过调用 [IoCompleteRequest](/windows-hardware/drivers/ddi/wdm/nf-wdm-iocompleterequest) 和 [IoFreeIrp](/windows-hardware/drivers/ddi/wdm/nf-wdm-iofreeirp)来完成并释放 irp。 例如，驱动程序通常可能在其 [卸载](/windows-hardware/drivers/kernel/unload-routine-functionality) 例程中完成并释放 IRP，或在删除设备之后。
+如果驱动程序重用 IRP，则 IRP 的 [IoCompletion](/windows-hardware/drivers/ddi/wdm/nc-wdm-io_completion_routine) 例程应完成状态为 **STATUS_MORE_PROCESSING_REQUIRED** (的请求，而不释放 irp) 。 当驱动程序不再需要 IRP 时，应通过调用 [IoCompleteRequest](/windows-hardware/drivers/ddi/wdm/nf-wdm-iocompleterequest) 和 [IoFreeIrp](/windows-hardware/drivers/ddi/wdm/nf-wdm-iofreeirp)来完成并释放 irp。 例如，驱动程序通常可能在其 [卸载](../kernel/unload-routine-functionality.md) 例程中完成并释放 IRP，或在删除设备之后。
 
 如果驱动程序只对一个读取请求使用 IRP，IRP 的 **IoCompletion** 例程应完成并释放 irp，并返回 **STATUS_SUCCESS**。
 

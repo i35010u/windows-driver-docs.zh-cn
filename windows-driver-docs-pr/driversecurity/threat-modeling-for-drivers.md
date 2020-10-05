@@ -4,12 +4,12 @@ description: 驱动程序编写者和架构师在任何驱动程序的设计过�
 ms.assetid: 77FB242E-A07C-4298-80ED-866F8D80118C
 ms.date: 06/27/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 445953946548dbea708b0d666678869f3944dd44
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 2d22f8d040fe172821b423dca77be26f322a1e5a
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89215654"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91733189"
 ---
 # <a name="threat-modeling-for-drivers"></a>驱动程序的威胁建模
 
@@ -255,7 +255,7 @@ ms.locfileid: "89215654"
 
 下表介绍了前面所述的示例，下表显示了设计器如何评估假设的拒绝服务攻击：
 
-| 维持条件 | Score   | 注释                                                                |
+| 维持条件 | 分数   | 说明                                                                |
 |-----------------|---------|-------------------------------------------------------------------------|
 | 损害          | 8       | 暂时中断工作，但不会造成永久性损坏或数据丢失。 |
 | 可再现性 | 10      | 导致设备每次都失败。                                   |
@@ -344,7 +344,7 @@ Microsoft 使其四个核心 SDL 培训课程可供下载。 [Microsoft 安全�
 
 **Microsoft Windows 驱动程序开发工具包 (DDK) **
 
-请参阅[内核模式驱动程序体系结构](../index.yml)中的[驱动程序编程方法](https://docs.microsoft.com/windows-hardware/drivers/kernel/driver-programming-techniques)
+请参阅[内核模式驱动程序体系结构](../index.yml)中的[驱动程序编程方法](../kernel/using-nt-and-zw-versions-of-the-native-system-services-routines.md)
 
 **测试工具**
 
@@ -358,5 +358,3 @@ Microsoft 使其四个核心 SDL 培训课程可供下载。 [Microsoft 安全�
 -   常见漏洞枚举： <https://cwe.mitre.org/>
 -   常见攻击模式枚举和分类： <https://capec.mitre.org/index.html>
 -   NIST 维护一个站点，说明如何编录漏洞： <https://samate.nist.gov/BF/>
-
-

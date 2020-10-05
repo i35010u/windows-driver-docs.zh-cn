@@ -4,12 +4,12 @@ description: 本主题提供有关在 Windows 8.1 中的系统上支持内部相
 ms.assetid: 7664F0F6-BD95-4919-82E4-F6F8080C2B5B
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f7650bd56ba9802010b2710ef75fb0fe96ca871f
-ms.sourcegitcommit: 74a8dc9ef1da03857dec5cab8d304e2869ba54a7
+ms.openlocfilehash: 7b3b5a5ed0d9639fb4a4447ae39775012b68f87c
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90759770"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91733210"
 ---
 # <a name="identifying-the-location-of-internal-cameras-uwp-device-apps"></a>确定 (UWP 设备应用的内部照相机位置) 
 
@@ -19,7 +19,7 @@ ms.locfileid: "90759770"
 
 具有内置相机且按机械固定方向的系统必须报告照相机的物理位置。 此物理位置信息指示相机的方向（例如正面或背面），以便在 Windows 8.1 的应用程序中使用相机。
 
-以下两个 [Windows 硬件认证要求](https://go.microsoft.com/fwlink/p/?LinkId=320504)（允许 Windows 识别相机位置）是必需的：
+以下两个 [Windows 硬件认证要求](/previous-versions/windows/hardware/cert-program/)（允许 Windows 识别相机位置）是必需的：
 
 - **PCContainer. PCAppearsAsSingleObject**。 必须将照相机分组到计算机的设备容器中，该容器包含计算机上物理位置的设备功能。 必须将相机分组到计算机的设备容器中，才能向应用公开其物理位置，因为计算机容器外部的设备不会采用按机械方式固定的方向。
 
@@ -38,7 +38,7 @@ ms.locfileid: "90759770"
 
 根据证书要求 **PCContainer PCAppearsAsSingleObject**（也称为 SYSFUND-0200），必须将内部照相机设备节点组合到 PC 设备容器下。 换句话说，内部照相机不应显示在 **设备和打印机** 中，必须合并到 PC 容器。
 
-实现此要求的方式取决于内部照相机的总线类型。 如果设备可以在 ACPI 表中显示有关物理设备位置的信息，则可以通过在 acpi 层中包含 \_ PLD 信息并修改 acpi 表中的 UserVisible 标志来指定正确的分组，如 [多功能设备支持和设备容器分组](https://go.microsoft.com/fwlink/p/?LinkId=320505)中所述。 否则，请使用 DeviceOverrides 注册表项替代可移动标志。 有关详细信息，请参阅 [DeviceOverrides 注册表项](https://go.microsoft.com/fwlink/p/?LinkId=320506)。
+实现此要求的方式取决于内部照相机的总线类型。 如果设备可以在 ACPI 表中显示有关物理设备位置的信息，则可以通过在 acpi 层中包含 \_ PLD 信息并修改 acpi 表中的 UserVisible 标志来指定正确的分组，如 [多功能设备支持和设备容器分组](../install/container-ids.md)中所述。 否则，请使用 DeviceOverrides 注册表项替代可移动标志。 有关详细信息，请参阅 [DeviceOverrides 注册表项](../install/deviceoverrides-registry-key.md)。
 
 ### <a name="how-to-provide-physical-location-using-_pld-info-in-the-acpi-table"></a>如何 \_ 在 ACPI 表中使用 PLD 信息提供物理位置
 
@@ -47,11 +47,11 @@ ms.locfileid: "90759770"
 | Bits 69:67 的值 \[\] | Panel   |
 |-------------------------|---------|
 | 0                       | TOP     |
-| 1                       | 底部  |
+| 1                       | 下  |
 | 2                       | Left    |
 | 3                       | Right   |
 | 4                       | Front   |
-| 5                       | 返回    |
+| 5                       | Back    |
 | 6                       | Unknown |
 
 此外，位 143:128 (垂直偏移) 和 bits 159:144 (水平偏移) 必须提供与显示器相关的相机相对位置。 此原点相对于显示组件中的本机像素寻址，并且应与横向或纵向的当前显示方向匹配。 原点是显示的左下角，其中，正水平和垂直偏移值分别向右和向上偏移。
@@ -118,16 +118,16 @@ InternalDeviceModification 注册表项指示至少有一个相机使用 ModelID
 
 |注册表项名称|InternalDeviceModification|
 |----|----|
-|必需/可选| 必需|
-|路径|`HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control`|
-|格式要求|None|
+|必需/可选| 必须|
+|`Path`|`HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control`|
+|格式要求|无|
 |有效子项|模型 ID 注册表项 (参阅以下子项格式要求和示例) |
 
 ### <a name="model-id-registry-key"></a>模型 ID 注册表项
 
 | 注册表项名称   | 模型 ID (准确的模型 ID 值为密钥名称) |
 |----|----|
-|必需/可选|必需|
+|必需/可选|必须|
 |格式要求|密钥名称是 OEM 创建的 GUID。 它必须同时具有左括号和右括号。 |
 |有效值|硬件 ID 注册表值或 `PLD_Panel`|
 | 示例|`{43922620-DAD9-4C05-BE3F-F65B089D84D8}`|
@@ -136,7 +136,7 @@ InternalDeviceModification 注册表项指示至少有一个相机使用 ModelID
 
 |注册表值名称|HardwareIDs|
 |----|----|
-|必需/可选|必需|
+|必需/可选|必须|
 |类型|多字符串|
 |格式要求|必须包含硬件 ID 的总线前缀。 所有 "" 字符都必须替换为 "#"。|
 |示例|`USB#VID_1234&PID_ABCD&REV_0001` <br/>`PCI#VEN_ABCD&DEV_1234&SUBSYS_000`|
@@ -159,14 +159,14 @@ InternalDeviceModification 注册表项指示至少有一个相机使用 ModelID
 
 在 \_ ACPI 规范中，PLD 面板注册表值定义为 \_ PLD (物理设备位置) 。 此值指示照相机在其机箱中的物理位置，必须是以下各项之一。
 
-| “值” | 描述|
+| 值 | 说明|
 |-------|----------|
 | 0     | TOP|
-| 1     | 底部|
+| 1     | 下|
 | 2     | Left|
 | 3     | Right|
 | 4     | Front|
-| 5     | 返回 |
+| 5     | Back |
 | 6     | 将忽略未知的 (垂直位置和水平位置)  |
 
 ### <a name="internaldevicemodification-registry-key-examples"></a>InternalDeviceModification 注册表项示例

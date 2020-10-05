@@ -4,12 +4,12 @@ description: 本主题介绍 Windows 显示驱动程序模型 (WDDM) 版本1.2 �
 ms.assetid: 65072545-76F0-43A8-9E46-703CA99BFE90
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ecdbf1c8ba1aa919476489cda0279ae7ded646bf
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: ae3cad6e490162cf9863e146fd4fe88058f72360
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89065984"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91734451"
 ---
 # <a name="wddm-12-features"></a>WDDM 1.2 功能
 
@@ -31,7 +31,7 @@ WDDM 1.2 具有强制功能和可选功能。 驱动程序必须实现所有必�
 | [Windows 8 中的 TDR 更改](tdr-changes-in-windows-8.md)                                                       | 改善了 GPU 挂起的复原                                                                                           | M                               | M                             | NA                             |
 | [优化的屏幕旋转支持](optimized-screen-rotation-support.md)                                     | 无闪烁的屏幕旋转体验                                                                                 | M                               | NA                            | M                              |
 | [立体 3D](stereoscopic-3d.md)                                                                         | 提供一致的 API 和 DDI 平台来启用 Stereoscopic 3D 方案                                             | O                               | NA                            | NA                             |
-| [Direct3D 11 视频播放改进](d3d11-video-playback-improvements.md)                               | 视频播放应用程序的简化编程体验                                                          | M\*                             | M\*                           | NA                             |
+| [Direct3D 11 视频播放改进](d3d11-video-playback-improvements.md)                               | 视频播放应用程序的简化编程体验                                                          | 年\*                             | 年\*                           | NA                             |
 | [视频内存的直接交替](direct-flip-of-video-memory.md)                                                 | 视频播放和组合堆栈改进，以减少能耗                                       | M                               | NA                            | NA                             |
 | [提供无缝状态转换](seamless-state-transitions-in-wddm-1-2-and-later.md)                   | 在状态转换和 bug 检查期间维护高分辨率                                                   | M                               | NA                            | M                              |
 | [即插即用 (PnP) 启动和停止](plug-and-play--pnp--start-and-stop-cases.md)                             | 维护高分辨率，因为在固件、Windows 和驱动程序之间过渡显示所有权                        | M                               | NA                            | M                              |
@@ -61,7 +61,7 @@ Windows 8 中还提供了以下新的或已更新的显示驱动程序 DDIs：
 
 提供一组有限的显示功能，无需呈现功能。
 
-**注意**   另请参阅[内核模式仅显示小型端口驱动程序](https://go.microsoft.com/fwlink/p/?linkid=258742)示例。
+**注意**   另请参阅[内核模式仅显示小型端口驱动程序](/samples/browse/)示例。
 
  
 
@@ -130,6 +130,4 @@ Windows 8 中还提供了以下新的或已更新的显示驱动程序 DDIs：
 [**Windows 8 OpenGL 增强功能**](supporting-opengl-enhancements.md)
 
 OpenGL 可安装的客户端驱动程序 (ICDs) 可以调用新函数来控制对资源的访问，以及在对象和标识符之间进行映射。
-
- 
 

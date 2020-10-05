@@ -8,12 +8,12 @@ keywords:
 - 总线主控 DMA WDK KMDF，事务
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1d5975f9111fe1b62b75c659fe2bda737ef16eeb
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: b60b093442529bdb072e2b0c7499f49ba2200bb9
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89191021"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91732587"
 ---
 # <a name="enabling-dma-transactions"></a>启用 DMA 事务
 
@@ -31,7 +31,7 @@ ms.locfileid: "89191021"
 
 3.  如果设备支持分散/收集操作，请调用 [**WdfDmaEnablerSetMaximumScatterGatherElements**](/windows-hardware/drivers/ddi/wdfdmaenabler/nf-wdfdmaenabler-wdfdmaenablersetmaximumscattergatherelements) 以指定设备可在散点/集合列表中支持的最大元素数。
 
-[PLX9x5x](https://go.microsoft.com/fwlink/p/?linkid=256157)示例中的以下代码示例演示了如何启用框架的 DMA 功能。 此代码出现在 *Init .c 文件*中。
+[PLX9x5x](/samples/browse/)示例中的以下代码示例演示了如何启用框架的 DMA 功能。 此代码出现在 *Init .c 文件*中。
 
 ```cpp
 WDF_DMA_ENABLER_CONFIG   dmaConfig;

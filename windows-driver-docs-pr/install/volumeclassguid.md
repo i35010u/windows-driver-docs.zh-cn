@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 497b3c49a7d032a439763bc40d1dc4e54ba08fdb
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 4fb75c1ca3900b5eeb87573614fbd34e6bf67e25
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89094813"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91732513"
 ---
 # <a name="volumeclassguid"></a>VolumeClassGuid
 
@@ -29,7 +29,7 @@ VolumeClassGuid 是卷设备的 [设备接口类](./overview-of-device-interface
 <a name="remarks"></a>备注
 -------
 
-WDK 中的存储 [示例](https://go.microsoft.com/fwlink/p/?LinkId=618052) 包括一个 [Addfilter 存储筛选器工具](https://go.microsoft.com/fwlink/p/?linkid=256076) ，该工具使用 VolumeClassGuid 枚举 [**GUID_DEVINTERFACE_VOLUME**](guid-devinterface-volume.md) 设备接口类的实例。
+WDK 中的存储 [示例](https://go.microsoft.com/fwlink/p/?LinkId=618052) 包括一个 [Addfilter 存储筛选器工具](/samples/browse/) ，该工具使用 VolumeClassGuid 枚举 [**GUID_DEVINTERFACE_VOLUME**](guid-devinterface-volume.md) 设备接口类的实例。
 
 <a name="requirements"></a>要求
 ------------
@@ -55,6 +55,4 @@ WDK 中的存储 [示例](https://go.microsoft.com/fwlink/p/?LinkId=618052) 包�
 
 
 [**GUID_DEVINTERFACE_VOLUME**](guid-devinterface-volume.md)
-
- 
 

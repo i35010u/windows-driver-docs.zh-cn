@@ -4,12 +4,12 @@ ms.assetid: 7AA53797-F8DC-4FA6-9A19-E20289AF50CA
 description: 提供有关 Windows 中的蓝牙主机无线电支持的问题和解答列表
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f2cca9a97bbc27471809bc13086bacc45b137643
-ms.sourcegitcommit: 937974aa9bbe0262a7ffe9631593fab48c4e7492
+ms.openlocfilehash: 648404b2c0c39e3e370b2c7b2edd752b36affc38
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "90010569"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91733441"
 ---
 # <a name="bluetooth-host-radio-support"></a>蓝牙主机无线电支持
 
@@ -24,7 +24,7 @@ ms.locfileid: "90010569"
 新的蓝牙无线电可能与 Windows 附带 (Bth) 中的任何设备 Id 都不匹配。 这会阻止 Windows 加载设备的蓝牙堆栈。 Ihv 应通过以下方式之一确保其无线电适用于本机蓝牙堆栈：
 
 * 为引用 Bth 的收音机创建 INF。 有关蓝牙收音机的供应商特定 INF 文件的示例，请参阅 [附录 B：供应商提供的用于 Windows Vista 的 Inf 文件的示例](bluetooth-faq--appendix-b.md)。
-* 在设备固件中存储扩展的兼容 ID 操作系统描述符，以指定相应的兼容和 subcompatible ID。 有关扩展兼容 ID 操作系统描述符的信息，请参阅 [MICROSOFT OS 描述符](https://go.microsoft.com/fwlink/p/?linkid=308932)。
+* 在设备固件中存储扩展的兼容 ID 操作系统描述符，以指定相应的兼容和 subcompatible ID。 有关扩展兼容 ID 操作系统描述符的信息，请参阅 [MICROSOFT OS 描述符](/previous-versions/gg463179(v=msdn.10))。
 * 强制加载蓝牙堆栈
 
 以下过程使用设备管理器强制为新的收音机加载蓝牙堆栈：
@@ -86,7 +86,7 @@ Windows 附带的蓝牙堆栈只为某些蓝牙配置文件提供内置支持。
 
 下表列出了 Windows 支持的 Bth 中的配置文件。
 
-|服务 ID|描述|
+|服务 ID|说明|
 |----|----|
 |{00001101-0000-1000-8000-00805f9b34fb}|SPP|
 |{00001103-0000-1000-8000-00805f9b34fb}|DUN
@@ -101,7 +101,7 @@ Windows 附带的蓝牙堆栈只为某些蓝牙配置文件提供内置支持。
 
 ## <a name="how-group-policy-can-block-bluetooth-radio-installation"></a>组策略如何阻止蓝牙无线安装
 
-有关如何使用组策略阻止安装蓝牙无线电收发器的详细信息，请参阅 [使用组策略控制设备安装和使用](https://go.microsoft.com/fwlink/p/?linkid=324335)的循序渐进指南中的 "阻止安装禁止的设备" 部分。
+有关如何使用组策略阻止安装蓝牙无线电收发器的详细信息，请参阅 [使用组策略控制设备安装和使用](/previous-versions/dotnet/articles/bb530324(v=msdn.10))的循序渐进指南中的 "阻止安装禁止的设备" 部分。
 
 为蓝牙无线电使用以下兼容 Id：
 

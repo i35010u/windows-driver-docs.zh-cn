@@ -7,12 +7,12 @@ keywords:
 - 轻型 MIP map 纹理 WDK DirectX 9.0，获取子级别
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1b7f6468c1b53a3012d54a7805ad3741d59b9334
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 21dde08a74e137225ba48623aa53a52156f7a741
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90106616"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91734085"
 ---
 # <a name="obtaining-sublevels-of-lightweight-mip-map-textures"></a>获取轻量 MIP 贴图纹理的子级别
 
@@ -24,7 +24,7 @@ DirectX 9.0 版本驱动程序可以使用 [CPixel 类方法](./cpixel-support-m
 
 驱动程序编写器不需要使用 CPixel 类方法来计算轻型 MIP 地图纹理的子级别位置。 但是，DirectX 9.0 运行时使用 **CPixel** 类方法恢复轻型系统内存 MIP map 纹理的内存布局。 因此，为了确保运行时和驱动程序以相同的方式恢复轻型系统内存 MIP map 纹理的内存布局，驱动程序编写器必须遵循相同的 **CPixel** 类规则才能实现自己的代码。
 
-有关如何实现**CPixel**类的信息，请参阅[pixlib](https://go.microsoft.com/fwlink/p/?linkid=256156)代码示例中的*hpp*、*象素*和*pixlib*文件。
+有关如何实现**CPixel**类的信息，请参阅[pixlib](/samples/browse/)代码示例中的*hpp*、*象素*和*pixlib*文件。
 
 CPixel 类包含以下方法：
 
@@ -70,6 +70,4 @@ CPixel 类包含以下方法：
 </tr>
 </tbody>
 </table>
-
- 
 

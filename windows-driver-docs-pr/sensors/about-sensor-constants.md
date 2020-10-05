@@ -4,12 +4,12 @@ description: 关于传感器常量
 ms.assetid: 9c26e305-0d5c-4442-9bcf-a9cdc1778c6b
 ms.date: 07/20/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: f7df014a5928a226efa23495ec08f2bad7c1008b
-ms.sourcegitcommit: 937974aa9bbe0262a7ffe9631593fab48c4e7492
+ms.openlocfilehash: 55bad682bcf56dead8538eb7b5a93d5244b50ab1
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "90010507"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91733067"
 ---
 # <a name="about-sensor-constants"></a>关于传感器常量
 
@@ -28,7 +28,7 @@ Windows 传感器和位置平台通过多种方式使用常量。 本部分介�
 
 -   *数据类型* 表示传感器可以提供的特定类型的信息。 传感器数据类型可以包含实际度量值，例如海拔高度、用于表示数据的单位的相关信息，例如计量，数据的参考点，例如海平面级别。 每种数据类型由 **PROPERTYKEY** 常量表示。 例如，表示 g 中 x 轴加速度的数据类型将为传感器 \_ 数据 \_ 类型 \_ 加速度 \_ x \_ g 常量。
 
--   在报告数据时，一个值被视为包含在一个 *数据字段*中，而一组相关的数据字段则构成 *数据报告*。 数据报表使用 [IPortableDeviceValues](https://go.microsoft.com/fwlink/p/?linkid=131486) 接口打包在一起。 每个数据报表必须包含至少一个有效的数据字段和一个标识数据报表创建时间的时间戳。 时间戳由传感器 \_ 数据 \_ 类型 \_ TIMESTAMP 属性键表示。
+-   在报告数据时，一个值被视为包含在一个 *数据字段*中，而一组相关的数据字段则构成 *数据报告*。 数据报表使用 [IPortableDeviceValues](/windows-hardware/drivers/ddi/portabledevicetypes/nn-portabledevicetypes-iportabledevicevalues) 接口打包在一起。 每个数据报表必须包含至少一个有效的数据字段和一个标识数据报表创建时间的时间戳。 时间戳由传感器 \_ 数据 \_ 类型 \_ TIMESTAMP 属性键表示。
 
 
 ## <a name="other-constants"></a>其他常量
@@ -64,6 +64,4 @@ Windows 将传感器与位置类别中的现有位置类型（ (传感器 \_ 类
 您可以为类别、传感器类型、数据字段、属性和事件定义自定义值。
 
 有关如何定义常量的自定义值的指南和示例，请参阅 [定义常量的自定义值](defining-custom-values-for-constants.md)。
-
- 
 

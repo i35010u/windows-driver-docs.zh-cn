@@ -4,12 +4,12 @@ description: 本部分介绍如何开始编写 Hyper-v 可扩展交换机扩展
 ms.assetid: 91C6ED75-1057-4520-8E8E-28817D8F3C81
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e8594709349b9f8bf1da8c813f02119650848cb1
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: f499598c86e925b8d8f234e61800d141616a0c75
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89207597"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91733941"
 ---
 # <a name="getting-started-writing-a-hyper-v-extensible-switch-extension"></a>开始编写 Hyper-V 可扩展交换机扩展
 
@@ -27,7 +27,7 @@ Hyper-v 可扩展交换机扩展是一种 NDIS 筛选器或 Windows 筛选平台
         [Hyper-v 可扩展交换机枚举](/windows-hardware/drivers/ddi/ntddndis/index) 
         [Hyper-v 可扩展交换机结构和联合](/windows-hardware/drivers/ddi/_netvista/) 
         [Hyper-v 可扩展交换机 oid](./hyper-v-extensible-switch-oids.md) 
-        [Hyper-v 可扩展交换机状态指示](https://docs.microsoft.com/windows-hardware/drivers/network/hyper-v-extensible-switch-status-indications) 
+        [Hyper-v 可扩展交换机状态指示](./hyper-v-extensible-switch-status-indications.md) 
         [Hyper-v 可扩展交换机宏](/windows-hardware/drivers/ddi/ntddndis/)
     -   从 [使用虚拟交换机筛选](using-virtual-switch-filtering.md)开始，阅读基于 WFP 的扩展的联机文档。
     -   观看以下有关扩展的指导性视频。

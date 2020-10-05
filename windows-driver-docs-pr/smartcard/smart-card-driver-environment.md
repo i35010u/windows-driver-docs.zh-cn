@@ -3,15 +3,15 @@ title: 智能卡驱动程序环境
 description: 智能卡驱动程序环境
 ms.assetid: f1b369c6-84a0-4a0a-9e70-40dd3009c59e
 keywords:
-- 智能卡驱动程序 WDK、 环境
+- 智能卡驱动程序 WDK，环境
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 92cc9c9d2fe9b901576b86705ece238aed27c7f7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0898c215d855e341a3d5c3d3219c2ea465ded272
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63379775"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91734141"
 ---
 # <a name="smart-card-driver-environment"></a>智能卡驱动程序环境
 
@@ -21,25 +21,19 @@ ms.locfileid: "63379775"
 
 下图显示了智能卡读卡器驱动程序的标准环境。
 
-![说明用于智能卡读卡器驱动程序的标准环境的关系图](images/memp1.png)
+![说明智能卡读卡器驱动程序的标准环境的示意图](images/memp1.png)
 
-此外，该图显示了智能卡环境的以下组件：
+此外，该图显示了智能卡环境的下列组件：
 
--   应用程序通过智能卡资源管理器与智能卡读卡器驱动程序进行通信。 读卡器驱动程序位于内核空间，并且智能卡资源管理器驻留在用户空间中。
+-   应用程序通过智能卡资源管理器与智能卡读卡器驱动程序通信。 读取器驱动程序驻留在内核空间中，而智能卡资源管理器位于用户空间。
 
--   使用调度的 I/O 控制通过资源管理器与读卡器驱动程序进行通信[DeviceIoControl](https://go.microsoft.com/fwlink/p/?linkid=94613)系统调用。 有关如何使用信息[DeviceIoControl](https://go.microsoft.com/fwlink/p/?linkid=94613)系统调用，请参阅[DeviceIoControl](https://go.microsoft.com/fwlink/p/?linkid=94613) Microsoft Windows SDK 中的主题。
+-   资源管理器通过使用 [DeviceIoControl](/windows/win32/api/ioapiset/nf-ioapiset-deviceiocontrol) 系统调用调度的 i/o 控件来与读取器驱动程序通信。 有关如何使用 [DeviceIoControl](/windows/win32/api/ioapiset/nf-ioapiset-deviceiocontrol) 系统调用的信息，请参阅 Microsoft Windows SDK 中的 [DeviceIoControl](/windows/win32/api/ioapiset/nf-ioapiset-deviceiocontrol) 主题。
 
-    同样，可识别智能卡的应用程序可以将指令发送到通过智能卡读卡器驱动程序[DeviceIoControl](https://go.microsoft.com/fwlink/p/?linkid=94613)，，操作系统将转发到读卡器驱动程序所指示的 IOCTL。 如果读卡器驱动程序是一个 WDM 驱动程序，操作系统将请求转发到 I/O 请求数据包 (IRP) 通过。
+    同样，智能卡感知应用程序可以通过 [DeviceIoControl](/windows/win32/api/ioapiset/nf-ioapiset-deviceiocontrol)将指令发送到智能卡读卡器驱动程序，操作系统将指示的 IOCTL 转发到读取器驱动程序。 如果读取器驱动程序为 WDM 驱动程序，操作系统将通过 i/o 请求数据包转发请求 (IRP) 。
 
--   Microsoft 提供了一个读取器驱动程序示例*pscr.sys*，这是用于 PCMCIA 智能卡读卡器的驱动程序。 此驱动程序的源代码是 WDK 示例集合中可用。 有关详细信息，请参阅[PCMCIA 智能卡驱动程序](https://github.com/Microsoft/Windows-driver-samples/tree/master/smartcrd)。 智能卡读取器设备的供应商必须提供用于处理系统提供的资源管理器和智能卡驱动程序库的驱动程序。
+-   Microsoft 提供一个读卡器驱动程序示例， *pscr.sys*，这是一个 PCMCIA 智能卡读卡器的驱动程序。 该驱动程序的源代码在 WDK 示例的集合中提供。 有关详细信息，请参阅 [PCMCIA 智能卡驱动程序](https://github.com/Microsoft/Windows-driver-samples/tree/master/smartcrd)。 智能卡读卡器设备的供应商必须提供旨在使用系统提供的资源管理器和智能卡驱动程序库的驱动程序。
 
--   这两个本机和供应商提供的读卡器驱动程序必须使用智能卡驱动程序库来执行其密钥的操作的许多节中所述[智能卡驱动程序库](smart-card-driver-library.md)。
-
- 
+-   本机和供应商提供的读取器驱动程序都必须使用智能卡驱动程序库来执行其许多关键操作，如 " [智能卡驱动程序库](smart-card-driver-library.md)" 一节中所述。
 
  
-
-
-
-
 

@@ -3,17 +3,17 @@ description: 本主题提供有关使用 Logman 工具捕获 USB ETW 事件跟�
 title: 如何使用 Logman 捕获 USB 事件跟踪
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e329225d9ade3369926149c6864b2f85022dff1e
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: b97865d2b31bba9a878af778f4b94cb9d4b5412e
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90102878"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91733557"
 ---
 # <a name="how-to-capture-a-usb-event-trace-with-logman"></a>如何使用 Logman 捕获 USB 事件跟踪
 
 
-本主题提供有关使用 [Logman](https://go.microsoft.com/fwlink/p/?linkid=617153) 工具捕获 USB ETW 事件跟踪的信息。 Logman 是内置于 Windows 中的跟踪工具。 可以使用 Logman 将事件捕获到事件跟踪日志文件中。
+本主题提供有关使用 [Logman](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc753820(v=ws.10)) 工具捕获 USB ETW 事件跟踪的信息。 Logman 是内置于 Windows 中的跟踪工具。 可以使用 Logman 将事件捕获到事件跟踪日志文件中。
 
 ### <a name="prerequisites"></a>先决条件
 

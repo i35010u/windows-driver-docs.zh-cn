@@ -3,12 +3,12 @@ description: 介绍必须为附加到可用端口的 MUTT 设备运行的设备�
 title: 在 Visual Studio for MUTT 设备中运行系统电源 devfund 测试
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6c4b51114b475f6b009ffe44a33bbd63dc9b7c59
-ms.sourcegitcommit: 937974aa9bbe0262a7ffe9631593fab48c4e7492
+ms.openlocfilehash: 3dc7e03b0a10aee2cd5024ec4de2b5ba92e7ca35
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "90009963"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91734323"
 ---
 # <a name="how-to-run-system-power-devfund-tests-in-visual-studio-for-mutt-devices"></a>如何在 Visual Studio 中针对 MUTT 设备运行系统电源 devfund 测试
 
@@ -33,14 +33,14 @@ Devfund 测试是用于测试驱动程序和硬件的测试集合。 这些测�
 
     你可以从 [下载下载适用于 Windows 硬件开发的](https://go.microsoft.com/fwlink/p/?linkid=309780)Visual STUDIO 和 WDK。
 
-    有关配置的说明，请参阅 [配置计算机以进行驱动程序部署、测试和调试](https://go.microsoft.com/fwlink/p/?linkid=235504)。
+    有关配置的说明，请参阅 [配置计算机以进行驱动程序部署、测试和调试](/previous-versions//hh698272(v=vs.85))。
 
 -   在将主机连接到测试计算机之前，必须在测试计算机上启用文件和打印共享和网络发现。 可以在 "控制面板" 中启用这些选项，也可以通过在提升的命令提示符中使用以下命令来启用：
 
     `netsh.exe advfirewall firewall set rule group="File and Printer Sharing" new enable=Yes`
 
 -   设置并配置 MUTT 设备并安装固件。 有关详细信息，请参阅 [如何准备测试系统](mutt-testing-options.md)。
--   设置测试计算机。 有关说明，请参阅 [配置计算机以进行驱动程序部署、测试和调试](https://go.microsoft.com/fwlink/p/?linkid=235504)。
+-   设置测试计算机。 有关说明，请参阅 [配置计算机以进行驱动程序部署、测试和调试](/previous-versions//hh698272(v=vs.85))。
 
 ### <a name="scheduling-tests"></a>计划测试
 

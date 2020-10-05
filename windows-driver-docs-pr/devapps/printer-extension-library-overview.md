@@ -4,12 +4,12 @@ description: 本主题介绍了打印机扩展库，这是一个可帮助设备�
 ms.assetid: A47B17CE-BF5A-4C02-807C-890F315A13E0
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 112c92c9b6d412a421b1b2f121620f2644b75cdf
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 6d304e031c9c06fb28c0211cf93545145e8ca040
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89097041"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91734201"
 ---
 # <a name="printer-extension-library-overview-for-uwp-device-apps"></a>UWP 设备应用的打印机扩展库概述
 
@@ -19,7 +19,7 @@ ms.locfileid: "89097041"
 ## <a name="span-idoverviewspanspan-idoverviewspanspan-idoverviewspanoverview"></a><span id="Overview"></span><span id="overview"></span><span id="OVERVIEW"></span>叙述
 
 
-[V4 打印机驱动程序](https://go.microsoft.com/fwlink/p/?LinkId=314231)体系结构的高级设计目标是为 Microsoft Store 应用用户界面提供内置支持。 为了提供对打印机的访问，v4 打印驱动程序会公开基于 COM 的 [打印机扩展接口](https://go.microsoft.com/fwlink/p/?LinkID=299887)。
+[V4 打印机驱动程序](../print/v4-printer-driver.md)体系结构的高级设计目标是为 Microsoft Store 应用用户界面提供内置支持。 为了提供对打印机的访问，v4 打印驱动程序会公开基于 COM 的 [打印机扩展接口](/windows-hardware/drivers/ddi/_print/)。
 
 若要从 UWP 设备应用访问这些接口，可以使用 Microsoft Store 设备应用打印机示例附带的打印机扩展库。 打印机扩展库包装 COM 接口的 COM 实现 `PrinterExtensionLib` 。 这使得可以在打印机扩展和 UWP 设备应用之间共享代码。
 
@@ -57,21 +57,19 @@ ms.locfileid: "89097041"
 ## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
-[开发 v4 打印驱动程序](https://go.microsoft.com/fwlink/p/?LinkId=314231)
+[开发 v4 打印驱动程序](../print/v4-printer-driver.md)
 
-[ (v4 打印驱动程序的打印机扩展接口) ](https://go.microsoft.com/fwlink/p/?LinkID=299887)
+[ (v4 打印驱动程序的打印机扩展接口) ](/windows-hardware/drivers/ddi/_print/)
 
 [作业管理 (v4 打印机驱动程序) ](../print/job-management.md)
 
 [设备维护 (v4 打印机驱动程序) ](../print/device-maintenance.md)
 
-[双向通信](https://go.microsoft.com/fwlink/p/?LinkId=317192)
+[双向通信](../print/bidirectional-communication.md)
 
 [UWP 应用入门](getting-started.md)
 
 [ (分步指南创建 UWP 设备应用) ](step-1--create-a-uwp-device-app.md)
 
 [ (分步指南创建 UWP 设备应用的设备元数据) ](step-2--create-device-metadata.md)
-
- 
 

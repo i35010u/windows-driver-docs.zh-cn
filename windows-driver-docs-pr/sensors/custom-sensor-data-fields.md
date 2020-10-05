@@ -1,78 +1,78 @@
 ---
 title: 自定义传感器数据字段
-description: 本主题提供有关可由自定义传感器的数据字段的信息。
+description: 本主题提供了有关自定义传感器可以使用的数据字段的信息。
 ms.assetid: 8034B185-8A1B-43D9-9FFC-02E85284008A
 ms.date: 07/20/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: c5c42b552042e6987361dbef58657f2fd3881719
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5fa66eae54e30a250e2698e7f231d406d0227011
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63377854"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91734151"
 ---
 # <a name="custom-sensor-data-fields"></a>自定义传感器数据字段
 
 
-本主题提供有关可由自定义传感器的数据字段的信息。
+本主题提供了有关自定义传感器可以使用的数据字段的信息。
 
-以下列表显示可选 PKEYs。
+以下列表显示了可选的 PKEYs。
 
--   PKEY\_SensorData\_CustomValue0
--   PKEY\_SensorData\_CustomValue1
--   PKEY\_SensorData\_CustomValue2
--   PKEY\_SensorData\_CustomValue3
--   PKEY\_SensorData\_CustomValue4
--   PKEY\_SensorData\_CustomValue5
--   PKEY\_SensorData\_CustomValue6
--   PKEY\_SensorData\_CustomValue7
--   PKEY\_SensorData\_CustomValue8
--   PKEY\_SensorData\_CustomValue9
--   PKEY\_SensorData\_CustomValue10
--   PKEY\_SensorData\_CustomValue11
--   PKEY\_SensorData\_CustomValue12
--   PKEY\_SensorData\_CustomValue13
--   PKEY\_SensorData\_CustomValue14
--   PKEY\_SensorData\_CustomValue15
--   PKEY\_SensorData\_CustomValue16
--   PKEY\_SensorData\_CustomValue17
--   PKEY\_SensorData\_CustomValue18
--   PKEY\_SensorData\_CustomValue19
--   PKEY\_SensorData\_CustomValue20
--   PKEY\_SensorData\_CustomValue21
--   PKEY\_SensorData\_CustomValue22
--   PKEY\_SensorData\_CustomValue23
--   PKEY\_SensorData\_CustomValue24
--   PKEY\_SensorData\_CustomValue25
--   PKEY\_SensorData\_CustomValue26
--   PKEY\_SensorData\_CustomValue27
--   PKEY\_SensorData\_CustomValue28
+-   PKEY \_ SensorData \_ CustomValue0
+-   PKEY \_ SensorData \_ CustomValue1
+-   PKEY \_ SensorData \_ CustomValue2
+-   PKEY \_ SensorData \_ CustomValue3
+-   PKEY \_ SensorData \_ CustomValue4
+-   PKEY \_ SensorData \_ CustomValue5
+-   PKEY \_ SensorData \_ CustomValue6
+-   PKEY \_ SensorData \_ CustomValue7
+-   PKEY \_ SensorData \_ CustomValue8
+-   PKEY \_ SensorData \_ CustomValue9
+-   PKEY \_ SensorData \_ CustomValue10
+-   PKEY \_ SensorData \_ CustomValue11
+-   PKEY \_ SensorData \_ CustomValue12
+-   PKEY \_ SensorData \_ CustomValue13
+-   PKEY \_ SensorData \_ CustomValue14
+-   PKEY \_ SensorData \_ CustomValue15
+-   PKEY \_ SensorData \_ CustomValue16
+-   PKEY \_ SensorData \_ CustomValue17
+-   PKEY \_ SensorData \_ CustomValue18
+-   PKEY \_ SensorData \_ CustomValue19
+-   PKEY \_ SensorData \_ CustomValue20
+-   PKEY \_ SensorData \_ CustomValue21
+-   PKEY \_ SensorData \_ CustomValue22
+-   PKEY \_ SensorData \_ CustomValue23
+-   PKEY \_ SensorData \_ CustomValue24
+-   PKEY \_ SensorData \_ CustomValue25
+-   PKEY \_ SensorData \_ CustomValue26
+-   PKEY \_ SensorData \_ CustomValue27
+-   PKEY \_ SensorData \_ CustomValue28
 
-HID 驱动程序仅支持 VT\_UI4 自定义属性，而非 HID 驱动程序支持所有这些类型的类型：
+HID 驱动程序仅支持 \_ 用于自定义属性的 VT UI4 类型，而非 hid 驱动程序支持以下所有类型：
 
--   VT\_UI1
--   VT\_VECTOR | VT\_UI1
--   VT\_UI2
--   VT\_VECTOR | VT\_UI2
--   VT\_I2
--   VT\_向量 |VT\_I2
--   VT\_UI4
--   VT\_VECTOR | VT\_UI4
--   VT\_I4
--   VT\_VECTOR | VT\_I4
--   VT\_UI8
--   VT\_VECTOR | VT\_UI8
--   VT\_I8
--   VT\_VECTOR | VT\_I8
--   VT\_R4
--   VT\_VECTOR | VT\_R4
--   VT\_R8
--   VT\_VECTOR | VT\_R8
--   VT\_BOOL
--   VT\_向量 |VT\_BOOL
--   VT\_FILETIME
--   VT\_CLSID
--   VT\_向量 |VT\_CLSID
+-   VT \_ UI1
+-   VT \_ 矢量 |VT \_ UI1
+-   VT \_ UI2
+-   VT \_ 矢量 |VT \_ UI2
+-   VT \_ I2
+-   VT \_ 矢量 |VT \_ I2
+-   VT \_ UI4
+-   VT \_ 矢量 |VT \_ UI4
+-   VT \_ I4
+-   VT \_ 矢量 |VT \_ I4
+-   VT \_ UI8
+-   VT \_ 矢量 |VT \_ UI8
+-   VT \_ I8
+-   VT \_ 矢量 |VT \_ I8
+-   VT \_ R4
+-   VT \_ 矢量 |VT \_ R4
+-   VT \_ R8
+-   VT \_ 矢量 |VT \_ R8
+-   VT \_ BOOL
+-   VT \_ 矢量 |VT \_ BOOL
+-   VT \_ FILETIME
+-   VT \_ CLSID
+-   VT \_ 矢量 |VT \_ CLSID
 
 ## <a name="remarks"></a>备注
 
@@ -80,14 +80,7 @@ HID 驱动程序仅支持 VT\_UI4 自定义属性，而非 HID 驱动程序支�
 ## <a name="related-topics"></a>相关主题
 
 
-[PROPVARIANT 结构](https://go.microsoft.com/fwlink/p/?linkid=313395)
+[PROPVARIANT 结构](/windows/win32/api/propidlbase/ns-propidlbase-propvariant)
 
  
-
- 
-
-
-
-
-
 

@@ -12,12 +12,12 @@ keywords:
 - 类驱动程序 WDK 存储，初始化
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: eff7e74aa147a917f26dfe5e2ef7921a617eec1d
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: d00163a8f2eec6a8d2775085309c48b3159f04d7
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89184703"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91733607"
 ---
 # <a name="handling-pnp-initialization-in-a-storage-class-driver"></a>处理存储类驱动程序中的 PnP 初始化
 
@@ -41,7 +41,5 @@ ms.locfileid: "89184703"
 
 [存储类驱动程序的 AddDevice 例程](storage-class-driver-s-adddevice-routine.md)
 
-另请参阅 [即插即用](https://docs.microsoft.com/windows-hardware/drivers/kernel/implementing-plug-and-play)。
-
- 
+另请参阅 [即插即用](../kernel/introduction-to-plug-and-play.md)。
 

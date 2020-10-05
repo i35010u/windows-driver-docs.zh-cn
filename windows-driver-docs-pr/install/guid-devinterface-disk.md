@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: c2a6725589d93e088ad705ad285b0f42312eaa77
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 82cd2583c3edd2ddb734c71b04e15daef5764163
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89096561"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91732847"
 ---
 # <a name="guid_devinterface_disk"></a>GUID_DEVINTERFACE_DISK
 
@@ -33,7 +33,7 @@ ms.locfileid: "89096561"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Attribute</th>
+<th align="left">属性</th>
 <th align="left">设置</th>
 </tr>
 </thead>
@@ -56,7 +56,7 @@ ms.locfileid: "89096561"
 
 系统提供的存储类驱动程序为硬盘存储设备注册 GUID_DEVINTERFACE_DISK 的实例。
 
-WDK 中的存储 [示例](https://go.microsoft.com/fwlink/p/?LinkId=618052) 包括 [磁盘类驱动程序](https://go.microsoft.com/fwlink/p/?linkid=256103) 示例和 [Addfilter 存储筛选器工具](https://go.microsoft.com/fwlink/p/?linkid=256076)。 磁盘类驱动程序示例使用过时的标识符 [**DiskClassGuid**](diskclassguid.md) 来注册 GUID_DEVINTERFACE_DISK 设备接口类的实例。 示例 Addfilter 应用程序使用 DiskClassGuid 来枚举 GUID_DEVINTERFACE_DISK 设备接口类的实例。
+WDK 中的存储 [示例](https://go.microsoft.com/fwlink/p/?LinkId=618052) 包括 [磁盘类驱动程序](/samples/browse/) 示例和 [Addfilter 存储筛选器工具](/samples/browse/)。 磁盘类驱动程序示例使用过时的标识符 [**DiskClassGuid**](diskclassguid.md) 来注册 GUID_DEVINTERFACE_DISK 设备接口类的实例。 示例 Addfilter 应用程序使用 DiskClassGuid 来枚举 GUID_DEVINTERFACE_DISK 设备接口类的实例。
 
 有关存储驱动程序的信息，请参阅 [存储驱动程序](../storage/storage-drivers.md)。
 
@@ -80,6 +80,4 @@ WDK 中的存储 [示例](https://go.microsoft.com/fwlink/p/?LinkId=618052) 包�
 
 
 [**DiskClassGuid**](diskclassguid.md)
-
- 
 

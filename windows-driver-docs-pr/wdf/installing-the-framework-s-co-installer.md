@@ -12,12 +12,12 @@ keywords:
 - Wdf INF 文件部分 WDK KMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2f3d9adca26c4370f5a2766d95cddbf77dd45614
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 6ab5fee67220950bf135af58f9b5bcddeef40a02
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89192751"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91734395"
 ---
 # <a name="specifying-the-kmdf-co-installer-in-an-inf-file"></a>在 INF 文件中指定 KMDF 的共同安装程序
 
@@ -56,7 +56,7 @@ KmdfLibraryVersion = 1.0
 
 ### <a name="sample-inf-ddinstallcoinstallers-and-ddinstallwdf-sections"></a><a href="" id="sample-inf-ddinstall-coinstallers-and-ddinstall-wdf-sections"></a>**示例 INF** ***DDInstall *。CoInstallers 和** * **DDInstall *。Wdf 部分**
 
-下面的代码示例演示如何创建 INF <em>DDInstall</em>**。CoInstallers** 部分和 INF <em>DDInstall</em>**。** PnP 驱动程序的 INF 文件的 Wdf 部分。 该示例演示如何创建一个名为 *MyDevice* 的 inf 文件，该文件基于 [echo](https://go.microsoft.com/fwlink/p/?linkid=256129) 示例驱动程序的 *echo* 文件。 回显示例驱动程序位于 WDK 的示例目录中。
+下面的代码示例演示如何创建 INF <em>DDInstall</em>**。CoInstallers** 部分和 INF <em>DDInstall</em>**。** PnP 驱动程序的 INF 文件的 Wdf 部分。 该示例演示如何创建一个名为 *MyDevice* 的 inf 文件，该文件基于 [echo](/samples/browse/) 示例驱动程序的 *echo* 文件。 回显示例驱动程序位于 WDK 的示例目录中。
 
 若要创建*MyDevice*，必须将*echo*中的所有**echo \_ 设备**子字符串更改为适用于你的产品的名称。 下面的代码示例使用 **MyDevice**。
 
@@ -126,6 +126,4 @@ KmdfLibraryVersion = 1.0
 ....
 =============== End of MyDevice.inf ===============
 ```
-
- 
 

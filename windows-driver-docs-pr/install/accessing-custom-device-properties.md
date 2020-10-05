@@ -4,12 +4,12 @@ description: 访问自定义设备属性
 ms.assetid: 81170fd5-f1fb-4a06-a651-4651fc894070
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1c119f887a9619fb6d92fc1e4bd34b87cd95f262
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 784f5d8abd0bac30ff9ef346bc656971383be733
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90715964"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91733187"
 ---
 # <a name="accessing-custom-device-properties"></a>访问自定义设备属性
 
@@ -28,9 +28,7 @@ ms.locfileid: "90715964"
 
 -   设备接口属性的自定义注册表项值应位于设备接口注册表项下。 调用 [**SetupDiOpenDeviceInterfaceRegKey**](/windows/win32/api/setupapi/nf-setupapi-setupdiopendeviceinterfaceregkey) 可检索设备接口类的注册表项的句柄。
 
-检索到某个注册表项的句柄之后，在对 [RegQueryValueEx](https://go.microsoft.com/fwlink/p/?linkid=95398) 或 [RegSetValueEx](https://go.microsoft.com/fwlink/p/?linkid=95399) 的调用中提供该句柄，以便检索或设置与自定义设备属性对应的自定义注册表项值。
+检索到某个注册表项的句柄之后，在对 [RegQueryValueEx](/windows/win32/api/winreg/nf-winreg-regqueryvalueexa) 或 [RegSetValueEx](/windows/win32/api/winreg/nf-winreg-regsetvalueexa) 的调用中提供该句柄，以便检索或设置与自定义设备属性对应的自定义注册表项值。
 
-在不再需要访问注册表项后，调用 [RegCloseKey](https://go.microsoft.com/fwlink/p/?linkid=194543) 函数关闭该注册表项。
-
- 
+在不再需要访问注册表项后，调用 [RegCloseKey](/windows/win32/api/winreg/nf-winreg-regclosekey) 函数关闭该注册表项。
 

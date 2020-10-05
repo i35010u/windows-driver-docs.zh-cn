@@ -4,12 +4,12 @@ description: '本主题介绍 "高级打印设置" 浮出控件，并演示 c # 
 ms.assetid: 099BD9B2-1AA6-49A5-AB84-0AF6FA0EFB26
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 30e2ea5b9c8882d80cd41ef205a6c7e7cd04d336
-ms.sourcegitcommit: 366a15d68eb58d01a8ca6de7b982f62ac8b7deaf
+ms.openlocfilehash: 740cee28a89e55380bbf8de1653a780d65f3bf59
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/19/2020
-ms.locfileid: "90811964"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91732969"
 ---
 # <a name="how-to-customize-print-settings-uwp-device-apps"></a>如何自定义 (UWP 设备应用的打印设置) 
 
@@ -47,7 +47,7 @@ ms.locfileid: "90811964"
 
 准备工作：
 
-1. 请确保您的打印机是使用 v4 打印驱动程序安装的。 有关详细信息，请参阅 [开发 v4 打印驱动程序](https://go.microsoft.com/fwlink/p/?LinkId=314231)。
+1. 请确保您的打印机是使用 v4 打印驱动程序安装的。 有关详细信息，请参阅 [开发 v4 打印驱动程序](../print/v4-printer-driver.md)。
 2. 设置开发 PC。 有关下载工具和创建开发人员帐户的信息[，请参阅入门。](getting-started.md)
 3. 将应用与应用商店相关联。 请参阅 [创建 UWP 设备应用](step-1--create-a-uwp-device-app.md) 了解相关信息。
 4. 为打印机创建将其与应用程序关联的设备元数据。 有关详细信息，请参阅 [创建设备元数据](step-2--create-device-metadata.md) 。
@@ -106,12 +106,12 @@ ms.locfileid: "90811964"
 
 ### <a name="design-guidelines"></a>设计准则
 
-在设计自定义浮出控件之前，请务必查看 [UWP 应用飞出指南](https://go.microsoft.com/fwlink/p/?LinkId=317078) 。 本指南可帮助确保你的浮出控件提供与其他 UWP 应用一致的直观体验。
+在设计自定义浮出控件之前，请务必查看 [UWP 应用飞出指南](/windows/uwp/design/controls-and-patterns/dialogs-and-flyouts/) 。 本指南可帮助确保你的浮出控件提供与其他 UWP 应用一致的直观体验。
 
 在应用程序的主页上，请记住，Windows 8.1 可以在单个监视器上以各种大小显示多个应用。 请参阅以下准则，详细了解应用程序如何在屏幕大小、窗口大小和方向之间进行适当的重新排列。
 
 - [窗口大小和屏幕缩放的准则](https://go.microsoft.com/fwlink/p/?LinkId=311830)
-- [将窗口调整为高度和缩小布局的准则](https://go.microsoft.com/fwlink/p/?LinkId=311831)
+- [将窗口调整为高度和缩小布局的准则](/previous-versions/windows/hh465371(v=win.10))
 
 ### <a name="flyout-dimensions"></a>飞出尺寸
 
@@ -135,7 +135,7 @@ ms.locfileid: "90811964"
       </VisualElements>
 ```
 
-### <a name="best-practices"></a>最佳实践
+### <a name="best-practices"></a>最佳做法
 
 - **保持相同的外观。** 将您的自定义浮出控件与入门体验的设计保持一致 (您的应用) 程序的主页面，包括字体、颜色和控件等元素。 无论用户在何处调用该应用，都应熟悉该应用。
 
@@ -596,7 +596,7 @@ async private void OnSaveRequested(object sender, PrintTaskConfigurationSaveRequ
 
 在可以测试 UWP 设备应用之前，必须使用设备元数据将其链接到您的打印机。
 
-- 你需要打印机的设备元数据包的副本，以便向其添加设备应用信息。 如果没有设备元数据，可以使用 **设备元数据创作向导** 生成它，如主题为 [UWP 设备应用创建设备元数据](https://go.microsoft.com/fwlink/p/?LinkId=313644)中所述。
+- 你需要打印机的设备元数据包的副本，以便向其添加设备应用信息。 如果没有设备元数据，可以使用 **设备元数据创作向导** 生成它，如主题为 [UWP 设备应用创建设备元数据](./step-2--create-device-metadata.md)中所述。
 
     >[!NOTE]
     >若要使用 **设备元数据创作向导**，在完成本主题中的步骤之前，必须安装 Microsoft Visual Studio Professional、Microsoft Visual Studio Ultimate 或 [独立的 SDK for Windows 8.1](https://go.microsoft.com/fwlink/p/?linkid=309209)。 为 Windows 安装 Microsoft Visual Studio Express 会安装不包括向导的 SDK 版本。
@@ -612,7 +612,7 @@ async private void OnSaveRequested(object sender, PrintTaskConfigurationSaveRequ
 4. 断开连接并卸载打印机。 此步骤是必需的，以便 Windows 将在下一次检测到设备时读取更新的设备元数据。
 5. 编辑并保存设备元数据。 若要将设备应用链接到设备，你必须将设备应用关联到设备
     >[!NOTE]
-    >如果尚未创建设备元数据，请参阅 [为 UWP 设备应用创建设备元数据](https://go.microsoft.com/fwlink/p/?LinkId=313644)。
+    >如果尚未创建设备元数据，请参阅 [为 UWP 设备应用创建设备元数据](./step-2--create-device-metadata.md)。
 
     1. 如果**设备元数据创作向导**尚未打开，请通过双击 "DeviceMetadataWizard.exe" 从 *% ProgramFiles (x86) %* \\ Windows 工具包 \\ 8.1 \\ bin \\ x86 **DeviceMetadataWizard.exe**启动它。
     2. 单击 " **编辑设备元数据**"。 这将允许你编辑现有的设备元数据包。
@@ -624,7 +624,7 @@ async private void OnSaveRequested(object sender, PrintTaskConfigurationSaveRequ
 
 6. 重新连接打印机，以便 Windows 在连接设备时读取更新的设备元数据。
 
-## <a name="troubleshooting"></a>故障排除
+## <a name="troubleshooting"></a>疑难解答
 
 ### <a name="issue-advanced-print-settings-shows-default-flyout-instead-of-custom-flyout"></a>问题：高级打印设置显示默认浮出控件，而不是自定义飞出
 
@@ -644,11 +644,11 @@ async private void OnSaveRequested(object sender, PrintTaskConfigurationSaveRequ
 
 ## <a name="related-topics"></a>相关主题
 
-[开发 v4 打印驱动程序](https://go.microsoft.com/fwlink/p/?LinkId=314231)
+[开发 v4 打印驱动程序](../print/v4-printer-driver.md)
 
-[ (v4 打印驱动程序的打印机扩展接口) ](https://go.microsoft.com/fwlink/p/?LinkID=299887)
+[ (v4 打印驱动程序的打印机扩展接口) ](/windows-hardware/drivers/ddi/_print/)
 
-[双向通信](https://go.microsoft.com/fwlink/p/?LinkId=317192)
+[双向通信](../print/bidirectional-communication.md)
 
 [UWP 应用入门](getting-started.md)
 

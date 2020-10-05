@@ -7,12 +7,12 @@ keywords:
 - 本机 802.11 IHV 扩展 WDK，关于 IHV 扩展性
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1b7c22323c687d0148dc9533471431a978a319aa
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 3a615a003db3c08845426aa13fbb388178f825e6
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89208599"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91733637"
 ---
 # <a name="overview-of-ihv-extensibility"></a>IHV 可扩展性概述
 
@@ -49,7 +49,7 @@ ms.locfileid: "89208599"
 
 1.  不要将任何敏感信息（如加密密钥）记录在事件日志或调试日志中。
 
-2.  使用 [CryptProtectMemory](https://go.microsoft.com/fwlink/p/?linkid=64677) 来保护存储在内存中的敏感加密密钥，并使用 [SecureZeroMemory](https://go.microsoft.com/fwlink/p/?linkid=64678) 在密钥完成时清除内存。
+2.  使用 [CryptProtectMemory](/windows/win32/api/dpapi/nf-dpapi-cryptprotectmemory) 来保护存储在内存中的敏感加密密钥，并使用 [SecureZeroMemory](/previous-versions/windows/desktop/legacy/aa366877(v=vs.85)) 在密钥完成时清除内存。
 
 3.  将 [网络配置文件](/previous-versions/windows/hardware/wireless/configuration-through-a-network-profile) 的 IHV 扩展部分视为可能由攻击者操作的不受信任的数据。 配置文件的 IHV 扩展部分对于802.11 自动配置模块是不透明的， () 和媒体特定模块 (MSM) ，并且将不会进行验证。  (参阅 [本机802.11 软件体系结构](/previous-versions/windows/hardware/wireless/native-802-11-software-architecture) ，了解有关这些模块和配置控制路径的说明 ) 。应适当地分析此 IHV 扩展数据，以防止任何缓冲区溢出或可能导致本地升级权限的攻击。
 

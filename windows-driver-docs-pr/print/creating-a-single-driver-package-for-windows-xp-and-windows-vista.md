@@ -4,17 +4,17 @@ description: 创建适用于 Windows XP 和 Windows Vista 的单个驱动程序�
 ms.assetid: 5e350152-edd7-4afb-bcba-dd0217d0d17a
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6ecb35b44262eeefd71f1c74fc0abf14dc23d822
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 3fdff81e035e29f5dd0a74ddae95e746a1e66040
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89218256"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91734513"
 ---
 # <a name="creating-a-single-driver-package-for-windows-xp-and-windows-vista"></a>创建适用于 Windows XP 和 Windows Vista 的单个驱动程序包
 
 
-Microsoft [Connect](https://go.microsoft.com/fwlink/p/?linkid=133880) 网站提供了两组核心驱动程序更新：
+Microsoft [Connect](/collaborate/connect-redirect) 网站提供了两组核心驱动程序更新：
 
 -   对于早于 Windows Vista 的 Windows 操作系统 (包括 Windows Server 2003、Windows XP 和 Windows 2000) ，一组可再发行更新允许硬件制造商合并支持这些操作系统所需的特定文件。
 
@@ -57,6 +57,4 @@ Microsoft [Connect](https://go.microsoft.com/fwlink/p/?linkid=133880) 网站提�
 5.  使用 INF **CoreDriverDependencies** 和 **CoreDriverSections** 指令指明 Windows Vista 驱动程序需要更新的核心驱动程序。
 
 6.  在 windows Vista 之前的 Windows 操作系统的安装部分中，将所需的文件直接复制到包含的核心驱动程序包中，就像它们是驱动程序的一部分一样。
-
- 
 

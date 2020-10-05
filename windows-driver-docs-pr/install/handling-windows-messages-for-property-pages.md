@@ -14,12 +14,12 @@ keywords:
 - PSN_APPLY
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: faf1144be6b936fa741cfda311541c07c5c46dec
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: e6c36cbb15c45e5677d86d171713aba6e6864273
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90716188"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91733281"
 ---
 # <a name="handling-windows-messages-for-property-pages"></a>处理属性页的 Windows 消息
 
@@ -51,7 +51,7 @@ if (SetupDiLoadClassIcon(
 
 除了表示设备的图标，典型的设备属性页还包括设备的描述或 "友好名称"，并显示设备属性的当前设置。 即插即用 (PnP) manager 将每台设备的 PnP 属性存储在注册表中。 属性页提供程序可以调用 [**SetupDiGetDeviceRegistryProperty**](/windows/win32/api/setupapi/nf-setupapi-setupdigetdeviceregistrypropertya) 来获取任何此类属性的值。 如果在安装过程中也将设备或类特定的配置信息存储在注册表中，则属性页提供程序可以使用其他 **SetupDiXxx** 函数来提取要显示的信息。 有关详细信息，请参阅 [设备安装函数](/previous-versions/ff541299(v=vs.85))。
 
-当页面上发生特定类型的更改时，属性表会向对话框过程发送 [WM_NOTIFY](https://go.microsoft.com/fwlink/p/?linkid=181554) 消息。 对话框过程应准备好从消息参数中提取通知代码，并做出相应的响应。
+当页面上发生特定类型的更改时，属性表会向对话框过程发送 [WM_NOTIFY](/windows/win32/controls/wm-notify) 消息。 对话框过程应准备好从消息参数中提取通知代码，并做出相应的响应。
 
 有关对话框过程可能会遇到的通知的详细信息（例如 PSN_APPLY 或 PSN_HELP 通知）以及过程应如何处理它们，请参阅 Windows SDK 文档中的 [通知](https://go.microsoft.com/fwlink/p/?linkid=181555) 。
 
@@ -74,6 +74,4 @@ if (SetupDiLoadClassIcon(
 ### <a name="psn_reset-notifications"></a><a href="" id="psn-reset-notifications"></a>PSN_RESET 通知
 
 当用户单击 " **取消**" 时，属性表将发送 PSN_RESET 通知消息。 对于此消息，对话框过程应丢弃用户所做的任何更改。
-
- 
 

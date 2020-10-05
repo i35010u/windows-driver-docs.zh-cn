@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b72070dbfb9d17ada5f0014114e66a58ed43f012
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 616a4acc23ac1941a8af654030e9d032d6d26629
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89066176"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91734277"
 ---
 # <a name="irp_mj_read-ifs"></a>IRP \_ MJ \_ 读取 (IFS) 
 
@@ -57,7 +57,7 @@ IRP \_ MJ \_ 读取请求由 I/o 管理器或文件系统驱动程序发送。 �
 
 筛选器驱动程序应执行任何所需的处理，并根据筛选器的性质，要么完成 IRP 还是使 IRP 失败，要么将 IRP 向下传递到堆栈上的下一个较低的驱动程序。
 
-## <a name="parameters"></a>parameters
+## <a name="parameters"></a>参数
 
 
 文件系统或筛选器驱动程序与给定的 IRP 一起调用[**IoGetCurrentIrpStackLocation**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetcurrentirpstacklocation) ，以获取指向其自己的*IrpSp*[**堆栈位置**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_stack_location)的指针，如以下列表所示。  (IRP 显示为 *irp*。 ) 驱动程序可以使用 irp 的以下成员中包含的信息和 irp 堆栈位置来处理读取请求：
@@ -127,7 +127,7 @@ IRP \_ MJ \_ 读取请求由 I/o 管理器或文件系统驱动程序发送。 �
 <a name="remarks"></a>备注
 -------
 
-文件系统在文件末尾将写入和读取操作舍入到基础文件存储设备的多个扇区大小。 处理预读或预写入操作时，分配和交换缓冲区的筛选器需要将已分配缓冲区的大小舍入到关联设备的扇区大小的倍数。 否则，从基础文件系统传输的数据的长度将超过缓冲区的分配长度。 有关交换缓冲区的详细信息，请参阅 [SwapBuffers 微筛选器示例](https://go.microsoft.com/fwlink/p/?linkid=256055)。
+文件系统在文件末尾将写入和读取操作舍入到基础文件存储设备的多个扇区大小。 处理预读或预写入操作时，分配和交换缓冲区的筛选器需要将已分配缓冲区的大小舍入到关联设备的扇区大小的倍数。 否则，从基础文件系统传输的数据的长度将超过缓冲区的分配长度。 有关交换缓冲区的详细信息，请参阅 [SwapBuffers 微筛选器示例](/samples/browse/)。
 
 ## <a name="see-also"></a>另请参阅
 
@@ -149,6 +149,4 @@ IRP \_ MJ \_ 读取请求由 I/o 管理器或文件系统驱动程序发送。 �
 [**IRP \_ MJ \_ 写入**](irp-mj-write.md)
 
 [**ZwReadFile**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ntreadfile)
-
- 
 

@@ -4,12 +4,12 @@ description: 存储管理和 WMI 类
 ms.assetid: 32cfb51e-b02a-4624-88ea-804d823256a6
 ms.localizationpriority: medium
 ms.date: 12/15/2019
-ms.openlocfilehash: 6a7ec02928a85b3584117d3769bb837d941fdd29
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 3fe3db515662718c3d941dfffc94f16bc84055f4
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89189435"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91733704"
 ---
 # <a name="about-storage-management-and-wmi-classes"></a>关于存储管理和 WMI 类
 
@@ -31,4 +31,4 @@ ms.locfileid: "89189435"
 
 ## <a name="related-topics"></a>相关主题
 
-[存储驱动程序设计指南](https://go.microsoft.com/fwlink/p/?LinkId=798409)
+[存储驱动程序设计指南](./index.md)

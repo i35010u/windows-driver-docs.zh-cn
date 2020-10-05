@@ -9,12 +9,12 @@ keywords:
 - WPP 软件跟踪 WDK，基于框架的驱动程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e84c73556b7430d63c6aaa2e754619a4ea545554
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 41509d62e9d2119844e50ebe65ab4c8491ae48c7
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89189705"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91733603"
 ---
 # <a name="using-wpp-software-tracing-in-umdf-drivers"></a>在 UMDF 驱动程序中使用 WPP 软件跟踪
 
@@ -102,9 +102,7 @@ UMDF 日志文件为% windir% \\ system32 日志 \\ 文件 \\ WUDF \\ WUDFTrace�
 
 -   **LogFlushPeriodSeconds**值指定跟踪消息写入跟踪日志的频率（以秒为单位）。
 
--   **LogMinidumpType**值包含标志，这些标志指定小型转储文件（如果生成）将包含的信息类型。 有关这些标志的详细信息，请参阅 [小型转储 \_ 类型](https://go.microsoft.com/fwlink/p/?linkid=160310) 枚举。
+-   **LogMinidumpType**值包含标志，这些标志指定小型转储文件（如果生成）将包含的信息类型。 有关这些标志的详细信息，请参阅 [小型转储 \_ 类型](/windows/win32/api/minidumpapiset/ne-minidumpapiset-minidump_type) 枚举。
 
 你可能会在 **HKLM \\ SOFTWARE \\ Microsoft \\ Windows NT \\ CurrentVersion \\ WUDF** 注册表项下找到其他注册表值。 不应修改这些值。
-
- 
 

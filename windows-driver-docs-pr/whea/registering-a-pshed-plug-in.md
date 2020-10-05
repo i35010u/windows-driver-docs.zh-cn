@@ -8,17 +8,17 @@ keywords:
 - PSHED 插件 WDK WHEA，注册
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3352727921342c6f03f1e2f792bea4246edac12d
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: e92c6816bc7efa4a7f76b9e731e560501474a7af
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89207683"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91733009"
 ---
 # <a name="registering-a-pshed-plug-in"></a>注册 PSHED 插件
 
 
-PSHED 插件通过调用 [**PshedRegisterPlugin**](/windows-hardware/drivers/ddi/ntddk/nf-ntddk-pshedregisterplugin) 函数向 PSHED 注册自身，并传递指向已初始化 [**WHEA \_ PSHED \_ 插件 \_ 注册 \_ 包**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/ns-ntddk-_whea_pshed_plugin_registration_packet) 结构的指针。 PSHED 插件通常从其[**DriverEntry**](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_initialize)函数或其[**AddDevice**](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_add_device)函数内调用**PshedRegisterPlugin**函数。
+PSHED 插件通过调用 [**PshedRegisterPlugin**](/windows-hardware/drivers/ddi/ntddk/nf-ntddk-pshedregisterplugin) 函数向 PSHED 注册自身，并传递指向已初始化 [**WHEA \_ PSHED \_ 插件 \_ 注册 \_ 包**](/windows-hardware/drivers/ddi/ntddk/ns-ntddk-_whea_pshed_plugin_registration_packet) 结构的指针。 PSHED 插件通常从其[**DriverEntry**](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_initialize)函数或其[**AddDevice**](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_add_device)函数内调用**PshedRegisterPlugin**函数。
 
 在调用**PshedRegisterPlugin**之前，PSHED 插件可以调用[**PshedIsSystemWheaEnabled**](/windows-hardware/drivers/ddi/ntddk/nf-ntddk-pshedissystemwheaenabled)来检查系统是否已启用 WHEA。
 
@@ -155,6 +155,4 @@ NTSTATUS
   return STATUS_SUCCESS;
 }
 ```
-
- 
 

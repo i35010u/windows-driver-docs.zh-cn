@@ -11,12 +11,12 @@ keywords:
 - 驱动程序注册表 RunOnce 密钥 WDK 设备安装
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ecb21b78e035012e715a3cfdf78fec7fb0541d02
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: fb7ccdf878e725806c74d646e3b31bc54caa45c1
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90106484"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91732715"
 ---
 # <a name="runonce-registry-key"></a>RunOnce 注册表项
 
@@ -93,7 +93,5 @@ KSCATEGORY_WDMAUD = "{3E227E76-690D-11D2-8161-0000F8775BF1}"
 
     在 *设备安装应用程序* 创建 **RunOnce** 条目之前，它会通知当前用户具有管理员权限的用户必须在系统重新启动后登录。
 
-    有关详细信息，请参阅 [开发在 Windows Vista 上登录时运行的应用程序](https://go.microsoft.com/fwlink/p/?linkid=133224)。
-
- 
+    有关详细信息，请参阅 [开发在 Windows Vista 上登录时运行的应用程序](/previous-versions/bb325654(v=msdn.10))。
 

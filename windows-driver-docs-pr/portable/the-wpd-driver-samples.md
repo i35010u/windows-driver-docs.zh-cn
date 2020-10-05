@@ -3,12 +3,12 @@ description: WPD 驱动程序示例
 title: WPD 驱动程序示例
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c413dd3e3bce516a2acffb4271ac606342fa3858
-ms.sourcegitcommit: 15caaf6d943135efcaf9975927ff3933957acd5d
+ms.openlocfilehash: 88ae7070cc419914a756a141287f93e742ea36a2
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88968520"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91734341"
 ---
 # <a name="the-wpd-driver-samples"></a>WPD 驱动程序示例
 
@@ -32,21 +32,15 @@ Windows 便携设备驱动程序工具包包含五个示例 WPD 驱动程序。 
 ## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
-[WPD HelloWorld 驱动程序下载页](https://go.microsoft.com/fwlink/p/?linkid=257508)
+[WPD HelloWorld 驱动程序下载页](/samples/browse/)
 
-[WPD 基本硬件驱动程序下载页](https://go.microsoft.com/fwlink/p/?linkid=256221)
+[WPD 基本硬件驱动程序下载页](/samples/browse/)
 
-[WPD 多传输驱动程序下载页](https://go.microsoft.com/fwlink/p/?linkid=256222)
+[WPD 多传输驱动程序下载页](/samples/browse/)
 
-[WPD 服务示例驱动程序下载页](https://go.microsoft.com/fwlink/p/?linkid=256223)
+[WPD 服务示例驱动程序下载页](/samples/browse/)
 
-[WPD WUDF 示例驱动程序下载页](https://go.microsoft.com/fwlink/p/?linkid=256224)
-
- 
+[WPD WUDF 示例驱动程序下载页](/samples/browse/)
 
  
-
-
-
-
 

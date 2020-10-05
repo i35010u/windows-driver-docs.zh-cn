@@ -3,21 +3,21 @@ title: Internet 密钥交换函数
 description: 本部分介绍 Internet 密钥交换函数。
 ms.assetid: 993a6db0-018c-4529-bccc-46b522e74c79
 keywords:
-- Internet 密钥交换函数网络驱动程序
+- Internet 密钥交换功能网络驱动程序
 ms.date: 11/07/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b67173175b6e885c05071e2d021b47b9677f89b0
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b46ece8761dc12f9c11177dea0a28a05caf9d15b
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380605"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91733397"
 ---
 # <a name="internet-key-exchange-functions"></a>Internet 密钥交换函数
 
-以下函数的语义是完全相同，但返回类型而不是 Win32 错误代码的 NTSTATUS 代码从用户模式应用程序中调用时从标注驱动程序，因为调用时。 每个函数的说明，请参阅[Windows 筛选平台](https://go.microsoft.com/fwlink/p/?linkid=210226)Microsoft Windows SDK 文档中的部分。
+在从标注驱动程序调用时，以下函数的语义完全相同，不同之处在于，返回类型是一个 NTSTATUS 代码，而不是 Win32 错误代码。 有关每个函数的说明，请参阅 Microsoft Windows SDK 文档中的 [Windows 筛选平台](/windows/win32/fwp/windows-filtering-platform-start-page) 部分。
 
-这些函数的调用方必须运行在 IRQL = passive_level 调用。
+这些函数的调用方必须在 IRQL = PASSIVE_LEVEL 上运行。
 
 - IkeextGetStatistics0
 - IkeextSaCreateEnumHandle0
@@ -27,4 +27,3 @@ ms.locfileid: "63380605"
 - IkeextSaDestroyEnumHandle0
 - IkeextSaEnum0
 - IkeextSaGetById0
-

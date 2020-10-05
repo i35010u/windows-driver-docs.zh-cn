@@ -4,12 +4,12 @@ description: 连接配置文件 API
 ms.assetid: 671b0df6-4f4b-4867-86dd-5eb832d86b4b
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9072ea925177f66ff01f12bb72ec7aaac7708c0b
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: ac31b3d2ea9b740a4a4d6b082d10e99b0b46327e
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89214097"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91732719"
 ---
 # <a name="connection-profile-api"></a>连接配置文件 API
 
@@ -29,9 +29,7 @@ ms.locfileid: "89214097"
 
 [移动宽带 Windows 运行时 API 的列表](list-of-mobile-broadband-windows-runtime-apis.md)
 
-[网络信息示例](https://go.microsoft.com/fwlink/p/?linkid=227013)
+[网络信息示例](/samples/browse/)
 
 [**NetworkStatusChangedEventHandler 委托**](/uwp/api/windows.networking.connectivity.networkstatuschangedeventhandler)
-
- 
 

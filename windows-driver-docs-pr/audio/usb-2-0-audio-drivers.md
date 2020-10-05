@@ -7,12 +7,12 @@ ms.topic: article
 ms.custom:
 - CI 111498
 - CSSTroubleshooting
-ms.openlocfilehash: 658da9b29dbe3da35e2345579c23ec63bc9ddf41
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 944858573a649b1fabda94694bef85f006040d5b
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89210322"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91733559"
 ---
 # <a name="usb-audio-20-drivers"></a>USB 音频 2.0 驱动程序
 
@@ -328,7 +328,7 @@ UCHAR Example2_MSOS20DescriptorSetForUAC2 [0x76] = {
     0x00, 0x00, 0xff, 0x00  // PropertyData - 0xff0000 - RED }
 ```
 
-## <a name="troubleshooting"></a>故障排除
+## <a name="troubleshooting"></a>疑难解答
 
 如果驱动程序未启动，则应检查系统事件日志。 驱动程序记录指示失败原因的事件。 同样，可以按照 [此博客文章](https://matthewvaneerde.wordpress.com/2017/01/09/collecting-audio-logs-the-old-fashioned-way/)中所述的步骤手动收集音频日志。 如果失败可能表示驱动程序出现问题，请使用下面所述的反馈中心进行报告，并包含日志。
 
@@ -346,7 +346,7 @@ UCHAR Example2_MSOS20DescriptorSetForUAC2 [0x76] = {
 
 ### <a name="see-also"></a>另请参阅
 
-[Windows 驱动程序模型 (WDM)](https://docs.microsoft.com/windows-hardware/drivers/kernel/windows-driver-model)
+[Windows 驱动程序模型 (WDM)](../kernel/writing-wdm-drivers.md)
 
 [音频驱动程序概述](./getting-started-with-wdm-audio-drivers.md)
 

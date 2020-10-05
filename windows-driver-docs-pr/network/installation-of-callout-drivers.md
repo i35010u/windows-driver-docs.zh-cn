@@ -10,12 +10,12 @@ keywords:
 - INF 文件 WDK Windows 筛选平台
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 838aa385dfbc57077e7d9214d4a3ec650c175042
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 03b331301ef105e0c840e08884d6e349733de89e
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89209305"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91733937"
 ---
 # <a name="installation-of-callout-drivers"></a>标注驱动程序的安装
 
@@ -36,7 +36,7 @@ net start drivername
 net stop drivername
 ```
 
-还可以通过编写调用 Win32 服务控制管理器 API 的用户模式应用程序，安装、加载 (启动) 、卸载 (停止) 和/或卸载标注驱动程序。 有关 Win32 服务控制功能的详细信息，如 **CreateService**、 **OpenService**、 **StartService**、 **control 服务**和 **DeleteService**，请参阅 [Microsoft Windows SDK](https://go.microsoft.com/fwlink/p/?linkid=122165)。
+还可以通过编写调用 Win32 服务控制管理器 API 的用户模式应用程序，安装、加载 (启动) 、卸载 (停止) 和/或卸载标注驱动程序。 有关 Win32 服务控制功能的详细信息，如 **CreateService**、 **OpenService**、 **StartService**、 **control 服务**和 **DeleteService**，请参阅 [Microsoft Windows SDK](/windows/win32/services/service-reference)。
 
 > [!NOTE]
 > 从 Windows 8 及更高版本开始，无法在设备管理器中查看或管理标注驱动程序，因为即插即用 (PnP) 管理器不再为非 PnP (旧) 设备创建设备表示形式。

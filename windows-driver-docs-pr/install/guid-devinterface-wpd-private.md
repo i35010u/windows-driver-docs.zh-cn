@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: ba189fd2b06626cd3a2d8b4dda137602b1dbea60
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: d3ddb16384176e7b28642d87ce419e5371240c6d
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89096873"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91733513"
 ---
 # <a name="guid_devinterface_wpd_private"></a>GUID_DEVINTERFACE_WPD_PRIVATE
 
 
-GUID_DEVINTERFACE_WPD_PRIVATE [设备接口类](./overview-of-device-interface-classes.md) 定义 (WPD) 专用 [Windows 便携式设备](https://go.microsoft.com/fwlink/p/?linkid=106527) 。
+GUID_DEVINTERFACE_WPD_PRIVATE [设备接口类](./overview-of-device-interface-classes.md) 定义 (WPD) 专用 [Windows 便携式设备](/previous-versions//ff597729(v=vs.85)) 。
 
 <table>
 <colgroup>
@@ -33,7 +33,7 @@ GUID_DEVINTERFACE_WPD_PRIVATE [设备接口类](./overview-of-device-interface-c
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Attribute</th>
+<th align="left">属性</th>
 <th align="left">设置</th>
 </tr>
 </thead>
@@ -84,6 +84,4 @@ GUID_DEVINTERFACE_WPD_PRIVATE 应仅用于自定义 WPD 应用程序使用的专
 
 
 [**GUID_DEVINTERFACE_WPD**](guid-devinterface-wpd.md)
-
- 
 

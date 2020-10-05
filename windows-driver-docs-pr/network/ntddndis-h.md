@@ -7,12 +7,12 @@ keywords:
 ms.date: 08/08/2017
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 504e41f4db28cbcaa7dcb2b09783a7549536b26b
-ms.sourcegitcommit: 29c2e6dd8a3de3c11822d990adf1edd774f8a136
+ms.openlocfilehash: 17b467bff31cee63b8b1cfbef227ed6aa39888b2
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91238785"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91734187"
 ---
 # <a name="ntddndish"></a>Ntddndis.h
 
@@ -28,9 +28,9 @@ Ntddndis 标头包含用于与网络驱动程序进行交互的常量和类型�
 > [!NOTE]
 > 本部分的主题包含用于定义和 Oid 的页面，这些页面不属于网络驱动程序 DDI 引用。 
 >
-> 有关此标头的 DDI 引用，请参阅 [ntddndis 标头](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis)。
+> 有关此标头的 DDI 引用，请参阅 [ntddndis 标头](/windows-hardware/drivers/ddi/ntddndis)。
 
-## <a name="in-this-section"></a>在本节中
+## <a name="in-this-section"></a>在此部分中
 
 * [GUID_NDIS_GEN_PCI_DEVICE_CUSTOM_PROPERTIES](guid-ndis-gen-pci-device-custom-properties.md)
 * [OID_802_3_ADD_MULTICAST_ADDRESS](oid-802-3-add-multicast-address.md)

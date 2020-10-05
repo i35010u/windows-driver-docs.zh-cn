@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 6af919e650df1fa8ed994108172f3782277eef90
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: ce53f5e3fb856e553aab364940c75bc9e9fb4cd9
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90717430"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91734363"
 ---
 # <a name="devpkey_device_modelid"></a>DEVPKEY_Device_ModelId
 
 
-DEVPKEY_Device_ModelId 设备属性将设备与 [设备元数据包](https://docs.microsoft.com/windows-hardware/drivers/install/device-metadata-packages)匹配。
+DEVPKEY_Device_ModelId 设备属性将设备与 [设备元数据包](./overview-of-device-metadata-packages.md)匹配。
 
 <table>
 <colgroup>
@@ -33,7 +33,7 @@ DEVPKEY_Device_ModelId 设备属性将设备与 [设备元数据包](https://doc
 </colgroup>
 <thead>
 <tr>
-<th>Attribute</th>
+<th>属性</th>
 <th>值</th>
 </tr>
 </thead>
@@ -66,7 +66,7 @@ DEVPKEY_Device_ModelId 设备属性为 Ihv 和 Oem 提供唯一标识共享相�
 
 DEVPKEY_Device_ModelId 设备属性包含设备元数据包中 [**ModelId**](/previous-versions/windows/hardware/metadata/ff549295(v=vs.85)) XML 元素的值。 安装设备后，将使用设备报告的 ModelID GUID 值填充此 PKEY。
 
-有关详细信息，请参阅 [设备元数据包](https://docs.microsoft.com/windows-hardware/drivers/install/device-metadata-packages)。
+有关详细信息，请参阅 [设备元数据包](./overview-of-device-metadata-packages.md)。
 
 <a name="requirements"></a>要求
 ------------
@@ -88,14 +88,12 @@ DEVPKEY_Device_ModelId 设备属性包含设备元数据包中 [**ModelId**](/pr
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
-[设备元数据包](https://docs.microsoft.com/windows-hardware/drivers/install/device-metadata-packages)
+[设备元数据包](./overview-of-device-metadata-packages.md)
 
 [**ModelID**](/previous-versions/windows/hardware/metadata/ff549295(v=vs.85))
 
 [**SetupDiGetDeviceProperty**](/windows/win32/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)
-
- 
 

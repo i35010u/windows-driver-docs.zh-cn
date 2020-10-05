@@ -3,21 +3,21 @@ description: 编写与 USB 设备通信的 Windows 桌面应用程序的最简�
 title: 编写基于 WinUSB 模板的 Windows 桌面应用
 ms.date: 07/16/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: a7eac40b0d401a2f90330891752baab97a44a0ba
-ms.sourcegitcommit: b3e38d06762246c77cedd8e82d740ebea104c538
+ms.openlocfilehash: 7ecd406c88028c23ab2de8d8abed3db44f54b52b
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/02/2020
-ms.locfileid: "91662483"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91732699"
 ---
 # <a name="write-a-windows-desktop-app-based-on-the-winusb-template"></a>编写基于 WinUSB 模板的 Windows 桌面应用
 
 编写与 USB 设备通信的 Windows 桌面应用程序的最简单方法是使用 C/c + + WinUSB 模板。 对于此模板，需要一个集成的环境，其中包含 Windows 驱动程序工具包 (WDK)  (，其中包含适用于 Windows 的调试工具) 以及 Microsoft Visual Studio 的专业版或旗舰版 (。 您可以使用模板作为起点。
 
-## <a name="prerequisites"></a>必备条件
+## <a name="prerequisites"></a>先决条件
 
 - 若要设置集成开发环境，请首先安装 Microsoft Visual Studio Ultimate 2019 或 Microsoft Visual Studio Professional 2019，然后安装 WDK。 可以在 [WDK 下载页](../download-the-wdk.md)上找到有关如何设置 Visual STUDIO 和 wdk 的信息。
-- 安装 WDK 时包含 Windows 调试工具。 有关详细信息，请参阅 [下载和安装适用于 Windows 的调试工具](https://go.microsoft.com/fwlink/p/?linkid=235427)。
+- 安装 WDK 时包含 Windows 调试工具。 有关详细信息，请参阅 [下载和安装适用于 Windows 的调试工具](../debugger/index.md)。
 
 ## <a name="creating-a-winusb-application"></a>创建 WinUSB 应用程序
 

@@ -4,12 +4,12 @@ description: 本文为驱动程序开发人员提供了驱动程序安全核对�
 ms.assetid: 25375E02-FCA1-4E94-8D9A-AA396C909278
 ms.date: 03/13/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: a8ca3d1f045c2b42e53e6bb62ad391607cce90f9
-ms.sourcegitcommit: 4f0760e7df1ed3c5542c9738092e2c8165f5d6d0
+ms.openlocfilehash: 8829b4fd7db44ae76b2e24683efa9d2f6bf7f380
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/18/2020
-ms.locfileid: "90767869"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91733193"
 ---
 # <a name="driver-security-checklist"></a>驱动程序安全清单
 
@@ -82,7 +82,7 @@ Windows 内核中的驱动程序在内核中执行时会出现问题。 如果�
 
 使用 [Windows 驱动程序框架](../wdf/index.md) 减小代码大小并提高其可靠性和安全性。  若要开始，请查看 [使用 WDF 开发驱动程序](../wdf/using-the-framework-to-develop-a-driver.md)。 有关使用低风险用户模式框架驱动程序 (UMDF) 的信息，请参阅 [选择驱动程序模型](../gettingstarted/choosing-a-driver-model.md)。
 
-[Windows 驱动模型 (WDM) ](https://docs.microsoft.com/windows-hardware/drivers/kernel/windows-driver-model)驱动程序编写一种旧的方式会更耗费时间和成本，几乎始终都需要重新创建驱动程序框架中提供的代码。
+[Windows 驱动模型 (WDM) ](../kernel/writing-wdm-drivers.md)驱动程序编写一种旧的方式会更耗费时间和成本，几乎始终都需要重新创建驱动程序框架中提供的代码。
 
 Windows 驱动程序框架源代码是开放源代码，在 GitHub 上可用。 Windows 10 中提供的 WDF 运行时库是根据此源代码生成的。 如果能够按照驱动程序和 WDF 之间的交互步骤进行操作，则可更有效地调试驱动程序。 从下载 [https://github.com/Microsoft/Windows-Driver-Frameworks](https://github.com/Microsoft/Windows-Driver-Frameworks) 。
 
@@ -143,7 +143,7 @@ Ihv 和 Oem 可以使用安全开发生命周期 (SDL) 最佳实践和相关工�
 
 Windows 驱动程序的主要职责之一是在用户模式应用程序和系统设备之间传输数据。 下表显示了用于访问数据缓冲区的三种方法。
 
-|IOCTL 缓冲区类型 | 总结                                    | 更多信息 |  
+|IOCTL 缓冲区类型 | 摘要                                    | 更多信息 |  
 |------------------|--------------------------------------------|-------------------------------------------------------------------------|
 | METHOD_BUFFERED  |建议用于大多数 situtations            | [使用缓冲 I/O](../kernel/using-buffered-i-o.md)
 | METHOD_IN_DIRECT 或 METHOD_OUT_DIRECT |用于某些高速硬件 i/o    |[使用直接 I/O](../kernel/using-direct-i-o.md) |
@@ -211,7 +211,7 @@ Windows 驱动程序的主要职责之一是在用户模式应用程序和系统
 
 [使用缓冲 I/O 执行 DispatchReadWrite](../kernel/dispatchreadwrite-using-buffered-i-o.md)
 
-[缓冲 I/O 出错](https://docs.microsoft.com/windows-hardware/drivers/kernel/errors-in-buffered-i-o)
+[缓冲 I/O 出错](../kernel/failure-to-check-the-size-of-buffers.md)
 
 [使用直接 I/O 执行 DispatchReadWrite](../kernel/dispatchreadwrite-using-direct-i-o.md)
 
@@ -410,7 +410,7 @@ AC (Application Container)
 
 [使用设备安装函数](../install/using-device-installation-functions.md)
 
-[设备和驱动程序安装高级主题](https://docs.microsoft.com/windows-hardware/drivers/install/device-and-driver-installation-advanced-topics)
+[设备和驱动程序安装高级主题](../install/creating-secure-device-installations.md)
 
 ## <a name="perform-peer-code-review"></a>执行对等代码评审
 

@@ -3,12 +3,12 @@ description: 本主题提供有关适用于通用串行总线 (USB) 的跟踪和
 title: Windows 的 USB 事件跟踪的概述
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c6f1419a78755c3dc6eaba8e890e751c2ecc8dfa
-ms.sourcegitcommit: 8835925c6a88efc301dc5e8bd9bca87082416eb6
+ms.openlocfilehash: 0c1c6bc0447ed62f50f35fa176335fbb459d5c10
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/18/2020
-ms.locfileid: "90777591"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91734203"
 ---
 # <a name="overview-of-usb-event-tracing-for-windows"></a>Windows 的 USB 事件跟踪的概述
 
@@ -73,7 +73,7 @@ Windows 8 提供了 USB 驱动程序堆栈以支持 USB 3.0 设备。 Microsoft 
 
 | 主题 | 说明 |
 | --- | --- |
-|[如何使用 Logman 捕获 USB 事件跟踪](how-to-capture-a-usb-event-trace.md) | 本主题提供有关使用 [Logman](https://go.microsoft.com/fwlink/p/?linkid=617153) 工具捕获 USB ETW 事件跟踪的信息。 Logman 是内置于 Windows 中的跟踪工具。 可以使用 Logman 将事件捕获到事件跟踪日志文件中。 |
+|[如何使用 Logman 捕获 USB 事件跟踪](how-to-capture-a-usb-event-trace.md) | 本主题提供有关使用 [Logman](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc753820(v=ws.10)) 工具捕获 USB ETW 事件跟踪的信息。 Logman 是内置于 Windows 中的跟踪工具。 可以使用 Logman 将事件捕获到事件跟踪日志文件中。 |
 | [使用 USB ETW 跟踪中的活动 ID GUID](using-usb-etw.md) | 本主题提供有关活动 ID Guid 的信息、如何将这些 Guid 添加到事件跟踪提供程序中，以及如何在 Netmon 中查看它们。 |
 |[Netmon 中的 USB ETW 跟踪](viewing-etw-traces-in-netmon.md) | 可以使用 Microsoft 网络监视器（也称为 Netmon）查看 USB ETW 事件跟踪。 Netmon 不会自动分析跟踪。 它需要 USB ETW 分析。 USB ETW 分析器是以网络监视器分析器语言编写的文本文件， (NPL) ，用于描述 USB ETW 事件跟踪的结构。 分析器还会定义 USB 特定的列和筛选器。 这些分析器使 Netmon 成为分析 USB ETW 跟踪的最佳工具。 |
 | [将 Xperf 与 USB ETW 配合使用](using-xperf-with-usb-etw.md) | 本主题介绍如何将 Xperf 与 Netmon 配合使用来分析 USB 跟踪数据。 |

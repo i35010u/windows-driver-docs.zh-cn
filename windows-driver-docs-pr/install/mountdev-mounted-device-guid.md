@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: b65a6acee5bfb74460d791fe55d2ecbb52492c98
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 24f4fc5c1a324a1bbff5216eca68135b6b3ccb3c
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89095005"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91733959"
 ---
 # <a name="mountdev_mounted_device_guid"></a>MOUNTDEV_MOUNTED_DEVICE_GUID
 
@@ -33,7 +33,7 @@ ms.locfileid: "89095005"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Attribute</th>
+<th align="left">属性</th>
 <th align="left">设置</th>
 </tr>
 </thead>
@@ -56,7 +56,7 @@ ms.locfileid: "89095005"
 
 此设备接口类的 MOUNTDEV_MOUNTED_DEVICE_GUID 标识符是 [**GUID_DEVINTERFACE_VOLUME**](guid-devinterface-volume.md) 设备接口类的别名。
 
-WDK 中的存储 [示例](https://go.microsoft.com/fwlink/p/?LinkId=618052) 包括 [ClassPnP 存储类驱动程序库，该程序库](https://go.microsoft.com/fwlink/p/?linkid=256095) 使用 MOUNTDEV_MOUNTED_DEVICE_GUID 来注册 GUID_DEVINTERFACE_VOLUME 设备接口类的实例。
+WDK 中的存储 [示例](https://go.microsoft.com/fwlink/p/?LinkId=618052) 包括 [ClassPnP 存储类驱动程序库，该程序库](/samples/browse/) 使用 MOUNTDEV_MOUNTED_DEVICE_GUID 来注册 GUID_DEVINTERFACE_VOLUME 设备接口类的实例。
 
 <a name="requirements"></a>要求
 ------------
@@ -78,6 +78,4 @@ WDK 中的存储 [示例](https://go.microsoft.com/fwlink/p/?LinkId=618052) 包�
 
 
 [**GUID_DEVINTERFACE_VOLUME**](guid-devinterface-volume.md)
-
- 
 

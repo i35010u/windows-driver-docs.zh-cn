@@ -1,66 +1,66 @@
 ---
-title: 如何自定义 UWP 设备应用使用照相机选项
-description: 在 Windows 8.1 UWP 设备应用程序允许设备制造商自定义某些相机应用中显示更多的照相机选项浮出控件。
+title: 如何使用 UWP 设备应用自定义相机选项
+description: 在 Windows 8.1 中，UWP 设备应用允许设备制造商自定义在某些照相机应用中显示更多相机选项的弹出窗口。
 ms.assetid: 4BA34A3F-3C0D-4DDC-BA0A-E62AE9A6A93A
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a715334377e827f67d42361fad6d39538b801fec
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ae77300c18c19746fddb2729c2293001fbc42844
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63330664"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91732967"
 ---
-# <a name="how-to-customize-camera-options-with-a-uwp-device-app"></a>如何自定义 UWP 设备应用使用照相机选项
+# <a name="how-to-customize-camera-options-with-a-uwp-device-app"></a>如何使用 UWP 设备应用自定义相机选项
 
-在 Windows 8.1 UWP 设备应用程序允许设备制造商自定义某些相机应用中显示更多的照相机选项浮出控件。 本主题介绍**更多选项**浮出控件，显示由 CameraCatureUI API，并显示如何将C#的版本[UWP 用于相机的设备应用程序](https://go.microsoft.com/fwlink/p/?LinkID=227865)示例将替换与默认浮出控件自定义浮出控件。 若要在一般情况下了解有关 UWP 的设备应用程序的详细信息，请参阅[满足 UWP 设备应用](meet-uwp-device-apps.md)。
-
-> [!NOTE]
-> 在 Windows 8.1 中的内置相机应用程序不会显示**更多选项**按钮，因此不能显示一个 UWP 设备应用来显示更多的照相机选项。 但是， [CameraCaptureUI 类](https://go.microsoft.com/fwlink/p/?LinkId=317985)，，适用于所有 UWP 应用，确实有**更多选项**按钮，然后可以显示从它的 UWP 设备应用程序。
-
-C#的版本[UWP 用于相机的设备应用程序](https://go.microsoft.com/fwlink/p/?LinkID=227865)的示例使用**DeviceAppPage.xaml**页以显示自定义的浮出控件，有关更多的相机选项 UI。 此示例也适用照相机效果使用照相机驱动程序 MFT （媒体基础转换）。 有关的详细信息，请参阅[创建照相机驱动程序 MFT](creating-a-camera-driver-mft.md)。
+在 Windows 8.1 中，UWP 设备应用允许设备制造商自定义在某些照相机应用中显示更多相机选项的弹出窗口。 本主题介绍了 CameraCatureUI API 显示的 " **更多选项** " 弹出窗口，并演示了 c # 版本的 [UWP 设备应用程序](/samples/browse/) 示例如何使用自定义浮出控件替换默认浮出控件。 若要详细了解 UWP 设备应用的详细信息，请参阅了解 [uwp 设备应用](meet-uwp-device-apps.md)。
 
 > [!NOTE]
-> 本主题中所示的代码示例基于C#的版本[UWP 用于相机的设备应用程序](https://go.microsoft.com/fwlink/p/?LinkID=227865)示例。 此示例也会出现在 JavaScript 和C++。 下载示例，请参阅最新版本的代码。
+> 在 Windows 8.1 中，内置相机应用不显示 **更多选项** 按钮，因此无法显示 UWP 设备应用以显示更多相机选项。 但是， [CameraCaptureUI 类](/uwp/api/Windows.Media.Capture.CameraCaptureUI)（可用于所有 UWP 应用）有一个 " **更多选项** " 按钮，可以显示 uwp 设备应用。
 
-## <a name="more-options-for-cameras"></a>用于相机的更多选项
+适用于 [照相机的 UWP 设备应用](/samples/browse/) 示例的 c # 版本使用 **DeviceAppPage** 页来演示自定义浮出控件的 UI，以获取更多相机选项。 该示例还使用照相机驱动程序 MFT (media foundation 转换) 来应用照相机效果。 有关此方面的详细信息，请参阅 [创建照相机驱动程序 MFT](creating-a-camera-driver-mft.md)。
 
-体验是 UWP 设备应用提供了另一个应用，UWP 应用，捕获或通过使用预览视频从摄像机时的功能的多个照相机选项[CameraCaptureUI](https://go.microsoft.com/fwlink/p/?LinkId=317985) API。 它是可通过访问**更多选项**照相机选项窗口中的链接。 它不是全屏幕，但显示中弹出一个窗口，也就是用于显示用户单击或点击外部时关闭的轻量、 上下文的用户界面的控件。
+> [!NOTE]
+> 本主题中所示的代码示例基于 [适用于照相机的 UWP 设备应用](/samples/browse/) 示例的 c # 版本。 此示例在 JavaScript 和 c + + 中也可用。 下载示例以查看最新版本的代码。
 
-这种体验可以突出显示不同的功能使用照相机，如应用自定义视频效果的能力。
+## <a name="more-options-for-cameras"></a>相机的更多选项
 
-当照相机不安装 UWP 设备应用时，Windows 提供默认值更多照相机选项体验。 如果 Windows 检测到为照相机、 安装的 UWP 设备应用程序和应用程序具有中选择的`windows.cameraSettings`扩展，您的应用程序取代了 Windows 提供的默认体验。
+相机选项的更多经验在于，当其他应用程序（UWP 应用）使用 [CameraCaptureUI](/uwp/api/Windows.Media.Capture.CameraCaptureUI) API 从相机捕获或预览视频时，uwp 设备应用提供此功能。 可以通过 "相机选项" 窗口中的 " **更多选项** " 链接来访问它。 它不是全屏显示，而是在弹出窗口中显示，它是一个用于显示轻型的上下文用户界面的控件，当用户单击或点击它时，该界面会被消除。
 
-若要调用的更多的照相机选项浮出控件：
+此体验可用于突出显示照相机的特色功能，如应用自定义视频效果的功能。
 
-1. 打开使用的 UWP 应用[CameraCaptureUI](https://go.microsoft.com/fwlink/p/?LinkId=317985) API ( [CameraCaptureUI 示例](https://go.microsoft.com/fwlink/p/?linkid=228589)，例如)
-2. 点击**选项**在 UI 中的按钮
-3. 这将打开**照相机选项**设置分辨率和视频防抖动选项显示基本的浮出控件
-4. 上**照相机选项**浮出控件，点击**更多选项**
-5. **更多选项**浮出控件打开
-    - *默认浮出控件*安装照相机无 UWP 设备应用会出现
-    - 一个*自定义浮出控件*安装 UWP 相机的设备应用会出现
+如果没有为相机安装 UWP 设备应用，Windows 将提供默认的相机选项体验。 如果 Windows 检测到已为照相机安装了 UWP 设备应用，并且该应用已选择使用 `windows.cameraSettings` 扩展，则应用会替换 Windows 提供的默认体验。
 
-![有关更多的照相机选项默认浮出控件和自定义的浮出控件的-同时图像](images/372745-cameraoptionslaunching.png)
+若要调用浮出控件以获取更多相机选项：
 
-此图显示了有关更多的照相机选项旁边的自定义的浮出控件示例默认浮出控件。
+1. 使用 [CameraCaptureUI](/uwp/api/Windows.Media.Capture.CameraCaptureUI) API 打开一个 UWP 应用 ([CameraCaptureUI 示例](/samples/browse/)，例如) 
+2. 点击 UI 中的 " **选项** " 按钮
+3. 这将打开 " **相机选项** " 弹出窗口，其中显示了用于设置分辨率和视频抖动的基本选项
+4. 在 "**相机选项**" 浮出控件上，点击 "**更多选项**"
+5. " **更多选项** " 会打开
+    - 如果未安装照相机的 UWP 设备应用，则会显示 *默认的弹出* 窗口
+    - 当安装了照相机的 UWP 设备应用时，将显示 *自定义弹出* 窗口
+
+![用于更多相机选项和自定义飞出的默认浮出控件的并排图像](images/372745-cameraoptionslaunching.png)
+
+此图显示了 "自定义" 浮出控件示例旁边的 "其他相机选项" 的默认浮出控件。
 
 ## <a name="prerequisites"></a>先决条件
 
-开始之前：
+准备工作：
 
-1. 获取对开发计算机设置。 请参阅[入门](getting-started.md)有关下载工具和创建开发人员帐户信息。
-2. 将你的应用与应用商店相关联。 请参阅[创建 UWP 设备应用](step-1--create-a-uwp-device-app.md)有关的信息。
-3. 创建设备元数据为您将其与您的应用程序关联的打印机。 请参阅[创建设备元数据](step-2--create-device-metadata.md)有关的详细信息。
-4. 构建您的应用程序的主页上的 UI。 可以从开始，它们将显示的全屏启动所有 UWP 设备应用程序。 使用入门体验突出显示你的产品或匹配特定品牌的方式和你的设备的功能中的服务。 没有任何特殊限制可以使用 UI 控件的类型。 若要开始使用的设计的全屏体验，请参阅[Microsoft Store 设计原则](https://go.microsoft.com/fwlink/p/?LinkID=299845)。
+1. 设置开发 PC。 有关下载工具和创建开发人员帐户的信息[，请参阅入门。](getting-started.md)
+2. 将应用与应用商店相关联。 请参阅 [创建 UWP 设备应用](step-1--create-a-uwp-device-app.md) 了解相关信息。
+3. 为打印机创建将其与应用程序关联的设备元数据。 有关详细信息，请参阅 [创建设备元数据](step-2--create-device-metadata.md) 。
+4. 构建应用程序主页的 UI。 所有 UWP 设备应用都可以从 "开始" 启动，它们将全屏显示。 使用 "开始体验" 以与设备的特定品牌和功能匹配的方式突出显示你的产品或服务。 它可以使用的 UI 控件类型没有任何特殊限制。 若要开始设计全屏体验，请参阅 [Microsoft Store 设计原则](https://go.microsoft.com/fwlink/p/?LinkID=299845)。
 
-## <a name="step-1-register-the-extension"></a>第 1 步：注册扩展
+## <a name="step-1-register-the-extension"></a>步骤1：注册扩展
 
-为了使 Windows 能够识别应用程序可以提供有关更多的照相机选项自定义浮出控件，它必须注册相机设置扩展。 此扩展中声明`Extension`元素中，使用`Category`属性设置为值为`windows.cameraSettings`。 在C#和C++示例中，`Executable`属性设置为`DeviceAppForWebcam.exe`并且`EntryPoint`属性设置为`DeviceAppForWebcam.App`。
+为了使 Windows 能够识别应用程序可以为更多相机选项提供自定义浮出控件，它必须注册照相机设置扩展。 此扩展在元素中声明 `Extension` ， `Category` 特性设置为的值 `windows.cameraSettings` 。 在 c # 和 c + + 示例中， `Executable` 特性设置为 `DeviceAppForWebcam.exe` ， `EntryPoint` 特性设置为 `DeviceAppForWebcam.App` 。
 
-可以添加照相机设置扩展**声明**清单设计器在 Microsoft Visual Studio 中的选项卡。 您还可以编辑的应用程序包清单 XML 手动，使用 XML （文本） 编辑器。 右键单击**Package.appxmanifest**中的文件**解决方案资源管理器**的编辑选项。
+可以在 Microsoft Visual Studio 中的清单设计器的 " **声明** " 选项卡上添加 "相机设置" 扩展。 你还可以使用 XML (文本) 编辑器手动编辑应用包清单 XML。 右键单击**解决方案资源管理器**中的**appxmanifest.xml**文件以编辑选项。
 
-此示例演示中的照相机设置扩展`Extension`元素，因为它在应用包清单文件中，将出现**Package.appxmanifest**。
+此示例显示元素中的相机设置扩展 `Extension` ，因为它显示在应用包清单文件 **appxmanifest.xml**中。
 
 ```XML
 <?xml version="1.0" encoding="utf-8"?>
@@ -92,58 +92,58 @@ C#的版本[UWP 用于相机的设备应用程序](https://go.microsoft.com/fwli
 </Package>
 ```
 
-## <a name="step-2-build-the-ui"></a>步骤 2：生成 UI
+## <a name="step-2-build-the-ui"></a>步骤2：生成 UI
 
-生成你的应用之前, 应适用于您的设计人员和营销团队设计用户体验。 用户体验应项目贵公司的品牌方面，并帮助您构建与你的用户的连接。
+在构建你的应用程序之前，你应与你的设计人员和营销团队合作来设计用户体验。 用户体验应投影公司的品牌方面，并帮助你建立与用户的连接。
 
-### <a name="design-guidelines"></a>设计指南
+### <a name="design-guidelines"></a>设计准则
 
-务必要查看[UWP 应用浮出控件准则](https://go.microsoft.com/fwlink/p/?LinkId=317078)设计自定义的浮出控件之前。 指导帮助确保在浮出控件提供直观的体验与其他 UWP 应用一致的。
+在设计自定义浮出控件之前，请务必查看 [UWP 应用飞出指南](/windows/uwp/design/controls-and-patterns/dialogs-and-flyouts/) 。 本指南可帮助确保你的浮出控件提供与其他 UWP 应用一致的直观体验。
 
-为您的应用程序的主页，请注意 Windows 8.1，可以在一台监视器上的各种大小显示多个应用。 请参阅以下指南以了解有关如何应用可以重排正常之间屏幕尺寸、 窗口大小和方向详细信息。
+在应用程序的主页上，请记住，Windows 8.1 可以在单个监视器上以各种大小显示多个应用。 请参阅以下准则，详细了解应用程序如何在屏幕大小、窗口大小和方向之间进行适当的重新排列。
 
-- [窗口大小和扩展到屏幕的准则](https://go.microsoft.com/fwlink/p/?LinkId=311830)
-- [重设大小、 高和窄布局的 windows 的准则](https://go.microsoft.com/fwlink/p/?LinkId=311831)
+- [窗口大小和屏幕缩放的准则](https://go.microsoft.com/fwlink/p/?LinkId=311830)
+- [将窗口调整为高度和缩小布局的准则](/previous-versions/windows/hh465371(v=win.10))
 
-### <a name="flyout-dimensions"></a>浮出控件维度
+### <a name="flyout-dimensions"></a>飞出尺寸
 
-显示更多的照相机选项浮出控件是 625 像素高和宽 340 像素。 包含的区域**更多选项**顶部的文本由 Windows 提供，为自定义浮出控件的可视区域的高、 离开 560 像素的大约 65 像素。 自定义的浮出控件不应超过 340 像素宽。
+显示更多相机选项的浮出控件的高度为625像素，宽为340像素。 在顶部包含 " **更多选项** " 文本的区域由 Windows 提供，约为65像素，为自定义飞出的可查看区域保留560像素。 自定义浮出控件的宽度不应超过340像素。
 
-![有关更多的照相机选项浮出控件尺寸。](images/372776-camera-options-layout.png)
+![更多相机选项的飞出尺寸。](images/372776-camera-options-layout.png)
 
 > [!NOTE]
-> 如果自定义的浮出控件是多个 560 像素高，用户可能会滑动或向下滚动以查看的浮出控件是高于还是低于可视区域的部分。
+> 如果自定义浮出控件的高度超过560像素，则用户可以滑动或滚动查看可查看区域上方或下方的弹出窗口部分。
 
 ### <a name="suggested-effects"></a>建议的效果
 
-- 颜色效果。 例如，灰度、 棕褐色调或 solarizing 整个图片。
-- 人脸跟踪效果。 在其上添加其中图片和一个覆盖区，如乘幂号的或眼镜，一对中标识人脸。
-- 场景模式。 这些是不同的光照条件的预设的曝光和焦点模式。
+- 颜色效果。 例如，灰度、棕色色调或 solarizing 整个图片。
+- 面部跟踪效果。 在图片中识别人脸并在其顶部添加覆盖物，如帽子或一对眼镜。
+- 场景模式。 这些是针对不同照明条件的预设曝光和焦点模式。
 
-### <a name="suggested-settings"></a>建议设置
+### <a name="suggested-settings"></a>建议的设置
 
-- 在 UWP 设备应用的自定义的浮出控件可以提供一个开关，用于启用硬件实现的设置，例如制造商提供的颜色校正方案。
-- 实现补充公开的 UWP 设备应用的其他设置的基本属性。 例如，多个设备可能会公开控件用于调整亮度、 对比度、 闪烁、 焦点和风险，但实现真彩色自动调整亮度和对比度的设备可能不需要提供这些设置。
+- UWP 设备应用的自定义浮出控件可以提供开关来启用硬件实现的设置，如制造商提供的颜色校正方案。
+- 实现基本属性来补充 UWP 设备应用公开的其他设置。 例如，许多设备可能会公开控制以调整亮度、对比度、闪烁、焦点和曝光度，但实现 "自动调整亮度和对比度" 的 "自动调整亮度和对比度" 的设备可能不需要提供这些设置。
 
 ### <a name="restrictions"></a>限制
 
-- 不要从主应用程序打开 UWP 设备应用的自定义的浮出控件 (通过调用`CameraOptionsUI.Show`方法) 时应用未流式处理或捕获。
+- 不要通过在应用未进行 `CameraOptionsUI.Show` 流式处理或捕获时调用方法) ，从主应用 (打开 UWP 设备应用的自定义弹出窗口。
 
-- 执行不提供预览，或使 UWP 设备应用的自定义的浮出控件内的视频流的所有权。 自定义浮出控件旨在捕获视频的另一个应用的助手函数。 捕获应用程序具有视频流的所有权。 不应尝试访问使用低级别 Api 的视频流。 这可能会导致意外的行为，在其中捕获应用程序丢失了到流的访问权限。
+- 不要提供预览，或以其他方式从 UWP 设备应用的自定义浮出控件中取得视频流的所有权。 自定义飞出旨在充当捕获视频的其他应用。 捕获应用具有视频流的所有权。 不应尝试使用低级别 Api 访问视频流。 这可能会导致意外的行为，而捕获应用会失去对流的访问权限。
 
-- 不调整自定义浮出控件中的解决方法。
+- 不要在自定义浮出控件中调整分辨率。
 
-- 不要尝试显示弹出窗口、 通知或适用于自定义浮出控件的区域之外的对话框。 不允许这些类型的对话框。
+- 不要尝试在用于自定义浮出控件的区域之外显示弹出窗口、通知或对话框。 不允许使用这些类型的对话框。
 
-- 不能启动自定义浮出控件内的音频或视频捕获。 自定义浮出控件旨在扩展另一个应用程序捕获视频中，而不是启动捕获本身。 此外，捕获音频或视频可能会触发一个系统对话框中，并在自定义浮出控件内不允许使用弹出对话框。
+- 不要在自定义浮出控件内启动音频或视频捕获。 自定义弹出窗口旨在扩展正在捕获视频的其他应用，而不是启动捕获本身。 此外，捕获音频或视频可能会触发系统对话框，并且不允许在自定义浮出控件内使用弹出式对话框。
 
-## <a name="step-3-handle-activation"></a>步骤 3:处理激活
+## <a name="step-3-handle-activation"></a>步骤3：处理激活
 
-如果您的应用程序已声明相机设置扩展，它必须实现`OnActivated`方法以处理应用程序激活事件。 此事件触发时的 UWP 应用，使用[CameraCaptureUI](https://go.microsoft.com/fwlink/p/?LinkId=317985)类，调用[CameraOptionsUI.Show](https://go.microsoft.com/fwlink/p/?LinkId=317995)方法。 应用程序激活时，您的应用程序可以选择哪一页将为该应用启动时启动。 对于具有声明相机设置扩展的应用程序，Windows 将 Activated 事件参数中传递的视频设备：Windows.ApplicationModel.Activation.IActivatedEventArgs.
+如果你的应用已声明照相机设置扩展，则它必须实现一个 `OnActivated` 方法来处理应用激活事件。 当 UWP 应用使用 [CameraCaptureUI](/uwp/api/Windows.Media.Capture.CameraCaptureUI) 类调用 [CameraOptionsUI](/uwp/api/Windows.Media.Capture.CameraOptionsUI) 方法时，将触发此事件。 应用程序激活是指当应用程序启动时，应用程序可以选择要启动的页面。 对于声明了照相机设置扩展的应用程序，Windows 会将视频设备传递到激活的事件参数： Windows.applicationmodel.resources.core. IActivatedEventArgs。
 
-UWP 设备应用程序可以确定激活旨在用于相机设置 (的人只是点击**更多选项**上**照相机选项**对话框) 时将事件参数的`kind`属性等于 Windows.ApplicationModel.Activation.ActivationKind.CameraSettings。
+UWP 设备应用可以确定激活适用于照相机设置 (如果某个人只是在 "**相机选项**" 对话框) 了**更多选项**，则当事件参数的 `kind` 属性等于 windows.applicationmodel.resources.core. CameraSettings。
 
-此示例演示中的激活事件处理程序`OnActivated`方法，因为它将出现在**App.xaml.cs**文件。 然后，事件自变量都强制转换为 Windows.ApplicationModel.Activation.CameraSettingsActivatedEventArgs 并且发送到`Initialize`方法的自定义浮出控件 (**DeviceAppPage.xaml.cs**)。
+此示例显示方法中的激活事件处理程序 `OnActivated` ，如 **App.xaml.cs** 文件中所示。 然后，将事件参数强制转换为 CameraSettingsActivatedEventArgs，并将其发送到 `Initialize` 自定义浮出控件 (**DeviceAppPage.xaml.cs**) 的方法。
 
 ```CSharp
 protected override void OnActivated(IActivatedEventArgs args)
@@ -160,14 +160,14 @@ protected override void OnActivated(IActivatedEventArgs args)
 }
 ```
 
-## <a name="step-4-control-settings-and-effects"></a>步骤 4：控制设置和效果
+## <a name="step-4-control-settings-and-effects"></a>步骤4：控制设置和效果
 
-当`Initialize`方法的自定义浮出控件 (**DeviceAppPage.xaml.cs**) 调用时，视频设备通过事件参数传递给浮出控件。 这些自变量公开用于控制照相机的属性：
+在 `Initialize` 调用自定义弹出窗口 (**DeviceAppPage.xaml.cs**) 的方法时，视频设备将通过事件参数传递到浮出控件。 这些参数公开用于控制照相机的属性：
 
-- **参数。VideoDeviceController**属性提供类型 Windows.Media.Devices.VideoDeviceController 的对象。 此对象提供用于调整标准设置方法。
-- **参数。VideoDeviceExtension**属性是指向照相机驱动程序 MFT 的指针。 此属性将为 null，如果没有驱动程序 MFT 接口的公开方式。 有关照相机的驱动程序 Mft 的详细信息，请参阅[创建照相机驱动程序 MFT](creating-a-camera-driver-mft.md)。
+- **参数。VideoDeviceController**属性提供 VideoDeviceController 类型的对象。 此对象提供用于调整标准设置的方法。
+- **参数。VideoDeviceExtension**属性是指向照相机驱动程序 MFT 的指针。 如果未公开任何驱动程序 MFT 接口，此属性将为 null。 有关相机驱动程序 MFTs 的详细信息，请参阅 [创建照相机驱动程序 MFT](creating-a-camera-driver-mft.md)。
 
-此示例显示了部分`Initialize`方法，因为它将出现在**DeviceAppPage.xaml.cs**文件。 在这里，创建视频设备控制器 （videoDevController 对象） 和照相机驱动程序 MFT （lcWrapper 对象），并且使用当前照相机设置填充浮出控件。
+此示例显示方法的一部分 `Initialize` ，如 **DeviceAppPage.xaml.cs** 文件中所示。 在这里，视频设备控制器 (videoDevController 对象) ，并且创建了照相机驱动程序 MFT (lcWrapper 对象) ，并填充了当前相机设置。
 
 ```CSharp
 public void Initialize(CameraSettingsActivatedEventArgs args)
@@ -223,13 +223,13 @@ public void Initialize(CameraSettingsActivatedEventArgs args)
     // . . .
 ```
 
-照相机的驱动程序中演示 MFT[驱动程序 MFT](https://go.microsoft.com/fwlink/p/?LinkID=251566)示例。 有关照相机的驱动程序 Mft 的详细信息，请参阅[创建照相机驱动程序 MFT](creating-a-camera-driver-mft.md)。
+[驱动程序 mft](/samples/browse/)示例演示了照相机驱动程序 mft。 有关相机驱动程序 MFTs 的详细信息，请参阅 [创建照相机驱动程序 MFT](creating-a-camera-driver-mft.md)。
 
-## <a name="step-5-apply-changes"></a>步骤 5：应用更改
+## <a name="step-5-apply-changes"></a>步骤5：应用更改
 
-Changed 事件的相应的控件时对浮出控件上的控件进行了更改，用于将所做的更改应用于视频设备控制器 （videoDevController 对象） 和照相机驱动程序 MFT （lcWrapper 对象）。
+对浮出控件上的控件进行更改时，相应控件的 Changed 事件用于将更改应用于视频设备控制器 (videoDevController 对象) ，照相机驱动程序 MFT (lcWrapper 对象) 。
 
-此示例显示了将更改应用于视频设备控制器和照相机驱动程序 MFT，已更改方法，按它们出现在**DeviceAppPage.xaml.cs**文件。
+此示例显示将更改应用于视频设备控制器和照相机驱动程序 MFT 的已更改方法，因为它们显示在 **DeviceAppPage.xaml.cs** 文件中。
 
 ```CSharp
 protected void OnBrtAutoToggleChanged(object sender, RoutedEventArgs e)
@@ -295,51 +295,51 @@ protected void OnEffectSliderValueChanged(object sender, RoutedEventArgs e)
 }
 ```
 
-## <a name="testing-your-app"></a>测试应用
+## <a name="testing-your-app"></a>测试应用程序
 
-本部分介绍如何安装 UWP 设备应用提供的自定义浮出控件**更多选项**的照相机，如中所示[UWP 用于相机的设备应用程序](https://go.microsoft.com/fwlink/p/?LinkID=227865)示例。
+本部分介绍如何安装 UWP 设备应用，该应用为相机的 **更多选项** 提供自定义浮出控件，如 [照相机设备应用程序](/samples/browse/) 示例中所示。
 
-你可以测试 UWP 设备应用之前，它必须链接到您的照相机使用设备元数据。
+在可以测试 UWP 设备应用之前，必须使用设备元数据将其链接到相机。
 
-- 需要打印机的位置，若要向其中添加设备应用信息的设备元数据包的副本。 如果没有设备元数据，您可以使用生成它**设备元数据创建向导**主题中所述[创建 UWP 设备应用的设备元数据](https://go.microsoft.com/fwlink/p/?LinkId=313644)。
+- 你需要打印机的设备元数据包的副本，以便向其添加设备应用信息。 如果没有设备元数据，可以使用 **设备元数据创作向导** 生成它，如主题为 [UWP 设备应用创建设备元数据](./step-2--create-device-metadata.md)中所述。
 
     > [!NOTE]
-    > 若要使用**设备元数据创建向导**，则必须安装 Microsoft Visual Studio Professional，Microsoft Visual Studio Ultimate，或[独立 SDK 的 Windows 8.1](https://go.microsoft.com/fwlink/p/?linkid=309209)，完成之前本主题中的步骤。 安装 Microsoft Visual Studio Express 的 Windows 安装不包括在向导的 sdk 版本。
+    > 若要使用 **设备元数据创作向导**，在完成本主题中的步骤之前，必须安装 Microsoft Visual Studio Professional、Microsoft Visual Studio Ultimate 或 [独立的 SDK for Windows 8.1](https://go.microsoft.com/fwlink/p/?linkid=309209)。 为 Windows 安装 Microsoft Visual Studio Express 会安装不包括向导的 SDK 版本。
 
-以下步骤生成您的应用程序并安装设备元数据。
+以下步骤生成应用并安装设备元数据。
 
 1. 启用测试签名。
-    1. 启动**设备元数据创建向导**从 *%programfiles （x86） %*\\Windows 工具包\\8.1\\bin\\x86，通过双击**DeviceMetadataWizard.exe**
-    2. 从**工具**菜单中，选择**启用测试签名**。
+    1. 双击 "DeviceMetadataWizard.exe，从 *% ProgramFiles (x86) %* Windows 工具包 8.1 bin **X86 启动设备元数据创作向导** \\ \\ \\ \\ **DeviceMetadataWizard.exe**
+    2. 从 " **工具** " 菜单中，选择 " **启用测试签名**"。
 
 2. 重新启动计算机
-3. 通过打开解决方案 (.sln) 文件生成解决方案。 按 F7，或转至**生成-&gt;生成解决方案**从顶部菜单中加载示例之后。
+3. 通过打开解决方案 ( .sln) 文件来生成解决方案。 加载示例后，按 F7 或从顶部菜单中转到 " **生成- &gt; 生成解决方案** "。
 
-4. 断开连接并卸载打印机。 此步骤是必需的以便 Windows 将在下一次检测到设备读取更新的设备元数据。
-5. 编辑并保存设备元数据。 要链接到你的设备的设备应用，必须将设备应用与你的设备进行关联。
+4. 断开连接并卸载打印机。 此步骤是必需的，以便 Windows 将在下一次检测到设备时读取更新的设备元数据。
+5. 编辑并保存设备元数据。 若要将设备应用链接到设备，你必须将设备应用关联到设备。
     > [!NOTE]
-    > 如果尚未创建设备元数据，请参阅[创建 UWP 设备应用的设备元数据](https://go.microsoft.com/fwlink/p/?LinkId=313644)。
+    > 如果尚未创建设备元数据，请参阅 [为 UWP 设备应用创建设备元数据](./step-2--create-device-metadata.md)。
 
-    1. 如果**设备元数据创建向导**未打开，启动从 *%programfiles （x86） %*\\Windows 工具包\\8.1\\bin\\x86，也可由双击**DeviceMetadataWizard.exe**。
-    2. 单击**编辑设备元数据**。 这样就可以编辑现有的设备元数据包。
-    3. 在中**打开**对话框框中，找到与 UWP 设备应用程序相关联的设备元数据包。 (它具有**devicemetadata ms**文件扩展名。)
-    4. 上**指定 UWP 设备应用信息**页上，输入中的 Microsoft Store 应用信息**UWP 设备应用**框。 单击**导入 UWP 应用程序清单文件**自动输入**包名称**，**发布服务器的名称**，以及**UWP 应用程序 ID**。
-    5. 完成后，单击**下一步**直至到达**完成**页。
-    6. 上**查看设备元数据包**页面上，确保所有设置都正确，然后选择**复制到本地计算机上的元数据存储设备元数据包**复选框。 然后单击**保存**。
+    1. 如果**设备元数据创作向导**尚未打开，请通过双击 "DeviceMetadataWizard.exe" 从 *% ProgramFiles (x86) %* \\ Windows 工具包 \\ 8.1 \\ bin \\ x86 **DeviceMetadataWizard.exe**启动它。
+    2. 单击 " **编辑设备元数据**"。 这将允许你编辑现有的设备元数据包。
+    3. 在 " **打开** " 对话框中，找到与 UWP 设备应用关联的设备元数据包。  (其文件扩展名为 **devicemetadata** 。 ) 
+    4. 在 " **指定 uwp 设备应用信息** " 页上，在 " **UWP 设备应用** " 框中输入 Microsoft Store 应用信息。 单击 " **导入 UWP 应用程序清单文件** " 以自动输入 **包名称**、 **发布者名称**和 **UWP 应用 ID**。
+    5. 完成后，单击 " **下一步** "，直到到达 " **完成** " 页。
+    6. 在 " **查看设备元数据包** " 页上，确保所有设置均正确，并选中 "将 **设备元数据包复制到本地计算机上的元数据存储区** " 复选框。 然后单击“保存”  。
 
-6. 重新连接你的设备，以便在设备连接时，该 Windows 读取更新的设备元数据。
-    - 如果有外部照相机，则只需将照相机连接。
-    - 如果你有内部照相机，刷新 PC 设备和打印机文件夹中。 使用设备管理器扫描检测硬件改动。 检测到设备时，Windows 应读取更新的元数据。
+6. 重新连接设备，以便 Windows 在连接设备时读取更新的设备元数据。
+    - 如果有外置相机，只需连接相机即可。
+    - 如果有内部照相机，请在 "设备和打印机" 文件夹中刷新 PC。 使用设备管理器扫描硬件更改。 检测到设备时，Windows 应读取更新的元数据。
 
 > [!NOTE]
-> 有关安装摄像头驱动程序 MFT 的信息，请参阅中的测试部分[创建照相机驱动程序 MFT](creating-a-camera-driver-mft.md)。
+> 有关安装照相机驱动程序 MFT 的信息，请参阅 [创建照相机驱动程序 mft](creating-a-camera-driver-mft.md)中的 "测试" 部分。
 
 ## <a name="testing-the-samples"></a>测试示例
 
-若要测试相机选项体验，请首先下载这些示例：
+若要测试相机选项体验，请先下载以下示例：
 
-- [用于相机示例的 UWP 设备应用程序](https://go.microsoft.com/fwlink/p/?LinkID=227865)
-- [相机捕捉 UI 示例](https://go.microsoft.com/fwlink/p/?linkid=228589)
-- [驱动程序 MFT 示例](https://go.microsoft.com/fwlink/p/?LinkID=251566)
+- [适用于照相机的 UWP 设备应用示例](/samples/browse/)
+- [相机捕获 UI 示例](/samples/browse/)
+- [驱动程序 MFT 示例](/samples/browse/)
 
-然后，按照示例测试上提供的说明进行操作[驱动程序 MFT 示例](https://go.microsoft.com/fwlink/p/?LinkID=251566)页。
+然后，按照 " [驱动程序 MFT 示例](/samples/browse/) " 页上提供的示例测试说明进行操作。

@@ -3,15 +3,15 @@ title: Windows SDK 参考
 description: Windows SDK 参考
 ms.assetid: 4ada216c-c51e-4357-9a16-f5932c39b31e
 keywords:
-- IHV UI 扩展 DLL WDK 本机 802.11，Windows SDK 的引用
+- IHV UI 扩展 DLL WDK 本机802.11，Windows SDK 引用
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c7e861d48afe1ea3e58226f1ce50cfd55dd5ca55
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0d3e52936bc748c32791c5601b2faf8bebf0cf7d
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63392188"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91734157"
 ---
 # <a name="windows-sdk-references"></a>Windows SDK 参考
 
@@ -20,21 +20,16 @@ ms.locfileid: "63392188"
 
  
 
-若要了解在本部分中的材料，你应与标准的 COM 接口和方法，尤其是以下 befamiliar:
+若要理解本部分中的材料，应 befamiliar 标准 COM 接口和方法，具体如下：
 
-[IWizardExtension COM 接口](https://go.microsoft.com/fwlink/p/?linkid=56607)
+[IWizardExtension COM 接口](/windows/win32/api/shobjidl/nn-shobjidl-iwizardextension)
 
-[IWizardSite COM 接口](https://go.microsoft.com/fwlink/p/?linkid=56608)
+[IWizardSite COM 接口](/windows/win32/api/shobjidl/nn-shobjidl-iwizardsite)
 
-[IObjectWithSite COM 接口](https://go.microsoft.com/fwlink/p/?linkid=56609)
+[IObjectWithSite COM 接口](/previous-versions/ms834916(v=msdn.10))
 
-[IPropertyBag COM 接口](https://go.microsoft.com/fwlink/p/?linkid=56610)
-
- 
+[IPropertyBag COM 接口](/previous-versions/windows/internet-explorer/ie-developer/platform-apis/aa768196(v=vs.85))
 
  
 
-
-
-
-
+ 

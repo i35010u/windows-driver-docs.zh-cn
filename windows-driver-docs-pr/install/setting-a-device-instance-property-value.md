@@ -4,12 +4,12 @@ description: 设置设备实例属性值
 ms.assetid: 45f63ee3-278e-4b8c-a666-c860074fa172
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b4f675720d5004e1554f6ede857cd24c0508a88e
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 8b15464b39d0cda7733d8e675b7b28ae04e5dbe0
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90715920"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91733671"
 ---
 # <a name="setting-a-device-instance-property-value"></a>设置设备实例属性值
 
@@ -32,7 +32,5 @@ ms.locfileid: "90715920"
 
 -   将 *标志* 设置为零。
 
-如果对 [**SetupDiSetDeviceProperty**](/windows/win32/api/setupapi/nf-setupapi-setupdisetdevicepropertyw) 的此调用成功，则 **SetupDiSetDeviceProperty** 将设置设备实例属性并返回 **TRUE**。 如果函数调用失败， **SetupDiGetDeviceProperty** 将返回 **FALSE** ，并且对 [GetLastError](https://go.microsoft.com/fwlink/p/?linkid=169416) 的调用将返回记录的错误代码。
-
- 
+如果对 [**SetupDiSetDeviceProperty**](/windows/win32/api/setupapi/nf-setupapi-setupdisetdevicepropertyw) 的此调用成功，则 **SetupDiSetDeviceProperty** 将设置设备实例属性并返回 **TRUE**。 如果函数调用失败， **SetupDiGetDeviceProperty** 将返回 **FALSE** ，并且对 [GetLastError](/windows/win32/api/errhandlingapi/nf-errhandlingapi-getlasterror) 的调用将返回记录的错误代码。
 

@@ -10,12 +10,12 @@ keywords:
 - 编译 MOF 文件
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0264ba541a23d46335eb95f8cf0eacaf9f421ef8
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 6b8be865cedad4939d9cde313f75db3a76e98c5b
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89189837"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91733672"
 ---
 # <a name="compiling-a-drivers-mof-file"></a>编译驱动程序的 MOF 文件
 
@@ -42,7 +42,7 @@ ms.locfileid: "89189837"
 
 若要了解有关如何使用 Mofcomp.exe 的详细信息，请打开命令提示符窗口，然后键入 **mofcomp.exe/？**。
 
-有关 Mofcomp.exe 的详细信息，请参阅 "Windows SDK 中的" [mofcomp.exe](https://go.microsoft.com/fwlink/p/?linkid=51316) "和其他主题。
+有关 Mofcomp.exe 的详细信息，请参阅 "Windows SDK 中的" [mofcomp.exe](/windows/win32/wmisdk/mofcomp) "和其他主题。
 
 若要将编译的 MOF 文件包含为驱动程序的二进制图像中的资源，请将以下行添加到驱动程序的资源脚本 (RC) 文件：
 
@@ -59,6 +59,4 @@ ms.locfileid: "89189837"
 有关使用 WMI iibrary 例程处理 WMI Irp 的详细信息，请参阅 [处理 Wmi 请求](handling-wmi-requests.md)。
 
 有关在可执行文件中定义和包含资源的详细信息，请参阅 Microsoft Windows SDK。
-
- 
 

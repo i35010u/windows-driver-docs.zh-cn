@@ -8,19 +8,19 @@ keywords:
 - LUN 重置 WDK ATA 端口驱动程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e0c1bb466c215f64607b0e8a8de8adc9ad1841bb
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: c1134737ad35fb90e917de807d5592f4a791cbb7
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89192885"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91733037"
 ---
 # <a name="ata-port-drivers-reset-mechanism"></a>ATA 端口驱动程序的重置机制
 
 
 ## <span id="ddk_ata_port_drivers_reset_mechanism_kg"></span><span id="DDK_ATA_PORT_DRIVERS_RESET_MECHANISM_KG"></span>
 
-**注意** ATA 端口驱动程序和 ATA 微型端口驱动程序模型可能会在将来更改或不可用。 相反，我们建议使用 [storport 驱动](https://docs.microsoft.com/windows-hardware/drivers/storage/storport-driver) 程序和 [storport 微型端口](./storport-miniport-drivers.md) 驱动程序模型。
+**注意** ATA 端口驱动程序和 ATA 微型端口驱动程序模型可能会在将来更改或不可用。 相反，我们建议使用 [storport 驱动](./storport-driver-overview.md) 程序和 [storport 微型端口](./storport-miniport-drivers.md) 驱动程序模型。
 
 
 
@@ -33,6 +33,4 @@ ATA 端口驱动程序支持两层重置机制，这种机制在某些方面与 
 如果微型端口驱动程序失败，则重置 IRB (也就是说，用除 IRB 状态成功) 以外的任何状态完成 reset IRB \_ \_ ，ATA 端口驱动程序调用微型端口驱动程序的 [**IdeHwReset**](/windows-hardware/drivers/ddi/irb/nc-irb-ide_hw_reset) 例程来重置整个通道。 然后，微型端口驱动程序必须完成该通道的所有未完成的请求，并在硬件上执行必要的操作以重置连接到该通道的设备。
 
 ATA 端口驱动程序不支持具有多个 Lun 的设备的目标重置。
-
- 
 

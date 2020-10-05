@@ -3,12 +3,12 @@ description: Windows 硬件实验室工具包 (HLK) 测试可用于其他系统�
 title: 针对 USB 的 Windows Hardware Lab Kit (HLK) 测试
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c0bd30748c42cdd49ae43c1a89bd3a42b9f304b8
-ms.sourcegitcommit: 937974aa9bbe0262a7ffe9631593fab48c4e7492
+ms.openlocfilehash: 0a1f4790df89fc8a3fce2dce4035fd03117870ac
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "90010239"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91733315"
 ---
 # <a name="windows-hardware-lab-kit-hlk-tests-for-usb"></a>针对 USB 的 Windows Hardware Lab Kit (HLK) 测试
 
@@ -23,7 +23,7 @@ Windows 硬件实验室工具包 (HLK) 测试可用于其他系统、USB 主机�
 -   若要运行这些测试，你将需要至少两台计算机：测试服务器和测试客户端。
 -   测试客户端必须具有最新版本的 Windows。
 -   测试客户端必须具有 EHCI 和 xHCI 控制器，其中集成了或作为附加卡。 控制器必须公开用户可访问的根端口， (没有集成的集线器) 。
--   从 [Windows 硬件实验室包](https://go.microsoft.com/fwlink/p/?linkid=285647)下载下载 windows HLK 到测试服务器。
+-   从 [Windows 硬件实验室包](/windows-hardware/test/hlk/)下载下载 windows HLK 到测试服务器。
 
     有关如何安装和使用 Windows HLK 的详细信息，请参阅 [WINDOWS hlk 入门](/windows-hardware/test/hlk/getstarted/windows-hlk-getting-started)。
 
@@ -46,8 +46,8 @@ Windows 硬件实验室工具包 (HLK) 测试可用于其他系统、USB 主机�
 
 下面提供了一组完整的要求：
 
--   [USB 总线控制器测试先决条件](https://go.microsoft.com/fwlink/p/?linkid=617477)
--   [USB Hub.Connectivity 测试先决条件](https://go.microsoft.com/fwlink/p/?linkid=617499)
+-   [USB 总线控制器测试先决条件](/previous-versions/windows/hardware/hck/hh998789(v=vs.85))
+-   [USB Hub.Connectivity 测试先决条件](/previous-versions/windows/hardware/hck/jj124824(v=vs.85))
 
 ## <a name="hlk-test-selection-for-usb"></a>用于 USB 的 HLK 测试选择
 

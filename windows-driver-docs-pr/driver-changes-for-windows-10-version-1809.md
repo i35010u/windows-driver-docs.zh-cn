@@ -4,12 +4,12 @@ description: 了解 Windows 10 1809 版中的驱动程序开发的新功能 (Win
 ms.assetid: 764bcd98-c123-45e2-9dd1-44d54bb1addc
 ms.date: 04/28/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 47d1bc5d71a8456818ed4f86b5071a3c0975f45f
-ms.sourcegitcommit: 372464be981a39781c71049126f36891cb5d0cad
+ms.openlocfilehash: a695aa09b3492e0b6ddbba3f5cc77f9beae7c3d2
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/02/2020
-ms.locfileid: "91646123"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91732637"
 ---
 # <a name="whats-new-in-windows-10-version-1809"></a>Windows 10 版本 1809 中的新增功能
 
@@ -193,7 +193,7 @@ MBBCx 电源管理方法已简化。
 
 例如，根据热量状况控制设备的充电，使设备不会过热。
 
-* [编写 USB 类型 C 策略管理器客户端驱动程序](/windows-hardware/drivers/usbcon/policy-manager-client)
+* [编写 USB 类型 C 策略管理器客户端驱动程序](./usbcon/policy-manager-client.md)
 * [Usbpmapi.h](/windows-hardware/drivers/ddi/usbpmapi/) 中提供了新的 API
 
 **适用于模拟 USB 设备 (UDE) - 1.1 和 USB 主控制器 (Ucx) 1.5 的新版类扩展：**

@@ -4,12 +4,12 @@ description: 为 WBDI 驱动程序签名
 ms.assetid: 1BE83F60-4A04-457E-BD31-5E6F104A3505
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ecb5a0fd99632d3fdd284fa3f1da9c4b584a0899
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 27a0357fd4cc98e2e11fe04fdf8f1c519e963a4d
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89095415"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91733450"
 ---
 # <a name="signing-wbdi-drivers"></a>为 WBDI 驱动程序签名
 
@@ -31,7 +31,5 @@ WBDI 驱动程序的特定代码签名要求取决于 WBDI 驱动程序是否是
 -   内核服务配置为具有内核驱动程序或文件系统驱动程序的 **ServiceType** ，并将 **StartMode** 设置为 "boot"。
 
 
-本主题不涉及驱动程序签名要求或过程的详细信息。 有关驱动程序的签名要求的常规信息，请参阅 [驱动程序签名](https://go.microsoft.com/fwlink/p/?linkid=201836)。
-
- 
+本主题不涉及驱动程序签名要求或过程的详细信息。 有关驱动程序的签名要求的常规信息，请参阅 [驱动程序签名](../install/driver-signing.md)。
 

@@ -4,12 +4,12 @@ description: 在 Windows 8.1 中，用于打印机的 UWP 设备应用可以管�
 ms.assetid: 30E247DB-E5B0-4CD5-89F5-4227EE20A564
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: aa33cd1eb24aa7858310de1ebd164007b7b14dbe
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: f989e88ddf4df642a6810865bbf1977aac99d2e8
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89095459"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91733214"
 ---
 # <a name="how-to-manage-print-jobs-in-a-uwp-device-app"></a>如何在 UWP 设备应用中管理打印作业
 
@@ -36,7 +36,7 @@ Windows 8.1 在 v4 打印机驱动程序中引入了新的打印机扩展接口�
 
 准备工作：
 
-1.  请确保您的打印机是使用 v4 打印驱动程序安装的。 有关详细信息，请参阅 [开发 v4 打印驱动程序](https://go.microsoft.com/fwlink/p/?LinkId=314231)。
+1.  请确保您的打印机是使用 v4 打印驱动程序安装的。 有关详细信息，请参阅 [开发 v4 打印驱动程序](../print/v4-printer-driver.md)。
 2.  设置开发 PC。 有关下载工具和创建开发人员帐户的信息[，请参阅入门。](getting-started.md)
 3.  将应用与应用商店相关联。 请参阅 [创建 UWP 设备应用](step-1--create-a-uwp-device-app.md) 了解相关信息。
 4.  为打印机创建将其与应用程序关联的设备元数据。 有关详细信息，请参阅 [创建设备元数据](step-2--create-device-metadata.md) 。
@@ -285,7 +285,7 @@ private void CancelPrintJob_Click(object sender, RoutedEventArgs e)
 
 在可以测试 UWP 设备应用之前，必须使用设备元数据将其链接到您的打印机。
 
--   你需要打印机的设备元数据包的副本，以便向其添加设备应用信息。 如果没有设备元数据，可以使用 **设备元数据创作向导** 生成它，如主题为 [UWP 设备应用创建设备元数据](https://go.microsoft.com/fwlink/p/?LinkId=313644)中所述。
+-   你需要打印机的设备元数据包的副本，以便向其添加设备应用信息。 如果没有设备元数据，可以使用 **设备元数据创作向导** 生成它，如主题为 [UWP 设备应用创建设备元数据](./step-2--create-device-metadata.md)中所述。
 
     **注意**   若要使用**设备元数据创作向导**，在完成本主题中的步骤之前，必须安装 Microsoft Visual Studio Professional、Microsoft Visual Studio Ultimate 或[独立的 SDK for Windows 8.1](https://go.microsoft.com/fwlink/p/?linkid=309209)。 为 Windows 安装 Microsoft Visual Studio Express 会安装不包括向导的 SDK 版本。
 
@@ -302,7 +302,7 @@ private void CancelPrintJob_Click(object sender, RoutedEventArgs e)
 
 4.  断开连接并卸载打印机。 此步骤是必需的，以便 Windows 将在下一次检测到设备时读取更新的设备元数据。
 5.  编辑并保存设备元数据。 若要将设备应用链接到设备，你必须将设备应用关联到设备。
-    **注意**   如果尚未创建设备元数据，请参阅[为 UWP 设备应用创建设备元数据](https://go.microsoft.com/fwlink/p/?LinkId=313644)。
+    **注意**   如果尚未创建设备元数据，请参阅[为 UWP 设备应用创建设备元数据](./step-2--create-device-metadata.md)。
 
      
 
@@ -322,15 +322,13 @@ private void CancelPrintJob_Click(object sender, RoutedEventArgs e)
 
 [作业管理 (v4 打印机驱动程序) ](../print/job-management.md)
 
-[开发 v4 打印驱动程序](https://go.microsoft.com/fwlink/p/?LinkId=314231)
+[开发 v4 打印驱动程序](../print/v4-printer-driver.md)
 
-[双向通信](https://go.microsoft.com/fwlink/p/?LinkId=317192)
+[双向通信](../print/bidirectional-communication.md)
 
 [UWP 应用入门](getting-started.md)
 
 [ (分步指南创建 UWP 设备应用) ](step-1--create-a-uwp-device-app.md)
 
 [ (分步指南创建 UWP 设备应用的设备元数据) ](step-2--create-device-metadata.md)
-
- 
 

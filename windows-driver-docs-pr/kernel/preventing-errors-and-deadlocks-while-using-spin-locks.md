@@ -10,12 +10,12 @@ keywords:
 - 旋转锁定 WDK 内核
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3be9f660a1770f2501170681bf8ec367968c20d7
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 4bb8b6a7915524154c07aff25e1bb4be23022f31
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89184989"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91734365"
 ---
 # <a name="preventing-errors-and-deadlocks-while-using-spin-locks"></a>使用自旋锁时防止错误和死锁
 
@@ -55,7 +55,5 @@ ms.locfileid: "89184989"
 
 一般情况下，应避免使用嵌套自旋锁来保护重叠子集或共享数据和资源的离散集。 考虑当驱动程序使用两个执行自旋锁来保护离散资源（例如一对可能由各种驱动程序例程单独设置并进行设置的计时器对象）时可能发生的情况。 该驱动程序会在 SMP 计算机中间歇性地死锁，每两个例程（每个例程包含一个旋转锁）尝试获取其他旋转锁。
 
-有关获取嵌套自旋锁的详细信息，请参阅 [锁、死锁和同步](https://go.microsoft.com/fwlink/p/?linkid=57456 )。
-
- 
+有关获取嵌套自旋锁的详细信息，请参阅 [锁、死锁和同步](/previous-versions/ms810047(v=msdn.10))。
 

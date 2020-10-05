@@ -4,17 +4,17 @@ description: 使用 MakeCat 创建目录文件
 ms.assetid: c9f9360b-2b1d-4060-af4d-8d281319e181
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 02f48a8fb860c1e13c350a3e612f2bacf7558d9a
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 3d4b70d0c3e471b79304e0d04caaa897146a8c5b
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89096389"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91732717"
 ---
 # <a name="using-makecat-to-create-a-catalog-file"></a>使用 MakeCat 创建目录文件
 
 
-可以使用[MakeCat](https://go.microsoft.com/fwlink/p/?linkid=104922)工具为[驱动程序包](driver-packages.md)创建[编录文件](catalog-files.md)。
+可以使用[MakeCat](/windows/win32/seccrypto/makecat)工具为[驱动程序包](driver-packages.md)创建[编录文件](catalog-files.md)。
 
 只有使用 MakeCat 工具才能为未使用 INF 文件安装的驱动程序包创建编录文件。 如果使用 INF 文件安装了驱动程序包，请使用 [**Inf2Cat**](../devtest/inf2cat.md) 工具创建编录文件。 Inf2Cat 自动包括在包的 INF 文件中引用的驱动程序包中的所有文件。 有关如何使用 Inf2Cat 工具的详细信息，请参阅 [使用 Inf2Cat 创建编录文件](using-inf2cat-to-create-a-catalog-file.md)。
 
@@ -22,7 +22,7 @@ ms.locfileid: "89096389"
 
  
 
-若要创建目录文件，必须首先手动创建目录定义文件 (*cdf*) ，其中描述了目录标头属性和文件项。 创建该文件后，你可以运行 [MakeCat](https://go.microsoft.com/fwlink/p/?linkid=104922) 工具来创建编录文件。 MakeCat 工具在处理 *cdf* 文件时执行以下操作：
+若要创建目录文件，必须首先手动创建目录定义文件 (*cdf*) ，其中描述了目录标头属性和文件项。 创建该文件后，你可以运行 [MakeCat](/windows/win32/seccrypto/makecat) 工具来创建编录文件。 MakeCat 工具在处理 *cdf* 文件时执行以下操作：
 
 -   验证在 *cdf* 文件中列出的每个文件的属性列表。
 
@@ -60,7 +60,7 @@ ms.locfileid: "89096389"
 
      
 
-以下命令行说明了如何通过 [MakeCat](https://go.microsoft.com/fwlink/p/?linkid=104922) 工具使用 *tstamd64* 文件创建目录文件：
+以下命令行说明了如何通过 [MakeCat](/windows/win32/seccrypto/makecat) 工具使用 *tstamd64* 文件创建目录文件：
 
 ```cpp
 makecat -v tstamd64.cdf
@@ -68,9 +68,7 @@ makecat -v tstamd64.cdf
 
 运行该工具后，将创建一个名为 *tstamd64.cat* 的文件。
 
-有关 MakeCat 工具及其命令行参数的详细信息，请参阅 [使用 MakeCat](https://go.microsoft.com/fwlink/p/?linkid=70086) 网站。
+有关 MakeCat 工具及其命令行参数的详细信息，请参阅 [使用 MakeCat](/windows/win32/seccrypto/using-makecat) 网站。
 
 有关如何使用 MakeCat 工具的详细信息，请参阅 [为非 PnP 驱动程序包创建编录文件](creating-a-catalog-file-for-a-non-pnp-driver-package.md)。
-
- 
 

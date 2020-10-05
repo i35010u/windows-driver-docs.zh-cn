@@ -4,18 +4,18 @@ description: 本主题介绍如何使用 Windows 更新 (WU) 服务来更新设�
 ms.assetid: 778c5ab5-572f-43b9-8e9a-9dd608de17a9
 ms.date: 08/24/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d002d40d4d1571e336311aaa8d83224f3d6412e6
-ms.sourcegitcommit: 06581a21ca066ddfedab7f9bb7f2159cfac452fd
+ms.openlocfilehash: a3f9be0109536bcd0d6b2d7f744f26a405ecc3a1
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91145473"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91733677"
 ---
 # <a name="updating-device-firmware-using-windows-update"></a>使用 Windows 更新更新设备固件
 
 本主题介绍如何使用 Windows 更新 (WU) 服务来更新可移动或机箱设备的固件。  有关更新系统固件的信息，请参阅 [WINDOWS UEFI 固件更新平台](../bringup/windows-uefi-firmware-update-platform.md)。
 
-为此，你将提供一个作为设备驱动程序实现的更新机制，其中包括固件负载。  如果设备使用供应商提供的驱动程序，则可以选择将固件更新逻辑和负载添加到现有的函数驱动程序，或者提供单独的固件更新驱动程序包。  如果设备使用 Microsoft 提供的驱动程序，则必须提供单独的固件更新驱动程序包。  在这两种情况下，固件更新驱动程序包必须是通用的。  有关通用驱动程序的详细信息，请参阅 [Windows 驱动程序入门](../develop/getting-started-with-windows-drivers.md)。  驱动程序二进制文件可以使用 [KMDF](../wdf/index.md)、 [UMDF 2](../wdf/getting-started-with-umdf-version-2.md) 或 [Windows 驱动模型](https://docs.microsoft.com/windows-hardware/drivers/kernel/writing-wdm-drivers)。 
+为此，你将提供一个作为设备驱动程序实现的更新机制，其中包括固件负载。  如果设备使用供应商提供的驱动程序，则可以选择将固件更新逻辑和负载添加到现有的函数驱动程序，或者提供单独的固件更新驱动程序包。  如果设备使用 Microsoft 提供的驱动程序，则必须提供单独的固件更新驱动程序包。  在这两种情况下，固件更新驱动程序包必须是通用的。  有关通用驱动程序的详细信息，请参阅 [Windows 驱动程序入门](../develop/getting-started-with-windows-drivers.md)。  驱动程序二进制文件可以使用 [KMDF](../wdf/index.md)、 [UMDF 2](../wdf/getting-started-with-umdf-version-2.md) 或 [Windows 驱动模型](../kernel/writing-wdm-drivers.md)。 
 
 由于 WU 无法执行软件，固件更新驱动程序必须将固件手动即插即用 (PnP) 安装。
 

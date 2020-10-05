@@ -7,12 +7,12 @@ keywords:
 - 串行 IRP 代码
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: b296a8212462e0dee28048a5b50da3222053ad18
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: fc35ba4a67a6f2d0daeb1e4f556608862d8a87ed
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89188575"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91733045"
 ---
 # <a name="serial-irp-major-function-codes"></a>串行 IRP 主要函数代码
 本主题介绍串行 IRP 主要功能代码。
@@ -230,7 +230,7 @@ Power manager 使用 power 请求来查询和设置电源状态。
 
 串行是串行设备堆栈的默认电源策略所有者，使用串行作为函数驱动程序或较低级别的筛选器驱动程序。
 
-有关这些请求的一般操作的详细信息，请参阅 [处理电源 irp 的规则](https://docs.microsoft.com/windows-hardware/drivers/kernel/rules-for-handling-power-irps)。
+有关这些请求的一般操作的详细信息，请参阅 [处理电源 irp 的规则](../kernel/calling-iocalldriver-versus-calling-pocalldriver.md)。
 
 ## <a name="irp_mj_query_information"></a>IRP_MJ_QUERY_INFORMATION
 
@@ -246,7 +246,7 @@ Power manager 使用 power 请求来查询和设置电源状态。
 
 ### <a name="output-parameters"></a>输出参数
 
-|参数|描述|
+|参数|说明|
 |----|----|
 |**FileStandardInformation**|**AssociatedIrp.SystemBuffer**成员指向由串行用于输出标准信息的客户端分配的 FILE_STANDARD_INFORMATION 结构。|
 |**FilePositionInformation**|**AssociatedIrp.SystemBuffer**成员指向由串行用于输出位置信息的客户端分配的 FILE_POSITION_INFORMATION 结构。|
@@ -432,6 +432,6 @@ Power manager 使用 power 请求来查询和设置电源状态。
 
 [即插即用次要 IRP](../kernel/plug-and-play-minor-irps.md)
 
-[电源 IRP 的处理规则](https://docs.microsoft.com/windows-hardware/drivers/kernel/rules-for-handling-power-irps)
+[电源 IRP 的处理规则](../kernel/calling-iocalldriver-versus-calling-pocalldriver.md)
 
 [串行控制器驱动程序设计指南](./index.md)

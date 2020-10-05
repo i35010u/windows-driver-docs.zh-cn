@@ -4,12 +4,12 @@ description: 本主题介绍 Windows 驱动程序框架 (WDF) 驱动程序如何
 ms.assetid: C81988F9-E0DA-439F-B770-DAD86E33D5F3
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3f81caf21bb7cba79578fa6a0427e00b65425906
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: fce5cd9f9ff10c8845939f55d84e7a999bbdade3
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89193129"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91733453"
 ---
 # <a name="accessing-the-unified-device-property-model"></a>访问统一的设备属性模型
 
@@ -29,7 +29,7 @@ KMDF 和 UMDF 驱动程序只能在调用 [**WdfDeviceCreate**](/windows-hardwar
 -   [**WdfFdoInitAllocAndQueryPropertyEx**](/windows-hardware/drivers/ddi/wdffdo/nf-wdffdo-wdffdoinitallocandquerypropertyex)
 -   [**WdfFdoInitQueryPropertyEx**](/windows-hardware/drivers/ddi/wdffdo/nf-wdffdo-wdffdoinitquerypropertyex)
 
-上面的 *-ex* 方法不同于它们的非*Ex* 方法，因为它们允许你使用 [**WDF \_ 设备 \_ 属性 \_ 数据**](/windows-hardware/drivers/ddi/wdfdevice/ns-wdfdevice-_wdf_device_property_data) 结构指定属性，而不是使用 [**设备 \_ 注册表 \_ 属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfwdm/ne-wudfwdm-device_registry_property)指定的子集。
+上面的 *-ex* 方法不同于它们的非*Ex* 方法，因为它们允许你使用 [**WDF \_ 设备 \_ 属性 \_ 数据**](/windows-hardware/drivers/ddi/wdfdevice/ns-wdfdevice-_wdf_device_property_data) 结构指定属性，而不是使用 [**设备 \_ 注册表 \_ 属性**](/windows-hardware/drivers/ddi/wudfwdm/ne-wudfwdm-device_registry_property)指定的子集。
 
 在接收设备属性数据之前，驱动程序通常只调用 **Wdf*Xxx*QueryProperty** 来获取所需的缓冲区大小。 对于某些属性，数据大小会在返回所需大小和驱动程序再次调用 **Wdf*Xxx*QueryProperty** 之间发生变化。 因此，驱动程序应在执行的循环中调用 **Wdf*Xxx*QueryProperty** ，直到返回状态的 **状态 \_ 缓冲区 \_ 太 \_ 小**。
 
@@ -45,6 +45,4 @@ UMDF 驱动程序可以使用以下方法检索或修改通过统一属性模型
 -   [**WdfDeviceQueryInterfaceProperty**](/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdevicequeryinterfaceproperty)
 
 若要检索或修改设备接口属性，KMDF 驱动程序必须直接调用 [**IoGetDeviceInterfacePropertyData**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetdeviceinterfacepropertydata) 或 [**IoSetDeviceInterfacePropertyData**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iosetdeviceinterfacepropertydata) 。
-
- 
 

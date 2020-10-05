@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b1a6d6671d1f76f4e27c69aba63482eca4148d72
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 4a3eba3b733cf8381efe9eb7768679c7f65069e0
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89095087"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91732843"
 ---
 # <a name="inf-ddinstall-section"></a>INF DDInstall 节
 
@@ -242,7 +242,7 @@ Needs= KS.Registration[, KSCAPTUR.Registration | KSCAPTUR.Registration.NT, MSPCL
 -   [网络 INF 文件中的 DDInstall 节](../network/ddinstall-services-section-in-a-network-inf-file.md)
 -   [静态图像设备的 INF 文件](../image/inf-files-for-still-image-devices.md)
 -   [WIA 设备的 INF 文件](../image/inf-files-for-wia-devices.md)
--   [网络组件的安装要求](https://docs.microsoft.com/windows-hardware/drivers/network/installation-requirements-for-network-components)
+-   [网络组件的安装要求](../network/installation-requirements-for-network-adapters.md)
 -   [在 INF 文件中指定 WDF 指令](../wdf/specifying-wdf-directives-in-inf-files.md)
 
 <a name="examples"></a>示例
@@ -353,6 +353,4 @@ CopyFiles=WDM.CopyFiles.Sys, WDM.CopyFiles.Drv
 [**DelProperty**](inf-delproperty-directive.md)
 
 [**FeatureScore**](inf-featurescore-directive.md)
-
- 
 

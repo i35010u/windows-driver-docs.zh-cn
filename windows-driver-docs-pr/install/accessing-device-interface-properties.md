@@ -4,12 +4,12 @@ description: 在 Windows Vista 之前访问设备接口属性
 ms.assetid: 48b47d01-ec07-49ca-a03c-c4c387dcfb19
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: db68b4356d3c69040d9d438152014954a34d2510
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: dba091b11fd36f1850fe6a9e30d08ef602b6579b
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90715934"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91733977"
 ---
 # <a name="accessing-device-interface-properties-before-windows-vista"></a>在 Windows Vista 之前访问设备接口属性
 
@@ -42,11 +42,11 @@ Windows Server 2003、Windows XP 和 Windows 2000 支持其中大多数设备接
 
 -   将 *samDesired* 设置为 REGSAM 类型的值，该值指定所需的访问权限。
 
-如果对 [**SetupDiOpenDeviceInterfaceRegKey**](/windows/win32/api/setupapi/nf-setupapi-setupdiopendeviceinterfaceregkey) 的此调用成功，则 **SetupDiOpenDeviceInterfaceRegKey** 将返回请求的句柄。 如果函数调用失败，则 **SetupDiOpenDeviceInterfaceRegKey** 将返回 INVALID_HANDLE_VALUE 并且对 [GetLastError](https://go.microsoft.com/fwlink/p/?linkid=169416) 的调用将返回记录的错误代码。
+如果对 [**SetupDiOpenDeviceInterfaceRegKey**](/windows/win32/api/setupapi/nf-setupapi-setupdiopendeviceinterfaceregkey) 的此调用成功，则 **SetupDiOpenDeviceInterfaceRegKey** 将返回请求的句柄。 如果函数调用失败，则 **SetupDiOpenDeviceInterfaceRegKey** 将返回 INVALID_HANDLE_VALUE 并且对 [GetLastError](/windows/win32/api/errhandlingapi/nf-errhandlingapi-getlasterror) 的调用将返回记录的错误代码。
 
-检索设备接口注册表项的句柄之后，在对 [RegQueryValueEx](https://go.microsoft.com/fwlink/p/?linkid=95398) 或 [RegSetValueEx](https://go.microsoft.com/fwlink/p/?linkid=95399) 的调用中提供句柄，以检索或设置与设备接口属性相对应的注册表项值。
+检索设备接口注册表项的句柄之后，在对 [RegQueryValueEx](/windows/win32/api/winreg/nf-winreg-regqueryvalueexa) 或 [RegSetValueEx](/windows/win32/api/winreg/nf-winreg-regsetvalueexa) 的调用中提供句柄，以检索或设置与设备接口属性相对应的注册表项值。
 
-调用 [RegCloseKey](https://go.microsoft.com/fwlink/p/?linkid=194543) 函数可在不再需要访问密钥后关闭类注册表项。
+调用 [RegCloseKey](/windows/win32/api/winreg/nf-winreg-regclosekey) 函数可在不再需要访问密钥后关闭类注册表项。
 
 ### <a name="using-setupdienumdeviceinterfaces-to-retrieve-information-about-a-device-interface"></a><a href="" id="using-setupdienumdeviceinterfaces-to-retrieve-information-about-a-devi"></a> 使用 SetupDiEnumDeviceInterfaces 检索有关设备接口的信息
 
@@ -55,6 +55,4 @@ Windows Server 2003、Windows XP 和 Windows 2000 支持其中大多数设备接
 -   **Flags**成员指示设备接口是否处于活动状态或已删除，以及设备是否为接口类的默认接口。
 
 -   **InterfaceClassGuild**成员标识接口类 GUID。
-
- 
 

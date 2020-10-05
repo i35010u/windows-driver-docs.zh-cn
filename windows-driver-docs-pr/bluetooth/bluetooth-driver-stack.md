@@ -8,12 +8,12 @@ keywords:
 - 堆积 WDK 蓝牙
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2b96a26b521602d084131feb8682c163833051f3
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 464546133002dd88daea523b582b06c881bac2d0
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90716563"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91733445"
 ---
 # <a name="bluetooth-driver-stack"></a>蓝牙驱动程序堆栈
 
@@ -25,7 +25,7 @@ ms.locfileid: "90716563"
 ![阐释蓝牙驱动程序堆栈的关系图](images/bluetooth-architecture.png)
 
 -   **用户模式**
-    -   **用户模式应用**程序-一种用户模式应用程序，它通过已发布的 Api 访问蓝牙驱动程序堆栈。 有关详细信息，请参阅关于 Windows SDK 文档中的 [蓝牙](https://go.microsoft.com/fwlink/p/?linkid=50712) 。
+    -   **用户模式应用**程序-一种用户模式应用程序，它通过已发布的 Api 访问蓝牙驱动程序堆栈。 有关详细信息，请参阅关于 Windows SDK 文档中的 [蓝牙](/windows/win32/bluetooth/about-bluetooth) 。
 
         **注意**   用户模式应用程序应链接到*BthProps*（而不是*IrProps*），以便使用[**BluetoothSetLocalServiceInfo**](/windows/win32/api/bluetoothapis/nf-bluetoothapis-bluetoothsetlocalserviceinfo)等 api。
 
@@ -77,6 +77,4 @@ ms.locfileid: "90716563"
         -   L2CAP 实现蓝牙逻辑链接控制和适配协议。 此协议支持将无损通道创建到远程设备。 L2CAP 客户端通过构建并发送蓝牙请求块 (BRBs) 来与 L2CAP 接口通信。
         -   SDP 实现蓝牙服务发现协议。
     -   **BthUsb.sys**-从 **BthPort**抽象总线接口的微型端口。
-
- 
 

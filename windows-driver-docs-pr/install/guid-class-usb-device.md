@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 1560b0b3deec13320f9a1915c3a2aa59edb528eb
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: fe00cae1a6c2cbb0c09439df21652bc64dcfaf36
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89097019"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91733521"
 ---
 # <a name="guid_class_usb_device"></a>GUID_CLASS_USB_DEVICE
 
@@ -28,7 +28,7 @@ GUID_CLASS_USB_DEVICE 是连接到 USB 集线器的[usb](../index.yml)设备的[
 
 ## <a name="remarks"></a>备注
 
-Microsoft Windows 驱动程序工具包 (WDK) 包含 [USBVIEW 示例应用程序](https://go.microsoft.com/fwlink/p/?linkid=256205)。 USBVIEW 示例使用 GUID_CLASS_USB_DEVICE 进行注册，以便在存在 GUID_CLASS_USB_DEVICE 接口类的实例时收到通知。
+Microsoft Windows 驱动程序工具包 (WDK) 包含 [USBVIEW 示例应用程序](/samples/browse/)。 USBVIEW 示例使用 GUID_CLASS_USB_DEVICE 进行注册，以便在存在 GUID_CLASS_USB_DEVICE 接口类的实例时收到通知。
 
 <a name="requirements"></a>要求
 ------------
@@ -56,6 +56,4 @@ Microsoft Windows 驱动程序工具包 (WDK) 包含 [USBVIEW 示例应用程序
 
 
 [**GUID_DEVINTERFACE_USB_DEVICE**](guid-devinterface-usb-device.md)
-
- 
 

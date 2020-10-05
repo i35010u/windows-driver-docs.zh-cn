@@ -8,12 +8,12 @@ keywords:
 - PSHED 插件-WHEA，分发
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 18d9715724b5325fbc4d28812f57280d25e6cefd
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 774990a8e4a6be513601ed76a11ad16a8549148d
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89207705"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91732957"
 ---
 # <a name="qualifying-and-distributing-pshed-plug-ins"></a>限定和分发 PSHED 插件
 
@@ -30,15 +30,13 @@ ms.locfileid: "89207705"
 
 有关如何对 PSHED 插件进行数字签名的详细信息，请参阅 [签署公用版驱动程序](../install/signing-drivers-for-public-release--windows-vista-and-later-.md)。
 
-PSHED 插件获取了 WHQL 数字签名后，可以在请求系统徽标认证的任何系统中使用该插件。 有关服务器徽标认证过程的详细信息，请参阅 [Windows 徽标计划](https://go.microsoft.com/fwlink/p/?linkid=26144)。
+PSHED 插件获取了 WHQL 数字签名后，可以在请求系统徽标认证的任何系统中使用该插件。 有关服务器徽标认证过程的详细信息，请参阅 [Windows 徽标计划](/windows-hardware/test/hlk/)。
 
 PSHED 插件将使用 "系列" 方法进行限定，在该方法中，可以通过一类或一系列硬件平台上的部署来限定特定 PSHED 插件。
 
 PSHED 插件应该以类似于 BIOS 和系统固件更新分发方式的方式分配给客户。 此外，PSHED 插件应该与平台固件交互，以便可以在一系列硬件平台上部署单个 PSHED 插件。
 
 **注意**   PSHED 插件不会通过 Windows 更新分配给客户。
-
- 
 
  
 

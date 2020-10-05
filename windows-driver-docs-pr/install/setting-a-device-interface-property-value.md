@@ -4,12 +4,12 @@ description: 设置设备接口属性值
 ms.assetid: 44cef4e1-9fda-44fb-b37f-342099b5f7a0
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 745f2e319e402ca9b39fe8fbeee87fe4955e495d
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 045ff297d88adc152a00d541e5a29ef488e9e62d
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90715912"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91733675"
 ---
 # <a name="setting-a-device-interface-property-value"></a>设置设备接口属性值
 
@@ -32,7 +32,5 @@ ms.locfileid: "90715912"
 
 -   将 *标志* 设置为零。
 
-如果对 [**SetupDiSetDeviceInterfaceProperty**](/windows/win32/api/setupapi/nf-setupapi-setupdisetdeviceinterfacepropertyw) 的调用成功，则 **SetupDiSetDeviceInterfaceProperty** 将设置设备类属性并返回 **TRUE**。 如果函数调用失败， **SetupDiSetDeviceInterfaceProperty** 将返回 **FALSE** ，并且对 [GetLastError](https://go.microsoft.com/fwlink/p/?linkid=169416) 的调用将返回记录的错误代码。
-
- 
+如果对 [**SetupDiSetDeviceInterfaceProperty**](/windows/win32/api/setupapi/nf-setupapi-setupdisetdeviceinterfacepropertyw) 的调用成功，则 **SetupDiSetDeviceInterfaceProperty** 将设置设备类属性并返回 **TRUE**。 如果函数调用失败， **SetupDiSetDeviceInterfaceProperty** 将返回 **FALSE** ，并且对 [GetLastError](/windows/win32/api/errhandlingapi/nf-errhandlingapi-getlasterror) 的调用将返回记录的错误代码。
 

@@ -6,12 +6,12 @@ keywords:
 - 设备元数据包 WDK，生成
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 587ac39658a193f51a859ae3beec2706f44a32e6
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 83a41c0d0e0bd7812fa31e5c179a274eb2ef6f79
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89095777"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91734273"
 ---
 # <a name="building-device-metadata-packages"></a>构建设备元数据包
 
@@ -20,7 +20,7 @@ ms.locfileid: "89095777"
 
 ### <a name="device-metadata-package-file-names"></a><a href="" id="device-metadata-package-file-names"></a> 设备元数据包文件名
 
-创建设备元数据包文件之前，必须先为元数据包创建 (GUID) 全局唯一标识符。 为此，请使用[GUID 生成](https://go.microsoft.com/fwlink/p/?linkid=145426)网站中所述* ( # B0*) 的 guidgen.exe 工具。
+创建设备元数据包文件之前，必须先为元数据包创建 (GUID) 全局唯一标识符。 为此，请使用[GUID 生成](/previous-versions/aa475087(v=msdn.10))网站中所述* ( # B0*) 的 guidgen.exe 工具。
 
 设备元数据包的文件名必须使用以下命名约定：
 
@@ -52,7 +52,7 @@ ms.locfileid: "89095777"
 
 ### <a name="creating-a-device-metadata-package-file"></a>创建设备元数据包文件
 
-[设备元数据包的组件](device-metadata-package-components.md)存储在使用 Cabarc (*Cabarc.exe*) 工具压缩的文件中。 有关此工具的详细信息，请参阅 [Cabarc 概述](https://go.microsoft.com/fwlink/p/?linkid=145395) 网站。
+[设备元数据包的组件](device-metadata-package-components.md)存储在使用 Cabarc (*Cabarc.exe*) 工具压缩的文件中。 有关此工具的详细信息，请参阅 [Cabarc 概述](/previous-versions/windows/it-pro/windows-server-2003/cc781787(v=ws.10)) 网站。
 
 下面的代码示例演示如何使用 Cabarc 工具创建设备元数据包文件。 在此示例中，元数据包的组件位于名为 *MyMetadataPackage*的本地目录中。 以下列表显示了 *MyMetadataPackage* 目录中的子目录和文件：
 
@@ -80,8 +80,6 @@ Cabarc.exe -r -p -P .\MyMetadataPackage\
 ```
 
 **注意**   每个元数据包只能支持一个区域设置。 如果你的设备支持多个区域设置，则必须为每个区域设置创建单独的元数据包，其中每个元包都具有自己的 GUID。
-
- 
 
  
 

@@ -4,12 +4,12 @@ description: UMDF 驱动程序的初级指南
 ms.assetid: 67EF6762-AA31-4D35-8EB3-04F9CD34C7D1
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2d5f5bd63d085f0408e00f2f586d6c2674a1aef8
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 10c1c8627a830c0d3b4732e5e56107d9c37753da
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90715034"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91734313"
 ---
 # <a name="session-zero-guidelines-for-umdf-drivers"></a>UMDF 驱动程序的初级指南
 
@@ -25,19 +25,17 @@ ms.locfileid: "90715034"
 
     UMDF 驱动程序可以调用 Windows 函数来执行以下任务：
 
-    -   驱动程序可以调用 **SetupDi * * Xxx* 函数来检索即插即用设备属性。 例如， [OSR USB Fx2 学习工具包的 UMDF 示例驱动程序](https://go.microsoft.com/fwlink/p/?linkid=256202) 调用 [**SetupDiGetDeviceRegistryProperty**](/windows/win32/api/setupapi/nf-setupapi-setupdigetdeviceregistrypropertya) 来检索设备总线类型的 GUID。
+    -   驱动程序可以调用 **SetupDi * * Xxx* 函数来检索即插即用设备属性。 例如， [OSR USB Fx2 学习工具包的 UMDF 示例驱动程序](/samples/browse/) 调用 [**SetupDiGetDeviceRegistryProperty**](/windows/win32/api/setupapi/nf-setupapi-setupdigetdeviceregistrypropertya) 来检索设备总线类型的 GUID。
         **注意**   UMDF 驱动程序无法安全地调用许多 **SetupDi * * Xxx*函数，但调用检索设备节点属性的函数是安全的。
 
          
 
-    -   从手动队列检索 i/o 请求的驱动程序可能会创建一个周期性计时器以轮询队列。 例如， [WudfVhidmini](https://go.microsoft.com/fwlink/p/?linkid=256226) 示例通过调用 [**CreateThreadpoolTimer**](/windows/win32/api/threadpoolapiset/nf-threadpoolapiset-createthreadpooltimer)来注册计时器回调例程，然后通过调用 [**SetThreadpoolTimer**](/windows/win32/api/threadpoolapiset/nf-threadpoolapiset-setthreadpooltimer)来设置一个周期性计时器。
+    -   从手动队列检索 i/o 请求的驱动程序可能会创建一个周期性计时器以轮询队列。 例如， [WudfVhidmini](/samples/browse/) 示例通过调用 [**CreateThreadpoolTimer**](/windows/win32/api/threadpoolapiset/nf-threadpoolapiset-createthreadpooltimer)来注册计时器回调例程，然后通过调用 [**SetThreadpoolTimer**](/windows/win32/api/threadpoolapiset/nf-threadpoolapiset-setthreadpooltimer)来设置一个周期性计时器。
         **注意**   从版本1.11 开始，UMDF 提供对工作项的支持。 有关详细信息，请参阅 [使用工作项](using-workitems.md)。
 
          
 
 有关在框架外使用系统服务的其他信息，请参阅 Orwick、、Smith 和人员 Smith ) 的 "框架" 之外的第14个 (。 *开发包含 Windows Driver Foundation 的驱动程序*。 华盛顿州雷蒙德市：微软出版社，2007。
 
-有关会话零隔离的其他信息，请参阅在 [Windows 中对服务和驱动程序进行会话0隔离的影响](https://go.microsoft.com/fwlink/p/?linkid=240132)。
-
- 
+有关会话零隔离的其他信息，请参阅在 [Windows 中对服务和驱动程序进行会话0隔离的影响](/previous-versions/windows/hardware/design/dn653293(v=vs.85))。
 

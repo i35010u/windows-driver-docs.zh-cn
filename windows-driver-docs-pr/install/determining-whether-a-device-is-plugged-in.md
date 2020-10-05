@@ -11,12 +11,12 @@ keywords:
 - 确定是否已接通设备 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 89799918893822d06dd804e7f4b30111683fa5ca
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 542245d83d4893dce3005e6bd97289e9940420a7
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90717310"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91733181"
 ---
 # <a name="determining-whether-a-device-is-plugged-in"></a>确定设备是否已插入
 
@@ -27,9 +27,9 @@ ms.locfileid: "90717310"
 
 -   该函数返回 **TRUE**。  (这还会安装设备的驱动程序。 ) 
 
--   该函数返回 **FALSE** ，Win32 [GetLastError](https://go.microsoft.com/fwlink/p/?linkid=169416)函数返回 ERROR_NO_MORE_ITEMS。  (不会进行安装。 ) 
+-   该函数返回 **FALSE** ，Win32 [GetLastError](/windows/win32/api/errhandlingapi/nf-errhandlingapi-getlasterror)函数返回 ERROR_NO_MORE_ITEMS。  (不会进行安装。 ) 
 
-如果此函数返回 **FALSE** ，且 [GetLastError](https://go.microsoft.com/fwlink/p/?linkid=169416) 返回 NO_SUCH_DEVINST，则不插入设备。  (不会进行安装。 ) 
+如果此函数返回 **FALSE** ，且 [GetLastError](/windows/win32/api/errhandlingapi/nf-errhandlingapi-getlasterror) 返回 NO_SUCH_DEVINST，则不插入设备。  (不会进行安装。 ) 
 
 ### <a name="reinstalling-an-unplugged-device"></a>重新安装拔出的设备
 
@@ -37,9 +37,9 @@ ms.locfileid: "90717310"
 
 **重新安装拔出的设备：**
 
-1.  调用 [SetupCopyOEMInf](https://go.microsoft.com/fwlink/p/?linkid=98735) 函数。
+1.  调用 [SetupCopyOEMInf](/windows/win32/api/setupapi/nf-setupapi-setupcopyoeminfa) 函数。
 
-    [SetupCopyOEMInf](https://go.microsoft.com/fwlink/p/?linkid=194252)函数可确保 *% SystemRoot% \\ INF*目录中存在正确的 INF 文件。
+    [SetupCopyOEMInf](/windows/win32/api/setupapi/nf-setupapi-setupcopyoeminfa)函数可确保 *% SystemRoot% \\ INF*目录中存在正确的 INF 文件。
 
 2.  找到拔出的设备。
 
@@ -62,6 +62,4 @@ ms.locfileid: "90717310"
 6.  插入设备。
 
     即插即用将 reenumerate 设备，查找新的驱动程序，并安装该驱动程序。
-
- 
 

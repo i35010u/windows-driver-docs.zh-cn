@@ -14,12 +14,12 @@ api_type:
 - DllExport
 ms.date: 01/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 7352abe3b705f4fe72e14563e67cf513f56edd1b
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 35be829c4289c80fd38a5a6560d5ccd621d28556
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89064850"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91733579"
 ---
 # <a name="driverentry-of-display-miniport-driver-function"></a>显示微型端口驱动程序函数的 DriverEntry
 
@@ -36,12 +36,12 @@ NTSTATUS DriverEntry(
 );
 ```
 
-<a name="parameters"></a>parameters
+<a name="parameters"></a>参数
 ----------
 
 *DriverObject* \[在 \] 指向 [**驱动程序 \_ 对象**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_driver_object) 结构的指针（该结构表示由 (显示小型端口构成的驱动程序）中，显示端口) 驱动程序对。
 
-*RegistryPath* \[在指向 \] 提供驱动程序注册表项路径的 [**UNICODE \_ 字符串**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfwdm/ns-wudfwdm-_unicode_string) 结构的指针中。
+*RegistryPath* \[在指向 \] 提供驱动程序注册表项路径的 [**UNICODE \_ 字符串**](/windows-hardware/drivers/ddi/wudfwdm/ns-wudfwdm-_unicode_string) 结构的指针中。
 
 <a name="return-value"></a>返回值
 ------------
@@ -169,7 +169,7 @@ NTSTATUS DriverEntry(
 <tbody>
 <tr class="odd">
 <td align="left"><p>目标平台</p></td>
-<td align="left">桌面型</td>
+<td align="left">台式机</td>
 </tr>
 <tr class="even">
 <td align="left"><p>版本</p></td>
@@ -192,6 +192,4 @@ NTSTATUS DriverEntry(
 [**DxgkInitialize**](/windows-hardware/drivers/ddi/dispmprt/nf-dispmprt-dxgkinitialize)
 
 [*DxgkDdiUnload*](/windows-hardware/drivers/ddi/dispmprt/nc-dispmprt-dxgkddi_unload)
-
- 
 

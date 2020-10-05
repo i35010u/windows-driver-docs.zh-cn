@@ -4,12 +4,12 @@ description: 移动运营商硬件概述
 ms.assetid: b2322972-16be-443f-b46a-7834b4d7ead0
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b92ce84b4978c3dc98447c4b3754a5f2f2dc1cba
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 033fe5bee2fb6c3d212cba6c9399cd7ad79d28cf
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90715748"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91733260"
 ---
 # <a name="mobile-operator-hardware-overview"></a>移动运营商硬件概述
 
@@ -156,7 +156,7 @@ Windows 8、Windows 8.1 和 Windows 10 支持为 Windows 7 设计的移动宽带
 
 ### <a name="span-idoma-dm_client_supportspanspan-idoma-dm_client_supportspanspan-idoma-dm_client_supportspanoma-dm-client-support"></a><span id="OMA-DM_client_support"></span><span id="oma-dm_client_support"></span><span id="OMA-DM_CLIENT_SUPPORT"></span>OMA 客户端支持
 
-Windows 8.1 增加了对企业的 OMA 支持，以管理在 BYOD 中运行 Windows 的设备 (自带设备) 方案。 这会通过将企业相关的协议（ ([ms-MDE](https://go.microsoft.com/fwlink/?linkid=617595)、 [ms-MDM](https://go.microsoft.com/fwlink/?linkid=619346)) ）添加到这些方案中，供第三方移动设备管理提供程序和 Windows InTune 使用。
+Windows 8.1 增加了对企业的 OMA 支持，以管理在 BYOD 中运行 Windows 的设备 (自带设备) 方案。 这会通过将企业相关的协议（ ([ms-MDE](/openspecs/windows_protocols/ms-mde/5c841535-042e-489e-913c-9d783d741267)、 [ms-MDM](/openspecs/windows_protocols/ms-mdm/33769a92-ac31-47ef-ae7b-dc8501f7104f)) ）添加到这些方案中，供第三方移动设备管理提供程序和 Windows InTune 使用。
 
 Windows 将移动网络运营商配置的 OMA 支持与企业 BYOD 的支持分隔开来。 Windows 8.1 和 Windows 10 中的 OMA 客户端不支持本机配置移动运营商特定的设置，并且不支持第三方可扩展以支持移动网络运营商要求。 支持 Windows Phone 平台的 OMA DM 解决方案与 Windows 8.1 OMA 客户端或 Windows 10 OMA 客户端不兼容。
 
@@ -201,8 +201,6 @@ Windows 将移动网络运营商配置的 OMA 支持与企业 BYOD 的支持分�
 设备必须在此锁定状态下报告[**WWAN \_ READY \_ INFO**](/windows-hardware/drivers/ddi/wwan/ns-wwan-_wwan_ready_info)：： [**ReadyState**](/windows-hardware/drivers/ddi/wwan/ne-wwan-_wwan_ready_state) = **WwanReadyStateInitialized** ，并且不应报告**WwanReadyStateDeviceLocked**。
 
 **注意**   没有 HCK 测试用例来验证设备或系统上实现的此功能是否适用于 Windows。 我们期待 OEM 和运营商在 MBOT 中使用特定筛选器，以确保可对最终产品进行测试。
-
- 
 
  
 

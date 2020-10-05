@@ -4,12 +4,12 @@ description: 设备元数据包结构
 ms.assetid: 37614100-0a56-4a32-8e45-3161994e503a
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3932c57925a4bd544bb20e6ef24f475e122dc5a9
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 66573ed1808e9331f84cd3aec85ff1f41e772b8b
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63357787"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91732873"
 ---
 # <a name="device-metadata-package-structure"></a>设备元数据包结构
 
@@ -18,45 +18,36 @@ ms.locfileid: "63357787"
 
 PackageInfo.xml
 
-DeviceInformation DeviceInfo.xml *DeviceIcon*.ico
+DeviceInformation DeviceInfo.xml *DeviceIcon*
 
 WindowsInformation WindowsInfo.xml
 
-创建设备元数据包 DeviceStage 时，XML 文档和图标文件存储在以下目录：
+DeviceStage 创建设备元数据包时，XML 文档和图标文件存储在以下目录中：
 
--   [PackageInfo XML 文档](packageinfo-xml-document.md)位于目录的根目录。 此 XML 文档的名称必须是 PackageInfo.xml。
+-   [PACKAGEINFO XML 文档](packageinfo-xml-document.md)位于目录的根目录。 此 XML 文档的名称必须 PackageInfo.xml。
 
--   DeviceInformation 子目录中都包含[DeviceInfo XML 文档](deviceinfo-xml-document.md)和可选的设备图标文件。 XML 文档的名称必须是 DeviceInfo.xml。
+-   DeviceInformation 子目录包含 [DEVICEINFO XML 文档](deviceinfo-xml-document.md) 和可选的设备图标文件。 XML 文档的名称必须 DeviceInfo.xml。
 
-    如果你的设备元数据包包含设备图标文件，它可以具有任何名称，但必须以的后缀结尾 *.ico*。 有关详细信息，请参阅[设备图标文件](device-icon-file.md)。
+    如果设备元数据包包含设备图标文件，则它可以具有任何名称，但必须以 *.ico*后缀结尾。 有关详细信息，请参阅 [设备图标文件](device-icon-file.md)。
 
--   WindowsInformation 子目录中都包含[WindowsInfo XML 文档](windowsinfo-xml-document.md)。 XML 文档的名称必须是 WindowsInfo.xml。
+-   WindowsInformation 子目录包含 [WINDOWSINFO XML 文档](windowsinfo-xml-document.md)。 XML 文档的名称必须 WindowsInfo.xml。
 
--   DeviceStage 子目录包含 Windows Device Stage 用于呈现 Device Stage 体验的特定文件。 设备阶段是用于开发和分发特定于设备的经验丰富的平台。 使用 Device Stage 设备制造者可以创建匹配该品牌，功能和其设备的服务通过定义仅几个 XML 文件和图形的体验。
+-   DeviceStage 子目录包含 Windows 设备阶段用于显示设备阶段体验的特定文件。 设备阶段是用于开发和分发特定于设备的体验的丰富平台。 使用设备阶段，设备制造商可以通过仅定义少量的 XML 文件和图形来创建与设备的品牌、功能和服务相匹配的体验。
 
-    如果为该设备，设备制造者使用 Device Stage 体验，Windows 将要求 DeviceStage 目录中，设备元数据包。 否则，Windows 将在包中是否忽略目录。
+    如果设备制造商使用设备的设备阶段体验，则 Windows 要求 DeviceStage 目录位于设备元数据包中。 否则，Windows 将忽略包中的目录。
 
-    **请注意**Device Stage 支持有限数量的设备类。
-
-
+    **注意**  设备阶段支持的设备类数量有限。
 
 
-有关 Windows 设备体验、 Device Stage 和设备阶段 XML 架构的详细信息可在[Microsoft 设备体验开发工具包](https://go.microsoft.com/fwlink/p/?linkid=192621)。
+
+
+有关 Windows 设备体验、设备阶段和设备阶段 XML 架构的详细信息，请参阅 [Microsoft 设备体验开发工具包](../download-the-wdk.md)。
 
 
 创建设备元数据包时，应遵循以下准则：
 
--   必须通过使用 utf-8 编码保存每个 XML 文档。
+-   必须使用 UTF-8 编码保存每个 XML 文档。
 
--   设备元数据包不需要包括设备图标。 但是，我们强烈建议，包含设备元数据包[设备图标文件](device-icon-file.md)。 这用于设备真实感图像显示在设备和打印机。
+-   设备元数据包不需要包含设备图标。 但是，我们强烈建议设备元数据包包含 [设备图标文件](device-icon-file.md)。 这用于在设备和打印机中显示设备的照片真实图像。
 
-从 Windows 7 版本的 Windows Driver Kit (WDK) 中，开始[Toaster 示例](https://go.microsoft.com/fwlink/p/?linkid=256195)提供了示例设备元数据包。 此包的 XML 文档都位于*src\\常规\\toaster\\devicemetadatapackage* WDK 的子目录。
-
-
-
-
-
-
-
-
-
+从 Windows 7 版本的 Windows 驱动程序工具包开始 (WDK) ， [Toaster 示例](/samples/browse/) 提供了一个设备元数据包示例。 此包的 XML 文档位于 WDK 的 *src \\ general \\ toaster \\ devicemetadatapackage* 子目录中。

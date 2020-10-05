@@ -10,12 +10,12 @@ keywords:
 - 共同安装程序 WDK 设备安装，修改注册表值
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5e870dab7cea31d6bbb7412b1989505439d5d68d
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 20728f4b837632c1f9591d72bdbd14b237ac6df6
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90717278"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91732541"
 ---
 # <a name="modifying-registry-values-by-class-installers-and-co-installers"></a>通过类安装程序和辅助安装程序修改注册表值
 
@@ -46,7 +46,5 @@ ms.locfileid: "90717278"
 
 -   类安装程序和共同安装程序不得对设备使用 **SetupDiDeleteDevRegKey** 或 *硬件密钥* 。 有关详细信息，请参阅 [删除设备的注册表项](deleting-the-registry-keys-of-a-device.md)。
 
-有关标准注册表函数的详细信息，请参阅 [注册表函数](https://go.microsoft.com/fwlink/p/?linkid=194529)。
-
- 
+有关标准注册表函数的详细信息，请参阅 [注册表函数](/windows/win32/sysinfo/registry-functions)。
 

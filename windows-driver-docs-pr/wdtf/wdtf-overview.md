@@ -1,52 +1,47 @@
 ---
 title: WDTF 体系结构和概述
-description: 了解 Microsoft Windows 设备测试框架 (WDTF) 如何使您能够创建、 管理、 重用和扩展以设备为中心的基于方案的自动的测试。
+description: 了解 Microsoft Windows 设备测试框架如何 (WDTF) 使你能够创建、管理、重复使用和扩展以设备为中心的基于方案的自动测试。
 ms.assetid: 7e7660ec-1f17-4987-82c0-f62cca3a99b9
 keywords:
 - Windows 设备测试框架 WDK
 - WDTF WDK
 - 脚本 WDK WDTF
-- 测试框架 WDK WDTF 有关 Windows 设备
-- WDTF WDK，有关 Windows 设备测试框架
+- Windows 设备测试框架 WDK，关于 WDTF
+- WDTF WDK，关于 Windows 设备测试框架
 - 测试脚本 WDK WDTF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 50b80966ab530d1d58eff813e3087390638b7667
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ed674f44b3be973f804561feb41650481db6a29b
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63392704"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91734495"
 ---
 # <a name="wdtf-architecture-and-overview"></a>WDTF 体系结构和概述
 
 
 使用 Microsoft Windows 设备测试框架 (WDTF)，你可以创建、管理、重用和扩展以设备为中心、基于方案的自动化测试。
 
-下图显示了用于在非常高级别创建方案的典型 WDTF 模型。
+下图显示了在非常高的级别创建方案的典型 WDTF 模型。
 
-![说明用于在非常高的级别创建方案的典型 wdtf 模型关系图 ](images/wdtf-scenariomodel.gif)
+![说明在极高级别创建方案的典型 wdtf 模型的关系图 ](images/wdtf-scenariomodel.gif)
 
-测试脚本使用 WDTF 对象可通过组件对象模型 (COM) 接口。 可以使用支持 COM 自动化编写这些方案的任何编程语言。 本文档提供了代码示例在 VBScript 中， C++，和 JScript。
+测试脚本通过组件对象模型 (COM) 接口使用 WDTF 对象。 你可以使用任何支持 COM 自动化的编程语言来编写这些方案。 本文档提供 VBScript、c + + 和 JScript 中的代码示例。
 
-此外，您可以使用一些 WDTF 示例通过驱动程序测试管理器 (DTM) 而无需任何额外的编码。
+此外，还可以通过驱动测试管理器 (DTM) 使用某些 WDTF 示例，而无需任何其他编码。
 
-**请注意**  DTM 属于[Windows 硬件认证工具包 (HCK)](https://go.microsoft.com/fwlink/p/?linkid=254893)和 Microsoft Windows Logo Kit (WLK)。 运行时基于 WDTF 的测试中 DTM，WDTF 是为你安装。
+**注意**   DTM 是[Windows 硬件认证工具包的一部分 (HCK) ](/windows-hardware/test/hlk/)和 Microsoft Windows 徽标工具包 (WLK) 。 在 DTM 中运行基于 WDTF 的测试时，将为你安装 WDTF。
 
  
 
-以上图所示的模型创建的基于组件的方案，可让你专注于一组而不是各个设备的设备的常见功能。 即使很多设备需要特殊的实现对于某些这些接口，它们很容易添加。 当一个方案涉及使用一项新功能时，你可以[添加](extending-the-framework.md)简单 COM 自动化接口包装到 WDTF 该功能。
+上图显示了用于创建基于组件的方案的模型，该模型使你能够专注于一组设备（而不是单个设备）的通用功能。 即使许多设备需要对某些接口进行特殊实现，它们也非常容易添加。 当方案涉及到使用新功能时，可以 [添加](extending-the-framework.md) 一个将该功能包装到 WDTF 的简单 COM 自动化接口。
 
-## <a name="in-this-section"></a>本节内容
+## <a name="in-this-section"></a>在此部分中
 
 
 -   [WDTF 体系结构](wdtf-architecture.md)
 -   [扩展框架](extending-the-framework.md)
 
  
-
- 
-
-
-
 

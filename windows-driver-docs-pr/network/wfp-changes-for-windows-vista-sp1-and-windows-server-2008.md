@@ -4,12 +4,12 @@ description: Windows Vista SP1 和 Windows Server 2008 的 WFP 更改
 ms.assetid: c901dbed-639d-473b-aaf0-8470e9c04009
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7005855612af210a2a7817a0f2e6e9aa13580807
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: b7362eb9ca0d4013760c239a7061fe583f528b8b
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89217971"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91732971"
 ---
 # <a name="wfp-changes-for-windows-vista-sp1-and-windows-server-2008"></a>Windows Vista SP1 和 Windows Server 2008 的 WFP 更改
 
@@ -24,7 +24,7 @@ ms.locfileid: "89217971"
 
 -   已更新和重命名已添加到 FWPS 层 ALE 身份验证接收的数据字段标识符。 " \_ \_ \_ \_ \_ \_ *XXX* \_ \_ \_ \_ \_ *XXX* [数据字段标识符](./data-field-identifiers.md)" 中列出了 "接受 XXX" 和 "FWPS"，并与行为更改一起列出
 
--   在[每个筛选层](./metadata-fields-at-each-filtering-layer.md)的 "[元数据字段](https://docs.microsoft.com/windows-hardware/drivers/network/metadata-fields)" 和 "元数据" 字段中列出的其他元数据字段标识符
+-   在[每个筛选层](./metadata-fields-at-each-filtering-layer.md)的 "[元数据字段](./metadata-field-identifiers.md)" 和 "元数据" 字段中列出的其他元数据字段标识符
 
 -   以下文档主题是新的：
     -   [开发 IPsec 兼容的标注驱动程序](developing-ipsec-compatible-callout-drivers.md)
@@ -37,6 +37,4 @@ ms.locfileid: "89217971"
      [*notifyFn*](/windows-hardware/drivers/ddi/fwpsk/nc-fwpsk-fwps_callout_notify_fn0) 
      [**FWPS \_ CALLOUT0**](/windows-hardware/drivers/ddi/fwpsk/ns-fwpsk-fwps_callout0_) 
      [**FWPS \_ 传入 \_ 元数据 \_ VALUES0**](/windows-hardware/drivers/ddi/fwpsk/ns-fwpsk-fwps_incoming_metadata_values0_)
-
- 
 

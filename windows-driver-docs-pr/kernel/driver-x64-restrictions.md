@@ -4,38 +4,33 @@ description: x64 驱动程序的限制
 ms.assetid: 717ca559-93aa-48d6-8347-bfdf223f1aa4
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: c16389945a5b6b96fcc2b87c7cf73b92ce730289
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8ce34a78e62dc69e47e4f0c6f4345c5bec2f3191
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63372702"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91734259"
 ---
 # <a name="driver-x64-restrictions"></a>x64 驱动程序的限制
 
 
-在基于 x64 的系统中，从修改保护内核代码和某些内核数据结构。 任何尝试修改此类代码或数据的驱动程序将会导致 bug 检查系统 (与严重\_结构\_损坏错误检查)。
+在基于 x64 的系统上，将保护内核代码和某些内核数据结构不被修改。 任何试图修改此类代码或数据的驱动程序都将导致系统检查 \_) 严重结构 \_ 损坏 bug 检查 (。
 
-对于基于 x64 的系统驱动程序必须避免可能会触发此 bug 检查的操作。 具体而言，驱动程序不可以：
+基于 x64 的系统的驱动程序必须避免可能触发此错误检查的操作。 具体而言，驱动程序不能：
 
 -   尝试在运行时修改内核代码。
 
--   实现和使用自己的堆栈。
+-   实现并使用自己的堆栈。
 
--   修改硬件调度表，例如中断调度表 (IDT) 或全局描述符表 (GDT)。
+-   修改硬件调度表，如中断调度表 (IDT) 或全局描述符表 (GDT) 。
 
 -   修改未记录的内核数据结构。
 
-尽管上述操作不会触发 bug 检查在基于 x86 或基于 Itanium 的系统中，驱动程序不应执行任何一种在任何平台上的操作。 这些操作可能无法在将来版本的 Microsoft Windows 操作系统。
+即使前面的操作将不会在基于 x86 或基于 Itanium 的系统上触发 bug 检查，驱动程序也不应在任何平台上执行这些操作。 这些操作可能在 Microsoft Windows 操作系统的未来版本中不起作用。
 
-有关修改内核代码和数据结构的详细信息，请参阅[针对基于 x64 的系统的修补策略](https://go.microsoft.com/fwlink/p/?linkid=50719)白皮书并[64-Bit 修补常见问题解答](https://go.microsoft.com/fwlink/p/?linkid=69534)。
+有关修改内核代码和数据结构的详细信息，请参阅 [修补基于 x64 的系统的策略](https://go.microsoft.com/fwlink/p/?linkid=50719) 白皮书和 [64 位修补程序常见问题解答](https://go.microsoft.com/fwlink/p/?linkid=69534)。
 
-有关使用 64 位编译器的编程的常规信息，请参阅[64 位编程与视觉对象C++ ](https://go.microsoft.com/fwlink/p/?linkid=165521)。
-
- 
+有关使用64位编译器编程的常规信息，请参阅 [使用 Visual C++ 的64位编程](/cpp/build/configuring-programs-for-64-bit-visual-cpp)。
 
  
-
-
-
 

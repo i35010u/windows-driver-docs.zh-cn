@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: b846ba7223b16e69c9e5a39bc2f04c256fb414bc
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 0d033952e134bac9b907349a80b6eaf81290b08e
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89096016"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91732851"
 ---
 # <a name="guid_devinterface_modem"></a>GUID_DEVINTERFACE_MODEM
 
@@ -33,7 +33,7 @@ ms.locfileid: "89096016"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Attribute</th>
+<th align="left">属性</th>
 <th align="left">设置</th>
 </tr>
 </thead>
@@ -73,7 +73,7 @@ ms.locfileid: "89096016"
 
 有关调制解调器设备的信息，请参阅 [调制解调器设备设计指南](/previous-versions/windows/hardware/modem/ff542476(v=vs.85))。
 
-有关使用此设备接口类的示例，请参阅 WDK 中提供的 [FakeModem-Unimodem 无控制器驱动程序](https://go.microsoft.com/fwlink/p/?linkid=256110) 示例。
+有关使用此设备接口类的示例，请参阅 WDK 中提供的 [FakeModem-Unimodem 无控制器驱动程序](/samples/browse/) 示例。
 
 [**GUID_CLASS_MODEM**](guid-class-modem.md) 是此设备接口类的过时标识符;对于此类的新实例，请改用 GUID_DEVINTERFACE_MODEM。
 
@@ -101,6 +101,4 @@ ms.locfileid: "89096016"
 
 
 [**GUID_CLASS_MODEM**](guid-class-modem.md)
-
- 
 

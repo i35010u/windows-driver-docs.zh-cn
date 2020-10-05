@@ -3,12 +3,12 @@ description: 描述 (UDE) 类扩展和客户端驱动程序必须为其附加的
 title: 编写 UDE 客户端驱动程序
 ms.date: 01/07/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 6e464d96ca7063af819f4fd252ee2672900cf73e
-ms.sourcegitcommit: 937974aa9bbe0262a7ffe9631593fab48c4e7492
+ms.openlocfilehash: 2fc703a2199c30b0a49bb691b54ae845bf41bc7e
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "90010389"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91733021"
 ---
 # <a name="write-a-ude-client-driver"></a>编写 UDE 客户端驱动程序
 
@@ -18,7 +18,7 @@ ms.locfileid: "90010389"
 - 使用功能创建模拟主机控制器以查询控制器功能并重置控制器。
 - 创建虚拟 USB 设备，通过终结点设置电源管理和数据传输。
 
-**适用于：**
+**适用对象：**
 
 - Windows 10
 
@@ -32,9 +32,9 @@ ms.locfileid: "90010389"
 
 描述 (UDE) 类扩展和客户端驱动程序必须为其附加的设备执行的客户端驱动程序的 USB 设备仿真的行为。 它提供有关类驱动程序和类扩展如何通过一组例程和回调函数与每个进行通信的信息。 它还描述了客户端驱动程序应该实现的功能。
 
-## <a name="before-you-begin"></a>在开始之前
+## <a name="before-you-begin"></a>准备阶段
 
--  (WDK) 你的开发计算机上[安装](https://go.microsoft.com/fwlink/p/?LinkID=733614)最新的 Windows 驱动程序工具包。 工具包具有编写 UDE 客户端驱动程序所需的头文件和库，具体而言，你将需要：
+-  (WDK) 你的开发计算机上[安装](../download-the-wdk.md)最新的 Windows 驱动程序工具包。 工具包具有编写 UDE 客户端驱动程序所需的头文件和库，具体而言，你将需要：
   - 存根库， (Udecxstub) 。 库转换客户端驱动程序发出的调用，并将其传递给 UdeCx。
   - 标头文件 Udecx。
 - 在目标计算机上安装 Windows 10。

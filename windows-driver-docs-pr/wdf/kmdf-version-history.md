@@ -9,12 +9,12 @@ keywords:
 ms.date: 04/28/2020
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 5640cd507b0693d1bc123c6d990b93f6b549bde9
-ms.sourcegitcommit: 015689b4cc3a288ff4296ab0954a4e866e09c113
+ms.openlocfilehash: 1e31a4e5160c09f327d0f3db4ca5e01606128925
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90574279"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91734317"
 ---
 # <a name="kmdf-version-history"></a>KMDF 版本历史记录
 
@@ -67,7 +67,7 @@ ms.locfileid: "90574279"
 
 ## <a name="kmdf-version-125"></a>KMDF 版本1.25
 
-* [针对多个 Windows 版本生成 WDF 驱动程序](building-a-wdf-driver-for-multiple-versions-of-windows.md)
+* [为多个版本的 Windows 构建 WDF 驱动程序](building-a-wdf-driver-for-multiple-versions-of-windows.md)
 
 ## <a name="kmdf-version-123"></a>KMDF 版本1.23
 
@@ -161,7 +161,7 @@ KMDF 版本1.13 添加了以下功能：
 
 -   已将 **DbgWaitForSignalTimeoutInSec** 添加到 [用于调试基于框架的驱动程序的注册表值](registry-values-for-debugging-kmdf-drivers.md)。
 
--   添加了 [InstallWdf](https://go.microsoft.com/fwlink/p/?linkid=256122)、 [MultiComp](https://go.microsoft.com/fwlink/p/?linkid=256158)和 [SingleComp](https://go.microsoft.com/fwlink/p/?linkid=256158) 示例。
+-   添加了 [InstallWdf](/samples/browse/)、 [MultiComp](/samples/browse/)和 [SingleComp](/samples/browse/) 示例。
 
 ## <a name="kmdf-version-19"></a>KMDF 版本1。9
 
@@ -221,6 +221,4 @@ KMDF 版本1.13 添加了以下功能：
 
 
 初始版本。
-
- 
 

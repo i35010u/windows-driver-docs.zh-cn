@@ -4,23 +4,23 @@ description: 本主题提供有关特定于邻近感应传感器的数据字段�
 ms.assetid: 03B561DB-FAF2-4404-AA49-6A0DA139AA11
 ms.date: 07/20/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 86e8c9f095460ee5ea16e50b5137439afd6b21c9
-ms.sourcegitcommit: 937974aa9bbe0262a7ffe9631593fab48c4e7492
+ms.openlocfilehash: 84d0b4fa21dc0b911c47ed74c6c5c25a27eab41a
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "90010665"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91733737"
 ---
 # <a name="proximity-sensor-data-fields"></a>邻近感应传感器数据字段
 
 
 本主题提供有关特定于邻近感应传感器的数据字段的信息。
 
-下表显示了数据字段。 有关 "类型" 列中显示的类型的详细信息，请参阅 [PROPVARIANT 结构](https://go.microsoft.com/fwlink/p/?linkid=313395)。
+下表显示了数据字段。 有关 "类型" 列中显示的类型的详细信息，请参阅 [PROPVARIANT 结构](/windows/win32/api/propidlbase/ns-propidlbase-propvariant)。
 
 |属性键|类型|必需/可选|说明|
 |--|--|--|--|
-|PKEY_SensorData_ProximityDetection|VT_BOOL|必需|指示对象在传感器附近。|
+|PKEY_SensorData_ProximityDetection|VT_BOOL|必须|指示对象在传感器附近。|
 |PKEY_SensorData_ProximityDistanceMillimeters|VT_UI4|可选|与检测到的对象的距离（以毫米为单位）。|
 
  
@@ -32,8 +32,8 @@ ms.locfileid: "90010665"
 
 |数据字段属性|类型|必需/可选|说明|
 |--|--|--|--|
-|PKEY_SensorDataField_RangeMinimum|VT_R4 (float) |必需|指示传感器的有效检测范围（以毫米为单位）的下限) 的下边界 (。|
-|PKEY_SensorDataField_RangeMaximum|VT_R4 (float) |必需|指示传感器的有效检测范围的上限（以毫米为单位） (非独占检测范围) 。|
+|PKEY_SensorDataField_RangeMinimum|VT_R4 (float) |必须|指示传感器的有效检测范围（以毫米为单位）的下限) 的下边界 (。|
+|PKEY_SensorDataField_RangeMaximum|VT_R4 (float) |必须|指示传感器的有效检测范围的上限（以毫米为单位） (非独占检测范围) 。|
 
  
 
@@ -49,7 +49,5 @@ ms.locfileid: "90010665"
 
 [EvtSensorGetDataFieldProperties](/windows-hardware/drivers/ddi/sensorscx/ns-sensorscx-_sensor_controller_config)
 
-[PROPVARIANT 结构](https://go.microsoft.com/fwlink/p/?linkid=313395)
-
- 
+[PROPVARIANT 结构](/windows/win32/api/propidlbase/ns-propidlbase-propvariant)
 

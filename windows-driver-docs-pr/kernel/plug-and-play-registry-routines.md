@@ -13,12 +13,12 @@ keywords:
 - PnP WDK 内核，注册表例程
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 665c9a064bb4d0cfe3e775fb7219c0b431be1ced
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 4a2756782325cbf288559d6eff46153c429aabd3
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89187173"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91733141"
 ---
 # <a name="plug-and-play-registry-routines"></a>即插即用注册表例程
 
@@ -39,7 +39,7 @@ ms.locfileid: "89187173"
 
 PnP 管理器为驱动程序分配一个密钥（称为驱动程序的软件密钥），并为每个设备分配一个密钥，称为设备的硬件密钥。 **IoOpenDeviceRegistryKey**例程可用于打开任意一个密钥。 *DevInstKeyType*参数的值确定要打开的键。 指定 PLUGPLAY \_ regkey \_ 驱动程序以打开软件密钥，或将 PLUGPLAY \_ regkey \_ 设备注册到硬件密钥。 *DeviceObject*参数指定设备或驱动程序。  (驱动程序还可以通过 ANDing PLUGPLAY \_ REGKEY \_ current \_ hwprofile 中 to *DevInstKeyType*，来访问其硬件和软件密钥的相对于当前硬件配置文件。 ) 
 
-**IoOpenDeviceInterfaceRegistryKey** 打开与特定设备接口实例相关联的密钥。 实例由其名称标识，这是由[**IoGetDeviceInterfaces**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetdeviceinterfaces)、 [**IoGetDeviceInterfaceAlias**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetdeviceinterfacealias)或[**IoRegisterDeviceInterface**](/windows-hardware/drivers/ddi/wdm/nf-wdm-ioregisterdeviceinterface)返回的[**UNICODE \_ 字符串**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfwdm/ns-wudfwdm-_unicode_string)。 字符串作为 *SymbolicLinkValue* 参数传递给 **IoOpenDeviceInterfaceRegistryKey**。
+**IoOpenDeviceInterfaceRegistryKey** 打开与特定设备接口实例相关联的密钥。 实例由其名称标识，这是由[**IoGetDeviceInterfaces**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetdeviceinterfaces)、 [**IoGetDeviceInterfaceAlias**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetdeviceinterfacealias)或[**IoRegisterDeviceInterface**](/windows-hardware/drivers/ddi/wdm/nf-wdm-ioregisterdeviceinterface)返回的[**UNICODE \_ 字符串**](/windows-hardware/drivers/ddi/wudfwdm/ns-wudfwdm-_unicode_string)。 字符串作为 *SymbolicLinkValue* 参数传递给 **IoOpenDeviceInterfaceRegistryKey**。
 
 还可以在 INF 文件中或使用 **SetupDi * Xxx*** 例程来设置这些密钥。 有关详细信息，请参阅 [驱动程序的注册表项](../install/overview-of-registry-trees-and-keys.md)。
 
@@ -70,6 +70,4 @@ if (NTSUCCESS(status)) {
 ```
 
 请注意，可以限制对注册表项的访问，因此，对 [**IoOpenDeviceRegistryKey**](/windows-hardware/drivers/ddi/wdm/nf-wdm-ioopendeviceregistrykey) 和 [**IoOpenDeviceInterfaceRegistryKey**](/windows-hardware/drivers/ddi/wdm/nf-wdm-ioopendeviceinterfaceregistrykey) 的调用应指定 *DesiredAccess*所需的最小权限。 如果驱动程序请求不允许的访问权限，则例程返回状态 " \_ 拒绝访问" \_ 。 具体而言，驱动程序不应指定密钥 \_ 所有 \_ 访问权限。
-
- 
 

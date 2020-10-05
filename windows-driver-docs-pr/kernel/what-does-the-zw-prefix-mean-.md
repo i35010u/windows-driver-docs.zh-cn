@@ -4,12 +4,12 @@ description: Zw 前缀的含义是什么
 ms.assetid: 9529cce9-9c46-4906-854d-d0aef9118a90
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: d9df2c27ec04dd27104a0864dccf49e74d12d57a
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 38da09c401defa1097256c27c62cae21911ae715
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90107222"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91733943"
 ---
 # <a name="what-does-the-zw-prefix-mean"></a>Zw 前缀是什么？
 
@@ -80,10 +80,8 @@ Windows native 系统服务例程的名称以前缀 **Nt** 和 **Zw**开头。 *
 <tr class="even">
 <td><p><strong>Nt</strong> 和 <strong>Zw</strong></p></td>
 <td><p>本机系统服务</p></td>
-<td><p><a href="https://go.microsoft.com/fwlink/p/?linkid=157250" data-raw-source="[NtCreateFile](https://go.microsoft.com/fwlink/p/?linkid=157250)">NtCreateFile</a>和<a href="/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ntcreatefile" data-raw-source="[&lt;strong&gt;ZwCreateFile&lt;/strong&gt;](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ntcreatefile)"> <strong>ZwCreateFile</strong></a></p></td>
+<td><p><a href="/windows/win32/api/winternl/nf-winternl-ntcreatefile" data-raw-source="[NtCreateFile](/windows/win32/api/winternl/nf-winternl-ntcreatefile)">NtCreateFile</a>和<a href="/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ntcreatefile" data-raw-source="[&lt;strong&gt;ZwCreateFile&lt;/strong&gt;](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ntcreatefile)"> <strong>ZwCreateFile</strong></a></p></td>
 </tr>
 </tbody>
 </table>
-
- 
 

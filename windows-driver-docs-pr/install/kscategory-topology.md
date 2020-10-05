@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 2085b4c806c4ed783aa78fdbbe008d7077415d68
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 7a5281b4b74a83a99af0b153b85041ee49c782a8
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89095193"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91733493"
 ---
 # <a name="kscategory_topology"></a>KSCATEGORY_TOPOLOGY
 
@@ -33,7 +33,7 @@ ms.locfileid: "89095193"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Attribute</th>
+<th align="left">属性</th>
 <th align="left">设置</th>
 </tr>
 </thead>
@@ -58,7 +58,7 @@ ms.locfileid: "89095193"
 
 有关音频适配器的设备接口类的信息，请参阅 [安装音频适配器的设备接口](../audio/installing-device-interfaces-for-an-audio-adapter.md)。
 
-在 WDK 中提供的 [交流电 "97 示例驱动程序](https://go.microsoft.com/fwlink/p/?linkid=256075) " 枚举 KSCATEGORY_TOPOLOGY 设备接口类的实例。
+在 WDK 中提供的 [交流电 "97 示例驱动程序](/samples/browse/) " 枚举 KSCATEGORY_TOPOLOGY 设备接口类的实例。
 
 WDK 中的 sysfx 示例将注册此设备接口类的实例。 Sysfx 示例位于 WDK 的 *src \\ 音频 \\ sysfx 目录* 中。
 
@@ -77,6 +77,4 @@ WDK 中的 sysfx 示例将注册此设备接口类的实例。 Sysfx 示例位�
 </tr>
 </tbody>
 </table>
-
- 
 

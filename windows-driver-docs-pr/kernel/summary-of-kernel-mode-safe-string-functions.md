@@ -6,12 +6,12 @@ keywords:
 - 安全字符串函数 WDK
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a8f7ef883078841cb1611ced8fc5d67783988f59
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 4d4353062896686eea95ff470e0a0aba2666176e
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90106378"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91733143"
 ---
 # <a name="summary-of-kernel-mode-safe-string-functions"></a>内核模式安全字符串函数摘要
 
@@ -348,11 +348,9 @@ ms.locfileid: "90106378"
 <dd>
 </dd>
 </dl></td>
-<td><p>初始化或验证 <a href="/windows-hardware/drivers/ddi/wudfwdm/ns-wudfwdm-_unicode_string" data-raw-source="[&lt;strong&gt;UNICODE_STRING&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfwdm/ns-wudfwdm-_unicode_string)"><strong>UNICODE_STRING</strong></a> 结构。</p></td>
+<td><p>初始化或验证 <a href="/windows-hardware/drivers/ddi/wudfwdm/ns-wudfwdm-_unicode_string" data-raw-source="[&lt;strong&gt;UNICODE_STRING&lt;/strong&gt;](/windows-hardware/drivers/ddi/wudfwdm/ns-wudfwdm-_unicode_string)"><strong>UNICODE_STRING</strong></a> 结构。</p></td>
 <td><p>无</p></td>
 </tr>
 </tbody>
 </table>
-
- 
 

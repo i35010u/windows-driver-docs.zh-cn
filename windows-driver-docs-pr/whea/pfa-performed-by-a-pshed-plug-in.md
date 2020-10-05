@@ -11,12 +11,12 @@ keywords:
 - PSHED 插件 WDK WHEA、预测性故障分析
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b00f4c8eaf41fbfa555bb09f7cba53ae9f9f50eb
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: dc11b4a7a08daa28affefc3fc9377a212bed2169
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89209477"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91732953"
 ---
 # <a name="pfa-performed-by-a-pshed-plug-in"></a>由 PSHED 插件执行的 PFA
 
@@ -67,7 +67,7 @@ ms.locfileid: "89209477"
 
 
 
-有关系统内存管理器的详细信息，请参阅 Windows SDK 文档中的 [内存管理](https://go.microsoft.com/fwlink/p/?linkid=140723) 。
+有关系统内存管理器的详细信息，请参阅 Windows SDK 文档中的 [内存管理](/windows/win32/memory/memory-management) 。
 
 
 10. Windows 内核生成 ETW 事件，并在系统事件日志中记录错误消息。

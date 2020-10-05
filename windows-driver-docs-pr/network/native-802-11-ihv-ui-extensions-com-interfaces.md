@@ -7,12 +7,12 @@ keywords:
 - COM 接口 WDK 本机 802.11 IHV UI 扩展 DLL
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0a9a0abd6e6e9b37537e45a37b3fd06acec4dbdd
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 38e8224ee52871abb34a67a65f8e8e7e7523db3c
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89215220"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91733661"
 ---
 # <a name="native-80211-ihv-ui-extensions-com-interfaces"></a>本机 802.11 IHV UI 扩展 COM 接口
 
@@ -48,7 +48,7 @@ ms.locfileid: "89215220"
 
 -   由本机 802.11 IHV UI 扩展 DLL 的组件发出的内部请求。
 
-有关 **IWizardExtension** com 接口的详细信息，请参阅 [IWizardExtension com interface](https://go.microsoft.com/fwlink/p/?linkid=56607)。
+有关 **IWizardExtension** com 接口的详细信息，请参阅 [IWizardExtension com interface](/windows/win32/api/shobjidl/nn-shobjidl-iwizardextension)。
 
 有关本机802.11 网络配置 UI 组件的详细信息，请参阅 [本机802.11 软件体系结构](/previous-versions/windows/hardware/wireless/native-802-11-software-architecture)。
 

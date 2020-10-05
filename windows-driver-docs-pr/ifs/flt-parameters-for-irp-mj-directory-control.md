@@ -16,12 +16,12 @@ api_type:
 - HeaderDef
 ms.date: 02/04/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: ffbf54e3bc5719e69df46d9cb97cb92ecf6d8b16
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: f75e00895b96e79e3148db1aaf43f800022ebb95
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89064426"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91732733"
 ---
 # <a name="flt_parameters-for-irp_mj_directory_control-union"></a>IRP_MJ_DIRECTORY_CONTROL 联合的 FLT_PARAMETERS
 
@@ -66,7 +66,7 @@ typedef union _FLT_PARAMETERS {
 **DirectoryBuffer**成员指向的缓冲区的长度（以字节为单位）。
 
 **FileName**  
-指向 [**UNICODE_STRING**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfwdm/ns-wudfwdm-_unicode_string) 结构的指针，该结构包含指定目录中的文件的名称。
+指向 [**UNICODE_STRING**](/windows-hardware/drivers/ddi/wudfwdm/ns-wudfwdm-_unicode_string) 结构的指针，该结构包含指定目录中的文件的名称。
 
 **FileInformationClass**  
 指定下面描述的值之一。
@@ -100,7 +100,7 @@ typedef union _FLT_PARAMETERS {
 **CompletionFilter**  
 标志的位掩码，用于指定应在通知列表中完成 Irp 的文件或目录的更改类型。 下面描述了可能的标志值。
 
-| Flag | 含义  |
+| 标志 | 含义  |
 |------|----------|
 | FILE_NOTIFY_CHANGE_FILE_NAME    | 已在此目录中添加、删除或重命名文件。                  |
 | FILE_NOTIFY_CHANGE_DIR_NAME     | 已创建、删除或重命名了子目录。                          |

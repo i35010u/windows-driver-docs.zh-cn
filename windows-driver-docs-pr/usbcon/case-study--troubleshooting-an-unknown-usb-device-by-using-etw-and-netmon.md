@@ -3,12 +3,12 @@ description: 提供有关如何使用 USB ETW 和 Netmon 排查 Windows 无法�
 title: 案例研究-排查未知 USB 设备问题
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f6a1cc7187168ddaa999b2327535eaa58450e5fd
-ms.sourcegitcommit: b3e38d06762246c77cedd8e82d740ebea104c538
+ms.openlocfilehash: 4bba0f40c23c7e6d4e3736d28b177bc53ed0712f
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/02/2020
-ms.locfileid: "91662349"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91733107"
 ---
 # <a name="case-study-troubleshooting-an-unknown-usb-device-by-using-etw-and-netmon"></a>案例研究：使用 ETW 和 Netmon 排查未知 USB 设备的问题
 
@@ -29,9 +29,9 @@ ms.locfileid: "91662349"
 * 配置描述符的请求失败。
 * [USB 配置描述符](usb-configuration-descriptors.md)的格式不正确，验证失败。
 
-在 Windows 7 中，无法枚举的未知设备将标记为设备管理器中的失败 [代码 43](https://go.microsoft.com/fwlink/p/?linkid=617523) 。
+在 Windows 7 中，无法枚举的未知设备将标记为设备管理器中的失败 [代码 43](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc725873(v=ws.10)) 。
 
-如果在设备管理器中使用故障 [代码 28](https://go.microsoft.com/fwlink/p/?linkid=617525) 对设备进行标记，则设备已成功枚举，但仍是未知设备。 此失败代码表明设备在枚举过程中未提供产品 ID 字符串，Windows 找不到用于安装驱动程序的设备的匹配 INF。
+如果在设备管理器中使用故障 [代码 28](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc731268(v=ws.10)) 对设备进行标记，则设备已成功枚举，但仍是未知设备。 此失败代码表明设备在枚举过程中未提供产品 ID 字符串，Windows 找不到用于安装驱动程序的设备的匹配 INF。
 
 ## <a name="starting-the-event-trace-analysis"></a>开始事件跟踪分析
 
@@ -147,7 +147,7 @@ USB 错误事件和其他事件的数据中具有状态值，这些值提供有�
 
 |状态类型|资源|
 |----|----|
-|**fid_NtStatus**|请参阅 [NTSTATUS 值](https://go.microsoft.com/fwlink/p/?linkid=617532)。|
+|**fid_NtStatus**|请参阅 [NTSTATUS 值](/openspecs/windows_protocols/ms-erref/596a1078-e883-4972-9bbc-49e60bebca55)。|
 |USB 请求块的 "状态" 字段 (URB) 或 **fid_UsbdStatus**|在 Windows 驱动程序工具包 (WDK) 的 inc\api\usb.h 中查找作为 USBD_STATUS 的值。 你还可以使用 [USBD \_ 状态](/previous-versions/windows/hardware/drivers/ff539136(v=vs.85))。 本主题列出了 USBD 状态值的符号名称和含义 \_ 。|
 
 ## <a name="reading-backwards-from-problem-events"></a>从问题事件中反向读取

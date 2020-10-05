@@ -4,12 +4,12 @@ description: SPB 外围设备驱动程序控制连接到简单外设总线 (SPB)
 ms.assetid: 8352EBD9-D94C-4EC6-A17E-3A72DDE4C16C
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5437c93a834e6d06729cda2831d66fe8947eed7c
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 1d19076aa68ad29890da45d3e31ebfc279a40743
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90106858"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91733053"
 ---
 # <a name="spb-peripheral-device-drivers"></a>SPB 外围设备驱动程序
 
@@ -31,7 +31,7 @@ SPB 连接的外围设备的硬件寄存器不是内存映射的。 仅可通过
 
 由于此示例中的 GPIO 控制器和 i2c 控制器已集成到 SoC 模块，因此它们的硬件寄存器为内存映射，并且可由处理器直接访问。 但是，处理器仅可以通过 i2c 控制器间接访问两个外围设备的硬件寄存器。
 
-SPB 不是 [即插即用](https://docs.microsoft.com/windows-hardware/drivers/kernel/implementing-plug-and-play) (PnP) 总线，因此不能用于自动检测和配置插入到总线中的新设备。 与 SPB 连接的设备的总线和中断连接通常是永久性的。 即使设备可以从插槽中拔出，此插槽通常专用于设备。 此外，SPB 不提供带内硬件路径，用于中继从总线上的外围设备到总线控制器的中断请求。 相反，中断的硬件路径与总线控制器分离。
+SPB 不是 [即插即用](../kernel/introduction-to-plug-and-play.md) (PnP) 总线，因此不能用于自动检测和配置插入到总线中的新设备。 与 SPB 连接的设备的总线和中断连接通常是永久性的。 即使设备可以从插槽中拔出，此插槽通常专用于设备。 此外，SPB 不提供带内硬件路径，用于中继从总线上的外围设备到总线控制器的中断请求。 相反，中断的硬件路径与总线控制器分离。
 
 硬件平台供应商在平台的 ACPI 固件中存储与 SPB 连接的外围设备的配置信息。 在系统启动期间， [ACPI 驱动程序](../acpi/enumerating-child-devices-and-control-methods.md) 会在总线上枚举 PnP 管理器的设备。 对于每个枚举设备，ACPI 提供有关设备总线和中断连接的信息。 PnP 管理器将此信息存储在名为 *资源中心*的数据存储中。
 
@@ -113,6 +113,4 @@ SpbCx 是系统提供的组件，用于管理 SPB 控制器的 i/o 请求队列�
 </tr>
 </tbody>
 </table>
-
- 
 

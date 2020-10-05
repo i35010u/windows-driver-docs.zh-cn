@@ -6,12 +6,12 @@ keywords:
 - 虚拟工作站 WDK 网络
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7ca43baf52e5bbc144eb9e7dd67d2c87048ce4cc
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: d5e8cf4199937dff831f917cd9adb0fba7820ed1
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89216910"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91732521"
 ---
 # <a name="virtual-station"></a>虚拟工作站
 
@@ -52,7 +52,7 @@ IHV 扩展 DLL 在调用 **Dot11ExtRequestVirtualStation** 函数后应设置两
 
 -   如果 ExtAP 端口在操作状态下运行并且发生以下情况之一，则虚拟工作站端口连接将失败：
     -   一个或多个客户端位于 ExtAP 端口上。
-    -   虚拟工作站尝试启动复制 [无线托管网络](https://go.microsoft.com/fwlink/p/?linkid=152328) 设置的连接。
+    -   虚拟工作站尝试启动复制 [无线托管网络](/windows/win32/nativewifi/about-the-wireless-hosted-network) 设置的连接。
 
 ### <a name="native-80211-ihv-extensibility-functions-that-support-a-virtual-station"></a><a href="" id="native-802-11-ihv-extensibility-functions-that-support-a-virtual-stati"></a> 支持虚拟工作站的本机 802.11 IHV 扩展性函数
 

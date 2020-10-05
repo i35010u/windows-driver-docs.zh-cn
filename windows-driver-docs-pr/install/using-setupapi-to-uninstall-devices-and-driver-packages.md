@@ -4,12 +4,12 @@ description: 使用 SetupAPI 卸载设备和驱动程序包
 ms.assetid: e170961b-5d12-43d5-b502-3b37e6421f6e
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1ee0511adaef1986ee7bc573e4f115b9cbe3de00
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: bf6468f6b12155ba22b076b16581a87ed0a22a50
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90715076"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91732729"
 ---
 # <a name="using-setupapi-to-uninstall-devices-and-driver-packages"></a>使用 SetupAPI 卸载设备和驱动程序包
 
@@ -42,13 +42,11 @@ ms.locfileid: "90715076"
 
 ### <a name="deleting-a-driver-package-from-the-driver-store"></a><a href="" id="deleting-a-driver-package-from-the-driver-store"></a> 从驱动程序存储区中删除驱动程序包
 
-从 Windows XP 开始，设备安装应用程序可以调用 [SetupUninstallOEMInf](https://go.microsoft.com/fwlink/p/?linkid=169503) 函数从系统 inf 文件目录中删除指定的 [INF 文件](overview-of-inf-files.md) 。
+从 Windows XP 开始，设备安装应用程序可以调用 [SetupUninstallOEMInf](/windows/win32/api/setupapi/nf-setupapi-setupuninstalloeminfa) 函数从系统 inf 文件目录中删除指定的 [INF 文件](overview-of-inf-files.md) 。
 
 从 Windows Vista 开始，此函数还将从[驱动程序存储区](driver-store.md)中删除包含指定 INF 文件的[驱动程序包](driver-packages.md)。
 
 ### <a name="deleting-the-binary-files-of-the-installed-driver"></a><a href="" id="deleting-the-binary-files-of-the-installed-driver"></a> 正在删除已安装驱动程序的二进制文件
 
 Setupapi.log 无法用于执行此操作。
-
- 
 

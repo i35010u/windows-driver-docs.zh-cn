@@ -4,12 +4,12 @@ description: 使用带有传感器的矢量类型
 ms.assetid: cadc2cd3-10aa-4a4a-926f-edc01b046f27
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2fe2c30e2855ee247ab2ea51185c6217ec60eb89
-ms.sourcegitcommit: 937974aa9bbe0262a7ffe9631593fab48c4e7492
+ms.openlocfilehash: d739a4992ad5b3e26d55b528babc82311a32f1f1
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "90010621"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91734499"
 ---
 # <a name="using-vector-types-with-sensors"></a>使用带有传感器的矢量类型
 
@@ -18,7 +18,7 @@ ms.locfileid: "90010621"
 
 有关哪些属性和数据字段包含数组的信息，请参阅 [常量](about-sensor-constants.md)。
 
-下面的代码示例演示如何创建一个 [IPortableDeviceValues](https://go.microsoft.com/fwlink/p/?linkid=131486) 对象，该对象包含传感器 \_ 属性 \_ 光源 \_ 响应 \_ 曲线的值。 名为 m pSensorProperties 的变量 \_ 是指向 [IPortableDeviceValues](https://go.microsoft.com/fwlink/p/?linkid=131486) 接口的指针。
+下面的代码示例演示如何创建一个 [IPortableDeviceValues](/windows-hardware/drivers/ddi/portabledevicetypes/nn-portabledevicetypes-iportabledevicevalues) 对象，该对象包含传感器 \_ 属性 \_ 光源 \_ 响应 \_ 曲线的值。 名为 m pSensorProperties 的变量 \_ 是指向 [IPortableDeviceValues](/windows-hardware/drivers/ddi/portabledevicetypes/nn-portabledevicetypes-iportabledevicevalues) 接口的指针。
 
 ```cpp
 UINT responseCurve[10] = {0}; // Array to contain the response curve data.

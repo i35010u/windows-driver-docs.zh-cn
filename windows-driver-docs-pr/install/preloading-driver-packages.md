@@ -8,19 +8,19 @@ keywords:
 - 预加载的驱动程序包 WDK 设备安装
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fd7a22867d4a9c0a76c913db25f480364c70092e
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 6cc7be39018182821e34f93d23f4293b3ef5f4e1
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89094845"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91732979"
 ---
 # <a name="preloading-driver-packages"></a>预加载驱动程序包
 
 
 在 Windows 安装过程中或在计算机上安装 Windows 后，可以在计算机上*预加载*即插即用 (PnP) [驱动程序包](driver-packages.md)。 网络管理员还可以在为网络计算机上安装的驱动程序包提供源的网络服务器上预加载驱动程序包。 当 Windows 搜索与设备匹配的驱动程序时，Windows 将检查是否存在与设备匹配的预加载的驱动程序包。
 
-如何配置 Windows 安装以预加载驱动程序包超出了本文档的范围。 有关如何配置 Windows 安装以预加载驱动程序包的信息，请参阅 [如何向 WINDOWS XP 添加 oem 即插即用驱动](https://go.microsoft.com/fwlink/p/?linkid=3100&ID=314479) 程序和 [如何将 Oem 即插即用驱动程序添加到 windows 安装](https://go.microsoft.com/fwlink/p/?linkid=70235)。
+如何配置 Windows 安装以预加载驱动程序包超出了本文档的范围。 有关如何配置 Windows 安装以预加载驱动程序包的信息，请参阅 [如何向 WINDOWS XP 添加 oem 即插即用驱动](https://go.microsoft.com/fwlink/p/?linkid=3100&ID=314479) 程序和 [如何将 Oem 即插即用驱动程序添加到 windows 安装](/troubleshoot/windows-server/deployment/add-oem-plug-play-drivers)。
 
 安装 Windows 后，可以通过以下方式之一预加载 [驱动程序包](driver-packages.md) ：
 
@@ -48,5 +48,3 @@ ms.locfileid: "89094845"
 
 > [!NOTE]
 > 在具有 point 和打印客户端连接的计算机的 DevicePath 中指定网络共享可能导致网络共享访问过多和打印延迟。 这是因为每次 printerdata 在服务器中发生更改时，客户端将循环访问 DevicePath 目录以检查是否有较新的打印驱动程序的可用性。
- 
-

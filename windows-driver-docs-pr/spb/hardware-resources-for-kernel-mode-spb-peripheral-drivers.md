@@ -4,12 +4,12 @@ description: SPB 上外围设备的 KMDF 驱动程序的代码示例，并获取
 ms.assetid: ABFFCBEC-16AB-44AF-BEF6-34AEE612EAF7
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fd8d61cc47b271937f508c972fed164e577a20f1
-ms.sourcegitcommit: c766ab74e32eb44795cbbd1a4f352d3a6a9adc14
+ms.openlocfilehash: 372867f99e8676c9cf6dc8b6d43254829cea7337
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89389559"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91734497"
 ---
 # <a name="hardware-resources-for-kernel-mode-spb-peripheral-drivers"></a>内核模式 SPB 外设驱动程序的硬件资源
 
@@ -111,7 +111,7 @@ if (!NT_SUCCESS(status))
 }
 ```
 
-在上面的代码示例中， **声明 \_ unicode \_ 字符串 \_ 大小** 宏创建一个名为的已初始化 [**UNICODE \_ 字符串**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfwdm/ns-wudfwdm-_unicode_string) 变量的声明 `szDeviceName` ，该变量的缓冲区大小足以包含资源中心使用的格式的设备路径名称。 此宏在 Ntdef 头文件中定义。 **资源 \_ 中心 \_ 路径 \_ 大小**常量指定设备路径名中的字节数。 **资源 \_ 中心 " \_ \_ \_ 从 \_ ID 创建路径**" 宏从连接 ID 生成设备路径名。 **资源 \_在 Reshub 头文件中定义集线器 \_ 路径 \_ 大小** 和 **资源 \_ 中心 \_ \_ \_ 从 \_ ID 创建路径** 。
+在上面的代码示例中， **声明 \_ unicode \_ 字符串 \_ 大小** 宏创建一个名为的已初始化 [**UNICODE \_ 字符串**](/windows-hardware/drivers/ddi/wudfwdm/ns-wudfwdm-_unicode_string) 变量的声明 `szDeviceName` ，该变量的缓冲区大小足以包含资源中心使用的格式的设备路径名称。 此宏在 Ntdef 头文件中定义。 **资源 \_ 中心 \_ 路径 \_ 大小**常量指定设备路径名中的字节数。 **资源 \_ 中心 " \_ \_ \_ 从 \_ ID 创建路径**" 宏从连接 ID 生成设备路径名。 **资源 \_在 Reshub 头文件中定义集线器 \_ 路径 \_ 大小** 和 **资源 \_ 中心 \_ \_ \_ 从 \_ ID 创建路径** 。
 
 下面的代码示例使用设备路径名称打开 (名为 `SpbIoTarget`) 连接到 SPB 的外围设备的文件句柄。
 
@@ -179,6 +179,4 @@ if (!NT_SUCCESS(status))
 3.  对 **WdfIoTargetSendWriteSynchronously** 方法的调用会将写入请求发送到已连接到 SPB 的外围设备。 在写操作完成或超时后，方法会同步返回。如有必要，另一个驱动程序线程可以调用 [**WdfRequestCancelSentRequest**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestcancelsentrequest) 来取消请求。
 
 在 **WdfIoTargetSendWriteSynchronously** 调用中，驱动程序提供名为的变量 `SpbRequest` ，该变量是驱动程序之前创建的框架请求对象的句柄。 **WdfIoTargetSendWriteSynchronously**调用之后，驱动程序通常应调用[**WdfRequestReuse**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestreuse)方法来准备要再次使用的 framework 请求对象。
-
- 
 

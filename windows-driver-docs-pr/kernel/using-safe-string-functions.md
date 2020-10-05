@@ -8,12 +8,12 @@ keywords:
 - 缓冲 WDK 安全字符串函数
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7e17f1b95b0eece4175c1a74edd13eb21751f0c9
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 24d5086080a8eac2c25df5e6c9ad56bb2eb30a63
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89192457"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91733667"
 ---
 # <a name="using-safe-string-functions"></a>使用安全字符串函数
 
@@ -27,7 +27,7 @@ ms.locfileid: "89192457"
 
 一组安全字符串函数用于内核模式代码。 这些函数在名为 Ntstrsafe.h 而的头文件中具有原型。 此头文件和关联的库在 WDK 中可用。
 
-其他一组安全字符串函数可在用户模式应用程序中使用。 对应的标头文件 Strsafe 包含这些函数的原型。 Windows SDK 中提供了该文件和关联的库。 有关 Strsafe 的详细信息，请参阅 [使用 Strsafe 函数](https://go.microsoft.com/fwlink/p/?linkid=165522)。
+其他一组安全字符串函数可在用户模式应用程序中使用。 对应的标头文件 Strsafe 包含这些函数的原型。 Windows SDK 中提供了该文件和关联的库。 有关 Strsafe 的详细信息，请参阅 [使用 Strsafe 函数](/windows/win32/menurc/strsafe-ovw)。
 
 一组内核模式安全字符串函数包含以下两个子集：
 
@@ -37,7 +37,7 @@ ms.locfileid: "89192457"
 
 -   [UNICODE 字符串结构的安全字符串函数 \_](/windows-hardware/drivers/ddi/index)
 
-    其中每个函数都接受 [**UNICODE \_ 字符串**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfwdm/ns-wudfwdm-_unicode_string) 结构作为输入或输出参数，或者两者都接受。 例如， [**RtlStringCbCopyUnicodeString**](/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlstringcbcopyunicodestring) 接受作为输入参数的结构， [**RtlUnicodeStringCopyString**](/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlunicodestringcopystring) 接受作为输出参数的结构， [**RtlUnicodeStringCopy**](/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlunicodestringcopy) 接受该结构作为输入和输出参数。
+    其中每个函数都接受 [**UNICODE \_ 字符串**](/windows-hardware/drivers/ddi/wudfwdm/ns-wudfwdm-_unicode_string) 结构作为输入或输出参数，或者两者都接受。 例如， [**RtlStringCbCopyUnicodeString**](/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlstringcbcopyunicodestring) 接受作为输入参数的结构， [**RtlUnicodeStringCopyString**](/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlunicodestringcopystring) 接受作为输出参数的结构， [**RtlUnicodeStringCopy**](/windows-hardware/drivers/ddi/ntstrsafe/nf-ntstrsafe-rtlunicodestringcopy) 接受该结构作为输入和输出参数。
 
 内核模式安全字符串函数提供以下功能：
 
@@ -56,6 +56,4 @@ ms.locfileid: "89192457"
 [内核模式安全字符串函数摘要](summary-of-kernel-mode-safe-string-functions.md)
 
 [导入内核模式安全字符串函数](importing-kernel-mode-safe-string-functions.md)
-
- 
 

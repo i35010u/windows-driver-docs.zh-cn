@@ -3,12 +3,12 @@ title: MB 多 SIM 操作
 description: MB 多 SIM 操作
 ms.date: 10/16/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 200bcd941b851dfcfbd580ccd6d5fda85c44db42
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 0bd6a40a7a13db85ffad1ca467bc87ee089c4227
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89213957"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91733481"
 ---
 # <a name="mb-multi-sim-operations"></a>MB 多 SIM 操作
 
@@ -84,13 +84,13 @@ Windows 10 desktop WMBCLASS 驱动程序遵循上一段中所述的规范来处�
 
 ## <a name="oids-for-set-and-query-requests"></a>Set 和 Query 请求的 Oid
 
-若要查询调制解调器中 (执行器) 和槽的设备数，以及可以同时处于活动状态的执行器的数目，主机使用 [OID_WWAN_SYS_CAPS](https://go.microsoft.com/fwlink/p/?linkid=841265)。
+若要查询调制解调器中 (执行器) 和槽的设备数，以及可以同时处于活动状态的执行器的数目，主机使用 [OID_WWAN_SYS_CAPS](./oid-wwan-sys-caps.md)。
 
-为了查询执行器的功能，主机使用 [OID_WWAN_DEVICE_CAPS_EX](https://go.microsoft.com/fwlink/p/?linkid=841266)。
+为了查询执行器的功能，主机使用 [OID_WWAN_DEVICE_CAPS_EX](./oid-wwan-device-caps-ex.md)。
 
-若要定义绑定到每个执行器或查询当前映射的槽，主机使用 [OID_WWAN_DEVICE_SLOT_MAPPINGS](https://go.microsoft.com/fwlink/p/?linkid=841267)。
+若要定义绑定到每个执行器或查询当前映射的槽，主机使用 [OID_WWAN_DEVICE_SLOT_MAPPINGS](./oid-wwan-device-slot-mappings.md)。
 
-若要在调制解调器上查询特定插槽的状态，主机使用 [OID_WWAN_SLOT_INFO_STATUS](https://go.microsoft.com/fwlink/p/?linkid=841268)。
+若要在调制解调器上查询特定插槽的状态，主机使用 [OID_WWAN_SLOT_INFO_STATUS](./oid-wwan-slot-info-status.md)。
 
 ## <a name="per-device-and-per-executor-commands"></a>每个设备和每个执行器命令
 
