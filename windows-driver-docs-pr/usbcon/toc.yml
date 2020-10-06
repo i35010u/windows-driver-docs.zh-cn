@@ -269,7 +269,7 @@
     - name: Windows 的 USB 事件跟踪的概述
       href: usb-event-tracing-for-windows.md
     - name: 使用 Microsoft Message Analyzer 捕获和查看 USB 跟踪
-      href: capture-and-view-ing-usb-traces-with-microsoft-message-analyzer-.md
+      href: ./usb-event-tracing-for-windows.md
     - name: 如何使用 Logman 捕获 USB 事件跟踪
       href: how-to-capture-a-usb-event-trace.md
     - name: 使用 USB ETW 跟踪中的活动 ID GUID

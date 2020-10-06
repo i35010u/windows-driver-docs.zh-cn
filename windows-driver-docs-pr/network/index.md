@@ -9,12 +9,12 @@ ms.date: 04/20/2017
 ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
-ms.openlocfilehash: 424733b49886c6b04aed99a96b8b36bdc29564af
-ms.sourcegitcommit: 366a15d68eb58d01a8ca6de7b982f62ac8b7deaf
+ms.openlocfilehash: a26d36e5754b6bbcb1ab38491e81214c88eb6ef7
+ms.sourcegitcommit: 20eac54e419a594f7cea766ee28f158559dfd79c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/19/2020
-ms.locfileid: "90811970"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91755028"
 ---
 # <a name="network-driver-design-guide"></a>网络驱动程序设计指南
 
@@ -30,13 +30,13 @@ ms.locfileid: "90811970"
 
 [NDIS 版本指南](ndis-version-guide.md)
 
-[NDIS 核心功能](ndis-core-functionality2.md)
+[NDIS 核心功能](roadmap-for-developing-ndis-miniport-drivers.md)
 
 [可缩放网络](header-data-split.md)
 
 [虚拟化网络](virtualized-networking.md)
 
-[无线联网](wireless-networking2.md)
+[无线联网](wifi-universal-driver-model.md)
 
 [网络模块注册机构](network-module-registrar2.md)
 

@@ -352,8 +352,6 @@
               href: summary-of-changes-required-to-port-an-intermediate-driver-to-ndis-6-2.md
 - name: NDIS 核心功能
   items:
-    - name: NDIS 驱动程序和服务
-      href: ndis-core-functionality2.md
     - name: NDIS 微型端口驱动程序
       items:
         - name: NDIS 微型端口驱动程序开发路线图
@@ -2574,8 +2572,6 @@
               href: ndis-status-receive-queue-state.md
 - name: 无线联网
   items:
-    - name: 无线网络主题
-      href: wireless-networking2.md
     - name: WLAN 通用 Windows 驱动程序模型
       href: wifi-universal-driver-model.md
     - name: 手机网络体系结构和概述
@@ -2604,8 +2600,6 @@
               href: communicate-with-the-ril-driver-by-using-the-ioemcellularmodem-interface.md
     - name: 移动宽带 (MB) 设计指南
       items:
-        - name: 移动宽带 (MB) 设计指南主题
-          href: mobile-broadband--mb--design-guide.md
         - name: MB 微型端口驱动程序开发路线图
           href: roadmap-to-develop-mb-miniport-drivers.md
         - name: MB 接口模型

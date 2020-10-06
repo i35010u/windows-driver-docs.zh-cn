@@ -9,19 +9,19 @@ ms.date: 04/20/2017
 ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
-ms.openlocfilehash: 33409cc8d97e5467e0682f920f4cc353803176cf
-ms.sourcegitcommit: ee3e2259aafc844cc43cce62299a72649cf89212
+ms.openlocfilehash: d48b395fe8716cc7ef86cf445ca5ce627ad391e2
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91353612"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91733313"
 ---
 # <a name="getting-started-with-windows-drivers"></a>Windows 驱动程序入门
 
 
 从这里开始学习有关驱动程序的基本概念。
 
-你应该已经熟悉了 [C 编程语言](/cpp/c-language/c-language-reference)，并且应该了解函数指针、回调函数以及事件处理程序的理念。 若要基于用户模式驱动程序框架 1.x 编写驱动程序，则应熟悉 [C++ 和 COM](https://go.microsoft.com/fwlink/p?LinkID=317460)。
+你应该已经熟悉了 [C 编程语言](/cpp/c-language/c-language-reference)，并且应该了解函数指针、回调函数以及事件处理程序的理念。 若要基于用户模式驱动程序框架 1.x 编写驱动程序，则应熟悉 [C++ 和 COM](/windows/win32/learnwin32/learn-to-program-for-windows)。
 
 ## <a name="span-idin_this_sectionspanin-this-section"></a><span id="in_this_section"></span>本部分中的内容
 
@@ -41,6 +41,4 @@ ms.locfileid: "91353612"
 [Windows 驱动程序工具包 (WDK)](../index.yml)
 
 [驱动程序安全指南](../driversecurity/index.md)
-
- 
 

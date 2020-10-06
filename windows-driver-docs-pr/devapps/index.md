@@ -6,12 +6,12 @@ ms.date: 04/20/2017
 ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
-ms.openlocfilehash: 15ef894640b5bfe64eba1c3e04bec1d50346f679
-ms.sourcegitcommit: ee3e2259aafc844cc43cce62299a72649cf89212
+ms.openlocfilehash: 4d65762b41caf89b4a9bec2f0e0d7f38adec460b
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91353594"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91733352"
 ---
 # <a name="uwp-device-apps"></a>UWP 设备应用
 
@@ -23,7 +23,7 @@ ms.locfileid: "91353594"
 
 本部分介绍什么是 UWP 设备应用，以及设备制造商如何创建它们。 如果是初次接触 UWP 设备应用，请参阅[入门](getting-started.md)。
 
-若要了解 UWP 移动宽带应用，请参阅 [Mobile Broadband](https://go.microsoft.com/fwlink/p/?LinkID=301754)（移动宽带）。
+若要了解 UWP 移动宽带应用，请参阅 [Mobile Broadband](../mobilebroadband/index.md)（移动宽带）。
 
 ## <a name="span-idin_this_sectionspanin-this-section"></a><span id="in_this_section"></span>本部分中的内容
 
@@ -88,10 +88,4 @@ ms.locfileid: "91353594"
  
 
  
-
- 
-
-
-
-
 
