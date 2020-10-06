@@ -4,12 +4,12 @@ description: Wi-Fi 热点卸载参考
 ms.assetid: 2e8dd1a1-a0bc-4f8a-a2ef-0e349dc433a1
 ms.date: 07/31/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d59648bebd7470aa92bb4b958e323ba8f046e2e3
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: ffec6049224f3678410cba6fad0711e13707db3b
+ms.sourcegitcommit: 93c924b8f409fc7f704cc67cc026d70b8ad25d30
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 10/05/2020
-ms.locfileid: "91732962"
+ms.locfileid: "91739497"
 ---
 # <a name="wi-fi-hotspot-offloading-reference"></a>Wi-Fi 热点卸载参考
 
@@ -22,11 +22,11 @@ ms.locfileid: "91732962"
 
 [Wi-Fi 热点卸载常量](wi-fi-hotspot-offloading-constants.md)
 
-[Wi-Fi 热点卸载结构](wi-fi-hotspot-offloading-structures.md)
+[Wi-Fi 热点卸载结构](hotspot-host-handlers.md)
 
-[Wi-Fi 热点卸载函数](wi-fi-hotspot-offloading-functions.md)
+[Wi-Fi 热点卸载函数](hsplugingetversion.md)
 
-[Wi-Fi 热点卸载枚举](wi-fi-hotspot-offloading-enumerations.md)
+[Wi-Fi 热点卸载枚举](ehs-authentication-result.md)
 
 ## <a name="related-topics"></a>相关主题
 [Wi-Fi 热点卸载指南](./wi-fi-hotspot-offloading-guide.md)

@@ -4,19 +4,19 @@ description: 本部分介绍 WDI 命令消息的结构
 ms.assetid: 09663C5F-A458-479F-B450-A994486A6C18
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 35d28ec2d1d5ab3bb17abbf211b214e8e7cc6009
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 5591ebf82068b523a49614a355aef1fb63228a6f
+ms.sourcegitcommit: 93c924b8f409fc7f704cc67cc026d70b8ad25d30
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89207119"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91739493"
 ---
 # <a name="wdi-message-structure"></a>WDI 消息结构
 
 
 所有 WDI 命令消息必须以 [**WDI \_ 消息 \_ 标头**](/windows-hardware/drivers/ddi/dot11wdi/ns-dot11wdi-_wdi_message_header) 结构开头。 命令头后跟零个或多个类型-长度-值 (TLV) 结构。
 
-为从主机发送到 Wi-fi 设备的消息定义的命令消息 Id 记录在 [WDI 任务 oid](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-miniport-driver-task-oids)、 [WDI 属性 Oid](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-miniport-driver-property-oids)和 [WDI 状态指示](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-miniport-driver-status-indications)中。
+为从主机发送到 Wi-fi 设备的消息定义的命令消息 Id 记录在 [WDI 任务 oid](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wdi-task-change-operation-mode)、 [WDI 属性 Oid](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wdi-abort-task)和 [WDI 状态指示](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-wdi-indication-action-frame-received)中。
 
 ## <a name="tlvs"></a>TLVs
 

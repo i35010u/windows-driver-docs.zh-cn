@@ -8,12 +8,12 @@ keywords:
 - 上下文 WDK 虚拟连接
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9f31752a3c0c16f63308a5e9cb6be89b75ff9545
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: eb0e90529e6b9e92c37b0213c57f0b7b38437aa4
+ms.sourcegitcommit: 93c924b8f409fc7f704cc67cc026d70b8ad25d30
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89218308"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91739481"
 ---
 # <a name="virtual-connection-context"></a>虚拟连接上下文
 
@@ -31,7 +31,7 @@ VC 是两个面向连接的实体之间的逻辑连接。 面向连接的传输�
 
 完成调用或不需要 VC 后，调用管理器可以通过调用 [**ndis (M) CmDeactivateVc**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndiscmdeactivatevc)来停用 vc，这会导致 ndis 调用微型端口驱动程序的 [**MiniportCoDeactivateVc**](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_co_deactivate_vc) 函数。 面向连接的客户端或调用管理器都可以通过调用 [**NdisCoDeleteVc**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndiscodeletevc)来启动删除 VC，这会导致 NDIS 调用微型端口驱动程序的 [**MiniportCoDeleteVc**](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_co_delete_vc) 函数。
 
-有关 VCs 上微型端口驱动程序操作的详细信息，请参阅 [vcs 上的操作](operations-on-vcs.md)。
+有关 VCs 上微型端口驱动程序操作的详细信息，请参阅 [vcs 上的操作](creating-a-vc.md)。
 
  
 

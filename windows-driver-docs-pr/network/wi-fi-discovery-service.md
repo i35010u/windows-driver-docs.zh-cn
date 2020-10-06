@@ -3,12 +3,12 @@ title: Wi-Fi 发现服务概述
 description: Wi-Fi 发现服务概述
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0719ed27050ac3fda81f8fb8542cd6da999082ee
-ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
+ms.openlocfilehash: a9120d5b1ece092f7c592d0e1ab13d88c8a4542b
+ms.sourcegitcommit: 93c924b8f409fc7f704cc67cc026d70b8ad25d30
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89403466"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91739491"
 ---
 # <a name="wi-fi-discovery-service-overview"></a>Wi-Fi 发现服务概述
 
@@ -91,7 +91,7 @@ WifiProviderExe -DataFile "file.txt" -ProviderId 00000000-0000-0000-0000-0000000
 | --- | --- |
 | DataFile | 必需。 包含热点数据的文件的名称。 |
 | ProviderId | 必需。 GUID)  (Microsoft 分配的提供程序 ID。 |
-| ServiceEndpoint | 必需。 要将热点数据上传到的发现服务服务器的 URL。 例如 https://wifi.windowsphone.com/v1/submithotspots |
+| ServiceEndpoint | 必需。 要将热点数据上传到的发现服务服务器的 URL。 |
 | CustomerTransformer | 必需。 包含转换器的程序集的名称。 | 
 | MappingFile | 可选。 映射文件，该文件将提供程序的热点数据映射到发现服务所需的格式。 |
 | CertFile | 可选。 一个指针，指向包含用于身份验证的证书 () 的实际 pfx 文件。 使用此身份验证方法时，必须指定证书密码参数 (**CertPassword**) 。 |

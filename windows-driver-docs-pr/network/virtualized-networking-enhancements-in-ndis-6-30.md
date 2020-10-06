@@ -1,42 +1,42 @@
 ---
-title: 在 NDIS 6.30 中的虚拟化网络增强功能
-description: 本部分介绍在 NDIS 6.30 中的虚拟化网络增强功能
+title: NDIS 6.30 中的虚拟化网络增强功能
+description: 本部分介绍 NDIS 6.30 中虚拟化的网络增强功能
 ms.assetid: AA1EC2E2-2903-453A-B214-947CA3C4C931
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 425088b16b5406128b743dda55649e76a8990e6a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 03b0147e2ea63b7926c8cf7635f8ff4447357024
+ms.sourcegitcommit: 93c924b8f409fc7f704cc67cc026d70b8ad25d30
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63338770"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91739501"
 ---
 # <a name="virtualized-networking-enhancements-in-ndis-630"></a>NDIS 6.30 中的虚拟化网络增强
 
 
-NDIS 支持虚拟化的网络接口，允许将 HYPER-V 父和子分区，以便进行交互的基础物理网络接口。
+NDIS 支持虚拟化网络接口，该接口允许 Hyper-v 父分区和子分区建立基础物理网络接口的接口。
 
-NDIS 6.20 包含虚拟机队列 (VMQ) 接口，以支持 Microsoft HYPER-V 网络性能改进。 有关 VMQ 的详细信息，请参阅[虚拟机队列 (VMQ)](virtual-machine-queue--vmq-.md)。
+NDIS 6.20 包含虚拟机队列 (VMQ) 接口以支持 Microsoft Hyper-V 网络性能改进。 有关 VMQ 的详细信息，请参阅 [ (vmq) 虚拟机队列 ](virtual-machine-queue--vmq-.md)。
 
-NDIS 6.30 扩展了对以下技术与虚拟化网络接口的支持，如中所述[概述的虚拟化网络](overview-of-virtualized-networking.md):
+如 [虚拟化网络概述](overview-of-hyper-v.md)中所述，NDIS 6.30 将对虚拟化网络接口的支持扩展为以下技术：
 
 ### <a name="single-root-io-virtualization-sr-iov"></a>单根 I/O 虚拟化 (SR-IOV)
 
-SR-IOV 接口允的 PCI Express (PCIe) 网络适配器上的硬件资源分区到一个或多个虚拟接口，称为*虚函数 (VFs)*。 这允许适配器资源在虚拟环境中共享。 SR-IOV 允许网络流量，以便通过将 VF 直接分配给 HYPER-V 子分区绕过虚拟软件切换层。 通过执行此操作，就会降低系统开销在软件仿真层中的 I/O 和网络吞吐量来实现与非虚拟化环境几乎相同的性能。
+SR-IOV 接口允许将 PCI Express (PCIe) 网络适配器上的硬件资源分区为一个或多个虚拟接口，这些接口称为 *虚拟功能 (VFs) *。 这允许在虚拟环境中共享适配器资源。 SR-IOV 使网络流量能够通过将 VF 直接分配给 Hyper-v 子分区，绕过虚拟软件交换机层。 这样，软件仿真层中的 i/o 开销就会降低，并且网络吞吐量实现的性能与在非虚拟化环境中的性能几乎相同。
 
-有关 SR-IOV 接口的详细信息，请参阅[单根 I/O 虚拟化 (SR-IOV)](single-root-i-o-virtualization--sr-iov-.md)。
+有关 SR-IOV 接口的详细信息，请参阅 [单一根 I/o 虚拟化 (sr-iov) ](single-root-i-o-virtualization--sr-iov-.md)。
 
 ### <a name="hyper-v-extensible-switch"></a>Hyper-V 可扩展交换机
 
-HYPER-V 可扩展交换机是在 HYPER-V 父分区的管理操作系统中运行的虚拟化以太网交换机。 可扩展交换机的每个实例连接到以下类型的网络适配器的端口之间路由数据包：
+Hyper-v 可扩展交换机是在 Hyper-v 父分区的管理操作系统中运行的虚拟化以太网交换机。 可扩展交换机的每个实例在连接到以下类型的网络适配器的端口之间路由数据包：
 
--   外部和内部网络适配器在运行 HYPER-V 父分区中管理操作系统中公开的。
+-   在管理操作系统中公开的、在 Hyper-v 父分区中运行的外部和内部网络适配器。
 
--   综合或仿真网络适配器的 HYPER-V 子分区中运行来宾操作系统中公开的。
+-   在 Hyper-v 子分区中运行的来宾操作系统中公开的合成或仿真网络适配器。
 
-从 NDIS 6.30 开始，HYPER-V 可扩展交换机支持的可扩展性接口。 此接口允许 NDIS 筛选器驱动程序的实例 (称为*扩展*) 绑定中的 HYPER-V 可扩展交换机驱动程序堆栈。 绑定并驱动程序堆栈中启用后，扩展将面临可扩展交换机数据路径中的所有数据包流量。 这允许扩展监视、 修改和将数据包转发到可扩展的交换机端口。 这也允许扩展以检查并注入中各种 HYPER-V 分区都使用的虚拟网络接口的数据包。
+从 NDIS 6.30 开始，Hyper-v 可扩展交换机支持扩展接口。 此接口允许将 NDIS 筛选器驱动程序的实例 (称为 *扩展*) 在 Hyper-v 可扩展交换机驱动程序堆栈中进行绑定。 在驱动程序堆栈内绑定和启用后，扩展将公开到可扩展交换机数据路径中的所有数据包流量。 这样，扩展可以监视、修改数据包并将数据包转发到可扩展的交换机端口。 这样，扩展还可以在虚拟网络接口中检查和注入各种 Hyper-v 分区使用的数据包。
 
-有关 HYPER-V 可扩展交换机接口的详细信息，请参阅[HYPER-V 可扩展交换机](hyper-v-extensible-switch.md)。
+有关 Hyper-v 可扩展交换机接口的详细信息，请参阅 [Hyper-v 可扩展交换机](hyper-v-extensible-switch.md)。
 
  
 
