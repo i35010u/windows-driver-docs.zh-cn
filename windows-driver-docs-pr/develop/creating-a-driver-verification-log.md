@@ -1,15 +1,15 @@
 ---
 ms.assetid: 5EB802D0-1894-4D64-ACB0-77B848B7E644
 title: 创建驱动程序验证日志
-description: Windows Server 2012 硬件认证计划需要所有驱动程序在正当提交时提供驱动程序验证日志 (DVL)。
+description: 了解为什么 Windows Server 硬件认证计划需要所有适用的驱动程序在提交时提供驱动程序验证日志 (DVL)。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3be9b0c73d301773e7a5360b96eef96b78e9af1f
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 651a7b101baaaa4d82e289d4a8d36d9b55dca185
+ms.sourcegitcommit: cccf9ba62af357aad1016addbbf6c42c7f564412
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89217840"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91606436"
 ---
 # <a name="creating-a-driver-verification-log"></a>创建驱动程序验证日志
 

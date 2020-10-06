@@ -1,16 +1,14 @@
 ---
 title: 获取受众数据
 description: Microsoft 硬件 API 中的这些方法可以获取要在发货标签中使用的组织的适用受众。
-author: balapv
-ms.author: balapv
 ms.topic: article
 ms.date: 08/21/2018
-ms.openlocfilehash: 1e9aefd492d82db21cb8d1f851aedf5d8402c336
-ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
+ms.openlocfilehash: 2d8ef577e0170b0a448a5db1113150745275ccdc
+ms.sourcegitcommit: acef3c512676aad3aed1934cbe3d0f16e6d37619
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "77072188"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91372918"
 ---
 # <a name="get-audience-data"></a>获取受众数据
 
@@ -68,7 +66,7 @@ https://manage.devcenter.microsoft.com/v2.0/my/hardware/audiences
 
 |Header|类型|说明|
 |--|--|--|
-|Authorization|字符串|必需。 Azure AD 访问令牌的格式为 **Bearer** *\<token\>* 。|
+|Authorization|字符串|必需。 Azure AD 访问令牌的格式为 Bearer \<token\>。|
 |accept|字符串|可选。 指定内容的类型。 允许的值是“application/json”|
 
 ### <a name="request-parameters"></a>请求参数

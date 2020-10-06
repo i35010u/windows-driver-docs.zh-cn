@@ -4,12 +4,12 @@ description: 相机度量在蓝牙驱动程序外部测试过程中筛选出良�
 ms.topic: article
 ms.date: 05/20/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 409263c76cabd2894f0044a58ff512c7bf8bd0cc
-ms.sourcegitcommit: 4f08f5686c0bbc27d58930b993cbab1a98e3afb0
+ms.openlocfilehash: e8c8604113d5c500bed65d2a4a2685ed147b4043
+ms.sourcegitcommit: f8619f20a0903dd64f8641a5266ecad6df5f1d57
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/03/2020
-ms.locfileid: "89443921"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91423788"
 ---
 # <a name="camera-measures"></a>相机度量
 

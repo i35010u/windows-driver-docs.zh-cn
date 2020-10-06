@@ -1,15 +1,15 @@
 ---
 ms.assetid: EDA6357A-D18D-439D-A0DD-050BA51E1A79
 title: 为静态驱动程序验证程序创建日志文件
-description: Windows Server 2012 硬件认证计划需要所有驱动程序在正当提交时提供驱动程序验证日志 (DVL)。
+description: 了解如何在为驱动程序创建驱动程序验证日志 (DVL) 之前运行静态驱动程序验证程序 (SDV)。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9cada8a4664892b1f486e1a0e18e4f082af615ac
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 2c343d614f2c1d3d2aaf54348922fb9ec1db5aab
+ms.sourcegitcommit: cccf9ba62af357aad1016addbbf6c42c7f564412
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89207643"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91606459"
 ---
 # <a name="creating-a-log-file-for-static-driver-verifier"></a>为静态驱动程序验证程序创建日志文件
 
