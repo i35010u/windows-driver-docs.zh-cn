@@ -4,12 +4,12 @@ description: 对于需要重新分配内存资源的某些 PCI 方案，将使�
 ms.assetid: FCAD7F8B-AA9B-430A-BCAF-04E13FA15382
 ms.date: 04/09/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 10fd014f4573be1592a44cf94e0d27245723d7c4
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: a5a2fac640f00c432c7e0d094dbe23ee82c60da5
+ms.sourcegitcommit: 65de12ef3fa267fe432fb6761678fb93e5aa286c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89209119"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91771406"
 ---
 # <a name="implement-pnp-rebalance-for-portcls-audio-drivers"></a>为 PortCls 音频驱动程序实现 PnP 再平衡
 
@@ -37,9 +37,9 @@ Windows 10 版本1511及更高版本的 Windows 中提供了 PnP 重新平衡。
 
 -   驱动程序支持音频流的 [**IMiniportWaveRTInputStream：： GetReadPacket**](/windows-hardware/drivers/ddi/portcls/nf-portcls-iminiportwavertinputstream-getreadpacket) 和 [IMiniportWaveRTOutputStream](/windows-hardware/drivers/ddi/portcls/nn-portcls-iminiportwavertoutputstream) 数据包接口。 这是建议选项。
 
-或
+OR
 
--   如果驱动程序不支持流的 get/write IMiniportWaveRT，则驱动程序不得支持 [**KSPROPERTY \_ RTAUDIO \_ POSITIONREGISTER**](./ksproperty-rtaudio-positionregister.md) 和 [**KSPROPERTY \_ RTAUDIO \_ CLOCKREGISTER**](./ksproperty-rtaudio-clockregister.md)。 在此方案中，音频引擎将使用 [**IMiniportWaveRTStream：： GetPosition**](/previous-versions/windows/hardware/drivers/ff536749(v=vs.85)) 。
+-   如果驱动程序不支持流的 get/write IMiniportWaveRT，则驱动程序不得支持 [**KSPROPERTY \_ RTAUDIO \_ POSITIONREGISTER**](./ksproperty-rtaudio-positionregister.md) 和 [**KSPROPERTY \_ RTAUDIO \_ CLOCKREGISTER**](./ksproperty-rtaudio-clockregister.md)。 在此方案中，音频引擎将使用 [**IMiniportWaveRTStream：： GetPosition**](/windows-hardware/drivers/ddi/portcls/nf-portcls-iminiportwavertstream-getposition) 。
 
 ## <a name="span-idaudio_stream_behavior_when_rebalancing_occursspanspan-idaudio_stream_behavior_when_rebalancing_occursspanspan-idaudio_stream_behavior_when_rebalancing_occursspanaudio-stream-behavior-when-rebalancing-occurs"></a><span id="Audio_Stream_Behavior_When_Rebalancing_Occurs"></span><span id="audio_stream_behavior_when_rebalancing_occurs"></span><span id="AUDIO_STREAM_BEHAVIOR_WHEN_REBALANCING_OCCURS"></span>发生重新平衡时的音频流行为
 
