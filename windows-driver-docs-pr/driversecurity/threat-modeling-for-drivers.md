@@ -4,12 +4,12 @@ description: 驱动程序编写者和架构师在任何驱动程序的设计过�
 ms.assetid: 77FB242E-A07C-4298-80ED-866F8D80118C
 ms.date: 06/27/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 2d22f8d040fe172821b423dca77be26f322a1e5a
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: c6a05eec73aff0098209fd3d9cc6ae1f5bb839b1
+ms.sourcegitcommit: 20eac54e419a594f7cea766ee28f158559dfd79c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91733189"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91755016"
 ---
 # <a name="threat-modeling-for-drivers"></a>驱动程序的威胁建模
 
@@ -335,8 +335,6 @@ Microsoft 使其四个核心 SDL 培训课程可供下载。 [Microsoft 安全�
 *软件安全评估的内容：* 通过 Mark Dowd、John 麦克唐纳和 Justin Schuh 来识别和预防软件漏洞
 
 **Microsoft 硬件和驱动程序开发人员信息**
-
-[常见驱动程序可靠性问题](https://download.microsoft.com/download/5/7/7/577a5684-8a83-43ae-9272-ff260a9c20e2/drvqa.doc) 白皮书
 
 [Windows 驱动程序中的取消逻辑](/previous-versions/windows/hardware/design/dn653289(v=vs.85)) 白皮书
 

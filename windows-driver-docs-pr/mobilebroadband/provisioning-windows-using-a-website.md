@@ -4,12 +4,12 @@ description: 使用网站预配 Windows
 ms.assetid: ba60fddd-a248-4afb-9390-f9277ef1f094
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a6ee58141b1fef75fb0989ef4297e1ae4f04c12f
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 91f499cd3fb4bd3f48edda1e90995000f3eda79a
+ms.sourcegitcommit: 20eac54e419a594f7cea766ee28f158559dfd79c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89212561"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91754902"
 ---
 # <a name="provisioning-windows-using-a-website"></a>使用网站预配 Windows
 
@@ -72,7 +72,7 @@ ms.locfileid: "89212561"
 
 ### <a name="span-iddetectspanspan-iddetectspandetect-internet-access"></a><span id="detect"></span><span id="DETECT"></span>检测 Internet 访问
 
-当 Windows 首次连接到网络以确定 Internet 连接时，它会执行各种网络测试。 这些测试的目标站点是 msftncsi.com，这是专用于连接测试的保留域。
+当 Windows 首次连接到网络以确定 Internet 连接时，它会执行各种网络测试。 这些测试的目标站点是 www.msftncsi.com，这是专用于连接测试的保留域。
 
 若要避免误报或漏报，你的网络必须仅在用户具有 Internet 访问权限时才允许访问 www.msftncsi.com。 没有活动数据计划连接到网络的用户不能访问 www.msftncsi.com。
 

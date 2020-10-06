@@ -4,12 +4,12 @@ description: 使用多个 PDP 上下文开发应用
 ms.assetid: 6a977a69-397d-4922-890d-1810dd54dff4
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cc204ce5a67446406008dd81d58047091c3a0ca6
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 7b1e01c1b1f227356bcf08a183d18884a5346c02
+ms.sourcegitcommit: 20eac54e419a594f7cea766ee28f158559dfd79c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89217372"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91754872"
 ---
 # <a name="developing-apps-using-multiple-pdp-contexts"></a>使用多个 PDP 上下文开发应用
 
@@ -552,8 +552,6 @@ InstantGo 支持以下方案：
 
 你的移动宽带应用可以使用特殊的 PDP 上下文来实现其中某些 InstantGo 方案。 如果因超出范围而断开连接，则需要使用以下逻辑重新连接到特殊的 PDP 上下文。 设备进入连接待机电源状态后，在10分钟后，Windows 会断开与特殊 PDP 上下文的所有连接，应用程序必须再次请求连接。
 
-有关如何在移动宽带应用中启用后台网络的详细信息，请参阅 [后台任务](https://www.microsoft.com/download/details.aspx?id=27411) 和 [后台网络](https://www.microsoft.com/download/details.aspx?id=28999)简介。
-
 ![带有 pdp 上下文的 instantgo](images/mb-pdp-fig5.jpg)
 
 ### <a name="audio-streaming-in-background"></a>后台音频流
@@ -562,17 +560,17 @@ InstantGo 支持以下方案：
 
 ### <a name="real-time-communication-apps"></a>实时通信应用
 
-实时通信应用（如 VoIP 或聊天应用）可以在特殊的 PDP 上下文上收到唤醒触发器。 唤醒触发器允许在任何时间（包括系统处于连接待机电源状态时）触发应用。 有关如何启用唤醒触发器的详细信息，请参阅 [后台网络](https://www.microsoft.com/download/details.aspx?id=28999)。
+实时通信应用（如 VoIP 或聊天应用）可以在特殊的 PDP 上下文上收到唤醒触发器。 唤醒触发器允许在任何时间（包括系统处于连接待机电源状态时）触发应用。
 
 若要启用此方案，移动宽带设备应支持针对特殊 PDP 上下文的唤醒筛选器，如 [移动宽带接口模型 (MBIM) 规范](../network/mb-interface-model.md)中所述。
 
 ## <a name="mobile-broadband-devices"></a>移动宽带设备
 
-为了支持多个 PDP 上下文，移动宽带设备的固件必须支持多个 PDP 上下文，如 [MBIM 规范](https://go.microsoft.com/fwlink/?linkid=620028)中所定义。 它还必须传递特定于多个 PDP 上下文的任何 Windows 硬件认证工具包测试。
+为了支持多个 PDP 上下文，移动宽带设备的固件必须支持多个 PDP 上下文，如 [MBIM 规范](https://www.usb.org/document-library/mobile-broadband-interface-model-v10-errata-1-and-adopters-agreement)中所定义。 它还必须传递特定于多个 PDP 上下文的任何 Windows 硬件认证工具包测试。
 
 由于此功能是特定于操作员的，因此对于移动宽带设备是可选的。 如果需要此功能，必须在操作员要求中添加多个 PDP 上下文功能，如下所示：
 
-- 设备固件应支持多个 IP 数据流，如 [MBIM 规范](https://go.microsoft.com/fwlink/?linkid=620028)的10.5.12.1 部分中所述。 这包括支持 Cid 和 IP 数据流的所有控制实现，完全支持多个 PDP 上下文。
+- 设备固件应支持多个 IP 数据流，如 [MBIM 规范](https://www.usb.org/document-library/mobile-broadband-interface-model-v10-errata-1-and-adopters-agreement)的10.5.12.1 部分中所述。 这包括支持 Cid 和 IP 数据流的所有控制实现，完全支持多个 PDP 上下文。
 
 - 设备固件必须支持多个双载荷 (IPv4 & IPv6) PDP 上下文以供 Windows 使用。
 

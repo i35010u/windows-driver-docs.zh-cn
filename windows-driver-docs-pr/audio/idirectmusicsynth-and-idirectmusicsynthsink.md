@@ -17,12 +17,12 @@ keywords:
 - DirectMusic 自定义呈现 WDK 音频，合成
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0a3803c43f5d90828cf25c85d8890a92a2c43003
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: c8cb6182e698e5e2241b2a9ed268dea04107143f
+ms.sourcegitcommit: 20eac54e419a594f7cea766ee28f158559dfd79c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90714784"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91754941"
 ---
 # <a name="idirectmusicsynth-and-idirectmusicsynthsink"></a>IDirectMusicSynth 和 IDirectMusicSynthSink
 
@@ -144,7 +144,7 @@ DirectMusic 通过其 **IDirectMusicSynth** 接口与软件合成器通信。 Di
 
 波形接收器会生成延迟时钟，因为它实际上管理通过调用 **IDirectMusicSynth：： Render**写入样本的时间。 当 DirectMusic 调用 DirectMusic 端口上的 **IDirectMusicSynth：： GetLatencyClock** 时，它只需转到 **IDirectMusicSynthSink：： GetLatencyClock**即可。
 
-首次打开软件合成器时，DirectMusic 将为合成器提供一个 DMU \_ PORTPARAMS 结构 Microsoft Windows SDK () 指定音频输出流的采样速率和通道数。 然后，合成器将它们转换为标准的 [**WAVEFORMATEX**](/windows/win32/api/mmreg/ns-mmreg-twaveformatex) 结构，当波形接收器调用 **IDirectMusicSynth：： iformatprovider.getformat** 方法时，它会传递给波形接收器。
+首次打开软件合成器时，DirectMusic 将为合成器提供一个 DMU \_ PORTPARAMS 结构 Microsoft Windows SDK () 指定音频输出流的采样速率和通道数。 然后，合成器将它们转换为标准的 [**WAVEFORMATEX**](/windows/win32/api/mmreg/ns-mmreg-waveformatex) 结构，当波形接收器调用 **IDirectMusicSynth：： iformatprovider.getformat** 方法时，它会传递给波形接收器。
 
 有关其他信息，请参阅 Windows SDK 文档中的 **IDirectMusic** 和 **IDirectMusicPort** 接口的说明。
 

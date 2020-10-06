@@ -4,12 +4,12 @@ description: Windows 自动选择最佳字符编码
 ms.assetid: 3fde6e89-c9ea-43d2-a999-506686b223f4
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d028841c6c15ee9691b101695b8c1e0e8a322ba0
-ms.sourcegitcommit: 67efcd26f7be8f50c92b141ccd14c9c68f4412d8
+ms.openlocfilehash: 6da42fb6a2ebbfd176a5ac5d46ba3e528de14318
+ms.sourcegitcommit: 20eac54e419a594f7cea766ee28f158559dfd79c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88902389"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91754968"
 ---
 # <a name="windows-automatically-selects-optimal-character-encoding"></a>Windows 自动选择最佳字符编码
 
@@ -54,7 +54,7 @@ Windows 8、Windows 8.1 和 Windows 10 支持适用于与 GSM (3GPP) 和 CDMA (3
 |CDMA|7位 ASCII|160 (可能因网络) | |
 |CDMA|Unicode|70 (可能因网络) | |
 
-GSM 字符集定义 [3GPP TS 23.038： "字母和语言特定信息"](https://www.3gpp.org/DynaReport/23038.md)。 CDMA 字符集是在 [3GPP2 R1001](http://www.3gpp2.org/Public_html/specs/C.R1001-D_v1.0_110403.pdf)中定义的。
+GSM 字符集定义 [3GPP TS 23.038： "字母和语言特定信息"](https://portal.3gpp.org/desktopmodules/Specifications/SpecificationDetails.aspx?specificationId=745)。 CDMA 字符集是在 [3GPP2 R1001](http://www.3gpp2.org/Public_html/Specs/index.cfm)中定义的。
 
 ## <a name="related-topics"></a>相关主题
 

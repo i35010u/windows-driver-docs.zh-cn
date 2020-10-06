@@ -6,12 +6,12 @@ keywords:
 - MB 基于设备的重置和恢复、基于移动宽带设备的重置和恢复、移动宽带微型端口驱动程序基于设备的重置和恢复
 ms.date: 08/09/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 31ef7e6948b947ae105ff895aaa3ab8c21601f7a
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 303cd692f3271827c0133d359ba882313f8708c3
+ms.sourcegitcommit: 20eac54e419a594f7cea766ee28f158559dfd79c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89207525"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91754998"
 ---
 # <a name="mb-device-based-reset-and-recovery"></a>MB 基于设备的重置和恢复
 
@@ -21,7 +21,7 @@ ms.locfileid: "89207525"
 
 ## <a name="mb-device-based-reset-and-recovery-architecture-overview"></a>MB 基于设备的重置和恢复体系结构概述
 
-Windows MBB 服务使用标准 [移动宽带接口模型](https://www.usb.org/developers/docs/devclass_docs/MBIM10Errata1_073013.zip "MBIM 规范") （ (MBIM) 接口，此接口是在 USB 传输扩展 NCM 规范的基础上构建的，它可初始化和控制移动设备。 发送到 IHV 设备的每个命令都通过收件箱 Windows MBB 类驱动程序发送为 MBIM 命令。 使用 MBIM 协议交换初始化蜂窝调制解调器后，可以在主机、调制解调器和网络之间启动数据路径。 发送到移动电话设备的任何其他控件将通过 MBIM 协议进行并行传输。 
+Windows MBB 服务使用标准 [移动宽带接口模型](https://www.usb.org/document-library/mobile-broadband-interface-model-v10-errata-1-and-adopters-agreement) （ (MBIM) 接口，此接口是在 USB 传输扩展 NCM 规范的基础上构建的，它可初始化和控制移动设备。 发送到 IHV 设备的每个命令都通过收件箱 Windows MBB 类驱动程序发送为 MBIM 命令。 使用 MBIM 协议交换初始化蜂窝调制解调器后，可以在主机、调制解调器和网络之间启动数据路径。 发送到移动电话设备的任何其他控件将通过 MBIM 协议进行并行传输。 
 
 在 MBIM 控制路径和数据路径上都可能会发生许多故障。 在 Windows 10 版本1809之前的 Windows 版本中，内置了简单的错误处理机制。 每当发送 MBIM 命令并且设备变得无响应时，该机制会尝试通过发送 MBIM reset 命令重置设备。 但是，因为故障通常是由于第一次 MBIM 接口无响应而导致的，所以此重置并不总是有效。 此外，该机制不会解决可能出现的其他故障，例如数据路径故障导致连接断开。 
 

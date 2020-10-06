@@ -3,12 +3,12 @@ title: MB 多 SIM 操作
 description: MB 多 SIM 操作
 ms.date: 10/16/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 0bd6a40a7a13db85ffad1ca467bc87ee089c4227
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: 8365f4e1173495387c31169b6af773bf2ea93474
+ms.sourcegitcommit: 20eac54e419a594f7cea766ee28f158559dfd79c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91733481"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91754956"
 ---
 # <a name="mb-multi-sim-operations"></a>MB 多 SIM 操作
 
@@ -231,7 +231,7 @@ InformationBuffer 应为 null，而 InformationBufferLength 应为零。
 
 #### <a name="status-codes"></a>状态代码
 
-此 CID 使用一般状态代码 (参阅 [公共 USB MBIM standard](https://go.microsoft.com/fwlink/p/?linkid=842064)) 的9.4.5 节中的状态代码的使用。
+此 CID 使用一般状态代码 (参阅 [公共 USB MBIM standard](https://www.usb.org/document-library/mobile-broadband-interface-model-v10-errata-1-and-adopters-agreement)) 的9.4.5 节中的状态代码的使用。
 
 ### <a name="mbim_cid_ms_device_caps_v2"></a>MBIM_CID_MS_DEVICE_CAPS_V2
 

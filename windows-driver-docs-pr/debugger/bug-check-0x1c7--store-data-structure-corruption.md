@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: a448387947d5295be102f0ccac42967126c6aebd
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 42d9252e2c04a777f7d7de2b41680b2c7710e8d5
+ms.sourcegitcommit: 20eac54e419a594f7cea766ee28f158559dfd79c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89214840"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91754928"
 ---
 # <a name="bug-check-0x1c7-store_data_structure_corruption"></a>Bug 检查0x1C7：存储 \_ 数据 \_ 结构 \_ 损坏
 
@@ -73,7 +73,7 @@ ms.locfileid: "89214840"
 2.  驱动程序或设备通过不正确的 DMA 操作或关联的 MDL 错误地修改物理页。
 3.  硬件设备或固件损坏内存导致的损坏，如固件在电源转换中非法修改物理页。
 
-有关 Windows 内存管理器的详细信息，请参阅 [Windows 内部版本第1部分](/sysinternals/learn/windows-internals) ，按 Pavel Yosifovich，标记 Russinovich，David，David，Alex Ionescu。
+有关 Windows 内存管理器的详细信息，请参阅 [Windows 内部版本第1部分](/sysinternals/resources/windows-internals) ，按 Pavel Yosifovich，标记 Russinovich，David，David，Alex Ionescu。
 
 ## <a name="resolution"></a>解决方法
 -----
@@ -85,6 +85,6 @@ ms.locfileid: "89214840"
 ## <a name="see-also"></a>另请参阅
 ----------
 
-[Bug 检查代码参考](bug-check-code-reference2.md)
+[Bug 检查代码引用](bug-check-code-reference2.md)
 
 [Windows 内核模式内存管理器](../kernel/windows-kernel-mode-memory-manager.md)

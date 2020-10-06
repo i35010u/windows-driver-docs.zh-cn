@@ -16,12 +16,12 @@ keywords:
 - 数据格式化 WDK 音频，关于音频数据格式
 ms.date: 02/15/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 29221fd2e4e23cf0c1597135104597a5f1710776
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 660b8058f8c59250850293fedd810dfe45ff4308
+ms.sourcegitcommit: 20eac54e419a594f7cea766ee28f158559dfd79c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90714848"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91754906"
 ---
 # <a name="audio-data-formats"></a>音频数据格式
 
@@ -29,7 +29,7 @@ ms.locfileid: "90714848"
 ## <span id="audio_data_formats"></span><span id="AUDIO_DATA_FORMATS"></span>
 
 
-若要指定波形音频流的数据格式， [**KSDATAFORMAT**](/windows-hardware/drivers/ddi/ks/ns-ks-ksdataformat) 结构会立即后跟 [**WAVEFORMATEX**](/windows/win32/api/mmreg/ns-mmreg-twaveformatex) 或 [**KSDSOUND \_ BUFFERDESC**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksdsound_bufferdesc) 结构，KSDATAFORMAT 的 **说明符** 成员将相应设置为以下两个值之一：
+若要指定波形音频流的数据格式， [**KSDATAFORMAT**](/windows-hardware/drivers/ddi/ks/ns-ks-ksdataformat) 结构会立即后跟 [**WAVEFORMATEX**](/windows/win32/api/mmreg/ns-mmreg-waveformatex) 或 [**KSDSOUND \_ BUFFERDESC**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksdsound_bufferdesc) 结构，KSDATAFORMAT 的 **说明符** 成员将相应设置为以下两个值之一：
 
 -   KSDATAFORMAT \_ 说明符 \_ WAVEFORMATEX
 

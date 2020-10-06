@@ -9,12 +9,12 @@ keywords:
 - NDIS 中间驱动程序 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1e85c90e978cd01af33014b2bedb35c1a40e950d
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: b1e7f0478a56fccb9ae5ab5417787a891a425efd
+ms.sourcegitcommit: 20eac54e419a594f7cea766ee28f158559dfd79c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89206407"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91754868"
 ---
 # <a name="ndis-intermediate-drivers-guide"></a>NDIS 中间驱动程序指南
 
@@ -28,7 +28,7 @@ ms.locfileid: "89206407"
 
 -   监视和收集网络数据统计信息。
 
-在尝试编写中间驱动程序之前，应阅读有关 NDIS 微型端口和协议驱动程序的信息。 有关 NDIS 微型端口驱动程序的详细信息，请参阅 [Ndis 微型端口驱动程序](ndis-miniport-drivers.md)。 有关 NDIS 协议驱动程序的详细信息，请参阅 [Ndis 协议驱动程序](./roadmap-for-developing-ndis-protocol-drivers.md)。
+在尝试编写中间驱动程序之前，应阅读有关 NDIS 微型端口和协议驱动程序的信息。 有关 NDIS 微型端口驱动程序的详细信息，请参阅 [Ndis 微型端口驱动程序](roadmap-for-developing-ndis-miniport-drivers.md)。 有关 NDIS 协议驱动程序的详细信息，请参阅 [Ndis 协议驱动程序](./roadmap-for-developing-ndis-protocol-drivers.md)。
 
 以下部分介绍了中间驱动程序，并说明了如何创建和安装此类驱动程序：
 

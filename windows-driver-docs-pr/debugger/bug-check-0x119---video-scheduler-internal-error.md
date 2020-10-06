@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 76446b162408df2adba9393e85f63529e66bda69
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: d9fc3bb3a4c4f1bfd5ff305832d611332cc510e3
+ms.sourcegitcommit: 20eac54e419a594f7cea766ee28f158559dfd79c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89207647"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91754862"
 ---
 # <a name="bug-check-0x119-video_scheduler_internal_error"></a>Bug 检查0x119：视频 \_ 计划程序 \_ 内部 \_ 错误
 
@@ -57,6 +57,6 @@ ms.locfileid: "89207647"
 
 [提供围栏标识符](../display/supplying-fence-identifiers.md)
 
-[GPU 计划程序类](https://docs.microsoft.com/windows-hardware/drivers/display/gpu-scheduler-class)
+[视频内存管理和 GPU 计划](../display/video-memory-management-and-gpu-scheduling.md)
 
 [视频内存的直接交替](../display/direct-flip-of-video-memory.md)

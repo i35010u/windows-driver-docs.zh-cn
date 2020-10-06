@@ -6,12 +6,12 @@ keywords:
 - KSPROPSETID_Synth_Dls
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9c27922d6634837f353a21fcd163dba2c53167f8
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: b95936a66b85abde244c328c5256cd041aa144c5
+ms.sourcegitcommit: 20eac54e419a594f7cea766ee28f158559dfd79c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90715016"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91755012"
 ---
 # <a name="kspropsetid_synth_dls"></a>KSPROPSETID \_ 合成 \_ dl
 
@@ -374,7 +374,7 @@ KSPROPERTY \_ 合成 \_ DLS \_ WAVEFORMAT 属性用于查询合成器的输出�
 <td align="left"><p>否</p></td>
 <td align="left"><p>Pin</p></td>
 <td align="left"><p><a href="/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksnodeproperty" data-raw-source="[&lt;strong&gt;KSNODEPROPERTY&lt;/strong&gt;](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksnodeproperty)"><strong>KSNODEPROPERTY</strong></a></p></td>
-<td align="left"><p><a href="/windows/win32/api/mmreg/ns-mmreg-twaveformatex" data-raw-source="[&lt;strong&gt;WAVEFORMATEX&lt;/strong&gt;](/windows/win32/api/mmreg/ns-mmreg-twaveformatex)"><strong>WAVEFORMATEX</strong></a></p></td>
+<td align="left"><p><a href="/windows/win32/api/mmreg/ns-mmreg-waveformatex" data-raw-source="[&lt;strong&gt;WAVEFORMATEX&lt;/strong&gt;](/windows/win32/api/mmreg/ns-mmreg-waveformatex)"><strong>WAVEFORMATEX</strong></a></p></td>
 </tr>
 </tbody>
 </table>

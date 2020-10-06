@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 69c08a73ec7a905aeb141236e1f56b40171bffaa
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: c3a235a6d494182bff389b027c0033c64db1d12b
+ms.sourcegitcommit: 20eac54e419a594f7cea766ee28f158559dfd79c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90107190"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91754860"
 ---
 # <a name="bug-check-0xf1-scsi_verifier_detected_violation"></a>Bug 检查0xF1： SCSI \_ 验证程序 \_ 检测到 \_ 冲突
 
@@ -122,7 +122,7 @@ SCSI \_ 验证器 \_ 检测到 \_ 违反 bug 检查的值为0x000000F1。 这是
 <td align="left"><p>保留</p></td>
 <td align="left"><p>保留</p></td>
 <td align="left"><p>保留</p></td>
-<td align="left"><p>不是从微型端口驱动程序的<strong><a href="/windows-hardware/drivers/ddi/storport/nc-storport-hw_find_adapter" data-raw-source="[HwStorFindAdapter](/windows-hardware/drivers/ddi/storport/nc-storport-hw_find_adapter)">HwStorFindAdapter</a></strong>例程调用<strong><a href="/windows-hardware/drivers/ddi/storport/nf-storport-storportgetuncachedextension" data-raw-source="[StorPortGetUncachedExtension](/windows-hardware/drivers/ddi/storport/nf-storport-storportgetuncachedextension)">StorPortGetUncachedExtension</a></strong> 。 <strong>StorPortGetUncachedExtension</strong>例程只能从微型端口驱动程序的<strong>HwStorFindAdapter</strong>例程中调用，且仅可用于总线主机适配器。 在调用<strong>StorPortGetUncachedExtension</strong>之前，storport 微型端口驱动程序必须将<strong><a href="/windows-hardware/drivers/ddi/storport/ns-storport-_hw_initialization_data" data-raw-source="[HW_INITIALIZATION_DATA](https://docs.microsoft.com/windows-hardware/drivers/ddi/storport/ns-storport-_hw_initialization_data)">HW_INITIALIZATION_DATA</a></strong>的<strong>SrbExtensionSize</strong>设置 (Storport) 结构。</p></td>
+<td align="left"><p>不是从微型端口驱动程序的<strong><a href="/windows-hardware/drivers/ddi/storport/nc-storport-hw_find_adapter" data-raw-source="[HwStorFindAdapter](/windows-hardware/drivers/ddi/storport/nc-storport-hw_find_adapter)">HwStorFindAdapter</a></strong>例程调用<strong><a href="/windows-hardware/drivers/ddi/storport/nf-storport-storportgetuncachedextension" data-raw-source="[StorPortGetUncachedExtension](/windows-hardware/drivers/ddi/storport/nf-storport-storportgetuncachedextension)">StorPortGetUncachedExtension</a></strong> 。 <strong>StorPortGetUncachedExtension</strong>例程只能从微型端口驱动程序的<strong>HwStorFindAdapter</strong>例程中调用，且仅可用于总线主机适配器。 在调用<strong>StorPortGetUncachedExtension</strong>之前，storport 微型端口驱动程序必须将<strong><a href="/windows-hardware/drivers/ddi/storport/ns-storport-_hw_initialization_data-r1" data-raw-source="[HW_INITIALIZATION_DATA](/windows-hardware/drivers/ddi/storport/ns-storport-_hw_initialization_data-r1)">HW_INITIALIZATION_DATA</a></strong>的<strong>SrbExtensionSize</strong>设置 (Storport) 结构。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x2003</p></td>

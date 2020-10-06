@@ -4,12 +4,12 @@ description: WaveRT 端口驱动程序简介
 ms.assetid: 48b2b59e-385e-4814-ac20-c4b1a08f32dc
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 27ddc5c4eacf9f1e2980b13aec76caa6676afddc
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 293517b9a90f40906a94a1132c93ba12999726da
+ms.sourcegitcommit: 20eac54e419a594f7cea766ee28f158559dfd79c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90714778"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91754976"
 ---
 # <a name="introducing-the-wavert-port-driver"></a>WaveRT 端口驱动程序简介
 
@@ -26,7 +26,7 @@ WaveRT 端口驱动程序的性能改进包括以下特性：
 
 -   它们可以连接到系统总线，例如 PCI Express 总线。
 
--   它们可以通过 [**WAVEFORMATEX**](/windows/win32/api/mmreg/ns-mmreg-twaveformatex) 或 [**WAVEFORMATEXTENSIBLE**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-waveformatextensible) 结构) 描述的音频数据来播放或录制波形数据 (。
+-   它们可以通过 [**WAVEFORMATEX**](/windows/win32/api/mmreg/ns-mmreg-waveformatex) 或 [**WAVEFORMATEXTENSIBLE**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-waveformatextensible) 结构) 描述的音频数据来播放或录制波形数据 (。
 
 -   他们可以使用 Windows Vista 中提供的改进计划支持来降低音频流的延迟时间。
 

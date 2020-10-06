@@ -4,12 +4,12 @@ description: 开发用于处理 MobileOperatorNotification 事件的应用
 ms.assetid: 3c483888-8ec4-4270-af3e-ef1efc995171
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9aeda344d81e23f84dfa106a47908e22d34a0cd1
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: ee194fd015736131c5a131e3630af724f7c714dc
+ms.sourcegitcommit: 20eac54e419a594f7cea766ee28f158559dfd79c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89207631"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91755030"
 ---
 # <a name="develop-an-app-to-handle-the-mobileoperatornotification-event"></a>开发用于处理 MobileOperatorNotification 事件的应用
 
@@ -42,8 +42,6 @@ ms.locfileid: "89207631"
 -   考虑将处理推迟到下一次启动应用程序时。
 
 -   考虑显示 toast 通知并更新磁贴以响应后台事件。 移动宽带应用可以处理后台事件负载。
-
-有关后台任务的详细信息，请参阅 [后台任务简介](https://go.microsoft.com/fwlink/p/?linkid=313924)。
 
 ## <a name="span-idsteponespanspan-idsteponespanstep-1-background-task-contract-declaration"></a><span id="stepone"></span><span id="STEPONE"></span>步骤1：后台任务协定声明
 

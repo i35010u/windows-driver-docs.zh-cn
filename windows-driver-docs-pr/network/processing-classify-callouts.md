@@ -10,12 +10,12 @@ keywords:
 - 分类标注 WDK Windows 筛选平台，关于对标注进行分类
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5d01b2b6450732928b3332973db50c007c39f0b9
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 3cbf07c444443dc1cde376d4fc117d5f5b513006
+ms.sourcegitcommit: 20eac54e419a594f7cea766ee28f158559dfd79c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89215198"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91754960"
 ---
 # <a name="processing-classify-callouts"></a>处理分类标注
 
@@ -30,7 +30,7 @@ ms.locfileid: "89215198"
 
 [使用标注进行流数据深度检测](using-a-callout-for-deep-inspection-of-stream-data.md)
 
-[检查数据包和流数据](inspecting-packet-and-stream-data.md)
+[检查数据包和流数据](packet-inspection-points.md)
 
 [修改流数据](modifying-stream-data.md)
 

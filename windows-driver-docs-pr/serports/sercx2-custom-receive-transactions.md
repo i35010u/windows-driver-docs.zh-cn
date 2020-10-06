@@ -4,12 +4,12 @@ description: 某些串行控制器硬件可能会实现 PIO 或系统 DMA 以外
 ms.assetid: 29849A8C-6656-444C-BE91-405A4BA2D5B0
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 61e91f3470fa152f1cc5a22cbf3a98c977654e1d
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 94c1c22db054340dcf4b08c1fa74cb7678effcef
+ms.sourcegitcommit: 20eac54e419a594f7cea766ee28f158559dfd79c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89186925"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91754984"
 ---
 # <a name="sercx2-custom-receive-transactions"></a>SerCx2 Custom-Receive 事务
 
@@ -32,7 +32,7 @@ ms.locfileid: "89186925"
 - [*EvtSerCx2CustomReceiveTransactionInitialize*](/windows-hardware/drivers/ddi/sercx/nc-sercx-evt_sercx2_custom_receive_transaction_initialize)
 - [*EvtSerCx2CustomReceiveTransactionCleanup*](/windows-hardware/drivers/ddi/sercx/nc-sercx-evt_sercx2_custom_receive_transaction_cleanup)
 
-**SerCx2CustomReceiveTransactionCreate**方法创建自定义接收对象，并向调用驱动程序提供此对象的[**SERCX2CUSTOMRECEIVETRANSACTION**](https://docs.microsoft.com/windows-hardware/drivers/serports/sercx2-object-handlessercx2customreceivetransaction-object-handle)句柄。 驱动程序的 *EvtSerCx2CustomReceiveTransaction*Xxx * * 函数全部使用此句柄作为其第一个参数。 以下 SerCx2 方法使用此句柄作为其第一个参数：
+**SerCx2CustomReceiveTransactionCreate**方法创建自定义接收对象，并向调用驱动程序提供此对象的[**SERCX2CUSTOMRECEIVETRANSACTION**](/windows-hardware/drivers/serports/sercx2-object-handles#sercx2customreceivetransaction-object-handle)句柄。 驱动程序的 *EvtSerCx2CustomReceiveTransaction*Xxx * * 函数全部使用此句柄作为其第一个参数。 以下 SerCx2 方法使用此句柄作为其第一个参数：
 
 - [**SerCx2CustomReceiveTransactionNewDataNotification**](/windows-hardware/drivers/ddi/sercx/nf-sercx-sercx2customreceivetransactionnewdatanotification)
 - [**SerCx2CustomReceiveTransactionReportProgress**](/windows-hardware/drivers/ddi/sercx/nf-sercx-sercx2customreceivetransactionreportprogress)

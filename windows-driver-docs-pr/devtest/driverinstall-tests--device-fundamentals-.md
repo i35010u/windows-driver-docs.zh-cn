@@ -4,12 +4,12 @@ description: 驱动程序安装测试类别包括多次卸载和重新安装驱�
 ms.assetid: 3FC00D4B-6520-45F1-805C-A5F8B6AACAC8
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e721c0ba091cc3bc1467fa50078bdf0a013e8b41
-ms.sourcegitcommit: 372464be981a39781c71049126f36891cb5d0cad
+ms.openlocfilehash: d58069cd8a66a2c4f7932acbe5f11e148df42149
+ms.sourcegitcommit: 20eac54e419a594f7cea766ee28f158559dfd79c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/02/2020
-ms.locfileid: "91646031"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91754890"
 ---
 # <a name="driver-install-tests-device-fundamentals"></a>驱动程序安装测试（设备基础功能）
 
@@ -25,7 +25,7 @@ ms.locfileid: "91646031"
 
 **测试方法**： Reinstall_With_IO_Before_And_After
 
-**参数**： [*DQ*](../develop/how-to-select-and-configure-the-device-fundamental-tests#device-fundamentals-test-parameters.md) 和 [*IOPeriod*](../develop/how-to-select-and-configure-the-device-fundamental-tests#device-fundamentals-test-parameters.md)
+**参数**： [*DQ*] 和 [*IOPeriod*] 有关详细信息，请参阅[如何选择和配置设备基础测试](../develop/how-to-select-and-configure-the-device-fundamental-tests.md#device-fundamentals-test-parameters)中的 "设备基础测试参数"。
 
 ## <a name="about-the-reinstall-with-io-before-and-after-test"></a>关于测试前后的 i/o 重新安装
 

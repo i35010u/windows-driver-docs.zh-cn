@@ -4,12 +4,12 @@ description: 本文为驱动程序开发人员提供了驱动程序安全核对�
 ms.assetid: 25375E02-FCA1-4E94-8D9A-AA396C909278
 ms.date: 03/13/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 8829b4fd7db44ae76b2e24683efa9d2f6bf7f380
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: 8817a38cccc5b006bc4dd8916207a156940bec07
+ms.sourcegitcommit: 20eac54e419a594f7cea766ee28f158559dfd79c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91733193"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91754958"
 ---
 # <a name="driver-security-checklist"></a>驱动程序安全清单
 
@@ -365,13 +365,13 @@ AC (Application Container)
 
 有关详细信息，请参阅以下文章：
 
-[文件系统的安全注意事项](https://docs.microsoft.com/windows-hardware/drivers/ifs/security-considerations-for-file-systems)
+[文件系统安全性简介](/windows-hardware/drivers/ifs/introduction-to-file-systems-security)
 
 [文件系统安全问题](../ifs/file-system-security-issues.md)
 
 [文件系统的安全功能](../ifs/security-features-for-file-systems.md)
 
-[文件系统筛选器驱动程序的安全注意事项](https://docs.microsoft.com/windows-hardware/drivers/ifs/security-considerations-for-file-system-filter-drivers)
+[与其他文件系统筛选器驱动程序共存](/windows-hardware/drivers/ifs/coexistence-with-other-file-system-filter-drivers)
 
 ### <a name="ndis---networking"></a>NDIS-网络
 

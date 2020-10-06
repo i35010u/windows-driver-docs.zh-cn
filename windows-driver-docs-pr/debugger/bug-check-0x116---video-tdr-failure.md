@@ -14,12 +14,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 8b84a1f98a5a1b0a650b92b0f36c8dfac156d112
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 5833321ff9f4bfcf8170a28c5ab18cfde0f28996
+ms.sourcegitcommit: 20eac54e419a594f7cea766ee28f158559dfd79c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89207653"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91755020"
 ---
 # <a name="bug-check-0x116-video_tdr_failure"></a>Bug 检查0x116：视频 \_ TDR \_ 失败
 
@@ -79,7 +79,7 @@ ms.locfileid: "89207653"
 
 如果恢复过程成功，将显示一条消息，指示 "显示驱动程序已停止响应并已恢复"。
 
-有关详细信息，请参阅超时检测和恢复 (TDR) ，Windows 8 中的 [TDR 注册表项](../display/tdr-registry-keys.md) 和 [TDR 更改](../display/tdr-changes-in-windows-8.md) ，这些更改位于 [windows 显示驱动程序模型 (WDDM) 的调试提示 ](https://docs.microsoft.com/windows-hardware/drivers/display/debugging-tips-for-the-windows-vista-display-driver-model)中。
+有关详细信息，请参阅超时检测和恢复 (TDR) ，Windows 8 中的 [TDR 注册表项](../display/tdr-registry-keys.md) 和 [TDR 更改](../display/tdr-changes-in-windows-8.md) ，这些更改位于 [超时检测和恢复 (TDR) ](../display/timeout-detection-and-recovery.md)。
 
 <a name="resolution"></a>解决方法
 ----------

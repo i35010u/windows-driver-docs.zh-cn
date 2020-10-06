@@ -4,12 +4,12 @@ description: 音频驱动程序结构
 ms.assetid: 8257342f-474a-42b3-809d-96fdeede398b
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b93331c6c783f0603a70736638984e2d64373219
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 04e8cfdcd63cbd12a3043d6b252c8caf4237313f
+ms.sourcegitcommit: 20eac54e419a594f7cea766ee28f158559dfd79c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90714828"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91754900"
 ---
 # <a name="audio-drivers-structures"></a>音频驱动程序结构
 
@@ -129,7 +129,7 @@ ms.locfileid: "90714828"
 
 [**KSP \_ DRMAUDIOSTREAM \_ ID 为**](/windows-hardware/drivers/ddi/drmk/ns-drmk-ksp_drmaudiostream_contentid)
 
-[**KSP \_ PINMODE**](/windows/win32/api/msapofxproxy/ns-msapofxproxy-tagksp_pinmode)
+[**KSP \_ PINMODE**](/windows/win32/api/msapofxproxy/ns-msapofxproxy-ksp_pinmode)
 
 [KSRTAUDIO 结构](/windows-hardware/drivers/ddi/ksmedia/index)
 
@@ -147,7 +147,7 @@ ms.locfileid: "90714828"
 
 [**MDEVICECAPSEX**](/windows/win32/api/mmddk/ns-mmddk-mdevicecapsex)
 
-[**MIDIOPENDESC**](/windows/win32/api/mmddk/ns-mmddk-midiopendesc_tag)
+[**MIDIOPENDESC**](/windows/win32/api/mmddk/ns-mmddk-midiopendesc)
 
 [**RTAUDIO \_ GETREADPACKET \_ 信息**](/previous-versions/windows/hardware/drivers/mt169891(v=vs.85))
 
@@ -177,6 +177,6 @@ ms.locfileid: "90714828"
 
 [**UNCOMPRESSEDAUDIOFORMAT**](/windows/win32/api/audiomediatype/ns-audiomediatype-uncompressedaudioformat)
 
-[**WAVEFORMATEX**](/windows/win32/api/mmreg/ns-mmreg-twaveformatex)
+[**WAVEFORMATEX**](/windows/win32/api/mmreg/ns-mmreg-waveformatex)
 
 [**WAVEFORMATEXTENSIBLE**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-waveformatextensible)

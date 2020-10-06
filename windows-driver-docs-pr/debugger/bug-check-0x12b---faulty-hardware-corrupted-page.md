@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 30ef030d04d55f199ab1d956a751f407dd370bed
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 7ce0a4a44d193872f3a80d2b293efbd9e80455f5
+ms.sourcegitcommit: 20eac54e419a594f7cea766ee28f158559dfd79c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89208739"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91755014"
 ---
 # <a name="bug-check-0x12b-faulty_hardware_corrupted_page"></a>Bug 检查0x12B：出错的 \_ 硬件 \_ 损坏 \_ 页
 
@@ -120,7 +120,7 @@ ms.locfileid: "89208739"
 
 注意：压缩的存储管理器可以检测是否损坏是由单一位错误引起的，并自动更正此情况，而不引发 bug 检查。 如果损坏不是由单一位错误引起的，则压缩的存储管理器会报告此错误检测。
 
-有关 Windows 内存管理器和内存压缩的详细信息，请参阅 [Windows 内部版本第7版](/sysinternals/learn/windows-internals) ，Pavel Yosifovich，标记 Russinovich，David，David，Alex Ionescu。
+有关 Windows 内存管理器和内存压缩的详细信息，请参阅 [Windows 内部版本第7版](/sysinternals/resources/windows-internals) ，Pavel Yosifovich，标记 Russinovich，David，David，Alex Ionescu。
 
 ## <a name="resolution"></a>解决方法
 -----
@@ -132,7 +132,7 @@ ms.locfileid: "89208739"
 ## <a name="see-also"></a>另请参阅
 ----------
 
-[Bug 检查代码参考](bug-check-code-reference2.md)
+[Bug 检查代码引用](bug-check-code-reference2.md)
 
 [Windows 内核模式内存管理器](../kernel/windows-kernel-mode-memory-manager.md)
 

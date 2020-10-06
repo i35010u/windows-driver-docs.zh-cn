@@ -12,12 +12,12 @@ keywords:
 - 串行设备 WDK，Serenum 驱动程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6f6d24bf5afc893896a785970ee989da2aac8434
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: a4a4886b8b9ea44a8b24bd0c3ae28db7f5af4b95
+ms.sourcegitcommit: 20eac54e419a594f7cea766ee28f158559dfd79c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89186967"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91754844"
 ---
 # <a name="operation-of-serenum-and-serial"></a>Serenum 和串行的操作
 
@@ -51,7 +51,7 @@ ms.locfileid: "89186967"
 
 有关操作 Serenum 和串行的详细信息，请参阅以下资源：
 
-- [ntddser 标头](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddser/0)
+- [ntddser 标头](/windows-hardware/drivers/ddi/ntddser/)
 
 - [串行端口驱动程序参考](/windows-hardware/drivers/ddi/_serports/)
 

@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8440b789b11d9973eb4f4b7b98fa30423df6cd00
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: ab2e3bc237b35ad8481c7d6519fbb63dddd923c0
+ms.sourcegitcommit: 20eac54e419a594f7cea766ee28f158559dfd79c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90715396"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91755024"
 ---
 # <a name="ksproperty_audio_wavert_current_write_position"></a>KSPROPERTY \_ 音频 \_ WAVERT \_ 当前 \_ 写入 \_ 位置
 
@@ -65,7 +65,7 @@ KSPROPERTY \_ 音频 \_ WAVERT \_ 当前 \_ 写入 \_ 位置属性请求返回�
 <a name="remarks"></a>备注
 -------
 
-为了更好地了解如何解释此属性请求提供的信息，假设有一个大小为 n 字节的循环缓冲区。 写入任何数据之前的初始写入位置为0。 数据将以块 [**WAVEFORMATEX**](/windows/win32/api/mmreg/ns-mmreg-twaveformatex) 的倍数写入缓冲区。
+为了更好地了解如何解释此属性请求提供的信息，假设有一个大小为 n 字节的循环缓冲区。 写入任何数据之前的初始写入位置为0。 数据将以块 [**WAVEFORMATEX**](/windows/win32/api/mmreg/ns-mmreg-waveformatex) 的倍数写入缓冲区。
 
 例如，缓冲区包含16位 PCM 立体声数据的 20 ms，采样速度为 48000 Hz。 因此，根据 **WAVEFORMATEX** 结构的 nBlockAlign 成员的说明，在此示例中，nBlockAlign = 2 \* 16/8 = 4 个字节。 这意味着缓冲区的长度为 48000 \* 20/1000 = 960 帧，或 960 \* 4 = 3840 字节。
 
@@ -103,7 +103,7 @@ if new write position = old write position, we’ve had a glitch
 ## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
-[**WAVEFORMATEX**](/windows/win32/api/mmreg/ns-mmreg-twaveformatex)
+[**WAVEFORMATEX**](/windows/win32/api/mmreg/ns-mmreg-waveformatex)
 
  
 

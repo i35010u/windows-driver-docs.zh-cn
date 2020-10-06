@@ -4,12 +4,12 @@ description: 本主题介绍如何使用 JavaScript 创建脚本，这些脚本�
 ms.assetid: 3442E2C4-4054-4698-B7FB-8FE19D26C171
 ms.date: 04/09/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: c7dc2e7353ce42346da55d84f8173e29b11954e8
-ms.sourcegitcommit: cd84cc10570384b0e7a91cb6f91fe67009c1a90e
+ms.openlocfilehash: e0e7c2bb18d05d80def588c7d9c32dd35b051ccc
+ms.sourcegitcommit: 20eac54e419a594f7cea766ee28f158559dfd79c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89238145"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91754974"
 ---
 # <a name="javascript-debugger-scripting"></a>JavaScript 调试器脚本
 
@@ -39,7 +39,7 @@ ms.locfileid: "89238145"
 
 ## <a name="span-idproviderspanspan-idproviderspanspan-idproviderspanthe-debugger-javascript-provider"></a><span id="Provider"></span><span id="provider"></span><span id="PROVIDER"></span>调试器 JavaScript 提供程序
 
-调试器附带的 JavaScript 提供程序充分利用了最新的 ECMAScript6 对象和类增强功能。 有关详细信息，请参阅 [ECMAScript 6-新增功能：概述 & 比较](https://es6-features.org/)。
+调试器附带的 JavaScript 提供程序充分利用了最新的 ECMAScript6 对象和类增强功能。 有关详细信息，请参阅 [ECMAScript 6-新增功能：概述 & 比较](http://es6-features.org/)。
 
 **JsProvider.dll**
 
@@ -830,7 +830,7 @@ Error: 64 bit value loses precision on conversion to number
 
 为了允许调试器扩展维护精度，一组数学函数将在64位库类型的顶层进行投影。 如果扩展需要 (或可能) 需要精度高于53位的传入64位值，则应使用以下方法，而不是依赖标准运算符：
 
-| **方法名**   | **签名**             | **说明**                                                                                               |
+| **方法名**   | **信号**             | **说明**                                                                                               |
 |-------------------|---------------------------|---------------------------------------------------------------------------------------------------------------|
 | asNumber          | . asNumber ( # A1               | 将64位值转换为 JavaScript 数字。 如果发生精度损失，则会 \* \* 引发异常\*\* |
 | convertToNumber   | . convertToNumber ( # A1        | 将64位值转换为 JavaScript 数字。 如果发生精度损失，则 \* \* 不会引发异常\*\* |
@@ -1211,7 +1211,7 @@ Test
 
 -   [WinJS：适用于 JavaScript 的 Windows 库](https://github.com/winjs/winjs)
 
--   [ECMAScript 6-新增功能：概述 & 比较](https://es6-features.org/)
+-   [ECMAScript 6-新增功能：概述 & 比较](http://es6-features.org/)
 
 ## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 

@@ -4,19 +4,19 @@ description: 创建服务元数据的开发人员指南
 ms.assetid: 2d250bce-2dd2-4bd8-aa0f-432dde7783e1
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a4e0c06fd3a5ab2fcb7611162c73bfc2ae09ffb7
-ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
+ms.openlocfilehash: 6c9ddf1405411c4bb77372630b348f78e1768563
+ms.sourcegitcommit: 20eac54e419a594f7cea766ee28f158559dfd79c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89403338"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91755034"
 ---
 # <a name="developer-guide-for-creating-service-metadata"></a>创建服务元数据的开发人员指南
 
 [!include[MBAE deprecation warning](../includes/mbae-deprecation-warning.md)]
 
 
-本指南将指导你完成在 Windows 开发人员中心硬件仪表板上创建服务元数据包的过程，以前称为 Sysdev (<https://sysdev.microsoft.com>) 。 将移动宽带应用连接到硬件设备需要服务元数据。 当用户将移动宽带设备插入到计算机时，将下载关联的服务元数据，然后自动下载移动宽带应用。
+本指南将指导你完成在 Windows 开发人员中心硬件仪表板（以前称为 [Sysdev](https://partner.microsoft.com/dashboard)）上创建服务元数据包的过程。 将移动宽带应用连接到硬件设备需要服务元数据。 当用户将移动宽带设备插入到计算机时，将下载关联的服务元数据，然后自动下载移动宽带应用。
 
 您可以利用服务元数据来创建更深入的 Windows 体验。 利用服务元数据包，可以包括图标和操作员名称等品牌信息，配置用于访问 SIM 硬件和个人热点的设置和权限，以及预配移动宽带应用以使用移动宽带设备。
 
@@ -32,7 +32,7 @@ ms.locfileid: "89403338"
 
 ### <a name="span-idregister_your_company_with_the_windows_dev_center_hardware_dashboardspanspan-idregister_your_company_with_the_windows_dev_center_hardware_dashboardspanspan-idregister_your_company_with_the_windows_dev_center_hardware_dashboardspanregister-your-company-with-the-windows-dev-center-hardware-dashboard"></a><span id="Register_your_company_with_the_Windows_Dev_Center_hardware_dashboard"></span><span id="register_your_company_with_the_windows_dev_center_hardware_dashboard"></span><span id="REGISTER_YOUR_COMPANY_WITH_THE_WINDOWS_DEV_CENTER_HARDWARE_DASHBOARD"></span>向 Windows 开发人员中心硬件仪表板注册公司
 
--   你的公司在 Windows 开发人员中心硬件仪表板上有一个活动帐户。 如果你的公司在 Windows 开发人员中心硬件仪表板上没有帐户，你可以创建一个新帐户，并将你的用户帐户添加到你的公司。 有关详细信息，请参阅 Windows 开发人员中心硬件仪表板帮助中的 [管理](/windows-hardware/drivers/dashboard/dashboard-administration) 。
+-   你的公司在 Windows 开发人员中心硬件仪表板上有一个活动帐户。 如果你的公司在 Windows 开发人员中心硬件仪表板上没有帐户，你可以创建一个新帐户，并将你的用户帐户添加到你的公司。 有关详细信息，请参阅 Windows 开发人员中心硬件仪表板帮助中的 [管理](/windows-hardware/drivers/dashboard/get-started-with-the-hardware-dashboard) 。
 
 -   你的公司有一个 VeriSign 代码签名证书，用于对包进行签名。
 
@@ -202,7 +202,7 @@ ms.locfileid: "89403338"
 
     -   如果你是使用提供程序名称的 CDMA 提供程序，请选中 " **CDMA** " 标题下的 "**提供程序名称**" 复选框。 在 " **输入提供者名称** " 框中，输入 CDMA 服务提供商名称。
 
-    -   单击“配置目录分区”  。
+    -   单击 **下一步**。
 
     ![这是向导的 "硬件信息" 步骤](images/mbae-sxs81-hardwareinfostep.png)
 

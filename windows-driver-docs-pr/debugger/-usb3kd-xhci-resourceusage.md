@@ -1,9 +1,9 @@
 ---
-title: usb3kd xhci_resourceusage
-description: Xhci_resourceusage usb3kd 扩展显示 USB 3.0 主机控制器使用的资源。
+title: usb3kd.xhci_resourceusage
+description: Usb3kd.xhci_resourceusage 扩展显示 USB 3.0 主机控制器使用的资源。
 ms.assetid: 6AAB64D6-3CDA-4BA2-BBA8-F2F5AD1DBB6F
 keywords:
-- usb3kd xhci_resourceusage Windows 调试
+- usb3kd.xhci_resourceusage Windows 调试
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 1ee1d6966e85a77eb3d55d93de68077c70b75fa4
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: c9ab0584a4636e1e5507e3ef99c2d2bfc94f465b
+ms.sourcegitcommit: 20eac54e419a594f7cea766ee28f158559dfd79c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89216266"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91754880"
 ---
 # <a name="usb3kdxhci_resourceusage"></a>！ usb3kd. xhci \_ resourceusage
 
@@ -42,7 +42,7 @@ Usb3kd.dll
 <a name="remarks"></a>备注
 -------
 
-Output **！ xhci \_ resourceusage** 命令基于 USB 3.0 主机控制器驱动程序所维护的数据结构 ( # A0) 。 有关 usb 3.0 主机控制器驱动程序和 USB 堆栈中其他驱动程序的详细信息，请参阅 [Windows 中的 usb 主机端驱动程序](//windows-hardware/drivers/usbcon/usb-3-0-driver-stack-architecture)。
+Output **！ xhci \_ resourceusage** 命令基于 USB 3.0 主机控制器驱动程序所维护的数据结构 ( # A0) 。 有关 usb 3.0 主机控制器驱动程序和 USB 堆栈中其他驱动程序的详细信息，请参阅 [Windows 中的 usb 主机端驱动程序](/windows-hardware/drivers/usbcon/usb-3-0-driver-stack-architecture)。
 
 <a name="examples"></a>示例
 --------

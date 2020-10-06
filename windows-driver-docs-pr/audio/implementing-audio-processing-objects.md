@@ -4,12 +4,12 @@ description: 本主题介绍如何 (APO) 实现音频处理对象。 有关的�
 ms.assetid: 822FAF10-DAB3-48D1-B782-0C80B072D3FB
 ms.date: 06/12/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 403eae077ef06d33849360615c252e5264698a7a
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: cf0b8488e76ce3145928703207817118edc0d95e
+ms.sourcegitcommit: 20eac54e419a594f7cea766ee28f158559dfd79c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90714780"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91754982"
 ---
 # <a name="implementing-audio-processing-objects"></a>实现音频处理对象
 
@@ -178,8 +178,6 @@ HRESULT CSwapAPOGFX::ValidateAndCacheConnectionInfo( ... )
 ```
 
 **注意**   类继承自**CBaseAudioProcessingObject**的剩余接口和方法在 Audioenginebaseapo 文件中进行了详细介绍。
-
-对于台式计算机，可以提供一个用户界面，用于配置添加到自定义 APO 的功能。 有关此方面的详细信息，请参阅 [实现用于配置的 UI](/windows-hardware/drivers/audio/implementing-a-ui-for-configuring-apo-effects)。
 
 ## <a name="replacing-system-supplied-apos"></a>替换系统提供的
 

@@ -6,12 +6,12 @@ keywords:
 - MB 基站信息查询，移动宽带基站信息查询
 ms.date: 08/14/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2af61546eece7a6996d22d7328748442aa32a295
-ms.sourcegitcommit: 74a8dc9ef1da03857dec5cab8d304e2869ba54a7
+ms.openlocfilehash: 9e821c96dc193813dc93319ed1fc805ddd4b3601
+ms.sourcegitcommit: 20eac54e419a594f7cea766ee28f158559dfd79c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90759919"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91755026"
 ---
 # <a name="mb-base-stations-information-query-support"></a>MB 基站信息查询支持
 
@@ -37,7 +37,7 @@ ms.locfileid: "90759919"
 
 ### <a name="parameters"></a>参数
 
-| 类型 | Set | 查询 | 通知 |
+| 类型 | 设置 | 查询 | 通知 |
 | --- | --- | --- | --- |
 | 命令 | 不适用 | MBIM_BASE_STATIONS_INFO_REQ | 不适用 |
 | 响应 | 不适用 | MBIM_BASE_STATIONS_INFO | 不适用 |
@@ -50,7 +50,7 @@ MBIM_COMMAND_MSG 的 InformationBuffer 包含 MBIM_BASE_STATIONS_INFO_REQ strutu
 
 MBIM_BASE_STATIONS_INFO_REQ 结构应在 InformationBuffer for 查询中使用。 它用于配置单元信息的各个方面，如要发送的响应中的邻居单元格度量的最大数目。 
 
-| 偏移量 | 大小 | 字段 | 类型 | 描述 |
+| Offset | 大小 | 字段 | 类型 | 说明 |
 | --- | --- | --- | --- | --- |
 | 0 | 4 | MaxGSMCount | SIZE | GSM 网络度量报表中返回的 GSM 相邻单元的最大项数 [MBIM_GSM_NMR](#mbim_gsm_nmr)。 默认容量为15。 |
 | 4 | 4 | MaxUMTSCount | SIZE | 在 [MBIM_UMTS_MRL](#mbim_umts_mrl)中，在 UMTS 度量结果列表中返回的相邻单元 UMTS 的最大项数。 默认容量为15。 |
@@ -58,7 +58,7 @@ MBIM_BASE_STATIONS_INFO_REQ 结构应在 InformationBuffer for 查询中使用�
 | 12 | 4 | MaxLTECount | SIZE | [MBIM_LTE_MRL](#mbim_lte_mrl)的 lte 度量结果列表中返回的 lte 相邻单元的最大项数。 默认容量为15。 |
 | 16 | 4 | MaxCDMACount | SIZE | [MBIM_CDMA_MRL](#mbim_cdma_mrl)中 CDMA 度量结果列表中返回的 CDMA 单元的最大项数。 此列表包括服务和相邻单元。 默认容量为12。 |
 
-### <a name="set"></a>Set
+### <a name="set"></a>设置
 
 不适用。
 
@@ -70,7 +70,7 @@ MBIM_BASE_STATIONS_INFO 结构应用于响应的 MBIM_COMMAND_DONE InformationBu
 
 MBIM_BASE_STATIONS_INFO 结构包含有关服务和邻居基站的信息。
 
-| 偏移量 | 大小 | 字段 | 类型 | 描述 |
+| Offset | 大小 | 字段 | 类型 | 说明 |
 | --- | --- | --- | --- | --- |
 | 0 | 4 | SystemType | MBIM_DATA_CLASS | 指示为其提供单元信息的) 的系统类型 (或类型。 此成员是 MBIM_DATA_CLASS 中定义的一个或多个系统类型的位掩码。 |
 | 4 | 4 | GSMServingCellOffset | OFFSET | 从该结构的开头计算的偏移量（以字节为单位），到包含 GSM 服务单元信息的缓冲区。 如果服务单元的技术不是 GSM，此成员可能为 NULL。 |
@@ -99,7 +99,7 @@ MBIM_BASE_STATIONS_INFO 结构包含有关服务和邻居基站的信息。
 
 MBIM_GSM_SERVING_CELL_INFO 结构包含有关 GSM 服务单元的信息。
 
-| 偏移量 | 大小 | 字段 | 类型 | 描述 |
+| Offset | 大小 | 字段 | 类型 | 说明 |
 | --- | --- | --- | --- | --- |
 | 0 | 4 | ProviderIdOffset | OFFSET | 从该结构的开头算起的偏移量（以字节为单位），该偏移量是一个数字 (0-9) 名为 *ProviderId* 的字符串，用于表示网络提供程序标识。 此字符串是三位数 Mobile 国家/地区代码的串联 (MCC) 和两个或三个数字的移动网络代码 (MNC) 。 当没有返回 *ProviderId* 信息时，此成员可能为 NULL。 |
 | 4 | 4 | ProviderIdSize | 大小 (0-12)  | 用于 *ProviderId*的大小。 |
@@ -115,7 +115,7 @@ MBIM_GSM_SERVING_CELL_INFO 结构包含有关 GSM 服务单元的信息。
 
 MBIM_GSM_NMR 结构包含相邻 GSM 单元 (NMR) 的网络度量报表。
 
-| 偏移量 | 大小 | 字段 | 类型 | 描述 |
+| Offset | 大小 | 字段 | 类型 | 说明 |
 | --- | --- | --- | --- | --- |
 | 0 | 4 | Elementcount 多于 (EC)  | UINT32 | 此元素后面的 NMR 项的计数。 |
 | 4 |   | DataBuffer | DATABUFFER | NMR 记录的数组，每个记录都指定为 [MBIM_GSM_NMR_INFO](#mbim_gsm_nmr_info) 结构。 |
@@ -124,7 +124,7 @@ MBIM_GSM_NMR 结构包含相邻 GSM 单元 (NMR) 的网络度量报表。
 
 MBIM_GSM_NMR_INFO 结构包含有关相邻 GSM 单元的信息。
 
-| 偏移量 | 大小 | 字段 | 类型 | 描述 |
+| Offset | 大小 | 字段 | 类型 | 说明 |
 | --- | --- | --- | --- | --- |
 | 0 | 4 | ProviderIdOffset | OFFSET | 从该结构的开头算起的偏移量（以字节为单位），该偏移量是一个数字 (0-9) 名为 *ProviderId* 的字符串，用于表示网络提供程序标识。 此字符串是三位数 Mobile 国家/地区代码的串联 (MCC) 和两个或三个数字的移动网络代码 (MNC) 。 当没有返回 *ProviderId* 信息时，此成员可能为 NULL。 |
 | 4 | 4 | ProviderIdSize | 大小 (0-12)  | 用于 *ProviderId*的大小。 |
@@ -141,7 +141,7 @@ MBIM_GSM_NMR_INFO 结构包含有关相邻 GSM 单元的信息。
 
 MBIM_UMTS_SERVING_CELL_INFO 结构包含 UMTS 服务单元的相关信息。
 
-| 偏移量 | 大小 | 字段 | 类型 | 描述 |
+| Offset | 大小 | 字段 | 类型 | 说明 |
 | --- | --- | --- | --- | --- |
 | 0 | 4 | ProviderIdOffset | OFFSET | 从该结构的开头算起的偏移量（以字节为单位），该偏移量是一个数字 (0-9) 名为 *ProviderId* 的字符串，用于表示网络提供程序标识。 此字符串是三位数 Mobile 国家/地区代码的串联 (MCC) 和两个或三个数字的移动网络代码 (MNC) 。 当没有返回 *ProviderId* 信息时，此成员可能为 NULL。 |
 | 4 | 4 | ProviderIdSize | 大小 (0-12)  | 用于 *ProviderId*的大小。 |
@@ -161,7 +161,7 @@ MBIM_UMTS_SERVING_CELL_INFO 结构包含 UMTS 服务单元的相关信息。
 
 MBIM_UMTS_MRL 结构包含邻近 UMTS 单元 (MRL) 的已测量结果列表。
 
-| 偏移量 | 大小 | 字段 | 类型 | 描述 |
+| Offset | 大小 | 字段 | 类型 | 说明 |
 | --- | --- | --- | --- | --- |
 | 0 | 4 | Elementcount 多于 (EC)  | UINT32 | 此元素后面的 MRL 项的计数。 |
 | 4 |   | DataBuffer | DATABUFFER | MRL 记录的数组，每个记录都指定为 [MBIM_UMTS_MRL_INFO](#mbim_gsm_nmr_info) 结构。 |
@@ -170,7 +170,7 @@ MBIM_UMTS_MRL 结构包含邻近 UMTS 单元 (MRL) 的已测量结果列表。
 
 MBIM_UMTS_MRL_INFO 结构包含有关相邻 UMTS 单元格的信息。
 
-| 偏移量 | 大小 | 字段 | 类型 | 描述 |
+| Offset | 大小 | 字段 | 类型 | 说明 |
 | --- | --- | --- | --- | --- |
 | 0 | 4 | ProviderIdOffset | OFFSET | 从该结构的开头算起的偏移量（以字节为单位），该偏移量是一个数字 (0-9) 名为 *ProviderId* 的字符串，用于表示网络提供程序标识。 此字符串是三位数 Mobile 国家/地区代码的串联 (MCC) 和两个或三个数字的移动网络代码 (MNC) 。 当没有返回 *ProviderId* 信息时，此成员可能为 NULL。 |
 | 4 | 4 | ProviderIdSize | 大小 (0-12)  | 用于 *ProviderId*的大小。 |
@@ -189,7 +189,7 @@ MBIM_UMTS_MRL_INFO 结构包含有关相邻 UMTS 单元格的信息。
 
 MBIM_TDSCDMA_SERVING_CELL_INFO 结构包含 TDSCDMA 服务单元的相关信息。
 
-| 偏移量 | 大小 | 字段 | 类型 | 描述 |
+| Offset | 大小 | 字段 | 类型 | 说明 |
 | --- | --- | --- | --- | --- |
 | 0 | 4 | ProviderIdOffset | OFFSET | 从该结构的开头算起的偏移量（以字节为单位），该偏移量是一个数字 (0-9) 名为 *ProviderId* 的字符串，用于表示网络提供程序标识。 此字符串是三位数 Mobile 国家/地区代码的串联 (MCC) 和两个或三个数字的移动网络代码 (MNC) 。 当没有返回 *ProviderId* 信息时，此成员可能为 NULL。 |
 | 4 | 4 | ProviderIdSize | 大小 (0-12)  | 用于 *ProviderId*的大小。 |
@@ -206,7 +206,7 @@ MBIM_TDSCDMA_SERVING_CELL_INFO 结构包含 TDSCDMA 服务单元的相关信息�
 
 MBIM_TDSCDMA_MRL 结构包含邻近 TDSCDMA 单元 (MRL) 的已测量结果列表。
 
-| 偏移量 | 大小 | 字段 | 类型 | 描述 |
+| Offset | 大小 | 字段 | 类型 | 说明 |
 | --- | --- | --- | --- | --- |
 | 0 | 4 | Elementcount 多于 (EC)  | UINT32 | 此元素后面的 MRL 项的计数。 |
 | 4 |   | DataBuffer | DATABUFFER | MRL 记录的数组，每个记录都指定为 [MBIM_TDSCDMA_MRL_INFO](#mbim_tdscdma_mrl_info) 结构。 |
@@ -215,7 +215,7 @@ MBIM_TDSCDMA_MRL 结构包含邻近 TDSCDMA 单元 (MRL) 的已测量结果列�
 
 MBIM_TDSCDMA_MRL_INFO 结构包含有关相邻 TDSCDMA 单元格的信息。
 
-| 偏移量 | 大小 | 字段 | 类型 | 描述 |
+| Offset | 大小 | 字段 | 类型 | 说明 |
 | --- | --- | --- | --- | --- |
 | 0 | 4 | ProviderIdOffset | OFFSET | 从该结构的开头算起的偏移量（以字节为单位），该偏移量是一个数字 (0-9) 名为 *ProviderId* 的字符串，用于表示网络提供程序标识。 此字符串是三位数 Mobile 国家/地区代码的串联 (MCC) 和两个或三个数字的移动网络代码 (MNC) 。 当没有返回 *ProviderId* 信息时，此成员可能为 NULL。 |
 | 4 | 4 | ProviderIdSize | 大小 (0-12)  | 用于 *ProviderId*的大小。 |
@@ -234,7 +234,7 @@ MBIM_TDSCDMA_MRL_INFO 结构包含有关相邻 TDSCDMA 单元格的信息。
 
 MBIM_LTE_SERVING_CELL_INFO 结构包含有关 LTE 服务单元的信息。
 
-| 偏移量 | 大小 | 字段 | 类型 | 描述 |
+| Offset | 大小 | 字段 | 类型 | 说明 |
 | --- | --- | --- | --- | --- |
 | 0 | 4 | ProviderIdOffset | OFFSET | 从该结构的开头算起的偏移量（以字节为单位），该偏移量是一个数字 (0-9) 名为 *ProviderId* 的字符串，用于表示网络提供程序标识。 此字符串是三位数 Mobile 国家/地区代码的串联 (MCC) 和两个或三个数字的移动网络代码 (MNC) 。 当没有返回 *ProviderId* 信息时，此成员可能为 NULL。 |
 | 4 | 4 | ProviderIdSize | 大小 (0-12)  | 用于 *ProviderId*的大小。 |
@@ -251,7 +251,7 @@ MBIM_LTE_SERVING_CELL_INFO 结构包含有关 LTE 服务单元的信息。
 
 MBIM_LTE_MRL 结构包含 "已测量的结果" 列表 (相邻的 LTE 单元的 MRL) 。
 
-| 偏移量 | 大小 | 字段 | 类型 | 描述 |
+| Offset | 大小 | 字段 | 类型 | 说明 |
 | --- | --- | --- | --- | --- |
 | 0 | 4 | Elementcount 多于 (EC)  | UINT32 | 此元素后面的 MRL 项的计数。 |
 | 4 |   | DataBuffer | DATABUFFER | MRL 记录的数组，每个记录都指定为 [MBIM_LTE_MRL_INFO](#mbim_lte_mrl_info) 结构。 |
@@ -260,7 +260,7 @@ MBIM_LTE_MRL 结构包含 "已测量的结果" 列表 (相邻的 LTE 单元的 M
 
 MBIM_LTE_MRL_INFO 结构包含有关相邻的 LTE 单元格的信息。
 
-| 偏移量 | 大小 | 字段 | 类型 | 描述 |
+| Offset | 大小 | 字段 | 类型 | 说明 |
 | --- | --- | --- | --- | --- |
 | 0 | 4 | ProviderIdOffset | OFFSET | 从该结构的开头算起的偏移量（以字节为单位），该偏移量是一个数字 (0-9) 名为 *ProviderId* 的字符串，用于表示网络提供程序标识。 此字符串是三位数 Mobile 国家/地区代码的串联 (MCC) 和两个或三个数字的移动网络代码 (MNC) 。 当没有返回 *ProviderId* 信息时，此成员可能为 NULL。 |
 | 4 | 4 | ProviderIdSize | 大小 (0-12)  | 用于 *ProviderId*的大小。 |
@@ -278,7 +278,7 @@ MBIM_LTE_MRL_INFO 结构包含有关相邻的 LTE 单元格的信息。
 
 MBIM_CDMA_MRL 结构包含) 和邻近 CDMA 单元的已测量结果列表 (MRL。
 
-| 偏移量 | 大小 | 字段 | 类型 | 描述 |
+| Offset | 大小 | 字段 | 类型 | 说明 |
 | --- | --- | --- | --- | --- |
 | 0 | 4 | Elementcount 多于 (EC)  | UINT32 | 此元素后面的 MRL 项的计数。 |
 | 4 |   | DataBuffer | DATABUFFER | MRL 记录的数组，每个记录都指定为 [MBIM_CDMA_MRL_INFO](#mbim_cdma_mrl_info) 结构。 |
@@ -287,7 +287,7 @@ MBIM_CDMA_MRL 结构包含) 和邻近 CDMA 单元的已测量结果列表 (MRL�
 
 MBIM_CDMA_MRL_INFO 的数据结构是为 CDMA2000 网络类型设计的。 可以同时有多个 CDMA2000 服务单元。 在同一列表中将返回提供单元格和相邻单元格的。 **ServingCellFlag**字段指示单元格是否为服务单元。
 
-| 偏移量 | 大小 | 字段 | 类型 | 描述 |
+| Offset | 大小 | 字段 | 类型 | 说明 |
 | --- | --- | --- | --- | --- |
 | 0 | 4 | ServingCellFlag | UINT32 | 指示这是否为服务单元。 如果值为1，则表示服务单元格，值为0时表示相邻单元格。 在调用) 时，一次可能有多个服务单元格 (值得注意。 |
 | 4 | 4 | NID | UINT32 | 网络 ID (0-65535) 。 如果此信息不可用，则使用0xFFFFFFFF。 |
@@ -305,7 +305,7 @@ MBIM_CDMA_MRL_INFO 的数据结构是为 CDMA2000 网络类型设计的。 可�
 
 ### <a name="status-codes"></a>状态代码
 
-此 CID 使用一般状态代码 (参阅 [公共 USB MBIM standard](https://go.microsoft.com/fwlink/p/?linkid=842064)) 的9.4.5 节中的状态代码的使用。
+此 CID 使用一般状态代码 (参阅 [公共 USB MBIM standard](https://www.usb.org/document-library/mobile-broadband-interface-model-v10-errata-1-and-adopters-agreement)) 的9.4.5 节中的状态代码的使用。
 
 ## <a name="mbim_cid_location_info_status"></a><a name="mbim_cid_location_info_status"></a>MBIM_CID_LOCATION_INFO_STATUS
 
@@ -324,7 +324,7 @@ MBIM_CDMA_MRL_INFO 的数据结构是为 CDMA2000 网络类型设计的。 可�
 
 ### <a name="parameters"></a>参数
 
-| 类型 | Set | 查询 | 通知 |
+| 类型 | 设置 | 查询 | 通知 |
 | --- | --- | --- | --- |
 | 命令 | 不适用 | 不适用 | 不适用 |
 | 响应 | Not appliable | MBIM_LOCATION_INFO | MBIM_LOCATION_INFO |
@@ -333,7 +333,7 @@ MBIM_CDMA_MRL_INFO 的数据结构是为 CDMA2000 网络类型设计的。 可�
 
 不使用 MBIM_COMMAND_MSG 的 InformationBuffer。 MBIM_COMMAND_DONE 的 InformationBuffer 包含 [MBIM_LOCATION_INFO](#mbim_location_info) 的结构。
 
-### <a name="set"></a>Set
+### <a name="set"></a>设置
 
 不适用。
 
@@ -341,7 +341,7 @@ MBIM_CDMA_MRL_INFO 的数据结构是为 CDMA2000 网络类型设计的。 可�
 
 #### <a name="mbim_location_info"></a><a name="mbim_location_info"></a>MBIM_LOCATION_INFO
 
-| 偏移量 | 大小 | 字段 | 类型 | 描述 |
+| Offset | 大小 | 字段 | 类型 | 说明 |
 | --- | --- | --- | --- | --- |
 | 0 | 4 | LocationAreaCode | UINT32 | 当前位置的 GSM/UMTS 区号。 如果当前系统类型不适用，则返回0xFFFFFFFF。 |
 | 4 | 4 | TrackingAreaCode | UINT32 | 当前位置的 LTE 跟踪区域代码。 如果当前系统类型不适用，则返回0xFFFFFFFF。 |

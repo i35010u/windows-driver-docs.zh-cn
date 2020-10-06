@@ -4,12 +4,12 @@ description: PKEY \_ AudioEngine \_ OEMFormat
 ms.assetid: a1587f46-1c21-4419-a1a4-81fe299c6871
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 17312df4d3cf4945e287ea702b220275225d09df
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: fbd035c10ce0666199b6460f950db3763ddbf30f
+ms.sourcegitcommit: 20eac54e419a594f7cea766ee28f158559dfd79c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90715008"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91754954"
 ---
 # <a name="pkey_audioengine_oemformat"></a>PKEY \_ AudioEngine \_ OEMFormat
 
@@ -46,7 +46,7 @@ PKEY_AudioEngine_OEMFormat              = "{E4870E26-3CC5-4CD2-BA46-CA0A9A70ED04
 
 在上述 INF 示例中， **PKEY \_ AudioEndpoint \_ Association** 属性键用于标识终结点设备的 KS pin 类别 GUID。 **PKEY \_ AudioEndpoint \_ ControlPanelProvider**属性键标识 COM 接口对象的类 GUID，该对象向终结点设备 Mmsys.cpl 中的属性页提供属性值。 有关这些属性键的详细信息，请参阅 Windows SDK 文档。 有关 KS pin 类别 Guid 的详细信息，请参阅 [固定类别属性](./pin-category-property.md)。
 
-在前面的 INF 示例中，与 **PKEY \_ AudioEngine \_ OEMFormat** 属性键关联的属性值是一个48字节的注册表 \_ 二进制值，其中包含描述格式的 [**WAVEFORMATEX**](/windows/win32/api/mmreg/ns-mmreg-twaveformatex) 或 [**WAVEFORMATEXTENSIBLE**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-waveformatextensible) 结构的序列化表示形式。 若要计算 \_ 要与**PKEY \_ AudioEngine \_ OEMFormat**属性键关联的 REG BINARY 数据值，请将**WAVEFORMATEX**或**WAVEFORMATEXTENSIBLE**结构嵌入到**PropVariant**结构中，然后通过调用**PropVariant**函数序列化**StgSerializePropVariant**结构。 有关 **PropVariant** 结构和 **StgSerializePropVariant** 函数的详细信息，请参阅 Windows SDK 文档。
+在前面的 INF 示例中，与 **PKEY \_ AudioEngine \_ OEMFormat** 属性键关联的属性值是一个48字节的注册表 \_ 二进制值，其中包含描述格式的 [**WAVEFORMATEX**](/windows/win32/api/mmreg/ns-mmreg-waveformatex) 或 [**WAVEFORMATEXTENSIBLE**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-waveformatextensible) 结构的序列化表示形式。 若要计算 \_ 要与**PKEY \_ AudioEngine \_ OEMFormat**属性键关联的 REG BINARY 数据值，请将**WAVEFORMATEX**或**WAVEFORMATEXTENSIBLE**结构嵌入到**PropVariant**结构中，然后通过调用**PropVariant**函数序列化**StgSerializePropVariant**结构。 有关 **PropVariant** 结构和 **StgSerializePropVariant** 函数的详细信息，请参阅 Windows SDK 文档。
 
 下面的代码示例是一个控制台应用程序，它打印 \_ 前面的 INF 示例中显示的注册表项二进制数据。
 
@@ -118,7 +118,7 @@ void main()
 }
 ```
 
-前面的代码示例中的 main 函数创建一个 [**WAVEFORMATEXTENSIBLE**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-waveformatextensible) 结构来说明默认格式。 您可以修改 main 函数以创建 [**WAVEFORMATEX**](/windows/win32/api/mmreg/ns-mmreg-twaveformatex) 或 **WAVEFORMATEXTENSIBLE** 结构来描述终结点设备的默认格式。
+前面的代码示例中的 main 函数创建一个 [**WAVEFORMATEXTENSIBLE**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-waveformatextensible) 结构来说明默认格式。 您可以修改 main 函数以创建 [**WAVEFORMATEX**](/windows/win32/api/mmreg/ns-mmreg-waveformatex) 或 **WAVEFORMATEXTENSIBLE** 结构来描述终结点设备的默认格式。
 
 前面的代码示例中的 PrintSerializedFormat 函数序列化格式说明，并将序列化格式说明打印为 REG \_ 二进制数据。 可以复制该函数生成的打印输出，并将其粘贴到 INF 文件中。
 

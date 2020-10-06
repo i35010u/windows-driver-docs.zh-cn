@@ -4,12 +4,12 @@ description: 使用 Winsock 内核的网络驱动程序开发路线图
 ms.assetid: f94952c3-02b1-4bd2-bd73-e6d6d42a06fb
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e2a45119978f1fe33c2eb9d1d338e39f98b7f536
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: 2b7501dc410c9f61e895919937ee661a21bd4ebd
+ms.sourcegitcommit: 20eac54e419a594f7cea766ee28f158559dfd79c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91734232"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91754988"
 ---
 # <a name="roadmap-for-developing-network-drivers-with-winsock-kernel"></a>使用 Winsock 内核的网络驱动程序开发路线图
 
@@ -26,7 +26,7 @@ ms.locfileid: "91734232"
 
     [Windows 网络体系结构和 OSI 模型](windows-network-architecture-and-the-osi-model.md)
 
-    [NDIS 微型端口驱动程序](ndis-miniport-drivers.md)
+    [NDIS 微型端口驱动程序](roadmap-for-developing-ndis-miniport-drivers.md)
 
     [编写 NDIS 微型端口驱动程序](./initializing-a-miniport-driver.md)
 

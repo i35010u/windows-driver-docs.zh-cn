@@ -4,12 +4,12 @@ description: 本主题提供了 Windows 10 音频体系结构的高级摘要。
 ms.assetid: 1FC95504-18AA-4F3B-8E96-005276699694
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4b375b292c4a281c443d58b2d0686884d83c7f96
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 4dccf71c450eaf9f9c1cf084bbeb2002ecfdac34
+ms.sourcegitcommit: 20eac54e419a594f7cea766ee28f158559dfd79c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90716628"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91754870"
 ---
 # <a name="windows-audio-architecture"></a>Windows 音频体系结构
 
@@ -40,7 +40,7 @@ ms.locfileid: "90716628"
 -   [DirectShow](/windows/desktop/DirectShow/directshow)
 -   [DirectSound](/previous-versions/windows/desktop/ee416960(v=vs.85))
 -   [PlaySound](/previous-versions/dd743680(v=vs.85))
--   [MediaControlContract](/uwp/extension-sdks/windows-desktop-extension-sdk)
+-   [MediaControl](/uwp/api/Windows.Media.MediaControl)
 
 **低级别 Api**
 

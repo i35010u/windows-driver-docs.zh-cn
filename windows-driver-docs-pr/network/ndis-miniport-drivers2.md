@@ -8,12 +8,12 @@ keywords:
 - 无连接驱动程序 WDK 网络
 ms.date: 11/26/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 6d0a4c2f6fc592be734316c6bed1c6b7de1c2395
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 1e72f7defeeb4623f625724ee07a69351a0b009c
+ms.sourcegitcommit: 20eac54e419a594f7cea766ee28f158559dfd79c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89213919"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91754850"
 ---
 # <a name="miniport-drivers"></a>微型端口驱动程序
 
@@ -56,6 +56,6 @@ NDIS 微型端口驱动程序可以具有非 NDIS 下边缘 (参阅下图) 。
 
 ## <a name="related-topics"></a>相关主题
 
-[NDIS 微型端口驱动程序](ndis-miniport-drivers.md)
+[NDIS 微型端口驱动程序](roadmap-for-developing-ndis-miniport-drivers.md)
 
 [NDIS 微型端口驱动程序参考](/windows-hardware/drivers/ddi/_netvista/)
