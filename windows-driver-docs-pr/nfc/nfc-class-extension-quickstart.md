@@ -13,12 +13,12 @@ ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
 ms.localizationpriority: low
-ms.openlocfilehash: 985731a86782e9856a5dc28d7cd4050e86ae93b9
-ms.sourcegitcommit: b3e38d06762246c77cedd8e82d740ebea104c538
+ms.openlocfilehash: 47fa59d1b06952065c6c6860b6c25d9097a17cf5
+ms.sourcegitcommit: 9b3dec2f2cd9a7ed9b340b4794ce6ff4134d8ebe
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/02/2020
-ms.locfileid: "91662425"
+ms.lasthandoff: 10/07/2020
+ms.locfileid: "91787641"
 ---
 # <a name="nfc-cx-quick-start-guide"></a>NFC CX 快速入门指南
 
@@ -27,9 +27,9 @@ ms.locfileid: "91662425"
 > [!NOTE]
 > 在其实现中使用类扩展驱动程序的驱动程序称为 "客户端驱动程序"。 这就是类扩展驱动程序的客户端。
 
-## <a name="prerequisites"></a>必备条件
+## <a name="prerequisites"></a>先决条件
 
-* NFC 控制器的固件必须实现 NFC 论坛的 [Nfc 控制器接口 (NCI) ](https://nfc-forum.org/our-work/specifications-and-application-documents/specifications/nfc-controller-interface-nci-specification/) 协议。
+* NFC 控制器的固件必须实现 NFC 论坛的 [Nfc 控制器接口 (NCI) ](https://nfc-forum.org/our-work/specification-releases/specifications/) 协议。
 * [Visual Studio 2017](https://visualstudio.microsoft.com/downloads/?utm_content=download+vs2017) (或更高版本) 。
 * [Windows 10 SDK](https://developer.microsoft.com/windows/downloads/windows-10-sdk)。
 * [Windows 10 驱动程序工具包 (WDK) ](../download-the-wdk.md)。
@@ -420,7 +420,7 @@ GitHub 上提供了此示例代码的完整版本： [NFC CX 客户端驱动程�
 
 21. [`NfcCxNciReadNotification`](/windows-hardware/drivers/ddi/nfccx/nf-nfccx-nfccxncireadnotification)当 NFC 控制器具有应发送到 NFC CX 的 NCI 数据包时，调用函数。 通常在硬件事件回调中完成此操作。
 
-    例如：
+    例如： 。
     * [GPIO 中断](../gpio/gpio-interrupts.md)事件回调。  (I<sup>2</sup>C 和 SPI) 
     * [USB 连续读取器](../usbcon/how-to-use-the-continous-reader-for-getting-data-from-a-usb-endpoint--umdf-.md)回调。
 

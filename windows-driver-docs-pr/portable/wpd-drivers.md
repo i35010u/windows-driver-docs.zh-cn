@@ -3,15 +3,14 @@ description: WPD 驱动程序
 title: WPD 驱动程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bc320e259b9379ea974ecf957459cf583b987af0
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: 76665de897acb6c5149b87dcd0153d0063b91250
+ms.sourcegitcommit: 9b3dec2f2cd9a7ed9b340b4794ce6ff4134d8ebe
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91732819"
+ms.lasthandoff: 10/07/2020
+ms.locfileid: "91787634"
 ---
 # <a name="wpd-drivers"></a>WPD 驱动程序
-
 
 Microsoft Windows 便携设备 (WPD) 使计算机能够与附加的媒体和存储设备进行通信。 此系统通过提供一种灵活、可靠的方式来使计算机与音乐播放器、存储设备、移动电话以及许多其他类型的连接设备通信，同时取代 Windows Media 设备管理器 (WMDM) 和 Windows 图像获取 (WIA) 。
 
@@ -19,4 +18,4 @@ Microsoft 为标准协议和设备提供了几个驱动程序，包括图片传�
 
 有关为 Windows 便携设备编写的应用程序的详细信息，请参阅 [WPD SDK 文档](/windows/win32/windows-portable-devices)。
 
-有关 WPD 驱动程序开发和 WPD 应用程序开发的详细信息，请参阅 [WPD 博客](https://go.microsoft.com/fwlink/p/?linkid=178687)，它对于 Windows 10 是准确的。
+有关 WPD 驱动程序开发和 WPD 应用程序开发的详细信息，请参阅 [WPD 博客 (Archive) ](https://docs.microsoft.com/archive/blogs/wpdblog/)，它对于 Windows 10 是准确的。

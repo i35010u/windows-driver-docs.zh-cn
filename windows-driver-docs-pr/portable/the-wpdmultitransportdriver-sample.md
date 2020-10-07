@@ -3,15 +3,14 @@ description: WpdMultiTransportDriver 示例
 title: WpdMultiTransportDriver 示例
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f359cd009fd42be801746a9395aca33215238bcf
-ms.sourcegitcommit: 15caaf6d943135efcaf9975927ff3933957acd5d
+ms.openlocfilehash: 63cfb0546bfe54bfb378a5f5c05b99f987c20884
+ms.sourcegitcommit: 9b3dec2f2cd9a7ed9b340b4794ce6ff4134d8ebe
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88969270"
+ms.lasthandoff: 10/07/2020
+ms.locfileid: "91787629"
 ---
 # <a name="the-wpdmultitransportdriver-sample"></a>WpdMultiTransportDriver 示例
-
 
 WPD 驱动程序文档中的此部分介绍了 Windows 驱动程序工具包中包含的 multitransport 驱动程序 WpdMultiTransportDriver 示例。
 
@@ -33,25 +32,13 @@ WPD 驱动程序文档中的此部分介绍了 Windows 驱动程序工具包中�
 
 下表中标识了 WpdHelloWorldDriver 与 WpdMultiTransportDriver 之间的主要区别。
 
-| 修订或更改     | 说明                                                                                                                                                                                                                   |
-|------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| 设备到达         | 新的 multitransport 驱动程序 (FUID) 为给定设备创建功能唯一标识符，启用 multitransport 选项，将必要的即插即用设置 (PnP) 值，并设置当前传输带宽。 |
-| 多队列支持 | 新的 multitransport 驱动程序支持两个 i/o 队列。  (WpdHelloWorldDriver 支持单个队列。 )                                                                                                                      |
+| 修订或更改 | 说明 |
+|--|--|
+| 设备到达 | 新的 multitransport 驱动程序 (FUID) 为给定设备创建功能唯一标识符，启用 multitransport 选项，将必要的即插即用设置 (PnP) 值，并设置当前传输带宽。 |
+| 多队列支持 | 新的 multitransport 驱动程序支持两个 i/o 队列。  (WpdHelloWorldDriver 支持单个队列。 )  |
 
- 
-
-若要浏览 multitransport 驱动程序的功能并测试实际传输切换，可以安装 [媒体传输协议移植工具包](https://www.microsoft.com/download/details.aspx?id=19153) ，并使用 MTP 模拟器 (*MtpSimUi.exe) * 应用程序。 通过使用此应用程序，你可以安装 Microsoft 的 MTP 驱动程序、连接或断开与仿真设备的连接，以及交换机传输。
-
-## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
-
+## <a name="related-topics"></a>相关主题
 
 [WPD 驱动程序示例](the-wpd-driver-samples.md)
 
- 
-
- 
-
-
-
-
-
+[MTP 安装程序信息 (.inf) 文件](the-mtp-setup-information---inf--file.md)

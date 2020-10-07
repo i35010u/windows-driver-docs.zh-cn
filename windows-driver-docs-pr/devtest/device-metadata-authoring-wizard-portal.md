@@ -1,6 +1,6 @@
 ---
 title: 设备元数据创作向导
-description: 设备元数据创作向导是一种工具，设备制造商和服务操作员可使用此工具为其设备和服务开发元数据包。
+description: 设备制造商和服务操作员可以使用设备元数据创作向导为其设备和服务创建元数据包。
 ms.assetid: 2e7beadc-66b2-4421-9f4e-1bdd06c70065
 keywords:
 - 设备元数据创作向导帮助
@@ -9,18 +9,19 @@ keywords:
 - 设备元数据创作工具文档
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 761048e40bb455bdf0f84514d33302f2ed387246
-ms.sourcegitcommit: 372464be981a39781c71049126f36891cb5d0cad
+ms.openlocfilehash: 0b7a61ead9352823a2633ce2296f1db1e94c7cc9
+ms.sourcegitcommit: 9b3dec2f2cd9a7ed9b340b4794ce6ff4134d8ebe
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/02/2020
-ms.locfileid: "91646105"
+ms.lasthandoff: 10/07/2020
+ms.locfileid: "91787635"
 ---
 # <a name="device-metadata-authoring-wizard"></a>设备元数据创作向导
 
-\[本主题介绍 Windows 驱动程序工具包 (WDK) 8 中提供的设备元数据创作工具。 如果正在开发 Windows 8.1 设备体验，请使用 [Microsoft Visual Studio 2013 和 Windows 驱动程序工具包](https://www.microsoft.com/download/details.aspx?id=42273)随附的设备元数据创作向导 (WDK) 8.1。 \]
+>[!NOTE]
+>本主题介绍 Windows 驱动程序工具包 (WDK) 8 中提供的设备元数据创作工具。 若要为 Windows 8.1 开发设备体验，请使用 [Microsoft Visual Studio 2013 和 Windows 驱动程序工具包](https://www.microsoft.com/download/details.aspx?id=42273)随附的设备元数据创作向导 (WDK) 8.1。
 
-## <a name="purpose"></a>用途
+## <a name="purpose"></a>目的
 
 设备元数据创作向导是一种工具，设备制造商和服务操作员可使用此工具为其设备和服务开发元数据包。 此元数据包提供向 Windows 用户显示的信息，包括设备或服务的照片照片图标和名称。
 

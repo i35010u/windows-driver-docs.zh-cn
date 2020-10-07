@@ -17,12 +17,12 @@ keywords:
 - WSDAPI 基本互操作性工具 WDK、用于测试的设备
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b514adfe9617aec6b4422bfe016aceee1c63cb40
-ms.sourcegitcommit: 80e40a2d0434c0c2904e6fe31626ca643de3ea00
+ms.openlocfilehash: 1814b0c3974f79724bf81ec5ce6316c99235bb7c
+ms.sourcegitcommit: 9b3dec2f2cd9a7ed9b340b4794ce6ff4134d8ebe
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/21/2020
-ms.locfileid: "88714600"
+ms.lasthandoff: 10/07/2020
+ms.locfileid: "91787665"
 ---
 # <a name="wsdbit-testing-environment"></a>WSDBIT 测试环境
 
@@ -53,11 +53,11 @@ ms.locfileid: "88714600"
 
 测试设备应托管三种类型的服务：
 
-- https://schemas.example.org/SimpleService
+- `https://schemas.example.org/SimpleService`
 
-- https://schemas.example.org/AttachmentService
+- `https://schemas.example.org/AttachmentService`
 
-- https://schemas.example.org/EventingService
+- `https://schemas.example.org/EventingService`
 
 ### <a name="simpleservice"></a>SimpleService
 
@@ -73,7 +73,7 @@ ms.locfileid: "88714600"
 
 ### <a name="attachmentservice"></a>AttachmentService
 
-**AttachmentService**服务发送和接收附件。 要发送和接收的附件数据在 \\ 互操作目录中包含为两个单独的文件： Image1.jpg 和 Image2.jpg。 此服务有两种方法：
+**AttachmentService**服务发送和接收附件。 要发送和接收的附件数据在 \\ 互操作目录中包含为两个单独的文件： `Image1.jpg` 和 `Image2.jpg` 。 此服务有两种方法：
 
 - **OneWayAttachment** 是一种单向方法，其中附件作为参数。
 

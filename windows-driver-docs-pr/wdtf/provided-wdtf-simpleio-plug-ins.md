@@ -4,12 +4,12 @@ description: 简单 i/o 插件是 Windows 驱动程序测试框架的扩展 (WDT
 ms.assetid: 948E8CF5-24A1-4A7C-BD18-374F989AD053
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ebbc6f369e4468224e86f280b6757bf9f50dbe60
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: 7742d35723561de1fc4e1e94420c3ccf84599eef
+ms.sourcegitcommit: 9b3dec2f2cd9a7ed9b340b4794ce6ff4134d8ebe
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91732565"
+ms.lasthandoff: 10/07/2020
+ms.locfileid: "91787654"
 ---
 # <a name="provided-wdtf-simple-io-plug-ins"></a>提供的 WDTF 简单 I/O 插件
 
@@ -29,7 +29,7 @@ ms.locfileid: "91732565"
 
 - 如果目标音频设备具有 HDMI 视频和音频输出功能，若要执行音频测试，设备必须连接到 HDMI 音频功能设备，如 HDMI 监视器或 A/V 接收器。
 
-### <a name="type-of-io-plug-in-performs"></a>I/o 插件的类型执行
+### <a name="type-of-io-plug-in-performs-audio"></a>I/o 插件的类型执行 (音频) 
 
 - 在呈现类型终结点上播放正弦微调。 捕获捕获类型终结点上的音频。
 
@@ -71,7 +71,7 @@ xperf.exe -merge Audio_SimpleIo_Kernel.etl Audio_SimpleIo.etl Audio_SimpleIo _Me
 
 - 无特殊要求。
 
-#### <a name="type-of-io-plug-in-performs"></a>I/o 插件的类型执行
+#### <a name="type-of-io-plug-in-performs-bluetooth"></a>I/o 插件的类型 (蓝牙) 
 
 - 使用 [**BluetoothFindFirstDevice 函数**](/windows/win32/api/bluetoothapis/nf-bluetoothapis-bluetoothfindfirstdevice) 查找蓝牙设备。
 
@@ -263,8 +263,8 @@ xperf.exe -merge Audio_SimpleIo_Kernel.etl Audio_SimpleIo.etl Audio_SimpleIo _Me
 
 - 首先检查测试日志文件中的消息。
 - 通过在 USB 2.0 和 USB 3.0 堆栈上启用 Windows (ETW) 的事件跟踪，进一步进行调查。
-  - 对于 USB 2.0，请参阅[windows 7 usb 核心堆栈中](https://go.microsoft.com/fwlink/p/?linkid=266442)的 MICROSOFT Windows USB 核心团队博客-ETW
-  - 对于 USB 3.0，请参阅 Microsoft Windows USB 核心团队博客- [如何在 Windows 8 中捕获和读取 USB ETW 跟踪]( https://go.microsoft.com/fwlink/p/?linkid=266443)
+  - 对于 USB 2.0，请参阅[windows 7 usb 核心堆栈中](https://techcommunity.microsoft.com/t5/microsoft-usb-blog/etw-in-the-windows-7-usb-core-stack/ba-p/270689)的 MICROSOFT Windows USB 核心团队博客-ETW
+  - 对于 USB 3.0，请参阅 Microsoft Windows USB 核心团队博客- [如何在 Windows 8 中捕获和读取 USB ETW 跟踪](https://techcommunity.microsoft.com/t5/microsoft-usb-blog/how-to-capture-and-read-usb-etw-traces-in-windows-8/ba-p/270762)
 
 ## <a name="device-fundamental-tests-that-have-specific-device-configuration-requirements"></a>具有特定设备配置要求的设备基础测试
 
