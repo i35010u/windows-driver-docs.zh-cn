@@ -12,21 +12,20 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 9bed13154526772a9ed998c42ebfc19f6decd8af
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 14c7f8db2cdeeb5c70bd7a18bc5c555c96a635f6
+ms.sourcegitcommit: f2fbb6e54e085e9329288cee49860fe380be9c4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89384409"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91778780"
 ---
 # <a name="bcdedit-bootdebug"></a>BCDEdit /bootdebug
-
 
 **/Bootdebug** boot 选项启用或禁用当前或指定的 Windows 操作系统启动项的启动调试。
 
 
 ``` syntax
-    bcdedit /bootdebug [{ID}] { on | off } 
+bcdedit /bootdebug [{ID}] { on | off }
 ```
 
 <a name="parameters"></a>参数
@@ -56,28 +55,28 @@ ms.locfileid: "89384409"
 |dbgsetting 参数|默认值|
 |--- |--- |
 |debugtype|Local|
-|debugstart|活动|
+|debugstart|可用|
 |noumex|是|
 
 
 以下命令启用了当前操作系统的 Windows 启动加载程序的启动调试。 Windows 启动加载器 ( # A0) 控制负载 UI，并加载内核启动驱动程序。
 
-```
+```console
 bcdedit /bootdebug on
 ```
 
 以下命令禁用 ( # A0) 的 Windows 启动管理器的启动调试。 Windows 启动管理器选择将启动的操作系统，然后加载 Windows 启动加载程序。
 
-```
+```console
 bcdedit /bootdebug {bootmgr} off
 ```
 
 在下面的示例中，通过命令，可以调试 Windows 启动管理器、启动加载程序，然后对操作系统进行内核调试。 这种组合允许在每个启动阶段进行调试。 如果使用此组合，则目标计算机将进入调试器三次：加载 Windows 启动管理器时、启动加载程序加载时以及操作系统启动时。
 
-```
-bcdedit /bootdebug {bootmgr} on 
-bcdedit /bootdebug on 
-bcdedit /debug on 
+```console
+bcdedit /bootdebug {bootmgr} on
+bcdedit /bootdebug on
+bcdedit /debug on
 ```
 
 有关 Windows 调试工具的常规信息，请参阅 [Windows 调试](../debugger/index.md)。

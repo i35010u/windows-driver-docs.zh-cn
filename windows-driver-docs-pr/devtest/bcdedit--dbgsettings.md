@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: fc180c0145e92cf79f4c5d2f6e9eac36416d8cf7
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 6a626f6a5f49c46c3dcf3cb96aef6c106193ded6
+ms.sourcegitcommit: f2fbb6e54e085e9329288cee49860fe380be9c4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89384463"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91778776"
 ---
 # <a name="bcdedit-dbgsettings"></a>BCDEdit /dbgsettings
 
@@ -73,7 +73,7 @@ bcdedit /set "{dbgsettings}" busparams b.d.f
 
 如果要手动配置调试器连接，则必须指定总线参数。 有关详细信息，请参阅手动 [设置 KDNET 网络内核调试](../debugger/setting-up-a-network-debugging-connection.md) ，并 [通过 USB 3.0 电缆手动设置内核模式调试](../debugger/setting-up-a-usb-3-0-debug-cable-connection.md)。
 
-### <a name="examples"></a>示例
+## <a name="examples"></a>示例
 
 以下命令将目标计算机配置为使用以太网连接进行调试，并指定主计算机的 IP 地址。 此命令还指定主机可用于连接到目标计算机的端口号。 
 
@@ -194,7 +194,7 @@ bcdedit /dbgsettings usb targetname:myTarget
 |dbgsetting 参数|默认值|
 |--- |--- |
 |debugtype|Local|
-|debugstart|活动|
+|debugstart|可用|
 |noumex|是|
 
 

@@ -1,107 +1,128 @@
 ---
-title: 超时检测和恢复 (TDR) 注册表项
-description: 以下 TDR （超时检测和恢复）-与相关的注册表项均显示驱动程序开发测试或调试目的。
+title: 测试和调试 TDR
+description: '用于测试和调试 TDR (超时检测和恢复的注册表项和 WHLK 测试) '
 ms.assetid: 77b8b2aa-0821-4297-a1e4-57894bd4181f
 keywords:
-- TDR （超时检测和恢复）
+- TDR 调试，驱动程序开发
+- 超时检测和恢复调试，驱动程序开发
+- TDR 测试，驱动程序开发
+- 超时检测和恢复测试，驱动程序开发
+- 注册表项，TDR，驱动程序开发
+- 注册表项，超时检测和恢复，驱动程序开发
 - WDK 显示开发
-ms.date: 10/29/2018
+- TDR 测试，WHLK
+- TDR 测试，Windows 硬件实验室工具包
+ms.date: 10/06/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 1130c27a3109ed22211b9fb62e6f6e86d5fcfc01
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.custom: contperfq2
+ms.openlocfilehash: 042be85a823fe04e5ff2802ceb7f4a1a416f942b
+ms.sourcegitcommit: f2fbb6e54e085e9329288cee49860fe380be9c4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63362715"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91778786"
 ---
-# <a name="timeout-detection-and-recovery-tdr-registry-keys"></a>超时检测和恢复 (TDR) 注册表项
+# <a name="testing-and-debugging-tdr"></a>测试和调试 TDR
 
-可以使用以下 TDR （超时检测和恢复） 的相关注册表项进行测试或调试目的。 也就是说，它们应不被操作外部目标测试或调试任何应用程序。
+## <a name="tdr-tests-in-whlk"></a>WHLK 中的 TDR 测试
 
--   **TdrLevel**
+[Windows 硬件实验室工具包](/windows-hardware/test/hlk/) (WHLK) 包含开发人员可用于测试和调试的特定于 TDR 的测试。 例如，可以使用 [**SIMULATEPREEMPTION TDR**](/windows-hardware/test/hlk/testref/86be5032-cfcd-4ee5-a515-0e3ebc0cb6f4)手动触发 GPU TDR。 有关各种 TDR 相关测试的详细信息，请参阅[**设备。**](/windows-hardware/test/hlk/testref/device-graphics)
 
-    指定恢复的初始级别。 默认值是在超时时恢复 (**TdrLevelRecover**)。
+## <a name="tdr-registry-keys-for-testing-and-debugging"></a>TDR 用于测试和调试的注册表项
 
-    ```registry
-    KeyPath   : HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\GraphicsDrivers
-    KeyValue  : TdrLevel
-    ValueType : REG_DWORD
-    ValueData : TdrLevelOff (0) - Detection disabled 
-     TdrLevelBugcheck (1) - Bug check on detected timeout, for example, no recovery.
-     TdrLevelRecoverVGA (2) - Recover to VGA (not implemented).
-     TdrLevelRecover (3) - Recover on timeout. This is the default value.
-    ```
+只有在驱动程序开发过程中，开发人员才能使用以下 TDR (超时检测和恢复) 相关注册表项，以便进行测试或调试。
 
--   **TdrDelay**
+> [!NOTE]
+> 这些注册表项不应由最终用户或在驱动程序开发过程中进行目标测试或调试的应用程序操作。
 
-    指定 GPU 可以延迟 preempt 请求在 GPU 计划程序中的秒的数。 这是有效的超时阈值。 默认值为 2 秒。
+### <a name="tdrlevel"></a>TdrLevel
 
-    ```registry
-    KeyPath   : HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\GraphicsDrivers
-    KeyValue  : TdrDelay
-    ValueType : REG_DWORD
-    ValueData : Number of seconds to delay. 2 seconds is the default value.
-    ```
+指定初始恢复级别。
 
--   **TdrDdiDelay**
+```registry
+KeyPath   : HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\GraphicsDrivers
+KeyValue  : TdrLevel
+ValueType : REG_DWORD
+ValueData : TdrLevelXxx (see the following table)
+```
 
-    指定操作系统允许将保留该驱动程序的线程的秒数。 在指定时间后操作系统 bug 检查代码视频的计算机\_TDR\_失败 (0x116)。 默认值为 5 秒。
+其中，TdrLevel*Xxx* 可以是以下值之一：
+| 值 | 含义 |
+| ----- | ------- |
+| TdrLevelOff (0)  | 已禁用检测 |
+| TdrLevelBugcheck (1)  | 检测到超时时检查 Bug例如，无恢复。 |
+| TdrLevelRecoverVGA (2)  | 恢复到 VGA (未实现) 。 |
+| TdrLevelRecover (3)  | 在超时时恢复。 这是默认值。 |
 
-    ```registry
-    KeyPath   : HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\GraphicsDrivers
-    KeyValue  : TdrDdiDelay
-    ValueType : REG_DWORD
-    ValueData : Number of seconds to leave the driver. 5 seconds is the default value.
-    ```
+### <a name="tdrdelay"></a>TdrDelay
 
--   **TdrTestMode**
+指定 GPU 可以延迟 GPU 计划程序的 preempt 请求的秒数。 这实际上是超时阈值。
 
-    保留。 不使用。
+```registry
+KeyPath   : HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\GraphicsDrivers
+KeyValue  : TdrDelay
+ValueType : REG_DWORD
+ValueData : Number of seconds to delay. The default value is 2 seconds.
+```
 
-    ```registry
-    KeyPath   : HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\GraphicsDrivers
-    KeyValue  : TdrTestMode
-    ValueType : REG_DWORD
-    ValueData : Do not use.
-    ```
+### <a name="tdrddidelay"></a>TdrDdiDelay
 
--   **TdrDebugMode**
+指定 OS 允许线程离开驱动程序的秒数。 在指定的时间后，操作系统 bug-使用代码 VIDEO_TDR_FAILURE (0x116) 检查计算机。
 
-    指定与调试相关 TDR 过程的行为。 默认值是 TDR\_调试\_模式\_恢复\_否\_提示，指示不中断调试器。
+```registry
+KeyPath   : HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\GraphicsDrivers
+KeyValue  : TdrDdiDelay
+ValueType : REG_DWORD
+ValueData : Number of seconds to leave the driver. The default value is 5 seconds.
+```
 
-    ```registry
-    KeyPath   : HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\GraphicsDrivers
-    KeyValue  : TdrDebugMode
-    ValueType : REG_DWORD
-    ValueData : TDR_DEBUG_MODE_OFF (0) - Break to kernel debugger before the recovery to allow investigation of the timeout. 
-     TDR_DEBUG_MODE_IGNORE_TIMEOUT (1) - Ignore any timeout.
-     TDR_DEBUG_MODE_RECOVER_NO_PROMPT (2) - Recover without breaking into the debugger. This is the default value.
-     TDR_DEBUG_MODE_RECOVER_UNCONDITIONAL (3) - Recover even if some recovery conditions are not met (for example, recover on consecutive timeouts).
-    ```
+### <a name="tdrdebugmode"></a>TdrDebugMode
 
--   **TdrLimitTime**
+指定 TDR 进程的与调试相关的行为。 默认值为 TDR_DEBUG_MODE_RECOVER_NO_PROMPT，指示不中断到调试器。
 
-    支持 Windows Server 2008 和更高版本和 Service Pack 1 (SP1) 和更高版本的 Windows Vista 中。
+```registry
+KeyPath   : HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\GraphicsDrivers
+KeyValue  : TdrDebugMode
+ValueType : REG_DWORD
+ValueData : TDR_DEBUG_MODE_XXX (see the following table)
+```
 
-    指定在其中的默认时间有特定数量的 TDRs (由指定**TdrLimitCount**密钥) 允许而不发生崩溃的计算机。 默认值为 60 秒。
+| 值 | 含义 |
+| ----- | ------- |
+| TDR_DEBUG_MODE_OFF (0)  | 在恢复之前中断内核调试器，以允许调查超时。 |
+| TDR_DEBUG_MODE_IGNORE_TIMEOUT (1)  | 忽略任何超时。 |
+| TDR_DEBUG_MODE_RECOVER_NO_PROMPT (2)  | 在不中断调试器的情况下进行恢复。 这是默认值。 |
+| TDR_DEBUG_MODE_RECOVER_UNCONDITIONAL (3)  | 即使未满足某些恢复条件，也进行恢复 (例如，在连续超时) 恢复。 |
 
-    ```registry
-    KeyPath   : HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\GraphicsDrivers
-    KeyValue  : TdrLimitTime
-    ValueType : REG_DWORD
-    ValueData : Number of seconds before crashing. 60 seconds is the default value.
-    ```
+### <a name="tdrlimittime"></a>TdrLimitTime
 
--   **TdrLimitCount**
+指定默认的时间，在此时间内允许由 **TdrLimitCount** 键) 指定的 tdr (，而不会使计算机崩溃。
 
-    支持 Windows Server 2008 和更高版本和 Service Pack 1 (SP1) 和更高版本的 Windows Vista 中。
+```registry
+KeyPath   : HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\GraphicsDrivers
+KeyValue  : TdrLimitTime
+ValueType : REG_DWORD
+ValueData : Number of seconds before crashing. The default value is 60 seconds.
+```
 
-    指定由指定的时间内允许的 TDRs (0x117) 的默认数目**TdrLimitTime**密钥而不发生崩溃的计算机。 默认值为 5。
+### <a name="tdrlimitcount"></a>TdrLimitCount
 
-    ```registry
-    KeyPath   : HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\GraphicsDrivers
-    KeyValue  : TdrLimitCount
-    ValueType : REG_DWORD
-    ValueData : Number of TDRs before crashing. The default value is 5.
-    ```
+指定在 **TdrLimitTime** 键指定的时间内允许 (0x117) 的默认数量，而不会使计算机崩溃。
 
+```registry
+KeyPath   : HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\GraphicsDrivers
+KeyValue  : TdrLimitCount
+ValueType : REG_DWORD
+ValueData : Number of TDRs before crashing. The default value is 5.
+```
+
+### <a name="tdrtestmode"></a>TdrTestMode
+
+保留。 请勿使用。
+
+```registry
+KeyPath   : HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\GraphicsDrivers
+KeyValue  : TdrTestMode
+ValueType : REG_DWORD
+ValueData : Do not use.
+```

@@ -8,15 +8,14 @@ keywords:
 - TDR (超时检测和恢复) WDK 显示和线程同步
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: da82c2e43373945f99eb682ff63e6f9022648344
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: cb57758d6949aa624725ef15e979b6987f933255
+ms.sourcegitcommit: f2fbb6e54e085e9329288cee49860fe380be9c4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89066566"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91778788"
 ---
 # <a name="thread-synchronization-and-tdr"></a>线程同步和 TDR
-
 
 下图显示了在 Windows 显示驱动程序模型 (WDDM) 中，线程同步如何适用于显示微型端口驱动程序。
 
@@ -28,21 +27,14 @@ ms.locfileid: "89066566"
 
 驱动程序从 [*DxgkDdiResetFromTimeout*](/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_resetfromtimeout)返回后，可以再次调用大多数驱动程序函数，操作系统会开始清理不再需要的资源。 在清理期间，出于以下原因，将调用以下驱动程序函数：
 
--   调用该驱动程序，通知即将逐出分配。
+- 调用该驱动程序，通知即将逐出分配。
 
-    例如，如果分配在内存段中分页，则会调用驱动程序的[*DxgkDdiBuildPagingBuffer*](/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_buildpagingbuffer)函数，并将[**DXGKARG \_ BUILDPAGINGBUFFER**](/windows-hardware/drivers/ddi/d3dkmddi/ns-d3dkmddi-_dxgkarg_buildpagingbuffer)结构的**Operation**成员设置为 DXGK \_ Operation \_ TRANSFER，并使用**transfer. Size**成员设置为零，以通知驱动程序逐出。 请注意，不涉及任何内容传输，因为内容在重置过程中丢失。
+  例如，如果分配在内存段中分页，则会调用驱动程序的[*DxgkDdiBuildPagingBuffer*](/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_buildpagingbuffer)函数，并将[**DXGKARG_BUILDPAGINGBUFFER**](/windows-hardware/drivers/ddi/d3dkmddi/ns-d3dkmddi-_dxgkarg_buildpagingbuffer)结构集的**Operation**成员设置为 DXGK_OPERATION_TRANSFER 并将**传输. Size**成员设置为零，以通知驱动程序逐出。 请注意，不涉及任何内容传输，因为内容在重置过程中丢失。
 
-    如果分配在口径段内分页，则会调用驱动程序的 [*DxgkDdiBuildPagingBuffer*](/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_buildpagingbuffer) 函数，并将 DXGKARG BUILDPAGINGBUFFER 的 **Operation** 成员 \_ 设置为 DXGK \_ 操作取消 \_ 映射 \_ 口径段， \_ 以通知驱动程序将分配从口径取消映射。
+  如果分配在口径段内分页，则会调用驱动程序的 [*DxgkDdiBuildPagingBuffer*](/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_buildpagingbuffer) 函数，并将 DXGKARG_BUILDPAGINGBUFFER 设置为 DXGK_OPERATION_UNMAP_APERTURE_SEGMENT 的 **操作** 成员通知驱动程序将分配从口径取消映射。
 
--   调用驱动程序的 [*DxgkDdiReleaseSwizzlingRange*](/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_releaseswizzlingrange) 函数以释放 unswizzling 口径和分段口径范围。
+- 调用驱动程序的 [*DxgkDdiReleaseSwizzlingRange*](/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_releaseswizzlingrange) 函数以释放 unswizzling 口径和分段口径范围。
 
 除非绝对必要，否则驱动程序不能在前面的调用期间访问 GPU。
 
 清除时间段结束后，操作系统将调用驱动程序的 [*DxgkDdiRestartFromTimeout*](/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_restartfromtimeout) 函数，以通知驱动程序清理已完成，并且操作系统将使用适配器进行呈现。
-
-**注意**   Windows 8 的 TDR 功能已更新。 请参阅 [Windows 8 中的 TDR 更改](tdr-changes-in-windows-8.md)。
-
- 
-
- 
-

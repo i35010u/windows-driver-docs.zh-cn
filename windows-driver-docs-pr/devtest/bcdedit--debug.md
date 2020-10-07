@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 2f7dfc570665ec9836fce24a837b9064e3e52f17
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 82dcf1312deaca56622c3c33c2ff1214dbebccf9
+ms.sourcegitcommit: f2fbb6e54e085e9329288cee49860fe380be9c4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89384457"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91778777"
 ---
 # <a name="bcdedit-debug"></a>BCDEdit /debug
 
@@ -29,7 +29,7 @@ ms.locfileid: "89384457"
 
 
 ``` syntax
-    bcdedit /debug [{ID}] { on | off }
+bcdedit /debug [{ID}] { on | off }
 ```
 
 <a name="parameters"></a>参数
@@ -52,7 +52,7 @@ ms.locfileid: "89384457"
 |dbgsetting 参数|默认值|
 |--- |--- |
 |debugtype|Local|
-|debugstart|活动|
+|debugstart|可用|
 |noumex|是|
 
 

@@ -7,12 +7,13 @@ keywords:
 - 筛选器驱动程序高度
 - 微筛选器驱动程序海拔
 ms.localizationpriority: medium
-ms.openlocfilehash: 827c1ef1cca1541b28555c27dcc3b38e4787f5d1
-ms.sourcegitcommit: 2dd8e4262c30e3f8570e35da7b9485139b216ac8
+ms.custom: contperfq1
+ms.openlocfilehash: 14ec5d52b50728958d505f794749fe939921bbcb
+ms.sourcegitcommit: f2fbb6e54e085e9329288cee49860fe380be9c4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "90027584"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91778764"
 ---
 # <a name="allocated-filter-altitudes"></a>已分配筛选器高度
 

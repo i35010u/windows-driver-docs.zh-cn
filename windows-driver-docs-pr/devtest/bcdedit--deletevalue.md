@@ -1,10 +1,10 @@
 ---
 title: BCDEdit /deletevalue
-description: BCDEdit /deletevalue 命令删除，或从 Windows 引导配置数据存储 (BCD) 中删除的启动项选项 （和其值）。
+description: BCDEdit/deletevalue 命令从 Windows 启动配置数据存储 (BCD) 中删除或删除启动项选项 (及其值) 。
 ms.assetid: 70833A12-B1F7-4AF6-952F-02A70718E870
 ms.date: 05/21/2018
 keywords:
-- BCDEdit /deletevalue 驱动程序开发工具
+- BCDEdit/deletevalue 驱动程序开发工具
 topic_type:
 - apiref
 api_name:
@@ -12,26 +12,27 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: f229284215ca334b4925d4bc83db5220c43b45d9
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c284de98c0811ad183228da1512bb81e48b57a6e
+ms.sourcegitcommit: f2fbb6e54e085e9329288cee49860fe380be9c4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63327349"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91778774"
 ---
 # <a name="bcdedit-deletevalue"></a>BCDEdit /deletevalue
 
+**BCDEdit/deletevalue**命令从 Windows 启动配置数据存储 (BCD) 中删除或删除启动项选项 (及其值) 。 使用 **bcdedit/deletevalue** 命令删除使用 [**bcdedit/set**](bcdedit--set.md) 命令添加的选项。
 
-**BCDEdit /deletevalue**命令删除，或从 Windows 引导配置数据存储 (BCD) 中删除的启动项选项 （和其值）。 使用**BCDEdit /deletevalue**命令删除已添加使用的选项[ **BCDEdit /set** ](bcdedit--set.md)命令。 
 ``` syntax
-     bcdedit  /deletevalue [{ID}] datatype  
-
-   
+bcdedit  /deletevalue [{ID}] datatype  
 ```
 
-若要删除一个启动选项值，已设置该值，请使用**BCDEdit /deletevalue**命令。 使用的常见方案**BCDEdit /deletevalue**命令是在测试和调试驱动程序时删除启动条目选项。 
+> [!NOTE]
+> 删除 BCDEdit 选项之前，你可能需要在计算机上禁用或暂停 BitLocker 和安全启动。
 
-例如，如果您使用[ **BCDEdit /set** ](bcdedit--set.md)若要更改**groupsize**处理器组选项的新值用于测试目的，可以使用**BCDEdit /deletevalue**若要删除的新值并键入以下命令来恢复为默认值。 请注意，你必须重启计算机以使更改生效。
+若要删除已设置的启动选项值，请使用 **BCDEdit/deletevalue** 命令。 使用 **BCDEdit/deletevalue** 命令的常见方案是在测试和调试驱动程序时删除启动项选项。 
+
+例如，如果使用 [**bcdedit/set**](bcdedit--set.md) 将 **groupsize** processor group 选项更改为新值以用于测试目的，则可以使用 **bcdedit/deletevalue** 删除新值，并通过键入以下命令恢复为默认值。 请注意，必须重新启动计算机才能使更改生效。
 
 ``` syntax
 bcdedit /deletevalue groupsize
@@ -61,11 +62,3 @@ bcdedit /deletevalue groupsize
 --------
 
 [**BCDEdit /set**](bcdedit--set.md)
- 
-
- 
-
-
-
-
-
