@@ -17,12 +17,12 @@ ms.date: 04/20/2017
 ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
-ms.openlocfilehash: a998761928f579b753a18f4e87214fe1bda16875
-ms.sourcegitcommit: ee3e2259aafc844cc43cce62299a72649cf89212
+ms.openlocfilehash: 6d47f516f8a698b875ef273d1571a5174e95f365
+ms.sourcegitcommit: 9b3dec2f2cd9a7ed9b340b4794ce6ff4134d8ebe
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91353644"
+ms.lasthandoff: 10/07/2020
+ms.locfileid: "91787645"
 ---
 # <a name="pci-driver-programming-guide"></a>PCI 驱动程序编程指南
 
@@ -32,8 +32,8 @@ ms.locfileid: "91353644"
 |----|----|
 |大小可调整的栏功能</br>请参阅 7.22 部分。|Windows 10|
 |原子操作</br>请参阅 6.15 部分。|Windows 10|
-|用于优化 FW 延迟的 ACPI 添加件</br>请参阅[用于优化 FW 延迟的 ACPI 添加件]( https://go.microsoft.com/fwlink/p/?LinkId=787058)|Windows 10|
-|ATS/PRI</br>-  [ATS 规范](https://go.microsoft.com/fwlink/p/?LinkId=787061)</br>-  [PCI Express&#174; 基础规范修订版 3.1、单根 I/O 虚拟化和共享修订版 1.1、地址转换和共享修订版 1.1 和 M.2 规范修订版 1.0 的勘误表](https://go.microsoft.com/fwlink/p/?LinkId=787060)|Windows 10|
+|用于优化 FW 延迟的 ACPI 添加件</br>请参阅[用于优化 FW 延迟的 ACPI 添加件](https://pcisig.com/specifications)|Windows 10|
+|ATS/PRI</br>-  [ATS 规范](https://go.microsoft.com/fwlink/p/?LinkId=787061)</br>-  [PCI Express&#174; 基础规范修订版 3.1、单根 I/O 虚拟化和共享修订版 1.1、地址转换和共享修订版 1.1 和 M.2 规范修订版 1.0 的勘误表](https://pcisig.com/specifications/iov/)|Windows 10|
 |优化的缓冲区刷新/填充 (OBFF)</br>请参阅 6.19 部分。|- Windows 8</br>- Windows Server 2012|
 |延迟容限报告 (LTR) 功能</br>请参阅 7.25 部分。|- Windows 8</br>- Windows Server 2012|
 |替代路由 ID 解释 (ARI)</br>请参阅 6.13 部分。|- Windows 8</br>- Windows Server 2012|
@@ -52,4 +52,4 @@ ms.locfileid: "91353644"
 
 ## <a name="see-also"></a>另请参阅
 
-- [官方 PCIe 规范](https://pcisig.com/specifications/review-zone)
+[官方 PCIe 规范](https://pcisig.com/specifications/review-zone)
