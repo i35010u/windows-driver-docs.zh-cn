@@ -4,12 +4,12 @@ description: 使用 Nmake2msBuild 将 WDK 源文件转换为 Visual Studio 项�
 ms.assetid: 6030317B-5068-40FD-8C9A-0B7A48C82B31
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 706800991123bb29489ccf56ed5f729012f7805d
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 94ab10357655372c3bd433f2215f4695c966a152
+ms.sourcegitcommit: 76b8aeac1cf44a90adbec045b54db4d82e797194
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89383233"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91851710"
 ---
 # <a name="converting-a-wdk-sources-file-to-a-visual-studio-project"></a>将 WDK 源文件转换为 Visual Studio 项目
 
@@ -32,13 +32,13 @@ ms.locfileid: "89383233"
   <ItemDefinitionGroup>
     <ClCompile>
       ...
-      <AdditionalOptions>%(AdditionalOptions) $(User_C_Flags)</AdditonalOptions>
+      <AdditionalOptions>%(AdditionalOptions) $(User_C_Flags)</AdditionalOptions>
       ...
     </ClCompile>
   </ItemDefinitionGroup>
 ```
 
-前面的示例中所示的映射来自 PostToolsetRules. 属性文件。 示例映射使用 MSBuild ItemDefinitionGroup 来指定 \_ \_ 应在 AdditonalOptions 元数据内将 $ (用户 C 标记) 追加到 ClCompile 类型的所有项。 可以在 C： \\ Program 文件 (x86) \\ Windows 工具包 \\ 8.0 \\ bin \\ 转换目录中查找转换过程中使用的属性文件。
+前面的示例中所示的映射来自 PostToolsetRules. 属性文件。 示例映射使用 MSBuild ItemDefinitionGroup 来指定 \_ \_ 应在其他元数据内将 $ (用户 C 标记) 追加到 ClCompile 类型的所有项。 可以在 C： \\ Program 文件 (x86) \\ Windows 工具包 \\ 8.0 \\ bin \\ 转换目录中查找转换过程中使用的属性文件。
 
 所有转换规则均使用标准 MSBuild 语法来指定。
 
