@@ -6,12 +6,12 @@ keywords:
 - 符号，概述
 ms.date: 08/05/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: a6b2116545a7ac343dc7d4419bcbd3006059e8f0
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 262411bd357e0836f05f1070e873272b0adb7088
+ms.sourcegitcommit: 70830486331e3ca0f550e5ddf8c42ad7ac782841
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89217686"
+ms.lasthandoff: 10/07/2020
+ms.locfileid: "91813713"
 ---
 # <a name="portable-pdb-symbols"></a>可移植 PDB 符号
 
@@ -24,7 +24,7 @@ ms.locfileid: "89217686"
 
 数据的物理布局在 ECMA-335-II 第24章中进行了介绍，便携式 PDB 调试元数据格式不会对基础结构进行任何更改。 有关 ECMA-335 的详细信息，请参阅 [标准 ECMA-335 公共语言基础结构](https://www.ecma-international.org/publications/standards/Ecma-335.htm)。
 
-有关可移植 PDB 格式的完整信息，请参阅 [可移植 pdb v1.0：格式规范](https://github.com/dotnet/corefx/blob/master/src/System.Reflection.Metadata/specs/PortablePdb-Metadata.md)。
+有关可移植 PDB 格式的完整信息，请参阅 [可移植 pdb v1.0：格式规范](https://github.com/dotnet/corefx/blob/archive/src/System.Reflection.Metadata/specs/PortablePdb-Metadata.md)。
 
 ## <a name="code-sample-to-read-portable-pdb-files"></a>用于读取可移植 PDB 文件的代码示例
 
@@ -32,7 +32,7 @@ ms.locfileid: "89217686"
 
 此可移植 Pdb 读者实现了 Microsoft.diasymreader.native 接口，如 ISymUnmanagedReader 和 ISymUnmanagedBinder。 有关这些 .NET 接口的详细信息，请参阅 [诊断符号存储 (非托管 API 参考) ](/dotnet/framework/unmanaged-api/diagnostics/)。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 [符号和符号文件](symbols-and-symbol-files.md)
 

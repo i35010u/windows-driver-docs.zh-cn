@@ -2,14 +2,14 @@
 title: NDIS 6.50 简介
 description: 本部分介绍了 NDIS 6.50，并介绍了 NDIS 6.40 中的更改。 NDIS 6.50 包含在 Windows 10 版本1507及更高版本中。
 ms.assetid: 8D2EA09D-3FA3-467B-861A-AA15C790FCD3
-ms.date: 06/01/2017
+ms.date: 09/30/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 1df2d502c5e409042848d18323d3b041d1660c44
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: a15679312b94395f5c998fb42811543b57eac6c8
+ms.sourcegitcommit: d9f17c0b13f24fd40232b9c1f4fc5b83e0d58c3a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89212895"
+ms.lasthandoff: 10/07/2020
+ms.locfileid: "91815881"
 ---
 # <a name="introduction-to-ndis-650"></a>NDIS 6.50 简介
 
@@ -84,6 +84,7 @@ NDIS 6.50 驱动程序必须遵循在 [实现 NDIS 6.30 驱动程序](implementi
 - [NdisMGetDeviceProperty](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismgetdeviceproperty)
 - [NDIS_SWITCH_OPTIONAL_HANDLERS](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_switch_optional_handlers)
 - [NDIS_SWITCH_NIC_SAVE_STATE](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_nic_save_state)
+- [NDIS_RECEIVE_FILTER_PARAMETERS](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_filter_parameters)
 
 ## <a name="ndis-651"></a>NDIS 6.51
 
