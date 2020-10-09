@@ -6,21 +6,21 @@ keywords:
 - KMDF Hello World
 ms.date: 04/20/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 45ea270b5dee1da9e34ced45b269846ff8475aaf
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: bbb7559bb53c59e9fbf8acd168357dd5246698b5
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89384209"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91732639"
 ---
 # <a name="write-a-hello-world-windows-driver-kmdf"></a>编写 Hello World Windows 驱动程序 (KMDF)
 
 
 本主题介绍了如何使用内核模式驱动程序框架 (KMDF) 编写非常小的[通用 Windows 驱动程序](/windows-hardware/drivers)，然后在单独的计算机上部署并安装驱动程序。 
 
-若要开始操作，请确保已安装 [Microsoft Visual Studio](https://go.microsoft.com/fwlink/p/?LinkId=698539)、[Windows SDK](https://developer.microsoft.com/windows/downloads/windows-10-sdk) 和 [Windows 驱动程序工具包 (WDK)](https://go.microsoft.com/fwlink/p/?LinkId=733614)。
+若要开始操作，请确保已安装 [Microsoft Visual Studio](https://go.microsoft.com/fwlink/p/?LinkId=698539)、[Windows SDK](https://developer.microsoft.com/windows/downloads/windows-10-sdk) 和 [Windows 驱动程序工具包 (WDK)](../download-the-wdk.md)。
 
-安装 WDK 时，需要包括 [Windows 调试工具](https://go.microsoft.com/fwlink/p?linkid=223405)。
+安装 WDK 时，需要包括 [Windows 调试工具](../debugger/index.md)。
 
 ## <a name="create-and-build-a-driver"></a>创建和生成驱动程序
 
@@ -320,10 +320,10 @@ ms.locfileid: "89384209"
 
 4. 此时，可以试验调试程序，方法是在 **kd&gt;** 提示符处输入命令。 例如，可以尝试使用以下命令：
 
-    -   [lm](https://go.microsoft.com/fwlink/p?linkid=399236)
-    -   [.sympath](https://go.microsoft.com/fwlink/p?linkid=399238)
-    -   [.reload](https://go.microsoft.com/fwlink/p?linkid=399239)
-    -   [x KmdfHelloWorld!\*](https://go.microsoft.com/fwlink/p?linkid=399240)
+    -   [lm](./device-nodes-and-device-stacks.md)
+    -   [.sympath](../debugger/-sympath--set-symbol-path-.md)
+    -   [.reload](../debugger/-reload--reload-module-.md)
+    -   [x KmdfHelloWorld!\*](../debugger/x--examine-symbols-.md)
 
 5. 若要让目标计算机再次运行，请从“调试”菜单中选择“执行”，或者按“g”，然后按“Enter”。
 6. 若要停止调试会话，请从“调试”菜单中选择“分离调试程序”。
@@ -339,7 +339,7 @@ ms.locfileid: "89384209"
 
 [开发、测试以及部署驱动程序](https://go.microsoft.com/fwlink/p?linkid=399234)
 
-[Windows 调试工具](https://go.microsoft.com/fwlink/p?linkid=223405)
+[Windows 调试工具](../debugger/index.md)
 
 [调试通用驱动程序 - 分步实验室（回显内核模式）](../debugger/debug-universal-drivers---step-by-step-lab--echo-kernel-mode-.md)
 

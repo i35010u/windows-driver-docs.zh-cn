@@ -4,12 +4,12 @@ description: Windows 内核宏
 ms.assetid: 91366400-3307-4F13-A839-50BA85B7F73E
 ms.localizationpriority: High
 ms.date: 10/17/2018
-ms.openlocfilehash: fbe59c8b4eedec75394bd2f74b60f638ada832af
-ms.sourcegitcommit: 68d0aec4c282c9c1e1ab54509c8f4575dd273d56
+ms.openlocfilehash: b4d339eabf50973727f638ff662197e2e24dddaa
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91221937"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91733163"
 ---
 # <a name="windows-kernel-macros"></a>Windows 内核宏
 
@@ -713,7 +713,7 @@ _DestinationString [out]_
 
 **PUNICODE_STRING**
 
-指向要初始化的 [**UNICODE_STRING**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfwdm/ns-wudfwdm-_unicode_string) 结构的指针。
+指向要初始化的 [**UNICODE_STRING**](/windows-hardware/drivers/ddi/wudfwdm/ns-wudfwdm-_unicode_string) 结构的指针。
 
 _Buffer [in]_
 

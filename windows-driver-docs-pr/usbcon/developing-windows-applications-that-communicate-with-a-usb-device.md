@@ -3,12 +3,12 @@ description: 本主题提供了一些准则，用于确定是应该编写 UWP �
 title: 为 USB 设备开发 Windows 应用程序的概述
 ms.date: 04/20/2017
 ms.localizationpriority: High
-ms.openlocfilehash: 76adbaf9dd61f57344de8f9265641814a106e9e9
-ms.sourcegitcommit: f8619f20a0903dd64f8641a5266ecad6df5f1d57
+ms.openlocfilehash: 02bc2ad3af21e5477afab7098c094556dbeb6841
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91423516"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91732687"
 ---
 # <a name="overview-of-developing-windows-applications-for-usb-devices"></a>为 USB 设备开发 Windows 应用程序的概述
 
@@ -108,9 +108,9 @@ Windows 提供了 API 集，可用于编写与自定义 USB 设备通信的应�
 <tr class="odd">
 <td>开始使用这些示例</td>
 <td><ul>
-<li><a href="https://go.microsoft.com/fwlink/p/?linkid=309716" data-raw-source="[Custom USB device access sample](https://go.microsoft.com/fwlink/p/?linkid=309716)">自定义 USB 设备访问示例</a></li>
-<li><a href="https://go.microsoft.com/fwlink/p/?linkid=309716" data-raw-source="[USB CDC Control sample](https://go.microsoft.com/fwlink/p/?linkid=309716)">USB CDC 控件示例</a></li>
-<li><a href="https://go.microsoft.com/fwlink/p/?linkid=309716" data-raw-source="[Firmware Update USB Device sample](https://go.microsoft.com/fwlink/p/?linkid=309716)">固件更新 USB 设备示例</a></li>
+<li><a href="/samples/browse/" data-raw-source="[Custom USB device access sample](/samples/browse/)">自定义 USB 设备访问示例</a></li>
+<li><a href="/samples/browse/" data-raw-source="[USB CDC Control sample](/samples/browse/)">USB CDC 控件示例</a></li>
+<li><a href="/samples/browse/" data-raw-source="[Firmware Update USB Device sample](/samples/browse/)">固件更新 USB 设备示例</a></li>
 </ul></td>
 <td><ul>
 <li>从 Microsoft Visual Studio Ultimate 或 Microsoft Visual Studio Professional 附带的 WinUsb 应用程序模板开始</li>

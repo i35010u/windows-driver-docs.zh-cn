@@ -4,12 +4,12 @@ description: LSA 插件和 UEFI 固件签名
 ms.localizationpriority: medium
 ms.topic: article
 ms.date: 10/17/2018
-ms.openlocfilehash: 491efc68326562116ac547dadc706e3a5513b23a
-ms.sourcegitcommit: 4f08f5686c0bbc27d58930b993cbab1a98e3afb0
+ms.openlocfilehash: b2c891d4185ab30d963448ae586704c361fedebb
+ms.sourcegitcommit: 29fee075ccc0a4eb1bf304cca4c04a6e57449d9d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/03/2020
-ms.locfileid: "89443903"
+ms.lasthandoff: 10/02/2020
+ms.locfileid: "91671235"
 ---
 # <a name="file-signing-lsa-plugins-and-uefi-firmware"></a>文件签名 LSA 插件和 UEFI 固件
 
@@ -46,6 +46,6 @@ ms.locfileid: "89443903"
 
 ## <a name="related-topics"></a>相关主题
 
-* [Microsoft UEFI CA 签名策略更新](https://techcommunity.microsoft.com/t5/Windows-Hardware-Certification/bg-p/WindowsHardwareCertification)
+* [Microsoft UEFI CA 签名策略更新](https://techcommunity.microsoft.com/t5/windows-hardware-certification/microsoft-uefi-ca-signing-policy-updates/ba-p/364828)
 
-* [UEFI 提交的预提交测试](https://techcommunity.microsoft.com/t5/Windows-Hardware-Certification/bg-p/WindowsHardwareCertification)
+* [UEFI 提交的预提交测试](https://techcommunity.microsoft.com/t5/windows-hardware-certification/pre-submission-testing-for-uefi-submissions/ba-p/364829)

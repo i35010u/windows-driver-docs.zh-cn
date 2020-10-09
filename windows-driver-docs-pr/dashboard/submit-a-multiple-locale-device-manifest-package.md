@@ -5,12 +5,12 @@ ms.assetid: b6748bff-d730-434e-9316-dc7b7222b727
 ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 68404c5318b66db84e1b79e2703bf144aa7269f6
-ms.sourcegitcommit: bd72676caf2bf5c9738c4081c778316919b85d30
+ms.openlocfilehash: e3002de882a344cf84769fdd659b6a417905618a
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2020
-ms.locfileid: "89450032"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91734101"
 ---
 # <a name="submit-a-multiple-locale-device-manifest-package"></a>提交多区域设置设备清单包
 
@@ -20,7 +20,7 @@ ms.locfileid: "89450032"
 
 ### <a name="to-submit-a-device-manifest-package"></a>提交设备清单包
 
-1. 使用 [SignTool](https://go.microsoft.com/fwlink/p/?LinkId=238330) 工具对 devicemanifest-ms 程序包进行签名。
+1. 使用 [SignTool](/windows/win32/seccrypto/signtool) 工具对 devicemanifest-ms 程序包进行签名。
 
 2. 从硬件开发人员中心或 Windows 开发人员中心，使用 Microsoft 帐户登录到“仪表板”  。
 
@@ -78,9 +78,9 @@ GUID1.devicemanifest-ms
 
 下面是有关创建 LocaleInfo.xml 的说明。
 
-若要了解如何开发设备元数据包 \*.devicemetadata-ms，请参阅 [Windows 8 的设备元数据包架构参考](https://go.microsoft.com/fwlink/p/?LinkId=226753)。
+若要了解如何开发设备元数据包 \*.devicemetadata-ms，请参阅 [Windows 8 的设备元数据包架构参考](/previous-versions/windows/hardware/metadata/dn465877(v=vs.85))。
 
-你可以使用 Cabarc 工具创建这些 CAB 程序包。 有关此工具的详细信息，请参阅 [Cabarc 概述](https://go.microsoft.com/fwlink/p/?LinkId=248843)。
+你可以使用 Cabarc 工具创建这些 CAB 程序包。 有关此工具的详细信息，请参阅 [Cabarc 概述](/previous-versions/windows/it-pro/windows-server-2003/cc781787(v=ws.10))。
 
 使用 Cabarc 工具创建 \*.devicemanifest-ms 文件时，必须创建一个本地目录，其中设备元数据包 (\*.devicemetadata-ms) 和 LocaleInfo XML 文档位于该目录的根目录中。
 
@@ -90,7 +90,7 @@ GUID1.devicemanifest-ms
 
 * 每个设备清单提交和设备元数据包的 GUID 都必须唯一。 当你创建新的或修改的程序包时，必须创建新 GUID。
 
-* 有关如何创建 cabinet 文件的详细信息，请参阅 [Microsoft Cabinet 软件开发工具包](https://go.microsoft.com/fwlink/p/?LinkId=248844)。
+* 有关如何创建 cabinet 文件的详细信息，请参阅 [Microsoft Cabinet 软件开发工具包](/previous-versions/ms974336(v=msdn.10))。
 
 ### <a name="example"></a>示例
 

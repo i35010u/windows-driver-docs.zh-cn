@@ -688,16 +688,12 @@
           href: xps-rasterization-on-the-gpu.md
         - name: 超时检测和恢复
           items:
-            - name: 超时检测和恢复
+            - name: 超时检测和恢复 (TDR)
               href: timeout-detection-and-recovery.md
-            - name: 限制重复性 GPU 挂起和恢复
-              href: limiting-repetitive-gpu-hangs-and-recoveries.md
-            - name: TDR 错误消息
-              href: tdr-error-messaging.md
-            - name: TDR 注册表项
-              href: tdr-registry-keys.md
-            - name: Windows 8 中的 TDR 更改
+            - name: Windows 8 及更高版本中的 TDR
               href: tdr-changes-in-windows-8.md
+            - name: 测试和调试 TDR
+              href: tdr-registry-keys.md
     - name: 有关 Windows 显示驱动程序模型 (WDDM) 的提示和要求
       items:
         - name: 有关 Windows 显示驱动程序模型 (WDDM) 的提示和要求

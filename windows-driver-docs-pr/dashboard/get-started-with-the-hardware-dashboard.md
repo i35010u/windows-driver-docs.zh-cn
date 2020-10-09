@@ -5,12 +5,12 @@ ms.assetid: 000B5BBB-61EF-4837-8E5E-EF1BBB65B14E
 ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7c6db5587ff09aaf946cc38d785d3e22ff311687
-ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
+ms.openlocfilehash: 4e1e2f7a9d064feae36a0192b6a07ef844f1026a
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "63337174"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91732652"
 ---
 # <a name="get-started-with-the-hardware-dashboard-program"></a>硬件仪表板计划入门
 
@@ -40,7 +40,7 @@ ms.locfileid: "63337174"
 
 你可以帮助你的客户识别可在基于 Windows 的计算机上可靠运行的高质量产品，方法是测试你的产品并参加 Windows 硬件兼容性计划（对于 Windows 10）或 Windows 硬件认证计划（对于 Windows 8/8.1 和更早的操作系统）。
 
-通过这些计划，你可以在通过合作伙伴中心提交最终版本之前，设计、创建和测试你的硬件和驱动程序。 有关详细信息，请参阅 [Windows 硬件认证](https://go.microsoft.com/fwlink/p/?LinkId=224782)页。
+通过这些计划，你可以在通过合作伙伴中心提交最终版本之前，设计、创建和测试你的硬件和驱动程序。 有关详细信息，请参阅 [Windows 硬件认证](/previous-versions/windows/hardware/hck/jj124227(v=vs.85))页。
 
 ## <a name="submit-your-hardware-and-drivers-for-the-compatibility-program-or-certification"></a>提交你的硬件和驱动程序用于兼容性计划或认证
 

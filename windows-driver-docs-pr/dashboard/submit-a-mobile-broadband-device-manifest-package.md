@@ -5,12 +5,12 @@ ms.assetid: 080c3f4a-400f-426c-8296-1cd0bdfb0828
 ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0675ac46cb52b840ac1b498d1af11c20607a873a
-ms.sourcegitcommit: 4f08f5686c0bbc27d58930b993cbab1a98e3afb0
+ms.openlocfilehash: c3a46452d6f088cbeb8de107cd26995486091afe
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/03/2020
-ms.locfileid: "89443742"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91734113"
 ---
 # <a name="submit-a-mobile-broadband-device-manifest-package"></a>提交移动宽带设备清单包
 
@@ -22,7 +22,7 @@ ms.locfileid: "89443742"
 
 **提交设备清单包**
 
-1.  使用 [SignTool](https://go.microsoft.com/fwlink/p/?LinkId=238330) 工具对 devicemanifest-ms 程序包进行签名。
+1.  使用 [SignTool](/windows/win32/seccrypto/signtool) 工具对 devicemanifest-ms 程序包进行签名。
 
 2.  从硬件开发人员中心或 Windows 开发人员中心，使用 Microsoft 帐户登录到“仪表板”  。
 
@@ -31,6 +31,4 @@ ms.locfileid: "89443742"
 4.  浏览并选择你的新 devicemanifest-ms 程序包，然后单击“提交”  。
 
 有关创建移动宽带设备提交程序包的详细信息，请参阅[移动宽带设备提交程序包](../mobilebroadband/index.md)。
-
- 
 

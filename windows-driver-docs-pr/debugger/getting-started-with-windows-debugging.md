@@ -4,12 +4,12 @@ description: 本部分介绍如何开始 Windows 调试。 如果你的目标是
 ms.assetid: 4981928E-A33D-4F60-AAA0-124C360B7E03
 ms.date: 08/23/2018
 ms.localizationpriority: high
-ms.openlocfilehash: c86e631674ced9c281a423a6abb476c385a7f53d
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: c496c3b2cae2d62d2ae0430a34c2a1d431c53327
+ms.sourcegitcommit: 20eac54e419a594f7cea766ee28f158559dfd79c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89210225"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91754944"
 ---
 # <a name="getting-started-with-windows-debugging"></a>Windows 调试入门
 
@@ -91,7 +91,7 @@ WinDbg 在大多数情况下都能正常运行，但有时可能需要使用另�
 
 ## <a name="12-learn-about-related-windows-internals"></a>12.了解相关的 Windows 内部结构
 
-本文档假设你了解 Windows 的内部结构。 若要了解有关 Windows 内部（包括内存使用、上下文、线程和进程）的更多信息，请查看其他资源，如 [Windows 内部结构](/sysinternals/learn/windows-internals)（作者：Mark Russinovich、David Solomon 和 Alex Ionescu） 
+本文档假设你了解 Windows 的内部结构。 若要了解有关 Windows 内部（包括内存使用、上下文、线程和进程）的更多信息，请查看其他资源，如 [Windows 内部结构](/sysinternals/resources/windows-internals)（作者：Mark Russinovich、David Solomon 和 Alex Ionescu） 
 
 ## <a name="13-review-additional-debugging-resources"></a>13.查看其他调试资源
 

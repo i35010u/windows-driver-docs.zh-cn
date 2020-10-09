@@ -5,12 +5,12 @@ ms.assetid: 2b16b045-4d34-418c-8f68-7f688adf8e7e
 ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5115e3116dac7a99de071fa37cfdc886cbdeb57d
-ms.sourcegitcommit: 17c1bbc5ea0bef3bbc87794b030a073f905dc942
+ms.openlocfilehash: 7573a89bb1cb23cdc14ec65155633e3e81b9c4f5
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88802805"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91732761"
 ---
 # <a name="create-the-localeinfoxml-submission-file"></a>创建 LocaleInfo.xml 提交文件
 
@@ -23,7 +23,7 @@ LocaleInfo.xml 文档中的数据基于 LocaleInfo XML 架构（将在下面进�
 > [!NOTE]
 > 该 XML 文档必须使用 UTF-8 编码进行保存。
 
-有关地址范围的详细信息，请参阅[如何为设备和打印机创建设备元数据包](https://go.microsoft.com/fwlink/?LinkId=253559)。
+有关地址范围的详细信息，请参阅[如何为设备和打印机创建设备元数据包](/previous-versions/windows/hardware/metadata/dn465877(v=vs.85))。
 
 ### <a name="localeinfo-xml-schema-namespace"></a>LocaleInfo XML 架构命名空间
 

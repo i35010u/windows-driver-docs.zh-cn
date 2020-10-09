@@ -6,12 +6,12 @@ keywords:
 - 编写 UMDF 驱动程序
 ms.date: 04/20/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: eeaa1a7ff9188322196fcb6e16517ca449c60384
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 47f48d563c91b3d32cbf8eceeac4accc8b309a79
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89382397"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91733101"
 ---
 # <a name="write-a-universal-windows-driver-umdf-2-based-on-a-template"></a>基于模板编写通用 Windows 驱动程序 (UMDF 2)
 
@@ -19,7 +19,7 @@ ms.locfileid: "89382397"
 
 若要开始操作，请确保已安装最新版本的 Microsoft Visual Studio 和 Windows 驱动程序工具包 (WDK)。 有关下载链接，请参阅[下载 Windows 驱动程序工具包 (WDK)](../download-the-wdk.md)。
 
-安装 WDK 时，需要包括 [Windows 调试工具](https://go.microsoft.com/fwlink/p?linkid=223405)。
+安装 WDK 时，需要包括 [Windows 调试工具](../debugger/index.md)。
 
 ## <a name="create-and-build-a-driver"></a>创建和生成驱动程序
 
@@ -70,7 +70,7 @@ ms.locfileid: "89382397"
 
     ![“umdfdriver 属性页”的屏幕截图，其中显示选择了“部署驱动程序安装”](images/vs2015-deploy.png)
 
-    **注意**  在本练习中，硬件 ID 不标识真实的硬件。 它标识了虚构设备，该设备位于[设备树](https://go.microsoft.com/fwlink/p?linkid=399236)中，作为根节点的子节点。 对于真实的硬件，不要选择“硬件 ID 驱动程序更新”  ，而要选择“安装并验证”  。
+    **注意**  在本练习中，硬件 ID 不标识真实的硬件。 它标识了虚构设备，该设备位于[设备树](./device-nodes-and-device-stacks.md)中，作为根节点的子节点。 对于真实的硬件，不要选择“硬件 ID 驱动程序更新”  ，而要选择“安装并验证”  。
     可以在驱动程序的信息 (INF) 文件中看到硬件 ID。 在“解决方案资源管理器”  窗口中，转到“UmdfDriver”&gt;“驱动程序文件”  ，然后双击 UmdfDriver.inf。 硬件 ID 位于 \[Standard.NT$ARCH$\] 下。
 
     ```ManagedCPlusPlus

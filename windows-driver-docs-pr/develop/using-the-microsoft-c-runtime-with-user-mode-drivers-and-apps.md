@@ -4,12 +4,12 @@ title: 使用含用户模式驱动程序和桌面应用的 Microsoft C 运行时
 description: 本主题提供了有关分发 Windows 8 和 Windows 8.1 应用程序和驱动程序的 C 运行时库的信息。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d09e7c264713d5eb3c7cc4be7b80a28d131343b8
-ms.sourcegitcommit: 958a5ced83856df22627c06eb42c9524dd547906
+ms.openlocfilehash: 1b34f81e40594a1b52bb663ce5af410b1efdc4f7
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83235315"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91732885"
 ---
 # <a name="using-the-microsoft-c-runtime-with-user-mode-drivers-and-desktop-apps"></a>使用含用户模式驱动程序和桌面应用的 Microsoft C 运行时
 
@@ -128,7 +128,7 @@ Msvcr120.dll = 2
 
 若要确定必须为你的应用程序重新分发哪些 DLL，应收集你的应用程序所依赖的 DLL 的列表。 收集此列表的一种方法是运行依赖项查看器 (depends.exe)。
 
-如果你有依赖项列表，请将其与 [Visual Studio 2013 Preview 和 Visual Studio 2013 SDK Preview 的可再发行代码](https://go.microsoft.com/fwlink/p/?linkid=320999)中所述的文件列表对比。 有关详细信息，请参阅[确定要重新分发的 DLL](https://go.microsoft.com/fwlink/p/?linkid=321001) 和[选择部署方法](https://go.microsoft.com/fwlink/p/?linkid=321651)。
+如果你有依赖项列表，请将其与 [Visual Studio 2013 Preview 和 Visual Studio 2013 SDK Preview 的可再发行代码](https://go.microsoft.com/fwlink/p/?linkid=320999)中所述的文件列表对比。 有关详细信息，请参阅[确定要重新分发的 DLL](/previous-versions/visualstudio/visual-studio-2013/8kche8ah(v=vs.120)) 和[选择部署方法](/previous-versions/visualstudio/visual-studio-2013/ms235316(v=vs.120))。
 
 你无法重新分发 Visual Studio 中包括的所有文件；仅允许你重新分发 [Visual Studio 2013 Preview and Visual Studio 2013 SDK Preview 的可再发行代码](https://go.microsoft.com/fwlink/p/?linkid=320999)。 应用程序的调试版本和各个 Visual C++ 动态链接库不可以再分发。
 
@@ -144,15 +144,8 @@ Msvcr120.dll = 2
 ## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
-* [确定要重新分发的 DLL](https://go.microsoft.com/fwlink/p/?linkid=321001)
+* [确定要重新分发的 DLL](/previous-versions/visualstudio/visual-studio-2013/8kche8ah(v=vs.120))
 * [Visual Studio 2013 Preview 和 Visual Studio 2013 SDK Preview 的可再发行代码](https://go.microsoft.com/fwlink/p/?linkid=320999)
-* [选择部署方法](https://go.microsoft.com/fwlink/p/?linkid=321651)
+* [选择部署方法](/previous-versions/visualstudio/visual-studio-2013/ms235316(v=vs.120))
  
-
- 
-
-
-
-
-
 

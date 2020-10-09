@@ -3,12 +3,12 @@ description: 用于通信和 CDC 控制设备的 Microsoft 提供的内置驱动
 title: USB 串行驱动程序 (Usbser.sys)
 ms.date: 04/20/2017
 ms.localizationpriority: High
-ms.openlocfilehash: 25ffa9ce23328bc38458756ef5d12e6f91d2a132
-ms.sourcegitcommit: 937974aa9bbe0262a7ffe9631593fab48c4e7492
+ms.openlocfilehash: 876c06ec5c9a327f7ad810a7520cfefdc0f1a96c
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "90010057"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91732753"
 ---
 # <a name="usb-serial-driver-usbsersys"></a>USB 串行驱动程序 (Usbser.sys)
 
@@ -104,7 +104,7 @@ AddReg=LowerFilterAddReg
 -   编写一个引用安装 INF 的 INF，并在“HW.AddReg”部分添加注册表项  。
 -   在扩展属性 OS 功能描述符中描述该注册表项。 添加自定义属性，将“bPropertyName”字段设置为 Unicode 字符串“IdleUsbSelectiveSuspendPolicy”，将“wPropertyNameLength”设置为 62   。 将“bPropertyData”字段设置为“0x00000001”或“0x00000000”  。 属性值存储为小字节序 32 位整数。
 
-    有关详细信息，请参阅 [Microsoft OS 描述符](https://go.microsoft.com/fwlink/p/?linkid=224878)。
+    有关详细信息，请参阅 [Microsoft OS 描述符](./index.md)。
 
 ## <a name="develop-windows-applications-for-a-usb-cdc-device"></a>为 USB CDC 设备开发 Windows 应用程序
 

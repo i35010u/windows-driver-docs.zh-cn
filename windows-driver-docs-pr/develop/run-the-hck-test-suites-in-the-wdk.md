@@ -4,16 +4,16 @@ title: 如何在 WDK 8.1 中运行 HCK 测试套件
 description: 为了可以更轻松地在 WDK 中测试 Windows 驱动程序，从 WDK 8.1 起，你可以选择要在测试计算机上运行的 HCK 测试套件。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d77a1db71f9790316d3e96ed806a9f928d600fef
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 62f841b6a80f0b70827cb669e9cfdd926ccd8d05
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89216248"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91733337"
 ---
 # <a name="how-to-run-the-hck-test-suites-in-wdk-81"></a>如何在 WDK 8.1 中运行 HCK 测试套件
 
-为了可以更轻松地在 WDK 中测试 Windows 驱动程序，从 WDK 8.1 起，你可以选择要在测试计算机上运行的 HCK 测试套件。 [HCK 测试套件](#HCK_test_suites)包括设备基础功能测试以及图形、映像、无线 LAN、移动宽带（CDMA 和 GSM）和 WLAN Direct 设备测试。 这些测试与 Windows 硬件认证工具包 (Windows HCK) 中的测试相同。 有关 Windows HCK 的信息，请参阅 [Windows 硬件认证计划](https://go.microsoft.com/fwlink/p/?linkid=8705)。
+为了可以更轻松地在 WDK 中测试 Windows 驱动程序，从 WDK 8.1 起，你可以选择要在测试计算机上运行的 HCK 测试套件。 [HCK 测试套件](#HCK_test_suites)包括设备基础功能测试以及图形、映像、无线 LAN、移动宽带（CDMA 和 GSM）和 WLAN Direct 设备测试。 这些测试与 Windows 硬件认证工具包 (Windows HCK) 中的测试相同。 有关 Windows HCK 的信息，请参阅 [Windows 硬件认证计划](/previous-versions/windows/hardware/hck/jj124227(v=vs.85))。
 
 你可以通过命令提示符窗口或 Visual Studio 运行 HCK 测试。 此外，你可以将这些测试复制到新的位置（其他计算机或 U 盘），然后从该位置运行测试。 自动启动测试将会设置运行测试所需的任何本地配置。
 
@@ -131,7 +131,7 @@ ms.locfileid: "89216248"
 
 ### <a name="span-idhck_devfundspanspan-idhck_devfundspanspan-idhck_devfundspanhck-testsbasicdevicedevice-fundamentals-test-suite"></a><span id="HCK_devfund"></span><span id="hck_devfund"></span><span id="HCK_DEVFUND"></span>HCK Tests.Basic.Device.Device Fundamentals 测试套件
 
-使用此套件进行所有设备类型的常规可靠性测试。 你必须遵循 [Device.Fundamentals 可靠性测试先决条件](https://go.microsoft.com/fwlink/p/?linkid=309665)中所述的 HCK 测试的硬件、软件和测试要求。 你将使用 Visual Studio 和 WDK 8.1 运行基本测试，而不是 HCK Studio 和 HCK 控制器。
+使用此套件进行所有设备类型的常规可靠性测试。 你必须遵循 [Device.Fundamentals 可靠性测试先决条件](/previous-versions/windows/hardware/hck/jj191690(v=vs.85))中所述的 HCK 测试的硬件、软件和测试要求。 你将使用 Visual Studio 和 WDK 8.1 运行基本测试，而不是 HCK Studio 和 HCK 控制器。
 
 <table>
 <colgroup>
@@ -147,12 +147,12 @@ ms.locfileid: "89216248"
 <tbody>
 <tr class="odd">
 <td align="left"><strong>硬件、软件和测试要求</strong></td>
-<td align="left"><p><a href="https://go.microsoft.com/fwlink/p/?linkid=309665" data-raw-source="[Device.Fundamentals Reliability Testing Prerequisites](https://go.microsoft.com/fwlink/p/?linkid=309665)">Device.Fundamentals 可靠性测试先决条件</a></p></td>
+<td align="left"><p><a href="https://go.microsoft.com/fwlink/p/?linkid=309665" data-raw-source="[Device.Fundamentals Reliability Testing Prerequisites](/previous-versions/windows/hardware/hck/jj191690(v=vs.85))">Device.Fundamentals 可靠性测试先决条件</a></p></td>
 </tr>
 <tr class="even">
 <td align="left"><strong>测试描述</strong></td>
-<td align="left"><p><a href="https://go.microsoft.com/fwlink/p/?linkid=309669" data-raw-source="[DF - PNP (disable and enable) with IO Before and After (Basic)](https://go.microsoft.com/fwlink/p/?linkid=309669)">DF - PNP（禁用和启用），带 IO 之前和之后（基本）</a></p>
-<p><a href="https://go.microsoft.com/fwlink/p/?linkid=309670" data-raw-source="[DF - Sleep with IO Before and After (Basic)](https://go.microsoft.com/fwlink/p/?linkid=309670)">DF - 睡眠，带 IO 之前和之后（基本）</a></p></td>
+<td align="left"><p><a href="/previous-versions/windows/hardware/hck/dn260411(v=vs.85)" data-raw-source="[DF - PNP (disable and enable) with IO Before and After (Basic)](/previous-versions/windows/hardware/hck/dn260411(v=vs.85))">DF - PNP（禁用和启用），带 IO 之前和之后（基本）</a></p>
+<p><a href="/previous-versions/windows/hardware/hck/dn247481(v=vs.85)" data-raw-source="[DF - Sleep with IO Before and After (Basic)](/previous-versions/windows/hardware/hck/dn247481(v=vs.85))">DF - 睡眠，带 IO 之前和之后（基本）</a></p></td>
 </tr>
 </tbody>
 </table>
@@ -161,7 +161,7 @@ ms.locfileid: "89216248"
 
 ### <a name="span-idhck_graphicsspanspan-idhck_graphicsspanspan-idhck_graphicsspanhck-testsbasicdevicegraphics-test-suite"></a><span id="HCK_graphics"></span><span id="hck_graphics"></span><span id="HCK_GRAPHICS"></span>HCK Tests.Basic.Device.Graphics 测试套件
 
-使用此测试套件测试图形适配器或芯片集。 你必须遵循[图形适配器或芯片集测试先决条件](https://go.microsoft.com/fwlink/p/?linkid=309671)中所述的 HCK 测试的硬件、软件和测试要求。 你将使用 Visual Studio 和 WDK 8.1 运行基本测试，而不是 HCK Studio 和 HCK 控制器。
+使用此测试套件测试图形适配器或芯片集。 你必须遵循[图形适配器或芯片集测试先决条件](/previous-versions/windows/hardware/hck/hh998923(v=vs.85))中所述的 HCK 测试的硬件、软件和测试要求。 你将使用 Visual Studio 和 WDK 8.1 运行基本测试，而不是 HCK Studio 和 HCK 控制器。
 
 <table>
 <colgroup>
@@ -177,11 +177,11 @@ ms.locfileid: "89216248"
 <tbody>
 <tr class="odd">
 <td align="left"><strong>硬件、软件和测试要求</strong></td>
-<td align="left"><a href="https://go.microsoft.com/fwlink/p/?linkid=309671" data-raw-source="[Graphic Adapter or Chipset Testing Prerequisites](https://go.microsoft.com/fwlink/p/?linkid=309671)">图形适配器或芯片集测试先决条件</a></td>
+<td align="left"><a href="https://go.microsoft.com/fwlink/p/?linkid=309671" data-raw-source="[Graphic Adapter or Chipset Testing Prerequisites](/previous-versions/windows/hardware/hck/hh998923(v=vs.85))">图形适配器或芯片集测试先决条件</a></td>
 </tr>
 <tr class="even">
 <td align="left"><strong>测试描述</strong></td>
-<td align="left"><a href="https://go.microsoft.com/fwlink/p/?linkid=309672" data-raw-source="[Graphic Adapter or Chipset Tests](https://go.microsoft.com/fwlink/p/?linkid=309672)">图形适配器或芯片集测试</a></td>
+<td align="left"><a href="/previous-versions/windows/hardware/hck/hh998416(v=vs.85)" data-raw-source="[Graphic Adapter or Chipset Tests](/previous-versions/windows/hardware/hck/hh998416(v=vs.85))">图形适配器或芯片集测试</a></td>
 </tr>
 </tbody>
 </table>
@@ -190,7 +190,7 @@ ms.locfileid: "89216248"
 
 ### <a name="span-idhck_imagingspanspan-idhck_imagingspanspan-idhck_imagingspanhck-testsbasicdeviceimaging-test-suite"></a><span id="HCK_imaging"></span><span id="hck_imaging"></span><span id="HCK_IMAGING"></span>HCK Tests.Basic.Device.Imaging 测试套件
 
-使用此测试套件测试打印机。 此测试套件使用 HCK [Device.Imaging 测试](https://go.microsoft.com/fwlink/p/?linkid=309673)中的测试。 你将使用 Visual Studio 和 WDK 8.1 运行基本测试，而不是 HCK Studio 和 HCK 控制器。
+使用此测试套件测试打印机。 此测试套件使用 HCK [Device.Imaging 测试](/previous-versions/windows/hardware/hck/jj123724(v=vs.85))中的测试。 你将使用 Visual Studio 和 WDK 8.1 运行基本测试，而不是 HCK Studio 和 HCK 控制器。
 
 <table>
 <colgroup>
@@ -206,11 +206,11 @@ ms.locfileid: "89216248"
 <tbody>
 <tr class="odd">
 <td align="left"><strong>硬件、软件和测试要求</strong></td>
-<td align="left"><p><a href="https://go.microsoft.com/fwlink/p/?linkid=309674" data-raw-source="[Printer Testing Prerequisites](https://go.microsoft.com/fwlink/p/?linkid=309674)">打印机测试先决条件</a></p></td>
+<td align="left"><p><a href="/previous-versions/windows/hardware/hck/jj124568(v=vs.85)" data-raw-source="[Printer Testing Prerequisites](/previous-versions/windows/hardware/hck/jj124568(v=vs.85))">打印机测试先决条件</a></p></td>
 </tr>
 <tr class="even">
 <td align="left"><strong>测试描述</strong></td>
-<td align="left"><p><a href="https://go.microsoft.com/fwlink/p/?linkid=309675" data-raw-source="[Printer Tests](https://go.microsoft.com/fwlink/p/?linkid=309675)">打印机测试</a></p></td>
+<td align="left"><p><a href="/previous-versions/windows/hardware/hck/hh998007(v=vs.85)" data-raw-source="[Printer Tests](/previous-versions/windows/hardware/hck/hh998007(v=vs.85))">打印机测试</a></p></td>
 </tr>
 </tbody>
 </table>
@@ -219,7 +219,7 @@ ms.locfileid: "89216248"
 
 ### <a name="span-idhck_cdmaspanspan-idhck_cdmaspanhck-testsbasicdevicenetworkmobilebroadbandcdma-test-suite"></a><span id="HCK_CDMA"></span><span id="hck_cdma"></span>HCK Tests.Basic.Device.Network.MobileBroadband.CDMA 测试套件
 
-使用此测试套件测试移动宽带 CDMA 设备。 请遵循[移动宽带测试先决条件](https://go.microsoft.com/fwlink/p/?linkid=309676)中所述的设备设置和配置指南。 你将使用 Visual Studio 和 WDK 8.1 运行基本测试，而不是 HCK Studio 和 HCK 控制器。
+使用此测试套件测试移动宽带 CDMA 设备。 请遵循[移动宽带测试先决条件](/previous-versions/windows/hardware/hck/hh998960(v=vs.85))中所述的设备设置和配置指南。 你将使用 Visual Studio 和 WDK 8.1 运行基本测试，而不是 HCK Studio 和 HCK 控制器。
 
 <table>
 <colgroup>
@@ -235,11 +235,11 @@ ms.locfileid: "89216248"
 <tbody>
 <tr class="odd">
 <td align="left"><strong>硬件、软件和测试要求</strong></td>
-<td align="left"><p><a href="https://go.microsoft.com/fwlink/p/?linkid=309676" data-raw-source="[Mobile Broadband Testing Prerequisites](https://go.microsoft.com/fwlink/p/?linkid=309676)">移动宽带测试先决条件</a></p></td>
+<td align="left"><p><a href="https://go.microsoft.com/fwlink/p/?linkid=309676" data-raw-source="[Mobile Broadband Testing Prerequisites](/previous-versions/windows/hardware/hck/hh998960(v=vs.85))">移动宽带测试先决条件</a></p></td>
 </tr>
 <tr class="even">
 <td align="left"><strong>测试描述</strong></td>
-<td align="left"><p><a href="https://go.microsoft.com/fwlink/p/?linkid=309677" data-raw-source="[CDMA Tests](https://go.microsoft.com/fwlink/p/?linkid=309677)">CDMA 测试</a></p></td>
+<td align="left"><p><a href="/previous-versions/windows/hardware/hck/dn293733(v=vs.85)" data-raw-source="[CDMA Tests](/previous-versions/windows/hardware/hck/dn293733(v=vs.85))">CDMA 测试</a></p></td>
 </tr>
 </tbody>
 </table>
@@ -248,7 +248,7 @@ ms.locfileid: "89216248"
 
 ### <a name="span-idhck_gsmspanspan-idhck_gsmspanhck-testsbasicdevicenetworkmobilebroadbandgsm-test-suite"></a><span id="HCK_GSM"></span><span id="hck_gsm"></span>HCK Tests.Basic.Device.Network.MobileBroadband.GSM 测试套件
 
-使用此测试套件测试移动宽带 GSM 设备。 请遵循[移动宽带测试先决条件](https://go.microsoft.com/fwlink/p/?linkid=309676)中所述的设备设置和配置指南。 你将使用 Visual Studio 和 WDK 8.1 运行基本测试，而不是 HCK Studio 和 HCK 控制器。
+使用此测试套件测试移动宽带 GSM 设备。 请遵循[移动宽带测试先决条件](/previous-versions/windows/hardware/hck/hh998960(v=vs.85))中所述的设备设置和配置指南。 你将使用 Visual Studio 和 WDK 8.1 运行基本测试，而不是 HCK Studio 和 HCK 控制器。
 
 <table>
 <colgroup>
@@ -264,11 +264,11 @@ ms.locfileid: "89216248"
 <tbody>
 <tr class="odd">
 <td align="left"><strong>硬件、软件和测试要求</strong></td>
-<td align="left"><p><a href="https://go.microsoft.com/fwlink/p/?linkid=309676" data-raw-source="[Mobile Broadband Testing Prerequisites](https://go.microsoft.com/fwlink/p/?linkid=309676)">移动宽带测试先决条件</a></p></td>
+<td align="left"><p><a href="https://go.microsoft.com/fwlink/p/?linkid=309676" data-raw-source="[Mobile Broadband Testing Prerequisites](/previous-versions/windows/hardware/hck/hh998960(v=vs.85))">移动宽带测试先决条件</a></p></td>
 </tr>
 <tr class="even">
 <td align="left"><strong>测试描述</strong></td>
-<td align="left"><p><a href="https://go.microsoft.com/fwlink/p/?linkid=309678" data-raw-source="[GSM Tests](https://go.microsoft.com/fwlink/p/?linkid=309678)">GSM 测试</a></p></td>
+<td align="left"><p><a href="/previous-versions/windows/hardware/hck/dn247238(v=vs.85)" data-raw-source="[GSM Tests](/previous-versions/windows/hardware/hck/dn247238(v=vs.85))">GSM 测试</a></p></td>
 </tr>
 </tbody>
 </table>
@@ -277,7 +277,7 @@ ms.locfileid: "89216248"
 
 ### <a name="span-idhck_wlanspanspan-idhck_wlanspanhck-testsbasicdevicenetworkwlan-test-suite"></a><span id="HCK_WLAN"></span><span id="hck_wlan"></span>HCK Tests.Basic.Device.Network.WLAN 测试套件
 
-使用此测试套件测试无线 LAN (802.11) 设备。 请遵循 HCK 的[无线 LAN (802.11) 测试先决条件](https://go.microsoft.com/fwlink/p/?linkid=309679)中所述的设备设置和配置指南。 你将使用 Visual Studio 和 WDK 8.1 运行基本测试，而不是 HCK Studio 和 HCK 控制器。
+使用此测试套件测试无线 LAN (802.11) 设备。 请遵循 HCK 的[无线 LAN (802.11) 测试先决条件](/previous-versions/windows/hardware/hck/jj123847(v=vs.85))中所述的设备设置和配置指南。 你将使用 Visual Studio 和 WDK 8.1 运行基本测试，而不是 HCK Studio 和 HCK 控制器。
 
 <table>
 <colgroup>
@@ -293,11 +293,11 @@ ms.locfileid: "89216248"
 <tbody>
 <tr class="odd">
 <td align="left"><strong>硬件、软件和测试要求</strong></td>
-<td align="left"><p><a href="https://go.microsoft.com/fwlink/p/?linkid=309679" data-raw-source="[Wireless LAN (802.11) Testing Prerequisites](https://go.microsoft.com/fwlink/p/?linkid=309679)">无线 LAN (802.11) 测试先决条件</a></p></td>
+<td align="left"><p><a href="https://go.microsoft.com/fwlink/p/?linkid=309679" data-raw-source="[Wireless LAN (802.11) Testing Prerequisites](/previous-versions/windows/hardware/hck/jj123847(v=vs.85))">无线 LAN (802.11) 测试先决条件</a></p></td>
 </tr>
 <tr class="even">
 <td align="left"><strong>测试描述</strong></td>
-<td align="left"><p><a href="https://go.microsoft.com/fwlink/p/?linkid=309680" data-raw-source="[WLAN L1 Tests](https://go.microsoft.com/fwlink/p/?linkid=309680)">WLAN L1 测试</a></p></td>
+<td align="left"><p><a href="/previous-versions/windows/hardware/hck/dn247288(v=vs.85)" data-raw-source="[WLAN L1 Tests](/previous-versions/windows/hardware/hck/dn247288(v=vs.85))">WLAN L1 测试</a></p></td>
 </tr>
 </tbody>
 </table>
@@ -308,6 +308,6 @@ ms.locfileid: "89216248"
 * [如何选择和配置设备基础功能测试](how-to-select-and-configure-the-device-fundamental-tests.md)
 * [将驱动程序部署到测试计算机](deploying-a-driver-to-a-test-computer.md)
 * [Windows 调试入门](../debugger/getting-started-with-windows-debugging.md)
-* [硬件认证计划](https://go.microsoft.com/fwlink/p/?linkid=227016)
-* [Windows 硬件认证工具包 (HCK)](https://go.microsoft.com/fwlink/p/?linkid=254893)
+* [硬件认证计划](/previous-versions/windows/hardware/hck/jj124227(v=vs.85))
+* [Windows 硬件认证工具包 (HCK)](/windows-hardware/test/hlk/)
 * [如何在运行时通过命令提示符测试驱动程序](how-to-test-a-driver-at-runtime-from-a-command-prompt.md)

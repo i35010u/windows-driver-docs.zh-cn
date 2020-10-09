@@ -5,12 +5,12 @@ ms.assetid: b96b02b8-8804-403e-9513-7a5d1b730fcd
 ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0da1c696f308d56d896fc1f9171b89c414cd2219
-ms.sourcegitcommit: bd72676caf2bf5c9738c4081c778316919b85d30
+ms.openlocfilehash: 22731c37bad27505f8dc78b4b70d7f93948fd3be
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2020
-ms.locfileid: "89450112"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91734099"
 ---
 # <a name="submit-a-pc-device-manifest-package"></a>提交电脑设备清单包
 
@@ -20,7 +20,7 @@ ms.locfileid: "89450112"
 
 ### <a name="to-submit-a-device-manifest-package"></a>提交设备清单包
 
-1. 使用 [SignTool](https://go.microsoft.com/fwlink/p/?LinkId=238330) 工具对 devicemanifest-ms 程序包进行签名。
+1. 使用 [SignTool](/windows/win32/seccrypto/signtool) 工具对 devicemanifest-ms 程序包进行签名。
 
 2. 从硬件开发人员中心或 Windows 开发人员中心，使用 Microsoft 帐户登录到“仪表板”  。
 
@@ -84,9 +84,9 @@ GUID1.devicemanifest-ms
 
 若要创建 LocaleInfo.xml 和 PcMetadataSubmission.xml，请参阅以下内容。
 
-若要了解如何开发设备元数据包 \*.devicemetadata-ms，请参阅 [Windows 8 的设备元数据包架构参考](https://go.microsoft.com/fwlink/p/?LinkId=226753)
+若要了解如何开发设备元数据包 \*.devicemetadata-ms，请参阅 [Windows 8 的设备元数据包架构参考](/previous-versions/windows/hardware/metadata/dn465877(v=vs.85))
 
-你可以使用 Cabarc 工具创建这些 CAB 程序包。 有关此工具的详细信息，请参阅 [Cabarc 概述](https://go.microsoft.com/fwlink/p/?LinkId=248843)
+你可以使用 Cabarc 工具创建这些 CAB 程序包。 有关此工具的详细信息，请参阅 [Cabarc 概述](/previous-versions/windows/it-pro/windows-server-2003/cc781787(v=ws.10))
 
 使用 Cabarc 工具创建 \*.devicemanifest-ms 文件时，必须创建一个本地目录，其中设备元数据包 (\*.devicemetadata-ms)、LocaleInfo XML 文档和 PcMetadataSubmission XML 文档位于该目录的根目录中。
 
@@ -96,7 +96,7 @@ GUID1.devicemanifest-ms
 
 - 每个电脑设备清单提交和设备元数据包的 GUID 都必须唯一。 当你创建新的或修改的程序包时，必须创建新 GUID。
 
-- 有关如何创建 cabinet 文件的详细信息，请参阅 [Microsoft Cabinet 软件开发工具包](https://go.microsoft.com/fwlink/p/?LinkId=248844)。
+- 有关如何创建 cabinet 文件的详细信息，请参阅 [Microsoft Cabinet 软件开发工具包](/previous-versions/ms974336(v=msdn.10))。
 
 #### <a name="example-device-manifest"></a>示例（设备清单）
 
@@ -118,7 +118,7 @@ N .\PCFiles\ GUID.devicemanifest-ms
 .\PcPackages\LocaleInfo.xml
 ```
 
-有关此工具的详细信息，请参阅 [Cabarc 概述](https://go.microsoft.com/fwlink/p/?LinkId=248843)。
+有关此工具的详细信息，请参阅 [Cabarc 概述](/previous-versions/windows/it-pro/windows-server-2003/cc781787(v=ws.10))。
 
 ## <a name="creating-pcmetadatasubmissionxml"></a>创建 PcMetadataSubmission.xml
 
@@ -131,7 +131,7 @@ PcMetadataSubmission.xml 文档中的数据基于 PcMetadataSubmission XML 架�
 >[!NOTE]
 >该 XML 文档必须使用 UTF-8 编码进行保存。
 
-有关 ComputerHardwareID 的详细信息，请参阅[如何创建设备和打印机的设备元数据包](https://go.microsoft.com/fwlink/p/?LinkId=253559)。
+有关 ComputerHardwareID 的详细信息，请参阅[如何创建设备和打印机的设备元数据包](/previous-versions/windows/hardware/metadata/dn465877(v=vs.85))。
 
 #### <a name="pcmetadatasubmission-xml-schema-namespace"></a>PcMetadataSubmission XML 架构命名空间
 

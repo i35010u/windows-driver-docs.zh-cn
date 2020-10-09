@@ -4,12 +4,12 @@ title: 使用代码分析和验证工具分析驱动程序
 description: 代码分析和验证工具可以系统地分析源代码，从而帮助提高驱动程序的稳定性和可靠性。
 ms.date: 07/02/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 0009218a3e29b4e68e0f95c7678c39ba44b7d9e9
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 3e514ab35f102afa576d17044e211c82d1b049bb
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89066524"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91732917"
 ---
 # <a name="analyzing-a-driver-using-code-analysis-and-verification-tools"></a>使用代码分析和验证工具分析驱动程序
 
@@ -24,10 +24,10 @@ WDK 的 Windows 8 版本为 Visual Studio 附带的 C/C++ 代码分析工具提�
 
 有关 Visual Studio 中代码分析工具的信息，请参阅：
 
--   [使用“代码分析”分析应用程序质量](https://go.microsoft.com/fwlink/p/?linkid=226836)
+-   [使用“代码分析”分析应用程序质量](/previous-versions/visualstudio/visual-studio-2013/dd264897(v=vs.120))
 -   [驱动程序的代码分析](../devtest/code-analysis-for-drivers.md)
 -   [如何为驱动程序运行“代码分析”](../devtest/how-to-run-code-analysis-for-drivers.md)
--   [使用 SAL 注释减少 C/C++ 代码缺陷](https://go.microsoft.com/fwlink/p/?linkid=247283)
+-   [使用 SAL 注释减少 C/C++ 代码缺陷](/previous-versions/visualstudio/visual-studio-2013/ms182032(v=vs.120))
 -   [Windows 驱动程序的 SAL 2.0 注释](../devtest/sal-2-annotations-for-windows-drivers.md)
 
 **注意**  在 WDK 的以前版本中，代码分析的驱动程序特定模块是称为 PREfast for Drivers (PFD) 的独立工具的一部分。 PREfast for Drivers 也已集成到 WDK 生成环境中，是 Microsoft 自动代码审查 (OACR) 的一部分。
@@ -46,8 +46,6 @@ WDK 的 Windows 8 版本为 Visual Studio 附带的 C/C++ 代码分析工具提�
 -   概述：[静态驱动程序验证程序](../devtest/static-driver-verifier.md)
 -   如何执行此操作：[使用静态驱动程序验证程序查找驱动程序中的缺陷](../devtest/using-static-driver-verifier-to-find-defects-in-drivers.md)
 
-
- 
 
  
 

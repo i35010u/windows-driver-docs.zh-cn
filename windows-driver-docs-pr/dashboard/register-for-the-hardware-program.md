@@ -5,12 +5,12 @@ ms.assetid: 8E947636-7F0E-4C31-9149-D6BF60D84226
 ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8236e67db1829e08b493197ccce4c5fed0265463
-ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
+ms.openlocfilehash: f69e6e803c44bffd6d0cac2f65b8ee4d92450f6c
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "65106395"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91732567"
 ---
 # <a name="register-for-the-hardware-program"></a>注册硬件计划
 
@@ -31,7 +31,7 @@ ms.locfileid: "65106395"
 
     有关代码签名证书和如何获取证书的信息，请参阅[获取代码签名证书](get-a-code-signing-certificate.md)。
 
-- 你将需要使用组织的 Azure Active Directory (Azure AD) [全局管理员](https://go.microsoft.com/fwlink/?LinkId=746654)帐户登录。 如果不知道组织是否有 Azure AD 目录，请联系 IT 部门。 如果组织没有 Azure AD 目录，必须能创建一个。
+- 你将需要使用组织的 Azure Active Directory (Azure AD) [全局管理员](/azure/active-directory/users-groups-roles/directory-assign-admin-roles)帐户登录。 如果不知道组织是否有 Azure AD 目录，请联系 IT 部门。 如果组织没有 Azure AD 目录，必须能创建一个。
 
 - 必须有权代表组织签署法律协议。
 
@@ -58,7 +58,7 @@ ms.locfileid: "65106395"
 
 4. 使用 Azure AD 全局管理员帐户登录
 
-    - 如果组织已有 Azure AD 目录，请使用[全局管理员](https://go.microsoft.com/fwlink/?LinkId=746654)帐户登录。
+    - 如果组织已有 Azure AD 目录，请使用[全局管理员](/azure/active-directory/users-groups-roles/directory-assign-admin-roles)帐户登录。
 
     - 如果组织没有 Azure AD 目录，必须创建一个目录并登录。
 

@@ -6,12 +6,12 @@ keywords:
 - 编写 KMDF 驱动程序
 ms.date: 04/20/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 9e96a1a4c1054848433c6e0ea035214f2d5520cb
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 0203231852558032872ab280a5333a08c4f1f1e8
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89382407"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91734195"
 ---
 # <a name="write-a-universal-windows-driver-kmdf-based-on-a-template"></a>基于模板编写通用 Windows 驱动程序 (KMDF)
 
@@ -74,7 +74,7 @@ ms.locfileid: "89382407"
     ![“kmdfdriver 包属性页”窗口的屏幕截图，其中显示选择了“部署驱动程序安装”](images/vs2015-kmdfdriver-property-pages.png)
 
     > [!NOTE]
-    > 在本练习中，硬件 ID 不标识真实的硬件。 它标识了虚构设备，该设备位于[设备树](https://go.microsoft.com/fwlink/p?linkid=399236)中，作为根节点的子节点。 对于真实的硬件，不要选择“硬件 ID 驱动程序更新”，而要选择“安装并验证”。 你将在驱动程序的信息 (INF) 文件中看到硬件 ID。 在“解决方案资源管理器”窗口中，转到“KmdfDriver”&gt;“驱动程序文件”，然后双击 KmdfDriver.inf。 硬件 ID 位于 \[Standard.NT$ARCH$\] 下。
+    > 在本练习中，硬件 ID 不标识真实的硬件。 它标识了虚构设备，该设备位于[设备树](./device-nodes-and-device-stacks.md)中，作为根节点的子节点。 对于真实的硬件，不要选择“硬件 ID 驱动程序更新”，而要选择“安装并验证”。 你将在驱动程序的信息 (INF) 文件中看到硬件 ID。 在“解决方案资源管理器”窗口中，转到“KmdfDriver”&gt;“驱动程序文件”，然后双击 KmdfDriver.inf。 硬件 ID 位于 \[Standard.NT$ARCH$\] 下。
 
     ```C++
     [Standard.NT$ARCH$]

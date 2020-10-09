@@ -5,16 +5,16 @@ ms.assetid: 7EFA9617-CF1D-4259-B0C4-A9DDCF5C3A1F
 ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d59d50579eed08094784c98f5cd268bb3d63d0cd
-ms.sourcegitcommit: a5f76805387760730faed5674d87201ec85b7dd3
+ms.openlocfilehash: f310578368905f56161dfb1de5645a17116aedd0
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90112092"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91733231"
 ---
 # <a name="hardware-submissions"></a>硬件提交
 
-Windows 硬件兼容性计划（适用于 Windows 10）和 Windows 硬件认证计划（适用于 Windows 8/8.1 及较早版本的操作系统）使你可以在通过合作伙伴中心提交最终版本之前，设计、创建和测试你的硬件和驱动程序。 有关详细信息，请参阅 [Windows 硬件认证](https://go.microsoft.com/fwlink/p/?LinkId=224782)页。 通过为 Windows 认证你的硬件设备、系统和驱动程序，你将以下列形式获得 Microsoft 市场营销资源支持：兼容性和可靠性列表、徽标图片和促销伙伴关系。
+Windows 硬件兼容性计划（适用于 Windows 10）和 Windows 硬件认证计划（适用于 Windows 8/8.1 及较早版本的操作系统）使你可以在通过合作伙伴中心提交最终版本之前，设计、创建和测试你的硬件和驱动程序。 有关详细信息，请参阅 [Windows 硬件认证](/previous-versions/windows/hardware/hck/jj124227(v=vs.85))页。 通过为 Windows 认证你的硬件设备、系统和驱动程序，你将以下列形式获得 Microsoft 市场营销资源支持：兼容性和可靠性列表、徽标图片和促销伙伴关系。
 
 若要开发你的设备，请下载 [Windows 驱动程序工具包 (WDK)](../download-the-wdk.md)。
 
@@ -191,7 +191,7 @@ Windows 硬件兼容性计划（适用于 Windows 10）和 Windows 硬件认证�
 <thead>
 <tr class="header">
 <th>字段</th>
-<th>描述</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>

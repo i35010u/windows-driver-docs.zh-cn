@@ -4,16 +4,16 @@ title: 如何选择和配置设备基础功能测试
 description: 适用于 Windows 8 的 WDK 提供了一个驱动程序测试框架，其中包括一组设备基础功能测试。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 69ec75ca9b12aea83d7cd714f9d1d3669c9645ee
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: ef20d8da9c83b329367058206e39516e02d39084
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90105918"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91733415"
 ---
 # <a name="how-to-select-and-configure-the-device-fundamentals-tests"></a>如何选择和配置设备基础功能测试
 
-适用于 Windows 8 的 WDK 提供了一个驱动程序测试框架，其中包括一组设备基础功能测试。 设备基础功能测试是在 Microsoft 内部用于测试 Windows 和 WDK 随附的驱动程序和驱动程序样本以及在外部作为 [Windows 硬件认证计划](https://go.microsoft.com/fwlink/p/?linkid=8705)一部分的一系列测试。 可以在开发环境中运行测试。 运行测试时，可以使用与 Windows 认证测试所使用的相同参数，或者可以根据测试和调试需要配置和自定义运行时参数。
+适用于 Windows 8 的 WDK 提供了一个驱动程序测试框架，其中包括一组设备基础功能测试。 设备基础功能测试是在 Microsoft 内部用于测试 Windows 和 WDK 随附的驱动程序和驱动程序样本以及在外部作为 [Windows 硬件认证计划](/previous-versions/windows/hardware/hck/jj124227(v=vs.85))一部分的一系列测试。 可以在开发环境中运行测试。 运行测试时，可以使用与 Windows 认证测试所使用的相同参数，或者可以根据测试和调试需要配置和自定义运行时参数。
 
 ## <a name="span-idgetting_the_most_from_the_device_fundamentals_testsspanspan-idgetting_the_most_from_the_device_fundamentals_testsspanspan-idgetting_the_most_from_the_device_fundamentals_testsspangetting-the-most-from-the-device-fundamentals-tests"></a><span id="Getting_the_most_from_the_Device_Fundamentals_tests"></span><span id="getting_the_most_from_the_device_fundamentals_tests"></span><span id="GETTING_THE_MOST_FROM_THE_DEVICE_FUNDAMENTALS_TESTS"></span>充分利用设备基础功能测试
 
@@ -23,7 +23,7 @@ ms.locfileid: "90105918"
 ## <a name="span-idabout_the_device_fundamentals_testsspanspan-idabout_the_device_fundamentals_testsspanspan-idabout_the_device_fundamentals_testsspanabout-the-device-fundamentals-tests"></a><span id="About_the_Device_Fundamentals_Tests"></span><span id="about_the_device_fundamentals_tests"></span><span id="ABOUT_THE_DEVICE_FUNDAMENTALS_TESTS"></span>关于设备基础功能测试
 
 
-WDK 提供有两种配置的设备基础功能测试：基本和认证。 在两种配置下，都可以通过编辑测试参数来调整测试长度、要执行的测试周期数以及其他测试参数，具体取决于需要测试的目标设备或驱动程序。 基本配置适用于通用驱动程序和设备的测试和调试。 在开发周期早期及整个过程中均可使用基本配置。 基本配置下的测试所使用的设置与 Windows 认证测试使用的设置相同，但前者的运行时更短。 在认证配置下，测试使用的设置与 Windows 认证测试使用的设置完全相同。 使用认证配置来验证设备或驱动程序是否做好 [Windows 硬件认证计划](https://go.microsoft.com/fwlink/p/?linkid=8705)的准备。
+WDK 提供有两种配置的设备基础功能测试：基本和认证。 在两种配置下，都可以通过编辑测试参数来调整测试长度、要执行的测试周期数以及其他测试参数，具体取决于需要测试的目标设备或驱动程序。 基本配置适用于通用驱动程序和设备的测试和调试。 在开发周期早期及整个过程中均可使用基本配置。 基本配置下的测试所使用的设置与 Windows 认证测试使用的设置相同，但前者的运行时更短。 在认证配置下，测试使用的设置与 Windows 认证测试使用的设置完全相同。 使用认证配置来验证设备或驱动程序是否做好 [Windows 硬件认证计划](/previous-versions/windows/hardware/hck/jj124227(v=vs.85))的准备。
 
 [设备基础功能测试](../devtest/device-fundamentals-tests.md)包括以下类别的测试。
 

@@ -5,18 +5,18 @@ ms.assetid: c8e248d4-a419-48e1-839d-1bbb9adda382
 ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1c78288e72fea9951c8a6114c2ae7dafc9a5ad56
-ms.sourcegitcommit: bd72676caf2bf5c9738c4081c778316919b85d30
+ms.openlocfilehash: 90d1b43fa9bffc103efab8991d78c87719657a40
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2020
-ms.locfileid: "89450192"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91734115"
 ---
 # <a name="submit-a-bulk-metadata-package"></a>提交批量元数据包
 
 提交批量元数据包：
 
-1. 使用 [SignTool](https://go.microsoft.com/fwlink/p/?LinkId=238330) 工具对批量元数据包进行签名。
+1. 使用 [SignTool](/windows/win32/seccrypto/signtool) 工具对批量元数据包进行签名。
 
 2. 从硬件开发人员中心或 Windows 开发人员中心，使用 Microsoft 帐户登录到“仪表板”。
 
@@ -32,7 +32,7 @@ ms.locfileid: "89450192"
 
 最多可将 50 个 devicemetadata-ms 或 devicemanifest-ms 文件包含在批量程序包中。
 
-有关如何使用“设备元数据提交向导”创建批量元数据包的信息，请参阅[在 Visual Studio 中创建设备元数据提交程序包](https://go.microsoft.com/fwlink/p/?LinkId=251705)。
+有关如何使用“设备元数据提交向导”创建批量元数据包的信息，请参阅[在 Visual Studio 中创建设备元数据提交程序包](../devtest/using-the-submission-tool.md)。
 
 ### <a name="bulk-metadata-submission-package-contents"></a>批量元数据提交程序包内容
 
@@ -76,11 +76,11 @@ Filename1、Filename2、Filename3、Filename4 等必须是 GUID。
 
 若要创建 BulkMetadataSubmission.xml，请参阅下面的[创建 BulkMetadataSubmission.xml](#creating-bulkmetadatasubmissionxml)。
 
-若要开发设备元数据包 \*.devicemetadata-ms，请参阅 [Windows 8 的设备元数据包架构参考](https://go.microsoft.com/fwlink/p/?LinkId=226753)。
+若要开发设备元数据包 \*.devicemetadata-ms，请参阅 [Windows 8 的设备元数据包架构参考](/previous-versions/windows/hardware/metadata/dn465877(v=vs.85))。
 
 若要开发设备清单包 \*.devicemanifest-ms，请参阅[提交电脑设备清单包](submit-a-pc-device-manifest-package.md)。
 
-你可以使用 Cabarc 工具创建这些 CAB 程序包。 若要了解有关此工具的详细信息，请参阅 [Cabarc 概述](https://go.microsoft.com/fwlink/p/?LinkId=248843)。
+你可以使用 Cabarc 工具创建这些 CAB 程序包。 若要了解有关此工具的详细信息，请参阅 [Cabarc 概述](/previous-versions/windows/it-pro/windows-server-2003/cc781787(v=ws.10))。
 
 使用 Cabarc 工具创建 \*.bulkmetadata-ms 文件时，必须创建一个本地目录，其中设备元数据包 (\*.devicemetadata-ms)、设备清单包 (\*.devicemanifest-ms) 和 BulkMetadataSubmission XML 文档都位于该目录的根目录中。
 
@@ -90,7 +90,7 @@ Filename1、Filename2、Filename3、Filename4 等必须是 GUID。
 
 - 每个设备元数据包和设备清单包的 GUID 都必须唯一。 当你创建新的或修改的程序包时，必须创建新 GUID。
 
-- 有关如何创建 cabinet 文件的更多详细信息，请参阅 [Microsoft Cab SDK](https://go.microsoft.com/fwlink/p/?LinkId=248844)。
+- 有关如何创建 cabinet 文件的更多详细信息，请参阅 [Microsoft Cab SDK](/previous-versions/ms974336(v=msdn.10))。
 
 ## <a name="example"></a>示例
 
@@ -118,7 +118,7 @@ N .\BulkFiles\ DDMMYYYY.bulkmetadata-ms
 ```
 
 >[!Note]
->有关此工具的详细信息，请参阅 [Cabarc 概述](https://go.microsoft.com/fwlink/p/?LinkId=248843)。
+>有关此工具的详细信息，请参阅 [Cabarc 概述](/previous-versions/windows/it-pro/windows-server-2003/cc781787(v=ws.10))。
 
 ## <a name="creating-bulkmetadatasubmissionxml"></a>创建 BulkMetadataSubmission.xml
 
@@ -262,7 +262,7 @@ BulkMetadataSubmission XML 架构定义以下元素和属性：
 
 ### <a name="experience-element"></a>Experience 元素
 
-Experience 元素指定单个体验的信息。 有关体验的详细信息，请参阅 [Windows 8 的设备元数据包架构参考](https://go.microsoft.com/fwlink/p/?LinkId=226753)。
+Experience 元素指定单个体验的信息。 有关体验的详细信息，请参阅 [Windows 8 的设备元数据包架构参考](/previous-versions/windows/hardware/metadata/dn465877(v=vs.85))。
 
 仪表板将基于此信息创建具有正确信息的体验并向此体验提交包，或者使用新包更新现有体验。
 

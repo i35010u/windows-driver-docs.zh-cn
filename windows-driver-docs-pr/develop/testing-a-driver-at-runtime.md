@@ -4,12 +4,12 @@ title: 如何使用 Visual Studio 在运行时测试驱动程序
 description: 你可以在 Visual Studio 中使用 WDK 扩展，在网络中的测试计算机上方便地生成、部署、安装和测试驱动程序。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 96644aca4facad9850852910fde2a1a88eeaf2cb
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: e2a6146504106c8bfda6febd85d1fbb37414aaae
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89212211"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91733335"
 ---
 # <a name="how-to-test-a-driver-at-runtime-using-visual-studio"></a>如何使用 Visual Studio 在运行时测试驱动程序
 
@@ -55,7 +55,7 @@ Visual Studio 的 WDK 扩展提供设备测试接口，可让你在网络中的�
 4.  选择“添加/删除测试”。
 5.  在“添加或删除驱动程序测试”  对话框中，你可以指定驱动程序测试类别和体系结构（所有、x86、x64、ARM）。 默认情况下会显示所有测试。 若要查看测试类别，选择“驱动程序测试类别”下拉列表中的文件夹。
 
-    例如，在 WDK 8 中，若要选择 [Windows 硬件认证工具包 (HCK)](https://go.microsoft.com/fwlink/p/?linkid=254893) 中使用的所有设备基础知识测试，选择“所有测试”、“认证”和“设备基础知识”。 有关测试的信息，请参阅[如何选择和配置设备基础功能测试](how-to-select-and-configure-the-device-fundamental-tests.md)。
+    例如，在 WDK 8 中，若要选择 [Windows 硬件认证工具包 (HCK)](/windows-hardware/test/hlk/) 中使用的所有设备基础知识测试，选择“所有测试”、“认证”和“设备基础知识”。 有关测试的信息，请参阅[如何选择和配置设备基础功能测试](how-to-select-and-configure-the-device-fundamental-tests.md)。
 
     在 WDK 8.1 中，设备基础功能测试位于“所有测试”  、“HCK 测试”  、“认证”  和“设备基础”  文件夹下。 在 WDK 8.1 中，驱动程序测试类别包括 HCK（基本）测试。 请参阅[如何在 WDK 8.1 中运行 HCK 测试套件](run-the-hck-test-suites-in-the-wdk.md)了解详细信息。
 
@@ -90,7 +90,7 @@ Visual Studio 的 WDK 扩展提供设备测试接口，可让你在网络中的�
 
 你可以编写自己的驱动程序测试，并在测试计算机上部署这些测试。 有关详细信息，请参阅[如何编写驱动程序测试](how-to-write-a-driver-test-.md)。
 
-在开发周期的早期在 Visual Studio 中运行设备基础功能测试，这将有助于你最终准备好使用 [Windows 硬件认证工具包 (HCK)](https://go.microsoft.com/fwlink/p/?linkid=254893) 测试驱动程序。
+在开发周期的早期在 Visual Studio 中运行设备基础功能测试，这将有助于你最终准备好使用 [Windows 硬件认证工具包 (HCK)](/windows-hardware/test/hlk/) 测试驱动程序。
 
 ## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
@@ -99,8 +99,6 @@ Visual Studio 的 WDK 扩展提供设备测试接口，可让你在网络中的�
 * [如何选择和配置设备基础功能测试](how-to-select-and-configure-the-device-fundamental-tests.md)
 * [将驱动程序部署到测试计算机](deploying-a-driver-to-a-test-computer.md)
 * [Windows 调试入门](../debugger/getting-started-with-windows-debugging.md)
-* [硬件认证计划](https://go.microsoft.com/fwlink/p/?linkid=227016)
-* [Windows 硬件认证工具包 (HCK)](https://go.microsoft.com/fwlink/p/?linkid=254893)
+* [硬件认证计划](/previous-versions/windows/hardware/hck/jj124227(v=vs.85))
+* [Windows 硬件认证工具包 (HCK)](/windows-hardware/test/hlk/)
 * [如何在运行时通过命令提示符测试驱动程序](how-to-test-a-driver-at-runtime-from-a-command-prompt.md)
- 
-

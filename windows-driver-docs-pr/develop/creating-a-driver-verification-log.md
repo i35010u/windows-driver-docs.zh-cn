@@ -4,12 +4,12 @@ title: 创建驱动程序验证日志
 description: 了解为什么 Windows Server 硬件认证计划需要所有适用的驱动程序在提交时提供驱动程序验证日志 (DVL)。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 651a7b101baaaa4d82e289d4a8d36d9b55dca185
-ms.sourcegitcommit: cccf9ba62af357aad1016addbbf6c42c7f564412
+ms.openlocfilehash: dd3ffdf4bc627f53ae245979b09d9ec976e47082
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/01/2020
-ms.locfileid: "91606436"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91734457"
 ---
 # <a name="creating-a-driver-verification-log"></a>创建驱动程序验证日志
 
@@ -20,7 +20,7 @@ Windows Server [硬件认证计划](/windows-hardware/design/compatibility/)需
 1.  在运行代码分析工具之前，请确保可以使用最新 Windows 驱动程序工具包 (WDK) 生成并链接驱动程序。
 2.  对于驱动程序解决方案，请确保已选择版本配置作为解决方案配置，并选择 x64 作为解决方案平台。
 3.  运行[静态驱动程序验证程序](../devtest/static-driver-verifier.md)。 有关创建日志文件中的信息，请参阅[为静态驱动程序验证程序创建日志文件](creating-a-log-file-for-static-driver-verifier.md)和[使用静态驱动程序验证程序查找驱动程序中的缺陷](../devtest/using-static-driver-verifier-to-find-defects-in-drivers.md)。
-4.  为驱动程序运行代码分析工具。 解决并修复发现的任何缺陷。 请参阅[为代码分析工具创建日志文件](creating-a-log-file-for-the-code-analysis-tool.md)和[如何为驱动程序运行代码分析](../devtest/how-to-run-code-analysis-for-drivers.md)。 有关代码分析的详细信息，请参阅[使用代码分析分析 C/C++ 代码质量](https://go.microsoft.com/fwlink/p/?linkid=226836)。
+4.  为驱动程序运行代码分析工具。 解决并修复发现的任何缺陷。 请参阅[为代码分析工具创建日志文件](creating-a-log-file-for-the-code-analysis-tool.md)和[如何为驱动程序运行代码分析](../devtest/how-to-run-code-analysis-for-drivers.md)。 有关代码分析的详细信息，请参阅[使用代码分析分析 C/C++ 代码质量](/previous-versions/visualstudio/visual-studio-2013/dd264897(v=vs.120))。
 5.  创建驱动程序验证日志。 在“驱动程序”菜单中，选择“创建驱动程序验证日志…”。
 6.  确认检测到代码分析日志和静态驱动程序验证程序日志文件。 选择“创建”。
 
@@ -52,9 +52,7 @@ msbuild.exe <vcxprojectfile> /target:dvl /p:Configuration="Release" /P:Platform=
 
 * [为静态驱动程序验证程序创建日志文件](creating-a-log-file-for-static-driver-verifier.md)
 * [为代码分析工具创建日志文件](creating-a-log-file-for-the-code-analysis-tool.md)
-* [硬件认证计划](https://go.microsoft.com/fwlink/p/?linkid=227016)
+* [硬件认证计划](/previous-versions/windows/hardware/hck/jj124227(v=vs.85))
 * [使用代码分析工具分析驱动程序质量](analyzing-driver-quality-by-using-code-analysis-tools.md)
 * [如何为驱动程序运行“代码分析”](../devtest/how-to-run-code-analysis-for-drivers.md)
 * [使用静态驱动程序验证程序查找驱动程序中的缺陷](../devtest/using-static-driver-verifier-to-find-defects-in-drivers.md)
- 
-

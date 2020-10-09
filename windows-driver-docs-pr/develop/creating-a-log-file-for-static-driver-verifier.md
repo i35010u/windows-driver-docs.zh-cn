@@ -4,16 +4,16 @@ title: 为静态驱动程序验证程序创建日志文件
 description: 了解如何在为驱动程序创建驱动程序验证日志 (DVL) 之前运行静态驱动程序验证程序 (SDV)。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2c343d614f2c1d3d2aaf54348922fb9ec1db5aab
-ms.sourcegitcommit: cccf9ba62af357aad1016addbbf6c42c7f564412
+ms.openlocfilehash: fd5497e5f2f7a8a23fd47985a758af39ffff9d1f
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/01/2020
-ms.locfileid: "91606459"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91734453"
 ---
 # <a name="creating-a-log-file-for-static-driver-verifier"></a>为静态驱动程序验证程序创建日志文件
 
-Windows Server 2012 [硬件认证计划](https://go.microsoft.com/fwlink/p/?linkid=227016)需要所有驱动程序在正当提交时提供驱动程序验证日志 (DVL)。 在为驱动程序创建 DVL 之前，必须先运行[静态驱动程序验证程序](../devtest/static-driver-verifier.md) (SDV)。 DVL 包含代码分析的结果和静态驱动程序验证程序日志文件的摘要。 日志文件不包含源代码信息。
+Windows Server 2012 [硬件认证计划](/previous-versions/windows/hardware/hck/jj124227(v=vs.85))需要所有驱动程序在正当提交时提供驱动程序验证日志 (DVL)。 在为驱动程序创建 DVL 之前，必须先运行[静态驱动程序验证程序](../devtest/static-driver-verifier.md) (SDV)。 DVL 包含代码分析的结果和静态驱动程序验证程序日志文件的摘要。 日志文件不包含源代码信息。
 
 为了获得最佳效果，请在运行静态驱动程序验证程序前运行代码分析工具。
 
@@ -59,6 +59,4 @@ msbuild.exe <vcxprojectfile> /p:Configuration="Win8 Release" /p:Platform=x64 /ta
 * [创建驱动程序验证日志](creating-a-driver-verification-log.md)
 * [静态驱动程序验证程序](../devtest/static-driver-verifier.md)
 * [使用静态驱动程序验证程序查找驱动程序中的缺陷](../devtest/using-static-driver-verifier-to-find-defects-in-drivers.md)
-* [硬件认证计划](https://go.microsoft.com/fwlink/p/?linkid=227016)
- 
-
+* [硬件认证计划](/previous-versions/windows/hardware/hck/jj124227(v=vs.85))

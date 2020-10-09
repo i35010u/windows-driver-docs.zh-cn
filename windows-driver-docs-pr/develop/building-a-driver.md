@@ -4,17 +4,17 @@ title: 使用 WDK 生成驱动程序
 description: 本主题介绍了如何使用 Windows 驱动程序工具包 (WDK) 生成驱动程序。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6e503574f4bd08150e1fcb65cbe99b0e0fb6a583
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 977515761197e62145ab4104275ad36ca948e028
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90101780"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91733427"
 ---
 # <a name="using-visual-studio-or-msbuild-to-build-a-driver"></a>使用 Visual Studio 或 MSBuild 生成驱动程序
 
 
-本主题介绍了如何使用 Visual Studio 开发环境来生成驱动程序，或使用 Microsoft 生成引擎 ([MSBuild](https://go.microsoft.com/fwlink/p/?linkid=262804)) 通过命令行来生成驱动程序。
+本主题介绍了如何使用 Visual Studio 开发环境来生成驱动程序，或使用 Microsoft 生成引擎 ([MSBuild](/visualstudio/msbuild/msbuild)) 通过命令行来生成驱动程序。
 
 **重要提示**  从 Windows 驱动程序工具包 (WDK) 8 开始，MSBuild 取代 Windows 生成实用程序 (Build.exe)。 WDK 现在使用的编译器和生成工具与你用于生成 Visual Studio 项目的工具相同。 使用以前版本的 WDK 生成的驱动程序项目必须转换为在 Visual Studio 环境中工作。 你可以从命令行运行转换实用程序，也可以通过从现有源创建新 Visual Studio 项目来转换现有驱动程序。 有关详细信息，请参阅[从现有源文件创建驱动程序](creating-a-driver-from-existing-source-files.md)和 [WDK 和 Visual Studio 生成环境](../devtest/wdk-and-visual-studio-build-environment.md)。
 
@@ -29,7 +29,7 @@ ms.locfileid: "90101780"
 
  
 
-有关管理和编辑生成配置的信息，请参阅[在 Visual Studio 中生成](https://go.microsoft.com/fwlink/p/?linkid=227872)。
+有关管理和编辑生成配置的信息，请参阅[在 Visual Studio 中生成](/previous-versions/visualstudio/visual-studio-2012/cyz1h6zd(v=vs.110))。
 
 默认的解决方案生成配置为**调试**和 **Win32**。 
 
@@ -46,7 +46,7 @@ ms.locfileid: "90101780"
 ## <a name="span-idbuilding_a_driver_using_the_command_line__msbuild_spanspan-idbuilding_a_driver_using_the_command_line__msbuild_spanbuilding-a-driver-using-the-command-line-msbuild"></a><span id="building_a_driver_using_the_command_line__msbuild_"></span><span id="BUILDING_A_DRIVER_USING_THE_COMMAND_LINE__MSBUILD_"></span>使用命令行 (MSBuild) 生成驱动程序
 
 
-你可以使用 **Visual Studio 命令提示**窗口和 Microsoft 生成引擎 ([MSBuild](https://go.microsoft.com/fwlink/p/?linkid=262804)) 从命令行生成驱动程序
+你可以使用 **Visual Studio 命令提示**窗口和 Microsoft 生成引擎 ([MSBuild](/visualstudio/msbuild/msbuild)) 从命令行生成驱动程序
 
 **如何使用“Visual Studio 命令提示”窗口生成驱动程序**
 
@@ -140,11 +140,11 @@ WDK 提供了大量的命令行工具，如 [Stampinf](../devtest/stampinf.md) �
 ## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
-* [在 Visual Studio 中生成](https://go.microsoft.com/fwlink/p/?linkid=227872)
+* [在 Visual Studio 中生成](/previous-versions/visualstudio/visual-studio-2012/cyz1h6zd(v=vs.110))
 * [为不同版本的 Windows 生成驱动程序](building-drivers-for-different-versions-of-windows.md)
 * [使用含用户模式驱动程序和桌面应用的 Microsoft C 运行时](using-the-microsoft-c-runtime-with-user-mode-drivers-and-apps.md)
 * [ProjectUpgradeTool](../devtest/projectupgradetool.md)
-* [MSBuild](https://go.microsoft.com/fwlink/p/?linkid=262804)
+* [MSBuild](/visualstudio/msbuild/msbuild)
 * [从现有源文件创建驱动程序](creating-a-driver-from-existing-source-files.md)
 * [WDK 和 Visual Studio 生成环境](../devtest/wdk-and-visual-studio-build-environment.md)
 * [签署驱动程序](signing-a-driver.md)

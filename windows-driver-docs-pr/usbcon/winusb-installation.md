@@ -3,12 +3,12 @@ description: 将 WinUSB (Winusb.sys) 安装在设备的内核模式堆栈中，�
 title: WinUSB (Winusb.sys) 安装
 ms.date: 05/09/2018
 ms.localizationpriority: High
-ms.openlocfilehash: 4404d74ddc16dac5a580af77192c70bcdcbad5e7
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 5a859983d1eebd9148e974bd043517129cae920e
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90715228"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91733105"
 ---
 # <a name="winusb-winusbsys-installation"></a>WinUSB (Winusb.sys) 安装
 
@@ -273,7 +273,7 @@ HKR,,DeviceInterfaceGUIDs, 0x10000,"{D696BFEB-1734-417d-8A04-86D01071C512}"
 **注意**  确保驱动程序包内容满足以下要求：
 -   必须从相同版本的 Windows 驱动程序工具包 (WDK) 获取 KMDF 和 WinUSB 辅助安装程序文件。
 -   必须从最新版本的 WDK 获取辅助安装程序文件，以便驱动程序支持所有最新的 Windows 版本。
--   必须使用 Winqual 版本签名对驱动程序包的内容进行数字签名。 有关如何创建和测试已签名的目录文件的详细信息，请参阅 Windows 开发人员中心硬件站点上的[内核模式代码签名演练](https://go.microsoft.com/fwlink/p/?linkid=129409)。
+-   必须使用 Winqual 版本签名对驱动程序包的内容进行数字签名。 有关如何创建和测试已签名的目录文件的详细信息，请参阅 Windows 开发人员中心硬件站点上的[内核模式代码签名演练](/windows-hardware/test/hlk/)。
 
  
 

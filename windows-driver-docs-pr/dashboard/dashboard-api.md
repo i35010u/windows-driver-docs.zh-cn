@@ -4,12 +4,12 @@ description: “Microsoft 硬件 API”以编程方式在组织的合作伙伴�
 ms.topic: article
 ms.date: 09/21/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 76fd705253665d08e68968dbb385bef9bc8f4be8
-ms.sourcegitcommit: 4f08f5686c0bbc27d58930b993cbab1a98e3afb0
+ms.openlocfilehash: 0f4981b8b70c568c1cdb35667e6c66cf1943a3c9
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/03/2020
-ms.locfileid: "89443747"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91733377"
 ---
 # <a name="hardware-dashboard-api"></a>硬件仪表板 API
 
@@ -28,7 +28,7 @@ ms.locfileid: "89443747"
 
 在开始编写调用“Microsoft 硬件 API”的代码之前，确保已满足以下必需的先决条件。
 
-* 你（或你的组织）必须具有 Azure AD 目录，并且你必须具有该目录的[全局管理员](https://go.microsoft.com/fwlink/?LinkId=746654)权限。 如果你已使用 Microsoft 365 或 Microsoft 的其他业务服务，表示你已经具有 Azure AD 目录。 否则，你可以免费[在合作伙伴中心中创建新的 Azure AD](/windows/uwp/publish/associate-azure-ad-with-partner-center#create-a-brand-new-azure-ad-to-associate-with-your-partner-center-account)。
+* 你（或你的组织）必须具有 Azure AD 目录，并且你必须具有该目录的[全局管理员](/azure/active-directory/users-groups-roles/directory-assign-admin-roles)权限。 如果你已使用 Microsoft 365 或 Microsoft 的其他业务服务，表示你已经具有 Azure AD 目录。 否则，你可以免费[在合作伙伴中心中创建新的 Azure AD](/windows/uwp/publish/associate-azure-ad-with-partner-center#create-a-brand-new-azure-ad-to-associate-with-your-partner-center-account)。
 
 * 如果 Azure AD 应用程序不存在，则[必须创建一个](/windows/uwp/publish/add-users-groups-and-azure-ad-applications#create-a-new-azure-ad-application-account-in-your-organizations-directory-and-add-it-to-your-partner-center-account)。
 

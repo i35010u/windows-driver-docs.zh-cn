@@ -5,12 +5,12 @@ ms.assetid: 3F433F0A-422C-46E5-B59E-8DB4AC537F01
 ms.date: 04/20/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 95413846c06a7ccf5f1e5f3a39d589af507f49fb
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: aa65758dd5fe06f0dd33a6b6f4112497fb1ae8f8
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90101748"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91732575"
 ---
 # <a name="create-a-new-hardware-submission"></a>创建新硬件提交
 
@@ -20,7 +20,7 @@ ms.locfileid: "90101748"
 
 有关创建 **.hlkx** 文件并对其进行数字签名的信息，请参阅 [Windows HLK 入门指南](/windows-hardware/test/hlk/getstarted/windows-hlk-getting-started)。
 
-有关创建 **.hckx** 文件并对其进行数字签名的信息，请参阅 [Windows HCK 入门指南](https://go.microsoft.com/fwlink/p/?LinkId=248436)。
+有关创建 **.hckx** 文件并对其进行数字签名的信息，请参阅 [Windows HCK 入门指南](/previous-versions/windows/hardware/hck/jj123537(v=vs.85))。
 
 ## <a name="to-submit-a-file"></a>提交文件
 

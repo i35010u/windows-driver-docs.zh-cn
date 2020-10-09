@@ -4,23 +4,23 @@ title: 为驱动程序签名以便公开发布
 description: 在公开发布驱动程序包之前，我们建议你先提交程序包以进行认证。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e202b136278cc4d711947eba0c884c50d9aaf212
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 68c4c7360014f0f9df6831bd568bf1aef62f6f05
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89210823"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91733339"
 ---
 # <a name="signing-a-driver-for-public-release"></a>为驱动程序签名以便公开发布
 
-在公开发布驱动程序包之前，我们建议你先提交程序包以进行认证。 有关详细信息，请参阅 [Windows 硬件认证](https://go.microsoft.com/fwlink/p/?LinkID=248337)和[硬件仪表板服务](https://go.microsoft.com/fwlink/p/?LinkID=248336)。 要提交驱动程序包以进行认证，你必须使用从受信任的证书颁发机构（如 VeriSign）那里获得的证书来为该程序包签名。 有关详细信息，请参阅[获取 VeriSign 证书](https://go.microsoft.com/fwlink/p/?LinkID=248298)。 你还需要由 Microsoft 提供的交叉证书。
+在公开发布驱动程序包之前，我们建议你先提交程序包以进行认证。 有关详细信息，请参阅 [Windows 硬件认证](/previous-versions/windows/hardware/hck/jj124227(v=vs.85))和[硬件仪表板服务](../dashboard/index.yml)。 要提交驱动程序包以进行认证，你必须使用从受信任的证书颁发机构（如 VeriSign）那里获得的证书来为该程序包签名。 有关详细信息，请参阅[获取 VeriSign 证书](../dashboard/index.yml)。 你还需要由 Microsoft 提供的交叉证书。
 
 假设你已从 Verisign 获得一对文件：一个私钥文件 (PVK) 和一个软件发布证书 (SPC)。 此外还假设你拥有 Microsoft Visual Studio 解决方案，其中包含一个名为 MyDriver 的驱动程序项目和一个名为 MyDriver Package 的驱动程序包项目。 若要为驱动程序包签名，请执行以下步骤。
 
 1.  使用 [**Pvk2Pfx**](../devtest/pvk2pfx.md) 工具创建个人信息交换 (PFX) 证书。 **Pvk2Pfx** 工具会将你的 PVK 和 SPC 文件视为输入，并创建一个 PFX 文件。 在此练习中，假设 PFX 文件被命名为 MyCert.pfx。
 
     **注意**   创建 PFX 文件后，你可以将其重复用于其他驱动程序项目并在其他驱动程序开发计算机上使用。
-2.  要确定需要使用的交叉证书，请参阅[适用于内核模式代码签名的交叉证书](https://go.microsoft.com/fwlink/p/?LinkID=248296)。 验证所需的交叉证书是否位于 $(BASEDIR)\\CrossCertificates 下，其中 $(BASEDIR) 是 Windows 工具包的基目录（例如 c:\\Program Files (x86)\\Windows Kits\\8.0\\CrossCertificates）。 如果所需的交叉证书不在此处，请从 Microsoft 下载交叉证书，并将其复制到 $(BASEDIR)\\CrossCertificates。
+2.  要确定需要使用的交叉证书，请参阅[适用于内核模式代码签名的交叉证书](../install/cross-certificates-for-kernel-mode-code-signing.md)。 验证所需的交叉证书是否位于 $(BASEDIR)\\CrossCertificates 下，其中 $(BASEDIR) 是 Windows 工具包的基目录（例如 c:\\Program Files (x86)\\Windows Kits\\8.0\\CrossCertificates）。 如果所需的交叉证书不在此处，请从 Microsoft 下载交叉证书，并将其复制到 $(BASEDIR)\\CrossCertificates。
 3.  在 Visual Studio 中，打开包含 MyDriver 和 MyDriver Package 项目的解决方案。 如果“解决方案资源管理器”窗口尚未打开，请从“视图”  菜单中选择“解决方案资源管理器”  。 在“解决方案资源管理器”窗口中，选择并按住（或右键单击）程序包项目 MyDriver Package，然后选择“属性” 。
 
 4.  在程序包的属性页中，导航到“配置属性”&gt;“驱动程序签名”&gt;“常规”。  在“签名模式”  下拉列表中，选择“生产签名”  。 对于“生产签名”  ，执行下列操作之一：
@@ -80,13 +80,11 @@ ms.locfileid: "89210823"
 * [Windows 10 中的驱动程序签名更改](https://techcommunity.microsoft.com/t5/Windows-Hardware-Certification/bg-p/WindowsHardwareCertification)
 * [适用于 Windows 7 和 Windows Server 2008 R2 的 SHA-2 代码签名支持的可用性](/security-updates/SecurityAdvisories/2015/3033929)
 * [为驱动程序签名](signing-a-driver.md)
-* [Windows 硬件认证](https://go.microsoft.com/fwlink/p/?LinkID=248337)
-* [硬件仪表板服务](https://go.microsoft.com/fwlink/p/?LinkID=248336)
-* [Windows 驱动程序签名要求](https://go.microsoft.com/fwlink/p/?linkid=617515)
-* [用于内核模式代码签名的交叉证书](https://go.microsoft.com/fwlink/p/?LinkID=248296)
-* [内核模式代码签名演练](https://go.microsoft.com/fwlink/p/?linkid=617516)
+* [Windows 硬件认证](/previous-versions/windows/hardware/hck/jj124227(v=vs.85))
+* [硬件仪表板服务](../dashboard/index.yml)
+* [Windows 驱动程序签名要求](/previous-versions/windows/hardware/design/dn653563(v=vs.85))
+* [用于内核模式代码签名的交叉证书](../install/cross-certificates-for-kernel-mode-code-signing.md)
+* [内核模式代码签名演练](/previous-versions/windows/hardware/design/dn653569(v=vs.85))
 * [驱动程序签名](../install/driver-signing.md)
 * [安装引导启动驱动程序](../install/installing-a-boot-start-driver.md)
 * [驱动程序签名工具](../devtest/tools-for-signing-drivers.md)
- 
-

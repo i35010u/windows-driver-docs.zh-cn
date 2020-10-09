@@ -3,12 +3,12 @@ description: 用途：本部分介绍 Windows 操作系统中的通用串行总�
 title: 为 USB 设备开发 Windows 客户端驱动程序的概述
 ms.date: 01/07/2019
 ms.localizationpriority: High
-ms.openlocfilehash: 6aaad9b78d0c78b2f71d669337ae672e8f892be4
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: a8db8892e9c80df0c2bd91d15fe0f78979799c39
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90107314"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91734221"
 ---
 # <a name="overview-of-developing-windows-client-drivers-for-usb-devices"></a>为 USB 设备开发 Windows 客户端驱动程序的概述
 
@@ -24,7 +24,7 @@ ms.locfileid: "90107314"
 <p>本部分介绍 Windows 操作系统中的通用串行总线 (USB) 支持，以便你开发可与 Windows 互操作的 USB 设备驱动程序。</p>
 <p><strong>如果适用</strong></p>
 <p>USB 设备是通过单个端口连接到计算机的外设，例如鼠标设备和键盘。 USB 客户端驱动程序是计算机上安装的软件，该软件与硬件通信以使设备正常运行。 如果设备属于 Microsoft 支持的设备类，Windows 会为该设备加载 <a href="system-supplied-usb-drivers.md" data-raw-source="[Microsoft-provided USB drivers](system-supplied-usb-drivers.md)">Microsoft 提供的 USB 驱动程序</a>（随机类驱动程序）之一。 否则，自定义客户端驱动程序必须由硬件制造商或第三方供应商提供。 当 Windows 第一次检测到该设备时，用户会为该设备安装客户端驱动程序。 成功安装后，Windows 将在每次连接该设备时加载此客户端驱动程序，并在该设备与主计算机断开连接时卸载此驱动程序。</p>
-<p>可以通过使用 <a href="/windows-hardware/drivers/wdf/" data-raw-source="[Windows Driver Frameworks](../wdf/index.md)">Windows 驱动程序框架</a> (WDF) 或 <a href="/windows-hardware/drivers/kernel/windows-driver-model" data-raw-source="[Windows Driver Model](/windows-hardware/drivers/kernel/windows-driver-model)">Windows 驱动程序模型</a> (WDM) 来开发 USB 设备的自定义客户端驱动程序。 大多数客户端驱动程序将其请求发送到 Microsoft 提供的 USB 驱动程序堆栈（该堆栈进行硬件抽象层 (HAL) 函数调用，以便将客户端驱动程序的请求发送到硬件），而不是直接与硬件通信。 本部分中的主题介绍客户端驱动程序可以发送的典型请求，以及客户端驱动程序为创建这些请求而必须调用的设备驱动程序接口 (DDI)。</p>
+<p>可以通过使用 <a href="/windows-hardware/drivers/wdf/" data-raw-source="[Windows Driver Frameworks](../wdf/index.md)">Windows 驱动程序框架</a> (WDF) 或 <a href="/windows-hardware/drivers/kernel/windows-driver-model" data-raw-source="[Windows Driver Model](../kernel/writing-wdm-drivers.md)">Windows 驱动程序模型</a> (WDM) 来开发 USB 设备的自定义客户端驱动程序。 大多数客户端驱动程序将其请求发送到 Microsoft 提供的 USB 驱动程序堆栈（该堆栈进行硬件抽象层 (HAL) 函数调用，以便将客户端驱动程序的请求发送到硬件），而不是直接与硬件通信。 本部分中的主题介绍客户端驱动程序可以发送的典型请求，以及客户端驱动程序为创建这些请求而必须调用的设备驱动程序接口 (DDI)。</p>
 <p><strong>开发人员受众</strong></p>
 <p>USB 设备的客户端驱动程序是一个 WDF 或 WDM 驱动程序，它通过由 USB 驱动程序堆栈公开的 DDI 与设备进行通信。 本部分供已熟悉 WDM 的 C/C++ 程序员使用。 使用此部分之前，应了解基本的驱动程序开发。 有关详细信息，请参阅 <a href="/windows-hardware/drivers/gettingstarted/index" data-raw-source="[Getting Started with Windows Drivers](../gettingstarted/index.md)">Windows 驱动程序入门</a>。 对于 WDF 驱动程序，客户端驱动程序可以使用专门用于处理 USB 目标的<a href="/windows-hardware/drivers/debugger/kernel-mode-driver-framework-debugging" data-raw-source="[Kernel-Mode Driver Framework](../debugger/kernel-mode-driver-framework-debugging.md)">内核模式驱动程序框架</a> (KMDF) 或<a href="/windows-hardware/drivers/wdf/" data-raw-source="[User-Mode Driver Framework](../wdf/index.md)">用户模式驱动程序框架</a> (UMDF) 接口。 有关 USB 特定接口的详细信息，请参阅 <a href="/windows-hardware/drivers/ddi/wdfusb/" data-raw-source="[WDF USB Reference](/windows-hardware/drivers/ddi/wdfusb/)">WDF USB 参考</a>和 <a href="/windows-hardware/drivers/ddi/wudfddi/" data-raw-source="[UMDF USB I/O Target Interfaces](/windows-hardware/drivers/ddi/wudfddi/)">UMDF USB I/O 目标接口</a>。</p>
 <p><strong>开发工具</strong></p>
@@ -36,8 +36,8 @@ ms.locfileid: "90107314"
 <p><strong>USB 驱动程序示例</strong></p>
 <p>使用这些示例可开始着手 USB 客户端驱动程序编程。</p>
 <ul>
-<li><a href="https://go.microsoft.com/fwlink/p/?linkid=617157" data-raw-source="[Usbsamp Generic USB Driver]( https://go.microsoft.com/fwlink/p/?linkid=617157)">Usbsamp 通用 USB 驱动程序</a></li>
-<li><a href="https://go.microsoft.com/fwlink/p/?linkid=617158" data-raw-source="[Sample KMDF Function Driver for OSR USB-FX2](https://go.microsoft.com/fwlink/p/?linkid=617158)">OSR USB-FX2 的示例 KMDF 函数驱动程序</a></li>
+<li><a href="/samples/browse/" data-raw-source="[Usbsamp Generic USB Driver]( https://go.microsoft.com/fwlink/p/?linkid=617157)">Usbsamp 通用 USB 驱动程序</a></li>
+<li><a href="/samples/browse/" data-raw-source="[Sample KMDF Function Driver for OSR USB-FX2](/samples/browse/)">OSR USB-FX2 的示例 KMDF 函数驱动程序</a></li>
 <li><a href="https://go.microsoft.com/fwlink/p/?LinkId=618002" data-raw-source="[Sample UMDF Function Driver for OSR USB-FX2](https://go.microsoft.com/fwlink/p/?LinkId=618002)">OSR USB-FX2 的示例 UMDF 函数驱动程序</a></li>
 </ul>
 <p><strong>相关标准与规范</strong></p>

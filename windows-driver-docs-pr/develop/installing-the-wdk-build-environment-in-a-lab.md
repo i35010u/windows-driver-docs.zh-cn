@@ -4,12 +4,12 @@ title: 在实验室中安装 WDK 生成环境
 description: Windows 驱动程序工具包 (WDK) 8.1 使你可以将 Visual Studio 和 WDK 的组件复制到新位置，然后通过命令行启动生成环境。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cf47ec27d9079f2b55ddb8feae5b14cc3ec9e990
-ms.sourcegitcommit: 0c34101a0eed9f187fec03026021fff89bd233e3
+ms.openlocfilehash: 211ff8e43f6b74e4391a23ca157e0b8f1e45b0ad
+ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91135170"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91733417"
 ---
 # <a name="installing-the-wdk-81-build-environment-in-a-lab"></a>在实验室中安装 WDK 8.1 生成环境
 
@@ -93,13 +93,6 @@ Windows 驱动程序工具包 (WDK) 8.1 中提供的功能使你可以将 Visua
 
 
 * [生成驱动程序](building-a-driver.md)
-* [MSBuild](https://go.microsoft.com/fwlink/p/?linkid=262804)
+* [MSBuild](/visualstudio/msbuild/msbuild)
  
-
- 
-
-
-
-
-
 
