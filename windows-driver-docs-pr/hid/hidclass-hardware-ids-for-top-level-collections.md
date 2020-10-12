@@ -18,17 +18,17 @@ keywords:
 - 顶级集合 WDK HID
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3fe3d6aa2d965c4255cadce98fd15adae87ad8a5
-ms.sourcegitcommit: 74a8dc9ef1da03857dec5cab8d304e2869ba54a7
+ms.openlocfilehash: f2fe857a78469975102187f355272f02da0943c1
+ms.sourcegitcommit: 95e5f984c417902ece768db51838c2dacdb01681
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90759900"
+ms.lasthandoff: 10/12/2020
+ms.locfileid: "91957685"
 ---
 # <a name="hidclass-hardware-ids-for-top-level-collections"></a>顶级集合的 HIDClass 硬件 ID
 
 
-此部分指定 HID 类驱动程序为顶级集合生成的硬件 Id。
+此部分指定 HID 类驱动程序为[顶级集合](top-level-collections.md)生成的[硬件 id](../install/hardware-ids.md) 。
 
 供应商必须使用指定为 *供应商硬件 ID 格式* 的格式来识别顶级集合。 所有其他 *设备 ID* 格式仅保留供内部使用。
 
@@ -41,7 +41,7 @@ HID 类驱动程序为 devnode 生成的硬件 Id 取决于以下各项：
 
 |     类型        | 单个 TLC | 多个 TLC |
 |-----------------|------------|--------------|
-| 单函数 | Case 1     | Case 2       |
+| Single-Function | Case 1     | Case 2       |
 | 多功能  | 情况3     | 情况4       |
 
  

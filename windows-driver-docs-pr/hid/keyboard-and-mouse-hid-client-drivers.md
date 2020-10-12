@@ -11,12 +11,12 @@ keywords:
 - 适用于 Windows 的 HID 鼠标驱动程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: daececace40b87a268a81deec03796c598c18e55
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: c680e76f77af2723a398320ce32927e602f25d6e
+ms.sourcegitcommit: 95e5f984c417902ece768db51838c2dacdb01681
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91734397"
+ms.lasthandoff: 10/12/2020
+ms.locfileid: "91957687"
 ---
 # <a name="keyboard-and-mouse-hid-client-drivers"></a>键盘和鼠标 HID 客户端驱动程序
 
@@ -95,7 +95,7 @@ Microsoft 为 Ihv 编写驱动程序提供以下指导：
 
 - Windows 驱动程序开发工具包中的键盘头文件 kdb (DDK) ，它记录有关键盘布局的一般信息。
 
-- 示例键盘 [布局](/samples/browse/)。
+- 示例键盘 [布局](/samples/microsoft/windows-driver-samples/keyboard-layout-samples/)。
 
 若要可视化特定键盘的布局，请参阅 [Windows 键盘布局](/globalization/windows-keyboard-layouts)。
 
@@ -105,7 +105,7 @@ Microsoft 为 Ihv 编写驱动程序提供以下指导：
 
 下表列出了不同客户端版本的 Windows 操作系统所支持的功能。
 
-|功能|Windows XP|Windows Vista|Windows 7|Windows 8 及更高版本|
+|功能|Windows XP|Windows Vista|Silverlight|Windows 8 及更高版本|
 |----|----|----|----|----|
 |按钮1-5|支持 (P/2 & HID) |支持的 (PS/2 & HID) |支持的 (PS/2 & HID) |支持的 (PS/2 & HID) |
 |垂直滚轮|支持的 (PS/2 & HID) |支持的 (PS/2 & HID) |支持的 (PS/2 & HID) |支持的 (PS/2 & HID) |
@@ -123,7 +123,7 @@ Windows 用于激活新 4&5 按钮 + 滚轮模式的方法是用于在智能鼠�
 
 #### <a name="standard-ps2-compatible-mouse-data-packet-format-2-buttons"></a>标准 PS/2 兼容的鼠标数据数据包格式 (2 个按钮) 
 
-|Byte|D7|D6|D5|D4|D3|D2|D1|D0|备注|
+|Byte|D7|D6|D5|D4|D3|D2|D1|D0|注释|
 |------|-------|-------|-------|-------|-----|-----|-----|-----|-----|
 | 1    | Yover | Xover | Ysign | Xsign | 标记 | M   | R   | L   | X/Y overvlows 和符号、按钮 |
 | 2    | X 7    | X6    | X5    | X4    | X3  | X2  | X1  | X0  | X 数据字节                      |
@@ -134,7 +134,7 @@ Windows 用于激活新 4&5 按钮 + 滚轮模式的方法是用于在智能鼠�
 
 #### <a name="standard-ps2-compatible-mouse-data-packet-format-3-buttons--verticalwheel"></a>标准 PS/2 兼容的鼠标数据包格式 (3 个按钮 + VerticalWheel) 
 
-| Byte | D7  | D6  | D5    | D4    | D3  | D2  | D1  | D0  | 备注                     |
+| Byte | D7  | D6  | D5    | D4    | D3  | D2  | D1  | D0  | 注释                     |
 |------|-----|-----|-------|-------|-----|-----|-----|-----|-----------------------------|
 | 1    | 0   | 0   | Ysign | Xsign | 1   | M   | R   | L   | X/Y 号和 R/L/M 按钮 |
 | 2    | X 7  | X6  | X5    | X4    | X3  | X2  | X1  | X0  | X 数据字节                 |
@@ -143,7 +143,7 @@ Windows 用于激活新 4&5 按钮 + 滚轮模式的方法是用于在智能鼠�
 
 #### <a name="standard-ps2-compatible-mouse-data-packet-format-5-buttons--verticalwheel"></a>标准 PS/2 兼容的鼠标数据包格式 (5 个按钮 + VerticalWheel) 
 
-| Byte | D7  | D6  | D5    | D4    | D3  | D2  | D1  | D0  | 备注                               |
+| Byte | D7  | D6  | D5    | D4    | D3  | D2  | D1  | D0  | 注释                               |
 |------|-----|-----|-------|-------|-----|-----|-----|-----|---------------------------------------|
 | 1    | 0   | 0   | Ysign | Xsign | 1   | M   | R   | L   | X/Y 号和 R/L/M 按钮           |
 | 2    | X 7  | X6  | X5    | X4    | X3  | X2  | X1  | X0  | X 数据字节                           |
