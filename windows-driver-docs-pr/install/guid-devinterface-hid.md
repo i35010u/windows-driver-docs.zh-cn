@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: fc9783a14d5e9bf1e7cf6e0b7fe67d58fa4b9e96
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: f462d7a34edfc464d45c58879d094a7538d9f327
+ms.sourcegitcommit: 735fea11056fe943c4368ee54573790e0602de66
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89095223"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91979990"
 ---
 # <a name="guid_devinterface_hid"></a>GUID_DEVINTERFACE_HID
 
@@ -51,12 +51,12 @@ GUID_DEVINTERFACE_HID [设备接口类](./overview-of-device-interface-classes.m
 
  
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
 HID 集合的驱动程序注册此设备接口类的实例，通知操作系统和应用程序是否存在 HID 集合。
 
-系统提供的 [hid 类驱动程序](/previous-versions/jj126193(v=vs.85)) 为 HID 集合注册此设备接口类的实例。 例如，HID 类驱动程序为 USB 键盘或鼠标设备注册接口。 使用 HID 类驱动程序支持的 i/o 接口访问 HID 集合。
+系统提供的 [hid 类驱动程序](../hid/hid-architecture.md) 为 HID 集合注册此设备接口类的实例。 例如，HID 类驱动程序为 USB 键盘或鼠标设备注册接口。 使用 HID 类驱动程序支持的 i/o 接口访问 HID 集合。
 
 有关 HID 设备和驱动程序的信息，请参阅 [HIDClass 设备](../hid/binding-minidrivers-to-the-hid-class.md)。
 
@@ -76,7 +76,7 @@ HID 集合的驱动程序注册此设备接口类的实例，通知操作系统�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>标头</p></td>
+<td align="left"><p>标题</p></td>
 <td align="left">Hidclass (包含 Hidclass) </td>
 </tr>
 </tbody>

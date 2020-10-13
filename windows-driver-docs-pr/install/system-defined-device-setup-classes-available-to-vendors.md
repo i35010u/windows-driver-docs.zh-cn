@@ -5,12 +5,12 @@ ms.assetid: d4b8a964-f843-4960-9077-46746af27a61
 ms.date: 08/27/2020
 ms.localizationpriority: medium
 ms.custom: contperfq1
-ms.openlocfilehash: 9cf9a54d2f9429ddd4ac11156301cb568ab174ff
-ms.sourcegitcommit: 2dd8e4262c30e3f8570e35da7b9485139b216ac8
+ms.openlocfilehash: 5c1949e1799166b170ebe488d44fa48d1ab640de
+ms.sourcegitcommit: 735fea11056fe943c4368ee54573790e0602de66
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "90027568"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91979972"
 ---
 # <a name="class-and-classguid-entries-for-inf-version-section"></a>INF 版本部分的 Class 和 ClassGuid 条目  
 
@@ -83,7 +83,7 @@ ClassGuid = {4d36e96a-e325-11ce-bfc1-08002be10318}
 **人体学接口设备 (HID) **  
 类 = HIDClass  
 ClassGuid = {745a17a0-74d3-11d0-b6fe-00a0c90f57da}  
-此类包括由系统提供的 [HID 类驱动程序](/previous-versions/jj126193(v=vs.85))操作的交互式输入设备。 这包括符合使用 HID 微型驱动程序的 [USB HID 标准](../hid/hid-over-usb.md) 和非 usb 设备的 usb 设备。 有关详细信息，请参阅 [HIDClass 设备安装程序类](../hid/minidriver-operations.md)。  (另请参阅此列表后面的键盘或鼠标类。 )   
+此类包括由系统提供的 [HID 类驱动程序](../hid/hid-architecture.md)操作的交互式输入设备。 这包括符合使用 HID 微型驱动程序的 [USB HID 标准](../hid/hid-over-usb.md) 和非 usb 设备的 usb 设备。 有关详细信息，请参阅 [HIDClass 设备安装程序类](../hid/minidriver-operations.md)。  (另请参阅此列表后面的键盘或鼠标类。 )   
   
 **IEEE 1284.4 设备**  
 类 = Dot4  

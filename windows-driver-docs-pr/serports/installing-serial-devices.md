@@ -6,12 +6,12 @@ keywords:
 - 串行设备 WDK，安装
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 917317620119925f3253dad70c1bb51a8651f906
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 25d7ffec7485e29994df0da939bcb0961c6ed3ec
+ms.sourcegitcommit: 735fea11056fe943c4368ee54573790e0602de66
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89186969"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91979970"
 ---
 # <a name="installing-serial-devices"></a>安装串行设备
 
@@ -29,4 +29,4 @@ ms.locfileid: "89186969"
 
 有关安装设备的常规信息，请参阅 [设备安装设计指南](../install/index.md) 部分。
 
-有关串行设备的详细信息，请参阅 [串行设备和驱动程序](/previous-versions/ff547451(v=vs.85))。
+有关串行设备的详细信息，请参阅 [串行设备和驱动程序](using-serial-sys-and-serenum-sys.md)。

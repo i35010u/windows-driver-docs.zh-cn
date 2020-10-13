@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 9859469bf66855cf77700755681c67e8e2676cfa
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: eee21a27e2b01dc9492becf17df3e90a4e731731
+ms.sourcegitcommit: 735fea11056fe943c4368ee54573790e0602de66
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89095199"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91979982"
 ---
 # <a name="guid_devinterface_keyboard"></a>GUID_DEVINTERFACE_KEYBOARD
 
@@ -51,14 +51,14 @@ ms.locfileid: "89095199"
 
  
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
 键盘设备的驱动程序注册此设备接口类的实例，以通知系统和应用程序是否存在键盘设备。
 
 系统提供的 [键盘类驱动程序](../hid/keyboard-and-mouse-class-drivers.md) 为键盘设备注册此设备接口类的实例。 使用键盘类驱动程序所支持的 i/o 接口访问此设备接口类的实例。
 
-有关支持键盘设备的常规信息，请参阅[Kbdclass 和 Mouclass 驱动程序](../hid/keyboard-and-mouse-class-drivers.md)的[HID 体系结构](/previous-versions/jj126193(v=vs.85))和功能。
+有关支持键盘设备的常规信息，请参阅[Kbdclass 和 Mouclass 驱动程序](../hid/keyboard-and-mouse-class-drivers.md)的[HID 体系结构](../hid/hid-architecture.md)和功能。
 
 WDK 包含系统提供的键盘类驱动程序的示例代码。 键盘类驱动程序使用过时的标识符 [**GUID_CLASS_KEYBOARD**](guid-class-keyboard.md) 来注册此 [设备安装程序类](./overview-of-device-setup-classes.md)的实例。
 
@@ -78,7 +78,7 @@ WDK 包含系统提供的键盘类驱动程序的示例代码。 键盘类驱动
 <td align="left"><p>在 Microsoft Windows 2000 和更高版本的 Windows 中可用。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>标头</p></td>
+<td align="left"><p>标题</p></td>
 <td align="left">Ntddkbd (包含 Ntddkbd) </td>
 </tr>
 </tbody>

@@ -2,64 +2,45 @@
 title: 如何卸载设备和驱动程序包
 description: 如何卸载设备和驱动程序包
 ms.assetid: 0f4f0bbf-ca8f-47ef-b70b-d023bba9b842
-ms.date: 04/20/2017
+ms.date: 10/07/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: d9a9d7832037a278c82f88492a79e85e14e99e0d
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: aec0e880b371039d47c51e3dfaea6ff77999bb33
+ms.sourcegitcommit: 735fea11056fe943c4368ee54573790e0602de66
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90717014"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91979984"
 ---
 # <a name="how-devices-and-driver-packages-are-uninstalled"></a>如何卸载设备和驱动程序包
 
+本页介绍了驱动程序如何卸载设备并从 [驱动程序存储区](driver-store.md)中删除驱动程序包。
 
-本部分概述了卸载设备和 [驱动程序包](driver-packages.md)所需执行的操作。 通过运行以下操作之一执行这些操作：
+## <a name="uninstalling-the-device"></a>卸载设备
 
--   [设备管理器](using-device-manager.md)。
+若要删除设备节点 (表示物理设备的 *devnode*) ，请使用以下操作之一：
 
--   调用 [setupapi.log](setupapi.md) 和 [设备安装](/previous-versions/ff541299(v=vs.85)) 功能的设备安装应用程序。
+* 一种设备安装应用程序，它使用[**DIF_REMOVE**](./dif-remove.md)的请求来调用[setupapi.log](setupapi.md) [**SetupDiCallClassInstaller**](/windows/win32/api/setupapi/nf-setupapi-setupdicallclassinstaller)函数。 有关详细信息，请参阅 [使用常规安装函数](using-general-setup-functions.md)。
 
-这些操作包括下列各项：
+* 调用 [**DiUninstallDevice**](/windows/win32/api/newdev/nf-newdev-diuninstalldevice) 函数的设备安装应用程序。 有关详细信息，请参阅 [使用设备安装功能](using-device-installation-functions.md)。
 
--   [卸载设备](#uninstalling-the-device)
+使用其中一种方法卸载设备时，即插即用 (PnP) manager 将删除驱动程序二进制文件与设备之间的关联。
 
--   [从驱动程序存储区中删除驱动程序包](#deleting-a-driver-package-from-the-driver-store)
+设备仍保留在内核 PnP 树中， [驱动程序包](driver-packages.md) 保留在 [驱动程序存储区](driver-store.md)中。 如果 PnP 管理器重新枚举设备 (例如，如果设备已拔出，然后再次插入) ，则 PnP 管理器会将其视为新的设备实例，并从驱动程序存储区中安装驱动程序包。
 
-**注意**   不需要按顺序执行这些操作。
+有关最终用户如何卸载设备的信息，请参阅  [使用设备管理器卸载设备和驱动程序包](using-device-manager-to-uninstall-devices-and-driver-packages.md)。
 
- 
-
-### <a name="uninstalling-the-device"></a><a href="" id="uninstalling-the-device"></a> 卸载设备
-
-此卸载操作将删除设备节点 (*devnode*) ，该节点表示系统中设备的物理实例。 使用以下方法之一删除 Devnodes：
-
--   设备管理器。 有关详细信息，请参阅[使用设备管理器](using-device-manager.md)。
-
--   一种设备安装应用程序，它使用[**DIF_REMOVE**](./dif-remove.md)的请求来调用[setupapi.log](setupapi.md) [**SetupDiCallClassInstaller**](/windows/win32/api/setupapi/nf-setupapi-setupdicallclassinstaller)函数。 有关详细信息，请参阅 [使用常规安装函数](using-general-setup-functions.md)。
-
--   在 windows 7 和更高版本的 Windows)  (调用 Setupapi.log [**DiUninstallDevice**](/windows/win32/api/newdev/nf-newdev-diuninstalldevice) 函数的设备安装应用程序。 有关详细信息，请参阅 [使用设备安装功能](using-device-installation-functions.md)。
-
-使用其中一种方法卸载设备时，即插即用 (PnP) manager 将删除在设备安装过程中创建的系统状态的子集。 例如，它删除驱动程序二进制文件与设备之间的关联。 此关联由服务控制管理器 (SCM) 为设备加载适当的驱动程序使用。
-
-此卸载操作不会撤消安装过程中执行的所有操作。 例如，驱动程序包或 *共同安装* 程序 (与其他) 的注册表操作不会更改。
-
-**注意**   此卸载操作完成后，设备的 devnode 将不再存在，但驱动[程序包](driver-packages.md)仍存在于[驱动程序存储区](driver-store.md)中。 如果 PnP 管理器重新枚举设备 (例如，拔出设备后) 再次插入设备，则 PnP 管理器会将其视为新设备实例，并从驱动程序存储区中安装驱动程序包。
-
- 
-
-### <a name="deleting-a-driver-package-from-the-driver-store"></a><a href="" id="deleting-a-driver-package-from-the-driver-store"></a> 从驱动程序存储区中删除驱动程序包
-
-此卸载操作从[驱动程序存储区](driver-store.md)中删除与[驱动程序包](driver-packages.md)关联的文件，并从 PnP 管理器的内部数据库中删除关联的元数据。 此操作还将从系统 INF 目录中删除与驱动程序包关联的 [INF 文件](overview-of-inf-files.md)。
-
-从驱动程序存储区中删除驱动程序包后，将无法再将其安装在设备上。 驱动程序包必须从原始源预留并安装到 [驱动程序存储区](driver-store.md) 中，如光学媒体、网络共享或 Windows 更新。
+## <a name="deleting-a-driver-package-from-the-driver-store"></a>从驱动程序存储区中删除驱动程序包
 
 在从驱动程序存储区中删除驱动程序包之前，请确保卸载使用它的所有设备。
 
-**重要提示**   从[驱动程序存储区](driver-store.md)中手动删除[驱动程序包](driver-packages.md)可能会导致不可预知的行为。
+若要从[驱动程序存储区](driver-store.md)中删除[驱动程序包](driver-packages.md)，请使用以下选项之一：
 
- 
+* `pnputil /delete-driver <blah.inf> /uninstall`
+* 使用 DevCon [按设备实例 ID 模式删除设备](../devtest/devcon-examples.md#ddk_example_35_remove_devices_by_device_instance_id_pattern_tools)
 
+从[驱动程序存储区](driver-store.md)中删除[驱动程序包](driver-packages.md)将从 PnP 管理器的内部数据库中删除关联的元数据，并从系统 INF 目录中删除相关的 INF 文件。
 
- 
+从驱动程序存储区中删除驱动程序包后，将无法再将其安装在设备上。 若要重新安装，请从原始源中再次下载驱动程序，如 Windows 更新。
+
+从[驱动程序存储区](driver-store.md)中手动删除[驱动程序包](driver-packages.md)可能会导致不可预知的行为。
 

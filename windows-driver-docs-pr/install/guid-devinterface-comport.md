@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 025668c9db09b589f84ffd17a0a1f3a206ceba1a
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 9fed30f8b72be26c34fbd35853c525cd3c998093
+ms.sourcegitcommit: 735fea11056fe943c4368ee54573790e0602de66
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89096217"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91979988"
 ---
 # <a name="guid_devinterface_comport"></a>GUID_DEVINTERFACE_COMPORT
 
@@ -51,12 +51,12 @@ ms.locfileid: "89096217"
 
  
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
 串行端口驱动程序注册此设备接口类的实例，通知操作系统和应用程序是否存在 COM 端口。
 
-系统提供的串行端口函数驱动程序为 [串行端口](/previous-versions/ff547451(v=vs.85))注册此设备接口类的实例。
+系统提供的串行端口函数驱动程序为 [串行端口](/windows-hardware/drivers/serports/using-serial-sys-and-serenum-sys)注册此设备接口类的实例。
 
 以下示例 (Github 上) 为串行端口注册此类的实例：
 
@@ -80,7 +80,7 @@ ms.locfileid: "89096217"
 <td align="left"><p>在 Microsoft Windows 2000 和更高版本的 Windows 中可用。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>标头</p></td>
+<td align="left"><p>标题</p></td>
 <td align="left">Ntddser (包含 Ntddser) </td>
 </tr>
 </tbody>

@@ -7,12 +7,12 @@ keywords:
 - 受信任的发布者证书存储 WDK
 ms.date: 08/01/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 0ec27407e75677d7f34be52e68211f17f7592107
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 6f878357ed3d10d56f58af73b70c73c9e053b859
+ms.sourcegitcommit: 735fea11056fe943c4368ee54573790e0602de66
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89096439"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91979978"
 ---
 # <a name="deprecation-of-software-publisher-certificates-commercial-release-certificates-and-commercial-test-certificates"></a>弃用软件发行者证书、商业发布证书和商业测试证书
 
@@ -35,6 +35,7 @@ ms.locfileid: "89096439"
 * [如何将 Microsoft 测试签名自动用于生成过程？](#how-can-we-automate-microsoft-test-signing-to-work-with-our-build-processes)
 * [从2021开始，Microsoft 是否是生产内核模式代码签名的唯一提供程序？](#starting-in-2021-will-microsoft-be-the-sole-provider-of-production-kernel-mode-code-signatures)
 * [硬件开发人员中心不提供适用于 Windows XP 的驱动程序签名，如何让我的驱动程序在 XP 中运行？](#hardware-dev-center-doesnt-provide-driver-signing-for-windows-xp-how-can-i-have-my-drivers-run-in-xp)
+* [Windows 版本的生产签名选项有何不同？](#how-do-production-signing-options-differ-by-windows-version)
 
 ### <a name="what-is-the-expiration-schedule-of-the-trusted-cross-certificates"></a>可信交叉证书的到期计划是什么？
 
@@ -68,13 +69,15 @@ ms.locfileid: "89096439"
 
 ### <a name="what-alternatives-to-cross-signed-certificates-are-available-for-testing-drivers"></a>交叉签名证书的哪些替代选项可用于测试驱动程序？
 
-可以使用以下替代方法：
+对于下面的所有选项，必须启用 [TESTSIGNING boot 选项](the-testsigning-boot-configuration-option.md) 。
 
 - [MakeCert 进程](makecert-test-certificate.md)
 - [WHQL 测试签名计划](whql-test-signature-program.md)
 - [企业 CA 流程](enterprise-ca-test-certificate.md)
 
-若要使用这些选项，必须启用 [TESTSIGNING](the-testsigning-boot-configuration-option.md)。 有关详细信息，请参阅 [在开发和测试过程中为驱动程序签名](./introduction-to-test-signing.md) 。
+若要在启动时测试驱动程序，请参阅安装测试签名驱动程序。
+
+有关详细信息，请参阅 [在开发和测试期间对驱动程序进行签名](./introduction-to-test-signing.md)。
 
 ### <a name="what-will-happen-to-my-existing-signed-driver-packages"></a>现有的签名驱动程序包会发生什么情况？ 
 
@@ -94,7 +97,7 @@ ms.locfileid: "89096439"
 
 ### <a name="will-i-be-able-to-continue-using-my-ev-certificate-for-signing-submissions-to-hardware-dev-center"></a>我是否能够继续使用我的 EV 证书来签署提交给硬件开发人员中心的证书？  
 
-是的，你可以使用有效的 EV 证书对硬件开发人员中心的提交包进行签名，但由 EV 证书签名的驱动程序包将不再在证书的到期日期之后验证。 
+是的，EV 证书在过期之前将继续工作。 如果在颁发了 EV 证书的交叉证书过期后使用 EV 证书为内核模式驱动程序签名，则生成的驱动程序将不会加载、运行或安装。
 
 ### <a name="how-do-i-know-if-my-signing-certificate-will-be-impacted-by-these-expirations"></a>如何实现知道我的签名证书是否会受到这些过期的影响？ 
 
@@ -112,11 +115,19 @@ ms.locfileid: "89096439"
 
 ### <a name="starting-in-2021-will-microsoft-be-the-sole-provider-of-production-kernel-mode-code-signatures"></a>从2021开始，Microsoft 是否是生产内核模式代码签名的唯一提供程序？ 
 
-是的。
+能。
 
 ### <a name="hardware-dev-center-doesnt-provide-driver-signing-for-windows-xp-how-can-i-have-my-drivers-run-in-xp"></a>硬件开发人员中心不提供适用于 Windows XP 的驱动程序签名，如何让我的驱动程序在 XP 中运行？
 
 仍可使用第三方颁发的代码签名证书对驱动程序进行签名。 但是，对驱动程序进行签名的证书必须导入到 `Local Computer Trusted Publishers` 目标计算机上的证书存储中。 有关详细信息，请参阅 [受信任的发布者证书存储](trusted-publishers-certificate-store.md) 。
+
+### <a name="how-do-production-signing-options-differ-by-windows-version"></a>Windows 版本的生产签名选项有何不同？
+
+|驱动程序运行于| 1 2021 年7月之前签署的驱动程序| 驱动程序在 1 2021 年7月 |
+| - | - | - |
+|Windows Server 2008 及更高版本、Windows 7、Windows 8| WHQL 或交叉签名的驱动程序| 1 2021 年7月之前的 WHQL 或驱动程序交叉签名|
+|Windows 10| WHQL 或证明 | WHQL 或证明 |
+
 
 ## <a name="related-information"></a>相关信息
 

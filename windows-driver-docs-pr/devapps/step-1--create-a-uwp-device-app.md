@@ -4,12 +4,12 @@ description: 本主题介绍使用 Microsoft Visual Studio 创建 UWP 设备应�
 ms.assetid: 4D8240AD-F589-4623-BC6E-47E304831250
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6485014f4488535208bc81885b5aef79e203662a
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: f559ebdd590b6cebdf90698de6e05e99574b2532
+ms.sourcegitcommit: 735fea11056fe943c4368ee54573790e0602de66
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91733005"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91979976"
 ---
 # <a name="step-1-create-a-uwp-device-app"></a>步骤1：创建 UWP 设备应用
 
@@ -42,7 +42,7 @@ UWP 设备应用是一种特殊类型的 UWP 应用，设备制造商可以创�
 | 适用于照相机的 UWP 设备应用   | 照相机的驱动程序必须使用 AvStream 驱动程序模型。 有关 AvStream 驱动程序模型的详细信息，请参阅 Windows 驱动程序工具包中的 [AvStream 概述](../stream/avstream-overview.md) 。 其他组件（称为 "驱动程序 MFT" (media foundation 转换) ）可随驱动程序安装包一起提供，以提供照相机的自定义效果。 有关详细信息，请参阅适用 [于照相机的 Windows 应用商店设备应用](uwp-device-apps-for-webcams.md)。 |
 | 适用于打印机的 UWP 设备应用 | 打印机必须使用 v4 打印机驱动程序。 有关详细信息，请参阅 [开发 v4 打印驱动程序](../print/v4-printer-driver.md) 。                                                                                                                                                                                                                                                                                                                                                         |
 | USB Api                               | 若要使用 Windows 运行时的[Windows Usb](/uwp/api/Windows.Devices.Usb)api，你的设备必须与 Winusb.sys 驱动程序兼容。                                                                                                                                                                                                                                                                                                                                      |
-| 人体学接口设备 (HID) Api      | HID Api 设计用于 USB、蓝牙、蓝牙智能和 I2C 传输。 若要使用 Windows 运行时[HumanInterfaceDevice](/uwp/api/Windows.Devices.HumanInterfaceDevice) api，你的设备必须与传输所需的 HIDClass.sys 驱动程序和驱动程序兼容。 有关详细信息，请参阅 [HID 体系结构](/previous-versions/jj126193(v=vs.85))。                                                                                                            |
+| 人体学接口设备 (HID) Api      | HID Api 设计用于 USB、蓝牙、蓝牙智能和 I2C 传输。 若要使用 Windows 运行时[HumanInterfaceDevice](/uwp/api/Windows.Devices.HumanInterfaceDevice) api，你的设备必须与传输所需的 HIDClass.sys 驱动程序和驱动程序兼容。 有关详细信息，请参阅 [HID 体系结构](/windows-hardware/drivers/hid/hid-architecture)。                                                                                                            |
 | 蓝牙 GATT Api                    | 若要使用 Windows 运行时蓝牙 GATT Api， [bluetooth.genericattributeprofile 替换](/uwp/api/Windows.Devices.Bluetooth.GenericAttributeProfile)，设备必须与 BthLEEnum.sys 驱动程序兼容。                                                                                                                                                                                                                                                                                   |
 | 蓝牙 RFCOMM Api                  | 若要使用 Windows 运行时蓝牙 RFCOMM Api， [RFCOMM](/uwp/api/Windows.Devices.Bluetooth.Rfcomm)，你的设备必须与 Rfcomm.sys 和 BthEnum.sys 驱动程序兼容。                                                                                                                                                                                                                                                                                    |
 

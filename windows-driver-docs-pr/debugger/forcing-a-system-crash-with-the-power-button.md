@@ -5,21 +5,23 @@ keywords:
 - 启动进程，导致 "系统崩溃" 按钮
 - 系统崩溃，电源按钮
 - bug 检查，电源按钮
-ms.date: 10/05/2020
+ms.date: 10/12/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: afb4466a7d27c659197e08982e9cdced2497c01b
-ms.sourcegitcommit: a5d81c0d675a093228ae3acab759985198908d9b
+ms.openlocfilehash: 5ec612332170cdb5967870b6b61ddb956545abd1
+ms.sourcegitcommit: 735fea11056fe943c4368ee54573790e0602de66
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91935952"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91979968"
 ---
 # <a name="forcing-a-system-crash-with-the-power-button"></a>使用 "电源" 按钮强制系统崩溃
 
-如果设置了以下注册表项，则可以强制执行 [0x1C8](https://docs.microsoft.com/en-us/windows-hardware/drivers/debugger/bug-check-0x1c8--manually-initiated-power-button-hold#manually_initiated_power_button_hold-parameters) 手动系统崩溃：
+[Bug 检查0x1C8：](bug-check-0x1c8--manually-initiated-power-button-hold.md)如果设置以下注册表项，则可以强制执行手动系统崩溃 MANUALLY_INITIATED_POWER_BUTTON_HOLD：
 
-    [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Power]
-    "PowerButtonBugcheck"=dword:00000001
+```reg
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Power]
+"PowerButtonBugcheck"=dword:00000001
+```
 
 如果此注册表项 *不* 存在，则必须重新启动系统才能使此更改生效。
 

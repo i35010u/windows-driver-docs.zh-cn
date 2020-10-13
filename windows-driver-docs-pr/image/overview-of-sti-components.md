@@ -4,12 +4,12 @@ description: STI 组件概述
 ms.assetid: 30aaa622-fb86-42dc-a417-df61e0093db3
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6666c6b024fce62d066460f5e67c744ac8962e41
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 8dbb8b4a5cfe0d9244307767e5d673685010c546
+ms.sourcegitcommit: 735fea11056fe943c4368ee54573790e0602de66
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90714946"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91979992"
 ---
 # <a name="overview-of-sti-components"></a>STI 组件概述
 
@@ -23,13 +23,13 @@ ms.locfileid: "90714946"
 
 ### <a name="imaging-application"></a><a href="" id="ddk-imaging-application-si"></a>图像处理应用程序
 
-图像处理应用程序通常会接收、显示和允许编辑捕获的静止图像。 它们通过调用图像获取 API （如 TWAIN）来获取映像。 它们必须通过 [ISTILLIMAGE COM 接口](istillimage-com-interface.md)向其自身注册静止图像事件监视器。 有关详细信息，请参阅 [创建推送模型识别的应用程序](creating-push-model-aware-applications.md)。
+图像处理应用程序通常会接收、显示和允许编辑捕获的静止图像。 它们通过调用图像获取 API （如 TWAIN）来获取映像。 它们必须通过 [ISTILLIMAGE COM 接口](istillimage-com-interface.md)向其自身注册静止图像事件监视器。 有关详细信息，请参阅 [创建 Push-Model 感知的应用程序](creating-push-model-aware-applications.md)。
 
 ### <a name="image-acquisition-api"></a><a href="" id="ddk-image-acquisition-api-si"></a>映像获取 API
 
 "TWAIN"、"ISIS" 和 "Adobe Systems" 获取图像获取 Api 的示例。 此图说明了 TWAIN。 供应商提供的 TWAIN 数据源是设备特定的、特定于操作系统的组件，这些组件与静态图像设备通信。
 
-在 Microsoft STI 下，TWAIN 数据源调用 [IStillImage](istillimage-com-interface.md)和 [IStiDevice](istidevice-com-interface.md) 接口提供的方法。 有关详细信息，请参阅 [为映像获取 Api 创建设备特定的组件](creating-device-specific-components-for-image-acquisition-apis.md)。
+在 Microsoft STI 下，TWAIN 数据源调用 [IStillImage](istillimage-com-interface.md)和 [IStiDevice](istidevice-com-interface.md) 接口提供的方法。 有关详细信息，请参阅 [创建映像获取 api Device-Specific 组件](creating-device-specific-components-for-image-acquisition-apis.md)。
 
 ### <a name="scanners-and-cameras-control-panel"></a><a href="" id="ddk-scanners-and-cameras-control-panel-si"></a>扫描仪和照相机控制面板
 
@@ -65,11 +65,11 @@ Microsoft STI 定义一组 COM 接口，这些接口提供各种 Microsoft STI �
 
 ### <a name="user-mode-still-image-minidrivers"></a><a href="" id="ddk-user-mode-still-image-minidrivers-si"></a>用户模式静止图像微型驱动程序
 
-用户模式静止图像微型驱动程序是供应商提供的组件，可向相应的内核模式驱动程序提供设备特定的用户模式接口。 其中每个用户模式驱动程序必须实现 [ISTIUSD COM 接口](istiusd-com-interface.md)。 它们通过调用 [**CreateFile**](/windows/win32/api/fileapi/nf-fileapi-createfilea)、 **ReadFile**、 **WriteFile**和 [**DeviceIoControl**](/windows/win32/api/ioapiset/nf-ioapiset-deviceiocontrol) Win32 函数与内核模式驱动程序通信， () 的 Microsoft Windows SDK 文档中所述。 有关详细信息，请参阅 [创建用户模式静止图像微型驱动程序](creating-a-user-mode-still-image-minidriver.md)。
+用户模式静止图像微型驱动程序是供应商提供的组件，可向相应的内核模式驱动程序提供设备特定的用户模式接口。 其中每个用户模式驱动程序必须实现 [ISTIUSD COM 接口](istiusd-com-interface.md)。 它们通过调用 [**CreateFile**](/windows/win32/api/fileapi/nf-fileapi-createfilea)、 **ReadFile**、 **WriteFile**和 [**DeviceIoControl**](/windows/win32/api/ioapiset/nf-ioapiset-deviceiocontrol) Win32 函数与内核模式驱动程序通信， () 的 Microsoft Windows SDK 文档中所述。 有关详细信息，请参阅 [创建 User-Mode 静止图像微型驱动程序](creating-a-user-mode-still-image-minidriver.md)。
 
 ### <a name="kernel-mode-still-image-drivers"></a><a href="" id="ddk-kernel-mode-still-image-drivers-si"></a>内核模式静止映像驱动程序
 
-内核模式静止映像驱动程序包数据，用于传递到连接到特定总线类型的静止图像设备。 Microsoft 为 USB 和 SCSI 总线提供基于 WDM 的内核模式静止映像驱动程序。 有关详细信息，请参阅 [访问静止图像设备的内核模式驱动程序](accessing-kernel-mode-drivers-for-still-image-devices.md)。
+内核模式静止映像驱动程序包数据，用于传递到连接到特定总线类型的静止图像设备。 Microsoft 为 USB 和 SCSI 总线提供基于 WDM 的内核模式静止映像驱动程序。 有关详细信息，请参阅 [访问静止图像设备 Kernel-Mode 驱动程序](accessing-kernel-mode-drivers-for-still-image-devices.md)。
 
 对于连接到其他总线的静止图像设备，用户模式微型驱动程序直接与内核模式总线驱动程序堆栈进行通信。
 
@@ -89,7 +89,7 @@ Microsoft 支持连接到 SCSI、USB、并行、IEEE 1394 兼容的设备和串�
 对于支持 SBP 协议的设备，用户模式驱动程序可以调用 Microsoft 的 SBP 接口。 否则，需要供应商提供的筛选器驱动程序。
 
 <a href="" id="devices-connected-to-a-serial-port"></a>**连接到串行端口的设备**  
-使用标准串行端口驱动程序。  (有关详细信息，请参阅 [串行设备和驱动程序](/previous-versions/ff547451(v=vs.85))。 ) 
+使用标准串行端口驱动程序。  (有关详细信息，请参阅 [串行设备和驱动程序](/windows-hardware/drivers/serports/using-serial-sys-and-serenum-sys)。 ) 
 
 <a href="" id="devices-connected-to-an-infrared-interface"></a>**连接到红外线接口的设备**  
 驱动程序可以调用 **IrSock** software 接口 (Microsoft Windows SDK 文档) 中所述。

@@ -7,12 +7,12 @@ keywords:
 - 特定于设备类型的 i/o 请求 WDK 内核
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 04f895dca0f45dc887873a7108f145fdaaa2645a
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 3c74ee0054af5f078cdf445d7fe8b31237173440
+ms.sourcegitcommit: 735fea11056fe943c4368ee54573790e0602de66
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89184783"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91979980"
 ---
 # <a name="device-type-specific-io-requests"></a>特定于设备类型的 I/O 请求
 
@@ -36,13 +36,13 @@ Windows 驱动程序工具包 (WDK) 的特定于设备的部分，提供有关�
 
 若要详细了解各种驱动程序以及每个驱动程序需要支持的请求，请参阅以下内容：
 
-[串行设备和驱动程序](/previous-versions/ff547451(v=vs.85))
+[串行设备和驱动程序](/windows-hardware/drivers/serports/using-serial-sys-and-serenum-sys)
 
-[系统提供的并行驱动程序](/previous-versions/ff544814(v=vs.85))
+[系统提供的并行驱动程序](/windows-hardware/drivers/parports/system-supplied-parallel-drivers)
 
 [存储驱动程序](../storage/storage-drivers.md)
 
-[HID 体系结构](/previous-versions/jj126193(v=vs.85))
+[HID 体系结构](../hid/hid-architecture.md)
 
 [USB 客户端驱动程序的 i/o 请求](/windows-hardware/drivers/ddi/_usbref/#km-ioctl)
 
