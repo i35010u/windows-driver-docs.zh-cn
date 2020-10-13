@@ -4,19 +4,19 @@ description: Sharks Cove 是硬件开发板，可用于开发 Windows 硬件和�
 ms.assetid: D86546BB-B613-4CEE-9A76-3FD269137EE9
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b3b16b23869b1911d73db6416c93aad474d34c97
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 3b84607bb4102878fe7b6926667e02d643266cf8
+ms.sourcegitcommit: 9b3dec2f2cd9a7ed9b340b4794ce6ff4134d8ebe
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89384603"
+ms.lasthandoff: 10/07/2020
+ms.locfileid: "91787667"
 ---
 # <a name="sharks-cove-hardware-development-board"></a>Sharks Cove 硬件开发板
 
 > [!WARNING]
 > Windows IoT Core 不再支持 Sharks Cove 硬件开发板。  如需目前支持的开发板的列表，请参阅 [SoCs and custom boards](/windows/iot-core/learn-about-hardware/socsandcustomboards)（SoC 和自定义板）。
 
-Sharks Cove 是[硬件开发板](https://go.microsoft.com/fwlink/p?linkid=506967)，可用于开发 Windows 硬件和驱动程序。
+Sharks Cove 是[硬件开发板](./windows-compatible-hardware-development-boards.md)，可用于开发 Windows 硬件和驱动程序。
 
 可以通过 Intel Sharks Cove 板为使用各种接口（包括 GPIO、I2C、I2S、UART、SDIO 和 USB）的设备开发驱动程序。 还可以使用 Sharks Cove 板为相机和触摸屏开发驱动程序。
 
@@ -50,15 +50,15 @@ Sharks Cove 是[硬件开发板](https://go.microsoft.com/fwlink/p?linkid=506967
 若要开发 Sharks Cove 板的硬件和驱动程序，需要在主机上安装以下工具包和工具：
 
 - [Visual Studio](https://go.microsoft.com/fwlink/p/?LinkId=533470)
-- [Windows 驱动程序工具包 (WDK)、WDK Test Pack 和 Windows 调试工具](https://go.microsoft.com/fwlink/p/?LinkId=733614)
+- [Windows 驱动程序工具包 (WDK)、WDK Test Pack 和 Windows 调试工具](../download-the-wdk.md)
 
 在主机上，首先下载 Visual Studio，然后下载 WDK，再下载 WDK Test Pack。 不需要单独为 Windows 下载调试工具，因为它已经包含在 WDK 中。
 
 ### <a name="documentation"></a>文档
 
-- [WDK 的联机文档](https://go.microsoft.com/fwlink/p?linkid=317001)。
+- [WDK 的联机文档](../index.yml)。
 
-- [Windows 调试工具的联机文档](https://go.microsoft.com/fwlink/p?linkid=223405)。
+- [Windows 调试工具的联机文档](../debugger/index.md)。
 
 - Windows 调试工具的文档还作为安装目录中的 CHM 文件提供。 例如：C:\\Program Files (x86)\\Windows Kits\\10\\Debuggers\\x64\\debugger.chm.
 
@@ -181,7 +181,7 @@ Set-ExecutionPolicy -ExecutionPolicy Unrestricted
 
 另请参阅在线提供的以及在 debugger.chm 中提供的以下主题：
 
-- [Setting up Kernel-Mode Debugging using Serial over USB in Visual Studio](https://go.microsoft.com/fwlink/p?linkid=400460)（在 Visual Studio 中使用 Serial over USB 设置内核模式调试）
+- [Setting up Kernel-Mode Debugging using Serial over USB in Visual Studio](../debugger/setting-up-kernel-mode-debugging-using-serial-over-usb-in-visual-studio.md)（在 Visual Studio 中使用 Serial over USB 设置内核模式调试）
 
 >[!NOTE]
 >预配 Sharks Cove 板之前，需要禁用“安全启动”。 重启 Sharks Cove 板。 在开发板重启时，按住增大音量按钮。 转到  “设备管理器”&gt;“系统设置”&gt;“启动”。 将“UEFI 安全启动”  设置为“禁用”  。
@@ -194,12 +194,12 @@ Set-ExecutionPolicy -ExecutionPolicy Unrestricted
 
 ## <a name="step-6-alter-the-secondary-system-description-table-ssdt"></a>步骤 6：更改辅助系统描述表 (SSDT)
 
-若要为连接到 Sharks Cove 板上的简单外设总线 (SPB) 的设备编写驱动程序，需更新 Sharks Cove 固件中的辅助系统描述表 (SSDT)。 相关示例是为通过 I2C 总线传输数据并通过通用 I/O (GPIO) 引脚生成中断的加速计编写驱动程序。 有关详细信息，请参阅 [Simple Peripheral Buses](https://go.microsoft.com/fwlink/p?linkid=399232)（简单外设总线）。
+若要为连接到 Sharks Cove 板上的简单外设总线 (SPB) 的设备编写驱动程序，需更新 Sharks Cove 固件中的辅助系统描述表 (SSDT)。 相关示例是为通过 I2C 总线传输数据并通过通用 I/O (GPIO) 引脚生成中断的加速计编写驱动程序。 有关详细信息，请参阅 [Simple Peripheral Buses](/previous-versions//hh450903(v=vs.85))（简单外设总线）。
 
 下面是更改 SSDT 的示例。 我们将为 [ADXL345](https://go.microsoft.com/fwlink/p?linkid=401463) 加速计添加一个表条目。
 
 >[!NOTE]
->有关 [SpbAccelerometer 示例驱动程序](https://go.microsoft.com/fwlink/p?linkid=506965)和 ADXL345 加速计的分步指南，请参阅 [SpbAccelerometer 驱动程序指南](../sensors/spbaccelerometer-driver-cookbook.md)。
+>有关 [SpbAccelerometer 示例驱动程序](/samples/browse/)和 ADXL345 加速计的分步指南，请参阅 [SpbAccelerometer 驱动程序指南](../sensors/spbaccelerometer-driver-cookbook.md)。
 
 1. 将 x86 版本的 ASL.exe 复制到 Sharks Cove 板。 ASL.exe 包括在 WDK 中。
 
@@ -251,7 +251,7 @@ Set-ExecutionPolicy -ExecutionPolicy Unrestricted
 
 4. 插入 Scope(\_SB\_) 条目。 在 Scope 条目内，插入你自己的 Device 条目。 例如，下面是 ADXL345 加速计的 scope(\_SB\_) 条目和 Device 条目。
 
-    ``` syntax
+```syntax
     Scope(_SB_)
     {
         Device(SPBA)
@@ -312,23 +312,20 @@ Set-ExecutionPolicy -ExecutionPolicy Unrestricted
 
 在此示例中，`ResourceTemplate()` 下的条目指定加速计需要两个硬件资源：特定 I2C 总线控制器 (I2C3) 的连接 ID 和 GPIO 中断。 中断使用名为 GPO2 的 GPIO 控制器上的引脚 0x17。
 
-
-5.  将自己的 Device 条目添加到 Ssdt.asl 之后，通过输入以下命令编译 Ssdt.asl：
+5. 将自己的 Device 条目添加到 Ssdt.asl 之后，通过输入以下命令编译 Ssdt.asl：
 
     **asl ssdt.asl**
 
     这会将编译的输出放置在名为 Ssdt.aml 的文件中。
 
-6.  验证是否已为 Sharks Cove 板启用测试签名。
+6. 验证是否已为 Sharks Cove 板启用测试签名。
 
-    **注意**  测试签名将在预配期间自动启用。
-
-
-
+  >[!NOTE]
+  >会在预配期间自动启用测试签名。
 
 在 Sharks Cove 板上，以管理员身份打开命令提示符窗口。 输入此命令：
 
-**bcdedit /enum {current}**
+`bcdedit /enum {current}`
 
 验证是否可以在输出中看到 `testsigning Yes`。
 
@@ -410,9 +407,9 @@ GpioInt(... "\\_SB.GPO2") {0x17}
 
 ## <a name="using-windbg-to-debug-the-sharks-cove-board"></a>使用 WinDbg 调试 Sharks Cove 板
 
-作为使用 Visual Studio 设置内核模式调试的替代方法，你还可以手动完成设置。 将在线提供或在 debugger.chm 中提供该主题。
+作为使用 Visual Studio 设置内核模式调试的替代方法，你还可以手动完成设置。
 
-- [Setting up Kernel-Mode Debugging using Serial over USB Manually](https://go.microsoft.com/fwlink/p?linkid=400461)（使用 Serial over USB 手动设置内核模式调试）
+- [手动设置通过 USB 3.0 线缆进行的内核模式调试](../debugger/setting-up-a-usb-3-0-debug-cable-connection.md)
 
 作为使用 Visual Studio 进行调试的替代方法，你还可以使用 WinDbg。
 
@@ -423,24 +420,22 @@ GpioInt(... "\\_SB.GPO2") {0x17}
 
 ## <a name="sample-driver-code"></a>示例驱动程序代码
 
-- [SpbAccelerometer 示例驱动程序（UMDF 版本 1）](https://go.microsoft.com/fwlink/p?linkid=506965)
+- [SpbAccelerometer 示例驱动程序（UMDF 版本 1）](/samples/browse/)
 
 ## <a name="understanding-simple-peripheral-buses"></a>了解简单外设总线
 
-若要了解 Windows 驱动程序如何与简单外设总线协同工作，请参阅 [Simple Peripheral Buses](https://go.microsoft.com/fwlink/p?linkid=399232)（简单外设总线）。
+若要了解 Windows 驱动程序如何与简单外设总线协同工作，请参阅 [Simple Peripheral Buses](/previous-versions//hh450903(v=vs.85))（简单外设总线）。
 
 ## <a name="related-topics"></a>相关主题
 
-[适用于所有驱动程序开发人员的概念](https://go.microsoft.com/fwlink/p/?linkid=399233)
+[适用于所有驱动程序开发人员的概念](./concepts-and-knowledge-for-all-driver-developers.md)
 
-[开发、测试以及部署驱动程序](https://go.microsoft.com/fwlink/p/?linkid=399234)
+[开发、测试以及部署驱动程序](../develop/index.md)
 
-[Windows 驱动程序框架](https://go.microsoft.com/fwlink/p/?linkid=399235)
+[Windows 驱动程序框架](../wdf/index.md)
 
-[Windows 硬件开发人员中心](https://go.microsoft.com/fwlink/p/?linkid=8703)
+[Windows 硬件开发人员中心](https://developer.microsoft.com/windows/hardware/)
 
-[适用于 Windows 的 WDK 示例](https://go.microsoft.com/fwlink/p?linkid=394031)
+[适用于 Windows 的 WDK 示例](../samples/index.md)
 
-[Windows 硬件和驱动程序开发人员社区](https://go.microsoft.com/fwlink/p?linkid=393983)
-
-[技术支持](https://go.microsoft.com/fwlink/p/?linkid=8713)
+[技术支持](https://support.microsoft.com/)

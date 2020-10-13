@@ -1846,6 +1846,8 @@
                   href: forcing-a-system-crash-from-the-debugger.md
                 - name: 通过键盘强制系统崩溃
                   href: forcing-a-system-crash-from-the-keyboard.md
+                - name: 使用电源按钮强制系统崩溃
+                  href: forcing-a-system-crash-with-the-power-button.md
             - name: 未发生系统崩溃的情况下创建转储文件
               href: creating-a-dump-file-without-a-system-crash.md
             - name: 验证是否已创建内核模式转储文件
