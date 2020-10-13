@@ -4,12 +4,12 @@ description: NDIS QoS 参数概述
 ms.assetid: E9321805-2930-410A-81BC-F7978517E89E
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4dc965ba31e3622b4a43a713aa86e9717de54c7d
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 7813d3d691c002077ecdd99c2d6f8a6ba9a76d3e
+ms.sourcegitcommit: db9d058a9e592d4c47c67fc14f04f0ddc3aa92af
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89213169"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91989855"
 ---
 # <a name="overview-of-ndis-qos-parameters"></a>NDIS QoS 参数概述
 
@@ -18,7 +18,7 @@ ms.locfileid: "89213169"
 
 -   优先级别和流控制设置。 这些设置定义 IEEE 802.1 p 优先级以及用于传输或 *传出*流量的可选流控制算法。
 
-    有关详细信息，请参阅 [优先级别和流控制](priority-levels-and-flow-control.md)。
+    有关详细信息，请参阅 [优先级别和流控制](ieee-802-1p-priority-levels.md)。
 
 -   流量选择算法 (TSA) 设置。 这些设置定义网络适配器如何从其传输队列中选择传出流量。 例如，适配器可以使用 strict 优先级的 TSA，并选择仅基于 IEEE 802.1 p 优先级的传出数据包。 适配器还可以使用增强的传输选择 (ETS) TSA，它们会根据流量分配来 moderates 流量类之间的传出流量。
 

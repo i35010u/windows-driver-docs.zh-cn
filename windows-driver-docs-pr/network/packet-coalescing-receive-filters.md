@@ -4,12 +4,12 @@ description: 数据包合并接收筛选器
 ms.assetid: B5C17A9D-A495-4A3D-B53E-B10F53C732D4
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 32b1df15619ac4bb1eb4a5870258ffcce4320919
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 21b9da26cb22eedf54140b0328bde35428e97db1
+ms.sourcegitcommit: db9d058a9e592d4c47c67fc14f04f0ddc3aa92af
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89207853"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91989807"
 ---
 #  <a name="packet-coalescing-receive-filters"></a>数据包合并接收筛选器
 
@@ -24,7 +24,7 @@ ms.locfileid: "89207853"
 
      
 
-使用过量驱动程序（如协议和筛选器驱动程序），可以通过 (OID 发出对象标识符) 设置 [oid \_ 接收 \_ 筛选器 \_ 集 \_ 筛选器](./oid-receive-filter-set-filter.md)的请求，将数据包合并接收筛选器下载到微型端口驱动程序。 有关详细信息，请参阅 [设置数据包合并接收筛选器](setting-packet-coalescing-receive-filters.md)。
+使用过量驱动程序（如协议和筛选器驱动程序），可以通过 (OID 发出对象标识符) 设置 [oid \_ 接收 \_ 筛选器 \_ 集 \_ 筛选器](./oid-receive-filter-set-filter.md)的请求，将数据包合并接收筛选器下载到微型端口驱动程序。 有关详细信息，请参阅 [设置数据包合并接收筛选器](specifying-a-packet-coalescing-receive-filter.md)。
 
 过量驱动程序还可以查询下载到微型端口驱动程序的数据包合并接收筛选器。 过量驱动程序通过向微型端口驱动程序发出 [oid \_ 接收 \_ 筛选器 \_ 枚举 \_ 筛选器](./oid-receive-filter-enum-filters.md) 的 oid 方法请求来实现此目的。 有关详细信息，请参阅 [查询数据包合并接收筛选器](querying-packet-coalescing-receive-filters.md)。
 

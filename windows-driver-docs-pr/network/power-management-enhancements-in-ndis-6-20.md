@@ -1,19 +1,19 @@
 ---
-title: 在 NDIS 6.20 的电源管理增强功能
-description: 引入了 NDIS 6.20 电源管理增强功能，以减少计算机的功率消耗
+title: NDIS 6.20 中的电源管理增强功能
+description: 介绍 NDIS 6.20 电源管理增强功能，以减少计算机能耗
 ms.assetid: 99900def-66f8-4ba1-a7c1-3a5e9f456ca1
 keywords:
-- NDIS 6.20 WDK、 电源管理增强功能
-- 电源管理 WDK 网络 NDIS 6.20 增强功能
+- NDIS 6.20 WDK，电源管理增强功能
+- 电源管理 WDK 网络，NDIS 6.20 增强功能
 - 电源管理增强功能 WDK NDIS 6.20
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: dee3a93e1a7ef7321c3ae8d8bd722c005ab75325
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 422bb22f53aa3c4dad962e0c926d02dbd3d3da1b
+ms.sourcegitcommit: db9d058a9e592d4c47c67fc14f04f0ddc3aa92af
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63356883"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91989831"
 ---
 # <a name="power-management-enhancements-in-ndis-620"></a>NDIS 6.20 中的电源管理增强
 
@@ -21,30 +21,30 @@ ms.locfileid: "63356883"
 
 
 
-NDIS 6.20 引入了电源管理增强功能以减少计算机的功率消耗。 NDIS 6.20 电源管理支持是必需的 NDIS 6.20 和更高版本的驱动程序。
+NDIS 6.20 引入了电源管理增强功能，以降低计算机的功耗。 对于 NDIS 6.20 和更高版本的驱动程序，NDIS 6.20 电源管理支持是必需的。
 
-NDIS 6.20 电源管理接口是与 Nic 和不支持的最新的电源管理功能的微型端口驱动程序向后兼容。
+NDIS 6.20 电源管理接口向后兼容不支持最新电源管理功能的 Nic 和微型端口驱动程序。
 
-NDIS 6.20 和更高版本支持中的电源管理界面：
+NDIS 6.20 和更高版本中的电源管理界面支持：
 
--   唤醒 LAN (WOL) 模式的基于数据包类型除了 NDIS 6.1 和更早方法支持的偏移量和模式匹配。 因此，NDIS 6.20 和更高版本的 WOL 模式可以是多个特定于以避免不必要唤醒的事件。 例如，NIC 可以识别 TCP 同步 (SYN) 数据包。
+-   LAN 唤醒 (基于数据包类型的 WOL) 模式，以及支持偏移和模式匹配的 NDIS 6.1 及更低版本的方法。 因此，NDIS 6.20 和更高版本的 WOL 模式可能更具体，以避免不必要的唤醒事件。 例如，NIC 可以确定 TCP 同步) 数据包 (。
 
--   协议卸载到 Nic 的一些最常用的协议。 协议卸载到 NIC，因为它可以代表计算机以避免不需要的唤醒的事件进行响应。 例如，NIC 可以处理无唤醒计算机的 IPv4 地址解析协议 (ARP) 和 IPv6 邻居招标 (NS) 协议数据包。
+-   用于某些最常见协议的 Nic 的协议卸载。 由于协议已卸载到 NIC，因此它可以代表计算机进行响应，以避免不需要的唤醒事件。 例如，NIC 可以处理 IPv4 地址解析协议 (ARP) 和 IPv6 邻居请求 (NS) 协议数据包，而无需唤醒计算机。
 
-电源管理接口 NDIS 6.20 及更高版本还支持：
+NDIS 6.20 和更高版本中的电源管理接口还支持：
 
--   WOL WLAN 的增强功能。 如有必要，NIC 可以处理 IEEE 802.11 组临时密钥 (GTK) 重新生成密钥请求在低功耗状态。
+-   WOL WLAN 增强功能。 必要时，NIC 可以处理 IEEE 802.11 组时态密钥， (GTK) rekey 请求处于低功耗状态。
 
--   媒体连接时，将计算机可以唤醒 NDIS 6.20 及更高版本。 媒体已断开连接时，操作系统将在低功耗状态 NIC。
+-   当媒体连接时，NDIS 6.20 和更高版本可以唤醒计算机。 当媒体断开连接时，操作系统会将 NIC 置于低功耗状态。
 
-NDIS 设备驱动程序界面元素的某些已过时的 NDIS 6.20 和更高版本的驱动程序。 有关已过时的接口的详细信息，请参阅[NDIS 6.20 中已过时接口](obsolete-interfaces-in-ndis-6-20.md)。
+某些 NDIS 设备驱动程序接口元素对于 NDIS 6.20 和更高版本的驱动程序已过时。 有关过时接口的详细信息，请参阅 [NDIS 6.20 中的过时接口](obsolete-interfaces-in-ndis-6-20.md)。
 
-有关 NDIS 6.20 和更高版本的 NDIS 电源管理的详细信息，请参阅[电源管理 (NDIS 6.20)](power-management--ndis-6-20-.md)。
+有关 ndis 6.20 和更高版本 NDIS 的电源管理的详细信息，请参阅 [电源管理 (ndis 6.20) ](ndis-power-management-overview.md)。
 
 ## <a name="related-topics"></a>相关主题
 
 
-[在 NDIS 6.30 电源管理增强功能](introduction-to-ndis-6-30.md)
+[NDIS 6.30 中的电源管理增强](introduction-to-ndis-6-30.md)
 
  
 

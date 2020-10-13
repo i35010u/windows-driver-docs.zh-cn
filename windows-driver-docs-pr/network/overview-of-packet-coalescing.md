@@ -4,12 +4,12 @@ description: 数据包合并概述
 ms.assetid: E406E89C-247B-4DCB-B309-B742BF0A27E9
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cb173bd28302de021a7c40df7de9522563aecb9f
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 08e3f2a8dabe3f6439e43b9017cf10567d13b53b
+ms.sourcegitcommit: db9d058a9e592d4c47c67fc14f04f0ddc3aa92af
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89207867"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91989811"
 ---
 # <a name="overview-of-packet-coalescing"></a>数据包合并概述
 
@@ -44,6 +44,6 @@ ms.locfileid: "89207867"
 
 以下几点适用于由 NDIS 支持数据包合并：
 
--   NDIS 支持 (端口 0) 分配给物理网络适配器的默认 NDIS 端口接收数据包合并。 NDIS 不支持分配给虚拟网络适配器的 NDIS 端口上的数据包合并。 有关详细信息，请参阅 [NDIS 端口](ndis-ports.md)。
+-   NDIS 支持 (端口 0) 分配给物理网络适配器的默认 NDIS 端口接收数据包合并。 NDIS 不支持分配给虚拟网络适配器的 NDIS 端口上的数据包合并。 有关详细信息，请参阅 [NDIS 端口](overview-of-ndis-ports.md)。
 
 -   对于在网络适配器默认接收队列中接收的数据包，NDIS 支持数据包合并。 此接收队列具有 NDIS \_ 默认 \_ 接收 \_ 队列 ID 的标识符 \_ 。

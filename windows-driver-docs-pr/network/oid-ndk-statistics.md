@@ -5,12 +5,12 @@ ms.assetid: 30F16DEC-AEE6-49D4-8599-95374ACBD446
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_NDK_STATISTICS 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 56471d88d227aaf8ae779b861d23b1e4bcfa9dcc
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 2d05fd0c49e6255ea82f8991ecc5c4241356149c
+ms.sourcegitcommit: db9d058a9e592d4c47c67fc14f04f0ddc3aa92af
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89209661"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91989812"
 ---
 # <a name="oid_ndk_statistics"></a>OID \_ NDK \_ 统计信息
 
@@ -23,7 +23,7 @@ ms.locfileid: "89209661"
 
  
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
 NDIS 使用指向[**ndis \_ NDK \_ 统计 \_ 信息**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_ndk_statistics_info)结构的[**ndis \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的**InformationBuffer**成员颁发此 OID。
@@ -32,7 +32,7 @@ NDIS 使用指向[**ndis \_ NDK \_ 统计 \_ 信息**](/windows-hardware/drivers
 
 计数器将发布到 [perfmon](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/cc731067(v=ws.11)) (的工具中，请参阅 " [NetworkDirect 活动](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh997022(v=ws.11)) 性能计数器") ，并使用性能数据助手 (PDH) 和性能库 (PERFLIB) 编程接口以编程方式提供。 有关这些接口的详细信息，请参阅 [性能计数器](/windows/desktop/PerfCtrs/performance-counters-portal)。
 
-还可以通过使用**RdmaStatistics**属性调用 NetAdapterStatistics PowerShell Cmdlet 来[获取](/powershell/module/network-adapter/get-netadapterstatistics)这些计数器。 有关 **RdmaStatistics** 属性的详细信息，请参阅 [**MSFT \_ NetAdapterStatisticsSettingData**](/previous-versions/windows/desktop/netadaptercimprov/msft-netadapterstatisticssettingdata)。
+还可以通过使用**RdmaStatistics**属性调用 NetAdapterStatistics PowerShell Cmdlet 来[获取](/powershell/module/netadapter/get-netadapterstatistics)这些计数器。 有关 **RdmaStatistics** 属性的详细信息，请参阅 [**MSFT \_ NetAdapterStatisticsSettingData**](/previous-versions/windows/desktop/netadaptercimprov/msft-netadapterstatisticssettingdata)。
 
 <a name="requirements"></a>要求
 ------------
@@ -56,7 +56,7 @@ NDIS 使用指向[**ndis \_ NDK \_ 统计 \_ 信息**](/windows-hardware/drivers
 <td><p>在 NDIS 6.30 和更高版本中受支持。</p></td>
 </tr>
 <tr class="even">
-<td><p>标头</p></td>
+<td><p>标题</p></td>
 <td>Ntddndis (包含 Ndis .h) </td>
 </tr>
 </tbody>

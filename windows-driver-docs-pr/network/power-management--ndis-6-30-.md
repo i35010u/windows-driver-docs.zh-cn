@@ -4,12 +4,12 @@ description: 电源管理 (NDIS 6.30)
 ms.assetid: 2A7F6BD2-6C2F-4B28-92BD-29DC4928624A
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4fe9ca7d115700c790e6d38549cebc5aee8d84c9
-ms.sourcegitcommit: 29c2e6dd8a3de3c11822d990adf1edd774f8a136
+ms.openlocfilehash: 3c273195b6369abfb827b8eb331a20744d810cf2
+ms.sourcegitcommit: db9d058a9e592d4c47c67fc14f04f0ddc3aa92af
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91229963"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91989837"
 ---
 # <a name="power-management-ndis-630"></a>电源管理 (NDIS 6.30)
 
@@ -24,7 +24,7 @@ ms.locfileid: "91229963"
 
 [NDIS 唤醒原因状态指示](overview-of-ndis-wake-reason-statue-indications.md)
 
-**注意**   NDIS 6.30 电源管理接口是 NDIS 6.20 电源管理接口的扩展。 有关 NDIS 6.20 电源管理接口的详细信息，请参阅 [电源管理 (NDIS 6.20) ](power-management--ndis-6-20-.md)。
+**注意**   NDIS 6.30 电源管理接口是 NDIS 6.20 电源管理接口的扩展。 有关 NDIS 6.20 电源管理接口的详细信息，请参阅 [电源管理 (NDIS 6.20) ](ndis-power-management-overview.md)。
 
  
 

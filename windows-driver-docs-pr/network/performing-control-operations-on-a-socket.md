@@ -8,12 +8,12 @@ keywords:
 - 控制操作 WDK Winsock 内核
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 06c12bb734ed317c28f8ceaac79721733d7b879a
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 00326d2e381bcb5c8a8eec710cd1a893394c76ab
+ms.sourcegitcommit: db9d058a9e592d4c47c67fc14f04f0ddc3aa92af
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89212093"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91989853"
 ---
 # <a name="performing-control-operations-on-a-socket"></a>针对套接字执行控制操作
 
@@ -133,7 +133,7 @@ NTSTATUS
 }
 ```
 
-有关每个受支持的套接字选项的详细信息，请参阅 [**WSK 套接字选项**](https://docs.microsoft.com/windows-hardware/drivers/network/wsk-socket-options)。
+有关每个受支持的套接字选项的详细信息，请参阅 [**WSK 套接字选项**](so-broadcast.md)。
 
 下面的代码示例演示 WSK 应用程序如何在数据报套接字上执行 [**SIO \_ WSK \_ SET \_ REMOTE \_ ADDRESS**](./sio-wsk-set-remote-address.md) socket IOCTL 操作。
 
@@ -243,7 +243,7 @@ NTSTATUS
 }
 ```
 
-有关每个受支持的套接字 IOCTL 操作的详细信息，请参阅 [WSK 套接字 Ioctl 操作](https://docs.microsoft.com/windows-hardware/drivers/network/wsk-socket-ioctl-operations)。
+有关每个受支持的套接字 IOCTL 操作的详细信息，请参阅 [WSK 套接字 Ioctl 操作](sio-wsk-query-ideal-send-backlog.md)。
 
  
 

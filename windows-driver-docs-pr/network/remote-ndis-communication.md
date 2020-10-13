@@ -4,12 +4,12 @@ description: 远程 NDIS 通信
 ms.assetid: abaa4434-4043-4265-92b9-81383c2080ce
 ms.date: 07/31/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8844d7830b338ab7285972bc01749874d1e975b7
-ms.sourcegitcommit: 15caaf6d943135efcaf9975927ff3933957acd5d
+ms.openlocfilehash: 64ae2e91e9427772d93426aa82e73898f91c7bdd
+ms.sourcegitcommit: db9d058a9e592d4c47c67fc14f04f0ddc3aa92af
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88968882"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91989829"
 ---
 # <a name="remote-ndis-communication"></a>远程 NDIS 通信
 
@@ -19,7 +19,7 @@ ms.locfileid: "88968882"
 
 本节包括下列主题：
 
-[远程 NDIS 控制消息](remote-ndis-control-messages.md)
+[远程 NDIS 控制消息](remote-ndis-initialize-msg.md)
 
 [远程 NDIS 数据消息](remote-ndis-data-message.md)
 

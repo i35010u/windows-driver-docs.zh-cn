@@ -4,12 +4,12 @@ description: NDIS 协议驱动程序的开发路线图
 ms.assetid: b9b8d790-7755-4c52-8a76-70257aa78212
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4ee1069a273ed6ad69275379973ee9fb97ddfbf4
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: 375ffa9f05b6136a16a72b0ca06bf563124fd1d8
+ms.sourcegitcommit: db9d058a9e592d4c47c67fc14f04f0ddc3aa92af
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91734246"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91989835"
 ---
 # <a name="roadmap-for-developing-ndis-protocol-drivers"></a>NDIS 协议驱动程序的开发路线图
 
@@ -33,7 +33,7 @@ ms.locfileid: "91734246"
 
 - 步骤3：确定其他 Windows 驱动程序设计决策。
 
-  有关如何进行其他 Windows 设计决策的详细信息，请参阅 [创建可靠的内核模式驱动程序](../kernel/creating-reliable-kernel-mode-drivers.md)、 [64 位驱动程序的编程问题](../kernel/porting-your-driver-to-64-bit-windows.md)以及 [创建国际 INF 文件](../install/creating-international-inf-files.md)。
+  有关如何进行其他 Windows 设计决策的详细信息，请参阅 [创建可靠 Kernel-Mode 驱动程序](../kernel/creating-reliable-kernel-mode-drivers.md)、 [64 位驱动程序的编程问题](../kernel/porting-your-driver-to-64-bit-windows.md)以及 [创建国际 INF 文件](../install/creating-international-inf-files.md)。
 
 - 步骤4：了解 Windows 驱动程序的生成、测试和调试过程和工具。
 
@@ -41,7 +41,7 @@ ms.locfileid: "91734246"
 
 - 步骤5：阅读协议驱动程序简介主题。
   [NDIS 协议驱动程序简介](introduction-to-ndis-protocol-drivers.md) 
-  [协议驱动程序设计概念](protocol-driver-design-concepts.md)
+  [协议驱动程序设计概念](pageable-and-discardable-code-in-a-protocol-driver.md)
 - 步骤6：阅读 [编写协议驱动程序部分](initializing-a-protocol-driver.md)。
 
   本部分概述了主要协议驱动程序接口。 这些接口包含协议驱动程序提供 (*ProtocolXxx* 函数的函数) 和 NDIS 调用来启动操作。 NDIS 提供 **ndis * Xxx*** 函数，这些函数用于执行 ndis 操作的协议驱动程序调用。

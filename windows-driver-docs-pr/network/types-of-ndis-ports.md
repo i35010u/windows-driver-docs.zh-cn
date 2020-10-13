@@ -7,12 +7,12 @@ keywords:
 - NDIS 端口 WDK，类型
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 50afb12241b115c8a95bdc4778e8d6a06dd5d977
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6871c8bf6c8b8884869022d0db889e126a7f4b14
+ms.sourcegitcommit: db9d058a9e592d4c47c67fc14f04f0ddc3aa92af
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63358273"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91989827"
 ---
 # <a name="types-of-ndis-ports"></a>NDIS 端口的类型
 
@@ -23,32 +23,30 @@ ms.locfileid: "63358273"
 NDIS 端口可以是以下类型之一：
 
 <a href="" id="ndisporttypeundefined"></a>**NdisPortTypeUndefined**  
-默认端口类型。 使用此类型的常规端口应用程序不适合以下类型之一。
+默认端口类型。 将此类型用于不符合以下任一类型的常规端口应用程序。
 
 <a href="" id="ndisporttypebridge"></a>**NdisPortTypeBridge**  
-保留供系统使用。
+预留给系统使用。
 
 <a href="" id="ndisporttyperasconnection"></a>**NdisPortTypeRasConnection**  
 远程访问服务 (RAS) 连接。
 
 <a href="" id="ndisporttype8021xsupplicant"></a>**NdisPortType8021xSupplicant**  
-远程的无线工作站与此主机计算机上的访问点相关联。
+与此主机计算机上的访问点相关联的远程无线工作站。
 
 <a href="" id="ndisporttypendisimplatform"></a>**NdisPortTypeNdisImPlatform**  
-保留供系统使用。
+预留给系统使用。
 
-**请注意**  仅在 NDIS 6.30 和更高版本支持此值。
+**注意**   此值仅在 NDIS 6.30 和更高版本中受支持。
 
  
 
-NDIS 端口的特征不同于到另一个端口应用程序。 例如，对于桥接接口，微型端口驱动程序的上边缘中间的驱动程序创建**NdisPortTypeBridge**时协议缘中间驱动程序绑定到物理微型端口适配器所需的端口桥接在三层。
+NDIS 端口的特征因端口应用程序而异。 例如，对于桥接口，当中间驱动程序的协议边缘绑定到需要第三层桥的物理微型端口适配器时，中间驱动程序的小型端口驱动程序的上边缘会创建 **NdisPortTypeBridge** 端口。
 
 ## <a name="related-topics"></a>相关主题
 
 
-[NDIS 端口](ndis-ports.md)
-
-[NDIS 端口的概述](overview-of-ndis-ports.md)
+[NDIS 端口概述](overview-of-ndis-ports.md)
 
  
 

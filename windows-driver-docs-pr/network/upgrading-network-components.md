@@ -5,16 +5,16 @@ ms.assetid: ddd1eda0-7bed-44e7-8636-8db3508825f5
 keywords:
 - 网络组件升级 WDK
 - 升级网络组件 WDK
-- 有关升级网络组件的网络组件升级 WDK，
-- 有关升级网络组件升级网络组件 WDK，
+- 网络组件升级 WDK，关于升级网络组件
+- 升级网络组件 WDK，关于升级网络组件
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: dc22be488ce1facd2e0fa35afdc31da0b01fe45f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4d31f2a478874f750d0b7297018760642fa560c9
+ms.sourcegitcommit: db9d058a9e592d4c47c67fc14f04f0ddc3aa92af
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63387147"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91989820"
 ---
 # <a name="process-for-upgrading-network-components"></a>网络组件的升级过程
 
@@ -22,21 +22,21 @@ ms.locfileid: "63387147"
 
 
 
-**请注意**  供应商提供网络升级不支持在 Microsoft Windows XP (Service Pack 1 \[SP1\]及更高版本)，Microsoft Windows Server 2003 和更高版本操作系统。
+**注意**   Microsoft Windows XP (Service Pack 1 \[ SP1 \] 及更高版本) 、Microsoft windows Server 2003 和更高版本的操作系统不支持供应商提供的网络升级。
 
  
 
-网络升级过程将操作系统升级过程中迁移网络组件的参数值。 网络升级过程因此消除了需要安装新操作系统后，重新配置已升级的网络组件。
+网络升级过程在操作系统升级过程中迁移网络组件的参数值。 因此，网络升级过程不再需要在安装新操作系统之后重新配置升级的网络组件。
 
-网络升级过程会从 Microsoft Windows NT 3.51 或 Windows NT 4.0 网络组件升级到 Microsoft Windows 2000 或更高版本的操作系统。 网络升级过程不会升级网络组件从 Windows 2000 到更高版本的操作系统中。
+网络升级过程将网络组件从 Microsoft Windows NT 3.51 或 Windows NT 4.0 升级到 Microsoft Windows 2000 或更高版本的操作系统。 网络升级过程不会将网络组件从 Windows 2000 升级到更高版本的操作系统。
 
-Windows 2000 或更高版本的一部分应通过提供以下有关这些组件提供升级支持，也不会释放其网络组件的供应商：
+其网络组件未在 Windows 2000 或更高版本中发布的供应商应通过提供以下内容为这些组件提供升级支持：
 
--   网络迁移迁移一个或多个网络组件的升级前的参数值的 DLL。
+-   为一个或多个网络组件迁移 preupgrade 参数值的网络迁移 DLL。
 
--   映射到新操作系统中的相应 ID 的升级前的设备、 硬件或兼容 ID 的一个或多个网络组件 netmap.inf 文件。
+-   将一个或多个网络组件的 preupgrade 设备、硬件或兼容 ID 映射到新操作系统中相应 ID 的 netmap 文件。
 
--   可选自定义帮助消息文件提供有关升级网络组件的信息。
+-   可选的自定义帮助消息文件，提供有关升级网络组件的信息。
 
 以下主题介绍了网络升级过程：
 
@@ -48,9 +48,13 @@ Windows 2000 或更高版本的一部分应通过提供以下有关这些组件�
 
 [创建 Netmap.inf 文件](creating-a-netmap-inf-file.md)
 
-[测试升级网络组件](testing-the-upgrade-of-network-components.md)
+测试网络组件的升级涉及两个主要步骤。 以下主题介绍了这些内容：
 
-安装操作系统时，将自动升级其驱动程序将发布为 Windows 2000 或更高版本操作系统的一部分的网络组件。 不支持其他升级是必需的此类组件。
+[设置测试系统](setting-up-the-test-system.md)
+
+[运行升级测试并检查结果](running-the-upgrade-test-and-examining-the-results.md)
+
+安装操作系统时，会自动升级其驱动程序作为 Windows 2000 或更高版本操作系统的一部分发布的网络组件。 此类组件不需要其他升级支持。
 
  
 

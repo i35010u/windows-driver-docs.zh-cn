@@ -5,12 +5,12 @@ ms.assetid: 1CA97C8A-8F5B-4AB2-B68E-DF1FA772C08F
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_QOS_PARAMETERS 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 565e9ca1b295b5fd859f5157081c40ea570f9e27
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 2f4d801870e5ddc1b1450691c205029a605197ed
+ms.sourcegitcommit: db9d058a9e592d4c47c67fc14f04f0ddc3aa92af
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90104780"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91989859"
 ---
 # <a name="oid_qos_parameters"></a>OID \_ QOS \_ 参数
 
@@ -23,7 +23,7 @@ ms.locfileid: "90104780"
 
 
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
 微型端口驱动程序通过 oid qos 参数的 OID 方法请求获取本地 NDIS QoS 参数 \_ \_ 。 这些参数定义网络适配器如何确定传输或 *传出*数据包的优先级。 有关这些参数的详细信息，请参阅 " [NDIS QoS 参数概述](./overview-of-ndis-qos-parameters.md)"。
@@ -64,7 +64,7 @@ ms.locfileid: "90104780"
 
     有关本地 DCBX 适用状态的详细信息，请参阅 [管理本地 DCBX 适用的状态](./managing-the-local-dcbx-willing-state.md)。
 
-有关微型端口驱动程序如何替代本地 QoS 参数的详细信息，请参阅 [管理 NDIS Qos 参数](https://docs.microsoft.com/windows-hardware/drivers/network/managing-ndis-qos--parameters)。
+有关微型端口驱动程序如何替代本地 QoS 参数的详细信息，请参阅 [管理 NDIS Qos 参数](overview-of-ndis-qos-parameters.md)。
 
 **注意**  替代本地 QoS 参数不应导致微型端口驱动程序无法通过 oid QoS 参数的 OID 方法 \_ 请求 \_ 。
 
@@ -129,13 +129,13 @@ ms.locfileid: "90104780"
 <td><p>在 NDIS 6.30 和更高版本中受支持。</p></td>
 </tr>
 <tr class="even">
-<td><p>标头</p></td>
+<td><p>标题</p></td>
 <td>Ntddndis (包含 Ndis .h) </td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
 ****

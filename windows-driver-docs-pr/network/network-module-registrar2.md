@@ -10,12 +10,12 @@ keywords:
 - 软件模块 WDK 网络模块注册器
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a7634f7172dd4ec750352439069981ca01da1410
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: b5d14529a4039d3e9e98fdd7b81f08dbc119f1fc
+ms.sourcegitcommit: db9d058a9e592d4c47c67fc14f04f0ddc3aa92af
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89210655"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91989845"
 ---
 # <a name="network-module-registrar-topics"></a>网络模块注册机构主题
 
@@ -24,13 +24,13 @@ ms.locfileid: "89210655"
 
 [网络模块注册机构简介](introduction-to-the-network-module-registrar.md)
 
-[网络模块注册机构定义](nmr-definitions.md)
+[网络模块](network-module.md)
 
 [体系结构概述](architecture-overview.md)
 
-[客户端模块操作](client-module-operations.md)
+[初始化和注册客户端模块](initializing-and-registering-a-client-module.md)
 
-[提供程序模块操作](provider-module-operations.md)
+[提供程序模块操作](initializing-and-registering-a-provider-module.md)
 
 [编程注意事项](programming-considerations.md)
 

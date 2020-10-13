@@ -5,12 +5,12 @@ ms.assetid: 48CD54F5-F18F-4BC1-A93A-A824EC041605
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_SRIOV_READ_VF_CONFIG_SPACE 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 68fcb57720974e7422742e9e3bcb7988306aa4d4
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: efceb370bccd6614f593a7ca0eb26cd46b72d7b6
+ms.sourcegitcommit: db9d058a9e592d4c47c67fc14f04f0ddc3aa92af
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90105526"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91989833"
 ---
 # <a name="oid_sriov_read_vf_config_space"></a>OID \_ SRIOV \_ 读取 \_ VF \_ 配置 \_ 空间
 
@@ -45,7 +45,7 @@ VF 微型端口驱动程序在 Hyper-v 子分区的来宾操作系统中运行�
 
 如果 PF 微型端口驱动程序能够成功完成 OID 请求，则驱动程序必须将请求的 PCI 配置空间数据复制到[**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的**InformationBuffer**成员所引用的缓冲区。 该驱动程序会将数据复制到由[**NDIS \_ SRIOV \_ READ \_ VF \_ CONFIG \_ SPACE \_ PARAMETERS**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_sriov_read_vf_config_space_parameters)结构的**BufferOffset**成员指定的偏移量处的缓冲区。
 
-有关详细信息，请参阅 [查询虚拟功能的 PCI 配置数据](https://docs.microsoft.com/windows-hardware/drivers/network/querying-the-pci-configuration-data-of-a-virtual-function)。
+有关详细信息，请参阅 [查询虚拟功能的 PCI 配置数据](querying-the-pci-configuration-space-for-a-virtual-function.md)。
 
 ### <a name="return-status-codes"></a>返回状态代码
 
@@ -102,13 +102,13 @@ PF 多端口驱动程序为 OID \_ SRIOV \_ READ \_ VF \_ 配置 \_ 空间的 oi
 <td><p>在 NDIS 6.30 和更高版本中受支持。</p></td>
 </tr>
 <tr class="even">
-<td><p>标头</p></td>
+<td><p>标题</p></td>
 <td>Ntddndis (包含 Ndis .h) </td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
 ****
