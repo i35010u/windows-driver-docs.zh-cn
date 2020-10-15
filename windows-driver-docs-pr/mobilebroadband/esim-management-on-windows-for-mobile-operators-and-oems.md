@@ -4,12 +4,12 @@ description: 用于移动运营商和 OEM 的 Windows 上的 eSIM 卡管理
 ms.assetid: 7D37D297-76FD-46DA-ACC3-73E4BF970524
 ms.date: 05/23/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: d8c91d5e69ff2330f54c42b76e28818b2b4da734
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: e476bcc8b93c6313027f6232d962b6a6c775f6c4
+ms.sourcegitcommit: c589753b18e418cf7e86cbdbc1135e07f6f50d0d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89217315"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92079616"
 ---
 # <a name="esim-management-on-windows-for-mobile-operators-and-oems"></a>用于移动运营商和 OEM 的 Windows 上的 eSIM 卡管理
 
@@ -27,7 +27,9 @@ ms.locfileid: "89217315"
 
 Windows 提供了移动设备管理提供程序在企业用例中管理 eSIM 配置文件的功能。 但是，Windows 不会限制生态系统伙伴如何向其自己的合作伙伴和/或客户提供此功能。 因此，可以通过与 Windows OMA 集成来支持 eSIM 配置文件管理功能。 这样，便可以根据公司政策远程管理 eSIM 配置文件。
 
-如果只想集成并使用一个 MDM 提供程序，请直接联系该访问接口。 如果你想要使用不同的 MDM 提供程序向客户提供 eSIM 管理，请与 [orchestrator 提供商](https://www.idemia.com/esim-management-facilitation)联系。 Orchestrator 提供程序充当用于处理 MDM 载入和移动运营商载入的代理。 它们的 [作用](https://www.idemia.com/smart-connect-hub) 是使所有参与方的过程尽可能顺利且可缩放。
+如果只想集成并使用一个 MDM 提供程序，请直接联系该访问接口。 如果你想要使用不同的 MDM 提供程序向客户提供 eSIM 管理，请与 orchestrator 提供商联系。 Orchestrator 提供程序充当用于处理 MDM 载入和移动运营商载入的代理。 它们的作用是使所有参与方的过程尽可能顺利且可缩放。 可以联系的潜在 orchestrator 提供程序包括：
+* [HPE 的设备权利网关](https://www.hpe.com/emea_europe/en/solutions/digital-communications-services.html)
+* [IDEMIA 的智能连接集线器](https://www.idemia.com/smart-connect-hub)
 
 ## <a name="esim-management-for-other-audiences"></a>其他受众的 eSIM 管理
 
