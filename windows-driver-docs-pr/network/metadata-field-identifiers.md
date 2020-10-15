@@ -6,12 +6,12 @@ keywords:
 - 元数据字段标识符网络驱动程序
 ms.date: 11/09/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 56e19633cb5505dc14382d2cbe7ccb39d1f76912
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 8ade4a84a3d9a1726f958f4ae42c97c82a8d35b8
+ms.sourcegitcommit: a3ccb07628a9cd8936d7f88f4aab8faf9379cae5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90714610"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92088117"
 ---
 # <a name="metadata-field-identifiers"></a>元数据字段标识符
 
@@ -165,7 +165,7 @@ ms.locfileid: "90714610"
 <p>FWPS_METADATA_FIELD_ORIGINAL_DESTINATION</p>
 </td>
 <td>
-<p>一个 <a href="/windows/win32/api/ws2def/ns-ws2def-sockaddr_storage"><b>SOCKADDR_STORAGE</b></a> 结构，指示数据包的原始目标。</p>
+<p>一个 <a href="https://docs.microsoft.com/previous-versions/windows/desktop/legacy/ms740504(v=vs.85)"><b>SOCKADDR_STORAGE</b></a> 结构，指示数据包的原始目标。</p>
 <p>
 <div class="alert"><b>注意</b>   支持从 Windows 7 开始。</div>
 <div> </div>

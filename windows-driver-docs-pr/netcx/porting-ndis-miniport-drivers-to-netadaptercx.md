@@ -7,12 +7,12 @@ keywords:
 ms.date: 01/22/2019
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 09ed8af5b24dda510284025387c003ea8996cf95
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 34b80c1a9593e33dd8159e4278832dcbdaa8911a
+ms.sourcegitcommit: a3ccb07628a9cd8936d7f88f4aab8faf9379cae5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89206527"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92088113"
 ---
 # <a name="porting-ndis-miniport-drivers-to-netadaptercx"></a>将 NDIS 微型端口驱动程序移植到 NetAdapterCx
 
@@ -78,16 +78,6 @@ if (!NT_SUCCESS(status)) {
 当你启动网络适配器时，但在调用[**NetAdapterStart**](/windows-hardware/drivers/ddi/netadapter/nf-netadapter-netadapterstart)之前，你将调用等效于[**NdisMSetMiniportAttributes**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismsetminiportattributes)的方法。 但是，客户端驱动程序将调用不同的功能来设置不同类型的功能，而不是使用泛型 [**NDIS_MINIPORT_ADAPTER_ATTRIBUTES**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_miniport_adapter_attributes) 结构调用一个例程。
 
 有关回调的信息，需要提供和何时启动网络适配器，请参阅 [设备和适配器初始化](device-and-adapter-initialization.md)。
-
-## <a name="creating-queues-to-manage-control-requests"></a>创建队列以管理控制请求
-
-接下来，仍在 [*EVT_WDF_DRIVER_DEVICE_ADD*](/windows-hardware/drivers/ddi/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)中， (OID) 路径设置对象标识符。 OID 路径与 WDF 队列类似，但会获得 Oid 而不是 WDFREQUESTs。
-
-在迁移此时，可以执行两种高级方法。 第一种方法是注册 [*EVT_NET_REQUEST_DEFAULT*](https://docs.microsoft.com/windows-hardware/drivers/ddi/netrequestqueue/nc-netrequestqueue-evt_net_request_default) 处理程序，该处理程序接收 OID 请求的方式非常类似于微型端口驱动程序从 NDIS 接收请求的方式。 这是最简单的端口，因为您可能只需要从旧的 MINIPORT_OID_REQUEST 处理程序调整函数签名。
-
-另一种方法是拆分 OID 处理程序的 switch 语句，并为每个单独的 OID 提供单独的处理程序。 如果设备需要特定于 OID 的功能，则可以选择此选项。
-
-如果在 [**NDIS 6.1 中使用了直接 OID 请求接口**](../network/direct-oid-request-interface-in-ndis-6-1.md)，请将其替换为并行 WDF 队列。 同样，NDIS 中的常规 (串行) 请求接口应成为顺序 WDF 队列。
 
 ## <a name="reading-configuration-from-the-registry"></a>正在从注册表读取配置
 
@@ -158,7 +148,7 @@ WDF NIC 驱动程序的设备删除与任何其他 WDF 设备驱动程序中的�
 
 你的 *MiniportHaltEx* 处理程序可能分布 [*EVT_WDF_DEVICE_D0_EXIT*](/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_d0_exit) 和 [*EVT_WDF_DEVICE_RELEASE_HARDWARE*](/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_release_hardware)之间。
 
-WDF 客户端无需删除它创建的 Get-netadapter 或任何 OID 和数据路径队列。 WDF 会自动删除这些对象。
+WDF 客户端无需删除它创建的 Get-netadapter 或任何数据路径队列。 WDF 会自动删除这些对象。
 
 可以删除 *MiniportShutdownEx*、 *MiniportResetEx* 和 *MiniportCheckForHangEx*。 不再支持这些回调。
 

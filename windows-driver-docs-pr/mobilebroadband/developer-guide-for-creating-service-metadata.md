@@ -4,12 +4,12 @@ description: 创建服务元数据的开发人员指南
 ms.assetid: 2d250bce-2dd2-4bd8-aa0f-432dde7783e1
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6c9ddf1405411c4bb77372630b348f78e1768563
-ms.sourcegitcommit: 20eac54e419a594f7cea766ee28f158559dfd79c
+ms.openlocfilehash: 3cb95ef2111300fcae438e051bcdbac98a67e2e2
+ms.sourcegitcommit: a3ccb07628a9cd8936d7f88f4aab8faf9379cae5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91755034"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92088125"
 ---
 # <a name="developer-guide-for-creating-service-metadata"></a>创建服务元数据的开发人员指南
 
@@ -168,7 +168,7 @@ ms.locfileid: "91755034"
 
 **创建服务元数据包**
 
-1.  导航到 <https://sysdev.microsoft.com>。
+1.  导航到 sysdev.microsoft.com。
 
 2.  在 **设备元数据** 标题下，单击 " **创建移动宽带体验**"。
 
@@ -202,7 +202,7 @@ ms.locfileid: "91755034"
 
     -   如果你是使用提供程序名称的 CDMA 提供程序，请选中 " **CDMA** " 标题下的 "**提供程序名称**" 复选框。 在 " **输入提供者名称** " 框中，输入 CDMA 服务提供商名称。
 
-    -   单击 **下一步**。
+    -   单击“下一步”。 
 
     ![这是向导的 "硬件信息" 步骤](images/mbae-sxs81-hardwareinfostep.png)
 

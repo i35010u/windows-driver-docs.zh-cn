@@ -6,12 +6,12 @@ keywords:
 - 筛选条件标识符网络驱动程序
 ms.date: 11/08/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 246fd15c9ae9e3f10869e20adaaba290808c2460
-ms.sourcegitcommit: f8619f20a0903dd64f8641a5266ecad6df5f1d57
+ms.openlocfilehash: b661b19a3bd4d9d912534402a4f17a4541d6d5e3
+ms.sourcegitcommit: a3ccb07628a9cd8936d7f88f4aab8faf9379cae5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91424036"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92088119"
 ---
 # <a name="filtering-condition-identifiers"></a>筛选条件标识符
 
@@ -96,14 +96,14 @@ ms.locfileid: "91424036"
 |FWPM_CONDITION_NDIS_MEDIA_TYPE|指定为 [NDIS_MEDIUM](/windows-hardware/drivers/ddi/ntddndis/ne-ntddndis-_ndis_medium) 枚举值之一的 NDIS 介质的类型。</br>**注意**  在 windows 8、Windows Server 2012 和更高版本的 Windows 中受支持。|
 |FWPM_CONDITION_NDIS_PHYSICAL_MEDIA_TYPE|指定为 NDIS_PHYSICAL_MEDIUM 枚举值之一的通信接口的物理介质的类型。</br>**注意**  在 windows 8、Windows Server 2012 和更高版本的 Windows 中受支持。|
 |FWPM_CONDITION_L2_FLAGS|用于 MAC 层的筛选条件标志组合的按位 "或"。 有关可能的标志的信息，请参阅 [筛选条件 L2 标志](filtering-condition-l2-flags.md)。</br>**注意**  在 windows 8、Windows Server 2012 和更高版本的 Windows 中受支持。|
-|FWPM_CONDITION_MAC_LOCAL_ADDRESS_TYPE|本地 MAC 地址的链接类型。 这是在 FwpmTypes 中的 [DL_ADDRESS_TYPE](/windows/win32/api/fwpmtypes/ne-fwpmtypes-_midl___midl_itf_fwpmtypes_0000_0000_0001) 枚举中定义的值之一。</br>**注意**  在 windows 8、Windows Server 2012 和更高版本的 Windows 中受支持。|
-|FWPM_CONDITION_MAC_REMOTE_ADDRESS_TYPE|远程 MAC 地址的链接类型。 这是在 FwpmTypes 中的 [DL_ADDRESS_TYPE](/windows/win32/api/fwpmtypes/ne-fwpmtypes-_midl___midl_itf_fwpmtypes_0000_0000_0001) 枚举中定义的值之一。</br>**注意**  在 windows 8、Windows Server 2012 和更高版本的 Windows 中受支持。|
+|FWPM_CONDITION_MAC_LOCAL_ADDRESS_TYPE|本地 MAC 地址的链接类型。 这是在 FwpmTypes 中的 [DL_ADDRESS_TYPE](/windows/win32/api/fwpmtypes/ne-fwpmtypes-dl_address_type) 枚举中定义的值之一。</br>**注意**  在 windows 8、Windows Server 2012 和更高版本的 Windows 中受支持。|
+|FWPM_CONDITION_MAC_REMOTE_ADDRESS_TYPE|远程 MAC 地址的链接类型。 这是在 FwpmTypes 中的 [DL_ADDRESS_TYPE](/windows/win32/api/fwpmtypes/ne-fwpmtypes-dl_address_type) 枚举中定义的值之一。</br>**注意**  在 windows 8、Windows Server 2012 和更高版本的 Windows 中受支持。|
 |FWPM_CONDITION_INTERFACE|与本地 MAC 地址关联的网络接口的 LUID。</br>**注意**  在 windows 8、Windows Server 2012 和更高版本的 Windows 中受支持。|
 |FWPM_CONDITION_ALE_PACKAGE_ID|AppContainer 受限包的安全标识符 (SID) 。</br>**注意**  在 windows 8、Windows Server 2012 和更高版本的 Windows 中受支持。|
 |FWPM_CONDITION_MAC_SOURCE_ADDRESS|创建 MAC 帧的网络接口的物理地址。</br>**注意**  在 windows 8、Windows Server 2012 和更高版本的 Windows 中受支持。|
 |FWPM_CONDITION_MAC_DESTINATION_ADDRESS|帧的目标网络接口的物理地址。</br>**注意**  在 windows 8、Windows Server 2012 和更高版本的 Windows 中受支持。|
-|FWPM_CONDITION_MAC_SOURCE_ADDRESS_TYPE|创建该帧的接口的 MAC 地址的链接类型。 这是在 FwpmTypes 中的 [DL_ADDRESS_TYPE](/windows/win32/api/fwpmtypes/ne-fwpmtypes-_midl___midl_itf_fwpmtypes_0000_0000_0001) 枚举中定义的值之一。</br>**注意**  在 windows 8、Windows Server 2012 和更高版本的 Windows 中受支持。|
-|FWPM_CONDITION_MAC_DESTINATION_ADDRESS_TYPE|帧的目标接口的 MAC 地址的链接类型。 这是在 FwpmTypes 中的 [DL_ADDRESS_TYPE](/windows/win32/api/fwpmtypes/ne-fwpmtypes-_midl___midl_itf_fwpmtypes_0000_0000_0001) 枚举中定义的值之一。</br>**注意**  在 windows 8、Windows Server 2012 和更高版本的 Windows 中受支持。|
+|FWPM_CONDITION_MAC_SOURCE_ADDRESS_TYPE|创建该帧的接口的 MAC 地址的链接类型。 这是在 FwpmTypes 中的 [DL_ADDRESS_TYPE](/windows/win32/api/fwpmtypes/ne-fwpmtypes-dl_address_type) 枚举中定义的值之一。</br>**注意**  在 windows 8、Windows Server 2012 和更高版本的 Windows 中受支持。|
+|FWPM_CONDITION_MAC_DESTINATION_ADDRESS_TYPE|帧的目标接口的 MAC 地址的链接类型。 这是在 FwpmTypes 中的 [DL_ADDRESS_TYPE](/windows/win32/api/fwpmtypes/ne-fwpmtypes-dl_address_type) 枚举中定义的值之一。</br>**注意**  在 windows 8、Windows Server 2012 和更高版本的 Windows 中受支持。|
 |FWPM_CONDITION_IP_SOURCE_PORT|传输协议源端口号。</br>**注意**  在 windows 8、Windows Server 2012 和更高版本的 Windows 中受支持。|
 |FWPM_CONDITION_IP_DESTINATION_PORT|传输协议目标端口号。</br>**注意**  在 windows 8、Windows Server 2012 和更高版本的 Windows 中受支持。|
 |FWPM_CONDITION_VSWITCH_ID|虚拟交换机的 GUID。</br>**注意**  在 windows 8、Windows Server 2012 和更高版本的 Windows 中受支持。|

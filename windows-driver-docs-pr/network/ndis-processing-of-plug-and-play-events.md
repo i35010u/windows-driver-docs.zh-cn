@@ -7,12 +7,12 @@ keywords:
 - 为 NIC WDK NDIS 处理 IRP
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a107c174e55cd523af4dd15a955e8c1b95bdb22d
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 9003c42a9be2810c7eab7729e7d7e4dd95e15ac0
+ms.sourcegitcommit: a3ccb07628a9cd8936d7f88f4aab8faf9379cae5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89217026"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92088101"
 ---
 # <a name="overview-of-ndis-processing-of-plug-and-play-events"></a>即插即用事件的 NDIS 处理概述
 
@@ -32,7 +32,7 @@ ms.locfileid: "89217026"
 
 [移除 NIC](removing-a-nic.md)
 
-[处理 NIC 意外删除](processing-the-surprise-removal-of-a-nic.md)
+[处理 NIC 意外删除](processing-the-surprise-removal-of-a-nic--windows-vista-.md)
 
  
 

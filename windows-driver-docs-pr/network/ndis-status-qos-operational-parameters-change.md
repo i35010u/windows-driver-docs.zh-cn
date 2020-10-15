@@ -6,12 +6,12 @@ ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 NDIS_STATUS_QOS_OPERATIONAL_PARAMETERS_CHANGE 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 6377116549f81648e7facf72151e026cb34f8ea5
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 86a7013addd6b9fc8307fe609087a379febaa87a
+ms.sourcegitcommit: a3ccb07628a9cd8936d7f88f4aab8faf9379cae5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89207235"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92088115"
 ---
 # <a name="ndis_status_qos_operational_parameters_change"></a>NDIS \_ 状态 \_ QOS \_ 操作 \_ 参数 \_ 更改
 
@@ -24,7 +24,7 @@ ms.locfileid: "89207235"
 
  
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
 小型端口驱动程序在以下条件下发出 **NDIS \_ 状态 \_ QOS \_ 操作 \_ 参数 \_ 更改** 状态指示：
@@ -39,7 +39,7 @@ ms.locfileid: "89207235"
 
     微型端口驱动程序通过发出 **ndis \_ 状态 \_ QoS \_ 操作 \_ 参数 \_ 更改** 状态指示，通知 NDIS 和过量驱动程序意图替代本地 NDIS QoS 参数。
 
-    有关详细信息，请参阅 [管理 NDIS QoS 参数](https://docs.microsoft.com/windows-hardware/drivers/network/managing-ndis-qos--parameters)。
+    有关详细信息，请参阅 [管理 NDIS QoS 参数](overview-of-ndis-qos-parameters.md)。
 
 **注意**   过量驱动程序可以使用**ndis \_ 状态 \_ QOS \_ 操作 \_ 参数 \_ 更改**状态指示来确定操作 NDIS QOS 参数。 此外，这些驱动程序还可以发出 oid [ \_ qos \_ 操作 \_ 参数](./oid-qos-operational-parameters.md) 的 oid 查询请求，以随时获取操作的 NDIS qos 参数。
 
@@ -63,7 +63,7 @@ ms.locfileid: "89207235"
 <td><p>在 NDIS 6.30 和更高版本中受支持。</p></td>
 </tr>
 <tr class="even">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td> (包含 Ndis .h) </td>
 </tr>
 </tbody>

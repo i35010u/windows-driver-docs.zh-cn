@@ -6,12 +6,12 @@ keywords:
 - MB 基站信息查询，移动宽带基站信息查询
 ms.date: 08/14/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9e821c96dc193813dc93319ed1fc805ddd4b3601
-ms.sourcegitcommit: 20eac54e419a594f7cea766ee28f158559dfd79c
+ms.openlocfilehash: 79e14414568a08a2c6d4620dac75e87768b5c0d3
+ms.sourcegitcommit: a3ccb07628a9cd8936d7f88f4aab8faf9379cae5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91755026"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92088123"
 ---
 # <a name="mb-base-stations-information-query-support"></a>MB 基站信息查询支持
 
@@ -355,7 +355,7 @@ MBIM_CDMA_MRL_INFO 的数据结构是为 CDMA2000 网络类型设计的。 可�
 
 ### <a name="status-codes"></a>状态代码
 
-此 CID 使用一般状态代码 (参阅 [公共 USB MBIM standard](https://go.microsoft.com/fwlink/p/?linkid=842064)) 的9.4.5 节中的状态代码的使用。
+此 CID 使用一般状态代码 (参阅 [公共 USB MBIM standard](https://www.usb.org/document-library/mobile-broadband-interface-model-v10-errata-1-and-adopters-agreement)) 的9.4.5 节中的状态代码的使用。
 
 ## <a name="oid_wwan_base_stations_info"></a><a name="oid_wwan_base_stations_info"></a>OID_WWAN_BASE_STATIONS_INFO
 
