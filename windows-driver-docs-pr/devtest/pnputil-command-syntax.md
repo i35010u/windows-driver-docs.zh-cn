@@ -12,19 +12,19 @@ api_type:
 - NA
 ms.date: 03/03/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 56d770e3b97ffe1ded69290f045b592bdd012a01
-ms.sourcegitcommit: 4058fcb136cfb8255ca7bec68e8597c89f7b68cd
+ms.openlocfilehash: a2ed3db055449f41a7cdb30d126641ecf1ea6336
+ms.sourcegitcommit: f001f5163e1f6350cc8b6dffcc078733defcd053
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "80080156"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92061739"
 ---
 # <a name="pnputil-command-syntax"></a>PnPUtil 命令语法
 
 
-若要运行 PnPUtil，请打开命令提示符窗口（以**管理员身份运行**），并使用以下语法和参数键入命令。
+若要运行 PnPUtil，请打开命令提示符窗口 (**以管理员身份运行**) 并使用以下语法和参数键入命令。
 
-**请注意**，每个 windows 版本都包含  PnPUtil （PnPUtil），从 windows Vista 开始（在% windir%\\system32 目录下）。
+**注意**   Windows 的每个版本都包含了 PnPUtil ( # A0) ，从% windir% system32 目录) 中的 Windows Vista (开始 \\ 。
 
  
 
@@ -37,18 +37,22 @@ pnputil [/add-driver <...> | /delete-driver <...> |
      /enum-interfaces <...> | /?]
 ```
 
-## <a name="commands"></a>Commands
+## <a name="commands"></a>命令
 
- **/add-driver** * < 文件名 .inf | *.inf > [/subdirs] [/install] [/reboot]*
+ **/add-driver** * <文件名 .inf | *.inf> [/subdirs] [/install] [/reboot]*
 
-将驱动程序包添加到驱动程序存储区中。  
+**从 Windows 10 版本1607开始提供。**
+
+将 () 中的驱动程序包添加到驱动程序存储区中。  
 ```
 /subdirs - traverse sub directories for driver packages.  
 /install - install/update drivers on any matching devices.  
 /reboot - reboot system if needed to complete the operation.  
 ```
 
-**/delete-driver** *< oem # .inf > [/uninstall] [/force] [/reboot]*
+**/delete-driver** *<oem # .inf> [/uninstall] [/force] [/reboot]*
+
+**从 Windows 10 版本1607开始提供。**
 
 从驱动程序存储区中删除驱动程序包。  
 
@@ -58,17 +62,21 @@ pnputil [/add-driver <...> | /delete-driver <...> |
 /reboot - reboot system if needed to complete the operation.  
 ```
 
-**/export-driver** <em>< oem # .inf |* > <target directory></em>
+**/export-driver** <em><oem # .inf |* > <target directory></em>
 
-将驱动程序包从驱动程序存储区导出到目标目录中。
+**从 Windows 10 版本1607开始提供。**
+
+将驱动程序包从驱动程序存储区 () 导出到目标目录。
 
 **/enum-drivers**
 
+**从 Windows 10 版本1607开始提供。**
+
 枚举驱动程序存储区中的所有第三方驱动程序包。
 
-**/disable-device** <em>\<实例 ID\> [/reboot]</em>
+**/disable-device** <em> \<instance ID\> [/reboot]</em>
 
-**仅适用于 Windows 10 版本2004及更高版本**
+**从 Windows 10 版本2004开始提供**
 
 禁用系统上的设备。 
 
@@ -76,9 +84,9 @@ pnputil [/add-driver <...> | /delete-driver <...> |
 /reboot - reboot system if needed to complete the operation.
 ```
 
-**/enable-device** *\<实例 ID\> [/reboot]*
+**/enable-device** * \<instance ID\> [/reboot]*
 
-**仅适用于 Windows 10 版本2004及更高版本**
+**从 Windows 10 版本2004开始提供**
 
 在系统上启用设备。  
 
@@ -86,9 +94,9 @@ pnputil [/add-driver <...> | /delete-driver <...> |
 /reboot - reboot system if needed to complete the operation.
 ```
 
-**/restart-device** *\<实例 ID\> [/reboot]*
+**/restart-device** * \<instance ID\> [/reboot]*
 
-**仅适用于 Windows 10 版本2004及更高版本**
+**从 Windows 10 版本2004开始提供**
 
 重新启动系统上的设备设备。 
 
@@ -96,9 +104,9 @@ pnputil [/add-driver <...> | /delete-driver <...> |
 /reboot - reboot system if needed to complete the operation.
 ```
 
-**/remove-device** *\<实例 ID\> [/subtree] [/reboot]*
+**/remove-device** * \<instance ID\> [/subtree] [/reboot]*
 
-**仅适用于 Windows 10 版本2004及更高版本**
+**从 Windows 10 版本2004开始提供**
 
 尝试从系统中删除设备。 
 
@@ -107,9 +115,9 @@ pnputil [/add-driver <...> | /delete-driver <...> |
 /reboot - reboot system if needed to complete the operation.
 ```
 
-**/scan-devices** *[/INSTANCEID \<实例 ID\>] [/async]*
+**/scan-devices** *[/instanceid \<instance ID\> ] [/async]*
 
-**仅适用于 Windows 10 版本2004及更高版本**
+**从 Windows 10 版本2004开始提供**
 
 扫描系统中是否有任何设备硬件更改。 
 
@@ -117,9 +125,9 @@ pnputil [/add-driver <...> | /delete-driver <...> |
 /instanceid <instance ID> - scan device subtree for changes.
 /async - scan for changes asynchronously.
 ```
-**/enum-devices** *[只有当/connected] [/disconnected] [/INSTANCEID \<实例 ID\>] [/class 相同 < 名称 |GUID >] [/problem [\<问题代码\>]] [/ids] [/relations] [/drivers]*
+**/enum-devices** *[只有当/connected] [/disconnected] [/instanceid \<instance ID\> ] [/class 相同 <名称 |GUID>] [/problem [ \<problem code\> ]] [/ids] [/relations] [/drivers]*
 
-**仅适用于 Windows 10 版本1903及更高版本**
+**从 Windows 10 版本1903开始提供**
 
 枚举系统上的所有设备。
 
@@ -133,9 +141,9 @@ pnputil [/add-driver <...> | /delete-driver <...> |
 /drivers - display matching and installed drivers.
 ```
 
-**/enum-interfaces** *[/enabled |/disabled] [/class 相同 \<GUID\>]*
+**/enum-interfaces** *[/enabled |/disabled] [/class 相同 \<GUID\> ]*
 
-**仅适用于 Windows 10 版本1903及更高版本**
+**从 Windows 10 版本1903开始提供**
 
 枚举系统上的所有设备接口。
 
@@ -161,11 +169,11 @@ pnputil [/add-driver <...> | /delete-driver <...> |
 ```
  
 
-###  <a name="comments"></a>Comments
+###  <a name="comments"></a>说明
 
 
 
-有关如何使用 PnPUtil 工具的示例，请参阅[PnPUtil 示例](pnputil-examples.md)。
+有关如何使用 PnPUtil 工具的示例，请参阅 [PnPUtil 示例](pnputil-examples.md)。
 
  
 
