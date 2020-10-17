@@ -6,12 +6,12 @@ keywords:
 - Mobile 宽带 (MBB) WDF 类扩展，MBBCx，Mobile 宽带 NetAdapterCx
 ms.date: 03/19/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: c77b47fe0e5fd7458a4a8f150845f6b9b7a31a54
-ms.sourcegitcommit: a3ccb07628a9cd8936d7f88f4aab8faf9379cae5
+ms.openlocfilehash: a0b8eddaf4c6f30261fa561e66de691bf373e5cc
+ms.sourcegitcommit: c94be6fc464edc94035060a4723efa06ab0f5af9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92088121"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92153467"
 ---
 # <a name="writing-an-mbbcx-client-driver"></a>编写 MBBCx 客户端驱动程序
 
@@ -26,14 +26,14 @@ MBBCx 客户端驱动程序的 INF 文件与其他 NetAdapterCx 客户端驱动�
 
 除了 NetAdapterCx for [get-netadapter 设备初始化](device-and-adapter-initialization.md)所需的那些任务，MBB 客户端驱动程序还必须在其 [*EvtDriverDeviceAdd*](/windows-hardware/drivers/ddi/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add) 回调函数中执行以下任务：
 
-1. 在调用[*NetAdapterDeviceInitConfig*](https://docs.microsoft.com/windows-hardware/drivers/ddi/netadapter/nf-netadapter-netadapterdeviceinitconfig)之后但在调用[*WdfDeviceCreate*](/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdevicecreate)之前调用[**MBB_DEVICE_CONFIG_INIT**](/windows-hardware/drivers/ddi/mbbcx/nf-mbbcx-mbb_device_config_init) ，并引用框架传入的同一[**WDFDEVICE \_ INIT**](../wdf/wdfdevice_init.md)对象。
+1. 在调用[*NetDeviceInitConfig*](/windows-hardware/drivers/ddi/netdevice/nf-netdevice-netdeviceinitconfig)之后但在调用[*WdfDeviceCreate*](/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdevicecreate)之前调用[**MBB_DEVICE_CONFIG_INIT**](/windows-hardware/drivers/ddi/mbbcx/nf-mbbcx-mbb_device_config_init) ，并引用框架传入的同一[**WDFDEVICE \_ INIT**](../wdf/wdfdevice_init.md)对象。
 
 2. 调用 [**MbbDeviceInitialize**](/windows-hardware/drivers/ddi/mbbcx/nf-mbbcx-mbbdeviceinitialize) ，以使用初始化的 [**MBB_DEVICE_CONFIG**](/windows-hardware/drivers/ddi/mbbcx/ns-mbbcx-_mbb_device_config) 结构和从 *WdfDeviceCreate*获取的 WDFDEVICE 对象来注册 MBB 特定于设备的回调函数。
 
 下面的示例演示如何初始化 MBB 设备。 为清楚起见，已省略错误处理。
 
 ```C++
-    status = NetAdapterDeviceInitConfig(deviceInit);
+    status = NetDeviceInitConfig(deviceInit);
     status = MbbDeviceInitConfig(deviceInit);
 
     // Set up other callbacks such as Pnp and Power policy

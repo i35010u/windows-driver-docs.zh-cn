@@ -1,16 +1,16 @@
 ---
-title: 如何安装 Windows 安装程序和 Boot 所需的测试签名驱动程序
+title: 如何安装 Windows 安装程序和启动所需的测试签名的驱动程序
 description: 描述如何在运行 Windows Server 的计算机上或在 Windows 安装程序
 ms.assetid: 533d1ccb-412b-4e49-aa56-45e6df3f6f66
 ms.date: 10/06/2020
-ms.openlocfilehash: 887d8e3ceb4765837a9fbecdb2e64d6529b0fd5e
-ms.sourcegitcommit: 735fea11056fe943c4368ee54573790e0602de66
+ms.openlocfilehash: 49c206e1c2873d3598a5d5e01d03248739a5b4d3
+ms.sourcegitcommit: 62c81d88b03bd311d1cdfef5b138d579faceb304
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91980183"
+ms.lasthandoff: 10/16/2020
+ms.locfileid: "92113500"
 ---
-# <a name="how-to-install-a-test-signed-driver-required-for-windows-setup-and-boot"></a>如何安装 Windows 安装程序和 Boot 所需的测试签名驱动程序
+# <a name="how-to-install-a-test-signed-driver-required-for-windows-setup-and-boot"></a>如何安装 Windows 安装程序和启动所需的测试签名的驱动程序
 
 本页介绍如何在运行 Windows Server 2019 (或 Windows Server 2016) 的计算机上或在 Windows 安装程序后首次启动的计算机上安装测试签名的驱动程序。 只应在测试环境中使用测试签名的驱动程序。
 
@@ -69,7 +69,7 @@ Dism /unmount-image /mountdir:C:\WinPE_amd64\mount /commit
 使用以下步骤安装该驱动程序：
 
 1. 在测试计算机上关闭 **安全启动** ，然后启动 WinPE 系统。
-2. 使用 ISO 文件启动计算机后，将显示命令提示符。 运行 `wpeinit` ，例如来自 `X:\Windows\system32` 。
+2. 使用 ISO 文件启动计算机后，将显示命令提示符。
 3. 若要使用装载的 ISO 文件来识别驱动器号，请使用 `diskpart` ，然后使用 `list volume` 。 查找 **类型** 为的卷 `DVD-ROM` 。 键入 `exit`。
 4. 导航到 ISO 驱动器并切换到驱动程序示例目录，例如 `D:\DriverSample` 。
 5. 使用以下命令安装测试驱动程序：

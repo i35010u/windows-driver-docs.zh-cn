@@ -4,12 +4,12 @@ description: NDIS QoS 流量类
 ms.assetid: 0DE61F97-7173-4D91-90F3-20EAFB810251
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f3ac35f7b336e2fa63217835396b986cdf8f16b6
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: e2cff6df35ed398dca3b43d910903869b90151b2
+ms.sourcegitcommit: 62c81d88b03bd311d1cdfef5b138d579faceb304
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89213907"
+ms.lasthandoff: 10/16/2020
+ms.locfileid: "92113508"
 ---
 # <a name="ndis-qos-traffic-classes"></a>NDIS QoS 流量类
 
@@ -19,7 +19,7 @@ ms.locfileid: "89213907"
 <a href="" id="priority-level-and-flow-control"></a>优先级别和流控制  
 此策略定义 IEEE 802.1 p 优先级级别和出口流量的可选流控制算法。
 
-有关详细信息，请参阅 [优先级别和流控制](priority-levels-and-flow-control.md)。
+有关详细信息，请参阅 [优先级别和流控制](ieee-802-1p-priority-levels.md)。
 
 <a href="" id="traffic-selection-algorithms--tsas-"></a>流量选择算法 (TSAs)   
 此策略指定网络适配器如何从其传输队列中选择要传送的传出流量。 例如，适配器可以选择基于 IEEE 802.1 p 优先级的传出数据包或分配给每个通信类的出口带宽的百分比。

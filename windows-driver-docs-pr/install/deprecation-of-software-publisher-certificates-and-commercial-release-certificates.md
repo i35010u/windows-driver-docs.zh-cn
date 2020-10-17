@@ -7,12 +7,12 @@ keywords:
 - 受信任的发布者证书存储 WDK
 ms.date: 08/01/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 6f878357ed3d10d56f58af73b70c73c9e053b859
-ms.sourcegitcommit: 735fea11056fe943c4368ee54573790e0602de66
+ms.openlocfilehash: 8de252530667dd547a5b1edf55f94f844cb4302c
+ms.sourcegitcommit: 62c81d88b03bd311d1cdfef5b138d579faceb304
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91979978"
+ms.lasthandoff: 10/16/2020
+ms.locfileid: "92113548"
 ---
 # <a name="deprecation-of-software-publisher-certificates-commercial-release-certificates-and-commercial-test-certificates"></a>弃用软件发行者证书、商业发布证书和商业测试证书
 
@@ -75,7 +75,7 @@ ms.locfileid: "91979978"
 - [WHQL 测试签名计划](whql-test-signature-program.md)
 - [企业 CA 流程](enterprise-ca-test-certificate.md)
 
-若要在启动时测试驱动程序，请参阅安装测试签名驱动程序。
+若要在启动时测试驱动程序，请参阅 [如何安装 Windows 安装程序和 Boot 所需的测试签名驱动程序](how-to-install-test-signed-driver-for-setup-and-boot.md)。
 
 有关详细信息，请参阅 [在开发和测试期间对驱动程序进行签名](./introduction-to-test-signing.md)。
 
@@ -115,7 +115,7 @@ ms.locfileid: "91979978"
 
 ### <a name="starting-in-2021-will-microsoft-be-the-sole-provider-of-production-kernel-mode-code-signatures"></a>从2021开始，Microsoft 是否是生产内核模式代码签名的唯一提供程序？ 
 
-能。
+是的。
 
 ### <a name="hardware-dev-center-doesnt-provide-driver-signing-for-windows-xp-how-can-i-have-my-drivers-run-in-xp"></a>硬件开发人员中心不提供适用于 Windows XP 的驱动程序签名，如何让我的驱动程序在 XP 中运行？
 

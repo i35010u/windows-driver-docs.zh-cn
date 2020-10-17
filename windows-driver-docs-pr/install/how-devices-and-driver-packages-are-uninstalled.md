@@ -4,12 +4,13 @@ description: 如何卸载设备和驱动程序包
 ms.assetid: 0f4f0bbf-ca8f-47ef-b70b-d023bba9b842
 ms.date: 10/07/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: a08e736b294285d228780add21515abf8b2e1e61
-ms.sourcegitcommit: f001f5163e1f6350cc8b6dffcc078733defcd053
+ms.custom: contperfq2
+ms.openlocfilehash: a7f4a1cda686437f0de372c72986e8aef80cd797
+ms.sourcegitcommit: 62c81d88b03bd311d1cdfef5b138d579faceb304
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92061737"
+ms.lasthandoff: 10/16/2020
+ms.locfileid: "92113546"
 ---
 # <a name="how-devices-and-driver-packages-are-uninstalled"></a>如何卸载设备和驱动程序包
 

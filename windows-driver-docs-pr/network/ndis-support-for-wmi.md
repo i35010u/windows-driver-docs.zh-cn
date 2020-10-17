@@ -12,12 +12,12 @@ keywords:
 - i
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d8a838b68fd88042fbbbfe84f1c638e836ccc0aa
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 1a97f2c57db418cea43386a53eb12b8dbb336469
+ms.sourcegitcommit: 62c81d88b03bd311d1cdfef5b138d579faceb304
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89210167"
+ms.lasthandoff: 10/16/2020
+ms.locfileid: "92113544"
 ---
 # <a name="ndis-support-for-wmi"></a>WMI 的 NDIS 支持
 
@@ -43,11 +43,11 @@ NDIS 不提供对协议驱动程序的 WMI 支持。 协议驱动程序或中间
 
 [NDIS 支持的 WMI 操作](ndis-supported-wmi-operations.md)
 
-[标准 WMI OID 和状态指示](standard-wmi-oids-and-status-indications.md)
+[标准 WMI OID 和状态指示](standard-miniport-driver-oids-registered-with-wmi.md)
 
 [自定义的 OID 和状态指示](customized-oids-and-status-indications.md)
 
-[NDIS WMI GUID](ndis-wmi-guids.md)
+[NDIS WMI GUID](guid-ndis-status-link-state.md)
 
  
 

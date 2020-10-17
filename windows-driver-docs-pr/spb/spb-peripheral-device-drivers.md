@@ -4,12 +4,12 @@ description: SPB 外围设备驱动程序控制连接到简单外设总线 (SPB)
 ms.assetid: 8352EBD9-D94C-4EC6-A17E-3A72DDE4C16C
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1d19076aa68ad29890da45d3e31ebfc279a40743
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: 5ebfb8ee176dc6176ed6d581f9785d11229d4a6a
+ms.sourcegitcommit: 56e531c6dffd4d7a11c4c2d8edd59f0e1ca8929d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91733053"
+ms.lasthandoff: 10/16/2020
+ms.locfileid: "92133961"
 ---
 # <a name="spb-peripheral-device-drivers"></a>SPB 外围设备驱动程序
 
@@ -18,7 +18,7 @@ SPB 外围设备驱动程序控制连接到[简单外设总线](/previous-versio
 
 从 Windows 8 开始，Windows 为 [简单外围总线](/previous-versions/hh450903(v=vs.85)) 上的外围设备提供驱动程序支持 (SPBs) 。 SPBs （如 i2c 和 SPI）广泛用于连接到低速传感器设备，例如加速感应器、GPS 设备和电池级别的监视器。 本概述介绍了 SPB 外围设备驱动程序与其他系统组件的合作方式如何控制由 SPB 连接的外围设备。
 
-可以构建 SPB 外围设备驱动程序，以使用 [用户模式驱动程序框架](../wdf/overview-of-the-umdf.md) (UMDF) 或 [内核模式驱动程序框架](../wdf/index.md) (KMDF) 。 有关开发 UMDF 驱动程序的详细信息，请参阅 [使用 umdf 入门](/previous-versions/ff554928(v=vs.85))。 有关开发 KMDF 驱动程序的详细信息，请参阅 [使用内核模式驱动程序框架入门](../wdf/index.md)。
+可以构建 SPB 外围设备驱动程序，以使用 [用户模式驱动程序框架](../wdf/overview-of-the-umdf.md) (UMDF) 或 [内核模式驱动程序框架](../wdf/index.md) (KMDF) 。 有关开发 UMDF 驱动程序的详细信息，请参阅 [使用 umdf 入门](/previous-versions/ff554928(v=vs.85))。 有关开发 KMDF 驱动程序的详细信息，请参阅 [使用 Kernel-Mode Driver Framework 入门](../wdf/index.md)。
 
 ## <a name="device-configuration-information"></a>设备配置信息
 
@@ -46,7 +46,7 @@ SPB 不是 [即插即用](../kernel/introduction-to-plug-and-play.md) (PnP) 总�
 
 以灰色显示的三个块是系统提供的模块。 从 Windows 7 开始，可以将 [传感器类扩展](../sensors/about-the-sensor-class-extension.md) 用作 UMDF 的传感器特定扩展。 从 Windows 8 开始， [SPB 框架扩展](./spb-framework-extension.md) (SpbCx) 和 [gpio Framework 扩展](../gpio/gpio-driver-support-overview.md) (GPIOCLX) 可作为 KMDF 扩展，这些扩展执行特定于 SPB 控制器和 gpio 控制器的功能。
 
-在上述关系图的顶部，应用程序调用 [传感器 API](/windows/desktop/SensorsAPI/portal) 或 [位置 API](/windows/desktop/LocationAPI/windows-location-api-portal) 中的方法来与传感器设备通信。 通过这些调用，应用程序可以将 i/o 请求发送到设备，并从设备接收事件通知。 有关这些 Api 的详细信息，请参阅 [Windows 中的传感器和位置平台简介](../sensors/introduction-to-the-sensor-and-location-platform-in-windows.md)。
+在上述关系图的顶部，应用程序调用 [传感器 API](/windows/desktop/SensorsAPI/portal) 或 [位置 API](/windows/desktop/LocationAPI/windows-location-api-portal) 中的方法来与传感器设备通信。 通过这些调用，应用程序可以将 i/o 请求发送到设备，并从设备接收事件通知。 有关这些 Api 的详细信息，请参阅 [Windows 中的传感器和位置平台简介](../sensors/index.md)。
 
 当应用程序调用需要与 SPB 外围设备驱动程序通信的方法时，传感器 API 或位置 API 会创建 i/o 请求并将其发送到 SPB 外围设备驱动程序。 传感器类扩展模块有助于驱动程序处理这些 i/o 请求。 当驱动程序收到新的 i/o 请求时，驱动程序会立即将请求传递给传感器类扩展，这会将请求排队，直到驱动程序准备好处理该请求。 如果从应用程序发出的 i/o 请求需要将数据传输到外设或从外围设备传输数据，则 SPB 外围设备驱动程序将为此传输创建 i/o 请求，并将请求发送到 I i2c 控制器。 此类请求由 SpbCx 和 I i2c 控制器驱动程序共同处理。
 
@@ -71,7 +71,7 @@ SpbCx 是系统提供的组件，用于管理 SPB 控制器的 i/o 请求队列�
 <thead>
 <tr class="header">
 <th>主题</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>

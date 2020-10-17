@@ -150,8 +150,6 @@
       href: introduction-to-ndis-pdpi.md
 - name: NDIS 版本
   items:
-    - name: NDIS 版本指南
-      href: ndis-version-guide.md
     - name: NDIS 版本概述
       href: overview-of-ndis-versions.md
     - name: NDIS 6.0 和更高版本简介

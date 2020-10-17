@@ -5,14 +5,14 @@ ms.assetid: 6e798b87-a35d-414a-8116-ee1523c782ae
 ms.date: 10/07/2020
 ms.localizationpriority: medium
 ms.custom: contperfq2
-ms.openlocfilehash: 68d748237a745a3f2a4d7a97959a1af0101c4e6d
-ms.sourcegitcommit: 662ac98bba3a06fd3299e9e41da5a5827276dc45
+ms.openlocfilehash: fa94777db23ebb711e5841c7eda2338e9fb62662
+ms.sourcegitcommit: 62c81d88b03bd311d1cdfef5b138d579faceb304
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91870804"
+ms.lasthandoff: 10/16/2020
+ms.locfileid: "92113534"
 ---
-# <a name="uninstalling-devices-and-driver-packages"></a>卸载设备和驱动程序包
+# <a name="using-device-manager-to-uninstall-devices-and-driver-packages"></a>使用设备管理器卸载设备和驱动程序包
 
 本页介绍如何在 Windows 10 上卸载设备或驱动程序。
 

@@ -2,15 +2,15 @@
 title: Windows 10 版本 1709 的驱动程序开发变更
 description: 了解 Windows 10 中用于驱动程序开发的新功能，例如 Windows 调试器的新内容集。
 ms.assetid: 68a5a513-0dab-40f7-b67f-29b76061e1ab
-ms.date: 04/14/2020
+ms.date: 04/15/2020
 author: EliotSeattle
 ms.localizationpriority: medium
-ms.openlocfilehash: fb341d67a991434c2818bfdcc32ac7c9d3157c1d
-ms.sourcegitcommit: cccf9ba62af357aad1016addbbf6c42c7f564412
+ms.openlocfilehash: 1bee52123ceaae29020174a88b08af783eacbabc
+ms.sourcegitcommit: c94be6fc464edc94035060a4723efa06ab0f5af9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/01/2020
-ms.locfileid: "91606455"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92153475"
 ---
 # <a name="driver-development-additions-for-windows-10-version-1709"></a>适用于 Windows 10 的驱动程序开发添加版本1709
 
@@ -29,7 +29,7 @@ ms.locfileid: "91606455"
 - [硬件通知](#hardware-notifications)
 - [Windows 内核](#windows-kernel)
 - [移动宽带](#mobile-broadband)
-- [联网](#networking)
+- [网络](#networking)
 - [虚拟化 PCI](#virtualized-pci)
 - [脉宽调制](#pulse-width-modulation-controllers)
 - [& 存储的文件系统](#file-systems-and-storage)
@@ -188,7 +188,7 @@ Windows 10 版本1709中添加了 Windows 网络驱动程序开发的这些新�
 
 ### <a name="virtualized-pci"></a>虚拟化 PCI
 
-在 Windows 10 1709 版中，添加了新的编程接口，用于写入符合 PCI Express 单根 i/o 虚拟化的设备的物理功能驱动程序 (SR-IOV) 规范。 接口在 Pcivirt.h 中声明。 有关详细信息，请参阅 [PCI 虚拟化](/windows-hardware/drivers/ddi/pcivirt/)。
+在 Windows 10 中，版本1709是添加了新的编程接口，用于写入符合 PCI Express Single-Root i/o 虚拟化的设备的物理功能驱动程序 (SR-IOV) 规范。 接口在 Pcivirt.h 中声明。 有关详细信息，请参阅 [PCI 虚拟化](/windows-hardware/drivers/ddi/pcivirt/)。
 
 ### <a name="pulse-width-modulation-controllers"></a>脉冲宽度调制控制器
 

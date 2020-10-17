@@ -3,12 +3,12 @@ description: 本主题列出了支持的 USB 设备类的 Microsoft 提供的驱
 title: 包含在 Windows 中的 USB 设备类驱动程序
 ms.date: 04/20/2017
 ms.localizationpriority: High
-ms.openlocfilehash: 01fc1016b563dfcd041a52d66497bdeb066a97e4
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: 3edebe789c1e0cdfe92d0b18da5b825f0177fa11
+ms.sourcegitcommit: 735fea11056fe943c4368ee54573790e0602de66
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91732607"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91979962"
 ---
 # <a name="usb-device-class-drivers-included-in-windows"></a>包含在 Windows 中的 USB 设备类驱动程序
 
@@ -97,7 +97,7 @@ USB 设备的两个重要设备安装程序类如下所示：
         <td><strong>HIDClass</strong></br>{745a17a0-74d3-11d0-b6fe-00a0c90f57da}</td>
         <td>Hidclass.sys</br>Hidusb.sys</br>Input.inf</td>
         <td>Windows 10 桌面版</br>Windows 10 移动版</br>Windows 8.1</br>Windows 8</br>Windows 7</br>Windows Server 2008</br>Windows Vista</td>
-        <td>Microsoft 提供 HID 类驱动程序 (Hidclass.sys) 和 miniclass 驱动程序 (Hidusb.sys) 来操作符合 <a href="https://go.microsoft.com/fwlink/p/?LinkId=761243">USB HID 标准</a>的设备。 有关详细信息，请参阅 <a href="/previous-versions/jj126193(v=vs.85)">HID 体系结构</a>和<a href="/windows-hardware/drivers/hid/minidriver-operations">微型驱动程序和 HID 类驱动程序</a>。 有关 Windows 对输入硬件的支持的详细信息，请参阅<a href="/windows-hardware/drivers/hid/">输入和 HID - 体系结构和驱动程序支持</a>网站。</td>
+        <td>Microsoft 提供 HID 类驱动程序 (Hidclass.sys) 和 miniclass 驱动程序 (Hidusb.sys) 来操作符合 <a href="https://go.microsoft.com/fwlink/p/?LinkId=761243">USB HID 标准</a>的设备。 有关详细信息，请参阅 <a href="/windows-hardware/drivers/hid/hid-architecture">HID 体系结构</a>和<a href="/windows-hardware/drivers/hid/minidriver-operations">微型驱动程序和 HID 类驱动程序</a>。 有关 Windows 对输入硬件的支持的详细信息，请参阅<a href="/windows-hardware/drivers/hid/">输入和 HID - 体系结构和驱动程序支持</a>网站。</td>
       </tr>
       <tr>
         <td>物理 (05h)</td>
