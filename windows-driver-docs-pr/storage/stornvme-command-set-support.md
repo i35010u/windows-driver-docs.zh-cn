@@ -4,12 +4,12 @@ description: 介绍 StoreNVMe 提供的命令集支持
 ms.assetid: c0bcee11-ea66-4726-99a2-ad18256cf616
 ms.date: 08/07/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 9c77619d61afb1303d19462fd89d5e0021329a13
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 259def3b2e8cae4759c1e64acc71fb7aa5ae396d
+ms.sourcegitcommit: abe7fe9f3fbee8d12641433eeab623a4148ffed3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89189417"
+ms.lasthandoff: 10/19/2020
+ms.locfileid: "92185164"
 ---
 # <a name="stornvme-command-set-support"></a>StorNVMe 命令集支持
 
@@ -34,7 +34,7 @@ ms.locfileid: "89189417"
 | Dh      | 命名空间管理        | [IOCTL_STORAGE_PROTOCOL_COMMAND](/windows-hardware/drivers/ddi/ntddstor/ni-ntddstor-ioctl_storage_protocol_command) | 仅在 Win PE 模式下为[IOCTL_STORAGE_PROTOCOL_COMMAND](/windows-hardware/drivers/ddi/ntddstor/ni-ntddstor-ioctl_storage_protocol_command)启用 |
 | 10h     | 固件提交             | [IOCTL_STORAGE_FIRMWARE_ACTIVATE](/windows-hardware/drivers/ddi/ntddstor/ni-ntddstor-ioctl_storage_firmware_activate) | |
 | 11h     | 固件映像下载     | [IOCTL_STORAGE_FIRMWARE_DOWNLOAD](/windows-hardware/drivers/ddi/ntddstor/ni-ntddstor-ioctl_storage_firmware_download) | |
-| 14h     | 设备自检            | [IOCTL_STORAGE_PROTOCOL_COMMAND](/windows-hardware/drivers/ddi/ntddstor/ni-ntddstor-ioctl_storage_protocol_command)  | |
+| 14h     | 设备 Self-Test            | [IOCTL_STORAGE_PROTOCOL_COMMAND](/windows-hardware/drivers/ddi/ntddstor/ni-ntddstor-ioctl_storage_protocol_command)  | |
 | 15h     | 命名空间附件        | [IOCTL_STORAGE_PROTOCOL_COMMAND](/windows-hardware/drivers/ddi/ntddstor/ni-ntddstor-ioctl_storage_protocol_command) | 仅在 Win PE 模式下为[IOCTL_STORAGE_PROTOCOL_COMMAND](/windows-hardware/drivers/ddi/ntddstor/ni-ntddstor-ioctl_storage_protocol_command)启用 |
 | 19h     | 指令发送              | 内部驱动程序使用情况 |   |
 | 1Ah     | 指令接收           | 内部驱动程序使用情况 |   |
@@ -53,14 +53,14 @@ ms.locfileid: "89189417"
 
 | 操作码  | NVMe 命令                | StorNVMe 支持      | 注释 |
 | ------  | --------------------------  | --------------------- | -------- |
-| 0       | 刷新                       | 内部驱动程序使用情况， [IOCTL_SCSI_PASS_THROUGH](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddscsi/ni-ntddscsi-[IOCTL_SCSI_PASS_THROUGH](/windows-hardware/drivers/ddi/ntddscsi/ni-ntddscsi-ioctl_scsi_pass_through)) | [IOCTL_SCSI_PASS_THROUGH](/windows-hardware/drivers/ddi/ntddscsi/ni-ntddscsi-ioctl_scsi_pass_through)的 SCSIOP_SYNCHRONIZE_CACHE |
-| 1       | Write                       | 内部驱动程序使用情况， [IOCTL_SCSI_PASS_THROUGH](/windows-hardware/drivers/ddi/ntddscsi/ni-ntddscsi-ioctl_scsi_pass_through) | [IOCTL_SCSI_PASS_THROUGH](/windows-hardware/drivers/ddi/ntddscsi/ni-ntddscsi-ioctl_scsi_pass_through)的 SCSIOP_WRITE/SCSIOP_WRITE16 |
+| 0       | 刷新                       | 内部驱动程序使用情况， [IOCTL_SCSI_PASS_THROUGH](/windows-hardware/drivers/ddi/ntddscsi/ni-ntddscsi-ioctl_scsi_pass_through) | [IOCTL_SCSI_PASS_THROUGH](/windows-hardware/drivers/ddi/ntddscsi/ni-ntddscsi-ioctl_scsi_pass_through)的 SCSIOP_SYNCHRONIZE_CACHE |
+| 1       | 写入                       | 内部驱动程序使用情况， [IOCTL_SCSI_PASS_THROUGH](/windows-hardware/drivers/ddi/ntddscsi/ni-ntddscsi-ioctl_scsi_pass_through) | [IOCTL_SCSI_PASS_THROUGH](/windows-hardware/drivers/ddi/ntddscsi/ni-ntddscsi-ioctl_scsi_pass_through)的 SCSIOP_WRITE/SCSIOP_WRITE16 |
 | 2       | 读取                        | 内部驱动程序使用情况， [IOCTL_SCSI_PASS_THROUGH](/windows-hardware/drivers/ddi/ntddscsi/ni-ntddscsi-ioctl_scsi_pass_through) | [IOCTL_SCSI_PASS_THROUGH](/windows-hardware/drivers/ddi/ntddscsi/ni-ntddscsi-ioctl_scsi_pass_through)的 SCSIOP_READ/SCSIOP_READ16 |
 | 4       | 写入无法纠正         |   | 目前不受支持。 |
 | 5       | 比较                     | [IOCTL_STORAGE_PROTOCOL_COMMAND](/windows-hardware/drivers/ddi/ntddstor/ni-ntddstor-ioctl_storage_protocol_command) | 仅在 Win PE 模式下为[IOCTL_STORAGE_PROTOCOL_COMMAND](/windows-hardware/drivers/ddi/ntddstor/ni-ntddstor-ioctl_storage_protocol_command)启用 |
 | 8       | 写零                |   | 目前不受支持。 |
 | 9       | 数据集管理          | [IOCTL_SCSI_PASS_THROUGH](/windows-hardware/drivers/ddi/ntddscsi/ni-ntddscsi-ioctl_scsi_pass_through) | 仅剪裁 (释放) ;[IOCTL_SCSI_PASS_THROUGH](/windows-hardware/drivers/ddi/ntddscsi/ni-ntddscsi-ioctl_scsi_pass_through)的 SCSIOP_UNMAP |
-| 48      | Verify                      |   | 目前不受支持。 |
+| 48      | 验证                      |   | 目前不受支持。 |
 | Dh      | 预订注册        |   | 目前不受支持。 |
 | 吧      | 预订报表          |   | 目前不受支持。 |
 | 11h     | 预留获取         |   | 目前不受支持。 |

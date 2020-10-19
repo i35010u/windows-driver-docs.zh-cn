@@ -8,16 +8,16 @@ keywords:
 - 存储支持例程
 ms.date: 10/08/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 60f77c64a08a39abd36827568e2e69af7604cbc6
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 22ca15e1881f6cba9ceb34e9e43ad3e1496b5dbd
+ms.sourcegitcommit: abe7fe9f3fbee8d12641433eeab623a4148ffed3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89184663"
+ms.lasthandoff: 10/19/2020
+ms.locfileid: "92185237"
 ---
 # <a name="storport-driver-miniport-routines"></a>Storport 驱动程序微型端口例程
 
-与 Storport 驱动程序配合使用的微型端口驱动程序必须包含本部分中列出的例程说明的实现，并且它必须在微型端口驱动程序的初始化阶段通过 [HW_INITIALIZATION_DATA](https://docs.microsoft.com/windows-hardware/drivers/ddi/storport/ns-storport-_hw_initialization_data) 结构公开它们。
+与 Storport 驱动程序配合使用的微型端口驱动程序必须包含本部分中列出的例程说明的实现，并且它必须在微型端口驱动程序的初始化阶段通过 [HW_INITIALIZATION_DATA](/windows-hardware/drivers/ddi/storport/ns-storport-_hw_initialization_data-r1) 结构公开它们。
 
 Storport 微型端口驱动程序例程在大多数方面都等效于其 SCSI 端口对应项 (参阅 [Scsi 微型端口驱动程序例程](scsi-miniport-driver-routines.md)) 的详细信息。 但是，SCSI 端口驱动程序的设计和 Storport 驱动程序的设计之间存在重要差异，并且这些例程必须适应这些差异。
 

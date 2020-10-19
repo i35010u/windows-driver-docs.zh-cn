@@ -1,92 +1,92 @@
 ---
-title: 第 5 步提交 Microsoft Store 设备应用程序
+title: 步骤5提交 Microsoft Store 设备应用
 description: 本主题介绍如何将 UWP 设备应用提交到 Microsoft Store 仪表板。
 ms.assetid: B25F9953-6EFD-4A08-AFD6-B334C46E910F
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 92891a52939342af36043ee4601db0e072524101
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 8b73a27b312c19db10afdad1cde74bdd92c54dea
+ms.sourcegitcommit: abe7fe9f3fbee8d12641433eeab623a4148ffed3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56565569"
+ms.lasthandoff: 10/19/2020
+ms.locfileid: "92185261"
 ---
-# <a name="step-5-submit-the-microsoft-store-device-app"></a>步骤 5：将 Microsoft Store 设备应用程序提交
+# <a name="step-5-submit-the-microsoft-store-device-app"></a>步骤5：提交 Microsoft Store 设备应用
 
 
-![设备应用工作流，第 5 步](images/5-device-app-workflow.png)
+![设备应用工作流，步骤5](images/5-device-app-workflow.png)
 
-本主题介绍如何将 UWP 设备应用提交到 Microsoft Store 仪表板。 在提交之前您的应用程序，请查看中的提交序列部分[构建 UWP 设备应用](the-workflow.md)。 本主题是分步系列的一部分。 请参阅[构建循序渐进的 UWP 设备应用程序](build-a-uwp-device-app-step-by-step.md)引入。
+本主题介绍如何将 UWP 设备应用提交到 Microsoft Store 仪表板。 提交应用之前，请查看 [生成 UWP 设备应用](the-workflow.md)中的提交序列部分。 本主题是分步序列的一部分。 有关简介，请参阅 [构建 UWP 设备应用循序渐进](build-a-uwp-device-app-step-by-step.md) 。
 
-**请注意**  如果您的应用程序指定为特权的应用程序并不将其配置为自动安装，可以将之前提交到特权应用程序提交到 Windows 开发人员中心硬件仪表板在设备元数据Microsoft Store。 在这种情况下，此步骤 5 可以发生[第 6 步](step-6--submit-device-metadata.md)。
+**注意**   如果你的应用被指定为特权应用并且未配置为自动安装，你可以将你的设备元数据提交到 Windows 开发人员中心硬件仪表板，然后将特权应用提交到 Microsoft Store。 在这种情况下，可以在 [步骤 6](step-6--submit-device-metadata.md)后执行此步骤5。
 
  
 
-UWP 设备应用程序是一种特殊的设备制造商创建作为其内部或外围设备的配套的 UWP 应用。 通过使用设备元数据，设备应用程序可以运行特权的操作，如设备更新。 有关 UWP 的设备应用程序的详细信息，请参阅[满足 UWP 设备应用](meet-uwp-device-apps.md)。
+UWP 设备应用是一种特殊类型的 UWP 应用，设备制造商可以创建它来充当其内部或外围设备。 通过使用设备元数据，设备应用可以运行特权操作，如设备更新。 有关 UWP 设备应用的详细信息，请参阅 " [满足 uwp 设备应用](meet-uwp-device-apps.md)"。
 
-## <a name="span-idbeforeyoubeginspanspan-idbeforeyoubeginspanspan-idbeforeyoubeginspanbefore-you-begin"></a><span id="Before_you_begin"></span><span id="before_you_begin"></span><span id="BEFORE_YOU_BEGIN"></span>开始之前的准备工作
-
-
-本主题假定你已完成开发您的应用程序和设备元数据已准备就绪。
-
-## <a name="span-idstartappsubmissionspanspan-idstartappsubmissionspanspan-idstartappsubmissionspanstart-app-submission"></a><span id="Start_app_submission"></span><span id="start_app_submission"></span><span id="START_APP_SUBMISSION"></span>启动应用程序提交
+## <a name="span-idbefore_you_beginspanspan-idbefore_you_beginspanspan-idbefore_you_beginspanbefore-you-begin"></a><span id="Before_you_begin"></span><span id="before_you_begin"></span><span id="BEFORE_YOU_BEGIN"></span>开始之前
 
 
-转到[Microsoft Store 仪表板](https://go.microsoft.com/fwlink/p/?LinkId=273050)然后单击**提交新应用程序**。
+本主题假定您已完成应用程序的开发，设备元数据已准备就绪。
 
-## <a name="span-idaddinstructionsfortestersspanspan-idaddinstructionsfortestersspanspan-idaddinstructionsfortestersspanadd-instructions-for-testers"></a><span id="Add_instructions_for_testers"></span><span id="add_instructions_for_testers"></span><span id="ADD_INSTRUCTIONS_FOR_TESTERS"></span>添加测试人员的说明
-
-
-在中**面向测试人员说明**，请确保您输入的文本"这是 UWP 设备应用程序"。 这指示应用程序提交测试人员，您的应用程序是 UWP 设备应用。
-
-## <a name="span-idreviewsubmissiondetailsspanspan-idreviewsubmissiondetailsspanspan-idreviewsubmissiondetailsspanreview-submission-details"></a><span id="Review_submission_details"></span><span id="review_submission_details"></span><span id="REVIEW_SUBMISSION_DETAILS"></span>查看提交详细信息
+## <a name="span-idstart_app_submissionspanspan-idstart_app_submissionspanspan-idstart_app_submissionspanstart-app-submission"></a><span id="Start_app_submission"></span><span id="start_app_submission"></span><span id="START_APP_SUBMISSION"></span>开始应用提交
 
 
-在提交您的应用程序之前，请检查以下各项：
+中转到 [Microsoft Store 仪表板](https://go.microsoft.com/fwlink/p/?LinkId=273050) ，并单击 " **提交新应用**"。
 
--   应用的说明应清楚地说明应用所需的硬件。
-
--   您必须在 Microsoft Store 以将应用程序识别为 UWP 设备应用的应用程序包中包括 StoreManifest.xml 文件。
-
--   启动应用时，如果应用需要先连接设备，然后应用将正常工作，它必须明确声明类似于"请连接你&lt;*特定于标记的设备名称*&gt;"。
-
--   **包名称**应为一个创建的应用程序中时指定相同[第 1 步](step-1--create-a-uwp-device-app.md)。 请注意，是否在一年内不提交应用，包名称时到期。
-
--   该应用程序必须完全符合所有[Microsoft Store 认证要求](https://go.microsoft.com/fwlink/p/?LinkId=273052)。
-
--   应用必须适用于各年龄阶段。
-
--   应用程序必须标记为可用。
-
-## <a name="span-idconfirmsellingdetailsspanspan-idconfirmsellingdetailsspanspan-idconfirmsellingdetailsspanconfirm-selling-details"></a><span id="Confirm_selling_details"></span><span id="confirm_selling_details"></span><span id="CONFIRM_SELLING_DETAILS"></span>确认销售详细信息
+## <a name="span-idadd_instructions_for_testersspanspan-idadd_instructions_for_testersspanspan-idadd_instructions_for_testersspanadd-instructions-for-testers"></a><span id="Add_instructions_for_testers"></span><span id="add_instructions_for_testers"></span><span id="ADD_INSTRUCTIONS_FOR_TESTERS"></span>为测试人员添加说明
 
 
-在应用程序提交过程中检查**销售详细信息**项存储区提交清单，并确保你看到此：
+在 **测试人员的说明**中，请确保输入文本 "这是 UWP 设备应用"。 这向应用提交测试人员表明你的应用是 UWP 设备应用。
 
-**您的应用程序必须是自由，因为它是 UWP 设备应用。**
-
-**您的应用程序将免费销售后它通过了认证，schedued 版。**
-
-应用程序提交 UI 旨在寻找 StoreManifest.xml，以检查应用程序是否与设备关联的 UWP 设备应用程序的唯一方式。 一旦它使决定，它将显式重写设置的任何销售详细信息中以确保应用程序设置为使用任何试用版免费和 (和禁用的控件，如果您尝试更改这些值在**销售详细信息**页）。 然后反映在清单页上。
-
-如果没有看到**您的应用程序必须是自由，因为它是 UWP 设备应用**中**销售详细信息**页上，检查是否已正确应用项目，而不是在根文件夹中包含 StoreManifest.xml解决方案的根文件夹。
-
-## <a name="span-idsubmissionresultsspanspan-idsubmissionresultsspanspan-idsubmissionresultsspansubmission-results"></a><span id="Submission_results"></span><span id="submission_results"></span><span id="SUBMISSION_RESULTS"></span>提交结果
+## <a name="span-idreview_submission_detailsspanspan-idreview_submission_detailsspanspan-idreview_submission_detailsspanreview-submission-details"></a><span id="Review_submission_details"></span><span id="review_submission_details"></span><span id="REVIEW_SUBMISSION_DETAILS"></span>查看提交详细信息
 
 
-一旦 Microsoft Store 收到您的应用程序，它将执行一套通用的所有 UWP 应用的自动测试。 它还会执行一系列特定于应用程序的测试。
+提交应用之前，请先检查以下内容：
 
-如果您的应用程序通过 Microsoft Store 应用测试后，它将添加到应用程序目录在大约 1-4 天。 在目录中后，也可以从 Microsoft Store 以及。 如果提交失败，则会通知您有关原因。
+-   应用说明应清楚地说明应用所需的硬件。
 
-## <a name="span-idvalidationspanspan-idvalidationspanspan-idvalidationspanvalidation"></a><span id="Validation"></span><span id="validation"></span><span id="VALIDATION"></span>验证
+-   必须将 StoreManifest.xml 文件包含在应用包中，Microsoft Store 才能将应用识别为 UWP 设备应用。
+
+-   当应用程序启动时，如果应用程序要求在应用程序运行之前连接设备，则它必须明确说明 "请连接 &lt; *特定品牌的设备名称*" 之类的内容 &gt; 。
+
+-   **包名称**应与在[步骤 1](step-1--create-a-uwp-device-app.md)中创建应用时指定的名称相同。 请注意，如果应用在一年内未提交，包名称将过期。
+
+-   应用必须完全符合所有 [Microsoft Store 认证要求](https://docs.microsoft.com/windows/uwp/publish/the-app-certification-process)。
+
+-   应用必须适用于所有年龄段。
+
+-   应用必须标记为可用。
+
+## <a name="span-idconfirm_selling_detailsspanspan-idconfirm_selling_detailsspanspan-idconfirm_selling_detailsspanconfirm-selling-details"></a><span id="Confirm_selling_details"></span><span id="confirm_selling_details"></span><span id="CONFIRM_SELLING_DETAILS"></span>确认销售详细信息
 
 
-Microsoft Store 仪表板提交到 Microsoft Store 后验证 Microsoft Store 设备应用程序包。 设备元数据提交到并由 Windows 开发人员中心硬件仪表板进行验证。 应用将在 Microsoft Store 中，由于验证过程会检查指定的元数据中的应用位于存储区后，您应提交元数据。 硬件仪表板徽标提交的一部分单独验证驱动程序。
+在应用提交期间，查看存储提交清单中的 **销售详细信息** 项，并确保看到：
 
-## <a name="span-idnextstepspanspan-idnextstepspanspan-idnextstepspannext-step"></a><span id="Next_step"></span><span id="next_step"></span><span id="NEXT_STEP"></span>下一步
+**应用必须免费，因为它是 UWP 设备应用。**
+
+**你的应用将免费销售，并在通过认证后 schedued 发布。**
+
+应用提交 UI 旨在查找 StoreManifest.xml 作为检查应用是否为与设备关联的 UWP 设备应用的唯一方法。 完成这一决定后，它将显式覆盖在销售详细信息中设置的任何内容，以确保应用设置为免费且不进行试用 (并禁用控件（如果尝试在 **销售详细信息** 页) 中更改这些值）。 然后，将反映在 "清单" 页上。
+
+如果你看不到 **你的应用程序，因为它是** "销售" **详细信息** 页中的 UWP 设备应用，请检查你是否已将 StoreManifest.xml 正确地包含在应用项目的根文件夹中，而不是放在解决方案的根文件夹中。
+
+## <a name="span-idsubmission_resultsspanspan-idsubmission_resultsspanspan-idsubmission_resultsspansubmission-results"></a><span id="Submission_results"></span><span id="submission_results"></span><span id="SUBMISSION_RESULTS"></span>提交结果
 
 
-[步骤 6：提交设备元数据](step-6--submit-device-metadata.md)
+Microsoft Store 收到你的应用后，它将执行一套适用于所有 UWP 应用的自动测试。 它还将执行一系列特定于应用的测试。
+
+如果你的应用程序通过 Microsoft Store 应用的测试，将在大约1-4 天内将其添加到应用程序目录。 一旦在目录中，也可以从 Microsoft Store 获取它。 如果提交失败，你将收到有关原因的通知。
+
+## <a name="span-idvalidationspanspan-idvalidationspanspan-idvalidationspanvalidation"></a><span id="Validation"></span><span id="validation"></span><span id="VALIDATION"></span>检查
+
+
+Microsoft Store 仪表板在将 Microsoft Store 设备应用包提交到 Microsoft Store 后对其进行验证。 设备元数据提交到 Windows 开发人员中心硬件仪表板并进行验证。 你应在应用程序在 Microsoft Store 上生存后提交元数据，因为验证过程会检查元数据中指定的应用是否在存储中。 在提交徽标时，硬件仪表板单独验证驱动程序。
+
+## <a name="span-idnext_stepspanspan-idnext_stepspanspan-idnext_stepspannext-step"></a><span id="Next_step"></span><span id="next_step"></span><span id="NEXT_STEP"></span>下一步
+
+
+[步骤6：提交设备元数据](step-6--submit-device-metadata.md)
 
  
 

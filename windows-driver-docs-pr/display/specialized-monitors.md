@@ -13,12 +13,12 @@ ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
 ms.localizationpriority: medium
-ms.openlocfilehash: a7ab45724cae973993235e3085232d3a80c6b188
-ms.sourcegitcommit: e6247811ff9a07070547af3d89705dae33a2f465
+ms.openlocfilehash: d5c6f839885f1f8f3aadc82c6811e914661f9dff
+ms.sourcegitcommit: abe7fe9f3fbee8d12641433eeab623a4148ffed3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/23/2020
-ms.locfileid: "91026430"
+ms.lasthandoff: 10/19/2020
+ms.locfileid: "92185150"
 ---
 # <a name="head-mounted-and-specialized-monitors"></a>打印头和专用监视器
 
@@ -39,17 +39,17 @@ Windows Mixed Reality 耳机是自定义组合器控制的 HMDs 的一个示例�
 
 ## <a name="version-history"></a>版本历史记录
 
-### <a name="windows-10-version-1709-fall-creators-update"></a>Windows 10 版本 1709 (秋季创建者更新) 
+### <a name="windows-10-version-2004"></a>Windows 10 版本 2004
 
-* Windows Mixed Reality 附带了对虚拟现实设备的支持。 Windows Mixed Reality 设备必须符合适用于 HMDs 版本1的 Microsoft EDID 扩展。
+以下内容适用于 Windows 10 企业版、Windows 10 专业版工作站和 Windows 10 IoT 企业版：
+
+* 添加了对 "专用" 的支持，其中包含适用于 HMDs 和专用显示器的 Microsoft EDID extension 版本3。
+* 添加了对用户的支持，可通过设置将任何监视器指定为 "专用" 显示。
 
 ### <a name="windows-10-version-1809"></a>Windows 10 版本 1809
 
 * 添加了对使用 Api 系列构建第三方 HMD 排序器的支持 `Windows.Devices.Display.Core` 。 支持的设备必须符合 Microsoft EDID extension for HMDs 版本2。
 
-### <a name="windows-10-version-2004"></a>Windows 10 版本 2004
+### <a name="windows-10-version-1709-fall-creators-update"></a>Windows 10 版本 1709 (秋季创建者更新) 
 
-* * * 增加了对 "专用" 的支持，其中包含适用于 HMDs 和专用显示器的 Microsoft EDID extension 版本3。
-* * * 增加了对用户的支持，可通过设置将任何监视器指定为 "专用" 显示。
-
-* * 适用于 Windows 10 企业版、Windows 10 专业版工作站和 Windows 10 IoT 企业版
+* Windows Mixed Reality 附带了对虚拟现实设备的支持。 Windows Mixed Reality 设备必须符合适用于 HMDs 版本1的 Microsoft EDID 扩展。

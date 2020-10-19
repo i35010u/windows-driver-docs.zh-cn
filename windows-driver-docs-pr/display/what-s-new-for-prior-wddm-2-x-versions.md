@@ -5,16 +5,16 @@ ms.assetid: 22793a7e-38fc-4cd8-aafd-09dfed48cb02
 ms.date: 03/24/2020
 ms.localizationpriority: medium
 ms.custom: seodec18, 19H1
-ms.openlocfilehash: f484afd4e31f6d4c97f020be7156243d4b26123a
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: da8c83cdea205ea9e5ea61f3217260a8ee2f9c03
+ms.sourcegitcommit: abe7fe9f3fbee8d12641433eeab623a4148ffed3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89065982"
+ms.lasthandoff: 10/19/2020
+ms.locfileid: "92185152"
 ---
 # <a name="features-added-in-prior-wddm-2x-versions"></a>先前的 WDDM 2.x 版本中添加的功能
 
-本页介绍了在以前版本的 Windows 10 中添加的显示和图形驱动程序功能。 若要查看最近的 WDDM 2.x 版本添加的新功能，请参阅 [Windows 10 显示和图形驱动程序的新增](what-s-new-for-windows-10-display-and-graphics-drivers.md)功能。
+本页介绍了在以前版本的 Windows 10 中添加的显示和图形驱动程序功能。 若要查看为最新 WDDM 2.x 版本添加的功能，请参阅 [Windows 10 显示器和图形驱动程序的新增](what-s-new-for-windows-10-display-and-graphics-drivers.md)功能。
 
 ## <a name="wddm-26"></a>WDDM 2。6
 
@@ -124,7 +124,6 @@ Api 允许应用调整适合其工作负荷的后台处理量，以及何时执�
 
 * [宣布推出 Microsoft DirectX Raytracing](https://devblogs.microsoft.com/directx/announcing-microsoft-directx-raytracing/)
 * [DirectX Raytracing 和 Windows 10 十月2018更新](https://devblogs.microsoft.com/directx/directx-raytracing-and-the-windows-10-october-2018-update/)
-* [DirectX 论坛](https://forums.directxtech.com/index.php?topic=5985.0)
 
 ### <a name="display-synchronization"></a>显示同步
 

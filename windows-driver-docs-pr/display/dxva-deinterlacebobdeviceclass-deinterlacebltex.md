@@ -14,15 +14,14 @@ api_type:
 - COM
 ms.date: 01/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 9f5c0d8ffd7e3fb36e7984fb7e1ab9c636861a74
-ms.sourcegitcommit: f8619f20a0903dd64f8641a5266ecad6df5f1d57
+ms.openlocfilehash: e05720885c55af370ef541d91b9add59b01ae8f1
+ms.sourcegitcommit: abe7fe9f3fbee8d12641433eeab623a4148ffed3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91423570"
+ms.lasthandoff: 10/19/2020
+ms.locfileid: "92185207"
 ---
-# <a name="dxva_deinterlacebobdeviceclassdeinterlacebltex-method"></a>DXVA \_ DeinterlaceBobDeviceClass：:D einterlacebltex 方法
-
+# <a name="dxva_deinterlacebobdeviceclassdeinterlacebltex-method"></a>DXVA_DeinterlaceBobDeviceClass：:D einterlaceBltEx 方法
 
 示例 **DeinterlaceBltEx** 函数执行取消隔行转换或帧速率转换，将 deinterlaced 或帧速率转换视频与提供的视频 substreams 合并，并将合并输出写入目标图面。
 
@@ -50,7 +49,7 @@ HRESULT DeinterlaceBltEx(
 
 如果请求帧速率转换，则 *rtTargetFrame* 时间可能不同于样本的 **rtStart** 时间或中点时间。
 
-*lprcTargetRect* \[在中，提供了一个指向 \] [**RECT**](/windows/win32/api/windef/ns-windef-tagrect) 结构的指针，该结构描述了 **DeinterlaceBltEx** 必须写入到的目标图面中的位置。 驱动程序使用 *lprcTargetRect* 来确定要写入的像素。 请注意，输出图像限制为位于 *lprcTargetRect*的矩形内的像素。 也就是说，必须将位于 *lprcTargetRect* 的矩形内的每个像素写入到中，而不能修改 *lprcTargetRect* 的矩形之外的像素。
+*lprcTargetRect* \[在中，提供了一个指向 \] [**RECT**](/windows/win32/api/windef/ns-windef-rect) 结构的指针，该结构描述了 **DeinterlaceBltEx** 必须写入到的目标图面中的位置。 驱动程序使用 *lprcTargetRect* 来确定要写入的像素。 请注意，输出图像限制为位于 *lprcTargetRect*的矩形内的像素。 也就是说，必须将位于 *lprcTargetRect* 的矩形内的每个像素写入到中，而不能修改 *lprcTargetRect* 的矩形之外的像素。
 
 *BackgroundColor* \[在中 \] ，提供 [**DXVA \_ AYUVsample2**](/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_ayuvsample2) 结构，该结构标识所有视频流和 substreams 构成的背景的颜色和不透明度级别。 对于 Microsoft Windows Server 2003 SP1 和 Windows XP SP2，不使用不透明度级别，驱动程序应忽略它。
 
@@ -98,7 +97,7 @@ HRESULT DeinterlaceBltEx(
 <thead>
 <tr class="header">
 <th align="left">成员</th>
-<th align="left">Value</th>
+<th align="left">“值”</th>
 </tr>
 </thead>
 <tbody>
@@ -167,4 +166,3 @@ HRESULT DeinterlaceBltEx(
 [**DD \_ MOTIONCOMPCALLBACKS**](/windows/win32/api/ddrawint/ns-ddrawint-dd_motioncompcallbacks)
 
 [**DD \_ RENDERMOCOMPDATA**](/windows/win32/api/ddrawint/ns-ddrawint-dd_rendermocompdata)
-

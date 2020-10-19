@@ -13,18 +13,16 @@ ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
 ms.localizationpriority: medium
-ms.openlocfilehash: 1dbc7ef2b01419c10550e2589f0908d114454e31
-ms.sourcegitcommit: e6247811ff9a07070547af3d89705dae33a2f465
+ms.openlocfilehash: 9f4abfd4477a41bdb80375a369430350a5ad3ed0
+ms.sourcegitcommit: abe7fe9f3fbee8d12641433eeab623a4148ffed3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/23/2020
-ms.locfileid: "91026428"
+ms.lasthandoff: 10/19/2020
+ms.locfileid: "92185168"
 ---
 # <a name="edid-extension-for-head-mounted-and-specialized-monitors"></a>用于 head 装载和专用监视器的 EDID 扩展
 
-*显示制造商的规范*
-
-本文档提供有关如何在 HMD (Head 装入的显示) 或专用显示固件中实现 [EDID](https://en.wikipedia.org/wiki/Extended_Display_Identification_Data) CTA (使用者技术关联) 扩展的指南，以便 windows 操作系统中的每一层都可以正确地处理。 在本文档中，术语 "显示" 和 "监视" 是同义词。
+本页为显示制造商提供了有关如何在 HMD (Head 装入显示) 或专用显示固件中实现 [EDID](https://en.wikipedia.org/wiki/Extended_Display_Identification_Data) CTA (使用者技术) 关联的指南，使 windows 可以将显示器识别为特别显示，从而使 windows OS 中的每一层都可以正确地处理它们。 术语 "显示" 和 "监视器" 是同义词。
 
 如果没有此 EDID 扩展，HMDs 和专用显示器会出现以下问题：
 
@@ -42,7 +40,7 @@ ms.locfileid: "91026428"
 
 ## <a name="vendor-specific-data-block-vsdb"></a>特定于供应商的数据块 (VSDB) 
 
-负责写入包含 EDID 的固件代码的参与方必须包含 CTA extension 块，并将 Microsoft 定义的供应商特定数据块 (VSDB) 中。  ([E-EDID](https://vesa.org/vesa-standards/standards-summaries/)) 中介绍了 "EDID 的 VESA 增强的扩展显示识别数据标准" 中所述的结构，请参阅版本1.4，版本 A，修订版本2，其中第2.2 节描述了扩展块。  CTA 的861系列文档中定义了 CTA 扩展块，这是一个用于未压缩的高速数字接口的 DTV 配置文件。  VSDBs 在撰写) 发布版本 [CTA-861-G](https://standards.cta.tech/kwspub/published_docs/CTA-861-G-Preview.pdf) （包括 VSDB 相对于其他数据块的顺序）的最新 (部分中进行了介绍。
+负责写入包含 EDID 的固件代码的参与方必须包含 CTA extension 块，并将 Microsoft 定义的供应商特定数据块 (VSDB) 中。  ([E-EDID](https://vesa.org/standards-specifications/)) 中介绍了 "EDID 的 VESA 增强的扩展显示识别数据标准" 中所述的结构，请参阅版本1.4，版本 A，修订版本2，其中第2.2 节描述了扩展块。  CTA 扩展块在 CTA 的861系列文档中定义，这是一个用于未压缩 High-Speed 数字接口的 DTV 配置文件。  VSDBs 在 [ANSI/CTA-861-G](https://webstore.ansi.org/Standards/ANSI/CTA8612016ANSI) 中进行了介绍，其中包括 VSDB 相对于其他数据块的顺序。
 
 VSDB 结构必须包含下表中所述的格式和值。
 
@@ -64,7 +62,7 @@ VSDB 结构必须包含下表中所述的格式和值。
 
 与 Microsoft 显示供应商特定数据块的内容关联的版本号。
 
-| 建议的用例 | 版本 | 支持的 Windows 版本 |
+| 建议 Use-Case | 版本 | 支持的 Windows 版本 |
 |----------------------|---------|---------------------------|
 | HMD (VR/AR) 显示将由 Windows Mixed Reality 体验使用的设备 | `0x1` | 在 Windows 10 创建者的更新和更高版本中受支持 |
 | HMD (VR/AR) 显示第三方排序器 (的设备，而不是 Windows Mixed Reality 体验)  | `0x2` | Windows 10 十月2018更新及更高版本中受支持 |

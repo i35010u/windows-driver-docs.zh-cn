@@ -1,5 +1,5 @@
 ---
-title: DXVA \_ DeinterlaceBobDeviceClass DeinterlaceBlt 方法
+title: DXVA_DeinterlaceBobDeviceClass DeinterlaceBlt 方法
 description: 示例 DeinterlaceBlt 函数通过将输出写入目标图面来执行取消隔行转换或帧速率转换。
 ms.assetid: 0aa68d0c-8c2b-41fe-9e46-a41b157fbd98
 keywords:
@@ -14,14 +14,14 @@ api_type:
 - COM
 ms.date: 01/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 9fc6fed875f16536dc68b01d19dee5c026015911
-ms.sourcegitcommit: f8619f20a0903dd64f8641a5266ecad6df5f1d57
+ms.openlocfilehash: 21955835acc2a1e1a558bbadb848fff50a5a1f0f
+ms.sourcegitcommit: abe7fe9f3fbee8d12641433eeab623a4148ffed3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91423576"
+ms.lasthandoff: 10/19/2020
+ms.locfileid: "92185156"
 ---
-# <a name="dxva_deinterlacebobdeviceclassdeinterlaceblt-method"></a>DXVA \_ DeinterlaceBobDeviceClass：:D einterlaceblt 方法
+# <a name="dxva_deinterlacebobdeviceclassdeinterlaceblt-method"></a>DXVA_DeinterlaceBobDeviceClass：:D einterlaceBlt 方法
 
 
 示例 *DeinterlaceBlt* 函数通过将输出写入目标图面来执行取消隔行转换或帧速率转换。
@@ -44,15 +44,15 @@ HRESULT DeinterlaceBlt(
 <a name="parameters"></a>parameters
 ----------
 
-*rtTargetFrame* \[中的 \] 标识输入帧序列内的输出帧的位置。 如果只执行了取消隔行扫描，则目标时间应与参考样本的开始显示时间一致，如 [**DXVA \_ VideoSample**](/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_videosample) 结构中所定义，或开始显示时间与结束显示时间之间的中点。 有关详细信息，请参阅 [**DXVA \_ DeinterlaceBlt**](/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_deinterlaceblt) 结构。
+*rtTargetFrame* \[中的 \] 标识输入帧序列内的输出帧的位置。 如果只执行了取消隔行扫描，则目标时间应与参考样本的开始显示时间一致，如 [**DXVA_VideoSample**](/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_videosample) 结构中所定义，或开始显示时间与结束显示时间之间的中点。 有关详细信息，请参阅 [**DXVA_DeinterlaceBlt**](/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_deinterlaceblt) 结构。
 
 如果请求帧速率转换，则 **rtTarget** 时间可能不同于引用样本的任何 **rtStart** 时间。
 
-*lprcDstRect* \[在中， \] 提供一个指向 [**RECT**](/windows/win32/api/windef/ns-windef-tagrect) 结构的指针，该结构描述目标图面上矩形的左上角和右下角。 这些点定义应在其中发生位块传输的区域及其在目标图面上的位置。
+*lprcDstRect* \[在中， \] 提供一个指向 [**RECT**](/windows/win32/api/windef/ns-windef-rect) 结构的指针，该结构描述目标图面上矩形的左上角和右下角。 这些点定义应在其中发生位块传输的区域及其在目标图面上的位置。
 
 *lpDDSDstSurface* \[在中， \] 提供指向目标图面的指针。 目标图面可以是 D3D 渲染器目标、D3D 纹理或同时也是渲染器目标的 D3D 纹理。 目标图面始终在本地视频内存中分配。
 
-除非作为隔行扫描过程的一部分执行了 YUV 到 RGB 颜色空间转换，否则目标图面的像素格式为 [**DXVA \_ DeinterlaceCaps**](/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_deinterlacecaps) 结构中所指示的格式。 在这种情况下，目标表面格式是 RGB 格式，每个颜色组件的精度至少为8位。
+除非作为隔行扫描过程的一部分执行了 YUV 到 RGB 颜色空间转换，否则目标图面的像素格式是 [**DXVA_DeinterlaceCaps**](/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_deinterlacecaps) 结构中所指示的格式。 在这种情况下，目标表面格式是 RGB 格式，每个颜色组件的精度至少为8位。
 
 *lprcSrcRect* \[在中，提供了一个指向 \] RECT 结构的指针，该结构描述源图面上矩形的左上角和右下角。 这些点为位块传输定义源数据的区域及其在源图面上的位置。
 
@@ -65,12 +65,12 @@ HRESULT DeinterlaceBlt(
 <a name="return-value"></a>返回值
 ------------
 
-如果成功，则返回零 (S \_ 正常或 DD \_ 确定) ; 否则返回错误代码。 有关错误代码的完整列表，请参阅*ddraw。*
+如果成功，则返回零 (S_OK 或 DD_OK) ;否则，将返回错误代码。 有关错误代码的完整列表，请参阅*ddraw。*
 
 <a name="remarks"></a>备注
 -------
 
-*DeinterlaceBlt*函数直接映射到[**DD \_ MOTIONCOMPCALLBACKS**](/windows/win32/api/ddrawint/ns-ddrawint-dd_motioncompcallbacks)结构的**RenderMoComp**成员的调用。 **RenderMoComp**成员指向显示驱动程序提供的、引用[**DD \_ RENDERMOCOMPDATA**](/windows/win32/api/ddrawint/ns-ddrawint-dd_rendermocompdata)结构的函数。 \_按如下所示填充 DD RENDERMOCOMPDATA 结构。
+*DeinterlaceBlt*函数直接映射到对[**DD_MOTIONCOMPCALLBACKS**](/windows/win32/api/ddrawint/ns-ddrawint-dd_motioncompcallbacks)结构的**RenderMoComp**成员的调用。 **RenderMoComp**成员指向显示驱动程序提供的、引用[**DD_RENDERMOCOMPDATA**](/windows/win32/api/ddrawint/ns-ddrawint-dd_rendermocompdata)结构的函数。 按如下所示填充 DD_RENDERMOCOMPDATA 结构。
 
 <table>
 <colgroup>
@@ -80,7 +80,7 @@ HRESULT DeinterlaceBlt(
 <thead>
 <tr class="header">
 <th align="left">成员</th>
-<th align="left">Value</th>
+<th align="left">“值”</th>
 </tr>
 </thead>
 <tbody>
@@ -107,20 +107,16 @@ HRESULT DeinterlaceBlt(
 </tbody>
 </table>
 
- 
-
 对于用于取消隔行扫描的 DirectX VA 设备，将在不调用显示器驱动程序提供的**BeginMoCompFrame**或**EndMoCompFrame**函数的情况下调用由**RenderMoComp**指向的驱动程序提供的回调。
 
-## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅
+## <a name="see-also"></a>另请参阅
 
+[**DD_MOTIONCOMPCALLBACKS**](/windows/win32/api/ddrawint/ns-ddrawint-dd_motioncompcallbacks)
 
-[**DD \_ MOTIONCOMPCALLBACKS**](/windows/win32/api/ddrawint/ns-ddrawint-dd_motioncompcallbacks)
+[**DD_RENDERMOCOMPDATA**](/windows/win32/api/ddrawint/ns-ddrawint-dd_rendermocompdata)
 
-[**DD \_ RENDERMOCOMPDATA**](/windows/win32/api/ddrawint/ns-ddrawint-dd_rendermocompdata)
+[**DXVA_DeinterlaceBlt**](/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_deinterlaceblt)
 
-[**DXVA \_ DeinterlaceBlt**](/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_deinterlaceblt)
+[**DXVA_DeinterlaceCaps**](/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_deinterlacecaps)
 
-[**DXVA \_ DeinterlaceCaps**](/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_deinterlacecaps)
-
-[**DXVA \_ VideoSample**](/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_videosample)
-
+[**DXVA_VideoSample**](/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_videosample)
