@@ -19,12 +19,12 @@ keywords:
 - 延迟 WDK 电源管理
 ms.date: 07/30/2020
 ms.localizationpriority: High
-ms.openlocfilehash: 22e8e1d00ae547ac3887ad41bb90abe1a9835f5a
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 22f381fa1f43cf76ffff4f4d5c34f5e1ca266b7c
+ms.sourcegitcommit: d1837118dd35d3b93eb9fb0f82a08c3340ff0ed0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89185919"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92021031"
 ---
 # <a name="system-sleeping-states"></a>系统睡眠状态
 
@@ -32,7 +32,7 @@ ms.locfileid: "89185919"
 
 
 
-状态 S1、S2、S3 和 S4 为睡眠状态。 处于这些状态之一的系统不执行任何计算任务，似乎处于关闭状态。 但与处于关机状态 (S5) 的系统不同，处于睡眠状态的系统会保留硬件或磁盘上的内存状态。 操作系统无需重新启动即可将计算机恢复到工作状态。
+状态 S1、S2、S3 和 S4 为睡眠状态。 处于这些状态之一的系统不执行任何计算任务，似乎处于关闭状态。 但是，与处于关机状态 (S5) 的系统不同，处于休眠状态的系统会在 RAM 或磁盘上保留内存状态，如“系统硬件上下文”部分中为以下每种电源状态所指定的那样。 操作系统无需重新启动即可将计算机恢复到工作状态。
 
 某些设备可在发生某些事件时将系统从睡眠状态唤醒。 此外，在某些计算机上，外部指示器会告诉用户系统只是处于睡眠状态。
 

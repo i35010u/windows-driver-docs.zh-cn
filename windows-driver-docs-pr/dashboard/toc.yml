@@ -26,12 +26,20 @@
       href: get-drivers-signed-by-microsoft-for-multiple-windows-versions.md
     - name: 驱动程序外部测试
       items:
-        - name: 概述
+        - name: 驱动程序外部测试概述
           href: driver-flighting.md
+        - name: 其他策略
+          items:
+            - name: 其他策略概述
+              href: other-policies.md
+            - name: 扩展 INF 目标规则
+              href: extension-inf-targeting-rules.md
         - name: Microsoft 驱动程序度量
           href: overview-of-microsoft-driver-measure-dictionary.md
         - name: 驱动程序度量属性
           href: measure-attributes.md
+        - name: 队列失败报告
+          href: IDR-cohort-report.md
         - name: 系统度量
           items:
             - name: 驱动程序安装度量

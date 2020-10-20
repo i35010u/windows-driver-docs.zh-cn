@@ -4,12 +4,12 @@ description: 该度量将来自 7 天滑动窗口的遥测数据聚合为设备�
 ms.topic: article
 ms.date: 05/20/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 7db1263784f60595c096651ea387ec47ab0f7698
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: d0dd467df423b7711ed59ad4969ca5ea7e7fd9c9
+ms.sourcegitcommit: 068a9875851a278935078ba7f1ab65a3bb37235c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89183907"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92100398"
 ---
 # <a name="percent-of-wi-fi-connection-failures-from-devices-and-access-point-pairs-that-have-greater-than-50-percent-signal-quality"></a>信号质量大于 50% 的设备和接入点对的 Wi-Fi 连接失败次数百分比 
 
@@ -26,7 +26,7 @@ Wi-Fi 接入点 (AP) 是一种网络硬件，可允许其他启用 Wi-Fi 的设�
 |度量标准 |实例的聚合 |
 |最小实例数 |3,000|
 |通过标准 |<= 6% 的实例发生 AP 连接失败 |
-|度量 ID |20305049|
+|度量 ID |25975432|
 
 ## <a name="calculation"></a>计算
 

@@ -4,12 +4,12 @@ description: 发布者和作者使用 Microsoft 驱动程序度量的说明来�
 ms.topic: article
 ms.date: 05/12/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 2f5a9af7e077baefbeb0ed49cff3968009820daa
-ms.sourcegitcommit: 4f08f5686c0bbc27d58930b993cbab1a98e3afb0
+ms.openlocfilehash: c61077131628536439b05f3a99bd3beb4bad3d48
+ms.sourcegitcommit: 068a9875851a278935078ba7f1ab65a3bb37235c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/03/2020
-ms.locfileid: "89443869"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92100394"
 ---
 # <a name="overview-of-the-microsoft-driver-measures"></a>Microsoft 驱动程序度量概述
 
@@ -80,5 +80,7 @@ Microsoft 通过唯一计算逻辑、特性集、采样百分比和评估标准�
 [显卡度量](graphics-measures.md)
 
 [Wi-Fi 度量](wi-fi-measures.md)
+
+[队列失败报告](IDR-cohort-report.md)
 
 [术语表](measures-glossary.md)

@@ -4,12 +4,12 @@ description: 此页面介绍了驱动程序隔离，这是 Windows 驱动程序�
 ms.date: 10/01/2019
 ms.assetid: 3955fb29-ee49-4c3e-ac6d-700dcba3f884
 ms.localizationpriority: medium
-ms.openlocfilehash: 06f29fb23f9d472432467d5e631a3bb649206902
-ms.sourcegitcommit: e6247811ff9a07070547af3d89705dae33a2f465
+ms.openlocfilehash: be6f29b61c3e23094c38e572a463ec5c5839385c
+ms.sourcegitcommit: c589753b18e418cf7e86cbdbc1135e07f6f50d0d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/23/2020
-ms.locfileid: "91026381"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92079614"
 ---
 # <a name="driver-package-isolation"></a>驱动程序包隔离
 
@@ -243,10 +243,10 @@ Win32 和驱动程序服务均读取和写入关于本身的状态。
 
 ### <a name="driverdata"></a>DriverData
 
-`DriverData` 目录在 Windows 10 版本 1803 及更高版本中可用。 此目录可由用户模式和内核模式组件通过不同机制进行访问。
+Windows 10 版本 1803 及更高版本中提供了 `DriverData` 目录，可供管理员和 UMDF 驱动程序访问。
 
-内核模式驱动程序应使用系统提供的名为 `\DriverData` 的符号链接访问 `DriverData` 目录。
-用户模式程序应使用环境变量 `%DriverData%` 访问 `DriverData` 目录。
+内核模式驱动程序使用系统提供的名为 `\DriverData` 的符号链接访问 `DriverData` 目录。
+用户模式程序使用环境变量 `%DriverData%` 访问 `DriverData` 目录。
 
 ### <a name="programdata"></a>ProgramData
 

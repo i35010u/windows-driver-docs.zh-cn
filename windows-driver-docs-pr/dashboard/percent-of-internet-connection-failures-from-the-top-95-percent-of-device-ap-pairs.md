@@ -4,12 +4,12 @@ description: 该度量将来自 7 天滑动窗口的遥测数据聚合为设备�
 ms.topic: article
 ms.date: 05/20/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: a4eb3643442655da3a89e3f23ea7fc28fabad646
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 5a0c3773175852458ed15cdaf5b2b271317ae5ad
+ms.sourcegitcommit: 068a9875851a278935078ba7f1ab65a3bb37235c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89183913"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92100392"
 ---
 # <a name="percent-of-internet-connection-failures-of-device-and-access-point-pairs-that-have-greater-than-50-percent-signal-quality"></a>信号质量大于 50% 的设备和接入点对的 Internet 连接失败次数百分比
 
@@ -26,7 +26,7 @@ ms.locfileid: "89183913"
 |度量标准 |实例的聚合|
 |最小实例数 |3,000|
 |通过标准 |<= 10% 的实例无法通过 Wi-Fi 连接到 Internet|
-|度量 ID |20305050|
+|度量 ID |25975470|
 
 ## <a name="calculation"></a>计算
 
