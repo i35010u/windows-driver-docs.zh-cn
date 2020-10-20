@@ -18,14 +18,18 @@ keywords:
 - 列出设备信息 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: high
-ms.openlocfilehash: bb8a3893eccb2bb100b69fc470b640ff5b142282
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 3b7cd12247d9438e8623e8564ff06899afaebdc6
+ms.sourcegitcommit: f001f5163e1f6350cc8b6dffcc078733defcd053
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90102226"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92061741"
 ---
 # <a name="windows-device-console-devconexe"></a>Windows 设备控制台 (Devcon.exe)
+
+> [!NOTE]
+> 请使用 PnPUtil 工具，而不使用 DevCon。
+> 
 
 
 DevCon (Devcon.exe)（即设备控制台）是一种命令行工具，用于显示有关运行 Windows 的计算机上的设备的详细信息。 可以使用 DevCon 启用、禁用、安装、配置以及删除设备。
@@ -63,7 +67,7 @@ DevCon 在 Microsoft Windows 2000 和更高版本的 Windows 上运行。
 
  
 
-本部分包括：
+本节包括：
 
 [DevCon 命令](devcon-general-commands.md)
 
@@ -89,7 +93,7 @@ Devcon 的功能包括：
     -   INF 文件和设备驱动程序文件
     -   [驱动程序包](../install/components-of-a-driver-package.md)的详细信息
     -   硬件资源
-    -   设备状态
+    -   服务状态
     -   需要的驱动程序堆栈
     -   驱动程序存储中的第三方驱动程序包
 -   **搜索设备** DevCon 可以通过硬件 ID、设备实例 ID 或设备安装程序类搜索本地或远程计算机上已安装和已卸载的设备。
