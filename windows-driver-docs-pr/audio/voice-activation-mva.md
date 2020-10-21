@@ -4,12 +4,12 @@ description: 多个语音助手平台为除 Cortana 以外的其他语音助手�
 ms.assetid: 48a7e96b-58e8-4a49-b673-14036d4108d5
 ms.date: 09/08/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 34b8b5f467c38eab669e7331e61e2f10846449a6
-ms.sourcegitcommit: 51cba71be022c726c04c29ba5c0360860b65d7a4
+ms.openlocfilehash: eb76f370eebd245149a88bb4fb4a77960d5407c6
+ms.sourcegitcommit: 89b8a43480246dd726e3632aab2db9cf2eb7505d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/09/2020
-ms.locfileid: "89562188"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "92254040"
 ---
 # <a name="multiple-voice-assistant"></a>多语音助手
 
@@ -53,7 +53,7 @@ Microsoft 提供了 OS default 关键字 spotter (software 关键字 spotter) �
 | HW KWS | 硬件关键字 spotter –在硬件上运行的 KWS 的实现 |
 | 突发缓冲区 | 用于存储 PCM 数据的循环缓冲区，这些数据可在 KWS 检测的情况下 bursted，以便包括触发 KWS 检测的所有音频。 |
 | 事件检测器 OEM 适配器 | 作为 Windows 语音助手堆栈和驱动程序的中介的用户模式组件 |
-| 型号 | KWS 算法使用的声音模型数据文件。 数据文件为静态。 模型已本地化，每个区域设置一个。|
+| 建模 | KWS 算法使用的声音模型数据文件。 数据文件为静态。 模型已本地化，每个区域设置一个。|
 | MVA | 多个语音代理-新的 HWKWS DDI，支持多个代理 |
 | SVA | 单个语音代理-以前的 HWKWS DDI，它仅支持单个代理 (Cortana)  |
 
@@ -136,7 +136,7 @@ Microsoft 提供了 OS default 关键字 spotter (software 关键字 spotter) �
 KSNOTIFICATIONID_SoundDetector 在 ksmedia 中定义，如下所示。
 
 ```cpp
-// The payload of this notification is a SOUNDDETECTOR_DETECTIONHEADER
+// The payload of this notification is a SOUNDDETECTOR_PATTERNHEADER
 #define STATIC_KSNOTIFICATIONID_SoundDetector\
     0x6389d844, 0xbb32, 0x4c4c, 0xa8, 0x2, 0xf4, 0xb4, 0xb7, 0x7a, 0xfe, 0xad
 DEFINE_GUIDSTRUCT("6389D844-BB32-4C4C-A802-F4B4B77AFEAD", KSNOTIFICATIONID_SoundDetector);

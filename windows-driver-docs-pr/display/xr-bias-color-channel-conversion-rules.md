@@ -5,11 +5,11 @@ ms.assetid: B3014241-A86A-4B6E-BC9D-50057B924D98
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 3367e56b2943b39278bcda7433517271a35cb2df
-ms.sourcegitcommit: 544405905a98b83c5ccf812ae14b438b9736b674
+ms.sourcegitcommit: 89b8a43480246dd726e3632aab2db9cf2eb7505d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87840801"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "92254024"
 ---
 # <a name="xr_bias-color-channel-conversion-rules"></a>XR_BIAS 颜色通道转换规则
 
