@@ -3,37 +3,35 @@ description: MuttUtil 在 MUTT 设备上执行各种任务。
 title: MuttUtil
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4f292793d905158eeb4032d7b14779cdb3e26a06
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: 13747af1f6cf8064c73dea22cce7a05584a9acc3
+ms.sourcegitcommit: b75e9940d49410e2b952e96f325df67a039cd571
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91733460"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92336986"
 ---
 # <a name="muttutil"></a>MuttUtil
 
-
 MuttUtil 在 [MUTT 设备](microsoft-usb-test-tool--mutt--devices.md)上执行各种任务。
 
--   更新测试设备的固件。
--   安装适用于 MUTT 设备的驱动程序。
--   验证是否安装了设备且没有错误。
--   更改设备的操作总线速度。
--   将设备配置为在指定的时间段后发送恢复唤醒信号。
--   对于 MUTT Pack，它会将集线器设置为全速或高速操作;作为单 TT 或多 TT 中心。
+- 更新测试设备的固件。
+- 安装适用于 MUTT 设备的驱动程序。
+- 验证是否安装了设备且没有错误。
+- 更改设备的操作总线速度。
+- 将设备配置为在指定的时间段后发送恢复唤醒信号。
+- 对于 MUTT Pack，它会将集线器设置为全速或高速操作;作为单 TT 或多 TT 中心。
 
 MuttUtil 嵌入在所包含的测试脚本的安装部分，以确保将测试设备正确地升级到最新的固件。 该工具包含在 [MUTT](./index.md)软件包中。
 
 ## <a name="how-to-run-muttutil"></a>如何运行 MuttUtil
 
-
-**MuttUtil 帮助**
+### <a name="muttutil-help"></a>MuttUtil 帮助
 
 运行以下命令以获取命令行选项的列表：
 
 `MUTTUtil.exe`
 
-**查找连接到系统的所有 MUTT 设备**
+### <a name="finding-all-mutt-devices-attached-to-the-system"></a>查找连接到系统的所有 MUTT 设备
 
 `MUTTUtil.exe -list`
 
@@ -49,7 +47,7 @@ Return value: 1
 
 MUTT Pack 设备的问题代码28表示没有为设备加载任何驱动程序。
 
-**更改 MUTT 设备的个性**
+### <a name="change-the-personality-of-a-mutt-device"></a>更改 MUTT 设备的个性
 
 MUTT 设备也用作 [USB UWP 应用示例](/samples/browse/)的测试设备。 对于这种情况，必须通过运行选项来更新固件 `-SetWinRTUsb` 。 在此练习中，SuperMUTT 设备设置为 WinRT 个性。
 
@@ -71,7 +69,7 @@ Return value: 1
 
 请注意，硬件 ID 已更改为 USB \\ VID \_ 045E&PID \_ 078F&REV \_ 0037。 修订版本指示固件版本号。
 
-**安装 MUTT 设备的驱动程序**
+### <a name="installing-a-driver-for-a-mutt-device"></a>安装 MUTT 设备的驱动程序
 
 指定包含安装信息的驱动程序的 INF 文件。 例如，
 
@@ -95,7 +93,7 @@ Return value: 1
 
 上述命令将为设备0安装 USBTCD.sys，为设备1安装 Winusb.sys，等等。
 
-**在 MUTT 设备上更新固件**
+### <a name="updating-the-firmware-on-a-mutt-device"></a>在 MUTT 设备上更新固件
 
 `MuttUtil.exe -UpdateFirmware`
 
@@ -128,7 +126,7 @@ Return value: 1
 
 若要擦除 EEPROM，请使用 `-EraseEEPROM` 选项
 
-**断开连接、重新连接和重新枚举设备**
+### <a name="disconnecting-reconnecting-and-re-enumerating-the-device"></a>断开连接、重新连接和重新枚举设备
 
 `MuttUtil.exe -Reconnect`
 
@@ -142,7 +140,7 @@ Return value: 1
 
 `MuttUtil.exe -# 1 -ResetHub`
 
-**更改设备的速度**
+### <a name="changing-the-speed-of-the-device"></a>更改设备的速度
 
 可以使用以下命令更改 MUTT 设备的设备速度：
 
@@ -156,7 +154,7 @@ Return value: 1
 
 `MuttUtil.exe -# 1 -HubFS`
 
-**发送 resume 信号唤醒系统**
+### <a name="sending-a-resume-signal-to-wake-up-the-system"></a>发送 resume 信号唤醒系统
 
 通常情况下，在执行某些用户操作时，设备 (以低功耗) 发送恢复信号。 可以使用以下命令模拟该行为：
 
@@ -166,7 +164,7 @@ Return value: 1
 
 你还可以使用选项将设备配置为在总线挂起后的特定时间段内断开连接并重新连接 `-DisconnectAfterSuspend` 。
 
-**在端口下游端口 MUTT Pack 和 SuperMUTT Pack 上设置和清除过流**
+### <a name="setting-and-clearing-overcurrent-on-the-port-downstream-port---mutt-pack-and-supermutt-pack"></a>在端口下游端口 MUTT Pack 和 SuperMUTT Pack 上设置和清除过流
 
 这些命令设置并清除 Mutt 的公开端口的过流 pin。
 
@@ -174,7 +172,7 @@ Return value: 1
 
 `MuttUtil.exe -# 1 -ClearOvercurrent`
 
-**将集线器转换为 TT 高速中心-MUTT Pack 和 SuperMUTT Pack**
+### <a name="converting-the-hub-to-a-tt-high-speed-hub---mutt-pack-and-supermutt-pack"></a>将集线器转换为 TT 高速中心-MUTT Pack 和 SuperMUTT Pack
 
 可以使用以下命令将集线器设置为多 TT 高速中心或单 TT 高速中心：
 
@@ -183,6 +181,6 @@ Return value: 1
 `MuttUtil.exe -# 1 -HubHSSingleTT`
 
 ## <a name="related-topics"></a>相关主题
-[USB 测试工具](usb-test-tools.md)  
+
 [MUTT 软件包中的工具](mutt-software-package.md)  
-[Microsoft USB 测试工具 (MUTT) 设备](microsoft-usb-test-tool--mutt--devices.md)
+[Microsoft USB 测试工具 (MUTT) 设备](microsoft-usb-test-tool--mutt--devices.md)  

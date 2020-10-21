@@ -3,22 +3,20 @@ description: 本部分介绍 USB 驱动程序开发。
 title: USB 客户端驱动程序开发的首要步骤
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 573f3143530a67b9447c3ae596a8110b9a33b831
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: 71345098b864ae537196468c871dbdb3236e75d6
+ms.sourcegitcommit: b75e9940d49410e2b952e96f325df67a039cd571
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91734327"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92337062"
 ---
 # <a name="first-steps-for-usb-client-driver-development"></a>USB 客户端驱动程序开发的首要步骤
 
+本部分介绍 USB 驱动程序开发。 如果你不熟悉驱动程序开发，则该部分适用于你。要实现 USB 设备的驱动程序，Microsoft 不提供内置驱动程序。 此类驱动程序在此文档集中称为 *USB 客户端驱动程序* 。 本节中的主题介绍高级 USB 概念，并提供有关执行 USB 客户端驱动程序的常见任务的分步说明。 有关这些概念的详细信息，请参阅 [Usb 文档](https://usb.org/documents)中的 usb 规范。
 
-本部分介绍 USB 驱动程序开发。 如果你不熟悉驱动程序开发，则该部分适用于你。要实现 USB 设备的驱动程序，Microsoft 不提供内置驱动程序。 此类驱动程序在此文档集中称为 *USB 客户端驱动程序* 。 本节中的主题介绍高级 USB 概念，并提供有关执行 USB 客户端驱动程序的常见任务的分步说明。 有关这些概念的详细信息，请参阅 [Usb 文档](https://go.microsoft.com/fwlink/p/?linkid=617552)中的 usb 规范。
-
-作为驱动程序开发人员，您必须拥有 C 编程语言的编码经验，并了解函数指针、回调函数和事件处理程序的概念。 如果要编写基于用户模式驱动程序框架的驱动程序，请确保熟悉 c + + 和 COM。
+作为驱动程序开发人员，您必须拥有 C 编程语言的编码经验，并了解函数指针、回调函数和事件处理程序的概念。 如果要编写基于 User-Mode Driver Framework 的驱动程序，请确保熟悉 c + + 和 COM。
 
 ## <a name="learning-path-for-usb-client-driver-developers"></a>USB 客户端驱动程序开发人员的学习路径
-
 
 <table>
 <colgroup>
@@ -33,20 +31,20 @@ ms.locfileid: "91734327"
 </thead>
 <tbody>
 <tr class="odd">
-<td><p><strong>步骤 1</strong>-阅读 <a href="https://go.microsoft.com/fwlink/p/?linkid=617552" data-raw-source="[Official USB specification version 2.0 and 3.0](https://go.microsoft.com/fwlink/p/?linkid=617552)">官方 USB 规范版本2.0 和 3.0</a>。</p></td>
+<td><p><strong>步骤 1</strong>-阅读 [USB 规范 3.2](https://usb.org/document-library/usb-32-specification-released-september-22-2017-and-ecns)。</p></td>
 <td>了解体系结构 (设备、主机控制器和中心) 的行业规范和不同组件。 务必了解数据流模型，主机和设备之间如何相互通信，以及设备所需的请求格式。</td>
 </tr>
 <tr class="even">
 <td><p><strong>步骤 2</strong>-获取测试 USB 设备。</p></td>
 <td><ul>
 <li>具有 USB 设备及其硬件规范。 该规范描述了设备功能和支持的供应商命令。 使用规范来确定设备驱动程序的功能以及相关的设计决策。</li>
-<li>如果你不熟悉 USB 驱动程序开发，请使用 OSR USB FX2 学习工具包。 此工具包最适合学习本文档集中包括的 USB 示例。 可以从 <a href="https://go.microsoft.com/fwlink/p/?linkid=617553" data-raw-source="[OSR Online](https://go.microsoft.com/fwlink/p/?linkid=617553)">OSR Online</a>获取学习工具包。</li>
-<li>使用 Microsoft USB 测试工具 (MUTT) 设备。 可以从 <a href="https://go.microsoft.com/fwlink/p/?linkid=617554" data-raw-source="[JJG Technologies](https://go.microsoft.com/fwlink/p/?linkid=617554)">JJG 技术</a>购买 MUTT 硬件。 设备未安装安装的固件。 若要安装固件，请 <a href="/windows-hardware/drivers/usbcon/" data-raw-source="[download the MUTT software package](./index.md)">下载 MUTT</a>软件包，并运行 MUTTUtil.exe。 有关详细信息，请参阅包附带的文档。</li>
+<li>如果你不熟悉 USB 驱动程序开发，请使用 [OSR USB FX2 学习工具包](https://www.amazon.com/OSR-USB-FX2-Learning-Kit/dp/B07FNSYCLR) 。 此工具包最适合学习本文档集中包括的 USB 示例。</li>
+<li>使用 Microsoft USB 测试工具 (MUTT) 设备。 可以从 [JJG 技术](http://www.jjgtechnologies.com/Mutt20.htm)购买 MUTT 硬件。 设备未安装安装的固件。 若要安装固件，请下载 [MUTT](/windows-hardware/drivers/usbcon/microsoft-usb-test-tool--mutt--devices)软件包。 有关详细信息，请参阅包附带的文档。</li>
 </ul></td>
 </tr>
 <tr class="odd">
 <td><p><strong>步骤 3</strong>-研究 <a href="usb-device-layout.md" data-raw-source="[USB device layout](usb-device-layout.md)">usb 设备布局</a> 和相关 <a href="usb-descriptors.md" data-raw-source="[USB descriptors](usb-descriptors.md)">usb 描述符</a>。</p></td>
-<td>通过阅读配置描述符、每个受支持的备用设置的接口描述符及其终结点描述符来描述你的设备功能。 通过使用 <a href="/windows-hardware/drivers/debugger/usbview" data-raw-source="[USBView](../debugger/usbview.md)">USBView</a>，你可以浏览所有 usb 控制器和连接到它们的 usb 设备，还可以检查设备配置。</td>
+<td>通过阅读配置描述符、每个受支持的备用设置的接口描述符及其终结点描述符来描述你的设备功能。 通过使用 [USBView](/windows-hardware/drivers/debugger/usbview)，你可以浏览所有 usb 控制器和连接到它们的 usb 设备，还可以检查设备配置。</td>
 </tr>
 <tr class="even">
 <td><p><strong>步骤 4</strong>-<a href="winusb-considerations.md" data-raw-source="[Choose a driver model for developing a USB client driver](winusb-considerations.md)">选择用于开发 USB 客户端驱动程序的驱动程序模型</a>。</p></td>
@@ -71,9 +69,9 @@ ms.locfileid: "91734327"
 <tr class="even">
 <td><p><strong>步骤 6</strong>-准备开发和调试环境。</p>
 <ul>
-<li><a href="https://go.microsoft.com/fwlink/p/?linkid=617580" data-raw-source="[Install the latest Windows Driver Kit (WDK)](https://go.microsoft.com/fwlink/p/?linkid=617580)"> (WDK) 安装最新的 Windows 驱动程序工具包 </a>。</li>
-<li><a href="https://go.microsoft.com/fwlink/p/?linkid=617580" data-raw-source="[Install Microsoft Visual Studio 2012](https://go.microsoft.com/fwlink/p/?linkid=617580)">安装 2012 Microsoft Visual Studio</a>。</li>
-<li><a href="/windows-hardware/drivers/debugger/getting-set-up-for-debugging" data-raw-source="[Get Set Up for Debugging](../debugger/getting-set-up-for-debugging.md)">设置以进行调试</a>。</li>
+<li> (WDK) 安装最新的[Windows 驱动程序工具包](/windows-hardware/drivers/download-the-wdk) </a> 。</li>
+<li>安装 Microsoft Visual Studio] (https://visualstudio.microsoft.com/downloads/) </a> 。</li>
+<li>[设置以进行调试](/windows-hardware/drivers/debugger/getting-set-up-for-debugging) </a> 。</li>
 <li>请确保具有 <a href="headers-and-libraries-for-a-usb-client-driver.md" data-raw-source="[Headers and libraries required by a USB client driver](headers-and-libraries-for-a-usb-client-driver.md)">USB 客户端驱动程序所需的标头和库</a>。</li>
 </ul></td>
 <td><ul>
@@ -103,24 +101,19 @@ ms.locfileid: "91734327"
 </tbody>
 </table>
 
- 
-
 ## <a name="community-resources-for-usb"></a>用于 USB 的社区资源
 
+[Microsoft WINDOWS USB 核心团队博客](https://techcommunity.microsoft.com/t5/microsoft-usb-blog/bg-p/MicrosoftUSBBlog) 查看 Microsoft USB 团队撰写的文章。 此博客重点介绍 Windows USB 驱动程序堆栈，该堆栈适用于 Windows 电脑中的各种 USB 主控制器和 USB 集线器。 适用于 USB 客户端驱动程序开发人员和 USB 硬件设计人员的资源，方便他们了解驱动程序堆栈实现、解决常见问题以及如何使用工具来收集跟踪和日志文件。
 
-<a href="" id="microsoft-windows-usb-core-team-blog"></a>[Microsoft Windows USB 核心团队博客](https://go.microsoft.com/fwlink/p/?linkid=617581)  
-查看 Microsoft USB 团队撰写的博文。 此博客重点介绍 Windows USB 驱动程序堆栈，该堆栈适用于 Windows 电脑中的各种 USB 主控制器和 USB 集线器。 适用于 USB 客户端驱动程序开发人员和 USB 硬件设计人员的资源，方便他们了解驱动程序堆栈实现、解决常见问题以及如何使用工具来收集跟踪和日志文件。
+[OSR Online 列表](https://www.osronline.com/)  
+由 [OSR Online](https://www.osronline.com/) 管理的讨论列表，适用于内核模式驱动程序开发人员。
 
-<a href="" id="osr-online-lists---ntdev"></a>[OSR Online 列表-ntdev](https://go.microsoft.com/fwlink/p/?linkid=617582)  
-由 [OSR Online](https://go.microsoft.com/fwlink/p/?linkid=617590) 管理的讨论列表，适用于内核模式驱动程序开发人员。
+[专注硬件开发的 Windows 开发人员中心](/windows/hardware/)  
 
-<a href="" id="usb-technologies"></a>[USB 技术](../index.yml)  
-各种基于常见问题的资源，这些问题由不熟悉 Windows 操作系统的 USB 设备和驱动程序开发的开发人员提出。
-
-<a href="" id="windows-dev-center-for-hardware-development"></a>[用于硬件开发的 Windows 开发人员中心](https://go.microsoft.com/fwlink/p/?linkid=617584)  
-[下载用于驱动程序开发的最新工具](https://go.microsoft.com/fwlink/p/?linkid=617585)，通过 [windows 认证计划](/previous-versions/windows/hardware/hck/jj124227(v=vs.85))确保你的产品可靠且与 windows 兼容，并了解 [windows 驱动程序示例](https://go.microsoft.com/fwlink/p/?LinkId=616507)。
+[Windows 驱动程序工具包](/windows-hardware/drivers/download-the-wdk)，通过 [Windows 硬件实验室工具包](/windows-hardware/test/hlk/)确保你的产品可靠且与 windows 兼容，并了解 [windows 驱动程序示例](/windows-hardware/drivers/samples/)。
 
 ## <a name="related-topics"></a>相关主题
-[ (USB) 驱动程序的通用串行总线](../index.yml)  
-[如何在 USB 设备的 UMDF 驱动程序中启用 USB 选择性挂起和系统唤醒](https://go.microsoft.com/fwlink/p/?linkid=617587)  
-[USB 驱动程序开发指南](usb-driver-development-guide.md)
+
+[ (USB) 驱动程序的通用串行总线](/windows-hardware/drivers/)  
+[如何在 USB 设备的 UMDF 驱动程序中启用 USB 选择性挂起和系统唤醒](/windows-hardware/drivers/usbcon/selective-suspend-in-umdf-drivers)  
+[USB 驱动程序开发指南](usb-driver-development-guide.md)  

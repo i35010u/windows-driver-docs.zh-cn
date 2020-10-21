@@ -3,12 +3,12 @@ description: 提供有关如何使用 USB ETW 和 Netmon 排查 Windows 无法�
 title: 案例研究-排查未知 USB 设备问题
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4bba0f40c23c7e6d4e3736d28b177bc53ed0712f
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: e935ef15304d3a26581f662e66ed26a74079cd57
+ms.sourcegitcommit: b75e9940d49410e2b952e96f325df67a039cd571
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91733107"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92337045"
 ---
 # <a name="case-study-troubleshooting-an-unknown-usb-device-by-using-etw-and-netmon"></a>案例研究：使用 ETW 和 Netmon 排查未知 USB 设备的问题
 
@@ -18,7 +18,7 @@ ms.locfileid: "91733107"
 
 ## <a name="about-the-unknown-device-problem"></a>关于未知设备问题
 
-若要调试未知的 USB 设备问题，有助于了解当用户将设备插入系统时，USB 驱动程序堆栈对设备进行枚举的方法。 有关 USB 枚举的信息，请参阅标题为 " [usb Stack 如何枚举设备"](https://go.microsoft.com/fwlink/p/?linkid=617517)的博客文章。
+若要调试未知的 USB 设备问题，有助于了解当用户将设备插入系统时，USB 驱动程序堆栈对设备进行枚举的方法。 有关 USB 枚举的信息，请参阅标题为 " [usb Stack 如何枚举设备"](https://techcommunity.microsoft.com/t5/microsoft-usb-blog/how-does-usb-stack-enumerate-a-device/ba-p/270685)的博客文章。
 
 通常，当 USB 驱动程序堆栈无法枚举设备时，集线器驱动程序仍会将设备到达报告给 Windows，并在设备管理器中将 USB 设备标记为未知设备。 设备的设备 ID 为 USB \\ VID \_ 0000&PID \_ 0000，硬件 ID 和兼容 ID （ \\ 未知）。 以下事件导致 USB 集线器驱动程序将 USB 设备枚举为未知设备：
 
@@ -29,9 +29,9 @@ ms.locfileid: "91733107"
 * 配置描述符的请求失败。
 * [USB 配置描述符](usb-configuration-descriptors.md)的格式不正确，验证失败。
 
-在 Windows 7 中，无法枚举的未知设备将标记为设备管理器中的失败 [代码 43](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc725873(v=ws.10)) 。
+在 Windows 7 中，无法枚举的未知设备将标记为设备管理器中的失败 [代码 43](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc725873(v=ws.10)?redirectedfrom=MSDN) 。
 
-如果在设备管理器中使用故障 [代码 28](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc731268(v=ws.10)) 对设备进行标记，则设备已成功枚举，但仍是未知设备。 此失败代码表明设备在枚举过程中未提供产品 ID 字符串，Windows 找不到用于安装驱动程序的设备的匹配 INF。
+如果在设备管理器中使用故障 [代码 28](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc731268(v=ws.10)) 对设备进行标记，则设备已成功枚举，但仍是未知设备。 此失败代码表明设备在枚举过程中未提供产品 ID 字符串，Windows 找不到用于安装驱动程序的设备的匹配 INF。
 
 ## <a name="starting-the-event-trace-analysis"></a>开始事件跟踪分析
 
@@ -77,11 +77,11 @@ Event payload (Data logged at the time of the event)
 
 展开 "USB 集线器等待唤醒 IRP 完成" 事件的负载数据，您将看到一个名为 fid USBHUB Hub 的 ETW \_ 结构 \_ 。 结构名称包含以下组件：
 
-|术语|说明|
-|----|----|
-|**fid_**|USB ETW 结构的典型前缀。|
-|**USBHUB_**|指示 USB 集线器驱动程序记录了该事件。|
-|**字符串的其余部分**|结构的数据所描述的对象的名称。 对于此事件，它是一个中心对象。|
+| 术语 | 说明 |
+| ---- | ---- |
+| **fid_** |USB ETW 结构的典型前缀。 |
+| **USBHUB_** |指示 USB 集线器驱动程序记录了该事件。 |
+| **字符串的其余部分** |结构的数据所描述的对象的名称。 对于此事件，它是一个中心对象。 |
 
 USB 集线器驱动程序使用 **fid \_ USBHUB \_ 集线器** 结构来描述 USB 集线器。 在其数据负载中具有此中心结构的事件指的是中心，我们可以使用结构的内容来识别特定的中心。 图4显示了 "帧详细信息" 窗格，其中的 **fid \_ USBHUB \_ 中心** 结构展开以显示其字段。
 
@@ -89,19 +89,19 @@ USB 集线器驱动程序使用 **fid \_ USBHUB \_ 集线器** 结构来描述 U
 
 中心结构非常类似于通常出现在 USB ETW 事件中的两个其他结构：**fid \_ USBHUB \_ 设备** 和 **fid \_ USBPORT \_ 设备**。 以下重要字段适用于所有三种结构：
 
-|字段|说明|
-|----|----|
-|**fid_idVendor**|设备的 USB 供应商 ID (VID) |
-|**fid_idProduct**|设备的 USB 产品 ID (PID) |
-|**fid_PortPath**|USB 设备连接到的一个基于的集线器端口号列表。 列表中的端口号数目包含在 **PortPathDepth** 字段中。 对于根集线器设备，此列表全为零。 对于直接连接到根集线器端口的 USB 设备，PortPath 0 中的值 \[ \] 是设备连接到的端口的根集线器端口号。|
+| 字段 | 说明 |
+| ---- | ---- |
+| **fid_idVendor** |设备的 USB 供应商 ID (VID) |
+| **fid_idProduct** |设备的 USB 产品 ID (PID) |
+| **fid_PortPath** |USB 设备连接到的一个基于的集线器端口号列表。 列表中的端口号数目包含在 **PortPathDepth** 字段中。 对于根集线器设备，此列表全为零。 对于直接连接到根集线器端口的 USB 设备，PortPath 0 中的值 \[ \] 是设备连接到的端口的根集线器端口号。|
 
 对于通过一个或多个附加 USB 集线器连接的 USB 设备，集线器端口号列表以根集线器端口开头，并继续以从根中心) 的距离 (的其他集线器继续。 忽略任何零。 例如：
 
-| 示例值|说明|
-|----|----|
-|[0，0，0，0，0，0]|事件指的是 (计算机上的端口的根集线器，由 USB 主机控制器) 直接控制。|
-|[3，0，0，0，0，0]|事件是指插入到根集线器端口号3的集线器或设备。|
-|[3，1，0，0，0，0]|集线器插入根集线器端口3中。 事件是指插入到此外部集线器端口1的集线器或设备。|
+| 示例值 | 说明 |
+| ---- | ---- |
+| [0，0，0，0，0，0] | 事件指的是 (计算机上的端口的根集线器，由 USB 主机控制器) 直接控制。 |
+| [3，0，0，0，0，0] | 事件是指插入到根集线器端口号3的集线器或设备。 |
+| [3，1，0，0，0，0] | 集线器插入根集线器端口3中。 事件是指插入到此外部集线器端口1的集线器或设备。 |
 
 应监视任何相关设备的端口路径。 枚举设备时，VID 和 PID 未知并记录为0。 在某些低级设备请求（如重置和暂停）期间，VID 和 PID 不会出现。 这些请求将发送到设备插入到的中心。
 
@@ -117,12 +117,12 @@ USB 集线器驱动程序使用 **fid \_ USBHUB \_ 集线器** 结构来描述 U
 
 USB 错误筛选器将事件列表缩小到仅符合下表中所示的条件的事件列表。
 
-|筛选文本|说明|
-|-----|----|
-| (USBPort_MicrosoftWindowsUSBUSBPORT 和 NetEvent = = 34) |具有 opcode 34 的 USB 端口事件是端口错误。|
-| (USBHub_MicrosoftWindowsUSBUSBHUB 和 NetEvent = = 11) |具有 opcode 11 的 USB 集线器事件是集线器错误。|
-| (NetEvent = = 0x2) |具有级别0x2 的事件通常是错误的。|
-| (USBHub_MicrosoftWindowsUSBUSBHUB 和 NetEvent.Header.Descriptor.Id = = 210) | ID 为210的 USB 集线器事件是 "USB 集线器异常记录" 事件。 有关详细信息，请参阅 [了解错误事件和状态代码](#understanding-error-events-and-status-codes)。|
+| 筛选文本 | 说明 |
+| --- | --- |
+|  (USBPort_MicrosoftWindowsUSBUSBPORT 和 NetEvent = = 34)  | 具有 opcode 34 的 USB 端口事件是端口错误。 |
+|  (USBHub_MicrosoftWindowsUSBUSBHUB 和 NetEvent = = 11)  | 具有 opcode 11 的 USB 集线器事件是集线器错误。 |
+|  (NetEvent = = 0x2)  | 具有级别0x2 的事件通常是错误的。 |
+|  (USBHub_MicrosoftWindowsUSBUSBHUB 和 NetEvent.Header.Descriptor.Id = = 210)  | ID 为210的 USB 集线器事件是 "USB 集线器异常记录" 事件。 有关详细信息，请参阅 [了解错误事件和状态代码](#understanding-error-events-and-status-codes)。 |
 
 此图显示了将 USB 错误筛选器应用于示例跟踪日志后，在 " **帧摘要** " 窗格中显示的较小事件集。
 
@@ -145,10 +145,10 @@ USB 错误筛选器将事件列表缩小到仅符合下表中所示的条件的�
 
 USB 错误事件和其他事件的数据中具有状态值，这些值提供有关问题的重要信息。 您可以通过使用下表中的资源来查找有关状态值的信息。
 
-|状态类型|资源|
-|----|----|
-|**fid_NtStatus**|请参阅 [NTSTATUS 值](/openspecs/windows_protocols/ms-erref/596a1078-e883-4972-9bbc-49e60bebca55)。|
-|USB 请求块的 "状态" 字段 (URB) 或 **fid_UsbdStatus**|在 Windows 驱动程序工具包 (WDK) 的 inc\api\usb.h 中查找作为 USBD_STATUS 的值。 你还可以使用 [USBD \_ 状态](/previous-versions/windows/hardware/drivers/ff539136(v=vs.85))。 本主题列出了 USBD 状态值的符号名称和含义 \_ 。|
+| 状态类型 | 资源 |
+| --- | --- |
+| **fid_NtStatus** | 请参阅 [NTSTATUS 值](https://go.microsoft.com/fwlink/p/?linkid=617532)。 |
+| USB 请求块的 "状态" 字段 (URB) 或 **fid_UsbdStatus** | 在 Windows 驱动程序工具包 (WDK) 的 inc\api\usb.h 中查找作为 USBD_STATUS 的值。 你还可以使用 [USBD \_ 状态](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff539136(v=vs.85))。 本主题列出了 USBD 状态值的符号名称和含义 \_ 。 |
 
 ## <a name="reading-backwards-from-problem-events"></a>从问题事件中反向读取
 

@@ -3,61 +3,56 @@ description: Windows 硬件实验室工具包 (HLK) 测试可用于其他系统�
 title: 针对 USB 的 Windows Hardware Lab Kit (HLK) 测试
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0a1f4790df89fc8a3fce2dce4035fd03117870ac
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: 36dd01b351e3ef9c0d8434351315e0e6a1f6c42b
+ms.sourcegitcommit: b75e9940d49410e2b952e96f325df67a039cd571
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91733315"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92336973"
 ---
 # <a name="windows-hardware-lab-kit-hlk-tests-for-usb"></a>针对 USB 的 Windows Hardware Lab Kit (HLK) 测试
 
-
 Windows 硬件实验室工具包 (HLK) 测试可用于其他系统、USB 主机控制器、集线器和设备测试。 这些测试涵盖了基本的设备功能、可靠性以及 Windows 的兼容性。
 
-## <a name="prerequisites"></a>先决条件
-
+## <a name="prerequisites"></a>必备条件
 
 开始运行徽标测试之前，请确保满足以下要求：
 
--   若要运行这些测试，你将需要至少两台计算机：测试服务器和测试客户端。
--   测试客户端必须具有最新版本的 Windows。
--   测试客户端必须具有 EHCI 和 xHCI 控制器，其中集成了或作为附加卡。 控制器必须公开用户可访问的根端口， (没有集成的集线器) 。
--   从 [Windows 硬件实验室包](/windows-hardware/test/hlk/)下载下载 windows HLK 到测试服务器。
+- 若要运行这些测试，你将需要至少两台计算机：测试服务器和测试客户端。
+- 测试客户端必须具有最新版本的 Windows。
+- 测试客户端必须具有 EHCI 和 xHCI 控制器，其中集成了或作为附加卡。 控制器必须公开用户可访问的根端口， (没有集成的集线器) 。
+- 从 [Windows 硬件实验室包](/windows-hardware/test/hlk/)下载下载 windows HLK 到测试服务器。
 
     有关如何安装和使用 Windows HLK 的详细信息，请参阅 [WINDOWS hlk 入门](/windows-hardware/test/hlk/getstarted/windows-hlk-getting-started)。
 
 ## <a name="hardware-requirements-for-running-usb-tests-in-the-hlk"></a>在 HLK 中运行 USB 测试的硬件要求
 
-
 若要运行 HLK 测试，需要：
 
--   主机控制器 (集成的或作为附加卡) 、集线器或设备进行身份验证。
+- 主机控制器 (集成的或作为附加卡) 、集线器或设备进行身份验证。
 
     在测试客户端上打开设备管理器，并确保要使用的 USB 控制器公开用户可访问的根端口， (没有集成的中心) 。
 
     ![usb 根端口](images/roothubports.png)
 
--   与 USB 兼容的外部 SuperSpeed 集线器，用于评估系统兼容性。 我们已使用以下中心测试了一测试：
-    -   [德克萨斯州器材 SuperSpeed (USB 3.0) 集线器参考设计板 (TUSB8040EVM) ](https://go.microsoft.com/fwlink/p/?linkid=248509)。
-    -   SuperMUTT Pack。 请参阅 [MUTT 设备](microsoft-usb-test-tool--mutt--devices.md)。
--   [MUTT 设备](microsoft-usb-test-tool--mutt--devices.md) 作为中心和控制器测试的测试设备。
--   USB-如果经过认证的电缆和连接器，可避免出现信号完整性问题。 请参阅 [USB-IF 产品列表](https://go.microsoft.com/fwlink/p/?linkid=617502)。
+- 与 USB 兼容的外部 SuperSpeed 集线器，用于评估系统兼容性。 我们已使用以下中心测试了一测试：
+  - [德克萨斯州器材 SuperSpeed (USB 3.0) 集线器参考设计板 (TUSB8040EVM) ](https://www.ti.com/lit/ug/sllu130a/sllu130a.pdf)。
+  - SuperMUTT Pack。 请参阅 [MUTT 设备](microsoft-usb-test-tool--mutt--devices.md)。
+  - [MUTT 设备](microsoft-usb-test-tool--mutt--devices.md) 作为中心和控制器测试的测试设备。
 
 下面提供了一组完整的要求：
 
--   [USB 总线控制器测试先决条件](/previous-versions/windows/hardware/hck/hh998789(v=vs.85))
--   [USB Hub.Connectivity 测试先决条件](/previous-versions/windows/hardware/hck/jj124824(v=vs.85))
+- [USB 总线控制器测试先决条件](/windows-hardware/test/hlk/testref/usb-bus-controller-testing-prerequisites#:~:text=%20USB%20Bus%20Controller%20Testing%20Prerequisites%20%201,is%20required%20for%20USB%20host%20controller...%20More%20)
+- [USB Hub.Connectivity 测试先决条件](/windows-hardware/test/hlk/testref/usb-hubconnectivity-testing-prerequisites)
 
 ## <a name="hlk-test-selection-for-usb"></a>用于 USB 的 HLK 测试选择
 
-
 适用于你的系统、主机控制器、集线器或设备的 USB 测试会在 HLK Studio 中自动选择。
 
-按照 [WINDOWS HLK 入门]( /windows-hardware/test/hlk/getstarted/windows-hlk-getting-started)中的步骤1-5 操作后，请确保：
+按照 [WINDOWS HLK 入门](/windows-hardware/test/hlk/getstarted/windows-hlk-getting-started)中的步骤1-5 操作后，请确保：
 
--   在步骤5中，在 HLK Studio 的 " **选择** " 选项卡中选择了正确的设备。
--   在步骤6中，所有适用于你的设备的测试都显示在 HLK studio 的 " **测试** " 选项卡中。 若要运行这些测试，必须在左侧的复选框中选择测试，然后单击 " **运行所选项**"。 本文档的以下部分列出了对 USB 测试的测试。
+- 在步骤5中，在 HLK Studio 的 " **选择** " 选项卡中选择了正确的设备。
+- 在步骤6中，所有适用于你的设备的测试都显示在 HLK studio 的 " **测试** " 选项卡中。 若要运行这些测试，必须在左侧的复选框中选择测试，然后单击 " **运行所选项**"。 本文档的以下部分列出了对 USB 测试的测试。
 
 有关计划测试的信息，请参阅 [WINDOWS HLK 入门]( /windows-hardware/test/hlk/getstarted/windows-hlk-getting-started)中的步骤2-6。
 
@@ -65,8 +60,9 @@ Windows 硬件实验室工具包 (HLK) 测试可用于其他系统、USB 主机�
 
 除了在 HLK Studio 中自动选择的所有 USB 测试外，我们还建议同时运行基础测试，并将 MUTT 或 SuperMUTT 连接到受测系统、控制器或集线器。 对于系统提交，这些是系统基础 (SysFund) 测试，对于控制器、中心或设备提交，这些是设备基础 (DevFund) 测试。
 
--   [系统基础 (SysFund) ](/windows-hardware/test/hlk/testref/system-fundamentals-tests)
--   [设备基础 (DevFund) ](/windows-hardware/test/hlk/testref/device-devfund-tests)
+- [系统基础 (SysFund) ](/windows-hardware/test/hlk/testref/system-fundamentals-tests)
+- [设备基础 (DevFund) ](/windows-hardware/test/hlk/testref/device-devfund-tests)
 
 ## <a name="related-topics"></a>相关主题
-[在 Windows 中测试 USB 硬件、驱动程序和应用程序](usb-driver-testing-guide.md)
+
+[Microsoft USB 测试工具-MUTT 设备](/windows-hardware/drivers/usbcon/microsoft-usb-test-tool--mutt--devices)

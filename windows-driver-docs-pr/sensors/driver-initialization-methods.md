@@ -1,26 +1,24 @@
 ---
-title: 驱动程序的初始化方法
+title: 驱动程序初始化方法
 ms.assetid: CA8F6308-501D-47BC-902E-3259949A1D57
-description: 若要初始化设备传感器驱动程序支持的方法。
+description: 传感器驱动程序支持的方法来初始化设备。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c538a27af08030c5ab44acbf17f4e0de27ef8541
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 92b0ccf548183926a4ca2dce1661ea4715fe7947
+ms.sourcegitcommit: b75e9940d49410e2b952e96f325df67a039cd571
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63377812"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92337016"
 ---
-# <a name="driver-initialization-methods"></a>驱动程序的初始化方法
+# <a name="driver-initialization-methods"></a>驱动程序初始化方法
 
+传感器驱动程序必须支持客户端和设备初始化。 伪代码使用以下方法演示这一点：
 
-传感器驱动程序必须支持客户端和设备的初始化。 伪代码演示了这可以通过使用以下方法：
-
--   DriverClientInitialize()
--   DeviceSensorInitialize()
+- DriverClientInitialize ( # A1
+- DeviceSensorInitialize ( # A1
 
 ## <a name="client-initialization"></a>客户端初始化
-
 
 客户端初始化方法具有以下形式。
 
@@ -59,7 +57,5 @@ DriverClientInitialize(sensorID)
 ```
 
 ## <a name="related-topics"></a>相关主题
-[传感器驱动程序开发的基础知识](sensor-driver-development-basics.md)
 
-
-
+[传感器驱动程序逻辑](/windows-hardware/drivers/sensors/driver-logic--pseudo-code-)

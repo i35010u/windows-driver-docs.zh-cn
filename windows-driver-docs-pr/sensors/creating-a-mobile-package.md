@@ -4,12 +4,12 @@ description: 本主题提供有关创建用于在移动设备上安装示例驱�
 ms.assetid: E929D80D-17BF-4079-8CF9-972020306358
 ms.date: 07/20/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 0a8f8cc5a651561a209adc5db6f25cd433f458fb
-ms.sourcegitcommit: 937974aa9bbe0262a7ffe9631593fab48c4e7492
+ms.openlocfilehash: 22857a278b498bb8babd7d41f70f85dbde5c4a24
+ms.sourcegitcommit: b75e9940d49410e2b952e96f325df67a039cd571
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "90010143"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92336934"
 ---
 # <a name="creating-a-mobile-package"></a>创建移动包
 
@@ -74,11 +74,11 @@ Copyright (c) Microsoft Corporation.  All rights reserved.
 
 如果已将 WDK 安装到默认位置，则可以在以下位置找到 **pkggen.exe** ： *%WPDKCONTENTROOT%\Tools\bin\i386*
 
-有关如何为移动设备创建包的说明，请参阅 [包生成器的命令行参数](/windows-hardware/manufacture/mobile/command-line-arguments-for-package-generator) 。 有关更全面的介绍，请参阅 [创建 Mobile Pacakages](/previous-versions/windows/hardware/packaging/dn756642(v=vs.85)) 。
+有关如何为移动设备创建包的说明，请参阅 [包生成器的命令行参数](/windows-hardware/manufacture/mobile/command-line-arguments-for-package-generator) 。 有关更全面的介绍，请参阅 [创建 Mobile Pacakages](/windows-hardware/drivers/sensors/creating-a-mobile-package) 。
 
 ## <a name="related-topics"></a>相关主题
 
-[创建移动包](/previous-versions/windows/hardware/packaging/dn756642(v=vs.85))
+[创建移动包](/windows-hardware/drivers/sensors/creating-a-mobile-package)
 
 [查看 INX 文件](review-and-revise-the-inf-file.md)
 

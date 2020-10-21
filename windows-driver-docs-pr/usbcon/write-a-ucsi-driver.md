@@ -3,12 +3,12 @@ description: 描述以不可知的方式实现 UCSI 规范的 UCSI 类扩展的�
 title: 编写 UCSI 客户端驱动程序
 ms.date: 09/30/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 8b1046e295928af6b89dd9fb3a0a93bcd57c0dd6
-ms.sourcegitcommit: 937974aa9bbe0262a7ffe9631593fab48c4e7492
+ms.openlocfilehash: 63bad06518002e7fb0a1932d6fbcb5325246d95a
+ms.sourcegitcommit: b75e9940d49410e2b952e96f325df67a039cd571
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "90010183"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92336918"
 ---
 # <a name="write-a-ucsi-client-driver"></a>编写 UCSI 客户端驱动程序
 
@@ -20,47 +20,49 @@ USB 类型 C 连接器系统软件接口 (UCSI) 驱动程序充当 USB 类型 C 
 
 - 非 ACPI 传输（如 USB、PCI、I2C 或 UART）需要为控制器编写客户端驱动程序。
 
+> [!NOTE]
 > 如果 USB Type-C 硬件不具有处理 (PD) 状态机的电源交付的功能，请考虑写入 USB 类型 C 端口控制器驱动程序。 有关详细信息，请参阅 [编写 USB 类型 C 端口控制器驱动程序](bring-up-a-usb-type-c-connector-on-a-windows-system.md)。
 
 从 Windows 10 1809 版开始，添加了一个适用于 UCSI ( # A0) 的新类扩展，该扩展以与传输无关的方式实现 UCSI 规范。 只需编写极少量的代码，驱动程序（即 UcmUcsiCx 的客户端）即可通过非 ACPI 传输来与 USB 类型 C 硬件通信。 本主题介绍 UCSI 类扩展提供的服务，以及客户端驱动程序的预期行为。
 
-**官方规范**
--   [UCSI 的 Intel BIOS 实现](https://go.microsoft.com/fwlink/p/?LinkId=760658)
--   [USB 3.1 和 USB 类型-C 规范](https://go.microsoft.com/fwlink/p/?LinkId=699515)
--   [UCSI 驱动程序](ucsi.md)
+## <a name="official-specifications"></a>官方规范
+
+- [UCSI 的 Intel BIOS 实现](https://www.intel.com/content/www/us/en/products/docs/io/universal-serial-bus/bios-implementation-of-ucsi.html)
+- [USB 3.1 和 USB 类型-C 规范](https://www.usb.org/usb-type-cr-cable-and-connector-specification)
+- [UCSI 驱动程序](ucsi.md)
 
 适用于：
 
 - Windows 10 版本 1809
 
-**WDF 版本**
+## <a name="wdf-version"></a>WDF 版本
 
--   KMDF 版本1.27
+- KMDF 版本1.27
 
-
-**重要的 API**
+## <a name="important-apis"></a>重要的 API
 
 [UcmUcsiCx 类扩展参考](/windows-hardware/drivers/ddi/_usbref/#type-c-driver-reference)
 
-示例 
+## <a name="sample"></a>示例
 
 [UcmUcsiCx 客户端驱动程序示例](https://github.com/Microsoft/Windows-driver-samples/tree/master/usb/UcmUcsiAcpiSample)
 
 将 ACPI 部分替换为所需总线的实现。
 
 ## <a name="ucsi-class-extension-architecture"></a>UCSI 类扩展体系结构
+
 UCSI class extension UcmUcsiCx 允许使用非 ACPI 传输来编写与其嵌入式控制器通信的驱动程序。 控制器驱动程序是 UcmUcsiCx 的客户端驱动程序。 UcmUcsiCx 将客户端转到 USB 连接器管理器 (UCM) 。 因此，UcmUcsiCx 不会做出自己的任何策略决策。 相反，它会实现 UCM 提供的策略。 UcmUcsiCx 实现了用于处理平台策略管理器的状态机 (PPM) 来自客户端驱动程序的通知，并发送命令来实现 UCM 策略决策，从而实现更可靠的问题检测和错误处理。
 
 ![UCSI 类扩展体系结构](images/ucsicxarch.png)
 
-**OS 策略管理器 (OPM) **
+## <a name="os-policy-manager-opm"></a>OS 策略管理器 (OPM) 
 
 操作系统策略管理器 (OPM) 实现逻辑与 PPM 交互，如 UCSI 规范中所述。 OPM 负责：
 
 - 将 UCM 策略转换为 UCSI 命令，并将 UCSI 通知转换为 UCM 通知。
 - 发送初始化 PPM、检测错误和恢复机制所需的 UCSI 命令。
 
-**处理 UCSI 命令** 
+## <a name="handling-ucsi-commands"></a>处理 UCSI 命令
 
 典型的操作涉及 UCSI-complicant 硬件完成的几个命令。 例如，让我们考虑 GET_CONNECTOR_STATUS 命令。
 
@@ -71,7 +73,7 @@ UCSI class extension UcmUcsiCx 允许使用非 ACPI 传输来编写与其嵌入�
 5. PPM 固件 ACK_CC_CI 执行，并将命令完成通知异步发送到 UcmUcsiCx/客户端驱动程序。
 6. UcmUcsiCx/客户端驱动程序会将 GET_CONNECTOR_STATUS 命令视为已完成。
 
-**与平台策略管理器的通信 (PPM) **
+## <a name="communication-with-platform-policy-manager-ppm"></a>与平台策略管理器的通信 (PPM) 
 
 UcmUcsiCx 将从 OPM 到 PPM 固件发送 UCSI 命令和从 PPM 固件接收通知的详细信息。 它将 PPM 命令转换为 WDFREQUEST 对象，并将其转发到客户端驱动程序。
 
@@ -83,42 +85,41 @@ UcmUcsiCx 将从 OPM 到 PPM 固件发送 UCSI 命令和从 PPM 固件接收通�
 
     UcmUcsiCx 通过要发送到 PPM 固件) 的 IOCTL 请求将 (发送到客户端驱动程序的 UCSI 命令。 在将 UCSI 命令发送到固件后，该驱动程序负责完成该请求。
 
-
-**处理电源转换**
+## <a name="handling-power-transitions"></a>处理电源转换
 
 客户端驱动程序是电源策略所有者。  
 
-如果客户端驱动程序由于 S0 空闲而进入 Dx 状态，则当 UcmUcsiCx 将包含 UCSI 命令的 IOCTL 发送到客户端驱动程序的受管理队列时，WDF 会将驱动程序带入 D0。 由于固件处于 PPM 空闲状态，因此仍启用 PPM 通知，因此，S0 中的客户端驱动程序应重新进入 "已通电" 状态。  
+如果客户端驱动程序由于 S0 空闲而进入 Dx 状态，则当 UcmUcsiCx 将包含 UCSI 命令的 IOCTL 发送到客户端驱动程序的受管理队列时，WDF 会将驱动程序带入 D0。 如果从固件发出 PPM 通知，S0-Idle 中的客户端驱动程序应重新进入 "已通电" 状态，因为在 S0 空闲状态下，PPM 通知仍处于启用状态。  
 
-## <a name="before-you-begin"></a>开始之前 .。。
+## <a name="before-you-begin"></a>准备工作
 
--   确定需要写入的驱动程序类型，具体取决于你的硬件或固件是否实现了 PD 状态机和传输。
+- 确定需要写入的驱动程序类型，具体取决于你的硬件或固件是否实现了 PD 状态机和传输。
 
     ![选择正确的类扩展的决策 ](images/drivers-c.png) 有关详细信息，请参阅 [开发适用于 USB 类型 C 连接器的 Windows 驱动程序](developing-windows-drivers-for-usb-type-c-connectors.md)。  
 
--   安装适用于桌面版的 Windows 10 (家庭版、专业版、企业版和教育版) 。
+- 安装适用于桌面版的 Windows 10 (家庭版、专业版、企业版和教育版) 。
 
--   在开发计算机上 (WDK) [安装](../download-the-wdk.md)最新的 Windows 驱动程序工具包。 工具包具有写入客户端驱动程序所需的头文件和库，具体而言，你将需要：
+- 在开发计算机上 (WDK) [安装](/windows-hardware/drivers/download-the-wdk)最新的 Windows 驱动程序工具包。 工具包具有写入客户端驱动程序所需的头文件和库，具体而言，你将需要：
 
-    -   存根库， (UcmUcsiCxStub) 。 库转换客户端驱动程序发出的调用，并将其传递给类扩展。
-    -   标头文件 Ucmucsicx。
-    - 客户端驱动程序在内核模式下运行并绑定到 KMDF 1.27 库。
+  - 存根库， (UcmUcsiCxStub) 。 库转换客户端驱动程序发出的调用，并将其传递给类扩展。
+  - 标头文件 Ucmucsicx。
+  - 客户端驱动程序在内核模式下运行并绑定到 KMDF 1.27 库。
 
--   熟悉 Windows Driver Foundation (WDF) 。 建议读物： [开发带有 Windows Driver Foundation 的驱动程序]( https://go.microsoft.com/fwlink/p/?LinkId=691676)（由 "Orwick" 和 "专家 Smith" 编写）。
+- 熟悉 Windows Driver Foundation (WDF) 。 建议阅读：使用由 "Orwick" 和 "人员 Smith" 编写的 [Windows Driver Foundation 开发驱动程序](/windows-hardware/drivers/wdf/developing-drivers-with-wdf#:~:text=The%20Developing%20Drivers%20with%20Windows%20Driver%20Foundation%20book,then%20describes%20the%20WDF%20architecture%20and%20programming%20model.) 。
 
 ## <a name="1-register-your-client-driver-with-ucmucsicx"></a>1. 将客户端驱动程序注册到 UcmUcsiCx
 
-在 [**EVT_WDF_DRIVER_DEVICE_ADD**](/windows-hardware/drivers/ddi/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add) 实现中， 
+在 [**EVT_WDF_DRIVER_DEVICE_ADD**](/windows-hardware/drivers/ddi/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add) 实现中。
 
-1. 设置即插即用和电源管理事件回调函数 ([**WdfDeviceInitSetPnpPowerEventCallbacks**](/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceinitsetpnppowereventcallbacks)) 后，调用 [**UcmUcsiDeviceInitInitialize**](/windows-hardware/drivers/ddi/ucmucsidevice/nf-ucmucsidevice-ucmucsideviceinitinitialize) 来初始化 [**WDFDEVICE_INIT**](../wdf/wdfdevice_init.md) 的不透明结构。 调用将客户端驱动程序与框架相关联。
+1. 设置即插即用和电源管理事件回调函数 ([**WdfDeviceInitSetPnpPowerEventCallbacks**](/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceinitsetpnppowereventcallbacks)) 后，调用 [**UcmUcsiDeviceInitInitialize**](/windows-hardware/drivers/ddi/ucmucsidevice/nf-ucmucsidevice-ucmucsideviceinitinitialize) 来初始化 [**WDFDEVICE_INIT**](/windows-hardware/drivers/wdf/wdfdevice_init) 的不透明结构。 调用将客户端驱动程序与框架相关联。
 
-2. 创建框架设备对象 (WDFDEVICE) 后，调用 [**UcmUcsiDeviceInitialize**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ucmucsidevice/nf-ucmucsidevice-ucmucsideviceinitialize.md) 将客户端驱动程序注册到 UcmUcsiCx。
+2. 创建框架设备对象 (WDFDEVICE) 后，调用 [**UcmUcsiDeviceInitialize**](/windows-hardware/drivers/ddi/ucmucsidevice/nf-ucmucsidevice-ucmucsideviceinitialize.md) 将客户端驱动程序注册到 UcmUcsiCx。
 
 ## <a name="2-create-the-ppm-object-with-ucmucsicx"></a>2. 通过 UcmUcsiCx 创建 PPM 对象
 
 在 [**EVT_WDF_DEVICE_PREPARE_HARDWARE**](/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_prepare_hardware)的实现中，在收到原始资源和已翻译资源的列表后，请使用资源来准备硬件。 例如，如果你的传输为 I2C，请阅读硬件资源以打开信道。 接下来，创建 PPM 对象。 若要创建对象，需要设置某些配置选项。
 
-1. 提供设备上连接器集合的句柄。 
+1. 提供设备上连接器集合的句柄。
    1. 通过调用 [**UcmUcsiConnectorCollectionCreate**](/windows-hardware/drivers/ddi/ucmucsippm/nf-ucmucsippm-ucmucsiconnectorcollectioncreate)创建连接器集合。
    2. 枚举设备上的连接器，并通过调用 UcmUcsiConnectorCollectionAddConnector 将其添加到[ **UcmUcsiConnectorCollectionAddConnector**集合](/windows-hardware/drivers/ddi/ucmucsippm/nf-ucmucsippm-ucmucsiconnectorcollectionaddconnector)
 
@@ -141,6 +142,7 @@ UcmUcsiCx 将从 OPM 到 PPM 固件发送 UCSI 命令和从 PPM 固件接收通�
       status = UcmUcsiConnectorCollectionAddConnector ( &ConnectorCollectionHandle,
                    &connectorInfo);
       ```
+
 2. 决定是否要启用设备控制器。
 
 3. 配置和创建 PPM 对象。
@@ -163,12 +165,13 @@ UcmUcsiCx 将从 OPM 到 PPM 固件发送 UCSI 命令和从 PPM 固件接收通�
 
       status = UcmUcsiPpmCreate(wdfDevice, UcsiPpmConfig, &attrib, &ppmObject);
       ```
-      ## <a name="3-set-up-io-queues"></a>3. 设置 IO 队列
+
+## <a name="3-set-up-io-queues"></a>3. 设置 IO 队列
 
 UcmUcsiCx 将 UCSI 命令发送到客户端驱动程序，以发送到 PPM 固件。 命令在 WDF 队列中以这些 IOCTL 请求的形式进行发送。
 
--  [IOCTL_UCMUCSI_PPM_SEND_UCSI_DATA_BLOCK](/windows-hardware/drivers/ddi/ucmucsippmrequests/ni-ucmucsippmrequests-ioctl_ucmucsi_ppm_send_ucsi_data_block)
--  [IOCTL_UCMUCSI_PPM_GET_UCSI_DATA_BLOCK](/windows-hardware/drivers/ddi/ucmucsippmrequests/ni-ucmucsippmrequests-ioctl_ucmucsi_ppm_get_ucsi_data_block)
+- [IOCTL_UCMUCSI_PPM_SEND_UCSI_DATA_BLOCK](/windows-hardware/drivers/ddi/ucmucsippmrequests/ni-ucmucsippmrequests-ioctl_ucmucsi_ppm_send_ucsi_data_block)
+- [IOCTL_UCMUCSI_PPM_GET_UCSI_DATA_BLOCK](/windows-hardware/drivers/ddi/ucmucsippmrequests/ni-ucmucsippmrequests-ioctl_ucmucsi_ppm_get_ucsi_data_block)
 
 客户端驱动程序负责通过调用 [**UcmUcsiPpmSetUcsiCommandRequestQueue**](/windows-hardware/drivers/ddi/ucmucsippm/nf-ucmucsippm-ucmucsippmsetucsicommandrequestqueue)创建该队列并将其注册到 UcmUcsiCx。 必须对队列进行电源管理。
 
@@ -184,8 +187,8 @@ WDF_IO_QUEUE_CONFIG queueConfig;
 WDF_OBJECT_ATTRIBUTES_INIT(&attrib);
 attrib.ParentObject = GetObjectHandle();
 
-// In this example, even though the driver creates a sequential queue, 
-// UcmUcsiCx guarantees that will not send another request 
+// In this example, even though the driver creates a sequential queue,
+// UcmUcsiCx guarantees that will not send another request
 // until the previous one has been completed.
 
 
@@ -218,7 +221,7 @@ UcmUcsiPpmSetUcsiCommandRequestQueue(ppmObject, UcsiCommandRequestQueue);
 在此示例中，负载还表明固件和端口伙伴之间的电源传送协商状态更改成功。 OPM 状态机发送另一个 UCSI 命令： Get PDOs。
 与 "获取连接器状态" 命令类似，Get PDOs 命令成功完成后，OPM 状态机将通知 UCM 此事件。
 
-[EVT_WDF_IO_QUEUE_IO_DEVICE_CONTROL](/windows-hardware/drivers/ddi/wdfio/nc-wdfio-evt_wdf_io_queue_io_device_control)的客户端驱动程序的处理程序类似于此示例代码。 有关处理请求的信息，请参阅 [请求处理程序](../wdf/request-handlers.md)
+[EVT_WDF_IO_QUEUE_IO_DEVICE_CONTROL](/windows-hardware/drivers/ddi/wdfio/nc-wdfio-evt_wdf_io_queue_io_device_control)的客户端驱动程序的处理程序类似于此示例代码。 有关处理请求的信息，请参阅 [请求处理程序](/windows-hardware/drivers/wdf/request-handlers)
 
 ```cpp
 void EvtIoDeviceControl(

@@ -3,22 +3,20 @@ description: USBLPM 工具监视 USB 3.0 端口的 U0/U1/U2/U3 电源状态。
 title: USBLPM
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6215b530ee5ff1def0a740083bb04da84248c24f
-ms.sourcegitcommit: 937974aa9bbe0262a7ffe9631593fab48c4e7492
+ms.openlocfilehash: ada6e2b54e1e1d63633f9aeb167242b121c47882
+ms.sourcegitcommit: b75e9940d49410e2b952e96f325df67a039cd571
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "90009907"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92337026"
 ---
-# <a name="usblpm"></a>USBLPM
-
+# <a name="usblpm-tool"></a>USBLPM 工具
 
 USBLPM 工具监视 USB 3.0 端口的 U0/U1/U2/U3 电源状态。 它还可用于验证 U0/U1/U2 之间的转换是否正常进行。 此外，该工具可以启用或禁用系统中所有设备上的 U1 和/或 U2 状态。
 
 该工具包含在 [MUTT](./index.md)软件包中。
 
 ## <a name="usblpm"></a>USBLPM
-
 
 USBLPM 仅适用于 Windows 8，适用于 Microsoft USB 3.0 驱动程序堆栈。 此工具不作为此包中的批处理文件和脚本的一部分运行。 该工具适用于控制器、集线器和设备公司，用于监视新的 USB 3.0 电源状态。
 
@@ -32,7 +30,9 @@ USBLPM 在 **监视**、 **测试**或 **配置** 模式下运行。
 
 在监视模式下，可以通过此命令行选项更改句点：
 
-**usblpm/PollingInterval** &lt;*时间（毫秒）*&gt;
+```console
+usblpm /PollingInterval &lt;*time in milliseconds*&gt;
+```
 
 其中，时间值是从1到100000的整数。 **/PollingInterval**选项是可选的。 通常，不应更改时间段。
 
@@ -40,10 +40,10 @@ USBLPM 在 **监视**、 **测试**或 **配置** 模式下运行。
 
 **若要测试设备或集线器：**
 
-1.  启动工具。
-2.  将模式从监视更改为测试。
-3.  选择测试设备。
-4.  单击 " **启动** " 以启动测试运行。
+1. 启动工具。
+2. 将模式从监视更改为测试。
+3. 选择测试设备。
+4. 单击 " **启动** " 以启动测试运行。
 
 测试在10秒内完成，并向用户显示结果。
 
@@ -51,19 +51,22 @@ USBLPM 在 **监视**、 **测试**或 **配置** 模式下运行。
 
 若要测试集线器，请删除附加到它的所有设备并运行测试。 然后，附加一个或多个设备并重新运行测试。 但是，如果其中一个下游设备不能正确支持 U1/U2，则中心测试将失败。 因此，在中心运行测试之前，建议先在中心下游的设备上运行测试，以确保它们通过测试。
 
-**注意**   请不要在运行测试时更改设备拓扑。 如果动态更改了配置，则该工具的行为不确定。
-
- 
+> [!NOTE]
+>请不要在运行测试时更改设备拓扑。 如果动态更改了配置，则该工具的行为不确定。
 
 ### <a name="configuring-u1u2-states"></a>配置 U1/U2 状态
 
 可以通过运行以下命令，使用 USBLPM 为系统上的所有 USB 设备启用或禁用 U1 和 U2 状态：
 
-**usblpm/enable |/disable U1 |U2**
+```console
+usblpm /enable|/disable U1|U2
+```
 
 例如，以下命令将禁用 U2：
 
-**usblpm/disable U2**
+```console
+usblpm /disable U2
+```
 
 在配置模式下，该工具不会显示任何窗口。 运行该工具后，启用或禁用将保持不变。
 
@@ -71,16 +74,18 @@ USBLPM 在 **监视**、 **测试**或 **配置** 模式下运行。
 
 在为 SuperSpeed 中心测试选择性挂起之前，应执行以下步骤来禁用选择性挂起。
 
-1.  在设备管理器中，右键单击 **SuperSpeed 中心** ，然后选择 " **属性**"。
-2.  单击 " **电源管理** " 选项卡。
-3.  取消选中 **"允许计算机关闭此设备以节省电源"**。
+1. 在设备管理器中，右键单击 **SuperSpeed 中心** ，然后选择 " **属性**"。
+2. 单击 " **电源管理** " 选项卡。
+3. 取消选中 **"允许计算机关闭此设备以节省电源"**。
 
 使用 USBLPM 完成测试后，通过选中 " **允许计算机关闭此设备以节省电源" 以重新启用选择性挂起**，为中心启用选择性挂起。
 
-**注意**   USBLPM 当前未测试 USB 2.1 LPM。
-
- 
+> [!NOTE]
+> USBLPM 当前未测试 USB 2.1 LPM。
 
 ## <a name="related-topics"></a>相关主题
-[USB 测试工具](usb-test-tools.md)  
-[MUTT 软件包中的工具](mutt-software-package.md)
+
+[MUTT 软件包中的工具](mutt-software-package.md)  
+
+
+

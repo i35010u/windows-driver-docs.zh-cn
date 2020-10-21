@@ -4,15 +4,14 @@ description: 支持环境光线传感器
 ms.assetid: a0875084-c093-4659-91b9-375450f65234
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9507b79a3e11d3cff3cabbb63de9c8d4ddf62eb7
-ms.sourcegitcommit: 937974aa9bbe0262a7ffe9631593fab48c4e7492
+ms.openlocfilehash: 3bffad4aeb800db391c344bfe3b063cdbd5b8b3e
+ms.sourcegitcommit: b75e9940d49410e2b952e96f325df67a039cd571
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "90010103"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92337048"
 ---
 # <a name="supporting-ambient-light-sensors"></a>支持环境光线传感器
-
 
 环境光线传感器可以度量当前照明条件。 可以使用光线传感器的数据自动调整屏幕亮度和键盘照明。 您还可以创建用于调整当前照明条件的用户界面元素的光源感知应用程序。 在 Windows 8 中，具有环境光线传感器的自动亮度控制 (完全支持自适应亮度) 。
 
@@ -23,7 +22,6 @@ Windows 8 为 ACPI 3.0 b 兼容和符合 HID 标准的环境光线传感器实�
 对于不符合 ACPI 3.0 b 或符合 HID 标准的环境光线传感器，你必须创建一个传感器驱动程序以与传感器和位置平台集成。
 
 ## <a name="handling-light-sensor-properties"></a>处理光传感器属性
-
 
 对于 Windows 8，传感器 \_ 数据 \_ 类型 \_ 轻型级别 LUX 的正确 \_ 类型 \_ 是 VT \_ R4。 但对于 Windows 7，正确的类型为 VT \_ UI4。 因此，设备驱动程序需要正确处理这两种类型。
 
@@ -96,4 +94,4 @@ SetLuxChangeSensitivity(PROPVARIANT var)
 
 ## <a name="related-topics"></a>相关主题
 
-[传感器驱动程序开发基础知识](sensor-driver-development-basics.md)
+[传感器驱动程序逻辑](/windows-hardware/drivers/sensors/driver-logic--pseudo-code-)

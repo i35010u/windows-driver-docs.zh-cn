@@ -4,28 +4,26 @@ ms.assetid: F809BCE4-9176-4503-9EC7-B80AC229ABB5
 description: 更新传感器驱动程序支持的方法。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8c6b99dea76757168550bb276174d27be532e4d1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c72f0f0b748a647d3e8108a288fd47daab33ca00
+ms.sourcegitcommit: b75e9940d49410e2b952e96f325df67a039cd571
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63345193"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92336930"
 ---
 # <a name="driver-update-methods"></a>驱动程序更新方法
 
+传感器驱动程序支持内部方法，这些方法可处理当前报表间隔的更新、更改敏感度等。 伪代码使用以下方法演示这一点：
 
-传感器驱动程序支持内部方法处理更新到当前报告间隔、 更改敏感度，等等。 伪代码演示了这可以通过使用以下方法：
+- DriverUpdateCRI (sensorID) 
+- DriverUpdateCS (sensorID) 
+- DriverUpdateLDA (sensorID) 
+- DriverUpdateSensorState (sensorID、state、events) 
+- DriverUpdateDatafields (sensorID) 
 
--   DriverUpdateCRI(sensorID)
--   DriverUpdateCS(sensorID)
--   DriverUpdateLDA(sensorID)
--   DriverUpdateSensorState （sensorID、 状态、 事件）
--   DriverUpdateDatafields(sensorID)
+## <a name="sensor-reporting-field-updates"></a>传感器报告-现场更新
 
-## <a name="sensor-reporting-field-updates"></a>传感器报告字段更新
-
-
-**DriverUpdateCRI**， **DriverUpdateCS**，并**DriverUpdateLDA**方法演示如何将驱动程序更新当前报告间隔、 变化敏感度和位置数据准确性字段。
+**DriverUpdateCRI**、 **DriverUpdateCS**和**DriverUpdateLDA**方法演示了驱动程序如何更新当前报表间隔、更改敏感度和位置数据准确性字段。
 
 ```cpp
 DriverUpdateCRI(sensorID)
@@ -91,8 +89,7 @@ DriverUpdateLDA(sensorID)
 
 ## <a name="sensor-state-updates"></a>传感器状态更新
 
-
-**DriverUpdateSensorState**方法演示如何将驱动程序更新传感器事件报告和电源状态。
+**DriverUpdateSensorState**方法演示了驱动程序如何更新传感器事件报告和电源状态。
 
 ```cpp
 DriverUpdateSensorState(sensorID)
@@ -142,8 +139,7 @@ DriverUpdateSensorState(sensorID)
 
 ## <a name="data-field-updates"></a>数据字段更新
 
-
-**DriverUpdateDatafields**方法演示了一个驱动程序更新其数据字段的方式。
+**DriverUpdateDatafields**方法演示了驱动程序如何更新其数据字段。
 
 ```cpp
 DriverUpdateDatafields(sensorID)
@@ -187,7 +183,5 @@ DriverUpdateDatafields(sensorID)
 ```
 
 ## <a name="related-topics"></a>相关主题
-[传感器驱动程序开发的基础知识](sensor-driver-development-basics.md)
 
-
-
+[传感器驱动程序逻辑](/windows-hardware/drivers/sensors/driver-logic--pseudo-code-)

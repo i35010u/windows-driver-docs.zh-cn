@@ -1,31 +1,29 @@
 ---
 title: 设备更新方法
 ms.assetid: EB5158D7-6ACA-42BB-89E2-0937EAB94BA2
-description: 支持的传感器驱动程序，以更新传感器设备的方法。
+description: 传感器驱动程序支持的用于更新传感器设备的方法。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5d20b4d4e9dfe740e9a22c22c80a1d3921568435
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: da81b2731b4ca99cc8886e8ccf6178f80b680b54
+ms.sourcegitcommit: b75e9940d49410e2b952e96f325df67a039cd571
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63362285"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92336963"
 ---
 # <a name="device-update-methods"></a>设备更新方法
 
+传感器驱动程序支持更新传感器设备的方法。 伪代码使用以下方法演示这一点：
 
-传感器驱动程序支持更新传感器设备的方法。 伪代码演示了这可以通过使用以下方法：
+- DriverUpdateDeviceCRI
+- DriverUpdateDeviceCS
+- DriverUpdateDeviceLDA
+- DriverUpdateDeviceRS
+- DriverUpdateDevicePS
 
--   DriverUpdateDeviceCRI
--   DriverUpdateDeviceCS
--   DriverUpdateDeviceLDA
--   DriverUpdateDeviceRS
--   DriverUpdateDevicePS
+## <a name="device-reporting-reporting-updates"></a>设备报表报表更新
 
-## <a name="device-reporting-reporting-updates"></a>Reporting 报告更新的设备
-
-
-**DriverUpdateDeviceCRI**， **DriverUpdateDeviceCS**，并**DriverUpdateDeviceLDA**方法演示如何将驱动程序更新当前报告间隔，更改敏感度，并在设备上的位置数据准确性字段。
+**DriverUpdateDeviceCRI**、 **DriverUpdateDeviceCS**和**DriverUpdateDeviceLDA**方法演示了驱动程序如何更新设备上的当前报表间隔、更改敏感度和位置数据准确性字段。
 
 ```cpp
 effectiveCRI DriverUpdateDeviceCRI(sensorID, requestedCRI)
@@ -101,8 +99,7 @@ effectiveLDA DriverUpdateDeviceLDA(sensorID, requestedLDA)
 
 ## <a name="device-interrupt-updates"></a>设备中断更新
 
-
-**DriverUpdateDeviceRS**方法演示了如何将驱动程序启用或禁用设备上的中断。
+**DriverUpdateDeviceRS**方法演示驱动程序如何启用或禁用设备上的中断。
 
 ```cpp
 effectiveRS DriverUpdateDeviceRS(sensorID, requestedRS)
@@ -137,8 +134,7 @@ effectiveRS DriverUpdateDeviceRS(sensorID, requestedRS)
 
 ## <a name="device-power-state-updates"></a>设备电源状态更新
 
-
-**DriverUpdateDevicePS**方法演示了如何将驱动程序设置设备上的电源状态。
+**DriverUpdateDevicePS**方法演示驱动程序如何设置设备的电源状态。
 
 ```cpp
 effectivePS DriverUpdateDevicePS(sensorID, requestedPS)
@@ -165,7 +161,5 @@ effectivePS DriverUpdateDevicePS(sensorID, requestedPS)
 ```
 
 ## <a name="related-topics"></a>相关主题
-[传感器驱动程序开发的基础知识](sensor-driver-development-basics.md)
 
-
-
+[传感器驱动程序逻辑](/windows-hardware/drivers/sensors/driver-logic--pseudo-code-)

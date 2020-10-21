@@ -32,15 +32,14 @@ api_type:
 - HeaderDef
 ms.date: 01/04/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 9e6ff4a8d766c4d9255e086c5c6ec18b31294ea4
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: aed2f17e388cd4fe51d6b7d32785eb5098332fd2
+ms.sourcegitcommit: b75e9940d49410e2b952e96f325df67a039cd571
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91733735"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92337010"
 ---
 # <a name="sensor-properties"></a>传感器属性
-
 
 传感器和位置平台定义标识传感器属性的常量。 传感器制造商还可以定义自己的属性。
 
@@ -50,9 +49,8 @@ ms.locfileid: "91733735"
 
 {7F8383EC-D3EC-495C-A8CF-B8BBE85C2920}.
 
-**重要提示**   不要使用此基值来定义自己的属性键。
-
- 
+> [!IMPORTANT]
+> 不要使用此基值来定义自己的属性键。
 
 指定为读/写的属性的值可由客户端应用程序指定。 指定为 static 的属性的值不能随时间而更改。 传感器必须支持指定为 "必需" 的属性。
 
@@ -72,7 +70,7 @@ ms.locfileid: "91733735"
 <td><span id="SENSOR_PROPERTY_ACCURACY_"></span><span id="sensor_property_accuracy_"></span>
 <strong>SENSOR_PROPERTY_ACCURACY</strong> (PID = 17) </td>
 <td><p>VT_UNKNOWN</p>
-<p>只读。 包含传感器数据类型名称及其关联准确性的<a href="/previous-versions//ms740012(v=vs.85)" data-raw-source="[IPortableDeviceValues](/previous-versions//ms740012(v=vs.85))">IPortableDeviceValues</a>对象。 准确性值表示可能与真实值之间的差异。 使用与数据字段相同的单位表示准确性值，但在其他情况下也是如此。</p></td>
+<p>只读。 包含传感器数据类型名称及其关联准确性的[IPortableDeviceValues](/windows/win32/wpd_sdk/iportabledevicevalues)对象。 准确性值表示可能与真实值之间的差异。 使用与数据字段相同的单位表示准确性值，但在其他情况下也是如此。</p></td>
 </tr>
 <tr class="even">
 <td><span id="SENSOR_PROPERTY_CHANGE_SENSITIVITY"></span><span id="sensor_property_change_sensitivity"></span>
@@ -89,7 +87,7 @@ ms.locfileid: "91733735"
 <td><span id="SENSOR_PROPERTY_CONNECTION_TYPE"></span><span id="sensor_property_connection_type"></span>
 <strong>SENSOR_PROPERTY_CONNECTION_TYPE</strong> (PID = 11) </td>
 <td><p>VT_UI4</p>
-<p>只读。 包含当前连接类型的<a href="/windows/win32/api/sensorsapi/ne-sensorsapi-_midl___midl_itf_sensorsapi_0000_0000_0002" data-raw-source="[&lt;strong&gt;SensorConnectionType&lt;/strong&gt;](/windows/win32/api/sensorsapi/ne-sensorsapi-__midl___midl_itf_sensorsapi_0000_0000_0002)"><strong>SensorConnectionType</strong></a>值。</p></td>
+<p>只读。 包含当前连接类型的[SensorConnectionType](/windows/win32/api/sensorsapi/ne-sensorsapi-sensorconnectiontype)值。</p></td>
 </tr>
 <tr class="even">
 <td><span id="SENSOR_PROPERTY_CURRENT_REPORT_INTERVAL"></span><span id="sensor_property_current_report_interval"></span>
@@ -98,7 +96,7 @@ ms.locfileid: "91733735"
 <p>读/写。 传感器数据报表生成的当前运行时间（以毫秒为单位）。</p>
 <p>如果将值设置为零，则表示驱动程序返回：默认报表间隔，或者是最小报表间隔。 如果仅有一个客户端连接，则驱动程序应返回默认报告间隔。 如果连接了多个客户端，则驱动程序应返回其中任何一个客户端所请求的最小间隔。</p>
 <p>应用程序可以将此值设置为请求特定的报表间隔，但多个应用程序可能使用同一个驱动程序。 因此，驱动程序将基于内部逻辑来确定真实的报表时间间隔。 例如，驱动程序可能始终使用由任何调用方请求的最短报表间隔。</p>
-<p>有关如何使用此属性的示例，请参阅 <a href="/windows/desktop/SensorsAPI/using-sensor-api-events" data-raw-source="[Using Sensor API Events](/windows/desktop/SensorsAPI/using-sensor-api-events)">使用传感器 API 事件</a>。</p></td>
+<p>有关如何使用此属性的示例，请参阅[使用传感器 API 事件](/windows/desktop/SensorsAPI/using-sensor-api-events) </a> 。</p></td>
 </tr>
 <tr class="odd">
 <td><span id="SENSOR_PROPERTY_DESCRIPTION"></span><span id="sensor_property_description"></span>
@@ -124,14 +122,13 @@ ms.locfileid: "91733735"
 <strong>SENSOR_PROPERTY_LIGHT_RESPONSE_CURVE</strong> (PID = 16) </td>
 <td><p><strong>VT_VECTOR |VT_UI1</strong></p>
 <p>只读。 一个计数数组，其中包含一对值，这些值提供在环境光线级别与偏移量之间的映射。 这些值表示为百分比。 Windows 中的自适应亮度功能将这些值应用于用户的当前显示亮度首选项。</p>
-<p>矢量类型的数据始终序列化为 <strong>VT_UI1</strong> (一个) 的无符号、1字节字符数组。 此属性实际包含每个值作为4字节无符号整数 (<strong>VT_UI4) </strong>。 有关使用数组的信息，请参阅 <a href="/windows/desktop/SensorsAPI/retrieving-vector-types" data-raw-source="[Retrieving Vector Types](/windows/desktop/SensorsAPI/retrieving-vector-types)">检索矢量类型</a>。</p></td>
+<p>矢量类型的数据始终序列化为 <strong>VT_UI1</strong> (一个) 的无符号、1字节字符数组。 此属性实际包含每个值作为4字节无符号整数 (<strong>VT_UI4) </strong>。 有关使用数组的信息，请参阅[检索矢量类型](/windows/desktop/SensorsAPI/retrieving-vector-types) </a> 。</p></td>
 </tr>
 <tr class="odd">
 <td><span id="SENSOR_PROPERTY_LOCATION_DESIRED_ACCURACY"></span><span id="sensor_property_location_desired_accuracy"></span>
 <strong>SENSOR_PROPERTY_LOCATION_DESIRED_ACCURACY</strong> (PID = 19) </td>
 <td><p>VT_UI4</p>
-<p>读/写。 <a href="/previous-versions/windows/desktop/legacy/dd756639(v=vs.85)" data-raw-source="[&lt;strong&gt;LOCATION_DESIRED_ACCURACY&lt;/strong&gt;](/previous-versions/windows/desktop/legacy/dd756639(v=vs.85))"><strong>LOCATION_DESIRED_ACCURACY</strong></a>枚举中的一个值，该值指示客户端应用程序请求的准确性处理的类型。</p>
-<p><strong>LOCATION_DESIRED_ACCURACY_DEFAULT</strong> (0) 指示传感器应使用其可优化电源使用情况和其他成本注意事项的准确性。</p>
+<p>读/写。 [LOCATION_DESIRED_ACCURACY](/windows/win32/api/sensorsapi/ne-sensorsapi-location_desired_accuracy)枚举中的一个值，该值指示客户端应用程序请求的准确性处理的类型。</p><p><strong> LOCATION_DESIRED_ACCURACY_DEFAULT</strong> (0) 指示传感器应使用其可优化电源使用情况和其他成本注意事项的准确性。</p>
 <p><strong>LOCATION_DESIRED_ACCURACY_HIGH</strong> (1) 指示传感器应提供最准确的报告。 这包括使用可能收费的服务或消耗更高级别的电池电量或连接带宽。</p></td>
 </tr>
 <tr class="even">
@@ -156,7 +153,7 @@ ms.locfileid: "91733735"
 <td><span id="SENSOR_PROPERTY_PERSISTENT_UNIQUE_ID"></span><span id="sensor_property_persistent_unique_id"></span>
 <strong>SENSOR_PROPERTY_PERSISTENT_UNIQUE_ID</strong> (PID = 5) </td>
 <td><p><strong>VT_CLSID</strong></p>
-<p>只读。 必需，static。 标识传感器的 <strong>GUID</strong> 。 对于设备上的每个传感器，此值必须是唯一的，对于在计算机上枚举的同一模型，此值必须是唯一的。 此属性包含通过调用 <a href="/windows/win32/api/sensorsapi/nf-sensorsapi-isensor-getid" data-raw-source="[&lt;strong&gt;ISensor::GetID&lt;/strong&gt;](/windows/win32/api/sensorsapi/nf-sensorsapi-isensor-getid)"><strong>ISensor：： GetID</strong></a> 获取的相同值。</p></td>
+<p>只读。 必需，static。 标识传感器的 <strong>GUID</strong> 。 对于设备上的每个传感器，此值必须是唯一的，对于在计算机上枚举的同一模型，此值必须是唯一的。 此属性包含通过调用 [ISensor：： GetID](/windows/desktop/api/sensorsapi/nf-sensorsapi-isensor-getid)获取的相同值。</p></td>
 </tr>
 <tr class="even">
 <td><span id="SENSOR_PROPERTY_RANGE_MAXIMUM"></span><span id="sensor_property_range_maximum"></span>
@@ -188,9 +185,9 @@ ms.locfileid: "91733735"
 <strong>SENSOR_PROPERTY_STATE</strong> (PID = 3) </td>
 <td><p>VT_UI4</p>
 <p>只读。 必需。</p>
-<p>包含当前传感器状态的<a href="/windows/win32/api/sensorsapi/ne-sensorsapi-_midl___midl_itf_sensorsapi_0000_0000_0001" data-raw-source="[&lt;strong&gt;SensorState&lt;/strong&gt;](/windows/win32/api/sensorsapi/ne-sensorsapi-__midl___midl_itf_sensorsapi_0000_0000_0001)"><strong>SensorState</strong></a>值。</p>
+<p>包含当前传感器状态的[SensorState](/windows/win32/api/sensorsapi/ne-sensorsapi-sensorstate)值。</p>
 <div class="alert">
-<strong>注意</strong>  若要更新此属性，请通过调用 <a href="/windows-hardware/drivers/ddi/sensorsclassextension/nf-sensorsclassextension-isensorclassextension-poststatechange" data-raw-source="[&lt;strong&gt;ISensorClassExtension::PostStateChange&lt;/strong&gt;](/windows-hardware/drivers/ddi/sensorsclassextension/nf-sensorsclassextension-isensorclassextension-poststatechange)"><strong>ISensorClassExtension：:P oststatechange</strong></a>引发状态更改事件。
+<strong>注意</strong>  若要更新此属性，请通过调用 [ISensorClassExtension：:P oststatechange](/windows-hardware/drivers/ddi/sensorsclassextension/nf-sensorsclassextension-isensorclassextension-poststatechange)引发状态更改事件。
 </div>
 <div>
  
@@ -234,8 +231,7 @@ ms.locfileid: "91733735"
 </tbody>
 </table>
 
-<a name="requirements"></a>要求
-------------
+## <a name="requirements"></a>要求
 
 <table>
 <colgroup>
@@ -252,19 +248,18 @@ ms.locfileid: "91733735"
 <td><p>无受支持的版本</p></td>
 </tr>
 <tr class="odd">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>传感器。h</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅
+## <a name="see-also"></a>另请参阅
 
+[**GetProperties**](/windows/desktop/api/sensorsapi/nf-sensorsapi-isensor-getproperties)
 
-[**GetProperties**](/windows/win32/api/sensorsapi/nf-sensorsapi-isensor-getproperties)
+[**GetProperty**](/windows/desktop/api/sensorsapi/nf-sensorsapi-isensor-getproperty)
 
-[**GetProperty**](/windows/win32/api/sensorsapi/nf-sensorsapi-isensor-getproperty)
+[IPortableDeviceValues]/windows/win32/wpd_sdk/iportabledevicevalues) 
 
-[IPortableDeviceValues](/windows/win32/wpd_sdk/iportabledevicevalues)
-
-[**SetProperties**](/windows/win32/api/sensorsapi/nf-sensorsapi-isensor-setproperties)
+[**SetProperties**](/windows/desktop/api/sensorsapi/nf-sensorsapi-isensor-setproperties)

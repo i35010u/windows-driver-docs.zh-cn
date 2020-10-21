@@ -3,15 +3,14 @@ description: '本主题介绍用于测试和调试特定硬件事件 ( # A0) 的
 title: USB 硬件验证程序 (USB3HWVerifierAnalyzer.exe)
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8b2ecf958358745db23ce90efb5973abae472c58
-ms.sourcegitcommit: 15caaf6d943135efcaf9975927ff3933957acd5d
+ms.openlocfilehash: ff90c2b0327784a3996fa47353a58ce9a3a53971
+ms.sourcegitcommit: b75e9940d49410e2b952e96f325df67a039cd571
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88968966"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92337056"
 ---
 # <a name="usb-hardware-verifier-usb3hwverifieranalyzerexe"></a>USB 硬件验证程序 (USB3HWVerifierAnalyzer.exe)
-
 
 本主题介绍用于测试和调试特定硬件事件 ( # A0) 的 USB 硬件验证程序工具。
 
@@ -19,25 +18,23 @@ ms.locfileid: "88968966"
 
 USB 硬件验证程序可以执行以下任务：
 
--   实时捕获硬件事件并显示信息。
--   生成包含所有事件相关信息的跟踪文件。
--   分析现有跟踪文件中的事件信息。
+- 实时捕获硬件事件并显示信息。
+- 生成包含所有事件相关信息的跟踪文件。
+- 分析现有跟踪文件中的事件信息。
 
 本主题包含以下各节：
 
--   [获取 USB 硬件验证器分析器工具](#getting-the-usb-hardware-verifier-analyzer-tool)
--   [如何使用 USB 硬件验证程序捕获事件](#how-to-capture-events-by-using-a-usb-hardware-verifier)
--   [USB 硬件验证程序标志](#usb-hardware-verifier-flags)
+- [获取 USB 硬件验证器分析器工具](#getting-the-usb-hardware-verifier-analyzer-tool)
+- [如何使用 USB 硬件验证程序捕获事件](#how-to-capture-events-by-using-a-usb-hardware-verifier)
+- [USB 硬件验证程序标志](#usb-hardware-verifier-flags)
 
 ## <a name="getting-the-usb-hardware-verifier-analyzer-tool"></a>获取 USB 硬件验证器分析器工具
-
 
 USB 硬件验证器工具随 MUTT 软件包一起提供，可从 [MUTT 软件包中的工具](mutt-software-package.md)下载。
 
 "工具包" 包含多个工具，可执行压力和传输测试 (包括) 和 SuperSpeed 测试的电源转换。 此包还包含一个自述文档， (作为单独的下载) 提供。 本文档提供了有关 MUTT 硬件类型的简要概述。 它提供有关应运行的各种测试的分步指导，并为控制器、集线器、设备和 BIOS/UEFI 测试建议拓扑。
 
 ## <a name="how-to-capture-events-by-using-a-usb-hardware-verifier"></a>如何使用 USB 硬件验证程序捕获事件
-
 
 若要使用硬件验证程序捕获事件，请执行以下步骤：
 
@@ -79,8 +76,6 @@ USB 硬件验证器工具随 MUTT 软件包一起提供，可从 [MUTT 软件包
    </tr>
    </tbody>
    </table>
-
-     
 
 2. 运行要捕获其硬件事件的测试方案。
 
@@ -215,8 +210,7 @@ USB 硬件验证器工具随 MUTT 软件包一起提供，可从 [MUTT 软件包
 
 ## <a name="usb-hardware-verifier-flags"></a>USB 硬件验证程序标志
 
-
-| Flag                                                | 表示 .。。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
+| 标志                                                | 表示 .。。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
 |-----------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | DeviceHwVerifierClientInitiatedResetPipe            | 客户端驱动程序通过在响应 i/o 故障时重置特定管道来启动恢复操作。 某些客户端驱动程序可能会在其他情况下执行错误恢复。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
 | DeviceHwVerifierClientInitiatedResetPort            | 客户端驱动程序通过在响应 i/o 故障时重置设备来启动恢复操作。 某些客户端驱动程序可能会在其他情况下执行错误恢复。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
@@ -241,10 +235,6 @@ USB 硬件验证器工具随 MUTT 软件包一起提供，可从 [MUTT 软件包
 | HubHwVerifierPortOverCurrent                        | 下游端口报告了过流状态。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
 | HubHwVerifierControllerOperationFailure             | 控制器操作 (例如，启用设备，为连接到目标端口的设备配置终结点) 失败。 \_不会捕获设置地址和重置终结点请求中的失败。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
 
- 
-
 ## <a name="related-topics"></a>相关主题
-[USB 诊断和测试指南](usb-driver-testing-guide.md)  
 
-
-
+[Microsoft USB 测试工具-MUTT 设备](/windows-hardware/drivers/usbcon/microsoft-usb-test-tool--mutt--devices)
