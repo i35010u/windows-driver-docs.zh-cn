@@ -5,12 +5,12 @@ ms.assetid: 51FC55BB-FD7A-4FDE-B1FC-02745AC03E33
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 SIO_SET_WFP_CONNECTION_REDIRECT_RECORDS 控制代码网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 9b72fb3f12b870040bf90df7484792f9eb5aa802
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: ed11e8b3082c04e5ab09e8d440638d1691b7acdb
+ms.sourcegitcommit: a866b3470025d85b25a48857a81f893179698e7e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89212765"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92356003"
 ---
 # <a name="sio_set_wfp_connection_redirect_records-control-code"></a>SIO \_ SET \_ WFP \_ 连接 \_ 重定向 \_ 记录控制代码
 
@@ -31,7 +31,7 @@ WFP 重定向记录是不透明数据的缓冲区，WFP 必须在出站代理连
 <thead>
 <tr class="header">
 <th>参数</th>
-<th>值</th>
+<th>“值”</th>
 </tr>
 </thead>
 <tbody>
@@ -80,7 +80,7 @@ Winsock 客户端必须分配一个缓冲区，并在 *InputBuffer* 和 InputSiz
 
 在调用此类型的请求的 [**WskControlSocket**](/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_control_socket) 函数时，Winsock 客户端必须指定指向 IRP 和完成例程的指针。 在 WSK 子系统完成 IRP 之前，客户端不能释放缓冲区。 完成 IRP 后，子系统将调用完成例程。 在完成例程中，客户端必须检查 IRP 状态，并释放以前为请求分配的所有资源。
 
-**注意**   还可以使用[**SIO \_ SET \_ WFP \_ 连接 \_ 重定向 \_ 记录 (SDK) **](/previous-versions/windows/desktop/legacy/hh859714(v=vs.85))在用户模式应用程序中执行此查询。
+**注意**  还可以使用 [**SIO \_ SET \_ WFP \_ 连接 \_ 重定向 \_ 记录 (SDK) **](/windows/win32/winsock/sio-set-wfp-connection-redirect-records)在用户模式应用程序中执行此查询。
 
  
 
@@ -106,7 +106,7 @@ Winsock 客户端必须分配一个缓冲区，并在 *InputBuffer* 和 InputSiz
 <td><p>Windows Server 2012</p></td>
 </tr>
 <tr class="odd">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Mstcpip.h</td>
 </tr>
 <tr class="even">
@@ -125,7 +125,7 @@ Winsock 客户端必须分配一个缓冲区，并在 *InputBuffer* 和 InputSiz
 
 [**SIO \_ 查询 \_ WFP \_ 连接 \_ 重定向 \_ 记录**](sio-query-wfp-connection-redirect-records.md)
 
-[**SIO \_ SET \_ WFP \_ 连接 \_ 重定向 \_ 记录 (SDK) **](/previous-versions/windows/desktop/legacy/hh859714(v=vs.85))
+[**SIO \_ SET \_ WFP \_ 连接 \_ 重定向 \_ 记录 (SDK) **](/windows/win32/winsock/sio-set-wfp-connection-redirect-records)
 
  
 

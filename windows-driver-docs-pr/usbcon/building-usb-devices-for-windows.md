@@ -3,12 +3,12 @@ description: 本部分提供了 USB 外围设备制造商的链接。
 title: 为 Windows 构建 USB 设备的概述
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d7cea5aed6269bf36bb4a918982948b426643305
-ms.sourcegitcommit: b75e9940d49410e2b952e96f325df67a039cd571
+ms.openlocfilehash: 7e1e3dfa689fdd27596fc37cccf402d590d7d8d2
+ms.sourcegitcommit: a866b3470025d85b25a48857a81f893179698e7e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92337042"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92356029"
 ---
 # <a name="overview-of-building-usb-devices-for-windows"></a>为 Windows 构建 USB 设备的概述
 
@@ -57,7 +57,7 @@ IHV 可以定义某些 Microsoft 操作系统 (OS) 功能描述符，将兼容�
 [链接 USB 3.0 硬件中的电源管理](/windows-hardware/drivers/usbcon/usb-3-0-lpm-mechanism-)  
 本文档为硬件供应商和 Oem 提供准则，使其能够通过将链接电源管理 (LPM) 与选择性挂起结合使用来实现 USB 设备的电源管理。 它介绍了从 U1 到 U2 的硬件转换，并提供了有关 USB 控制器、集线器和设备中 LPM 实现的常见缺陷的信息。
 
-[揭密选择性挂起](link-power-management-in-usb-3-0-hardware.md)  
+[揭密选择性挂起](https://techcommunity.microsoft.com/t5/microsoft-usb-blog/demystifying-usb-selective-suspend/ba-p/270736)  
 此博客文章介绍 USB 驱动程序堆栈如何处理 USB 3.0 设备中的功能和选择性挂起。
 
 ## <a name="debugging-and-diagnostic-tools"></a>调试和诊断工具

@@ -5,12 +5,12 @@ ms.assetid: D04C63B8-DD08-4943-9F83-B5D05F4F2CCF
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 SIO_QUERY_WFP_CONNECTION_REDIRECT_RECORDS 控制代码网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 750d6eda2b5466179ed94715b5c2db9ff72a6cf3
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: ff9f62cc57edad4ecfbc3bfb4322be9c17fbe0c0
+ms.sourcegitcommit: a866b3470025d85b25a48857a81f893179698e7e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89212769"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92356017"
 ---
 # <a name="sio_query_wfp_connection_redirect_records-control-code"></a>SIO \_ 查询 \_ WFP \_ 连接 \_ 重定向 \_ 记录控制代码
 
@@ -19,7 +19,7 @@ ms.locfileid: "89212769"
 
 WFP 重定向记录是不透明数据的缓冲区，WFP 必须在出站代理连接上设置，以便重定向的连接和原始连接在逻辑上是相关的。
 
-**注意**   **SIO \_ 查询 \_ wfp \_ 连接 \_ 重定向 \_ 记录**查询只能在**FWPS \_ 层 \_ ale \_ connect \_ 重定向 \_ V4**或**FWPS \_ 层 \_ ale \_ connect \_ 重定向 \_ V6**层上通过 WFP 客户端重定向时使用。
+**注意** **SIO \_ 查询 \_ wfp \_ 连接 \_ 重定向 \_ 记录** 查询只能在 **FWPS \_ 层 \_ ale \_ connect \_ 重定向 \_ V4** 或 **FWPS \_ 层 \_ ale \_ connect \_ 重定向 \_ V6** 层上通过 WFP 客户端重定向时使用。
 
  
 
@@ -35,7 +35,7 @@ WFP 重定向记录是不透明数据的缓冲区，WFP 必须在出站代理连
 <thead>
 <tr class="header">
 <th>参数</th>
-<th>值</th>
+<th>“值”</th>
 </tr>
 </thead>
 <tbody>
@@ -85,7 +85,7 @@ WFP 重定向记录是不透明数据的缓冲区，WFP 必须在出站代理连
 -   它可以将 *OutputBuffer* 设置为大小大约为 1 KB 的大缓冲区。 如果输出缓冲区大小不够大，则 [**WskControlSocket**](/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_control_socket) 将返回 **状态 \_ 缓冲区 \_ 太 \_ 小** ，并且 *OutputSizeReturned* 将包含所需的缓冲区大小。 然后，可以分配更大的缓冲区，并使用**SIO \_ 查询 \_ WFP \_ 连接 \_ 重定向 \_ 记录**请求并将*OutputBuffer*设置为更大的缓冲区再次调用**WskControlSocket** 。
 -   也可以将 *OutputSize* 参数设置为0，将 *OUTPUTBUFFER* 设置为 NULL，然后调用 [**WskControlSocket**](/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_control_socket)。 完成后， **WskControlSocket** 函数将检索 *OutputSizeReturned* 参数中的输出缓冲区大小（以字节为单位）。 然后，可以分配适当大小的缓冲区，并使用**SIO \_ 查询 \_ WFP \_ 连接 \_ 重定向 \_ 记录**请求并将*OutputBuffer*设置为缓冲区再次调用**WskControlSocket** 。
 
-**注意**   还可以通过使用[**SIO \_ 查询 \_ WFP \_ 连接 \_ 重定向 \_ 记录 (SDK) **](/previous-versions/windows/desktop/legacy/hh859713(v=vs.85))在用户模式应用程序中执行此查询。
+**注意**  还可以通过使用 [**SIO \_ 查询 \_ WFP \_ 连接 \_ 重定向 \_ 记录 (SDK) **](/windows/win32/winsock/sio-query-wfp-connection-redirect-records)在用户模式应用程序中执行此查询。
 
  
 
@@ -113,7 +113,7 @@ WFP 重定向记录是不透明数据的缓冲区，WFP 必须在出站代理连
 <td><p>Windows Server 2012</p></td>
 </tr>
 <tr class="odd">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Mstcpip.h</td>
 </tr>
 <tr class="even">
@@ -132,7 +132,7 @@ WFP 重定向记录是不透明数据的缓冲区，WFP 必须在出站代理连
 
 [**SIO \_ 查询 \_ WFP \_ 连接 \_ 重定向 \_ 上下文**](sio-query-wfp-connection-redirect-context.md)
 
-[**SIO \_ 查询 \_ WFP \_ 连接 \_ (SDK 的重定向 \_ 记录) **](/previous-versions/windows/desktop/legacy/hh859713(v=vs.85))
+[**SIO \_ 查询 \_ WFP \_ 连接 \_ (SDK 的重定向 \_ 记录) **](/windows/win32/winsock/sio-query-wfp-connection-redirect-records)
 
 [**SIO \_ 设置 \_ WFP \_ 连接 \_ 重定向 \_ 记录**](sio-set-wfp-connection-redirect-records.md)
 

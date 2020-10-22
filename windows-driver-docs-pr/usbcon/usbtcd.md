@@ -3,12 +3,12 @@ description: USBTCD 是用户模式应用程序和内核模式驱动程序的组
 title: USBTCD
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6b5c2c92b9fb9a6a1e49260322d5913652827b7a
-ms.sourcegitcommit: b75e9940d49410e2b952e96f325df67a039cd571
+ms.openlocfilehash: 1da859bb5e60044239ba8f07277dc30f45bcba18
+ms.sourcegitcommit: a866b3470025d85b25a48857a81f893179698e7e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92336988"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92356027"
 ---
 # <a name="usbtcd-package"></a>USBTCD 包
 
@@ -70,4 +70,5 @@ usbtcd -?
 ## <a name="related-topics"></a>相关主题
 
 [MUTT 软件包中的工具](mutt-software-package.md)  
+
 [Microsoft USB 测试工具 (MUTT) 设备](microsoft-usb-test-tool--mutt--devices.md)  

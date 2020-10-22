@@ -4,12 +4,12 @@ description: 传感器驱动程序最佳做法
 ms.assetid: adb20558-aa94-41a9-9d26-9d757bdb0999
 ms.date: 07/20/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: bb14f60f709f5f9b29a9d58953271ec7f160c29c
-ms.sourcegitcommit: 937974aa9bbe0262a7ffe9631593fab48c4e7492
+ms.openlocfilehash: 6e646adc64c82ec607327e9fe7fb9d2fadd0ecf7
+ms.sourcegitcommit: a866b3470025d85b25a48857a81f893179698e7e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "90010129"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92356041"
 ---
 # <a name="sensor-driver-best-practices"></a>传感器驱动程序最佳做法
 
@@ -42,7 +42,7 @@ Windows 硬件认证计划允许硬件制造商接收其设备符合使用 Windo
 
 -   设置或返回 [属性](sensor-properties.md)时，驱动程序必须使用正确的类型。
 
--   返回 [数据字段](sensor-categories--types--and-data-fields.md)时，驱动程序必须使用正确的类型。
+-   返回 [数据字段](common-data-fields.md)时，驱动程序必须使用正确的类型。
 
 ## <a name="events"></a>事件
 
@@ -51,6 +51,7 @@ Windows 硬件认证计划允许硬件制造商接收其设备符合使用 Windo
 -   仅当当前报表间隔已过并且超出了更改敏感度时才引发数据更新事件。 这很大程度上是设备固件的一个功能。 但是，驱动程序必须在多个客户端之间进行仲裁。 有关详细信息，请参阅 [关于传感器驱动程序事件](about-sensor-driver-events.md)。
 
 ## <a name="related-topics"></a>相关主题
+
 [写入位置传感器驱动程序](../gnss/writing-a-location-sensor-driver.md) 
 [支持环境光线传感器](supporting-ambient-light-sensors.md) 
 [传感器地理位置驱动程序示例](../gnss/sensors-geolocation-driver-sample.md)

@@ -4,12 +4,12 @@ description: 本主题介绍了在 Windows 10 中实现传感器数据批处理�
 ms.assetid: E64B9CE0-2C76-430A-ABE0-717BD27BCA8A
 ms.date: 07/20/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 1a4b32e100aa33ef6c1ca4575e01290e821a83e5
-ms.sourcegitcommit: 937974aa9bbe0262a7ffe9631593fab48c4e7492
+ms.openlocfilehash: d3fd70c580d8888123d99a3ce2364fbe474afa2c
+ms.sourcegitcommit: a866b3470025d85b25a48857a81f893179698e7e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "90010359"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92356005"
 ---
 # <a name="sensor-data-batching-for-power-savings"></a>为了节能而对传感器数据进行批处理
 
@@ -55,7 +55,7 @@ ms.locfileid: "90010359"
 
 -   [EvtSensorSetBatchLatency](/windows-hardware/drivers/ddi/sensorscx/ns-sensorscx-_sensor_controller_config) 这是一个为指定传感器设置批处理延迟的回调函数。 驱动程序应将批处理延迟设置为小于或等于 *BatchLatencyMs* 参数的值，具体取决于缓冲区的可用性。
 
-驱动程序还必须实现所有必需的 DDSI 函数。 有关详细信息，请参阅 [传感器 DDSI 函数](sensor-ddsi-functions.md)。
+驱动程序还必须实现所有必需的 DDSI 函数。 有关详细信息，请参阅 [_SENSOR_CONTROLLER_CONFIG 结构](https://docs.microsoft.com/windows-hardware/drivers/ddi/sensorscx/ns-sensorscx-_sensor_controller_config)。
 
 对于传感器类扩展指定批处理延迟，这是可选的。 所有传感器的默认批处理延迟为零 (0) ，用于指示不会对样本进行批处理。 仅当类扩展调用 **EvtSensorSetBatchLatency** 来设置批处理延迟值时，才会以批处理形式传递传感器示例。 否则，示例将按定期的数据间隔速率交付。
 
@@ -98,7 +98,7 @@ ms.locfileid: "90010359"
 
 ![序列图显示在启动传感器之前，类扩展设置批处理延迟、数据间隔和数据阈值的情况。](images/batch-scenario2.png)
 
-**方案 3**
+**方案3**
 
 在此方案中，传感器类扩展在启动传感器之前设置批处理延迟和数据间隔。 传感器开始后会定期提供批次，同时遵从设置属性。 传感器类扩展在传感器运行时更改批处理延迟和数据间隔，驱动程序会立即根据新值开始交付样本，而不会在运行时丢失任何数据样本。
 

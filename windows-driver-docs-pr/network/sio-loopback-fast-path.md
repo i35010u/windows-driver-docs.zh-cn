@@ -5,17 +5,17 @@ ms.assetid: 5A5AD945-9EFD-4157-AFA4-F9C3995B7C43
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 SIO_LOOPBACK_FAST_PATH 控制代码网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: c8096d244a5a5b8965e4b49a01c86c3c619baa18
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 3ca5da89519c56f7b4bad32f58e5cb31968d7402
+ms.sourcegitcommit: a866b3470025d85b25a48857a81f893179698e7e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89212777"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92356007"
 ---
 # <a name="sio_loopback_fast_path-control-code"></a>SIO \_ 环回 \_ 快速 \_ 路径控制代码
 
 
-**重要提示**   **SIO \_ 环回 \_ FAST \_ 路径**已弃用，不建议在代码中使用。
+**重要提示** **SIO \_ 环回 \_ FAST \_ 路径** 已弃用，不建议在代码中使用。
 
  
 
@@ -31,7 +31,7 @@ ms.locfileid: "89212777"
 <thead>
 <tr class="header">
 <th>参数</th>
-<th>值</th>
+<th>“值”</th>
 </tr>
 </thead>
 <tbody>
@@ -131,7 +131,7 @@ ms.locfileid: "89212777"
 <td><p>Windows Server 2012</p></td>
 </tr>
 <tr class="odd">
-<td><p>标头</p></td>
+<td><p>Header</p></td>
 <td>Mstcpip.h</td>
 </tr>
 <tr class="even">
@@ -144,7 +144,7 @@ ms.locfileid: "89212777"
 ## <a name="see-also"></a>另请参阅
 
 
-[**SIO \_ 环回 \_ FAST \_ 路径 (SDK) **](/previous-versions/windows/desktop/legacy/jj841212(v=vs.85))
+[**SIO \_ 环回 \_ FAST \_ 路径 (SDK) **](/windows/win32/winsock/sio-loopback-fast-path)
 
 [将 IRP 与 Winsock 内核函数配合使用](./using-irps-with-winsock-kernel-functions.md)
 

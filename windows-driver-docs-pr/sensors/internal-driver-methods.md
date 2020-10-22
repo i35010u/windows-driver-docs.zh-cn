@@ -4,12 +4,12 @@ description: 传感器驱动程序支持多个内部帮助器方法，这些方�
 ms.assetid: BF5956FE-E1B6-476A-9B6E-86B400DE0A20
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 68715fc44632fab79a5cc057ea6653fdf8516cac
-ms.sourcegitcommit: b75e9940d49410e2b952e96f325df67a039cd571
+ms.openlocfilehash: 488f506dacdc475a60ddd7e5dbaec29273f880e3
+ms.sourcegitcommit: a866b3470025d85b25a48857a81f893179698e7e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92336968"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92355997"
 ---
 # <a name="internal-helper-methods"></a>内部帮助器方法
 
@@ -182,5 +182,7 @@ datafields[] SpbSensorPollData(sensorID)
 ```
 
 ## <a name="related-topics"></a>相关主题
+
+[Windows 中的传感器和位置平台简介](/windows-hardware/drivers/sensors/)
 
 [传感器驱动程序逻辑](/windows-hardware/drivers/sensors/driver-logic--pseudo-code-)

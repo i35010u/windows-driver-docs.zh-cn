@@ -4,12 +4,12 @@ ms.assetid: EB5158D7-6ACA-42BB-89E2-0937EAB94BA2
 description: 传感器驱动程序支持的用于更新传感器设备的方法。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: da81b2731b4ca99cc8886e8ccf6178f80b680b54
-ms.sourcegitcommit: b75e9940d49410e2b952e96f325df67a039cd571
+ms.openlocfilehash: 65aeb4b19777b7f01a8305ab18ea4b87e8933f77
+ms.sourcegitcommit: a866b3470025d85b25a48857a81f893179698e7e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92336963"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92356032"
 ---
 # <a name="device-update-methods"></a>设备更新方法
 
@@ -161,5 +161,7 @@ effectivePS DriverUpdateDevicePS(sensorID, requestedPS)
 ```
 
 ## <a name="related-topics"></a>相关主题
+
+[Windows 中的传感器和位置平台简介](/windows-hardware/drivers/sensors/)
 
 [传感器驱动程序逻辑](/windows-hardware/drivers/sensors/driver-logic--pseudo-code-)

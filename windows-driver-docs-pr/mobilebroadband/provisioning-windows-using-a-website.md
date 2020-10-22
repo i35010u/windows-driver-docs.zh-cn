@@ -4,12 +4,12 @@ description: 使用网站预配 Windows
 ms.assetid: ba60fddd-a248-4afb-9390-f9277ef1f094
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 91f499cd3fb4bd3f48edda1e90995000f3eda79a
-ms.sourcegitcommit: 20eac54e419a594f7cea766ee28f158559dfd79c
+ms.openlocfilehash: e85a92592e38b5b0c4bd1feb8110e2981c5abd74
+ms.sourcegitcommit: a866b3470025d85b25a48857a81f893179698e7e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91754902"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92356015"
 ---
 # <a name="provisioning-windows-using-a-website"></a>使用网站预配 Windows
 
@@ -72,9 +72,9 @@ ms.locfileid: "91754902"
 
 ### <a name="span-iddetectspanspan-iddetectspandetect-internet-access"></a><span id="detect"></span><span id="DETECT"></span>检测 Internet 访问
 
-当 Windows 首次连接到网络以确定 Internet 连接时，它会执行各种网络测试。 这些测试的目标站点是 www.msftncsi.com，这是专用于连接测试的保留域。
+当 Windows 首次连接到网络以确定 Internet 连接时，它会执行各种网络测试。 这些测试的目标站点是 []() msftncsi.com，它是专用于连接测试的保留域。
 
-若要避免误报或漏报，你的网络必须仅在用户具有 Internet 访问权限时才允许访问 www.msftncsi.com。 没有活动数据计划连接到网络的用户不能访问 www.msftncsi.com。
+若要避免误报或漏报，你的网络必须 []() 仅在用户具有常规 Internet 访问权限时才允许访问 msftncsi.com。 没有活动数据计划连接到网络的用户不能访问 []() msftncsi.com。
 
 ### <a name="span-idwebaccessspanspan-idwebaccessspanweb-site-access"></a><span id="webaccess"></span><span id="WEBACCESS"></span>网站访问
 
@@ -145,7 +145,7 @@ Url 的格式为** https://Operator url \[ ？ propN = valN \[&\] \* \] propN = 
 
 -   提供帐户数据
 
--   定义 Wi-fi 热点连接配置文件
+-   定义 Wi-Fi 热点连接配置文件
 
 -   指示计算机重新连接移动宽带设备
 
@@ -153,7 +153,8 @@ Url 的格式为** https://Operator url \[ ？ propN = valN \[&\] \* \] propN = 
 
 有关帐户预配元数据的详细信息，请参阅 [帐户预配](account-provisioning.md)。
 
-**注意**   在网站提供时，必须使用扩展验证 (EV) 证书对帐户预配元数据进行签名。
+**注意**  
+在网站提供时，必须使用扩展验证 (EV) 证书对帐户预配元数据进行签名。
 
  
 

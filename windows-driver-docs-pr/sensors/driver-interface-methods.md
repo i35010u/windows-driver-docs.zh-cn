@@ -4,12 +4,12 @@ ms.assetid: 675F4188-3B9A-421B-98EF-FE063B550231
 description: 传感器驱动程序支持的接口方法。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8510f9b557ef82d8b54817c82a4918772792e732
-ms.sourcegitcommit: b75e9940d49410e2b952e96f325df67a039cd571
+ms.openlocfilehash: 11f85356d06c37679bc5092b430c0640456ba328
+ms.sourcegitcommit: a866b3470025d85b25a48857a81f893179698e7e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92336952"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92355999"
 ---
 # <a name="driver-interface-methods"></a>驱动程序接口方法
 
@@ -335,4 +335,7 @@ DDIHandleAsyncDataEvent(sensorID, buffer)
 
 ## <a name="related-topics"></a>相关主题
 
+[Windows 中的传感器和位置平台简介](/windows-hardware/drivers/sensors/)
+
 [传感器驱动程序逻辑](/windows-hardware/drivers/sensors/driver-logic--pseudo-code-)
+

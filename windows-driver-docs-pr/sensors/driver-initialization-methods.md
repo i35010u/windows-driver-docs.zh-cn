@@ -4,12 +4,12 @@ ms.assetid: CA8F6308-501D-47BC-902E-3259949A1D57
 description: 传感器驱动程序支持的方法来初始化设备。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 92b0ccf548183926a4ca2dce1661ea4715fe7947
-ms.sourcegitcommit: b75e9940d49410e2b952e96f325df67a039cd571
+ms.openlocfilehash: f6b51c6f9daaada7997131f376d18000e941a9d1
+ms.sourcegitcommit: a866b3470025d85b25a48857a81f893179698e7e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92337016"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92355971"
 ---
 # <a name="driver-initialization-methods"></a>驱动程序初始化方法
 
@@ -57,5 +57,7 @@ DriverClientInitialize(sensorID)
 ```
 
 ## <a name="related-topics"></a>相关主题
+
+[Windows 中的传感器和位置平台简介](/windows-hardware/drivers/sensors/)
 
 [传感器驱动程序逻辑](/windows-hardware/drivers/sensors/driver-logic--pseudo-code-)

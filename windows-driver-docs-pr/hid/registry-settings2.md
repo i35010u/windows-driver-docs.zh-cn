@@ -3,45 +3,229 @@ title: 注册表设置
 description: 注册表设置
 ms.assetid: a2536911-0467-4bd0-a63b-55341f0d7567
 keywords:
-- 游戏杆 WDK HID，注册表设置
+- 操纵杆 WDK HID，注册表设置
 - 虚拟游戏杆驱动程序 WDK HID，注册表设置
 - VJoyD WDK HID，注册表设置
 - 注册表 WDK 游戏杆
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 31c6ce2ddbe8bec6737772a7011202fb3f8f1199
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 417ae386819fb415c34740c4c8ff9a65849fe280
+ms.sourcegitcommit: a866b3470025d85b25a48857a81f893179698e7e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63345458"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92356009"
 ---
 # <a name="registry-settings"></a>注册表设置
 
+操纵杆接口使用注册表存储配置、校准和用户首选项信息。 它还用于存储校准程序的自定义文本。 可以通过注册表自定义 Windows 95/98/Me 操纵杆校准程序，以便在特定于操纵杆的校准期间向用户提供说明。
 
+值分为五组：
 
+由 OEM 提供并从 INF 文件中安装的原始数据 (前面所述) 。
 
+## <a name="user-values"></a>用户值
 
-操纵杆接口使用注册表来存储配置、 校准，以及用户首选项信息。 它还用于存储有关校准程序自定义的文本。 Windows 95/98/我游戏杆校准程序可以通过注册表来校准特定于游戏杆的过程中向用户提供的说明自定义。
+当前注册表设置有两个部分：要存储的值，它是标准轮询的替代，以及存储功能、校准值和微型驱动程序数据的键。
 
-值划分为五个组：
+用于轮询没有关联微型驱动程序的设备以替换标准轮询的微型驱动程序可以在名为 REGSTR VAL JOYCALLOUT 的项中定义 \_ \_ 。 此功能是 DirectX 3.0 的新增功能。 当用户从列表中选择一个新的全局驱动程序时，将从 "高级设置" 页设置这些值，其中包含具有 "乐趣 \_ HWS ISGAMEPORTDRIVER" 标志集的所有微型驱动程序 \_ 。
 
-由 OEM 提供且 （如上所述） 的 INF 文件中安装的原始数据。
+其余设置将存储在 REGSTR \_ key \_ JOYCURR 键下。 当设备首次配置为特定操纵杆 ID 时，控制面板会将 REGSTR PATH JOYOEM 下相关 OEM 密钥中的值复制 \_ \_ 到 REGSTR \_ key \_ JOYCURR 项。 此项下的每个键值名称包含游戏杆 ID 作为名称的一部分，因此每个操纵杆都有其自己的设置。 REGSTR \_ VAL \_ JOYOEMNAME 值将复制到相关的 REGSTR \_ VAL \_ JOYNOEMNAME 中，如果存在，则将 REGSTR \_ VAL \_ JOYOEMCALLOUT 值复制到 REGSTR \_ val \_ JOYNOEMCALLOUT。 REGSTR \_ VAL \_ JOYOEMDATA 值用作 REGSTR val JOYNCONFIG 值的前两个双字 \_ ，其中的 \_ 所有值在展开) 时 (定义，如下所示：
 
-[用户值](user-values.md)，用于指定如何解释数据。
+```cpp
+struct {
+    /* usage settings, copied from REGSTR_VAL_JOYOEMNAME */
+    struct {
+        DWORD   dwFlags;
+        DWORD   dwNumButtons;
+    } hws;
 
-[当前设置](current-settings.md)专用于反映将当前配置的设备。
+    /* usage flags, described below */
+    DWORD    dwUsageSettings;
 
-[保存设置](saved-settings.md)允许不同的配置未能召回。
+    struct {
+        /* values returned by hardware during calibration */
+        struct {
+            /* minimums for each axis */
+            struct {
+                DWORD    dwX;
+                DWORD    dwY;
+                DWORD    dwZ;
+                DWORD    dwR;
+                DWORD    dwU;
+                DWORD    dwV;
+            } jpMin;
+            /* maximums for each axis */
+            struct {
+                DWORD    dwX;
+                DWORD    dwY;
+                DWORD    dwZ;
+                DWORD    dwR;
+                DWORD    dwU;
+                DWORD    dwV;
+            } jpMax;
+            /* center positions for each axis */
+            struct
+            {
+                DWORD    dwX;
+                DWORD    dwY;
+                DWORD    dwZ;
+                DWORD    dwR;
+                DWORD    dwU;
+                DWORD    dwV;
+            } jpCenter;
+        } jrvHardware;
 
-[驱动程序设置](driver-settings.md)的设置的配置管理器设备设置。
+        /* POV values returned by hardware during calibration */
+        DWORD   dwPOVValues[JOY_POV_NUMDIRS];
 
-用户的值、 当前设置，然后保存的设置是所有存储在注册表项下属于"当前"游戏杆驱动程序的路径。 每个游戏杆设备为其安装驱动程序都有一个键路径 REGSTR 下的\_路径\_JOYCONFIG 具有窗体 Msjstick.drv&lt;*xxxx*&gt;，其中*xxxx*是用来保留密钥名称唯一一个四位数字。 数与已安装的多媒体 （声音、 视频和游戏控制器） 驱动程序的数量相关。 在启动时 Msjstick.drv 将初始化为每个游戏控制器驱动程序的配置。 由于它只能处理一个配置一次，每个替换上一次，"当前"驱动程序是要初始化的最后一个。 这意味着用户可能会丢失所有当前设置，如果安装新的驱动程序，并且微型驱动程序不能在这些注册表值的路径将始终是相同的假设结构化。
+        /* calibration flags, described below */
+        DWORD   dwCalFlags;
+    } hwv;
 
- 
+    /* type of joystick, described below */
+    DWORD   dwType;
 
- 
+    /* reserved for OEM drivers */
+    DWORD   dwReserved;
+};
+```
 
+使用设置是以下值的组合：
 
+<table>
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><p>JOY_US_HASRUDDER</p></td>
+<td><p>0x00000001l</p></td>
+<td><p>/* 用方向舵配置的操纵杆 <em>/</p></td>
+</tr>
+<tr class="even">
+<td><p>JOY_US_PRESENT</p></td>
+<td><p>0x00000002l</p></td>
+<td><p>/</em> 游戏杆是否确实会出现？ <em>/</p></td>
+</tr>
+<tr class="odd">
+<td><p>JOY_US_ISOEM</p></td>
+<td><p>0x00000004l</p></td>
+<td><p>/</em> 游戏杆为 OEM 定义的类型 <em>/</p></td>
+</tr>
+<tr class="even">
+<td><p>JOY_US_RESERVED</p></td>
+<td><p>0x80000000l</p></td>
+<td><p>/</em> 保留 */</p></td>
+</tr>
+</tbody>
+</table>
 
+校准标志是以下值的组合：
 
+<table>
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><p>JOY_ISCAL_XY</p></td>
+<td><p>0x00000001l</p></td>
+<td><p>/* XY <em>/</p></td>
+</tr>
+<tr class="even">
+<td><p>JOY_ISCAL_Z</p></td>
+<td><p>0x00000002l</p></td>
+<td><p>/</em> 校准 Z <em>/</p></td>
+</tr>
+<tr class="odd">
+<td><p>JOY_ISCAL_R</p></td>
+<td><p>0x00000004l</p></td>
+<td><p>/</em> 校准 R <em>/</p></td>
+</tr>
+<tr class="even">
+<td><p>JOY_ISCAL_U</p></td>
+<td><p>0x00000008l</p></td>
+<td><p>/</em> 校准了 U <em>/</p></td>
+</tr>
+<tr class="odd">
+<td><p>JOY_ISCAL_V</p></td>
+<td><p>0x00000010l</p></td>
+<td><p>/</em> 校准 V <em>/</p></td>
+</tr>
+<tr class="even">
+<td><p>JOY_ISCAL_POV</p></td>
+<td><p>0x00000020l</p></td>
+<td><p>/</em> 校准了 POV */</p></td>
+</tr>
+</tbody>
+</table>
+
+ **DwType**成员包含表示预定义游戏杆类型的数字。 如果 OEM 校准实用程序设置了此值，则应在 Mmddk 中定义的值范围之外设置值。 确切的值并不重要，因为它是由标准控制面板重置的。
+
+## <a name="current-settings"></a>当前设置
+
+在安装过程中，将从 INF 文件设置这些注册表设置，如 [创建 Inf 文件](creating-an-inf-file.md)和启动时在设备枚举过程中所述。
+
+## <a name="saved-settings"></a>保存的设置
+
+保存当前操纵杆设置后， \_ \_ 保存在 REGSTR key JOYCURR 项下的 REGSTR VAL \_ JOYNCONFIG \_ 也会写入 \_ \_ 子项中与 OEM 定义的设置相同的名称下的 REGSTR key JOYSETTINGS 键下， (非 OEM 设置保存在子项 "predef" 中，并) 的类型编号。 当播放操纵杆时，保存的设置将保留，以便在游戏杆恢复时，保存的设置将返回当前设置。 这些注册表值仅用于 "控制面板"。
+
+## <a name="driver-settings"></a>驱动程序设置
+
+名为 REGSTR VAL JOYUSERVALUES 的单个值 \_ \_ 存储如下所述的结构。 此结构指定当应用程序请求对数据进行缩放、居中或定义了死区时，VJoyD 应如何处理数据。
+
+```cpp
+struct {
+    /* value at which to time-out internal joystick polling */
+    DWORD   dwTimeOut;
+
+    /* range of values app wants returned for axes */
+    struct {
+        /* minimums for each axis */
+        struct {
+            DWORD    dwX;
+            DWORD    dwY;
+            DWORD    dwZ;
+            DWORD    dwR;
+            DWORD    dwU;
+            DWORD    dwV;
+        } jpMin;
+        /* maximums for each axis */
+        struct {
+            DWORD    dwX;
+            DWORD    dwY;
+            DWORD    dwZ;
+            DWORD    dwR;
+            DWORD    dwU;
+            DWORD    dwV;
+        } jpMax;
+        /* center positions for each axis */
+        struct {
+            DWORD    dwX;
+            DWORD    dwY;
+            DWORD    dwZ;
+            DWORD    dwR;
+            DWORD    dwU;
+            DWORD    dwV;
+        } jpCenter;
+    } jrvRanges;
+
+    /* area around center to be considered as "dead". specified as */
+    /* a percentage (0-100). Only X & Y handled by system driver */
+    struct {
+        DWORD    dwX;
+        DWORD    dwY;
+        DWORD    dwZ;
+        DWORD    dwR;
+        DWORD    dwU;
+        DWORD    dwV;
+    } jpDeadZone;
+}
+```
+
+用户值、当前设置和已保存的设置都存储在注册表中的 "当前" 游戏杆驱动程序的路径下。 安装了驱动程序的每个操纵杆设备在路径 REGSTR 路径 JOYCONFIG 下都有一个名为 \_ \_ Msjstick. winspool.drv xxxx 的键 &lt; *xxxx* &gt; ，其中*xxxx*是用于使密钥名称唯一的四位数字。 该数字与已安装的多媒体 (声音、视频和游戏控制器) 驱动程序的数目相关。 在启动时，Msjstick 将初始化为每个游戏控制器驱动程序的配置。 由于它每次只能处理一个配置，因此，每个配置都将替换最后一个，而 "当前" 驱动程序则是最后一个要初始化的驱动程序。 这意味着，在安装新的驱动程序时，用户可能会丢失所有当前设置，并且无法通过假设这些注册表值的路径始终相同来构造微型驱动程序。

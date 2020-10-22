@@ -3,12 +3,12 @@ description: Windows 硬件实验室工具包 (HLK) 测试可用于其他系统�
 title: 针对 USB 的 Windows Hardware Lab Kit (HLK) 测试
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 36dd01b351e3ef9c0d8434351315e0e6a1f6c42b
-ms.sourcegitcommit: b75e9940d49410e2b952e96f325df67a039cd571
+ms.openlocfilehash: b1e05bedd543047713987adcba9bb30a18f4c4bc
+ms.sourcegitcommit: a866b3470025d85b25a48857a81f893179698e7e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92336973"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92355993"
 ---
 # <a name="windows-hardware-lab-kit-hlk-tests-for-usb"></a>针对 USB 的 Windows Hardware Lab Kit (HLK) 测试
 
@@ -65,4 +65,4 @@ Windows 硬件实验室工具包 (HLK) 测试可用于其他系统、USB 主机�
 
 ## <a name="related-topics"></a>相关主题
 
-[Microsoft USB 测试工具-MUTT 设备](/windows-hardware/drivers/usbcon/microsoft-usb-test-tool--mutt--devices)
+[Microsoft USB 测试工具 (MUTT) 设备的概述](/windows-hardware/drivers/usbcon/microsoft-usb-test-tool--mutt--devices)

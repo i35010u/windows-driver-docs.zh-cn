@@ -4,12 +4,12 @@ ms.assetid: F809BCE4-9176-4503-9EC7-B80AC229ABB5
 description: 更新传感器驱动程序支持的方法。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c72f0f0b748a647d3e8108a288fd47daab33ca00
-ms.sourcegitcommit: b75e9940d49410e2b952e96f325df67a039cd571
+ms.openlocfilehash: 44419b35a258d1b66765789ea8211bc7c5ecf6e9
+ms.sourcegitcommit: a866b3470025d85b25a48857a81f893179698e7e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92336930"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92356001"
 ---
 # <a name="driver-update-methods"></a>驱动程序更新方法
 
@@ -183,5 +183,7 @@ DriverUpdateDatafields(sensorID)
 ```
 
 ## <a name="related-topics"></a>相关主题
+
+[Windows 中的传感器和位置平台简介](/windows-hardware/drivers/sensors/)
 
 [传感器驱动程序逻辑](/windows-hardware/drivers/sensors/driver-logic--pseudo-code-)

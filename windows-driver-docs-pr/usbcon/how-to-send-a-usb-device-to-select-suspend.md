@@ -3,12 +3,12 @@ description: 本主题介绍 USB 3.0 驱动程序堆栈的 USB 客户端驱动�
 title: USB 客户端驱动程序验证程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0710927129496870801a937bdb24a46f417ef2ad
-ms.sourcegitcommit: b75e9940d49410e2b952e96f325df67a039cd571
+ms.openlocfilehash: f9a0303402a1f77800e089c1e8ad03466374acac
+ms.sourcegitcommit: a866b3470025d85b25a48857a81f893179698e7e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92337036"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92355969"
 ---
 # <a name="usb-client-driver-verifier"></a>USB 客户端驱动程序验证程序
 
@@ -206,4 +206,4 @@ HKEY_LOCAL_MACHINE
 [**USBD \_ QueryUsbCapability**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/hh406230(v=vs.85))  
 [如何在 USB 批量终结点中打开和关闭静态流](how-to-open-streams-in-a-usb-endpoint.md)  
 [如何发送链式 MDLs](how-to-send-chained-mdls.md)  
-[Microsoft USB 测试工具-MUTT 设备](/windows-hardware/drivers/usbcon/microsoft-usb-test-tool--mutt--devices)
+[Microsoft USB 测试工具 (MUTT) 设备的概述](/windows-hardware/drivers/usbcon/microsoft-usb-test-tool--mutt--devices)

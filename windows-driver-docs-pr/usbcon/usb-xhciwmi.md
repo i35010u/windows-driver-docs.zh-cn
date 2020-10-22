@@ -3,12 +3,12 @@ description: XHCIWMI 是用于诊断的工具。 此工具仅在 Windows 8 上�
 title: USB XHCIWMI
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f6801740868d5e3cc9187c4953808b8c05c7a3ec
-ms.sourcegitcommit: b75e9940d49410e2b952e96f325df67a039cd571
+ms.openlocfilehash: 373042d9069af162abdd4cb2c43ef7a81fe28ace
+ms.sourcegitcommit: a866b3470025d85b25a48857a81f893179698e7e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92337028"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92356021"
 ---
 # <a name="usb-xhciwmi"></a>USB XHCIWMI
 
@@ -33,4 +33,5 @@ Xhciwmi.exe –verify
 ## <a name="related-topics"></a>相关主题
 
 [MUTT 软件包中的工具](mutt-software-package.md)  
+
 [Microsoft USB 测试工具 (MUTT) 设备](microsoft-usb-test-tool--mutt--devices.md)  

@@ -3,12 +3,12 @@ description: 希望用 USB 类型 C 连接器构建 Windows 系统的 Oem 的常
 title: FAQ-Windows 系统上的 USB 类型 C 连接器
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f9f33263e88f3901518a2dfeeb4ee83c527bf472
-ms.sourcegitcommit: b75e9940d49410e2b952e96f325df67a039cd571
+ms.openlocfilehash: 116386a2bfbb405004b03a16561025f11014e465
+ms.sourcegitcommit: a866b3470025d85b25a48857a81f893179698e7e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92336932"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92356035"
 ---
 # <a name="faq-usb-type-c-connector-on-a-windows-system"></a>常见问题解答：Windows 系统上的 USB 类型 C 连接器
 
@@ -148,7 +148,7 @@ UCM 是其自身的设备堆栈 (参阅 [体系结构：用于 Windows 系统的
 - 对于桌面版，不能连接两台运行 Windows 10 的电脑。
 - 不能连接运行 Windows 10 移动版的两个移动设备。
 
-如果用户尝试建立此类连接，Windows 将显示一条错误消息。 有关详细信息，请参阅 [USB 类型 C Windows 系统的错误消息](introduction-to-usb-type-c-connectors.md#-6)。
+如果用户尝试建立此类连接，Windows 将显示一条错误消息。 有关详细信息，请参阅 [USB 类型 C Windows 系统的错误消息](https://support.microsoft.com/windows/fix-usb-c-problems-f4e0e529-74f5-cdae-3194-43743f30eed2)。
 
 唯一有效的连接是在 Windows 移动设备和 Windows 桌面设备之间。
 

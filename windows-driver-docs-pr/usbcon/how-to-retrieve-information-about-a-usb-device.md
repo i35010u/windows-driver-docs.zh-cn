@@ -3,12 +3,12 @@ description: '本主题介绍用于测试和调试特定硬件事件 ( # A0) 的
 title: USB 硬件验证程序 (USB3HWVerifierAnalyzer.exe)
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ff90c2b0327784a3996fa47353a58ce9a3a53971
-ms.sourcegitcommit: b75e9940d49410e2b952e96f325df67a039cd571
+ms.openlocfilehash: 8169b3791f7d56886b50d65e6e4552610ff97b60
+ms.sourcegitcommit: a866b3470025d85b25a48857a81f893179698e7e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92337056"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92356043"
 ---
 # <a name="usb-hardware-verifier-usb3hwverifieranalyzerexe"></a>USB 硬件验证程序 (USB3HWVerifierAnalyzer.exe)
 
@@ -237,4 +237,4 @@ USB 硬件验证器工具随 MUTT 软件包一起提供，可从 [MUTT 软件包
 
 ## <a name="related-topics"></a>相关主题
 
-[Microsoft USB 测试工具-MUTT 设备](/windows-hardware/drivers/usbcon/microsoft-usb-test-tool--mutt--devices)
+[Microsoft USB 测试工具 (MUTT) 设备的概述](/windows-hardware/drivers/usbcon/microsoft-usb-test-tool--mutt--devices)
