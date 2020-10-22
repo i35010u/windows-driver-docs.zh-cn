@@ -5,15 +5,14 @@ ms.date: 04/20/2017
 ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
-ms.openlocfilehash: 9641ce84cbbd0169c94ee76515af40d6f6fc9d93
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 4fb1ba50a9b3e60f19bc9e8cdcf27ad3cb4fb026
+ms.sourcegitcommit: a866b3470025d85b25a48857a81f893179698e7e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90717474"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92356011"
 ---
 # <a name="universal-serial-bus-usb"></a>通用串行总线 (USB)
-
 
 通用串行总线 (USB) 提供了一个可扩展且可热插拔的即插即用串行接口，可确保为键盘、鼠标、游戏杆、打印机、扫描仪、存储设备、调制解调器和视频会议摄像机之类的外设提供标准的低成本连接。 对于所有使用旧端口（例如 PS/2 端口、串行端口和并行端口）的外围设备，建议迁移到 USB。
 
@@ -92,8 +91,9 @@ Windows 操作系统为 USB 主控制器、集线器以及符合官方 USB 规�
 </li>
 </ul>
 <strong>通过 Windows 测试 USB 设备</strong>
-<p></p>
-<a href="usb-driver-testing-guide.md" data-raw-source="[Testing USB hardware, drivers, and apps in Windows](usb-driver-testing-guide.md)">在 Windows 中测试 USB 硬件、驱动程序和应用程序</a>
+
+[Microsoft USB 测试工具 (MUTT) 设备的概述](/windows-hardware/drivers/usbcon/microsoft-usb-test-tool--mutt--devices)
+
 <p>获取相关工具的信息，这些工具可以用来测试 USB 硬件或软件、捕获操作和其他系统事件的跟踪，以及观察 USB 驱动程序堆栈如何响应客户端驱动程序或应用程序发送的请求。</p>
 <p>阅读硬件认证工具包中提供的测试的概述。硬件供应商和设备制造商可以通过这些测试准备其 USB 设备和主控制器，以便提交 Windows 硬件认证。</p>
 <p><strong>USB 的其他资源</strong></p>
@@ -218,6 +218,3 @@ Windows 操作系统为 USB 主控制器、集线器以及符合官方 USB 规�
 </tr>
 </tbody>
 </table>
-
- 
-
