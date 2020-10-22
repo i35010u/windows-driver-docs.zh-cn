@@ -4,12 +4,12 @@ description: Windows 内核模式即插即用管理器
 ms.assetid: 43d06dbe-da66-4103-8be3-f27ff075a1b4
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: fba886138588aa6ab92002dce4d05e252f7db2b9
-ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
+ms.openlocfilehash: 3d75abca0f5e3ca176ead9a39277538a7834110d
+ms.sourcegitcommit: 1690ad77580a2cfc47debb9751fd109a5991dd52
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89403488"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92345957"
 ---
 # <a name="windows-kernel-mode-plug-and-play-manager"></a>Windows 内核模式即插即用管理器
 
@@ -18,9 +18,9 @@ ms.locfileid: "89403488"
 
 有关用于驱动程序的 PnP 的详细信息，请参阅 [即插即用](introduction-to-plug-and-play.md)。
 
-PnP 管理器实际上是 i/o 管理器的子系统。 有关 i/o 管理器的详细信息，请参阅 [Windows 内核模式 I/o 管理器](windows-kernel-mode-i-o-manager.md)。
+PnP 管理器实际上是 i/o 管理器的子系统。 有关 i/o 管理器的详细信息，请参阅 [Windows Kernel-Mode I/o 管理器](windows-kernel-mode-i-o-manager.md)。
 
-有关 PnP 例程的列表，请参阅 [即插即用例程](/windows-hardware/drivers/ddi/index)。
+有关 PnP 例程的列表，请参阅 [即插即用例程](/windows-hardware/drivers/ddi/_kernel/#plug-and-play-routines)。
 
 请注意，没有可为 PnP 管理器提供直接接口的例程;也就是说，没有 "**Pp**" 例程。
 

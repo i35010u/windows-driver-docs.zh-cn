@@ -3,12 +3,12 @@ description: MUTT 连接试验类型 C (USB Type-C ConnEx) 硬件板是 Arduino 
 title: 通过 USB 类型 C ConnEx 测试 USB 类型 C 系统
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d4cbcb94f712820de43f27800285aa0159864667
-ms.sourcegitcommit: b75e9940d49410e2b952e96f325df67a039cd571
+ms.openlocfilehash: dec54a6eabfeae444d131243a6fdc51ea1c1edfe
+ms.sourcegitcommit: 1690ad77580a2cfc47debb9751fd109a5991dd52
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 10/21/2020
-ms.locfileid: "92336998"
+ms.locfileid: "92345959"
 ---
 # <a name="test-usb-type-c-systems-with-usb-type-c-connex"></a>通过 USB 类型 C ConnEx 测试 USB 类型 C 系统
 
@@ -77,20 +77,20 @@ MUTT 连接试验类型 C (USB Type-C ConnEx) 硬件板是 Arduino 板的自定�
 
   - 辅助台式计算机或便携式计算机。
 
-        The proxy controller communicates with a mobile SUT, the microcontroller to load the firmware.
+    代理控制器与移动 SUT 通信，微控制器用于加载固件。
 
   - 使用辅助 USB 端口的 SUT。
   - 使用 3.5 mm 音频插孔的 SUT。
 
-        In this set up, you need:
+    在此设置中，你需要：
 
-        -   使用单个 USB 类型 C 端口在 SUTs 上运行测试的 DTMF 防护板。 在完成固件初始闪存后，可以使用 DTMF 从单端口设备控制盾牌，并提供音频插孔。
+    - 使用单个 USB 类型 C 端口在 SUTs 上运行测试的 DTMF 防护板。 在完成固件初始闪存后，可以使用 DTMF 从单端口设备控制盾牌，并提供音频插孔。
 
-            ![dtmf 盾牌](images/dtmf.png)
+        ![dtmf 盾牌](images/dtmf.png)
 
-        -   4针用于将 DTMF 盾牌连接到 SUT 的插头到插头音频电缆。 这允许 SUT 在测试期间控制 USB 类型 C 防护板。
+    - 4针用于将 DTMF 盾牌连接到 SUT 的插头到插头音频电缆。 这允许 SUT 在测试期间控制 USB 类型 C 防护板。
 
-            ![3.5 mm 音频插孔](images/audio-jack.png)
+        ![3.5 mm 音频插孔](images/audio-jack.png)
 
 ## <a name="software-requirements"></a>软件要求
 
@@ -313,25 +313,25 @@ MUTT 连接试验类型 C (USB Type-C ConnEx) 硬件板是 Arduino 板的自定�
 
 连接到端口
 
-```
+```console
 connexutil.exe /setport 1
 ```
 
 或者使用板上打印的端口名称：
 
-```
+```console
 connexutil.exe /setport J3
 ```
 
 断开所有端口的连接
 
-```
+```console
 connexutil.exe /setport 0
 ```
 
 遍历所有端口
 
-```
+```console
 for %p in (1 2 3 4)
 do (
     connexutil.exe /setport %p
@@ -601,7 +601,7 @@ USB 类型-C ConnEx 上的板载 LCD 显示电源 (伏特、安培和方向) 。
 
 ## <a name="using-etw-to-log-issues"></a>使用 ETW 记录问题
 
-请参阅 https://aka.ms/usbtrace 获取说明，并下载用于从 USB 驱动程序捕获 ETW 跟踪的脚本。
+请参阅 [如何使用 Logman 捕获 USB 事件跟踪](/windows-hardware/drivers/usbcon/how-to-capture-a-usb-event-trace)
 
 ## <a name="reporting-test-results"></a>报告测试结果
 

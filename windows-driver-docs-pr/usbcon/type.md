@@ -3,12 +3,12 @@ description: 本主题说明如何测试启用了 USB 类型 C 的系统和 Wind
 title: USB 类型 C 手动互操作性测试过程
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3e0b1ee68149662413bb075ec997ca9044e398b1
-ms.sourcegitcommit: b75e9940d49410e2b952e96f325df67a039cd571
+ms.openlocfilehash: f171e62a82dbb7d0b1df0a8b59a580c458ff4d62
+ms.sourcegitcommit: 1690ad77580a2cfc47debb9751fd109a5991dd52
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 10/21/2020
-ms.locfileid: "92336928"
+ms.locfileid: "92345954"
 ---
 # <a name="usb-type-c-manual-interoperability-test-procedures"></a>USB 类型 C 手动互操作性测试过程
 
@@ -315,11 +315,11 @@ USB 类型 C 互操作性测试过程分为两部分：功能测试 (FT) 和压�
 - 执行 [FT 案例3：](#ft3) 针对列表中每个外设的系统电源转换，其中包含 USB 到类型-C 转换器。 验证每个设备在系统电源状态更改之前和之后是否按预期方式进行枚举和功能。
   - 将 USB 类型-A 配置为 USB 类型 C 适配器，如以下映像所示：
 
-        ![topology for testing the usb type a dongle](images/typec1.png)
+    ![用于测试 usb 类型转换器的拓扑](images/typec1.png)
 
   - 配置 USB 类型-C A/V 转换器，如图所示。
 
-        ![usb type-c a/v dongle configuration](images/typec2.png)
+    ![usb 类型-c a/v 转换器配置](images/typec2.png)
 
 - 执行 [FT 案例2：](#ft2) 仅使用配置为 USB 类型 C A/V 转换器的系统启动，并验证这些方案：
   - 系统将在所有连接的设备上启动，并通过 USB 类型-C A/V 转换器在连接监视器中显示视频。
