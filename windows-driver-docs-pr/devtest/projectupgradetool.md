@@ -4,15 +4,17 @@ description: ProjectUpgradeTool 采用 Microsoft Visual Studio 2012 项目 (*) �
 ms.assetid: DEB7799C-D505-40E6-B2B0-CF774A99B1BE
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3e08a681fe12436ccfb8ae5ff3f8b4a24b9fe5b7
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: f7a310184100fe474394fc42f5cdbf152109b4cb
+ms.sourcegitcommit: 68c99026bf38b864867ee3751d05459743ea8e11
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89382973"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92434675"
 ---
 # <a name="projectupgradetool"></a>ProjectUpgradeTool
 
+> [!NOTE]
+> WDK 中不再包括此工具。 你仍可在 [适用于 Windows 10 的 WDK （版本1607）](https://go.microsoft.com/fwlink/p/?LinkId=526733)中找到它。
 
 ProjectUpgradeTool Microsoft Visual Studio 采用 2012 (\*) 和解决方案文件 (\* .sln) 使用 Windows 驱动程序工具包（windows 8 的 Windows 驱动程序工具包）进行创建，并将其升级为适用于 (和) 2013 的 wdk。
 

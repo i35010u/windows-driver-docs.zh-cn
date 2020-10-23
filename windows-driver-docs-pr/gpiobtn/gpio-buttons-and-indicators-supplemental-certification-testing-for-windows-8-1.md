@@ -4,12 +4,12 @@ description: 本主题介绍适用于硬件按钮和指示器的 Windows 8.1 测
 ms.assetid: 47E24D50-6007-4CD7-91C5-2D72788106B8
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: fb11d280a15f45ff115f7f344343b552a73e7201
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 2811eb581174833abd36cdd92d6e70a343a59b8d
+ms.sourcegitcommit: 68c99026bf38b864867ee3751d05459743ea8e11
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90107094"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92434681"
 ---
 # <a name="gpio-buttons-and-indicators-supplemental-testing"></a>GPIO 按钮和指示器实现测试
 
@@ -61,6 +61,4 @@ ms.locfileid: "90107094"
 -   笔记本电脑/石板模式指示器
 
 ## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
-[电源按钮行为](/collaborate/connect-redirect?DownloadID=47452)  
-[用 MITT 平台测试的 GPIO 按钮](/collaborate/connect-redirect?DownloadID=48735)  
 [MITT 中的 GPIO 测试](../spb/gpio-tests-in-mitt.md)

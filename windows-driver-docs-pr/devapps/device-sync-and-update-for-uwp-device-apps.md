@@ -4,21 +4,21 @@ description: 在 Windows 8.1 中，UWP 应用可以使用设备后台任务来�
 ms.assetid: AA6E0760-F048-4BDC-8429-D119A531CED6
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 72f7650f190f649f42365c91f23b27a4d928fd98
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: c20a224e16a34d9f21a968604f26fed0e79247f9
+ms.sourcegitcommit: 68c99026bf38b864867ee3751d05459743ea8e11
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91734469"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92434683"
 ---
 # <a name="device-sync-and-update-for-store-device-apps-in-windows-81"></a>Windows 8.1 中存储设备应用的设备同步和更新
 
 
 在 Windows 8.1 中，UWP 应用可以使用设备后台任务来同步外围设备上的数据。 如果应用与设备元数据相关联，则该 UWP 设备应用还可以使用设备后台代理进行设备更新，例如固件更新。 设备后台代理受策略的限制，这些策略可确保用户同意，并有助于在同步和更新设备时保护电池寿命。
 
-若要执行设备同步和更新操作，请分别创建使用 [DeviceUseTrigger](/uwp/api/Windows.ApplicationModel.Background.DeviceUseTrigger) 和 [DeviceServicingTrigger](/uwp/api/Windows.ApplicationModel.Background.DeviceServicingTrigger)的设备后台任务。 若要了解如何使用 [自定义 usb 设备示例](https://go.microsoft.com/fwlink/p/?LinkId=301975 ) 和 [固件更新 USB 设备示例](/samples/browse/)来完成此操作，请参阅 [创建设备后台任务](how-to-create-a-device-background-task.md)。
+若要执行设备同步和更新操作，请分别创建使用 [DeviceUseTrigger](/uwp/api/Windows.ApplicationModel.Background.DeviceUseTrigger) 和 [DeviceServicingTrigger](/uwp/api/Windows.ApplicationModel.Background.DeviceServicingTrigger)的设备后台任务。 若要了解如何使用 [自定义 USB 设备示例](https://go.microsoft.com/fwlink/p/?LinkId=301975 )完成此操作，请参阅 [创建设备后台任务](how-to-create-a-device-background-task.md)。
 
-**注意**   Windows 运行时设备 Api 不需要设备元数据。 这意味着你的应用程序无需成为 UWP 设备应用即可使用它们。 UWP 应用可以使用这些 Api 来访问 USB、人体学接口设备 (HID) 、Bluetooth 设备等。 有关详细信息，请参阅 [集成设备](/previous-versions/windows/apps/dn263141(v=win.10))。
+**注意**  Windows 运行时设备 Api 不需要设备元数据。 这意味着你的应用程序无需成为 UWP 设备应用即可使用它们。 UWP 应用可以使用这些 Api 来访问 USB、人体学接口设备 (HID) 、Bluetooth 设备等。 有关详细信息，请参阅 [集成设备](/previous-versions/windows/apps/dn263141(v=win.10))。
 
  
 
@@ -118,7 +118,8 @@ DeviceServicingTrigger 需要设备元数据，因为必须将应用指定为特
 7.  Windows 监控系统条件和任务运行情况，并在必要时（不再符合所需条件）取消该任务。
 8.  当后台任务报告进度或完成时，你的应用将通过该注册任务的进度事件和完成事件接收这些事件。
 
-**重要提示**   使用设备后台任务时，请考虑以下要点：
+重要说明  
+使用设备后台任务时，请考虑以下要点：
 
 -   在 Windows 8.1 中引入了使用 DeviceUseTrigger 和 DeviceServicingTrigger 的编程触发后台任务的功能，仅限于设备后台任务。
 
@@ -128,7 +129,7 @@ DeviceServicingTrigger 需要设备元数据，因为必须将应用指定为特
 
  
 
-**提示**   若要查看这些后台任务的工作方式，请下载示例。 [自定义 USB 设备示例](https://go.microsoft.com/fwlink/p/?LinkId=301975 )演示了使用 DeviceUseTrigger 执行设备同步的后台任务。 [固件更新 USB 设备示例](/samples/browse/)演示了使用 DeviceServicingTrigger 执行固件更新的后台任务。
+**提示**  若要了解这些后台任务的工作原理，请下载相关示例。 [自定义 USB 设备示例](https://go.microsoft.com/fwlink/p/?LinkId=301975 )演示了使用 DeviceUseTrigger 执行设备同步的后台任务。
 
  
 
@@ -227,7 +228,7 @@ DeviceServicingTrigger 需要设备元数据，因为必须将应用指定为特
 
     -   退出你的应用时，将取消你的后台任务并断开所有现有事件处理程序与现有后台任务的连接。 这样你就无需确定你的后台任务的状态。 通过对注销和取消所有后台任务，你即可利用取消代码完全停止后台任务。
 
-**提示**   有关如何使用[自定义 usb 设备示例](https://go.microsoft.com/fwlink/p/?LinkId=301975 )和[固件更新 USB 设备示例](/samples/browse/)来完成此操作的详细说明，请参阅[创建设备后台任务](how-to-create-a-device-background-task.md)。
+**提示**  有关如何使用 [自定义 USB 设备示例](https://go.microsoft.com/fwlink/p/?LinkId=301975 )完成此操作的详细说明，请参阅 [创建设备后台任务](how-to-create-a-device-background-task.md)。
 
  
 
@@ -243,8 +244,6 @@ DeviceServicingTrigger 需要设备元数据，因为必须将应用指定为特
 [创建设备后台任务](how-to-create-a-device-background-task.md)
 
 [自定义 USB 设备示例](https://go.microsoft.com/fwlink/p/?LinkId=301975 )
-
-[固件更新 USB 设备示例](/samples/browse/)
 
 [Launching, resuming, and multitasking](/previous-versions/windows/apps/hh770837(v=win.10))
 

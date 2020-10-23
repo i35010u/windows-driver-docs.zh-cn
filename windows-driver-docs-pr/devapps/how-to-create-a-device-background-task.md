@@ -4,23 +4,23 @@ description: 本主题介绍如何创建使用 DeviceUseTrigger 或 DeviceServic
 ms.assetid: 34263DB8-BB42-480B-AF7F-CC45772E6E84
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2f790d0573efd3d49a295047f699ce357dd7504c
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: bdfcdd404a6459877a869c157019ea2dfd5c421e
+ms.sourcegitcommit: 68c99026bf38b864867ee3751d05459743ea8e11
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91732955"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92434678"
 ---
 # <a name="creating-a-device-background-task-in-windows-81-uwp-device-apps"></a>在 Windows 8.1 (UWP 设备应用中创建设备后台任务) 
 
 
 在 Windows 8.1 中，UWP 应用可以同步外围设备上的数据。 如果你的应用程序与设备元数据相关联，则 UWP 设备应用还可以执行设备更新，例如固件更新。 本主题介绍如何创建使用 [DeviceUseTrigger](/uwp/api/Windows.ApplicationModel.Background.DeviceUseTrigger) 或 [DeviceServicingTrigger](/uwp/api/Windows.ApplicationModel.Background.DeviceServicingTrigger)的设备后台任务。 使用这些触发器的设备后台代理需遵守确保用户同意的策略，并在同步和更新设备时帮助保持电池寿命。 有关设备后台任务的详细信息，请参阅 [UWP 设备应用的设备同步和更新](device-sync-and-update-for-uwp-device-apps.md)。
 
-**注意**  本主题对应于 [自定义 USB 设备示例](https://go.microsoft.com/fwlink/p/?LinkId=301975 )。 自定义 USB 设备示例演示了使用 DeviceUseTrigger 执行设备同步的后台任务。 若要查看使用 DeviceServicingTrigger 执行固件更新的后台任务的示例，请下载 [固件更新 USB 设备示例](/samples/browse/)。
+**注意**  本主题对应于 [自定义 USB 设备示例](https://go.microsoft.com/fwlink/p/?LinkId=301975)。 自定义 USB 设备示例演示了使用 DeviceUseTrigger 执行设备同步的后台任务。
 
 
 
-尽管 [自定义 USB 设备示例](https://go.microsoft.com/fwlink/p/?LinkId=301975 ) 中的设备后台任务具有 DeviceUseTrigger，但本主题中讨论的所有内容也可应用于使用 DeviceServicingTrigger 的设备后台任务。 使用这两个触发器的唯一区别是 Windows 进行的策略检查。
+尽管 [自定义 USB 设备示例](https://go.microsoft.com/fwlink/p/?LinkId=301975) 中的设备后台任务具有 DeviceUseTrigger，但本主题中讨论的所有内容也可应用于使用 DeviceServicingTrigger 的设备后台任务。 使用这两个触发器的唯一区别是 Windows 进行的策略检查。
 
 ## <a name="span-idthe_app_manifestspanspan-idthe_app_manifestspanspan-idthe_app_manifestspanthe-app-manifest"></a><span id="The_app_manifest"></span><span id="the_app_manifest"></span><span id="THE_APP_MANIFEST"></span>应用程序清单
 
@@ -108,8 +108,6 @@ ms.locfileid: "91732955"
 
 
 [自定义 USB 设备示例](https://go.microsoft.com/fwlink/p/?LinkId=301975 )
-
-[固件更新 USB 设备示例](/samples/browse/)
 
 [UWP 设备应用的设备同步和更新](device-sync-and-update-for-uwp-device-apps.md)
 
