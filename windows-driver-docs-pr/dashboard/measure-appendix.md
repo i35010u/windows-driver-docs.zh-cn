@@ -5,11 +5,11 @@ ms.topic: article
 ms.date: 05/20/2019
 ms.localizationpriority: medium
 ms.openlocfilehash: dbaff20d8857aaac03331fd3df5a403fc008e07b
-ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
+ms.sourcegitcommit: 89b8a43480246dd726e3632aab2db9cf2eb7505d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "79243056"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "92254058"
 ---
 # <a name="appendix-for-the-microsoft-driver-measure-dictionary"></a>Microsoft 驱动程序度量字典附录
 
