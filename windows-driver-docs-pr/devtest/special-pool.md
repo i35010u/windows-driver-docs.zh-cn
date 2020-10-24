@@ -7,12 +7,12 @@ keywords:
 - 内存损坏 WDK 驱动程序验证程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d2fa9d16736d847e92144aea4daf3b25db4ee401
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: c2dfbcb93fc0471d17963896c5d8da8c12fc4824
+ms.sourcegitcommit: 441900007a5c1c784fb7f426e0a2a570923e21a9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90715862"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92499512"
 ---
 # <a name="special-pool-memory-corruption-detection-in-driver-verifier"></a>驱动程序验证器中的特殊池内存损坏检测
 
@@ -20,7 +20,14 @@ ms.locfileid: "90715862"
 
 若要检测内存损坏情况，驱动程序验证程序可以从特殊池分配驱动程序内存，并监视该池是否有不正确的访问权限。 为内核模式系统提供的例程（如 [**ExAllocatePoolWithTag**](/windows-hardware/drivers/ddi/wdm/nf-wdm-exallocatepoolwithtag) ）以及 GDI 系统提供的例程（如 [**EngAllocMem**](/windows/win32/api/winddi/nf-winddi-engallocmem)）提供特殊池支持。
 
-特殊池的两个对齐方式可用。 **验证结束**对齐更好于检测访问超限，**验证开始**对齐更好于检测访问不足。  (请注意，绝大多数内存损坏都是由于溢出，而不是不足。 ) 
+## <a name="special-pool-by-alignments"></a>按对齐的特殊池
+
+特殊池的两种对齐方式可用：
+
+* **验证开始**对齐更好于检测访问不足。
+* **验证结束**对齐更好于检测访问超限。
+
+有关如何使用 **验证开始** 和 **验证结束** 选项的详细信息，请参阅 [检测超支和不足](../debugger/detecting-overruns-and-underruns.md)。 请注意，绝大多数内存损坏都是由于 *溢出*，而不是不足。
 
 当 "特殊池" 功能处于活动状态且已选择 " **结束** " 时，驱动程序请求的每个内存分配都将放置在单独的页面上。 返回允许分配在页面上容纳的最大可能地址，以便内存与页面末尾对齐。 页面的上一部分以特殊模式写入。 上一页和下一页被标记为不可访问。
 
@@ -36,27 +43,27 @@ ms.locfileid: "90715862"
 
 在 windows 7 和更高版本的 Windows 操作系统中，"特殊池" 选项支持使用以下内核 Api 分配的内存：
 
--   [**IoAllocateMdl**](/windows-hardware/drivers/ddi/wdm/nf-wdm-ioallocatemdl)
+* [**IoAllocateMdl**](/windows-hardware/drivers/ddi/wdm/nf-wdm-ioallocatemdl)
 
--   [**IoAllocateIrp**](/windows-hardware/drivers/ddi/wdm/nf-wdm-ioallocateirp) 以及可以 (IRP) 数据结构分配 i/o 请求包的其他例程
+* [**IoAllocateIrp**](/windows-hardware/drivers/ddi/wdm/nf-wdm-ioallocateirp) 以及可以 (IRP) 数据结构分配 i/o 请求包的其他例程
 
--   [**RtlAnsiStringToUnicodeString**](/windows-hardware/drivers/ddi/wdm/nf-wdm-rtlansistringtounicodestring) 和其他运行时库 (RTL) 字符串例程
+* [**RtlAnsiStringToUnicodeString**](/windows-hardware/drivers/ddi/wdm/nf-wdm-rtlansistringtounicodestring) 和其他运行时库 (RTL) 字符串例程
 
--   [**IoSetCompletionRoutineEx**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iosetcompletionroutineex)
+* [**IoSetCompletionRoutineEx**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iosetcompletionroutineex)
 
-### <a name="span-idspecial_pool_by_pool_tag_or_allocation_sizespanspan-idspecial_pool_by_pool_tag_or_allocation_sizespanspecial-pool-by-pool-tag-or-allocation-size"></a><span id="special_pool_by_pool_tag_or_allocation_size"></span><span id="SPECIAL_POOL_BY_POOL_TAG_OR_ALLOCATION_SIZE"></span>按池标记或分配大小的特殊池
+## <a name="special-pool-by-pool-tag-or-allocation-size"></a>按池标记或分配大小的特殊池
 
 除了使用驱动程序验证程序的特殊池功能（该功能请求由指定的 *驱动程序*分配的特殊池）之外，还有两种方法可以使用特殊池：
 
--   **池标记。** 使用指定的池标记请求所有分配的特殊池。
+* **池标记。** 使用指定的池标记请求所有分配的特殊池。
 
--   **规格.** 请求指定大小范围内的所有分配的特殊池。
+* **大小。** 请求指定大小范围内的所有分配的特殊池。
 
 若要为池标记或大小范围请求特殊的池，请使用 Gflags，它是 *Windows 调试工具*中包含的工具。 有关详细信息，请参阅 [使用全局标志实用程序](using-the-global-flags-utility.md)。
 
 可以同时使用驱动程序验证程序的特殊池功能和 Gflags 的特殊池功能。 如果执行此操作，请记住，特殊池会受到限制，这并不是所有尝试从特殊池进行分配的操作都将成功，并且 Windows 将返回成功的失败尝试状态，尝试从常规内存池中的分配满足的特定池进行分配。
 
-### <a name="span-idspecial_pool_efficiencyspanspan-idspecial_pool_efficiencyspanspecial-pool-efficiency"></a><span id="special_pool_efficiency"></span><span id="SPECIAL_POOL_EFFICIENCY"></span>特殊池效率
+### <a name="special-pool-efficiency"></a>特殊池效率
 
 并非所有特殊的池请求均已完成。 每个来自特殊池的分配都使用一页不可分页物理内存和两页虚拟地址空间。 如果池用尽，则会以标准方式分配内存，直到特殊池再次变为可用。 当从标准池中填充特殊的池请求时，请求函数不会返回错误，因为池请求已成功。 因此，如果激活了特殊池功能，不建议同时验证多个驱动程序。
 
@@ -66,7 +73,7 @@ ms.locfileid: "90715862"
 
 若要确保正在测试驱动程序的所有分配，建议使用长时间压力过大驱动程序。
 
-### <a name="span-idmonitoring_the_special_poolspanspan-idmonitoring_the_special_poolspanmonitoring-the-special-pool"></a><span id="monitoring_the_special_pool"></span><span id="MONITORING_THE_SPECIAL_POOL"></span>监视特殊池
+## <a name="monitoring-the-special-pool"></a>监视特殊池
 
 可以监视与池分配相关的统计信息。 驱动程序验证程序管理器、Verifier.exe 命令行或日志文件可显示这些项。 有关详细信息，请参阅 [监视全局计数器](monitoring-global-counters.md) 。
 
@@ -78,19 +85,18 @@ ms.locfileid: "90715862"
 
 内核调试器扩展 **！ verifier** 还可用于监视特殊池使用情况。 它为驱动程序验证器管理器提供了类似的信息。 有关调试器扩展的信息，请参阅 [Windows 调试](../debugger/index.md)。
 
-### <a name="span-idactivating_this_optionspanspan-idactivating_this_optionspanactivating-this-option"></a><span id="activating_this_option"></span><span id="ACTIVATING_THIS_OPTION"></span>激活此选项
+### <a name="activating-the-special-pool-option"></a>激活 "特殊池" 选项
 
 你可以通过使用驱动程序验证器管理器或 Verifier.exe 命令行为一个或多个驱动程序激活特殊池功能。 有关详细信息，请参阅 [选择驱动程序验证程序选项](selecting-driver-verifier-options.md)。
 
-**注意**   若要按池标记或分配大小激活特殊池功能，或者要设置**验证开始** (检测不足) 并**验证最终** (检测溢出) 对齐方式，请使用[全局标志实用程序](using-the-global-flags-utility.md);这些对齐设置适用于所有特殊池分配。
+> [!NOTE]
+> 若要按池标记或分配大小激活特殊池功能，或者要设置 **验证开始** (检测不足) 并 **验证最终** (检测溢出) 对齐方式，请使用 [全局标志实用程序](using-the-global-flags-utility.md);这些对齐设置适用于所有特殊池分配。
 
- 
-
--   **在命令行中**
+* **在命令行中**
 
     在命令行中，特殊池选项由 **位 0 (0x1) **表示。 若要激活特殊池，请使用 "0x1" 标志值或 "将0x1 添加到标志" 值。 例如：
 
-    ```
+    ``` console
     verifier /flags 0x1 /driver MyDriver.sys
     ```
 
@@ -98,7 +104,7 @@ ms.locfileid: "90715862"
 
     在 Windows 2000 和更高版本的 Windows 上，还可以通过将 **/volatile** 参数添加到命令，来激活和停用特殊池，而无需重新启动计算机。 例如：
 
-    ```
+    ``` console
     verifier /volatile /flags 0x1 /adddriver MyDriver.sys
     ```
 
@@ -106,17 +112,14 @@ ms.locfileid: "90715862"
 
     标准设置中还包括了特殊的池功能。 例如：
 
-    ```
+    ``` console
     verifier /standard /driver MyDriver.sys
     ```
 
--   **使用驱动程序验证器管理器**
+* **使用驱动程序验证器管理器**
 
-    1.  选择 " **为代码开发人员 (创建自定义设置") ** ，然后单击 " **下一步**"。
-    2.  选择 " **从完整列表中选择单个设置**"。
-    3.  选择 (检查) **特殊池**。
+   1. 选择 " **为代码开发人员 (创建自定义设置") ** ，然后单击 " **下一步**"。
+   2. 选择 " **从完整列表中选择单个设置**"。
+   3. 选择 (检查) **特殊池**。
 
     标准设置中还包括了特殊的池功能。 若要使用此功能，请在驱动程序验证器管理器中单击 " **创建标准设置**"。
-
- 
-
