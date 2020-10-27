@@ -3,12 +3,12 @@ description: 希望用 USB 类型 C 连接器构建 Windows 系统的 Oem 的常
 title: FAQ-Windows 系统上的 USB 类型 C 连接器
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 116386a2bfbb405004b03a16561025f11014e465
-ms.sourcegitcommit: a866b3470025d85b25a48857a81f893179698e7e
+ms.openlocfilehash: ad94afe7d168d06b5cf821b0b90974a31ccb53e0
+ms.sourcegitcommit: be37c8ccfe838869eec6fae4112017eb6a96d848
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92356035"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92630150"
 ---
 # <a name="faq-usb-type-c-connector-on-a-windows-system"></a>常见问题解答：Windows 系统上的 USB 类型 C 连接器
 
@@ -45,8 +45,8 @@ ms.locfileid: "92356035"
 
 ### <a name="symmetric-and-reversible-design"></a>对称和可逆设计
 
-- 连接器为 *对称*连接器。 每个端点上都有一个 USB 类型 C 连接器，允许主机和功能设备使用 USB 类型 C 连接器。 下面是比较连接器的图像：
-- 连接器设计为 *可逆*。 传统连接器必须连接到 "右对齐"。 利用可逆的设计，可以翻转连接器。
+- 连接器为 *对称* 连接器。 每个端点上都有一个 USB 类型 C 连接器，允许主机和功能设备使用 USB 类型 C 连接器。 下面是比较连接器的图像：
+- 连接器设计为 *可逆* 。 传统连接器必须连接到 "右对齐"。 利用可逆的设计，可以翻转连接器。
 
 ### <a name="supports-all-usb-device-speeds"></a>支持所有 USB 设备速度
 
@@ -54,7 +54,7 @@ ms.locfileid: "92356035"
 
 ### <a name="alternate-modes"></a>备用模式
 
-连接器可以支持 *备用模式*。 备用模式功能允许非 USB 协议通过 USB 电缆运行，同时保留 USB 2.0 和充电功能。 目前，最常用的备用模式为 DisplayPort/DockPort 和 MHL。
+连接器可以支持 *备用模式* 。 备用模式功能允许非 USB 协议通过 USB 电缆运行，同时保留 USB 2.0 和充电功能。 目前，最常用的备用模式为 DisplayPort/DockPort 和 MHL。
 
 #### <a name="displayport--dockport"></a>DisplayPort / DockPort
 
@@ -72,7 +72,7 @@ ms.locfileid: "92356035"
 
    使用 USB 类型 C 连接器的系统具有更高的电源限制，最多可支持5V、3A、15W。
 
-   此外，连接器可以选择支持[USB 电源交付](https://www.usb.org/usb-charger-pd)OEM 定义的*电源交付*功能。 如果连接器支持电源交付，则 USB 类型 C 系统可以是电源提供商，也可以是使用者，支持最多100W。
+   此外，连接器可以选择支持 [USB 电源交付](https://www.usb.org/usb-charger-pd)OEM 定义的 *电源交付* 功能。 如果连接器支持电源交付，则 USB 类型 C 系统可以是电源提供商，也可以是使用者，支持最多100W。
 
 ## <a name="supports-usb-dual-roles"></a>支持 USB 双重角色
 
@@ -80,7 +80,7 @@ ms.locfileid: "92356035"
 
 ## <a name="operating-system-input-into-which-alternate-mode-needs-to-be-negotiated-such-as-dp-2-lane-vs-dp-4-lane"></a>需要协商备用模式的操作系统输入，例如 DP 2 通道与 DP 4 通道
 
-不是。 操作系统 (或任何 Microsoft 提供的软件组件) 在选择备用模式时不起作用。 该决策由连接器的驱动程序（具体而言就是 USB 连接器管理器 (UCM) 客户端驱动程序）决定。 驱动程序通过使用硬件接口与连接器的固件通信来实现此目的。
+否。 操作系统 (或任何 Microsoft 提供的软件组件) 在选择备用模式时不起作用。 该决策由连接器的驱动程序（具体而言就是 USB 连接器管理器 (UCM) 客户端驱动程序）决定。 驱动程序通过使用硬件接口与连接器的固件通信来实现此目的。
 
 ## <a name="pre-os-charging-with-type-c-and-pd"></a>类型 C 和 PD 的预操作系统收费
 
@@ -114,7 +114,7 @@ Windows 10 之前的 Windows 版本不支持 UCSI。
 
 ## <a name="conditions-and-ui-for-the-different-errors"></a>不同错误的条件和 UI
 
-Windows 10 可以显示一组 USB 类型 C 错误消息，以帮助用户了解有关 USB 类型 C 硬件和软件的不同组合的限制。 例如，如果连接到 USB 类型 C 连接器的充电器的功能不足、与系统不兼容，或连接到非充电端口，则用户可能会收到 "设备充电缓慢" 消息。 有关详细信息，请参阅 [有关 USB 类型 C Windows 系统的消息疑难解答](https://support.microsoft.com/windows/fix-usb-c-problems-f4e0e529-74f5-cdae-3194-43743f30eed2#devicenotwork)。
+Windows 10 可以显示一组 USB 类型 C 错误消息，以帮助用户了解有关 USB 类型 C 硬件和软件的不同组合的限制。 例如，如果连接到 USB 类型 C 连接器的充电器的功能不足、与系统不兼容，或连接到非充电端口，则用户可能会收到 "设备充电缓慢" 消息。 有关详细信息，请参阅 [有关 USB 类型 C Windows 系统的消息疑难解答](https://support.microsoft.com/windows/fix-usb-c-problems-f4e0e529-74f5-cdae-3194-43743f30eed2)。
 
 ## <a name="connecting-a-non-pd-port-to-a-pd-provider-and-a-pd-consumer-to-a-system-that-is-not-a-pd-provider"></a>将非 PD 端口连接到 PD 提供程序，将 PD 使用者连接到不是 PD 提供程序的系统
 
@@ -125,7 +125,7 @@ Windows 10 可以显示一组 USB 类型 C 错误消息，以帮助用户了解�
 备用模式功能允许 (的非 USB 协议，如闪电、SuperMHL) 通过 USB 电缆运行，同时保留 USB 2.0 和充电功能。 如果用户连接的 USB 类型为 C 的备用模式设备或适配器不受连接的 PC 或运行 Windows 10 的电话支持，则会检测到一个错误情况并向用户显示一条消息。
 
 - 如果设备或适配器公开了布告栏设备，则用户将看到有关错误条件的信息，以帮助解决问题。 Windows 10 提供了一个用于布告栏设备的内置驱动程序，并通知用户出现了错误。
-- 用户可能会看到错误通知 "尝试改善 USB 连接"。 有关详细信息，请参阅 [修复 USB-C 问题](/windows/fix-usb-c-problems-f4e0e529-74f5-cdae-3194-43743f30eed2)。
+- 用户可能会看到错误通知 "尝试改善 USB 连接"。 有关详细信息，请参阅 [修复 USB-C 问题](https://support.microsoft.com/windows/fix-usb-c-problems-f4e0e529-74f5-cdae-3194-43743f30eed2)。
 
 为获得最佳结果，请确保电脑或电话或电缆满足备用模式设备或适配器的要求。
 
@@ -176,4 +176,4 @@ Microsoft 提供内置驱动程序和 Windows UcmUcsi.sys，该驱动程序实�
 
 ## <a name="vbusvconn-control-and-role-switch-operations-handled-by-the-ucm-class-extension"></a>UCM 类扩展处理的 VBus/VConn 控件和角色切换操作
 
-UCM 类扩展可能会从操作系统获取请求，以更改连接器的数据或电源方向。 当它获取这些请求时，它会调用客户端驱动程序的 [* \_ UCM \_ 连接器 \_ 集 \_ 数据 \_ 角色*](/windows-hardware/drivers/ddi/ucmmanager/nc-ucmmanager-evt_ucm_connector_set_data_role) 和 [*.evt \_ UCM \_ 连接器 \_ 集 \_ 电源 \_ 角色*](/windows-hardware/drivers/ddi/ucmmanager/nc-ucmmanager-evt_ucm_connector_set_power_role) 回调函数的实现， (如果连接器实现了 PD) 。 在实现中，客户端驱动程序应该控制 VBUS 和 VCONN 的 pin。 有关这些回调函数的详细信息，请参阅 [编写 USB 类型 C 连接器驱动程序](bring-up-a-usb-type-c-connector-on-a-windows-system.md)。
+UCM 类扩展可能会从操作系统获取请求，以更改连接器的数据或电源方向。 当它获取这些请求时，它会调用客户端驱动程序的 [*\_ UCM \_ 连接器 \_ 集 \_ 数据 \_ 角色*](/windows-hardware/drivers/ddi/ucmmanager/nc-ucmmanager-evt_ucm_connector_set_data_role) 和 [*.evt \_ UCM \_ 连接器 \_ 集 \_ 电源 \_ 角色*](/windows-hardware/drivers/ddi/ucmmanager/nc-ucmmanager-evt_ucm_connector_set_power_role) 回调函数的实现， (如果连接器实现了 PD) 。 在实现中，客户端驱动程序应该控制 VBUS 和 VCONN 的 pin。 有关这些回调函数的详细信息，请参阅 [编写 USB 类型 C 连接器驱动程序](bring-up-a-usb-type-c-connector-on-a-windows-system.md)。
