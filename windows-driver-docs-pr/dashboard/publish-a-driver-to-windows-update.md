@@ -5,12 +5,12 @@ ms.assetid: E62AADCF-E481-40CA-98F1-BE4629C3EE35
 ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 23fe920f0b3ba625d8a7a3ca80867d524b1e328f
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: c71050c56e66c7264360c824c6c50d157fef9f90
+ms.sourcegitcommit: c94be6fc464edc94035060a4723efa06ab0f5af9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90101712"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92153479"
 ---
 # <a name="publish-a-driver-to-windows-update"></a>将驱动程序发布到 Windows 更新
 
@@ -27,42 +27,13 @@ ms.locfileid: "90101712"
 
 4. 在“属性”  部分中，完成以下信息：
 
-   <table>
-   <colgroup>
-   <col width="50%" />
-   <col width="50%" />
-   </colgroup>
-   <thead>
-   <tr class="header">
-   <th>字段</th>
-   <th>说明</th>
-   </tr>
-   </thead>
-   <tbody>
-   <tr class="odd">
-   <td><p><strong>目标</strong></p></td>
-   <td><p>选择“发布到 Windows 更新”将驱动程序发布到 Windows 更新。 如果要创建允许你与合作伙伴共享驱动程序的共享发货标签，请参阅<a href="sharing-drivers-with-your-partners.md" data-raw-source="[Share a driver with a partner](sharing-drivers-with-your-partners.md)">与合作伙伴共享驱动程序</a>。</p>
-   <div class="alert">
-   <strong>注意</strong>  共享驱动程序只能由最初创建它的组织共享。 接收共享驱动程序的组织无法再次共享它。
-   </div>
-   <div>
-     
-   </div></td>
-   </tr>
-   <tr class="even">
-   <td><p><strong>指定合作伙伴（如果有），使其获得对此请求的可见性</strong></p></td>
-   <td><p>输入希望其具有驱动程序和发货标签的只读权限的合作伙伴。 希望合作伙伴注意此发货标签请求时（例如当代表他们发布驱动程序时），使用此字段。 有关详细信息，请参阅<a href="/previous-versions/mt786462(v=vs.85)" data-raw-source="[Publish a driver on behalf of a partner](/previous-versions/mt786462(v=vs.85))">代表合作伙伴发布驱动程序</a>。</p></td>
-   </tr>
-   <tr class="odd">
-   <td><p><strong>驱动程序推广</strong></p></td>
-   <td><p>默认情况下，Windows 更新上的驱动程序标记为可选。 这意味着，仅在设备尚未安装驱动程序时才交付驱动程序。 这些选项允许你替代默认行为，但需要额外 Microsoft 评估。</p>
-   <p>选择“在 Windows 升级期间自动交付和安装此驱动程序”推广驱动程序，使其可用于动态更新。</p>
-   <p>选择“在所有适用的系统上自动交付和安装此驱动程序”将驱动程序推广到“关键”。</p></td>
-   </tr>
-   </tbody>
-   </table>
+|字段|说明|
+|--- |--- |
+|**目标**|选择“发布到 Windows 更新”将驱动程序发布到 Windows 更新。 如果要创建允许你与合作伙伴共享驱动程序的共享发货标签，请参阅[与合作伙伴共享驱动程序](sharing-drivers-with-your-partners.md)。 **注意** 共享驱动程序只能由最初创建它的组织共享。 接收共享驱动程序的组织无法再次共享它。|
+|**指定合作伙伴（如果有），使其获得对此请求的可见性**|输入希望其具有驱动程序和发货标签的只读权限的合作伙伴。 希望合作伙伴注意此发货标签请求时（例如当代表他们发布驱动程序时），使用此字段。 有关详细信息，请参阅[代表合作伙伴发布驱动程序](/previous-versions/mt786462(v=vs.85))。|
+|**驱动程序交付选项**|目标为 Windows 更新时，默认选项为“自动”，这意味着在升级时，驱动程序会自动交付到每个适用的系统。 如果你只选择“在 Windows 升级过程中自动交付”，则驱动程序将定义为动态驱动程序，并仅在操作系统升级期间交付。 如果你只选择“自动交付到所有适用系统”，则在驱动程序发布后，Windows 更新会立即将驱动程序交付给所有适用的系统。<br/><br/>如果在 Windows 10 版本 1909 或更低版本中选择“手动”，则仅当设备上未安装驱动程序或只有通用驱动程序时，才会自动交付驱动程序。<br/><br/>从 Windows 10 版本 2004 开始，系统不会自动交付带有“手动”发货标签的驱动程序。 若要访问最佳匹配“可选/手动”驱动程序，用户必须转到“设置”>“更新和安全”>“Windows 更新”>“查看可选更新”>“驱动程序更新” 。|
 
-   ![显示标签名称和发布属性的屏幕截图](images/label-name-and-properties-windows-update.png)
+![显示标签名称和发布属性的屏幕截图](images/label-name-and-properties-windows-update.png)
 
 5. 在“目标”  部分中，选择要发布的驱动程序包。
 

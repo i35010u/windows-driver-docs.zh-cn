@@ -6,12 +6,12 @@ keywords:
 - 驱动程序选择 WDK 设备安装，其中设备设置搜索
 ms.date: 03/02/2020
 ms.localizationpriority: High
-ms.openlocfilehash: 6dcd25c57c9f9625a77987a23822c049c4546c73
-ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
+ms.openlocfilehash: e6578fba412ae9b2928fffd53e28e0fc4be09312
+ms.sourcegitcommit: c94be6fc464edc94035060a4723efa06ab0f5af9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "79437058"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92153473"
 ---
 # <a name="how-windows-selects-a-driver-for-a-device"></a>Windows 如何为设备选择驱动程序
 
@@ -32,10 +32,10 @@ ms.locfileid: "79437058"
 |搜索阶段|Windows 7 匹配顺序|Windows 8、Windows 10 匹配顺序|
 |--- |--- |--- |
 |安装驱动程序之前|设备路径；Windows 更新；[驱动程序存储](driver-store.md)|[驱动程序存储](driver-store.md)|
-|选择初始驱动程序之后|不适用|**DevicePath**; Windows Update|
+|选择初始驱动程序之后|不适用|**DevicePath** ; Windows Update|
 
 
 > [!NOTE]
-> 在 Windows 10 1709 及更高版本中，Windows 提供了最佳匹配的驱动程序，而这未必是最新的。 驱动程序选择过程考虑硬件 ID、日期/版本和关键/自动/可选类别。 Windows 将关键驱动程序或自动驱动程序的优先级设置为最高。 如果找不到匹配的驱动程序，WU 将查找下一个可选驱动程序。 因此，具有相同值的较旧关键驱动程序优先于较新的可选驱动程序。
-
-
+> 在 Windows 10 版本 1709 及更高版本中，Windows 提供了最佳匹配的驱动程序，而这未必是最新的。 驱动程序选择过程考虑硬件 ID、日期/版本和关键/自动/可选类别。 Windows 将关键驱动程序或自动驱动程序的优先级设置为最高。 如果找不到匹配的驱动程序，WU 将查找下一个可选驱动程序。 因此，具有相同值的较旧关键驱动程序优先于较新的可选驱动程序。
+> 
+> 从 Windows 10 版本 2004 开始，Windows 会搜索计算机和 Windows 更新，仅自动提供最佳的自动/关键匹配驱动程序。 若要查看可选类别中的匹配驱动程序，请转到“设置”>“更新和安全”>“Windows 更新”>“查看可选更新”>“驱动程序更新”。 Windows 仍会使用相同的条件对驱动程序进行排序和选择。

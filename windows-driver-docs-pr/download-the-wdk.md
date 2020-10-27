@@ -10,12 +10,12 @@ keywords:
 ms.date: 08/17/2020
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: ec2e2303ab5fd144c8124d951f11124869cb6fce
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: a58d05028add8238c6bdbbb029eb6fcb0b4ba51f
+ms.sourcegitcommit: f7512f0c18a66672736c8eb87e346d8eb6a71439
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89063704"
+ms.lasthandoff: 10/19/2020
+ms.locfileid: "92174188"
 ---
 # <a name="download-the-windows-driver-kit-wdk"></a>下载 Windows 驱动程序工具包 (WDK)
 
@@ -80,13 +80,25 @@ WDK Visual Studio 扩展包含在默认 WDK 安装中。
 
 ## <a name="enterprise-wdk-ewdk-for-windows-10-version-2004"></a>适用于 Windows 10 版本 2004 的企业版 WDK (EWDK)
 
-EWDK 是一种用于生成驱动程序的独立自包含命令行环境。 其中包括 Visual Studio 生成工具、SDK 和 WDK。  EWDK 的最新公共版本包含 Visual Studio 2019 生成工具 16.3.0 和 MSVC 工具集 v14.23。  若要开始使用，请装载 ISO 并运行 **LaunchBuildEnv**。
+EWDK 是一种用于生成驱动程序的独立自包含命令行环境。 其中包括 Visual Studio 生成工具、SDK 和 WDK。  EWDK 的最新公共版本包含 Visual Studio 2019 生成工具 16.3.0 和 MSVC 工具集 v14.23。  若要开始使用，请装载 ISO 并运行 **LaunchBuildEnv** 。
 
 EWDK 还需要 .NET Framework 版本 4.7.2。 有关 .NET Framework 的其他要求的详细信息，请参阅 [.NET Framework 系统要求](/dotnet/framework/get-started/system-requirements)。
 
 ### <a name="download-icon-ewdk-with-visual-studio-build-tools"></a>![“下载”图标](images/download-install.png) 包含 Visual Studio 生成工具的 EWDK
 
 * [下载适用于 Windows 10 版本 2004 的 EWDK](/legal/windows/hardware/enterprise-wdk-license-2019)
+
+> 你可以将 Visual Studio 界面与 EWDK 中提供的生成工具结合使用。
+>
+>1. 装载 EWDK ISO。
+>2. 运行 `LaunchBuildEnv.cmd`。
+>3. 在步骤 2 中创建的环境中，键入“SetupVSEnv”，然后按“Enter” 。
+>4. 使用完整的文件路径，从同一环境中启动 devenv.exe。 
+>示例： `C:\Program Files (x86)\Microsoft Visual Studio\2019\\%Community|Professionial|Enterprise%\Common7\IDE\devenv.exe`
+>
+>请注意，Visual Studio 主要版本应与 EWDK 中的版本匹配。 例如，Visual Studio 2019 适用于包含 VS16.X 生成工具的 EWDK。 
+
+
 
 ## <a name="driver-samples-for-windows-10"></a>Windows 10 驱动程序示例
 

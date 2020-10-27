@@ -4,12 +4,12 @@ title: 为静态驱动程序验证程序创建日志文件
 description: 了解如何在为驱动程序创建驱动程序验证日志 (DVL) 之前运行静态驱动程序验证程序 (SDV)。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fd5497e5f2f7a8a23fd47985a758af39ffff9d1f
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: c0e7f29ecacc336f86f0ef7f8b442dd53c4715f7
+ms.sourcegitcommit: d38530f16bdf17715d7d26dfe6d501aa62ec37fd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91734453"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "92210618"
 ---
 # <a name="creating-a-log-file-for-static-driver-verifier"></a>为静态驱动程序验证程序创建日志文件
 
@@ -17,22 +17,20 @@ Windows Server 2012 [硬件认证计划](/previous-versions/windows/hardware/hck
 
 为了获得最佳效果，请在运行静态驱动程序验证程序前运行代码分析工具。
 
-**为静态驱动程序验证程序创建日志文件**
+## <a name="create-the-log-file"></a>创建日志文件
 
-1.  在 Microsoft Visual Studio Ultimate 2012 中，选择驱动程序项目文件，然后选择并按住（或右键单击）打开项目属性。 选择“Windows 8 版本”  作为“配置”  ，并选择“x64”  作为“平台”  。
-2.  如果已运行代码分析工具，请按照[运行静态驱动程序验证程序](../devtest/using-static-driver-verifier-to-find-defects-in-drivers.md#running_static_driver_verifier)中的以下说明操作。 有关使用 SDV 的详细信息，请参阅“使用静态驱动程序验证程序查找驱动程序中的缺陷”
-3.  如果 SDV 发现你的驱动程序中存在缺陷，请在“结果”窗格中选择该缺陷，查看导致违反规则的代码路径的跟踪。 修复在驱动程序中找到的任何缺陷并再次运行 SDV。
+1. 在 Microsoft Visual Studio Ultimate 2012 中，选择驱动程序项目文件，然后选择并按住（或右键单击）打开项目属性。 选择“Windows 8 版本”  作为“配置”  ，并选择“x64”  作为“平台”  。
+2. 如果已运行代码分析工具，请按照[运行静态驱动程序验证程序](../devtest/using-static-driver-verifier-to-find-defects-in-drivers.md#running-static-driver-verifier)中的以下说明操作。 有关使用 SDV 的详细信息，请参阅“使用静态驱动程序验证程序查找驱动程序中的缺陷”
+3. 如果 SDV 发现你的驱动程序中存在缺陷，请在“结果”窗格中选择该缺陷，查看导致违反规则的代码路径的跟踪。 修复在驱动程序中找到的任何缺陷并再次运行 SDV。
 
 静态驱动程序验证程序会将结果写入到项目的 SDV 子目录（例如 \\myDriverProject\\SDV）中的文件 SDV.DVL.xml。
 
-## <a name="span-idremarksspanspan-idremarksspanspan-idremarksspanremarks"></a><span id="Remarks"></span><span id="remarks"></span><span id="REMARKS"></span>备注
-
+## <a name="remarks"></a>注解
 
 有关静态驱动程序验证程序和驱动程序验证日志的最新信息，请参阅“WDK 发行说明”。 发行说明可在 [Windows 驱动程序工具包 (WDK) 下载页](https://go.microsoft.com/fwlink/p/?linkid=254897)上找到。
 
-**重要提示**  认证提交可以接受 DVL 文件出现超时、加宽行距和其他未成功结果。 这不会导致 HCK 中的静态工具测试失败。 对于 HCK 2.0，静态工具测试只需要 DVL 文件存在，就可证明已运行代码分析和 SDV，并不需要通过所有规则。
-
- 
+>[!IMPORTANT]
+>认证提交可以接受 DVL 文件出现超时、加宽行距和其他未成功结果。 这不会导致 HCK 中的静态工具测试失败。 对于 HCK 2.0，静态工具测试只需要 DVL 文件存在，就可证明已运行代码分析和 SDV，并不需要通过所有规则。
 
 你还可以从“Visual Studio 命令提示”窗口运行静态驱动程序验证程序。 通过运行以下批处理文件之一设置环境。
 
@@ -53,8 +51,7 @@ msbuild.exe <vcxprojectfile> /p:Configuration="Win8 Release" /p:Platform=x64 /ta
 msbuild.exe <vcxprojectfile> /p:Configuration="Win8 Release" /p:Platform=x64 /target:sdv /p:inputs="/check:default.sdv"
 ```
 
-## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
-
+## <a name="related-topics"></a>相关主题
 
 * [创建驱动程序验证日志](creating-a-driver-verification-log.md)
 * [静态驱动程序验证程序](../devtest/static-driver-verifier.md)
