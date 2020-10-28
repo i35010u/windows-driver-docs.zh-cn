@@ -3,12 +3,12 @@ description: 描述以不可知的方式实现 UCSI 规范的 UCSI 类扩展的�
 title: 编写 UCSI 客户端驱动程序
 ms.date: 09/30/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 63bad06518002e7fb0a1932d6fbcb5325246d95a
-ms.sourcegitcommit: b75e9940d49410e2b952e96f325df67a039cd571
+ms.openlocfilehash: 93c1d781daed185223532005547139ccfce2ac93
+ms.sourcegitcommit: be37c8ccfe838869eec6fae4112017eb6a96d848
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92336918"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92630156"
 ---
 # <a name="write-a-ucsi-client-driver"></a>编写 UCSI 客户端驱动程序
 
@@ -91,7 +91,7 @@ UcmUcsiCx 将从 OPM 到 PPM 固件发送 UCSI 命令和从 PPM 固件接收通�
 
 如果客户端驱动程序由于 S0 空闲而进入 Dx 状态，则当 UcmUcsiCx 将包含 UCSI 命令的 IOCTL 发送到客户端驱动程序的受管理队列时，WDF 会将驱动程序带入 D0。 如果从固件发出 PPM 通知，S0-Idle 中的客户端驱动程序应重新进入 "已通电" 状态，因为在 S0 空闲状态下，PPM 通知仍处于启用状态。  
 
-## <a name="before-you-begin"></a>准备工作
+## <a name="before-you-begin"></a>开始之前
 
 - 确定需要写入的驱动程序类型，具体取决于你的硬件或固件是否实现了 PD 状态机和传输。
 
@@ -111,9 +111,9 @@ UcmUcsiCx 将从 OPM 到 PPM 固件发送 UCSI 命令和从 PPM 固件接收通�
 
 在 [**EVT_WDF_DRIVER_DEVICE_ADD**](/windows-hardware/drivers/ddi/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add) 实现中。
 
-1. 设置即插即用和电源管理事件回调函数 ([**WdfDeviceInitSetPnpPowerEventCallbacks**](/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceinitsetpnppowereventcallbacks)) 后，调用 [**UcmUcsiDeviceInitInitialize**](/windows-hardware/drivers/ddi/ucmucsidevice/nf-ucmucsidevice-ucmucsideviceinitinitialize) 来初始化 [**WDFDEVICE_INIT**](/windows-hardware/drivers/wdf/wdfdevice_init) 的不透明结构。 调用将客户端驱动程序与框架相关联。
+1. 设置即插即用和电源管理事件回调函数 ( [**WdfDeviceInitSetPnpPowerEventCallbacks**](/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceinitsetpnppowereventcallbacks)) 后，调用 [**UcmUcsiDeviceInitInitialize**](/windows-hardware/drivers/ddi/ucmucsidevice/nf-ucmucsidevice-ucmucsideviceinitinitialize) 来初始化 [**WDFDEVICE_INIT**](/windows-hardware/drivers/wdf/wdfdevice_init) 的不透明结构。 调用将客户端驱动程序与框架相关联。
 
-2. 创建框架设备对象 (WDFDEVICE) 后，调用 [**UcmUcsiDeviceInitialize**](/windows-hardware/drivers/ddi/ucmucsidevice/nf-ucmucsidevice-ucmucsideviceinitialize.md) 将客户端驱动程序注册到 UcmUcsiCx。
+2. 创建框架设备对象 (WDFDEVICE) 后，调用 [**UcmUcsiDeviceInitialize**](/windows-hardware/drivers/ddi/ucmucsidevice/nf-ucmucsidevice-ucmucsideviceinitialize) 将客户端驱动程序注册到 UcmUcsiCx。
 
 ## <a name="2-create-the-ppm-object-with-ucmucsicx"></a>2. 通过 UcmUcsiCx 创建 PPM 对象
 
@@ -121,7 +121,7 @@ UcmUcsiCx 将从 OPM 到 PPM 固件发送 UCSI 命令和从 PPM 固件接收通�
 
 1. 提供设备上连接器集合的句柄。
    1. 通过调用 [**UcmUcsiConnectorCollectionCreate**](/windows-hardware/drivers/ddi/ucmucsippm/nf-ucmucsippm-ucmucsiconnectorcollectioncreate)创建连接器集合。
-   2. 枚举设备上的连接器，并通过调用 UcmUcsiConnectorCollectionAddConnector 将其添加到[ **UcmUcsiConnectorCollectionAddConnector**集合](/windows-hardware/drivers/ddi/ucmucsippm/nf-ucmucsippm-ucmucsiconnectorcollectionaddconnector)
+   2. 枚举设备上的连接器，并通过调用 UcmUcsiConnectorCollectionAddConnector 将其添加到 [ **UcmUcsiConnectorCollectionAddConnector** 集合](/windows-hardware/drivers/ddi/ucmucsippm/nf-ucmucsippm-ucmucsiconnectorcollectionaddconnector)
 
       ```cpp
       // Create the connector collection.
@@ -204,7 +204,7 @@ status = WdfIoQueueCreate(device, &queueConfig, &attrib, &UcsiCommandRequestQueu
 UcmUcsiPpmSetUcsiCommandRequestQueue(ppmObject, UcsiCommandRequestQueue);
 ```
 
-此外，客户端驱动程序还必须调用 [**UcmUcsiPpmStart**](/windows-hardware/drivers/ddi/ucmucsippm/nf-ucmucsippm-ucmucsippmstart) 来通知 UcmUcsiCx 驱动程序已准备好接收 IOCTL 请求。  建议在创建 WDFQUEUE 句柄以便接收 UCSI 命令后，通过[**UcmUcsiPpmSetUcsiCommandRequestQueue**](/windows-hardware/drivers/ddi/ucmucsippm/nf-ucmucsippm-ucmucsippmsetucsicommandrequestqueue)在[**EVT_WDF_DEVICE_PREPARE_HARDWARE**](/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_prepare_hardware)中进行调用。
+此外，客户端驱动程序还必须调用 [**UcmUcsiPpmStart**](/windows-hardware/drivers/ddi/ucmucsippm/nf-ucmucsippm-ucmucsippmstart) 来通知 UcmUcsiCx 驱动程序已准备好接收 IOCTL 请求。  建议在创建 WDFQUEUE 句柄以便接收 UCSI 命令后，通过 [**UcmUcsiPpmSetUcsiCommandRequestQueue**](/windows-hardware/drivers/ddi/ucmucsippm/nf-ucmucsippm-ucmucsippmsetucsicommandrequestqueue)在 [**EVT_WDF_DEVICE_PREPARE_HARDWARE**](/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_prepare_hardware)中进行调用。
 相反，当驱动程序不希望处理更多请求时，它必须调用 [**UcmUcsiPpmStop**](/windows-hardware/drivers/ddi/ucmucsippm/nf-ucmucsippm-ucmucsippmstop)。 在 [**EVT_WDF_DEVICE_RELEASE_HARDWARE**](/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_release_hardware) 实现中执行此操作。
 
 ## <a name="4-handle-the-ioctl-requests"></a>4. 处理 IOCTL 请求

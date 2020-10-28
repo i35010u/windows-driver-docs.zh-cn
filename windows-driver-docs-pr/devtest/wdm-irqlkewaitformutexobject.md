@@ -2,7 +2,7 @@
 title: 'IrqlKeWaitForMutexObject 规则 (wdm) '
 ms.assetid: f2e7b733-1746-4db5-b4a9-becd211e40cf
 ms.date: 05/21/2018
-description: ''
+description: '了解详细信息： IrqlKeWaitForMutexObject 规则 (wdm) '
 keywords:
 - 'IrqlKeWaitForMutexObject 规则 (wdm) '
 topic_type:
@@ -12,21 +12,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 1abe0089d49dd06b1c811c581320331c0ee2881a
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: f7d2965b072cfd22515a87d7e6beccd7797ee6d5
+ms.sourcegitcommit: f47c072e88dce59daba1231027b60eb56bd2cde9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90107470"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92689377"
 ---
 # <a name="irqlkewaitformutexobject-rule-wdm"></a>IrqlKeWaitForMutexObject 规则 (wdm) 
 
 
-**IrqlKeWaitForMutexObject**规则根据*Timeout*参数的值，指定要在适当 IRQL 处调用[**KeWaitForMutexObject**](https://msdn.microsoft.com/library/windows/hardware/ff553344)例程的驱动程序：
+**IrqlKeWaitForMutexObject** 规则根据 *Timeout* 参数的值，指定要在适当 IRQL 处调用 [**KeWaitForMutexObject**](https://msdn.microsoft.com/library/windows/hardware/ff553344)例程的驱动程序：
 
 -   如果 *Timeout* 的值为零，则驱动程序将以 IRQL = 调度 \_ 级别执行。
 
--   如果 *Timeout* 为 **NULL**，或指向非零的任何值，则驱动程序将以 IRQL &lt; = APC \_ 级别执行。
+-   如果 *Timeout* 为 **NULL** ，或指向非零的任何值，则驱动程序将以 IRQL &lt; = APC \_ 级别执行。
 
 **驱动程序模型： WDM**
 

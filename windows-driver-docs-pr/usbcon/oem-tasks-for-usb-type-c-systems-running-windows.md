@@ -3,12 +3,12 @@ description: 此表描述了 Windows 10 支持的用例，而 Oem 必须执行�
 title: USB 类型 C 系统的 OEM 任务
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: facc6b84d33653bc5fe9fae679b82a273a6358ec
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 7170bb5be458664f0ce3ebb33af4c03c4e1c6814
+ms.sourcegitcommit: be37c8ccfe838869eec6fae4112017eb6a96d848
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90102990"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92630152"
 ---
 # <a name="oem-tasks-for-usb-type-c-systems"></a>USB 类型 C 系统的 OEM 任务
 
@@ -28,7 +28,7 @@ ms.locfileid: "90102990"
 </colgroup>
 <thead>
 <tr class="header">
-<th>用例</th>
+<th>使用案例</th>
 <th>Windows 支持</th>
 <th>OEM 任务</th>
 </tr>
@@ -49,7 +49,7 @@ ms.locfileid: "90102990"
 </ul>
 <p></p>
 <div class="alert">
-<strong>注意</strong>   检测到慢速充电器时，会通知用户。
+<strong>注意</strong>  检测到慢速充电器时，会通知用户。
 </div>
 <div>
  
@@ -66,7 +66,7 @@ ms.locfileid: "90102990"
 <p><a href="bring-up-a-usb-type-c-connector-on-a-windows-system.md" data-raw-source="[Write a USB Type-C connector driver](bring-up-a-usb-type-c-connector-on-a-windows-system.md)">编写 USB 类型 C 连接器驱动程序</a></p>
 <p><a href="/previous-versions/windows/hardware/drivers/mt188012(v=vs.85)" data-raw-source="[USB filter driver for supporting proprietary chargers](/previous-versions/windows/hardware/drivers/mt188012(v=vs.85))">用于支持专用充电器的 USB 筛选器驱动程序</a></p>
 <div class="alert">
-<strong>注意</strong>   Windows 不支持旧式 USB-A 和 USB-B/microB 连接器的电源交付。
+<strong>注意</strong>  Windows 不支持旧式 USB-A 和 USB-B/microB 连接器的电源交付。
 </div>
 <div>
  
@@ -103,7 +103,7 @@ ms.locfileid: "90102990"
 <p></p></td>
 <td><p>备用模式适配器或设备必须实现一个布告栏设备，指示备用模式协商是否成功。</p>
 <p>如果备用模式适配器或设备实现其他 USB 功能，则更新布告栏描述符的内容将要求您断开和重新连接该设备，可能会中断功能 (例如文件传输）（如果您的设备是 USB 大容量存储设备) 。 为避免出现这种情况，布告栏规范建议使用设备中的集成集线器，并使布告栏设备在其某个端口上显示为单独的 USB 设备。</p>
-<p>有关详细信息，请参阅 <a href="https://go.microsoft.com/fwlink/p/?linkid=620207" data-raw-source="[USB Device Class Definition for Billboard Devices specification](https://go.microsoft.com/fwlink/p/?linkid=620207)">布告栏设备的 USB 设备类定义规范</a>。</p></td>
+<p>有关详细信息，请参阅 <a href="https://www.usb.org/document-library/billboard-device-class-spec-revision-121-and-adopters-agreement" data-raw-source="[USB Device Class Definition for Billboard Devices specification](https://www.usb.org/document-library/billboard-device-class-spec-revision-121-and-adopters-agreement)">布告栏设备的 USB 设备类定义规范</a>。</p></td>
 </tr>
 <tr class="odd">
 <td><strong>USB 双重角色</strong>
@@ -114,7 +114,7 @@ ms.locfileid: "90102990"
 <p>USB 角色切换堆栈和 USB 连接器管理器堆栈与硬件通信以获取当前角色，并根据需要交换系统端口的角色。</p>
 <p></p>
 <div class="alert">
-<strong>注意</strong>   对等 USB 类型-C 连接（如电脑）连接到另一台电脑，或者移动设备连接到其他移动设备。 对于此类连接，向用户显示错误。
+<strong>注意</strong>  对等 USB 类型-C 连接（如电脑）连接到另一台电脑，或者移动设备连接到其他移动设备。 对于此类连接，向用户显示错误。
 </div>
 <div>
  

@@ -2,7 +2,7 @@
 title: 'KsProcessingMutex 规则 ( # A1'
 ms.assetid: AD73B241-7B08-4E48-94A1-B6BDE78590E6
 ms.date: 05/21/2018
-description: ''
+description: '了解详细信息： KsProcessingMutex 规则 ( # A1'
 keywords:
 - 'KsProcessingMutex 规则 ( # A1'
 topic_type:
@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 9edfca1d1da6cbaa81e07f927de05a5612d3a2b8
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 69cd9100c19e76c5e3d68bacbccf25d3ba0f8a0a
+ms.sourcegitcommit: f47c072e88dce59daba1231027b60eb56bd2cde9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90105630"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92689412"
 ---
 # <a name="ksprocessingmutex-rule-"></a>KsProcessingMutex 规则 ( # A1
 
@@ -30,7 +30,7 @@ KsProcessingMutex 规则指定一个 KS 微型端口驱动程序按正确的顺�
 
 **驱动程序模型： KS**
 
-**Bug 检查 () 发现此规则**： [**bug 检查0XC4：驱动程序 \_ 验证器 \_ 检测到 \_ 违反**](../debugger/bug-check-0xc4--driver-verifier-detected-violation.md) (0x0008100B) 
+**Bug 检查 () 发现此规则** ： [**bug 检查0XC4：驱动程序 \_ 验证器 \_ 检测到 \_ 违反**](../debugger/bug-check-0xc4--driver-verifier-detected-violation.md) (0x0008100B) 
 
 
 <a name="how-to-test"></a>如何测试

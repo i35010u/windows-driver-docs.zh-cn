@@ -3,12 +3,12 @@ description: 本部分介绍 USB 驱动程序开发。
 title: USB 客户端驱动程序开发的首要步骤
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 71345098b864ae537196468c871dbdb3236e75d6
-ms.sourcegitcommit: b75e9940d49410e2b952e96f325df67a039cd571
+ms.openlocfilehash: ee967505695758b980ec8e26fc5bbbf894f87f97
+ms.sourcegitcommit: be37c8ccfe838869eec6fae4112017eb6a96d848
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92337062"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92630154"
 ---
 # <a name="first-steps-for-usb-client-driver-development"></a>USB 客户端驱动程序开发的首要步骤
 
@@ -108,7 +108,7 @@ ms.locfileid: "92337062"
 [OSR Online 列表](https://www.osronline.com/)  
 由 [OSR Online](https://www.osronline.com/) 管理的讨论列表，适用于内核模式驱动程序开发人员。
 
-[专注硬件开发的 Windows 开发人员中心](/windows/hardware/)  
+[专注硬件开发的 Windows 开发人员中心](/windows-hardware/drivers/dashboard/)  
 
 [Windows 驱动程序工具包](/windows-hardware/drivers/download-the-wdk)，通过 [Windows 硬件实验室工具包](/windows-hardware/test/hlk/)确保你的产品可靠且与 windows 兼容，并了解 [windows 驱动程序示例](/windows-hardware/drivers/samples/)。
 

@@ -2,7 +2,7 @@
 title: 'InputBufferAPI 规则 (kmdf) '
 ms.assetid: 11388ffa-633d-4129-9693-a351ec8b0735
 ms.date: 05/21/2018
-description: ''
+description: '了解详细信息： InputBufferAPI 规则 (kmdf) '
 keywords:
 - 'InputBufferAPI 规则 (kmdf) '
 topic_type:
@@ -12,17 +12,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 6f7efd829625a99f85e37111fa54f69c3fede792
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 4f2a3c26b8a9b6b2bc8bfa2cd9609b26c542e932
+ms.sourcegitcommit: f47c072e88dce59daba1231027b60eb56bd2cde9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90106636"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92689357"
 ---
 # <a name="inputbufferapi-rule-kmdf"></a>InputBufferAPI 规则 (kmdf) 
 
 
-**InputBufferAPI**规则指定在[*EvtIoRead*](/windows-hardware/drivers/ddi/wdfio/nc-wdfio-evt_wdf_io_queue_io_read)回调函数中使用正确的缓冲区检索 DDIs。 在 *EvtIoRead* 回调函数中，不能调用以下 DDIs 进行缓冲区检索：
+**InputBufferAPI** 规则指定在 [*EvtIoRead*](/windows-hardware/drivers/ddi/wdfio/nc-wdfio-evt_wdf_io_queue_io_read)回调函数中使用正确的缓冲区检索 DDIs。 在 *EvtIoRead* 回调函数中，不能调用以下 DDIs 进行缓冲区检索：
 
 [**WdfRequestRetrieveInputBuffer**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestretrieveinputbuffer) 
 [**WdfRequestRetrieveUnsafeUserInputBuffer**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestretrieveunsafeuserinputbuffer) 

@@ -2,7 +2,7 @@
 title: 'OutputBufferAPI 规则 (kmdf) '
 ms.assetid: 868f08f8-b6c1-480e-a47e-de7b0c138b98
 ms.date: 05/21/2018
-description: ''
+description: '了解详细信息： OutputBufferAPI 规则 (kmdf) '
 keywords:
 - 'OutputBufferAPI 规则 (kmdf) '
 topic_type:
@@ -12,17 +12,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: b204b7f0fb811c3b984df31fc0801107360a5dd6
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 8b1f1158f2747ff86765b5092a03f9588253ef98
+ms.sourcegitcommit: f47c072e88dce59daba1231027b60eb56bd2cde9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90103832"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92689353"
 ---
 # <a name="outputbufferapi-rule-kmdf"></a>OutputBufferAPI 规则 (kmdf) 
 
 
-**OutputBufferAPI**规则指定在[*EvtIoWrite*](/windows-hardware/drivers/ddi/wdfio/nc-wdfio-evt_wdf_io_queue_io_write)回调函数中使用正确的缓冲区检索 DDIs。 在 *EvtIoWrite* 回调函数中，不能调用以下 DDIs 进行缓冲区检索：
+**OutputBufferAPI** 规则指定在 [*EvtIoWrite*](/windows-hardware/drivers/ddi/wdfio/nc-wdfio-evt_wdf_io_queue_io_write)回调函数中使用正确的缓冲区检索 DDIs。 在 *EvtIoWrite* 回调函数中，不能调用以下 DDIs 进行缓冲区检索：
 
 [**WdfRequestRetrieveOutputBuffer**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestretrieveoutputbuffer) 
 [**WdfRequestRetrieveUnsafeUserOutputBuffer**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestretrieveunsafeuseroutputbuffer) 

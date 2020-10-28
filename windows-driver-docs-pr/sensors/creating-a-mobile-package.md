@@ -4,12 +4,12 @@ description: 本主题提供有关创建用于在移动设备上安装示例驱�
 ms.assetid: E929D80D-17BF-4079-8CF9-972020306358
 ms.date: 07/20/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 22857a278b498bb8babd7d41f70f85dbde5c4a24
-ms.sourcegitcommit: b75e9940d49410e2b952e96f325df67a039cd571
+ms.openlocfilehash: 66d8415b8b888cdfb2be5d4bc4cacc3dc14c5318
+ms.sourcegitcommit: be37c8ccfe838869eec6fae4112017eb6a96d848
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92336934"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92630148"
 ---
 # <a name="creating-a-mobile-package"></a>创建移动包
 
@@ -61,9 +61,9 @@ Copyright (c) Microsoft Corporation.  All rights reserved.
 ```
 
 >[!NOTE]
-> **Security InfSectionName**元素的值必须与本主题中讨论的**AddReg**字段的值完全相同：请[查看 INX 文件](review-and-revise-the-inf-file.md)。
+> **Security InfSectionName** 元素的值必须与本主题中讨论的 **AddReg** 字段的值完全相同：请 [查看 INX 文件](review-and-revise-the-inf-file.md)。
 
-2. 在记事本的主菜单中，单击 " **文件** &gt; **另存为**"，然后在 " **另存为** " 对话框窗口中，使用下拉框将 " **保存类型** " 字段设置为 " **所有文件**"。 * * * *
+2. 在记事本的主菜单中，单击 " **文件** &gt; **另存为** "，然后在 " **另存为** " 对话框窗口中，使用下拉框将 " **保存类型** " 字段设置为 " **所有文件** "。 * * * *
 
 3. 在 " **文件名** " 文本框中，键入以下内容：
 
@@ -74,7 +74,7 @@ Copyright (c) Microsoft Corporation.  All rights reserved.
 
 如果已将 WDK 安装到默认位置，则可以在以下位置找到 **pkggen.exe** ： *%WPDKCONTENTROOT%\Tools\bin\i386*
 
-有关如何为移动设备创建包的说明，请参阅 [包生成器的命令行参数](/windows-hardware/manufacture/mobile/command-line-arguments-for-package-generator) 。 有关更全面的介绍，请参阅 [创建 Mobile Pacakages](/windows-hardware/drivers/sensors/creating-a-mobile-package) 。
+有关在移动设备上安装示例驱动程序的信息，请参阅 [创建移动包](/windows-hardware/drivers/sensors/creating-a-mobile-package) 。
 
 ## <a name="related-topics"></a>相关主题
 

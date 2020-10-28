@@ -2,7 +2,7 @@
 title: 'IrqlKeApcLte1 规则 (wdm) '
 ms.assetid: d88e3c0f-574b-41df-97ee-282a9f1eb6f4
 ms.date: 05/21/2018
-description: ''
+description: '了解详细信息： IrqlKeApcLte1 规则 (wdm) '
 keywords:
 - 'IrqlKeApcLte1 规则 (wdm) '
 topic_type:
@@ -12,17 +12,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: a26a8bec7f29cc9af679d8524e2575d208b6ffbc
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 3fc7d97e6d20743503d46ad04176057101c5ae71
+ms.sourcegitcommit: f47c072e88dce59daba1231027b60eb56bd2cde9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90103960"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92689399"
 ---
 # <a name="irqlkeapclte1-rule-wdm"></a>IrqlKeApcLte1 规则 (wdm) 
 
 
-**IrqlKeApcLte1**规则指定仅当驱动程序在 IRQL &lt; = APC 级别执行时才调用以下内核例程 \_ ：
+**IrqlKeApcLte1** 规则指定仅当驱动程序在 IRQL &lt; = APC 级别执行时才调用以下内核例程 \_ ：
 
 -   [**KeAcquireGuardedMutex**](/previous-versions/windows/hardware/drivers/ff551892(v=vs.85))
 
@@ -40,7 +40,7 @@ ms.locfileid: "90103960"
 
 **驱动程序模型： WDM**
 
-**Bug 检查 () 发现此规则**： [**bug 检查0XC4：驱动程序 \_ 验证器 \_ 检测到 \_ 违反**](../debugger/bug-check-0xc4--driver-verifier-detected-violation.md) (0x0002000F) 
+**Bug 检查 () 发现此规则** ： [**bug 检查0XC4：驱动程序 \_ 验证器 \_ 检测到 \_ 违反**](../debugger/bug-check-0xc4--driver-verifier-detected-violation.md) (0x0002000F) 
 
 
 <a name="how-to-test"></a>如何测试

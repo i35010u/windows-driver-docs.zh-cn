@@ -2,7 +2,7 @@
 title: 'ZwRegistryOpen 规则 (wdm) '
 ms.assetid: c98682c3-0d38-4d5b-9649-7574106f9ce3
 ms.date: 05/21/2018
-description: ''
+description: '了解详细信息： ZwRegistryOpen 规则 (wdm) '
 keywords:
 - 'ZwRegistryOpen 规则 (wdm) '
 topic_type:
@@ -12,17 +12,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 9ef65de1749d3daba3ab197e4c52304444e7c0af
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 4feb78f1e6f98b2a83a816e4024ceaf2bc1a40be
+ms.sourcegitcommit: f47c072e88dce59daba1231027b60eb56bd2cde9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90103172"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92689372"
 ---
 # <a name="zwregistryopen-rule-wdm"></a>ZwRegistryOpen 规则 (wdm) 
 
 
-[**ZwRegistryOpen**](storport-zwregistryopen.md)规则指定在调用[**ZwOpenKey**](/windows-hardware/drivers/ddi/wdm/nf-wdm-zwopenkey)之后，驱动程序只会在将打开的句柄保存到注册表项 (的情况下，在调用[**ZwClose**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ntclose)或[**ZwDeleteKey**](/windows-hardware/drivers/ddi/wdm/nf-wdm-zwdeletekey)) 之前调用以下注册表函数：
+[**ZwRegistryOpen**](storport-zwregistryopen.md)规则指定在调用 [**ZwOpenKey**](/windows-hardware/drivers/ddi/wdm/nf-wdm-zwopenkey)之后，驱动程序只会在将打开的句柄保存到注册表项 (的情况下，在调用 [**ZwClose**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ntclose)或 [**ZwDeleteKey**](/windows-hardware/drivers/ddi/wdm/nf-wdm-zwdeletekey)) 之前调用以下注册表函数：
 
 -   [**ZwClose**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ntclose)
 

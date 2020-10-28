@@ -3,16 +3,16 @@ description: MUTT 连接试验类型 C (USB Type-C ConnEx) 硬件板是 Arduino 
 title: 通过 USB 类型 C ConnEx 测试 USB 类型 C 系统
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: dec54a6eabfeae444d131243a6fdc51ea1c1edfe
-ms.sourcegitcommit: 1690ad77580a2cfc47debb9751fd109a5991dd52
+ms.openlocfilehash: 4e1ed729d3e50c66b9a515ed7b289fb3a5f77392
+ms.sourcegitcommit: be37c8ccfe838869eec6fae4112017eb6a96d848
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92345959"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92630158"
 ---
 # <a name="test-usb-type-c-systems-with-usb-type-c-connex"></a>通过 USB 类型 C ConnEx 测试 USB 类型 C 系统
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 - 使用 USB 类型进行自动测试-C ConnEx
 - Windows 10 中的 USB 类型 C 互操作性测试过程：功能测试 (FT) 和压力测试 (ST) 。
@@ -27,7 +27,7 @@ ms.locfileid: "92345959"
 - [xHCI 互操作性测试过程](https://www.usb.org/document-library/xhci-interoperability-test-procedures-peripherals-hubs-and-hosts-version)
 
 >[!NOTE]
-> 某些信息与预发布的产品相关，这些信息可能会在正式发布之前进行重大修改。 Microsoft 不对此处提供的信息作任何明示或默示的担保。
+> 某些信息与预发布的产品相关，这些信息可能会在正式发布之前进行重大修改。 Microsoft 对此处提供的信息不提供任何明示或暗示的保证。
 
 MUTT 连接试验类型 C (USB Type-C ConnEx) 硬件板是 Arduino 板的自定义盾牌。 盾牌提供了一个四对一交换机，用于自动执行 USB 类型 C 方案的互操作性测试。
 
@@ -41,7 +41,7 @@ MUTT 连接试验类型 C (USB Type-C ConnEx) 硬件板是 Arduino 板的自定�
 
 若要使用 USB 类型 C ConnEx 执行 USB 类型 C 互操作性测试过程，需要：
 
-- **测试中的系统 (SUT) **
+- **测试中的系统 (SUT)**
 
     台式机、便携式计算机、平板电脑、服务器或手机，其中至少有一个公开的类型 C USB 端口。
 
@@ -51,11 +51,11 @@ MUTT 连接试验类型 C (USB Type-C ConnEx) 硬件板是 Arduino 板的自定�
 
     ![显示 Arduino 万像素 2560 R3 板。](images/arduino.png)
 
-- ** [Arduino 万像素 2560 R3](https://store.arduino.cc/usa/mega-2560-r3) 微控制器的电源适配器**。
+- **[Arduino 万像素 2560 R3](https://store.arduino.cc/usa/mega-2560-r3) 微控制器的电源适配器** 。
 
 - **USB 类型-C ConnEx**
 
-    盾牌有一个男 USB Type-C 端口 (标签为其连接的 **J1**) 。 此防护板还具有四个其他 USB 端口 (标签为 **J2**、 **J3**、 **J4**、 **J6**) 可以连接到的设备，这些设备可充当 SUT 的外围设备。 盾牌监视从 SUT 提取的 amperage 和电压。 可以从 [MCCI](https://store.mcci.com/products/model-3101-type-c-connection-exerciser?variant=17120953798) 或 [JJG 技术](http://www.jjgtechnologies.com/typecconne.htm)购买此板。
+    盾牌有一个男 USB Type-C 端口 (标签为其连接的 **J1** ) 。 此防护板还具有四个其他 USB 端口 (标签为 **J2** 、 **J3** 、 **J4** 、 **J6** ) 可以连接到的设备，这些设备可充当 SUT 的外围设备。 盾牌监视从 SUT 提取的 amperage 和电压。 可以从 [MCCI](https://store.mcci.com/products/model-3101-type-c-connection-exerciser?variant=17120953798) 或 [JJG 技术](http://www.jjgtechnologies.com/typecconne.htm)购买此板。
 
     ![USB 类型-C ConnEx](images/connexc-top.png)
 
@@ -69,7 +69,7 @@ MUTT 连接试验类型 C (USB Type-C ConnEx) 硬件板是 Arduino 板的自定�
 
 - **USB 充电器**
 
-    USB 类型 C，支持 USB 类型 C 当前要求，并选择性地 [提供 Usb 电源](https://www.usb.org/usb-charger-pd#:~:text=USB%20Charger%20%28USB%20Power%20Delivery%29%20USB%20has%20evolved,cell%20phones%2C%20MP3%20players%20and%20other%20hand-held%20devices.)。 还需要 **J6**的 USB 微 B 充电器。
+    USB 类型 C，支持 USB 类型 C 当前要求，并选择性地 [提供 Usb 电源](https://www.usb.org/usb-charger-pd#:~:text=USB%20Charger%20%28USB%20Power%20Delivery%29%20USB%20has%20evolved,cell%20phones%2C%20MP3%20players%20and%20other%20hand-held%20devices.)。 还需要 **J6** 的 USB 微 B 充电器。
 
 - **代理控制器**
 
@@ -105,7 +105,7 @@ MUTT 连接试验类型 C (USB Type-C ConnEx) 硬件板是 Arduino 板的自定�
 
 - 安装测试工具需要提升的命令窗口。
 
-    若要打开提升的命令窗口，用户必须是代理控制器上 **Administrators** 组的成员。 若要打开提升的命令提示符窗口，请创建 Cmd.exe 的桌面快捷方式，选择并按住 (或右键单击 Cmd.exe 快捷方式) ，然后选择 " **以管理员身份运行**"。
+    若要打开提升的命令窗口，用户必须是代理控制器上 **Administrators** 组的成员。 若要打开提升的命令提示符窗口，请创建 Cmd.exe 的桌面快捷方式，选择并按住 (或右键单击 Cmd.exe 快捷方式) ，然后选择 " **以管理员身份运行** "。
 
 ### <a name="usb-type-c-connex-tools"></a>USB 类型-C ConnEx 工具
 
@@ -160,18 +160,18 @@ MUTT 连接试验类型 C (USB Type-C ConnEx) 硬件板是 Arduino 板的自定�
 3. 用 USB 类型-C ConnEx 固件更新微控制器。
 
     - 打开提升的命令提示符窗口。
-    - 导航到 MUTT 软件包的位置，如 C： \\ Program Files (x86) \\ USBTest \\ * &lt; &gt; *。
+    - 导航到 MUTT 软件包的位置，如 C： \\ Program Files (x86) \\ USBTest \\ *&lt; &gt;* 。
     - 运行以下命令：
 
         **MuttUtil.exe – UpdateTabFirmware**
 
-4. 将 SUT 插入到防火墙上 (标签为 **J1**) 的男 USB 类型 C 端口。
+4. 将 SUT 插入到防火墙上 (标签为 **J1** ) 的男 USB 类型 C 端口。
 
     **警告**  连接 SUT 时， **J1** 连接器需要额外的支持。 连接器不足以维持设备或自身的权重。
 
     ![将测试中的系统附加 (sut) ](images/connexc-connect4.png)
 
-5. 将外围设备连接到标记为 **J2**、 **J3**、 **J4**、 **J6**的 USB 端口。
+5. 将外围设备连接到标记为 **J2** 、 **J3** 、 **J4** 、 **J6** 的 USB 端口。
 
     ![将外围设备连接到 USB 类型-C ConnEx](images/connexc-connect7.png)
 
@@ -190,8 +190,8 @@ MUTT 连接试验类型 C (USB Type-C ConnEx) 硬件板是 Arduino 板的自定�
             ![将测试中的系统 (sut) 与 dtmf 一起附加](images/connexc-connect5.png)
 
 7. 请确保在代理控制器上设备管理器识别 USB 类型 C ConnEx。
-    1. 右键单击任务栏中的 "启动" 按钮，然后选择 " **设备管理器**"。
-    2. 展开 ** (com & LPT) ** 节点上的端口，并记下微控制器使用的 com 端口。 在此示例中，它已连接到 COM 4。
+    1. 右键单击任务栏中的 "启动" 按钮，然后选择 " **设备管理器** "。
+    2. 展开 **(com & LPT)** 节点上的端口，并记下微控制器使用的 com 端口。 在此示例中，它已连接到 COM 4。
 
         ![设备管理器中的 USB 类型-C ConnEx](images/connexc-connect8.png)
 
@@ -370,7 +370,7 @@ do (
 
 ## <a name="about-test-cases"></a>关于测试用例
 
-USB 类型 C 互操作性测试过程分为两部分：功能测试 (FT) 和压力测试 (ST) 。 每个测试部分介绍了测试用例并标识了应用于测试的类别。 必须针对整个适用的类别对产品进行测试。 某些测试用例包含指向相关提示的链接和有关其他信息的提示。 本部分重点介绍 USB 类型 C 功能和体验。 USB 类型 C 解决方案可能包含其他 USB 组件，如 USB 集线器或 USB 控制器。 USB [xHCI 互操作性测试过程](https://go.microsoft.com/fwlink/p/?LinkId=623257) 和 Windows 硬件认证工具包中介绍了 usb 集线器和控制器的详细测试。
+USB 类型 C 互操作性测试过程分为两部分：功能测试 (FT) 和压力测试 (ST) 。 每个测试部分介绍了测试用例并标识了应用于测试的类别。 必须针对整个适用的类别对产品进行测试。 某些测试用例包含指向相关提示的链接和有关其他信息的提示。 本部分重点介绍 USB 类型 C 功能和体验。 USB 类型 C 解决方案可能包含其他 USB 组件，如 USB 集线器或 USB 控制器。 USB [xHCI 互操作性测试过程](https://www.usb.org/document-library/xhci-interoperability-test-procedures-peripherals-hubs-and-hosts-version) 和 Windows 硬件认证工具包中介绍了 usb 集线器和控制器的详细测试。
 
 这些测试用例基于 ConnExUtil 命令和 [用于控制 USB Type-C ConnEx 板](#scripts-for-controlling-the-usb-type-c-connex-board)的示例脚本脚本。 测试用例引用脚本。 根据测试方案的需要自定义脚本。
 
@@ -457,7 +457,7 @@ USB 类型 C 互操作性测试过程分为两部分：功能测试 (FT) 和压�
 5. 打开并登录到 Windows。
 6. 在提升的命令提示符下，运行 CXLOOP。CMD 脚本。 当脚本暂停时，确认新激活的外围设备是否正常运行。
 7. 反转 USB 类型 C 电缆的方向，并重复步骤 5-7。
-8. 将 USB 类型-C ConnEx 连接到端口 **J2**。
+8. 将 USB 类型-C ConnEx 连接到端口 **J2** 。
 
     **ConnExUtil.exe/setPort 2**
 
@@ -492,9 +492,9 @@ USB 类型 C 互操作性测试过程分为两部分：功能测试 (FT) 和压�
 5. 打开并登录到 Windows。
 6. 在提升的命令提示符下，运行 CXLOOP。CMD 脚本。 当脚本暂停时，确认新激活的外围设备是否正常运行。
 7. 反转 USB 类型 C 电缆的方向，并重复步骤 5-7。
-8. 将 USB 类型-C ConnEx 连接到端口 **J2**。
+8. 将 USB 类型-C ConnEx 连接到端口 **J2** 。
 
-    确认角色交换。 液晶屏屏幕上显示的 Amperage 指示电源角色。 如果**J1**是 power 接收器，则 **+ ve** ;如果**J1**是电源，则为 **-ve** 。
+    确认角色交换。 液晶屏屏幕上显示的 Amperage 指示电源角色。 如果 **J1** 是 power 接收器，则 **+ ve** ;如果 **J1** 是电源，则为 **-ve** 。
 
 9. 执行必要的步骤来交换数据角色并确认每个系统的当前角色已更改。
 

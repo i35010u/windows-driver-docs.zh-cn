@@ -2,7 +2,7 @@
 title: 'ZwRegistryCreate 规则 (wdm) '
 ms.assetid: 7855d9f0-c8f2-42a3-941b-623038c03840
 ms.date: 05/21/2018
-description: ''
+description: '了解详细信息： ZwRegistryCreate 规则 (wdm) '
 keywords:
 - 'ZwRegistryCreate 规则 (wdm) '
 topic_type:
@@ -12,17 +12,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 0fe3631f26be35975eb066325068bac9302247ac
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 39d98a209f509f8b85c3309df026ec52ef4891ba
+ms.sourcegitcommit: f47c072e88dce59daba1231027b60eb56bd2cde9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90106628"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92689375"
 ---
 # <a name="zwregistrycreate-rule-wdm"></a>ZwRegistryCreate 规则 (wdm) 
 
 
-**ZwRegistryCreate**规则指定在调用[**ZwCreateKey**](/windows-hardware/drivers/ddi/wdm/nf-wdm-zwcreatekey)之后，驱动程序只能调用以下注册表函数，同时将打开的句柄保存到注册表项 (也就是说，在对[**ZwClose**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ntclose)或[**ZwDeleteKey**](/windows-hardware/drivers/ddi/wdm/nf-wdm-zwdeletekey)的任何调用都关闭或删除注册表项) 的句柄之前：
+**ZwRegistryCreate** 规则指定在调用 [**ZwCreateKey**](/windows-hardware/drivers/ddi/wdm/nf-wdm-zwcreatekey)之后，驱动程序只能调用以下注册表函数，同时将打开的句柄保存到注册表项 (也就是说，在对 [**ZwClose**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ntclose)或 [**ZwDeleteKey**](/windows-hardware/drivers/ddi/wdm/nf-wdm-zwdeletekey)的任何调用都关闭或删除注册表项) 的句柄之前：
 
 -   [**ZwClose**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ntclose)
 

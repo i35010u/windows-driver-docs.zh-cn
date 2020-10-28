@@ -2,7 +2,7 @@
 title: 'ForwardedAtBadIrql 规则 (wdm) '
 ms.assetid: d2d91fb9-330b-420b-8409-509cfb47fe07
 ms.date: 05/21/2018
-description: ''
+description: '了解详细信息： ForwardedAtBadIrql 规则 (wdm) '
 keywords:
 - 'ForwardedAtBadIrql 规则 (wdm) '
 topic_type:
@@ -12,17 +12,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: d7056a750e9502fe1e794b958d3b6f9e7e94444a
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 6acf43a1a7c501a061120f1b2a1b8df210864836
+ms.sourcegitcommit: f47c072e88dce59daba1231027b60eb56bd2cde9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90105814"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92689408"
 ---
 # <a name="forwardedatbadirql-rule-wdm"></a>ForwardedAtBadIrql 规则 (wdm) 
 
 
-**ForwardedAtBadIrql**规则指定， [**IoCallDriver**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iocalldriver) [**PoCallDriver**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-pocalldriver) &lt; \_ 除非要转发的 IRP 主要函数代码是以下内容之一，否则，驱动程序应以 IRQL 调度级别调用 IoCallDriver 和 PoCallDriver：
+**ForwardedAtBadIrql** 规则指定， [**IoCallDriver**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iocalldriver) [**PoCallDriver**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-pocalldriver) &lt; \_ 除非要转发的 IRP 主要函数代码是以下内容之一，否则，驱动程序应以 IRQL 调度级别调用 IoCallDriver 和 PoCallDriver：
 
 -   [**IRP \_ MJ \_ POWER**](../kernel/irp-mj-power.md)
 

@@ -2,7 +2,7 @@
 title: 'IrqlIoPassive4 规则 (wdm) '
 ms.assetid: 2bdfa09d-0777-4eaf-85ff-d5accc0f31de
 ms.date: 05/21/2018
-description: ''
+description: '了解详细信息： IrqlIoPassive4 规则 (wdm) '
 keywords:
 - 'IrqlIoPassive4 规则 (wdm) '
 topic_type:
@@ -12,17 +12,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: e60049a80114ef12894fc4048cfe8029b3925658
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: b30d5df1d14316c6047e020bbb195bc274b08176
+ms.sourcegitcommit: f47c072e88dce59daba1231027b60eb56bd2cde9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90104124"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92689401"
 ---
 # <a name="irqliopassive4-rule-wdm"></a>IrqlIoPassive4 规则 (wdm) 
 
 
-**IrqlIoPassive4**规则指定仅当驱动程序在 IRQL = 被动级别执行时才调用以下例程 \_ ：
+**IrqlIoPassive4** 规则指定仅当驱动程序在 IRQL = 被动级别执行时才调用以下例程 \_ ：
 
 -   [**IoCreateFile**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iocreatefile)
 
@@ -44,7 +44,7 @@ ms.locfileid: "90104124"
 
 **驱动程序模型： WDM**
 
-**Bug 检查 () 发现此规则**： [**bug 检查0XC4：驱动程序 \_ 验证器 \_ 检测到 \_ 违反**](../debugger/bug-check-0xc4--driver-verifier-detected-violation.md) (0x0002000D) 
+**Bug 检查 () 发现此规则** ： [**bug 检查0XC4：驱动程序 \_ 验证器 \_ 检测到 \_ 违反**](../debugger/bug-check-0xc4--driver-verifier-detected-violation.md) (0x0002000D) 
 
 
 <a name="how-to-test"></a>如何测试

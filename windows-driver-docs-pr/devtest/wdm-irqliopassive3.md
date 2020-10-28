@@ -2,7 +2,7 @@
 title: 'IrqlIoPassive3 规则 (wdm) '
 ms.assetid: 84e45026-7535-4e72-afc8-19b6a7e43bd7
 ms.date: 05/21/2018
-description: ''
+description: '了解详细信息： IrqlIoPassive3 规则 (wdm) '
 keywords:
 - 'IrqlIoPassive3 规则 (wdm) '
 topic_type:
@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: d40e630756d6c27a462fbf5414bbfd21dbd62c57
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: dd2106a68453d638d4fdb5b29226325405496252
+ms.sourcegitcommit: f47c072e88dce59daba1231027b60eb56bd2cde9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90104120"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92689404"
 ---
 # <a name="irqliopassive3-rule-wdm"></a>IrqlIoPassive3 规则 (wdm) 
 
@@ -32,7 +32,7 @@ IrqlIoPassive3 规则指定仅当驱动程序在 IRQL = 被动级别执行时才
 
 **驱动程序模型： WDM**
 
-**Bug 检查 () 发现此规则**： [**bug 检查0XC4：驱动程序 \_ 验证器 \_ 检测到 \_ 违反**](../debugger/bug-check-0xc4--driver-verifier-detected-violation.md) (0x0002000C) 
+**Bug 检查 () 发现此规则** ： [**bug 检查0XC4：驱动程序 \_ 验证器 \_ 检测到 \_ 违反**](../debugger/bug-check-0xc4--driver-verifier-detected-violation.md) (0x0002000C) 
 
 
 <a name="how-to-test"></a>如何测试

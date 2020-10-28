@@ -2,7 +2,7 @@
 title: 'NoIoQueuePurgeSynchronously 规则 (kmdf) '
 ms.assetid: 9255C644-1141-4D9A-8B84-BF98FB9E262A
 ms.date: 05/21/2018
-description: ''
+description: '了解详细信息： NoIoQueuePurgeSynchronously 规则 (kmdf) '
 keywords:
 - 'NoIoQueuePurgeSynchronously 规则 (kmdf) '
 topic_type:
@@ -12,17 +12,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 57b96fa8e0bbd359bc7eacabfd38caa01b356b5b
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 9cd0076265a25afee50b12382fb28952698beb1c
+ms.sourcegitcommit: f47c072e88dce59daba1231027b60eb56bd2cde9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90104050"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92689380"
 ---
 # <a name="noioqueuepurgesynchronously-rule-kmdf"></a>NoIoQueuePurgeSynchronously 规则 (kmdf) 
 
 
-**NoIoQueuePurgeSynchronously**规则验证 WDF 驱动程序不会从以下 WdfIoQueuePurgeSynchronously 队列对象事件回调函数调用[**WdfIoQueueStopSynchronously**](/windows-hardware/drivers/ddi/wdfio/nf-wdfio-wdfioqueuestopsynchronously)、 [**WdfIoQueueDrainSynchronously**](/windows-hardware/drivers/ddi/wdfio/nf-wdfio-wdfioqueuedrainsynchronously)、 [**WdfIoQueueStopAndPurgeSynchronously**](/windows-hardware/drivers/ddi/wdfio/nf-wdfio-wdfioqueuestopandpurgesynchronously)或[**EvtIO**](/windows-hardware/drivers/ddi/wdfio/nf-wdfio-wdfioqueuepurgesynchronously)函数：
+**NoIoQueuePurgeSynchronously** 规则验证 WDF 驱动程序不会从以下 WdfIoQueuePurgeSynchronously 队列对象事件回调函数调用 [**WdfIoQueueStopSynchronously**](/windows-hardware/drivers/ddi/wdfio/nf-wdfio-wdfioqueuestopsynchronously)、 [**WdfIoQueueDrainSynchronously**](/windows-hardware/drivers/ddi/wdfio/nf-wdfio-wdfioqueuedrainsynchronously)、 [**WdfIoQueueStopAndPurgeSynchronously**](/windows-hardware/drivers/ddi/wdfio/nf-wdfio-wdfioqueuestopandpurgesynchronously)或 [**EvtIO**](/windows-hardware/drivers/ddi/wdfio/nf-wdfio-wdfioqueuepurgesynchronously)函数：
 
 [*EvtIoDefault*](/windows-hardware/drivers/ddi/wdfio/nc-wdfio-evt_wdf_io_queue_io_default) 
 [*EvtIoDeviceControl*](/windows-hardware/drivers/ddi/wdfio/nc-wdfio-evt_wdf_io_queue_io_device_control) 

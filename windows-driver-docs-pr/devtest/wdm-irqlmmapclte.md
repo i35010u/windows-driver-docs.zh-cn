@@ -2,7 +2,7 @@
 title: 'IrqlMmApcLte 规则 (wdm) '
 ms.assetid: 075f5710-b2bf-4546-9648-661a3c8521f8
 ms.date: 05/21/2018
-description: ''
+description: '了解详细信息： IrqlMmApcLte 规则 (wdm) '
 keywords:
 - 'IrqlMmApcLte 规则 (wdm) '
 topic_type:
@@ -12,17 +12,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 0e18f59525a71128b50820f9bd4ee8a00d39b5fd
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: e85afc07cab05c9ce99d330a7e819707cb28f77c
+ms.sourcegitcommit: f47c072e88dce59daba1231027b60eb56bd2cde9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90107468"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92689392"
 ---
 # <a name="irqlmmapclte-rule-wdm"></a>IrqlMmApcLte 规则 (wdm) 
 
 
-**IrqlMmApcLte**规则指定仅当驱动程序在 IRQL &lt; = APC 级别执行时才调用以下内存管理器例程 \_ ：
+**IrqlMmApcLte** 规则指定仅当驱动程序在 IRQL &lt; = APC 级别执行时才调用以下内存管理器例程 \_ ：
 
 -   [**MmAllocateNonCachedMemory**](/windows-hardware/drivers/ddi/ntddk/nf-ntddk-mmallocatenoncachedmemory)
 
@@ -48,7 +48,7 @@ ms.locfileid: "90107468"
 
 **驱动程序模型： WDM**
 
-**Bug 检查 () 发现此规则**： [**bug 检查0XC4：驱动程序 \_ 验证器 \_ 检测到 \_ 违反**](../debugger/bug-check-0xc4--driver-verifier-detected-violation.md) (0x00020019) 
+**Bug 检查 () 发现此规则** ： [**bug 检查0XC4：驱动程序 \_ 验证器 \_ 检测到 \_ 违反**](../debugger/bug-check-0xc4--driver-verifier-detected-violation.md) (0x00020019) 
 
 
 <a name="how-to-test"></a>如何测试

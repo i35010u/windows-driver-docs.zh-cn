@@ -2,7 +2,7 @@
 title: 'IrqlIoPassive2 规则 (wdm) '
 ms.assetid: 36e449c2-9b24-4309-a4ac-af496cdc7b4f
 ms.date: 05/21/2018
-description: ''
+description: '了解详细信息： IrqlIoPassive2 规则 (wdm) '
 keywords:
 - 'IrqlIoPassive2 规则 (wdm) '
 topic_type:
@@ -12,17 +12,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: e75657dbdbd221117c1a5c987d308528a50c2a91
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 8bcf97670bef563b483965af763de1aaf2931371
+ms.sourcegitcommit: f47c072e88dce59daba1231027b60eb56bd2cde9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90107474"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92689406"
 ---
 # <a name="irqliopassive2-rule-wdm"></a>IrqlIoPassive2 规则 (wdm) 
 
 
-**IrqlIoPassive2**规则指定驱动程序只调用以下 I/o 管理器例程： IRQL = 被动 \_ 级别：
+**IrqlIoPassive2** 规则指定驱动程序只调用以下 I/o 管理器例程： IRQL = 被动 \_ 级别：
 
 -   [**IoCheckShareAccess**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iocheckshareaccess)
 
@@ -32,7 +32,7 @@ ms.locfileid: "90107474"
 
 **驱动程序模型： WDM**
 
-**Bug 检查 () 发现此规则**： [**bug 检查0XC4：驱动程序 \_ 验证器 \_ 检测到 \_ 违反**](../debugger/bug-check-0xc4--driver-verifier-detected-violation.md) (0x0002000B) 
+**Bug 检查 () 发现此规则** ： [**bug 检查0XC4：驱动程序 \_ 验证器 \_ 检测到 \_ 违反**](../debugger/bug-check-0xc4--driver-verifier-detected-violation.md) (0x0002000B) 
 
 
 <a name="how-to-test"></a>如何测试

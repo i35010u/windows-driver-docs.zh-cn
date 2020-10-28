@@ -2,7 +2,7 @@
 title: 'IrqlKeDispatchLte 规则 (wdm) '
 ms.assetid: 425a20ea-c9e3-45f4-a517-6bad9ab0de98
 ms.date: 05/21/2018
-description: ''
+description: '了解详细信息： IrqlKeDispatchLte 规则 (wdm) '
 keywords:
 - 'IrqlKeDispatchLte 规则 (wdm) '
 topic_type:
@@ -12,17 +12,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: a711950c784d710ec14b909b1ca9801e70a183e0
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 94250b95718dcc38eb3a323d6dbf30d7cbb47743
+ms.sourcegitcommit: f47c072e88dce59daba1231027b60eb56bd2cde9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90101693"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92689395"
 ---
 # <a name="irqlkedispatchlte-rule-wdm"></a>IrqlKeDispatchLte 规则 (wdm) 
 
 
-**IrqlKeDispatchLte**规则指定仅当驱动程序在 IRQL &lt; = 调度级别执行时才调用以下内核例程 \_ ：
+**IrqlKeDispatchLte** 规则指定仅当驱动程序在 IRQL &lt; = 调度级别执行时才调用以下内核例程 \_ ：
 
 -   [**KeAcquireSpinLock**](/windows-hardware/drivers/ddi/wdm/nf-wdm-keacquirespinlock)
 
@@ -60,7 +60,7 @@ ms.locfileid: "90101693"
 
 **驱动程序模型： WDM**
 
-**Bug 检查 () 发现此规则**： [**bug 检查0XC4：驱动程序 \_ 验证器 \_ 检测到 \_ 违反**](../debugger/bug-check-0xc4--driver-verifier-detected-violation.md) (0x00020011) 
+**Bug 检查 () 发现此规则** ： [**bug 检查0XC4：驱动程序 \_ 验证器 \_ 检测到 \_ 违反**](../debugger/bug-check-0xc4--driver-verifier-detected-violation.md) (0x00020011) 
 
 
 <a name="how-to-test"></a>如何测试

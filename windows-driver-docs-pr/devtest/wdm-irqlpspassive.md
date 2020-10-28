@@ -2,7 +2,7 @@
 title: 'IrqlPsPassive 规则 (wdm) '
 ms.assetid: db84c945-7695-4691-8294-095bbc74ef8a
 ms.date: 05/21/2018
-description: ''
+description: '了解详细信息： IrqlPsPassive 规则 (wdm) '
 keywords:
 - 'IrqlPsPassive 规则 (wdm) '
 topic_type:
@@ -12,17 +12,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 2079088aa6202e283601939e2bc0cd93b4a4a39c
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 47ceb68585bbec3c105a9c5a88393f36f19a7784
+ms.sourcegitcommit: f47c072e88dce59daba1231027b60eb56bd2cde9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90107464"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92689389"
 ---
 # <a name="irqlpspassive-rule-wdm"></a>IrqlPsPassive 规则 (wdm) 
 
 
-**IrqlPsPassive**规则指定仅当驱动程序在 IRQL = 被动级别执行时才调用以下[**进程结构例程**](/windows-hardware/drivers/ddi/index) \_ ：
+**IrqlPsPassive** 规则指定仅当驱动程序在 IRQL = 被动级别执行时才调用以下 [**进程结构例程**](/windows-hardware/drivers/ddi/index) \_ ：
 
 -   [**PsCreateSystemThread**](/windows-hardware/drivers/ddi/wdm/nf-wdm-pscreatesystemthread)
 
@@ -38,7 +38,7 @@ ms.locfileid: "90107464"
 
 **驱动程序模型： WDM**
 
-**Bug 检查 () 发现此规则**： [**bug 检查0XC4：驱动程序 \_ 验证器 \_ 检测到 \_ 违反**](../debugger/bug-check-0xc4--driver-verifier-detected-violation.md) (0x0002001C) 
+**Bug 检查 () 发现此规则** ： [**bug 检查0XC4：驱动程序 \_ 验证器 \_ 检测到 \_ 违反**](../debugger/bug-check-0xc4--driver-verifier-detected-violation.md) (0x0002001C) 
 
 
 <a name="how-to-test"></a>如何测试
