@@ -5,35 +5,28 @@ ms.assetid: 7deb2a9a-70aa-4660-a0c8-e118e03eef3b
 keywords:
 - 错误日志 WDK 显示
 - 错误 WDK 显示
-- 记录 WDK 显示的错误
-ms.date: 04/20/2017
+- 记录错误 WDK 显示
+ms.date: 10/27/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: a28cea0f52cff495f1f2a7fcc1fc0f849a9ce087
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0e58bc90598cc01d8dc7529417c833c0b3f4618a
+ms.sourcegitcommit: a32079f3cc5d564d3b12576f832ed442a6b1a918
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63347540"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92793486"
 ---
 # <a name="logging-driver-errors"></a>记录驱动程序错误
 
+Microsoft DirectX graphics 内核子系统 ( *Dxgkrnl.sys* ) 记录将与驱动程序相关的错误、断言、警告和事件显示到内部使用的日志 ( *Watchdog.sys* ) 。
 
-Microsoft DirectX 图形内核子系统 (*Dxgkrnl.sys*) 记录向内存中的日志显示驱动程序相关的错误、 断言、 警告和事件 (在*Watchdog.sys*)。
-
-除了将信息记录到日志中，默认情况下，检查生成版本的 DirectX 图形内核子系统强行进入的附加调试器如果出现错误或断言。 通过默认情况下，DirectX 图形内核子系统只记录错误和日志的断言的免费内部版本号和如果出现错误或断言不会中断到调试器。 可以通过首先创建以下注册表更改此默认行为\_注册表中的 DWORD 项：
+除了将信息记录到日志之外，默认情况下，如果出现错误或断言，DirectX 图形内核子系统的已检查内部版本将中断到附加的调试器。 默认情况下，DirectX 图形内核子系统的免费内部版本仅将错误和断言记录到日志中，如果出现错误或断言，则不会中断调试器。 你可以通过在注册表中首先创建以下 REG_DWORD 项来更改此默认行为：
 
 ```registry
 HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Watchdog\Logging\BreakOnAssertion
 HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Watchdog\Logging\BreakOnError
 ```
 
-若要使调试器启动如果出现错误或断言，应设置的值**BreakOnError**或**BreakOnAssertion**为 1 (TRUE) 分别。 若要使如果出现错误或断言不会启动调试器，应设置的值**BreakOnError**或**BreakOnAssertion**为 0 (FALSE) 分别。
+若要使调试器在发生错误或断言时启动，应分别将 **BreakOnError** 或 **BreakOnAssertion** 的值设置为 1 (TRUE) 。 若要使调试器在发生错误或断言时不启动，应分别将 **BreakOnError** 或 **BreakOnAssertion** 的值设置为 0 (FALSE) 。
 
- 
-
- 
-
-
-
-
-
+> [!NOTE]
+> 在 Windows 10 版本1803之前，已检查的生成在较早版本的 Windows 上可用。 使用驱动程序验证程序和 GFlags 等工具在更高版本的 Windows 中检查驱动程序代码。

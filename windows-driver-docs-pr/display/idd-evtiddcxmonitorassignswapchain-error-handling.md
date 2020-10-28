@@ -8,12 +8,12 @@ keywords:
 - EvtIddCxMonitorAssignSwapChain 错误处理，间接显示驱动程序
 - EvtIddCxMonitorAssignSwapChain 错误处理，IDD
 ms.localizationpriority: medium
-ms.openlocfilehash: 72634d6752b7e07d4755f49a88c05ff872e554f9
-ms.sourcegitcommit: 2aedb606f9f14e74687f0d3da60e14fc6ffffa7e
+ms.openlocfilehash: 4e97f5629c62da65627aa41a9de8d60503385ec7
+ms.sourcegitcommit: a32079f3cc5d564d3b12576f832ed442a6b1a918
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91544834"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92793484"
 ---
 # <a name="evtiddcxmonitorassignswapchain-error-handling"></a>EvtIddCxMonitorAssignSwapChain 错误处理
 
@@ -28,7 +28,7 @@ ms.locfileid: "91544834"
 IDD 成功从 [**EvtIddCxMonitorAssignSwapChain**](/windows-hardware/drivers/ddi/iddcx/nc-iddcx-evt_idd_cx_monitor_assign_swapchain) 返回后，它拥有 **hSwapChain** 对象。
 如果驱动程序遇到错误，导致无法继续处理该帧，它可以调用 [**WdfObjectDelete**](/windows-hardware/drivers/ddi/wdfobject/nf-wdfobject-wdfobjectdelete) 来释放所有权。 OS 将检测删除并导致创建新的存在。
 
-如果驱动程序知道无法从此错误中恢复，则它应调用 [**IddCxReportCriticalError**](/windows-hardware/drivers/ddi/iddcx/nc-iddcx-pfn_iddcxreportcriticalerror) 来停止设备。
+如果驱动程序知道无法从此错误中恢复，则它应调用 [**IddCxReportCriticalError**](/windows-hardware/drivers/ddi/iddcx/nf-iddcx-iddcxreportcriticalerror) 来停止设备。
 
 ## <a name="suggested-approach-to-handle-swapchain-errors"></a>处理存在错误的建议方法
 
@@ -52,11 +52,11 @@ IDD 成功从 [**EvtIddCxMonitorAssignSwapChain**](/windows-hardware/drivers/ddi
 
 ### <a name="permanent-issues-specific-to-your-solution"></a>专用于解决方案的永久性问题
 
-驱动程序应使用等于或高于0x100 的主要代码调用 [**IddCxReportCriticalError**](/windows-hardware/drivers/ddi/iddcx/nc-iddcx-pfn_iddcxreportcriticalerror) ，并使用唯一的主要/次要代码来表示错误类型，以帮助客户/遥测调查。
+驱动程序应使用等于或高于0x100 的主要代码调用 [**IddCxReportCriticalError**](/windows-hardware/drivers/ddi/iddcx/nf-iddcx-iddcxreportcriticalerror) ，并使用唯一的主要/次要代码来表示错误类型，以帮助客户/遥测调查。
 
 ### <a name="directx-error"></a>DirectX 错误
 
-处理 DirectX 错误的最简单方法是将其传播回操作系统，以便重试。 驱动程序应从[**EvtIddCxMonitorAssignSwapChain**](/windows-hardware/drivers/ddi/iddcx/nc-iddcx-evt_idd_cx_monitor_assign_swapchain)返回**STATUS_GRAPHICS_INDIRECT_DISPLAY_ABANDON_SWAPCHAIN** ，如果在处理帧时出现错误，驱动程序应通过调用[**WdfObjectDelete**](/windows-hardware/drivers/ddi/wdfobject/nf-wdfobject-wdfobjectdelete)来释放存在。
+处理 DirectX 错误的最简单方法是将其传播回操作系统，以便重试。 驱动程序应从 [**EvtIddCxMonitorAssignSwapChain**](/windows-hardware/drivers/ddi/iddcx/nc-iddcx-evt_idd_cx_monitor_assign_swapchain)返回 **STATUS_GRAPHICS_INDIRECT_DISPLAY_ABANDON_SWAPCHAIN** ，如果在处理帧时出现错误，驱动程序应通过调用 [**WdfObjectDelete**](/windows-hardware/drivers/ddi/wdfobject/nf-wdfobject-wdfobjectdelete)来释放存在。
 
 这种简单的方法可处理由外部事件触发的错误，因为 OS 将稳定，并在新的 Dxgi 适配器) 上创建新的存在 (。 如果驱动程序的 DirectX 使用受到限制，则此方法很有效。
 
@@ -65,6 +65,6 @@ IDD 成功从 [**EvtIddCxMonitorAssignSwapChain**](/windows-hardware/drivers/ddi
 | 当前阶段 | 如果检测到过多的连续存在 DirectX 错误，则为驱动程序操作 |
 | ------------- | ------------------------------------------------------------------------- |
 | [**EvtIddCxMonitorAssignSwapChain**](/windows-hardware/drivers/ddi/iddcx/nc-iddcx-evt_idd_cx_monitor_assign_swapchain)提供的呈现器适配器 LUID 为硬件适配器 | 使用 Dxgi 查找软件适配器的 LUID，并调用 [**IddCxAdapterSetRenderAdapter**](/windows-hardware/drivers/ddi/iddcx/nf-iddcx-iddcxadaptersetrenderadapter) 来请求操作系统使用软件适配器来呈现桌面。 |
-| **EvtIddCxMonitorAssignSwapChain**提供的呈现器适配器 LUID 为软件适配器 | 驱动程序应使用等于或高于0x100 的主要代码调用 [**IddCxReportCriticalError**](/windows-hardware/drivers/ddi/iddcx/nc-iddcx-pfn_iddcxreportcriticalerror) ，并使用唯一的主要/次要代码来表示错误类型，以帮助客户/遥测调查 |
+| **EvtIddCxMonitorAssignSwapChain** 提供的呈现器适配器 LUID 为软件适配器 | 驱动程序应使用等于或高于0x100 的主要代码调用 [**IddCxReportCriticalError**](/windows-hardware/drivers/ddi/iddcx/nf-iddcx-iddcxreportcriticalerror) ，并使用唯一的主要/次要代码来表示错误类型，以帮助客户/遥测调查 |
 
 例如，在处理帧时，驱动程序可能会在 [**EvtIddCxMonitorAssignSwapChain**](/windows-hardware/drivers/ddi/iddcx/nc-iddcx-evt_idd_cx_monitor_assign_swapchain) 或5个故障中考虑5次连续的 DirectX 故障，同时将1分钟的帧作为条件进行处理，以在上表中执行当前阶段的恢复操作。
