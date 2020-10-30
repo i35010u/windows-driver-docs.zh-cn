@@ -1,0 +1,14 @@
+- name: 组件固件更新 (CFU)
+  items:
+    - name: 组件固件更新 (CFU)
+      href: index.md
+    - name: CFU 固件实现指南
+      href: cfu-firmware-implementation-guide.md
+    - name: CFU INF 配置
+      href: cfu-inf-configuration.md
+    - name: CFU 协议规格
+      href: cfu-specification.md
+    - name: CFU 独立工具
+      href: cfu-standalone-tool.md
+    - name: CFU 虚拟 HID 设备固件更新模拟
+      href: cfu-firmware-update-simulation.md

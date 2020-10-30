@@ -4,12 +4,12 @@ description: 本部分包含有关每项受支持的 Windows 驱动程序技术�
 ms.assetid: 1ef3e216-1322-42c3-b070-94cddfb2133c
 ms.date: 01/30/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: a1ed585772441720df42307670137810354e1a85
-ms.sourcegitcommit: 958a5ced83856df22627c06eb42c9524dd547906
+ms.openlocfilehash: 3cfb3bcea1b8926fd27458d9336929b9c00b459c
+ms.sourcegitcommit: eefc6ae6d9621d0735b3c63e718ee5838d57a6bc
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83235313"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92886066"
 ---
 # <a name="overview-of-driver-technologies"></a>驱动程序技术概述
 
@@ -33,6 +33,7 @@ ms.locfileid: "83235313"
 - [电池驱动程序](battery/index.md)
 - [生物识别驱动程序](biometric/index.md)
 - [蓝牙驱动程序](bluetooth/index.md)
+- [组件固件更新 (CFU)](cfu/index.md)
 - [显示驱动程序](display/index.md)
 - [文件系统驱动程序](ifs/index.md)
 - [全球导航卫星系统 (GNSS) 驱动程序](gnss/index.md)
@@ -60,6 +61,7 @@ ms.locfileid: "83235313"
 - [智能卡设备驱动程序](smartcard/index.md)
 - [简单外设总线 (SPB) 驱动程序](spb/index.md)
 - [存储设备驱动程序](storage/index.md)
+- [存储固件更新 (SFU)](sfu/index.md)
 - [流媒体设备驱动程序](stream/index.md)
 - [测试授权和执行框架 (TAEF)](taef/index.md)
 - [通用串行总线 (USB)](usbcon/index.md)

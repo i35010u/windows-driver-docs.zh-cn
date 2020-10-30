@@ -52,6 +52,8 @@
       href: biometric/index.md
     - name: 蓝牙驱动程序
       href: bluetooth/index.md
+    - name: 组件固件更新 (CFU)
+      href: cfu/index.md
     - name: 显示驱动程序
       href: display/index.md
     - name: 驱动程序开发工具
@@ -110,6 +112,8 @@
       href: spb/index.md
     - name: 存储设备驱动程序
       href: storage/index.md
+    - name: 存储固件更新 (SFU)
+      href: sfu/index.md
     - name: 流媒体设备驱动程序
       href: stream/index.md
     - name: 测试授权和执行框架 (TAEF)
