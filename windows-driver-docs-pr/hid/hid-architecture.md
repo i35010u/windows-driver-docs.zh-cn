@@ -8,12 +8,12 @@ keywords:
 - Windoows 的 HID 类驱动程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: aec6baa54a113d686c8b10f671671d1985711940
-ms.sourcegitcommit: a866b3470025d85b25a48857a81f893179698e7e
+ms.openlocfilehash: f6f9a3141399fffa90d47245d1c466b7ea483645
+ms.sourcegitcommit: 9796f75f8e83f4c9cc1f055056910a3ae6292f18
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92356039"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93066355"
 ---
 # <a name="hid-architecture"></a>HID 体系结构
 
@@ -21,7 +21,7 @@ Windows 中的 HID 驱动程序堆栈的体系结构基于名为 *hidclass.sys* 
 
 ## <a name="the-hid-class-driver"></a>HID 类驱动程序
 
-系统提供的 HID 类驱动程序为 HID 设备安装程序类 (HIDClass) 的 WDM 函数驱动程序和总线驱动程序。 *hidclass.sys*HID 类驱动程序的可执行组件。 HID 类驱动程序在 HID 客户端和各种传输之间粘附。 这允许以独立的方式写入 HID 客户端传输。 此级别的抽象使客户端可以继续工作， (在引入新的标准或第三方传输时，几乎不会) 修改。
+系统提供的 HID 类驱动程序为 HID 设备安装程序类 (HIDClass) 的 WDM 函数驱动程序和总线驱动程序。 *hidclass.sys* HID 类驱动程序的可执行组件。 HID 类驱动程序在 HID 客户端和各种传输之间粘附。 这允许以独立的方式写入 HID 客户端传输。 此级别的抽象使客户端可以继续工作， (在引入新的标准或第三方传输时，几乎不会) 修改。
 
 下面是体系结构的表示形式。
 
@@ -52,10 +52,10 @@ HID 客户端是与 *HIDClass.sys* 通信的驱动程序、服务或应用程序
 
 下表简化了上面列出的信息。
 
-|      “模式”   | 驱动程序                      | 应用程序 |
+|      模型   | 驱动程序                      | 应用程序 |
 |-------------|------------------------------|--------------|
 | 用户模式   | HidD \_ Xxx                    | HidP \_ Xxx    |
-| 内核模式 | HidD \_ XXX 或 IOCTL \_ HID \_ Xxx | 不适用          |
+| 内核模式 | HidD \_ XXX 或 IOCTL \_ HID \_ Xxx | 不可用          |
 
 有关详细信息，请参阅 [打开 HID 集合](opening-hid-collections.md)。
 
@@ -63,7 +63,7 @@ HID 客户端是与 *HIDClass.sys* 通信的驱动程序、服务或应用程序
 
 Windows 支持以下顶级集合：
 
-| **使用情况页** | **使用情况** | **Windows 7** | **Windows 8** | **Windows 10** | **备注** | **访问模式** |
+| **使用情况页** | **使用情况** | **Windows 7** | **Windows 8** | **Windows 10** | **说明** | **访问模式** |
 | --- | --- | --- | --- | --- | --- | --- |
 | 0x0001 | 0x0001-0x0002 | 是 | 是 | 是 | 鼠标类驱动程序和映射器驱动程序 | 排他 |
 | 0x0001 | 0x0004 - 0x0005 | 是 | 是 | 是 | 游戏控制器 | 共享 |
@@ -75,11 +75,13 @@ Windows 支持以下顶级集合：
 | 0x000D | 0x0002 | 是 | 是 | 是 | 集成笔设备 | 排他 |
 | 0x000D | 0x0004 | 是 | 是 | 是 | 触摸屏 | 排他 |
 | 0x000D | 0x0005 | 否 | 是 | 是 | 精确的触摸板 (PTP)  | 排他 |
-| 0x0020 | * 多个 | 否 | 是 | 是 | 传感器 | 共享 |
+| 0x0020 | * 多个 | 否 | 是 | 是 | Sensors | 共享 |
 | 0x0084 | 0x004 | 是 | 是 | 是 | HID UPS 电池 | 共享 |
 | 0x008C | 0x0002 | 否 | 是 (Windows 8.1 和更高版本)  | 是 | 条形码扫描器 ( # A0)  | 共享 |
 
-在上表中，输入 HID 客户端的访问模式是独占的，以防止其他 HID 客户端在不是该输入的目标接收方时截获或接收全局输入状态。 因此，出于安全原因，边缘 (原始输入管理器) 会以独占方式打开所有此类设备。
+在上表中，输入 HID 客户端的访问模式是 *独占* 的，以防止其他 HID 客户端在不是该输入的目标接收方时截获或接收全局输入状态。 因此，出于安全原因，边缘 (原始输入管理器) 会以独占方式打开所有此类设备。 
+
+如果以 *独占* 模式打开设备 (原始输入管理器) 用户仍可在不请求读取和写入权限的情况下打开 hid 设备接口，并通过 HIDClass 支持例程 (HidD GetXxx) 获取 hid 设备信息 \_ 。
 
 共享模式允许多个应用程序访问设备。 例如，多个应用程序可以访问条形码扫描器来查询设备功能和检索统计信息。 但是，从条形码扫描程序中检索已解码的数据在独占模式下完成。 用法由 [USB IF 使用情况表](https://usb.org/document-library/hid-usage-tables-121)定义。
 
@@ -93,7 +95,7 @@ HID 类驱动程序设计为使用 HID 微型驱动程序来访问硬件输入�
 
 Windows 支持以下传输方式。
 
-| Transport    | Windows 7 | Windows 8 | 注释                                                                                                 |
+| Transport    | Windows 7 | Windows 8 | 备注                                                                                                 |
 |--------------|-----------|-----------|-------------------------------------------------------------------------------------------------------|
 | USB          | 是       | 是       | Windows 操作系统2000可追溯上提供了对 USB HID 1.11 + 的支持。       |
 | Bluetooth    | 是       | 是       | Windows 操作系统可追溯上提供对蓝牙 HID 1.1 + 的支持。 |
@@ -116,4 +118,4 @@ Windows 7 之前的 Windows (早期版本) 还包括对以下项的支持。
 | 旧系统               | 内部： PS/2，外部： USB，蓝牙 | 内部：不适用，外部： USB，蓝牙     |
 | 芯片上的系统 (SoC) 系统 | 内部： I2C，External： USB，蓝牙  | 内部： I2C，USB External： USB，蓝牙 |
 
-Windows 硬件实验室工具包中的[**USB 一般 HID 测试**](/windows-hardware/test/hlk/testref/f7949ab5-dd13-4c74-876f-6d54ff85e213) (的 HLK) 包含 HidUsb 和 HidClass 驱动程序。 没有适用于第三方 HID 小型驱动程序的 HLK 测试。
+Windows 硬件实验室工具包中的 [**USB 一般 HID 测试**](/windows-hardware/test/hlk/testref/f7949ab5-dd13-4c74-876f-6d54ff85e213) (的 HLK) 包含 HidUsb 和 HidClass 驱动程序。 没有适用于第三方 HID 小型驱动程序的 HLK 测试。

@@ -11,12 +11,12 @@ keywords:
 - 遍历动态子列表 WDK KMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d90d2e56e44ed9844d20908eaf82e9c3f6bd48b7
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: d6dc1417e1626e318757746f406d42b088004063
+ms.sourcegitcommit: 9796f75f8e83f4c9cc1f055056910a3ae6292f18
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89184039"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93066351"
 ---
 # <a name="dynamic-enumeration"></a>动态枚举
 
@@ -33,14 +33,13 @@ ms.locfileid: "89184039"
 
 每当驱动程序创建一个表示设备的 FDO 的框架设备对象时，框架都会为该设备创建一个空的默认子列表。 你的驱动程序可以通过调用 [**WdfFdoGetDefaultChildList**](/windows-hardware/drivers/ddi/wdffdo/nf-wdffdo-wdffdogetdefaultchildlist)来获取设备的默认子列表的句柄。 通常，如果您正在编写枚举设备子项的总线驱动程序，则您的驱动程序可以将子项添加到默认子列表中。 如果需要创建其他子列表，则驱动程序可以调用 [**WdfChildListCreate**](/windows-hardware/drivers/ddi/wdfchildlist/nf-wdfchildlist-wdfchildlistcreate)。
 
-在驱动程序可以使用子列表之前，它必须通过初始化 [**WDF \_ 子 \_ 列表 \_ **](/windows-hardware/drivers/ddi/wdfchildlist/ns-wdfchildlist-_wdf_child_list_config) 配置结构并将该结构传递给 [**WdfFdoInitSetDefaultChildListConfig**](/windows-hardware/drivers/ddi/wdffdo/nf-wdffdo-wdffdoinitsetdefaultchildlistconfig)（对于默认子列表）或 [**WdfChildListCreate**](/windows-hardware/drivers/ddi/wdfchildlist/nf-wdfchildlist-wdfchildlistcreate)（对于其他子列表）来配置子列表对象。
+在驱动程序可以使用子列表之前，它必须通过初始化 [**WDF \_ 子 \_ 列表 \_**](/windows-hardware/drivers/ddi/wdfchildlist/ns-wdfchildlist-_wdf_child_list_config) 配置结构并将该结构传递给 [**WdfFdoInitSetDefaultChildListConfig**](/windows-hardware/drivers/ddi/wdffdo/nf-wdffdo-wdffdoinitsetdefaultchildlistconfig)（对于默认子列表）或 [**WdfChildListCreate**](/windows-hardware/drivers/ddi/wdfchildlist/nf-wdfchildlist-wdfchildlistcreate)（对于其他子列表）来配置子列表对象。
 
 ### <a name="dynamic-child-descriptions"></a>动态子说明
 
-每次总线驱动程序标识子设备时，它必须将子设备的说明添加到子列表中。 *子说明*由所需的*标识说明*和可选*地址说明*组成。
+每次总线驱动程序标识子设备时，它必须将子设备的说明添加到子列表中。 *子说明* 由所需的 *标识说明* 和可选 *地址说明* 组成。
 
-<a href="" id="identification-description"></a>*标识描述*  
-标识说明是一个结构，其中包含用于唯一标识驱动程序所枚举的每个设备的信息。 驱动程序定义此结构，但它的第一个成员必须是 [**WDF \_ 子 \_ 标识 \_ 说明 \_ 标头**](/windows-hardware/drivers/ddi/wdfchildlist/ns-wdfchildlist-_wdf_child_identification_description_header) 结构。
+<a href="" id="identification-description"></a>*标识描述* 标识说明是一个结构，其中包含用于唯一标识驱动程序所枚举的每个设备的信息。 驱动程序定义此结构，但它的第一个成员必须是 [**WDF \_ 子 \_ 标识 \_ 说明 \_ 标头**](/windows-hardware/drivers/ddi/wdfchildlist/ns-wdfchildlist-_wdf_child_identification_description_header) 结构。
 
 通常，标识描述包含设备的 [设备标识字符串](../install/device-identification-strings.md)，可能是序列号，以及有关设备在总线上的位置的信息，如插槽号。
 
@@ -56,8 +55,7 @@ ms.locfileid: "89184039"
 
 通常，如果驱动程序的标识说明结构包含动态分配的缓冲区的指针，则需要提供这些回调函数。 有关这些回调函数用途的详细信息，请参阅其引用页面。
 
-<a href="" id="address-description"></a>*地址说明*  
-地址说明是一个结构，其中包含驱动程序所需的信息，以便在设备接通电源的情况下可以在设备总线上访问设备。 驱动程序定义此结构，但其第一个成员必须为 [**WDF \_ 子 \_ 地址 \_ 说明 \_ 标头**](/windows-hardware/drivers/ddi/wdfchildlist/ns-wdfchildlist-_wdf_child_address_description_header) 结构。
+<a href="" id="address-description"></a>*地址说明* 地址说明是一个结构，其中包含驱动程序所需的信息，以便在设备接通电源的情况下可以在设备总线上访问设备。 驱动程序定义此结构，但其第一个成员必须为 [**WDF \_ 子 \_ 地址 \_ 说明 \_ 标头**](/windows-hardware/drivers/ddi/wdfchildlist/ns-wdfchildlist-_wdf_child_address_description_header) 结构。
 
 地址说明是可选的。 如果设备的地址信息无法在设备接通电源与拔下设备的时间之间更改，则所有设备的地址信息都可以存储在标识描述中。 例如，当设备接通电源时，USB 控制器会将地址分配给设备，并且这些地址不会更改。
 
@@ -79,7 +77,7 @@ ms.locfileid: "89184039"
 
 或者，驱动程序可以调用 [**WdfDeviceSetBusInformationForChildren**](/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdevicesetbusinformationforchildren) 来向框架提供有关总线的信息。 建议这样做，因为这样可以更轻松地让子设备和应用识别总线。
 
-若要向子列表添加子级，驱动程序必须为它找到的每个子设备调用 [**WdfChildListAddOrUpdateChildDescriptionAsPresent**](/windows-hardware/drivers/ddi/wdfchildlist/nf-wdfchildlist-wdfchildlistaddorupdatechilddescriptionaspresent) 。 此调用通知框架驱动程序已发现连接到父设备的子设备。 当你的驱动程序调用 **WdfChildListAddOrUpdateChildDescriptionAsPresent**时，它将提供标识说明并根据需要提供地址说明。
+若要向子列表添加子级，驱动程序必须为它找到的每个子设备调用 [**WdfChildListAddOrUpdateChildDescriptionAsPresent**](/windows-hardware/drivers/ddi/wdfchildlist/nf-wdfchildlist-wdfchildlistaddorupdatechilddescriptionaspresent) 。 此调用通知框架驱动程序已发现连接到父设备的子设备。 当你的驱动程序调用 **WdfChildListAddOrUpdateChildDescriptionAsPresent** 时，它将提供标识说明并根据需要提供地址说明。
 
 驱动程序调用 [**WdfChildListAddOrUpdateChildDescriptionAsPresent**](/windows-hardware/drivers/ddi/wdfchildlist/nf-wdfchildlist-wdfchildlistaddorupdatechilddescriptionaspresent) 来报告新设备后，框架会通知 PnP 管理器新设备已存在。 然后，PnP 管理器将为新设备生成设备堆栈和驱动程序堆栈。 作为此过程的一部分，框架将调用总线驱动程序的 [*EvtChildListCreateDevice*](/windows-hardware/drivers/ddi/wdfchildlist/nc-wdfchildlist-evt_wdf_child_list_create_device) 回调函数。 此回调函数必须调用 [**WdfDeviceCreate**](/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdevicecreate) 来创建新设备的 PDO。
 
@@ -91,9 +89,9 @@ ms.locfileid: "89184039"
 
 3.  调用 [**WdfChildListEndScan**](/windows-hardware/drivers/ddi/wdfchildlist/nf-wdfchildlist-wdfchildlistendscan)。
 
-如果你在驱动程序的动态枚举中包含对 [**WdfChildListBeginScan**](/windows-hardware/drivers/ddi/wdfchildlist/nf-wdfchildlist-wdfchildlistbeginscan) 和 [**WdfChildListEndScan**](/windows-hardware/drivers/ddi/wdfchildlist/nf-wdfchildlist-wdfchildlistendscan)的调用，则该框架会将所有更改存储到子列表，并在驱动程序调用 **WdfChildListEndScan**时，通知 PnP 经理发生的更改。 稍后，框架将为子列表中的每个设备调用总线驱动程序的 [*EvtChildListCreateDevice*](/windows-hardware/drivers/ddi/wdfchildlist/nc-wdfchildlist-evt_wdf_child_list_create_device) 回调函数。 此回调函数调用 [**WdfDeviceCreate**](/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdevicecreate) 为每个新设备创建一个 PDO。
+如果你在驱动程序的动态枚举中包含对 [**WdfChildListBeginScan**](/windows-hardware/drivers/ddi/wdfchildlist/nf-wdfchildlist-wdfchildlistbeginscan) 和 [**WdfChildListEndScan**](/windows-hardware/drivers/ddi/wdfchildlist/nf-wdfchildlist-wdfchildlistendscan)的调用，则该框架会将所有更改存储到子列表，并在驱动程序调用 **WdfChildListEndScan** 时，通知 PnP 经理发生的更改。 稍后，框架将为子列表中的每个设备调用总线驱动程序的 [*EvtChildListCreateDevice*](/windows-hardware/drivers/ddi/wdfchildlist/nc-wdfchildlist-evt_wdf_child_list_create_device) 回调函数。 此回调函数调用 [**WdfDeviceCreate**](/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdevicecreate) 为每个新设备创建一个 PDO。
 
-当驱动程序调用 [**WdfChildListBeginScan**](/windows-hardware/drivers/ddi/wdfchildlist/nf-wdfchildlist-wdfchildlistbeginscan)时，框架会将以前报告的所有设备标记为不再存在。 因此，驱动程序必须为驱动程序可以检测到的所有子级（而不只是新发现的子项）调用 [**WdfChildListAddOrUpdateChildDescriptionAsPresent**](/windows-hardware/drivers/ddi/wdfchildlist/nf-wdfchildlist-wdfchildlistaddorupdatechilddescriptionaspresent) 。 若要向子列表添加单个子级，驱动程序可以对 [**WdfChildListUpdateAllChildDescriptionsAsPresent**](/windows-hardware/drivers/ddi/wdfchildlist/nf-wdfchildlist-wdfchildlistupdateallchilddescriptionsaspresent) 进行单一调用，而无需先调用 **WdfChildListBeginScan**。
+当驱动程序调用 [**WdfChildListBeginScan**](/windows-hardware/drivers/ddi/wdfchildlist/nf-wdfchildlist-wdfchildlistbeginscan)时，框架会将以前报告的所有设备标记为不再存在。 因此，驱动程序必须为驱动程序可以检测到的所有子级（而不只是新发现的子项）调用 [**WdfChildListAddOrUpdateChildDescriptionAsPresent**](/windows-hardware/drivers/ddi/wdfchildlist/nf-wdfchildlist-wdfchildlistaddorupdatechilddescriptionaspresent) 。 若要向子列表添加单个子级，驱动程序可以对 [**WdfChildListUpdateAllChildDescriptionsAsPresent**](/windows-hardware/drivers/ddi/wdfchildlist/nf-wdfchildlist-wdfchildlistupdateallchilddescriptionsaspresent) 进行单一调用，而无需先调用 **WdfChildListBeginScan** 。
 
 ### <a name="updating-a-dynamic-child-list"></a>更新动态子列表
 
@@ -119,7 +117,7 @@ ms.locfileid: "89184039"
 
 -   如果需要获取当前包含在子设备说明中的地址说明，则驱动程序可以调用 [**WdfChildListRetrieveAddressDescription**](/windows-hardware/drivers/ddi/wdfchildlist/nf-wdfchildlist-wdfchildlistretrieveaddressdescription)，并指定标识描述。 框架遍历子列表，直到找到具有匹配标识说明的子设备，然后检索地址说明。
 
--   如果需要获取与特定子设备关联的框架设备对象的句柄，则驱动程序可以调用 [**WdfChildListRetrievePdo**](/windows-hardware/drivers/ddi/wdfchildlist/nf-wdfchildlist-wdfchildlistretrievepdo)。 框架遍历子列表，直到找到具有匹配标识说明的子设备，然后返回设备对象句柄。
+-   如果需要获取与特定子设备关联的框架设备对象的句柄，则驱动程序可以调用 [**WdfChildListRetrievePdo**](/windows-hardware/drivers/ddi/wdfchildlist/nf-wdfchildlist-wdfchildlistretrievepdo)。 框架遍历子列表，直到找到具有匹配标识说明的子设备，然后返回设备对象句柄。 请确保将调用包装在 [**WdfChildListBeginIteration**](/windows-hardware/drivers/ddi/wdfchildlist/nf-wdfchildlist-wdfchildlistbeginiteration) 和 [**WdfChildListEndIteration**](/windows-hardware/drivers/ddi/wdfchildlist/nf-wdfchildlist-wdfchildlistenditeration) 中，以防止调用方突然将 PDO 移到另一个线程上。
 
 ### <a name="accessing-a-pdos-identification-and-address-descriptions"></a>访问 PDO 的标识和地址说明
 

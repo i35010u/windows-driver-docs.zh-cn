@@ -3,12 +3,12 @@ description: 适用于硬件供应商和设备制造商的指南，用于为 Win
 title: USB-IF 认证测试
 ms.date: 10/22/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 39c9fb7733e460f4f78c4cf042ffdd8587fed760
-ms.sourcegitcommit: 15caaf6d943135efcaf9975927ff3933957acd5d
+ms.openlocfilehash: a164a0a15fdab5b8225620c9b14866d5252b8335
+ms.sourcegitcommit: 9796f75f8e83f4c9cc1f055056910a3ae6292f18
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88968618"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93066353"
 ---
 # <a name="usb-if-certification"></a>USB-IF 证书
 
@@ -22,26 +22,26 @@ USB 硬件（特别是 USB 设备或主机控制器）必须满足 USB 的电气
 
 即使 USB 设备通过了当前的 Microsoft Windows 认证计划要求，其中许多设备也不能完全遵守 USB 规范。 最常见的示例包括：
 
-- **集线器**：通常会失败，因为它们报告它们在实际只有总线电源时具有外部电源。 错误报告将导致总线上出现无效电压情况。
-- **硬盘驱动器**：常见的原因是由于 USB 总线的功率消耗过多而无法正确枚举。 在许多情况下，这些硬盘驱动器需要非标准电缆才能正常工作。
-- **闪存驱动器**：通常会因不正确地处理描述符请求而失败;这会导致设备挂起，并使 Microsoft 操作系统描述符失败。
-- **卡读取器**：通常会因为未进入 "选择性挂起" 状态而失败。
-- **打印机**：通常会因为无法从待机状态恢复而失败。
-- **音频**：常见失败，因为它们不会从待机状态恢复。
+- **集线器** ：通常会失败，因为它们报告它们在实际只有总线电源时具有外部电源。 错误报告将导致总线上出现无效电压情况。
+- **硬盘驱动器** ：常见的原因是由于 USB 总线的功率消耗过多而无法正确枚举。 在许多情况下，这些硬盘驱动器需要非标准电缆才能正常工作。
+- **闪存驱动器** ：通常会因不正确地处理描述符请求而失败;这会导致设备挂起，并使 Microsoft 操作系统描述符失败。
+- **卡读取器** ：通常会因为未进入 "选择性挂起" 状态而失败。
+- **打印机** ：通常会因为无法从待机状态恢复而失败。
+- **音频** ：常见失败，因为它们不会从待机状态恢复。
 
 不符合的 USB 设备可能会导致用户体验不佳、难于公共关系、产品退货、高产品支持呼叫量，以及与交付产品中的服务错误关联的成本增加。
 
 ## <a name="windows-hlk-requirements-for-usb-if-tests"></a>适用于 USB 的 Windows HLK 要求-IF 测试
 
-- **UsbDevices. UsbifCertification ** (设备) ：
+- **UsbDevices. UsbifCertification** (设备) ：
 
     强烈建议采用 USB-IF 认证;但是，Windows HLK 要求 **UsbDevices。 UsbifCertification** 不再需要 usb 设备的 usb 证书。 要求表明设备可以是 USB 设备，也可以是 usb （如果已经过认证），也可以在设备上运行 USB 假设的认证测试的子集。
 
-- 主机控制器 (**BusController. UsbController. UsbifCertification**) 
+- 主机控制器 ( **BusController. UsbController. UsbifCertification** ) 
 
     为了满足各自的 Windows HLK 要求，USB 主机控制器制造商必须获取完整的 USB 证书。
 
-- 集线器 (**UsbifCertification**) 
+- 集线器 ( **UsbifCertification** ) 
 
     为了满足各自的 Windows HLK 要求，USB 集线器制造商必须获取完整的 USB-IF 证书。
 
@@ -78,7 +78,7 @@ USB 硬件（特别是 USB 设备或主机控制器）必须满足 USB 的电气
 
   下载 USB 命令验证程序测试工具和 USB 互操作性测试文档，并从 [USB-IF](https://usb.org/usb32tools)运行所需的测试。 然后提交设备以进行 Windows 认证。
 
- >**注意**： usb 主机控制器和集线器不符合 USB-if 自测试选项的条件，必须获取完整的 usb 证书。
+ >**注意** ： usb 主机控制器和集线器不符合 USB-if 自测试选项的条件，必须获取完整的 usb 证书。
 
   如果你决定使用 USB-IF 自测试选项来获取 Windows 认证，则至少必须执行以下 USB 测试：
 
@@ -89,7 +89,7 @@ USB 硬件（特别是 USB 设备或主机控制器）必须满足 USB 的电气
 
   以下步骤介绍如何执行所需的 USB-IF 测试来限定设备进行 Windows 认证。
 
-  1. 从 [Usb 软件和硬件工具](https://usb.org/usb32tools) (USB3CV) 和互操作性测试文档下载 Usb 命令验证程序测试工具。
+  1. 从 [Usb 软件和硬件工具](https://usb.org/usb32tools) (USB3CV) 和 [互操作性测试文档](https://usb.org/usb-32#anchor_32interop)下载 usb 命令验证程序测试工具。
 
   2. 按下表中指定的方式运行 usb 硬件测试：
 
