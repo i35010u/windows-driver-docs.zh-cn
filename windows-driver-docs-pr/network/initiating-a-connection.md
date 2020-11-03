@@ -11,12 +11,12 @@ keywords:
 - SAN 套接字 WDK，启动连接
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 55b05014001afc75ebf381411abdd287f5261998
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 69d7179039a520a692f108a06fd975a88659a8af
+ms.sourcegitcommit: 409dd20db50c58b817ef985048fb7aab952cb0ad
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89209313"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93244861"
 ---
 # <a name="initiating-a-connection"></a>发起连接
 
@@ -27,13 +27,13 @@ Windows 套接字交换机接收到由应用程序启动的 **WSPConnect** 调�
 
 ![图表概述 windows 套接交换机如何请求与远程对等机的连接](images/apiflow3.png)
 
-创建并绑定 SAN 套接字后，交换机将使用处于非 *阻止模式下*的 san 套接字执行连接请求，如以下过程中所述。
+创建并绑定 SAN 套接字后，交换机将使用处于非 *阻止模式下* 的 san 套接字执行连接请求，如以下过程中所述。
 
 **执行连接请求**
 
 1.  开关调用 SAN 服务提供程序的 [**WSPEventSelect**](/previous-versions/windows/hardware/network/ff566287(v=vs.85)) 函数。 在此调用中，开关传递 FD \_ 连接代码和要与该代码相关联的事件对象。 对 **WSPEventSelect** 的调用请求连接事件的通知，并通知 SAN 服务提供程序在非阻止模式下执行的任何后续 [**WSPConnect**](/previous-versions/windows/hardware/network/ff566275(v=vs.85)) 调用。
 
-2.  **WSPEventSelect**函数返回后，开关调用 SAN 服务提供程序的**WSPConnect**函数。 在此调用中，开关以 [WSK 地址系列](/previous-versions/windows/hardware/drivers/mt808757(v=vs.85))之一的格式传递目标地址。 SAN 服务提供商的代理驱动程序将此目标地址映射到本机地址，并尝试建立连接。
+2.  **WSPEventSelect** 函数返回后，开关调用 SAN 服务提供程序的 **WSPConnect** 函数。 在此调用中，开关以 [WSK 地址系列](ws2def-h.md)之一的格式传递目标地址。 SAN 服务提供商的代理驱动程序将此目标地址映射到本机地址，并尝试建立连接。
 
 3.  如果 SAN 服务提供商的 **WSPConnect** 函数可以立即完成连接操作或使连接操作失败，它将返回相应的成功或失败代码。 如果 SAN 服务提供商的 **WSPConnect** 函数无法立即完成连接请求，则 san 服务提供商的连接操作会在另一个线程中以异步方式执行。 SAN 服务提供程序的 **WSPConnect** 函数返回并带有错误 WSAEWOULDBLOCK，以指示套接字标记为非阻止，并且无法立即完成连接操作。
 
@@ -41,7 +41,8 @@ Windows 套接字交换机接收到由应用程序启动的 **WSPConnect** 调�
 
 5.  发出事件对象信号后，开关会调用 SAN 服务提供程序的 [**WSPEnumNetworkEvents**](/previous-versions/windows/hardware/network/ff566284(v=vs.85)) 函数以获取连接操作的结果。
 
-**注意**   交换机通过 SAN 服务提供程序建立连接后，该交换机无法再将 TCP/IP 提供程序用于该连接。 SAN 服务提供程序必须完全实现为建立的连接提供服务所需的所有功能。
+**注意**  
+交换机通过 SAN 服务提供程序建立连接后，该交换机无法再将 TCP/IP 提供程序用于该连接。 SAN 服务提供程序必须完全实现为建立的连接提供服务所需的所有功能。
 
  
 

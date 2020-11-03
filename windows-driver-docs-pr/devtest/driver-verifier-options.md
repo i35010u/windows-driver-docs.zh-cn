@@ -5,14 +5,14 @@ ms.assetid: f251fe07-e68e-4d93-9aa5-9a0bc818756d
 keywords:
 - 驱动程序验证程序 WDK，列出的选项
 - 错误 WDK 驱动程序验证程序
-ms.date: 04/02/2020
+ms.date: 11/02/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 557ff950113f6b0bc4b6100b2e8acde94c3a6ef0
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 14347aa3e670bcd9a088596101e56d40d02c1ba3
+ms.sourcegitcommit: 409dd20db50c58b817ef985048fb7aab952cb0ad
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89382557"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93244859"
 ---
 # <a name="driver-verifier-options-and-rule-classes"></a>驱动程序验证程序选项和规则类
 
@@ -65,7 +65,9 @@ ms.locfileid: "89382557"
 | 内核同步延迟模糊处理 | 24 |
 | VM 交换机验证 | 25 |
 | 代码完整性检查 | 26 |
+| 驱动程序隔离检查 (需要 36)  | 33 |
 | 其他 IRQL 检查 | 35 |
+| 启用 DIF | 36
 
 ## <a name="optional-feature-and-rule-class-descriptions"></a>可选功能和规则类说明
 
@@ -77,7 +79,7 @@ ms.locfileid: "89382557"
 
 如果启用此选项，则驱动程序验证器会通过使可分页代码无效来对驱动程序施加极大的内存压力。 如果驱动程序尝试访问错误 IRQL 处的分页内存或持有旋转锁，则驱动程序验证程序将会检测到此行为。
 
-[低资源模拟](low-resources-simulation.md) (称为 Windows 8.1 中的 *随机低资源模拟*) 
+[低资源模拟](low-resources-simulation.md) (称为 Windows 8.1 中的 *随机低资源模拟* ) 
 
 当启用此选项时，驱动程序验证程序会随机失败池分配请求和其他资源请求。 通过将这些分配故障注入到系统中，驱动程序验证程序可以测试驱动程序处理资源不足情况的能力。
 
@@ -91,15 +93,15 @@ ms.locfileid: "89382557"
 
 [死锁检测](deadlock-detection.md)
 
- (Windows XP 和) 更高版本中，当此选项处于活动状态时，驱动程序验证器将监视驱动程序的自旋锁、互斥体和快速互斥体的使用情况。 这会检测驱动程序的代码是否有可能在某一时刻导致死锁。
+ 当此选项处于活动状态时，驱动程序验证程序将监控驱动程序对旋转锁、互斥体和快速互斥体的使用。 这会检测驱动程序的代码是否有可能在某一时刻导致死锁。
 
 [增强的 I/O 验证](enhanced-i-o-verification.md)
 
- (Windows XP 和更高) 版本中，当此选项处于活动状态时，驱动程序验证器将监视多个 i/o 管理器例程的调用，并对 PnP Irp、电源 Irp 和 WMI Irp 执行压力测试。 在 windows 7 和更高版本的 Windows 操作系统中，增强的 i/o 验证的所有功能都包含在 [I/o 验证](i-o-verification.md) 的一部分中，它不再可用，也无法在驱动程序验证器管理器或命令行中选择此选项。
+ 此选项处于活动状态时，Driver Verifier 会监视多个 i/o 管理器例程的调用，并对 PnP Irp、电源 Irp 和 WMI Irp 执行压力测试。 在 windows 7 和更高版本的 Windows 操作系统中，增强的 i/o 验证的所有功能都包含在 [I/o 验证](i-o-verification.md) 的一部分中，它不再可用，也无法在驱动程序验证器管理器或命令行中选择此选项。
 
 [DMA 验证](dma-verification.md)
 
- (Windows XP 和更高) 版本中，此选项处于活动状态时，驱动程序验证器会监视驱动程序对 DMA 例程的使用情况。 这将检测 DMA 缓冲器、适配器和映射寄存器的使用是否不正确。
+ 此选项处于活动状态时，Driver Verifier 会监视驱动程序对 DMA 例程的使用情况。 这将检测 DMA 缓冲器、适配器和映射寄存器的使用是否不正确。
 
 [安全检查](security-checks.md)
 
@@ -123,7 +125,7 @@ Windows Server 2003 中引入的 (。 在 Windows 7 和更高版本中不可用�
 
 [SCSI 验证](scsi-verification.md)
 
- (Windows XP 和更高) 版本中，当此选项处于活动状态时，驱动程序验证器将监视 SCSI 微型端口驱动程序，以正确地使用导出的 SCSI 端口例程、延迟过多以及不正确地处理 SCSI 请求。
+ 此选项处于活动状态时，驱动程序验证器会监视 SCSI 微型端口驱动程序，以在不正确使用导出的 SCSI 端口例程、延迟过多以及不正确地处理 SCSI 请求。
 
 [Storport 验证](dv-storport-verification.md)
 
@@ -163,7 +165,7 @@ Windows Server 2003 中引入的 (。 在 Windows 7 和更高版本中不可用�
 
 [VM 交换机验证](vm-switch-verification.md)
 
-从 Windows 8.1 开始 () 此选项监视在[Hyper-v 可扩展交换机](../network/hyper-v-extensible-switch.md)内运行 (*可扩展交换机) 扩展*的筛选器驱动程序。
+从 Windows 8.1 开始 () 此选项监视在 [Hyper-v 可扩展交换机](../network/hyper-v-extensible-switch.md)内运行 ( *可扩展交换机) 扩展* 的筛选器驱动程序。
 
 [端口/微型端口接口检查](port-miniport-interface-checking.md)
 
@@ -175,13 +177,17 @@ Windows Server 2003 中引入的 (。 在 Windows 7 和更高版本中不可用�
 
 [WDF 验证](wdf-verification.md)
 
-WDF 验证检查内核模式驱动程序是否遵循内核模式驱动程序框架 (KMDF) 的要求。
+WDF 验证检查内核模式驱动程序是否遵循 Kernel-Mode Driver Framework (KMDF) 的要求。
 
 [其他 IRQL 检查]()
 
 其他 IRQL 检查增加了对 PASSIVE_LEVEL 的 DDI 相容性检查 IRQL 规则。 它包含以下两个规则：
 - [IrqlIoRtlZwPassive](wdm-irqliortlzwpassive.md)规则指定，仅当该驱动程序以 IRQL = PASSIVE_LEVEL 执行时，才调用该规则中列出的 DDIs。
 - [IrqlNtifsApcPassive](wdm-irqlntifsapcpassive.md)规则指定，仅当该驱动程序以 irql = PASSIVE_LEVEL 或以 irql <= APC_LEVEL 执行时，才调用该规则中列出的 DDIs。
+
+[驱动程序隔离检查](/windows-hardware/drivers/develop/validating-windows-drivers#driver-verifier-driver-isolation-checks)
+
+驱动程序隔离检查对于验证 Windows 驱动程序的运行时驱动程序包隔离要求至关重要。有关详细信息，请参阅 [Windows 驱动程序](/windows-hardware/drivers/develop/getting-started-with-windows-drivers)入门。  检查监视独立驱动程序包不允许的注册表读取和写入。
 
 ## <a name="standard-settings"></a>标准设置
 
@@ -208,16 +214,16 @@ WDF 验证检查内核模式驱动程序是否遵循内核模式驱动程序框�
 <td align="left"><p><a href="i-o-verification.md" data-raw-source="[I/O Verification](i-o-verification.md)">I/O 验证</a></p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>Windows XP 和更高版本 (<a href="deadlock-detection.md" data-raw-source="[Deadlock Detection](deadlock-detection.md)">死锁检测</a>) </p></td>
+<td align="left"><p><a href="deadlock-detection.md" data-raw-source="[Deadlock Detection](deadlock-detection.md)">死锁检测</a> </p></td>
 </tr>
 <tr class="even">
 <td align="left"><p> (Windows 7 和更高版本中<a href="enhanced-i-o-verification.md" data-raw-source="[Enhanced I/O Verification](enhanced-i-o-verification.md)">增强的 I/o 验证</a>，则选择 "i/o 验证" 时，将自动激活此选项) </p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="dma-verification.md" data-raw-source="[DMA Verification](dma-verification.md)">DMA 验证</a> (Windows XP 和更高版本) </p></td>
+<td align="left"><p><a href="dma-verification.md" data-raw-source="[DMA Verification](dma-verification.md)">DMA 验证</a> </p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>Windows XP 和更高版本 (<a href="security-checks.md" data-raw-source="[Security Checks](security-checks.md)">安全检查</a>) </p></td>
+<td align="left"><p><a href="security-checks.md" data-raw-source="[Security Checks](security-checks.md)">安全检查</a> </p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p> (Windows Vista 和更高版本的<a href="miscellaneous-checks.md" data-raw-source="[Miscellaneous Checks](miscellaneous-checks.md)">其他检查</a>) </p></td>

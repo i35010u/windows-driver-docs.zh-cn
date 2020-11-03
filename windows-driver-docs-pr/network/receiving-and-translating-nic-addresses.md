@@ -14,12 +14,12 @@ keywords:
 - 通知 WDK San
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c7fa8e2f4f7a4838fecbe6c9dbc2936ed51be8f7
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: e5ad04ce07695c2e7afd8a74391fbf4e771def11
+ms.sourcegitcommit: 409dd20db50c58b817ef985048fb7aab952cb0ad
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89216966"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93244854"
 ---
 # <a name="receiving-and-translating-nic-addresses"></a>接收和转换 NIC 地址
 
@@ -27,11 +27,11 @@ ms.locfileid: "89216966"
 
 
 
-与 SAN 服务提供商和 SAN Nic 交互时，Windows 套接字交换机始终使用包含 IP 地址的 [WSK 地址系列](/previous-versions/windows/hardware/drivers/mt808757(v=vs.85))。 此开关不使用 SAN 的本机地址系列。 因此，SAN 服务提供商必须使用其关联的代理驱动程序来检索分配给其 Nic 的 IP 地址的列表。 在与其代理驱动程序交互时，SAN 服务提供程序使用这些 IP 地址。 代理驱动程序必须在 IP 地址和本机地址之间进行转换。
+与 SAN 服务提供商和 SAN Nic 交互时，Windows 套接字交换机始终使用包含 IP 地址的 [WSK 地址系列](ws2def-h.md)。 此开关不使用 SAN 的本机地址系列。 因此，SAN 服务提供商必须使用其关联的代理驱动程序来检索分配给其 Nic 的 IP 地址的列表。 在与其代理驱动程序交互时，SAN 服务提供程序使用这些 IP 地址。 代理驱动程序必须在 IP 地址和本机地址之间进行转换。
 
 在初始化期间，代理驱动程序通常为地址更改通知注册传输驱动程序接口 (TDI) 。 所有即插即用 (PnP) 识别的传输，包括 TCP/IP，并通过 TDI 向注册了此类通知的客户端提供地址更改通知。
 
-**注意**   Windows Vista 之后的 Microsoft Windows 版本不支持 TDI。 请改用 [Windows 筛选平台](/windows-hardware/drivers/ddi/_netvista/) 或 [Winsock 内核](/windows-hardware/drivers/ddi/_netvista/) 。
+**注意**  Windows Vista 之后的 Microsoft Windows 版本不支持 TDI。 请改用 [Windows 筛选平台](/windows-hardware/drivers/ddi/_netvista/) 或 [Winsock 内核](/windows-hardware/drivers/ddi/_netvista/) 。
 
  
 
@@ -53,7 +53,7 @@ TDI 将以下参数传递给代理驱动程序的添加地址或删除地址回�
 
 前面的结构定义在 tdi .h 头文件中定义。 前面的注册和回调函数在 tdikrnl 头文件中定义。 这些头文件在 Microsoft Windows 驱动程序开发工具包 (DDK) 和 Windows 驱动程序工具包 (WDK) 中提供。 [Tdi 客户端回调](/previous-versions/windows/hardware/network/ff565081(v=vs.85))和[Tdi 客户端事件和 PnP 通知处理程序](/previous-versions/windows/hardware/network/ff565082(v=vs.85))中包含有关 tdi PnP 通知的详细信息。
 
-**注意**   Windows Vista 之后的 Microsoft Windows 版本不支持 TDI。 请改用 [Windows 筛选平台](/windows-hardware/drivers/ddi/_netvista/) 或 [Winsock 内核](/windows-hardware/drivers/ddi/_netvista/) 。
+**注意**  Windows Vista 之后的 Microsoft Windows 版本不支持 TDI。 请改用 [Windows 筛选平台](/windows-hardware/drivers/ddi/_netvista/) 或 [Winsock 内核](/windows-hardware/drivers/ddi/_netvista/) 。
 
  
 

@@ -9,21 +9,21 @@ keywords:
 - WskSocket
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bbd031054b16f257a1946d932fdee5716234f72b
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 525027321a0cf03a6d5d97cfa48bfc963fe715ef
+ms.sourcegitcommit: 409dd20db50c58b817ef985048fb7aab952cb0ad
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89210201"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93244858"
 ---
 # <a name="creating-sockets"></a>创建套接字
 
 
-Winsock 内核 (WSK) 应用程序已成功连接到 WSK 子系统后，它可以创建可用于网络 i/o 操作的套接字。 WSK 应用程序通过调用 [**WskSocket**](/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_socket) 函数来创建套接字。 **WskSocket**函数由 WSK 子系统在附件期间返回的[**WSK \_ 提供程序 \_ 调度**](/windows-hardware/drivers/ddi/wsk/ns-wsk-_wsk_provider_dispatch)结构的**WskSocket**成员指向。
+Winsock 内核 (WSK) 应用程序已成功连接到 WSK 子系统后，它可以创建可用于网络 i/o 操作的套接字。 WSK 应用程序通过调用 [**WskSocket**](/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_socket) 函数来创建套接字。 **WskSocket** 函数由 WSK 子系统在附件期间返回的 [**WSK \_ 提供程序 \_ 调度**](/windows-hardware/drivers/ddi/wsk/ns-wsk-_wsk_provider_dispatch)结构的 **WskSocket** 成员指向。
 
 WSK 应用程序必须指定在创建新套接字时创建的 WSK 套接字的类别。 有关 WSK 套接字类别的详细信息，请参阅 [Winsock 内核套接字类别](winsock-kernel-socket-categories.md)。
 
-WSK 应用程序还必须指定地址族、套接字类型和协议，无论何时创建新的套接字。 有关 WSK 支持的地址系列的详细信息，请参阅 [WSK 地址系列](/previous-versions/windows/hardware/drivers/mt808757(v=vs.85))。
+WSK 应用程序还必须指定地址族、套接字类型和协议，无论何时创建新的套接字。 有关 WSK 支持的地址系列的详细信息，请参阅 [WSK 地址系列](ws2def-h.md)。
 
 创建新的套接字时，如果应用程序将在套接字上启用任何事件回调函数，则 WSK 应用程序必须提供套接字上下文值和指向客户端调度表结构的指针。 有关在套接字上启用事件回调函数的详细信息，请参阅 [启用和禁用事件回调函数](enabling-and-disabling-event-callback-functions.md)。
 
