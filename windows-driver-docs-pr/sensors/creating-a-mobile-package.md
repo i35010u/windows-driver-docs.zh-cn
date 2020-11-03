@@ -4,12 +4,12 @@ description: 本主题提供有关创建用于在移动设备上安装示例驱�
 ms.assetid: E929D80D-17BF-4079-8CF9-972020306358
 ms.date: 07/20/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 66d8415b8b888cdfb2be5d4bc4cacc3dc14c5318
-ms.sourcegitcommit: be37c8ccfe838869eec6fae4112017eb6a96d848
+ms.openlocfilehash: 968550dc9b04b7fc750cf427b29678537253fb7a
+ms.sourcegitcommit: 64f7db5bbd25475713f0bf791115fe15c2aa69fe
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92630148"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93192572"
 ---
 # <a name="creating-a-mobile-package"></a>创建移动包
 
@@ -81,5 +81,3 @@ Copyright (c) Microsoft Corporation.  All rights reserved.
 [创建移动包](/windows-hardware/drivers/sensors/creating-a-mobile-package)
 
 [查看 INX 文件](review-and-revise-the-inf-file.md)
-
-[包生成器的命令行参数](/windows-hardware/manufacture/mobile/command-line-arguments-for-package-generator)
