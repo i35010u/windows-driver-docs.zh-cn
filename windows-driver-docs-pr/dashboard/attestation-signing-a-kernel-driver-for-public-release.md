@@ -5,12 +5,12 @@ ms.assetid: A292B15D-37FD-407E-998C-728D9423E712
 ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 57cab77a24bab98faa0accd88f31d7e74d9fff4b
-ms.sourcegitcommit: 4f08f5686c0bbc27d58930b993cbab1a98e3afb0
+ms.openlocfilehash: 3b9d8a6f223788128c8239c0d46cf4e725af4eed
+ms.sourcegitcommit: 6c736c8a461f82f41f9c6988a20de2a2098ab482
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/03/2020
-ms.locfileid: "89443855"
+ms.lasthandoff: 10/29/2020
+ms.locfileid: "92914024"
 ---
 # <a name="attestation-signing-a-kernel-driver-for-public-release"></a>对内核驱动程序进行证明签名以便公开发布
 
@@ -22,7 +22,7 @@ ms.locfileid: "89443855"
 > - 证明签名支持 Windows 10 桌面版内核模式和用户模式驱动程序。 尽管用户模式驱动程序无需由适用于 Windows 10 的 Microsoft 进行签名，但相同的证明过程可以同时用于用户和内核模式驱动程序。
 > - 证明签名不会返回 **ELAM** 的正确 PE 级别或 **Windows Hello** PE 二进制文件。  它们必须经过测试，并且以 .hlkx 包的形式提交，以便接收额外的签名属性。
 > - 证明签名需要使用 EV 证书，才能将驱动程序提交到合作伙伴中心（硬件开发人员中心仪表板）。
-> - **已进行证明签名的驱动程序适用于 Windows 10。它不适用于早期版本的 Windows（例如 Windows 8.1 和 Windows 7），并且不受 Windows Server 2016 及更高版本支持。有关支持策略的详细信息，请参阅[使用 Windows 中的证明过程签署的第三方内核级软件的支持策略](https://support.microsoft.com/help/4519013/support-policy-3rd-party-kernel-level-attestation-signed-software)** 。
+> - 已进行证明签名的驱动程序适用于 Windows 10。 它不适用于早期版本的 Windows（例如 Windows 8.1 和 Windows 7），并且不受 Windows Server 2016 及更高版本支持。
 > - 证明签名要求驱动程序文件夹名称不包含特殊字符、不包含 UNC 文件共享路径，并且长度小于 40 个字符。
 > - 当驱动程序收到证明签名时，不会进行 Windows 认证。 Microsoft 证明签名表明驱动程序受 Windows 信任，但由于该驱动程序未在 HLK Studio 中进行测试，因此不能保证兼容性、功能等。
 > - 要使你的驱动程序得到 Windows 认证，请将 HLK Studio 生成的 .hlkx 包提交到合作伙伴中心。
@@ -43,7 +43,9 @@ ms.locfileid: "89443855"
 
 ## <a name="acquire-an-ev-code-signing-certificate"></a>获取 EV 代码签名证书
 
-在向仪表板提交要签名的二进制文件前，需要获取[扩展验证 (EV) 代码签名证书](get-a-code-signing-certificate.md)，才能确保数字信息安全。 EV 证书是建立所提交的代码所有权的公认标准。
+在向仪表板提交要签名的二进制文件前，需要获取扩展验证 (EV) 代码签名证书，才能确保数字信息安全。 EV 证书是建立所提交的代码所有权的公认标准。
+
+按照[获取代码签名证书](get-a-code-signing-certificate.md)中的步骤设置 EV 证书。
 
 ## <a name="allowable-pe-signatures-and-binaries"></a>允许的 PE 签名和二进制文件
 
@@ -117,7 +119,7 @@ MAKECAB [/V[n]] [/D var=value ...] /F directive_file [...]
 3. 准备 cab 文件 DDF 输入文件。 对于我们的回显驱动程序，它可能看起来如下所示。
 
 ```cpp
-;*** Echo.ddf example
+;**_ Echo.ddf example
 ;
 .OPTION EXPLICIT     ; Generate errors
 .Set CabinetFileCountThreshold=0

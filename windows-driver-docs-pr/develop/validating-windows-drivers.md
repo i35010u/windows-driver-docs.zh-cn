@@ -4,16 +4,16 @@ title: 验证通用 Windows 驱动程序
 description: 可以使用 ApiValidator.exe 工具验证驱动程序调用的 API 是否对通用 Windows 驱动程序有效。
 ms.date: 04/28/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: f0906a8555c213353954c336306e0b950e55e400
-ms.sourcegitcommit: 0c34101a0eed9f187fec03026021fff89bd233e3
+ms.openlocfilehash: ac4385dd79ff9613c717c6d4c0b7fdfc7a5643d1
+ms.sourcegitcommit: c899ded3f345d000a1bdcd970891d663e8bf32d4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91135152"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93035462"
 ---
 # <a name="validating-windows-drivers"></a>验证 Windows 驱动程序
 
-使用 InfVerif 和 ApiValidator 工具来测试 Windows 驱动程序是否符合 [Windows 驱动程序入门](getting-started-with-windows-drivers.md)中所述的要求。
+使用 InfVerif、驱动程序验证器驱动程序隔离检查和 ApiValidator 工具来测试 Windows 驱动程序是否符合 [Windows 驱动程序入门](getting-started-with-windows-drivers.md)中所述的要求。
 
 ## <a name="infverif"></a>InfVerif
 
@@ -24,11 +24,55 @@ ms.locfileid: "91135152"
 * 符合 [DCH 设计原则](dch-principles-best-practices.md)的声明性 (D) 原则
 * 遵循 [Windows 驱动程序入门](getting-started-with-windows-drivers.md)中的[驱动程序包隔离](driver-isolation.md)要求
 
-如需了解更多详情，请参阅[通过命令行运行 InfVerif](../devtest/running-infverif-from-the-command-line.md) 
+如需了解更多详情，请参阅[通过命令行运行 InfVerif](../devtest/running-infverif-from-the-command-line.md)。
+
+## <a name="driver-verifier-driver-isolation-checks"></a>驱动程序验证器驱动程序隔离检查
+
+为了获得Windows 驱动程序的资格，驱动程序必须满足[驱动程序包隔离](driver-isolation.md)要求。 自 Windows 10 预览版 19568 开始，[驱动程序验证器](../devtest/driver-verifier.md) (DV) 会监视已隔离的驱动程序包所禁止的注册器读取和写入。
+
+可在内核调试程序中发生违规行为时查看这些行为，也可配置 DV 来停止系统，并在发生违规行为时生成包含详细信息的内存转储。 可通过第一种方法开始驱动程序开发，然后在驱动程序快要完成时，切换到第二种方法。
+
+若要在违规行为发生时进行查看，请先连接内核调试程序，然后使用以下命令。 重启操作启用 DV 设置后，可在内核调试程序输出中监视违规行为。
+
+若要在单个驱动程序中启用驱动程序隔离：
+
+```command
+verifier /rc 33 36 /driver myDriver.sys
+```
+
+若要检查多个驱动程序，请使用空格隔离每个驱动程序名称：
+
+```command
+verifier /rc 33 36 /driver myDriver1.sys myDriver2.sys
+```
+
+若要配置 DV，使它在发生违规行为时进行 bug 检查，请使用以下语法：
+
+```
+verifier /onecheck /rc 33 36 /driver myDriver1.sys
+```
+
+需要重启才能启用验证设置。 若要通过命令行执行此操作，请指定：
+
+```command
+shutdown /r /t 0
+```
+
+下面是几个错误消息示例：
+
+例如：ZwCreateKey 提供完全绝对路径：
+
+`DRIVER_ISOLATION_VIOLATION: <driver name>: Registry operations should not use absolute paths. Detected creation of unisolated registry key \Registry\Machine\SYSTEM`
+
+例如：ZwCreateKey 提供与句柄相对的路径，而此句柄并非来自已获批的 API 的：
+
+`DRIVER_ISOLATION_VIOLATION: <driver name>: Registry operations should only use key handles returned from WDF or WDM APIs. Detected creation of unisolated registry key \REGISTRY\MACHINE\SYSTEM\SomeKeyThatShouldNotExist`
+
+请考虑启用带有 DV 驱动程序隔离检查的[设备基础功能测试](../devtest/run-devfund-tests-via-the-command-line.md)，帮助及早捕获驱动程序隔离违规行为。
 
 ## <a name="apivalidator"></a>ApiValidator
 
-ApiValidator 工具用于验证二进制文件调用的 API 是否对 Windows 驱动程序是有效的。 如果二进制文件调用的 API 在 Windows 驱动程序的有效 API 集之外，此工具就会返回错误。 此工具属于适用于 Windows 10 的 WDK。
+ApiValidator 工具用于验证二进制文件调用的 API 是否对 Windows 驱动程序是有效的。 如果二进制文件调用的 API 在 Windows 驱动程序的有效 API 集之外，此工具就会返回错误。 此工具是 Windows 10 版 WDK 的一部分。
 
 ApiValidator 用于验证驱动程序是否支持 [API 分层](api-layering.md)，这是 Windows 驱动程序的要求之一。 有关完整的要求列表，请参阅 [Windows 驱动程序入门](getting-started-with-windows-drivers.md)。
 
@@ -55,7 +99,7 @@ Error   10  error MSB3721: The command ""C:\Program Files (x86)\Windows Kits\10\
 
 ### <a name="fixing-validation-errors"></a>修复验证错误
 
-1.  如果已将旧的桌面 UMDF 驱动程序项目切换为 Windows 驱动程序，请验证在生成二进制文件时是否添加了正确的库。 选择并按住（或右键单击）项目，然后选择属性。 依次转到“链接器”->“输入”。 **其他依赖项**应包含：
+1.  如果已将旧的桌面 UMDF 驱动程序项目切换为 Windows 驱动程序，请验证在生成二进制文件时是否添加了正确的库。 选择并按住（或右键单击）项目，然后选择属性。 依次转到“链接器”->“输入”。 **其他依赖项** 应包含：
 
     ```cpp
     %AdditionalDependencies);$(SDK_LIB_PATH)\OneCoreUAP.lib
@@ -77,10 +121,10 @@ ApiValidation: NOT all binaries are Universal
 
 ### <a name="running-apivalidator-from-the-command-prompt"></a>从命令提示符运行 ApiValidator
 
-也可以从命令提示符运行 Apivalidator.exe。 在 WDK 安装中，转到 C:\Program Files (x86)\Windows Kits\10\bin\<arch> 和 C:\Program Files (x86)\Windows Kits\10\build\universalDDIs\<arch>。 
+也可以从命令提示符运行 Apivalidator.exe。 在 WDK 安装中，转到 C:\Program Files (x86)\Windows Kits\10\bin\<arch> 和 C:\Program Files (x86)\Windows Kits\10\build\universalDDIs\<arch>。
 
 重要说明：
-* ApiValidator 需要以下文件：ApiValidator.exe、Aitstatic.exe、Microsoft.Kits.Drivers.ApiValidator.dll 和 UniversalDDIs.xml。 
+* ApiValidator 需要以下文件：ApiValidator.exe、Aitstatic.exe、Microsoft.Kits.Drivers.ApiValidator.dll 和 UniversalDDIs.xml。
 * UniversalDDIs.xml 必须与要验证的二进制文件体系结构相匹配（例如，对于 x64 驱动程序，使用 x64 UniversalDDI.xml）
 * ApiValidator 一次只测试一个体系结构
 * 有关其他信息，请参阅下面的“已知 ApiValidator 问题”

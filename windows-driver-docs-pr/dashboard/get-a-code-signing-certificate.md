@@ -5,12 +5,12 @@ ms.assetid: 6CF4111A-C645-40F5-8D45-55F46B3C0740
 ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 45093059ca78c975aee31457658e31bfa3534458
-ms.sourcegitcommit: f8619f20a0903dd64f8641a5266ecad6df5f1d57
+ms.openlocfilehash: b1d126846416260fe2234ab417bd7fad64959033
+ms.sourcegitcommit: 6c736c8a461f82f41f9c6988a20de2a2098ab482
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91423481"
+ms.lasthandoff: 10/29/2020
+ms.locfileid: "92914026"
 ---
 # <a name="get-a-code-signing-certificate"></a>获取代码签名证书
 
@@ -44,6 +44,10 @@ ms.locfileid: "91423481"
 
 > [!NOTE]
 > 你必须使用相同的计算机和浏览器来检索你的证书。
+
+## <a name="step-4-add-the-certificates-to-your-account-on-partner-center"></a>步骤 4：在合作伙伴中心，将证书添加到你的帐户
+
+有关分步说明，请参阅[添加或更新代码签名证书](update-a-code-signing-certificate.md)。
 
 ## <a name="next-steps"></a>后续步骤
 

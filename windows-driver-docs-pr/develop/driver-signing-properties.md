@@ -1,15 +1,15 @@
 ---
 ms.assetid: A1DE1065-9D8F-405F-9807-5F0D3BE6F0AC
 title: 驱动程序签名属性
-description: ''
+description: 详细了解：驱动程序签名属性
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: aa3d8b39490757d3ec01d31670cca8a322f4894d
-ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
+ms.openlocfilehash: ed993cfae2b235a47a926a7e8af4b4fc91ae7114
+ms.sourcegitcommit: f47c072e88dce59daba1231027b60eb56bd2cde9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "63391516"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92689386"
 ---
 # <a name="driver-signing-properties"></a>驱动程序签名属性
 
@@ -20,8 +20,8 @@ ms.locfileid: "63391516"
 
 **签名模式**
 
--   **测试签名** - Microsoft Visual Studio 应使用**测试证书**中指定的测试证书签署驱动程序（默认）。 如果未在**测试证书**中指定证书，Visual Studio 会为驱动程序创建一个证书。 **注意**：Windows 需要签署所有 64 位驱动程序。
--   **生产签名** - Visual Studio 应使用**生产证书**中指定的生产证书签署驱动程序。
+-   **测试签名** - Microsoft Visual Studio 应使用 **测试证书** 中指定的测试证书签署驱动程序（默认）。 如果未在 **测试证书** 中指定证书，Visual Studio 会为驱动程序创建一个证书。 **注意** ：Windows 需要签署所有 64 位驱动程序。
+-   **生产签名** - Visual Studio 应使用 **生产证书** 中指定的生产证书签署驱动程序。
 -   **关闭** - Visual Studio 不应使用任何证书签署驱动程序。
 
 **测试证书**

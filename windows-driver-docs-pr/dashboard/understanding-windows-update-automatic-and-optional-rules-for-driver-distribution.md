@@ -4,12 +4,12 @@ description: 本主题介绍如何控制 Windows 更新何时分发驱动程序�
 ms.date: 05/28/2019
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 0d441fa727b8ea5295eabf0ac553010e594bf80f
-ms.sourcegitcommit: c94be6fc464edc94035060a4723efa06ab0f5af9
+ms.openlocfilehash: 9769579aebedbcfa0618adacf3cdeda280c4a2f4
+ms.sourcegitcommit: 4f684aa9571117bf3dcbf19ea51e4af6b42b45bf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92153471"
+ms.lasthandoff: 10/29/2020
+ms.locfileid: "93024172"
 ---
 # <a name="understanding-windows-update-automatic-and-optional-rules-for-driver-distribution"></a>了解适用于驱动程序分发的 Windows 更新自动和可选规则
 
@@ -57,11 +57,11 @@ ms.locfileid: "92153471"
 
 第一列指示“驱动程序交付选项”部分中的选择状态。 第一个复选框（“在 Windows 更新期间自动交付”）由“动态更新”指示，第二个复选框（“自动交付到所有适用系统”）由常规的“自动”更新指示  。 “手动”指示“可选/手动”驱动程序，Windows 更新简写为 WU 。
 
-|驱动程序交付选项|操作系统升级|连接新设备|设备管理器|Windows 更新每日扫描或“检查更新”按钮|Windows 更新“可选”页|
+|驱动程序传递选项|操作系统升级|连接新设备|设备管理器|WU 扫描|“可选更新”页面|
 |-|-|-|-|-|-|
 |自动（默认值）|是|仅当本地驱动程序是通用的或缺失时|仅在 Windows 10 版本 1909 及更低版本中|是|否|
 |仅限常规的自动更新|否|仅当本地驱动程序是通用的或缺失时|仅在 Windows 10 版本 1909 及更低版本中|是|否|
 |仅“动态更新”|是|仅当本地驱动程序是通用的或缺失，并且 WU 没有适用的“自动”驱动程序时|仅在 Windows 10 版本 1909 及更低版本中|仅当本地驱动程序是通用的或缺失，并且 WU 没有适用的“自动”驱动程序时|否|
-|在 Windows 10 版本 1909 及更低版本中为“手动”|否|仅当本地驱动程序是通用的或缺失，并且 WU 没有适用的“自动”驱动程序时|是|仅当本地驱动程序是通用的或缺失，并且 WU 没有适用的“自动”驱动程序时|否|
-|从 Windows 10 版本 2004 开始为“手动”|否|否|否|否|否|
+|在 Windows 10 版本 1909 及更低版本中为“手动”|否|仅当本地驱动程序是通用的或缺失，并且 WU 没有适用的“自动”驱动程序时|是|仅当本地驱动程序是通用的或缺失，并且 WU 没有适用的“自动”驱动程序时|空值|
+|从 Windows 10 版本 2004 开始为“手动”|否|否|否|否|是|
 

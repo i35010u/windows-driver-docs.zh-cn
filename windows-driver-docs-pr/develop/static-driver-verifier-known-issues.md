@@ -1,16 +1,16 @@
 ---
 title: 静态驱动程序验证程序已知问题
-description: ''
+description: 详细了解：静态驱动程序验证程序的已知问题 - Windows 10 版本1809
 ms.date: 11/07/2018
 ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
-ms.openlocfilehash: 0c1dec8b3f8cac29582c5d5bdf087ad53a5863a2
-ms.sourcegitcommit: ee3e2259aafc844cc43cce62299a72649cf89212
+ms.openlocfilehash: 70ee5d9e13ac420c6a6ac8b38bd1e86e53e0e3ec
+ms.sourcegitcommit: f47c072e88dce59daba1231027b60eb56bd2cde9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91353604"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92689415"
 ---
 # <a name="static-driver-verifier-known-issues---windows-10-version-1809"></a>静态驱动程序验证程序的已知问题 - Windows 10 版本1809
 
@@ -44,7 +44,7 @@ ms.locfileid: "91353604"
 
     c. 如果未看到任何包含 **internal compiler error** 的行，请搜索以 **error** 开头的任何行。  这些问题不一定需要纠正。  请向 <stlogohelp@microsoft.com> 发送电子邮件。
 
-5. 打开 smvlink1.log 并搜索短语 **internal compiler error**。
+5. 打开 smvlink1.log 并搜索短语 **internal compiler error** 。
 
     a. 如果存在包含 **internal compiler error** 和 **slamcl: error: at phase 2: out of memory** 的错误消息，则表示出现了需要纠正的已知问题。
 
