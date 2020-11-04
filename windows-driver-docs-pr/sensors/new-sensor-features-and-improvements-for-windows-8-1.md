@@ -4,12 +4,12 @@ description: 本主题概述了 WindowsWindows 8.1 中传感器的新增功能�
 ms.assetid: F52BC6D1-DF67-4DE7-BEEC-D18C2A90B4CF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6bb8c936a951473f5001997e31291e51b98a6978
-ms.sourcegitcommit: a866b3470025d85b25a48857a81f893179698e7e
+ms.openlocfilehash: 52373d248e0587ef94577d0a6abf65ca565becf3
+ms.sourcegitcommit: ec7bebe3f94536455e62b372c2a28fe69d1717f7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92355995"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93349677"
 ---
 # <a name="new-sensor-features-and-improvements-for-windows-81"></a>Windows 8.1 的新传感器功能和改进
 
@@ -50,7 +50,7 @@ Windows 8.1 包括对在 HID 传输上运行的任何传感器的内置支持。
 ## <a name="sensors-geolocation-driver-sample"></a>传感器地理位置驱动程序示例
 
 
-地理位置示例驱动程序演示了模拟全球定位系统 (GPS) 设备的最小 UMDF 驱动程序。 新 [编程指南](/windows-hardware/drivers/gnss/installing-the-sample-driver)中详细介绍了此示例驱动程序。
+地理位置示例驱动程序演示了模拟全球定位系统 (GPS) 设备的最小 UMDF 驱动程序。 新 [编程指南](../gnss/installing-the-sample-driver.md)中详细介绍了此示例驱动程序。
 
 地理位置示例驱动程序还包括的代码演示如何添加对收音机管理 API 的支持。 这在 [支持收音机管理](../gnss/supporting-radio-management.md) 主题中进行了介绍。
 

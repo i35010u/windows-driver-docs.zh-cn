@@ -4,12 +4,12 @@ description: 在 Windows 8.1 中，UWP 应用可以使用设备后台任务来�
 ms.assetid: AA6E0760-F048-4BDC-8429-D119A531CED6
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c20a224e16a34d9f21a968604f26fed0e79247f9
-ms.sourcegitcommit: 68c99026bf38b864867ee3751d05459743ea8e11
+ms.openlocfilehash: 320aed46577fb32b9594ddfeb85cef068f85499b
+ms.sourcegitcommit: ec7bebe3f94536455e62b372c2a28fe69d1717f7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92434683"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93349755"
 ---
 # <a name="device-sync-and-update-for-store-device-apps-in-windows-81"></a>Windows 8.1 中存储设备应用的设备同步和更新
 
@@ -37,17 +37,17 @@ ms.locfileid: "92434683"
 <tr class="header">
 <th align="left">后台任务触发器</th>
 <th align="left">需要设备元数据</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><a href="https://go.microsoft.com/fwlink/p/?LinkID=308967" data-raw-source="[DeviceUseTrigger](/uwp/api/Windows.ApplicationModel.Background.DeviceUseTrigger)">DeviceUseTrigger</a></td>
+<td align="left"><a href="/uwp/api/Windows.ApplicationModel.Background.DeviceUseTrigger" data-raw-source="[DeviceUseTrigger](/uwp/api/Windows.ApplicationModel.Background.DeviceUseTrigger)">DeviceUseTrigger</a></td>
 <td align="left"></td>
 <td align="left">应用挂起时，对外围设备进行长时间运行的同步操作。 在后台同步设备要求用户已批准应用的后台同步。 设备还必须连接到电脑，或与 PC 配对，具有活动 i/o，最多允许10分钟的后台活动。 本主题后面将介绍有关策略实施的更多详细信息。</td>
 </tr>
 <tr class="even">
-<td align="left"><a href="https://go.microsoft.com/fwlink/p/?LinkID=308965" data-raw-source="[DeviceServicingTrigger](/uwp/api/Windows.ApplicationModel.Background.DeviceServicingTrigger)">DeviceServicingTrigger</a></td>
+<td align="left"><a href="/uwp/api/Windows.ApplicationModel.Background.DeviceServicingTrigger" data-raw-source="[DeviceServicingTrigger](/uwp/api/Windows.ApplicationModel.Background.DeviceServicingTrigger)">DeviceServicingTrigger</a></td>
 <td align="left"><img src="images/ap-tools.png" alt="DeviceServicingTrigger requires device metadata." /></td>
 <td align="left">在应用挂起时，启用长时间运行的设备更新，例如设置传输或固件更新。 在后台更新设备需要在每次使用后台任务时进行用户批准。 与 DeviceUseTrigger 后台任务不同，DeviceServicingTrigger 后台任务允许设备重启和断开连接，并允许最多30分钟的后台活动。 本主题后面将介绍有关策略实施的更多详细信息。</td>
 </tr>
@@ -60,7 +60,7 @@ DeviceServicingTrigger 需要设备元数据，因为必须将应用指定为特
 
 ### <a name="span-idapp_privilegespanspan-idapp_privilegespanspan-idapp_privilegespanapp-privilege"></a><span id="App_privilege"></span><span id="app_privilege"></span><span id="APP_PRIVILEGE"></span>应用特权
 
-某些关键设备操作（如长时间运行的设备更新）只能由特权应用执行。 *特权应用*是设备制造商有权执行这些操作的应用。 设备元数据指定已指定为设备的特权应用的应用（如果有）。
+某些关键设备操作（如长时间运行的设备更新）只能由特权应用执行。 *特权应用* 是设备制造商有权执行这些操作的应用。 设备元数据指定已指定为设备的特权应用的应用（如果有）。
 
 当通过设备元数据向导创建设备元数据时，请在 " **指定 UWP 设备应用程序信息** " 页上指定您的应用程序。 有关详细信息，请参阅 [步骤2：创建 UWP 设备应用的设备元数据](step-2--create-device-metadata.md)。
 
@@ -87,7 +87,7 @@ DeviceServicingTrigger 需要设备元数据，因为必须将应用指定为特
 
 你的应用将在运行后台任务期间以代码的形式执行同步和更新操作。 此代码嵌入在可实现 IBackgroundTask 的 Windows 运行时类中（或 JavaScript 应用的专用 JavaScript 页中）。 若要使用设备后台任务，你的应用程序必须在前台应用程序的应用程序清单文件中声明它，就像它用于系统触发的后台任务一样。
 
-在应用程序包清单文件的此示例中，SyncContent 和**DeviceLibrary**是来自前台应用的入口点。 **DeviceLibrary. UpdateFirmware。** **DeviceLibrary. SyncContent** 是使用 [DeviceUseTrigger](/uwp/api/Windows.ApplicationModel.Background.DeviceUseTrigger)的后台任务的入口点。 **DeviceLibrary. UpdateFirmware** 是使用 [DeviceServicingTrigger](/uwp/api/Windows.ApplicationModel.Background.DeviceServicingTrigger)的后台任务的入口点。
+在应用程序包清单文件的此示例中，SyncContent 和 **DeviceLibrary** 是来自前台应用的入口点。 **DeviceLibrary. UpdateFirmware。** **DeviceLibrary. SyncContent** 是使用 [DeviceUseTrigger](/uwp/api/Windows.ApplicationModel.Background.DeviceUseTrigger)的后台任务的入口点。 **DeviceLibrary. UpdateFirmware** 是使用 [DeviceServicingTrigger](/uwp/api/Windows.ApplicationModel.Background.DeviceServicingTrigger)的后台任务的入口点。
 
 ```XML
 <Extensions>
@@ -118,7 +118,7 @@ DeviceServicingTrigger 需要设备元数据，因为必须将应用指定为特
 7.  Windows 监控系统条件和任务运行情况，并在必要时（不再符合所需条件）取消该任务。
 8.  当后台任务报告进度或完成时，你的应用将通过该注册任务的进度事件和完成事件接收这些事件。
 
-重要说明  
+**重要说明**  
 使用设备后台任务时，请考虑以下要点：
 
 -   在 Windows 8.1 中引入了使用 DeviceUseTrigger 和 DeviceServicingTrigger 的编程触发后台任务的功能，仅限于设备后台任务。
@@ -248,6 +248,4 @@ DeviceServicingTrigger 需要设备元数据，因为必须将应用指定为特
 [Launching, resuming, and multitasking](/previous-versions/windows/apps/hh770837(v=win.10))
 
 [通过后台任务支持您的应用程序](/previous-versions/windows/apps/hh977056(v=win.10))
-
- 
 

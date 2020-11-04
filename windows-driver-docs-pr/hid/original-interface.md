@@ -14,12 +14,12 @@ keywords:
 - 轮询 WDK 操纵杆
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 90b41cac87fe43457152f7ccb109da812838a8ce
-ms.sourcegitcommit: a866b3470025d85b25a48857a81f893179698e7e
+ms.openlocfilehash: 93570fff7a5fd1b61a3ac80e49c98a08f8ae9797
+ms.sourcegitcommit: ec7bebe3f94536455e62b372c2a28fe69d1717f7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92356013"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93349725"
 ---
 # <a name="original-interface"></a>原始接口
 
@@ -96,29 +96,29 @@ int stdcall PollRoutine( int type, LPJOYOEMPOLLDATA pojd );
 
 API 和系统驱动程序对应用程序发出的请求执行验证，并在完成后将所需数据复制到应用程序结构中。 微型驱动程序不应复制此功能。 但是，任何一个进程都不会阻止一个进程轮询设备，而另一个进程仍处于轮询过程中。 此事件的后果并不比报告两个轴的不同示例更糟。 如有必要，微型驱动程序可以执行其自身的进程同步。
 
-返回值取决于 "type" 参数及其支持的设备。 应始终返回按钮和按钮号。 由于无法指定微型驱动程序是否需要使用 POV 投票，因此，如果请求了任何轴，则应返回此值。 如果设备不支持此 POV，请将其设置为 \_ 未定义。 对于单轴轮询，该值将在 JOYPOLLDATA 结构的 **dwX** 成员中返回， (DirectX 5.0 和更高版本中的 [**VJPOLLDATA**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff543573(v=vs.85)) 结构) 。 对于多轴请求（其中请求的轴数为奇数）， [**JOYOEMPOLLDATA**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff542251(v=vs.85))结构**的 \_ 其他**成员指定是就地返回最后一个轴还是为以下轴返回上一个轴。 例如，在三轴轮询中，成员指定返回的轴是 X、Y、Z 还是 X、Y、R。
+返回值取决于 "type" 参数及其支持的设备。 应始终返回按钮和按钮号。 由于无法指定微型驱动程序是否需要使用 POV 投票，因此，如果请求了任何轴，则应返回此值。 如果设备不支持此 POV，请将其设置为 \_ 未定义。 对于单轴轮询，该值将在 JOYPOLLDATA 结构的 **dwX** 成员中返回， (DirectX 5.0 和更高版本中的 [**VJPOLLDATA**](/previous-versions/windows/hardware/drivers/ff543573(v=vs.85)) 结构) 。 对于多轴请求（其中请求的轴数为奇数）， [**JOYOEMPOLLDATA**](/previous-versions/windows/hardware/drivers/ff542251(v=vs.85))结构 **的 \_ 其他** 成员指定是就地返回最后一个轴还是为以下轴返回上一个轴。 例如，在三轴轮询中，成员指定返回的轴是 X、Y、Z 还是 X、Y、R。
 
 下面是其他可能的返回值的列表，这些值按类型分类 (您可以填写额外数据，但是请注意，奇数个轴的所有轮询都必须对 " **执行 \_ 其他** 成员" 进行解码，以决定返回的内容) ：
 
 - 有趣 \_ \_ 的 OEMPOLL GETBUTTONS：没有任何额外内容。
 
-- 有趣 \_ \_ 的 OEMPOLL POLL1：在**dwX**成员中返回在**Do \_ 其他**成员中指定的轴。
+- 有趣 \_ \_ 的 OEMPOLL POLL1：在 **dwX** 成员中返回在 **Do \_ 其他** 成员中指定的轴。
 
 - 有趣 \_ \_ 的 OEMPOLL POLL2：在 **dwX** 和 **dwY** 成员中返回 X 和 Y 轴。
 
 - 有趣 \_ \_ 的 OEMPOLL POLL3：在 **dwX** 和 **dwY** 成员中返回 X 和 Y 轴。
 
-    如果 " ** \_ 其他** 成员" 为非零值，则会在 **DwR** 成员中返回 R 轴。 否则，Z 轴将在 **dwZ** 成员中返回。
+    如果 " **\_ 其他** 成员" 为非零值，则会在 **DwR** 成员中返回 R 轴。 否则，Z 轴将在 **dwZ** 成员中返回。
 
-- 有趣 \_ \_ 的 OEMPOLL POLL4：分别在 **dwX**、 **dwY**、 **dwZ**和 **dwR** 成员中返回 X、Y、Z 和 R 轴。
+- 有趣 \_ \_ 的 OEMPOLL POLL4：分别在 **dwX** 、 **dwY** 、 **dwZ** 和 **dwR** 成员中返回 X、Y、Z 和 R 轴。
 
-- 有趣 \_ \_ 的 OEMPOLL POLL5：分别在 **dwX**、 **dwY**、 **dwZ**和 **dwR** 成员中返回 X、Y、Z 和 R 轴。
+- 有趣 \_ \_ 的 OEMPOLL POLL5：分别在 **dwX** 、 **dwY** 、 **dwZ** 和 **dwR** 成员中返回 X、Y、Z 和 R 轴。
 
-    如果 " ** \_ 其他** 成员" 为非零值，则会在 **DwR** 成员中返回 V 轴。 否则，在 **dwZ** 成员中返回 U 轴。
+    如果 " **\_ 其他** 成员" 为非零值，则会在 **DwR** 成员中返回 V 轴。 否则，在 **dwZ** 成员中返回 U 轴。
 
-- 有趣 \_ \_ 的 OEMPOLL POLL6：分别在 **dwX**、 **dwY**、 **dwZ**、 **dwR**、 **dwU**和 **dwV** 成员中返回 X、Y、Z、R 和 V 轴。
+- 有趣 \_ \_ 的 OEMPOLL POLL6：分别在 **dwX** 、 **dwY** 、 **dwZ** 、 **dwR** 、 **dwU** 和 **dwV** 成员中返回 X、Y、Z、R 和 V 轴。
 
-DirectX 3.0 添加了 "无轮询" 类型的 " \_ OEMPASSDRIVERDATA"，其中，" ** \_ 其他** 成员" 包含应用程序通过的 DWORD。 可以将此 DWORD 用于任何微型驱动程序定义的函数，但它仅用于启用已完全标识微型驱动程序的自定义安装应用程序，以发送设备特定的命令和配置信息。
+DirectX 3.0 添加了 "无轮询" 类型的 " \_ OEMPASSDRIVERDATA"，其中，" **\_ 其他** 成员" 包含应用程序通过的 DWORD。 可以将此 DWORD 用于任何微型驱动程序定义的函数，但它仅用于启用已完全标识微型驱动程序的自定义安装应用程序，以发送设备特定的命令和配置信息。
 
 对于不支持的所有类型，微型驱动程序应返回乐趣 \_ OEMPOLLRC \_ 失败。
 
@@ -149,7 +149,7 @@ pjhwc->dwNumAxes = 3;       /* The number of axes the device has */
 int __stdcall JoyIdRoutine( int joyid, BOOL used );
 ```
 
-当用户配置或取消配置操纵杆作为16个操纵杆中的一个时，VJoyD 会调用 JoyIDRoutine。 如果微型驱动程序可以支持在 *joyid*中请求的 ID，则 JoyIdRoutine 将返回一个非零值。 如果微型驱动程序不支持 ID，则例程返回零值。
+当用户配置或取消配置操纵杆作为16个操纵杆中的一个时，VJoyD 会调用 JoyIDRoutine。 如果微型驱动程序可以支持在 *joyid* 中请求的 ID，则 JoyIdRoutine 将返回一个非零值。 如果微型驱动程序不支持 ID，则例程返回零值。
 
 只要进行了任何更改，就会调用 joyConfigChanged 来更新驱动程序，VJoyD 会循环遍历所有16个设备，从 JOYSTICKID1 开始。 它会将所有设备重置为未使用，然后再次循环遍历它们以设置系统需要使用的所有设备。 在 "控制面板" 操作过程中，此过程可能需要大量调用，这会导致此回调使用中的初始化问题。 如果在系统启动完成之前进行调用（即，其他服务不可用），则更是如此。
 

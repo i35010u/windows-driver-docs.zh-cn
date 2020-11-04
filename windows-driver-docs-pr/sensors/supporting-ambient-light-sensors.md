@@ -4,12 +4,12 @@ description: 支持环境光线传感器
 ms.assetid: a0875084-c093-4659-91b9-375450f65234
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cfc609814f793f78cb08b53af5f03b7c1fed6138
-ms.sourcegitcommit: a866b3470025d85b25a48857a81f893179698e7e
+ms.openlocfilehash: 3ae0221039cb83236e98aec09c7e3435f8be588b
+ms.sourcegitcommit: ec7bebe3f94536455e62b372c2a28fe69d1717f7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92356025"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93349691"
 ---
 # <a name="supporting-ambient-light-sensors"></a>支持环境光线传感器
 
@@ -94,7 +94,6 @@ SetLuxChangeSensitivity(PROPVARIANT var)
 
 ## <a name="related-topics"></a>相关主题
 
-[Windows 中的传感器和位置平台简介](/windows-hardware/drivers/sensors/)
+[Windows 中的传感器和位置平台简介](./index.md)
 
-[传感器驱动程序逻辑](/windows-hardware/drivers/sensors/driver-logic--pseudo-code-)
-
+[传感器驱动程序逻辑](./driver-logic--pseudo-code-.md)

@@ -4,12 +4,12 @@ ms.assetid: 675F4188-3B9A-421B-98EF-FE063B550231
 description: 传感器驱动程序支持的接口方法。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 11f85356d06c37679bc5092b430c0640456ba328
-ms.sourcegitcommit: a866b3470025d85b25a48857a81f893179698e7e
+ms.openlocfilehash: edb433ee935c26574e66b3b4917c80bf7f763770
+ms.sourcegitcommit: ec7bebe3f94536455e62b372c2a28fe69d1717f7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92355999"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93349683"
 ---
 # <a name="driver-interface-methods"></a>驱动程序接口方法
 
@@ -28,7 +28,7 @@ ms.locfileid: "92355999"
 
 ## <a name="client-connections"></a>客户端连接
 
-**DDIOnClientConnect**和**DDIOnClientDisonnect**方法演示驱动程序如何处理客户端的连接和断开连接。
+**DDIOnClientConnect** 和 **DDIOnClientDisonnect** 方法演示驱动程序如何处理客户端的连接和断开连接。
 
 ```cpp
 DDIOnClientConnect(sensorID, clientID)
@@ -110,7 +110,7 @@ DDIOnClientDisconnect(sensorID, clientID)
 
 ## <a name="client-event-subscriptions"></a>客户端事件订阅
 
-**DDIOnClientSubscribeToEvents**和**DDIOnClientUnsubscribeFromEvents**方法说明了驱动程序如何处理事件订阅。
+**DDIOnClientSubscribeToEvents** 和 **DDIOnClientUnsubscribeFromEvents** 方法说明了驱动程序如何处理事件订阅。
 
 ```cpp
 DDIOnClientSubscribeToEvents(sensorID, clientID)
@@ -152,7 +152,7 @@ DDIOnClientUnsubscribeFromEvents(sensorID, clientID)
 
 ## <a name="sensor-reporting-fields"></a>传感器报告字段
 
-**DDIOnSetCRI**、 **DDIOnSetCS**和**DDIOnSetLDA**方法演示了驱动程序如何设置当前报表间隔、更改敏感度和位置数据准确性字段。
+**DDIOnSetCRI** 、 **DDIOnSetCS** 和 **DDIOnSetLDA** 方法演示了驱动程序如何设置当前报表间隔、更改敏感度和位置数据准确性字段。
 
 ```cpp
 /////////////////////////////////////////////////////////////////////////////////////////////
@@ -243,7 +243,7 @@ DDIOnSetLDA(sensorID, clientID, requestedLDA) //OnSetProperties, location only
 
 ## <a name="property-and-datafield-retrieval"></a>属性和 datafield 检索
 
-**DDIOnGetProperties**和**DDIOnGetDatafields**方法说明了驱动程序如何检索属性和对其进行操作。
+**DDIOnGetProperties** 和 **DDIOnGetDatafields** 方法说明了驱动程序如何检索属性和对其进行操作。
 
 ```cpp
 DDIOnGetProperties(sensorID, CRI, CS[], LDA)
@@ -303,7 +303,7 @@ DDIOnGetDatafields(sensorID, datafields[])
 
 ## <a name="supporting-asynchronous-events"></a>支持异步事件
 
-**DDIHandleAsyncDataEvent**方法演示了驱动程序如何支持异步事件。
+**DDIHandleAsyncDataEvent** 方法演示了驱动程序如何支持异步事件。
 
 ```cpp
 DDIHandleAsyncDataEvent(sensorID, buffer)
@@ -335,7 +335,6 @@ DDIHandleAsyncDataEvent(sensorID, buffer)
 
 ## <a name="related-topics"></a>相关主题
 
-[Windows 中的传感器和位置平台简介](/windows-hardware/drivers/sensors/)
+[Windows 中的传感器和位置平台简介](./index.md)
 
-[传感器驱动程序逻辑](/windows-hardware/drivers/sensors/driver-logic--pseudo-code-)
-
+[传感器驱动程序逻辑](./driver-logic--pseudo-code-.md)

@@ -3,12 +3,12 @@ description: 了解应用程序如何调用 WinUSB 函数以与 USB 设备进行
 title: USB 设备的 Windows 桌面应用
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ed8c93d71ed546106542e318d29ad539a7d8f0f5
-ms.sourcegitcommit: b75e9940d49410e2b952e96f325df67a039cd571
+ms.openlocfilehash: 3c99974b08bb6d0b7ef089bde93bfead5764971f
+ms.sourcegitcommit: ec7bebe3f94536455e62b372c2a28fe69d1717f7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92337021"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93349605"
 ---
 # <a name="windows-desktop-app-for-a-usb-device"></a>USB 设备的 Windows 桌面应用
 
@@ -35,7 +35,7 @@ Winusb.dll 使用应用程序提供的数据来构造相应的设备 i/o 控制�
 
 1. 获取编写适用于设备的 Windows 桌面应用程序所需的工具
 
-    - 按照 [下载 Windows 驱动程序工具包](https://docs.microsoft.com/windows-hardware/drivers/download-the-wdk)中的说明进行操作。
+    - 按照 [下载 Windows 驱动程序工具包](../download-the-wdk.md)中的说明进行操作。
 
 2. 获取测试 USB 设备及其硬件规范。
 
@@ -43,7 +43,7 @@ Winusb.dll 使用应用程序提供的数据来构造相应的设备 i/o 控制�
 
     - [ (OSR) 商店中的开放系统资源](https://www.osr.com/online-seminars/)提供的 OSR USB FX2 学习套件。 此工具包最适合学习本文档集中包括的 USB 示例。
 
-    - Microsoft USB 测试工具 (可通过 [JJG 技术](http://www.jjgtechnologies.com/Mutt20.htm)使用的 MUTT) 设备。 此设备需要 Microsoft 提供的固件，请参阅 [下载 MUTT](/windows-hardware/drivers/usbcon/mutt-software-package#download-mutt-software-package)软件包。
+    - Microsoft USB 测试工具 (可通过 [JJG 技术](http://www.jjgtechnologies.com/Mutt20.htm)使用的 MUTT) 设备。 此设备需要 Microsoft 提供的固件，请参阅 [下载 MUTT](./mutt-software-package.md#download-mutt-software-package)软件包。
 
 3. 编写一个框架应用，用于获取设备的句柄。
 
@@ -51,7 +51,7 @@ Winusb.dll 使用应用程序提供的数据来构造相应的设备 i/o 控制�
 
     - 基于包含在 Visual Studio 中的 WinUSB 模板编写。 有关详细信息，请参阅 [基于 WinUSB 模板编写 Windows 桌面应用](how-to-write-a-windows-desktop-app-that-communicates-with-a-usb-device.md)。
 
-    - 调用 [setupapi.log](/windows-hardware/drivers/install/setupapi) 例程以获取设备的句柄，并通过调用 [WinUsb_Initialize](/windows/desktop/api/winusb/nf-winusb-winusb_initialize)将其打开。 有关详细信息，请参阅 [如何使用 WinUSB 功能访问 USB 设备](using-winusb-api-to-communicate-with-a-usb-device.md)。
+    - 调用 [setupapi.log](../install/setupapi.md) 例程以获取设备的句柄，并通过调用 [WinUsb_Initialize](/windows/desktop/api/winusb/nf-winusb-winusb_initialize)将其打开。 有关详细信息，请参阅 [如何使用 WinUSB 功能访问 USB 设备](using-winusb-api-to-communicate-with-a-usb-device.md)。
 
 4. 安装设备 Winusb.sys。
 
@@ -77,4 +77,4 @@ Winusb.dll 使用应用程序提供的数据来构造相应的设备 i/o 控制�
 
 [为 USB 设备开发 Windows 应用程序](developing-windows-applications-that-communicate-with-a-usb-device.md)  
 
-[通用串行总线 (USB)](https://docs.microsoft.com/windows-hardware/drivers/)  
+[通用串行总线 (USB)](../index.yml)

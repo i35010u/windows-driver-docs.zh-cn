@@ -6,12 +6,12 @@ ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
 ms.localizationpriority: medium
-ms.openlocfilehash: 93d9fb24034fa049c16cc3fa777c0ad33fcf0cac
-ms.sourcegitcommit: eefc6ae6d9621d0735b3c63e718ee5838d57a6bc
+ms.openlocfilehash: e693b6bbc916987da090a26075d5cc4756d0bc25
+ms.sourcegitcommit: ec7bebe3f94536455e62b372c2a28fe69d1717f7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92886332"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93349583"
 ---
 # <a name="component-firmware-update-cfu-inf-file-configuration"></a>组件固件更新 (CFU) INF 文件配置
 
@@ -212,7 +212,7 @@ ms.locfileid: "92886332"
 
 负载文件是二进制文件，该文件是连续存储的记录的集合。 每个记录均采用以下格式。
 
-| Offset | 大小 | 值 | 说明 |
+| Offset | 大小 | 值 | 描述 |
 |--|--|--|--|
 | 字节0 | DWORD | 固件地址 | 小 Endian (LSB 首先) 用于写入数据的地址。 该地址是从0开始的。 在内存中放置图像时，固件可以使用此偏移量来确定所需的地址。 |
 | 字节 4 | Byte | 长度 | 负载数据的长度。 |
@@ -373,6 +373,6 @@ FwUpdateFriendlyName= "CfuVirtualHidDevice Firmware Update"
 
 了解如何使用 Windows Driver Foundation 开发 Windows 驱动程序 (WDF) ：
 
-- [使用 Windows Driver Foundation 开发驱动程序](/windows-hardware/drivers/wdf/developing-drivers-with-wdf)，由 "Orwick" 和 "专家 Smith" 编写
+- [使用 Windows Driver Foundation 开发驱动程序](../wdf/developing-drivers-with-wdf.md)，由 "Orwick" 和 "专家 Smith" 编写
 
-- [使用 WDF 开发驱动程序](/windows-hardware/drivers/wdf/using-the-framework-to-develop-a-driver)
+- [使用 WDF 开发驱动程序](../wdf/using-the-framework-to-develop-a-driver.md)

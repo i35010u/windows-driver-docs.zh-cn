@@ -4,12 +4,12 @@ description: STI 组件概述
 ms.assetid: 30aaa622-fb86-42dc-a417-df61e0093db3
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8dbb8b4a5cfe0d9244307767e5d673685010c546
-ms.sourcegitcommit: 735fea11056fe943c4368ee54573790e0602de66
+ms.openlocfilehash: d7599fb8607e69ef674d9c2d40cd8fae2bc0c411
+ms.sourcegitcommit: ec7bebe3f94536455e62b372c2a28fe69d1717f7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91979992"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93349641"
 ---
 # <a name="overview-of-sti-components"></a>STI 组件概述
 
@@ -65,7 +65,7 @@ Microsoft STI 定义一组 COM 接口，这些接口提供各种 Microsoft STI �
 
 ### <a name="user-mode-still-image-minidrivers"></a><a href="" id="ddk-user-mode-still-image-minidrivers-si"></a>用户模式静止图像微型驱动程序
 
-用户模式静止图像微型驱动程序是供应商提供的组件，可向相应的内核模式驱动程序提供设备特定的用户模式接口。 其中每个用户模式驱动程序必须实现 [ISTIUSD COM 接口](istiusd-com-interface.md)。 它们通过调用 [**CreateFile**](/windows/win32/api/fileapi/nf-fileapi-createfilea)、 **ReadFile**、 **WriteFile**和 [**DeviceIoControl**](/windows/win32/api/ioapiset/nf-ioapiset-deviceiocontrol) Win32 函数与内核模式驱动程序通信， () 的 Microsoft Windows SDK 文档中所述。 有关详细信息，请参阅 [创建 User-Mode 静止图像微型驱动程序](creating-a-user-mode-still-image-minidriver.md)。
+用户模式静止图像微型驱动程序是供应商提供的组件，可向相应的内核模式驱动程序提供设备特定的用户模式接口。 其中每个用户模式驱动程序必须实现 [ISTIUSD COM 接口](istiusd-com-interface.md)。 它们通过调用 [**CreateFile**](/windows/win32/api/fileapi/nf-fileapi-createfilea)、 **ReadFile** 、 **WriteFile** 和 [**DeviceIoControl**](/windows/win32/api/ioapiset/nf-ioapiset-deviceiocontrol) Win32 函数与内核模式驱动程序通信， () 的 Microsoft Windows SDK 文档中所述。 有关详细信息，请参阅 [创建 User-Mode 静止图像微型驱动程序](creating-a-user-mode-still-image-minidriver.md)。
 
 ### <a name="kernel-mode-still-image-drivers"></a><a href="" id="ddk-kernel-mode-still-image-drivers-si"></a>内核模式静止映像驱动程序
 
@@ -89,12 +89,10 @@ Microsoft 支持连接到 SCSI、USB、并行、IEEE 1394 兼容的设备和串�
 对于支持 SBP 协议的设备，用户模式驱动程序可以调用 Microsoft 的 SBP 接口。 否则，需要供应商提供的筛选器驱动程序。
 
 <a href="" id="devices-connected-to-a-serial-port"></a>**连接到串行端口的设备**  
-使用标准串行端口驱动程序。  (有关详细信息，请参阅 [串行设备和驱动程序](/windows-hardware/drivers/serports/using-serial-sys-and-serenum-sys)。 ) 
+使用标准串行端口驱动程序。  (有关详细信息，请参阅 [串行设备和驱动程序](../serports/using-serial-sys-and-serenum-sys.md)。 ) 
 
 <a href="" id="devices-connected-to-an-infrared-interface"></a>**连接到红外线接口的设备**  
 驱动程序可以调用 **IrSock** software 接口 (Microsoft Windows SDK 文档) 中所述。
 
 供应商只需要为 Microsoft 驱动程序不支持的总线提供总线驱动程序。
-
- 
 

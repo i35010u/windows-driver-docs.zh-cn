@@ -7,12 +7,12 @@ keywords:
 - 错误 WDK 驱动程序验证程序
 ms.date: 11/02/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 14347aa3e670bcd9a088596101e56d40d02c1ba3
-ms.sourcegitcommit: 409dd20db50c58b817ef985048fb7aab952cb0ad
+ms.openlocfilehash: 2c8fe04984ba558029f5c49260c1e5750a8fd2e4
+ms.sourcegitcommit: ec7bebe3f94536455e62b372c2a28fe69d1717f7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93244859"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93349757"
 ---
 # <a name="driver-verifier-options-and-rule-classes"></a>驱动程序验证程序选项和规则类
 
@@ -185,9 +185,9 @@ WDF 验证检查内核模式驱动程序是否遵循 Kernel-Mode Driver Framewor
 - [IrqlIoRtlZwPassive](wdm-irqliortlzwpassive.md)规则指定，仅当该驱动程序以 IRQL = PASSIVE_LEVEL 执行时，才调用该规则中列出的 DDIs。
 - [IrqlNtifsApcPassive](wdm-irqlntifsapcpassive.md)规则指定，仅当该驱动程序以 irql = PASSIVE_LEVEL 或以 irql <= APC_LEVEL 执行时，才调用该规则中列出的 DDIs。
 
-[驱动程序隔离检查](/windows-hardware/drivers/develop/validating-windows-drivers#driver-verifier-driver-isolation-checks)
+[驱动程序隔离检查](../develop/validating-windows-drivers.md#driver-verifier-driver-isolation-checks)
 
-驱动程序隔离检查对于验证 Windows 驱动程序的运行时驱动程序包隔离要求至关重要。有关详细信息，请参阅 [Windows 驱动程序](/windows-hardware/drivers/develop/getting-started-with-windows-drivers)入门。  检查监视独立驱动程序包不允许的注册表读取和写入。
+驱动程序隔离检查对于验证 Windows 驱动程序的运行时驱动程序包隔离要求至关重要。有关详细信息，请参阅 [Windows 驱动程序](../develop/getting-started-with-windows-drivers.md)入门。  检查监视独立驱动程序包不允许的注册表读取和写入。
 
 ## <a name="standard-settings"></a>标准设置
 

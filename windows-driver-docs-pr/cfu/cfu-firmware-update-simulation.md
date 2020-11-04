@@ -6,12 +6,12 @@ ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
 ms.localizationpriority: medium
-ms.openlocfilehash: 4e8922a595507f6d9a99cb12bc8fec85541beb24
-ms.sourcegitcommit: eefc6ae6d9621d0735b3c63e718ee5838d57a6bc
+ms.openlocfilehash: 1e48f2c4d9589786086f143e3f7696b8b3fba1bc
+ms.sourcegitcommit: ec7bebe3f94536455e62b372c2a28fe69d1717f7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92886333"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93349623"
 ---
 # <a name="cfu-virtual-hid-device-firmware-update-simulation"></a>CFU 虚拟 HID 设备固件更新模拟
 
@@ -19,7 +19,7 @@ ms.locfileid: "92886333"
 
 ## <a name="build-and-install-the-cfu-virtual-hid-device-sample"></a>生成并安装 CFU 虚拟 HID 设备示例
 
-1. 安装 Visual Studio 2019 和 Windows 驱动程序工具包 (WDK) ，如 [下载 Windows 驱动程序工具包 (wdk) ](/windows-hardware/drivers/download-the-wdk)所述。
+1. 安装 Visual Studio 2019 和 Windows 驱动程序工具包 (WDK) ，如 [下载 Windows 驱动程序工具包 (wdk) ](../download-the-wdk.md)所述。
 
 1. 将 Microsoft CFU 存储库克隆到本地存储库目录
 
@@ -91,7 +91,7 @@ ms.locfileid: "92886333"
 
 ## <a name="install-a-firmware-update-for-the-cfu-virtual-hid-device"></a>安装 CFU 虚拟 HID 设备的固件更新
 
-本部分提供有关在 Visual Studio 2019 中构建的示例 [**CfuVirtualHid 设备**](https://github.com/microsoft/CFU/tree/master/Host/CFUFirmwareSimulation) 设备上安装固件更新的示例，并使用 [**devcon.exe**](/windows-hardware/drivers/devtest/devcon) 命令行工具安装固件更新，如以上部分所述。
+本部分提供有关在 Visual Studio 2019 中构建的示例 [**CfuVirtualHid 设备**](https://github.com/microsoft/CFU/tree/master/Host/CFUFirmwareSimulation) 设备上安装固件更新的示例，并使用 [**devcon.exe**](../devtest/devcon.md) 命令行工具安装固件更新，如以上部分所述。
 
 1. 导航到 .inf 文件的位置，以及目标设备的固件提供和负载 bin 文件。 例如：
 

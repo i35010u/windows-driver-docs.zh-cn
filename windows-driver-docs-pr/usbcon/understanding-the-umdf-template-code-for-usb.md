@@ -3,12 +3,12 @@ description: 了解基于 UMDF 的 USB 客户端驱动程序的源代码。
 title: 'USB 客户端驱动程序代码结构 (UMDF) '
 ms.date: 06/07/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 632ef8280622df761f4f2d547f94537bf2eba68c
-ms.sourcegitcommit: b75e9940d49410e2b952e96f325df67a039cd571
+ms.openlocfilehash: 6890b005d57b936c67643f8c1e84f2fbaa9a2b3f
+ms.sourcegitcommit: ec7bebe3f94536455e62b372c2a28fe69d1717f7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92337004"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93349773"
 ---
 # <a name="understanding-the-usb-client-driver-code-structure-umdf"></a>了解 USB 客户端驱动程序代码结构 (UMDF) 
 
@@ -106,7 +106,7 @@ typedef class CMyIoQueue *PCMyIoQueue;
 
 ## <a name="driver-callback-source-code"></a>驱动程序回调源代码
 
-框架创建 *驱动程序对象*，该对象表示 Windows 加载的客户端驱动程序的实例。 客户端驱动程序至少提供一个向框架注册驱动程序的驱动程序回调。
+框架创建 *驱动程序对象* ，该对象表示 Windows 加载的客户端驱动程序的实例。 客户端驱动程序至少提供一个向框架注册驱动程序的驱动程序回调。
 
 驱动程序回调的完整源代码位于驱动程序 .h 和驱动程序中。
 
@@ -175,9 +175,9 @@ OBJECT_ENTRY_AUTO(CLSID_Driver, CMyDriver)
 
 驱动程序回调必须是 COM 类，这意味着它必须实现 [**IUnknown**](/windows/desktop/api/unknwn/nn-unknwn-iunknown) 和相关方法。 在模板代码中，ATL 类 CComObjectRootEx 和 CComCoClass 包含 **IUnknown** 方法。
 
-Windows 实例化主机进程后，框架会创建驱动程序对象。 为此，该框架会创建驱动程序回调类的实例，并调用 [**DllGetClassObject**](/windows/desktop/api/combaseapi/nf-combaseapi-dllgetclassobject) 的驱动程序实现， (在 [驱动程序输入源代码](#driver-entry-source-code) 部分) 中讨论并获取客户端驱动程序的 [**IDriverEntry**](/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-idriverentry) 接口指针。 该调用将驱动程序回调对象注册到框架驱动程序对象。 成功注册后，框架将在特定于驱动程序的事件发生时调用客户端驱动程序的实现。 框架调用的第一种方法是 [**IDriverEntry：： OnInitialize**](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-idriverentry-ondeinitialize) 方法。 在 **IDriverEntry：： OnInitialize**的客户端驱动程序实现中，客户端驱动程序可以分配全局驱动程序资源。 这些资源必须在 [**IDriverEntry：： OnDeinitialize**](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-idriverentry-ondeinitialize) 中发布，该框架会在准备卸载客户端驱动程序之前由框架调用。 模板代码提供 **OnInitialize** 和 **OnDeinitialize** 方法的最小实现。
+Windows 实例化主机进程后，框架会创建驱动程序对象。 为此，该框架会创建驱动程序回调类的实例，并调用 [**DllGetClassObject**](/windows/desktop/api/combaseapi/nf-combaseapi-dllgetclassobject) 的驱动程序实现， (在 [驱动程序输入源代码](#driver-entry-source-code) 部分) 中讨论并获取客户端驱动程序的 [**IDriverEntry**](/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-idriverentry) 接口指针。 该调用将驱动程序回调对象注册到框架驱动程序对象。 成功注册后，框架将在特定于驱动程序的事件发生时调用客户端驱动程序的实现。 框架调用的第一种方法是 [**IDriverEntry：： OnInitialize**](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-idriverentry-ondeinitialize) 方法。 在 **IDriverEntry：： OnInitialize** 的客户端驱动程序实现中，客户端驱动程序可以分配全局驱动程序资源。 这些资源必须在 [**IDriverEntry：： OnDeinitialize**](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-idriverentry-ondeinitialize) 中发布，该框架会在准备卸载客户端驱动程序之前由框架调用。 模板代码提供 **OnInitialize** 和 **OnDeinitialize** 方法的最小实现。
 
-[**IDriverEntry**](/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-idriverentry)的最重要方法是[**IDriverEntry：： OnDeviceAdd**](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-idriverentry-ondeviceadd)。 在框架创建框架设备对象之前 () 的下一节中进行了讨论，它将调用驱动程序的 **IDriverEntry：： OnDeviceAdd** 实现。 调用方法时，框架会将 [**IWDFDriver**](/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-iwdfdriver) 指针传递到驱动程序对象和 [**IWDFDeviceInitialize**](/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-iwdfdeviceinitialize) 指针。 客户端驱动程序可以调用 **IWDFDeviceInitialize** 方法来指定某些配置选项。
+[**IDriverEntry**](/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-idriverentry)的最重要方法是 [**IDriverEntry：： OnDeviceAdd**](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-idriverentry-ondeviceadd)。 在框架创建框架设备对象之前 () 的下一节中进行了讨论，它将调用驱动程序的 **IDriverEntry：： OnDeviceAdd** 实现。 调用方法时，框架会将 [**IWDFDriver**](/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-iwdfdriver) 指针传递到驱动程序对象和 [**IWDFDeviceInitialize**](/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-iwdfdeviceinitialize) 指针。 客户端驱动程序可以调用 **IWDFDeviceInitialize** 方法来指定某些配置选项。
 
 通常，客户端驱动程序在其 [**IDriverEntry：： OnDeviceAdd**](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-idriverentry-ondeviceadd) 实现中执行以下任务：
 
@@ -293,7 +293,7 @@ public:
 
 ## <a name="device-callback-source-code"></a>设备回拨源代码
 
-*框架设备对象*是一个框架类的实例，它表示在客户端驱动程序的设备堆栈中加载的设备对象。 有关设备对象的功能的信息，请参阅 [设备节点和设备堆栈](/windows-hardware/drivers/debugger/device-node-and-stack-debugger-commands)。
+*框架设备对象* 是一个框架类的实例，它表示在客户端驱动程序的设备堆栈中加载的设备对象。 有关设备对象的功能的信息，请参阅 [设备节点和设备堆栈](../debugger/device-node-and-stack-debugger-commands.md)。
 
 设备对象的完整源代码位于设备 .h 和设备 c 中。
 
@@ -377,13 +377,13 @@ Exit:
 
 在上面的代码示例中，客户端驱动程序创建设备对象并注册其设备回调。 在创建设备对象之前，驱动程序通过在 [**IWDFDeviceInitialize**](/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-iwdfdeviceinitialize) 接口指针上调用方法来指定其配置首选项。 这是框架在其之前对客户端驱动程序的 [**IDriverEntry：： OnDeviceAdd**](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-idriverentry-ondeviceadd) 方法的调用中传递的相同指针。
 
-客户端驱动程序指定它将成为设备对象的电源策略所有者。 作为电源策略所有者，客户端驱动程序将确定在系统电源状态更改时设备应输入的适当电源状态。 驱动程序还负责将相关请求发送到设备，以便进行电源状态转换。 默认情况下，基于 UMDF 的客户端驱动程序不是电源策略所有者;框架处理所有电源状态转换。 当系统进入睡眠状态时，框架会自动将设备发送到**D3** ，并在系统进入工作状态**S0**时将设备恢复为**D0**状态。 有关详细信息，请参阅 [UMDF 中的电源策略所有权](/windows-hardware/drivers/wdf/power-policy-ownership-in-umdf)。
+客户端驱动程序指定它将成为设备对象的电源策略所有者。 作为电源策略所有者，客户端驱动程序将确定在系统电源状态更改时设备应输入的适当电源状态。 驱动程序还负责将相关请求发送到设备，以便进行电源状态转换。 默认情况下，基于 UMDF 的客户端驱动程序不是电源策略所有者;框架处理所有电源状态转换。 当系统进入睡眠状态时，框架会自动将设备发送到 **D3** ，并在系统进入工作状态 **S0** 时将设备恢复为 **D0** 状态。 有关详细信息，请参阅 [UMDF 中的电源策略所有权](../wdf/power-policy-ownership-in-umdf.md)。
 
 另一种配置选项是指定客户端驱动程序是设备的筛选器驱动程序还是功能驱动程序。 请注意，在代码示例中，客户端驱动程序未显式指定其首选项。 这意味着客户端驱动程序是函数驱动程序，框架应在设备堆栈中创建 FDO。 如果客户端驱动程序希望成为筛选器驱动程序，则驱动程序必须调用 [**IWDFDeviceInitialize：： SetFilter**](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdeviceinitialize-setfilter) 方法。 在这种情况下，框架将在设备堆栈中创建一个 FiDO。
 
 客户端驱动程序还指定对客户端驱动程序的回调的任何调用都不会同步。 客户端驱动程序处理所有同步任务。 若要指定该首选项，客户端驱动程序将调用 [**IWDFDeviceInitialize：： SetLockingConstraint**](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdeviceinitialize-setlockingconstraint) 方法。
 
-接下来，客户端驱动程序通过调用[**iunknown：： QueryInterface**](/windows/win32/api/unknwn/nf-unknwn-iunknown-queryinterface(q))获取指向其设备回调类的[**IUnknown**](/windows/desktop/api/unknwn/nn-unknwn-iunknown)指针 https://docs.microsoft.com/windows/desktop/api/unknwn/nf-unknwn-iunknown-queryinterface(q_)) 。 随后，客户端驱动程序将调用 [**IWDFDriver：： CreateDevice**](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdriver-createdevice)，这将使用 **IUnknown** 指针来创建框架设备对象并注册客户端驱动程序的设备回调。
+接下来，客户端驱动程序通过调用 [**iunknown：： QueryInterface**](/windows/win32/api/unknwn/nf-unknwn-iunknown-queryinterface(q))获取指向其设备回调类的 [**IUnknown**](/windows/desktop/api/unknwn/nn-unknwn-iunknown)指针 https://docs.microsoft.com/windows/desktop/api/unknwn/nf-unknwn-iunknown-queryinterface(q_)) 。 随后，客户端驱动程序将调用 [**IWDFDriver：： CreateDevice**](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdriver-createdevice)，这将使用 **IUnknown** 指针来创建框架设备对象并注册客户端驱动程序的设备回调。
 
 请注意，客户端驱动程序在设备回调类的私有数据成员中存储 (通过 [**IWDFDriver：： CreateDevice**](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdriver-createdevice)) 调用接收的设备对象的地址，然后通过调用 DriverSafeRelease) 中定义的 (内联函数来释放该引用。 这是因为设备对象的生存期由框架跟踪。 因此，客户端驱动程序不需要保留设备对象的其他引用计数。
 
@@ -447,7 +447,7 @@ Exit:
 
 接下来，让我们看看设备 .cpp 中的 [**IPnpCallbackHardware**](/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-ipnpcallbackhardware) 接口的实现。
 
-每个设备回调类必须实现 [**IPnpCallbackHardware**](/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-ipnpcallbackhardware) 接口。 此接口有两种方法： [**IPnpCallbackHardware：： OnPrepareHardware**](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-ipnpcallbackhardware-onpreparehardware) 和 [**IPnpCallbackHardware：： OnReleaseHardware**](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-ipnpcallbackhardware-onreleasehardware)。 框架将调用这些方法来响应两个事件：当 PnP 管理器启动设备时，删除设备。 设备启动时，将建立与硬件的通信，但设备尚未进入工作状态 (**D0**) 。 因此，在 **IPnpCallbackHardware：： OnPrepareHardware** 中，客户端驱动程序可以从硬件中获取设备信息、分配资源以及初始化驱动程序生存期内所需的框架对象。 当 PnP 管理器删除设备时，驱动程序将从系统中卸载。 框架调用客户端驱动程序的 **IPnpCallbackHardware：： OnReleaseHardware** 实现，在此实现中，驱动程序可以释放这些资源和框架对象。
+每个设备回调类必须实现 [**IPnpCallbackHardware**](/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-ipnpcallbackhardware) 接口。 此接口有两种方法： [**IPnpCallbackHardware：： OnPrepareHardware**](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-ipnpcallbackhardware-onpreparehardware) 和 [**IPnpCallbackHardware：： OnReleaseHardware**](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-ipnpcallbackhardware-onreleasehardware)。 框架将调用这些方法来响应两个事件：当 PnP 管理器启动设备时，删除设备。 设备启动时，将建立与硬件的通信，但设备尚未进入工作状态 ( **D0** ) 。 因此，在 **IPnpCallbackHardware：： OnPrepareHardware** 中，客户端驱动程序可以从硬件中获取设备信息、分配资源以及初始化驱动程序生存期内所需的框架对象。 当 PnP 管理器删除设备时，驱动程序将从系统中卸载。 框架调用客户端驱动程序的 **IPnpCallbackHardware：： OnReleaseHardware** 实现，在此实现中，驱动程序可以释放这些资源和框架对象。
 
 PnP 管理器可以生成由 PnP 状态更改导致的其他事件类型。 框架为这些事件提供默认处理。 客户端驱动程序可以选择参与处理这些事件。 请考虑一种情况，其中 USB 设备已从主机中分离。 PnP 管理器识别该事件，并通知框架。 如果客户端驱动程序要执行其他任务来响应事件，则驱动程序必须在设备回调类中实现 [**IPnpCallback**](/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-ipnpcallback) 接口和相关的 [**IPnpCallback：： OnSurpriseRemoval**](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-ipnpcallback-onsurpriseremoval) 方法。 否则，框架将继续对事件进行默认处理。
 
@@ -464,11 +464,11 @@ USB 客户端驱动程序必须检索有关支持的接口、备用设置和终�
 
 若要执行这些任务，客户端驱动程序可以使用 WDF 提供的这些类型的专用 USB i/o 目标对象。
 
-| USB i/o 目标对象     | 说明                                                                                                                                                                                                                                                                                                                               | UMDF 接口                                  |
+| USB i/o 目标对象     | 描述                                                                                                                                                                                                                                                                                                                               | UMDF 接口                                  |
 |---------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------|
 | *目标设备对象*    | 表示一个 USB 设备，并提供用于检索设备描述符并将控制请求发送到设备的方法。                                                                                                                                                                                                             | [IWDFUsbTargetDevice](/windows-hardware/drivers/ddi/wudfusb/nn-wudfusb-iwdfusbtargetdevice) |
 | *目标接口对象* | 表示单个接口，并提供客户端驱动程序可调用以选择备用设置和检索有关设置的信息的方法。                                                                                                                                                                          | [IWDFUsbInterface](/windows-hardware/drivers/ddi/wudfusb/nn-wudfusb-iwdfusbinterface)       |
-| *目标管道对象*      | 表示终结点的单个管道，该终结点在接口的当前替代设置中进行配置。 USB 总线驱动程序选择所选配置中的每个接口，并设置接口中每个终结点的通信通道。 在 USB 术语中，该通信通道称为 *管道*。 | [IWDFUsbTargetPipe](/windows-hardware/drivers/ddi/wudfusb/nn-wudfusb-iwdfusbtargetpipe)     |
+| *目标管道对象*      | 表示终结点的单个管道，该终结点在接口的当前替代设置中进行配置。 USB 总线驱动程序选择所选配置中的每个接口，并设置接口中每个终结点的通信通道。 在 USB 术语中，该通信通道称为 *管道* 。 | [IWDFUsbTargetPipe](/windows-hardware/drivers/ddi/wudfusb/nn-wudfusb-iwdfusbtargetpipe)     |
 
 下面的代码示例演示了 [**IPnpCallbackHardware：： OnPrepareHardware**](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-ipnpcallbackhardware-onpreparehardware)的实现。
 
@@ -533,7 +533,7 @@ Exit:
 - 将 i/o 控制请求格式化并发送到默认终结点。
 - 设置整个 USB 设备的电源策略。
 
-有关详细信息，请参阅 [在 UMDF 中使用 USB 设备](/windows-hardware/drivers/wdf/working-with-usb-devices-in-umdf-1-x-drivers)。
+有关详细信息，请参阅 [在 UMDF 中使用 USB 设备](../wdf/working-with-usb-devices-in-umdf-1-x-drivers.md)。
 下面的代码示例演示了 [**IPnpCallbackHardware：： OnReleaseHardware**](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-ipnpcallbackhardware-onreleasehardware)的实现。
 
 ```ManagedCPlusPlus
@@ -558,7 +558,7 @@ CMyDevice::OnReleaseHardware(
 
 ## <a name="queue-source-code"></a>队列源代码
 
-*Framework queue 对象*表示特定框架设备对象的 i/o 队列。 队列对象的完整源代码位于 IoQueue 和 IoQueue 中。
+*Framework queue 对象* 表示特定框架设备对象的 i/o 队列。 队列对象的完整源代码位于 IoQueue 和 IoQueue 中。
 
 ### <a name="ioqueueh"></a>IoQueue
 
@@ -752,7 +752,7 @@ Exit:
 
 在上面的代码示例中，客户端驱动程序将创建框架队列对象。 该框架提供了 queue 对象来处理客户端驱动程序的请求流。
 
-若要创建对象，客户端驱动程序对[**IWDFDriver：： CreateDevice**](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdriver-createdevice)的上一个调用中获取的[**IWDFDevice**](/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-iwdfdevice)引用调用[**IWDFDevice：： CreateIoQueue**](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdevice-createioqueue) 。
+若要创建对象，客户端驱动程序对 [**IWDFDriver：： CreateDevice**](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdriver-createdevice)的上一个调用中获取的 [**IWDFDevice**](/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-iwdfdevice)引用调用 [**IWDFDevice：： CreateIoQueue**](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdevice-createioqueue) 。
 
 在 [**IWDFDevice：： CreateIoQueue**](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdevice-createioqueue) 调用中，客户端驱动程序在框架创建队列之前指定某些配置选项。 这些选项确定队列是否处于电源管理状态，是否允许长度为零的请求，并充当驱动程序的默认队列。 客户端驱动程序提供了以下信息集：
 
@@ -778,7 +778,7 @@ Exit:
 
 单个框架队列对象可以处理多种类型的请求，如读取、写入和设备 i/o 控制等。 基于模板代码的客户端驱动程序只能处理设备 i/o 控制请求。 为此，客户端驱动程序的队列回调类实现 [**IQueueCallbackDeviceIoControl**](/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-iqueuecallbackdeviceiocontrol) 接口及其 [**IQueueCallbackDeviceIoControl：： OnDeviceIoControl**](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iqueuecallbackdeviceiocontrol-ondeviceiocontrol) 方法。 这允许框架在框架处理设备 i/o 控制请求时调用 **IQueueCallbackDeviceIoControl：： OnDeviceIoControl** 的客户端驱动程序实现。
 
-对于其他类型的请求，客户端驱动程序必须实现相应的 **IQueueCallbackXxx** 接口。 例如，如果客户端驱动程序要处理读取请求，则队列回调类必须实现 [**IQueueCallbackRead**](/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-iqueuecallbackread) 接口及其 [**IQueueCallbackRead：： OnRead**](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iqueuecallbackread-onread) 方法。 有关请求和回调接口的类型的信息，请参阅 [I/o 队列事件回调函数](/windows-hardware/drivers/wdf/i-o-queue-event-callback-functions)。
+对于其他类型的请求，客户端驱动程序必须实现相应的 **IQueueCallbackXxx** 接口。 例如，如果客户端驱动程序要处理读取请求，则队列回调类必须实现 [**IQueueCallbackRead**](/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-iqueuecallbackread) 接口及其 [**IQueueCallbackRead：： OnRead**](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iqueuecallbackread-onread) 方法。 有关请求和回调接口的类型的信息，请参阅 [I/o 队列事件回调函数](../wdf/i-o-queue-event-callback-functions.md)。
 
 下面的代码示例演示了 [**IQueueCallbackDeviceIoControl：： OnDeviceIoControl**](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iqueuecallbackdeviceiocontrol-ondeviceiocontrol) 实现。
 
@@ -904,7 +904,7 @@ DllGetClassObject(
 2. 实例化由客户端驱动程序实现的类工厂。 在模板代码中，此由 ATL 类封装。
 3. 获取指向类工厂的 [**IClassFactory**](/windows/desktop/api/unknwnbase/nn-unknwnbase-iclassfactory) 接口的指针，并将检索到的指针返回到该框架。
 
-在内存中加载客户端驱动程序模块后，框架将调用驱动程序提供的 [**DllGetClassObject**](/windows/desktop/api/combaseapi/nf-combaseapi-dllgetclassobject) 函数。 在框架对 **DllGetClassObject**的调用中，框架传递标识客户端驱动程序的 CLSID，并请求指向类工厂的 [**IClassFactory**](/windows/desktop/api/unknwnbase/nn-unknwnbase-iclassfactory) 接口的指针。 客户端驱动程序实现了用于简化驱动程序回调创建的类工厂。 因此，客户端驱动程序必须包含至少一个类工厂。 然后，框架将调用 [**IClassFactory：： CreateInstance**](/windows/desktop/api/unknwn/nf-unknwn-iclassfactory-createinstance) 并请求指向驱动程序回调类的 [**IDriverEntry**](/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-idriverentry) 指针。
+在内存中加载客户端驱动程序模块后，框架将调用驱动程序提供的 [**DllGetClassObject**](/windows/desktop/api/combaseapi/nf-combaseapi-dllgetclassobject) 函数。 在框架对 **DllGetClassObject** 的调用中，框架传递标识客户端驱动程序的 CLSID，并请求指向类工厂的 [**IClassFactory**](/windows/desktop/api/unknwnbase/nn-unknwnbase-iclassfactory) 接口的指针。 客户端驱动程序实现了用于简化驱动程序回调创建的类工厂。 因此，客户端驱动程序必须包含至少一个类工厂。 然后，框架将调用 [**IClassFactory：： CreateInstance**](/windows/desktop/api/unknwn/nf-unknwn-iclassfactory-createinstance) 并请求指向驱动程序回调类的 [**IDriverEntry**](/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-idriverentry) 指针。
 
 ## <a name="exportsdef"></a>导出 .def
 

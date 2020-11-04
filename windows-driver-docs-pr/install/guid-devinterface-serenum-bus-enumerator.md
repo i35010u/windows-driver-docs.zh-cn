@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: d270579235e8bf23c13a73bb103e48e34e364c9e
-ms.sourcegitcommit: 735fea11056fe943c4368ee54573790e0602de66
+ms.openlocfilehash: 7a108976f643e1fd0dfdee23d35850e51ff5d7fe
+ms.sourcegitcommit: ec7bebe3f94536455e62b372c2a28fe69d1717f7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91979966"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93349779"
 ---
 # <a name="guid_devinterface_serenum_bus_enumerator"></a>GUID_DEVINTERFACE_SERENUM_BUS_ENUMERATOR
 
 
-GUID_DEVINTERFACE_SERENUM_BUS_ENUMERATOR [设备接口类](./overview-of-device-interface-classes.md) 定义即插即用 (PnP) [串行端口](/windows-hardware/drivers/serports/using-serial-sys-and-serenum-sys)。
+GUID_DEVINTERFACE_SERENUM_BUS_ENUMERATOR [设备接口类](./overview-of-device-interface-classes.md) 定义即插即用 (PnP) [串行端口](../serports/using-serial-sys-and-serenum-sys.md)。
 
 <table>
 <colgroup>
@@ -33,7 +33,7 @@ GUID_DEVINTERFACE_SERENUM_BUS_ENUMERATOR [设备接口类](./overview-of-device-
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Attribute</th>
+<th align="left">属性</th>
 <th align="left">设置</th>
 </tr>
 </thead>
@@ -51,14 +51,14 @@ GUID_DEVINTERFACE_SERENUM_BUS_ENUMERATOR [设备接口类](./overview-of-device-
 
  
 
-<a name="remarks"></a>注解
+<a name="remarks"></a>备注
 -------
 
 系统提供的串行端口设备枚举器注册 GUID_DEVINTERFACE_SERENUM_BUS_ENUMERATOR 的实例，以通知操作系统和应用程序是否存在串行端口设备。
 
-WDK 包含串行枚举器示例 [serenum](/windows-hardware/drivers/serports/features-of-serial-and-serenum)。 Serenum 示例使用过时的标识符 [**GUID_SERENUM_BUS_ENUMERATOR**](guid-serenum-bus-enumerator.md) 来注册此设备接口类的实例。 Serenum 示例位于 WDK 的 *src \\ 内核* 目录中。
+WDK 包含串行枚举器示例 [serenum](../serports/features-of-serial-and-serenum.md)。 Serenum 示例使用过时的标识符 [**GUID_SERENUM_BUS_ENUMERATOR**](guid-serenum-bus-enumerator.md) 来注册此设备接口类的实例。 Serenum 示例位于 WDK 的 *src \\ 内核* 目录中。
 
-有关串行设备和驱动程序的信息，请参阅 [串行设备和驱动程序](/windows-hardware/drivers/serports/using-serial-sys-and-serenum-sys)。
+有关串行设备和驱动程序的信息，请参阅 [串行设备和驱动程序](../serports/using-serial-sys-and-serenum-sys.md)。
 
 有关串行端口设备的设备接口类的信息，请参阅 [**GUID_DEVINTERFACE_COMPORT**](guid-devinterface-comport.md)。
 
@@ -72,7 +72,7 @@ WDK 包含串行枚举器示例 [serenum](/windows-hardware/drivers/serports/fea
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>标题</p></td>
+<td align="left"><p>标头</p></td>
 <td align="left">Ntddser (包含 Ntddser) </td>
 </tr>
 </tbody>
@@ -84,6 +84,4 @@ WDK 包含串行枚举器示例 [serenum](/windows-hardware/drivers/serports/fea
 [**GUID_DEVINTERFACE_COMPORT**](guid-devinterface-comport.md)
 
 [**GUID_SERENUM_BUS_ENUMERATOR**](guid-serenum-bus-enumerator.md)
-
- 
 

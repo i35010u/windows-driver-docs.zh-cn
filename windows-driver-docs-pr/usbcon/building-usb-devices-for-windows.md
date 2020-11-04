@@ -3,12 +3,12 @@ description: 本部分提供了 USB 外围设备制造商的链接。
 title: 为 Windows 构建 USB 设备的概述
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7e1e3dfa689fdd27596fc37cccf402d590d7d8d2
-ms.sourcegitcommit: a866b3470025d85b25a48857a81f893179698e7e
+ms.openlocfilehash: 05eb0902069bccdb59faeb1011b4eeb027abf409
+ms.sourcegitcommit: ec7bebe3f94536455e62b372c2a28fe69d1717f7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92356029"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93349649"
 ---
 # <a name="overview-of-building-usb-devices-for-windows"></a>为 Windows 构建 USB 设备的概述
 
@@ -35,7 +35,7 @@ IHV 可以使用 Microsoft OS 描述符将信息存储在固件中，而不是�
 [Microsoft OS 1.0 描述符规范](/previous-versions/gg463179(v=msdn.10)?redirectedfrom=MSDN)  
 本文档介绍 Microsoft 操作系统描述符。 它包含 OS 字符串描述符、扩展属性 OS 功能描述符和 OS 功能描述符格式的规范。
 
-[Microsoft OS 2.0 描述符规范](/windows-hardware/drivers/usbcon/microsoft-os-2-0-descriptors-specification)  
+[Microsoft OS 2.0 描述符规范](./microsoft-os-2-0-descriptors-specification.md)  
 本文档定义并说明 Microsoft OS 描述符版本2.0 的实现。 Microsoft 操作系统2.0 描述符的目标是解决操作系统描述符版本1.0 的限制和可靠性问题，并为 USB 设备启用特定于 Windows 的新功能。
 
 [使用 Microsoft OS 描述符将 Winusb.sys 作为函数驱动程序加载](automatic-installation-of-winusb.md)  
@@ -43,7 +43,7 @@ IHV 可以定义某些 Microsoft 操作系统 (OS) 功能描述符，将兼容�
 
 ## <a name="setting-a-container-id"></a>设置容器 ID
 
-[USB 设备的容器 ID](/windows-hardware/drivers/install/container-ids-for-usb-devices)  
+[USB 设备的容器 ID](../install/how-usb-devices-are-assigned-container-ids.md)  
 描述如何生成通用串行总线的容器 Id (USB) 设备。
 
 [Windows 中的 USB ContainerID](usb-containerids-in-windows.md)  
@@ -54,7 +54,7 @@ IHV 可以定义某些 Microsoft 操作系统 (OS) 功能描述符，将兼容�
 
 ## <a name="implementing-power-management"></a>实现电源管理
 
-[链接 USB 3.0 硬件中的电源管理](/windows-hardware/drivers/usbcon/usb-3-0-lpm-mechanism-)  
+[链接 USB 3.0 硬件中的电源管理](./usb-3-0-lpm-mechanism-.md)  
 本文档为硬件供应商和 Oem 提供准则，使其能够通过将链接电源管理 (LPM) 与选择性挂起结合使用来实现 USB 设备的电源管理。 它介绍了从 U1 到 U2 的硬件转换，并提供了有关 USB 控制器、集线器和设备中 LPM 实现的常见缺陷的信息。
 
 [揭密选择性挂起](https://techcommunity.microsoft.com/t5/microsoft-usb-blog/demystifying-usb-selective-suspend/ba-p/270736)  
@@ -65,15 +65,15 @@ IHV 可以定义某些 Microsoft 操作系统 (OS) 功能描述符，将兼容�
 [Windows 的 USB 事件跟踪](usb-event-tracing-for-windows.md)  
 Windows (ETW) 的事件跟踪是由操作系统提供的通用、高速跟踪设备。 它包括有关如何安装这些工具、创建跟踪文件和分析 USB 跟踪文件中的事件的信息。
 
-[WPP 软件跟踪](/windows-hardware/drivers/devtest/wpp-software-tracing)  
+[WPP 软件跟踪](../devtest/wpp-software-tracing.md)  
 如何使用 Windows 软件跟踪预处理器 (WPP) 的默认操作跟踪软件组件 (跟踪提供) 程序的操作。
 
-[USB 3.0 扩展](/windows-hardware/drivers/debugger/usb-3-extensions) ( # A0)   
+[USB 3.0 扩展](../debugger/usb-3-extensions.md) ( # A0)   
 这些命令显示 USB 3.0 堆栈中由三个驱动程序维护的数据结构中的信息： USB 3.0 集线器驱动程序、USB 主机控制器扩展驱动程序和 USB 3.0 主机控制器驱动程序。
 
-[USB 2.0 扩展](/windows-hardware/drivers/debugger/usb-2-0-extensions) ( # A0)   
+[USB 2.0 扩展](../debugger/usb-2-0-extensions.md) ( # A0)   
 这些命令显示由 USB 2.0 堆栈中的驱动程序维护的数据结构中的信息： USB 2.0 集线器驱动程序和 USB 2.0 主机控制器驱动程序。
 
 ## <a name="related-topics"></a>相关主题
 
-[通用串行总线 (USB)](/windows-hardware/drivers/)  
+[通用串行总线 (USB)](../index.yml)

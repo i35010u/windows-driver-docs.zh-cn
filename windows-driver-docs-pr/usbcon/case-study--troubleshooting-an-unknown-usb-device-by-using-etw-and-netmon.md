@@ -3,12 +3,12 @@ description: 提供有关如何使用 USB ETW 和 Netmon 排查 Windows 无法�
 title: 案例研究-排查未知 USB 设备问题
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e935ef15304d3a26581f662e66ed26a74079cd57
-ms.sourcegitcommit: b75e9940d49410e2b952e96f325df67a039cd571
+ms.openlocfilehash: 02f064b44942ffcc3630522f23f948d4e969cfd2
+ms.sourcegitcommit: ec7bebe3f94536455e62b372c2a28fe69d1717f7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92337045"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93349695"
 ---
 # <a name="case-study-troubleshooting-an-unknown-usb-device-by-using-etw-and-netmon"></a>案例研究：使用 ETW 和 Netmon 排查未知 USB 设备的问题
 
@@ -39,13 +39,13 @@ ms.locfileid: "92337045"
 
 ### <a name="to-view-the-event-trace-log"></a>查看事件跟踪日志
 
-1. 运行 Netmon，单击 "文件"-" ** &gt; &gt; 捕获**"，然后选择文件。
+1. 运行 Netmon，单击 "文件"-" **&gt; &gt; 捕获** "，然后选择文件。
 2. 在 " **帧摘要** " 窗格中选择第一个事件，该事件具有 SystemTrace 说明。 此图显示了在选择第一个事件时屏幕的外观。
 
     ![选择第一个事件后显示 "Microsoft 网络监视器" 窗口的屏幕截图。](images/devicefailure-etl.png)
 
-3. 若要自定义 Netmon 显示的列，请右键单击列名称，然后选择 " **选择列**"。
-4. 第一个事件（标识为 **SystemTrace**类型）包含有关日志的常规信息。 你可以展开 " **帧详细** 信息" 窗格中的信息树，以查看丢失的事件数和跟踪开始时间等信息。
+3. 若要自定义 Netmon 显示的列，请右键单击列名称，然后选择 " **选择列** "。
+4. 第一个事件（标识为 **SystemTrace** 类型）包含有关日志的常规信息。 你可以展开 " **帧详细** 信息" 窗格中的信息树，以查看丢失的事件数和跟踪开始时间等信息。
 
 ## <a name="usb-device-summary-events"></a>USB 设备摘要事件
 
@@ -77,7 +77,7 @@ Event payload (Data logged at the time of the event)
 
 展开 "USB 集线器等待唤醒 IRP 完成" 事件的负载数据，您将看到一个名为 fid USBHUB Hub 的 ETW \_ 结构 \_ 。 结构名称包含以下组件：
 
-| 术语 | 说明 |
+| 术语 | 描述 |
 | ---- | ---- |
 | **fid_** |USB ETW 结构的典型前缀。 |
 | **USBHUB_** |指示 USB 集线器驱动程序记录了该事件。 |
@@ -87,9 +87,9 @@ USB 集线器驱动程序使用 **fid \_ USBHUB \_ 集线器** 结构来描述 U
 
 ![microsoft 网络监视器-帧详细信息](images/framedetails.png)
 
-中心结构非常类似于通常出现在 USB ETW 事件中的两个其他结构：**fid \_ USBHUB \_ 设备** 和 **fid \_ USBPORT \_ 设备**。 以下重要字段适用于所有三种结构：
+中心结构非常类似于通常出现在 USB ETW 事件中的两个其他结构： **fid \_ USBHUB \_ 设备** 和 **fid \_ USBPORT \_ 设备** 。 以下重要字段适用于所有三种结构：
 
-| 字段 | 说明 |
+| 字段 | 描述 |
 | ---- | ---- |
 | **fid_idVendor** |设备的 USB 供应商 ID (VID) |
 | **fid_idProduct** |设备的 USB 产品 ID (PID) |
@@ -97,7 +97,7 @@ USB 集线器驱动程序使用 **fid \_ USBHUB \_ 集线器** 结构来描述 U
 
 对于通过一个或多个附加 USB 集线器连接的 USB 设备，集线器端口号列表以根集线器端口开头，并继续以从根中心) 的距离 (的其他集线器继续。 忽略任何零。 例如：
 
-| 示例值 | 说明 |
+| 示例值 | 描述 |
 | ---- | ---- |
 | [0，0，0，0，0，0] | 事件指的是 (计算机上的端口的根集线器，由 USB 主机控制器) 直接控制。 |
 | [3，0，0，0，0，0] | 事件是指插入到根集线器端口号3的集线器或设备。 |
@@ -113,11 +113,11 @@ USB 集线器驱动程序使用 **fid \_ USBHUB \_ 集线器** 结构来描述 U
 
 ### <a name="the-usb-error-filter"></a>USB 错误筛选器
 
-若要在 Netmon 中激活 USB 错误筛选器，请单击 "**筛选器-> 显示" 筛选器-> 加载筛选器-> 标准筛选器-> usb-> Usb 集线器错误**"，然后在"**显示筛选器**"窗格中单击"**应用**"。
+若要在 Netmon 中激活 USB 错误筛选器，请单击 " **筛选器-> 显示" 筛选器-> 加载筛选器-> 标准筛选器-> usb-> Usb 集线器错误** "，然后在" **显示筛选器** "窗格中单击" **应用** "。
 
 USB 错误筛选器将事件列表缩小到仅符合下表中所示的条件的事件列表。
 
-| 筛选文本 | 说明 |
+| 筛选文本 | 描述 |
 | --- | --- |
 |  (USBPort_MicrosoftWindowsUSBUSBPORT 和 NetEvent = = 34)  | 具有 opcode 34 的 USB 端口事件是端口错误。 |
 |  (USBHub_MicrosoftWindowsUSBUSBHUB 和 NetEvent = = 11)  | 具有 opcode 11 的 USB 集线器事件是集线器错误。 |
@@ -128,14 +128,14 @@ USB 错误筛选器将事件列表缩小到仅符合下表中所示的条件的�
 
 ![显示 USB 错误筛选器后，在 "帧摘要" 窗格中显示一组事件的屏幕截图。](images/devicefailure-etl2.png)
 
-若要查看错误序列的概述，可以简单地查看每个错误事件。 需要注意的重要字段包括 **fid \_ NtStatus**、 **fid \_ UsbdStatus**和 **fid \_ DebugText**。 有关详细信息，请参阅 [了解错误事件和状态代码](#understanding-error-events-and-status-codes)。 若要关闭筛选器，请单击 "**显示筛选器**" 窗格中的 "**删除**" 按钮。
+若要查看错误序列的概述，可以简单地查看每个错误事件。 需要注意的重要字段包括 **fid \_ NtStatus** 、 **fid \_ UsbdStatus** 和 **fid \_ DebugText** 。 有关详细信息，请参阅 [了解错误事件和状态代码](#understanding-error-events-and-status-codes)。 若要关闭筛选器，请单击 " **显示筛选器** " 窗格中的 " **删除** " 按钮。
 
 ### <a name="custom-netmon-filters"></a>自定义 Netmon 筛选器
 
 可以在 Netmon 中创建自定义筛选器。 最简单的方法是使用以下方法之一从屏幕上的数据创建筛选器：
 
-* 右键单击 " **帧详细信息** " 窗格中的字段，然后选择 " **添加所选值" 以显示筛选器**。
-* 右键单击 " **帧摘要** " 窗格中的字段，然后选择 " **添加 [字段名]" 以显示筛选器**。
+* 右键单击 " **帧详细信息** " 窗格中的字段，然后选择 " **添加所选值" 以显示筛选器** 。
+* 右键单击 " **帧摘要** " 窗格中的字段，然后选择 " **添加 [字段名]" 以显示筛选器** 。
 
 您可以更改运算符 (例如 OR、AND、and = =) 和筛选器值以生成相应的筛选表达式。
 
@@ -147,12 +147,12 @@ USB 错误事件和其他事件的数据中具有状态值，这些值提供有�
 
 | 状态类型 | 资源 |
 | --- | --- |
-| **fid_NtStatus** | 请参阅 [NTSTATUS 值](https://go.microsoft.com/fwlink/p/?linkid=617532)。 |
-| USB 请求块的 "状态" 字段 (URB) 或 **fid_UsbdStatus** | 在 Windows 驱动程序工具包 (WDK) 的 inc\api\usb.h 中查找作为 USBD_STATUS 的值。 你还可以使用 [USBD \_ 状态](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff539136(v=vs.85))。 本主题列出了 USBD 状态值的符号名称和含义 \_ 。 |
+| **fid_NtStatus** | 请参阅 [NTSTATUS 值](/openspecs/windows_protocols/ms-erref/596a1078-e883-4972-9bbc-49e60bebca55)。 |
+| USB 请求块的 "状态" 字段 (URB) 或 **fid_UsbdStatus** | 在 Windows 驱动程序工具包 (WDK) 的 inc\api\usb.h 中查找作为 USBD_STATUS 的值。 你还可以使用 [USBD \_ 状态](/previous-versions/windows/hardware/drivers/ff539136(v=vs.85))。 本主题列出了 USBD 状态值的符号名称和含义 \_ 。 |
 
 ## <a name="reading-backwards-from-problem-events"></a>从问题事件中反向读取
 
-在错误事件发生之前记录的事件可能会提供有关错误原因的重要线索。 应查看出现错误之前记录的事件，以尝试确定未知设备的根本原因。 在此示例中，从 CreateDeviceFailure_Popup 事件开始向后查找第二个异常。 启用 USB 错误筛选器后选择此事件，然后在 "**显示筛选器**" 窗格中单击 "**删除**"。 USB 错误筛选器仍会显示在 " **显示筛选器** " 窗格中，您可以在以后重新应用此筛选器。 但现在筛选器处于禁用状态，并且 " **帧摘要** " 窗格将显示此图像中所示的所有事件。
+在错误事件发生之前记录的事件可能会提供有关错误原因的重要线索。 应查看出现错误之前记录的事件，以尝试确定未知设备的根本原因。 在此示例中，从 CreateDeviceFailure_Popup 事件开始向后查找第二个异常。 启用 USB 错误筛选器后选择此事件，然后在 " **显示筛选器** " 窗格中单击 " **删除** "。 USB 错误筛选器仍会显示在 " **显示筛选器** " 窗格中，您可以在以后重新应用此筛选器。 但现在筛选器处于禁用状态，并且 " **帧摘要** " 窗格将显示此图像中所示的所有事件。
 
 ![microsoft 网络监视器](images/devicefailure-etl3.png)
 

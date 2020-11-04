@@ -3,18 +3,18 @@ description: 'USBStress 是用户模式应用程序 ( # A0) 和驱动程序安�
 title: USBStress
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c46b9543979e44982eb5a85c33d23f2f885e6093
-ms.sourcegitcommit: b75e9940d49410e2b952e96f325df67a039cd571
+ms.openlocfilehash: 7ef44b97946880cfd0db6fc32f0a44137035347c
+ms.sourcegitcommit: ec7bebe3f94536455e62b372c2a28fe69d1717f7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92337000"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93349781"
 ---
 # <a name="usbstress-package"></a>USBStress 包
 
 USBStress 是用户模式应用程序 ( # A0) 和驱动程序安装包（用于内核模式驱动程序，usbstress.sys）的组合。
 
-这些文件包含在 [MUTT](/windows-hardware/drivers/usbcon/mutt-software-package)软件包中。
+这些文件包含在 [MUTT](./mutt-software-package.md)软件包中。
 
 ## <a name="usbstress"></a>USBStress
 
@@ -54,4 +54,4 @@ Return value: 1
 ## <a name="related-topics"></a>相关主题
 
 [MUTT 软件包中的工具](mutt-software-package.md)  
-[Microsoft USB 测试工具 (MUTT) 设备](microsoft-usb-test-tool--mutt--devices.md)  
+[Microsoft USB 测试工具 (MUTT) 设备](microsoft-usb-test-tool--mutt--devices.md)

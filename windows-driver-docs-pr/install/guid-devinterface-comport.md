@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 9fed30f8b72be26c34fbd35853c525cd3c998093
-ms.sourcegitcommit: 735fea11056fe943c4368ee54573790e0602de66
+ms.openlocfilehash: 32823d0db31ddb05550e04e60b87a2eb0b4b1bc4
+ms.sourcegitcommit: ec7bebe3f94536455e62b372c2a28fe69d1717f7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91979988"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93349609"
 ---
 # <a name="guid_devinterface_comport"></a>GUID_DEVINTERFACE_COMPORT
 
@@ -33,7 +33,7 @@ ms.locfileid: "91979988"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Attribute</th>
+<th align="left">属性</th>
 <th align="left">设置</th>
 </tr>
 </thead>
@@ -51,12 +51,12 @@ ms.locfileid: "91979988"
 
  
 
-<a name="remarks"></a>注解
+<a name="remarks"></a>备注
 -------
 
 串行端口驱动程序注册此设备接口类的实例，通知操作系统和应用程序是否存在 COM 端口。
 
-系统提供的串行端口函数驱动程序为 [串行端口](/windows-hardware/drivers/serports/using-serial-sys-and-serenum-sys)注册此设备接口类的实例。
+系统提供的串行端口函数驱动程序为 [串行端口](../serports/using-serial-sys-and-serenum-sys.md)注册此设备接口类的实例。
 
 以下示例 (Github 上) 为串行端口注册此类的实例：
 
@@ -80,7 +80,7 @@ ms.locfileid: "91979988"
 <td align="left"><p>在 Microsoft Windows 2000 和更高版本的 Windows 中可用。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>标题</p></td>
+<td align="left"><p>标头</p></td>
 <td align="left">Ntddser (包含 Ntddser) </td>
 </tr>
 </tbody>
@@ -90,6 +90,4 @@ ms.locfileid: "91979988"
 
 
 [**GUID_CLASS_COMPORT**](guid-class-comport.md)
-
- 
 

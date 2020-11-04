@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: c9ab0584a4636e1e5507e3ef99c2d2bfc94f465b
-ms.sourcegitcommit: 20eac54e419a594f7cea766ee28f158559dfd79c
+ms.openlocfilehash: 15431f2261a6266a4672d9f24874bcbf15d5d0f6
+ms.sourcegitcommit: ec7bebe3f94536455e62b372c2a28fe69d1717f7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91754880"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93349723"
 ---
 # <a name="usb3kdxhci_resourceusage"></a>！ usb3kd. xhci \_ resourceusage
 
@@ -42,7 +42,7 @@ Usb3kd.dll
 <a name="remarks"></a>备注
 -------
 
-Output **！ xhci \_ resourceusage** 命令基于 USB 3.0 主机控制器驱动程序所维护的数据结构 ( # A0) 。 有关 usb 3.0 主机控制器驱动程序和 USB 堆栈中其他驱动程序的详细信息，请参阅 [Windows 中的 usb 主机端驱动程序](/windows-hardware/drivers/usbcon/usb-3-0-driver-stack-architecture)。
+Output **！ xhci \_ resourceusage** 命令基于 USB 3.0 主机控制器驱动程序所维护的数据结构 ( # A0) 。 有关 usb 3.0 主机控制器驱动程序和 USB 堆栈中其他驱动程序的详细信息，请参阅 [Windows 中的 usb 主机端驱动程序](../usbcon/usb-3-0-driver-stack-architecture.md)。
 
 <a name="examples"></a>示例
 --------
@@ -97,6 +97,4 @@ Output **！ xhci \_ resourceusage** 命令基于 USB 3.0 主机控制器驱动�
 [**！ xhci \_ dumpall**](-usb3kd-xhci-dumpall.md)
 
 [ (USB) 驱动程序的通用串行总线](../usbcon/index.md)
-
- 
 

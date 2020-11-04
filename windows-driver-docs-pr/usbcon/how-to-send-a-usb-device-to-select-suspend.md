@@ -3,12 +3,12 @@ description: 本主题介绍 USB 3.0 驱动程序堆栈的 USB 客户端驱动�
 title: USB 客户端驱动程序验证程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f9a0303402a1f77800e089c1e8ad03466374acac
-ms.sourcegitcommit: a866b3470025d85b25a48857a81f893179698e7e
+ms.openlocfilehash: 7489a4737a6fb4e37ced168231ff02d508c4bbe9
+ms.sourcegitcommit: ec7bebe3f94536455e62b372c2a28fe69d1717f7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92355969"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93349729"
 ---
 # <a name="usb-client-driver-verifier"></a>USB 客户端驱动程序验证程序
 
@@ -20,13 +20,13 @@ ms.locfileid: "92355969"
 
 ## <a name="what-is-the-usb-client-driver-verifier"></a>什么是 USB 客户端驱动程序验证程序
 
-*Usb 客户端驱动程序验证*程序是包含在 Windows 8 中的 usb 3.0 驱动程序堆栈的一项功能。 当启用验证程序时，USB 驱动程序堆栈会失败或修改客户端驱动程序执行的某些操作。 这些故障将模拟可能难以找到的错误情况，并可能在以后导致不需要的结果。 模拟故障使你有机会确保你的驱动程序能够正常处理故障。 客户端可以通过错误处理代码处理错误，或使用不同的代码路径。
+*Usb 客户端驱动程序验证* 程序是包含在 Windows 8 中的 usb 3.0 驱动程序堆栈的一项功能。 当启用验证程序时，USB 驱动程序堆栈会失败或修改客户端驱动程序执行的某些操作。 这些故障将模拟可能难以找到的错误情况，并可能在以后导致不需要的结果。 模拟故障使你有机会确保你的驱动程序能够正常处理故障。 客户端可以通过错误处理代码处理错误，或使用不同的代码路径。
 
 例如，客户端驱动程序支持通过大容量终结点的静态流进行的 i/o 操作。 通过使用验证程序，可以确保驱动程序的流逻辑正常工作，而不考虑各种主机控制器支持的流数量。 若要模拟这种情况，可以使用以后)  (讨论的 **UsbVerifierStaticStreamCountOverride** 设置。 当驱动程序每次调用 [**USBD \_ QueryUsbCapability**](/previous-versions/windows/hardware/drivers/hh406230(v=vs.85)) 来确定宿主控制器支持的静态流的最大数目时，例程将返回不同的值。
 
 **重要提示**  USB 客户端驱动程序验证器仅针对各种 xHCI 控制器测试驱动程序。 它模拟了某些固有的2.0 控制器行为，如缺少链式 MDL 支持。 但是，我们建议你必须使用 USB 2.0 控制器测试你的客户端驱动程序，而不是使用此工具替换相同的。
 
-Windows 硬件认证工具包包含运行模拟测试事例的自动测试。 有关详细信息，请参阅 [USB (USBDEX) 验证程序测试](https://docs.microsoft.com/previous-versions/windows/hardware/hck/hh998558(v=vs.85))。
+Windows 硬件认证工具包包含运行模拟测试事例的自动测试。 有关详细信息，请参阅 [USB (USBDEX) 验证程序测试](/previous-versions/windows/hardware/hck/hh998558(v=vs.85))。
 
 ## <a name="how-to-enable-the-usb-client-driver-verifier"></a>如何启用 USB 客户端驱动程序验证程序
 
@@ -35,7 +35,7 @@ Windows 硬件认证工具包包含运行模拟测试事例的自动测试。 �
 当你为客户端驱动程序启用 [驱动程序验证程序](../devtest/driver-verifier.md) 时，将自动启用 "USB 客户端驱动程序验证程序"。 或者，您可以通过设置此注册表项来启用验证程序。
 
 > [!NOTE]
-> 启用 [Windows Driver Foundation (WDF) 验证器控件应用程序 ( # A0) ](/windows-hardware/drivers/devtest/wdf-verifier-control-application) 不会自动启用 USB 客户端驱动程序验证程序。
+> 启用 [Windows Driver Foundation (WDF) 验证器控件应用程序 ( # A0) ](../devtest/wdf-verifier-control-application.md) 不会自动启用 USB 客户端驱动程序验证程序。
 
 ```cpp
 HKEY_LOCAL_MACHINE
@@ -47,11 +47,11 @@ HKEY_LOCAL_MACHINE
                   UsbVerifierEnabled (DWORD)
 ```
 
-**UsbVerifierEnabled**注册表项采用 DWORD 值。 当 **UsbVerifierEnabled** 为1时，将启用 USB 客户端驱动程序验证程序;0禁用该方法。 如果为客户端驱动程序启用了 [驱动程序验证程序](../devtest/driver-verifier.md) ，并且 **UsbVerifierEnabled** 为0，则将禁用 USB 客户端驱动程序验证程序。
+**UsbVerifierEnabled** 注册表项采用 DWORD 值。 当 **UsbVerifierEnabled** 为1时，将启用 USB 客户端驱动程序验证程序;0禁用该方法。 如果为客户端驱动程序启用了 [驱动程序验证程序](../devtest/driver-verifier.md) ，并且 **UsbVerifierEnabled** 为0，则将禁用 USB 客户端驱动程序验证程序。
 
 ## <a name="configuration-settings-for-the-usb-client-driver-verifier"></a>USB 客户端驱动程序验证程序的配置设置
 
-如果启用了验证程序，则 USB 驱动程序堆栈将跟踪客户端驱动程序通过调用 **USBD \_ xxxUrbAllocate** 例程分配的 URBs， (请参阅 [USB 例程](https://docs.microsoft.com/windows-hardware/drivers/ddi/_usbref/#client)) 。 如果客户端驱动程序泄漏了任何 URB，则 USB 驱动程序堆栈会使用该信息通过 [Driver Verifier](https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier)来导致错误检查。 在这种情况下，请使用 **！ usbanalyze-v** 命令确定泄漏的原因。
+如果启用了验证程序，则 USB 驱动程序堆栈将跟踪客户端驱动程序通过调用 **USBD \_ xxxUrbAllocate** 例程分配的 URBs， (请参阅 [USB 例程](/windows-hardware/drivers/ddi/_usbref/#client)) 。 如果客户端驱动程序泄漏了任何 URB，则 USB 驱动程序堆栈会使用该信息通过 [Driver Verifier](../devtest/driver-verifier.md)来导致错误检查。 在这种情况下，请使用 **！ usbanalyze-v** 命令确定泄漏的原因。
 
 此外，还可以配置 USB 客户端驱动程序验证程序，以修改或失败特定例程，并指定例程必须失败的频率。 若要配置验证程序，请按如下所示设置注册表项：
 
@@ -65,10 +65,10 @@ HKEY_LOCAL_MACHINE
                   <USB client driver verifier setting> (DWORD)
 ```
 
-* &lt; USB 客户端驱动程序验证 &gt; 程序设置*注册表项采用 DWORD 值。
+*&lt; USB 客户端驱动程序验证 &gt; 程序设置* 注册表项采用 DWORD 值。
 如果添加、修改或删除任何设置，则必须在系统中重新枚举设备以应用设置。
 
-下表显示了 " * &lt; USB 客户端驱动程序验证程序 &gt; " 设置*的可能值。 这些设置应用于 " **服务** " 项下指定的客户端驱动程序。
+下表显示了 " *&lt; USB 客户端驱动程序验证程序 &gt; " 设置* 的可能值。 这些设置应用于 " **服务** " 项下指定的客户端驱动程序。
 
 <table>
 <colgroup>
@@ -202,8 +202,8 @@ HKEY_LOCAL_MACHINE
 
 ## <a name="related-topics"></a>相关主题
 
-[**USBD \_ CreateHandle**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbdlib/nf-usbdlib-usbd_createhandle)  
-[**USBD \_ QueryUsbCapability**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/hh406230(v=vs.85))  
+[**USBD \_ CreateHandle**](/windows-hardware/drivers/ddi/usbdlib/nf-usbdlib-usbd_createhandle)  
+[**USBD \_ QueryUsbCapability**](/previous-versions/windows/hardware/drivers/hh406230(v=vs.85))  
 [如何在 USB 批量终结点中打开和关闭静态流](how-to-open-streams-in-a-usb-endpoint.md)  
 [如何发送链式 MDLs](how-to-send-chained-mdls.md)  
-[Microsoft USB 测试工具 (MUTT) 设备的概述](/windows-hardware/drivers/usbcon/microsoft-usb-test-tool--mutt--devices)
+[Microsoft USB 测试工具 (MUTT) 设备的概述](./microsoft-usb-test-tool--mutt--devices.md)

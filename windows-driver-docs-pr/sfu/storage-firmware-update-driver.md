@@ -1,19 +1,19 @@
 ---
-title: " (SFU) 驱动程序的存储固件更新"
+title: 存储固件更新 (SFU) 驱动程序
 description: 提供存储固件更新 (SFU) 驱动程序的实现细节。
 ms.date: 10/07/2020
 ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
 ms.localizationpriority: medium
-ms.openlocfilehash: d87c69c35771397dcb1ca4d7100dae482d249e4d
-ms.sourcegitcommit: eefc6ae6d9621d0735b3c63e718ee5838d57a6bc
+ms.openlocfilehash: 9cec200580ec0ed1ee2b4e9fac6e54475fd110b8
+ms.sourcegitcommit: ec7bebe3f94536455e62b372c2a28fe69d1717f7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92886372"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93349785"
 ---
-# <a name="storage-firmware-update-sfu-driver"></a> (SFU) 驱动程序的存储固件更新
+# <a name="storage-firmware-update-sfu-driver"></a>存储固件更新 (SFU) 驱动程序
 
 更新 NVMe 存储驱动器的固件依赖于硬件供应商创建固件更新应用程序，该应用程序利用 Windows 10 中引入的特定 [固件更新 IOCTLs](/windows/win32/fileio/working-with-nvme-devices#dont-update-firmware-through-the-pass-through-mechanism) 。 通常，这些应用程序在 Windows 更新 (WU) 管道之外分发。 最终用户需要确定哪些存储磁盘在其设备中，从制造商的网站中获取正确的存储驱动器固件实用程序，然后手动下载和安装更新。
 
@@ -22,9 +22,9 @@ ms.locfileid: "92886372"
 > [!NOTE]
 > Windows 10 in 模式仅适用于 Windows 中的 Microsoft Store 应用和在 S 模式下兼容 Windows 10 的附件。 有一种单向交换机可用。 有关详细信息，请参阅 [windows.com/SmodeFAQ](https://support.microsoft.com/help/4020089)。
 
-使用基于驱动程序的解决方案的[Windows 更新 (WU) 服务更新设备固件](/windows-hardware/drivers/install/updating-device-firmware-using-windows-update)适用于硬件供应商，并要求它们将固件更新逻辑和负载添加到现有函数驱动程序，或者提供单独的固件更新驱动程序和包。 这将导致重复跨硬件合作伙伴工作，并增加存储驱动器的总体服务成本。 有关通用驱动程序的详细信息，请参阅 [具有通用 Windows 驱动程序的入门](/windows-hardware/drivers/develop/getting-started-with-universal-drivers)。
+使用基于驱动程序的解决方案的[Windows 更新 (WU) 服务更新设备固件](../install/updating-device-firmware-using-windows-update.md)适用于硬件供应商，并要求它们将固件更新逻辑和负载添加到现有函数驱动程序，或者提供单独的固件更新驱动程序和包。 这将导致重复跨硬件合作伙伴工作，并增加存储驱动器的总体服务成本。 有关通用驱动程序的详细信息，请参阅 [具有通用 Windows 驱动程序的入门](../develop/getting-started-with-windows-drivers.md)。
 
-使用 Windows 10 版本 2004 (OS 版本19041.488 或更高版本时) 可以使用 Microsoft 提供的驱动程序和硬件供应商提供的固件更新包更新 NVMe 驱动器固件。 此解决方案可通过 Windows 更新 [ (CHIDs) 上使用计算机硬件 id ](/windows-hardware/drivers/install/specifying-hardware-ids-for-a-computer)的目标驱动器和设备进行分发。
+使用 Windows 10 版本 2004 (OS 版本19041.488 或更高版本时) 可以使用 Microsoft 提供的驱动程序和硬件供应商提供的固件更新包更新 NVMe 驱动器固件。 此解决方案可通过 Windows 更新 [ (CHIDs) 上使用计算机硬件 id ](../install/specifying-hardware-ids-for-a-computer.md)的目标驱动器和设备进行分发。
 
 > [!WARNING]
 > 固件更新是一种潜在的危险维护操作，只应在对新固件映像进行全面测试后分发。 不受支持的硬件上的新固件可能对可靠性和稳定性产生负面影响，或者甚至会导致数据丢失。
@@ -85,7 +85,7 @@ ms.locfileid: "92886372"
 
 `SCSI\t*v(8)p(40)r(80`标识符提供了一个完整的产品名称 (与 NVME 1.4 spec) 一致，并允许创建软件组件 (SWC) 节点来更新与该名称匹配的 NVME 驱动器的固件更新 (最多40个字符，8个字符固件版本) 。
 
-有关详细信息，请参阅 [SCSI 设备的标识符](/windows-hardware/drivers/install/identifiers-for-scsi-devices) 和 [STOR_RICH_DEVICE_DESCRIPTION](/windows-hardware/drivers/ddi/storport/ns-storport-_stor_rich_device_description)
+有关详细信息，请参阅 [SCSI 设备的标识符](../install/identifiers-for-scsi-devices.md) 和 [STOR_RICH_DEVICE_DESCRIPTION](/windows-hardware/drivers/ddi/storport/ns-storport-_stor_rich_device_description)
 
 ## <a name="storage-firmware-update-sfu-solution-details"></a>存储固件更新 (SFU) 解决方案详细信息
 
@@ -103,7 +103,7 @@ ms.locfileid: "92886372"
 
 提交扩展 INF 包作为单独的驱动程序提交。
 
-但许多设备类型不允许单个物理设备枚举多个设备节点。 在这种情况下，请使用指定 [AddComponent](/windows-hardware/drivers/install/inf-addcomponent-directive) 指令的扩展 INF，以创建可 Windows 更新并在其上安装固件更新驱动程序的设备节点。 INF 文件中的以下代码片段显示了如何执行此操作：
+但许多设备类型不允许单个物理设备枚举多个设备节点。 在这种情况下，请使用指定 [AddComponent](../install/inf-addcomponent-directive.md) 指令的扩展 INF，以创建可 Windows 更新并在其上安装固件更新驱动程序的设备节点。 INF 文件中的以下代码片段显示了如何执行此操作：
 
 ```inf
 [Manufacturer]
@@ -120,7 +120,7 @@ ComponentIDs = StorageIHVabcd-firmware-update
 
 ![I N F 设备层次结构](images/inf-device-hierarchy.png)
 
-下面提供了用于为驱动器固件更新创建新标识的示例扩展 INF。 由于 **SCSI \ DiskNVMe____StorageIHVabcd** 硬件在硬件制造商内可能不是唯一的，因此扩展 INF 必须使用 [子](/windows-hardware/drivers/install/specifying-hardware-ids-for-a-computer) 目标来进行分发。
+下面提供了用于为驱动器固件更新创建新标识的示例扩展 INF。 由于 **SCSI \ DiskNVMe____StorageIHVabcd** 硬件在硬件制造商内可能不是唯一的，因此扩展 INF 必须使用 [子](../install/specifying-hardware-ids-for-a-computer.md) 目标来进行分发。
 
 ### <a name="package-2---drive-firmware-update-package"></a>包 2-驱动器固件更新包
 
@@ -134,7 +134,7 @@ ComponentIDs = StorageIHVabcd-firmware-update
 
 提交固件包作为单独的驱动程序提交。
 
-驱动器固件更新包 INF 以新节点 **SWC\StorageIHVabcd-firmwareupdate** 为目标，并调用 Windows 10 存储固件更新驱动程序。 要使软件枚举的组件设备正常运行，必须启动其父项。 为了使用 StorFwUpdate 驱动器，开发人员应将每个可能的部分的 [DDInstall 部分](/windows-hardware/drivers/install/inf-ddinstall-section) 中的 Include/需求 INF 指令用于如下 `[DDInstall.*]` `[StorFwUpdate.*]` 所示的相应部分，而不考虑 INF 是否为该部分指定了任何指令：
+驱动器固件更新包 INF 以新节点 **SWC\StorageIHVabcd-firmwareupdate** 为目标，并调用 Windows 10 存储固件更新驱动程序。 要使软件枚举的组件设备正常运行，必须启动其父项。 为了使用 StorFwUpdate 驱动器，开发人员应将每个可能的部分的 [DDInstall 部分](../install/inf-ddinstall-section.md) 中的 Include/需求 INF 指令用于如下 `[DDInstall.*]` `[StorFwUpdate.*]` 所示的相应部分，而不考虑 INF 是否为该部分指定了任何指令：
 
 ```inf
 [StorFwUpdateOem.NT]
@@ -151,7 +151,7 @@ Include            = StorFwUpdate.inf
 Needs              = StorFwUpdate.NT.Services
 ```
 
-有关详细信息，请参阅 [使用组件 INF 文件](/windows-hardware/drivers/install/using-a-component-inf-file)。 下面提供了一个示例 NVMe 驱动器固件更新 INF 文件。 由于 **SWC\StorageIHVabcd-firmwareupdate** 软件标识在硬件制造商内可能不唯一，因此 INF 必须利用 [子](/windows-hardware/drivers/install/specifying-hardware-ids-for-a-computer) 目标来实现 Windows 更新分布。
+有关详细信息，请参阅 [使用组件 INF 文件](../install/using-a-component-inf-file.md)。 下面提供了一个示例 NVMe 驱动器固件更新 INF 文件。 由于 **SWC\StorageIHVabcd-firmwareupdate** 软件标识在硬件制造商内可能不唯一，因此 INF 必须利用 [子](../install/specifying-hardware-ids-for-a-computer.md) 目标来实现 Windows 更新分布。
 
 StorFwUpdate 组件不会执行任何验证 (签名验证或固件二进制负载的解密) 。 如果需要此级别的功能，则硬件伙伴可以编写自己的存储固件更新驱动程序。
 
@@ -233,7 +233,7 @@ StorFwUpdate 组件不会执行任何验证 (签名验证或固件二进制负�
 
 ## <a name="deploy-the-extension-inf-and-firmware-packages-through-windows-update"></a>通过 Windows 更新部署扩展 INF 和固件包
 
-首先，通过使用 [发布测试分发](/windows-hardware/drivers/dashboard/publishing-for-test-distribution) 指南 Windows 更新来验证包部署。
+首先，通过使用 [发布测试分发](../dashboard/publishing-for-test-distribution.md) 指南 Windows 更新来验证包部署。
 
 接下来，使用适当的 CHIDs 通过 Windows 更新部署包。
 
@@ -427,6 +427,6 @@ FwUpdateFriendlyName= "StorageIHV3 Firmware Update"
 
 ## <a name="additional-resources"></a>其他资源
 
-[SCSI 设备的标识符](/windows-hardware/drivers/install/identifiers-for-scsi-devices)
+[SCSI 设备的标识符](../install/identifiers-for-scsi-devices.md)
 
 [STOR_RICH_DEVICE_DESCRIPTION](/windows-hardware/drivers/ddi/storport/ns-storport-_stor_rich_device_description)

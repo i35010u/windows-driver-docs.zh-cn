@@ -3,18 +3,18 @@ description: 介绍通用串行总线 (USB) 2.0 选择性挂起机制的限制�
 title: USB 2.0 机制的限制
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 216d7a3e023d34f84ea186538e43b1877da6d007
-ms.sourcegitcommit: b75e9940d49410e2b952e96f325df67a039cd571
+ms.openlocfilehash: 3fa161acb981800ae51c69eebfd33e066870f0f3
+ms.sourcegitcommit: ec7bebe3f94536455e62b372c2a28fe69d1717f7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92336936"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93349769"
 ---
 # <a name="limitations-of-usb-20-mechanism"></a>USB 2.0 机制的限制
 
 介绍通用串行总线 (USB) 2.0 选择性挂起机制的限制。 然后，它概述了 USB 3.0 Link 电源管理 (LPM) 功能，以及如何将其与选择性挂起机制结合使用以减少系统能耗。 最后，它列出了 USB 控制器、集线器和设备的 LPM 实现中的常见缺陷。
 
-USB 2.0 规范定义了一种用于节省电源的机制，该机制允许设备 (或中心) 在未使用时进入挂起状态。 此机制称为 [USB 选择性挂起](/windows-hardware/drivers/usbcon/usb-selective-suspend)。 选择性挂起是一种功能强大的机制，可节能但在数十毫秒内退出延迟。 选择性挂起要求软件取消所有到设备的传输，然后将设备显式发送到挂起状态。 因此，此机制仅在设备长时间处于空闲状态时才可行，通常以秒为单位。
+USB 2.0 规范定义了一种用于节省电源的机制，该机制允许设备 (或中心) 在未使用时进入挂起状态。 此机制称为 [USB 选择性挂起](./usb-selective-suspend.md)。 选择性挂起是一种功能强大的机制，可节能但在数十毫秒内退出延迟。 选择性挂起要求软件取消所有到设备的传输，然后将设备显式发送到挂起状态。 因此，此机制仅在设备长时间处于空闲状态时才可行，通常以秒为单位。
 
 选择性挂起还会在设备处于挂起状态时施加严格的功率消耗限制。 当设备处于工作状态时，这些限制明显小于设备施加的限制。 如果设备在将自身限制为施加的限制时无法维护所需的唤醒功能，则不能将其发送到选择性挂起。
 

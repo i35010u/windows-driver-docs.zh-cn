@@ -11,12 +11,12 @@ keywords:
 - 游戏板支持 WDK DirectInput
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9291bda0d2ee61078e57416f4f5f0df078560950
-ms.sourcegitcommit: a866b3470025d85b25a48857a81f893179698e7e
+ms.openlocfilehash: 8e356f3ad6b09f3a04a10e87307ecb0c358f6fde
+ms.sourcegitcommit: ec7bebe3f94536455e62b372c2a28fe69d1717f7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92355963"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93349597"
 ---
 # <a name="extending-the-directinput-game-controller-control-panel"></a>扩展 DirectInput 游戏控制器控制面板
 
@@ -43,7 +43,7 @@ DirectInput 控制面板的基本体系结构包括 DirectInput 游戏控制器�
 
 ### <a name="gcdefdll-the-default-analog-device-property-sheet"></a>Gcdef.dll，默认的模拟设备属性表
 
-不创建自己的控制面板的硬件供应商使用 Gcdef.dll 提供的默认模拟设备属性表的服务。 注册表中没有**ConfigCLSID**密钥的任何控制器在其**HKEY \_ 本地 \_ 计算机 \\ 系统 \\ CurrentControlSet \\ Control \\ windows.media.mediaproperties \\ PrivateProperties \\ 游戏杆 \\ OEM \\ **<em>控制器 \_ 名称</em>条目下均使用此默认属性表。 此属性表包含以下两个页面：
+不创建自己的控制面板的硬件供应商使用 Gcdef.dll 提供的默认模拟设备属性表的服务。 注册表中没有 **ConfigCLSID** 密钥的任何控制器在其 **HKEY \_ 本地 \_ 计算机 \\ 系统 \\ CurrentControlSet \\ Control \\ windows.media.mediaproperties \\ PrivateProperties \\ 游戏杆 \\ OEM \\**<em>控制器 \_ 名称</em>条目下均使用此默认属性表。 此属性表包含以下两个页面：
 
 - **测试：** 此页说明设备响应正常。 它将返回与设备属性相关联的注册表设置的图形表示形式，并允许用户查看这些设置。
 
@@ -59,7 +59,7 @@ DirectInput 控制面板的基本体系结构包括 DirectInput 游戏控制器�
 
 2. 使用此新 GUID 在注册表中创建新密钥， **我的电脑 \\ HKEY \_ 类 \_ 根 \\ CLSID** (应类似于 {B9EA2BE1-E8E9-11D0-9880-00AA0044480F} ) 。
 
-3. 在该密钥中，创建名为 **InProcHandler32** 和 **InProcServer32**的子项。
+3. 在该密钥中，创建名为 **InProcHandler32** 和 **InProcServer32** 的子项。
 
 4. 在 **InProcServer32** 项中，编辑 (默认) 项，以反映属性表 DLL 的位置和名称。
 
@@ -67,7 +67,7 @@ DirectInput 控制面板的基本体系结构包括 DirectInput 游戏控制器�
 
 **注册设备：**
 
-1. 在注册表项 **我的电脑 \\ HKEY \_ LOCAL \_ MACHINE \\ System \\ CurrentControlSet \\ control \\ windows.media.mediaproperties \\ PrivateProperties \\ 操纵杆 \\ OEM**中，输入设备的密钥。 建议将此密钥名称设置为与设备 OEM 名称相同。
+1. 在注册表项 **我的电脑 \\ HKEY \_ LOCAL \_ MACHINE \\ System \\ CurrentControlSet \\ control \\ windows.media.mediaproperties \\ PrivateProperties \\ 操纵杆 \\ OEM** 中，输入设备的密钥。 建议将此密钥名称设置为与设备 OEM 名称相同。
 
 2. 创建以下条目：
 
@@ -133,7 +133,7 @@ DirectInput 控制面板的基本体系结构包括 DirectInput 游戏控制器�
     > [!NOTE]
     > 您可能想要将属性表的测试容器编写为作为独立对话框启动页面的窗口。 此时，你还可以将你可能具有的任何现有控制面板转换为 DirectInput 控制面板。
 
-3. 填充 [**DIGCPAGEINFO**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff538484(v=vs.85)) 和 [**DIGCSHEETINFO**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff538492(v=vs.85)) 结构，并分别在 [**IDIGameCntrlPropSheet：： GetPageInfo**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff540026(v=vs.85)) 和 [**IDIGameCntrlPropSheet：： GetSheetInfo**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff540029(v=vs.85)) 的实现中返回该信息。
+3. 填充 [**DIGCPAGEINFO**](/previous-versions/windows/hardware/drivers/ff538484(v=vs.85)) 和 [**DIGCSHEETINFO**](/previous-versions/windows/hardware/drivers/ff538492(v=vs.85)) 结构，并分别在 [**IDIGameCntrlPropSheet：： GetPageInfo**](/previous-versions/windows/hardware/drivers/ff540026(v=vs.85)) 和 [**IDIGameCntrlPropSheet：： GetSheetInfo**](/previous-versions/windows/hardware/drivers/ff540029(v=vs.85)) 的实现中返回该信息。
 
 属性表页的生成通过 **属性表** 函数完成。 在属性表页面中，此函数的所有行为都是固有的。 例如，"属性页" 页面反映了它接收的最大的对话框模板。 如果用户创建了一个页面，并且其关联的模板非常小，则会直接反映结果对话框的大小。
 
@@ -145,12 +145,12 @@ DirectInput 控制面板的基本体系结构包括 DirectInput 游戏控制器�
 
 调试 "控制面板" 应用程序可能比较棘手。 使用以下步骤在 Microsoft Developer Studio 5.0 和更高版本的 (中调试自定义属性页，其他编译器) 具有类似的行为。
 
-1. 从 " **项目** " 菜单中选择 " **设置**"。
+1. 从 " **项目** " 菜单中选择 " **设置** "。
 
 2. 选择 " **调试** " 选项卡。
 
 3. 对于调试会话的可执行文件，请输入 C： \\ windows \\RUNDLL32.EXE (假定 c： \\ windows 是 windows 95/98/me 目录) 如果你运行的是 windows 95/98/me，则为 c： \\ winnt \\ SYSTEM32 \\RUNDLL32.EXE (假定 C： \\ winnt 是操作系统目录) 如果你运行的是 windows NT 4.0 或更高版本。
 
-4. 对于程序参数，请输入 **shell32.dll、Control \_ RunDLL c： \\ windows \\ system \\joy.cpl**。 同样，这假定 C： \\ windows 是您的 windows 目录。 它区分大小写，必须严格按所示输入。
+4. 对于程序参数，请输入 **shell32.dll、Control \_ RunDLL c： \\ windows \\ system \\joy.cpl** 。 同样，这假定 C： \\ windows 是您的 windows 目录。 它区分大小写，必须严格按所示输入。
 
-完成后，设置断点，然后从 "生成" 菜单中选择 " **启动调试**" **，然后选择**"执行"。 你现在已准备好调试自定义属性表页。
+完成后，设置断点，然后从 "生成" 菜单中选择 " **启动调试** " **，然后选择** "执行"。 你现在已准备好调试自定义属性表页。

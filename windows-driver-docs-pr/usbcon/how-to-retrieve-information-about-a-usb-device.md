@@ -3,12 +3,12 @@ description: '本主题介绍用于测试和调试特定硬件事件 ( # A0) 的
 title: USB 硬件验证程序 (USB3HWVerifierAnalyzer.exe)
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8169b3791f7d56886b50d65e6e4552610ff97b60
-ms.sourcegitcommit: a866b3470025d85b25a48857a81f893179698e7e
+ms.openlocfilehash: a5ae462b34a96f99d6f81015fcf2a34e613e9baf
+ms.sourcegitcommit: ec7bebe3f94536455e62b372c2a28fe69d1717f7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92356043"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93349611"
 ---
 # <a name="usb-hardware-verifier-usb3hwverifieranalyzerexe"></a>USB 硬件验证程序 (USB3HWVerifierAnalyzer.exe)
 
@@ -54,7 +54,7 @@ USB 硬件验证器工具随 MUTT 软件包一起提供，可从 [MUTT 软件包
    <thead>
    <tr class="header">
    <th>选项</th>
-   <th>说明</th>
+   <th>描述</th>
    </tr>
    </thead>
    <tbody>
@@ -204,7 +204,7 @@ USB 硬件验证器工具随 MUTT 软件包一起提供，可从 [MUTT 软件包
    USB3HWVerifierAnalyzer.exe -f AllEvents.etl /v > Output.txt 
    ```
 
-   在输出文件中，搜索前面记下的 **键值** 。 这些值与以下其中一个字段相关联： **fid \_ UcxController**、 **fid \_ HubDevice**和 **fid \_ UsbDevice**。
+   在输出文件中，搜索前面记下的 **键值** 。 这些值与以下其中一个字段相关联： **fid \_ UcxController** 、 **fid \_ HubDevice** 和 **fid \_ UsbDevice** 。
 
 5. 在 Netmon 中打开 AllEvents，选择 " **添加 &lt; 字段 \_ 名称" &gt; 以显示筛选** 器，按控制器、中心和设备筛选事件。
 
@@ -237,4 +237,4 @@ USB 硬件验证器工具随 MUTT 软件包一起提供，可从 [MUTT 软件包
 
 ## <a name="related-topics"></a>相关主题
 
-[Microsoft USB 测试工具 (MUTT) 设备的概述](/windows-hardware/drivers/usbcon/microsoft-usb-test-tool--mutt--devices)
+[Microsoft USB 测试工具 (MUTT) 设备的概述](./microsoft-usb-test-tool--mutt--devices.md)

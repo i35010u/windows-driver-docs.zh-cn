@@ -4,12 +4,12 @@ description: 本主题介绍了在 Windows 10 中实现传感器数据批处理�
 ms.assetid: E64B9CE0-2C76-430A-ABE0-717BD27BCA8A
 ms.date: 07/20/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: d3fd70c580d8888123d99a3ce2364fbe474afa2c
-ms.sourcegitcommit: a866b3470025d85b25a48857a81f893179698e7e
+ms.openlocfilehash: c2fbad83719a97e40152c10590974d32ef7bdea5
+ms.sourcegitcommit: ec7bebe3f94536455e62b372c2a28fe69d1717f7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92356005"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93349631"
 ---
 # <a name="sensor-data-batching-for-power-savings"></a>为了节能而对传感器数据进行批处理
 
@@ -55,7 +55,7 @@ ms.locfileid: "92356005"
 
 -   [EvtSensorSetBatchLatency](/windows-hardware/drivers/ddi/sensorscx/ns-sensorscx-_sensor_controller_config) 这是一个为指定传感器设置批处理延迟的回调函数。 驱动程序应将批处理延迟设置为小于或等于 *BatchLatencyMs* 参数的值，具体取决于缓冲区的可用性。
 
-驱动程序还必须实现所有必需的 DDSI 函数。 有关详细信息，请参阅 [_SENSOR_CONTROLLER_CONFIG 结构](https://docs.microsoft.com/windows-hardware/drivers/ddi/sensorscx/ns-sensorscx-_sensor_controller_config)。
+驱动程序还必须实现所有必需的 DDSI 函数。 有关详细信息，请参阅 [_SENSOR_CONTROLLER_CONFIG 结构](/windows-hardware/drivers/ddi/sensorscx/ns-sensorscx-_sensor_controller_config)。
 
 对于传感器类扩展指定批处理延迟，这是可选的。 所有传感器的默认批处理延迟为零 (0) ，用于指示不会对样本进行批处理。 仅当类扩展调用 **EvtSensorSetBatchLatency** 来设置批处理延迟值时，才会以批处理形式传递传感器示例。 否则，示例将按定期的数据间隔速率交付。
 
@@ -70,14 +70,14 @@ ms.locfileid: "92356005"
 
 ![批处理延迟值的公式（以毫秒为单位）。](images/batch-formula.png)
 
-其中， *SensorBatching \_ MaxSize \_ Bytes* 是批处理传感器数据缓冲区的最大大小。 如果传感器是加速感应器，则建议使用足以容纳250或更多示例的硬件缓冲区。 数据速率以毫秒为单位表示，这是传输一个数据示例所用的时间长度。 传感器硬件必须存储在批中的样本数与数据速率成反比。 数据速率越小，存储给定批处理延迟值的批处理样本所需的示例缓冲区就越大。 在前面的公式中，批处理延迟由 *BatchLatencyMs* 表示，数据速率由 *DataRateMs*表示。 而且，如果 *BatchLatencyMs* 和 *DataRateMs* 的组合产生大于 *SensorBatching \_ MaxSize \_ 字节*的缓冲区大小，则 **EvtSensorSetBatchLatency** 和 [EvtSensorSetDataInterval](/windows-hardware/drivers/ddi/sensorscx/ns-sensorscx-_sensor_controller_config) 会将批处理延迟设置为上一个公式显示的值。
+其中， *SensorBatching \_ MaxSize \_ Bytes* 是批处理传感器数据缓冲区的最大大小。 如果传感器是加速感应器，则建议使用足以容纳250或更多示例的硬件缓冲区。 数据速率以毫秒为单位表示，这是传输一个数据示例所用的时间长度。 传感器硬件必须存储在批中的样本数与数据速率成反比。 数据速率越小，存储给定批处理延迟值的批处理样本所需的示例缓冲区就越大。 在前面的公式中，批处理延迟由 *BatchLatencyMs* 表示，数据速率由 *DataRateMs* 表示。 而且，如果 *BatchLatencyMs* 和 *DataRateMs* 的组合产生大于 *SensorBatching \_ MaxSize \_ 字节* 的缓冲区大小，则 **EvtSensorSetBatchLatency** 和 [EvtSensorSetDataInterval](/windows-hardware/drivers/ddi/sensorscx/ns-sensorscx-_sensor_controller_config) 会将批处理延迟设置为上一个公式显示的值。
 
-如果调用方指定的 *BatchLatencyMs* 值小于 *DataRateMs*，则在不进行缓冲的情况下传递数据。
+如果调用方指定的 *BatchLatencyMs* 值小于 *DataRateMs* ，则在不进行缓冲的情况下传递数据。
 
 ## <a name="batching-with-data-thresholds"></a>带有数据阈值的批处理
 
 
-实现数据批处理的传感器驱动程序可以使用 [EvtSensorSetDataThresholds](/windows-hardware/drivers/ddi/sensorscx/ns-sensorscx-_sensor_controller_config) 来设置非零数据阈值。 在这种情况下，当当前读数与最后一个读数之间的数据值之差超出了使用 **EvtSensorSetDataThresholds**设置的数据阈值时，将调用数据收集、批处理和传递进程。 因此，将数据批处理与数据阈值结合使用，可使传感器驱动程序节省更多的能力。
+实现数据批处理的传感器驱动程序可以使用 [EvtSensorSetDataThresholds](/windows-hardware/drivers/ddi/sensorscx/ns-sensorscx-_sensor_controller_config) 来设置非零数据阈值。 在这种情况下，当当前读数与最后一个读数之间的数据值之差超出了使用 **EvtSensorSetDataThresholds** 设置的数据阈值时，将调用数据收集、批处理和传递进程。 因此，将数据批处理与数据阈值结合使用，可使传感器驱动程序节省更多的能力。
 
 当传感器类扩展和数据批处理设置非零数据阈值时，驱动程序应提供具有准确时间戳的批处理样本，并同时服从数据阈值。 如果传感器硬件本身无法在强制数据阈值时保持准确的时间戳，则它可以收集样本，而不会强制数据阈值。 但是，在这种情况下，驱动程序应在将其传递给传感器类扩展之前，筛选出不满足当前数据阈值设置的示例。
 
@@ -109,13 +109,13 @@ ms.locfileid: "92356005"
 
 传感器数据必须在传感器硬件中进行批处理，而不需要应用程序处理器。 这样，在对数据进行批处理以节省电能时，处理器将进入睡眠状态。 下图显示了基于传感器硬件的数据批处理的可能配置。
 
--   **配置 1**： FIFO 缓冲区是在直接连接到应用程序处理器的传感器组件中实现的。
+-   **配置 1** ： FIFO 缓冲区是在直接连接到应用程序处理器的传感器组件中实现的。
 
--   **配置 2**： FIFO 缓冲区是在传感器组件连接到的低功率传感器硬件核心中实现的。 在这种情况下，可在多个传感器之间共享 FIFO 缓冲区，甚至可以与非传感器组件共享，具体取决于传感器核心设计。 低功率传感器核心正在连接到应用程序处理器，并可集成到 SoC。 或者，它可能是外部组件。
+-   **配置 2** ： FIFO 缓冲区是在传感器组件连接到的低功率传感器硬件核心中实现的。 在这种情况下，可在多个传感器之间共享 FIFO 缓冲区，甚至可以与非传感器组件共享，具体取决于传感器核心设计。 低功率传感器核心正在连接到应用程序处理器，并可集成到 SoC。 或者，它可能是外部组件。
 
--   **配置 3**：在传感器组件上实现 FIFO 缓冲区。 传感器组件连接到连接到应用程序处理器的低功率传感器核心。 传感器组件可以集成到 SoC 中，也可以是外部组件。
+-   **配置 3** ：在传感器组件上实现 FIFO 缓冲区。 传感器组件连接到连接到应用程序处理器的低功率传感器核心。 传感器组件可以集成到 SoC 中，也可以是外部组件。
 
--   **配置 4**： FIFO 缓冲区是在传感器组件和低功率传感器核心上实现的。 传感器组件连接到电源传感器核心，而后者又连接到应用程序处理器。 传感器组件可以集成到 SoC 中，也可以是外部组件。 值得注意的是，可以使用传感器核心来扩展太浅的 FIFO。
+-   **配置 4** ： FIFO 缓冲区是在传感器组件和低功率传感器核心上实现的。 传感器组件连接到电源传感器核心，而后者又连接到应用程序处理器。 传感器组件可以集成到 SoC 中，也可以是外部组件。 值得注意的是，可以使用传感器核心来扩展太浅的 FIFO。
 
 要注意的重要一点是，可在传感器核心硬件或传感器硬件上实现 FIFO。 该驱动程序将为操作系统提取此的摘要，并通过 DDSI 显示统一的接口。
 
@@ -125,7 +125,5 @@ ms.locfileid: "92356005"
 
 **Buffer-硬件中的完整行为**
 
-在正常情况下，驱动程序应该每隔一段时间间隔至少读取一次硬件缓冲区 *，以*确保不会丢弃或丢失任何数据。 当硬件 FIFO 缓冲区填满时，它应换行并表现为类似于循环缓冲区的覆盖旧事件。
-
- 
+在正常情况下，驱动程序应该每隔一段时间间隔至少读取一次硬件缓冲区 *，以* 确保不会丢弃或丢失任何数据。 当硬件 FIFO 缓冲区填满时，它应换行并表现为类似于循环缓冲区的覆盖旧事件。
 

@@ -3,16 +3,16 @@ description: MUTT 连接试验类型 C (USB Type-C ConnEx) 硬件板是 Arduino 
 title: 通过 USB 类型 C ConnEx 测试 USB 类型 C 系统
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4e1ed729d3e50c66b9a515ed7b289fb3a5f77392
-ms.sourcegitcommit: be37c8ccfe838869eec6fae4112017eb6a96d848
+ms.openlocfilehash: e3edf56e6025e5fbb43b87dcf25323c3af9bb04e
+ms.sourcegitcommit: ec7bebe3f94536455e62b372c2a28fe69d1717f7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92630158"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93349761"
 ---
 # <a name="test-usb-type-c-systems-with-usb-type-c-connex"></a>通过 USB 类型 C ConnEx 测试 USB 类型 C 系统
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 - 使用 USB 类型进行自动测试-C ConnEx
 - Windows 10 中的 USB 类型 C 互操作性测试过程：功能测试 (FT) 和压力测试 (ST) 。
@@ -209,7 +209,7 @@ MUTT 连接试验类型 C (USB Type-C ConnEx) 硬件板是 Arduino 板的自定�
 <tr class="header">
 <th>使用案例</th>
 <th>选项</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>
@@ -601,7 +601,7 @@ USB 类型-C ConnEx 上的板载 LCD 显示电源 (伏特、安培和方向) 。
 
 ## <a name="using-etw-to-log-issues"></a>使用 ETW 记录问题
 
-请参阅 [如何使用 Logman 捕获 USB 事件跟踪](/windows-hardware/drivers/usbcon/how-to-capture-a-usb-event-trace)
+请参阅 [如何使用 Logman 捕获 USB 事件跟踪](./how-to-capture-a-usb-event-trace.md)
 
 ## <a name="reporting-test-results"></a>报告测试结果
 

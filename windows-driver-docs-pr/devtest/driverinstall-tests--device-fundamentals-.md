@@ -4,12 +4,12 @@ description: 驱动程序安装测试类别包括多次卸载和重新安装驱�
 ms.assetid: 3FC00D4B-6520-45F1-805C-A5F8B6AACAC8
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d58069cd8a66a2c4f7932acbe5f11e148df42149
-ms.sourcegitcommit: 20eac54e419a594f7cea766ee28f158559dfd79c
+ms.openlocfilehash: af1858d53da3138d2dfbe36773127a26afcb656e
+ms.sourcegitcommit: ec7bebe3f94536455e62b372c2a28fe69d1717f7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91754890"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93349743"
 ---
 # <a name="driver-install-tests-device-fundamentals"></a>驱动程序安装测试（设备基础功能）
 
@@ -21,11 +21,11 @@ ms.locfileid: "91754890"
 
 此测试将卸载并重新安装所选设备的驱动程序，并在设备上运行 i/o 测试。
 
-**测试二进制文件**： Devfund_Reinstall_With_IO_BeforeAndAfter。 wsc
+**测试二进制文件** ： Devfund_Reinstall_With_IO_BeforeAndAfter。 wsc
 
-**测试方法**： Reinstall_With_IO_Before_And_After
+**测试方法** ： Reinstall_With_IO_Before_And_After
 
-**参数**： [*DQ*] 和 [*IOPeriod*] 有关详细信息，请参阅[如何选择和配置设备基础测试](../develop/how-to-select-and-configure-the-device-fundamental-tests.md#device-fundamentals-test-parameters)中的 "设备基础测试参数"。
+**参数** ： [ *DQ* ] 和 [ *IOPeriod* ] 有关详细信息，请参阅 [如何选择和配置设备基础测试](../develop/how-to-select-and-configure-the-device-fundamental-tests.md#device-fundamentals-test-parameters)中的 "设备基础测试参数"。
 
 ## <a name="about-the-reinstall-with-io-before-and-after-test"></a>关于测试前后的 i/o 重新安装
 
@@ -33,12 +33,12 @@ ms.locfileid: "91754890"
 
 1. 验证测试设备及其后代是否未报告任何设备问题代码。
 2. 使用 WDTF Simple i/o 插件测试测试设备及其后代上的 i/o。 有关详细信息，请参阅 [提供的 WDTF 简单 i/o 插件](../wdtf/provided-wdtf-simpleio-plug-ins.md) 。
-3. 使用 [**IWDTFDriverSetupAction2：： UpdateDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdtfdriversetupdeviceaction/nf-wdtfdriversetupdeviceaction-iwdtfdriversetupaction2-updatedriver) 方法在测试设备上重新安装原始驱动程序。
+3. 使用 [**IWDTFDriverSetupAction2：： UpdateDriver**](/windows-hardware/drivers/ddi/wdtfdriversetupdeviceaction/nf-wdtfdriversetupdeviceaction-iwdtfdriversetupaction2-updatedriver) 方法在测试设备上重新安装原始驱动程序。
 4. 验证测试设备及其后代是否未报告任何设备问题代码。
 5. 使用 WDTF Simple i/o 插件测试测试设备及其后代上的 i/o。 有关详细信息，请参阅 [提供的 WDTF 简单 i/o 插件](../wdtf/provided-wdtf-simpleio-plug-ins.md) 。
 6. 如果步骤 \# 3 需要重新启动，则重新启动系统。
-7. 在测试设备上使用 [**IWDTFDriverSetupAction2：： UnInstallDriverPermanently**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdtfdriversetupdeviceaction/nf-wdtfdriversetupdeviceaction-iwdtfdriversetupaction2-uninstalldriverpermanently) 方法安装 NULL 驱动程序，以便在需要重新启动时重新启动系统。
-8. 使用 [**IWDTFDriverSetupAction2：： UpdateDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdtfdriversetupdeviceaction/nf-wdtfdriversetupdeviceaction-iwdtfdriversetupaction2-updatedriver) 方法在受测设备上重新安装原始驱动程序。
+7. 在测试设备上使用 [**IWDTFDriverSetupAction2：： UnInstallDriverPermanently**](/windows-hardware/drivers/ddi/wdtfdriversetupdeviceaction/nf-wdtfdriversetupdeviceaction-iwdtfdriversetupaction2-uninstalldriverpermanently) 方法安装 NULL 驱动程序，以便在需要重新启动时重新启动系统。
+8. 使用 [**IWDTFDriverSetupAction2：： UpdateDriver**](/windows-hardware/drivers/ddi/wdtfdriversetupdeviceaction/nf-wdtfdriversetupdeviceaction-iwdtfdriversetupaction2-updatedriver) 方法在受测设备上重新安装原始驱动程序。
 9. 验证测试设备及其后代是否未报告任何设备问题代码。
 10. 使用 WDTF Simple i/o 插件测试测试设备及其后代上的 i/o。 有关详细信息，请参阅 [提供的 WDTF 简单 i/o 插件](../wdtf/provided-wdtf-simpleio-plug-ins.md) 。
 11. 多次重复步骤 1-10。

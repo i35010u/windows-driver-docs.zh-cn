@@ -3,12 +3,12 @@ title: Windows 10 UVC 相机实现指南
 description: 概述如何通过收件箱驱动程序向应用程序公开 USB 视频类兼容相机的某些功能。
 ms.date: 08/16/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: b35a53e7225fde54b7caae5b47b3278f13a403b5
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: b35d3ab2e88f885b5d33851663912e687f191824
+ms.sourcegitcommit: ec7bebe3f94536455e62b372c2a28fe69d1717f7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91734129"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93349767"
 ---
 # <a name="windows-10-uvc-camera-implementation-guide"></a>Windows 10 UVC 相机实现指南
 
@@ -16,7 +16,7 @@ Windows 10 提供了一个收件箱 USB 视频类 (UVC) 驱动程序与 USB 视�
 
 ## <a name="terminology"></a>术语
 
-| 关键字              | 说明                                                                  |
+| 关键字              | 描述                                                                  |
 |----------------------|------------------------------------------------------------------------------|
 | UVC                  | USB 视频类                                                              |
 | UVC 驱动程序           | 操作系统附带 USBVideo.sys 驱动程序                                   |
@@ -32,13 +32,13 @@ Windows 支持两种类型的相机。 一个是彩色相机，另一个是非�
 
 支持仅颜色格式类型的照相机应在 KSCATEGORY 视频相机下进行注册 \_ \_ 。 支持 IR 或仅深度格式类型的照相机应在 KSCATEGORY 传感器照相机下进行 \_ 注册 \_ 。 支持颜色和非颜色格式类型的照相机应在 KSCATEGORY \_ 视频 \_ 摄像机和 KSCATEGORY \_ 传感器相机下进行注册 \_ 。 此分类可帮助应用程序选择他们想要使用的相机。
 
-UVC 照相机可以通过属性 **SensorCameraMode** 和 **SkipCameraEnumeration**指定其类别首选项，其 BOS [MS OS 2.0 描述符](../usbcon/microsoft-defined-usb-descriptors.md) 在以下各节中详细说明。
+UVC 照相机可以通过属性 **SensorCameraMode** 和 **SkipCameraEnumeration** 指定其类别首选项，其 BOS [MS OS 2.0 描述符](../usbcon/microsoft-defined-usb-descriptors.md) 在以下各节中详细说明。
 
 属性 **SensorCameraMode** 的值为1或2。
 
 值为1，将在 KSCATEGORY 传感器相机下注册 \_ 设备 \_ 。 除了将 **SkipCameraEnumeration** 的值指定为1外，还可以使相机仅适用于查看传感器相机的应用程序。 仅限显示传感器相机媒体类型的相机应使用此值。
 
-如果 **SensorCameraMode**的值为2，则将在 KSCATEGORY \_ 传感器 \_ 相机 & KSCATEGORY \_ 视频相机下注册设备 \_ 。 这会使相机适用于查找传感器和彩色照相机的应用程序。 同时公开传感器相机和彩色相机介质类型的相机应使用此值。
+如果 **SensorCameraMode** 的值为2，则将在 KSCATEGORY \_ 传感器 \_ 相机 & KSCATEGORY \_ 视频相机下注册设备 \_ 。 这会使相机适用于查找传感器和彩色照相机的应用程序。 同时公开传感器相机和彩色相机介质类型的相机应使用此值。
 
 建议使用 BOS 描述符指定上面提到的注册表值。 请参阅下面的 [示例复合设备](#example-composite-device) 部分，获取带有特定于平台的 MS OS 2.0 描述符的示例 BOS 描述符。
 
@@ -46,9 +46,9 @@ UVC 照相机可以通过属性 **SensorCameraMode** 和 **SkipCameraEnumeration
 
 基于收件箱 UVC 驱动程序 (自定义 INF 文件) 必须包括以下 AddReg 条目：
 
-**SensorCameraMode**： \_ 要注册为传感器相机 (REG DWORD： 1) 
+**SensorCameraMode** ： \_ 要注册为传感器相机 (REG DWORD： 1) 
 
-**SkipCameraEnumeration**： REG \_ DWORD： 1 (使其仅可用于 IR 应用程序) 
+**SkipCameraEnumeration** ： REG \_ DWORD： 1 (使其仅可用于 IR 应用程序) 
 
 自定义 INF 部分的示例如下所示：
 
@@ -73,7 +73,7 @@ Windows 收件箱 USB 视频类 (UVC) 驱动程序支持以 YUV 格式捕获场�
 
 以下格式类型 Guid 应在流视频格式描述符中指定，如 WDK ksmedia 头文件中定义的那样：
 
-| 类型 | 说明 |
+| 类型 | 描述 |
 | --- | --- |
 | KSDATAFORMAT \_ 子类型 \_ L8 \_ IR |  未压缩的8位亮度平面。 此类型映射到 [MFVideoFormat \_ L8](/windows/desktop/medfound/video-subtype-guids#luminance-and-depth-formats)。 |
 | KSDATAFORMAT \_ 子类型 \_ L16 \_ IR | 未压缩的16位亮度平面。 此类型映射到 [MFVideoFormat \_ L16](/windows/desktop/medfound/video-subtype-guids#luminance-and-depth-formats)。 |
@@ -111,7 +111,7 @@ typedef struct _VIDEO_FORMAT_FRAME
 
 Windows 收件箱 USB 视频类驱动程序支持生成深度流的相机。 这些相机捕获详细信息 (例如，屏幕航班时间) ，并通过 USB 以未压缩的 YUV 帧形式传输深度地图。 应在流视频格式描述符中指定以下格式类型 GUID，如 WDK ksmedia 头文件中定义的那样：
 
-| 类型 | 说明 |
+| 类型 | 描述 |
 | --- | --- |
 | KSDATAFORMAT \_ 子类型 \_ D16 |  16位深度映射值。 此类型与 [MFVideoFormat \_ D16](/windows/desktop/medfound/video-subtype-guids#luminance-and-depth-formats)相同。 值为毫米。 |
 
@@ -148,17 +148,17 @@ Windows 支持根据其容器 ID 对照相机分组，以帮助应用程序使�
 
 相机功能之间的关系可以在固件中照相机的 BOS 描述符中指定。 UVC 驱动程序将利用此信息，并将这些相机功能公开为相关。 这会使 OS 相机堆栈将它们作为一组相关的摄像机公开给应用程序。
 
-照相机固件必须指定 *UVC-FSSensorGroupID*，它是带有大括号的字符串格式的 GUID。 具有相同 *UVC-FSSensorGroupID* 的相机将组合在一起。
+照相机固件必须指定 *UVC-FSSensorGroupID* ，它是带有大括号的字符串格式的 GUID。 具有相同 *UVC-FSSensorGroupID* 的相机将组合在一起。
 
-可以通过在固件中指定 *UVC-FSSensorGroupName*（一个 Unicode 字符串）来指定传感器组的名称。
+可以通过在固件中指定 *UVC-FSSensorGroupName* （一个 Unicode 字符串）来指定传感器组的名称。
 
-请参阅下面的示例复合设备部分，了解用于指定 *UVC-FSSensorGroupID* 和 *UVC-FSSensorGroupName*的演示示例 BOS。
+请参阅下面的示例复合设备部分，了解用于指定 *UVC-FSSensorGroupID* 和 *UVC-FSSensorGroupName* 的演示示例 BOS。
 
 如以上所述，如果你无法更新设备固件，则可以使用自定义 INF，并通过指定传感器组 ID 和名称来指定你的相机属于传感器组，如下所示。 自定义 INF 文件 (基于收件箱 UVC 驱动程序) 必须包括以下 AddReg 条目：
 
-**FSSensorGroupID**： REG_SZ： "{你的传感器组 ID GUID}"
+**FSSensorGroupID** ： REG_SZ： "{你的传感器组 ID GUID}"
 
-**FSSensorGroupName**： REG_SZ： "你的传感器组友好名称"
+**FSSensorGroupName** ： REG_SZ： "你的传感器组友好名称"
 
 自定义 INF 部分的示例如下所示：
 
@@ -188,13 +188,13 @@ HKR,, FSSensorGroupName,0x00000000,%FSSensorGroupName%
 
 UVC 规范提供一种机制，用于指定视频流接口是否支持方法1/2/3 类型静止图像捕获。 为了使 OS 利用设备的方法2/3 静止图像捕获支持，通过 UVC 驱动程序，设备固件可以在 BOS 描述符中指定一个值。
 
-为启用方法2/3 仍为映像捕获指定的值为名为 *UVC-EnableDependentStillPinCapture*的 DWORD。 使用 BOS 说明符指定其值。 下面的 [示例复合设备](#example-composite-device) 演示如何使用示例 BOS 描述符启用静态图像捕获。
+为启用方法2/3 仍为映像捕获指定的值为名为 *UVC-EnableDependentStillPinCapture* 的 DWORD。 使用 BOS 说明符指定其值。 下面的 [示例复合设备](#example-composite-device) 演示如何使用示例 BOS 描述符启用静态图像捕获。
 
 如以上所述，如果无法更新设备固件，则可以使用自定义 INF 来指定相机支持方法2或方法3仍捕获方法。
 
 自定义 INF 文件 (基于自定义 UVC 驱动程序或收件箱 UVC 驱动程序) 必须包括以下 AddReg 项：
 
-**EnableDependentStillPinCapture**： REG_DWORD： 0X0 (禁用了) 到0x1 的 () 
+**EnableDependentStillPinCapture** ： REG_DWORD： 0X0 (禁用了) 到0x1 的 () 
 
 如果此项设置为 "已启用" (0x1) ，则捕获管道将利用方法2/3 进行静止映像捕获 (假定固件还向 UVC spec) 指定的方法2/3 公布支持。
 
@@ -273,11 +273,11 @@ HKR,,EnableDependentStillPinCapture,0x00010001,0x00000001
   - CameraDeviceMftCLSIDChain =% Dmft0。CLSID%，% Dmft1。CLSID%，
 
 > [!NOTE]
-> **CameraDeviceMftCLSIDChain**最多可以有两个 clsid。
+> **CameraDeviceMftCLSIDChain** 最多可以有两个 clsid。
 
 如果配置了 **CameraDeviceMftCLSIDChain** ，则 DTM 将跳过旧的 CameraDeviceMftCLSID 设置。
 
-如果未配置**CameraDeviceMftCLSIDChain** ，并且配置了旧版 CameraDeviceMftCLSID，则如果已启用平台 DMFT 和平台 DMFT 的 USB 相机并受平台和平台支持，则该链将如下所示 () DevProxy &lt; – &gt; platform DMFT &lt; – &gt; OEM/IHV DMFT 或 (如果禁用了平台 DMFT 或平台 DMFT) DevProxy &lt; - &gt; OEM/IHV DMFT。
+如果未配置 **CameraDeviceMftCLSIDChain** ，并且配置了旧版 CameraDeviceMftCLSID，则如果已启用平台 DMFT 和平台 DMFT 的 USB 相机并受平台和平台支持，则该链将如下所示 () DevProxy &lt; – &gt; platform DMFT &lt; – &gt; OEM/IHV DMFT 或 (如果禁用了平台 DMFT 或平台 DMFT) DevProxy &lt; - &gt; OEM/IHV DMFT。
 
 示例 INF 文件设置：
 
@@ -310,7 +310,7 @@ UVC 照相机可以通过指定 EnablePlatformDmft 到 BOS 描述符来选择使
 
 自定义 INF 文件 (基于自定义 UVC 驱动程序或收件箱 UVC 驱动程序) 必须包括以下 AddReg 项：
 
-**EnablePlatformDmft**： REG_DWORD： 0X0 (禁用了) 到0x1 的 () 
+**EnablePlatformDmft** ： REG_DWORD： 0X0 (禁用了) 到0x1 的 () 
 
 如果将此项设置为 "已启用" (0x1) ，则捕获管道将使用收件箱平台 DMFT 作为设备。 下面显示了此自定义 INF 部分的示例：
 
@@ -368,7 +368,7 @@ Windows 10 RS5 现对具有 Windows Hello 支持的任何照相机强制执行�
 
 标头部分描述 (面部身份验证配置文件) 的单个自定义属性。
 
-| Offset | 字段      | 大小（字节） | 值  | 说明                     |
+| Offset | 字段      | 大小（字节） | 值  | 描述                     |
 | ------ | ---------- | ------------ | ------ | ------------------------------- |
 | 0      | dwLength   | 4            | \<\>   |                                 |
 | 4      | bcdVersion | 2            | 0x0100 | 版本 1.0                     |
@@ -377,7 +377,7 @@ Windows 10 RS5 现对具有 Windows Hello 支持的任何照相机强制执行�
 
 #### <a name="microsoft-os-10-descriptor-custom-property-section"></a>Microsoft OS 1.0 描述符自定义属性部分
 
-| Offset | 字段                | 大小（字节） | 值                 | 说明                                |
+| Offset | 字段                | 大小（字节） | 值                 | 描述                                |
 | ------ | -------------------- | ------------ | --------------------- | ------------------------------------------ |
 | 0      | dwSize               | 4            | 0x00000036 (54)        | 此属性) 的总大小 (（以字节为单位）。   |
 | 4      | dwPropertyDataType   | 4            | 0x00000004            | REG \_ DWORD \_ 小 \_ 字节序                 |
@@ -388,7 +388,7 @@ Windows 10 RS5 现对具有 Windows Hello 支持的任何照相机强制执行�
 
 ##### <a name="payload-schema"></a>有效负载架构
 
-UVC-CPV2FaceAuth 数据负载为32位无符号整数。 高阶16位表示由 RGB pin 公开的媒体类型列表的索引（从0开始）。 低序位16位表示由 IR pin 公开的媒体类型列表的索引（从0开始）。
+UVC-CPV2FaceAuth 的数据负载为32位无符号整数。 高阶16位表示由 RGB pin 公开的媒体类型列表的索引（从0开始）。 低序位16位表示由 IR pin 公开的媒体类型列表的索引（从0开始）。
 
 例如，按从 RGB pin 声明的顺序公开以下媒体类型的类型3照相机：
 
@@ -408,7 +408,7 @@ UVC-CPV2FaceAuth 数据负载为32位无符号整数。 高阶16位表示由 RGB
 Pin0： (RES = = 1280，720;FRT = = 30，1;SUT = = MJPG) //第二种媒体类型 (0x0001)   
 Pin1： (RES = = 480480;FRT = = 30，1;SUT = = L8) //第一种媒体类型 (0x0000) 
 
-> **注意**：编写本文时，Windows HELLO 对 480x480@7.5fps RGB 流和 IR 流的要求最低 340x340@15fps 。 启用面部身份验证配置文件时，需要将 IHV/Oem 选为满足此要求的媒体类型。
+> **注意** ：编写本文时，Windows HELLO 对 480x480@7.5fps RGB 流和 IR 流的要求最低 340x340@15fps 。 启用面部身份验证配置文件时，需要将 IHV/Oem 选为满足此要求的媒体类型。
 
 ##### <a name="type-1-camera-sample"></a>键入1相机示例
 
@@ -439,7 +439,7 @@ Pin1： (RES = = 480480;FRT = = 30，1;SUT = = L8) //第一种媒体类型 (0x00
 
 MSO 扩展描述符2.0 可用于定义注册表值，以添加人脸身份验证配置文件支持。 这是使用 [MICROSOFT OS 2.0 注册表属性描述符](#microsoft-os-20-registry-property-descriptor)实现的。
 
-对于 UVC CPV2FaceAuth 注册表项，以下示例显示了一个示例 MSO 2.0 描述符集：
+对于 UVC-CPV2FaceAuth 注册表项，以下示例显示了一个示例 MSO 2.0 描述符集：
 
 ```cpp
 UCHAR Example2_MSOS20DescriptorSet_UVCFaceAuthForFutureWindows[0x3C] =
@@ -473,7 +473,7 @@ UCHAR Example2_MSOS20DescriptorSet_UVCFaceAuthForFutureWindows[0x3C] =
 }
 ```
 
-添加 UVC-CPV2FaceAuth 注册表项时，设备无需发布 EnableDshowRedirection 注册表项，如 [UVC 设备 DShow Bridge 实现指南](/windows-hardware/drivers/stream/dshow-bridge-implementation-guidance-for-usb-video-class-devices)中所述。
+添加 UVC-CPV2FaceAuth 注册表项时，设备无需按照 [UVC 设备的 DShow Bridge 实现指南](./dshow-bridge-implementation-guidance-for-usb-video-class-devices.md)中所述发布 EnableDshowRedirection 注册表项。
 
 但是，如果设备供应商必须支持较旧版本的 Windows 和/或需要在框架服务器中启用 MJPEG 解压缩，则必须添加 EnableDshowRedirection 注册表项。
 
@@ -525,7 +525,7 @@ UVC 兼容相机可以使用 [MICROSOFT OS 2.0 描述符](/previous-versions/dn3
 
 ### <a name="microsoft-os-20-descriptor-set-header"></a>Microsoft 操作系统2.0 描述符集标头
 
-| Offset | 字段            | 大小（字节） | 说明                                                                  |
+| Offset | 字段            | 大小（字节） | 描述                                                                  |
 | ------ | ---------------- | ------------ | ---------------------------------------------------------------------------- |
 | 0      | wLength          | 2            | 此标头的长度（以字节为单位）必须为10。                                  |
 | 2      | wDescriptorType  | 2            | MSOS20 \_ 集 \_ 标头 \_ 描述符                                              |
@@ -534,7 +534,7 @@ UVC 兼容相机可以使用 [MICROSOFT OS 2.0 描述符](/previous-versions/dn3
 
 ### <a name="microsoft-os-20-registry-property-descriptor"></a>Microsoft OS 2.0 注册表属性描述符
 
-| Offset | 字段               | 大小（字节） | 说明                        |
+| Offset | 字段               | 大小（字节） | 描述                        |
 | ------ | ------------------- | ------------ | ---------------------------------- |
 | 0      | wLength             | 2            | 此描述符的长度（以字节为单位） |
 | 2      | wDescriptorType     | 2            | MS \_ OS \_ 20 \_ 功能 \_ 注册 \_ 属性 |
@@ -558,10 +558,10 @@ UVC 驱动程序从设备 HW 注册表项读取配置值，并相应地在操作
 
 ## <a name="currently-supported-configuration-values-through-bos-descriptor"></a>当前通过 BOS 描述符支持的配置值
 
-| 配置名称 | 类型 | 说明 |
+| 配置名称 | 类型 | 描述 |
 | --- | --- | --- |
 | SensorCameraMode                              | REG \_ DWORD | 将照相机注册到特定类别下。  |
-| UVC-FSSensorGroupID<br>UVC-FSSensorGroupName  | REG\_SZ    | 具有相同 UVC 的组照相机-FSSensorGroupID |
+| UVC-FSSensorGroupID<br>UVC-FSSensorGroupName  | REG\_SZ    | 具有相同 UVC-FSSensorGroupID 的组照相机 |
 | UVC-EnableDependentStillPinCapture            | REG \_ DWORD | 启用仍捕获方法2/3              |
 | UVC-EnablePlatformDmft                        | REG \_ DWORD | 启用平台 DMFT                         |
 

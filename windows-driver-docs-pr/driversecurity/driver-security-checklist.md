@@ -4,12 +4,12 @@ description: 本文为驱动程序开发人员提供了驱动程序安全核对�
 ms.assetid: 25375E02-FCA1-4E94-8D9A-AA396C909278
 ms.date: 03/13/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 7772f3866fdc6851ced73ccf2c5c07ce5e61504c
-ms.sourcegitcommit: 1690ad77580a2cfc47debb9751fd109a5991dd52
+ms.openlocfilehash: 74457f0d00a477074519b818e58e5cbbf4edc03b
+ms.sourcegitcommit: ec7bebe3f94536455e62b372c2a28fe69d1717f7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92345937"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93349763"
 ---
 # <a name="driver-security-checklist"></a>驱动程序安全清单
 
@@ -239,7 +239,7 @@ Windows 驱动程序的主要职责之一是在用户模式应用程序和系统
 
 #### <a name="handle-irp-cleanup-and-close-operations-properly"></a>正确处理 IRP 清理并关闭操作
 
-请确保了解 [**IRP \_ mj \_ 清除**](../kernel/irp-mj-cleanup.md) 和 [**irp \_ mj \_ 关闭**](../kernel/irp-mj-close.md) 请求之间的差异。 清理请求在应用程序关闭文件对象上的所有句柄之后，但有时在所有 i/o 请求完成之前到达。 完成或取消对文件对象的所有 i/o 请求后，关闭请求即可到达。 有关详细信息，请参阅下列文章：
+请确保了解 [**IRP \_ mj \_ 清除**](../kernel/irp-mj-cleanup.md) 和 [**irp \_ mj \_ 关闭**](../kernel/irp-mj-close.md) 请求之间的差异。 清理请求在应用程序关闭文件对象上的所有句柄之后，但有时在所有 i/o 请求完成之前到达。 完成或取消对文件对象的所有 i/o 请求后，关闭请求即可到达。 有关详细信息，请参阅以下文章：
 
 [DispatchCreate、DispatchClose 和 DispatchCreateClose 例程](../kernel/dispatchcreate--dispatchclose--and-dispatchcreateclose-routines.md)
 
@@ -297,7 +297,7 @@ Windows 驱动程序的主要职责之一是在用户模式应用程序和系统
 
 如果使用的是 WDM 驱动程序，并且使用的是命名设备对象，则可以使用 [IoCreateDeviceSecure](/windows-hardware/drivers/ddi/wdmsec/nf-wdmsec-wdmlibiocreatedevicesecure) 并指定 SDDL 来保护它。 实现 [IoCreateDeviceSecure](/windows-hardware/drivers/ddi/wdmsec/nf-wdmsec-wdmlibiocreatedevicesecure) 时，请始终指定 DeviceClassGuid 的自定义类 GUID。 不应在此指定现有的类 GUID。 这样做可能会中断属于该类的其他设备的安全设置或兼容性。 有关详细信息，请参阅 [WdmlibIoCreateDeviceSecure](/windows-hardware/drivers/ddi/wdmsec/nf-wdmsec-wdmlibiocreatedevicesecure)。
 
-有关详细信息，请参阅下列文章：
+有关详细信息，请参阅以下文章：
 
 [控制设备访问权限](../kernel/controlling-device-access.md)
 
@@ -331,7 +331,7 @@ AC (Application Container)
 
 实现精细的 IOCTL 安全控制不会取代使用上述技术来管理驱动程序访问的需要。
 
-有关详细信息，请参阅下列文章：
+有关详细信息，请参阅以下文章：
 
 [定义 I/O 控制代码](../kernel/defining-i-o-control-codes.md)
 
@@ -365,13 +365,13 @@ AC (Application Container)
 
 有关详细信息，请参阅以下文章：
 
-[文件系统安全性简介](/windows-hardware/drivers/ifs/introduction-to-file-systems-security)
+[文件系统安全性简介](../ifs/introduction-to-file-systems-security.md)
 
 [文件系统安全问题](../ifs/file-system-security-issues.md)
 
 [文件系统的安全功能](../ifs/security-features-for-file-systems.md)
 
-[与其他文件系统筛选器驱动程序共存](/windows-hardware/drivers/ifs/coexistence-with-other-file-system-filter-drivers)
+[与其他文件系统筛选器驱动程序共存](../ifs/coexistence-with-other-file-system-filter-drivers.md)
 
 ### <a name="ndis---networking"></a>NDIS-网络
 
@@ -402,7 +402,7 @@ AC (Application Container)
 - 限制对设备的 WMI 类的访问
 - 正确使用 Setupapi.log 函数
 
-有关详细信息，请参阅下列文章：
+有关详细信息，请参阅以下文章：
 
 [创建安全的设备安装](../install/creating-secure-device-installations.md)
 
@@ -414,7 +414,7 @@ AC (Application Container)
 
 ## <a name="perform-peer-code-review"></a>执行对等代码评审
 
-**安全清单项 \# 11：** *执行对等代码评审，以查找其他工具和进程未*显示的问题
+**安全清单项 \# 11：** *执行对等代码评审，以查找其他工具和进程未* 显示的问题
 
 寻找熟悉的代码审阅者，查找可能丢失的问题。 另一组眼睛通常会发现可能已被忽略的问题。
 
@@ -440,7 +440,7 @@ AC (Application Container)
 
 1. 在 Visual Studio 中打开驱动程序解决方案。
 
-2. 在 Visual Studio 中，对于解决方案中的每个项目，将项目属性更改为使用所需的规则集。 例如：项目 &gt; &gt; 属性 &gt; &gt; 代码分析 &gt; &gt; 常规，请选择 "*推荐的驱动程序规则*"。 除了使用 recommenced 驱动程序规则之外，还可以使用 " *建议的本机规则* " 规则集。
+2. 在 Visual Studio 中，对于解决方案中的每个项目，将项目属性更改为使用所需的规则集。 例如：项目 &gt; &gt; 属性 &gt; &gt; 代码分析 &gt; &gt; 常规，请选择 " *推荐的驱动程序规则* "。 除了使用 recommenced 驱动程序规则之外，还可以使用 " *建议的本机规则* " 规则集。
 
 3. 选择 &gt; &gt; "生成" "对解决方案运行代码分析"。
 
@@ -476,19 +476,19 @@ AC (Application Container)
 
 1. 在 Visual Studio 中打开目标驱动程序解决方案。
 
-2. 在 Visual Studio 中，将生成类型更改为 " *发布*"。 静态驱动程序验证程序要求生成类型为 release，而不是调试。
+2. 在 Visual Studio 中，将生成类型更改为 " *发布* "。 静态驱动程序验证程序要求生成类型为 release，而不是调试。
 
 3. 在 Visual Studio 中，选择 "生成" "生成 &gt; &gt; 解决方案"。
 
 4. 在 Visual Studio 中，选择 "驱动程序 &gt; &gt; 启动静态驱动程序验证程序"。
 
-5. 在 SDV 的 "*规则*" 选项卡上，选择 "*规则集*" 下的 "*默认*"。
+5. 在 SDV 的 " *规则* " 选项卡上，选择 " *规则集* " 下的 " *默认* "。
 
    尽管默认规则发现许多常见问题，但也请考虑运行更全面的 " *所有驱动程序规则* " 规则集。
 
-6. 在 SDV 的 *主* 选项卡上，选择 " *启动*"。
+6. 在 SDV 的 *主* 选项卡上，选择 " *启动* "。
 
-7. 当 SDV 完成时，查看输出中的任何警告。 *主*选项卡显示发现的缺陷总数。
+7. 当 SDV 完成时，查看输出中的任何警告。 *主* 选项卡显示发现的缺陷总数。
 
 8. 选择每个警告以加载 "SDV 报表" 页，并检查与可能的代码漏洞关联的信息。 使用报表调查验证结果，并确定驱动程序中 SDV 验证失败的路径。 有关详细信息，请参阅 [静态驱动程序验证程序报表](../devtest/static-driver-verifier-report.md)。
 
@@ -514,7 +514,7 @@ BinSkim 是一个开源工具，它会生成使用静态分析结果交换格式
 
 2. 下载 BinSkim 的方法有很多，例如 NuGet 包。 在此示例中，我们将从此处下载包含 BinSkim 的 zip 文件： <https://github.com/microsoft/binskim> 并将其安装在64位 WINDOWS 电脑上。
 
-3. 选择上的 " **克隆或下载** " 按钮 <https://github.com/microsoft/binskim> ，然后选择 " **下载 Zip**"。
+3. 选择上的 " **克隆或下载** " 按钮 <https://github.com/microsoft/binskim> ，然后选择 " **下载 Zip** "。
 
 4. 选择已下载的 zip 文件并将其解压缩，例如 `C:\binskim-master` 。
 
@@ -627,7 +627,7 @@ BinSkim 是一个开源工具，它会生成使用静态分析结果交换格式
    To resolve this issue, enable the indicated warning(s) by removing /Wxxxx switches (where xxxx is a warning id indicated here) from your command line, and resolve any warnings subsequently raised during compilation.
    ```
 
-若要在 Visual Studio 中启用这些警告，请在项目的属性页中的 "C/c + +" 下，在 " **禁用特定警告**" 中删除不希望排除的值。
+若要在 Visual Studio 中启用这些警告，请在项目的属性页中的 "C/c + +" 下，在 " **禁用特定警告** " 中删除不希望排除的值。
 
 ![用于在 Visual Studio 2019 中禁用特定警告的对话框](images/disable-specific-warnings-dialog.png)
 
@@ -747,15 +747,15 @@ SAFECode - [https://safecode.org/](https://safecode.org/)
 
 *24 抱问题软件安全：* Michael Howard、David LeBlanc 和 John Viega 的编程缺陷和解决方法
 
-*软件安全评估的内容：识别和预防软件漏洞*，将 Dowd、John 麦克唐纳和 Justin Schuh
+*软件安全评估的内容：识别和预防软件漏洞* ，将 Dowd、John 麦克唐纳和 Justin Schuh
 
-*编写安全软件 Second Edition*、Michael Howard 和 David LeBlanc
+*编写安全软件 Second Edition* 、Michael Howard 和 David LeBlanc
 
-*软件安全评估的内容：识别并防止软件漏洞*，将 Dowd 和约翰麦克唐纳
+*软件安全评估的内容：识别并防止软件漏洞* ，将 Dowd 和约翰麦克唐纳
 
-*C 和 c + + 中的安全编码 (软件工程中的 SEI 系列) 第2版*，Robert Seacord
+*C 和 c + + 中的安全编码 (软件工程中的 SEI 系列) 第2版* ，Robert Seacord
 
-* (第2版) *，Walter Oney Windows 驱动模型
+*(第2版)* ，Walter Oney Windows 驱动模型
 
 *开发包含 Windows Driver Foundation (开发人员参考) 、Orwick 和人员 Smith 的驱动程序*
 

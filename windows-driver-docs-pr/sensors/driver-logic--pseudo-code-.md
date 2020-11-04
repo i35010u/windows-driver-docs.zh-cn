@@ -4,12 +4,12 @@ description: 本部分将关键驱动程序逻辑或任务描述为伪代码。
 ms.assetid: 4B14C515-1B79-4B67-BA9A-365B2D6C0F07
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 520b45acad662e9aa8872918a0b924961f10f310
-ms.sourcegitcommit: a866b3470025d85b25a48857a81f893179698e7e
+ms.openlocfilehash: ddbca4c99880ace5fa348b33bee4400170a9ed0a
+ms.sourcegitcommit: ec7bebe3f94536455e62b372c2a28fe69d1717f7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92356023"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93349685"
 ---
 # <a name="sensor-driver-logic"></a>传感器驱动程序逻辑
 
@@ -39,7 +39,7 @@ ms.locfileid: "92356023"
 
 伪代码包含以下变量。
 
-| 变量    | 说明                                                                          |
+| 变量    | 描述                                                                          |
 |-------------|--------------------------------------------------------------------------------------|
 | sensorID    | 给定传感器的唯一标识符                                                 |
 | clientID    | 给定客户端的唯一标识符                                                 |
@@ -153,4 +153,4 @@ enum deviceState
 
 ## <a name="related-topics"></a>相关主题
 
-[Windows 中的传感器和位置平台简介](/windows-hardware/drivers/sensors/)
+[Windows 中的传感器和位置平台简介](./index.md)

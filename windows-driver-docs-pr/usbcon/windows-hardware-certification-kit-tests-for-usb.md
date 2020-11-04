@@ -3,18 +3,18 @@ description: Windows 硬件实验室工具包 (HLK) 测试可用于其他系统�
 title: 针对 USB 的 Windows Hardware Lab Kit (HLK) 测试
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b1e05bedd543047713987adcba9bb30a18f4c4bc
-ms.sourcegitcommit: a866b3470025d85b25a48857a81f893179698e7e
+ms.openlocfilehash: 67476d569f4e63bf6cc0d3a16712e9793897c73e
+ms.sourcegitcommit: ec7bebe3f94536455e62b372c2a28fe69d1717f7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92355993"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93349603"
 ---
 # <a name="windows-hardware-lab-kit-hlk-tests-for-usb"></a>针对 USB 的 Windows Hardware Lab Kit (HLK) 测试
 
 Windows 硬件实验室工具包 (HLK) 测试可用于其他系统、USB 主机控制器、集线器和设备测试。 这些测试涵盖了基本的设备功能、可靠性以及 Windows 的兼容性。
 
-## <a name="prerequisites"></a>必备条件
+## <a name="prerequisites"></a>先决条件
 
 开始运行徽标测试之前，请确保满足以下要求：
 
@@ -52,7 +52,7 @@ Windows 硬件实验室工具包 (HLK) 测试可用于其他系统、USB 主机�
 按照 [WINDOWS HLK 入门](/windows-hardware/test/hlk/getstarted/windows-hlk-getting-started)中的步骤1-5 操作后，请确保：
 
 - 在步骤5中，在 HLK Studio 的 " **选择** " 选项卡中选择了正确的设备。
-- 在步骤6中，所有适用于你的设备的测试都显示在 HLK studio 的 " **测试** " 选项卡中。 若要运行这些测试，必须在左侧的复选框中选择测试，然后单击 " **运行所选项**"。 本文档的以下部分列出了对 USB 测试的测试。
+- 在步骤6中，所有适用于你的设备的测试都显示在 HLK studio 的 " **测试** " 选项卡中。 若要运行这些测试，必须在左侧的复选框中选择测试，然后单击 " **运行所选项** "。 本文档的以下部分列出了对 USB 测试的测试。
 
 有关计划测试的信息，请参阅 [WINDOWS HLK 入门]( /windows-hardware/test/hlk/getstarted/windows-hlk-getting-started)中的步骤2-6。
 
@@ -65,4 +65,4 @@ Windows 硬件实验室工具包 (HLK) 测试可用于其他系统、USB 主机�
 
 ## <a name="related-topics"></a>相关主题
 
-[Microsoft USB 测试工具 (MUTT) 设备的概述](/windows-hardware/drivers/usbcon/microsoft-usb-test-tool--mutt--devices)
+[Microsoft USB 测试工具 (MUTT) 设备的概述](./microsoft-usb-test-tool--mutt--devices.md)
