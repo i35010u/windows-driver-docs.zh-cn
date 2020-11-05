@@ -14,16 +14,16 @@ keywords:
 - 负载配置 WDK 启动选项
 ms.date: 04/19/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: b1a789946fb716f8390fd39a5f5e47d97100a0f6
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 3cc3990b9110cce2edb554f9659d256407ac5fc9
+ms.sourcegitcommit: 3464f10ffa0727e38fbe225cfab52bb8c2bb1747
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89384389"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93352984"
 ---
 # <a name="tools-for-changing-boot-options-for-driver-testing-and-debugging"></a>用于更改驱动程序测试和调试启动选项的工具
 
-若要在 Microsoft Windows 操作系统上测试和调试驱动程序，必须启用并配置在加载操作系统时创建的功能。 这些功能的设置包含在 *启动选项*中，这些值用于确定启动加载程序如何加载和配置操作系统以及其他可启动程序和设备。
+若要在 Microsoft Windows 操作系统上测试和调试驱动程序，必须启用并配置在加载操作系统时创建的功能。 这些功能的设置包含在 *启动选项* 中，这些值用于确定启动加载程序如何加载和配置操作系统以及其他可启动程序和设备。
 
 
 本部分介绍如何添加、删除和更改启动选项以创建操作系统的新负载配置，以及如何使用启动项参数自定义用于驱动程序测试和调试的负载配置。
@@ -48,12 +48,10 @@ ms.locfileid: "89384389"
 
 本节包括：
 
-- [启动选项简介]()
 - [Windows 中的启动选项概述](boot-options-in-windows.md)。
 - [启动选项标识符](boot-options-identifiers.md)
 - [编辑启动选项](editing-boot-options.md)
 - [BCD 引导选项参考](/windows-hardware/drivers/ddi/index)
 - [使用启动参数](using-boot-parameters.md)
-- [绕过启动选项]()
 - [BCD 引导选项参考](bcd-boot-options-reference.md)
 - [以前 Windows 版本中的启动选项](boot-options-in-previous-versions-of-windows.md)

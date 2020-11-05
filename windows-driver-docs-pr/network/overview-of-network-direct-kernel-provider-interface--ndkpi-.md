@@ -4,12 +4,12 @@ description: '本部分概述了网络直接内核提供程序接口 (NDKPI) '
 ms.assetid: D9667238-FD2E-44DE-920F-FA4CF3365D93
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b7d8ab9563ff69f7786bf5c10b640fcf353eab10
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 2b5060716018b46de5dc2325a6e23fcf52735d02
+ms.sourcegitcommit: 3464f10ffa0727e38fbe225cfab52bb8c2bb1747
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89207869"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93352980"
 ---
 # <a name="overview-of-network-direct-kernel-provider-interface-ndkpi"></a>网络直接内核提供程序接口 (NDKPI) 概述
 
@@ -34,7 +34,7 @@ NDK 提供程序必须通过分配给支持 NDK 的微型端口适配器的 IPv4
 
 NDK 提供程序是实现 NDKPI 接口的微型端口驱动程序。
 
-NDK 提供程序由 PnP 管理器加载并初始化。 有关详细信息，请参阅 [初始化支持 ndk 的微型端口驱动程序](initializing-an-ndk-capable-miniport-driver.md) 和 [初始化 Ndk 微型端口适配器](initializing-an-ndk-miniport-adapter.md)。
+NDK 提供程序由 PnP 管理器加载并初始化。 有关详细信息，请参阅 [初始化 NDK-Capable 微型端口驱动程序](initializing-an-ndk-capable-miniport-driver.md) 和 [初始化 NDK 微型端口适配器](initializing-an-ndk-miniport-adapter.md)。
 
 一旦加载并初始化 NDK 提供程序后，就可以处理来自 NDK 使用者的请求。 这些请求作为调用方函数的调用到达。
 
@@ -46,18 +46,14 @@ NDK 提供程序必须实现 [NDKPI 引用](/windows-hardware/drivers/ddi/_netvi
 
 NDK 使用者是内核模式的 Windows 组件，例如 SMB 服务器和客户端。
 
-**注意**   本文档不讨论如何实现 NDK 使用者。 NDKPI 使用方设备驱动程序接口 (DDI) 是专有的 Windows 内部接口。
+**注意**  本文档不讨论如何实现 NDK 使用者。 NDKPI 使用方设备驱动程序接口 (DDI) 是专有的 Windows 内部接口。
 
  
 
-NDK 使用者调用提供程序的 *NdkOpenAdapter* ([*打开 \_ NDK \_ 适配器 \_ 处理*](/windows-hardware/drivers/ddi/ndisndk/nc-ndisndk-open_ndk_adapter_handler) 程序) 回调函数创建适配器对象，并 *NdkCloseAdapter* ([*NDK \_ FN \_ close \_ 对象*](/windows-hardware/drivers/ddi/ndkpi/nc-ndkpi-ndk_fn_close_object)) 关闭它。 在提供程序创建适配器对象之后，使用者将调用其他提供程序回调函数来创建其他 NDK 对象。
+NDK 使用者调用提供程序的 *NdkOpenAdapter* ( [*打开 \_ NDK \_ 适配器 \_ 处理*](/windows-hardware/drivers/ddi/ndisndk/nc-ndisndk-open_ndk_adapter_handler) 程序) 回调函数创建适配器对象，并 *NdkCloseAdapter* ( [*NDK \_ FN \_ close \_ 对象*](/windows-hardware/drivers/ddi/ndkpi/nc-ndkpi-ndk_fn_close_object)) 关闭它。 在提供程序创建适配器对象之后，使用者将调用其他提供程序回调函数来创建其他 NDK 对象。
 
 NDK 使用者实现了由 NDK 提供程序调用的 [NDKPI 使用者回调函数](/windows-hardware/drivers/ddi/_netvista/)。
 
-## <a name="related-topics"></a>相关主题
-
-
-[网络直接内核提供程序接口 (NDKPI)]()
 
  
 

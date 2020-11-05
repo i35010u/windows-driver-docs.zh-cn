@@ -11,12 +11,12 @@ keywords:
 - WDM 总线驱动程序 WDK
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d851f201ad2695751d828d3314e38a408e50e623
-ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
+ms.openlocfilehash: 0b0b5966f353bbffce9b8364fe2348e5d02f8c50
+ms.sourcegitcommit: b6ca6f7d7bbac032826bc1d355d46d1732a53d84
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89402872"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93364096"
 ---
 # <a name="bus-drivers"></a>总线驱动程序
 
@@ -24,7 +24,7 @@ ms.locfileid: "89402872"
 
 
 
-*总线驱动程序*服务总线控制器、适配器或桥 (参阅[可能的驱动程序层](types-of-wdm-drivers.md#possible-driver-layers)) 。 Microsoft 为大多数常见总线（如 PCI、PnpISA、SCSI 和 USB）提供总线驱动程序。 其他总线驱动程序可由 Ihv 或 Oem 提供。 总线驱动程序是必需的驱动程序;计算机上的每个总线类型都有一个总线驱动程序。 如果计算机上有多个相同类型的总线，则总线驱动程序可以为多个总线提供服务。
+*总线驱动程序* 服务总线控制器、适配器或桥 (参阅 [可能的驱动程序层](types-of-wdm-drivers.md#possible-driver-layers)) 。 Microsoft 为大多数常见总线（如 PCI、PnpISA、SCSI 和 USB）提供总线驱动程序。 其他总线驱动程序可由 Ihv 或 Oem 提供。 总线驱动程序是必需的驱动程序;计算机上的每个总线类型都有一个总线驱动程序。 如果计算机上有多个相同类型的总线，则总线驱动程序可以为多个总线提供服务。
 
 总线驱动程序的主要职责是：
 
@@ -42,7 +42,7 @@ ms.locfileid: "89402872"
 
 总线驱动程序代表其总线上的设备执行某些操作，包括访问设备寄存器以物理方式更改设备的电源状态。 例如，当设备进入睡眠状态时，总线驱动程序会将设备寄存器设置为使设备进入正确的设备电源状态。
 
-但请注意，总线驱动程序不会处理连接到其总线的子设备的读取和写入请求。 对子设备的读取和写入请求由子设备的函数驱动程序处理，父总线驱动程序会处理设备的读取和写入操作。
+但请注意，总线驱动程序不会处理连接到其总线的子设备的读取和写入请求。 对子设备的读取和写入请求由子设备的 [函数驱动程序](function-drivers.md)处理。 仅当子设备在 *raw 模式下* 使用时，父总线驱动程序才会处理设备的读取和写入操作。
 
 由于总线驱动程序充当控制器、适配器或网桥的函数驱动程序，因此它还管理这些组件的设备电源策略。
 

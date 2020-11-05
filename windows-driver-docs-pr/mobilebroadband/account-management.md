@@ -4,12 +4,12 @@ description: 帐户管理
 ms.assetid: 8201a4ac-1344-4a96-b0d5-d4ba8123c4dd
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1b643d19e6d12539aed83d1e280a47e50ea38219
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 0a5a0b490f5dc1ddd40595d2e340679c8a53d3ca
+ms.sourcegitcommit: 3464f10ffa0727e38fbe225cfab52bb8c2bb1747
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89212573"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93352972"
 ---
 # <a name="account-management"></a>帐户管理
 
@@ -26,16 +26,11 @@ ms.locfileid: "89212573"
 
 设计注意事项包括：
 
--   将**数据使用组合为本地和后端信息**为了尽可能减少后端服务器上的负载，Windows 提供了本地数据使用 API，你可以使用它来合并后端数据使用。 可以定期从后端获取使用情况信息，并将其与本地数据使用关联起来。
+-   将 **数据使用组合为本地和后端信息** 为了尽可能减少后端服务器上的负载，Windows 提供了本地数据使用 API，你可以使用它来合并后端数据使用。 可以定期从后端获取使用情况信息，并将其与本地数据使用关联起来。
 
 -   **使用数据使用定期更新 Windows** Windows 10 旨在智能地在按流量计费的网络上运行。 这可以节省大量网络容量，因为 Windows 和 UWP 应用可以使用移动宽带网络来实现重要的流量。 若要更准确地了解应用程序的详细信息 (例如，数据限制和使用情况) ，Windows 需要定期提供正确的信息。 应用可以使用数据使用情况 Api 来设置此信息。
 
     ![帐户概述](images/mb-fig2-accountoverview.png)
 
-## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
-
-[移动宽带应用方案]()
-
- 
 

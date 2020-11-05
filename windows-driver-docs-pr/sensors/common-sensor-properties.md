@@ -4,12 +4,12 @@ description: 本主题介绍所有传感器的常见传感器属性。
 ms.assetid: 3E4DD221-BA8E-446E-BA7A-EF84DFED332F
 ms.date: 01/04/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 7bf40788ea23e9a0e887100f8057529dfc74cd95
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: 15acd269fe12c10876b9216885014d63f89e142e
+ms.sourcegitcommit: 3464f10ffa0727e38fbe225cfab52bb8c2bb1747
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91732809"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93352968"
 ---
 # <a name="common-sensor-properties"></a>通用传感器属性
 
@@ -40,28 +40,28 @@ ms.locfileid: "91732809"
 <td><p>PKEY_Sensor_Type</p></td>
 <td><p>VT_CLSID</p></td>
 <td><p>R/O</p></td>
-<td><p>必须</p></td>
+<td><p>必需</p></td>
 <td><p>传感器的类型。 GUID 将包含与 Windows 传感器 (相同的格式，例如 SENSOR_TYPE_ACCELEROMETER_3D) 。 有关传感器类型的详细信息，请参阅 <a href="/windows-hardware/drivers/sensors/about-sensor-constants" data-raw-source="[Sensor type GUIDs](./about-sensor-constants.md)">传感器类型 guid</a>。</p></td>
 </tr>
 <tr class="even">
 <td><p>PKEY_Sensor_State</p></td>
 <td><p>VT_UI4</p></td>
 <td><p>R/O</p></td>
-<td><p>必须</p></td>
+<td><p>必需</p></td>
 <td><p>传感器的状态。 有关传感器状态的详细信息，请参阅 <a href="/windows-hardware/drivers/ddi/sensorsdef/ne-sensorsdef-sensor_state" data-raw-source="[&lt;strong&gt;SENSOR_STATE&lt;/strong&gt;](/windows-hardware/drivers/ddi/sensorsdef/ne-sensorsdef-sensor_state)"><strong>SENSOR_STATE</strong></a>。</p></td>
 </tr>
 <tr class="odd">
 <td><p>PKEY_Sensor_MinimumDataInterval_Ms</p></td>
 <td><p>VT_UI4</p></td>
 <td><p>R/O</p></td>
-<td><p>必须</p></td>
+<td><p>必需</p></td>
 <td><p>硬件支持的传感器数据报表生成的最小时间间隔 (以毫秒为单位) 。</p></td>
 </tr>
 <tr class="even">
 <td><p>PKEY_Sensor_MaximumDataFieldSize_Bytes</p></td>
 <td><p>VT_UI4</p></td>
 <td><p>R/O</p></td>
-<td><p>必须</p></td>
+<td><p>必需</p></td>
 <td><p>ReadFile 调用中返回的最大大小。 ReadFile 调用允许本机 API 分配一个缓冲区来保存任何数据字段。</p></td>
 </tr>
 <tr class="odd">
@@ -146,7 +146,7 @@ ms.locfileid: "91732809"
 ## <a name="span-idremarksspanspan-idremarksspanspan-idremarksspanremarks"></a><span id="Remarks"></span><span id="remarks"></span><span id="REMARKS"></span>备注
 
 
-当客户端驱动程序报告以下属性时，客户端驱动程序必须使用 **CollectionsListGetMarshalledSizeWithoutSerialization** 而不是 **CollectionsListGetMarshalledSize**：
+当客户端驱动程序报告以下属性时，客户端驱动程序必须使用 **CollectionsListGetMarshalledSizeWithoutSerialization** 而不是 **CollectionsListGetMarshalledSize** ：
 
 -   PKEY \_ SensorHistory \_ MaxSize \_ Bytes
 
@@ -158,8 +158,6 @@ ms.locfileid: "91732809"
 [EvtSensorSetBatchLatency](/windows-hardware/drivers/ddi/sensorscx/ns-sensorscx-_sensor_controller_config)
 
 [PROPVARIANT 结构](/windows/win32/api/propidlbase/ns-propidlbase-propvariant)
-
-[传感器属性]()
 
 [**传感器 \_ 状态**](/windows-hardware/drivers/ddi/sensorsdef/ne-sensorsdef-sensor_state)
 
