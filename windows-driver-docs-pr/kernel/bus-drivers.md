@@ -11,12 +11,12 @@ keywords:
 - WDM 总线驱动程序 WDK
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0b0b5966f353bbffce9b8364fe2348e5d02f8c50
-ms.sourcegitcommit: b6ca6f7d7bbac032826bc1d355d46d1732a53d84
+ms.openlocfilehash: a0d901d240db82930f88d2ee2f9692d407338a82
+ms.sourcegitcommit: 3040b84a9cc5d5594cb829f15c2bb114a28d5120
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/05/2020
-ms.locfileid: "93364096"
+ms.locfileid: "93365427"
 ---
 # <a name="bus-drivers"></a>总线驱动程序
 

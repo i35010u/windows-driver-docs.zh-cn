@@ -9,12 +9,12 @@ ms.date: 04/20/2017
 ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
-ms.openlocfilehash: a26d36e5754b6bbcb1ab38491e81214c88eb6ef7
-ms.sourcegitcommit: 20eac54e419a594f7cea766ee28f158559dfd79c
+ms.openlocfilehash: a9c05e3a88dd910c5041a14c230830b39e72b001
+ms.sourcegitcommit: ec7bebe3f94536455e62b372c2a28fe69d1717f7
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91755028"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93349653"
 ---
 # <a name="network-driver-design-guide"></a>网络驱动程序设计指南
 
@@ -28,7 +28,7 @@ ms.locfileid: "91755028"
 
 [网络驱动程序简介](introduction-to-network-drivers.md)
 
-[NDIS 版本指南](ndis-version-guide.md)
+[NDIS 版本指南](./overview-of-ndis-versions.md)
 
 [NDIS 核心功能](roadmap-for-developing-ndis-miniport-drivers.md)
 
@@ -54,10 +54,4 @@ ms.locfileid: "91755028"
 
 [旧版网络驱动程序](network-drivers-prior-to-windows-vista.md)
  
-
- 
-
-
-
-
 
