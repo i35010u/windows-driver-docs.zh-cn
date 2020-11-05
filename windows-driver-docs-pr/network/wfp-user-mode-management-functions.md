@@ -1,17 +1,17 @@
 ---
 title: WFP 用户模式管理函数
 description: 本主题介绍 WFP 用户模式管理功能。
-ms.assetid: 14accd49-5b96-40]()e6-b9d7-6638a4e5c2dc
+ms.assetid: 14accd49-5b96-40e6-b9d7-6638a4e5c2dc
 keywords:
 - WFP 用户模式管理功能网络驱动程序
 ms.date: 11/07/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 67723c76d67d80e6bdb8aab55d2185ed3608e39f
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 7988241192a1b5e16f11cce7e6027f9f27d3d127
+ms.sourcegitcommit: 3464f10ffa0727e38fbe225cfab52bb8c2bb1747
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90717470"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93352986"
 ---
 # <a name="wfp-user-mode-management-functions"></a>WFP 用户模式管理函数
 
@@ -22,7 +22,7 @@ ms.locfileid: "90717470"
 > [!NOTE]
 > 每个函数的内核模式版本是在 fwpmk 中定义的。 Fwpmu 中定义了每个函数的用户模式版本。
  
-除 [FwpmFreeMemory0](/windows/win32/api/fwpmu/nf-fwpmu-fwpmfreememory0) 以外的所有这些函数的调用方必须在 IRQL = PASSIVE_LEVEL 上运行。 **FwpmFreeMemory0**的调用方必须以 IRQL <= DISPATCH_LEVEL 运行。
+除 [FwpmFreeMemory0](/windows/win32/api/fwpmu/nf-fwpmu-fwpmfreememory0) 以外的所有这些函数的调用方必须在 IRQL = PASSIVE_LEVEL 上运行。 **FwpmFreeMemory0** 的调用方必须以 IRQL <= DISPATCH_LEVEL 运行。
 
 ## <a name="callout-management"></a>标注管理
 

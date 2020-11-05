@@ -12,12 +12,12 @@ keywords:
 - VJoyD WDK HID，关于 VJoyD
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4cac1295edcb862009b101c1ef62691eb1677208
-ms.sourcegitcommit: 9145bffd4cc3b990a9ebff43b588db6ef2001f5d
+ms.openlocfilehash: c92c182c4110ef8875aefff7ec816c963a462776
+ms.sourcegitcommit: 3464f10ffa0727e38fbe225cfab52bb8c2bb1747
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/09/2020
-ms.locfileid: "89592337"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93352970"
 ---
 # <a name="joystick-support-overview"></a>“游戏杆支持”概述
 
@@ -25,7 +25,7 @@ ms.locfileid: "89592337"
 
 
 
-Microsoft DirectX 提供的游戏杆支持类型与版本之间存在差异。 在 Windows 95/98/Me 中，DirectX 支持以下两种方法来自定义游戏杆功能：通过 Windows 注册表中的自定义项和通过虚拟设备驱动程序 (VxD) 创建，这称为 *操纵杆微型驱动程序*。 DirectX 版本1.0、2.0 和3.0 中使用的微型驱动程序支持原始的微型驱动程序接口，在 DirectX 3.0 接口中有细微差别。 除了原始微型驱动程序模型之外，DirectX 版本5.0 及更高版本还包括一个通常单独描述的备用驱动程序接口。
+Microsoft DirectX 提供的游戏杆支持类型与版本之间存在差异。 在 Windows 95/98/Me 中，DirectX 支持以下两种方法来自定义游戏杆功能：通过 Windows 注册表中的自定义项和通过虚拟设备驱动程序 (VxD) 创建，这称为 *操纵杆微型驱动程序* 。 DirectX 版本1.0、2.0 和3.0 中使用的微型驱动程序支持原始的微型驱动程序接口，在 DirectX 3.0 接口中有细微差别。 除了原始微型驱动程序模型之外，DirectX 版本5.0 及更高版本还包括一个通常单独描述的备用驱动程序接口。
 
 Windows 95/98/Me 游戏杆驱动程序和配置程序支持插入 IBM 标准游戏端口的模拟操纵杆。 游戏杆制造商可以使操纵杆配置程序可自定义，并向最终用户提供有关如何自定义游戏杆的明确指导。 游戏杆可以通过注册表向 Windows 95/98/Me 发送相关功能。 这些功能包括使用限制、视图点 (POV) 头衔、rudders 以及游戏杆按钮的数目。
 
@@ -36,10 +36,6 @@ Windows 95/98/Me 游戏杆驱动程序和配置程序支持插入 IBM 标准游�
 当前的虚拟游戏杆驱动程序 (VJoyD) 允许配置最多16个设备，可由微型驱动程序驱动的任意数量的设备。 微型驱动程序到设备的配置可以是一对一或一对多。
 
 本节包括：
-
-[游戏杆驱动程序模型]()
-
-[微型驱动程序提供的回调]()
 
 [原始接口](original-interface.md)
 

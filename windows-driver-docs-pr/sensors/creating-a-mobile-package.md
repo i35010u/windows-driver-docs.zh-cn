@@ -4,12 +4,12 @@ description: 本主题提供有关创建用于在移动设备上安装示例驱�
 ms.assetid: E929D80D-17BF-4079-8CF9-972020306358
 ms.date: 07/20/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: c5d7246f47caeedbc31a01ddb48c68c71148b76a
-ms.sourcegitcommit: ec7bebe3f94536455e62b372c2a28fe69d1717f7
+ms.openlocfilehash: 9d0163cb922df608c4ed17a8694236e3199b0bb6
+ms.sourcegitcommit: 3464f10ffa0727e38fbe225cfab52bb8c2bb1747
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/04/2020
-ms.locfileid: "93349721"
+ms.locfileid: "93352988"
 ---
 # <a name="creating-a-mobile-package"></a>创建移动包
 
@@ -74,10 +74,6 @@ Copyright (c) Microsoft Corporation.  All rights reserved.
 
 如果已将 WDK 安装到默认位置，则可以在以下位置找到 **pkggen.exe** ： *%WPDKCONTENTROOT%\Tools\bin\i386*
 
-有关在移动设备上安装示例驱动程序的信息，请参阅 [创建移动包]() 。
-
 ## <a name="related-topics"></a>相关主题
-
-[创建移动包]()
 
 [查看 INX 文件](review-and-revise-the-inf-file.md)

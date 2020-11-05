@@ -7,12 +7,12 @@ keywords:
 - 错误 WDK 驱动程序验证程序
 ms.date: 11/02/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 2c8fe04984ba558029f5c49260c1e5750a8fd2e4
-ms.sourcegitcommit: ec7bebe3f94536455e62b372c2a28fe69d1717f7
+ms.openlocfilehash: 8e01b305610b319cf2fa92e5e40094bf84d6572e
+ms.sourcegitcommit: 3464f10ffa0727e38fbe225cfab52bb8c2bb1747
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/04/2020
-ms.locfileid: "93349757"
+ms.locfileid: "93352964"
 ---
 # <a name="driver-verifier-options-and-rule-classes"></a>驱动程序验证程序选项和规则类
 
@@ -179,7 +179,7 @@ Windows Server 2003 中引入的 (。 在 Windows 7 和更高版本中不可用�
 
 WDF 验证检查内核模式驱动程序是否遵循 Kernel-Mode Driver Framework (KMDF) 的要求。
 
-[其他 IRQL 检查]()
+其他 IRQL 检查
 
 其他 IRQL 检查增加了对 PASSIVE_LEVEL 的 DDI 相容性检查 IRQL 规则。 它包含以下两个规则：
 - [IrqlIoRtlZwPassive](wdm-irqliortlzwpassive.md)规则指定，仅当该驱动程序以 IRQL = PASSIVE_LEVEL 执行时，才调用该规则中列出的 DDIs。
