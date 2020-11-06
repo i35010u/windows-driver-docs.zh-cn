@@ -4,12 +4,12 @@ description: 在 Microsoft 硬件 API 中使用此方法创建新的硬件产品
 ms.date: 04/05/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 31e32fa44d981da56e848bf9fc3ba9e67780fc62
-ms.sourcegitcommit: f68ab92a8f1c13502e070297cf5410f6bbe4a9dc
+ms.openlocfilehash: 237242643d94502609bc2f951cc46e9d0d6d36c9
+ms.sourcegitcommit: 255ecc7bee00df8bee1f097f6ba3e4179aba0251
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "86213174"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93328146"
 ---
 # <a name="create-a-new-product"></a>创建新产品
 
@@ -63,8 +63,7 @@ ms.locfileid: "86213174"
     "WINDOWS_v100_X64_RS3_FULL",
     "WINDOWS_VISTA"
   ],
-  "additionalAttributes": {},
-  "packageType": "HLK"
+  "additionalAttributes": {}
 }
 ```
 

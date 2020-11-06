@@ -4,16 +4,16 @@ description: 描述取消后系统提供的队列失败报告
 ms.topic: article
 ms.date: 10/06/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: c035b65c2897cdee3ce664da86e88912e34d1991
-ms.sourcegitcommit: 068a9875851a278935078ba7f1ab65a3bb37235c
+ms.openlocfilehash: e0e1439d1f9c6951edc289e19d11a26d6c11357b
+ms.sourcegitcommit: ec7bebe3f94536455e62b372c2a28fe69d1717f7
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92100648"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93349579"
 ---
 # <a name="cohort-failure-report"></a>队列失败报告
 
-从 2020 年 6 月 15 日开始，驱动程序服务开始[通过目标队列来评估驱动程序质量](https://docs.microsoft.com/windows-hardware/drivers/dashboard/overview-of-microsoft-driver-measure-dictionary#evaluating-by-targeting-cohort)。 为了改进此过程，从 2020 年 10 月 30 日开始，如果驱动程序由于队列失败而被取消，你将开始收到一份详细说明[失败](https://docs.microsoft.com/windows-hardware/drivers/dashboard/overview-of-microsoft-driver-measure-dictionary#evaluating-by-targeting-cohort)细节的新报告。
+从 2020 年 6 月 15 日开始，驱动程序服务开始[通过目标队列来评估驱动程序质量](./overview-of-microsoft-driver-measure-dictionary.md#evaluating-by-targeting-cohort)。 为了改进此过程，从 2020 年 10 月 30 日开始，如果驱动程序由于队列失败而被取消，你将开始收到一份详细说明[失败](./overview-of-microsoft-driver-measure-dictionary.md#evaluating-by-targeting-cohort)细节的新报告。
 
 ## <a name="location-of-the-report"></a>报告位置
 

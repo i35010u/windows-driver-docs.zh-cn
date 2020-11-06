@@ -4,12 +4,12 @@ title: API 分层
 description: 使用 Windows 驱动程序，可以创建一个在多种类型设备（从嵌入式系统到平板电脑和电脑）上运行的驱动程序。
 ms.date: 04/28/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 6ff29eb62cc9e73cb1af0518bd9b219b07ca5163
-ms.sourcegitcommit: f47c072e88dce59daba1231027b60eb56bd2cde9
+ms.openlocfilehash: 1052ebbd20459b3c5bd909a98ba00481b36136f2
+ms.sourcegitcommit: ec7bebe3f94536455e62b372c2a28fe69d1717f7
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92689355"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93349783"
 ---
 # <a name="api-layering"></a>API 分层
 
@@ -19,7 +19,7 @@ API 分层要求，Windows 驱动程序包中的二进制文件只调用基于 U
 
 若要查看 API 支持哪个平台，请访问 API 的文档页，并审阅“要求”部分的“目标平台”条目。  Windows 驱动程序必须只使用将“目标平台”列为“`Universal`”（即在所有 Windows 产品/服务上都可用的功能的子集）的 API 或 DDI。
 
-[Windows API 集](https://docs.microsoft.com/windows/win32/apiindex/windows-apisets)页面描述了一组最佳做法和工具，它们用于确定 API 是否适用于 Windows 10X 开发。
+[Windows API 集](/windows/win32/apiindex/windows-apisets)页面描述了一组最佳做法和工具，它们用于确定 API 是否适用于 Windows 10X 开发。
 
 ## <a name="validating-api-layering"></a>验证 API 分层  
 

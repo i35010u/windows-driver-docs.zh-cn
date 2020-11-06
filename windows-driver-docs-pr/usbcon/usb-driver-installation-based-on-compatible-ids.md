@@ -3,12 +3,12 @@ description: 用于通信和 CDC 控制设备的 Microsoft 提供的内置驱动
 title: USB 串行驱动程序 (Usbser.sys)
 ms.date: 04/20/2017
 ms.localizationpriority: High
-ms.openlocfilehash: cb8f3aed6168581908bac52846dbba5d29a83b1d
-ms.sourcegitcommit: b75e9940d49410e2b952e96f325df67a039cd571
+ms.openlocfilehash: 684f2543c4218fb790e185d429cce5eadda4d5e7
+ms.sourcegitcommit: ec7bebe3f94536455e62b372c2a28fe69d1717f7
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92337050"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93349753"
 ---
 # <a name="usb-serial-driver-usbsersys"></a>USB 串行驱动程序 (Usbser.sys)
 
@@ -23,7 +23,7 @@ ms.locfileid: "92337050"
 
 用于通信和 CDC 控制设备的 Microsoft 提供的内置驱动程序 (Usbser.sys)。
 
-在 Windows 10 中，通过使用[内核模式驱动程序框架](/windows-hardware/drivers/wdf/)重写了驱动程序，从而提高了驱动程序的整体稳定性。
+在 Windows 10 中，通过使用[内核模式驱动程序框架](../wdf/index.md)重写了驱动程序，从而提高了驱动程序的整体稳定性。
 
 - 通过驱动程序改进了 PnP 和电源管理（例如处理意外删除）。
 - 添加了电源管理功能，如 [USB 选择性挂起](usb-selective-suspend.md)。
@@ -47,7 +47,7 @@ ms.locfileid: "92337050"
 
 - 如果要自动加载 Usbser.sys，请在[设备描述符](usb-device-descriptors.md)中将类代码设置为 02，将子类代码设置为 02。 有关详细信息，请参阅 [USB 通信设备类](https://www.usb.org/document-library/class-definitions-communication-devices-12)。 使用此方法时，无需为设备分发 INF 文件，因为系统使用的是 Usbser.inf。
 - 如果设备指定类代码 02，但子类代码值不是 02，则 Usbser.sys 不会自动加载。 Pnp 管理器尝试查找驱动程序。 如果找不到合适的驱动程序，则设备可能未加载驱动程序。 在这种情况下，你可能需要加载自己的驱动程序或编写引用另一个内置驱动程序的 INF。
-- 如果你的设备将类和子类代码指定为 02，并且你想要加载另一个驱动程序而不是 Usbser.sys，则必须编写一个 INF，指定要安装的设备和驱动程序的硬件 ID。 例如，查看[示例驱动程序](/windows-hardware/drivers/samples/universal-serial-bus--usb--driver-samples#:~:text=Universal%20Serial%20Bus%20%28USB%29%20driver%20samples%20%20,filter%20d%20...%20%209%20more%20rows%20)中包含的 INF 文件，并查找与你的设备类似的设备。 有关 INF 部分的信息，请参阅 [INF 文件概述](/windows-hardware/drivers/install/overview-of-inf-files)。
+- 如果你的设备将类和子类代码指定为 02，并且你想要加载另一个驱动程序而不是 Usbser.sys，则必须编写一个 INF，指定要安装的设备和驱动程序的硬件 ID。 例如，查看[示例驱动程序](../samples/universal-serial-bus--usb--driver-samples.md)中包含的 INF 文件，并查找与你的设备类似的设备。 有关 INF 部分的信息，请参阅 [INF 文件概述](../install/overview-of-inf-files.md)。
 
 > [!NOTE]
 > Microsoft 鼓励你尽可能使用内置驱动程序。 在 Windows 的移动版（如 Windows 10 Mobile）上，只会加载属于操作系统的驱动程序。 与桌面版不同，不能通过外部驱动程序包加载驱动程序。 使用新的内置 INF，如果在移动设备上检测到 USB 到串行设备，则会自动加载 Usbser.sys。
@@ -93,7 +93,7 @@ HKEY\_LOCAL\_MACHINE\\SYSTEM\\CurrentControlSet\\Enum\\USB\\&lt;hardware id&gt;\
 - 编写一个引用安装 INF 的 INF，并在“HW.AddReg”部分添加注册表项。
 - 在扩展属性 OS 功能描述符中描述该注册表项。 添加自定义属性，将“bPropertyName”字段设置为 Unicode 字符串“IdleUsbSelectiveSuspendPolicy”，将“wPropertyNameLength”设置为 62  。 将“bPropertyData”字段设置为“0x00000001”或“0x00000000”。 属性值存储为小字节序 32 位整数。
 
-    有关详细信息，请参阅 [Microsoft OS 描述符](/windows-hardware/drivers/usbcon/microsoft-defined-usb-descriptors)。
+    有关详细信息，请参阅 [Microsoft OS 描述符](./microsoft-defined-usb-descriptors.md)。
 
 ## <a name="develop-windows-applications-for-a-usb-cdc-device"></a>为 USB CDC 设备开发 Windows 应用程序
 
@@ -114,4 +114,4 @@ HKEY\_LOCAL\_MACHINE\\SYSTEM\\CurrentControlSet\\Enum\\USB\\&lt;hardware id&gt;\
 
 ## <a name="related-topics"></a>相关主题
 
-[包含在 Windows 中的 USB 设备类驱动程序](supported-usb-classes.md)  
+[包含在 Windows 中的 USB 设备类驱动程序](supported-usb-classes.md)

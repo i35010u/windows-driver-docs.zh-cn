@@ -4,12 +4,12 @@ title: 如何在 WDK 8.1 中运行 HCK 测试套件
 description: 为了可以更轻松地在 WDK 中测试 Windows 驱动程序，从 WDK 8.1 起，你可以选择要在测试计算机上运行的 HCK 测试套件。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 62f841b6a80f0b70827cb669e9cfdd926ccd8d05
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: e351c332f637e955636effd806643308f5b74516
+ms.sourcegitcommit: ec7bebe3f94536455e62b372c2a28fe69d1717f7
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91733337"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93349607"
 ---
 # <a name="how-to-run-the-hck-test-suites-in-wdk-81"></a>如何在 WDK 8.1 中运行 HCK 测试套件
 
@@ -93,13 +93,13 @@ ms.locfileid: "91733337"
     ```
 
 <span id="RunMe"></span><span id="runme"></span><span id="RUNME"></span>
-**注意**  如果测试计算机运行的是 Windows 7，则你需要在运行 HCK 测试套件之前下载和安装 [Microsoft .NET Framework 4.5](https://go.microsoft.com/fwlink/p/?linkid=317996)。
+**注意** 如果测试计算机运行的是 Windows 7，则你需要在运行 HCK 测试套件之前下载和安装 [Microsoft .NET Framework 4.5](https://go.microsoft.com/fwlink/p/?linkid=317996)。
 
  
 
 **通过命令提示符窗口运行 HCK 测试套件**
 
-1.  在为测试配置的测试计算机上，使用提升的权限打开命令提示符窗口（**以管理员身份运行**），然后导航至 HCK 测试套件所复制到的位置。
+1.  在为测试配置的测试计算机上，使用提升的权限打开命令提示符窗口（ **以管理员身份运行** ），然后导航至 HCK 测试套件所复制到的位置。
 
 2.  运行 **RunMe.cmd** 脚本并指定 INF 文件的路径和名称。 此脚本具有以下语法：
 
@@ -113,7 +113,7 @@ ms.locfileid: "91733337"
     RunMe.cmd myDriver.inf
     ```
 
-    **注意**  Device.Graphics 测试套件并未使用 INF 文件，但是 **RunMe.cmd** 脚本需要 INF 文件。 如有必要，你可以提供替代 INF 文件的名称。
+    **注意** Device.Graphics 测试套件并未使用 INF 文件，但是 **RunMe.cmd** 脚本需要 INF 文件。 如有必要，你可以提供替代 INF 文件的名称。
 
      
 
@@ -127,7 +127,7 @@ ms.locfileid: "91733337"
 -   [HCK Tests.Basic.Device.Network.MobileBroadband.GSM 测试套件](#HCK_GSM)
 -   [HCK Tests.Basic.Device.Network.WLAN 测试套件](#HCK_WLAN)
 
-有关指定测试参数的信息，请参阅[设备基础功能测试参数](how-to-select-and-configure-the-device-fundamental-tests.md)。 如果进行测试的设备或其子设备之一为 WLAN 适配器或网络设备，则你可能需要设置 *Wpa2PskAesSsid*、*Wpa2PskPassword* 或 *WDTFREMOTESYSTEM* 参数。
+有关指定测试参数的信息，请参阅[设备基础功能测试参数](how-to-select-and-configure-the-device-fundamental-tests.md)。 如果进行测试的设备或其子设备之一为 WLAN 适配器或网络设备，则你可能需要设置 *Wpa2PskAesSsid* 、 *Wpa2PskPassword* 或 *WDTFREMOTESYSTEM* 参数。
 
 ### <a name="span-idhck_devfundspanspan-idhck_devfundspanspan-idhck_devfundspanhck-testsbasicdevicedevice-fundamentals-test-suite"></a><span id="HCK_devfund"></span><span id="hck_devfund"></span><span id="HCK_DEVFUND"></span>HCK Tests.Basic.Device.Device Fundamentals 测试套件
 
@@ -147,7 +147,7 @@ ms.locfileid: "91733337"
 <tbody>
 <tr class="odd">
 <td align="left"><strong>硬件、软件和测试要求</strong></td>
-<td align="left"><p><a href="https://go.microsoft.com/fwlink/p/?linkid=309665" data-raw-source="[Device.Fundamentals Reliability Testing Prerequisites](/previous-versions/windows/hardware/hck/jj191690(v=vs.85))">Device.Fundamentals 可靠性测试先决条件</a></p></td>
+<td align="left"><p><a href="/previous-versions/windows/hardware/hck/jj191690(v=vs.85)" data-raw-source="[Device.Fundamentals Reliability Testing Prerequisites](/previous-versions/windows/hardware/hck/jj191690(v=vs.85))">Device.Fundamentals 可靠性测试先决条件</a></p></td>
 </tr>
 <tr class="even">
 <td align="left"><strong>测试描述</strong></td>
@@ -177,7 +177,7 @@ ms.locfileid: "91733337"
 <tbody>
 <tr class="odd">
 <td align="left"><strong>硬件、软件和测试要求</strong></td>
-<td align="left"><a href="https://go.microsoft.com/fwlink/p/?linkid=309671" data-raw-source="[Graphic Adapter or Chipset Testing Prerequisites](/previous-versions/windows/hardware/hck/hh998923(v=vs.85))">图形适配器或芯片集测试先决条件</a></td>
+<td align="left"><a href="/previous-versions/windows/hardware/hck/hh998923(v=vs.85)" data-raw-source="[Graphic Adapter or Chipset Testing Prerequisites](/previous-versions/windows/hardware/hck/hh998923(v=vs.85))">图形适配器或芯片集测试先决条件</a></td>
 </tr>
 <tr class="even">
 <td align="left"><strong>测试描述</strong></td>
@@ -235,7 +235,7 @@ ms.locfileid: "91733337"
 <tbody>
 <tr class="odd">
 <td align="left"><strong>硬件、软件和测试要求</strong></td>
-<td align="left"><p><a href="https://go.microsoft.com/fwlink/p/?linkid=309676" data-raw-source="[Mobile Broadband Testing Prerequisites](/previous-versions/windows/hardware/hck/hh998960(v=vs.85))">移动宽带测试先决条件</a></p></td>
+<td align="left"><p><a href="/previous-versions/windows/hardware/hck/hh998960(v=vs.85)" data-raw-source="[Mobile Broadband Testing Prerequisites](/previous-versions/windows/hardware/hck/hh998960(v=vs.85))">移动宽带测试先决条件</a></p></td>
 </tr>
 <tr class="even">
 <td align="left"><strong>测试描述</strong></td>
@@ -264,7 +264,7 @@ ms.locfileid: "91733337"
 <tbody>
 <tr class="odd">
 <td align="left"><strong>硬件、软件和测试要求</strong></td>
-<td align="left"><p><a href="https://go.microsoft.com/fwlink/p/?linkid=309676" data-raw-source="[Mobile Broadband Testing Prerequisites](/previous-versions/windows/hardware/hck/hh998960(v=vs.85))">移动宽带测试先决条件</a></p></td>
+<td align="left"><p><a href="/previous-versions/windows/hardware/hck/hh998960(v=vs.85)" data-raw-source="[Mobile Broadband Testing Prerequisites](/previous-versions/windows/hardware/hck/hh998960(v=vs.85))">移动宽带测试先决条件</a></p></td>
 </tr>
 <tr class="even">
 <td align="left"><strong>测试描述</strong></td>
@@ -293,7 +293,7 @@ ms.locfileid: "91733337"
 <tbody>
 <tr class="odd">
 <td align="left"><strong>硬件、软件和测试要求</strong></td>
-<td align="left"><p><a href="https://go.microsoft.com/fwlink/p/?linkid=309679" data-raw-source="[Wireless LAN (802.11) Testing Prerequisites](/previous-versions/windows/hardware/hck/jj123847(v=vs.85))">无线 LAN (802.11) 测试先决条件</a></p></td>
+<td align="left"><p><a href="/previous-versions/windows/hardware/hck/jj123847(v=vs.85)" data-raw-source="[Wireless LAN (802.11) Testing Prerequisites](/previous-versions/windows/hardware/hck/jj123847(v=vs.85))">无线 LAN (802.11) 测试先决条件</a></p></td>
 </tr>
 <tr class="even">
 <td align="left"><strong>测试描述</strong></td>
