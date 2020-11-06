@@ -11,19 +11,19 @@ keywords:
 - 兼容 Id WDK 设备安装
 ms.date: 05/29/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 1da5bb7750b2a8a24e322faf6a705fb80d987fb3
-ms.sourcegitcommit: 20a89aa2cb2c6385c2a49ebf78e5797c821d87ab
+ms.openlocfilehash: 3092212e8753f8ce27203d79b5ff9c098e0ade1a
+ms.sourcegitcommit: ccc02001d4fb018e1da01616c98e9fa1dd0878e3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87473759"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "93415624"
 ---
 # <a name="identifiers-for-pci-devices"></a>PCI 设备的标识符
 
 > [!IMPORTANT]
 > 你可以在 pci [ID 存储库](https://pci-ids.ucw.cz/)中找到 pci 设备中使用的已知 id 列表。 若要列出 Windows 上的 Id，请使用 `devcon hwids *` 。
 
-下面列出了 PCI bus 驱动程序用来报告硬件 Id 的[设备标识字符串](device-identification-strings.md)格式。 当即插即用（PnP）管理器查询设备的硬件 Id 的驱动程序时，PCI 总线驱动程序将按其通用性顺序返回硬件 Id 列表。
+下面列出了 PCI bus 驱动程序用来报告硬件 Id 的 [设备标识字符串](device-identification-strings.md) 格式。 当即插即用 (PnP) 管理器查询驱动程序的设备硬件 Id 时，PCI 总线驱动程序会按照更通用性的顺序返回硬件 Id 列表。
 
 ```cpp
 PCI\\VEN_v(4)&DEV_d(4)&SUBSYS_s(4)n(4)&REV_r(2)
@@ -41,29 +41,34 @@ PCI\\VEN_v(4)&DEV_d(4)&CC_c(2)s(2)
 
 其中：
 
-- v （4）是由四个字符组成的 PCI SIG 为设备供应商提供的标识符，其中，术语 "*设备*" （遵循 PCI SIG 使用）指的是特定 pci 芯片。
+-  (4) 是由四个字符组成的 PCI SIG 为设备供应商指定的标识符，其中，术语 " *设备* " （遵循 PCI SIG 使用）指的是特定 pci 芯片。 如 [发布限制](../dashboard/publishing-restrictions.md)中所指定， `0000` 和 `FFFF` 对于此标识符无效。
 
-- d （4）是设备的由四个字符提供商定义的标识符。
+- d (4) 是设备的由四个字符提供商定义的标识符。
 
-- s （4）是由四个字符提供商定义的子系统标识符。
+- s (4) 是由四个字符供应商定义的子系统标识符。
 
-- n （4）是由四个字符组成的 PCI SIG 为子系统供应商指定的标识符。
+- n (4) 是由四个字符组成的 PCI SIG 为子系统供应商指定的标识符。 如 [发布限制](../dashboard/publishing-restrictions.md)中所指定， `0000` 和 `FFFF` 对于此标识符无效。
 
-- r （2）是两字符的修订号。
+- r (2) 是两字符的修订号。
 
-- c （2）是来自配置空间的双字符基类代码。
+- c (2) 是来自配置空间的双字符基类代码。
 
-- s （2）是两字符子类代码。
+- s (2) 是两字符子类代码。
 
-- p （2）是编程接口代码。
+- p (2) 是编程接口代码。
 
-下面是便携计算机上显示适配器的硬件 ID 的示例。 此硬件 ID 的格式为 PCI \\ VEN_v （4） &DEV_d （4） &SUBSYS_s （4） n （4） &REV_r （2）：
+## <a name="examples"></a>示例
 
-`PCI\\VEN_102C&DEV_00E0&SUBSYS_00000000&REV_04`
+> [!NOTE]
+> 在这些示例中，你将需要替换的占位符子系统值 `00000000` 。 如前所述， `0000` 对于 v (4) 和 n (4) 标识符无效。
 
-下面是上一示例中的显示适配器的硬件 ID，其中移除了修订信息。 此硬件 ID 的格式为 PCI \\ VEN_<em>v （4</em> ）&DEV_<em>d （4）</em>&SUBSYS_ s （4）*n （4）。*
+下面是便携计算机上显示适配器的硬件 ID 的示例。 此硬件 ID 的格式为 PCI \\ VEN_v (4) # B0 DEV_d (4) # B1 SUBSYS_s (4) n (4) # B2 REV_r (2) ：
 
-`PCI\\VEN_102C&DEV_00E0&SUBSYS_00000000`
+`PCI\\VEN_1414&DEV_00E0&SUBSYS_00000000&REV_04`
+
+下面是上一示例中的显示适配器的硬件 ID，其中移除了修订信息。 此硬件 ID 的格式为 PCI \\ VEN_ <em>v (4)</em>&DEV_ <em>d (4)</em>&SUBSYS_ ()  () 4 *。*
+
+`PCI\\VEN_1414&DEV_00E0&SUBSYS_00000000`
 
 >[!NOTE]
 >在 Windows 10 中，以前出现在 "硬件 Id" 列表中的一些 Id 现在会显示在兼容 Id 列表中。
@@ -94,30 +99,30 @@ PCI\\CC_c(2)s(2)\`
 
 其中：
 
-- 兼容 ID 中以下字段的定义与硬件 ID 中使用的相应字段的定义相同： *v （4）*、 *r （2）*、 *c （2）*、 *s （2）* 和*p （2）*。
+- 兼容 ID 中的以下字段的定义与硬件 ID 中使用的相应字段的定义相同： *v (4)* ， *r (2)* ， *c (2)* ， *s (2)* ， *p ()* 。
 
-- "DEV_*d （4）* " 字段中的*d （4* ）是设备的由四个字符提供商定义的标识符。
+- *d (4)* 在 DEV_ *d (4)* 字段是设备的由四个字符供应商定义的标识符。
 
-- 在 "DT_*d （4）* " 字段中， *d （4* ）是由四个字符表示的设备类型，如 PCI Express 基准规范中所指定。
+- *d (4)* 在 DT_ *d (4)* 字段是由四个字符表示的设备类型，如 PCI Express 基准规范中所指定。
 
 对于便携式计算机上显示适配器的示例，以下任何兼容 Id 都将与该适配器的 INF 文件中的信息相匹配：
 
 ```cpp
-PCI\\VEN_102C&DEV_00E0&REV_04
+PCI\\VEN_1414&DEV_00E0&REV_04
 
-PCI\\VEN_102C&DEV_00E0
+PCI\\VEN_1414&DEV_00E0
 
-PCI\\VEN_102C&DEV_00E0&REV_04&CC_0300
+PCI\\VEN_1414&DEV_00E0&REV_04&CC_0300
 
-PCI\\VEN_102C&DEV_00E0&CC_030000
+PCI\\VEN_1414&DEV_00E0&CC_030000
 
-PCI\\VEN_102C&DEV_00E0&CC_0300
+PCI\\VEN_1414&DEV_00E0&CC_0300
 
-PCI\\VEN_102C&CC_030000
+PCI\\VEN_1414&CC_030000
 
-PCI\\VEN_102C&CC_0300
+PCI\\VEN_1414&CC_0300
 
-PCI\\VEN_102C
+PCI\\VEN_1414
 
 PCI\\CC_030000
 
