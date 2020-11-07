@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 4456724b3f5e69305f5e47c7cd7e7d64b7f374b1
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: fd855b8253a0c0e4b642bd7155b622fa48c870dd
+ms.sourcegitcommit: a44ade167cdfb541cf1818e9f9e3726f23f90b66
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90717542"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94361567"
 ---
 # <a name="dif_installdevice"></a>DIF_INSTALLDEVICE
 
@@ -64,15 +64,15 @@ DIF_INSTALLDEVICE 请求允许安装程序在安装设备之前和/或之后执�
 在设备信息集中提供设备的 [**SP_DEVINFO_DATA**](/windows/win32/api/setupapi/ns-setupapi-sp_devinfo_data) 结构的指针。
 
 <a href="" id="device-installation-parameters-"></a>设备安装参数   
-与*DeviceInfoData*关联的设备安装参数 ([**SP_DEVINSTALL_PARAMS**](/windows/win32/api/setupapi/ns-setupapi-sp_devinstall_params_a)) 。
+与 *DeviceInfoData* 关联的设备安装参数 ( [**SP_DEVINSTALL_PARAMS**](/windows/win32/api/setupapi/ns-setupapi-sp_devinstall_params_a)) 。
 
 <a href="" id="class-installation-parameters"></a>类安装参数  
-无
+None
 
 ### <a name="installer-output"></a>安装程序输出
 
 <a href="" id="device-installation-parameters"></a>设备安装参数  
-安装程序可以修改 *DeviceInfoData*的设备安装参数。 例如，安装程序可能会设置 DI_NEEDREBOOT 标志，或者它可能会设置 DI_DONOTCALLCONFIGMG 标志，以防止 Windows 使用新安装的驱动程序和设置动态地使设备联机。
+安装程序可以修改 *DeviceInfoData* 的设备安装参数。 例如，安装程序可能会设置 DI_NEEDREBOOT 标志，或者它可能会设置 DI_DONOTCALLCONFIGMG 标志，以防止 Windows 使用新安装的驱动程序和设置动态地使设备联机。
 
 ### <a name="installer-return-value"></a>安装程序返回值
 
@@ -82,7 +82,7 @@ DIF_INSTALLDEVICE 请求允许安装程序在安装设备之前和/或之后执�
 
 如果类安装程序成功处理此请求（包括直接调用默认处理程序），则类安装程序应返回 NO_ERROR 并且 **SetupDiCallClassInstaller** 将不会再次调用默认处理程序。
 
-**注意**   类安装程序可以直接调用默认处理程序，但类安装程序永远不会尝试取代默认处理程序的操作。 有关调用默认的 DIF 代码处理程序的详细信息，请参阅 [调用默认的 Dif 代码处理程序](./calling-the-default-dif-code-handlers.md)。
+**注意**   类安装程序可以直接调用默认处理程序，但类安装程序永远不会尝试取代默认处理程序的操作。 有关调用默认的 DIF 代码处理程序的详细信息，请参阅 [调用默认的 Dif 代码处理程序](./calling-the-default-dif-code-handlers.md)。
 
  
 
@@ -106,7 +106,7 @@ DIF_INSTALLDEVICE 请求允许安装程序在安装设备之前和/或之后执�
 
 如果安装程序返回 Win32 错误代码，Windows 会放弃安装。
 
-如果 Windows 无法找到新设备的 INF 文件，则会发送 DIF_INSTALLDEVICE，尝试安装 *null 驱动程序*。 默认处理程序 (**SetupDiInstallDevice** ，或者是 [**IoReportDetectedDevice**](/windows-hardware/drivers/ddi/ntddk/nf-ntddk-ioreportdetecteddevice) 报告的非 PnP 设备 () ，在后一种情况下，Windows 将为设备安装 null 驱动程序。
+如果 Windows 无法找到新设备的 INF 文件，则会发送 DIF_INSTALLDEVICE，尝试安装 *null 驱动程序* 。  ( [**SetupDiInstallDevice**](/windows/win32/api/setupapi/nf-setupapi-setupdiinstalldevice) 的默认处理程序) 检查设备是否支持 *raw 模式* ，或是 [**IoReportDetectedDevice**](/windows-hardware/drivers/ddi/ntddk/nf-ntddk-ioreportdetecteddevice)) 报告的非 PnP 设备 (，在后一种情况下，Windows 将为设备安装 null 驱动程序。
 
 如果此尝试失败，则 Windows 将再次发送 DIF_INSTALLDEVICE，这次在 [**SP_DEVINSTALL_PARAMS**](/windows/win32/api/setupapi/ns-setupapi-sp_devinstall_params_a) 结构中设置了 DI_FLAGSEX_SETFAILEDINSTALL 标志。 在这种情况下，默认处理程序只是在设备的 **ConfigFlags** 注册表值中设置 FAILEDINSTALL 标志。 如果设置了 DI_FLAGSEX_SETFAILEDINSTALL 标志，则类安装程序必须返回 NO_ERROR 或 ERROR_DI_DO_DEFAULT 并且共同安装程序必须返回 NO_ERROR。
 
@@ -114,13 +114,13 @@ DIF_INSTALLDEVICE 请求允许安装程序在安装设备之前和/或之后执�
 
 ### <a name="calling-the-default-handler-setupdiinstalldevice"></a>**调用默认处理程序 SetupDiInstallDevice**
 
-有关何时以及如何调用 **SetupDiInstallDevice**的常规信息，请参阅 [调用默认的 DIF 代码处理程序](./calling-the-default-dif-code-handlers.md)。
+有关何时以及如何调用 **SetupDiInstallDevice** 的常规信息，请参阅 [调用默认的 DIF 代码处理程序](./calling-the-default-dif-code-handlers.md)。
 
 在极少数情况下，如果类安装程序必须在所有 **SetupDiInstallDevice** 操作（启动设备除外）之后执行操作，则类安装程序必须：
 
-1.  在调用 **SetupDiInstallDevice**之前，请执行必须完成的操作。
+1.  在调用 **SetupDiInstallDevice** 之前，请执行必须完成的操作。
 
-2.  设置 SP_DEVINSTALL_PARAMS 中的 DI_DONOTCALLCONFIGMGR 标志。设备的**标志** 成员。 如果设置了此标志，则 **SetupDiInstallDevice** 将执行除启动设备之外的所有默认安装操作。
+2.  设置 SP_DEVINSTALL_PARAMS 中的 DI_DONOTCALLCONFIGMGR 标志。设备的 **标志** 成员。 如果设置了此标志，则 **SetupDiInstallDevice** 将执行除启动设备之外的所有默认安装操作。
 
 3.  调用 **SetupDiInstallDevice** 以执行除启动设备之外的所有默认安装操作。
 
@@ -160,6 +160,4 @@ DIF_INSTALLDEVICE 请求允许安装程序在安装设备之前和/或之后执�
 [**SP_DEVINFO_DATA**](/windows/win32/api/setupapi/ns-setupapi-sp_devinfo_data)
 
 [**SP_DEVINSTALL_PARAMS**](/windows/win32/api/setupapi/ns-setupapi-sp_devinstall_params_a)
-
- 
 

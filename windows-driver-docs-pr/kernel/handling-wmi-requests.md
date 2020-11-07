@@ -8,12 +8,12 @@ keywords:
 - Irp WDK WMI
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: db6aed10e6a00f5492adc9ae5b4d7fb058b9d0ec
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 8d0293f1a41b17e352b03b987ff3ad6b4a6e6e05
+ms.sourcegitcommit: a44ade167cdfb541cf1818e9f9e3726f23f90b66
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89190679"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94361461"
 ---
 # <a name="handling-wmi-requests"></a>处理 WMI 请求
 
@@ -39,9 +39,8 @@ ms.locfileid: "89190679"
 
 WMI 内核模式组件在驱动程序成功注册为 WMI 数据提供程序的任何时候都发送 WMI Irp，通常在用户模式数据使用者为驱动程序的设备请求 WMI 信息时发送。 如果驱动程序通过调用 [**IoWMIRegistrationControl**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iowmiregistrationcontrol)注册为 WMI 数据提供程序，则它必须通过以下方式之一来处理每个后续 WMI 请求：
 
--   调用 PDO 的内核模式 WMI 库例程 **WmiSystemControl** 。 有关详细信息，请参阅 [调用 WmiSystemControl 来处理 WMI irp](calling-wmisystemcontrol-to-handle-wmi-irps.md)。
+-   调用内核模式 WMI 库例程 [**WmiSystemControl**](/windows-hardware/drivers/ddi/wmilib/nf-wmilib-wmisystemcontrol)。 驱动程序可以调用 **WmiSystemControl** 来处理仅涉及不使用动态实例名称的块的请求，以及基于单个基名称字符串或 PDO 的 *设备实例 ID* 的基本静态实例名称。 有关详细信息，请参阅 [调用 WmiSystemControl 来处理 WMI irp](calling-wmisystemcontrol-to-handle-wmi-irps.md)。
 
--   在其 [*DispatchSystemControl*](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch) 例程中，处理并完成用指针标记的任何此类请求，该指针指向驱动程序在其对 **IoWMIRegistrationControl**的调用中传递的设备对象，然后将其他 [**IRP \_ MJ \_ 系统 \_ 控制**](./irp-mj-system-control.md) 请求转发到下一个较低的驱动程序。 有关详细信息，请参阅 [在 DispatchSystemControl 例程中处理 WMI irp](processing-wmi-irps-in-a-dispatchsystemcontrol-routine.md)。
+-   在其 [*DispatchSystemControl*](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch) 例程中，处理并完成用指针标记的任何此类请求，该指针指向驱动程序在其对 **IoWMIRegistrationControl** 的调用中传递的设备对象，然后将其他 [**IRP \_ MJ \_ 系统 \_ 控制**](./irp-mj-system-control.md) 请求转发到下一个较低的驱动程序。 有关详细信息，请参阅 [在 DispatchSystemControl 例程中处理 WMI irp](processing-wmi-irps-in-a-dispatchsystemcontrol-routine.md)。
 
-有关 WMI 次要 Irp 的列表，请参阅 [Wmi 次要 irp](wmi-minor-irps.md)。 
-
+有关 WMI 次要 Irp 的列表，请参阅 [Wmi 次要 irp](wmi-minor-irps.md)。 

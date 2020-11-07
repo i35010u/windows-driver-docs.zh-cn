@@ -14,12 +14,12 @@ keywords:
 - 设备安装 WDK，应用程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cf73c8f67b07491e842ecfc6be06fed843e062d3
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 27cebb587ffa735d56a09350e187e17ba3240da1
+ms.sourcegitcommit: a44ade167cdfb541cf1818e9f9e3726f23f90b66
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89097065"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94361473"
 ---
 # <a name="writing-a-device-installation-application"></a>编写设备安装应用程序
 
@@ -27,11 +27,10 @@ ms.locfileid: "89097065"
 
 
 
-**注意**   通用或移动驱动程序包不支持本部分中介绍的功能。 请参阅 [使用通用 INF 文件](using-a-universal-inf-file.md)。
+**注意**  通用或移动驱动程序包不支持本部分中介绍的功能。 请参阅 [使用通用 INF 文件](using-a-universal-inf-file.md)。
 
  
-
-如果安装了这些组件的驱动程序包。 设备安装应用程序和分发媒体应该与自动运行兼容，因此当用户插入分发媒体时，自动运行自动启动应用程序。 有关自动运行的详细信息，请参阅 [创建启用自动激活的应用程序](/previous-versions/windows/desktop/legacy/cc144206(v=vs.85))。
+如果驱动程序包中包含的驱动程序和 INF 文件替代了 "收件箱" 驱动程序和 INF 文件，或者包中包含设备特定的应用程序，则它应包含安装这些组件的 *设备安装应用程序* 。 设备安装应用程序和分发媒体应该与自动运行兼容，因此当用户插入分发媒体时，自动运行自动启动应用程序。 有关自动运行的详细信息，请参阅 [创建 AutoRun-Enabled 应用程序](/previous-versions/windows/desktop/legacy/cc144206(v=vs.85))。
 
 有关如何编写设备安装应用程序的指南，请参阅 [编写设备安装应用程序的指南](guidelines-for-writing-device-installation-applications.md)。
 

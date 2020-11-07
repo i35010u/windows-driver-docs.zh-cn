@@ -10,12 +10,12 @@ keywords:
 - DXVA_MBctrl_P_OffHostIDCT_1
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cf292e71f92fc709b02df619f914c1ae55215236
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 0d7cb0f6c50a6ee1c21352ae50a7000b8fd92f89
+ms.sourcegitcommit: a44ade167cdfb541cf1818e9f9e3726f23f90b66
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89065740"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94361251"
 ---
 # <a name="macroblock-control-commands"></a>宏块控制命令
 
@@ -37,19 +37,19 @@ ms.locfileid: "89065740"
 
 选择要使用的宏块控件结构的方式取决于要解码的图片类型以及解码方式。 以下结构成员和标志确定了图片类型、解码选项，以及将使用四个 DirectX VA 宏块控制结构中的哪一种：
 
--   [**BPic4MVallowed \_ bMV**](/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_pictureparameters)结构的**bPicIntra**、 **bChromaFormat**、 **bPicOBMC**、 **bPicBinPB**、 **DXVA**和**PictureParameters \_ RPS**成员。
+-   [**BPic4MVallowed \_ bMV**](/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_pictureparameters)结构的 **bPicIntra** 、 **bChromaFormat** 、 **bPicOBMC** 、 **bPicBinPB** 、 **DXVA** 和 **PictureParameters \_ RPS** 成员。
 
--   [**DXVA \_ ConfigPictureDecode**](/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_configpicturedecode)结构的**bConfigResidDiffHost**成员。
+-   [**DXVA \_ ConfigPictureDecode**](/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_configpicturedecode)结构的 **bConfigResidDiffHost** 成员。
 
--   每个宏块控制结构) 的**wMBtype**成员中 (位10的*HostResidDiff*标志。
+-   每个宏块控制结构) 的 **wMBtype** 成员中 (位10的 *HostResidDiff* 标志。
 
 以下部分显示了这些结构成员和标志的值。
 
 ### <a name="span-iddxva_mbctrl_i_hostresiddiff_1spanspan-iddxva_mbctrl_i_hostresiddiff_1spanspan-iddxva_mbctrl_i_hostresiddiff_1spandxva_mbctrl_i_hostresiddiff_1"></a><span id="DXVA_MBctrl_I_HostResidDiff_1"></span><span id="dxva_mbctrl_i_hostresiddiff_1"></span><span id="DXVA_MBCTRL_I_HOSTRESIDDIFF_1"></span>DXVA \_ MBctrl \_ I \_ HostResidDiff \_ 1
 
-**DXVA \_ MBctrl \_ I \_ HostResidDiff \_ 1**。 以下结构成员和标志必须等于指示的值：
+[**DXVA \_ MBctrl \_ I \_ HostResidDiff \_ 1**](/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_mbctrl_i_hostresiddiff_1)结构用于包含基于主机的 *残留差别解码* 的图片。 以下结构成员和标志必须等于指示的值：
 
--   **bPicIntra**) 中的图片必须等于 1 (。
+-   **bPicIntra** ) 中的图片必须等于 1 (。
 
 -   **bChromaFormat** 必须等于 1 (4:2:0 采样) 。
 
@@ -61,7 +61,7 @@ ms.locfileid: "89065740"
 
 [**DXVA \_ MBctrl \_ I \_ OffHostIDCT \_ 1**](/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_mbctrl_i_offhostidct_1)结构用于包含4:2:0 采样，并具有脱离主机残留差别解码的图片。 以下结构成员和标志必须等于指示的值：
 
--   **bPicIntra**) 中的图片必须等于 1 (。
+-   **bPicIntra** ) 中的图片必须等于 1 (。
 
 -   **bChromaFormat** 必须等于 1 (4:2:0 采样) 。
 
@@ -75,7 +75,7 @@ ms.locfileid: "89065740"
 
 以下结构成员和标志必须等于指示的值：
 
--   **bPicIntra**在*我的图片*) 中， *P picture*和*B picture*或 concealment 运动矢量的必须等于零 (解码。
+-   **bPicIntra** 在 *我的图片* ) 中， *P picture* 和 *B picture* 或 concealment 运动矢量的必须等于零 (解码。
 
 -   **bChromaFormat** 必须等于 1 (4:2:0 采样) 。
 
@@ -85,7 +85,7 @@ ms.locfileid: "89065740"
 
 -   **bMV \_RPS** 必须等于零， (未使用) 的运动矢量引用图片选择。
 
--   BPicBinPB 中至少有一个**bPicBinPB** (B-不使用) 和 bPic4MVallowed (四个前向引用动作向量的每个宏块的**bPic4MVallowed** ，) 必须等于零。
+-   BPicBinPB 中至少有一个 **bPicBinPB** (B-不使用) 和 bPic4MVallowed (四个前向引用动作向量的每个宏块的 **bPic4MVallowed** ，) 必须等于零。
 
 -   **bConfigResidDiffHost** 必须等于 1 (基于主机的残留差异解码) 。
 
@@ -95,7 +95,7 @@ ms.locfileid: "89065740"
 
 以下结构成员和标志必须等于指示的值：
 
--   **bPicIntra** 中的 **DXVA \_ PictureParameters** 或 concealment 运动 *向量的成员*) 。
+-   [**DXVA \_ PictureParameters**](/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_pictureparameters)结构的 **bPicIntra** 成员必须等于) 中 *图片* 的 P 和 *B 图片* 或 concealment 运动向量 (解码。
 
 -   **bChromaFormat** 必须等于 1 (4:2:0 采样) 。
 
@@ -105,9 +105,7 @@ ms.locfileid: "89065740"
 
 -   **bMV \_RPS** 必须等于零， (未使用) 的运动矢量引用图片选择。
 
--   BPicBinPB 中至少有一个**bPicBinPB** (B-不使用) 和 bPic4MVallowed (四个前向引用动作向量的每个宏块的**bPic4MVallowed** ，) 必须等于零。
+-   BPicBinPB 中至少有一个 **bPicBinPB** (B-不使用) 和 bPic4MVallowed (四个前向引用动作向量的每个宏块的 **bPic4MVallowed** ，) 必须等于零。
 
 -   **bConfigResidDiffHost** 必须等于零 (关外残留差异解码) 。
-
- 
 

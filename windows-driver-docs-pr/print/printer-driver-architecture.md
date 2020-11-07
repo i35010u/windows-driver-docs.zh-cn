@@ -10,12 +10,12 @@ keywords:
 - 打印机驱动程序 WDK，体系结构
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 52b37c265d82161419c2c07293a7fbc83aa396d3
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 5671af843fc9b54883584b223d70f259b155f8ef
+ms.sourcegitcommit: a44ade167cdfb541cf1818e9f9e3726f23f90b66
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89216346"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94361281"
 ---
 # <a name="printer-driver-architecture"></a>打印机驱动程序体系结构
 
@@ -23,7 +23,7 @@ ms.locfileid: "89216346"
 
 
 
-打印作业由应用程序通过调用 Microsoft Win32 GDI 或在 Windows Vista 中 Windows Presentation Foundation (WPF) 函数创建。 Win32 函数以 EMF 形式处理应用程序数据，或者它们可以立即呈现每个文档页的可打印图像。 WPF 以 XPS 假脱机文件的形式处理应用程序数据。
+打印作业由应用程序通过调用 Microsoft Win32 GDI 或在 Windows Vista 中 Windows Presentation Foundation (WPF) 函数创建。 Win32 函数会将应用程序数据后台处理为 [emf](emf-data-type.md) 记录，以便在以后由 emf *打印处理器* 播放，也可以立即呈现每个文档页的可打印图像。 WPF 以 XPS 假脱机文件的形式处理应用程序数据。
 
 在 Windows Vista 之前，应用程序使用 [**DEVMODEW**](/windows/win32/api/wingdi/ns-wingdi-devmodew) 结构将打印机设置传达给打印机。 在 Windows Vista 中，打印票证和打印功能技术将打印机设置进行通信，以便在打印机和应用程序之间更兼容打印机设置。
 

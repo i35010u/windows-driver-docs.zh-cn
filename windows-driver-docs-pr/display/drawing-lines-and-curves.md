@@ -13,12 +13,12 @@ keywords:
 - 画笔 WDK GDI
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 521d2def778e02e1fcab1a3ff4f4af52ed7ff24c
-ms.sourcegitcommit: f8619f20a0903dd64f8641a5266ecad6df5f1d57
+ms.openlocfilehash: dad358a5639752b13995602ec15f2883f2b890f6
+ms.sourcegitcommit: a44ade167cdfb541cf1818e9f9e3726f23f90b66
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91424042"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94361433"
 ---
 # <a name="drawing-lines-and-curves"></a>绘制线条和曲线
 
@@ -30,11 +30,9 @@ ms.locfileid: "91424042"
 
 对于线条和曲线输出，驱动程序可支持 [**DrvStrokePath**](/windows/win32/api/winddi/nf-winddi-drvstrokepath)、 [**DrvFillPath**](/windows/win32/api/winddi/nf-winddi-drvfillpath)和 [**DrvStrokeAndFillPath**](/windows/win32/api/winddi/nf-winddi-drvstrokeandfillpath) 函数。 如果图面是设备托管的，则驱动程序必须支持用于绘制线条的 **DrvStrokePath** ;支持曲线不需要驱动程序。
 
-当 GDI 使用任意一组属性绘制线条或曲线时，GDI 可以调用 [**DrvStrokePath**](/windows/win32/api/winddi/nf-winddi-drvstrokepath)。 **DrvStrokePath**函数至少必须支持使用纯色画笔和任意剪裁来绘制纯色和样式修饰线条。 GDI PATHOBJ \_ *XXX*和 CLIPOBJ \_ *Xxx*服务函数可将这些行划分为一个像素范围内具有预计算剪辑的一组行，从而实现此功能。 **DrvStrokePath**向[**LINEATTRS**](/windows/win32/api/winddi/ns-winddi-lineattrs)结构提供指针**plineattrs**，用于定义各种线条属性。
+当 GDI 使用任意一组属性绘制线条或曲线时，GDI 可以调用 [**DrvStrokePath**](/windows/win32/api/winddi/nf-winddi-drvstrokepath)。 **DrvStrokePath** 函数至少必须支持使用纯色画笔和任意剪裁来绘制纯色和样式修饰线条。 GDI PATHOBJ \_ *XXX* 和 CLIPOBJ \_ *Xxx* 服务函数可将这些行划分为一个像素范围内具有预计算剪辑的一组行，从而实现此功能。 **DrvStrokePath** 向 [**LINEATTRS**](/windows/win32/api/winddi/ns-winddi-lineattrs)结构提供指针 **plineattrs** ，用于定义各种线条属性。
 
 如果路径或剪辑太复杂，驱动程序在设备上进行处理，则驱动程序可以通过调用 [**EngStrokePath**](/windows/win32/api/winddi/nf-winddi-engstrokepath) 函数来发出对 GDI 的回调。 在这种情况下，GDI 可以将 [**DrvStrokePath**](/windows/win32/api/winddi/nf-winddi-drvstrokepath) 调用分成一组使用预计算剪裁的像素宽的行。
 
-通过从 GDI 调用 CLIPOBJ \_ *Xxx*服务，驱动程序可以对路径中的所有行进行 gdi 枚举，并执行所有的行剪辑计算。 此外，驱动程序可以使用 PATHOBJ \_ *xxx*、CLIPOBJ \_ *xxx*或 XFORMOBJ \_ *Xxx*服务来简化图形操作。 例如，驱动程序可以使用 **CLIPOBJ \_ cEnumStart**，将此区域向下发送到打印机，然后剪辑到该打印机。 驱动程序还可以使用 [**PATHOBJ \_ VEnumStart**](/windows/win32/api/winddi/nf-winddi-pathobj_venumstart) 和 [**PATHOBJ \_ bEnum**](/windows/win32/api/winddi/nf-winddi-pathobj_benum) 来枚举路径中的直线或曲线。 然后，它可以将路径发送到设备，并对其进行描边。
-
- 
+通过从 GDI 调用 CLIPOBJ \_ *Xxx* 服务，驱动程序可以对路径中的所有行进行 gdi 枚举，并执行所有的行剪辑计算。 此外，驱动程序可以使用 PATHOBJ \_ *xxx* 、CLIPOBJ \_ *xxx* 或 XFORMOBJ \_ *Xxx* 服务来简化图形操作。 例如，驱动程序可以使用 [**CLIPOBJ \_ CEnumStart**](/windows/win32/api/winddi/nf-winddi-clipobj_cenumstart) 和 [**CLIPOBJ \_ bEnum**](/windows/win32/api/winddi/nf-winddi-clipobj_benum) 枚举 *剪辑区域* 中的矩形，将此区域向下发送到打印机，然后将其剪切到该区域。 驱动程序还可以使用 [**PATHOBJ \_ VEnumStart**](/windows/win32/api/winddi/nf-winddi-pathobj_venumstart) 和 [**PATHOBJ \_ bEnum**](/windows/win32/api/winddi/nf-winddi-pathobj_benum) 来枚举路径中的直线或曲线。 然后，它可以将路径发送到设备，并对其进行描边。
 

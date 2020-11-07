@@ -9,12 +9,12 @@ keywords:
 - Unidrv WDK 打印
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4239798441403dd54a033d6614e180f97e4802a1
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: e038a92cb17c7b300c914e26400aa7ccd40b91ca
+ms.sourcegitcommit: a44ade167cdfb541cf1818e9f9e3726f23f90b66
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89218248"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94361605"
 ---
 # <a name="customized-halftoning"></a>自定义的半色调
 
@@ -34,7 +34,7 @@ Unidrv 允许使用 GDI、打印机设备或自定义驱动程序代码执行半
 
 可以在资源 DLL 中指定半色调模式，也可以通过实现 [**IPrintOemUni：： HalftonePattern**](/windows-hardware/drivers/ddi/prcomoem/nf-prcomoem-iprintoemuni-halftonepattern) 方法的呈现插件生成它们。 此方法的参考页提供了如何生成半色调模式的示例。
 
-如果满足以下任一条件，则应实现[**IPrintOemUni：： HalftonePattern**](/windows-hardware/drivers/ddi/prcomoem/nf-prcomoem-iprintoemuni-halftonepattern) ：
+如果满足以下任一条件，则应实现 [**IPrintOemUni：： HalftonePattern**](/windows-hardware/drivers/ddi/prcomoem/nf-prcomoem-iprintoemuni-halftonepattern) ：
 
 -   自定义模式在资源 DLL 中提供，并对模式进行了加密。
 
@@ -42,7 +42,7 @@ Unidrv 允许使用 GDI、打印机设备或自定义驱动程序代码执行半
 
 [**IPrintOemUni：： HalftonePattern**](/windows-hardware/drivers/ddi/prcomoem/nf-prcomoem-iprintoemuni-halftonepattern)方法的用途是将可用半色调模式返回到 Unidrv，后者又将其传递到 GDI。 方法可以将存储在资源 DLL 中的模式解码为加密格式，也可以在执行期间生成模式。
 
-如果实现 **IPrintOemUni：： HalftonePattern** 文件必须 \* 在每个半色调选项条目中包含一个 HTCallbackID 属性 \* ，该属性指定使用自定义模式的半色调方法。
+如果实现 [**IPrintOemUni：： HalftonePattern**](/windows-hardware/drivers/ddi/prcomoem/nf-prcomoem-iprintoemuni-halftonepattern) 方法，则 *GPD* 文件必须 \* 在每个半色调选项条目中包含一个 HTCallbackID 属性 \* ，该属性指定使用自定义模式的半色调方法。
 
 有关此属性的详细信息，请参阅 [半色调功能的选项属性](option-attributes-for-the-halftone-feature.md)。
 
@@ -59,6 +59,4 @@ Unidrv 允许使用 GDI、打印机设备或自定义驱动程序代码执行半
 如果呈现插件实现 [**IPrintOemUni：： ImageProcessing**](/windows-hardware/drivers/ddi/prcomoem/nf-prcomoem-iprintoemuni-imageprocessing)，它还可以实现 [**IPrintOemUni：： MemoryUsage**](/windows-hardware/drivers/ddi/prcomoem/nf-prcomoem-iprintoemuni-memoryusage)。
 
 有关半色调的详细信息，请参阅 [Unidrv 的半色调](halftoning-with-unidrv.md)。
-
- 
 

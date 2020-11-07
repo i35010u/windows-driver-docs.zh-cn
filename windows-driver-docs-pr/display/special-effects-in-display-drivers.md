@@ -16,12 +16,12 @@ keywords:
 - 动画 WDK Windows 2000 显示
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 97d381a69edc3c15c1683f8c0943836d8dd2f16b
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 5de4af446e55785b628e3a8b01ad49d0ee244f23
+ms.sourcegitcommit: a44ade167cdfb541cf1818e9f9e3726f23f90b66
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90716230"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94361439"
 ---
 # <a name="special-effects-in-display-drivers"></a>显示驱动程序中的特效
 
@@ -37,23 +37,23 @@ Windows 2000 及更高版本的操作系统版本支持以下特殊效果：
 
 ### <a name="span-idalpha_blendingspanspan-idalpha_blendingspanspan-idalpha_blendingspanalpha-blending"></a><span id="Alpha_Blending"></span><span id="alpha_blending"></span><span id="ALPHA_BLENDING"></span>Alpha 混合
 
-Microsoft Windows 2000 (及更高版本) Shell 会广泛使用 alpha 混合来执行 *混合* 、 *混合动画* 和 *alpha 光标*等操作。 由于 alpha blend 运算需要从源和目标面中进行读取，因此当源或目标位于视频内存中时，会很慢地出现 GDI。 因此，驱动程序中的硬件加速将生成明显更流畅的动画，并改善系统的整体性能。
+Microsoft Windows 2000 (及更高版本) Shell 会广泛使用 alpha 混合来执行 *混合* 、 *混合动画* 和 *alpha 光标* 等操作。 由于 alpha blend 运算需要从源和目标面中进行读取，因此当源或目标位于视频内存中时，会很慢地出现 GDI。 因此，驱动程序中的硬件加速将生成明显更流畅的动画，并改善系统的整体性能。
 
-驱动程序应实现 **DrvAlphaBlend**，前提是不会显示接缝。
+驱动程序应使用常量 alpha 和 32 bpp BGRA 系统内存区中的 *位块传输* 来实现 [**DrvAlphaBlend**](/windows/win32/api/winddi/nf-winddi-drvalphablend) ，并使用每像素的 alpha 值。 如果看不到任何接缝，则可以使用 *三角形纹理填充* 来实现 *DrvAlphaBlend* 。
 
-*DrvAlphaBlend*生成的最坏情况错误不应超过每个颜色通道一 (1) 。 当涉及拉伸时，应将源 COLORONCOLOR 拉伸 (在混合之前查看 Windows SDK 文档) ;最坏情况错误不应超过每个颜色通道) 一个 (1 与最差的 "拉伸" 错误组合。
+*DrvAlphaBlend* 生成的最坏情况错误不应超过每个颜色通道一 (1) 。 当涉及拉伸时，应将源 COLORONCOLOR 拉伸 (在混合之前查看 Windows SDK 文档) ;最坏情况错误不应超过每个颜色通道) 一个 (1 与最差的 "拉伸" 错误组合。
 
 在 alpha 混合与拉伸结合使用的情况下，WDK 中的测试会按以下方式评估显示器驱动程序的 *DrvAlphaBlend* 实现：
 
-1.  该测试将调用显示器驱动程序的 *DrvAlphaBlend*，从而生成一个 alpha 混合矩形。
+1.  该测试将调用显示器驱动程序的 *DrvAlphaBlend* ，从而生成一个 alpha 混合矩形。
 
-2.  测试将使用与对 *DrvAlphaBlend*的调用中使用的相同源矩形生成目标矩形。
+2.  测试将使用与对 *DrvAlphaBlend* 的调用中使用的相同源矩形生成目标矩形。
 
 3.  对于步骤2的目标矩形中的每个象素 P，该测试会模拟反向拉伸，以在拉伸之前确定源矩形中的相应像素。 该测试将公差值应用于反向拉伸，以适应驱动程序的不同 stretch 实现。 然后，测试计算应该应用于该像素的 alpha blend。
 
-    由于四个可能的像素 (在源矩形中) 居中的 3 X 3 像素正方形的角可能会拉伸以在目标矩形中产生像素 P，因此，该测试必须将每个角像素的颜色值与 *DrvAlphaBlend*生成的矩形中相应位置的像素的颜色值进行比较。
+    由于四个可能的像素 (在源矩形中) 居中的 3 X 3 像素正方形的角可能会拉伸以在目标矩形中产生像素 P，因此，该测试必须将每个角像素的颜色值与 *DrvAlphaBlend* 生成的矩形中相应位置的像素的颜色值进行比较。
 
-最坏情况下，拉伸错误是任意一对角像素之间颜色值的最大差值，其中其中一个像素位于 *DrvAlphaBlend*生成的矩形上，另一个位于测试生成的源矩形上。
+最坏情况下，拉伸错误是任意一对角像素之间颜色值的最大差值，其中其中一个像素位于 *DrvAlphaBlend* 生成的矩形上，另一个位于测试生成的源矩形上。
 
 ### <a name="span-idgradient_fillsspanspan-idgradient_fillsspanspan-idgradient_fillsspangradient-fills"></a><span id="Gradient_Fills"></span><span id="gradient_fills"></span><span id="GRADIENT_FILLS"></span>渐变填充
 
@@ -80,6 +80,4 @@ Windows 2000 (及更高版本) Shell 对所有标题栏使用 *渐变填充* 。
 对于任何这些图面，渐变填充不允许出错。 对于 8 bpp 面，GDI 不会调用驱动程序的 *DrvGradientFill* 函数。
 
 请注意，在所有图面中，剪辑不会影响结果。
-
- 
 

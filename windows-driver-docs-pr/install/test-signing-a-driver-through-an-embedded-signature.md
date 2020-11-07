@@ -4,12 +4,12 @@ description: 通过嵌入式签名对驱动程序进行测试签名
 ms.assetid: 862e89e0-f84a-4058-a32f-09ae3043b884
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 657c398b55a24f2e7fa621bfcb61a6fd0b8aaac9
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: d87e9efdc235cbaed6c4a8ecf200811c6ff7ca20
+ms.sourcegitcommit: a44ade167cdfb541cf1818e9f9e3726f23f90b66
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89096415"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94361383"
 ---
 # <a name="test-signing-a-driver-through-an-embedded-signature"></a>通过嵌入式签名对驱动程序进行测试签名
 
@@ -17,7 +17,7 @@ ms.locfileid: "89096415"
 
 在以下情况下，需要对内核模式二进制文件的嵌入签名 (例如，驱动程序和关联的 .dll 文件) ：
 
-- 该驱动程序是启动启动驱动程序。 在 Windows Vista 和更高版本的 windows 的64位版本中，内核模式代码签名要求必须具有嵌入签名。 无论驱动程序的驱动程序包是否有经过数字签名的目录文件，此项都是必需的。
+-   该驱动程序是启动启动驱动程序。 在 Windows Vista 和更高版本的 windows 的64位版本中，内核模式代码签名要求表明 *启动启动驱动程序* 必须具有嵌入签名。 无论驱动程序的驱动程序包是否有经过数字签名的目录文件，此项都是必需的。
 
 - 驱动程序通过不包含目录文件的驱动程序包进行安装。
 
@@ -37,17 +37,17 @@ Signtool sign /v /fd sha256 /s PrivateCertStore /n Contoso.com(Test) /t http://t
 
 其中：
 
-- **Sign**命令将 SignTool 配置为对指定的编录文件 tstamd64.cat 进行签名。
+- **Sign** 命令将 SignTool 配置为对指定的编录文件 tstamd64.cat 进行签名。
 
-- **/V**选项启用详细操作，其中，SignTool 显示成功执行和警告消息。
+- **/V** 选项启用详细操作，其中，SignTool 显示成功执行和警告消息。
 
-- **/Fd**选项指定用于创建文件签名的文件摘要算法。 默认值为 SHA1。
+- **/Fd** 选项指定用于创建文件签名的文件摘要算法。 默认值为 SHA1。
 
-- **/S**选项指定包含测试证书的证书存储 (*PrivateCertStore) *的名称。
+- **/S** 选项指定包含测试证书的证书存储 ( *PrivateCertStore)* 的名称。
 
-- **/N**选项指定在指定的证书存储中安装的 (*Contoso.com (测试) # B3*的证书的名称。
+- **/N** 选项指定在指定的证书存储中安装的 ( *Contoso.com (测试) # B3* 的证书的名称。
 
-- **/T**选项指定了 `http://timestamp.digicert.com` 用于对数字签名进行时间戳的 TSA () 的 URL。
+- **/T** 选项指定了 `http://timestamp.digicert.com` 用于对数字签名进行时间戳的 TSA () 的 URL。
 
 >[!IMPORTANT]
 >包含时间戳会提供密钥吊销所需的信息，以防签名者的代码签名私钥泄漏。

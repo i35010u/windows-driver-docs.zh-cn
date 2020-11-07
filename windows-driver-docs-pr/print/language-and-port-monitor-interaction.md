@@ -5,16 +5,16 @@ ms.assetid: 6c3c55fc-40f3-43d7-b8a2-20fed8d28813
 keywords:
 - 打印监视器 WDK，语言监视器
 - 打印监视器 WDK，端口监视器
-- 语言监视 WDK 打印，端口监视器交互
+- 语言监视器 WDK 打印，端口监视器交互
 - 端口监视 WDK 打印，语言监视器交互
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a37d379ac0f27b470248f56ba3130cec8109f322
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6e43aa468ba7bdbfe707f35157dc8a99da772bc7
+ms.sourcegitcommit: a44ade167cdfb541cf1818e9f9e3726f23f90b66
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63388107"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94361365"
 ---
 # <a name="language-and-port-monitor-interaction"></a>语言监视器与端口监视器的交互
 
@@ -22,24 +22,19 @@ ms.locfileid: "63388107"
 
 
 
-下图演示了打印处理器到打印机的打印机数据所采用的路径的) 具有与之; 关联的语言监视器和 b） 不具有与之关联的语言监视器。
+下图演示了从打印处理器到打印机的打印机数据所采用的路径，其中) 具有与其关联的语言监视器;和 b) 没有与之关联的语言监视器。
 
-![将打印机数据路径使用的语言监视器和语言监视器不进行比较的图形](images/mon1.png)
+![使用语言监视器和不使用语言监视器比较打印机数据路径的图](images/mon1.png)
 
-如果在打印机的安装过程与打印机相关联的语言监视器，语言监视器从后台处理程序的打印处理器接收打印机的数据流。 语言监视器修改数据流，并将其传递给打印机的端口监视器。
+如果在安装打印机的过程中，语言监视器与打印机相关联，则语言监视器将从后台处理程序的打印处理器接收打印机的数据流。 语言监视器修改数据流，并将其传递到打印机的端口监视器。
 
-大部分打印监视器所定义的函数到数据流的命令，然后调用端口监视器**WritePort**将流发送到端口驱动程序。
+[打印监视器定义](functions-defined-by-print-monitors.md)的大部分功能对于[语言监视器](language-monitors.md)和[端口监视器](port-monitors.md)都是相同的。 通常情况下，如果语言监视器位于数据流路径中，则后台处理程序会调用函数的语言监视器实现，而语言监视器则调用该端口监视器对同一功能的实现。 例如，PJL 语言监视器中的 [**WritePort**](/windows-hardware/drivers/ddi/winsplp/nf-winsplp-writeport) 函数 ( # A0) 将 *PJL* 的命令添加到数据流，然后调用端口监视器的 **WritePort** 将流发送到端口驱动程序。
 
-如果未安装的语言监视器，后台处理程序调用的函数的端口监视器的实现。
+如果未安装语言监视器，则后台处理程序将调用该函数的端口监视器实现。
 
-由于语言监视器和端口监视器是离散的打印体系结构、 自定义组件并且可以一起使用 Microsoft 提供的监视器。 因此，您可以提供自定义的语言监视器结合使用该工作原理与 Microsoft 提供的端口监视器，反之亦然。
+由于语言监视器和端口监视器是打印体系结构的独立组件，因此可将自定义和 Microsoft 提供的监视器一起使用。 因此，你可以提供与 Microsoft 提供的端口监视器一起工作的自定义语言监视器，反之亦然。
 
-您还可以提供单个打印监控器组成[组合的语言和端口监视器](combined-language-and-port-monitor.md)。
-
- 
+还可以提供由 [组合语言和端口监视器](combined-language-and-port-monitor.md)组成的单个打印监视器。
 
  
-
-
-
 

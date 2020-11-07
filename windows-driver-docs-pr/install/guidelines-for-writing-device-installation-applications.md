@@ -7,17 +7,17 @@ keywords:
 - 设备安装应用程序 WDK，指导原则
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b7f0c1faf347c878016d6b7fecd73ff01c894ad6
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: e0a40881d6e41539b024ab22d425621c6fe98559
+ms.sourcegitcommit: a44ade167cdfb541cf1818e9f9e3726f23f90b66
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91733285"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94361347"
 ---
 # <a name="guidelines-for-writing-device-installation-applications"></a>设备安装应用程序编写指南
 
 
-*设备安装应用程序*   *必须* 执行以下操作：
+*设备安装应用程序*   *必须* 执行以下操作：
 
 -   支持删除其安装的所有设备特定的应用程序。 在卸载过程中，设备安装应用程序应检查系统上是否仍然存在任何关联的设备，如果是，则警告用户。
 
@@ -33,7 +33,7 @@ ms.locfileid: "91733285"
 
 -   [安装特定于设备的应用程序](installing-device-specific-applications.md)
 
-    **注意**   我们强烈建议你将特定于设备的应用程序提交到适用于软件[ (HCK) 的适当硬件认证工具包](/previous-versions/windows/hardware/hck/jj124227(v=vs.85))。 有关详细信息，请参阅 [Microsoft 开发人员网络](https://go.microsoft.com/fwlink/p/?linkid=8714) 网站。
+    **注意**  我们强烈建议你将特定于设备的应用程序提交到适用于软件 [ (HCK) 的适当硬件认证工具包](/previous-versions/windows/hardware/hck/jj124227(v=vs.85)) 。 有关详细信息，请参阅 [Microsoft 开发人员网络](https://go.microsoft.com/fwlink/p/?linkid=8714) 网站。
 
      
 
@@ -43,13 +43,13 @@ ms.locfileid: "91733285"
 
 设备安装应用程序 *不能* 执行以下操作：
 
--   指示用户复制或覆盖任何文件，尤其是。*inf* 和。*sys* 文件。
+-   指示用户复制或覆盖任何文件，尤其是。 *inf* 和。 *sys* 文件。
 
 -   在卸载操作期间从系统中删除已安装的驱动程序文件，即使删除了硬件也是如此。
 
--   强制任何不必要的系统重新启动。 安装 PnP 设备或软件应用程序通常不需要重新启动。 [**UpdateDriverForPlugAndPlayDevices**](/windows/win32/api/newdev/nf-newdev-updatedriverforplugandplaydevicesa)函数的*bRebootRequired*参数表示需要重新启动。
+-   强制任何不必要的系统重新启动。 安装 PnP 设备或软件应用程序通常不需要重新启动。 [**UpdateDriverForPlugAndPlayDevices**](/windows/win32/api/newdev/nf-newdev-updatedriverforplugandplaydevicesa)函数的 *bRebootRequired* 参数表示需要重新启动。
 
--   使用 RunOnce 注册表项，因为这需要重新启动系统。
+-   使用 RunOnce 注册表项启动 *设备安装应用程序* ，因为这需要重新启动系统。
 
 -   使用设备或类共同安装程序或类安装程序来启动设备安装应用程序，因为在设备安装过程中系统的状态无法保证在安装软件应用程序时是安全的。 具体而言，如果设备安装应用程序在服务器端安装过程中运行，系统将停止响应。
 
@@ -57,7 +57,7 @@ ms.locfileid: "91733285"
 
     有关共同安装程序的详细信息，请参阅 [编写共同安装程序](writing-a-co-installer.md)。
 
--   使用 "启动" 组启动 *设备安装应用程序*。
+-   使用 "启动" 组启动 *设备安装应用程序* 。
 
 -   使用 *win.ini* 条目开始设备安装应用程序。
 

@@ -8,12 +8,12 @@ keywords:
 - 不透明 WDK 内核
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 82f4c6ba16b7e482f0d0294ee76551d9c54173fb
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 513ea4bcb33bdb0eda42c652e9da6588fbb93490
+ms.sourcegitcommit: a44ade167cdfb541cf1818e9f9e3726f23f90b66
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89187907"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94361257"
 ---
 # <a name="object-based"></a>基于对象
 
@@ -51,15 +51,13 @@ where
 
 例如，i/o 管理器的 [**IoCreateDevice**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iocreatedevice) 例程创建设备对象，以将物理、逻辑或虚拟设备表示为 i/o 请求的目标。
 
-一个系统组件可以导出调用另一个组件的支持例程的例程。 这可以减少驱动程序必须进行的调用数。 特别是，i/o 管理器会导出某些例程，使开发驱动程序更容易。 例如， **IoConnectInterruptEx**，为 *中断对象*调用内核支持例程。
+一个系统组件可以导出调用另一个组件的支持例程的例程。 这可以减少驱动程序必须进行的调用数。 特别是，i/o 管理器会导出某些例程，使开发驱动程序更容易。 例如， [**IoConnectInterruptEx**](/windows-hardware/drivers/ddi/wdm/nf-wdm-ioconnectinterruptex)，哪个最低级别驱动程序调用来注册其 *isr* ，为 *中断对象* 调用内核支持例程。
 
 ### <a name="object-opacity"></a><a href="" id="ddk-object-opacity-kg"></a>对象不透明度
 
-某些系统定义的对象不 *透明*：只有定义系统组件能识别此类对象的内部结构，并可以直接访问对象包含的所有数据。 定义不透明对象的系统组件会导出支持例程，驱动程序和其他内核模式组件可以调用这些例程来处理该对象。 驱动程序永远不会直接访问不透明的对象结构。
+某些系统定义的对象不 *透明* ：只有定义系统组件能识别此类对象的内部结构，并可以直接访问对象包含的所有数据。 定义不透明对象的系统组件会导出支持例程，驱动程序和其他内核模式组件可以调用这些例程来处理该对象。 驱动程序永远不会直接访问不透明的对象结构。
 
-**注意**   为了保持驱动程序的可移植性，驱动程序必须使用系统提供的支持例程来处理系统定义的对象。 定义系统组件可以随时更改其对象类型的内部结构。
-
- 
+**注意**   为了保持驱动程序的可移植性，驱动程序必须使用系统提供的支持例程来处理系统定义的对象。 定义系统组件可以随时更改其对象类型的内部结构。
 
  
 

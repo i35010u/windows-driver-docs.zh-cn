@@ -9,12 +9,12 @@ keywords:
 - 打印机图形 DLL WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3f18f68c063d66ab4c0a09db54d3b5b7b41c6a54
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 84aa7a24abc2efed8c29b91ce90aaf15a3cd107f
+ms.sourcegitcommit: a44ade167cdfb541cf1818e9f9e3726f23f90b66
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89207737"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94361435"
 ---
 # <a name="introduction-to-printer-graphics-dlls"></a>打印机图形 DLL 简介
 
@@ -27,7 +27,7 @@ ms.locfileid: "89207737"
 
 -   将呈现的数据流传递到后台处理程序。
 
-    打印机图形 Dll 通常生成原始数据类型的输出流。
+    打印机图形 Dll 通常在 [原始数据类型](raw-data-type.md) 中生成输出流 (包括命令序列) 后台处理程序可以通过 *打印监视器* 发送到打印机硬件。
 
 打印机图形 DLL 必须提供的呈现帮助数取决于特定于硬件的绘图功能，并包括以下方案：
 
@@ -45,7 +45,7 @@ ms.locfileid: "89207737"
 
 第一个关系图描述了用户模式打印机图形 DLL。
 
-**注意**   在 Windows Vista 打印机中，Dll 只能在用户模式下执行。 有关详细信息，请参阅 [选择用户模式或内核模式](choosing-user-mode-or-kernel-mode.md)。
+**注意**   在 Windows Vista 打印机中，Dll 只能在用户模式下执行。 有关详细信息，请参阅 [选择用户模式或内核模式](choosing-user-mode-or-kernel-mode.md)。
 
  
 
@@ -55,7 +55,7 @@ ms.locfileid: "89207737"
 
 ![使用内核模式打印机图形 dll 打印作业数据流](images/gdiprint.png)
 
-请注意，在这些关系图中，如果 GDI 的输出格式是 * (EMF) 的增强型图元文件 *，则在 emf 打印处理器播放 emf 记录之前，打印机图形 DLL 不会接收作业。 另请注意，EMF 打印处理器将输出格式更改为非 EMF。
+请注意，在这些关系图中，如果 GDI 的输出格式是 *(EMF) 的增强型图元文件* ，则在 emf 打印处理器播放 emf 记录之前，打印机图形 DLL 不会接收作业。 另请注意，EMF 打印处理器将输出格式更改为非 EMF。
 
 这些关系图演示了一个完全本地的环境。 如果打印机已连接到服务器，EMF 记录通常由 GDI 呈现引擎的客户端副本生成 (GRE) ，然后后台处理到发送到服务器的本地文件。 服务器的后台处理程序副本将读取该文件并将记录发送到服务器的 EMF 打印处理器，并使服务器的 GRE 副本调用服务器的打印机图形 DLL。
 

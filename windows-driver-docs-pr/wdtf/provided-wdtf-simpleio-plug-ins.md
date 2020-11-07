@@ -4,12 +4,12 @@ description: 简单 i/o 插件是 Windows 驱动程序测试框架的扩展 (WDT
 ms.assetid: 948E8CF5-24A1-4A7C-BD18-374F989AD053
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7742d35723561de1fc4e1e94420c3ccf84599eef
-ms.sourcegitcommit: 9b3dec2f2cd9a7ed9b340b4794ce6ff4134d8ebe
+ms.openlocfilehash: 9135af4339d88c18c0edf1a359dc2aeac8778121
+ms.sourcegitcommit: a44ade167cdfb541cf1818e9f9e3726f23f90b66
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/07/2020
-ms.locfileid: "91787654"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94361589"
 ---
 # <a name="provided-wdtf-simple-io-plug-ins"></a>提供的 WDTF 简单 I/O 插件
 
@@ -63,7 +63,7 @@ xperf.exe -stop "NT Kernel Logger" Audio_SimpleIo
 xperf.exe -merge Audio_SimpleIo_Kernel.etl Audio_SimpleIo.etl Audio_SimpleIo _Merged.etl
 ```
 
-- 查看合并的跟踪文件，其中包含 Xperf (**xperfview**) 。
+- 查看合并的跟踪文件，其中包含 Xperf ( **xperfview** ) 。
 
 ## <a name="bluetooth"></a>Bluetooth
 
@@ -90,7 +90,7 @@ xperf.exe -merge Audio_SimpleIo_Kernel.etl Audio_SimpleIo.etl Audio_SimpleIo _Me
 ### <a name="how-to-triage-test-failures-cdrom"></a>如何诊断 (CDROM) 的测试失败
 
 - 在测试计算机上，导航到相关的 CD/DVD 驱动器并确认你可以访问驱动器的内容。
-- Cd-rom 简单 i/o 插件在 CD/DVD 上搜索要用于执行读取的 CD/DVD 上的文件。 确保 CD/DVD 中的文件在磁盘上进行了编码。
+- CD-Rom 简单的 i/o 插件在 CD/DVD 上搜索要用于执行读取的文件。 确保 CD/DVD 中的文件在磁盘上进行了编码。
 - 这个简单的 i/o 插件使用 Win32 [**CreateFile**](/windows/win32/api/fileapi/nf-fileapi-createfilea)， [**WriteFile**](/windows/win32/api/fileapi/nf-fileapi-writefile)， [**ReadFile**](/windows/win32/api/fileapi/nf-fileapi-readfile) 函数。 返回的错误很可能是这些 Api 中的 Win32 错误代码。
 
 ## <a name="disk"></a>磁盘
@@ -195,7 +195,7 @@ xperf.exe -merge Audio_SimpleIo_Kernel.etl Audio_SimpleIo.etl Audio_SimpleIo _Me
 
 - 读取数据并将数据写入读卡器中插入的 Athena T0 卡。
 
-## <a name="sensors"></a>传感器
+## <a name="sensors"></a>Sensors
 
 ### <a name="requirements-sensors"></a>传感器 (要求) 
 
@@ -227,7 +227,7 @@ xperf.exe -merge Audio_SimpleIo_Kernel.etl Audio_SimpleIo.etl Audio_SimpleIo _Me
 - 没有特殊的测试要求。
 
     > [!NOTE]
-    > 用于网络摄像机设备的简单 i/o 插件依赖于 MFPlat.dll 文件，该文件在不包括 Media Player 和相关技术的 Windows 版本（例如，Windows 7 N 或 Windows 7 KN）上不可用。 在这些版本的 Windows 上，必须安装媒体功能包。 媒体功能包可供下载。 有关详细信息，请参阅 [知识库文章 968211](https://go.microsoft.com/fwlink/p/?linkid=266437)。
+    > 用于网络摄像机设备的简单 i/o 插件依赖于 MFPlat.dll 文件，该文件在不包括 Media Player 和相关技术的 Windows 版本（例如，Windows 7 N 或 Windows 7 KN）上不可用。 在这些版本的 Windows 上，必须安装媒体功能包。 媒体功能包可供下载。 有关详细信息，请参阅 [知识库文章 968211](/troubleshoot/windows-client/shell-experience/windows-media-feature-pack-for-windows-7)。
 
 ### <a name="type-of-io-plug-in-performs-webcam"></a>I/o 插件的类型 (网络摄像机) 
 

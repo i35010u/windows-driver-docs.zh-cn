@@ -5,12 +5,12 @@ ms.assetid: d4b8a964-f843-4960-9077-46746af27a61
 ms.date: 08/27/2020
 ms.localizationpriority: medium
 ms.custom: contperfq1
-ms.openlocfilehash: 5c1949e1799166b170ebe488d44fa48d1ab640de
-ms.sourcegitcommit: 735fea11056fe943c4368ee54573790e0602de66
+ms.openlocfilehash: a1abb527427731c8e22b261599a3a92e33f8666a
+ms.sourcegitcommit: a44ade167cdfb541cf1818e9f9e3726f23f90b66
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91979972"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94361453"
 ---
 # <a name="class-and-classguid-entries-for-inf-version-section"></a>INF 版本部分的 Class 和 ClassGuid 条目  
 
@@ -80,7 +80,7 @@ ClassGuid = {4d36e980-e325-11ce-bfc1-08002be10318}
 ClassGuid = {4d36e96a-e325-11ce-bfc1-08002be10318}  
 此类包括硬盘控制器（包括 ATA/ATAPI 控制器），但不包括 SCSI 和 RAID 磁盘控制器。  
   
-**人体学接口设备 (HID) **  
+**人体学接口设备 (HID)**  
 类 = HIDClass  
 ClassGuid = {745a17a0-74d3-11d0-b6fe-00a0c90f57da}  
 此类包括由系统提供的 [HID 类驱动程序](../hid/hid-architecture.md)操作的交互式输入设备。 这包括符合使用 HID 微型驱动程序的 [USB HID 标准](../hid/hid-over-usb.md) 和非 usb 设备的 usb 设备。 有关详细信息，请参阅 [HIDClass 设备安装程序类](../hid/minidriver-operations.md)。  (另请参阅此列表后面的键盘或鼠标类。 )   
@@ -145,7 +145,7 @@ ClassGuid = {4d36e970-e325-11ce-bfc1-08002be10318}
 <a href="" id="modem-"></a>**R**  
 类 = 调制解调器  
 ClassGuid = {4d36e96d-e325-11ce-bfc1-08002be10318}  
-此类包括调制解调器设备或 *软件调制解调器*。 这些设备会在调制解调器设备和设备驱动程序之间拆分功能。 有关调制解调器 INF 文件和 Microsoft Windows 驱动模型 (WDM) 调制解调器设备的详细信息，请参阅 [调制解调器 Inf 文件概述](/previous-versions/windows/hardware/modem/ff542559(v=vs.85)) 和 [添加 WDM 调制解调器支持](/previous-versions/windows/hardware/modem/ff541218(v=vs.85))。  
+此类包括 [调制解调器设备](/previous-versions/windows/hardware/modem/ff542476(v=vs.85))。 此类设备的 INF 文件指定设备的功能和配置，并将此信息存储在注册表中。 此类设备的 INF 文件还可用于为 *controllerless 调制解调器* 或 *软件调制解调器* 安装设备驱动程序。 这些设备会在调制解调器设备和设备驱动程序之间拆分功能。 有关调制解调器 INF 文件和 Microsoft Windows 驱动模型 (WDM) 调制解调器设备的详细信息，请参阅 [调制解调器 Inf 文件概述](/previous-versions/windows/hardware/modem/ff542559(v=vs.85)) 和 [添加 WDM 调制解调器支持](/previous-versions/windows/hardware/modem/ff541218(v=vs.85))。  
   
 <a href="" id="monitor-"></a>**监控器**  
 类 = 监视器  
@@ -182,7 +182,7 @@ ClassGuid = {4d36e972-e325-11ce-bfc1-08002be10318}
 ClassGuid = {4d36e973-e325-11ce-bfc1-08002be10318}  
 此类包括网络和/或打印提供程序。  
   
-**请注意**，  **NetClient**组件在 Windows 8.1、Windows Server 2012 R2 和更高版本中已弃用。  
+**请注意** ， **NetClient** 组件在 Windows 8.1、Windows Server 2012 R2 和更高版本中已弃用。    
   
    
   
@@ -206,7 +206,7 @@ ClassGuid = {268c95a1-edfe-11d3-95c3-0010dc4050a5}
 ClassGuid = {4d36e977-e325-11ce-bfc1-08002be10318}  
 此类包括 PCMCIA 和 CardBus 主机控制器，但不包括 PCMCIA 或 CardBus 外设。 此类的驱动程序是系统提供的。  
   
-<a href="" id="ports--com---lpt-ports--"></a>**端口 (COM & LPT 端口) **  
+<a href="" id="ports--com---lpt-ports--"></a>**端口 (COM & LPT 端口)**  
 类 = 端口  
 ClassGuid = {4d36e978-e325-11ce-bfc1-08002be10318}  
 此类包括串行和并行端口设备。 另请参阅 MultiportSerial 类。  
@@ -268,7 +268,7 @@ ClassGuid = {6d807884-7d21-11cf-801c-08002be10318}
 **USB 设备**  
 类 = USBDevice  
 ClassGuid = {88BAE032-5A81-49f0-BC3D-A4FF138216D6}  
-USBDevice 包括不属于另一类的所有 USB 设备。 此类不用于 USB 主机控制器和中心。  
+USBDevice 包括不属于另一类的所有 USB 设备。 此类不用于 USB 主机控制器和集线器。  
   
 **Windows CE USB ActiveSync 设备**  
 类 = WCEUSBS  
@@ -277,7 +277,7 @@ ClassGuid = {25dbce51-6c8f-4a72-8a6d-b54c2b4fc835}
   
 WCEUSBS 安装程序类支持个人计算机与与 Windows CE ActiveSync 驱动程序 (兼容的设备之间的通信。通常，PocketPC 设备通过 USB) 。  
   
-**Windows 便携式设备 (WPD) **  
+**Windows 便携式设备 (WPD)**  
 类 = WPD  
 ClassGuid = {eec5ad98-8080-425f-922a-dabf3de3f69a}  
  (Windows Vista 及更高版本的 Windows) 此类包括 WPD 设备。  
@@ -285,6 +285,5 @@ ClassGuid = {eec5ad98-8080-425f-922a-dabf3de3f69a}
    
   
 
-  
   
   

@@ -12,12 +12,12 @@ keywords:
 - DDI WDK 图形，有条件地需要的函数
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6622c6db844b463f874cb58c088956789be3d287
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 7486dcd714cc6f83a3cb96390c444f171328aed7
+ms.sourcegitcommit: a44ade167cdfb541cf1818e9f9e3726f23f90b66
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90717386"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94361415"
 ---
 # <a name="conditionally-required-graphics-driver-functions"></a>在不同的条件下需要的图形驱动程序函数
 
@@ -25,7 +25,7 @@ ms.locfileid: "90717386"
 ## <span id="ddk_conditionally_required_graphics_driver_functions_gg"></span><span id="DDK_CONDITIONALLY_REQUIRED_GRAPHICS_DRIVER_FUNCTIONS_GG"></span>
 
 
-除始终需要的函数外，可能还需要某些其他函数，具体取决于驱动程序的实现方式。 下表列出了有条件要求的函数。 如果驱动程序管理其自己的主表面 (则使用 **EngCreateDeviceSurface** 通常允许 GDI 管理这些操作中的大部分或全部。 显示支持可设置调色板的还必须支持 [**DrvSetPalette**](/windows/win32/api/winddi/nf-winddi-drvsetpalette) 函数。
+除始终需要的函数外，可能还需要某些其他函数，具体取决于驱动程序的实现方式。 下表列出了有条件要求的函数。 如果驱动程序通过使用 EngCreateDeviceSurface 函数来管理其自己的主表面 (使用 [**EngCreateDeviceSurface**](/windows/win32/api/winddi/nf-winddi-engcreatedevicesurface)函数获取表面) 的图柄，或者它自己的屏幕外位图，则驱动程序还必须支持多个 [绘图函数](optional-display-driver-functions.md)。 写入标准格式 *dib* 的驱动程序通常允许 GDI 管理这些操作中的大部分或全部。 显示支持可设置调色板的还必须支持 [**DrvSetPalette**](/windows/win32/api/winddi/nf-winddi-drvsetpalette) 函数。
 
 通常，打印机驱动程序比显示驱动程序要定义或绘制字体更常见。 处理字体不需要显示驱动程序。 如果硬件具有居民字体，则驱动程序必须向 GDI 提供有关此字体的信息。 此信息包括字体指标、从 Unicode 映射到各个标志符号标识、各个标志符号特性和字偶间距调整表。
 
@@ -135,6 +135,4 @@ ms.locfileid: "90717386"
 </tr>
 </tbody>
 </table>
-
- 
 

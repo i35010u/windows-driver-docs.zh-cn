@@ -12,21 +12,21 @@ api_type:
 - NA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 405a90c40e0acc29586260117135a816940f4538
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 509503972ca9629685256d353fcfd8afd444ad67
+ms.sourcegitcommit: a44ade167cdfb541cf1818e9f9e3726f23f90b66
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89096342"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94361395"
 ---
 # <a name="inf-bitreg-directive"></a>INF BitReg 指令
 
 
-**注意**   如果要构建通用或移动驱动程序包，则此指令无效。 请参阅 [使用通用 INF 文件](using-a-universal-inf-file.md)。
+**注意**  如果要构建通用或移动驱动程序包，则此指令无效。 请参阅 [使用通用 INF 文件](using-a-universal-inf-file.md)。
 
  
 
-**BitReg**指令引用一个或多个由 INF 编写器定义的部分，这些部分用于在注册表中的现有[REG_BINARY](/windows/desktop/SysInfo/registry-value-types)类型值项中设置或清除位。 但是，此指令很少用于设备/驱动程序 INF 文件中。
+**BitReg** 指令引用一个或多个由 INF 编写器定义的部分，这些部分用于在注册表中的现有 [REG_BINARY](/windows/desktop/SysInfo/registry-value-types)类型值项中设置或清除位。 但是，此指令很少用于设备/驱动程序 INF 文件中。
 
 ```inf
 [DDInstall] | 
@@ -46,11 +46,11 @@ BitReg=bit-registry-section[,bit-registry-section]...
 
 可以在上述正式语法语句中所示的任何节下指定 **BitReg** 指令。 还可以在以下任何一项由 INF 编写器定义的部分中指定此指令：
 
--   DDInstall 部分中的[**AddService**](inf-addservice-directive.md)指令引用的*服务安装部分*或*事件日志安装*部分。
--   由 DDInstall * 中的[**AddInterface**](inf-addinterface-directive.md)指令引用的*添加接口部分* [ * **。接口**](inf-ddinstall-interfaces-section.md)部分。
--   [**InterfaceInstall32**](inf-interfaceinstall32-section.md)节中引用的*安装界面部分*
+-   DDInstall 部分中的 [**AddService**](inf-addservice-directive.md)指令引用的 *服务安装部分* 或 *事件日志安装* 部分。
+-   [**AddInterface**](inf-addinterface-directive.md)指令在 DDInstall 中引用的 *添加接口部分* [**_DDInstall_ 。接口**](inf-ddinstall-interfaces-section.md)部分。
+-   [**InterfaceInstall32**](inf-interfaceinstall32-section.md)节中引用的 *安装界面部分*
 
-**BitReg**指令引用的每个命名部分都具有以下形式：
+**BitReg** 指令引用的每个命名部分都具有以下形式：
 
 ```inf
 [bit-registry-section]
@@ -59,7 +59,7 @@ reg-root, [subkey], value-entry-name, [flags], byte-mask, byte-to-modify
 ...
 ```
 
-*位注册表部分*可以有任意数量的条目，每个条目在单独的行中。
+*位注册表部分* 可以有任意数量的条目，每个条目在单独的行中。
 
 ## <a name="entries"></a>项
 
@@ -68,39 +68,39 @@ reg-root, [subkey], value-entry-name, [flags], byte-mask, byte-to-modify
 标识此项中提供的其他值的注册表树的根。 值可以是下列任一值：
 
 <a href="" id="hkcr"></a>**HKCR**  
-**HKEY_CLASSES_ROOT**的缩写。
+**HKEY_CLASSES_ROOT** 的缩写。
 
 <a href="" id="hkcu"></a>**HKCU**  
-**HKEY_CURRENT_USER**的缩写。
+**HKEY_CURRENT_USER** 的缩写。
 
 <a href="" id="hklm"></a>**HKLM**  
-**HKEY_LOCAL_MACHINE**的缩写。
+**HKEY_LOCAL_MACHINE** 的缩写。
 
 <a href="" id="hku"></a>**HKU 开头**  
-**HKEY_USERS**的缩写。
+**HKEY_USERS** 的缩写。
 
 <a href="" id="hkr"></a>**HKR**  
 相对根−也就是说，使用此缩写指定的密钥相对于与 INF 部分关联的注册表项，其中显示此 **BitReg** 指令，如下表所示。
 
 | 包含 BitReg 指令的 INF 部分                                    | HKR 引用的注册表项                                                        |
 |----------------------------------------------------------------------------|---------------------------------------------------------------------------------------|
-| INF ***DDInstall*** |
-| INF ***DDInstall *。HW** |
-| INF [ * **DDInstall *。Service**](inf-ddinstall-services-section.md)s 部分 | **服务**密钥                                                                  |
+| INF [ * *_DDInstall_* _](inf-ddinstall-section.md)部分                   | 设备的 _software 密钥 * |
+| INF [ * **DDInstall *。HW**](inf-ddinstall-hw-section.md)部分             | 设备的 *硬件密钥* |
+| INF [ * **DDInstall *。Service**](inf-ddinstall-services-section.md)s 部分 | **服务** 密钥                                                                  |
 
  
 
-**请注意**，  **HKR**不能用于从 INF [***DefaultInstall***](inf-defaultinstall-section.md)部分引用的位注册表部分。
+**请注意** ， **HKR** 不能用于从 INF [ * *_DefaultInstall_* _](inf-defaultinstall-section.md)部分引用的位注册表部分。  
 
  
 
-有关存储在 **HKEY_LOCAL_MACHINE** 根下的驱动程序信息的详细信息，请参阅 [设备和驱动程序的注册表树和密钥](registry-trees-and-keys.md)。
+有关存储在 _ *HKEY_LOCAL_MACHINE* * 根下的驱动程序信息的详细信息，请参阅 [设备和驱动程序的注册表树和密钥](registry-trees-and-keys.md)。
 
 <a href="" id="subkey"></a>*键值*  
-此可选值可以表示为在 INF 的[**字符串**](inf-strings-section.md)部分中定义的%*strkey*% 令牌，或在给定*的*注册表项下指定的注册表路径 (*key1 \\ key2 \\ key3*... ) ，指定包含要修改的值项的键。
+此可选值可以表示为在 INF 的 [**字符串**](inf-strings-section.md)部分中定义的% *strkey* % 令牌，或在给定 *的* 注册表项下指定的注册表路径 ( *key1 \\ key2 \\ key3*... ) ，指定包含要修改的值项的键。
 
 <a href="" id="value-entry-name"></a>*值-输入名称*  
-指定要修改的 (现有) 子项中现有 [REG_BINARY](/windows/desktop/SysInfo/registry-value-types)类型值条目的名称。 它可以表示为 "*带引号的字符串*" 或作为 INF 的[**字符串**](inf-strings-section.md)部分中定义的%*strkey*% 令牌。
+指定要修改的 (现有) 子项中现有 [REG_BINARY](/windows/desktop/SysInfo/registry-value-types)类型值条目的名称。 它可以表示为 " *带引号的字符串* " 或作为 INF 的 [**字符串**](inf-strings-section.md)部分中定义的% *strkey* % 令牌。
 
 <a href="" id="flags"></a>*随意*  
 此可选的十六进制值（以系统定义的低词和高位字标志值的运算位掩码表示）指定是否清除或设置给定字节掩码中指定的位。 其默认值为零，这会清除注册表的64位部分中的位。
@@ -108,16 +108,16 @@ reg-root, [subkey], value-entry-name, [flags], byte-mask, byte-to-modify
 其中每个标志的位掩码值如下所示：
 
 <a href="" id="0x00000000--flg-bitreg-clearbits-"></a>**0x00000000** (FLG_BITREG_CLEARBITS)   
-清除由 *字节掩码*指定的位。
+清除由 *字节掩码* 指定的位。
 
 <a href="" id="0x00000001--flg-bitreg-setbits-"></a>**0x00000001** (FLG_BITREG_SETBITS)   
-设置由 *字节掩码*指定的位。
+设置由 *字节掩码* 指定的位。
 
 <a href="" id="0x00004000---flg-bitreg-32bitkey--"></a>**0x00004000** (FLG_BITREG_32BITKEY)    
  (Windows XP 和更高版本的 Windows。 ) 在32位注册表中进行指定的更改。 如果未指定，则对本机注册表进行更改。
 
 <a href="" id="byte-mask"></a>*字节掩码*  
-此以十六进制表示法表示的字节大小掩码指定要在给定的 *值输入名称*的当前值中清除或设置的位。
+此以十六进制表示法表示的字节大小掩码指定要在给定的 *值输入名称* 的当前值中清除或设置的位。
 
 <a href="" id="byte-to-modify"></a>*字节到修改*  
 此以十进制表示的字节大小值指定要修改的 [REG_BINARY](/windows/desktop/SysInfo/registry-value-types)类型值中的字节的从零开始的索引。
@@ -162,11 +162,11 @@ HKLM,Software\AppX,ProgramData,1,0x06,1
 
 [**ClassInstall32**](inf-classinstall32-section.md)
 
-[***DDInstall***](inf-ddinstall-section.md)
+[**_DDInstall_* _](inf-ddinstall-section.md)
 
-[***DDInstall*.CoInstallers**](inf-ddinstall-coinstallers-section.md)
+[_ *_DDInstall_ 。CoInstallers**](inf-ddinstall-coinstallers-section.md)
 
-[***DDInstall*.HW**](inf-ddinstall-hw-section.md)
+[**_DDInstall_ 。HW**](inf-ddinstall-hw-section.md)
 
 [**InterfaceInstall32**](inf-interfaceinstall32-section.md)
 

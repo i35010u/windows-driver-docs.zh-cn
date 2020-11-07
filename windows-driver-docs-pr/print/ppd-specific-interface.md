@@ -10,12 +10,12 @@ keywords:
 - PPD 特定于 PPD 的接口 WDK Pscript
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: dd683abb7b91ed4688d963b17d42c55f0e5d6a82
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 5d7e9ea45cb449e61d77a55f23ebbf00fbf13c1a
+ms.sourcegitcommit: a44ade167cdfb541cf1818e9f9e3726f23f90b66
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89214222"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94361311"
 ---
 # <a name="ppd-specific-interface"></a>特定于 PPD 的接口
 
@@ -23,7 +23,7 @@ ms.locfileid: "89214222"
 
 
 
-IPrintCoreUI2 COM 接口文件。 其中六种方法在 [IPRINTCOREPS2 COM 接口](iprintcoreps2-com-interface.md)中受支持。 本部分介绍这些方法的 PPD 特定行为。
+[IPRINTCOREUI2 COM 接口](iprintcoreui2-com-interface.md)支持九种用户界面插件可调用以访问 *PPD* 文件中的信息的方法。 其中六种方法在 [IPRINTCOREPS2 COM 接口](iprintcoreps2-com-interface.md)中受支持。 本部分介绍这些方法的 PPD 特定行为。
 
 ### <a name="iprintcoreui2-interface-ppd-methods"></a>IPrintCoreUI2 接口 PPD 方法
 
@@ -59,13 +59,13 @@ IPrintCoreUI2 COM 接口文件。 其中六种方法在 [IPRINTCOREPS2 COM 接�
 
 [**IPrintCorePS2::GetOptionAttribute**](/windows-hardware/drivers/ddi/prcomoem/nf-prcomoem-iprintcoreps2-getoptionattribute)
 
-在本节中，对作为这两个接口的成员的任何方法的引用都适用于这两种方法。 例如，对 **GetOptions** 的引用适用于 **IPrintCoreUI2：： GetOptions** 和 **IPrintCorePS2：： GetOptions**。
+在本节中，对作为这两个接口的成员的任何方法的引用都适用于这两种方法。 例如，对 **GetOptions** 的引用适用于 **IPrintCoreUI2：： GetOptions** 和 **IPrintCorePS2：： GetOptions** 。
 
 ### <a name="ppd-feature-availability"></a>PPD 功能可用性
 
 请注意，在本部分中，"PPD 功能当前不可用" 一词表示打印机不支持该功能，或者该功能的 "非空"/"False" 选项受当前可安装选项设置的约束。
 
-例如，"双工功能当前不可用" 表示 PPD 未指定 \* **双工**功能关键字，或 \* **双工**功能关键字的非 None 选项当前受双工单元未安装这一事实的限制。
+例如，"双工功能当前不可用" 表示 PPD 未指定 \* *_双工_* 功能关键字，或 \* *_双工_* 功能关键字的非 None 选项当前受双工单元未安装这一事实的限制。
 
  
 

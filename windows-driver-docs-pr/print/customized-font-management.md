@@ -19,12 +19,12 @@ keywords:
 - Unidrv WDK 打印
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7964292a66d8b54c231d6096d13cbc23af68d024
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: dc0979a330120087ca24ffefa0311c2a219a8786
+ms.sourcegitcommit: a44ade167cdfb541cf1818e9f9e3726f23f90b66
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89218252"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94361591"
 ---
 # <a name="customized-font-management"></a>自定义的字体管理
 
@@ -56,7 +56,7 @@ Unidrv 提供回调函数 [*UNIFONTOBJ \_ GetInfo*](/windows-hardware/drivers/dd
 
 对于设备字体，必须按 " **Unidrv font 公制 files** " 一节中所述提供字体说明，并提供 " **字形转换表文件** " 部分。
 
-对于字体盒字体，可在资源 Dll 中提供字体说明，并使用字体盒文件指定。 还可以以 Unidrv 字体格式文件的形式提供字体说明。
+对于盒式字体，可在资源 Dll 中提供字体说明，并使用 *GPD* 文件中的 [字体盒](font-cartridges.md)条目指定。 还可以以 Unidrv 字体格式文件的形式提供字体说明。
 
 对于可下载的 PCL 软字体，必须提供字体说明，如 **Unidrv 字体格式文件** 部分所述。
 
@@ -76,13 +76,13 @@ Unidrv 还支持 ifi 文件，这是为 Windows NT 4.0 创建的字体指标文�
 
 ![说明字形转换表文件布局的关系图](images/gtt.png)
 
-在上图中，单向 \_ GLYPHSETDATA 结构包含从文件开头到第一个 [**GLYPHRUN**](/windows-hardware/drivers/ddi/prntfont/ns-prntfont-_glyphrun) 结构的偏移量、第一个单 [** \_ CODEPAGEINFO**](/windows-hardware/drivers/ddi/prntfont/ns-prntfont-_uni_codepageinfo) 结构和 [**MAPTABLE**](/windows-hardware/drivers/ddi/prntfont/ns-prntfont-_maptable) 结构的偏移量。
+在上图中，单向 \_ GLYPHSETDATA 结构包含从文件开头到第一个 [**GLYPHRUN**](/windows-hardware/drivers/ddi/prntfont/ns-prntfont-_glyphrun) 结构的偏移量、第一个单 [**\_ CODEPAGEINFO**](/windows-hardware/drivers/ddi/prntfont/ns-prntfont-_uni_codepageinfo) 结构和 [**MAPTABLE**](/windows-hardware/drivers/ddi/prntfont/ns-prntfont-_maptable) 结构的偏移量。
 
 Unidrv 还支持为 Windows NT 4.0 创建的字形转换文件，该文件使用运行长度编码 (RLE) 压缩，且扩展名为 rle。
 
 ### <a name="unidrv-font-format-files"></a><a href="" id="ddk-unidrv-font-format-files-gg"></a>Unidrv 字体格式文件
 
-对于未使用字体盒软字体指定的字体盒字体，必须使用 uff 文件指定。
+对于未使用 GPD 文件中的 [字体盒](font-cartridges.md) 条目指定的字体，必须使用 Unidrv 字体格式描述字体 ( uff) 文件。 此外，还必须使用 uff 文件指定可下载的 *PCL* 软字体。
 
 Uff 文件是使用以下结构集构造的二进制文件：
 

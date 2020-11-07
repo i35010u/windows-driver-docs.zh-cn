@@ -3,20 +3,20 @@ title: 统一的设备属性模型
 description: 统一的设备属性模型
 ms.assetid: 51105f84-38d8-4005-a3fd-4beccc0a2a39
 keywords:
-- 设备属性 WDK 设备安装，统一的设备属性模型
+- 设备属性 WDK 设备安装，统一设备属性模型
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c270cfe3723541c84e84e519b56fea2e001ee9e7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: dcae70c49dd2714a44b154b8d14d3ce0366b7c92
+ms.sourcegitcommit: a44ade167cdfb541cf1818e9f9e3726f23f90b66
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63339545"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94361599"
 ---
 # <a name="unified-device-property-model"></a>统一的设备属性模型
 
 
-Windows Vista 和更高版本的 Windows 支持的系统配置的特点是统一的设备属性模型*设备实例*，设备安装程序类。 统一的设备属性模型有关的信息，请参阅以下主题：
+Windows Vista 和更高版本的 Windows 支持统一的设备属性模型，这反映了 *设备实例* 、 [设备安装程序类](./overview-of-device-setup-classes.md)、 [设备接口类](./overview-of-device-interface-classes.md)和 *设备接口* 的系统配置。 有关统一设备属性模型的信息，请参阅以下主题：
 
 -   [系统定义的设备属性](system-defined-device-properties2.md)
 
@@ -28,21 +28,15 @@ Windows Vista 和更高版本的 Windows 支持的系统配置的特点是统一
 
 -   [属性值要求](property-value-requirements.md)
 
--   [属性和相关的系统定义的项](properties-and-related-system-defined-items.md)
+-   [属性和相关的系统定义项](properties-and-related-system-defined-items.md)
 
--   [INF 文件条目的值修改设备属性](inf-file-entry-values-that-modify-device-properties--windows-vista-and.md)
+-   [可修改设备属性的 INF 文件条目值](inf-file-entry-values-that-modify-device-properties--windows-vista-and.md)
 
--   [使用安装程序 Api 以访问设备的属性](using-setupapi-to-access-device-properties--windows-vista-and-later-.md)
+-   [使用 SetupAPI 访问设备属性](using-setupapi-to-access-device-properties--windows-vista-and-later-.md)
 
 -   [使用 INF AddProperty 指令和 INF DelProperty 指令](using-the-inf-addproperty-directive-and-the-inf-delproperty-directive.md)
 
-有许多统一的设备属性模型中的系统定义的设备属性的相应的表示形式，可用于访问 Microsoft Windows Server 2003、 Windows XP 和 Windows 2000 上的相同信息。 为了保持与这些早期的 Windows 版本的兼容性，Windows Vista 和更高版本的 Windows 还支持这些表示形式。 但是，应使用统一的设备属性的模型的 Windows Vista 和更高版本才能访问设备的属性。
+统一设备属性模型中的许多系统定义的设备属性具有相应的表示形式，可用于访问 Microsoft Windows Server 2003、Windows XP 和 Windows 2000 上的相同信息。 为了保持与早期版本的 windows 版本的兼容性，Windows Vista 和更高版本的 Windows 还支持这些表示形式。 但是，你应该使用 Windows Vista 和更高版本的统一设备属性模型来访问设备属性。
 
  
-
- 
-
-
-
-
 

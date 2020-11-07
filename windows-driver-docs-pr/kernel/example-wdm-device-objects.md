@@ -13,12 +13,12 @@ keywords:
 - 筛选 DOs WDK 内核
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8eff6309d18082a209bcb536000c4cf8d1561967
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 294219d32d2332d6a677c19352304c7bc8882418
+ms.sourcegitcommit: a44ade167cdfb541cf1818e9f9e3726f23f90b66
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89191481"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94361597"
 ---
 # <a name="example-wdm-device-objects"></a>示例 WDM 设备对象
 
@@ -26,7 +26,7 @@ ms.locfileid: "89191481"
 
 
 
-下图说明了代表键盘和鼠标设备的设备对象，该图中显示的是键盘和鼠标设备，其中显示了 [键盘和鼠标的硬件配置](sample-device-and-driver-configuration.md#keyboard-and-mouse-hardware-configurations)。 图中所示的键盘和鼠标驱动程序图说明了 [键盘和鼠标驱动程序层](sample-device-and-driver-configuration.md#keyboard-and-mouse-driver-layers) 通过调用 i/o 支持例程 ([**IoCreateDevice**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iocreatedevice)) 来创建这些设备对象。
+下图说明了代表键盘和鼠标设备的设备对象，该图中显示的是键盘和鼠标设备，其中显示了 [键盘和鼠标的硬件配置](sample-device-and-driver-configuration.md#keyboard-and-mouse-hardware-configurations)。 图中所示的键盘和鼠标驱动程序图说明了 [键盘和鼠标驱动程序层](sample-device-and-driver-configuration.md#keyboard-and-mouse-driver-layers) 通过调用 i/o 支持例程 ( [**IoCreateDevice**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iocreatedevice)) 来创建这些设备对象。
 
 ![键盘和鼠标设备对象](images/2sampdos.png)
 
@@ -38,7 +38,7 @@ ms.locfileid: "89191481"
 
 如上图所示，每个端口 [驱动程序都](sample-device-and-driver-configuration.md#keyboard-and-mouse-driver-layers) 是一个 (最低级别) 驱动程序的总线，因此，生成中断的设备的每个端口驱动程序都必须设置中断对象 () 并注册 ISR。
 
-双设备端口驱动程序，如键盘和鼠标硬件配置中显示的键盘和辅助设备控制器的 i8042 驱动程序，如果每个设备使用不同的中断矢量。 写入此类驱动程序时，可以为每个设备实现单独的 Isr，或者为这两个设备实施单个 ISR。
+双设备端口驱动程序，如 [键盘和鼠标硬件配置](sample-device-and-driver-configuration.md#keyboard-and-mouse-hardware-configurations) 中显示的键盘和辅助设备控制器的 i8042 驱动程序，如果每个设备使用不同的中断向量，则必须设置特定于设备的 *中断对象* 。 写入此类驱动程序时，可以为每个设备实现单独的 Isr，或者为这两个设备实施单个 ISR。
 
  
 

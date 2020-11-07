@@ -9,12 +9,12 @@ keywords:
 - Unidrv WDK 打印
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3f8de838c6be84068699e8f7c88f6f7ecd5ea676
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 3566b8e1a90dccc1a4eea28f96a5a75f4ba9b0be
+ms.sourcegitcommit: a44ade167cdfb541cf1818e9f9e3726f23f90b66
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89214898"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94361533"
 ---
 # <a name="dynamically-generated-printer-commands"></a>动态生成的打印机命令
 
@@ -22,7 +22,7 @@ ms.locfileid: "89214898"
 
 
 
-每次为 Unidrv 微型驱动程序指定打印机命令文件时，都可以使用以下两种方法之一：
+对于 Unidrv 微型驱动程序，每次在 *GPD* 文件中指定 [打印机命令](printer-commands.md)时，可以使用以下两种方法之一：
 
 -   将命令字符串放在 GPD 文件中。
 

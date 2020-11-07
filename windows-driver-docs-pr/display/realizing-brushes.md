@@ -20,18 +20,18 @@ keywords:
 - 绘制 WDK GDI，画笔
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f0e86770e6cf8b7513e31beed1e7d647a56cb46b
-ms.sourcegitcommit: abe7fe9f3fbee8d12641433eeab623a4148ffed3
+ms.openlocfilehash: b0f3d17b2552eb07987901ae9a93203e86c90e73
+ms.sourcegitcommit: a44ade167cdfb541cf1818e9f9e3726f23f90b66
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92185209"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94361585"
 ---
 # <a name="realizing-brushes"></a>识别画笔
 
 ## <a name="how-to-realize-a-brush"></a>如何实现画笔
 
-输出线条、文本或填充的图形函数至少采用一个画笔作为参数。 画笔定义用于在指定图面上绘制图形对象的模式。 采用画笔的每个输出函数都需要一个 *画笔原点*。 画笔原点提供设备图面上的像素坐标，使其与画笔图案的左上角像素对齐。 画笔模式 (平铺) ，以覆盖整个设备表面。
+输出线条、文本或填充的图形函数至少采用一个画笔作为参数。 画笔定义用于在指定图面上绘制图形对象的模式。 采用画笔的每个输出函数都需要一个 *画笔原点* 。 画笔原点提供设备图面上的像素坐标，使其与画笔图案的左上角像素对齐。 画笔模式 (平铺) ，以覆盖整个设备表面。
 
 驱动程序可以支持以下函数来定义画笔：
 
@@ -42,19 +42,19 @@ ms.locfileid: "92185209"
 
 GDI 跟踪应用程序请求使用的所有逻辑画笔。 在要求驱动程序绘制东西之前，GDI 首先发出对驱动程序函数 [**DrvRealizeBrush**](/windows/win32/api/winddi/nf-winddi-drvrealizebrush)的调用。 这使得驱动程序可以为其自己的绘制代码计算所需模式的最佳表示形式。
 
-调用*DrvRealizeBrush* ，以实现) 画笔的*psoPattern* (模式定义的画笔，并通过*psoTarget* (表面实现已实现的画笔) 。 已实现的画笔包含驱动程序需要使用模式填充区域的信息和加速器。 此信息仅由驱动程序定义和使用。 画笔的驱动程序实现被写入缓冲区，该缓冲区可通过调用*DrvRealizeBrush*中的 GDI 服务函数[**BRUSHOBJ_pvAllocRbrush**](/windows/win32/api/winddi/nf-winddi-brushobj_pvallocrbrush)来分配驱动程序。 GDI 将缓存所有已实现的画笔;因此，很少需要重新计算。
+调用 *DrvRealizeBrush* ，以实现) 画笔的 *psoPattern* (模式定义的画笔，并通过 *psoTarget* (表面实现已实现的画笔) 。 已实现的画笔包含驱动程序需要使用模式填充区域的信息和加速器。 此信息仅由驱动程序定义和使用。 画笔的驱动程序实现被写入缓冲区，该缓冲区可通过调用 *DrvRealizeBrush* 中的 GDI 服务函数 [**BRUSHOBJ_pvAllocRbrush**](/windows/win32/api/winddi/nf-winddi-brushobj_pvallocrbrush)来分配驱动程序。 GDI 将缓存所有已实现的画笔;因此，很少需要重新计算。
 
-在 *DrvRealizeBrush*中， **BRUSHOBJ**或标准格式的位图。 对于光栅设备，描述画笔模式的图面表示位图;对于向量设备，它始终是 [**DrvEnablePDEV**](/windows/win32/api/winddi/nf-winddi-drvenablepdev) 函数返回的模式图面中的一个。 画笔使用的透明度掩码是一位每像素位图，其范围与模式相同。 掩码位为零表示像素被视为画笔的背景像素;也就是说，目标像素不受该特定模式像素的影响。 *DrvRealizeBrush* 使用 [**XLATEOBJ**](/windows/win32/api/winddi/ns-winddi-xlateobj) 结构将画笔模式中的颜色转换为设备颜色索引。
+在 *DrvRealizeBrush* 中， [**BRUSHOBJ**](/windows/win32/api/winddi/ns-winddi-brushobj) 用户对象表示画笔。 要实现画笔的图面可以是设备的物理表面、 *DDB* 或标准格式的位图。 对于光栅设备，描述画笔模式的图面表示位图;对于向量设备，它始终是 [**DrvEnablePDEV**](/windows/win32/api/winddi/nf-winddi-drvenablepdev) 函数返回的模式图面中的一个。 画笔使用的透明度掩码是一位每像素位图，其范围与模式相同。 掩码位为零表示像素被视为画笔的背景像素;也就是说，目标像素不受该特定模式像素的影响。 *DrvRealizeBrush* 使用 [**XLATEOBJ**](/windows/win32/api/winddi/ns-winddi-xlateobj) 结构将画笔模式中的颜色转换为设备颜色索引。
 
-当 BRUSHOBJ 结构的**iSolidColor**成员的值为0Xffffffff 并且**PvRbrush**成员为**NULL**时，驱动程序应调用 GDI 服务[**BRUSHOBJ_pvGetRbrush**](/windows/win32/api/winddi/nf-winddi-brushobj_pvgetrbrush)函数。 **BRUSHOBJ_pvGetRbrush** 检索指向指定画笔的驱动程序实现的指针。 如果当驱动程序调用此函数时未实现画笔，则 GDI 会自动为驱动程序实现画笔而调用 *DrvRealizeBrush* 。
+当 BRUSHOBJ 结构的 **iSolidColor** 成员的值为0Xffffffff 并且 **PvRbrush** 成员为 **NULL** 时，驱动程序应调用 GDI 服务 [**BRUSHOBJ_pvGetRbrush**](/windows/win32/api/winddi/nf-winddi-brushobj_pvgetrbrush)函数。 **BRUSHOBJ_pvGetRbrush** 检索指向指定画笔的驱动程序实现的指针。 如果当驱动程序调用此函数时未实现画笔，则 GDI 会自动为驱动程序实现画笔而调用 *DrvRealizeBrush* 。
 
 ## <a name="dithering"></a>抖动
 
-如有必要，在尝试使用无法完全在硬件上表示的纯色创建画笔时，GDI 可以请求驱动程序的帮助。 GDI 调用驱动程序函数 **DrvDitherColor**。
+如有必要，在尝试使用无法完全在硬件上表示的纯色创建画笔时，GDI 可以请求驱动程序的帮助。 GDI 调用驱动程序函数 [**DrvDitherColor**](/windows/win32/api/winddi/nf-winddi-drvdithercolor) 来请求驱动程序根据 *设备调色板* 的保留部分来仿色画笔。
 
 抖动使用多种颜色的模式来接近所选颜色，其结果是设备颜色索引的数组。 使用这些颜色为其模式创建的画笔通常是给定颜色的理想近似值。 [**DrvDitherColor**](/windows/win32/api/winddi/nf-winddi-drvdithercolor) 也可以表示不能由设备精确指定的颜色。 为此， *DrvDitherColor* 请求多种颜色的模式并创建一个接近给定纯色的画笔。
 
-函数*DrvDitherColor*是可选的，仅当在[**Lnk-devinfo**](/windows/win32/api/winddi/ns-winddi-devinfo)结构的**flGraphicsCaps**成员中设置 GCAPS_COLOR_DITHER 或 GCAPS_MONO_DITHER 功能标志时才会调用。 *DrvDitherColor* 可以返回下表中列出的值。
+函数 *DrvDitherColor* 是可选的，仅当在 [**Lnk-devinfo**](/windows/win32/api/winddi/ns-winddi-devinfo)结构的 **flGraphicsCaps** 成员中设置 GCAPS_COLOR_DITHER 或 GCAPS_MONO_DITHER 功能标志时才会调用。 *DrvDitherColor* 可以返回下表中列出的值。
 
 | “值” | 含义 |
 | ----- | ------- |

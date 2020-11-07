@@ -11,12 +11,12 @@ keywords:
 - UFF 文件
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 34e9e24e997f39fdbec3d0b2e195a57e91ff9cb6
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: ba383e83d480a82b11b345748ead4bcd29a98009
+ms.sourcegitcommit: a44ade167cdfb541cf1818e9f9e3726f23f90b66
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89214902"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94361327"
 ---
 # <a name="customized-font-installers-for-unidrv"></a>自定义的 Unidrv 字体安装程序
 
@@ -24,7 +24,7 @@ ms.locfileid: "89214902"
 
 
 
-对于字体盒文件未描述的墨盒字体，要求供应商提供的字体安装软件。 必须使用 [Unidrv 字体格式文件](customized-font-management.md#ddk-unidrv-font-format-files-gg) 描述这些字体)  (. uff 文件。 创建 uff 文件是供应商提供的字体安装程序的责任。
+供应商提供的字体安装软件对于不是由打印机的 *GPD* 文件中的 [字体盒](font-cartridges.md)条目描述的墨盒字体是必需的。 必须使用 [Unidrv 字体格式文件](customized-font-management.md#ddk-unidrv-font-format-files-gg) 描述这些字体)  (. uff 文件。 创建 uff 文件是供应商提供的字体安装程序的责任。
 
 供应商提供的字体安装程序还应为可下载的 *PCL* 软字体提供支持。
 

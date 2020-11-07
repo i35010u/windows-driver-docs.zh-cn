@@ -4,21 +4,21 @@ description: ChildLocationPaths 注册表子项
 ms.assetid: 9c485981-e9f8-420d-9a87-d298b55356c4
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d9b1df40309d1743642e0f27b87d0871e992b7a5
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 04cf45968ad5430a04a26d0a8a6887c46881f282
+ms.sourcegitcommit: a44ade167cdfb541cf1818e9f9e3726f23f90b66
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63357875"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94361493"
 ---
 # <a name="childlocationpaths-registry-subkey"></a>ChildLocationPaths 注册表子项
 
 
-从 Windows 7 开始**ChildLocationPaths** HardwareID 通过标识设备的可移动设备功能重写的规范中使用注册表子项) 将具有可移动设备应用功能重写。 重写有关可移动设备功能的详细信息，请参阅[DeviceOverrides 注册表项](deviceoverrides-registry-key.md)。
+从 Windows 7 开始， **ChildLocationPaths** 注册表子项用于通过 [HardwareID](hardwareid-registry-subkey.md) 或 [CompatibleID](compatibleid-registry-subkey.md) 注册表子项识别的设备的可移动设备功能替代规范。 **ChildLocationPaths** 注册表子项指定只有设备的子设备节点的位置路径 ( *devnodes* ) 才能应用可移动设备功能覆盖。 有关可移动设备功能替代的详细信息，请参阅 [DeviceOverrides 注册表项](deviceoverrides-registry-key.md)。
 
-**ChildLocationPaths**注册表子项适用于只能通过父项的名称指定的设备的子 devnodes **HardwareID**或**CompatibleID**子项。 因此，仅指定设备子 devnodes 受可移动设备功能重写值。 指定设备父 devnode 不受影响的可移动设备功能重写时，除非[ **LocationPaths** ](locationpaths-registry-subkey.md)还指定了注册表子项或**ChildLocationPaths**为父 devnode 指定注册表子项。
+**ChildLocationPaths** 注册表子项仅适用于通过父 **HardwareID** 或 **CompatibleID** 子项的名称指定的设备的子 devnodes。 因此，只有指定设备的子 devnodes 受可移动设备功能覆盖值的影响。 指定设备的父 devnode 不受可移动设备功能覆盖的影响，除非还指定了 [**LocationPaths**](locationpaths-registry-subkey.md) 注册表子项或为父 devnode 指定了 **ChildLocationPaths** 注册表子项。
 
-下表定义的格式和要求**ChildLocationPaths**注册表子项。
+下表定义了 **ChildLocationPaths** 注册表子项的格式和要求。
 
 <table>
 <colgroup>
@@ -34,23 +34,23 @@ ms.locfileid: "63357875"
 <th align="left">必需/可选</th>
 <th align="left">格式要求</th>
 <th align="left">父子项</th>
-<th align="left">子级子项</th>
+<th align="left">子子项</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left"><p><strong>ChildLocationPaths</strong></p></td>
 <td align="left"><p>可选</p></td>
-<td align="left"><p>无</p></td>
-<td align="left"><p><a href="hardwareid-registry-subkey.md" data-raw-source="[HardwareID](hardwareid-registry-subkey.md)">HardwareID</a>或<a href="compatibleid-registry-subkey.md" data-raw-source="[CompatibleID](compatibleid-registry-subkey.md)">CompatibleID</a></p></td>
-<td align="left"><p><a href="locationpath-registry-subkey.md" data-raw-source="[LocationPath](locationpath-registry-subkey.md)">LocationPath</a>或 <a href="--registry-subkey.md" data-raw-source="[*](--registry-subkey.md)">*</a></p></td>
+<td align="left"><p>None</p></td>
+<td align="left"><p><a href="hardwareid-registry-subkey.md" data-raw-source="[HardwareID](hardwareid-registry-subkey.md)">HardwareID</a> 或 <a href="compatibleid-registry-subkey.md" data-raw-source="[CompatibleID](compatibleid-registry-subkey.md)">CompatibleID</a></p></td>
+<td align="left"><p><a href="locationpath-registry-subkey.md" data-raw-source="[LocationPath](locationpath-registry-subkey.md)">LocationPath</a> 或 <a href="--registry-subkey.md" data-raw-source="[*](--registry-subkey.md)">*</a></p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-**请注意**  任一[ **LocationPaths** ](locationpaths-registry-subkey.md)或者**ChildLocationPaths**注册表子项必须存在以指示父/子可移动设备功能重写应用到的关系。
+**注意**  必须存在 [**LocationPaths**](locationpaths-registry-subkey.md) 或 **ChildLocationPaths** 注册表子项，才能指示可移动设备功能覆盖适用的父/子关系。
 
  
 

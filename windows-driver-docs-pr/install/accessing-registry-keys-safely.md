@@ -7,12 +7,12 @@ keywords:
 - 在安全的 WDK 设备安装中访问注册表项
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 006d6478b74e2c703940e8aa018c3ba0f6ef84d8
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: 55aca363bfbdff229622c97ae841ef102bb85a97
+ms.sourcegitcommit: a44ade167cdfb541cf1818e9f9e3726f23f90b66
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91734279"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94361531"
 ---
 # <a name="accessing-registry-keys-safely"></a>安全地访问注册表项
 
@@ -27,7 +27,7 @@ ms.locfileid: "91734279"
 
 遵循以下准则以安全访问注册表项：
 
--   对设备使用 Setupapi.log 和 *software 密钥* 。
+-   仅使用 [setupapi.log](setupapi.md) 函数打开注册表项，尤其是设备的 *硬件密钥* 和 *软件密钥* 。
 
     这些函数解决了对访问权限的限制导致的常见问题。
 

@@ -6,12 +6,12 @@ keywords:
 - 可移动子设备 WDK Windows 2000 显示
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1d59c6186e3690b22ad95f0eeeafe94ab6255cf2
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: dae859f968c104550fe61be5a44b194b0d3a4240
+ms.sourcegitcommit: a44ade167cdfb541cf1818e9f9e3726f23f90b66
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89065428"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94361455"
 ---
 # <a name="handling-removable-child-devices"></a>处理可移动子设备
 
@@ -24,9 +24,7 @@ ms.locfileid: "89065428"
 
 1.  视频微型端口驱动程序可以报告不存在监视器，从而强制断开以前的监视器堆栈。 然后，若要强制视频端口驱动程序重新枚举子设备，以便报告新监视器，视频微型端口驱动程序将调用 [**VideoPortEnumerateChildren**](/windows-hardware/drivers/ddi/video/nf-video-videoportenumeratechildren) 函数。 视频微型端口驱动程序应调用 **VideoPortEnumerateChildren** ，以便仅在报告监视器断开连接完成的第一个枚举后计划子设备的重新枚举。
 
-2.  在适当的计算机和监视器配置 (查看以下异常) ，视频微型端口驱动程序可以在*UId*参数指向的变量中响应*HwVidGetVideoChildDescriptor*的新监视器。 此值必须与用于以前的监视器的视频微型端口驱动程序的值不同。
+2.  在适当的计算机和监视器配置 (查看以下异常) ，视频微型端口驱动程序可以通过将新监视器的信息返回到 *HwVidGetVideoChildDescriptor* 指向的 *pChildDescriptor* 参数的缓冲区中来响应其 [*HwVidGetVideoChildDescriptor*](/windows-hardware/drivers/ddi/video/nc-video-pvideo_hw_get_child_descriptor)函数。 但是，视频微型端口驱动程序必须在 *UId* 参数指向的变量中为新监视器指定32位 *设备 ID* 。 此值必须与用于以前的监视器的视频微型端口驱动程序的值不同。
 
 对于高级配置和电源接口 (ACPI) 枚举监视器，第一种机制通常更可取，因为32位设备 Id 与 BIOS 实现相关联。 因此，可能无法指定其他32位设备 ID。
-
- 
 

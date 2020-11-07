@@ -9,21 +9,21 @@ keywords:
 - 编写共同安装程序 WDK 设备安装
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cf52b323101405a8f7a1d331e25c1eaf5f0fc404
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: 36b91c682a44f88e59f8313262b47c50d086fb6b
+ms.sourcegitcommit: a44ade167cdfb541cf1818e9f9e3726f23f90b66
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91732813"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94361468"
 ---
 # <a name="writing-class-installers-and-co-installers"></a>编写类安装程序和辅助安装程序
 
 
-**注意**   通用或移动驱动程序包不支持本部分中介绍的功能。 请参阅 [使用通用 INF 文件](using-a-universal-inf-file.md)。
+**注意**  通用或移动驱动程序包不支持本部分中介绍的功能。 请参阅 [使用通用 INF 文件](using-a-universal-inf-file.md)。
 
  
 
-本部分包含编写 *共同安装程序*时应遵循的准则：
+本部分包含编写 *共同安装程序* 时应遵循的准则：
 
 [显示用户界面](#displaying-a-user-interface)
 
@@ -42,7 +42,7 @@ ms.locfileid: "91732813"
 
 在大多数情况下，除 [完成安装操作](finish-install-actions--windows-vista-and-later-.md)期间，共同安装程序不应与用户交互。 完成-安装操作在交互式上下文中运行。
 
-**注意**   共同安装程序不应使用 ERROR_REQUIRES_INTERACTIVE_WINDOWSTATION 来使 DIF 代码失败，因为这会导致设备安装失败。 如果设备安装需要用户交互，则共同安装程序应支持完成安装操作。
+**注意**  共同安装程序不应使用 ERROR_REQUIRES_INTERACTIVE_WINDOWSTATION 来使 DIF 代码失败，因为这会导致设备安装失败。 如果设备安装需要用户交互，则共同安装程序应支持完成安装操作。
 
  
 
@@ -51,9 +51,9 @@ ms.locfileid: "91732813"
 
 请勿将设备安装状态保存在 *共同安装程序* 动态链接库中 (DLL) 。 由于 Windows 通常在安装程序处理了一个 DIF 代码之后卸载 DLL，因此，在该 DLL 中保存的任何状态信息都不会保留。
 
-为了安全地保留设备安装程序状态，类安装程序或共同安装程序应将状态信息保存为注册表中设备 *驱动程序密钥* 内的属性。 为此，请按照下列步骤进行操作：
+为了安全地保留设备安装程序状态，类安装程序或共同安装程序应将状态信息保存为注册表中设备 *驱动程序密钥* 内的属性。 为此，请执行以下步骤：
 
-1.  若要检索 *设备实例*的驱动程序密钥的注册表句柄，请使用 [**SetupDiOpenDevRegKey**](/windows/win32/api/setupapi/nf-setupapi-setupdiopendevregkey) ，并将 *KeyType* 参数设置为 DIREG_DRV。
+1.  若要检索 *设备实例* 的驱动程序密钥的注册表句柄，请使用 [**SetupDiOpenDevRegKey**](/windows/win32/api/setupapi/nf-setupapi-setupdiopendevregkey) ，并将 *KeyType* 参数设置为 DIREG_DRV。
 
 2.  使用 [**SetupDiGetDevicePropertyKeys**](/windows/win32/api/setupapi/nf-setupapi-setupdigetdevicepropertykeys) (检索设备实例) 或 [**SetupDiGetDeviceProperty**](/windows/win32/api/setupapi/nf-setupapi-setupdigetdevicepropertyw) (的所有属性键以检索指定的设备实例属性项) 。
 
@@ -66,7 +66,7 @@ ms.locfileid: "91732813"
 
 为了安全地通过类安装程序或共同安装程序加载可执行文件或 DLL，强烈建议将可执行文件或 DLL 包含在数字签名的 [驱动程序包](driver-packages.md)中。 有关如何对驱动程序包进行签名的详细信息，请参阅 [驱动程序签名](driver-signing.md)。
 
-**注意**   类安装程序和共同安装程序不得通过显式函数调用（如**LoadLibrary**）或通过创建链接依赖项来加载 DLL 模块。
+**注意**  类安装程序和共同安装程序不得通过显式函数调用（如 **LoadLibrary** ）或通过创建链接依赖项来加载 DLL 模块。
 
  
 
@@ -76,4 +76,12 @@ ms.locfileid: "91732813"
 在设备安装过程中，Windows 无法跟踪其他进程，也无法确定其执行时间或完成时间。 例如，当进程执行关键操作时，Windows 可以启动或停止设备或启动系统重新启动。
 
 在大多数情况下， *共同安装程序* 不应启动其他进程或服务。 但是，安装程序可以通过从通过[完成-安装操作](finish-install-actions--windows-vista-and-later-.md)显示的函数或对话框调用[CreateProcess](/windows/win32/api/processthreadsapi/nf-processthreadsapi-createprocessa)来安全地启动其他进程。 安装程序不得允许用户在对话框或过程中继续操作，直到创建的进程退出。
+
+ 
+
+ 
+
+
+
+
 

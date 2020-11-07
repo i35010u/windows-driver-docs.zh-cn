@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 00dab74fbb6c822fc2d42c849b32d51557ceb7bc
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 496dae7dbd691274d2a80cf392f30fe9405e8ef7
+ms.sourcegitcommit: a44ade167cdfb541cf1818e9f9e3726f23f90b66
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90717088"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94361437"
 ---
 # <a name="devpkey_device_containerid"></a>DEVPKEY_Device_ContainerId
 
 
-即插即用 (PnP) 管理器使用 DEVPKEY_Device_ContainerId 设备属性将一个或多个设备节点 (*devnodes*) 分组到表示物理设备实例的 *设备容器* 。
+即插即用 (PnP) 管理器使用 DEVPKEY_Device_ContainerId 设备属性将一个或多个设备节点 ( *devnodes* ) 分组到表示物理设备实例的 *设备容器* 。
 
 <table>
 <colgroup>
@@ -33,7 +33,7 @@ ms.locfileid: "90717088"
 </colgroup>
 <thead>
 <tr>
-<th>Attribute</th>
+<th>属性</th>
 <th>值</th>
 </tr>
 </thead>
@@ -62,7 +62,7 @@ ms.locfileid: "90717088"
 <a name="remarks"></a>备注
 -------
 
-从 Windows 7 开始，PnP 管理器使用设备容器及其标识符 (*ContainerID*) 对源自并属于特定物理设备的每个实例的一个或多个 *devnodes* 进行分组。 设备实例的 ContainerID 通过 DEVPKEY_Device_ContainerId 设备属性进行引用。
+从 Windows 7 开始，PnP 管理器使用设备容器及其标识符 ( *ContainerID* ) 对源自并属于特定物理设备的每个实例的一个或多个 *devnodes* 进行分组。 设备实例的 ContainerID 通过 DEVPKEY_Device_ContainerId 设备属性进行引用。
 
 将源自一个设备实例的所有 devnodes 都分组到容器中时，将完成以下结果：
 
@@ -72,11 +72,11 @@ ms.locfileid: "90717088"
 
 DEVPKEY_Device_ContainerId 可用于确定系统中 *devnodes* 的设备容器分组。 对于给定的 devnode，可以通过完成以下步骤来确定属于同一容器的所有 devnodes：
 
--   调用 devnode 所属的设备容器的 **SetupDiGetDeviceProperty** 值。
+-   调用 [**SetupDiGetDeviceProperty**](/windows/win32/api/setupapi/nf-setupapi-setupdigetdevicepropertyw) 以查询给定 devnode 的 DEVPKEY_Device_ContainerId。 Windows 返回 devnode 所属的设备容器的 ContainerID *GUID* 值。
 
 -   枚举计算机上的所有 devnodes，并查询每个 devnode 的 DEVPKEY_Device_ContainerId。 与原始 devnode 的 ContainerId 值匹配的每个 ContainerId 值都属于同一容器。
 
-**注意**   属于给定总线类型上的容器的所有*devnodes*必须共享同一个 ContainerID 值。
+**注意**  属于给定总线类型上的容器的所有 *devnodes* 必须共享同一个 ContainerID 值。
 
  
 
@@ -108,6 +108,4 @@ DEVPKEY_Device_ContainerId 可用于确定系统中 *devnodes* 的设备容器�
 [容器 ID](./container-ids.md)
 
 [**SetupDiGetDeviceProperty**](/windows/win32/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)
-
- 
 

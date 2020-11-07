@@ -7,18 +7,18 @@ keywords:
 - ACPI 设备 WDK，评估控制方法
 ms.date: 05/19/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 3f6829cd62180dbeed4f3c5651b690f3a6c3a696
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: fb75413b07dad956b048214e7f6dddf780ffded8
+ms.sourcegitcommit: a44ade167cdfb541cf1818e9f9e3726f23f90b66
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89184843"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94361253"
 ---
 # <a name="evaluating-acpi-control-methods"></a>评估 ACPI 控制方法
 
 高级配置和电源接口 (ACPI) 控制方法是声明和定义用于查询和配置系统硬件的操作的软件。 ACPI 兼容的系统提供一组最小的控制方法。 控制方法以 ACPI 源语言编写， (ASL) ，由 ASL 编译器编译为 ACPI 机器语言 (AML) ，从系统固件加载到 ACPI 命名空间，由 ACPI 驱动程序解释。
 
-符合内核模式驱动程序框架要求的内核模式设备驱动程序 (KMDF) 为其加载该驱动程序。 对于在 ACPI 枚举设备的设备堆栈中加载的驱动程序，ACPI 驱动程序始终是在设备堆栈中创建和操作 PDO 的总线驱动程序。 此功能包括对作为父设备后代的子对象支持的控制方法。
+符合 [内核模式驱动程序框架要求 (KMDF) ](../kernel/index.md) 或 [Windows 驱动模型 (WDM) ](../kernel/writing-wdm-drivers.md) 的内核模式设备驱动程序可以通过使用设备控制请求来评估 ACPI 控制方法。 从 Windows 8 开始，符合 [用户模式驱动程序框架要求 (UMDF) ](../wdf/getting-started-with-umdf-version-2.md) 的用户模式驱动程序可以使用设备控制请求来评估 ACPI 控制方法。 通常，驱动程序会评估 ACPI 控制方法，以启动或配置特定于平台的功能。 驱动程序可以在物理设备对象的命名空间中评估 ACPI 控制方法 *(PDO)* 为其加载该对象。 对于在 ACPI 枚举设备的设备堆栈中加载的驱动程序，ACPI 驱动程序始终是在设备堆栈中创建和操作 PDO 的总线驱动程序。 此功能包括对作为父设备后代的子对象支持的控制方法。
 
 驱动程序通过将以下 [**IRP \_ MJ \_ 设备 \_ 控制**](../kernel/irp-mj-device-control.md) 请求之一发送到设备来评估控制方法。
 

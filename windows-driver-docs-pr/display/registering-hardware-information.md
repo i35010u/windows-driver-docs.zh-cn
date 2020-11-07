@@ -7,12 +7,12 @@ keywords:
 - 注册表 WDK 显示中的硬件信息
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 29bbf383ccc71796b4f083881424bab314371645
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 3e7295d269ea3a22dc3e4c138955fee50a03ad81
+ms.sourcegitcommit: a44ade167cdfb541cf1818e9f9e3726f23f90b66
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89067270"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94361587"
 ---
 # <a name="registering-hardware-information"></a>注册硬件信息
 
@@ -21,11 +21,11 @@ ms.locfileid: "89067270"
 
 若要设置此信息，驱动程序：
 
-1.  调用 **IoOpenDeviceRegistryKey** 来存储特定于驱动程序的信息。 在此调用中，驱动程序在 \_ \_ *DevInstKeyType*参数中指定 PLUGPLAY REGKEY 驱动程序标志，并 \_ 在 \_ DesiredAccess 参数中指定密钥集值、键 \_ 写入或键 \_ 所有 \_ 访问值。 *DesiredAccess*
+1.  调用 [**IoOpenDeviceRegistryKey**](/windows-hardware/drivers/ddi/wdm/nf-wdm-ioopendeviceregistrykey) 函数以打开并获取用于存储特定于驱动程序的信息的 *软件密钥* 的句柄。 在此调用中，驱动程序在 \_ \_ *DevInstKeyType* 参数中指定 PLUGPLAY REGKEY 驱动程序标志，并 \_ 在 \_ DesiredAccess 参数中指定密钥集值、键 \_ 写入或键 \_ 所有 \_ 访问值。 *DesiredAccess*
 
-2.  多次调用 [**ZwSetValueKey**](/windows-hardware/drivers/ddi/wdm/nf-wdm-zwsetvaluekey) 函数，以设置每种类型的硬件信息。 在每次调用中，驱动程序在 *KeyHandle* 参数中指定从 **IoOpenDeviceRegistryKey**获取的软件密钥句柄。
+2.  多次调用 [**ZwSetValueKey**](/windows-hardware/drivers/ddi/wdm/nf-wdm-zwsetvaluekey) 函数，以设置每种类型的硬件信息。 在每次调用中，驱动程序在 *KeyHandle* 参数中指定从 **IoOpenDeviceRegistryKey** 获取的软件密钥句柄。
 
-    下表描述了驱动程序必须注册的信息，并提供了**ZwSetValueKey**的*ValueName*和*Data*参数的详细信息：
+    下表描述了驱动程序必须注册的信息，并提供了 **ZwSetValueKey** 的 *ValueName* 和 *Data* 参数的详细信息：
 
     <table>
     <colgroup>
@@ -70,6 +70,4 @@ ms.locfileid: "89067270"
     </table>
 
      
-
- 
 

@@ -19,12 +19,12 @@ keywords:
 - 屏幕面上的 WDK GDI
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 204a251e5ceb3b60f8995de006366e8221017d1a
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: f6b45d8150c3a2709197ba3a6f724770cc4e18e4
+ms.sourcegitcommit: a44ade167cdfb541cf1818e9f9e3726f23f90b66
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90717454"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94361537"
 ---
 # <a name="surface-negotiation"></a>图面协商
 
@@ -32,7 +32,5 @@ ms.locfileid: "90717454"
 ## <span id="ddk_surface_negotiation_gg"></span><span id="DDK_SURFACE_NEGOTIATION_GG"></span>
 
 
-绘图和文本输出都需要一个要在其上绘制的图面。 此图面由 **DrvEnableSurface** 创建，尽管驱动程序可以支持多个 PDEVs。 支持 [**DrvCreateDeviceBitmap**](/windows/win32/api/winddi/nf-winddi-drvcreatedevicebitmap) 函数的驱动程序可以创建和使用其他表面。 这些位图图面称为 " *辅助* " 或 " *屏外" 表面*。 对于这两种类型的图面，驱动程序负责确定它支持的绘图操作的类型。
-
- 
+绘图和文本输出都需要一个要在其上绘制的图面。 此图面由 [**DrvEnableSurface**](/windows/win32/api/winddi/nf-winddi-drvenablesurface) 函数创建，被称为 *主表面* 。 此表面也称为 *屏幕图面* ，因为它显示在视频显示中。 尽管驱动程序可以支持多个 PDEVs，但每个 *PDEV* 仅启用了一个主表面。 支持 [**DrvCreateDeviceBitmap**](/windows/win32/api/winddi/nf-winddi-drvcreatedevicebitmap) 函数的驱动程序可以创建和使用其他表面。 这些位图图面称为 " *辅助* " 或 " *屏外" 表面* 。 对于这两种类型的图面，驱动程序负责确定它支持的绘图操作的类型。
 

@@ -12,12 +12,12 @@ keywords:
 - 设备树 WDK 中的直接父项
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 137d89b1cc9516c053de31e80e0bf5e2db608e87
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 32bd735dd4b224dede66fd6df26c5da339aefe85
+ms.sourcegitcommit: a44ade167cdfb541cf1818e9f9e3726f23f90b66
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90716174"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94361389"
 ---
 # <a name="obtaining-the-parent-of-a-device-in-the-device-tree"></a>在设备树中获取某个设备的父设备
 
@@ -25,11 +25,11 @@ ms.locfileid: "90716174"
 
 
 
-本主题介绍如何在设备树中获取 **SP_DEVINFO_DATA**) 。
+本主题介绍如何获取设备树中具有设备节点 ( *devnode* ) 的设备父级的 [**SP_DEVINFO_DATA**](/windows/win32/api/setupapi/ns-setupapi-sp_devinfo_data)结构。
 
 **在设备树中获取设备的直接父级的 SP_DEVINFO_DATA 结构**
 
-1.  通过对设备调用[**CM_Get_DevNode_Status**](/windows/win32/api/cfgmgr32/nf-cfgmgr32-cm_get_devnode_status) ，验证设备是否在[设备树](../kernel/device-tree.md)中有 devnode：
+1.  通过对设备调用 [**CM_Get_DevNode_Status**](/windows/win32/api/cfgmgr32/nf-cfgmgr32-cm_get_devnode_status) ，验证设备是否在 [设备树](../kernel/device-tree.md)中有 devnode：
     -   如果设备具有 devnode，则该函数将返回 CR_SUCCESS。
     -   如果设备没有 devnode，则该函数将返回 CR_NO_SUCH_DEVINST。
 
@@ -43,7 +43,7 @@ ms.locfileid: "90716174"
 
 **在设备树中获取设备的祖先的连接序列的 SP_DEVINFO_DATA 结构**
 
--   从设备的直接父项开始，到给定的祖先结束后，重复调用 **CM_Get_Parent** ，直到获取了所有句柄。 对于 **CM_Get_Parent**的每个调用，提供从上一个调用获取的设备实例句柄。
+-   从设备的直接父项开始，到给定的祖先结束后，重复调用 **CM_Get_Parent** ，直到获取了所有句柄。 对于 **CM_Get_Parent** 的每个调用，提供从上一个调用获取的设备实例句柄。
 
 -   对于获取的每个设备实例句柄，请先调用 **CM_Get_Device_ID** 获取设备实例 ID，然后调用 **SetupDiOpenDeviceInfo** 获取设备的 SP_DEVINFO_DATA 结构。
 

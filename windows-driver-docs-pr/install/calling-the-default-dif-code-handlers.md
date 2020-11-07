@@ -4,19 +4,19 @@ description: 调用默认 DIF 代码处理程序
 ms.assetid: bc168c30-2269-4760-bc0a-e3e6ee3ce720
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: aefeaf06d6d9dde593a9c7dc7be18f9e37c1e916
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 6f48532aa5acf3f30f412fff1f7ff1b00cdd251c
+ms.sourcegitcommit: a44ade167cdfb541cf1818e9f9e3726f23f90b66
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90714710"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94361349"
 ---
 # <a name="calling-the-default-dif-code-handlers"></a>调用默认 DIF 代码处理程序
 
 
-默认的 DIF 代码处理程序为 DIF 代码执行系统定义的默认操作，并且 *共同安装程序* 首先处理了 dif 请求，但在 **SetupDiCallClassInstaller** 之前，请先处理已注册用于请求后处理的共同安装程序。
+默认的 DIF 代码处理程序为 [DIF 代码](/previous-versions//ff541307(v=vs.85))执行系统定义的默认操作。 如 [处理 Dif 代码](handling-dif-codes.md)中所述，在 *类安装* 程序和 *共同安装程序* 首次处理了 dif 请求后， [**SetupDiCallClassInstaller**](/windows/win32/api/setupapi/nf-setupapi-setupdicallclassinstaller)将调用一个 dif 请求的默认处理程序，但在 SetupDiCallClassInstaller 之前，在 **SetupDiCallClassInstaller** 之前，会回调为请求后处理而注册的共同安装程序。
 
-**注意**   无法将**SetupDiCallClassInstaller**的操作配置为重新调用类安装程序来处理 DIF 请求。
+**注意**  无法将 **SetupDiCallClassInstaller** 的操作配置为重新调用类安装程序来处理 DIF 请求。
 
  
 
@@ -26,7 +26,7 @@ ms.locfileid: "90714710"
 
 2.  调用默认处理程序以执行默认操作。
 
-    **注意**   类安装程序不得尝试取代默认处理程序的操作。
+    **注意**   类安装程序不得尝试取代默认处理程序的操作。
 
      
 
@@ -34,11 +34,11 @@ ms.locfileid: "90714710"
 
 4.  如果类安装程序成功完成了对 DIF 请求的处理，则返回 NO_ERROR; 如果处理失败，则返回 Win32 错误。
 
-**重要**的  [共同安装](writing-a-co-installer.md)[程序和设备安装应用程序](writing-a-device-installation-application.md)不得调用默认的 DIF 代码处理程序。
+**重要** 的 [共同安装](writing-a-co-installer.md)[程序和设备安装应用程序](writing-a-device-installation-application.md)不得调用默认的 DIF 代码处理程序。  
 
  
 
-有关必须使用此方法的情况的示例，请参阅[**DIF_INSTALLDEVICE**](./dif-installdevice.md)请求引用 "页上有关调用默认处理程序[**SetupDiInstallDevice**](/windows/win32/api/setupapi/nf-setupapi-setupdiinstalldevice)的信息。
+有关必须使用此方法的情况的示例，请参阅 [**DIF_INSTALLDEVICE**](./dif-installdevice.md)请求引用 "页上有关调用默认处理程序 [**SetupDiInstallDevice**](/windows/win32/api/setupapi/nf-setupapi-setupdiinstalldevice)的信息。
 
 下表列出了具有默认处理程序的 DIF 代码。
 
@@ -55,8 +55,6 @@ ms.locfileid: "90714710"
 | [**DIF_SELECTBESTCOMPATDRV**](./dif-selectbestcompatdrv.md)      | [**SetupDiSelectBestCompatDrv**](/windows/win32/api/setupapi/nf-setupapi-setupdiselectbestcompatdrv)               |
 | [**DIF_SELECTDEVICE**](./dif-selectdevice.md)                    | [**SetupDiSelectDevice**](/windows/win32/api/setupapi/nf-setupapi-setupdiselectdevice)                             |
 | [**DIF_UNREMOVE**](./dif-unremove.md)                            | [**SetupDiUnremoveDevice**](/windows/win32/api/setupapi/nf-setupapi-setupdiunremovedevice)                         |
-
- 
 
  
 
