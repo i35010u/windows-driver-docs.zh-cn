@@ -4,12 +4,12 @@ description: 从 Windows 2000 开始，驱动程序验证器在 Windows 的所�
 ms.assetid: EAC30108-F8A2-4914-9218-2E0672982B7E
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c26fd20fd4bd52daeea8a0b56b6a604fd966bed8
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: d9d01be3d27366cefef5842d0958dc9fb347ad87
+ms.sourcegitcommit: 2244845d5c74f5d260de1e1a994ae3cdcfaaa90a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89382113"
+ms.lasthandoff: 11/09/2020
+ms.locfileid: "94386088"
 ---
 # <a name="driver-verifier-whats-new"></a>驱动程序验证程序：新增功能
 
@@ -22,7 +22,7 @@ ms.locfileid: "89382113"
 * [Windows Vista 中的驱动程序验证程序](#driver-verifier-in-windows-vista-updated-february-9-2009)
 * [Windows XP 中的驱动程序验证程序](#driver-verifier-in-windows-xp-updated-december-4-2001)
 
-## <a name="driver-verifier-in-windows10-updated-may-8-2018"></a>Windows 10 中的驱动程序验证程序 (*更新：5月8日 2018*) 
+## <a name="driver-verifier-in-windows-10-updated-may-8-2018"></a>Windows 10 中的驱动程序验证程序 ( *更新：5月8日 2018* ) 
 
 > [!IMPORTANT]
 > 从 Windows 10 1803 之后的版本开始，运行驱动程序验证程序将不再自动启用 Windows 驱动程序框架 (WDF) 验证。 请注意以下事项：
@@ -37,7 +37,7 @@ ms.locfileid: "89382113"
 * 四个新的 [KMDF 驱动程序规则](/windows-hardware/drivers/ddi/index)
 * 三个新的 [NDIS 驱动程序规则](/windows-hardware/drivers/ddi/index)
 
-## <a name="driver-verifier-in-windows-8-1-updated-june-17-2013"></a>Windows 8-1 中的驱动程序验证程序 (*更新：6月 17 2013 日*) 
+## <a name="driver-verifier-in-windows-8-1-updated-june-17-2013"></a>Windows 8-1 中的驱动程序验证程序 ( *更新：6月 17 2013 日* ) 
 
 从 Windows 8.1 开始，驱动程序验证程序引入了四个新选项用于检测错误。
 
@@ -50,7 +50,7 @@ ms.locfileid: "89382113"
 * [VM 交换机验证](vm-switch-verification.md)选项监视在[hyper-v 可扩展交换机](../network/hyper-v-extensible-switch.md)内运行)  (可扩展交换机扩展的筛选器驱动程序。
 * 新调试器扩展： [ **！ ruleinfo**](../debugger/-ruleinfo.md)
 
-## <a name="driver-verifier-in-windows-8-updated-october-20-2012"></a>Windows 8 中的驱动程序验证程序 (*更新：2012年10月20日*) 
+## <a name="driver-verifier-in-windows-8-updated-october-20-2012"></a>Windows 8 中的驱动程序验证程序 ( *更新：2012年10月20日* ) 
 
 从 Windows 8 开始，驱动程序验证程序引入了五个新选项用于检测错误。
 
@@ -62,7 +62,7 @@ ms.locfileid: "89382113"
 
 使用 Visual Studio 2012 和适用于 Windows 8 的 WDK 构建、部署和测试驱动程序时，还可以将驱动程序验证程序配置为在部署要测试的驱动程序时在测试计算机上运行。
 
-## <a name="driver-verifier-in-windows-7-updated-october-22-2012"></a>Windows 7 中的驱动程序验证程序 (*更新：2012年10月22日*) 
+## <a name="driver-verifier-in-windows-7-updated-october-22-2012"></a>Windows 7 中的驱动程序验证程序 ( *更新：2012年10月22日* ) 
 
 对于 Windows 7，驱动程序验证程序已通过允许驱动程序验证程序公开更多类典型驱动程序错误的新测试和功能进行了增强。
 
@@ -97,12 +97,12 @@ ms.locfileid: "89382113"
 
 对于从已验证的驱动程序到 [**KeEnterCriticalRegion**](/windows-hardware/drivers/ddi/ntddk/nf-ntddk-keentercriticalregion) 和 [**KeLeaveCriticalRegion**](/windows-hardware/drivers/ddi/ntddk/nf-ntddk-keleavecriticalregion) 的最近调用，有一个按时间顺序排列的日志。 日志内容通过使用 Windows 调试器的 **！ verifier 0x200** 调试器扩展来显示。 此信息可用于了解某个线程在关键区域中意外运行或试图离开其现有关键区域的情况。
 
-可以使用 **！ verifier 0x40**调试器扩展显示 "[强制挂起 I/o 请求](force-pending-i-o-requests.md)" 日志中的其他信息。 在早期的 Windows 版本中，该日志只包含驱动程序验证程序被迫挂起的每个 IRP 的一个堆栈跟踪。 这是从第一次调用 [**IoCompleteRequest**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iocompleterequest) 的时间到强制挂起 IRP 的堆栈跟踪。 对于每个强制挂起的 IRP，Windows 7 至少有两个日志条目，可能多于两个：
+可以使用 **！ verifier 0x40** 调试器扩展显示 " [强制挂起 I/o 请求](force-pending-i-o-requests.md)" 日志中的其他信息。 在早期的 Windows 版本中，该日志只包含驱动程序验证程序被迫挂起的每个 IRP 的一个堆栈跟踪。 这是从第一次调用 [**IoCompleteRequest**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iocompleterequest) 的时间到强制挂起 IRP 的堆栈跟踪。 对于每个强制挂起的 IRP，Windows 7 至少有两个日志条目，可能多于两个：
 
 * 当驱动程序验证器选取 IRP 强制挂起时，堆栈跟踪。 当某个已验证的驱动程序调用 [**IoCallDriver**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iocalldriver)时，驱动程序验证器选择某些要强制挂起的 irp。
 * 完成后，强制挂起 IRP 的每个 [**IoCompleteRequest**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iocompleterequest) 调用的堆栈跟踪到达已验证的驱动程序。 同一 IRP 可以有多个 **IoCompleteRequest** 调用，因为其中一个驱动程序可以暂时停止完成例程的完成，然后再次调用 **IoCompleteRequest** 来恢复完成。
 
-IRQL 转换日志中存在更有效的堆栈跟踪。 使用 **！ verifier 8**显示此日志。 在 Windows 7 之前的 Windows 版本中，驱动程序验证程序可能已尝试在提升的 IRQL 上记录其中一些堆栈跟踪，因此无法捕获堆栈跟踪，因为存在高 IRQL 值。 在 Windows 7 中，驱动程序验证程序尝试捕获这些堆栈跟踪：
+IRQL 转换日志中存在更有效的堆栈跟踪。 使用 **！ verifier 8** 显示此日志。 在 Windows 7 之前的 Windows 版本中，驱动程序验证程序可能已尝试在提升的 IRQL 上记录其中一些堆栈跟踪，因此无法捕获堆栈跟踪，因为存在高 IRQL 值。 在 Windows 7 中，驱动程序验证程序尝试捕获这些堆栈跟踪：
 
 * 在引发 IRQL 之前（例如，在已验证的驱动程序调用 [**KeAcquireSpinLock**](/windows-hardware/drivers/ddi/wdm/nf-wdm-keacquirespinlock)时）。
 * 降低 IRQL 后，在已验证的驱动程序调用 [**KeReleaseSpinLock**](/windows-hardware/drivers/ddi/wdm/nf-wdm-kereleasespinlock)时。
@@ -111,7 +111,7 @@ IRQL 转换日志中存在更有效的堆栈跟踪。 使用 **！ verifier 8**�
 
 **！分析** 可以会审由增强的 i/o 验证程序检查公开的问题， (是 Windows 7 中的 i/o 验证程序) 的一部分。 在早期版本的 Windows 版本中，增强的 i/o 验证程序错误报告包括显示驱动程序验证程序检测到的驱动程序缺陷的说明，并将其中断到调试器。 运行 **！** 在此类中断后进行分析不会导致对其中许多中断有意义的会审，因为 **！分析** 不能使用调试器中显示的错误说明文本中的信息。 在 Windows 7 中，驱动程序验证器会将有关这些驱动程序缺陷的有意义信息保存在内存中。 **！分析** 可以找到此信息，并为许多这类中断执行更有意义的自动会审。
 
-## <a name="driver-verifier-in-windows-vista-updated-february-9-2009"></a>Windows Vista 中的驱动程序验证程序 (*更新：2009年2月9日*) 
+## <a name="driver-verifier-in-windows-vista-updated-february-9-2009"></a>Windows Vista 中的驱动程序验证程序 ( *更新：2009年2月9日* ) 
 
 对于 Windows Vista，驱动程序验证程序已通过新的测试和功能得到了增强。
 
@@ -125,7 +125,7 @@ IRQL 转换日志中存在更有效的堆栈跟踪。 使用 **！ verifier 8**�
 * 锁定内存页跟踪
 * 其他自动检查
 
-## <a name="driver-verifier-in-windows-xp-updated-december-4-2001"></a>Windows XP 中的驱动程序验证程序 (*更新：2001年12月4日*) 
+## <a name="driver-verifier-in-windows-xp-updated-december-4-2001"></a>Windows XP 中的驱动程序验证程序 ( *更新：2001年12月4日* ) 
 
 驱动程序验证程序是用于监视 Windows 内核模式驱动程序和图形驱动程序的工具。 Microsoft 强烈建议硬件制造商用驱动程序验证程序测试其驱动程序，以确保驱动程序不会进行非法的函数调用或导致系统损坏。 驱动程序验证程序已通过适用于 Microsoft Windows XP 的新测试和功能得到了增强。
 
@@ -141,16 +141,13 @@ IRQL 转换日志中存在更有效的堆栈跟踪。 使用 **！ verifier 8**�
 
 驱动程序验证程序功能还包括：
 
-* **新的验证程序命令行选项** verifier.exe 实用程序有一个新参数 *VolatileDriverList*，它可与 **/adddriver** 关键字一起使用，以指定要添加到易失性设置的驱动程序列表。 *VolatileDriverList* 可以与 **/removedriver** 关键字一起使用，以指定要删除的驱动程序列表。
+* **新的验证程序命令行选项** verifier.exe 实用程序有一个新参数 *VolatileDriverList* ，它可与 **/adddriver** 关键字一起使用，以指定要添加到易失性设置的驱动程序列表。 *VolatileDriverList* 可以与 **/removedriver** 关键字一起使用，以指定要删除的驱动程序列表。
 * **New！ verifier extension** New [**！**](../debugger/-verifier.md) 当监视资源不足或 IRQL 引发和旋转锁时，验证程序扩展显示额外的日志信息。 还提供联机帮助。
-  * 使用0x4 设置的*标志*将导致显示包含驱动程序验证器在低资源模拟期间注入的错误日志
-  * 使用0x8 设置的*标志*将导致显示包含所验证驱动程序所做的最新 IRQL 更改的日志
+  * 使用0x4 设置的 *标志* 将导致显示包含驱动程序验证器在低资源模拟期间注入的错误日志
+  * 使用0x8 设置的 *标志* 将导致显示包含所验证驱动程序所做的最新 IRQL 更改的日志
   * 如果 *Flags* 等于0x4 或0x8，则数量参数指定要包含在显示中的记录数或日志条目数
   * **?** 参数显示简短帮助文本
-* **New！ gdikdx extension**
-
-    新的 **！ gdikdx** extension， **！ gdikdx**，它列出了针对图形驱动程序的低资源模拟过程中调用的 GDI 回调函数的统计信息。
 
 * 驱动程序验证程序管理器的联机帮助可通过以下方式之一显示驱动程序验证器管理器的联机帮助：
   * 选择并按住 (或右键) 单击 "驱动程序验证器管理器" 窗口中的某个项，然后从弹出菜单中选择 **"这是什么？"** 。
-  * 在窗口右上角选择问号 (**？**) ，然后在 "驱动程序验证器管理器" 窗口中选择一个项。
+  * 在窗口右上角选择问号 ( **？** ) ，然后在 "驱动程序验证器管理器" 窗口中选择一个项。

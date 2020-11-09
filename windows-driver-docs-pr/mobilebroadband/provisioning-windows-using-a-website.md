@@ -4,12 +4,12 @@ description: 使用网站预配 Windows
 ms.assetid: ba60fddd-a248-4afb-9390-f9277ef1f094
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e85a92592e38b5b0c4bd1feb8110e2981c5abd74
-ms.sourcegitcommit: a866b3470025d85b25a48857a81f893179698e7e
+ms.openlocfilehash: 3a1c9750754e9a8a634f3e46be6af3ba7cb9098f
+ms.sourcegitcommit: 34bc742a0de40bcc4eda99f32622c58584a7f9f2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92356015"
+ms.lasthandoff: 11/09/2020
+ms.locfileid: "94384179"
 ---
 # <a name="provisioning-windows-using-a-website"></a>使用网站预配 Windows
 
@@ -72,9 +72,9 @@ ms.locfileid: "92356015"
 
 ### <a name="span-iddetectspanspan-iddetectspandetect-internet-access"></a><span id="detect"></span><span id="DETECT"></span>检测 Internet 访问
 
-当 Windows 首次连接到网络以确定 Internet 连接时，它会执行各种网络测试。 这些测试的目标站点是 []() msftncsi.com，它是专用于连接测试的保留域。
+当 Windows 首次连接到网络以确定 Internet 连接时，它会执行各种网络测试。 这些测试的目标站点是 `www.msftconnecttest.com` ，它是专用于连接测试的保留域。
 
-若要避免误报或漏报，你的网络必须 []() 仅在用户具有常规 Internet 访问权限时才允许访问 msftncsi.com。 没有活动数据计划连接到网络的用户不能访问 []() msftncsi.com。
+若要避免误报或假负，你的网络必须 `www.msftconnecttest.com` 仅在用户具有常规 Internet 访问权限时才允许访问。 没有活动数据计划连接到网络的用户无权访问 `www.msftconnecttest.com` 。 有关详细信息，请参阅 [当计算机连接到公司网络或公用网络时，会打开 Internet Explorer 或 Edge 窗口](https://support.microsoft.com/en-us/help/4494446/an-internet-explorer-or-edge-window-opens-when-your-computer-connects)。
 
 ### <a name="span-idwebaccessspanspan-idwebaccessspanweb-site-access"></a><span id="webaccess"></span><span id="WEBACCESS"></span>网站访问
 
@@ -90,7 +90,7 @@ ms.locfileid: "92356015"
 
 当 Windows 使用移动运营商的 URL 从 APN 数据库) 的 [operator](operator.md) 元素中 (AccountExperienceURL 属性时，windows 将提供完成移动宽带网站激活所需的设备信息。 此设备信息将作为 HTTPS 请求的参数传递到网站。
 
-Url 的格式为** https://Operator url \[ ？ propN = valN \[&\] \* \] propN = valN**，其中：
+Url 的格式为 **https://Operator url \[ ？ propN = valN \[&\] \* \] propN = valN** ，其中：
 
 -   **操作员 URL** 你的 URL，并将其存储在 APN 数据库中
 

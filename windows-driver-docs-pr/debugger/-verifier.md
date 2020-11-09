@@ -13,17 +13,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 66d32dae6bc09b4bfe03f493aa7b2ea81ba45f7c
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: e4d27c04249aead17cc7c1b1b5f35e40288efc12
+ms.sourcegitcommit: 2244845d5c74f5d260de1e1a994ae3cdcfaaa90a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89217892"
+ms.lasthandoff: 11/09/2020
+ms.locfileid: "94386078"
 ---
 # <a name="verifier"></a>!verifier
 
 
-**！ Verifier**扩展显示驱动程序验证程序及其操作的状态。
+**！ Verifier** 扩展显示驱动程序验证程序及其操作的状态。
 
 驱动程序验证程序包含在 Windows 中。 它适用于已检查和免费的生成。 有关驱动程序验证程序的信息，请参阅 Windows 驱动程序工具包 (WDK) 文档中的 [驱动程序验证程序](../devtest/driver-verifier.md) 主题。
 
@@ -62,19 +62,19 @@ ms.locfileid: "89217892"
 <span id="Bit_3__0x8_"></span><span id="bit_3__0x8_"></span><span id="BIT_3__0X8_"></span>第 3 (0x8)   
 显示所验证的驱动程序所做的最新的 IRQL 更改。 将显示旧的 IRQL、新的 IRQL、处理器和时间戳。 如果 *Flags* 正好是0x8 并且包含了 *数量* 参数，则可以选择所显示的这些记录的数量。 否则，会显示四条记录。
 
-**警告**   在64位版本的 Windows 中，某些引发或降低 IRQL 的内核函数实现为内联代码，而不是导出函数。 驱动程序验证程序不报告内联代码所做的 IRQL 更改，因此驱动程序验证程序生成的 IRQL 转换日志可能是不完整的。 有关缺少的 IRQL 转换条目的示例，请参阅备注。
+**警告**  在64位版本的 Windows 中，某些引发或降低 IRQL 的内核函数实现为内联代码，而不是导出函数。 驱动程序验证程序不报告内联代码所做的 IRQL 更改，因此驱动程序验证程序生成的 IRQL 转换日志可能是不完整的。 有关缺少的 IRQL 转换条目的示例，请参阅备注。
 
  
 
 <span id="Bit_6__0x40_"></span><span id="bit_6__0x40_"></span><span id="BIT_6__0X40_"></span>第 6 (0x40)   
  (Windows Vista 和更高版本) 显示驱动程序验证程序的 " **强制挂起 I/o 请求** " 选项中的信息，包括来自强制挂起的 irp 日志的跟踪。
 
-*数量*参数指定要显示的跟踪数。 默认情况下，将显示整个日志。
+*数量* 参数指定要显示的跟踪数。 默认情况下，将显示整个日志。
 
 <span id="Bit_7__0x80_"></span><span id="bit_7__0x80_"></span><span id="BIT_7__0X80_"></span>第7位 (0x80)   
  (Windows Vista 及更高版本) 显示来自内核池分配/可用日志的信息。
 
-*数量*参数指定要显示的跟踪数。 默认情况下，将显示整个日志。
+*数量* 参数指定要显示的跟踪数。 默认情况下，将显示整个日志。
 
 如果指定 *address* ，则只显示与内核池分配/可用日志中指定地址相关联的跟踪。
 
@@ -119,7 +119,7 @@ Kdexts.dll
 有关 [驱动程序验证程序](../devtest/driver-verifier.md)的信息，请参阅 Windows 驱动程序工具包 (WDK) 文档。
 
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
 下面的示例演示在64位版本的 Windows 上，IRQL 转换日志并非始终完成。 显示的两个条目是处理器2的日志中的连续条目。 第一项显示从2到0的 IRQL。 第二项显示从2到2的 IRQL。 缺少 IRQL 从0到2的情况的信息。
@@ -150,13 +150,11 @@ Time stamp:         0000000000000857
     fffff88005f086db nsiproxy!NsippDispatchDeviceControl+0xa3
 ```
 
-使用驱动程序验证程序测试图形驱动程序时，请使用 [**！ gdikdx**](-gdikdx-verifier.md) 扩展，而不是 **！ verifier**。
-
-4、8和0x20、0x40、0x80 和0x100 的值是 *标记*的特殊值。 如果使用这些值，则可以使用 " **参数** " 部分中列出的特殊参数，而显示内容将只包含与该标志值相关联的信息。
+4、8和0x20、0x40、0x80 和0x100 的值是 *标记* 的特殊值。 如果使用这些值，则可以使用 " **参数** " 部分中列出的特殊参数，而显示内容将只包含与该标志值相关联的信息。
 
 如果使用 *标志* 的任何其他值，即使设置了其中的一个或多个位，也只允许使用 *flags* 和 *Image* 参数。 在这种情况下，除了显示的所有其他信息外， **！ verifier** 还会显示处于活动状态的驱动程序验证程序选项，以及有关池分配、IRQL 引发、旋转锁和剪裁的统计信息。
 
-如果 *Flags* 等于0x20，则驱动程序验证程序的驱动程序挂起验证选项将使用为 *CompletionTime*、 *CancelTime*和 *ForceCancellation* 指定的值。 这些新值会立即生效，最后一次启动。 重新启动时，它们会恢复为默认值。
+如果 *Flags* 等于0x20，则驱动程序验证程序的驱动程序挂起验证选项将使用为 *CompletionTime* 、 *CancelTime* 和 *ForceCancellation* 指定的值。 这些新值会立即生效，最后一次启动。 重新启动时，它们会恢复为默认值。
 
 此外，如果 *标志* 等于 0x20 (有或不包含附加参数) ，则将打印驱动程序挂起验证日志。 有关解释该日志的信息，请参阅 Windows 驱动程序工具包 (WDK) 文档中的驱动程序验证程序文档的驱动程序挂起验证部分。
 
@@ -286,7 +284,7 @@ Time stamp:         000000000000495e
     fffff80002a7bdd6 nt!KiProcessExpiredTimerList+0xc6
 ```
 
-下面是启用了第7位并指定了*地址*的 Windows Vista 计算机上的 **！ verifier**扩展的示例。
+下面是启用了第7位并指定了 *地址* 的 Windows Vista 计算机上的 **！ verifier** 扩展的示例。
 
 ```dbgcmd
 0: kd> !verifier 80 a2b1cf20
