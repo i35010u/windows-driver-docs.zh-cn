@@ -14,22 +14,22 @@ api_type:
 - HeaderDef
 ms.date: 09/25/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: db61829559525bd4c145eff791c755dc914c9a51
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 7ab75f1ab954908286c2e2e2fb8d604775b397ae
+ms.sourcegitcommit: cfd4d8ee889c6a3feed79ae112662f6c095b6a36
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90101906"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94417421"
 ---
 # <a name="ksproperty_sounddetector_patterns"></a>KSPROPERTY \_ SOUNDDETECTOR \_ 模式
 
-**KSPROPERTY \_ SOUNDDETECTOR \_ 模式**属性由操作系统设置，用于配置要检测的关键字。
+**KSPROPERTY \_ SOUNDDETECTOR \_ 模式** 属性由操作系统设置，用于配置要检测的关键字。
 
 OS 设置关键字模式，或者可能将此值设置为空值。
 
 当 OS 设置此属性时，驱动程序会自动 disarms 检测程序。
 
-如果由于资源不足而导致驱动程序无法满足 "set" 请求，则驱动程序将无法通过 **状态 \_ 为 \_ 资源**的请求。
+如果由于资源不足而导致驱动程序无法满足 "set" 请求，则驱动程序将无法通过 **状态 \_ 为 \_ 资源** 的请求。
 
 ### <a name="span-idusage_summary_tablespanspan-idusage_summary_tablespanspan-idusage_summary_tablespanusage-summary-table---kspropsetid_sounddetector"></a><span id="Usage_Summary_Table"></span><span id="usage_summary_table"></span><span id="USAGE_SUMMARY_TABLE"></span>使用情况摘要表-KSPROPSETID_SoundDetector
 
@@ -47,7 +47,7 @@ OS 设置关键字模式，或者可能将此值设置为空值。
 <tr class="header">
 <th align="left">获取</th>
 <th align="left">设置</th>
-<th align="left">目标</th>
+<th align="left">Target</th>
 <th align="left">属性描述符类型</th>
 <th align="left">属性值类型</th>
 </tr>
@@ -80,7 +80,7 @@ OS 设置关键字模式，或者可能将此值设置为空值。
 <tr class="header">
 <th align="left">获取</th>
 <th align="left">设置</th>
-<th align="left">目标</th>
+<th align="left">Target</th>
 <th align="left">属性描述符类型</th>
 <th align="left">属性值类型</th>
 </tr>
@@ -90,7 +90,7 @@ OS 设置关键字模式，或者可能将此值设置为空值。
 <td align="left"><p>否</p></td>
 <td align="left"><p>是</p></td>
 <td align="left"><p>筛选器</p></td>
-<td align="left"><p><a href="/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-kssounddetectorproperty" data-raw-source="[&lt;strong&gt;KSSOUNDDETECTORPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-kssounddetectorproperty"><strong>KSSOUNDDETECTORPROPERTY</strong></a></p></td>
+<td align="left"><p><a href="/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-kssounddetectorproperty" data-raw-source="[&lt;strong&gt;KSSOUNDDETECTORPROPERTY&lt;/strong&gt;](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-kssounddetectorproperty)"><strong>KSSOUNDDETECTORPROPERTY</strong></a></p></td>
 <td align="left"><p><a href="/windows-hardware/drivers/ddi/ks/ns-ks-ksmultiple_item" data-raw-source="[&lt;strong&gt;KSMULTIPLE_ITEM&lt;/strong&gt;](/windows-hardware/drivers/ddi/ks/ns-ks-ksmultiple_item)"><strong>KSMULTIPLE_ITEM</strong></a></p></td>
 </tr>
 </tbody>
@@ -101,12 +101,12 @@ OS 设置关键字模式，或者可能将此值设置为空值。
 
 属性值为 [**KSMULTIPLE \_ 项**](/windows-hardware/drivers/ddi/ks/ns-ks-ksmultiple_item) 结构，后跟64位对齐检测模式的序列。 每个模式都以 [**SOUNDDETECTOR \_ PATTERNHEADER**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-sounddetector_patternheader) 开始，后跟模式负载。
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
 在以下时间之前，驱动程序不应完成 "set" 请求：
 
--   检测到已卸下， [**KSPROPERTY \_ SOUNDDETECTOR \_ **](ksproperty-sounddetector-armed.md) 上的后续 "get" 请求会返回 false。
+-   检测到已卸下， [**KSPROPERTY \_ SOUNDDETECTOR \_**](ksproperty-sounddetector-armed.md) 上的后续 "get" 请求会返回 false。
 -   [**KSPROPERTY \_ SOUNDDETECTOR \_ MATCHRESULT**](ksproperty-sounddetector-matchresult.md)上的后续 "get" 请求不返回任何数据。
 -   新的关键字模式已建立，并且关键字检测器正在对新模式进行操作。
 
@@ -131,7 +131,7 @@ OS 需要此行为以避免检测到的关键字和更新关键字 (模式之间
 </tr>
 <tr class="even">
 <td align="left"><p>最低受支持的服务器</p></td>
-<td align="left"><p>Windows Server 2016</p></td>
+<td align="left"><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>标头</p></td>

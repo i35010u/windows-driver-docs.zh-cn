@@ -12,25 +12,24 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 76482727eaa7a7882ab16d017290f90b27c56cd5
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 6346a3762c3d6a79013dc6956da5ba50f4ed92bf
+ms.sourcegitcommit: cfd4d8ee889c6a3feed79ae112662f6c095b6a36
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90105490"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94417449"
 ---
 # <a name="ksinvalidstreampointer-rule-ks"></a>KsInvalidStreamPointer 规则 (ks) 
 
-**KsInvalidStreamPointer**规则验证 ks 微型端口驱动程序是否提供有效的 Ks 流指针作为函数参数。 典型冲突是由不正确的指针处理或内存使用不当引起的指针损坏引起的。
+**KsInvalidStreamPointer** 规则验证 ks 微型端口驱动程序是否提供有效的 Ks 流指针作为函数参数。 典型冲突是由不正确的指针处理或内存使用不当引起的指针损坏引起的。
 
-有效的流指针是前导或尾随边缘流指针，或者是通过 [KsStreamPointerClone](/windows-hardware/drivers/ddi/ks/nf-ks-ksstreampointerclone)克隆的流指针。 有关详细信息，请参阅 [前导边缘和尾随边缘流指针](
-https://docs.microsoft.com/windows-hardware/drivers/stream/leading-and-trailing-edge-stream-pointers)。
+有效的流指针是前导或尾随边缘流指针，或者是通过 [KsStreamPointerClone](/windows-hardware/drivers/ddi/ks/nf-ks-ksstreampointerclone)克隆的流指针。 有关详细信息，请参阅 [前导边缘和尾随边缘流指针](/windows-hardware/drivers/stream/leading-and-trailing-edge-stream-pointers)。
 
 此规则还验证是否尚未使用 [KsStreamPointerDelete](/windows-hardware/drivers/ddi/ks/nf-ks-ksstreampointerdelete) 来尝试删除非克隆的流指针。
 
 **驱动程序模型： KS**
 
-**Bug 检查 () 发现此规则**： [**bug 检查0XC4：驱动程序 \_ 验证器 \_ 检测到 \_ 违反**](../debugger/bug-check-0xc4--driver-verifier-detected-violation.md) (0x0008100C) 
+**Bug 检查 () 发现此规则** ： [**bug 检查0XC4：驱动程序 \_ 验证器 \_ 检测到 \_ 违反**](../debugger/bug-check-0xc4--driver-verifier-detected-violation.md) (0x0008100C) 
 
 
 <a name="example"></a>示例
@@ -78,7 +77,7 @@ KsStreamPointerDelete (NULL);
 
  
 
-**验证程序/domain ks** \[*选项* \]**/driver** * &lt; yourdriver &gt; *
+**验证程序/domain ks** \[*选项* \]**/driver** *&lt; yourdriver &gt;*
 
 <table>
 <colgroup>

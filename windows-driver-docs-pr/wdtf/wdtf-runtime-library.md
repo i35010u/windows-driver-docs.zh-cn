@@ -9,12 +9,12 @@ keywords:
 - 驱动程序测试
 ms.date: 08/14/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 2b5384ebf60e63aefbdd317ecb4a239f8261455d
-ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
+ms.openlocfilehash: bc730e87f0fd507dbc3186b68dcb9db69a5871ab
+ms.sourcegitcommit: cfd4d8ee889c6a3feed79ae112662f6c095b6a36
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89403528"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94417459"
 ---
 # <a name="the-wdtf-runtime-library"></a>WDTF 运行时库
 
@@ -35,18 +35,18 @@ WDTF 运行时库包含可帮助您会审和运行测试的工具。
 |工具或命令脚本的名称|说明|
 |----|----|
 |CheckWDTFInstall|验证是否已正确安装 WDTF。 运行此命令将创建文件 CheckWDTFInstall，该文件包含有关所有已安装的 WDTF 组件的信息。|
-|DisplayDeviceClass|显示当前系统上存在的设备类信息。 显示类 GUID 和类友好名称。 尝试创建查找某些设备类的/DQ 查询时非常有用。|
+|DisplayDeviceClass.vbs|显示当前系统上存在的设备类信息。 显示类 GUID 和类友好名称。 尝试创建查找某些设备类的/DQ 查询时非常有用。|
 |DisplayDeviceDataFields|显示当前系统上存在的设备类信息。 显示类 GUID 和类友好名称。 尝试创建查找某些设备类的/DQ 查询时非常有用。|
-|DisplayDevices|显示/DQ 参数表示的每个设备的相关信息，默认值为系统中的所有设备。 |
-|DisplayDevicesWithWDTFilters|显示安装有其中一个 WDTF 筛选器驱动程序的任何设备。 WDTF 有三个筛选器驱动程序： EDT、IOSPY 或按钮驱动程序。|
-|DisplayDeviceTree|显示当前系统的设备树。|
+|DisplayDevices.vbs|显示/DQ 参数表示的每个设备的相关信息，默认值为系统中的所有设备。 |
+|DisplayDevicesWithWDTFilters.vbs|显示安装有其中一个 WDTF 筛选器驱动程序的任何设备。 WDTF 有三个筛选器驱动程序： EDT、IOSPY 或按钮驱动程序。|
+|DisplayDeviceTree.vbs|显示当前系统的设备树。|
 |DisplaySystemDataFields|显示所有系统命名空间及其包含的字段。|
 
 ## <a name="how-to-install-the-wdtf-runtime-library"></a>如何安装 WDTF 运行时库
 
 设置测试计算机以进行部署时，会在测试计算机上安装 WDTF 运行时库。 按照[为驱动程序部署设置计算机和测试 (wdk 10 和 WDK 8.1) ](../gettingstarted/provision-a-target-computer-wdk-8-1.md)中的说明进行操作
 
-<!-- [Provision a computer for driver deployment and testing (WDK 8)](https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/provision-a-target-computer-wdk-8) -->
+<!-- [Provision a computer for driver deployment and testing (WDK 8)](/windows-hardware/drivers/gettingstarted/provision-a-target-computer-wdk-8) -->
 
 还可以手动安装 WDTF 运行时库。
 
@@ -54,7 +54,7 @@ WDTF 运行时库包含可帮助您会审和运行测试的工具。
 
 1. 安装 Visual Studio，然后安装 WDK。
 
-2. 配置远程计算机以进行测试。 在 Visual Studio 中，选择 " **驱动程序** " 菜单，指向 " **测试**"，然后选择 " **配置计算机**"。
+2. 配置远程计算机以进行测试。 在 Visual Studio 中，选择 " **驱动程序** " 菜单，指向 " **测试** "，然后选择 " **配置计算机** "。
 
 ### <a name="manually-installing-wdtf-on-a-test-computer-alternative-method"></a>在测试计算机上手动安装 WDTF (备用方法) 
 
@@ -62,13 +62,13 @@ WDTF 运行时库包含可帮助您会审和运行测试的工具。
 
 2. 将 WDTF 安装文件从安装了 WDK 的计算机复制到测试计算机。 WDTF 安装文件 ( * .msi 和 * .cab 文件) 位于开发系统上的%programfiles%\Windows Kits\10\Testing\Runtimes 目录中。 将目录中的所有文件复制到与测试计算机的体系结构相匹配的目录中。
 
-3. 在测试计算机上，使用提升的权限打开命令提示符窗口 (**以管理员身份运行**) 并导航到包含 WDTF 安装文件的目录。 运行以下命令之一以安装 WDTF。
+3. 在测试计算机上，使用提升的权限打开命令提示符窗口 ( **以管理员身份运行** ) 并导航到包含 WDTF 安装文件的目录。 运行以下命令之一以安装 WDTF。
 
     ```cmd
     msiexec /i "Windows Driver Testing Framework (WDTF) Runtime Libraries-x64_en-us.msi"
     ```
 
-    -或-
+    -或者-
 
     ```cmd
     msiexec /i "Windows Driver Testing Framework (WDTF) Runtime Libraries-x86_en-us.msi"
@@ -78,7 +78,7 @@ WDTF 运行时库包含可帮助您会审和运行测试的工具。
 
 |选项|说明|
 |----|----|
-|**/l** * *filename*|将所有消息和错误写入文件 *filename*。|
+|**/l** _ _filename *|将所有消息和错误写入文件 *filename* 。|
 |**WDTFDIR =**_CustomInstallationDirectory_|指定 WDTF 运行时的目标目录。 默认 **WDTFDir** 为%programfiles%\Windows Kits\10\Testing\Runtimes\WDTF|
 |**WDTF_SKIP_MACHINE_CONFIG = [1 \| 2]**|指定 **1** 以将 cscript.exe 设置为默认脚本引擎。 指定 **2** ，跳过启用 AC 和 DC RTC 唤醒。|
 |**/?**|显示 msiexec.exe 选项的帮助。|
@@ -109,6 +109,6 @@ msiexec /i "Windows Driver Testing Framework (WDTF) Runtime Libraries-x64_en-us.
 
 ## <a name="manually-uninstalling-wdtf-on-a-test-computer"></a>在测试计算机上手动卸载 WDTF
 
-1. 在测试计算机上，中转到 " **设置** "，然后选择 " **应用**"。
+1. 在测试计算机上，中转到 " **设置** "，然后选择 " **应用** "。
 
-2. 在 " **程序和功能**" 中，找到 Windows 驱动程序测试框架 (WDTF) 运行时库，选择并按住 (或右键单击) ，然后选择 " **卸载**"。
+2. 在 " **程序和功能** " 中，找到 Windows 驱动程序测试框架 (WDTF) 运行时库，选择并按住 (或右键单击) ，然后选择 " **卸载** "。

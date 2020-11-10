@@ -4,17 +4,17 @@ description: 驱动程序验证程序检测到驱动程序违反了 NDIS/WiFi �
 ms.assetid: 73D4B6DF-E667-4C71-B985-FCDC05837908
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b2a231b6228a76ad6c589adcda999f549dfba72a
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 97f502bf5e718eb57f98d0cdaf3d482ec77837df
+ms.sourcegitcommit: cfd4d8ee889c6a3feed79ae112662f6c095b6a36
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89383967"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94417425"
 ---
 # <a name="debugging-ndiswifi-time-out-errors---driver_verifier_detected_violation-c4"></a>调试 NDIS/WiFi 超时错误-驱动程序 \_ 验证器 \_ 检测到 \_ 违反 (C4) 
 
 
-如果选择了 [ndis/wifi 验证](ndis-wifi-verification.md) 选项，并且驱动程序验证器检测到驱动程序违反了某个 NDIS/wifi 超时规则，则 [驱动程序验证](driver-verifier.md) 器将生成 [**BUG 检查0xC4：驱动程序验证器 \_ \_ 检测到 \_ **](../debugger/bug-check-0xc4--driver-verifier-detected-violation.md) 与参数1等于特定 NDIS/wifi 超时规则的标识符) 的冲突 (。
+如果选择了 [ndis/wifi 验证](ndis-wifi-verification.md) 选项，并且驱动程序验证器检测到驱动程序违反了某个 NDIS/wifi 超时规则，则 [驱动程序验证](driver-verifier.md) 器将生成 [**BUG 检查0xC4：驱动程序验证器 \_ \_ 检测到 \_**](../debugger/bug-check-0xc4--driver-verifier-detected-violation.md) 与参数1等于特定 NDIS/wifi 超时规则的标识符) 的冲突 (。
 
 当驱动程序验证器测试 NDIS/WIFI 超时规则（如 [**NdisTimedOidComplete**](./ndis-ndistimedoidcomplete.md)）时，驱动程序验证程序的轮询机制需要在多个循环中通过微型端口驱动程序的响应。 每个定时规则定义了其自己的最大周期。 超过最大值时，驱动程序验证器会生成 bug 检查。 本部分介绍用于调试这些冲突的一些示例策略。
 
@@ -46,11 +46,11 @@ Arg4: 9c1f3480, Address of supplemental states (third argument to !ruleinfo).
 
 在 **！分析-v** 输出的以下部分中，违反此规则的原因显示在 "DV \_ 违反 \_ 条件" 字段下。 "DV \_ MSDN \_ 链接" 部分也有助于获取有关此规则的文档的链接。
 
+## <a name="debugging-details"></a>调试详细信息：
+
 ```
-## Debugging Details:
 
-
-*** ERROR: Module load completed but symbols could not be loaded for NdisTimedOidComplete.sys
+**_ ERROR: Module load completed but symbols could not be loaded for NdisTimedOidComplete.sys
 
 DV_VIOLATED_CONDITION:  Timeout on completing an NDIS OID request.
 
@@ -102,7 +102,7 @@ STACK_TEXT:
 
 ### <a name="use-the-ruleinfo-extension-command"></a>使用！ ruleinfo extension 命令
 
-" **！分析**" 输出的 " **DV \_ 规则 \_ 信息：** " 字段显示一个指向命令的链接，你可以使用该命令查找有关此规则冲突的详细信息。 在此示例中，如果单击该链接，它将运行[**!ruleinfo**](../debugger/-ruleinfo.md)带规则 \_ ID (0x92003) Arg3 和 Arg 4 bug 检查值的！ ruleinfo 命令。
+" **！分析** " 输出的 _ " *DV \_ 规则 \_ 信息：* *" 字段显示了指向命令的链接，你可以使用该命令查找有关此规则冲突的详细信息。 在此示例中，如果单击该链接，它将运行 [**!ruleinfo**](../debugger/-ruleinfo.md)带规则 \_ ID (0x92003) Arg3 和 Arg 4 bug 检查值的！ ruleinfo 命令。
 
 ```
 kd> !ruleinfo 0x92003 0xffffffff9c17b860 0xffffffff9c1f3480

@@ -14,16 +14,16 @@ api_type:
 - HeaderDef
 ms.date: 09/24/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: d4cbf23d2a8703b45ff99f2043698db767dd2cbb
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 6efc50c2170f37965aa8d3f649f6342b66173609
+ms.sourcegitcommit: cfd4d8ee889c6a3feed79ae112662f6c095b6a36
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90101904"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94417431"
 ---
 # <a name="ksproperty_sounddetector_streamingsupport"></a>KSPROPERTY \_ SOUNDDETECTOR \_ STREAMINGSUPPORT
 
-**KSPROPERTY \_ SOUNDDETECTOR \_ STREAMINGSUPPORT**属性指示流是否受支持。
+**KSPROPERTY \_ SOUNDDETECTOR \_ STREAMINGSUPPORT** 属性指示流是否受支持。
 
 ### <a name="span-idusage_summary_tablespanspan-idusage_summary_tablespanspan-idusage_summary_tablespanusage-summary-table"></a><span id="Usage_Summary_Table"></span><span id="usage_summary_table"></span><span id="USAGE_SUMMARY_TABLE"></span>使用情况摘要表
 
@@ -39,7 +39,7 @@ ms.locfileid: "90101904"
 <tr class="header">
 <th align="left">获取</th>
 <th align="left">设置</th>
-<th align="left">目标</th>
+<th align="left">Target</th>
 <th align="left">属性描述符类型</th>
 <th align="left">属性值类型</th>
 </tr>
@@ -49,7 +49,7 @@ ms.locfileid: "90101904"
 <td align="left"><p>是</p></td>
 <td align="left"><p>否</p></td>
 <td align="left"><p>筛选器</p></td>
-<td align="left"><p><a href="/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-kssounddetectorproperty" data-raw-source="[&lt;strong&gt;KSSOUNDDETECTORPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-kssounddetectorproperty"><strong>KSSOUNDDETECTORPROPERTY</strong></a></p></td>
+<td align="left"><p><a href="/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-kssounddetectorproperty" data-raw-source="[&lt;strong&gt;KSSOUNDDETECTORPROPERTY&lt;/strong&gt;](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-kssounddetectorproperty)"><strong>KSSOUNDDETECTORPROPERTY</strong></a></p></td>
 <td align="left"><p>BOOL</p></td>
 </tr>
 </tbody>
@@ -95,4 +95,4 @@ ms.locfileid: "90101904"
 
 [**KSPROPERTY \_ SOUNDDETECTOR \_ 模式**](ksproperty-sounddetector-patterns.md)
 
-[**KSSOUNDDETECTORPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/)
+[**KSSOUNDDETECTORPROPERTY**](/windows-hardware/drivers/ddi/ksmedia/)

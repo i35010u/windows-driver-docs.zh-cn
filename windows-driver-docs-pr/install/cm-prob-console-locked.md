@@ -6,16 +6,16 @@ keywords:
 - CM_PROB_CONSOLE_LOCKED
 ms.date: 02/28/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 4a22769150b9e1ab5b702135b5b5813595afaa9b
-ms.sourcegitcommit: 6f165a03303b7e4950b37d4b992f0f481b14f3ca
+ms.openlocfilehash: 8c9826fed8f8a1c01f483003870bf6f9f3755946
+ms.sourcegitcommit: cfd4d8ee889c6a3feed79ae112662f6c095b6a36
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/04/2020
-ms.locfileid: "78279970"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94417437"
 ---
-# <a name="code-55---cm_prob_console_locked"></a>代码 55-CM_PROB_CONSOLE_LOCKED
+# <a name="code-55---cm_prob_console_locked"></a>代码 55 - CM_PROB_CONSOLE_LOCKED
 
-此设备管理器错误消息指示由于组策略/MDM （Intune）策略可防止 DMA 攻击，导致设备被阻止。
+此设备管理器错误消息指示由于组策略/MDM (Intune) 策略阻止了此设备进行枚举，从而防止 DMA 遭受攻击。
 
 
 
@@ -26,10 +26,10 @@ ms.locfileid: "78279970"
 
 ### <a name="display-message"></a>显示消息
 
-"此设备在用户未登录时被阻止启动。 （代码55） "
+"此设备在用户未登录时被阻止启动。  (代码 55) "
 
 
-### <a name="recommended-resolution"></a>建议的解决方法
+### <a name="recommended-resolution"></a>推荐的解决方案
 
-有关内核 DMA 保护的详细信息，请参阅 https://docs.microsoft.com/windows/security/information-protection/kernel-dma-protection-for-thunderbolt。
+有关内核 DMA 保护的详细信息，请参阅 [内核 Dma 保护](/windows/security/information-protection/kernel-dma-protection-for-thunderbolt)。
 

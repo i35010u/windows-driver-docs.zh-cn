@@ -3,12 +3,12 @@ description: 了解基于 UMDF 的 USB 客户端驱动程序的源代码。
 title: 'USB 客户端驱动程序代码结构 (UMDF) '
 ms.date: 06/07/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 6890b005d57b936c67643f8c1e84f2fbaa9a2b3f
-ms.sourcegitcommit: ec7bebe3f94536455e62b372c2a28fe69d1717f7
+ms.openlocfilehash: b3d41cda6b1dc77befd0f97e9049eae74b9c0bfa
+ms.sourcegitcommit: cfd4d8ee889c6a3feed79ae112662f6c095b6a36
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93349773"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94417453"
 ---
 # <a name="understanding-the-usb-client-driver-code-structure-umdf"></a>了解 USB 客户端驱动程序代码结构 (UMDF) 
 
@@ -383,7 +383,7 @@ Exit:
 
 客户端驱动程序还指定对客户端驱动程序的回调的任何调用都不会同步。 客户端驱动程序处理所有同步任务。 若要指定该首选项，客户端驱动程序将调用 [**IWDFDeviceInitialize：： SetLockingConstraint**](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdeviceinitialize-setlockingconstraint) 方法。
 
-接下来，客户端驱动程序通过调用 [**iunknown：： QueryInterface**](/windows/win32/api/unknwn/nf-unknwn-iunknown-queryinterface(q))获取指向其设备回调类的 [**IUnknown**](/windows/desktop/api/unknwn/nn-unknwn-iunknown)指针 https://docs.microsoft.com/windows/desktop/api/unknwn/nf-unknwn-iunknown-queryinterface(q_)) 。 随后，客户端驱动程序将调用 [**IWDFDriver：： CreateDevice**](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdriver-createdevice)，这将使用 **IUnknown** 指针来创建框架设备对象并注册客户端驱动程序的设备回调。
+接下来，客户端驱动程序通过调用 [**iunknown：： QueryInterface**](/windows/win32/api/unknwn/nf-unknwn-iunknown-queryinterface(q))获取指向其设备回调类的 [**IUnknown**](/windows/desktop/api/unknwn/nn-unknwn-iunknown)指针。 随后，客户端驱动程序将调用 [**IWDFDriver：： CreateDevice**](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdriver-createdevice)，这将使用 **IUnknown** 指针来创建框架设备对象并注册客户端驱动程序的设备回调。
 
 请注意，客户端驱动程序在设备回调类的私有数据成员中存储 (通过 [**IWDFDriver：： CreateDevice**](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdriver-createdevice)) 调用接收的设备对象的地址，然后通过调用 DriverSafeRelease) 中定义的 (内联函数来释放该引用。 这是因为设备对象的生存期由框架跟踪。 因此，客户端驱动程序不需要保留设备对象的其他引用计数。
 
@@ -464,7 +464,7 @@ USB 客户端驱动程序必须检索有关支持的接口、备用设置和终�
 
 若要执行这些任务，客户端驱动程序可以使用 WDF 提供的这些类型的专用 USB i/o 目标对象。
 
-| USB i/o 目标对象     | 描述                                                                                                                                                                                                                                                                                                                               | UMDF 接口                                  |
+| USB i/o 目标对象     | 说明                                                                                                                                                                                                                                                                                                                               | UMDF 接口                                  |
 |---------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------|
 | *目标设备对象*    | 表示一个 USB 设备，并提供用于检索设备描述符并将控制请求发送到设备的方法。                                                                                                                                                                                                             | [IWDFUsbTargetDevice](/windows-hardware/drivers/ddi/wudfusb/nn-wudfusb-iwdfusbtargetdevice) |
 | *目标接口对象* | 表示单个接口，并提供客户端驱动程序可调用以选择备用设置和检索有关设置的信息的方法。                                                                                                                                                                          | [IWDFUsbInterface](/windows-hardware/drivers/ddi/wudfusb/nn-wudfusb-iwdfusbinterface)       |

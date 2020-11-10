@@ -7,25 +7,27 @@ keywords:
 - 签名生物识别驱动程序
 ms.date: 07/19/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 06388973f9079c6bd48a6e682d003dbebf7fe6ba
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: c1067c95e922d6880f1ee6f0984ff9a659ce25df
+ms.sourcegitcommit: cfd4d8ee889c6a3feed79ae112662f6c095b6a36
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89095393"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94417426"
 ---
 # <a name="windows-hello-steps-to-submit-a-fingerprint-driver"></a>Windows Hello：提交指纹驱动程序的步骤
 
 
-## <a name="submitting-a-fingerprint-driver-for-windows-hello-compatibility"></a>提交用于 Windows Hello 兼容性的指纹驱动程序 
+## <a name="submitting-a-fingerprint-driver-for-windows-hello-compatibility"></a>提交用于 Windows Hello 兼容性的指纹驱动程序 
 Microsoft 在生物识别传感器上引入了新的要求，以遵守 Windows Hello 质量准则。 需要新的手动审阅过程才能获得与 Windows Hello 互操作的批准。 系统会强制执行该过程，其中包含通过 Windows DevCenter (获取的特定签名的操作系统检查： https://developer.microsoft.com/) 只能通过执行本文档中的过程来获取。 6/1/17 之前由 WHQL 创建和签名的驱动程序 grandfathered。 在此日期之后未获取此签名的新的和更新的驱动程序将不能在 Windows Hello 的 Windows Hello 版本1703或更高版本中使用。
 
-驱动程序将始终手动批准以获取 Windows Hello 签名。 批准的驱动程序的更新可以引用以前的提交以获得更快的批准。 如果驱动程序适用于新的传感器，或对匹配引擎所做的更改影响到了远、FRR 或表示攻击检测，则必须对其进行新的审核。 
+驱动程序将始终手动批准以获取 Windows Hello 签名。 批准的驱动程序的更新可以引用以前的提交以获得更快的批准。 如果驱动程序适用于新的传感器，或对匹配引擎所做的更改影响到了远、FRR 或表示攻击检测，则必须对其进行新的审核。 
 
 生物识别签名强制日期为6/1/2017，之后将不会加载不包含 bio 签名的驱动程序，并且这些驱动程序将不再适用于 Windows Hello。
 
 ### <a name="step-one-create-a-biometric-driver"></a>步骤1：创建生物识别驱动程序
-按照此处的说明创建生物识别驱动程序： https://docs.microsoft.com/windows/desktop/SecBioMet/biometric-service-api-portal
+按照此处的说明创建生物识别驱动程序： 
+
+[Windows 生物识别框架](/windows/desktop/SecBioMet/biometric-service-api-portal)
 
 ### <a name="step-two-test-your-sensor-and-self-validate"></a>步骤2：测试传感器和自我验证
 自行验证传感器和驱动程序，确保它们满足 Microsoft 的生物识别要求，并在指纹安全检查模板中报告调查结果。 在连接时，可在指纹合作伙伴包中找到要求和模板的文档。 如果你没有连接访问权限，请与你的 Microsoft 代表联系。
@@ -33,9 +35,9 @@ Microsoft 在生物识别传感器上引入了新的要求，以遵守 Windows H
 ### <a name="step-three-modify-the-driver-configuration-xml-file"></a>步骤3：修改驱动程序配置 xml 文件
 提交驱动程序时，Windows 10 版本1703指纹检测测试将进行检查，以确保 <vendorCompliance> 和 <securityReview> 标记包含在以下字段中：
 
-**bugId**：包含之前批准的安全审核信息的以前的 HLK 提交 ID 号; 如果提交正在进行全新的安全检查，则为0。
+**bugId** ：包含之前批准的安全审核信息的以前的 HLK 提交 ID 号; 如果提交正在进行全新的安全检查，则为0。
 
-**updateExistingSubmission**：如果提交作为之前已完成安全检查的提交的更新，则为 true; 否则为 false。
+**updateExistingSubmission** ：如果提交作为之前已完成安全检查的提交的更新，则为 true; 否则为 false。
 
 #### <a name="example"></a>示例
  ```cpp

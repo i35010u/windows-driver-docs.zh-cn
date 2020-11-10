@@ -4,12 +4,12 @@ description: 描述用于显示驱动程序的 Windows 10 中的新增功能
 ms.assetid: 619175D4-98DA-4B17-8F6F-71B13A31374D
 ms.date: 05/12/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 2d0cea93214ca6db5dfbd8f2efcf58b7fd59e442
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 03651ad5f48d5692286216b07b592ec497a28a0c
+ms.sourcegitcommit: cfd4d8ee889c6a3feed79ae112662f6c095b6a36
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90103658"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94417463"
 ---
 # <a name="whats-new-for-windows-10-display-and-graphics-drivers"></a>Windows 10 显示驱动程序和图形驱动程序的新增功能
 
@@ -23,7 +23,7 @@ ms.locfileid: "90103658"
 
 网格着色器功能引入了网格着色器阶段和新阶段：放大着色器。 Amplifications 着色器替换 GPU 分割阶段。 应用程序将其放大着色器设置为根据需要调用网格着色器若干次。 放大着色器是一个可选步骤，可让应用程序动态控制几何详细信息的级别。
 
-网格着色器功能涉及新的底纹语言构造以及 UMD 的更改。 对于网格着色器的报表设备功能，有一个名为 **MeshShaderTier** 的字段，通过 [**D3D12DDI_D3D12_OPTIONS_DATA_0073**](/windows-hardware/drivers/ddi/d3d12umddi/ns-d3d12umddi-d3d12ddi_d3d12_options_data_0073)报告。 而且，由于这会引入两个新的着色器阶段，因此 [**D3D12DDIARG_CREATE_PIPELINE_STATE_0075**](/windows-hardware/drivers/ddi/d3d12umddi/ns-d3d12umddi-d3d12ddiarg_create_pipeline_state_0075)、 **hMeshShader** 和 **hAmplificationShader**中有两个新字段。 若要启动，请参阅 "DDI [**PFND3D12DDI_DISPATCH_MESH_0074**](/windows-hardware/drivers/ddi/d3d12umddi/nc-d3d12umddi-pfnd3d12ddi_dispatch_mesh_0074) 的命令列表" 和 "间接调度 [**D3D12DDI_INDIRECT_ARGUMENT_TYPE_DISPATCH_MESH**](/windows-hardware/drivers/ddi/d3d12umddi/ne-d3d12umddi-d3d12ddi_indirect_argument_type) "。
+网格着色器功能涉及新的底纹语言构造以及 UMD 的更改。 对于网格着色器的报表设备功能，有一个名为 **MeshShaderTier** 的字段，通过 [**D3D12DDI_D3D12_OPTIONS_DATA_0073**](/windows-hardware/drivers/ddi/d3d12umddi/ns-d3d12umddi-d3d12ddi_d3d12_options_data_0073)报告。 而且，由于这会引入两个新的着色器阶段，因此 [**D3D12DDIARG_CREATE_PIPELINE_STATE_0075**](/windows-hardware/drivers/ddi/d3d12umddi/ns-d3d12umddi-d3d12ddiarg_create_pipeline_state_0075)、 **hMeshShader** 和 **hAmplificationShader** 中有两个新字段。 若要启动，请参阅 "DDI [**PFND3D12DDI_DISPATCH_MESH_0074**](/windows-hardware/drivers/ddi/d3d12umddi/nc-d3d12umddi-pfnd3d12ddi_dispatch_mesh_0074) 的命令列表" 和 "间接调度 [**D3D12DDI_INDIRECT_ARGUMENT_TYPE_DISPATCH_MESH**](/windows-hardware/drivers/ddi/d3d12umddi/ne-d3d12umddi-d3d12ddi_indirect_argument_type) "。
 
 ## <a name="directx-raytracing-dxr-11"></a>DirectX Raytracing (DXR) 1。1
 
@@ -33,7 +33,7 @@ WDDM 2.7 引入了一些新功能和改进功能，这些功能在 Direct3D 12 �
 
 - 应用程序可以通过 ExecuteIndirect 调用 DispatchRays，从而允许在 GPU 上配置 raytracing 工作。 对于查找、排序或调整 raytracing 工作的应用程序，以及使用着色器执行此操作，这可能很有用。 接下来，现在有一个 D3D12DDI_INDIRECT_ARGUMENT_TYPE 枚举值。 使用间接 raytracing 调度时，执行间接缓冲区的每个元素都是类型 [**D3D12DDIARG_DISPATCH_RAYS_0054**](/windows-hardware/drivers/ddi/d3d12umddi/ns-d3d12umddi-d3d12ddiarg_dispatch_rays_0054)。
 
-- 创建管道状态以用于不同着色器组合的开销是3D 计算机图形中的一项困难问题。 DXR 1.1 包含可帮助的内容：添加到状态对象。 AddToStateObject ( # A1，因为它是在 API 中公开的，所以应用程序可以通过 CPU 开销将着色器添加到现有状态对象，仅限于添加的内容。 与此一起，有两个设备 DDI 函数： [**PFND3D12DDI_ADD_TO_STATE_OBJECT_0072**](/windows-hardware/drivers/ddi/d3d12umddi/nc-d3d12umddi-pfnd3d12ddi_add_to_state_object_0072) 和 PFND3D12DDI_CALC_PRIVATE_ADD_TO_STATE_OBJECT_SIZE_0072 * *] (https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d12umddi/nc-d3d12umddi-pfnd3d12ddi_calc_private_add_to_state_object_size_0072) 。
+- 创建管道状态以用于不同着色器组合的开销是3D 计算机图形中的一项困难问题。 DXR 1.1 包含可帮助的内容：添加到状态对象。 AddToStateObject ( # A1，因为它是在 API 中公开的，所以应用程序可以通过 CPU 开销将着色器添加到现有状态对象，仅限于添加的内容。 与此一起，有两个设备 DDI 函数： [**PFND3D12DDI_ADD_TO_STATE_OBJECT_0072**](/windows-hardware/drivers/ddi/d3d12umddi/nc-d3d12umddi-pfnd3d12ddi_add_to_state_object_0072) 和 [**PFND3D12DDI_CALC_PRIVATE_ADD_TO_STATE_OBJECT_SIZE_0072**](/windows-hardware/drivers/ddi/d3d12umddi/nc-d3d12umddi-pfnd3d12ddi_calc_private_add_to_state_object_size_0072)。
 
 对于常规功能报表，有一个新的枚举值 [**D3D12DDI_RAYTRACING_TIER_1_1**](/windows-hardware/drivers/ddi/d3d12umddi/ne-d3d12umddi-d3d12ddi_raytracing_tier) 用于报表层1.1。
 

@@ -14,16 +14,16 @@ api_type:
 - HeaderDef
 ms.date: 09/25/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 54b571da2b4c2109348eda853006a3473fce75bd
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: c45db0e1cb1d90188b59c5f59c96572358ff86d1
+ms.sourcegitcommit: cfd4d8ee889c6a3feed79ae112662f6c095b6a36
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90101900"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94417417"
 ---
 # <a name="ksproperty_sounddetector_supportedpatterns"></a>KSPROPERTY \_ SOUNDDETECTOR \_ SUPPORTEDPATTERNS
 
-**KSPROPERTY \_ SOUNDDETECTOR \_ SUPPORTEDPATTERNS**属性用于获取 Guid 列表，这些 guid 用于标识支持模式的类型。
+**KSPROPERTY \_ SOUNDDETECTOR \_ SUPPORTEDPATTERNS** 属性用于获取 Guid 列表，这些 guid 用于标识支持模式的类型。
 
 ### <a name="span-idusage_summary_tablespanspan-idusage_summary_tablespanspan-idusage_summary_tablespanusage-summary-table---kspropsetid_sounddetector"></a><span id="Usage_Summary_Table"></span><span id="usage_summary_table"></span><span id="USAGE_SUMMARY_TABLE"></span>使用情况摘要表-KSPROPSETID_SoundDetector
 
@@ -41,7 +41,7 @@ ms.locfileid: "90101900"
 <tr class="header">
 <th align="left">获取</th>
 <th align="left">设置</th>
-<th align="left">目标</th>
+<th align="left">Target</th>
 <th align="left">属性描述符类型</th>
 <th align="left">属性值类型</th>
 </tr>
@@ -73,7 +73,7 @@ ms.locfileid: "90101900"
 <tr class="header">
 <th align="left">获取</th>
 <th align="left">设置</th>
-<th align="left">目标</th>
+<th align="left">Target</th>
 <th align="left">属性描述符类型</th>
 <th align="left">属性值类型</th>
 </tr>
@@ -83,7 +83,7 @@ ms.locfileid: "90101900"
 <td align="left"><p>是</p></td>
 <td align="left"><p>否</p></td>
 <td align="left"><p>筛选器</p></td>
-<td align="left"><p><a href="/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-kssounddetectorproperty" data-raw-source="[&lt;strong&gt;KSSOUNDDETECTORPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-kssounddetectorproperty"><strong>KSSOUNDDETECTORPROPERTY</strong></a></p></td>
+<td align="left"><p><a href="/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-kssounddetectorproperty" data-raw-source="[&lt;strong&gt;KSSOUNDDETECTORPROPERTY&lt;/strong&gt;](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-kssounddetectorproperty)"><strong>KSSOUNDDETECTORPROPERTY</strong></a></p></td>
 <td align="left"><p><a href="/windows-hardware/drivers/ddi/ks/ns-ks-ksmultiple_item" data-raw-source="[&lt;strong&gt;KSMULTIPLE_ITEM&lt;/strong&gt;](/windows-hardware/drivers/ddi/ks/ns-ks-ksmultiple_item)"><strong>KSMULTIPLE_ITEM</strong></a></p></td>
 </tr>
 </tbody>
@@ -91,9 +91,9 @@ ms.locfileid: "90101900"
 
 ### <a name="span-idreturn_valuespanspan-idreturn_valuespanspan-idreturn_valuespanreturn-value"></a><span id="Return_Value"></span><span id="return_value"></span><span id="RETURN_VALUE"></span>返回值
 
-属性值是 KSMULTIPLE 的 [** \_ 项**](/windows-hardware/drivers/ddi/ks/ns-ks-ksmultiple_item) 结构，后跟一系列 guid。
+属性值是 KSMULTIPLE 的 [**\_ 项**](/windows-hardware/drivers/ddi/ks/ns-ks-ksmultiple_item) 结构，后跟一系列 guid。
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
 模式 GUID 具有以下特征：
@@ -121,7 +121,7 @@ ms.locfileid: "90101900"
 </tr>
 <tr class="even">
 <td align="left"><p>最低受支持的服务器</p></td>
-<td align="left"><p>Windows Server 2016</p></td>
+<td align="left"><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>标头</p></td>

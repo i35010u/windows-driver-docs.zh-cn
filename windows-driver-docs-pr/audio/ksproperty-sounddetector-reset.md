@@ -14,16 +14,16 @@ api_type:
 - HeaderDef
 ms.date: 09/25/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 74448f069112adf710dc4b2e311e0f9d1135cce0
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: b11b0780ab99852b8571612c65666bc09a737de3
+ms.sourcegitcommit: cfd4d8ee889c6a3feed79ae112662f6c095b6a36
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90101908"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94417419"
 ---
 # <a name="ksproperty_sounddetector_reset"></a>KSPROPERTY \_ SOUNDDETECTOR \_ 重置
 
-**KSPROPERTY \_ SOUNDDETECTOR \_ RESET**属性将检测程序重置为不带模式集的 unarmed 状态。
+**KSPROPERTY \_ SOUNDDETECTOR \_ RESET** 属性将检测程序重置为不带模式集的 unarmed 状态。
 
 ### <a name="span-idusage_summary_tablespanspan-idusage_summary_tablespanspan-idusage_summary_tablespanusage-summary-table"></a><span id="Usage_Summary_Table"></span><span id="usage_summary_table"></span><span id="USAGE_SUMMARY_TABLE"></span>使用情况摘要表
 
@@ -39,7 +39,7 @@ ms.locfileid: "90101908"
 <tr class="header">
 <th align="left">获取</th>
 <th align="left">设置</th>
-<th align="left">目标</th>
+<th align="left">Target</th>
 <th align="left">属性描述符类型</th>
 <th align="left">属性值类型</th>
 </tr>
@@ -49,7 +49,7 @@ ms.locfileid: "90101908"
 <td align="left"><p>否</p></td>
 <td align="left"><p>是</p></td>
 <td align="left"><p>筛选器</p></td>
-<td align="left"><p><a href="/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-kssounddetectorproperty" data-raw-source="[&lt;strong&gt;KSSOUNDDETECTORPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-kssounddetectorproperty"><strong>KSSOUNDDETECTORPROPERTY</strong></a></p></td>
+<td align="left"><p><a href="/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-kssounddetectorproperty" data-raw-source="[&lt;strong&gt;KSSOUNDDETECTORPROPERTY&lt;/strong&gt;](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-kssounddetectorproperty)"><strong>KSSOUNDDETECTORPROPERTY</strong></a></p></td>
 <td align="left"><p>BOOL</p></td>
 </tr>
 </tbody>
@@ -59,7 +59,7 @@ ms.locfileid: "90101908"
 
 属性值为布尔值。 True 表示重置，忽略 false。
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
 当操作系统要执行以下操作时，会调用 reset，并将值设置为 true：
@@ -67,7 +67,7 @@ ms.locfileid: "90101908"
 - Unarm 关键字检测器。
 - 清除任何已设置的 [**KSPROPERTY \_ SOUNDDETECTOR \_ 模式**](ksproperty-sounddetector-patterns.md) 。
 
-如果未设置关键字模式，则设置为 true ([**KSPROPERTY \_ SOUNDDETECTOR \_ 模式**](ksproperty-sounddetector-patterns.md) 为空) 不起作用。
+如果未设置关键字模式，则设置为 true ( [**KSPROPERTY \_ SOUNDDETECTOR \_ 模式**](ksproperty-sounddetector-patterns.md) 为空) 不起作用。
 
 <a name="requirements"></a>要求
 ------------

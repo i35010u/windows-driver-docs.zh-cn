@@ -4,17 +4,17 @@ description: 本主题介绍了 I8042prt 的功能，这是用于 PS/2 样式键
 ms.assetid: BB1046EE-8780-46ED-8CEB-63110643D325
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 561575dc68efe6bc72d124dd176daaa60c8522b2
-ms.sourcegitcommit: 9145bffd4cc3b990a9ebff43b588db6ef2001f5d
+ms.openlocfilehash: ba8367fa5001ee9474a9970229ce119d2edeed00
+ms.sourcegitcommit: cfd4d8ee889c6a3feed79ae112662f6c095b6a36
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/09/2020
-ms.locfileid: "89592463"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94417439"
 ---
 # <a name="ps2-i8042prt-driver"></a>PS/2 (i8042prt) 驱动程序
 
 
-本主题介绍了 *I8042prt*的功能，这是用于 PS/2 样式键盘和鼠标设备的 Microsoft Windows 2000 和更高版本的系统函数驱动程序。
+本主题介绍了 *I8042prt* 的功能，这是用于 PS/2 样式键盘和鼠标设备的 Microsoft Windows 2000 和更高版本的系统函数驱动程序。
 
 I8042prt 实现了 I8042prt 服务，并 i8042prt.sys 了其可执行映像。
 
@@ -74,5 +74,5 @@ I8042prt 的功能包括：
 
 有关详细信息，请参阅：
 
-* https://docs.microsoft.com/windows/desktop/sysinfo/about-the-registry
-* https://docs.microsoft.com/windows/desktop/sysinfo/registry-reference
+* [关于注册表](/windows/desktop/sysinfo/about-the-registry)
+* [注册表引用](/windows/desktop/sysinfo/registry-reference)

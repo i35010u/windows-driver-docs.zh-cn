@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.date: 09/26/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 1fbe75ca6fc0e13cd8f4b8a1db1608ed7e33bfac
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: b1d22c323f72b7e96926938343097e060261d733
+ms.sourcegitcommit: cfd4d8ee889c6a3feed79ae112662f6c095b6a36
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90101928"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94417429"
 ---
 # <a name="ksproperty_sounddetector_armed"></a>KSPROPERTY \_ SOUNDDETECTOR \_
 
 
-**SOUNDDETECTOR 的 \_ KSPROPERTY \_ **属性是探测器的当前武装状态。
+**SOUNDDETECTOR 的 \_ KSPROPERTY \_** 属性是探测器的当前武装状态。
 
 ### <a name="span-idusage_summary_tablespanspan-idusage_summary_tablespanspan-idusage_summary_tablespanusage-summary-table---kspropsetid_sounddetector"></a><span id="Usage_Summary_Table"></span><span id="usage_summary_table"></span><span id="USAGE_SUMMARY_TABLE"></span>使用情况摘要表-KSPROPSETID_SoundDetector
 
@@ -42,7 +42,7 @@ ms.locfileid: "90101928"
 <tr class="header">
 <th align="left">获取</th>
 <th align="left">设置</th>
-<th align="left">目标</th>
+<th align="left">Target</th>
 <th align="left">属性描述符类型</th>
 <th align="left">属性值类型</th>
 </tr>
@@ -82,7 +82,7 @@ ms.locfileid: "90101928"
 <tr class="header">
 <th align="left">获取</th>
 <th align="left">设置</th>
-<th align="left">目标</th>
+<th align="left">Target</th>
 <th align="left">属性描述符类型</th>
 <th align="left">属性值类型</th>
 </tr>
@@ -92,7 +92,7 @@ ms.locfileid: "90101928"
 <td align="left"><p>是</p></td>
 <td align="left"><p>是</p></td>
 <td align="left"><p>筛选器</p></td>
-<td align="left"><p><a href="/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-kssounddetectorproperty" data-raw-source="[&lt;strong&gt;KSSOUNDDETECTORPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-kssounddetectorproperty"><strong>KSSOUNDDETECTORPROPERTY</strong></a></p></td>
+<td align="left"><p><a href="/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-kssounddetectorproperty" data-raw-source="[&lt;strong&gt;KSSOUNDDETECTORPROPERTY&lt;/strong&gt;](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-kssounddetectorproperty)"><strong>KSSOUNDDETECTORPROPERTY</strong></a></p></td>
 <td align="left"><p>BOOL</p></td>
 </tr>
 </tbody>
@@ -109,12 +109,12 @@ ms.locfileid: "90101928"
 
 属性值为布尔值，指示检测到的武装状态。
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
 OS 将此值设置为与检测探测器。
 
-如果未设置关键字模式，则设置为 true ([**KSPROPERTY \_ SOUNDDETECTOR \_ 模式**](ksproperty-sounddetector-patterns.md) 为空) 不起作用。
+如果未设置关键字模式，则设置为 true ( [**KSPROPERTY \_ SOUNDDETECTOR \_ 模式**](ksproperty-sounddetector-patterns.md) 为空) 不起作用。
 
 注意：如果此属性为 true，则将 [**KSPROPERTY \_ SOUNDDETECTOR \_ 模式**](ksproperty-sounddetector-patterns.md) 自动重置为 false （如上所述）。
 
@@ -133,7 +133,7 @@ OS 将此值设置为与检测探测器。
 </tr>
 <tr class="even">
 <td align="left"><p>最低受支持的服务器</p></td>
-<td align="left"><p>Windows Server 2016</p></td>
+<td align="left"><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>标头</p></td>
