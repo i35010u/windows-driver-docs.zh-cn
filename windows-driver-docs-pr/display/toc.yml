@@ -646,6 +646,8 @@
               href: iddcx1.4-updates-for-remote-idds.md
             - name: 生成 IddCx v1.4 驱动程序
               href: building-iddcx1.4-drivers.md
+        - name: IddCx v1.6 更新
+          href: iddcx1.6-updates.md
         - name: EvtIddCxMonitorAssignSwapChain 错误处理
           href: idd-evtiddcxmonitorassignswapchain-error-handling.md
         - name: 调试间接显示驱动程序

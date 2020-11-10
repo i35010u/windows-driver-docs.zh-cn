@@ -1174,7 +1174,7 @@
           href: using-debugger-extension-commands.md
         - name: 编写新的调试器扩展
           href: writing-new-debugger-extensions.md
-    - name: 远程调试
+    - name: Remote Debugging
       items:
         - name: 远程调试
           href: remote-debugging.md
@@ -4408,12 +4408,6 @@
                   href: '-nstree.md'
                 - name: '!rsdt'
                   href: '-rsdt.md'
-            - name: 图形驱动程序扩展 (Gdikdx.dll)
-              items:
-                - name: 图形驱动程序扩展 (Gdikdx.dll)
-                  href: graphics-driver-extensions--gdikdx-dll-.md
-                - name: '!gdikdx.verifier'
-                  href: '-gdikdx-verifier.md'
             - name: 内核流扩展 (Ks.dll)
               items:
                 - name: 内核流扩展 (Ks.dll)

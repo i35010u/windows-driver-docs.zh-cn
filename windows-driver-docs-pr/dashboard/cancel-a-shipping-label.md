@@ -4,16 +4,19 @@ description: 在 Microsoft 硬件 API 中使用此方法可请求取消处于“
 ms.topic: article
 ms.date: 11/13/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: d40a2be514185ab4470f5c8abe854cf83de26c7b
-ms.sourcegitcommit: 3a2a28d1e7f0dfd799b7b87f02bc2bea9129c10d
+ms.openlocfilehash: 81a72b7d468c56d51471dc1150f051aff2e6e7a2
+ms.sourcegitcommit: 8f0a5fb9f0581ad275a3a3ccd42c595820d97b6d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87335383"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93295429"
 ---
 # <a name="cancel-a-shipping-label"></a>取消发货标签
 
 在 *Microsoft 硬件 API* 中使用此方法可请求取消处于“Microsoft 审批或逐步推出”状态的发货标签。 使用此方法之前，请确保你的发货标签处于“Microsoft 审批或逐步推出”状态。 有关获取发货标签的详细信息，请参阅[获取新的发货标签](get-a-shipping-label.md)。
+
+> [!NOTE]
+> 你无法取消共享的发货标签。 不过，可在工作流完成后撤消共享。
 
 ## <a name="prerequisites"></a>必备条件
 
@@ -27,11 +30,11 @@ ms.locfileid: "87335383"
 |:--|:--|
 | PUT | `https://manage.devcenter.microsoft.com/v2.0/my/hardware/products/{productID}/submissions/{submissionId}/shippingLabels/{shippingLabelId}/cancel` |
 
-该方法中的 *productID*、*submissionID* 和 *shippingLabelId* 表示要取消的产品、提交和发货标签。
+该方法中的 *productID* 、 *submissionID* 和 *shippingLabelId* 表示要取消的产品、提交和发货标签。
 
 ### <a name="request-header"></a>请求头
 
-| Header | 类型 | 说明 |
+| 标头 | 类型 | 说明 |
 |:--|:--|:--|
 | Authorization | 字符串 | 必需。 Azure AD 访问令牌的格式为 Bearer \<token\>。 |
 | 接受 | 字符串 | 可选。 指定内容的类型。 允许的值是“application/json” |

@@ -3,12 +3,12 @@ title: 获取发货标签数据
 description: Microsoft 硬件 API 中的这些方法可获取注册到开发人员中心帐户的硬件产品的发货标签。
 ms.topic: article
 ms.date: 10/03/2019
-ms.openlocfilehash: a60fefd0e1d2b7acd648dc53e822cfeb75b8b7c6
-ms.sourcegitcommit: 4f08f5686c0bbc27d58930b993cbab1a98e3afb0
+ms.openlocfilehash: 7bed6965a8bfdcd3003a78b883f67d953aeacc73
+ms.sourcegitcommit: 8f0a5fb9f0581ad275a3a3ccd42c595820d97b6d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/03/2020
-ms.locfileid: "89443919"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93295431"
 ---
 # <a name="get-shipping-label-data"></a>获取发货标签数据
 
@@ -177,7 +177,7 @@ https://manage.devcenter.microsoft.com/v2.0/my/hardware/products/{productId}/sub
 
 ### <a name="additional-information-for-the-microsoft-object"></a>Microsoft 对象的其他信息
 
-此对象表示 Microsoft 在评审发货标签时所需的其他一些信息。 仅当发货标签的 *destination* 为 *windowsUpdate*，并且发货标签已标记为 *isAutoInstallDuringOSUpgrade* 或 *isAutoInstallOnApplicableSystems* 时，才可以使用/需要此对象。
+此对象表示 Microsoft 在评审发货标签时所需的其他一些信息。 仅当发货标签的 *destination* 为 *windowsUpdate* ，并且发货标签已标记为 *isAutoInstallDuringOSUpgrade* 或 *isAutoInstallOnApplicableSystems* 时，才可以使用/需要此对象。
 
 ```json
 {
@@ -311,7 +311,7 @@ https://manage.devcenter.microsoft.com/v2.0/my/hardware/products/{productId}/sub
 | 值 | 类型 | 说明 |
 |:--|:--|:--|
 |chid|GUID|需要针对的 CHID|
-|distributionState|字符串|表示此 CHID 的当前目标状态。 可能的值为（括号中为说明）：<ul><li>pendingAdd（已针对此硬件 ID 请求添加操作，并且该操作正在进行） </li><li>pendingRemove（已针对此硬件 ID 请求删除（过期）操作，并且该操作正在进行） </li><li>added（已成功将此硬件 ID 添加为此发货标签中的目标） </li><li>notSet（未执行任何操作，或者未针对此硬件 ID 设置状态） </li></ul>|
+|distributionState|字符串|可选值，表示此 CHID 的当前目标状态。 如果未定义，则默认为“未知”。 可能的值（括号中为说明）：<ul><li>未知</li><li>PendingAdd（已针对此硬件 ID 请求添加操作，并且该操作正在进行）</li><li>已添加</li><li>PendingRemove（已针对此硬件 ID 请求删除（过期）操作，并且该操作正在进行）</li><li>PendingRecovery</li><li>已恢复</li></ul>|
 |action|字符串|此对象仅在更新/修补发货标签时才适用。 可能的值为： <ul><li>添加</li><li>删除</li></ul> |
 
 ### <a name="in-service-publish-information-object"></a>服务中发布信息对象
@@ -369,7 +369,10 @@ https://manage.devcenter.microsoft.com/v2.0/my/hardware/products/{productId}/sub
 |:--|:--|:--|
 | currentStep | 字符串 | 此实体的整个工作流中的当前步骤名称。 <br>对于发布到 Windows 更新的发货标签，可能的值为（括号中为说明）：<ul><li>Created（正在创建发货标签） </li><li>PreProcessShippingLabel（正在验证目标信息） </li><li>FinalizePreProcessing（完成预处理后正在调用相应的下一步骤） </li><li>PublishJobValidation（正在验证包引入/提交内容是否完整） </li><li>UpdateGeneration（正在生成 WU 的发布详细信息） </li><li>MicrosoftApproval（事务升级/正在进行外部测试） </li><li>Publishing（正在将发布详细信息推送到 WU） </li><li>FinalizePublishing（正在完成发布过程） </li></ul> 对于与其他合作伙伴共享的发货标签，可能的值为（括号中为说明）： <ul><li>Created（正在创建发货标签） </li><li>PreProcessShippingLabel（正在验证目标信息） </li><li>FinalizePreProcessing（完成预处理后正在调用相应的下一步骤） </li><li>PublishJobValidation（正在验证包引入/提交内容是否完整） </li><li>ProcessSharing（正在为接收方生成共享详细信息） </li><li>FinalizeSharing（正在完成共享过程） </li></ul>|
 | State | 字符串 | 当前步骤的状态。 可能的值为：<ul><li>notStarted</li><li>started</li><li>失败</li><li>completed</li></ul> |
-| Messages | 数组 | 一个字符串数组，用于提供有关当前步骤的消息（尤其是失败的情况下） |
+| Messages | 数组 | 一个字符串数组，用于提供有关当前步骤的消息（尤其是在失败的情况下） |
+
+> [!NOTE]
+> 映射到“逐步推出”功能的 currentStep 没有任何值。
 
 ## <a name="error-codes"></a>错误代码
 
