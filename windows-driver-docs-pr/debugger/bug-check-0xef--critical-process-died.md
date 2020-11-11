@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 8e3a9156c98625bb9647c1d52b1250fc590b906e
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 02af74143499dcfd80f59df8d3b4b4d513159e1b
+ms.sourcegitcommit: e543e4ade05c17539e900794f1c9ef4c4baafa64
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89217384"
+ms.lasthandoff: 11/11/2020
+ms.locfileid: "94520521"
 ---
 # <a name="bug-check-0xef-critical_process_died"></a>Bug 检查0xEF：关键 \_ 进程 \_ 终止
 
@@ -26,7 +26,7 @@ CRITICAL_PROCESS_DIED bug 检查的值为0x000000EF。 这表明关键系统进�
 
 内置的 Windows 关键系统服务包括 csrss.exe、wininit.exe、logonui.exe、smss.exe、services.exe、conhost.exe 和 winlogon.exe。
 
-开发人员还可以创建服务，并设置其恢复选项以重新启动计算机。有关详细信息，请参阅 [设置在服务失败时要执行的恢复操作](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc753662(v=ws.11))。
+开发人员还可以创建服务并设置其恢复选项以重新启动计算机。有关详细信息，请参阅 [设置在服务失败时要执行的恢复操作](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc753662(v=ws.11))。
 
 > [!IMPORTANT]
 > 本主题面向程序员。 如果您是在使用计算机时收到蓝屏错误代码的客户，请参阅[蓝屏错误疑难解答](https://www.windows.com/stopcode)。
@@ -55,11 +55,11 @@ CRITICAL_PROCESS_DIED bug 检查的值为0x000000EF。 这表明关键系统进�
 </tr>
 <tr class="odd">
 <td align="left"><p>3</p></td>
-<td align="left"><p>预留</p></td>
+<td align="left"><p>保留</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>4</p></td>
-<td align="left"><p>预留</p></td>
+<td align="left"><p>保留</p></td>
 </tr>
 </tbody>
 </table>
