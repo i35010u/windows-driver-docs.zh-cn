@@ -4,12 +4,12 @@ description: 了解 Windows 10 1809 版中的驱动程序开发的新功能 (Win
 ms.assetid: 764bcd98-c123-45e2-9dd1-44d54bb1addc
 ms.date: 04/28/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: a695aa09b3492e0b6ddbba3f5cc77f9beae7c3d2
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: 8dab030d06a2dbb33bab6aa4df1431ed3a6ef69e
+ms.sourcegitcommit: 5587af31b12cf96c1a31d42f7b40e8f72e3d739c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91732637"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94570375"
 ---
 # <a name="whats-new-in-windows-10-version-1809"></a>Windows 10 版本 1809 中的新增功能
 
@@ -62,32 +62,32 @@ ms.locfileid: "91732637"
 
 Windows 10 版本 1809 中的“显示”驱动程序开发的更新包括：
 
-* **光线跟踪**：为了支持硬件加速的光线跟踪，我们在开发 Direct3D API 的同时开发了新的 Direct3D DDI。 示例 DDI 包括：[PFND3D12DDI_BUILD_RAYTRACING_ACCELERATION_STRUCTURE_0054](/windows-hardware/drivers/ddi/d3d12umddi/nc-d3d12umddi-pfnd3d12ddi_build_raytracing_acceleration_structure_0054)、[PFND3D12DDI_COPY_RAYTRACING_ACCELERATION_STRUCTURE_0054](/windows-hardware/drivers/ddi/d3d12umddi/nc-d3d12umddi-pfnd3d12ddi_copy_raytracing_acceleration_structure_0054)。 有关光线跟踪的详细信息，请参阅[宣布推出 Microsoft DirectX 光线跟踪](https://devblogs.microsoft.com/directx/announcing-microsoft-directx-raytracing/)。
+* **光线跟踪** ：为了支持硬件加速的光线跟踪，我们在开发 Direct3D API 的同时开发了新的 Direct3D DDI。 示例 DDI 包括：[PFND3D12DDI_BUILD_RAYTRACING_ACCELERATION_STRUCTURE_0054](/windows-hardware/drivers/ddi/d3d12umddi/nc-d3d12umddi-pfnd3d12ddi_build_raytracing_acceleration_structure_0054)、[PFND3D12DDI_COPY_RAYTRACING_ACCELERATION_STRUCTURE_0054](/windows-hardware/drivers/ddi/d3d12umddi/nc-d3d12umddi-pfnd3d12ddi_copy_raytracing_acceleration_structure_0054)。 有关光线跟踪的详细信息，请参阅[宣布推出 Microsoft DirectX 光线跟踪](https://devblogs.microsoft.com/directx/announcing-microsoft-directx-raytracing/)。
 
-* **通用驱动程序要求**：WDDM 2.5 驱动程序需要确保其 DirectX11 UMD、DirectX12 UMD、KMD 以及这些组件加载的其他任何 DLL 遵守通用 API。
+* **通用驱动程序要求** ：WDDM 2.5 驱动程序需要确保其 DirectX11 UMD、DirectX12 UMD、KMD 以及这些组件加载的其他任何 DLL 遵守通用 API。
 
-* **仅限 SRV 的平铺资源层 3**：在 Windows 10 版本 1809 中，GPU 能够更以更低的正交性支持平铺资源层 3 功能。 Direct3D12 现在支持稀疏体积纹理，而无需进行无序访问和渲染器目标操作。 仅限 SRV 的平铺资源层 3 是适合在第 2 层和第 3 层之间部署的概念层。 与当前的正交平铺资源层 3 一样，硬件支持是可选的。 但是，仅限 SRV 的平铺资源层 3 支持是一个超集层，需要平铺资源层 2 的支持。
+* **仅限 SRV 的平铺资源层 3** ：在 Windows 10 版本 1809 中，GPU 能够更以更低的正交性支持平铺资源层 3 功能。 Direct3D12 现在支持稀疏体积纹理，而无需进行无序访问和渲染器目标操作。 仅限 SRV 的平铺资源层 3 是适合在第 2 层和第 3 层之间部署的概念层。 与当前的正交平铺资源层 3 一样，硬件支持是可选的。 但是，仅限 SRV 的平铺资源层 3 支持是一个超集层，需要平铺资源层 2 的支持。
 
    已播发正交平铺资源层 3 支持的驱动程序只需更新其驱动程序即可支持最新的“选项上限”DDI 结构版本。 对于已能支持正交平铺资源层 3 的任何硬件，运行时会将仅限 SRV 的平铺资源层 3 支持播发到应用程序。
 
-* **渲染通道**：已添加渲染通道功能来实现以下目的：
+* **渲染通道** ：已添加渲染通道功能来实现以下目的：
 
   * 在现有的驱动程序上运行新的 API。
   * 使用户模式驱动程序能够选择最佳的渲染路径，且不会严重降低 CPU 的性能。
 
-* **元命令**：元命令是代表 IHV 加速算法的 Direct3D12 对象。 它是对驱动程序实现的命令生成器的不透明引用。 元命令的更新包括描述符表绑定和纹理绑定。 请参阅 [D3D12DDI_META_COMMAND_PARAMETER_TYPE](/windows-hardware/drivers/ddi/d3d12umddi/ne-d3d12umddi-d3d12ddi_meta_command_parameter_type) 和 [D3D12DDIARG_META_COMMAND_PARAMETER_DESC](/windows-hardware/drivers/ddi/d3d12umddi/ns-d3d12umddi-d3d12ddiarg_meta_command_parameter_desc)。
+* **元命令** ：元命令是代表 IHV 加速算法的 Direct3D12 对象。 它是对驱动程序实现的命令生成器的不透明引用。 元命令的更新包括描述符表绑定和纹理绑定。 请参阅 [D3D12DDI_META_COMMAND_PARAMETER_TYPE](/windows-hardware/drivers/ddi/d3d12umddi/ne-d3d12umddi-d3d12ddi_meta_command_parameter_type) 和 [D3D12DDIARG_META_COMMAND_PARAMETER_DESC](/windows-hardware/drivers/ddi/d3d12umddi/ns-d3d12umddi-d3d12ddiarg_meta_command_parameter_desc)。
 
   启用计算算法以使用纹理资源（重排内存）
   * 启用图形管道算法
 
-* **HDR 亮度补偿**：引入了新的 SDR 亮度提升技术，以将 SDR 内容的参考白色部分提高到用户所需的值，这样就能够以 200-240 典型尼特值再现 SDR 内容，相当于用户预期的 SDR 显示效果。 SDR 亮度提升在两个方面会影响总体 Brightness3 行为：
+* **HDR 亮度补偿** ：引入了新的 SDR 亮度提升技术，以将 SDR 内容的参考白色部分提高到用户所需的值，这样就能够以 200-240 典型尼特值再现 SDR 内容，相当于用户预期的 SDR 显示效果。 SDR 亮度提升在两个方面会影响总体 Brightness3 行为：
 
   1. 只能在预先混合的前提下，针对 SDR 内容应用此提升。 HDR 内容不受影响。 同时，对于大多数笔记本电脑/brightness3 方案，用户预期所有内容（SDR 和 HDR）可调整。
   2. 当 OS 中的 Brightness3 堆栈确定所需的尼特值时，并不知道已经应用了 SDR 提升。
 
      驱动程序必须对来自 HDR Brightness3 DDI 的所需尼特值应用补偿。 由于图形驱动程序（和下游的 TCON 等）将会修改内容的像素值以获取所需的尼特值，因此，还应该对应用程序通过 [D3DDDI_HDR_METADATA_HDR10](/windows-hardware/drivers/ddi/d3dukmdt/ns-d3dukmdt-_d3dddi_hdr_metadata_hdr10) 提供的 HDR 内容元数据或者通过 [DxgkDdiSetTargetAdjustedColorimetry](/windows-hardware/drivers/ddi/dispmprt/nc-dispmprt-dxgkddi_settargetadjustedcolorimetry) 提供的 OS 默认值应用补偿。 由于图形驱动程序 (TCON) 负责修改像素数据，因此驱动程序需负责补偿 HDR 内容元数据。
 
-* **HDR 像素格式支持**：此内核模式设备驱动程序接口 (DDI) 更改包含在 WDDM 2.5 中，公开了驱动程序/设备报告的新功能，提供有关驱动程序/设备支持的 HDR 功能的信息。
+* **HDR 像素格式支持** ：此内核模式设备驱动程序接口 (DDI) 更改包含在 WDDM 2.5 中，公开了驱动程序/设备报告的新功能，提供有关驱动程序/设备支持的 HDR 功能的信息。
 
    目前，OS 根据从 [DdiUpdateMonitorLinkInfo](/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_updatemonitorlinkinfo) 读取的 [DXGK_MONITORLINKINFO_CAPABILITIES](/windows-hardware/drivers/ddi/d3dkmdt/ns-d3dkmdt-_dxgk_monitorlinkinfo_capabilities) 结构的 *HighColorSpace* 位确定驱动程序/设备是否支持 HDR。 *HighColorSpace* 位提供以 HDR 模式运行的驱动程序/链接/监视功能的组合。
 
@@ -98,7 +98,7 @@ Windows 10 版本 1809 中的“显示”驱动程序开发的更新包括：
 
     图形驱动程序只能报告 FP16HDR 或 ARGB10HDR 的支持，因为它们并不真正采用超集/子集配置；如果同时报告支持 FP16HDR 和 ARGB10HDR，则 OS 会使启动适配器失败。 请参阅 [DXGK_MONITORLINKINFO_CAPABILITIES](/windows-hardware/drivers/ddi/d3dkmdt/ns-d3dkmdt-_dxgk_monitorlinkinfo_capabilities) 和 [_DXGK_DISPLAY_DRIVERCAPS_EXTENSION](/windows-hardware/drivers/ddi/d3dkmddi/ns-d3dkmddi-_dxgk_display_drivercaps_extension)。
 
-* **SDR 白水平**：内核模式设备驱动程序接口的更改包括将新的参数添加到现有的 DDI，使图形驱动程序知道 OS 复合器对所有在 HDR 模式下显示的 SDR 内容应用的“SDR 白水平”值。 请参阅“_DXGK_COLORIMETRY”。
+* **SDR 白水平** ：内核模式设备驱动程序接口的更改包括将新的参数添加到现有的 DDI，使图形驱动程序知道 OS 复合器对所有在 HDR 模式下显示的 SDR 内容应用的“SDR 白水平”值。 请参阅“_DXGK_COLORIMETRY”。
 
 ## <a name="windows-kernel"></a><a name="kernel-1809"></a>Windows 内核
 
@@ -119,7 +119,7 @@ Windows 10 版本 1809 中的“显示”驱动程序开发的更新包括：
   * [ExReleasePushLockExclusive 宏](/windows-hardware/drivers/ddi/wdm/nf-wdm-exreleasepushlockexclusive)
   * [ExReleasePushLockShared 宏](/windows-hardware/drivers/ddi/wdm/nf-wdm-exreleasepushlockshared)
 * [KzLowerIrql](https://review.docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kzlowerirql) 和 [KzRaiseIrql](https://review.docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kzraiseirql) 已移到面向 Windows 8 和更高版本的内核组件的受支持外部 forceinline，而不依赖于转发器来实例化内联函数的特殊用例。
-* 平展 PCI 的门户桥 (FPB) 现在受支持。 有关详细信息，请参阅官方规范的 [PCI-SIG](https://pcisig.com) 。 在 [Ntddk.h](https://review.docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/) 中声明了新的 API (_PCI_FPB_*)。
+* 平展 PCI 的门户桥 (FPB) 现在受支持。 有关详细信息，请参阅官方规范的 [PCI-SIG](https://pcisig.com) 。 在 [Ntddk.h](https://review.docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/) 中声明了新的 API ( _PCI_FPB_ *)。
 
 ## <a name="networking"></a><a name="networking-1809"></a>网络
 
@@ -127,7 +127,7 @@ Windows 10 版本 1809 中的“显示”驱动程序开发的更新包括：
 
 * 新的 [NetAdapterCx 客户端驱动程序的 INF 文件](./netcx/inf-files-for-netadaptercx-client-drivers.md)主题。
 * 传输和接收队列已合并成名为“数据包队列”的单个对象类型，以简化 API 图面。 已将标题为[轮询模型](./netcx/transmit-and-receive-queues.md#polling-model)的新部分添加到[传输和接收队列](./netcx/transmit-and-receive-queues.md)主题。
-* 已将[硬件卸载](./netcx/netadaptercx-hardware-offloads.md)添加到 NetAdapterCx，该功能还可以自动注册客户端驱动程序的关联数据包扩展。
+* 已将[硬件卸载](./netcx/introduction-to-hardware-offloads.md)添加到 NetAdapterCx，该功能还可以自动注册客户端驱动程序的关联数据包扩展。
 * 网络接口现在与驱动程序的 WDF 设备对象分离。 为了支持此功能，现已删除 *EvtNetAdapterSetCapabilities* 回调函数。 NetAdapterCx 客户端驱动程序现在可以包含多个网络接口，其中包括一个默认接口。
 
    更新的有关支持网络接口/设备对象分离的主题包括：

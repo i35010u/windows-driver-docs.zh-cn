@@ -7,12 +7,12 @@ keywords:
 ms.date: 11/04/2019
 ms.localizationpriority: medium
 ms.custom: Vib
-ms.openlocfilehash: 1109f7d3941443646447a85393d5b787a0baea40
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: de7bc3b2acdb56b87f6738fa6c404481d4450ad6
+ms.sourcegitcommit: 5587af31b12cf96c1a31d42f7b40e8f72e3d739c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89208747"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94570379"
 ---
 # <a name="packet-descriptors-and-extensions"></a>数据包描述符和扩展
 
@@ -24,7 +24,7 @@ ms.locfileid: "89208747"
 
 数据包的 *核心描述符* 是 [**NET_PACKET**](/windows-hardware/drivers/ddi/packet/ns-packet-_net_packet) 结构。 它仅包含适用于所有数据包的最基本的元数据，例如给定包的组帧布局和数据包的第一个段描述符的索引。   
 
-每个数据包还必须有一个或多个 *片段描述符*或 [**NET_FRAGMENT**](/windows-hardware/drivers/ddi/fragment/ns-fragment-_net_fragment) 结构，它们描述数据包数据所在的系统内存中的位置。
+每个数据包还必须有一个或多个 *片段描述符* 或 [**NET_FRAGMENT**](/windows-hardware/drivers/ddi/fragment/ns-fragment-_net_fragment) 结构，它们描述数据包数据所在的系统内存中的位置。
 
 *扩展名* 是可选的，可为特定于方案的功能保留每个数据包或每个片段的元数据。 例如，数据包扩展可以保存校验和的卸载信息、 (LSO) 的大量发送卸载以及接收段合并 (RSC) ，也可以保存特定于应用程序的详细信息。 片段扩展可以保存虚拟地址信息、逻辑 DMA 地址信息或片段的其他信息。
 
@@ -84,7 +84,7 @@ ms.locfileid: "89208747"
 
 使用 NIC 客户端驱动程序中的数据包扩展的第一步是声明受支持的硬件卸载。 当你播发对卸载（如校验和和 LSO）的支持时，NetAdapterCx 会以你的名义自动注册关联的数据包扩展。
 
-有关为校验和和 LSO 公布硬件卸载的代码示例，请参阅 [NetAdapterCx 硬件卸载](netadaptercx-hardware-offloads.md)。
+有关广告硬件卸载的代码示例，请参阅 [硬件卸载简介](introduction-to-hardware-offloads.md)。
 
 ### <a name="querying-packet-extension-offsets-for-datapath-queues"></a>查询数据路径队列的数据包扩展偏移量
 

@@ -7,44 +7,43 @@ keywords:
 - 以太网调试
 - WinDbg
 - KDNET
-ms.date: 09/12/2019
+ms.date: 11/11/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 904afed53f1250c630600fd13a55a822963ada60
-ms.sourcegitcommit: f610410e1500f0b0a4ca008b52679688ab51033d
+ms.openlocfilehash: 140ff62eeb5796fde0c247e449cf237e710ba6b6
+ms.sourcegitcommit: 5587af31b12cf96c1a31d42f7b40e8f72e3d739c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/15/2020
-ms.locfileid: "88252959"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94570377"
 ---
 # <a name="setting-up-kdnet-network-kernel-debugging-automatically"></a>自动设置 KDNET 网络内核调试
 
 适用于 Windows 的调试工具支持通过网络进行内核调试。 本主题介绍如何使用 kdnet.exe 安装工具自动设置网络调试。
 
-运行调试器的计算机称为 *主机计算机*，被调试的计算机称为 *目标计算机*。 主计算机必须运行 Windows 7 或更高版本，并且目标计算机必须运行 Windows 8 或更高版本。
+运行调试器的计算机称为 *主机计算机* ，被调试的计算机称为 *目标计算机* 。 主计算机必须运行 Windows 7 或更高版本，并且目标计算机必须运行 Windows 8 或更高版本。
 
-## <a name="span-iddetermining_the_ip_address_of_the_host_computerspanspan-iddetermining_the_ip_address_of_the_host_computerspanspan-iddetermining_the_ip_address_of_the_host_computerspandetermining-the-ip-address-of-the-host-computer"></a><span id="Determining_the_IP_Address_of_the_Host_Computer"></span><span id="determining_the_ip_address_of_the_host_computer"></span><span id="DETERMINING_THE_IP_ADDRESS_OF_THE_HOST_COMPUTER"></span>确定主机计算机的 IP 地址
+## <a name="determining-the-ip-address-of-the-host-computer"></a>确定主机计算机的 IP 地址
 
-1. 确认目标和主机 Pc 已连接到网络集线器或使用适当的网络电缆进行切换。 
+1. 确认目标和主机 Pc 已连接到网络集线器或使用适当的网络电缆进行切换。
 
-2. 在主计算机上，打开命令提示符窗口并输入 *IPConfig* 以显示 IP 配置。 
+2. 在主计算机上，打开命令提示符窗口并输入 *IPConfig* 以显示 IP 配置。
 
 3. 在命令输出中，找到以太网适配器的 IPv4 地址。
 
-    ```console
-    ...
+```console
+...
 
-    Ethernet adapter Ethernet:
-    ...
+Ethernet adapter Ethernet:
+...
 
-    IPv4 Address. . . . . . . . . . . : <YourHostIPAddress>
-    ...
+IPv4 Address. . . . . . . . . . . : <YourHostIPAddress>
+...
 
-    ```
+```
+
 4. 记下要用于调试的网络适配器的 IPv4 地址。
 
- 
-
-## <a name="span-idsetting_up_the_target_computerspanspan-idsetting_up_the_target_computerspanspan-idsetting_up_the_target_computerspansetting-up-the-host-and-target-computers"></a><span id="Setting_Up_the_Target_Computer"></span><span id="setting_up_the_target_computer"></span><span id="SETTING_UP_THE_TARGET_COMPUTER"></span>设置主机和目标计算机
+## <a name="setting-up-the-host-and-target-computers"></a>设置主机和目标计算机
 
 按照以下步骤，使用 kdnet.exe 实用程序在目标电脑上自动配置调试器设置。
 
@@ -91,16 +90,17 @@ ms.locfileid: "88252959"
 
 8. 将返回的密钥复制到 notepad.exe 文件中。
 
+## <a name="connecting-windbg-to-the-target-for-kernel-debugging"></a>将 WinDbg 连接到用于内核调试的目标
 
-## <a name="span-idusing_windbgspanspan-idusing_windbgspanspan-idusing_windbgspan-using-windbg"></a><span id="Using_WinDbg"></span><span id="using_windbg"></span><span id="USING_WINDBG"></span> 使用 WinDbg
-
-在主计算机上，打开 WinDbg。 在 " **文件** " 菜单上，选择 " **内核调试**"。 在 "内核调试" 对话框中，打开 " **网络** " 选项卡。将保存的端口号和密钥粘贴到前面的 notepad.exe 文件中。 选择“确定”。
+在主计算机上，打开 WinDbg。 在 " **文件** " 菜单上，选择 " **内核调试** "。 在 "内核调试" 对话框中，打开 " **网络** " 选项卡。将之前保存的端口号和密钥粘贴到前面的 notepad.exe 文件中。 选择“确定”。
 
 你还可以通过打开命令提示符窗口并输入以下命令（其中 <YourPort> 是上面选择的端口）来启动 WinDbg 会话， <YourKey> 它是上面 kdnet.exe 返回的键。 将上保存的项粘贴到前面的 notepad.exe 文件中。
 
    ```console
-  windbg -k net:port=<YourDebugPort>,key=<YourKey> 
+  windbg -k -d net:port=<YourDebugPort>,key=<YourKey> 
    ```
+
+示例中显示的可选-d 参数启用了中的早期中断。 有关详细信息，请参阅 [WinDbg Command-Line 选项](windbg-command-line-options.md)。
 
 如果系统提示你允许 WinDbg 通过防火墙访问该端口，则允许 WinDbg 访问 **所有这三种** 不同网络类型的端口。
 
@@ -117,7 +117,7 @@ ms.locfileid: "88252959"
    Waiting to reconnect...
    ```
 
-## <a name="span-idrestarting_targetspanspan-idrestarting_targetspanspan-idrestarting_targetspan-restarting-the-target-pc"></a><span id="Restarting_Target"></span><span id="restarting_target"></span><span id="RESTARTING_TARGET"></span> 重新启动目标 PC
+## <a name="restarting-the-target-pc"></a>重新启动目标 PC
 
 调试器进入 "正在等待重新连接 ..."阶段，重新启动目标计算机。 重新启动计算机的一种方法是在管理员的命令提示符下使用此命令。
 
@@ -127,15 +127,15 @@ ms.locfileid: "88252959"
 
 在目标计算机重新启动后，调试器应该会自动连接。
 
-## <a name="span-idtroubleshooting_tipsspanspan-idtroubleshooting_tipsspantroubleshooting-tips"></a><span id="troubleshooting_tips"></span><span id="TROUBLESHOOTING_TIPS"></span>故障排除提示
+## <a name="troubleshooting-tips"></a>疑难解答指南
 
 **必须通过防火墙允许调试应用程序**
 
 调试器必须具有通过防火墙的访问权限。 使用 "控制面板" 允许通过防火墙进行访问。 
 
-1. 打开 **"控制面板" " &gt; 系统和安全"** ，然后选择 " **允许应用通过 Windows 防火墙**"。 
+1. 打开 **"控制面板" " &gt; 系统和安全"** ，然后选择 " **允许应用通过 Windows 防火墙** "。 
 
-2. 在应用程序列表中，找到 " *WINDOWS GUI 符号调试器* " 和 " *windows 内核调试器*"。 
+2. 在应用程序列表中，找到 " *WINDOWS GUI 符号调试器* " 和 " *windows 内核调试器* "。 
 
 3. 使用此复选框可允许这两个应用程序通过防火墙实现 **三** 种不同的网络类型。 
 
@@ -147,9 +147,9 @@ ms.locfileid: "88252959"
 
 如果调试器超时且未连接，请使用目标电脑上的 ping 命令验证连接性。 
 
-   ```console
-   C:\>Ping <HostComputerIPAddress> 
-   ```
+```console
+   C:\>Ping <HostComputerIPAddress>
+```
 
 **选择用于网络调试的端口**
 
@@ -157,15 +157,69 @@ ms.locfileid: "88252959"
 
 你可以选择从49152到65535的任何端口号。 建议的范围介于50000和50039之间。 你选择的端口将打开，以供在主计算机上运行的调试器进行独占访问。 
 
-**注意**   可用于网络调试的端口号范围可能受公司网络策略的限制。 若要确定公司的策略是否限制可用于网络调试的端口范围，请与网络管理员联系。
+**注意**  可用于网络调试的端口号范围可能受公司网络策略的限制。 若要确定公司的策略是否限制可用于网络调试的端口范围，请与网络管理员联系。
 
 **支持的网络适配器**
 
-如果在运行 kdnet.exe 时显示 "此计算机上的任何 Nic 不支持网络调试"，则表示不支持网络适配器。 
+如果在运行 kdnet.exe 时显示 "此计算机上的任何 Nic 不支持网络调试"，则表示不支持网络适配器。
 
 主计算机可以使用任何网络适配器，但目标计算机必须使用 Windows 调试工具支持的网络适配器。 有关受支持的网络适配器的列表，请参阅在 [Windows 10 中为网络内核调试支持的以太网 nic](supported-ethernet-nics-for-network-kernel-debugging-in-windows-10.md) 和 [Windows 8.1 中用于网络内核调试的受支持以太网 nic](supported-ethernet-nics-for-network-kernel-debugging-in-windows-8-1.md)。
 
-## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
+## <a name="enable-additional-debugging-types"></a>启用其他调试类型
+
+开始 Windows 10 10 月2020更新 (20H2) ，支持使用以下选项启用四种调试类型。
+
+*b* -启用 bootmgr 调试。 有关详细信息，请参阅 [BCDEdit/bootdebug](/windows-hardware/drivers/devtest/bcdedit--bootdebug)。
+
+*w* -启用 winload.exe 调试。 有关详细信息，请参阅 [BCDEdit/bootdebug](/windows-hardware/drivers/devtest/bcdedit--bootdebug)。
+
+*h* -启用虚拟机监控程序调试。 有关详细信息，请参阅 [BCDEdit/hypervisorsettings](/windows-hardware/drivers/devtest/bcdedit--hypervisorsettings)。
+
+*k* -启用内核调试。 有关详细信息，请参阅 [ (内核模式) 入门 ](getting-started-with-windbg--kernel-mode-.md)。
+
+可以指定任意调试类型的组合。
+
+如果未指定任何调试类型，则将启用内核调试。
+
+如果虚拟机监控程序和内核调试都处于启用状态，则虚拟机监控程序端口将设置为值 port + 1。
+
+### <a name="example-usage"></a>用法示例
+
+使用-bkw 选项可以启用 bootmgr、内核和 winload.exe 调试。
+
+```console
+C:\>kdnet.exe <HostComputerIPAddress> <YourDebugPort> -bkw
+
+Enabling network debugging on Intel(R) 82577LM Gigabit Network Connection.
+Key=2steg4fzbj2sz.23418vzkd4ko3.1g34ou07z4pev.1sp3yo9yz874p
+```
+
+### <a name="summary-of-debugging-type-options"></a>调试类型选项摘要
+
+| KNDET 选项 | 说明                  | 等效 set 命令           |
+|--------------|------------------------------|----------------------------------|
+| *b*          | 启用 bootmgr 调试    | bcdedit/bootdebug {bootmgr} on  |
+| *h*          | 启用虚拟机监控程序调试 | bcdedit/set hypervisordebug on  |
+| *k*          | 启用内核调试     | bcdedit/debug on                |
+| *w*          | 启用 winload.exe 调试    | bcdedit/bootdebug on            |
+
+## <a name="specify-bus-parameters"></a>指定总线参数
+
+如果 kdnet 无法自动确定传输的总线参数，请使用此语法在命令行上使用/busparams 选项进行指定。
+
+`kdnet.exe /busparams [b.d.f] [host] [port] [-[b][h][k][w]]`
+
+[b. d. f] 指定要配置的设备的总线参数。
+
+使用目标计算机上的设备管理器确定要用于调试的适配器的 PCI 总线、设备和功能号。 对于 "总线参数"，请输入 *b* 。 *d.**f* ，其中 *b* 、 *d* 和 *f* 是适配器的总线号、设备号和功能号。 这些值显示在“常规”选项卡上的“位置”下的设备管理器中 。  
+
+例如：
+
+```console
+C:\>kdnet.exe /busparams 0.29.7 <HostComputerIPAddress> <YourDebugPort> -bkw
+```
+
+## <a name="related-topics"></a>相关主题
 
 [Windows 10 中的网络内核调试支持的以太网 NIC](supported-ethernet-nics-for-network-kernel-debugging-in-windows-10.md)
 
