@@ -8,17 +8,14 @@ keywords:
 - 虚拟用户空间内存 WDK 内核
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 42552a13babd095bd3378388d7a7f0d9133eb7cd
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: e17fc2d14ee248a3907cecb8ae9b276db224c45f
+ms.sourcegitcommit: 774cca93409062c813143c8dc4c55f5c883d2b1a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89191677"
+ms.lasthandoff: 11/15/2020
+ms.locfileid: "94634635"
 ---
 # <a name="accessing-user-space-memory"></a>访问用户空间内存
-
-
-
 
 
 驱动程序无法通过用户模式虚拟地址直接访问内存，除非它在导致驱动程序当前 i/o 操作的用户模式线程的上下文中运行，并且使用该线程的虚拟地址。
