@@ -10,12 +10,12 @@ keywords:
 - 驱动程序启动类型 WDK 文件系统
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 99acec28bf8feb8e4ab0c5d4fae8dd0c1c14ef36
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: e15a144f6089b78aef1f78e9497aa8dbbfb0263a
+ms.sourcegitcommit: 9e13d3fbc74bb75335c4d2927c55b0085e46b0ea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90103236"
+ms.lasthandoff: 11/16/2020
+ms.locfileid: "94639033"
 ---
 # <a name="load-order-groups-and-altitudes-for-filter-drivers"></a>筛选器驱动程序的加载顺序组和高度
 
@@ -23,15 +23,15 @@ ms.locfileid: "90103236"
 
 Windows 对文件系统筛选器驱动程序和在系统启动时加载的旧筛选器驱动程序使用一组专用的 *加载顺序组* 。
 
-每个加载顺序组都有一组已定义的 *高度*。 每个筛选器驱动程序必须具有唯一的海拔标识符。 在加载筛选器时，筛选器的高度定义其相对于其他筛选器驱动程序的位置。 海拔高度是被解释为十进制数的无限精度字符串。 如果筛选器驱动程序的数字高度较低，则会将该筛选器驱动程序加载到值较高的筛选器驱动程序的下面。
+每个加载顺序组都有一组已定义的 *高度* 。 每个筛选器驱动程序都必须具有唯一的海拔标识符。 在加载筛选器时，筛选器的高度定义其相对于其他筛选器驱动程序的位置。 海拔高度是被解释为十进制数的无限精度字符串。 如果筛选器驱动程序的数字高度较低，则会将该筛选器驱动程序加载到值较高的筛选器驱动程序的下面。
 
 海拔分配由 Microsoft 管理。 若要请求筛选器驱动程序的海拔高度，请参阅 [筛选器高度请求](minifilter-altitude-request.md)。
 
-筛选器驱动程序的海拔值在[筛选器驱动程序的 INF 文件中的**字符串**部分](creating-an-inf-file-for-a-minifilter-driver.md)的**实例**定义中指定。 还可以在[**FLT_REGISTRATION**](/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_registration)结构中对[**InstanceSetupCallback**](/windows-hardware/drivers/ddi/fltkernel/nc-fltkernel-pflt_instance_setup_callback)例程的调用中指定实例定义。 可以定义筛选器驱动程序的多个实例和高度。 这些实例定义适用于所有卷。
+筛选器驱动程序的海拔值在 [筛选器驱动程序的 INF 文件中的 **字符串** 部分](creating-an-inf-file-for-a-minifilter-driver.md)的 **实例** 定义中指定。 还可以在 [**FLT_REGISTRATION**](/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_registration)结构中对 [**InstanceSetupCallback**](/windows-hardware/drivers/ddi/fltkernel/nc-fltkernel-pflt_instance_setup_callback)例程的调用中指定实例定义。 可以定义筛选器驱动程序的多个实例和高度。 这些实例定义适用于所有卷。
 
 ## <a name="table-of-load-order-groups-and-altitude-ranges"></a>加载顺序组和海拔范围的表
 
-下表列出了筛选器驱动程序的系统定义的负载顺序组和海拔范围。 对于每个加载顺序组，"加载顺序组" 列包含应在[筛选器 INF 文件的**ServiceInstall**部分](creating-an-inf-file-for-a-minifilter-driver.md)的**LoadOrderGroup**项中为该组指定的值。 海拔范围列包含特定加载顺序组的海拔范围。
+下表列出了筛选器驱动程序的系统定义的负载顺序组和海拔范围。 对于每个加载顺序组，"加载顺序组" 列包含应在 [筛选器 INF 文件的 **ServiceInstall** 部分](creating-an-inf-file-for-a-minifilter-driver.md)的 **LoadOrderGroup** 项中为该组指定的值。 海拔范围列包含特定加载顺序组的海拔范围。
 
 请注意，"加载顺序组" 和 "高度" 范围将在堆栈上列出，这与它们的加载顺序相反。
 

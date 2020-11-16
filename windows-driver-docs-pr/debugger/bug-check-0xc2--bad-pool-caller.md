@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 1bfa17164d602c29ab6010d02795aaa79c692a82
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: de1c3be63dc92dc0040815b8aac4c0a3fe99ebf0
+ms.sourcegitcommit: 9e13d3fbc74bb75335c4d2927c55b0085e46b0ea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89213045"
+ms.lasthandoff: 11/16/2020
+ms.locfileid: "94639035"
 ---
 # <a name="bug-check-0xc2-bad_pool_caller"></a>Bug 检查0xC2：错误的 \_ 池 \_ 调用方
 
@@ -236,8 +236,8 @@ ms.locfileid: "89213045"
 
 **驱动程序验证程序**
 
-驱动程序验证程序是一个实时运行的工具，用于检查驱动程序的行为。 如果发现驱动程序代码执行过程中出现错误，它会主动创建一个例外，以允许进一步审查驱动程序代码的一部分。 驱动程序验证程序管理器内置于 Windows 中，可在所有 Windows PC 上使用。 若要启动驱动程序验证器管理器，请在命令提示符处键入 *Verifer* 。 你可以配置要验证的驱动程序。 验证驱动程序的代码在运行时会增加开销，因此请尝试验证尽可能少的驱动程序。 有关详细信息，请参阅[驱动程序验证程序](../devtest/driver-verifier.md)。
+驱动程序验证程序是一个实时运行的工具，用于检查驱动程序的行为。 如果发现驱动程序代码执行过程中出现错误，它会主动创建一个例外，以允许进一步审查驱动程序代码的一部分。 驱动程序验证程序管理器内置于 Windows 中，可在所有 Windows PC 上使用。 若要启动驱动程序验证程序管理器，请在命令提示下键入“验证程序”  。 你可以配置要验证的驱动程序。 验证驱动程序的代码在运行时会增加开销，因此请尝试验证尽可能少的驱动程序。 有关详细信息，请参阅[驱动程序验证程序](../devtest/driver-verifier.md)。
 
 **Windows 内存诊断**
 
-具体而言，对于内存池损坏的情况，请运行 Windows 内存诊断工具，尝试将物理内存作为一个原因进行隔离。 在 "控制面板" 搜索框中键入 "内存"，然后选择 " **诊断计算机的内存问题**"。运行测试后，使用事件查看器查看系统日志下的结果。 查找“内存诊断结果”条目以查看结果  。
+具体而言，对于内存池损坏的情况，请运行 Windows 内存诊断工具，尝试将物理内存作为一个原因进行隔离。 在 "控制面板" 搜索框中键入 "内存"，然后选择 " **诊断计算机的内存问题** "。运行测试后，使用事件查看器查看系统日志下的结果。 查找“内存诊断结果”条目以查看结果  。

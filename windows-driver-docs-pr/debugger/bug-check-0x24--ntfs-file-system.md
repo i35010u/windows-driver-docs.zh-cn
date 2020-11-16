@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 18fb6161ccab415adad6cf997633c9e5b868541e
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 3d53f5afab53d6190f2adad32d2dd11ef974ee96
+ms.sourcegitcommit: 9e13d3fbc74bb75335c4d2927c55b0085e46b0ea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89213499"
+ms.lasthandoff: 11/16/2020
+ms.locfileid: "94639031"
 ---
 # <a name="bug-check-0x24-ntfs_file_system"></a>Bug 检查0x24： NTFS \_ 文件 \_ 系统
 
@@ -40,7 +40,7 @@ NTFS \_ 文件 \_ 系统 bug 检查的值为0x00000024。 这表明 ntfs.sys 中
 <thead>
 <tr class="header">
 <th align="left">参数</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>
@@ -73,7 +73,7 @@ NTFS \_ 文件 \_ 系统 bug 检查的值为0x00000024。 这表明 ntfs.sys 中
 <a name="resolution"></a>解决方法
 ----------
 
-**若要调试此问题：** 使用参数 3 [** (显示上下文记录) **](-cxr--display-context-record-.md) 命令，然后使用 [**Kb (显示 Stack Backtrace) **](k--kb--kc--kd--kp--kp--kv--display-stack-backtrace-.md)。
+**若要调试此问题：** 使用参数 3 [**(显示上下文记录)**](-cxr--display-context-record-.md) 命令，然后使用 [**Kb (显示 Stack Backtrace)**](k--kb--kc--kd--kp--kp--kv--display-stack-backtrace-.md)。
 
 **解决磁盘损坏问题：**
 
@@ -83,7 +83,7 @@ NTFS \_ 文件 \_ 系统 bug 检查的值为0x00000024。 这表明 ntfs.sys 中
 
 -   还应运行系统制造商提供的与存储子系统相关的硬件诊断。
 
--   使用扫描磁盘实用工具确认没有文件系统错误。 选择并按住 (或右键单击要扫描的驱动器) ，然后选择 " **属性**"。 选择 " **工具**"。 选择 " **立即检查** " 按钮。
+-   使用扫描磁盘实用工具确认没有文件系统错误。 选择并按住 (或右键单击要扫描的驱动器) ，然后选择 " **属性** "。 选择 " **工具** "。 选择 " **立即检查** " 按钮。
 -   确认硬盘上有足够的可用空间。 操作系统和某些应用程序需要足够的可用空间来创建交换文件和其他功能。 根据系统配置，具体要求会有所不同，但通常最好使用10% 到15% 的可用空间。
 
 -   使用系统文件检查器工具修复丢失或损坏的系统文件。 系统文件检查器是 Windows 中的一个实用工具，它允许用户在 Windows 系统文件中扫描损坏并还原损坏的文件。 使用以下命令 ( # A0) 运行系统文件检查器工具。
@@ -96,7 +96,7 @@ NTFS \_ 文件 \_ 系统 bug 检查的值为0x00000024。 这表明 ntfs.sys 中
 
 -   **驱动程序验证程序**
 
-    驱动程序验证程序是一个实时运行的工具，用于检查驱动程序的行为。 如果发现驱动程序代码执行过程中出现错误，它会主动创建一个例外，以允许进一步审查驱动程序代码的一部分。 驱动程序验证程序管理器内置于 Windows 中，可在所有 Windows PC 上使用。 若要启动驱动程序验证器管理器，请在命令提示符处键入 *Verifer* 。 你可以配置要验证的驱动程序。 验证驱动程序的代码在运行时会增加开销，因此请尝试验证尽可能少的驱动程序。 有关详细信息，请参阅[驱动程序验证程序](../devtest/driver-verifier.md)。
+    驱动程序验证程序是一个实时运行的工具，用于检查驱动程序的行为。 如果发现驱动程序代码执行过程中出现错误，它会主动创建一个例外，以允许进一步审查驱动程序代码的一部分。 驱动程序验证程序管理器内置于 Windows 中，可在所有 Windows PC 上使用。 若要启动驱动程序验证程序管理器，请在命令提示下键入“验证程序”  。 你可以配置要验证的驱动程序。 验证驱动程序的代码在运行时会增加开销，因此请尝试验证尽可能少的驱动程序。 有关详细信息，请参阅[驱动程序验证程序](../devtest/driver-verifier.md)。
 
 过去，此停止代码的另一个可能原因是消耗了未分页的池内存。 如果非分页池内存完全耗尽，此错误可能会停止系统。 但是，在索引过程中，如果可用的非分页池内存量非常低，则另一个需要非分页池内存的内核模式驱动程序也会触发此错误。
 
