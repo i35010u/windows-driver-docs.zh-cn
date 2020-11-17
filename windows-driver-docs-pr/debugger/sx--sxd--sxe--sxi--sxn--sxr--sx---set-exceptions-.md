@@ -12,16 +12,16 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 1a0326af783e96ecbeb1da894337611b18654768
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 16450986db24adcba82cecab99b187ca6ddc8bcb
+ms.sourcegitcommit: 76681fc52a8a65fa4fe381582e7d5867e0527dae
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89218477"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94688540"
 ---
 # <a name="sx-sxd-sxe-sxi-sxn-sxr-sx--set-exceptions"></a>sx、sxd、sxe、sxi、sxn、sxr、sx-（设置异常）
 
-**Sx**命令控制调试器在要调试的应用程序中发生异常或发生某些事件时所执行的操作。
+**Sx** 命令控制调试器在要调试的应用程序中发生异常或发生某些事件时所执行的操作。
 
 ```dbgcmd
 sx
@@ -41,13 +41,13 @@ sxr
 <span id="-c2_Cmd2_"></span><span id="-c2_cmd2_"></span><span id="-C2_CMD2_"></span>**-c2 "**<em>Cmd2</em>**"**  
 指定在发生异常或事件并且在第一次机会未处理时执行的命令。 当第二次处理此异常时，会执行此命令，无论此异常是否中断调试器。 必须将 *Cmd2* 字符串用引号引起来。 此字符串可以包含用分号分隔的多个命令。 -C2 和带引号的命令字符串之间的空格是可选的。
 
-<span id="_______-h______"></span><span id="_______-H______"></span>**-h**更改指定事件的处理状态，而不是其中断状态。 如果 *事件* 为 **cc**、 **hc**、 **bpec**或 **ssec**，则无需使用 **-h** 选项。
+<span id="_______-h______"></span><span id="_______-H______"></span>**-h** 更改指定事件的处理状态，而不是其中断状态。 如果 *事件* 为 **cc**、 **hc**、 **bpec** 或 **ssec**，则无需使用 **-h** 选项。
 
-<span id="_______Exception______"></span><span id="_______exception______"></span><span id="_______EXCEPTION______"></span>*异常*指定命令在当前基数中的作用。
+<span id="_______Exception______"></span><span id="_______exception______"></span><span id="_______EXCEPTION______"></span>*异常* 指定命令在当前基数中的作用。
 
-<span id="_______Event______"></span><span id="_______event______"></span><span id="_______EVENT______"></span>*事件*指定命令操作的事件。 这些事件由缩写标识。 有关事件的列表，请参阅 [控制异常和事件](controlling-exceptions-and-events.md)。
+<span id="_______Event______"></span><span id="_______event______"></span><span id="_______EVENT______"></span>*事件* 指定命令操作的事件。 这些事件由缩写标识。 有关事件的列表，请参阅 [控制异常和事件](controlling-exceptions-and-events.md)。
 
-<span id="______________"></span>**\*** 影响不以其他方式为**sx**显式命名的所有异常。 有关显式命名异常的列表，请参阅 [控制异常和事件](controlling-exceptions-and-events.md)。
+<span id="______________"></span>**\* *_ 影响不以其他方式为 _ sx 显式命名的所有异常***。 有关显式命名异常的列表，请参阅 [控制异常和事件](controlling-exceptions-and-events.md)。
 
 ### <a name="span-idenvironmentspanspan-idenvironmentspanspan-idenvironmentspanenvironment"></a><span id="Environment"></span><span id="environment"></span><span id="ENVIRONMENT"></span>环境
 
@@ -76,18 +76,18 @@ sxr
 
 有关中断状态和处理状态的详细信息、所有事件代码的说明、所有事件的默认状态的列表以及控制此状态的其他方法的详细信息，请参阅 [控制异常和事件](controlling-exceptions-and-events.md)。
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
-**Sx**命令显示当前进程的异常列表以及所有 nonexception 事件的列表，并显示每个异常和事件的调试器的默认行为。
+**Sx** 命令显示当前进程的异常列表以及所有 nonexception 事件的列表，并显示每个异常和事件的调试器的默认行为。
 
-**Sxe**、 **sxd**、 **sxn**和**sxi**命令控制每个异常和事件的调试器设置。
+**Sxe**、 **sxd**、 **sxn** 和 **sxi** 命令控制每个异常和事件的调试器设置。
 
-**Sxr**命令将所有异常和事件筛选器状态重置为默认设置。 命令已清除，中断和继续选项重置为其默认设置，依此类推。
+**Sxr** 命令将所有异常和事件筛选器状态重置为默认设置。 命令已清除，中断和继续选项重置为其默认设置，依此类推。
 
-**Sx**命令不会更改指定异常或事件的处理状态或中断状态。 如果要更改与特定事件相关联的第一条命令或第二次执行命令，但不希望更改其他任何内容，则可以使用此命令。
+**Sx** 命令不会更改指定异常或事件的处理状态或中断状态。 如果要更改与特定事件相关联的第一条命令或第二次执行命令，但不希望更改其他任何内容，则可以使用此命令。
 
-如果在 (中包括 **-h** 选项，或者) 指定了 **cc**、 **hc**、 **bpec**或 **ssec** 事件，则 **sxe**、 **sxd**、 **sxn**和 **sxi** 命令控制异常或事件的 [处理状态](./debug-filter-xxx.md#handling-status) 。 在所有其他情况下，这些命令控制异常或事件的 [中断状态](./debug-filter-xxx.md#break-status) 。
+如果在 (中包括 **-h** 选项，或者) 指定了 **cc**、 **hc**、 **bpec** 或 **ssec** 事件，则 **sxe**、 **sxd**、 **sxn** 和 **sxi** 命令控制异常或事件的 [处理状态](./debug-filter-xxx.md#handling-status) 。 在所有其他情况下，这些命令控制异常或事件的 [中断状态](./debug-filter-xxx.md#break-status) 。
 
 设置中断状态时，这些命令具有以下效果：
 
@@ -160,11 +160,11 @@ sxr
 </tbody>
 </table>
 
-可以结合使用 **-h** 选项和异常，而不是事件。 将此选项与 **ch**、 **bpe**或 **sse** 一起使用将分别设置 **hc**、 **bpec**或 **ssec**的处理状态。 如果对任何其他事件使用-h 选项，则该选项不起作用。
+可以结合使用 **-h** 选项和异常，而不是事件。 将此选项与 **ch**、 **bpe** 或 **sse** 一起使用将分别设置 **hc**、 **bpec** 或 **ssec** 的处理状态。 如果对任何其他事件使用-h 选项，则该选项不起作用。
 
-将 **-c** 或 **-c2** 选项与 **hc**、 **bpec**或 **ssec** 一起使用时，会将指定的命令分别与 **ch**、 **bpe**或 **sse**关联。
+将 **-c** 或 **-c2** 选项与 **hc**、 **bpec** 或 **ssec** 一起使用时，会将指定的命令分别与 **ch**、 **bpe** 或 **sse** 关联。
 
-在下面的示例中， **sxe** 命令用于将访问冲突事件的中断状态设置为在第一次机会时中断，并设置将在该点执行到 **r eax**的第一条命令。 然后使用 **sx** 命令将第一条命令更改为 **r ebx**，而无需更改处理状态。 最后，显示 **sx** 输出的一部分，指示访问冲突事件的当前设置：
+在下面的示例中， **sxe** 命令用于将访问冲突事件的中断状态设置为在第一次机会时中断，并设置将在该点执行到 **r eax** 的第一条命令。 然后使用 **sx** 命令将第一条命令更改为 **r ebx**，而无需更改处理状态。 最后，显示 **sx** 输出的一部分，指示访问冲突事件的当前设置：
 
 ```dbgcmd
 0:000> sxe -c "r eax" av
@@ -176,3 +176,13 @@ sxr
        Command: "r ebx"
   . . .  
 ```
+
+## <a name="see-also"></a>另请参阅
+
+有关使用断点的详细信息，请参阅以下主题。
+
+[使用断点-调试技术](using-breakpoints.md)
+
+[WinDbg 中的条件断点](setting-a-conditional-breakpoint.md)
+
+[一直执行到出现指定的状态为止](executing-until-a-specified-state-is-reached.md)
