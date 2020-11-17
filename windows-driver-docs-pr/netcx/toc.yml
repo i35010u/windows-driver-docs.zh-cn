@@ -31,7 +31,15 @@
     - name: 数据包描述符和扩展
       href: packet-descriptors-and-extensions.md
     - name: NetAdapterCx 硬件卸载
-      href: netadaptercx-hardware-offloads.md
+      items:
+        - name: NetAdapterCx 硬件卸载简介
+          href: introduction-to-hardware-offloads.md
+        - name: 校验和卸载
+          href: checksum-offload.md
+        - name: 通用分段卸载 (GSO)
+          href: gso-offload.md
+        - name: 接收段合并 (RSC) 卸载
+          href: rsc-offload.md
     - name: 传输和接收队列
       href: transmit-and-receive-queues.md
     - name: 网络数据缓冲区管理

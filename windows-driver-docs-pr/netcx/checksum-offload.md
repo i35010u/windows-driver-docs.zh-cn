@@ -6,17 +6,17 @@ keywords:
 - WDF 网络适配器类扩展卸载，NetAdapterCx 硬件卸载，NetAdapterCx 卸载，Get-netadapter 卸载，校验和卸载
 ms.date: 08/10/2020
 ms.custom: Fe
-ms.openlocfilehash: befccbe0e556d05faca7e21afddab1b33cb0d917
-ms.sourcegitcommit: 5587af31b12cf96c1a31d42f7b40e8f72e3d739c
+ms.openlocfilehash: b0c69e3f0088b7c41ae254eddc7f14c6962ada3e
+ms.sourcegitcommit: ea3215e9d5afe073ed6d01fb6dddf31d95ef3b63
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94572487"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94673771"
 ---
 # <a name="checksum-offload"></a>校验和卸载
 
 > [!WARNING]
-> 本主题中的一些信息与预发布的产品相关，该产品在商业发布之前可能会进行重大修改。 Microsoft 对此处提供的信息不提供任何明示或暗示的保证。
+> 本主题中的一些信息与预发布的产品相关，该产品在商业发布之前可能会进行重大修改。 Microsoft 不对此处提供的信息作任何明示或默示的担保。
 >
 > NetAdapterCx 仅在 Windows 10 版本2004中处于预览阶段。
 >
@@ -42,23 +42,23 @@ NetAdapterCx 检查注册表关键字，并在启用活动卸载功能时遵循�
 
 若要配置传输 (Tx) 校验和卸载，客户端驱动程序：
 
-1. 分配 [**NET_ADAPTER_OFFLOAD_TX_CHECKSUM_CAPABILITIES**](/windows-hardware/drivers/ddi/netadapter/ns-netadapter-_net_adapter_offload_tx_checksum_capabilities) 结构。
+1. 分配 [**NET_ADAPTER_OFFLOAD_TX_CHECKSUM_CAPABILITIES**](/windows-hardware/drivers/ddi/netadapteroffload/ns-netadapteroffload-_net_adapter_offload_tx_checksum_capabilities) 结构。
 
-1. 调用 [**NET_ADAPTER_OFFLOAD_TX_CHECKSUM_CAPABILITIES_INIT**](/windows-hardware/drivers/ddi/netadapter/nf-netadapter-net_adapter_offload_tx_checksum_capabilities_init) 以初始化结构。
+1. 调用 [**NET_ADAPTER_OFFLOAD_TX_CHECKSUM_CAPABILITIES_INIT**](/windows-hardware/drivers/ddi/netadapteroffload/nf-netadapteroffload-net_adapter_offload_tx_checksum_capabilities_init) 以初始化结构。
 
-1. 调用 [**NetAdapterOffloadSetTxChecksumCapabilities**](/windows-hardware/drivers/ddi/netadapter/nf-netadapter-netadapteroffloadtxsetchecksumcapabilities) 来向 NetAdapterCx 注册结构。
+1. 调用 [**NetAdapterOffloadSetTxChecksumCapabilities**](/windows-hardware/drivers/ddi/netadapteroffload/nf-netadapteroffload-netadapteroffloadsettxchecksumcapabilities) 来向 NetAdapterCx 注册结构。
  
-在调用时 **NET_ADAPTER_OFFLOAD_TX_CHECKSUM_CAPABILITIES_INIT** 客户端驱动程序提供指向 [*EVT_NET_ADAPTER_OFFLOAD_SET_TX_CHECKSUM*](/windows-hardware/drivers/ddi/netadapter/nc-netadapter-evt_net_adapter_offload_set_tx_checksum) 回调的指针。 如果活动卸载功能发生变化，系统稍后会调用此回调。
+在调用时 **NET_ADAPTER_OFFLOAD_TX_CHECKSUM_CAPABILITIES_INIT** 客户端驱动程序提供指向 [*EVT_NET_ADAPTER_OFFLOAD_SET_TX_CHECKSUM*](/windows-hardware/drivers/ddi/netadapteroffload/nc-netadapteroffload-evt_net_adapter_offload_set_tx_checksum) 回调的指针。 如果活动卸载功能发生变化，系统稍后会调用此回调。
 
 若要配置接收 (Rx) 校验和卸载，客户端驱动程序：
 
-1. 分配 [**NET_ADAPTER_OFFLOAD_RX_CHECKSUM_CAPABILITIES**](/windows-hardware/drivers/ddi/netadapter/ns-netadapter-_net_adapter_offload_rx_checksum_capabilities) 结构。
+1. 分配 [**NET_ADAPTER_OFFLOAD_RX_CHECKSUM_CAPABILITIES**](/windows-hardware/drivers/ddi/netadapteroffload/ns-netadapteroffload-_net_adapter_offload_rx_checksum_capabilities) 结构。
 
-1. 调用 [**NET_ADAPTER_OFFLOAD_RX_CHECKSUM_CAPABILITIES_INIT**](/windows-hardware/drivers/ddi/netadapter/nf-netadapter-net_adapter_offload_rx_checksum_capabilities_init) 以初始化结构。
+1. 调用 [**NET_ADAPTER_OFFLOAD_RX_CHECKSUM_CAPABILITIES_INIT**](/windows-hardware/drivers/ddi/netadapteroffload/nf-netadapteroffload-net_adapter_offload_rx_checksum_capabilities_init) 以初始化结构。
 
-1. 调用 [**NetAdapterOffloadSetRxChecksumCapabilities**](/windows-hardware/drivers/ddi/netadapter/nf-netadapter-netadapteroffloadsetrxchecksumcapabilities) 来向 NetAdapterCx 注册结构。
+1. 调用 [**NetAdapterOffloadSetRxChecksumCapabilities**](/windows-hardware/drivers/ddi/netadapteroffload/nf-netadapteroffload-netadapteroffloadsetrxchecksumcapabilities) 来向 NetAdapterCx 注册结构。
 
-在调用时 **NET_ADAPTER_OFFLOAD_RX_CHECKSUM_CAPABILITIES_INIT** 客户端驱动程序提供指向 [*EVT_NET_ADAPTER_OFFLOAD_SET_RX_CHECKSUM*](/windows-hardware/drivers/ddi/netadapter/nc-netadapter-evt_net_adapter_offload_set_rx_checksum) 回调的指针。 如果活动卸载功能发生变化，系统稍后会调用此回调。
+在调用时 **NET_ADAPTER_OFFLOAD_RX_CHECKSUM_CAPABILITIES_INIT** 客户端驱动程序提供指向 [*EVT_NET_ADAPTER_OFFLOAD_SET_RX_CHECKSUM*](/windows-hardware/drivers/ddi/netadapteroffload/nc-netadapteroffload-evt_net_adapter_offload_set_rx_checksum) 回调的指针。 如果活动卸载功能发生变化，系统稍后会调用此回调。
 
 ### <a name="rules-for-indicating-hardware-transmit-checksum-capabilities"></a>指示硬件传输校验和功能的规则
 
@@ -120,7 +120,7 @@ MyAdapterSetOffloadCapabilities(
 
 ## <a name="updating-hardware-offloads"></a>更新硬件卸载
 
-如果 TCP/IP 堆栈或过量协议驱动程序请求更改网络适配器的活动功能，NetAdapterCx 将调用客户端驱动程序的 [*EVT_NET_ADAPTER_OFFLOAD_SET_TX_CHECKSUM*](/windows-hardware/drivers/ddi/netadapter/nc-netadapter-evt_net_adapter_offload_set_tx_checksum) 或在适配器初始化期间注册的 [*EVT_NET_ADAPTER_OFFLOAD_SET_RX_CHECKSUM*](/windows-hardware/drivers/ddi/netadapter/nc-netadapter-evt_net_adapter_offload_set_rx_checksum) 回调。 在这些函数中，系统在 NETOFFLOAD 对象中提供更新的功能，客户端驱动程序将查询这些功能以更新其卸载功能。
+如果 TCP/IP 堆栈或过量协议驱动程序请求更改网络适配器的活动功能，NetAdapterCx 将调用客户端驱动程序的 [*EVT_NET_ADAPTER_OFFLOAD_SET_TX_CHECKSUM*](/windows-hardware/drivers/ddi/netadapteroffload/nc-netadapteroffload-evt_net_adapter_offload_set_tx_checksum) 或在适配器初始化期间注册的 [*EVT_NET_ADAPTER_OFFLOAD_SET_RX_CHECKSUM*](/windows-hardware/drivers/ddi/netadapteroffload/nc-netadapteroffload-evt_net_adapter_offload_set_rx_checksum) 回调。 在这些函数中，系统在 NETOFFLOAD 对象中提供更新的功能，客户端驱动程序将查询这些功能以更新其卸载功能。
 
 客户端驱动程序可以调用以下函数来确定启用了哪些校验和卸载：
 

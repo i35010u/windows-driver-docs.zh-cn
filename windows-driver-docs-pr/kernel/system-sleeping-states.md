@@ -19,12 +19,12 @@ keywords:
 - 延迟 WDK 电源管理
 ms.date: 07/30/2020
 ms.localizationpriority: High
-ms.openlocfilehash: 22f381fa1f43cf76ffff4f4d5c34f5e1ca266b7c
-ms.sourcegitcommit: d1837118dd35d3b93eb9fb0f82a08c3340ff0ed0
+ms.openlocfilehash: 48ba8cfb750b5dde84d18b6860bee2d768fde607
+ms.sourcegitcommit: cfd4d8ee889c6a3feed79ae112662f6c095b6a36
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92021031"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94417455"
 ---
 # <a name="system-sleeping-states"></a>系统睡眠状态
 
@@ -44,7 +44,7 @@ ms.locfileid: "92021031"
 
 通常，在用户按睡眠按钮后，系统将进入系统电源状态 S3。
 
-若要限制系统，使其只能进入部分 Sx 状态，用户可在 https://docs.microsoft.com/windows/win32/api/winnt/ns-winnt-system_power_policy （和 https://docs.microsoft.com/windows/win32/api/winnt/ns-winnt-administrator_power_policy) ）中提供“最长睡眠时间”和“最短睡眠时间”字段**p** 。 
+若要限制系统，使其只能进入部分 Sx 状态，用户可在 [SYSTEM_POWER_POLICY 结构](/windows/win32/api/winnt/ns-winnt-system_power_policy)中提供“最长睡眠时间”和“最短睡眠时间”字段 。 另请参阅 [ADMINISTRATOR_POWER_POLICY 结构](/windows/win32/api/winnt/ns-winnt-administrator_power_policy)。 
 
 ### <a name="system-power-state-s1"></a>系统电源状态 S1
 

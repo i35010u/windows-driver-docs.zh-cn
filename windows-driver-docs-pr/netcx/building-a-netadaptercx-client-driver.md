@@ -6,12 +6,12 @@ keywords:
 - 构建 NetAdapterCx 客户端驱动程序，构建 NIC 驱动程序
 ms.date: 06/05/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7f0bfbc2059c59035e84d622c0bc9deed3b1818f
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: e204a998680d0319a62b555a3df85a707026dfcd
+ms.sourcegitcommit: ea3215e9d5afe073ed6d01fb6dddf31d95ef3b63
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89216210"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94673761"
 ---
 # <a name="building-a-netadaptercx-client-driver"></a>生成 NetAdapterCx 客户端驱动程序
 
@@ -24,7 +24,7 @@ ms.locfileid: "89216210"
 3. 若要打开 "驱动程序属性页" 对话框，请选择 " **项目 > 属性**"。
 4. 在 " **配置属性 > 驱动程序设置" > 网络适配器驱动程序** "对话框中，选择 **指向网络适配器类扩展** 下拉列表的链接，并将其设置为 **" 是 "**。
 5. 在 " **配置属性 > 驱动程序设置" > 网络适配器驱动程序** "对话框中，选择" **网络适配器主要版本** 和 **网络适配器次要版本**"。
-    1. NetAdapterCx 的当前版本为 **2.0**。
+    1. NetAdapterCx 的当前版本为 **2.0**。 有关详细信息，请参阅 [NetAdapterCx 版本概述](netadaptercx-version-overview.md)。
 6. 将以下标头添加到 (的每个源文件，或添加到公共/预编译标头) ：
 
 ```C++

@@ -4,12 +4,12 @@ description: 该度量将 7 天滑动窗口中的遥测数据聚合成为 Micros
 ms.topic: article
 ms.date: 05/11/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: c44d1246087c636a4cb39d506193579e3dab4ccc
-ms.sourcegitcommit: 4f08f5686c0bbc27d58930b993cbab1a98e3afb0
+ms.openlocfilehash: 54c386529cc00ce90606134ecc26007c393e53a2
+ms.sourcegitcommit: 561d33827a067f7b1130337f9bbe187e584c218e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/03/2020
-ms.locfileid: "89443907"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94482076"
 ---
 # <a name="number-of-user-mode-crashes-in-microsoft-edge-chromium-normalized-by-usage--baseline-goal-ecosystem"></a>按使用时间规范化的 Microsoft Edge Chromium 中的用户模式崩溃次数小于等于基线目标（生态系统）
 
@@ -28,7 +28,7 @@ ms.locfileid: "89443907"
 |度量标准|实例的聚合|
 |最小总体数量|30,000 小时的 Microsoft Edge Chromium 运行时|
 |通过标准|每年崩溃次数小于等于 1|
-|度量 ID|25481659|
+|度量 ID|25389120|
 
 ## <a name="calculation"></a>计算
 

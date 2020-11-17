@@ -4,12 +4,12 @@ description: Microsoft 硬件 API 中的这些方法可获取注册到开发人�
 ms.topic: article
 ms.date: 04/09/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: e3fabfea067ecfb2c5cb191d1e1259b89deffc71
-ms.sourcegitcommit: 4f08f5686c0bbc27d58930b993cbab1a98e3afb0
+ms.openlocfilehash: 049be52021c7214a9b6a703da18f0b5a0893023c
+ms.sourcegitcommit: 561d33827a067f7b1130337f9bbe187e584c218e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/03/2020
-ms.locfileid: "89443830"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94482080"
 ---
 # <a name="get-product-data"></a>获取产品数据
 
@@ -96,7 +96,7 @@ https://manage.devcenter.microsoft.com/v2.0/my/hardware/products/
 | isFlightSign | 布尔 | 指示产品是否为经过外部测试签名的驱动程序。 经过外部测试签名的驱动程序是指可以通过 Windows 更新发布的测试驱动程序。 它们只能发布/安装在已注册 Windows 预览体验计划的计算机上。 它们可以在不禁用安全启动的情况下安装在计算机上。 它们不能安装在未加入 Windows 预览体验计划的零售计算机上。|
 | marketingNames | 字符串数组 | 产品的营销名称或别名 |
 | productName | 字符串 | 在创建期间指定的驱动程序的名称 |
-| selectedProductTypes | 字典  | 均为字符串的键值对。 <ul><li>**键**表示操作系统系列代码。 有关操作系统系列代码的列表，请参阅[操作系统系列代码列表](#list-of-operating-system-family-codes)。</li><li>**值**表示产品的类型。 有关产品类型的列表，请参阅[产品类型](#list-of-product-types)。</li></ul>|
+| selectedProductTypes | 字典  | 均为字符串的键值对。 <ul><li>**键** 表示操作系统系列代码。 有关操作系统系列代码的列表，请参阅[操作系统系列代码列表](#list-of-operating-system-family-codes)。</li><li>**值** 表示产品的类型。 有关产品类型的列表，请参阅[产品类型](#list-of-product-types)。</li></ul>|
 | requestedSignatures | 字符串数组 | 产品通过认证的操作系统签名的列表。 有关所有操作系统的列表，请参阅[操作系统代码列表](#list-of-operating-system-codes)  |
 | additionalAttributes | 对象 | 有关更多详细信息，请参阅[附加属性对象](#additional-attribute-object)。 |
 | testHarness | 字符串 | 已提交的程序包的类型。 可能的值为 <ul><li>hlk<li>hck</li><li>attestation</li><li>notset</li></ul>|
@@ -122,7 +122,7 @@ https://manage.devcenter.microsoft.com/v2.0/my/hardware/products/
       "method": "GET"
     }
   ],
-  "commitStatus": "commitPending",
+  "commitStatus": "CommitPending",
   "isExtensionInf": true,
   "isUniversal": true,
   "isDeclarativeInf": true,
@@ -131,20 +131,22 @@ https://manage.devcenter.microsoft.com/v2.0/my/hardware/products/
 }
 ```
 
-此资源具有以下值
+此资源具有以下值：
 
 | 值 | 类型 | 说明 |
 |:--|:--|:--|
 | ID | 长整型 | 提交的 ID |
 | Productid | 长整型 | 与此提交关联的专用产品 ID |
+| workflowstatus | 对象 | 此项仅在检索特定提交的详细信息时可用。 此对象描述此提交的工作流状态。 有关更多详细信息，请参阅[工作流状态对象](#workflow-status-object)  |
 | 链接 | 对象数组 | 有关更多详细信息，请参阅[链接对象](#link-object) |
-| 名称 | 字符串 | 提交的名称 |
-| 类型 | 字符串 | 指示提交是初始提交还是派生的提交。 可能的值为 <ul><li>initial</li><li>derived</li></ul> |
+| commitStatus | 请参阅[管理产品提交](manage-product-submissions.md)，了解更多详细信息。 |
 | isExtensionInf | 布尔 | 指示提交是否为扩展驱动程序 |
 | isUniversal | 布尔 | 指示提交是否通过通用 API 测试。 如果驱动程序是声明性的并且可以通用，则表明它符合 DCHU 的标准 |
 | isDeclarativeInf | 布尔 | 指示提交是否通过声明性 INVerif 测试。 如果驱动程序是声明性的并且可以通用，则表明它符合 DCHU 的标准 |
-| workflowstatus | 对象 | 此项仅在检索特定提交的详细信息时可用。 此对象描述此提交的工作流状态。 有关更多详细信息，请参阅[工作流状态对象](#workflow-status-object)  |
+| 名称 | 字符串 | 提交的名称 |
+| 类型 | 字符串 | 指示提交是初始提交还是派生的提交。 可能的值为 <ul><li>initial</li><li>derived</li></ul> |
 | downloads | 对象 | 此项仅在只检索特定提交的详细信息时可用。 此对象描述可用于提交的下载。 有关更多详细信息，请参阅[下载对象](#download-object)。 |
+
 
 ### <a name="workflow-status-object"></a>工作流状态对象
 
@@ -199,7 +201,7 @@ https://manage.devcenter.microsoft.com/v2.0/my/hardware/products/
 | 值 | 类型 | 说明 |
 |:--|:--|:--|
 | 项目 | 数组 | 下载类型和每种类型的 URL 的数组。 有关详细信息，请参阅下文 |
-| 类型 | 字符串 | 可供下载的程序包的类型。 可能的值为：<ul><li>“initialPackage”- 用户上传的程序包（对于新提交，它指向用于上传程序包的 SAS URI）</li><li>“derivedPackage”- 派生的提交的外壳</li><li>“signedPackage”- 由 Microsoft 签名的程序包</li><li>“certificationReport”- 签名产品的认证报告</li></ul>|
+| 类型 | 字符串 | 可供下载的程序包的类型。 可能的值为：<ul><li>“initialPackage”- 用户上传的程序包（对于新提交，它指向用于上传程序包的 SAS URI）</li><li>“derivedPackage”- 派生的提交的外壳</li><li>“signedPackage”- 由 Microsoft 签名的程序包</li><li>“certificationReport”- 签名产品的认证报告</li><li>driverMetadata - 链接指向用于下载驱动程序元数据的文件。 有关更多详细信息，请参阅[驱动程序包元数据](driver-package-metadata.md)。</li><li>ExternalNotes</li><li>未知</li></ul>|
 | Messages | 数组 | 一个字符串数组，用于提供有关可下载文件的消息 |
 
 ### <a name="link-object"></a>链接对象
@@ -219,7 +221,7 @@ https://manage.devcenter.microsoft.com/v2.0/my/hardware/products/
 | 值 | 类型 | 说明 |
 |:--|:--|:--|
 | Href | 字符串 | 通过 API 访问资源的 URL |
-| Rel | 字符串 | 资源的类型。 可能的值为：<ul><li>self - 链接指向自身</li><li>next_link - 链接指向通常用于分页的下一个资源</li><li>get_submissions - 链接指向产品的所有提交</li><li>commit_submission - 链接指向提交的确认 </li><li>update_submission - 链接指向提交的更新 </li><li>update_shippinglabel - 链接指向发货标签的更新  </li><li>driverMetadata - 链接指向用于下载驱动程序元数据的文件。 有关更多详细信息，请参阅[驱动程序包元数据](driver-package-metadata.md)。</li></ul>|
+| Rel | 字符串 | 资源的类型。 可能的值为：<ul><li>self - 链接指向自身</li><li>next_link - 链接指向通常用于分页的下一个资源</li><li>get_submissions - 链接指向产品的所有提交</li><li>commit_submission - 链接指向提交的确认 </li><li>update_submission - 链接指向提交的更新 </li><li>update_shippinglabel - 链接指向发货标签的更新  </li></ul>|
 | 方法 | 字符串 | 调用 URL 时要使用的 http 方法的类型。 可能的值为<ul><li>GET</li><li>POST</li><li>修补程序</li></ul>|
 
 ### <a name="additional-attribute-object"></a>附加属性对象

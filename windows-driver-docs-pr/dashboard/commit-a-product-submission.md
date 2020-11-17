@@ -4,12 +4,12 @@ description: 在 Microsoft 硬件 API 中使用此方法向合作伙伴中心确
 ms.date: 04/05/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: ec8ebe75d2762f6a2c9794a8d39b77831509d6fc
-ms.sourcegitcommit: a5f76805387760730faed5674d87201ec85b7dd3
+ms.openlocfilehash: ebe13c71e028e46f30934f8ddb9ffc7539e0a011
+ms.sourcegitcommit: 34bc742a0de40bcc4eda99f32622c58584a7f9f2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90112088"
+ms.lasthandoff: 11/09/2020
+ms.locfileid: "94384181"
 ---
 # <a name="commit-a-product-submission"></a>确认产品提交
 
@@ -61,7 +61,7 @@ Authorization: Bearer <your access token>
 
 ```json
 {
-  "commitStatus": "commitStarted",
+  "commitStatus": "CommitPending",
 }
 ```
 
@@ -69,7 +69,7 @@ Authorization: Bearer <your access token>
 
 | 值 | 类型 | 说明 |
 |:--|:--|:--|
-| commitStatus | 字符串 | 提交的状态。 返回的值将是 CommitStarted |
+| commitStatus | 字符串 | 提交的状态。 返回的值将是 CommitPending |
 
 完成此步骤后，请使用[获取提交详细信息](get-a-submission.md)方法来获取提交的状态。
 

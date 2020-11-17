@@ -4,12 +4,12 @@ description: 本主题提供有关为传感器类扩展 (CX) 跟踪提供程序�
 ms.assetid: 174CDE37-D0D1-44BF-AD50-5A90C989FDE2
 ms.date: 07/20/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 5ab1e5affcd24dc6c7aa521f8a81702f3e030812
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: 318e6a1c358be9c0aca247af915a6b4300ab2e13
+ms.sourcegitcommit: ea3215e9d5afe073ed6d01fb6dddf31d95ef3b63
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91734411"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94673769"
 ---
 # <a name="collecting-and-decoding-wpp-logs"></a>收集和解码 WPP 日志
 
@@ -55,12 +55,12 @@ DriverStatus
 为使用 tracelog 定义了以下跟踪级别。 有关如何使用这些方法的详细信息，请参阅 tracelog 语法中的 **level** 参数。
 
 ``` syntax
-TRACE_LEVEL_FATAL           1
-TRACE_LEVEL_ERROR           2
-TRACE_LEVEL_WARNING         3
-TRACE_LEVEL_INFORMATION     4
-TRACE_LEVEL_VERBOSE         5
-TRACE_LEVEL_PERF            6
+TRACE_LEVEL_FATAL           1
+TRACE_LEVEL_ERROR           2
+TRACE_LEVEL_WARNING         3
+TRACE_LEVEL_INFORMATION     4
+TRACE_LEVEL_VERBOSE         5
+TRACE_LEVEL_PERF            6
 ```
 
 ## <a name="tracelog-macros"></a>Tracelog 宏
@@ -78,7 +78,7 @@ TRACE_LEVEL_PERF            6
 <thead>
 <tr class="header">
 <th>宏</th>
-<th>Level</th>
+<th>级别</th>
 <th>标志</th>
 <th>参数</th>
 </tr>
@@ -136,7 +136,7 @@ TRACE_LEVEL_PERF            6
 <td><p>CLX_FunctionEnter</p></td>
 <td><p>TRACE_LEVEL_VERBOSE</p></td>
 <td><p>EntryExit</p></td>
-<td><p>空值</p></td>
+<td><p>不适用</p></td>
 </tr>
 <tr class="even">
 <td><p>CLX_FunctionExit</p></td>
@@ -148,7 +148,7 @@ TRACE_LEVEL_PERF            6
 <td><p>SENSOR_FunctionEnter</p></td>
 <td><p>TRACE_LEVEL_VERBOSE</p></td>
 <td><p>EntryExit</p></td>
-<td><p>空值</p></td>
+<td><p>不适用</p></td>
 </tr>
 <tr class="even">
 <td><p>SENSOR_FunctionExit</p></td>
@@ -166,5 +166,5 @@ TRACE_LEVEL_PERF            6
 
 Tracefmt 工具用于解码 ETL 日志。 有关此工具的详细信息，请参阅 [Tracefmt](../devtest/tracefmt.md)。
 
-如果要对传感器驱动程序进行更广泛的测试，请参阅 [测试通用传感器驱动程序] (test-your-universal-sensor-driver.md。
+如果要对传感器驱动程序进行更广泛的测试，请参阅 [测试通用传感器驱动程序](test-your-universal-sensor-driver.md)。
 

@@ -4,17 +4,17 @@ description: 硬件 ID 是供应商定义的标识字符串，Windows 使用该�
 ms.assetid: 9eb894d6-4e83-4c08-8165-f30d6636da75
 ms.date: 04/20/2017
 ms.localizationpriority: High
-ms.openlocfilehash: 79ff9a96bf6597ee83ddd45fef6d51d96ab4afda
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 3d648ccc3045c5a0ee9f286b790f8aeb75155893
+ms.sourcegitcommit: a44ade167cdfb541cf1818e9f9e3726f23f90b66
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90105546"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94361337"
 ---
 # <a name="hardware-id"></a>硬件 ID
 
 
-硬件 ID 是供应商定义的标识字符串，Windows 使用该字符串将设备与 INF 文件匹配。 在大多数情况下，设备有一个与之关联的硬件 ID 列表。 但是，有一些例外 − 请参阅“1394 设备的标识符”，其中报告了设备的硬件 ID 列表，硬件 ID 应按适用性降序列出。
+硬件 ID 是供应商定义的标识字符串，Windows 使用该字符串将设备与 INF 文件匹配。 在大多数情况下，设备有一个与之关联的硬件 ID 列表。 （但是，有一些例外 - 请参阅“1394 设备的标识符”）。 当枚举器报告设备的硬件 ID 列表时，硬件 ID 应按适用性降序列出。
 
 
 
