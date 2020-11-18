@@ -4,12 +4,12 @@ description: 移动宽带概述
 ms.assetid: 5193927b-7367-468e-8012-c41f6bd743a3
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 88c9b132f2128684c357d85f4eefb38f4a953948
-ms.sourcegitcommit: 7e4d9508198a30bdc1cb6eda83852dda4e42213e
+ms.openlocfilehash: 963e3d54f130dfc2374338ef7c2b099201ff8b2c
+ms.sourcegitcommit: 73216293357f08eb00d8b154fa377a090644ca4f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89304316"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94810117"
 ---
 # <a name="overview-of-mobile-broadband"></a>移动宽带概述
 
@@ -61,15 +61,18 @@ Windows 8、Windows 8.1 和 Windows 10 提供重新构建和精简现有移动�
 
 1. 移动宽带服务读取国际移动用户身份 (IMSI) ，集成卡 ID (ICCID) 用于 GSM 网络，提供程序 ID (SID) 用于 CDMA 网络，或 CDMA 网络的提供程序名称，并生成一组硬件 Id (Hwid) 。
 
-    **注意**   只有 OEM 尚未插入 SIM 并预加载移动宽带应用和服务元数据时，才需要执行此步骤。
+    **注意**  
+    只有 OEM 尚未插入 SIM 并预加载移动宽带应用和服务元数据时，才需要执行此步骤。
 
 2. 当电脑连接到 Internet 时，Hwid 将发送到 Windows 元数据，Internet 服务 (WMIS) 。 WMIS 标识运算符并返回相应的服务元数据包。
 
-    **注意**   只有 OEM 尚未插入 SIM 并预加载移动宽带应用和服务元数据时，才需要执行此步骤。
+    **注意**  
+    只有 OEM 尚未插入 SIM 并预加载移动宽带应用和服务元数据时，才需要执行此步骤。
 
 3. Windows 使用服务元数据从 Microsoft Store 中标识和检索移动宽带应用。 此应用将自动安装。 在 Windows 8.1 和 Windows 10 中，应用未固定到 "开始" 屏幕。
 
-    **注意**   只有 OEM 尚未插入 SIM 并预加载移动宽带应用和服务元数据时，才需要执行此步骤。
+    **注意**  
+    只有 OEM 尚未插入 SIM 并预加载移动宽带应用和服务元数据时，才需要执行此步骤。
 
 4. 操作员徽标和名称出现在 Windows 连接管理器的 "网络" 列表中。 用户可以连接到你的网络。
 
@@ -87,7 +90,8 @@ Windows 8、Windows 8.1 和 Windows 10 提供重新构建和精简现有移动�
 
 7. 计划购买完成后，移动宽带应用会生成一个传递到预配代理的元数据设置文件。 这会将 Windows 配置为用户已购买的计划的相关信息。
 
-**重要提示**   上述步骤还适用于通过备用 Internet 连接连接到 PC 的外部设备。
+**重要说明**  
+上述步骤还适用于通过备用 Internet 连接连接到 PC 的外部设备。
 
 ### <a name="mobile-broadband-app-is-not-installed-and-no-alternate-internet-connection-is-available"></a>未安装移动宽带应用，且无备用 Internet 连接可用
 
@@ -113,7 +117,7 @@ Windows 8、Windows 8.1 和 Windows 10 提供重新构建和精简现有移动�
 
 4. 从 SIM 或移动宽带设备计算的 Hwid 将发送到 WMIS。 WMIS 标识运算符并返回相应的服务元数据包。
 
-5. Windows 使用服务元数据从 Microsoft Store 中标识和检索关联的移动宽带应用。 应用会自动安装并注册到后台事件。 在 Windows 8.1 和 Windows 10 中，应用程序不会自动固定到 "开始" 屏幕。 通过注册后台事件，应用程序可以执行一些操作，如对本地数据使用计数器做出反应、接收操作员短信、连接到 Wi-fi 热点和处理权利检查。
+5. Windows 使用服务元数据从 Microsoft Store 中标识和检索关联的移动宽带应用。 应用会自动安装并注册到后台事件。 在 Windows 8.1 和 Windows 10 中，应用程序不会自动固定到 "开始" 屏幕。 通过注册后台事件，应用程序可以执行一些操作，如对本地数据使用计数器做出反应、接收操作员短信、连接 Wi-Fi 热点和处理权利检查。
 
 6. 当后台事件发生时，应用程序会生成更完整的预配文件（如果需要），并将其传递给预配代理。 这会将 Windows 配置为用户已购买的计划的相关信息。
 
@@ -127,7 +131,7 @@ Windows 8、Windows 8.1 和 Windows 10 提供重新构建和精简现有移动�
 
 3. 此时，用户处于联机状态。 现在 Internet 连接可用，Windows 将检测移动宽带硬件，并下载并安装服务元数据和移动宽带应用。
 
-如果将具有活动计划的移动宽带设备附加到电脑，Windows 8.1 和 Windows 10 可以在 Windows 安装程序期间连接到操作员网络。 移动宽带网络在 Windows 安装程序和 Wi-fi 网络一起显示在 "网络" 列表中。 与活动设备的连接过程类似，HWID 是根据检测到的移动宽带硬件生成的，并用于在 Windows APN 数据库内查找适当的连接设置。
+如果将具有活动计划的移动宽带设备附加到电脑，Windows 8.1 和 Windows 10 可以在 Windows 安装程序期间连接到操作员网络。 在 Windows 安装程序与 Wi-Fi 网络一起运行时，移动宽带网络将显示在 "网络" 列表中。 与活动设备的连接过程类似，HWID 是根据检测到的移动宽带硬件生成的，并用于在 Windows APN 数据库内查找适当的连接设置。
 
 ### <a name="operator-notifications-and-system-events"></a>操作员通知和系统事件
 
@@ -157,9 +161,11 @@ Windows 8、Windows 8.1 和 Windows 10 提供重新构建和精简现有移动�
 
 - 检索和应用更新的设置元数据
 
-**注意**   Windows 8、Windows 8.1 和 Windows 10 不会将 SMS 应用程序包含在操作系统中，因此，需要操作员提供的移动宽带应用程序或第三方 SMS 应用程序向用户显示 SMS 消息。
+**注意**  
+Windows 8、Windows 8.1 和 Windows 10 不会将 SMS 应用程序包含在操作系统中，因此，需要操作员提供的移动宽带应用程序或第三方 SMS 应用程序向用户显示 SMS 消息。
 
- **注意**   若要在收到文本消息时向最终用户显示通知 UI，则需要构建具有 SMS 支持的移动宽带应用程序，这可能需要满足特定市场的法规要求或最佳做法。
+ **注意**  
+若要在收到文本消息时向最终用户显示通知 UI，则需要构建具有 SMS 支持的移动宽带应用程序，这可能需要满足特定市场的法规要求或最佳做法。
 
  SMS 功能适用于移动宽带应用、有权访问移动网络操作员的 UWP 应用、有权访问移动网络操作员的 UWP 应用、如果移动宽带设备嵌入到 PC) ，或移动宽带设备 IHV (如果移动宽带设备是) 可移动宽带设备，则为其提供特权访问 (。 移动网络操作员和 PC OEM (或移动宽带设备 IHV) 通过服务元数据指定特权应用。 有关服务元数据的详细信息，请参阅 [使用元数据配置移动宽带体验](using-metadata-to-configure-mobile-broadband-experiences.md)。
 
@@ -187,9 +193,9 @@ Windows 将检查使用这些 Api 为用户设置的数据使用情况信息并�
 
 ### <a name="internet-sharing"></a>Internet 共享
 
-移动宽带为用户提供了随时随地的连接。 但是，并非每个设备都有移动宽带设备。 Windows 8.1 和 Windows 10 使用户能够通过 Wi-fi 与使用不同设备的好友和家人共享其移动宽带连接。
+移动宽带为用户提供了随时随地的连接。 但是，并非每个设备都有移动宽带设备。 Windows 8.1 和 Windows 10 使用户能够通过使用不同设备的朋友和家人与 Wi-Fi 共享其移动宽带连接。
 
-客户可以在 "电脑设置" 中打开 Internet 共享。 它们还可以更改 Wi-fi 网络的 SSID 和密码，并查看共享连接的用户数量。
+客户可以在 "电脑设置" 中打开 Internet 共享。 他们还可以更改 SSID、Wi-Fi 网络的密码，并查看共享连接的用户数。
 
 对于想要在其其他设备上使用移动宽带连接的客户，Windows 使其变得更简单。 只需在运行 Windows 8.1 或 Windows 10 的支持 WiFi 的 PC 上打开网络列表，单击共享设备的 SSID，然后单击 " **连接**"。 Windows 将处理所有设备配置和设备间通信。
 
@@ -207,15 +213,15 @@ Windows 将检查使用这些 Api 为用户设置的数据使用情况信息并�
 
 有关 Internet 共享的详细信息，请参阅 [创建和配置 Internet 共享体验](creating-and-configuring-internet-sharing-experiences.md)。
 
-### <a name="wi-fi-hotspot-authentication"></a>Wi-fi 热点身份验证
+### <a name="wi-fi-hotspot-authentication"></a>Wi-Fi 热点身份验证
 
 作为预配元数据的一部分，移动宽带应用可以描述用户可以使用其操作员提供的凭据进行身份验证的热点。 其中可能包括使用 EAP-SIM、EAP 或其他支持的 EAP 方法的 WISPr 1.0 热点或加密的热点。
 
-在范围内时，Windows 会自动将数据流量卸载到这些热点。 你可能想要执行此操作，以便将网络流量从移动电话数据网络转移到基于土地的 Wi-fi 位置。 在某些情况下，Wi-fi 热点可能会提高速度，或比该位置的移动电话数据网络更好的覆盖范围。
+在范围内时，Windows 会自动将数据流量卸载到这些热点。 你可能想要执行此操作，以便将网络流量从手机网络数据网络转移到基于土地的 Wi-Fi 位置。 在某些情况下，对于该位置的移动电话数据网络，Wi-Fi 热点可能会增加速度或更好的覆盖范围。
 
 你还可以设置比移动网络更少的热点，使其可供 Windows 在移动宽带连接不可用时使用，但不能用于数据卸载。
 
-### <a name="setup"></a>设置
+### <a name="setup"></a>安装
 
 - 移动宽带应用会生成一个预配文件，其中包含用户可进行身份验证的 WiFi 热点的 Ssid 和身份验证机制。 这样，用户就不必手动输入此信息。
 
@@ -225,7 +231,7 @@ Windows 将检查使用这些 Api 为用户设置的数据使用情况信息并�
 
 如果移动宽带应用在连接期间以专有方式生成或检索 WISPr 凭据，则设置元数据包括对应用的引用，而不是提供特定凭据。 如果包含特定凭据，则跳过此阶段。
 
-1. Wi-fi 热点中的固定门户网站包括无线 Internet 服务提供商漫游 (的一项挑战) 协议。
+1. Wi-Fi 热点中的固定门户网站包括无线 Internet 服务提供商漫游 (WISPr) 协议的挑战。
 
 2. 如果未提供静态凭据，Windows 连接管理器将通知系统事件代理正在进行热点身份验证。 否则，Windows 连接管理器会直接转到身份验证。
 
@@ -243,13 +249,13 @@ Windows 将检查使用这些 Api 为用户设置的数据使用情况信息并�
 
 ### <a name="authentication"></a>身份验证
 
-如果移动宽带应用提供凭据 (动态 WISPr 凭据) 或静态定义为预配 (静态 WISPr 凭据、EAP 凭据) ，Windows 会将这些凭据传递到 Wi-fi 热点。
+当移动宽带应用提供凭据时 (动态 WISPr 凭据) 或以静态方式定义为 (静态 WISPr 凭据、EAP 凭据) ，Windows 将这些凭据传递到 Wi-Fi 热点。
 
 移动宽带应用程序向 Windows 连接管理器中的连接配置文件提供的配置信息确定如何获取和传递凭据。 后续步骤中概述了传递：
 
-1. 当用户处于 Wi-fi 热点范围内时，Windows 连接管理器使用预配元数据静态定义的凭据进行回复。 此数据可由移动宽带应用或受信任的网站生成。
+1. 当用户处于 Wi-Fi 热点范围内时，Windows 连接管理器将使用预配元数据以静态方式定义的凭据进行回复。 此数据可由移动宽带应用或受信任的网站生成。
 
-2. Wi-fi 热点使用操作员验证凭据，然后允许 PC 访问 Internet。
+2. Wi-Fi 热点使用操作员验证凭据，然后允许 PC 访问 Internet。
 
 ### <a name="displaying-account-information-to-the-user"></a>向用户显示帐户信息
 
@@ -283,7 +289,7 @@ Windows 8.1 和 Windows 10 支持同时处于活动状态的多个 PDP 上下文
 
 你可以使用 Pnp-x 将非 mobile 宽带设备公开为 UWP 设备应用。
 
-当连接到与 Windows 8、Windows 8.1 或 Windows 10 电脑相同的 Wi-fi 或 LAN 网络时，可以 (设备（如 DVRs、网关路由器、移动热点和手机）) 使用 Pnp-id 使 Windows 8、Windows 8.1 和 Windows 10 知道其存在。 系统会基于设备的设备属性下载设备元数据，并会自动下载设备元数据。 你可以为这些设备引用此应用程序，以便单个移动宽带应用可以管理移动宽带以及这些其他设备。
+当连接到与 Windows 8、Windows 8.1 或 Windows 10 电脑相同的 Wi-Fi 或 LAN 网络时，可以 (设备，如 DVRs、网关路由器、移动热点和手机) 使用 Pnp-id 使 Windows 8、Windows 8.1 和 Windows 10 知道其存在。 系统会基于设备的设备属性下载设备元数据，并会自动下载设备元数据。 你可以为这些设备引用此应用程序，以便单个移动宽带应用可以管理移动宽带以及这些其他设备。
 
 ## <a name="how-it-works"></a>工作原理
 
@@ -321,7 +327,7 @@ Windows 8.1 和 Windows 10 支持同时处于活动状态的多个 PDP 上下文
 
 - 网站在 Windows 8、Windows 8.1 或 Windows 10 计算机上提供的已签名的 XML 文件 [**，该文件**](/previous-versions/windows/internet-explorer/ie-developer/platform-apis/dn529170(v=vs.85)) 至少运行 Internet Explorer 10 (或其他支持浏览器) 。
 
-- XML 文件 (应用提供的有符号或无符号) [**windows.networking.networkoperators. ProvisionFromXmlDocumentAsync**](/uwp/api/windows.networking.networkoperators.provisioningagent.provisionfromxmldocumentasync?view=winrt-19041#Windows_Networking_NetworkOperators_ProvisioningAgent_ProvisionFromXmlDocumentAsync_System_String_) 函数。
+- XML 文件 (应用提供的有符号或无符号) [**windows.networking.networkoperators. ProvisionFromXmlDocumentAsync**](/uwp/api/windows.networking.networkoperators.provisioningagent.provisionfromxmldocumentasync?view=winrt-19041&preserve-view=true#Windows_Networking_NetworkOperators_ProvisioningAgent_ProvisionFromXmlDocumentAsync_System_String_) 函数。
 
 有关预配文件格式和内容的更多详细信息，请参阅 [使用元数据配置移动宽带体验](using-metadata-to-configure-mobile-broadband-experiences.md)。
 
@@ -335,7 +341,7 @@ Windows 8.1 和 Windows 10 支持同时处于活动状态的多个 PDP 上下文
 
 Windows 连接管理器跨 Wi-fi、移动宽带和以太网监视可用网络。 它基于可用网络进行自动连接和断开连接决策。 预配代理使你能够定义你拥有的网络之间的相对优先级。 但是，用户可以手动连接到任何网络。 Windows 连接管理器使用用户的手动操作来影响将来的自动连接选择。
 
-Windows 连接管理器还可管理支持 WISPr 1.0 的 Wi-fi 热点的连接后身份验证。 如果为 Wi-fi 热点存储了静态凭据，Windows 连接管理器将自动进行身份验证。 如果需要动态凭据，Windows 连接管理器会使用系统事件代理触发后台事件。 然后，移动宽带应用程序将生成相应的凭据并将其传递给 Windows 连接管理器，以便完成身份验证过程。 有关更多详细信息，请参阅将 [Windows 与无线热点集成](integrating-windows-with-wireless-hotspots.md)。
+Windows 连接管理器还会管理连接后的身份验证，其中包含支持 WISPr 1.0 的 Wi-Fi 热点。 如果为 Wi-Fi 热点存储了静态凭据，Windows 连接管理器将自动进行身份验证。 如果需要动态凭据，Windows 连接管理器会使用系统事件代理触发后台事件。 然后，移动宽带应用程序将生成相应的凭据并将其传递给 Windows 连接管理器，以便完成身份验证过程。 有关更多详细信息，请参阅将 [Windows 与无线热点集成](integrating-windows-with-wireless-hotspots.md)。
 
 ### <a name="local-data-counters"></a>本地数据计数器
 
@@ -343,13 +349,13 @@ Windows 连接管理器还可管理支持 WISPr 1.0 的 Wi-fi 热点的连接后
 
 - 任务管理器中的 " **应用历史记录** " 选项卡
 
--  (可以选择在 Wi-fi 或移动宽带网络的展开视图中) Windows 连接管理器。 用户可以决定是显示还是隐藏特定网络的估计值。 默认情况下，它针对移动宽带网络显示，对于 Wi-fi 网络为隐藏状态。 但是，如果 Windows 检测到移动宽带设备已安装，它会在相应移动宽带网络的 Windows 连接管理器中隐藏预计的数据使用量。 这是因为假设你已创建移动宽带应用，则需要控制向用户显示的数据使用值。 要执行此操作的最佳位置是在移动宽带应用程序内。 用户可以选择重写此行为，并随时显示网络的估计使用量。
+-  (可以选择在 Wi-Fi 或移动宽带网络的展开视图中) Windows 连接管理器。 用户可以决定是显示还是隐藏特定网络的估计值。 默认情况下，它显示用于移动宽带网络并隐藏 Wi-Fi 网络。 但是，如果 Windows 检测到移动宽带设备已安装，它会在相应移动宽带网络的 Windows 连接管理器中隐藏预计的数据使用量。 这是因为假设你已创建移动宽带应用，则需要控制向用户显示的数据使用值。 要执行此操作的最佳位置是在移动宽带应用程序内。 用户可以选择重写此行为，并随时显示网络的估计使用量。
 
 还可以通过使用以下 Api 以编程方式使用本地数据计数器：
 
-- [**ConnectionProfile. GetNetworkUsageAsync**](/uwp/api/windows.networking.connectivity.connectionprofile.getattributednetworkusageasync?view=winrt-19041#Windows_Networking_Connectivity_ConnectionProfile_GetAttributedNetworkUsageAsync_Windows_Foundation_DateTime_Windows_Foundation_DateTime_Windows_Networking_Connectivity_NetworkUsageStates_)函数提供指定时间段内的数据使用情况。
+- [**ConnectionProfile. GetNetworkUsageAsync**](/uwp/api/windows.networking.connectivity.connectionprofile.getattributednetworkusageasync?view=winrt-19041&preserve-view=true#Windows_Networking_Connectivity_ConnectionProfile_GetAttributedNetworkUsageAsync_Windows_Foundation_DateTime_Windows_Foundation_DateTime_Windows_Networking_Connectivity_NetworkUsageStates_)函数提供指定时间段内的数据使用情况。
 
-- 使用网络接口时， [**ConnectionProfile. GetConnectivityIntervalsAsync**](/uwp/api/windows.networking.connectivity.connectionprofile.getconnectivityintervalsasync?view=winrt-19041#Windows_Networking_Connectivity_ConnectionProfile_GetConnectivityIntervalsAsync_Windows_Foundation_DateTime_Windows_Foundation_DateTime_Windows_Networking_Connectivity_NetworkUsageStates_) 函数提供连接时间戳和持续时间。
+- 使用网络接口时， [**ConnectionProfile. GetConnectivityIntervalsAsync**](/uwp/api/windows.networking.connectivity.connectionprofile.getconnectivityintervalsasync?view=winrt-19041&preserve-view=true#Windows_Networking_Connectivity_ConnectionProfile_GetConnectivityIntervalsAsync_Windows_Foundation_DateTime_Windows_Foundation_DateTime_Windows_Networking_Connectivity_NetworkUsageStates_) 函数提供连接时间戳和持续时间。
 
 本地数据使用情况信息用作用户的估计和指南。 Windows 无法考虑未开票流量或其他共享相同数据限制的设备上的使用情况。 例如，在不同设备上使用同一 SIM 的系列计划。 移动宽带应用只应使用本地数据计数器来估算自上次同步到计费系统后的使用量。 对于已处理的数据使用，计费系统应视为权威系统。
 
@@ -373,13 +379,13 @@ Windows 连接管理器还可管理支持 WISPr 1.0 的 Wi-fi 热点的连接后
 
 - **帐户状态更改** -计费周期结束或预计的数据使用增量为5%。
 
-- **Wi-fi 热点身份验证** -需要尝试连接到公共 wi-fi 热点和凭据。
+- **Wi-fi 热点身份验证** -需要尝试连接到公共 Wi-Fi 热点和凭据。
 
 - **传入操作员通知** –与某些分析规则匹配的 SMS/USSD 消息，这些规则描述了从操作员那里描述的 SMS/USSD。
 
 - **传入 sms** –接收到的 sms 消息与操作员定义的分析规则不匹配。
 
-- 收到的**传入 USSD** – USSD 消息与运算符定义的分析规则不匹配。
+- 收到的 **传入 USSD** – USSD 消息与运算符定义的分析规则不匹配。
 
 开发人员应注意，严格的限制放置在应用程序处于非活动状态时可能使用的 CPU 时间量。 尽管这些限制对于某些事件是宽松的，但应用程序必须始终将其消耗的资源降至最低电量或其他应用程序运行时。
 
@@ -393,7 +399,8 @@ Microsoft Store 是 UWP 应用传递到 Windows 8、Windows 8.1 和 Windows 10 �
 
 有关 UWP 设备应用的详细信息，请参阅 [uwp 设备应用](../devapps/index.md)。
 
-**注意**   尽管企业可以在某些情况下加载 UWP 应用，但本文档不会介绍这些应用。
+**注意**  
+尽管企业可以在某些情况下加载 UWP 应用，但本文档不会介绍这些应用。
 
 ### <a name="operator-metadata"></a>运算符元数据
 

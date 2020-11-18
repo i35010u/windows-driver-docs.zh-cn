@@ -6,12 +6,12 @@ keywords:
 - 驱动程序开发最佳做法
 ms.date: 08/06/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: d8c70db0169a380319855e0fa8a8304e3f4731b4
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: b9d518d99da31984e5524016f432d5eaaa2d4a44
+ms.sourcegitcommit: 73216293357f08eb00d8b154fa377a090644ca4f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91734431"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94810121"
 ---
 # <a name="surface-team-driver-development-best-practices"></a>Surface 团队驱动程序开发最佳实践
 
@@ -67,7 +67,7 @@ ms.locfileid: "91734431"
 ### <a name="memory"></a>内存
 
 1. 如果可能，请不要将被动执行代码标记为可分页。 寻呼驱动程序代码可以减小驱动程序代码占用的大小，从而释放系统空间供其他用途使用。 请注意，将引发 IRQL = 调度级别的代码可分页标记为， \> \_ 或在引发的 IRQL 上调用。 了解 [何时应对代码和数据进行分页](./when-should-code-and-data-be-pageable-.md) ，并 [使驱动程序可分页](./making-drivers-pageable.md) 并 [检测可分页的代码](./detecting-code-that-can-be-pageable.md)。
-2. 在堆栈上声明大型结构应使用堆/poolinstead。 请参阅 [使用 KernelStack](./using-the-kernel-stack.md) 和 [分配系统空间内存](./allocating-system-space-memory.md)。
+2. 在堆栈上声明大型结构应使用堆/poolinstead。 请参阅 [使用 KernelStack](./using-the-kernel-stack.md) 和 [分配 System-Space 内存](./allocating-system-space-memory.md)。
 3. 不必要地对 WDF 对象上下文进行清零。 这可能表示在自动将内存归零时，缺少清晰的情况。
 
 ### <a name="general-driver-guidelines"></a>一般驱动程序指南
@@ -107,7 +107,7 @@ ms.locfileid: "91734431"
 8. 请勿创建具有返回调用的宏。 请参阅 [函数 (c + +) ](/cpp/cpp/functions-cpp)。
 9.  (SAL) 不含或不完整的源代码批注。 请参阅 [适用于 Windows 驱动程序的 SAL 2.0 批注](../devtest/sal-2-annotations-for-windows-drivers.md)。
 10. 使用宏而不是内联函数。
-11. 使用 c + + 时，使用常量的宏替代[constexpr](/cpp/cpp/constexpr-cpp?view=vs-2019)
+11. 使用 c + + 时，使用常量的宏替代[constexpr](/cpp/cpp/constexpr-cpp)
 12. 用 C 编译器而不是 c + + 编译器编译驱动程序，以确保获得强类型检查。
 
 ### <a name="error-handling"></a>错误处理
@@ -125,7 +125,7 @@ ms.locfileid: "91734431"
 1. 不要定义 WPP 自定义类型，并在跟踪调用中使用它来获取用户可读的跟踪消息。 请参阅向 [Windows 驱动程序添加 WPP 软件跟踪](../devtest/adding-wpp-software-tracing-to-a-windows-driver.md)。
 2. 不使用 IFR 跟踪。 请参阅 [在 KMDF 和 UMDF 2 驱动程序中使用即时 Trace 录像机 (IFR) ](../wdf/using-wpp-software-tracing-in-kmdf-and-umdf-2-drivers.md)。
 3. 在 WPP 跟踪调用中调用函数名称。 WPP 已跟踪函数名称和行号。
-4. 不要使用 ETW 事件来测量影响事件的性能和其他关键用户体验。 请参阅向 [内核模式驱动程序添加事件跟踪](../devtest/adding-event-tracing-to-kernel-mode-drivers.md)。
+4. 不要使用 ETW 事件来测量影响事件的性能和其他关键用户体验。 请参阅 [将事件跟踪添加到 Kernel-Mode 驱动程序](../devtest/adding-event-tracing-to-kernel-mode-drivers.md)。
 5. 不报告事件日志中的严重错误，并正确地将设备标记为不起作用。
 
 ### <a name="verification"></a>验证
