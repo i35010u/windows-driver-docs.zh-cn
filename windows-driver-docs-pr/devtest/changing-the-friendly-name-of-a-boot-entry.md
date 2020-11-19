@@ -10,12 +10,12 @@ keywords:
 - 启动选项 WDK，友好名称
 ms.date: 01/02/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 015a3361b520456d5551a8d4d4b6e867fd05558a
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 7369536f74b9cd0ee7340c2dabd94de4421044cb
+ms.sourcegitcommit: 878a1cb0149dc18ccbd31774e12bad76084dfa24
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89383197"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94937787"
 ---
 # <a name="changing-the-friendly-name-of-a-boot-entry"></a>更改启动项的友好名称
 
@@ -40,7 +40,7 @@ ms.locfileid: "89383197"
 "Windows 10 NullModem"
 ```
 
-**注意**   如果将启动条目配置为调试 ([/debug/debugport](https://support.microsoft.com/help/833721/available-switch-options-for-the-windows-xp-and-the-windows-server-200)) 或紧急管理服务 (EMS) 在基于 x86 或 x64 的系统上 ([/redirect](https://support.microsoft.com/help/833721/available-switch-options-for-the-windows-xp-and-the-windows-server-200)) ，则启动加载程序 \[ 会在启动菜单中追加 (启用调试器 \] 或 \[ 启用 EMS) \] 的括号短语。
+**注意**   如果将启动条目配置为调试 ([/debug/debugport](https://support.microsoft.com/help/833721/available-switch-options-for-the-windows-xp-and-the-windows-server-200)) 或紧急管理服务 (EMS) 在基于 x86 或 x64 的系统上 ([/redirect](https://support.microsoft.com/help/833721/available-switch-options-for-the-windows-xp-and-the-windows-server-200)) ，则启动加载程序 \[ 会在启动菜单中追加 (启用调试器 \] 或 \[ 启用 EMS) \] 的括号短语。
 但是，如果友好名称和带括号的短语一起超过70个字符，则启动加载程序会在启动菜单中省略括号中的短语。 若要还原括起来的短语，请缩短友好名称。
 
 若要更改 Boot.ini 文件中的启动项的友好名称，可以使用 Bootcfg 或在记事本中编辑 Boot.ini 文件。 在 EFI NVRAM 中存储启动选项的系统上，请使用 Bootcfg。
@@ -56,7 +56,7 @@ ms.locfileid: "89383197"
 若要更改启动菜单上显示的启动条目说明，可以使用 **/Set** *IDdescription* 选项。 该命令使用以下语法。 ID 是与启动项关联的 GUID (或众所周知的标识符之一，例如 {current} ) 。
 
 > [!NOTE]
-> 如果使用 [Windows PowerShell](/powershell/module/Microsoft.PowerShell.Core/?view=powershell-6)，必须使用引号将启动项标识符引起来，例如：“{49916baf-0e08-11db-9af4-000bdbd316a0}”或“{current}” 。
+> 如果使用 [Windows PowerShell](/powershell/scripting/overview)，必须使用引号将启动项标识符引起来，例如：“{49916baf-0e08-11db-9af4-000bdbd316a0}”或“{current}” 。
 
 
 ```console
@@ -87,7 +87,7 @@ bcdedit /copy {current} /d "Windows 10 NullModem"
 
 使用 Bootcfg，只能在复制项时更改启动项的友好名称。 使用 Bootcfg **/copy** 开关复制该条目，并更改其友好名称。
 
-以下 Bootcfg 命令复制第一个启动条目以创建新条目。 **/Id**开关指定要复制的项的行号。 **/D** (说明) 开关指定新创建项的友好名称。
+以下 Bootcfg 命令复制第一个启动条目以创建新条目。 **/Id** 开关指定要复制的项的行号。 **/D** (说明) 开关指定新创建项的友好名称。
 
 ```console
 bootcfg /copy /ID 1 /d "Windows 10 Debug"

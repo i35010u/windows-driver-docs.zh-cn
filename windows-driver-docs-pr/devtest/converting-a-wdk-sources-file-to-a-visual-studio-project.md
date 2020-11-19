@@ -4,12 +4,12 @@ description: 使用 Nmake2msBuild 将 WDK 源文件转换为 Visual Studio 项�
 ms.assetid: 6030317B-5068-40FD-8C9A-0B7A48C82B31
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 94ab10357655372c3bd433f2215f4695c966a152
-ms.sourcegitcommit: 76b8aeac1cf44a90adbec045b54db4d82e797194
+ms.openlocfilehash: 266648b845d8b4744c2ce2eb391e447b6277c76d
+ms.sourcegitcommit: 878a1cb0149dc18ccbd31774e12bad76084dfa24
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/08/2020
-ms.locfileid: "91851710"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94937811"
 ---
 # <a name="converting-a-wdk-sources-file-to-a-visual-studio-project"></a>将 WDK 源文件转换为 Visual Studio 项目
 
@@ -23,9 +23,9 @@ ms.locfileid: "91851710"
 ## <a name="span-idthe_nmake2msbuild_conversion_processspanspan-idthe_nmake2msbuild_conversion_processspanspan-idthe_nmake2msbuild_conversion_processspanthe-nmake2msbuild-conversion-process"></a><span id="The_Nmake2MsBuild_conversion_process"></span><span id="the_nmake2msbuild_conversion_process"></span><span id="THE_NMAKE2MSBUILD_CONVERSION_PROCESS"></span>Nmake2MsBuild 转换过程
 
 
-[Nmake2MsBuild](nmake2msbuild.md)工具将*从源*文件的内容映射到 Visual Studio c + + 项目文件 ( 的内容。.Vcxproj) 。 对于要转换的每个生成宏，属性文件中都有相应的转换规则 ( 属性) ，该文件在 MSBuild 中使用并在生成过程中进行检测。 在 MSBuild 环境中，这些项的属性、项和元数据由生成系统使用。 *源文件*中的每个宏都映射到由规则指定的 MSBuild 属性、项或项元数据。 默认情况下，如果不存在规则，则使用值 b 的名为的宏将转换为属性 A，其值为 B。初始转换步骤涉及到属性) 的关联属性 ( 文件*中的或源文件*到 MSBuild 语法的 NMake 语法映射。 *sources* NMake 文件中的每个宏都转换为属性文件中的属性， ( 属性) 。 在生成期间，将计算这些属性，并将某些属性的计算值映射到转换规则指定的各种其他属性、项或元数据。
+[Nmake2MsBuild](nmake2msbuild.md)工具将 *从源* 文件的内容映射到 Visual Studio c + + 项目文件 ( 的内容。.Vcxproj) 。 对于要转换的每个生成宏，属性文件中都有相应的转换规则 ( 属性) ，该文件在 MSBuild 中使用并在生成过程中进行检测。 在 MSBuild 环境中，这些项的属性、项和元数据由生成系统使用。 *源文件* 中的每个宏都映射到由规则指定的 MSBuild 属性、项或项元数据。 默认情况下，如果不存在规则，则使用值 b 的名为的宏将转换为属性 A，其值为 B。初始转换步骤涉及到属性) 的关联属性 ( 文件 *中的或源文件* 到 MSBuild 语法的 NMake 语法映射。 *sources* NMake 文件中的每个宏都转换为属性文件中的属性， ( 属性) 。 在生成期间，将计算这些属性，并将某些属性的计算值映射到转换规则指定的各种其他属性、项或元数据。
 
-例如， \_ \_ *源* 文件中的用户 C 标志宏用于指定在生成过程中要传递给编译器 ( # A0) 的命令行参数。 在 MSBuild 环境中，ClCompile 项列表包含要编译的源代码文件。 ClCompile 项列表由编译器在 [CL 任务](/visualstudio/msbuild/cl-task?view=vs-2015)中使用。 列表中每一项的其他元数据确定传递到编译器 ( # A0) 的其他标志。 因此，用户 \_ C 标志宏的值 \_ 应映射到 ClCompile 类型的项目的其他项元数据。 在初始转换步骤中， \_ 源文件中的用户 C \_ 标志宏会转换为 MSBuild 属性（也 \_ \_ 称为 *属性*的生成文件中的用户 c 标志）。 在生成时将用户 C FLAGS 属性的计算值映射 \_ \_ 到其他元数据，如以下示例中所示：
+例如， \_ \_ *源* 文件中的用户 C 标志宏用于指定在生成过程中要传递给编译器 ( # A0) 的命令行参数。 在 MSBuild 环境中，ClCompile 项列表包含要编译的源代码文件。 ClCompile 项列表由编译器在 [CL 任务](/visualstudio/msbuild/cl-task)中使用。 列表中每一项的其他元数据确定传递到编译器 ( # A0) 的其他标志。 因此，用户 \_ C 标志宏的值 \_ 应映射到 ClCompile 类型的项目的其他项元数据。 在初始转换步骤中， \_ 源文件中的用户 C \_ 标志宏会转换为 MSBuild 属性（也 \_ \_ 称为 *属性* 的生成文件中的用户 c 标志）。 在生成时将用户 C FLAGS 属性的计算值映射 \_ \_ 到其他元数据，如以下示例中所示：
 
 ```
   <!-- Contains rules to map compiler and linker switches -->
@@ -52,7 +52,7 @@ ms.locfileid: "91851710"
 
 默认规则文件 PostToolsetRules （属性）始终在转换过程中使用，但你也可以创建自己的自定义规则文件。 自定义规则文件为任何生成宏提供其他转换规则，该宏可能特定于以前生成该项目的生成环境。
 
-Microsoft 提供的规则仅支持使用 Windows 7 WDK 中定义的宏和目标的项目的转换。 例如，这些规则仅支持出现在 *生成文件*中的宏和目标。 不保证使用在前一生成环境中添加或修改的功能的任何项目的转换都是自动的。 作为一般规则，如果现有项目不会修改与项目相关联的源或 inc. 文件或由 WDK 安装的任何其他文件，则需要转换规则文件，这是不会修改 Windows 7 WDK 的全新安装。
+Microsoft 提供的规则仅支持使用 Windows 7 WDK 中定义的宏和目标的项目的转换。 例如，这些规则仅支持出现在 *生成文件* 中的宏和目标。 不保证使用在前一生成环境中添加或修改的功能的任何项目的转换都是自动的。 作为一般规则，如果现有项目不会修改与项目相关联的源或 inc. 文件或由 WDK 安装的任何其他文件，则需要转换规则文件，这是不会修改 Windows 7 WDK 的全新安装。
 
 自定义规则文件应遵循标准 MSBuild 语法，以及默认规则文件使用的设计模式。 默认规则应该提供充足的指导原则和示例，用于开发所有复杂的转换规则。
 

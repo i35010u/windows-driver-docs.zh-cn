@@ -12,17 +12,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: f6d7ddc4b3401f5592267cd69289adeeffd79828
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 5ecfdc957ce70a8bcdf93a9b34f40042661c21a3
+ms.sourcegitcommit: 878a1cb0149dc18ccbd31774e12bad76084dfa24
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89207649"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94937817"
 ---
 # <a name="dx-display-debugger-object-model-expression"></a>dx（显示调试器对象模型表达式）
 
 
-**Dx**命令显示使用 NatVis 扩展模型的 c + + 表达式。 有关 NatVis 的详细信息，请参阅 [创建本机对象的自定义视图](/visualstudio/debugger/create-custom-views-of-native-objects?view=vs-2015)。
+**Dx** 命令显示使用 NatVis 扩展模型的 c + + 表达式。 有关 NatVis 的详细信息，请参阅 [创建本机对象的自定义视图](/visualstudio/debugger/create-custom-views-of-native-objects)。
 
 ```dbgcmd
 dx [-g|-gc #][-c #][-n|-v]-r[#] Expression[,<FormatSpecifier> ]
@@ -47,10 +47,10 @@ dx [{-?}|{-h}]
 -   选择 "提取该列" 并将其分解为自己的表。 您将看到原始行加上展开列的子级。
 -   选择并按住 (或右键单击) 提供 "扩展到网格"，它将列，并将其作为最大列添加回当前表。
 
-<span id="_______-gc________"></span><span id="_______-GC________"></span>**-gc \# **   
+<span id="_______-gc________"></span><span id="_______-GC________"></span>**-gc \#**   
 显示为网格，并将网格单元大小限制为指定数量的 (\#) 字符。
 
-<span id="_______-c________"></span><span id="_______-C________"></span>**-c \# **   
+<span id="_______-c________"></span><span id="_______-C________"></span>**-c \#**   
 显示容器继续 (跳过 \# 容器) 的元素。此选项通常用于自定义输出自动化方案，并提供 "..."列表底部的继续符元素。
 
 <span id="_______-n______"></span><span id="_______-N______"></span>**-n**   
@@ -62,7 +62,7 @@ dx [{-?}|{-h}]
 <span id="_______-r_______"></span><span id="_______-R_______"></span>**-r**<em>\#</em>   
 以递归方式显示) 多个级别的子类型 (字段 *\#* 。 如果 *\#* 未指定，则递归级别为1，默认值为。
 
-<span id="__________FormatSpecifier_________"></span><span id="__________formatspecifier_________"></span><span id="__________FORMATSPECIFIER_________"></span>** \[ &lt; ， &gt; FormatSpecifier \] **   
+<span id="__________FormatSpecifier_________"></span><span id="__________formatspecifier_________"></span><span id="__________FORMATSPECIFIER_________"></span>**\[ &lt; ， &gt; FormatSpecifier \]**   
 使用以下任意格式说明符修改默认呈现。
 
 **，x**：以十六进制显示序号
@@ -91,9 +91,9 @@ dx [{-?}|{-h}]
 
 **，！**：仅在原始模式下显示对象 (例如： no NatVis) 
 
-**， \# **：指定指针/数组/容器的长度作为文本值 \# (替换为数值) 
+**， \#**：指定指针/数组/容器的长度作为文本值 \# (替换为数值) 
 
-**,\[&lt;&gt;expression \] **：指定指针/数组/容器的长度作为表达式 &lt; 表达式&gt;
+**,\[&lt;&gt;expression \]**：指定指针/数组/容器的长度作为表达式 &lt; 表达式&gt;
 
 **，nd**：找不到对象的派生 (runtype) 类型。 仅显示静态值
 
@@ -109,7 +109,7 @@ dx [{-?}|{-h}]
 
 ## <a name="command-line-usage-example"></a>命令行用法示例
 
-可以使用 "dx 设置" 命令显示有关 "调试设置" 对象的信息。 有关调试设置对象的详细信息，请参阅[**。**](-settings--set-debug-settings-.md)
+可以使用 "dx 设置" 命令显示有关 "调试设置" 对象的信息。 有关调试设置对象的详细信息，请参阅 [**。**](-settings--set-debug-settings-.md)
 ```dbgcmd
 kd> dx -r1 Debugger.Settings
 Debugger.Settings : 

@@ -12,19 +12,19 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 1264fdf0b4105882ffce77d15ee2347ffd333622
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 31a2313b89e0d5f424955e7f29fca9e6890ba789
+ms.sourcegitcommit: 878a1cb0149dc18ccbd31774e12bad76084dfa24
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90107410"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94937807"
 ---
 # <a name="drvackiostop-rule-kmdf"></a>DrvAckIoStop 规则 (kmdf) 
 
 
-**DrvAckIoStop**规则验证驱动程序是否能够识别出挂起的请求，同时驱动程序的电源管理队列正在关闭，驱动程序会相应地确认、完成或取消挂起的请求。 对于自托管 i/o 请求，驱动程序还应从其 [*EvtDeviceSelfManagedIoSuspend*](/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_self_managed_io_suspend) 函数正确处理这些请求。 关闭时无法处理这些请求的驱动程序会导致 [**错误检查0x9F：驱动程序 \_ 电源 \_ 状态 \_ 故障**](../debugger/bug-check-0x9f--driver-power-state-failure.md)。
+**DrvAckIoStop** 规则验证驱动程序是否能够识别出挂起的请求，同时驱动程序的电源管理队列正在关闭，驱动程序会相应地确认、完成或取消挂起的请求。 对于自托管 i/o 请求，驱动程序还应从其 [*EvtDeviceSelfManagedIoSuspend*](/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_self_managed_io_suspend) 函数正确处理这些请求。 关闭时无法处理这些请求的驱动程序会导致 [**错误检查0x9F：驱动程序 \_ 电源 \_ 状态 \_ 故障**](../debugger/bug-check-0x9f--driver-power-state-failure.md)。
 
-在某些情况下，可能适合禁止显示此警告。 如果驱动程序没有保留请求，或未将其转发给其他驱动程序，并且如果驱动程序直接在队列的处理程序中完成请求，则可以使用** \_ \_ analysis \_ 假设**函数来禁止显示警告。 有关详细信息，请参阅[使用 \_ 分析 \_ 假设函数取消错误缺陷](./using-the--analysis-assume-function-to-suppress-false-defects.md)和[**如何：通过使用 \_ \_ 分析 \_ 来指定其他代码信息**](/visualstudio/code-quality/how-to-specify-additional-code-information-by-using-analysis-assume?view=vs-2015)。
+在某些情况下，可能适合禁止显示此警告。 如果驱动程序没有保留请求，或未将其转发给其他驱动程序，并且如果驱动程序直接在队列的处理程序中完成请求，则可以使用 **\_ \_ analysis \_ 假设** 函数来禁止显示警告。 有关详细信息，请参阅 [使用 \_ 分析 \_ 假设函数取消错误缺陷](./using-the--analysis-assume-function-to-suppress-false-defects.md)和 [**如何：通过使用 \_ \_ 分析 \_ 来指定其他代码信息**](/visualstudio/code-quality/how-to-specify-additional-code-information-by-using-analysis-assume)。
 
 **驱动程序模型： KMDF**
 

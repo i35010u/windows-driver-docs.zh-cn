@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 92ecfe2e0778882a147514902c0c507b20de32e5
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 6dc22de05ac2dae4e974ef3b55602bb24c021417
+ms.sourcegitcommit: 878a1cb0149dc18ccbd31774e12bad76084dfa24
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89211254"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94937771"
 ---
 # <a name="nvload-natvis-load"></a>.nvload（NatVis 加载）
 
@@ -34,9 +34,9 @@ Nvload 命令将 NatVis 文件加载到调试器环境中。 在可视化效果�
 
 指定要加载的 NatVis 文件名或模块名称。
 
-**FileName**是要加载的 natvis 文件的显式名称。 可以使用完全限定的路径。
+**FileName** 是要加载的 natvis 文件的显式名称。 可以使用完全限定的路径。
 
-**ModuleName**是正在调试的目标进程中的模块的名称。 如果有任何可用的，则将加载嵌入到符号文件 (PDB) 命名模块名称的所有 NatVis 文件。
+**ModuleName** 是正在调试的目标进程中的模块的名称。 如果有任何可用的，则将加载嵌入到符号文件 (PDB) 命名模块名称的所有 NatVis 文件。
 
 ## <a name="environment"></a>环境
 
@@ -63,8 +63,8 @@ Nvload 命令将 NatVis 文件加载到调试器环境中。 在可视化效果�
 
 ## <a name="additional-information"></a>其他信息
 
-有关详细信息，请参阅 [创建本机对象的自定义视图](/visualstudio/debugger/create-custom-views-of-native-objects?view=vs-2015)。
+有关详细信息，请参阅 [创建本机对象的自定义视图](/visualstudio/debugger/create-custom-views-of-native-objects)。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
-[**dx (显示 NatVis 表达式) **](dx--display-visualizer-variables-.md)
+[**dx (显示 NatVis 表达式)**](dx--display-visualizer-variables-.md)

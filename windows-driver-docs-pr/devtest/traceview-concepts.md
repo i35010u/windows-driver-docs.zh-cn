@@ -16,12 +16,12 @@ keywords:
 - TMF 文件 WDK，选项
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c9dd4490083696771d9f529c3cbc96728163c28d
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 473f2b03f7f2bbcbb465c32be19cb86d2bd50dff
+ms.sourcegitcommit: 878a1cb0149dc18ccbd31774e12bad76084dfa24
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89383077"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94937789"
 ---
 # <a name="traceview-concepts"></a>TraceView 的概念
 
@@ -69,7 +69,7 @@ TraceView 使你可以将 [跟踪日志](trace-log.md) 显示或实时跟踪会�
 
 - 输入提供程序的 [控件 GUID](control-guid.md) ，并指定 TMF 文件或存储 TMF 文件的目录的路径。
 
-    如果输入的提供程序名称前面有一个星号 (例如 ```*SampleProvider```) ，TraceView 将使用标准算法自动将该名称转换为 GUID。 并非所有提供程序都遵循此标准，但许多提供程序（如使用编写的提供程序） [。NET 的 EventSource](/dotnet/api/system.diagnostics.tracing.eventsource?view=netframework-4.8)，do。
+    如果输入的提供程序名称前面有一个星号 (例如 ```*SampleProvider```) ，TraceView 将使用标准算法自动将该名称转换为 GUID。 并非所有提供程序都遵循此标准，但许多提供程序（如使用编写的提供程序） [。NET 的 EventSource 类](/dotnet/api/system.diagnostics.tracing.eventsource)，do。
 
 - 从 TraceView 汇编的列表中选择一个 [已注册的提供程序](registered-provider.md) ，并指定 TMF 文件或存储 TMF 文件的目录的路径。
 

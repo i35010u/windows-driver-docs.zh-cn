@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 31d5773321fc3b3efed318800152098792d6fc5e
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 2b16662e176e02bac6534ef1333f02924cba5e61
+ms.sourcegitcommit: 878a1cb0149dc18ccbd31774e12bad76084dfa24
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89211253"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94937785"
 ---
 # <a name="nvlist-natvis-list"></a>.nvlist（NatVis 列出）
 
@@ -52,8 +52,8 @@ Nvllist 命令列出加载到调试器环境中的 NatVis 文件。
 
 ## <a name="additional-information"></a>其他信息
 
-有关详细信息，请参阅 [创建本机对象的自定义视图](/visualstudio/debugger/create-custom-views-of-native-objects?view=vs-2015)。
+有关详细信息，请参阅 [创建本机对象的自定义视图](/visualstudio/debugger/create-custom-views-of-native-objects)。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
-[**dx (显示 NatVis 表达式) **](dx--display-visualizer-variables-.md)
+[**dx (显示 NatVis 表达式)**](dx--display-visualizer-variables-.md)

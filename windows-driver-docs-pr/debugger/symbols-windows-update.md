@@ -7,12 +7,12 @@ keywords:
 - 符号，安装程序
 ms.date: 10/12/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 8cdecad705db19d61f72151b573914196edc4789
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: ab120561e32eec8fb36e6da305009e72a86e01ab
+ms.sourcegitcommit: 878a1cb0149dc18ccbd31774e12bad76084dfa24
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89206571"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94937791"
 ---
 # <a name="offline-symbols-for-windows-update"></a>Windows 更新的脱机符号
 
@@ -45,7 +45,7 @@ Microsoft Windows [Version 10.0.17134.167]
 
 1. 将所有 Windowsupdate.log ETL 文件从复制 `C:\Windows\logs\WindowsUpdate\` 到您的联机计算机。
 
-2. 在联机计算机上，打开 PowerShell 提示符并运行以下 [WindowsUpdateLog](/powershell/module/windowsupdate/get-windowsupdatelog?view=win10-ps) PowerShell 命令。 
+2. 在联机计算机上，打开 PowerShell 提示符并运行以下 [WindowsUpdateLog](/powershell/module/windowsupdate/get-windowsupdatelog) PowerShell 命令。 
 
    ```powershell
    Get-WindowsUpdateLog -ETLPath <path to ETLs>

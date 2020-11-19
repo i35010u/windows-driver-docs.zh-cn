@@ -4,12 +4,12 @@ description: Windows 驱动程序工具包为 Microsoft Visual Studio Ultimate 2
 ms.assetid: 2A780608-F386-4838-A4EB-022C2F0EED3B
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a8f8900746a0b2fce2f70a3b0b0ed5107a015880
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 1e2ad254d4ff1cdf04a741adfca0a66b57b22597
+ms.sourcegitcommit: 878a1cb0149dc18ccbd31774e12bad76084dfa24
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89384443"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94937813"
 ---
 # <a name="code-analysis-for-drivers-overview"></a>驱动程序的代码分析概述
 
@@ -68,7 +68,7 @@ Windows 驱动程序工具包为 Microsoft Visual Studio 中的 [代码分析工
 
 [如何为驱动程序运行“代码分析”](how-to-run-code-analysis-for-drivers.md)
 
-[Visual Studio 中的代码分析工具](/visualstudio/code-quality/?view=vs-2019)
+[Visual Studio 中的代码分析工具](/visualstudio/code-quality/)
 
 [驱动程序的代码分析警告](prefast-for-drivers-warnings.md)
 

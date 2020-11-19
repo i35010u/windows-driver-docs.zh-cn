@@ -8,12 +8,12 @@ keywords:
 - SDV WDK，限制
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1f6d6d26544ce6bfde447ed256bddda195ca742c
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 8b39ebf0ee6fbb0e06f1bdf57836fe8d0fc33749
+ms.sourcegitcommit: 878a1cb0149dc18ccbd31774e12bad76084dfa24
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89384024"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94937795"
 ---
 # <a name="static-driver-verifier-general-tool-and-technical-limitations"></a>静态驱动程序验证程序常规工具和技术限制
 
@@ -38,7 +38,7 @@ SDV [验证引擎](verification-engine.md) 具有可防止其正确解释某些�
     static DRIVER_UNLOAD Unload;
     ```
 
-    Sdv 不会包含 *有趣 \_ DriverUnload*的常用条目。
+    Sdv 不会包含 *有趣 \_ DriverUnload* 的常用条目。
 
     ```
     #define fun_DriverUnload Unload
@@ -50,17 +50,17 @@ SDV [验证引擎](verification-engine.md) 具有可防止其正确解释某些�
       #define fun_DriverUnload sdv_static_function_Unload_1
     ```
 
-    这是必需的，因为多个模块可能具有名为 *Unload*的静态函数。 名称有可能会导致潜在的冲突。
+    这是必需的，因为多个模块可能具有名为 *Unload* 的静态函数。 名称有可能会导致潜在的冲突。
 
 -   无法解释在导出驱动程序中定义的驱动程序调度或驱动程序回调函数，其中，导出驱动程序的模块定义 ( .def 隐藏驱动程序调度函数) 文件。 若要避免此问题，请将驱动程序调度函数添加到模块定义 ( .def) 文件的导出部分。
 
--   如果对此函数的以下引用不在同一 *编译单元*中，则无法成功检测函数的角色类型。
+-   如果对此函数的以下引用不在同一 *编译单元* 中，则无法成功检测函数的角色类型。
 
     -   函数的声明。
     -   函数的定义。
     -   将函数分配给驱动程序入口点或回调函数。
 
-    *编译单元*定义为此源代码文件所包含的一组最小的源代码文件和其他源文件。
+    *编译单元* 定义为此源代码文件所包含的一组最小的源代码文件和其他源文件。
 
     如果 SDV 未检测到函数角色类型，则 SDV 将不会验证源自此函数的跟踪。
 
@@ -94,7 +94,7 @@ SDV [验证引擎](verification-engine.md) 具有可防止其正确解释某些�
 
     对于 **try/except** 和 **try/FINALLY** 语句，SDV **将忽略 leave** 语句。
 
-    对于 **try/except** 和 **try/finally** 语句， **try** 块的跳出会阻止分析 **except** 或 **finally** 语句。 有关如何重写以便可以使用 leave 语句的信息，请参阅有关编译器警告的主题 [C6242](/cpp/code-quality/c6242?view=vs-20)。
+    对于 **try/except** 和 **try/finally** 语句， **try** 块的跳出会阻止分析 **except** 或 **finally** 语句。 有关如何重写以便可以使用 leave 语句的信息，请参阅有关编译器警告的主题 [C6242](/cpp/code-quality/c6242)。
 
 -   忽略指针算法。 例如，它会遗漏指针递增或递减的情况。 此限制可能导致误报和误报结果。
 
@@ -142,7 +142,7 @@ SDV [验证引擎](verification-engine.md) 具有可防止其正确解释某些�
 
 -   SDV 将忽略预编译头。 将预编译标头仅用于加速编译的驱动程序将使用 SDV 进行编译。 必须使用预编译头才能成功编译的驱动程序将不会使用 SDV 进行编译。
 
--   无法推导通过调用 **RtlZeroMemory** 或 **NdisZeroMemory**进行的某些类型的隐式赋值。 引擎执行尽力分析以将内存初始化为零，但只能在它可以识别其类型时进行分析。 因此，依赖于这些函数初始化内存的代码可能会在某些代码路径中产生错误。
+-   无法推导通过调用 **RtlZeroMemory** 或 **NdisZeroMemory** 进行的某些类型的隐式赋值。 引擎执行尽力分析以将内存初始化为零，但只能在它可以识别其类型时进行分析。 因此，依赖于这些函数初始化内存的代码可能会在某些代码路径中产生错误。
 
 -   不支持内存模型，使其能够跟踪对 KMDF 驱动程序的 i/o 请求的手动分派。 引擎仅支持依赖于框架的方法将 i/o 请求传递到 (顺序或并行调度) 的驱动程序中。
 

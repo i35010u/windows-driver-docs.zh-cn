@@ -5,12 +5,12 @@ keywords:
 - NatVis 中的本机调试器对象
 ms.date: 08/10/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2404df41bd71c11e83f9bee859d1b30b53f67838
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 477130d459392c5c89b251e60336ea9f01d9e93a
+ms.sourcegitcommit: 878a1cb0149dc18ccbd31774e12bad76084dfa24
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89212241"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94937799"
 ---
 # <a name="native-debugger-objects-in-natvis"></a>NatVis 中的本机调试器对象
 
@@ -24,7 +24,7 @@ ms.locfileid: "89212241"
 -   堆栈帧/堆栈帧
 -   局部变量
 -   模块/模块
--   实用程序
+-   实用工具
 -   状态
 -   设置
 
@@ -38,7 +38,7 @@ ms.locfileid: "89212241"
 
 有关使用 NatVis 的常规信息，请参阅这些资源。
 
-[创建本机对象的自定义视图](/visualstudio/debugger/create-custom-views-of-native-objects?view=vs-2015)
+[创建本机对象的自定义视图](/visualstudio/debugger/create-custom-views-of-native-objects)
 
 [**.nvload**](-nvload--natvis-load-.md)
 
@@ -50,7 +50,7 @@ ms.locfileid: "89212241"
 
 ## <a name="custom-natvis-object-example"></a>自定义 NatVis 对象示例
 
-创建一个具有 **CDog**类的实例的简单 c + + 应用程序。
+创建一个具有 **CDog** 类的实例的简单 c + + 应用程序。
 
 ```cpp
 class CDog
@@ -84,7 +84,7 @@ int main()
 
 C： \\ \\ 用于 Windows (x64) 可视化工具的程序文件调试工具 \\
 
-运行程序，并在 main 函数处中断。 执行一个步骤，以便初始化变量 `MyDog` 。 `MyDog`使用[ **？？** 显示](----evaluate-c---expression-.md) 并再次使用 **dx**。
+运行程序，并在 main 函数处中断。 执行一个步骤，以便初始化变量 `MyDog` 。 `MyDog`使用 [ **？？** 显示](----evaluate-c---expression-.md) 并再次使用 **dx**。
 
 ```dbgcmd
 0:000> ??MyDog
@@ -97,10 +97,10 @@ class CDog
 MyDog     : {Age = 8 years. Weight = 30 pounds.} [Type: CDog]
 ```
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 [dx（显示调试器对象模型表达式）](dx--display-visualizer-variables-.md)
 
 [将 LINQ 与调试器对象配合使用](using-linq-with-the-debugger-objects.md)
 
-[JavaScript 扩展中的本机调试器对象](native-objects-in-javascript-extensions.md) 
+[JavaScript 扩展中的本机调试器对象](native-objects-in-javascript-extensions.md) 

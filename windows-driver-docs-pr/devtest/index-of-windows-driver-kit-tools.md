@@ -20,12 +20,12 @@ keywords:
 - GUIDGen.exe WDK
 ms.date: 05/09/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 2cad3aadc999fbe590f15ed34446a23d3e271da4
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 87e19d4512bee1ed4cf8bedd7d489c2ca3972294
+ms.sourcegitcommit: 878a1cb0149dc18ccbd31774e12bad76084dfa24
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89382677"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94937801"
 ---
 # <a name="index-of-windows-driver-kit-tools"></a>Windows 驱动程序工具包工具的索引
 
@@ -94,7 +94,7 @@ ms.locfileid: "89382677"
 |PTConform ( # A0) </br>**WDK 工具：** 是的|% WindowsSdkDir% \tools\x64\PTConform.exe</br>% WindowsSdkDir% \tools\x86\PTConform.exe|验证打印票证或打印功能文档是否符合打印架构。</br>有关命令选项的信息，请键入</br>**ptconform /?**|
 |XpsAnalyzer ( # A0) </br>**WDK 工具：** 是的|% WindowsSdkDir% \tools\x64\XpsAnalyzer.exe</br>% WindowsSdkDir% \tools\x86\XpsAnalyzer.exe|分析 XML 纸张规范 (XPS) 文件，以与 XPS 1.0 规范兼容。</br>WDK 文档：</br>[XpsAnalyzer](xpsanalyzer.md)|
 
-### <a name="sensors"></a>传感器
+### <a name="sensors"></a>Sensors
 
 |工具名称|工具位置|说明和帮助文件位置|
 |----|----|----|
@@ -111,17 +111,17 @@ ms.locfileid: "89382677"
 |计算机硬件标识工具 ( # A0) </br>**WDK 工具：** 是的|**Windows 驱动程序工具包 (WDK) 8：**</br>% WindowsSdkDir% \tools\x64\ComputerHardwareIds.exe</br>% WindowsSdkDir% \tools\x86\ComputerHardwareIds.exe</br>WDKPath\tools\Other\ia64\ComputerHardwareIds.exe</br>**Windows 驱动程序工具包 (WDK) 8.1：**</br>% WindowsSdkDir% \bin\x64\ComputerHardwareIds.exe</br>% WindowsSdkDir% \bin\x86\ComputerHardwareIds.exe</br>% WindowsSdkDir% \bin\arm\ComputerHardwareIds.exe|从 SMBIOS 信息派生计算机硬件 Id。</br>WDK 文档：</br>[ComputerHardwareIds](computerhardwareids.md)|
 |DC2WMIParser ( # A0) </br>**WDK 工具：** 是的|% WindowsSdkDir% \tools\x64\DC2WMIParser.exe</br>% WindowsSdkDir% \tools\x86\DC2WMIParser.exe|DC2WMIParser 是一种工具，用于收集驱动程序验证器创建的 WMI IRP 记录，并将此日志转换为文本文件。</br>文档：</br>[IRP 日志记录](./irp-logging.md)|
 |依赖关系查看 ( # A0) </br>**WDK 工具：** 是的|% WindowsSdkDir% \tools\x64\depends.exe</br>% WindowsSdkDir% \tools\x86\depends.exe|显示树关系图中应用程序所需的模块的依赖关系模式。 显示内容包括很多详细信息，包括每个模块导出的函数、其他模块实际调用的函数和加载和运行模块所需的最小文件集。</br>在该工具中，从 **依赖关系** 查看 "帮助" 菜单中选择 " **帮助主题**"。|
-|DevCon ( # A0) </br>**WDK 工具：** 是的|% WindowsSdkDir% \tools\x64\devcon.exe</br>% WindowsSdkDir% \tools\x86\devcon.exe|设备管理器的命令行版本。 DevCon 启用、禁用、安装、配置和删除本地计算机上的设备，并显示有关本地和远程计算机上的设备的详细信息。</br>WDK 文档：</br>[DevCon](devcon.md)|
+|DevCon ( # A0) </br>**WDK 工具：** 是的|%WindowsSdkDir%\tools\x64\devcon.exe</br>%WindowsSdkDir%\tools\x86\devcon.exe|设备管理器的命令行版本。 DevCon 启用、禁用、安装、配置和删除本地计算机上的设备，并显示有关本地和远程计算机上的设备的详细信息。</br>WDK 文档：</br>[DevCon](devcon.md)|
 |驱动程序 ( # A0) </br>**WDK 工具：** 是的|% WindowsSdkDir% \tools\x64\drivers.exe</br>% WindowsSdkDir% \tools\x86\drivers.exe|显示计算机上安装的所有驱动程序的列表。</br>WDK 文档：</br>无|
 |驱动程序验证程序 ( # A0) </br>**WDK 工具：** 不|% Windir% \system32\verifier.exe|监视内核模式驱动程序和图形驱动程序，以检测可能损坏系统的非法函数调用或操作。 它可以将驱动程序用于各种强调和测试，以找出不正确的行为。</br>WDK 文档：</br>[驱动程序验证程序](driver-verifier.md)|
 |驱动程序验证日志 (DVL) </br>**WDK 工具：** 是的|需要 Microsoft Visual Studio 和 WDK。 从 "**驱动程序**" 菜单中，选择 "**创建驱动程序验证日志 ...** "。|[静态工具徽标测试](/windows-hardware/test/hlk/testref/6ab6df93-423c-4af6-ad48-8ea1049155ae)需要驱动程序验证日志 (DVL) 用于所有适用的驱动程序提交。 DVL 包含代码分析的结果和静态驱动程序验证程序日志文件的摘要。 请参阅 [创建驱动程序验证日志](../develop/creating-a-driver-verification-log.md)。|
 |增强的存储证书管理工具 ( # A0) </br>**WDK 工具：** 是的|% WindowsSdkDir% \tools\x64\ehstorcertmgrcmd.exe</br>% WindowsSdkDir% \tools\x86\ehstorcertmgrcmd.exe|管理兼容 IEEE 1667 标准的 USB 存储设备上的证书。</br>WDK 文档：</br>[增强的存储证书管理工具](enhanced-storage-certificate-management-tool.md)|
-|事件和性能计数器清单生成器工具 ( # A0) </br>**WDK 工具：** 是的|% WindowsSdkDir% \bin\x64\ECManGen.exe</br>% WindowsSdkDir% \bin\x86\ECManGen.exe|用于创建事件或性能计数器清单 ( *) 的工具，无需使用 XML 标记即可从头开始。 有关创建清单文件的信息，请参阅将 [检测清单写入 (Windows) ](/windows/desktop/WES/writing-an-instrumentation-manifest) 部分和向 [内核模式驱动程序添加事件跟踪](adding-event-tracing-to-kernel-mode-drivers.md)|
+|事件和性能计数器清单生成器工具 ( # A0) </br>**WDK 工具：** 是的|% WindowsSdkDir% \bin\x64\ECManGen.exe</br>% WindowsSdkDir% \bin\x86\ECManGen.exe|用于创建事件或性能计数器清单 ( *) 的工具，无需使用 XML 标记即可从头开始。 有关创建清单文件的信息，请参阅将 [检测清单写入 (Windows) ](/windows/desktop/WES/writing-an-instrumentation-manifest) 部分和 [将事件跟踪添加到 Kernel-Mode 驱动程序](adding-event-tracing-to-kernel-mode-drivers.md)|
 |Inf2Cat ( # A0) </br>**WDK 工具：** 是的|% WindowsSdkDir% \bin\x64\inf2cat.exe</br>% WindowsSdkDir% \bin\x86\inf2cat.exe|确定是否可以为指定的 Windows 版本列表对 [驱动程序包的](../install/driver-packages.md) INF 文件进行数字签名，如果是，则将生成适用于指定 windows 版本的未签名的 [目录文件](../install/catalog-files.md) 。</br>WDK 文档：</br>[Inf2Cat](inf2cat.md)|
 |InfVerif ( # A0) </br>**WDK 工具：** 是的|c:\Program 文件 (x86) \Windows Kits\10\tools\arm\infverif.exe</br>c:\Program 文件 (x86) \Windows Kits\10\tools\arm64\infverif.exe</br>c:\Program 文件 (x86) \Windows Kits\10\tools\x86\infverif.exe</br>c:\Program 文件 (x86) \Windows Kits\10\tools\x64\infverif.exe|测试驱动程序 INF 文件。 除了报告 INF 语法问题外，该工具还报告 INF 文件是否是通用的。</br>WDK 文档：</br>[InfVerif](infverif.md)|
 |MakeCat ( # A0) </br>**WDK 工具：** 是的|WDKPath\bin\amd64\MakeCat.exe</br>WDKPath\bin\ia64\MakeCat.exe</br>WDKPath\bin\x86\MakeCat.exe|为[驱动程序包](../install/driver-packages.md)创建[编录文件](../install/catalog-files.md)。</br>WDK 文档：</br>[MakeCat](makecat.md)|
 |MakeCert ( # A0) </br>**WDK 工具：** 是的|% WindowsSdkDir% \bin\x64\MakeCert.exe</br>% WindowsSdkDir% \bin\x86\MakeCert.exe|创建由系统测试根密钥或其他指定的密钥签名的 x.509 证书。</br>WDK 文档：</br>[MakeCert](makecert.md)|
-|MSBuild ( # A0) /br>**WDK 工具：** 否|随 Visual Studio 一起安装|生成 Microsoft WDK 中提供的示例、驱动程序和关联的软件组件。</br>[MSBuild]( /visualstudio/msbuild/msbuild?view=vs-2015)|
+|MSBuild ( # A0) /br>**WDK 工具：** 否|随 Visual Studio 一起安装|生成 Microsoft WDK 中提供的示例、驱动程序和关联的软件组件。</br>[MSBuild]( /visualstudio/msbuild/msbuild)|
 |PnpCpu ( # A0) </br>**WDK 工具：** 是的|% WindowsSdkDir% \tools\x64\PnPCpu.exe</br>% WindowsSdkDir% \tools\x86\PnPCpu.exe|模拟热添加处理器到正在运行的 Windows Server 2008 实例。</br>WDK 文档：</br>[PNPCPU](pnpcpu.md)|
 |PnPUtil ( # A0) </br>**WDK 工具：** 不|% Windir% \system32\pnputil.exe|一种命令行工具，可用于安装或删除 Windows 驱动程序存储区中的 [驱动程序包](../install/driver-packages.md) 。</br>WDK 文档：</br>[PnPUtil](pnputil.md)|
 |PoolMon ( # A0) </br>**WDK 工具：** 是的|% WindowsSdkDir% \tools\x64\poolmon.exe</br>% WindowsSdkDir% \tools\x86\poolmon.exe|显示操作系统从系统的分页和非分页内核池收集内存分配的数据，以及用于终端服务会话的内存池。 数据按池分配标记进行分组。</br>WDK 文档：</br>[PoolMon](poolmon.md)|
@@ -130,7 +130,7 @@ ms.locfileid: "89382677"
 |PwrTest ( # A0) </br>**WDK 工具：** 是的|% WindowsSdkDir% \tools\x64\pwrtest.exe</br>% WindowsSdkDir% \tools\x86\pwrtest.exe|一种电源管理工具，用于在计算机上练习和记录电源管理信息。</br>WDK 文档：</br>[PwrTest](pwrtest.md)|
 |SignTool ( # A0) </br>**WDK 工具：** 是的|% WindowsSdkDir% \bin\x64\SignTool.exe</br>% WindowsSdkDir% \bin\x86\SignTool.exe|对文件进行数字签名，验证文件和时间戳文件中的签名。</br>WDK 文档：</br>[SignTool](signtool.md)|
 |Stampinf ( # A0) </br>**WDK 工具：** 是的|% WindowsSdkDir% \bin\x64\stampinf.exe</br>% WindowsSdkDir% \bin\x86\stampinf.exe|更新常见 INF 文件指令，包括 **DriverVer** 指令。</br>WDK 文档：</br>[Stampinf](stampinf.md)|
-|静态驱动程序验证程序</br>**WDK 工具：** 是的|%WindowsSdkDir%\tools\SDV</br></br>**注意**  从 Visual Studio 中的 " **驱动程序** " 菜单启动 "静态驱动程序验证程序"。|用于驱动程序的静态验证工具，可系统地分析 Windows 驱动程序的源代码，并确定驱动程序是否与 Windows 操作系统内核正确交互。</br>WDK 文档：</br>[静态驱动程序验证程序](static-driver-verifier.md)|
+|静态驱动程序验证程序</br>**WDK 工具：** 是的|%WindowsSdkDir%\tools\SDV</br></br>**注意**  从 Visual Studio 中的 " **驱动程序** " 菜单启动 "静态驱动程序验证程序"。|用于驱动程序的静态验证工具，可系统地分析 Windows 驱动程序的源代码，并确定驱动程序是否与 Windows 操作系统内核正确交互。</br>WDK 文档：</br>[静态驱动程序验证程序](static-driver-verifier.md)|
 |Tracefmt ( # A0) </br>**WDK 工具：** 是的|% WindowsSdkDir% \bin\x64\tracefmt.exe</br>% WindowsSdkDir% \bin\x86\tracefmt.exe|格式化并显示事件跟踪日志文件 ( .etl) 或实时跟踪会话中的跟踪消息。</br>WDK 文档：</br>[Tracefmt](tracefmt.md)|
 |TraceLog ( # A0) </br>**WDK 工具：** 是的|**WDK 8：**</br>% WindowsSdkDir% \tools\x64\tracelog.exe</br>% WindowsSdkDir% \tools\x86\tracelog.exe</br>**WDK 8.1：**</br>% WindowsSdkDir% \bin\x64\tracelog.exe</br>% WindowsSdkDir% \bin\x86\tracelog.exe</br>% WindowsSdkDir% \bin\arm\tracelog.exe|从命令行配置和控制跟踪会话。 度量延迟过程调用所用的时间 (Dpc) 和中断服务例程 (Isr) 。</br>WDK 文档：</br>[Tracelog](tracelog.md)|
 |TracePDB ( # A0) </br>**WDK 工具：** 是的|% WindowsSdkDir% \bin\x64\tracepdb.exe</br>% WindowsSdkDir% \bin\x86\tracepdb.exe|从 WPP 跟踪提供程序的完整或专用 PDB 符号文件中 () 文件创建跟踪消息格式。</br>WDK 文档：</br>[Tracepdb](tracepdb.md)|
@@ -145,7 +145,7 @@ ms.locfileid: "89382677"
 |WSDDebug_client 和 WSDDebug_host</br>**WDK 工具：** 是的|**调试客户端：**</br>% WindowsSdkDir% \bin\x64\WSDDebug_client.exe</br>% WindowsSdkDir% \bin\x86\WSDDebug_client.exe</br>**调试主机：**</br>% WindowsSdkDir% \bin\x64\WSDDebug_host.exe</br>
 % WindowsSdkDir% \bin\x86\WSDDebug_host.exe|这些工具是可以用来对设备或应用程序进行故障排除的软设备和客户端。</br>Windows SDK：</br>["在设备上 Web 服务"](/windows/win32/wsdapi/wsd-portal) 部分|
 
-### <a name="supported-platforms"></a>支持的平台
+### <a name="supported-platforms"></a>受支持的平台
 
 你可以在 Windows 7 和更高版本上运行 Windows 10 WDK，并使用它来开发这些操作系统的驱动程序：
 

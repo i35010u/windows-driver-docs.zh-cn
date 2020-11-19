@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 0ede7a23ab631e99767211cf6bd1eadb1a732c72
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 3884ac7e7b03878277d32ee1dd08c979c603f012
+ms.sourcegitcommit: 878a1cb0149dc18ccbd31774e12bad76084dfa24
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89211247"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94937775"
 ---
 # <a name="nvunloadall-natvis-unload-all"></a>.nvunloadall（NatVis 全部卸载）
 
@@ -52,8 +52,8 @@ Nvunloadall 命令从调试器环境中卸载所有 NatVis 文件。
 
 ## <a name="additional-information"></a>其他信息
 
-有关详细信息，请参阅 [创建本机对象的自定义视图](/visualstudio/debugger/create-custom-views-of-native-objects?view=vs-2015)。
+有关详细信息，请参阅 [创建本机对象的自定义视图](/visualstudio/debugger/create-custom-views-of-native-objects)。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
-[**dx (显示 NatVis 表达式) **](dx--display-visualizer-variables-.md)
+[**dx (显示 NatVis 表达式)**](dx--display-visualizer-variables-.md)
