@@ -4,12 +4,12 @@ title: 驱动程序项目的 Stampinf 属性
 description: 设置 Stampinf 工具的属性。 生成驱动程序时，你可以使用 Stampinf 来更新常用的 INF 和 INX 文件指令。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 21df98cc85d63788446a676432ca9696ee4d0222
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 7081982b82a8150ab76f015d52b179281c83134e
+ms.sourcegitcommit: 878a1cb0149dc18ccbd31774e12bad76084dfa24
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90105692"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94937803"
 ---
 # <a name="stampinf-properties-for-driver-projects"></a>驱动程序项目的 Stampinf 属性
 
@@ -59,7 +59,7 @@ ms.locfileid: "90105692"
 <li><p>如果未指定 STAMPINF_VERSION 环境变量，则 Stampinf 将从 ntverp.h 文件中提取版本号。</p></li>
 </ul>
 <div class="alert">
-<strong>注意</strong>  默认情况下，在生成驱动程序时，STAMPINF_VERSION 环境变量未设置，除非你已将其设置为系统环境变量。 若要在 Visual Studio 生成环境中指定此环境变量，请参阅<a href="/visualstudio/msbuild/how-to-use-environment-variables-in-a-build?view=vs-2015" data-raw-source="[How to: Use Environment Variables in a Build](/visualstudio/msbuild/how-to-use-environment-variables-in-a-build?view=vs-2015)">如何：在生成时使用环境变量</a>。
+<strong>注意</strong>  默认情况下，在生成驱动程序时，STAMPINF_VERSION 环境变量未设置，除非你已将其设置为系统环境变量。 若要在 Visual Studio 生成环境中指定此环境变量，请参阅<a href="/visualstudio/msbuild/how-to-use-environment-variables-in-a-build" data-raw-source="[How to: Use Environment Variables in a Build](/visualstudio/msbuild/how-to-use-environment-variables-in-a-build)">如何：在生成时使用环境变量</a>。
 </div>
 <div>
  
@@ -81,7 +81,7 @@ ms.locfileid: "90105692"
 </ul>
 <p>此设置相当于指定 <a href="/windows-hardware/drivers/devtest/stampinf" data-raw-source="[Stampinf](../devtest/stampinf.md)">Stampinf</a> 选项 <strong>-d [</strong><em>date</em><strong>|</em>]</strong>。</p>
 <div class="alert">
-<strong>注意</strong>  默认情况下，在生成驱动程序时，STAMPINF_DATE 环境变量未设置，除非你已将其设置为系统环境变量。 若要在 Visual Studio 生成环境中指定此环境变量，请参阅<a href="/visualstudio/msbuild/how-to-use-environment-variables-in-a-build?view=vs-2015" data-raw-source="[How to: Use Environment Variables in a Build](/visualstudio/msbuild/how-to-use-environment-variables-in-a-build?view=vs-2015)">如何：在生成时使用环境变量</a>。
+<strong>注意</strong>  默认情况下，在生成驱动程序时，STAMPINF_DATE 环境变量未设置，除非你已将其设置为系统环境变量。 若要在 Visual Studio 生成环境中指定此环境变量，请参阅<a href="/visualstudio/msbuild/how-to-use-environment-variables-in-a-build" data-raw-source="[How to: Use Environment Variables in a Build](/visualstudio/msbuild/how-to-use-environment-variables-in-a-build)">如何：在生成时使用环境变量</a>。
 </div>
 <div>
  
@@ -135,4 +135,4 @@ ms.locfileid: "90105692"
 * [**INF Version 部分**](../install/inf-version-section.md)
 * [WDK 和 Visual Studio 生成环境](../devtest/wdk-and-visual-studio-build-environment.md)
 * [Stampinf 任务](https://msdn.microsoft.com/Library/Windows/Hardware/Ff552786_task)
-* [How to:在生成时使用环境变量](/visualstudio/msbuild/how-to-use-environment-variables-in-a-build?view=vs-2015)。
+* [How to:在生成时使用环境变量](/visualstudio/msbuild/how-to-use-environment-variables-in-a-build)。
