@@ -10,12 +10,12 @@ keywords:
 - 筛选器驱动程序 WDK 网络，接收操作
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1437a699dd8a9e5bff8ae03f69f8abca780bc3d6
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 4de512f62d439d888da32d82d895fb9a372f6019
+ms.sourcegitcommit: 3da878e2fb4ce7d81bfa4177050a8c6c1a0544cc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89209323"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94983274"
 ---
 # <a name="filter-module-send-and-receive-operations"></a>筛选器模块发送和接收操作
 
@@ -31,7 +31,7 @@ ms.locfileid: "89209323"
 
 筛选器驱动程序不提供对基于 [**NDIS \_ 数据包**](/previous-versions/windows/hardware/network/ff557086(v=vs.85)) 结构的传统发送和接收操作的直接支持。 取而代之的是，NDIS 会将来自旧微型端口驱动程序的接收指示转换为 [**网络 \_ 缓冲区**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer) 结构。 此外，NDIS 还处理从将基于 NET BUFFER 结构的发送请求转换 \_ 为基于 NDIS 数据包结构的旧发送请求的所需转换 \_ 。
 
-**注意**   筛选器驱动程序可以动态更改筛选器模块的 send 和 receive *FliterXxx*函数。 有关详细信息，请参阅 [Data 旁路 Mode](data-bypass-mode.md)。
+**注意**  筛选器驱动程序可以动态更改筛选器模块的 send 和 receive *FilterXxx* 函数。 有关详细信息，请参阅 [Data 旁路 Mode](data-bypass-mode.md)。
 
  
 
