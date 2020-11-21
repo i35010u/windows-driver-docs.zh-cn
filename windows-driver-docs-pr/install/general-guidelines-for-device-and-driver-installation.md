@@ -7,12 +7,12 @@ keywords:
 - 驱动程序安装 WDK，一般指导原则
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8f73f30a2ec56226c3311e7e4d93c40d155f6505
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: f35e2a2e9e1431a7b87d6485d7c369f10d896960
+ms.sourcegitcommit: 5ff30ddae453c6439177acde0e2d32eaf234a2c0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89095723"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95030035"
 ---
 # <a name="general-guidelines-for-device-and-driver-installation"></a>设备和驱动程序安装常规指南
 
@@ -27,7 +27,7 @@ ms.locfileid: "89095723"
 
 -   安装后在系统上保留 INF 文件;不要删除它们。 INF 文件不仅在第一次安装设备或驱动程序时使用，还在用户通过设备管理器请求驱动程序更新时使用。
 
--   使用 [系统定义的设备安装程序类](/previous-versions/ff553419(v=vs.85))之一。 除非有很有说服力的原因，否则不要定义自己的安装类。
+-   使用 [系统定义的设备安装程序类](/windows-hardware/drivers/install/system-defined-device-setup-classes-reserved-for-system-use)之一。 除非有很有说服力的原因，否则不要定义自己的安装类。
 
 -   不要对注册表项或值的位置、格式或含义做出假设。 有关注册表项和树的详细信息，请参阅 [设备和驱动程序的注册表树和密钥](registry-trees-and-keys.md)。
 

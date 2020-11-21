@@ -14,12 +14,12 @@ keywords:
 - 性能电源模式 WDK 音频
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 29b5a536b258e8a9f73d1c9faf138a3ca0161ce2
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 86c3f7e8e28f0822cff23ff1a73355d6f1547047
+ms.sourcegitcommit: 5ff30ddae453c6439177acde0e2d32eaf234a2c0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89208353"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95030028"
 ---
 # <a name="audio-device-class-inactivity-timer-implementation"></a>音频设备类不活动计时器实现
 
@@ -41,7 +41,7 @@ PortCls 包含空闲超时和空闲电源状态的硬编码默认值。 硬件�
     \HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\xxxx\yyyy\PowerSettings\ConservationIdleTime
     ```
 
-    请注意， *xxxx* 表示 MEDIA 类 GUID (参阅 [系统提供的设备安装程序类](/previous-versions/ff553419(v=vs.85))) ， *yyyy* 表示 media 类 GUID 下驱动程序子项的名称。 键的值指定超时间隔（秒）。
+    请注意， *xxxx* 表示 MEDIA 类 GUID (参阅 [系统提供的设备安装程序类](/windows-hardware/drivers/install/system-defined-device-setup-classes-reserved-for-system-use)) ， *yyyy* 表示 media 类 GUID 下驱动程序子项的名称。 键的值指定超时间隔（秒）。
 
 -   *PerformanceIdleTime*
 
@@ -65,7 +65,7 @@ PortCls 包含空闲超时和空闲电源状态的硬编码默认值。 硬件�
 
 只有设备安装 INF 文件创建了这三个空闲的注册表项。 在配置电源空闲计时器之前，PortCls 会尝试从注册表中检索驱动程序特定的 power idle 参数。 PortCls 使用默认值来代替在注册表中找不到的任何电源空闲参数。 如前所述，默认的 power idle 参数值禁用空闲计时器。
 
-有关指定 *ConservationIdleTime*、 *PerformanceIdleTime*和 *IdlePowerState* 参数的详细信息，请参阅 [**PoRegisterDeviceForIdleDetection**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-poregisterdeviceforidledetection)中最后三个调用参数的定义。
+有关指定 *ConservationIdleTime*、 *PerformanceIdleTime* 和 *IdlePowerState* 参数的详细信息，请参阅 [**PoRegisterDeviceForIdleDetection**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-poregisterdeviceforidledetection)中最后三个调用参数的定义。
 
 ### <a name="span-idexamplespanspan-idexamplespan-example"></a><span id="example"></span><span id="EXAMPLE"></span> 示例
 

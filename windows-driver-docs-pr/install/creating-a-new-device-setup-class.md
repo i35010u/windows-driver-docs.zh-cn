@@ -7,12 +7,12 @@ keywords:
 - 安装类 WDK 设备安装
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b78c7f79da341a9002cb7679d198bb295bb33dd9
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 69e3d172bf64281bf2a5c1df8f4d101385f51886
+ms.sourcegitcommit: 5ff30ddae453c6439177acde0e2d32eaf234a2c0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89095753"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95030030"
 ---
 # <a name="creating-a-new-device-setup-class"></a>创建新的设备安装程序类
 
@@ -20,7 +20,7 @@ ms.locfileid: "89095753"
 
 
 
-仅当绝对必要时，才应创建新的设备安装程序类。 通常可以将设备分配到 [系统定义的设备安装程序类](/previous-versions/ff553419(v=vs.85))之一。
+仅当绝对必要时，才应创建新的设备安装程序类。 通常可以将设备分配到 [系统定义的设备安装程序类](/windows-hardware/drivers/install/system-defined-device-setup-classes-reserved-for-system-use)之一。
 
 如果设备满足以下两个条件，则应将其分配给现有的设备安装程序类：
 

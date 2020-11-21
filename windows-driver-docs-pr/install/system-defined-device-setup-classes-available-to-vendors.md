@@ -1,20 +1,23 @@
 ---
-title: INF 版本部分的 Class 和 ClassGuid 条目
-description: INF 版本部分的 Class 和 ClassGuid 条目
+title: 为供应商提供的系统定义的设备安装程序类
+description: 为供应商提供的系统定义的设备安装程序类
 ms.assetid: d4b8a964-f843-4960-9077-46746af27a61
-ms.date: 08/27/2020
+ms.date: 11/20/2020
 ms.localizationpriority: medium
 ms.custom: contperfq1
-ms.openlocfilehash: a1abb527427731c8e22b261599a3a92e33f8666a
-ms.sourcegitcommit: a44ade167cdfb541cf1818e9f9e3726f23f90b66
+ms.openlocfilehash: 8798bf682ffb42686fa1e0278568d92726dfeafa
+ms.sourcegitcommit: 5ff30ddae453c6439177acde0e2d32eaf234a2c0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/07/2020
-ms.locfileid: "94361453"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95030032"
 ---
-# <a name="class-and-classguid-entries-for-inf-version-section"></a>INF 版本部分的 Class 和 ClassGuid 条目  
+# <a name="system-defined-device-setup-classes-available-to-vendors"></a>为供应商提供的系统定义的设备安装程序类  
 
 如果要为特定设备类别编写 Windows 设备驱动程序，可以使用以下列表来选择正确的预定义值，以用于 `Class` `ClassGuid` 驱动程序 INF 文件的 [版本部分](inf-version-section.md) 中的和条目。
+
+> [!NOTE]
+> 如果你正在查找有关保留类和 Guid 的信息，请参阅 [为系统使用保留的系统定义的设备安装程序类](system-defined-device-setup-classes-reserved-for-system-use.md)。
 
 若要查看这些条目在 INF 文件中的显示方式，请查看[Windows 驱动程序示例](https://github.com/microsoft/Windows-driver-samples)存储库中的 " [cdrom](https://github.com/microsoft/Windows-driver-samples/blob/aaeca58c5e7b67740a603a3150db225670b42bb6/storage/class/cdrom/src/cdrom.inf#L7-L8) "。
 
@@ -182,7 +185,7 @@ ClassGuid = {4d36e972-e325-11ce-bfc1-08002be10318}
 ClassGuid = {4d36e973-e325-11ce-bfc1-08002be10318}  
 此类包括网络和/或打印提供程序。  
   
-**请注意** ， **NetClient** 组件在 Windows 8.1、Windows Server 2012 R2 和更高版本中已弃用。    
+**请注意**，**NetClient** 组件在 Windows 8.1、Windows Server 2012 R2 和更高版本中已弃用。    
   
    
   

@@ -14,12 +14,12 @@ keywords:
 - WMI 安全 WDK 设备安装
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 02d33084908fc2e8a1f1cf9d1cddd472290232ca
-ms.sourcegitcommit: 6c42efc074ab939e7737d6c2b016d3f3a75954e1
+ms.openlocfilehash: a8d9484ecd6992c8fd9aebb2f1b0e614adffc41e
+ms.sourcegitcommit: 5ff30ddae453c6439177acde0e2d32eaf234a2c0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90741032"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95030036"
 ---
 # <a name="creating-secure-device-installations"></a>创建安全的设备安装
 
@@ -41,21 +41,21 @@ ms.locfileid: "90741032"
 
 -   正确使用 Setupapi.log 函数
 
-设备安装安全性由 *安全描述符*控制。 用于指定安全描述符的主要媒体是 INF 文件。 系统提供默认安全描述符，在大多数情况下，您不必重写这些描述符。
+设备安装安全性由 *安全描述符* 控制。 用于指定安全描述符的主要媒体是 INF 文件。 系统提供默认安全描述符，在大多数情况下，您不必重写这些描述符。
 
 ### <a name="security-settings-for-devices-and-interfaces"></a>设备和接口的安全设置
 
-系统为所有 [系统提供的设备安装程序类](/previous-versions/ff553419(v=vs.85))提供默认安全描述符。 通常，这些描述符允许对系统管理员具有完全访问权限，并为用户提供读取/写入/执行访问权限。  (控制设备访问权限的安全描述符也控制对设备的 [设备接口类](./overview-of-device-interface-classes.md)（如果有）的访问。 ) 
+系统为所有 [系统提供的设备安装程序类](/windows-hardware/drivers/install/system-defined-device-setup-classes-reserved-for-system-use)提供默认安全描述符。 通常，这些描述符允许对系统管理员具有完全访问权限，并为用户提供读取/写入/执行访问权限。  (控制设备访问权限的安全描述符也控制对设备的 [设备接口类](./overview-of-device-interface-classes.md)（如果有）的访问。 ) 
 
 WDM 驱动程序的 INF 文件可以指定每个类或每个设备的安全设置，这些设置会覆盖系统的默认设置。 创建新设备安装程序类的供应商应为类指定安全描述符。 通常，指定设备特定的安全描述符不是必需的。 如果属于同一类的不同类型设备具有明显不同类型的用户，则提供设备特定的安全描述符可能会很有用。
 
-若要为属于 WDM 设备安装程序类的所有设备指定安全描述符，请在类安装程序的 INF 文件的[**Inf ClassInstall32 部分**](inf-classinstall32-section.md)中使用[**inf AddReg 指令**](inf-addreg-directive.md)。 **AddReg**指令必须指向为**DeviceType**和**Security**注册表项设置值的 "*添加注册表" 部分*。 这些注册表值为指定设备类型的所有设备指定安全描述符。
+若要为属于 WDM 设备安装程序类的所有设备指定安全描述符，请在类安装程序的 INF 文件的 [**Inf ClassInstall32 部分**](inf-classinstall32-section.md)中使用 [**inf AddReg 指令**](inf-addreg-directive.md)。 **AddReg** 指令必须指向为 **DeviceType** 和 **Security** 注册表项设置值的 "*添加注册表" 部分*。 这些注册表值为指定设备类型的所有设备指定安全描述符。
 
-若要为属于 WDM 设备安装程序类的单个设备指定安全描述符，请在设备 INF 文件的[**Inf DDInstall 部分**](inf-ddinstall-hw-section.md)中使用[**inf AddReg 指令**](inf-addreg-directive.md)。 **AddReg**指令必须指向为**DeviceType**和**Security**注册表项设置值的 "*添加注册表" 部分*。 这些注册表值指定与相关[**INF 模型部分**](inf-models-section.md)指定的[硬件 ID](hardware-ids.md)或[兼容 id](compatible-ids.md)匹配的所有设备的安全描述符。
+若要为属于 WDM 设备安装程序类的单个设备指定安全描述符，请在设备 INF 文件的 [**Inf DDInstall 部分**](inf-ddinstall-hw-section.md)中使用 [**inf AddReg 指令**](inf-addreg-directive.md)。 **AddReg** 指令必须指向为 **DeviceType** 和 **Security** 注册表项设置值的 "*添加注册表" 部分*。 这些注册表值指定与相关 [**INF 模型部分**](inf-models-section.md)指定的 [硬件 ID](hardware-ids.md)或 [兼容 id](compatible-ids.md)匹配的所有设备的安全描述符。
 
-默认情况下，系统会将设备的安全描述符集应用于请求，以打开代表设备的设备对象 (例如，打开设备（其 NT 设备名为* \\ 设备 \\ DeviceName*) ）的请求。
+默认情况下，系统会将设备的安全描述符集应用于请求，以打开代表设备的设备对象 (例如，打开设备（其 NT 设备名为 *\\ 设备 \\ DeviceName*) ）的请求。
 
-但是，系统不会默认情况下将设备的安全描述符集应用于请求，以打开设备命名空间中的对象，其中设备命名空间包含其名称格式为* \\ 设备 \\ DeviceName \\ ObjectName*的所有对象。 若要确保对设备的命名空间中的对象的打开请求应用相同的安全设置，请为设备设置 FILE_DEVICE_SECURE_OPEN 设备特征标志。 有关安全设备访问的详细信息，请参阅 [ (Windows 驱动程序) 控制设备命名空间访问 ](../kernel/controlling-device-namespace-access.md)。 有关如何设置 FILE_DEVICE_SECURE_OPEN 设备特征标志的信息，请参阅 [ (Windows 驱动程序) 指定设备特征 ](../kernel/specifying-device-characteristics.md)。
+但是，系统不会默认情况下将设备的安全描述符集应用于请求，以打开设备命名空间中的对象，其中设备命名空间包含其名称格式为 *\\ 设备 \\ DeviceName \\ ObjectName* 的所有对象。 若要确保对设备的命名空间中的对象的打开请求应用相同的安全设置，请为设备设置 FILE_DEVICE_SECURE_OPEN 设备特征标志。 有关安全设备访问的详细信息，请参阅 [ (Windows 驱动程序) 控制设备命名空间访问 ](../kernel/controlling-device-namespace-access.md)。 有关如何设置 FILE_DEVICE_SECURE_OPEN 设备特征标志的信息，请参阅 [ (Windows 驱动程序) 指定设备特征 ](../kernel/specifying-device-characteristics.md)。
 
 PnP 管理器在调用驱动程序的 [**AddDevice**](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_add_device) 例程后设置设备对象上的安全值。 某些 WDM 驱动程序可以在通过调用 [**IoCreateDeviceSecure**](/windows-hardware/drivers/ddi/wdmsec/nf-wdmsec-wdmlibiocreatedevicesecure)创建 (PDO) 的物理设备对象时指定设备特定的安全描述符。 有关详细信息，请参阅 [保护设备对象](../kernel/controlling-device-access.md)。
 
@@ -69,7 +69,7 @@ PnP 管理器在调用驱动程序的 [**AddDevice**](/windows-hardware/drivers/
 
 ### <a name="security-settings-for-device-and-driver-registry-entries"></a>设备和驱动程序注册表项的安全设置
 
-使用[**Inf AddReg 指令**](inf-addreg-directive.md)在 INF 文件中指定注册表项时，可以包含 "*添加注册表" 部分*。每个*添加注册表部分*的**安全性**部分。 " *添加注册表" 部分*。**安全** 部分指定由关联的 " *添加注册表* " 部分创建的注册表项的访问权限。 系统为在 **HKR** 相对根下创建的所有注册表项提供默认安全描述符。 因此，在相对根下创建注册表项时，无需指定安全描述符。
+使用 [**Inf AddReg 指令**](inf-addreg-directive.md)在 INF 文件中指定注册表项时，可以包含 "*添加注册表" 部分*。每个 *添加注册表部分* 的 **安全性** 部分。 " *添加注册表" 部分*。**安全** 部分指定由关联的 " *添加注册表* " 部分创建的注册表项的访问权限。 系统为在 **HKR** 相对根下创建的所有注册表项提供默认安全描述符。 因此，在相对根下创建注册表项时，无需指定安全描述符。
 
 ### <a name="security-settings-for-wmi-classes"></a>WMI 类的安全设置
 
