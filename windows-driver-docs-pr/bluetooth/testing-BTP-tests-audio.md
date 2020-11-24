@@ -1,15 +1,14 @@
 ---
 title: Microsoft 蓝牙测试平台-音频
 description: " (BTP) 音频测试的蓝牙测试平台。"
-ms.assetid: b5b039bb-af0f-446f-9657-aa0e137a3437
 ms.date: 2/14/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: a5dd605688eca2fd96332d7c3fe1baab1aa5aa0d
-ms.sourcegitcommit: 6e6189e3b7f2b376607b507220bd538a296f5b4e
+ms.openlocfilehash: a6e151b877728dcd718046fbe3d1505a5b2d204f
+ms.sourcegitcommit: e184d264c55f0e7e224837ce39ee976ccb4122c2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/18/2020
-ms.locfileid: "90799784"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95820642"
 ---
 # <a name="btp-audio-tests"></a>BTP 音频测试
 
@@ -19,7 +18,7 @@ BTP 音频测试将测试本地系统与远程射频 over BR/EDR 配对的能力
 
 将收音机与 Traduci 一起使用时，请首先检查绿色电源指示器、可选的黄色测试 LED 和 Traduci 上的3个橙色 Led 是否亮起。 确认 SUT 的蓝牙无线电已打开，并且相应的无线电 () 正确插入到 Traduci。 目前，RN52 收音机 **只能** 插入到 JA。 有关设置的更多详细信息，请参阅 [设置 BTP](testing-BTP-setup.md)。
 
-当使用 BM.EXE-64-EVB 时，应 (两个红色 Led，其中一条可能在) 一次后关闭。 确认在 [bm.exe-64-EVB 板概述](testing-BTP-hw-bm64.md#getting-started)中，将开关、跳线和端口配置为以述的形式进行测试。 
+当使用 BM.EXE-64-EVB 时，应 (两个红色 Led，其中一条可能在) 一次后关闭。 确认在 [bm.exe-64-EVB 板概述](testing-BTP-hw-bm64.md#getting-started)中，将开关、跳线和端口配置为以述的形式进行测试。
 
 支持的无线收发器的功能和购买信息可在 [支持的 BTP 硬件](testing-BTP-hw.md)上找到。
 
@@ -44,4 +43,8 @@ BTP 音频测试将测试本地系统与远程射频 over BR/EDR 配对的能力
 
 ## <a name="known-issues"></a>已知问题
 
-- 压力测试：使用 LE 无线电在严格循环中运行测试可能导致配对或取消配对失败。
+- BM64 EVB 有以下4个已知测试失败：
+  - `BluetoothTests::TaefAudioTests::VoiceSinkVolumeUpTest`
+  - `BluetoothTests::TaefAudioTests::VoiceSinkVolumeDownTest`
+  - `BluetoothTests::TaefAudioTests::VoiceSourceVolumeUpTest`
+  - `BluetoothTests::TaefAudioTests::VoiceSourceVolumeDownTest`

@@ -4,12 +4,12 @@ description: 适用于 Windows 的调试工具支持通过 USB 3.0 电缆进行�
 ms.assetid: 9A9F5DA0-B98A-4C19-A723-67D06B2409B5
 ms.date: 05/07/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 97d3e02e61334b20f2d3214a63a3f37dfeed7847
-ms.sourcegitcommit: 67efcd26f7be8f50c92b141ccd14c9c68f4412d8
+ms.openlocfilehash: 48af240c3fe4f7ff9e1fb301c5c8eb6df6ee8d39
+ms.sourcegitcommit: e184d264c55f0e7e224837ce39ee976ccb4122c2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88902559"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95820638"
 ---
 # <a name="setting-up-kernel-mode-debugging-over-a-usb-30-cable-manually"></a>手动设置通过 USB 3.0 线缆进行的内核模式调试
 
@@ -74,7 +74,7 @@ ms.locfileid: "88902559"
 
    **bcdedit/set "{dbgsettings}" busparams** *b.d.f*
 
-   其中， *b*、 *d*和 *f* 是 USB 主机控制器的总线、设备和功能号。 总线、设备和功能号必须为十进制格式。
+   其中， *b*、 *d* 和 *f* 是 USB 主机控制器的总线、设备和功能号。 总线、设备和功能号必须为十进制格式。
 
    示例：
 
@@ -122,6 +122,22 @@ ms.locfileid: "88902559"
 连接调试器后，请重新启动目标计算机。 重新启动计算机的一种方法是在 `shutdown -r -t 0` 管理员的命令提示符下使用命令。
 
 在目标计算机重新启动后，调试器应该会自动连接。
+
+## <a name="troubleshooting"></a>故障排除
+
+### <a name="usb-device-not-recognized"></a>USB 设备无法识别
+
+当插入调试电缆时，如果 windows 通知显示在文本 "USB 设备无法识别" 的主机上，则可能会遇到已知的 USB 3.1 到3.1 兼容性问题。 当调试电缆连接到主机上的 USB 3.1 控制器和目标上的 Intel (Icelake 或 Tigerlake) 3.1 USB 控制器时，此问题会影响调试配置。
+
+若要验证是否出现此问题，请打开 "设备管理器"，然后在 "通用串行总线控制器" 下查找 "USB 调试连接设备"。 如果找不到此设备，请在 "其他设备" 下检查 "未知设备"。 右键单击设备以打开其 "属性" 页。 "设备状态" 文本框将包含文本 "Windows 已停止此设备，因为它报告了问题。  (代码 43) "和" USB 设备返回了无效的 USB BOS 描述符 "。
+
+若要解决此问题，请在管理员命令提示符下运行以下命令以更改注册表：
+```
+reg add HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\usbflags\349500E00000 /v SkipBOSDescriptorQuery /t REG_DWORD /d 1 /f
+reg add HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\usbflags\045E06560000 /v SkipBOSDescriptorQuery /t REG_DWORD /d 1 /f
+```
+
+然后，删除并重新插入调试电缆。
 
 ## <a name="related-topics"></a>相关主题
 
