@@ -4,12 +4,12 @@ description: 了解如何通过搜索文本或选择关键字搜索中的驱动�
 ms.topic: article
 ms.date: 09/24/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: de172b86e5c124223e3167fc32a7db9b01558fb7
-ms.sourcegitcommit: 4f08f5686c0bbc27d58930b993cbab1a98e3afb0
+ms.openlocfilehash: db04ede19fe68093fee155d90348187862ec4dd7
+ms.sourcegitcommit: ea3215e9d5afe073ed6d01fb6dddf31d95ef3b63
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/03/2020
-ms.locfileid: "89443884"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94673763"
 ---
 # <a name="find-a-hardware-submission"></a>查找硬件提交
 
@@ -53,7 +53,7 @@ ms.locfileid: "89443884"
 
 **@OperatingSystemCode:"Windows 10 RS4"**
 
-还可以使用多个属性进行搜索。 使用多个属性就如同将它们包含在 AND 运算符组合中一样。 例如，如果同时搜索产品名称和提交状态 ( **@ProductName:"test" @SubmissionStatus:"Failed"** )，则仪表板只返回与产品名称和提交状态**都**匹配的记录。
+还可以使用多个属性进行搜索。 使用多个属性就如同将它们包含在 AND 运算符组合中一样。 例如，如果同时搜索产品名称和提交状态 ( **@ProductName:"test" @SubmissionStatus:"Failed"** )，则仪表板只返回与产品名称和提交状态 **都** 匹配的记录。
 
 ![硬件仪表板中的“驱动程序”页屏幕截图，其中输入了两个属性：@ProductName:"test" 和 @SubmissionStatus:"Failed"。 所有结果的产品名称中都包含“test”，并且提交状态中都包含“Failed”。](images/two-attribute-search.png)
 
@@ -69,7 +69,7 @@ ms.locfileid: "89443884"
 |SubmissionID |数字|19 位提交 ID|
 |SubmissionName |文本|
 |SubmissionType |文本|Initial、Derived|
-|SubmissionStatus |文本|Complete、Failed、NotSet、Processing、Ready|
+|SubmissionStatus |文本|Complete、Failed、Processing、Ready|
 |IsExtensionDriver |布尔|False、True|
 |IsUniversalDriver |布尔|False、True|
 |IsDeclarativeDriver |布尔|False、True|
