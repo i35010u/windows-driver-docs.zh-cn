@@ -1,49 +1,47 @@
 ---
-title: 将传感器连接到 Shark Cove 板
-description: 本主题提供有关如何将传感器测试开发板连接到 Shark Cove 板指南。
+title: 将传感器连接到带 Cove 板
+description: 本主题提供有关如何将传感器测试板连接到带 Cove 板的指导。
 ms.assetid: B081F4B6-D15E-4F1A-A5C0-E19DA806EAB2
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b4ecd4204e2841db1d5825018d30b8ba4d2cf633
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2477325e8ee4efd1522e67674026e08c257501e6
+ms.sourcegitcommit: 9e5ade5d1a311383016385ae3bc3f0a22da1dfc5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63338374"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95518426"
 ---
-# <a name="connect-your-sensor-to-the-sharks-cove-board"></a>将传感器连接到 Shark Cove 板
+# <a name="connect-your-sensor-to-the-sharks-cove-board"></a>将传感器连接到带 Cove 板
 
 
-本主题提供有关如何将传感器测试开发板连接到 Shark Cove 板指南。
+本主题提供有关如何将传感器测试板连接到带 Cove 板的指导。
 
-在 ADXL345 加速感应器方案中，并进行任何必要的修改后，结果会导致连接到 Shark Cove，如以下关系图中所示的加速感应器测试板起作用。
+在 ADXL345 加速感应方案中，进行任何必要的修改后，最终会将测试板连接到带 Cove，如下图所示。
 
-![shark cove 和 adxl345 加速感应器面板的连接关系图。](images/sensor-header.png)
+![带 cove 和 adxl345 加速感应板的连接关系图。](images/sensor-header.png)
 
-若要实现传感器专题板和 Shark Cove 之间稳定、 可靠的连接，无法启动的焊接 8 pin 的单行男性标头到多个专题板中，在下图中所示。
+若要在传感器分类板与带 Cove 之间实现稳定可靠的连接，可以先焊接将8针单行男标头到专题讨论板上，如下图所示。
 
-![adxl345 加速感应器专题看板，显示 8 pin、 单行男性标头的图像。](images/adxl-header.png)
+![adxl345 加速度分布板的图像，其中显示8针，单行男标头。](images/adxl-header.png)
 
-然后使用功能区的八个女性女性跳线 （如下所示），将传感器专题开发板连接到 Shark Cove，根据上图中连接。
+然后，使用8个女性到女性跳线的功能区 (如下所示) ，根据前面的连接关系图将传感器的带 Cove 连接到该。
 
-![adxl345 传感器 brrakout 板和跳线 8 在线女性女性集。](images/snsr-n-jumpers.png)
+![adxl345 传感器 brrakout 板和8线接线器电线集。](images/snsr-n-jumpers.png)
 
-下面是一些示例如何 ADXL345 数据工作表和 Shark Cove 技术规范修订版 1.0 中的信息帮助我们到达在上图中所示的连接策略：
+下面是有关 ADXL345 数据表中信息和带 Cove 技术规范 Rev 1.0 的一些示例，帮助我们到达上图中所示的连接策略：
 
-**J1C1 PIN4**连接到**VDD**并**CS**加速感应器板上。
+**J1C1 PIN4** 连接到加速感应板上的 **VDD** 和 **CS** 。
 
--   **VDD**供电电压线为数字的接口。 我们决定在双电压配置中，使用加速感应器，还保持较低的功率消耗。 因此，带四个可用的电压 (**J1C1 PIN1-PIN4**) 我们针对两个最低的。 这些选项位于 2.8V **J1C1 PIN3**和 1.8 上的 v **J1C1 PIN4**。 在双电压配置中， **VDD**必须连接到比低电压**VS**。 因此我们已连接**VDD**到**J1C1 PIN4**、 1.8 v 行 Shark Cove 上。
--   **CS**是加速感应器的通信模式选择 pin。 若要启用 I2C 通信模式，您必须将**CS**高，在本例中为**VDD**，这是由负责使用蓝色在线修改[准备在传感器测试板](prepare-your-sensor-test-board.md). 修改将联系两者**VDD**并**CS**到板的加速感应器**J1C1 PIN4**、 1.8 v 行。
+-   **VDD** 是数字接口的供应电压线。 我们决定在采用双电压配置的情况下使用加速感应，同时保持功耗低。 那么，在四个可用电压 (**J1C1 PIN1-PIN4**) 我们的目标是这两个最低电压。 **J1C1 PIN4** 上的 **J1C1 PIN3** 和 1.8 v 上都是 2.8 v。 在双电压配置中， **VDD** 必须连接到低于 **VS** 的电压。 我们已将 **VDD** 连接到 **J1C1 PIN4**，带 Cove 上的 1.8 v 线。
+-   **CS** 是用于加速感应的通信模式选择 pin。 若要启用 I2C 通信模式，必须将 **CS** 高，在本例中为 **VDD**，这是在 [准备传感器测试板](prepare-your-sensor-test-board.md)中使用蓝线进行修改时处理的。 修改会将 **VDD** 和 **CS** 从加速感应板与 **J1C1 PIN4**（1.8 v 线）结合在一起。
 
-**J1C1 PIN12**连接到**SDO**加速感应器板上。
+**J1C1 PIN12** 连接到加速板上的 **SDO** 。
 
--   当**SDO**行量较高，加速感应器板的 7 位 I2C 地址 0x1D 后, 跟的读/写位。 当**SDO**行较低 （即连接到接地）、 加速感应器板的 I2C 地址是 0x53 后, 跟的读/写位。 在 Microsoft SPBAccelerometer 示例中，因此决定将使用 0x53 的地址。 而这正是**SDO**线路连接到接地引脚 (**J1C1 PIN12**) Shark Cove 上。
+-   当 **SDO** 行较高时，加速感应板的7位 I2C 地址是0x1D，后跟 R/W 位。 当 **SDO** 行 (（即连接到地面) ）时，加速感应板的 I2C 地址为0x53，后跟 R/W 位。 在 Microsoft SPBAccelerometer 示例中，决定使用0x53 的地址。 这就是在带 Cove 上， **SDO** 行连接到地面 (**J1C1 PIN12**) 的原因。
 
-中的信息通过前面的项目符号中所述的连接决策*操作从理论上讲*部分 （第 6 页） 和*串行通信*ADXL345 数据部分 （第 8 页）工作表。
+前面的项目符号中所述的连接决定基于 " *操作理论* " 部分中的信息， (第6页) 和 ADXL345 数据表 (第) 8 页的 *串行通信* 部分。
 
-有关详细 Shark Cove 板有关技术信息，请参阅[Shark Cove 示意](https://firmware.intel.com/sites/default/files/Sharks_Cove_Schematic.pdf)。
-
-已成功连接后在传感器测试板到 Shark Cove，读取下一主题以获取有关如何指导[编写和部署通用传感器驱动程序](write-and-deploy-your-universal-sensor-driver.md)。
+成功将传感器测试板连接到带 Cove 后，请阅读下一主题，了解有关如何 [编写和部署通用传感器驱动程序](write-and-deploy-your-universal-sensor-driver.md)的指南。
 
  
 
