@@ -4,12 +4,12 @@ description: 适用于 Windows 的调试工具支持通过 USB 3.0 电缆进行�
 ms.assetid: 9A9F5DA0-B98A-4C19-A723-67D06B2409B5
 ms.date: 05/07/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 48af240c3fe4f7ff9e1fb301c5c8eb6df6ee8d39
-ms.sourcegitcommit: e184d264c55f0e7e224837ce39ee976ccb4122c2
+ms.openlocfilehash: 73b304cfebe1568391c9fdc435c653e4992904ca
+ms.sourcegitcommit: 5a73142b3ff11a4f7713de5cfce71b82a5afb5fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95820638"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95872251"
 ---
 # <a name="setting-up-kernel-mode-debugging-over-a-usb-30-cable-manually"></a>手动设置通过 USB 3.0 线缆进行的内核模式调试
 
@@ -127,7 +127,9 @@ ms.locfileid: "95820638"
 
 ### <a name="usb-device-not-recognized"></a>USB 设备无法识别
 
-当插入调试电缆时，如果 windows 通知显示在文本 "USB 设备无法识别" 的主机上，则可能会遇到已知的 USB 3.1 到3.1 兼容性问题。 当调试电缆连接到主机上的 USB 3.1 控制器和目标上的 Intel (Icelake 或 Tigerlake) 3.1 USB 控制器时，此问题会影响调试配置。
+当插入调试电缆时，如果 windows 通知显示在文本 "USB 设备无法识别" 的主机上，则可能会遇到已知的 USB 3.1 到3.1 兼容性问题。 当调试电缆连接到主机上的 USB 3.1 控制器，以及目标上的 Intel (冰 Lake 或 Tiger Lake) 3.1 USB 控制器时，此问题会影响调试配置。
+
+有关详细信息和处理器型号列表，请参阅 [Ice lake (微处理器) -维基百科](https://en.wikipedia.org/wiki/Ice_Lake_(microprocessor)) 和或 [Tiger Lake (微处理器) -维基百科](https://en.wikipedia.org/wiki/Tiger_Lake_(microprocessor))。 若要查找目标计算机的处理器型号，请打开 "设置" 应用，然后依次指向 "系统" 和 "关于"。 "处理器" 将在 "设备规范" 下列出。
 
 若要验证是否出现此问题，请打开 "设备管理器"，然后在 "通用串行总线控制器" 下查找 "USB 调试连接设备"。 如果找不到此设备，请在 "其他设备" 下检查 "未知设备"。 右键单击设备以打开其 "属性" 页。 "设备状态" 文本框将包含文本 "Windows 已停止此设备，因为它报告了问题。  (代码 43) "和" USB 设备返回了无效的 USB BOS 描述符 "。
 
