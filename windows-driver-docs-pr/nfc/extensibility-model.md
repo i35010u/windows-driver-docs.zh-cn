@@ -10,15 +10,14 @@ keywords:
 - NFP
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3d847dc06732c0a9471f2a5d6e20c9692b962f06
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: a9c8a49ac6951c285c67c3f1c46cf36840eddf4a
+ms.sourcegitcommit: 0c3cab853b0b75149b7604eef03275f997792a84
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89382019"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96157345"
 ---
 # <a name="nfc-class-extension-extensibility-model"></a>NFC 类扩展扩展性模型
-
 
 NFC 类扩展驱动程序的主要用途是提供客户端驱动程序，以灵活地添加 NCI 规范未涵盖的特定于芯片组的 NCI 专用扩展。
 
@@ -26,13 +25,11 @@ NFC 类扩展驱动程序的主要用途是提供客户端驱动程序，以灵�
 
 NFC 类扩展驱动程序为 NFC 客户端驱动程序提供了三个扩展点：
 
--   [序列处理](sequence-handling.md)
--   RF 协议和接口扩展性
--   NCI 数据包处理
+- [序列处理](sequence-handling.md)
+- RF 协议和接口扩展性
+- NCI 数据包处理
 
- 
-
- 
 ## <a name="related-topics"></a>相关主题
-[NFC 设备驱动程序接口 (DDI) 概述](/windows-hardware/drivers/ddi/index)  
-[ (CX) 参考的 NFC 类扩展](/windows-hardware/drivers/ddi/index)
+
+[NFC 设备驱动程序接口 (DDI) 概述](/windows-hardware/drivers/ddi/_nfpdrivers)  
+[ (CX) 参考的 NFC 类扩展](/windows-hardware/drivers/ddi/nfccx)

@@ -4,12 +4,12 @@ description: 帐户预配
 ms.assetid: 3ffcd769-253f-4918-8095-a9206445a201
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6017b4108702b716c78704d6ef2776938250ecee
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 18d90c86107bbd3d55964e841406dcceac33bf0e
+ms.sourcegitcommit: 0c3cab853b0b75149b7604eef03275f997792a84
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90717394"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96157343"
 ---
 # <a name="account-provisioning"></a>帐户预配
 
@@ -61,7 +61,7 @@ ms.locfileid: "90717394"
 
 - [全球](#global)
 
-- [激活](#activation)
+- [启动](#activation)
 
 - [移动宽带信息](#mobile-broadband-information)
 
@@ -69,9 +69,9 @@ ms.locfileid: "90717394"
 
 - [计划信息](#plan-information)
 
-- [“刷新”](#refresh)
+- [刷新](#refresh)
 
-- [签名](#signature)
+- [信号](#signature)
 
 - [允许的组合](#permitted-combinations)
 
@@ -81,7 +81,7 @@ ms.locfileid: "90717394"
 
 每个设置文件中都需要全局部分。 本节中所需的元素如下所示：
 
-- [**CarrierId**](/uwp/schemas/mobilebroadbandschema/carriercontrolschema/element-carrierid) 一个 GUID，用于唯一标识创作文件的组织。 如果要生成移动宽带应用，则必须使用在服务元数据包中**ServiceInfo.xml**的 "[服务编号](../dashboard/index.yml)" 字段中指定的 GUID。 有关服务元数据包架构的信息，请参阅 [服务元数据包架构参考](mobilebroadbandinfo-xml-schema.md)。
+- [**CarrierId**](/uwp/schemas/mobilebroadbandschema/carriercontrolschema/element-carrierid) 一个 GUID，用于唯一标识创作文件的组织。 如果要生成移动宽带应用，则必须使用在服务元数据包中 **ServiceInfo.xml** 的 "[服务编号](../dashboard/index.yml)" 字段中指定的 GUID。 有关服务元数据包架构的信息，请参阅 [服务元数据包架构参考](mobilebroadbandinfo-xml-schema.md)。
 
   > [!NOTE]
   > 这与你在 Windows 开发人员中心仪表板–硬件上 **创建移动宽带体验向导** 中提供的服务编号相同。
@@ -97,7 +97,7 @@ ms.locfileid: "90717394"
 
     **重新注册** 断开连接并注册到操作员网络。
 
-- **数据** 要发送到设备以激活连接的数据或说明。 预配引擎将此数据按原样传递到设备。 对于 CDMA，这可能包括说明** \* 228**的说明，以启动 OTA 编程会话并重新连接到网络。
+- **数据** 要发送到设备以激活连接的数据或说明。 预配引擎将此数据按原样传递到设备。 对于 CDMA，这可能包括说明 **\* 228** 的说明，以启动 OTA 编程会话并重新连接到网络。
 
 ### <a name="mobile-broadband-information"></a>移动宽带信息
 
@@ -121,7 +121,7 @@ ms.locfileid: "90717394"
             <AccessString>contoso.com</AccessString>
             <UserLogonCred>
               <UserName>mbuser</UserName>
-              <Password>mbpass</Password>
+              <Password>[PLACEHOLDER]</Password>
             </UserLogonCred>
           </Context>
         </DefaultProfile>
@@ -133,9 +133,9 @@ ms.locfileid: "90717394"
 > [!IMPORTANT]
 > 从 Windows 10 版本1709开始，ProvisioningAgent API 预配的品牌字段已替换为 COSA 数据库中的署名字段。 **徽标** 已替换为 COSA 中的 **品牌图标** ， **名称** 已替换为 COSA 中的 **品牌名称** 。
 >
-> 在 Windows 10 版本1709及更高版本中进行设置时，将不再考虑**徽标**和**名称**。 如果使用 ProvisioningAgent API，则它不会引发错误，但应改为在 COSA 中更改 **品牌图标** 和 **品牌名称** 。  
+> 在 Windows 10 版本1709及更高版本中进行设置时，将不再考虑 **徽标** 和 **名称**。 如果使用 ProvisioningAgent API，则它不会引发错误，但应改为在 COSA 中更改 **品牌图标** 和 **品牌名称** 。  
 >
-> 有关 **品牌图标** 和 **品牌名称**的详细信息，请参阅 [desktop COSA/APN 数据库设置 (桌面 COSA 仅) 设置 ](desktop-cosa-apn-database-settings.md#desktop-cosa-only-settings)。
+> 有关 **品牌图标** 和 **品牌名称** 的详细信息，请参阅 [desktop COSA/APN 数据库设置 (桌面 COSA 仅) 设置](desktop-cosa-apn-database-settings.md#desktop-cosa-only-settings)。
 
 署名允许指定 Windows 显示移动宽带网络的方式。 此信息将覆盖任何服务元数据（如果存在）。 如果未提供任何信息，则使用服务元数据包的内容。 品牌元素如下所示：
 
@@ -169,7 +169,7 @@ ms.locfileid: "90717394"
 
   - **使用情况、UsagePercentage、UsageOverage、UsageOveragePercentage**：以数据上限的百分比形式表示当前使用量，以超出数据限制的数字或超出数据限制的百分比表示。 绝对值可以引用指定值表示单位的组。
 
-  - **UsageTimestamp**：计算用量字段的日期和时间。 如果包括任何**Usage \\ *** 字段，则必须包括此信息。 格式字符串包含以下标识符，以表达应如何解释子字符串：
+  - **UsageTimestamp**：计算用量字段的日期和时间。 如果包括任何 **使用情况 \\** _ 字段，则必须包括此信息。 格式字符串包含以下标识符，以表达应如何解释子字符串：
 
     |标识符|说明|
     |----|----|
@@ -184,7 +184,7 @@ ms.locfileid: "90717394"
     |% p|AM/PM 指示符|
     |% #d，% #H，% #I，% #m，% #M，% #S，% #y，% #Y|与上面相同，但没有前导零|
 
-  - **DataLimit**：允许用户使用的绝对字节数;这包括指定表示值的单位的组。
+  - _ * DataLimit * *：允许用户使用的绝对字节数;这包括指定表示值的单位的组。
 
   - **OverDataLimit，拥塞**：修改报告给应用的标志，以指示用户已超出其数据限制或网络负载过高。
 
@@ -192,11 +192,12 @@ ms.locfileid: "90717394"
 
   - **PlanType**：指定如何向用户收费以供将来使用。
 
-**警告**   由于 SMS 消息会影响 Windows 行为，因此只能使用受信任的 SMS 消息。 通过限制发送方地址来维护安全性。 此安全方法假设你的网络的 SMS 网关可确保来自受限制发送方的消息不会被欺骗。
+**警告**  
+由于 SMS 消息会影响 Windows 行为，因此只能使用受信任的 SMS 消息。 通过限制发送方地址来维护安全性。 此安全方法假设你的网络的 SMS 网关可确保来自受限制发送方的消息不会被欺骗。
 
-### <a name="wi-fi-information"></a>Wi-fi 信息
+### <a name="wi-fi-information"></a>Wi-Fi 信息
 
-本部分允许你提供适用于 Windows 的任意数量的 Wi-fi 网络配置文件。 部分的格式类似于 Windows native WLAN API 使用的 XML 架构。
+本部分允许你为 Windows 提供任意数量的 Wi-Fi 网络配置文件。 部分的格式类似于 Windows native WLAN API 使用的 XML 架构。
 
 > [!NOTE]
 > 一个配置文件可以包含多个 Ssid，如果所有其他设置相同。 如果不同的网络)  (身份验证方法、加密设置、计划等不同的方式，则必须创建其他配置文件。
@@ -268,7 +269,7 @@ ms.locfileid: "90717394"
       </authEncryption>
       <HotspotProfile xmlns="http://www.microsoft.com/networking/WLAN/HotspotProfile/v1">
         <UserName>WisprUser1</UserName>
-        <Password>password1</Password>
+        <Password>[PLACEHOLDER]</Password>
         <TrustedDomains>
           <TrustedDomain>www.contosoportal.com</TrustedDomain>
         </TrustedDomains>
@@ -280,7 +281,7 @@ ms.locfileid: "90717394"
 
 #### <a name="encrypted-network-eap-sim-authentication"></a>加密网络，EAP-SIM 身份验证
 
-此配置文件将 Windows 配置为使用 SIM 作为身份验证类型（如热点2.0 网络）连接到加密网络。 热点2.0 将此类网络定义为将 WPA2-Enterprise 用于 EAP-SIM 身份验证。
+此配置文件将 Windows 配置为使用 SIM 作为身份验证类型（如热点2.0 网络）连接到加密网络。 热点2.0 将此类网络定义为使用带有 EAP-SIM 身份验证 WPA2-Enterprise。
 
 ``` syntax
 <WLANProfile xmlns="http://www.microsoft.com/networking/CarrierControl/WLAN/v1">
@@ -374,13 +375,13 @@ ms.locfileid: "90717394"
 
   - **无限制** 使用不会产生额外的费用。
 
-  - 已**修复**为用户分配了一定量的固定成本。
+  - 已 **修复** 为用户分配了一定量的固定成本。
 
   - **变量** 用户根据使用情况付费。
 
 - [**SecurityUpdatesExempt**](/uwp/schemas/mobilebroadbandschema/plans/element-securityupdatesexempt) 指定安全更新是否计入客户使用情况的布尔值。
 
-- [**DataLimitInMegabytes**](/uwp/schemas/mobilebroadbandschema/plans/element-datalimitinmegabytes) 如果 [**PlanType**](/uwp/schemas/mobilebroadbandschema/wwan/element-plantype) 是 **固定**的，则为用户分配的使用情况。
+- [**DataLimitInMegabytes**](/uwp/schemas/mobilebroadbandschema/plans/element-datalimitinmegabytes) 如果 [**PlanType**](/uwp/schemas/mobilebroadbandschema/wwan/element-plantype) 是 **固定** 的，则为用户分配的使用情况。
 
 - [**BillingCycle**](/uwp/schemas/mobilebroadbandschema/plans/element-billingcycle) 定义计划的开始日期和时间、持续时间和计费周期结束后发生的情况。
 
@@ -396,7 +397,7 @@ ms.locfileid: "90717394"
 
 - [**UsageInMegabytes**](/uwp/schemas/mobilebroadbandschema/dusm/element-usageinmegabytes) 用户最近的数据使用情况。
 
-- [**OverDataLimit**](/uwp/schemas/mobilebroadbandschema/wwan/element-overdatalimit) 一个布尔值，如果 [**PlanType**](/uwp/schemas/mobilebroadbandschema/wwan/element-plantype) 是 **固定**的，则指示用户是否已通过分配的使用情况。
+- [**OverDataLimit**](/uwp/schemas/mobilebroadbandschema/wwan/element-overdatalimit) 一个布尔值，如果 [**PlanType**](/uwp/schemas/mobilebroadbandschema/wwan/element-plantype) 是 **固定** 的，则指示用户是否已通过分配的使用情况。
 
 - [**阻塞**](/uwp/schemas/mobilebroadbandschema/wwan/element-congested) 一个布尔值，指示是否由于过度使用而强加比平时更低的连接速度。 阻塞标志表明网络当前正在 (或预期会经历) 重负载，而较低优先级的传输应推迟到其他时间（如果可能）。 您可以使用此标志来指示诸如高峰时间等概念，或响应重载的热点。
 
@@ -410,7 +411,7 @@ ms.locfileid: "90717394"
 
 - [**RefreshURL**](/uwp/schemas/mobilebroadbandschema/carriercontrolschema/element-refreshurl) 用于获取用户预配文件的最新副本的 HTTPS URL。
 
-- [**用户名**](/uwp/schemas/mobilebroadbandschema/carriercontrolschema/element-username)  & [**密码**](/uwp/schemas/mobilebroadbandschema/carriercontrolschema/element-password)检索重新设置文件时，通过使用 HTTP 身份验证提供的可选凭据。 此信息必须在存储时加密。
+- [**用户名**](/uwp/schemas/mobilebroadbandschema/carriercontrolschema/element-username)  & [**密码**](/uwp/schemas/mobilebroadbandschema/carriercontrolschema/element-password)检索重新设置文件时，使用 HTTP-Auth 显示的可选凭据。 此信息必须在存储时加密。
 
 或者，移动宽带应用可以基于应用与操作员后端之间的通信，随时提供新的设置文件。
 
@@ -418,8 +419,8 @@ ms.locfileid: "90717394"
 <RefreshParameters>
       <DelayInDays>30</DelayInDays>
       <RefreshURL>https://www.contoso.com/refresh</RefreshURL>
-      <Username>foo</Username>
-      <Password>bar</Password>
+      <Username>[PLACEHOLDER]</Username>
+      <Password>[PLACEHOLDER]</Password>
     </RefreshParameters>
 ```
 
@@ -433,7 +434,7 @@ ms.locfileid: "90717394"
 |----|----|----|----|
 |是，MB 提供程序|移动宽带应用|无|无|
 |是，MB 提供程序|Operator 网站|证书必须：</br>-链接回受信任的根 CA。</br>-与 APN 数据库中的移动宽带硬件或体验元数据相关联。|无|
-|否，Wi-fi 提供程序|Mobile 宽带 appor 网站|证书必须：</br>-链接回受信任的根 CA。</br>-标记为进行扩展验证。|首次使用证书时，系统会提示用户确认;此后不需要确认。|
+|不，Wi-Fi 提供程序|Mobile 宽带 appor 网站|证书必须：</br>-链接回受信任的根 CA。</br>-标记为进行扩展验证。|首次使用证书时，系统会提示用户确认;此后不需要确认。|
 
 ### <a name="permitted-combinations"></a>允许的组合
 
@@ -455,7 +456,7 @@ ms.locfileid: "90717394"
 
 - [预配设备以便自动连接到移动宽带网络](#provision-the-device-to-connect-automatically-to-a-mobile-broadband-network)
 
-- [预配设备以便自动连接到 Wi-fi 网络](#provision-the-device-to-connect-automatically-to-a-wi-fi-network)
+- [将设备设置为自动连接到 Wi-Fi 网络](#provision-the-device-to-connect-automatically-to-a-wi-fi-network)
 
 - [将设备设置为自动连接到启用了 WISPr 的热点](#provision-the-device-to-connect-automatically-to-a-wispr-enabled-hotspot)
 
@@ -477,7 +478,7 @@ XSD 架构在运行 Windows 8、Windows 8.1 或 Windows 10 的任何计算机上
 
 若要从移动宽带应用进行预配：
 
-1. 使用[**ProvisioningAgent**](/uwp/api/Windows.Networking.NetworkOperators.ProvisioningAgent#Windows_Networking_NetworkOperators_ProvisioningAgent_CreateFromNetworkAccountId_System_String_)) 实例化 (的[**ProvisioningAgent**](/uwp/api/Windows.Networking.NetworkOperators.ProvisioningAgent)实例。
+1. 使用 [**ProvisioningAgent**](/uwp/api/Windows.Networking.NetworkOperators.ProvisioningAgent#Windows_Networking_NetworkOperators_ProvisioningAgent_CreateFromNetworkAccountId_System_String_)) 实例化 (的 [**ProvisioningAgent**](/uwp/api/Windows.Networking.NetworkOperators.ProvisioningAgent)实例。
 
 2. 调用 [**ProvisionFromXmlDocumentAsync**](/uwp/api/Windows.Networking.NetworkOperators.ProvisioningAgent#Windows_Networking_NetworkOperators_ProvisioningAgent_ProvisionFromXmlDocumentAsync_System_String_)，传入未签名的预配 XML 文档。
 
@@ -521,7 +522,7 @@ XSD 架构在运行 Windows 8、Windows 8.1 或 Windows 10 的任何计算机上
               <AccessString>apn</AccessString>
               <UserLogonCred>
                   <UserName>username</UserName>
-                  <Password>password</Password>
+                  <Password>[PLACEHOLDER]</Password>
               </UserLogonCred>
           </Context>
       </DefaultProfile>
@@ -530,9 +531,9 @@ XSD 架构在运行 Windows 8、Windows 8.1 或 Windows 10 的任何计算机上
 ```
 
 > [!NOTE]
-> **DefaultProfile**的子元素是必需的。 有关更多详细信息，请参阅预配 XML 架构参考。
+> **DefaultProfile** 的子元素是必需的。 有关更多详细信息，请参阅预配 XML 架构参考。
 
-### <a name="provision-the-device-to-connect-automatically-to-a-wi-fi-network"></a>预配设备以便自动连接到 Wi-fi 网络
+### <a name="provision-the-device-to-connect-automatically-to-a-wi-fi-network"></a>将设备设置为自动连接到 Wi-Fi 网络
 
 可以使用 **WlanProfiles** 节定义预配 XML 文档。
 
@@ -565,7 +566,7 @@ XSD 架构在运行 Windows 8、Windows 8.1 或 Windows 10 的任何计算机上
 </CarrierProvisioning>
 ```
 
-**MSM**的子元素定义了如何连接到网络。 这包括任何必需的 EAP 配置。 支持 [WLAN \_ 配置文件架构](/windows/desktop/NativeWiFi/wlan-profileschema-schema) 中 MSM 元素的所有子元素。 有关更多详细信息，请参阅预配 XML 架构参考。
+**MSM** 的子元素定义了如何连接到网络。 这包括任何必需的 EAP 配置。 支持 [WLAN \_ 配置文件架构](/windows/desktop/NativeWiFi/wlan-profileschema-schema) 中 MSM 元素的所有子元素。 有关更多详细信息，请参阅预配 XML 架构参考。
 
 ### <a name="provision-the-device-to-connect-automatically-to-a-wispr-enabled-hotspot"></a>将设备设置为自动连接到启用了 WISPr 的热点
 
@@ -593,8 +594,8 @@ XSD 架构在运行 Windows 8、Windows 8.1 或 Windows 10 的任何计算机上
               </authEncryption>
               <HotspotProfile xmlns="http://www.microsoft.com/networking/WLAN/HotspotProfile/v1">
                 <BasicAuth>
-                  <UserName>Alice</UserName>
-                  <Password>secret</Password>
+                  <UserName>[PLACEHOLDER]</UserName>
+                  <Password>[PLACEHOLDER]</Password>
                 </BasicAuth>
                 <TrustedDomains>
                   <TrustedDomain>hotspot.contoso.com</TrustedDomain>
@@ -646,7 +647,7 @@ XSD 架构在运行 Windows 8、Windows 8.1 或 Windows 10 的任何计算机上
 
 ### <a name="sending-activation-to-the-mobile-broadband-device"></a>将激活发送到移动宽带设备
 
-[**CarrierSpecificData**](/uwp/schemas/mobilebroadbandschema/wwan/element-carrierspecificdata)元素内包含的任意二进制大型对象 (BLOB) 可以使用 ProvisioningAgent 进行 Base64 编码并发送到设备。 可以通过在预配 XML 中**使用 &lt; Activation &gt; ServiceActivatation**指令来完成此操作：
+[**CarrierSpecificData**](/uwp/schemas/mobilebroadbandschema/wwan/element-carrierspecificdata)元素内包含的任意二进制大型对象 (BLOB) 可以使用 ProvisioningAgent 进行 Base64 编码并发送到设备。 可以通过在预配 XML 中 **使用 &lt; Activation &gt; ServiceActivatation** 指令来完成此操作：
 
 ``` syntax
 <?xml version="1.0"?>
@@ -716,7 +717,7 @@ XSD 架构在运行 Windows 8、Windows 8.1 或 Windows 10 的任何计算机上
 
 可以通过以下方式之一完成此操作：
 
-- 指定操作员消息，接收操作员通知消息，使用 SMS API 读取消息，分析应用程序中的消息，然后通过使用 **IProvisionedProfile**设置使用情况。
+- 指定操作员消息，接收操作员通知消息，使用 SMS API 读取消息，分析应用程序中的消息，然后通过使用 **IProvisionedProfile** 设置使用情况。
 
 - 指定具有有效的使用字段组合的操作员消息规则，并直接在短信中提供更新的使用情况。
 
@@ -734,7 +735,7 @@ XSD 架构在运行 Windows 8、Windows 8.1 或 Windows 10 的任何计算机上
 
 ### <a name="partial-provisioning-failures"></a>部分预配失败
 
-由于各种原因，预配操作部分可能不会成功。 例如，你可能有一个对 Wi-fi 硬件的引用，在设置时不会出现此情况。 预配代理会尽力尝试预配文件中的所有内容。 如果出现故障，则会在使用 [**ProvisionFromXmlDocumentAsync**](/uwp/api/Windows.Networking.NetworkOperators.ProvisioningAgent#Windows_Networking_NetworkOperators_ProvisioningAgent_ProvisionFromXmlDocumentAsync_System_String_)异步返回的预配结果中进行说明。
+由于各种原因，预配操作部分可能不会成功。 例如，你可能有一个对在预配时未提供 Wi-Fi 硬件的引用。 预配代理会尽力尝试预配文件中的所有内容。 如果出现故障，则会在使用 [**ProvisionFromXmlDocumentAsync**](/uwp/api/Windows.Networking.NetworkOperators.ProvisioningAgent#Windows_Networking_NetworkOperators_ProvisioningAgent_ProvisionFromXmlDocumentAsync_System_String_)异步返回的预配结果中进行说明。
 
 结果以 XML 形式返回，并可进行分析以发现失败。 元素提供结构以显示失败的内容， **错误代码** 属性以标准 HRESULT 的形式指示失败的原因。
 
@@ -758,7 +759,7 @@ XSD 架构在运行 Windows 8、Windows 8.1 或 Windows 10 的任何计算机上
 
 ### <a name="event-logs"></a>事件日志
 
-**应用程序和服务中的事件记录 \\ Microsoft \\ Windows \\ NetworkProvisioning \\ 操作**通道可提供有关预配失败的详细反馈。
+**应用程序和服务中的事件记录 \\ Microsoft \\ Windows \\ NetworkProvisioning \\ 操作** 通道可提供有关预配失败的详细反馈。
 
 ### <a name="powershell-provisioningtesthelper-module"></a>PowerShell ProvisioningTestHelper 模块
 
@@ -768,7 +769,7 @@ XSD 架构在运行 Windows 8、Windows 8.1 或 Windows 10 的任何计算机上
 Import-Module "<path_to_sdk>\bin\<arch>\ProvisioningTestHelper.psd1"
 ```
 
-其中， &lt; * \_ \_ \\ \\ &lt; sdk bin 的路径是 windows 8、Windows 8.1 或 windows 10 sdk 的安装位置，它们对应于计算机的体系结构。 &gt; * &gt;
+其中， &lt; *\_ \_ \\ \\ &lt; sdk bin 的路径是 windows 8、Windows 8.1 或 windows 10 sdk 的安装位置，它们对应于计算机的体系结构。 &gt;* &gt;
 
 导入此模块后，以下四个 PowerShell cmdlet 可用：
 
@@ -778,9 +779,9 @@ Import-Module "<path_to_sdk>\bin\<arch>\ProvisioningTestHelper.psd1"
     Install-TestEVCert -CertName <Certificate Name> -RootCertOutputPath <complete path to the folder to which the root certificate is to be exported>
     ```
 
-    该客户端证书的名称与命令中指定的名称相同，并且根证书将 "Root" 与客户端证书名称一起附加到该证书。 *-CertName*参数是可选的。 如果未指定– CertName 参数，则使用 **MBAPTestCert** 。
+    该客户端证书的名称与命令中指定的名称相同，并且根证书将 "Root" 与客户端证书名称一起附加到该证书。 *-CertName* 参数是可选的。 如果未指定– CertName 参数，则使用 **MBAPTestCert** 。
 
-    *-RootCertOutputPath*参数也是可选的。 如果要使用 RootCertFromFile cmdlet 导出要安装在另一台计算机上的根证书，则应使用此方法。
+    *-RootCertOutputPath* 参数也是可选的。 如果要使用 Install-RootCertFromFile cmdlet 导出要安装在另一台计算机上的根证书，则应使用此方法。
 
 - **安装-RootCertFromFile** 在另一台计算机上应用测试根证书，以测试开发计算机以外的计算机上的客户端体验。
 
@@ -788,7 +789,7 @@ Import-Module "<path_to_sdk>\bin\<arch>\ProvisioningTestHelper.psd1"
     Install-RootCertFromFile -CertFile <complete path to the root certificate>
     ```
 
-- **Convertto-html-SignedXml** 使用 (为测试生成的 EV 证书，或由第三方提供程序颁发的 EV 证书) 将 DSig 签名应用到预配 XML 文件。 受信任的证书中的此签名会导致 Windows 将预配文件从没有关联硬件的移动宽带应用接受为有效。
+- **Convertto-html-SignedXml** 使用 (为测试生成的 EV 证书，或由第三方提供程序颁发的 EV 证书) 将 XML-DSig 签名应用于预配 XML 文件。 受信任的证书中的此签名会导致 Windows 将预配文件从没有关联硬件的移动宽带应用接受为有效。
 
     ``` syntax
     ConvertTo-SignedXml -InputFile <complete path to the input XML file> -OutputFile <complete path to the output XML file> -CertName <name of the certificate used to sign the xml>

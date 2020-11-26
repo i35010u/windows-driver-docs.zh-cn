@@ -4,12 +4,12 @@ description: 移动运营商通知事件技术详细信息
 ms.assetid: 639f238a-4bb4-4ac0-9b59-92a761dbc351
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3c989b43146b4594a32dc3989778881254da2042
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 32c9e938a80a9680f1b13d15b4c3052251eea9ab
+ms.sourcegitcommit: 0c3cab853b0b75149b7604eef03275f997792a84
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89212559"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96157273"
 ---
 # <a name="mobile-operator-notification-event-technical-details"></a>移动运营商通知事件技术详细信息
 
@@ -31,9 +31,9 @@ MobileOperatorNotification 事件负载包括以下字段：
 |**Interface**|与事件关联的物理接口对应的 GUID。|
 |**EncodingType**|如果 **MessageType** 为 SMS/USSD，则为消息编码方法。|
 |**MessageDataSize**|如果 **MessageType** 为 SMS/USSD，则为消息大小（以字节为单位）。|
-|**消息**|如果 **MessageType** 为 SMS/USSD，则接收到的原始消息。|
+|**Message**|如果 **MessageType** 为 SMS/USSD，则接收到的原始消息。|
 
-MobileOperatorNotification 事件通过使用事件负载中的**MessageType**字段，来区分[移动运营商通知方案](mobile-operator-notification-scenarios.md)中描述的每个方案。 **MessageType**的枚举如下：
+MobileOperatorNotification 事件通过使用事件负载中的 **MessageType** 字段，来区分 [移动运营商通知方案](mobile-operator-notification-scenarios.md)中描述的每个方案。 **MessageType** 的枚举如下：
 
 |枚举|类型|
 |----|----|
@@ -49,11 +49,11 @@ MobileOperatorNotification 事件通过使用事件负载中的**MessageType**�
 |9|RegisteredHome|
 |10|TetheringEntitlementCheck|
 
-与 MobileOperatorNotification 事件相关联的工作项应以有效区分 **MessageType**的逻辑开始，并为每个方案运行相应的代码。
+与 MobileOperatorNotification 事件相关联的工作项应以有效区分 **MessageType** 的逻辑开始，并为每个方案运行相应的代码。
 
 ### <a name="gsmcdma-sms-and-ussd"></a>GSM/CDMA 短信和 USSD
 
-传入的操作员消息（包括短信和 USSD）将触发 MobileOperatorNotification 事件以及相应的 **MessageType**。 这些类型的独特之处是 **EncodingType**、 **MessageDataSize**和 **Message**。
+传入的操作员消息（包括短信和 USSD）将触发 MobileOperatorNotification 事件以及相应的 **MessageType**。 这些类型的独特之处是 **EncodingType**、 **MessageDataSize** 和 **Message**。
 
 ### <a name="dataplanthresholdreached"></a>DataPlanThresholdReached
 
@@ -74,7 +74,7 @@ MobileOperatorNotification 事件通过使用事件负载中的**MessageType**�
         <AccessString>Contoso.com</AccessString>
         <UserLogonCred>
           <UserName>User</UserName>
-          <Password>pass</Password>
+          <Password>[PLACEHOLDER]</Password>
         </UserLogonCred>
       </Context>
     </DefaultProfile>
@@ -109,28 +109,28 @@ Windows 8 中的本地数据计数器每分钟更新一次;在所有描述的方
 
 ### <a name="dataplandeleted"></a>DataPlanDeleted
 
-对于具有固定到期日期的预先支付的数据计划，DUSM 会删除与帐户相关联的到期日期的连接配置文件，并使用此 **MessageType**触发 MobileOperatorNotification 事件。 当连接配置文件被删除后，Windows 连接管理器不再尝试自动连接到连接配置文件描述的网络。
+对于具有固定到期日期的预先支付的数据计划，DUSM 会删除与帐户相关联的到期日期的连接配置文件，并使用此 **MessageType** 触发 MobileOperatorNotification 事件。 当连接配置文件被删除后，Windows 连接管理器不再尝试自动连接到连接配置文件描述的网络。
 
 ### <a name="profileconnected-and-profiledisconnected"></a>ProfileConnected 和 ProfileDisconnected
 
-当 Windows 连接管理器连接到由操作员体验元数据提供的网络配置文件时，将使用这些 **MessageType**生成 MobileOperatorNotification 事件。 此事件在每次连接和断开连接时触发，包括睡眠/恢复之后的初始连接。 如果在下载和安装应用和服务元数据时设备已连接，也会触发此情况。
+当 Windows 连接管理器连接到由操作员体验元数据提供的网络配置文件时，将使用这些 **MessageType** 生成 MobileOperatorNotification 事件。 此事件在每次连接和断开连接时触发，包括睡眠/恢复之后的初始连接。 如果在下载和安装应用和服务元数据时设备已连接，也会触发此情况。
 
 ProfileConnected MessageType 在移动宽带接口的 L2 连接上触发。
 
 >[!NOTE]
->此触发器在网络标识完成之前发生。 当网络标识确定网络的连接级别时，将生成[**System.net.networkinformation**](/uwp/api/Windows.Networking.Connectivity.NetworkInformation) API)  (部分的[**NetworkStatusChanged**](/uwp/api/Windows.Networking.Connectivity.NetworkInformation#Windows_Networking_Connectivity_NetworkInformation_NetworkStatusChanged)事件。 有关网络标识的详细信息，请参阅 [快速入门：检索网络连接信息](/previous-versions/windows/apps/hh452990(v=win.10)) 和 **system.net.networkinformation** 类。
+>此触发器在网络标识完成之前发生。 当网络标识确定网络的连接级别时，将生成 [**System.net.networkinformation**](/uwp/api/Windows.Networking.Connectivity.NetworkInformation) API)  (部分的 [**NetworkStatusChanged**](/uwp/api/Windows.Networking.Connectivity.NetworkInformation#Windows_Networking_Connectivity_NetworkInformation_NetworkStatusChanged)事件。 有关网络标识的详细信息，请参阅 [快速入门：检索网络连接信息](/previous-versions/windows/apps/hh452990(v=win.10)) 和 **system.net.networkinformation** 类。
 
 ### <a name="registeredroaming-and-registeredhome"></a>RegisteredRoaming 和 RegisteredHome
 
-当 Windows 连接管理器注册到漫游网络时，将使用这些 **MessageType**生成 MobileOperatorNotification 事件。 此事件在每次注册时触发，包括在睡眠/恢复之后初始注册。 如果在下载和安装应用和服务元数据时，设备已注册到网络，也会触发此情况。
+当 Windows 连接管理器注册到漫游网络时，将使用这些 **MessageType** 生成 MobileOperatorNotification 事件。 此事件在每次注册时触发，包括在睡眠/恢复之后初始注册。 如果在下载和安装应用和服务元数据时，设备已注册到网络，也会触发此情况。
 
 应用只应在用户注册漫游网络时通知用户一次，并在其返回到家庭网络时通知用户。 由于此事件在每次注册时触发，因此应用负责跟踪应用会话数据中以前注册的状态。
 
 ### <a name="tetheringentitlementcheck"></a>TetheringEntitlementCheck
 
-当用户开启 Internet 共享时，将生成带有此 **MessageType**的 MobileOperatorNotification 事件。 只要移动运营商已将服务元数据架构中的 [AllowTethering](allowtethering.md) 元素设置为 **EntitlementCheckRequired**，就会在用户每次尝试使用 Internet 共享时触发事件。 有关服务元数据架构的详细信息，请参阅 [服务元数据包架构参考](mobilebroadbandinfo-xml-schema.md)。
+当用户开启 Internet 共享时，将生成带有此 **MessageType** 的 MobileOperatorNotification 事件。 只要移动运营商已将服务元数据架构中的 [AllowTethering](allowtethering.md) 元素设置为 **EntitlementCheckRequired**，就会在用户每次尝试使用 Internet 共享时触发事件。 有关服务元数据架构的详细信息，请参阅 [服务元数据包架构参考](mobilebroadbandinfo-xml-schema.md)。
 
-应用应运行移动运营商网络支持的适当的权限检查机制，并使用[**NetworkOperatorNotificationEventDetails**](/uwp/api/Windows.Networking.NetworkOperators.NetworkOperatorNotificationEventDetails)类的[**AuthorizeTethering**](/uwp/api/Windows.Networking.NetworkOperators.NetworkOperatorNotificationEventDetails#Windows_Networking_NetworkOperators_NetworkOperatorNotificationEventDetails_AuthorizeTethering_System_Boolean_System_String_)方法将结果发送到[**系统。**](/uwp/api/Windows.Networking.NetworkOperators) 如果应用无法运行权利检查，则移动运营商应将服务元数据 [AllowTethering](allowtethering.md) 元素更改为 **Always** 或 **never**，以便永远不会生成该事件。
+应用应运行移动运营商网络支持的适当的权限检查机制，并使用 [**NetworkOperatorNotificationEventDetails**](/uwp/api/Windows.Networking.NetworkOperators.NetworkOperatorNotificationEventDetails)类的 [**AuthorizeTethering**](/uwp/api/Windows.Networking.NetworkOperators.NetworkOperatorNotificationEventDetails#Windows_Networking_NetworkOperators_NetworkOperatorNotificationEventDetails_AuthorizeTethering_System_Boolean_System_String_)方法将结果发送到 [**系统。**](/uwp/api/Windows.Networking.NetworkOperators) 如果应用无法运行权利检查，则移动运营商应将服务元数据 [AllowTethering](allowtethering.md) 元素更改为 **Always** 或 **never**，以便永远不会生成该事件。
 
 ## <a name="register-for-the-mobileoperatornotification-event-by-using-metadata"></a>使用元数据注册 MobileOperatorNotification 事件
 
@@ -150,7 +150,7 @@ ProfileConnected MessageType 在移动宽带接口的 L2 连接上触发。
 </DeviceCompanionApplications>
 ```
 
-**EventID**特性告诉系统要从设备获得的事件类型。 **EventAsset**属性的值应指向实现后台任务的入口点。 这会告知系统当发生特定事件时要运行的任务。
+**EventID** 特性告诉系统要从设备获得的事件类型。 **EventAsset** 属性的值应指向实现后台任务的入口点。 这会告知系统当发生特定事件时要运行的任务。
 
 使用此示例，系统创建并注册特定于该设备的事件。 它还为此事件注册移动宽带应用。 应用必须具有名为 backgroundtask.js 的 JavaScript 文件，该文件在每次收到操作员通知时由系统运行。
 
@@ -195,7 +195,7 @@ Windows 接受来自基于 XML 的预配文件。 设置 XML 的示例版本如�
                 <!-- Adjust the UserLogonCred to fit your UserLogonCred. Refer to the documentation about UserLogonCred's. -->
                 <UserLogonCred>
                     <UserName>user</UserName>
-                    <Password>password</Password>
+                    <Password>[PLACEHOLDER]</Password>
                 </UserLogonCred>
             </Context>
         </DefaultProfile>

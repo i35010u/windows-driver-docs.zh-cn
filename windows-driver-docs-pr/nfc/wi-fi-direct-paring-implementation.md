@@ -10,30 +10,26 @@ keywords:
 - NFP
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: efeedecbbba5118fe49cae7cfec56c5e403a26e4
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: f2f0816ab8e0416195ace4855e3afc0cd7a9024c
+ms.sourcegitcommit: 0c3cab853b0b75149b7604eef03275f997792a84
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89384247"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96157313"
 ---
 # <a name="wi-fi-direct-pairing-implementation"></a>Wi-Fi direct 配对实现
 
-
 本部分提供外围设备的设计准则和要求，以便加入点击和设置并点击和重新连接用例。
 
-**注意**   本主题中所述的配对实现当前在 Windows 8.1 中受支持，仅用于配对到打印机设备。
+>[!NOTE]
+>本主题中所述的配对实现当前在 Windows 8.1 中受支持，仅用于配对到打印机设备。
 
- 
+>[!NOTE]
+>Windows 10 还支持 NFC，通过 Wi-Fi 联盟的 Wi-Fi P2P 运营商配置记录 Wi-Fi 直接静态连接切换。 有关详细信息，请参阅 [Wi-fi 联盟](https://www.wi-fi.org/)。
 
-**注意**   Windows 10 还支持通过 Wi-fi 联盟的 Wi-fi P2P 运营商配置记录进行的 Wi-fi Direct 静态连接。 有关详细信息，请参阅 [Wi-fi 联盟](https://www.wi-fi.org/)。
+## <a name="peripheral-wi-fi-direct-device-pairing"></a>外围设备 Wi-Fi 直接设备配对
 
- 
-
-## <a name="peripheral-wi-fi-direct-device-pairing"></a>外设 Wi-fi Direct Device 配对
-
-
-在点击过程中，NFP 从连接设备接收配对信息。 NFP 将配对信息传递给 Windows。 Wi-fi Direct 设备遵循 Wi-fi 联盟带外 (OOB) 配对过程和 NFC 论坛建议。 Windows 依赖于如下定义的专有配对消息。
+在点击过程中，NFP 从连接设备接收配对信息。 NFP 将配对信息传递给 Windows。 Wi-Fi 直接设备遵循 Wi-Fi 联盟带外 (OOB) 配对过程和 NFC 论坛建议。 Windows 依赖于如下定义的专有配对消息。
 
 Windows 将提示用户同意，如果提供，Windows 将尝试按顺序连接到每个地址，直到成功为止。 PC 中的 NFP 提供程序与连接设备之间没有进一步的交互。
 
@@ -41,25 +37,23 @@ Windows 将提示用户同意，如果提供，Windows 将尝试按顺序连接�
 
 ## <a name="interoperability-requirements"></a>互操作性要求
 
-
 为了确保与 NFP 提供程序之间的互操作性，应使用特定于提供程序的消息格式来封装配对信息。
 
 如本文档的其他部分所述，对于不支持 NFC 的 NFP 提供程序的邻近技术，没有特定的要求。
 
-Windows 要求启用了 NFC 的 NFP 提供程序支持特定 NFC 论坛定义的机制，用于传达用于单向配对的 Wi-fi Direct OOB 配对信息。 NDEF 消息包含 TNF 字段值为0x01 的第一条记录和等于 "Hs" 的类型字段，以及一个指向 Wi-fi 直接运营商配置记录的备用运营商记录。 在此方法中，将只使用 NDEF 记录的有效负载。
+Windows 要求启用 NFC 的 NFP 提供程序支持特定 NFC 论坛定义的机制，用于传达用于单向配对的 Wi-Fi 直接 OOB 配对信息。 NDEF 消息包含 TNF 字段值为0x01 的第一条记录和等于 "Hs" 的类型字段，以及一个指向 Wi-Fi 直接运营商配置记录的备用运营商记录。 在此方法中，将只使用 NDEF 记录的有效负载。
 
-## <a name="unidirectional-pairing-using-nfc-for-wi-fi-direct"></a>使用 NFC 实现 Wi-fi 直接的单向配对
+## <a name="unidirectional-pairing-using-nfc-for-wi-fi-direct"></a>使用 NFC 实现 Wi-Fi 直接的单向配对
 
-
-本部分提供了有关 NFC、Wi-fi Direct 和 Windows 如何协同工作以支持 Wi-fi Direct 设备（如打印机）的单向无线配对的更多详细信息。
+本部分提供了有关 NFC、Wi-Fi Direct 和 Windows 协同工作方式的详细信息，以支持 Wi-Fi 直接设备（如打印机）的单向无线配对。
 
 ### <a name="nfp-provider-references"></a>NFP 提供程序引用
 
-通过使用 NFC 论坛标准化连接切换选择消息类型来完成 wi-fi 直接配对。 下图概述了连接切换选择消息如何应用于 Wi-fi Direct 设备配对，特别是 NDEF 记录3和4。 移交选择消息描述了一个或多个 "ac" 或 "备用运营商" 记录。 这些记录按顺序跟踪选择记录，每个记录都具有定义完善的类型。 最后，该消息将包含一个 Microsoft 定义的设备配对记录，该记录向 Windows 提供有关如何处理配对操作的信息。
+Wi-Fi 直接配对是使用 NFC 论坛标准化连接切换选择消息类型来完成的。 下图概述了连接切换选择消息如何应用于 Wi-Fi 直接设备配对，特别是 NDEF 记录3和4。 移交选择消息描述了一个或多个 "ac" 或 "备用运营商" 记录。 这些记录按顺序跟踪选择记录，每个记录都具有定义完善的类型。 最后，该消息将包含一个 Microsoft 定义的设备配对记录，该记录向 Windows 提供有关如何处理配对操作的信息。
 
 ![连接切换选择消息](images/handover.png)
 
-### <a name="wi-fi-direct-device-pairing-message"></a>Wi-fi Direct 设备配对消息
+### <a name="wi-fi-direct-device-pairing-message"></a>Wi-Fi 直接设备配对消息
 
 在接下来的示例用例中，NFC 类型2标记用作演示示例。 如果需要使用不同的 NFC 标记类型，则必须根据标记定义正确地封装 NDEF 消息。
 
@@ -68,11 +62,9 @@ Windows 要求启用了 NFC 的 NFP 提供程序支持特定 NFC 论坛定义的
 | TNF                   | 0x02                                             | 后面的类型字段的格式。 在 RFC 2046 中定义的媒体类型。 |
 | 类型                  | "application/vnd.apple.mpegurl"             | 我们为此方案定义的新类型字符串。                              |
 | OOB 数据的大小      | WORD                                             | 支持高达 64 KB 的 OOB 数据。                                        |
-| Wi-fi Direct OOB 数据 | &lt;上一个字段指示的大小的 blob&gt; | 按如下定义的 wi-fi Direct OOB 数据。                                   |
+| Wi-Fi 直接 OOB 数据 | &lt;上一个字段指示的大小的 blob&gt; | 按如下所示 Wi-Fi 直接 OOB 数据。                                   |
 
- 
-
-### <a name="wi-fi-direct-oob-format"></a>Wi-fi Direct OOB 格式
+### <a name="wi-fi-direct-oob-format"></a>Wi-Fi 直接 OOB 格式
 
 下表描述了 WiFi 直接 OOB 数据的格式。 任何单向 P2P OOB 设备都可以传输 OOB 单向数据。
 
@@ -96,7 +88,7 @@ Windows 要求启用了 NFC 的 NFP 提供程序支持特定 NFC 论坛定义的
 <td align="left"><p>OOB 标头</p>
 <p>请参阅 OOB 标头属性格式表。</p></td>
 <td align="left">空值</td>
-<td align="left">必选</td>
+<td align="left">必需</td>
 <td align="left">OOB 标头属性应该出现在 P2P OOB 数据 blob 中，并将其 OOB 类型值设置为 "OOB 单向预配数据"。</td>
 </tr>
 <tr class="even">
@@ -118,12 +110,10 @@ Windows 要求启用了 NFC 的 NFP 提供程序支持特定 NFC 论坛定义的
 <p></p></td>
 <td align="left">5</td>
 <td align="left">必选</td>
-<td align="left">此特性必须存在。 它提供有关此 P2P 设备等待一个基于 Wi-fi Direct 的响应的时间的信息。</td>
+<td align="left">此特性必须存在。 它提供有关此 P2P 设备等待响应 Wi-Fi 直接的时间的信息。</td>
 </tr>
 </tbody>
 </table>
-
- 
 
 ### <a name="oob-header-attribute-format"></a>OOB 标头特性格式
 
@@ -136,8 +126,6 @@ Windows 要求启用了 NFC 的 NFP 提供程序支持特定 NFC 论坛定义的
 | OUI               | 0或3        | 变量 | 特定于供应商的 OUI。 此值为可选值。 仅当 OOB 类型特定于供应商时，才能存在。         |
 | OUI 类型          | 0 或 1        | 变量 | 供应商特定类型。 此值为可选值。 仅当 OOB 类型特定于供应商时，才能存在。        |
 
- 
-
 ### <a name="oob-transaction-types"></a>OOB 事务类型
 
 | OOB 类型 (Hex)  | 说明                          |
@@ -146,11 +134,9 @@ Windows 要求启用了 NFC 的 NFP 提供程序支持特定 NFC 论坛定义的
 | 0x01           | OOB 预配侦听器数据       |
 | 0x02           | OOB 预配连接器数据      |
 | 0x03           | OOB Reinvoke 数据                    |
-| 0x04-0xDC      | 预留                             |
+| 0x04-0xDC      | 保留                             |
 | 0xDD           | 特定于供应商                      |
-| 0xDE-0xFF      | 预留                             |
-
- 
+| 0xDE-0xFF      | 保留                             |
 
 ### <a name="oob-device-info-attribute-format"></a>OOB 设备信息特性格式
 
@@ -194,10 +180,9 @@ Windows 要求启用了 NFC 的 NFP 提供程序支持特定 NFC 论坛定义的
 <td align="left">如 P2P 规范中所定义。</td>
 <td align="left"><p>此设备支持的 WSC 方法。</p>
 <div class="alert">
-<strong>注意</strong>   Config 方法字段中的字节排序应为大字节序。
+<strong>注意</strong>  Config 方法字段中的字节排序应为大字节序。
 </div>
 <div>
- 
 </div></td>
 </tr>
 <tr class="odd">
@@ -206,10 +191,9 @@ Windows 要求启用了 NFC 的 NFP 提供程序支持特定 NFC 论坛定义的
 <td align="left">如 P2P 规范中所定义。</td>
 <td align="left"><p>P2P 设备的主要设备类型。 仅包含 WSC 主设备类型属性的数据部分 (排除属性 ID 和长度字段) 。</p>
 <div class="alert">
-<strong>注意</strong>   "主要设备类型" 字段中的字节排序应为大字节序。
+<strong>注意</strong>  "主要设备类型" 字段中的字节排序应为大字节序。
 </div>
 <div>
- 
 </div></td>
 </tr>
 <tr class="even">
@@ -224,16 +208,13 @@ Windows 要求启用了 NFC 的 NFP 提供程序支持特定 NFC 论坛定义的
 <td align="left">如 P2P 规范中所定义。</td>
 <td align="left"><p>P2P 设备的友好名称。 包含整个 WSC 设备名称属性 TLV 格式。</p>
 <div class="alert">
-<strong>注意</strong>   设备名称字段中的字节排序应为大字节序。
+<strong>注意</strong>  设备名称字段中的字节排序应为大字节序。
 </div>
 <div>
- 
 </div></td>
 </tr>
 </tbody>
 </table>
-
- 
 
 ### <a name="p2p-oob-attributes"></a>P2P OOB 属性
 
@@ -245,11 +226,9 @@ Windows 要求启用了 NFC 的 NFP 提供程序支持特定 NFC 论坛定义的
 | 0x03           | OOB 组 ID              |
 | 0x04           | OOB 侦听通道        |
 | 0x05           | OOB 配置超时 |
-| 0x06-0xDC      | 预留                  |
+| 0x06-0xDC      | 保留                  |
 | 0xDD           | 供应商特定属性 |
-| 0xDE-0xFF      | 预留                  |
-
- 
+| 0xDE-0xFF      | 保留                  |
 
 ### <a name="oob-provisioning-info-attribute-format"></a>OOB 设置信息属性格式
 
@@ -260,9 +239,7 @@ Windows 要求启用了 NFC 的 NFP 提供程序支持特定 NFC 论坛定义的
 | 预配设置位图 | 1             | 变量                | 一组预配设置选项，定义为 *预配设置* 表。                                                                                   |
 | 选择的配置方法       | 2             | 如 P2P 规范中所定义。 | 此 P2P 设备选择的用于预配的 WSC 方法。                                                                                                   |
 | Pin 长度                   | 1             | 0 - 8                   | 以下 "PIN 数据" 字段中的字节数。 此字段设置为0表示没有额外的 PIN 数据。                                                                  |
-| 固定数据                     | 变量      | n                       | 此字段是可选的。 仅当 PIN 长度字段不为0，并且包含表示要用于预配的 PIN 的八进制数组时，此字段才存在。 |
-
- 
+| 固定数据                     | 变量      | n                       | 此字段可选。 仅当 PIN 长度字段不为0，并且包含表示要用于预配的 PIN 的八进制数组时，此字段才存在。 |
 
 ### <a name="provisioning-settings"></a>设置设置
 
@@ -297,13 +274,11 @@ Windows 要求启用了 NFC 的 NFP 提供程序支持特定 NFC 论坛定义的
 </tr>
 <tr class="even">
 <td align="left">3 - 7</td>
-<td align="left">预留</td>
+<td align="left">保留</td>
 <td align="left"></td>
 </tr>
 </tbody>
 </table>
-
- 
 
 ### <a name="oob-configuration-timeout-attribute-format"></a>OOB 配置超时属性格式
 
@@ -311,9 +286,7 @@ Windows 要求启用了 NFC 的 NFP 提供程序支持特定 NFC 论坛定义的
 |--------------------------------|---------------|---------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | 属性 ID                   | 1             | 5       | 标识 P2P OOB 特性的类型。 特定值在 *P2P OOB 属性* 表中定义。                                                            |
 | Length                         | 2             | 1       | 属性中以下字段的长度。                                                                                                                   |
-| 侦听器配置超时 | 1             | 0 - 255 | 此 P2P 设备在 OOB 数据传输之后等待 Wi-fi 直接通信的时间，单位为100毫秒。 )  (最大值为25.5 秒。 |
-
- 
+| 侦听器配置超时 | 1             | 0 - 255 | 此 P2P 设备需要等待的时间（以100毫秒为单位），在 OOB 数据传输之后等待 Wi-Fi 直接通信。 )  (最大值为25.5 秒。 |
 
 ### <a name="windows-device-pairing-record"></a>Windows 设备配对记录
 
@@ -366,7 +339,7 @@ Windows 设备配对记录遵循 NDEF 规范。 它向 Windows 提供有关如�
 <td align="left"><p>设置为0x0 可尝试所有传输。</p>
 <p>设置为0x1，以按顺序尝试安装并在第一次成功后停止。 传输的首选项以备用运营商记录的顺序指示。</p>
 <div class="alert">
-<strong>注意</strong>   0x0002 到0x0064 的值是保留值。
+<strong>注意</strong>  0x0002 到0x0064 的值是保留值。
 </div>
 <div>
  
@@ -387,13 +360,11 @@ Windows 设备配对记录遵循 NDEF 规范。 它向 Windows 提供有关如�
 </tbody>
 </table>
 
- 
+### <a name="wi-fi-direct-just-works-ceremony-static-connection-handover-tag-format"></a>Wi-Fi 直接 "只工作" 仪式，静态连接切换标记格式
 
-### <a name="wi-fi-direct-just-works-ceremony-static-connection-handover-tag-format"></a><a href="" id="wi-fi-direct--just-works--ceremony--static-connection-handover-tag-format"></a>Wi-fi Direct "只工作" 仪式，静态连接切换标记格式
+例如，以下是 NFC 被动标记的典型实现。 这对应于静态连接切换事例，其中包含 Wi-Fi 的直接运营商记录、网络共享打印机和 ms 设备配对记录。
 
-例如，以下是 NFC 被动标记的典型实现。 这对应于静态连接切换事例，其中包含 Wi-fi 直接运营商记录、网络共享打印机和 ms 设备配对记录。
-
-第一个表说明了标记的 Wi-fi 直接配对部分的格式。
+第一个表说明了标记 Wi-Fi 直接配对部分的格式。
 
 <table>
 <colgroup>
@@ -404,8 +375,8 @@ Windows 设备配对记录遵循 NDEF 规范。 它向 Windows 提供有关如�
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">偏移量</th>
-<th align="left">内容</th>
+<th align="left">Offset</th>
+<th align="left">Content</th>
 <th align="left">长度</th>
 <th align="left">说明</th>
 </tr>
@@ -540,7 +511,7 @@ Windows 设备配对记录遵循 NDEF 规范。 它向 Windows 提供有关如�
 <td align="left">54</td>
 <td align="left">0x3E 0x00</td>
 <td align="left">2</td>
-<td align="left"><p>Wi-fi Direct OOB 数据长度：62个字节。 长度作为无符号短格式读取，并且包含</p>
+<td align="left"><p>Wi-Fi 直接 OOB 数据长度：62个字节。 长度作为无符号短格式读取，并且包含</p>
 <p>的。 包括2长度的八进制数。 此值必须存储为小字节序格式。</p></td>
 </tr>
 <tr class="odd">
@@ -578,7 +549,7 @@ Windows 设备配对记录遵循 NDEF 规范。 它向 Windows 提供有关如�
 <td align="left"><p>0x01 0x23 0x34 赋0xab</p>
 <p>0xcd 0xef</p></td>
 <td align="left">6</td>
-<td align="left">Wi-fi Direct P2P 设备 MAC 地址： "01:23:34<span class="emoji" shortCode="ab">🆎</span>cd： ef"</td>
+<td align="left">Wi-Fi 直接 P2P 设备 MAC 地址： "01:23:34<span class="emoji" shortCode="ab">🆎</span>cd： ef"</td>
 </tr>
 <tr class="odd">
 <td align="left">69</td>
@@ -679,8 +650,6 @@ Windows 设备配对记录遵循 NDEF 规范。 它向 Windows 提供有关如�
 </tbody>
 </table>
 
- 
-
 此第二个表说明了标记的网络打印机配对部分的格式。
 
 <table>
@@ -692,8 +661,8 @@ Windows 设备配对记录遵循 NDEF 规范。 它向 Windows 提供有关如�
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">偏移量</th>
-<th align="left">内容</th>
+<th align="left">Offset</th>
+<th align="left">Content</th>
 <th align="left">长度</th>
 <th align="left">解释</th>
 </tr>
@@ -749,9 +718,7 @@ Windows 设备配对记录遵循 NDEF 规范。 它向 Windows 提供有关如�
 </tbody>
 </table>
 
- 
-
-此第三个表说明了标记的 MS 设备配对部分的格式。
+此第三个表说明了标记 MS-Device 配对部分的格式。
 
 <table>
 <colgroup>
@@ -762,8 +729,8 @@ Windows 设备配对记录遵循 NDEF 规范。 它向 Windows 提供有关如�
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">偏移量</th>
-<th align="left">内容</th>
+<th align="left">Offset</th>
+<th align="left">Content</th>
 <th align="left">长度</th>
 <th align="left">解释</th>
 </tr>
@@ -833,28 +800,22 @@ Windows 设备配对记录遵循 NDEF 规范。 它向 Windows 提供有关如�
 </tbody>
 </table>
 
- 
+## <a name="wi-fi-direct-connectivity-requirements"></a>Wi-Fi 直接连接性要求
 
-## <a name="wi-fi-direct-connectivity-requirements"></a>Wi-fi 直接连接要求
-
-
-设备和客户端必须打开 Wi-fi 无线电。 否则，配对将会失败。
+设备和客户端必须打开 Wi-Fi 无线电。 否则，配对将会失败。
 
 ## <a name="handling-edge-cases"></a>处理边缘事例
-
 
 如果用户之前已经配对了某个设备，但随后从设备列表中手动删除了该设备，再次点击会导致尝试安装或配对。
 
 如果用户进入传动的范围，但随后在传输带外 (OOB) 信息之前突然离开，则设备可能会变为可连接，但 PC 不会查找设备。 在这种情况下，PC 中将不会有任何许可 UI，用户将需要再次点击。 如果设备再次再次被再次发现，则它应保持可检测的，并应重置超时期限。
 
-对于 Wi-fi Direct 设备，如果 Wi-fi 无线电关闭，安装将不会成功。
+对于 Wi-Fi 直接设备，如果 Wi-Fi 无线电关闭，安装将不会成功。
 
 如果用户几乎同时点击两个设备，则只会尝试使用第一次接收的 OOB 信息配对。
 
 尝试在运行不支持点击以进行设置或点击以进行重新连接的操作系统的系统上点击设备可能会导致设备进入可连接模式，但不会发生配对。 用户需要使用为蓝牙提供的配对 UI，并使用 "配对" 按钮来启动配对。
 
- 
-
- 
 ## <a name="related-topics"></a>相关主题
+
  [NFC 设备驱动程序接口 (DDI) 参考](/windows-hardware/drivers/ddi/index)  

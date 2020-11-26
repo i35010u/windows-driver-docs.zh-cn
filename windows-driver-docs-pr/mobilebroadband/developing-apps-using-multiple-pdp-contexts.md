@@ -4,12 +4,12 @@ description: 使用多个 PDP 上下文开发应用
 ms.assetid: 6a977a69-397d-4922-890d-1810dd54dff4
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7b1e01c1b1f227356bcf08a183d18884a5346c02
-ms.sourcegitcommit: 20eac54e419a594f7cea766ee28f158559dfd79c
+ms.openlocfilehash: 6bc5826ba204754c4442f6ead82a51d81a32cc0e
+ms.sourcegitcommit: 0c3cab853b0b75149b7604eef03275f997792a84
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91754872"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96157337"
 ---
 # <a name="developing-apps-using-multiple-pdp-contexts"></a>使用多个 PDP 上下文开发应用
 
@@ -53,7 +53,7 @@ UWP mobile 宽带应用可以利用多个 PDP 上下文来激活特殊的 PDP �
 
 ### <a name="http-based-apis"></a>基于 HTTP 的 Api
 
-基于 HTTP 的 Api，如[**XMLHTTPRequest**](/previous-versions/windows/apps/br229787(v=win.10)) [**、**](/uwp/api/Windows.Web.Syndication) [IXHR2](/previous-versions/windows/desktop/ixhr2/ixmlhttprequest2-portal)、 [**AtomPub**](/uwp/api/Windows.Web.AtomPub)和基于 windows HTTP 协议的 api （如 JQuery 和[**windows**](/uwp/api/Windows.Web.Http)），不能绑定到特定的接口，也不能绑定到特定的接口。 对于这些 Api，Windows 使用策略来处理将数据路由到特殊的 PDP 上下文。 激活特殊的 PDP 上下文后，应用可根据目标和特殊的 PDP 上下文指定路由规则。 目标可以是域名或 IP 地址，如 video.fabrikam.com、contoso.com 或123.23.34.333。 指定路由规则后，如果应用使用上述任何 HTTP Api 来传输数据，则 Windows 将基于路由规则将数据发送到特殊的 PDP 上下文。 应用传输完数据后，应该断开特殊的 PDP 上下文的连接，并删除路由策略。
+基于 HTTP 的 Api，如 [**XMLHTTPRequest**](/previous-versions/windows/apps/br229787(v=win.10)) [**、**](/uwp/api/Windows.Web.Syndication) [IXHR2](/previous-versions/windows/desktop/ixhr2/ixmlhttprequest2-portal)、 [**AtomPub**](/uwp/api/Windows.Web.AtomPub)和基于 windows HTTP 协议的 api （如 JQuery 和 [**windows**](/uwp/api/Windows.Web.Http)），不能绑定到特定的接口，也不能绑定到特定的接口。 对于这些 Api，Windows 使用策略来处理将数据路由到特殊的 PDP 上下文。 激活特殊的 PDP 上下文后，应用可根据目标和特殊的 PDP 上下文指定路由规则。 目标可以是域名或 IP 地址，如 video.fabrikam.com、contoso.com 或123.23.34.333。 指定路由规则后，如果应用使用上述任何 HTTP Api 来传输数据，则 Windows 将基于路由规则将数据发送到特殊的 PDP 上下文。 应用传输完数据后，应该断开特殊的 PDP 上下文的连接，并删除路由策略。
 
 >[!NOTE]
 >[**后台传输 api**](/uwp/api/Windows.Networking.BackgroundTransfer) 和 [HTTP 客户端 (c # ) api](/previous-versions/visualstudio/hh193681(v=vs.118)) 不能使用路由策略。
@@ -70,7 +70,7 @@ UWP mobile 宽带应用可以利用多个 PDP 上下文来激活特殊的 PDP �
 
 Windows 8.1 和 Windows 10 添加了以下 Api 以支持多个 PDP 上下文：
 
-- [**CellularApnContext**](/uwp/api/Windows.Networking.Connectivity.CellularApnContext) 此类包含用于指定网络上的访问点的属性。 **CellularApnContext**对象与[**AcquireConnectionAsync**](/uwp/api/Windows.Networking.Connectivity.ConnectivityManager#Windows_Networking_Connectivity_ConnectivityManager_AcquireConnectionAsync_Windows_Networking_Connectivity_CellularApnContext_)调用一起传递，以建立与特定访问点的连接。
+- [**CellularApnContext**](/uwp/api/Windows.Networking.Connectivity.CellularApnContext) 此类包含用于指定网络上的访问点的属性。 **CellularApnContext** 对象与 [**AcquireConnectionAsync**](/uwp/api/Windows.Networking.Connectivity.ConnectivityManager#Windows_Networking_Connectivity_ConnectivityManager_AcquireConnectionAsync_Windows_Networking_Connectivity_CellularApnContext_)调用一起传递，以建立与特定访问点的连接。
 
 - [**ConnectivityManager：： AcquireConnectionAsync**](/uwp/api/Windows.Networking.Connectivity.ConnectivityManager#Windows_Networking_Connectivity_ConnectivityManager_AcquireConnectionAsync_Windows_Networking_Connectivity_CellularApnContext_) 此 API 为指定接入点名称激活新连接 (APN) 或 PDP 上下文。 此异步方法允许应用使用适当的配置信息请求连接到特定 APN 或 PDP 上下文。 激活专用接入点后，它将显示为 Windows 和应用的新虚拟接口。
 
@@ -89,7 +89,7 @@ var currentConnectionSession = null;
 var apnContext                      =   new connectivity.CellularApnContext();
 apnContext.accessName               =   "myAPN.com";
 apnContext.userName                 =   "APNusername"
-apnContext.password                 =   "APNPassword";
+apnContext.password                 =   "[PLACEHOLDER]";
 apnContext.isCompressionEnabled     =   false;
 apnContext.authenticationType       =   connectivity.CellularApnAuthenticationType.none;
 
@@ -137,7 +137,7 @@ var apnContext = new connectivity.CellularApnContext();
 var apnContext = new connectivity.CellularApnContext();
 apnContext.accessName = "myAPN.com";
 apnContext.userName = "APNusername"
-apnContext.password = "APNPassword";
+apnContext.password = "[PLACEHOLDER]";
 apnContext.isCompressionEnabled = false;
 apnContext.authenticationType = connectivity.CellularApnAuthenticationType.none;
 
@@ -174,7 +174,7 @@ currentConnectionSession.close();
 
 ### <a name="scenario-premium-mobile-broadband-app-provides-free-data-access-using-special-apn"></a>方案：高级移动宽带应用使用特殊 APN 提供免费数据访问
 
-在此方案中，移动宽带应用使用特殊的 PDP 上下文提供免费的数据访问。 该应用程序使用连接的网络（如 Wi-fi 网络）（如果它是免费网络），或者如果连接到特定的操作员网络，则使用特殊接入点。 下面的示例代码演示了在没有任何可用网络连接的情况下，应用如何使用多个 PDP 上下文 Api 在特殊的 PDP 上下文中传输数据。
+在此方案中，移动宽带应用使用特殊的 PDP 上下文提供免费的数据访问。 该应用程序使用连接的网络（如 Wi-Fi 网络）（如果它是免费的），或者如果连接到特定的操作员网络，则使用特殊接入点。 下面的示例代码演示了在没有任何可用网络连接的情况下，应用如何使用多个 PDP 上下文 Api 在特殊的 PDP 上下文中传输数据。
 
 ``` syntax
 // Reference the namespace
@@ -281,7 +281,7 @@ function onFailure()
   var apnContext                      =   new connectivity.CellularApnContext();
   apnContext.accessPointName          =   "myAPN.com";
   apnContext.userName                 =   "APNusername"
-  apnContext.password                 =   "APNPassword";
+  apnContext.password                 =   "[PLACEHOLDER]";
   apnContext.isCompressionEnabled     =   false;
   apnContext.authenticationType       =   connectivity.CellularApnAuthenticationType.none;
 
@@ -359,7 +359,7 @@ var apnContext                      =   new connectivity.CellularApnContext();
 apnContext.providerId               =   "23545";
 apnContext.accessPointName          =   "myAPN.com";
 apnContext.userName                 =   "APNusername"
-apnContext.password                 =   "";
+apnContext.password                 =   "[PLACEHOLDER]";
 apnContext.isCompressionEnabled     =  false;
 apnContext.authenticationType       =   connectivity.CellularApnAuthenticationType.none;
 
@@ -484,7 +484,7 @@ foreach (var connectionProfile in connectionProfiles)
               <!-- Adjust the UserLogonCred to fit your UserLogonCred. Refer to the documentation about UserLogonCred's. -->
               <UserLogonCred>
                 <UserName>user1</UserName>
-                <Password>password1</Password>
+                <Password>[PLACEHOLDER]</Password>
               </UserLogonCred>
             </Context>
             <AppIDList>
@@ -502,7 +502,7 @@ foreach (var connectionProfile in connectionProfiles)
               <!-- Adjust the UserLogonCred to fit your UserLogonCred. Refer to the documentation about UserLogonCred. -->
               <UserLogonCred>
                 <UserName>user2</UserName>
-                <Password>password2</Password>
+                <Password>[PLACEHOLDER]</Password>
               </UserLogonCred>
             </Context>
             <AppIDList>

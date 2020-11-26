@@ -4,14 +4,16 @@ description: 若要使用多个接口测试工具 (MITT) ，请按顺序使用 M
 ms.assetid: 268217FF-0F0B-4175-B2DE-A45FAF94EA79
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 91292946f8a1d989657c3d6105c49b710a4bed55
-ms.sourcegitcommit: c766ab74e32eb44795cbbd1a4f352d3a6a9adc14
+ms.openlocfilehash: f8a936c61ae0c36a4e10558cfb11fd233cb39d51
+ms.sourcegitcommit: 0c3cab853b0b75149b7604eef03275f997792a84
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89389575"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96157279"
 ---
 # <a name="buy-hardware-for-using-mitt"></a>使用 MITT 购买硬件
+
+多接口测试工具 (MITT) 是一项测试工具，用于验证简单外设总线（例如 UART、I2C、SPI 和 GPIO）的硬件和软件。 MITT 使用 FPGA 开发板并提供一个软件包，其中包含固件、测试二进制文件和驱动程序，是一个成本较低的测试解决方案。
 
 若要使用多接口测试工具 (MITT) ，需要一个 MITT 板和特定于总线的适配器，将其插入到 MITT 板上的端口。 适配器的类型取决于要测试的总线。
 
