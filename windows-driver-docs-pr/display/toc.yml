@@ -2300,8 +2300,6 @@
               href: returning-error-codes-from-copp-functions.md
             - name: 执行 COPP 操作
               items:
-                - name: 执行 COPP 操作
-                  href: performing-copp-operations.md
                 - name: 启动受保护的视频会话
                   href: starting-a-protected-video-session.md
                 - name: 处理保护级别

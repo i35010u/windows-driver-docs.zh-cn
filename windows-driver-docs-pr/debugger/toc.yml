@@ -38,6 +38,8 @@
               href: setting-up-local-kernel-debugging-of-a-single-computer-manually.md
             - name: 手动设置通过串行线缆进行的内核模式调试
               href: setting-up-a-null-modem-cable-connection.md
+            - name: 使用 KDNET 在 ARM 设备上通过 USB EEM 设置内核模式调试
+              href: setting-up-kernel-mode-debugging-over-usb-eem-arm-kdnet.md
             - name: 手动设置通过 USB 3.0 线缆进行的内核模式调试
               href: setting-up-a-usb-3-0-debug-cable-connection.md
             - name: 手动设置通过 USB 2.0 线缆进行的内核模式调试

@@ -6,12 +6,12 @@ ms.date: 04/20/2017
 ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
-ms.openlocfilehash: c983f7612d8b1a7e24a1e4f3871d6d30de65e2d6
-ms.sourcegitcommit: ee3e2259aafc844cc43cce62299a72649cf89212
+ms.openlocfilehash: 82e2a5f0aef3f0c610ea6654d56c817ad09142cf
+ms.sourcegitcommit: 0c3cab853b0b75149b7604eef03275f997792a84
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91353652"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96157269"
 ---
 # <a name="simple-peripheral-bus-spb-driver-design-guide"></a>简单外设总线 (SPB) 驱动程序设计指南
 
@@ -28,11 +28,3 @@ SPB 不是即插即用总线。 外为设备通常有到 SPB 的固定连接，�
 连接 ID（用于标识设备到 SPB 的连接）包括在这些资源中。 连接 ID 封装的信息（例如，总线地址和总线时钟频率）是 SPB 控制器建立到设备的连接所需的。 其他硬件资源可能包含一个中断，供驱动程序将其 ISR 连接到其中。 但是，设备的硬件资源不包括用于设备寄存器的存储。 通过 SPB 连接的外围设备未进行存储映射，只能通过 SPB 进行访问。 有关详细信息，请参阅 [Connection IDs for SPB-Connected Peripheral Devices](./connection-ids-for-spb-connected-peripheral-devices.md)（SPB 连接的外围设备的连接 ID）。
 
 在将中断请求从外围设备传达至处理器时，SPB 不提供任何特定于总线的方式。 与之相反，通过 SPB 连接的外围设备通过单独的硬件路径来指示某个中断，该路径位于 SPB 和 SPB 控制器外部。 通过 SPB 连接的外围设备的中断服务例程 (ISR) 必须在 IRQL = PASSIVE\_LEVEL 的情况下运行，这样它就可以同步发送 I/O 请求，以便通过 SPB 按顺序访问设备的硬件寄存器。 有关详细信息，请参阅 [Interrupts from SPB-Connected Peripheral Devices](./interrupts-from-spb-connected-peripheral-devices.md)（来自通过 SPB 连接的外围设备的中断）。
-
-## <a name="in-this-section"></a>在本节中
-
-|主题|说明|
-|----|----|
-|[SPB 控制器驱动程序](./spb-controller-drivers.md)|SPB 控制器是一个设备，该设备控制[简单外设总线](/previous-versions/hh450903(v=vs.85)) (SPB) 并可向连接到 SPB 的外围设备传输数据以及从其传输数据。 SPB 控制器的硬件供应商会提供 SPB 控制器驱动程序来管理控制器中的硬件功能。|
-|[SPB 外围设备驱动程序](./spb-peripheral-device-drivers.md)|SPB 外围设备驱动程序控制连接到[简单外设总线](/previous-versions/hh450903(v=vs.85)) (SPB) 的外围设备。 此设备的硬件寄存器只能通过 SPB 使用。 若要从设备读取数据或向其写入数据，驱动程序必须将 I/O 请求发送到 SPB 控制器。 只有该控制器可以通过 SPB 启动将数据传输到设备或从设备传输数据的过程。|
-|[使用多接口测试工具 (MITT) 进行测试](./testing-with-multi-interface-test-tool--mitt-.md)|多接口测试工具 (MITT) 是一项测试工具，用于验证简单外设总线（例如 UART、I2C、SPI 和 GPIO）的硬件和软件。 MITT 使用 FPGA 开发板并提供一个软件包，其中包含固件、测试二进制文件和驱动程序，是一个成本较低的测试解决方案。|
