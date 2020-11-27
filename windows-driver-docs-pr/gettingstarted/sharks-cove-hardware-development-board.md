@@ -4,12 +4,12 @@ description: Sharks Cove 是硬件开发板，可用于开发 Windows 硬件和�
 ms.assetid: D86546BB-B613-4CEE-9A76-3FD269137EE9
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3b84607bb4102878fe7b6926667e02d643266cf8
-ms.sourcegitcommit: 9b3dec2f2cd9a7ed9b340b4794ce6ff4134d8ebe
+ms.openlocfilehash: ebd35a3c4ea799315b632a9f8e362f7e8cf86846
+ms.sourcegitcommit: 9e5ade5d1a311383016385ae3bc3f0a22da1dfc5
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/07/2020
-ms.locfileid: "91787667"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95518412"
 ---
 # <a name="sharks-cove-hardware-development-board"></a>Sharks Cove 硬件开发板
 
@@ -19,10 +19,6 @@ ms.locfileid: "91787667"
 Sharks Cove 是[硬件开发板](./windows-compatible-hardware-development-boards.md)，可用于开发 Windows 硬件和驱动程序。
 
 可以通过 Intel Sharks Cove 板为使用各种接口（包括 GPIO、I2C、I2S、UART、SDIO 和 USB）的设备开发驱动程序。 还可以使用 Sharks Cove 板为相机和触摸屏开发驱动程序。
-
-如需与 Sharks Cove 板相关的下载，请参阅 [Sharks Cove UEFI Firmware](https://go.microsoft.com/fwlink/p?linkid=403167)（Sharks Cove UEFI 固件）。
-
-如需详细规范，请参阅 [Sharks Cove 技术规范](https://go.microsoft.com/fwlink/p?linkid=403169)。
 
 ## <a name="before-you-start"></a>开始之前
 
@@ -107,7 +103,7 @@ Sharks Cove 是[硬件开发板](./windows-compatible-hardware-development-board
 >[!NOTE]
 >如果运行的是 Windows 7，请右键单击 ISO 文件，然后选择“刻录磁盘映像”。 将映像刻录到可录制 DVD。 然后，将文件从 DVD 复制到 *Root*\\Setup。
 
-获取 [Sharks Cove 板支持包 (BSP)](https://go.microsoft.com/fwlink/p?linkid=506954)。 将该包中的所有文件都复制到 *Root*\\SharksCoveBsp 中。
+获取 Sharks Cove 板支持包 (BSP)。 将该包中的所有文件都复制到 *Root*\\SharksCoveBsp 中。
 
 获取[WDK 开发板加载项工具包](https://go.microsoft.com/fwlink/p/?linkid=403174)。 打开“SourceCode”  选项卡。单击“下载”（不是“下载”选项卡），获取工具包脚本。 打开 Scripts 文件夹，然后将以下两项复制到 *Root* 中。
 

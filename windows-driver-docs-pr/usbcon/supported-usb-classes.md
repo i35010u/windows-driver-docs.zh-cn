@@ -3,12 +3,12 @@ description: 本主题列出了支持的 USB 设备类的 Microsoft 提供的驱
 title: 包含在 Windows 中的 USB 设备类驱动程序
 ms.date: 04/20/2017
 ms.localizationpriority: High
-ms.openlocfilehash: 8ec25cf5dc2cd6f07a2803999a8bcf1430b96cb7
-ms.sourcegitcommit: b75e9940d49410e2b952e96f325df67a039cd571
+ms.openlocfilehash: 7f3115510c8186d684a1a43a22021af7db81f4b2
+ms.sourcegitcommit: 5ff30ddae453c6439177acde0e2d32eaf234a2c0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92336954"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95030024"
 ---
 # <a name="usb-device-class-drivers-included-in-windows"></a>包含在 Windows 中的 USB 设备类驱动程序
 
@@ -39,7 +39,7 @@ USB 类规范和类代码的最新列表记录在 [USB-IF 定义的类代码列�
 
 Windows 通过指示设备功能设备安装程序类来对设备分类  。
 
-Microsoft 为大多数设备定义安装程序类。 IHV 和 OEM 可以定义新的设备安装程序类，但前提是现有类都不适用。 有关详细信息，请参阅[系统定义的设备安装程序类](/previous-versions/ff553419(v=vs.85))。
+Microsoft 为大多数设备定义安装程序类。 IHV 和 OEM 可以定义新的设备安装程序类，但前提是现有类都不适用。 有关详细信息，请参阅[系统定义的设备安装程序类](/windows-hardware/drivers/install/system-defined-device-setup-classes-reserved-for-system-use)。
 
 USB 设备的两个重要设备安装程序类如下所示：
 

@@ -3,12 +3,12 @@ description: 用于通信和 CDC 控制设备的 Microsoft 提供的内置驱动
 title: USB 串行驱动程序 (Usbser.sys)
 ms.date: 04/20/2017
 ms.localizationpriority: High
-ms.openlocfilehash: 684f2543c4218fb790e185d429cce5eadda4d5e7
-ms.sourcegitcommit: ec7bebe3f94536455e62b372c2a28fe69d1717f7
+ms.openlocfilehash: 4d0e4efd128948b9720c15616b77ad5f4592d32f
+ms.sourcegitcommit: 5ff30ddae453c6439177acde0e2d32eaf234a2c0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93349753"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95030040"
 ---
 # <a name="usb-serial-driver-usbsersys"></a>USB 串行驱动程序 (Usbser.sys)
 
@@ -56,7 +56,7 @@ ms.locfileid: "93349753"
 
 在 Windows 8.1 及更低版本的操作系统中，当 USB 到串行设备连接到计算机时，不会自动加载 Usbser.sys。 若要加载驱动程序，需要使用“包含”指令编写引用调制解调器 INF (mdmcpq.inf) 的 INF。 需要该指令，才能实例化服务、复制内置二进制文件和注册设备接口 GUID，应用程序需要此 GUID 来查找设备并与之通信。 该 INF 将“Usbser”指定为设备堆栈中较低的筛选器驱动程序。
 
-INF 还需要将设备安装程序类指定为调制解调器才能使用 mdmcpq.INF。 在 INF 的 [Version] 部分下，指定“调制解调器”和设备类 GUID。 有关详细信息，请参阅[系统提供的设备安装程序类](/previous-versions/ff553419(v=vs.85))。
+INF 还需要将设备安装程序类指定为调制解调器才能使用 mdmcpq.INF。 在 INF 的 [Version] 部分下，指定“调制解调器”和设备类 GUID。 有关详细信息，请参阅[系统提供的设备安装程序类](/windows-hardware/drivers/install/system-defined-device-setup-classes-reserved-for-system-use)。
 
 ``` syntax
 [DDInstall.NT]
