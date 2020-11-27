@@ -112,6 +112,8 @@
               href: testing-BTP-hw-audio.md
             - name: BM-64-EVB 开发板
               href: testing-BTP-hw-bm64.md
+            - name: 人机设备适配器
+              href: testing-BTP-human-device-adapter.md
         - name: BTP 测试
           items:
             - name: 当前可用的 BTP 测试
