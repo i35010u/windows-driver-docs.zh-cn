@@ -1,24 +1,22 @@
 - name: NFC 设计指南
   href: index.md
-- name: NFC 设备驱动程序中的新增功能
+- name: Windows 10 中的 NFC 设备驱动程序
   href: what-s-new-in-nfc-device-drivers.md
 - name: NFC 体系结构
   href: nfc-architecture.md
 - name: Wi-Fi direct 配对实现
   href: wi-fi-direct-paring-implementation.md
-- name: 近场邻近感应设计指南
+- name: 近场邻近感应 (NFP)
   items:
     - name: 近场邻近感应设计指南
       href: nfp-design-guide.md
     - name: 点击和执行
       items:
-        - name: 点击和执行
-          href: tap-and-do.md
         - name: 点击和执行方案
           href: tap-and-do-scenarios.md
         - name: 点击和执行用例
           href: tap-and-do-use-cases.md
-    - name: NFP 提供程序模型
+    - name: NFP 提供程序
       items:
         - name: NFP 提供程序模型
           href: nfp-provider-model.md
@@ -36,7 +34,7 @@
           href: proximity-device-presence-events.md
         - name: NFP 推动的外设无线设备配对
           href: nfp-facilitated-peripheral-wireless-device-pairing.md
-    - name: NFP 设备驱动程序要求
+    - name: NFP 设备驱动程序
       items:
         - name: NFP 设备驱动程序要求
           href: nfp-device-driver-requirements.md
@@ -64,10 +62,8 @@
           href: reserved-ioctl-codes.md
         - name: 电源管理
           href: power-management.md
-        - name: 协议支持
+        - name: NFP 驱动程序的协议支持
           items:
-            - name: 协议支持
-              href: protocol-support.md
             - name: NDEF 协议
               href: ndef-protocol.md
             - name: 配对：蓝牙协议
@@ -86,7 +82,7 @@
   items:
     - name: 智能卡设计指南
       href: design-guide-smart-card.md
-    - name: 功能流
+    - name: 智能卡的功能流
       href: functional-flow.md
     - name: 示例序列
       href: example-sequence.md
@@ -98,11 +94,11 @@
       href: pc-sc-interface.md
 - name: 电源管理
   items:
-    - name: 电源管理
+    - name: NFC 电源管理
       href: nfc-power-management.md
-    - name: 轮询
+    - name: NFC 轮询
       href: polling.md
-- name: NFC 类扩展 (CX) 设计指南
+- name: NFC 类扩展 (CX)
   items:
     - name: NFC 类扩展 (CX) 设计指南
       href: nfc-class-extension-.md
@@ -120,9 +116,9 @@
       href: nfc-class-extension-interface.md
     - name: 类扩展状态机
       href: nfc-class-extension-state-machine.md
-    - name: 扩展性模型
+    - name: NFC 类扩展性模型
       items:
-        - name: 扩展性模型
+        - name: NFC 类扩展性模型
           href: extensibility-model.md
         - name: 序列处理
           items:
@@ -148,7 +144,7 @@
           href: packet-handling.md
     - name: 可配置性
       href: configurability.md
-    - name: 错误处理
+    - name: 错误处理。
       href: error-handling.md
     - name: 电源状态
       href: power-states.md
