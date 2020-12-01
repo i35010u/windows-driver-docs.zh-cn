@@ -11,12 +11,12 @@ keywords:
 - 适用于 Windows 的 HID 鼠标驱动程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c680e76f77af2723a398320ce32927e602f25d6e
-ms.sourcegitcommit: 95e5f984c417902ece768db51838c2dacdb01681
+ms.openlocfilehash: 1d1532fa4e8fdec3cbfb05ebecf908c180c1842f
+ms.sourcegitcommit: 02c424289cdd1a636a9f6fc9e61cb3b4006a106e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/12/2020
-ms.locfileid: "91957687"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96426484"
 ---
 # <a name="keyboard-and-mouse-hid-client-drivers"></a>键盘和鼠标 HID 客户端驱动程序
 
@@ -42,8 +42,8 @@ Windows 为 HID 键盘和 HID 鼠标设备提供系统提供的 HID 映射器驱
 
 - KBDHID.sys –适用于键盘的 HID 客户端映射器驱动程序。 将 HID 用法转换为 scancodes，以便与现有的键盘类驱动程序一起使用。
 - MOUHID.sys-用于鼠标/触摸板的 HID 客户端映射器驱动程序。 将 HID 用法转换为鼠标命令 (X/Y、按钮、滚轮) 与现有键盘类驱动程序的接口。
-- KBDCLASS.sys –键盘类驱动程序以安全的方式维护系统上所有键盘和键盘的功能。
-- MOUCLASS.sys –鼠标类驱动程序在系统上维护所有鼠标/触摸板的功能。 驱动程序支持绝对和相对指针设备。 这不是 touchscreens 的驱动程序，因为它是由 Windows 中的其他驱动程序管理的。
+- KBDCLASS.sys – [键盘类驱动程序](keyboard-and-mouse-class-drivers.md) 以安全的方式维护系统上所有键盘和键盘的功能。
+- MOUCLASS.sys – [鼠标类驱动程序](keyboard-and-mouse-class-drivers.md) 在系统上维护所有鼠标/触摸板的功能。 驱动程序支持绝对和相对指针设备。 这不是 touchscreens 的驱动程序，因为它是由 Windows 中的其他驱动程序管理的。
 
 系统生成驱动程序堆栈，如下所示：
 
@@ -70,7 +70,7 @@ Microsoft 为 Ihv 编写驱动程序提供以下指导：
         - 在以下情况下允许使用筛选器驱动程序：
             - 作为 kbdhid/mouhid 的上限筛选器
             - 作为 kbdclass/mouclass 的上限筛选器
-        - _不_建议使用筛选器驱动程序作为 HIDCLASS 与 HID 传输微型驱动程序之间的筛选器。
+        - _不_ 建议使用筛选器驱动程序作为 HIDCLASS 与 HID 传输微型驱动程序之间的筛选器。
 
     2. 函数驱动程序：或者，供应商可以创建函数驱动程序 (而不是筛选器驱动程序) 但仅针对特定于供应商的 HID PDOs (与用户模式服务如有必要) 。
 
@@ -89,7 +89,7 @@ Microsoft 为 Ihv 编写驱动程序提供以下指导：
 
 ## <a name="keyboard-layout"></a>键盘布局
 
-*键盘布局*充分描述了 Microsoft Windows 2000 和更高版本的键盘输入特征。 例如，键盘布局指定语言、键盘类型和版本、修饰符、扫描代码等。
+*键盘布局* 充分描述了 Microsoft Windows 2000 和更高版本的键盘输入特征。 例如，键盘布局指定语言、键盘类型和版本、修饰符、扫描代码等。
 
 有关键盘布局的信息，请参阅以下内容：
 
@@ -105,7 +105,7 @@ Microsoft 为 Ihv 编写驱动程序提供以下指导：
 
 下表列出了不同客户端版本的 Windows 操作系统所支持的功能。
 
-|功能|Windows XP|Windows Vista|Silverlight|Windows 8 及更高版本|
+|功能|Windows XP|Windows Vista|Windows 7|Windows 8 及更高版本|
 |----|----|----|----|----|
 |按钮1-5|支持 (P/2 & HID) |支持的 (PS/2 & HID) |支持的 (PS/2 & HID) |支持的 (PS/2 & HID) |
 |垂直滚轮|支持的 (PS/2 & HID) |支持的 (PS/2 & HID) |支持的 (PS/2 & HID) |支持的 (PS/2 & HID) |
@@ -123,7 +123,7 @@ Windows 用于激活新 4&5 按钮 + 滚轮模式的方法是用于在智能鼠�
 
 #### <a name="standard-ps2-compatible-mouse-data-packet-format-2-buttons"></a>标准 PS/2 兼容的鼠标数据数据包格式 (2 个按钮) 
 
-|Byte|D7|D6|D5|D4|D3|D2|D1|D0|注释|
+|Byte|D7|D6|D5|D4|D3|D2|D1|D0|评论|
 |------|-------|-------|-------|-------|-----|-----|-----|-----|-----|
 | 1    | Yover | Xover | Ysign | Xsign | 标记 | M   | R   | L   | X/Y overvlows 和符号、按钮 |
 | 2    | X 7    | X6    | X5    | X4    | X3  | X2  | X1  | X0  | X 数据字节                      |
@@ -134,7 +134,7 @@ Windows 用于激活新 4&5 按钮 + 滚轮模式的方法是用于在智能鼠�
 
 #### <a name="standard-ps2-compatible-mouse-data-packet-format-3-buttons--verticalwheel"></a>标准 PS/2 兼容的鼠标数据包格式 (3 个按钮 + VerticalWheel) 
 
-| Byte | D7  | D6  | D5    | D4    | D3  | D2  | D1  | D0  | 注释                     |
+| Byte | D7  | D6  | D5    | D4    | D3  | D2  | D1  | D0  | 评论                     |
 |------|-----|-----|-------|-------|-----|-----|-----|-----|-----------------------------|
 | 1    | 0   | 0   | Ysign | Xsign | 1   | M   | R   | L   | X/Y 号和 R/L/M 按钮 |
 | 2    | X 7  | X6  | X5    | X4    | X3  | X2  | X1  | X0  | X 数据字节                 |
@@ -143,7 +143,7 @@ Windows 用于激活新 4&5 按钮 + 滚轮模式的方法是用于在智能鼠�
 
 #### <a name="standard-ps2-compatible-mouse-data-packet-format-5-buttons--verticalwheel"></a>标准 PS/2 兼容的鼠标数据包格式 (5 个按钮 + VerticalWheel) 
 
-| Byte | D7  | D6  | D5    | D4    | D3  | D2  | D1  | D0  | 注释                               |
+| Byte | D7  | D6  | D5    | D4    | D3  | D2  | D1  | D0  | 评论                               |
 |------|-----|-----|-------|-------|-----|-----|-----|-----|---------------------------------------|
 | 1    | 0   | 0   | Ysign | Xsign | 1   | M   | R   | L   | X/Y 号和 R/L/M 按钮           |
 | 2    | X 7  | X6  | X5    | X4    | X3  | X2  | X1  | X0  | X 数据字节                           |
@@ -168,9 +168,9 @@ Kbfiltr 旨在与 Kbdclass 配合使用，这是用于键盘设备和 I8042prt �
 
 有关 Kbfiltr 操作的详细信息，请参阅以下内容：
 
-- Ntddkbd WDK 标头文件。
+- [Ntddkbd](/windows/win32/api/ntddkbd/) WDK 标头文件。
 
-- 示例 [Kbfiltr](/samples/browse/) 源代码。
+- 示例 [Kbfiltr](/samples/microsoft/windows-driver-samples/keyboard-input-wdf-filter-driver-kbfiltr/) 源代码。
 
 ### <a name="kbfiltr-ioctls"></a>Kbfiltr IOCTLs
 
@@ -193,11 +193,11 @@ Kbfiltr 接收到挂钩键盘请求后，Kbfiltr 按以下方式筛选请求：
 
 #### <a name="ioctl_internal_keyboard_connect"></a>IOCTL_INTERNAL_KEYBOARD_CONNECT
 
-**IOCTL_INTERNAL_KEYBOARD_CONNECT**请求将 Kbdclass 服务连接到键盘设备。 在打开键盘设备之前，Kbdclass 会将此请求沿键盘设备堆栈向下发送。
+**IOCTL_INTERNAL_KEYBOARD_CONNECT** 请求将 Kbdclass 服务连接到键盘设备。 在打开键盘设备之前，Kbdclass 会将此请求沿键盘设备堆栈向下发送。
 
 Kbfiltr 收到键盘连接请求后，Kbfiltr 会按以下方式筛选连接请求：
 
-- 保存 Kbdclass 的 **CONNECT_DATA (Kbdclass) ** 结构的副本，该副本通过 Kbdclass 传递到筛选器驱动程序。
+- 保存 Kbdclass 的 **CONNECT_DATA (Kbdclass)** 结构的副本，该副本通过 Kbdclass 传递到筛选器驱动程序。
 - 替换类驱动程序连接信息的自己的连接信息。
 - 将 **IOCTL_INTERNAL_KEYBOARD_CONNECT** 请求向下发送设备堆栈。
 
@@ -207,7 +207,7 @@ Kbfiltr 为筛选服务回调例程提供一个模板，该模板可补充 **Key
 
 #### <a name="ioctl_internal_keyboard_disconnect"></a>IOCTL_INTERNAL_KEYBOARD_DISCONNECT
 
-**IOCTL_INTERNAL_KEYBOARD_DISCONNECT**请求已完成，状态为 STATUS_NOT_IMPLEMENTED。 请注意，即插即用管理器可以添加或删除即插即用键盘。
+**IOCTL_INTERNAL_KEYBOARD_DISCONNECT** 请求已完成，状态为 STATUS_NOT_IMPLEMENTED。 请注意，即插即用管理器可以添加或删除即插即用键盘。
 
 对于所有其他设备控制请求，Kbfiltr 将跳过当前的 IRP 堆栈，并向下发送请求，而无需进一步处理。
 
@@ -307,7 +307,7 @@ KbFilter_IsrHook KbFilter_IsrHook(
 
 请参阅 **PSERVICE_CALLBACK_ROUTINE**。
 
-函数驱动程序的 ISR 调度完成例程调用 **KbFilter_ServiceCallback**，后者随后调用 *PSERVICE_CALLBACK_ROUTINE*的键盘类驱动程序实现。 供应商可以实现筛选器服务回调来修改从设备输入缓冲区传输到类数据队列的输入数据。 例如，回调可以删除、转换或插入数据。
+函数驱动程序的 ISR 调度完成例程调用 **KbFilter_ServiceCallback**，后者随后调用 *PSERVICE_CALLBACK_ROUTINE* 的键盘类驱动程序实现。 供应商可以实现筛选器服务回调来修改从设备输入缓冲区传输到类数据队列的输入数据。 例如，回调可以删除、转换或插入数据。
 
 ```cpp
 /*
@@ -340,11 +340,17 @@ VOID KbFilter_ServiceCallback(
 
 Moufiltr 旨在与 Mouclass 一起使用、用于 Windows 2000 和更高版本的鼠标设备的系统类驱动程序，以及 I8042prt、用于 Windows 2000 和更高版本的 PS/2 样式鼠标的函数驱动程序。 Moufiltr 演示如何筛选 i/o 请求并添加回调例程来修改 Mouclass 和 I8042prt 的操作。
 
+有关 Moufiltr 操作的详细信息，请参阅以下内容：
+
+- [Ntddmou](/windows/win32/api/ntddmou/) WDK 标头文件。
+
+- 示例 [Moufiltr](/samples/microsoft/windows-driver-samples/mouse-input-wdf-filter-driver-moufiltr/) 源代码。
+
 ### <a name="moufiltr-control-codes"></a>Moufiltr 控制代码
 
 #### <a name="ioctl_internal_i8042_hook_mouse"></a>IOCTL_INTERNAL_I8042_HOOK_MOUSE
 
-**IOCTL_INTERNAL_I8042_HOOK_MOUSE**请求将 isr 回调例程添加到 I8042PRT 鼠标 ISR。 ISR 回调是可选的，由一级鼠标筛选器驱动程序提供。
+**IOCTL_INTERNAL_I8042_HOOK_MOUSE** 请求将 isr 回调例程添加到 I8042PRT 鼠标 ISR。 ISR 回调是可选的，由一级鼠标筛选器驱动程序提供。
 
 I8042prt 收到 **IOCTL_INTERNAL_MOUSE_CONNECT** 请求后发送此请求。 I8042prt 将同步 **IOCTL_INTERNAL_I8042_HOOK_MOUSE** 请求发送到鼠标设备堆栈的顶部。
 
