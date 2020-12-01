@@ -3,12 +3,12 @@ description: 为 USB 主控制器开发 Windows 驱动程序
 title: 为 USB 主控制器开发 Windows 驱动程序的概述
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ec20ec787bcd74178ba397e44880fc794bfa983d
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 8cfd21c89aec2d646ed3b6c6bac5caa980949f86
+ms.sourcegitcommit: 4d3ce2916e688901f2a62fac5a9494607c03923e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90104658"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96335950"
 ---
 # <a name="overview-of-developing-windows-drivers-for-usb-host-controllers"></a>为 USB 主控制器开发 Windows 驱动程序的概述
 
@@ -40,7 +40,7 @@ ms.locfileid: "90104658"
 <p><a href="https://go.microsoft.com/fwlink/p/?linkid=617155" data-raw-source="[Download kits and tools for Windows](https://go.microsoft.com/fwlink/p/?linkid=617155)">下载适用于 Windows 的工具包和工具</a></p></td>
 <td><p><strong>入门 .。。</strong></p>
 <p>阅读用于描述体系结构 (设备、主机控制器和中心) 的不同组件的预期行为的官方规范。</p>
-<a href="https://go.microsoft.com/fwlink/p/?linkid=618273" data-raw-source="[xHCI for Universal Serial Bus: Specification]( https://go.microsoft.com/fwlink/p/?linkid=618273)">适用于通用串行总线的 xHCI：规范</a>
+<a href="https://www.intel.com/content/www/us/en/products/docs/io/universal-serial-bus/extensible-host-controler-interface-usb-xhci.html" data-raw-source="[xHCI for Universal Serial Bus: Specification](https://www.intel.com/content/www/us/en/products/docs/io/universal-serial-bus/extensible-host-controler-interface-usb-xhci.html)">适用于通用串行总线的 xHCI：规范</a>
 <a href="https://go.microsoft.com/fwlink/p/?linkid=224892" data-raw-source="[Official Universal Serial Bus Documents]( https://go.microsoft.com/fwlink/p/?linkid=224892)">官方通用串行总线文档</a>
 <p><strong>了解 UCX 的体系结构</strong></p>
 <p>熟悉 Microsoft 提供的 USB 驱动程序堆栈：</p>
