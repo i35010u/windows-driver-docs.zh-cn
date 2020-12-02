@@ -13,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/25/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 8b2fa3fa9bea96784c90c8b9c46067af23731886
-ms.sourcegitcommit: 0c3cab853b0b75149b7604eef03275f997792a84
+ms.openlocfilehash: e69ebaea55df7e1cb67c31366da8cad51cedc2ce
+ms.sourcegitcommit: 4a4af9735e55c3314a8dc8931cb6bd21653d481d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96157267"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96518149"
 ---
 # <a name="fsctl_set_reparse_point_ex-control-code"></a>FSCTL_SET_REPARSE_POINT_EX 控制代码
 
@@ -39,10 +39,10 @@ Minifilters 应使用 [**FltTagFile**](/windows-hardware/drivers/ddi/fltkernel/n
 操作的控制代码。 使用 FSCTL_SET_REPARSE_POINT_EX 执行此操作。
 
 *InputBuffer*  
-指向分配的调用方 [**REPARSE_GUID_DATA_BUFFER**](/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_reparse_guid_data_buffer) 或包含重新分析点数据 [**REPARSE_DATA_BUFFER**](/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_reparse_data_buffer) 结构的指针。
+指向分配的调用方 [**REPARSE_GUID_DATA_BUFFER**](/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_reparse_guid_data_buffer) 或包含重新分析点数据 [**REPARSE_DATA_BUFFER_EX**](/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_reparse_data_buffer_ex) 结构的指针。
 
 *InputBufferLength*  
-*InputBuffer* 参数指向的缓冲区的大小（以字节为单位）。 对于 REPARSE_GUID_DATA_BUFFER 结构，此值必须至少是 REPARSE_GUID_DATA_BUFFER_HEADER_SIZE，加上用户定义数据的大小，并且必须小于或等于 MAXIMUM_REPARSE_DATA_BUFFER_SIZE。 对于 REPARSE_DATA_BUFFER 结构，此值必须至少是 REPARSE_DATA_BUFFER_HEADER_SIZE，加上用户定义数据的大小，并且必须小于或等于 MAXIMUM_REPARSE_DATA_BUFFER_SIZE。
+*InputBuffer* 参数指向的缓冲区的大小（以字节为单位）。 对于 REPARSE_GUID_DATA_BUFFER 结构，此值必须至少是 REPARSE_GUID_DATA_BUFFER_HEADER_SIZE，加上用户定义数据的大小，并且必须小于或等于 MAXIMUM_REPARSE_DATA_BUFFER_SIZE。 对于 REPARSE_DATA_BUFFER_EX 结构，此值必须至少是 REPARSE_DATA_BUFFER_HEADER_SIZE，加上用户定义数据的大小，并且必须小于或等于 MAXIMUM_REPARSE_DATA_BUFFER_SIZE。
 
 *OutputBuffer*  
 不与此操作一起使用;设置为 **NULL**。
@@ -54,7 +54,7 @@ Minifilters 应使用 [**FltTagFile**](/windows-hardware/drivers/ddi/fltkernel/n
 
 [**ZwFsControlFile**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-zwfscontrolfile) 返回 STATUS_SUCCESS 或适当的 NTSTATUS 值，如下所示：
 
-| 值 | 说明 |
+| 值 | 描述 |
 | ----- | ----------- |
 | STATUS_DIRECTORY_NOT_EMPTY | 不能对非空目录设置重新分析点。 这是一个错误代码。|
 | STATUS_EAS_NOT_SUPPORTED | 如果此请求在事务中，则无法对文件设置重新分析点。 这是一个错误代码。|
@@ -85,7 +85,7 @@ Minifilters 应使用 [**FltTagFile**](/windows-hardware/drivers/ddi/fltkernel/n
 
 [**IsReparseTagNameSurrogate**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-isreparsetagnamesurrogate)
 
-[**REPARSE_DATA_BUFFER**](/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_reparse_data_buffer)
+[**REPARSE_DATA_BUFFER_EX**](/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_reparse_data_buffer_ex)
 
 [**REPARSE_GUID_DATA_BUFFER**](/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_reparse_guid_data_buffer)
 
