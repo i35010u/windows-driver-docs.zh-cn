@@ -1308,40 +1308,40 @@
           href: using-virtual-clock-values.md
         - name: 使用 TmXxx 例程
           href: using-tmxxx-routines.md
-        - name: 动态硬件分区技术
-          href: dynamic-hardware-partitioning-techniques.md
+    - name: 动态硬件分区技术
+      items:
         - name: 动态硬件分区简介
           href: introduction-to-dynamic-hardware-partitioning.md
         - name: 动态硬件分区体系结构
           href: dynamic-hardware-partitioning-architecture.md
-    - name: 设备驱动程序的关键问题
-      items:
-        - name: 处理器数量的更改
-          href: changes-to-the-number-of-processors.md
-        - name: 物理内存量的更改
-          href: changes-to-the-amount-of-physical-memory.md
-        - name: 分区单元的热更换
-          href: hot-replace-of-partition-units.md
-    - name: 驱动程序通知
-      items:
-        - name: 驱动程序通知简介
-          href: introduction-to-driver-notification.md
-        - name: 注册同步驱动程序通知
-          href: registering-for-synchronous-driver-notification.md
-        - name: 处理同步驱动程序通知
-          href: processing-a-synchronous-driver-notification.md
-        - name: 注册异步驱动程序通知
-          href: registering-for-asynchronous-driver-notification.md
-        - name: 处理异步驱动程序通知
-          href: processing-an-asynchronous-driver-notification.md
-    - name: 应用程序通知
-      items:
-        - name: 应用程序通知简介
-          href: introduction-to-application-notification.md
-        - name: 注册应用程序通知
-          href: registering-for-application-notification.md
-        - name: 处理应用程序通知
-          href: processing-an-application-notification.md
+        - name: 设备驱动程序的关键问题
+          items:
+            - name: 处理器数量的更改
+              href: changes-to-the-number-of-processors.md
+            - name: 物理内存量的更改
+              href: changes-to-the-amount-of-physical-memory.md
+            - name: 分区单元的热更换
+              href: hot-replace-of-partition-units.md
+        - name: 驱动程序通知
+          items:
+            - name: 驱动程序通知简介
+              href: introduction-to-driver-notification.md
+            - name: 注册同步驱动程序通知
+              href: registering-for-synchronous-driver-notification.md
+            - name: 处理同步驱动程序通知
+              href: processing-a-synchronous-driver-notification.md
+            - name: 注册异步驱动程序通知
+              href: registering-for-asynchronous-driver-notification.md
+            - name: 处理异步驱动程序通知
+              href: processing-an-asynchronous-driver-notification.md
+        - name: 应用程序通知
+          items:
+            - name: 应用程序通知简介
+              href: introduction-to-application-notification.md
+            - name: 注册应用程序通知
+              href: registering-for-application-notification.md
+            - name: 处理应用程序通知
+              href: processing-an-application-notification.md
     - name: NTSTATUS 值
       items:
         - name: 使用 NTSTATUS 值
