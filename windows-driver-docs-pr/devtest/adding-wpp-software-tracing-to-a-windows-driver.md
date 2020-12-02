@@ -4,18 +4,18 @@ description: 若要在跟踪提供程序中（如内核模式驱动程序或用�
 ms.assetid: 487BA8AA-950A-4F3C-9E3E-EBE1DA35D4B1
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 478f4974ba9776c6e7bdcbfbe9d90e6cbef6b525
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 24e7c2807a6fa5e0041761b3d315287f73c0c1db
+ms.sourcegitcommit: f86e44d595be2c9e4efe3c196f6c0a9c71f4231e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90105848"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96470530"
 ---
 # <a name="adding-wpp-software-tracing-to-a-windows-driver"></a>将 WPP 软件跟踪添加到 Windows 驱动程序
 
 若要在跟踪提供程序中（如内核模式驱动程序或用户模式应用程序）使用 WPP 软件跟踪，需要 (或 *检测* 驱动程序源文件) 中添加代码，并修改驱动程序项目。 本部分将介绍这些步骤。
 
-**提示**  向驱动程序添加 WPP 跟踪的最简单方法是在 Visual Studio 中使用 KMDF 或 UMDF 驱动程序模板之一。 如果使用模板，则需要添加的很多代码已经完成。 在 Visual Studio 中，选择 "文件" " ** &gt; 新建 &gt; 项目**"，然后选择 "Windows 驱动程序" (用户模式或内核模式) WDF 项目。 WPP 宏在作为项目的一部分包含的 Trace .h 头文件中定义。 如果你使用其中一个模板，则可以跳到 [步骤 5](#step-5-instrument-the-driver-code-to-generate-trace-messages-at-appropriate-points)。 
+**提示**  向驱动程序添加 WPP 跟踪的最简单方法是在 Visual Studio 中使用 KMDF 或 UMDF 驱动程序模板之一。 如果使用模板，则需要添加的很多代码已经完成。 在 Visual Studio 中，选择 "文件" " **&gt; 新建 &gt; 项目**"，然后选择 "Windows 驱动程序" (用户模式或内核模式) WDF 项目。 WPP 宏在作为项目的一部分包含的 Trace .h 头文件中定义。 如果你使用其中一个模板，则可以跳到 [步骤 5](#step-5-instrument-the-driver-code-to-generate-trace-messages-at-appropriate-points)。 
 
 -   [步骤1：定义控件 GUID 和跟踪标志](#step-1-define-the-control-guid-and-trace-flags)
 -   [步骤2：选择要使用的跟踪消息函数并为这些函数定义 WPP 宏](#step-2-choose-which-trace-message-functions-you-intend-to-use-and-define-the-wpp-macros-for-those-functions)
@@ -48,10 +48,11 @@ ms.locfileid: "90105848"
             WPP_DEFINE_BIT(NameOfTraceFlag2)  \
             .............................   \
             .............................   \
-            WPP_DEFINE_BIT(NameOfTraceFlag31) 
+            WPP_DEFINE_BIT(NameOfTraceFlag31) \
+            )
     ```
 
-    例如，下面的代码使用 myDriverTraceGuid 作为 *GUIDFriendlyName*。 请注意， *ControlGUID* 的格式与32位十六进制 GUID 标准形式的格式略有不同。 *ControlGUID*有五个字段，但它们之间用逗号分隔，并用括号括起来，而不是常用的连字符和大括号。 例如，指定 (** (84bdb2e9、829e、41b3、b891、02f454bc2bd7) ** 而不是 {84bdb2e9-829e-41b3-b891-02f454bc2bd7}。
+    例如，下面的代码使用 myDriverTraceGuid 作为 *GUIDFriendlyName*。 请注意， *ControlGUID* 的格式与32位十六进制 GUID 标准形式的格式略有不同。 *ControlGUID* 有五个字段，但它们之间用逗号分隔，并用括号括起来，而不是常用的连字符和大括号。 例如，指定 (**(84bdb2e9、829e、41b3、b891、02f454bc2bd7)** 而不是 {84bdb2e9-829e-41b3-b891-02f454bc2bd7}。
 
     **WPP \_ 控制 \_ guid 语句的示例**
 
@@ -66,7 +67,7 @@ ms.locfileid: "90105848"
             )                             
     ```
 
-    **提示**  可以将此代码片段复制到头文件中。 确保更改控件 GUID 和友好名称。 您可以使用 GUIDgen.exe 来生成控件 GUID。 Visual Studio (**工具 &gt; 创建 GUID**) 附带了 Guidgen.exe。 你还可以使用 Uuidgen.exe 工具，该工具可从 Visual Studio 命令提示符窗口中找到 (键入 **uuigen.exe/？** ) 的详细信息。
+    **提示**  可以将此代码片段复制到头文件中。 确保更改控件 GUID 和友好名称。 您可以使用 GUIDgen.exe 来生成控件 GUID。 Visual Studio (**工具 &gt; 创建 GUID**) 附带了 Guidgen.exe。 你还可以使用 Uuidgen.exe 工具，该工具可从 Visual Studio 命令提示符窗口中找到 (键入 **uuidgen.exe/？** ) 的详细信息。
 
 
 
@@ -99,9 +100,9 @@ ms.locfileid: "90105848"
 
 2.  定义 WPP 宏以启用 trace 函数。
 
-    你使用的每个跟踪消息函数都必须具有相应的宏对。 这些宏标识跟踪提供程序并指定生成消息的条件。 通常，您可以根据启用的默认 WPP 级别和 wpp ** \_ * &lt; &gt; * \_ **级别记录器宏来定义一对宏、 **wpp \_ * &lt; &gt; 条件* \_ 记录器**和 wpp 条件启用 \_ \_ \_ \_ 。
+    你使用的每个跟踪消息函数都必须具有相应的宏对。 这些宏标识跟踪提供程序并指定生成消息的条件。 通常，您可以根据启用的默认 WPP 级别和 wpp **\_ *&lt; &gt;* \_** 级别记录器宏来定义一对宏、 **wpp \_ *&lt; &gt; 条件* \_ 记录器** 和 wpp 条件启用 \_ \_ \_ \_ 。
 
-你使用的每个跟踪消息函数都必须具有相应的宏对。 这些宏标识跟踪提供程序并指定生成消息的条件。 通常，您可以根据启用的默认 WPP 级别和 wpp ** \_ * &lt; &gt; * \_ **级别记录器宏来定义一对宏、 **wpp \_ * &lt; &gt; 条件* \_ 记录器**和 wpp 条件启用 \_ \_ \_ \_ 。
+你使用的每个跟踪消息函数都必须具有相应的宏对。 这些宏标识跟踪提供程序并指定生成消息的条件。 通常，您可以根据启用的默认 WPP 级别和 wpp **\_ *&lt; &gt;* \_** 级别记录器宏来定义一对宏、 **wpp \_ *&lt; &gt; 条件* \_ 记录器** 和 wpp 条件启用 \_ \_ \_ \_ 。
 
 <table>
 <colgroup>
@@ -146,7 +147,7 @@ ms.locfileid: "90105848"
            (WPP_LEVEL_ENABLED(flags) && WPP_CONTROL(WPP_BIT_ ## flags).Level >= lvl)
 ```
 
-接下来，需要在 WPP 配置块中指定自定义跟踪函数 (**开始 \_ wpp config** 和 **end \_ wpp**) 例如，如果在 VISUAL Studio 中使用 UMDF 或 KMDF 驱动程序项目模板，则该模板将为名为 **TraceEvents**的自定义跟踪消息函数定义 WPP 宏。 **TraceEvents**宏函数使用[跟踪级别](trace-level.md)和跟踪标志作为生成消息的条件。 如果已在 Trace .h 头文件中定义了 **WPP \_ 级别 \_ 标志标记 \_ ** 的宏，则可以添加以下宏定义。
+接下来，需要在 WPP 配置块中指定自定义跟踪函数 (**开始 \_ wpp config** 和 **end \_ wpp**) 例如，如果在 VISUAL Studio 中使用 UMDF 或 KMDF 驱动程序项目模板，则该模板将为名为 **TraceEvents** 的自定义跟踪消息函数定义 WPP 宏。 **TraceEvents** 宏函数使用 [跟踪级别](trace-level.md)和跟踪标志作为生成消息的条件。 如果已在 Trace .h 头文件中定义了 **WPP \_ 级别 \_ 标志标记 \_** 的宏，则可以添加以下宏定义。
 
 ```ManagedCPlusPlus
 //
@@ -159,7 +160,7 @@ ms.locfileid: "90105848"
 //
 ```
 
-您还可以将现有的调试 print 语句转换为跟踪消息语句，方法是在 WPP 配置块中添加类似的 **FUNC** 声明。 例如，下面的示例添加代码来转换现有的 [**KdPrint**](/windows-hardware/drivers/ddi/wdm/nf-wdm-kdprint) 语句。 **FUNC**声明还全局定义**KdPrint**以使用指定的跟踪级别，并将标记 {level = 跟踪 \_ 级别 \_ 信息（FLAGS = trace \_ DRIVER}）。 调试打印语句将发送到跟踪日志，而不是将输出发送到调试器。
+您还可以将现有的调试 print 语句转换为跟踪消息语句，方法是在 WPP 配置块中添加类似的 **FUNC** 声明。 例如，下面的示例添加代码来转换现有的 [**KdPrint**](/windows-hardware/drivers/ddi/wdm/nf-wdm-kdprint) 语句。 **FUNC** 声明还全局定义 **KdPrint** 以使用指定的跟踪级别，并将标记 {level = 跟踪 \_ 级别 \_ 信息（FLAGS = trace \_ DRIVER}）。 调试打印语句将发送到跟踪日志，而不是将输出发送到调试器。
 
 ```ManagedCPlusPlus
 //
@@ -173,7 +174,7 @@ ms.locfileid: "90105848"
 //
 ```
 
-**注意**  如果要将 [**KdPrintEx**](/windows-hardware/drivers/ddi/wdm/nf-wdm-kdprintex) 转换为跟踪消息函数，则需要执行一些额外的步骤。 与 [**KdPrint**](/windows-hardware/drivers/ddi/wdm/nf-wdm-kdprint)相比， **KdPrintEx** 函数采用两个附加参数。 若要转换**KdPrintEx**函数，需要为*组件 id*定义一个**wpp \_ 定义 \_ 位**，并定义自定义**WPP \_ * &lt; 条件 &gt; * \_ 记录器**和** \_ \_ 启用 WPP* &lt; 条件 &gt; *** 的宏。 **KdPrintEx**的第二个参数指定的级别与[跟踪级别](trace-level.md)值相似，因此你不一定需要重新定义它们。
+**注意**  如果要将 [**KdPrintEx**](/windows-hardware/drivers/ddi/wdm/nf-wdm-kdprintex) 转换为跟踪消息函数，则需要执行一些额外的步骤。 与 [**KdPrint**](/windows-hardware/drivers/ddi/wdm/nf-wdm-kdprint)相比， **KdPrintEx** 函数采用两个附加参数。 若要转换 **KdPrintEx** 函数，需要为 *组件 id* 定义一个 **wpp \_ 定义 \_ 位**，并定义自定义 **WPP \_ *&lt; 条件 &gt;* \_ 记录器** 和 **\_ \_ 启用 WPP *&lt; 条件 &gt;*** 的宏。 **KdPrintEx** 的第二个参数指定的级别与 [跟踪级别](trace-level.md)值相似，因此你不一定需要重新定义它们。
 
 
 
@@ -213,7 +214,7 @@ ms.locfileid: "90105848"
 
 如果在标头文件中定义了驱动程序的控件 GUID 和跟踪标志 (例如，trace .h) ，则需要将头文件包含在要初始化和卸载 WPP (步骤 4) 或调用跟踪消息函数的源文件中。
 
-此外，还需要为[跟踪消息头文件](trace-message-header-file.md)添加** \# 包含**语句， ( tmh) 。 生成驱动程序或应用程序时，WPP 预处理器将为包含跟踪消息函数的每个源文件生成跟踪消息头文件 ( tmh) 。
+此外，还需要为 [跟踪消息头文件](trace-message-header-file.md)添加 **\# 包含** 语句， ( tmh) 。 生成驱动程序或应用程序时，WPP 预处理器将为包含跟踪消息函数的每个源文件生成跟踪消息头文件 ( tmh) 。
 
 ```ManagedCPlusPlus
 /* -- driver.c  - include the *.tmh file that is generated by WPP --*/
@@ -227,7 +228,7 @@ ms.locfileid: "90105848"
 
 **初始化驱动程序条目的 WPP**
 
--   向内核模式驱动程序或 UMDF 2.0 驱动程序的*DriverEntry*例程添加[WPP \_ INIT \_ 跟踪](/previous-versions/windows/hardware/previsioning-framework/ff556191(v=vs.85))宏，或将其添加到用户模式驱动程序的*DLLMain*例程 (UMDF 1.x) 或应用程序。
+-   向内核模式驱动程序或 UMDF 2.0 驱动程序的 *DriverEntry* 例程添加 [WPP \_ INIT \_ 跟踪](/previous-versions/windows/hardware/previsioning-framework/ff556191(v=vs.85))宏，或将其添加到用户模式驱动程序的 *DLLMain* 例程 (UMDF 1.x) 或应用程序。
 
 **清理驱动程序退出的 WPP 资源**
 
@@ -235,9 +236,9 @@ ms.locfileid: "90105848"
 
     对于 (UMDF 1.x) 或应用程序的用户模式驱动程序，将 [WPP \_ 清理](/previous-versions/windows/hardware/previsioning-framework/ff556179(v=vs.85)) 宏添加到 *DLLMain* 例程。
 
-    还应向*DriverEntry*例程添加[WPP \_ 清理](/previous-versions/windows/hardware/previsioning-framework/ff556179(v=vs.85))宏，以防*DriverEntry*失败。 例如，如果 *DriverEntry* 失败，则不会调用驱动程序卸载例程。 在以下示例中，请参阅对 [**WdfDriverCreate**](/windows-hardware/drivers/ddi/wdfdriver/nf-wdfdriver-wdfdrivercreate) 的调用。
+    还应向 *DriverEntry* 例程添加 [WPP \_ 清理](/previous-versions/windows/hardware/previsioning-framework/ff556179(v=vs.85))宏，以防 *DriverEntry* 失败。 例如，如果 *DriverEntry* 失败，则不会调用驱动程序卸载例程。 在以下示例中，请参阅对 [**WdfDriverCreate**](/windows-hardware/drivers/ddi/wdfdriver/nf-wdfdriver-wdfdrivercreate) 的调用。
 
-\_在 DriverEntry 中使用 wpp INIT \_ 跟踪和 wpp \_ 清除*DriverEntry*的内核模式驱动程序的示例
+\_在 DriverEntry 中使用 wpp INIT \_ 跟踪和 wpp \_ 清除 *DriverEntry* 的内核模式驱动程序的示例
 
 ```ManagedCPlusPlus
 
@@ -403,13 +404,13 @@ DllMain(
 
 **使用 DoTraceMessage 语句**
 
-1.  将 [**DoTraceMessage**](/previous-versions/windows/hardware/previsioning-framework/ff544918(v=vs.85)) 宏添加到您的代码中，就像调试打印例程一样。 **DoTraceMessage**宏使用3个参数：标志级别 (*TraceFlagName*) ，该标志定义跟踪消息写入时的条件、*消息*字符串和可选的变量列表。
+1.  将 [**DoTraceMessage**](/previous-versions/windows/hardware/previsioning-framework/ff544918(v=vs.85)) 宏添加到您的代码中，就像调试打印例程一样。 **DoTraceMessage** 宏使用3个参数：标志级别 (*TraceFlagName*) ，该标志定义跟踪消息写入时的条件、*消息* 字符串和可选的变量列表。
 
     ```
     DoTraceMessage(TraceFlagName, Message, [VariableList... ]
     ```
 
-    例如，以下[**DoTraceMessage**](/previous-versions/windows/hardware/previsioning-framework/ff544918(v=vs.85))语句在为**DoTraceMessage** \_ \_ 跟踪会话启用跟踪驱动程序标志时，将写入包含 DoTraceMessage 语句的函数的名称 \_ 。
+    例如，以下 [**DoTraceMessage**](/previous-versions/windows/hardware/previsioning-framework/ff544918(v=vs.85))语句在为 **DoTraceMessage** \_ \_ 跟踪会话启用跟踪驱动程序标志时，将写入包含 DoTraceMessage 语句的函数的名称 \_ 。
 
     ```ManagedCPlusPlus
          DoTraceMessage( TRACE_DRIVER, "\nEntering %!FUNC!" );
@@ -444,17 +445,17 @@ DllMain(
             dwLastError);
 ```
 
-<span id="using_traceevents"></span><span id="USING_TRACEEVENTS"></span>如果使用的是 Visual Studio 中的 Windows 驱动程序模板，则在 TraceEvents 头文件中定义了**TraceEvents**宏。
+<span id="using_traceevents"></span><span id="USING_TRACEEVENTS"></span>如果使用的是 Visual Studio 中的 Windows 驱动程序模板，则在 TraceEvents 头文件中定义了 **TraceEvents** 宏。
 
 **使用 TraceEvents 语句**
 
-1.  将 **TraceEvents** 宏添加到您的代码中，就像调试打印例程一样。 **TraceEvents**宏采用以下参数：跟踪级别 (*级别*) 和跟踪标志 (标志) ，该*标志*定义跟踪消息写入时的条件、*消息*字符串和可选的变量列表。
+1.  将 **TraceEvents** 宏添加到您的代码中，就像调试打印例程一样。 **TraceEvents** 宏采用以下参数：跟踪级别 (*级别*) 和跟踪标志 (标志) ，该 *标志* 定义跟踪消息写入时的条件、*消息* 字符串和可选的变量列表。
 
     ```
     TraceEvents(Level, Flags, Message, [VariableList... ]
     ```
 
-    例如，以下**TraceEvents**语句在满足[跟踪级别](trace-level.md)和跟踪标志参数中指定的条件时写入包含**TraceEvents**语句的函数的名称。 跟踪级别是一个整数值;将跟踪为跟踪会话指定的跟踪级别下或之下的任何内容。 跟踪 \_ 级别 \_ 信息是在 Evntrace 中定义的，其值为4。 跟踪 \_ 驱动程序标志 (第1位，0x2) 是在 WPP \_ 控件 guid 中定义的 \_ 。 如果 \_ 为跟踪会话设置了此跟踪驱动程序位，并且跟踪级别为4或更大，则 **TraceEvents** 将写入跟踪消息。
+    例如，以下 **TraceEvents** 语句在满足 [跟踪级别](trace-level.md)和跟踪标志参数中指定的条件时写入包含 **TraceEvents** 语句的函数的名称。 跟踪级别是一个整数值;将跟踪为跟踪会话指定的跟踪级别下或之下的任何内容。 跟踪 \_ 级别 \_ 信息是在 Evntrace 中定义的，其值为4。 跟踪 \_ 驱动程序标志 (第1位，0x2) 是在 WPP \_ 控件 guid 中定义的 \_ 。 如果 \_ 为跟踪会话设置了此跟踪驱动程序位，并且跟踪级别为4或更大，则 **TraceEvents** 将写入跟踪消息。
 
     ```ManagedCPlusPlus
             TraceEvents(TRACE_LEVEL_INFORMATION, TRACE_DRIVER, "%!FUNC! Entry");
@@ -525,4 +526,4 @@ logman stop "myWPP_session"
 tracelog -start MyTrace -guid  MyProvider.guid -f d:\traces\testtrace.etl -flag 2 -level 0xFFFF
 ```
 
-[Tracelog](tracelog.md)命令包括 **-f**参数，用于指定事件跟踪日志文件的名称和位置。 它包括 **-标志** 参数，用于指定标志集和 **级别** 参数以指定级别设置。 您可以省略这些参数，但某些跟踪提供程序不会生成任何跟踪消息，除非您设置了标志或级别。 [跟踪级别](trace-level.md)是在 Evntrace 文件中定义的，跟踪级别提供了一种将跟踪消息归类为关键、错误、警告和信息性消息的简便方法。
+[Tracelog](tracelog.md)命令包括 **-f** 参数，用于指定事件跟踪日志文件的名称和位置。 它包括 **-标志** 参数，用于指定标志集和 **级别** 参数以指定级别设置。 您可以省略这些参数，但某些跟踪提供程序不会生成任何跟踪消息，除非您设置了标志或级别。 [跟踪级别](trace-level.md)是在 Evntrace 文件中定义的，跟踪级别提供了一种将跟踪消息归类为关键、错误、警告和信息性消息的简便方法。

@@ -4,12 +4,12 @@ description: 本主题列出了从命令行运行 InfVerif.exe 时可用的选�
 ms.assetid: CC2DB624-FFEE-4049-ACE7-4A24B330BADB
 ms.date: 04/28/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 32b61d34be71734dc1a81e14eb89b4f693e660d1
-ms.sourcegitcommit: 8119e6cd68c83090bc633d2b5f8335188a73e233
+ms.openlocfilehash: b223843dc872c805dbce5553e77a0d2e883c7138
+ms.sourcegitcommit: f86e44d595be2c9e4efe3c196f6c0a9c71f4231e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92456321"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96470520"
 ---
 # <a name="running-infverif-from-the-command-line"></a>从命令行运行 InfVerif
 
@@ -26,7 +26,7 @@ USAGE: InfVerif.exe [/v] [/u | /universal] [/w] [/k] [/info] [/stampinf] [/l <pa
         Display verbose file logging details.
 
 /k
-        Reports errors for Windows Update submission. (mode)
+        Reports errors for Hardware Dev Center submission. (mode; checks error codes 1100-1299)
 
 /u
         Reports errors if INF is not Universal. (mode)
@@ -64,13 +64,15 @@ USAGE: InfVerif.exe [/v] [/u | /universal] [/w] [/k] [/info] [/stampinf] [/l <pa
 Only one mode option may be passed at a time.
 ```
 
+有关错误代码的信息，请参阅 [INF 验证错误和警告](./inf-validation-errors-and-warnings.md)
+
 Verbose 选项向输出添加一行，用于指定 INF 是否有效。  某些参数被标记为模式，其中只应传递其中一项。
 
 有关 *TargetOSVersion* 格式设置的示例，请参阅 [INF 制造商部分](../install/inf-manufacturer-section.md)的 "备注" 部分。
 
 *适用于 Windows 10 的新版本1703：*  Info 选项对于验证 INF 适用性特别有用。  它会报告每个受支持的硬件 ID 以及有效的体系结构和最低操作系统版本。  可以同时使用/info 和/osver 来验证 INF 在操作系统版本和体系结构方面的适用性。
 
-*适用于 Windows 10 的新版本1809：* 如果要开发*Windows 驱动程序*，请使用 `infverif /w` (理想使用 `/v`) 来确定与[DCH 设计原则](../develop/dch-principles-best-practices.md)的**声明性 (D) **原则的兼容性。  该 `/w` 标志还会检查 INF 是否符合 [驱动程序包隔离](../develop/driver-isolation.md) 要求 [和 Windows 驱动程序入门](../develop/getting-started-with-windows-drivers.md)。
+*适用于 Windows 10 的新版本1809：* 如果要开发 *Windows 驱动程序*，请使用 `infverif /w` (理想使用 `/v`) 来确定与 [DCH 设计原则](../develop/dch-principles-best-practices.md)的 **声明性 (D)** 原则的兼容性。  该 `/w` 标志还会检查 INF 是否符合 [驱动程序包隔离](../develop/driver-isolation.md) 要求 [和 Windows 驱动程序入门](../develop/getting-started-with-windows-drivers.md)。
 
 若要验证多个 INF 文件，请提供多个文件名或使用通配符：
 

@@ -4,12 +4,12 @@ description: 概述全局导航附属系统 (GNSS) UMDF 2.0 驱动程序体系�
 ms.assetid: 11B54F92-DC84-4D74-9BBE-C85047AD2167
 ms.date: 10/27/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: f48247921bf7d2ca253823a923073e7f850f622b
-ms.sourcegitcommit: 2b7ca7d65f0830b5fd8f80cc1b354eaa99cc781f
+ms.openlocfilehash: 9848f3a4c93695b39757f22fdbd303beaa48d691
+ms.sourcegitcommit: 4706c0fddf0a9300a5ce6cae646330c73d10c042
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93244595"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96441604"
 ---
 # <a name="global-navigation-satellite-system-gnss-driver-architecture"></a>全局导航卫星系统 (GNSS) 驱动程序体系结构
 
@@ -220,7 +220,7 @@ IHV 提供的 GNSS 堆栈 (GNSS 驱动程序，GNSS 设备/引擎) 需要支持 
 1. **配置：** 移动运营商使用 OMA 协议标准规定的配置机制来预配设备并更改配置。 例如，SUPL standard 需要基于 UICC 和/或使用通过 OMA 或 OMA 获取的 SUPL OMA 配置文件信息完成 SUPL 配置。
 
     > [!NOTE]
-    > 出于配置目的，在手机中提供某些功能 (OMA 和 OMA CP) 在 Windows 10 之前不在其他平台中提供。 从 Windows 10 开始，所有平台都可以通过 SUPL 配置服务提供程序 (CSP) 使用新的 GNSS DDI 来支持 SUPL 配置。 通过 CSP 注入的设置可以通过 provxml 或 multivariant) 或通过 OMA 或 OMA CP 从移动运营商那里 (。
+    > 出于配置目的，在手机中提供某些功能 (OMA 和 OMA CP) 在 Windows 10 之前不在其他平台中提供。 从 Windows 10 开始，所有平台都可以通过 SUPL 配置服务提供程序 (CSP) 使用新的 GNSS DDI 来支持 SUPL 配置。 通过 CSP 注入的设置可以通过 provxml 或 multivariant) 或通过 OMA 或 OMA CP 从移动运营商那里 (。 SUPL CSP 在 [SUPL csp](/windows/client-management/mdm/supl-csp)中定义。
 
     Windows 10 定义了一种专有技术，使用配置服务提供程序 (CSP) 进行设备管理，用于解释和提取配置数据。 Microsoft 提供 CSP 来使用 OMA 配置，并通过 GNSS 适配器将配置推送到 GNSS 驱动程序。
 
@@ -229,7 +229,7 @@ IHV 提供的 GNSS 堆栈 (GNSS 驱动程序，GNSS 设备/引擎) 需要支持 
 
     系统仅支持一个 SUPL 配置，包括两个 SIM 设备的情况。 Microsoft 提供了基于 UICC 和 UICC 更改重新配置 SUPL 的功能。 除此之外，在设备漫游的情况下，HLOS 会将 SUPL 客户端重新配置为在独立模式下工作。 本文档定义了用于推送 (SUPL 1.0 和2.0、v2UPL 等) 的各种移动操作协议的配置数据的 IOCTLs。
 
-1. **用户同意 UI：** 为了满足隐私要求，某些网络启动的定位请求需要用户同意。 不允许 Ihv 编写平台组件的 UI。 因此，GNSS 适配器代表 GNSS 驱动程序处理用户同意的 UI。 GNSS 驱动程序的通知 IOCTLs，用于请求 UI 弹出窗口，GNSS 适配器的 IOCTLs 用于向此类请求传达用户[响应。](/windows-hardware/drivers/ddi/gnssdriver)
+1. **处理 NI 请求的用户同意：** 为了满足隐私要求，某些网络启动的定位请求需要用户同意。 不允许 Ihv 编写平台组件的 UI。 因此，GNSS 适配器代表 GNSS 驱动程序处理用户同意的 UI。 GNSS 驱动程序的通知 IOCTLs，用于请求 UI 弹出窗口，GNSS 适配器的 IOCTLs 用于向此类请求传达用户[响应。](/windows-hardware/drivers/ddi/gnssdriver)
 
 为了实现完全正常运行的 SUPL 客户端，IHV 堆栈将需要使用中提供的接口或常规功能，以及操作系统平台。 下面是 Windows 10 中的可用功能列表，Ihv 可以利用这些功能来实现其 SUPL 客户端：
 
@@ -268,7 +268,7 @@ Oem 需要提供一种方法来在制造时进行验证，同时还需要在客�
 
 ## <a name="io-considerations"></a>I/o 注意事项
 
-由于 GNSS 功能不会映射到传统文件读取和写入设备驱动程序的请求，因此不会将 **ReadFile** 和 **WRITEFILE** 函数用于 GNSS 驱动程序 api。 所有 GNSS 功能都将使用定义明确的 GNSS 设备 i/o 控制来实现， ( **DeviceIoControl** ) 请求（也称为 IOCTLs）。
+由于 GNSS 功能不会映射到传统文件读取和写入设备驱动程序的请求，因此不会将 **ReadFile** 和 **WRITEFILE** 函数用于 GNSS 驱动程序 api。 所有 GNSS 功能都将使用定义明确的 GNSS 设备 i/o 控制来实现， (**DeviceIoControl**) 请求（也称为 IOCTLs）。
 
 所有 IOCTLs 将使用 \_ 缓冲为输入和输出数据的数据传输机制的方法。 由于与 GNSS 相关的数据的大小相对较小，因此额外的缓冲区副本不应影响系统性能。
 
@@ -412,7 +412,7 @@ GNSS 适配器将通过 GNSS 驱动程序开始基于时间的跟踪会话，仅
 
 - **DBT：** 基于距离的跟踪会话
 
-- **TBT** ：基于时间的跟踪会话
+- **TBT**：基于时间的跟踪会话
 
 - **TBF：** 修补间隔时间
 
