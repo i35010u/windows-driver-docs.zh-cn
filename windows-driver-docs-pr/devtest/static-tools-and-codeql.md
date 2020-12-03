@@ -5,14 +5,14 @@ ms.assetid: 134a5889-8ab9-4954-a10f-ac6fbafcd207
 keywords:
 - 动态验证工具 WDK
 - 静态验证工具 WDK
-ms.date: 12/01/2020
+ms.date: 12/03/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 0c958c4a36ccb60244c6348d8b3d571217c65374
-ms.sourcegitcommit: f07ec44e8224c98f132988dfccb79ec118f9eeb6
+ms.openlocfilehash: 10457aa08e5fad1b4ebd82fe3a0ddd420fa02bdf
+ms.sourcegitcommit: a78a2a85e3c012a8e07a1f7709ff2ce0042e643a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96535456"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96557441"
 ---
 # <a name="codeql-and-the-static-tools-logo-test"></a>CodeQL 和静态工具徽标测试
 
@@ -128,7 +128,7 @@ CodeQl 使用 MSBuild 编译器来处理 c + + 代码，以便对其进行分析
 
 ### <a name="example"></a>示例
 
-使用用于生成驱动程序源代码的命令行环境（例如 [企业 Windows 驱动程序工具包 (EWDK) ](/develop/using-the-enterprise-wdk.md)）导航到克隆了存储库的 CodeQL 工具文件夹。
+使用用于生成驱动程序源代码的命令行环境（例如 [企业 Windows 驱动程序工具包 (EWDK) ](../develop/using-the-enterprise-wdk.md)）导航到克隆了存储库的 CodeQL 工具文件夹。
 
 此示例将处理评估 github 上提供的 kmdfecho 驱动程序示例。
 
@@ -264,10 +264,10 @@ SARIF 文件包含已运行的每个查询的 " **结果** " 部分，其中包�
 
 ## <a name="driver-verification-log-dvl-consumption-of-sarif-output"></a>SARIF 输出的驱动程序验证日志 (DVL) 消耗
 
-Microsoft 将强制要求在静态工具徽标测试中运行 CodeQL 查询。  静态工具徽标测试使用 [驱动程序验证日志 (DVL) ](/develop/creating-a-driver-verification-log.md) 从在驱动程序源代码上运行的不同静态分析中收集结果。  然后，将此 DVL 分析为在 HLK 测试中使用的静态工具徽标测试的一部分。
+Microsoft 将强制要求在静态工具徽标测试中运行 CodeQL 查询。  静态工具徽标测试使用 [驱动程序验证日志 (DVL) ](../develop/creating-a-driver-verification-log.md) 从在驱动程序源代码上运行的不同静态分析中收集结果。  然后，将此 DVL 分析为在 HLK 测试中使用的静态工具徽标测试的一部分。
 
 CodeQL 结果遵循相同的模型，该模型使用 DVL 来表明要认证的驱动程序运行了相应的 CodeQL 查询，以便为认证传递检测测试。
 
 将 sarif 文件放置在 .vcxproj 文件所在的同一目录中，并为其生成 DVL。  如果文件以 *". sarif"* 结尾，则结果文件的确切名称并不重要。 在 WDK 中提供提交 SARIF 结果文件的功能，预览版本20190及更高版本。
 
-有关如何生成 DVL 的说明，请参阅 [创建驱动程序验证日志](/develop/creating-a-driver-verification-log.md)。 有关静态工具徽标 HLK 测试的 DVL 放置位置的指南，请参阅 [运行测试](https://docs.microsoft.com/windows-hardware/test/hlk/testref/6ab6df93-423c-4af6-ad48-8ea1049155ae#running-the-test)。
+有关如何生成 DVL 的说明，请参阅 [创建驱动程序验证日志](../develop/creating-a-driver-verification-log.md)。 有关静态工具徽标 HLK 测试的 DVL 放置位置的指南，请参阅 [运行测试](https://docs.microsoft.com/windows-hardware/test/hlk/testref/6ab6df93-423c-4af6-ad48-8ea1049155ae#running-the-test)。
