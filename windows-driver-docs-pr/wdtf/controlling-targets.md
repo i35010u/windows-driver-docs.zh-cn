@@ -18,12 +18,12 @@ keywords:
 - 测试脚本 WDK WDTF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3c846df33be7ff4714236eb12409d2744b178b1d
-ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
+ms.openlocfilehash: 52bb62e44496a5582e07b542364e3fb3993e7988
+ms.sourcegitcommit: b839cc39f4f5c80107e4433b00fe497bdffcda53
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89403508"
+ms.lasthandoff: 12/04/2020
+ms.locfileid: "96595341"
 ---
 # <a name="controlling-targets"></a>控制目标
 
@@ -36,12 +36,11 @@ WDTF 包括一组在目标上执行特定操作的接口。 WDTF 使用 Windows 
 Set Action = Device.GetInterface("PNP")
 ```
 
-[**操作接口**](/windows-hardware/drivers/ddi/index)用 WDTF *ProgId*标识。 调用[**HasInterface**](/windows-hardware/drivers/ddi/wdtf/nf-wdtf-iwdtftarget2-hasinterface)、 [**GetInterface**](/windows-hardware/drivers/ddi/wdtf/nf-wdtf-iwdtftarget2-getinterface)、 [**GetInterfaces**](/windows-hardware/drivers/ddi/wdtf/nf-wdtf-iwdtftargets2-getinterfaces)和[**GetInterfacesIfExist**](/windows-hardware/drivers/ddi/wdtf/nf-wdtf-iwdtftargets2-getinterfacesifexist)方法时，必须指定 WDTF *ProgId* 。 有关 WDTF *ProgId*的信息，请参阅 **操作接口**。
+[**操作接口**](/windows-hardware/drivers/ddi/index)用 WDTF *ProgId* 标识。 调用 [**HasInterface**](/windows-hardware/drivers/ddi/wdtf/nf-wdtf-iwdtftarget2-hasinterface)、 [**GetInterface**](/windows-hardware/drivers/ddi/wdtf/nf-wdtf-iwdtftarget2-getinterface)、 [**GetInterfaces**](/windows-hardware/drivers/ddi/wdtf/nf-wdtf-iwdtftargets2-getinterfaces)和 [**GetInterfacesIfExist**](/windows-hardware/drivers/ddi/wdtf/nf-wdtf-iwdtftargets2-getinterfacesifexist)方法时，必须指定 WDTF *ProgId* 。 有关 WDTF *ProgId* 的信息，请参阅 **操作接口**。
 
 可以通过插件模型将接口和接口的实现添加到 WDTF。 有关此模型的详细信息，请参阅 [扩展框架](extending-the-framework.md)。
 
 ## <a name="related-topics"></a>相关主题
-[**操作接口**](/windows-hardware/drivers/ddi/index)  
 [扩展框架](extending-the-framework.md)  
 [**GetInterface**](/windows-hardware/drivers/ddi/wdtf/nf-wdtf-iwdtftarget2-getinterface)  
 [**GetInterfaces**](/windows-hardware/drivers/ddi/wdtf/nf-wdtf-iwdtftargets2-getinterfaces)  
