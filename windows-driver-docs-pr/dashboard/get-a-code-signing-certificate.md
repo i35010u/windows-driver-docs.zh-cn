@@ -5,12 +5,12 @@ ms.assetid: 6CF4111A-C645-40F5-8D45-55F46B3C0740
 ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b1d126846416260fe2234ab417bd7fad64959033
-ms.sourcegitcommit: 6c736c8a461f82f41f9c6988a20de2a2098ab482
+ms.openlocfilehash: 4e1c456dd753ef29b8cbc2ad54d9c36f2507364b
+ms.sourcegitcommit: 4d3ce2916e688901f2a62fac5a9494607c03923e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2020
-ms.locfileid: "92914026"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96335952"
 ---
 # <a name="get-a-code-signing-certificate"></a>获取代码签名证书
 
@@ -28,7 +28,7 @@ ms.locfileid: "92914026"
 
 - [购买 SSL.com EV 代码签名证书](https://www.ssl.com/certificates/ev-code-signing/)
 
-- [购买 Certum EV 代码签名证书](https://go.microsoft.com/fwlink/?linkid=843061)
+- [购买 Certum EV 代码签名证书](https://shop.certum.eu/data-safety/code-signing-certificates/certum-ev-code-sigining.html)
 
 - [购买 Entrust EV 代码签名证书](https://www.entrustdatacard.com/products/digital-signing-certificates/code-signing-certificates)
 

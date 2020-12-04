@@ -4,12 +4,12 @@ description: Sharks Cove 是硬件开发板，可用于开发 Windows 硬件和�
 ms.assetid: D86546BB-B613-4CEE-9A76-3FD269137EE9
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ebd35a3c4ea799315b632a9f8e362f7e8cf86846
-ms.sourcegitcommit: 9e5ade5d1a311383016385ae3bc3f0a22da1dfc5
+ms.openlocfilehash: 333c2b6fbc799e3a8e7965039b2f2b6fff2c3dcd
+ms.sourcegitcommit: 4d3ce2916e688901f2a62fac5a9494607c03923e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95518412"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96335956"
 ---
 # <a name="sharks-cove-hardware-development-board"></a>Sharks Cove 硬件开发板
 
@@ -350,8 +350,6 @@ testsigning             Yes
     重启 Sharks Cove 板。
 
 ## <a name="step-7-connect-your-device-to-the-sharks-cove-board"></a>步骤 7：将设备连接到 Sharks Cove 板
-
-获取 [Sharks Cove 端头和引脚的规格](https://go.microsoft.com/fwlink/p?linkid=506966)。
 
 使用该规格确定要用于你的设备的引脚。 例如，假设你想要将 ADXL345 加速计连接到 I2C 总线。 在该规格中，可以看到 J1C1 头具有所需的引脚。 下面是要在 J1C1 头上使用的一些（但不是全部）引脚。
 
