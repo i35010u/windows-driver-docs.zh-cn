@@ -44,8 +44,6 @@
           href: windows-button-sample-code.md
         - name: ACPI 描述符示例
           href: acpi-descriptor-samples.md
-        - name: HID 按钮报告描述符
-          href: hid-button-report-descriptors.md
     - name: 实现无人参与 Windows 安装程序设置
       href: implement-the-unattended-windows-setup-setting.md
     - name: 日志记录和调查
