@@ -1737,6 +1737,7 @@
         - name: 静态驱动程序验证程序命令 (MSBuild)
           href: '-static-driver-verifier-commands--msbuild-.md'
         - name: 静态驱动程序验证程序简介
+          href: introducing-static-driver-verifier.md
           items:
             - name: 静态驱动程序验证程序简介
               href: introducing-static-driver-verifier.md
@@ -1906,6 +1907,10 @@
                   href: the-process-cannot-access-the-file---path---because-it-is-being-used-b.md
             - name: 静态驱动程序验证程序诊断
               href: static-driver-verifier-diagnostics.md
+    - name: CodeQL 和静态工具徽标测试
+      items:
+        - name: CodeQL 和静态工具徽标测试
+          href: static-tools-and-codeql.md
     - name: WDF 验证程序控制应用程序
       items:
         - name: WDF 验证程序控制应用程序
