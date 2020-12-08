@@ -1,7 +1,6 @@
 ---
 title: 可扩展的波形格式描述符
 description: 可扩展的波形格式描述符
-ms.assetid: b80e651b-fb97-4502-8526-e844425805dc
 keywords:
 - 波形格式描述符 WDK 音频
 - 波浪格式说明符
@@ -16,12 +15,12 @@ keywords:
 - WDM 音频数据格式 WDK
 ms.date: 06/30/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 54d954d98a24e1a3d0e71fc2f6b40b597a0be2d3
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 84c493fe316705a6c7b002e7faff65d14e0a7adf
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89208005"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96786549"
 ---
 # <a name="extensible-wave-format-descriptors"></a>可扩展的波形格式描述符
 
@@ -35,21 +34,21 @@ ms.locfileid: "89208005"
 
 - 如上图中所示的格式说明符作为调用参数传递给微型端口驱动程序的 **newstream.ischecked** 方法 (例如，请参阅 [**IMiniportWaveCyclic：： newstream.ischecked**](/windows-hardware/drivers/ddi/portcls/nf-portcls-iminiportwavecyclic-newstream)) 。
 
-- [**IMiniport：:D atarangeintersection**](/windows-hardware/drivers/ddi/portcls/nf-portcls-iminiport-datarangeintersection)方法的*ResultantFormat*参数指向一个缓冲区，此方法会将格式说明符写入其中，如上图中所示。
+- [**IMiniport：:D atarangeintersection**](/windows-hardware/drivers/ddi/portcls/nf-portcls-iminiport-datarangeintersection)方法的 *ResultantFormat* 参数指向一个缓冲区，此方法会将格式说明符写入其中，如上图中所示。
 
 - [**KSPROPERTY \_ PIN \_ DATAINTERSECTION**](../stream/ksproperty-pin-dataintersection.md)请求检索格式描述符，如上图中所示。
 
 - [**KSPROPERTY \_ PIN \_ PROPOSEDATAFORMAT**](../stream/ksproperty-pin-proposedataformat.md)请求接受格式描述符，如上图中所示。
 
-- [**KsCreatePin**](/windows-hardware/drivers/ddi/ks/nf-ks-kscreatepin)函数的*Connect*调用参数使用类似的格式。 此参数指向同时包含格式说明符的缓冲区开头的 [**KSPIN \_ 连接**](/windows-hardware/drivers/ddi/ks/ns-ks-kspin_connect) 结构。 紧跟在 KSPIN 连接结构后面的格式说明符以 \_ KSDATAFORMAT 结构开始，如上图中所示。
+- [**KsCreatePin**](/windows-hardware/drivers/ddi/ks/nf-ks-kscreatepin)函数的 *Connect* 调用参数使用类似的格式。 此参数指向同时包含格式说明符的缓冲区开头的 [**KSPIN \_ 连接**](/windows-hardware/drivers/ddi/ks/ns-ks-kspin_connect) 结构。 紧跟在 KSPIN 连接结构后面的格式说明符以 \_ KSDATAFORMAT 结构开始，如上图中所示。
 
 KSDATAFORMAT 结构后面的格式信息应为 [**WAVEFORMATEXTENSIBLE**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-waveformatextensible) 结构。 WAVEFORMATEXTENSIBLE 是 WAVEFORMATEX 的扩展版本，可描述比 WAVEFORMATEX 更广泛的格式范围。
 
 WAVEFORMAT 已过时，并且任何 Microsoft Windows 版本中的 WDM 音频子系统都不支持。 PCMWAVEFORMAT 结构是 WAVEFORMAT 的扩展版本，也已过时。
 
-四个波形格式结构--WAVEFORMAT、PCMWAVEFORMAT、WAVEFORMATEX 和 WAVEFORMATEXTENSIBLE--都以从 **wFormatTag**开始的相同的五个成员开头。 上图显示了这四个结构彼此重叠，以突出显示完全相同的结构部分。
+四个波形格式结构--WAVEFORMAT、PCMWAVEFORMAT、WAVEFORMATEX 和 WAVEFORMATEXTENSIBLE--都以从 **wFormatTag** 开始的相同的五个成员开头。 上图显示了这四个结构彼此重叠，以突出显示完全相同的结构部分。
 
-WAVEFORMATEXTENSIBLE 通过添加三个成员，从 wValidBitsPerSample 开始扩展**WAVEFORMATEX。**  (**示例** 是一个联合，其另一个成员 **wValidSamplesPerBlock**（而不是 **wValidBitsPerSample** ）用于某些压缩格式。 ) **wFormatTag** 成员，该成员紧跟在缓冲区中 KSDATAFORMAT 结构的末尾，它指定 KSDATAFORMAT 后面的格式信息类型。
+WAVEFORMATEXTENSIBLE 通过添加三个成员，从 wValidBitsPerSample 开始扩展 **WAVEFORMATEX。**  (**示例** 是一个联合，其另一个成员 **wValidSamplesPerBlock**（而不是 **wValidBitsPerSample** ）用于某些压缩格式。 ) **wFormatTag** 成员，该成员紧跟在缓冲区中 KSDATAFORMAT 结构的末尾，它指定 KSDATAFORMAT 后面的格式信息类型。
 
 与 WAVEFORMATEX 不同，WAVEFORMATEXTENSIBLE 可以执行以下操作：
 

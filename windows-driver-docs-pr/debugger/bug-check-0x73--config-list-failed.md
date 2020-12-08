@@ -1,7 +1,6 @@
 ---
 title: Bug 检查 0x73 CONFIG_LIST_FAILED
-description: CONFIG_LIST_FAILED bug 检查具有 0x00000073 值。 此 bug 检查指示不能在注册表树链接顶级注册表项，也称为核心系统配置单元，其中一个。
-ms.assetid: fec1f3ee-5405-49c2-8082-75adfdabd6b8
+description: CONFIG_LIST_FAILED bug 检查的值为0x00000073。 此 bug 检查表明无法在注册表树中链接顶级注册表项，也称为核心系统配置单元。
 keywords:
 - Bug 检查 0x73 CONFIG_LIST_FAILED
 - CONFIG_LIST_FAILED
@@ -13,23 +12,23 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 4bbd1a7a8e42697887fa033b29449f9faf9a53ff
-ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
+ms.openlocfilehash: ff76faccc1d234ec32d2d8e9605f9a880242169d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67519226"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96787025"
 ---
-# <a name="bug-check-0x73-configlistfailed"></a>Bug 检查 0x73：CONFIG\_列表\_失败
+# <a name="bug-check-0x73-config_list_failed"></a>Bug 检查0x73：配置 \_ 列表 \_ 失败
 
 
-在配置\_列表\_失败错误检查的值为 0x00000073。 此 bug 检查指示不能在注册表树链接顶级注册表项，也称为核心系统配置单元，其中一个。
+配置 \_ 列表 \_ 失败 bug 检查的值为0x00000073。 此 bug 检查表明无法在注册表树中链接顶级注册表项，也称为核心系统配置单元。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://www.windows.com/stopcode)。
+> 本主题面向程序员。 如果您是在使用计算机时收到蓝屏错误代码的客户，请参阅[蓝屏错误疑难解答](https://www.windows.com/stopcode)。
 
 
-## <a name="configlistfailed-parameters"></a>CONFIG\_列表\_失败参数
+## <a name="config_list_failed-parameters"></a>配置 \_ 列表 \_ 失败参数
 
 
 <table>
@@ -50,15 +49,15 @@ ms.locfileid: "67519226"
 </tr>
 <tr class="even">
 <td align="left"><p>2</p></td>
-<td align="left"><p>导致要假定它未能加载配置单元的 Windows 操作系统 NT 状态代码</p></td>
+<td align="left"><p>导致 Windows 操作系统无法加载配置单元的 NT 状态代码</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>3</p></td>
-<td align="left"><p>配置单元列表中的配置单元的索引</p></td>
+<td align="left"><p>Hive 列表中 hive 的索引</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>4</p></td>
-<td align="left"><p>指向包含该配置单元文件名称的 UNICODE_STRING 结构的指针</p></td>
+<td align="left"><p>指向 UNICODE_STRING 结构的指针，该结构包含 hive 的文件名</p></td>
 </tr>
 </tbody>
 </table>
@@ -68,9 +67,9 @@ ms.locfileid: "67519226"
 <a name="cause"></a>原因
 -----
 
-不能关联的注册表配置单元可能 SAM、 安全性、 软件或默认值。 该配置单元无效，因为它已成功加载。
+无法链接的注册表配置单元可能为 SAM、安全性、软件或默认值。 Hive 有效，因为它已成功加载。
 
-检查参数 2，若要查看无法进行 hive 链接在注册表树中。 此错误的一个常见原因是 Windows 操作系统的系统驱动器上的磁盘空间不足。 (在这种情况下，此参数是 0xC000017D，状态\_否\_日志\_空间。)另一个常见问题是分配池的尝试已失败。 (在此情况下，参数 2 是 0xC000009A，状态\_不足\_资源。)您必须先调查其他状态代码。
+检查参数2，了解无法在注册表树中链接 hive 的原因。 此错误的一个常见原因是 Windows 操作系统的系统驱动器磁盘空间不足。  (在这种情况下，此参数为0xC000017D，状态为 \_ 无 \_ 日志 \_ 空间。 ) 另一个常见问题是尝试分配池失败。  (在这种情况下，参数2为0xC000009A，状态 \_ \_ 资源不足。 ) 必须调查其他状态代码。
 
  
 

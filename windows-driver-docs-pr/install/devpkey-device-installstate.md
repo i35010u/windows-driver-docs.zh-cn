@@ -1,7 +1,6 @@
 ---
 title: DEVPKEY_Device_InstallState
 description: DEVPKEY_Device_InstallState
-ms.assetid: 3bebb3d6-96bb-4c7c-8a7a-c5bf29cb3a2a
 keywords:
 - DEVPKEY_Device_InstallState 设备和驱动程序安装
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: e2ab67f8dd8417f006aecd31b277a1043fd4fd04
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 6b8fb34865203ff90ee56d17513f3e767808e754
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90714668"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96786829"
 ---
 # <a name="devpkey_device_installstate"></a>DEVPKEY_Device_InstallState
 
@@ -66,7 +65,7 @@ DEVPKEY_Device_InstallState 设备属性表示设备实例的安装状态。
 <a name="remarks"></a>备注
 -------
 
-Windows 将 DEVPKEY_Device_InstallState 的值设置为 Cfgmgr32 中定义的 CM_INSTALL_STATE_*Xxx* 值之一。 CM_INSTALL_STATE_*Xxx* 值对应于 [**DEVICE_INSTALL_STATE**](/windows-hardware/drivers/ddi/wdm/ne-wdm-_device_install_state) 枚举值。
+Windows 将 DEVPKEY_Device_InstallState 的值设置为 Cfgmgr32 中定义的 CM_INSTALL_STATE_ *Xxx* 值之一。 CM_INSTALL_STATE_ *Xxx* 值对应于 [**DEVICE_INSTALL_STATE**](/windows-hardware/drivers/ddi/wdm/ne-wdm-_device_install_state) 枚举值。
 
 可以调用 [**SetupDiGetDeviceProperty**](/windows/win32/api/setupapi/nf-setupapi-setupdigetdevicepropertyw) 来检索 DEVPKEY_Device_InstallState 的值。
 

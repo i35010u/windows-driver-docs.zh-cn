@@ -1,18 +1,17 @@
 ---
 title: 必需的和可选的 SCSI 微型端口驱动程序例程
 description: 必需的和可选的 SCSI 微型端口驱动程序例程
-ms.assetid: 6fd1f7af-e8ba-4679-bd8c-f757b57821b0
 keywords:
 - SCSI 微型端口驱动程序 WDK 存储，必需例程
 - SCSI 微型端口驱动程序 WDK 存储，可选例程
 ms.date: 10/08/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 4843e4ae131bbd67d05fb94661190f0927eaab8b
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 5786e1d3a5ea36b0e77e7b273bfc5951667b77f2
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89184913"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96786673"
 ---
 # <a name="required-and-optional-scsi-miniport-driver-routines"></a>必需的和可选的 SCSI 微型端口驱动程序例程
 
@@ -33,8 +32,8 @@ SCSI 微型端口驱动程序还具有以下系统定义的部分或全部，具
 |  例程所返回的值 | 描述 |
 | -------- | ----------- |
 | [*HwScsiInterrupt*](scsi-miniport-driver-s-hwscsiinterrupt-routine.md) | 处理 HBA 生成的中断，当且仅当 HBA 不产生中断时，此操作是可选的，因此，小型端口驱动程序通过轮询管理其 HBA 上的所有 i/o 操作。 但是，仅使用轮询会对微型端口驱动程序的性能及其 HBA 的 i/o 吞吐量产生负面影响。 此类微型端口驱动程序还应具有 [*HwScsiTimer*](scsi-miniport-driver-s-hwscsitimer-routine.md) 例程。 |
-| [*HwScsiDisableInterruptsCallback*](scsi-miniport-driver-s-hwscsidisableinterruptscallback-routine.md)和[ *HwScsiEnableInterruptsCallback*](scsi-miniport-driver-s-hwscsienableinterruptscallback-routine.md) | 如果中断驱动的 i/o 操作需要很长时间，请处理延迟的 i/o 处理。 |
-| [*HwScsiTimer*](scsi-miniport-driver-s-hwscsitimer-routine.md) | 需要在 HBA 上进行长时间延迟或由驱动程序设计器确定的任何其他目的的时间运算。 如果微型端口驱动程序没有*HwScsiInterrupt*例程，则它应具有*HwScsiTimer*例程，因此它可以使用*HwScsiTimer*例程来有效地轮询其 HBA。 |
+| [*HwScsiDisableInterruptsCallback*](scsi-miniport-driver-s-hwscsidisableinterruptscallback-routine.md)和 [ *HwScsiEnableInterruptsCallback*](scsi-miniport-driver-s-hwscsienableinterruptscallback-routine.md) | 如果中断驱动的 i/o 操作需要很长时间，请处理延迟的 i/o 处理。 |
+| [*HwScsiTimer*](scsi-miniport-driver-s-hwscsitimer-routine.md) | 需要在 HBA 上进行长时间延迟或由驱动程序设计器确定的任何其他目的的时间运算。 如果微型端口驱动程序没有 *HwScsiInterrupt* 例程，则它应具有 *HwScsiTimer* 例程，因此它可以使用 *HwScsiTimer* 例程来有效地轮询其 HBA。 |
 | [*HwScsiDmaStarted*](scsi-miniport-driver-s-hwscsidmastarted-routine.md) | 如果 HBA 使用系统 DMA 控制器，则需要在端口驱动程序对系统 DMA 控制器进行编程后设置 HBA 传输。 |
 | [*HwScsiAdapterState*](scsi-miniport-driver-s-hwscsiadapterstate-routine.md) | 当且仅当 HBA 没有 BIOS 或 x86-实模式驱动程序和/或从不在仅 x86 的 Microsoft Windows 系统中运行时，可选。 |
 | [*HwScsiAdapterControl*](scsi-miniport-driver-s-hwscsiadaptercontrol-routine.md) | 如果微型端口驱动程序支持即插即用，则为必需。 |

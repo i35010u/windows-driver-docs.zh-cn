@@ -1,15 +1,14 @@
 ---
 title: 无连接 (802.3) 初始化序列示例
 description: 无连接 (802.3) 初始化序列示例
-ms.assetid: 9625f717-81c3-460b-83e8-c7a86aa85f36
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b9c2d7c98672d59c95af8743320c80955dea2472
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: e445f07f06668f16bcbce09695b5184e85a2f80f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90104276"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96788429"
 ---
 # <a name="example-connectionless-8023-initialization-sequence"></a>无连接 (802.3) 初始化序列示例
 
@@ -29,7 +28,7 @@ ms.locfileid: "90104276"
 <tr class="header">
 <th align="left">主机</th>
 <th align="left">设备</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>

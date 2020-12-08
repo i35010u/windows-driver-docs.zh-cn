@@ -1,15 +1,14 @@
 ---
 title: 自动调试服务应用程序
 description: 自动调试服务应用程序
-ms.assetid: 3168b5c1-30fa-4ff5-b871-736dcdeb8f31
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 423b004ad91ab68e0c505a1fe9aa94c978c6a714
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: bb4cf684e1da1dbb9789d53b48f9903117032249
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89212587"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96786417"
 ---
 # <a name="debugging-the-service-application-automatically"></a>自动调试服务应用程序
 
@@ -37,12 +36,12 @@ ms.locfileid: "89212587"
 4.  下一步取决于你在步骤1中指定的调试程序命令行：
     -   如果在没有任何远程处理选项的情况下指定了调试程序，则将启动此调试器并显示其窗口。
     -   如果使用-server 和-noio 选项指定了 NTSD，则将在没有控制台窗口的情况下启动 NTSD。 然后，可以通过使用-remote 参数启动任何用户模式调试器，从另一台计算机连接到调试会话。 有关说明，请参阅 [**激活调试客户端**](activating-a-debugging-client.md)。
-    -   如果使用-d 选项指定了 NTSD，则在没有控制台窗口的情况下启动 NTSD。 然后，你可以通过使用在另一台计算机上运行的内核调试器连接到调试会话。 有关说明，请参阅 [从内核调试器控制用户模式调试器](controlling-the-user-mode-debugger-from-the-kernel-debugger.md)。
+    -   如果使用-d 选项指定了 NTSD，则在没有控制台窗口的情况下启动 NTSD。 然后，你可以通过使用在另一台计算机上运行的内核调试器连接到调试会话。 有关说明，请参阅 [从内核调试器控制 User-Mode 调试器](controlling-the-user-mode-debugger-from-the-kernel-debugger.md)。
     -   如果使用-ddefer 和-server 选项指定了 NTSD，则将在没有控制台窗口的情况下启动 NTSD。 然后，你可以通过使用内核调试器和用户模式远程调试器来连接到调试会话，该调试器在不同于服务 (的计算机上运行，但可能与每个其他计算机) 相同。 有关说明，请参阅 [结合此方法与远程调试](combining-this-method-with-remote-debugging.md)。
 
 5.  调试器启动时，服务在初始进程断点、异常或 **DebugBreak** 命令处暂停。 这使您可以检查服务应用程序的当前状态，设置断点，并进行任何其他所需的配置选择。
 
-6.  使用 [**g (中转) **](g--go-.md) 或其他执行命令继续执行服务应用程序。
+6.  使用 [**g (中转)**](g--go-.md) 或其他执行命令继续执行服务应用程序。
 
 ## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 

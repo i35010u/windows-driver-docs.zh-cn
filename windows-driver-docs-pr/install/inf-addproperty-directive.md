@@ -1,7 +1,6 @@
 ---
 title: INF AddProperty 指令
 description: AddProperty 指令引用一个或多个 INF 文件节，这些节修改为设备实例、设备安装程序类、设备接口类或设备接口设置的设备属性。
-ms.assetid: 8fcb1355-f13d-4d96-aa73-62a094a52267
 keywords:
 - INF AddProperty 指令设备和驱动程序安装
 topic_type:
@@ -12,17 +11,17 @@ api_type:
 - NA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e17d1f499643920c0753dd0c77a5e91758ed8f63
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 66e50904102d97023c30de90dd90d8eb87f921be
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89096351"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96786281"
 ---
 # <a name="inf-addproperty-directive"></a>INF AddProperty 指令
 
 
-**AddProperty**指令引用一个或多个 INF 文件节，这些节修改为设备实例、[设备安装程序类](./overview-of-device-setup-classes.md)、[设备接口类](./overview-of-device-interface-classes.md)或设备接口设置的[设备属性](device-properties.md)。
+**AddProperty** 指令引用一个或多个 INF 文件节，这些节修改为设备实例、[设备安装程序类](./overview-of-device-setup-classes.md)、[设备接口类](./overview-of-device-interface-classes.md)或设备接口设置的 [设备属性](device-properties.md)。
 
 ```inf
 [DDInstall] |
@@ -57,7 +56,7 @@ AddProperty=add-property-section[,add-property-section]...  (Windows Vista and l
 -   添加设备属性并初始化属性的值。
 -   修改现有设备属性的值。
 
-**AddProperty**指令引用的*添加属性部分*具有以下格式：
+**AddProperty** 指令引用的 *添加属性部分* 具有以下格式：
 
 ```inf
 [add-property-section]
@@ -84,7 +83,7 @@ Add 属性节可以有任意数量的 *属性名称* 条目或 *属性 guid* 条
 有关添加自定义设备图标的详细信息，请参阅为 [设备提供图标](providing-vendor-icons-for-the-shell-and-autoplay.md)。
 
 <a href="" id="property-category-guid"></a>*属性类别-guid*  
-标识属性类别的 GUID 值。 GUID 值可以是系统定义的 GUID，用于标识设备实例、 [设备安装程序类](./overview-of-device-setup-classes.md)、 [设备接口类](./overview-of-device-interface-classes.md)或设备接口的属性类别之一。 具有相同 GUID 值的所有属性都是同一类别的成员。 这些属性类别是在 *Devpkey*中定义的。
+标识属性类别的 GUID 值。 GUID 值可以是系统定义的 GUID，用于标识设备实例、 [设备安装程序类](./overview-of-device-setup-classes.md)、 [设备接口类](./overview-of-device-interface-classes.md)或设备接口的属性类别之一。 具有相同 GUID 值的所有属性都是同一类别的成员。 这些属性类别是在 *Devpkey* 中定义的。
 
 GUID 值还可以是用于标识自定义属性类别的自定义 GUID 值。
 
@@ -92,7 +91,7 @@ GUID 值还可以是用于标识自定义属性类别的自定义 GUID 值。
 属性标识符，指示属性类别中的特定属性，该属性由 *属性类别 guid* 值指示。 由于内部系统原因，属性标识符必须大于或等于2。
 
 <a href="" id="type"></a>类别  
-由属性-*类别 guid*值和*属性 pid*值指定的属性的[属性数据类型标识符](/previous-versions/ff541476(v=vs.85))的数字值（十进制或十六进制格式）。 仅支持以下 [**基本数据类型**](/previous-versions/ff537793(v=vs.85)) ：
+由属性-*类别 guid* 值和 *属性 pid* 值指定的属性的 [属性数据类型标识符](/previous-versions/ff541476(v=vs.85))的数字值（十进制或十六进制格式）。 仅支持以下 [**基本数据类型**](/previous-versions/ff537793(v=vs.85)) ：
 
 -   DEVPROP_TYPE_STRING
 -   DEVPROP_TYPE_STRING_LIST
@@ -106,7 +105,7 @@ GUID 值还可以是用于标识自定义属性类别的自定义 GUID 值。
 可选的十六进制值，它是控制添加操作的以下标志的按位 OR。
 
 <a href="" id="0x00000001--flg-addproperty-noclobber--"></a>**0x00000001** (FLG_ADDPROPERTY_NOCLOBBER)    
-禁止值输入值替换现有属性值的标志。 如果驱动程序编写器希望使某个属性能够通过 **Include** 和 **需要** 指令进行重写，则编写器必须为该属性指定此标志。 这是因为当 Windows 处理包含和**需要****指令的 inf**部分内的所有其他指令后，windows 处理由**Include**和**需要**指令引用的 inf 部分。
+禁止值输入值替换现有属性值的标志。 如果驱动程序编写器希望使某个属性能够通过 **Include** 和 **需要** 指令进行重写，则编写器必须为该属性指定此标志。 这是因为当 Windows 处理包含和 **需要****指令的 inf** 部分内的所有其他指令后，windows 处理由 **Include** 和 **需要** 指令引用的 inf 部分。
 
 <a href="" id="0x00000002--flg-addproperty-overwriteonly--"></a>**0x00000002** (FLG_ADDPROPERTY_OVERWRITEONLY)    
 仅当指定的属性已存在时才将属性值设置为值输入值的标志。
@@ -126,7 +125,7 @@ GUID 值还可以是用于标识自定义属性类别的自定义 GUID 值。
 <a name="remarks"></a>备注
 -------
 
-**AddProperty**指令可用于修改系统定义的设备属性或自定义设备属性。 可以在上述正式语法语句中所示的任何部分中指定此指令。
+**AddProperty** 指令可用于修改系统定义的设备属性或自定义设备属性。 可以在上述正式语法语句中所示的任何部分中指定此指令。
 
 在 INF 文件中，每个 *添加属性节* 名称必须是唯一的，但在同一 inf 文件中，可以由多个 **AddProperty** 指令引用部分。 每个节名称必须遵循用于定义 [用于 INF 文件一般语法规则](general-syntax-rules-for-inf-files.md)中所述的部分名称的常规规则。
 
@@ -149,7 +148,7 @@ DeviceModel,,,,"Sample Device Model Name"
 {c22189e4-8bf3-4e6d-8467-8dc6d95e2a7e}, 2, 18,, "String value for property 1"
 ```
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**DelProperty**](inf-delproperty-directive.md)

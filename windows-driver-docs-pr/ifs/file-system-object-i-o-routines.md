@@ -1,7 +1,6 @@
 ---
 title: 文件系统对象 I/O 例程
 description: 文件系统对象 I/O 例程
-ms.assetid: 0514e396-76b9-458b-9a98-e539d7e90274
 keywords:
 - 小型重定向程序 WDK，对象 i/o 例程
 - I/o WDK 网络重定向器
@@ -11,12 +10,12 @@ keywords:
 - 对象 WDK 微型重定向器
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d94cf36cd2d27085ed53a7ecabbc4e276ebf1290
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: cb88bf1b5a020aa01d306085128f633a574e1521
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90104206"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96786839"
 ---
 # <a name="file-system-object-io-routines"></a>文件系统对象 I/O 例程
 
@@ -27,13 +26,13 @@ ms.locfileid: "90104206"
 
 通常由 RDBSS 异步调用这些低 i/o 或文件系统对象 i/o 例程。 因此，网络小型重定向程序必须确保可以安全地以异步方式调用任何实现的低 i/o 例程。 网络小型重定向器还可以忽略异步调用请求，并实现仅同步操作的例程。 但是，对于某些可能需要花费时间才能完成 (读取和写入的调用，例如) ，将它们作为同步操作实现可显著降低整个操作系统的 i/o 性能。
 
-所有文件系统对象 i/o 例程都需要一个指向要 \_ 作为参数传入的 RX 上下文结构的指针。 在调用这些例程之前，RDBSS 设置 RX 上下文的 **LowIoContext** 结构中的多个成员的值 \_ 。 **LowIoContext**结构中的某些成员是为所有例程设置的，而某些成员只是针对特定例程设置的。 RX \_ 上下文数据结构包含正在处理的 IRP，并具有 **LowIoContext** 成员，该成员指定要执行的低 i/o 操作。 由于可以使用此 **LowIoContext** 成员来区分请求的低 i/o 操作，因此几个低 i/o 例程可能会指向网络小型重定向程序中的同一例程。 例如，所有与文件锁相关的 i/o 调用都可以调用网络小型重定向程序中的相同低 i/o 例程，该例程使用 **LowIoContext** 成员来区分请求的锁定或解锁操作。
+所有文件系统对象 i/o 例程都需要一个指向要 \_ 作为参数传入的 RX 上下文结构的指针。 在调用这些例程之前，RDBSS 设置 RX 上下文的 **LowIoContext** 结构中的多个成员的值 \_ 。 **LowIoContext** 结构中的某些成员是为所有例程设置的，而某些成员只是针对特定例程设置的。 RX \_ 上下文数据结构包含正在处理的 IRP，并具有 **LowIoContext** 成员，该成员指定要执行的低 i/o 操作。 由于可以使用此 **LowIoContext** 成员来区分请求的低 i/o 操作，因此几个低 i/o 例程可能会指向网络小型重定向程序中的同一例程。 例如，所有与文件锁相关的 i/o 调用都可以调用网络小型重定向程序中的相同低 i/o 例程，该例程使用 **LowIoContext** 成员来区分请求的锁定或解锁操作。
 
 除低 i/o 例程以外的其他文件 i/o 例程都基于同步调用，但在将来的 Windows 操作系统版本中可能会有所更改。
 
-在 LowIo 路径中，可保证 RX 上下文的 **LowIoContext ResourceThreadId** 成员 \_ 指示在 RDBSS 中启动操作的拥有线程。 **LowIoContext. ResourceThreadId**成员可用于代表其他线程发布 FCB 资源。 异步例程完成后，可以释放从初始线程获取的 FCB 资源。
+在 LowIo 路径中，可保证 RX 上下文的 **LowIoContext ResourceThreadId** 成员 \_ 指示在 RDBSS 中启动操作的拥有线程。 **LowIoContext. ResourceThreadId** 成员可用于代表其他线程发布 FCB 资源。 异步例程完成后，可以释放从初始线程获取的 FCB 资源。
 
-如果**MrxLowIoSubmit \[ LOWIO \_ OP \_ XXX \] **例程可能需要很长时间才能完成，则网络小型重定向程序驱动程序应在启动网络通信之前释放 FCB 资源。 可以通过调用 [**RxReleaseFcbResourceForThreadInMRx**](/windows-hardware/drivers/ddi/mrxfcb/nf-mrxfcb-rxreleasefcbresourceforthreadinmrx)释放 FCB 资源。
+如果 **MrxLowIoSubmit \[ LOWIO \_ OP \_ XXX \]** 例程可能需要很长时间才能完成，则网络小型重定向程序驱动程序应在启动网络通信之前释放 FCB 资源。 可以通过调用 [**RxReleaseFcbResourceForThreadInMRx**](/windows-hardware/drivers/ddi/mrxfcb/nf-mrxfcb-rxreleasefcbresourceforthreadinmrx)释放 FCB 资源。
 
 下表列出了可由用于文件系统对象 i/o 的网络微重定向器 (低 i/o) 操作实现的例程。
 
@@ -45,7 +44,7 @@ ms.locfileid: "90104206"
 <thead>
 <tr class="header">
 <th align="left">例程所返回的值</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>

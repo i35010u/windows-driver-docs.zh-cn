@@ -1,15 +1,14 @@
 ---
 title: 移动宽带概述
 description: 移动宽带概述
-ms.assetid: 5193927b-7367-468e-8012-c41f6bd743a3
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 963e3d54f130dfc2374338ef7c2b099201ff8b2c
-ms.sourcegitcommit: 73216293357f08eb00d8b154fa377a090644ca4f
+ms.openlocfilehash: d5ee04fa4e7fc1b659fc3a239ca7cdaecbf85405
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94810117"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96786271"
 ---
 # <a name="overview-of-mobile-broadband"></a>移动宽带概述
 
@@ -221,7 +220,7 @@ Windows 将检查使用这些 Api 为用户设置的数据使用情况信息并�
 
 你还可以设置比移动网络更少的热点，使其可供 Windows 在移动宽带连接不可用时使用，但不能用于数据卸载。
 
-### <a name="setup"></a>安装
+### <a name="setup"></a>设置
 
 - 移动宽带应用会生成一个预配文件，其中包含用户可进行身份验证的 WiFi 热点的 Ssid 和身份验证机制。 这样，用户就不必手动输入此信息。
 

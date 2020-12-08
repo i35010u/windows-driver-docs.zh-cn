@@ -1,15 +1,14 @@
 ---
 title: 音频驱动程序的规则
 description: 音频 (PortCls) 微型端口驱动程序的 DDI 符合性规则验证 PortCls.sys 及其微型端口驱动程序之间的 DDI 接口。
-ms.assetid: 65078F78-B7F2-41A7-BD3B-A90A4A77750F
 ms.date: 05/21/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: a83e8ff23e9565af0a7df5ab146d7b18724ddfe0
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: d16ea0fde5a6a1f4f28726fc81fccd1d21fc58dc
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90104256"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96787621"
 ---
 # <a name="rules-for-audio-drivers"></a>音频驱动程序的规则
 
@@ -27,7 +26,7 @@ ms.locfileid: "90104256"
 <thead>
 <tr class="header">
 <th align="left">主题</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>

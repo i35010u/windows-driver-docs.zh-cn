@@ -1,7 +1,6 @@
 ---
 title: Bug 检查 0xEF CRITICAL_PROCESS_DIED
 description: CRITICAL_PROCESS_DIED bug 检查的值为0x000000EF。 这表明关键系统进程终止。
-ms.assetid: caa18221-6128-4d77-ab61-ef3c28cfba38
 keywords:
 - Bug 检查 0xEF CRITICAL_PROCESS_DIED
 - CRITICAL_PROCESS_DIED
@@ -13,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 02af74143499dcfd80f59df8d3b4b4d513159e1b
-ms.sourcegitcommit: e543e4ade05c17539e900794f1c9ef4c4baafa64
+ms.openlocfilehash: bd004223480c98c8c6a1fa35f4965f643b1d9f39
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94520521"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96787829"
 ---
 # <a name="bug-check-0xef-critical_process_died"></a>Bug 检查0xEF：关键 \_ 进程 \_ 终止
 
@@ -41,7 +40,7 @@ CRITICAL_PROCESS_DIED bug 检查的值为0x000000EF。 这表明关键系统进�
 <thead>
 <tr class="header">
 <th align="left">参数</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>
@@ -55,11 +54,11 @@ CRITICAL_PROCESS_DIED bug 检查的值为0x000000EF。 这表明关键系统进�
 </tr>
 <tr class="odd">
 <td align="left"><p>3</p></td>
-<td align="left"><p>保留</p></td>
+<td align="left"><p>预留</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>4</p></td>
-<td align="left"><p>保留</p></td>
+<td align="left"><p>预留</p></td>
 </tr>
 </tbody>
 </table>

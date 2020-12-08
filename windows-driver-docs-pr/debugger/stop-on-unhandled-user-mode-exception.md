@@ -1,23 +1,22 @@
 ---
 title: 出现未经处理的用户模式异常时停止
 description: 出现未经处理的用户模式异常时停止
-ms.assetid: BD8E1000-29B0-425D-BEA1-D4FD55CF0E4F
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 01bb030508f75b71166652fd4db53982fe59146e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 024031bd7f3ad6d5eece1d3b2da11362fa9b474e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63335530"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96786922"
 ---
-# <a name="span-iddebuggerstoponunhandleduser-modeexceptionspanstop-on-unhandled-user-mode-exception"></a><span id="debugger.stop_on_unhandled_user-mode_exception"></span>停止在未经处理的用户模式异常
+# <a name="span-iddebuggerstop_on_unhandled_user-mode_exceptionspanstop-on-unhandled-user-mode-exception"></a><span id="debugger.stop_on_unhandled_user-mode_exception"></span>出现未经处理的用户模式异常时停止
 
 
 ## <span id="ddk_stop_on_exception_dtools"></span><span id="DDK_STOP_ON_EXCEPTION_DTOOLS"></span>
 
 
-**停止在未经处理的用户模式异常**标志，会导致中断到内核调试程序只要发生未经处理的用户模式下的异常。
+当发生未处理的用户模式异常时，" **在未处理的用户模式下停止" 异常** 标志会导致内核调试器中断。
 
 <table>
 <colgroup>
@@ -27,7 +26,7 @@ ms.locfileid: "63335530"
 <tbody>
 <tr class="odd">
 <td align="left"><p><strong>缩写</strong></p></td>
-<td align="left"><p>控告</p></td>
+<td align="left"><p>sue</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>十六进制值</strong></p></td>
@@ -39,7 +38,7 @@ ms.locfileid: "63335530"
 </tr>
 <tr class="even">
 <td align="left"><p><strong>目标</strong></p></td>
-<td align="left"><p>整个系统的注册表项、 内核标志和图像文件注册表项</p></td>
+<td align="left"><p>系统范围的注册表项、内核标志、映像文件注册表项</p></td>
 </tr>
 </tbody>
 </table>

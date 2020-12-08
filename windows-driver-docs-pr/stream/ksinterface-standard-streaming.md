@@ -1,7 +1,6 @@
 ---
 title: KSINTERFACE \_ 标准 \_ 流式处理
 description: KSINTERFACE \_ 标准 \_ 流式处理
-ms.assetid: 04ba6879-1699-4d12-b81e-a90878014325
 keywords:
 - KSINTERFACE_STANDARD_STREAMING 流媒体设备
 topic_type:
@@ -12,12 +11,12 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a41367d8a0b671dba780c16e11874f59f95cdb03
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: a7a33f4753b9a1a70108ff82180b06201d0cd2fd
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89191815"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96786637"
 ---
 # <a name="ksinterface_standard_streaming"></a>KSINTERFACE \_ 标准 \_ 流式处理
 

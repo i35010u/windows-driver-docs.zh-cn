@@ -1,7 +1,6 @@
 ---
 title: 参考的命名空间
 description: 参考的命名空间
-ms.assetid: 4adb0979-1e97-4697-bd85-c808023ce43f
 keywords:
 - WSDBIT 工具 WDK，命名空间
 - WSDAPI 基本互操作性工具 WDK，命名空间
@@ -10,12 +9,12 @@ keywords:
 - Web 服务 WDK 的设备配置文件
 ms.date: 05/20/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: f0a4d1eaadc23688306b4c6abb806f6e0c4515f6
-ms.sourcegitcommit: e2de6b9ffb5c7356deb864f9da879533f49b25bf
+ms.openlocfilehash: cd128b7e13bd585edc6a877fefcb049657d3fb97
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/03/2020
-ms.locfileid: "91702660"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96787623"
 ---
 # <a name="referenced-namespaces"></a>参考的命名空间
 

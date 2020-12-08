@@ -1,19 +1,18 @@
 ---
 title: 新的分散/聚合 DMA 支持
 description: 新的分散/聚合 DMA 支持
-ms.assetid: ac7cd98b-1211-4538-a54b-7362fa1d81b0
 keywords:
 - 散播/聚集 DMA WDK 网络
 - 微型端口驱动程序 WDK 网络，散点/集合 DMA
 - NDIS 微型端口驱动程序 WDK、散播/聚集 DMA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a3e90295856dada369659fd83cad1e08153efdab
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 63c51140cc418cda581579a3c0f145d0a50d37f0
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89211665"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96787207"
 ---
 # <a name="new-scattergather-dma-support"></a>新的分散/聚合 DMA 支持
 

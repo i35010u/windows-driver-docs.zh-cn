@@ -1,22 +1,21 @@
 ---
 title: WDI_TLV_NETWORK_LIST_OFFLOAD_CONFIG
-description: WDI_TLV_NETWORK_LIST_OFFLOAD_CONFIG 是包含网络列表卸载 (NLO) 配置 TLV。
-ms.assetid: 8805B31C-7601-4045-AD52-21B91E2D3722
+description: WDI_TLV_NETWORK_LIST_OFFLOAD_CONFIG 是一种 TLV，其中包含 (NLO) 配置的网络列表卸载。
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 WDI_TLV_NETWORK_LIST_OFFLOAD_CONFIG 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 661e49bac0106242b6c533fac5d3209c50567071
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9f3923b0a838a72f821908c15f83d87d956386ce
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63392273"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96788255"
 ---
-# <a name="wditlvnetworklistoffloadconfig"></a>WDI\_TLV\_NETWORK\_LIST\_OFFLOAD\_CONFIG
+# <a name="wdi_tlv_network_list_offload_config"></a>WDI \_ TLV \_ 网络 \_ 列表 \_ 卸载 \_ 配置
 
 
-WDI\_TLV\_网络\_列表\_卸载\_CONFIG 是包含网络列表卸载 (NLO) 配置 TLV。
+WDI \_ tlv \_ 网络 \_ 列表 \_ 卸载 \_ 配置是一个 Tlv，其中包含的网络列表卸载 (NLO) 配置。
 
 ## <a name="tlv-type"></a>TLV 类型
 
@@ -26,18 +25,18 @@ WDI\_TLV\_网络\_列表\_卸载\_CONFIG 是包含网络列表卸载 (NLO) 配�
 ## <a name="length"></a>长度
 
 
-所有包含的元素的大小的总和 （以字节为单位）。
+Sum (所有包含的元素的大小) 。
 
 ## <a name="values"></a>值
 
 
-| 在任务栏的搜索框中键入   | 描述                                                                                                           |
+| 类型   | 描述                                                                                                           |
 |--------|-----------------------------------------------------------------------------------------------------------------------|
 | UINT32 | 保留的字段。                                                                                                       |
-| UINT32 | 将启动扫描计划之前的延迟 （以秒为单位）。                                                               |
-| UINT32 | 时间段 （以秒为单位） 以在第一阶段中进行扫描。                                                                   |
-| UINT32 | 快速扫描阶段中的迭代次数。                                                                      |
-| UINT32 | 时间段 （以秒为单位） 以在进行慢扫描阶段中进行扫描。 此阶段一直持续无限期到设置新的 NLO 命令。 |
+| UINT32 | 扫描计划开始之前)  (的延迟时间（秒）。                                                               |
+| UINT32 | ) 在第一阶段中进行扫描的时间段 (以秒为单位）。                                                                   |
+| UINT32 | 快速扫描阶段中的迭代数。                                                                      |
+| UINT32 | 时间段 () 在慢速扫描阶段扫描。 在设置新的 NLO 命令之前，此阶段会无限期地持续下去。 |
 
  
 
@@ -56,10 +55,10 @@ WDI\_TLV\_网络\_列表\_卸载\_CONFIG 是包含网络列表卸载 (NLO) 配�
 </tr>
 <tr class="even">
 <td><p>最低受支持的服务器</p></td>
-<td><p>Windows Server 2016</p></td>
+<td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
-<td><p>Header</p></td>
+<td><p>标头</p></td>
 <td>Wditypes.hpp</td>
 </tr>
 </tbody>

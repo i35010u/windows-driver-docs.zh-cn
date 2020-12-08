@@ -1,15 +1,14 @@
 ---
 title: Windows 自动将长消息分段
 description: Windows 自动将长消息分段
-ms.assetid: 0c1d7347-4e53-4f17-bdb5-908479f903de
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d5a81b35959dc89baf4189e28676fb23227769d2
-ms.sourcegitcommit: 7e4d9508198a30bdc1cb6eda83852dda4e42213e
+ms.openlocfilehash: 238d91df77ccc186703f95303f8d2e814349e258
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89304278"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96787307"
 ---
 # <a name="windows-automatically-segments-long-messages"></a>Windows 自动将长消息分段
 

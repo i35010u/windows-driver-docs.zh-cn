@@ -1,7 +1,6 @@
 ---
 title: 'PcRegisterAdapterPower 规则 (音频) '
 description: PcRegisterAdapterPower 规则指定 PortCls 微型端口驱动程序不应调用 PcRegisterAdapterPowerManagement 两次，而不会对 PcUnregisterAdapterPowerManagement 调用 PcUnregisterAdapterPowerManagement。
-ms.assetid: 8F6E6B1D-F19C-469A-BC5A-061996BEA532
 ms.date: 05/21/2018
 keywords:
 - 'PcRegisterAdapterPower 规则 (音频) '
@@ -12,12 +11,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 5e200ff31841c75dcca2810b1b7560380aa5f9e3
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 875893420d50e9831171326bc82db76f55a1492c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90103978"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96786413"
 ---
 # <a name="pcregisteradapterpower-rule-audio"></a>PcRegisterAdapterPower 规则 (音频) 
 

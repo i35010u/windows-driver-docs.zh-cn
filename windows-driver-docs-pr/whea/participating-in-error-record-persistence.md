@@ -1,7 +1,6 @@
 ---
 title: 参与错误记录持久性
 description: 参与错误记录持久性
-ms.assetid: 06cbcccf-7cda-468d-aa6e-b8ecf95adf16
 keywords:
 - Windows 硬件错误体系结构 WDK，错误记录持久性
 - WHEA WDK，错误记录暂留
@@ -12,12 +11,12 @@ keywords:
 - 错误记录持久性 WDK WHEA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0f1efdd753530f0da5d220041aa76e55f1b836d8
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 1497013f8293f1b00139cca5cb4735220fc09a3a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89214172"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96787093"
 ---
 # <a name="participating-in-error-record-persistence"></a>参与错误记录持久性
 
@@ -181,7 +180,7 @@ NTSTATUS
 }
 ```
 
-参与错误记录持久性的 PSHED 插件必须在向操作系统[注册](registering-a-pshed-plug-in.md)自身时指定**PshedFAErrorRecordPersistence**标志。
+参与错误记录持久性的 PSHED 插件必须在向操作系统 [注册](registering-a-pshed-plug-in.md)自身时指定 **PshedFAErrorRecordPersistence** 标志。
 
 有关错误记录持久性的详细信息，请参阅 [错误记录永久性机制](error-record-persistence-mechanism.md)。
 

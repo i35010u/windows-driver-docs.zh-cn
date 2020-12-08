@@ -1,15 +1,14 @@
 ---
 title: 查询 SCSI 端口以获取硬件信息
 description: 查询 SCSI 端口以获取硬件信息
-ms.assetid: 2f3adc40-6e5a-4a70-8298-60359b77f04f
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 35557c18e2a4791bcd998e5040d59a667bcddc70
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 0581775e2ad18831e4825615d3b45efe15d151ad
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89185096"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96787155"
 ---
 # <a name="querying-scsi-port-for-hardware-information"></a>查询 SCSI 端口以获取硬件信息
 
@@ -21,7 +20,7 @@ ms.locfileid: "89185096"
 
 更高级别的驱动程序必须使用 QUERY 属性请求将 [**存储 \_ 属性 \_ 查询**](/windows-hardware/drivers/ddi/ntddstor/ns-ntddstor-_storage_property_query) 结构传递到 SCSI 端口。 如果较高级别的驱动程序已将存储属性查询的 **QueryType** 成员设置 \_ \_ 为 **StorageAdapterProperty**，则 SCSI 端口将返回存储适配器描述符。 如果较高级别的驱动程序已将 **QueryType** 成员设置为 **StorageDeviceProperty**，则 SCSI 端口将返回存储设备描述符。
 
-如果较高级别的驱动程序将查询属性请求 IRP 发送到适配器的 FDO，并将 **QueryType** 设置为 **StorageDeviceProperty**，则 SCSI 端口将无法使用 irp。 如果类驱动程序在 **QueryType** 设置为 **StorageAdapterProperty**的情况下将此 irp 发送到设备的 PDO，SCSI 端口会将 IRP 转发到适配器 FDO。
+如果较高级别的驱动程序将查询属性请求 IRP 发送到适配器的 FDO，并将 **QueryType** 设置为 **StorageDeviceProperty**，则 SCSI 端口将无法使用 irp。 如果类驱动程序在 **QueryType** 设置为 **StorageAdapterProperty** 的情况下将此 irp 发送到设备的 PDO，SCSI 端口会将 IRP 转发到适配器 FDO。
 
 有关存储设备描述符和存储适配器描述符的详细说明，请参阅 [存储类驱动程序的 GetDescriptor 例程](storage-class-driver-s-getdescriptor-routine.md)，以及 [**存储 \_ 属性 \_ 查询**](/windows-hardware/drivers/ddi/ntddstor/ns-ntddstor-_storage_property_query)、 [**存储 \_ 设备 \_ 描述符**](/windows-hardware/drivers/ddi/ntddstor/ns-ntddstor-_storage_device_descriptor)和 [**存储 \_ 适配器 \_ 描述符**](/windows-hardware/drivers/ddi/ntddstor/ns-ntddstor-_storage_adapter_descriptor)的参考页。
 

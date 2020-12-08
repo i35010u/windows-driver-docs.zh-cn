@@ -1,15 +1,14 @@
 ---
 title: VMQ 发送和接收操作
 description: VMQ 发送和接收操作
-ms.assetid: 11f07534-f715-4ed5-b312-652fb3c7e8bb
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2c6eeb835b16950cac74047303ab54a6f2f47077
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0fcd61dabd1663026829300b5a09a8e1171f4119
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63327559"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96786703"
 ---
 # <a name="vmq-send-and-receive-operations"></a>VMQ 发送和接收操作
 
@@ -17,15 +16,15 @@ ms.locfileid: "63327559"
 
 
 
-本部分提供有关实现发送信息和支持 VMQ 的 NDIS 驱动程序中接收操作。
+本部分提供有关在支持 VMQ 的 NDIS 驱动程序中实现发送和接收操作的信息。
 
-若要支持 VMQ 发送和接收操作，VMQ 接口需要支持 VMQ 筛选器操作的网络适配器硬件。 这些筛选器确定数据包，以接收队列的分配。
+为了支持 VMQ 发送和接收操作，VMQ 接口需要支持 VMQ 筛选器操作的网络适配器硬件。 这些筛选器确定用于接收队列的数据包的分配。
 
-本部分包括以下主题：
+本节包括下列主题：
 
 [VMQ 筛选器操作](vmq-filter-operations.md)
 
-[共享的内存中接收缓冲区](shared-memory-in-receive-buffers.md)
+[接收缓冲区中的共享内存](shared-memory-in-receive-buffers.md)
 
 [VMQ 接收路径](vmq-receive-path.md)
 

@@ -1,7 +1,6 @@
 ---
 title: BUS1394_CLASS_GUID
 description: BUS1394_CLASS_GUID
-ms.assetid: 5452c829-b1d2-4a15-93ef-3d82ac6c04d0
 keywords:
 - BUS1394_CLASS_GUID 设备和驱动程序安装
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: befa3645f46fc0165acb5209bc93b71fef027b25
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: def923563f77b8db783fc1a58b9bcfc50bfc8203
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89096164"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96787529"
 ---
 # <a name="bus1394_class_guid"></a>BUS1394_CLASS_GUID
 
@@ -82,7 +81,7 @@ WDK 示例包括 [1394api 示例](../ieee/1394-samples-and-diagnostic-tools.md) 
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**GUID_61883_CLASS**](guid-61883-class.md)

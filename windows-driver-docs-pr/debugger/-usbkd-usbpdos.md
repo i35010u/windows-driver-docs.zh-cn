@@ -1,7 +1,6 @@
 ---
 title: usbkd.usbpdos
 description: Usbkd. usbpdos 命令显示有关 USB 集线器驱动程序创建 (PDOs) 的所有物理设备对象的信息。
-ms.assetid: 2EFAC774-C400-4218-BF48-2D5DC557A83B
 keywords:
 - usbkd usbpdos Windows 调试
 ms.date: 05/23/2017
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: ec07e7468fd592d98a9829df44d836e69262ac45
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 55523c84cc26848abb8cd8651d6e64344b9ec502
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89217939"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96787986"
 ---
 # <a name="usbkdusbpdos"></a>!usbkd.usbpdos
 
 
-**！ Usbkd usbpdos**命令显示有关 USB 集线器驱动程序创建 (PDOs) 的所有物理设备对象的信息。
+**！ Usbkd usbpdos** 命令显示有关 USB 集线器驱动程序创建 (PDOs) 的所有物理设备对象的信息。
 
 ```dbgcmd
 !usbkd.usbpdos

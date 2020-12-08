@@ -1,7 +1,6 @@
 ---
 title: 克隆流指针
 description: 克隆流指针
-ms.assetid: bbe01f48-db86-41c9-b7b8-b48a4a295d21
 keywords:
 - 流指针 WDK AVStream，克隆
 - 克隆流指针 WDK AVStream
@@ -9,12 +8,12 @@ keywords:
 - 复制流指针 WDK AVStream
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 25a6b16c5c202362efed85c0f86b19d6938e4a64
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 18736421576c2f64b248511d3f514e14a190b083
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89186783"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96788181"
 ---
 # <a name="cloning-stream-pointers"></a>克隆流指针
 

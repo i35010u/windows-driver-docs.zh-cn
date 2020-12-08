@@ -1,33 +1,32 @@
 ---
 title: NDIS_STATUS_WDI_INDICATION_SEND_RESPONSE_ACTION_FRAME_COMPLETE
 description: 微型端口驱动程序使用 NDIS_STATUS_WDI_INDICATION_SEND_RESPONSE_ACTION_FRAME_COMPLETE 指示 OID_WDI_TASK_SEND_RESPONSE_ACTION_FRAME 完成。
-ms.assetid: 9D07F05B-212F-403E-AD37-4AB537C25536
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 NDIS_STATUS_WDI_INDICATION_SEND_RESPONSE_ACTION_FRAME_COMPLETE 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: b16d065661a5391ffbb6767a7267e8ab901d3178
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6f0616008c9990917794f2f9b6bf9ccf8c75ebec
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63361025"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96786759"
 ---
-# <a name="ndisstatuswdiindicationsendresponseactionframecomplete"></a>NDIS\_状态\_WDI\_指示\_发送\_响应\_操作\_帧\_完成
+# <a name="ndis_status_wdi_indication_send_response_action_frame_complete"></a>NDIS \_ 状态 \_ WDI \_ 指示 \_ 发送 \_ 响应 \_ 操作 \_ 帧 \_ 完成
 
 
-微型端口驱动程序使用 NDIS\_状态\_WDI\_指示\_发送\_响应\_操作\_帧\_完成以指示完成[OID\_WDI\_任务\_发送\_响应\_操作\_帧](oid-wdi-task-send-response-action-frame.md)。
+微型端口驱动程序使用 NDIS \_ 状态 \_ WDI \_ 指示 \_ 发送 \_ 响应 \_ 操作 \_ 帧 \_ 完成，以指示 [OID \_ WDI \_ TASK \_ 发送 \_ 响应 \_ 操作 \_ 框](oid-wdi-task-send-response-action-frame.md)的完成。
 
-| Object |
+| 对象 |
 |--------|
 | 端口   |
 
  
 
-## <a name="payload-data"></a>有效负载数据
+## <a name="payload-data"></a>负载数据
 
 
-此指示不包含任何其他数据。 标头中的数据就足够了。
+此指示不包含其他数据。 标头中的数据足够了。
 
 <a name="requirements"></a>要求
 ------------
@@ -44,11 +43,11 @@ ms.locfileid: "63361025"
 </tr>
 <tr class="even">
 <td><p>最低受支持的服务器</p></td>
-<td><p>Windows Server 2016</p></td>
+<td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
-<td><p>Header</p></td>
-<td>Dot11wdi.h</td>
+<td><p>标头</p></td>
+<td>Dot11wdi</td>
 </tr>
 </tbody>
 </table>
@@ -56,7 +55,7 @@ ms.locfileid: "63361025"
 ## <a name="see-also"></a>请参阅
 
 
-[OID\_WDI\_TASK\_SEND\_RESPONSE\_ACTION\_FRAME](oid-wdi-task-send-response-action-frame.md)
+[OID \_ WDI \_ TASK \_ 发送 \_ 响应 \_ 操作 \_ 帧](oid-wdi-task-send-response-action-frame.md)
 
  
 

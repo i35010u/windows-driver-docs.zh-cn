@@ -1,7 +1,6 @@
 ---
 title: 排查 GDL 分析问题
 description: 排查 GDL 分析问题
-ms.assetid: 8c678a2f-b15b-4693-9bed-0edec06b3485
 keywords:
 - GDL WDK，分析器
 - 分析器 WDK GDL，排除分析故障
@@ -11,12 +10,12 @@ keywords:
 - GDL WDK，错误
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7cdef40f06344340e8a04686c9174066f57de0a6
-ms.sourcegitcommit: b3e38d06762246c77cedd8e82d740ebea104c538
+ms.openlocfilehash: f9fc7a35fdc54ff33fdca57310c460fb9be10448
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/02/2020
-ms.locfileid: "91662323"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96788257"
 ---
 # <a name="troubleshooting-gdl-parsing"></a>排查 GDL 分析问题
 

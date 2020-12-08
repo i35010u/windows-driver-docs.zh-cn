@@ -1,7 +1,6 @@
 ---
 title: CM_Open_Class_Key_Ex
 description: CM_Open_Class_Key_Ex
-ms.assetid: 2169f879-558b-4b40-b940-d520306d95a6
 keywords:
 - CM_Open_Class_Key_Ex 设备和驱动程序安装
 topic_type:
@@ -13,13 +12,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 8bd376acf8341bbb3b960f5b53dfc4ab2c318714
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: adae5d1b3448fe31447389dafda740193a1aa8f0
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63353099"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96787455"
 ---
-# <a name="cmopenclasskeyex"></a>CM_Open_Class_Key_Ex
+# <a name="cm_open_class_key_ex"></a>CM_Open_Class_Key_Ex
 
 此函数保留供系统使用。

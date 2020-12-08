@@ -1,7 +1,6 @@
 ---
 title: KSCATEGORY_SPLITTER
 description: KSCATEGORY_SPLITTER
-ms.assetid: 056b6bc0-5566-4498-959d-dbc9725aa03e
 keywords:
 - KSCATEGORY_SPLITTER 设备和驱动程序安装
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 754c106d092684fb6214cb8face4fb9f10ee8096
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: c98520bb452df98b0aa397cf02749774351f1396
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89096007"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96787403"
 ---
 # <a name="kscategory_splitter"></a>KSCATEGORY_SPLITTER
 
@@ -76,7 +75,7 @@ KSCATEGORY_SPLITTER 功能类别是 [**KSPROPERTY_TOPOLOGY_CATEGORIES**](../stre
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSPROPERTY_TOPOLOGY_CATEGORIES**](../stream/ksproperty-topology-categories.md)

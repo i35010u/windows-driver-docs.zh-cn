@@ -1,15 +1,14 @@
 ---
 title: 关于使用通用路由封装 (NVGRE) 实现网络虚拟化
 description: 本部分介绍使用通用路由封装 (NVGRE) 任务卸载的网络虚拟化
-ms.assetid: D1BE5659-4491-411B-9D32-9CB7A141A240
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 16e51e293484a66e72c8f408a9b6abc47c429c80
-ms.sourcegitcommit: b75e9940d49410e2b952e96f325df67a039cd571
+ms.openlocfilehash: bcf40399dcc1c84203ec90f0ee076119b7d0608c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92337024"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96787229"
 ---
 # <a name="about-network-virtualization-using-generic-routing-encapsulation-nvgre"></a>关于使用通用路由封装 (NVGRE) 实现网络虚拟化
 

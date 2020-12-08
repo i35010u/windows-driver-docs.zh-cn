@@ -1,7 +1,6 @@
 ---
 title: CM_Get_Global_State_Ex
 description: CM_Get_Global_State_Ex
-ms.assetid: fa248f9c-22a9-4862-81aa-ead538abeac2
 keywords:
 - CM_Get_Global_State_Ex 设备和驱动程序安装
 topic_type:
@@ -12,13 +11,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: e98d736016c484226bf8cd711af265b0c48c4b72
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 88d74707a078e8ad29621d54f204f886de9452d6
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63354854"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96787473"
 ---
-# <a name="cmgetglobalstateex"></a>CM_Get_Global_State_Ex
+# <a name="cm_get_global_state_ex"></a>CM_Get_Global_State_Ex
 
 此函数保留供系统使用。

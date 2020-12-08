@@ -1,7 +1,6 @@
 ---
 title: 参与错误源控制
 description: 参与错误源控制
-ms.assetid: 4b2e3431-348f-48b1-924e-14b9fb5a48f0
 keywords:
 - Windows 硬件错误体系结构 WDK，错误源控制
 - WHEA WDK，错误源控制
@@ -12,12 +11,12 @@ keywords:
 - 错误源控制 WDK WHEA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7dd528f70167359e37847846042dbbfb6fab4231
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 6a335504e4bc2796500a27064b9ecac3080bf61d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89210007"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96787087"
 ---
 # <a name="participating-in-error-source-control"></a>参与错误源控制
 
@@ -148,7 +147,7 @@ NTSTATUS
 }
 ```
 
-参与错误源控制的 PSHED 插件必须在向操作系统[注册](registering-a-pshed-plug-in.md)自身时指定**PshedFAErrorSourceControl**标志。
+参与错误源控制的 PSHED 插件必须在向操作系统 [注册](registering-a-pshed-plug-in.md)自身时指定 **PshedFAErrorSourceControl** 标志。
 
  
 

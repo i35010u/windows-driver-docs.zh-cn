@@ -1,15 +1,14 @@
 ---
 title: 帮助和支持
 description: 帮助和支持
-ms.assetid: 0d584fa5-4311-4e42-bf96-b0a83a2bda1b
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 614b234e328e552c8c79d7d832b704ea067f4712
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 77d3a05a7d0d7c2d24bcce8ca61d5155648f33c1
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89210817"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96788505"
 ---
 # <a name="help-and-support"></a>帮助和支持
 

@@ -1,7 +1,6 @@
 ---
 title: KSCATEGORY_SYSAUDIO
 description: KSCATEGORY_SYSAUDIO
-ms.assetid: 48b67af6-ad0f-4cd2-b094-56d4708cb9c7
 keywords:
 - KSCATEGORY_SYSAUDIO 设备和驱动程序安装
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 5c6bd3544112b0c32382cb859f8a2c51b8e74a5b
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 7017b2d661130a0637a541b183084a2aea48e98b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89096005"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96787397"
 ---
 # <a name="kscategory_sysaudio"></a>KSCATEGORY_SYSAUDIO
 

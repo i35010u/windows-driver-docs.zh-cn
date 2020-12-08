@@ -1,22 +1,21 @@
 ---
 title: VM 交换机验证
 description: VM 交换机验证选项监视在 Hyper-v 可扩展交换机内运行)  (可扩展交换机扩展的筛选器驱动程序。 使用此选项可以捕获在可扩展交换机内的 send 或 receive 操作中发生的错误。
-ms.assetid: 629C0C70-D6C6-4977-A36B-6BD6EEC14FE8
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 96a72932fbda062486ad20f6c281e56d4e1b75fc
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: ff96e839a14b69750aeaab4ae82c22598aeff8c3
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89381755"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96787575"
 ---
 # <a name="vm-switch-verification"></a>VM 交换机验证
 
 
-VM 交换机验证选项监视在[Hyper-v 可扩展交换机](../network/hyper-v-extensible-switch.md)内运行)  (*可扩展交换机扩展*的筛选器驱动程序。 使用此选项可以捕获在可扩展交换机内的 send 或 receive 操作中发生的错误。
+VM 交换机验证选项监视在 [Hyper-v 可扩展交换机](../network/hyper-v-extensible-switch.md)内运行)  (*可扩展交换机扩展* 的筛选器驱动程序。 使用此选项可以捕获在可扩展交换机内的 send 或 receive 操作中发生的错误。
 
-**注意**   此选项可从 Windows 8.1 开始使用。
+**注意**  此选项可从 Windows 8.1 开始使用。
 
  
 
@@ -40,7 +39,7 @@ VM 交换机验证选项监视在[Hyper-v 可扩展交换机](../network/hyper-v
 -   **使用驱动程序验证器管理器**
 
     1.  启动驱动程序验证器管理器。 在命令提示符窗口中键入 **Verifier** 。
-    2.  选择 " **为代码开发人员 (创建自定义设置") ** ，然后单击 " **下一步**"。
+    2.  选择 " **为代码开发人员 (创建自定义设置")** ，然后单击 " **下一步**"。
     3.  选择 " **从完整列表中选择单个设置**"。
     4.  选择 (检查) **VM 交换机验证**。
     5.  重新启动计算机。

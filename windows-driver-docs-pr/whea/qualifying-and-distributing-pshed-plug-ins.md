@@ -1,19 +1,18 @@
 ---
 title: 限定和分发 PSHED 插件
 description: 限定和分发 PSHED 插件
-ms.assetid: fe6cbb01-552f-4b24-b300-168d6311a596
 keywords:
 - 数字签名 WDK WHEA) ，PSHED 插件
 - PSHED 插件-WHEA，资格
 - PSHED 插件-WHEA，分发
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 774990a8e4a6be513601ed76a11ad16a8549148d
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: 0aba6283cf0dd8e3bdba060a38e671c06fd991d5
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91732957"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96787065"
 ---
 # <a name="qualifying-and-distributing-pshed-plug-ins"></a>限定和分发 PSHED 插件
 
@@ -24,7 +23,7 @@ ms.locfileid: "91732957"
 
 -   在硬件平台通过服务器徽标测试过程进行额外验证之前，插件的 [驱动程序包](../install/driver-packages.md) 必须具有 Windows 硬件质量实验室 (WHQL) 数字签名。 若要获取此数字签名，必须使用 "WHQL 未分类" 测试类别来测试和提交驱动程序包。
 
-    **注意**   无论 PSHED 插件是否是使用[Authenticode](../install/authenticode.md)数字签名嵌入的，都必须获取驱动程序包的 WHQL 数字签名。
+    **注意**  无论 PSHED 插件是否是使用 [Authenticode](../install/authenticode.md) 数字签名嵌入的，都必须获取驱动程序包的 WHQL 数字签名。
 
      
 
@@ -36,7 +35,7 @@ PSHED 插件将使用 "系列" 方法进行限定，在该方法中，可以通�
 
 PSHED 插件应该以类似于 BIOS 和系统固件更新分发方式的方式分配给客户。 此外，PSHED 插件应该与平台固件交互，以便可以在一系列硬件平台上部署单个 PSHED 插件。
 
-**注意**   PSHED 插件不会通过 Windows 更新分配给客户。
+**注意**  PSHED 插件不会通过 Windows 更新分配给客户。
 
  
 

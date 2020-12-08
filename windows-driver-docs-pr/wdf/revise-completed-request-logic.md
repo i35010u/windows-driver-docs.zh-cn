@@ -1,15 +1,14 @@
 ---
 title: 修改可处理已完成请求的代码
 description: 修改可处理已完成请求的代码
-ms.assetid: 0DD48424-A728-4887-9F26-46B7004CB12C
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3f5abba0773fb4c0dcbd4c5d2ba5afe5dc825767
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 351b2062f0d0da4ebb83d03e14fc815ad512c685
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89189657"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96787127"
 ---
 # <a name="revise-code-that-handles-completed-requests"></a>修改可处理已完成请求的代码
 

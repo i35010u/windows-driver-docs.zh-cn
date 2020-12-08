@@ -1,7 +1,6 @@
 ---
 title: 'PcIrqlDDIs 规则 (音频) '
 description: PcIrqlDDIs 规则指定 PortCls 微型端口驱动程序必须在正确的 IRQL 级别调用 PortCls DDIs。
-ms.assetid: 7CBC8407-FE46-449F-B921-883BCDA0436B
 ms.date: 05/21/2018
 keywords:
 - 'PcIrqlDDIs 规则 (音频) '
@@ -12,12 +11,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 60fab162787a302ee15305540389197818dc6540
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 1877223b13d06a460bc68a2df603ec717decf6e8
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90107082"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96786415"
 ---
 # <a name="pcirqlddis-rule-audio"></a>PcIrqlDDIs 规则 (音频) 
 

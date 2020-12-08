@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ CAMERACONTROL \_ 扩展 \_ 缩放
 description: KSPROPERTY \_ CAMERACONTROL \_ 扩展 \_ 缩放用于控制数字缩放。
-ms.assetid: 93CFCBFC-69B3-4241-913F-94615599BE8E
 keywords:
 - KSPROPERTY_CAMERACONTROL_EXTENDED_ZOOM 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 09/11/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 39bdd8e3ea6dba0fcc83537c03c590bbc9e4e4fe
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: ae842b9ded7ff18f05817682a8c8088222bc114d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90107266"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96786633"
 ---
 # <a name="ksproperty_cameracontrol_extended_zoom"></a>KSPROPERTY \_ CAMERACONTROL \_ 扩展 \_ 缩放
 
@@ -44,7 +43,7 @@ ms.locfileid: "90107266"
 <tr class="odd">
 <td><p>版本 1</p></td>
 <td><p>筛选器</p></td>
-<td><p>同步</p></td>
+<td><p>Synchronous</p></td>
 </tr>
 </tbody>
 </table>
@@ -70,7 +69,7 @@ ms.locfileid: "90107266"
 </colgroup>
 <thead>
 <tr class="header">
-<th>Flag</th>
+<th>标志</th>
 <th>描述</th>
 </tr>
 </thead>
@@ -92,7 +91,7 @@ ms.locfileid: "90107266"
 
 对于每个 **GET** 调用，驱动程序必须根据当前配置或设置来报告允许的当前缩放范围。
 
-下表包含使用**KSPROPERTY \_ CAMERACONTROL \_ 扩展 \_ 缩放**属性时[**KSCAMERA \_ EXTENDEDPROP \_ 标头**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)结构字段的说明和要求。
+下表包含使用 **KSPROPERTY \_ CAMERACONTROL \_ 扩展 \_ 缩放** 属性时 [**KSCAMERA \_ EXTENDEDPROP \_ 标头**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)结构字段的说明和要求。
 
 <table>
 <colgroup>
@@ -133,7 +132,7 @@ ms.locfileid: "90107266"
 </tbody>
 </table>
 
-下表包含**KSPROPERTY \_ CAMERACONTROL \_ 扩展 \_ 缩放**属性的**KSCAMERA \_ EXTENDEDPROP \_ VIDEOPROCSETTING**结构字段的说明和要求。
+下表包含 **KSPROPERTY \_ CAMERACONTROL \_ 扩展 \_ 缩放** 属性的 **KSCAMERA \_ EXTENDEDPROP \_ VIDEOPROCSETTING** 结构字段的说明和要求。
 
 <table>
 <colgroup>
@@ -160,7 +159,7 @@ ms.locfileid: "90107266"
 <td><p>对于 <strong>SET</strong> 操作，VideoProc 必须指定最小/最大值/步骤参数描述的范围内的缩放比例。 对于 <strong>GET</strong> 操作，驱动程序必须返回当前的缩放比例。</p></td>
 </tr>
 <tr class="even">
-<td><p>保留</p></td>
+<td><p>预留</p></td>
 <td><p>这是未使用的。 驱动程序必须忽略此情况。</p></td>
 </tr>
 </tbody>

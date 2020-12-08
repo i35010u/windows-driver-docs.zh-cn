@@ -1,10 +1,9 @@
 ---
 title: isr
-description: Isr 扩展显示指定地址处的 Itanium 中断状态注册 (ISR)。
-ms.assetid: 35cf1749-2417-4fd9-9de2-0884ee795ab3
+description: Isr 扩展显示指定地址 (ISR) 的 Itanium 中断状态寄存器。
 keywords:
-- ISR （中断状态注册）
-- 中断状态寄存器 (ISR)
+- 'ISR (中断状态注册) '
+- " (ISR) 中断状态注册"
 - isr Windows 调试
 ms.date: 05/23/2017
 topic_type:
@@ -14,45 +13,45 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: bc29562a30e3b857ee4415a483c13d37a47d62f2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 581de1089b61e9ae6c46f0ec9977182d4be98157
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63336374"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96786491"
 ---
 # <a name="isr"></a>!isr
 
 
-！ Isr 扩展显示指定地址处的 Itanium 中断状态注册 (ISR)。
+！ Isr 扩展显示指定地址 (ISR) 的 Itanium 中断状态寄存器。
 
 ```dbgcmd
 !isr Expression [DisplayLevel]
 ```
 
-**重要**  此命令已被 Windows 调试器版本 10.0.14257 中不推荐使用和更高版本，并不再可用。
+**重要提示**  此命令在 Windows 调试器版本10.0.14257 和更高版本中已弃用，不再可用。
 
  
 
-## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>参数
+## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>Parameters
 
 
-<span id="_______Expression______"></span><span id="_______expression______"></span><span id="_______EXPRESSION______"></span> *表达式*   
-指定要显示的 ISR 登记的十六进制地址。 表达式<strong>@isr</strong>还可用于此参数。 在这种情况下，将显示有关当前处理器 ISR 注册的信息。
+<span id="_______Expression______"></span><span id="_______expression______"></span><span id="_______EXPRESSION______"></span>*表达式*   
+指定要显示的 ISR 寄存器的十六进制地址。 表达式 <strong>@isr</strong> 还可用于此参数。 在这种情况下，将显示有关当前处理器 ISR 注册的信息。
 
-<span id="_______DisplayLevel______"></span><span id="_______displaylevel______"></span><span id="_______DISPLAYLEVEL______"></span> *DisplayLevel*   
+<span id="_______DisplayLevel______"></span><span id="_______displaylevel______"></span><span id="_______DISPLAYLEVEL______"></span>*DisplayLevel*   
 可以是下列选项之一：
 
 <span id="0"></span>**0**  
-显示只有每个 ISR 字段的值。 这是默认设置。
+仅显示每个 ISR 字段的值。 这是默认值。
 
 <span id="1"></span>**1**  
-显示详细信息的不是保留还是忽略 ISR 字段。
+显示有关非保留或忽略的 ISR 字段的详细信息。
 
-<span id="2"></span>**2**  
-显示所有 ISR 字段，包括那些忽略或保留的详细信息。
+<span id="2"></span>**pps-2**  
+显示有关所有 ISR 字段的详细信息，包括已忽略或保留的字段。
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 <table>
 <colgroup>
@@ -73,12 +72,12 @@ ms.locfileid: "63336374"
 
  
 
-此扩展命令仅用于 Itanium 目标计算机。
+此扩展命令只能与 Itanium 目标计算机一起使用。
 
 <a name="remarks"></a>备注
 -------
 
-下面是输出的几个示例来自此扩展插件：
+下面是此扩展的几个输出示例：
 
 ```dbgcmd
 kd> !isr @isr

@@ -1,17 +1,16 @@
 ---
 title: DSSPEAKER_SURROUND 扬声器配置
 description: DSSPEAKER_SURROUND 扬声器配置
-ms.assetid: de8f861b-f190-4915-b3f0-95d39965b612
 keywords:
 - DSSPEAKER_SURROUND 发言人配置 WDK 音频
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f4d3f782a75803cd448613e019576507f1bf4ef7
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 76386f8100a2819ca2717b2e1d6ecc9122fd7a06
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89208043"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96786551"
 ---
 # <a name="dsspeaker_surround-speaker-configuration"></a>DSSPEAKER \_ 环绕发言人配置
 
@@ -19,7 +18,7 @@ ms.locfileid: "89208043"
 ## <span id="dsspeaker_surround_speaker_configuration"></span><span id="DSSPEAKER_SURROUND_SPEAKER_CONFIGURATION"></span>
 
 
-**注意**   此信息适用于 Windows XP 及更早版本的操作系统。 从 Windows Vista 开始， **IDirectSound：： GetSpeakerConfig** 和 **IDirectSound：： SetSpeakerConfig** 已弃用。
+**注意**  此信息适用于 Windows XP 及更早版本的操作系统。 从 Windows Vista 开始， **IDirectSound：： GetSpeakerConfig** 和 **IDirectSound：： SetSpeakerConfig** 已弃用。
 
  
 
@@ -39,7 +38,7 @@ DirectSound 使用以下算法为环绕模式配置音频系统：
 
 在上述 (3) 情况下，应用程序应避免为其任何输出流使用硬件缓冲区。 请注意，在编码组合之前，KMixer 会混合其所有输入流以生成环绕立体声流。 但是，任何输入硬件混合器 pin 的流都在硬件中与 KMixer 的编码立体声混合，这会降低环绕音频在解码时的质量。 应用程序只能使用软件缓冲区来防止这种情况。
 
-\_ \_ 可以通过[**KSNODETYPE \_ PROLOGIC \_ 解码器**](./ksnodetype-prologic-decoder.md)节点 (左、右、左和后) 将由 KSNODETYPE PROLOGIC 编码器节点包围的立体声流解码为四个通道。
+\_ \_ 可以通过 [**KSNODETYPE \_ PROLOGIC \_ 解码器**](./ksnodetype-prologic-decoder.md)节点 (左、右、左和后) 将由 KSNODETYPE PROLOGIC 编码器节点包围的立体声流解码为四个通道。
 
  
 

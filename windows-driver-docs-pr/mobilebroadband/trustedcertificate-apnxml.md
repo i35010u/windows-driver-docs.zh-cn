@@ -1,20 +1,19 @@
 ---
 title: TrustedCertificate（APN 元素）
 description: TrustedCertificate（APN 元素）
-ms.assetid: 8b1b09ab-7ab8-4d6d-9ea6-395a109def91
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 53061611095ebec830ce4fb80af4424cd2319893
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: acad1a7504ae5782b17bf4b5647ab629c3eaaf39
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63376977"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96788479"
 ---
 # <a name="trustedcertificate-apn-element"></a>TrustedCertificate（APN 元素）
 
 
-TrustedCertificate 元素为指定的运算符指定受信任的证书。
+TrustedCertificate 元素为指定操作员指定受信任的证书。
 
 ## <a name="span-idusagespanspan-idusagespanspan-idusagespanusage"></a><span id="Usage"></span><span id="usage"></span><span id="USAGE"></span>使用情况
 
@@ -36,9 +35,9 @@ TrustedCertificate 元素为指定的运算符指定受信任的证书。
 </colgroup>
 <thead>
 <tr class="header">
-<th>特性</th>
-<th>在任务栏的搜索框中键入</th>
-<th>必需</th>
+<th>Attribute</th>
+<th>类型</th>
+<th>必须</th>
 <th>描述</th>
 </tr>
 </thead>
@@ -47,7 +46,7 @@ TrustedCertificate 元素为指定的运算符指定受信任的证书。
 <td><p>SubjectName</p></td>
 <td><p>xs:string</p></td>
 <td><p>是</p></td>
-<td><p>证书使用者名称。</p></td>
+<td><p>证书的主题名称。</p></td>
 </tr>
 <tr class="even">
 <td><p>IssuerName</p></td>
@@ -60,12 +59,12 @@ TrustedCertificate 元素为指定的运算符指定受信任的证书。
 
  
 
-## <a name="span-idchildelementsspanspan-idchildelementsspanspan-idchildelementsspanchild-elements"></a><span id="Child_elements"></span><span id="child_elements"></span><span id="CHILD_ELEMENTS"></span>子元素
+## <a name="span-idchild_elementsspanspan-idchild_elementsspanspan-idchild_elementsspanchild-elements"></a><span id="Child_elements"></span><span id="child_elements"></span><span id="CHILD_ELEMENTS"></span>子元素
 
 
-没有子元素。
+没有任何子元素。
 
-## <a name="span-idparentelementsspanspan-idparentelementsspanspan-idparentelementsspanparent-elements"></a><span id="Parent_elements"></span><span id="parent_elements"></span><span id="PARENT_ELEMENTS"></span>父元素
+## <a name="span-idparent_elementsspanspan-idparent_elementsspanspan-idparent_elementsspanparent-elements"></a><span id="Parent_elements"></span><span id="parent_elements"></span><span id="PARENT_ELEMENTS"></span>父元素
 
 
 <table>
@@ -82,14 +81,14 @@ TrustedCertificate 元素为指定的运算符指定受信任的证书。
 <tbody>
 <tr class="odd">
 <td><p><a href="trustedcertificatelist.md" data-raw-source="[TrustedCertificateList](trustedcertificatelist.md)">TrustedCertificateList</a></p></td>
-<td><p>运算符中指定受信任的证书的列表。</p></td>
+<td><p>指定操作员的受信任证书列表。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-## <a name="span-idxsdspanspan-idxsdspanxsd"></a><span id="XSD"></span><span id="xsd"></span>XSD
+## <a name="span-idxsdspanspan-idxsdspanxsd"></a><span id="XSD"></span><span id="xsd"></span>XSD.EXE
 
 
 ``` syntax

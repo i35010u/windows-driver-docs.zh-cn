@@ -1,7 +1,6 @@
 ---
 title: AVStream 拆分器
 description: AVStream 拆分器
-ms.assetid: c2cfc183-0f4c-4104-a580-234e0483eee4
 keywords:
 - 拆分 WDK AVStream
 - AVStream 拆分器 WDK
@@ -15,12 +14,12 @@ keywords:
 - 帧 WDK AVStream
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 385bbfa7c63a299ab10b6472072e258bd6ee2c97
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 46038c59f7832e3b9440244135b20ba4475e1702
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89189201"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96786653"
 ---
 # <a name="avstream-splitters"></a>AVStream 拆分器
 
@@ -30,7 +29,7 @@ ms.locfileid: "89189201"
 
 当流通过给定的 pin 传递时，AVStream 微型驱动程序可以使用 AVStream 类驱动程序功能将数据流拆分为多个副本。 如果你的驱动程序需要复制输入流以生成两个相同的输出流，则此拆分过程会很有用。
 
-为此，请 \_ \_ 在 Pin 的[**KSPIN \_ 描述符 \_ EX**](/windows-hardware/drivers/ddi/ks/ns-ks-_kspin_descriptor_ex)结构的**Flags**成员中设置 KSPIN 标志拆分器。 如果在 pin 上设置此标志，则 pin 将充当自动拆分器。 AVStream 会自动复制拆分流所需的所有数据。
+为此，请 \_ \_ 在 Pin 的 [**KSPIN \_ 描述符 \_ EX**](/windows-hardware/drivers/ddi/ks/ns-ks-_kspin_descriptor_ex)结构的 **Flags** 成员中设置 KSPIN 标志拆分器。 如果在 pin 上设置此标志，则 pin 将充当自动拆分器。 AVStream 会自动复制拆分流所需的所有数据。
 
 在低于 DirectX 8.0 的版本中，KSPIN \_ 标志 \_ 拆分器标志适用于以 [筛选器为中心](filter-centric-processing.md) 和以 [针为中心](pin-centric-processing.md) 的筛选器上的 pin。 以前的版本仅支持在以筛选器为中心的筛选器上的 pin。
 
@@ -48,7 +47,7 @@ ms.locfileid: "89189201"
 
 ![两个拆分针脚的进程引脚表示意图](images/splitppin1.png)
 
-在此关系图中，DB 引用[**KSPROCESSPIN**](/windows-hardware/drivers/ddi/ks/ns-ks-_ksprocesspin)结构的**DelegateBranch**成员，而 CS 引用**CopySource**成员。 输入插针和第一个输出插针的 **DelegateBranch** 和 **CopySource** 成员均为 **NULL**。 这表示微型驱动程序负责处理这些引脚上的帧。
+在此关系图中，DB 引用 [**KSPROCESSPIN**](/windows-hardware/drivers/ddi/ks/ns-ks-_ksprocesspin)结构的 **DelegateBranch** 成员，而 CS 引用 **CopySource** 成员。 输入插针和第一个输出插针的 **DelegateBranch** 和 **CopySource** 成员均为 **NULL**。 这表示微型驱动程序负责处理这些引脚上的帧。
 
 但是，第二个输出插针有一个 **CopySource** ，它指向第一个输出插针。 这表示第二个输出插针位于第一个输出插针的单独管道中，AVStream 会自动将放置在第一个输出插针的队列中的任何数据复制到第二个输出插针的队列中。
 

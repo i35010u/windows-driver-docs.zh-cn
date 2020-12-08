@@ -1,23 +1,22 @@
 ---
 title: HD 音频总线驱动程序
 description: HD 音频总线驱动程序
-ms.assetid: a08f4304-467b-45cf-8026-87f41b408692
 keywords:
 - HD 音频，通用音频体系结构
-- 高清晰音频（HD 音频），通用音频体系结构
+- 高清晰音频 (HD 音频) ，通用音频体系结构
 - UAA WDK
 - 通用音频体系结构 WDK
 - 总线驱动程序 WDK 音频
 - HD 音频，总线驱动程序
-- 高清晰音频（HD 音频），总线驱动程序
+- 高清晰音频 (HD 音频) ，总线驱动程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6885db4038e3dedc0e7f53cccbe914b4ef6820ad
-ms.sourcegitcommit: 98930ca95b9adbb6e5e472f89e91ab084e67e31d
+ms.openlocfilehash: 03c01f04b087446b3fdea338ba7c217d3c04de70
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82925584"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96786509"
 ---
 # <a name="hd-audio-bus-driver"></a>HD 音频总线驱动程序
 
@@ -28,7 +27,7 @@ HD 音频总线驱动程序：
 
 -   在总线上查询编解码器，并创建子编解码器来管理编解码器。
 
--   处理非请求响应的中断服务例程（Isr），并将未经请求的响应传播到其子代。
+-   处理 (Isr) 的中断服务例程，以获取未经请求的响应，并将未经请求的响应传播到其子代。
 
 -   将命令从其子编解码器传递到编解码器，并从编解码器检索响应。
 
@@ -46,7 +45,7 @@ HD 音频总线驱动程序未提供：
 
 -   优先带宽管理。
 
-在设备枚举过程中，HD 音频总线驱动程序检测附加到 HD audio 控制器的 HD 音频链接的编解码器。 对于每个编解码器，总线驱动程序会为它在编解码器内找到的每个函数组加载一个函数驱动程序（如果可用）。 有关函数组的信息，请参阅[INTEL HD 音频](https://www.intel.com/content/www/us/en/standards/intel-standards-and-initiatives.html)网站上的 Intel 高质音频规范。
+在设备枚举过程中，HD 音频总线驱动程序检测附加到 HD audio 控制器的 HD 音频链接的编解码器。 对于每个编解码器，总线驱动程序会加载一个函数驱动程序 (如果它在编解码器内找到的每个函数组都可用) 。 有关函数组的信息，请参阅 [INTEL HD 音频](https://www.intel.com/content/www/us/en/standards/intel-standards-and-initiatives.html) 网站上的 Intel 高质音频规范。
 
  
 

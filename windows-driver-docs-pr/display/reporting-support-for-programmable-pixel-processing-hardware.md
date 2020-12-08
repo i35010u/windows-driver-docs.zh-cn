@@ -1,33 +1,32 @@
 ---
 title: 报告可编程像素着色器硬件的支持
-description: DirectX 8.0 级别驱动程序的可编程像素着色器硬件报表技术支持，它必须将 D3DCAPS8 结构 PixelShaderVersion 字段设置为有效的、 非零像素着色器版本数。
-ms.assetid: e6456c2a-d40f-4082-9122-fab9299808f7
+description: 要使 DirectX 8.0 级别驱动程序报告对可编程像素着色器硬件的支持，它必须将 D3DCAPS8 结构的 PixelShaderVersion 字段设置为有效的非零像素着色器版本号。
 keywords:
-- 像素着色器 WDK DirectX 8.0，可编程硬件
-- 处理硬件 WDK DirectX 8.0 的可编程像素
+- 象素着色器 WDK DirectX 8.0，可编程硬件
+- 可编程像素处理硬件 WDK DirectX 8。0
 ms.date: 12/06/2018
 ms.localizationpriority: medium
 ms.custom: seodec18
-ms.openlocfilehash: e046280f8c72a05f3a5e153703b2079b38787326
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e47a354d85355401780a0c71191884e05e2efc29
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63383245"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96786859"
 ---
 # <a name="reporting-support-for-programmable-pixel-shader-hardware"></a>报告可编程像素着色器硬件的支持
 
-DirectX 8.0 级别驱动程序的可编程像素着色器硬件报表技术支持，它必须设置**PixelShaderVersion** D3DCAPS8 结构为有效的、 非零像素着色器版本数的字段。 **PixelShaderVersion**是一个 dword 值，其中最重要的词必须具有 0xFFFF 的值和最不重要的 word 保存的实际版本数量。 此 word 此最低有效字节持有的次版本号，最高有效字节包含主版本号。 由于此 DWORD 的格式很复杂，该驱动程序必须设置的值**PixelShaderVersion**使用宏 D3DPS\_版本中定义*d3d8types.h*。 例如，以下代码段集**PixelShaderVersion**以指示对 1.0 级别功能的支持。
+要使 DirectX 8.0 级别驱动程序报告对可编程像素着色器硬件的支持，它必须将 D3DCAPS8 结构的 **PixelShaderVersion** 字段设置为有效的非零像素着色器版本号。 **PixelShaderVersion** 是一个 DWORD，其中最重要的词必须具有值0xffff，而最不重要的单词则包含实际版本号。 此词的此最小有效字节包含次版本号，最高有效字节保留主版本号。 由于此 DWORD 的格式很复杂，因此驱动程序必须使用 **PixelShaderVersion** \_ *d3d8types* 中定义的宏 D3DPS 版本来设置 PixelShaderVersion 的值。 例如，下面的代码段设置 **PixelShaderVersion** 以指示支持1.0 级别功能。
 
 ```cpp
 myD3DCaps8.PixelShaderVersion = D3DPS_VERSION(1, 0);
 ```
 
-不支持可编程像素处理的驱动程序应设置**PixelShaderVersion**为零。
+不支持可编程像素处理的驱动程序应将 **PixelShaderVersion** 设置为零。
 
-与不同的报告的设备具有顶点着色器的常量寄存器的数量，设备不能公开更常量寄存器不是由它指定像素着色器版本。 例如，实现 1.0 像素着色器规范的设备必须公开仅包括八种常量像素着色器寄存器。 但是，没有其他像素着色器相关的功能，应设置驱动程序，请**MaxPixelShaderValue**。 此字段用于提供支持的像素颜色混合操作值的内部范围。
+与报告设备对顶点着色器的常量寄存器数量不同，设备不能公开比它指定的像素着色器版本定义的更多的常量寄存器。 例如，实现1.0 像素着色器规范的设备必须仅公开8个常量像素着色器寄存器。 但是，驱动程序应设置其他像素着色器相关功能， **MaxPixelShaderValue**。 此字段提供像素颜色混合操作支持的内部值范围。
 
-实现必须允许它们报告通过像素处理以未修改形式 （例如，unclamped） 范围内的数据。 此值通常定义的已签名的范围，它是一个绝对值的限制。 因此，例如，1 表示的范围是\[-1.0 到 1.0\]，，8 表示该范围\[-8.0 到 8.0\]。 像素着色器版本 1.0 到 1.3，驱动程序必须设置的值**MaxPixelShaderValue**到最小为 1。 该驱动程序必须将该值设置为 1.4， **MaxPixelShaderValue**为 8 的最小值。
+实现必须允许其报告范围内的数据通过未修改的像素处理 (例如 unclamped) 。 此值通常定义签名范围的限制，即绝对值。 例如，1表示范围为 \[ -1.0 到 1.0 \] ，8表示范围为 \[ -8.0 到 8.0 \] 。 对于像素着色器版本1.0 到1.3，驱动程序必须将 **MaxPixelShaderValue** 中的值设置为至少1。 对于1.4，驱动程序必须将 **MaxPixelShaderValue** 中的值设置为最小值8。
 
  
 

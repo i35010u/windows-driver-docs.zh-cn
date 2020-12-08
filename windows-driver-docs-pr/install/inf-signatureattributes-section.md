@@ -1,7 +1,6 @@
 ---
 title: INF SignatureAttributes 节
 description: 此部分允许用户根据某些认证方案的要求请求其他签名。
-ms.assetid: 8169686B-C45B-4D67-8B09-CD5F9977898D
 keywords:
 - INF SignatureAttributes 部分设备和驱动程序安装
 topic_type:
@@ -12,12 +11,12 @@ api_type:
 - NA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a469ad7754b6454a8591aa5652a5de2c9bd42db6
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: c768b896332574c653c39d9c2868b85bb0124b80
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89096243"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96786277"
 ---
 # <a name="inf-signatureattributes-section"></a>INF SignatureAttributes 节
 
@@ -118,7 +117,7 @@ WindowsHello=true
 ```
 
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [仪表板帮助](../dashboard/index.yml)

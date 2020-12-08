@@ -1,7 +1,6 @@
 ---
 title: 与目标建立连接
 description: 与目标建立连接
-ms.assetid: 1258ee32-3914-4832-b98b-361dace0abaf
 keywords:
 - Winsock 内核 WDK 网络，远程传输地址
 - WSK WDK 网络，远程传输地址
@@ -12,19 +11,19 @@ keywords:
 - 目标连接 WDK Winsock 内核
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 959a64cb2b1f4a03732b6dbc55f4bcf44599e945
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 3e3ae43f3157c6696bcda05aa2d04a34b340ed47
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89218109"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96788455"
 ---
 # <a name="establishing-a-connection-with-a-destination"></a>与目标建立连接
 
 
 Winsock 内核 (WSK) 应用程序已将面向连接的套接字绑定到本地传输地址后，它可以将套接字连接到远程传输地址，以便与远程系统建立连接。 WSK 应用程序必须先将面向连接的套接字连接到远程传输地址，然后才能在套接字上发送或接收数据。
 
-WSK 应用程序通过调用 [**WskConnect**](/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_connect) 函数将套接字连接到远程传输地址。 **WskConnect**函数由套接字提供程序调度结构的**WskConnect**成员指向。 套接字的提供程序调度结构由套接字对象结构的 **调度** 成员指向， ( [**WSK \_ 套**](/windows-hardware/drivers/ddi/wsk/ns-wsk-_wsk_socket) 接字) 在创建套接字期间由 WSK 子系统返回。
+WSK 应用程序通过调用 [**WskConnect**](/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_connect) 函数将套接字连接到远程传输地址。 **WskConnect** 函数由套接字提供程序调度结构的 **WskConnect** 成员指向。 套接字的提供程序调度结构由套接字对象结构的 **调度** 成员指向， ( [**WSK \_ 套**](/windows-hardware/drivers/ddi/wsk/ns-wsk-_wsk_socket) 接字) 在创建套接字期间由 WSK 子系统返回。
 
 下面的代码示例演示 WSK 应用程序如何将面向连接的套接字连接到远程传输地址。
 

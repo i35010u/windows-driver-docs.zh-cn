@@ -1,22 +1,21 @@
 ---
 title: 安装驱动程序和示例应用
 description: 本部分提供有关安装驱动程序和 WSD 示例应用程序的信息。
-ms.assetid: BF89F0D0-2ED3-4900-996F-BB7B9C8C9B80
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: aa56f72edb7761cbe787f92c5b9eb5dea05a37f2
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: de207c90cebaad9cd0ce9d86a2ea78eaa8796990
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89184555"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96787099"
 ---
 # <a name="install-the-driver-and-sample-app"></a>安装驱动程序和示例应用
 
 
 本部分提供有关安装驱动程序和 WSD 示例应用程序的信息。
 
-## <a name="install-the-driver-on-a-windows81-machine"></a>在 Windows 8.1 计算机上安装驱动程序
+## <a name="install-the-driver-on-a-windows-81-machine"></a>在 Windows 8.1 计算机上安装驱动程序
 
 
 若要安装3D 打印 SDK 中包含的打印驱动程序，请选择驱动程序的 .inf 文件，右键单击该文件，然后选择 " **安装**"。
@@ -26,7 +25,7 @@ ms.locfileid: "89184555"
 
 首先安装 Microsoft Visual Studio 2013 (Professional 或旗舰版) ，并应用所需的任何 service pack 或更新。
 
-该示例实现包含在 ASP.NET 中实现的 Microsoft Internet Information Services (IIS) web 服务，以及用于响应 WS 打印协议请求的 http 处理程序。
+该示例实现包含在 ASP.NET 中实现的 Microsoft Internet Information Services (IIS) web 服务，以及用于响应 WS-Print 协议请求的 http 处理程序。
 
 定向发现可在运行 web 服务的情况下运行，因为它在不使用 UDP 发现的情况下使用 http 协议。
 
@@ -36,7 +35,7 @@ ms.locfileid: "89184555"
 
 ### <a name="install-iis"></a>安装 IIS
 
-1.  若要安装 IIS，请按**Windows**  +  **R**键组合以显示 "**运行**" 对话框，然后键入 `appwiz.cpl` 并按**enter**。
+1.  若要安装 IIS，请按 **Windows**  +  **R** 键组合以显示 "**运行**" 对话框，然后键入 `appwiz.cpl` 并按 **enter**。
 
     ![run](images/wsd-app-1.png)
 
@@ -58,7 +57,7 @@ ms.locfileid: "89184555"
 
     ![应用程序开发功能](images/wsd-app-5.png)
 
-6.  单击" **确定**"。 " **应用更改** " 对话框将显示安装进度。
+6.  单击 **“确定”** 。 " **应用更改** " 对话框将显示安装进度。
 
     ![应用更改](images/wsd-app-6.png)
 
@@ -80,7 +79,7 @@ ms.locfileid: "89184555"
 
 如果需要支持 IPv6，请确保为 IPv6 创建 ASP.NET 站点绑定。
 
-处理程序项目将项目发布到 **默认**网站。
+处理程序项目将项目发布到 **默认** 网站。
 
 默认情况下，站点绑定到所有 IP 地址上的端口80。
 

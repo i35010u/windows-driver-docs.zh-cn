@@ -1,15 +1,14 @@
 ---
 title: 开始编写 Hyper-v 可扩展交换机扩展
 description: 本部分介绍如何开始编写 Hyper-v 可扩展交换机扩展
-ms.assetid: 91C6ED75-1057-4520-8E8E-28817D8F3C81
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f499598c86e925b8d8f234e61800d141616a0c75
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: 78119e866303ad100c3f4ec68bc3256d69c1eba6
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91733941"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96787263"
 ---
 # <a name="getting-started-writing-a-hyper-v-extensible-switch-extension"></a>开始编写 Hyper-V 可扩展交换机扩展
 

@@ -1,7 +1,6 @@
 ---
 title: INF AddService 指令
 description: AddService 指令用于 INF DDInstall 部分或 INF DefaultInstall 节中。
-ms.assetid: 3314da8b-3fde-462a-a64d-a0514710663a
 keywords:
 - INF AddService 指令设备和驱动程序安装
 topic_type:
@@ -12,21 +11,21 @@ api_type:
 - NA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ef77d6c136f56f9c24b0839c06e44f783a1cf0c6
-ms.sourcegitcommit: 06581a21ca066ddfedab7f9bb7f2159cfac452fd
+ms.openlocfilehash: e79a95da429d0671e6473bde502ac159b2ee129b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91145453"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96787449"
 ---
 # <a name="inf-addservice-directive"></a>INF AddService 指令
 
 
-**注意**   此指令不用于安装不需要任何驱动程序的设备（例如调制解调器或显示器监视器）的 INF 文件。
+**注意**  此指令不用于安装不需要任何驱动程序的设备（例如调制解调器或显示器监视器）的 INF 文件。
 
  
 
-在 INF DDInstall 中使用**AddService**指令[**。 *DDInstall*Services 部分**](inf-ddinstall-services-section.md)或[**INF DefaultInstall 部分**](inf-defaultinstall-services-section.md)。 它指定与驱动程序相关联的服务的特性，如如何和何时加载服务，以及其他基础旧驱动程序或服务的任何依赖项。 此外，此指令还可以为设备设置事件日志记录服务。
+在 INF DDInstall 中使用 **AddService** 指令 [**。 *DDInstall* Services 部分**](inf-ddinstall-services-section.md)或 [**INF DefaultInstall 部分**](inf-defaultinstall-services-section.md)。 它指定与驱动程序相关联的服务的特性，如如何和何时加载服务，以及其他基础旧驱动程序或服务的任何依赖项。 此外，此指令还可以为设备设置事件日志记录服务。
 
 ```inf
 [DDInstall.Services] 
@@ -43,7 +42,7 @@ AddService=ServiceName,[flags],service-install-section
 指定要安装的服务的名称。 对于设备，此值通常是其驱动程序的通用名称，如 "sermouse" 或某些此类名称。 此名称不能本地化。 无论系统的本地语言如何，它都必须相同。
 
 <a href="" id="flags"></a>*随意*  
-指定在 *setupapi.log*中定义的以下系统定义的运算的一个或多个 () ，表示为十六进制值：
+指定在 *setupapi.log* 中定义的以下系统定义的运算的一个或多个 () ，表示为十六进制值：
 
 <a href="" id="0x00000001--spsvcinst-tagtofront-"></a>**0x00000001** (SPSVCINST_TAGTOFRONT)   
 将命名服务的标记移到其组顺序列表的前面，以确保在该组中第一次加载该服务的标记 (除非随后使用此 INF 规范安装的设备视角它) 。 通过 WDM 驱动程序安装专用设备和设备的 INF 文件不应设置此标志。
@@ -51,7 +50,7 @@ AddService=ServiceName,[flags],service-install-section
 <a href="" id="0x00000002--spsvcinst-assocservice-"></a>**0x00000002** (SPSVCINST_ASSOCSERVICE)   
 将命名服务指定为该 INF 文件所安装的设备的 PnP 函数驱动程序 (或旧驱动程序) 。
 
-若要指示服务是设备的函数驱动程序，服务应在**AddService**指令中指定**SPSVCINST_ASSOCSERVICE**标志。  对于筛选器驱动程序或其他驱动程序组件等服务，不应使用标志。
+若要指示服务是设备的函数驱动程序，服务应在 **AddService** 指令中指定 **SPSVCINST_ASSOCSERVICE** 标志。  对于筛选器驱动程序或其他驱动程序组件等服务，不应使用标志。
 
 每个设备驱动程序 INF 应该只有一个关联的服务。  INF 不需要关联的服务（如果它是扩展）或使用 Include/需求指令从另一个 INF 继承关联的服务。  对于不需要函数驱动程序的设备，可以按如下所示指定 NULL 驱动程序：
 
@@ -93,7 +92,7 @@ AddService = ,2.
 （可选）引用由 INF 写入方定义的部分，在此部分中，将对此设备 (的事件日志记录服务，或) 设置设备。
 
 <a href="" id="eventlogtype"></a>*EventLogType*  
-根据需要指定 **系统**、 **安全**或 **应用程序**之一。 如果省略，则默认为 **System**，这几乎始终是安装设备驱动程序的适当值。
+根据需要指定 **系统**、 **安全** 或 **应用程序** 之一。 如果省略，则默认为 **System**，这几乎始终是安装设备驱动程序的适当值。
 
 例如，如果要安装的驱动程序提供其自己的安全支持，则 INF 仅指定 **安全性** 。
 
@@ -107,7 +106,7 @@ AddService = ,2.
 
 在 INF 文件中，每个 INF 编写器创建的节名称必须唯一，并且必须遵循用于定义节名称的常规规则。 有关这些规则的详细信息，请参阅 [INF 文件的一般语法规则](general-syntax-rules-for-inf-files.md)。
 
-**AddService**指令必须在 INF 文件中的其他位置引用命名*服务安装部分*。 每个此类部分都具有以下形式：
+**AddService** 指令必须在 INF 文件中的其他位置引用命名 *服务安装部分*。 每个此类部分都具有以下形式：
 
 ```inf
 [service-install-section]
@@ -130,19 +129,19 @@ ServiceBinary=path-to-service
 [AddTrigger=service-trigger-install-section[, service-trigger-install-section, ...]]
 ```
 
-每个 *服务安装部分* 必须至少有 **ServiceType**、 **StartType**、 **ErrorControl**和 **ServiceBinary** 项，如下所示。 但是，其余条目是可选的。
+每个 *服务安装部分* 必须至少有 **ServiceType**、 **StartType**、 **ErrorControl** 和 **ServiceBinary** 项，如下所示。 但是，其余条目是可选的。
 
-### <a name="service-install-section-entries-and-values"></a>服务-安装节项和值
+### <a name="service-install-section-entries-and-values"></a>Service-Install 节项和值
 
 <a href="" id="displayname-name"></a>**DisplayName** =*名称*  
-为服务/驱动程序指定一个友好名称，通常为简化本地化，表示为在 INF 文件的[**字符串**](inf-strings-section.md)部分中定义的%*strkey*% 令牌。
+为服务/驱动程序指定一个友好名称，通常为简化本地化，表示为在 INF 文件的 [**字符串**](inf-strings-section.md)部分中定义的%*strkey*% 令牌。
 
 <a href="" id="description-description-string"></a>**描述** =*description-字符串*  
-（可选）指定描述服务的字符串，通常表示为在 INF 文件的**字符串**部分中定义的%*strkey*% 令牌。
+（可选）指定描述服务的字符串，通常表示为在 INF 文件的 **字符串** 部分中定义的%*strkey*% 令牌。
 
 此字符串为用户提供有关该服务的详细信息，而不是 **DisplayName**。 例如， **DisplayName** 的名称可能类似于 "DHCP 客户端"，描述可能类似于 "通过注册和更新 IP 地址和 DNS 名称来管理网络配置"。
 
-*说明字符串*的长度应足以区分描述性，但不要太长。 如果 *说明字符串* 包含任何%*strkey*% 令牌，则每个令牌最多可以表示511个字符。 所有字符串标记替换后的总字符串不应超过1024个字符。
+*说明字符串* 的长度应足以区分描述性，但不要太长。 如果 *说明字符串* 包含任何%*strkey*% 令牌，则每个令牌最多可以表示511个字符。 所有字符串标记替换后的总字符串不应超过1024个字符。
 
 <a href="" id="servicetype-type-code"></a>**ServiceType** =*类型代码*  
 内核模式设备驱动程序的类型代码必须设置为 0x00000001 (SERVICE_KERNEL_DRIVER) 。
@@ -151,7 +150,7 @@ ServiceBinary=path-to-service
 
 最高级别网络驱动程序的 *类型代码* （例如，重定向程序或文件系统驱动程序）应设置为 **0x00000002** (SERVICE_FILE_SYSTEM_DRIVER) 。
 
-在 *Wdm .h* 和 *Ntddk*中定义 SERVICE_xxxx 常量。
+在 *Wdm .h* 和 *Ntddk* 中定义 SERVICE_xxxx 常量。
 
 <a href="" id="starttype-start-code"></a>**StartType** =*开始-代码*  
 指定何时启动驱动程序作为以下数值之一（用 decimal 或表示），如下面的列表所示，采用十六进制表示法。
@@ -183,7 +182,7 @@ ServiceBinary=path-to-service
 
 此值可用于暂时禁用设备的驱动程序服务。 但是，如果在其 INF 文件的 "服务安装" 部分中指定了此值，则无法安装该设备/驱动程序。
 
-有关 **StartType**的详细信息，请参阅 [指定驱动程序加载顺序](specifying-driver-load-order.md)。
+有关 **StartType** 的详细信息，请参阅 [指定驱动程序加载顺序](specifying-driver-load-order.md)。
 
 <a href="" id="errorcontrol-error-control-level"></a>**ErrorControl** =*错误-控件级别*  
 以十六进制表示法，将错误控制级别指定为以下数字值之一（用 decimal 或表示），如下面的列表所示。
@@ -200,12 +199,12 @@ ServiceBinary=path-to-service
 <a href="" id="0x3--service-error-critical-"></a>**0x3** (SERVICE_ERROR_CRITICAL)   
 如果无法加载驱动程序，并且系统启动未使用注册表的 **LastKnownGood** 控制集，请切换到 **LastKnownGood** 并重试。
 
-如果在使用 **LastKnownGood**时启动仍失败，请运行 bug 检查例程。 *仅* (系统启动所需的设备/驱动程序在其 INF 文件中指定此值。 ) 
+如果在使用 **LastKnownGood** 时启动仍失败，请运行 bug 检查例程。 *仅* (系统启动所需的设备/驱动程序在其 INF 文件中指定此值。 ) 
 
 <a href="" id="servicebinary-path-to-service"></a>**ServiceBinary** =*路径到服务*  
 指定服务的二进制文件的路径，表示为 *% dirid% \\ filename*。
 
-*Dirid*号可以是自定义目录标识符，也可以是[使用 Dirids](using-dirids.md)中所述的系统定义的目录标识符之一。 给定的 *文件名* 指定已传输的文件 (参阅 [**INF CopyFiles 指令**](inf-copyfiles-directive.md)) 从源分发媒体到目标计算机上的目录。
+*Dirid* 号可以是自定义目录标识符，也可以是 [使用 Dirids](using-dirids.md)中所述的系统定义的目录标识符之一。 给定的 *文件名* 指定已传输的文件 (参阅 [**INF CopyFiles 指令**](inf-copyfiles-directive.md)) 从源分发媒体到目标计算机上的目录。
 
 <a href="" id="startname-driver-object-name"></a>**StartName** =*驱动程序-对象名称*  
 此可选条目指定表示此设备/驱动程序的驱动程序对象的名称。 如果 *类型代码* 指定 **1** (SERVICE_KERNEL_DRIVER **) 或 SERVICE_FILE_SYSTEM_DRIVER** () ，则此名称是 i/o 管理器用来加载驱动程序的驱动程序对象名称。
@@ -221,24 +220,24 @@ ServiceBinary=path-to-service
 此指令几乎不能用于 *服务安装部分*，但它可能用于 "更新" 注册表以用于以前安装的相同设备/驱动程序服务。
 
 <a href="" id="bitreg-bit-registry-section--bit-registry-section----"></a>**BitReg** =*位注册表-部分* \[**，**<em>位注册表-节</em> \] .。。  
-在 *服务安装部分* 有效，但几乎从未使用过。 此类*注册表部分*中的**HKR**规范还指定了**HKLM \\ System \\ CurrentControlSet \\ Services \\ ServiceName**注册表项。
+在 *服务安装部分* 有效，但几乎从未使用过。 此类 *注册表部分* 中的 **HKR** 规范还指定了 **HKLM \\ System \\ CurrentControlSet \\ Services \\ ServiceName** 注册表项。
 
 <a href="" id="loadordergroup-load-order-group-name"></a>**LoadOrderGroup** =*加载顺序-组名称*  
 此可选条目用于标识此驱动程序所属的加载顺序组。 它可以是 "标准" 加载顺序组（如 **SCSI** 类或 **NDIS**）之一。
 
 一般情况下，除非此类组有旧依赖项，否则对于具有 WDM 驱动程序的设备或独占 PnP 设备，此项不是必需的。 但是，如果支持通过按特定顺序加载一组驱动程序来支持设备检测，则此项会很有用。
 
-有关 **LoadOrderGroup**的详细信息，请参阅 [指定驱动程序加载顺序](specifying-driver-load-order.md)。
+有关 **LoadOrderGroup** 的详细信息，请参阅 [指定驱动程序加载顺序](specifying-driver-load-order.md)。
 
 <a href="" id="dependencies-depend-on-item-name--depend-on-item-name----"></a>**依赖关系** =*依赖项-名称* \[**，**<em>依赖项-名称</em> \] .。。  
 依赖项列表中的每个 *项依赖项名称* 项指定了设备/驱动程序所依赖的服务或加载顺序组的名称。
 
 如果 *依赖项名称* 指定了服务，则在启动此驱动程序之前必须运行该服务。 例如，系统提供的 Win32 TCP/IP 打印服务的 INF 依赖于基础 (内核模式) TCP/IP 传输堆栈的支持。 因此，TCP/IP 打印服务的 INF 将此项指定为 **依赖项**。
 
-*依赖项名称*可以指定此设备/驱动程序所依赖的加载顺序组。 仅当启动指定组中的至少一个成员时，才会启动此类驱动程序。 在组名称之前加上加号 (+) 。 例如，系统 RAS 服务 INF 可能有一个类似于 **"NetBIOSGroup"** 的条目，其中列出了负载顺序组和服务。
+*依赖项名称* 可以指定此设备/驱动程序所依赖的加载顺序组。 仅当启动指定组中的至少一个成员时，才会启动此类驱动程序。 在组名称之前加上加号 (+) 。 例如，系统 RAS 服务 INF 可能有一个类似于 **"NetBIOSGroup"** 的条目，其中列出了负载顺序组和服务。
 
 <a href="" id="security--security-descriptor-string-"></a>**Security**= "*security-描述符-string*"  
-指定要应用于服务的安全描述符。 此安全描述符指定执行此类操作（如启动、停止和配置服务）所需的权限。 *安全描述符字符串*值是带有标记的字符串，用于指示 DACL (**D：**) 安全组件。
+指定要应用于服务的安全描述符。 此安全描述符指定执行此类操作（如启动、停止和配置服务）所需的权限。 *安全描述符字符串* 值是带有标记的字符串，用于指示 DACL (**D：**) 安全组件。
 
 有关安全描述符字符串的信息，请参阅 [安全描述符定义语言 (Windows) ](/windows/desktop/SecAuthZ/security-descriptor-definition-language)。 有关安全描述符字符串的格式的信息，请参阅安全描述符定义语言 (Windows) 。
 
@@ -299,7 +298,7 @@ SubType=trigger-subtype
 
 **子类型** =*触发器-子类型*
 
-指定标识 trigger 事件子类型的 GUID。 该值取决于 **TriggerType**的值。 
+指定标识 trigger 事件子类型的 GUID。 该值取决于 **TriggerType** 的值。 
 
 当 **TriggerType** 为 **0x1** 时 (SERVICE_TRIGGER_TYPE_DEVICE_INTERFACE_ARRIVAL) ， **子类型** 指定标识设备接口类的 GUID。
 
@@ -320,13 +319,13 @@ SubType=trigger-subtype
 
 ### <a name="specifying-driver-load-order"></a>指定驱动程序加载顺序
 
-操作系统根据  **StartType**值加载驱动程序，*如下所示*：
+操作系统根据 **StartType** 值加载驱动程序，*如下所示*：  
 
 -   在系统启动开始阶段，操作系统 SERVICE_BOOT_START) 驱动程序加载所有 **0x0** (。
--   在系统启动阶段，操作系统会首先加载 PnP 管理器找到其设备节点 *)  (的*所有 WDM 和 PnP 驱动程序 **。 \\枚举**树 (其 INF 文件是否为 SERVICE_DEMAND_START) 的 SERVICE_SYSTEM_START 或**0x03**指定**0x01** 。然后，操作系统会加载所有剩余的 SERVICE_SYSTEM_START 驱动程序。
+-   在系统启动阶段，操作系统会首先加载 PnP 管理器找到其设备节点 *)  (的* 所有 WDM 和 PnP 驱动程序 **。 \\枚举** 树 (其 INF 文件是否为 SERVICE_DEMAND_START) 的 SERVICE_SYSTEM_START 或 **0x03** 指定 **0x01** 。然后，操作系统会加载所有剩余的 SERVICE_SYSTEM_START 驱动程序。
 -   在系统自动启动阶段，操作系统会加载所有剩余的 SERVICE_AUTO_START 驱动程序。
 
-有关 **依赖关系**的详细信息，请参阅 [指定驱动程序加载顺序](specifying-driver-load-order.md)。
+有关 **依赖关系** 的详细信息，请参阅 [指定驱动程序加载顺序](specifying-driver-load-order.md)。
 
 ### <a name="promoting-a-drivers-starttype-at-boot-depending-on-boot-scenario"></a>在启动时根据启动方案升级驱动程序的 StartType
 
@@ -361,7 +360,7 @@ HKR,,BootFlags,0x00010003,0x14 ; CM_SERVICE_USB3_DISK_BOOT_LOAD|CM_SERVICE_USB_D
 
 ### <a name="registering-for-event-logging"></a>注册事件日志记录
 
-**AddService**指令还可在 INF 文件中的其他位置引用*事件日志安装部分*。 每个此类部分都具有以下形式：
+**AddService** 指令还可在 INF 文件中的其他位置引用 *事件日志安装部分*。 每个此类部分都具有以下形式：
 
 ```inf
 [event-log-install-section]
@@ -372,7 +371,7 @@ AddReg=add-registry-section[, add-registry-section]...
  ...
 ```
 
-对于典型的设备/驱动程序 INF 文件， *事件日志-安装部分* 仅使用 **AddReg** 指令为驱动程序设置事件日志记录文件。 "*添加注册表" 一节*中的**HKR**规范指定**HKLM \\ System \\ CurrentControlSet \\ Services \\ EventLog \\ **<em>EventLogType</em> **\\** <em>事件</em>日志项。 此事件日志记录 *添加注册表部分* 具有以下常规形式：
+对于典型的设备/驱动程序 INF 文件， *事件日志-安装部分* 仅使用 **AddReg** 指令为驱动程序设置事件日志记录文件。 "*添加注册表" 一节* 中的 **HKR** 规范指定 **HKLM \\ System \\ CurrentControlSet \\ Services \\ EventLog \\**<em>EventLogType</em> **\\** <em>事件</em>日志项。 此事件日志记录 *添加注册表部分* 具有以下常规形式：
 
 ```inf
 [drivername_EventLog_AddReg]
@@ -382,24 +381,24 @@ HKR,,TypesSupported,0x00010001,7
 
 特别是，部分在为设备/驱动程序创建的注册表子项中添加了两个值项，如下所示：
 
--   名为 **EventMessageFile** 的值项的类型为 [REG_EXPAND_SZ](/windows/desktop/SysInfo/registry-value-types)，由 FLG_ADDREG_TYPE_EXPAND_SZ 值 **0x00020000**指定。 其值括在双引号 ( ") 中，它将系统提供的 *IoLogMsg.dll* 相关联 (但它可以将其他日志记录 DLL) 与驱动程序二进制文件相关联。 通常，按如下所示指定每个文件的路径：
+-   名为 **EventMessageFile** 的值项的类型为 [REG_EXPAND_SZ](/windows/desktop/SysInfo/registry-value-types)，由 FLG_ADDREG_TYPE_EXPAND_SZ 值 **0x00020000** 指定。 其值括在双引号 ( ") 中，它将系统提供的 *IoLogMsg.dll* 相关联 (但它可以将其他日志记录 DLL) 与驱动程序二进制文件相关联。 通常，按如下所示指定每个文件的路径：
 
     *%% SystemRoot%% \\ System32 \\IoLogMsg.dll*
 
     *%% SystemRoot%% \\ System32 \\ 驱动程序 \\driver.sys*
 
--   名为 **TypesSupported** 的值项的类型为 [REG_DWORD](/windows/desktop/SysInfo/registry-value-types)，由 FLG_ADDREG_TYPE_DWORD 值 **0x00010001**指定。
+-   名为 **TypesSupported** 的值项的类型为 [REG_DWORD](/windows/desktop/SysInfo/registry-value-types)，由 FLG_ADDREG_TYPE_DWORD 值 **0x00010001** 指定。
 
-    对于驱动程序，此值应为 **7**。 此值等效于 EVENTLOG_SUCCESS、EVENTLOG_ERROR_TYPE、EVENTLOG_WARNING_TYPE 和 EVENTLOG_INFORMATION_TYPE 的按位 "或"，而不设置 EVENTLOG_AUDIT_*XXX* 位。
+    对于驱动程序，此值应为 **7**。 此值等效于 EVENTLOG_SUCCESS、EVENTLOG_ERROR_TYPE、EVENTLOG_WARNING_TYPE 和 EVENTLOG_INFORMATION_TYPE 的按位 "或"，而不设置 EVENTLOG_AUDIT_ *XXX* 位。
 
 如果新安装的驱动程序正在取代驱动程序二进制文件 *，则还可以使用* [**DelReg**](inf-delreg-directive.md) 指令删除以前安装的事件日志消息文件，方法是显式删除现有的 **EventMessageFile** 和 **TypesSupported** 值项。  (另请参阅 [**INF DelService 指令**](inf-delservice-directive.md)。 ) 
 
-尽管[**BitReg**](inf-bitreg-directive.md)指令在 INF-编写器定义的*事件日志安装* - *部分*中也有效，但它几乎从未使用过，因为设备驱动程序事件日志记录的标准值项不是位掩码。
+尽管 [**BitReg**](inf-bitreg-directive.md)指令在 INF-编写器定义的 *事件日志安装* - *部分* 中也有效，但它几乎从未使用过，因为设备驱动程序事件日志记录的标准值项不是位掩码。
 
 <a name="examples"></a>示例
 --------
 
-此示例显示了**AddService**指令引用的服务安装和事件日志-安装部分，如[ * DDInstall * 的示例中所示 **。服务**](inf-ddinstall-services-section.md)。
+此示例显示了 **AddService** 指令引用的服务安装和事件日志-安装部分，如 DDInstall 的示例中所示 [**_DDInstall_。服务**](inf-ddinstall-services-section.md)。
 
 ```inf
 [sermouse_Service_Inst]
@@ -444,9 +443,9 @@ sermouse.SvcDesc = "Serial Mouse Driver"
 mouclass.SvcDesc = "Mouse Class Driver"
 ```
 
-DDInstall * 的参考中的示例[ * **。**](inf-ddinstall-hw-section.md)前面所述的 HW 部分还显示了**AddService**指令所引用的某些服务安装部分，以设置 PnP 上层筛选器驱动程序。
+DDInstall 的引用中的示例 [**_DDInstall_。**](inf-ddinstall-hw-section.md)前面所述的 HW 部分还显示了 **AddService** 指令所引用的某些服务安装部分，以设置 PnP 上层筛选器驱动程序。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**AddReg**](inf-addreg-directive.md)
@@ -455,9 +454,9 @@ DDInstall * 的参考中的示例[ * **。**](inf-ddinstall-hw-section.md)前面
 
 [**CopyFiles**](inf-copyfiles-directive.md)
 
-[***DDInstall*.HW**](inf-ddinstall-hw-section.md)
+[**_DDInstall_。HW**](inf-ddinstall-hw-section.md)
 
-[***DDInstall*.服务器**](inf-ddinstall-services-section.md)
+[**_DDInstall_。服务器**](inf-ddinstall-services-section.md)
 
 [**DelReg**](inf-delreg-directive.md)
 

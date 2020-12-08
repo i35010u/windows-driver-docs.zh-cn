@@ -1,33 +1,32 @@
 ---
 title: NDIS_STATUS_WDI_INDICATION_SET_RADIO_STATE_COMPLETE
 description: 微型端口驱动程序使用 NDIS_STATUS_WDI_INDICATION_SET_RADIO_STATE_COMPLETE 指示 OID_WDI_TASK_SET_RADIO_STATE 完成。
-ms.assetid: 43b9e513-d9bd-456c-9d80-aaefd21dce5f
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 NDIS_STATUS_WDI_INDICATION_SET_RADIO_STATE_COMPLETE 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 613973a9a580ed9288e7fcd745a0f964ddbed47e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: dbad59e6202ddd29f406f3930ef04468fc8292f9
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63372919"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96786755"
 ---
-# <a name="ndisstatuswdiindicationsetradiostatecomplete"></a>NDIS\_状态\_WDI\_指示\_设置\_单选\_状态\_完成
+# <a name="ndis_status_wdi_indication_set_radio_state_complete"></a>NDIS \_ 状态 \_ WDI \_ 指示 \_ 设置的 \_ 无线电 \_ 状态已 \_ 完成
 
 
-微型端口驱动程序使用 NDIS\_状态\_WDI\_指示\_设置\_单选\_状态\_完成以指示完成[OID\_WDI\_任务\_设置\_单选\_状态](oid-wdi-task-set-radio-state.md)。
+微型端口驱动程序使用 NDIS \_ 状态 \_ WDI \_ 指示 \_ 设置 \_ 无线电 \_ 状态 \_ 完成，以指示 [OID \_ WDI \_ 任务 \_ 集 \_ 广播 \_ 状态](oid-wdi-task-set-radio-state.md)的完成。
 
-| Object |
+| 对象 |
 |--------|
 | 端口   |
 
  
 
-## <a name="payload-data"></a>有效负载数据
+## <a name="payload-data"></a>负载数据
 
 
-此指示不包含任何其他数据。 标头中的数据就足够了。
+此指示不包含其他数据。 标头中的数据足够了。
 
 <a name="requirements"></a>要求
 ------------
@@ -44,11 +43,11 @@ ms.locfileid: "63372919"
 </tr>
 <tr class="even">
 <td><p>最低受支持的服务器</p></td>
-<td><p>Windows Server 2016</p></td>
+<td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
-<td><p>Header</p></td>
-<td>Dot11wdi.h</td>
+<td><p>标头</p></td>
+<td>Dot11wdi</td>
 </tr>
 </tbody>
 </table>
@@ -56,7 +55,7 @@ ms.locfileid: "63372919"
 ## <a name="see-also"></a>请参阅
 
 
-[OID\_WDI\_TASK\_SET\_RADIO\_STATE](oid-wdi-task-set-radio-state.md)
+[OID \_ WDI \_ 任务 \_ 集 \_ 无线电 \_ 状态](oid-wdi-task-set-radio-state.md)
 
  
 

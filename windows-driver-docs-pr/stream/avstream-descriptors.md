@@ -1,7 +1,6 @@
 ---
 title: AVStream 描述符
 description: AVStream 描述符
-ms.assetid: fd436406-311b-4537-994d-fbd8d92d4673
 keywords:
 - AVStream 描述符 WDK
 - 描述符 WDK AVStream
@@ -17,12 +16,12 @@ keywords:
 - pin 类型 WDK AVStream
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2a36f01388312fc1f3a3c7bc66034eeac45d76a0
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 014d126d1f457b2bad1b8b9497dc92762b2397c3
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89192421"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96786665"
 ---
 # <a name="avstream-descriptors"></a>AVStream 描述符
 

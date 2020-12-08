@@ -1,15 +1,14 @@
 ---
 title: DRM 函数
 description: DRM 函数
-ms.assetid: 7be96ab4-3c27-4e63-b0dd-71d814d804d7
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 572e449376b3301a906c9416d7fe8878c222e358
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: a92d7b56db8e57fa0ea41cfb345f54e208b75ebb
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89208065"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96786563"
 ---
 # <a name="drm-functions"></a>DRM 函数
 

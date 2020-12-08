@@ -1,16 +1,15 @@
 ---
 title: 先前的 WDDM 2.x 版本中添加的功能
 description: 描述用于显示和图形驱动程序的以前的 Windows 10 版本中的功能
-ms.assetid: 22793a7e-38fc-4cd8-aafd-09dfed48cb02
 ms.date: 03/24/2020
 ms.localizationpriority: medium
 ms.custom: seodec18, 19H1
-ms.openlocfilehash: da8c83cdea205ea9e5ea61f3217260a8ee2f9c03
-ms.sourcegitcommit: abe7fe9f3fbee8d12641433eeab623a4148ffed3
+ms.openlocfilehash: 1d7658d29c448de6c4637e920630cc7ce371100b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92185152"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96786333"
 ---
 # <a name="features-added-in-prior-wddm-2x-versions"></a>先前的 WDDM 2.x 版本中添加的功能
 
@@ -20,7 +19,7 @@ ms.locfileid: "92185152"
 
 ### <a name="super-wet-ink"></a>超级湿墨
 
-*超湿墨迹* 是一项围绕 *前缓冲区呈现*的功能。 IHV 驱动程序可以支持创建硬件不支持的格式或模式的 "可显示" 纹理。 他们可以通过分配应用程序所请求的纹理来实现此目的，以及可以显示的格式/布局的 "阴影" 纹理，然后在两个当前时间之间进行复制。 这种 "阴影" 可能并不一定是我们想像的纹理，但可能只是压缩数据。 此外，它可能不是必需的，但可能是优化。
+*超湿墨迹* 是一项围绕 *前缓冲区呈现* 的功能。 IHV 驱动程序可以支持创建硬件不支持的格式或模式的 "可显示" 纹理。 他们可以通过分配应用程序所请求的纹理来实现此目的，以及可以显示的格式/布局的 "阴影" 纹理，然后在两个当前时间之间进行复制。 这种 "阴影" 可能并不一定是我们想像的纹理，但可能只是压缩数据。 此外，它可能不是必需的，但可能是优化。
 
 运行时将发展，以了解可显示的表面的这些方面：
 
@@ -45,7 +44,7 @@ Scanout 可能会在 VBlank 之后不久开始，从图像的上到下垂直扫�
 * 在分配目标时需要提前知道几何别名的减少量。
 * 分配目标后，不能更改用于减少几何别名的量。
 
-在 WDDM 2.6 中，新模型通过添加*粗底纹*的新概念将 MSAA 扩展到反向的*粗像素*方向。 在这种情况下，可以在比像素更粗糙的频率执行阴影。 一组像素可以作为单个单元着色，然后将结果广播到组中的所有样本。
+在 WDDM 2.6 中，新模型通过添加 *粗底纹* 的新概念将 MSAA 扩展到反向的 *粗像素* 方向。 在这种情况下，可以在比像素更粗糙的频率执行阴影。 一组像素可以作为单个单元着色，然后将结果广播到组中的所有样本。
 
 粗阴影 API 允许应用指定属于阴影组的像素数。 在分配呈现器目标后，粗像素大小可能会改变。 这种情况下，屏幕的不同部分或不同的绘图会有不同的课程着色率。
 
@@ -127,7 +126,7 @@ Api 允许应用调整适合其工作负荷的后台处理量，以及何时执�
 
 ### <a name="display-synchronization"></a>显示同步
 
-当驱动程序向操作系统公开显示时，操作系统将检查显示同步的功能，因此在启用显示之前。 对于 TypeIntegratedDisplay 子设备，将通过在适配器初始化期间通过*类型* [DXGKQAITYPE_INTEGRATED_DISPLAY_DESCRIPTOR2](/windows-hardware/drivers/ddi/d3dkmddi/ne-d3dkmddi-_dxgk_queryadapterinfotype)调用[DxgkDdiQueryAdapterInfo](/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_queryadapterinfo)来报告此情况。 对于从 WDDM 2.5 开始受支持的 TypeVideoOutput 子设备，可通过 [DxgkDdiUpdateMonitorLinkInfo](/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_updatemonitorlinkinfo) 将功能作为热插拔处理的一部分进行报告，以便基于目标或连接的监视器来更改功能。
+当驱动程序向操作系统公开显示时，操作系统将检查显示同步的功能，因此在启用显示之前。 对于 TypeIntegratedDisplay 子设备，将通过在适配器初始化期间通过 *类型* [DXGKQAITYPE_INTEGRATED_DISPLAY_DESCRIPTOR2](/windows-hardware/drivers/ddi/d3dkmddi/ne-d3dkmddi-_dxgk_queryadapterinfotype)调用 [DxgkDdiQueryAdapterInfo](/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_queryadapterinfo)来报告此情况。 对于从 WDDM 2.5 开始受支持的 TypeVideoOutput 子设备，可通过 [DxgkDdiUpdateMonitorLinkInfo](/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_updatemonitorlinkinfo) 将功能作为热插拔处理的一部分进行报告，以便基于目标或连接的监视器来更改功能。
 
 OS 在[DXGK_SET_TIMING_PATH_INFO](/windows-hardware/drivers/ddi/d3dkmddi/ns-d3dkmddi-_dxgk_set_timing_path_info#input)结构的每个路径的输入字段的[DxgkDdiSetTimingsFromVidPn](/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_settimingsfromvidpn)调用中指定显示同步。
 
@@ -144,7 +143,7 @@ WDDM 2.0 驱动程序模型是 D3D12 的必备组件。 WDDM 2.0 和 DirectX12 �
   * 支持2MB 页表条目编码-在 WDDM 2.1 中，在 VRAM 中 (PTE) 编码的大型页表项。 此更改提高了对支持它的系统的性能。
   * 支持64KB 内存页-WDDM 2.1 也支持使用64KB 粒度的虚拟内存分配。 此更改尤其会通过减少访问虚拟内存页面的开销来 Apu 和 Soc。
 
-* 基于硬件的受保护内容改进，提供 ([PlayReady 3.0](/playready/)) 的*现有批处理*
+* 基于硬件的受保护内容改进，提供 ([PlayReady 3.0](/playready/)) 的 *现有批处理*
 
 * 图形驱动程序的驱动程序存储区安装，用于改进驱动程序升级复原能力。
 

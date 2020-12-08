@@ -1,7 +1,6 @@
 ---
 title: Bug 检查 0x55 DATA_COHERENCY_EXCEPTION
 description: DATA_COHERENCY_EXCEPTION bug 检查的值为0x00000055。此 bug 检查很少出现。
-ms.assetid: f7b585ec-5b76-44eb-b3fa-17684152156d
 keywords:
 - Bug 检查 0x55 DATA_COHERENCY_EXCEPTION
 - DATA_COHERENCY_EXCEPTION
@@ -13,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 9369c6250888189cef5f4ea13c249778e14bb2cd
-ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
+ms.openlocfilehash: 43c50417ee6fc49f74a515aaf1dcaa306f77ec01
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84534812"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96786451"
 ---
 # <a name="bug-check-0x55-data_coherency_exception"></a>Bug 检查0x55：数据 \_ 一致性 \_ 异常
 
@@ -28,7 +27,7 @@ ms.locfileid: "84534812"
 此 bug 检查很少出现。
 
 > [!IMPORTANT]
-> 本主题适用于程序员。 如果你是在使用计算机时收到蓝屏错误代码的客户，请参阅[排查蓝屏错误](https://www.windows.com/stopcode)。
+> 本主题面向程序员。 如果您是在使用计算机时收到蓝屏错误代码的客户，请参阅[蓝屏错误疑难解答](https://www.windows.com/stopcode)。
 
 
 ## <a name="resolution"></a>解决方法 

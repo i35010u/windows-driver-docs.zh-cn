@@ -1,9 +1,8 @@
 ---
-title: Bug 检查 0x199 中推出 KERNEL_STORAGE_SLOT_IN_USE
-description: KERNEL_STORAGE_SLOT_IN_USE bug 检查具有 0x00000199 值。 这表示不能释放存储槽，因为没有使用它的对象。
-ms.assetid: 5C561976-DD3C-4593-AAF0-F46618242D28
+title: Bug 检查 0x199 KERNEL_STORAGE_SLOT_IN_USE
+description: KERNEL_STORAGE_SLOT_IN_USE bug 检查的值为0x00000199。 这表示无法释放存储槽，因为存在使用它的对象。
 keywords:
-- Bug 检查 0x199 中推出 KERNEL_STORAGE_SLOT_IN_USE
+- Bug 检查 0x199 KERNEL_STORAGE_SLOT_IN_USE
 - KERNEL_STORAGE_SLOT_IN_USE
 ms.date: 05/23/2017
 topic_type:
@@ -13,31 +12,31 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: cdf3a1a3b27e2767300b7a201bd3badf6de1d6e8
-ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
+ms.openlocfilehash: f0642dfbb1b7a475b8de4a81e485a1f719468eca
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67519796"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96787945"
 ---
-# <a name="bug-check-0x199-kernelstorageslotinuse"></a>Bug 检查 0x199：内核\_存储\_槽\_IN\_使用
+# <a name="bug-check-0x199-kernel_storage_slot_in_use"></a>Bug 检查0x199：内核 \_ 存储 \_ 槽 \_ 正在 \_ 使用中
 
 
-内核\_存储\_槽\_IN\_使用错误检查的值为 0x00000199。 这表示不能释放存储槽，因为没有使用它的对象。
+\_ \_ 使用 bug 检查中的内核存储槽的 \_ \_ 值为0x00000199。 这表示无法释放存储槽，因为存在使用它的对象。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://www.windows.com/stopcode)。
+> 本主题面向程序员。 如果您是在使用计算机时收到蓝屏错误代码的客户，请参阅[蓝屏错误疑难解答](https://www.windows.com/stopcode)。
 
 
-## <a name="kernelstorageslotinuse-parameters"></a>内核\_存储\_槽\_IN\_使用参数
+## <a name="kernel_storage_slot_in_use-parameters"></a>内核 \_ 存储 \_ 槽 \_ \_ 使用参数
 
 
 | 参数 | 描述                      |
 |-----------|----------------------------------|
-| 1         | 存储数组的地址 |
-| 2         | 保留                         |
-| 3         | 保留                         |
-| 4         | 保留                         |
+| 1         | 存储阵列的地址 |
+| 2         | 预留                         |
+| 3         | 预留                         |
+| 4         | 预留                         |
 
  
 

@@ -1,7 +1,6 @@
 ---
 title: INF ClassInstall32.Services 节
 description: ClassInstall32 节 (安装新的设备安装程序类，并为新类中的设备安装类安装程序) 。
-ms.assetid: 602cf407-f3c0-4342-9e59-87481a0f41ef
 keywords:
 - INF ClassInstall32 部分设备和驱动程序安装
 topic_type:
@@ -12,21 +11,21 @@ api_type:
 - NA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0132f6d7205d25a02ced8fe91550b38a0a1db2dc
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: a8092abaf4afd4bd9a9775e225748043632c0fb3
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89096427"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96787447"
 ---
 # <a name="inf-classinstall32services-section"></a>INF ClassInstall32.Services 节
 
 
-**注意**   如果要构建通用或移动驱动程序包，此部分无效。 请参阅 [使用通用 INF 文件](using-a-universal-inf-file.md)。
+**注意**  如果要构建通用或移动驱动程序包，此部分无效。 请参阅 [使用通用 INF 文件](using-a-universal-inf-file.md)。
 
  
 
-**ClassInstall32**节 (安装新的[设备安装程序类](./overview-of-device-setup-classes.md)，并可能为新类中的设备安装类安装程序) 。
+**ClassInstall32** 节 (安装新的 [设备安装程序类](./overview-of-device-setup-classes.md)，并可能为新类中的设备安装类安装程序) 。
 
 ```inf
 [ClassInstall32.Services] | 
@@ -67,29 +66,29 @@ INF 文件通常使用 **ClassInstall32** 部分和至少一个 **AddService** �
 <a href="" id="needs-inf-section-name--inf-section-name----"></a>**需求 =**<em>inf-名称</em> \[ **，**<em>inf-节名称</em> \] .。。  
 此可选条目指定在安装此设备类的过程中必须处理的特定命名部分。 通常，此类命名部分是系统提供的 INF 文件中的 **ClassInstall32** 部分，该文件在 **包含** 项中列出。 但是，它可以是在此类 **ClassInstall32** 部分中引用的任何部分。
 
-不能嵌套**需求**条目。  (有关其使用 **情况的详细** 信息，请参阅 [指定设备文件的源位置和目标位置](specifying-the-source-and-target-locations-for-device-files.md)) 。
+不能嵌套 **需求** 条目。  (有关其使用 **情况的详细** 信息，请参阅 [指定设备文件的源位置和目标位置](specifying-the-source-and-target-locations-for-device-files.md)) 。
 
 <a name="remarks"></a>备注
 -------
 
 **ClassInstall32** 节应与它们相关的 [**ClassInstall32 部分**](inf-classinstall32-section.md)具有相同的平台和操作系统修饰。 例如， **ClassInstall32. ntx86** 部分会有一个对应的 **ClassInstall32. ntx86** 节。
 
-不 **区分大小**写的 **ntx86、.** **ntia64**、 **. ntamd64**、 **NTARM**和 **Ntarm64** 扩展可以插入到跨平台 INF 文件中的 **ClassInstall32** 节名称中，如正式语法语句中所示。 有关详细信息，请参阅 [为多个平台和操作系统创建 INF 文件](creating-inf-files-for-multiple-platforms-and-operating-systems.md)。
+不 **区分大小** 写的 **ntx86、.** **ntia64**、 **. ntamd64**、 **NTARM** 和 **Ntarm64** 扩展可以插入到跨平台 INF 文件中的 **ClassInstall32** 节名称中，如正式语法语句中所示。 有关详细信息，请参阅 [为多个平台和操作系统创建 INF 文件](creating-inf-files-for-multiple-platforms-and-operating-systems.md)。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**ClassInstall32**](inf-classinstall32-section.md)
 
 [**AddService**](inf-addservice-directive.md)
 
-[***DDInstall***](inf-ddinstall-section.md)
+[**_DDInstall_* _](inf-ddinstall-section.md)
 
-[***DDInstall*.HW**](inf-ddinstall-hw-section.md)
+[_ *_DDInstall_。HW**](inf-ddinstall-hw-section.md)
 
 [**DelService**](inf-delservice-directive.md)
 
-[***模型***](inf-models-section.md)
+[**_模型_**](inf-models-section.md)
 
  
 

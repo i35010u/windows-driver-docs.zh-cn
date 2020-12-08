@@ -1,7 +1,6 @@
 ---
 title: DEVPKEY_Device_NoConnectSound
 description: DEVPKEY_Device_NoConnectSound
-ms.assetid: 7ed4eb3f-6585-4ec1-83b7-bde368faca0a
 keywords:
 - DEVPKEY_Device_NoConnectSound 设备和驱动程序安装
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 1ce1eba67b3836617fc3429c12a3b6ad77ad4de8
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: dbdca1b20a22841cc68e0b22b9d854502e2c9b33
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90714652"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96786793"
 ---
 # <a name="devpkey_device_noconnectsound"></a>DEVPKEY_Device_NoConnectSound
 

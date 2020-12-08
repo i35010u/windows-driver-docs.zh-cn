@@ -1,22 +1,21 @@
 ---
-title: 示例 INF 适用目标操作系统于模型的各部分
+title: 目标操作系统的示例 INF 模型部分
 description: 适用于一个或多个目标操作系统的示例 INF 模型部分
-ms.assetid: bc1d9a5f-573f-4773-8716-8ac53478d0ee
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a1a11f39ddd9ea284eae37c9bcf6971a2b42b77a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b5c34d4d30afbf89d795c0e858a27b7d4ff766e6
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63348701"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96787359"
 ---
 # <a name="sample-inf-models-sections-for-one-or-more-target-operating-systems"></a>适用于一个或多个目标操作系统的示例 INF 模型部分
 
 
-本主题说明在各种操作系统和平台安装驱动程序包的示例 INF 文件。 此 INF 文件具有以下 INF 部分和指令：
+本主题演示了一个示例 INF 文件，该文件在各种操作系统和平台上安装驱动程序包。 此 INF 文件包含以下 INF 部分和指令：
 
-- 修饰[ **INF 制造商部分**](inf-manufacturer-section.md)的各种[ **INF*模型*部分**](inf-models-section.md)设备正在运行的基于 x86 的系统上安装：
+- 具有各种 [**Inf *模型***](inf-models-section.md)的已装饰 [**inf 制造商部分**](inf-manufacturer-section.md)，适用于基于 x86 的系统上运行的设备安装：
 
   -   Microsoft Windows 2000
 
@@ -24,11 +23,11 @@ ms.locfileid: "63348701"
 
   -   Windows Vista 或更高版本的 Windows
 
-- 修饰[ **INF 制造商部分**](inf-manufacturer-section.md)的各种[ **INF*模型*部分**](inf-models-section.md)设备x86-和 AMD64 安装-基于在运行 Windows Vista 或更高版本的 Windows 的系统。
+- 带有各种 [**Inf *模型***](inf-models-section.md)的已装饰 [**inf 制造商部分**](inf-manufacturer-section.md)，适用于运行 Windows Vista 或更高版本 windows 的基于 x86 和 AMD64 的系统上的设备安装。
 
-- [ **INF *DDInstall***  ](inf-ddinstall-section.md)并[ * **DDInstall *。服务**](inf-ddinstall-services-section.md)目标 x86-和 AMD64 上创建的服务和注册表项-基于系统。
+- [**INF *DDInstall***](inf-ddinstall-section.md)和 [**_DDInstall_。**](inf-ddinstall-services-section.md)在基于 x86 和 AMD64 的目标系统上创建服务和注册表项的服务。
 
-- [**INF CopyFiles 指令**](inf-copyfiles-directive.md) ，将特定于平台的文件复制到目标 x86-和 AMD64-基于系统。
+- [**INF CopyFiles 指令**](inf-copyfiles-directive.md) ，可将特定于平台的文件复制到基于 X86 和 AMD64 的目标系统。
 
 ```cpp
 [Version]
@@ -145,7 +144,7 @@ NetVMini.Service.DispName  = "Microsoft Virtual Miniport"
 DiskId1                    = "Microsoft Virtual Miniport Device Installation Disk #1"
 ```
 
-示例 INF 文件 (*MultiOS.inf*)，后者包含在 Windows Driver Kit (WDK) 中，演示如何使用单个的 INF 文件在多个版本的 Windows 上安装的设备。 此文件位于*src\\打印\\inf\\MultiOS* WDK 的目录。
+ (*MultiOS*) 的示例 INF 文件（包括在 Windows 驱动程序工具包 (WDK) 中）演示了如何使用单个 INF 文件在多个版本的 Windows 上安装设备。 此文件位于 WDK 的 " *源 \\ 打印 \\ inf \\ MultiOS* " 目录中。
 
  
 

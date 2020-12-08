@@ -1,18 +1,17 @@
 ---
 title: WdbgExts 线程和进程
 description: WdbgExts 线程和进程
-ms.assetid: fa513435-ea91-4dc5-9488-85087d585f96
 keywords:
 - WdbgExts 扩展，线程
 - WdbgExts 扩展，进程
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7a91358ea509e05877a73597fa9dbdee8ca17e92
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 5e8892c37ce40d227bd9cce9f6156ba2e15fec80
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89209337"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96787663"
 ---
 # <a name="wdbgexts-threads-and-processes"></a>WdbgExts 线程和进程
 

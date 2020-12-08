@@ -1,15 +1,14 @@
 ---
 title: PwrTest 磁盘方案
 description: PwrTest 磁盘方案监视磁盘空闲统计信息和降速事件。
-ms.assetid: E54AA721-27C6-4E42-B42A-77AC70711A26
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3fa2de39f6bb7873cd9de7dd824cfa0a9d5c4c58
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: c45b63921aa22a08e4ddf9b08a24f2355fe7a04a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90107538"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96787635"
 ---
 # <a name="pwrtest-disk-scenario"></a>PwrTest 磁盘方案
 
@@ -18,7 +17,8 @@ PwrTest 磁盘方案监视磁盘空闲统计信息和降速事件。
 
 此方案主要用于 Windows 7 硬盘电源活动，后续版本的 Windows 将使用不同的机制跟踪磁盘空闲，而 Pwrtest 当前不支持此功能。 对于比 Windows 7 更新的 Windows 版本，请使用 [Windows 性能工具包 (WPT) ](/windows-hardware/test/wpt/windows-performance-toolkit-technical-reference)。 WPT 包括 Windows 性能记录器 (") ，可用于跟踪内核模式电源提供程序和 Windows 性能分析器 (WPA) ，该程序可显示 power framework (PoFx) 设备统计信息，并可以在以后图形转换。
 
-**注意**   此方案不适用于所有类型的磁盘或控制器，因为并非所有存储驱动程序都注册了空闲检测。 有关详细信息，请参阅 [在存储类驱动程序中处理 PnP 启动](../storage/handling-pnp-start-in-a-storage-class-driver.md) 。
+**注意**  
+此方案不适用于所有类型的磁盘或控制器，因为并非所有存储驱动程序都注册了空闲检测。 有关详细信息，请参阅 [在存储类驱动程序中处理 PnP 启动](../storage/handling-pnp-start-in-a-storage-class-driver.md) 。
 
  
 
@@ -90,7 +90,7 @@ pwrtest /disk
 <thead>
 <tr class="header">
 <th align="left">元素</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>
@@ -115,7 +115,7 @@ pwrtest /disk
 <td align="left"><p>设备添加或删除事件。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><strong>&lt;说明&gt;</strong></td>
+<td align="left"><strong>&lt;描述&gt;</strong></td>
 <td align="left"><p>DeviceRemoved 或 DeviceDetected。</p></td>
 </tr>
 <tr class="odd">
@@ -131,7 +131,7 @@ pwrtest /disk
 <td align="left"><p>新磁盘空闲忽略阈值。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><strong>&lt;设备&gt;</strong></td>
+<td align="left"><strong>&lt;装置&gt;</strong></td>
 <td align="left"><p>功能设备对象。</p></td>
 </tr>
 <tr class="odd">

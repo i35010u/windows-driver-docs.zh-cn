@@ -1,7 +1,6 @@
 ---
 title: 筛选器模块发送和接收操作
 description: 筛选器模块发送和接收操作
-ms.assetid: 208f9af6-cde4-4801-9355-daa6633d7d0b
 keywords:
 - 筛选器模块 WDK 网络，发送操作
 - 筛选器模块 WDK 网络，接收操作
@@ -10,12 +9,12 @@ keywords:
 - 筛选器驱动程序 WDK 网络，接收操作
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4de512f62d439d888da32d82d895fb9a372f6019
-ms.sourcegitcommit: 3da878e2fb4ce7d81bfa4177050a8c6c1a0544cc
+ms.openlocfilehash: 195f36faead926d6238ad911c68aff1526ddba37
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94983274"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96786763"
 ---
 # <a name="filter-module-send-and-receive-operations"></a>筛选器模块发送和接收操作
 

@@ -1,15 +1,14 @@
 ---
 title: 警告规则集 (KMDF)
 description: 了解如何使用 (KDMF) 的规则来验证驱动程序是否可以在不同的上下文中正确处理 Irp，并遵循 Microsoft 推荐的最佳做法。
-ms.assetid: 0C012253-9FBD-4B5C-9A93-AF72405EF3E4
 ms.date: 05/21/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 301f39960baa4dff047cfe965e54b4c449253ca2
-ms.sourcegitcommit: 372464be981a39781c71049126f36891cb5d0cad
+ms.openlocfilehash: 8dc770c5442cfa5cfcbd0c84f6c26d702cd8c10c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/02/2020
-ms.locfileid: "91646001"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96787573"
 ---
 # <a name="warning-rule-set-kmdf"></a>警告规则集 (KMDF)
 
@@ -27,7 +26,7 @@ ms.locfileid: "91646001"
 <thead>
 <tr class="header">
 <th align="left">主题</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>
@@ -110,7 +109,7 @@ ms.locfileid: "91646001"
 
 2.  单击 " **规则** " 选项卡。在 " **规则集**" 下，选择 " **警告**"。
 
-    若要从 Visual Studio 开发人员命令提示符窗口中选择默认规则集，请指定带有 **/check**选项的**sdv** 。 例如：
+    若要从 Visual Studio 开发人员命令提示符窗口中选择默认规则集，请指定带有 **/check** 选项的 **sdv** 。 例如：
 
     ```
     msbuild /t:sdv /p:Inputs="/check:Warning.sdv" mydriver.VcxProj /p:Configuration="Win8 Release" /p:Platform=Win32

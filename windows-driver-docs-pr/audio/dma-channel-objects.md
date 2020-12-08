@@ -1,7 +1,6 @@
 ---
 title: DMA 通道对象
 description: DMA 通道对象
-ms.assetid: 2064bbdf-62b7-454f-8764-b2aa21636c02
 keywords:
 - helper 对象 WDK 音频，DMA 通道对象
 - DMA 通道对象 WDK 音频
@@ -10,12 +9,12 @@ keywords:
 - 通道对象 WDK 音频
 ms.date: 09/23/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 8d068f69136fb135beb4ef45edfa9921c0fbbb55
-ms.sourcegitcommit: 0c34101a0eed9f187fec03026021fff89bd233e3
+ms.openlocfilehash: d40177ccdbd153b932afc4afbbcaee09848ff5e3
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91135164"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96786586"
 ---
 # <a name="dma-channel-objects"></a>DMA 通道对象
 
@@ -24,7 +23,7 @@ ms.locfileid: "91135164"
 
 PortCls 系统驱动程序为 WaveCyclic 和 WavePci 微型端口驱动程序的优点实现了 [IDmaChannel](/windows-hardware/drivers/ddi/portcls/nn-portcls-idmachannel) 和 [IDmaChannelSlave](/windows-hardware/drivers/ddi/portcls/nn-portcls-idmachannelslave) 接口。 **IDmaChannel** 表示 dma 通道及其关联的 dma 缓冲区和缓冲区用法参数。 此外，WaveCyclic 微型端口驱动程序使用 **IDmaChannelSlave** 管理从属设备的 DMA 通道。 **IDmaChannelSlave** 继承自 **IDmaChannel**。 有关控制 DMA 操作的详细信息，请参阅 [适配器对象和 DMA](../kernel/introduction-to-adapter-objects.md)。
 
-**IDmaChannel**对象封装以下内容：
+**IDmaChannel** 对象封装以下内容：
 
 - 主设备或从属设备的 DMA 通道
 
@@ -50,7 +49,7 @@ PortCls 系统驱动程序为 WaveCyclic 和 WavePci 微型端口驱动程序的
 
 - 可以查询和更改的缓冲区大小值
 
-*适配器对象*是* (PDO) 的物理设备对象*的 DMA 适配器结构。 当微型端口驱动程序通过调用以下方法之一创建 DMA 通道对象时，将自动创建适配器对象：
+*适配器对象* 是 *(PDO) 的物理设备对象* 的 DMA 适配器结构。 当微型端口驱动程序通过调用以下方法之一创建 DMA 通道对象时，将自动创建适配器对象：
 
 [**IPortWavePci::NewMasterDmaChannel**](/windows-hardware/drivers/ddi/portcls/nf-portcls-iportwavepci-newmasterdmachannel)
 
@@ -60,11 +59,11 @@ PortCls 系统驱动程序为 WaveCyclic 和 WavePci 微型端口驱动程序的
 
 方法 [**IDmaChannel：： GetAdapterObject**](/windows-hardware/drivers/ddi/portcls/nf-portcls-idmachannel-getadapterobject) 可用于获取指向适配器对象的指针。
 
-适配器驱动程序还可以调用 [**PcNewDmaChannel**](/windows-hardware/drivers/ddi/portcls/nf-portcls-pcnewdmachannel) 函数来创建 DMA 通道对象，但此函数比 **IPortWave*Xxx*：： New*Xxx*DmaChannel** 调用更难以使用，因为调用方必须显式指定设备对象和其他上下文信息。
+适配器驱动程序还可以调用 [**PcNewDmaChannel**](/windows-hardware/drivers/ddi/portcls/nf-portcls-pcnewdmachannel) 函数来创建 DMA 通道对象，但此函数比 **IPortWave *Xxx*：： New *Xxx* DmaChannel** 调用更难以使用，因为调用方必须显式指定设备对象和其他上下文信息。
 
-对于从属设备使用 DMA 通道， [**IDmaChannel：： TransferCount**](/windows-hardware/drivers/ddi/portcls/nf-portcls-idmachannel-transfercount)方法将返回对[**IDmaChannelSlave：： Start**](/windows-hardware/drivers/ddi/portcls/nf-portcls-idmachannelslave-start)调用中指定的*MapSize*参数) 的最大传输 (大小。 此外，适配器对象还提供了一些操作和查询 DMA 设备的方法。 这些方法对于主 DMA 通道均无意义。
+对于从属设备使用 DMA 通道， [**IDmaChannel：： TransferCount**](/windows-hardware/drivers/ddi/portcls/nf-portcls-idmachannel-transfercount)方法将返回对 [**IDmaChannelSlave：： Start**](/windows-hardware/drivers/ddi/portcls/nf-portcls-idmachannelslave-start)调用中指定的 *MapSize* 参数) 的最大传输 (大小。 此外，适配器对象还提供了一些操作和查询 DMA 设备的方法。 这些方法对于主 DMA 通道均无意义。
 
-[**IDmaChannel：： AllocateBuffer**](/windows-hardware/drivers/ddi/portcls/nf-portcls-idmachannel-allocatebuffer) 和 [**IDmaChannel：： FreeBuffer**](/windows-hardware/drivers/ddi/portcls/nf-portcls-idmachannel-freebuffer) 用于管理与 DMA 通道对象关联的单个公共缓冲区。 保证对象分配的缓冲区可供使用内核虚拟内存地址的驱动程序 (，) 和 DMA 设备 (包含物理内存地址) 。 此外，缓冲区将是物理上连续的。 通常，最佳策略是在大量物理内存最大的情况下，在微型端口驱动程序初始化期间分配 DMA 缓冲区。 [**IDmaChannel：： AllocatedBufferSize**](/windows-hardware/drivers/ddi/portcls/nf-portcls-idmachannel-allocatedbuffersize) 返回在对 **IDmaChannel：： AllocateBuffer**的调用中指定的缓冲区大小。
+[**IDmaChannel：： AllocateBuffer**](/windows-hardware/drivers/ddi/portcls/nf-portcls-idmachannel-allocatebuffer) 和 [**IDmaChannel：： FreeBuffer**](/windows-hardware/drivers/ddi/portcls/nf-portcls-idmachannel-freebuffer) 用于管理与 DMA 通道对象关联的单个公共缓冲区。 保证对象分配的缓冲区可供使用内核虚拟内存地址的驱动程序 (，) 和 DMA 设备 (包含物理内存地址) 。 此外，缓冲区将是物理上连续的。 通常，最佳策略是在大量物理内存最大的情况下，在微型端口驱动程序初始化期间分配 DMA 缓冲区。 [**IDmaChannel：： AllocatedBufferSize**](/windows-hardware/drivers/ddi/portcls/nf-portcls-idmachannel-allocatedbuffersize) 返回在对 **IDmaChannel：： AllocateBuffer** 的调用中指定的缓冲区大小。
 
 [**IDmaChannel：： MaximumBufferSize**](/windows-hardware/drivers/ddi/portcls/nf-portcls-idmachannel-maximumbuffersize) 指示可以使用的实际最大缓冲区大小。 如果分配的大小不是页面大小的偶数倍，则这可能会超出分配的大小。 如果 DMA 设备不支持传输分配的大小，则它可能小于分配的大小。 [**IDmaChannel：： BufferSize**](/windows-hardware/drivers/ddi/portcls/nf-portcls-idmachannel-buffersize) 和 [**IDmaChannel：： SetBufferSize**](/windows-hardware/drivers/ddi/portcls/nf-portcls-idmachannel-setbuffersize) 用于查询和设置要用于 DMA 传输的缓冲区大小。 分配缓冲区时，缓冲区大小设置为最大缓冲区大小。 初始化之后，端口驱动程序和微型端口驱动程序都有机会更改缓冲区大小或发现它的当前值。 小型端口驱动程序使用 **IDmaChannel：： BufferSize** 的结果来确定 dma 通道启动时 dma 操作的传输大小。 [**IDmaChannel：： SystemAddress**](/windows-hardware/drivers/ddi/portcls/nf-portcls-idmachannel-systemaddress) 和 [**IDmaChannel：:P hysicaladdress**](/windows-hardware/drivers/ddi/portcls/nf-portcls-idmachannel-physicaladdress) 分别用于获取缓冲区的虚拟地址和物理地址。
 
@@ -76,7 +75,7 @@ DMA 缓冲区不一定用于传输流式处理数据。 对于 WavePci 端口驱
 
 通常，最简单的方法是使用端口驱动程序实现的 DMA 通道分配函数。 在极少数情况下，微型端口驱动程序开发人员可能需要实现其自己的 DMA 通道对象，以满足特定适配器的特殊要求。 这有时需要实现新的对象。 在其他情况下，足以使微型端口驱动程序的流对象公开 **IDmaChannel** 接口并实现 DMA 通道方法本身。
 
-**IDmaChannel**接口支持以下方法：
+**IDmaChannel** 接口支持以下方法：
 
 [**IDmaChannel::AllocateBuffer**](/windows-hardware/drivers/ddi/portcls/nf-portcls-idmachannel-allocatebuffer)
 
@@ -102,7 +101,7 @@ DMA 缓冲区不一定用于传输流式处理数据。 对于 WavePci 端口驱
 
 [**IDmaChannel::TransferCount**](/windows-hardware/drivers/ddi/portcls/nf-portcls-idmachannel-transfercount)
 
-**IDmaChannelSlave**接口通过添加以下方法来扩展**IDmaChannel** ：
+**IDmaChannelSlave** 接口通过添加以下方法来扩展 **IDmaChannel** ：
 
 [**IDmaChannelSlave::ReadCounter**](/windows-hardware/drivers/ddi/portcls/nf-portcls-idmachannelslave-readcounter)
 

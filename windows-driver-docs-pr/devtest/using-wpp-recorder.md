@@ -1,20 +1,19 @@
 ---
 title: '用于日志记录跟踪的即时 Trace 录像机 (IFR) '
 description: 即时 Trace 录像机 (IFR) 使跟踪提供程序（如内核模式驱动程序）可以在缓冲区中记录跟踪日志并存储 WPP 日志消息。
-ms.assetid: D11FA28E-3B0C-4D9D-AEDA-8A80DE58091C
 ms.date: 03/30/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 35aba4444ff54680620c3f43c8ef4995f4289f14
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 76623735ee59227bfc6b7c2b47d713e8b1b6aefa
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89385079"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96787613"
 ---
 # <a name="inflight-trace-recorder-ifr-for-logging-traces"></a>用于日志记录跟踪的即时 Trace 录像机 (IFR) 
 
 
-*即时 Trace 录像机 (IFR) * 是一项跟踪功能，它允许跟踪提供程序（如内核模式驱动程序或 UMDF 驱动程序）创建一组内存中循环缓冲区，其中保留了最新的日志消息。 可以使用调试器查看日志消息。
+*即时 Trace 录像机 (IFR)* 是一项跟踪功能，它允许跟踪提供程序（如内核模式驱动程序或 UMDF 驱动程序）创建一组内存中循环缓冲区，其中保留了最新的日志消息。 可以使用调试器查看日志消息。
 
 IFR 是在 [WPP 软件跟踪](wpp-software-tracing.md)之上构建的。 IFR 通过 WPP 的主要优点是它自动开启，无需提前启动跟踪会话。
 
@@ -29,7 +28,7 @@ IFR 是在 [WPP 软件跟踪](wpp-software-tracing.md)之上构建的。 IFR 通
 
 接下来，在项目属性页的 " **配置属性->WPP 跟踪->函数和宏 >选项**" 下，选择 **"是"**。
 
-最后，仅对于 UMDF，还需要执行一个额外的步骤：在 **WPP 跟踪->函数和宏选项->预处理器定义**中添加 `WPP_MACRO_USE_KM_VERSION_FOR_UM=1` 。
+最后，仅对于 UMDF，还需要执行一个额外的步骤：在 **WPP 跟踪->函数和宏选项->预处理器定义** 中添加 `WPP_MACRO_USE_KM_VERSION_FOR_UM=1` 。
 
 
 ## <a name="how-to-enable-inflight-trace-recorder-from-the-command-line"></a>如何从命令行启用即时 Trace 记录器
@@ -92,7 +91,7 @@ IFR 是在 [WPP 软件跟踪](wpp-software-tracing.md)之上构建的。 IFR 通
 
 对于 KMDF 和 UMDF 驱动程序，请使用 [**wdfkd wdflogdump**](../debugger/-wdfkd-wdflogdump.md) 。 它将打印框架 IFR 日志和驱动程序 IFR 日志。
 
-对于 WDM 驱动程序，请使用[**！ rcdrkd. rcdrloglist**](../debugger/-rcdrkd-rcdrloglist.md)和[**！ rcdrkd。**](../debugger/-rcdrkd-rcdrlogdump.md)
+对于 WDM 驱动程序，请使用 [**！ rcdrkd. rcdrloglist**](../debugger/-rcdrkd-rcdrloglist.md)和 [**！ rcdrkd。**](../debugger/-rcdrkd-rcdrlogdump.md)
 
 
 ## <a name="configure-inflight-trace-recorder-parameters"></a>配置即时跟踪记录器参数

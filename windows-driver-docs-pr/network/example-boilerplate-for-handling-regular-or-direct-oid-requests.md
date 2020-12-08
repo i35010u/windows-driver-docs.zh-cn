@@ -1,19 +1,18 @@
 ---
 title: 用于处理常规或直接 OID 请求的示例样板
-description: 本主题介绍用于处理常规连接或直接 OID 请求的样本代码示例
-ms.assetid: 4C8297DD-C237-4437-A0B1-8CE0F3A6225B
+description: 本主题介绍处理常规或直接 OID 请求的示例样板代码
 ms.date: 09/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d5e5ccc8bfaf684c6b1c765749926094b17d94e2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9ca0ce56864468a3aa9c16ac53aaa6ea3aa1a968
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63368290"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96788439"
 ---
 # <a name="example-boilerplate-for-handling-regular-or-direct-oid-requests"></a>用于处理常规或直接 OID 请求的示例样板
 
-本主题提供的样本代码示例用于处理常规连接或直接 OID，对请求中的示例与对比度[同步 OID 请求接口在 NDIS 6.80](synchronous-oid-request-interface-in-ndis-6-80.md)。 Windows 10 版本 1709年及更高版本上提供了同步 OID 请求接口。
+本主题提供了用于处理常规或直接 OID 请求的示例样板代码，以与 [NDIS 6.80 中同步 OID 请求接口](synchronous-oid-request-interface-in-ndis-6-80.md)中的示例比较。 Windows 10 版本1709及更高版本中提供了同步 OID 请求接口。
 
 ```cpp
 NDIS_STATUS

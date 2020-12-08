@@ -1,7 +1,6 @@
 ---
 title: Bug 检查 0x198 UFX_LIVEDUMP
-description: UFX_LIVEDUMP bug 检查具有 0x00000198 值。 这表明 UFX 实时转储发生。
-ms.assetid: 319F8BA5-8522-43E6-B06F-6BC021FF8411
+description: UFX_LIVEDUMP bug 检查的值为0x00000198。 这表明发生了 UFX 实时转储。
 keywords:
 - Bug 检查 0x198 UFX_LIVEDUMP
 - UFX_LIVEDUMP
@@ -13,23 +12,23 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: ccddbbf7d98d4e8c4326b88d96b1fb3009f00666
-ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
+ms.openlocfilehash: 423bfc566ae5ddfaa525c3dde6313ef7a9d452df
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67519803"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96786487"
 ---
-# <a name="bug-check-0x198-ufxlivedump"></a>Bug 检查 0x198：UFX\_LIVEDUMP
+# <a name="bug-check-0x198-ufx_livedump"></a>Bug 检查0x198： UFX \_ LIVEDUMP
 
 
-UFX\_LIVEDUMP bug 检查的值为 0x00000198。 这表明 UFX 实时转储发生。
+UFX \_ LIVEDUMP bug 检查的值为0x00000198。 这表明发生了 UFX 实时转储。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://www.windows.com/stopcode)。
+> 本主题面向程序员。 如果您是在使用计算机时收到蓝屏错误代码的客户，请参阅[蓝屏错误疑难解答](https://www.windows.com/stopcode)。
 
 
-## <a name="ufxlivedump-parameters"></a>UFX\_LIVEDUMP 参数
+## <a name="ufx_livedump-parameters"></a>UFX \_ LIVEDUMP 参数
 
 
 <table>
@@ -47,20 +46,20 @@ UFX\_LIVEDUMP bug 检查的值为 0x00000198。 这表明 UFX 实时转储发生
 <tr class="odd">
 <td align="left">1</td>
 <td align="left"><p>失败类型</p>
-<p>0x1:未能激活总线类驱动程序。</p>
-2-掩码为枚举子 PDOs 3-掩码的激活子 PDOs 4-保留</td>
+<p>0x1：类驱动程序无法激活总线。</p>
+2-已激活的子 PDOs 3-掩码已激活的子 PDOs 4-保留</td>
 </tr>
 <tr class="even">
 <td align="left">2</td>
-<td align="left">请参阅参数 1</td>
+<td align="left">请参阅参数1</td>
 </tr>
 <tr class="odd">
 <td align="left">3</td>
-<td align="left">请参阅参数 1</td>
+<td align="left">请参阅参数1</td>
 </tr>
 <tr class="even">
 <td align="left">4</td>
-<td align="left">请参阅参数 1</td>
+<td align="left">请参阅参数1</td>
 </tr>
 </tbody>
 </table>

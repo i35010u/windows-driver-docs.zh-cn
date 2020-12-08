@@ -1,7 +1,6 @@
 ---
 title: 'IoBuildFsdForward 规则 (wdm) '
 description: IoBuildFsdForward 规则指定如果 IRP 是通过调用 IoBuildAsynchronousFsdRequest 生成的，则必须在驱动程序调用 IoCallDriver 或 PoCallDriver 之前设置完成例程。
-ms.assetid: 89F221D5-3B04-40B9-BB9F-5F4C97FC2BDB
 ms.date: 05/21/2018
 keywords:
 - 'IoBuildFsdForward 规则 (wdm) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 9aa5f431f68aecf089b124ea65cca0472eda6877
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 0d846c932668eb9bb7dc1185ecfec2ad037010c4
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90107352"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96786379"
 ---
 # <a name="iobuildfsdforward-rule-wdm"></a>IoBuildFsdForward 规则 (wdm) 
 
 
-**IoBuildFsdForward**规则指定如果 IRP 是通过调用[**IoBuildAsynchronousFsdRequest**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iobuildasynchronousfsdrequest)生成的，则必须在驱动程序调用[**IoCallDriver**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iocalldriver)或[**PoCallDriver**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-pocalldriver)之前设置完成例程。
+**IoBuildFsdForward** 规则指定如果 IRP 是通过调用 [**IoBuildAsynchronousFsdRequest**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iobuildasynchronousfsdrequest)生成的，则必须在驱动程序调用 [**IoCallDriver**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iocalldriver)或 [**PoCallDriver**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-pocalldriver)之前设置完成例程。
 
 **驱动程序模型： WDM**
 

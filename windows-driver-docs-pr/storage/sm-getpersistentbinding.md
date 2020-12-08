@@ -1,7 +1,6 @@
 ---
 title: SM \_ GetPersistentBinding 函数
 description: SM \_ GetPersistentBinding 方法检索 HBA 微型端口驱动程序使用的绑定。 这些绑定将特定于 OS 的 LUN 信息映射到光纤通道协议， (FCP) 逻辑单元标识符。
-ms.assetid: 74a67e91-c3b3-462a-8810-a9eae64e02a7
 keywords:
 - SM_GetPersistentBinding 函数存储设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 0d3c7c71b88d48d83bbdf32f3f3ff20e2702ed20
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 0781fb32d64b5d84cef6c97713fd0229aa923d38
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89186411"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96788233"
 ---
 # <a name="sm_getpersistentbinding-function"></a>SM \_ GetPersistentBinding 函数
 
@@ -31,12 +30,12 @@ SM \_ GetPersistentBinding 方法检索 HBA 微型端口驱动程序使用的绑
 
 ```ManagedCPlusPlus
 void SM_GetPersistentBinding(
-   [in, HBAType("HBA_WWN")] uint8                          HbaPortWWN[8],
-   [in, HBAType("HBA_WWN")] uint8                          DomainPortWWN[8],
-   [in] uint32                                             InEntryCount,
-   [out, HBA_STATUS_QUALIFIERS] HBA_STATUS                 HBAStatus,
-   [out] uint32                                            TotalEntryCount,
-   [out] uint32                                            OutEntryCount,
+   [in, HBAType("HBA_WWN")] uint8                          HbaPortWWN[8],
+   [in, HBAType("HBA_WWN")] uint8                          DomainPortWWN[8],
+   [in] uint32                                             InEntryCount,
+   [out, HBA_STATUS_QUALIFIERS] HBA_STATUS                 HBAStatus,
+   [out] uint32                                            TotalEntryCount,
+   [out] uint32                                            OutEntryCount,
    [out, WmiSizeIs("OutEntryCount")] MS_SMHBA_BINDINGENTRY Bindings[]
 );
 ```
@@ -86,7 +85,7 @@ SM GetPersistentBinding 方法检索的永久绑定的总数 \_ 。 此值将小
 <tbody>
 <tr class="odd">
 <td align="left"><p>目标平台</p></td>
-<td align="left">“桌面”</td>
+<td align="left">台式机</td>
 </tr>
 <tr class="even">
 <td align="left"><p>标头</p></td>

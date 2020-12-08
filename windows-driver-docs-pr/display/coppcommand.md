@@ -1,25 +1,24 @@
 ---
 title: COPPCommand 函数
-description: 示例 COPPCommand 函数执行 COPP DirectX VA 设备上的操作。
-ms.assetid: 917628be-e965-4ca4-bfa8-0e80476df153
+description: 示例 COPPCommand 函数在 COPP DirectX VA 设备上执行操作。
 keywords:
-- 复制保护 WDK COPP，微型端口驱动程序代码模板
-- 视频复制保护 WDK COPP，微型端口驱动程序代码模板
-- 受保护的视频 WDK COPP，微型端口驱动程序代码模板
-- 微型端口驱动程序 WDK Windows 2000，COPP 代码模板
-- 已认证的输出保护协议
+- 复制保护 WDK COPP，视频微型端口驱动程序代码模板
+- 视频复制保护 WDK COPP，视频微型端口驱动程序代码模板
+- 受保护的视频 WDK COPP，视频微型端口驱动程序代码模板
+- 视频微型端口驱动程序 WDK Windows 2000，COPP 代码模板
+- 认证的输出保护协议
 ms.date: 02/16/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 32d0be8fe821eb2beec0a0cb9064c635cfa2459d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 69d207cf51a215b88135d46d48d0eefdd0aecfa1
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63331311"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96787539"
 ---
 # <a name="coppcommand-function"></a>COPPCommand 函数
 
-示例 COPPCommand 函数执行 COPP DirectX VA 设备上的操作。
+示例 COPPCommand 函数在 COPP DirectX VA 设备上执行操作。
 
 ## <a name="syntax"></a>语法
 
@@ -30,51 +29,51 @@ HRESULT COPPCommand(
 );
 ```
 
-## <a name="parameters"></a>Parameters
+## <a name="parameters"></a>参数
 
 *pThis [in]*
 
- * 指向 COPP DirectX VA 设备对象指针。
+ * 指向 COPP DirectX VA 设备对象的指针。
 
-*[in] pCommand*
-* 提供了指向包含有关要 COPP 设备上执行的操作信息的 DXVA_COPPCommand 结构的指针。
+*pCommand [in]*
+* 提供一个指向 DXVA_COPPCommand 结构的指针，该结构包含要在 COPP 设备上执行的操作的相关信息。
 
 ## <a name="return-value"></a>返回值
 
-返回零 （S_OK 或 DD_OK） 如果成功，则否则，返回错误代码。
+如果成功，则返回零 (S_OK 或 DD_OK) ;否则，将返回错误代码。
 
 ## <a name="remarks"></a>备注
 
-视频会话应设置为受保护模式 （即，它应处于活动状态） 关联 COPP DirectX VA 之前设备接收到对其 COPPCommand 函数的调用。 也就是说，COPPSequenceStart 函数应在 COPPCommand 之前调用。 如果之前 COPPSequenceStart，将调用 COPPCommand，COPPCommand 应返回 E_UNEXPECTED。
+视频会话应设置为 "保护模式" (即，在关联的 COPP DirectX VA 设备收到对其 COPPCommand 函数的调用之前，该会话应) 处于活动状态。 也就是说，应在 COPPCommand 之前调用 COPPSequenceStart 函数。 如果在 COPPSequenceStart 之前调用 COPPCommand，则 COPPCommand 应返回 E_UNEXPECTED。
 
-COPPCommand 函数接收包含 COPP 命令的填充的 DXVA_COPPCommand 结构。 支持以下 COPP 命令：
+COPPCommand 函数接收包含 COPP 命令的已填充 DXVA_COPPCommand 结构。 支持以下 COPP 命令：
 
-* **DXVA_COPPSetProtectionLevel** <br>视频的会话中的指令上的物理连接器设置保护级别与 COPP 设备相关联。 微型端口驱动程序应该能够支持多个视频会话所有播放通过同一个物理连接器返回内容。
-* **DXVA_COPPSetSignaling** <br>有关如何保护信号，它们将通过与 DirectX VA COPP 设备相关联的物理连接器说明。
+* **DXVA_COPPSetProtectionLevel** <br>视频会话中的一条指令，用于设置与 COPP 设备关联的物理连接器的保护级别。 视频微型端口驱动程序应能够通过同一物理连接器支持多个视频会话。
+* **DXVA_COPPSetSignaling** <br>说明如何保护通过与 DirectX VA COPP 设备关联的物理连接器的信号。
 
-COPPCommand 函数应该验证传递给它的参数正在使用的给定物理连接器对有效，并应返回 E_INVALIDARG，如果一个或多个参数不是有效。
+COPPCommand 函数应验证传递给它的参数对于所使用的给定物理连接器是否有效，并且如果一个或多个参数无效，应返回 E_INVALIDARG。
 
-如果传递给 COPPCommand 保护命令是监视器的显示分辨率与不兼容，COPPCommand 应返回 DDERR_TOOBIGSIZE。
+如果传递到 COPPCommand 的保护命令与监视器的显示分辨率不兼容，则 COPPCommand 应返回 DDERR_TOOBIGSIZE。
 
-## <a name="mapping-rendermocomp-to-coppcommand"></a>映射到 COPPCommand RenderMoComp
+## <a name="mapping-rendermocomp-to-coppcommand"></a>将 RenderMoComp 映射到 COPPCommand
 
-示例 COPPCommand 函数直接映射到 DD_MOTIONCOMPCALLBACKS 结构的 RenderMoComp 成员调用。 RenderMoComp 成员指向显示驱动程序提供 DdMoCompRender 回调的函数的引用 DD_RENDERMOCOMPDATA 结构。
+示例 COPPCommand 函数直接映射到对 DD_MOTIONCOMPCALLBACKS 结构的 RenderMoComp 成员的调用。 RenderMoComp 成员指向显示驱动程序提供的 DdMoCompRender 回调函数，该函数引用 DD_RENDERMOCOMPDATA 结构。
 
-而无需显示驱动程序提供 BeginMoCompFrame 或 EndMoCompFrame 要调用的函数首先调用 RenderMoComp 回调函数。
+调用 RenderMoComp 回调函数时，不会首先调用显示驱动程序提供的 BeginMoCompFrame 或 EndMoCompFrame 函数。
 
 按如下所示填充 DD_RENDERMOCOMPDATA 结构。
 
-| 成员 | 值 |
+| 成员 | “值” |
 | -- | -- |
-| dwNumBuffers | 为零。 |
+| dwNumBuffers | Zero。 |
 | lpBufferInfo | NULL。 |
-| dwFunction | DXVA_COPPCommandFnCode 常量 （dxva.h 中定义）。|
+| dwFunction | DXVA) 中定义 DXVA_COPPCommandFnCode 常量 (。|
 | lpInputData | 指向 DXVA_COPPCommand 结构的指针。 |
 | lpOutputData | NULL。 |
 
 ## <a name="example-code"></a>示例代码
 
-以下代码举例说明如何实现 COPPCommand 函数：
+下面的代码提供了一个示例，说明如何实现 COPPCommand 函数：
 
 ```cpp
 GUID
@@ -147,11 +146,11 @@ COPPCommand(
 }
 ```
 
-**要求**
+**惠?**
 
-|目标平台 | Version |
+|目标平台 | 版本 |
 | -- | -- |
-| 桌面设备 | 此函数仅适用于 Windows Server 2003 SP1 和更高版本和 Windows XP SP2 和更高版本。 |
+| 台式机 | 此函数仅适用于 Windows Server 2003 SP1 及更高版本以及 Windows XP SP2 及更高版本。 |
 
 
 

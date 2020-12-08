@@ -1,7 +1,6 @@
 ---
 title: 参与错误源发现
 description: 参与错误源发现
-ms.assetid: 349c8f06-be79-4a40-8b9f-cbefc563f6de
 keywords:
 - Windows 硬件错误体系结构 WDK，错误源发现
 - WHEA WDK，错误源发现
@@ -12,12 +11,12 @@ keywords:
 - 错误源发现 WDK WHEA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7d4a6bbfa9e4201c9b99448ca78ce627b8845d13
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: db4ebc8534e57a449dea5fb85c59fe083c8a3b1c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89206141"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96787077"
 ---
 # <a name="participating-in-error-source-discovery"></a>参与错误源发现
 
@@ -103,7 +102,7 @@ NTSTATUS
 }
 ```
 
-参与错误源发现的 PSHED 插件在向操作系统[注册](registering-a-pshed-plug-in.md)自身时必须指定**PshedFADiscovery**标志。
+参与错误源发现的 PSHED 插件在向操作系统 [注册](registering-a-pshed-plug-in.md)自身时必须指定 **PshedFADiscovery** 标志。
 
  
 

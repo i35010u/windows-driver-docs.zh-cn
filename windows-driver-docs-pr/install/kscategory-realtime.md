@@ -1,7 +1,6 @@
 ---
 title: KSCATEGORY_REALTIME
 description: KSCATEGORY_REALTIME
-ms.assetid: c9b0a31a-50d9-47bc-9345-5d73a95238c3
 keywords:
 - KSCATEGORY_REALTIME 设备和驱动程序安装
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: ee56dcf3725c6f141547c9b111296eba970d8176
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: a3920fbddce7ee04b41c25000aec0adaf72000b8
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91733254"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96787419"
 ---
 # <a name="kscategory_realtime"></a>KSCATEGORY_REALTIME
 
@@ -33,7 +32,7 @@ KSCATEGORY_REALTIME [设备接口类](./overview-of-device-interface-classes.md)
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">属性</th>
+<th align="left">Attribute</th>
 <th align="left">设置</th>
 </tr>
 </thead>
@@ -58,7 +57,7 @@ KS 设备的驱动程序将注册 KSCATEGORY_REALTIME 的实例，以向操作�
 
 注册此功能类别的设备由系统提供的 [WaveRT 端口驱动程序](/previous-versions/ff538837(v=vs.85))运行。
 
-有关如何在 INF 文件中注册此功能类别的信息，请参阅在 WDK 中随附[AC ' 97 示例驱动程序](/samples/browse/)的 Inf 文件*Ac97smpl。*
+有关如何在 INF 文件中注册此功能类别的信息，请参阅在 WDK 中随附 [AC ' 97 示例驱动程序](/samples/browse/)的 Inf 文件 *Ac97smpl。*
 
 <a name="requirements"></a>要求
 ------------

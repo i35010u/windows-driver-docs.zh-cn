@@ -1,22 +1,21 @@
 ---
 title: WDI_TLV_ASSOCIATION_RESPONSE_IES
 description: WDI_TLV_ASSOCIATION_RESPONSE_IES 是未使用的 TLV。
-ms.assetid: 3882FFB2-D77B-4433-BFD2-F55A91C58985
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 WDI_TLV_ASSOCIATION_RESPONSE_IES 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 23d4316f300346661f661084b55168d5c6535bd4
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f0469fb905dbd61226e47921b2580509d8341aad
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63363023"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96786697"
 ---
-# <a name="wditlvassociationresponseies"></a>WDI\_TLV\_关联\_响应\_导致浏览器
+# <a name="wdi_tlv_association_response_ies"></a>WDI \_ TLV \_ 关联 \_ 响应 \_
 
 
-WDI\_TLV\_关联\_响应\_导致浏览器是未使用的 TLV。
+WDI \_ tlv \_ 关联 \_ 响应 \_ 是未使用的 tlv。
 
 <a name="requirements"></a>要求
 ------------
@@ -33,10 +32,10 @@ WDI\_TLV\_关联\_响应\_导致浏览器是未使用的 TLV。
 </tr>
 <tr class="even">
 <td><p>最低受支持的服务器</p></td>
-<td><p>Windows Server 2016</p></td>
+<td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
-<td><p>Header</p></td>
+<td><p>标头</p></td>
 <td>Wditypes.hpp</td>
 </tr>
 </tbody>

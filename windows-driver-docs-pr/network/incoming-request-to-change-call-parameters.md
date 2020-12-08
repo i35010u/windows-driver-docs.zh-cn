@@ -1,18 +1,17 @@
 ---
 title: 传入的更改呼叫参数请求
 description: 传入的更改呼叫参数请求
-ms.assetid: f7b9483c-070e-4a5d-a1b0-fadb65843a1e
 keywords:
 - 调用参数更改 WDK CoNDIS
 - 传入呼叫参数更改请求 WDK CoNDIS
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d6f20cb107cb72cd016c96092082404f58f0a4e3
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: f88583b175143a4937d7786ab83be7f071a8cb41
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89217834"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96788337"
 ---
 # <a name="incoming-request-to-change-call-parameters"></a>传入的更改呼叫参数请求
 
@@ -36,7 +35,7 @@ ms.locfileid: "89217834"
 
 客户端通过不执行任何操作接受对 VC 的调用参数的建议的修改，但可能会更新其对 VC 的 QoS 和返回控件所维护的任何状态。 如果无法接受建议的修改，则客户端可以尝试使用 [**NdisClModifyCallQoS**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisclmodifycallqos) 重新协商调用参数（如果有信号协议允许） (参阅 [客户端发起的更改调用参数](client-initiated-request-to-change-call-parameters.md)) 的请求。 否则，客户端会通过使用 [**NdisClCloseCall**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisclclosecall) 来拆开调用来拒绝建议的 QoS 更改 (参阅 [客户端启动的请求以关闭调用](client-initiated-request-to-close-a-call.md)) 。
 
-**ProtocolClIncomingCallQoS**返回后，调用管理器或 MCM 驱动程序会将建议的更改的接受或拒绝传递给发出请求的远程参与方。
+**ProtocolClIncomingCallQoS** 返回后，调用管理器或 MCM 驱动程序会将建议的更改的接受或拒绝传递给发出请求的远程参与方。
 
  
 

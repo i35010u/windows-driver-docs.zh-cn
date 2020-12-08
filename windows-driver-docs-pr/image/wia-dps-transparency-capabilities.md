@@ -1,9 +1,8 @@
 ---
-title: WIA\_DPS\_透明度\_功能
-description: WIA\_DPS\_透明度\_功能属性保留供将来使用由 Microsoft 和未实现这一次。
-ms.assetid: f33f164b-daac-424c-99ea-37190a97d5af
+title: WIA \_ DPS \_ 透明度 \_ 功能
+description: '\_ \_ MICROSOFT 保留 WIA DPS 透明度 \_ 功能属性供将来使用，目前不会实现。'
 keywords:
-- WIA_DPS_TRANSPARENCY_CAPABILITIES 成像设备
+- WIA_DPS_TRANSPARENCY_CAPABILITIES 图像设备
 topic_type:
 - apiref
 api_name:
@@ -14,24 +13,24 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9f139d481dcb75b280c5794449356e8d38435e6f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3d3fa3983d40332ce42f80463c1b31f41753d4a8
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63366975"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96786833"
 ---
-# <a name="wiadpstransparencycapabilities"></a>WIA\_DPS\_透明度\_功能
+# <a name="wia_dps_transparency_capabilities"></a>WIA \_ DPS \_ 透明度 \_ 功能
 
 
-WIA\_DPS\_透明度\_功能属性保留供将来使用由 Microsoft 和未实现这一次。
+\_ \_ MICROSOFT 保留 WIA DPS 透明度 \_ 功能属性供将来使用，目前不会实现。
 
 ## <span id="ddk_wia_dps_transparency_capabilities_si"></span><span id="DDK_WIA_DPS_TRANSPARENCY_CAPABILITIES_SI"></span>
 
 
-属性类型：VT\_I4
+属性类型： VT \_ I4
 
-有效值：WIA\_PROP\_NONE
+有效值： WIA " \_ \_ 无"
 
 访问权限：只读
 
@@ -45,8 +44,8 @@ WIA\_DPS\_透明度\_功能属性保留供将来使用由 Microsoft 和未实现
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Header</p></td>
-<td>Wiadef.h （包括 Wiadef.h）</td>
+<td><p>标头</p></td>
+<td>Wiadef (包含 Wiadef) </td>
 </tr>
 </tbody>
 </table>

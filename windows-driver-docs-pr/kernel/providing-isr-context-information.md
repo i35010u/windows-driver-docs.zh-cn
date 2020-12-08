@@ -1,7 +1,6 @@
 ---
 title: 提供 ISR 上下文信息
 description: 提供 ISR 上下文信息
-ms.assetid: 216c3111-3638-4410-a720-ff3d65a1eadd
 keywords:
 - 中断服务例程 WDK 内核，上下文信息
 - Isr WDK 内核，上下文信息
@@ -10,12 +9,12 @@ keywords:
 - 指针 WDK 中断
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 83fa074f3ecb83b4b590d947e73de14d3d4e66c5
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: e5c3e46f87dd3dc27a59c614b71d4633b7abba57
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89189516"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96787315"
 ---
 # <a name="providing-isr-context-information"></a>提供 ISR 上下文信息
 

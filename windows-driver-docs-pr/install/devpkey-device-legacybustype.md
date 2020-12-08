@@ -1,7 +1,6 @@
 ---
 title: DEVPKEY_Device_LegacyBusType
 description: DEVPKEY_Device_LegacyBusType
-ms.assetid: 76c2a472-bb05-4f6a-84da-0ae9e7c1fdf1
 keywords:
 - DEVPKEY_Device_LegacyBusType 设备和驱动程序安装
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 17094a44209f6d4350226790d5268057210075c0
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 96316ccb874a5bf9c7ae2d1069d18ce8f1e98b9f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90714660"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96786815"
 ---
 # <a name="devpkey_device_legacybustype"></a>DEVPKEY_Device_LegacyBusType
 
@@ -66,7 +65,7 @@ DEVPKEY_Device_LegacyBusType 设备属性表示设备实例的旧总线号。
 <a name="remarks"></a>备注
 -------
 
-Windows 将 DEVPKEY_Device_LegacyBusType 的值设置为总线驱动程序为响应[**IRP_MN_QUERY_BUS_INFORMATION**](../kernel/irp-mn-query-bus-information.md)请求而返回的[**PNP_BUS_INFORMATION**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_pnp_bus_information)结构的 LegacyBusType 成员的值。 DEVPKEY_Device_LegacyBusType 的值是在 Ntddk 和中定义的 [**INTERFACE_TYPE**](/windows-hardware/drivers/ddi/wdm/ne-wdm-_interface_type) 枚举器值之一。
+Windows 将 DEVPKEY_Device_LegacyBusType 的值设置为总线驱动程序为响应 [**IRP_MN_QUERY_BUS_INFORMATION**](../kernel/irp-mn-query-bus-information.md)请求而返回的 [**PNP_BUS_INFORMATION**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_pnp_bus_information)结构的 LegacyBusType 成员的值。 DEVPKEY_Device_LegacyBusType 的值是在 Ntddk 和中定义的 [**INTERFACE_TYPE**](/windows-hardware/drivers/ddi/wdm/ne-wdm-_interface_type) 枚举器值之一。
 
 可以调用 [**SetupDiGetDeviceProperty**](/windows/win32/api/setupapi/nf-setupapi-setupdigetdevicepropertyw) 来检索 DEVPKEY_Device_LegacyBusType 的值。
 

@@ -1,21 +1,20 @@
 ---
 title: 设备安装文件示例
 description: 设备安装文件示例
-ms.assetid: bdb463a0-81f9-4e44-a17b-564fd68e9457
 keywords:
-- 设备安装程序 WDK 设备安装文件
+- 设备设置 WDK 设备安装，文件
 - 设备安装 WDK，文件
-- 安装 WDK，文件的设备
-- WDK 设备安装文件
-- 示例文件 WDK 设备安装
+- 安装设备 WDK，文件
+- 文件 WDK 设备安装
+- 文件示例 WDK 设备安装
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e1b18086076f6b588e2e8463df58268eae33d8d1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f19ced80e5fbd6f0c4c0a8579d88804fc67be77f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63348978"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96787367"
 ---
 # <a name="sample-device-installation-files"></a>设备安装文件示例
 
@@ -23,9 +22,9 @@ ms.locfileid: "63348978"
 
 
 
-Windows Driver Kit (WDK) 包括各种示例安装文件，如 INF 文件、 设备安装应用程序、 类安装程序、 共同安装程序和属性页提供程序。
+Windows 驱动程序工具包 (WDK) 包含各种示例安装文件，如 INF 文件、设备安装应用程序、类安装程序、共同安装程序和属性页提供程序。
 
-大多数示例安装文件位于*src\\安装程序*WDK 的子目录。 另请参阅*src\\常规\\toaster* WDK 的子目录。
+大多数示例安装文件位于 WDK 的 " *src \\ 安装程序* " 子目录下。 另请参阅 WDK 的 *src \\ general \\ toaster* 子目录。
 
  
 

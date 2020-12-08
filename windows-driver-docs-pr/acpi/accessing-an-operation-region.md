@@ -1,20 +1,19 @@
 ---
 title: 访问操作区域
 description: 访问操作区域
-ms.assetid: 9a1aa29e-679c-4f7f-a16c-3e1c94be66a7
 keywords:
 - ACPI 设备 WDK，操作区域
 - 操作区域 WDK ACPI
-- 功能的驱动程序 WDK ACPI，操作区域
+- 函数驱动程序 WDK ACPI，操作区域
 - WDM 函数驱动程序 WDK ACPI，操作区域
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5a8bb43106093c91786fbbb8999fe3fc809d6f5e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4119626d70d20b4897cb34fdc2fe0b994ccab3bf
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63328885"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96788001"
 ---
 # <a name="accessing-an-operation-region"></a>访问操作区域
 
@@ -22,9 +21,9 @@ ms.locfileid: "63328885"
 
 
 
-当功能驱动程序注册的操作区域处理程序时，该驱动程序必须指定访问类型 ACPI\_OPREGION\_访问权限\_AS\_COOKED。 加工的访问权限支持传输的信息从 ACPI 设备到设备的功能驱动程序，但不能从功能驱动程序到设备。
+当函数驱动程序注册操作区域处理程序时，驱动程序必须将访问类型 ACPI \_ OPREGION \_ access 指定 \_ 为 \_ 加工。 加工访问支持将信息从 ACPI 设备传输到设备的功能驱动程序，而不支持从函数驱动程序传输到设备。
 
-只有系统提供 ACPI 驱动程序修改操作区域中的数据。 功能驱动程序可以读取操作区域中的数据。 但是，它不能修改数据。 调用时，操作区域处理程序将传输到和从 ACPI 驱动程序的数据缓冲区的操作区域中的字节。 ACPI 驱动程序管理访问正确的字节读取和写入操作的区域中的数据字段。
+只有系统提供的 ACPI 驱动程序会修改操作区域中的数据。 函数驱动程序可以读取操作区域中的数据。 但是，它不能修改数据。 调用时，操作区域处理程序会将操作区域中的字节传输到 ACPI 驱动程序的数据缓冲区。 ACPI 驱动程序管理访问正确的字节以读取和写入操作区域中的数据字段。
 
  
 

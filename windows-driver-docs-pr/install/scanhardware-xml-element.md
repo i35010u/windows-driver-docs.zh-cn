@@ -1,7 +1,6 @@
 ---
 title: scanHardware XML 元素
 description: scanHardware XML 元素
-ms.assetid: c1af7238-97e9-4c5f-95ea-fbc9f3cc8279
 keywords:
 - scanHardware XML 元素设备和驱动程序安装
 topic_type:
@@ -12,19 +11,19 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 8ccd201b232c32921aba4af3bfc953e7eefc6795
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 25a4b8ee670d128b4b3226e19803f4f21e6cf6cf
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89096617"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96787355"
 ---
 # <a name="scanhardware-xml-element"></a>scanHardware XML 元素
 
 
 \[DIFx 已弃用，有关详细信息，请参阅 [DIFx 指导原则](./difx-guidelines.md)。\]
 
-**ScanHardware** XML 元素是一个空元素，用于将**scanHardware**标志设置为 ON。 将此标志设置为 "开" 可将 DPInst 配置为仅当驱动程序包与计算机中配置的设备匹配并且驱动程序包比设备上当前安装的驱动程序包更匹配时，才为即插即用 (PnP) 函数驱动程序安装 [驱动程序包](./driver-packages.md) 。
+**ScanHardware** XML 元素是一个空元素，用于将 **scanHardware** 标志设置为 ON。 将此标志设置为 "开" 可将 DPInst 配置为仅当驱动程序包与计算机中配置的设备匹配并且驱动程序包比设备上当前安装的驱动程序包更匹配时，才为即插即用 (PnP) 函数驱动程序安装 [驱动程序包](./driver-packages.md) 。
 
 ### <a name="element-tag"></a>元素标记
 
@@ -67,7 +66,7 @@ ms.locfileid: "89096617"
 
 ### <a name="remarks"></a><a href="" id="comments"></a>注释
 
-默认情况下， **scanHardware** 标志设置为 OFF。 可以通过将**scanHardware** XML 元素包含为 dpinst 描述符文件中**dpinst** XML 元素的子元素或使用 **/sh**命令行开关，将**scanHardware**标志设置为 ON   。
+默认情况下， **scanHardware** 标志设置为 OFF。 可以通过将 **scanHardware** XML 元素包含为 dpinst 描述符文件中 **dpinst** XML 元素的子元素或使用 **/sh** 命令行开关，将 **scanHardware** 标志设置为 ON。
 
 下面的代码示例演示了 **scanHardware** 元素。
 

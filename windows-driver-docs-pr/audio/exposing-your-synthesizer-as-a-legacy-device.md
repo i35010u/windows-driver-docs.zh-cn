@@ -1,18 +1,17 @@
 ---
 title: 将合成器作为旧设备公开
 description: 将合成器作为旧设备公开
-ms.assetid: 25e5e14f-1db5-45dc-9048-674420d79824
 keywords:
-- 合成器 WDK 音频的旧设备
-- 旧的设备支持 WDK DirectMusic
+- 合成 WDK 音频，旧设备
+- 旧设备支持 WDK DirectMusic
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 40b7a6c4b531f921215d419f8053f43e6f8c4e22
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 15e9869e9e09d678c87d515df72de2aa357b4d9c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63333652"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96786547"
 ---
 # <a name="exposing-your-synthesizer-as-a-legacy-device"></a>将合成器作为旧设备公开
 
@@ -20,23 +19,23 @@ ms.locfileid: "63333652"
 ## <span id="exposing_your_synthesizer_as_a_legacy_device"></span><span id="EXPOSING_YOUR_SYNTHESIZER_AS_A_LEGACY_DEVICE"></span>
 
 
-你可能想要编写将合成器硬件公开为 DirectMusic 设备而旧的 MIDI 设备的单个设备驱动程序 (即，通过 Windows 多媒体 midiOut*Xxx* API)。 此方法可在以下三种情况：
+你可能需要编写一个设备驱动程序，该驱动程序通过 Windows 多媒体 midiOut *Xxx* API) ，将合成硬件公开为 DirectMusic 设备和传统的 MIDI 设备 (。 此方法在以下三种情况下非常有用：
 
-1.  如果设备不支持 DLS。 示例包括 MPU 401 驱动程序 (请参阅 Windows 驱动程序工具包中的 mpu401 示例\[WDK\])，具有仅设置，ROM 的设备和固定功能软件合成器 (例如，FM)。
+1.  如果设备不支持 DLS，则为。 示例包括 MPU-401 驱动程序 (参阅 Windows 驱动程序工具包中的 mpu401 示例 \[ \]) 、仅具有 ROM 集的设备和固定功能软件合成 (例如 FM) 。
 
-    在这种情况下，设备可以公开旧版 MIDI 接口，以及 DirectMusic 接口。 它应公开一个旧的 MIDI pin。 请务必首先列出 pin 与旧版的接口，以便 WDM 音频枚举它为旧的 MIDI 设备。
+    在这种情况下，设备可以公开旧版 MIDI 接口以及 DirectMusic 接口。 它应该只公开一个旧的 MIDI pin。 首先列出与旧接口的 pin，以便 WDM 音频将其枚举为旧式 MIDI 设备，这一点非常重要。
 
-2.  如果设备不支持 DLS，但功能会在加载状态中。 此设备有两个 RAM DLS 和 ROM 包含 GM/GS/XG 批表。
+2.  如果设备支持 DLS，但仍处于加载状态。 此设备的每个 DLS 和 ROM 都包含 GM/GS/XG wave 表。
 
-    在这种情况下，设备还可以公开这两个接口。 如果两个接口是互斥 （即，如果一次下载内容，ROM 不可见），则它应是具有两个接口，可供选择 （而不是两个 pin) 单个插针。
+    在这种情况下，设备还可以同时公开这两个接口。 如果这两个接口互相排斥 (即，一旦您下载了某个内容，该 ROM 就不会显示) ，然后它应该是具有两个接口的单一 pin，可选择 (而不是两个 pin) 。
 
-3.  当设备支持 DLS，但为"空"（例如，DirectMusic 软件合成） 提供支持，而且因此需要通过 DLS 下载进程，以初始化其批表。
+3.  如果设备支持 DLS，但启动了 "empty" (例如，DirectMusic software 合成) ，因此需要通过 DLS 下载来初始化其波形表。
 
-    此初始化是不必要的如果设备不需要 DLS 下载 （如果它没有默认示例，例如在 ROM 中设置），或打开 DirectMusic pin （DirectMusic Api 可确保出现 DLS 下载）。
+    如果设备在 ROM 中具有默认示例集时不需要使用 DLS 下载，则不需要进行此初始化 (例如) 或打开 DirectMusic pin (DirectMusic Api 确保 DL 下载) 。
 
-    公开 DLS 设备通过旧版 Api 需要一些额外的工作。 当需要 DLS instruments 的设备上打开旧 pin 时，该驱动程序应找到并打开包含 DLS 集合要使用的文件。 该驱动程序应然后截获更新和银行更改、 从 DL 文件，检索相应的数据和执行必要的 DLS 下载到设备。
+    通过旧版 Api 公开你的 DLS 设备需要额外的工作。 当在需要 DLS 设备的设备上打开旧版 pin 时，驱动程序应找到并打开一个文件，其中包含要使用的 DLS 集合。 然后，该驱动程序应拦截更新和银行更改，从 DLS 文件中检索相应的数据，并对设备执行必要的 DL 下载。
 
-    这种情况下会产生问题由于[WDMAud 系统驱动程序](user-mode-wdm-audio-components.md#wdmaud_system_driver)和其他客户端不知道他们需要下载一个集合。 它们只是开始发送 MIDI 更新更改和说明。
+    这种情况有问题，因为 [WDMAud 系统驱动程序](user-mode-wdm-audio-components.md#wdmaud_system_driver) 和其他客户端并不知道他们需要下载集合。 它们只是开始发送 MIDI 更新更改和说明。
 
  
 

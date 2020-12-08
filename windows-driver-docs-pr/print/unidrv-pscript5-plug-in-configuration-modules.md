@@ -1,7 +1,6 @@
 ---
 title: Unidrv/PScript5 插件配置模块
 description: Unidrv/PScript5 插件配置模块
-ms.assetid: 806175ba-18a9-48f3-8f50-06e794d1f304
 keywords:
 - 版本 3 XPS 驱动程序 WDK XPSDrv、Unidrv 插件
 - 版本 3 XPS 驱动程序 WDK XPSDrv、PScript5 插件
@@ -11,12 +10,12 @@ keywords:
 - Unidrv WDK 打印
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 366926f9035a7be8829cbbcf4efce3db04460208
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: b57502a2b4101751275e3e8691e7f65b6d3ba66a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89213088"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96786683"
 ---
 # <a name="unidrvpscript5-plug-in-configuration-modules"></a>Unidrv/PScript5 插件配置模块
 
@@ -39,7 +38,7 @@ Unidrv 和 PScript5 打印驱动程序实现 [IPrintTicketProvider](/previous-ve
 
 ### <a name="iprintcorehelper-interface"></a>IPrintCoreHelper 接口
 
-**IPrintCoreHelper**接口启用打印驱动程序配置插件来执行以下操作：
+**IPrintCoreHelper** 接口启用打印驱动程序配置插件来执行以下操作：
 
 -   获取并设置 Unidrv 和 PScript5 打印驱动程序使用的 DEVMODE 结构的私有部分中的值。
 

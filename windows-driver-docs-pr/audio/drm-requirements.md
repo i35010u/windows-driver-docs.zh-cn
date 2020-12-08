@@ -1,7 +1,6 @@
 ---
 title: DRM 要求
 description: DRM 要求
-ms.assetid: 312b943b-f280-4b29-a5d4-e78c7088bb22
 keywords:
 - WHQL 测试 WDK 音频
 - 数字 Rights Management WDK 音频，合规性测试
@@ -12,12 +11,12 @@ keywords:
 - 徽标测试 WDK 音频
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 106987b978584501bafa20e93642f63d35856028
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 84cb43bcb0c2a5ae6ef4c387149716db0e5719ff
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89208051"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96786559"
 ---
 # <a name="drm-requirements"></a>DRM 要求
 

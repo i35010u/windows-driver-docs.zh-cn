@@ -1,7 +1,6 @@
 ---
 title: CM_Get_Class_Key_Name
 description: CM_Get_Class_Key_Name
-ms.assetid: 100bc65e-6ec4-4960-a4d0-c46c67cc0681
 keywords:
 - CM_Get_Class_Key_NameA
 - CM_Get_Class_Key_NameW
@@ -15,13 +14,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: f223a00524f9c07082710f72fc9c9138788a6f9c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3c77fa1be881377e887ca84a4ce0ca67f78f2307
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380317"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96787491"
 ---
-# <a name="cmgetclasskeyname"></a>CM_Get_Class_Key_Name
+# <a name="cm_get_class_key_name"></a>CM_Get_Class_Key_Name
 
 此函数保留供系统使用。

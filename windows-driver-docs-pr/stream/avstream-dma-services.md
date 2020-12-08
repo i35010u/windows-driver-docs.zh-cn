@@ -1,7 +1,6 @@
 ---
 title: AVStream DMA 服务
 description: AVStream DMA 服务
-ms.assetid: ba1c525b-26b0-4778-b58b-f4169cfb972e
 keywords:
 - AVStream WDK，硬件
 - 硬件 WDK AVStream
@@ -12,12 +11,12 @@ keywords:
 - AVStream DMA WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9139f65bccdb35b5ad0ed7151b6b46d00cdee670
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 02690ad2291beb88503a04989079525b33df6dff
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89186633"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96786655"
 ---
 # <a name="avstream-dma-services"></a>AVStream DMA 服务
 

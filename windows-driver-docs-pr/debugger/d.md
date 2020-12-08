@@ -1,15 +1,14 @@
 ---
-title: D （Windows 调试器词汇表）
+title: 'D (Windows 调试器词汇表) '
 description: 词汇表页面-D
-ms.assetid: e4d53375-c82e-493b-9ccb-444c211fbc79
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 75bb2fb885dc151e16a3cca53b646fb4dc356323
-ms.sourcegitcommit: 48c4b6d3a504583d2f588ed892a4a281d4b58301
+ms.openlocfilehash: cc8adb40ac734c85ea4437628ecffd7dcdfe9604
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70387084"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96787799"
 ---
 # <a name="d"></a>D
 

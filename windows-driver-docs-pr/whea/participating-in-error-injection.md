@@ -1,7 +1,6 @@
 ---
 title: 参与错误注入
 description: 参与错误注入
-ms.assetid: 0bd9efbd-e98d-457a-a28f-e09dcb5ae24d
 keywords:
 - Windows 硬件错误体系结构 WDK，错误注入
 - WHEA WDK，错误注入
@@ -12,12 +11,12 @@ keywords:
 - 错误注入 WDK WHEA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bbf11523f066e1e949aa393102c21b8be989787b
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: d6056f8afb186942ba85481ec110edc2fa171038
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89214174"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96787095"
 ---
 # <a name="participating-in-error-injection"></a>参与错误注入
 
@@ -87,7 +86,7 @@ NTSTATUS
 }
 ```
 
-参与错误注入的 PSHED 插件必须在向操作系统[注册](registering-a-pshed-plug-in.md)自身时指定**PshedFAErrorInjection**标志。
+参与错误注入的 PSHED 插件必须在向操作系统 [注册](registering-a-pshed-plug-in.md)自身时指定 **PshedFAErrorInjection** 标志。
 
  
 

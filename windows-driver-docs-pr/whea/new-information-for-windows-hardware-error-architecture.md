@@ -1,7 +1,6 @@
 ---
 title: Windows 硬件错误体系结构的新信息
 description: Windows 硬件错误体系结构的新信息
-ms.assetid: 258dca19-3988-4fab-bc9f-a93035cbbd0e
 keywords:
 - Windows 硬件错误体系结构 WDK，新信息
 - WHEA WDK，新信息
@@ -10,12 +9,12 @@ keywords:
 - 源信息 WDK WHEA，新
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1fb16a0d0c3cece6ae4a29944b04eebf1065d26d
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: d2909ae41d7612fd46f3b928e3a77a89034904ea
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89216312"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96787111"
 ---
 # <a name="new-information-for-windows-hardware-error-architecture"></a>Windows 硬件错误体系结构的新信息
 
@@ -28,7 +27,7 @@ ms.locfileid: "89216312"
 
 [Windows 7 的 WHEA 更改](whea-changes-for-windows-7.md)
 
-## <a name="new-whea-changes-for-windows8"></a>Windows 8 的 (*新* 的) WHEA 更改
+## <a name="new-whea-changes-for-windows-8"></a>Windows 8 的 (*新* 的) WHEA 更改
 
 
 从 Windows 8 开始，对 Windows 硬件错误体系结构进行了以下更改 (WHEA) 

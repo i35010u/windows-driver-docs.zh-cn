@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ PIN \_ PROPOSEDATAFORMAT2
 description: 操作系统使用 KSPROPERTY \_ 引脚 \_ PROPOSEDATAFORMAT2 属性来确定 pin 工厂实例化的 pin 是否支持特定的数据格式。
-ms.assetid: 64F6E8CA-8E48-43B3-9A60-DAB53516AD45
 keywords:
 - KSPROPERTY_PIN_PROPOSEDATAFORMAT2 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 12/28/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 6d4ef6b6132438f76695903e0bdf011d86caadf5
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 45dac35086d51121160008f69c94d6cffd04132e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90106800"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96788133"
 ---
 # <a name="ksproperty_pin_proposedataformat2"></a>KSPROPERTY \_ PIN \_ PROPOSEDATAFORMAT2
 
@@ -62,13 +61,13 @@ ms.locfileid: "90106800"
 <a name="remarks"></a>备注
 -------
 
-属性描述符是一个 [**KSP \_ PIN**](/windows-hardware/drivers/ddi/ks/ns-ks-ksp_pin) ，后跟一个 [**KSMULTIPLE \_ 项**](/windows-hardware/drivers/ddi/ks/ns-ks-ksmultiple_item) ，它指定跟随 **KSMULTIPLE \_ 项**的可变大小属性的计数。 每个属性都以 [**KSATTRIBUTE**](/windows-hardware/drivers/ddi/ks/ns-ks-ksattribute) 标头开头，后面是特定于该特性的数据。 属性作为属性请求的参数，指定建议的数据格式。
+属性描述符是一个 [**KSP \_ PIN**](/windows-hardware/drivers/ddi/ks/ns-ks-ksp_pin) ，后跟一个 [**KSMULTIPLE \_ 项**](/windows-hardware/drivers/ddi/ks/ns-ks-ksmultiple_item) ，它指定跟随 **KSMULTIPLE \_ 项** 的可变大小属性的计数。 每个属性都以 [**KSATTRIBUTE**](/windows-hardware/drivers/ddi/ks/ns-ks-ksattribute) 标头开头，后面是特定于该特性的数据。 属性作为属性请求的参数，指定建议的数据格式。
 
 **KSPROPERTY \_PIN \_ PROPOSEDATAFORMAT2** 包含 [**KSMULTIPLE \_ 项**](/windows-hardware/drivers/ddi/ks/ns-ks-ksdataformat)类型的结构，
 
 属性支持的唯一属性为 *KSATTRIBUTEID \_ AUDIOSIGNALPROCESSING \_ 模式* ，并且是使用 [**KSATTRIBUTE \_ AUDIOSIGNALPROCESSING \_ mode**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagksattribute_audiosignalprocessing_mode) 结构指定的。 请注意， **KSATTRIBUTE \_ AUDIOSIGNALPROCESSING \_ 模式** 结构以 [**KSATTRIBUTE**](/windows-hardware/drivers/ddi/ks/ns-ks-ksattribute) 成员开头。 有关详细信息，请参阅 [音频信号处理模式](../audio/audio-signal-processing-modes.md)。
 
-[**KSPROPERTY \_仅 \_ **](/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier) 当 pin 具有建议格式时才支持类型 GET。 此函数允许音频驱动程序提供有关指定属性的 pin 的默认数据格式的信息。
+[**KSPROPERTY \_仅 \_**](/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier) 当 pin 具有建议格式时才支持类型 GET。 此函数允许音频驱动程序提供有关指定属性的 pin 的默认数据格式的信息。
 
 如果 pin 对于指定的特性具有首选数据格式，则 KS 筛选器将返回 STATUS_SUCCESS。 如果 pin 对于指定的属性没有首选数据格式，它将返回 STATUS_NOT_SUPPORTED。 对于其他任何失败，将返回相应的错误。 如果驱动程序支持此属性，则 OS 始终将此格式用于特定的信号处理模式。 此属性不支持 KSPROPERTY_TYPE_SET。
 
@@ -192,7 +191,7 @@ typedef struct
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSP \_ PIN**](/windows-hardware/drivers/ddi/ks/ns-ks-ksp_pin)

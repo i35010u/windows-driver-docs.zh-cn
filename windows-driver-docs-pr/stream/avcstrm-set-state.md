@@ -1,7 +1,6 @@
 ---
 title: AVCSTRM \_ 集 \_ 状态
 description: AVCSTRM \_ 集 \_ 状态
-ms.assetid: 890ae8d1-d7e2-40a4-af7f-b6df32d845e4
 keywords:
 - AVCSTRM_SET_STATE 流媒体设备
 topic_type:
@@ -12,12 +11,12 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f1f561cc5b3d09a76b26039c5d75c30c79911f16
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: f20f322a155015a66aedb03f7a6162d8c9f048e9
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89185223"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96788213"
 ---
 # <a name="avcstrm_set_state"></a>AVCSTRM \_ 集 \_ 状态
 
@@ -25,7 +24,7 @@ ms.locfileid: "89185223"
 ## <span id="ddk_avcstrm_set_state_ks"></span><span id="DDK_AVCSTRM_SET_STATE_KS"></span>
 
 
-**AVCSTRM \_ 集 \_ 状态**函数代码将指定的流置于新的流状态。
+**AVCSTRM \_ 集 \_ 状态** 函数代码将指定的流置于新的流状态。
 
 ### <a name="io-status-block"></a>I/o 状态块
 
@@ -41,7 +40,7 @@ ms.locfileid: "89185223"
 <thead>
 <tr class="header">
 <th>错误状态</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>
@@ -72,7 +71,7 @@ ms.locfileid: "89185223"
 
 ### <a name="comments"></a>注释
 
-此函数使用 AVC 流请求块结构中的**CommandData**联合的**StreamState**成员 \_ ，如下 \_ \_ 所示。
+此函数使用 AVC 流请求块结构中的 **CommandData** 联合的 **StreamState** 成员 \_ ，如下 \_ \_ 所示。
 
 ```cpp
 typedef struct _AVC_STREAM_REQUEST_BLOCK {
@@ -96,7 +95,7 @@ typedef struct _AVC_STREAM_REQUEST_BLOCK {
 
 ### <a name="requirements"></a>要求
 
-**标头：** 在 *avcstrm*中声明。 包括 *avcstrm*。
+**标头：** 在 *avcstrm* 中声明。 包括 *avcstrm*。
 
 ### <a name="span-idavc_stream_request_block_inputspanspan-idavc_stream_request_block_inputspanavc_stream_request_block-input"></a><span id="avc_stream_request_block_input"></span><span id="AVC_STREAM_REQUEST_BLOCK_INPUT"></span>AVC \_ 流 \_ 请求 \_ 块输入
 
@@ -113,7 +112,7 @@ typedef struct _AVC_STREAM_REQUEST_BLOCK {
 
 若要发送此请求，子组会 [**将 irp \_ MJ \_ 内部 \_ 设备 \_ 控制**](../kernel/irp-mj-internal-device-control.md) irp，并将 irp 集的 **IoControlCode** 成员提交给 [**IOCTL \_ AVCSTRM \_ 类**](/windows-hardware/drivers/ddi/avcstrm/ni-avcstrm-ioctl_avcstrm_class) ，并将 irp 集的 **Argument1** 成员设置为 AVC \_ 流 \_ 请求 \_ 块结构，该结构描述要置于新流状态的流。
 
-子单位驱动程序可能希望此命令同步完成。 结果会立即返回，而不会在 *avcstrm.sys*中挂起操作。
+子单位驱动程序可能希望此命令同步完成。 结果会立即返回，而不会在 *avcstrm.sys* 中挂起操作。
 
 必须在 IRQL = 被动级别调用此函数代码 \_ 。
 

@@ -1,7 +1,6 @@
 ---
 title: Bug 检查 0x123 CRYPTO_SELF_TEST_FAILURE
-description: CRYPTO_SELF_TEST_FAILURE bug 检查具有 0x00000123 值。 这表示加密子系统失败自我测试启动过程的强制性算法。
-ms.assetid: 003FFB3D-1DAF-4A09-B70D-5B1242B4FAD8
+description: CRYPTO_SELF_TEST_FAILURE bug 检查的值为0x00000123。 这表示在启动过程中，加密子系统未能进行强制算法自检。
 keywords:
 - Bug 检查 0x123 CRYPTO_SELF_TEST_FAILURE
 - CRYPTO_SELF_TEST_FAILURE
@@ -13,23 +12,23 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 979850e00f54135d009162f07b0d961fafcbb52e
-ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
+ms.openlocfilehash: 454ad1317cd3e201b1eb47c2d0a1dbb1f4e79834
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67520780"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96787948"
 ---
-# <a name="bug-check-0x123-cryptoselftestfailure"></a>Bug 检查 0x123：CRYPTO\_SELF\_测试\_失败
+# <a name="bug-check-0x123-crypto_self_test_failure"></a>Bug 检查0x123：加密 \_ 自检 \_ \_ 失败
 
 
-CRYPTO\_SELF\_测试\_故障错误检查的值为 0x00000123。 这表示加密子系统失败自我测试启动过程的强制性算法。
+"加密 \_ 自检 \_ \_ 失败 bug 检查" 的值为 "0x00000123"。 这表示在启动过程中，加密子系统未能进行强制算法自检。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://www.windows.com/stopcode)。
+> 本主题面向程序员。 如果您是在使用计算机时收到蓝屏错误代码的客户，请参阅[蓝屏错误疑难解答](https://www.windows.com/stopcode)。
 
 
-## <a name="cryptoselftestfailure-parameters"></a>CRYPTO\_SELF\_测试\_失败参数
+## <a name="crypto_self_test_failure-parameters"></a>加密 \_ 自检 \_ \_ 失败参数
 
 
 无

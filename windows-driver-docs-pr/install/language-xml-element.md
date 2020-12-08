@@ -1,7 +1,6 @@
 ---
 title: language XML 元素
 description: language XML 元素
-ms.assetid: 1fc6a3b4-379e-4fd3-b526-c4193e9e84c5
 keywords:
 - 语言 XML 元素设备和驱动程序安装
 topic_type:
@@ -12,12 +11,12 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: da8552175583d01ed9f7e6e7e67c0d3b18c14a50
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 6cee7658ebdb94c141e3022791a0c235a97350b8
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89097327"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96786273"
 ---
 # <a name="language-xml-element"></a>language XML 元素
 
@@ -96,7 +95,7 @@ ms.locfileid: "89097327"
 
 DPInst 还将此图标用于添加到控制面板中的 " **程序和功能** " 的项。 这些条目表示 DPInst 安装的 [驱动程序包](/windows-hardware/drivers) 。
 
-**注意**   在早于 Windows Vista 的 Windows 版本中，DPInst 将这些条目添加到控制面板中的 "**添加或删除程序**"。
+**注意**  在早于 Windows Vista 的 Windows 版本中，DPInst 将这些条目添加到控制面板中的 " **添加或删除程序** "。
 
  
 
@@ -119,7 +118,7 @@ DPInst 还将此图标用于添加到控制面板中的 " **程序和功能** " 
 
 如果未指定 **dpinstTitle** 元素，则 DPInst 将显示默认的 "欢迎使用" 页上显示的默认标题栏文本。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**dpinstTitle**](dpinsttitle-xml-element.md)

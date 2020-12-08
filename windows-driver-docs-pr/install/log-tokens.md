@@ -1,7 +1,6 @@
 ---
 title: 日志令牌
 description: 日志令牌
-ms.assetid: f666d457-eb0a-4482-a8ac-e2921ab8c5a9
 keywords:
 - 日志令牌 WDK Setupapi.log
 - 文本日志 WDK Setupapi.log，日志令牌
@@ -10,12 +9,12 @@ keywords:
 - Setupapi.log 日志记录 WDK Windows Vista，日志令牌
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1019446f597d3ee3ccbb96a2da83a2d8901fa9c1
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: e76fe836e14e68ba4b80344f68671410febcf35a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90716352"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96786269"
 ---
 # <a name="log-tokens"></a>日志令牌
 
@@ -33,10 +32,10 @@ Setupapi.log 文本日志记录提供以下系统定义的日志令牌：
 表示空日志。 如果指定了此标记值，Setupapi.log 日志记录函数将不会写入日志项。
 
 <a href="" id="logtoken-setupapi-applog"></a>LOGTOKEN_SETUPAPI_APPLOG  
-表示应用程序文本日志 (不属于文本日志部分的 *setupapi.log) * 部分。 如果指定了此标记值， [setupapi.log 日志记录函数](/previous-versions/ff550878(v=vs.85)) 将在应用程序安装文本日志中写入日志条目。
+表示应用程序文本日志 (不属于文本日志部分的 *setupapi.log)* 部分。 如果指定了此标记值， [setupapi.log 日志记录函数](/previous-versions/ff550878(v=vs.85)) 将在应用程序安装文本日志中写入日志条目。
 
 <a href="" id="logtoken-setupapi-devlog"></a>LOGTOKEN_SETUPAPI_DEVLOG  
-表示不属于文本日志部分的设备安装文本日志 (*setupapi.log) * 的一部分。 如果指定了此标记值，Setupapi.log 日志记录函数将在设备安装文本日志中写入日志条目。
+表示不属于文本日志部分的设备安装文本日志 (*setupapi.log)* 的一部分。 如果指定了此标记值，Setupapi.log 日志记录函数将在设备安装文本日志中写入日志条目。
 
  
 

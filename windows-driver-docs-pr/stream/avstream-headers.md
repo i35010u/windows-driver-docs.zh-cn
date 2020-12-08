@@ -1,18 +1,17 @@
 ---
 title: AVStream 标头
 description: AVStream 标头
-ms.assetid: 2afd5a1f-385a-4370-b751-e6f5d28d1d4e
 keywords:
-- AVStream 标头 WDK
+- AVStream 头 WDK
 - 标头 WDK AVStream
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 11f9816f014d4f47ac285bd75a4320ac536c83b5
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 64147db80bc0b07dd13b1d09a0fc3516112c2975
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63323153"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96786647"
 ---
 # <a name="avstream-headers"></a>AVStream 标头
 
@@ -20,7 +19,7 @@ ms.locfileid: "63323153"
 
 
 
-所有内核流式处理和 AVStream 都引用材料包括结构和在 Ks.h 和 Ksmedia.h 中声明的函数。 这些是必须包含微型驱动程序，以便访问 Microsoft 提供 KS 和 AVStream 类驱动程序支持的标头。
+所有内核流式处理和 AVStream 参考资料都涵盖在 Ks 和 Ksmedia 中声明的结构和函数。 这些标头是微型驱动程序为了访问 Microsoft 提供的 KS 和 AVStream 类驱动程序支持而必须包含的标头。
 
  
 

@@ -1,15 +1,14 @@
 ---
 title: NIC 交换机
 description: NIC 交换机
-ms.assetid: 7681DBB2-6645-4B06-9D95-64E7FD379029
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f661ef96df5c5a8088fa212c26444041cd2144cd
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 6a2a400bcb987ae210ee0e3e4f0351f2d523f1eb
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89216156"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96787211"
 ---
 # <a name="nic-switches"></a>NIC 交换机
 
@@ -20,9 +19,9 @@ ms.locfileid: "89216156"
 
 每个 NIC 交换机包含以下组件：
 
--   一个外部端口或 *物理*端口，提供与外部物理网络的网络连接。
+-   一个外部端口或 *物理* 端口，提供与外部物理网络的网络连接。
 
--   一个内部端口，提供 PCI Express (PCIe) 物理功能 (PF 在网络适配器上) ，并可访问外部物理网络。 内部端口称为 *虚拟端口 (VPort) *。
+-   一个内部端口，提供 PCI Express (PCIe) 物理功能 (PF 在网络适配器上) ，并可访问外部物理网络。 内部端口称为 *虚拟端口 (VPort)*。
 
     PF 始终具有创建并分配给它的 VPort。 此 VPort 称为 *默认 VPort*，由默认的 \_ VPort \_ ID 标识符引用。
 
@@ -30,11 +29,11 @@ ms.locfileid: "89216156"
 
 -   一个或多个 VPorts 提供了一个或多个 (VF) 网络适配器上的虚拟机的访问权限，该功能可访问外部物理网络。
 
-    **注意**   可以创建其他 VPorts，并将其分配到 PF 进行网络访问。
+    **注意**  可以创建其他 VPorts，并将其分配到 PF 进行网络访问。
 
      
 
-**注意**   从 Windows Server 2012 中的 NDIS 6.30 开始，SR-IOV 接口仅支持网络适配器上的一个 NIC 交换机。 此开关称为 *默认 NIC 交换机*，由 NDIS \_ 默认 \_ 交换机 \_ ID 标识符引用。
+**注意**  从 Windows Server 2012 中的 NDIS 6.30 开始，SR-IOV 接口仅支持网络适配器上的一个 NIC 交换机。 此开关称为 *默认 NIC 交换机*，由 NDIS \_ 默认 \_ 交换机 \_ ID 标识符引用。
 
  
 

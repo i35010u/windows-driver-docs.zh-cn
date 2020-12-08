@@ -1,17 +1,16 @@
 ---
 title: NDIS_STATUS_WDI_INDICATION_STOP_AP
 description: 微型端口驱动程序使用 NDIS_STATUS_WDI_INDICATION_STOP_AP 指示适配器无法在任何 PHYs 上维持802.11 接入点 (AP) 功能。
-ms.assetid: EF129BD3-6AA2-4F38-BECD-E9D526314A27
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 NDIS_STATUS_WDI_INDICATION_STOP_AP 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 4b4663b1683ee90df1c1db9f40ac8339077f1eee
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 49a37802f4e2baef4eb7f8481997d81519312452
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89213901"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96786739"
 ---
 # <a name="ndis_status_wdi_indication_stop_ap"></a>NDIS \_ 状态 \_ WDI \_ 指示 \_ 停止 \_ AP
 
@@ -48,7 +47,7 @@ ms.locfileid: "89213901"
 </tr>
 <tr class="even">
 <td><p>最低受支持的服务器</p></td>
-<td><p>Windows Server 2016</p></td>
+<td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
 <td><p>标头</p></td>
@@ -57,7 +56,7 @@ ms.locfileid: "89213901"
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [OID \_ WDI \_ 任务 \_ 启动 \_ AP](oid-wdi-task-start-ap.md)

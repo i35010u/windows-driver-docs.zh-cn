@@ -1,16 +1,15 @@
 ---
 title: NDIS_STATUS_WWAN_SMS_DELETE
 description: 微型端口驱动程序使用 NDIS_STATUS_WWAN_SMS_DELETE 通知通过 OID_WWAN_SMS_DELETE 通知 MB 服务完成以前的 DELETE 请求。
-ms.assetid: 0083dcd9-4e18-4582-993a-c4402cb552de
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 NDIS_STATUS_WWAN_SMS_DELETE 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: c5cbada2fb3f9cfae859462b68c13f9ec0a9fbc4
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 57d83be0416aff8811464e002a8c539be434fa04
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89209689"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96788306"
 ---
 # <a name="ndis_status_wwan_sms_delete"></a>NDIS \_ 状态 \_ WWAN \_ 短信 \_ 删除
 
@@ -44,7 +43,7 @@ ms.locfileid: "89209689"
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [OID \_ WWAN \_ SMS \_ 删除](oid-wwan-sms-delete.md)

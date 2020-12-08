@@ -1,15 +1,14 @@
 ---
 title: 设置设备类属性值
 description: 设置设备类属性值
-ms.assetid: a1d6908d-e43a-413d-965b-3af226d5c26f
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 69e34af3270b3e448b569cd4dd745f4783d1a538
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: d76ff2e748be127771f550391a6b2b1a6bcd5e23
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91733688"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96787349"
 ---
 # <a name="setting-a-device-class-property-value"></a>设置设备类属性值
 
@@ -46,5 +45,5 @@ ms.locfileid: "91733688"
 
 -   调用 [**SetupDiSetClassPropertyEx**](/windows/win32/api/setupapi/nf-setupapi-setupdisetclasspropertyexw) 而不是 **SetupDiSetClassProperty**。
 
--   除了提供**SetupDiSetClassPropertyEx**和**SetupDiSetClassProperty**所需的参数值外，还需提供*MachineName*参数，该参数必须设置为指向以 NULL 结尾的字符串的指针，该字符串包含计算机的 UNC 名称，包括 \\ \\ 前缀。
+-   除了提供 **SetupDiSetClassPropertyEx** 和 **SetupDiSetClassProperty** 所需的参数值外，还需提供 *MachineName* 参数，该参数必须设置为指向以 NULL 结尾的字符串的指针，该字符串包含计算机的 UNC 名称，包括 \\ \\ 前缀。
 

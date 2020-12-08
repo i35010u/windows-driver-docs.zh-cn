@@ -1,7 +1,6 @@
 ---
 title: 维护网络接口堆栈
 description: 维护网络接口堆栈
-ms.assetid: c51a2e5b-28ad-4e86-8b37-1491f85a17bb
 keywords:
 - NDIS 网络接口 WDK，堆栈维护
 - 网络接口 WDK，堆栈维护
@@ -9,12 +8,12 @@ keywords:
 - 接口堆栈表 WDK 网络
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b8a96fe4235ac543258981403f46bee9911cdc39
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: bedaea3b33e98184ae954b97a7f93731af610bb9
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89215588"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96788322"
 ---
 # <a name="maintaining-a-network-interface-stack"></a>维护网络接口堆栈
 

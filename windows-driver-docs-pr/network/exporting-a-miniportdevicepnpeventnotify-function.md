@@ -1,7 +1,6 @@
 ---
 title: 导出 MiniportDevicePnPEventNotify 函数
 description: 导出 MiniportDevicePnPEventNotify 函数
-ms.assetid: 1c6dce4e-c452-48ce-b3c9-a3fb7842f060
 keywords:
 - 即插即用 WDK NDIS 微型端口，事件通知
 - MiniportDevicePnPEventNotify
@@ -10,12 +9,12 @@ keywords:
 - 事件通知 WDK 网络
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f0fe2e6a49a4064fa675d221cc1d4cb393caee0f
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 3cbbc708bb51d45722676c961b9520f4f5b7609f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89218422"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96788409"
 ---
 # <a name="exporting-a-miniportdevicepnpeventnotify-function"></a>导出 MiniportDevicePnPEventNotify 函数
 

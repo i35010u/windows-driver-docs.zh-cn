@@ -1,15 +1,14 @@
 ---
 title: 处理大量的 SSID
 description: 处理大量的 SSID
-ms.assetid: 52bcfbd4-98f6-43e3-b697-c632f6660717
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4251b335069f5faeef94e34b74a7f2a2d74b3d45
-ms.sourcegitcommit: 67efcd26f7be8f50c92b141ccd14c9c68f4412d8
+ms.openlocfilehash: bbd341c3672cbd0eb96a44bf02dccaba07522c9b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88902653"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96788513"
 ---
 # <a name="handling-large-numbers-of-ssids"></a>处理大量的 SSID
 

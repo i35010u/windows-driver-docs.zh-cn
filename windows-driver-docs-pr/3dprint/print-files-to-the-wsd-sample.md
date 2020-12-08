@@ -1,33 +1,32 @@
 ---
 title: 将文件打印到 WSD 示例
 description: 本部分介绍如何打印到 WSD 示例。
-ms.assetid: E03A957E-C96A-4B35-BFDD-10C1D5A4CCD5
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 79fc8d71aeb7155664b92c3559052bd06bff836c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9b6242e72718e9ee0ae7fbd3a0b81e36f77836d1
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63324742"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96788115"
 ---
 # <a name="print-files-to-the-wsd-sample"></a>将文件打印到 WSD 示例
 
 
 本部分介绍如何打印到 WSD 示例。
 
-## <a name="printing-the-files-to-the-wsd-sample"></a>打印到 WSD 示例文件
+## <a name="printing-the-files-to-the-wsd-sample"></a>将文件打印到 WSD 示例
 
 
-1.  启动 3D 生成器应用程序。
+1.  启动3D 生成器应用。
 
-2.  选择一个三维模型，并单击打印。
+2.  选择3D 模型，然后单击 "打印"。
 
-    ![生成器的 3d 应用程序](images/wsd-app-16.png)
+    ![3d 生成器应用](images/wsd-app-16.png)
 
-从三维生成器应用程序发送到打印机文件将转到 c:\\Windows\\临时文件夹中，是 zip 文件。
+从3d 生成器应用发送到打印机的文件会前往 C： \\ Windows \\ Temp 文件夹，并且是 zip 文件。
 
-从三维生成器打印的 zip 文件的文件夹结构如下所示：
+从3D 生成器打印的 zip 文件的文件夹结构如下所示：
 
 ![3d 生成器 zip 文件布局](images/wsd-app-17.png)
 

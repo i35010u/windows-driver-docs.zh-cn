@@ -1,32 +1,31 @@
 ---
 title: 格式协商
 description: 格式协商
-ms.assetid: 5b6ee5ed-de5a-4832-a581-179966e79dbd
 ms.date: 11/08/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: d02eedae2c98dcd7b2f46093ed87b2fd20c4c34c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 201c6795d0512613d2cec9167ac96ed8c141c1d9
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63333780"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96786539"
 ---
 # <a name="format-negotiation"></a>格式协商
 
 
-应用程序启动音频处理后，图形生成器 sAPOs 配置到音频图形，还可以初始化 sAPOs。 与 LFX sAPO 建立音频数据的输入和输出 sAPO 格式然后协商音频服务。 这个协商过程被称为格式协商。
+在应用程序启动音频处理后，图形生成器将 sAPOs 配置为音频图形并初始化 sAPOs。 然后，音频服务与 LFX sAPO 协商，以便在 sAPO 的输入和输出中建立音频数据的格式。 此协商过程称为 "格式协商"。
 
-提供适用于 Windows Vista 音频系统效果的所有 sAPOs 必须都具有某些接口和方法。 SAPO 和音频引擎用来协商的数据格式的方法是： **IsInputFormatSupported**方法**IAudioProcessingObject**接口和**LockForProcess**并**UnlockForProcess**的方法**IAudioProcessingObjectConfiguration**接口。 
+为 Windows Vista 提供音频系统影响的所有 sAPOs 必须具有某些接口和方法。 SAPO 和音频引擎用来协商数据格式的方法包括： **IAudioProcessingObject** 接口的 **IsInputFormatSupported** 方法和 **UnlockForProcess** 接口的 **LockForProcess** 和 **IAudioProcessingObjectConfiguration** 方法。 
 
-若要启动格式协商，音频服务将首先为默认值基于 float32 的格式设置 LFX sAPO 的输出。 音频服务然后调用**IAudioProcessingObject::IsInputFormatSupported**方法的 LFX sAPO，建议的默认格式，并监视此方法的 HRESULT 的响应。 如果 LFX sAPO 可以支持的建议的格式，它将返回 S\_确定，以及对受支持的格式的引用。 如果 LFX sAPO 无法支持建议的格式，它将返回 S\_FALSE 以及对建议一个与最接近的格式的引用。 如果 LFX sAPO 不能支持建议的格式，并且没有接近的匹配项，它将返回 APOERR\_格式\_不\_受支持。 GFX sAPO 配合 LFX sAPO 的输出格式。 因此 GFX sAPO 没有包括在格式协商过程中。
+若要启动格式协商，音频服务首先将 LFX sAPO 的输出设置为基于 float32 的默认格式。 然后，音频服务调用 LFX sAPO 的 **IAudioProcessingObject：： IsInputFormatSupported** 方法，建议默认格式，并监视此方法的 HRESULT 响应。 如果 LFX sAPO 可以支持建议的格式，它将返回 S \_ OK，同时返回对支持的格式的引用。 如果 LFX sAPO 不支持所建议的格式，它将返回 S \_ FALSE，同时返回一个与建议的最匹配的格式的引用。 如果 LFX sAPO 不支持建议的格式，并且没有接近的匹配项，则它将返回 APOERR \_ 格式（ \_ 不 \_ 受支持）。 GFX sAPO 与 LFX sAPO 的输出格式一起工作。 因此，GFX sAPO 不涉及格式协商过程。
 
-数据格式选择用于处理的音频数据后，调用音频处理图形生成器**IAudioProcessingObjectConfiguration::LockForProcess** sAPOs，从而导致完成而格式选择的方法。
+选择用于处理音频数据的数据格式后，音频处理图形生成器将调用 sAPOs 的 **IAudioProcessingObjectConfiguration：： LockForProcess** 方法，从而使格式选择完成。
 
-如果 Windows Vista sAPO 将错误返回到以响应对的调用包装自定义 sAPO **LockForProcess**方法中，自定义 sAPO 必须处理该错误处理从错误的相同方式**CoCreateInstance**尝试实例化 sAPO 失败时。 Spkrfill.cpp 文件，了解有关如何覆盖系统提供 LockForProcess 方法的详细信息，请参阅。
+如果 Windows Vista sAPO 在对 **LockForProcess** 方法的调用时向包装自定义 sAPO 返回错误，则自定义 sAPO 必须处理错误，方法是在尝试实例化 sAPO 失败时处理来自 **CoCreateInstance** 的错误。 有关如何覆盖系统提供的 LockForProcess 方法的详细信息，请参阅 Spkrfill 文件。
 
-由于音频服务运行的方式，LFX 和 GFX sAPOs 必须能够互相独立地响应的查询，从有关的数据格式的音频服务。
+由于音频服务的运行方式，LFX 和 GFX sAPOs 必须能够彼此独立地做出响应，以便与有关数据格式的音频服务进行查询。
 
-**重要**  时实现自定义 sAPO 包装 Windows Vista LFX sAPO，请勿指定 APO\_标志\_FRAMESPERSECOND\_必须\_注册中的匹配项标志自定义 sAPO 的属性。 如果指定此标志，Windows Vista LFX sAPO 将不能执行演讲者填充、 耳机虚拟化或虚拟环绕。 此外，自定义 sAPO 将不能混任何音频流。 例如，自定义 sAPO 将不能混用下两个通道立体声音频流的 5.1 音频流。
+**重要提示**   实现包装 Windows Vista LFX sAPO 的自定义 sAPO 时，请不要 \_ \_ \_ \_ 在自定义 FRAMESPERSECOND 的注册属性中指定 APO 标志 sAPO 必须匹配标志。 如果指定此标志，Windows Vista LFX sAPO 将无法执行演讲者填充、耳机虚拟化或虚拟环绕。 此外，自定义 sAPO 将无法对任何音频流进行关闭。 例如，你的自定义 sAPO 将不能将5.1 音频流混合到两通道立体声音频流中。
 
  
 

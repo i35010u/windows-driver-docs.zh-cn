@@ -1,7 +1,6 @@
 ---
 title: Bug 检查 0x52 MAILSLOT_FILE_SYSTEM
-description: MAILSLOT_FILE_SYSTEM bug 检查具有 0x00000052 值。检查此错误极少出现。
-ms.assetid: 9596eea9-d19e-4e67-b7a3-0d6b7fd34f17
+description: MAILSLOT_FILE_SYSTEM bug 检查的值为0x00000052。此 bug 检查很少出现。
 keywords:
 - Bug 检查 0x52 MAILSLOT_FILE_SYSTEM
 - MAILSLOT_FILE_SYSTEM
@@ -13,22 +12,22 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 4c346292c03fb2d2b07d87f3a1570413f84abed3
-ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
+ms.openlocfilehash: a9ba0265026b84fdda2c7cdc07228f6eb0a55e4a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67519377"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96786457"
 ---
-# <a name="bug-check-0x52-mailslotfilesystem"></a>Bug 检查 0x52：邮件槽\_文件\_系统
+# <a name="bug-check-0x52-mailslot_file_system"></a>Bug 检查0x52： MAILSLOT \_ 文件 \_ 系统
 
 
-邮件槽\_文件\_检查系统错误的值为 0x00000052。
+MAILSLOT \_ 文件 \_ 系统 bug 检查的值为0x00000052。
 
-检查此错误极少出现。
+此 bug 检查很少出现。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://www.windows.com/stopcode)。
+> 本主题面向程序员。 如果您是在使用计算机时收到蓝屏错误代码的客户，请参阅[蓝屏错误疑难解答](https://www.windows.com/stopcode)。
 
 
  

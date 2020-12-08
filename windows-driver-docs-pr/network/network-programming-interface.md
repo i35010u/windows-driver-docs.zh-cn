@@ -1,7 +1,6 @@
 ---
 title: 网络编程接口
 description: 网络编程接口
-ms.assetid: 74d706e1-5398-4685-b3ab-7b4c4b6b5588
 keywords:
 - NPI WDK 网络模块注册器
 - 客户端特征结构 WDK 网络模块注册机构
@@ -10,17 +9,17 @@ keywords:
 - 调度表 WDK 网络模块注册器
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 73fd9841342499a16992fa03a5764ae28d008a2c
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 84fef673f11a7a92022f0bf14d196f379da7650c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89212347"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96787223"
 ---
 # <a name="network-programming-interface"></a>网络编程接口
 
 
-*网络编程接口*（或 NPI）定义可彼此连接的[网络模块](network-module.md)之间的接口。 注册为特定 NPI 的客户端的 [客户端模块](client-module.md) 只能附加到注册为同一 NPI 的提供程序的 [提供程序模块](provider-module.md) 。 同样，注册为特定 NPI 的提供程序的提供程序模块只能附加到注册为同一 NPI 的客户端的客户端模块。
+*网络编程接口*（或 NPI）定义可彼此连接的 [网络模块](network-module.md)之间的接口。 注册为特定 NPI 的客户端的 [客户端模块](client-module.md) 只能附加到注册为同一 NPI 的提供程序的 [提供程序模块](provider-module.md) 。 同样，注册为特定 NPI 的提供程序的提供程序模块只能附加到注册为同一 NPI 的客户端的客户端模块。
 
 每个 NPI 定义以下各项：
 

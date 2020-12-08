@@ -1,7 +1,6 @@
 ---
 title: AVC \_ 函数 \_ 查找 \_ 对等方 \_
 description: AVC \_ 函数 \_ 查找 \_ 对等方 \_
-ms.assetid: a21dde69-f005-4782-97d9-095a57b2b1a5
 keywords:
 - AVC_FUNCTION_FIND_PEER_DO 流媒体设备
 topic_type:
@@ -12,12 +11,12 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1e007b1a26911a42f241ec18699adca588717d2c
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: c1a126fcc8a6661892b1dd8b082e8f8c3694ee1e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89186803"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96786675"
 ---
 # <a name="avc_function_find_peer_do"></a>AVC \_ 函数 \_ 查找 \_ 对等方 \_
 
@@ -25,7 +24,7 @@ ms.locfileid: "89186803"
 ## <span id="ddk_avc_function_find_peer_do_ks"></span><span id="DDK_AVC_FUNCTION_FIND_PEER_DO_KS"></span>
 
 
-**AVC \_ 函数 \_ FIND \_ 对等 \_ DO**函数代码查找非虚拟的*avc.sys*实例。
+**AVC \_ 函数 \_ FIND \_ 对等 \_ DO** 函数代码查找非虚拟的 *avc.sys* 实例。
 
 ### <a name="io-status-block"></a>I/o 状态块
 
@@ -41,7 +40,7 @@ ms.locfileid: "89186803"
 <thead>
 <tr class="header">
 <th>返回值</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>
@@ -58,7 +57,7 @@ ms.locfileid: "89186803"
 
  
 
-### <a name="comments"></a>说明
+### <a name="comments"></a>注释
 
 此函数使用 AVC **PeerLocator** \_ MULTIFUNC IRB 结构的 PeerLocator 成员 \_ ，如下所示。
 
@@ -79,7 +78,7 @@ typedef struct _AVC_MULTIFUNC_IRB {
 
 ### <a name="requirements"></a>要求
 
-**标头：** 在 *avc*中声明。 包括 *avc*。
+**标头：** 在 *avc* 中声明。 包括 *avc*。
 
 ### <a name="avc_multifunc_irb-input"></a>AVC \_ MULTIFUNC \_ IRB 输入
 
@@ -87,7 +86,7 @@ typedef struct _AVC_MULTIFUNC_IRB {
 此成员的 **函数** submember 必须设置为 **AVC \_ 函数 \_ 查找 \_ 对 \_ 等** AVC \_ 函数枚举。
 
 <span id="PeerLocator"></span><span id="peerlocator"></span><span id="PEERLOCATOR"></span>**PeerLocator**  
-指定 *avc.sys*的非虚拟 (对等) 实例。
+指定 *avc.sys* 的非虚拟 (对等) 实例。
 
 此函数根据其表示的设备的节点地址，查找非虚拟的 *avc.sys* 实例。 如果找不到实例，则 IRP 完成，状态状态为 "不 \_ 成功"。 定位实例后，调用方可以通过对象提交任何 GUID \_ AVC \_ 类设备接口请求。 调用方必须释放对此对象的引用， (通过 **ObDereferenceObject**) 完成此操作。
 

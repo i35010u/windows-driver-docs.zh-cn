@@ -1,7 +1,6 @@
 ---
 title: Bug 检查 0xDF IMPERSONATING_WORKER_THREAD
-description: IMPERSONATING_WORKER_THREAD bug 检查具有 0x000000DF 值。 这表示一个工作项未完成之前禁用模拟。
-ms.assetid: d8a68b5b-3aa8-4d02-8063-420834a47f1b
+description: IMPERSONATING_WORKER_THREAD bug 检查的值为0x000000DF。 这表明工作项未在完成之前禁用模拟。
 keywords:
 - Bug 检查 0xDF IMPERSONATING_WORKER_THREAD
 - IMPERSONATING_WORKER_THREAD
@@ -13,23 +12,23 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: ca8464e0a993d276109ca8d743dbb9de0596dfff
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 953a670287306e05fe5c5d6de40505ee1f0117dc
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67361551"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96787841"
 ---
-# <a name="bug-check-0xdf-impersonatingworkerthread"></a>Bug 检查 0xDF：模拟\_辅助\_线程
+# <a name="bug-check-0xdf-impersonating_worker_thread"></a>Bug 检查0xDF：模拟 \_ 工作 \_ 线程
 
 
-正在模拟\_辅助\_线程 bug 检查的值为 0x000000DF。 这表示一个工作项未完成之前禁用模拟。
+模拟 \_ 工作 \_ 线程 bug 检查的值为0x000000DF。 这表明工作项未在完成之前禁用模拟。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)。
+> 本主题面向程序员。 如果您是在使用计算机时收到蓝屏错误代码的客户，请参阅[蓝屏错误疑难解答](https://windows.microsoft.com/windows-10/troubleshoot-blue-screen-errors)。
 
 
-## <a name="impersonatingworkerthread-parameters"></a>模拟\_辅助\_线程参数
+## <a name="impersonating_worker_thread-parameters"></a>模拟 \_ 工作 \_ 线程参数
 
 
 <table>
@@ -46,11 +45,11 @@ ms.locfileid: "67361551"
 <tbody>
 <tr class="odd">
 <td align="left"><p>1</p></td>
-<td align="left"><p>导致此错误的辅助角色例程</p></td>
+<td align="left"><p>导致此错误的辅助进程例程</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>2</p></td>
-<td align="left"><p>传递给此工作线程例程的参数</p></td>
+<td align="left"><p>传递给此辅助进程例程的参数</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>3</p></td>
@@ -58,7 +57,7 @@ ms.locfileid: "67361551"
 </tr>
 <tr class="even">
 <td align="left"><p>4</p></td>
-<td align="left"><p>保留</p></td>
+<td align="left"><p>预留</p></td>
 </tr>
 </tbody>
 </table>
@@ -68,7 +67,7 @@ ms.locfileid: "67361551"
 <a name="cause"></a>原因
 -----
 
-一个工作线程正在模拟另一个进程，并禁用然后再返回模拟失败。
+工作线程正在模拟其他进程，但未能在返回之前禁用模拟。
 
  
 

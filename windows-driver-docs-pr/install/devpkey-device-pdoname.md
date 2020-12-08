@@ -1,7 +1,6 @@
 ---
 title: DEVPKEY_Device_PDOName
 description: DEVPKEY_Device_PDOName
-ms.assetid: 1f2bc1e0-a671-47f6-9fbb-d0482b5abeca
 keywords:
 - DEVPKEY_Device_PDOName 设备和驱动程序安装
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 1b312bea0a84de756286a75b87d6cf54586a27f1
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: f8660e4b8806633a69979a78c5c449792b526e15
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90717426"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96786783"
 ---
 # <a name="devpkey_device_pdoname"></a>DEVPKEY_Device_PDOName
 
@@ -66,7 +65,7 @@ DEVPKEY_Device_PDOName 设备属性表示表示设备实例 (PDO) 的物理设�
 <a name="remarks"></a>备注
 -------
 
-Windows 将 DEVPKEY_Device_PDOName 的值设置为表示设备 (PDO) 的物理名称对象的名称。 有关 PDO 名称的详细信息，请参阅用于[**IoCreateDevice**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iocreatedevice)例程的*DeviceName*参数。
+Windows 将 DEVPKEY_Device_PDOName 的值设置为表示设备 (PDO) 的物理名称对象的名称。 有关 PDO 名称的详细信息，请参阅用于 [**IoCreateDevice**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iocreatedevice)例程的 *DeviceName* 参数。
 
 可以调用 [**SetupDiGetDeviceProperty**](/windows/win32/api/setupapi/nf-setupapi-setupdigetdevicepropertyw) 来检索 DEVPKEY_Device_PDOName 的值。
 

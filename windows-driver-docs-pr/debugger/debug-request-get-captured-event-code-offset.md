@@ -1,7 +1,6 @@
 ---
 title: 调试 \_ 请求 \_ 获取 \_ 捕获的 \_ 事件 \_ 代码 \_ 偏移量
 description: 调试 \_ 请求 \_ 获取 \_ 捕获的 \_ 事件 \_ 代码 \_ 偏移量
-ms.assetid: cdf05d4f-8a8c-4b52-b36f-9d00575fdb7b
 keywords:
 - DEBUG_REQUEST_GET_CAPTURED_EVENT_CODE_OFFSET Windows 调试
 topic_type:
@@ -12,19 +11,19 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8842ab107b3e55c085a1ed1d5b15cfa43efbb9d4
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 6af1d255b7c29209d480b1485374c1867c787eeb
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89215359"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96787787"
 ---
 # <a name="debug_request_get_captured_event_code_offset"></a>调试 \_ 请求 \_ 获取 \_ 捕获的 \_ 事件 \_ 代码 \_ 偏移量
 
 
 "调试 \_ 请求 \_ 获取 \_ 捕获 \_ \_ 的事件代码 \_ 偏移量 [**请求**](request.md) " 操作返回当前事件的指令指针。
 
-**参数**
+**Parameters**
 
 <span id="InBuffer"></span><span id="inbuffer"></span><span id="INBUFFER"></span>*InBuffer*  
 未使用。

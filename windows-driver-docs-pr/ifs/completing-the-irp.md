@@ -1,18 +1,17 @@
 ---
 title: 完成 IRP
 description: 完成 IRP
-ms.assetid: 3174b36c-feb5-497c-a6e4-0d070c658899
 keywords:
 - IRP 调度例程 WDK 文件系统，完成 Irp
 - 完成 i/o 请求 WDK 文件系统
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 689a402171bfab45c4ec9382725554ccb2595e83
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 2e3449e003b3067d0b98854aa97f8aceea92772a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89065136"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96786843"
 ---
 # <a name="completing-the-irp"></a>完成 IRP
 
@@ -40,7 +39,7 @@ ms.locfileid: "89065136"
 
 NTSTATUS 值在 ntstatus 中定义。 这些值分为四类：成功、信息性、警告和错误。 有关详细信息，请参阅 [使用 NTSTATUS 值](../kernel/using-ntstatus-values.md)。
 
-**注意**   尽管状态 \_ "挂起" 是成功的 NTSTATUS 值，但它是用于完成状态为 "挂起" 的 IRP 的编程错误 \_ 。
+**注意**   尽管状态 \_ "挂起" 是成功的 NTSTATUS 值，但它是用于完成状态为 "挂起" 的 IRP 的编程错误 \_ 。
 
  
 

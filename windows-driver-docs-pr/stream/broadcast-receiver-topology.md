@@ -1,20 +1,19 @@
 ---
 title: 广播接收器拓扑
 description: 广播接收器拓扑
-ms.assetid: d6f7614b-b7ff-4d42-8e04-fbf1b4f0445a
 keywords:
-- 广播驱动程序体系结构 WDK AVStream，广播的接收器拓扑
-- BDA WDK AVStream 广播接收器拓扑
-- 广播的接收器拓扑 WDK BDA
+- 广播驱动程序体系结构 WDK AVStream，广播接收器拓扑
+- BDA WDK AVStream，广播接收器拓扑
+- 广播接收器拓扑 WDK BDA
 - 接收方拓扑 WDK BDA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 612b0b6b4c07c42e89beaabc8ac6e91bd17e6ac5
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 91aaee65762e75c3d826325040fd1e3bfae5cdee
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63370540"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96788199"
 ---
 # <a name="broadcast-receiver-topology"></a>广播接收器拓扑
 
@@ -22,13 +21,13 @@ ms.locfileid: "63370540"
 
 
 
-一个*广播驱动程序体系结构 (BDA) 接收方拓扑*是筛选器关系图的抽象表示形式。 它被组成的逻辑节点，其中每个执行信号的操作的网络。 每个节点可以与单个筛选器相关或与筛选器中的其他节点结合使用。 以下各节讨论 BDA 接收方拓扑：
+*(BDA) 接收方拓扑的广播驱动程序体系结构* 是筛选器关系图的抽象表示形式。 它由逻辑节点网络组成，其中每个节点都对信号执行操作。 每个节点都可以与单个筛选器关联或与筛选器中的其他节点组合在一起。 以下部分讨论了 BDA 接收方拓扑：
 
 [功能拓扑](functional-topology.md)
 
-[控制节点、 筛选器和硬件](control-nodes--filters-and-hardware.md)
+[控制节点、筛选器和硬件](control-nodes--filters-and-hardware.md)
 
-[常见的控制节点和筛选器](common-control-nodes-and-filters.md)
+[常见控制节点和筛选器](common-control-nodes-and-filters.md)
 
  
 

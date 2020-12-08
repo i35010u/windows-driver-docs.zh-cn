@@ -1,19 +1,18 @@
 ---
 title: 了解静态驱动程序验证程序
 description: 了解静态驱动程序验证程序
-ms.assetid: 519e3314-2fea-4acd-8c0d-954a57e257ba
 keywords:
 - 静态驱动程序验证程序 WDK，关于静态驱动程序验证程序
 - StaticDV WDK，关于静态驱动程序验证程序
 - SDV WDK，关于静态驱动程序验证程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4cb994fbc2e71493cee9251135ce030765e36b7a
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 7a57ee56d2c69dd021c57e4605a0b115d9fc27b4
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89381369"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96786381"
 ---
 # <a name="understanding-static-driver-verifier"></a>了解静态驱动程序验证程序
 

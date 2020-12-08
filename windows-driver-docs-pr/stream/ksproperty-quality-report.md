@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ 质量 \_ 报表
 description: KSPROPERTY \_ 质量 \_ 报表属性是一个可选属性，如果 pin 支持质量管理，则应实现该属性。
-ms.assetid: 9879a28d-aa92-4583-be63-03fed67c8416
 keywords:
 - KSPROPERTY_QUALITY_REPORT 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8dce566e692454424442698088eb4fa40517b087
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 10d276774d1bd74d0606e24506d02a444f703c15
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90105658"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96788127"
 ---
 # <a name="ksproperty_quality_report"></a>KSPROPERTY \_ 质量 \_ 报表
 
@@ -84,7 +83,7 @@ KSPROPERTY \_ 质量 \_ 报告的属性值为 [**KSQUALITY**](/windows-hardware/
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSPROPERTY**](/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)

@@ -1,7 +1,6 @@
 ---
 title: 处理 MSI 中断
 description: 处理 MSI 中断
-ms.assetid: c8e2a5a4-17f5-48a3-a2d0-6eca2a0b7f45
 keywords:
 - MSI-X WDK 网络，处理中断
 - 消息-已发出信号中断 WDK 网络，处理中断
@@ -9,12 +8,12 @@ keywords:
 - 中断 WDK 网络，处理
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bbb14fd020ba6b4ba085916a433d35b71aa7f882
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: bc7eddb4041b392dab03bf6d7aad90d77dbec526
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89207291"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96788349"
 ---
 # <a name="handling-an-msi-interrupt"></a>处理 MSI 中断
 
@@ -24,11 +23,11 @@ ms.locfileid: "89207291"
 
 当网络接口卡 (NIC) 生成中断时，NDIS 将调用 [*MiniportMessageInterrupt*](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_message_interrupt) 函数。 此函数中的 *MessageId* 参数用于标识 MSI X 消息。
 
-由于不共享消息中断，因此在处理中断后， *MiniportMessageInterrupt*应始终返回**TRUE** 。
+由于不共享消息中断，因此在处理中断后， *MiniportMessageInterrupt* 应始终返回 **TRUE** 。
 
 小型小型驱动程序的 *MiniportMessageInterrupt* 函数中的工作应尽可能少。 驱动程序应将 i/o 操作延迟为 [*MiniportMessageInterruptDpc*](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_message_interrupt_dpc) 函数，NDIS 调用该函数来完成中断的延迟处理。
 
-若要在[*MiniportMessageInterrupt*](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_message_interrupt)返回后将其他延迟过程调用排队 (dpc) ，微型端口驱动程序将设置*MiniportMessageInterrupt*函数的*TargetProcessors*参数的位数。 若要从 *MiniportMessageInterrupt* 或 *MiniportMessageInterruptDPC*请求其他 dpc，微型端口驱动程序可以调用 [**NdisMQueueDpc**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismqueuedpc) 函数。
+若要在 [*MiniportMessageInterrupt*](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_message_interrupt)返回后将其他延迟过程调用排队 (dpc) ，微型端口驱动程序将设置 *MiniportMessageInterrupt* 函数的 *TargetProcessors* 参数的位数。 若要从 *MiniportMessageInterrupt* 或 *MiniportMessageInterruptDPC* 请求其他 dpc，微型端口驱动程序可以调用 [**NdisMQueueDpc**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismqueuedpc) 函数。
 
 微型端口驱动程序可以调用 **NdisMQueueDpc** 来请求其他处理器的其他 dpc。
 

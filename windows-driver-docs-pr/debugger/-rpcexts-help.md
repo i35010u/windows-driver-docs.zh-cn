@@ -1,9 +1,8 @@
 ---
-title: rpcexts.help
-description: Rpcexts.help 扩展显示所有 Rpcexts.dll 扩展命令在命令提示符窗口中显示帮助文本。
-ms.assetid: 1d7c238b-9f08-461b-ba7b-7ce1eb1b7b9f
+title: rpcexts。帮助
+description: Rpcexts 扩展在命令提示符窗口中显示一个帮助文本，其中显示所有 Rpcexts.dll 扩展命令。
 keywords:
-- rpcexts.help Windows 调试
+- rpcexts Windows 调试
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: a6eabad5c03828f5d0c71de21b318ce77d42247b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 38bbd1446d2faaed084b9c72cffacd4c66e300b9
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63335716"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96787029"
 ---
 # <a name="rpcextshelp"></a>!rpcexts.help
 
 
-**！ Rpcexts.help**扩展显示所有 Rpcexts.dll 扩展命令在命令提示符窗口中显示帮助文本。
+**！ Rpcexts** 在命令提示符窗口中显示一个帮助文本，其中显示所有 Rpcexts.dll 扩展命令。
 
 ```dbgcmd
 !rpcexts.help 
@@ -31,7 +30,7 @@ ms.locfileid: "63335716"
 ## <span id="ddk__rpcexts_help_dbg"></span><span id="DDK__RPCEXTS_HELP_DBG"></span>
 
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 <table>
 <colgroup>

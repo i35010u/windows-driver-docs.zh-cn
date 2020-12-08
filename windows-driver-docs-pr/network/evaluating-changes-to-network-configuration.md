@@ -1,19 +1,18 @@
 ---
 title: 评估对网络配置所做的更改
 description: 评估对网络配置所做的更改
-ms.assetid: 7e73fbb4-8d7d-44fb-96c9-aa748c207553
 keywords:
 - 通知对象 WDK 网络，更改处理
 - 网络通知对象 WDK，更改处理
 - 对网络配置 WDK 的更改
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3c2f328e6b1d2e754d2bd3413f0f15735748c2bb
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 40cc1874ef2e64932b786cb0e4d6aef809600d7e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89215905"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96788449"
 ---
 # <a name="evaluating-changes-to-network-configuration"></a>评估对网络配置所做的更改
 

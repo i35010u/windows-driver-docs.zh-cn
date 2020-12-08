@@ -1,16 +1,15 @@
 ---
 title: OID_GEN_INTERFACE_INFO
 description: 作为查询，使用 OID_GEN_INTERFACE_INFO OID 获取网络接口的当前状态和统计信息。
-ms.assetid: fa1dd52f-7cf6-4e95-af15-02ae65fcb872
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_GEN_INTERFACE_INFO 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: eb4b9de30def9e02549e398429044dfa3a3226bf
-ms.sourcegitcommit: f8619f20a0903dd64f8641a5266ecad6df5f1d57
+ms.openlocfilehash: e45fb340cb8221b0e70858aefd6a89476fd91e11
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91423754"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96787193"
 ---
 # <a name="oid_gen_interface_info"></a>OID \_ 代 \_ 接口 \_ 信息
 
@@ -20,7 +19,7 @@ ms.locfileid: "91423754"
 **版本信息**
 
 <a href="" id="windows-vista-and-later"></a>Windows Vista 和更高版本  
-。
+支持。
 
 <a href="" id="ndis-6-0-and-later-miniport-drivers"></a>NDIS 6.0 和更高版本的微型端口驱动程序  
 未请求。 仅适用于 NDIS 接口提供程序。
@@ -48,7 +47,7 @@ ms.locfileid: "91423754"
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**NDIS \_ 接口 \_ 信息**](/windows/win32/api/ifdef/ns-ifdef-ndis_interface_information)

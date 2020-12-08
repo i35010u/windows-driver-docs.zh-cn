@@ -1,9 +1,8 @@
 ---
-title: rpcexts.getthreadinfo
-description: Rpcexts.getthreadinfo 扩展搜索线程信息的系统的 RPC 状态信息。
-ms.assetid: 904605e7-c53b-4e29-874f-7a055fc7a02b
+title: rpcexts. getthreadinfo
+description: Rpcexts. getthreadinfo 扩展会在系统的 RPC 状态信息中搜索线程信息。
 keywords:
-- rpcexts.getthreadinfo Windows 调试
+- rpcexts getthreadinfo Windows 调试
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,36 +11,36 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: ff41bcd6c0440acac8105aeea45fcc5c63a4026f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 98bd8ef537b39993ada81127dcc8e3e78cde57f6
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63338851"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96787031"
 ---
 # <a name="rpcextsgetthreadinfo"></a>!rpcexts.getthreadinfo
 
 
-**！ Rpcexts.getthreadinfo**扩展搜索线程信息的系统的 RPC 状态信息。
+**！ Rpcexts getthreadinfo** 扩展会在系统的 RPC 状态信息中搜索线程信息。
 
 ```dbgcmd
 !rpcexts.getthreadinfo ProcessID [ThreadID] 
 !rpcexts.getthreadinfo -? 
 ```
 
-## <a name="span-idddkrpcextsgetthreadinfodbgspanspan-idddkrpcextsgetthreadinfodbgspanparameters"></a><span id="ddk__rpcexts_getthreadinfo_dbg"></span><span id="DDK__RPCEXTS_GETTHREADINFO_DBG"></span>参数
+## <a name="span-idddk__rpcexts_getthreadinfo_dbgspanspan-idddk__rpcexts_getthreadinfo_dbgspanparameters"></a><span id="ddk__rpcexts_getthreadinfo_dbg"></span><span id="DDK__RPCEXTS_GETTHREADINFO_DBG"></span>参数
 
 
-<span id="_______ProcessID______"></span><span id="_______processid______"></span><span id="_______PROCESSID______"></span> *ProcessID*   
-指定的进程 ID (PID) 包含所需的线程的进程。
+<span id="_______ProcessID______"></span><span id="_______processid______"></span><span id="_______PROCESSID______"></span>*ProcessID*   
+指定包含所需线程的进程的进程 ID (PID) 。
 
-<span id="_______ThreadID______"></span><span id="_______threadid______"></span><span id="_______THREADID______"></span> *ThreadID*   
-指定要显示线程的线程 ID。 如果省略，将显示指定的进程中的所有线程。
+<span id="_______ThreadID______"></span><span id="_______threadid______"></span><span id="_______THREADID______"></span>*ThreadID*   
+指定要显示的线程的线程 ID。 如果省略，则将显示指定进程中的所有线程。
 
 <span id="_______-_______"></span> **-?**   
-在命令提示符窗口中显示此扩展的一些简要帮助文本。
+在命令提示符窗口中显示此扩展的一些简短帮助文本。
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 <table>
 <colgroup>
@@ -62,16 +61,16 @@ ms.locfileid: "63338851"
 
  
 
-### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>其他信息
+### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>附加信息
 
-有关调试 Microsoft 远程过程调用 (RPC) 的详细信息，请参阅[RPC 调试](rpc-debugging.md)。
+有关调试 Microsoft 远程过程调用 (RPC) 的详细信息，请参阅 [Rpc 调试](rpc-debugging.md)。
 
 <a name="remarks"></a>备注
 -------
 
-与 CDB 或用户模式下 WinDbg，则仅可以使用此扩展。
+此扩展只能与 CDB 一起使用，也可与用户模式 WinDbg 一起使用。
 
-下面是一个示例：
+以下是示例：
 
 ```dbgcmd
 0:002> !rpcexts.getthreadinfo 26c
@@ -82,7 +81,7 @@ Searching for thread info ...
 026c 0000.0005 03 00000254 0004ca9b
 ```
 
-有关使用 DbgRpc 工具的类似示例，请参阅[获取 RPC 线程信息](get-rpc-thread-information.md)。
+有关使用 DbgRpc 工具的类似示例，请参阅 [获取 RPC 线程信息](get-rpc-thread-information.md)。
 
  
 

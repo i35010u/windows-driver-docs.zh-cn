@@ -1,18 +1,17 @@
 ---
 title: 筛选器模块直接 OID 请求
 description: 筛选器模块直接 OID 请求
-ms.assetid: 0ab7079b-6578-4932-a276-40a961b55efe
 keywords:
 - 直接 OID 请求接口 WDK 网络
 - 直接 OID 请求路径 WDK 网络
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0ec7f1ebe51126c18bab98fa63d22b2d378a30f0
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 2143eee38c9ae1fc7e0099b450cdbe98a395dfe3
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90103770"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96786761"
 ---
 # <a name="filter-module-direct-oid-requests"></a>筛选器模块直接 OID 请求
 
@@ -20,11 +19,11 @@ ms.locfileid: "90103770"
 
 
 
-为了支持直接 OID 请求路径，筛选器驱动程序在[**NDIS \_ 筛选器 \_ 驱动程序 \_ 特征**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_filter_driver_characteristics)结构中提供*FilterXxx*函数入口点，Ndis 为筛选器驱动程序提供**NdisF * Xxx*** 函数。
+为了支持直接 OID 请求路径，筛选器驱动程序在 [**NDIS \_ 筛选器 \_ 驱动程序 \_ 特征**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_filter_driver_characteristics)结构中提供 *FilterXxx* 函数入口点，Ndis 为筛选器驱动程序提供 **NdisF * Xxx*** 函数。
 
-*直接 OID 请求接口*类似于标准 OID 请求接口。 例如， [**NdisFDirectOidRequest**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfdirectoidrequest) 和 [*FilterDirectOidRequest*](/windows-hardware/drivers/ddi/ndis/nc-ndis-filter_direct_oid_request) 函数类似于 [**NdisFOidRequest**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfoidrequest) 和 [*FilterOidRequest*](/windows-hardware/drivers/ddi/ndis/nc-ndis-filter_oid_request) 函数。
+*直接 OID 请求接口* 类似于标准 OID 请求接口。 例如， [**NdisFDirectOidRequest**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfdirectoidrequest) 和 [*FilterDirectOidRequest*](/windows-hardware/drivers/ddi/ndis/nc-ndis-filter_direct_oid_request) 函数类似于 [**NdisFOidRequest**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfoidrequest) 和 [*FilterOidRequest*](/windows-hardware/drivers/ddi/ndis/nc-ndis-filter_oid_request) 函数。
 
-**注意**   NDIS 6.1 和更高版本支持用于直接 OID 请求接口的特定 Oid。 不支持在 NDIS 6.1 和某些 NDIS 6.1 Oid 之前存在的 Oid。 若要确定 OID 是否可用于直接 Oid 接口，请参阅 "OID 引用" 页。 例如，请参阅 [OID \_ TCP \_ 任务 \_ IPSEC \_ 卸载 \_ V2 \_ 添加 \_ SA](./oid-tcp-task-ipsec-offload-v2-add-sa.md) OID 中的说明。
+**注意**  NDIS 6.1 和更高版本支持用于直接 OID 请求接口的特定 Oid。 不支持在 NDIS 6.1 和某些 NDIS 6.1 Oid 之前存在的 Oid。 若要确定 OID 是否可用于直接 Oid 接口，请参阅 "OID 引用" 页。 例如，请参阅 [OID \_ TCP \_ 任务 \_ IPSEC \_ 卸载 \_ V2 \_ 添加 \_ SA](./oid-tcp-task-ipsec-offload-v2-add-sa.md) OID 中的说明。
 
  
 

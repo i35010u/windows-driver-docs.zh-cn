@@ -1,17 +1,16 @@
 ---
 title: NDIS 调试概述
 description: NDIS 调试概述
-ms.assetid: d15e8a0c-e553-4e0d-84ed-5fdc2026a2d3
 keywords:
 - NDIS 调试，概述
 ms.date: 05/14/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: a7adce8fbb7f3b77d8550d10ec8bb255ae43b4ed
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: c7d1b495cf03afd343280430e5a0c8004df967dc
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89216650"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96786967"
 ---
 # <a name="overview-of-ndis-debugging"></a>NDIS 调试概述
 

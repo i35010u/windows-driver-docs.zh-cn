@@ -1,7 +1,6 @@
 ---
 title: Bug 检查 0x62 OBJECT1_INITIALIZATION_FAILED
-description: OBJECT1_INITIALIZATION_FAILED bug 检查具有 0x00000062 值。检查此错误极少出现。
-ms.assetid: 4039e240-2660-42a8-97bd-4a4907eb5773
+description: OBJECT1_INITIALIZATION_FAILED bug 检查的值为0x00000062。此 bug 检查很少出现。
 keywords:
 - Bug 检查 0x62 OBJECT1_INITIALIZATION_FAILED
 - OBJECT1_INITIALIZATION_FAILED
@@ -13,22 +12,22 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 133ceb784e242929174bc86e384e3f3e56125568
-ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
+ms.openlocfilehash: e13f87381b92d95547191d6da977b8528d8daa0d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67519303"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96786419"
 ---
-# <a name="bug-check-0x62-object1initializationfailed"></a>Bug 检查 0x62：对象 1\_初始化\_失败
+# <a name="bug-check-0x62-object1_initialization_failed"></a>Bug 检查0x62： OBJECT1 \_ 初始化 \_ 失败
 
 
-对象 1\_初始化\_失败错误检查的值为 0x00000062。
+OBJECT1 \_ 初始化 \_ 失败 bug 检查的值为0x00000062。
 
-检查此错误极少出现。
+此 bug 检查很少出现。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://www.windows.com/stopcode)。
+> 本主题面向程序员。 如果您是在使用计算机时收到蓝屏错误代码的客户，请参阅[蓝屏错误疑难解答](https://www.windows.com/stopcode)。
 
 
  

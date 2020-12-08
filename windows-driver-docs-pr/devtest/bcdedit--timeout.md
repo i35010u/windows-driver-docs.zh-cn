@@ -1,7 +1,6 @@
 ---
-title: BCDEdit/timeout
-description: '**BCDEdit/timeout**命令在启动管理器选择默认条目之前设置等待时间（以秒为单位）。'
-ms.assetid: d8f238ae-fb0f-4c62-b149-0e066bfa4d5f
+title: BCDEdit /timeout
+description: '**BCDEdit/timeout** 命令在启动管理器选择默认条目之前设置等待时间（以秒为单位）。'
 ms.date: 09/23/2020
 keywords:
 - BCDEdit/timeout 驱动程序开发工具
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: beb53eb705861dd5bd58f015ca9ddc0eb3669ae2
-ms.sourcegitcommit: f2fbb6e54e085e9329288cee49860fe380be9c4c
+ms.openlocfilehash: a18dfe40fb1c5c2564600fac0db2dddbae410081
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91778965"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96786913"
 ---
-<a name="bcdedit-timeout"></a>BCDEdit/timeout
+<a name="bcdedit-timeout"></a>BCDEdit /timeout
 ============
 
-**BCDEdit/timeout**命令在启动管理器选择默认条目之前设置等待时间（以秒为单位）。 有关设置默认条目的信息，请运行 "bcdedit/？ 默认值 "。
+**BCDEdit/timeout** 命令在启动管理器选择默认条目之前设置等待时间（以秒为单位）。 有关设置默认条目的信息，请运行 "bcdedit/？ 默认值 "。
 
 ``` syntax
 bcdedit /timeout <timeout>

@@ -1,7 +1,6 @@
 ---
 title: CM_Get_DevNode_Custom_Property
 description: CM_Get_DevNode_Custom_Property
-ms.assetid: 15b76dab-f9a9-4413-933e-0b844523db91
 keywords:
 - CM_Get_DevNode_Custom_PropertyA
 - CM_Get_DevNode_Custom_PropertyW
@@ -15,13 +14,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 034740e2babd7ec9861828826a27af7a86c84ecd
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5604f718320774d0b45e8d5deb83a1646609e977
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63373890"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96787475"
 ---
-# <a name="cmgetdevnodecustomproperty"></a>CM_Get_DevNode_Custom_Property
+# <a name="cm_get_devnode_custom_property"></a>CM_Get_DevNode_Custom_Property
 
 此函数保留供系统使用。

@@ -1,15 +1,14 @@
 ---
 title: KSMETHODSETID \_ BdaDeviceConfiguration
 description: KSMETHODSETID \_ BdaDeviceConfiguration
-ms.assetid: a0014869-2ea0-4f55-be3a-da1e624ad61c
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cc944e710ae90adb5e3a3eabff1088cbf728b27f
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: ee836b092c719a79a1f2e5683283ceae7164cf4b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89188411"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96788169"
 ---
 # <a name="ksmethodsetid_bdadeviceconfiguration"></a>KSMETHODSETID \_ BdaDeviceConfiguration
 

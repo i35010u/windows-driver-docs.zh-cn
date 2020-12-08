@@ -1,7 +1,6 @@
 ---
 title: AVC \_ 函数 \_ 获取
 description: AVC \_ 函数 \_ 获取
-ms.assetid: c250d800-1777-44c0-8902-09017eb46c78
 keywords:
 - AVC_FUNCTION_ACQUIRE 流媒体设备
 topic_type:
@@ -12,16 +11,16 @@ api_type:
 - NA
 ms.date: 09/11/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 5409423c328a61e17196b69018ffba406b4b8d13
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 231ea434ee757e384164eb4784df3622448c5aea
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89186831"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96788225"
 ---
 # <a name="avc_function_acquire"></a>AVC \_ 函数 \_ 获取
 
-**AVC \_ 函数 \_ 获取**函数代码会导致*avc.sys*建立由缓存的 AVCCONNECTINFO 值建议的任何连接。
+**AVC \_ 函数 \_ 获取** 函数代码会导致 *avc.sys* 建立由缓存的 AVCCONNECTINFO 值建议的任何连接。
 
 ## <a name="io-status-block"></a>I/o 状态块
 
@@ -37,7 +36,7 @@ ms.locfileid: "89186831"
 <thead>
 <tr class="header">
 <th>返回值</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>
@@ -77,19 +76,19 @@ typedef struct _AVC_MULTIFUNC_IRB {
 
 ## <a name="requirements"></a>要求
 
-**标头：** 在 *avc*中声明。 包括 *avc*。
+**标头：** 在 *avc* 中声明。 包括 *avc*。
 
 ## <a name="avc_multifunc_irb-input"></a>AVC \_ MULTIFUNC \_ IRB 输入
 
 **通用**  
 
-此成员的 **函数** submember 必须设置为 AVC 函数从 AVC 函数的枚举中 ** \_ \_ 获取** \_ 。
+此成员的 **函数** submember 必须设置为 AVC 函数从 AVC 函数的枚举中 **\_ \_ 获取** \_ 。
 
 **PinId**  
 
 指定要为其获取连接的 pin (或 ID) 的偏移量。
 
-*avc.sys*的虚拟实例不支持此函数代码。
+*avc.sys* 的虚拟实例不支持此函数代码。
 
 当 pin 变为活动状态时，子单位驱动程序必须使用此函数。
 

@@ -1,7 +1,6 @@
 ---
 title: CM_Intersect_Range_List
 description: CM_Intersect_Range_List
-ms.assetid: 37504017-ff18-4b46-a202-90db4485f282
 keywords:
 - CM_Intersect_Range_List 设备和驱动程序安装
 topic_type:
@@ -12,13 +11,13 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: c4d8ac62c0214d12143051e1bfcb0e5edb024787
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5d8de67e77fd905b9506c47f085c4422d0beceb4
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63385555"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96787459"
 ---
-# <a name="cmintersectrangelist"></a>CM_Intersect_Range_List
+# <a name="cm_intersect_range_list"></a>CM_Intersect_Range_List
 
 此函数保留供系统使用。

@@ -1,17 +1,16 @@
 ---
 title: 枚举 GPU 引擎功能
 description: 从 Windows 8.1 开始，显示微型端口驱动程序必须实现 DxgkDdiGetNodeMetadata 函数，该函数用于查询 GPU 节点的引擎功能。
-ms.assetid: 822FEB3E-A39D-4B33-BD9D-F3166EF99AF8
 keywords:
 - GPU 节点，枚举 WDK 显示驱动程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3c464aef836ab16220c37a3c84b2f328f0aab931
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: b62d4a277bea3713b2b13c94e1f5dffb565b65fc
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89064828"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96786889"
 ---
 # <a name="enumerating-gpu-engine-capabilities"></a>枚举 GPU 引擎功能
 
@@ -29,7 +28,7 @@ ms.locfileid: "89064828"
 -   [**DXGKARG \_ GETNODEMETADATA**](./index.md)
 -   [**DXGK \_ 引擎 \_ 类型**](/windows-hardware/drivers/ddi/d3dkmdt/ne-d3dkmdt-dxgk_engine_type)
 
-指向[*DxgkDdiGetNodeMetadata*](/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_getnodemetadata)函数的指针由[**驱动程序 \_ 初始化 \_ 数据**](/windows-hardware/drivers/ddi/dispmprt/ns-dispmprt-_driver_initialization_data)结构的**DxgkDdiGetNodeMetadata**成员提供。
+指向 [*DxgkDdiGetNodeMetadata*](/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_getnodemetadata)函数的指针由 [**驱动程序 \_ 初始化 \_ 数据**](/windows-hardware/drivers/ddi/dispmprt/ns-dispmprt-_driver_initialization_data)结构的 **DxgkDdiGetNodeMetadata** 成员提供。
 
 ## <a name="span-idgpu_node_architecturespanspan-idgpu_node_architecturespanspan-idgpu_node_architecturespangpu-node-architecture"></a><span id="GPU_node_architecture"></span><span id="gpu_node_architecture"></span><span id="GPU_NODE_ARCHITECTURE"></span>GPU 节点体系结构
 

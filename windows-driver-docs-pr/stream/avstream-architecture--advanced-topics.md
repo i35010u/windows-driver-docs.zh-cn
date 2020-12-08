@@ -1,17 +1,16 @@
 ---
-title: AVStream 体系结构的高级主题
-description: AVStream 体系结构的高级主题
-ms.assetid: 05e330f0-df6a-49bf-8033-a16388bf0f9e
+title: AVStream 体系结构高级主题
+description: AVStream 体系结构高级主题
 keywords:
 - AVStream WDK，体系结构
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6dd5b3e89fc08374cffc6b69831d39d803b934d6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2c97e1cd2c378b3c6df1ed6c9cee1f25663ef2a5
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63359665"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96786669"
 ---
 # <a name="avstream-architecture-advanced-topics"></a>AVStream 体系结构：高级主题
 
@@ -21,9 +20,9 @@ ms.locfileid: "63359665"
 
 本部分包含以下信息：
 
-[电源和 AVStream 中的状态更改](power-and-state-changes-in-avstream.md)
+[AVStream 中的电源和状态更改](power-and-state-changes-in-avstream.md)
 
-[对象的包](object-bags.md)
+[对象包](object-bags.md)
 
 [AVStream 中的流控制门](flow-control-gates-in-avstream.md)
 
@@ -35,13 +34,13 @@ ms.locfileid: "63359665"
 
 [AVStream 拆分器](avstream-splitters.md)
 
-[数据区域结合 AVStream](data-range-intersections-in-avstream.md)
+[AVStream 中的数据范围交集](data-range-intersections-in-avstream.md)
 
-[与流式处理代理模块内核使用 AVStream](using-avstream-with-the-kernel-streaming-proxy-module.md)
+[将 AVStream 与内核流式处理代理模块配合使用](using-avstream-with-the-kernel-streaming-proxy-module.md)
 
-[Stream 指针](stream-pointers.md)
+[流指针](stream-pointers.md)
 
-[在 AVStream Mutex](mutexes-in-avstream.md)
+[AVStream 中的互斥](mutexes-in-avstream.md)
 
 [AVStream 时钟](avstream-clocks.md)
 

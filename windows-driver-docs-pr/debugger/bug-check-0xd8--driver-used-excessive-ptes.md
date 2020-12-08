@@ -1,7 +1,6 @@
 ---
 title: Bug 检查 0xD8 DRIVER_USED_EXCESSIVE_PTES
-description: DRIVER_USED_EXCESSIVE_PTES bug 检查具有 0x000000D8 值。 这表示，有没有更多的系统页表项 (PTE) 剩余。
-ms.assetid: a11212eb-8dd7-49f3-9b23-237ed88b9cff
+description: DRIVER_USED_EXCESSIVE_PTES bug 检查的值为0x000000D8。 这表明 (PTE) 剩余的系统页表项不存在。
 keywords:
 - Bug 检查 0xD8 DRIVER_USED_EXCESSIVE_PTES
 - DRIVER_USED_EXCESSIVE_PTES
@@ -13,23 +12,23 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 22f8c548bd0cea54c03e4c99a4f5f9bfa273e9df
-ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
+ms.openlocfilehash: b92e46bc36704bd644461b10f1791f954d05f055
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67518854"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96787923"
 ---
-# <a name="bug-check-0xd8-driverusedexcessiveptes"></a>Bug 检查 0xD8：驱动程序\_USED\_过量\_PTE
+# <a name="bug-check-0xd8-driver_used_excessive_ptes"></a>Bug 检查0xD8：驱动程序 \_ 使用 \_ 过多 \_ pte
 
 
-该驱动程序\_USED\_过量\_PTE bug 检查的值为 0x000000D8。 这表示，有没有更多的系统页表项 (PTE) 剩余。
+\_使用 \_ 过多 pte bug 检查的驱动程序的 \_ 值为0x000000D8。 这表明 (PTE) 剩余的系统页表项不存在。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://www.windows.com/stopcode)。
+> 本主题面向程序员。 如果您是在使用计算机时收到蓝屏错误代码的客户，请参阅[蓝屏错误疑难解答](https://www.windows.com/stopcode)。
 
 
-## <a name="driverusedexcessiveptes-parameters"></a>驱动程序\_USED\_过量\_PTE 参数
+## <a name="driver_used_excessive_ptes-parameters"></a>驱动程序 \_ 使用 \_ 过多 \_ pte 参数
 
 
 <table>
@@ -46,36 +45,36 @@ ms.locfileid: "67518854"
 <tbody>
 <tr class="odd">
 <td align="left"><p>1</p></td>
-<td align="left"><p>为导致错误 （Unicode 字符串） 的驱动程序的名称的指针或为零</p></td>
+<td align="left"><p>一个指针，指向导致错误的驱动程序的名称 (Unicode 字符串) 或零</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>2</p></td>
-<td align="left"><p>Pte 驱动程序导致了错误 （如果参数 1 为非零值） 使用数</p></td>
+<td align="left"><p>导致错误的驱动程序所使用的 Pte 数 (if 参数1是否为非零值) </p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>3</p></td>
-<td align="left"><p>总可用的系统 Pte</p></td>
+<td align="left"><p>可用系统 Pte 总数</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>4</p></td>
-<td align="left"><p>总系统 Pte</p></td>
+<td align="left"><p>系统 Pte 总数</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-如果无法确定导致错误的驱动程序，其名称是蓝色屏幕上输出和位置在内存中存储 (PUNICODE\_字符串) **KiBugCheckDriver**。
+如果能够识别出导致错误的驱动程序，则其名称将打印在蓝屏上，并存储在内存中的 (PUNICODE\_STRING) KiBugCheckDriver  位置。
 
 <a name="cause"></a>原因
 -----
 
-这通常被由于不正确地清理其内存使用的驱动程序。 参数 1 显示了占用了大多数 Pte 驱动程序。 调用堆栈会显示哪个驱动程序实际上导致 bug 检查。
+这通常是由于驱动程序未正确清理其内存使用而导致的。 参数1显示已使用最多 Pte 的驱动程序。 调用堆栈将揭示哪个驱动程序实际导致了 bug 检查。
 
-<a name="resolution"></a>分辨率
+<a name="resolution"></a>解决方法
 ----------
 
-这两个驱动程序可能需要修复。 系统 Pte 总数可能还需要增加。
+这两个驱动程序可能需要修复。 系统 Pte 的总数可能还需要增加。
 
  
 

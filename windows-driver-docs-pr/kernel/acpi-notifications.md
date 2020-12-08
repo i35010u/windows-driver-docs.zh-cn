@@ -1,17 +1,16 @@
 ---
 title: ACPI 通知
 description: PEP 的 AcceptAcpiNotification 回调例程收到的每个 ACPI 通知都附带一个通知参数，该参数指示通知的类型和数据参数。
-ms.assetid: E4DD4386-8008-463B-B048-DE8E559A7456
 keywords:
 - AcceptAcpiNotification
 ms.date: 01/17/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: bfa7ac9f057a464ece015cf904d5e4c333cdeeae
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 4ba74aca950b2405cdd44e1ced868df781efdb2f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89189559"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96787341"
 ---
 # <a name="acpi-notifications"></a>ACPI 通知
 
@@ -21,7 +20,7 @@ PEP 的 [*AcceptAcpiNotification*](/windows-hardware/drivers/ddi/pepfx/nc-pepfx-
 
 AcceptAcpiNotification 回调例程使用以下 ACPI 通知 Id。
 
-|通知 ID |值 |关联的结构|
+|通知 ID |“值” |关联的结构|
 |---|---|---| 
 |PEP_NOTIFY_ACPI_PREPARE_DEVICE| 0x01 |PEP_ACPI_PREPARE_DEVICE| 
 |PEP_NOTIFY_ACPI_ABANDON_DEVICE |0x02 |PEP_ACPI_ABANDON_DEVICE |

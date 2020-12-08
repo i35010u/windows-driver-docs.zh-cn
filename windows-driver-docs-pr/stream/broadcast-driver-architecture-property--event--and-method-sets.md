@@ -1,15 +1,14 @@
 ---
 title: 广播驱动程序体系结构属性、事件和方法集
 description: 广播驱动程序体系结构属性、事件和方法集
-ms.assetid: 4323c19a-e47d-4ec6-a39c-3f2e95c526e4
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0d8df76c6e9cd61b3953ecaf535cef93a233b680
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: bfe86ae656370447266b13b1003e47c6f49d4d77
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89192409"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96788207"
 ---
 # <a name="broadcast-driver-architecture-property-event-and-method-sets"></a>广播驱动程序体系结构属性、事件和方法集
 
@@ -17,7 +16,7 @@ ms.locfileid: "89192409"
 ## <span id="ddk_broadcast_driver_architecture_property_event_and_method_sets_ks"></span><span id="DDK_BROADCAST_DRIVER_ARCHITECTURE_PROPERTY_EVENT_AND_METHOD_SETS_KS"></span>
 
 
-本部分记录 BDA 微型驱动程序实现的属性、事件和方法集。 这些集是在 *bdamedia*中定义的。 BDA 微型驱动程序可以将这些集中的一些属性和方法发送到 BDA 支持库中的默认实现。 有关详细信息，请参阅 [广播驱动程序体系结构微型驱动程序](./broadcast-driver-architecture-minidrivers.md) 。有关微型驱动程序如何使用 BDA 支持库来提供这些集的默认处理的信息，请参阅。
+本部分记录 BDA 微型驱动程序实现的属性、事件和方法集。 这些集是在 *bdamedia* 中定义的。 BDA 微型驱动程序可以将这些集中的一些属性和方法发送到 BDA 支持库中的默认实现。 有关详细信息，请参阅 [广播驱动程序体系结构微型驱动程序](./broadcast-driver-architecture-minidrivers.md) 。有关微型驱动程序如何使用 BDA 支持库来提供这些集的默认处理的信息，请参阅。
 
 以下各节提供了有关 BDA 属性、事件和方法集的详细信息：
 
@@ -58,7 +57,7 @@ BDA 数据包标识符 (PID) filter 属性集控制 PID 筛选器节点。 PID �
 BDA 引脚事件集通知其他筛选器或与 pin 相关的事件的插件。
 
 <span id="KSPROPSETID_BdaSignalStats"></span><span id="kspropsetid_bdasignalstats"></span><span id="KSPROPSETID_BDASIGNALSTATS"></span>[KSPROPSETID \_ BdaSignalStats](kspropsetid-bdasignalstats.md)  
-"BDA 信号统计信息" 属性集从控制节点或 pin 检索信号统计信息。 若要从 pin 获取信号统计信息，请**NodeId**将 KSP \_ 节点结构的节点2成员设置为−1。
+"BDA 信号统计信息" 属性集从控制节点或 pin 检索信号统计信息。 若要从 pin 获取信号统计信息，请 **NodeId** 将 KSP \_ 节点结构的节点2成员设置为−1。
 
 <span id="KSPROPSETID_BdaTableSection"></span><span id="kspropsetid_bdatablesection"></span><span id="KSPROPSETID_BDATABLESECTION"></span>[KSPROPSETID \_ BdaTableSection](kspropsetid-bdatablesection.md)  
 当在节点的输出上传递数据时，"BDA 表" 部分属性集向节点提供了一个要使用的节点。
@@ -69,7 +68,7 @@ BDA 拓扑属性集检索筛选器中的节点功能和连接。
 <span id="KSPROPSETID_BdaVoidTransform"></span><span id="kspropsetid_bdavoidtransform"></span><span id="KSPROPSETID_BDAVOIDTRANSFORM"></span>[KSPROPSETID \_ BdaVoidTransform](kspropsetid-bdavoidtransform.md)  
 BDA void 转换属性集控制节点启动和停止运行的时间。
 
-**注意**   可在 Windows XP 和更高版本上使用 BDA 属性、事件和方法集。 仅当在该平台上安装了 DirectX 9.0 和更高版本时，才可在 Windows 2000 平台上使用这些集。
+**注意**   可在 Windows XP 和更高版本上使用 BDA 属性、事件和方法集。 仅当在该平台上安装了 DirectX 9.0 和更高版本时，才可在 Windows 2000 平台上使用这些集。
 
  
 

@@ -1,29 +1,28 @@
 ---
 title: 查询错误注入状态（功能索引 16）
-description: 此函数返回 NVDIMM N 错误注入的状态。
-ms.assetid: 7CE07551-666F-4E07-8115-806F6256B595
+description: 此函数返回 NVDIMM-N 错误注入的状态。
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 1f12342d3466f019ff23a431496bb4c4f86b77af
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 123934c7b55ed4e0de0d389ed12c4cb1c36167db
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63366267"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96788237"
 ---
 # <a name="query-error-injection-status-function-index-16"></a>查询错误注入状态（功能索引 16）
 
 
-此函数返回 NVDIMM N 错误注入的状态。 该平台可以选择仅启用在特定情况下，错误注入，例如用户配置的 BIOS 设置后。
+此函数返回 NVDIMM-N 错误注入的状态。 平台可以选择仅在特定情况下启用错误注入，例如，在用户配置 BIOS 设置之后。
 
-## <a name="span-idinputspanspan-idinputspanspan-idinputspaninput"></a><span id="Input"></span><span id="input"></span><span id="INPUT"></span>输入
+## <a name="span-idinputspanspan-idinputspanspan-idinputspaninput"></a><span id="Input"></span><span id="input"></span><span id="INPUT"></span>送
 
 
 ### <a name="span-idargs3spanspan-idargs3spanspan-idargs3spanargs3"></a><span id="Args3"></span><span id="args3"></span><span id="ARGS3"></span>Args3
 
 无。
 
-## <a name="span-idoutputspanspan-idoutputspanspan-idoutputspanoutput"></a><span id="Output"></span><span id="output"></span><span id="OUTPUT"></span>Output
+## <a name="span-idoutputspanspan-idoutputspanspan-idoutputspanoutput"></a><span id="Output"></span><span id="output"></span><span id="OUTPUT"></span>输出
 
 
 <table>
@@ -37,7 +36,7 @@ ms.locfileid: "63366267"
 <tr class="header">
 <th align="left">字段</th>
 <th align="left">字节长度</th>
-<th align="left">字节偏移</th>
+<th align="left">字节偏移量</th>
 <th align="left">描述</th>
 </tr>
 </thead>
@@ -46,29 +45,29 @@ ms.locfileid: "63366267"
 <td align="left"><strong>状态</strong></td>
 <td align="left">4</td>
 <td align="left">0</td>
-<td align="left"><p>转到<a href="-dsm-interface-for-byte-addressable-energy-backed-function-class--function-interface-1-.md" data-raw-source="[_DSM Method Output](-dsm-interface-for-byte-addressable-energy-backed-function-class--function-interface-1-.md)">_DSM 方法输出</a>有关信息。</p></td>
+<td align="left"><p>请参阅 <a href="-dsm-interface-for-byte-addressable-energy-backed-function-class--function-interface-1-.md" data-raw-source="[_DSM Method Output](-dsm-interface-for-byte-addressable-energy-backed-function-class--function-interface-1-.md)">_DSM 方法输出</a> 获取详细信息。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><strong>启用的错误注入</strong></td>
+<td align="left"><strong>错误注入已启用</strong></td>
 <td align="left">1</td>
 <td align="left">4</td>
-<td align="left"><p>该值指示是否启用错误注入。</p>
-<p>如果为 0，已禁用错误注入。</p>
-<p>如果为 1，启用错误注入。</p></td>
+<td align="left"><p>是否启用错误注入。</p>
+<p>如果为0，则禁用错误注入。</p>
+<p>如果为1，则启用错误注入。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
+## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
-[注入错误 （函数索引 17）](inject-error--function-index-17-.md)
+[注入错误（功能索引 17）](inject-error--function-index-17-.md)
 
-[获取注入错误 （函数索引 18）](get-injected-errors--function-index-18-.md)
+[获取注入的错误（功能索引 18）](get-injected-errors--function-index-18-.md)
 
-[\_字节可寻址能源的 DSM 接口支持的函数类 （函数接口 1）](-dsm-interface-for-byte-addressable-energy-backed-function-class--function-interface-1-.md)
+[\_用于字节寻址的支持能源的函数类 (函数接口 1) 的 DSM 接口 ](-dsm-interface-for-byte-addressable-energy-backed-function-class--function-interface-1-.md)
 
  
 

@@ -1,17 +1,16 @@
 ---
 title: WdbgExts 符号
 description: WdbgExts 符号
-ms.assetid: 7e1a1799-b87c-42cb-94ce-fbdc9a5ec973
 keywords:
 - WdbgExts 扩展，符号
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 24598634fd61af17ce7e3d92b2ff2a4e74fbf277
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 74089fc20a5657bd79f84b4605823e5787f00ced
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89216000"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96787669"
 ---
 # <a name="wdbgexts-symbols"></a>WdbgExts 符号
 

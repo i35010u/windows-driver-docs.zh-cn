@@ -1,7 +1,6 @@
 ---
 title: 复制位图
 description: 复制位图
-ms.assetid: 76e07c66-7e57-42d7-b6da-c13c8e9a8dee
 keywords:
 - GDI WDK Windows 2000 显示，位图
 - 图形驱动程序 WDK Windows 2000 显示，位图
@@ -15,12 +14,12 @@ keywords:
 - 拉伸 WDK Windows 2000 显示器
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 78bd053c3fa933722e7659b4a8a1939a0500f934
-ms.sourcegitcommit: a44ade167cdfb541cf1818e9f9e3726f23f90b66
+ms.openlocfilehash: b5ebff51e425e7ae16453524f606ebada9eeb16b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/07/2020
-ms.locfileid: "94361409"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96786373"
 ---
 # <a name="copying-bitmaps"></a>复制位图
 
@@ -44,7 +43,7 @@ ms.locfileid: "94361409"
 
 ### <a name="span-iddrvbitbltspanspan-iddrvbitbltspan-drvbitblt"></a><span id="drvbitblt"></span><span id="DRVBITBLT"></span> DrvBitBlt
 
-[**DrvBitBlt**](/windows/win32/api/winddi/nf-winddi-drvbitblt)函数提供一般位块传输功能。 如果使用了源，则 **DrvBitBlt** 会将源矩形的内容复制到目标矩形。  (此函数的 *pptlSrc* 参数标识矩形的左上角。 ) 如果没有源矩形，则 **DrvBitBlt** 将忽略 *pptlSrc* 参数。 目标矩形（要修改的图面）由两个整数点（左上角和右下角）定义。 矩形 *向右右下角* ;矩形的下边缘和右边缘不是块传输的一部分。 不能使用空目标矩形调用 **DrvBitBlt** 。 矩形的两点始终是正确的，也就是说，右下点的两个坐标都大于左上角中的对应项。
+[**DrvBitBlt**](/windows/win32/api/winddi/nf-winddi-drvbitblt)函数提供一般位块传输功能。 如果使用了源，则 **DrvBitBlt** 会将源矩形的内容复制到目标矩形。  (此函数的 *pptlSrc* 参数标识矩形的左上角。 ) 如果没有源矩形，则 **DrvBitBlt** 将忽略 *pptlSrc* 参数。 目标矩形（要修改的图面）由两个整数点（左上角和右下角）定义。 矩形 *向右右下角*;矩形的下边缘和右边缘不是块传输的一部分。 不能使用空目标矩形调用 **DrvBitBlt** 。 矩形的两点始终是正确的，也就是说，右下点的两个坐标都大于左上角中的对应项。
 
 [**DrvBitBlt**](/windows/win32/api/winddi/nf-winddi-drvbitblt) 处理不同的 ROPs，并根据设备执行优化。 在某些情况下，如果 ROP 是纯色，则可以执行填充，而不是 BitBlt。 对于不支持 ROPs 的设备或驱动程序，如 Pscript 驱动程序，显示的图像与打印的图像之间可能存在差异。
 
@@ -68,9 +67,9 @@ GDI 从其模拟操作调用 [**DrvCopyBits**](/windows/win32/api/winddi/nf-wind
 
 驱动程序可以使用 GDI [**CLIPOBJ**](/windows/win32/api/winddi/ns-winddi-clipobj) 枚举服务来减少对一系列剪辑矩形的剪辑。 GDI 向下传递翻译向量（ [**XLATEOBJ**](/windows/win32/api/winddi/ns-winddi-xlateobj) 结构），以帮助在源和目标曲面之间进行颜色索引转换。
 
-如果设备表面被组织为标准格式的与 *设备无关的位图 (DIB)* ，则驱动程序只能支持简单传输。 如果调用的是一个复杂的 ROP，则驱动程序可以通过调用 [**EngCopyBits**](/windows/win32/api/winddi/nf-winddi-engcopybits) 函数来使阻止传输请求返回到 GDI。 这允许 GDI 将调用分解为驱动程序可以执行的更简单的函数。
+如果设备表面被组织为标准格式的与 *设备无关的位图 (DIB)*，则驱动程序只能支持简单传输。 如果调用的是一个复杂的 ROP，则驱动程序可以通过调用 [**EngCopyBits**](/windows/win32/api/winddi/nf-winddi-engcopybits) 函数来使阻止传输请求返回到 GDI。 这允许 GDI 将调用分解为驱动程序可以执行的更简单的函数。
 
-[**DrvCopyBits**](/windows/win32/api/winddi/nf-winddi-drvcopybits) 也是通过 RLE 位图调用的 (参阅 Microsoft Windows SDK 文档) 和 **设备相关位图 (DDBs)** 。 由于应用程序调用了多个 Win32 GDI 例程，因此会将位图提供给此函数。 可选的 DDB 仅受几个专用驱动程序支持。
+[**DrvCopyBits**](/windows/win32/api/winddi/nf-winddi-drvcopybits) 也是通过 RLE 位图调用的 (参阅 Microsoft Windows SDK 文档) 和 **设备相关位图 (DDBs)**。 由于应用程序调用了多个 Win32 GDI 例程，因此会将位图提供给此函数。 可选的 DDB 仅受几个专用驱动程序支持。
 
 ### <a name="span-iddrvstretchbltspanspan-iddrvstretchbltspan-drvstretchblt"></a><span id="drvstretchblt"></span><span id="DRVSTRETCHBLT"></span> DrvStretchBlt
 
@@ -84,9 +83,9 @@ GDI 从其模拟操作调用 [**DrvCopyBits**](/windows/win32/api/winddi/nf-wind
 
 目标矩形由两个整数点定义。 这些点不会有序排序，这意味着第二个点的坐标并不一定大于第一个点的坐标。 这些点所描述的源矩形不包括下边缘和右边缘。 由于此矩形的顺序不正确， [**DrvStretchBlt**](/windows/win32/api/winddi/nf-winddi-drvstretchblt) 有时必须在两个 x 坐标和/或两个 y 坐标中执行倒置。  (驱动程序不得尝试读取不在源图面) 上的像素。 不能使用空目标矩形调用 **DrvStretchBlt** 。
 
-对于颜色转换， [**DrvStretchBlt**](/windows/win32/api/winddi/nf-winddi-drvstretchblt)向 [**XLATEOBJ**](/windows/win32/api/winddi/ns-winddi-xlateobj)结构提供一个指针 *pxlo* ，用于在源和目标曲面之间进行转换。 可以查询 XLATEOBJ 结构来查找任何源索引的目标索引。 对于高质量拉伸块传输，在某些情况下需要 **DrvStretchBlt** 来插入颜色。 **DrvStretchBlt** 还使用 COLORADJUSTMENT 结构定义要在延伸位之前应用于源位图的颜色调整值。
+对于颜色转换， [**DrvStretchBlt**](/windows/win32/api/winddi/nf-winddi-drvstretchblt)向 [**XLATEOBJ**](/windows/win32/api/winddi/ns-winddi-xlateobj)结构提供一个指针 *pxlo*，用于在源和目标曲面之间进行转换。 可以查询 XLATEOBJ 结构来查找任何源索引的目标索引。 对于高质量拉伸块传输，在某些情况下需要 **DrvStretchBlt** 来插入颜色。 **DrvStretchBlt** 还使用 COLORADJUSTMENT 结构定义要在延伸位之前应用于源位图的颜色调整值。
 
-[**DrvStretchBlt**](/windows/win32/api/winddi/nf-winddi-drvstretchblt) 使用 *iMode* 参数定义要将源像素合并为输出的方式。 特别是， *iMode* 提供了半色调选项，该选项允许驱动程序使用输出图面中的像素组来接近输出的颜色或灰色级别。 对 COLORADJUSTMENT 结构所做的更改将在下一次 **DrvStretchBlt** 调用后传递给驱动程序， *IMODE* 为半色调。 此外，如果驱动程序需要 GDI 来处理 GDI 位图的半色调，则驱动程序将 **DrvStretchBlt** ，将 *iMode* 参数设置为半色调，并将其返回 [**EngStretchBlt**](/windows/win32/api/winddi/nf-winddi-engstretchblt)。
+[**DrvStretchBlt**](/windows/win32/api/winddi/nf-winddi-drvstretchblt) 使用 *iMode* 参数定义要将源像素合并为输出的方式。 特别是， *iMode* 提供了半色调选项，该选项允许驱动程序使用输出图面中的像素组来接近输出的颜色或灰色级别。 对 COLORADJUSTMENT 结构所做的更改将在下一次 **DrvStretchBlt** 调用后传递给驱动程序， *IMODE* 为半色调。 此外，如果驱动程序需要 GDI 来处理 GDI 位图的半色调，则驱动程序将 **DrvStretchBlt**，将 *iMode* 参数设置为半色调，并将其返回 [**EngStretchBlt**](/windows/win32/api/winddi/nf-winddi-engstretchblt)。
 
 如果 [**DrvStretchBlt**](/windows/win32/api/winddi/nf-winddi-drvstretchblt) 已将调用挂钩到 [**EngStretchBlt**](/windows/win32/api/winddi/nf-winddi-engstretchblt) 函数并要求其执行不支持的操作，则它会将请求返回到 GDI，以便适当的函数可以处理它。
 

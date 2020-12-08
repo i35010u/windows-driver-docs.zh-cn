@@ -1,7 +1,6 @@
 ---
 title: DEVPKEY_Device_InstanceId
 description: DEVPKEY_Device_InstanceId
-ms.assetid: 74c78289-e140-46da-8005-ef6f441f78ec
 keywords:
 - DEVPKEY_Device_InstanceId 设备和驱动程序安装
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: ee629d644503420d1b31637077cf08a574500e62
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 05ab6518bb0eece6a01d2fe2b4d8259540593e6e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90714666"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96786823"
 ---
 # <a name="devpkey_device_instanceid"></a>DEVPKEY_Device_InstanceId
 

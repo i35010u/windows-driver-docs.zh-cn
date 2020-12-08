@@ -1,15 +1,14 @@
 ---
 title: 调用 SetupWriteTextLogInfLine
 description: 调用 SetupWriteTextLogInfLine
-ms.assetid: 7b7a08bf-b97a-4dfe-8695-dc947481ad2b
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4e68c8a26ba28a65981b06ca22465705eda63c8d
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 9674e3f4f2e773e67f369e5e254b90b0c252fd1e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90714718"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96787527"
 ---
 # <a name="calling-setupwritetextloginfline"></a>调用 SetupWriteTextLogInfLine
 
@@ -36,21 +35,21 @@ ms.locfileid: "90714718"
 
 **SetupWriteTextLogInfLine** 写入以下格式的日志条目：
 
-*entry_prefix time_stamp* **inf：**<em>缩进 inf 文本文件</em> ** (** <em>inf-文件名</em>**行**<em>号</em>**) **
+*entry_prefix time_stamp* **inf：**<em>缩进 inf 文本文件</em> **(** <em>inf-文件名</em>**行**<em>号</em>**)**
 
 其中：
 
--   *Entry_prefix*、*时间戳*和*缩进*字段与[文本日志节正文的格式](format-of-a-text-log-section-body.md)中所述的字段相同。
+-   *Entry_prefix*、*时间戳* 和 *缩进* 字段与 [文本日志节正文的格式](format-of-a-text-log-section-body.md)中所述的字段相同。
 
 -   **Inf：** 字段指定 TXTLOG_INF 事件类别。 事件类别在 [启用文本日志的事件类别](enabling-event-categories-for-a-text-log.md)中进行了介绍。
 
 -   " *Inf-行文本* " 字段包含指定的 inf 文件行的文本。
 
--   *Inf-文件名*字段包含包含指定 inf 文件行的 inf 文件的名称。
+-   *Inf-文件名* 字段包含包含指定 inf 文件行的 inf 文件的名称。
 
 -   " **行** " 字段指示后面的内容是 INF 文件中的行号。
 
--   *行号*字段包含 INF 文件中指定行的行号。
+-   *行号* 字段包含 INF 文件中指定行的行号。
 
 下面的示例演示应用程序通常如何在文本日志中记录 INF 行的文本。 本示例中的 INF 行是一个 INF **AddReg** 行。 应用程序调用 [**SetupWriteTextLogInfLine**](/windows/win32/api/setupapi/nf-setupapi-setupwritetextloginfline)，并提供以下输入参数值：
 
@@ -60,9 +59,9 @@ ms.locfileid: "90714718"
 
 -   *InfHandle* 设置为 inf 文件 hidserv 的句柄 *。* 此句柄是通过调用平台 SDK 中记录的 **SetupOpenInfFile** 函数获取的。
 
--   *上下文* 设置为 inf 文件行的 inf 文件上下文，其中包含文本 "AddReg = HidServ_AddService_AddReg"。 可以通过调用 **SetupFind*Xxx*line** 函数（在平台 SDK 中进行了介绍）获取行的 INF 文件上下文。
+-   *上下文* 设置为 inf 文件行的 inf 文件上下文，其中包含文本 "AddReg = HidServ_AddService_AddReg"。 可以通过调用 **SetupFind *Xxx* line** 函数（在平台 SDK 中进行了介绍）获取行的 INF 文件上下文。
 
-*LogToken*和*LogFlags*的值会影响[**SetupWriteTextLogInfLine**](/windows/win32/api/setupapi/nf-setupapi-setupwritetextloginfline)的操作，其方式与对[**SetupWriteTextLog**](/windows/win32/api/setupapi/nf-setupapi-setupwritetextlog)所述的方式相同。 此外， **SetupWriteTextLogInfLine** 使用 TXTLOG_INF 的事件目录。
+*LogToken* 和 *LogFlags* 的值会影响 [**SetupWriteTextLogInfLine**](/windows/win32/api/setupapi/nf-setupapi-setupwritetextloginfline)的操作，其方式与对 [**SetupWriteTextLog**](/windows/win32/api/setupapi/nf-setupapi-setupwritetextlog)所述的方式相同。 此外， **SetupWriteTextLogInfLine** 使用 TXTLOG_INF 的事件目录。
 
 在此示例中，下面显示了 **SetupWriteTextLogInfLine** 写入文本日志的日志项的类型：
 

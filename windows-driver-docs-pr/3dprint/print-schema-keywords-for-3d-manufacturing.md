@@ -1,29 +1,28 @@
 ---
 title: 3D 制造的打印架构关键字
 description: 3D 制造的打印架构关键字是打印架构规范的补充规范。
-ms.assetid: DC54C326-31AE-43C9-AF0D-A3A64DAEF1F2
 ms.date: 05/15/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 467fa0b40079ce60db4c3daf89ad759d9d58a686
-ms.sourcegitcommit: 1585a52e762226b01c7369371727746487cc57bf
+ms.openlocfilehash: f2a8788ce090862dedb67bab42738a0e5f8befd6
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74796657"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96788023"
 ---
 # <a name="print-schema-keywords-for-3d-manufacturing"></a>3D 制造的打印架构关键字
 
-3D 制造的打印架构关键字是[打印架构规范](https://download.microsoft.com/download/d/e/c/deca6e6b-3e81-48e7-b7ef-6d92a547d03c/print-schema-spec-2-0.zip)的补充规范。 此规范需要了解在打印架构规范中定义的一组约定，尤其是该规范的第1部分和第3部分。 此规范包含的打印架构关键字是打印架构规范第2部分的3D 制造模拟。 它介绍了3D 制造设备的开发人员在打印架构的上下文中定义其设备功能时所使用的 XML 关键字。
+3D 制造的打印架构关键字是 [打印架构规范](https://download.microsoft.com/download/d/e/c/deca6e6b-3e81-48e7-b7ef-6d92a547d03c/print-schema-spec-2-0.zip)的补充规范。 此规范需要了解在打印架构规范中定义的一组约定，尤其是该规范的第1部分和第3部分。 此规范包含的打印架构关键字是打印架构规范第2部分的3D 制造模拟。 它介绍了3D 制造设备的开发人员在打印架构的上下文中定义其设备功能时所使用的 XML 关键字。
 
 此规范的主要目标是确保独立创建的软件和硬件系统的互操作性，为3D 制造设备生成或使用打印架构内容。 通常，这些软件和硬件系统通过 Windows 打印基础结构来发现彼此。
 
-了解此规范需要了解可扩展标记语言（XML）和 XML 命名空间规范。 完全了解还可能需要了解有关3D 制造部门中常见术语和过程的域知识，尽管每个努力都可以最大程度地减少此类依赖。
+了解此规范需要可扩展标记语言 (XML) 和 XML 命名空间规范的工作知识。 完全了解还可能需要了解有关3D 制造部门中常见术语和过程的域知识，尽管每个努力都可以最大程度地减少此类依赖。
 
 此规范中包含的信息可能会发生更改。 为了确保其在发布时的准确性，已经完成了每个工作。
 
 ## <a name="how-this-specification-is-organized"></a>如何组织此规范
 
-| 部分                                                                     | 描述                                                                                                |
+| 部分                                                                     | 说明                                                                                                |
 |-----------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------|
 | [3D 制造关键字概述](3d-manufacturing-keywords-overview.md) | 提供3D 制造的打印架构关键字的基本概述、设计和使用情况信息。 |
 | [设备控制关键字](device-control-keywords.md)                       | 这些关键字用于向3D 制造设备提供控制。                               |
@@ -32,15 +31,15 @@ ms.locfileid: "74796657"
 | [打印架构术语表](print-schema-glossary.md)                           | 提供此规范中使用的术语的定义。                                                 |
 | [PrintCapabilities 文档示例](example-printcapabilities-document.md) | 提供一个示例 PrintCapabilities 文档。                                                            |
 | [PrintTicket 文档示例](example-printticket-document.md)             | 提供一个示例 PrintTicket 文档。                                                                  |
-| [打印架构引用](print-schema-references.md)                       | 提供对行业标准、规范和技术文章的参考。                         |
+| [打印架构参考](print-schema-references.md)                       | 提供对行业标准、规范和技术文章的参考。                         |
 
 ## <a name="document-conventions"></a>文档约定
 
 除非另有说明，否则语法说明以 RFC 4234 中定义的 ABNF 格式表示。
 
-术语表术语的格式设置为*斜体*。
+术语表术语的格式设置为 *斜体* 。
 
-语法说明和代码在 `monospace` 类型中进行格式设置。
+语法说明和代码在类型中进行了格式设置 `monospace` 。
 
 ## <a name="language-notes"></a>语言备注
 

@@ -1,17 +1,16 @@
 ---
 title: NDIS_STATUS_WDI_INDICATION_TKIP_MIC_FAILURE
 description: 微型端口驱动程序使用 NDIS_STATUS_WDI_INDICATION_TKIP_MIC_FAILURE 来指示收到的、由 TKIP 密码算法成功解密的数据包时，消息完整性代码无法 (MIC) 验证。
-ms.assetid: ab9d3109-72af-457e-9e65-456613cea32f
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 NDIS_STATUS_WDI_INDICATION_TKIP_MIC_FAILURE 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: b19753363a2d33a236227fb01366000f7628d2a6
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: ec97eca379fb43aa769a981d22121ebcd90e6299
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89206413"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96786733"
 ---
 # <a name="ndis_status_wdi_indication_tkip_mic_failure"></a>NDIS \_ 状态 \_ WDI \_ 指示 \_ TKIP \_ MIC \_ 故障
 
@@ -48,7 +47,7 @@ ms.locfileid: "89206413"
 </tr>
 <tr class="even">
 <td><p>最低受支持的服务器</p></td>
-<td><p>Windows Server 2016</p></td>
+<td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
 <td><p>标头</p></td>

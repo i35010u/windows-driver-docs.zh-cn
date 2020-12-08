@@ -1,21 +1,20 @@
 ---
 title: 用于发出常规 OID 请求的示例样板
-description: 本主题介绍用于颁发的正则 OID 请求示例样板代码
-ms.assetid: 0805FC9D-1161-4333-BCDF-BE2E6B996BD7
+description: 本主题介绍发出常规 OID 请求的示例样板代码
 ms.date: 09/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 790d3b96b5283dba0c58081e02b210556418770f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8b31cb706a3e58b7c16e2a10dd35fdfd516edf97
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63391033"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96788433"
 ---
 # <a name="example-boilerplate-for-issuing-a-regular-oid-request"></a>用于发出常规 OID 请求的示例样板
 
-本主题中的示例与对比度向发出正则 OID 请求，提供的样板代码示例[NDIS 6.80 中同步 OID 请求接口](synchronous-oid-request-interface-in-ndis-6-80.md)。 Windows 10 版本 1709年及更高版本上提供了同步 OID 请求接口。
+本主题提供发出常规 OID 请求的示例样板代码，以与 [NDIS 6.80 中同步 OID 请求接口](synchronous-oid-request-interface-in-ndis-6-80.md)中的示例比较。 Windows 10 版本1709及更高版本中提供了同步 OID 请求接口。
 
-此示例摘自 GitHub 上提供的示例筛选器驱动程序： [ https://github.com/Microsoft/Windows-driver-samples/tree/master/network/ndis/filter ](https://go.microsoft.com/fwlink/p/?linkid=859443)。
+此示例摘自 GitHub 上提供的示例筛选器驱动程序： [https://github.com/Microsoft/Windows-driver-samples/tree/master/network/ndis/filter](https://go.microsoft.com/fwlink/p/?linkid=859443) 。
 
 ```cpp
 Status = filterDoInternalRequest(pFilter,

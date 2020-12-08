@@ -1,7 +1,6 @@
 ---
 title: Bug 检查 0x75 CANNOT_WRITE_CONFIGURATION
-description: CANNOT_WRITE_CONFIGURATION bug 检查具有 0x00000075 值。 此 bug 检查指示系统注册表配置单元文件不能转换为映射文件。
-ms.assetid: 0190de02-8bd1-4c20-839d-bf9fb517567d
+description: CANNOT_WRITE_CONFIGURATION bug 检查的值为0x00000075。 此 bug 检查指示系统注册表配置单元文件无法转换为映射文件。
 keywords:
 - Bug 检查 0x75 CANNOT_WRITE_CONFIGURATION
 - CANNOT_WRITE_CONFIGURATION
@@ -13,23 +12,23 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 8e6db578c4ddbb19a371f730e882e7cb11ec46ff
-ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
+ms.openlocfilehash: 77974b1d78a54255d1cacad524582f610b10c7e9
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67519212"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96787017"
 ---
-# <a name="bug-check-0x75-cannotwriteconfiguration"></a>Bug 检查 0x75：不能\_编写\_配置
+# <a name="bug-check-0x75-cannot_write_configuration"></a>Bug 检查0x75：无法 \_ 写入 \_ 配置
 
 
-无法\_编写\_配置 bug 检查的值为 0x00000075。 此 bug 检查指示系统注册表配置单元文件不能转换为映射文件。
+"无法 \_ 写入 \_ 配置 bug 检查" 的值为 "0x00000075"。 此 bug 检查指示系统注册表配置单元文件无法转换为映射文件。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://www.windows.com/stopcode)。
+> 本主题面向程序员。 如果您是在使用计算机时收到蓝屏错误代码的客户，请参阅[蓝屏错误疑难解答](https://www.windows.com/stopcode)。
 
 
-## <a name="cannotwriteconfiguration-parameters"></a>不能\_编写\_配置参数
+## <a name="cannot_write_configuration-parameters"></a>无法 \_ 写入 \_ 配置参数
 
 
 <table>
@@ -50,15 +49,15 @@ ms.locfileid: "67519212"
 </tr>
 <tr class="even">
 <td align="left"><p>2</p></td>
-<td align="left"><p>导致要假定它具有无法转换该配置单元的 Windows 操作系统 NT 状态代码</p></td>
+<td align="left"><p>导致 Windows 操作系统无法转换配置单元的 NT 状态代码。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>3</p></td>
-<td align="left"><p>保留</p></td>
+<td align="left"><p>预留</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>4</p></td>
-<td align="left"><p>保留</p></td>
+<td align="left"><p>预留</p></td>
 </tr>
 </tbody>
 </table>
@@ -68,9 +67,9 @@ ms.locfileid: "67519212"
 <a name="cause"></a>原因
 -----
 
-无法\_编写\_如果系统移出池，且 Windows 操作系统不能重新打开该配置单元，通常会出现配置错误检查。
+\_ \_ 如果系统不在池中并且 Windows 操作系统无法重新打开 hive，则通常会发生 "无法写入配置 bug 检查"。
 
-此 bug 检查应几乎永远不会发生，因为 hive 文件的转换，以便足够池应可用于尽可能早地在系统初始化期间发生。
+此 bug 检查几乎不会发生，因为在系统初始化过程中，hive 文件的转换提前完成，以便足以提供足够的池。
 
  
 

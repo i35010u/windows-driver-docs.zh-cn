@@ -1,7 +1,6 @@
 ---
 title: 用于启用调试的启动参数
 description: 用于启用调试的启动参数
-ms.assetid: acbe2fcd-6f8f-49c8-9de6-1617a1723cf5
 keywords:
 - 启动参数 WDK
 - 启动项参数 WDK
@@ -15,12 +14,12 @@ keywords:
 - 空调制解调器电缆 WDK 启动参数
 ms.date: 09/21/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 802f465b56b4401d46444624c91967d171bd33d4
-ms.sourcegitcommit: a1b2e27c3487a099180fb928f64e7ce3d94f21a8
+ms.openlocfilehash: 035de810ebee5d5d648bcdddf480c9f7feb90adc
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90846534"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96786909"
 ---
 # <a name="boot-parameters-to-enable-debugging"></a>用于启用调试的启动参数
 
@@ -28,9 +27,9 @@ ms.locfileid: "90846534"
 
 > [!IMPORTANT]
 > 手动设置网络调试是一种复杂且容易出错的过程。
-> 若要自动设置网络调试，请参阅 **[自动设置 KDNET 网络内核调试](../debugger/setting-up-a-network-debugging-connection-automatically.md)**。 **强烈**建议所有调试器用户使用 KDNET 实用程序。
+> 若要自动设置网络调试，请参阅 **[自动设置 KDNET 网络内核调试](../debugger/setting-up-a-network-debugging-connection-automatically.md)**。 **强烈** 建议所有调试器用户使用 KDNET 实用程序。
 
-有关手动设置网络连接的信息，请参阅 [通过网络电缆手动设置内核模式调试](../debugger/setting-up-a-network-debugging-connection.md)。
+有关手动设置网络连接的信息，请参阅 [通过网络电缆手动设置 Kernel-Mode 调试](../debugger/setting-up-a-network-debugging-connection.md)。
 
 >[!Note]
 > 设置 BCDEdit 选项之前，可能需要禁用或暂停计算机上的 BitLocker 和安全启动。
@@ -46,4 +45,4 @@ ms.locfileid: "90846534"
 
 有关 Windows 调试工具的信息，请参阅 [Windows 调试](../debugger/index.md)。
 
-有关设置和配置内核模式调试会话的信息，请参阅 [手动设置内核模式调试](../debugger/setting-up-kernel-mode-debugging-in-windbg--cdb--or-ntsd.md) 和 [自动设置 KDNET 网络内核调试](../debugger/setting-up-a-network-debugging-connection-automatically.md)。
+有关设置和配置内核模式调试会话的信息，请参阅 [手动设置 Kernel-Mode 调试](../debugger/setting-up-kernel-mode-debugging-in-windbg--cdb--or-ntsd.md) ，并 [自动设置 KDNET 网络内核调试](../debugger/setting-up-a-network-debugging-connection-automatically.md)。

@@ -1,22 +1,21 @@
 ---
 title: 只适用于一个目标操作系统的示例 INF 模型部分
 description: 只适用于一个目标操作系统的示例 INF 模型部分
-ms.assetid: 4cad05f6-ec88-4bc8-b69a-0d6b06dfeec0
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b1923a5f23f3e4176f8ad8585c9a2c112d01d508
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 109853c93bd54a69d44b8cf16916f83fa38ef9b8
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63348708"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96787357"
 ---
 # <a name="sample-inf-models-sections-for-only-one-target-operating-system"></a>只适用于一个目标操作系统的示例 INF 模型部分
 
 
-可以使用修饰[ **INF*模型*各节**](inf-models-section.md)来限制适用的目标操作系统的范围。
+可以使用修饰的 [**INF *模型* 部分**](inf-models-section.md) 来限制适用的目标操作系统的范围。
 
-下面的示例演示[ **INF 制造商部分**](inf-manufacturer-section.md)的各种[ **INF*模型*部分**](inf-models-section.md)将阻止 Windows 基于 x86 的系统未在运行 Windows Vista 上安装设备。
+以下示例显示了一个 [**Inf 制造商部分**](inf-manufacturer-section.md) ，其中包含各种 [**inf *模型* 部分**](inf-models-section.md) ，这些部分将阻止 Windows 在未运行 windows Vista 的基于 x86 的系统上安装设备。
 
 ```cpp
 [Manufacturer]
@@ -33,11 +32,11 @@ ms.locfileid: "63348708"
 [Msft.NT.6.1]
 ```
 
-在此示例中， [ **INF 制造商部分**](inf-manufacturer-section.md)具有以下[ **INF*模型*部分**](inf-models-section.md):
+在此示例中，" [**Inf 制造商" 部分**](inf-manufacturer-section.md) 包含以下 [**inf *模型* 部分**](inf-models-section.md)：
 
--   完整 INF*模型*适用于 Windows Vista 包括设备描述和硬件标识符 (Id) 的基于 x86 的系统上的部分。 Windows 将选择并安装在设备上运行的 Windows Vista 的基于 x86 的系统时使用此部分。
+-   基于 x86 的系统上适用于 Windows Vista 的完整 INF *模型* 部分，其中包括设备说明和硬件标识符 (id) 。 当 windows 在运行 Windows Vista 的基于 x86 的系统上安装设备时，Windows 将选择并使用此部分。
 
--   空 INF*模型*部分，了解 Windows 7 和更高版本 Windows 的任何硬件平台上。 Windows 将选择在这些平台上的设备安装的此部分。 但是，由于部分包含任何特定设备说明或硬件 Id，Windows 将不安装任何设备通过此 INF 文件。
+-   任何硬件平台上适用于 Windows 7 和更高版本的 Windows 的空 INF *模式* 部分。 Windows 将选择此部分以在这些平台上安装设备。 但是，由于部分不包含任何特定的设备说明或硬件 Id，Windows 将不通过此 INF 文件安装任何设备。
 
  
 

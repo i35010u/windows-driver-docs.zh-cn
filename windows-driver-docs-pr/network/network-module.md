@@ -1,22 +1,21 @@
 ---
 title: 网络模块
 description: 网络模块
-ms.assetid: 49e73a9c-16f0-4fe0-904f-45e8c85ed56a
 keywords:
-- 网络模块 WDK 网络模块注册机构定义
+- 网络模块 WDK 网络模块注册器，已定义
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cce51e44097dbee6b3d71f0132626c767769e0dd
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2bf174f268bbcdf6a4da5101291d251081f35e89
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63331879"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96787233"
 ---
 # <a name="network-module"></a>网络模块
 
 
-一个*网络模块*是一个软件模块，在网络堆栈，如数据中实现特定的函数链接接口、 传输协议或网络应用程序。 可以是网络模块[提供程序模块](provider-module.md)即[客户端模块](client-module.md)，或两个，具体取决于网络堆栈中位于何处。
+*网络模块* 是一种软件模块，用于实现网络堆栈中的特定功能，如数据链接接口、传输协议或网络应用程序。 网络模块可以是 [提供程序模块](provider-module.md)和/或 [客户端模块](client-module.md)，具体取决于它在网络堆栈中的位置。
 
  
 

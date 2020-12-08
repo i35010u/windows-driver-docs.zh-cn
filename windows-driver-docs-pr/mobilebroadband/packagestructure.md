@@ -1,15 +1,14 @@
 ---
 title: PackageStructure
 description: PackageStructure
-ms.assetid: 44be9d7d-79b0-49b6-b427-e729efadb88c
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4e446098abf69bbbd06ed245cfd903b8790c0edd
-ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
+ms.openlocfilehash: 30f6a55c48dc6fb97c17d124b09dfdd6a726a275
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89403278"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96786275"
 ---
 # <a name="packagestructure"></a>PackageStructure
 
@@ -72,7 +71,7 @@ PackageStructure 元素指定服务元数据包引用的 XML 架构。 每个 XM
 <thead>
 <tr class="header">
 <th>元素</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>

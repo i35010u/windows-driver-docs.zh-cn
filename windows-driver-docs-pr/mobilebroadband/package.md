@@ -1,15 +1,14 @@
 ---
 title: 包 (SoftwareInfo)
 description: 包 (SoftwareInfo)
-ms.assetid: f15f0ffe-593d-4007-8002-4d593d18dd9a
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8cf9d944b5958f9cafeb833f0b48543e4ba21d19
-ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
+ms.openlocfilehash: a560dc492cc51a22ccb3345dfa4e7d18dd8bf474
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89403310"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96786255"
 ---
 # <a name="package-softwareinfo"></a>包 (SoftwareInfo)
 
@@ -42,7 +41,7 @@ Package 元素指定在计算机上检测到操作员的移动宽带硬件时要
 <thead>
 <tr class="header">
 <th>元素</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>
@@ -70,7 +69,7 @@ Package 元素指定在计算机上检测到操作员的移动宽带硬件时要
 <thead>
 <tr class="header">
 <th>元素</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>

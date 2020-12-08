@@ -1,15 +1,14 @@
 ---
 title: WDDM 1.2 功能
 description: 本主题介绍 Windows 显示驱动程序模型 (WDDM) 版本1.2 功能集，其中包括一些新的增强功能，这些增强功能可提高性能、可靠性和总体最终用户体验。
-ms.assetid: 65072545-76F0-43A8-9E46-703CA99BFE90
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ae3cad6e490162cf9863e146fd4fe88058f72360
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: addbfe493497ade307d384d6c2ba35b63bcf2dcb
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91734451"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96786347"
 ---
 # <a name="wddm-12-features"></a>WDDM 1.2 功能
 
@@ -48,20 +47,21 @@ WDDM 1.2 具有强制功能和可选功能。 驱动程序必须实现所有必�
 
 \*\*没有新的设备驱动程序接口 (DDI) 或行为更改。 但是，WDDM 1.2 和更高版本的驱动程序必须能够将 XML 纸张规范传递 (XPS) 光栅化测试，以确保硬件加速 XPS 打印方案的质量打印体验。
 
-**注意**   从 Windows 8 开始可以使用一组新的 Api 来复制桌面以实现协作方案。 有关更多详细信息，请参阅 [桌面复制](desktop-duplication-api.md)。
+**注意**  
+从 Windows 8 开始可以使用一组新的 Api 来复制桌面以实现协作方案。 有关更多详细信息，请参阅 [桌面复制](desktop-duplication-api.md)。
 
  
 
-## <a name="span-idadditional_new_features_in_windows_8spanspan-idadditional_new_features_in_windows_8spanspan-idadditional_new_features_in_windows_8spanadditional-new-features-in-windows8"></a><span id="Additional_new_features_in_Windows_8"></span><span id="additional_new_features_in_windows_8"></span><span id="ADDITIONAL_NEW_FEATURES_IN_WINDOWS_8"></span>Windows 8 中的其他新功能
+## <a name="span-idadditional_new_features_in_windows_8spanspan-idadditional_new_features_in_windows_8spanspan-idadditional_new_features_in_windows_8spanadditional-new-features-in-windows-8"></a><span id="Additional_new_features_in_Windows_8"></span><span id="additional_new_features_in_windows_8"></span><span id="ADDITIONAL_NEW_FEATURES_IN_WINDOWS_8"></span>Windows 8 中的其他新功能
 
 
 Windows 8 中还提供了以下新的或已更新的显示驱动程序 DDIs：
 
-[**仅限内核模式显示驱动程序 (KMDOD) 接口**](/windows-hardware/drivers/ddi/index)
+[**内核模式 Display-Only 驱动程序 (KMDOD) 接口**](/windows-hardware/drivers/ddi/index)
 
 提供一组有限的显示功能，无需呈现功能。
 
-**注意**   另请参阅[内核模式仅显示小型端口驱动程序](/samples/browse/)示例。
+**注意**  另请参阅 [内核模式仅显示小型端口驱动程序](/samples/browse/) 示例。
 
  
 
@@ -80,7 +80,7 @@ Windows 8 中还提供了以下新的或已更新的显示驱动程序 DDIs：
 
 允许显示微型端口驱动程序枚举并读取系统固件表。
 
-[**亮度控制接口 (自适应和平滑亮度控制) **](/windows-hardware/drivers/ddi/index)
+[**亮度控制接口 (自适应和平滑亮度控制)**](/windows-hardware/drivers/ddi/index)
 
 允许显示微型端口驱动程序减少显示器背景光的电量，并平稳地适应环境光的变化和用户请求的变化亮度。
 

@@ -1,7 +1,6 @@
 ---
 title: Bug 检查 0xDA SYSTEM_PTE_MISUSE
 description: SYSTEM_PTE_MISUSE bug 检查的值为0x000000DA。 这表明 (PTE) 例程的页表项已被错误地使用。
-ms.assetid: a9a9f3e9-39b7-4e4a-a326-2f510e0aaa99
 keywords:
 - Bug 检查 0xDA SYSTEM_PTE_MISUSE
 - SYSTEM_PTE_MISUSE
@@ -13,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: e68df6a9e7e369ddceba22adff06272b637e6613
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 69af89d0d7f6257b3eddcb2fae08c4dcc0603670
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90105694"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96787851"
 ---
 # <a name="bug-check-0xda-system_pte_misuse"></a>Bug 检查0xDA：系统 \_ PTE 被 \_ 滥用
 
@@ -98,7 +97,7 @@ ms.locfileid: "90105694"
 <td align="left"><p>0x07</p></td>
 <td align="left"><p>初始映射</p></td>
 <td align="left"><p>映射的数目</p></td>
-<td align="left"><p>保留</p></td>
+<td align="left"><p>预留</p></td>
 <td align="left"><p>仅) 映射范围为双分配 (Windows 2000。</p></td>
 </tr>
 <tr class="even">
@@ -190,7 +189,7 @@ ms.locfileid: "90105694"
 <td align="left"><p>0x102</p></td>
 <td align="left"><p>第一个映射地址</p></td>
 <td align="left"><p>调用方的标识标记</p></td>
-<td align="left"><p>保留</p></td>
+<td align="left"><p>预留</p></td>
 <td align="left"><p>调用方尝试释放的映射地址空间明显为空。</p></td>
 </tr>
 <tr class="odd">
@@ -212,7 +211,7 @@ ms.locfileid: "90105694"
 <td align="left"><p>0x105</p></td>
 <td align="left"><p>第一个映射地址</p></td>
 <td align="left"><p>调用方的标识标记</p></td>
-<td align="left"><p>保留</p></td>
+<td align="left"><p>预留</p></td>
 <td align="left"><p>调用方正在尝试将 MDL 映射到无效的映射地址空间。 调用方很可能指定了无效的地址。</p></td>
 </tr>
 <tr class="even">
@@ -233,7 +232,7 @@ ms.locfileid: "90105694"
 <td align="left"><p>0x109</p></td>
 <td align="left"><p>第一个映射地址</p></td>
 <td align="left"><p>调用方的标识标记</p></td>
-<td align="left"><p>保留</p></td>
+<td align="left"><p>预留</p></td>
 <td align="left"><p>调用方正在尝试取消映射明显为空的已锁定虚拟地址空间。</p></td>
 </tr>
 <tr class="odd">
@@ -289,8 +288,8 @@ ms.locfileid: "90105694"
 <tr class="even">
 <td align="left"><p>0x302</p></td>
 <td align="left"><p>调用方尝试释放的地址。</p></td>
-<td align="left"><p>保留</p></td>
-<td align="left"><p>保留</p></td>
+<td align="left"><p>预留</p></td>
+<td align="left"><p>预留</p></td>
 <td align="left"><p>调用方正在尝试释放当前未映射的系统地址。</p></td>
 </tr>
 <tr class="odd">

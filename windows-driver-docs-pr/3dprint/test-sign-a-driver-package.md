@@ -1,15 +1,14 @@
 ---
 title: 对驱动程序包进行测试签名
 description: 本部分介绍如何对驱动程序包进行测试签名。
-ms.assetid: 3BC92099-A464-4C62-9EB7-DD6AA0D1FB03
 ms.date: 05/15/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: a0463933af63ae282e38d6923ce3c476aa18f4de
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 0e9ecfbcf4b03ea3d33f38e8b104067e4509e223
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89184903"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96788003"
 ---
 # <a name="test-sign-a-driver-package"></a>对驱动程序包进行测试签名
 
@@ -48,4 +47,4 @@ ms.locfileid: "89184903"
 
 4.  用在步骤2中创建的 pfx 文件来签署 "FabrikamPrintDriverV4 Package"。 其他项目不需要是驱动程序签名的，因为此步骤将创建包。
 
-有关详细信息，请参阅 [如何对驱动程序包进行测试签名](../install/how-to-test-sign-a-driver-package.md)。
+有关详细信息，请参阅 [如何 Test-Sign 驱动程序包](../install/how-to-test-sign-a-driver-package.md)。

@@ -1,15 +1,14 @@
 ---
 title: 在 Visual Studio 中查看调用堆栈
 description: 此过程介绍如何在 Visual Studio 中查看调用堆栈
-ms.assetid: 060A2441-C1A7-4485-82E5-2C024E6A3FBE
 ms.date: 05/11/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 643b3c5b0d9afa6864b6805478bcb13b4292288b
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 10111781962f6c5694300f21db3d9fd7cd740e1b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89209351"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96787703"
 ---
 # <a name="viewing-the-call-stack-in-visual-studio"></a>在 Visual Studio 中查看调用堆栈
 
@@ -27,7 +26,7 @@ ms.locfileid: "89209351"
 ## <a name="span-idviewing_the_call_stack_by_entering_commandsspanspan-idviewing_the_call_stack_by_entering_commandsspanspan-idviewing_the_call_stack_by_entering_commandsspanviewing-the-call-stack-by-entering-commands"></a><span id="Viewing_the_Call_Stack_by_Entering_Commands"></span><span id="viewing_the_call_stack_by_entering_commands"></span><span id="VIEWING_THE_CALL_STACK_BY_ENTERING_COMMANDS"></span>通过输入命令查看调用堆栈
 
 
-在调试器的 "即时" 窗口中，可以通过输入其中一个 [**k (显示堆栈 Backtrace) **](k--kb--kc--kd--kp--kp--kv--display-stack-backtrace-.md) 命令来查看调用堆栈。 如果尚未打开调试器的 "即时" 窗口，请从 " **调试** " 菜单中选择 " ** &gt; 立即 Windows**"。
+在调试器的 "即时" 窗口中，可以通过输入其中一个 [**k (显示堆栈 Backtrace)**](k--kb--kc--kd--kp--kp--kv--display-stack-backtrace-.md) 命令来查看调用堆栈。 如果尚未打开调试器的 "即时" 窗口，请从 " **调试** " 菜单中选择 " **&gt; 立即 Windows**"。
 
  
 

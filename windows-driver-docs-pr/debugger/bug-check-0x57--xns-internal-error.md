@@ -1,9 +1,8 @@
 ---
-title: Bug Check 0x57 XNS_INTERNAL_ERROR
-description: XNS_INTERNAL_ERROR bug 检查具有 0x00000057 值。检查此错误极少出现。
-ms.assetid: cb39b78a-69c8-4505-b537-c1d0a986685b
+title: Bug 检查 0x57 XNS_INTERNAL_ERROR
+description: XNS_INTERNAL_ERROR bug 检查的值为0x00000057。此 bug 检查很少出现。
 keywords:
-- Bug Check 0x57 XNS_INTERNAL_ERROR
+- Bug 检查 0x57 XNS_INTERNAL_ERROR
 - XNS_INTERNAL_ERROR
 ms.date: 05/23/2017
 topic_type:
@@ -13,22 +12,22 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 752c7a542d5473a24504be05b2df4c0df490870d
-ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
+ms.openlocfilehash: 1066217a28b521eded6758199532e47729340a80
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67519356"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96786438"
 ---
-# <a name="bug-check-0x57-xnsinternalerror"></a>Bug 检查 0x57：XNS\_INTERNAL\_ERROR
+# <a name="bug-check-0x57-xns_internal_error"></a>Bug 检查0x57： XNS \_ 内部 \_ 错误
 
 
-XNS\_内部\_错误 bug 检查的值为 0x00000057。
+XNS \_ 内部 \_ 错误 bug 检查的值为0x00000057。
 
-检查此错误极少出现。
+此 bug 检查很少出现。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://www.windows.com/stopcode)。
+> 本主题面向程序员。 如果您是在使用计算机时收到蓝屏错误代码的客户，请参阅[蓝屏错误疑难解答](https://www.windows.com/stopcode)。
 
 
  

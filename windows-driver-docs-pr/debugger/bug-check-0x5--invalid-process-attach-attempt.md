@@ -1,7 +1,6 @@
 ---
 title: Bug 检查 0x5 INVALID_PROCESS_ATTACH_ATTEMPT
 description: INVALID_PROCESS_ATTACH_ATTEMPT bug 检查的值为0x00000005。
-ms.assetid: 72efb88f-1bf7-4552-b44e-4ecb04754b7d
 keywords:
 - Bug 检查 0x5 INVALID_PROCESS_ATTACH_ATTEMPT
 - INVALID_PROCESS_ATTACH_ATTEMPT
@@ -13,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 28b5d0cac0b9808435e11912aa638589b76a7320
-ms.sourcegitcommit: 20eac54e419a594f7cea766ee28f158559dfd79c
+ms.openlocfilehash: 24bf877a3d02d39a833b2d849545ef878fc2e8b6
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91754896"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96786477"
 ---
 # <a name="bug-check-0x5-invalid_process_attach_attempt"></a>Bug 检查0x5： \_ 进程 \_ 附加 \_ 尝试无效
 
@@ -42,7 +41,7 @@ ms.locfileid: "91754896"
 <thead>
 <tr class="header">
 <th align="left">参数</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>
@@ -74,7 +73,7 @@ ms.locfileid: "91754896"
 
 如果驱动程序调用 [KeAttachProcess](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-keattachprocess)  函数，并且该线程已附加到另一个进程，则会发生此 bug 检查。 最好使用 [KeStackAttachProcess](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-kestackattachprocess) 函数。 如果当前线程已附加到另一个进程，则 **KeStackAttachProcess** 函数将保存当前的 APC 状态，然后将当前线程附加到新进程。 错误调用 **KeStackAttachProcess** 也会导致此错误检查，例如，当 DPC 正在当前处理器上运行时。
 
-有关此方面的常规信息，请参阅使用 [Windows 内核模式进程和线程管理器](../kernel/windows-kernel-mode-process-and-thread-manager.md) 和 [内核调度程序对象简介](../kernel/managing-interlocked-queues-with-a-driver-created-thread.md)。
+有关此方面的常规信息，请参阅使用 [Windows Kernel-Mode 进程和线程管理器](../kernel/windows-kernel-mode-process-and-thread-manager.md) 和 [内核调度程序对象简介](../kernel/managing-interlocked-queues-with-a-driver-created-thread.md)。
 
  
 

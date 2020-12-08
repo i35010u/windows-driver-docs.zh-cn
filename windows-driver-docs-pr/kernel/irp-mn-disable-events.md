@@ -2,16 +2,15 @@
 title: IRP_MN_DISABLE_EVENTS
 description: 了解 "IRP_MN_DISABLE_EVENTS" 内核模式驱动程序体系结构。 注册一个或多个事件块的任何 WMI 驱动程序都必须处理此 IRP。
 ms.date: 08/12/2017
-ms.assetid: 3187643b-27d7-4a6d-8fbe-4f8eb6c251ed
 keywords:
-- IRP_MN_DISABLE_EVENTS 内核模式驱动程序体系结构
+- IRP_MN_DISABLE_EVENTS Kernel-Mode 驱动程序体系结构
 ms.localizationpriority: medium
-ms.openlocfilehash: b6bd81456031524c9c2fe6de0052c8704d77fc41
-ms.sourcegitcommit: 2aedb606f9f14e74687f0d3da60e14fc6ffffa7e
+ms.openlocfilehash: 7e3734c044aedd3dea9fc92aad4a3fb3648cf96c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91544384"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96786777"
 ---
 # <a name="irp_mn_disable_events"></a>IRP \_ MN \_ 禁用 \_ 事件
 
@@ -47,7 +46,7 @@ WMI \_ 在任意线程上下文中以 IRQL = 被动级别发送此 IRP。
 ## <a name="io-status-block"></a>I/o 状态块
 
 
-如果驱动程序通过调用[**WmiSystemControl**](/windows-hardware/drivers/ddi/wmilib/nf-wmilib-wmisystemcontrol)来处理 IRP，WMI 将在 i/o 状态块中设置**irp- &gt; IoStatus**和**irp- &gt; IoStatus。**
+如果驱动程序通过调用 [**WmiSystemControl**](/windows-hardware/drivers/ddi/wmilib/nf-wmilib-wmisystemcontrol)来处理 IRP，WMI 将在 i/o 状态块中设置 **irp- &gt; IoStatus** 和 **irp- &gt; IoStatus。**
 
 否则，驱动程序会将 **Irp- &gt; IoStatus** 设置为状态 \_ 成功，或设置为适当的错误状态，如下所示：
 
@@ -57,7 +56,7 @@ WMI \_ 在任意线程上下文中以 IRQL = 被动级别发送此 IRP。
 
 成功时，驱动程序将 **Irp- &gt; IoStatus** 设置为零。
 
-<a name="operation"></a>Operation
+<a name="operation"></a>操作
 ---------
 
 驱动程序可以通过调用 [**WmiSystemControl**](/windows-hardware/drivers/ddi/wmilib/nf-wmilib-wmisystemcontrol) 或处理 IRP 本身来处理 wmi irp，如 [处理 WMI 请求](./handling-wmi-requests.md)中所述。

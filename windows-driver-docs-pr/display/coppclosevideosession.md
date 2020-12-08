@@ -1,25 +1,24 @@
 ---
 title: COPPCloseVideoSession 函数
-description: 示例 COPPCloseVideoSession 函数关闭当前的视频会话使用 COPP DirectX VA 设备对象。
-ms.assetid: 27a6a23d-e9e8-403e-87b9-3ab0a07789cb
+description: 示例 COPPCloseVideoSession 函数关闭用于当前视频会话的 COPP DirectX VA 设备对象。
 keywords:
-- 复制保护 WDK COPP，微型端口驱动程序代码模板
-- 视频复制保护 WDK COPP，微型端口驱动程序代码模板
-- 受保护的视频 WDK COPP，微型端口驱动程序代码模板
-- 微型端口驱动程序 WDK Windows 2000，COPP 代码模板
-- 已认证的输出保护协议
+- 复制保护 WDK COPP，视频微型端口驱动程序代码模板
+- 视频复制保护 WDK COPP，视频微型端口驱动程序代码模板
+- 受保护的视频 WDK COPP，视频微型端口驱动程序代码模板
+- 视频微型端口驱动程序 WDK Windows 2000，COPP 代码模板
+- 认证的输出保护协议
 ms.date: 02/16/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 1b7f834af8092318730cc21061694c29241b3755
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 35523b75d29fdd605ebb4c3264f0aa32b469ce9d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63331313"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96787555"
 ---
 # <a name="coppclosevideosession-function"></a>COPPCloseVideoSession 函数
 
-示例 COPPCloseVideoSession 函数关闭当前的视频会话使用 COPP DirectX VA 设备对象。
+示例 COPPCloseVideoSession 函数关闭用于当前视频会话的 COPP DirectX VA 设备对象。
 
 ### <a name="syntax"></a>语法
 
@@ -29,25 +28,25 @@ HRESULT COPPCloseVideoSession(
 );
 ```
 
-## <a name="parameters"></a>Parameters
+## <a name="parameters"></a>参数
 
 *pThis [in]*
 
-* 指向 COPP DirectX VA 设备对象指针。
+* 指向 COPP DirectX VA 设备对象的指针。
 
 ## <a name="return-value"></a>返回值
 
-返回零 （S_OK 或 DD_OK） 如果成功，则否则，返回错误代码。
+如果成功，则返回零 (S_OK 或 DD_OK) ;否则，将返回错误代码。
 
 ## <a name="remarks"></a>备注
 
-通过在视频会话仍应用输出保护时，可以调用 COPPCloseVideoSession 函数。 COPPCloseVideoSession 应撤消 COPP DirectX VA 设备对象的保护设置并调整全局保护设置相应地。
+当视频会话仍在应用输出保护时，可以调用 COPPCloseVideoSession 函数。 COPPCloseVideoSession 应撤消 COPP DirectX VA 设备对象的保护设置，并相应地调整全局保护设置。
 
-COPPCloseVideoSession 函数直接映射到 DD_MOTIONCOMPCALLBACKS 结构的 DestroyMoComp 成员。 DestroyMoComp 成员指向显示驱动程序提供 DdMoCompDestroy 回调函数。
+COPPCloseVideoSession 函数直接映射到 DD_MOTIONCOMPCALLBACKS 结构的 DestroyMoComp 成员。 DestroyMoComp 成员指向显示器驱动程序提供的 DdMoCompDestroy 回调函数。
 
 ## <a name="example-code"></a>示例代码
 
-以下代码举例说明如何实现 COPPCloseVideoSession 函数：
+下面的代码提供了一个示例，说明如何实现 COPPCloseVideoSession 函数：
 
 ```cpp
 HRESULT
@@ -71,8 +70,8 @@ COPPCloseVideoSession(
 }
 ```
 
-**要求**
+**惠?**
 
-| 目标平台 | Version |
+| 目标平台 | 版本 |
 | -- | -- |
-| 桌面设备 | 此函数仅适用于 Windows Server 2003 SP1 和更高版本和 Windows XP SP2 和更高版本。 |
+| 台式机 | 此函数仅适用于 Windows Server 2003 SP1 及更高版本以及 Windows XP SP2 及更高版本。 |

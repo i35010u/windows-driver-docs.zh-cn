@@ -1,7 +1,6 @@
 ---
 title: Bug 检查 0x60 PROCESS_INITIALIZATION_FAILED
 description: PROCESS_INITIALIZATION_FAILED bug 检查的值为0x00000060。此 bug 检查很少出现。
-ms.assetid: 781190a6-a50f-4b7a-9dea-ac31d2dee325
 keywords:
 - Bug 检查 0x60 PROCESS_INITIALIZATION_FAILED
 - PROCESS_INITIALIZATION_FAILED
@@ -13,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 47ef46b47afdfd7c016777bed8ec04c9971f6a00
-ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
+ms.openlocfilehash: 3c041f582f72860110b688630655f9d692a062ad
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84534616"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96786433"
 ---
 # <a name="bug-check-0x60-process_initialization_failed"></a>Bug 检查0x60：进程 \_ 初始化 \_ 失败
 
@@ -28,7 +27,7 @@ ms.locfileid: "84534616"
 此 bug 检查很少出现。
 
 > [!IMPORTANT]
-> 本主题适用于程序员。 如果你是在使用计算机时收到蓝屏错误代码的客户，请参阅[排查蓝屏错误](https://www.windows.com/stopcode)。
+> 本主题面向程序员。 如果您是在使用计算机时收到蓝屏错误代码的客户，请参阅[蓝屏错误疑难解答](https://www.windows.com/stopcode)。
 
 
 

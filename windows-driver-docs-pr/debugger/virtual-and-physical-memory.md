@@ -1,19 +1,18 @@
 ---
 title: 虚拟和物理内存
 description: 虚拟和物理内存
-ms.assetid: 346a46ea-9d44-4e12-8623-d118cd0c7e25
 keywords:
 - 内存访问、虚拟内存和物理内存
 - 虚拟内存访问
 - 物理内存访问
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c7fff196932c5a0e7040682de66cabb1d273ac79
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: ce39c8cd8717c0a07c11f7e2b88a126c533397ea
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89206775"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96787701"
 ---
 # <a name="virtual-and-physical-memory"></a>虚拟和物理内存
 
@@ -31,7 +30,7 @@ ms.locfileid: "89206775"
 
 使用便捷的方法 [**ReadPointersVirtual**](/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugdataspaces4-readpointersvirtual) 和 [**WritePointersVirtual**](/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugdataspaces4-writepointersvirtual)可以读取和写入目标的内存中的指针。 这些方法将在引擎使用的64位指针与目标使用的本机指针之间自动转换。 请求包含将用于后续请求的指针的内存时，这些方法非常有用，例如，指向字符串的指针。
 
-[**SearchVirtual**](/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugdataspaces4-searchvirtual)和[**SearchVirtual2**](/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugdataspaces4-searchvirtual2)方法可用于在目标的虚拟内存中搜索字节模式。
+[**SearchVirtual**](/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugdataspaces4-searchvirtual)和 [**SearchVirtual2**](/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugdataspaces4-searchvirtual2)方法可用于在目标的虚拟内存中搜索字节模式。
 
 [**FillVirtual**](/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugdataspaces4-fillvirtual)方法可用于多次将字节模式复制到目标的虚拟内存。
 

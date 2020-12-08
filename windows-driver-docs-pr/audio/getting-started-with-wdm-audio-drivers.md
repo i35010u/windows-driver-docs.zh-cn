@@ -1,7 +1,6 @@
 ---
 title: WDM 音频驱动程序概述
 description: Windows 驱动模型 (WDM) 音频驱动程序使用内核流式处理 (KS) 组件，这些组件在内核模式下运行，并且是操作系统的一部分。
-ms.assetid: 573a9b6d-6c50-40a6-9241-470ab418eb66
 keywords:
 - WDM 音频驱动程序 WDK
 - 音频驱动程序 WDK，关于音频驱动程序
@@ -10,12 +9,12 @@ keywords:
 - 自定义音频驱动程序 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 98cbd3fcfb4bf18b6b8d047423aa74cafa92bc4e
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: d9dc5fc3d68ffde846c27d93f3acb9dcd382dc21
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91733229"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96786527"
 ---
 # <a name="wdm-audio-drivers-overview"></a>WDM 音频驱动程序概述
 

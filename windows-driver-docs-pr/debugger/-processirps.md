@@ -1,7 +1,6 @@
 ---
 title: processirps
-description: Processirps 扩展显示有关与进程相关联的 I/O 请求数据包 (Irp) 的信息。
-ms.assetid: B7CC72A5-7D3F-4DE5-878D-ABD08BAF227C
+description: Processirps 扩展显示与进程关联 (Irp) 的 i/o 请求包的相关信息。
 keywords:
 - processirps Windows 调试
 ms.date: 05/23/2017
@@ -12,56 +11,56 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 0cb71473f05a9b37314bf709b23bade760e63a6f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a32457eb36304320a34db7a40c544b04e0c3c119
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63334345"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96787049"
 ---
 # <a name="processirps"></a>!processirps
 
 
-**！ Processirps**扩展显示有关与进程相关联的 I/O 请求数据包 (Irp) 的信息。
+**！ Processirps** extension 显示与进程关联 (irp) 的 i/o 请求包的相关信息。
 
 ```dbgcmd
 !processirps
 !processirps ProcessAddress [Flags]
 ```
 
-## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>参数
+## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>Parameters
 
 
 <span id="_ProcessAddress"></span><span id="_processaddress"></span><span id="_PROCESSADDRESS"></span> **** *ProcessAddress*  
-进程的地址。 如果指定*ProcessAddress*，将仅与关联 Irp，显示进程。 如果未指定*ProcessAddress*，显示的所有进程的 Irp。
+进程的地址。 如果指定 *ProcessAddress*，则只显示与该进程关联的 irp。 如果未指定 *ProcessAddress*，则会显示所有进程的 irp。
 
-<span id="_Flags"></span><span id="_flags"></span><span id="_FLAGS"></span> **** *标志*  
-一个或多个下列标志的按位 OR。
+<span id="_Flags"></span><span id="_flags"></span><span id="_FLAGS"></span> **** *随意*  
+以下一个或多个标志的按位 "或"。
 
-<span id="Bit_0__0x1_"></span><span id="bit_0__0x1_"></span><span id="BIT_0__0X1_"></span>位 0 (0x1)  
-显示 Irp 排队到线程。
+<span id="Bit_0__0x1_"></span><span id="bit_0__0x1_"></span><span id="BIT_0__0X1_"></span>位 0 (0x1)   
+显示排队到线程的 Irp。
 
-<span id="Bit_1__0x2_"></span><span id="bit_1__0x2_"></span><span id="BIT_1__0X2_"></span>位 1 (0x2)  
-显示 Irp 排队发送至文件对象。
+<span id="Bit_1__0x2_"></span><span id="bit_1__0x2_"></span><span id="BIT_1__0X2_"></span>位 1 (0x2)   
+显示排队到文件对象的 Irp。
 
-如果指定*标志*，则还必须指定*ProcessAddress*。 如果未指定*标志*、 Irp 排队到两个线程和显示文件对象。
+如果指定 *标志*，则还必须指定 *ProcessAddress*。 如果未指定 *标志*，则会显示排队到线程和文件对象的 irp。
 
 ## <span id="ddk__processfields_dbg"></span><span id="DDK__PROCESSFIELDS_DBG"></span>
 
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 kdexts.dll
 
 <a name="remarks"></a>备注
 -------
 
-此命令，可快速确定的过程中，两个排队到线程的和要排队发送至文件对象的任何排队的 Irp。 文件对象具有与之关联的完成端口时，要排队 Irp 发送至文件对象。
+使用此命令可以快速标识进程的任何已排队的 Irp，这两种 Irp 都排队到线程中，后者排队到文件对象。 当文件对象具有与之关联的完成端口时，Irp 将排队到文件对象。
 
 <a name="examples"></a>示例
 --------
 
-可以使用[ **！ 过程**](-process.md)命令来获取进程的地址。 例如，您无法获取 explorer.exe 的进程地址。
+可以使用 [**！ process**](-process.md) 命令获取进程地址。 例如，可以获取 explorer.exe 的进程地址。
 
 ```dbgcmd
 2: kd> !process 0 0
@@ -73,7 +72,7 @@ PROCESS fffffa800688c940
     Image: explorer.exe
 ```
 
-现在可以将传递到 explorer.exe 的进程地址 **！ processirps**命令。 下面的输出显示该 explorer.exe 具有 Irp 排队到线程和 Irp 排队发送至文件对象。
+现在，你可以将 explorer.exe 的进程地址传递给 **！ processirps** 命令。 以下输出显示，explorer.exe 将 Irp 列队给排队到文件对象的线程和 Irp。
 
 ```dbgcmd
 2: kd> !processirps fffffa800688c940

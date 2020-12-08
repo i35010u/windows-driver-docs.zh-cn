@@ -1,27 +1,26 @@
 ---
 title: 手机网络体系结构和实现
 description: 适用于 Windows 10 的移动通信体系结构包含来自 Windows 8.1 和 Windows Phone 8.1 的元素。
-ms.assetid: A6F23D12-BCF0-496A-B881-C1F6B35EDA4D
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 97ecc5c9fea4ba9169cdedbaa079c4a1ad4fbbb4
-ms.sourcegitcommit: 20eac54e419a594f7cea766ee28f158559dfd79c
+ms.openlocfilehash: 730ebfb6ccb0db72fcbdc4f3b680fda18a7ffdfb
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91754886"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96787311"
 ---
 # <a name="cellular-architecture-and-implementation"></a>手机网络体系结构和实现
 
 
 适用于 Windows 10 的移动通信体系结构包含来自 Windows 8.1 和 Windows Phone 8.1 的元素。 下面是用于比较的 Windows 8.1 和 Windows Phone 8.1 移动架构关系图，以及新的 Windows 10 体系结构关系图和必须实现的移动电话组件。
 
-## <a name="windows10-architecture"></a>Windows 10 体系结构：
+## <a name="windows-10-architecture"></a>Windows 10 体系结构：
 
 
 ![windows 10 移动电话体系结构](images/win10-cellular-architecture.png)
 
-## <a name="windows10-cellular-implementation-requirements"></a>Windows 10 移动电话实现要求
+## <a name="windows-10-cellular-implementation-requirements"></a>Windows 10 移动电话实现要求
 
 
 对于 Windows 10，必须实现的移动电话组件取决于设备使用的是适用于桌面版还是 Windows 10 移动版的 Windows 10。

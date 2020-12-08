@@ -1,17 +1,16 @@
 ---
 title: NDIS_STATUS_WDI_INDICATION_WAKE_REASON
 description: 微型端口驱动程序使用 NDIS_STATUS_WDI_INDICATION_WAKE_REASON 指示 NIC 唤醒主机时的唤醒原因。 "唤醒原因" 用于调试目的，并且没有功能效果。
-ms.assetid: 5f2eb569-be1e-4f24-92f5-8405ffc7b061
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 NDIS_STATUS_WDI_INDICATION_WAKE_REASON 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 1ebb2a56867233a61e7cc7e0a510e09a19c6c2b2
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: e3fd021cf2ec961971e93ea68ae5cf18decf3f57
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89209695"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96786723"
 ---
 # <a name="ndis_status_wdi_indication_wake_reason"></a>NDIS \_ 状态 \_ WDI \_ 指示 \_ 唤醒 \_ 原因
 
@@ -54,7 +53,7 @@ ms.locfileid: "89209695"
 </tr>
 <tr class="even">
 <td><p>最低受支持的服务器</p></td>
-<td><p>Windows Server 2016</p></td>
+<td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
 <td><p>标头</p></td>

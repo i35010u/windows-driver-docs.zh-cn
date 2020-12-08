@@ -1,15 +1,14 @@
 ---
 title: IrpPending 规则集 (WDM)
 description: 使用这些规则验证驱动程序是否正确 pends i/o 请求数据包 (IRP) 。
-ms.assetid: C4B5976B-7655-4FD1-B415-98C256873EBC
 ms.date: 05/21/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: d7f2ecbe66ddd72032cbd8ea5792509caa3fd247
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: ef6f8027b0b6006de6737bd3327c67138e71f16a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90103518"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96786901"
 ---
 # <a name="irppending-rule-set-wdm"></a>IrpPending 规则集 (WDM)
 
@@ -27,7 +26,7 @@ ms.locfileid: "90103518"
 <thead>
 <tr class="header">
 <th align="left">主题</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>
@@ -110,7 +109,7 @@ ms.locfileid: "90103518"
 
 2.  单击 " **规则** " 选项卡。在 " **规则集**" 下，选择 **IrpPending**。
 
-    若要从 Visual Studio 开发人员命令提示符窗口中选择默认规则集，请使用 **/check**选项指定**IrpPending。 sdv** 。 例如：
+    若要从 Visual Studio 开发人员命令提示符窗口中选择默认规则集，请使用 **/check** 选项指定 **IrpPending。 sdv** 。 例如：
 
     ```
     msbuild /t:sdv /p:Inputs="/check:IrpPending.sdv" mydriver.VcxProj /p:Configuration="Win8 Release" /p:Platform=Win32

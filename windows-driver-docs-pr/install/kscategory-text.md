@@ -1,7 +1,6 @@
 ---
 title: KSCATEGORY_TEXT
 description: KSCATEGORY_TEXT
-ms.assetid: 05a027ee-b342-4200-b753-33942a77e455
 keywords:
 - KSCATEGORY_TEXT 设备和驱动程序安装
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 83f73939edfa64a41de8957b46542f6bd1ad12b6
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 93e252e871b684b909f1b57c5f4bf11e34cb77de
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89096001"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96787389"
 ---
 # <a name="kscategory_text"></a>KSCATEGORY_TEXT
 

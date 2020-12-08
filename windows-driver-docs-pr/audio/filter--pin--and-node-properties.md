@@ -1,7 +1,6 @@
 ---
 title: 筛选器、引脚和节点属性
 description: 筛选器、引脚和节点属性
-ms.assetid: e0d52e97-459f-4095-9cf5-1474117ce66a
 keywords:
 - 音频属性 WDK，筛选器
 - WDM 音频属性 WDK，筛选器
@@ -18,12 +17,12 @@ keywords:
 - 锁定 WDK 音频，属性概述
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c28b639a75a5c53d4165aedc0e96c63226482b59
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: a5aaf8a09c1f2c864e21538799985eeae2182bf2
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89209237"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96786543"
 ---
 # <a name="filter-pin-and-node-properties"></a>筛选器、引脚和节点属性
 
@@ -169,7 +168,7 @@ Portcls.sys 中的端口驱动程序当前不提供节点属性的内置处理�
 
 由于历史原因，少数音频属性具有违反这些常规规则的行为兼容。 下面是一些示例：
 
--   如 [应用扬声器配置设置](applying-speaker-configuration-settings.md)中所述，客户端可以通过设置3-d 节点的 [**KSPROPERTY \_ 音频 \_ 通道 \_ CONFIG**](./ksproperty-audio-channel-config.md) 属性来更改音频设备的扬声器配置，)  ([**KSNODETYPE \_ 三维 \_ 效果**](./ksnodetype-3d-effects.md) 。 扬声器配置设置是全局性的，因为它会更改所有流的扬声器配置，这些流是设备通过扬声器播放的组合的一部分。 根据常规规则，影响筛选器作为整体的节点属性请求应指定筛选器句柄 (加上节点 ID) 。 但是，此特定属性需要 pin 句柄而不是筛选器句柄。 Pin 控点指定包含作为请求目标的3-d 节点的 pin 实例。
+-   如 [应用 Speaker-Configuration 设置](applying-speaker-configuration-settings.md)中所述，客户端可以通过将三维节点的 [**KSPROPERTY \_ 音频 \_ 通道 \_ CONFIG**](./ksproperty-audio-channel-config.md) 属性设置 ([**KSNODETYPE \_ 3d \_ 效果**](./ksnodetype-3d-effects.md)) 来更改音频设备的扬声器配置。 扬声器配置设置是全局性的，因为它会更改所有流的扬声器配置，这些流是设备通过扬声器播放的组合的一部分。 根据常规规则，影响筛选器作为整体的节点属性请求应指定筛选器句柄 (加上节点 ID) 。 但是，此特定属性需要 pin 句柄而不是筛选器句柄。 Pin 控点指定包含作为请求目标的3-d 节点的 pin 实例。
 
 -   [**KSPROPERTY \_合成 \_ VOLUME**](/previous-versions/ff537409(v=vs.85)) 和 [**KSPROPERTY \_ 合成 \_ MASTERCLOCK**](/previous-versions/ff537403(v=vs.85)) 是合成节点 ([**KSNODETYPE \_ 合成**](./ksnodetype-synthesizer.md) 器) 的属性。 尽管两者都是节点属性，但对这些属性的请求不包括节点 Id。  (注意，请求的属性描述符是 [**KSPROPERTY**](/previous-versions/ff564262(v=vs.85))类型的结构，而不是 [**KSNODEPROPERTY**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksnodeproperty)。 ) 此行为违反了 NODE 属性需要节点 ID 的一般规则。 尽管存在这种差异，但是，支持任一 **属性的微型** 端口驱动程序应通过 PCFILTER \_ 描述符 (而不是 **pin** 成员) 来提供属性处理程序。
 

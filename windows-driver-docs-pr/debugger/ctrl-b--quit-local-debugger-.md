@@ -1,9 +1,8 @@
 ---
 title: CTRL+B（退出本地调试器）
-description: CTRL + B 密钥会导致调试器突然终止。 这不会结束远程调试会话。
-ms.assetid: f70f4c40-244f-4abf-982f-d738800ac621
+description: CTRL + B 键会使调试器突然终止。 这不会结束远程调试会话。
 keywords:
-- CTRL + B （Quit 本地调试器） Windows 调试
+- CTRL + B (退出本地调试器) Windows 调试
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 9fa104f8e74e3cbf1e6caf6580588f09d9586ea0
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 108cfe0b1d2b279d54f262f221fe828981287941
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63374967"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96787011"
 ---
 # <a name="ctrlb-quit-local-debugger"></a>CTRL+B（退出本地调试器）
 
 
-CTRL + B 密钥会导致调试器突然终止。 这不会结束远程调试会话。
+CTRL + B 键会使调试器突然终止。 这不会结束远程调试会话。
 
 ```dbgcmd
 CTRL+B  ENTER 
@@ -41,19 +40,19 @@ CTRL+B  ENTER
 <tbody>
 <tr class="odd">
 <td align="left"><p><strong>调试器</strong></p></td>
-<td align="left"><p>CDB 和 KD 仅</p></td>
+<td align="left"><p>仅限 CDB 和 KD</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>模式</strong></p></td>
-<td align="left"><p>用户模式下，内核模式</p></td>
+<td align="left"><p><strong>交货</strong></p></td>
+<td align="left"><p>用户模式，内核模式</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>目标</strong></p></td>
-<td align="left"><p>实时、 崩溃转储</p></td>
+<td align="left"><p>实时，故障转储</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>平台</strong></p></td>
-<td align="left"><p>全部</p></td>
+<td align="left"><p>all</p></td>
 </tr>
 </tbody>
 </table>
@@ -63,11 +62,11 @@ CTRL+B  ENTER
 <a name="remarks"></a>备注
 -------
 
-在 CDB [ **q (Quit)** ](q--qq--quit-.md)用于退出命令。 如果调试器未响应，则只应使用 CTRL + B。
+在 CDB 中， [**q (Quit)**](q--qq--quit-.md) 命令退出。 仅当调试器没有响应时，才应使用 CTRL + B。
 
-在 KD， **q**命令将结束调试会话并使目标计算机已锁定。 如果你需要保留调试会话 （因此，新的调试程序可以连接到它），或如果您需要使目标计算机运行，则应使用 CTRL + B。
+在 KD 中， **q** 命令会结束调试会话，并使目标计算机保持锁定状态。 如果需要保留调试会话 (以便新的调试器可以连接到该会话) ，或者，如果需要使目标计算机保持运行，则应使用 CTRL + B。
 
-在 WinDbg 中，等效的命令是[文件 |退出](file---exit.md)或 ALT + F4。
+在 WinDbg 中，等效命令为 [File |退出](file---exit.md) 或按 ALT + F4。
 
  
 

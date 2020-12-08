@@ -1,7 +1,6 @@
 ---
 title: 采样频率的硬件约束
 description: 采样频率的硬件约束
-ms.assetid: e0041fd9-073c-4779-a3cf-6d0527ba847b
 keywords:
 - 示例频率约束 WDK 音频
 - 限制采样频率 WDK 音频
@@ -10,12 +9,12 @@ keywords:
 - 数据交集处理程序 WDK 音频，示例频率限制
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d37d2530fec682c45778d2d0a7dac7e1fea932d9
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: d0a50e633734dda80f6df338ea1df2c3402e27b8
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89209197"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96786525"
 ---
 # <a name="hardware-constraints-on-sample-frequency"></a>采样频率的硬件约束
 

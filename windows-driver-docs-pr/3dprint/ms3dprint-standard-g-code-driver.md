@@ -1,42 +1,41 @@
 ---
 title: MS3DPrint 标准 G-Code 驱动程序
-description: MS3DPrint 标准 G 代码驱动程序实现的典型 Windows 8.1 或 Windows 10 驱动程序的浮点混合的 filament 制造 3D 打印机使用 G 代码运行，尤其是打开源打印机，包括那些从 RepRap 项目。
-ms.assetid: F5818F58-C705-458F-9806-3F840BF7EE01
+description: MS3DPrint 标准 G 代码驱动程序实现典型的 Windows 8.1 或 Windows 10 驱动程序以使用 G 代码（特别是开源打印机，其中包括来自 RepRap 项目的 filament）制造3D 打印机。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0fa433689f8ccd56b7a494a019655a3995798a72
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d05879abc1bca8ddee032b79e7996ceab71d4ad4
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63324761"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96788121"
 ---
 # <a name="ms3dprint-standard-g-code-driver"></a>MS3DPrint 标准 G-Code 驱动程序
 
 
-MS3DPrint 标准 G 代码驱动程序实现的通用 Windows 8.1 或更高版本的驱动程序的浮点混合的 filament 制造 3D 打印机使用 G 代码运行，尤其是打开源打印机，其中包含派生自 RepRap 项目。
+MS3DPrint 标准 G 代码驱动程序实现了通用 Windows 8.1 或更高版本的带外 filament 制造3D 打印机的驱动程序，该驱动程序是使用 G 代码（特别是开源打印机，包括从 RepRap 项目派生的打印机）运行的。
 
-此驱动程序集包含的 USB 驱动程序，实施 wire protocol 和切片器将几何图形转换为进行。 切片器驱动程序从 Windows 后台处理程序接收 3MF 数据和 G 代码输出的 USB 驱动程序。 USB 驱动程序通过串行连接发送一次 G 代码一条指令。 
+此驱动程序集包含用于实现无线协议的 USB 驱动程序和用于将几何转换为刀具路径的切片器。 切片器驱动程序接收来自 Windows 后台处理程序的3MF 数据，并输出 USB 驱动程序的 G 代码。 USB 驱动程序通过串行连接一次发送一个指令，一次发送一个指令。 
 
-USB 驱动程序和切片器是处于积极开发阶段和实现和规范的部分是将在未来版本中进行。  这些驱动程序的一组是发布在 Windows 更新上，自动提供给受支持的设备或设备声明本身 3D 打印机使用 MS_COMP_3DPRINT USB 描述符。
+USB 驱动程序和切片器均处于积极开发下，并且在将来的版本中可能会有所更改。  这些驱动程序集在 Windows 更新上发布，并自动提供给受支持的设备或设备，这些设备或设备使用 MS_COMP_3DPRINT USB 描述符声明自己的3D 打印机。
  
 
 ## <a name="3d-printing-sdk-driver-folder-contents"></a>3D 打印 SDK 驱动程序文件夹内容
 
 
-下表提供有关驱动程序，切片器的位置的信息，并呈现 3D 打印 SDK 中的筛选器。
+下表提供了有关3D 打印 SDK 中驱动程序、切片器和呈现筛选器的位置的信息。
 
-| 文件夹                    | 目录                                 |
+| Folder                    | 目录                                 |
 |---------------------------|------------------------------------------|
-| \\Bin                     | 编译的二进制文件                        |
-| \\Bin\\MS3DPrintUSB\_x64  | 64 位 USB 串口驱动程序包    |
-| \\Bin\\MS3DPrintUSB\_x86  | 32 位 USB 串口驱动程序包    |
-| \\Bin\\RenderFiltersV4\_x64 | 64 位切片器和呈现器的筛选器包 |
-| \\Bin\\RenderFiltersV4\_x86 | 64 位切片器和呈现器的筛选器包 |
+| \\装箱                     | 已编译二进制文件                        |
+| \\Bin \\ MS3DPrintUSB \_ x64  | 64位 USB 串行端口驱动程序包    |
+| \\Bin \\ MS3DPrintUSB \_ x86  | 32位 USB 串行端口驱动程序包    |
+| \\Bin \\ RenderFiltersV4 \_ x64 | 64位切片器和呈现筛选器包 |
+| \\Bin \\ RenderFiltersV4 \_ x86 | 64位切片器和呈现筛选器包 |
 
  
 
-## <a name="in-this-section"></a>本节内容
+## <a name="in-this-section"></a>在本节中
 
 
 [驱动程序安装](driver-installation.md)

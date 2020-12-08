@@ -1,17 +1,16 @@
 ---
 title: AVStream 概述
 description: AVStream 概述
-ms.assetid: 305039fe-0a00-4f3e-ae1a-61c50a2f2fb3
 keywords:
 - AVStream WDK，关于 AVStream 微型驱动程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b04c8d0379c33686f868a149715dbf6954dc6e09
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: fcac3954d334980c44b7528eb9a9e3c820e59080
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89192427"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96786649"
 ---
 # <a name="avstream-overview"></a>AVStream 概述
 
@@ -19,9 +18,9 @@ ms.locfileid: "89192427"
 
 
 
-AVStream 是 Microsoft 提供的多媒体类驱动程序，支持仅视频流式处理和集成音频/视频流式处理。 Microsoft 在 *Ks.sys*导出驱动程序的操作系统中提供 AVStream。 硬件供应商编写在 *Ks.sys*下运行的微型驱动程序。
+AVStream 是 Microsoft 提供的多媒体类驱动程序，支持仅视频流式处理和集成音频/视频流式处理。 Microsoft 在 *Ks.sys* 导出驱动程序的操作系统中提供 AVStream。 硬件供应商编写在 *Ks.sys* 下运行的微型驱动程序。
 
-音频驱动程序的首选类驱动程序是 Microsoft 提供的音频 [端口类](../audio/introduction-to-port-class.md) 驱动程序。 音频供应商应该编写在 *Portcls.sys*下运行的微型驱动程序。
+音频驱动程序的首选类驱动程序是 Microsoft 提供的音频 [端口类](../audio/introduction-to-port-class.md) 驱动程序。 音频供应商应该编写在 *Portcls.sys* 下运行的微型驱动程序。
 
 Microsoft 仅支持现有微型驱动程序的 [流类](/windows-hardware/drivers/ddi/_stream/index) 驱动程序。
 

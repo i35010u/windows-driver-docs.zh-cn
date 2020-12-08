@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ VIDEODECODER \_ 状态
 description: KSPROPERTY \_ VIDEDECODER \_ STATUS 属性从视频解码器检索状态信息。 必须实现此属性。
-ms.assetid: 1d8cb537-1d85-4536-bd75-33beea0f586d
 keywords:
 - KSPROPERTY_VIDEODECODER_STATUS 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5ccdf23cb16e352f486bb81c2846c80efdeef147
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 79d228e8764b8f476e5d6b667f030361aaf1095e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90103536"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96786627"
 ---
 # <a name="ksproperty_videodecoder_status"></a>KSPROPERTY \_ VIDEODECODER \_ 状态
 
@@ -79,7 +78,7 @@ KSPROPERTY \_ VIDEDECODER \_ STATUS 属性从视频解码器检索状态信息�
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSPROPERTY**](/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)

@@ -1,9 +1,8 @@
 ---
 title: CTRL+V（切换详细模式）
-description: CTRL + V 键切换详细模式下打开和关闭。
-ms.assetid: 1aca1452-86dd-4573-8ad0-e46aa474a324
+description: CTRL + V 键用于打开和关闭详细模式。
 keywords:
-- CTRL + V （切换详细模式） Windows 调试
+- CTRL + V (切换详细模式) Windows 调试
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,19 +11,19 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 3c4ddf221b72862cef4d520fe8e34a7c4524c709
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 68146fa03a9da7ebfb3df5894ed807cade20d122
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63374952"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96786971"
 ---
 # <a name="ctrlv-toggle-verbose-mode"></a>CTRL+V（切换详细模式）
 
 
-CTRL + V 键切换详细模式下打开和关闭。
+CTRL + V 键用于打开和关闭详细模式。
 
-CDB / KD 语法
+CDB/KD 语法
 
 ```dbgcmd
 CTRL+V  ENTER 
@@ -49,19 +48,19 @@ CTRL+ALT+V
 <tbody>
 <tr class="odd">
 <td align="left"><p><strong>调试器</strong></p></td>
-<td align="left"><p>KD、 CDB WinDbg</p></td>
+<td align="left"><p>CDB、KD、WinDbg</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>模式</strong></p></td>
-<td align="left"><p>用户模式下，内核模式</p></td>
+<td align="left"><p><strong>交货</strong></p></td>
+<td align="left"><p>用户模式，内核模式</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>目标</strong></p></td>
-<td align="left"><p>实时、 崩溃转储</p></td>
+<td align="left"><p>实时，故障转储</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>平台</strong></p></td>
-<td align="left"><p>全部</p></td>
+<td align="left"><p>all</p></td>
 </tr>
 </tbody>
 </table>
@@ -71,9 +70,9 @@ CTRL+ALT+V
 <a name="remarks"></a>备注
 -------
 
-启用详细模式后，某些显示的命令 （例如注册转储） 生成更详细的输出。 将显示发送到调试器的每个模块加载操作。 并且每次由操作系统加载驱动程序或 DLL，调试器将会收到通知。
+启用详细模式后，某些显示命令 (如寄存器转储) 生成更详细的输出。 将显示发送到调试器的每个模块加载操作。 操作系统每次加载驱动程序或 DLL 时，都会通知调试器。
 
-在 WinDbg 中，还可以通过选择[视图 |详细输出](view---verbose-output.md)。
+在 WinDbg，还可以通过选择 "视图" [| "详细输出](view---verbose-output.md)。
 
  
 

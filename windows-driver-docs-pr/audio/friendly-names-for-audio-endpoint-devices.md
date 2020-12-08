@@ -1,15 +1,14 @@
 ---
 title: 音频终结点设备的友好名称
 description: 音频终结点设备的友好名称
-ms.assetid: e0937d20-dd5b-453f-99f6-4e501f0f0e5b
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fc7fcf2f5f643f0cd404c219584b8f54278717f9
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 3b51740f5df064319070692da7dde17cc14aecd3
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89209225"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96786529"
 ---
 # <a name="friendly-names-for-audio-endpoint-devices"></a>音频终结点设备的友好名称
 
@@ -28,7 +27,7 @@ ms.locfileid: "89209225"
 
 从 **Windows 10 REDSTONE 5** 开始，搜索注册表时，KS 首先查找设备软件密钥中的条目。  这是由 INF 通过设备驱动程序 INF 的 [模型] 部分引用的 AddReg 部分创建的。  AddReg 部分使用 HKR MediaCategories 项来构造这些项 \\ 。 这样，驱动程序开发人员便可以为名称和类别 Guid 创建特定于设备的友好名称，而不管 GUID 对于设备是否是唯一的。
 
-如果设备的软件密钥中未安装某个条目，或在 **Windows 10 REDSTONE 5**之前的操作系统上运行该驱动程序，则 KS 将在 HKLM \\ 系统 \\ CurrentControlSet \\ Control \\ MediaCategories 注册表项下查找。 此第二个键被视为全局命名空间。  从 **Windows 10 REDSTONE 5** 开始，此空间保留用于全局定义，不应由新驱动程序修改。  在未来的操作系统版本中，将不支持修改此项下的条目。
+如果设备的软件密钥中未安装某个条目，或在 **Windows 10 REDSTONE 5** 之前的操作系统上运行该驱动程序，则 KS 将在 HKLM \\ 系统 \\ CurrentControlSet \\ Control \\ MediaCategories 注册表项下查找。 此第二个键被视为全局命名空间。  从 **Windows 10 REDSTONE 5** 开始，此空间保留用于全局定义，不应由新驱动程序修改。  在未来的操作系统版本中，将不支持修改此项下的条目。
 
 通过标准类别 Guid 公开 pin 的音频设备应该包含/需要收件箱 KS。INF 或 KSCAPTUR。设备 INF 中的 INF 名称注册。  这些收件箱 Inf 包含驱动程序可能想要填充的预定义类别 Guid 的默认友好名称定义。 这些 Guid 与在 PCPIN 描述符结构的 **KsPinDescriptor** 成员中找到的 guid 相同 \_ 。 例如，类别 GUID KSNODETYPE \_ 扩音器条目具有关联的友好名称 "麦克风"，类别 GUID KSNODETYPE \_ 发言人条目具有关联的友好名称 "扬声器"，依此类推。
 
@@ -73,7 +72,7 @@ Uuidgen.exe 生成这两个 GUID 字符串。
 
 应用程序可以使用设备的 **IPropertyStore** 接口访问音频终结点设备的属性。 接口使用在 Functiondiscoverykeys \_ devpkey 和 Mmdeviceapi 头文件中定义的属性键来识别属性。 应用程序可以使用 **PKEY \_ device \_ FriendlyName** 属性键检索终结点设备的友好名称。 对于空间受限的用户界面，可以使用 **PKEY \_ Device \_ DeviceDesc** 属性键检索较短版本的友好名称。 有关这些属性键的详细信息，请参阅 [IMMDevice：： OpenPropertyStore](/windows/win32/api/mmdeviceapi/nf-mmdeviceapi-immdevice-openpropertystore)。
 
-**IPropertyStore**接口实例为音频终结点设备维护持久性属性存储区。 属性存储从与注册表路径 HKLM SYSTEM CurrentControlSet Control MediaCategories 中的 KS pin 类别 GUID 关联的友好名称字符串中复制其 **PKEY \_ Device \_ DeviceDesc** 属性键的初始值 \\ \\ \\ \\ 。 应用程序可以从属性存储中读取 (名称字符串) 的 **PKEY \_ 设备 \_ DeviceDesc** 属性值，但不能更改值。 但是，用户可以使用 Windows 多媒体控制面板 Mmsys.cpl 修改该名称。 例如，在 Windows Vista 中，你可以使用以下步骤来修改呈现终结点设备的名称：
+**IPropertyStore** 接口实例为音频终结点设备维护持久性属性存储区。 属性存储从与注册表路径 HKLM SYSTEM CurrentControlSet Control MediaCategories 中的 KS pin 类别 GUID 关联的友好名称字符串中复制其 **PKEY \_ Device \_ DeviceDesc** 属性键的初始值 \\ \\ \\ \\ 。 应用程序可以从属性存储中读取 (名称字符串) 的 **PKEY \_ 设备 \_ DeviceDesc** 属性值，但不能更改值。 但是，用户可以使用 Windows 多媒体控制面板 Mmsys.cpl 修改该名称。 例如，在 Windows Vista 中，你可以使用以下步骤来修改呈现终结点设备的名称：
 
 1.  若要运行 Mmsys.cpl，请打开命令提示符窗口并输入以下命令：
 

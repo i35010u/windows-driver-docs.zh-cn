@@ -1,17 +1,16 @@
 ---
 title: 手机网络 COM API 设计指南
 description: 本部分提供有关蜂窝 COM API 的信息。
-ms.assetid: 93aa20d0-d8c3-40ec-baf1-fab56ff5686d
 keywords:
 - 移动电话 COM API 设计指南网络驱动程序
 ms.date: 11/07/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f6cd1f92e67bddd26b220950cf1c6d408f96fd28
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 7f73f7963bf0179cd57246df7e7ec6032269ec78
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89214061"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96787303"
 ---
 # <a name="cellular-com-api-design-guide"></a>手机网络 COM API 设计指南
 
@@ -29,7 +28,7 @@ ms.locfileid: "89214061"
 
 必须在包含移动应用程序的包中声明相应的功能。 有关详细信息，请参阅 [蜂窝 COM API 功能](cellular-com-api-capabilities.md)。
 
-## <a name="in-this-section"></a>本节内容
+## <a name="in-this-section"></a>在本节中
 
 [手机网络 COM API 功能](cellular-com-api-capabilities.md)
 

@@ -1,7 +1,6 @@
 ---
 title: CM_Detect_Resource_Conflict
 description: CM_Detect_Resource_Conflict
-ms.assetid: c2e5fd52-dbbd-48a0-9936-87f300fb9189
 keywords:
 - CM_Detect_Resource_Conflict 设备和驱动程序安装
 topic_type:
@@ -12,12 +11,12 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: b4d6d945aae15a13e8a947b1392e4ed4a762be5a
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: a55f2adae0f78461e390c11a56f3ed9ac1288327
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90717504"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96787505"
 ---
 # <a name="cm_detect_resource_conflict"></a>CM_Detect_Resource_Conflict
 

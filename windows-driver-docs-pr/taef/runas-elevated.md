@@ -1,44 +1,43 @@
 ---
 title: RunAs Elevated
-description: TAEF 确保生成已提升的进程以运行测试，如有必要在提升的进程中运行测试。
-ms.assetid: 6292E431-6EB5-4962-BBB0-B86FC4CE4643
+description: TAEF 可确保在提升的进程中运行测试（如有必要）。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b31b4353a29f00362cadf84322440197bd11e94d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 810b6dfbbf0e2c9f5ab80e6ce3fcacf994a68f20
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380207"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96786607"
 ---
 # <a name="runas-elevated"></a>RunAs Elevated
 
 
-TAEF 确保生成已提升的进程以运行测试，如有必要在提升的进程中运行测试。
+TAEF 可确保在提升的进程中运行测试（如有必要）。
 
-**注意：执行 TAEF 的用户必须是 administrators 组的成员才能执行测试运行方式与标记 = 提升。** 这是由于非管理员不具有提升的拆分令牌。 如果非管理员尝试使用运行方式运行标记测试 = 提升，**测试将被标记为已阻止**。
+**注意：执行 TAEF 的用户必须是 administrators 组的成员才能执行标记为 RunAs = 升高的测试。** 这是因为，非管理员没有要提升的拆分令牌。 如果非管理员尝试运行以 RunAs = 提升方式标记的测试， **则测试将被标记为 "已阻止"**。
 
-**请注意**  运行版本早于 Windows Vista 的 Windows 的计算机上，你必须从一个管理员进程运行提升的测试。
+**注意**  在运行早于 Windows Vista 的 Windows 版本的计算机上，你必须从管理员进程运行提升的测试。
 
  
 
-## <a name="span-idspecifyingrunasonthecommandlinespanspan-idspecifyingrunasonthecommandlinespanspan-idspecifyingrunasonthecommandlinespanspecifying-runas-on-the-command-line"></a><span id="Specifying_RunAs_on_the_Command_Line_"></span><span id="specifying_runas_on_the_command_line_"></span><span id="SPECIFYING_RUNAS_ON_THE_COMMAND_LINE_"></span>在命令行上指定运行方式
+## <a name="span-idspecifying_runas_on_the_command_line_spanspan-idspecifying_runas_on_the_command_line_spanspan-idspecifying_runas_on_the_command_line_spanspecifying-runas-on-the-command-line"></a><span id="Specifying_RunAs_on_the_Command_Line_"></span><span id="specifying_runas_on_the_command_line_"></span><span id="SPECIFYING_RUNAS_ON_THE_COMMAND_LINE_"></span>在命令行上指定 RunAs
 
 
 ``` syntax
 te unittests\* /runas:elevated
 ```
 
-## <a name="span-idmarkingtestswithrunasspanspan-idmarkingtestswithrunasspanspan-idmarkingtestswithrunasspanmarking-tests-with-runas"></a><span id="Marking_Tests_with_RunAs_"></span><span id="marking_tests_with_runas_"></span><span id="MARKING_TESTS_WITH_RUNAS_"></span>将标记与运行方式的测试
+## <a name="span-idmarking_tests_with_runas_spanspan-idmarking_tests_with_runas_spanspan-idmarking_tests_with_runas_spanmarking-tests-with-runas"></a><span id="Marking_Tests_with_RunAs_"></span><span id="marking_tests_with_runas_"></span><span id="MARKING_TESTS_WITH_RUNAS_"></span>用 RunAs 标记测试
 
 
-测试元数据可用于指定程序集、 类或测试方法的运行方式类型。
+测试元数据可用于指定程序集、类或测试方法的运行方式类型。
 
-**请注意**  元数据中指定的运行方式值重写命令行上指定的运行方式值。 例如，测试标有**runas:system**测试元数据仍将运行作为本地系统，即使 **/runas:elevated**命令行上指定。
+**注意**  在元数据中指定的 RunAs 值将替代在命令行上指定的 RunAs 值。 例如，使用 **runas：系统** 测试元数据标记的测试仍将作为本地系统运行，即使在命令行上指定了 **/runas：提升** 。
 
  
 
-示例 （本机代码）
+本机代码 (示例) 
 
 ```ManagedCPlusPlus
 class MyTests
@@ -51,7 +50,7 @@ class MyTests
 };
 ```
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
+## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
 [RunAs](runas.md)

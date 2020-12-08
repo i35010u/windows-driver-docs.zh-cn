@@ -1,18 +1,17 @@
 ---
 title: 在跟踪提供程序中使用 WPP 软件跟踪
 description: 在跟踪提供程序中使用 WPP 软件跟踪
-ms.assetid: e215a99b-5082-4e81-84b6-184a2fd4e270
 keywords:
 - Windows 软件跟踪预处理器 WDK，关于 WPP
 - WPP 软件跟踪 WDK，关于 WPP
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ca80b4ffbfa96663826442e52c8ad81fe806ee5e
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 154c0b89e06ae59142a6df628781926016e07e36
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89385077"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96787601"
 ---
 # <a name="using-wpp-software-tracing-in-a-trace-provider"></a>在跟踪提供程序中使用 WPP 软件跟踪
 

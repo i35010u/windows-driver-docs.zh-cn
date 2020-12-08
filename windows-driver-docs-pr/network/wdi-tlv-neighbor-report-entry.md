@@ -1,22 +1,21 @@
 ---
 title: WDI_TLV_NEIGHBOR_REPORT_ENTRY
-description: WDI_TLV_NEIGHBOR_REPORT_ENTRY 是包含相邻报表 TLV。
-ms.assetid: 23A0AA84-3EDA-4D6F-9140-2361C0CF55AA
+description: WDI_TLV_NEIGHBOR_REPORT_ENTRY 是包含邻居报表的 TLV。
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 WDI_TLV_NEIGHBOR_REPORT_ENTRY 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 0ee93407c51e05707e3828f91ab3f77f378bc650
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 11dea97d8a5baaf06dac926f2a5b85d0ba3a348c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63392277"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96788259"
 ---
-# <a name="wditlvneighborreportentry"></a>WDI\_TLV\_邻居\_报表\_条目
+# <a name="wdi_tlv_neighbor_report_entry"></a>WDI \_ TLV \_ 邻居 \_ 报表 \_ 条目
 
 
-WDI\_TLV\_邻居\_报表\_项是包含相邻报表 TLV。
+WDI \_ tlv \_ 邻居 \_ 报表 \_ 项是包含邻居报表的 tlv。
 
 ## <a name="tlv-type"></a>TLV 类型
 
@@ -26,18 +25,18 @@ WDI\_TLV\_邻居\_报表\_项是包含相邻报表 TLV。
 ## <a name="length"></a>长度
 
 
-所有的大小 （以字节为单位） 总和包含 TLVs。
+Sum (包含所有 TLVs 的大小的) 字节。
 
 ## <a name="values"></a>值
 
 
-| 在任务栏的搜索框中键入                                                          | 允许多个 TLV 实例 | 可选 | 描述                                                         |
+| 类型                                                          | 允许多个 TLV 实例 | 可选 | 说明                                                         |
 |---------------------------------------------------------------|--------------------------------|----------|---------------------------------------------------------------------|
-| [**WDI\_TLV\_BSSID**](wdi-tlv-bssid.md)                      |                                |          | AP 邻居报表中的 BSSID。                         |
-| [**WDI\_TLV\_BSSID\_INFO**](wdi-tlv-bssid-info.md)           |                                |          | AP BSSID 信息。                                    |
-| [**WDI\_TLV\_OPERATING\_类**](wdi-tlv-operating-class.md) |                                |          | 指示此 BSSID AP 操作类。              |
-| [**WDI\_TLV\_CHANNEL\_NUMBER**](wdi-tlv-channel-number.md)   |                                |          | 最后一个已知的操作通道的指示此 BSSID AP。 |
-| [**WDI\_TLV\_PHY\_TYPE**](wdi-tlv-phy-type.md)               |                                |          | 指示此 BSSID AP 物理类型。                     |
+| [**WDI \_ TLV \_ BSSID**](wdi-tlv-bssid.md)                      |                                |          | 邻居报表中的 AP 的 BSSID。                         |
+| [**WDI \_ TLV \_ BSSID \_ 信息**](wdi-tlv-bssid-info.md)           |                                |          | AP 的 BSSID 信息。                                    |
+| [**WDI \_ TLV \_ 操作 \_ 类**](wdi-tlv-operating-class.md) |                                |          | 此 BSSID 指示的 AP 的操作类。              |
+| [**WDI \_ TLV \_ 通道 \_ 号**](wdi-tlv-channel-number.md)   |                                |          | 此 BSSID 指示的 AP 的最后一个已知操作通道。 |
+| [**WDI \_ TLV \_ PHY \_ 类型**](wdi-tlv-phy-type.md)               |                                |          | 此 BSSID 指示的 AP 的 PHY 类型。                     |
 
  
 
@@ -56,10 +55,10 @@ WDI\_TLV\_邻居\_报表\_项是包含相邻报表 TLV。
 </tr>
 <tr class="even">
 <td><p>最低受支持的服务器</p></td>
-<td><p>Windows Server 2016</p></td>
+<td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
-<td><p>Header</p></td>
+<td><p>标头</p></td>
 <td>Wditypes.hpp</td>
 </tr>
 </tbody>

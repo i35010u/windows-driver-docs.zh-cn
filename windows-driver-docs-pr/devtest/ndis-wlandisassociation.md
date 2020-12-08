@@ -1,7 +1,6 @@
 ---
 title: 'WlanDisassociation 规则 (ndis) '
 description: WlanDisassociation 规则验证微型端口驱动程序是否正确遵循了本机802.11 无线局域网 (WLAN) 解除相应的序列。
-ms.assetid: E9C115D5-8522-4275-B874-1DB673AE23F2
 ms.date: 05/21/2018
 keywords:
 - 'WlanDisassociation 规则 (ndis) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: e82f1ae9618dadabb10c0ccf44e7eedf9a603d31
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: c40aa4aface8c7f6dec9760f0d43c93c2a718824
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90107446"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96786893"
 ---
 # <a name="wlandisassociation-rule-ndis"></a>WlanDisassociation 规则 (ndis) 
 
 
-**WlanDisassociation**规则验证微型端口驱动程序是否正确遵循了本机802.11 无线局域网 (WLAN) 解除相应的序列。
+**WlanDisassociation** 规则验证微型端口驱动程序是否正确遵循了本机802.11 无线局域网 (WLAN) 解除相应的序列。
 
 **驱动程序模型： NDIS**
 

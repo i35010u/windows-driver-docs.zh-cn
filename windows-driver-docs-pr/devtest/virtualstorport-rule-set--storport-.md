@@ -1,15 +1,14 @@
 ---
 title: VirtualStorport 规则集 (Storport)
 description: 使用这些规则验证你的驱动程序是否正确地调用 (VMiniport) 驱动程序的 Storport 虚拟小型端口。
-ms.assetid: 7223AFF1-7EB7-4E25-BC50-8A7BF4E4BE59
 ms.date: 05/21/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: e2ba2bd8630d9a0beebb63a809f3dd1a223c60fc
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 4b85ea01d61ed90673cf808b8be85a349c94fa3a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90106458"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96787587"
 ---
 # <a name="virtualstorport-rule-set-storport"></a>VirtualStorport 规则集 (Storport)
 
@@ -27,7 +26,7 @@ ms.locfileid: "90106458"
 <thead>
 <tr class="header">
 <th align="left">主题</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>
@@ -74,7 +73,7 @@ ms.locfileid: "90106458"
 
 2.  单击 " **规则** " 选项卡。在 " **规则集**" 下，选择 **VirtualStorport**。
 
-    若要从 Visual Studio 开发人员命令提示符窗口中选择默认规则集，请使用 **/check**选项指定**VirtualStorport。 sdv** 。 例如：
+    若要从 Visual Studio 开发人员命令提示符窗口中选择默认规则集，请使用 **/check** 选项指定 **VirtualStorport。 sdv** 。 例如：
 
     ```
     msbuild /t:sdv /p:Inputs="/check:VirtualStorport.sdv" mydriver.VcxProj /p:Configuration="Win8 Release" /p:Platform=Win32

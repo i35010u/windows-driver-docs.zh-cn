@@ -1,17 +1,16 @@
 ---
-title: 查看暂存器
-description: 查看暂存器
-ms.assetid: 7bff1956-d38f-43ac-89a2-ad0afd9e2919
+title: 查看暂存板
+description: 查看暂存板
 keywords:
-- 查看暂存器
+- 查看暂存板
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 08cad4cade5595c0451974c30d02e5cd71b70dc3
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2206d01944c793b8cc31c9e5b52e137cd9eaf7a3
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63386434"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96787761"
 ---
 # <a name="view--scratch-pad"></a>视图 | 暂存器
 
@@ -19,9 +18,9 @@ ms.locfileid: "63386434"
 ## <span id="ddk_view_scratch_pad_dbg"></span><span id="DDK_VIEW_SCRATCH_PAD_DBG"></span>
 
 
-单击**便笺**上**视图**菜单打开便笺。 如果此窗口已打开，变为活动状态。
+单击 "**查看**" 菜单上的 "**暂存板**" 以打开暂存板。 如果此窗口已打开，则它将变为活动状态。
 
-此命令相当于按下 ALT + 8 或单击**草稿板 (Alt + 8)** 按钮 (![的草稿板按钮的屏幕截图](images/tbspad.png)) 工具栏上。
+此命令等效于按 ALT + 8，或单击 **暂存板 (ALT + 8)** 按钮 (![ 工具栏上的 "暂存板" 按钮 ](images/tbspad.png)) 屏幕截图。
 
  
 

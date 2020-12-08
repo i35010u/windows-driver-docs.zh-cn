@@ -1,7 +1,6 @@
 ---
 title: 调试 \_ 请求 \_ EXT \_ 类型化 \_ 数据 \_ ANSI
 description: 调试 \_ 请求 \_ EXT \_ 类型化 \_ 数据 \_ ANSI
-ms.assetid: ac883bc8-3956-4bc3-a11e-b6e036305329
 keywords:
 - DEBUG_REQUEST_EXT_TYPED_DATA_ANSI Windows 调试
 topic_type:
@@ -12,22 +11,22 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c7522b84b0f15b919404a69ff49814c7f14a40f8
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 1f0be8d9843ceee6617d020b1c169769cf126b3f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89206111"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96787797"
 ---
 # <a name="debug_request_ext_typed_data_ansi"></a>调试 \_ 请求 \_ EXT \_ 类型化 \_ 数据 \_ ANSI
 
 
 DEBUG \_ 请求 \_ EXT \_ 类型化的 \_ 数据 \_ ANSI [**请求**](request.md) 操作执行各种不同的子操作，有助于解释类型化数据。
 
-**参数**
+**Parameters**
 
 <span id="InBuffer"></span><span id="inbuffer"></span><span id="INBUFFER"></span>*InBuffer*  
-指定用于确定要执行的子操作的 [**EXT \_ 类型化的 \_ 数据**](/windows-hardware/drivers/ddi/wdbgexts/ns-wdbgexts-_ext_typed_data) 结构。 此扩展 \_ 类型化 \_ 数据结构包含该子操作的输入参数以及任何 (可选) 其他数据。 其他数据将包含在 *InBuffer* 中的 EXT \_ 类型化 \_ 数据结构之后。 *InBuffer*的大小是包含 EXT \_ 类型化 \_ 数据结构和其他数据的缓冲区的总大小。 有关此结构的详细信息以及如何包含其他数据，请参阅 **EXT \_ 类型化 \_ 数据** 。
+指定用于确定要执行的子操作的 [**EXT \_ 类型化的 \_ 数据**](/windows-hardware/drivers/ddi/wdbgexts/ns-wdbgexts-_ext_typed_data) 结构。 此扩展 \_ 类型化 \_ 数据结构包含该子操作的输入参数以及任何 (可选) 其他数据。 其他数据将包含在 *InBuffer* 中的 EXT \_ 类型化 \_ 数据结构之后。 *InBuffer* 的大小是包含 EXT \_ 类型化 \_ 数据结构和其他数据的缓冲区的总大小。 有关此结构的详细信息以及如何包含其他数据，请参阅 **EXT \_ 类型化 \_ 数据** 。
 
 支持以下子操作。
 
@@ -38,8 +37,8 @@ DEBUG \_ 请求 \_ EXT \_ 类型化的 \_ 数据 \_ ANSI [**请求**](request.md
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">子操作</th>
-<th align="left">说明</th>
+<th align="left">Sub-Operation</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>
@@ -125,9 +124,9 @@ DEBUG \_ 请求 \_ EXT \_ 类型化的 \_ 数据 \_ ANSI [**请求**](request.md
  
 
 <span id="OutBuffer"></span><span id="outbuffer"></span><span id="OUTBUFFER"></span>*OutBuffer*  
-接收包含输出参数和子操作的任何其他数据的 [**EXT \_ 类型化的 \_ 数据**](/windows-hardware/drivers/ddi/wdbgexts/ns-wdbgexts-_ext_typed_data) 结构。 与 *InBuffer*一样， *OutBuffer* 的大小是包含 EXT \_ 类型化 \_ 数据结构和任何其他数据的缓冲区的总大小。
+接收包含输出参数和子操作的任何其他数据的 [**EXT \_ 类型化的 \_ 数据**](/windows-hardware/drivers/ddi/wdbgexts/ns-wdbgexts-_ext_typed_data) 结构。 与 *InBuffer* 一样， *OutBuffer* 的大小是包含 EXT \_ 类型化 \_ 数据结构和任何其他数据的缓冲区的总大小。
 
-"调试" \_ 请求 \_ EXT \_ 类型化 \_ \_ 的数据 ANSI 操作最初会将 *InBuffer* 复制到 *OutBuffer* ，然后就地修改 *OutBuffer* 的内容。 这意味着将*OutBuffer*用 EXT \_ 类型化数据的输入参数 \_ 以及在*InBuffer*中提供的任何附加数据填充 OutBuffer。 这也意味着 *OutBuffer* 的大小必须至少与 *InBuffer*的大小相同。
+"调试" \_ 请求 \_ EXT \_ 类型化 \_ \_ 的数据 ANSI 操作最初会将 *InBuffer* 复制到 *OutBuffer* ，然后就地修改 *OutBuffer* 的内容。 这意味着将 *OutBuffer* 用 EXT \_ 类型化数据的输入参数 \_ 以及在 *InBuffer* 中提供的任何附加数据填充 OutBuffer。 这也意味着 *OutBuffer* 的大小必须至少与 *InBuffer* 的大小相同。
 
 ### <a name="span-idreturn_valuespanspan-idreturn_valuespanspan-idreturn_valuespanreturn-value"></a><span id="Return_Value"></span><span id="return_value"></span><span id="RETURN_VALUE"></span>返回值
 
@@ -136,12 +135,12 @@ DEBUG \_ 请求 \_ EXT \_ 类型化的 \_ 数据 \_ ANSI [**请求**](request.md
 
 此方法还可以返回错误值。 有关更多详细信息，请参阅 [**返回值**](./hresult-values.md) 。
 
-此操作返回的值还存储在*OutBuffer*的**Status**成员中。
+此操作返回的值还存储在 *OutBuffer* 的 **Status** 成员中。
 
 <a name="remarks"></a>备注
 -------
 
-由调试 \_ 请求 \_ 扩展 \_ 类型化数据 ANSI 请求操作执行的子操作由 \_ \_ [**Ext \_ 类型化 \_ 数据**](/windows-hardware/drivers/ddi/wdbgexts/ns-wdbgexts-_ext_typed_data)结构的**操作**成员确定，该结构在[**ext \_ TDOP**](/windows-hardware/drivers/ddi/wdbgexts/ne-wdbgexts-_ext_tdop)枚举中采用值。 [**Request**](request.md)
+由调试 \_ 请求 \_ 扩展 \_ 类型化数据 ANSI 请求操作执行的子操作由 \_ \_ [**Ext \_ 类型化 \_ 数据**](/windows-hardware/drivers/ddi/wdbgexts/ns-wdbgexts-_ext_typed_data)结构的 **操作** 成员确定，该结构在 [**ext \_ TDOP**](/windows-hardware/drivers/ddi/wdbgexts/ne-wdbgexts-_ext_tdop)枚举中采用值。 [**Request**](request.md)
 
 ## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅
 

@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ 调谐器 \_ 扫描 \_ CAP
 description: KSPROPERTY \_ 调谐器 \_ SCAN \_ cap 属性介绍了优化设备的扫描功能，包括设备支持的网络类型。
-ms.assetid: 339d5f6b-81ac-419e-9821-a7f1642e1aa8
 keywords:
 - KSPROPERTY_TUNER_SCAN_CAPS 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e8698ff5e6b5f22c26b368baf561d36df1d4cef1
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 8817cfca2e67c6e803b6bfde47d13d2c41c8388e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90105990"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96788163"
 ---
 # <a name="ksproperty_tuner_scan_caps"></a>KSPROPERTY \_ 调谐器 \_ 扫描 \_ CAP
 
@@ -63,7 +62,7 @@ KSPROPERTY \_ 调谐器 \_ SCAN \_ cap 属性介绍了优化设备的扫描功�
 <a name="remarks"></a>备注
 -------
 
-驱动程序应至少为其支持的网络类型返回以下 Guid 之一。 这些 Guid 是在 *Bdamedia* 中定义的，应从 *Bdamedia*引用。 有关这些 Guid 的详细信息，请参阅 [广播网络类型 guid](broadcast-network-type-guids.md)。
+驱动程序应至少为其支持的网络类型返回以下 Guid 之一。 这些 Guid 是在 *Bdamedia* 中定义的，应从 *Bdamedia* 引用。 有关这些 Guid 的详细信息，请参阅 [广播网络类型 guid](broadcast-network-type-guids.md)。
 
 -   数字 \_ 有线 \_ 网络 \_ 类型
 
@@ -93,7 +92,7 @@ KSPROPERTY \_ 调谐器 \_ SCAN \_ cap 属性介绍了优化设备的扫描功�
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSPROPERTY \_ 调谐器 \_ 扫描 \_ CAP \_ S**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_tuner_scan_caps_s)

@@ -1,7 +1,6 @@
 ---
 title: WHEA 管理应用程序简介
 description: WHEA 管理应用程序简介
-ms.assetid: d0c487bd-dfa8-43f2-a494-0ed95d767bfb
 keywords:
 - 管理应用程序 WDK WHEA，关于管理应用程序
 - 用户模式应用程序 WDK WHEA，管理应用程序
@@ -9,12 +8,12 @@ keywords:
 - Windows 硬件错误体系结构 WDK，管理应用程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 982e70f9440b81bfc501ee6c0824c0d0bb4c838e
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: b9b85a9fc09a5be77670642c90d3531cff931e71
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91732656"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96787113"
 ---
 # <a name="introduction-to-whea-management-applications"></a>WHEA 管理应用程序简介
 
@@ -31,7 +30,7 @@ Windows 硬件错误体系结构 (WHEA) 提供 Windows Management Instrumentatio
 
 有关 WMI 的详细信息，请参阅 Windows SDK 文档的 [Windows Management Instrumentation](/windows/win32/wmisdk/wmi-start-page) 部分。
 
-**注意**   Windows Server 2008、Windows Vista SP1 和更高版本的 Windows 支持 WHEA WMI 提供程序类。
+**注意**  Windows Server 2008、Windows Vista SP1 和更高版本的 Windows 支持 WHEA WMI 提供程序类。
 
  
 

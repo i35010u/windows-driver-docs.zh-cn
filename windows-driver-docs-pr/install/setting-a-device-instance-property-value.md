@@ -1,15 +1,14 @@
 ---
 title: 设置设备实例属性值
 description: 设置设备实例属性值
-ms.assetid: 45f63ee3-278e-4b8c-a666-c860074fa172
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8b15464b39d0cda7733d8e675b7b28ae04e5dbe0
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: f85b3c3b6883522f88987687e9f9d70466520a16
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91733671"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96787345"
 ---
 # <a name="setting-a-device-instance-property-value"></a>设置设备实例属性值
 

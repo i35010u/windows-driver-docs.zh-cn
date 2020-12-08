@@ -1,7 +1,6 @@
 ---
 title: 驱动程序验证程序命令语法
 description: 在命令提示符窗口中运行验证程序实用程序时，将使用以下语法。您可以在同一单行上键入几个选项。
-ms.assetid: 7cdf5277-7187-4e90-b22a-6f828f06e2fb
 keywords:
 - 驱动程序验证程序命令语法驱动程序开发工具
 topic_type:
@@ -12,12 +11,12 @@ api_type:
 - NA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: de1b4f9a7914bb99d1be596851bbfa092853b81e
-ms.sourcegitcommit: 3464f10ffa0727e38fbe225cfab52bb8c2bb1747
+ms.openlocfilehash: e7b2f3f242a078024e2fed2bc05162ac87b3f4cb
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93352966"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96787593"
 ---
 # <a name="driver-verifier-command-syntax"></a>驱动程序验证程序命令语法
 
@@ -84,7 +83,7 @@ verifier /flags 7 /driver beep.sys flpydisk.sys
 
 **Windows 8、Windows 7、Windows Vista 语法**
 
-可以将 **/volatile** 参数与一些 Driver Verifier **/flags** 选项和 with **/标准** 一起使用。 不能将 **/volatile** 与/flags 选项配合使用来进行 [DDI 相容性检查](ddi-compliance-checking.md)、 [Power Framework 延迟模糊](concurrency-stress-test.md)处理、 [Storport 验证](dv-storport-verification.md)、 [SCSI 验证](scsi-verification.md) 或使用 **/disk** 。 有关详细信息，请参阅 [使用可变设置](using-volatile-settings.md)。
+可以将 **/volatile** 参数与一些 Driver Verifier **/flags** 选项和 with **/标准** 一起使用。 不能将 **/volatile** 与/flags 选项配合使用来进行 [DDI 相容性检查](ddi-compliance-checking.md)、 [Power Framework 延迟模糊](concurrency-stress-test.md)处理、 [Storport 验证](dv-storport-verification.md)、 [SCSI 验证](scsi-verification.md) 或使用 **/disk**。 有关详细信息，请参阅 [使用可变设置](using-volatile-settings.md)。
 
 ```
 verifier [/volatile] [/standard | /flags Options ] [ /all | /driver DriverList ]
@@ -165,7 +164,7 @@ Windows Server 2003 中引入的 (。 在 windows 7 和更高版本的 Windows �
 指定将从验证中排除的一个或多个驱动程序。 仅当选择了所有驱动程序进行验证时，此参数才适用。 *DriverList* 是按二进制名称列出的驱动程序列表，如 Driver.sys。 使用空格分隔每个驱动程序名称。 不支持通配符值，例如 \* ，sys.databases。
 
 <span id="________faults______"></span><span id="________FAULTS______"></span>**/faults**   
- (Windows Vista 和更高版本) 启用驱动程序验证器中的低资源模拟功能。 可以使用 **/faults** 来代替 **/flags 0x4** 。 但是，不能将 **/flags 0x4** 与 **/faults** 子参数一起使用。
+ (Windows Vista 和更高版本) 启用驱动程序验证器中的低资源模拟功能。 可以使用 **/faults** 来代替 **/flags 0x4**。 但是，不能将 **/flags 0x4** 与 **/faults** 子参数一起使用。
 
 你可以使用以下子参数的 **/faults** 参数配置低资源模拟。
 
@@ -282,7 +281,7 @@ Windows Server 2003 中引入的 (。 在 windows 7 和更高版本的 Windows �
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">十进制</th>
+<th align="left">小数</th>
 <th align="left">十六进制</th>
 <th align="left">标准设置</th>
 <th align="left">选项</th>
@@ -449,7 +448,7 @@ Windows Server 2003 中引入的 (。 在 windows 7 和更高版本的 Windows �
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">十进制</th>
+<th align="left">小数</th>
 <th align="left">十六进制</th>
 <th align="left">选项</th>
 </tr>
@@ -478,7 +477,7 @@ Windows Server 2003 中引入的 (。 在 windows 7 和更高版本的 Windows �
 <span id="________iolevel________Level______"></span><span id="________iolevel________level______"></span><span id="________IOLEVEL________LEVEL______"></span>**/Iolevel** *级别*   
 仅 (Windows 2000) 指定 [I/o 验证](i-o-verification.md)的级别。
 
-*Level* 的值可以是 **1** 或 **2** 。 默认值是 **1** 秒。
+*Level* 的值可以是 **1** 或 **2**。 默认值是 **1** 秒。
 
 <table>
 <colgroup>
@@ -505,7 +504,7 @@ Windows Server 2003 中引入的 (。 在 windows 7 和更高版本的 Windows �
 
 
 
-如果未使用 **/flags 0x10** ) 启用 i/o 验证 (，则将忽略 **/iolevel** 。
+如果未使用 **/flags 0x10**) 启用 i/o 验证 (，则将忽略 **/iolevel** 。
 
 <span id="________log________LogFileName_______interval_Seconds_______"></span><span id="________log________logfilename_______interval_seconds_______"></span><span id="________LOG________LOGFILENAME_______INTERVAL_SECONDS_______"></span>**/log** *LogFileName* \[ **/interval** | *秒*\]   
 创建名为 *LogFileName* 的日志文件。 驱动程序验证程序定期将统计信息写入此文件。 有关详细信息，请参阅 [创建日志文件](creating-log-files.md)。
@@ -570,7 +569,7 @@ Windows Server 2003 中引入的 (。 在 windows 7 和更高版本的 Windows �
 
 
 <span id="________standard"></span><span id="________STANDARD"></span>**/标准**  
- (Windows XP 和更高版本) 会在下一次启动之后激活 "标准" 或默认的驱动程序验证程序选项。 Windows XP 中的标准选项是 [特殊的池](special-pool.md)， [强制执行 IRQL 检查](force-irql-checking.md)， [池跟踪](pool-tracking.md)， [I/o 验证](i-o-verification.md)， [死锁检测](deadlock-detection.md)和 [DMA 验证](dma-verification.md)。 这等效于 **/Flags 0xBB** 。 从 Windows Vista 开始，标准选项还包括 [安全检查](security-checks.md) 和 [其他检查](miscellaneous-checks.md)。 这等效于 **/Flags 0x9BB** 。 从 Windows 8 开始，标准选项还包括 [DDI 相容性检查](ddi-compliance-checking.md)。 这等效于 **/Flags 0x209BB** 。
+ (Windows XP 和更高版本) 会在下一次启动之后激活 "标准" 或默认的驱动程序验证程序选项。 Windows XP 中的标准选项是 [特殊的池](special-pool.md)， [强制执行 IRQL 检查](force-irql-checking.md)， [池跟踪](pool-tracking.md)， [I/o 验证](i-o-verification.md)， [死锁检测](deadlock-detection.md)和 [DMA 验证](dma-verification.md)。 这等效于 **/Flags 0xBB**。 从 Windows Vista 开始，标准选项还包括 [安全检查](security-checks.md) 和 [其他检查](miscellaneous-checks.md)。 这等效于 **/Flags 0x9BB**。 从 Windows 8 开始，标准选项还包括 [DDI 相容性检查](ddi-compliance-checking.md)。 这等效于 **/Flags 0x209BB**。
 
 > [!NOTE]
 > 从1803后的 Windows 10 版本开始，使用 **/Flags 0x209BB** 将不再自动启用 WDF 验证。 使用 **/标准** 语法启用标准选项，其中包含 WDF 验证。
@@ -702,8 +701,8 @@ Windows Server 2003 中引入的 (。 在 windows 7 和更高版本的 Windows �
 
 运行驱动程序验证程序后，将返回以下值。
 
-**0** ：退出 \_ 代码 \_ 成功
+**0**：退出 \_ 代码 \_ 成功
 
-**1** ：退出 \_ 代码 \_ 错误
+**1**：退出 \_ 代码 \_ 错误
 
-**2** ： \_ 需要退出代码 \_ 重新启动 \_
+**2**： \_ 需要退出代码 \_ 重新启动 \_

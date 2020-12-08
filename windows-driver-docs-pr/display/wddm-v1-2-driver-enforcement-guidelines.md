@@ -1,22 +1,21 @@
 ---
 title: WDDM 1.2 驱动程序实施指导原则
-description: 本部分介绍 WDDM 1.2 驱动程序强制实施指南。
-ms.assetid: FD7D5519-DB2D-40D7-B6FA-1AD88E70B15A
+description: 本部分介绍 WDDM 1.2 驱动程序强制准则。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: be45531c6ec55c78743011904b37aedaf1eca094
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2f08f80312363656053e1212514594ebd33df336
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63391187"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96786367"
 ---
 # <a name="wddm-12-driver-enforcement-guidelines"></a>WDDM 1.2 驱动程序实施指导原则
 
 
-本部分介绍 WDDM 1.2 驱动程序强制实施指南。
+本部分介绍 WDDM 1.2 驱动程序强制准则。
 
-## <a name="span-idinthissectionspanin-this-section"></a><span id="in_this_section"></span>本部分中的内容
+## <a name="span-idin_this_sectionspanin-this-section"></a><span id="in_this_section"></span>本部分中的内容
 
 
 <table>
@@ -32,16 +31,16 @@ ms.locfileid: "63391187"
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="wddm-v1-2-driver-enforcement.md" data-raw-source="[WDDM 1.2 driver enforcement](wddm-v1-2-driver-enforcement.md)">强制 WDDM 1.2 驱动程序</a></p></td>
-<td align="left"><p>从 Windows 8，以确定是否通过 WDDM 1.2 驱动程序支持强制 Windows 显示驱动程序模型 (WDDM) 1.2 功能开始强制执行由 Microsoft DirectX 图形内核子系统 (Dxgkrnl) 验证。</p></td>
+<td align="left"><p><a href="wddm-v1-2-driver-enforcement.md" data-raw-source="[WDDM 1.2 driver enforcement](wddm-v1-2-driver-enforcement.md)">WDDM 1.2 驱动程序实施</a></p></td>
+<td align="left"><p>Microsoft DirectX graphics 内核子系统 (Dxgkrnl) 的验证是从 Windows 8 开始强制执行的，以确定 WDDM 1.2 驱动程序是否支持必需的 Windows 显示驱动程序模型 (WDDM) 1.2 功能。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="wddm-driver-and-feature-caps.md" data-raw-source="[WDDM driver and feature caps](wddm-driver-and-feature-caps.md)">WDDM 驱动程序和功能大写字母</a></p></td>
-<td align="left"><p>本主题介绍 WDDM 驱动程序功能 (cap)。</p></td>
+<td align="left"><p><a href="wddm-driver-and-feature-caps.md" data-raw-source="[WDDM driver and feature caps](wddm-driver-and-feature-caps.md)">WDDM 驱动程序和功能上限</a></p></td>
+<td align="left"><p>本主题描述 (cap) 的 WDDM 驱动程序功能。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="wddm-v1-2-best-practices.md" data-raw-source="[WDDM 1.2 best practices](wddm-v1-2-best-practices.md)">WDDM 1.2 最佳实践</a></p></td>
-<td align="left"><p>为了提供最佳体验在 Windows 8 和更高版本，Windows 会利用图形硬件的 WDDM 1.2 或更高版本的驱动程序配对。 本部分汇总了最佳实践。</p></td>
+<td align="left"><p><a href="wddm-v1-2-best-practices.md" data-raw-source="[WDDM 1.2 best practices](wddm-v1-2-best-practices.md)">WDDM 1.2 最佳做法</a></p></td>
+<td align="left"><p>为了在 Windows 8 及更高版本中提供最佳体验，Windows 利用了与 WDDM 1.2 或更高版本的驱动程序配对的图形硬件。 本部分总结了最佳实践。</p></td>
 </tr>
 </tbody>
 </table>

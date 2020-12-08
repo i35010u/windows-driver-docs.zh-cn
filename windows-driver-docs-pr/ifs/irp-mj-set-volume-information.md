@@ -1,7 +1,6 @@
 ---
 title: IRP_MJ_SET_VOLUME_INFORMATION
 description: IRP \_ MJ \_ 设置 \_ 卷 \_ 信息
-ms.assetid: 7c317e8b-ffa9-47f7-ac53-23b09873fab9
 keywords:
 - IRP_MJ_SET_VOLUME_INFORMATION 可安装的文件系统驱动程序
 topic_type:
@@ -12,12 +11,12 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d0ffdade90af4f76f3e349e8214b887325be0413
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: c6c0c6a6d96f49fcb840dc48cd11d87314043ce8
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90104790"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96786305"
 ---
 # <a name="irp_mj_set_volume_information"></a>IRP \_ MJ \_ 设置 \_ 卷 \_ 信息
 
@@ -50,7 +49,7 @@ FileFsObjectIdInformation
 ## <a name="parameters"></a>参数
 
 
-文件系统或筛选器驱动程序与给定的 IRP 一起调用[**IoGetCurrentIrpStackLocation**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetcurrentirpstacklocation) ，以获取指向其自己的*IrpSp*[**堆栈位置**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_stack_location)的指针，如以下列表所示。  (IRP 显示为 *irp*。 ) 驱动程序可以使用 irp 的下列成员中设置的信息，并使用 irp 堆栈位置来处理设置的卷信息请求：
+文件系统或筛选器驱动程序与给定的 IRP 一起调用 [**IoGetCurrentIrpStackLocation**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetcurrentirpstacklocation) ，以获取指向其自己的 *IrpSp*[**堆栈位置**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_stack_location)的指针，如以下列表所示。  (IRP 显示为 *irp*。 ) 驱动程序可以使用 irp 的下列成员中设置的信息，并使用 irp 堆栈位置来处理设置的卷信息请求：
 
 <a href="" id="deviceobject"></a>*DeviceObject*  
 指向目标设备对象的指针。
@@ -66,9 +65,9 @@ FileFsObjectIdInformation
 
 <a href="" id="irp--iostatus"></a>*Irp- &gt;IoStatus* 指向 [**IO \_ 状态 \_ 块**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_status_block) 结构的指针，该结构接收最终完成状态和有关请求的操作的信息。
 
-<a href="" id="irpsp--fileobject"></a>*IrpSp- &gt;* 指向与*DeviceObject*关联的文件对象的 FileObject 指针。
+<a href="" id="irpsp--fileobject"></a>*IrpSp- &gt;* 指向与 *DeviceObject* 关联的文件对象的 FileObject 指针。
 
-*IrpSp- &gt; FileObject*参数包含指向**RelatedFileObject**字段的指针，该字段也是文件 \_ 对象结构。 文件对象结构的 **RelatedFileObject** 字段在 \_ 处理 IRP \_ MJ \_ 集卷信息期间无效 \_ \_ ，不应使用。
+*IrpSp- &gt; FileObject* 参数包含指向 **RelatedFileObject** 字段的指针，该字段也是文件 \_ 对象结构。 文件对象结构的 **RelatedFileObject** 字段在 \_ 处理 IRP \_ MJ \_ 集卷信息期间无效 \_ \_ ，不应使用。
 
 <a href="" id="irpsp--majorfunction"></a>*IrpSp- &gt;MajorFunction* 指定 IRP \_ MJ \_ 设置 \_ \_ 的卷信息。
 
@@ -81,7 +80,7 @@ FileFsObjectIdInformation
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">值</th>
+<th align="left">“值”</th>
 <th align="left">含义</th>
 </tr>
 </thead>
@@ -103,7 +102,7 @@ FileFsObjectIdInformation
 
  
 
-<a href="" id="irpsp--parameters-setvolume-length"></a>*IrpSp- &gt;SetVolume* * &gt; temBuffer 所AssociatedIrp.Sys*指向的缓冲区的长度（以字节为单位）。
+<a href="" id="irpsp--parameters-setvolume-length"></a>*IrpSp- &gt;SetVolume* *&gt; temBuffer 所AssociatedIrp.Sys* 指向的缓冲区的长度（以字节为单位）。
 
 ## <a name="see-also"></a>请参阅
 

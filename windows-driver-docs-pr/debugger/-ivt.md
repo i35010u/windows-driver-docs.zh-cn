@@ -1,10 +1,9 @@
 ---
 title: ivt
-description: 程序扩展显示的 Itanium 中断矢量表。
-ms.assetid: 855c50ed-361e-4236-a1b0-e1b2a3ae2a62
+description: Ivt 扩展显示 Itanium 中断向量表。
 keywords:
 - 中断矢量表
-- Windows 调试程序
+- ivt Windows 调试
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -13,43 +12,43 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: f2003c3fa260f835673cf4277f10156d73c4b6cc
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: efa4265a671f21ba2565262b6d9286b4b6cc6564
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63336378"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96786489"
 ---
 # <a name="ivt"></a>!ivt
 
 
-！ 程序扩展插件都会显示 Itanium 中断矢量表。
+！ Ivt extension 显示 Itanium 中断矢量表。
 
 ```dbgcmd
 !ivt [-v] [-a] [Vector] 
 !ivt -? 
 ```
 
-**重要**  此命令已被 Windows 调试器版本 10.0.14257 中不推荐使用和更高版本，并不再可用。
+**重要提示**  此命令在 Windows 调试器版本10.0.14257 和更高版本中已弃用，不再可用。
 
  
 
-## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>参数
+## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>Parameters
 
 
-<span id="_______Vector______"></span><span id="_______vector______"></span><span id="_______VECTOR______"></span> *向量*   
-指定当前处理器的中断向量表条目。 如果*向量*是省略，则目标计算机上的当前处理器的整个中断矢量表将显示。 除非不会显示尚未分配的中断向量 **-a**指定选项。
+<span id="_______Vector______"></span><span id="_______vector______"></span><span id="_______VECTOR______"></span>*矢量*   
+指定当前处理器的中断向量表项。 如果省略 *向量* ，则显示目标计算机上当前处理器的整个中断矢量表。 如果未指定 **-a** 选项，则不会显示未分配的中断矢量。
 
-<span id="_______-a______"></span><span id="_______-A______"></span> **-a**   
-显示所有中断平台，包括那些未分配。
+<span id="_______-a______"></span><span id="_______-A______"></span>**-a**   
+显示所有中断向量，包括未分配的向量。
 
-<span id="_______-v______"></span><span id="_______-V______"></span> **-v**   
+<span id="_______-v______"></span><span id="_______-V______"></span>**-v**   
 显示详细输出。
 
 <span id="_______-_______"></span> **-?**   
-显示此扩展在调试器命令窗口中的帮助。
+在调试器中显示此扩展的帮助命令窗口。
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 <table>
 <colgroup>
@@ -70,16 +69,16 @@ ms.locfileid: "63336378"
 
  
 
-此扩展命令仅用于 Itanium 目标计算机。
+此扩展命令只能与 Itanium 目标计算机一起使用。
 
-### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>其他信息
+### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>附加信息
 
-有关如何在 x64 或 x86 目标计算机上显示的中断调度表的详细信息，请参阅[ **！ idt**](-idt.md)。
+有关如何在 x64 或 x86 目标计算机上显示中断调度表的详细信息，请参阅 [**！ idt**](-idt.md)。
 
 <a name="remarks"></a>备注
 -------
 
-下面是输出的来自此扩展插件示例：
+下面是此扩展的输出示例：
 
 ```dbgcmd
 kd> !ivt

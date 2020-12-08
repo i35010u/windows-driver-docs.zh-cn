@@ -1,7 +1,6 @@
 ---
 title: 'PcUnmapAllocatedPages 规则 (音频) '
 description: PcUnmapAllocatedPages 规则指定 PortCls 微型端口驱动程序未映射当前映射的 MDL，而不先取消其映射。PortCls 微型端口驱动程序在使用 IMiniportWaveRTStream 接口释放内存之前 messagebox 取消内存。
-ms.assetid: 0ADF523C-9480-4AD2-8B98-23C95571CB0B
 ms.date: 05/21/2018
 keywords:
 - 'PcUnmapAllocatedPages 规则 (音频) '
@@ -12,12 +11,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 1e947559f527482d892c6e499c31a66fe2faa017
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 63225abea3623689fa9dc884fef2a402407b217d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90103976"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96786411"
 ---
 # <a name="pcunmapallocatedpages-rule-audio"></a>PcUnmapAllocatedPages 规则 (音频) 
 

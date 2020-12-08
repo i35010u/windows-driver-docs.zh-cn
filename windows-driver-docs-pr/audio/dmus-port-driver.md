@@ -1,7 +1,6 @@
 ---
 title: Dmu 端口驱动程序
 description: Dmu 端口驱动程序
-ms.assetid: 19828364-1b0d-4fc0-b142-9d776cbf1ada
 keywords:
 - DirectMusic WDK 音频，端口驱动程序
 - Dmu 端口驱动程序 WDK 音频
@@ -10,12 +9,12 @@ keywords:
 - 微型端口驱动程序 WDK 音频、端口驱动程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 058c99c902cc197275f1c8f5375251e62c8e8fe6
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 6e5d9ecc070d4eba916aa2b0c3aca8c420a9249e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89208075"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96786581"
 ---
 # <a name="dmus-port-driver"></a>Dmu 端口驱动程序
 
@@ -34,7 +33,7 @@ Dmu 端口驱动程序向微型端口驱动程序公开 [IPortDMus](/windows-har
 [**IPortDMus::RegisterServiceGroup**](/windows-hardware/drivers/ddi/dmusicks/nf-dmusicks-iportdmus-registerservicegroup)
 
 使用端口驱动程序注册服务组对象。
-已注册的服务组包含一个或多个由端口驱动程序调用 **Notify**时由端口驱动程序调用的服务例程的列表;有关详细信息，请参阅 [服务接收器和服务组对象](service-sink-and-service-group-objects.md)。
+已注册的服务组包含一个或多个由端口驱动程序调用 **Notify** 时由端口驱动程序调用的服务例程的列表;有关详细信息，请参阅 [服务接收器和服务组对象](service-sink-and-service-group-objects.md)。
 
 Dmu 端口驱动程序还会为每个流创建一个内存 [分配](allocator.md) 器，并向微型端口驱动程序的流对象公开分配器的 [IAllocatorMXF](/windows-hardware/drivers/ddi/dmusicks/nn-dmusicks-iallocatormxf) 接口。 **IAllocatorMXF** 继承基接口 [IMXF](/windows-hardware/drivers/ddi/dmusicks/nn-dmusicks-imxf)中的方法。 **IAllocatorMXF** 提供了以下附加方法：
 

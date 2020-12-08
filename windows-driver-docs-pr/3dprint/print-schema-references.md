@@ -1,15 +1,14 @@
 ---
 title: 打印架构参考
 description: 以下列表提供了指向行业标准、规范和技术文章的参考和链接。
-ms.assetid: D25FB8AF-D227-4940-8740-D1AFF9BE3AC3
 ms.date: 05/18/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 7c9c2d7f4908ca57e11fecc5892f821e8b772b23
-ms.sourcegitcommit: 40aa0786a52dd7b830e0ce1ed062ca0ba4e05f63
+ms.openlocfilehash: 585051336bb5b82fb12a928d194248bd1f9a3480
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/08/2020
-ms.locfileid: "88022993"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96788010"
 ---
 # <a name="print-schema-references"></a>打印架构参考
 
@@ -29,7 +28,7 @@ Crocker，Overell，P. "为语法规范扩充 BNF： ABNF"。 Internet 社会。
 
 ## <a name="ieee-754-1985"></a>IEEE 754-1985
 
-电气和电子工程师协会，Inc. (IEEE) 。 "用于二元浮点运算的 IEEE 标准"。 1985。
+电气和电子工程师协会，Inc. (IEEE) 。 "适用于二进制 Floating-Point 运算的 IEEE 标准"。 1985。
 
 [https://ieeexplore.ieee.org/document/30711](https://ieeexplore.ieee.org/document/30711)
 
@@ -37,7 +36,7 @@ Crocker，Overell，P. "为语法规范扩充 BNF： ABNF"。 Internet 社会。
 
 Microsoft Corporation。 "打印架构规格"。
 
-[ (ZIP 下载) 打印架构规范](https://download.microsoft.com/download/d/e/c/deca6e6b-3e81-48e7-b7ef-6d92a547d03c/print-schema-spec-2-0.zip)
+[ (ZIP 下载) 打印架构规范 ](https://download.microsoft.com/download/d/e/c/deca6e6b-3e81-48e7-b7ef-6d92a547d03c/print-schema-spec-2-0.zip)
 
 ## <a name="rfc-2119"></a>RFC 2119
 

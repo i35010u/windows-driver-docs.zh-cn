@@ -1,9 +1,8 @@
 ---
 title: isainfo
-description: Isainfo 扩展显示 PNPISA 卡信息或在系统中存在的设备...
-ms.assetid: 8caa501e-3bb7-4af8-a7ea-e8b255b9f24c
+description: Isainfo 扩展显示有关 PNPISA 卡或系统中存在的设备的信息。
 keywords:
-- I/O 总线
+- I/o 总线
 - CARD_INFORMATION
 - isainfo Windows 调试
 ms.date: 05/23/2017
@@ -14,29 +13,29 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: ae347aa0f24202db04c121fe40094255c85d6d8b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 318f2b06c46d08e18656346e92d8cbff83d1782f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63336430"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96786493"
 ---
 # <a name="isainfo"></a>!isainfo
 
 
-**！ Isainfo**扩展显示 PNPISA 卡信息或在系统中存在的设备...
+**！ Isainfo** extension 显示有关 PNPISA 卡或系统中存在的设备的信息。
 
 ```dbgcmd
 !isainfo [Card]
 ```
 
-## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>参数
+## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>Parameters
 
 
-<span id="_______Card______"></span><span id="_______card______"></span><span id="_______CARD______"></span> *Card*   
-指定 PNPISA 卡。 如果*卡*为 0 或省略，所有设备和 PNPISA (即，PC I/O) 总线上的卡会都显示。
+<span id="_______Card______"></span><span id="_______card______"></span><span id="_______CARD______"></span>*卡*   
+指定 PNPISA 卡。 如果 *卡* 为0或省略，则 PNPISA 上的所有设备和卡 (即，将显示 PC I/o) 总线。
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 <table>
 <colgroup>
@@ -60,7 +59,7 @@ ms.locfileid: "63336430"
 <a name="remarks"></a>备注
 -------
 
-下面是输出的来自此扩展插件示例：
+下面是此扩展的输出示例：
 
 ```dbgcmd
 0: kd> !isainfo

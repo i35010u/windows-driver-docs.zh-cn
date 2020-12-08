@@ -1,7 +1,6 @@
 ---
 title: Bug 检查 0x4 INVALID_DATA_ACCESS_TRAP
 description: INVALID_DATA_ACCESS_TRAP bug 检查的值为0x00000004。此 bug 检查很少出现。
-ms.assetid: 98c7052d-37ff-4ad8-b9c4-afa4226ed1b0
 keywords:
 - Bug 检查 0x4 INVALID_DATA_ACCESS_TRAP
 - INVALID_DATA_ACCESS_TRAP
@@ -13,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: d8ae5a068350ac60d73468d8747cbb02b17a8bf9
-ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
+ms.openlocfilehash: c16a9b2821a1642632f6c474426fb3ae6c1bb310
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84534632"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96787939"
 ---
 # <a name="bug-check-0x4-invalid_data_access_trap"></a>Bug 检查0x4：无效的 \_ 数据 \_ 访问 \_ 陷阱
 
@@ -28,7 +27,7 @@ ms.locfileid: "84534632"
 此 bug 检查很少出现。
 
 > [!IMPORTANT]
-> 本主题适用于程序员。 如果你是在使用计算机时收到蓝屏错误代码的客户，请参阅[排查蓝屏错误](https://www.windows.com/stopcode)。
+> 本主题面向程序员。 如果您是在使用计算机时收到蓝屏错误代码的客户，请参阅[蓝屏错误疑难解答](https://www.windows.com/stopcode)。
 
 
 

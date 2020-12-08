@@ -1,7 +1,6 @@
 ---
 title: Bug 检查 0x56 INSTRUCTION_COHERENCY_EXCEPTION
 description: INSTRUCTION_COHERENCY_EXCEPTION bug 检查的值为0x00000056。此 bug 检查很少出现。
-ms.assetid: 70fea630-9fb2-47e8-a099-9eee8c41b334
 keywords:
 - Bug 检查 0x56 INSTRUCTION_COHERENCY_EXCEPTION
 - INSTRUCTION_COHERENCY_EXCEPTION
@@ -13,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 68afcb41a2d2555a8ba7b5962474e9da21c9c99b
-ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
+ms.openlocfilehash: 6a235720300c2e0f956b5d2ff13f00b304639802
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84534810"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96786449"
 ---
 # <a name="bug-check-0x56-instruction_coherency_exception"></a>Bug 检查0x56：指令 \_ 一致性 \_ 异常
 
@@ -28,7 +27,7 @@ ms.locfileid: "84534810"
 此 bug 检查很少出现。
 
 > [!IMPORTANT]
-> 本主题适用于程序员。 如果你是在使用计算机时收到蓝屏错误代码的客户，请参阅[排查蓝屏错误](https://www.windows.com/stopcode)。
+> 本主题面向程序员。 如果您是在使用计算机时收到蓝屏错误代码的客户，请参阅[蓝屏错误疑难解答](https://www.windows.com/stopcode)。
 
 
 ## <a name="resolution"></a>解决方法 

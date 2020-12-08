@@ -1,7 +1,6 @@
 ---
 title: INF DefaultInstall 节
 description: 如果用户在选择并按住 (或右键单击 INF 文件名) 之后选择 "安装" 菜单项，则会访问 INF 文件的 DefaultInstall 部分。
-ms.assetid: 41412124-38d9-43c0-9954-d34b242a3922
 keywords:
 - INF DefaultInstall 部分设备和驱动程序安装
 topic_type:
@@ -12,17 +11,17 @@ api_type:
 - NA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a7815ca13061b63e99e6f0371aa0f58027583125
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 071c56281272d482152c6e49476e7e34927445af
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89095073"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96787425"
 ---
 # <a name="inf-defaultinstall-section"></a>INF DefaultInstall 节
 
 
-**注意**   如果你正在构建通用或移动驱动程序包，则此部分仅适用于体系结构装饰（例如） `[DefaultInstall.NTAMD64]` 。  或者，使用 [**INF 制造商部分**](inf-manufacturer-section.md)。  在 INF 中同时使用 **DefaultInstall** 和 **制造商** 部分将导致通用 INF 验证失败，并可能导致不一致的安装行为。  请参阅 [使用通用 INF 文件](using-a-universal-inf-file.md)。
+**注意**  如果你正在构建通用或移动驱动程序包，则此部分仅适用于体系结构装饰（例如） `[DefaultInstall.NTAMD64]` 。  或者，使用 [**INF 制造商部分**](inf-manufacturer-section.md)。  在 INF 中同时使用 **DefaultInstall** 和 **制造商** 部分将导致通用 INF 验证失败，并可能导致不一致的安装行为。  请参阅 [使用通用 INF 文件](using-a-universal-inf-file.md)。
 
  
 
@@ -60,7 +59,7 @@ ms.locfileid: "89095073"
 <a href="" id="copyfiles--filename---file-list-section--file-list-section-----"></a>**CopyFiles = @**<em>filename</em>  |  *file-list* \[ **-section**<em>file-list-section</em> \] .。。  
 此可选指令指定一个要从源媒体复制到目标的命名文件，或引用一个或多个由 INF 编写器定义的部分，这些部分指定要从源媒体传输到目标的文件。
 
-INF 的**DestinationDirs**部分中的**DefaultDestDir**条目指定要复制的任何单个文件的目标。 " **SourceDisksNames** " 和 " **SourceDisksFiles** " 部分或在此 INF 的 "**版本**" 部分的 " **LAYOUTFILE** " 条目中指定的其他 INF，提供驱动程序文件在分发介质上的位置。
+INF 的 **DestinationDirs** 部分中的 **DefaultDestDir** 条目指定要复制的任何单个文件的目标。 " **SourceDisksNames** " 和 " **SourceDisksFiles** " 部分或在此 INF 的 "**版本**" 部分的 " **LAYOUTFILE** " 条目中指定的其他 INF，提供驱动程序文件在分发介质上的位置。
 
 有关详细信息，请参阅 [**INF CopyFiles 指令**](inf-copyfiles-directive.md)。
 
@@ -86,7 +85,7 @@ Include= ks.inf[,[kscaptur.inf,][ksfilter.inf]]
 有关其用法的 **包含** 项和限制的详细信息，请参阅 [指定设备文件的源位置和目标位置](specifying-the-source-and-target-locations-for-device-files.md)。
 
 <a href="" id="needs-inf-section-name--inf-section-name----"></a>**需求 =**<em>inf-名称</em> \[ **，**<em>inf-节名称</em> \] .。。  
-此可选条目指定系统提供的 INF 文件中的部分，必须在安装此设备期间进行处理。 通常，此类命名节是 *DDInstall* (或 <em>DDInstall</em>**。**<em>xxx</em>) **包含在包含** 项中的一个 INF 文件中的部分。 但是，它可以是在此类*DDInstall*或<em>DDInstall</em>中引用的任何部分 **。**<em>xxx</em>部分。
+此可选条目指定系统提供的 INF 文件中的部分，必须在安装此设备期间进行处理。 通常，此类命名节是 *DDInstall* (或 <em>DDInstall</em>**。**<em>xxx</em>) **包含在包含** 项中的一个 INF 文件中的部分。 但是，它可以是在此类 *DDInstall* 或 <em>DDInstall</em>中引用的任何部分 **。**<em>xxx</em>部分。
 
 例如，具有上述 **Include** 条目的设备驱动程序的 INF 文件指定此项，如下所示：
 
@@ -95,7 +94,7 @@ Needs= KS.Registration[,KSCAPTUR.Registration |
                         KSCAPTUR.Registration.NT,MSPCLOCK.Installation]
 ```
 
-不能嵌套**需求**条目。  (有关其使用 **情况的详细** 信息，请参阅 [指定设备文件的源位置和目标位置](specifying-the-source-and-target-locations-for-device-files.md)) 。
+不能嵌套 **需求** 条目。  (有关其使用 **情况的详细** 信息，请参阅 [指定设备文件的源位置和目标位置](specifying-the-source-and-target-locations-for-device-files.md)) 。
 
 <a href="" id="delfiles-file-list-section--file-list-section----"></a>**Delfiles =**<em>文件列表部分</em> \[ **，**<em>文件列表-节</em> \] .。。  
 此指令引用一个或多个由 INF 写入器定义的部分，其中列出了要删除的目标上的文件。
@@ -110,14 +109,14 @@ Needs= KS.Registration[,KSCAPTUR.Registration |
 <a href="" id="delreg-del-registry-section--del-registry-section----"></a>**DelReg =**<em>del-registry</em>-section \[ **，**<em>del</em> \] .。。  
 此指令引用一个或多个由 INF 写入器定义的部分，其中在安装设备的过程中，已指定要从注册表中删除的项和/或值条目。
 
-通常，此指令用于处理升级，因为 INF 必须从以前安装的此设备中清除旧的注册表项。 此类 "删除注册表" 一节中的**HKR**规范指定了 **。类 \\ **<em>SetupClassGUID</em> **\\** 用户可访问的驱动程序的<em>设备实例 id</em>注册表路径。 这种类型的 **HKR** 规范也称为。 "软件密钥"。
+通常，此指令用于处理升级，因为 INF 必须从以前安装的此设备中清除旧的注册表项。 此类 "删除注册表" 一节中的 **HKR** 规范指定了 **。类 \\**<em>SetupClassGUID</em> **\\** 用户可访问的驱动程序的 <em>设备实例 id</em>注册表路径。 这种类型的 **HKR** 规范也称为。 "软件密钥"。
 
 有关详细信息，请参阅 [**INF DelReg 指令**](inf-delreg-directive.md)。
 
 <a href="" id="bitreg-bit-registry-section--bit-registry-section----"></a>**BitReg =**<em>位注册表-节</em> \[ **，**<em>位注册表-节</em> \] .。。  
 此指令引用一个或多个由 INF 写入器定义的部分，其中 [REG_BINARY](/windows/desktop/SysInfo/registry-value-types) 的类型的现有注册表值项被修改。 有关详细信息，请参阅 [**INF AddReg 指令**](inf-addreg-directive.md)。
 
-此类注册表部分中的**HKR**规范指定了 **。类 \\ **<em>SetupClassGUID</em> **\\** 用户可访问的驱动程序的<em>设备实例 id</em>注册表路径。 这种类型的 **HKR** 规范也称为。 "软件密钥"。
+此类注册表部分中的 **HKR** 规范指定了 **。类 \\**<em>SetupClassGUID</em> **\\** 用户可访问的驱动程序的 <em>设备实例 id</em>注册表路径。 这种类型的 **HKR** 规范也称为。 "软件密钥"。
 
 有关详细信息，请参阅 [**INF BitReg 指令**](inf-bitreg-directive.md)。
 
@@ -156,25 +155,25 @@ Needs= KS.Registration[,KSCAPTUR.Registration |
 
 **DefaultInstall** 部分不能用于设备安装。 仅将 **DefaultInstall** 部分用于安装类筛选器驱动程序、类 co 安装程序、文件系统筛选器和不与设备节点 (*devnode*) 相关联的内核驱动程序服务。
 
-**注意**   如果驱动程序包要进行数字签名，则[驱动程序包](driver-packages.md)的 inf 文件不得包含 inf **DefaultInstall**部分。 有关对驱动程序包进行签名的详细信息，请参阅 [驱动程序签名](driver-signing.md)。
+**注意**  如果驱动程序包要进行数字签名，则 [驱动程序包](driver-packages.md) 的 inf 文件不得包含 inf **DefaultInstall** 部分。 有关对驱动程序包进行签名的详细信息，请参阅 [驱动程序签名](driver-signing.md)。
 
  
 
 提供 **DefaultInstall** 部分是可选的。 如果 INF 文件不包括 **DefaultInstall** 部分，则选择并按住 (或右键单击文件名) 后，选择 "安装" 将导致显示错误消息。
 
-**注意**   与[***DDInstall***](inf-ddinstall-section.md)节不同， **DefaultInstall**节不能包含[**DriverVer**](inf-driverver-directive.md)或[**LogConfig**](inf-logconfig-directive.md)指令。
+**注意** 与 [ * *_DDInstall_* _](inf-ddinstall-section.md)节不同，_ *DefaultInstall** 节不能包含 [**DriverVer**](inf-driverver-directive.md)或 [**LogConfig**](inf-logconfig-directive.md)指令。
 
  
 
-若要从*设备安装应用程序*安装**DefaultInstall**部分，请使用以下对**InstallHinfSection**的调用：
+若要从 *设备安装应用程序* 安装 **DefaultInstall** 部分，请使用以下对 **InstallHinfSection** 的调用：
 
 ```inf
 InstallHinfSection(NULL,NULL,TEXT("DefaultInstall 132 path-to-inf\infname.inf"),0); 
 ```
 
-有关 **InstallHinfSection**的详细信息，请参阅 Microsoft Windows SDK 文档。
+有关 **InstallHinfSection** 的详细信息，请参阅 Microsoft Windows SDK 文档。
 
-有关如何使用 **系统定义的** **ntx86**、 **ntia64**、 **ntamd64**、 **ntarm**和 **Ntarm64** 扩展的详细信息，请参阅 [为多个平台和操作系统创建 INF 文件](creating-inf-files-for-multiple-platforms-and-operating-systems.md)。
+有关如何使用 **系统定义的** **ntx86**、 **ntia64**、 **ntamd64**、 **ntarm** 和 **Ntarm64** 扩展的详细信息，请参阅 [为多个平台和操作系统创建 INF 文件](creating-inf-files-for-multiple-platforms-and-operating-systems.md)。
 
 <a name="examples"></a>示例
 --------
@@ -189,12 +188,12 @@ AddReg=MyAppRegEntries
 
 在此示例中，如果用户在选择并按住 (或右键单击 INF 文件名) 之后选择 "安装"，则会执行 **DefaultInstall** 部分。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
-[***DDInstall***](inf-ddinstall-section.md)
+[**_DDInstall_* _](inf-ddinstall-section.md)
 
-[**DriverVer**](inf-driverver-directive.md)
+[_ *DriverVer**](inf-driverver-directive.md)
 
 [**LogConfig**](inf-logconfig-directive.md)
 

@@ -1,9 +1,8 @@
 ---
 title: CTRL+D（切换调试信息）
-description: CTRL + D 键切换调试器的内部信息流打开和关闭。 这用于在其中调试器无法正常通信的情况下重新开始通信。
-ms.assetid: fcc5d597-6a3f-4d6c-82f9-3624efb4f434
+description: CTRL + D 键用于打开和关闭调试器内部信息流。 这用于在调试器未正确通信的情况下重新启动通信。
 keywords:
-- CTRL + D （切换调试信息） Windows 调试
+- CTRL + D (切换调试信息) Windows 调试
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 3907900b3bdc971293c9aae752738d2c6445952d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ced47b865d73ce14b7794c359f0c8a97cf9e761a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63374966"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96786999"
 ---
 # <a name="ctrld-toggle-debug-info"></a>CTRL+D（切换调试信息）
 
 
-CTRL + D 键切换调试器的内部信息流打开和关闭。 这用于在其中调试器无法正常通信的情况下重新启动目标计算机和主机计算机之间的通信。
+CTRL + D 键用于打开和关闭调试器内部信息流。 这用于在调试器未正确通信的情况下，重新启动目标计算机与主计算机之间的通信。
 
 KD 语法
 
@@ -49,19 +48,19 @@ CTRL+ALT+D
 <tbody>
 <tr class="odd">
 <td align="left"><p><strong>调试器</strong></p></td>
-<td align="left"><p>KD 和 WinDbg 仅</p></td>
+<td align="left"><p>仅限 KD 和 WinDbg</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>模式</strong></p></td>
-<td align="left"><p>内核模式下</p></td>
+<td align="left"><p><strong>交货</strong></p></td>
+<td align="left"><p>仅限内核模式</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>目标</strong></p></td>
-<td align="left"><p>仅实时调试</p></td>
+<td align="left"><p>仅限实时调试</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>平台</strong></p></td>
-<td align="left"><p>全部</p></td>
+<td align="left"><p>all</p></td>
 </tr>
 </tbody>
 </table>
@@ -71,13 +70,13 @@ CTRL+ALT+D
 <a name="remarks"></a>备注
 -------
 
-这已切换，调试器会输出有关主机计算机和目标计算机之间通信的信息。
+切换到此时，调试器会输出有关主计算机与目标计算机之间的通信的信息。
 
-此密钥可用于测试是否在调试器已崩溃。 如果您怀疑调试器或目标已被冻结，则使用此密钥。 如果您看到正在发送的数据包，目标仍然正常工作。 如果您看到超时消息，然后在目标未响应。 如果没有任何消息根本，调试器已崩溃。
+此密钥可用于测试调试器是否崩溃。 如果怀疑调试器或目标已冻结，请使用此密钥。 如果看到正在发送的数据包，则目标仍在运行。 如果你看到超时消息，则目标没有响应。 如果根本没有消息，则调试器已崩溃。
 
-如果目标没有响应，使用 CTRL + R 输入 CTRL + C。 如果超时消息继续出现，目标已崩溃 （或调试器未正确配置）。
+如果目标未响应，请按 CTRL + R ENTER CTRL + C。 如果持续显示超时消息，则目标 (崩溃，或者调试程序) 配置错误。
 
-这也是用于调试 KD 调试器本身。
+这对于调试 KD 调试器本身也很有用。
 
  
 

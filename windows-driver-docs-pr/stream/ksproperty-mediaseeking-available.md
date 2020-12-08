@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ MEDIASEEKING \_ 可用
 description: KSPROPERTY \_ MEDIASEEKING \_ 可用属性检索筛选器当前可用的媒体时间跨度。
-ms.assetid: df59f32e-2783-418d-85b9-f9285034c6fa
 keywords:
 - KSPROPERTY_MEDIASEEKING_AVAILABLE 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2b5d8a07a54d782b13ff222059d2a4b3c8d6cb1e
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 6e78717afbf0c37d25d90667b3df58a02506173e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90103560"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96788131"
 ---
 # <a name="ksproperty_mediaseeking_available"></a>KSPROPERTY \_ MEDIASEEKING \_ 可用
 
@@ -82,7 +81,7 @@ KSPROPERTY \_ MEDIASEEKING \_ 可用属性检索筛选器当前可用的媒体�
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSPROPERTY \_ MEDIAAVAILABLE**](/windows-hardware/drivers/ddi/ks/ns-ks-ksproperty_mediaavailable)

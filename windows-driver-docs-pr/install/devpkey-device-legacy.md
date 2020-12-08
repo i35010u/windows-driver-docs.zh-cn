@@ -1,7 +1,6 @@
 ---
 title: DEVPKEY_Device_Legacy
 description: DEVPKEY_Device_Legacy
-ms.assetid: a2af9881-3aa3-45a7-9b80-cb507460957e
 keywords:
 - DEVPKEY_Device_Legacy 设备和驱动程序安装
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: b40663b325a7fe256a3229240cefa14854f59101
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 2815760ae6ecdedbba504ce9afc860a6d056eb97
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90714664"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96786821"
 ---
 # <a name="devpkey_device_legacy"></a>DEVPKEY_Device_Legacy
 

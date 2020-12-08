@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ 连接 \_ 优先级
 description: 客户端使用 KSPROPERTY \_ 连接 \_ 优先级属性来获取或设置连接的优先级。
-ms.assetid: 2037fe95-e176-4714-ad36-65a0e25b29e0
 keywords:
 - KSPROPERTY_CONNECTION_PRIORITY 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 622f00b00285b3b7b510e1a94e839c056d42a16d
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 56e88efd74ef65ef13faa2e27f1b5cef416a962e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90103648"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96786631"
 ---
 # <a name="ksproperty_connection_priority"></a>KSPROPERTY \_ 连接 \_ 优先级
 
@@ -90,7 +89,7 @@ KSPROPERTY \_ 连接 \_ 优先级是可选的。 客户端将不支持该端口�
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSPRIORITY**](/windows-hardware/drivers/ddi/ks/ns-ks-kspriority)

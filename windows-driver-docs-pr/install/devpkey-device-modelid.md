@@ -1,7 +1,6 @@
 ---
 title: DEVPKEY_Device_ModelId
 description: DEVPKEY_Device_ModelId
-ms.assetid: 6066f18b-40bf-4b36-9821-5e886e166256
 keywords:
 - DEVPKEY_Device_ModelId 设备和驱动程序安装
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: ce53f5e3fb856e553aab364940c75bc9e9fb4cd9
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: dafe2d9008e9a1bb384dbd0ca231b249682e0ef1
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91734363"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96786795"
 ---
 # <a name="devpkey_device_modelid"></a>DEVPKEY_Device_ModelId
 
@@ -33,7 +32,7 @@ DEVPKEY_Device_ModelId 设备属性将设备与 [设备元数据包](./overview-
 </colgroup>
 <thead>
 <tr>
-<th>属性</th>
+<th>Attribute</th>
 <th>值</th>
 </tr>
 </thead>
@@ -88,7 +87,7 @@ DEVPKEY_Device_ModelId 设备属性包含设备元数据包中 [**ModelId**](/pr
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [设备元数据包](./overview-of-device-metadata-packages.md)

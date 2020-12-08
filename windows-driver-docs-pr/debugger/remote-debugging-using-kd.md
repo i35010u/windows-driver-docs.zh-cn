@@ -1,15 +1,14 @@
 ---
 title: 使用 KD 进行远程调试
 description: 了解如何使用 KD 进行远程调试。 远程调试涉及两个在两个不同位置运行的调试器。
-ms.assetid: 274CAB1D-DD3B-4ACD-919C-8B8C253BCE50
 ms.date: 05/03/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 2009e7e3e332e40b046ae6d6d2ae314c4225e6ef
-ms.sourcegitcommit: f1d6c2d0cdbecdc69ba65ed3b530755fc73c8e5e
+ms.openlocfilehash: a75ffbfac3a7d25b84ffe1b136e625b2c96b96c1
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91590381"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96786953"
 ---
 # <a name="remote-debugging-using-kd"></a>使用 KD 进行远程调试
 
@@ -26,7 +25,7 @@ ms.locfileid: "91590381"
 
 远程调试连接可以使用几种传输协议： TCP、NPIPE、SPIPE、SSL 和 COM 端口。 假设您已选择使用 TCP 作为协议，并且您已选择将 KD 用作调试客户端和调试服务器。 你可以使用以下过程建立远程内核模式调试会话：
 
-1. 在主计算机上，打开 KD 并建立与目标计算机的内核模式调试会话。  (参阅 [使用 KD 执行内核模式调试](performing-kernel-mode-debugging-using-kd.md)) 
+1. 在主计算机上，打开 KD 并建立与目标计算机的内核模式调试会话。  (参阅 [使用 KD 执行 Kernel-Mode 调试](performing-kernel-mode-debugging-using-kd.md)。 ) 
 2. 按 CRTL 中断。
 3. 输入以下命令。
 
@@ -52,7 +51,7 @@ ms.locfileid: "91590381"
 ## <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>附加信息
 
 
-有关启动 KD (并在命令行中建立远程调试) 的完整信息，请参阅 [**KD 命令行选项**](kd-command-line-options.md)。
+有关启动 KD (并在命令行中建立远程调试) 的完整信息，请参阅 [**KD Command-Line 选项**](kd-command-line-options.md)。
 
  
 

@@ -1,19 +1,18 @@
 ---
 title: 更改组件的绑定
 description: 更改组件的绑定
-ms.assetid: 2e59a160-d8d9-4739-a8fa-919760f8eb05
 keywords:
 - 通知对象 WDK 网络，绑定更改
 - 网络通知对象 WDK，绑定更改
 - 绑定更改 WDK 网络
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 220a52d57cbf8e824c9371f1f9014ee0b802487a
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 6a11e4b4bbf67222e34f46ab86c160697cbfed3c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89213983"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96787301"
 ---
 # <a name="changing-bindings-for-a-component"></a>更改组件的绑定
 

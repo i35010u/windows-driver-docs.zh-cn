@@ -1,7 +1,6 @@
 ---
 title: DEVPKEY_Device_LocationPaths
 description: DEVPKEY_Device_LocationPaths
-ms.assetid: 36320528-d306-441f-a7ae-5a75d982b32a
 keywords:
 - DEVPKEY_Device_LocationPaths 设备和驱动程序安装
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 4f74878c8dfc4e5a4b5fdf055560e4fb0736b995
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 30e8e3daf4e2eecfbae5d6fbce17805748a5ab5b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90714657"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96786805"
 ---
 # <a name="devpkey_device_locationpaths"></a>DEVPKEY_Device_LocationPaths
 

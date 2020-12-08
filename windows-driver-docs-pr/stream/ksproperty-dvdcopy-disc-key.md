@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ DVDCOPY \_ 盘 \_ 密钥
 description: KSPROPERTY \_ DVDCOPY \_ 光盘 \_ 键属性检索 DVD 版权保护身份验证过程的光盘密钥信息。
-ms.assetid: 6108040e-b549-4cdc-ae1c-8f453fe5c8c1
 keywords:
 - KSPROPERTY_DVDCOPY_DISC_KEY 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0ffd0f432ff9d55d46dff2f8da39d8f7629eb9b3
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 4caad4cbf1b308c7500034b32d57fdf049a6dff9
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90106708"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96787131"
 ---
 # <a name="ksproperty_dvdcopy_disc_key"></a>KSPROPERTY \_ DVDCOPY \_ 盘 \_ 密钥
 
@@ -84,7 +83,7 @@ KSPROPERTY \_ DVDCOPY \_ 光盘 \_ 键属性检索 DVD 版权保护身份验证�
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KS \_ DVDCOPY \_ DISCKEY**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-_ks_dvdcopy_disckey)

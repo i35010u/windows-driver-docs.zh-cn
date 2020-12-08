@@ -1,7 +1,6 @@
 ---
 title: 处理 OID_PNP_QUERY_POWER OID
 description: 处理 OID_PNP_QUERY_POWER OID
-ms.assetid: aec9393a-debb-41eb-a8a0-b3d1936d707b
 keywords:
 - OID_PNP_QUERY_POWER
 - 网络接口卡 WDK 网络，过渡电源状态
@@ -12,12 +11,12 @@ keywords:
 - 转换电源状态 WDK 网络
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f2d5995c5ca4c458634bc04e6fa08ce01a05b561
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 5ddcbe2f6901024ac052cba5e2805f37eb19129a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89218416"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96788335"
 ---
 # <a name="handling-an-oid_pnp_query_power-oid"></a>处理 OID \_ PNP \_ 查询 \_ 电源 OID
 

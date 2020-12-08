@@ -1,17 +1,16 @@
 ---
 title: NDIS_STATUS_WW_INDICATION
 description: NDIS_STATUS_WW_INDICATION 状态与 NDIS_STATUS_MEDIA_SPECIFIC_INDICATION 状态相同。
-ms.assetid: 8c0a7b33-bab3-4e8c-a1f0-8564633dbc7c
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 NDIS_STATUS_WW_INDICATION 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 4f9a7bf35b24fb4fa764363706c1f29eb248e589
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 3ee937f75c0b140ebe1fcdafde00b62b7df6104f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89216168"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96786715"
 ---
 # <a name="ndis_status_ww_indication"></a>NDIS \_ 状态 \_ WW \_ 指示
 
@@ -43,7 +42,7 @@ NDIS \_ 状态 " \_ WW \_ 指示状态" 与 " [**ndis \_ 状态 \_ 媒体 \_ 特
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**NDIS \_ 状态 \_ 媒体 \_ 特定 \_ 指示**](ndis-status-media-specific-indication.md)

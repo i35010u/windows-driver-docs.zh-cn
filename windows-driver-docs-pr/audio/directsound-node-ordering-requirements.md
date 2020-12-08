@@ -1,7 +1,6 @@
 ---
 title: DirectSound 节点排序要求
 description: DirectSound 节点排序要求
-ms.assetid: baca55f5-c669-4bd2-82b5-3985030864f2
 keywords:
 - 硬件加速 WDK DirectSound，节点顺序要求
 - 节点顺序要求 WDK DirectSound
@@ -13,12 +12,12 @@ keywords:
 - supermixer 节点 WDK 音频
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d75f928efc3de9dc4c8ca9031ca840d433f2c4ed
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 9520c63985b79c6d68a36f5e191cdff4c08b5ff4
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89208111"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96786599"
 ---
 # <a name="directsound-node-ordering-requirements"></a>DirectSound 节点排序要求
 
@@ -44,11 +43,11 @@ DirectSound 2D 或3D 合成器 pin 应具有包含以下节点序列的节点链
 
 二维 pin 需要上一列表中的所有节点，3D 节点除外，这是可选的。 三维 pin 需要列表中的所有节点，包括3D 节点。
 
-SRC (采样率转换) 节点应位于 SUM 节点之前。 尽管这不是必需的，但 SRC 和 SUM 节点通常是相邻的。 **IDirectSoundBuffer：： SetFrequency**方法 (参阅 Microsoft Windows SDK 文档) perturbs SRC 节点的重新采样速率。
+SRC (采样率转换) 节点应位于 SUM 节点之前。 尽管这不是必需的，但 SRC 和 SUM 节点通常是相邻的。 **IDirectSoundBuffer：： SetFrequency** 方法 (参阅 Microsoft Windows SDK 文档) perturbs SRC 节点的重新采样速率。
 
 仅包含 SRC 和 SUM 节点的混音器足以用于混合由系统驱动程序（例如 SWMidi 和 Redbook）管理的流 (参阅 [SWMidi 系统驱动](kernel-mode-wdm-audio-components.md#swmidi_system_driver) 程序和 [Redbook 系统驱动程序](kernel-mode-wdm-audio-components.md#redbook_system_driver)) ，但 DirectSound 还要求两个卷节点和 supermixer 节点位于 SUM 节点之前。 DirectSound 会将 **IDirectSoundBuffer：： SetVolume** 调用产生的卷更改发送到第一个卷节点，并将 **IDirectSoundBuffer：： SetPan** 调用的平移效果发送到第二个卷节点。
 
-DirectSound 可以通过使用 **SetVolume**、 **SetPan**和 **SetFrequency** 调用来控制卷和 SRC 节点，从而在二维引脚上生成三维效果：
+DirectSound 可以通过使用 **SetVolume**、 **SetPan** 和 **SetFrequency** 调用来控制卷和 SRC 节点，从而在二维引脚上生成三维效果：
 
 -   **SetVolume** 调用可以模拟声音源与侦听器之间的变化。
 

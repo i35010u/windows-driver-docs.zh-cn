@@ -1,19 +1,18 @@
 ---
 title: 更改 BDA 筛选器属性
 description: 更改 BDA 筛选器属性
-ms.assetid: 1833864a-5759-437c-ba60-0b38602d9e41
 keywords:
 - 属性设置 WDK BDA，筛选器属性更改
 - 筛选器属性更改 WDK BDA
 - 方法设置 WDK BDA，筛选器属性更改
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 75c207b7865c0f43b868a4b0397d19ec02811244
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: cbd643be7a3e399f832c3c5fe75396a1d6f17dc3
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89186787"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96788187"
 ---
 # <a name="changing-bda-filter-properties"></a>更改 BDA 筛选器属性
 

@@ -1,15 +1,14 @@
 ---
 title: KSPROPSETID \_ StreamAllocator
 description: KSPROPSETID \_ StreamAllocator
-ms.assetid: 80763dfb-87eb-49c7-8639-b138b9032185
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4f3380d03dc1868d94778813dd14b56a4b0b470a
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 72ceddfb47481b12dc5c298fa10168b5274685fb
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89185331"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96788123"
 ---
 # <a name="kspropsetid_streamallocator"></a>KSPROPSETID \_ StreamAllocator
 

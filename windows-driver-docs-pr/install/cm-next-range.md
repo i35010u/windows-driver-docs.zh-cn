@@ -1,7 +1,6 @@
 ---
 title: CM_Next_Range
 description: CM_Next_Range
-ms.assetid: 9efe2678-2480-4ebc-b6cf-8cf53db67935
 keywords:
 - CM_Next_Range 设备和驱动程序安装
 topic_type:
@@ -12,15 +11,15 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 64e7f4903427d38a085cc87ae85b7fda1cc6ab7d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: db155a37c02eff68653cbea9cb7f22f598cf7115
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56519232"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96787457"
 ---
-# <a name="cmnextrange"></a>CM_Next_Range
+# <a name="cm_next_range"></a>CM_Next_Range
 
 此函数保留供系统使用。
 
-此函数保留供系统使用。 不应使用此函数中的你*类的安装程序*，*共同安装程序*，或*设备安装应用程序*。
+此函数保留供系统使用。 不应在 *类安装* 程序、 *共同* 安装 *程序或设备安装应用程序* 中使用此函数。

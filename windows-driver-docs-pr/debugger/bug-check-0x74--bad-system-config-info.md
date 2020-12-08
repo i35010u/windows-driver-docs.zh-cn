@@ -1,7 +1,6 @@
 ---
 title: Bug 检查 0x74 BAD_SYSTEM_CONFIG_INFO
 description: BAD_SYSTEM_CONFIG_INFO bug 检查的值为0x00000074。 此错误检查表示注册表中存在错误。
-ms.assetid: c59ddc44-d860-4fbb-a975-ae7226fdce86
 keywords:
 - Bug 检查 0x74 BAD_SYSTEM_CONFIG_INFO
 - BAD_SYSTEM_CONFIG_INFO
@@ -13,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 472af833e84bf41a17f462517cbc02717ad97803
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: a5f8d4232fe724c982f230d41426843cd1823020
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89213501"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96787021"
 ---
 # <a name="bug-check-0x74-bad_system_config_info"></a>Bug 检查0x74：错误的 \_ 系统 \_ 配置 \_ 信息
 
@@ -39,7 +38,7 @@ ms.locfileid: "89213501"
 <thead>
 <tr class="header">
 <th align="left">参数</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>

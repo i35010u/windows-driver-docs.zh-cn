@@ -1,7 +1,6 @@
 ---
 title: 参与错误恢复
 description: 参与错误恢复
-ms.assetid: 79f534b2-a5eb-4249-bfff-2f40c25805a6
 keywords:
 - Windows 硬件错误体系结构 WDK，错误恢复
 - WHEA WDK，错误恢复
@@ -12,12 +11,12 @@ keywords:
 - 错误恢复 WDK WHEA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 459b57d1d8454b620236e20cdf78effcf43954ad
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 0fdb60777fd30e0f370172744420f032890fc9c7
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89214166"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96787091"
 ---
 # <a name="participating-in-error-recovery"></a>参与错误恢复
 
@@ -69,7 +68,7 @@ NTSTATUS
 }
 ```
 
-参与错误恢复的 PSHED 插件在向操作系统[注册](registering-a-pshed-plug-in.md)自身时必须指定**PshedFAErrorRecovery**标志。
+参与错误恢复的 PSHED 插件在向操作系统 [注册](registering-a-pshed-plug-in.md)自身时必须指定 **PshedFAErrorRecovery** 标志。
 
  
 

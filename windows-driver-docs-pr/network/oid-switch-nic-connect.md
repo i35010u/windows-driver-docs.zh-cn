@@ -1,34 +1,33 @@
 ---
 title: OID_SWITCH_NIC_CONNECT
 description: Hyper-v 可扩展交换机的协议边缘 (OID 发出对象标识符) 设置 OID_SWITCH_NIC_CONNECT 请求，通知底层可扩展交换机端口与网络适配器之间的网络连接是完全建立的。 协议边缘以前通知的扩展，此连接在发出 OID_SWITCH_NIC_CREATE 的 OID 集请求时正在建立。
-ms.assetid: 98A4AD28-2716-40DD-AE46-70969A23FAB7
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_SWITCH_NIC_CONNECT 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 20a734d1aa7517dc3e849566c485b8bcb23ad9b2
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: dfcc3a511423ccd346e111a353a1e74547a8f60b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89213821"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96786717"
 ---
 # <a name="oid_switch_nic_connect"></a>OID \_ 交换机 \_ NIC \_ 连接
 
 
 Hyper-v 可扩展交换机的协议边缘 (OID 发出对象标识符) 设置 OID \_ 交换机 \_ NIC CONNECT 的请求 \_ ，通知底层可扩展交换机端口与网络适配器之间的网络连接是完全建立的。 协议边缘以前通知的扩展，此连接在发出 oid [ \_ 交换机 \_ NIC \_ CREATE](oid-switch-nic-create.md)的 oid 集请求时正在建立。
 
-[**Ndis \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的**InformationBuffer**成员包含指向[**NDIS \_ 交换机 \_ NIC \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_nic_parameters)结构的指针。
+[**Ndis \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的 **InformationBuffer** 成员包含指向 [**NDIS \_ 交换机 \_ NIC \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_nic_parameters)结构的指针。
 
 <a name="remarks"></a>备注
 -------
 
-[**NDIS \_ 交换机 \_ NIC \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_nic_parameters)结构的**PortId**成员指定为其发出连接通知的可扩展交换机端口。 可扩展交换机扩展可通过以下方式获取此端口和其他可扩展交换机端口的参数信息：
+[**NDIS \_ 交换机 \_ NIC \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_nic_parameters)结构的 **PortId** 成员指定为其发出连接通知的可扩展交换机端口。 可扩展交换机扩展可通过以下方式获取此端口和其他可扩展交换机端口的参数信息：
 
--   发出 oid [ \_ 交换机 \_ 端口 \_ 数组](oid-switch-port-array.md)的 oid 查询请求。 仅当 OID [*FilterAttach*](/windows-hardware/drivers/ddi/ndis/nc-ndis-filter_attach) \_ 开关 \_ 参数返回将**IsActive**设置为 TRUE 的[**NDIS \_ 开关 \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_parameters)结构时，扩展才会在 FilterAttach 上发出此 OID。 如果 **IsActive** 为 FALSE，则扩展微型端口适配器发出 **NetEventSwitchActivate** [**NET \_ PNP \_ 事件**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_pnp_event) 时，扩展会发出 OID。
+-   发出 oid [ \_ 交换机 \_ 端口 \_ 数组](oid-switch-port-array.md)的 oid 查询请求。 仅当 OID [*FilterAttach*](/windows-hardware/drivers/ddi/ndis/nc-ndis-filter_attach) \_ 开关 \_ 参数返回将 **IsActive** 设置为 TRUE 的 [**NDIS \_ 开关 \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_parameters)结构时，扩展才会在 FilterAttach 上发出此 OID。 如果 **IsActive** 为 FALSE，则扩展微型端口适配器发出 **NetEventSwitchActivate** [**NET \_ PNP \_ 事件**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_pnp_event) 时，扩展会发出 OID。
 
 -   检查各种 OID 会设置 [oid \_ 交换机 \_ 端口 \_ 创建](oid-switch-port-create.md) 和 [oid \_ 交换机 \_ 端口 \_ 删除](oid-switch-port-delete.md)请求。
 
-[**NDIS \_ 交换机 \_ NIC \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_nic_parameters)结构的**index**成员指定正在为其发出连接通知的网络适配器的索引。 具有指定 **索引** 值的网络适配器连接到由 **PortId** 成员指定的可扩展交换机端口。 有关这些索引值的详细信息，请参阅 [网络适配器索引值](./network-adapter-index-values.md)。
+[**NDIS \_ 交换机 \_ NIC \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_nic_parameters)结构的 **index** 成员指定正在为其发出连接通知的网络适配器的索引。 具有指定 **索引** 值的网络适配器连接到由 **PortId** 成员指定的可扩展交换机端口。 有关这些索引值的详细信息，请参阅 [网络适配器索引值](./network-adapter-index-values.md)。
 
 当它收到 oid 交换机 NIC CONNECT 的 OID 设置请求时 \_ \_ \_ ，扩展必须遵循以下准则：
 
@@ -42,7 +41,7 @@ Hyper-v 可扩展交换机的协议边缘 (OID 发出对象标识符) 设置 OID
 
     扩展必须为绑定到外部网络适配器的每个基础物理适配器维护连接状态。 有关可以将物理网络适配器绑定到外部网络适配器的不同配置的详细信息，请参阅 [物理网络适配器配置的类型](./types-of-physical-network-adapter-configurations.md)。
 
-**注意**   扩展不能发出自己的 OID set \_ \_ NIC \_ CONNECT 请求。
+**注意**  扩展不能发出自己的 OID set \_ \_ NIC \_ CONNECT 请求。
 
  
 
@@ -93,7 +92,7 @@ Hyper-v 可扩展交换机的协议边缘 (OID 发出对象标识符) 设置 OID
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 ****

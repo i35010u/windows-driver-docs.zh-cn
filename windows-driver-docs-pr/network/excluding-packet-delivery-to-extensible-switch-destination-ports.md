@@ -1,15 +1,14 @@
 ---
 title: 排除将数据包传送到可扩展交换机目标端口
 description: 排除将数据包传送到可扩展交换机目标端口
-ms.assetid: 04BF02A6-360F-482E-A86B-31232AFCB778
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5b93083d17187cf44ecf6c07431fddd63e0d79a8
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: caf4957d9557c8507631804c98aaa7f7f52b64b9
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89218424"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96788415"
 ---
 # <a name="excluding-packet-delivery-to-extensible-switch-destination-ports"></a>排除将数据包传送到可扩展交换机目标端口
 
@@ -29,7 +28,7 @@ ms.locfileid: "89218424"
 
     对于在可扩展交换机传出数据路径上获取的数据包，扩展通过调用 [**NdisFReturnNetBufferLists**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfreturnnetbufferlists)来完成数据包接收指示。
 
--   对于在包含多个目标端口的出口数据路径上获取的数据包，扩展可以通过修改一个或多个目标端口的数据来排除数据包传递。 此扩展通过将目标端口的[**NDIS \_ 交换机 \_ 端口 \_ 目标**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_switch_port_destination)结构的**IsExcluded**成员设置为1的值来实现此目的。 此方法允许将数据包传递到其 **IsExcluded** 值设置为零的那些端口。
+-   对于在包含多个目标端口的出口数据路径上获取的数据包，扩展可以通过修改一个或多个目标端口的数据来排除数据包传递。 此扩展通过将目标端口的 [**NDIS \_ 交换机 \_ 端口 \_ 目标**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_switch_port_destination)结构的 **IsExcluded** 成员设置为1的值来实现此目的。 此方法允许将数据包传递到其 **IsExcluded** 值设置为零的那些端口。
 
     **注意**  在入口数据路径上获取的数据包不包含目标端口。 此数据仅在可扩展交换机将数据包向上转发传出数据路径后才可用。
 
@@ -43,7 +42,7 @@ ms.locfileid: "89218424"
 
 -   在可扩展交换机入口数据路径上，筛选和转发扩展可以根据数据包的源端口或数据的策略条件排除数据包传送。
 
-    源端口信息存储在包的[**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)结构的 OOB 数据中[**NDIS \_ 交换机 \_ 转发 \_ 详细 \_ \_ \_ \_ **](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_switch_forwarding_detail_net_buffer_list_info)信息联合。 扩展通过使用 [**网络 \_ 缓冲区 \_ 列表 \_ 开关 \_ 转发 \_ 详细信息**](/windows-hardware/drivers/ddi/ndis/nf-ndis-net_buffer_list_switch_forwarding_detail) 宏获取数据。
+    源端口信息存储在包的 [**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)结构的 OOB 数据中 [**NDIS \_ 交换机 \_ 转发 \_ 详细 \_ \_ \_ \_**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_switch_forwarding_detail_net_buffer_list_info)信息联合。 扩展通过使用 [**网络 \_ 缓冲区 \_ 列表 \_ 开关 \_ 转发 \_ 详细信息**](/windows-hardware/drivers/ddi/ndis/nf-ndis-net_buffer_list_switch_forwarding_detail) 宏获取数据。
 
     如果扩展插件不能传递从入口数据路径获取的数据包，则必须通过完成数据包发送请求来删除该数据包。
 
@@ -57,9 +56,9 @@ ms.locfileid: "89218424"
 
     1.  扩展通过调用 [*GetNetBufferListDestinations*](/windows-hardware/drivers/ddi/ndis/nc-ndis-ndis_switch_get_net_buffer_list_destinations)来获取数据包的目标端口。 如果调用返回 NDIS \_ 状态 " \_ 成功"，则 " *目标* " 参数包含指向 [**ndis \_ 交换机 \_ 转发 \_ 目标 \_ 数组**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_switch_forwarding_destination_array) 结构的指针。 此结构指定数据包的可扩展交换机目标端口。 每个目标端口的格式为 [**NDIS \_ 交换机 \_ 端口 \_ 目标**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_switch_port_destination) 结构。
 
-        **注意** 如果[**NDIS \_ 交换机 \_ 转发 \_ 目标 \_ 数组**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_switch_forwarding_destination_array)结构的**NumDestinations**成员包含的值为零，则数据包没有目标端口数据。
+        **注意** 如果 [**NDIS \_ 交换机 \_ 转发 \_ 目标 \_ 数组**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_switch_forwarding_destination_array)结构的 **NumDestinations** 成员包含的值为零，则数据包没有目标端口数据。
 
-2.  此扩展通过将目标端口的[**NDIS \_ 交换机 \_ 端口 \_ 目标**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_switch_port_destination)结构的**IsExcluded**成员设置为1，将数据包传递排除为可扩展交换机端口。
+2.  此扩展通过将目标端口的 [**NDIS \_ 交换机 \_ 端口 \_ 目标**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_switch_port_destination)结构的 **IsExcluded** 成员设置为1，将数据包传递排除为可扩展交换机端口。
 
     **注意**  如果扩展不包括将数据包传送到其所有目标端口，则扩展必须通过完成数据包的接收指示来丢弃数据包。
 

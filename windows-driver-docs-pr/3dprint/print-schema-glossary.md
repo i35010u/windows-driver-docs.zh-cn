@@ -2,15 +2,14 @@
 title: 打印架构术语表
 description: 有关3D 打印架构的术语表。 术语表包括程序集、喷嘴、筏等术语的说明。
 Robots: noindex, nofollow
-ms.assetid: 70B4C1B6-F076-4D58-A9A6-46DA9CBF5151
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7ae66aa547783aa8e65a63e3999adfcd8b992d7d
-ms.sourcegitcommit: f1d6c2d0cdbecdc69ba65ed3b530755fc73c8e5e
+ms.openlocfilehash: 712da866b5ef97d4ab0fd9ec24dffc7995530d48
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91590369"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96788043"
 ---
 # <a name="print-schema-glossary"></a>打印架构术语表
 
@@ -18,7 +17,7 @@ ms.locfileid: "91590369"
 ## <a name="a"></a>A
 
 
-**件**  
+**程序集**  
 一种模型，其中包含两个或多个独立定义的对象，这些对象在3D 制造过程中或之后相互连接或互操作。 可能可以反转程序集，也可能 inseparably 互锁。
 
 ## <a name="b"></a>B

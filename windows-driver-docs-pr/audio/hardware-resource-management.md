@@ -1,26 +1,25 @@
 ---
 title: 硬件资源管理
 description: 硬件资源管理
-ms.assetid: 8c4db391-380b-4644-8d46-372f82acffae
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 96af0ebcf50f89dc633c5984a05c2802e4688dc2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d91967fceb9b22bdef80c5a36cbc96b26cd65179
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63333612"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96786511"
 ---
 # <a name="hardware-resource-management"></a>硬件资源管理
 
 
-通过 HD 音频 DDI，功能用于音频和调制解调器的编解码器的驱动程序可以分配和释放 HD Audio 控制器设备中的硬件资源。 这些资源主要有：
+通过 HD 音频 DDI，适用于音频和调制解调器编解码器的函数驱动程序可以在 HD audio 控制器设备中分配和释放硬件资源。 这些资源是主要的：
 
--   HD Audio 控制器中的 DMA 引擎。
+-   HD 音频控制器中的 DMA 引擎。
 
 -   HD 音频链接上的总线带宽。
 
-本部分包括：
+本节包括：
 
 分配 DMA 引擎
 

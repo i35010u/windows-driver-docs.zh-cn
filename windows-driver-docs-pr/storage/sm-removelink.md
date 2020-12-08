@@ -1,7 +1,6 @@
 ---
 title: SM \_ RemoveLink 函数
 description: SM \_ REMOVELINK wmi 方法配置 wmi 提供程序，使其停止向 WMI 客户端传递 fabric 链接事件信息。
-ms.assetid: 25f6b807-f921-44b6-b087-e5c6ec8c72ec
 keywords:
 - SM_RemoveLink 函数存储设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 4ca7477ffdcb88a17492b280e92b2ad4eb2957c2
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: df3234036015520c3872e90ea2a7e9debd373f1b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89186405"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96788227"
 ---
 # <a name="sm_removelink-function"></a>SM \_ RemoveLink 函数
 
@@ -46,7 +45,7 @@ void SM_RemoveLink(
 
 不适用于 WMI 方法。
 
-<a name="remarks"></a>注解
+<a name="remarks"></a>备注
 -------
 
 此 WMI 方法属于 MS \_ SM \_ EventControl WMI 类。
@@ -65,7 +64,7 @@ void SM_RemoveLink(
 <td align="left">台式机</td>
 </tr>
 <tr class="even">
-<td align="left"><p>Header</p></td>
+<td align="left"><p>标头</p></td>
 <td align="left">Hbapiwmi</td>
 </tr>
 </tbody>

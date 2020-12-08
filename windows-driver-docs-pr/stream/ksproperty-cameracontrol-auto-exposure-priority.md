@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ CAMERACONTROL \_ 自动 \_ 曝光 \_ 优先级
 description: KSPROPERTY \_ CAMERACONTROL \_ 自动 \_ 曝光 \_ 优先级属性指定设备是否可以动态地改变帧速率。
-ms.assetid: 0e20a4ee-b672-4c9a-9003-c2defd378e7c
 keywords:
 - KSPROPERTY_CAMERACONTROL_AUTO_EXPOSURE_PRIORITY 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5f6422b6f7cb31011991b4dce75338a382c7f2c7
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 2836b3a485f94c507e41f7c442bb6e5c51f3ea62
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90107370"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96787133"
 ---
 # <a name="ksproperty_cameracontrol_auto_exposure_priority"></a>KSPROPERTY \_ CAMERACONTROL \_ 自动 \_ 曝光 \_ 优先级
 
@@ -68,7 +67,7 @@ KSPROPERTY \_ CAMERACONTROL \_ 自动 \_ 曝光 \_ 优先级属性指定设备�
 <thead>
 <tr class="header">
 <th>“值”</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>
@@ -120,7 +119,7 @@ KSPROPERTY \_ CAMERACONTROL \_ 自动曝光优先级的默认 \_ 值 \_ 为零�
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSPROPERTY \_ CAMERACONTROL \_ S**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_cameracontrol_s)

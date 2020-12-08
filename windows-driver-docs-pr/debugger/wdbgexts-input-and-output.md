@@ -1,18 +1,17 @@
 ---
 title: WdbgExts 输入和输出
 description: WdbgExts 输入和输出
-ms.assetid: 5648b509-7bdd-4d2a-947f-db55a8c69100
 keywords:
 - WdbgExts 扩展，输入
 - WdbgExts 扩展，输出
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4c3f74c7f77d31079f7859c8ac2760d9368e4544
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: ca7584683b762b4dea4d595a6717671d0225f39c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89214824"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96787689"
 ---
 # <a name="wdbgexts-input-and-output"></a>WdbgExts 输入和输出
 

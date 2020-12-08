@@ -1,21 +1,20 @@
 ---
 title: OID_GEN_LAST_CHANGE
 description: 作为查询，请使用 OID_GEN_LAST_CHANGE OID 确定 (ifLastChange 从 RFC 2863) 到网络接口的上次操作状态更改的时间。
-ms.assetid: bd96d1ec-2fd0-491f-acb4-c1594ce6a084
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_GEN_LAST_CHANGE 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 2969e7d7c0b04a3f2a359b39ab08524db6ae6a05
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: cc43c1b57426e02033ae5c5d57c2bbde62bbcfae
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89215455"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96787179"
 ---
 # <a name="oid_gen_last_change"></a>OID \_ 生成 \_ 上次 \_ 更改
 
 
-作为查询，使用 OID \_ GEN \_ 最后一个 \_ 更改 OID 来确定从[RFC 2863](https://go.microsoft.com/fwlink/p/?linkid=84054))  (*ifLastChange*的网络接口上次操作状态更改的时间。
+作为查询，使用 OID \_ GEN \_ 最后一个 \_ 更改 OID 来确定从 [RFC 2863](https://go.microsoft.com/fwlink/p/?linkid=84054))  (*ifLastChange* 的网络接口上次操作状态更改的时间。
 
 **版本信息**
 
@@ -52,7 +51,7 @@ ms.locfileid: "89215455"
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [OID \_ 生成 \_ 操作 \_ 状态](oid-gen-operational-status.md)

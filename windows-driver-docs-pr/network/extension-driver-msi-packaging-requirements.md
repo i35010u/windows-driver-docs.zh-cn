@@ -1,15 +1,14 @@
 ---
 title: 扩展驱动程序 MSI 打包要求
 description: 交换机扩展必须打包在一个可自动安装的 MSI 文件中。
-ms.assetid: 300118F9-D9C7-4AFA-B54A-59666BC680F1
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 279cc5c97304834b905b650f80d51118dacb268a
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 4e810ad7f3fca610fa8534fb33c3b1c7a8a2ce1e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89212911"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96788365"
 ---
 # <a name="extension-driver-msi-packaging-requirements"></a>扩展驱动程序 MSI 打包要求
 
@@ -28,14 +27,14 @@ MSI 文件必须满足以下要求：
 | **说明**                 | 必须 | **字符串** | 显示的扩展的说明。                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
 | **Manufacturer**                | 必须 | **字符串** | 发布扩展驱动程序的公司的名称。 可以存储本地化的字符串。                                                                                                                                                                                                                                                                                                                                                                                                                           |
 | **ProductVersion**              | 必须 | **字符串** | 此 MSI 包的版本。 示例：1.0.0。0                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
-| **ProductName**                 | 必须 | **字符串** | 驱动程序的名称。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
+| ProductName                 | 必须 | **字符串** | 驱动程序的名称。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
 | **DriverID**                    | 必须 | **字符串** | 必须与 \_ 安装驱动程序后可用的 Msvm InstalledEthernetSwitchExtension.Name 字段和驱动程序的 INF 文件中的驱动程序 ID 匹配。                                                                                                                                                                                                                                                                                                                                                    |
 | **DriverVersion**               | 必须 | **字符串** | 此包中包含的驱动程序的版本。 示例：1.0.0。0                                                                                                                                                                                                                                                                                                                                                                                                                                           |
 | **ExtensionType**               | 必须 | **字符串** | 扩展的类型。 值：转发、捕获、监视、筛选                                                                                                                                                                                                                                                                                                                                                                                                                                          |
 | **DriverInstallParams**         | 必须 | **字符串** | 用于以无提示方式安装此驱动程序的参数。 示例：/q                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
 | **IsManagedByExtensionManager** | 可选 | **字符串** | 存在且非零 = 是，0或不存在 = 否                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
 | **MinApplicableOSVersion**      | 必须 | **字符串** | 此扩展将在其上运行的 Windows 操作系统的最低版本。 请参阅操作系统版本的操作系统版本。 请注意，Hyper-v 可扩展交换机功能是在 Windows Server 2012 中添加的，因此该字段的最小有效值为 "6.2"。                                                                                                                                                                                                                    |
-| **MaxApplicableOSVersion**      | 可选 | **字符串** | 此扩展将在其上运行的 Windows 操作系统的最高版本。 请 [参阅操作系统版本的](/windows/desktop/SysInfo/operating-system-version) 操作系统版本。 请注意，Hyper-v 可扩展交换机功能是在 Windows Server 2012 中添加的，因此此字段的最小有效值为 "6.2" 或 **MinApplicableOSVersion**的值（以较高者为准）。 此字段是可选的。 如果未指定任何值，则扩展将在 **MinApplicableOSVersion** 和更高版本上运行。 |
+| **MaxApplicableOSVersion**      | 可选 | **字符串** | 此扩展将在其上运行的 Windows 操作系统的最高版本。 请 [参阅操作系统版本的](/windows/desktop/SysInfo/operating-system-version) 操作系统版本。 请注意，Hyper-v 可扩展交换机功能是在 Windows Server 2012 中添加的，因此此字段的最小有效值为 "6.2" 或 **MinApplicableOSVersion** 的值（以较高者为准）。 此字段是可选的。 如果未指定任何值，则扩展将在 **MinApplicableOSVersion** 和更高版本上运行。 |
 
  
 

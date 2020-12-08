@@ -1,7 +1,6 @@
 ---
 title: 处理设置电源请求
 description: 处理设置电源请求
-ms.assetid: c69d4a9b-009a-4320-8e20-32a9cf9113bf
 keywords:
 - 设置-power requests WDK NDIS 中间
 - 睡眠状态 WDK NDIS 中间
@@ -10,12 +9,12 @@ keywords:
 - 电源状态 WDK 网络
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 25710f00244ad01d97cc4fb1f32f3460c3169bf3
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 66618af2d4eafe6691fda2841c51167e9c7e6c3c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89207301"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96788359"
 ---
 # <a name="handling-a-set-power-request"></a>处理设置电源请求
 
@@ -43,7 +42,7 @@ ms.locfileid: "89207301"
 
 2.  在发出 **NetEventSetPower** 事件后，NDIS 暂停过量驱动程序和虚拟小型端口。 指定的暂停原因是转换到低功耗状态。 有关暂停虚拟小型端口的详细信息，请参阅 [暂停适配器](pausing-an-adapter.md)。
 
-    **注意**   不能将 OID 请求发送到处于低功耗状态的虚拟小型端口，但[oid \_ PNP \_ 集的 \_ 电源](./oid-pnp-set-power.md)除外。
+    **注意**  不能将 OID 请求发送到处于低功耗状态的虚拟小型端口，但 [oid \_ PNP \_ 集的 \_ 电源](./oid-pnp-set-power.md)除外。
 
      
 
@@ -51,11 +50,11 @@ ms.locfileid: "89207301"
 
 当中间驱动程序的协议下边缘将基础微型端口驱动程序转换为休眠状态时，用于处理该转换的事件序列如下所示：
 
-1.  NDIS 调用中间驱动程序协议下边缘的 [*ProtocolNetPnPEvent*](/windows-hardware/drivers/ddi/ndis/nc-ndis-protocol_net_pnp_event) 函数。 对 *ProtocolNetPnPEvent* 的调用为休眠状态指定 **NetEventSetPower** 事件。 中间驱动程序必须停止发送网络数据，并对底层微型端口驱动程序发出 OID 请求。 如果有未完成的请求或发送，中间驱动程序应 \_ 从对 \_ *ProtocolNetPnPEvent*的调用返回 NDIS 状态 "挂起"。 中间驱动程序调用 [**NdisCompleteNetPnPEvent**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndiscompletenetpnpevent) 来完成对 *ProtocolNetPnPEvent*的调用。 中间驱动程序的协议边缘仍可以从基础微型端口驱动程序收到数据包和状态指示。 可以忽略接收的网络数据。 如果中间驱动程序的实现取决于监视基础微型端口驱动程序的状态，则仍应监视状态指示。
+1.  NDIS 调用中间驱动程序协议下边缘的 [*ProtocolNetPnPEvent*](/windows-hardware/drivers/ddi/ndis/nc-ndis-protocol_net_pnp_event) 函数。 对 *ProtocolNetPnPEvent* 的调用为休眠状态指定 **NetEventSetPower** 事件。 中间驱动程序必须停止发送网络数据，并对底层微型端口驱动程序发出 OID 请求。 如果有未完成的请求或发送，中间驱动程序应 \_ 从对 \_ *ProtocolNetPnPEvent* 的调用返回 NDIS 状态 "挂起"。 中间驱动程序调用 [**NdisCompleteNetPnPEvent**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndiscompletenetpnpevent) 来完成对 *ProtocolNetPnPEvent* 的调用。 中间驱动程序的协议边缘仍可以从基础微型端口驱动程序收到数据包和状态指示。 可以忽略接收的网络数据。 如果中间驱动程序的实现取决于监视基础微型端口驱动程序的状态，则仍应监视状态指示。
 
 2.  NDIS 暂停中间驱动程序的协议边缘，然后在发出 **NetEventSetPower** 事件后暂停 underying 微型端口适配器。 指定的暂停原因是转换到低功耗状态。 有关暂停协议绑定的详细信息，请参阅 [暂停绑定](pausing-a-binding.md)。
 
-    **注意**   不能将 OID 请求发送到低功耗状态下的基础微型端口适配器， [oid \_ PNP \_ 设置 \_ 能力](./oid-pnp-set-power.md)例外。
+    **注意**  不能将 OID 请求发送到低功耗状态下的基础微型端口适配器， [oid \_ PNP \_ 设置 \_ 能力](./oid-pnp-set-power.md)例外。
 
      
 
@@ -95,7 +94,7 @@ ms.locfileid: "89207301"
 
 -   如果虚拟微型端口或基础微型端口驱动程序的电源状态返回到 D0，则设置为 **FALSE** 。
 
-**注意**   对于 MUX 中间驱动程序，可以有多个与每个虚拟小型端口关联的基础微型端口驱动程序或多个基础微型端口关联的虚拟微型端口。 任何微型端口适配器的电源状态发生变化时，所有关联的微型端口的行为也会受到影响。 此行为的影响方式是特定于实现的。 例如，在停用单个基础微型端口驱动程序时，实现负载平衡故障转移 (LBFO) 解决方案的驱动程序可能不会停用虚拟微型端口。 但是，如果任何基础微型端口驱动程序被停用，则依赖于所有基础微型端口驱动程序的驱动程序实现需要停用虚拟微型端口。
+**注意**  对于 MUX 中间驱动程序，可以有多个与每个虚拟小型端口关联的基础微型端口驱动程序或多个基础微型端口关联的虚拟微型端口。 任何微型端口适配器的电源状态发生变化时，所有关联的微型端口的行为也会受到影响。 此行为的影响方式是特定于实现的。 例如，在停用单个基础微型端口驱动程序时，实现负载平衡故障转移 (LBFO) 解决方案的驱动程序可能不会停用虚拟微型端口。 但是，如果任何基础微型端口驱动程序被停用，则依赖于所有基础微型端口驱动程序的驱动程序实现需要停用虚拟微型端口。
 
  
 
@@ -105,7 +104,7 @@ ms.locfileid: "89207301"
 
 -   驱动程序的 [*MiniportOidRequest*](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_oid_request) 函数应始终成功执行 oid \_ pnp \_ 查询 \_ 能力，以确保驱动程序接收后续 OID \_ pnp \_ 集 \_ 电源请求。
 
--   如果虚拟小型端口不是 D0 或 StandingBy 为**TRUE**，则驱动程序的[*MiniportOidRequest*](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_oid_request)函数应失败。 否则，如果基础微型端口驱动程序不是 D0，则它应将单个请求排队。 当基础微型端口驱动程序状态变为 D0 时，应处理排队的请求。
+-   如果虚拟小型端口不是 D0 或 StandingBy 为 **TRUE**，则驱动程序的 [*MiniportOidRequest*](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_oid_request)函数应失败。 否则，如果基础微型端口驱动程序不是 D0，则它应将单个请求排队。 当基础微型端口驱动程序状态变为 D0 时，应处理排队的请求。
 
 -   仅当基础微型端口驱动程序和虚拟小型端口都为 D0 时，中间驱动程序虚拟小型端口才应报告状态。
 
