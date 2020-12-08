@@ -1,19 +1,18 @@
 ---
 title: 指向 DirectDraw 图面的指针
 description: 指向 DirectDraw 图面的指针
-ms.assetid: 5d7c8b22-d2d3-4e40-b7b2-7277e051812c
 keywords:
 - 上下文 WDK Direct3D，DirectDraw surface 指针
 - DirectDraw 图面指针 WDK Direct3D
 - DirectDraw WDK Direct3D 的表面指针
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 09e8fd635f9efeed66f66835d475167c191f7586
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: c83439e56494b7567251572fd85be0840a3a71b8
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90715824"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96795575"
 ---
 # <a name="pointers-to-directdraw-surfaces"></a>指向 DirectDraw 图面的指针
 

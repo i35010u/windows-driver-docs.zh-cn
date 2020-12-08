@@ -1,17 +1,16 @@
 ---
 title: IPrintOemUni COM 接口
 description: IPrintOemUni COM 接口
-ms.assetid: b120def0-f270-49c6-b12f-10c220801f51
 keywords:
 - IPrintOemUni
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 16bf418858515cd1a7957728cec77c67980b4bc3
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 92d0937006f918bb8712ae17903960f9f16fcf50
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90101644"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96796537"
 ---
 # <a name="iprintoemuni-com-interface"></a>IPrintOemUni COM 接口
 
@@ -31,7 +30,7 @@ ms.locfileid: "90101644"
 <thead>
 <tr class="header">
 <th>方法</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>

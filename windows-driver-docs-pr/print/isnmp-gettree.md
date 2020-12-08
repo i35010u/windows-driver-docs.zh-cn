@@ -1,13 +1,12 @@
 ---
 title: ISNMP GetTree 方法
-description: GetTree 方法启用 ASP 网页，以获得与指定的 SNMP OID 根下的子节点的一组相关联的值。
+description: 使用 GetTree 方法可以获取与指定的根 SNMP OID 下的一组子节点相关联的值。
 MS-HAID:
 - webfnc\_bb1a8a21-716c-41ab-8b88-5f26d19575fa.xml
 - print.isnmp\_gettree
 MSHAttr:
 - PreferredSiteName:MSDN
 - PreferredLib:/library/windows/hardware
-ms.assetid: a58cc911-dc09-4847-b4b7-cf97326cd444
 keywords:
 - GetTree 方法打印设备
 - GetTree 方法打印设备，ISNMP 接口
@@ -22,40 +21,40 @@ api_type:
 - COM
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 902fb78760f48d5f928495146f776caf90acef7d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3873639d32064704b0ea1c4fa322888a841a2275
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63384185"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96796514"
 ---
-# <a name="isnmpgettree-method"></a>ISNMP::GetTree 方法
+# <a name="isnmpgettree-method"></a>ISNMP：： GetTree 方法
 
-`GetTree`方法启用 ASP 网页，以获得与指定的 SNMP OID 根下的子节点的一组相关联的值。
+使用 `GetTree` 方法，ASP 网页可以获取与指定的根 SNMP OID 下的一组子节点相关联的值。
 
 <a name="syntax"></a>语法
 ------
 
 ```cpp
 HRESULT GetTree(
-  [in]  BSTR    varTree,
-  [out] VARIANT *varValue
+  [in]  BSTR    varTree,
+  [out] VARIANT *varValue
 );
 ```
 
-<a name="parameters"></a>Parameters
+<a name="parameters"></a>参数
 ----------
 
-*varTree* \[in\]  
-标识根 SNMP OID 的调用方提供的字符串。
+*varTree* \[中\]  
+调用方提供的用于标识根 SNMP OID 的字符串。
 
-*varValue* \[out\]  
-接收包含 SNMP OID 字符串和关联的值的二维数组的地址的调用方提供的位置。
+*varValue* \[弄\]  
+调用方提供的位置，用于接收包含 SNMP OID 字符串和关联值的二维数组的地址。
 
 <a name="return-value"></a>返回值
 ------------
 
-此外可以返回 Win32 错误代码。
+也可以返回 Win32 错误代码。
 
 <table>
 <colgroup>
@@ -75,7 +74,7 @@ HRESULT GetTree(
 </tr>
 <tr class="even">
 <td><strong>E_FAIL</strong></td>
-<td><p><strong>ISNMP::Open</strong>尚未调用方法。</p></td>
+<td><p>未调用 <strong>ISNMP：： Open</strong> 方法。</p></td>
 </tr>
 <tr class="odd">
 <td><strong>E_INVALIDARG</strong></td>
@@ -90,9 +89,9 @@ HRESULT GetTree(
 
 ## <a name="vbscript-example"></a>VBScript 示例
 
-此方法调用**SnmpMgrRequest**函数获取 SNMP OID 子节点的值。 有关此函数的详细信息，请参阅 Windows SDK 文档。
+此方法调用 **SnmpMgrRequest** 函数以获取子节点的 SNMP OID 值。 有关此函数的详细信息，请参阅 Windows SDK 文档。
 
-[ **ISNMP::Open** ](isnmp-open.md)前必须调用方法`ISNMP::GetTree`可以调用方法。
+必须先调用 [**ISNMP：： Open**](isnmp-open.md) 方法，然后才能 `ISNMP::GetTree` 调用方法。
 
 ```vb
 Dim StrIP, strCommunity, objSNMP, OIDValueArray
@@ -114,15 +113,15 @@ OIDValueArray = objSNMP.GetTree ("43.18.1.1.2")
 <tbody>
 <tr class="odd">
 <td><p>目标平台</p></td>
-<td>桌面设备</td>
+<td>台式机</td>
 </tr>
 <tr class="odd">
-<td><p>Header</p></td>
-<td>Olesnmp.h</td>
+<td><p>标头</p></td>
+<td>Olesnmp</td>
 </tr>
 </tbody>
 </table>
 
 ## <a name="see-also"></a>请参阅
 
-[**ISNMP::Open**](isnmp-open.md)
+[**ISNMP：： Open**](isnmp-open.md)

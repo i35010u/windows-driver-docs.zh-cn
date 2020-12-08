@@ -1,18 +1,17 @@
 ---
 title: 网络服务的安装要求
 description: 网络服务的安装要求
-ms.assetid: e43f9ccb-308d-435f-b99b-bb7dcbacfcac
 keywords:
 - 网络服务安装要求 WDK
 - 服务安装要求 WDK 网络
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5a885a619cd8e5d95c0229cf3152e8c64f1096a5
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 9337de9109ae4f07f1479a8dbae9ca3ca0c204e8
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90107488"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96795975"
 ---
 # <a name="installation-requirements-for-network-services"></a>网络服务的安装要求
 
@@ -38,7 +37,7 @@ ms.locfileid: "90107488"
 <tbody>
 <tr class="odd">
 <td align="left"><p><a href="version-section-in-a-network-inf-file.md" data-raw-source="[Version Section](version-section-in-a-network-inf-file.md)">版本部分</a></p></td>
-<td align="left"><p>必需</p></td>
+<td align="left"><p>必须</p></td>
 <td align="left"><p>类 = 空间</p>
 <p>ClassGuid = {4D36E974-E324-11CE-BFC1-08002BE10318}</p></td>
 </tr>
@@ -50,7 +49,7 @@ ms.locfileid: "90107488"
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="/windows-hardware/drivers/install/inf-destinationdirs-section" data-raw-source="[&lt;strong&gt;INF DestinationDirs Section&lt;/strong&gt;](../install/inf-destinationdirs-section.md)"><strong>INF DestinationDirs 节</strong></a></p></td>
-<td align="left"><p>必需</p></td>
+<td align="left"><p>必须</p></td>
 <td align="left"><p>无特定于网络的要求。</p></td>
 </tr>
 <tr class="even">
@@ -60,17 +59,17 @@ ms.locfileid: "90107488"
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="/windows-hardware/drivers/install/inf-manufacturer-section" data-raw-source="[&lt;strong&gt;INF Manufacturer Section&lt;/strong&gt;](../install/inf-manufacturer-section.md)"><strong>INF Manufacturer 节</strong></a></p></td>
-<td align="left"><p>必需</p></td>
+<td align="left"><p>必须</p></td>
 <td align="left"><p>无特定于网络的要求。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><a href="models-section-in-a-network-inf-file.md" data-raw-source="[Models Section](models-section-in-a-network-inf-file.md)">模型部分</a></p></td>
-<td align="left"><p>必需</p></td>
+<td align="left"><p>必须</p></td>
 <td align="left"><p><em>Hw id</em>应该包含提供程序名称，后跟下划线和制造商名称或产品名称，例如： MS_DLC。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="ddinstall-section-in-a-network-inf-file.md" data-raw-source="[DDInstall Section](ddinstall-section-in-a-network-inf-file.md)">DDInstall 部分</a></p></td>
-<td align="left"><p>必需</p></td>
+<td align="left"><p>必须</p></td>
 <td align="left"><p>特征条目--允许的值：</p>
 <p>NCF_HIDDEN</p>
 <p>NCF_NO_SERVICE</p>
@@ -84,7 +83,7 @@ ms.locfileid: "90107488"
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="add-registry-sections-in-a-network-inf-file.md" data-raw-source="[Add-registry-sections](add-registry-sections-in-a-network-inf-file.md)">添加-注册表-部分</a></p></td>
-<td align="left"><p>必需</p></td>
+<td align="left"><p>必须</p></td>
 <td align="left"><p>创建 Ndi 键</p>
 <p><a href="specifying-binding-interfaces.md" data-raw-source="[Specifying Binding Interfaces](specifying-binding-interfaces.md)">指定绑定接口</a></p>
 <p>允许的绑定接口：</p>
@@ -107,7 +106,7 @@ ms.locfileid: "90107488"
 </tr>
 <tr class="even">
 <td align="left"><p><a href="/windows-hardware/drivers/install/inf-strings-section" data-raw-source="[&lt;strong&gt;INF Strings Section&lt;/strong&gt;](../install/inf-strings-section.md)"><strong>INF Strings 节</strong></a></p></td>
-<td align="left"><p>必需</p></td>
+<td align="left"><p>必须</p></td>
 <td align="left"><p>无特定于网络的要求。</p></td>
 </tr>
 </tbody>

@@ -1,15 +1,14 @@
 ---
 title: 将代码从 SetupApi 移植到 CfgMgr32
 description: 本主题提供了一些代码示例，这些示例演示如何将使用 Setupapi.dll 功能的代码移植到使用 Cfgmgr32.dll。
-ms.assetid: 36668A17-EA56-464C-A38B-C75BE2359412
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 01066586d7807b6eb49addda1fd6331ff2c1e535
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: e801fadb6ea76b598b9f4d3e3a718d011c5f389c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90715266"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96796059"
 ---
 # <a name="porting-code-from-setupapi-to-cfgmgr32"></a>将代码从 SetupApi 移植到 CfgMgr32
 
@@ -535,7 +534,7 @@ GetDevicePropertySpecificDeviceCfgmgr32(
 ## <a name="disable-device"></a>禁用设备
 
 
-此示例演示如何使用 CfgMgr32 禁用设备。 若要使用 Setupapi.log 执行此操作，请将 [**SetupDiCallClassInstaller**](/windows/win32/api/setupapi/nf-setupapi-setupdicallclassinstaller) 与 *InstallFunction* 的 **DIF_PROPERTYCHANGE**一起使用，并指定 **DICS_DISABLE**。
+此示例演示如何使用 CfgMgr32 禁用设备。 若要使用 Setupapi.log 执行此操作，请将 [**SetupDiCallClassInstaller**](/windows/win32/api/setupapi/nf-setupapi-setupdicallclassinstaller) 与 *InstallFunction* 的 **DIF_PROPERTYCHANGE** 一起使用，并指定 **DICS_DISABLE**。
 
 **注意**   默认情况下，调用 [**SetupDiCallClassInstaller**](/windows/win32/api/setupapi/nf-setupapi-setupdicallclassinstaller) 会导致设备在重新启动时始终处于禁用状态。 若要在调用 [**CM_Disable_DevNode**](/windows/win32/api/cfgmgr32/nf-cfgmgr32-cm_disable_devnode)时跨重新启动禁用设备，则必须指定 **CM_DISABLE_PERSIST** 标志。
 
@@ -560,7 +559,7 @@ GetDevicePropertySpecificDeviceCfgmgr32(
 ## <a name="enable-device"></a>启用设备
 
 
-此示例演示如何使用 CfgMgr32 启用设备。 若要使用 Setupapi.log 执行此操作，请将 [**SetupDiCallClassInstaller**](/windows/win32/api/setupapi/nf-setupapi-setupdicallclassinstaller) 与 *InstallFunction* 的 **DIF_PROPERTYCHANGE**一起使用，并指定 **DICS_ENABLE**。
+此示例演示如何使用 CfgMgr32 启用设备。 若要使用 Setupapi.log 执行此操作，请将 [**SetupDiCallClassInstaller**](/windows/win32/api/setupapi/nf-setupapi-setupdicallclassinstaller) 与 *InstallFunction* 的 **DIF_PROPERTYCHANGE** 一起使用，并指定 **DICS_ENABLE**。
 
 ```ManagedCPlusPlus
     cr = CM_Locate_DevNode(&devinst,
@@ -581,7 +580,7 @@ GetDevicePropertySpecificDeviceCfgmgr32(
 ## <a name="restart-device"></a>重启设备
 
 
-此示例演示如何使用 CfgMgr32 重新启动设备。 若要使用 Setupapi.log 执行此操作，请将 [**SetupDiCallClassInstaller**](/windows/win32/api/setupapi/nf-setupapi-setupdicallclassinstaller) 与 *InstallFunction* 的 **DIF_PROPERTYCHANGE**一起使用，并指定 **DICS_PROPCHANGE**。
+此示例演示如何使用 CfgMgr32 重新启动设备。 若要使用 Setupapi.log 执行此操作，请将 [**SetupDiCallClassInstaller**](/windows/win32/api/setupapi/nf-setupapi-setupdicallclassinstaller) 与 *InstallFunction* 的 **DIF_PROPERTYCHANGE** 一起使用，并指定 **DICS_PROPCHANGE**。
 
 ```ManagedCPlusPlus
     cr = CM_Locate_DevNode(&devinst,

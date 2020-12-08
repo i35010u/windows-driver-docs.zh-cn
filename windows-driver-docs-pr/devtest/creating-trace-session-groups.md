@@ -1,28 +1,27 @@
 ---
 title: 创建跟踪会话组
 description: 创建跟踪会话组
-ms.assetid: e7b8b439-3695-4d00-9e03-d9524dff0615
 keywords:
 - 分组跟踪会话
 - 跟踪会话 WDK，组
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6bea2133751d24872c96ca9a4b5b57b896d56a4d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c844799ea629c5319b86f851d7a4e9c9f43502ae
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63356625"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96795621"
 ---
 # <a name="creating-trace-session-groups"></a>创建跟踪会话组
 
 
-若要创建跟踪会话组：
+创建跟踪会话组：
 
-1.  在中[跟踪会话列表](trace-session-list.md)，选择要分组的会话。 （您可以使用 SHIFT + 单击以选择连续会话和 CTRL + 单击以选择非连续的会话。）
+1.  在 " [跟踪会话" 列表](trace-session-list.md)中，选择要分组的会话。  (可以使用 SHIFT + 单击来选择连续会话，然后按住 CTRL 并单击来选择不连续的会话。 ) 
 
-2.  在任何所选会话中，右键单击任何单元格。
+2.  右键单击任意所选会话中的任意单元。
 
-3.  单击**组会话**。
+3.  单击 " **组会话**"。
 
-**组会话**命令仅当操作系统支持该类型的跟踪会话的分组时才可用。 有关详细信息，请参阅[限制的分组](limitations-of-grouping.md)。
+仅当操作系统支持对该类型的跟踪会话进行分组时，" **组会话** " 命令才可用。 有关详细信息，请参阅 [分组限制](limitations-of-grouping.md)。

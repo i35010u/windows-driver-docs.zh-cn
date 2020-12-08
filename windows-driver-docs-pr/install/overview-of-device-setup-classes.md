@@ -1,26 +1,25 @@
 ---
 title: 设备安装程序类概述
 description: 设备安装程序类概述
-ms.assetid: 318ec3f4-f2c2-437c-a767-494ac240cb89
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 433dec1ec7f9de7b0113e04bdeabdce8472be9db
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e6bf7a0b5e049350ed4ccbf3714059318896ddfd
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63330232"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96795451"
 ---
 # <a name="overview-of-device-setup-classes"></a>设备安装程序类概述
 
 
-若要简化设备安装，设备设置和配置相同的方式进行分组到设备安装程序类。 例如，SCSI 媒体更换器设备分为 MediumChanger 设备安装程序类。 设备安装程序类定义中安装设备的安装程序类和所涉及的类共同安装程序。
+为了便于设备安装，以相同方式设置和配置的设备将分组为一个设备安装程序类。 例如，将 SCSI 媒体转换器设备分组到 MediumChanger 设备安装程序类中。 设备安装程序类定义安装设备所涉及的类安装程序和类共同安装程序。
 
-Microsoft 定义了适用于大多数设备安装程序类。 Ihv 和 Oem 可以定义新的设备安装程序类，但类仅如果没有，则现有应用。 例如，相机供应商无需定义新的安装程序类，因为照相机归入的映像安装程序类。 同样，不间断电源 (ups) 设备属于电池类。
+Microsoft 为大多数设备定义安装程序类。 IHV 和 OEM 可以定义新的设备安装程序类，但前提是现有类都不适用。 例如，照相机供应商不需要定义新的安装类，因为相机落在图像安装程序类下。 同样，不间断电源 (UPS) 设备位于电池类下。
 
-没有与每个设备安装程序类关联的 GUID。 在中定义的系统定义的安装程序类 Guid *Devguid.h*并且通常具有符号名称的窗体 GUID_DEVCLASS_*Xxx*。
+有一个与每个设备安装程序类相关联的 GUID。 系统定义的安装程序类 Guid 是在 *Devguid* 中定义的，并且通常具有格式 GUID_DEVCLASS_ *Xxx* 格式的符号名称。
 
-设备安装程序类 GUID 定义 **...\\CurrentControlSet\\控制\\类\\**<em>ClassGuid</em>在其下创建一个新子项的标准安装程序的任何特定设备的注册表项类。
+设备安装程序类 GUID 定义 **。 \\CurrentControlSet \\ Control \\ 类 \\**<em>ClassGuid</em>用于为标准安装程序类的任何特定设备创建新子项的注册表项。
 
  
 

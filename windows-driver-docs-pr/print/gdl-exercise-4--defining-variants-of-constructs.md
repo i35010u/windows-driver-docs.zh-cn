@@ -1,37 +1,36 @@
 ---
-title: GDL 练习 4 个定义的变体的构造
-description: GDL 练习 4 个定义的变体的构造
-ms.assetid: b923b5f8-6e60-44a0-a38e-8bfa315281c5
+title: GDL 练习4定义构造的变体
+description: GDL 练习4定义构造的变体
 keywords:
-- GDL WDK 示例
+- GDL WDK，示例
 - 示例 WDK GDL
 - 教程 WDK GDL
-- GDL WDK 教程
+- GDL WDK，教程
 - 构造 WDK GDL，创建构造
 - 创建 GDL 构造 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 19a52c47e71acdf59224d7694e434f67094b30d9
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: faddbda5a9c1f27d2767ac8927143e5ec976afff
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63375607"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96796997"
 ---
-# <a name="gdl-exercise-4-defining-variants-of-constructs"></a>GDL 练习 4：定义构造的变体
+# <a name="gdl-exercise-4-defining-variants-of-constructs"></a>GDL 练习4：定义构造的变体
 
 
-### <a href="" id="exercise"></a> 练习
+### <a name="exercise"></a><a href="" id="exercise"></a> 小心谨慎
 
-修改构造\*从 PFeature[练习 3](gdl-exercise-3--creating-root-level-constructs.md)通过定义两种变体：\*PFeature:PaperSize 和\*PFeature InputTray。
+\*定义两个变量： [Exercise 3](gdl-exercise-3--creating-root-level-constructs.md) \* PFeature： PaperSize 和 PFeature InputTray，从练习3修改构造 PFeature \* 。
 
-中包含 POption \*PFeature:PaperSize 具有以下属性： **\*名称**， **\*命令**，  **\*Papersize**。
+PFeature 中包含的 POption \* 具有以下属性： **\* Name**、 **\* Command**、 **\* PaperSize**。
 
-中包含 POption \*PFeature:InputTray 具有以下属性： **\*名称**， **\*命令**，并 **\*容量：** *\#表的*。
+PFeature 中包含的 POption \* 具有以下属性： **\* 名称**、 **\* 命令** 和 **\* 容量：** *\# 工作表*。
 
-创建模板以抽象的这两种类型的通用属性\*POptions。
+创建一个模板来抽象这两种类型的 POptions 的通用属性 \* 。
 
-### <a href="" id="solution"></a> 解决方案
+### <a name="solution"></a><a href="" id="solution"></a> 解决方案
 
 以下模板满足条件。
 
@@ -51,7 +50,7 @@ ms.locfileid: "63375607"
 }
 ```
 
-进一步的以下派生的选项模板定义虚拟模板 POPTION 的属性。
+以下派生选项模板进一步定义虚拟模板 POPTION 的属性。
 
 ```cpp
 *Template:  GENERIC_OPTION
@@ -114,7 +113,7 @@ ms.locfileid: "63375607"
 }
 ```
 
-进一步的以下派生的选项模板专用化模板通用的属性\_选项。
+以下派生选项模板进一步专用化模板通用选项的属性 \_ 。
 
 ```cpp
 *Template:  PAPERSIZE_OPTION
@@ -141,7 +140,7 @@ ms.locfileid: "63375607"
 }
 ```
 
-进一步的以下派生的选项模板专用化模板通用的属性\_选项。
+以下派生选项模板进一步专用化模板通用选项的属性 \_ 。
 
 ```cpp
 *Template:  INPUTTRAY_OPTION

@@ -1,15 +1,14 @@
 ---
 title: 移植 DMA
 description: 移植 DMA
-ms.assetid: 457B6459-EE02-4A2C-8D25-81CE1D9265DC
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b30590da01a733b647b40f3cc4182f7679e887df
-ms.sourcegitcommit: 057b72e8a44ba8f4282e072edc7be0b7e9341d2a
+ms.openlocfilehash: eae29d9d7c80ef88ee387b5223e8ef05daba1ab0
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/03/2020
-ms.locfileid: "89412476"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96796361"
 ---
 # <a name="porting-dma"></a>移植 DMA
 

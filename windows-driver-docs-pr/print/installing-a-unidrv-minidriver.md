@@ -1,20 +1,19 @@
 ---
 title: 安装 Unidrv 微型驱动程序
 description: 安装 Unidrv 微型驱动程序
-ms.assetid: 0efead8f-c413-4ec1-b940-89b57f95345e
 keywords:
-- Unidrv，微型驱动程序
+- Unidrv、微型驱动程序
 - 微型驱动程序 WDK Unidrv
 - INF 文件 WDK 打印，Unidrv 微型驱动程序
 - Unidrv WDK 打印
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9bc374d3c9082802b31ff698b0afa557aac87c4a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a95f1bd876b1c9947ac8ea93e0b1b493153ebfe2
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63366891"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96796719"
 ---
 # <a name="installing-a-unidrv-minidriver"></a>安装 Unidrv 微型驱动程序
 
@@ -22,7 +21,7 @@ ms.locfileid: "63366891"
 
 
 
-Unidrv 微型驱动程序安装要求[打印机 INF 文件](printer-inf-files.md)标识微型驱动程序的文件。 如果打印机型号不受 Microsoft 的打印机 INF 文件，则需要 ntprint.inf，供应商提供的 INF 文件。 INF 文件应引用[打印机 INF 文件的数据部分](printer-inf-file-data-sections.md)并[打印机 INF 文件安装部分](printer-inf-file-install-sections.md)，其定义在 ntprint.inf 中。 对于名为 abc100 微型驱动程序，通常需要以下 INF 文件条目，如果打印机是双向的支持 TrueType 字体替换，并使用单个资源 DLL:
+安装 Unidrv 微型驱动程序需要一个 [打印机 INF 文件](printer-inf-files.md) ，用于标识微型驱动程序的文件。 如果 Microsoft 的打印机 INF 文件（ntprint.inf）不支持打印机型号，则需要供应商提供的 INF 文件。 INF 文件应引用 [打印机 inf 文件数据部分](printer-inf-file-data-sections.md) 和 [打印机 inf 文件安装部分](printer-inf-file-install-sections.md)（在 ntprint.inf 中定义）。 对于名为 abc100 的微型驱动程序，通常需要以下 INF 文件项，如果打印机是双向的，则支持 TrueType 字体替换，并使用单个资源 DLL：
 
 ```cpp
 [Manufacturer]
@@ -40,7 +39,7 @@ Needs=TTFSUB.OEM,UNIDRV_BIDI.OEM   ;Install TrueType subs, Unidrv,
   ;    and PJL language monitor.
 ```
 
-如果你要提供[插件的用户界面](user-interface-plug-ins.md)或[呈现插件](rendering-plug-ins.md)，您需要包括 INF 文件中的这些组件的名称。 有关安装自定义的代码的信息，请参阅[安装自定义驱动程序组件](installing-customized-driver-components.md)。
+如果你正在提供 [用户界面插件](user-interface-plug-ins.md) 或 [呈现插件](rendering-plug-ins.md)，则需要在 INF 文件中包含这些组件的名称。 有关安装自定义代码的信息，请参阅 [安装自定义驱动程序组件](installing-customized-driver-components.md)。
 
  
 

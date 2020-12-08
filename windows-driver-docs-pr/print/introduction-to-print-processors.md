@@ -1,20 +1,19 @@
 ---
 title: 打印处理器简介
 description: 打印处理器简介
-ms.assetid: a34d8daa-b000-4501-8799-5f38cdf38ba4
 keywords:
-- 有关打印处理器的打印处理器 WDK，
+- 打印处理器 WDK，关于打印处理器
 - 自定义打印处理器 WDK
 - 打印处理器 WDK，数据类型
 - 数据类型 WDK 打印处理器
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 82e49973eabfd92f91ecffb3b564911b13d788b4
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c3a3b9b373705285a6202eebf71e09aea2f58e1e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63355689"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96796669"
 ---
 # <a name="introduction-to-print-processors"></a>打印处理器简介
 
@@ -22,11 +21,11 @@ ms.locfileid: "63355689"
 
 
 
-打印处理器是负责将转换的打印作业的后台处理数据到可以发送到的格式的用户模式 Dll*的打印监视器*。 它们也要负责处理应用程序请求暂停、 恢复和取消打印作业。
+打印处理器是用户模式 Dll，负责将打印作业的假脱机数据转换为可发送到 *打印监视器* 的格式。 它们还负责处理应用程序请求以暂停、恢复和取消打印作业。
 
-打印作业的假脱机的数据包含在假脱机文件。 打印处理器读取的文件、 执行转换操作该数据流和将转换后的数据写入到后台处理程序。 后台处理程序然后将数据流发送到适当的打印监视器。
+打印作业的假脱机数据包含在假脱机文件中。 打印处理器读取文件，对数据流执行转换操作，并将转换后的数据写入到后台处理程序。 然后，后台处理程序将数据流发送到相应的打印监视器。
 
-Microsoft Windows 2000 及更高版本包括下表中列出的打印处理器。
+Microsoft Windows 2000 和更高版本包含下表中列出的打印处理器。
 
 <table>
 <colgroup>
@@ -37,7 +36,7 @@ Microsoft Windows 2000 及更高版本包括下表中列出的打印处理器。
 <thead>
 <tr class="header">
 <th>打印处理器</th>
-<th>输入的数据类型</th>
+<th>输入数据类型</th>
 <th>输出数据类型</th>
 </tr>
 </thead>
@@ -46,7 +45,7 @@ Microsoft Windows 2000 及更高版本包括下表中列出的打印处理器。
 <td><p>Localspl.dll *</p></td>
 <td><p>EMF</p>
 <p>RAW</p>
-<p>文本</p></td>
+<p>TEXT</p></td>
 <td><p>RAW</p></td>
 </tr>
 <tr class="even">
@@ -59,23 +58,23 @@ Microsoft Windows 2000 及更高版本包括下表中列出的打印处理器。
 
  
 
-\* 从 Windows 2000 开始，Localmon.dll 和 Winprint.dll 包含在 Localspl.dll。
+\* 从 Windows 2000 开始，Localmon.dll 和 Winprint.dll 包含在 Localspl.dll 中。
 
 有关数据类型的信息，请参阅以下主题：
 
 [EMF 数据类型](emf-data-type.md)
 
-[原始数据类型](raw-data-type.md)
+[RAW 数据类型](raw-data-type.md)
 
-[TEXT 数据类型](text-data-type.md)
+[文本数据类型](text-data-type.md)
 
 [PSCRIPT1 数据类型](pscript1-data-type.md)
 
-您可以创建自定义的打印处理器，以支持 Windows 2000 或更高版本的操作系统版本不支持的数据类型。 此外可以提供自定义的打印处理器支持一个或多个支持的数据类型，这样你就可以修改提供的打印处理器提供的功能。
+您可以创建自定义的打印处理器来支持 Windows 2000 或更高版本的操作系统版本不支持的数据类型。 你还可以提供支持一个或多个支持的数据类型的自定义打印处理器，从而允许你修改提供的打印处理器提供的功能。
 
-打印处理器与相关联的打印机驱动程序在安装驱动程序，以便支持相同的数据类型的多个打印处理器可以共存。 有关详细信息，请参阅[安装打印处理器](installing-a-print-processor.md)。
+打印处理器与驱动程序安装过程中的打印机驱动程序相关联，因此，多个支持相同数据类型的打印处理器可以共存。 有关详细信息，请参阅 [安装打印处理器](installing-a-print-processor.md)。
 
-**请注意**  打印处理器编译时，设置 Unicode 标志\#定义 UNICODE。 例如，打印处理器代码应使用类型为 LPWSTR，仅宽的字符串。
+**注意**   编译打印处理器时，使用 "定义 UNICODE" 设置 Unicode 标志 \# 。 例如，打印处理器代码只应使用 LPWSTR 类型的宽字符串。
 
  
 

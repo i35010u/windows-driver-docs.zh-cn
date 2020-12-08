@@ -1,24 +1,23 @@
 ---
 title: GDI 管理的位图
 description: GDI 管理的位图
-ms.assetid: 4b575574-7090-4010-962b-80cac059bfa5
 keywords:
 - GDI WDK Windows 2000 显示，呈现引擎
 - 图形驱动程序 WDK Windows 2000 显示，呈现引擎
 - 绘制 WDK GDI，呈现引擎
-- 呈现引擎 WDK GDI
-- GDI WDK Windows 2000 显示位图
-- 图形驱动程序 WDK Windows 2000 显示位图
+- 渲染引擎 WDK GDI
+- GDI WDK Windows 2000 显示，位图
+- 图形驱动程序 WDK Windows 2000 显示，位图
 - 绘制 WDK GDI，位图
-- WDK GDI 位图
+- 位图 WDK GDI
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ce336f19ea9ecf5376ee974ede0b2963b149cff4
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 25e771c92a67839ec22fde49100047a758f27cdc
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63347591"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96796287"
 ---
 # <a name="gdi-managed-bitmaps"></a>GDI 管理的位图
 
@@ -26,9 +25,9 @@ ms.locfileid: "63347591"
 ## <span id="ddk_gdi_managed_bitmaps_gg"></span><span id="DDK_GDI_MANAGED_BITMAPS_GG"></span>
 
 
-GDI 管理在所有位图*DIB*包括 1、 4、 8、 16、 24 和 32 位每像素的格式。 GDI 可以执行所有的行绘制填充，文本输出和位块传输 (bitblt) 操作这些位图上。 这使驱动程序具有执行所有图形呈现 GDI，或以实现其硬件为其提供特殊支持的函数。
+GDI 以所有 *DIB* 格式管理位图，包括1、4、8、16、24和32位/像素。 GDI 可以执行所有行绘图、填充、文本输出和位块传输 (bitblt 对这些位图执行) 操作。 这使得驱动程序可以让 GDI 完成所有图形呈现，或实现其硬件提供特殊支持的功能。
 
-如果该设备已*帧缓冲区*DIB 格式，GDI 可以执行任何或所有图形输出直接与帧缓冲区中，从而减少驱动程序的大小。 如果设备使用了非标准格式帧缓冲区中，则该驱动程序必须实现所需的所有[的绘图功能](optional-display-driver-functions.md)。 尽管产生性能开销，GDI 仍然可以模拟大多数绘图函数： 之前可以在运营的 GDI，然后复制回原格式绘制完成后，必须将像素复制到位图标准格式。
+如果设备的 *帧缓冲区* 采用 DIB 格式，则 GDI 可以直接执行任何或所有图形输出到帧缓冲区，从而减小驱动程序的大小。 如果设备使用非标准格式的帧缓冲区，则驱动程序必须实现所有必需的 [绘图函数](optional-display-driver-functions.md)。 GDI 仍可以模拟大多数绘制功能，但会导致性能开销：必须先将像素复制到标准格式位图，然后才能通过 GDI 进行操作，然后在绘图完成后将其复制回原始格式。
 
  
 

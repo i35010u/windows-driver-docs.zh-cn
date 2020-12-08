@@ -1,7 +1,6 @@
 ---
 title: KSCATEGORY_ESCALANTE_PLATFORM_DRIVER
 description: KSCATEGORY_ESCALANTE_PLATFORM_DRIVER
-ms.assetid: 3d017b2d-449a-4433-aa29-f70695610ace
 keywords:
 - KSCATEGORY_ESCALANTE_PLATFORM_DRIVER 设备和驱动程序安装
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: dadac2d059fc0193ab7ab3c050c6e4c9a822f739
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: a49c3bb9a566018b5a9cfd7dd6ed0d3445c31f6c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89097243"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96795485"
 ---
 # <a name="kscategory_escalante_platform_driver"></a>KSCATEGORY_ESCALANTE_PLATFORM_DRIVER
 

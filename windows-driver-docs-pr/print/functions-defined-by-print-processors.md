@@ -1,18 +1,17 @@
 ---
 title: 打印处理器定义的函数
 description: 打印处理器定义的函数
-ms.assetid: ada376f0-515e-4995-b612-4da9523b6fcf
 keywords:
 - 打印处理器 WDK，函数
 - 函数 WDK 打印
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 92c63e46613d307aa4de1c32e1ee0d1b50118123
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: c2e9c2c70b4315a4c5e40365d6d1b9c27537ff9d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90103904"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96797065"
 ---
 # <a name="functions-defined-by-print-processors"></a>打印处理器定义的函数
 

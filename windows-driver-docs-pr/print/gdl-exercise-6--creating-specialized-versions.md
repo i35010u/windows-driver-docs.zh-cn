@@ -1,40 +1,39 @@
 ---
-title: GDL 练习 6 创建专用化版本
-description: GDL 练习 6 创建专用化版本
-ms.assetid: d9e60958-58b6-4ffe-a955-bc1b13b6a649
+title: GDL 练习6创建专用版本
+description: GDL 练习6创建专用版本
 keywords:
-- GDL WDK 示例
+- GDL WDK，示例
 - 示例 WDK GDL
 - 教程 WDK GDL
-- GDL WDK 教程
-- 构造 WDK GDL，创建的特殊的版本
+- GDL WDK，教程
+- 构造 WDK GDL，创建专用版本
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4f62f1c624cbec11cb4665e1c0c3cbae514b34c7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 931c4b928ec437346609a90002721e4dc19ab293
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63375600"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96796995"
 ---
-# <a name="gdl-exercise-6-creating-specialized-versions"></a>GDL 练习 6：创建专用版本
+# <a name="gdl-exercise-6-creating-specialized-versions"></a>GDL 练习6：创建专用版本
 
 
-### <a href="" id="exercise"></a> 练习
+### <a name="exercise"></a><a href="" id="exercise"></a> 小心谨慎
 
-使用[练习 5](gdl-exercise-5--defining-name-limits-for-different-features.md)，创建三个专用的版本\*POption 为\*PFeature:PaperSize。
+使用 [练习 5](gdl-exercise-5--defining-name-limits-for-different-features.md)，为 PFeature 创建 POption 的三个专用版本 \* \* ： PaperSize。
 
--   有关 Letter、 法律和 A4 的实例名称 Papersize 选项是第一个版本。 这些选项会将它们的当前行为。
+-   第一个版本用于实例名称为 "Papersize"、"法律" 和 "A4" 的选项。 这些选项将具有当前行为。
 
--   第二个版本是有关自定义的实例名称 Papersize 选项，并将识别以下附加特性：**\*MinSize**并 **\*MaxSize**。
+-   第二个版本用于实例名称为 "Custom" 的 Papersize 选项，并将识别以下附加属性： **\* MinSize** 和 **\* MaxSize**。
 
--   第三个版本将介绍 OEM 定义并将识别的其他属性将被视为其他 papersize 选项：**\*OEM\_信息**。
+-   第三个版本将包含其他 papersize 选项，这些选项将被视为 OEM 定义，并将识别其他属性： **\* OEM \_ 信息**。
 
-进行此更改而不删除或修改任何以前定义的模板。 创建简单的 GDL 数据文件，以验证条目的适当操作。
+进行此更改，而不删除或修改任何先前定义的模板。 创建一个简单的 GDL 数据文件，以验证是否正确 templatization 了条目。
 
-### <a href="" id="solution"></a> 解决方案
+### <a name="solution"></a><a href="" id="solution"></a> 解决方案
 
-下面的代码示例显示了一个可能的答案。
+下面的代码示例演示了一个可能的答案。
 
 ```cpp
 *Template:  MIN_SIZE
@@ -77,7 +76,7 @@ ms.locfileid: "63375600"
 }
 ```
 
-下面的代码示例显示了示例 GDL 数据文件进行验证。
+下面的代码示例演示用于验证的示例 GDL 数据文件。
 
 ```cpp
 *PFeature: random

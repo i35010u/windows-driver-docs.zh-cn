@@ -1,17 +1,16 @@
 ---
 title: 语言监视器函数
 description: 语言监视器函数
-ms.assetid: ffe1a52f-69cc-4346-945f-3f1bc0a1a91e
 keywords:
 - 语言监视 WDK 打印、功能
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 366a9e7abd813f00206b3d4a40085719716f084e
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 0b0d73a83665b309cc5d15c506116e1a91a36232
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90104420"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96796481"
 ---
 # <a name="language-monitor-functions"></a>语言监视器函数
 

@@ -1,7 +1,6 @@
 ---
 title: GDL 教程
 description: GDL 教程
-ms.assetid: 79c73df6-0890-436c-827d-6fccbd14b503
 keywords:
 - GDL WDK，示例
 - 示例 WDK GDL
@@ -10,12 +9,12 @@ keywords:
 - GDL WDK，教程
 ms.date: 06/05/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 6cf0099b50a326f2374367c5eeb0dc6350456a23
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: d24955ad29aa77e220dc7f57843e78c173ac0bc7
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89205923"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96796915"
 ---
 # <a name="gdl-tutorials"></a>GDL 教程
 
@@ -33,7 +32,7 @@ ms.locfileid: "89205923"
 
 [GDL 练习2：从虚拟模板继承](gdl-exercise-2--inheriting-from-virtual-templates.md)
 
-[GDL 练习3：创建根级别构造](gdl-exercise-3--creating-root-level-constructs.md)
+[GDL 练习3：创建 Root-Level 构造](gdl-exercise-3--creating-root-level-constructs.md)
 
 [GDL 练习4：定义构造的变体](gdl-exercise-4--defining-variants-of-constructs.md)
 

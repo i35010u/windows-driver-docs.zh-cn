@@ -4,7 +4,6 @@ description: IPrinterScriptUsbWritePrintDataProgress 接口作为参数传递到
 MSHAttr:
 - PreferredSiteName:MSDN
 - PreferredLib:/library/windows/hardware
-ms.assetid: E22725DA-2BD5-4FBC-A3E4-A3C5678A9E57
 keywords:
 - IPrinterScriptUsbWritePrintDataProgress 接口打印设备
 - IPrinterScriptUsbWritePrintDataProgress 接口打印设备，描述
@@ -16,12 +15,12 @@ api_type:
 - COM
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ea97f08ef37fec791cb8056d51cab5407adda024
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 48d16e68ad5e55ad39daa5b04811500a086b9edf
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89217122"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96796569"
 ---
 # <a name="iprinterscriptusbwriteprintdataprogress-interface"></a>IPrinterScriptUsbWritePrintDataProgress 接口
 
@@ -30,13 +29,13 @@ IPrinterScriptUsbWritePrintDataProgress 接口作为参数传递到 **writePrint
 <a name="members"></a>成员
 -------
 
-**IPrinterScriptUsbWritePrintDataProgress**接口继承自[**IUnknown**](/windows/win32/api/unknwn/nn-unknwn-iunknown)接口。 **IPrinterScriptUsbWritePrintDataProgress** 还具有下列类型的成员：
+**IPrinterScriptUsbWritePrintDataProgress** 接口继承自 [**IUnknown**](/windows/win32/api/unknwn/nn-unknwn-iunknown)接口。 **IPrinterScriptUsbWritePrintDataProgress** 还具有下列类型的成员：
 
 -   [方法](#methods)
 
 ### <a name="methods"></a>方法
 
-**IPrinterScriptUsbWritePrintDataProgress**接口具有这些方法。
+**IPrinterScriptUsbWritePrintDataProgress** 接口具有这些方法。
 
 <table>
 <colgroup>
@@ -46,7 +45,7 @@ IPrinterScriptUsbWritePrintDataProgress 接口作为参数传递到 **writePrint
 <thead>
 <tr class="header">
 <th>方法</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>

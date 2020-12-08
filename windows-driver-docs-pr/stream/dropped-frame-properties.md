@@ -1,18 +1,17 @@
 ---
 title: 已删除帧属性
 description: 已删除帧属性
-ms.assetid: 9c8bd66f-aa25-49e2-a442-9046a4d46466
 keywords:
 - 丢帧属性 WDK 视频捕获
 - PROPSETID_VIDCAP_DROPPEDFRAMES
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6c1ae51d28bde3b578ef02936db4890898494465
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: b89d4c257bbc4adae3c9b0b2b31c7822f4dc8ac3
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90103052"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96795367"
 ---
 # <a name="dropped-frame-properties"></a>已删除帧属性
 

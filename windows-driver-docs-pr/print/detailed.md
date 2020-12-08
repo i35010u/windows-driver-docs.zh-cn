@@ -1,26 +1,25 @@
 ---
 title: 详细
 description: 详细
-ms.assetid: a96cbb55-2a39-4606-94aa-93a59c80c2d5
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2fb7446b4623b8f768c1052fb5c0bbb34aba1852
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 4b45befe99032f9b46ac72d86495a32c932cb7b8
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56534110"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96797283"
 ---
 # <a name="detailed"></a>详细
 
 
-架构路径：\\Printer.Status.Detailed
+架构路径： \\ 打印机。状态。详细信息
 
-节点类型： 属性
+节点类型：属性
 
-有关设备，包括任何问题的条件的当前信息的说明： 一个全面的描述。
+说明：有关设备当前信息的全面说明，包括任何问题条件。
 
-详细的属性是父[事件\#\# \# ](event---.md)属性。
+详细属性是[事件 \# \# \# ](event---.md)属性的父。
 
  
 

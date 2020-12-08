@@ -1,18 +1,17 @@
 ---
 title: HP-GL/2 注意事项
 description: HP-GL/2 注意事项
-ms.assetid: 201a894e-5d22-46f8-965d-0e5b88dc54d7
 keywords:
 - HP-GL/2 单色 WDK Unidrv，其他注意事项
 - PCL-5e WDK Unidrv，其他注意事项
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b1fa58b98c748039bf83524eabbd899e076a4f59
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: d7db0c97b0b791355c9cf42cf48c347c7f270844
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89210607"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96796843"
 ---
 # <a name="hp-gl2-caveats"></a>HP-GL/2 注意事项
 
@@ -73,7 +72,7 @@ ms.locfileid: "89210607"
     -   TIFF
     -   增量行
 
-12. HP-GL/2 不执行系统横向旋转。 启用 "HP-GL/2" 时，会假定打印机处理横向模式下打印的页面的 rasters、字体和坐标。 若要解决此问题，请确保 \* 将 "RotateCoordinate？"、" \* RotateFont" 和 " \* RotateRaster") 属性**TRUE** (的所有 "旋转" 参数设置为 "TRUE"。 如果你的打印机在旋转时出现内存溢出问题，你应考虑不激活惠普/2，或将约束置于内存 (也就是说，仅当内存为 4 MB 或更大时，才应激活 HP-UX/2。
+12. HP-GL/2 不执行系统横向旋转。 启用 "HP-GL/2" 时，会假定打印机处理横向模式下打印的页面的 rasters、字体和坐标。 若要解决此问题，请确保 \* 将 "RotateCoordinate？"、" \* RotateFont" 和 " \* RotateRaster") 属性 **TRUE** (的所有 "旋转" 参数设置为 "TRUE"。 如果你的打印机在旋转时出现内存溢出问题，你应考虑不激活惠普/2，或将约束置于内存 (也就是说，仅当内存为 4 MB 或更大时，才应激活 HP-UX/2。
 
     在低内存设备上 (例如，600 dpi 单色激光打印机，) RAM 为 2 MB，在设备处于 HP-GL/2 模式时，某些页面会出现内存不足错误。 一种解决方案，适用于具有小于完整的内存位图的设备，以便将 GPD 写入到默认值，并让系统处理横向旋转，而不是使用惠普/2。 此外，某些复杂的纵向打印作业可能会在光栅模式下正确打印，但不能在 HP-GL/2 模式下打印。 如果是这种情况，应考虑将光栅模式设为默认值。
 

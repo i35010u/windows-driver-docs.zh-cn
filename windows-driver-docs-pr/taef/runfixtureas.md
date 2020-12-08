@@ -1,15 +1,14 @@
 ---
 title: RunFixtureAs
 description: TAEF 提供一种机制，用于在与相应测试不同的上下文中执行测试装置。
-ms.assetid: FAFF5265-5268-412E-86A5-149B187B1376
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3bafef9d16ff2b190ae937cdd6a0197778439f50
-ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
+ms.openlocfilehash: 1df070f2d0626636ebc0cb12bfb2f83583443f14
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89402766"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96796419"
 ---
 # <a name="runfixtureas"></a>RunFixtureAs
 
@@ -45,14 +44,14 @@ TAEF 支持以下 RunFixtureAs 类型，这些类型由测试元数据指定：
 <span id="System"></span><span id="system"></span><span id="SYSTEM"></span>**主板**  
 TAEF 将装置作为本地系统运行。
 
-**注意**   作为本地系统运行的测试装置不应创建任何 UI。 如果你的夹具需要创建 UI 或与 UI 交互，则需要将与 UI 相关的代码移到使用 CreateProcessAsUser 从测试中启动的独立可执行文件。
+**注意**  作为本地系统运行的测试装置不应创建任何 UI。 如果你的夹具需要创建 UI 或与 UI 交互，则需要将与 UI 相关的代码移到使用 CreateProcessAsUser 从测试中启动的独立可执行文件。
 
  
 
 <span id="Elevated"></span><span id="elevated"></span><span id="ELEVATED"></span>**较**  
 TAEF 可确保在提升的进程中运行装置，如有必要，请根据需要生成要运行的装置。
 
-**注意**   执行 TAEF 的用户必须是 administrators 组的成员，才能执行标有 RunFixtureAs = 升高的装置。 这是因为，非管理员没有要提升的拆分令牌。
+**注意**  执行 TAEF 的用户必须是 administrators 组的成员，才能执行标有 RunFixtureAs = 升高的装置。 这是因为，非管理员没有要提升的拆分令牌。
 
  
 
@@ -62,7 +61,7 @@ TAEF 在与 Te.exe (相同的上下文中运行装置，但仍在不同于测试
 <span id="Broker"></span><span id="broker"></span><span id="BROKER"></span>**中间**  
 TAEF 运行 "沉浸式代理" 进程中的装置。
 
-**注意**  
+**注意**  
 -   只有 Windows 8 及更高版本的操作系统才支持 "Broker"。
 -   必须在系统上启用测试签名策略。 有关详细信息，请查看 [TESTSIGNING Boot 配置选项](../install/the-testsigning-boot-configuration-option.md)。
 -   当前不支持通过 "RunFixtureAs = Broker" 远程运行测试。
@@ -73,7 +72,7 @@ TAEF 运行 "沉浸式代理" 进程中的装置。
 <span id="UIAccess"></span><span id="uiaccess"></span><span id="UIACCESS"></span>**UIAccess**  
 TAEF 在使用 UIAccess 执行级别标记的进程中运行装置。 有关适用于 UI 自动化应用程序的 UIAccess 的信息，请参阅 [Windows 完整性机制设计](/previous-versions/dotnet/articles/bb625963(v=msdn.10))。
 
-**注意**  
+**注意**  
 -   仅在 Vista 和更高版本的操作系统上支持 UIAccess。
 -   TAEF 二进制文件必须从计算机上 Program Files 文件夹下的文件夹运行。
 -   当前不支持通过 "RunFixtureAs = UIAccess" 远程运行测试。
@@ -84,7 +83,7 @@ TAEF 在使用 UIAccess 执行级别标记的进程中运行装置。 有关适�
 <span id="Test"></span><span id="test"></span><span id="TEST"></span>**考试**  
 TAEF 运行与测试相同的进程或上下文中的装置。
 
-**注意**   如果未指定 RunFixtureAs 设置，这是默认的 TAEF 行为。
+**注意**  如果未指定 RunFixtureAs 设置，这是默认的 TAEF 行为。
 
  
 
@@ -93,7 +92,7 @@ TAEF 运行与测试相同的进程或上下文中的装置。
 
 TAEF 支持以下 RunFixtureAs： \[ 范围 \] 值，这些值由测试元数据指定。
 
-<span id="RunFixtureAs_Module__RunFixtureAs_Assembly__or_RunFixtureAs_Dll"></span><span id="runfixtureas_module__runfixtureas_assembly__or_runfixtureas_dll"></span><span id="RUNFIXTUREAS_MODULE__RUNFIXTUREAS_ASSEMBLY__OR_RUNFIXTUREAS_DLL"></span>**RunFixtureAs： Module**、 **RunFixtureAs： Assembly**或 **RunFixtureAs： Dll**  
+<span id="RunFixtureAs_Module__RunFixtureAs_Assembly__or_RunFixtureAs_Dll"></span><span id="runfixtureas_module__runfixtureas_assembly__or_runfixtureas_dll"></span><span id="RUNFIXTUREAS_MODULE__RUNFIXTUREAS_ASSEMBLY__OR_RUNFIXTUREAS_DLL"></span>**RunFixtureAs： Module**、 **RunFixtureAs： Assembly** 或 **RunFixtureAs： Dll**  
 RunFixtureAs 值将仅应用于测试层次结构中的模块级别节点。
 
 <span id="RunFixtureAs_Class"></span><span id="runfixtureas_class"></span><span id="RUNFIXTUREAS_CLASS"></span>**RunFixtureAs：类**  

@@ -1,18 +1,17 @@
 ---
 title: 自定义的打印机安装操作
 description: 自定义的打印机安装操作
-ms.assetid: 888125e9-a057-4e86-9df8-0086cedb368d
 keywords:
 - 自定义打印机设置操作 WDK
 - INF 文件 WDK 打印，自定义安装操作
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 79f5c378d13ba3e98b082c5c4a435093c6898102
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: f23f46552393c55b4ab1bd453dd10c8aa23adcf8
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89216818"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96797383"
 ---
 # <a name="customized-printer-setup-operations"></a>自定义的打印机安装操作
 
@@ -29,7 +28,7 @@ ms.locfileid: "89216818"
 
 如果签名的驱动程序的 INF 文件包含 **VendorSetup** 项，并且驱动程序的排名小于0x1000，则安装程序不会启动 "发现新硬件" 向导。 有关详细信息，请参阅 [设备安装组件](/previous-versions/ff541277(v=vs.85)) 和 [安装程序选择驱动程序的方式](../install/how-windows-selects-a-driver-for-a-device.md)。
 
-**VendorSetup**条目的格式如下所示：
+**VendorSetup** 条目的格式如下所示：
 
 VendorSetup = *FileName*， *FunctionName*
 
@@ -45,9 +44,9 @@ OEMVendorFiles = 11
 vendor.dll
 ```
 
-*FunctionName*指定的函数必须与以下原型匹配：
+*FunctionName* 指定的函数必须与以下原型匹配：
 
-`VOID WINAPI`*FunctionName*`(HWND hWnd, HINSTANCE hInstance, LPSTR lpszCmdLine, UINT  nCmdShow);`
+`VOID WINAPI` *FunctionName* `(HWND hWnd, HINSTANCE hInstance, LPSTR lpszCmdLine, UINT  nCmdShow);`
 
 其中 *FunctionName* 是安装程序函数的名称。 下表显示了函数的参数及其说明。
 
@@ -59,7 +58,7 @@ vendor.dll
 <thead>
 <tr class="header">
 <th>参数</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>

@@ -1,7 +1,6 @@
 ---
 title: 将 AVStream 与内核流式处理代理模块配合使用
 description: 将 AVStream 与内核流式处理代理模块配合使用
-ms.assetid: c8ae1385-337e-46ad-841e-fbdf5d685210
 keywords:
 - 内核流式处理代理 WDK AVStream
 - KS 代理 WDK AVStream
@@ -11,12 +10,12 @@ keywords:
 - AVStream 内核流式处理代理 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 775733308013d2178ed1a6701e66a41c01d5bb70
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 653cb3673fb5889b6d13bcea11886dca2b3234af
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89190137"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96795793"
 ---
 # <a name="using-avstream-with-the-kernel-streaming-proxy-module"></a>将 AVStream 与内核流式处理代理模块配合使用
 
@@ -26,7 +25,7 @@ ms.locfileid: "89190137"
 
 内核模式筛选器通常通过 [内核流式处理代理](/windows-hardware/drivers/ddi/_stream/index)在用户模式下进行连接。 此代理使内核模式筛选器作为 DirectShow 筛选器显示在用户模式下。
 
-使用此连接模式时，DirectShow 会通过将筛选器与 *媒体类型*交叉来连接这些筛选器。 这些媒体类型是内核模式下的数据格式的 DirectShow 对应项。
+使用此连接模式时，DirectShow 会通过将筛选器与 *媒体类型* 交叉来连接这些筛选器。 这些媒体类型是内核模式下的数据格式的 DirectShow 对应项。
 
 当 DirectShow 枚举内核模式 pin 上的媒体类型时，该 pin 上的相应数据范围与该 pin 的数据范围相交。 此交集产生数据格式，如 [AVStream 中的数据范围交集](data-range-intersections-in-avstream.md)中所述。 代理将生成的数据格式转换为 DirectShow 媒体类型。
 

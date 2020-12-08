@@ -1,7 +1,6 @@
 ---
 title: 动态生成的打印机命令
 description: 动态生成的打印机命令
-ms.assetid: ba395716-6906-4f23-a050-79d808ccd44b
 keywords:
 - Unidrv，动态生成的命令
 - 动态生成的打印命令 WDK Unidrv
@@ -9,12 +8,12 @@ keywords:
 - Unidrv WDK 打印
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3566b8e1a90dccc1a4eea28f96a5a75f4ba9b0be
-ms.sourcegitcommit: a44ade167cdfb541cf1818e9f9e3726f23f90b66
+ms.openlocfilehash: 26474790eb78186d1abf4220b9cae14da68f1b64
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/07/2020
-ms.locfileid: "94361533"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96797155"
 ---
 # <a name="dynamically-generated-printer-commands"></a>动态生成的打印机命令
 

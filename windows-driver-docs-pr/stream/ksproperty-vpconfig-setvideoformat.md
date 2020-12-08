@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ VPCONFIG \_ SETVIDEOFORMAT
 description: KSPROPERTY \_ VPCONFIG \_ SETVIDEOFORMAT 属性设置视频格式。 格式必须与之前 KSPROPERTY \_ VPCONFIG \_ GETVIDEOFORMAT Get 请求返回的格式匹配。
-ms.assetid: f701ad32-ba85-4766-ac6b-11744af8fc0d
 keywords:
 - KSPROPERTY_VPCONFIG_SETVIDEOFORMAT 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b39f5b54b80592568a9f70e1989d1b7c50197079
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 5d046bcca1b55af7d8cd5e89c3e40979a6fbb167
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90102232"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96795813"
 ---
 # <a name="ksproperty_vpconfig_setvideoformat"></a>KSPROPERTY \_ VPCONFIG \_ SETVIDEOFORMAT
 
@@ -79,7 +78,7 @@ KSPROPERTY \_ VPCONFIG \_ SETVIDEOFORMAT 属性设置视频格式。 格式必�
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSPROPERTY**](/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)

@@ -1,15 +1,14 @@
 ---
 title: 适用于驱动程序开发人员的 Windows 安全模型
 description: Windows 安全模型主要基于每个对象的权限，具有少量的系统范围权限。
-ms.assetid: 3A7ECA7C-1FE6-4ADB-97A9-A61C6FCE9F04
 ms.date: 02/01/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 4c7b7e36b46bb18e8539f6406728f65dabc500ac
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: a455d66a71f7fe526195211c3c290ff3622efce4
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91734307"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96795561"
 ---
 # <a name="span-idintroductionspanspan-idintroductionspanspan-idintroductionspanwindows-security-model-for-driver-developers"></a><span id="Introduction"></span><span id="introduction"></span><span id="INTRODUCTION"></span>驱动程序开发人员的 Windows 安全模型
 
@@ -46,7 +45,7 @@ Sid 由操作系统或域服务器等机构颁发。 某些 Sid 是众所周知�
 
 默认情况下，只要进程的线程与安全对象进行交互，系统就会对进程使用主访问令牌。 但是，线程可以模拟客户端帐户。 当线程模拟时，它除了具有其自己的主令牌外，还具有一个模拟令牌。 模拟标记描述线程正在模拟的用户帐户的安全上下文。 模拟在远程过程调用 (RPC) 处理中尤其常见。
 
-描述线程或进程受限安全上下文的访问令牌称为受限令牌。 *受限令牌*中的 sid 只能设置为拒绝访问，而不允许访问安全对象。 此外，令牌可以描述有限的系统范围权限集。 用户的 SID 和标识保持不变，但用户的访问权限会受到限制，而此过程使用的是受限令牌。 [CreateRestrictedToken](/windows/win32/api/securitybaseapi/nf-securitybaseapi-createrestrictedtoken)函数创建受限制的令牌。
+描述线程或进程受限安全上下文的访问令牌称为受限令牌。 *受限令牌* 中的 sid 只能设置为拒绝访问，而不允许访问安全对象。 此外，令牌可以描述有限的系统范围权限集。 用户的 SID 和标识保持不变，但用户的访问权限会受到限制，而此过程使用的是受限令牌。 [CreateRestrictedToken](/windows/win32/api/securitybaseapi/nf-securitybaseapi-createrestrictedtoken)函数创建受限制的令牌。
 
 
 ### <a name="security-descriptors"></a>安全描述符
@@ -97,7 +96,7 @@ SDDL 是一种可扩展的描述语言，可让组件以字符串格式创建 Ac
 
 但是，如果将新设备对象添加到堆栈中，则不会更改任何 Acl，无论是新设备对象的 acl) 还是堆栈中任何现有设备对象的 Acl 都 (。 当驱动程序创建新的设备对象并将其附加到堆栈顶部时，驱动程序应该通过从下一个较低的驱动程序复制 **DeviceObject** 字段，将堆栈的 acl 复制到新设备对象。
 
-**IoCreateDeviceSecure**例程支持使用预定义 SID 的 SDDL 字符串子集，如 WD 和 SY。 用户模式 Api 和 INF 文件支持完整的 SDDL 语法。
+**IoCreateDeviceSecure** 例程支持使用预定义 SID 的 SDDL 字符串子集，如 WD 和 SY。 用户模式 Api 和 INF 文件支持完整的 SDDL 语法。
 
 ### <a name="security-checks-using-acls"></a>使用 Acl 的安全检查
 
@@ -111,12 +110,12 @@ SDDL 是一种可扩展的描述语言，可让组件以字符串格式创建 Ac
 
 **示例文件 ACL**
 
-| 权限 | SID        | Access                |
+| 权限 | SID        | 访问                |
 |------------|------------|-----------------------|
-| 允许      | 计帐 | 写入、删除         |
-| 允许      | Sales      | 附加                |
+| Allow      | 计帐 | 写入、删除         |
+| Allow      | Sales      | 附加                |
 | 拒绝       | Legal      | 追加、写入、删除 |
-| 允许      | 所有人   | 读取                  |
+| Allow      | 所有人   | 读取                  |
 
  
 

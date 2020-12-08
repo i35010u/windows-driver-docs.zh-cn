@@ -1,17 +1,16 @@
 ---
 title: IPrintOemUIMXDC COM 接口
 description: IPrintOemUIMXDC COM 接口
-ms.assetid: db6d575e-31d0-4a26-8cf9-5188935610e5
 keywords:
 - IPrintOemUIMXDC
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: aaa64d9f3fad9475f3aaf639168e6aa0c1933bb2
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 34b20dab42d01f44683aa17b821497b6ca06b18d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90104018"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96796539"
 ---
 # <a name="iprintoemuimxdc-com-interface"></a>IPrintOemUIMXDC COM 接口
 
@@ -28,7 +27,7 @@ ms.locfileid: "90104018"
 <thead>
 <tr class="header">
 <th>方法</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>

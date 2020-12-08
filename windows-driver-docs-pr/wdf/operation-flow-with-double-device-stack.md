@@ -1,7 +1,6 @@
 ---
 title: 使用双设备堆栈的操作流
 description: 使用双设备堆栈的操作流
-ms.assetid: a717b9c0-b24a-4347-8b0a-254a17238b5f
 keywords:
 - 操作流 WDK UMDF
 - I/o 请求 WDK UMDF，操作流
@@ -9,12 +8,12 @@ keywords:
 - 双设备堆栈流 WDK UMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6fd6341d28de90bedfd24c058de715fd3de985bb
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 205e514c610f927a98b75995523e4b97c81af080
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89184605"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96795803"
 ---
 # <a name="operation-flow-with-double-device-stack"></a>使用双设备堆栈的操作流
 
@@ -25,7 +24,7 @@ ms.locfileid: "89184605"
 
 ![umdf 筛选器驱动程序和 umdf 函数驱动程序的 umdf i/o 调用顺序](images/umdfflow2.gif)
 
-**注意**   应用程序启动的所有 i/o 都是通过内核模式路由的，如 UMDF 部分的[体系结构](/previous-versions/ff554461(v=vs.85))中所示，即使上图中没有显示这种情况。
+**注意**   应用程序启动的所有 i/o 都是通过内核模式路由的，如 UMDF 部分的 [体系结构](/previous-versions/ff554461(v=vs.85)) 中所示，即使上图中没有显示这种情况。
 
  
 

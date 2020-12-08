@@ -1,13 +1,12 @@
 ---
-title: Iasphelp get\_MibErrorDscp 方法
-description: MibErrorDscp 属性启用 ASP Web 页后，可以将一个简单网络管理协议 (SNMP) 管理信息基础 (MIB) 的错误代码转换成错误的文本说明。
+title: Iasphelp get \_ MibErrorDscp 方法
+description: 使用 MibErrorDscp 属性，ASP 网页可以将简单的网络管理协议 (SNMP) 管理信息基本 (MIB) 错误代码转换为错误的文本说明。
 MS-HAID:
 - webfnc\_3931fbc6-1960-4d40-a6e3-8816ee832c89.xml
 - print.iasphelp\_miberrordscp
 MSHAttr:
 - PreferredSiteName:MSDN
 - PreferredLib:/library/windows/hardware
-ms.assetid: b2ab9414-8401-4ec4-a235-f6a8da93523b
 keywords:
 - get_MibErrorDscp 方法打印设备
 - get_MibErrorDscp 方法打印设备，Iasphelp 接口
@@ -20,40 +19,40 @@ api_type:
 - COM
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ba6acc8a6a5d9e39e823dcee7d687e7ac56bbc5b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7ef6af7481be2ff5a09eafacdb680905bc04c8f7
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63392831"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96796801"
 ---
-# <a name="iasphelpgetmiberrordscp-method"></a>Iasphelp::get\_MibErrorDscp 方法
+# <a name="iasphelpget_miberrordscp-method"></a>Iasphelp：： get \_ MibErrorDscp 方法
 
-**MibErrorDscp**属性启用 ASP Web 页后，可以将一个简单网络管理协议 (SNMP) 管理信息基础 (MIB) 的错误代码转换成错误的文本说明。
+使用 **MibErrorDscp** 属性，ASP 网页可以将简单的网络管理协议 (SNMP) 管理信息基本 (MIB) 错误代码转换为错误的文本说明。
 
 <a name="syntax"></a>语法
 ------
 
 ```cpp
 HRESULT get_MibErrorDscp(
-  [in]  DWORD dwError,
-  [out] BSTR  *pVal
+  [in]  DWORD dwError,
+  [out] BSTR  *pVal
 );
 ```
 
-<a name="parameters"></a>Parameters
+<a name="parameters"></a>参数
 ----------
 
-*dwError* \[in\]  
+*dwError* \[中\]  
 调用方提供的 SNMP MIB 错误代码。
 
-*pVal* \[out\]  
-要接收指向包含该错误的文本说明的字符串的指针的调用方提供的位置。
+*pVal* \[弄\]  
+调用方提供的位置，用于接收指向字符串的指针，该字符串包含错误的文本说明。
 
 <a name="return-value"></a>返回值
 ------------
 
-此外可以返回 Win32 错误代码。
+也可以返回 Win32 错误代码。
 
 <table>
 <colgroup>
@@ -73,7 +72,7 @@ HRESULT get_MibErrorDscp(
 </tr>
 <tr class="even">
 <td><strong>E_POINTER</strong></td>
-<td><p>无效<em>pVal</em>指针。</p></td>
+<td><p><em>PVal</em>指针无效。</p></td>
 </tr>
 <tr class="odd">
 <td><strong>E_OUTOFMEMORY</strong></td>
@@ -104,7 +103,7 @@ MIBErrorString = objPrinter.MibErrorDscp(ErrorCodeMIB)
 <tbody>
 <tr class="odd">
 <td><p>目标平台</p></td>
-<td>桌面设备</td>
+<td>台式机</td>
 </tr>
 </tbody>
 </table>

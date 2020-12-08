@@ -1,18 +1,17 @@
 ---
 title: 在 GPD 中启用 HP-GL/2 矢量图形支持 (PCL-5e)
 description: 在 GPD 中启用 HP-GL/2 矢量图形支持 (PCL-5e)
-ms.assetid: 2ca5a2fe-4c37-4b7f-bd9b-d41240f8843f
 keywords:
-- HP/2 单色 WDK Unidrv，从而启用支持
-- PCL 5e WDK Unidrv，从而启用支持
+- HP-GL/2 单色 WDK Unidrv，启用支持
+- PCL-5e WDK Unidrv，支持支持
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 04530d80df3245667c5d904e0c741d4b5a453a8d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0ce1626815debfa51dd9a877c8d02c472314870b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63378643"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96797131"
 ---
 # <a name="enabling-hp-gl2-vector-graphics-support-pcl-5e-in-the-gpd"></a>在 GPD 中启用 HP-GL/2 矢量图形支持 (PCL-5e)
 
@@ -20,21 +19,21 @@ ms.locfileid: "63378643"
 
 
 
-若要启用 Windows XP 上的 HP/2 向量支持，必须执行两项操作：
+若要在 Windows XP 上启用 HP-UX/2 向量支持，必须执行以下两项操作：
 
-1.  设置 **\*个性**归于个性\_HPGL2。
+1.  将 " **\* 个性** 属性" 设置为 "个性 \_ HPGL2"。
 
-2.  定义具有 HPGL2MODE 选项的 GraphicsMode 自定义的功能。 若要提供光栅图形支持，包括 RASTERMODE 选项。
+2.  定义具有 HPGL2MODE 选项的 GraphicsMode 自定义功能。 若要同时提供光栅图形支持，请包含 RASTERMODE 选项。
 
-以这种方式，可以设置个人设置属性：
+可以通过以下方式设置 "个性" 属性：
 
 ```cpp
 *Personality: =PERSONALITY_HPGL2
 ```
 
-个性\_HPGL2 常量 stdnames.gpd 中定义。
+\_在 stdnames 中定义了个性 HPGL2 常量。
 
-下面的 GPD 示例演示了如何设置\***个性**属性和定义与矢量图形模式中，以及光栅图形模式 GraphicsMode 自定义的功能。 请注意，整个块受\*Ifdef GPD 编译器指令。
+下面的 GPD 示例演示如何设置 " \* **个性**" 特性并使用矢量图形模式以及光栅图形模式定义 GraphicsMode 自定义功能。 请注意，整个块受 \* IFDEF GPD 编译器指令保护。
 
 ```cpp
 *Ifdef: WINNT_51
@@ -57,9 +56,9 @@ ms.locfileid: "63378643"
 *Endif:
 ```
 
-WINNT\_51 上述指令中使用的参数适用于版本的 Unidrv，而不是操作系统版本。 Windows 2000，WINNT 上运行的 Windows XP Unidrv 打印机驱动程序\_51 参数定义和编译块。 对于早期 Unidrv 版本，无论何种操作系统版本，此参数是未定义，并且块将不进行编译。
+\_以上指令中使用的 WINNT 51 参数适用于 Unidrv 的版本，而不是操作系统版本。 对于在 Windows 2000 上运行的 Windows XP Unidrv 打印机驱动程序，将 \_ 定义 WINNT 51 参数并编译块。 对于早期版本的 Unidrv，无论操作系统版本如何，此参数均未定义，并且不编译块。
 
-彩色打印机 GPD 文件还应定义 ColorMode 功能，如下面的泛型示例中所示。 请注意，您的打印机的特定详细信息可能需要更改某些值。
+彩色打印机的 GPD 文件还应定义 ColorMode 功能，如下面的泛型示例中所示。 请注意，打印机的特定详细信息可能需要更改某些值。
 
 ```cpp
 *Feature: ColorMode

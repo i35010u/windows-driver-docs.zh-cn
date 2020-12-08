@@ -1,15 +1,14 @@
 ---
 title: CODECAPI \_ ALLSETTINGS
 description: CODECAPI \_ ALLSETTINGS
-ms.assetid: 0ae11200-af21-476a-89a8-515bd98920a0
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4839017cef179897b5a766756cd46c9996326b4f
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: af7ccc7b9b27e1958b7a0fc6b608b829da42a750
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89186383"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96795397"
 ---
 # <a name="codecapi_allsettings"></a>CODECAPI \_ ALLSETTINGS
 
@@ -51,11 +50,11 @@ CODECAPI \_ ALLSETTINGS 属性用于向后传递微型驱动程序生成的数�
 
 操作数据) 的属性值 (的类型为 PVOID，这是一个指向微型驱动程序生成的数据块的用户模式缓冲区的指针。
 
-### <a name="comments"></a>说明
+### <a name="comments"></a>注释
 
 在属性 get 调用上：
 
-如果应用程序使用长度为零的缓冲区进行属性 get 调用，则微型驱动程序必须返回状态 \_ 缓冲区 \_ 溢出，并在 ** &gt; IoStatus** 字段中指定所需的缓冲区大小。 如果长度缓冲区不为零，并且所 \_ \_ 提供的 \_ 缓冲区对于数据块而言太小，则微型驱动程序必须返回状态缓冲区太小，否则，微型驱动程序会将其设置打包到可在以后还原的数据块。
+如果应用程序使用长度为零的缓冲区进行属性 get 调用，则微型驱动程序必须返回状态 \_ 缓冲区 \_ 溢出，并在 **&gt; IoStatus** 字段中指定所需的缓冲区大小。 如果长度缓冲区不为零，并且所 \_ \_ 提供的 \_ 缓冲区对于数据块而言太小，则微型驱动程序必须返回状态缓冲区太小，否则，微型驱动程序会将其设置打包到可在以后还原的数据块。
 
 微型驱动程序负责向数据添加数据完整性检查，如用于指示微型驱动程序生成数据的唯一 GUID、循环冗余检查 (CRC) 和标头长度。
 
@@ -69,7 +68,7 @@ CODECAPI \_ ALLSETTINGS 属性用于向后传递微型驱动程序生成的数�
 
 ### <a name="requirements"></a>要求
 
-**标头：** 在 *ksmedia*中声明。 包括 *ksmedia*。
+**标头：** 在 *ksmedia* 中声明。 包括 *ksmedia*。
 
 ### <a name="see-also"></a>另请参阅
 

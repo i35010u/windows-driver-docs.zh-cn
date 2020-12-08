@@ -1,7 +1,6 @@
 ---
 title: 调试打印机驱动程序组件
 description: 调试打印机驱动程序组件
-ms.assetid: 550cc8fe-5520-4521-8c4e-9c8c80521357
 keywords:
 - 调试驱动程序 WDK 打印机
 - 打印机驱动程序 WDK，调试
@@ -10,12 +9,12 @@ keywords:
 - 全局变量 WDK 调试
 ms.date: 06/04/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: e547a240d9b0cc6ab3bd1c9a425a2ea7bc1b7d13
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: ef01c1f2123dc1ed98c950b38b023ba503df35e6
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89216816"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96797337"
 ---
 # <a name="debugging-printer-driver-components"></a>调试打印机驱动程序组件
 
@@ -29,7 +28,7 @@ ms.locfileid: "89216816"
 
 以下两节包含调试用户模式驱动程序和一些常规调试提示的步骤。
 
-## <a name="preparing-for-user-mode-debugging"></a>准备用户模式调试
+## <a name="preparing-for-user-mode-debugging"></a>准备 User-Mode 调试
 
 若要开始调试打印机驱动程序及其组件：
 
@@ -50,7 +49,7 @@ ms.locfileid: "89216816"
 
 还应安装 Oemuni 示例或正在调试的打印机驱动程序的已检查版本。 使用此方法（而不是安装整个已检查的生成系统）的优点是不会降低整个系统的速度。
 
-## <a name="starting-a-user-mode-debugging-session"></a>启动用户模式调试会话
+## <a name="starting-a-user-mode-debugging-session"></a>启动 User-Mode 调试会话
 
 若要开始用户模式调试，请在 Windbg 调试器中的 " **文件** " 菜单上选择 " **附加到进程**"。 您将调试器附加到的过程取决于您尝试调试的方案。 对于打印机驱动程序，必须将调试器附加到打印应用程序或后台处理程序进程 ( # A0) 。 请记住，打印应用程序加载配置/用户界面模块，而后台处理程序进程加载呈现模块。 但是，"文件：" 打印存在差异，因此不会进行后台打印，因此，打印应用程序也会加载呈现模块。 因此，你必须确保附加到正确的进程。
 

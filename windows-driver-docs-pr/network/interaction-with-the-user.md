@@ -1,38 +1,37 @@
 ---
 title: 与用户交互
 description: 与用户交互
-ms.assetid: a6235d14-5e54-42c3-8694-9129c187fbfb
 keywords:
-- IHV 扩展 DLL WDK 本机 802.11，用户交互
+- IHV 扩展 DLL WDK 本机802.11，用户交互
 - 用户交互 WDK 本机 802.11 IHV 扩展 DLL
 - 本机 802.11 IHV 扩展 DLL WDK，用户交互
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6bd50cf77be2a7348a326da4a0f7956d4640b5a6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d23aa8e15ff2229b5ecb54f0cce0ada5e1bc19a3
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380723"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96795443"
 ---
 # <a name="interaction-with-the-user"></a>与用户交互
 
 
 
 
- 
+ 
 
-IHV 扩展 DLL 不提供用户界面 (UI) 组件。 相反，它可以与接口 IHV UI 扩展 DLL 以向用户显示相应的 UI 页。 IHV UI 扩展 DLL 的详细信息，请参阅[本机 802.11 IHV UI 扩展 DLL](native-802-11-ihv-ui-extensions-dll2.md)。
+IHV 扩展 DLL 不 (UI) 组件提供用户界面。 相反，它会与 IHV UI 扩展 DLL 进行交互，以便向用户显示相应的 UI 页。 有关 IHV UI 扩展 DLL 的详细信息，请参阅 [本机 802.11 IHV Ui 扩展 dll](native-802-11-ihv-ui-extensions-dll2.md)。
 
-本部分讨论的方式 IHV 扩展 DLL 请求用户交互，然后包括以下主题：
+本部分讨论 IHV 扩展 DLL 请求用户交互的方式，并包括以下主题：
 
 [请求用户交互](requesting-user-interaction.md)
 
 [处理会话更改](processing-session-changes.md)
 
- 
+ 
 
- 
+ 
 
 
 

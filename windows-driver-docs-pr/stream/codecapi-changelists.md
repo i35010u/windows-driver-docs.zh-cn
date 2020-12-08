@@ -1,15 +1,14 @@
 ---
 title: CODECAPI \_ CHANGELISTS
 description: CODECAPI \_ CHANGELISTS
-ms.assetid: c1b65350-32b9-4c94-a6d4-74cb9959d737
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1ff19e227aa44d638e16fbd4624ce01db40a52fd
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: a4ec3b042cc93163db2215fdf3952814ecc42c38
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90106236"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96795381"
 ---
 # <a name="codecapi_changelists"></a>CODECAPI \_ CHANGELISTS
 

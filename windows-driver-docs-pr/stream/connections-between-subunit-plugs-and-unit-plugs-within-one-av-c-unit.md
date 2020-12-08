@@ -1,19 +1,18 @@
 ---
 title: 一个 AV/C 单元中的子单位插头和单元插头之间的连接
 description: 提供有关每个 AV/C 单位内的子单位插头与单元插头之间连接的信息
-ms.assetid: 12132a0c-9657-4cff-a582-8404a103c46a
 keywords:
 - 连接 WDK AV/C
 - AV/C WDK，连接方案
 - AVCCONNECTINFO
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9bc7f727b91fd2d7d70a3f6ae0eb91bcc3c80032
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: c66e5225d60422a1c6ea382065faaccb59ef3aaa
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89191605"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96795859"
 ---
 # <a name="connections-between-subunit-plugs-and-unit-plugs-within-one-avc-unit"></a>一个 AV/C 单元中的子单位插头和单元插头之间的连接
 
@@ -24,7 +23,7 @@ ms.locfileid: "89191605"
 
 如下图所示，将本地子源的源插件连接到设备的同步输出插件。
 
-此方案是 *Avc.sys*中最初支持的连接类型。
+此方案是 *Avc.sys* 中最初支持的连接类型。
 
 ![演示本地 pin 的数据流成员在 kspin 的 \- 数据流中的连接的关系图 \-](images/avc-ccm1.gif)
 
@@ -52,7 +51,7 @@ ms.locfileid: "89191605"
 <td><p>未使用，因为源单元的设备标识符是包含子单位的单位</p></td>
 <td><p>0xFF (包含子) 的单位</p></td>
 <td><p>iPlug (0x0 到0x1E 或 0x7F) </p></td>
-<td><p>不适用</p></td>
+<td><p>空值</p></td>
 </tr>
 </tbody>
 </table>
@@ -81,7 +80,7 @@ ms.locfileid: "89191605"
 <td><p>未使用，因为此方案不涉及其他单元</p></td>
 <td><p>子地址</p></td>
 <td><p>目标插头 (0x0 到 0x1E) </p></td>
-<td><p>不适用</p></td>
+<td><p>空值</p></td>
 </tr>
 </tbody>
 </table>
@@ -118,7 +117,7 @@ ms.locfileid: "89191605"
 <td><p>未使用，因为源单元的设备标识符是包含子单位的单位</p></td>
 <td><p>子地址</p></td>
 <td><p>源插件 (0x0 到 0x1E) </p></td>
-<td><p>不适用</p></td>
+<td><p>空值</p></td>
 </tr>
 </tbody>
 </table>
@@ -147,7 +146,7 @@ ms.locfileid: "89191605"
 <td><p>未使用，因为此方案不涉及其他单元</p></td>
 <td><p>0xFF (包含子) 的单位</p></td>
 <td><p>oPCR (0x0 到0x1E，或 0x7F) </p></td>
-<td><p>不适用</p></td>
+<td><p>空值</p></td>
 </tr>
 </tbody>
 </table>

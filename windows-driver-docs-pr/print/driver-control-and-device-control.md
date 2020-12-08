@@ -1,7 +1,6 @@
 ---
 title: 驱动程序控制和设备控制
 description: 驱动程序控制和设备控制
-ms.assetid: ff515e88-9a94-420f-a6c8-fba3483c00e5
 keywords:
 - 专有颜色管理 WDK 打印
 - DrvIcmCreateColorTransform
@@ -11,12 +10,12 @@ keywords:
 - 设备颜色管理 WDK 请参阅颜色管理 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 26aa99cceed65e957173080cfc19bffb50b539ec
-ms.sourcegitcommit: 51cba71be022c726c04c29ba5c0360860b65d7a4
+ms.openlocfilehash: 7908fb1c4faf532ead9b10f0e971bf5f779d1ad0
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/09/2020
-ms.locfileid: "89562215"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96797193"
 ---
 # <a name="driver-control-and-device-control"></a>驱动程序控制和设备控制
 
@@ -38,7 +37,7 @@ ms.locfileid: "89562215"
 
 GDI 将调用 [**DrvIcmCreateColorTransform**](/windows/win32/api/winddi/nf-winddi-drvicmcreatecolortransform) 函数来为驱动程序提供 ICC 配置文件， (打印作业的 Microsoft Windows SDK 文档) 中所述。 对于这些配置文件，函数可创建在更正颜色信息时要使用的内部颜色转换。 颜色转换是特定于驱动程序的、内部定义的从一种颜色空间到另一颜色空间的映射。 该函数返回 GDI 存储的转换的句柄。
 
-[**BRUSHOBJ**](/windows/win32/api/winddi/ns-winddi-brushobj)和[**XLATEOBJ**](/windows/win32/api/winddi/ns-winddi-xlateobj)结构中的标志指示系统 (或应用程序) 或驱动程序 (或设备) 是否正在执行颜色管理。 在每个驱动程序实现的图形 DDI 绘图函数内，该函数同时接收这些结构的 (或二者) ，必须检查标志。 如果系统或应用程序当前正在处理颜色管理，则驱动程序或设备不能。 如果启用了驱动程序或设备颜色管理，则图形 DDI 函数必须调用 [**BRUSHOBJ \_ HGetColorTransform**](/windows/win32/api/winddi/nf-winddi-brushobj_hgetcolortransform) 或 [**XLATEOBJ \_ hGetColorTransform**](/windows/win32/api/winddi/nf-winddi-xlateobj_hgetcolortransform) (或两者均) ，以获取要使用的颜色转换的句柄。 该句柄将为驱动程序提供的，以响应对其 [**DrvIcmCreateColorTransform**](/windows/win32/api/winddi/nf-winddi-drvicmcreatecolortransform) 函数的以前调用。
+[**BRUSHOBJ**](/windows/win32/api/winddi/ns-winddi-brushobj)和 [**XLATEOBJ**](/windows/win32/api/winddi/ns-winddi-xlateobj)结构中的标志指示系统 (或应用程序) 或驱动程序 (或设备) 是否正在执行颜色管理。 在每个驱动程序实现的图形 DDI 绘图函数内，该函数同时接收这些结构的 (或二者) ，必须检查标志。 如果系统或应用程序当前正在处理颜色管理，则驱动程序或设备不能。 如果启用了驱动程序或设备颜色管理，则图形 DDI 函数必须调用 [**BRUSHOBJ \_ HGetColorTransform**](/windows/win32/api/winddi/nf-winddi-brushobj_hgetcolortransform) 或 [**XLATEOBJ \_ hGetColorTransform**](/windows/win32/api/winddi/nf-winddi-xlateobj_hgetcolortransform) (或两者均) ，以获取要使用的颜色转换的句柄。 该句柄将为驱动程序提供的，以响应对其 [**DrvIcmCreateColorTransform**](/windows/win32/api/winddi/nf-winddi-drvicmcreatecolortransform) 函数的以前调用。
 
 ### <a name="handling-proprietary-color-management"></a>处理专有颜色管理
 
@@ -48,7 +47,7 @@ GDI 将调用 [**DrvIcmCreateColorTransform**](/windows/win32/api/winddi/nf-wind
 
 -   系统正在处理颜色管理。
 
-对于这两种情况，都将 \_ \_ 设置[**BRUSHOBJ**](/windows/win32/api/winddi/ns-winddi-brushobj)的**flColorType**成员中的 BR 主机 icm 标志和 \_ \_ [**XLATEOBJ**](/windows/win32/api/winddi/ns-winddi-xlateobj)的**flXlate**成员中的 XO 主机 icm 标志。 即使[**DEVMODEW**](/windows/win32/api/wingdi/ns-wingdi-devmodew)的**DMICMMETHOD**成员为 dmICMMethod NONE，也可以设置这些标志 \_ 。
+对于这两种情况，都将 \_ \_ 设置 [**BRUSHOBJ**](/windows/win32/api/winddi/ns-winddi-brushobj)的 **flColorType** 成员中的 BR 主机 icm 标志和 \_ \_ [**XLATEOBJ**](/windows/win32/api/winddi/ns-winddi-xlateobj)的 **flXlate** 成员中的 XO 主机 icm 标志。 即使 [**DEVMODEW**](/windows/win32/api/wingdi/ns-wingdi-devmodew)的 **DMICMMETHOD** 成员为 dmICMMethod NONE，也可以设置这些标志 \_ 。
 
  
 

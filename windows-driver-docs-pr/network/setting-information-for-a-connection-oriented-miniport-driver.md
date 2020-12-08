@@ -1,17 +1,16 @@
 ---
 title: 设置面向连接的微型端口驱动程序的信息
 description: 设置面向连接的微型端口驱动程序的信息
-ms.assetid: e31d2054-5982-4ba5-a9e9-133c0d4ed875
 keywords:
 - 面向连接的驱动程序 WDK 网络
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a3d0ffe58d44255af79af8bab314743f12708eb4
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 4b018b0c4a408609f34f5df6793cd4243db3d0e8
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89216936"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96795885"
 ---
 # <a name="setting-information-for-a-connection-oriented-miniport-driver"></a>设置面向连接的微型端口驱动程序的信息
 

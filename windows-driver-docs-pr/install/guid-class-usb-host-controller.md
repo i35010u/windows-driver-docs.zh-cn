@@ -1,7 +1,6 @@
 ---
 title: GUID_CLASS_USB_HOST_CONTROLLER
 description: GUID_CLASS_USB_HOST_CONTROLLER
-ms.assetid: d2140a9e-95bc-48dd-a80b-3b098937edb3
 keywords:
 - GUID_CLASS_USB_HOST_CONTROLLER 设备和驱动程序安装
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: d32c6cfb010daaf79efe8f7485fe633a0cc8da9c
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: b1f9023cb0278af0ac349acf8766e5b62195a60f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91733519"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96796093"
 ---
 # <a name="guid_class_usb_host_controller"></a>GUID_CLASS_USB_HOST_CONTROLLER
 
@@ -51,7 +50,7 @@ Microsoft Windows 驱动程序工具包 (WDK) 包含 [USBVIEW 示例应用程序
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**GUID_DEVINTERFACE_USB_HOST_CONTROLLER**](guid-devinterface-usb-host-controller.md)

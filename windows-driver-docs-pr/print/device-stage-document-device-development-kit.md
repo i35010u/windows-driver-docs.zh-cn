@@ -1,15 +1,14 @@
 ---
 title: 设备阶段文档设备开发工具包
 description: 设备阶段文档设备开发工具包
-ms.assetid: b66912d9-27f5-41e2-9e10-1e16aca14a8a
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fef2a18b74ee692605ed34bb4280c7df5a8915db
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: e750d73d3152bcdc56c708f020e2209d98d2de05
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89218217"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96797253"
 ---
 # <a name="device-stage-document-device-development-kit"></a>设备阶段文档设备开发工具包
 

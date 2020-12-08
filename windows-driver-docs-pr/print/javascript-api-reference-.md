@@ -1,15 +1,14 @@
 ---
 title: JavaScript API 参考
 description: 结合使用 JavaScript API 和双向 XML 文件，为到打印设备的 USB 连接提供支持。
-ms.assetid: 604DF74E-AEF1-43DC-81B2-566A94B1CE8E
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 12f6cf5c249b4b3559b9e04e0ead6848b16542ab
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 34041dc39dc7f9a917c51ab76318fe634261a964
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89210045"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96796505"
 ---
 # <a name="javascript-api-reference"></a>JavaScript API 参考
 
@@ -48,7 +47,7 @@ function getSchemas(scriptContext, printerStream, schemaRequests, printerBidiSch
 \[out \] 对象，脚本使用该对象存储对查询键的所有响应。
 返回值
 
-| 返回值 | 说明                                                                                                                                                                             |
+| 返回值 | 描述                                                                                                                                                                             |
 |--------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | 0            | 脚本已成功完成。                                                                                                                                                      |
 | 1            | 连接的设备尚未准备好提供某些请求的信息。 指示打印系统应使用在处理过程中添加的任何 Requery 键再次调用函数。 |
@@ -75,7 +74,7 @@ function getSchemas(scriptContext, printerStream, schemaRequests, printerBidiSch
 \[在 \] [IPrinterBidiSchemaElement](./iprinterbidischemaelement-interface.md) 对象中，该对象包含与要设置的双向架构值相关联的所有数据。
 返回值
 
-| 返回值 | 说明                                                                                                                                                                          |
+| 返回值 | 描述                                                                                                                                                                          |
 |--------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | 0            | 脚本已成功完成。                                                                                                                                                   |
 | 1            | 连接的设备尚未准备好提供某些请求的信息。 指示打印系统应使用提供的 printerBidiSchemaElement 再次调用函数。 |
@@ -102,7 +101,7 @@ function getSchemas(scriptContext, printerStream, schemaRequests, printerBidiSch
 \[out \] 对象，脚本使用该对象存储对查询键的所有响应。
 返回值
 
-| 返回值 | 说明                                                                                             |
+| 返回值 | 描述                                                                                             |
 |--------------|---------------------------------------------------------------------------------------------------------|
 | 0            | 脚本已成功完成。                                                                      |
 | 2            | 附加设备不再支持未经请求的状态，因此不应再次调用此函数。 |
@@ -136,7 +135,7 @@ function startPrintJob(jobScriptContext, printerStream, printerBidiSchemaRespons
 
 \[\] [**IPrinterBidiSchemaResponses**](./iprinterbidischemaresponses.md)对象，制造商的 JavaScript 代码可使用该对象返回任何双向架构值更改/更新。
 
-| 返回值 | 说明                                                                             |
+| 返回值 | 描述                                                                             |
 |--------------|-----------------------------------------------------------------------------------------|
 | 0            | 成功。                                                                                |
 | 1            | 失败–清除作业上下文对象并将错误代码返回到打印后台处理程序。 |
@@ -166,13 +165,13 @@ function writePrintData(jobScriptContext, writePrintDataProgress, printData, pri
 \[在 \] **IPrinterScriptableSequentialStream** 对象中，制造商的 JavaScript 代码可使用该对象将数据读取和写入到打印设备。
 *printData*
 
-\[在 \] **IDispatch** 对象中，是当前打印数据的 JavaScript 数组。 *PrintData*参数允许 JavaScript 代码在将数据缓存到*jobScriptContext*中的数据流之一之前操作数据，或通过*printerStream*将数据发送到打印机。
+\[在 \] **IDispatch** 对象中，是当前打印数据的 JavaScript 数组。 *PrintData* 参数允许 JavaScript 代码在将数据缓存到 *jobScriptContext* 中的数据流之一之前操作数据，或通过 *printerStream* 将数据发送到打印机。
 *printerStream*
 
 \[在 \] **IPrinterScriptableSequentialStream** 对象中，制造商的 JavaScript 代码可使用该对象将数据读取和写入到打印设备。
 *printerBidiSchemaResponses*
 
-\[\] **IPrinterBidiSchemaResponses**对象，制造商的 JavaScript 代码可使用该对象返回任何双向架构值更改或更新。
+\[\] **IPrinterBidiSchemaResponses** 对象，制造商的 JavaScript 代码可使用该对象返回任何双向架构值更改或更新。
 <table>
 <colgroup>
 <col width="50%" />
@@ -181,7 +180,7 @@ function writePrintData(jobScriptContext, writePrintDataProgress, printData, pri
 <thead>
 <tr class="header">
 <th>返回值</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>
@@ -239,23 +238,23 @@ function endPrintJob(jobScriptContext, printerStream, printerBidiSchemaResponses
 
 \[\]IPrinterBidiSchemaResponses 对象，制造商的 JavaScript 代码可使用该对象返回任何双向架构值更改或更新。
 
-| 返回值 | 说明                                                                                                                                                                                                               |
+| 返回值 | 描述                                                                                                                                                                                                               |
 |--------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | 0            | 成功–清除作业上下文对象并将成功返回到打印后台处理程序。                                                                                                                                         |
 | 1            | 失败–清除作业上下文对象并将错误代码返回到打印后台处理程序。                                                                                                                                   |
-| 2            | 重试-处理任何双向架构更新 (包括 *printerBidiSchemaResponses*中的双向事件) ，然后再次调用 JavaScript 函数以允许制造商的 javascript 代码继续处理数据。 |
+| 2            | 重试-处理任何双向架构更新 (包括 *printerBidiSchemaResponses* 中的双向事件) ，然后再次调用 JavaScript 函数以允许制造商的 javascript 代码继续处理数据。 |
 
 
 
 ## <a name="bidi-over-secondary-usb"></a>辅助 USB 上的双向
 
 
-如果设备支持辅助 USB 接口，则除了**requestStatus**方法之外，设备还可以使用前面几节中所述的**getSchemas**和**setSchema**方法。
+如果设备支持辅助 USB 接口，则除了 **requestStatus** 方法之外，设备还可以使用前面几节中所述的 **getSchemas** 和 **setSchema** 方法。
 
 ## <a name="requeststatus-method"></a>requestStatus 方法
 
 
-如果在 v4 驱动程序的清单文件中指定了**BidiUSBStatusInterface**指令，则会调用此方法，而不是**getStatus**。 **requestStatus** 用于在设备打印时从打印设备获取状态。
+如果在 v4 驱动程序的清单文件中指定了 **BidiUSBStatusInterface** 指令，则会调用此方法，而不是 **getStatus**。 **requestStatus** 用于在设备打印时从打印设备获取状态。
 
 下图提供了 USB 双向扩展体系结构的概述，其中显示了已指定 **BidiUSBStatusInterface** 指令并因此通信通过备用 USB 接口路由的情况。
 
@@ -276,7 +275,7 @@ function endPrintJob(jobScriptContext, printerStream, printerBidiSchemaResponses
 \[out \] 对象，脚本使用该对象存储对查询键的所有响应。
 返回值
 
-| 返回值 | 说明                                                                                           |
+| 返回值 | 描述                                                                                           |
 |--------------|-------------------------------------------------------------------------------------------------------|
 | 0            | 脚本已成功完成。                                                                    |
 | 2            | 附加设备不再支持请求的状态，因此不应再次调用此函数。 |

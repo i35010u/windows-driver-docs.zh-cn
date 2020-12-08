@@ -1,15 +1,14 @@
 ---
 title: 设备阶段常规开发工具包
 description: 设备阶段常规开发工具包
-ms.assetid: 259b3ac8-b9d3-4cbd-a003-e2d59e76bc1f
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d10d496efe3124b51351911a08f272666644973c
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 303d79b47a71b73b4234e80555aef92faeb3add3
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89216822"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96797239"
 ---
 # <a name="device-stage-general-development-kit"></a>设备阶段常规开发工具包
 

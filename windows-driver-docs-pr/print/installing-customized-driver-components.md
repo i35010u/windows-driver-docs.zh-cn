@@ -1,7 +1,6 @@
 ---
 title: 安装自定义的驱动程序组件
 description: 安装自定义的驱动程序组件
-ms.assetid: 88f189bd-97f5-4bc6-ba3e-3d9da18e2102
 keywords:
 - 打印机驱动程序自定义 WDK，安装组件
 - 自定义打印机驱动程序 WDK，安装组件
@@ -9,12 +8,12 @@ keywords:
 - INF 文件 WDK 打印，自定义驱动程序组件
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 06d4922070b54540cad1e482d17915172ca744e2
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: a3a10596d2d21faeda43476a7f01e89aae09f973
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89210597"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96796717"
 ---
 # <a name="installing-customized-driver-components"></a>安装自定义的驱动程序组件
 
@@ -26,10 +25,10 @@ ms.locfileid: "89210597"
 
 .Ini 文件必须包含 OEMFiles 部分。 在本部分中，将使用以下条目之一描述每个自定义组件：
 
-<a href="" id="oemdriverfilen"></a>OEMDriverFile*n*  
+<a href="" id="oemdriverfilen"></a>OEMDriverFile *n*  
 命名呈现插件。
 
-<a href="" id="oemconfigfilen"></a>OEMConfigFile*n*  
+<a href="" id="oemconfigfilen"></a>OEMConfigFile *n*  
 命名用户界面插件。
 
 其中 *n* 指定安装程序安装文件的顺序。 对于这两种类型的插件，为 *n* 指定的数字必须是连续的（从1开始）。
@@ -45,7 +44,7 @@ OEMDriverFile2=XYZDRV2.DLL
 
 在等号 (=) 之前或之后不允许使用空格。 文件名不能包含路径规范。
 
-在此示例中，指定了两个呈现插件。 根据 OEMDriverFile*n*的*n*值，在 xyzdrv2.dll 之前安装 xyzdrv1.dll。 Unidrv 和 Pscript5 驱动程序会按照其安装顺序调用插件，因此，以后当驱动程序需要调用图形 DDI 挂钩函数和这些插件提供的 COM 方法时，将在 xyzdrv2.dll 之前调用 xyzdrv1.dll。
+在此示例中，指定了两个呈现插件。 根据 OEMDriverFile *n* 的 *n* 值，在 xyzdrv2.dll 之前安装 xyzdrv1.dll。 Unidrv 和 Pscript5 驱动程序会按照其安装顺序调用插件，因此，以后当驱动程序需要调用图形 DDI 挂钩函数和这些插件提供的 COM 方法时，将在 xyzdrv2.dll 之前调用 xyzdrv1.dll。
 
 .Ini 文件名应反映打印机产品名称。 .Ini 文件名应与其他打印机的 .ini 文件名称不同，以避免名称冲突。 请注意，如果你要将呈现插件或用户界面插件反向移植到 Windows NT 4.0，则你的 .ini 文件名必须与你的 gpd 或 ppd 文件名匹配。  (即，xyz.ini 必须用于 gpd 或 xyz。 ) 此限制不适用于 Windows 2000 或更高版本的 Windows 操作系统。
 

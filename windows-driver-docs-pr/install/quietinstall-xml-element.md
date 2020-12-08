@@ -1,7 +1,6 @@
 ---
 title: quietInstall XML 元素
 description: quietInstall XML 元素
-ms.assetid: 1151a68f-17c8-4852-9dc0-ab5dea9d58c6
 keywords:
 - quietInstall XML 元素设备和驱动程序安装
 topic_type:
@@ -12,19 +11,19 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 253376a3bd755ffeb5b55ee9e2911fc9984db069
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 1ad097823ffcf585bf8ff50cb8f1bde2accc4282
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89095821"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96796019"
 ---
 # <a name="quietinstall-xml-element"></a>quietInstall XML 元素
 
 
 \[DIFx 已弃用，有关详细信息，请参阅 [DIFx 指导原则](./difx-guidelines.md)。\]
 
-**QuietInstall** XML 元素是一个空元素，该元素将**quietInstall**标志设置为 ON，这会将 DPInst 配置为禁止显示向导页和大多数其他用户消息。
+**QuietInstall** XML 元素是一个空元素，该元素将 **quietInstall** 标志设置为 ON，这会将 DPInst 配置为禁止显示向导页和大多数其他用户消息。
 
 ### <a name="element-tag"></a>**元素标记**
 
@@ -67,7 +66,7 @@ ms.locfileid: "89095821"
 
 ### <a name="remarks"></a><a href="" id="comments"></a>注释
 
-默认情况下， **quietInstall** 标志设置为 OFF。 可以通过在 DPInst 描述符文件中包含**quietInstall**元素或使用 **/q**命令行开关，将**quietInstall**标志设置为 ON   。 **QuietInstall**标志用于处理 EULA 页和**suppressEulaPage**标志。
+默认情况下， **quietInstall** 标志设置为 OFF。 可以通过在 DPInst 描述符文件中包含 **quietInstall** 元素或使用 **/q** 命令行开关，将 **quietInstall** 标志设置为 ON。 **QuietInstall** 标志用于处理 EULA 页和 **suppressEulaPage** 标志。
 
 下面的代码示例演示了 **quietInstall** 元素
 
@@ -79,7 +78,7 @@ ms.locfileid: "89095821"
 </dpinst>
 ```
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**dpinst**](dpinst-xml-element.md)

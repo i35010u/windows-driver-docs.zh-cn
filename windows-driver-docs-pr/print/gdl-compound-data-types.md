@@ -1,34 +1,33 @@
 ---
 title: GDL 复合数据类型
 description: GDL 复合数据类型
-ms.assetid: c0e623f2-cb98-4fed-82ad-cc38ea4b0aa0
 keywords:
 - 模板 WDK GDL，数据类型
 - 数据类型 WDK GDL，复合
 - 分析器 WDK GDL，复合数据类型
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a7c59ea37c98780cd654cb506ebdff831b12621c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1aae0a23f12a86fa62ce505cae4b0c4f9091571a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63372741"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96797037"
 ---
 # <a name="gdl-compound-data-types"></a>GDL 复合数据类型
 
 
-从定义 GDL 复合数据类型[GDL 基元数据类型](gdl-primitive-data-types.md)或以前定义的复合数据类型。 复合类型可划分为数组、 复合和的多个个人设置类型。 复合类型可以将合并导致的高度复杂数据类型的创建其他复合类型。
+GDL 复合数据类型是通过 [GDL 基元数据类型](gdl-primitive-data-types.md) 或以前定义的复合数据类型定义的。 复合类型可以分类为数组、复合和多种个性类型。 复合类型可以合并导致创建高度复杂的数据类型的其他复合类型。
 
-下面的复合数据类型用于 GDL 模板：
+以下复合数据类型用于 GDL 模板：
 
-[Array](array-template-data-types.md)
+数组 
 
-[复合](composite-template-data-types.md)
+[合成](composite-template-data-types.md)
 
-[多个个人设置](multiple-personality-template-data-types.md)
+[多项个性](multiple-personality-template-data-types.md)
 
-有关为复合数据类型相关的问题的详细信息，请参阅[GDL 模板数据类型问题](compound-template-data-type-issues.md)。
+有关与复合数据类型相关的问题的详细信息，请参阅 [GDL 模板数据类型问题](compound-template-data-type-issues.md)。
 
  
 

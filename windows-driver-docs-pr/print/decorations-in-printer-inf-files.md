@@ -1,7 +1,6 @@
 ---
 title: 打印机 INF 文件中的修饰
 description: 打印机 INF 文件中的修饰
-ms.assetid: 86ddca11-e2a9-44b8-8c42-313116fc580e
 keywords:
 - INF 文件 WDK 打印，装饰品
 - 其他驱动程序 WDK 打印机
@@ -9,12 +8,12 @@ keywords:
 - INF Models 节
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: dfff53b7d441df9d6d074f2f4210ad13c8414b03
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: e415a915564e5fe826128a71ef12fdb23ee0986c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89216806"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96797321"
 ---
 # <a name="decorations-in-printer-inf-files"></a>打印机 INF 文件中的修饰
 

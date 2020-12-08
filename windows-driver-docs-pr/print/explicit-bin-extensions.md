@@ -1,22 +1,21 @@
 ---
 title: 显式 Bin 扩展
 description: 显式 Bin 扩展
-ms.assetid: a9f7f290-1af8-4312-b348-c1c98a3fc4a6
 keywords:
 - 显式 bin 扩展 WDK 打印机
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 02a483ee68efb78874cb58318872c9eb33e8a546
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: c262f366b3450b3e1cf1cf40b8edd509f1dce2a5
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90104166"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96797107"
 ---
 # <a name="explicit-bin-extensions"></a>显式 Bin 扩展
 
 
-您可以使用特殊构造 **BinValue**进一步扩展隐式 bin 扩展。 此对象确定 prtInputTable 或 prtOutputTable 表中的哪个 MIB 对象包含新的数据。
+您可以使用特殊构造 **BinValue** 进一步扩展隐式 bin 扩展。 此对象确定 prtInputTable 或 prtOutputTable 表中的哪个 MIB 对象包含新的数据。
 
 <table>
 <colgroup>
@@ -26,12 +25,12 @@ ms.locfileid: "90104166"
 <thead>
 <tr class="header">
 <th>Attribute</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><p><strong>name</strong></p></td>
+<td><p>name</p></td>
 <td><p>Bin 的名称。</p></td>
 </tr>
 <tr class="even">

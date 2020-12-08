@@ -1,7 +1,6 @@
 ---
 title: GUID_DEVICE_SYS_BUTTON
 description: GUID_DEVICE_SYS_BUTTON
-ms.assetid: 6d07e015-3ea5-4951-ab2d-9c110edef1c5
 keywords:
 - GUID_DEVICE_SYS_BUTTON 设备和驱动程序安装
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 476304c3b4ffd1f7efdb32ec01f99f5b193c34d7
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 1023843634698ad1510b2ad27d1138ee72795df4
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89096977"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96796061"
 ---
 # <a name="guid_device_sys_button"></a>GUID_DEVICE_SYS_BUTTON
 

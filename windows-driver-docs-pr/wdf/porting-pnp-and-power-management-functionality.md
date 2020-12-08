@@ -1,15 +1,14 @@
 ---
 title: 移植 PnP 和电源管理
 description: 移植 PnP 和电源管理
-ms.assetid: 29ADD3CF-7CDE-4D97-8082-76B4F94DB6A2
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9a9b8a68220e775e8992d2236ad7a95e407707be
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 3189bd81ee2d821ac9944354fec23320394bde83
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89185195"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96796347"
 ---
 # <a name="porting-pnp-and-power-management"></a>移植 PnP 和电源管理
 

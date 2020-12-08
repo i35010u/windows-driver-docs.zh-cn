@@ -1,9 +1,8 @@
 ---
-title: WIA\_IPS\_文档\_处理\_选择
-description: WIA\_IPS\_文档\_处理\_选择属性包含的当前扫描程序获取源和模式。
-ms.assetid: f148e91f-847c-4db2-8459-9f52892cd703
+title: WIA \_ IP \_ 文档 \_ 处理 \_ 选择
+description: WIA \_ ip \_ 文档 \_ 处理 \_ 选择属性包含当前的扫描仪获取源和模式。
 keywords:
-- WIA_IPS_DOCUMENT_HANDLING_SELECT 成像设备
+- WIA_IPS_DOCUMENT_HANDLING_SELECT 图像设备
 topic_type:
 - apiref
 api_name:
@@ -14,30 +13,30 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 387850c5e7a7baab4af22e4e4dd2ddcfdec59fa4
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8635328314de8df427d724e97be4134c332b0a63
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63370607"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96796129"
 ---
-# <a name="wiaipsdocumenthandlingselect"></a>WIA\_IPS\_文档\_处理\_选择
+# <a name="wia_ips_document_handling_select"></a>WIA \_ IP \_ 文档 \_ 处理 \_ 选择
 
 
-WIA\_IPS\_文档\_处理\_选择属性包含的当前扫描程序获取源和模式。
+WIA \_ ip \_ 文档 \_ 处理 \_ 选择属性包含当前的扫描仪获取源和模式。
 
-属性类型：VT\_I4
+属性类型： VT \_ I4
 
-有效值：WIA\_PROP\_FLAG
+有效值： WIA 内容 \_ \_ 标志
 
-访问权限：读取/写入
+访问权限：读/写
 
 <a name="remarks"></a>备注
 -------
 
-应用程序读取 WIA\_IPS\_文档\_处理\_选择属性，以确定当前获取源的扫描程序或应用程序将此属性设置的源和模式的写入扫描程序。 此外，应用程序使用此属性来启用和禁用双面打印器功能。 WIA 微型驱动程序创建并维护此属性。
+应用程序读取 WIA \_ ip \_ 文档 \_ 处理 \_ 选择属性以确定扫描仪的当前采集源，或者应用程序写入此属性以设置扫描程序的源和模式。 此外，应用程序使用此属性来启用和禁用双面打印器功能。 WIA 微型驱动程序创建并维护此属性。
 
-下表描述了一个常量，它是有效使用 Windows Vista 及更高版本。
+下表描述了仅适用于 Windows Vista 和更高版本的常量。
 
 <table>
 <colgroup>
@@ -46,22 +45,22 @@ WIA\_IPS\_文档\_处理\_选择属性包含的当前扫描程序获取源和模
 </colgroup>
 <thead>
 <tr class="header">
-<th>ReplTest1</th>
+<th>值</th>
 <th>定义</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td><p>ADVANCED_DUPLEX</p></td>
-<td><p>通过使用单独的配置设置为每个送纸器子项 （WIA_CATEGORY_FEEDER_FRONT 和 WIA_CATEGORY_FEEDER_BACK） 扫描。 不能与双工设置此标志。</p>
-<p>设备支持不同扫描前面的设置和备份的项应实现可选的 ADF 前端和后的项，以及它应支持双工和 ADVANCED_DUPLEX。</p></td>
+<td><p>使用各个子送纸器项的单独配置设置进行扫描 (WIA_CATEGORY_FEEDER_FRONT 和 WIA_CATEGORY_FEEDER_BACK) 。 此标志不能与双工一起设置。</p>
+<p>支持对前面和背面项的不同扫描设置的设备应实现可选的 ADF 前端和后端，并且它应同时支持双工和 ADVANCED_DUPLEX。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-下表描述了与 Windows Vista 和 Windows XP 有效的常量。
+下表介绍了 Windows Vista 和 Windows XP 中的有效常量。
 
 <table>
 <colgroup>
@@ -70,41 +69,41 @@ WIA\_IPS\_文档\_处理\_选择属性包含的当前扫描程序获取源和模
 </colgroup>
 <thead>
 <tr class="header">
-<th>ReplTest1</th>
+<th>值</th>
 <th>定义</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td><p>BACK_FIRST</p></td>
-<td><p>第一次扫描的文档。 仅当双工设置时，此值才有效。</p></td>
+<td><p>首先扫描文档的背面。 仅当设置了双工时，此值才有效。</p></td>
 </tr>
 <tr class="even">
 <td><p>BACK_ONLY</p></td>
-<td><p>扫描背面<em>仅</em>。 仅当双工设置时，此值才有效。</p></td>
+<td><p><em>仅</em>扫描后退。 仅当设置了双工时，此值才有效。</p></td>
 </tr>
 <tr class="odd">
-<td><p>双工</p></td>
-<td><p>使用双面打印器操作来扫描。</p></td>
+<td><p>模式</p></td>
+<td><p>使用双面打印器操作进行扫描。</p></td>
 </tr>
 <tr class="even">
 <td><p>FRONT_FIRST</p></td>
-<td><p>第一次扫描的文档的前面。 仅当双工设置时，此值才有效。</p></td>
+<td><p>首先扫描文档的前面。 仅当设置了双工时，此值才有效。</p></td>
 </tr>
 <tr class="odd">
 <td><p>FRONT_ONLY</p></td>
-<td><p>扫描前面<em>仅</em>。</p></td>
+<td><p><em>仅</em>扫描前端。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-双工和前面的值\_仅是互相排斥-设置一个或另一个，但不可同时使用两者。
+值双工和前端 \_ 仅互斥--设置一个或另一个，但不能同时为两者。
 
-WIA 2.0 微型驱动程序必须将此属性的初始值设置为其默认值，前端\_仅。 不遵守此要求可能会使微型驱动程序与 WIA 1.0 通用扫描对话框以及一些 WIA 1.0 应用程序不兼容。
+WIA 2.0 微型驱动程序必须将此属性的初始值设置为其默认值 " \_ 仅限前"。 如果无法遵守这种要求，则可能导致微型驱动程序与 WIA 1.0 常见扫描对话框和某些 WIA 1.0 应用程序不兼容。
 
-下表描述了与 Windows XP 有效，但已过时，与 Windows Vista 及更高版本的常量。
+下表描述了对 Windows XP 有效但在 Windows Vista 和更高版本中已过时的常量。
 
 <table>
 <colgroup>
@@ -113,30 +112,30 @@ WIA 2.0 微型驱动程序必须将此属性的初始值设置为其默认值，
 </colgroup>
 <thead>
 <tr class="header">
-<th>ReplTest1</th>
+<th>值</th>
 <th>定义</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td><p>AUTO_ADVANCE</p></td>
-<td><p>启用扫描后的下一个文档的自动维护。</p></td>
+<td><p>扫描后，启用下一文档的自动馈送。</p></td>
 </tr>
 <tr class="even">
-<td><p>送纸器</p></td>
-<td><p>通过使用文档送纸器扫描。</p></td>
+<td><p>放</p></td>
+<td><p>使用文档送纸器进行扫描。</p></td>
 </tr>
 <tr class="odd">
 <td><p>平板</p></td>
-<td><p>通过使用平板扫描。</p></td>
+<td><p>使用平板扫描。</p></td>
 </tr>
 <tr class="even">
 <td><p>NEXT_PAGE</p></td>
-<td><p>扫描文档的下一页面。</p></td>
+<td><p>扫描文档的下一页。</p></td>
 </tr>
 <tr class="odd">
 <td><p>PREFEED</p></td>
-<td><p>启用预源的模式。 扫描时的下一个文档的位置。</p></td>
+<td><p>启用预供给模式。 在扫描时定位下一文档。</p></td>
 </tr>
 </tbody>
 </table>
@@ -153,12 +152,12 @@ WIA 2.0 微型驱动程序必须将此属性的初始值设置为其默认值，
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Version</p></td>
-<td><p>在 Windows Vista 和更高版本操作系统中可用。 对于 Windows XP 中，使用相同的 WIA_DPS_DOCUMENT_HANDLING_SELECT 属性。</p></td>
+<td><p>版本</p></td>
+<td><p>在 Windows Vista 和更高版本的操作系统中可用。 对于 Windows XP，请使用相同的 WIA_DPS_DOCUMENT_HANDLING_SELECT 属性。</p></td>
 </tr>
 <tr class="even">
-<td><p>Header</p></td>
-<td>Wiadef.h （包括 Wiadef.h）</td>
+<td><p>标头</p></td>
+<td>Wiadef (包含 Wiadef) </td>
 </tr>
 </tbody>
 </table>
@@ -166,7 +165,7 @@ WIA 2.0 微型驱动程序必须将此属性的初始值设置为其默认值，
 ## <a name="see-also"></a>请参阅
 
 
-[**WIA\_DPS\_文档\_处理\_选择**](wia-dps-document-handling-select.md)
+[**WIA \_ DPS \_ 文档 \_ 处理 \_ 选择**](wia-dps-document-handling-select.md)
 
  
 

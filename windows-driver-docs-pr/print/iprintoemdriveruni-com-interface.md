@@ -1,17 +1,16 @@
 ---
 title: IPrintOemDriverUni COM 接口
 description: IPrintOemDriverUni COM 接口
-ms.assetid: 84b3f43c-039a-4e9d-b596-41c08f1e0284
 keywords:
 - IPrintOemDriverUni
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: caac04d4ac30863ee4a5f34cd8ce3ae8b3722ecc
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: a0b8e407f592a9fd7810f170bda1f83d5f7dfa71
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90102954"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96796562"
 ---
 # <a name="iprintoemdriveruni-com-interface"></a>IPrintOemDriverUni COM 接口
 
@@ -31,7 +30,7 @@ ms.locfileid: "90102954"
 <thead>
 <tr class="header">
 <th>方法</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>

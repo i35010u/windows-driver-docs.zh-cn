@@ -1,7 +1,6 @@
 ---
 title: GUID_CLASS_MOUSE
 description: GUID_CLASS_MOUSE
-ms.assetid: 3b6578c7-0462-4fff-bd09-b9c768676ceb
 keywords:
 - GUID_CLASS_MOUSE 设备和驱动程序安装
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 533af5d1707c2fa37748dc7d34d41dbc5b76e2a2
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 9b78aa2395e615d99c08e0aaee4da2ef442cbfd5
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89094933"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96796103"
 ---
 # <a name="guid_class_mouse"></a>GUID_CLASS_MOUSE
 
@@ -51,7 +50,7 @@ WDK 中提供的 HID 示例包括鼠标类驱动程序。 鼠标类驱动程序�
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**GUID_DEVINTERFACE_MOUSE**](guid-devinterface-mouse.md)

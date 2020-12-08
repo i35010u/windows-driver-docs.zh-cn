@@ -1,7 +1,6 @@
 ---
 title: 打印设备安装
 description: 提供有关初次安装端口连接的打印设备的信息，以及在设备首次连接时可能的系统状态。
-ms.assetid: 47bbe4cd-bcbc-42d5-9513-9ea659c123dc
 keywords:
 - 热插拔总线 WDK 打印机
 - 打印机安装检查 WDK
@@ -10,12 +9,12 @@ keywords:
 - 安装的驱动程序测试 WDK 打印机
 ms.date: 07/07/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 05ec925488fcb8381cd8facfb9422370fcad2432
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 6f8a2ddfa9d1e5344397a420b699a844ee08749b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89218242"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96797259"
 ---
 # <a name="print-device-installation"></a>打印设备安装
 

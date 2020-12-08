@@ -1,19 +1,18 @@
 ---
 title: 自定义其他打印机接口操作
 description: 自定义其他打印机接口操作
-ms.assetid: ae59d2e7-9049-432d-b519-9e7c88af8d48
 keywords:
 - 用户界面插件 WDK 打印，自定义方法
 - UI 插件 WDK 打印，自定义方法
 - IPrintOemUI
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e110e5ecb95bcc56027a8dfcfb553bcc38579975
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 4b83300d96172e451d6cc5d64753e6cf2e256629
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89217775"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96797371"
 ---
 # <a name="customizing-other-printer-interface-operations"></a>自定义其他打印机接口操作
 

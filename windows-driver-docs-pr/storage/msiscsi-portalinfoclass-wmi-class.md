@@ -1,15 +1,14 @@
 ---
 title: MSiSCSI \_ PORTALINFOCLASS WMI 类
 description: MSiSCSI \_ PORTALINFOCLASS WMI 类
-ms.assetid: f22c36a9-28be-4de1-9e80-0f0c1bd6473d
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 33a5d31474a78e70d0249a04ff44b326c8b8cc3a
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 9a28240f533904838ced539345009c311ecab3bc
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89185111"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96796469"
 ---
 # <a name="msiscsi_portalinfoclass-wmi-class"></a>MSiSCSI \_ PORTALINFOCLASS WMI 类
 
@@ -21,7 +20,7 @@ MSiSCSI \_ PORTALINFOCLASS WMI 类公开有关 iSCSI 门户集合的信息。
 
 由于此类与存储微型端口驱动程序的特定实例相关联，因此微型端口驱动程序必须使用微型端口驱动程序管理 (PDO) 的特定物理设备对象的名称注册该类。
 
-MSiSCSI \_ PortalInfoClass 类在 *管理 mof*中定义。
+MSiSCSI \_ PortalInfoClass 类在 *管理 mof* 中定义。
 
 ```cpp
 class MSiSCSI_PortalInfoClass {

@@ -1,19 +1,18 @@
 ---
 title: 必需的更换器微型类例程
 description: 必需的更换器微型类例程
-ms.assetid: bd706c00-5f6b-4bda-b6a1-a61046303e12
 keywords:
 - 转换器驱动程序 WDK 存储，miniclass 驱动程序
 - 存储更换器驱动程序 WDK、miniclass 驱动程序
 - miniclass 驱动程序 WDK 转换器
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d807a34699b8dbe8c86166d2d7d75621f95c9d58
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 238f4cba6ae1f7dd85846b20532b32701becaa4f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89191115"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96795851"
 ---
 # <a name="required-changer-miniclass-routines"></a>必需的更换器微型类例程
 
@@ -41,7 +40,7 @@ ms.locfileid: "89191115"
 
 如果转换器不支持给定例程隐含的功能，则其驱动程序必须实现例程，使其返回状态 " \_ 无效 \_ 设备请求" \_ 。
 
-有关 miniclass 驱动程序的必需 **变换器 * * * Xxx* 例程的详细信息，请参阅 [转换器 Miniclass 驱动程序例程](/windows-hardware/drivers/ddi/index)。 有关设备控制请求的更换器特定 i/o 控制代码的详细信息，请参阅 [转换器 I/o 控制代码](/windows-hardware/drivers/ddi/index)。
+有关转换器 miniclass 驱动程序所需的 **转换器**_Xxx_ 例程的详细信息，请参阅 [转换器 miniclass 驱动程序例程](/windows-hardware/drivers/ddi/index)。 有关设备控制请求的更换器特定 i/o 控制代码的详细信息，请参阅 [转换器 I/o 控制代码](/windows-hardware/drivers/ddi/index)。
 
  
 

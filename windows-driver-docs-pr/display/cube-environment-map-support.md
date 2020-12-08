@@ -1,7 +1,6 @@
 ---
 title: 立体环境贴图支持
 description: 立体环境贴图支持
-ms.assetid: 41666b17-39b0-4022-925f-538455e41f3a
 keywords:
 - 映射多维数据集环境
 - 环境映射 WDK Direct3D
@@ -14,12 +13,12 @@ keywords:
 - 球形映射 WDK Direct3D
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: dc8d286ae6923610237eb8e6417c74752a4b05e8
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 618947aae63a2f9dcff2eb9f4f096f159dc7966e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89066500"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96795595"
 ---
 # <a name="cube-environment-map-support"></a>立体环境贴图支持
 
@@ -39,15 +38,15 @@ Cubical 环境地图是指在六个不同方向上使用90度的实部或模拟�
 
 多维数据集映射在世界坐标中定义;也就是说，其世界变换矩阵为恒等矩阵。 如果对对应的纹理坐标索引使用纹理转换，则多维数据集映射可能会显示在不同的空间中。 这些纹理坐标索引将直接查找正面为四，+ z。 默认情况下，Y 处于启动状态。  (u，v) 纹素网格的原点位于每个表面的左上角，以允许在不进行任何其他转换的情况下，通过将相机从立方体中心指向。
 
-**DirectDrawCreateEx** 采用标志来指示要创建的多维数据集映射。 有些人不需要在 API 级别分配，尽管驱动程序可以根据需要进行填充。 Surface 描述符包含包含六位的位域，表示应用程序预期要使用的面部。 当用 **IDirectDrawSurface7：： GetAttachedSurface** 方法进行面部处理时，将跳过 **空** 面部。 每个面的尺寸都可从其曲面描述符中获得，面部 bitcode 字段指示其正面。 有关 **DirectDrawCreateEx** 和 **IDirectDrawSurface7：： GetAttachedSurface**的详细信息，请参阅 DirectDraw SDK 文档。
+**DirectDrawCreateEx** 采用标志来指示要创建的多维数据集映射。 有些人不需要在 API 级别分配，尽管驱动程序可以根据需要进行填充。 Surface 描述符包含包含六位的位域，表示应用程序预期要使用的面部。 当用 **IDirectDrawSurface7：： GetAttachedSurface** 方法进行面部处理时，将跳过 **空** 面部。 每个面的尺寸都可从其曲面描述符中获得，面部 bitcode 字段指示其正面。 有关 **DirectDrawCreateEx** 和 **IDirectDrawSurface7：： GetAttachedSurface** 的详细信息，请参阅 DirectDraw SDK 文档。
 
-从 **DirectDrawCreate** 返回的指针实际上是一个指针，指向多维数据集中的第一个非**NULL** 面。 可以通过拍摄图面的 bitcode 来获取面部标识符。 这是传递到 Direct3D SDK 文档) 中 (所述的 **IDirect3DDevice7：： SetTexture** 方法的指针，使此映射可用于多纹理管道。
+从 **DirectDrawCreate** 返回的指针实际上是一个指针，指向多维数据集中的第一个非 **NULL** 面。 可以通过拍摄图面的 bitcode 来获取面部标识符。 这是传递到 Direct3D SDK 文档) 中 (所述的 **IDirect3DDevice7：： SetTexture** 方法的指针，使此映射可用于多纹理管道。
 
 如果打算将任何图面呈现到，则必须在 \_ 设置 D3DPTEXTURECAPS 立方体贴图 cap 标志的情况下创建多维数据集映射。
 
 不是通过调用创建的任何面都假设使用 surface 描述符的 **dwEmptyFaceColor** 成员中指定的颜色进行填充。  (参阅 [**DDSURFACEDESC2**](/previous-versions/windows/hardware/drivers/ff550340(v=vs.85)) 结构。 ) 
 
-**注意**   当前限制：所有 cube 面都必须相同，并且必须是正方形。 多维数据集面可以是 MIP 映射的。 多维数据集映射纹理不支持任何颜色键控。 与其他纹理一样，支持 alpha 通道和 alpha 调色板。
+**注意**   当前限制：所有 cube 面都必须相同，并且必须是正方形。 多维数据集面可以是 MIP 映射的。 多维数据集映射纹理不支持任何颜色键控。 与其他纹理一样，支持 alpha 通道和 alpha 调色板。
 
  
 

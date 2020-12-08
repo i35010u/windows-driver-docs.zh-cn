@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ DROPPEDFRAMES \_ CURRENT
 description: "\"KSPROPERTY \\_ 删除 \\_ 帧\" \\_ 当前属性动态检索捕获的帧数、丢弃的帧数和平均帧大小的视频捕获微型驱动程序。 必须实现此属性。"
-ms.assetid: 43367858-4e3b-476e-aaa5-c9e665df8dc6
 keywords:
 - KSPROPERTY_DROPPEDFRAMES_CURRENT 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 37f59a51189c88072f7ae1400a8dae18a3ef43df
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: fe9d0d2a942290beb3166e3adb13f065e0c1a29c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90102721"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96795815"
 ---
 # <a name="ksproperty_droppedframes_current"></a>KSPROPERTY \_ DROPPEDFRAMES \_ CURRENT
 
@@ -84,7 +83,7 @@ ms.locfileid: "90102721"
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSPROPERTY**](/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)

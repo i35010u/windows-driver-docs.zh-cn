@@ -1,19 +1,18 @@
 ---
 title: 已注册到 WMI 的标准微型端口驱动程序状态指示
 description: 已注册到 WMI 的标准微型端口驱动程序状态指示
-ms.assetid: afebd0a2-c811-4534-9320-02b9292ba81b
 keywords:
 - 状态指示 WDK 网络，WMI
 - WMI WDK 网络，状态指示
 - Windows Management Instrumentation WDK 网络，状态指示
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fde52825aaa001faa82400bab4c808e937bc8aa0
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 7a0b1fa6ea3d9cd093812daee8065b9fa56102ba
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89216554"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96795863"
 ---
 # <a name="standard-miniport-driver-status-indications-registered-with-wmi"></a>已注册到 WMI 的标准微型端口驱动程序状态指示
 

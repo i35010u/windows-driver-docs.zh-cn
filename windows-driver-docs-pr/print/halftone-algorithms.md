@@ -1,19 +1,18 @@
 ---
 title: 半色调算法
 description: 半色调算法
-ms.assetid: 1831f952-4c83-4dfa-87e7-1c755f143227
 keywords:
-- HP/2 单色 WDK Unidrv，半色调算法
-- PCL 5e WDK Unidrv，半色调算法
+- HP-GL/2 单色 WDK Unidrv，半色调算法
+- PCL-5e WDK Unidrv，半色调算法
 - 半色调 WDK Unidrv
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 34703f5a3b5fc1bdbc8181c0c0ea413ede686d6b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ad34be86c1fd7967a6274db7fd9603d4f00f24a0
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63341309"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96796873"
 ---
 # <a name="halftone-algorithms"></a>半色调算法
 
@@ -21,9 +20,9 @@ ms.locfileid: "63341309"
 
 
 
-某些打印机供应商更喜欢打印不同类型的对象，如文本、 矢量对象和位图时使用不同的半色调算法。 下面的三个示例显示出应添加到 GPD 打印每个对象的类型。
+某些打印机供应商喜欢在打印不同类型的对象（如文本、矢量对象和位图）时使用不同的半色调算法。 下面的三个示例显示了应添加到 GPD 的内容，以打印每种类型的对象。
 
-第一个示例演示如何将合并半色调打印文本时的呈现。
+第一个示例演示如何在打印文本时合并半色调呈现。
 
 ```cpp
 *Ifdef: WINNT_51
@@ -51,7 +50,7 @@ ms.locfileid: "63341309"
 *Endif:
 ```
 
-第二个示例包括用于半色调打印矢量图形时呈现命令。
+第二个示例包含打印矢量图形时半色调呈现的命令。
 
 ```cpp
 *Ifdef:  WINNT_51
@@ -78,7 +77,7 @@ ms.locfileid: "63341309"
 *Endif:
 ```
 
-第三个示例包括用于半色调打印位图时呈现命令。
+第三个示例包含打印位图时半色调呈现的命令。
 
 ```cpp
 *Ifdef: WINNT_51

@@ -1,19 +1,18 @@
 ---
 title: 调试后台处理程序组件
 description: 调试后台处理程序组件
-ms.assetid: ed4dcd29-105c-4562-9741-858cb9542449
 keywords:
 - 调试后台处理程序组件 WDK 打印机
 - 后台处理程序组件调试 WDK 打印
 - 跟踪消息 WDK 打印机
 ms.date: 06/04/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 301a9d630f316f345e1c93614fc6be795fd11805
-ms.sourcegitcommit: 0a0b75d93130b6c5854279607cd0aac099f65fd5
+ms.openlocfilehash: afe85bbec49fe38c97eadf411237f15848cab8e7
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84428306"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96797329"
 ---
 # <a name="debugging-spooler-components"></a>调试后台处理程序组件
 
@@ -40,6 +39,6 @@ ms.locfileid: "84428306"
 
 1. 找到 debug 变量 winspool.drv！ClientDebug.
 
-1. \_在 winspool.drv 的低字中设置 DBG 跟踪位（0x0008）。ClientDebug 变量。
+1. 将 \_ 0x0008) 中的 DBG 跟踪位设置 (为 winspool.drv！ClientDebug 变量。
 
 1. 单击“转到”。

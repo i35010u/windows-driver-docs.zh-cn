@@ -1,7 +1,6 @@
 ---
 title: 处理颜色格式
 description: 处理颜色格式
-ms.assetid: 4d0faba6-1994-474f-a5d3-e25cd2800cf7
 keywords:
 - Unidrv，颜色格式
 - 颜色格式 WDK Unidrv
@@ -11,12 +10,12 @@ keywords:
 - Unidrv WDK 打印
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 11ffa04f71cf341131290f5debaa30f0a7fbf4e7
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: b34b34ff5933860b6c0273d2d098b42cfa89582d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90106334"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96796869"
 ---
 # <a name="handling-color-formats"></a>处理颜色格式
 
@@ -67,13 +66,13 @@ ms.locfileid: "90106334"
 
  
 
-对于这些格式，Unidrv 可以将 *与设备无关的位图 () DIB * 转换为正确的格式，并将其发送到打印机。 在 [Unidrv](halftoning-with-unidrv.md)中，可以对此数据执行的 (半色调运算。 ) 
+对于这些格式，Unidrv 可以将 *与设备无关的位图 () DIB* 转换为正确的格式，并将其发送到打印机。 在 [Unidrv](halftoning-with-unidrv.md)中，可以对此数据执行的 (半色调运算。 ) 
 
 如果打印机支持上表中未列出的颜色格式，则必须执行以下操作：
 
 -   将 \* DevNumOfPlanes 和 \* DevBPP 属性设置为零。 这样做可以防止 Unidrv 将 DIB 数据发送到打印机。
 
--   提供实现[**IPrintOemUni：： ImageProcessing**](/windows-hardware/drivers/ddi/prcomoem/nf-prcomoem-iprintoemuni-imageprocessing)方法的[呈现插件](rendering-plug-ins.md)。
+-   提供实现 [**IPrintOemUni：： ImageProcessing**](/windows-hardware/drivers/ddi/prcomoem/nf-prcomoem-iprintoemuni-imageprocessing)方法的 [呈现插件](rendering-plug-ins.md)。
 
 [**IPrintOemUni：： ImageProcessing**](/windows-hardware/drivers/ddi/prcomoem/nf-prcomoem-iprintoemuni-imageprocessing)方法必须执行以下操作：
 
@@ -87,7 +86,7 @@ ms.locfileid: "90106334"
 
 ### <a name="rendering-high-quality-images"></a>呈现高质量映像
 
-对于每个颜色格式，你都可以指定打印机硬件接受的每个像素的位数，以及你希望 Unidrv 在创建 Dib 时使用的每个像素的位数。 这些值 \* 分别与 DevBPP 和 \* DrvBPP 特性一起指定。 有时，图像需要呈现为位图，每个像素的位数越高，而打印机可以按顺序处理 (，例如，尝试复制高质量的照片) 。 因此，允许指定的 \* **DrvBPP**值大于 \* **DevBPP**值乘以 DevNumOfPlanes 值所得的结果 \* 。
+对于每个颜色格式，你都可以指定打印机硬件接受的每个像素的位数，以及你希望 Unidrv 在创建 Dib 时使用的每个像素的位数。 这些值 \* 分别与 DevBPP 和 \* DrvBPP 特性一起指定。 有时，图像需要呈现为位图，每个像素的位数越高，而打印机可以按顺序处理 (，例如，尝试复制高质量的照片) 。 因此，允许指定的 \* **DrvBPP** 值大于 \* *_DevBPP_* 值乘以 DevNumOfPlanes 值所得的结果 \* 。
 
 例如，假设要定义一个 ColorMode 选项，该选项会使图像呈现为24位/像素位图，但随后需要将位图作为 *CMYK* 数据发送到打印机。 可以按如下所示定义此模式：
 
@@ -107,5 +106,5 @@ ms.locfileid: "90106334"
 }
 ```
 
-在此示例中， \* **DevBPP**和 \* **DevNumOfPlanes**属性表示 Unidrv 可呈现并发送到打印机的四个平面的每个平面 CMYK 格式。 但是，在这种情况下，必须在呈现的图像上执行半色调操作才能进行打印。 必须使用[微型驱动程序提供的半色调](minidriver-supplied-halftoning.md)。
+在此示例中， \* **DevBPP** 和 \* *_DevNumOfPlanes_* 属性表示 Unidrv 可呈现并发送到打印机的四个平面的每个平面 CMYK 格式。 但是，在这种情况下，必须在呈现的图像上执行半色调操作才能进行打印。 必须使用[微型驱动程序提供的半色调](minidriver-supplied-halftoning.md)。
 

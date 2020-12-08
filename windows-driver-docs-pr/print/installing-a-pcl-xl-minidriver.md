@@ -1,18 +1,17 @@
 ---
 title: 安装 PCL XL 微型驱动程序
 description: 安装 PCL XL 微型驱动程序
-ms.assetid: 88e4e1a0-8adb-4f40-abeb-a4da761ca4ee
 keywords:
 - PCL XL vector graphics WDK Unidrv，安装微型驱动程序
 - 微型驱动程序 WDK PCL XL
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6decb82ebfc32f8aa4bf9bab4ea54417d779cc65
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 9d93dc46132d5383496ff8fb84686ef592518de2
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89217153"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96796727"
 ---
 # <a name="installing-a-pcl-xl-minidriver"></a>安装 PCL XL 微型驱动程序
 

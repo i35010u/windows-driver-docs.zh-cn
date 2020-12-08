@@ -1,7 +1,6 @@
 ---
 title: GUID_CLASS_KEYBOARD
 description: GUID_CLASS_KEYBOARD
-ms.assetid: 9e90d18f-5298-4234-8b05-38e9b8ec5076
 keywords:
 - GUID_CLASS_KEYBOARD 设备和驱动程序安装
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: aa4609a633d8f89cabe6108d21201bcca0877a95
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 0d60e75ab1321797af52fd365049ba468a3486a4
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89094935"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96796109"
 ---
 # <a name="guid_class_keyboard"></a>GUID_CLASS_KEYBOARD
 
@@ -51,7 +50,7 @@ WDK 中提供的 HID 示例包括键盘类驱动程序。 键盘类驱动程序�
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**GUID_DEVINTERFACE_KEYBOARD**](guid-devinterface-keyboard.md)

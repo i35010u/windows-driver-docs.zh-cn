@@ -1,9 +1,8 @@
 ---
-title: WIA\_IPS\_抖动\_选择
-description: WIA\_IPS\_抖动\_选择属性保留供将来使用由 Microsoft 和未实现这一次。
-ms.assetid: 4511da4e-a76c-4b85-83b0-e4ec0b72c31c
+title: WIA \_ IP \_ 仿色 \_ 选择
+description: WIA \_ ip \_ 仿色 \_ SELECT 属性由 Microsoft 保留以供将来使用，此时不会实现。
 keywords:
-- WIA_IPS_DITHER_SELECT 成像设备
+- WIA_IPS_DITHER_SELECT 图像设备
 topic_type:
 - apiref
 api_name:
@@ -14,21 +13,21 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c0343f4630d29cfd02189bacd649e84fa3328d7d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3bc0d3dffbe14c6a65cb81ba9f6e04775725332f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63370605"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96796131"
 ---
-# <a name="wiaipsditherselect"></a>WIA\_IPS\_抖动\_选择
+# <a name="wia_ips_dither_select"></a>WIA \_ IP \_ 仿色 \_ 选择
 
 
-WIA\_IPS\_抖动\_选择属性保留供将来使用由 Microsoft 和未实现这一次。
+WIA \_ ip \_ 仿色 \_ SELECT 属性由 Microsoft 保留以供将来使用，此时不会实现。
 
-属性类型：VT\_I4
+属性类型： VT \_ I4
 
-有效值：WIA\_PROP\_NONE
+有效值： WIA " \_ \_ 无"
 
 访问权限：只读
 
@@ -45,8 +44,8 @@ WIA\_IPS\_抖动\_选择属性保留供将来使用由 Microsoft 和未实现这
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Header</p></td>
-<td>Wiadef.h （包括 Wiadef.h）</td>
+<td><p>标头</p></td>
+<td>Wiadef (包含 Wiadef) </td>
 </tr>
 </tbody>
 </table>

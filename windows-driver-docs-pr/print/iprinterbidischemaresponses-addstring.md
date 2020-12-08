@@ -1,10 +1,9 @@
 ---
 title: IPrinterBidiSchemaResponses AddString 方法
-description: AddString 方法将添加新的响应的类型 BIDI\_到集合的字符串。
+description: AddString 方法将双向字符串类型的新响应添加 \_ 到集合中。
 MSHAttr:
 - PreferredSiteName:MSDN
 - PreferredLib:/library/windows/hardware
-ms.assetid: ACBE70E7-5A2B-4472-B1A3-40722D849119
 keywords:
 - AddString 方法打印设备
 - AddString 方法打印设备，IPrinterBidiSchemaResponses 接口
@@ -17,40 +16,40 @@ api_type:
 - COM
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 843f04bb47bcc68603f8be4bbecdb8cd58c4bbdf
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4ad9151ec3ef0cbb9f0fb44d895c831b437e2074
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63351666"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96796613"
 ---
-# <a name="iprinterbidischemaresponsesaddstring-method"></a>IPrinterBidiSchemaResponses::AddString 方法
+# <a name="iprinterbidischemaresponsesaddstring-method"></a>IPrinterBidiSchemaResponses：： AddString 方法
 
-AddString 方法将添加新的响应的类型 BIDI\_到集合的字符串。
+AddString 方法将双向字符串类型的新响应添加 \_ 到集合中。
 
 <a name="syntax"></a>语法
 ------
 
 ```cpp
 HRESULT AddString(
-  [in] BSTR bstrSchema,
-  [in] BSTR bstrValue
+  [in] BSTR bstrSchema,
+  [in] BSTR bstrValue
 );
 ```
 
-<a name="parameters"></a>Parameters
+<a name="parameters"></a>参数
 ----------
 
-*bstrSchema* \[in\]  
+*bstrSchema* \[中\]  
 架构。
 
-*bstrValue* \[in\]  
-字符串响应中。
+*bstrValue* \[中\]  
+字符串响应。
 
 <a name="return-value"></a>返回值
 ------------
 
-此方法返回**HRESULT**值。
+此方法返回 **HRESULT** 值。
 
 <a name="requirements"></a>要求
 ------------
@@ -63,11 +62,11 @@ HRESULT AddString(
 <tbody>
 <tr class="odd">
 <td><p>目标平台</p></td>
-<td>桌面设备</td>
+<td>台式机</td>
 </tr>
 <tr class="even">
-<td><p>Version</p></td>
-<td><p>Windows 8 及更高版本</p></td>
+<td><p>版本</p></td>
+<td><p>Windows 8 及更高版本</p></td>
 </tr>
 </tbody>
 </table>

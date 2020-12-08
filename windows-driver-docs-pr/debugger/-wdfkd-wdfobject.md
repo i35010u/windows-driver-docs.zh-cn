@@ -1,9 +1,8 @@
 ---
 title: wdfkd.wdfobject
-description: Wdfkd.wdfobject 扩展显示有关指定的 framework 对象的信息。
-ms.assetid: fee1b924-5437-4d15-b39c-4d0f6eba0a90
+description: Wdfkd. wdfobject 扩展显示有关指定框架对象的信息。
 keywords:
-- wdfkd.wdfobject Windows 调试
+- wdfkd wdfobject Windows 调试
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,44 +11,44 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 138b2a052bbc932c66eee278cb7683494cde99ea
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 95643ee69a9c3e625965436237104e2ea68a3de5
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63323475"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96795703"
 ---
 # <a name="wdfkdwdfobject"></a>!wdfkd.wdfobject
 
 
-**！ Wdfkd.wdfobject**扩展显示有关指定的 framework 对象的信息。
+**！ Wdfkd wdfobject** 扩展显示有关指定框架对象的信息。
 
 ```dbgcmd
 !wdfkd.wdfobject FrameworkObject
 ```
 
-## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>参数
+## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>Parameters
 
 
-<span id="_______FrameworkObject______"></span><span id="_______frameworkobject______"></span><span id="_______FRAMEWORKOBJECT______"></span> *FrameworkObject*   
-指向 framework 对象的指针。
+<span id="_______FrameworkObject______"></span><span id="_______frameworkobject______"></span><span id="_______FRAMEWORKOBJECT______"></span>*FrameworkObject*   
+指向框架对象的指针。
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 Wdfkd.dll
 
-### <a name="span-idframeworksspanspan-idframeworksspanspan-idframeworksspanframeworks"></a><span id="Frameworks"></span><span id="frameworks"></span><span id="FRAMEWORKS"></span>框架
+### <a name="span-idframeworksspanspan-idframeworksspanspan-idframeworksspanframeworks"></a><span id="Frameworks"></span><span id="frameworks"></span><span id="FRAMEWORKS"></span>协作
 
 KMDF 1，UMDF 2
 
-### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>其他信息
+### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>附加信息
 
-有关详细信息，请参阅[内核模式驱动程序框架调试](kernel-mode-driver-framework-debugging.md)。
+有关详细信息，请参阅 [内核模式驱动程序框架调试](kernel-mode-driver-framework-debugging.md)。
 
 <a name="remarks"></a>备注
 -------
 
-如果驱动程序启用内核模式驱动程序框架 (KMDF) 验证器和公共的句柄类型标记为跟踪中的显示 **！ wdfkd.wdfobject**扩展包含标记跟踪器 （即，跟踪对象），在以下示例。
+如果为驱动程序启用了 Kernel-Mode Driver Framework (KMDF) 验证程序，并且公用句柄类型已标记为要跟踪，则从 **！ wdfkd wdfobject** 扩展中的显示包括标记跟踪器 (，即跟踪对象) ，如以下示例中所示。
 
 ```dbgcmd
 kd> !wdfobject 0x83584e38 

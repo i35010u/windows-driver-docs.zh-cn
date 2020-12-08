@@ -1,18 +1,17 @@
 ---
 title: 获取 WDM 信息
 description: 获取 WDM 信息
-ms.assetid: a43ffa5b-6166-4624-8dee-a54aaa8c7283
 keywords:
 - WDM 信息 WDK KMDF
 - 状态信息 WDK KMDF，WDM
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b86c300cc9b88842e3331fc8da1499854ee0521b
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 9e48d8de23eee5f4e23b395adaeaabc2787a38d8
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89184607"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96795791"
 ---
 # <a name="obtaining-wdm-information"></a>获取 WDM 信息
 

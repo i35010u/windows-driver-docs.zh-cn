@@ -1,9 +1,8 @@
 ---
-title: WIA\_IPS\_自动\_反扭曲
-description: WIA\_IPS\_自动\_反扭曲属性指示设备应使用偏差的自动修正。 WIA 微型驱动程序创建并维护此属性。
-ms.assetid: e72d1af3-05ca-47b0-a2fe-0bb74a22b528
+title: WIA \_ IPS \_ 自动 \_ 反扭曲
+description: WIA \_ IPS \_ 自动 \_ 反扭曲属性指示设备是否应使用自动倾斜校正。 WIA 微型驱动程序创建并维护此属性。
 keywords:
-- WIA_IPS_AUTO_DESKEW 成像设备
+- WIA_IPS_AUTO_DESKEW 图像设备
 topic_type:
 - apiref
 api_name:
@@ -14,28 +13,28 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ed5c5be3c8bc0a5df3f150caf06bfbf7056bccc1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7f5cb8a770fadb83970d2edbd19f09865b795898
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63341085"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96796161"
 ---
-# <a name="wiaipsautodeskew"></a>WIA\_IPS\_自动\_反扭曲
+# <a name="wia_ips_auto_deskew"></a>WIA \_ IPS \_ 自动 \_ 反扭曲
 
 
-WIA\_IPS\_自动\_反扭曲属性指示设备应使用偏差的自动修正。 WIA 微型驱动程序创建并维护此属性。
+WIA \_ IPS \_ 自动 \_ 反扭曲属性指示设备是否应使用自动倾斜校正。 WIA 微型驱动程序创建并维护此属性。
 
-属性类型：VT\_I4
+属性类型： VT \_ I4
 
-有效值：WIA\_PROP\_列表
+有效值： WIA 内容 \_ \_ 列表
 
-访问权限：读取/写入
+访问权限：读/写
 
 <a name="remarks"></a>备注
 -------
 
-下表描述了有效使用 WIA 的常量\_IPS\_自动\_反扭曲属性。
+下表描述了对 WIA \_ IPS \_ 自动 \_ 反扭曲属性有效的常量。
 
 <table>
 <colgroup>
@@ -44,18 +43,18 @@ WIA\_IPS\_自动\_反扭曲属性指示设备应使用偏差的自动修正。 W
 </colgroup>
 <thead>
 <tr class="header">
-<th>ReplTest1</th>
+<th>值</th>
 <th>定义</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td><p>WIA_AUTO_DESKEW_ON</p></td>
-<td><p>使用倾斜的自动修正。</p></td>
+<td><p>使用自动倾斜校正。</p></td>
 </tr>
 <tr class="even">
 <td><p>WIA_AUTO_DESKEW_OFF</p></td>
-<td><p>不使用偏差的自动修正。</p></td>
+<td><p>不要使用自动倾斜校正。</p></td>
 </tr>
 </tbody>
 </table>
@@ -72,12 +71,12 @@ WIA\_IPS\_自动\_反扭曲属性指示设备应使用偏差的自动修正。 W
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Version</p></td>
-<td><p>在 Windows Vista 和更高版本操作系统中可用。</p></td>
+<td><p>版本</p></td>
+<td><p>在 Windows Vista 和更高版本的操作系统中可用。</p></td>
 </tr>
 <tr class="even">
-<td><p>Header</p></td>
-<td>Wiadef.h （包括 Wiadef.h）</td>
+<td><p>标头</p></td>
+<td>Wiadef (包含 Wiadef) </td>
 </tr>
 </tbody>
 </table>

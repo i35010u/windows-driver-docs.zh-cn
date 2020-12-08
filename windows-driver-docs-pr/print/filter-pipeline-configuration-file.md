@@ -1,7 +1,6 @@
 ---
 title: 筛选器管道配置文件
 description: 筛选器管道配置文件
-ms.assetid: 586247bd-6d06-4728-a5f0-ee3fe1d09321
 keywords:
 - XPSDrv 打印机驱动程序 WDK，呈现模块
 - 渲染模块 WDK XPSDrv，筛选器管道配置文件
@@ -11,17 +10,17 @@ keywords:
 - 属性包 WDK 筛选器管道
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 538682017e4baed57ff31945c4093627507be251
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 3e840f3303af20a0d564a616d66e618ce21ea5a2
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89216060"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96797089"
 ---
 # <a name="filter-pipeline-configuration-file"></a>筛选器管道配置文件
 
 
-*筛选器管道配置文件*是一个 XML 文件，用于定义以下内容：
+*筛选器管道配置文件* 是一个 XML 文件，用于定义以下内容：
 
 -   管道中筛选器的顺序。 此顺序由筛选器管道配置文件中的 XML 元素的顺序定义。
 
@@ -68,13 +67,13 @@ ms.locfileid: "89216060"
 
 ### <a name="private-keywords"></a>私有关键字
 
-当[XPSDrv 配置模块](xpsdrv-configuration-module.md)在[**DrvDocumentEvent**](/windows-hardware/drivers/ddi/winddiui/nf-winddiui-drvdocumentevent)函数调用期间处理[XPS 驱动程序文档事件](xps-driver-document-events.md)时，它可以将*私有关键字*放在 PrintTicket 条目中。 然后，在筛选器读取 PrintTicket 时，打印筛选器管道中的处理筛选器将读取这些 PrintTicket 条目。
+当 [XPSDrv 配置模块](xpsdrv-configuration-module.md)在 [**DrvDocumentEvent**](/windows-hardware/drivers/ddi/winddiui/nf-winddiui-drvdocumentevent)函数调用期间处理 [XPS 驱动程序文档事件](xps-driver-document-events.md)时，它可以将 *私有关键字* 放在 PrintTicket 条目中。 然后，在筛选器读取 PrintTicket 时，打印筛选器管道中的处理筛选器将读取这些 PrintTicket 条目。
 
 ### <a name="filter-pipeline-property-bag"></a>筛选器管道属性包
 
-配置模块还可以使用 *筛选器管道属性包* 来存储数据，或将信息传递给筛选器管道。 若要使用属性包公开配置服务，配置模块必须导出 **DrvPopulateFilterServices** 方法。 此外，筛选器管道配置文件必须包括每个服务的** &lt; FilterServiceProvider &gt; **元素。 提供程序模块必须实现并导出 **DllCanUnloadNow** 函数。 通常情况下，这些提供程序将在属性包中发布 COM 接口。 当使用这些接口时，提供程序必须保持加载。
+配置模块还可以使用 *筛选器管道属性包* 来存储数据，或将信息传递给筛选器管道。 若要使用属性包公开配置服务，配置模块必须导出 **DrvPopulateFilterServices** 方法。 此外，筛选器管道配置文件必须包括每个服务的 **&lt; FilterServiceProvider &gt;** 元素。 提供程序模块必须实现并导出 **DllCanUnloadNow** 函数。 通常情况下，这些提供程序将在属性包中发布 COM 接口。 当使用这些接口时，提供程序必须保持加载。
 
-如果服务提供程序 dll 不可用，则另一个元素** &lt; OptionalFilterServiceProvider &gt; **允许管道管理器继续执行打印作业。 如果没有可选的服务提供程序，则各个筛选器都必须定义其行为。 否则，如果使用** &lt; FilterServiceProvider &gt; **并且无法加载 dll，则作业将失败。 Windows 7 及更高版本支持** &lt; OptionalFilterServiceProvider &gt; **元素。
+如果服务提供程序 dll 不可用，则另一个元素 **&lt; OptionalFilterServiceProvider &gt;** 允许管道管理器继续执行打印作业。 如果没有可选的服务提供程序，则各个筛选器都必须定义其行为。 否则，如果使用 **&lt; FilterServiceProvider &gt;** 并且无法加载 dll，则作业将失败。 Windows 7 及更高版本支持 **&lt; OptionalFilterServiceProvider &gt;** 元素。
 
 下面的代码示例显示了 **DrvPopulateFilterServices** 函数：
 
@@ -87,7 +86,7 @@ DrvPopulateFilterServices(
 
 有关前述函数的详细信息，请参阅 [**DrvPopulateFilterServices**](/windows-hardware/drivers/ddi/filterpipeline/nf-filterpipeline-drvpopulatefilterservices)。
 
-下面的代码示例显示了筛选器管道配置文件中的** &lt; FilterServiceProvider &gt; **元素的 XML 语法：
+下面的代码示例显示了筛选器管道配置文件中的 **&lt; FilterServiceProvider &gt;** 元素的 XML 语法：
 
 ```xml
 <Filters>
@@ -101,7 +100,7 @@ DrvPopulateFilterServices(
 
 *交错* 是指 XPS 文档的各个资源部分与 FixedPage 文档部分一起流动的方式。 当筛选器管道为管道中包含 XPS 文档接口的第一个筛选器创建 XPS 文档对象模型时，将不再遵循 XPS 假脱机文件的交错顺序。 但是，使用 XPS 文档界面的管道中的最后一个筛选器可以在筛选器配置文件中指定一个交错顺序，以便管道在序列化 XPS 内容时使用。 选择与输出设备或输出文件最兼容的交错顺序可以提高后续文档处理的性能。
 
-下面的示例筛选器摘自前面的示例筛选器配置文件，该文件已修改以显示如何使用隔行扫描选项。 尽管此示例演示了用于说明的隔行扫描选项，但实际筛选器配置文件在筛选器定义中只有一个** &lt; 交错 &gt; **元素：
+下面的示例筛选器摘自前面的示例筛选器配置文件，该文件已修改以显示如何使用隔行扫描选项。 尽管此示例演示了用于说明的隔行扫描选项，但实际筛选器配置文件在筛选器定义中只有一个 **&lt; 交错 &gt;** 元素：
 
 ```xml
     <Filter     dll="XDNUp.dll"
@@ -116,11 +115,11 @@ DrvPopulateFilterServices(
 
 筛选器管道支持以下交错顺序：
 
--   **ResourcesFirst**交错顺序在依赖于资源的 FixedPage 之前流式传输每个相关资源。 这种交错顺序适用于打印机驱动程序和直接消耗打印机，因为它提供了打印机在呈现开始之前需要呈现文本和页面内容的字体和图像资源。
+-   **ResourcesFirst** 交错顺序在依赖于资源的 FixedPage 之前流式传输每个相关资源。 这种交错顺序适用于打印机驱动程序和直接消耗打印机，因为它提供了打印机在呈现开始之前需要呈现文本和页面内容的字体和图像资源。
 
--   **MarkupFirst**交错顺序流式传输文档文本和标记，以及有关如何在处理实际资源之前使用资源的信息。 此交错顺序最适用于存档文件目标和联机查看文档的应用程序。
+-   **MarkupFirst** 交错顺序流式传输文档文本和标记，以及有关如何在处理实际资源之前使用资源的信息。 此交错顺序最适用于存档文件目标和联机查看文档的应用程序。
 
-### <a name="archive-optimized-xps-output"></a>存档优化的 XPS 输出
+### <a name="archive-optimized-xps-output"></a>Archive-Optimized XPS 输出
 
 此功能使打印驱动程序可以将存档优化的 XPS 输出显式请求为假脱机文件。 在 Windows 8 中，Microsoft XPS 文档编写器 v4 (MXDW) 通过仅可用于 Microsoft XPS 文档转换器 (MXDC) 中的 MXDW 的代码路径生成此存档就绪的 XPS 输出。 因此，打印驱动程序可以从 MXDC 生成此存档优化的 XPS。
 

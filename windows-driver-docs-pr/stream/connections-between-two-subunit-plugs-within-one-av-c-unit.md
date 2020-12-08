@@ -1,26 +1,25 @@
 ---
 title: 在一个 AV/C 单元中的两个子单元插头之间的连接
 description: 提供有关一个 AV/C 单元内两个子单位插头之间连接的信息
-ms.assetid: 2acd5f23-89b6-40f9-9154-22f1bb51d08c
 keywords:
 - 连接 WDK AV/C
 - AV/C WDK，连接方案
 - AVCCONNECTINFO
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 225c00256a3428a03eaa5f98768ea003cf935d7e
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 07b64336935a780db0a9450117d30d7455c31d20
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89190635"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96795847"
 ---
 # <a name="connections-between-two-subunit-plugs-within-one-avc-unit"></a>在一个 AV/C 单元中的两个子单元插头之间的连接
 
 
 方案3和4表示同一单元中的子单位和其他子单位之间的连接。
 
-### <a name="scenario-3"></a>**方案 3**
+### <a name="scenario-3"></a>**场景 3**
 
 从特定的源插件 (0x0 连接到 0x1E) ，或同一单元中另一个子位置的任何可用源插件 (0xFF) ，如下图所示。
 
@@ -86,7 +85,7 @@ ms.locfileid: "89190635"
 
  
 
-### <a name="scenario-4"></a>**方案 4**
+### <a name="scenario-4"></a>**场景 4**
 
 从本地子源的源插头连接到特定的目标插头 (0x0 到 0x1E) ，或者从另一个子位置的任何可用的 (0xFF) 目标插头进行连接，如下图所示。 方案4表示与方案3相反的情况。
 

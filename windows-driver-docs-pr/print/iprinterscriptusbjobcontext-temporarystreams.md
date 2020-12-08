@@ -4,7 +4,6 @@ description: 返回可由 IHV JavaScript 函数为当前作业使用的永久性
 MSHAttr:
 - PreferredSiteName:MSDN
 - PreferredLib:/library/windows/hardware
-ms.assetid: ED9AFB90-287B-4030-AC20-ECCA9841D27E
 keywords:
 - TemporaryStreams 方法打印设备
 - TemporaryStreams 方法打印设备，IPrinterScriptUsbJobContext 接口
@@ -17,12 +16,12 @@ api_type:
 - COM
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 06159a996ce3f996780dcd2e875b63e609a97e29
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 384812f12814258c6edb3f26a2ea033e3509ec16
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89218203"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96796595"
 ---
 # <a name="iprinterscriptusbjobcontexttemporarystreams-method"></a>IPrinterScriptUsbJobContext：： TemporaryStreams 方法
 
@@ -33,7 +32,7 @@ ms.locfileid: "89218203"
 
 ```cpp
 HRESULT TemporaryStreams(
-  [out, retval] IDispatch **ppArray
+  [out, retval] IDispatch **ppArray
 );
 ```
 
@@ -64,7 +63,7 @@ HRESULT TemporaryStreams(
 <tbody>
 <tr class="odd">
 <td><p>最低受支持的客户端</p></td>
-<td><p>Windows 8.1</p></td>
+<td><p>Windows 8.1</p></td>
 </tr>
 <tr class="even">
 <td><p>最低受支持的服务器</p></td>
@@ -72,12 +71,12 @@ HRESULT TemporaryStreams(
 </tr>
 <tr class="odd">
 <td><p>目标平台</p></td>
-<td>“桌面”</td>
+<td>台式机</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 [**IPrinterScriptUsbJobContext**](iprinterscriptusbjobcontext.md)
 

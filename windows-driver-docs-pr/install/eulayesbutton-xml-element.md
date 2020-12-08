@@ -1,7 +1,6 @@
 ---
 title: eulaYesButton XML 元素
 description: eulaYesButton XML 元素
-ms.assetid: 7d91d3ec-af0a-4b6a-83d8-fa14a527378b
 keywords:
 - eulaYesButton XML 元素设备和驱动程序安装
 topic_type:
@@ -12,12 +11,12 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 3be0874c97881b9669c65ec62845ba08f01f292c
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: b5cb82d87d8a549b96bba6baceb01702879e0daa
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89095357"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96796111"
 ---
 # <a name="eulayesbutton-xml-element"></a>eulaYesButton XML 元素
 
@@ -83,7 +82,7 @@ ms.locfileid: "89095357"
 
 如果未指定 **eulaYesButton** 元素，则 DPInst 将显示默认 DPInst EULA 页上显示的默认选项按钮文本。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**协议**](eula-xml-element.md)

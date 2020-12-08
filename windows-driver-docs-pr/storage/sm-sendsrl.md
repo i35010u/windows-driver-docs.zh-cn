@@ -1,7 +1,6 @@
 ---
 title: SM \_ SendSRL 函数
 description: SM \_ SENDSRL WMI 方法通过所指示的端口将扫描远程循环 (SRL) 命令发送到指定的域控制器。
-ms.assetid: 44090e8d-ffb2-48a9-a574-5bf067ffa952
 keywords:
 - SM_SendSRL 函数存储设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: a057ddc5bf0822699ca2f35d49dc2f79ccf49995
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 4dae92dd6e91cc9e0a455044b9b1190769192036
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89191639"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96795413"
 ---
 # <a name="sm_sendsrl-function"></a>SM \_ SendSRL 函数
 
@@ -31,13 +30,13 @@ SM \_ SENDSRL WMI 方法通过所指示的端口将扫描远程循环 (SRL) 命�
 
 ```ManagedCPlusPlus
 void SM_SendSRL(
-   [in, HBAType("HBA_WWN")] uint8              HbaPortWWN[8],
-   [in, HBAType("HBA_WWN")] uint8              WWN[8],
-   [in] uint32                                 Domain,
-   [in] uint32                                 InRespBufferMaxSize,
-   [out, HBA_STATUS_QUALIFIERS] HBA_STATUS     HBAStatus,
-   [out] uint32                                TotalRespBufferSize,
-   [out] uint32                                OutRespBufferSize,
+   [in, HBAType("HBA_WWN")] uint8              HbaPortWWN[8],
+   [in, HBAType("HBA_WWN")] uint8              WWN[8],
+   [in] uint32                                 Domain,
+   [in] uint32                                 InRespBufferMaxSize,
+   [out, HBA_STATUS_QUALIFIERS] HBA_STATUS     HBAStatus,
+   [out] uint32                                TotalRespBufferSize,
+   [out] uint32                                OutRespBufferSize,
    [out, WmiSizeIs("OutRespBufferSize")] uint8 RespBuffer[]
 );
 ```
@@ -90,7 +89,7 @@ RPS 命令的结果。 微型端口驱动程序在 SM \_ SendRPS OUT 结构的 R
 <tbody>
 <tr class="odd">
 <td align="left"><p>目标平台</p></td>
-<td align="left">“桌面”</td>
+<td align="left">台式机</td>
 </tr>
 <tr class="even">
 <td align="left"><p>标头</p></td>

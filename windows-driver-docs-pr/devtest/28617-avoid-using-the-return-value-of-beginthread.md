@@ -1,24 +1,23 @@
 ---
 title: C28617
-description: 警告 C28617 避免使用 _beginthread （） 返回的值。 而是使用 _beginthreadex （）。
-ms.assetid: b0de0809-1583-4c1d-ad70-c3e27afc3e6d
+description: '警告 C28617 避免使用 ( # A1 _beginthread 的返回值。 改为使用 _beginthreadex ( # A1。'
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 f1_keywords:
 - C28617
-ms.openlocfilehash: c47ab4d9199c1f1def1d76a4172c91dca9d0bc14
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ec4776b10012277a2edca83888c74519e66bdfad
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63347086"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96795637"
 ---
 # <a name="c28617"></a>C28617
 
 
-警告 C28617:避免使用返回值的\_beginthread()。 使用\_beginthreadex() 改为
+警告 C28617：避免使用 \_ beginthread ( # A1 的返回值。 改为使用 \_ beginthreadex ( # A1
 
-使用更安全 **\_beginthreadex**比 **\_beginthread**。 如果线程生成的 **\_beginthread**很快退出，返回给调用方的句柄 **\_beginthread**可能是无效，或可在更糟的是，指向另一个线程。 但是，通过返回的句柄 **\_beginthreadex**的调用方必须关闭 **\_beginthreadex**，因此它保证是有效的句柄，如果 **\_beginthreadex**未返回错误。
+使用 **\_ beginthreadex** 比 **\_ beginthread** 更安全。 如果由 **\_ beginthread** 生成的线程很快退出，则返回给 **\_ beginthread** 的调用方的句柄可能无效，或者更糟的是指向另一个线程。 但是，由 **\_ beginthreadex** 返回的句柄必须由 **\_ beginthreadex** 的调用方关闭，因此如果 **\_ beginthreadex** 未返回错误，则可以保证其为有效句柄。
 
 ### <a name="span-idexamplesspanspan-idexamplesspanexamples"></a><span id="examples"></span><span id="EXAMPLES"></span>示例
 
@@ -29,7 +28,7 @@ hThread = (HANDLE)_beginthread (&SecondThreadFunc, 0, &args);
 WaitForSingleObject (hThread, INFINITE);
 ```
 
-下面的代码示例可避免此警告。
+下面的代码示例可避免出现此警告。
 
 ```
 hThread = (HANDLE)_beginthreadex ( NULL, 0,

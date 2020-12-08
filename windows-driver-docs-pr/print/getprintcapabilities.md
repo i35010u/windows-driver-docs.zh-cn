@@ -1,17 +1,16 @@
 ---
 title: GetPrintCapabilities
 description: IPrintTicketProvider GetPrintCapabilities 例程必须返回有效的 PrintCapabilities 文档。
-ms.assetid: 9c9bd387-5ea2-4758-a967-190a711cd8c3
 keywords:
 - GetPrintCapabilities
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8a19f01085a58ea252b1f7f0de03e40d21b30f2f
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 084d11a50d98a4936a551c20488c3cd20a6a8aed
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89217739"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96796897"
 ---
 # <a name="getprintcapabilities"></a>GetPrintCapabilities
 

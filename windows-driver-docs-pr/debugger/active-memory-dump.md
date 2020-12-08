@@ -1,15 +1,14 @@
 ---
 title: 活动内存转储
 description: 活动内存转储
-ms.assetid: b40979b6-cd9a-4655-8030-8bde25d75113
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 73775df043a985a39763c29f6e628104b554173a
-ms.sourcegitcommit: e0bec5347825e04fb3b2309d04156b01a83fa593
+ms.openlocfilehash: dd3f5bed0264d52031339e6428f505afbf530932
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88090114"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96796295"
 ---
 # <a name="active-memory-dump"></a>活动内存转储
 
@@ -17,7 +16,7 @@ ms.locfileid: "88090114"
 ## <span id="ddk_kernel_memory_dump_dbg"></span><span id="DDK_KERNEL_MEMORY_DUMP_DBG"></span>
 
 
-*活动内存转储*类似于[完整的内存转储](complete-memory-dump.md)，但它会筛选出不可能与解决主机上的问题相关的页面。 由于这种筛选，通常比完整的内存转储小得多。 
+*活动内存转储* 类似于 [完整的内存转储](complete-memory-dump.md)，但它会筛选出不可能与解决主机上的问题相关的页面。 由于这种筛选，通常比完整的内存转储小得多。 
 
 此转储文件包含分配给用户模式应用程序的任何内存。 它还包括分配给 Windows 内核和硬件抽象层 (HAL) ，以及分配给内核模式驱动程序和其他内核模式程序的内存。 转储包含映射到内核或用户空间的活动页面，这些页面可用于调试，以及所选页面文件支持的转换、备用和已修改的页面，例如通过 VirtualAlloc 或页面文件支持的部分分配的内存。 活动转储不包括免费和零个列表中的页面、文件缓存、来宾 VM 页面以及在调试过程中不可能有用的各种其他类型的内存。 
 
@@ -27,7 +26,7 @@ ms.locfileid: "88090114"
 
 活动内存转储在 Windows 10 和更高版本中可用。
 
-**注意**   若要在调试活动内存转储时取消丢失页错误消息，请使用 "[**忽略 \_ 缺少的 \_ 页**](-ignore-missing-pages--suppress-missing-page-errors-.md)" 命令。
+**注意**  若要在调试活动内存转储时取消丢失页错误消息，请使用 " [**忽略 \_ 缺少的 \_ 页**](-ignore-missing-pages--suppress-missing-page-errors-.md) " 命令。
 
  
 

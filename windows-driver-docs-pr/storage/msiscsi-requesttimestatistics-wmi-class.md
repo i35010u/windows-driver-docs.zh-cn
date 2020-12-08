@@ -1,20 +1,19 @@
 ---
 title: MSiSCSI \_ REQUESTTIMESTATISTICS WMI 类
 description: MSiSCSI \_ REQUESTTIMESTATISTICS WMI 类
-ms.assetid: 3e9f3214-3120-41f6-bb06-7ace4f243c5f
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 5fa88e317efc98b941d84551e8c72dca547c5c44
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 2db6450e116719e8a7b90aa8cd75bb6ea1f6cf3a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89188501"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96796451"
 ---
 # <a name="msiscsi_requesttimestatistics-wmi-class"></a>MSiSCSI \_ REQUESTTIMESTATISTICS WMI 类
 
 
-MSiSCSI \_ REQUESTTIMESTATISTICS WMI 类提供有关 iSCSI 请求的统计信息。 此类在*管理 mof*中定义为：
+MSiSCSI \_ REQUESTTIMESTATISTICS WMI 类提供有关 iSCSI 请求的统计信息。 此类在 *管理 mof* 中定义为：
 
 ```cpp
 class MSiSCSI_RequestTimeStatistics : Win32_PerfRawData

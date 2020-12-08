@@ -1,28 +1,27 @@
 ---
 title: OID_SWITCH_NIC_DISCONNECT
 description: Hyper-v 可扩展交换机的协议边缘 (OID 发出对象标识符) 设置 OID_SWITCH_NIC_DISCONNECT 请求，通知底层可扩展交换机端口与网络适配器之间的连接已被破坏。 完全断开连接后，可扩展交换机的协议边缘将发出 OID_SWITCH_NIC_DELETE 的 OID 设置请求。
-ms.assetid: 367081A7-F259-4132-B857-C956C0F2829C
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_SWITCH_NIC_DISCONNECT 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 7d21229c1f897f82c77d6e9ddd7c65b9c1a5adff
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 8c2980d5b85f46d23df40dcd4025409c12c75098
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89213817"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96795915"
 ---
 # <a name="oid_switch_nic_disconnect"></a>OID \_ 交换机 \_ NIC \_ 断开连接
 
 
 Hyper-v 可扩展交换机的协议边缘 (OID 发出对象标识符) 设置 OID 交换机 NIC 断开连接的请求， \_ \_ \_ 通知底层可扩展交换机端口与网络适配器之间的连接被切断。 完全断开连接后，可扩展交换机的协议边缘将发出 oid [ \_ 交换机 \_ NIC \_ DELETE](oid-switch-nic-delete.md)的 oid 设置请求。
 
-[**Ndis \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的**InformationBuffer**成员包含指向[**NDIS \_ 交换机 \_ NIC \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_nic_parameters)结构的指针。
+[**Ndis \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的 **InformationBuffer** 成员包含指向 [**NDIS \_ 交换机 \_ NIC \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_nic_parameters)结构的指针。
 
 <a name="remarks"></a>备注
 -------
 
-[**NDIS \_ 交换机 \_ NIC \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_nic_parameters)结构的**index**成员指定为其发出断开连接通知的网络适配器的索引。 具有指定 **索引** 值的网络适配器连接到由 **PortId** 成员指定的可扩展交换机端口。 有关这些索引值的详细信息，请参阅 [网络适配器索引值](./network-adapter-index-values.md)。
+[**NDIS \_ 交换机 \_ NIC \_ 参数**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_nic_parameters)结构的 **index** 成员指定为其发出断开连接通知的网络适配器的索引。 具有指定 **索引** 值的网络适配器连接到由 **PortId** 成员指定的可扩展交换机端口。 有关这些索引值的详细信息，请参阅 [网络适配器索引值](./network-adapter-index-values.md)。
 
 当扩展处理 OID \_ 交换机 \_ NIC 断开连接的 oid 集请求时，必须遵循以下准则 \_ ：
 
@@ -40,7 +39,7 @@ Hyper-v 可扩展交换机的协议边缘 (OID 发出对象标识符) 设置 OID
 
 
 
-    -   从为其发出 OID 交换机 nic 断开 OID 请求的基础网络适配器转发或产生 ndis 状态 [** \_ \_ 切换 \_ nic \_ 状态**](./ndis-status-switch-nic-status.md) 的 ndis 状态指示 \_ \_ \_ 。
+    -   从为其发出 OID 交换机 nic 断开 OID 请求的基础网络适配器转发或产生 ndis 状态 [**\_ \_ 切换 \_ nic \_ 状态**](./ndis-status-switch-nic-status.md) 的 ndis 状态指示 \_ \_ \_ 。
 
         **注意**  如果在发出 OID 交换机 NIC 断开连接之前调用 [*ReferenceSwitchNic*](/windows-hardware/drivers/ddi/ndis/nc-ndis-ndis_switch_reference_switch_nic) 的扩展来递增可扩展交换机引用计数器 \_ \_ \_ ，则扩展仍可转发或产生 NDIS 状态指示。
 
@@ -101,7 +100,7 @@ Hyper-v 可扩展交换机的协议边缘 (OID 发出对象标识符) 设置 OID
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 ****

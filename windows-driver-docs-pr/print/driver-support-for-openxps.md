@@ -1,15 +1,14 @@
 ---
 title: OpenXPS 的驱动程序支持
 description: OpenXPS 是文档的开放 XML 纸张规范格式，并基于 Ecma International 标准规范。
-ms.assetid: 9BC9787E-A54D-4A11-B256-57BE5D206404
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f272cd4bcfac048496fe991c091ee6ced7de1ae7
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: b9c350261f847be6155be89e8bfae5d742dbc71c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89217745"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96797167"
 ---
 # <a name="driver-support-for-openxps"></a>OpenXPS 的驱动程序支持
 
@@ -39,7 +38,7 @@ Microsoft XPS 文档编写器 (MXDW) 已更新，以允许 MXDW 从任何 Window
 -   直接发送到后台处理程序的 XPS 假脱机文件将被视为 MSXPS 并进行相应处理。
 -   将 OpenXPS 文件直接发送到后台处理程序的结果是未定义的，并且可能会导致打印作业失败。
 
-**注意**   没有为此方案提供支持的计划。
+**注意**  没有为此方案提供支持的计划。
 
  
 

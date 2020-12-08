@@ -1,23 +1,22 @@
 ---
 title: 记录驱动程序错误
 description: 记录驱动程序错误
-ms.assetid: 7deb2a9a-70aa-4660-a0c8-e118e03eef3b
 keywords:
 - 错误日志 WDK 显示
 - 错误 WDK 显示
 - 记录错误 WDK 显示
 ms.date: 10/27/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 0e58bc90598cc01d8dc7529417c833c0b3f4618a
-ms.sourcegitcommit: a32079f3cc5d564d3b12576f832ed442a6b1a918
+ms.openlocfilehash: e6a9e1bdb5a64acbf038dcbfbefef77396f8b198
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92793486"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96796237"
 ---
 # <a name="logging-driver-errors"></a>记录驱动程序错误
 
-Microsoft DirectX graphics 内核子系统 ( *Dxgkrnl.sys* ) 记录将与驱动程序相关的错误、断言、警告和事件显示到内部使用的日志 ( *Watchdog.sys* ) 。
+Microsoft DirectX graphics 内核子系统 (*Dxgkrnl.sys*) 记录将与驱动程序相关的错误、断言、警告和事件显示到内部使用的日志 (*Watchdog.sys*) 。
 
 除了将信息记录到日志之外，默认情况下，如果出现错误或断言，DirectX 图形内核子系统的已检查内部版本将中断到附加的调试器。 默认情况下，DirectX 图形内核子系统的免费内部版本仅将错误和断言记录到日志中，如果出现错误或断言，则不会中断调试器。 你可以通过在注册表中首先创建以下 REG_DWORD 项来更改此默认行为：
 

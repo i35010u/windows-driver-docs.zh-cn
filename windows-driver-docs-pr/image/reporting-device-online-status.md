@@ -1,15 +1,14 @@
 ---
 title: 报告设备联机状态
 description: 报告设备联机状态
-ms.assetid: 59ce747a-bb5e-4e8c-ab4a-d3f4432f17e6
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b6dba638576bb849ee1027b161dc1dd1752e98e3
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 498f9eedd72a26a18c0168908fe439a9866993b7
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89188890"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96795515"
 ---
 # <a name="reporting-device-online-status"></a>报告设备联机状态
 
@@ -25,7 +24,7 @@ WIA 服务调用 **IStiUSD：： GetStatus** 方法执行两个主要操作：
 
 -   轮询设备事件，例如推送按钮事件。
 
-可以通过检查[**STI \_ 设备 \_ 状态**](/windows-hardware/drivers/ddi/sti/ns-sti-_sti_device_status)结构的**StatusMask**成员来确定操作请求。 **StatusMask**成员可以是以下请求之一。
+可以通过检查 [**STI \_ 设备 \_ 状态**](/windows-hardware/drivers/ddi/sti/ns-sti-_sti_device_status)结构的 **StatusMask** 成员来确定操作请求。 **StatusMask** 成员可以是以下请求之一。
 
 <a href="" id="sti-devstatus-online-state"></a>STI \_ DEVSTATUS \_ ONLINE \_ 状态  
 检查设备是否处于联机状态。
@@ -45,7 +44,7 @@ WIA 服务调用 **IStiUSD：： GetStatus** 方法执行两个主要操作：
 
 对于轮询事件和中断事件，将调用 **IStiUSD：： GetNotificationData** 方法。 在此方法中，你应填写适当的事件信息以返回到 WIA 服务。
 
-**注意**   \_ \_ 请始终在**dwEventHandlingState**成员中清除 STI EVENTHANDLING 挂标志，以确保在发生设备事件时正确设置该标志。
+**注意**  \_ \_ 请始终在 **dwEventHandlingState** 成员中清除 STI EVENTHANDLING 挂标志，以确保在发生设备事件时正确设置该标志。
 
  
 

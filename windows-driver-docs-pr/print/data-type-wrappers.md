@@ -1,28 +1,27 @@
 ---
 title: 数据类型包装器
 description: 数据类型包装器
-ms.assetid: 8c88002b-4d0a-4e81-b50d-f765caa7cf80
 keywords:
 - 快照 WDK GDL，结构
-- GDL WDK 枚举
+- GDL WDK，枚举
 - 枚举 WDK GDL
 - 数据类型 WDK GDL
 - GDL WDK，数据类型
-- 分析器 WDK GDL，数据类型的包装
+- 分析器 WDK GDL，数据类型包装器
 - 快照 WDK GDL，数据类型 wrapers
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cea285f931f3f5c7ac190fea891e102af3eca303
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d3a32b427552bbe92c0b2122d44a224761f07951
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63341301"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96797341"
 ---
 # <a name="data-type-wrappers"></a>数据类型包装器
 
 
-GDL 分析器将每个模板定义的数据类型包装在另一个数据类型，包含可能在实际的快照中显示的 XML 特性的适当声明。 需要此额外的数据类型，因为 XSD 架构将视为未声明出现在元素开始标记作为架构验证错误的 XML 特性。 此额外的数据类型也不需要您知道由分析器在内部使用的属性，并隔离从快照中的未来更改的模板。
+GDL 分析器将每个模板定义的数据类型包装在另一种数据类型中，该数据类型包含可能出现在实际快照中的 XML 特性的适当声明。 这种额外的数据类型是必需的，因为 XSD 架构会将元素开始标记中显示的未声明的 XML 属性视为架构验证错误。 另外，这种额外的数据类型还无需知道分析器在内部使用的特性，并使模板不受快照中将来更改的隔离。
 
  
 

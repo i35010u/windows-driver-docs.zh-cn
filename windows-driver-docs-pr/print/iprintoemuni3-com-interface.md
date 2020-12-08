@@ -1,17 +1,16 @@
 ---
 title: IPrintOemUni3 COM 接口
 description: IPrintOemUni3 COM 接口
-ms.assetid: 2b3a43fe-52f8-4cb2-993e-d8fcdc878e90
 keywords:
 - IPrintOemUni3
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b95298e72e008f6212d6849fa69746bd01871bec
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: e37c5d0d2ee26e7727666d2f247209f62bb742d3
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90101639"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96796535"
 ---
 # <a name="iprintoemuni3-com-interface"></a>IPrintOemUni3 COM 接口
 
@@ -31,7 +30,7 @@ ms.locfileid: "90101639"
 <thead>
 <tr class="header">
 <th>方法</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>

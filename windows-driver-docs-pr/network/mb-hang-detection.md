@@ -1,69 +1,68 @@
 ---
 title: MB 挂起检测
 description: MB 挂起检测
-ms.assetid: D3D222F7-96BE-48F7-8074-8820E43E3C7B
 keywords:
-- MB 挂起检测，移动宽带挂起检测，移动宽带的微型端口驱动程序挂起检测
+- MB 挂起检测，移动宽带挂起检测，移动宽带微型端口驱动程序挂起检测
 ms.date: 08/09/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 0a3d735b1c176b9f8d07e94c481bbbb427bd3dc5
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9f6eaa12d8c59ce569be06547b94235bde879fde
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63343395"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96795447"
 ---
 # <a name="mb-hang-detection"></a>MB 挂起检测
 
-移动宽带 （MB 或 MBB） 挂起检测是 Windows 10，版本 1809年及更高版本中一项技术，可帮助 MBB 客户端驱动程序检测的控制路径和从这些恢复挂起状态。 是的一部分[基于设备的重置和恢复](mb-device-based-reset-and-recovery.md)旨在从各种 MBB 设备和驱动程序的错误情况中恢复的功能。 
+移动宽带 (MB 或 MBB) 挂起检测是 Windows 10 版本1809及更高版本中的一项技术，可帮助 MBB 客户端驱动程序检测控制路径中的挂起情况并从中恢复。 它是 [基于设备的重置和恢复](mb-device-based-reset-and-recovery.md) 功能的一部分，旨在从 MBB 设备和驱动程序的各种可能的错误情况中恢复。 
 
-本主题中的流关系图作为基础总线，使用 USB 尽管重置机制与总线无关，如果在 ACPI 和总线堆栈定义此页所述的接口。 
+本主题中的流程图使用 USB 作为基础总线，但如果 ACPI 和总线堆栈定义此页上描述的接口，则重置机制是不可知的。 
 
-以下流程图以一般方式适用于所有 NDIS 对象标识符 (Oid) 和到微型端口驱动程序的回调。 可能情况下的恢复在此过程不如果 NDIS 不完全支持重置恢复无法工作。
+以下流程图一般适用于所有 NDIS 对象标识符 (Oid) 和回微端口驱动程序的回叫。 在某些情况下，如果 NDIS 不完全支持重置恢复，此过程的恢复部分将不起作用。
 
-![高级挂起检测和重置流](images/mb-self-healing-hang-detection-highlevel.png "高级挂起检测和重置流。")
+![高级别挂起检测和重置流](images/mb-self-healing-hang-detection-highlevel.png "高级别挂起检测和重置流。")
 
 此挂起检测和重置流序列包含三个阶段：
 
 1. 挂起检测 
-2. 若要获取状态，以便进行进一步调试任何潜在的日志记录
-3. 重置-意外删除处理
+2. 获取用于进一步调试的状态的任何潜在日志记录
+3. 重置–意外删除处理
 
 ## <a name="hang-detection"></a>挂起检测
 
-服务层提供了对驱动程序以启动恢复时错误因为在用户层上，检测到的内容的提示`WWANSvc`有管理的移动电话网络适配器连接状态的状态机。 若要支持此功能，专用接口被定义驱动程序用于触发重置操作。 有少数情况下，驱动程序在哪里产生自己设备的命令，以确保状态机有效。 如果任何这些命令的超时时间，然后从驱动程序本身无需进行通信的操作返回到用户模式，才能启动恢复操作触发重置/恢复。 
+服务层为驱动程序提供提示，以便在用户层上检测到错误时启动恢复，因为 `WWANSvc` 有一个状态机管理蜂窝适配器的连接状态。 为了支持这一点，定义了一个专用接口，驱动程序使用该接口来触发重置操作。 在某些情况下，驱动程序会在设备上发出自己的命令，以确保状态机有效。 如果这些命令中的任何一个出现超时，则将从驱动程序本身触发重置/恢复，而无需将操作重新与用户模式通信以启动恢复操作。 
 
-有关 UDE 客户端驱动程序可用于触发重置操作的专用接口的详细信息，请参阅[基于 MB 设备的重置和恢复](mb-device-based-reset-and-recovery.md#reset-recovery-for-ude-devices)。
+有关 UDE 客户端驱动程序可用于触发重置操作的专用接口的详细信息，请参阅 [MB 基于设备的重置和恢复](mb-device-based-reset-and-recovery.md#reset-recovery-for-ude-devices)。
 
-此示例使用[OID_WWAN_CONNECT](oid-wwan-connect.md)作为一个示例，用于该挂起检测工作流中的每个步骤。 
+此示例使用 [OID_WWAN_CONNECT](oid-wwan-connect.md) 作为遍历挂起检测流的示例。 
 
-![重置流的 OID_WWAN_CONNECT](images/mb-self-healing-hang-detection-wwanconnect-flow.png "重置 OID_WWAN_CONNECT 的流。")
+![OID_WWAN_CONNECT 的重置流](images/mb-self-healing-hang-detection-wwanconnect-flow.png "OID_WWAN_CONNECT 的重置流。")
 
-1. 接收 （通过协议驱动程序） 的 NDIS [OID_WWAN_CONNECT](oid-wwan-connect.md)。
-2. NDIS 将 OID_WWAN_CONNECT 传递到类驱动程序。
-3. 在类驱动程序构造的连接请求的 MBIM 消息。
-4. 在类驱动程序将 MBIM 消息发送到通过 USB 总线 MBIM 函数。 
-5. 固件命令将会超时，这可能是因为固件挂起或 MBIM 命令需要很长时间才能完成。
-6. 在类驱动程序返回 NDIS 命令而无需使用 NDIS_NOTIFICATION_REQUIRED 固件完成。 从驱动程序通过 OID_WWAN_CONNECT 结果返回经请求的通知[NDIS_STATUS_WWAN_CONTEXT_STATE](ndis-status-wwan-context-state.md)与**状态**设置为**超时**，该值指示基础设备没有响应命令。 
-7. NDIS 完成 OID 请求到协议驱动程序。
-8. 协议驱动程序返回回服务，会看到该命令失败的调用。
-9. 该服务会触发重置操作使用新的 OID 接口在设备上。 
-10. 此点之后，FDO 调用总线意外删除和重新枚举 MBB 设备。 如果基础总线，USB FDO 将调用适当的函数以将设备重置。 
-11. 如果在 UEFI 中定义了适当的 ACPI 方法，则将触发文件夹数或 PLDR。
+1. 通过协议驱动程序) 的 NDIS (收到 [OID_WWAN_CONNECT](oid-wwan-connect.md)。
+2. NDIS 将 OID_WWAN_CONNECT 向下传递到类驱动程序。
+3. 类驱动程序为连接请求构造 MBIM 消息。
+4. 类驱动程序通过 USB 总线将 MBIM 消息发送到 MBIM 函数。 
+5. 固件命令超时，原因可能是固件挂起或 MBIM 命令需要很长时间才能完成。
+6. 类驱动程序将返回不带 NDIS_NOTIFICATION_REQUIRED 的固件完成的 NDIS 命令。 OID_WWAN_CONNECT 的结果将 [NDIS_STATUS_WWAN_CONTEXT_STATE](ndis-status-wwan-context-state.md) 通过从驱动程序中的请求通知返回，并将 **状态** 设置为 **Timeout**，指示基础设备未响应命令。 
+7. NDIS 完成对协议驱动程序的 OID 请求。
+8. 协议驱动程序将回调返回给服务，这将会看到该命令失败。
+9. 服务使用新 OID 接口触发设备上的重置操作。 
+10. 在此之后，FDO 会调用总线来意外删除并重新枚举 MBB 设备。 如果基础总线为 USB，则 FDO 将调用相应的函数来重置设备。 
+11. 如果在 UEFI 中定义了适当的 ACPI 方法，则会触发 FLDR 或 PLDR。
 
-有关文件夹数和 PLDR 的详细信息，请参阅[基于 MB 设备的重置和恢复](mb-device-based-reset-and-recovery.md#device-based-resets)。
+有关 FLDR 和 PLDR 的详细信息，请参阅 [MB 基于设备的重置和恢复](mb-device-based-reset-and-recovery.md#device-based-resets)。
 
-## <a name="reset-surprise-removal"></a>重置 （意外删除）
+## <a name="reset-surprise-removal"></a>重置 (惊喜消除) 
 
-后重置恢复可以继续，总线原因要生成意外删除 IRP，提供了支持的插即用 (PnP) 管理器已在 ACPI/UEFI 级别。 NDIS，在接收到意外删除 IRP，调用返回到`WMBCLASS`意外删除即插即用事件回调。 `WMBCLASS` 处理意外删除操作。 此时，必须完成所有命令，等等，必须返回到 NDIS 成功返回的数据包。 否则，在意外删除操作将完成。 流的余下部分等同于在总线上，例如 USB 真实的设备，意外的删除。 
+重置恢复之后，总线会使即插即用 (PnP) 管理器生成意外删除 IRP，前提是该支持存在于 ACPI/UEFI 级别。 NDIS，接收到意外删除 IRP 后，会回拨入， `WMBCLASS` 以获取意外删除的 PnP 事件回调。 `WMBCLASS` 处理意外删除操作。 此时，必须完成所有命令等，并且必须将数据包成功返回回 NDIS。 否则，意外删除操作将无法完成。 流的其余部分与在总线上真正删除设备（例如 USB）相同。 
 
-1. NDIS 调用意外删除的即插即用事件。
-2. `WMBCLASS` 忽略挂起 MBIM 命令的返回值，并返回原始的 NDIS 命令。 
-3. `WMBCLASS` 返回在意外删除的 NDIS 即插即用回调。
+1. NDIS 调用 PnP 事件以进行意外删除。
+2. `WMBCLASS` 忽略挂起的 MBIM 命令的返回并返回原始 NDIS 命令。 
+3. `WMBCLASS` 返回用于意外删除的 NDIS PnP 回调。
 
 ## <a name="recovery"></a>恢复
 
-意外删除，在堆栈包括的所有驱动程序后`WMBCLASS`必须释放所有资源，以便可以删除并重新枚举的总线的设备对象。 如果不这样做，设备将不会重新枚举并不会被恢复。
+在意外删除后，堆栈中的所有驱动程序都 `WMBCLASS` 必须释放所有资源，以便总线可以删除和重新枚举设备对象。 如果不这样做，将不会重新枚举设备，也不会恢复。
 
 ## <a name="related-links"></a>相关链接
 

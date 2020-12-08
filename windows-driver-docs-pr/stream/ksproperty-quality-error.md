@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ 质量 \_ 错误
 description: KSPROPERTY \_ 质量 \_ 错误属性是一个可选属性，如果 pin 支持质量管理，则应实现该属性。
-ms.assetid: a918ef13-f0a7-4eb9-b6ec-dcfec3098c1e
 keywords:
 - KSPROPERTY_QUALITY_ERROR 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6f16d0c38dd5af47b1b767ae9b59dcbe98af4e7d
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 4862fd1472653157984ccc5aadeb202743fbf03a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90106678"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96796427"
 ---
 # <a name="ksproperty_quality_error"></a>KSPROPERTY \_ 质量 \_ 错误
 
@@ -84,7 +83,7 @@ KSPROPERTY \_ 质量 \_ 错误具有类型 [**KSQUALITY**](/windows-hardware/dri
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSPROPERTY**](/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)

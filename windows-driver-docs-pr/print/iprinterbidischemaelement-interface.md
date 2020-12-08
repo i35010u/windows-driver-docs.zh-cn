@@ -1,22 +1,21 @@
 ---
 title: IPrinterBidiSchemaElement 接口
-description: IPrinterBidiSchemaElement 接口作为参数传递给 USB 扩展 JavaScript 方法 setSchema。 此接口表示单个 Bidi 架构元素。
+description: IPrinterBidiSchemaElement 接口作为参数传递给 USB 扩展 JavaScript 方法 setSchema。 此接口表示单个双向架构元素。
 MSHAttr:
 - PreferredSiteName:MSDN
 - PreferredLib:/library/windows/hardware
-ms.assetid: 93AE5FDD-DD77-4F9C-B402-C650ACDD7641
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c48b23afd2f0ba62c43c032d320833573d4f0ae2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9b73712dcffeefddb2ac5a4caff35d1fcb1c7993
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63324817"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96796629"
 ---
 # <a name="iprinterbidischemaelement-interface"></a>IPrinterBidiSchemaElement 接口
 
-IPrinterBidiSchemaElement 接口作为参数传递给 USB 扩展 JavaScript 方法**setSchema**。 此接口表示单个 Bidi 架构元素。
+IPrinterBidiSchemaElement 接口作为参数传递给 USB 扩展 JavaScript 方法 **setSchema**。 此接口表示单个双向架构元素。
 
 此接口有三个方法：
 

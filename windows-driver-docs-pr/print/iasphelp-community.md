@@ -1,13 +1,12 @@
 ---
-title: Iasphelp get\_社区方法
-description: 社区属性启用 ASP 网页，以获取打印服务器的简单网络管理协议 (SNMP) 团体名称。
+title: Iasphelp 获取 \_ 社区方法
+description: 使用社区属性，ASP 网页可以 (SNMP) 社区名称获取打印服务器的简单网络管理协议。
 MS-HAID:
 - webfnc\_1d85e932-6de7-468a-b1dd-8a5678c65615.xml
 - print.iasphelp\_community
 MSHAttr:
 - PreferredSiteName:MSDN
 - PreferredLib:/library/windows/hardware
-ms.assetid: 39e8dff6-9eaf-43dd-b8ca-46982f3eae18
 keywords:
 - get_Community 方法打印设备
 - get_Community 方法打印设备，Iasphelp 接口
@@ -20,36 +19,36 @@ api_type:
 - COM
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ecf5783315979561f9d4a097f4580dde8f3dfa94
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 20ae66cf9b748bc2358f5c1fe453e5a2da0236d3
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63392870"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96796825"
 ---
-# <a name="iasphelpgetcommunity-method"></a>Iasphelp::get\_社区方法
+# <a name="iasphelpget_community-method"></a>Iasphelp：： get \_ 团体方法
 
-**社区**属性启用 ASP 网页，以获取打印服务器的简单网络管理协议 (SNMP) 团体名称。
+使用 **社区** 属性，ASP 网页可以 (SNMP) 社区名称获取打印服务器的简单网络管理协议。
 
 <a name="syntax"></a>语法
 ------
 
 ```cpp
 HRESULT get_Community(
-  [out] BSTR *pVal
+  [out] BSTR *pVal
 );
 ```
 
-<a name="parameters"></a>Parameters
+<a name="parameters"></a>参数
 ----------
 
-*pVal* \[out\]  
-调用方提供指向用于接收指向社区名称字符串的指针的位置。
+*pVal* \[弄\]  
+调用方提供的用于接收指向团体名称字符串的指针的位置的指针。
 
 <a name="return-value"></a>返回值
 ------------
 
-此外可以返回 Win32 错误代码。
+也可以返回 Win32 错误代码。
 
 <table>
 <colgroup>
@@ -69,7 +68,7 @@ HRESULT get_Community(
 </tr>
 <tr class="even">
 <td><strong>E_HANDLE</strong></td>
-<td><p><a href="iasphelp-open.md" data-raw-source="[&lt;strong&gt;Iasphelp::Open&lt;/strong&gt;](iasphelp-open.md)"> <strong>Iasphelp::Open</strong> </a>尚未调用方法。</p></td>
+<td><p>未调用 <a href="iasphelp-open.md" data-raw-source="[&lt;strong&gt;Iasphelp::Open&lt;/strong&gt;](iasphelp-open.md)"><strong>Iasphelp：： Open</strong></a> 方法。</p></td>
 </tr>
 <tr class="odd">
 <td><strong>E_OUTOFMEMORY</strong></td>
@@ -80,9 +79,9 @@ HRESULT get_Community(
 
 ## <a name="vbscript-example"></a>VBScript 示例
 
-如果打印机不支持通过 TCP/IP 端口监视器，则返回的字符串为空。
+如果 TCP/IP 端口监视器不支持打印机，则返回的字符串为空。
 
-[ **Iasphelp::Open** ](iasphelp-open.md)前必须调用方法**Iasphelp::Community**属性可以进行查询。
+在查询 **Iasphelp：：社团** 属性之前，必须先调用 [**Iasphelp：： Open**](iasphelp-open.md)方法。
 
 ```vb
 Dim objPrinter, CommName
@@ -103,11 +102,11 @@ CommName = objPrinter.Community
 <tbody>
 <tr class="odd">
 <td><p>目标平台</p></td>
-<td>桌面设备</td>
+<td>台式机</td>
 </tr>
 </tbody>
 </table>
 
 ## <a name="see-also"></a>请参阅
 
-[**Iasphelp::Open**](iasphelp-open.md)
+[**Iasphelp：： Open**](iasphelp-open.md)

@@ -1,58 +1,57 @@
 ---
 title: 增强的驱动程序配置
-description: GPD 和 PPD 文件可以用于提供增强的驱动程序 v4 打印驱动程序的配置信息。
-ms.assetid: B208C661-4D5B-467A-8451-4382453EC09A
+description: 可以使用 GPD 和 PPD 文件为 v4 打印驱动程序提供增强的驱动程序配置信息。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: faafea3dfbe1dbe85258807e26345432e3105b3e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 806b80559c744e43bfdebce7725fdfc869360796
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63378587"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96797127"
 ---
 # <a name="enhanced-driver-configuration"></a>增强的驱动程序配置
 
 
-GPD 和 PPD 文件可以用于提供增强的驱动程序 v4 打印驱动程序的配置信息。
+可以使用 GPD 和 PPD 文件为 v4 打印驱动程序提供增强的驱动程序配置信息。
 
-V4 驱动程序模型所基于的打印驱动程序然后可以从使用 Bidi 的设备中检索这些 GPD 和 PPD 文件。 这允许设备使用了打印类驱动程序以支持更丰富的功能而无需额外下载从 Windows 更新设置。
+然后，基于 v4 驱动程序模型的打印驱动程序可以使用双向从设备检索这些 GPD 和 PPD 文件。 这允许使用打印类驱动程序的设备支持更丰富的功能集，而无需 Windows 更新的其他下载。
 
-默认情况下支持 Ws-print v1.1 的驱动程序支持此功能。 但是，TCP/IP 的设备和 WS-打印 v1.0 设备可能也支持此功能通过实现指定以下 Bidi 架构元素的双向扩展文件。
+默认情况下，支持 WS-Print v1.1 的驱动程序支持此功能。 但是，TCP/IP 设备和 WS-Print v1.0 设备还可以通过实现指定以下双向架构元素的双向扩展文件来支持此功能。
 
-**架构路径： 用于读取 GPD/PPD 文件的架构部分**
+**架构路径：用于读取 GPD/PPD 文件的架构部分**
 
 **节名称：** DriverConfigFiles
 
-**架构路径：**\\Printer.Configuration.DriverConfigFiles
+**架构路径：** \\Printer.Configu。DriverConfigFiles
 
-**描述:** 此新部分以 Bidi 架构的将包含要查询的设备驱动程序配置数据，包括 GPD 和 PPD 说明文件的架构值。
+**说明：** 对于双向架构，此新部分将包含用于查询设备中的驱动程序配置数据的架构值，包括 GPD 和 PPD 说明文件。
 
-适用于读取 GPD 文件扩展
+用于读取 GPD 文件的扩展
 
 **架构名称：** GPDFile
 
-**架构路径：**\\Printer.Configuration.DriverConfigFiles:GPDFile
+**架构路径：** \\Printer.Configu。DriverConfigFiles:GPDFile
 
-**节点类型：** 值
+**节点类型：** 负值
 
-**数据类型：** BIDI\_字符串
+**数据类型：** 双向 \_ 字符串
 
-**描述:** 设备的完整 GPD 文件。 这包含可用且最新按照该设备的当前设置的所有特定设备配置信息。
+**说明：** 设备的完整 GPD 文件。 这包含所有可用的特定设备配置信息，并根据设备的当前设置更新为最新。
 
-适用于读取 PPD 文件扩展
+用于读取 PPD 文件的扩展
 
 **架构名称：** PPDFile
 
-**架构路径：**\\Printer.Configuration.DriverConfigFiles:PPDFile
+**架构路径：** \\Printer.Configu。DriverConfigFiles:PPDFile
 
-**节点类型：** ReplTest1
+**节点类型：** 负值
 
-**数据类型：** BIDI\_字符串
+**数据类型：** 双向 \_ 字符串
 
-**描述:** 设备的完整 PPD 文件。 这包含可用且最新按照该设备的当前设置的所有特定设备配置信息。
+**说明：** 设备的完整 PPD 文件。 这包含所有可用的特定设备配置信息，并根据设备的当前设置更新为最新。
 
-**请注意**  USB 设备，无论你使用 GPD 或 PPD 文件中，Bidi 扩展 XML 文件必须指定 drvPrinterEvent 属性并设置其值为"true"。 这可确保 Bidi 缓存刷新刷新一次更新的元素。
+**注意**  对于 USB 设备，无论是使用 GPD 还是 PPD 文件，双向扩展 XML 文件都必须指定 drvPrinterEvent 属性，并将其值设置为 "true"。 这可确保在双向缓存刷新后更新元素。
 
  
 

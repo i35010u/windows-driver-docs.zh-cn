@@ -1,7 +1,6 @@
 ---
 title: ndiskd.ifprovider
 description: Ndiskd. ifprovider 扩展显示有关 NDIS 接口提供程序 (IfProvider) 的信息。
-ms.assetid: 89C406E5-81D3-42AA-BA15-3D7C093BCD3C
 keywords:
 - ndiskd ifprovider Windows 调试
 ms.date: 06/15/2020
@@ -12,16 +11,16 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 3259aa54ddd39c73a9b3704d6f958ce363b7d122
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 8fc44cfc5a382dc5c821125d78c9d0c19a45d75e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89216776"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96796311"
 ---
 # <a name="ndiskdifprovider"></a>!ndiskd.ifprovider
 
-**！ Ndiskd ifprovider** (ifprovider) 显示有关[NDIS 接口提供程序](../network/registering-as-an-interface-provider.md)的信息。 如果运行不带参数的此扩展，！ ndiskd 将显示所有已注册 NDIS 接口提供程序的列表。
+**！ Ndiskd ifprovider** (ifprovider) 显示有关 [NDIS 接口提供程序](../network/registering-as-an-interface-provider.md)的信息。 如果运行不带参数的此扩展，！ ndiskd 将显示所有已注册 NDIS 接口提供程序的列表。
 
 ```console
 !ndiskd.ifprovider [-handle <x>]
@@ -51,7 +50,7 @@ Ndiskd.dll
 
 可以从前面的示例中看到，调试对象计算机注册了四个接口提供程序。 其中两个是 NDIS 接口提供程序。
 
-**注意**   接口提供程序是一种通用概念，无需是小型端口驱动程序。 如果需要，微型端口驱动程序可以选择将注册为接口提供程序，大多数微型端口驱动程序不会这样做，因为 NDIS 具有内置接口提供程序。 NDIS 内置接口提供程序自动为每个微型端口驱动程序提供接口，每个轻型筛选器 (LWF) 模块和环回接口。 有关详细信息，请参阅 [NDIS interface provider](../network/registering-as-an-interface-provider.md)。
+**注意**  接口提供程序是一种通用概念，无需是小型端口驱动程序。 如果需要，微型端口驱动程序可以选择将注册为接口提供程序，大多数微型端口驱动程序不会这样做，因为 NDIS 具有内置接口提供程序。 NDIS 内置接口提供程序自动为每个微型端口驱动程序提供接口，每个 Light-Weight 筛选器 (LWF) 模块和环回接口。 有关详细信息，请参阅 [NDIS interface provider](../network/registering-as-an-interface-provider.md)。
 
 下面的示例显示了上一示例中 "wanarp" 接口提供程序的详细信息，其句柄为 ffffd20d14334180。
 
@@ -78,7 +77,7 @@ HANDLERS
     SetObjectHandler                       fffff80d2f04bd10  bp wanarp!WanNdisIfSetHandler
 ```
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 [网络驱动程序设计指南](../network/index.md)
 
@@ -86,7 +85,7 @@ HANDLERS
 
 [调试网络堆栈](https://channel9.msdn.com/Shows/Defrag-Tools/Defrag-Tools-175-Debugging-the-Network-Stack)
 
-[**NDIS 扩展 ( # A0) **](ndis-extensions--ndiskd-dll-.md)
+[**NDIS 扩展 ( # A0)**](ndis-extensions--ndiskd-dll-.md)
 
 [**!ndiskd.help**](-ndiskd-help.md)
 

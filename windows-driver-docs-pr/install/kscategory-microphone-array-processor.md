@@ -1,7 +1,6 @@
 ---
 title: KSCATEGORY_MICROPHONE_ARRAY_PROCESSOR
 description: KSCATEGORY_MICROPHONE_ARRAY_PROCESSOR
-ms.assetid: 812a9ec8-3b9e-4cf8-bf69-3b849ff6402a
 keywords:
 - KSCATEGORY_MICROPHONE_ARRAY_PROCESSOR 设备和驱动程序安装
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: fe1b816300ecf822036195a5f98c80feaf737469
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: 60168e281676c87db832a2a4a11ebc5fdd3bd333
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91733953"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96795473"
 ---
 # <a name="kscategory_microphone_array_processor"></a>KSCATEGORY_MICROPHONE_ARRAY_PROCESSOR
 
@@ -33,7 +32,7 @@ KSCATEGORY_MICROPHONE_ARRAY_PROCESSOR [设备接口类](./overview-of-device-int
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">属性</th>
+<th align="left">Attribute</th>
 <th align="left">设置</th>
 </tr>
 </thead>
@@ -80,7 +79,7 @@ KS 设备的驱动程序将注册 KSCATEGORY_MICROPHONE_ARRAY_PROCESSOR 的实�
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSPROPERTY_TOPOLOGY_CATEGORIES**](../stream/ksproperty-topology-categories.md)

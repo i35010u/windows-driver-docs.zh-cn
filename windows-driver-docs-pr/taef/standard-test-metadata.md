@@ -1,15 +1,14 @@
 ---
 title: 标准测试元数据
 description: 标准测试元数据
-ms.assetid: A95FC176-B3A1-4bbf-833E-411CDE73C571
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c727dafc2b68c34c07b7d40466df6c805dd8d734
-ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
+ms.openlocfilehash: e79ad1e430d91657aa51ac83236ed11270049e53
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89403518"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96796397"
 ---
 # <a name="standard-test-metadata"></a>标准测试元数据
 
@@ -168,7 +167,7 @@ te Wex.Common.Tests.dll /select:@Owner='*Someone*'
 
 将来可能会使用以下元数据-请不要使用。
 
--   用户
+-   User
 -   IntegrityLevel
 -   超时
 -   HostType

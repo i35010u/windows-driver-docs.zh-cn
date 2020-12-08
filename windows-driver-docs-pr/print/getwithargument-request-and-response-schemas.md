@@ -1,15 +1,14 @@
 ---
 title: GetWithArgument 请求和响应架构
 description: 下面是 GetWithArgument 请求架构和相应的响应架构定义以及每个定义的示例。
-ms.assetid: F68731BC-2907-4FA2-B5A4-0FAC0A9F663A
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5a58109f5ab088c32e314ac52cb0bcd84d9afe8e
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 0ea175b421352a55bde6e56bb7a7d6151fd1bac9
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89205917"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96796893"
 ---
 # <a name="getwithargument-request-and-response-schemas"></a>GetWithArgument 请求和响应架构
 

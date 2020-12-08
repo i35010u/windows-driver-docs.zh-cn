@@ -1,26 +1,25 @@
 ---
 title: GDL 构造分隔符
 description: GDL 构造分隔符
-ms.assetid: 6f759534-3dc2-4e04-afe0-3f377790be21
 keywords:
 - 构造 WDK GDL，分隔符
-- GDL WDK 构造
+- GDL WDK、构造
 - 分析器 WDK GDL，处理构造分隔符
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 93560efa1e0ba3ac3c92f4ce533d9545ac230f48
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e7e059136a3082f2fe5d44bab4b9d3dbd2d224ef
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63390271"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96797031"
 ---
 # <a name="gdl-construct-delimiters"></a>GDL 构造分隔符
 
 
-*构造分隔符*字符是大括号: {和}。 构造的分隔符字符此外的行为类似于换行符，因此你必须按照或位于与 linebreak 序列构造分隔符。
+*构造分隔符* 字符为大括号： {和}。 构造分隔符字符还具有类似于换行符的行为，因此，必须在构造分隔符前面使用 linebreak 序列。
 
-以下两个代码示例演示构造分隔符使用。 第一个示例具有分散在多个行的值。
+下面两个代码示例演示了构造分隔符的用法。 第一个示例将值分散到多个行。
 
 ```cpp
 *Person: FlorenceF
@@ -32,7 +31,7 @@ ms.locfileid: "63390271"
 }
 ```
 
-第二个示例将值合并为一行，但仍使用大括号来分隔各值的部分。
+第二个示例将该值合并为一行，但仍使用大括号来分隔值的各个部分。
 
 ```cpp
 *Person: FlorenceF{*Company:Contoso Pharmaceuticals{*Location: Redmond, WA}}

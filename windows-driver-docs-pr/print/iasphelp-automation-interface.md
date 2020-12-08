@@ -7,21 +7,20 @@ MS-HAID:
 MSHAttr:
 - PreferredSiteName:MSDN
 - PreferredLib:/library/windows/hardware
-ms.assetid: 05f63b39-f9da-4627-bc14-13be1f266698
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8fe0a4b3b8e21352d80e984fdaf8f1a893ceb56a
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 3ed8c47b2fd11aa99db6e1319c60004c1304f729
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89210603"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96796839"
 ---
 # <a name="iasphelp-automation-interface"></a>Iasphelp 自动化接口
 
 通过 **Iasphelp** 对象的自动化接口，ASP 网页可获取与指定打印机关联的属性。
 
-**Iasphelp**对象的编程标识符为 OlePrn. AspHelp。
+**Iasphelp** 对象的编程标识符为 OlePrn. AspHelp。
 
 有关如何从 ASP 网页访问打印机的详细信息，请参阅 [Internet 打印](./internet-printing.md)。
 

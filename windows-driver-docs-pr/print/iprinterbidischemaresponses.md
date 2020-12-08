@@ -4,7 +4,6 @@ description: IPrinterBidiSchemaResponses 接口表示由 USB 双向扩展 JavaSc
 MSHAttr:
 - PreferredSiteName:MSDN
 - PreferredLib:/library/windows/hardware
-ms.assetid: 2E68C4AA-D235-46D2-81D6-D6C7E84C2FEF
 keywords:
 - IPrinterBidiSchemaResponses 接口打印设备
 - IPrinterBidiSchemaResponses 接口打印设备，描述
@@ -16,27 +15,27 @@ api_type:
 - COM
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2daa0bf1731c3ce18692b70b388f16f9f9ad30c3
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: d1cfe828a118f22774b192ac32a4a8f8ad17d5c5
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89218207"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96796611"
 ---
 # <a name="iprinterbidischemaresponses-interface"></a>IPrinterBidiSchemaResponses 接口
 
-IPrinterBidiSchemaResponses 接口表示由 USB 双向扩展 JavaScript 方法 **getSchemas** 和 **getStatus**填充的双向响应集。
+IPrinterBidiSchemaResponses 接口表示由 USB 双向扩展 JavaScript 方法 **getSchemas** 和 **getStatus** 填充的双向响应集。
 
 <a name="members"></a>成员
 -------
 
-**IPrinterBidiSchemaResponses**接口继承自[**IUnknown**](/windows/win32/api/unknwn/nn-unknwn-iunknown)接口。 **IPrinterBidiSchemaResponses** 还具有下列类型的成员：
+**IPrinterBidiSchemaResponses** 接口继承自 [**IUnknown**](/windows/win32/api/unknwn/nn-unknwn-iunknown)接口。 **IPrinterBidiSchemaResponses** 还具有下列类型的成员：
 
 -   [方法](#methods)
 
 ### <a name="methods"></a>方法
 
-**IPrinterBidiSchemaResponses**接口具有这些方法。
+**IPrinterBidiSchemaResponses** 接口具有这些方法。
 
 <table>
 <colgroup>
@@ -46,7 +45,7 @@ IPrinterBidiSchemaResponses 接口表示由 USB 双向扩展 JavaScript 方法 *
 <thead>
 <tr class="header">
 <th>方法</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>

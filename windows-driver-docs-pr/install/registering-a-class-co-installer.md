@@ -1,7 +1,6 @@
 ---
 title: 注册类辅助安装程序
 description: 注册类辅助安装程序
-ms.assetid: a86a4302-ec37-4117-aa5c-4fa84fbb7902
 keywords:
 - 类共同安装程序 WDK
 - 注册类共同安装程序
@@ -9,12 +8,12 @@ keywords:
 - CoDeviceInstallers
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 64407d67ce2cd6e0d43f0f19edc2210717585d2d
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 838f25f0df7017f1d193007b3730bbfe6d3b2bae
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89095807"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96796005"
 ---
 # <a name="registering-a-class-co-installer"></a>注册类辅助安装程序
 
@@ -57,9 +56,9 @@ HKLM,System\CurrentControlSet\Control\CoDeviceInstallers, \
 ; above line uses the line continuation character ()
 ```
 
-此示例 INF 将文件*classXcoinst.dll*复制到系统目录，并在**CoDeviceInstallers**项下为*安装程序类 GUID*类生成一个条目。 *Xxx*_AddReg 部分中的条目指定两个标志： "00010000" 标志指定该条目是一个[REG_MULTI_SZ](/windows/desktop/SysInfo/registry-value-types)，而 "00000008" 标志指定将新值追加到任何现有值 (如果该新值尚未出现在字符串) 中。
+此示例 INF 将文件 *classXcoinst.dll* 复制到系统目录，并在 **CoDeviceInstallers** 项下为 *安装程序类 GUID* 类生成一个条目。 *Xxx* _AddReg 部分中的条目指定两个标志： "00010000" 标志指定该条目是一个 [REG_MULTI_SZ](/windows/desktop/SysInfo/registry-value-types)，而 "00000008" 标志指定将新值追加到任何现有值 (如果该新值尚未出现在字符串) 中。
 
-注册类共同安装程序的此类 INF 可以通过右键单击 "安装" 或通过调用 **SetupInstallFromInfSection**的应用程序激活。
+注册类共同安装程序的此类 INF 可以通过右键单击 "安装" 或通过调用 **SetupInstallFromInfSection** 的应用程序激活。
 
  
 

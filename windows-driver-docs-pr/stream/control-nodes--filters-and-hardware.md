@@ -1,7 +1,6 @@
 ---
 title: 控制节点、筛选器和硬件
 description: 控制节点、筛选器和硬件
-ms.assetid: c299f5d9-634f-46c9-becf-cf59aaa0257f
 keywords:
 - 功能拓扑 WDK BDA
 - 解调器控制节点 WDK BDA
@@ -10,12 +9,12 @@ keywords:
 - BDA WDK AVStream，控制节点
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 927804a6f5b06dc87b4d26b67382d6f1c0f3f5d9
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 595a19248b969a518c540b4cecbc29831172439d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63374175"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96795839"
 ---
 # <a name="control-nodes-filters-and-hardware"></a>控制节点、筛选器和硬件
 
@@ -23,7 +22,7 @@ ms.locfileid: "63374175"
 
 
 
-BDA BDA 接收方拓扑中的控制节点可以分成单个筛选器或组合在筛选器。 此外，BDA 控制节点可以是与硬件相关联，也可以是纯软件组件。 以下部分介绍：
+BDA 接收器拓扑中的 BDA 控制节点可分为单独的筛选器或合并到筛选器中。 此外，"BDA 控制" 节点可以与硬件或软件组件相关联。 以下部分介绍：
 
 [控制节点](control-nodes.md)
 

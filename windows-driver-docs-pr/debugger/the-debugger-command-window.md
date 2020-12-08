@@ -1,18 +1,17 @@
 ---
 title: 使用调试器命令窗口
 description: 使用调试器命令窗口
-ms.assetid: d93e8c96-e2f7-4a8a-8e9a-ea29dad2a822
 keywords:
 - 调试器命令窗口
-- 调试器命令窗口中，使用
+- 调试器命令窗口，使用
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8343e5d892c27c76e617df8010125107e94610ab
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 42ad8a5bb0d1a0dc9ee9188a62a5e8d40b7a3e41
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63366213"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96795657"
 ---
 # <a name="using-the-debugger-command-window"></a>使用调试器命令窗口
 
@@ -20,7 +19,7 @@ ms.locfileid: "63366213"
 ## <span id="ddk_the_debugger_command_window_dbg"></span><span id="DDK_THE_DEBUGGER_COMMAND_WINDOW_DBG"></span>
 
 
-本部分包括以下主题：
+本节包括下列主题：
 
 [使用调试器命令](using-debugger-commands.md)
 

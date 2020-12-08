@@ -1,7 +1,6 @@
 ---
 title: 已注册到 WMI 的标准微型端口驱动程序 OID
 description: 已注册到 WMI 的标准微型端口驱动程序 OID
-ms.assetid: 87529f7f-8d62-4067-b008-7c4a04d7a7c6
 keywords:
 - 小型端口适配器 WDK 网络，WMI
 - 适配器 WDK 网络，WMI
@@ -10,12 +9,12 @@ keywords:
 - Windows Management Instrumentation WDK 网络，Oid
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 42b2a1d39b804fddbb1ad796bac899811d792c20
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 3bbe6096d03a0223c8f105ae03e821f801da68dd
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89216556"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96795865"
 ---
 # <a name="standard-miniport-driver-oids-registered-with-wmi"></a>已注册到 WMI 的标准微型端口驱动程序 OID
 

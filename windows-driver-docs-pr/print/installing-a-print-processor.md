@@ -1,7 +1,6 @@
 ---
 title: 安装打印处理器
 description: 安装打印处理器
-ms.assetid: 4e9e1148-16a3-42f6-a262-1eef014636d0
 keywords:
 - 打印处理器 WDK，安装
 - 安装打印处理器 WDK
@@ -11,12 +10,12 @@ keywords:
 - 打印队列 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d26e41707d05e822ca0aed3a9cfd7214966a4c73
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: df91299be174f13c8ea7e0f77f52b1ae97a401fd
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89206703"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96796725"
 ---
 # <a name="installing-a-print-processor"></a>安装打印处理器
 

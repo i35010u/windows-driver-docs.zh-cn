@@ -1,7 +1,6 @@
 ---
 title: ndiskd.dbgsystems
 description: Ndiskd. dbgsystems 扩展显示，并选择性地更改启用了调试跟踪的 NDIS 子系统。  ndiskd 已被 WPP 和驱动程序验证程序取代。
-ms.assetid: f36a26b6-18a8-4a01-96c7-99826e6b662f
 keywords:
 - ndiskd dbgsystems Windows 调试
 ms.date: 06/15/2020
@@ -12,19 +11,19 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: d4d154943e90c1d598aa1e84a72dfd7469239d24
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 86fe46b5acf9c4ecd9ffece362a1df0dd126071e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89210893"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96796327"
 ---
 # <a name="ndiskddbgsystems"></a>!ndiskd.dbgsystems
 
-**！ Ndiskd dbgsystems**扩展显示，并选择性地更改启用了调试跟踪的 NDIS 子系统。
+**！ Ndiskd dbgsystems** 扩展显示，并选择性地更改启用了调试跟踪的 NDIS 子系统。
 
-**警告**   
- **！ ndiskd**已被 WPP (Windows 软件跟踪预处理器) 和驱动程序验证程序所取代。 ！如果目标系统不支持 **！ ndiskd dbgsystems**，ndiskd 将为你提供以下警告。
+**警告**  
+**！ ndiskd** 已被 WPP (Windows 软件跟踪预处理器) 和驱动程序验证程序所取代。 ！如果目标系统不支持 **！ ndiskd dbgsystems**，ndiskd 将为你提供以下警告。
 
 ```console
 0: kd> !ndiskd.dbgsystems
@@ -151,7 +150,7 @@ ms.locfileid: "89210893"
 </tr>
 <tr class="even">
 <td align="left"><p>NDIS_CO</p></td>
-<td align="left"><p>跟踪面向连接的 NDIS。</p></td>
+<td align="left"><p>Connection-Oriented NDIS 跟踪。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>参考</p></td>
@@ -168,7 +167,7 @@ Ndiskd.dll
 
 此扩展仅适用于选中 NDIS.sys。 若要检查 NDIS.sys 的生成信息，请运行 [**！ ndiskd**](-ndiskd-ndis.md) 扩展名。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 [网络驱动程序设计指南](../network/index.md)
 
@@ -176,7 +175,7 @@ Ndiskd.dll
 
 [调试网络堆栈](https://channel9.msdn.com/Shows/Defrag-Tools/Defrag-Tools-175-Debugging-the-Network-Stack)
 
-[**NDIS 扩展 ( # A0) **](ndis-extensions--ndiskd-dll-.md)
+[**NDIS 扩展 ( # A0)**](ndis-extensions--ndiskd-dll-.md)
 
 [**!ndiskd.help**](-ndiskd-help.md)
 

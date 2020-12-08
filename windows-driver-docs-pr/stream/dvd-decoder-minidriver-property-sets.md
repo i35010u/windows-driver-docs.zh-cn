@@ -1,15 +1,14 @@
 ---
 title: DVD 解码器微型驱动程序属性集
 description: DVD 解码器微型驱动程序属性集
-ms.assetid: c24685bd-ea20-4cc2-b419-feb1fa2ea03e
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 76eb0b5b33365442f73545552af485aacc7ab011
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: dbdd6365171c6e5a858d2745451c9f8dbe635caa
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89188473"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96795835"
 ---
 # <a name="dvd-decoder-minidriver-property-sets"></a>DVD 解码器微型驱动程序属性集
 

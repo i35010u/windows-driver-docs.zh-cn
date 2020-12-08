@@ -1,17 +1,16 @@
 ---
 title: IPrintOemPS COM 接口
 description: IPrintOemPS COM 接口
-ms.assetid: 504db6ab-291e-4fba-995d-49a22a3a7c7f
 keywords:
 - IPrintOemPS
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cedb11855a48928b6b82dfc4a879e659d90a7c41
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 7a63e82d496d869cd82daa9cf15639c348f01295
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90102952"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96796559"
 ---
 # <a name="iprintoemps-com-interface"></a>IPrintOemPS COM 接口
 
@@ -31,7 +30,7 @@ ms.locfileid: "90102952"
 <thead>
 <tr class="header">
 <th>方法</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>

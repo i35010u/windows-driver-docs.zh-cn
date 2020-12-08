@@ -1,7 +1,6 @@
 ---
 title: KSCATEGORY_FILESYSTEM
 description: KSCATEGORY_FILESYSTEM
-ms.assetid: a3d6a3dc-926a-415a-80ef-c7d2f11ed4bf
 keywords:
 - KSCATEGORY_FILESYSTEM 设备和驱动程序安装
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 41d5062a35b42ab02fbbb1e49557ee1e9023c1c5
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 13964a5b43778f41887b5894203182ea139e62c5
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89097241"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96795481"
 ---
 # <a name="kscategory_filesystem"></a>KSCATEGORY_FILESYSTEM
 
@@ -74,7 +73,7 @@ KSCATEGORY_FILESYSTEM 功能类别是 [**KSPROPERTY_TOPOLOGY_CATEGORIES**](../st
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSPROPERTY_TOPOLOGY_CATEGORIES**](../stream/ksproperty-topology-categories.md)

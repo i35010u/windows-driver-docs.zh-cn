@@ -1,24 +1,23 @@
 ---
 title: C28624
-description: 警告 C28624 否调用 release （） 以 LResultFromObject 中递增的 refcount 匹配。
-ms.assetid: e769d232-ef6e-4b70-8cac-f4dd43807e1d
+description: '警告 C28624 不会对 Release ( 调用 # A1，以匹配 LResultFromObject 中增加的引用计数。'
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 f1_keywords:
 - C28624
-ms.openlocfilehash: 115bc9a5f20f0612b51d05286c67456056a9b109
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d800bde479e73143773101290df3dbd0fc5c8e62
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63347056"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96795625"
 ---
 # <a name="c28624"></a>C28624
 
 
-警告 C28624:不需要调用 release （） 以 LResultFromObject 中递增的 refcount 匹配
+警告 C28624：不调用 Release ( # A1，以匹配 LResultFromObject 中的递增引用计数
 
-**LresultFromObject**会增加对新的 IAccessible 对象的引用计数。
+**LresultFromObject** 增加了新 IAccessible 对象上的引用计数。
 
 ### <a name="span-idexamplespanspan-idexamplespanexample"></a><span id="example"></span><span id="EXAMPLE"></span>示例
 

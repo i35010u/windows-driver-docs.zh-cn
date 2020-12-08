@@ -1,15 +1,14 @@
 ---
 title: 设置和清除 VMQ 筛选器
 description: 设置和清除 VMQ 筛选器
-ms.assetid: bfee8a3c-d2be-4718-beb4-067b66756a41
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3a4bae14a406d2dda2be7cb7e3603d96f493f15a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 29d4405252812cf0ab870b1ce5d51b7d5b1839fe
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63346687"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96795908"
 ---
 # <a name="setting-and-clearing-vmq-filters"></a>设置和清除 VMQ 筛选器
 
@@ -17,15 +16,15 @@ ms.locfileid: "63346687"
 
 
 
-可以设置筛选器，并将其清除后已分配队列的任何时间。 有关分配和释放队列的信息，请参阅[Allocating 和释放虚拟机队列](allocating-and-freeing-vm-queues.md)。
+分配队列后，可以随时设置和清除筛选器。 有关分配和释放队列的信息，请参阅 [分配和释放 VM 队列](allocating-and-freeing-vm-queues.md)。
 
-本部分包括以下主题：
+本节包括下列主题：
 
-[VMQ 筛选器设置](setting-a-vmq-filter.md)
+[设置 VMQ 筛选器](setting-a-vmq-filter.md)
 
-[正在清除 VMQ 筛选器](clearing-a-vmq-filter.md)
+[清除 VMQ 筛选器](clearing-a-vmq-filter.md)
 
-[枚举 VMQ 的筛选器](enumerating-filters-on-a-vmq.md)
+[枚举 VMQ 上的筛选器](enumerating-filters-on-a-vmq.md)
 
  
 

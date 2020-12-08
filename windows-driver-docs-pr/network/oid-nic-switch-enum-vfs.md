@@ -1,48 +1,47 @@
 ---
 title: OID_NIC_SWITCH_ENUM_VFS
 description: 过量驱动程序或用户模式应用程序发出对象标识符 (OID) 方法请求 OID_NIC_SWITCH_ENUM_VFS 获取数组。
-ms.assetid: ABACB70C-9307-4560-93DD-0475AD1FFF10
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_NIC_SWITCH_ENUM_VFS 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: f432a19f0dbf6921074264c137b98b336a5bea3d
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: c58533c8a5cd4a0c787cd37c39f6dcab382820e2
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90106032"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96795925"
 ---
 # <a name="oid_nic_switch_enum_vfs"></a>OID \_ NIC \_ 交换机 \_ 枚举 \_ VFS
 
 
 过量驱动程序或用户模式应用程序会发出对象标识符 (OID) 方法请求 OID \_ NIC \_ 交换机 \_ 枚举 \_ VFS 获取一个数组。 数组中的每个元素都指定 PCI Express (PCIe) 虚函数的属性， (VF) 连接到网络适配器的 NIC 交换机上的 NIC 交换机。
 
-成功从此 OID 查询请求返回后， [**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的**InformationBuffer**成员包含指向缓冲区的指针，该缓冲区包含以下内容：
+成功从此 OID 查询请求返回后， [**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的 **InformationBuffer** 成员包含指向缓冲区的指针，该缓冲区包含以下内容：
 
 -   用于定义数组中的元素数的 [**NDIS \_ NIC \_ 开关 \_ VF \_ 信息 \_ 数组**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vf_info_array) 结构。
 
 -   [**NDIS \_ NIC \_ 交换机 \_ VF \_ 信息**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vf_info)结构的数组。 其中每个结构都包含有关网络适配器的 NIC 交换机上单个 VF 的信息。 通过 oid [ \_ nic \_ 交换机 \_ 分配 \_ VF](oid-nic-switch-allocate-vf.md)的 oid 方法请求，将 VF 附加到 NIC 开关。
 
-    **注意**   如果网络适配器上没有连接到任何一个 NIC 交换机的 VFs， [**ndis \_ nic \_ 交换机 \_ vf \_ 信息 \_ 数组**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vf_info_array)结构的**NumElements**成员将设置为零，且不会返回任何[**NDIS \_ nic \_ 交换机 \_ vf \_ 信息**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vf_info)结构。
+    **注意** 如果网络适配器上没有连接到任何一个 NIC 交换机的 VFs， [**ndis \_ nic \_ 交换机 \_ vf \_ 信息 \_ 数组**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vf_info_array)结构的 **NumElements** 成员将设置为零，且不会返回任何 [**NDIS \_ nic \_ 交换机 \_ vf \_ 信息**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vf_info)结构。
 
      
 
-<a name="remarks"></a>注解
+<a name="remarks"></a>备注
 -------
 
 过量驱动程序和用户模式应用程序发出 oid \_ NIC 交换机枚举 vfs 的 oid 方法请求 \_ \_ \_ ，以枚举附加到网络适配器的 NIC 交换机的 VFS。
 
 在驱动程序或应用程序发出 OID 请求之前，它必须初始化与请求一起传递的 [**NDIS \_ NIC \_ 交换机 \_ VF \_ 信息 \_ 数组**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vf_info_array) 结构。 初始化 **NDIS \_ NIC \_ 交换机 \_ VF \_ 信息 \_ 阵列** 结构时，驱动程序或应用程序必须遵循以下准则：
 
--   如果在 \_ \_ \_ \_ \_ \_ Flags 成员中设置了特定交换机标志上的 NDIS NIC 交换机 VF 信息阵列枚举 \_ \_ \_ ，则驱动程序或应用程序必须将**SwitchId**成员设置为 sr-iov 网络适配器上的 NIC 交换机标识符。 **Flags** 通过以这种方式设置这些成员，只会为 SR-IOV 网络适配器上指定的 NIC 交换机返回 VF 信息。
+-   如果在 \_ \_ \_ \_ \_ \_ Flags 成员中设置了特定交换机标志上的 NDIS NIC 交换机 VF 信息阵列枚举 \_ \_ \_ ，则驱动程序或应用程序必须将 **SwitchId** 成员设置为 sr-iov 网络适配器上的 NIC 交换机标识符。 **Flags** 通过以这种方式设置这些成员，只会为 SR-IOV 网络适配器上指定的 NIC 交换机返回 VF 信息。
 
-    **注意**   过量驱动程序和用户模式应用程序可以通过发出 oid [ \_ nic \_ 交换机 \_ 枚举 \_ 开关](oid-nic-switch-enum-switches.md)的 oid 查询请求来获取 NIC 交换机标识符。
+    **注意**  过量驱动程序和用户模式应用程序可以通过发出 oid [ \_ nic \_ 交换机 \_ 枚举 \_ 开关](oid-nic-switch-enum-switches.md)的 oid 查询请求来获取 NIC 交换机标识符。
 
      
 
 -   如果 **Flags** 成员设置为零，则驱动程序或应用程序必须将 **SwitchId** 成员设置为零。 通过以这种方式设置这些成员，将为 SR-IOV 网络适配器上的所有 NIC 交换机返回 VF 信息。
 
-**注意**   从 Windows Server 2012 开始，Windows 只支持网络适配器上的默认 NIC 交换机。 不管 **flags** 成员中的标志集如何，都必须将 **SwitchId** 成员设置为 NDIS \_ 默认 \_ 交换机 \_ ID。
+**注意**  从 Windows Server 2012 开始，Windows 只支持网络适配器上的默认 NIC 交换机。 不管 **flags** 成员中的标志集如何，都必须将 **SwitchId** 成员设置为 NDIS \_ 默认 \_ 交换机 \_ ID。
 
  
 

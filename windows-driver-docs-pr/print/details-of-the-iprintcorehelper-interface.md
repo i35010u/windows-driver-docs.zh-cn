@@ -1,24 +1,23 @@
 ---
 title: IPrintCoreHelper 接口详细信息
 description: IPrintCoreHelper 接口详细信息
-ms.assetid: df736ca2-425e-4fc8-bdcb-bdbd5caa3e22
 keywords:
 - IPrintCoreHelper
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 50e8fac30f0cca77a2a8db63f9f03d06fa309918
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 31a208f2e293c6edb5f417c103dcc1b6a5aa86a7
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89216376"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96797281"
 ---
 # <a name="details-of-the-iprintcorehelper-interface"></a>IPrintCoreHelper 接口详细信息
 
 
-**IPrintCoreHelper**接口大致基于 Pscript5 UI 替换接口。 不过， **IPrintCoreHelper** 接口在本质上不同于原始 Pscript5 helper 接口。
+**IPrintCoreHelper** 接口大致基于 Pscript5 UI 替换接口。 不过， **IPrintCoreHelper** 接口在本质上不同于原始 Pscript5 helper 接口。
 
--   **IPrintCoreHelper**接口没有**QuerySimulatedCapabilities**方法。 相反， **IPrintCoreHelper** 接口以明确定义且可识别的方式将模拟功能映射到功能和选项的常规列表。
+-   **IPrintCoreHelper** 接口没有 **QuerySimulatedCapabilities** 方法。 相反， **IPrintCoreHelper** 接口以明确定义且可识别的方式将模拟功能映射到功能和选项的常规列表。
 
 -   在 **IPrintCoreHelper** 接口中，要求调用方传入 [**DEVMODEW**](/windows/win32/api/wingdi/ns-wingdi-devmodew) 结构而不是 [**OEMUIOBJ**](/windows-hardware/drivers/ddi/printoem/ns-printoem-_oemuiobj) 结构。
 
@@ -28,7 +27,7 @@ ms.locfileid: "89216376"
 
 -   如果 **IPrintCoreHelper** 接口上的方法 (及其 subinterfaces) 具有 OUT 参数，并且如果该方法失败，out 参数将保留调用方法时的值。
 
--   **IPrintCoreHelper**接口的内存模型与以前的 Pscript5 接口的内存模型略有不同。 调用方不负责清理从 helper 接口传递回的参数，并且调用方无需分配要传入的缓冲区。 核心驱动程序处理这些类型的内存管理。
+-   **IPrintCoreHelper** 接口的内存模型与以前的 Pscript5 接口的内存模型略有不同。 调用方不负责清理从 helper 接口传递回的参数，并且调用方无需分配要传入的缓冲区。 核心驱动程序处理这些类型的内存管理。
 
 本部分提供下列主题：
 

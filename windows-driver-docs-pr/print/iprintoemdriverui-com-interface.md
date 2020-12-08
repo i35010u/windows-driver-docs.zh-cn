@@ -1,17 +1,16 @@
 ---
 title: IPrintOemDriverUI COM 接口
 description: IPrintOemDriverUI COM 接口
-ms.assetid: ed11789f-750d-4f29-b5e0-ab299a1388db
 keywords:
 - IPrintOemDriverUI
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 35898d07c2cbf0dfe1890b89000431b135840060
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: b3013e415d47636c6f4c495671c5628091979ab0
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90102955"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96796567"
 ---
 # <a name="iprintoemdriverui-com-interface"></a>IPrintOemDriverUI COM 接口
 
@@ -31,7 +30,7 @@ ms.locfileid: "90102955"
 <thead>
 <tr class="header">
 <th>方法</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>

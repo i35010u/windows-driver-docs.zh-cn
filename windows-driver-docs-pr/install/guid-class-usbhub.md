@@ -1,7 +1,6 @@
 ---
 title: GUID_CLASS_USBHUB
 description: GUID_CLASS_USBHUB
-ms.assetid: 77232e67-9c8d-4054-b020-2739457d678d
 keywords:
 - GUID_CLASS_USBHUB 设备和驱动程序安装
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 3c0a744a32d6e8d75d92467906916adadb1af043
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: 45ccace602f9cc4ccb7c3aa8c50de3d47605d331
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91732995"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96796091"
 ---
 # <a name="guid_class_usbhub"></a>GUID_CLASS_USBHUB
 
@@ -51,7 +50,7 @@ Microsoft Windows 驱动程序工具包 (WDK) 包含 [USBVIEW 示例应用程序
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**GUID_DEVINTERFACE_USB_HUB**](guid-devinterface-usb-hub.md)

@@ -1,15 +1,14 @@
 ---
 title: 设备维护
 description: Windows 8.1 和更高版本的 Windows 中引入了设备维护功能。
-ms.assetid: 310E92A9-F751-4346-9B2D-0578A136AD20
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7491faa741c59a22e93db913bfced97f1d4a1f77
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: e45f875ad1179579ce5c9b4500c170a3f7c7f7a9
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89218219"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96797251"
 ---
 # <a name="device-maintenance"></a>设备维护
 

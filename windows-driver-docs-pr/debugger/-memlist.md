@@ -1,7 +1,6 @@
 ---
 title: memlist
-description: Memlist 扩展扫描从页帧数 (PFN) 数据库的物理内存列表以检查它们的一致性。
-ms.assetid: 9d5307df-5e46-4d95-8c96-ab6da0f54cd0
+description: Memlist 扩展会扫描页面帧编号 (PFN) 数据库中的物理内存列表，以便检查它们的一致性。
 keywords:
 - PFN 数据库
 - memlist Windows 调试
@@ -13,32 +12,32 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 90b8b877ec4f6e8cbb6b9be8015f7a49dd528862
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e47e2f4ae7ce5737a9030207ac8cccbcd6dc6555
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63336110"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96795733"
 ---
 # <a name="memlist"></a>!memlist
 
 
-**！ Memlist**扩展扫描从页帧数 (PFN) 数据库的物理内存列表以检查它们的一致性。
+**！ Memlist** extension) 数据库中扫描页面帧号 (PFN 的物理内存列表，以检查它们是否一致。
 
 ```dbgcmd
 !memlist Flags
 ```
 
-## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>参数
+## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>Parameters
 
 
-<span id="_______Flags______"></span><span id="_______flags______"></span><span id="_______FLAGS______"></span> *标志*   
-指定要验证哪些内存列表。 目前，已实现只有一个值：
+<span id="_______Flags______"></span><span id="_______flags______"></span><span id="_______FLAGS______"></span>*标志*   
+指定要验证的内存列表。 目前仅实现了一个值：
 
-<span id="Bit_0__0x1_"></span><span id="bit_0__0x1_"></span><span id="BIT_0__0X1_"></span>位 0 (0x1)  
-导致要验证的清零的页列表。
+<span id="Bit_0__0x1_"></span><span id="bit_0__0x1_"></span><span id="BIT_0__0X1_"></span>位 0 (0x1)   
+导致验证 "零页" 列表。
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 <table>
 <colgroup>
@@ -62,7 +61,7 @@ ms.locfileid: "63336110"
 <a name="remarks"></a>备注
 -------
 
-目前，此扩展仅会检查清零的页列表，以确保该列表中的所有页面均被清都零。 合适的语法是：
+目前，此扩展将仅检查 "归零页" 列表以确保该列表中的所有页面都归零。 正确的语法为：
 
 ```dbgcmd
 kd> !memlist 1

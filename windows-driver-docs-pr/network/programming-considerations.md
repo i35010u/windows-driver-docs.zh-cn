@@ -1,28 +1,27 @@
 ---
 title: 编程注意事项
 description: 编程注意事项
-ms.assetid: 5f51352a-cfbb-4fa0-98af-953b151a4563
 keywords:
-- 网络模块注册机构 WDK，编程注意事项
+- 网络模块注册 WDK，编程注意事项
 - NMR WDK，编程注意事项
-- 引用计数 WDK 网络模块注册机构
-- 正在调用 WDK 网络模块注册机构
-- 计数引用 WDK 网络模块注册机构
+- 引用计数 WDK 网络模块注册器
+- 正在进行的调用 WDK 网络模块注册器
+- 计数引用 WDK 网络模块注册器
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 32430060bb81ec3526dbd0f3568abd828a1005da
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d5e729d748c99956f4b6569c2b3249785ee45473
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63390286"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96795426"
 ---
 # <a name="programming-considerations"></a>编程注意事项
 
 
-网络模块应使用某种形式的引用计数来跟踪连接的网络模块的调用正在进行中的编号[网络编程接口 (NPI)](network-programming-interface.md)函数。 这有助于从附加的网络模块中分离时的两个网络模块之一与 NMR 注销。 网络模块无法完成分离，直到对附加的网络模块的 NPI 函数没有正在进行的调用。 网络模块还必须确保网络模块会分离后，将启动到以前附加的网络模块没有更多调用。
+网络模块应使用某种形式的引用计数来跟踪已连接的网络模块的网络编程接口的正在进行的调用数 [ (NPI) ](network-programming-interface.md) 函数。 这将有助于在两个网络模块之一与 NMR 注销时从连接的网络模块分离。 在对附加的网络模块的 NPI 函数进行不进行任何调用之前，网络模块无法完成分离。 网络模块还必须确保在分离网络模块后，不会对以前连接的网络模块进行更多的调用。
 
-例如，客户端模块可以用于跟踪正在进行中的附加提供程序模块 NPI 函数调用数使用类似于以下实现：
+例如，客户端模块可能使用类似于下面的实现来跟踪对附加提供程序模块的 NPI 函数进行的正在进行的调用数：
 
 ```C++
 // Context structure for the client's binding to a provider module
@@ -432,9 +431,9 @@ NTSTATUS
 }
 ```
 
-同样，提供程序模块可能用作在相同的行实现更高版本的客户端模块示例用于跟踪连接的客户端模块的 NPI 回调函数的正在进行中调用的数量。
+同样，提供程序模块可能使用与上述客户端模块示例相同的行实现，以便跟踪对附加客户端模块的 NPI 回调函数进行的正在进行的调用数。
 
-**请注意**  上面的代码示例显示了一个可能的方法的跟踪中正在进行的连接的网络模块的 NPI 函数调用数。 网络模块可能会使用备用方法，具体取决于网络模块支持特定 NPI 的实现细节。
+**注意**  上面的代码示例演示了一种可能的方法，该方法跟踪对连接的网络模块的 NPI 函数进行的正在进行的调用数。 网络模块可能使用备用方法，具体取决于网络模块支持的特定 NPI 的实现详细信息。
 
  
 

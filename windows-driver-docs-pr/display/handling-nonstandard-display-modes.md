@@ -1,17 +1,16 @@
 ---
 title: 处理非标准显示模式
 description: 处理非标准显示模式
-ms.assetid: 4a3b0064-46d4-40bb-b49b-ac172012a7b7
 keywords:
 - 非标准显示模式 WDK DirectX 9.0，处理
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3b93a5ba15bf4f3032f663842bb2c784b9e3d6fd
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: c07b9f76245d71cbf945ea751dbace0f6534cefc
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90716452"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96796273"
 ---
 # <a name="handling-nonstandard-display-modes"></a>处理非标准显示模式
 
@@ -35,7 +34,7 @@ ms.locfileid: "90716452"
 
 -   窗口模式和非标准格式
 
-    使用 "表面格式" 的 " [针对2D 操作的报表支持](reporting-support-for-2d-operations-using-surface-formats.md) " 主题介绍了驱动程序如何指定它可以执行呈现并呈现与当前桌面不同的格式的图像。 此方案自然扩展以支持非标准格式;驱动程序必须只在[**DDPIXELFORMAT**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-_ddpixelformat)结构的**dwOperations**成员中添加启用标志，才能获得格式。
+    使用 "表面格式" 的 " [针对2D 操作的报表支持](reporting-support-for-2d-operations-using-surface-formats.md) " 主题介绍了驱动程序如何指定它可以执行呈现并呈现与当前桌面不同的格式的图像。 此方案自然扩展以支持非标准格式;驱动程序必须只在 [**DDPIXELFORMAT**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-_ddpixelformat)结构的 **dwOperations** 成员中添加启用标志，才能获得格式。
 
 专用格式和旧代码不能用于公开非标准桌面格式。
 

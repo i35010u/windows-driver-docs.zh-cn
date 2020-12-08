@@ -1,7 +1,6 @@
 ---
 title: 使用 OPM 处理保护级别
 description: 使用 OPM 处理保护级别
-ms.assetid: 2d3e5d07-8d6f-44fb-985a-96990538ed29
 keywords:
 - 保护级别 WDK 显示，类型为
 - 保护级别 WDK 显示，ACP
@@ -14,12 +13,12 @@ keywords:
 - 保护级别 WDK 显示，DPCP
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: de2252e12dfb472dcf792884c0e4364a2a6f647c
-ms.sourcegitcommit: abe7fe9f3fbee8d12641433eeab623a4148ffed3
+ms.openlocfilehash: 87d32213beaad048a7b478180f8bf7ae0afed1ac
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92185189"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96796262"
 ---
 # <a name="handling-protection-levels-with-opm"></a>使用 OPM 处理保护级别
 

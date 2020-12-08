@@ -1,13 +1,12 @@
 ---
 title: IOleCvt DecodeUnicodeName 方法
-description: DecodeUnicodeName 属性启用 ASP Web 页后，可以转换为其等效的 ANSI 的 Unicode 字符串。
+description: 使用 DecodeUnicodeName 属性，ASP 网页可以将 Unicode 字符串转换为其 ANSI 等效项。
 MS-HAID:
 - webfnc\_50fe9203-d31e-4af4-a34f-b32dfd3dd7b1.xml
 - print.iolecvt\_decodeunicodename
 MSHAttr:
 - PreferredSiteName:MSDN
 - PreferredLib:/library/windows/hardware
-ms.assetid: d00fdabd-611a-4f26-8ca5-21ba8c28d993
 keywords:
 - DecodeUnicodeName 方法打印设备
 - DecodeUnicodeName 方法打印设备，IOleCvt 接口
@@ -20,35 +19,35 @@ api_type:
 - COM
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6f585b640594a8737272f7238c1a3c3428b3d69d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a7070737b48a45a0af484e099944dd8867fee9d8
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63345282"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96796651"
 ---
-# <a name="iolecvtdecodeunicodename-method"></a>IOleCvt::DecodeUnicodeName 方法
+# <a name="iolecvtdecodeunicodename-method"></a>IOleCvt：:D ecodeUnicodeName 方法
 
-**DecodeUnicodeName**属性启用 ASP Web 页后，可以转换为其 ANSI 等效的 Unicode 字符串。
+使用 **DecodeUnicodeName** 属性，ASP 网页可以将 Unicode 字符串转换为其 ANSI 等效项。
 
 <a name="syntax"></a>语法
 ------
 
 ```cpp
 [propget, id(3), helpstring("property DecodeUnicodeName")] HRESULT DecodeUnicodeName(
-  [in]          BSTR bstrSrcName,
-  [out, retval] BSTR *pVal
+  [in]          BSTR bstrSrcName,
+  [out, retval] BSTR *pVal
 );
 ```
 
-<a name="parameters"></a>Parameters
+<a name="parameters"></a>参数
 ----------
 
-*bstrSrcName* \[in\]  
-调用方提供 Unicode 字符串转换。
+*bstrSrcName* \[中\]  
+要转换的调用方提供的 Unicode 字符串。
 
-*pVal* \[out, retval\]  
-调用方提供指向用于接收已转换的字符串的位置。
+*pVal* \[out，retval\]  
+调用方提供的指向接收已翻译字符串的位置的指针。
 
 <a name="return-value"></a>返回值
 ------------
@@ -71,7 +70,7 @@ ms.locfileid: "63345282"
 </tr>
 <tr class="even">
 <td><strong>E_POINTER</strong></td>
-<td><p>在至少一个参数不指向有效内存位置。</p></td>
+<td><p>至少一个参数不指向有效的内存位置。</p></td>
 </tr>
 </tbody>
 </table>
@@ -96,7 +95,7 @@ strPrinter = OleCvt.DecodeUnicodeName (strEncodedPrinter)
 <tbody>
 <tr class="odd">
 <td><p>目标平台</p></td>
-<td>桌面设备</td>
+<td>台式机</td>
 </tr>
 </tbody>
 </table>

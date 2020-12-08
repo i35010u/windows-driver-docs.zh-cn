@@ -1,17 +1,16 @@
 ---
 title: IPrintOemUI2 COM 接口
 description: IPrintOemUI2 COM 接口
-ms.assetid: 9aee61af-e8e2-4bc4-a17b-783242d1ac1f
 keywords:
 - IPrintOemUI2
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b9b98c89df1fba6e0de859c841561de7c341872f
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: f72ce665c565c37a8173b5c04599c59a16fa830b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90105850"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96796543"
 ---
 # <a name="iprintoemui2-com-interface"></a>IPrintOemUI2 COM 接口
 
@@ -21,7 +20,7 @@ ms.locfileid: "90105850"
 
 `IPrintOemUI2`Com 接口扩展了[IPrintOemUI com 接口](iprintoemui-com-interface.md)。 除了 **IPrintOemUI** 接口中的所有方法， `IPrintOemUI2` 接口还提供以下方法。
 
-**注意**   如果使用的是 Windows Vista 版本的 Unidrv 和 Pscript Dll，则可以在 Windows XP 和更高版本的 Windows 操作系统上运行的 Unidrv 或 Pscript5 插件中实现以下方法。 以前版本的 Dll 仅支持 Pscript5 插件中的 **IPrintOEM2：： HideStandardUI** 方法。
+**注意**  如果使用的是 Windows Vista 版本的 Unidrv 和 Pscript Dll，则可以在 Windows XP 和更高版本的 Windows 操作系统上运行的 Unidrv 或 Pscript5 插件中实现以下方法。 以前版本的 Dll 仅支持 Pscript5 插件中的 **IPrintOEM2：： HideStandardUI** 方法。
 
  
 
@@ -33,7 +32,7 @@ ms.locfileid: "90105850"
 <thead>
 <tr class="header">
 <th>方法</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>

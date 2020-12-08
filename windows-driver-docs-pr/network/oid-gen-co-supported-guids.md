@@ -1,17 +1,16 @@
 ---
 title: OID_GEN_CO_SUPPORTED_GUIDS
 description: 本主题介绍) OID_GEN_CO_SUPPORTED_GUIDS 对象标识符 (OID。
-ms.assetid: d82d6ecb-f70b-4fc2-97eb-331aafe1fe57
 keywords:
 - OID_GEN_CO_SUPPORTED_GUIDS
 ms.date: 11/02/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: dac7995c80e89dacb00361e8572ac4b3803ad887
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: af79bb24c54306bc2c0516b6f30c7d171649b0c6
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89206073"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96795941"
 ---
 # <a name="oid_gen_co_supported_guids"></a>OID_GEN_CO_SUPPORTED_GUIDS
 
@@ -33,14 +32,14 @@ typedef struct _NDIS_GUID {
 
 此结构的成员包含以下信息：
 
-**Guid.empty**  
+**Guid**  
 为微型端口驱动程序定义的自定义 GUID。
 
 **Oid**  
-**Guid**映射到的自定义 OID。
+**Guid** 映射到的自定义 OID。
 
 **状态**  
-**Guid**映射到的 NDIS_STATUS。
+**Guid** 映射到的 NDIS_STATUS。
 
 **大小**  
 设置 fNDIS_GUID_ARRAY 标志后， **大小** 指定微型端口驱动程序返回的数组中每个数据项的大小（以字节为单位）。 如果已设置 fNDIS_GUID_ANSI_STRING 或 fNDIS_GUID_NDIS_STRING 标志，则 **Size** 设置为-1。 否则， **size** 指定 GUID 表示的数据项的大小（以字节为单位）。

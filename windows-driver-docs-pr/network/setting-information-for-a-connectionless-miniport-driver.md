@@ -1,17 +1,16 @@
 ---
 title: 设置无连接微型端口驱动程序的信息
 description: 设置无连接微型端口驱动程序的信息
-ms.assetid: 406d844a-cc83-4cd6-a2d2-78e614aab900
 keywords:
 - 无连接驱动程序 WDK 网络
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8eac3bfa2f03b1179a261a4af0a10f945175f3e2
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 9615e356235fcfc823483c64a73d7da1ea53c807
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89206183"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96795881"
 ---
 # <a name="setting-information-for-a-connectionless-miniport-driver"></a>设置无连接微型端口驱动程序的信息
 

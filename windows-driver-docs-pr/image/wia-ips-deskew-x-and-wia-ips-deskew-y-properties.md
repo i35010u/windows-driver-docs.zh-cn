@@ -1,15 +1,14 @@
 ---
 title: WIA_IPS_DESKEW_X 和 WIA_IPS_DESKEW_Y 属性
 description: WIA_IPS_DESKEW_X 和 WIA_IPS_DESKEW_Y 属性
-ms.assetid: 748b08f7-e838-4df8-abcb-4ff1cdd20f7e
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 767a19508f63b1132927ca5d8f227466f3f7b5de
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 92be21b91cd5e7e9f80b735b38fc4c82be579aef
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89191683"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96796143"
 ---
 # <a name="wia_ips_deskew_x-and-wia_ips_deskew_y-properties"></a>WIA \_ ip \_ 反扭曲 \_ X 和 WIA \_ Ip \_ 反扭曲 \_ Y 属性
 

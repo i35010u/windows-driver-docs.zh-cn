@@ -1,18 +1,17 @@
 ---
 title: 设置 CoNDIS WAN 微型端口驱动程序信息
 description: 设置 CoNDIS WAN 微型端口驱动程序信息
-ms.assetid: 950cb2cb-7f02-4f3c-924a-0d1e7bb19b55
 keywords:
 - CoNDIS WAN 驱动程序 WDK 网络，信息设置
 - OID_WAN_CO_SET_LINK_INFO
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7fb77e433b3c930678c21759763a384226714c9e
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 4b683e8d6829240ade5ab4e4fff85c9885bf2291
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90104912"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96795897"
 ---
 # <a name="setting-condis-wan-miniport-driver-information"></a>设置 CoNDIS WAN 微型端口驱动程序信息
 
@@ -35,7 +34,7 @@ CoNDIS WAN 微型端口驱动程序必须识别并正确响应以下 CoNDIS WAN 
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">名称</th>
+<th align="left">“属性”</th>
 <th align="left">可选或必需</th>
 </tr>
 </thead>
@@ -43,7 +42,7 @@ CoNDIS WAN 微型端口驱动程序必须识别并正确响应以下 CoNDIS WAN 
 <tr class="odd">
 <td align="left"><p></p>
 <a href="/windows-hardware/drivers/network/oid-wan-co-set-link-info" data-raw-source="[OID_WAN_CO_SET_LINK_INFO](./oid-wan-co-set-link-info.md)">OID_WAN_CO_SET_LINK_INFO</a> 设置 VC 的信息。</td>
-<td align="left"><p>必需</p></td>
+<td align="left"><p>必须</p></td>
 </tr>
 </tbody>
 </table>

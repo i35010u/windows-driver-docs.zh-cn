@@ -1,7 +1,6 @@
 ---
 title: 删除端口
 description: 删除端口
-ms.assetid: 0d491368-e529-4f04-a323-678e31a862c3
 keywords:
 - 端口管理 WDK 打印，删除端口
 - 删除打印端口
@@ -9,12 +8,12 @@ keywords:
 - DeletePort
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 88e100d03883d0c66c184058da59499a7c41fedf
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: fdaf876140e887b432855659a850f52d6d577201
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89216378"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96797295"
 ---
 # <a name="deleting-a-port"></a>删除端口
 
@@ -30,7 +29,7 @@ ms.locfileid: "89216378"
 
 1.  调用打印后台处理程序的 **OpenPrinter** 函数 (Windows SDK 文档) 中所述，这将导致调用端口监视器服务器 DLL 中的 [**XcvOpenPort**](/windows-hardware/drivers/ddi/winsplp/nf-winsplp-xcvopenport) 函数。
 
-2.  一次或多次调用打印后台处理程序的 [**XcvData**](/previous-versions/ff564255(v=vs.85)) 函数，请求端口监视器服务器 DLL 删除该端口。 **XcvData**函数调用服务器 DLL 的[**XcvDataPort**](/windows-hardware/drivers/ddi/winsplp/nf-winsplp-xcvdataport)函数。
+2.  一次或多次调用打印后台处理程序的 [**XcvData**](/previous-versions/ff564255(v=vs.85)) 函数，请求端口监视器服务器 DLL 删除该端口。 **XcvData** 函数调用服务器 DLL 的 [**XcvDataPort**](/windows-hardware/drivers/ddi/winsplp/nf-winsplp-xcvdataport)函数。
 
 3.  调用打印后台处理程序的 **ClosePrinter** 函数 (Windows SDK 文档) 中所述，这将导致调用端口监视器服务器 DLL 中的 [**XcvClosePort**](/windows-hardware/drivers/ddi/winsplp/nf-winsplp-xcvcloseport) 函数。
 

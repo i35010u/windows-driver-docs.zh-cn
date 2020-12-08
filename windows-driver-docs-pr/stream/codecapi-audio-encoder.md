@@ -1,15 +1,14 @@
 ---
 title: CODECAPI \_ 音频 \_ 编码器
 description: CODECAPI \_ 音频 \_ 编码器
-ms.assetid: c66cbbe1-36dc-4088-8ecd-7663d4503d6e
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3b5b0b2c1108a60634fe15cdcce4a059cd2e822e
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 728ee3b95c1ace0759fd09251bd6d3262fa5856e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89190017"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96795387"
 ---
 # <a name="codecapi_audio_encoder"></a>CODECAPI \_ 音频 \_ 编码器
 
@@ -53,7 +52,7 @@ ms.locfileid: "89190017"
 
 ### <a name="requirements"></a>要求
 
-**标头：** 在 *ksmedia*中声明。 包括 *ksmedia*。
+**标头：** 在 *ksmedia* 中声明。 包括 *ksmedia*。
 
 ### <a name="see-also"></a>另请参阅
 

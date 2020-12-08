@@ -1,25 +1,24 @@
 ---
 title: 执行测试
 description: 执行测试
-ms.assetid: 421FD558-01D0-484d-B4F6-274A5C1BC62E
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 15f0b6ed1c194bb020e43d527a43b074f7b3e013
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 741a464ec45ad6cfb157bc57256a3ddeed9641af
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63391373"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96795789"
 ---
 # <a name="executing-tests"></a>执行测试
 
 
 以下主题提供有关在 TAEF 中执行测试的详细信息：
 
--   [执行测试的概述](overview-of-executing-tests.md)
+-   [执行测试概述](overview-of-executing-tests.md)
 -   [Te.exe 命令行参数](te-exe-command-line-parameters.md)
 -   [TAEF 的退出代码](exit-codes-for-taef.md)
--   [所选内容](selection.md)
+-   [选择](selection.md)
 -   [测试隔离](test-isolation.md)
 -   [测试模式](test-modes.md)
 -   [Parallel](parallel.md)

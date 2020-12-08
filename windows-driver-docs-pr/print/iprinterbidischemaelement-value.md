@@ -1,14 +1,13 @@
 ---
-title: IPrinterBidiSchemaElement Value 方法
-description: Value 方法返回 Bidi 架构元素的值。
+title: IPrinterBidiSchemaElement 值方法
+description: 值方法返回双向架构元素值。
 MSHAttr:
 - PreferredSiteName:MSDN
 - PreferredLib:/library/windows/hardware
-ms.assetid: F989AFEF-795D-4C1A-880D-58CBC2D2B021
 keywords:
 - 值方法打印设备
 - 值方法打印设备，IPrinterBidiSchemaElement 接口
-- IPrinterBidiSchemaElement 接口打印设备，Value 方法
+- IPrinterBidiSchemaElement 接口打印设备，值方法
 topic_type:
 - apiref
 api_name:
@@ -17,36 +16,36 @@ api_type:
 - COM
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 093e89237a40fe25e9428848e8f0db8995161e56
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 326be0edea3fa4094763b03fbfa9b936f8b02a57
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63357213"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96796627"
 ---
-# <a name="iprinterbidischemaelementvalue-method"></a>IPrinterBidiSchemaElement::Value 方法
+# <a name="iprinterbidischemaelementvalue-method"></a>IPrinterBidiSchemaElement：： Value 方法
 
-Value 方法返回 Bidi 架构元素的值。
+值方法返回双向架构元素值。
 
 <a name="syntax"></a>语法
 ------
 
 ```cpp
 HRESULT Value(
-  [out, retval] VARIANT *pValue
+  [out, retval] VARIANT *pValue
 );
 ```
 
-<a name="parameters"></a>Parameters
+<a name="parameters"></a>参数
 ----------
 
-*pValue* \[out, retval\]  
-返回的元素值中。
+*pValue* \[out，retval\]  
+返回的元素值。
 
 <a name="return-value"></a>返回值
 ------------
 
-此方法返回**HRESULT**值。
+此方法返回 **HRESULT** 值。
 
 ## <a name="see-also"></a>请参阅
 

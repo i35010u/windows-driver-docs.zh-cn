@@ -1,26 +1,25 @@
 ---
 title: GDL 编程指南
 description: GDL 编程指南
-ms.assetid: ca524040-453f-4ea2-991c-5d031b3725e7
 keywords:
-- GDL WDK，使用 GDL 编程
-- 使用 GDL WDK 编程
-- 打印机驱动程序 WDK，使用 GDL 编程
+- GDL WDK，用 GDL 编程
+- 用 GDL WDK 编程
+- 打印机驱动程序 WDK，用 GDL 编程
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9779291ebb6ca3823f2dc961057b99c35abcfc73
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 90bd20e57f8650ab1fd08f68ac1f59f8f07e6228
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63324863"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96796959"
 ---
 # <a name="gdl-programming-guide"></a>GDL 编程指南
 
 
-编程 GDL 需要 GDL 语法中，基本元素组成的语言和特定技术，以使用 GDL 了解的知识。
+编程 GDL 要求了解 GDL 语法、了解构成语言的基本元素以及使用 GDL 的特定技术。
 
-本部分包括：
+本节包括：
 
 [GDL 语法](gdl-syntax.md)
 

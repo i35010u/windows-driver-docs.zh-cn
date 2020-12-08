@@ -1,7 +1,6 @@
 ---
 title: ndiskd 筛选器
 description: Ndiskd 扩展显示有关 NDIS 轻型筛选器 (LWF) 的信息。 如果运行不带任何参数的扩展，ndiskd 将显示所有 LWFs 的列表。
-ms.assetid: 4cf0f8bc-a15a-49db-b7db-13d60fd0c767
 keywords:
 - ndiskd Windows 调试
 ms.date: 06/15/2020
@@ -12,16 +11,16 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 2aabd17162eb682c802b454660a7bb9cd87c71c7
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: bb405b8ef1c58ecac126f01c39cee30d451a536e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89212619"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96796325"
 ---
 # <a name="ndiskdfilter"></a>!ndiskd.filter
 
-**！ Ndiskd**扩展显示有关 NDIS 轻型筛选器 (LWF) 的信息。 如果运行不带参数的扩展，！ ndiskd 将显示所有 LWFs 的列表。
+**！ Ndiskd** 扩展显示有关 NDIS 轻型筛选器 (LWF) 的信息。 如果运行不带参数的扩展，！ ndiskd 将显示所有 LWFs 的列表。
 
 ```console
 !ndiskd.filter [-handle <x>] [-findname <any>] [-handlers]
@@ -86,7 +85,7 @@ FILTER
     Driver handlers
 ```
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 [网络驱动程序设计指南](../network/index.md)
 
@@ -94,6 +93,6 @@ FILTER
 
 [调试网络堆栈](https://channel9.msdn.com/Shows/Defrag-Tools/Defrag-Tools-175-Debugging-the-Network-Stack)
 
-[**NDIS 扩展 ( # A0) **](ndis-extensions--ndiskd-dll-.md)
+[**NDIS 扩展 ( # A0)**](ndis-extensions--ndiskd-dll-.md)
 
 [**!ndiskd.help**](-ndiskd-help.md)

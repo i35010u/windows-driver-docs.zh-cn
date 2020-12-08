@@ -1,7 +1,6 @@
 ---
 title: KSCATEGORY_ENCODER
 description: KSCATEGORY_ENCODER
-ms.assetid: 409dbb1f-7b28-4cb3-bdba-da927cf67133
 keywords:
 - KSCATEGORY_ENCODER 设备和驱动程序安装
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: b7a800895f86bc6e9c52ff11bb6f13aa250e5874
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: dae892c43c2a099f80815b49adfdc1ece70ec4d4
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89097245"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96795487"
 ---
 # <a name="kscategory_encoder"></a>KSCATEGORY_ENCODER
 
@@ -56,7 +55,7 @@ KSCATEGORY_ENCODER [设备接口类](./overview-of-device-interface-classes.md) 
 
 KS 设备的驱动程序将注册 KSCATEGORY_ENCODER 的实例，以向操作系统指示设备支持 KSCATEGORY_ENCODER 功能类别。
 
-有关如何在 INF 文件中注册此功能类别的示例，请参阅 WDK 的*src/swtuner/algtuner*目录中的软件调谐器示例附带的*Bdan* inf 文件。
+有关如何在 INF 文件中注册此功能类别的示例，请参阅 WDK 的 *src/swtuner/algtuner* 目录中的软件调谐器示例附带的 *Bdan* inf 文件。
 
 有关编码器的信息，请参阅 [编码器设备](../stream/encoder-devices.md) 和 [编码器安装和注册](../stream/encoder-installation-and-registration.md)。
 

@@ -1,7 +1,6 @@
 ---
 title: 识别打印机的颜色功能
 description: 识别打印机的颜色功能
-ms.assetid: 24abf76d-c0f9-440e-b825-8b39ea9ab807
 keywords:
 - 打印机接口 DLL WDK，支持的颜色功能
 - 颜色管理 WDK 打印，识别功能
@@ -15,12 +14,12 @@ keywords:
 - 灰度输出 WDK 打印机
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 63c2c52acc2e414fe5678a46eaf87c15e3f58411
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 842126a022bfafba434e14a77499c1763280e6d4
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89212291"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96796769"
 ---
 # <a name="identifying-a-printers-color-capability"></a>识别打印机的颜色功能
 
@@ -34,7 +33,7 @@ ms.locfileid: "89212291"
 
 -   对 **GetDeviceCaps** 函数的调用 (Windows SDK 文档) 中所述，在这种情况下传递 NUMCOLORS 常数，通常会导致大多数 noncolor 设备的返回值小于或等于2，对于彩色设备，则为大于2的值。 操作系统无法区分单色和灰度设备。
 
--   [**DEVMODEW**](/windows/win32/api/wingdi/ns-wingdi-devmodew)结构的**dmColor**成员的值并不是设备是否为彩色或 noncolor 设备的可靠指示器。 某些打印机驱动程序将此成员设置为 DMCOLOR \_ 颜色，即使对于不能生成颜色的设备也是如此。
+-   [**DEVMODEW**](/windows/win32/api/wingdi/ns-wingdi-devmodew)结构的 **dmColor** 成员的值并不是设备是否为彩色或 noncolor 设备的可靠指示器。 某些打印机驱动程序将此成员设置为 DMCOLOR \_ 颜色，即使对于不能生成颜色的设备也是如此。
 
  
 

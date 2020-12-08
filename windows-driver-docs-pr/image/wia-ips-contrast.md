@@ -1,9 +1,8 @@
 ---
-title: WIA\_IP\_对比度
-description: WIA\_IP\_对比度属性包含设备的当前硬件对比度设置。
-ms.assetid: 7fecfd43-212c-40e6-8520-ef1819448895
+title: WIA \_ IP \_ 对比
+description: "\"WIA \\_ ip \\_ 对比度\" 属性包含设备的当前硬件对比度设置。"
 keywords:
-- WIA_IPS_CONTRAST 成像设备
+- WIA_IPS_CONTRAST 图像设备
 topic_type:
 - apiref
 api_name:
@@ -14,35 +13,35 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 806f6358df3fb4927f980b4cf6d33e7f9bba0b9c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ba7b27a6011f12a4b8966830afdfd3590d3c2a77
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63370614"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96796159"
 ---
-# <a name="wiaipscontrast"></a>WIA\_IP\_对比度
+# <a name="wia_ips_contrast"></a>WIA \_ IP \_ 对比
 
 
-WIA\_IP\_对比度属性包含设备的当前硬件对比度设置。
+"WIA \_ ip \_ 对比度" 属性包含设备的当前硬件对比度设置。
 
 ## <span id="ddk_wia_ips_contrast_si"></span><span id="DDK_WIA_IPS_CONTRAST_SI"></span>
 
 
-属性类型：VT\_I4
+属性类型： VT \_ I4
 
-有效值：WIA\_PROP\_RANGE
+有效值： WIA 内容 \_ \_ 范围
 
-访问权限：读取/写入
+访问权限：读/写
 
 <a name="remarks"></a>备注
 -------
 
-应用程序设置 WIA\_IP\_对比度属性和硬件的对比度值。 WIA 微型驱动程序创建并维护此属性。
+应用程序将 WIA \_ IPS \_ 对比度属性设置为硬件的对比度值。 WIA 微型驱动程序创建并维护此属性。
 
-值为 WIA\_IP\_对比度应映射到 1000，其中 −1000 对应于最小对比度、 0 对应于正常对比度和 1000年对应于最大对比度 −1000 从范围中。
+WIA \_ IPS 对比度的值 \_ 应映射到从−1000到1000的范围内，其中−1000对应于最小对比度，0对应于正常对比度，1000对应于最大对比度。
 
-WIA\_IP\_对比度是所必需的所有图像获取项。
+\_ \_ 所有映像获取项都需要 WIA IPS 对比度。
 
 <a name="requirements"></a>要求
 ------------
@@ -54,8 +53,8 @@ WIA\_IP\_对比度是所必需的所有图像获取项。
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Header</p></td>
-<td>Wiadef.h （包括 Wiadef.h）</td>
+<td><p>标头</p></td>
+<td>Wiadef (包含 Wiadef) </td>
 </tr>
 </tbody>
 </table>

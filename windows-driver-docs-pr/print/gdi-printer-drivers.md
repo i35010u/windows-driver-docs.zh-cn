@@ -1,19 +1,18 @@
 ---
 title: GDI 打印机驱动程序
 description: GDI 打印机驱动程序
-ms.assetid: c7ae6c0e-ae43-4b10-9a6f-f2daf578ecd2
 keywords:
 - GDI 打印机驱动程序 WDK
-- 打印机驱动程序 WDK GDI
-- GDI 打印机驱动程序 WDK，有关 GDI 打印机驱动程序
+- 打印机驱动程序 WDK，GDI
+- GDI 打印机驱动程序 WDK，关于 GDI 打印机驱动程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 384f47b4ae2950af2dd74d377bffed3301de4443
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ed8aaa334aca76c2d74b76e56e8ea23c4c69851c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63363337"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96797055"
 ---
 # <a name="gdi-printer-drivers"></a>GDI 打印机驱动程序
 
@@ -21,13 +20,13 @@ ms.locfileid: "63363337"
 
 
 
-所有 Windows 2000 和更高版本的打印机驱动程序都包括以下组件：
+所有 Windows 2000 和更高版本的打印机驱动程序包含以下组件：
 
--   一个[打印机图形 DLL](printer-graphics-dll.md) ，可帮助 GDI 呈现打印作业，并将呈现的数据的流发送到打印后台处理程序。
+-   在呈现打印作业时帮助 GDI 的 [打印机图形 DLL](printer-graphics-dll.md) ，并将呈现的数据流发送到打印后台处理程序。
 
--   一个[打印机接口 DLL](printer-interface-dll.md)提供驱动程序的配置参数，这两个的用户界面和后台处理程序的接口可以调用以通知与打印相关的系统事件的驱动程序。
+-   为驱动程序的配置参数提供用户界面的 [打印机接口 DLL](printer-interface-dll.md) ，以及后台处理程序可以调用以通知驱动程序与打印相关的系统事件的接口。
 
-此外，Microsoft 提供的打印机驱动程序请利用[打印机数据文件](printer-data-files.md)。
+此外，Microsoft 提供的打印机驱动程序使用 [打印机数据文件](printer-data-files.md)。
 
  
 

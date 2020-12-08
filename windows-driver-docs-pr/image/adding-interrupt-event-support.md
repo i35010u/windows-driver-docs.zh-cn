@@ -1,15 +1,14 @@
 ---
 title: 添加中断事件支持
 description: 添加中断事件支持
-ms.assetid: 74fbaa7c-f058-4b17-b278-3dea0faf4431
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0a9152908c65958ba755d74d9c708236ce1493be
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 8ffe99d72926c24502cf3327e97ff5719272b412
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89192107"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96796203"
 ---
 # <a name="adding-interrupt-event-support"></a>添加中断事件支持
 
@@ -31,7 +30,7 @@ ms.locfileid: "89192107"
 
 以下两个示例演示如何将设备配置为具有 **IWiaMiniDrv：:D rvgetcapabilities** 和 **IStiUSD：： SetNotificationHandle** 方法的实现的中断。
 
-**注意**   对于涉及内核模式驱动程序的所有活动，使用重叠 i/o 调用非常重要。 这允许对设备请求进行适当的超时和取消操作。
+**注意**   对于涉及内核模式驱动程序的所有活动，使用重叠 i/o 调用非常重要。 这允许对设备请求进行适当的超时和取消操作。
 
  
 
@@ -39,9 +38,9 @@ ms.locfileid: "89192107"
 
 WIA 服务调用 **IWiaMiniDrv：:D rvgetcapabilities** 方法，以获取 WIA 设备支持的事件和命令。 WIA 驱动程序应该首先查看传入的 *lFlags* 参数，以确定应应答的请求。
 
-WIA 驱动程序应分配由 WIA 驱动程序使用的内存 (，并将其释放) 包含 [**wia \_ DEV \_ CAP \_ winspool.drv**](/windows-hardware/drivers/ddi/wiamindr_lh/ns-wiamindr_lh-_wia_dev_cap_drv) 结构的数组。 在对 **IWiaMiniDrv：:D rvgetcapabilities**的调用中，在 *ppCapabilities* 参数中传递一个指针，该指针指向保存 WIA 驱动程序分配的内存地址的内存位置。
+WIA 驱动程序应分配由 WIA 驱动程序使用的内存 (，并将其释放) 包含 [**wia \_ DEV \_ CAP \_ winspool.drv**](/windows-hardware/drivers/ddi/wiamindr_lh/ns-wiamindr_lh-_wia_dev_cap_drv) 结构的数组。 在对 **IWiaMiniDrv：:D rvgetcapabilities** 的调用中，在 *ppCapabilities* 参数中传递一个指针，该指针指向保存 WIA 驱动程序分配的内存地址的内存位置。
 
-**注意**   WIA 服务将不释放此内存。 WIA 驱动程序必须管理分配的内存，这一点很重要。
+**注意**   WIA 服务将不释放此内存。 WIA 驱动程序必须管理分配的内存，这一点很重要。
 
  
 
@@ -275,7 +274,7 @@ WIA 服务调用 **IStiUSD：： GetNotificationData** 方法来获取有关刚�
 
 1.  **IStiUSD：： GetStatus** 报告有一个挂起的事件，方法是 \_ \_ 在 [**STI \_ 设备 \_ 状态**](/windows-hardware/drivers/ddi/sti/ns-sti-_sti_device_status) 结构中设置 STI EVENTHANDLING 待定标志。
 
-2.  由**IStiUSD：： SetNotificationHandle**传入的*hEvent*句柄已通过硬件发出信号，或调用 Microsoft Windows SDK 文档) 中所述的**SetEvent** (。
+2.  由 **IStiUSD：： SetNotificationHandle** 传入的 *hEvent* 句柄已通过硬件发出信号，或调用 Microsoft Windows SDK 文档) 中所述的 **SetEvent** (。
 
 WIA 驱动程序负责填写 [**STINOTIFY**](/windows-hardware/drivers/ddi/sti/ns-sti-_stinotify) 结构
 
@@ -330,7 +329,7 @@ STDMETHODIMP CWIADevice::GetNotificationData( LPSTINOTIFY pBuffer )
 
 可以通过将 **NULL** 作为事件句柄传递来随时停止中断事件。 微型驱动程序应将此解释为信号，以停止硬件设备上的任何等待状态。
 
-**注意**   [**IWiaMiniDrv：:D rvnotifypnpevent**](/windows-hardware/drivers/ddi/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvnotifypnpevent)方法可以接收影响事件等待状态的电源管理事件。
+**注意**  [**IWiaMiniDrv：:D rvnotifypnpevent**](/windows-hardware/drivers/ddi/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvnotifypnpevent) 方法可以接收影响事件等待状态的电源管理事件。
 
  
 

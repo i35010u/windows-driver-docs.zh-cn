@@ -1,7 +1,6 @@
 ---
 title: 对话框过程和 CPSUI
 description: 对话框过程和 CPSUI
-ms.assetid: fad65a34-9580-41a5-ad58-91ea7ffcd3d5
 keywords:
 - 页面事件回调 WDK CPSUI
 - 事件回调 WDK CPSUI
@@ -11,12 +10,12 @@ keywords:
 - 窗口消息 WDK CPSUI
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2b9a0107bdbe439573a799ebd90ef10bda641735
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: a5c71712cf655b33817ede8210deeae196ef513d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89218215"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96797225"
 ---
 # <a name="dialog-box-procedures-and-cpsui"></a>对话框过程和 CPSUI
 

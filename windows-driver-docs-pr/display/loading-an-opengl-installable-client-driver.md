@@ -1,7 +1,6 @@
 ---
 title: 加载 OpenGL 可安装客户端驱动程序
 description: 加载 OpenGL 可安装客户端驱动程序
-ms.assetid: 2b244bbf-f26c-4307-a347-a29e12c6d496
 keywords:
 - OpenGL ICD WDK 显示
 - 正在加载驱动程序 WDK 显示
@@ -9,26 +8,26 @@ keywords:
 - 可安装客户端驱动程序 WDK 显示
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8f4b0b01172ab5f10c7b3b053ba209675776579d
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: ec986fb097c430a6ddb1d41d3dff6d3675f91a1c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89065786"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96796257"
 ---
 # <a name="loading-an-opengl-installable-client-driver"></a>加载 OpenGL 可安装客户端驱动程序
 
 
 OpenGL 运行时访问注册表，以确定要加载哪些 OpenGL 可安装客户端驱动程序 (ICD) 。 若要加载 OpenGL ICD，OpenGL 运行时：
 
--   确定与 OpenGL ICD 关联的名称、版本和标志，方法是调用[**D3DKMTQueryAdapterInfo**](/windows-hardware/drivers/ddi/d3dkmthk/nf-d3dkmthk-d3dkmtqueryadapterinfo)函数，并将 KMTQAITYPE \_ UMOPENGLINFO 值设置为*QUERYADAPTERINFO*参数指向的[**D3DKMT \_ pData**](/windows-hardware/drivers/ddi/d3dkmthk/ns-d3dkmthk-_d3dkmt_queryadapterinfo)结构的**类型**成员。
+-   确定与 OpenGL ICD 关联的名称、版本和标志，方法是调用 [**D3DKMTQueryAdapterInfo**](/windows-hardware/drivers/ddi/d3dkmthk/nf-d3dkmthk-d3dkmtqueryadapterinfo)函数，并将 KMTQAITYPE \_ UMOPENGLINFO 值设置为 *QUERYADAPTERINFO* 参数指向的 [**D3DKMT \_ pData**](/windows-hardware/drivers/ddi/d3dkmthk/ns-d3dkmthk-_d3dkmt_queryadapterinfo)结构的 **类型** 成员。
 
 -   检查 **D3DKMTQueryAdapterInfo** 返回的 opengl icd 的版本号，以验证 opengl icd 的版本。
 
 -   使用 OpenGL ICD 的名称加载 OpenGL ICD。
 
 -   初始化对 OpenGL ICD 函数的访问。
-    **注意**   若要获取 OpenGL ICD 开发工具包的许可证，请联系[Opengl 问题](mailto:opengl@microsoft.com)团队。
+    **注意**   若要获取 OpenGL ICD 开发工具包的许可证，请联系 [Opengl 问题](mailto:opengl@microsoft.com) 团队。
 
      
 
@@ -48,7 +47,7 @@ Direct3D 用户模式显示驱动程序的名称，无论操作系统是否支�
 <span id="OpenGLDriverName"></span><span id="opengldrivername"></span><span id="OPENGLDRIVERNAME"></span>**OpenGLDriverName**  
 REG\_SZ
 
-OpenGL ICD 的名称。 例如，如果 *Mydriver.dll*OpenGL ICD，则 **Mydriver.dll**此项的值。
+OpenGL ICD 的名称。 例如，如果 *Mydriver.dll* OpenGL ICD，则 **Mydriver.dll** 此项的值。
 
 <span id="OpenGLVersion"></span><span id="openglversion"></span><span id="OPENGLVERSION"></span>**OpenGLVersion**  
 REG \_ DWORD

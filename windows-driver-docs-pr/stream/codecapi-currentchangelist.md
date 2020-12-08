@@ -1,15 +1,14 @@
 ---
 title: CODECAPI \_ CURRENTCHANGELIST
 description: CODECAPI \_ CURRENTCHANGELIST
-ms.assetid: f783857f-d1a1-417f-8f69-198b6f328a69
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4388d4f06856b13a136e829f42231ee45cd9f53a
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: dc5f52f44d829f7e24540dd530b43369799d532a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89186381"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96795379"
 ---
 # <a name="codecapi_currentchangelist"></a>CODECAPI \_ CURRENTCHANGELIST
 
@@ -51,7 +50,7 @@ CODECAPI \_ CURRENTCHANGELIST 属性用于指示在前一个属性 "set" 调用�
 
  (操作数据) 的属性值是一个 Guid 数组。
 
-### <a name="comments"></a>说明
+### <a name="comments"></a>注释
 
 在属性 get 调用上：
 
@@ -63,7 +62,7 @@ CODECAPI \_ CURRENTCHANGELIST 属性用于指示在前一个属性 "set" 调用�
 
 ### <a name="requirements"></a>要求
 
-**标头：** 在 *ksmedia*中声明。 包括 *ksmedia*。
+**标头：** 在 *ksmedia* 中声明。 包括 *ksmedia*。
 
 ### <a name="see-also"></a>另请参阅
 

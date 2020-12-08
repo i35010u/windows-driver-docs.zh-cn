@@ -1,36 +1,35 @@
 ---
 title: 将数据上传到设备
 description: 将数据上传到设备
-ms.assetid: 50fc5f56-3758-4151-9748-dd88544006f1
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7c4360ef2d67d65fb65d7cc23399b63cee95fb8e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7c4748810d5606187efdc44fdc0defaacd773b27
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63383706"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96796179"
 ---
 # <a name="uploading-data-to-a-device"></a>将数据上传到设备
 
 
-若要将数据传输到设备应用程序中，必须使用**IWiaTransfer::Upload**方法。 该应用程序提供数据流，将其用作数据源而不是目标。 同样，驱动程序调用**IStream::Read**而不是**IStream::Write**中上传这种情况。
+若要将数据从应用程序传输到设备，必须使用 **IWiaTransfer：：上传** 方法。 应用程序提供数据流，该数据流用作数据源而不是目标。 同样，驱动程序在上载情况下调用 **istream：： Read** 而不是 **Istream：： Write** 。
 
-请注意，可以仅在已存在的项上执行此上传过程。 如果应用程序尝试将新文件上传到设备的存储，因为没有项来表示该文件尚不能完成此过程。
+请注意，此上载过程只能在已存在的项上执行。 如果应用程序尝试将新文件上传到具有存储的设备，则无法完成此过程，因为尚不存在表示该文件的项目。
 
-若要在设备上，如设备存储中，新的文件创建新的内容应用程序应当：
+若要在设备上创建新内容（例如设备存储上的新文件），应用程序应执行以下操作：
 
-1.  通过调用创建 WIA 项**IWiaItem2::CreateChildItem**上将成为项的父级的文件夹。
+1.  通过对将成为项父级的文件夹调用 **IWiaItem2：： CreateChildItem** 来创建 WIA 项。
 
-2.  调用**QueryInterface**有关**IWiaTransfer**，然后调用**IWiaTransfer::Upload**。
+2.  为 **IWiaTransfer** 调用 **QueryInterface** ，然后调用 **IWiaTransfer：：上传**。
 
-该驱动程序应处理对**IWiaTransfer::Upload**相应地。 例如，如果 WIA 项是新项，该驱动程序应创建文件并保存源流中提供的内容**IWiaTransfer::Upload**到设备存储。
+驱动程序应相应地处理对 **IWiaTransfer：：上传** 的调用。 例如，如果 WIA 项为新项，则驱动程序应创建文件，并将 **IWiaTransfer：：上** 提供的源流的内容保存到设备存储中。
 
-**IWiaTransfer**， **IWiaItem2**， **IwiaDataTransfer**，以及**IStream**接口在 Microsoft Windows SDK 中所述文档。
+Microsoft Windows SDK 文档中介绍了 **IWiaTransfer**、 **IWiaItem2**、 **IwiaDataTransfer** 和 **IStream** 接口。
 
-本部分包括：
+本节包括：
 
-[上传的驱动程序行为](driver-behavior-on-upload.md)
+[上传时的驱动程序行为](driver-behavior-on-upload.md)
 
  
 

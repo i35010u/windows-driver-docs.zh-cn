@@ -1,27 +1,26 @@
 ---
 title: GDL 模板结构
 description: GDL 模板结构
-ms.assetid: 68c03c8a-f0d5-43db-a44a-5b0c344fa934
 keywords:
-- GDL WDK 模板
+- GDL WDK，模板
 - 模板 WDK GDL
 - 模板 WDK GDL，结构
 - 分析器 WDK GDL，基于模板的分析
 - 基于模板的分析 WDK GDL
 - 验证 GDL 条目 WDK GDL
 - GDL WDK，验证条目
-- 在模板中的 WDK GDL 属性
-- 模板中的构造 WDK GDL
+- 属性中的 WDK GDL
+- 在模板中构造 WDK GDL
 - 继承 WDK GDL
-- WDK GDL，基于继承的架构的架构
+- 架构 WDK GDL，基于继承的架构
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ee7929219cf3552d926b1e3846986d03032f46da
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9b2ad468c63398e500d22e94bc9d2e51b1827ba4
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63390597"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96796925"
 ---
 # <a name="gdl-template-structure"></a>GDL 模板结构
 
@@ -30,7 +29,7 @@ ms.locfileid: "63390597"
 
 [GDL 模板继承](gdl-template-inheritance.md)
 
-[用于将 GDL 模板与关键字关联的条件](criteria-for-associating-gdl-templates-with-keywords.md)
+[有关将 GDL 模板与关键字相关联的条件](criteria-for-associating-gdl-templates-with-keywords.md)
 
 [GDL 模板数据类型](gdl-template-data-types.md)
 

@@ -1,7 +1,6 @@
 ---
 title: GUID_DEVICE_LID
 description: GUID_DEVICE_LID
-ms.assetid: e879b1bf-3f5f-4b6d-956b-006091377194
 keywords:
 - GUID_DEVICE_LID 设备和驱动程序安装
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 5493e320ccc6b9e0b5fe6d1696eaf6dee40e1915
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: dd91133e7b5cfb11fef0355ac099d74abfc345c7
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89096991"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96796071"
 ---
 # <a name="guid_device_lid"></a>GUID_DEVICE_LID
 

@@ -4,7 +4,6 @@ description: 设置在当前作业中打印设备打印的页数。
 MSHAttr:
 - PreferredSiteName:MSDN
 - PreferredLib:/library/windows/hardware
-ms.assetid: 3C1DAE22-F1DF-48AE-A6F6-CCB8A97EB424
 keywords:
 - PrintedPageCount 方法打印设备
 - PrintedPageCount 方法打印设备，IPrinterScriptUsbJobContext 接口
@@ -17,12 +16,12 @@ api_type:
 - COM
 ms.date: 07/07/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 9c2966e971270e1a38f76637ed5a5bc0ff978c59
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 54373d5b42e1443d908596b477cb1b2c4862419d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89217706"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96796609"
 ---
 # <a name="iprinterscriptusbjobcontextprintedpagecount-method-in"></a>IPrinterScriptUsbJobContext：:P rintedPageCount 方法 (在) 
 
@@ -32,7 +31,7 @@ ms.locfileid: "89217706"
 
 ```cpp
 HRESULT PrintedPageCount(
-  [in] UINT32 value
+  [in] UINT32 value
 );
 ```
 
@@ -61,7 +60,7 @@ HRESULT PrintedPageCount(
 
 **目标平台：** 机
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 [**IPrinterScriptUsbJobContext**](iprinterscriptusbjobcontext.md)
 

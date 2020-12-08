@@ -1,17 +1,16 @@
 ---
 title: IPrintOemPS2 COM 接口
 description: IPrintOemPS2 COM 接口
-ms.assetid: 6743d73e-243b-4a05-8e88-576c65b37a19
 keywords:
 - IPrintOemPS2
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 39748fe5dee92badf605679f316216e16b31ce6d
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 61fa8fa55efde9289f480d41f8554a17b47a598b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90105868"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96796581"
 ---
 # <a name="iprintoemps2-com-interface"></a>IPrintOemPS2 COM 接口
 
@@ -31,7 +30,7 @@ ms.locfileid: "90105868"
 <thead>
 <tr class="header">
 <th>方法</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>

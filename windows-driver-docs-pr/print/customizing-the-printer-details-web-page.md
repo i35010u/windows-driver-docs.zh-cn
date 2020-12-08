@@ -1,7 +1,6 @@
 ---
 title: 自定义打印机详细信息网页
 description: 自定义打印机详细信息网页
-ms.assetid: 4853d5de-b855-4698-9178-877455e257c5
 keywords:
 - 自定义的打印网页 WDK，创建页面
 - ASP 文件 WDK 打印机
@@ -12,12 +11,12 @@ keywords:
 - 网页 WDK 打印机，详细信息页
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0e5ad6537411f1b26318834f056b3a19b12dc4c1
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 2f80abaf9d687f2e4c726fb0587a0f3484e8d55d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89217769"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96797365"
 ---
 # <a name="customizing-the-printer-details-web-page"></a>自定义打印机详细信息网页
 

@@ -1,17 +1,16 @@
 ---
 title: IPrintOemUI COM 接口
 description: IPrintOemUI COM 接口
-ms.assetid: 7fd4071a-11ce-49e6-9e23-4f0643da1d98
 keywords:
 - IPrintOemUI
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9c3f81cb9cc05397ca7b10c2e3eb00e7e5c02524
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 806067a743523764e98f5a803c7d08c57d7bd923
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90105864"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96796549"
 ---
 # <a name="iprintoemui-com-interface"></a>IPrintOemUI COM 接口
 
@@ -31,7 +30,7 @@ ms.locfileid: "90105864"
 <thead>
 <tr class="header">
 <th>方法</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>

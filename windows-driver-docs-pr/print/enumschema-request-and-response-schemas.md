@@ -1,15 +1,14 @@
 ---
 title: EnumSchema 请求和响应架构
 description: 下面是 EnumSchema 请求架构和相应的响应架构定义以及每个定义的示例。
-ms.assetid: 031FA2EA-A33B-409C-82FD-B4FE9D0A2E93
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cf559dce58fbb70ae093016580ccd7ecbe03430c
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 232028901ba3cfe253028f1503cbfd08a26759ba
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89217197"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96797109"
 ---
 # <a name="enumschema-request-and-response-schemas"></a>EnumSchema 请求和响应架构
 

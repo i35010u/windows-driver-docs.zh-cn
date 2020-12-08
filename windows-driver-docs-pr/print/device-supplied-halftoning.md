@@ -1,17 +1,16 @@
 ---
 title: 设备提供的半色调
 description: 设备提供的半色调
-ms.assetid: d1d7963e-c23e-4cb5-a33f-43fec5dc74d2
 keywords:
-- 设备提供半色调 WDK Unidrv
+- 设备提供的半色调 WDK Unidrv
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a539326bb9879a6c56baba893e5f4daa16e14ef0
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: cb39efc20e8d3ed039779d7a180b0b56a53f8e3d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63387272"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96797237"
 ---
 # <a name="device-supplied-halftoning"></a>设备提供的半色调
 
@@ -19,7 +18,7 @@ ms.locfileid: "63387272"
 
 
 
-如果您的打印机在内部提供半色调功能，你的微型驱动程序必须指定，Unidrv 向打印机发送激活这些功能的命令。 对于每个半色调选项是打印机支持 GPD 文件的半色调\*功能条目必须包含\*，如下所示命令的每个设备提供半色调选项，条目：
+如果打印机在内部提供半色调功能，则微型驱动程序必须指定 Unidrv 发送到打印机以激活这些功能的命令。 对于支持打印机的每个半色调选项，GPD 文件的半色调 \* 功能条目必须包含 \* 每个设备提供的半色调选项的命令条目，如下所示：
 
 ```cpp
 *Feature: Halftone
@@ -37,7 +36,7 @@ ms.locfileid: "63387272"
 }
 ```
 
-此外必须指定 ColorMode 功能条目，并且它们必须包括\*DevBPP 和\*DevNumOfPlanes 条目描述打印机所需的输入的格式。
+还必须指定 ColorMode 功能条目，并且它们必须包含 \* \* 描述打印机所需输入格式的 DevBPP 和 DevNumOfPlanes 条目。
 
  
 

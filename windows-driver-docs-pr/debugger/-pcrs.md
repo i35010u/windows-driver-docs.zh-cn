@@ -1,10 +1,9 @@
 ---
 title: pcrs
-description: Pcrs 扩展显示特定于 Intel Itanium 的处理器控制寄存器。
-ms.assetid: 45a84a95-86df-4176-ba30-ac93b509f7f7
+description: Pcrs 扩展显示 Intel Itanium 专用处理器控制寄存器。
 keywords:
-- 处理器控制寄存器 (PCR)
-- PCR （处理器控制寄存器）
+- " (PCR) 处理器控制寄存器"
+- 'PCR (处理器控制寄存器) '
 - pcrs Windows 调试
 ms.date: 05/23/2017
 topic_type:
@@ -14,33 +13,33 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 17b42efee88384b3e7acabddcb345f0d5d3fd727
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ef65e0e376f0548de1b8fb08974047b601c0c0f3
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63335818"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96795727"
 ---
 # <a name="pcrs"></a>!pcrs
 
 
-**！ Pcrs**扩展显示特定于 Intel Itanium 的处理器控制寄存器。
+**！ Pcrs** Extension 显示 Intel Itanium 专用处理器控制寄存器。
 
 ```dbgcmd
 !pcrs Address
 ```
 
-**重要**  此命令已被 Windows 调试器版本 10.0.14257 中不推荐使用和更高版本，并不再可用。
+**重要提示**  此命令在 Windows 调试器版本10.0.14257 和更高版本中已弃用，不再可用。
 
  
 
-## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>参数
+## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>Parameters
 
 
-<span id="_______Address______"></span><span id="_______address______"></span><span id="_______ADDRESS______"></span> *Address*   
-指定处理器控制的地址注册文件。
+<span id="_______Address______"></span><span id="_______address______"></span><span id="_______ADDRESS______"></span>*地址*   
+指定处理器控制寄存器文件的地址。
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 <table>
 <colgroup>
@@ -61,12 +60,12 @@ ms.locfileid: "63335818"
 
  
 
-此扩展命令仅用于基于 Itanium 的目标计算机。
+此扩展命令只能与基于 Itanium 的目标计算机一起使用。
 
 <a name="remarks"></a>备注
 -------
 
-不要混淆 **！ pcrs**扩展名[ **！ pcr** ](-pcr.md)扩展，它显示处理器控件区域的当前状态。
+不要将 **！ pcrs** 扩展与 [**！ pcr**](-pcr.md) 扩展相混淆，后者会显示处理器控件区域的当前状态。
 
  
 

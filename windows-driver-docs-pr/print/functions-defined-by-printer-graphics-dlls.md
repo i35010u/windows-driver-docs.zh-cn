@@ -1,19 +1,18 @@
 ---
 title: 打印机图形 DLL 定义的函数
 description: 打印机图形 DLL 定义的函数
-ms.assetid: b0c9ce45-76c4-4058-af3f-7b9d230bcf94
 keywords:
 - 打印机图形 DLL WDK，函数
 - 函数 WDK 打印机图形 DLL
 - 图形 DLL WDK 打印机，函数
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3536c7302fd7b42ae7f17984a59c8e476f153d88
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 630fc35957819ae37ddd8af5d520a10c3c184b0e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90104762"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96797057"
 ---
 # <a name="functions-defined-by-printer-graphics-dlls"></a>打印机图形 DLL 定义的函数
 
@@ -131,5 +130,5 @@ ms.locfileid: "90104762"
 
 打印机图形 Dll 定义的所有函数都是通过 GDI 的内核模式图形呈现引擎（ (GRE) ）调用的。
 
-[**DrvEnableDriver**](/windows/win32/api/winddi/nf-winddi-drvenabledriver)和[**DrvQueryDriverInfo**](/windows/win32/api/winddi/nf-winddi-drvquerydriverinfo)函数由图形 DLL 导出。 所有其他受支持的图形 DDI 函数的地址都放置在 **DrvEnableDriver** 函数返回的表中。
+[**DrvEnableDriver**](/windows/win32/api/winddi/nf-winddi-drvenabledriver)和 [**DrvQueryDriverInfo**](/windows/win32/api/winddi/nf-winddi-drvquerydriverinfo)函数由图形 DLL 导出。 所有其他受支持的图形 DDI 函数的地址都放置在 **DrvEnableDriver** 函数返回的表中。
 

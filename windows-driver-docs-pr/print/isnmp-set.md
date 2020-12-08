@@ -1,16 +1,15 @@
 ---
 title: ISNMP Set 方法
-description: Set 方法启用 ASP Web 页后，可以将一个值与 SNMP OID 相关联。
+description: Set 方法使 ASP 网页可以将值与 SNMP OID 关联起来。
 MS-HAID:
 - webfnc\_b0392f7d-7d17-41ce-97fe-8f8baa691c78.xml
 - print.isnmp\_set
 MSHAttr:
 - PreferredSiteName:MSDN
 - PreferredLib:/library/windows/hardware
-ms.assetid: 7eac82e7-3f19-4eda-8706-eac6aa2b8dae
 keywords:
-- Set 方法打印设备
-- Set 方法打印设备 ISNMP 接口
+- 设置方法打印设备
+- 设置方法打印设备，ISNMP 接口
 - ISNMP 接口打印设备，Set 方法
 topic_type:
 - apiref
@@ -22,40 +21,40 @@ api_type:
 - COM
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2d1bd97050f50ef5169bab0e77c119f8a69dc3ff
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2537aeeade6a745d5f89566ae7b2483f33b77e9f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63384172"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96796517"
 ---
-# <a name="isnmpset-method"></a>ISNMP::Set 方法
+# <a name="isnmpset-method"></a>ISNMP：： Set 方法
 
-`Set`方法启用 ASP Web 页后，可以将一个值与 SNMP OID 相关联。
+`Set`使用方法，ASP 网页可以将值与 SNMP OID 关联起来。
 
 <a name="syntax"></a>语法
 ------
 
 ```cpp
 HRESULT Set(
-  [in]  BSTR    bstrOID,
-  [out] VARIANT varValue
+  [in]  BSTR    bstrOID,
+  [out] VARIANT varValue
 );
 ```
 
-<a name="parameters"></a>Parameters
+<a name="parameters"></a>参数
 ----------
 
-*bstrOID* \[in\]  
-调用方提供指向 SNMP OID 字符串指针。
+*bstrOID* \[中\]  
+调用方提供的指向 SNMP OID 字符串的指针。
 
-*varValue* \[out\]  
-调用方提供的位置包含 OID 的值。
+*varValue* \[弄\]  
+调用方提供的包含 OID 值的位置。
 
 <a name="return-value"></a>返回值
 ------------
 
-此外可以返回 Win32 错误代码。
+也可以返回 Win32 错误代码。
 
 <table>
 <colgroup>
@@ -75,7 +74,7 @@ HRESULT Set(
 </tr>
 <tr class="even">
 <td><strong>E_FAIL</strong></td>
-<td><p><strong>ISNMP::Open</strong>尚未调用方法。</p></td>
+<td><p>未调用 <strong>ISNMP：： Open</strong> 方法。</p></td>
 </tr>
 <tr class="odd">
 <td><strong>E_INVALIDARG</strong></td>
@@ -90,9 +89,9 @@ HRESULT Set(
 
 ## <a name="vbscript-example"></a>VBScript 示例
 
-此方法调用**SnmpMgrRequest**函数来设置 SNMP OID 值。 有关详细信息，请参阅 Windows SDK 文档。
+此方法调用 **SnmpMgrRequest** 函数来设置 SNMP OID 值。 有关详细信息，请参阅 Windows SDK 文档。
 
-[ **ISNMP::Open** ](isnmp-open.md)前必须调用方法`ISNMP::Set`可以调用方法。
+必须先调用 [**ISNMP：： Open**](isnmp-open.md) 方法，然后才能 `ISNMP::Set` 调用方法。
 
 ```vb
 Dim StrIP, strCommunity, objSNMP, OIDValue
@@ -117,15 +116,15 @@ objSNMP.Set ("43.18.1.1.2", OIDValue)
 <tbody>
 <tr class="odd">
 <td><p>目标平台</p></td>
-<td>桌面设备</td>
+<td>台式机</td>
 </tr>
 <tr class="odd">
-<td><p>Header</p></td>
-<td>Olesnmp.h</td>
+<td><p>标头</p></td>
+<td>Olesnmp</td>
 </tr>
 </tbody>
 </table>
 
 ## <a name="see-also"></a>请参阅
 
-[**ISNMP::Open**](isnmp-open.md)
+[**ISNMP：： Open**](isnmp-open.md)

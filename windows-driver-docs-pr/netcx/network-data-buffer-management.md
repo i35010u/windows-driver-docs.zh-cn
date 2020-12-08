@@ -1,18 +1,17 @@
 ---
 title: 网络数据缓冲区管理
 description: 网络数据缓冲区管理
-ms.assetid: BFE1D376-88FB-41CB-AB6D-A0D6BB83128C
 keywords:
 - WDF 网络适配器类扩展缓冲区管理器，网络数据缓冲区管理
 ms.date: 02/20/2018
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 7bf85e96e717710db18c155eaa0b5fcd8b07db8c
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 4d452ec29f45260ccdab164e79abec90944a9a05
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89214158"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96795997"
 ---
 # <a name="network-data-buffer-management"></a>网络数据缓冲区管理
 

@@ -1,20 +1,19 @@
 ---
 title: 实现打印机驱动程序 COM 接口
 description: 实现打印机驱动程序 COM 接口
-ms.assetid: 39f873e9-7f72-420c-b6d6-dce31840aa16
 keywords:
-- 打印机驱动程序 WDK，自定义 COM 接口
+- 打印机驱动程序自定义 WDK，COM 接口
 - 自定义打印机驱动程序 WDK，COM 接口
 - COM 接口 WDK 打印
 - 插件 WDK 打印
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 91b33e436ce11156f251854f7bcd9881425ce2ef
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 00670a45115bf32bda40b5143f81d9a011cd8cd8
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63340907"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96796767"
 ---
 # <a name="implementing-printer-driver-com-interfaces"></a>实现打印机驱动程序 COM 接口
 
@@ -22,7 +21,7 @@ ms.locfileid: "63340907"
 
 
 
-本部分介绍如何构造插件中，基于 WDK 提供示例代码。 它还介绍了用于打印机驱动程序和插件之间进行通信的调用序列。本部分包括以下主题：
+本部分介绍如何基于 WDK 提供的示例代码构造插件。 它还说明了用于在打印机驱动程序与插件之间进行通信的调用序列。本部分包括以下主题：
 
 [打印机驱动程序的接口标识符](interface-identifiers-for-printer-drivers.md)
 

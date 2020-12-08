@@ -1,16 +1,15 @@
 ---
 title: AMLI 调试器
-description: 本主题介绍 AMLI 调试器
-ms.assetid: f9a9c646-e8a0-4ae0-b2a2-147e256f8683
-keywords: 调试时，调试的 ACPI AML，AMLI，BIOS 调试 ACPI 机器语言调试
+description: 本主题介绍了 AMLI 调试器
+keywords: AML 调试，ACPI 调试，AMLI，BIOS 调试，ACPI 计算机语言，调试
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ab46912892c2b2aefa00db45f3d0bcdfeda5675a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f799a9ef18727daecc8290fe21ddc78f8bceb1dd
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63366125"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96795661"
 ---
 # <a name="the-amli-debugger"></a>AMLI 调试器
 
@@ -18,11 +17,11 @@ ms.locfileid: "63366125"
 ## <span id="ddk_the_amli_debugger_dbg"></span><span id="DDK_THE_AMLI_DEBUGGER_DBG"></span>
 
 
-本部分包括：
+本节包括：
 
 [AMLI 调试器简介](introduction-to-the-amli-debugger.md)
 
-[设置调试会话 AML](setting-up-an-aml-debugging-session.md)
+[设置 AML 调试会话](setting-up-an-aml-debugging-session.md)
 
 [基本 AML 调试](basic-aml-debugging.md)
 

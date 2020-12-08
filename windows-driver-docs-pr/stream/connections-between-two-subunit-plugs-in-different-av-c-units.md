@@ -1,19 +1,18 @@
 ---
 title: 在不同 AV/C 单元中的两个子单元插头之间的连接
 description: 在不同 AV/C 单元中的两个子单元插头之间的连接
-ms.assetid: 20d209b3-2516-4913-9f31-b14afddb78fb
 keywords:
 - 连接 WDK AV/C
 - AV/C WDK，连接方案
 - AVCCONNECTINFO
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f05cf89fd5137cb8534b087114fdacf262018134
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: c265e20a2eb304ecf39641ffbe572f0dd398841a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89190637"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96795855"
 ---
 # <a name="connections-between-two-subunit-plugs-in-different-avc-units"></a>在不同 AV/C 单元中的两个子单元插头之间的连接
 

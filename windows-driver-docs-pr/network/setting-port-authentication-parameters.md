@@ -1,7 +1,6 @@
 ---
 title: 设置端口身份验证参数
 description: 设置端口身份验证参数
-ms.assetid: 88ac8229-d1d5-4287-8b5d-3a7b9b1f2e89
 keywords:
 - 端口 WDK NDIS，OID 请求
 - NDIS 端口 WDK，OID 请求
@@ -9,12 +8,12 @@ keywords:
 - 身份验证参数 WDK NDIS 端口
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 88c84028fd5164ae4f5fcc933c8782621652048d
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 0aa24cacd24f35891bf2755d945dc35046510833
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89214440"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96795877"
 ---
 # <a name="setting-port-authentication-parameters"></a>设置端口身份验证参数
 

@@ -1,7 +1,6 @@
 ---
 title: KSEVENT \_ 设备 \_ 丢失
 description: '\_ \_ 从系统 \ 8212 中删除照相机设备时，将触发 KSEVENT 设备丢失事件，例如，当拔出连接照相机的 USB 电缆时。'
-ms.assetid: 28E21A2D-63CC-4991-AEBA-694773FC009A
 keywords:
 - KSEVENT_DEVICE_LOST 流媒体设备
 topic_type:
@@ -12,12 +11,12 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5ac11ad7af101b461afabdde0ec120c3a317cabe
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 71e526268f2131f83b9506ba820dbee0c3704eaf
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90107164"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96795821"
 ---
 # <a name="ksevent_device_lost"></a>KSEVENT \_ 设备 \_ 丢失
 
@@ -59,7 +58,7 @@ ms.locfileid: "90107164"
 
  
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSEVENT \_ 设备**](/windows-hardware/drivers/ddi/ks/ne-ks-ksevent_device)

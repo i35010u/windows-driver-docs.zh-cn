@@ -1,20 +1,19 @@
 ---
 title: wdfkd.wdfpool
 description: wdfkd.wdfpool
-ms.assetid: 84b59a52-7c7d-4b61-a6e0-79017c11e95c
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5a435a35d17e0bdffe8dfc8b110b5cba0caad756
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0d886a36c476107808c450e42f77982d21702328
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63323463"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96795697"
 ---
 # <a name="wdfkdwdfpool"></a>!wdfkd.wdfpool
 
 
-**！ Wdfkd.wdfpool**扩展已过时。
+**！ Wdfkd wdfpool** 扩展已过时。
 
  
 

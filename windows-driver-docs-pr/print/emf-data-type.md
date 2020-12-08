@@ -1,19 +1,18 @@
 ---
 title: EMF 数据类型
 description: EMF 数据类型
-ms.assetid: d5a05778-3637-4dba-b036-5f0fc236d52d
 keywords:
 - 打印处理器 WDK，数据类型
 - 数据类型 WDK 打印处理器
 - EMF 数据类型 WDK 打印处理器
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2cc0a70745eedacd4d04f25257efbe9c4e0861ae
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 4be2e5d765f2749ca44f8603b90142a2e2d5f4bf
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89214896"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96797143"
 ---
 # <a name="emf-data-type"></a>EMF 数据类型
 

@@ -1,18 +1,17 @@
 ---
 title: 自定义的 PDEV 结构
 description: 自定义的 PDEV 结构
-ms.assetid: e5c51b9a-5f73-4411-88d8-931981a8450c
 keywords:
 - 呈现插件 WDK 打印，PDEV 结构
 - PDEV WDK 打印
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 31332cae91089f48b061749173a2bbe7f2dc6d4d
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: a5f7214ccbabf9095337c1f0cc424dd77b3d7be5
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89218246"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96797385"
 ---
 # <a name="customized-pdev-structures"></a>自定义的 PDEV 结构
 

@@ -1,15 +1,14 @@
 ---
 title: XPSDrv 的改进
 description: 本主题提供有关对 XPSDrv 呈现体系结构进行的更新的信息。
-ms.assetid: 5D76ECA2-C5F6-47E4-BC05-B5137AD4196B
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1c4f19d31441ab2caa686c87907bc6e6fede3d95
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 86284bc1d723ed8f8fd49c1ccf93930b21d0f5ba
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89205879"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96796753"
 ---
 # <a name="improvements-in-xpsdrv"></a>XPSDrv 的改进
 
@@ -25,7 +24,7 @@ Windows 8 中已改进 XPS 光栅化服务，可以使用图形处理单元 (GPU
 
 XPS 光栅化服务还可以提供多种像素格式的光栅化，其中包括以下新的高精度格式。 因此，使用 XPS 光栅化服务的打印驱动程序现在可以将颜色精度设定为每通道8位、16位和32位。 有关像素格式的详细信息，请参阅 [本机像素格式概述](/windows/desktop/wic/-wic-codec-native-pixel-formats)。 [**XPSRaterizationFactory1：： CreateRasterizer1**](/previous-versions/windows/hardware/drivers/hh802468(v=vs.85))方法支持这些新的像素格式。 下表显示了 XPS 光栅化服务像素格式。
 
-| 值                                | 通道计数 | 每通道位数 | 每像素位数 | 存储类型 |
+| “值”                                | 通道计数 | 每通道位数 | 每像素位数 | 存储类型 |
 |--------------------------------------|---------------|------------------|----------------|--------------|
 | GUID \_ WICPixelFormat32bppPBGRA       | 4             | 8                | 32             | UINT         |
 | GUID \_ WICPixelFormat64bppPRGBAHalf   | 4             | 16               | 64             | Float        |
@@ -33,7 +32,7 @@ XPS 光栅化服务还可以提供多种像素格式的光栅化，其中包括�
 
 ## <a name="iprintcorehelperuni2"></a>IPrintCoreHelperUni2
 
-Windows 8 中引入了 [IPrintCoreHelperUni2](/windows-hardware/drivers/ddi/prcomoem/nn-prcomoem-iprintcorehelperuni2) 接口，以支持从 GPD 文件中检索命令字符串。 除了附加的**GetNamedCommand**方法以外，接口与[IPrintCoreHelperUni](/windows-hardware/drivers/ddi/prcomoem/nn-prcomoem-iprintcorehelperuni)完全相同。
+Windows 8 中引入了 [IPrintCoreHelperUni2](/windows-hardware/drivers/ddi/prcomoem/nn-prcomoem-iprintcorehelperuni2) 接口，以支持从 GPD 文件中检索命令字符串。 除了附加的 **GetNamedCommand** 方法以外，接口与 [IPrintCoreHelperUni](/windows-hardware/drivers/ddi/prcomoem/nn-prcomoem-iprintcorehelperuni)完全相同。
 
 ## <a name="related-topics"></a>相关主题
 

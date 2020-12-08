@@ -1,13 +1,12 @@
 ---
-title: IPrinterScriptUsbJobContextReturnCodes Failure 方法
-description: 返回一个值"1"，以通知 USBMon 方法调用失败。
+title: IPrinterScriptUsbJobContextReturnCodes 失败方法
+description: 返回值 "1"，通知 USBMon 方法调用失败。
 MSHAttr:
 - PreferredSiteName:MSDN
 - PreferredLib:/library/windows/hardware
-ms.assetid: EEFDB8CA-5B6F-46E5-B181-074354E8B0EE
 keywords:
-- Failure 方法打印设备
-- Failure 方法打印设备，IPrinterScriptUsbJobContextReturnCodes 接口
+- 故障方法打印设备
+- 故障方法打印设备，IPrinterScriptUsbJobContextReturnCodes 接口
 - IPrinterScriptUsbJobContextReturnCodes 接口打印设备，失败方法
 topic_type:
 - apiref
@@ -17,41 +16,41 @@ api_type:
 - COM
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6d5eeb76d2e3152c564f23eeec6a370c244d5f00
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 955192d8c906e56946b281a9a14556e6441ac147
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63349231"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96796583"
 ---
-# <a name="iprinterscriptusbjobcontextreturncodesfailure-method"></a>IPrinterScriptUsbJobContextReturnCodes::Failure 方法
+# <a name="iprinterscriptusbjobcontextreturncodesfailure-method"></a>IPrinterScriptUsbJobContextReturnCodes：：失败方法
 
-返回一个值"1"，以通知 USBMon 方法调用失败。
+返回值 "1"，通知 USBMon 方法调用失败。
 
 <a name="syntax"></a>语法
 ------
 
 ```cpp
 HRESULT Failure(
-  [out, retval] UINT32 *value
+  [out, retval] UINT32 *value
 );
 ```
 
-<a name="parameters"></a>Parameters
+<a name="parameters"></a>参数
 ----------
 
 *值* \[out，retval\]  
-值，该值指示失败的方法调用。
+值，指示方法调用失败。
 
 <a name="return-value"></a>返回值
 ------------
 
-此方法返回**HRESULT**值。
+此方法返回 **HRESULT** 值。
 
 <a name="remarks"></a>备注
 -------
 
-**失败**是只读的方法。 当 USBMon 收到此失败值时，它会清除作业上下文对象并将错误代码返回到打印后台处理程序。
+**故障** 为只读方法。 当 USBMon 收到此失败值时，它会清理作业上下文对象并将错误代码返回到打印后台处理程序。
 
 <a name="requirements"></a>要求
 ------------
@@ -72,7 +71,7 @@ HRESULT Failure(
 </tr>
 <tr class="odd">
 <td><p>目标平台</p></td>
-<td>桌面设备</td>
+<td>台式机</td>
 </tr>
 </tbody>
 </table>

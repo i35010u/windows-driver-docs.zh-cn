@@ -1,7 +1,6 @@
 ---
 title: ndiskd.findpacket
-description: 警告此扩展适用于旧的 NDIS 1.x 驱动程序。 NDIS_PACKET 结构及其关联的体系结构已弃用。Ndiskd. findpacket 扩展查找指定的数据包。
-ms.assetid: fc07b2d8-85ca-4be1-ae9d-40b7c7f81b08
+description: 警告此扩展适用于旧的 NDIS 1.x 驱动程序。 NDIS_PACKET 结构及其关联的体系结构已弃用。 Ndiskd. findpacket 扩展查找指定的数据包。
 keywords:
 - ndiskd findpacket Windows 调试
 ms.date: 06/15/2020
@@ -12,18 +11,18 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: c8f54ae9403c2ca6057e34b6ff5ae73b71d57be2
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 29225b94c838c6c54993b4c8008cf36c15d14a69
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89211831"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96796323"
 ---
 # <a name="ndiskdfindpacket"></a>!ndiskd.findpacket
 
-**警告**   此扩展适用于旧的 NDIS 1.x 驱动程序。 [NDIS \_ 数据包](/previous-versions/windows/hardware/network/ff557086(v=vs.85))结构及其关联的体系结构已弃用。
+**警告**  此扩展适用于旧的 NDIS 1.x 驱动程序。 [NDIS \_ 数据包](/previous-versions/windows/hardware/network/ff557086(v=vs.85))结构及其关联的体系结构已弃用。
 
-**！ Ndiskd findpacket**扩展查找指定的数据包。
+**！ Ndiskd findpacket** 扩展查找指定的数据包。
 
 ```console
 !ndiskd.findpacket [-VirtualAddress] [-PoolAddress]  
@@ -41,6 +40,6 @@ ms.locfileid: "89211831"
 
 Ndiskd.dll
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 [NDIS \_ 数据包](/previous-versions/windows/hardware/network/ff557086(v=vs.85))

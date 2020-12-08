@@ -1,9 +1,8 @@
 ---
 title: th（跟踪到下一个分支指令）
-description: Th 命令执行程序，直到它达到包括条件分支指令的任何类型或无条件分支，调用返回，并且系统调用。
-ms.assetid: 42b7ceb6-c507-45b3-9186-0a4014b68a28
+description: 第一条命令执行程序，直到它到达任意类型的分支指令，包括条件或无条件分支、调用、返回和系统调用。
 keywords:
-- 日 （到下一步的分支指令的跟踪） Windows 调试
+- " (跟踪到下一个分支指令) Windows 调试"
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 5e3eb9dcfc2b3018c2735518250b814e02d5f7e1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9f1c8944f5c507aa7ef2b60760f1de39a710c6f4
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63364719"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96795663"
 ---
 # <a name="th-trace-to-next-branching-instruction"></a>th（跟踪到下一个分支指令）
 
 
-**Th**命令执行程序，直到它达到包括条件分支指令的任何类型或无条件分支，调用返回，并且系统调用。
+**第** 一条命令执行程序，直到它到达任意类型的分支指令，包括条件或无条件分支、调用、返回和系统调用。
 
 User-Mode
 
@@ -36,22 +35,22 @@ Kernel-Mode
 th [r] [= StartAddress] [Count] 
 ```
 
-## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>参数
+## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>Parameters
 
 
-<span id="_______Thread______"></span><span id="_______thread______"></span><span id="_______THREAD______"></span> *线程*   
-指定线程继续执行。 所有其他线程均已冻结。 有关语法的详细信息，请参阅[线程语法](thread-syntax.md)。 仅在用户模式下，可以指定线程。
+<span id="_______Thread______"></span><span id="_______thread______"></span><span id="_______THREAD______"></span>*Thread*   
+指定要继续执行的线程。 所有其他线程均已冻结。 有关语法的详细信息，请参阅 [线程语法](thread-syntax.md)。 只能在用户模式下指定线程。
 
-<span id="_______r______"></span><span id="_______R______"></span> **r**   
-开启和关闭显示器的寄存器和标志。 默认情况下，显示的寄存器和标志。 可以使用禁用注册显示**对**， [ **pr**](p--step-.md)， [ **tr**](t--trace-.md)，或.prompt\_允许-reg 命令。 所有这些命令控制的相同设置，可以使用其中任何一个重写任何以前使用这些命令。
+<span id="_______r______"></span><span id="_______R______"></span>**r**   
+打开和关闭寄存器和标志的显示。 默认情况下，将显示寄存器和标志。 您可以使用 **将**、 [**pr**](p--step-.md)、 [**tr**](t--trace-.md)或提示 \_ 允许-reg 命令禁用注册显示。 所有这些命令都控制相同的设置，你可以使用其中任何一个命令来替代以前使用的这些命令。
 
-此外可以使用 l os 命令来禁用注册显示。 此设置是独立于其他四个命令。 控制要显示的寄存器和标志，使用[ **rm （注册掩码）** ](rm--register-mask-.md)命令。
+你还可以使用 l os 命令禁用注册显示。 此设置与其他四个命令不同。 若要控制显示哪些寄存器和标志，请使用 [**rm (注册掩码)**](rm--register-mask-.md) 命令。
 
-<span id="_______StartAddress______"></span><span id="_______startaddress______"></span><span id="_______STARTADDRESS______"></span> *StartAddress*   
-指定调试器开始执行的位置的地址。 如果不使用*StartAddress*，指令指针指向的指令处开始执行。 有关语法的详细信息，请参阅[地址和地址范围语法](address-and-address-range-syntax.md)。
+<span id="_______StartAddress______"></span><span id="_______startaddress______"></span><span id="_______STARTADDRESS______"></span>*StartAddress*   
+指定调试器开始执行的地址。 如果不使用 *StartAddress*，则将从指令指针指向的指令开始执行。 有关语法的详细信息，请参阅 [address 和 Address Range 语法](address-and-address-range-syntax.md)。
 
-<span id="_______Count______"></span><span id="_______count______"></span><span id="_______COUNT______"></span> *Count*   
-指定调试器必须用于遇到的分支指令数**th**命令以结束。 默认值为 1。
+<span id="_______Count______"></span><span id="_______count______"></span><span id="_______COUNT______"></span>*计数*   
+指定调试器在 **第** 一次命令结束时必须遇到的分支指令的数目。 默认值为一。
 
 ### <a name="span-idenvironmentspanspan-idenvironmentspanspan-idenvironmentspanenvironment"></a><span id="Environment"></span><span id="environment"></span><span id="ENVIRONMENT"></span>环境
 
@@ -62,12 +61,12 @@ th [r] [= StartAddress] [Count]
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p><strong>模式</strong></p></td>
-<td align="left"><p>用户模式下，内核模式</p></td>
+<td align="left"><p><strong>交货</strong></p></td>
+<td align="left"><p>用户模式，内核模式</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>目标</strong></p></td>
-<td align="left"><p>仅实时调试</p></td>
+<td align="left"><p>仅限实时调试</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>平台</strong></p></td>
@@ -78,20 +77,20 @@ th [r] [= StartAddress] [Count]
 
  
 
-### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>其他信息
+### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>附加信息
 
-有关相关命令的详细信息，请参阅[控制目标](controlling-the-target.md)。
+有关相关命令的详细信息，请参阅 [控制目标](controlling-the-target.md)。
 
 <a name="remarks"></a>备注
 -------
 
-**Th**命令将导致目标开始执行。 执行将继续直至调试器到达分支指令或遇到断点。
+**第 th** 命令导致目标开始执行。 执行将继续，直到调试器到达分支指令或遇到断点。
 
-如果程序计数器已在分支指令上，调试器将跟踪为分支指令，并继续执行，直至到达另一个分支指令。 此跟踪，而不是执行中的，在调用之间的唯一区别是**th**并[ **p h （到下一个分支指令的步骤）**](ph--step-to-next-branching-instruction-.md)。
+如果程序计数器已在分支指令上，则调试器将跟踪分支指令并继续执行，直到到达另一个分支指令。 这种跟踪（而不是执行）调用是 [**(单步到下一个分支指令)**](ph--step-to-next-branching-instruction-.md)的 **唯一区别。**
 
-**th**是可用的所有实时会话。 此可用性之间的主要区别是**th**并[ **tb （跟踪到下一个分支）**](tb--trace-to-next-branch-.md)。
+对于所有实时会话，**第** 个会话可用。 此可用性是 [**(跟踪与下一个分支)**](tb--trace-to-next-branch-.md)**之间的** 主要差异。
 
-在源模式中，可以将一个源行与多个程序集指令相关联。 此命令不会停止在当前的源行与相关联的分支指令。
+在源模式下，可以将一个源行与多个程序集指令相关联。 此命令不会在与当前源行关联的分支指令处停止。
 
  
 

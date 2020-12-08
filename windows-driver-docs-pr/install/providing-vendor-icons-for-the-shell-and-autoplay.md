@@ -1,7 +1,6 @@
 ---
 title: 为设备提供图标
 description: 为设备提供图标
-ms.assetid: 2e3afbf6-57f6-4b83-b10a-c33d9b1c1731
 keywords:
 - 自动播放图标 WDK
 - 自定义图标 WDK 设备安装
@@ -14,12 +13,12 @@ keywords:
 - 复制图标文件
 ms.date: 04/30/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 5fe372d91e5e809312801660fac3cecaeb66f9e1
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: db624cda34c3dccba7eeab24bda31ec6e4f52ce9
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90715264"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96796021"
 ---
 # <a name="providing-icons-for-a-device"></a>为设备提供图标
 
@@ -56,7 +55,7 @@ DeviceIcon,,,,"%13%\vendor.ico"
 
 Shell 使用 " **图标** " 和 " **NoMediaIcons** " 注册表值在 "自动播放"、"我的电脑" 和 "文件打开" 对话框中表示设备。
 
-若要添加这些内容，请在设备的[**Inf DDInstall 部分**](inf-ddinstall-hw-section.md)中包括一个[**inf AddReg 指令**](inf-addreg-directive.md)。 在 " **AddReg** " 部分中，指定 " **图标** " 和 " **NoMediaIcons** " 值项，如以下示例中所示：
+若要添加这些内容，请在设备的 [**Inf DDInstall 部分**](inf-ddinstall-hw-section.md)中包括一个 [**inf AddReg 指令**](inf-addreg-directive.md)。 在 " **AddReg** " 部分中，指定 " **图标** " 和 " **NoMediaIcons** " 值项，如以下示例中所示：
 
 ```inf
 [DDInstall.NT.HW]
@@ -69,7 +68,7 @@ HKR, , NoMediaIcons, 0x10000, "no-media-inserted-icon-file"
 
 然后，请包括一个 [**Inf SourceDisksFiles 部分**](inf-sourcedisksfiles-section.md) ，其中列出了图标文件和一个将它们复制到系统的对应 [**INF CopyFiles 指令**](inf-copyfiles-directive.md) 。
 
-**图标**和**NoMediaIcons**值项存储在设备的*硬件密钥*下的**设备参数**项下。 例如， `HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Enum\<Hardware ID>\Device Parameters` 将包含如下所示的条目：
+**图标** 和 **NoMediaIcons** 值项存储在设备的 *硬件密钥* 下的 **设备参数** 项下。 例如， `HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Enum\<Hardware ID>\Device Parameters` 将包含如下所示的条目：
 
 * `Icons [REG_MULTI_SZ] = %SystemRoot%\system32\icon.ico`
 

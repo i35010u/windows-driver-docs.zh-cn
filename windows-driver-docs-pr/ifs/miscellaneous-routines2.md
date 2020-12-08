@@ -1,18 +1,17 @@
 ---
 title: 杂项例程
 description: 杂项例程
-ms.assetid: e065c86c-a784-49e1-a1d9-e2bcff3fcae4
 keywords:
 - RDBSS WDK 文件系统，其他例程
 - 重定向驱动器缓冲子系统 WDK 文件系统、其他例程
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 900383cd239681f4258cc1b266aa366825173965
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: a6f43f697f88df1e796201ae6038ab434ab51179
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90104202"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96795513"
 ---
 # <a name="miscellaneous-routines"></a>杂项例程
 
@@ -32,7 +31,7 @@ RDBSS 的其他例程包括：
 <thead>
 <tr class="header">
 <th align="left">例程所返回的值</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>

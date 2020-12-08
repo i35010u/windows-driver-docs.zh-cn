@@ -1,7 +1,6 @@
 ---
 title: ndiskd.dbglevel
 description: Ndiskd dbglevel 扩展显示，并根据需要更改当前的 NDIS 调试级别。 警告 ndiskd 已被 WPP 和驱动程序验证程序取代。
-ms.assetid: D134FD03-DABA-4558-A5C3-C365F77BD69A
 keywords:
 - ndiskd dbglevel Windows 调试
 ms.date: 06/15/2020
@@ -12,19 +11,19 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 87921db9d40820f64a2b3d6cbab5d158fafdf4da
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 24757120800234f3f6b49c9b1034f99c9232bb2e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89209429"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96796335"
 ---
 # <a name="ndiskddbglevel"></a>!ndiskd.dbglevel
 
-**！ Ndiskd dbglevel**扩展显示，并根据需要更改当前的 NDIS 调试级别。
+**！ Ndiskd dbglevel** 扩展显示，并根据需要更改当前的 NDIS 调试级别。
 
-**警告**   
- **！ ndiskd**已被 WPP (Windows 软件跟踪预处理器) 和驱动程序验证程序所取代。 ！如果目标系统不支持 **！ ndiskd dbglevel**，ndiskd 将为你提供以下警告。
+**警告**  
+**！ ndiskd** 已被 WPP (Windows 软件跟踪预处理器) 和驱动程序验证程序所取代。 ！如果目标系统不支持 **！ ndiskd dbglevel**，ndiskd 将为你提供以下警告。
 
 ```console
 0: kd> !ndiskd.dbglevel
@@ -63,7 +62,7 @@ ms.locfileid: "89209429"
 ## <a name="parameters"></a>参数
 
 <span id="_______-level______"></span><span id="_______-LEVEL______"></span>*-级别*   
-调试详细级别。 可能的值包括：
+调试详细级别。 可能的值为：
 
 - 无-禁用调试跟踪
 - 严重-启用要打印的致命错误
@@ -80,7 +79,7 @@ Ndiskd.dll
 
 此扩展仅适用于选中 NDIS.sys。 若要检查 NDIS.sys 的生成信息，请运行 [**！ ndiskd**](-ndiskd-ndis.md) 扩展名。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 [网络驱动程序设计指南](../network/index.md)
 
@@ -88,7 +87,7 @@ Ndiskd.dll
 
 [调试网络堆栈](https://channel9.msdn.com/Shows/Defrag-Tools/Defrag-Tools-175-Debugging-the-Network-Stack)
 
-[**NDIS 扩展 ( # A0) **](ndis-extensions--ndiskd-dll-.md)
+[**NDIS 扩展 ( # A0)**](ndis-extensions--ndiskd-dll-.md)
 
 [**!ndiskd.help**](-ndiskd-help.md)
 

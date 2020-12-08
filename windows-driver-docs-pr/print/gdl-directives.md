@@ -1,24 +1,23 @@
 ---
 title: GDL 指令
 description: GDL 指令
-ms.assetid: 7b7ba94f-9494-4477-b4f0-dd9fcfd1fccf
 keywords:
-- GDL WDK 指令
-- WDK GDL 指令
+- GDL WDK，指令
+- 指令 WDK GDL
 - 分析器 WDK GDL，指令
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9dd26be505b4bf2f7e4c0fb425cadff7ecfba251
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: cd470ad5ed6bc83e4276dda6803a0bd11ee71413
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63392129"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96797015"
 ---
 # <a name="gdl-directives"></a>GDL 指令
 
 
-GDL 使用指令向 GDL 分析器提供的命令。
+GDL 使用指令为 GDL 分析器提供命令。
 
 GDL 使用以下类型的指令：
 

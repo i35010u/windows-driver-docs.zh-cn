@@ -1,38 +1,37 @@
 ---
 title: OID_NIC_SWITCH_ENUM_SWITCHES
 description: 过量的驱动程序或用户模式应用程序发出对象标识符 (OID) 查询请求 OID_NIC_SWITCH_ENUM_SWITCHES 获取数组。
-ms.assetid: 706C3F1C-239F-4731-A38E-E150D26C79A5
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_NIC_SWITCH_ENUM_SWITCHES 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: e15a565ecf39a5cc53595e3916abcc21f0cfeb91
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 8daa536db88bd1615bd1e6032bfb8379438f2b0b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90106047"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96795929"
 ---
 # <a name="oid_nic_switch_enum_switches"></a>OID \_ NIC \_ 交换机 \_ 枚举 \_ 开关
 
 
 过量驱动程序或用户模式应用程序会发出对象标识符 (OID，) OID \_ NIC \_ 交换机枚举参数的查询请求 \_ \_ ，以获取一个数组。 数组中的每个元素指定已在网络适配器上创建的 NIC 交换机的属性。
 
-成功从此 OID 查询请求返回后， [**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的**InformationBuffer**成员包含指向缓冲区的指针，该缓冲区包含以下内容：
+成功从此 OID 查询请求返回后， [**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的 **InformationBuffer** 成员包含指向缓冲区的指针，该缓冲区包含以下内容：
 
 -   用于定义数组中的元素数的 [**NDIS \_ NIC \_ 交换机 \_ 信息 \_ 数组**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_info_array) 结构。
 
 -   [**NDIS \_ NIC \_ 交换机 \_ 信息**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_info)结构的数组。 其中每个结构都包含有关在网络适配器上创建的单个 NIC 交换机的信息。
 
-    **注意**   如果网络适配器没有 NIC 交换机，则驱动程序将[**ndis \_ nic \_ 交换机 \_ 信息 \_ 数组**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_info_array)结构的**NumElements**成员设置为零，且不会返回任何[**NDIS \_ nic \_ 交换机 \_ 信息**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_info)结构。
+    **注意** 如果网络适配器没有 NIC 交换机，则驱动程序将 [**ndis \_ nic \_ 交换机 \_ 信息 \_ 数组**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_info_array)结构的 **NumElements** 成员设置为零，且不会返回任何 [**NDIS \_ nic \_ 交换机 \_ 信息**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_info)结构。
 
      
 
-<a name="remarks"></a>注解
+<a name="remarks"></a>备注
 -------
 
 过量驱动程序和用户模式应用程序发出 oid \_ NIC 交换机枚举开关的 oid 查询请求 \_ \_ \_ ，以枚举网络适配器上创建的 NIC 交换机。
 
-**注意**   从 Windows Server 2012 开始，单个根 i/o 虚拟化 (SR-IOV) 接口仅支持网络适配器上的默认 NIC 交换机。 因此，返回的 [**ndis \_ nic \_ 交换机 \_ 信息 \_ 数组**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_info_array) 结构必须为默认 NIC 交换机指定一个 [**ndis \_ NIC \_ 交换机 \_ 信息**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_info) 元素，该元素由 NDIS \_ 默认 \_ 交换机 ID 的标识符引用 \_ 。
+**注意**  从 Windows Server 2012 开始，单个根 i/o 虚拟化 (SR-IOV) 接口仅支持网络适配器上的默认 NIC 交换机。 因此，返回的 [**ndis \_ nic \_ 交换机 \_ 信息 \_ 数组**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_info_array) 结构必须为默认 NIC 交换机指定一个 [**ndis \_ NIC \_ 交换机 \_ 信息**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_info) 元素，该元素由 NDIS \_ 默认 \_ 交换机 ID 的标识符引用 \_ 。
 
  
 

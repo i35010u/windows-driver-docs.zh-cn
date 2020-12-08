@@ -1,7 +1,6 @@
 ---
 title: 自定义打印机端口监视器
 description: 自定义打印机端口监视器
-ms.assetid: e5d4166a-2593-43fd-b476-c54642e2d099
 keywords:
 - 内置自动配置支持 WDK 打印机，自定义打印机端口监视器
 - 双向扩展文件 WDK 打印机自动配置
@@ -13,12 +12,12 @@ keywords:
 - 双向通信 WDK 打印
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 68803746074807e34bb73491d1d280586b1c839c
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 2c1116362db2a8f0ac6290659dcbe24a9156e9d0
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89217770"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96797362"
 ---
 # <a name="customizing-the-printer-port-monitors"></a>自定义打印机端口监视器
 
@@ -27,7 +26,7 @@ ms.locfileid: "89217770"
 
 双向扩展文件中的架构是标准打印架构的子集。 此类架构必须符合 WDK 附带的 Tcpbidi 或 WsdBidi 文件的结构。
 
-**注意**   如果[双向通信架构](bidirectional-communication-schema.md)满足你的要求，则无需创建双向扩展文件，因此无需自定义打印端口监视器。
+**注意**  如果 [双向通信架构](bidirectional-communication-schema.md) 满足你的要求，则无需创建双向扩展文件，因此无需自定义打印端口监视器。
 
  
 
@@ -41,7 +40,7 @@ ms.locfileid: "89217770"
 
 如果驱动程序没有关联的双向扩展文件，则标准打印架构中的双向通信支持无法响应需要特定于驱动程序的数据 (如与输入和输出容器) 相关的数据的查询。
 
-**注意**   Windows Vista 中的网络路由隔离舱允许受信任的进程连接到不同的网络接口 (虚拟或物理) ，同时使各种接口彼此隔离。 例如，Windows Vista 使用这些隔离舱来强制执行不允许同时访问 VPN 和用户的本地网络和 Internet 的 VPN 策略。 打印期间，后台处理程序会在打开 TCP 打印机端口时模拟用户。 因此，当用户连接到 VPN 时，后台处理程序无法打印到本地网络打印机。
+**注意**   Windows Vista 中的网络路由隔离舱允许受信任的进程连接到不同的网络接口 (虚拟或物理) ，同时使各种接口彼此隔离。 例如，Windows Vista 使用这些隔离舱来强制执行不允许同时访问 VPN 和用户的本地网络和 Internet 的 VPN 策略。 打印期间，后台处理程序会在打开 TCP 打印机端口时模拟用户。 因此，当用户连接到 VPN 时，后台处理程序无法打印到本地网络打印机。
 
  
 

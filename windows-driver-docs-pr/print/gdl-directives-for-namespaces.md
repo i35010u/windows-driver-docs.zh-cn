@@ -1,7 +1,6 @@
 ---
 title: 用于命名空间的 GDL 指令
 description: 用于命名空间的 GDL 指令
-ms.assetid: 8927291e-60d8-4a7b-9393-8650c142227d
 keywords:
 - 指令 WDK GDL，命名空间指令
 - 源文件 WDK GDL，命名空间指令
@@ -12,25 +11,25 @@ keywords:
 - 命名空间指令 WDK GDL
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8997f210d49426d0f2f028892bedca6fdb4ccc84
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: fec793f9268fb4834bc358aae1478ed691d0a236
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63392145"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96797019"
 ---
 # <a name="gdl-directives-for-namespaces"></a>用于命名空间的 GDL 指令
 
 
-GDL 具有建立可以由多个 GDL 源文件共享的对象的命名空间的指令。
+GDL 包含为可由多个 GDL 源文件共享的对象建立命名空间的指令。
 
 GDL 包含以下命名空间指令：
 
--   **\*DefineInNameSpace**指定属于此命名空间的可共享对象的所有定义。
+-   **\* DefineInNameSpace** 指定属于此命名空间的可共享对象的所有定义。
 
--   **\*UsingNameSpace**定义用于搜索而无需显式命名空间限定符的对象引用的命名空间上下文。
+-   **\* UsingNameSpace** 定义一个命名空间上下文，用于在没有显式命名空间限定符的情况下搜索对象引用。
 
-命名空间指令的详细信息，请参阅[GDL 命名空间](gdl-namespaces.md)。
+有关命名空间指令的详细信息，请参阅 [GDL 命名空间](gdl-namespaces.md)。
 
  
 

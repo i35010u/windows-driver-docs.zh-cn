@@ -1,7 +1,6 @@
 ---
 title: dskheap
 description: Dskheap 扩展显示指定会话的桌面堆信息。
-ms.assetid: e49c816f-963c-4383-a3bf-c03b2c0cfa39
 keywords:
 - 电脑
 - dskheap Windows 调试
@@ -13,17 +12,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: f640ae7501110efd8c1bba2def61cf2e6dc72b32
-ms.sourcegitcommit: 424c435700d8f8a85bdaa83e8ddaab9568c8d347
+ms.openlocfilehash: 44f8ec109137eebd0493e30aa88bf599a94df0ce
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/26/2019
-ms.locfileid: "70025261"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96796343"
 ---
 # <a name="dskheap"></a>!dskheap
 
 
-**! Dskheap** extension 显示指定会话的桌面堆信息。
+**！ Dskheap** extension 显示指定会话的桌面堆信息。
 
 ```dbgcmd
 !dskheap [-v] [-s SessionID]
@@ -32,11 +31,11 @@ ms.locfileid: "70025261"
 ## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>Parameters
 
 
-<span id="_______-v______"></span><span id="_______-V______"></span> **-v**   
+<span id="_______-v______"></span><span id="_______-V______"></span>**-v**   
 使显示包含更详细的输出。
 
-<span id="_______-s_SessionID"></span><span id="_______-s_sessionid"></span><span id="_______-S_SESSIONID"></span> **-s** ****  *SessionID*  
-指定一个会话。 如果省略此参数, 则将显示会话0的桌面堆信息。
+<span id="_______-s_SessionID"></span><span id="_______-s_sessionid"></span><span id="_______-S_SESSIONID"></span>**-s**  **** *SessionID*  
+指定一个会话。 如果省略此参数，则将显示会话0的桌面堆信息。
 
 ### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
@@ -51,8 +50,8 @@ ms.locfileid: "70025261"
 <td align="left"><p>不可用</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>Windows XP 和更高版本</strong></p></td>
-<td align="left"><p>Kdexts</p></td>
+<td align="left"><p><strong>Windows XP 及更高版本</strong></p></td>
+<td align="left"><p>Kdexts.dll</p></td>
 </tr>
 </tbody>
 </table>
@@ -61,14 +60,14 @@ ms.locfileid: "70025261"
 
 ### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>附加信息
 
-有关桌面或桌面堆的信息, 请参阅 Russinovich 文档和*Microsoft Windows 内部机制*, 并将 Microsoft Windows SDK 其标记为和 David 所罗门群岛。
+有关桌面或桌面堆的信息，请参阅 Russinovich 文档和 *Microsoft Windows 内部机制* ，并将 Microsoft Windows SDK 其标记为和 David 所罗门群岛。
 
 <a name="remarks"></a>备注
 -------
 
 会话的桌面堆信息按窗口工作站排列。
 
-下面是几个示例:
+下面是几个示例：
 
 ```dbgcmd
 kd> !dskheap -s 3

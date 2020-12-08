@@ -1,7 +1,6 @@
 ---
 title: 设备错误状态
 description: 设备错误状态
-ms.assetid: 7d0fee11-0fdf-4490-88d0-fb074cbf4082
 keywords:
 - 错误状态 WDK 打印机
 - 打印机错误状态 WDK
@@ -10,12 +9,12 @@ keywords:
 - 热插拔总线 WDK 打印机
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1f958a61c73cd9090ec99399d84e86da9f50d2a0
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 6a994555c6bbb1a186a71d3da9672b3185da58e8
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89216062"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96797269"
 ---
 # <a name="device-error-states"></a>设备错误状态
 
@@ -32,7 +31,7 @@ ms.locfileid: "89216062"
 
 -   **卡纸**
 
--   **断开**
+-   **脱机**
 
 -   **热插拔总线错误**
 
@@ -46,7 +45,7 @@ ms.locfileid: "89216062"
 
 还应为脱机和热插拔错误状态执行以下附加测试步骤：
 
--   **断开**
+-   **脱机**
     -   当打印机进入脱机状态时，验证打印作业是否保留在作业队列中，直到设备准备好进行打印。 然后，该作业应成功完成。
     -   在打印作业期间和之前，拔下打印机的电源。 确认打印机重新获取该域作业队列并再次开始打印。 请参阅 [电源管理](power-management.md)中的更多详细信息。
 -   **热插拔总线错误**

@@ -1,10 +1,9 @@
 ---
-title: IPrinterScriptUsbWritePrintDataProgress ProcessedByteCount 方法（在中）
+title: 'IPrinterScriptUsbWritePrintDataProgress ProcessedByteCount 方法 () '
 description: 设置在调用此方法时 IHV JavaScript 函数已处理的字节数。
 MSHAttr:
 - PreferredSiteName:MSDN
 - PreferredLib:/library/windows/hardware
-ms.assetid: 9E870B80-421B-496A-9510-D97D3A4D7892
 keywords:
 - ProcessedByteCount 方法打印设备
 - ProcessedByteCount 方法打印设备，IPrinterScriptUsbWritePrintDataProgress 接口
@@ -17,14 +16,14 @@ api_type:
 - COM
 ms.date: 07/07/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: be5165e4be597e67da9cf20183368b4c6dae6090
-ms.sourcegitcommit: c2c99017178160988aa0e9a861ac347a11cda12a
+ms.openlocfilehash: 5c4a523b496cb80f4dbdf784d6d16ddbbf467214
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86092464"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96796575"
 ---
-# <a name="iprinterscriptusbwriteprintdataprogressprocessedbytecount-method-in"></a>IPrinterScriptUsbWritePrintDataProgress：:P rocessedByteCount 方法（在中）
+# <a name="iprinterscriptusbwriteprintdataprogressprocessedbytecount-method-in"></a>IPrinterScriptUsbWritePrintDataProgress：:P rocessedByteCount 方法 (在) 
 
 设置在调用此方法时 IHV JavaScript 函数已处理的字节数。
 
@@ -32,7 +31,7 @@ ms.locfileid: "86092464"
 
 ```cpp
 HRESULT ProcessedByteCount(
-  [in]  UINT32 value
+  [in]  UINT32 value
 );
 ```
 
@@ -43,7 +42,7 @@ HRESULT ProcessedByteCount(
 
 ## <a name="return-values"></a>返回值
 
-此方法返回**HRESULT**值。
+此方法返回 **HRESULT** 值。
 
 ## <a name="requirements"></a>要求
 

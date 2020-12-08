@@ -1,16 +1,15 @@
 ---
 title: OID_NIC_SWITCH_DELETE_SWITCH
 description: NDIS (OID 发出对象标识符) 将 OID_NIC_SWITCH_DELETE_SWITCH 请求从网络适配器中删除 NIC 交换机。
-ms.assetid: 5785B30F-B67F-4D5A-A93A-243D33B9CAE8
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_NIC_SWITCH_DELETE_SWITCH 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 24428ee5d312997e3d275663e45f1e11f43be58c
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: bb5ca74849985dea63482f88b118ed8b0e208df5
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90106044"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96795946"
 ---
 # <a name="oid_nic_switch_delete_switch"></a>OID \_ NIC \_ 交换机 \_ 删除 \_ 开关
 
@@ -19,13 +18,13 @@ NDIS (OID 发出对象标识符) 设置 OID \_ nic 交换机的请求 \_ \_ \_ �
 
 NDIS 将此 OID 集请求颁发给网络适配器 PCI Express (PCIe 的微型端口驱动程序，) 物理功能 (PF) 。 对于支持单个根 i/o 虚拟化 (SR-IOV) 接口的 PF 小型端口驱动程序，需要此 OID 集请求。
 
-**注意**   过量驱动程序（如协议或筛选器驱动程序）无法向 PF 微型端口驱动程序发出此 OID 方法请求。
+**注意**  过量驱动程序（如协议或筛选器驱动程序）无法向 PF 微型端口驱动程序发出此 OID 方法请求。
 
  
 
-[**Ndis \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的**InformationBuffer**成员包含指向[**ndis \_ NIC \_ SWITCH \_ DELETE \_ SWITCH \_ PARAMETERS**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_delete_switch_parameters)结构的指针。
+[**Ndis \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的 **InformationBuffer** 成员包含指向 [**ndis \_ NIC \_ SWITCH \_ DELETE \_ SWITCH \_ PARAMETERS**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_delete_switch_parameters)结构的指针。
 
-<a name="remarks"></a>注解
+<a name="remarks"></a>备注
 -------
 
 Oid \_ nic 交换机删除交换机的 oid 集请求 \_ \_ \_ 删除先前通过 oid [ \_ nic \_ 交换机 \_ CREATE \_ SWITCH](oid-nic-switch-create-switch.md)的 oid 方法请求创建的 NIC 交换机。
@@ -44,7 +43,7 @@ Oid \_ nic 交换机删除交换机的 oid 集请求 \_ \_ \_ 删除先前通过
 
     [**NdisMEnableVirtualization**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismenablevirtualization) 清除 **NumVFs** 成员，并且 VF 在网络适配器的 PF 的 PCI 配置空间中的 sr-iov 扩展功能结构中 **启用** 位。
 
-    **注意**   如果 PF 微型端口驱动程序支持静态创建和配置 NIC 交换机，则在调用[*MiniportHaltEx*](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_halt)时，它必须仅调用[**NdisMEnableVirtualization**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismenablevirtualization) 。
+    **注意** 如果 PF 微型端口驱动程序支持静态创建和配置 NIC 交换机，则在调用 [*MiniportHaltEx*](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_halt)时，它必须仅调用 [**NdisMEnableVirtualization**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismenablevirtualization) 。
 
      
 
@@ -62,7 +61,7 @@ Oid \_ nic 交换机删除交换机的 oid 集请求 \_ \_ \_ 删除先前通过
 <thead>
 <tr class="header">
 <th>术语</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>
@@ -97,7 +96,7 @@ NDIS 为此请求返回以下状态代码之一：
 <thead>
 <tr class="header">
 <th>术语</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>

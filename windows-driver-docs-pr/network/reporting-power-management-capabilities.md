@@ -1,15 +1,14 @@
 ---
 title: 报告电源管理功能
 description: 报告电源管理功能
-ms.assetid: cfacd885-e18a-44a5-939d-88e62b573ace
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f5261b6c7a8819958d17ce908c8bd214c8f534bc
-ms.sourcegitcommit: 29c2e6dd8a3de3c11822d990adf1edd774f8a136
+ms.openlocfilehash: 7900f220c7a75026b167f7e93c99ef413eaf8112
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91230043"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96795423"
 ---
 # <a name="reporting-power-management-capabilities"></a>报告电源管理功能
 
@@ -25,7 +24,7 @@ ms.locfileid: "91230043"
 
 可在 INF 文件设置中启用或禁用微型端口驱动程序报告的硬件功能。 有关电源管理 INF 文件设置的详细信息，请参阅 [电源管理的标准化 INF 关键字](standardized-inf-keywords-for-power-management.md)。
 
-在微型端口初始化期间，微型端口驱动程序使用基础硬件的电源管理功能初始化 [**NDIS \_ PM \_ 功能**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_pm_capabilities) 结构。 微型端口驱动程序将[**ndis \_ 微型端口 \_ \_ \_ 适配器**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_miniport_adapter_general_attributes)的**PowerManagementCapabilitiesEx**成员设置为指向**ndis \_ PM \_ 功能**结构。
+在微型端口初始化期间，微型端口驱动程序使用基础硬件的电源管理功能初始化 [**NDIS \_ PM \_ 功能**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_pm_capabilities) 结构。 微型端口驱动程序将 [**ndis \_ 微型端口 \_ \_ \_ 适配器**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_miniport_adapter_general_attributes)的 **PowerManagementCapabilitiesEx** 成员设置为指向 **ndis \_ PM \_ 功能** 结构。
 
 [**NDIS \_ PM \_ 功能**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_pm_capabilities)结构包含以下信息：
 
@@ -52,7 +51,7 @@ ms.locfileid: "91230043"
 
 例如，如果驱动程序支持8种灵活的位图模式，IPv4 TCP SYN (通过预设筛选器) 和幻数据包，则会在 NumTotalWoLPatterns 中报告9。  (8 个位图 + 1 个 IPv4 TCP SYN = 9) 
 
-**注意**   WOL 模式的总数不包括幻数据包唤醒模式。
+**注意**  WOL 模式的总数不包括幻数据包唤醒模式。
 
  
 
@@ -77,7 +76,7 @@ ms.locfileid: "91230043"
 包含网络适配器支持 (NS) 卸载 IPv6 请求的网络请求数。
 
 <a href="" id="minmagicpacketwakeup"></a>**MinMagicPacketWakeUp**  
-指定网络适配器可用于在收到 *幻数据包*时发出唤醒事件信号的最小设备电源状态。  (*幻数据包* 是包含接收网络适配器的以太网地址的16个连续副本的数据包。 ) 
+指定网络适配器可用于在收到 *幻数据包* 时发出唤醒事件信号的最小设备电源状态。  (*幻数据包* 是包含接收网络适配器的以太网地址的16个连续副本的数据包。 ) 
 
 <a href="" id="minpatternwakeup"></a>**MinPatternWakeUp**  
 指定网络适配器在收到包含由协议驱动程序指定的模式的网络帧时，可用于发出唤醒事件的最小设备电源状态。
@@ -97,7 +96,7 @@ ms.locfileid: "91230043"
 
 如果微型端口驱动程序支持将协议卸载到处于低功耗状态的网络适配器，则该驱动程序必须支持对模式匹配 WOL 事件所支持的协议卸载使用相同的低功耗状态;也就是说，在 **MinPatternWakeUp** 或 **MinMagicPacketWakeUp** 成员中指定的值。
 
-NDIS 使用基础网络适配器当前可用的电源管理功能初始化 [**ndis \_ PM \_ 功能**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_pm_capabilities) 结构，并在绑定操作过程中向其传递协议过量协议驱动程序。 NDIS 将[**ndis \_ 绑定 \_ 参数**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_bind_parameters)结构的**POWERMANAGEMENTCAPABILITIESEX**成员设置为指向 ndis \_ PM \_ 功能结构。
+NDIS 使用基础网络适配器当前可用的电源管理功能初始化 [**ndis \_ PM \_ 功能**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_pm_capabilities) 结构，并在绑定操作过程中向其传递协议过量协议驱动程序。 NDIS 将 [**ndis \_ 绑定 \_ 参数**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_bind_parameters)结构的 **POWERMANAGEMENTCAPABILITIESEX** 成员设置为指向 ndis \_ PM \_ 功能结构。
 
 过量驱动程序可以使用 [oid \_ PM \_ 硬件 \_ 功能](./oid-pm-hardware-capabilities.md) oid 查询来获取网络适配器的硬件电源管理功能。 NDIS 代表微型端口驱动程序处理此 OID 请求。 支持 OID \_ PM \_ 硬件 \_ 功能 oid 请求不需要 NDIS 微型端口驱动程序。
 

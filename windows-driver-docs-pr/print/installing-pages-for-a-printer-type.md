@@ -1,19 +1,18 @@
 ---
 title: 安装打印机类型的页面
 description: 安装打印机类型的页面
-ms.assetid: 6c878612-d490-4791-a284-c48f1db0cde8
 keywords:
-- 安装自定义打印网页 WDK
-- 自定义打印网页 WDK，安装
+- 安装自定义的打印网页 WDK
+- 自定义的打印网页 WDK，安装
 - 特定于打印机的安装 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 09d0e18e5b38f8469feecd934b0f6620a7b69ec0
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b256054456f6cfa83679672bd678912c6387b707
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63366791"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96796699"
 ---
 # <a name="installing-pages-for-a-printer-type"></a>安装打印机类型的页面
 
@@ -21,7 +20,7 @@ ms.locfileid: "63366791"
 
 
 
-如果与打印机一起使用的标准 TCP/IP 端口监视器，则可以安装特定于打印机类型的打印机详细信息页。 若要执行此操作，包括页面的 ASP 文件，以及 （如.gif 文件或链接的网页的 ASP 文件） 的所有从属文件中[打印机 INF 文件](printer-inf-files.md)打印机类型。 下面是示例部分中的打印机 INF 文件：
+如果打印机使用的是标准 TCP/IP 端口监视器，则可以安装特定于打印机类型的打印机详细信息页。 为此，请在打印机类型的 [打印机 INF 文件](printer-inf-files.md) 中包含该页的 ASP 文件以及所有从属文件 (如用于链接页的 .gif 文件或 ASP 文件) 。 下面是打印机 INF 文件的示例部分：
 
 ```cpp
 [Manufacturer]
@@ -46,19 +45,19 @@ ACML1WEB=66004
 
 当打印机类安装程序遇到此 INF 文件部分时，它将执行以下操作：
 
--   创建格式化为一个目录&lt;根&gt;\\&lt;制造商&gt;\\&lt;打印机类型&gt;。 例如，应创建以下子目录：
+-   创建设置为 " &lt; 根 &gt; \\ &lt; 制造商 &gt; \\ &lt; 打印机类型 &gt; " 的目录。 在此示例中，将创建以下子目录：
 
-    ..\\ACME\\ACME 庞大激光
+    ..\\ACME \\ Acme 万像素激光
 
--   将 Acml1.asp、 Asml2.asp 和 Acgf001.gif 复制到子目录中。
+-   将 Acml1、Asml2 和 Acgf001.gif 复制到子目录中。
 
--   将 Acml1.asp 重命名为 Page1.asp （引起 ACML1WEB 部分中的第一个语句）。
+-   将 Acml1 重命名为 ACML1WEB) 部分中的第一个语句导致的 Page1 (。
 
-请注意，必须识别第一个 ASP 文件，您可以通过在行前 Page1.asp 文件名称，如示例所示。 安装程序将重命名此文件为 Page1.asp 目标目录中。
+请注意，你必须通过在第一个 ASP 文件的前面加上 Page1 文件名称来确定要查看的第一个 ASP 文件，如示例中所示。 安装程序将此文件重命名为目标目录中的 Page1。
 
-所有 ASP 文件的名称格式为页*N*.asp，其中*N*是 1、 2、 3，依此类推，microsoft 保留。
+Microsoft 保留所有格式为 Page *n.*.ASP 的 asp 文件名，其中 *N* 为1、2、3等。
 
-示例 INF 文件随附[示例 ASP 文件](sample-asp-files.md)Windows 驱动程序工具包中。
+示例 INF 文件随 Windows 驱动程序工具包中的 [示例 ASP 文件](sample-asp-files.md) 一起提供。
 
  
 

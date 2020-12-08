@@ -1,19 +1,18 @@
 ---
 title: Hostfont 注册表项
 description: Hostfont 注册表项
-ms.assetid: f7ce2591-197a-4094-8b21-5e0cc48506ea
 keywords:
 - PostScript 打印机驱动程序 WDK 打印，HostFontXxx 注册表项
 - Pscript WDK 打印，HostFontXxx 注册表项
 - HostFontXxx 注册表项 WDK Pscript
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2f0921481bfa5f563a08e939590107f21b48c2a9
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 242cf27c401c090dc31d969ee25374e397c09521
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89215385"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96796855"
 ---
 # <a name="hostfont-registry-entries"></a>Hostfont 注册表项
 
@@ -23,7 +22,7 @@ ms.locfileid: "89215385"
 
 OEM 插件可以通知 Pscript5 驱动程序% hostfont% ready PostScript 解释器具有一组可供使用的字体和 CIDFonts，它们与 Pscript5 驱动程序可能会在打印作业中下载的字体和相同。 通过在注册表中放置密钥来以这种方式处理哪些字体。 当调用 Pscript5 驱动程序的 [**DrvEnablePDEV**](/windows/win32/api/winddi/nf-winddi-drvenablepdev) 函数时，该驱动程序将检查注册表中是否有新的信息。 在启用 PDEV 之前，该插件可以确保数据是最新的。
 
-下表列出了% hostfont% 注册表项名称、它们的类型及其值。 OEM 插件应调用 Microsoft Windows SDK 文档) 中所述的 SetPrinterData (，以设置这些项名称。 HostFont*Xxx* 条目名称互斥。 也就是说，在任何给定时间，注册表中只能存在以下条目名称之一。
+下表列出了% hostfont% 注册表项名称、它们的类型及其值。 OEM 插件应调用 Microsoft Windows SDK 文档) 中所述的 SetPrinterData (，以设置这些项名称。 HostFont *Xxx* 条目名称互斥。 也就是说，在任何给定时间，注册表中只能存在以下条目名称之一。
 
 <table>
 <colgroup>
@@ -35,7 +34,7 @@ OEM 插件可以通知 Pscript5 驱动程序% hostfont% ready PostScript 解释�
 <tr class="header">
 <th>注册表项名称</th>
 <th>类型和值</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>

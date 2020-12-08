@@ -1,7 +1,6 @@
 ---
 title: AVC \_ 函数 \_ 对等 \_ DO \_ LIST
 description: AVC \_ 函数 \_ 对等 \_ DO \_ LIST
-ms.assetid: 80ffd94e-788f-4874-b716-3eb66d90e4aa
 keywords:
 - AVC_FUNCTION_PEER_DO_LIST 流媒体设备
 topic_type:
@@ -12,12 +11,12 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7f4e33c3762a64b174ea9a878f884843497ab6b2
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: d615894bdae5894bba713be28e94193b0b9fec81
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89187491"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96796431"
 ---
 # <a name="avc_function_peer_do_list"></a>AVC \_ 函数 \_ 对等 \_ DO \_ LIST
 
@@ -25,7 +24,7 @@ ms.locfileid: "89187491"
 ## <span id="ddk_avc_function_peer_do_list_ks"></span><span id="DDK_AVC_FUNCTION_PEER_DO_LIST_KS"></span>
 
 
-**AVC \_ 函数 \_ 对等 \_ DO \_ LIST**函数代码查找所有非*avc.sys*虚拟的实例。
+**AVC \_ 函数 \_ 对等 \_ DO \_ LIST** 函数代码查找所有非 *avc.sys* 虚拟的实例。
 
 ### <a name="io-status-block"></a>I/o 状态块
 
@@ -41,7 +40,7 @@ ms.locfileid: "89187491"
 <thead>
 <tr class="header">
 <th>返回值</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>
@@ -54,7 +53,7 @@ ms.locfileid: "89187491"
 
  
 
-### <a name="comments"></a>说明
+### <a name="comments"></a>注释
 
 此函数使用 AVC **PeerList** \_ MULTIFUNC IRB 结构的 PeerList 成员 \_ ，如下所示。
 
@@ -75,7 +74,7 @@ typedef struct _AVC_MULTIFUNC_IRB {
 
 ### <a name="requirements"></a>要求
 
-**标头：** 在 *avc*中声明。 包括 *avc*。
+**标头：** 在 *avc* 中声明。 包括 *avc*。
 
 ### <a name="avc_multifunc_irb-input"></a>AVC \_ MULTIFUNC \_ IRB 输入
 
@@ -83,7 +82,7 @@ typedef struct _AVC_MULTIFUNC_IRB {
 此成员的 **函数** submember 必须设置为 **AVC \_ 函数对等 AVC 函数枚举中的 \_ \_ DO \_ LIST** \_ 。
 
 <span id="PeerList"></span><span id="peerlist"></span><span id="PEERLIST"></span>**PeerList**  
-指定 *avc.sys*的所有非虚拟 (对等) 实例的列表。
+指定 *avc.sys* 的所有非虚拟 (对等) 实例的列表。
 
 调用方可以 \_ \_ 通过对象列表中返回的任何对象提交 GUID AVC 类设备接口请求。 调用方必须释放对这些对象的引用 (通过 **ObDereferenceObject**) ，并在完成时通过 **ExFreePool**) 释放包含列表 (的内存。
 

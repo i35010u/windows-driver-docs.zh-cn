@@ -1,9 +1,8 @@
 ---
 title: .clients（列出调试客户端）
-description: .Clients 命令将列出当前已连接到调试会话的所有调试客户端。
-ms.assetid: a5f760d7-f454-49c5-853d-bcb545c0b05e
+description: . Clients 命令列出当前连接到调试会话的所有调试客户端。
 keywords:
-- .clients （列表调试客户端） Windows 调试
+- 。客户端 (列出) Windows 调试的客户端调试
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: f13a31dee3236d848242efb350fd58fcc9feb7ee
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d9dd5f60905890a3e58b6f3bcceef9ee6149151c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63334628"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96795749"
 ---
 # <a name="clients-list-debugging-clients"></a>.clients（列出调试客户端）
 
 
-**.Clients**命令将列出当前已连接到调试会话的所有调试客户端。
+**. Clients** 命令列出当前连接到调试会话的所有调试客户端。
 
 ```dbgsyntax
     .clients 
@@ -40,25 +39,25 @@ ms.locfileid: "63334628"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p><strong>模式</strong></p></td>
-<td align="left"><p>用户模式下，内核模式</p></td>
+<td align="left"><p><strong>交货</strong></p></td>
+<td align="left"><p>用户模式，内核模式</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>目标</strong></p></td>
-<td align="left"><p>实时、 崩溃转储</p></td>
+<td align="left"><p>实时，故障转储</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>平台</strong></p></td>
-<td align="left"><p>全部</p></td>
+<td align="left"><p>all</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>其他信息
+### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>附加信息
 
-有关更多详细信息和执行通过调试器的远程调试时可以使用其他命令，请参阅[控制远程调试会话](controlling-a-remote-debugging-session.md)。
+有关在通过调试器执行远程调试时可以使用的更多详细信息和其他命令，请参阅 [控制远程调试会话](controlling-a-remote-debugging-session.md)。
 
  
 

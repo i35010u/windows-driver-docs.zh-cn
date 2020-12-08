@@ -1,7 +1,6 @@
 ---
 title: 打印机图形 DLL 简介
 description: 打印机图形 DLL 简介
-ms.assetid: 3f7ce476-6bef-4a80-ae2a-2a63e891dda1
 keywords:
 - 打印机图形 DLL WDK，关于打印机图形 DLL
 - 图形 DLL WDK 打印机，关于打印机图形 DLL
@@ -9,12 +8,12 @@ keywords:
 - 打印机图形 DLL WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 84aa7a24abc2efed8c29b91ce90aaf15a3cd107f
-ms.sourcegitcommit: a44ade167cdfb541cf1818e9f9e3726f23f90b66
+ms.openlocfilehash: 5cd827b6fb3af3fbc6dbdfaf479f4ae42bcd5b49
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/07/2020
-ms.locfileid: "94361435"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96796679"
 ---
 # <a name="introduction-to-printer-graphics-dlls"></a>打印机图形 DLL 简介
 
@@ -55,7 +54,7 @@ ms.locfileid: "94361435"
 
 ![使用内核模式打印机图形 dll 打印作业数据流](images/gdiprint.png)
 
-请注意，在这些关系图中，如果 GDI 的输出格式是 *(EMF) 的增强型图元文件* ，则在 emf 打印处理器播放 emf 记录之前，打印机图形 DLL 不会接收作业。 另请注意，EMF 打印处理器将输出格式更改为非 EMF。
+请注意，在这些关系图中，如果 GDI 的输出格式是 *(EMF) 的增强型图元文件*，则在 emf 打印处理器播放 emf 记录之前，打印机图形 DLL 不会接收作业。 另请注意，EMF 打印处理器将输出格式更改为非 EMF。
 
 这些关系图演示了一个完全本地的环境。 如果打印机已连接到服务器，EMF 记录通常由 GDI 呈现引擎的客户端副本生成 (GRE) ，然后后台处理到发送到服务器的本地文件。 服务器的后台处理程序副本将读取该文件并将记录发送到服务器的 EMF 打印处理器，并使服务器的 GRE 副本调用服务器的打印机图形 DLL。
 

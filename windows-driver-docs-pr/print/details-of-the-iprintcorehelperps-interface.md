@@ -1,17 +1,16 @@
 ---
 title: IPrintCoreHelperPS 接口详细信息
 description: IPrintCoreHelperPS 接口详细信息
-ms.assetid: 0e00012c-6ced-4369-b367-675465e29d93
 keywords:
 - IPrintCoreHelperPS
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 60c1978a253008a46bbf75729d1a2030719adda4
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 08f7ac8cef5e51542abcde65510343b32bb3d8da
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89216374"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96797275"
 ---
 # <a name="details-of-the-iprintcorehelperps-interface"></a>IPrintCoreHelperPS 接口详细信息
 

@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ 显示 \_ 适配器 \_ GUID
 description: KSPROPERTY \_ 显示 \_ 适配器 \_ guid 属性从捕获微型驱动程序返回适配器 guid。若要使用 VRAM 传输，捕获微型驱动程序必须支持此属性。
-ms.assetid: 419aa86e-f1c2-4fca-a9e4-87dcaaeaa2bb
 keywords:
 - KSPROPERTY_DISPLAY_ADAPTER_GUID 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fb0cce571ab7a1c7c6509394342ad8f85d95cc04
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 24b4ff3c26424ee31b3f70ef114d2de35ce2fbd5
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90102734"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96795817"
 ---
 # <a name="ksproperty_display_adapter_guid"></a>KSPROPERTY \_ 显示 \_ 适配器 \_ GUID
 
@@ -89,7 +88,7 @@ AVStream 将此 GUID 与下游呈现器 pin 的 GUID 相匹配，以验证捕获
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSPROPERTY**](/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)

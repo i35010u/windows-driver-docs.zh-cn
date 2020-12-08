@@ -1,7 +1,6 @@
 ---
 title: chksym
-description: Chksym 扩展测试针对符号文件的模块的有效性。
-ms.assetid: 52ea75cb-44a2-4c84-a3af-b3fc027348f4
+description: Chksym 扩展会根据符号文件测试模块的有效性。
 keywords:
 - chksym Windows 调试
 ms.date: 05/23/2017
@@ -12,32 +11,32 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 5f8f6fce41e4fb8e70116fd1c15e38c70d512317
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5d7452f80d1102ded08a8b116dbd3de4e4a02a5c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63336901"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96795751"
 ---
 # <a name="chksym"></a>!chksym
 
 
-**！ Chksym**扩展测试针对符号文件的模块的有效性。
+**！ Chksym** extension 根据符号文件测试模块的有效性。
 
 ```dbgsyntax
     !chksym Module [Symbol] 
 ```
 
-## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>参数
+## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>Parameters
 
 
-<span id="_______Module______"></span><span id="_______module______"></span><span id="_______MODULE______"></span> *模块*   
-指定按其名称或基址的模块的名称。
+<span id="_______Module______"></span><span id="_______module______"></span><span id="_______MODULE______"></span>*模块*   
+按名称或基址指定模块的名称。
 
-<span id="_______Symbol______"></span><span id="_______symbol______"></span><span id="_______SYMBOL______"></span> *符号*   
+<span id="_______Symbol______"></span><span id="_______symbol______"></span><span id="_______SYMBOL______"></span>*符号*   
 指定符号文件的名称。
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 <table>
 <colgroup>
@@ -54,7 +53,7 @@ ms.locfileid: "63336901"
 <td align="left"><p>不可用</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><strong>Windows Vista 及更高版本</strong></p></td>
+<td align="left"><p><strong>Windows Vista 及更高版本</strong></p></td>
 <td align="left"><p>Dbghelp.dll</p></td>
 </tr>
 </tbody>
@@ -65,7 +64,7 @@ ms.locfileid: "63336901"
 <a name="remarks"></a>备注
 -------
 
-如果未指定字段的符号，则测试加载的符号。 否则，如果指定.pdb 或.dbg 符号文件路径，加载的符号是针对已加载的模块进行测试。
+如果未指定符号，则会测试加载的符号。 否则，如果指定 .pdb 或 dbg 符号文件路径，则已加载的符号将针对已加载的模块进行测试。
 
  
 

@@ -1,15 +1,14 @@
 ---
 title: 移植 I/O 队列
 description: 移植 I/O 队列
-ms.assetid: 90319342-5FAB-451B-BCA1-B273B81418DB
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9564ed424a9a0366a761c583054c877ba11ab2aa
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: ff7af44933a06b75c282e97c0ceba0dfe6a5c77f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89192625"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96796359"
 ---
 # <a name="porting-io-queues"></a>移植 I/O 队列
 

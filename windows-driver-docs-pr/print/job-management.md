@@ -1,15 +1,14 @@
 ---
 title: 作业管理
 description: Windows 8.1 和更高版本的 Windows 中引入了作业管理功能，可提供作业队列的实时视图。
-ms.assetid: D1236DD2-D4AD-4615-9036-7EC75D6CADCE
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c34e1becfabf519aa3d3cc60b917673d72a6b66c
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: ba4374ff85c75505a2e1bf6887a3a90ad9c4bb09
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89210033"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96796499"
 ---
 # <a name="job-management"></a>作业管理
 

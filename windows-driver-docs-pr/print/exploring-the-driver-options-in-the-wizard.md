@@ -1,15 +1,14 @@
 ---
 title: 浏览向导中的驱动程序选项
 description: 本主题将探讨 "创建 v4 打印驱动程序向导" 的第一部分中的驱动程序选项。
-ms.assetid: 48FF0A37-BBAF-49D1-9BDE-128AED00BEEF
 ms.date: 06/05/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: e49ca2f9b254a5c7c4ea430095260c29902454e1
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: ca43bb364cade8d05356d8398621cd520d444013
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89217193"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96797101"
 ---
 # <a name="exploring-the-driver-options-in-the-wizard"></a>浏览向导中的驱动程序选项
 
@@ -75,7 +74,7 @@ ms.locfileid: "89217193"
 
 这是一个描述驱动程序属性包内容的 XML 文件。 此文件中指定的属性以及添加到项目的 ByteArray 或 IStream 文件夹的任何数据文件中提供的信息将编译到驱动程序属性包中。 有关详细信息，请参阅 [V4 打印机驱动程序属性包](v4-driver-property-bags.md)。
 
-您可以在 Windows 驱动程序工具包的 "此文件夹： * \\ 包括 \\ um \\printdriverproperties.xml*中找到驱动程序属性包模板的 XML 架构。
+您可以在 Windows 驱动程序工具包的 "此文件夹： *\\ 包括 \\ um \\printdriverproperties.xml* 中找到驱动程序属性包模板的 XML 架构。
 
 ### <a name="driver-event-file"></a>驱动程序事件文件
 

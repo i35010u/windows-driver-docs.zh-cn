@@ -1,7 +1,6 @@
 ---
 title: SM \_ SendRPL 函数
 description: SM \_ SENDRPL WMI 方法通过显示的端口将读取端口列表 (RPL) 命令发送到指定的目标端口。
-ms.assetid: 9297d5eb-f8c4-48f3-8536-a94c66917e66
 keywords:
 - SM_SendRPL 函数存储设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 4b3e76c8c406ca6bf99bd40b7d0a4b2a6ba95c1b
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 0bd0009593d25ae87d3d30436d236ce97d8f91a9
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89187527"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96795409"
 ---
 # <a name="sm_sendrpl-function"></a>SM \_ SendRPL 函数
 
@@ -31,14 +30,14 @@ SM \_ SENDRPL WMI 方法通过显示的端口将读取端口列表 (RPL) 命令�
 
 ```ManagedCPlusPlus
 void SM_SendRPL(
-   [in, HBAType("HBA_WWN")] uint8              PortWWN[8],
-   [in, HBAType("HBA_WWN")] uint8              AgentWWN[8],
-   [in] uint32                                 AgentDomain,
-   [in] uint32                                 PortIndex,
-   [in] uint32                                 InRespBufferMaxSize,
-   [out, HBA_STATUS_QUALIFIERS] HBA_STATUS     HBAStatus,
-   [out] uint32                                TotalRespBufferSize,
-   [out] uint32                                OutRespBufferSize,
+   [in, HBAType("HBA_WWN")] uint8              PortWWN[8],
+   [in, HBAType("HBA_WWN")] uint8              AgentWWN[8],
+   [in] uint32                                 AgentDomain,
+   [in] uint32                                 PortIndex,
+   [in] uint32                                 InRespBufferMaxSize,
+   [out, HBA_STATUS_QUALIFIERS] HBA_STATUS     HBAStatus,
+   [out] uint32                                TotalRespBufferSize,
+   [out] uint32                                OutRespBufferSize,
    [out, WmiSizeIs("OutRespBufferSize")] uint8 RespBuffer[]
 );
 ```
@@ -78,7 +77,7 @@ void SM_SendRPL(
 
 不适用于 WMI 方法。
 
-<a name="remarks"></a>注解
+<a name="remarks"></a>备注
 -------
 
 此 WMI 方法属于 MS \_ SM \_ FabricAndDomainManagementMethods WMI 类。
@@ -97,7 +96,7 @@ void SM_SendRPL(
 <td align="left">台式机</td>
 </tr>
 <tr class="even">
-<td align="left"><p>Header</p></td>
+<td align="left"><p>标头</p></td>
 <td align="left">Hbapiwmi</td>
 </tr>
 </tbody>

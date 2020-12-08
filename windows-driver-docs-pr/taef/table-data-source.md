@@ -1,24 +1,23 @@
 ---
 title: 表数据源
 description: 表数据源
-ms.assetid: D0CC0536-5569-47ed-8DE8-B64FF3042C51
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 90c098dafbaf6c14d04b30e4db95f2d99cd5b413
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: adeb2d3bdb5caee2b588a65accb3851ba860341f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63341811"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96796395"
 ---
 # <a name="table-data-source"></a>表数据源
 
 
-请确保您熟悉的基本执行[TAEF](index.md)并且知道如何[作者测试](authoring-tests.md)使用它，然后继续进行本部分中。
+请确保熟悉 [TAEF](index.md) 的基本执行，并知道如何使用它 [创作测试](authoring-tests.md) ，然后再继续此部分。
 
-现在，可以编写基本测试自动化和使用 TAEF，可以集中在方案，进行相同测试代码可以用于对不同的数据集。 为此，TAEF 提供数据驱动测试的"表基于"方法。 让我们看看一个简单的示例，若要了解如何着手编写数据驱动测试。
+现在，你已编写了基本的测试自动化并使用 TAEF，你可以将重点放在可用于处理不同数据集的相同测试代码的情况下。 为此，TAEF 提供了数据驱动测试的 "基于表" 方法。 让我们看一个简单的示例，了解如何编写数据驱动的测试。
 
-请考虑简单非-数据驱动的要在其中打印的大小和主题应用于在控制台的示例。 在此练习中，会将此测试，为数据驱动测试。
+请考虑一个简单的非数据驱动的示例，在该示例中，你要将大小和主题打印到控制台。 在此练习中，您要将此测试转换为数据驱动的测试。
 
 ```cpp
 1  namespace WEX { namespace TestExecution { namespace Examples
@@ -37,10 +36,10 @@ ms.locfileid: "63341811"
 14 } /* namespace Examples */ } /* namespace TestExecution */ } /* namespace WEX */
 ```
 
-## <a name="span-iddefiningthedataspanspan-iddefiningthedataspanspan-iddefiningthedataspandefining-the-data"></a><span id="Defining_the_Data"></span><span id="defining_the_data"></span><span id="DEFINING_THE_DATA"></span>定义数据
+## <a name="span-iddefining_the_dataspanspan-iddefining_the_dataspanspan-iddefining_the_dataspandefining-the-data"></a><span id="Defining_the_Data"></span><span id="defining_the_data"></span><span id="DEFINING_THE_DATA"></span>定义数据
 
 
-现在，你想上述适用于大小和主题的一组函数。 换而言之，你希望我们的函数可以使用的变量数据值。 若要执行此操作，在一个 XML 文件 DataDrivenTests.xml 定义两个表：
+现在，您希望此函数适用于一组大小和主题。 换句话说，你需要函数可以使用的变量数据值。 为此，请在 XML 文件中定义两个表 DataDrivenTests.xml：
 
 ```cpp
 1  <?xml version="1.0"?>
@@ -84,20 +83,20 @@ ms.locfileid: "63341811"
 39 </Data>
 ```
 
-现在已定义两个表，"Table1"和"Table2"。 **可以在同一个 XML 文件中定义的多个测试方法的表。**
+现在，您已定义了两个表： "Table1" 和 "Table2"。 **您可以在同一个 XML 文件中定义多个测试方法的表。**
 
-观察到，Table1，在您定义 ParameterTypes 提前，并选择"大小"应为整数。 **ParameterTypes 部分是可选的。** 默认情况下，如果未提供参数类型信息，将以字符串形式保存。 这是"Table2"中的所有参数的这种情况。
+请注意，在 Table1 中，你之前定义了 ParameterTypes 并选择了 "Size" 作为整数。 **ParameterTypes 节是可选的。** 默认情况下，如果未提供参数类型信息，则它将保存为字符串。 这种情况适用于 "Table2" 中的所有参数。
 
-定义表中每个"行"是一组你想要接受的测试函数的数据 （参数） 值。 第 9、 14 和 19 行定义 3 个我们 FirstTable 函数将接受的数据集。 同样第 26、 30 和 34 行定义 SecondTable 的数据集。
+表中定义的每个 "行" 都是一组数据 (参数) 值，你希望测试函数接受这些值。 第9行、第14和第19行定义了 FirstTable 函数将接受的3组数据。 类似于26、30和34的行定义 SecondTable 的数据集。
 
-请注意，行 9、 14、 19、 26，30 和在上面的示例 34-你可以定义特定于行的元数据。 现在是一种方法，若要更改使用相同的功能的数据集的元数据信息。 第一组数据 （第 9 行） 的优先级为 1，第二个集的数据 （第 14 行） 的优先级为 2 和第三个集的数据 （第 19 行） 默认为函数的优先级。 **所有行都继承与关联的表的函数的元数据。如果在行级别再次指定不同的元数据，则它将覆盖在函数级别定义的元数据值。**
+在上面的示例中，请注意第9行、第14、19、26、30和34行，可以定义特定于行的元数据。 现在有一种方法可以使用同一函数的数据集来更改元数据信息。 第一组数据 (第9行) 的优先级为1，第二组数据的优先级 (第14行) 为2，第三组数据 (第19行) 默认为函数的优先级。 **所有行都从表与之关联的函数中继承元数据。如果在行级别再次指定相同的元数据，则将重写在函数级别定义的元数据值。**
 
-**注意：XML 文件架构定义是相同的本机以及托管代码中，除了支持的类型定义。** 请参阅下面有关如何定义的数据的另一个示例的"管理数据驱动的测试"部分的开头部分。 继续使用本机数据驱动的测试以了解在本机代码中允许的类型。
+**注意：除支持的类型定义以外，XML 文件架构定义对于本机和托管代码是相同的。** 有关如何定义数据的另一个示例，请参阅下面 "托管数据驱动的测试" 部分的初始部分。 继续使用本机数据驱动的测试来了解本机代码中允许的类型。
 
-## <a name="span-idnativedatadriventestspanspan-idnativedatadriventestspanspan-idnativedatadriventestspannative-data-driven-test"></a><span id="Native_Data_driven_test"></span><span id="native_data_driven_test"></span><span id="NATIVE_DATA_DRIVEN_TEST"></span>本机数据驱动的测试
+## <a name="span-idnative_data_driven_testspanspan-idnative_data_driven_testspanspan-idnative_data_driven_testspannative-data-driven-test"></a><span id="Native_Data_driven_test"></span><span id="native_data_driven_test"></span><span id="NATIVE_DATA_DRIVEN_TEST"></span>本机数据驱动的测试
 
 
-使用数据集定义并可供使用，现在需要一种方法来限定为数据驱动测试的测试函数，并将其与定义数据集的表相关联。 这是通过额外的元数据的方式创作测试时：
+定义数据集并准备好使用后，现在需要一种方法将测试函数限定为数据驱动的测试，并将其与定义数据集的表相关联。 此操作通过在创作测试时使用额外的元数据来完成：
 
 ```cpp
 1  namespace WEX { namespace TestExecution { namespace Examples
@@ -119,15 +118,15 @@ ms.locfileid: "63341811"
 17 } /* namespace Examples */ } /* namespace TestExecution */ } /* namespace WEX */
 ```
 
-若要将 XML 表与测试相关联，将添加到测试的方法的 DataSource 元数据。 通过这种关联 TAEF 将使用给定的数据源来帮助进行测试。 数据源值具有三个部分：
+为了使 XML 表与测试相关联，请将 "DataSource" 元数据添加到测试的方法。 通过此关联 TAEF 将使用给定的数据源来驱动测试。 数据源值包含三个部分：
 
-1.  表:-此标识为 XML 表的数据源。
-2.  DataDrivenTests.xml-这是包含 XML 表的文件。
-3.  '\#Table2-以下\#分隔符，Table2 值标识要使用的 XML 文档内的特定表。 单个 XML 表格数据源可以包含多个表。 TAEF 将查找具有匹配的指定的值的 Id 属性的表元素的 XML 文件。
+1.  "Table："-将数据源标识为 XML 表。
+2.  "DataDrivenTests.xml"-这是包含 XML 表的文件。
+3.  " \# Table2"-按照 " \# " 分隔符，"Table2" 值标识要使用的 XML 文档中的特定表。 单个 XML 表数据源可以包含多个表。 TAEF 将查找具有与指定值匹配的 "Id" 属性的 Table 元素的 XML 文件。
 
-我们可能已观察到在上面的示例中，"SecondTable""FirstTable"之前定义。 这意味着将获取"SecondTable"函数执行之前"FirstTable"函数，但定义"Table1"，对应于"FirstTable"之前"Table2"与"SecondTable"对应的表的表。 这是为了强调的是，**发现和数据驱动的测试执行期间的表定义的顺序是不相关。**
+在上面的示例中，您可能已在 "FirstTable" 之前定义了 "SecondTable"。 这意味着 "SecondTable" 函数将在 "FirstTable" 函数之前执行，但你在 "Table2" 之前定义了与 "FirstTable" 对应的表，该表对应于 "SecondTable"。 这是为了强调在 **数据驱动的测试的发现和执行期间表定义的顺序是不相关的。**
 
-映射到测试方法完成我们的数据源后，现在可以修改示例以从源获取数据。 执行该操作之前, 看一看已发布的标头文件，TestData.h。 感兴趣的部分是：
+将数据源映射到测试方法完成后，现在可以修改此示例以从源中获取数据。 在执行此操作之前，请查看已发布的标头文件 TestData。 相关部分为：
 
 ```cpp
 1    class TestData
@@ -141,9 +140,9 @@ ms.locfileid: "63341811"
 9    };
 ```
 
-第 5 行显示了要调用以检索函数中的数据的 API。 看一看可用[参数类型](parameter-types-in-table-data-sources.md)进行检索。
+第5行显示了要调用的 API，以便在函数中检索数据。 查看可供检索的 [参数类型](parameter-types-in-table-data-sources.md) 。
 
-良好-所有设置重新编写我们的示例：
+确定-全部设置为重新编写示例：
 
 ```cpp
 1  namespace WEX { namespace TestExecution { namespace Examples
@@ -171,12 +170,12 @@ ms.locfileid: "63341811"
 23 } /* namespace Examples */ } /* namespace TestExecution */ } /* namespace WEX */
 ```
 
-第 7 和 18 行是为了使测试数据驱动的更改的主要部分。 不提供大量的更改。 请看一下执行数据驱动的测试，了解如何充分利用 TAEF 执行数据驱动测试时。
+第7行和第18行是为了使测试数据驱动而发生更改的主要部分。 不是很大变化。 查看执行数据驱动的测试，以了解如何在执行数据驱动的测试的同时充分利用 TAEF。
 
-## <a name="span-idmanageddatadriventestspanspan-idmanageddatadriventestspanspan-idmanageddatadriventestspanmanaged-data-driven-test"></a><span id="Managed_Data_driven_test"></span><span id="managed_data_driven_test"></span><span id="MANAGED_DATA_DRIVEN_TEST"></span>托管的数据驱动的测试
+## <a name="span-idmanaged_data_driven_testspanspan-idmanaged_data_driven_testspanspan-idmanaged_data_driven_testspanmanaged-data-driven-test"></a><span id="Managed_Data_driven_test"></span><span id="managed_data_driven_test"></span><span id="MANAGED_DATA_DRIVEN_TEST"></span>托管数据驱动的测试
 
 
-请考虑你想要在控制台上打印的矩形的坐标的一个示例。 开始使用这些坐标定义作为 XML 文件中的数据集。
+假设你想要在控制台上打印矩形的坐标。 首先，将这些坐标定义为 XML 文件中的数据集。
 
 ```cpp
 1  <?xml version="1.0"?>
@@ -210,23 +209,23 @@ ms.locfileid: "63341811"
 29 </Data>
 ```
 
-在这种情况下"FirstTable"，在上面的第 3 行中定义表中的作用域中定义的数据集。 **可以在同一个 XML 文件中定义的多个测试方法的表。**
+定义表作用域中的数据集，在本例中为 "FirstTable"，这在上面的第3行中定义。 **您可以在同一个 XML 文件中定义多个测试方法的表。**
 
-观察 FirstTable 定义 ParameterTypes 前期和部分还指出"Left"是"Int32"。 **ParameterTypes 部分是可选的。默认情况下，如果未提供参数类型信息，将以字符串形式保存。**
+观察到 FirstTable 定义了 ParameterTypes，并将 "Left" 称为 "Int32"。 **ParameterTypes 节是可选的。默认情况下，如果未提供参数类型信息，则它将保存为字符串。**
 
-看一看的列表支持[参数类型](parameter-types-in-table-data-sources.md)。
+查看支持的 [参数类型](parameter-types-in-table-data-sources.md)的列表。
 
 如果指定任何其他数据类型，则测试将引发警告，并将其视为一个字符串。
 
-**注意：类型字符串不区分大小写，但应完全按照上面所示的拼写。**
+**注意：类型字符串不区分大小写，但应完全按照如上所示进行拼写。**
 
-在表中，定义每个"行"是一组你想要接受的测试函数的数据 （参数） 值。 第 10、 16 和 22 行定义 3 个数据集，我们的函数。
+表中定义的每个 "行" 是一组数据 (参数) 值，你希望测试函数接受这些值。 第10、16和22行定义了函数的3组数据。
 
-请注意，行 10，16，并且在上面的示例 22-您可以对行定义特定元数据。 现可更改与同一函数的数据集的元数据信息的方法。 第一组数据 （第 10 行） 的优先级为 1，第二个集的数据 （第 16 行） 的优先级为 2 和第三个集的数据 （第 22 行） 默认为函数的优先级。 **所有行都继承与关联的表的函数的元数据。如果在行级别再次指定不同的元数据，则它将覆盖在函数级别定义的元数据值。**
+在上面的示例中，请注意第10、16和22行-可以定义特定于行的元数据。 现在，你可以使用同一函数的数据集来更改元数据信息。 第一组数据 (第10行) 的优先级为1，第二组数据的优先级 (第16行) 为2，第三组数据 (第22行) 默认为函数的优先级。 **所有行都从表与之关联的函数中继承元数据。如果在行级别再次指定相同的元数据，则将重写在函数级别定义的元数据值。**
 
-**注意：XML 文件架构定义是相同的本机以及托管代码中，除了支持的类型定义。** 看看如何定义此宏的另一个示例的此页顶部的"定义数据"部分。
+**注意：除支持的类型定义以外，XML 文件架构定义对于本机和托管代码是相同的。** 有关如何定义此操作的另一个示例，请参阅本页顶部的 "定义数据" 部分。
 
-现在，可以定义的所有数据。 下面的示例演示如何访问它。
+现在，已定义所有数据。 下面的示例演示如何访问它。
 
 ```cpp
 1  namespace WEX.Examples
@@ -267,24 +266,24 @@ ms.locfileid: "63341811"
 38 }
 ```
 
-将 XML 表与托管代码中的给定的测试方法关联是非常类似于本机代码;只需应用 DataSource 元数据。 为之前，它是三个部分组成：
+将 XML 表与托管代码中的给定测试方法相关联非常类似于本机代码;只需应用 "DataSource" 元数据。 与之前一样，它由三个部分组成：
 
-1.  表:-若要标识为 XML 表的数据源。
-2.  CSharpDataDrivenTests.xml-包含 XML 表的文件。
-3.  '\#FirstTable-以下\#分隔符，FirstTable 值标识要使用的 XML 文档内的特定表。 TAEF 将查找具有匹配的指定的值的 Id 属性的表元素的 XML 文件。
+1.  "Table："-用于将数据源标识为 XML 表。
+2.  "CSharpDataDrivenTests.xml"-包含 XML 表的文件。
+3.  " \# FirstTable"-按照 " \# " 分隔符，"FirstTable" 值标识要使用的 XML 文档中的特定表。 TAEF 将查找具有与指定值匹配的 "Id" 属性的 Table 元素的 XML 文件。
 
-请注意，第二个函数不是数据驱动。 **你可以选择允许只有某些测试，以便进行数据驱动。此外可以让每个测试具有不同的 XML 文件中定义其表。**
+请注意，第二个函数不是数据驱动的。 **您可以选择仅使某些测试成为数据驱动的。您还可以选择让每个测试在不同的 XML 文件中定义其表。**
 
-在行 36，定义一个专用的 TestContext 属性-像 VSTS 建议 (<https://msdn2.microsoft.com/library/ms404699(VS.80).aspx>)。 您还可以对此属性 （行至第 34 30） 定义公共评估师。 在内部 TAEF 加载 TestContext 的字典属性，在焦点中相应的数据集。
+在第36行中，定义专用 TestContext 属性的 VSTS 建议 (<https://msdn2.microsoft.com/library/ms404699(VS.80).aspx>) 。 你还可以定义 (第30到34行) 的此属性的公共评估师。 在内部 TAEF 加载 TestContext 的字典属性，并将相应的数据集集中在一起。
 
-TestContext Microsoft.VisualStudio.TestTools.UnitTesting 中定义。 请参阅上面的示例中的第 3 行。 您应已将此作为参考中包含你托管的测试创作。 **因此，没有其他引用所需的创作数据驱动测试。**
+TestContext 是在 VisualStudio. Microsoft.visualstudio.testtools.uitest.common.uimap.uimap>. UnitTesting 中定义的。 请参阅上述示例中的第3行。 你应在托管测试创作中包含此作为引用。 **因此，创作数据驱动的测试不需要其他引用。**
 
-在上面的示例中的第 18 行中，您显示如何检索在函数中的数据。 请注意，数据也可用在 m\_testContext.DataRow。
+在上面的示例第18行中，演示如何在函数中检索数据。 请注意，数据在 testContext 中可用 \_ 。
 
-## <a name="span-idnameinsteadofindextoidentifyadatarowspanspan-idnameinsteadofindextoidentifyadatarowspanspan-idnameinsteadofindextoidentifyadatarowspanname-instead-of-index-to-identify-a-datarow"></a><span id="Name_instead_of_Index_to_Identify_a_DataRow"></span><span id="name_instead_of_index_to_identify_a_datarow"></span><span id="NAME_INSTEAD_OF_INDEX_TO_IDENTIFY_A_DATAROW"></span>命名而不是索引为 Identify 是 DataRow
+## <a name="span-idname_instead_of_index_to_identify_a_datarowspanspan-idname_instead_of_index_to_identify_a_datarowspanspan-idname_instead_of_index_to_identify_a_datarowspanname-instead-of-index-to-identify-a-datarow"></a><span id="Name_instead_of_Index_to_Identify_a_DataRow"></span><span id="name_instead_of_index_to_identify_a_datarow"></span><span id="NAME_INSTEAD_OF_INDEX_TO_IDENTIFY_A_DATAROW"></span>用于标识 DataRow 的名称而不是 Index
 
 
-TAEF 可以有一个更有意义的 Name 属性，而不是索引来标识数据源中的任何数据行。 若要执行此操作，只需在数据源中的行级别添加 Name 元数据。 我们在此页上的第一个示例可以修改以使用此功能，如下所示：
+TAEF 使你可以使用更有意义的 "Name" 属性而不是索引来标识数据源中的任何 DataRow。 为此，只需在数据源的行级添加 "Name" 元数据。 此页面上的第一个示例可以修改为使用此功能，如下所示：
 
 ```cpp
 1  <?xml version="1.0"?>
@@ -315,7 +314,7 @@ TAEF 可以有一个更有意义的 Name 属性，而不是索引来标识数据
 39 </Data>
 ```
 
-在上文中修改的示例中，BlueTransparent correspondes 索引 0。 具有索引 1 行提供给它没有特殊名称且具有索引 2 的行具有名称 BlackTransparent 与之关联。 仍可以使用所选内容查询来查找索引 0 或 2 Table1 中的，它将查找正确的行。 但是，当执行或列出的 dll，而不是查看：
+在上面修改的示例中，将 "BlueTransparent" correspondes 为索引0。 索引为1的行没有给定的特殊名称，并且索引为2的行的名称为 "BlackTransparent"。 你仍可以使用选择查询来查找 "Table1" 中的索引0或2，并将找到正确的行。 但在执行或列出 dll 时，不会看到：
 
 ```cpp
 <qualified name of the test method>#<index>
@@ -327,33 +326,33 @@ TAEF 可以有一个更有意义的 Name 属性，而不是索引来标识数据
 <qualified name of the test method>#<name property provided at Row level>
 ```
 
-"Name"属性在行级别提供的位置的行。 如果没有为任何行提供"Name"属性，如在索引 1 更高版本的情况下它将默认为无\# **&lt;索引&gt;** 在方法的限定名称。
+对于行级提供 "Name" 属性的行。 如果没有为任何行提供 "Name" 属性（如上面的索引1），则默认情况下，在 \# 该方法的限定名处具有 **&lt; index &gt;** 。
 
-请注意，通过提供在行级别的"Name"属性，要实质上更改 TAEF 解释的方法调用与对应的行数据的实例名称的方式。
+请注意，在行级提供 "Name" 属性的方式实质上是更改 TAEF 使用相应行数据解释方法调用实例名称的方式。
 
-## <a name="span-iddatasourceasaruntimeparameterspanspan-iddatasourceasaruntimeparameterspanspan-iddatasourceasaruntimeparameterspandatasource-as-a-runtime-parameter"></a><span id="DataSource_as_a_Runtime_parameter"></span><span id="datasource_as_a_runtime_parameter"></span><span id="DATASOURCE_AS_A_RUNTIME_PARAMETER"></span>作为运行时参数的数据源
+## <a name="span-iddatasource_as_a_runtime_parameterspanspan-iddatasource_as_a_runtime_parameterspanspan-iddatasource_as_a_runtime_parameterspandatasource-as-a-runtime-parameter"></a><span id="DataSource_as_a_Runtime_parameter"></span><span id="datasource_as_a_runtime_parameter"></span><span id="DATASOURCE_AS_A_RUNTIME_PARAMETER"></span>DataSource 作为运行时参数
 
 
-TAEF 支持提供的运行时参数作为数据源。 此语法如下所示：
+TAEF 支持将 datasource 作为运行时参数提供。 此操作的语法如下所示：
 
 ```cpp
 te <test dll names> /p:<DataSource runtime name>=Table:<DataSoure XML file>#<Table Id>
 ```
 
-创作时需考虑中的测试，必须指定"p:&lt;数据源运行时名称&gt;"作为数据源。 请记住，你必须在运行时一起-指定完整的字符串的 XML 文件名称，以及表 id。 TableId 不需要提供作为测试元数据中，如果在运行时提供数据源。 "表:"前缀指定您正在寻找的表数据源。
+创作测试时，必须将 "p： &lt; DataSource 运行时名称 &gt; " 指定为数据源。 请记住，必须在运行时指定完整的字符串-XML 文件名以及表 id。 如果在运行时提供了数据源，则不应将 TableId 作为测试元数据提供。 "Table：" 前缀指定正在查找表数据源。
 
-您可以试用此版本共享中可用的示例之一：
+可以使用发布共享上提供的示例之一尝试此操作：
 
 ``` syntax
 te Examples\CPP.RuntimeDataSource.Example.dll /p:MyDataSource=Table:RuntimeDataSourceExample.xml#SimpleTable
 ```
 
-## <a name="span-iddatasourceasaresourcespanspan-iddatasourceasaresourcespanspan-iddatasourceasaresourcespandatasource-as-a-resource"></a><span id="DataSource_as_a_Resource"></span><span id="datasource_as_a_resource"></span><span id="DATASOURCE_AS_A_RESOURCE"></span>为资源的数据源
+## <a name="span-iddatasource_as_a_resourcespanspan-iddatasource_as_a_resourcespanspan-iddatasource_as_a_resourcespandatasource-as-a-resource"></a><span id="DataSource_as_a_Resource"></span><span id="datasource_as_a_resource"></span><span id="DATASOURCE_AS_A_RESOURCE"></span>作为资源的数据源
 
 
-TAEF 可作为测试模块的资源添加数据源，只要它符合以下：
+TAEF 允许将数据源添加为测试模块的资源，前提是它符合以下内容：
 
-对于本机单元测试的模块，可以执行此操作通过指定数据源的资源 id 或资源名称。 下面是一个代码示例：
+对于本机测试模块，可以通过将数据源指定为资源 id 或资源名称来实现此目的。 下面是一个代码示例：
 
 ```cpp
 BEGIN_TEST_METHOD(ResourceNameDataSource)
@@ -361,27 +360,27 @@ BEGIN_TEST_METHOD(ResourceNameDataSource)
 END_TEST_METHOD()
 ```
 
-"MyResourceName"是这种情况下定义 ResourceDataSource.rc 文件中的资源名称：
+在此示例中，"MyResourceName" 是在 ResourceDataSource 文件中定义的资源名称：
 
 ```cpp
 MyResourceName DATASOURCE_XML "ResourceDataSource.xml"
 ```
 
-对于托管的测试模块资源只能指定以特定方式中所示**源**文件代码段如下所示：
+对于托管测试模块，只能以特定方式指定资源，如下面所示的 **源** 文件代码段中所示：
 
 ```cpp
 LANGUAGE_NEUTRAL_MANAGED_RESOURCES = CSharpAdvancedDataDrivenTests.xml
 ```
 
-数据源元数据规范像以前那样发生时指定数据源 XML 文件将保持不变。 类似于托管代码中的用例，您可以制作名称作为 XML 文件的名称相同的资源。 因此，它是必须了解 TAEF 首先将寻找具有数据源名称的实际文件是否存在。 如果找不到此类的 XML 文件，然后仅将它继续寻找给定的资源名称或 id 为 test 模块中的测试资源。指定数据源，因为资源需要重新编译，因为您可以利用这种设计通过与测试 dll 相同的位置在开发时复制的数据源 XML 文件 （和命名的资源名称作为 XML 文件的名称相同）。 完成后测试，将 XML 返回到代码目录复制和重新编译为资源。 别忘了将在执行目录中删除该 XML 文件 ！ :)
+数据源元数据规范将保持不变，与指定 DataSource XML 文件的情况相同。 与托管代码中的大小写类似，你可以将资源名称设置为与 XML 文件名相同。 因此，请务必了解 TAEF 将首先查找包含数据源名称的实际文件。 如果找不到这样的 XML 文件，则它将继续使用给定的资源名称或 id 在测试模块中查找测试资源。由于将 DataSource 指定为资源需要重新编译，因此，你可以通过将数据源 XML 文件复制到与测试 dll 相同的位置来利用这一设计，同时开发 (和命名资源名称，使其与 XML 文件名) 相同。 完成测试后，将 XML 复制回代码目录，并重新编译为资源。 别忘了从执行目录中删除 XML 文件！ :)
 
-## <a name="span-idexamplewalk-throughsspanspan-idexamplewalk-throughsspanspan-idexamplewalk-throughsspanexample-walk-throughs"></a><span id="Example_Walk-throughs"></span><span id="example_walk-throughs"></span><span id="EXAMPLE_WALK-THROUGHS"></span>示例演练
+## <a name="span-idexample_walk-throughsspanspan-idexample_walk-throughsspanspan-idexample_walk-throughsspanexample-walk-throughs"></a><span id="Example_Walk-throughs"></span><span id="example_walk-throughs"></span><span id="EXAMPLE_WALK-THROUGHS"></span>示例演练-演练
 
 
-若要掌握各种基于表的数据驱动测试内容，执行一些详细示例演练的读取：
+若要理解基于表的数据驱动测试的各个方面，请阅读一些更多示例演练：
 
 -   [简单数据驱动的示例](data-driven-testing.md)
--   [重写在行级别的元数据](metadata-overriding-data-driven-test-example.md)
+-   [重写行级的元数据](metadata-overriding-data-driven-test-example.md)
 -   [指定数组参数类型](array-support-data-driven-test-example.md)
 -   [数据驱动的类](data-driven-class.md)
 

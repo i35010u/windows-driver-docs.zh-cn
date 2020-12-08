@@ -1,7 +1,6 @@
 ---
 title: KSEVENT \_ CAMERACONTROL \_ 缩放
 description: '\_ \_ 当照相机缩放操作已完成或已取消时，将触发 KSEVENT CAMERACONTROL zoom 事件。'
-ms.assetid: 1580B821-093C-484C-B152-3D4177A8150E
 keywords:
 - KSEVENT_CAMERACONTROL_ZOOM 流媒体设备
 topic_type:
@@ -12,12 +11,12 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 777494917d44633984051bd1f0e92113ee1c96c1
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 68daf80ec08e9b557d3d2bdbccc03c6fc748109d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90107516"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96796429"
 ---
 # <a name="ksevent_cameracontrol_zoom"></a>KSEVENT \_ CAMERACONTROL \_ 缩放
 
@@ -62,9 +61,9 @@ ms.locfileid: "90107516"
 <a name="remarks"></a>备注
 -------
 
-有关详细信息，请 [**参阅 \_ KSPROPERTY \_ CAMERACONTROL \_ **](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_cameracontrol_s_ex)。
+有关详细信息，请 [**参阅 \_ KSPROPERTY \_ CAMERACONTROL \_**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_cameracontrol_s_ex)。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSEVENT \_ CAMERACONTROL**](/windows-hardware/drivers/ddi/ksmedia/ne-ksmedia-ksevent_cameracontrol)

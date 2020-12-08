@@ -1,25 +1,24 @@
 ---
 title: PDBStr 工具
 description: PDBStr 工具
-ms.assetid: a70e92ac-4d72-4c71-9396-f470314257f2
 keywords:
-- SrcSrv，PDBStr 工具
-- PDBStr 工具
+- Srcsrv.ini，Pdbstr.exe 工具
+- Pdbstr.exe 工具
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: df8f52fa45b6a3fec28cfe770a406bb5512f211e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 058f6674e40e281fb5b4c1df69b3dd737d37dac5
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63366202"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96795651"
 ---
 # <a name="the-pdbstr-tool"></a>PDBStr 工具
 
 
-PDBStr (Pdbstr.exe) 工具是索引的脚本用于将版本控制信息插入到目标.pdb 文件的"srcsrv"备用流。 它还可以从.pdb 文件读取任何流。 可以使用此信息以验证索引脚本正常工作。
+索引脚本使用 Pdbstr.exe ( # A0) 工具将版本控制信息插入目标 .pdb 文件的 "srcsrv.ini" 备用流。 它还可以从 .pdb 文件中读取任何流。 您可以使用此信息来验证索引脚本是否正常工作。
 
-有关详细信息，运行与 PDBStr **-？** 选项。
+有关详细信息，请运行包含 **-？** 的 pdbstr.exe 选项。
 
  
 

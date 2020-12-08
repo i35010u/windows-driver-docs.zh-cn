@@ -1,22 +1,21 @@
 ---
 title: ElementType 模板指令
 description: ElementType 模板指令
-ms.assetid: fadb6953-543c-4433-a898-6794d345bb91
 keywords:
 - ElementType 指令 WDK GDL
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f0fa404eb1804d5688d9da8ea3356aac03321b1c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4653d138db598f1ee5d885187669c5bfe9420618
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63327579"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96797151"
 ---
 # <a name="elementtype-template-directive"></a>ElementType 模板指令
 
 
-**\*ElementType**指令在模板中定义的元素，使用的数据类型。
+**\* ElementType** 指令定义在模板中使用的元素的数据类型。
 
  
 

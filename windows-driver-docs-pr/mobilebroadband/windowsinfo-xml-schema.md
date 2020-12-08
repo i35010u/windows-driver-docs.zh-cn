@@ -1,15 +1,14 @@
 ---
 title: WindowsInfo XML 架构概述
 description: WindowsInfo XML 架构概述
-ms.assetid: a9c440ec-189c-4148-8f76-d6476aa708c0
 ms.date: 07/05/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: b70538dc33fa1327e3532c8c1ab20766c7cefbaa
-ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
+ms.openlocfilehash: 45b00b0cad24665678755559d3973d605d7e21ae
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89402733"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96795999"
 ---
 # <a name="windowsinfo-xml-schema-overview"></a>WindowsInfo XML 架构概述
 
@@ -20,7 +19,8 @@ ms.locfileid: "89402733"
 
 Windowsinfo.xml 文档中的数据是根据此部分中所述的 WindowsInfo XML 架构格式化的。
 
-**注意**  该 XML 文档必须使用 UTF-8 编码进行保存。
+**注意**  
+该 XML 文档必须使用 UTF-8 编码进行保存。
 
  
 

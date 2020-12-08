@@ -1,7 +1,6 @@
 ---
 title: GDL 预处理器语法
 description: GDL 预处理器语法
-ms.assetid: 14e9a595-3b6f-43b9-b670-7c9324619974
 keywords:
 - 指令 WDK GDL，源文件预处理器指令
 - 源文件 WDK GDL，预处理器指令
@@ -9,27 +8,27 @@ keywords:
 - 语法 WDK GDL
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9a14013167d268811f74bbb8051f24e5152dcb7d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1a33efca760cd32483308c5b857742ede991305d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380010"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96796967"
 ---
 # <a name="gdl-preprocessor-syntax"></a>GDL 预处理器语法
 
 
-GDL 预处理器指令必须遵守以下规则：
+GDL 预处理器指令必须遵循以下规则：
 
--   所有预处理器指令必须占用一个单独的行，并且必须是该行的唯一语句。 可选空格仅可以在预处理器指令之前。 在同一行中按照指令任何无关字符会删除之前将文件提交到的分析的第二个 （主要） 阶段。
+-   所有预处理器指令必须占用单独的行，并且必须是该行的唯一语句。 预处理器指令之前只有可选的空白。 在将文件提交到第二个 (主) 分析阶段之前，将删除在同一行上遵循指令的任何外来字符。
 
--   所有指令必须具有当前的预处理器前缀作为都前缀。 预处理器的前缀值最初设置为星号分析器 (\*) 或数字符号 (\#)，但您可以通过使用前缀更改为任何字符或令牌 **\#SetPPPrefix**指令。
+-   所有指令必须以当前预处理器前缀为前缀。 预处理器前缀最初由分析器设置为星号 (\*) 或数字符号 (\#) ，但你可以使用 **\# SetPPPrefix** 指令将前缀更改为任意字符或令牌。
 
--   若要被识别为预处理器指令，预处理器的前缀必须紧跟在指令，和如果指令需要值，必须用冒号 （:） 分隔值。
+-   若要识别为预处理器指令，预处理器前缀必须紧跟在指令后，如果指令需要值，则必须用冒号分隔该值 (： ) 。
 
--   由任何空格或 linebreak 字符终止指令的值。
+-   指令的值由任何空格或 linebreak 字符终止。
 
-**请注意**   GDL 语法是比 GPD 语法相对较为宽松。 如果要为这两个分析器编写，则应遵循的更严格的语法所需的 GPD。
+**注意**   GDL 语法比 GPD 语法更宽松。 如果要为两个分析器编写，应遵循 GPD 所需的更严格语法。
 
  
 

@@ -1,7 +1,6 @@
 ---
 title: 描述打印机内存配置
 description: 描述打印机内存配置
-ms.assetid: 4a85788a-9713-42fb-a788-4d45f9aaabac
 keywords:
 - Unidrv，打印机内存配置
 - GPD 文件 WDK Unidrv，打印机内存配置
@@ -10,12 +9,12 @@ keywords:
 - Unidrv WDK 打印
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2ce5a5c887787cbdc0ae2ee997e135170e91bb36
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e785a2ebf3d79ad45582e6ce47d1ac606a06c32a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63355675"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96797287"
 ---
 # <a name="describing-printer-memory-configurations"></a>描述打印机内存配置
 
@@ -23,13 +22,13 @@ ms.locfileid: "63355675"
 
 
 
-Unidrv 微型驱动程序可以包含打印机的好和默认内存配置的说明，以便可以尝试 Unidrv 来跟踪打印机内存使用情况。 每个内存配置说明包括内存总量和可用内存的值。 可用内存可用于下载字体，保护页面和由 Unidrv 控制其他操作。
+Unidrv 微型驱动程序可以包含打印机的可能和默认内存配置的说明，以便 Unidrv 可以尝试跟踪打印机内存使用量。 每个内存配置说明都包括内存总量和可用内存的值。 可用内存可用于下载字体、保护页面和由 Unidrv 控制的其他操作。
 
-在 GPD 文件中，可以使用两种方法来描述打印机的可能的内存配置。 这两种方法涉及指定属性中的\*功能的内存功能，这是一个条目的[标准功能](standard-features.md)。 两种方法是按如下所示：
+在 GPD 文件中，可以使用两种方法来描述打印机的可能内存配置。 这两种方法都涉及在 \* 内存功能的功能条目中指定属性，这是一项 [标准功能](standard-features.md)。 这两种方法如下所示：
 
-1.  可以在单独指定每个可能的配置\*选项中的条目\*功能条目。 每个\*选项该项必须包含\*MemoryConfigKB 属性中所述[内存功能的选项属性](option-attributes-for-the-memory-feature.md)。
+1.  可以在功能条目中的单独选项条目中指定每个可能的配置 \* \* 。 每个 \* 选项条目都必须包含 \* MemoryConfigKB 属性，该属性在 [内存功能的选项属性](option-attributes-for-the-memory-feature.md)中进行了介绍。
 
-    例如，若要指定打印机可以有两个内存配置、 可用 450 千字节为单位的 1 兆字节配置和可用 1350 千字节为单位的 2 兆字节配置，可以使用以下 GPD 条目：
+    例如，若要指定打印机可以具有两个内存配置，可使用 450 kb 的 1 mb 配置和 2 mb 的配置（可用 1350 kb），可以使用以下 GPD 项：
 
     ```cpp
     *Feature: Memory
@@ -50,9 +49,9 @@ Unidrv 微型驱动程序可以包含打印机的好和默认内存配置的说�
      
     ```
 
-2.  或者，\*功能条目可包含一个或多个\*MemConfigKB 或\*MemConfigMB 特性而不是\*选项条目。 这是只是一个指定内存选项而不包括一组方法\*选项条目。 每个\*MemConfigKB 或\*MemConfigMB 属性表示内存选项。
+2.  或者， \* 功能条目可以包含一个或多个 \* MemConfigKB 或 \* MemConfigMB 属性，而不是 \* 选项条目。 这只是一种方法，用于指定内存选项，而无需包括一组 \* 选项项。 每个 \* MemConfigKB 或 \* MemConfigMB 属性表示一个内存选项。
 
-    例如，若要使用可用 1350 千字节为单位指定相同的两个配置、 可用 450 千字节为单位的 1 兆字节配置和 2 兆字节配置，可以使用以下 GPD 条目：
+    例如，若要指定相同的两个配置，可使用 450 kb 的 1 mb 配置和 2 mb 的配置（可用 1350 kb），可以使用以下 GPD 项：
 
     ```cpp
     *Feature: Memory
@@ -65,15 +64,15 @@ Unidrv 微型驱动程序可以包含打印机的好和默认内存配置的说�
      
     ```
 
-    GPD 分析器创建每个配置，根据对语句中的第一项可显示的选项名称。 在此示例中，选项名称将是"1024 KB"和"2048 KB"。 参数\*DefaultOption 属性必须与这些名称之一匹配。
+    GPD 分析器基于对语句中的第一项，为每个配置创建一个可显示的选项名称。 在此示例中，选项名称为 "1024KB" 和 "2048KB"。 DefaultOption 属性的参数 \* 必须与其中一个名称匹配。
 
-方法 1 和 2 方法可在单个内使用\*功能条目。
+方法1和方法2都可以在单个 \* 功能条目中使用。
 
-如果分析器生成的选项名称与本地化要求不兼容，请使用方法 1 而不是方法 2。
+如果分析器生成的选项名称与本地化要求不兼容，请使用方法1而不是方法2。
 
-无论您使用哪种方法[Unidrv 用户界面](unidrv-user-interface.md)显示设备的打印机属性表中的内存功能选项。
+无论使用哪种方法， [Unidrv 用户界面](unidrv-user-interface.md) 都会在设备的打印机属性表中显示内存功能选项。
 
-如果你的微型驱动程序指定内存配置，它还可以指定可以在打印机内存中存储和其可用空间用完的数据类型。 \*MemoryUsage 属性是之一[打印机功能特性](printer-capability-attributes.md)，并可用来向 Unidrv 指示字体，光栅，矢量数据或的三个组合都存储在打印机内存。 指定每种类型，对于 Unidrv 尝试跟踪的打印机的内存量正在使用中。
+如果你的微型驱动程序指定内存配置，它还可以指定可存储在打印机内存中的数据类型，并占用其可用空间。 \*MemoryUsage 属性是一个[打印机功能属性](printer-capability-attributes.md)，您可以使用它来指示 Unidrv 字体、光栅、矢量数据或这三个数据是否存储在打印机内存中。 对于指定的每种类型，Unidrv 将尝试跟踪使用的打印机内存量。
 
  
 

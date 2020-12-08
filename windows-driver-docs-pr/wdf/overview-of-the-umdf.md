@@ -1,11 +1,10 @@
 ---
 title: UMDF 概述
-description: 本主题提供 UMDF 组件的高级概述，并介绍了您的驱动程序如何与系统提供的组件进行交互。
-ms.assetid: b36c9fad-1963-4d29-a1e7-890de77fed50
+description: 本主题提供了有关 UMDF 组件的高级概述，并介绍了驱动程序如何与系统提供的组件交互。
 keywords:
-- 用户模式驱动程序框架 WDK，有关 UMDF
-- UMDF WDK，有关 UMDF
-- 用户模式驱动程序 WDK UMDF，有关 UMDF
+- User-Mode Driver Framework WDK，关于 UMDF
+- UMDF WDK，关于 UMDF
+- 用户模式驱动程序 WDK UMDF，关于 UMDF
 - 驱动程序主机进程 WDK UMDF
 - 发送程序 WDK UMDF
 - 驱动程序管理器 WDK UMDF
@@ -13,39 +12,39 @@ keywords:
 - 设备堆栈 WDK UMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 92d7edbe76a1a8bd8a77d4e1ca0a685583e79656
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6c7b8b2f17ed8a635bf709c8c7c944461d0d80ae
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63390159"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96795777"
 ---
 # <a name="overview-of-umdf"></a>UMDF 概述
 
 
-本主题提供用户模式驱动程序框架 (UMDF) 组件的高级概述，并介绍了您的驱动程序如何与系统提供的组件进行交互。 它适用于这两种 UMDF 版本 1 和 2。
+本主题概述了 User-Mode Driver Framework (UMDF) 组件，并介绍了驱动程序如何与系统提供的组件交互。 它适用于 UMDF 版本1和2。
 
-UMDF 驱动程序抽象硬件功能，运行在用户模式环境中，并且可以访问各种服务。 UMDF 驱动程序采用的管理设备的驱动程序堆栈的一部分运行。 文件系统驱动程序、 （适用于完整的显示设备不仅显示显示设备） 使用，显示器驱动程序和打印驱动程序不能为 UMDF 驱动程序。
+UMDF 驱动程序抽象硬件功能，在用户模式环境中运行，并且可以访问不同的服务。 UMDF 驱动程序作为管理设备的驱动程序堆栈的一部分运行。 文件系统驱动程序，显示完整显示设备 (的驱动程序，而不显示仅显示的显示设备) ，打印驱动程序不能是 UMDF 驱动程序。
 
-UMDF 驱动程序与系统提供的以下组件进行交互：
+UMDF 驱动程序与以下系统提供的组件交互：
 
 -   驱动程序主机进程
 
-    驱动程序主机进程加载供应商提供 UMDF 驱动程序和框架的 Dll、 提供执行环境，用于用户模式驱动程序和用户模式堆栈中的驱动程序之间路由消息。 有关详细信息，请参阅[UMDF 驱动程序主机进程](umdf-driver-host-process.md)。
+    驱动程序主机进程加载供应商提供的 UMDF 驱动程序和框架 Dll，提供用户模式驱动程序的执行环境，并在用户模式堆栈中的驱动程序之间路由消息。 有关详细信息，请参阅 [UMDF 驱动程序主机进程](umdf-driver-host-process.md)。
 
 -   驱动程序管理器
 
-    驱动程序管理器是用于管理 Wudfhost 驱动程序主机进程的所有实例的 Windows 服务。 驱动程序管理器启动并跟踪每个驱动程序主机进程有关的信息。 每个主机是驱动程序管理器的子进程。 只有一个驱动程序管理器存在每个系统。 驱动程序管理器在第一台 UMDF 设备安装过程中启动，并在系统上之后运行。
+    驱动程序管理器是一种 Windows 服务，用于管理 Wudfhost 驱动程序主机进程的所有实例。 驱动程序管理器将启动和跟踪有关每个驱动程序主机进程的信息。 每个主机都是驱动程序管理器的子进程。 每个系统只存在一个驱动程序管理器。 驱动程序管理器将在安装第一个 UMDF 设备时启动，之后在系统上运行。
 
--   反射器
+-   Reflector
 
-    该发送程序是一个内核模式驱动程序允许应用程序和驱动程序主机进程 （和用户模式设备堆栈） 进行通信。 该发送程序创建单独的设备对象的每个设备实例和句柄插 (PnP) 以及与每个设备实例相关联的电源 I/O 请求。 应用程序和驱动程序主机进程之间的所有通信都是通过反射器。 有关详细信息，请参阅[体系结构的 UMDF](detailed-view-of-the-umdf-architecture.md)。
+    反射器是一个内核模式驱动程序，它允许应用程序和驱动程序主机进程 (，并) 用户模式的设备堆栈进行通信。 反射器为每个设备实例创建一个单独的设备对象，并处理与每个设备实例关联的即插即用 (PnP) 和电源 i/o 请求。 应用程序和驱动程序主机进程之间的所有通信都通过反射器进行。 有关详细信息，请参阅 [UMDF 的体系结构](detailed-view-of-the-umdf-architecture.md)。
 
-为给定设备的所有函数和筛选器驱动程序必须都运行相同的驱动程序主机进程中，但可以同时运行多个主机进程。
+给定设备的所有函数和筛选器驱动程序必须在同一驱动程序主机进程中运行，但可以同时运行多个主机进程。
 
-下图显示了跨用户模式/内核模式下边界驱动程序主机进程、 驱动程序管理器和反射的进行通信。
+下图显示了驱动程序主机进程、驱动程序管理器和反射器如何在用户模式/内核模式边界之间进行通信。
 
-![umdf 组件包括向上和向下发送程序中的设备对象](images/umdfarch3.gif)
+![umdf 组件在反射器中包含向上和向下设备对象](images/umdfarch3.gif)
 
  
 

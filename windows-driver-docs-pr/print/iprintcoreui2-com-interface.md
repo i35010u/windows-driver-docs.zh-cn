@@ -1,17 +1,16 @@
 ---
 title: IPrintCoreUI2 COM 接口
 description: IPrintCoreUI2 COM 接口
-ms.assetid: 3c9df0ac-d823-4c27-bd34-85765f48b972
 keywords:
 - IPrintCoreUI2
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: efc2d99df208a84b8bf1d36c325b14baff401d87
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 926e7445bfbb7fa945ff7a47278fe01be8a3745c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90104024"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96796641"
 ---
 # <a name="iprintcoreui2-com-interface"></a>IPrintCoreUI2 COM 接口
 
@@ -29,7 +28,7 @@ ms.locfileid: "90104024"
 <thead>
 <tr class="header">
 <th>方法</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>

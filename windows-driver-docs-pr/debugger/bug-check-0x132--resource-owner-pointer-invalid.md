@@ -1,7 +1,6 @@
 ---
 title: Bug 检查 0x132 RESOURCE_OWNER_POINTER_INVALID
-description: RESOURCE_OWNER_POINTER_INVALID bug 检查具有 0x00000132 值。 这表示提供了无效的资源所有者指针。
-ms.assetid: 0DEFEFF0-A88C-4797-BF36-0D1E532FA371
+description: RESOURCE_OWNER_POINTER_INVALID bug 检查的值为0x00000132。 这表明提供的资源所有者指针无效。
 keywords:
 - Bug 检查 0x132 RESOURCE_OWNER_POINTER_INVALID
 - RESOURCE_OWNER_POINTER_INVALID
@@ -13,30 +12,30 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 2541bb6162b3a7146a3534750c58fa90bd96b072
-ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
+ms.openlocfilehash: 8142e1b7f1180f410ec7de1878f07e96b99aa093
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67520444"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96796291"
 ---
-# <a name="bug-check-0x132-resourceownerpointerinvalid"></a>Bug 检查 0x132：RESOURCE\_OWNER\_POINTER\_INVALID
+# <a name="bug-check-0x132-resource_owner_pointer_invalid"></a>Bug 检查0x132：资源 \_ 所有者 \_ 指针 \_ 无效
 
 
-资源\_所有者\_指针\_无效错误检查的值为 0x00000132。 这表示提供了无效的资源所有者指针。
+资源 \_ 所有者 \_ 指针 \_ 无效 bug 检查的值为0x00000132。 这表明提供的资源所有者指针无效。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://www.windows.com/stopcode)。
+> 本主题面向程序员。 如果您是在使用计算机时收到蓝屏错误代码的客户，请参阅[蓝屏错误疑难解答](https://www.windows.com/stopcode)。
 
 
-## <a name="resourceownerpointerinvalid-parameters"></a>资源\_所有者\_指针\_无效的参数
+## <a name="resource_owner_pointer_invalid-parameters"></a>资源 \_ 所有者 \_ 指针 \_ 无效参数
 
 
 | 参数 | 描述             |
 |-----------|-------------------------|
-| 1         | Resource                |
-| 2         | Resource-&gt;OwnerTable |
-| 3         | CurrentThread           |
+| 1         | 资源                |
+| 2         | 资源- &gt; OwnerTable |
+| 3         | Thread.currentthread.priority           |
 | 4         | OwnerPointer            |
 
  

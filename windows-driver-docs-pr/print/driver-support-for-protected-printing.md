@@ -1,15 +1,14 @@
 ---
 title: 受保护打印的驱动程序支持
 description: Windows 8.1 包括对受保护打印的支持，它允许用户在打印作业之前，在打印机上指定一个 (PIN) 的个人识别码。
-ms.assetid: 43569030-224F-46C6-963F-FC3BE24A0FB3
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4fd56f5f55fc395c604c41dd355c8f6a8f198e7b
-ms.sourcegitcommit: b3e38d06762246c77cedd8e82d740ebea104c538
+ms.openlocfilehash: ddf6d759ad9d02d183a53de82623acf89c8a4b4d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/02/2020
-ms.locfileid: "91662439"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96797165"
 ---
 # <a name="driver-support-for-protected-printing"></a>受保护打印的驱动程序支持
 
@@ -66,7 +65,7 @@ https://schemas.microsoft.com/windows/2013/05/printing/printschemakeywordsv11
 <thead>
 <tr class="header">
 <th>关键字</th>
-<th>说明</th>
+<th>描述</th>
 <th>Level</th>
 <th>允许的值</th>
 <th>示例</th>
@@ -107,7 +106,7 @@ https://schemas.microsoft.com/windows/2013/05/printing/printschemakeywordsv11
 <thead>
 <tr class="header">
 <th>关键字</th>
-<th>说明</th>
+<th>描述</th>
 <th>Level</th>
 <th>允许的值</th>
 <th>示例</th>

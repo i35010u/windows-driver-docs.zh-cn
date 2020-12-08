@@ -1,7 +1,6 @@
 ---
 title: SM \_ SetBindingSupport 函数
 description: SM \_ SetBindingSupport 方法设置所指示的端口的绑定功能。
-ms.assetid: 31a37fa5-db3c-4944-bf93-e221fb42dc6d
 keywords:
 - SM_SetBindingSupport 函数存储设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: a25b667734d32c19bcd18dd2d94219be29ae59ad
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: b0cd11d8e7a64c4671e12812f2fcad2dbd4e6226
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89191641"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96795405"
 ---
 # <a name="sm_setbindingsupport-function"></a>SM \_ SetBindingSupport 函数
 
@@ -31,10 +30,10 @@ SM \_ SetBindingSupport 方法设置所指示的端口的绑定功能。
 
 ```ManagedCPlusPlus
 void SM_SetBindingSupport(
-   [in, HBAType("HBA_WWN")] uint8                HbaPortWWN[8],
-   [in, HBAType("HBA_WWN")] uint8                DomainPortWWN[8],
+   [in, HBAType("HBA_WWN")] uint8                HbaPortWWN[8],
+   [in, HBAType("HBA_WWN")] uint8                DomainPortWWN[8],
    [in, HBAType("SMHBA_BIND_CAPABILITY")] uint32 Flags,
-   [out, HBA_STATUS_QUALIFIERS] HBA_STATUS       HBAStatus
+   [out, HBA_STATUS_QUALIFIERS] HBA_STATUS       HBAStatus
 );
 ```
 
@@ -74,7 +73,7 @@ void SM_SetBindingSupport(
 <tbody>
 <tr class="odd">
 <td align="left"><p>目标平台</p></td>
-<td align="left">“桌面”</td>
+<td align="left">台式机</td>
 </tr>
 <tr class="even">
 <td align="left"><p>标头</p></td>

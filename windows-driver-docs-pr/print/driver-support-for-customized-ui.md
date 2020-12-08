@@ -1,15 +1,14 @@
 ---
 title: 自定义 UI 的驱动程序支持
 description: V4 打印驱动程序模型是使用打印机扩展或 UWP 设备应用程序的内置支持，用于打印的。
-ms.assetid: 91B0E824-1EE3-40B0-A24E-5A66C158972E
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 33c3e6446c2b6cc24be44a17db1d6c099809d9f0
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: b28471868c60a2b2e0dc8a703841a6deb83fac7e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89217755"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96797179"
 ---
 # <a name="driver-support-for-customized-ui"></a>自定义 UI 的驱动程序支持
 
@@ -34,7 +33,7 @@ V4 打印驱动程序模型是使用打印机扩展或 UWP 设备应用程序的
 
 ![打印机通知行为流程图](images/notificationbhvr.png)
 
-**注意**   需要注意的是，如果你尝试使用自定义 UI 通过调用[GetForegroundWindow](/windows/win32/api/winuser/nf-winuser-getforegroundwindow)在 Windows 8 环境中显示通知，则将不会显示通知窗口，这一点很重要。 这是因为，操作系统会尝试向使用 GetForegroundWindow 创建前台窗口的线程分配更高的优先级，并且不允许 Windows 8 环境中的对话框使用此操作。 如果要使用自定义 UI 在 Windows 8 环境中显示通知，则必须通过调用 GetDesktopWindow 来执行此操作 [。](/windows/win32/api/winuser/nf-winuser-getdesktopwindow)
+**注意**  需要注意的是，如果你尝试使用自定义 UI 通过调用 [GetForegroundWindow](/windows/win32/api/winuser/nf-winuser-getforegroundwindow)在 Windows 8 环境中显示通知，则将不会显示通知窗口，这一点很重要。 这是因为，操作系统会尝试向使用 GetForegroundWindow 创建前台窗口的线程分配更高的优先级，并且不允许 Windows 8 环境中的对话框使用此操作。 如果要使用自定义 UI 在 Windows 8 环境中显示通知，则必须通过调用 GetDesktopWindow 来执行此操作 [。](/windows/win32/api/winuser/nf-winuser-getdesktopwindow)
 
  
 

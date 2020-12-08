@@ -1,15 +1,14 @@
 ---
 title: MSiSCSI \_ QMIPSECSTATS WMI 类
 description: MSiSCSI \_ QMIPSECSTATS WMI 类
-ms.assetid: 81a21c25-5f03-4ad0-a892-3947d65975d2
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 2ec78f243194ad9b95ee096d635edbf9e82a97ae
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 636e28ef6093dfe1be4d04a0eb284f95dc2fbb79
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89192023"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96796467"
 ---
 # <a name="msiscsi_qmipsecstats-wmi-class"></a>MSiSCSI \_ QMIPSECSTATS WMI 类
 
@@ -21,7 +20,7 @@ MSiSCSI \_ MMIPSECSTATS WMI 类公开 ISCSI hba 的快速模式 IPsec 统计信�
 
 由于此类与存储微型端口驱动程序的特定实例相关联，因此微型端口驱动程序必须使用微型端口驱动程序管理 (PDO) 的特定物理设备对象的名称注册该类。
 
-MSiSCSI \_ MMIPSECStats 类是在 *Iscsiprf*中定义的。
+MSiSCSI \_ MMIPSECStats 类是在 *Iscsiprf* 中定义的。
 
 ```cpp
 class MSiSCSI_QMIPSECStats : Win32_PerfRawData {

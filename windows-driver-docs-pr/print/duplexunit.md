@@ -1,36 +1,35 @@
 ---
 title: DuplexUnit
 description: DuplexUnit
-ms.assetid: cad41b5a-b594-474a-9ec4-27b4550882cb
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c22a1e95912293954d8d9e6a4de65685c4955b4e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 99f82d8925381ab7c6f5da4e5a085a83a40e7c32
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63359037"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96797163"
 ---
 # <a name="duplexunit"></a>DuplexUnit
 
 
-架构路径：\\Printer.Configuration.DuplexUnit
+架构路径： \\Printer.Configu。DuplexUnit
 
-节点类型： 属性
+节点类型：属性
 
-说明： 在设备上打印双面打印单元值项。
+说明：设备上的双工打印单元的值项。
 
-DuplexUnit 属性包含一个子值：安装。
+DuplexUnit 属性包含一个子值：已安装。
 
-### <a name="span-idinstalledspanspan-idinstalledspan-installed"></a><span id="installed"></span><span id="INSTALLED"></span> 安装
+### <a name="span-idinstalledspanspan-idinstalledspan-installed"></a><span id="installed"></span><span id="INSTALLED"></span> 随
 
-架构路径：\\Printer.Configuration.DuplexUnit:Installed
+架构路径： \\Printer.Configu。DuplexUnit：已安装
 
-节点类型： 值
+节点类型：值
 
-数据类型： BIDI\_BOOL
+数据类型：双向 \_ BOOL
 
-说明： 指示是否在设备上安装了双面打印单元。
+描述：指示是否在设备上安装了双工打印单元。
 
  
 

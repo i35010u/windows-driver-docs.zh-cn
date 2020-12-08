@@ -1,22 +1,21 @@
 ---
 title: 关键字映射
 description: 关键字映射
-ms.assetid: eb2cbe3c-b516-4db3-92ad-5eafd7181624
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b694ad3010b5cf44fb5ec506719cead6bed40694
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a0af757e82235e6645aa29eaa7eb47f3ea36c856
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63388103"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96796493"
 ---
 # <a name="keyword-mapping"></a>关键字映射
 
 
-在本部分中的主题列出 Pscript5 和 Unidrv 插件中使用的关键字。在本部分中显示的关键字都区分大小写。 系统定义的关键字百分号 （%） 作为前缀。 除了此部分所述的功能，用于管理字体替换表提供支持。
+本节中的主题列出了 Pscript5 和 Unidrv 插件中使用的关键字。本部分中显示的所有关键字都区分大小写。 系统定义的关键字以百分号 (% ) 为前缀。 除了本部分中所述的功能之外，还提供了对管理字体替换表的支持。
 
-本部分包括：
+本节包括：
 
 [Pscript5 关键字](pscript5-keywords.md)
 

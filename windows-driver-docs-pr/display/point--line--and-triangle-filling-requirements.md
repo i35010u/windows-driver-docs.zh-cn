@@ -1,22 +1,21 @@
 ---
 title: 点、线条和三角形填充要求
 description: 点、线条和三角形填充要求
-ms.assetid: 1a0a8160-01e2-4fb7-b1a2-6b61f1021fb9
 keywords:
 - 点填充规则 WDK Direct3D
 - 行填充规则 WDK Direct3D
 - 三角形填充规则 WDK Direct3D
-- 填充行 WDK Direct3D
+- 填充线条 WDK Direct3D
 - 填充点 WDK Direct3D
-- 填充三角形 WDK Direct3D
+- 填充三角 WDK Direct3D
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 21c812aa82f357bd87c4c185a4434947205bfad3
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 09f8e703ccb95ebcad679d50e25e006be0d12073
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63366303"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96795593"
 ---
 # <a name="point-line-and-triangle-filling-requirements"></a>点、线条和三角形填充要求
 
@@ -24,13 +23,13 @@ ms.locfileid: "63366303"
 ## <span id="ddk_point_line_and_triangle_filling_requirements_gg"></span><span id="DDK_POINT_LINE_AND_TRIANGLE_FILLING_REQUIREMENTS_GG"></span>
 
 
-填充点、 线条和三角形的要求如下所示：
+填充点、线条和三角形的要求如下：
 
-### <a name="span-idpointsspanspan-idpointsspan-points"></a><span id="points"></span><span id="POINTS"></span> 点
+### <a name="span-idpointsspanspan-idpointsspan-points"></a><span id="points"></span><span id="POINTS"></span> 热点
 
-点填充和光栅化规则可确定一个点的呈现方式。 这些规则是相同的三角形填充规则。 所有标志和都适用于三角形的功能也都适用于点和进行相反转换。 引用实现扩展点在一个矩形和三角形填充规则应用于结果。
+点填充和光栅化规则确定如何呈现一个点。 这些规则与三角形填充规则完全相同。 适用于三角形的所有标志和功能也适用于点，反之亦然。 参考实现将一个点展开为一个矩形，并将三角形填充规则应用到结果。
 
-使用坐标 P₀(x,y) 给定一个点，生成四个新点 P₁、 P₂、 P₃ 和 P₄，如下所示：
+给定坐标为 P ₀ (x，y) 的点时，将生成四个新点，p ₁，P ₂，p ₃，p ₄，如下所示：
 
 ```cpp
 P1(x,y) = (x âˆ’ 0.5, y âˆ’ 0.5)
@@ -39,17 +38,17 @@ P3(x,y) = (x + 0.5, y + 0.5)
 P4(x,y) = (x + 0.5, y âˆ’ 0.5)
 ```
 
-该矩形，您可以为两个三角形，如 (P₁，P₂，P₃) 和 (P₁，P₃，P₄)。 您还可以检查源代码文件中的呈现点参考光栅器实现*setup.cpp*并*scancnv.cpp*的 DirectX 驱动程序开发工具包 (DDK)。
+然后，该矩形将生成为两个三角形，如 (P ₁，P ₂，P ₃) 和 (P ₁，P ₃，P ₄) 。 你还可以在 (的 DDK) 的 DirectX 驱动程序开发工具包的源文件 *设置 .cpp* 和 *scancnv* 中检查参考光栅化实现。
 
 ### <a name="span-idlinesspanspan-idlinesspanlines"></a><span id="lines"></span><span id="LINES"></span>行
 
-行填充规则 （即，确定一个行的呈现方式的规则） 遵循网格相交量化 (GIQ) 菱形约定。 有关 GIQ 菱形约定的详细信息，请参阅[修饰的行](cosmetic-lines.md)。 遵循以下规则的线条图形代码的示例可以参考光栅器源文件中找到在 DirectX DDK *setup.cpp*并*scancnv.cpp*。
+行填充规则 (即，确定如何呈现线条的规则) 遵循网格交集量化 (GIQ) 菱形约定。 有关 GIQ 菱形约定的详细信息，请参阅 [修饰线](cosmetic-lines.md)。 遵循这些规则的行绘制代码示例可在参考光栅化源文件 *设置 .cpp* 和 *Scancnv* 中的 DirectX DDK 中找到。
 
-### <a name="span-idtrianglesspanspan-idtrianglesspantriangles"></a><span id="triangles"></span><span id="TRIANGLES"></span>三角形
+### <a name="span-idtrianglesspanspan-idtrianglesspantriangles"></a><span id="triangles"></span><span id="TRIANGLES"></span>三角
 
-三角形填充规则可确定如何呈现一个三角形。 这些规则的相同点填充规则。 遵循三角形填充规则的三角形绘图代码的示例可在 DirectX DDK 中参考光栅器源文件*setup.cpp*并*scancnv.cpp*。
+三角形填充规则确定如何呈现三角形。 这些规则与点填充规则完全相同。 下面是一个三角形填充规则后面的三角形绘图代码的示例，可在参考光栅化源文件 *设置 .cpp* 和 *Scancnv* 中的 DirectX DDK 中找到。
 
-硬件应提供精选的上限和正确实现三种精选的模式。 下面的代码段确定是否选择数据中的当前三角形：
+硬件应提供剔除 cap 并正确实现三种精选模式。 下面的代码片段确定是否要剔除当前三角形：
 
 ```cpp
 if (CurrentCullMode != D3DCULL_NONE) {
@@ -66,7 +65,7 @@ if ((CurrentCullMode == D3DCULL_CW && (ccw == 0)) ||
 // Current triangle is not culled, render it
 ```
 
-在前面的代码示例测试，以确定三角形面向哪种方法。 三角形是定义的 0,1,2 和测试的屏幕空间中正在开始沿逆时针方向。 如果不是，和沿顺时针方向消除，则会因为顶点顺时针顺序不绘制该三角形。
+前面的代码示例将测试，以确定三角形的方向。 三角形定义为0、1、2，并在屏幕空间中对其进行了测试。 如果不是，并且有顺时针剔除，则不绘制三角形，因为顶点以顺时针顺序排列。
 
  
 

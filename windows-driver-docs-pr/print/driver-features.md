@@ -1,15 +1,14 @@
 ---
 title: 驱动程序功能
 description: 驱动程序功能
-ms.assetid: 56efebda-970f-4885-9c5f-1eac97aecfdd
 ms.date: 01/30/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 688e38a52fc3d3b82037914968ab1e3b7258bc62
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 866d4937626a34ffed26ae48d521db80ff84720c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89217765"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96797185"
 ---
 # <a name="driver-features"></a>驱动程序功能
 
@@ -216,9 +215,9 @@ ms.locfileid: "89217765"
 
 ## <a name="notes-on-driver-feature-keywords"></a>驱动程序功能关键字说明
 
-1. **% CustomPageSize**驱动程序功能具有五个选项值： x、y、WidthOffset、HeightOffset 和 FeedDirection。 有关这些参数的详细说明，请参阅 *PostScript 打印机说明文件格式规范*的第5.16 节，版本4.3。
+1. **% CustomPageSize** 驱动程序功能具有五个选项值： x、y、WidthOffset、HeightOffset 和 FeedDirection。 有关这些参数的详细说明，请参阅 *PostScript 打印机说明文件格式规范* 的第5.16 节，版本4.3。
 
-    **% CustomPageSize**项包含 **% CustomPageSize**关键字，以及 x、y、WidthOffset、HeightOffset 和 FeedDirection 选项的值。 第一项是% CustomPageSize 关键字，后面跟 NULL 字符。 X、y、WidthOffset 和 HeightOffset 的值遵循此关键字，并显示为无符号十进制数字的子字符串，每个字符串表示相应选项值的 PostScript 点数。 其中每个数值后跟一个或多个空格或制表符。 字符串中的最后一项是 FeedDirection 的值，该值由 NULL 字符终止。 FeedDirection 的选项是 "LongEdge"、"ShortEdge" (对应于 "方向 0" 和 "1) "，"LongEdgeFlip"，"ShortEdgeFlip" (对应于 "方向 2" 和 "3") 。 检查** \* LeadingEdge** PPD 功能关键字以获取支持的源方向。
+    **% CustomPageSize** 项包含 **% CustomPageSize** 关键字，以及 x、y、WidthOffset、HeightOffset 和 FeedDirection 选项的值。 第一项是% CustomPageSize 关键字，后面跟 NULL 字符。 X、y、WidthOffset 和 HeightOffset 的值遵循此关键字，并显示为无符号十进制数字的子字符串，每个字符串表示相应选项值的 PostScript 点数。 其中每个数值后跟一个或多个空格或制表符。 字符串中的最后一项是 FeedDirection 的值，该值由 NULL 字符终止。 FeedDirection 的选项是 "LongEdge"、"ShortEdge" (对应于 "方向 0" 和 "1) "，"LongEdgeFlip"，"ShortEdgeFlip" (对应于 "方向 2" 和 "3") 。 检查 **\* LeadingEdge** PPD 功能关键字以获取支持的源方向。
 
     对于 **GetOptions**， *pmszFeatureOptionBuf* 指向的输出缓冲区如上一段中所述。 在下面的示例中，x 的值为612，y 的值为792，WidthOffset 和 HeightOffset 的值均为0，FeedDirection 的值为 "ShortEdge"。
 
@@ -229,31 +228,31 @@ ms.locfileid: "89217765"
     对于 **SetOptions**，允许使用十进制数字前后的额外制表符或空格字符，但不允许使用符号符号。 否则，应按如上所述构造 *pmszFeatureOptionBuf* 所指向的输入缓冲区。
 
 2. 仅当满足以下所有三个条件时，才支持 **% CustomPageSize** 驱动程序功能：
-    1. PPD 文件包含** \* CustomPageSize**功能。
-    2. ** \* PPD-Adobe**关键字的值大于或等于4.3，或指定** \* UseHWMargin**： **False**来指示滚动更新的设备。
-    3. ** \* PageSize** PPD 功能的当前选定选项为 CustomPageSize。
+    1. PPD 文件包含 **\* CustomPageSize** 功能。
+    2. **\* PPD-Adobe** 关键字的值大于或等于4.3，或指定 **\* UseHWMargin**： **False** 来指示滚动更新的设备。
+    3. **\* PageSize** PPD 功能的当前选定选项为 CustomPageSize。
 
 3. 仅当启用了后台处理程序 EMF 假脱机功能时，才支持此功能。
 
     如果支持此功能，则将此功能的选项设置为 "False" 将导致对以下 EMF 相关功能的更改：
 
     1. 如果 **% PagePerSheet** 是 "手册"，则将其更改为 "1"。
-    2. 如果 "逐份打印" 设置为 "True" (可以直接在[**DEVMODEW**](/windows/win32/api/wingdi/ns-wingdi-devmodew)结构的公共部分中设置，也可以通过在 " ** \* 逐份打印**") 功能上调用**SetOptions**来设置，但排序功能当前不可用，则 collate 将设置为 "False"。
+    2. 如果 "逐份打印" 设置为 "True" (可以直接在 [**DEVMODEW**](/windows/win32/api/wingdi/ns-wingdi-devmodew)结构的公共部分中设置，也可以通过在 " **\* 逐份打印**") 功能上调用 **SetOptions** 来设置，但排序功能当前不可用，则 collate 将设置为 "False"。
     3. 如果 **% PageOrder** 与打印机的当前输出顺序设置相反，则 **% PageOrder** 将反转到打印机的值。
 
 4. 仅当启用了后台处理程序 EMF 假脱机功能时，才支持此功能。
 
     如果支持此功能，则设置此功能可能会导致以下情况发生：
 
-    1. 如果打印机的 PPD 文件包含** \* OutputOrder**功能关键字，则会更改其选项选择，以匹配 **% PageOrder**功能的新设置的输出顺序。 这样做是为了防止后台处理程序执行不必要的页面顺序模拟。
-    2. 如果打印机的 PPD 文件不包括** \* OutputOrder**功能，并且 **% PageOrder**驱动程序功能的新设置与打印机的当前输出顺序设置相反，而 **% MetafileSpooling**驱动程序功能为 "False"，则 **% MetafileSpooling**将重置为 "True"。
+    1. 如果打印机的 PPD 文件包含 **\* OutputOrder** 功能关键字，则会更改其选项选择，以匹配 **% PageOrder** 功能的新设置的输出顺序。 这样做是为了防止后台处理程序执行不必要的页面顺序模拟。
+    2. 如果打印机的 PPD 文件不包括 **\* OutputOrder** 功能，并且 **% PageOrder** 驱动程序功能的新设置与打印机的当前输出顺序设置相反，而 **% MetafileSpooling** 驱动程序功能为 "False"，则 **% MetafileSpooling** 将重置为 "True"。
 
 5. 仅当启用了后台处理程序 EMF 假脱机且双工功能可用时，才支持 "手册" 选项。
 
     支持 "手册" 选项时，将 **% PagePerSheet** driver 功能设置为 "手册" 可能会导致以下更改：
 
     1. 如果 **% MetafileSpooling** driver 功能为 "False"，则会将其重置为 "True"。
-    2. 如果** \* 双工**PPD 功能设置为 "无"， ** \* 双工**功能将重置为 PPD 文件中定义的第一个非单工选项。
+    2. 如果 **\* 双工** PPD 功能设置为 "无"， **\* 双工** 功能将重置为 PPD 文件中定义的第一个非单工选项。
 
 6. 除了 "EPS" (封装的 PostScript) ，根据以下两个特征分类了 **% OutputFormat** driver 功能中指定的格式：
     1. 输出 PostScript 代码是否独立于页面顺序？
@@ -291,7 +290,7 @@ ms.locfileid: "89217765"
         </tbody>
         </table>
 
-当在驱动程序功能关键字上调用 **GetOptions** 时，如果未识别请求的特征关键字，或在当前 *文档-粘滞* 或 *打印机粘滞* 模式下识别但不支持此特征关键字 (参阅) [替换驱动程序提供的属性表页](replacing-driver-supplied-property-sheet-pages.md) ，则该功能将被忽略，并且输出缓冲区将不包含其功能/选项关键字对。
+当对驱动程序功能关键字调用 **GetOptions** 时，如果未识别请求的功能关键字，或在当前 *文档-粘滞* 或 *打印机粘滞* 模式下识别但不支持此功能关键字 (参阅) [替换 Driver-Supplied 属性表页](replacing-driver-supplied-property-sheet-pages.md) ，则该功能将被忽略，并且输出缓冲区将不包含其功能/选项关键字对。
 
 例如，假设调用了 **GetOptions** 方法， *pmszFeaturesRequested* 输入缓冲区包含以下 (以多个 \_ SZ 格式) 的字符串：
 
@@ -305,11 +304,11 @@ ms.locfileid: "89217765"
 "Resolution\0300dpi\0%CustomPageSize\0612 792 0 0 ShortEdge\0%Orientation\0RotatedLandscape\0\0"
 ```
 
-请注意， \_ 第一个字符串中不) 存在的 "未知名称" 功能 (不会出现在第一个字符串中，因为它不是由 Pscript 驱动程序识别的。 其他功能（分辨率、 **百分比 CustomPageSize**和 **% 方向**）连同其当前选项一起出现在输出字符串中，分别是 "300dpi"、"612 792 0 0 ShortEdge" 和 "RotatedLandscape"。 有关 **% CustomPageSize** 选项的说明，请参阅驱动程序功能。
+请注意， \_ 第一个字符串中不) 存在的 "未知名称" 功能 (不会出现在第一个字符串中，因为它不是由 Pscript 驱动程序识别的。 其他功能（分辨率、 **百分比 CustomPageSize** 和 **% 方向**）连同其当前选项一起出现在输出字符串中，分别是 "300dpi"、"612 792 0 0 ShortEdge" 和 "RotatedLandscape"。 有关 **% CustomPageSize** 选项的说明，请参阅驱动程序功能。
 
-当在驱动程序功能关键字上调用 **SetOptions** 时，如果未识别所请求的功能关键字或在 *pmszFeatureOptionBuf* 指向的输入缓冲区中的 option 关键字，或者该功能已被识别但在当前文档中或打印机粘滞模式下不受支持 (参阅) 中 [替换驱动程序提供的属性表页](replacing-driver-supplied-property-sheet-pages.md) 。要么识别了 feature 关键字及其 option 关键字，但选项关键字对于该功能无效 (例如，尝试在不支持 Type42 TTRasterizer) 的打印机上将 **% TTDownloadFormat** 设置为 "NativeTrueType"，则将忽略该功能/选项对，该功能的当前选项将继续生效。
+当在驱动程序功能关键字上调用 **SetOptions** 时，如果未识别所请求的功能关键字或 *pmszFeatureOptionBuf* 所指向的输入缓冲区中的 option 关键字，或者该功能被识别但在当前文档中或打印机粘滞模式下不受支持 (参阅) 中 [替换 Driver-Supplied 属性页页](replacing-driver-supplied-property-sheet-pages.md) 。要么识别了 feature 关键字及其 option 关键字，但选项关键字对于该功能无效 (例如，尝试在不支持 Type42 TTRasterizer) 的打印机上将 **% TTDownloadFormat** 设置为 "NativeTrueType"，则将忽略该功能/选项对，该功能的当前选项将继续生效。
 
-*PmszFeatureOptionBuf*所指向的缓冲区中的功能/选项关键字对的顺序可能会影响**SetOptions**调用的结果。 例如，下面两个不同的订单具有不同的结果。
+*PmszFeatureOptionBuf* 所指向的缓冲区中的功能/选项关键字对的顺序可能会影响 **SetOptions** 调用的结果。 例如，下面两个不同的订单具有不同的结果。
 
 <table>
 <colgroup>

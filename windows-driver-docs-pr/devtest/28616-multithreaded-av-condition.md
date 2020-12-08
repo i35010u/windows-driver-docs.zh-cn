@@ -1,34 +1,33 @@
 ---
 title: C28616
-description: 警告 C28616 多线程 AV 条件。
-ms.assetid: 77be6a23-18dc-420c-9359-ab91f216c73b
+description: 警告 C28616 多线程 AV 情况。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 f1_keywords:
 - C28616
-ms.openlocfilehash: 5b8809ce32ad3bfb3f88d46b9a627bf5a6f477f7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 173f88a30cee4df1a50ec3e6bb3151ccabf2e75f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63347095"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96795639"
 ---
 # <a name="c28616"></a>C28616
 
 
-警告 C28616:多线程的 AV 条件
+警告 C28616：多线程 AV 条件
 
-在多线程环境中，则无法知道当线程被抢占，具有降低对象的引用计数的明显的效果是删除而无需执行当前线程的进一步操作的结果。 引用计数可能存在一定的从零后，应为引用计数对象不能访问。
+在多线程环境中，不可能知道线程何时被抢占，这会导致降低对象的引用计数的明显效果是删除，而不会在当前线程中执行其他操作。 在引用计数可能为零时，不能访问引用计数的对象。
 
 ### <a name="span-idexamplesspanspan-idexamplesspanexamples"></a><span id="examples"></span><span id="EXAMPLES"></span>示例
 
-以下是线程可能会公开此问题的时间序列的示例：
+下面是可能公开此问题的线程时间序列示例：
 
-线程 T1 执行行 1、 2 和 3，递减**m\_cRef**为 1，并且在被取代。
+线程 T1 执行第1、2和3行，将 **m \_ cRef** 减为1，并被抢占。
 
-另一个线程 T2 执行行 1、 2 和 3 递减**m\_cRef**为 0。 然后它将执行行 4 和 5，其中**这**会删除，并且最后执行第 6 行。
+另一个线程 T2 执行第1、2和3行，将 **m \_ cRef** 减为0。 然后，它将执行第4行和第5行，其中 **删除了，** 最后执行第6行。
 
-当 T1 重新计划任务时，它将引用**m\_cref**第 9 行上。 因此它将在相关的删除此指针后访问的成员变量，且对象堆时处于未知状态。
+当重新计划 T1 时，它将引用第9行的 **m \_ cref** 。 因此，它将在删除相关的指针之后访问成员变量，而当对象的堆处于未知状态时，它将访问该变量。
 
 ```
   1 ULONG CObject::Release()
@@ -43,7 +42,7 @@ ms.locfileid: "63347095"
  10 }
 ```
 
-已更正的示例后删除该对象未引用任何堆内存。
+已更正的示例不在删除对象后引用任何堆内存。
 
 ```
 ULONG CObject::Release()

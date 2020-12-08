@@ -1,9 +1,8 @@
 ---
-title: usb3kd port_info
-description: Port_info usb3kd 命令显示有关 USB 3.0 树中 USB 端口的信息。
-ms.assetid: 78233FE5-981E-42C4-A100-198CAAA840A0
+title: usb3kd.port_info
+description: Usb3kd.port_info 命令显示有关 USB 3.0 树中 USB 端口的信息。
 keywords:
-- usb3kd port_info Windows 调试
+- usb3kd.port_info Windows 调试
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: ab4a100ef4dd443f609f939b976d38a3c52f3c20
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 1e3adb69f9fcf6caa9f23e36dfc7568ca7cbd12e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89206837"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96795713"
 ---
 # <a name="usb3kdport_info"></a>！ usb3kd \_ 信息
 
 
-[**！ Usb3kd \_ info**](-usb3kd-device-info.md)命令显示有关[USB 3.0 树](usb-3-extensions.md#usb-3-tree)中 usb 端口的信息。
+[**！ Usb3kd \_ info**](-usb3kd-device-info.md)命令显示有关 [USB 3.0 树](usb-3-extensions.md#usb-3-tree)中 usb 端口的信息。
 
 ```dbgcmd
 !usb3kd.port_info PortContext

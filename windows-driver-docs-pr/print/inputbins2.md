@@ -1,26 +1,25 @@
 ---
 title: InputBins
 description: InputBins
-ms.assetid: 5cf7dcec-b8ea-47c6-b2a3-1cdd431fd295
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bcc06186e8effc10bf8e02d2fd4126110cee32e8
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 66fe4c84ec08d315440d5b2559706927fe6ac565
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63362763"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96796737"
 ---
 # <a name="inputbins"></a>InputBins
 
 
-架构路径：\\Printer.Layout.InputBins
+架构路径： \\ InputBins
 
-节点类型： 属性
+节点类型：属性
 
-说明： InputBins 属性包含所有设备输入箱有关的信息。
+说明： InputBins 属性包含有关设备输入箱的所有信息。
 
-InputBins 属性是父[ \[TrayName\] ](-trayname-.md)属性。
+InputBins 属性是[ \[ TrayName \] ](-trayname-.md)属性的父。
 
  
 

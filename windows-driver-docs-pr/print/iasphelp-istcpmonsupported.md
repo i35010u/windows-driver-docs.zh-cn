@@ -7,7 +7,6 @@ MS-HAID:
 MSHAttr:
 - PreferredSiteName:MSDN
 - PreferredLib:/library/windows/hardware
-ms.assetid: 79ec0584-183d-476d-aca2-e85479248091
 keywords:
 - get_IsTCPMonSupported 方法打印设备
 - get_IsTCPMonSupported 方法打印设备，Iasphelp 接口
@@ -20,12 +19,12 @@ api_type:
 - COM
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8d9f4524d25ca803f0cd21292ee2b7a7b3b5958a
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: eb46bce7b7541756d32327b9728ccf8dd315ffaf
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89209561"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96796809"
 ---
 # <a name="iasphelpget_istcpmonsupported-method"></a>Iasphelp：： get \_ IsTCPMonSupported 方法
 
@@ -36,7 +35,7 @@ ms.locfileid: "89209561"
 
 ```cpp
 HRESULT get_IsTCPMonSupported(
-  [out] BOOL *pVal
+  [out] BOOL *pVal
 );
 ```
 
@@ -80,7 +79,7 @@ HRESULT get_IsTCPMonSupported(
 
 ## <a name="vbscript-example"></a>VBScript 示例
 
-在查询**Iasphelp：： IsTCPMonSupported**属性之前，必须先调用[**Iasphelp：： Open**](iasphelp-open.md)方法。
+在查询 **Iasphelp：： IsTCPMonSupported** 属性之前，必须先调用 [**Iasphelp：： Open**](iasphelp-open.md)方法。
 
 ```vb
 Dim objPrinter, UseStdMon
@@ -101,11 +100,11 @@ UseStdMon = objPrinter.IsTCPMonSupported
 <tbody>
 <tr class="odd">
 <td><p>目标平台</p></td>
-<td>“桌面”</td>
+<td>台式机</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 [**Iasphelp：： Open**](iasphelp-open.md)

@@ -1,7 +1,6 @@
 ---
 title: GUID_CLASS_USB_DEVICE
 description: GUID_CLASS_USB_DEVICE
-ms.assetid: e014f3d5-541d-4e86-a572-b110ec5a822d
 keywords:
 - GUID_CLASS_USB_DEVICE 设备和驱动程序安装
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: fe00cae1a6c2cbb0c09439df21652bc64dcfaf36
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: fdb52f322dc9ef593cfe1bce17c8699cb9216a00
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91733521"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96796095"
 ---
 # <a name="guid_class_usb_device"></a>GUID_CLASS_USB_DEVICE
 
@@ -52,7 +51,7 @@ Microsoft Windows 驱动程序工具包 (WDK) 包含 [USBVIEW 示例应用程序
 
 以前，此标识符依赖于 `Usbioctl.h` 。  请注意，现在需要包含 `Usbiodef.h` 。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**GUID_DEVINTERFACE_USB_DEVICE**](guid-devinterface-usb-device.md)

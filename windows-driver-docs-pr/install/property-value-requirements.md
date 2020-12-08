@@ -1,17 +1,16 @@
 ---
 title: 属性值要求
 description: 属性值要求
-ms.assetid: 05512f3d-fe64-4de0-848c-c983d883fc60
 keywords:
 - 设备属性 WDK 设备安装，属性值要求
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2e343e5dcfbbdb5178d6141d1a9a37311dbaefe0
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 4264668ef2bd59d8db5043d2cb8f3086672d1930
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90104104"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96796028"
 ---
 # <a name="property-value-requirements"></a>属性值要求
 

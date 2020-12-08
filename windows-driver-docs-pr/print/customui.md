@@ -1,7 +1,6 @@
 ---
 title: customUI 元素
 description: 可选的 customUI 元素指定要在客户端计算机上显示的自定义用户界面。
-ms.assetid: 4408dcf2-0928-4ecb-97eb-0027eceef457
 keywords:
 - customUI 元素打印设备
 topic_type:
@@ -12,18 +11,18 @@ api_type:
 - Schema
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f558fd60d1fea192523532e085e8b17900d1a01c
-ms.sourcegitcommit: b3e38d06762246c77cedd8e82d740ebea104c538
+ms.openlocfilehash: 24ee638e082ec56ceb29676166c701f16286875d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/02/2020
-ms.locfileid: "91662410"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96797355"
 ---
 # <a name="customui-element"></a>customUI 元素
 
 可选的 **customUI** 元素指定要在客户端计算机上显示的自定义用户界面。
 
-**CustomUI**元素在*asyncui*命名空间中的此 URI 处定义：
+**CustomUI** 元素在 *asyncui* 命名空间中的此 URI 处定义：
 
 ```xml
 https://schemas.microsoft.com/2003/print/asyncui/v1/request
@@ -56,8 +55,8 @@ https://schemas.microsoft.com/2003/print/asyncui/v1/request
 <tr class="header">
 <th>属性</th>
 <th>类型</th>
-<th>必需</th>
-<th>说明</th>
+<th>必须</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>
@@ -96,7 +95,7 @@ https://schemas.microsoft.com/2003/print/asyncui/v1/request
 <thead>
 <tr class="header">
 <th>元素</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>
@@ -119,7 +118,7 @@ https://schemas.microsoft.com/2003/print/asyncui/v1/request
 <thead>
 <tr class="header">
 <th>元素</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>
@@ -134,7 +133,7 @@ https://schemas.microsoft.com/2003/print/asyncui/v1/request
 <a name="remarks"></a>备注
 -------
 
-由于在下面的示例中，**双向**特性设置为**true** ，因此将调用*Abc.dll* DLL 中的**IHVFunction**入口点函数。 **IHVfunction** 返回 **CDATA** 类型数据。
+由于在下面的示例中，**双向** 特性设置为 **true** ，因此将调用 *Abc.dll* DLL 中的 **IHVFunction** 入口点函数。 **IHVfunction** 返回 **CDATA** 类型数据。
 
 <a name="examples"></a>示例
 --------

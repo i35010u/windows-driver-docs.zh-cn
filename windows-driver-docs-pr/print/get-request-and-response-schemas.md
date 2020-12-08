@@ -1,15 +1,14 @@
 ---
 title: 获取请求和响应架构
 description: 下面是 Get 请求架构和相应的响应架构定义以及每个定义的示例。
-ms.assetid: 48980220-4DD6-4785-AAC1-850F8FBE49EC
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 230b81e62b4d90d4cd9532e33b53c895dd487aad
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: fca1931814b08e3dd2746902248896ca3ea21e2d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89212299"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96796902"
 ---
 # <a name="get-request-and-response-schemas"></a>获取请求和响应架构
 

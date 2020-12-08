@@ -1,7 +1,6 @@
 ---
 title: GUID_DEVICE_MESSAGE_INDICATOR
 description: GUID_DEVICE_MESSAGE_INDICATOR
-ms.assetid: 6f48dbc7-dca7-4373-b5ff-83ebb5f5c266
 keywords:
 - GUID_DEVICE_MESSAGE_INDICATOR 设备和驱动程序安装
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 623d07ba4fe4fefaa833ff0dde54d73a7c7a14c9
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 915df09201da4c729709655ce3173de620cd6974
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89096985"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96796067"
 ---
 # <a name="guid_device_message_indicator"></a>GUID_DEVICE_MESSAGE_INDICATOR
 

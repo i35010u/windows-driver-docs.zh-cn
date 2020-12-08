@@ -1,7 +1,6 @@
 ---
 title: 枚举器模板数据类型
 description: 枚举器模板数据类型
-ms.assetid: deb95ca1-05a5-47f4-8e2a-1d1aa1ae2261
 keywords:
 - 模板 WDK GDL，数据类型
 - 数据类型 WDK GDL，基元
@@ -12,27 +11,27 @@ keywords:
 - ElementTags 指令 WDK GDL
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 701c13ccafed48b7367b5e9d1a9e1a5c54b4abd9
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3297fc9de1677e452a73dbfcf4168b41f4a3a3b1
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63324266"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96797121"
 ---
 # <a name="enumerator-template-data-type"></a>枚举器模板数据类型
 
 
-枚举器的数据类型具有允许的限制为一组标记的值。
+枚举器数据类型的允许值限制为一组标记。
 
-\*数据类型：枚举器指示一个模板来定义枚举数据类型。 此数据类型将输出为 XML 架构简单类型声明派生自**字符串**类型具有限制，以指定每个允许的枚举器。 以下指令用于完全定义枚举器的数据类型：
+\*DataType：枚举器定向模板来定义枚举数据类型。 此数据类型将作为 XML 架构 simpleType 声明输出，该声明派生自 **字符串** 类型，并且具有指定每个允许的枚举数的限制。 以下指令用于完全定义枚举器数据类型：
 
--   \*XMLDataType （必需）。 若要将分配给将用于在生成的 XML 架构中定义此枚举的 XML 数据类型的 NCName。 每个枚举类型必须具有唯一的 NCName。 此名称必须是唯一的所有 XSD\_定义和枚举器类型。 若要避免冲突 GDL 分析器定义的数据类型，应避免 NCNames 开头的"GDL\_"和"GDLW\_"。
+-   \*需要) XMLDataType (。 要分配给 XML 数据类型的 NCName，该数据类型将用于在生成的 XML 架构中定义此枚举。 每个枚举类型必须具有唯一的 NCName。 此名称对于所有 XSD \_ 定义的类型和枚举器类型必须是唯一的。 若要避免与 GDL 分析器定义的数据类型发生冲突，应避免 NCNames 以 "GDL \_ " 和 "GDLW" 开头 \_ 。
 
--   \*EnumeratorList （必需）。 枚举器令牌的列表。 每个标记必须是有效的 GDL 符号，并且必须符合的 XSD 架构的架构组件的值施加的任何其他要求：&lt;枚举&gt;。
+-   \*需要) EnumeratorList (。 枚举器标记的列表。 每个标记都必须是有效的 GDL 符号，并且必须符合 XSD 架构对架构组件：枚举的值施加的任何其他要求 &lt; &gt; 。
 
--   \*ArrayLabel （可选）。 如果指定此指令，则分析器筛选器需要括在圆括号，以指定的数组标签值。
+-   \*ArrayLabel (可选) 。 如果指定此指令，则分析器筛选器会将值括在括号内，并在其前面加上指定的数组标签。
 
-要被分析为一个枚举器的数据类型必须与令牌之一匹配的值的\*ElementTags 指令定义。
+要作为枚举器数据类型进行分析的值必须与 ElementTags 指令定义的标记之一匹配 \* 。
 
 请考虑以下模板。
 
@@ -46,7 +45,7 @@ ms.locfileid: "63324266"
 }
 ```
 
-前面的模板将导致分析器筛选器，以创建以下 XML 架构项。
+上述模板会导致分析器筛选器创建以下 XML 架构条目。
 
 ```cpp
     <simpleType name = "colors">
@@ -62,7 +61,7 @@ ms.locfileid: "63324266"
     </simpleType>
 ```
 
-分析器筛选器还将创建相应的已包装的数据类型。
+分析器筛选器还会创建相应的换行数据类型。
 
 ```cpp
     <complexType name = "GDLW_colors">
@@ -81,7 +80,7 @@ ms.locfileid: "63324266"
 *Color: GREEN
 ```
 
-并考虑 ACOLOR 模板声明 **\*颜色** GDL 属性 **\*ValueType** ，指由模板颜色，下面的代码示例显示。
+并考虑 ACOLOR 模板，该模板将 **\* 颜色** GDL 属性声明为具有模板颜色定义的 **\* ValueType** ，如以下代码示例所示。
 
 ```cpp
 *Template:  ACOLOR
@@ -93,13 +92,13 @@ ms.locfileid: "63324266"
 }
 ```
 
-如果早期 GDL 条目解释使用 ACOLOR 模板生成的 XML 输出会发生。
+如果使用 ACOLOR 模板解释前面的 GDL 项，则会生成 XML 输出。
 
 ```cpp
     <GDL_ATTRIBUTE Name="*Color"  xsi:type="GDLW_colors" >GREEN</GDL_ATTRIBUTE>
 ```
 
-XML 特性**xsi: type**定义此实例 GDL\_ATTRIBUTE 元素包含模板定义的值类型表示一个 XML 默认命名空间中定义的枚举。
+XML 属性 **xsi： type** 定义 GDL attribute 元素的此实例 \_ ，以保存模板定义的值类型，该类型表示在 XML 默认命名空间中定义的枚举。
 
  
 

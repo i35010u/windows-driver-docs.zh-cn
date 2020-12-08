@@ -1,15 +1,14 @@
 ---
 title: 使用 IStiUSD 转义方法
 description: 使用 IStiUSD 转义方法
-ms.assetid: f9b1ede6-8311-4cc9-8bf7-20018cb35a3d
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 72ec77f8600ae300f0f09580f32315b44243a727
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 9cff875951e6e26b7e886e00ce21d19b24570f52
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89189131"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96796171"
 ---
 # <a name="using-the-istiusd-escape-method"></a>使用 IStiUSD 转义方法
 
@@ -31,7 +30,7 @@ ms.locfileid: "89189131"
 
 不过，上述说明有点 oversimplified。 当 TWAIN 应用程序要求提供驱动程序的私有功能列表时，TWAIN 兼容层实际上会对驱动程序的 **IStiUSD：： Escape** 方法进行两次调用。 在第一次调用中，TWAIN 兼容层要求 WIA 驱动程序存储功能列表所需的内存量。 然后，TWAIN 兼容性层为 WIA 驱动程序分配要使用的内存量。 在第二次调用中，TWAIN 兼容层向功能列表请求 WIA 驱动程序，WIA 驱动程序会将其复制到前面提到的内存中。 TWAIN 兼容层负责分配和释放 TWAIN WIA 事务中使用的所有内存。 这种安排可防止 WIA 驱动程序释放 TWAIN 兼容层所使用的内存。
 
-如果**IStiUSD::Escape** \_ 传递了 ESC TWAIN \_ 功能，并且其目的是获取功能，则 TWAIN 兼容层还会调用驱动程序的 IStiUSD：： Escape 方法两次。 第一次调用会询问 WIA 驱动程序存储功能所需的内存量，而第二次调用则返回该功能。 请注意，SET 功能操作只需调用 **IStiUSD：： Escape**，因为无需分配任何内存。
+如果 **IStiUSD::Escape** \_ 传递了 ESC TWAIN \_ 功能，并且其目的是获取功能，则 TWAIN 兼容层还会调用驱动程序的 IStiUSD：： Escape 方法两次。 第一次调用会询问 WIA 驱动程序存储功能所需的内存量，而第二次调用则返回该功能。 请注意，SET 功能操作只需调用 **IStiUSD：： Escape**，因为无需分配任何内存。
 
 对 **IStiUSD：： Escape** 方法的所有调用都应按以下顺序进行验证：
 
@@ -43,7 +42,7 @@ ms.locfileid: "89189131"
 
 4.  验证输出缓冲区的大小。 如果驱动程序无法向传出缓冲区写入正确的数据量，则调用方无法正确处理这些数据。
 
-以下部分中的代码示例演示如何使用传递功能，并支持具有私有功能的 TWAIN 应用程序。 这两个代码示例使用头文件 *wiatwcmp*中定义的两个转义代码，esc \_ twain \_ PRIVATE \_ 支持的 \_ cap 和 esc \_ twain \_ 功能。
+以下部分中的代码示例演示如何使用传递功能，并支持具有私有功能的 TWAIN 应用程序。 这两个代码示例使用头文件 *wiatwcmp* 中定义的两个转义代码，esc \_ twain \_ PRIVATE \_ 支持的 \_ cap 和 esc \_ twain \_ 功能。
 
 [ESC \_ TWAIN \_ 私有 \_ 支持的 \_ 大写转义代码](esc-twain-private-supported-caps-escape-code.md)
 

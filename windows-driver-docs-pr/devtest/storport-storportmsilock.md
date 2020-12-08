@@ -1,7 +1,6 @@
 ---
 title: 'StorPortMSILock 规则 (storport) '
 description: 当且仅当端口 \_ 配置 \_ 信息 (Storport) 结构的 InterruptSynchronizationMode 成员设置为 InterruptSynchronizePerMessage 时，需要使用微型端口驱动程序获取该消息的 MSI 旋转锁。
-ms.assetid: 99C45ADB-AFCC-4B9E-8EB9-DBD7C7F6D800
 ms.date: 05/21/2018
 keywords:
 - 'StorPortMSILock 规则 (storport) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: cfa644117d99fdd43882242a8380e686bab8d09a
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: e9ce0053a0c8bc7bf26be48885bde75ca65c2fe4
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90105238"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96795597"
 ---
 # <a name="storportmsilock-rule-storport"></a>StorPortMSILock 规则 (storport) 
 
 
-当且仅当[**端口 \_ 配置 \_ 信息 (Storport) **](/previous-versions/windows/hardware/drivers/ff563901(v=vs.85))结构的**InterruptSynchronizationMode**成员设置为**InterruptSynchronizePerMessage**时，需要使用微型端口驱动程序获取该消息的 MSI 旋转锁。 此规则验证当同步模式为**InterruptSynchronizePerMessage**时，是否仅对[**StorPortAcquireMSISpinLock**](/windows-hardware/drivers/ddi/storport/nf-storport-storportacquiremsispinlock)进行调用。
+当且仅当 [**端口 \_ 配置 \_ 信息 (Storport)**](/previous-versions/windows/hardware/drivers/ff563901(v=vs.85))结构的 **InterruptSynchronizationMode** 成员设置为 **InterruptSynchronizePerMessage** 时，需要使用微型端口驱动程序获取该消息的 MSI 旋转锁。 此规则验证当同步模式为 **InterruptSynchronizePerMessage** 时，是否仅对 [**StorPortAcquireMSISpinLock**](/windows-hardware/drivers/ddi/storport/nf-storport-storportacquiremsispinlock)进行调用。
 
 **驱动程序模型： Storport**
 

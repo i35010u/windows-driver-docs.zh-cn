@@ -1,7 +1,6 @@
 ---
 title: GUID_DEVICE_BATTERY
 description: GUID_DEVICE_BATTERY
-ms.assetid: 8391b167-0d17-46bf-9320-4fceed54aead
 keywords:
 - GUID_DEVICE_BATTERY 设备和驱动程序安装
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 38316a89a8c430f970b1875ea7cd9be79cf0d589
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 0812b2d66a6ce35120bbc5ab2e80ac41701cfe2b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89096995"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96796081"
 ---
 # <a name="guid_device_battery"></a>GUID_DEVICE_BATTERY
 

@@ -1,7 +1,6 @@
 ---
 title: 指针绘制
 description: 指针绘制
-ms.assetid: 5eaedf04-cbd9-4591-8cff-0087508aa7a9
 keywords:
 - 绘图指针 WDK Windows 2000 显示
 - 显示驱动程序 WDK Windows 2000，指针
@@ -10,12 +9,12 @@ keywords:
 - 颜色指针 WDK Windows 2000 显示
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b09ac9cf281ff76b50b17fa763adbb0a270f78e3
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 300c7f34168b512d73e93af535bcf6e07db69bce
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90715638"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96795581"
 ---
 # <a name="pointer-drawing"></a>指针绘制
 

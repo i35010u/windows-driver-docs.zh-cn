@@ -7,7 +7,6 @@ MS-HAID:
 MSHAttr:
 - PreferredSiteName:MSDN
 - PreferredLib:/library/windows/hardware
-ms.assetid: 1e90649a-6075-4b78-93fd-781c3e363b5f
 keywords:
 - get_MediaReady 方法打印设备
 - get_MediaReady 方法打印设备，Iasphelp 接口
@@ -20,12 +19,12 @@ api_type:
 - COM
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f44814ef346f86dd4e0f60a1983355d26fdfae92
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 3433ad7eb327df5f1ab4a53f4ea0b2d7e5146898
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89216784"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96796803"
 ---
 # <a name="iasphelpget_mediaready-method"></a>Iasphelp：： get \_ MediaReady 方法
 
@@ -36,7 +35,7 @@ ms.locfileid: "89216784"
 
 ```cpp
 HRESULT get_MediaReady(
-  [out] VARIANT *pVal
+  [out] VARIANT *pVal
 );
 ```
 
@@ -82,7 +81,7 @@ HRESULT get_MediaReady(
 
 此方法获取当前可供使用的纸张窗体的列表，该列表通过在设置了 DC MEDIAREADY 标志的情况下调用打印机驱动程序的 [**DrvDeviceCapabilities**](/windows-hardware/drivers/ddi/winddiui/nf-winddiui-drvdevicecapabilities) 函数 \_ 。
 
-在查询**Iasphelp：： MediaReady**属性之前，必须先调用[**Iasphelp：： Open**](iasphelp-open.md)方法。
+在查询 **Iasphelp：： MediaReady** 属性之前，必须先调用 [**Iasphelp：： Open**](iasphelp-open.md)方法。
 
 ```vb
 Dim objPrinter, MediaReadyArray
@@ -103,12 +102,12 @@ MediaReadyArray = objPrinter.MediaReady
 <tbody>
 <tr class="odd">
 <td><p>目标平台</p></td>
-<td>“桌面”</td>
+<td>台式机</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 [**DrvDeviceCapabilities**](/windows-hardware/drivers/ddi/winddiui/nf-winddiui-drvdevicecapabilities)
 

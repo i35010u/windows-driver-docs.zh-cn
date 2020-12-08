@@ -1,17 +1,16 @@
 ---
 title: 安装 TCP/IP 打印机
 description: 安装 TCP/IP 打印机
-ms.assetid: 15339cce-69aa-480d-bfee-11ea509ff5d4
 keywords:
 - TCP/IP WDK 打印机
 ms.date: 06/05/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 4840bcb4459c6c7bb7d5ad3e2e3ee36e62cb74b8
-ms.sourcegitcommit: a16fd2876383265b4ad336dea624e4b13fc13a1b
+ms.openlocfilehash: 20163e6e2a5c4400521c9593631016b346424d5e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88644015"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96796689"
 ---
 # <a name="installing-tcpip-printers"></a>安装 TCP/IP 打印机
 

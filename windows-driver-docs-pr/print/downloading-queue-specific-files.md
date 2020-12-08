@@ -1,7 +1,6 @@
 ---
 title: 下载队列特定的文件
 description: 下载队列特定的文件
-ms.assetid: b6aad46a-2934-461a-ad11-6ad699687fc1
 keywords:
 - 下载队列特定的打印机文件
 - 指向和打印 WDK，特定队列的文件
@@ -10,12 +9,12 @@ keywords:
 - 队列 WDK 打印机，指向和打印
 ms.date: 06/09/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: c65508fd12cc97bb1a15622ab12d54d04f0a09e7
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: ab090eba7ad2ee5a7ea66e40382ffd91da6f1ec0
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89218213"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96797195"
 ---
 # <a name="downloading-queue-specific-files"></a>下载队列特定的文件
 
@@ -33,7 +32,7 @@ ms.locfileid: "89218213"
 
     - 加载 [点和打印 DLL](point-and-print-dlls.md)（如果已指定），并调用它的 [**GenerateCopyFilePaths**](/windows-hardware/drivers/ddi/winsplp/nf-winsplp-generatecopyfilepaths) 函数，该函数可以修改源路径和/或目标路径。
 
-    - 基于**GenerateCopyFilePaths**返回的源路径和目标路径创建**SourceDir**和**TargetDir**键，并将它们作为 EnumPrinterDataEx 数据返回到客户端后台处理程序。  (在服务器上不存在这些密钥。 ) 
+    - 基于 **GenerateCopyFilePaths** 返回的源路径和目标路径创建 **SourceDir** 和 **TargetDir** 键，并将它们作为 EnumPrinterDataEx 数据返回到客户端后台处理程序。  (在服务器上不存在这些密钥。 ) 
 
 1. 客户端的 Win32spl.dll 会缓存接收的打印机密钥，以响应 EnumPrinterData 和 EnumPrinterDataEx 调用。
 

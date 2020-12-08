@@ -1,7 +1,6 @@
 ---
 title: GUID_DEVICE_APPLICATIONLAUNCH_BUTTON
 description: GUID_DEVICE_APPLICATIONLAUNCH_BUTTON
-ms.assetid: d2ca6eab-b0a1-4626-94cb-5b0a66ec6a6f
 keywords:
 - GUID_DEVICE_APPLICATIONLAUNCH_BUTTON 设备和驱动程序安装
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 885ad8642969b7f37ceb9eee46c6b285535bab1c
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 22db38f225bb88379371bc11295e1c7eae10e902
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89097005"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96796085"
 ---
 # <a name="guid_device_applicationlaunch_button"></a>GUID_DEVICE_APPLICATIONLAUNCH_BUTTON
 

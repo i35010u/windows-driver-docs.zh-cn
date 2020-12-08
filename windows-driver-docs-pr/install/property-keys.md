@@ -1,22 +1,21 @@
 ---
 title: 属性键
 description: 属性键
-ms.assetid: 767dbe79-72c6-4445-8d4a-8be53a080825
 keywords:
 - 设备属性 WDK 设备安装，属性密钥
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a2f0ac372f42e31024dbc60b7ad2e852d4f791fd
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 852cafbc359cc431a9762d0abfa036bdbf88bcf9
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89097167"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96796031"
 ---
 # <a name="property-keys"></a>属性键
 
 
-以编程方式， [统一设备属性模型](unified-device-property-model--windows-vista-and-later-.md) 中的所有设备属性都由属性键表示。 属性键被编码为 [**DEVPROPKEY**](./devpropkey.md) 结构。 属性键在 *Devpkey*中定义。
+以编程方式， [统一设备属性模型](unified-device-property-model--windows-vista-and-later-.md) 中的所有设备属性都由属性键表示。 属性键被编码为 [**DEVPROPKEY**](./devpropkey.md) 结构。 属性键在 *Devpkey* 中定义。
 
 DEVPROPKEY 结构包含以下成员：
 
@@ -34,7 +33,7 @@ DEVPROPKEY 结构包含以下成员：
 DEFINE_DEVPROPKEY(DEVPROPKEYStuctureName, 0xde5c254e, 0xab1c, 0xeffd, 0x80, 0x20, 0x67, 0xd1, 0x46, 0xa8, 0x50, 0xe0, 2)
 ```
 
-**注意**   系统定义的属性键类别只保留供系统使用。
+**注意**   系统定义的属性键类别只保留供系统使用。
 
  
 

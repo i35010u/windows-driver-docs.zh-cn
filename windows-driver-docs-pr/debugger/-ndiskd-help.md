@@ -1,7 +1,6 @@
 ---
 title: ndiskd。帮助
 description: Ndiskd 命令显示可用 ndiskd 命令的列表，其中包含每个命令的简短说明。
-ms.assetid: ba9a1364-173b-4258-9894-09271e47786e
 keywords:
 - ndiskd Windows 调试
 ms.date: 06/15/2020
@@ -12,16 +11,16 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: bb4b7d235c9140b150277b0c21f2c8a429464864
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: c023c937064d558632d91378abf40406e91b2525
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89212608"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96796319"
 ---
 # <a name="ndiskdhelp"></a>!ndiskd.help
 
-**！ Ndiskd**命令显示可用！ ndiskd 命令的列表，其中包含每个命令的简短说明。
+**！ Ndiskd** 命令显示可用！ ndiskd 命令的列表，其中包含每个命令的简短说明。
 
 ```console
 !ndiskd.help
@@ -33,7 +32,7 @@ Ndiskd.dll
 
 ## <a name="examples"></a>示例
 
-下面的示例使用 **！ ndiskd**显示帮助命令的列表。
+下面的示例使用 **！ ndiskd** 显示帮助命令的列表。
 
 ```console
 3: kd> !ndiskd.help
@@ -123,7 +122,7 @@ NDIS KD EXTENSIONS
     nbpools            Same as !ndiskd.nbpool
 ```
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 [网络驱动程序设计指南](../network/index.md)
 
@@ -131,4 +130,4 @@ NDIS KD EXTENSIONS
 
 [调试网络堆栈](https://channel9.msdn.com/Shows/Defrag-Tools/Defrag-Tools-175-Debugging-the-Network-Stack)
 
-[**NDIS 扩展 ( # A0) **](ndis-extensions--ndiskd-dll-.md)
+[**NDIS 扩展 ( # A0)**](ndis-extensions--ndiskd-dll-.md)

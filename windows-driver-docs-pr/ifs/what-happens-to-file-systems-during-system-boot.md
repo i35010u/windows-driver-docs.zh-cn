@@ -1,7 +1,6 @@
 ---
 title: 文件系统在系统启动期间会发生什么情况
 description: 文件系统在系统启动期间会发生什么情况
-ms.assetid: f6ed556a-2353-4a0d-8db1-1fb5eac3c1ef
 keywords:
 - 旧筛选器驱动程序 WDK 文件系统、启动过程
 - 旧文件系统筛选器驱动程序 WDK，启动过程
@@ -22,12 +21,12 @@ keywords:
 - FsRec
 ms.date: 10/16/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: be750a140f86fb5fdf5ef3fac6a9b670ccc54bf7
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 23567112de311aeb7bb241a3f7210e3e829ad83b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89066910"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96796207"
 ---
 # <a name="what-happens-to-file-systems-during-system-boot"></a>文件系统在系统启动期间会发生什么情况
 

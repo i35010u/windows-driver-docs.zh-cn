@@ -1,7 +1,6 @@
 ---
 title: cmreslist
-description: Cmreslist 扩展显示指定的设备对象的 CM_RESOURCE_LIST 结构。
-ms.assetid: 56b48f62-c638-4082-95d7-5a0c62c94212
+description: Cmreslist 扩展显示指定设备对象的 CM_RESOURCE_LIST 结构。
 keywords:
 - CM_RESOURCE_LIST
 - cmreslist Windows 调试
@@ -13,29 +12,29 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 9e29e703474d75e46e7b6f9b5ec6c657ffbdc059
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a066a973bdc348a9b5b436eaabbdfb9e8ea66e64
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63334622"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96795739"
 ---
 # <a name="cmreslist"></a>!cmreslist
 
 
-**！ Cmreslist**扩展插件都会显示 CM\_资源\_列表结构指定的设备对象。
+**！ Cmreslist** extension 显示 \_ \_ 指定设备对象的 CM 资源列表结构。
 
 ```dbgsyntax
 !cmreslist Address
 ```
 
-## <a name="span-idddkcmreslistdbgspanspan-idddkcmreslistdbgspanparameters"></a><span id="ddk__cmreslist_dbg"></span><span id="DDK__CMRESLIST_DBG"></span>参数
+## <a name="span-idddk__cmreslist_dbgspanspan-idddk__cmreslist_dbgspanparameters"></a><span id="ddk__cmreslist_dbg"></span><span id="DDK__CMRESLIST_DBG"></span>参数
 
 
-<span id="_______Address______"></span><span id="_______address______"></span><span id="_______ADDRESS______"></span> *Address*   
-指定的十六进制地址的 CM\_资源\_列表结构。
+<span id="_______Address______"></span><span id="_______address______"></span><span id="_______ADDRESS______"></span>*地址*   
+指定 CM \_ 资源列表结构的十六进制地址 \_ 。
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 <table>
 <colgroup>
@@ -56,9 +55,9 @@ ms.locfileid: "63334622"
 
  
 
-### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>其他信息
+### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>附加信息
 
-请参阅[插调试](plug-and-play-debugging.md)对于此扩展命令的应用程序。 璝惠 CM\_资源\_列表结构中，请参阅 Windows Driver Kit (WDK) 文档。
+请参阅 [即插即用调试](plug-and-play-debugging.md) 此扩展命令的应用程序。 有关 CM \_ 资源 \_ 列表结构的信息，请参阅 Windows 驱动程序工具包 (WDK) 文档。
 
  
 

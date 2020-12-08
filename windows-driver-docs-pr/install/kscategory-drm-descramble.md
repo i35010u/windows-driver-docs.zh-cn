@@ -1,7 +1,6 @@
 ---
 title: KSCATEGORY_DRM_DESCRAMBLE
 description: KSCATEGORY_DRM_DESCRAMBLE
-ms.assetid: 3bb6887f-4fc9-452e-bceb-35fe26844ac5
 keywords:
 - KSCATEGORY_DRM_DESCRAMBLE 设备和驱动程序安装
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 0890c3ccc5103fedf33892c17bee6a3d593e302d
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 534a24852bafe2008c265d86f5348eac364d8db4
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89097247"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96795491"
 ---
 # <a name="kscategory_drm_descramble"></a>KSCATEGORY_DRM_DESCRAMBLE
 

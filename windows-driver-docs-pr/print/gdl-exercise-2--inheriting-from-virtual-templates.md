@@ -1,36 +1,35 @@
 ---
-title: GDL 练习 2 中的虚拟模板继承
-description: GDL 练习 2 中的虚拟模板继承
-ms.assetid: 89878438-bea4-4d6f-bf3b-88d5bef0e6ab
+title: GDL 练习2从虚拟模板继承
+description: GDL 练习2从虚拟模板继承
 keywords:
-- GDL WDK 示例
+- GDL WDK，示例
 - 示例 WDK GDL
 - 教程 WDK GDL
-- GDL WDK 教程
-- WDK GDL，实现 GDL 架构的架构
+- GDL WDK，教程
+- 架构 WDK GDL，实现 GDL 架构
 - 模板 WDK GDL，继承
 - 模板 WDK GDL，示例
 - 继承 WDK GDL
-- WDK GDL 的虚拟模板
+- 虚拟模板 WDK GDL
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 530c5f3606da5bebbac7cbba59a25a5fd6470484
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 28f6fb4047cf0dc1d5753415dc073aee16915f7c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63369796"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96797001"
 ---
-# <a name="gdl-exercise-2-inheriting-from-virtual-templates"></a>GDL 练习 2：从虚拟模板继承
+# <a name="gdl-exercise-2-inheriting-from-virtual-templates"></a>GDL 练习2：从虚拟模板继承
 
 
-### <a href="" id="exercise"></a> 练习
+### <a name="exercise"></a><a href="" id="exercise"></a> 小心谨慎
 
-定义接受通过使用 2 个字节来表示 1 个 Unicode 字符编码的 Unicode 字符串数据类型。 然后，定义非虚拟继承以前定义的虚拟模板的模板。 请不要修改中创建的架构[练习 1](gdl-exercise-1--implementing-a-gdl-schema.md)。 创建示例 GDL 数据文件，并验证正确应用架构。 创建一个示例 GDL 数据文件，不符合的架构，验证检测到错误。
+定义一个数据类型，该数据类型接受通过使用2个字节来表示1个 Unicode 字符编码的 Unicode 字符串。 然后，定义从以前定义的虚拟模板继承的非虚拟模板。 不要修改您在 [练习 1](gdl-exercise-1--implementing-a-gdl-schema.md)中创建的架构。 创建示例 GDL 数据文件，并验证是否正确应用了架构。 创建不符合架构的示例 GDL 数据文件，并验证是否检测到错误。
 
-### <a href="" id="solution"></a> 解决方案
+### <a name="solution"></a><a href="" id="solution"></a> 解决方案
 
-以下两个模板定义的 Unicode 数据类型。
+以下两个模板定义 Unicode 数据类型。
 
 ```cpp
 *Include: MasterTemplate.gdl
@@ -53,7 +52,7 @@ ms.locfileid: "63369796"
 }
 ```
 
-以下模板继承在练习 1 中定义的模板。 没有名为的构造\*命令和三种类型的属性：**\*名称**（将显示在根级别），  **\*CommandName** (其中可以出现在\*命令构造)，和 **\*UniName** （后者可以显示两个上下文中）。
+以下模板继承自练习1中定义的模板。 存在一个名为 \* "命令" 的构造和三种类型的属性： "名称" (，该 **\* 名称** 出现在根级别) 、 **\* CommandName** (，可以出现在 \* 命令构造) 中，并可在两个上下文 (中出现。 **\***
 
 ```cpp
 *Template:  COMMAND

@@ -1,15 +1,14 @@
 ---
 title: PnP 和电源管理回调序列
 description: 以下主题显示了框架调用 WDF 驱动程序的 PnP 和电源管理事件回调函数的顺序
-ms.assetid: 74663110-8E3C-4AC4-8BCD-63C788047F38
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 05014ac52fc23af628da1171800d8e5ef8921927
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 245d4ef1a37858bba3abe0985564a6b2f79a2194
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89184589"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96795773"
 ---
 # <a name="pnp-and-power-management-callback-sequences"></a>PnP 和电源管理回调序列
 

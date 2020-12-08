@@ -1,15 +1,14 @@
 ---
 title: 选择
 description: 选择
-ms.assetid: 5DFE5B52-4D58-491c-9363-95E4A2FD680C
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 80bd8f1a21c2ed0d7675d83bfbb956120dda1d73
-ms.sourcegitcommit: 67efcd26f7be8f50c92b141ccd14c9c68f4412d8
+ms.openlocfilehash: 152cf9cd9699d577789d03938e94530bd27e64bf
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88902391"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96796407"
 ---
 # <a name="selection"></a>选择
 

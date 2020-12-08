@@ -1,15 +1,14 @@
 ---
 title: MSiSCSI \_ SECURITYCAPABILITIES WMI 类
 description: MSiSCSI \_ SECURITYCAPABILITIES WMI 类
-ms.assetid: 50f7aa98-0743-4775-808b-c5a90dc1d0fe
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 411549740c3082a16400e061491fe7bc8d1df644
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 4c3610446bceee2eaede28f66c7691d8423fc5a5
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89184939"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96796449"
 ---
 # <a name="msiscsi_securitycapabilities-wmi-class"></a>MSiSCSI \_ SECURITYCAPABILITIES WMI 类
 
@@ -23,7 +22,7 @@ MSiSCSI \_ SECURITYCAPABILITIES WMI 类描述了发起方的安全功能。
 
 由于 MSiSCSI \_ SecurityCapabilities 类与存储微型端口驱动程序的特定实例相关联，因此微型端口驱动程序必须使用微型端口驱动程序管理的特定物理设备对象 (PDO) 的名称注册该类。
 
-MSiSCSI \_ SecurityCapabilities 类是在 *配置*中定义的。
+MSiSCSI \_ SecurityCapabilities 类是在 *配置* 中定义的。
 
 ```cpp
 class MSiSCSI_SecurityCapabilities {

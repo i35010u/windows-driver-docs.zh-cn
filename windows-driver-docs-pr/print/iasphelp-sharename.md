@@ -1,13 +1,12 @@
 ---
-title: Iasphelp get\_ShareName 方法
-description: 共享名属性启用 ASP 网页，若要获取打印机的共享的名称。
+title: Iasphelp 获取 \_ 共享名方法
+description: "\"共享名\" 属性允许 ASP 网页获取打印机的共享名称。"
 MS-HAID:
 - webfnc\_68b8e99e-a40b-44ee-94c8-2a8bcc293fa3.xml
 - print.iasphelp\_sharename
 MSHAttr:
 - PreferredSiteName:MSDN
 - PreferredLib:/library/windows/hardware
-ms.assetid: fdb93613-9c7f-49ea-b90e-684b63e6417a
 keywords:
 - get_ShareName 方法打印设备
 - get_ShareName 方法打印设备，Iasphelp 接口
@@ -20,36 +19,36 @@ api_type:
 - COM
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 805acbb28a55420e46e5a9fabef87475fa375fa8
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5f640d75fb7f0a6fedd632f258e9b96d08f42f0f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63383155"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96796781"
 ---
-# <a name="iasphelpgetsharename-method"></a>Iasphelp::get\_ShareName 方法
+# <a name="iasphelpget_sharename-method"></a>Iasphelp：：获取 \_ 共享名方法
 
-**ShareName**属性启用 ASP 网页，若要获取打印机的共享的名称。
+" **共享** 名" 属性允许 ASP 网页获取打印机的共享名称。
 
 <a name="syntax"></a>语法
 ------
 
 ```cpp
 HRESULT get_ShareName(
-  [out] BSTR *pVal
+  [out] BSTR *pVal
 );
 ```
 
-<a name="parameters"></a>Parameters
+<a name="parameters"></a>参数
 ----------
 
-*pVal* \[out\]  
-调用方提供指向用于接收指向共享名称字符串的指针的位置。
+*pVal* \[弄\]  
+调用方提供的指向接收指向共享名称字符串的指针的位置的指针。
 
 <a name="return-value"></a>返回值
 ------------
 
-此外可以返回 Win32 错误代码。
+也可以返回 Win32 错误代码。
 
 <table>
 <colgroup>
@@ -69,7 +68,7 @@ HRESULT get_ShareName(
 </tr>
 <tr class="even">
 <td><strong>E_HANDLE</strong></td>
-<td><p><a href="iasphelp-open.md" data-raw-source="[&lt;strong&gt;Iasphelp::Open&lt;/strong&gt;](iasphelp-open.md)"> <strong>Iasphelp::Open</strong> </a>尚未调用方法。</p></td>
+<td><p>未调用 <a href="iasphelp-open.md" data-raw-source="[&lt;strong&gt;Iasphelp::Open&lt;/strong&gt;](iasphelp-open.md)"><strong>Iasphelp：： Open</strong></a> 方法。</p></td>
 </tr>
 <tr class="odd">
 <td><strong>E_OUTOFMEMORY</strong></td>
@@ -80,7 +79,7 @@ HRESULT get_ShareName(
 
 ## <a name="vbscript-example"></a>VBScript 示例
 
-[ **Iasphelp::Open** ](iasphelp-open.md)前必须调用方法**Iasphelp::ShareName**属性可以进行查询。
+必须先调用 [**Iasphelp：： Open**](iasphelp-open.md) 方法，然后才能查询 **Iasphelp：：共享名** 属性。
 
 ```vb
 Dim objPrinter, DrvrName
@@ -101,11 +100,11 @@ DrvrName = objPrinter.ShareName
 <tbody>
 <tr class="odd">
 <td><p>目标平台</p></td>
-<td>桌面设备</td>
+<td>台式机</td>
 </tr>
 </tbody>
 </table>
 
 ## <a name="see-also"></a>请参阅
 
-[**Iasphelp::Open**](iasphelp-open.md)
+[**Iasphelp：： Open**](iasphelp-open.md)

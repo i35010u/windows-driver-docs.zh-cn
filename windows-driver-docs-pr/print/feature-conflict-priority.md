@@ -1,18 +1,17 @@
 ---
 title: 功能冲突优先级
 description: 功能冲突优先级
-ms.assetid: 1185f983-ed04-4610-8b93-684ae3e07e84
 keywords:
 - 打印机功能 WDK Unidrv，冲突优先级
 - 冲突优先级 WDK 打印机功能
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: aef16af3fd1d3b399110e941ef809c4d400a5075
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 05fd399b03aefeb7da3570f597b587364fc2e609
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63361989"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96797087"
 ---
 # <a name="feature-conflict-priority"></a>功能冲突优先级
 
@@ -20,19 +19,19 @@ ms.locfileid: "63361989"
 
 
 
-一项功能的冲突优先级标识 Unidrv 的用户界面代码强制执行时，应具有一项功能的优先级[选项约束](option-constraints.md)。
+功能的冲突优先级标识当 Unidrv 的用户界面代码强制 [选项约束](option-constraints.md)时，功能应具有的优先级。
 
-从最高到最低优先级，GPD 分析器将冲突优先级分配给一项功能按以下顺序：
+GPD 分析器从最高优先级到最低优先级，按以下顺序向功能分配冲突优先级：
 
-1.  实际安装的可安装功能。 (请参阅[处理可安装的功能和选项](handling-installable-features-and-options.md)。)
+1.  实际安装的可安装功能。  (参阅 [处理可安装功能和选项](handling-installable-features-and-options.md)。 ) 
 
-2.  使用功能\*FeatureType 设置为打印机\_属性。
+2.  \*FeatureType 设置为 PRINTER 属性的功能 \_ 。
 
-3.  使用功能\* **FeatureType**设置为文档\_属性或作业\_属性。
+3.  \* **FeatureType** 设置为 DOC \_ 属性或作业属性的功能 \_ 。
 
-在每个功能类型的功能分配基于为该功能的指定的值的相对优先级\*ConflictPriority 属性。 因此，对于示例中，打印机\_属性使用的功能\* **ConflictPriority**为 1 的属性的优先级高于 DOC\_属性功能\* **ConflictPriority** 3 的属性。 不具有的功能\* **ConflictPriority**属性具有较低的优先级比执行操作。
+根据为该功能的 ConflictPriority 属性指定的值，为每个功能类型中的功能分配了相对优先级 \* 。 例如， \_ \* **ConflictPriority** 属性为1的打印机属性功能具有比 \_ \* *_ConflictPriority_* 属性为3的文档属性功能更高的优先级。 没有 ConflictPriority 属性的功能的 \* *_ConflictPriority_* 优先级要低于那些功能。
 
-有关详细信息\* **FeatureType**并\* **ConflictPriority**特性，请参见[功能属性](feature-attributes.md)。
+有关 \* *_FeatureType_* 和 \* *_ConflictPriority_* 特性的详细信息，请参阅 [功能特性](feature-attributes.md)。
 
  
 
