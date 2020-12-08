@@ -1,7 +1,6 @@
 ---
 title: uniqstack
-description: Uniqstack 扩展显示的所有线程的堆栈的所有当前进程，不包括显示为具有重复项的堆栈中。
-ms.assetid: c7502106-90b7-4fec-aa6b-394967ed2cfb
+description: Uniqstack 扩展显示当前进程中的所有线程的所有堆栈，排除似乎有重复项的堆栈。
 keywords:
 - uniqstack Windows 调试
 ms.date: 05/23/2017
@@ -12,38 +11,38 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: b31e61cb711fdde9c55c8181d1ba852228ab68a0
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 284d5c0554d298a1aa7e46e9266ef41d621b5bfd
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63334149"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96825271"
 ---
 # <a name="uniqstack"></a>!uniqstack
 
 
-**！ Uniqstack**扩展显示的所有线程的堆栈的所有当前进程，不包括显示为具有重复项的堆栈中。
+**！ Uniqstack** 扩展显示当前进程中的所有线程的所有堆栈，排除似乎有重复项的堆栈。
 
 ```dbgcmd
 !uniqstack [ -b | -v | -p ] [ -n ]
 ```
 
-## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>参数
+## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>Parameters
 
 
-<span id="_______-b______"></span><span id="_______-B______"></span> **-b**   
-将导致显示以包括前三个参数传递给每个函数。
+<span id="_______-b______"></span><span id="_______-B______"></span>**-b**   
+使显示包含传递给每个函数的前三个参数。
 
-<span id="_______-v______"></span><span id="_______-V______"></span> **-v**   
-将导致显示以包括帧指针省略 (FPO) 信息。 在基于 x86 的处理器中，还会显示的调用约定信息。
+<span id="_______-v______"></span><span id="_______-V______"></span>**-v**   
+使显示内容包括帧指针省略 (FPO) 信息。 在基于 x86 的处理器上，也会显示调用约定信息。
 
-<span id="_______-p______"></span><span id="_______-P______"></span> **-p**   
-将导致显示堆栈跟踪中包含每个函数的完整参数。 此列表将包括每个参数的数据类型、 名称和值。 *这要求的完整符号信息。*
+<span id="_______-p______"></span><span id="_______-P______"></span>**-p**   
+使显示包含在堆栈跟踪中调用的每个函数的完整参数。 此列表将包括每个参数的数据类型、名称和值。 *这需要完整的符号信息。*
 
-<span id="_______-n______"></span><span id="_______-N______"></span> **-n**   
-导致要显示的帧号码。
+<span id="_______-n______"></span><span id="_______-N______"></span>**-n**   
+导致显示帧号。
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 <table>
 <colgroup>
@@ -67,7 +66,7 @@ ms.locfileid: "63334149"
 <a name="remarks"></a>备注
 -------
 
-此扩展是类似于[ **k、 kb、 kc、 kd、 kp、 kP，kv （显示堆栈回溯）** ](k--kb--kc--kd--kp--kp--kv--display-stack-backtrace-.md)命令，只不过它不会显示重复的堆栈。
+此扩展类似于 [**k、kb、glm-kc-qnw、kd、kp、kp、kv (显示 Stack Backtrace)**](k--kb--kc--kd--kp--kp--kv--display-stack-backtrace-.md) 命令，只不过它不显示重复堆栈。
 
 例如：
 

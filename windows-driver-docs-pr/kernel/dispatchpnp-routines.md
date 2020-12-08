@@ -1,7 +1,6 @@
 ---
 title: DispatchPnP 例程
 description: DispatchPnP 例程
-ms.assetid: 909d99ac-5bd3-4b12-bfb4-79713cf2a156
 keywords:
 - 调度例程 WDK 内核，DispatchPnP 例程
 - DispatchPnP 例程
@@ -11,12 +10,12 @@ keywords:
 - IRP_MJ_PNP i/o 函数代码
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d868199cde20249350cc168778955e0d4dc9f4b6
-ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
+ms.openlocfilehash: 1c33cc28028fcc591232e7e8ae3509dd1eb8b125
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89403228"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96825935"
 ---
 # <a name="dispatchpnp-routines"></a>DispatchPnP 例程
 
@@ -24,7 +23,7 @@ ms.locfileid: "89403228"
 
 
 
-驱动程序的[*DispatchPnP*](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch)例程通过处理[**irp \_ MJ \_ PNP**](./irp-mj-pnp.md) i/o 函数代码的 irp 来支持[即插即用](introduction-to-plug-and-play.md)。 与 **IRP \_ MJ \_ PNP** 函数代码关联的是多个次要 i/o 函数代码 (参阅 [即插即用次要 irp](./plug-and-play-minor-irps.md)) ，其中一些驱动程序必须处理，其中某些驱动程序必须可以选择处理。 PnP 管理器使用这些次要函数代码指示驱动程序启动、停止和删除设备，并查询有关其设备的驱动程序。
+驱动程序的 [*DispatchPnP*](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch)例程通过处理 [**irp \_ MJ \_ PNP**](./irp-mj-pnp.md) i/o 函数代码的 irp 来支持 [即插即用](introduction-to-plug-and-play.md)。 与 **IRP \_ MJ \_ PNP** 函数代码关联的是多个次要 i/o 函数代码 (参阅 [即插即用次要 irp](./plug-and-play-minor-irps.md)) ，其中一些驱动程序必须处理，其中某些驱动程序必须可以选择处理。 PnP 管理器使用这些次要函数代码指示驱动程序启动、停止和删除设备，并查询有关其设备的驱动程序。
 
 设备的所有驱动程序都必须有机会处理设备的 PnP Irp，但在某些情况下，允许函数或筛选器驱动程序失败 IRP 的情况除外。
 

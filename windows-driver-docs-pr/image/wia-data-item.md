@@ -1,15 +1,14 @@
 ---
 title: WIA 数据项
 description: WIA 数据项
-ms.assetid: 3ce01393-4a0b-4b70-8087-abe989aa00a9
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5710f928f08454b6f29714c2f5beb37b3d8a588f
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: e59ab00250a4fb660d233d920a5b43d87971abd0
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89189367"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96824549"
 ---
 # <a name="wia-data-item"></a>WIA 数据项
 

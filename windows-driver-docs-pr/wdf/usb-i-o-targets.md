@@ -1,7 +1,6 @@
 ---
 title: USB I/O 目标
 description: 本部分介绍了 KMDF 和 UMDF 2 驱动程序如何与通用串行总线 (USB) 设备交互。
-ms.assetid: 195c0f4b-7f33-428a-8de7-32643ad854c6
 keywords:
 - I/o 目标 WDK KMDF，USB
 - USB i/o 目标 WDK KMDF
@@ -10,17 +9,17 @@ keywords:
 - USB i/o 目标 WDK KMDF，关于 USB i/o 目标
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 158c2dd17f7e46d14df7b54f43968e47b4326a79
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 7dc2ea4dd25637555f4ebca6113499f2c8873282
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89185303"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96824839"
 ---
 # <a name="usb-io-targets"></a>USB I/O 目标
 
 
-本部分介绍内核模式驱动程序框架 (KMDF) 和用户模式驱动程序框架 (UMDF) 从版本2开始的驱动程序如何与通用串行总线 (USB) 设备交互。
+本部分介绍 Kernel-Mode Driver Framework 如何 (KMDF) 和 User-Mode Driver Framework (UMDF) 从版本2开始的驱动程序与通用串行总线 (USB) 设备交互。
 
 
 

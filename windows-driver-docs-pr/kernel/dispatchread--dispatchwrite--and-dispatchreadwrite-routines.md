@@ -1,7 +1,6 @@
 ---
 title: DispatchRead、DispatchWrite 和 DispatchReadWrite 例程
 description: DispatchRead、DispatchWrite 和 DispatchReadWrite 例程
-ms.assetid: 2982939a-4afb-4b21-9a96-0ac758f0fb6c
 keywords:
 - DispatchRead 例程
 - DispatchWrite 例程
@@ -16,12 +15,12 @@ keywords:
 - 传输数据 WDK 内核，读取/写入调度例程
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8f2a46b8a2dc07bdecc5bee981ffc5e68b370447
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 23dd2f96c85ed063e1cb51c027091c7c7f29f414
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89186731"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96825931"
 ---
 # <a name="dispatchread-dispatchwrite-and-dispatchreadwrite-routines"></a>DispatchRead、DispatchWrite 和 DispatchReadWrite 例程
 

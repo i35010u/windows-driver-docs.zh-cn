@@ -1,40 +1,39 @@
 ---
 title: 使用传感器类扩展来处理事件
 description: 传感器类扩展处理传感器驱动程序和传感器 API 之间的事件链接。
-ms.assetid: A49489EF-1721-4F12-9793-6FBA76BA7976
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 795e5e55a545dc6fd42fc0979c79aeb86cb57e74
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: cac89bb5f2fb84420ad10a02005292dec9872f8e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63326177"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96825991"
 ---
 # <a name="using-the-sensor-class-extension-to-handle-events"></a>使用传感器类扩展来处理事件
 
 > [!IMPORTANT] 
-> 已弃用此文档和 Windows 8.1 的地理位置驱动程序示例。
+> 此文档和 Windows 8.1 的地理位置驱动程序示例已弃用。
 
 传感器类扩展处理传感器驱动程序和传感器 API 之间的事件链接。
 
-传感器应用程序检索模拟的传感器的数据字段通过注册从驱动程序; 接收事件通知或者，通过调用要检索的数据字段的属性。 示例驱动程序同时支持。
+传感器应用程序通过注册接收来自驱动程序的事件通知来检索模拟传感器的数据字段;或者，通过调用属性来检索数据字段。 示例驱动程序同时支持这两者。
 
-如果应用程序注册为数据更新事件，该驱动程序将引发这些事件，每次从传感器到达该数据。 这些事件通知的频率与当前报告间隔属性相对应。
+如果某个应用程序注册了数据更新事件，则每次该数据到达传感器时，驱动程序就会引发这些事件。 这些事件通知的频率与当前报表间隔属性相对应。
 
-引发事件时，驱动程序模拟来自传感器的"新"数据，除了示例驱动程序也会引发传感器已准备好开始发送数据时发生的事件。 此事件被称为状态更改事件。
+除了在驱动程序模拟从传感器传入的 "新" 数据时引发事件外，当传感器准备好开始发送数据时，示例驱动程序还会引发事件。 此事件称为 "状态更改事件"。
 
-支持的示例驱动程序的状态对应于在中找到的常数**SensorState**枚举：
+示例驱动程序支持的状态对应于在 **SensorState** 枚举中找到的常数：
 
-| 事件状态常量 | 重要性                                                   |
+| Event-State 常量 | 含义                                                   |
 |----------------------|----------------------------------------------------------------|
-| 传感器\_状态\_准备就绪 | 指示传感器已连接并且准备好发送数据。 |
+| 传感器 \_ 状态 \_ 就绪 | 指示传感器已连接并且已准备好发送数据。 |
 
  
 
-如前文所述，传感器类扩展处理的示例驱动程序和传感器 API 之间的事件链接。 该驱动程序调用每次**ISensorClassExtension::PostStateChange**方法，则类扩展会将通知转发到 API。 示例驱动程序调用此方法内的**CSensorManager::SetState**。 当驱动程序调用**ISensorClassExtension::PostEvent**方法，并提供数据更新事件，此类扩展的属性键会将通知转发到传感器 API。 示例驱动程序调用此方法内的**CSensorManager::PostDataEvent**。
+如前文所述，传感器类扩展处理示例驱动程序和传感器 API 之间的事件链接。 每当驱动程序调用 **ISensorClassExtension：:P oststatechange** 方法时，类扩展就会将通知转发到该 API。 示例驱动程序在 **CSensorManager：： SetState** 中调用此方法。 当驱动程序调用 **ISensorClassExtension：:P ostevent** 方法并为数据更新事件提供属性键时，类扩展会将通知转发到传感器 API。 示例驱动程序在 CSensorManager 中调用此方法 **：:P ostdataevent**。
 
-两个传感器管理器方法::**SetState**和::**PostDataEvent**中的事件的示例驱动程序的线程过程调用**CSensorManager::\_SensorEventThreadProc**。 在单独的线程过程以防止事件活动阻止驱动程序 （如回调函数） 中的同步过程中保留的事件处理程序。
+在事件 **CSensorManager：： \_ SensorEventThreadProc** 的示例驱动程序的线程过程中，将调用两个传感器管理器方法：：**SetState** 和：：**PostDataEvent** 。 事件处理程序保留在单独的线程过程中，以防止事件活动阻止驱动程序中的同步过程 (如) 回调函数。
 
 ## <a name="related-topics"></a>相关主题
 [传感器地理位置驱动程序示例](sensors-geolocation-driver-sample.md)  

@@ -1,19 +1,18 @@
 ---
 title: 释放 NDIS 端口
 description: 释放 NDIS 端口
-ms.assetid: ae7b608d-6105-4fdc-b805-0f0101d7c218
 keywords:
 - 端口 WDK NDIS，释放
 - NDIS 端口 WDK，释放
 - 释放 NDIS 端口
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f9ca18ad48915b38d796fd6d210243630592ef6b
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 98adf6c35e677888d2115b4943b3a1d3736cf0bc
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89212467"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96825515"
 ---
 # <a name="freeing-an-ndis-port"></a>释放 NDIS 端口
 
@@ -21,7 +20,7 @@ ms.locfileid: "89212467"
 
 
 
-微型端口驱动程序必须释放它在其[*MiniportInitializeEx*](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_initialize)函数中为微型端口适配器[分配](allocating-an-ndis-port.md)的所有 NDIS 端口。 除了下面所述的两个情况外，它还可以通过调用 [**NdisMFreePort**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismfreeport)来释放端口。
+微型端口驱动程序必须释放它在其 [*MiniportInitializeEx*](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_initialize)函数中为微型端口适配器 [分配](allocating-an-ndis-port.md)的所有 NDIS 端口。 除了下面所述的两个情况外，它还可以通过调用 [**NdisMFreePort**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismfreeport)来释放端口。
 
 在这些情况下，微型端口驱动程序必须释放所有已分配的端口：
 

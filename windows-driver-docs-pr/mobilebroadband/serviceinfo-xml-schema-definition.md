@@ -1,15 +1,14 @@
 ---
 title: ServiceInfo XML 架构定义
 description: ServiceInfo XML 架构定义
-ms.assetid: c5d6aa78-b494-4931-bdfc-6acaab5c570f
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 290edd0b686bc64c7f6a3a7ed2022dbd1d8cd9eb
-ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
+ms.openlocfilehash: c03af801284119efd8bd636d028882de19efcd3c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89403438"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96825575"
 ---
 # <a name="serviceinfo-xml-schema-definition"></a>ServiceInfo XML 架构定义
 

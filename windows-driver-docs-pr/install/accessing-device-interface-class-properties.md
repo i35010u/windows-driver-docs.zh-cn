@@ -1,15 +1,14 @@
 ---
 title: 访问设备接口类属性
 description: 访问设备接口类属性
-ms.assetid: c9efe273-dc66-4585-8ab5-3842df1c95df
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9d8e2288ced454073ada03e97f6850bcf2044307
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: 1ad7ec97c7d0ed8ba386de152e8c3e18ee9babdd
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91733981"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96826259"
 ---
 # <a name="accessing-device-interface-class-properties"></a>访问设备接口类属性
 
@@ -46,7 +45,7 @@ Windows Server 2003、Windows XP 和 Windows 2000 还支持其中的大多数设
 
 -   将 *DeviceInfoSet* 设置为设备信息集的句柄，其中包含要设置为设备接口类的默认值的设备接口。
 
--   将*DeviceInterfaceData*设置为指向指定*DeviceInfoSet*中的设备接口的[**SP_DEVICE_INTERFACE_DATA**](/windows/win32/api/setupapi/ns-setupapi-sp_device_interface_data)结构的指针。
+-   将 *DeviceInterfaceData* 设置为指向指定 *DeviceInfoSet* 中的设备接口的 [**SP_DEVICE_INTERFACE_DATA**](/windows/win32/api/setupapi/ns-setupapi-sp_device_interface_data)结构的指针。
 
 ### <a name="accessing-device-interface-class-properties-that-have-registry-entry-values-under-the-interface-class-registry-key"></a><a href="" id="accessing-device-interface-class-properties-that-have-registry-entry-v"></a> 访问具有 Interface 类注册表项下的注册表项值的设备接口类属性
 

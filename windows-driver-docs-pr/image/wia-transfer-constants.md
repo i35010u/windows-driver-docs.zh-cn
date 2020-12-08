@@ -1,24 +1,23 @@
 ---
 title: WIA 传输常量
 description: WIA 传输常量
-ms.assetid: 69f76919-5bbb-4968-997c-2d51f19aab6b
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 95a2336593a0f09671ad97af2e7be7edc81c9a23
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 3eb456dc2a2cfb25b407d7015e08793abd448e46
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90106612"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96826395"
 ---
 # <a name="wia-transfer-constants"></a>WIA 传输常量
 
 
-本主题包含用于 WIA 基于 **IStream**的传输的常量的列表。
+本主题包含用于 WIA 基于 **IStream** 的传输的常量的列表。
 
 这些常量分为三个子组：
 
--   项目类型
+-   项类型
 
 -   回叫消息
 
@@ -35,8 +34,8 @@ ms.locfileid: "90106612"
 </colgroup>
 <thead>
 <tr class="header">
-<th>名称</th>
-<th>说明</th>
+<th>“属性”</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>
@@ -51,7 +50,7 @@ ms.locfileid: "90106612"
 
 ### <a name="callback-messages"></a>回叫消息
 
-下表显示了**IWiaTransferCallback：： TransferCallback**的*lFlags*参数的可能值。
+下表显示了 **IWiaTransferCallback：： TransferCallback** 的 *lFlags* 参数的可能值。
 
 <table>
 <colgroup>
@@ -60,8 +59,8 @@ ms.locfileid: "90106612"
 </colgroup>
 <thead>
 <tr class="header">
-<th>名称</th>
-<th>说明</th>
+<th>“属性”</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>
@@ -110,8 +109,8 @@ ms.locfileid: "90106612"
 </colgroup>
 <thead>
 <tr class="header">
-<th>名称</th>
-<th>说明</th>
+<th>“属性”</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>

@@ -1,7 +1,6 @@
 ---
 title: 'NdisStallExecution \_ 延迟规则 (ndis) '
 description: NdisStallExecution \_ 延迟规则指定绝不能使用大于50微秒的 MicrosecondsToStall 的值调用 NdisStallExecution。
-ms.assetid: 4c9368d0-4da7-4adc-bc63-4f21af90b682
 ms.date: 05/21/2018
 keywords:
 - 'NdisStallExecution_Delay 规则 (ndis) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 483c64d0ed6180677ead73daf020ddf7043092ba
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: ad4cafabd2bfd9607f8e82d4c89f050839ed9b67
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90101588"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96826081"
 ---
 # <a name="ndisstallexecution_delay-rule-ndis"></a>NdisStallExecution \_ 延迟规则 (ndis) 
 
 
-NdisStallExecution \_ 延迟规则指定绝不能使用大于50微秒的*MicrosecondsToStall*的值调用**NdisStallExecution** 。
+NdisStallExecution \_ 延迟规则指定绝不能使用大于50微秒的 *MicrosecondsToStall* 的值调用 **NdisStallExecution** 。
 
 **驱动程序模型： NDIS**
 

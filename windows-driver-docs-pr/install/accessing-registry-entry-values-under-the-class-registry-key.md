@@ -1,20 +1,19 @@
 ---
 title: 访问类注册表项下的注册表项值
 description: 访问类注册表项下的注册表项值
-ms.assetid: 771b5751-db9f-43fa-90d1-1c43918a3a80
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9570d9debd51e2863a010edd32556ac77a66ce2a
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: 1a54ecd0c7fd0691ccf0093c04a354da051bf3d7
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91734359"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96826227"
 ---
 # <a name="accessing-registry-entry-values-under-the-class-registry-key"></a>访问类注册表项下的注册表项值
 
 
-在 Windows Vista 和更高版本的 Windows 中，[统一设备属性模型](unified-device-property-model--windows-vista-and-later-.md)包括不具有相应 SPCRP_*Xxx*标识符的[设备安装程序类属性](accessing-device-setup-class-properties.md)。 这些属性描述设备安装程序类的特征。 统一设备属性模型使用 [属性键](property-keys.md) 来表示这些属性。
+在 Windows Vista 和更高版本的 Windows 中，[统一设备属性模型](unified-device-property-model--windows-vista-and-later-.md)包括不具有相应 SPCRP_ *Xxx* 标识符的 [设备安装程序类属性](accessing-device-setup-class-properties.md)。 这些属性描述设备安装程序类的特征。 统一设备属性模型使用 [属性键](property-keys.md) 来表示这些属性。
 
 Windows Server 2003、Windows XP 和 Windows 2000 还支持其中的大多数设备安装程序类属性。 但是，这些早期版本的 Windows 不支持统一设备属性模型的属性键。 相反，这些版本的 Windows 通过使用类注册表项下的相应系统定义的注册表项值表示这些属性。 为了保持与这些早期版本的 Windows 的兼容性，Windows Vista 及更高版本还支持这些系统定义的注册表项值。 但是，在 Windows Vista 和更高版本上，你应该使用属性键来访问这些属性。
 

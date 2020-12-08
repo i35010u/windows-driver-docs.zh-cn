@@ -1,7 +1,6 @@
 ---
 title: SRB \_ 打开 \_ 流
 description: SRB \_ 打开 \_ 流
-ms.assetid: 53732add-e304-4128-9235-525ff073d777
 keywords:
 - SRB_OPEN_STREAM 流媒体设备
 topic_type:
@@ -12,12 +11,12 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 513a0276ddd1fe449744c04e62e0a973c176346d
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: c84e824272c292a0d957f057e329aec085b9a163
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89185571"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96826197"
 ---
 # <a name="srb_open_stream"></a>SRB \_ 打开 \_ 流
 
@@ -45,7 +44,7 @@ ms.locfileid: "89185571"
 
 ### <a name="comments"></a>注释
 
-类驱动程序在*pSrb*StreamObject 中提供了[**HW \_ 流 \_ 对象**](/windows-hardware/drivers/ddi/strmini/ns-strmini-_hw_stream_object)缓冲区 - &gt; **StreamObject**， *pSrb* - &gt; **StreamObject** - &gt; **StreamNumber**设置为要打开的流的数目。 *PSrb*指针指向[**HW \_ 流 \_ 请求 \_ 块**](/windows-hardware/drivers/ddi/strmini/ns-strmini-_hw_stream_request_block)结构。 **StreamNumber**对应于微型驱动程序为响应[**SRB \_ 获取 \_ 流 \_ 信息**](srb-get-stream-info.md)请求而提供的[**HW \_ 流 \_ 描述符**](/windows-hardware/drivers/ddi/strmini/ns-strmini-_hw_stream_descriptor)结构中的流偏移量。 类驱动程序指定打开的流应在*pSrb* - &gt; **CommandData** - &gt; **OpenFormat**中提供的数据格式。
+类驱动程序在 *pSrb* StreamObject 中提供了 [**HW \_ 流 \_ 对象**](/windows-hardware/drivers/ddi/strmini/ns-strmini-_hw_stream_object)缓冲区 - &gt; **StreamObject**， *pSrb* - &gt; **StreamObject** - &gt; **StreamNumber** 设置为要打开的流的数目。 *PSrb* 指针指向 [**HW \_ 流 \_ 请求 \_ 块**](/windows-hardware/drivers/ddi/strmini/ns-strmini-_hw_stream_request_block)结构。 **StreamNumber** 对应于微型驱动程序为响应 [**SRB \_ 获取 \_ 流 \_ 信息**](srb-get-stream-info.md)请求而提供的 [**HW \_ 流 \_ 描述符**](/windows-hardware/drivers/ddi/strmini/ns-strmini-_hw_stream_descriptor)结构中的流偏移量。 类驱动程序指定打开的流应在 *pSrb* - &gt; **CommandData** - &gt; **OpenFormat** 中提供的数据格式。
 
 当微型驱动程序收到此请求时，它应确定此时是否可以打开指定的流。 微型驱动程序还应验证传入的 [**KSDATAFORMAT**](/windows-hardware/drivers/ddi/ks/ns-ks-ksdataformat) 格式。 SRB 的 OpenFormat 字段。 如果流可打开，微型驱动程序将更新 HW \_ 流 \_ 对象结构，并返回状态 "成功" \_ 。 如果已打开流实例的最大数目，或者打开此流所需的硬件资源不可用，则微型驱动程序将返回相应的错误状态。
 

@@ -1,20 +1,19 @@
 ---
 title: 特定于 USB 的 UMDF 1.x 接口
 description: 特定于 USB 的 UMDF 1.x 接口
-ms.assetid: b458d96d-e15e-4a9b-a26e-490620cec38e
 keywords:
 - UMDF WDK，UMDF-USB 对象模型
-- 用户模式驱动程序框架 WDK，UMDF-USB 对象模型
+- User-Mode Driver Framework WDK，UMDF-USB 对象模型
 - 用户模式驱动程序 WDK UMDF，UMDF-USB 对象模型
 - UMDF-USB 对象模型 WDK UMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5053f45ac25f3d74baf36af595e6326c05dd6585
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 25791e402d0901878270f40c69b59aa858ea54ee
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89185075"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96824847"
 ---
 # <a name="usb-specific-umdf-1x-interfaces"></a>特定于 USB 的 UMDF 1.x 接口
 

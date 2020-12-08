@@ -1,7 +1,6 @@
 ---
 title: 较高级驱动程序中的 DispatchReadWrite
 description: 较高级驱动程序中的 DispatchReadWrite
-ms.assetid: d8406115-c62e-4362-8d2c-77d0414c4104
 keywords:
 - DispatchReadWrite 例程
 - 调度例程 WDK 内核，DispatchReadWrite 例程
@@ -12,12 +11,12 @@ keywords:
 - 传输数据 WDK 内核，读取/写入调度例程
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 94aebb5d84ee5f59e184c4e8f8f7898029383586
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: d95ca86d3c9c43ee13305a58856a076477e8f217
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89186725"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96825917"
 ---
 # <a name="dispatchreadwrite-in-higher-level-drivers"></a>较高级驱动程序中的 DispatchReadWrite
 

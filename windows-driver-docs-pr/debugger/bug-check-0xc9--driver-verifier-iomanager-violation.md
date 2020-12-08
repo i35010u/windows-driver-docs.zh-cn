@@ -1,7 +1,6 @@
 ---
 title: Bug 检查 0xC9 DRIVER_VERIFIER_IOMANAGER_VIOLATION
 description: DRIVER_VERIFIER_IOMANAGER_VIOLATION bug 检查的值为0x000000C9。 这是所有驱动程序验证程序 i/o 验证冲突的 bug 检查代码。
-ms.assetid: dcafb0df-cbc1-44f4-8ec4-976df0842f0c
 keywords:
 - Bug 检查 0xC9 DRIVER_VERIFIER_IOMANAGER_VIOLATION
 - DRIVER_VERIFIER_IOMANAGER_VIOLATION
@@ -13,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 6cf53e60ef3ae9265494b3477be73a3d475af677
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: b29e44532ff729dc0fffa39fcde14c01d9cb3b67
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89211223"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96825231"
 ---
 # <a name="bug-check-0xc9-driver_verifier_iomanager_violation"></a>Bug 检查0xC9：驱动程序 \_ 验证程序 \_ IOMANAGER \_ 冲突
 
@@ -189,7 +188,7 @@ ms.locfileid: "89211223"
 
 如果已启用内核模式故障转储，则故障转储文件中将显示以下信息：
 
-- 消息 **错误检查 0xC9 (DRIVER \_ VERIFIER \_ IOMANAGER \_ 冲突) **。
+- 消息 **错误检查 0xC9 (DRIVER \_ VERIFIER \_ IOMANAGER \_ 冲突)**。
 
 - 十六进制 i/o 错误代码。  (参阅下表，了解 i/o 错误代码及其含义的列表 ) 
 
@@ -205,7 +204,7 @@ ms.locfileid: "89211223"
 
 - 用于进一步操作的查询。 可能的响应为 **b** (break) ， **我** (忽略) ， **z** (zap) ， **r** (删除) 或 **d** (禁用) 。 指示操作系统继续，使您可以查看如果未发生此错误，将会出现什么情况。 当然，这通常会导致额外的 bug 检查。 "Zap" 选项将实际删除导致发现此错误的断点。
 
-**注意**   不能以这种方式忽略其他 bug 检查。 只有此类 **I/o 验证** 错误可以忽略，甚至在附加了内核调试器的情况下，才能忽略这些错误。
+**注意**   不能以这种方式忽略其他 bug 检查。 只有此类 **I/o 验证** 错误可以忽略，甚至在附加了内核调试器的情况下，才能忽略这些错误。
 
 下表列出了可能出现的这些 **I/o 验证** 错误。
 
@@ -225,7 +224,7 @@ ms.locfileid: "89211223"
 <tbody>
 <tr class="odd">
 <td align="left"><p>0x200</p></td>
-<td align="left"><p>Unknown</p></td>
+<td align="left"><p>未知</p></td>
 <td align="left"><p>此代码涵盖所有未知 <strong>I/o 验证</strong> 错误。</p></td>
 </tr>
 <tr class="even">

@@ -1,15 +1,14 @@
 ---
 title: 到 NDIS 6.3 的端口协议或筛选器驱动程序的更改摘要
 description: 若要更新 NDIS 1.x 协议或筛选器驱动程序以支持 NDIS 6.30，必须按照以下各节中所述修改它。
-ms.assetid: 1C6CB2E1-C129-4F3B-AF7D-357580BEE7F8
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cc2840fc829051650a9906af947a166276f371ac
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 5f66f7bc24d99438dbcc82bf52858633c2d497ec
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89214308"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96825411"
 ---
 # <a name="summary-of-changes-required-to-port-a-protocol-or-filter-driver-to-ndis-630"></a>将协议或筛选器驱动程序移植到 NDIS 6.30 所要做出的更改摘要
 
@@ -24,7 +23,7 @@ ms.locfileid: "89214308"
 
 
 -   将预处理器定义 NDIS60 或 NDIS61 或 NDIS620 （如果存在）替换为 NDIS630。
--   \_*Xxx* \_ \_ 如[实现 ndis 6.30 驱动程序](implementing-an-ndis-6-30-driver.md)中所述，在 ndis Xxx 驱动程序特征结构中更新主要和次要的 ndis 版本号。
+-   \_*Xxx* \_ \_ 如 [实现 ndis 6.30 驱动程序](implementing-an-ndis-6-30-driver.md)中所述，在 ndis Xxx 驱动程序特征结构中更新主要和次要的 ndis 版本号。
 
 ## <a name="general-porting-requirements-for-protocol-drivers"></a>协议驱动程序的常规移植要求
 

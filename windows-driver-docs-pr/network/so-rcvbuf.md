@@ -1,16 +1,15 @@
 ---
 title: SO_RCVBUF
 description: SO_RCVBUF
-ms.assetid: 218b52ac-95ee-4047-ad75-76d6ae6ab14e
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 SO_RCVBUF 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 1188ce957d9d05d85088bef0b67908aa98137a3e
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 746b0b4d9b48d0c560be1fb3911fc9609b8c3538
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89205951"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96824995"
 ---
 # <a name="so_rcvbuf"></a>\_RCVBUF
 
@@ -27,7 +26,7 @@ SO \_ RCVBUF socket 选项确定了基础传输使用的套接字接收缓冲区
 <thead>
 <tr class="header">
 <th>参数</th>
-<th>值</th>
+<th>“值”</th>
 </tr>
 </thead>
 <tbody>
@@ -76,7 +75,7 @@ SO \_ RCVBUF socket 选项确定了基础传输使用的套接字接收缓冲区
 <thead>
 <tr class="header">
 <th>参数</th>
-<th>值</th>
+<th>“值”</th>
 </tr>
 </thead>
 <tbody>

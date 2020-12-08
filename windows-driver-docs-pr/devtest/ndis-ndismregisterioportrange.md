@@ -1,7 +1,6 @@
 ---
 title: 'NdisMRegisterIoPortRange 规则 (ndis) '
 description: 微型端口驱动程序从其 MiniportInitializeEx 或微型端口 \_ 添加 \_ 设备功能调用 NdisMRegisterIoPortRange。 MiniportInitializeEx 或微型端口 \_ 添加 \_ 设备必须先调用 NdisMSetMiniportAttributes，然后才能调用 NdisMRegisterIoPortRange。
-ms.assetid: 74CFCBDB-3044-4447-ABEF-A60BA31C0BE0
 ms.date: 05/21/2018
 keywords:
 - 'NdisMRegisterIoPortRange 规则 (ndis) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: a6d4dc7aee5aaf2e3025b95f756295113c6a7e0d
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: f21c937809577833b5db8b14385d264f876b5fe4
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90102242"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96824609"
 ---
 # <a name="ndismregisterioportrange-rule-ndis"></a>NdisMRegisterIoPortRange 规则 (ndis) 
 
 
-微型端口驱动程序从其[*MiniportInitializeEx*](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_initialize)或微型端口[**NdisMRegisterIoPortRange**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismregisterioportrange) \_ 添加 \_ 设备功能调用 NdisMRegisterIoPortRange。 *MiniportInitializeEx* 或微型端口 \_ 添加 \_ 设备必须先调用 [**NdisMSetMiniportAttributes**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismsetminiportattributes) ，然后才能调用 **NdisMRegisterIoPortRange**。
+微型端口驱动程序从其 [*MiniportInitializeEx*](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_initialize)或微型端口 [**NdisMRegisterIoPortRange**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismregisterioportrange) \_ 添加 \_ 设备功能调用 NdisMRegisterIoPortRange。 *MiniportInitializeEx* 或微型端口 \_ 添加 \_ 设备必须先调用 [**NdisMSetMiniportAttributes**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismsetminiportattributes) ，然后才能调用 **NdisMRegisterIoPortRange**。
 
 **驱动程序模型： NDIS**
 

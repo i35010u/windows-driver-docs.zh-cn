@@ -1,24 +1,23 @@
 ---
 title: 每个筛选层可用的筛选条件
-description: 本部分介绍每一筛选层上可用的筛选条件。
-ms.assetid: 470f809c-7bf7-4d8b-acd6-898cc68ea7ac
+description: 本部分介绍每个筛选层提供的筛选条件。
 keywords:
-- 筛选条件可在每个筛选层网络驱动程序
+- 筛选在每个筛选层网络驱动程序上可用的条件
 ms.date: 11/08/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b18c1b5400631c9c562c9ad0dbdd58f9f9faeff1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d0652d170ddf0cfa0c126d0892221b68a6fb13fa
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63347390"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96825523"
 ---
 # <a name="filtering-conditions-available-at-each-filtering-layer"></a>每个筛选层可用的筛选条件
 
-可在每个筛选层的筛选条件如下所示。
+每个筛选层提供的筛选条件如下所示。
 
 > [!NOTE]
-> 层标识符结尾处的 V4 和 v6 上后缀表示层是否位于 IPv4 网络堆栈中或 IPv6 网络堆栈中。
+> 层标识符末尾的 V4 和 V6 后缀指示该层是位于 IPv4 网络堆栈中还是位于 IPv6 网络堆栈中。
 
 <table>
 <tr>
@@ -190,14 +189,14 @@ ms.locfileid: "63347390"
 <p>FWPM_CONDITION_EMBEDDED_REMOTE_PORT</p>
 <p>FWPM_CONDITION_ARRIVAL_INTERFACE_INDEX</p>
 <p>FWPM_CONDITION_ARRIVAL_INTERFACE_TYPE</p>
-<p>FWPM_CONDITION_SUB_INTERFACE_INDEX <p><b>请注意</b>  在 Windows Vista 中，此标志调用 FWPM_CONDITION_ARRIVAL_SUB_INTERFACE_INDEX。 在 Windows Vista Service Pack 1 (SP1) 和更高版本中，这两个名称均有效。</p>
+<p>FWPM_CONDITION_SUB_INTERFACE_INDEX <p><b>注意</b>  在 Windows Vista 中，此标志被称为 FWPM_CONDITION_ARRIVAL_SUB_INTERFACE_INDEX。 在带有 Service Pack 1 (SP1) 和更高版本的 Windows Vista 中，这两个名称都是有效的。</p>
 </p>
 <p>FWPM_CONDITION_ARRIVAL_TUNNEL_TYPE</p>
-<p>FWPM_CONDITION_INTERFACE_INDEX <p><b>请注意</b>  在 Windows Vista 中，此标志调用 FWPM_CONDITION_LOCAL_INTERFACE_INDEX。 在 Windows Vista SP1 和更高版本中，这两个名称均有效。</p>
+<p>FWPM_CONDITION_INTERFACE_INDEX <p><b>注意</b>  在 Windows Vista 中，此标志被称为 FWPM_CONDITION_LOCAL_INTERFACE_INDEX。 在 Windows Vista SP1 和更高版本中，这两个名称都是有效的。</p>
 </p>
-<p>FWPM_CONDITION_INTERFACE_TYPE <p><b>请注意</b>  在 Windows Vista 中，此标志调用 FWPM_CONDITION_LOCAL_INTERFACE_TYPE。 在 Windows Vista SP1 和更高版本中，这两个名称均有效。</p>
+<p>FWPM_CONDITION_INTERFACE_TYPE <p><b>注意</b>  在 Windows Vista 中，此标志被称为 FWPM_CONDITION_LOCAL_INTERFACE_TYPE。 在 Windows Vista SP1 和更高版本中，这两个名称都是有效的。</p>
 </p>
-<p>FWPM_CONDITION_TUNNEL_TYPE <p><b>请注意</b>  在 Windows Vista 中，此标志调用 FWPM_CONDITION_LOCAL_TUNNEL_TYPE。 在 Windows Vista SP1 和更高版本中，这两个名称均有效。</p>
+<p>FWPM_CONDITION_TUNNEL_TYPE <p><b>注意</b>  在 Windows Vista 中，此标志被称为 FWPM_CONDITION_LOCAL_TUNNEL_TYPE。 在 Windows Vista SP1 和更高版本中，这两个名称都是有效的。</p>
 </p>
 </td>
 </tr>
@@ -291,14 +290,14 @@ ms.locfileid: "63347390"
 <p>FWPM_CONDITION_ALE_NAP_CONTEXT</p>
 <p>FWPM_CONDITION_ARRIVAL_INTERFACE_INDEX</p>
 <p>FWPM_CONDITION_ARRIVAL_INTERFACE_TYPE</p>
-<p>FWPM_CONDITION_SUB_INTERFACE_INDEX <p><b>请注意</b>  在 Windows Vista 中，此标志调用 FWPM_CONDITION_ARRIVAL_SUB_INTERFACE_INDEX。 在 Windows Vista SP1 和更高版本中，这两个名称均有效。</p>
+<p>FWPM_CONDITION_SUB_INTERFACE_INDEX <p><b>注意</b>  在 Windows Vista 中，此标志被称为 FWPM_CONDITION_ARRIVAL_SUB_INTERFACE_INDEX。 在 Windows Vista SP1 和更高版本中，这两个名称都是有效的。</p>
 </p>
 <p>FWPM_CONDITION_ARRIVAL_TUNNEL_TYPE</p>
-<p>FWPM_CONDITION_INTERFACE_INDEX <p><b>请注意</b>  在 Windows Vista 中，此标志调用 FWPM_CONDITION_LOCAL_INTERFACE_INDEX。 在 Windows Vista SP1 和更高版本中，这两个名称均有效。</p>
+<p>FWPM_CONDITION_INTERFACE_INDEX <p><b>注意</b>  在 Windows Vista 中，此标志被称为 FWPM_CONDITION_LOCAL_INTERFACE_INDEX。 在 Windows Vista SP1 和更高版本中，这两个名称都是有效的。</p>
 </p>
-<p>FWPM_CONDITION_INTERFACE_TYPE <p><b>请注意</b>  在 Windows Vista 中，此标志调用 FWPM_CONDITION_LOCAL_INTERFACE_TYPE。 在 Windows Vista SP1 和更高版本中，这两个名称均有效。</p>
+<p>FWPM_CONDITION_INTERFACE_TYPE <p><b>注意</b>  在 Windows Vista 中，此标志被称为 FWPM_CONDITION_LOCAL_INTERFACE_TYPE。 在 Windows Vista SP1 和更高版本中，这两个名称都是有效的。</p>
 </p>
-<p>FWPM_CONDITION_TUNNEL_TYPE <p><b>请注意</b>  在 Windows Vista 中，此标志调用 FWPM_CONDITION_LOCAL_TUNNEL_TYPE。 在 Windows Vista SP1 和更高版本中，这两个名称均有效。</p>
+<p>FWPM_CONDITION_TUNNEL_TYPE <p><b>注意</b>  在 Windows Vista 中，此标志被称为 FWPM_CONDITION_LOCAL_TUNNEL_TYPE。 在 Windows Vista SP1 和更高版本中，这两个名称都是有效的。</p>
 </p>
 <p>FWPM_CONDITION_ALE_PACKAGE_ID
 </p>

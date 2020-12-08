@@ -1,15 +1,14 @@
 ---
 title: PwrTest 请求方案
 description: PwrTest 请求方案记录系统中正在运行的进程和服务的电源请求。
-ms.assetid: 4B082680-5C43-45F6-9A0E-0C23E9B1F282
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7d8a3e39c1808074bb109813f25a05fde77b1d3b
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 96455dd414843819646e23fef4ee1ed7cefabff7
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90717604"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96824593"
 ---
 # <a name="pwrtest-requests-scenario"></a>PwrTest 请求方案
 
@@ -96,7 +95,7 @@ pwrtest /requests  /t:60
 <thead>
 <tr class="header">
 <th align="left">元素</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>

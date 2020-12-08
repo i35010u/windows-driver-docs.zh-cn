@@ -1,7 +1,6 @@
 ---
 title: 'RequestGetStatusValid 规则 (kmdf) '
 description: RequestGetStatusValid 规则，该规则指定在 WdfRequestSend 返回失败的情况下，应在下列情况之一为请求调用 WdfRequestGetStatus。当请求与 WDF \_ 请求 \_ 发送 \_ 选项同步发送时 \_ 。
-ms.assetid: 9EFC41AB-E5BD-4DE8-8936-E71EA64E5430
 ms.date: 05/21/2018
 keywords:
 - 'RequestGetStatusValid 规则 (kmdf) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 21e468200b98161cdff5cc5dc8ed5d666fcb2985
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: b51aba73f2345468c1eed5a9493ce12168758a24
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90103686"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96826101"
 ---
 # <a name="requestgetstatusvalid-rule-kmdf"></a>RequestGetStatusValid 规则 (kmdf) 
 
 
-**RequestGetStatusValid**规则，该规则指定应在下列情况之一为请求调用[**WdfRequestGetStatus**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestgetstatus) ：
+**RequestGetStatusValid** 规则，该规则指定应在下列情况之一为请求调用 [**WdfRequestGetStatus**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestgetstatus) ：
 
 -   当 [**WdfRequestSend**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestsend) 返回失败时。
 -   当请求与 WDF \_ 请求 \_ 发送 \_ 选项同步发送时 \_ 。

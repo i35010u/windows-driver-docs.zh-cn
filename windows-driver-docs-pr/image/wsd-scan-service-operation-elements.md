@@ -1,24 +1,23 @@
 ---
 title: WSD 扫描服务操作元素
 description: WSD 扫描服务操作元素
-ms.assetid: e06d7683-bec4-49af-bc03-06ef02169999
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 767e2698958d096c02c63b3a08b84940bf01b81b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9adb5e3fea0a85cb587fe094c7e3612e6d1b170c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63375809"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96826299"
 ---
 # <a name="wsd-scan-service-operation-elements"></a>WSD 扫描服务操作元素
 
 
-本部分介绍的操作的 XML 元素和 WSD 扫描服务架构定义的特定于操作的子元素。 客户端发送*Xxx * * * 请求** 操作元素到 WSD 扫描服务; 与相应 WSD 扫描服务响应*Xxx * * * 响应** 操作元素或相应的错误代码。
+本部分介绍 WSD 扫描服务架构定义的 XML 操作元素和操作特定的子元素。 客户端向 WSD 扫描服务发送 *Xxx * * * 请求** 操作元素;WSD 扫描服务用相应的 *Xxx * * * Response** 操作元素或适当的错误代码进行响应。
 
-不能扩展 WSDL 服务说明中的操作列表。 如果你想要实现使用了非标准操作，它们必须属于一个新**portType**扩展类型的 WSD 扫描服务定义。
+不能扩展 WSDL 服务说明中的操作列表。 如果要实现非标准操作，则这些操作必须是为 WSD 扫描服务定义扩展的新 **portType** 类型的一部分。
 
-WSD 扫描服务架构定义了以下操作元素和特定于操作的子元素：
+WSD 扫描服务架构定义下列操作元素和操作特定的子元素：
 
 [**BytesPerLine**](bytesperline.md)
 
@@ -30,9 +29,9 @@ WSD 扫描服务架构定义了以下操作元素和特定于操作的子元素�
 
 [**CreateScanJobResponse**](createscanjobresponse.md)
 
-[**ElementData JobElements 元素**](elementdata-for-jobelements-element.md)
+[**JobElements 元素的 ElementData**](elementdata-for-jobelements-element.md)
 
-[**ElementData ScannerElements 元素**](elementdata-for-scannerelements-element.md)
+[**ScannerElements 元素的 ElementData**](elementdata-for-scannerelements-element.md)
 
 [**GetActiveJobsRequest**](getactivejobsrequest.md)
 
@@ -64,7 +63,7 @@ WSD 扫描服务架构定义了以下操作元素和特定于操作的子元素�
 
 [**MediaFrontImageInfo**](mediafrontimageinfo.md)
 
-[**RequestedElements 元素名称**](name-for-requestedelements-element.md)
+[**RequestedElements 元素的名称**](name-for-requestedelements-element.md)
 
 [**NumberOfLines**](numberoflines.md)
 

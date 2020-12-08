@@ -1,7 +1,6 @@
 ---
 title: USB 视频类驱动程序概述
 description: USB 视频类驱动程序概述
-ms.assetid: 890d448e-bfee-462d-8cce-a2cca42f2f6d
 keywords:
 - USB 视频类驱动程序 WDK AVStream，关于 USB 视频类驱动程序
 - 视频类驱动程序 WDK USB，关于 USB 视频类驱动程序
@@ -9,18 +8,18 @@ keywords:
 - 用户模式客户端 WDK USB 视频类
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 130ab50ccf58b1aa10fa51efe3835f2750ccb07d
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 77e092618ff62e592d75d31284849a2559e9d329
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89191041"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96825859"
 ---
 # <a name="usb-video-class-driver-overview"></a>USB 视频类驱动程序概述
 
 如果要为网络摄像机或数字摄像机提供驱动程序，请考虑使用系统提供的通用串行总线 (USB) 视频类驱动程序，Usbvideo.sys。 USB 视频类 (UVC) 驱动程序是 Microsoft 提供的 AVStream 微型驱动程序，为 USB 视频类设备提供驱动程序支持。 如果设备使用 UVC，则无需提供自己的驱动程序。 相反，设备会自动与系统提供的驱动程序一起工作。
 
-在 USB 视频类模型中，供应商不编写驱动程序;相反，供应商根据视频实现[论坛](https://www.usb.org/documents)网站上的*视频设备规范文档的通用串行总线设备类定义*中的指南来实现视频流式处理硬件。 UVC 驱动程序会直接查询硬件以获取其功能，然后驱动设备，而无需专用驱动程序。
+在 USB 视频类模型中，供应商不编写驱动程序;相反，供应商根据视频实现 [论坛](https://www.usb.org/documents)网站上的 *视频设备规范文档的通用串行总线设备类定义* 中的指南来实现视频流式处理硬件。 UVC 驱动程序会直接查询硬件以获取其功能，然后驱动设备，而无需专用驱动程序。
 
 你可以根据需要扩展 UVC 驱动程序功能来添加特定于供应商的处理。
 

@@ -1,17 +1,16 @@
 ---
 title: SIO_WSK_REGISTER_EXTENSION
 description: SIO_WSK_REGISTER_EXTENSION
-ms.assetid: e7fd6d68-85e8-4c5f-b67f-2193d200130d
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 SIO_WSK_REGISTER_EXTENSION 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: a4b0ad9b071926f93187fd49ce6e4b24b906a477
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: f27fee94a7948f907ac1f2412ad64c8631b4670e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90102980"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96825029"
 ---
 # <a name="sio_wsk_register_extension"></a>SIO \_ WSK \_ 注册 \_ 扩展
 

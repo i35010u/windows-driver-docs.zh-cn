@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ 连接 \_ STARTAT
 description: KSPROPERTY \_ 连接 \_ STARTAT 是一个可选属性，该属性由支持在指定事件发生时启动的筛选器实现。
-ms.assetid: fcf76316-4016-4218-8530-5ef79794769a
 keywords:
 - KSPROPERTY_CONNECTION_STARTAT 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 889338ca11f14215bf6f265fcd115d475d22843d
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: c117037268838c6548971afa910d1ee15da7c6e8
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90102762"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96824933"
 ---
 # <a name="ksproperty_connection_startat"></a>KSPROPERTY \_ 连接 \_ STARTAT
 
@@ -82,7 +81,7 @@ KSPROPERTY \_ 连接 \_ STARTAT 是一个可选属性，该属性由支持在指
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSRELATIVEEVENT**](/windows-hardware/drivers/ddi/ks/ns-ks-ksrelativeevent)

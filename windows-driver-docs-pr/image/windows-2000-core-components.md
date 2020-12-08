@@ -1,15 +1,14 @@
 ---
 title: Windows 2000 核心组件
 description: Windows 2000 核心组件
-ms.assetid: e3c560e8-ad75-4187-84c2-f918a201d10e
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 489f9319b02f4e881fca4e315d040df0a860e53e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: cc6abd4be00615e882b16882a7754ea041f47acd
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380227"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96826347"
 ---
 # <a name="windows-2000-core-components"></a>Windows 2000 核心组件
 
@@ -17,17 +16,17 @@ ms.locfileid: "63380227"
 
 
 
-下图中显示在 Windows 2000 上的静止图像核心组件。
+下图显示了 Windows 2000 上的静止图像核心组件。
 
-![说明 windows 2000 核心组件的关系图](images/stiwin2k.png)
+![阐释 windows 2000 core 组件的示意图](images/stiwin2k.png)
 
-在 Windows 2000 上的静止图像核心组件是几乎完全相同[Windows 98 核心组件](windows-98-core-components.md)。 这些操作系统的系统之间的三个差异如下所示：
+Windows 2000 上的静止映像核心组件与 [windows 98 核心组件](windows-98-core-components.md)几乎完全相同。 这些操作系统之间的三个差异如下：
 
-1.  *Stisvc.exe*取代了 Windows 98 *stimon.exe*组件。
+1.  *Stisvc.exe* 替换 Windows 98 *stimon.exe* 组件。
 
-2.  系统提供的串行端口内核模式驱动程序， *serscan.sys*。
+2.  系统提供串行端口内核模式驱动程序， *serscan.sys*。
 
-3.  *Scsimap.dll*不存在适用于 Windows 2000 及更高版本。
+3.  对于 Windows 2000 和更高版本， *Scsimap.dll* 不存在。
 
  
 

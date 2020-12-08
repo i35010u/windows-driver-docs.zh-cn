@@ -1,17 +1,16 @@
 ---
 title: 获取 RPC 终结点信息
 description: 获取 RPC 终结点信息
-ms.assetid: 8e852855-896c-4553-8a58-8ca49c7b2e0a
 keywords:
 - RPC 终结点信息
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e1d37305e12f731a46178ce9b919ecc8482ec8ed
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 63f3c5802fceb9c01f83addac3e98c1b4221c2a6
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63379449"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96826149"
 ---
 # <a name="get-rpc-endpoint-information"></a>获取 RPC 终结点信息
 
@@ -19,11 +18,11 @@ ms.locfileid: "63379449"
 ## <span id="ddk_get_rpc_endpoint_information_dbg"></span><span id="DDK_GET_RPC_ENDPOINT_INFORMATION_DBG"></span>
 
 
-通过显示终结点信息 **！ rpcexts.getendpointinfo**扩展，或通过 DbgRpc 时 **-e**使用开关。
+当使用 **-e** 开关时，终结点信息由 **！ rpcexts; Getendpointinfo** 扩展或 DbgRpc 显示。
 
-如果指定终结点号，则会显示有关该终结点的信息。 如果省略，将显示在系统上的所有进程的终结点。
+如果指定了终结点号，则显示有关该终结点的信息。 如果省略此方法，则显示系统上所有进程的终结点。
 
-以下示例显示的所有终结点。 这通常是有用的方式来获取进程 Id 和单元格可用作其他命令的参数的数字：
+下面的示例显示所有终结点。 这通常是获取进程 Id 和单元格编号的有用方法，可用作其他命令的参数：
 
 ```console
 D:\wmsg>dbgrpc -e
@@ -68,9 +67,9 @@ Searching for endpoint info ...
 030c 0000.0001 01           LRPC OLE12
 ```
 
-可选参数的详细信息，请参阅[ **DbgRpc 命令行选项**](dbgrpc-command-line-options.md)。
+有关可选参数的详细信息，请参阅 [**DbgRpc Command-Line Options**](dbgrpc-command-line-options.md)。
 
-有关使用 RPC 的类似示例调试器扩展，请参阅[ **！ rpcexts.getendpointinfo**](-rpcexts-getendpointinfo.md)。
+有关使用 RPC 调试器扩展的类似示例，请参阅 [**！ rpcexts. getendpointinfo**](-rpcexts-getendpointinfo.md)。
 
  
 

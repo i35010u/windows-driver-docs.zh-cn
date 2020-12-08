@@ -1,15 +1,14 @@
 ---
 title: Windows 98 核心组件
 description: Windows 98 核心组件
-ms.assetid: 59e2c077-c6f5-4965-891b-4601623ca47b
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d32b49806477a1b3dcf10cb6bccd73b20a4421cd
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: aef58338075ff87e0a526878867c5deab894666f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380184"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96826343"
 ---
 # <a name="windows-98-core-components"></a>Windows 98 核心组件
 
@@ -17,15 +16,15 @@ ms.locfileid: "63380184"
 
 
 
-MIcrosoft Windows 98 上仍的图像核心组件是在下图中所示。
+在 MIcrosoft Windows 98 上，静止图像核心组件如下图所示。
 
-![说明 windows 98 核心组件的关系图](images/stiwin98.png)
+![阐释 windows 98 core 组件的示意图](images/stiwin98.png)
 
-三个核心组件与服务器端的通信*sti.dll*: *stimon.exe*， *sti\_ci.dll*，和*sticpl.cpl*. 这些组件分别是静止图像事件监视器，类安装程序中和扫描仪和照相机控制面板应用程序。 *Sti\_ci.dll*仅当安装或删除，新的静态图像设备时，才调用并*sticpl.cpl*调用仅来执行配置零碎工作。
+在服务器端，三个核心组件与 *sti.dll* 进行通信： *stimon.exe*、 *sti \_ci.dll* 和 *sticpl.cpl*。 这些组件分别为静止图像事件监视器、类安装程序和扫描仪和照相机控制面板应用程序。 仅当安装或删除了新的静止映像设备，并且调用 *sticpl.cpl* 时才会调用 *Sti \_ci.dll* 。
 
-*Stimon.exe*处理事件，并与通信*sti.dll*，这反过来与其中一个进行通信或更多用户模式下仍图像 USD1、 USD2 和在此图左侧 USD3 标记为驱动程序 (USDs)。 每个用户模式驱动程序与一种类型的内核模式驱动程序，具体取决于设备的总线连接进行通信。 对于 USB 设备，用户模式下仍映像驱动程序与进行通信*usbscn9x.sys*复合 usb 设备并*usbscan.sys* noncomposite usb 设备的; 对于 SCSI 设备，用户模式驱动程序两个通信*scsiscan.sys*并*scsimap.sys*。
+*Stimon.exe* 处理事件并与 *sti.dll* 通信，后者又与一个或多个用户模式的静止映像驱动程序 (USDs) ，该驱动程序在此图的左侧标记为 USD1、USD2 和 USD3。 每个用户模式驱动程序都与一种类型的内核模式驱动程序通信，具体取决于设备的总线连接。 对于 USB 设备，用户模式静止映像驱动程序与 noncomposite usb 设备的复合 usb 设备和 *usbscan.sys* 的 *usbscn9x.sys* 通信;对于 SCSI 设备，用户模式驱动程序与 *scsiscan.sys* 和 *scsimap.sys* 通信。
 
-在客户端应用程序端，IHV 必须提供 TWAIN 数据源，为上图中所示*vendor.ds*，此组件有通用名称。 TWAIN 数据源组成部分 TWAIN 扫描体系结构，并与实例进行通信*sti.dll*客户端上。 依次*sti.dll*与用户模式下仍映像驱动程序进行通信 (USD1 图中的)，这与前面所述的内核模式驱动因素之一进行通信。
+在客户端应用程序端，IHV 必须提供一个 TWAIN 数据源，该数据源在上图中显示为 " *供应商 ds*"，这是此组件的通用名称。 TWAIN 数据源是 TWAIN 扫描体系结构的一个组件，可与客户端上 *sti.dll* 的实例进行通信。 接下来， *sti.dll* 与 (USD1) 中的用户模式静止映像驱动程序通信，该驱动程序与前面讨论过的某个内核模式驱动程序通信。
 
  
 

@@ -1,7 +1,6 @@
 ---
 title: prcb
-description: Prcb 扩展显示处理器控制块 (PRCB)。
-ms.assetid: 747695a1-8a5d-4d30-9315-91f4bf7f568e
+description: Prcb 扩展显示处理器控制块 (PRCB) 。
 keywords:
 - 处理器控制块
 - prcb Windows 调试
@@ -13,27 +12,27 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 3ebc3a1ec42dcc84e3047046db859698fdaed04e
-ms.sourcegitcommit: 424c435700d8f8a85bdaa83e8ddaab9568c8d347
+ms.openlocfilehash: b67f10f8bd2f3d81553bec741d2fab8f0c7ec926
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/26/2019
-ms.locfileid: "70025180"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96824733"
 ---
 # <a name="prcb"></a>!prcb
 
 
-**! Prcb** extension 显示处理器控制块 (prcb)。
+**！ Prcb** 扩展显示处理器控制块 (prcb) 。
 
 ```dbgcmd
 !prcb [Processor]
 ```
 
-## <a name="span-idddk__prcb_dbgspanspan-idddk__prcb_dbgspanparameters"></a><span id="ddk__prcb_dbg"></span><span id="DDK__PRCB_DBG"></span>Parameters
+## <a name="span-idddk__prcb_dbgspanspan-idddk__prcb_dbgspanparameters"></a><span id="ddk__prcb_dbg"></span><span id="DDK__PRCB_DBG"></span>参数
 
 
 <span id="_______Processor______"></span><span id="_______processor______"></span><span id="_______PROCESSOR______"></span>*处理器*   
-指定要从中检索 PRCB 信息的处理器。 如果省略了*processor* , 将使用处理器零。
+指定要从中检索 PRCB 信息的处理器。 如果省略了 *processor* ，将使用处理器零。
 
 ### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
@@ -48,8 +47,8 @@ ms.locfileid: "70025180"
 <td align="left"><p>不可用</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>Windows XP 和更高版本</strong></p></td>
-<td align="left"><p>Kdexts</p></td>
+<td align="left"><p><strong>Windows XP 及更高版本</strong></p></td>
+<td align="left"><p>Kdexts.dll</p></td>
 </tr>
 </tbody>
 </table>
@@ -58,14 +57,14 @@ ms.locfileid: "70025180"
 
 ### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>附加信息
 
-有关 PCR 和 PRCB 的信息, 请参阅*Microsoft Windows 内部机制*, 标记为 Russinovich 和 David 所罗门群岛。
+有关 PCR 和 PRCB 的信息，请参阅 *Microsoft Windows 内部机制*，标记为 Russinovich 和 David 所罗门群岛。
 
 <a name="remarks"></a>备注
 -------
 
-PRCB 是处理器控件区域 (PCR) 的扩展。 若要显示 PCR, 请使用[ **! PCR**](-pcr.md)扩展。
+PRCB 是)  (PCR 的处理器控件区域的扩展。 若要显示 PCR，请使用 [**！ PCR**](-pcr.md) 扩展。
 
-下面是一个示例：
+以下是示例：
 
 ```dbgcmd
 kd> !prcb

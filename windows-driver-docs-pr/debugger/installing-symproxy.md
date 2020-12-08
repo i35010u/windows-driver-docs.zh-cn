@@ -1,17 +1,16 @@
 ---
 title: 安装 SymProxy
 description: 安装 SymProxy
-ms.assetid: 63633de7-d254-415d-bf06-c0e81bd03e74
 keywords:
 - SymProxy，安装
 ms.date: 03/12/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: c6dd0cf6482859cc70869e434079e54245c5dc09
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 1eb125994e56fbee51034bb7e9f4659f095bbca0
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89216660"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96825797"
 ---
 # <a name="installing-symproxy"></a>安装 SymProxy
 

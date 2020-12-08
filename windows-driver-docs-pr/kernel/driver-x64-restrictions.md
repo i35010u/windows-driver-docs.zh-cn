@@ -1,15 +1,14 @@
 ---
 title: x64 驱动程序的限制
 description: x64 驱动程序的限制
-ms.assetid: 717ca559-93aa-48d6-8347-bfdf223f1aa4
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 8ce34a78e62dc69e47e4f0c6f4345c5bec2f3191
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: eaebe5a2c4cd1db775169301c8eda798fab451d5
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91734259"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96825889"
 ---
 # <a name="driver-x64-restrictions"></a>x64 驱动程序的限制
 

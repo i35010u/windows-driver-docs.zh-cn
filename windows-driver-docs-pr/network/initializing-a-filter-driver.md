@@ -1,19 +1,18 @@
 ---
 title: 初始化筛选器驱动程序
 description: 初始化筛选器驱动程序
-ms.assetid: e24b18b5-76d3-4d56-bf60-0dea91ba014e
 keywords:
 - 筛选器驱动程序 WDK 网络，初始化
 - NDIS 筛选器驱动程序 WDK，初始化
 - 初始化筛选器驱动程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bdb5ec22cf0e619f4cc93c440100855906503e0e
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 5091a25de2bd8a92f3914471932eecba13402359
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89210729"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96825481"
 ---
 # <a name="initializing-a-filter-driver"></a>初始化筛选器驱动程序
 
@@ -35,7 +34,7 @@ ms.locfileid: "89210729"
 
 筛选器驱动程序在将 NDIS 注册为筛选器驱动程序时，会将驱动程序对象传递给 [NdisFRegisterFilterDriver](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfregisterfilterdriver) 函数。 驱动程序可以使用注册表路径获取配置信息。 有关如何访问筛选器驱动程序配置信息的详细信息，请参阅 [访问筛选器驱动程序的配置信息](accessing-configuration-information-for-a-filter-driver.md)。
 
-筛选器驱动程序从其**DriverEntry**例程调用**NdisFRegisterFilterDriver** 。 筛选器驱动程序通过将[**NDIS \_ 筛选器 \_ 驱动程序 \_ 特征**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_filter_driver_characteristics)结构传递到*FilterCharacteristics*参数的**NdisFRegisterFilterDriver** ，来导出一组*FilterXxx*函数。
+筛选器驱动程序从其 **DriverEntry** 例程调用 **NdisFRegisterFilterDriver** 。 筛选器驱动程序通过将 [**NDIS \_ 筛选器 \_ 驱动程序 \_ 特征**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_filter_driver_characteristics)结构传递到 *FilterCharacteristics* 参数的 **NdisFRegisterFilterDriver** ，来导出一组 *FilterXxx* 函数。
 
 NDIS \_ 筛选器 \_ 驱动程序 \_ 特征结构指定必需的和可选的 *FilterXxx* 函数的入口点。 某些可选函数可以绕过。 有关跳过函数的详细信息，请参阅 [数据绕过模式](data-bypass-mode.md)。
 
@@ -79,15 +78,15 @@ NDIS \_ 筛选器 \_ 驱动程序 \_ 特征结构指定这些可选的默认入�
 
 [*FilterReceiveNetBufferLists*](/windows-hardware/drivers/ddi/ndis/nc-ndis-filter_receive_net_buffer_lists)
 
-前面的四个函数也在 [**NDIS \_ 筛选器 \_ 分部 \_ 特征**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_filter_partial_characteristics) 结构中定义。 此结构通过从[*FilterSetModuleOptions*](/windows-hardware/drivers/ddi/ndis/nc-ndis-filter_set_module_options)函数调用[**NdisSetOptionalHandlers**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndissetoptionalhandlers)函数来指定可在运行时更改的函数。 如果筛选器驱动程序将在运行时更改这些部分特征，则必须提供 *FilterSetModuleOptions*的入口点。 每个筛选器模块的部分特性可能不同。 有关详细信息，请参阅 [启动筛选器模块](starting-a-filter-module.md)。
+前面的四个函数也在 [**NDIS \_ 筛选器 \_ 分部 \_ 特征**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_filter_partial_characteristics) 结构中定义。 此结构通过从 [*FilterSetModuleOptions*](/windows-hardware/drivers/ddi/ndis/nc-ndis-filter_set_module_options)函数调用 [**NdisSetOptionalHandlers**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndissetoptionalhandlers)函数来指定可在运行时更改的函数。 如果筛选器驱动程序将在运行时更改这些部分特征，则必须提供 *FilterSetModuleOptions* 的入口点。 每个筛选器模块的部分特性可能不同。 有关详细信息，请参阅 [启动筛选器模块](starting-a-filter-module.md)。
 
-NDIS 在对**NdisFRegisterFilterDriver**的调用的上下文中调用*FilterSetOptions*函数。 *FilterSetOptions* 向 NDIS 注册可选服务。 有关详细信息，请参阅 [配置可选筛选器驱动程序服务](configuring-optional-filter-driver-services.md)。
+NDIS 在对 **NdisFRegisterFilterDriver** 的调用的上下文中调用 *FilterSetOptions* 函数。 *FilterSetOptions* 向 NDIS 注册可选服务。 有关详细信息，请参阅 [配置可选筛选器驱动程序服务](configuring-optional-filter-driver-services.md)。
 
-如果对 **NdisFRegisterFilterDriver** 的调用成功，NDIS 将使用筛选器驱动程序句柄填充 *NdisFilterDriverHandle* 中的变量。 筛选器驱动程序将保存此句柄，稍后将此句柄传递给需要筛选器驱动程序句柄作为输入参数的 NDIS 函数（如 [**NdisFDeregisterFilterDriver**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfderegisterfilterdriver)）。 卸载驱动程序时，必须调用 **NdisFDeregisterFilterDriver** 函数来释放由 **NdisFRegisterFilterDriver**分配的驱动程序资源。
+如果对 **NdisFRegisterFilterDriver** 的调用成功，NDIS 将使用筛选器驱动程序句柄填充 *NdisFilterDriverHandle* 中的变量。 筛选器驱动程序将保存此句柄，稍后将此句柄传递给需要筛选器驱动程序句柄作为输入参数的 NDIS 函数（如 [**NdisFDeregisterFilterDriver**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfderegisterfilterdriver)）。 卸载驱动程序时，必须调用 **NdisFDeregisterFilterDriver** 函数来释放由 **NdisFRegisterFilterDriver** 分配的驱动程序资源。
 
-*FilterSetOptions*返回后，筛选器模块处于*分离*状态。 调用*FilterSetOptions*后，NDIS 可以随时调用筛选器驱动程序的[*FilterAttach*](/windows-hardware/drivers/ddi/ndis/nc-ndis-filter_attach)函数。 驱动程序在 *FilterAttach* 函数中执行筛选器模块特定的初始化。 有关将筛选器模块附加到驱动程序堆栈的详细信息，请参阅 [附加筛选器模块](attaching-a-filter-module.md)。
+*FilterSetOptions* 返回后，筛选器模块处于 *分离* 状态。 调用 *FilterSetOptions* 后，NDIS 可以随时调用筛选器驱动程序的 [*FilterAttach*](/windows-hardware/drivers/ddi/ndis/nc-ndis-filter_attach)函数。 驱动程序在 *FilterAttach* 函数中执行筛选器模块特定的初始化。 有关将筛选器模块附加到驱动程序堆栈的详细信息，请参阅 [附加筛选器模块](attaching-a-filter-module.md)。
 
-筛选器驱动程序还会执行它在 **DriverEntry**中所需的任何其他特定于驱动程序的初始化。 筛选器驱动程序必须释放它在 [*FilterDriverUnload*](./unloading-a-filter-driver.md) 例程中分配的特定于驱动程序的资源。 有关详细信息，请参阅 [卸载筛选器驱动程序](unloading-a-filter-driver.md)。
+筛选器驱动程序还会执行它在 **DriverEntry** 中所需的任何其他特定于驱动程序的初始化。 筛选器驱动程序必须释放它在 [*FilterDriverUnload*](./unloading-a-filter-driver.md) 例程中分配的特定于驱动程序的资源。 有关详细信息，请参阅 [卸载筛选器驱动程序](unloading-a-filter-driver.md)。
 
  
 

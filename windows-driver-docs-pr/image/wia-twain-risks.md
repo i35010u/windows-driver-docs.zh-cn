@@ -1,15 +1,14 @@
 ---
 title: WIA-TWAIN 风险
 description: WIA-TWAIN 风险
-ms.assetid: f202a0f6-ceec-4658-a499-b3024f6ebb71
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 774d388ee053b773282a336ee6cac4bf0aebdc59
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 75b0334a8ff41a82648a043d12b6eaadd1a7e9c4
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89191189"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96826371"
 ---
 # <a name="wia-twain-risks"></a>WIA-TWAIN 风险
 
@@ -27,7 +26,7 @@ ms.locfileid: "89191189"
 
 当你编写驱动程序时，请验证传入值，以便仅将有效数据发送到设备。
 
-若要在使用 **IStiUSD：： escape**时正确验证顺序，请参阅 [使用 IStiUSD 转义方法](using-the-istiusd-escape-method.md)。 有关正确锁定的其他信息，请参阅 [锁定和解锁最佳实践](locking-and-unlocking-best-practices.md)。
+若要在使用 **IStiUSD：： escape** 时正确验证顺序，请参阅 [使用 IStiUSD 转义方法](using-the-istiusd-escape-method.md)。 有关正确锁定的其他信息，请参阅 [锁定和解锁最佳实践](locking-and-unlocking-best-practices.md)。
 
  
 

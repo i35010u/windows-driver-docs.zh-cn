@@ -1,7 +1,6 @@
 ---
 title: 'ForwardedAtBadIrqlFsdAsync 规则 (wdm) '
 description: ForwardedAtBadIrqlFsdAsync 规则指定驱动程序调用 IoCallDriver 和 PoCallDriver \_ ，除非要转发的 irp 主要函数代码是以下 irp \_ MJ \_ POWERIRP \_ mj \_ READIRP \_ mj \_ WRITEIRP mj \_ \_ DEVICE \_ CONTROLIRP \_ mj \_ 内部 \_ 设备 \_ 控件之一。
-ms.assetid: 9961AE5F-0B36-4E04-A349-CA0461B3E3DC
 ms.date: 05/21/2018
 keywords:
 - 'ForwardedAtBadIrqlFsdAsync 规则 (wdm) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 08ac52ee4f7efd1be349c0f6d155463ec44401d8
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: d3afdbd60858328880e66f6196f64ee52023e663
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90105732"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96826077"
 ---
 # <a name="forwardedatbadirqlfsdasync-rule-wdm"></a>ForwardedAtBadIrqlFsdAsync 规则 (wdm) 
 
 
-**ForwardedAtBadIrqlFsdAsync**规则指定驱动程序调用[**IoCallDriver**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iocalldriver)和[**PoCallDriver**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-pocalldriver) &lt; \_ ，除非要转发的 IRP 主要函数代码是以下项之一：
+**ForwardedAtBadIrqlFsdAsync** 规则指定驱动程序调用 [**IoCallDriver**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iocalldriver)和 [**PoCallDriver**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-pocalldriver) &lt; \_ ，除非要转发的 IRP 主要函数代码是以下项之一：
 
 -   [**IRP \_ MJ \_ POWER**](../kernel/irp-mj-power.md)
 -   [**IRP \_ MJ \_ 读取**](../kernel/irp-mj-read.md)

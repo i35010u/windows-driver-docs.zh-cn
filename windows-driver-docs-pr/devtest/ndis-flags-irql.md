@@ -1,7 +1,6 @@
 ---
 title: '标记 \_ Irql 规则 (ndis) '
 description: Flags \_ Irql 规则指定不能在具有指示当前 Irql 的调度级别标志参数的回调函数中调用 KeGetCurrentIrql。
-ms.assetid: 19c5c497-9648-4be9-87d1-82f4fa295351
 ms.date: 05/21/2018
 keywords:
 - 'Flags_Irql 规则 (ndis) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 08f5748f9c50102d9237bfc4ed12df700fcf1bc0
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: d561ceeea01c71b21059b2e348c5a324a0b12a2d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90102218"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96824615"
 ---
 # <a name="flags_irql-rule-ndis"></a>标记 \_ Irql 规则 (ndis) 
 
 
-**Flags \_ Irql**规则指定不能在具有指示当前 Irql 的调度级别标志参数的回调函数中调用**KeGetCurrentIrql** 。
+**Flags \_ Irql** 规则指定不能在具有指示当前 Irql 的调度级别标志参数的回调函数中调用 **KeGetCurrentIrql** 。
 
 正确使用派单级别标志可帮助避免不必要的设置 IRQL 的尝试。 有关如何使用此标志的详细信息，请参阅 [调度 IRQL 跟踪](../network/dispatch-irql-tracking.md)。
 

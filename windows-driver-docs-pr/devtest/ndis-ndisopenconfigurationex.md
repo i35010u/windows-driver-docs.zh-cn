@@ -1,7 +1,6 @@
 ---
 title: 'NdisOpenConfigurationEx 规则 (ndis) '
 description: 此规则检查是否按替代顺序调用 NdisOpenConfigurationEx 和 NdisCloseConfiguration。 最终的目标是确保在 MiniportHaltEx 退出后关闭配置句柄。
-ms.assetid: 3E23D8AE-5EBC-4C2F-9EE3-42718D86B97C
 ms.date: 05/21/2018
 keywords:
 - 'NdisOpenConfigurationEx 规则 (ndis) '
@@ -12,12 +11,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: baa132ac096ae07f14b066fd2ce676b8e77c9457
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 1d7cc929e9ad0d697b0bdeb63ca6b27acaab8227
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90106076"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96824607"
 ---
 # <a name="ndisopenconfigurationex-rule-ndis"></a>NdisOpenConfigurationEx 规则 (ndis) 
 

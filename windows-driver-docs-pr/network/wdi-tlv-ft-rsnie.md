@@ -1,22 +1,21 @@
 ---
 title: WDI_TLV_FT_RSNIE
-description: WDI_TLV_FT_RSNIE 是 TLV 包含快速转换 RSN IE 字节 blob。
-ms.assetid: 1EB22517-472C-461D-A32F-175E4281FFF0
+description: WDI_TLV_FT_RSNIE 是包含快速转换 RSN IE 字节 blob 的 TLV。
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 WDI_TLV_FT_RSNIE 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: d612a3f89611a7eb266efa4231de65042cca2a22
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ac1151b6fc53cbc5ff98b767548e9a0d74b90c22
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63329720"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96825371"
 ---
-# <a name="wditlvftrsnie"></a>WDI\_TLV\_FT\_RSNIE
+# <a name="wdi_tlv_ft_rsnie"></a>WDI \_ TLV \_ FT \_ RSNIE
 
 
-WDI\_TLV\_FT\_RSNIE 是 TLV 包含快速转换 RSN IE 字节 blob。
+WDI \_ tlv \_ FT \_ RSNIE 是一个 tlv，其中包含快速转换 RSN IE 字节 blob。
 
 ## <a name="tlv-type"></a>TLV 类型
 
@@ -26,14 +25,14 @@ WDI\_TLV\_FT\_RSNIE 是 TLV 包含快速转换 RSN IE 字节 blob。
 ## <a name="length"></a>长度
 
 
-UINT8 元素的数组大小 （以字节为单位）。 该数组必须包含一个或多个元素。
+UINT8 元素数组的大小 (以字节为单位) 。 数组必须包含1个或多个元素。
 
 ## <a name="values"></a>值
 
 
-| 在任务栏的搜索框中键入      | 描述                                                                    |
+| 类型      | 描述                                                                    |
 |-----------|--------------------------------------------------------------------------------|
-| UINT8\[\] | UINT8 元素数组，其中包含快速转换 RSN IE 字节 blob。 |
+| UINT8\[\] | 包含快速转换 RSN IE 字节 blob 的 UINT8 元素数组。 |
 
  
 
@@ -52,10 +51,10 @@ UINT8 元素的数组大小 （以字节为单位）。 该数组必须包含一
 </tr>
 <tr class="even">
 <td><p>最低受支持的服务器</p></td>
-<td><p>Windows Server 2016</p></td>
+<td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
-<td><p>Header</p></td>
+<td><p>标头</p></td>
 <td>Wditypes.hpp</td>
 </tr>
 </tbody>

@@ -1,9 +1,8 @@
 ---
 title: .help（元命令帮助）
-description: .Help 获取命令显示所有元命令的列表。
-ms.assetid: aafd873d-3280-4873-8149-d43f684ec01d
+description: "\"Help\" 命令显示所有元命令的列表。"
 keywords:
-- .help 获取 （元命令帮助） Windows 调试
+- 。帮助 (的元命令帮助) Windows 调试
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,28 +11,28 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: f47a0059d6bee0a90afceaeb02e4b3ef93f6b927
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0d03127c47ab914822d80300e3c4e01420548341
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63336508"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96825855"
 ---
 # <a name="help-meta-command-help"></a>.help（元命令帮助）
 
 
-**.Help 获取**命令显示所有元命令的列表。
+" **Help** " 命令显示所有元命令的列表。
 
 ```dbgcmd
 .help
 .help /D 
 ```
 
-## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>参数
+## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>Parameters
 
 
-<span id="________D"></span><span id="________d"></span> **/D**  
-显示使用的输出[调试器标记语言](debugger-markup-language-commands.md)。 输出包含链接，可以单击要查看特定的字母开头，仅可用元命令的列表。
+<span id="________D"></span><span id="________d"></span>**/D**  
+使用 [调试器标记语言](debugger-markup-language-commands.md)显示输出。 输出包含链接的列表，您可以单击这些链接以查看使用特定字母仅的元命令。
 
 ## <span id="ddk_meta_meta_command_help_dbg"></span><span id="DDK_META_META_COMMAND_HELP_DBG"></span>
 
@@ -48,11 +47,11 @@ ms.locfileid: "63336508"
 <tbody>
 <tr class="odd">
 <td align="left"><p>模式</p></td>
-<td align="left"><p>用户模式下，内核模式</p></td>
+<td align="left"><p>用户模式，内核模式</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>目标</p></td>
-<td align="left"><p>实时、 崩溃转储</p></td>
+<td align="left"><p>实时，故障转储</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>平台</p></td>
@@ -66,7 +65,7 @@ ms.locfileid: "63336508"
 <a name="remarks"></a>备注
 -------
 
-有关元命令的详细信息，请使用 **.help 获取**命令。 有关标准命令的详细信息，请使用[ **？**](---command-help-.md) 命令。 有关扩展命令的详细信息，请使用[ **！ 帮助**](-help.md)扩展。
+有关元命令的详细信息，请使用 **. help** 命令。 有关标准命令的详细信息，请使用 [ **？**](---command-help-.md) 。 有关扩展命令的详细信息，请使用 [**！帮助**](-help.md) 扩展。
 
  
 

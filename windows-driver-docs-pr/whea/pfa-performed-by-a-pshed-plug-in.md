@@ -1,7 +1,6 @@
 ---
 title: 由 PSHED 插件执行的 PFA
 description: 由 PSHED 插件执行的 PFA
-ms.assetid: e9876c86-b059-406f-a01a-7670ab294098
 keywords:
 - 预测性故障分析 (PFA) WDK WHEA、PSHED 插件
 - PFA WDK WHEA，PSHED 插件
@@ -11,12 +10,12 @@ keywords:
 - PSHED 插件 WDK WHEA、预测性故障分析
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: dc11b4a7a08daa28affefc3fc9377a212bed2169
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: 4de4f2fdbeeddb59341f68d78005f1ac9fe12100
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91732953"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96826191"
 ---
 # <a name="pfa-performed-by-a-pshed-plug-in"></a>由 PSHED 插件执行的 PFA
 
@@ -29,7 +28,7 @@ ms.locfileid: "91732953"
 
 出现 ECC 内存错误时，WHEA 和插件执行以下步骤：
 
-1.   (*LLHEH*) 的*低级硬件错误处理程序*将收到有关内存错误情况的通知。
+1.   (*LLHEH*) 的 *低级硬件错误处理程序* 将收到有关内存错误情况的通知。
 
 2.  LLHEH 检索来自错误源的内存错误的相关信息，并使用错误数据来完成硬件错误数据包。 此数据包的格式为 [WHEA \_ 错误 \_ 数据包](/previous-versions/windows/hardware/drivers/ff560465(v=vs.85)) 结构。
 
@@ -45,10 +44,10 @@ ms.locfileid: "91732953"
 
 8.  如果 PSHED 插件正在 ECC 内存页上执行 PFA，则必须执行以下操作：
 
-    -   设置[WHEA \_ 错误 \_ 数据包](/previous-versions/windows/hardware/drivers/ff560465(v=vs.85))结构的[**WHEA \_ 错误 \_ 数据包 \_ 标志**](/windows-hardware/drivers/ddi/ntddk/ns-ntddk-_whea_error_packet_flags)成员中的**PlatformPfaControl**位。 如果设置了此位，WHEA 不再负责该内存页上的 PFA。
-    -   如果该插件确定遇到错误的 ECC 内存页应脱机，请设置[**WHEA \_ 错误 \_ 数据包 \_ 标志**](/windows-hardware/drivers/ddi/ntddk/ns-ntddk-_whea_error_packet_flags)成员中的**PlatformDirectedOffline**位。 如果设置了此位，WHEA 将尝试使 "内存页" 脱机。
+    -   设置 [WHEA \_ 错误 \_ 数据包](/previous-versions/windows/hardware/drivers/ff560465(v=vs.85))结构的 [**WHEA \_ 错误 \_ 数据包 \_ 标志**](/windows-hardware/drivers/ddi/ntddk/ns-ntddk-_whea_error_packet_flags)成员中的 **PlatformPfaControl** 位。 如果设置了此位，WHEA 不再负责该内存页上的 PFA。
+    -   如果该插件确定遇到错误的 ECC 内存页应脱机，请设置 [**WHEA \_ 错误 \_ 数据包 \_ 标志**](/windows-hardware/drivers/ddi/ntddk/ns-ntddk-_whea_error_packet_flags)成员中的 **PlatformDirectedOffline** 位。 如果设置了此位，WHEA 将尝试使 "内存页" 脱机。
 
-    否则，PSHED 插件必须清除[WHEA \_ 错误 \_ 数据包](/previous-versions/windows/hardware/drivers/ff560465(v=vs.85))结构的[**WHEA \_ 错误 \_ 数据包 \_ 标志**](/windows-hardware/drivers/ddi/ntddk/ns-ntddk-_whea_error_packet_flags)成员中的**PlatformPfaControl**和**PlatformDirectedOffline**位。
+    否则，PSHED 插件必须清除 [WHEA \_ 错误 \_ 数据包](/previous-versions/windows/hardware/drivers/ff560465(v=vs.85))结构的 [**WHEA \_ 错误 \_ 数据包 \_ 标志**](/windows-hardware/drivers/ddi/ntddk/ns-ntddk-_whea_error_packet_flags)成员中的 **PlatformPfaControl** 和 **PlatformDirectedOffline** 位。
 
     **注意**  如果清除 **PlatformPfaControl** 位，WHEA 将执行 PFA （如果配置为执行此操作），并确定遇到错误的 ECC 内存页是否应脱机。 有关此过程的详细信息，请参阅 [WHEA 执行的 PFA](pfa-performed-by-whea.md)。
 

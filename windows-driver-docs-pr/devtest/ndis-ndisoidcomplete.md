@@ -1,7 +1,6 @@
 ---
 title: 'NdisOidComplete 规则 (ndis) '
 description: NdisOidComplete 规则验证 NDIS 微型端口驱动程序是否正确完成了 OID。
-ms.assetid: 344DECA8-F72A-4962-80D0-DDC648A4FC21
 ms.date: 05/21/2018
 keywords:
 - 'NdisOidComplete 规则 (ndis) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: d2bfbdbcfcadb9e6f4b99aa9f397df620c508d4d
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 1da3cf01e66be062c623de2d42e5fc7e4dc66852
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90101590"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96826093"
 ---
 # <a name="ndisoidcomplete-rule-ndis"></a>NdisOidComplete 规则 (ndis) 
 
 
-**NdisOidComplete**规则验证 NDIS 微型端口驱动程序是否正确完成了 OID。
+**NdisOidComplete** 规则验证 NDIS 微型端口驱动程序是否正确完成了 OID。
 
 微型端口驱动程序必须用允许的 NTSTATUS 值完成 OID 请求操作。
 

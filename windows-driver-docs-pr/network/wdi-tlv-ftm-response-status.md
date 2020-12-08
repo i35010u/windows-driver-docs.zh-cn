@@ -1,18 +1,17 @@
 ---
 title: WDI_TLV_FTM_RESPONSE_STATUS
 description: WDI_TLV_FTM_RESPONSE_STATUS 是一种 TLV，其中包含从目标 BSS (INTERNAL.H) 响应状态的精细计时度量值。
-ms.assetid: 49C3759C-3F3F-4C2D-863E-28227ED323BA
 ms.date: 02/15/2019
 keywords:
 - 从 Windows Vista 开始 WDI_TLV_FTM_RESPONSE_STATUS 网络驱动程序
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 45b8e72c51e3b4f1c79a9b3ad49e9dce723db01d
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 0ac738499c8f612222395bb7b793e263c4f58659
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89209613"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96825351"
 ---
 # <a name="wdi_tlv_ftm_response_status"></a>WDI_TLV_FTM_RESPONSE_STATUS
 
@@ -24,13 +23,13 @@ ms.locfileid: "89209613"
 
 0x159
 
-## <a name="length"></a>Length
+## <a name="length"></a>长度
 
 UINT32) 的大小 (以字节为单位）。
 
 ## <a name="values"></a>值
 
-| 类型 | 说明 |
+| 类型 | 描述 |
 | --- | --- |
 | [**WDI_FTM_RESPONSE_STATUS**](/windows-hardware/drivers/ddi/wditypes/ne-wditypes-_wdi_ftm_response_status) | INTERNAL.H 响应状态。 |
 

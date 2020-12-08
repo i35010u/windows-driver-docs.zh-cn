@@ -1,7 +1,6 @@
 ---
 title: COPPQueryStatus 函数
 description: 示例 COPPQueryStatus 函数检索与 COPP DirectX VA 设备关联的受保护视频会话的状态。
-ms.assetid: c2265df7-8b60-4a14-b7dc-ee227ad062dc
 keywords:
 - 复制保护 WDK COPP，视频微型端口驱动程序代码模板
 - 视频复制保护 WDK COPP，视频微型端口驱动程序代码模板
@@ -9,12 +8,12 @@ keywords:
 - 视频微型端口驱动程序 WDK Windows 2000，COPP 代码模板
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ef7ba2580ec60903c9398d4112493bb60ea3d6e1
-ms.sourcegitcommit: df50dc10210c124f2c7fb173d6e4fb796f56e5bd
+ms.openlocfilehash: e53311f2a8adb1aa269c6b97475e84c0beac20f5
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86949722"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96826067"
 ---
 # <a name="coppquerystatus-function"></a>COPPQueryStatus 函数
 
@@ -46,11 +45,11 @@ HRESULT COPPQueryStatus(
 
 ## <a name="return-value"></a>返回值
 
-如果成功，则返回零（S_OK 或 DD_OK）;否则，将返回错误代码。
+如果成功，则返回零 (S_OK 或 DD_OK) ;否则，将返回错误代码。
 
 ## <a name="remarks"></a>备注
 
-在关联的 COPP DirectX VA 设备收到对其 COPPQueryStatus 函数的调用之前，视频会话应设置为 "保护模式" （即，它应为 "活动"）。 也就是说，应在 COPPQueryStatus 之前调用 COPPSequenceStart 函数。 如果在 COPPSequenceStart 之前调用 COPPQueryStatus，则 COPPQueryStatus 应返回 E_UNEXPECTED。
+视频会话应设置为 "保护模式" (即，在关联的 COPP DirectX VA 设备收到对其 COPPQueryStatus 函数的调用之前，该会话应) 处于活动状态。 也就是说，应在 COPPQueryStatus 之前调用 COPPSequenceStart 函数。 如果在 COPPSequenceStart 之前调用 COPPQueryStatus，则 COPPQueryStatus 应返回 E_UNEXPECTED。
 
 COPPQueryStatus 函数接收包含状态请求的 pInput 中填充的 DXVA_COPPStatusInput 结构。 COPPQueryStatus 函数处理请求，并在 pOutput 的 DXVA_COPPStatusOutput 结构中返回相应的状态。
 
@@ -62,11 +61,11 @@ COPPQueryStatus 函数接收包含状态请求的 pInput 中填充的 DXVA_COPPS
 
 按如下所示填充 DD_RENDERMOCOMPDATA 结构。
 
-| 成员 | 值 |
+| 成员 | “值” |
 | ------ | ----- |
 | dwNumBuffers | Zero。 |
 | lpBufferInfo | NULL。 |
-| dwFunction | DXVA_COPPQueryStatusFnCode 常量（在 DXVA 中定义）。 |
+| dwFunction | DXVA) 中定义 DXVA_COPPQueryStatusFnCode 常量 (。 |
 | lpInputData | 指向 DXVA_COPPStatusInput 结构的指针。 |
 | lpOutputData | 指向 DXVA_COPPStatusOutput 结构的指针。 |
 
@@ -171,4 +170,4 @@ COPPQueryStatus(
 
 | 目标平台 | 版本 |
 | -- | -- |
-| “桌面” | 此函数仅适用于 Windows Server 2003 SP1 及更高版本以及 Windows XP SP2 及更高版本。 |
+| 台式机 | 此函数仅适用于 Windows Server 2003 SP1 及更高版本以及 Windows XP SP2 及更高版本。 |

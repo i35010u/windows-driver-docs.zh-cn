@@ -1,16 +1,15 @@
 ---
 title: GUID_NDIS_GEN_PCI_DEVICE_CUSTOM_PROPERTIES
 description: WMI 客户端可以使用 GUID_NDIS_GEN_PCI_DEVICE_CUSTOM_PROPERTIES 方法 GUID 来确定当前链接状态。
-ms.assetid: a02b9049-e521-41df-ab4d-41e334ef779e
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 GUID_NDIS_GEN_PCI_DEVICE_CUSTOM_PROPERTIES 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 416389bd96136c5cc41e05b7f59bf6a4b46f9ad4
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 0c5824c74e0ae47af1b8fa1c344e85e7bc3f257d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89217636"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96825105"
 ---
 # <a name="guid_ndis_gen_pci_device_custom_properties"></a>GUID \_ NDIS \_ 生成 \_ PCI \_ 设备 \_ 自定义 \_ 属性
 
@@ -46,7 +45,7 @@ NDIS 返回的具有此 GUID 的数据缓冲区包含 [**ndis \_ PCI \_ 设备 \
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**NDIS \_ PCI \_ 设备 \_ 自定义 \_ 属性**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_pci_device_custom_properties)

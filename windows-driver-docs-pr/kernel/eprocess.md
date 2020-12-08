@@ -1,15 +1,14 @@
 ---
 title: Windows 内核不透明结构
 description: Windows 内核不透明结构
-ms.assetid: 4053d82e-78ae-4945-ad5b-44ba41229a5d
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: a60fb3fa94050b479eb11f4a93d0ac23298881f6
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 6b7f4a8a5fe9a3f7790407541aab5a02875bbfcc
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90107276"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96825645"
 ---
 # <a name="windows-kernel-opaque-structures"></a>Windows 内核不透明结构
 
@@ -24,7 +23,7 @@ ms.locfileid: "90107276"
 <thead>
 <tr class="header">
 <th>不透明结构</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>

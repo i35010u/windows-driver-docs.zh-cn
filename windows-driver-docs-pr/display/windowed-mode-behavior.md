@@ -1,17 +1,16 @@
 ---
 title: 窗口模式行为
 description: 窗口模式行为
-ms.assetid: a852b1d7-5722-4092-a5ff-338dbb2f77b3
 keywords:
 - 窗口模式旋转 WDK 显示
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1eb149d283b3499dcdd2a34bea9cddaec53d2165
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 5ca85e2ea666c6967d53143099c8b7b490945590
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89065972"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96826027"
 ---
 # <a name="windowed-mode-behavior"></a>窗口模式行为
 

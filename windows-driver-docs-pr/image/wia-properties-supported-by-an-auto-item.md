@@ -1,15 +1,14 @@
 ---
 title: 自动项支持的 WIA 属性
 description: 自动项支持的 WIA 属性
-ms.assetid: 71b3a9ea-e402-4be8-9c62-9463e2a10f27
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2377c96d3b92cb8e22edb4b333902b72bf3faca3
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 9805548f592c0d0733ca1c8779c8eb913f69ef82
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89187959"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96826475"
 ---
 # <a name="wia-properties-supported-by-an-auto-item"></a>自动项支持的 WIA 属性
 

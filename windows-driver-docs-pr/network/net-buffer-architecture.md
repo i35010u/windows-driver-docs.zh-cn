@@ -1,7 +1,6 @@
 ---
 title: NET_BUFFER 体系结构
 description: NET_BUFFER 体系结构
-ms.assetid: 97cddcd1-7242-4cc5-9af9-fe82a2ef995f
 keywords:
 - NET_BUFFER
 - 网络数据 WDK，管理
@@ -12,12 +11,12 @@ keywords:
 - 结构 WDK 网络
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 92be9189bdf19bcdf101fda78c6a13ba5e8e157b
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 2619f8ce96160849f31ccd580f50cf924de75382
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89210153"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96825453"
 ---
 # <a name="net_buffer-architecture"></a>网络 \_ 缓冲区体系结构
 

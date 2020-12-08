@@ -1,9 +1,8 @@
 ---
-title: WIA\_IP\_反转
-description: WIA\_IP\_反转属性保留供将来使用由 Microsoft 和未实现这一次。
-ms.assetid: c860f460-8390-431f-aaee-0eef7821a10c
+title: WIA \_ IP \_ 反转
+description: WIA \_ ip " \_ 反转" 属性由 Microsoft 保留以供将来使用，目前不会实现。
 keywords:
-- WIA_IPS_INVERT 成像设备
+- WIA_IPS_INVERT 图像设备
 topic_type:
 - apiref
 api_name:
@@ -14,31 +13,31 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 040e01de736ea0ab7e256d80956f5576c9dd2310
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 69fc7723698e8cb14175a0664b0a940d20c9526e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63348296"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96825979"
 ---
-# <a name="wiaipsinvert"></a>WIA\_IP\_反转
+# <a name="wia_ips_invert"></a>WIA \_ IP \_ 反转
 
 
-WIA\_IP\_反转属性保留供将来使用由 Microsoft 和未实现这一次。
+WIA \_ ip " \_ 反转" 属性由 Microsoft 保留以供将来使用，目前不会实现。
 
 ## <span id="ddk_wia_ips_invert_si"></span><span id="DDK_WIA_IPS_INVERT_SI"></span>
 
 
-属性类型：VT\_I4
+属性类型： VT \_ I4
 
-有效值：WIA\_PROP\_NONE
+有效值： WIA " \_ \_ 无"
 
 访问权限：只读
 
 <a name="remarks"></a>备注
 -------
 
-WIA\_IPS\_电影\_扫描\_模式属性不与相关[ **WIA\_IP\_方向**](wia-ips-orientation.md)。 WIA\_IPS\_方向描述要在与扫描的方向的关系; 与之相反，WIA 扫描的文档的方向\_IPS\_电影\_扫描\_模式描述要应用到图像后在扫描操作。
+WIA \_ ips \_ 胶片 \_ 扫描 \_ 模式属性与 [**WIA \_ ip \_ 方向**](wia-ips-orientation.md)无关。 WIA \_ ips \_ 方向说明要在与扫描方向之间进行扫描的文档方向; 相反，wia \_ ips \_ 胶片 \_ 扫描 \_ 模式描述了在扫描图像后要对其应用的操作。
 
 <a name="requirements"></a>要求
 ------------
@@ -50,12 +49,12 @@ WIA\_IPS\_电影\_扫描\_模式属性不与相关[ **WIA\_IP\_方向**](wia-ips
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Version</p></td>
-<td><p>在 Windows Vista 和更高版本操作系统中可用。</p></td>
+<td><p>版本</p></td>
+<td><p>在 Windows Vista 和更高版本的操作系统中可用。</p></td>
 </tr>
 <tr class="even">
-<td><p>Header</p></td>
-<td>Wiadef.h （包括 Wiadef.h）</td>
+<td><p>标头</p></td>
+<td>Wiadef (包含 Wiadef) </td>
 </tr>
 </tbody>
 </table>
@@ -63,7 +62,7 @@ WIA\_IPS\_电影\_扫描\_模式属性不与相关[ **WIA\_IP\_方向**](wia-ips
 ## <a name="see-also"></a>请参阅
 
 
-[**WIA\_IP\_方向**](wia-ips-orientation.md)
+[**WIA \_ IP \_ 方向**](wia-ips-orientation.md)
 
  
 

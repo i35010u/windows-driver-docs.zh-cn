@@ -1,22 +1,21 @@
 ---
 title: 支持符合多功能标准的电脑卡
 description: 支持符合多功能标准的电脑卡
-ms.assetid: 1ab295b6-42c9-46fc-97e0-2228e189ff37
 keywords:
 - PCMCIA 总线 WDK 多功能设备
 - mf.inf
 - 硬件 Id WDK 多功能设备
 - 子函数硬件 Id WDK 多功能设备
-- 系统提供多功能总线驱动程序 WDK
+- 系统提供的多功能总线驱动程序 WDK
 - mf.sys
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ecb53e8bceeb05b58c0bd6c9e901cfd414ea4aa0
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 26d68255eb4ab274e7e9d67521f180f663621f67
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63391437"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96825567"
 ---
 # <a name="supporting-pc-cards-that-conform-to-the-multifunction-standard"></a>支持符合多功能标准的电脑卡
 
@@ -24,39 +23,39 @@ ms.locfileid: "63391437"
 
 
 
-如果 16 位 ISA 样式 PC 卡设备完全实现 PC 卡多功能标准，并且是否正确，在基于 NT 的平台上的此类设备的供应商可以依赖于以下的系统提供组件，以处理的软件方面多功能语义：
+如果16位 ISA 样式的 PC 卡设备完全和正确地实现了 PC 卡多功能标准版，则基于 NT 的平台上此类设备的供应商可以依赖于以下系统提供的组件来处理多功能语义的软件方面：
 
--   多功能设备 INF 文件。 （系统提供）
+-   多功能设备的 INF 文件。  (系统提供的) 
 
-    PCMCIA 总线驱动程序指定要使用系统提供多功能 INF 文件 (mf.inf) 来配置设备的配置管理器将导致该设备的硬件 ID。 Mf.inf 文件指定的类"多功能"和其关联的 GUID （如在 devguid.h 中定义）。
+    PCMCIA 总线驱动程序为设备指定硬件 ID，使 configuration manager 能够使用系统提供的多功能 INF 文件 (mf) 来配置设备。 Mf 文件指定类 "多功能" 及其关联的 GUID (在 devguid) 中定义。
 
--   多功能设备的函数驱动程序。 （系统提供）
+-   多功能设备的函数驱动程序。  (系统提供的) 
 
-    Mf.inf 文件指定为设备功能驱动程序的系统提供多功能总线驱动程序 (mf.sys)。
+    Mf .inf 文件指定系统提供的多功能总线驱动程序 ( # A0) 作为设备的函数驱动程序。
 
-    Mf.sys 总线驱动程序枚举设备的功能。 PCMCIA 总线驱动程序读取来确定每个函数的资源要求在设备上配置注册表。
+    mf.sys 总线驱动程序枚举设备的功能。 PCMCIA 总线驱动程序读取设备上的配置寄存器，以确定每个函数的资源要求。
 
-    请参阅[使用 System-Supplied 多功能总线驱动程序](using-the-system-supplied-multifunction-bus-driver.md)有关使用系统提供 mf.sys 驱动程序详细信息。
+    有关使用系统提供的 mf.sys 驱动程序的详细信息，请参阅 [使用 System-Supplied 多功能总线驱动程序](using-the-system-supplied-multifunction-bus-driver.md) 。
 
-多功能符合标准的 PC 卡设备的供应商必须提供以下支持各个功能：
+符合标准的多功能 PC 卡设备供应商必须为单个功能提供以下支持：
 
--   每个函数的设备的即插即用功能驱动程序。 （供应商提供）
+-   设备的每个功能的 PnP 函数驱动程序。  (供应商提供的) 
 
-    由于多功能总线驱动程序处理的多功能语义，功能的驱动程序可以是相同的驱动程序，可在函数已打包为单个设备。
+    由于多功能总线驱动程序处理多功能语义，因此函数驱动程序可以是在将函数打包为单个设备时使用的相同驱动程序。
 
--   用于设备的每个函数的 INF 文件。 （供应商提供）
+-   设备的每个功能的 INF 文件。  (供应商提供的) 
 
-    INF 文件可以是可在函数已打包为单个设备的相同文件。 INF 文件不需要任何特殊的多功能语义。
+    如果将这些文件打包为单独的设备，则 INF 文件可以是使用的相同文件。 INF 文件不需要任何特殊的多功能语义。
 
-### <a name="child-function-hardware-ids-created-by-the-pcmcia-bus-driver"></a>PCMCIA 总线驱动程序创建的子函数的硬件 Id
+### <a name="child-function-hardware-ids-created-by-the-pcmcia-bus-driver"></a>PCMCIA 总线驱动程序创建的子函数硬件 Id
 
-对于 true 多功能 PC 卡设备 PCMCIA 总线驱动程序，以及 mf.sys，将创建的子函数的硬件 Id。 这些 Id 具有以下格式：
+对于真正的多功能 PC 卡设备，PCMCIA 总线驱动程序与 mf.sys 一起为子函数创建硬件 Id。 这些 Id 的格式如下：
 
 ```cpp
     <Manufacturer-name>-<Product-ID-string>-DEV<number>-CRC
 ```
 
-按以下格式&lt;*数*&gt;是该函数的从零开始编号。
+在此格式中， &lt; *number* &gt; 是函数的从零开始的编号。
 
 例如，PCMCIA 总线驱动程序创建子函数硬件 Id，如下所示：
 
@@ -65,7 +64,7 @@ ms.locfileid: "63391437"
     3COM_Corporation-3C562D/3C563D-DEV1-4893
 ```
 
-多功能 PC 卡设备的子函数的 INF 文件必须指定 PCMCIA 总线驱动程序和 mf.sys 报告的硬件 ID。
+多功能 PC 卡设备的子功能的 INF 文件必须指定 PCMCIA 总线驱动程序报告的硬件 ID 并 mf.sys。
 
  
 

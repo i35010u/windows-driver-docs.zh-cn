@@ -1,15 +1,14 @@
 ---
 title: 着色器相对寻址
 description: 着色器相对寻址
-ms.assetid: 7f936b56-cd41-4df5-8fc0-b8a7332ca7fa
 ms.date: 01/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: c4e25cc31549a2e9b1f489e9cfbc72d12a4ca7d3
-ms.sourcegitcommit: 366a15d68eb58d01a8ca6de7b982f62ac8b7deaf
+ms.openlocfilehash: 22805ae3e71eca2c07786dc7f4f9b3db764df394
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/19/2020
-ms.locfileid: "90812024"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96825697"
 ---
 # <a name="shader-relative-addressing"></a>着色器相对寻址
 

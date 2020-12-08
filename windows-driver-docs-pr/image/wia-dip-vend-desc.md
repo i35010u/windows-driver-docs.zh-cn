@@ -1,9 +1,8 @@
 ---
-title: WIA\_DIP\_VEND\_DESC
-description: WIA\_DIP\_VEND\_DESC 属性包含 WIA 微型驱动程序供应商说明字符串。 WIA 服务创建并维护此属性。
-ms.assetid: 80bb6a4e-3391-4681-93d0-8b60774dfc3d
+title: WIA \_ DIP \_ VEND \_ DESC
+description: WIA \_ DIP \_ VEND \_ DESC 属性包含 wia 微型驱动程序的供应商说明字符串。 WIA 服务创建并维护此属性。
 keywords:
-- WIA_DIP_VEND_DESC 成像设备
+- WIA_DIP_VEND_DESC 图像设备
 topic_type:
 - apiref
 api_name:
@@ -14,31 +13,31 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4690b204e2810d2cd9097169f083f7bc921a95da
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5c561e2355e10d1f3ac5eb43f1d49e589d1f4f3c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63325281"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96824491"
 ---
-# <a name="wiadipvenddesc"></a>WIA\_DIP\_VEND\_DESC
+# <a name="wia_dip_vend_desc"></a>WIA \_ DIP \_ VEND \_ DESC
 
 
-WIA\_DIP\_VEND\_DESC 属性包含 WIA 微型驱动程序供应商说明字符串。 WIA 服务创建并维护此属性。
+WIA \_ DIP \_ VEND \_ DESC 属性包含 wia 微型驱动程序的供应商说明字符串。 WIA 服务创建并维护此属性。
 
 ## <span id="ddk_wia_dip_vend_desc_si"></span><span id="DDK_WIA_DIP_VEND_DESC_SI"></span>
 
 
-属性类型：VT\_BSTR
+属性类型： VT \_ BSTR
 
-有效值：WIA\_PROP\_NONE
+有效值： WIA " \_ \_ 无"
 
 访问权限：只读
 
 <a name="remarks"></a>备注
 -------
 
-供应商说明是从 INF 文件中获取。 应用程序读取 WIA\_DIP\_VEND\_DESC 属性来获取设备供应商的说明。
+从 INF 文件中获取供应商说明。 应用程序读取 WIA \_ DIP \_ VEND \_ DESC 属性以获取设备供应商的说明。
 
 <a name="requirements"></a>要求
 ------------
@@ -50,8 +49,8 @@ WIA\_DIP\_VEND\_DESC 属性包含 WIA 微型驱动程序供应商说明字符串
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Header</p></td>
-<td>Wiadef.h （包括 Wiadef.h）</td>
+<td><p>标头</p></td>
+<td>Wiadef (包含 Wiadef) </td>
 </tr>
 </tbody>
 </table>

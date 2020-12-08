@@ -1,7 +1,6 @@
 ---
 title: 处理器数量的更改
 description: 处理器数量的更改
-ms.assetid: 9ced4b42-c83d-49da-8405-b95b0c0144fa
 keywords:
 - 动态硬件分区 WDK，更改处理器数量
 - 硬件分区 WDK 动态，更改处理器数量
@@ -12,12 +11,12 @@ keywords:
 - 每处理器数据结构 WDK 动态硬件分区
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6d60c9bd5cadd7e65cc6e3361da1853e6f815d4f
-ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
+ms.openlocfilehash: 95f61579eaa27f40b568add2773d5cddf5c59ece
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89403452"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96825667"
 ---
 # <a name="changes-to-the-number-of-processors"></a>处理器数量的更改
 
@@ -46,19 +45,19 @@ ms.locfileid: "89403452"
 
 若要检索硬件分区中活动处理器的当前数量，设备驱动程序应调用 [**KeQueryActiveProcessorCount**](/windows-hardware/drivers/ddi/wdm/nf-wdm-kequeryactiveprocessorcount) 函数。 若要检索当前的处理器关联值，设备驱动程序可调用 [**KeQueryActiveProcessors**](/windows-hardware/drivers/ddi/wdm/nf-wdm-kequeryactiveprocessors) 函数或 **KeQueryActiveProcessorCount** 函数。
 
-**注意**   如果设备驱动程序为硬件分区中的每个活动处理器分配数据结构，并且如果新处理器的数据结构的内存分配失败，则设备驱动程序可以在驱动程序初始化期间分配足够的这些数据结构来处理操作系统支持的处理器的最大数量。 在这种情况下，在将新处理器添加到硬件分区时，设备驱动程序将不必分配新的数据结构。 但是，除非这些数据结构的大小非常小，否则内存资源的使用效率会降低。 设备驱动程序可以通过调用 [**KeQueryMaximumProcessorCount**](/windows-hardware/drivers/ddi/wdm/nf-wdm-kequerymaximumprocessorcount) 函数来查询操作系统支持的处理器的最大数量。
+**注意**  如果设备驱动程序为硬件分区中的每个活动处理器分配数据结构，并且如果新处理器的数据结构的内存分配失败，则设备驱动程序可以在驱动程序初始化期间分配足够的这些数据结构来处理操作系统支持的处理器的最大数量。 在这种情况下，在将新处理器添加到硬件分区时，设备驱动程序将不必分配新的数据结构。 但是，除非这些数据结构的大小非常小，否则内存资源的使用效率会降低。 设备驱动程序可以通过调用 [**KeQueryMaximumProcessorCount**](/windows-hardware/drivers/ddi/wdm/nf-wdm-kequerymaximumprocessorcount) 函数来查询操作系统支持的处理器的最大数量。
 
  
 
-**重要提示**   当系统通知已将处理器添加到硬件分区时，设备驱动程序应始终更新活动处理器的数量和处理器相关性的任何已保存值。
+**重要提示**  当系统通知已将处理器添加到硬件分区时，设备驱动程序应始终更新活动处理器的数量和处理器相关性的任何已保存值。
 
  
 
-**重要提示**   设备驱动程序不应统计处理器关联值中的设置位数来确定硬件分区中活动处理器的数目。 建议设备驱动程序调用 **KeQueryActiveProcessorCount** 函数以实现此目的。 此函数返回活动处理器的数量和关联的处理器关联值。
+**重要提示**  设备驱动程序不应统计处理器关联值中的设置位数来确定硬件分区中活动处理器的数目。 建议设备驱动程序调用 **KeQueryActiveProcessorCount** 函数以实现此目的。 此函数返回活动处理器的数量和关联的处理器关联值。
 
  
 
-**重要提示**   为 Windows Vista、Windows Server 2008 和更高版本的 Windows 构建的设备驱动程序不得使用[**KeNumberProcessors**](/windows-hardware/drivers/ddi/wdm/nf-wdm-kequeryactiveprocessors)内核变量来确定硬件分区中活动处理器的数量。 在 Windows Vista Service Pack 1 (SP1) 、Windows Server 2008 和更高版本的 Windows 中， **KeNumberProcessors** 内核变量已过时。
+**重要提示**  为 Windows Vista、Windows Server 2008 和更高版本的 Windows 构建的设备驱动程序不得使用 [**KeNumberProcessors**](/windows-hardware/drivers/ddi/wdm/nf-wdm-kequeryactiveprocessors) 内核变量来确定硬件分区中活动处理器的数量。 在 Windows Vista Service Pack 1 (SP1) 、Windows Server 2008 和更高版本的 Windows 中， **KeNumberProcessors** 内核变量已过时。
 
  
 

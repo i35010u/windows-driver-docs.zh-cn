@@ -1,15 +1,14 @@
 ---
 title: Windows 图像采集驱动程序
 description: Windows 图像采集驱动程序
-ms.assetid: ac145e5f-82c5-4c44-a0cc-c1ea7726d34e
 ms.date: 07/18/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: f88a7019725c985c04427549be01e70c82bf6f9c
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 66568f508877938a2c70f007fd917fd1bbd42333
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89190715"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96826335"
 ---
 # <a name="windows-image-acquisition-drivers"></a>Windows 图像采集驱动程序
 

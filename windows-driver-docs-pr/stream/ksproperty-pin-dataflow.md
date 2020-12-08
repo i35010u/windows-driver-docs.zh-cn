@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ PIN \_ 数据流
 description: KSPROPERTY \_ pin \_ 数据流属性指定由 pin 工厂实例化的 pin 上数据流的方向。 接收器 pin 是筛选器中的入口点;来自筛选器的源 pin 输出。
-ms.assetid: 3132b344-c4f3-48dc-9829-f4e97d0f18fc
 keywords:
 - KSPROPERTY_PIN_DATAFLOW 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0c99088df7a793be111114586be047b7021e749c
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 8f62e4121074d956775ed95163a901f7e8b6e7a6
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90103726"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96825335"
 ---
 # <a name="ksproperty_pin_dataflow"></a>KSPROPERTY \_ PIN \_ 数据流
 
@@ -64,7 +63,7 @@ KSPROPERTY \_ pin \_ 数据流属性指定由 pin 工厂实例化的 pin 上数�
 <a name="remarks"></a>备注
 -------
 
-指定[**KSP \_ pin**](/windows-hardware/drivers/ddi/ks/ns-ks-ksp_pin)结构的**PinId**成员中的 pin 工厂。
+指定 [**KSP \_ pin**](/windows-hardware/drivers/ddi/ks/ns-ks-ksp_pin)结构的 **PinId** 成员中的 pin 工厂。
 
 KSPROPERTY \_ PIN \_ 数据流返回 [**KSPIN \_ 数据流**](/windows-hardware/drivers/ddi/ks/ne-ks-kspin_dataflow)类型的枚举，并将其设置 **为 \_ KSPIN \_ 数据流** 或 KSPIN \_ 数据流 \_ OUT。
 
@@ -86,7 +85,7 @@ Stream 微型驱动程序不需要直接处理此属性;流类驱动程序使用
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSP \_ PIN**](/windows-hardware/drivers/ddi/ks/ns-ks-ksp_pin)

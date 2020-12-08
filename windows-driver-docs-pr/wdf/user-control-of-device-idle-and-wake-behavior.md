@@ -1,7 +1,6 @@
 ---
 title: 设备空闲和唤醒行为的用户控件
 description: 设备空闲和唤醒行为的用户控件
-ms.assetid: 776fcf82-2235-489a-8d46-3ad230da3402
 keywords:
 - 系统唤醒 KMDF
 - 电源管理 WDK KMDF、唤醒功能
@@ -12,12 +11,12 @@ keywords:
 - 空闲的关闭 WDK KMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8a3c3c0b22f893697546ee50e20dd8b237b603ea
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: b0ef6aa173bf70ff3007c602ecb4efbd548f6fa6
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89185053"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96824833"
 ---
 # <a name="user-control-of-device-idle-and-wake-behavior"></a>设备空闲和唤醒行为的用户控件
 
@@ -40,7 +39,7 @@ ms.locfileid: "89185053"
 
 驱动程序的 INF 文件可使用 [**INF AddReg 指令**](../install/inf-addreg-directive.md) 创建和设置 **WdfDefaultIdleInWorkingState** 和 **WdfDefaultWakeFromSleepState** 注册表值。 例如，如果你的驱动程序启用了设备的空闲关机功能，但如果在安装设备时必须禁用该功能，则驱动程序的 INF 文件可以将 **WdfDefaultIdleInWorkingState** 设置为 "0"。
 
-仅当驱动程序已将**UserControlOfIdleSettings**或**UserControlOfWakeSettings**成员分别设置为**IdleAllowUserControl**或**WakeAllowUserControl**，并在适当的设置结构中将**Enabled**成员设置为**WdfTrue**或**WdfUseDefault**时，框架才会检查**WdfDefaultIdleInWorkingState**和**WdfDefaultWakeFromSleepState**注册表值。
+仅当驱动程序已将 **UserControlOfIdleSettings** 或 **UserControlOfWakeSettings** 成员分别设置为 **IdleAllowUserControl** 或 **WakeAllowUserControl**，并在适当的设置结构中将 **Enabled** 成员设置为 **WdfTrue** 或 **WdfUseDefault** 时，框架才会检查 **WdfDefaultIdleInWorkingState** 和 **WdfDefaultWakeFromSleepState** 注册表值。
 
  
 

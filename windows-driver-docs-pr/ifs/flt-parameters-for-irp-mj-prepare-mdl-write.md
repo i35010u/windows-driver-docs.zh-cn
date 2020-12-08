@@ -1,7 +1,6 @@
 ---
 title: IRP_MJ_PREPARE_MDL_WRITE 联合的 FLT_PARAMETERS
 description: 当操作的 FLT \_ IO \_ 参数块结构的 MajorFunction 字段 \_ 为 IRP \_ MJ \_ PREPARE \_ MDL \_ 写入时，将使用以下联合组件。
-ms.assetid: eebbb8d4-f46d-4aee-aeb3-7edcbd23207a
 keywords:
 - IRP_MJ_PREPARE_MDL_WRITE 联合可安装文件系统驱动程序的 FLT_PARAMETERS
 - FLT_PARAMETERS 联合可安装文件系统驱动程序
@@ -16,31 +15,31 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9365afd24102ae121e571b735c40c3c3d7ca9fda
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 25390158432e6c4210a5ce8e96bacf6a09142593
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89065966"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96825155"
 ---
 # <a name="flt_parameters-for-irp_mj_prepare_mdl_write-union"></a>\_IRP \_ MJ \_ 准备 \_ MDL \_ 写入联合的 FLT 参数
 
 
-当操作的[**FLT \_ IO \_ 参数 \_ 块**](/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_io_parameter_block)结构的**MajorFunction**字段为 IRP \_ MJ \_ PREPARE \_ MDL \_ 写入时，将使用以下联合组件。
+当操作的 [**FLT \_ IO \_ 参数 \_ 块**](/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_io_parameter_block)结构的 **MajorFunction** 字段为 IRP \_ MJ \_ PREPARE \_ MDL \_ 写入时，将使用以下联合组件。
 
 <a name="syntax"></a>语法
 ------
 
 ```ManagedCPlusPlus
 typedef union _FLT_PARAMETERS {
-  ...    ;
+  ...    ;
   struct {
-    LARGE_INTEGER           FileOffset;
+    LARGE_INTEGER           FileOffset;
     ULONG POINTER_ALIGNMENT Length;
     ULONG POINTER_ALIGNMENT Key;
-    PMDL                    *MdlChain;
-  } PrepareMdlWrite;
-  ...    ;
+    PMDL                    *MdlChain;
+  } PrepareMdlWrite;
+  ...    ;
 } FLT_PARAMETERS, *PFLT_PARAMETERS;
 ```
 
@@ -56,7 +55,7 @@ typedef union _FLT_PARAMETERS {
 **长度**  
 要写入缓存文件的数据的长度（以字节为单位）。
 
-**Key**  
+**键**  
 与目标文件的字节范围锁关联的键值。 如果要写入的范围重叠，或者是文件内独占锁定范围的子范围，则此参数必须是该排他锁的键。 排他锁必须由调用线程的父进程持有;否则，将忽略此参数。
 
 **MdlChain**  
@@ -87,7 +86,7 @@ IRP \_ MJ \_ 准备 \_ MDL \_ 写入是一种快速的 i/o 操作。
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**FLT \_ 回调 \_ 数据**](/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_callback_data)

@@ -1,21 +1,20 @@
 ---
 title: 筛选条件 L2 标志
 description: 本部分介绍筛选条件 L2 标志。
-ms.assetid: D24A261D-6324-43CC-BD2A-CDB9B024432C
 keywords:
 - 筛选条件 L2 标志网络驱动程序
 ms.date: 11/08/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7571f114a4a0fecc6371215441aaf9b4153c8e84
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a7779f6ed66df3eb2e38ffec0455960ed48f6c31
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63347525"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96825525"
 ---
 # <a name="filtering-condition-l2-flags"></a>筛选条件 L2 标志
 
-每个表示位域的筛选条件 L2 标志。 这些标志定义，如下所示：
+筛选条件 L2 标志分别由位域表示。 这些标志定义如下：
 
 <table>
 <tr>
@@ -28,8 +27,8 @@ ms.locfileid: "63347525"
 <p>0x00000001</p>
 </td>
 <td>
-<p>如果将数据传递给标注驱动程序测试介绍本机的以太网数据包。</p>
-<p>此标志是适用于 Windows 8、 Windows Server 2012 和更高版本的 Windows 中的以下筛选层：</p>
+<p>测试传递给标注驱动程序的数据是否描述了本机以太网数据包。</p>
+<p>此标志适用于 windows 8、Windows Server 2012 和更高版本的 Windows 中的以下筛选层：</p>
 <dl>
 <dd>
 FWPM_LAYER_INBOUND_MAC_FRAME_ETHERNET
@@ -44,8 +43,8 @@ FWPM_LAYER_INBOUND_MAC_FRAME_NATIVE
 FWPM_LAYER_OUTBOUND_MAC_FRAME_NATIVE
 </dd>
 </dl>
-<p>如果将数据传递给标注驱动程序测试介绍 WIFI 数据包。</p>
-<p>此标志是适用于 Windows 8、 Windows Server 2012 和更高版本的 Windows 中的以下筛选层：</p>
+<p>测试传递给标注驱动程序的数据是否描述了 WIFI 数据包。</p>
+<p>此标志适用于 windows 8、Windows Server 2012 和更高版本的 Windows 中的以下筛选层：</p>
 <dl>
 <dd>
 FWPM_LAYER_INBOUND_MAC_FRAME_ETHERNET
@@ -68,8 +67,8 @@ FWPM_LAYER_OUTBOUND_MAC_FRAME_NATIVE
 <p>0x00000002</p>
 </td>
 <td>
-<p>如果将数据传递给标注驱动程序测试介绍本机 Wi-fi 数据包。</p>
-<p>此标志是适用于 Windows 8、 Windows Server 2012 和更高版本的 Windows 中的以下筛选层：</p>
+<p>测试传递给标注驱动程序的数据是否描述了本机 Wi-Fi 数据包。</p>
+<p>此标志适用于 windows 8、Windows Server 2012 和更高版本的 Windows 中的以下筛选层：</p>
 <dl>
 <dd>
 FWPM_LAYER_INBOUND_MAC_FRAME_ETHERNET
@@ -92,8 +91,8 @@ FWPM_LAYER_OUTBOUND_MAC_FRAME_NATIVE
 <p>0x00000004</p>
 </td>
 <td>
-<p>如果将数据传递给标注驱动程序测试介绍移动宽带数据包。</p>
-<p>此标志是适用于 Windows 8、 Windows Server 2012 和更高版本的 Windows 中的以下筛选层：</p>
+<p>测试传递给标注驱动程序的数据是否描述了移动宽带数据包。</p>
+<p>此标志适用于 windows 8、Windows Server 2012 和更高版本的 Windows 中的以下筛选层：</p>
 <dl>
 <dd>
 FWPM_LAYER_INBOUND_MAC_FRAME_ETHERNET
@@ -116,8 +115,8 @@ FWPM_LAYER_OUTBOUND_MAC_FRAME_NATIVE
 <p>0x00000008</p>
 </td>
 <td>
-<p>如果传递给标注驱动程序的数据描述 WIFI 的测试直接数据包。</p>
-<p>此标志是适用于 Windows 8、 Windows Server 2012 和更高版本的 Windows 中的以下筛选层：</p>
+<p>测试传递给标注驱动程序的数据是否描述了 WIFI 直接数据包。</p>
+<p>此标志适用于 windows 8、Windows Server 2012 和更高版本的 Windows 中的以下筛选层：</p>
 <dl>
 <dd>
 FWPM_LAYER_INBOUND_MAC_FRAME_ETHERNET
@@ -140,8 +139,8 @@ FWPM_LAYER_OUTBOUND_MAC_FRAME_NATIVE
 <p>0x00000010</p>
 </td>
 <td>
-<p>如果将数据传递给标注驱动程序测试介绍本机虚拟机到虚拟机数据包。</p>
-<p>此标志是适用于 Windows 8、 Windows Server 2012 和更高版本的 Windows 中的以下筛选层：</p>
+<p>测试传递给标注驱动程序的数据是否将本机虚拟机描述为虚拟机数据包。</p>
+<p>此标志适用于 windows 8、Windows Server 2012 和更高版本的 Windows 中的以下筛选层：</p>
 <dl>
 <dd>
 FWPM_LAYER_INBOUND_MAC_FRAME_ETHERNET
@@ -164,8 +163,8 @@ FWPM_LAYER_OUTBOUND_MAC_FRAME_NATIVE
 <p>0x00000020</p>
 </td>
 <td>
-<p>如果将数据传递给标注驱动程序测试描述格式不正确的以太网数据包。</p>
-<p>此标志是适用于 Windows 8、 Windows Server 2012 和更高版本的 Windows 中的以下筛选层：</p>
+<p>测试传递给标注驱动程序的数据是否描述了格式错误的以太网数据包。</p>
+<p>此标志适用于 windows 8、Windows Server 2012 和更高版本的 Windows 中的以下筛选层：</p>
 <dl>
 <dd>
 FWPM_LAYER_INBOUND_MAC_FRAME_ETHERNET
@@ -188,8 +187,8 @@ FWPM_LAYER_OUTBOUND_MAC_FRAME_NATIVE
 <p>0x00000040</p>
 </td>
 <td>
-<p>如果将数据传递给标注驱动程序测试介绍 IP 片段组的一部分。</p>
-<p>此标志是适用于 Windows 8、 Windows Server 2012 和更高版本的 Windows 中的以下筛选层：</p>
+<p>测试传递给标注驱动程序的数据是否描述了 IP 片段组的一部分。</p>
+<p>此标志适用于 windows 8、Windows Server 2012 和更高版本的 Windows 中的以下筛选层：</p>
 <dl>
 <dd>
 FWPM_LAYER_INBOUND_MAC_FRAME_ETHERNET
@@ -212,9 +211,9 @@ FWPM_LAYER_OUTBOUND_MAC_FRAME_NATIVE
 <p>0x00000080</p>
 </td>
 <td>
-<p>测试网络接口连接器是否存在于基础网络适配器上。</p>
+<p>测试基础网络适配器上是否存在网络接口连接器。</p>
 <p>应为物理适配器设置此标志。</p>
-<p>此标志是适用于 Windows 8、 Windows Server 2012 和更高版本的 Windows 中的以下筛选层：</p>
+<p>此标志适用于 windows 8、Windows Server 2012 和更高版本的 Windows 中的以下筛选层：</p>
 <dl>
 <dd>
 FWPM_LAYER_INBOUND_MAC_FRAME_ETHERNET

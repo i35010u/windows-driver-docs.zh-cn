@@ -1,15 +1,14 @@
 ---
 title: 使用 WinDbg 进行调试
 description: 本部分介绍如何使用 WinDbg 调试器执行基本调试任务。
-ms.assetid: 6738E3B9-FD79-4720-A8A8-8FA8EE1BA256
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 41c1a547e9b95795bc4c17c13530080dcad83ad4
-ms.sourcegitcommit: 44bccc9788690ae636b17d7d1cc576b8a17c9916
+ms.openlocfilehash: be6348b98b390bb84a29ce5cde23f6a0ecb040e4
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81679395"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96826169"
 ---
 # <a name="debugging-using-windbg"></a>使用 WinDbg 进行调试
 

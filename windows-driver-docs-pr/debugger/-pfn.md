@@ -1,10 +1,9 @@
 ---
 title: pfn
-description: Pfn 扩展显示有关特定页边框或整个页面框架数据库的信息。
-ms.assetid: cbdb1f04-30bc-4e12-b073-9882e4457e1a
+description: Pfn 扩展显示特定页面框架或整个页面框架数据库的相关信息。
 keywords:
 - 页面框架
-- Windows 调试 pfn
+- pfn Windows 调试
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -13,29 +12,29 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 6d1e8d1519e4c758492e47c8043461d75e9b0034
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1558f0eab360c5eee168b5af2be1152053f24476
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63335770"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96824739"
 ---
 # <a name="pfn"></a>!pfn
 
 
-**！ Pfn**扩展显示有关特定页边框或整个页面框架数据库的信息。
+**！ Pfn** extension 显示特定页面框架或整个页面框架数据库的相关信息。
 
 ```dbgcmd
 !pfn PageFrame
 ```
 
-## <a name="span-idddkpfndbgspanspan-idddkpfndbgspanparameters"></a><span id="ddk__pfn_dbg"></span><span id="DDK__PFN_DBG"></span>参数
+## <a name="span-idddk__pfn_dbgspanspan-idddk__pfn_dbgspanparameters"></a><span id="ddk__pfn_dbg"></span><span id="DDK__PFN_DBG"></span>参数
 
 
-<span id="_______PageFrame______"></span><span id="_______pageframe______"></span><span id="_______PAGEFRAME______"></span> *PageFrame*   
-指定要显示的页框架的十六进制数。
+<span id="_______PageFrame______"></span><span id="_______pageframe______"></span><span id="_______PAGEFRAME______"></span>*PageFrame*   
+指定要显示的页面框架的十六进制数。
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 <table>
 <colgroup>
@@ -56,16 +55,16 @@ ms.locfileid: "63335770"
 
  
 
-### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>其他信息
+### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>附加信息
 
-页表、 页目录和页框架有关的信息，请参阅*Microsoft Windows Internals*、 Mark Russinovich 和 David solomon 合著的。 
+有关页表、页面目录和页面框架的信息，请参阅 *Microsoft Windows 内部机制*，其标记为 Russinovich 和 David 所罗门群岛。 
 
 <a name="remarks"></a>备注
 -------
 
-可以通过使用获取的虚拟地址帧页码[ **！ pte** ](-pte.md)扩展。
+可以通过使用 [**！ pte**](-pte.md) 扩展名获取虚拟地址的页面帧号。
 
-下面是输出的来自此扩展插件示例：
+下面是此扩展的输出示例：
 
 ```dbgcmd
 kd> !pte 801544f4

@@ -1,22 +1,21 @@
 ---
 title: WSD 扫描服务事件元素
 description: WSD 扫描服务事件元素
-ms.assetid: 87141df8-a0cf-484c-a0ec-12129ad5fa3a
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bcdf0977b9b732adf06de5377a345adb989e45d1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 02b704a0f36cbdf4e55b037c5b8432901c5b8fe5
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63353319"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96826327"
 ---
 # <a name="wsd-scan-service-event-elements"></a>WSD 扫描服务事件元素
 
 
-本部分介绍的事件的 XML 元素和与事件相关的元素的 Web Services for Devices (WSD) 扫描服务架构定义。
+本部分介绍 XML 事件元素和与事件相关的元素，这些元素 (WSD) 扫描服务架构中定义的 Web 服务。
 
-架构定义了以下事件和与事件相关的元素：
+该架构定义以下事件和事件相关的元素：
 
 [**ClientContext**](clientcontext.md)
 

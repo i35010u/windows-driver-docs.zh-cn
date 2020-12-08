@@ -1,17 +1,16 @@
 ---
 title: NDIS 6.20 中对超过 64 个处理器的支持
 description: NDIS 6.20 中对超过 64 个处理器的支持
-ms.assetid: 3fb2a09c-e2dd-48b8-a631-3793bd023ef0
 keywords:
 - NDIS 6.20 WDK，支持超过64个处理器
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 43f3b6ce67e9d6e4a1651f421669eeb192f46057
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: d5270f1e9812d9dd44befc81f530e45bddb89187
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89207410"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96825393"
 ---
 # <a name="support-for-more-than-64-processors-in-ndis-620"></a>NDIS 6.20 中对超过 64 个处理器的支持
 

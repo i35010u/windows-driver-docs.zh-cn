@@ -1,7 +1,6 @@
 ---
 title: UMDF 中设备空闲和唤醒行为的用户控件
 description: UMDF 中设备空闲和唤醒行为的用户控件
-ms.assetid: 9341c412-dd0a-4e80-a164-250e24004082
 keywords:
 - 电源管理 WDK UMDF，空闲关机
 - 电源管理 WDK UMDF，唤醒
@@ -11,12 +10,12 @@ keywords:
 - 唤醒功能 WDK UMDF，用户控制
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cbebece3b88c8c03f9b3438263df2dd9cfec67c4
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 385c711f9c76da40ec65313347730f299632ee59
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89185059"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96824843"
 ---
 # <a name="user-control-of-device-idle-and-wake-behavior-in-umdf"></a>UMDF 中设备空闲和唤醒行为的用户控件
 
@@ -41,13 +40,13 @@ ms.locfileid: "89185059"
 
 如果你的驱动程序允许用户修改空闲和唤醒设置，则默认情况下，框架将启用这些设置。 某些驱动程序编写器在允许用户修改这些设置之前，可能需要先禁用这些设置。
 
-因此，framework 版本1.9 和更高版本提供了两个驱动程序可定义的注册表值（名为**WdfDefaultIdleInWorkingState**和**WdfDefaultWakeFromSleepState**），这些值存储在设备的[硬件密钥](./using-the-registry-in-umdf-1-x-drivers.md)下的设备的**设备参数 \\ WDF**子项中。 值为 REG \_ DWORD 类型，其中 "0" 指示禁用功能，"1" 表示已启用该功能。
+因此，framework 版本1.9 和更高版本提供了两个驱动程序可定义的注册表值（名为 **WdfDefaultIdleInWorkingState** 和 **WdfDefaultWakeFromSleepState**），这些值存储在设备的 [硬件密钥](./using-the-registry-in-umdf-1-x-drivers.md)下的设备的 **设备参数 \\ WDF** 子项中。 值为 REG \_ DWORD 类型，其中 "0" 指示禁用功能，"1" 表示已启用该功能。
 
 驱动程序的 INF 文件可使用 [**INF AddReg 指令**](../install/inf-addreg-directive.md) 创建和设置 **WdfDefaultIdleInWorkingState** 和 **WdfDefaultWakeFromSleepState** 注册表值。 例如，如果你的驱动程序启用了设备的空闲关机功能，但如果在安装设备时必须禁用该功能，则驱动程序的 INF 文件可以将 **WdfDefaultIdleInWorkingState** 设置为 "0"。
 
-仅当驱动程序调用[**WdfUseDefault：： IWDFDevice2**](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdevice2-assigns0idlesettings)方法时，驱动程序将*UserControlOfIdleSettings*参数设置为**IdleAllowUserControl** ，并将*Enabled*参数设置为**WdfTrue**或**AssignS0IdleSettings**时，框架才会检查**WdfDefaultIdleInWorkingState**注册表值。
+仅当驱动程序调用 [**WdfUseDefault：： IWDFDevice2**](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdevice2-assigns0idlesettings)方法时，驱动程序将 *UserControlOfIdleSettings* 参数设置为 **IdleAllowUserControl** ，并将 *Enabled* 参数设置为 **WdfTrue** 或 **AssignS0IdleSettings** 时，框架才会检查 **WdfDefaultIdleInWorkingState** 注册表值。
 
-仅当驱动程序调用[**WdfUseDefault：： IWDFDevice2**](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdevice2-assignsxwakesettings)方法时，驱动程序将*UserControlOfWakeSettings*参数设置为**IWakeAllowUserControl** ，并将*Enabled*参数设置为**WdfTrue**或**AssignSxWakeSettings**时，框架才会检查**WdfDefaultWakeFromSleepState**注册表值。
+仅当驱动程序调用 [**WdfUseDefault：： IWDFDevice2**](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdevice2-assignsxwakesettings)方法时，驱动程序将 *UserControlOfWakeSettings* 参数设置为 **IWakeAllowUserControl** ，并将 *Enabled* 参数设置为 **WdfTrue** 或 **AssignSxWakeSettings** 时，框架才会检查 **WdfDefaultWakeFromSleepState** 注册表值。
 
  
 

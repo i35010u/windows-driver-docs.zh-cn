@@ -1,7 +1,6 @@
 ---
 title: 管理设备电源策略
 description: 管理设备电源策略
-ms.assetid: f6f9ab40-4d51-4181-ac11-ff7af42370af
 keywords:
 - 设备电源策略 WDK 内核
 - 电源策略 WDK 内核
@@ -11,12 +10,12 @@ keywords:
 - 初始设备电源状态 WDK 内核
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ad686d6e438c364c39ae5b673b3a16d4cf9189cc
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 0d9038b8d19eec2750ebdece6c55d4bc5c274bb4
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89184433"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96825119"
 ---
 # <a name="managing-device-power-policy"></a>管理设备电源策略
 
@@ -36,7 +35,7 @@ ms.locfileid: "89184433"
 
 设备电源策略所有者负责以下操作：
 
--   在处理即插即用 manager 的[**IRP \_ MN \_ START \_ 设备**](./irp-mn-start-device.md)请求时，通过调用[**PoSetPowerState**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-posetpowerstate)将设备的初始电源状态设置为 D0。
+-   在处理即插即用 manager 的 [**IRP \_ MN \_ START \_ 设备**](./irp-mn-start-device.md)请求时，通过调用 [**PoSetPowerState**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-posetpowerstate)将设备的初始电源状态设置为 D0。
 
     设备应根据需要接通电源;例如，设备必须开机才能处理 i/o 请求。 设备电源策略所有者负责确定何时需要其设备、确保设备电源已打开并设置正确的设备电源状态。 在 PnP 启动设备 IRP 完成后，典型设备应该开机。
 
@@ -44,7 +43,7 @@ ms.locfileid: "89184433"
 
 -   通过调用 [**PoRequestPowerIrp**](/windows-hardware/drivers/ddi/wdm/nf-wdm-porequestpowerirp)发送设备电源请求以响应系统电源请求。
 
-    例如，当策略所有者接收到系统集-电源 IRP 时，它将发送一个设备设置-电源 IRP。 大多数设备进入 D3 时，系统进入任何休眠状态。 [**设备 \_ 功能**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_device_capabilities)结构中的**DeviceState**数组列出设备可以为每个系统电源状态维护的最高的状态。  (参阅 [报告设备电源功能](reporting-device-power-capabilities.md)。 ) 
+    例如，当策略所有者接收到系统集-电源 IRP 时，它将发送一个设备设置-电源 IRP。 大多数设备进入 D3 时，系统进入任何休眠状态。 [**设备 \_ 功能**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_device_capabilities)结构中的 **DeviceState** 数组列出设备可以为每个系统电源状态维护的最高的状态。  (参阅 [报告设备电源功能](reporting-device-power-capabilities.md)。 ) 
 
 -   检测设备处于空闲状态的时间，并将其置于睡眠状态以节省能源。
 
@@ -56,7 +55,7 @@ ms.locfileid: "89184433"
 
 -   请求时启用和禁用其设备唤醒。
 
-    设备电源策略所有者发送和取消等待/唤醒 Irp，如 [支持具有唤醒功能的设备](supporting-devices-that-have-wake-up-capabilities.md)中所述。
+    设备电源策略所有者发送和取消等待/唤醒 Irp，如 [支持具有 Wake-Up 功能的设备](supporting-devices-that-have-wake-up-capabilities.md)中所述。
 
  
 

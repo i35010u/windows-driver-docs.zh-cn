@@ -1,9 +1,8 @@
 ---
-title: usb3kd xhci_info
-description: Xhci_info usb3kd 扩展显示单个 USB 3.0 主机控制器的所有 XHCI 命令。
-ms.assetid: C3C3B379-4871-4293-9C35-B64F3A5E1348
+title: usb3kd.xhci_info
+description: Usb3kd.xhci_info 扩展显示单个 USB 3.0 主机控制器的所有 XHCI 命令。
 keywords:
-- usb3kd xhci_info Windows 调试
+- usb3kd.xhci_info Windows 调试
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,12 +11,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: d0945ac040fc925e4cb1c026d20b52dcb5cdd3d8
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 817562e4a388a8fb9057ff6632b31bb36dc71c21
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89216288"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96824725"
 ---
 # <a name="usb3kdxhci_info"></a>！ usb3kd xhci \_ info
 

@@ -1,7 +1,6 @@
 ---
 title: 将直接 I/O 与 PIO 配合使用
 description: 将直接 I/O 与 PIO 配合使用
-ms.assetid: 84d36567-c8c6-4576-91a0-829c8819de4d
 keywords:
 - 直接 i/o WDK 内核
 - 缓冲 WDK i/o，直接 i/o
@@ -11,12 +10,12 @@ keywords:
 - 程控 i/o 传输 WDK 内核
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5336f4e49cbe329535c84dedcc04432c541910ae
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 33f496de8ac2cfa9220e71d63b38da7345cde983
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89185249"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96825589"
 ---
 # <a name="using-direct-io-with-pio"></a>将直接 I/O 与 PIO 配合使用
 
@@ -38,7 +37,7 @@ ms.locfileid: "89185249"
 
 4.  I/o 管理器提供指向 MDL (**MdlAddress**) 的指针，该 MDL 请求传输操作。 在驱动程序完成 IRP 后，在 i/o 管理器或文件系统调用 [**MmUnlockPages**](/windows-hardware/drivers/ddi/wdm/nf-wdm-mmunlockpages) 之前，MDL 中描述的物理页面将保持锁定状态并分配给缓冲区。 但是，即使在将 IRP 发送到设备驱动程序或可能会分层到设备驱动程序的任何中间驱动程序之前，此类 MDL 中的虚拟地址也会变得不可见 (和无效) 。
 
-5.  如果驱动程序需要系统 (虚拟) 地址，则驱动程序将使用 IRP 的**MdlAddress**指针调用[**MMGETSYSTEMADDRESSFORMDLSAFE**](./mm-bad-pointer.md) ，将 MDL 中的用户空间虚拟地址映射到系统空间地址范围。 在上图中，AliasBuff 表示描述双重映射地址的 MDL。
+5.  如果驱动程序需要系统 (虚拟) 地址，则驱动程序将使用 IRP 的 **MdlAddress** 指针调用 [**MMGETSYSTEMADDRESSFORMDLSAFE**](./mm-bad-pointer.md) ，将 MDL 中的用户空间虚拟地址映射到系统空间地址范围。 在上图中，AliasBuff 表示描述双重映射地址的 MDL。
 
 6.  驱动程序使用双重映射 MDL 中的系统空间虚拟地址范围 (AliasBuff) 将数据读入内存中。
 

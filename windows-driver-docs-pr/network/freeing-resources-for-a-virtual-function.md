@@ -1,15 +1,14 @@
 ---
 title: 为虚拟功能释放资源
 description: 为虚拟功能释放资源
-ms.assetid: 48FACA22-69B2-456C-9009-3CA42DE94FC4
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f6db5efe7c9c116b9aa248db519099c73c1124a9
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 8e013c4fe32046a7976d28855235a6af6f4c71a3
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89212463"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96825505"
 ---
 # <a name="freeing-resources-for-a-virtual-function"></a>为虚拟功能释放资源
 

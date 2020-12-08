@@ -1,15 +1,14 @@
 ---
 title: 排查 WIA 微型驱动程序问题
 description: 排查 WIA 微型驱动程序问题
-ms.assetid: a0944bdd-56c4-4f7b-b542-eb353cd4d1f2
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9e0a7fb9c043e453904b3d24f319eb893adebdc6
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 6ddcb90346cc2a97f0f4d5ec90d2e1fb43998347
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89187961"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96826479"
 ---
 # <a name="wia-minidriver-troubleshooting"></a>排查 WIA 微型驱动程序问题
 
@@ -17,7 +16,7 @@ ms.locfileid: "89187961"
 
 
 
-默认情况下，WIA 服务将错误记录到*wiadebug.log* **%** <em>windir</em> **%** 目录中名为 wiadebug 的文件。 WIA 服务放置在此文件中的信息在驱动程序开发过程中非常有用。 下面的示例描述了一个典型的问题，并演示了如何使用 *wiadebug* 文件中的信息来查找该问题的解决方案。
+默认情况下，WIA 服务将错误记录到 *wiadebug.log* **%** <em>windir</em> **%** 目录中名为 wiadebug 的文件。 WIA 服务放置在此文件中的信息在驱动程序开发过程中非常有用。 下面的示例描述了一个典型的问题，并演示了如何使用 *wiadebug* 文件中的信息来查找该问题的解决方案。
 
 开发人员编写一个应用程序来测试正在开发的扫描仪驱动程序。 作为其中一项测试，开发人员尝试将扫描仪的每英寸点数 (dpi) 设置为1200，但会通知此操作将产生错误。 Wiadebug 文件的外观如下所示：
 
@@ -52,9 +51,9 @@ wiasUpdateScanRect, CheckXResAndUpdate failed (0x80070057)
 
 日志记录级别由注册表中的条目控制。 对于 WIA，此密钥位于：
 
-**HKLM \\System \\ CurrentControlSet \\ Control \\ StillImage \\ 调试 \\ **<em>模块 \_ 名称</em>** \\ DebugFlags**
+**HKLM \\System \\ CurrentControlSet \\ Control \\ StillImage \\ 调试 \\**<em>模块 \_ 名称</em>**\\ DebugFlags**
 
-在此示例中，模块 \_ 名称是相应的二进制模块的名称。 对于 WIA 服务，此为 *wiaservc.dll*。 **DebugFlags**中的值控制日志记录级别。 下表中提供了三种设置：
+在此示例中，模块 \_ 名称是相应的二进制模块的名称。 对于 WIA 服务，此为 *wiaservc.dll*。 **DebugFlags** 中的值控制日志记录级别。 下表中提供了三种设置：
 
 <table>
 <colgroup>
@@ -63,7 +62,7 @@ wiasUpdateScanRect, CheckXResAndUpdate failed (0x80070057)
 </colgroup>
 <thead>
 <tr class="header">
-<th>值</th>
+<th>“值”</th>
 <th>含义</th>
 </tr>
 </thead>
@@ -83,8 +82,8 @@ wiasUpdateScanRect, CheckXResAndUpdate failed (0x80070057)
 </tbody>
 </table>
 
-**DebugFlags**中的值是一个标志值 (即，不同的设置可以与按位 or 运算符) 组合。 若要同时启用记录错误、警告和跟踪，请将 **DebugFlags** 设置为0x0000007。
+**DebugFlags** 中的值是一个标志值 (即，不同的设置可以与按位 or 运算符) 组合。 若要同时启用记录错误、警告和跟踪，请将 **DebugFlags** 设置为0x0000007。
 
 为了使 **DebugFlags** 的值更改生效，必须先停止 WIA 服务 (*stisvc*) ，然后再重新启动。 有关详细信息，请参阅 [启动和停止静止映像服务](starting-and-stopping-the-still-image-service.md) 。
 
-**注意**   过多的日志记录可能会显著降低性能。 仅当尝试解决特定问题时，才应增加日志记录级别。 更正问题后，将日志记录设置为其原始级别。 默认日志记录级别为1。 不要将日志记录级别增加三个，因为这可能会导致崩溃。
+**注意**   过多的日志记录可能会显著降低性能。 仅当尝试解决特定问题时，才应增加日志记录级别。 更正问题后，将日志记录设置为其原始级别。 默认日志记录级别为1。 不要将日志记录级别增加三个，因为这可能会导致崩溃。

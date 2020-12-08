@@ -1,22 +1,21 @@
 ---
 title: WDI_TLV_FT_SNONCE
 description: WDI_TLV_FT_SNONCE 是未使用的 TLV。
-ms.assetid: 43702677-C19B-4185-AFCD-9D8BF0CA31F9
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 WDI_TLV_FT_SNONCE 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 345aea9325f87a44fe52477219371bc61fa047c8
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3e36d5c709d68d77e08aaaf84abac911109e25f0
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63382891"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96825369"
 ---
-# <a name="wditlvftsnonce"></a>WDI\_TLV\_FT\_SNONCE
+# <a name="wdi_tlv_ft_snonce"></a>WDI \_ TLV \_ FT \_ SNONCE
 
 
-WDI\_TLV\_FT\_SNONCE 是未使用的 TLV。
+WDI \_ tlv \_ FT \_ SNONCE 是未使用的 tlv。
 
 <a name="requirements"></a>要求
 ------------
@@ -33,10 +32,10 @@ WDI\_TLV\_FT\_SNONCE 是未使用的 TLV。
 </tr>
 <tr class="even">
 <td><p>最低受支持的服务器</p></td>
-<td><p>Windows Server 2016</p></td>
+<td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
-<td><p>Header</p></td>
+<td><p>标头</p></td>
 <td>Wditypes.hpp</td>
 </tr>
 </tbody>

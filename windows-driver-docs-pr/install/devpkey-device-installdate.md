@@ -1,7 +1,6 @@
 ---
 title: DEVPKEY_Device_InstallDate
 description: DEVPKEY_Device_InstallDate
-ms.assetid: 16b26112-1081-40f0-b65b-aafa200aa2eb
 keywords:
 - DEVPKEY_Device_InstallDate 设备和驱动程序安装
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: a81df9f784528f82da581cafb83f5227d9ff6e53
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 0ec7667455a001cd6ec24987be488dbfbd2905ab
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90714684"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96825153"
 ---
 # <a name="devpkey_device_installdate"></a>DEVPKEY_Device_InstallDate
 

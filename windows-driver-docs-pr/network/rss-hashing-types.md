@@ -1,19 +1,18 @@
 ---
 title: RSS 哈希类型
 description: RSS 哈希类型
-ms.assetid: 21ea384c-5fe2-46c1-9e01-30513f505672
 keywords:
 - 接收方缩放 WDK 网络，哈希
 - RSS WDK 网络，哈希
 - 哈希 WDK RSS
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1be3de6e42b2b59ae9f4856a80995b86ce97f1d0
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 83e93c2c626879053846857d05a447723c4fbd6a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89209279"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96825030"
 ---
 # <a name="rss-hashing-types"></a>RSS 哈希类型
 
@@ -128,8 +127,8 @@ IPv6 集中的有效哈希类型组合如下：
 
 NIC 应计算以下字段的哈希值：
 
-- 源 IPv6 地址
-- 目标-IPv6-地址
+- Source-IPv6 地址
+- Destination-IPv6 地址
 - 源 TCP 端口
 - 目标 TCP 端口
 

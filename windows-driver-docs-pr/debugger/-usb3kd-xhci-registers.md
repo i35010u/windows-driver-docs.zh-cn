@@ -1,9 +1,8 @@
 ---
-title: usb3kd xhci_registers
-description: Xhci_registers usb3kd 扩展显示 USB 3.0 主机控制器的寄存器。
-ms.assetid: C695C23D-B617-4D1E-87F8-62CF99426CA3
+title: usb3kd.xhci_registers
+description: Usb3kd.xhci_registers 扩展显示 USB 3.0 主机控制器的寄存器。
 keywords:
-- usb3kd xhci_registers Windows 调试
+- usb3kd.xhci_registers Windows 调试
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,12 +11,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 5f29e77ea1e3fcf0f3f410c71c9a31a7bdfae23c
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 1cde472038a3684e3db8a9ad8e3442a7f2d62b56
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89216284"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96824723"
 ---
 # <a name="usb3kdxhci_registers"></a>！ usb3kd xhci \_ 注册
 

@@ -1,9 +1,8 @@
 ---
 title: storagekd.storadapter
-description: Storagekd.storadapter 扩展显示有关指定 Storport 适配器的信息。
-ms.assetid: E7EBC2F7-676A-4DD9-ADAA-5C240299013C
+description: Storagekd. storadapter 扩展显示有关指定的 Storport 适配器的信息。
 keywords:
-- storagekd.storadapter Windows 调试
+- storagekd storadapter Windows 调试
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,29 +11,29 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: f380c29540e5eaa19dd45e4f5c62ad3e233668a1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ac0ba482de977b118e0c98a407a49000b88350d4
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63334218"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96825803"
 ---
 # <a name="storagekdstoradapter"></a>!storagekd.storadapter
 
 
-**！ Storagekd.storadapter**扩展显示有关指定的 Storport 适配器的信息。
+**！ Storagekd storadapter** 扩展显示有关指定的 Storport 适配器的信息。
 
 ```dbgcmd
 !storagekd.storadapter [Address]  
 ```
 
-## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>参数
+## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>Parameters
 
 
-<span id="_______Address______"></span><span id="_______address______"></span><span id="_______ADDRESS______"></span> *Address*   
-指定 Storport 适配器设备对象的地址。 如果*地址*是省略，将显示所有 Storport 适配器的列表。
+<span id="_______Address______"></span><span id="_______address______"></span><span id="_______ADDRESS______"></span>*地址*   
+指定 Storport 适配器设备对象的地址。 如果省略 *Address* ，则显示所有 Storport 适配器的列表。
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 <table>
 <colgroup>
@@ -43,7 +42,7 @@ ms.locfileid: "63334218"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p><strong>Windows 8 及更高版本</strong></p></td>
+<td align="left"><p><strong>Windows 8 及更高版本</strong></p></td>
 <td align="left"><p>Storagekd.dll</p></td>
 </tr>
 </tbody>
@@ -54,9 +53,9 @@ ms.locfileid: "63334218"
 <a name="remarks"></a>备注
 -------
 
-下面是举例 **！ storagekd.storadapter**显示：
+下面是 **！ storadapter** 显示的示例 storagekd：
 
-**1: kd&gt; ! storagekd.storadapter**
+**1： kd &gt; ！ storagekd. storadapter**
 
 ```dbgcmd
 # STORPORT adapters:
@@ -66,7 +65,7 @@ ms.locfileid: "63334218"
 \Driver\vhdmp          fffffa800649a050  fffffa800649a1a0   Working
 ```
 
-**1: kd&gt; ! storagekd.storadapter fffffa800649a050**
+**1： kd &gt; ！ storagekd. storadapter fffffa800649a050**
 
 ```dbgcmd
 ADAPTER

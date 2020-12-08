@@ -1,9 +1,8 @@
 ---
-title: WIA\_DIP\_HW\_配置
-description: WIA\_DIP\_HW\_CONFIG 属性指示的设备使用的连接类型。 WIA 服务创建和维护此属性，并仅 WIA 服务可以对其进行更改。
-ms.assetid: c79e9651-120c-4f99-83d2-1920f7fccc73
+title: WIA \_ DIP \_ HW \_ 配置
+description: WIA \_ DIP \_ HW \_ CONFIG 属性指明设备使用的连接类型。 WIA 服务创建并维护此属性，并且只有 WIA 服务可以对其进行更改。
 keywords:
-- WIA_DIP_HW_CONFIG 成像设备
+- WIA_DIP_HW_CONFIG 图像设备
 topic_type:
 - apiref
 api_name:
@@ -14,33 +13,33 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fe776eac82066be5213adfc4a91f9f96715b3b5c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: aaa6fd3aa62531ddc29af24751e89e29065fcc55
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63325307"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96824511"
 ---
-# <a name="wiadiphwconfig"></a>WIA\_DIP\_HW\_配置
+# <a name="wia_dip_hw_config"></a>WIA \_ DIP \_ HW \_ 配置
 
 
-WIA\_DIP\_HW\_CONFIG 属性指示的设备使用的连接类型。 WIA 服务创建和维护此属性，并仅 WIA 服务可以对其进行更改。
+WIA \_ DIP \_ HW \_ CONFIG 属性指明设备使用的连接类型。 WIA 服务创建并维护此属性，并且只有 WIA 服务可以对其进行更改。
 
 ## <span id="ddk_wia_dip_hw_config_si"></span><span id="DDK_WIA_DIP_HW_CONFIG_SI"></span>
 
 
-属性类型：VT\_I4
+属性类型： VT \_ I4
 
-有效值：WIA\_PROP\_NONE
+有效值： WIA " \_ \_ 无"
 
 访问权限：只读
 
 <a name="remarks"></a>备注
 -------
 
-应用程序读取 WIA\_DIP\_HW\_配置属性来确定设备的连接类型。
+应用程序读取 WIA \_ DIP \_ HW \_ CONFIG 属性以确定设备的连接类型。
 
-下表介绍可能的值 WIA\_DIP\_HW\_配置。
+下表描述了 WIA \_ DIP HW CONFIG 的可能 \_ 值 \_ 。
 
 <table>
 <colgroup>
@@ -49,7 +48,7 @@ WIA\_DIP\_HW\_CONFIG 属性指示的设备使用的连接类型。 WIA 服务创
 </colgroup>
 <thead>
 <tr class="header">
-<th>ReplTest1</th>
+<th>值</th>
 <th>定义</th>
 </tr>
 </thead>
@@ -72,7 +71,7 @@ WIA\_DIP\_HW\_CONFIG 属性指示的设备使用的连接类型。 WIA 服务创
 </tr>
 <tr class="odd">
 <td><p>16</p></td>
-<td><p>并行的设备</p></td>
+<td><p>并行设备</p></td>
 </tr>
 </tbody>
 </table>
@@ -89,8 +88,8 @@ WIA\_DIP\_HW\_CONFIG 属性指示的设备使用的连接类型。 WIA 服务创
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Header</p></td>
-<td>Wiadef.h （包括 Wiadef.h）</td>
+<td><p>标头</p></td>
+<td>Wiadef (包含 Wiadef) </td>
 </tr>
 </tbody>
 </table>

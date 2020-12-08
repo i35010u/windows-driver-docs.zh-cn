@@ -1,17 +1,16 @@
 ---
 title: 禁用内核堆栈分页
 description: 禁用内核堆栈分页
-ms.assetid: 3bf0ae20-4569-41de-9d7c-dd6a2790dac6
 keywords:
-- 禁用分页的内核堆栈 （全局标志）
+- '禁用 (全局标志的内核堆栈的分页) '
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d02e9a57d9950e8012149d4c080f9ca175879735
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ac068211bc0711f90d2d68fe33b7df5e6003a442
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63324573"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96826159"
 ---
 # <a name="disable-paging-of-kernel-stacks"></a>禁用内核堆栈分页
 
@@ -19,7 +18,7 @@ ms.locfileid: "63324573"
 ## <span id="ddk_disable_paging_of_kernel_stacks_dtools"></span><span id="DDK_DISABLE_PAGING_OF_KERNEL_STACKS_DTOOLS"></span>
 
 
-**禁用分页的内核堆栈**的标记阻止对非活动状态的线程的内核模式堆栈的分页。
+**禁用内核堆栈** 标志的分页可防止非活动线程的内核模式堆栈分页。
 
 <table>
 <colgroup>
@@ -41,18 +40,18 @@ ms.locfileid: "63324573"
 </tr>
 <tr class="even">
 <td align="left"><p><strong>目标</strong></p></td>
-<td align="left"><p>整个系统的注册表项</p></td>
+<td align="left"><p>系统范围内的注册表项</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-### <a name="span-idcommentsspanspan-idcommentsspancomments"></a><span id="comments"></span><span id="COMMENTS"></span>注释
+### <a name="span-idcommentsspanspan-idcommentsspancomments"></a><span id="comments"></span><span id="COMMENTS"></span>提出
 
-通常情况下，不能分页的内核模式堆栈;它被保证可驻留在内存中。 但是，Windows 偶尔页面处于非活动状态的线程的内核堆栈。 此标志会阻止这些情况的发生。
+通常，无法分页内核模式堆栈;保证它驻留在内存中。 但是，Windows 偶尔会对非活动线程的内核堆栈进行分页。 此标志可防止出现这种情况。
 
-仅当其堆栈处于物理内存时，内核调试程序可以提供有关线程的信息。 此标志是特别重要调试死锁时和在其他情况下，当必须跟踪每个线程。
+仅当线程的堆栈在物理内存中时，内核调试器才能提供有关该线程的信息。 当调试死锁时，或在其他情况下必须跟踪每个线程时，此标志尤其重要。
 
  
 

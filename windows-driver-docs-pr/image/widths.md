@@ -1,9 +1,8 @@
 ---
 title: 宽度元素
-description: 所需的宽度元素列出的扫描程序扫描图像的宽度。
-ms.assetid: 785d469f-bdad-413c-8bfb-de7a518b243c
+description: 必需的宽度元素包含扫描程序可以扫描图像的宽度列表。
 keywords:
-- 宽度元素成像设备
+- 宽度元素图像设备
 topic_type:
 - apiref
 api_name:
@@ -12,19 +11,19 @@ api_type:
 - Schema
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0ff2d7262c2c30be8827726630c83e8f4fdd0afe
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 545503f32ba78481e692739007a0289c65f82d00
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380231"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96826345"
 ---
 # <a name="widths-element"></a>宽度元素
 
 
-所需**宽度**元素包含扫描程序扫描图像的宽度的列表。
+必需的 **宽度** 元素包含扫描程序可以扫描图像的宽度列表。
 
-<a name="usage"></a>用法
+<a name="usage"></a>使用情况
 -----
 
 ```xml
@@ -53,7 +52,7 @@ ms.locfileid: "63380231"
 </thead>
 <tbody>
 <tr class="odd">
-<td><p><a href="width.md" data-raw-source="[&lt;strong&gt;Width&lt;/strong&gt;](width.md)"><strong>Width</strong></a></p></td>
+<td><p><a href="width.md" data-raw-source="[&lt;strong&gt;Width&lt;/strong&gt;](width.md)"><strong>宽度</strong></a></p></td>
 </tr>
 </tbody>
 </table>
@@ -86,9 +85,9 @@ ms.locfileid: "63380231"
 <a name="remarks"></a>备注
 -------
 
-每个[**宽度**](width.md)子元素指定为有效的每英寸点数设备扫描图像的水平像素数。
+每个 [**Width**](width.md) 元素都指定设备可以扫描图像的每英寸的有效水平像素数。
 
-[**高度**](heights.md)元素包含在扫描仪支持的具有高度的列表。
+[**高度**](heights.md)元素包含扫描程序支持的高度的列表。
 
 ## <a name="see-also"></a>请参阅
 
@@ -97,13 +96,13 @@ ms.locfileid: "63380231"
 
 [**FilmResolutions**](filmresolutions.md)
 
-[**Height**](height.md)
+[**高度**](height.md)
 
-[**高度**](heights.md)
+[**Heights**](heights.md)
 
 [**PlatenResolutions**](platenresolutions.md)
 
-[**Width**](width.md)
+[**宽度**](width.md)
 
  
 

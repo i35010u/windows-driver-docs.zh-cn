@@ -1,7 +1,6 @@
 ---
 title: CLFS 稳定存储
 description: CLFS 稳定存储
-ms.assetid: d0ee4f22-9fba-47da-a9c9-eaf3a21feb36
 keywords:
 - 公用日志文件系统 WDK 内核，稳定存储
 - CLFS WDK 内核，稳定存储
@@ -19,12 +18,12 @@ keywords:
 - 记录序列号 WDK CLFS
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2fda2a5af85fabb5407fca444de0914b277448b4
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: eafa329c4e1767ee9be2bfd4e6e22dd06062738e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89189871"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96825661"
 ---
 # <a name="clfs-stable-storage"></a>CLFS 稳定存储
 
@@ -32,7 +31,7 @@ ms.locfileid: "89189871"
 
 
 
-将记录写入公用日志文件系统 (CLFS) 流时，该记录将被放入日志 i/o 块 (，该块会出现在 "可变内存" 的封送) 区域中。 CLFS 会定期刷新从封送区到稳定存储（如磁盘）的日志 i/o 块。 在稳定存储设备上，日志包含一组容器，每个容器都是物理介质上的一个连续区。 构成流的稳定存储的容器集合称为 *日志*或 *物理日志*。
+将记录写入公用日志文件系统 (CLFS) 流时，该记录将被放入日志 i/o 块 (，该块会出现在 "可变内存" 的封送) 区域中。 CLFS 会定期刷新从封送区到稳定存储（如磁盘）的日志 i/o 块。 在稳定存储设备上，日志包含一组容器，每个容器都是物理介质上的一个连续区。 构成流的稳定存储的容器集合称为 *日志* 或 *物理日志*。
 
 下图说明了一个容器。
 
@@ -42,11 +41,11 @@ ms.locfileid: "89189871"
 
 CLFS 使用一组三个数字来定位日志中的记录。
 
--   *容器标识符*标识保存记录的容器。
+-   *容器标识符* 标识保存记录的容器。
 
--   *块偏移*为包含记录的日志 i/o 块的开始位置提供了在容器中的字节偏移量。
+-   *块偏移* 为包含记录的日志 i/o 块的开始位置提供了在容器中的字节偏移量。
 
--   *记录序列*号用于标识日志 i/o 块中的记录。
+-   *记录序列* 号用于标识日志 i/o 块中的记录。
 
 CLFS 日志记录 (LSN) 的日志序列号实际上包含三条信息：容器标识符、块偏移量和记录序列号。 但是，为记录客户端提供的 Lsn 包含 *逻辑容器标识符* ，CLFS 必须映射到物理容器标识符，然后才能访问稳定存储上的记录。
 

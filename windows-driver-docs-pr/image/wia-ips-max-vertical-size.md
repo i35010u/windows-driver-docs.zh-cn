@@ -1,9 +1,8 @@
 ---
-title: WIA\_IPS\_MAX\_VERTICAL\_SIZE
-description: WIA\_IPS\_最大\_垂直\_大小属性包含扫描仪的平板、 千分之几秒的英寸为单位中的物理垂直尺寸 (。 001)。 WIA 微型驱动程序创建并维护此属性。
-ms.assetid: b7726caf-b097-4974-8843-c808fee4e6cc
+title: WIA \_ IPS \_ 最大 \_ 垂直 \_ 大小
+description: "\"WIA \\_ IPS \\_ 最大 \\_ 垂直 \\_ 大小\" 属性包含扫描仪的平板的物理垂直尺寸，以英寸 ( 001) 为单位。 WIA 微型驱动程序创建并维护此属性。"
 keywords:
-- WIA_IPS_MAX_VERTICAL_SIZE 成像设备
+- WIA_IPS_MAX_VERTICAL_SIZE 图像设备
 topic_type:
 - apiref
 api_name:
@@ -14,21 +13,21 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c1f21094d83bb85682dc5b4339e236ac5905c456
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: b0274ec795eec56dc45f0d04a3337ae54c83fc8e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56566340"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96825951"
 ---
-# <a name="wiaipsmaxverticalsize"></a>WIA\_IPS\_MAX\_VERTICAL\_SIZE
+# <a name="wia_ips_max_vertical_size"></a>WIA \_ IPS \_ 最大 \_ 垂直 \_ 大小
 
 
-WIA\_IPS\_最大\_垂直\_大小属性包含扫描仪的平板、 千分之几秒的英寸为单位中的物理垂直尺寸 (。 001)。 WIA 微型驱动程序创建并维护此属性。
+"WIA \_ IPS \_ 最大 \_ 垂直 \_ 大小" 属性包含扫描仪的平板的物理垂直尺寸，以英寸 ( 001) 为单位。 WIA 微型驱动程序创建并维护此属性。
 
-属性类型：VT\_I4
+属性类型： VT \_ I4
 
-有效值：WIA\_PROP\_NONE
+有效值： WIA " \_ \_ 无"
 
 访问权限：只读
 
@@ -43,11 +42,11 @@ WIA\_IPS\_最大\_垂直\_大小属性包含扫描仪的平板、 千分之几�
 <tbody>
 <tr class="odd">
 <td><p>版本</p></td>
-<td><p>在 Windows Vista 和更高版本操作系统中可用。</p></td>
+<td><p>在 Windows Vista 和更高版本的操作系统中可用。</p></td>
 </tr>
 <tr class="even">
-<td><p>Header</p></td>
-<td>Wiadef.h （包括 Wiadef.h）</td>
+<td><p>标头</p></td>
+<td>Wiadef (包含 Wiadef) </td>
 </tr>
 </tbody>
 </table>
@@ -55,7 +54,7 @@ WIA\_IPS\_最大\_垂直\_大小属性包含扫描仪的平板、 千分之几�
 ## <a name="see-also"></a>请参阅
 
 
-[**WIA\_IPS\_MAX\_HORIZONTAL\_SIZE**](wia-ips-max-horizontal-size.md)
+[**WIA \_ IPS \_ 最大 \_ 水平 \_ 大小**](wia-ips-max-horizontal-size.md)
 
  
 

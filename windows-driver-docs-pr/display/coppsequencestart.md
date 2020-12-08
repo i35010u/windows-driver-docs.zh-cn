@@ -1,24 +1,23 @@
 ---
 title: COPPSequenceStart 函数
-description: 示例 COPPSequenceStart 函数将当前的视频会话设置为受保护模式。
-ms.assetid: c3b3d4ad-ab86-4cc4-9023-8b0cd0655d42
+description: 示例 COPPSequenceStart 函数将当前视频会话设置为受保护模式。
 keywords:
-- 复制保护 WDK COPP，微型端口驱动程序代码模板
-- 视频复制保护 WDK COPP，微型端口驱动程序代码模板
-- 受保护的视频 WDK COPP，微型端口驱动程序代码模板
-- 微型端口驱动程序 WDK Windows 2000，COPP 代码模板
+- 复制保护 WDK COPP，视频微型端口驱动程序代码模板
+- 视频复制保护 WDK COPP，视频微型端口驱动程序代码模板
+- 受保护的视频 WDK COPP，视频微型端口驱动程序代码模板
+- 视频微型端口驱动程序 WDK Windows 2000，COPP 代码模板
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0fa73c53c7b472bb2fe49b138e33de8c749a4af6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1d125203df8990ec020b5ea3dd7ad1ff31b32daa
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63331299"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96826069"
 ---
 # <a name="coppsequencestart-function"></a>COPPSequenceStart 函数
 
-示例 COPPSequenceStart 函数将当前的视频会话设置为受保护模式。
+示例 COPPSequenceStart 函数将当前视频会话设置为受保护模式。
 
 ### <a name="syntax"></a>语法
 
@@ -29,54 +28,54 @@ HRESULT COPPSequenceStart(
 );
 ```
 
-## <a name="parameters"></a>Parameters
+## <a name="parameters"></a>参数
 
 *pThis [in]*
 
-* 指向 COPP DirectX VA 设备对象指针。
+* 指向 COPP DirectX VA 设备对象的指针。
 
 *pSeqStartInfo [in]*
 
-* 提供了指向包含有关开始序列的信息的 DXVA_COPPSignature 结构的指针。
+* 提供一个指向 DXVA_COPPSignature 结构的指针，该结构包含有关开始序列的信息。
 
 ## <a name="return-value"></a>返回值
 
-返回零 （S_OK 或 DD_OK） 如果成功，则否则，返回错误代码。
+如果成功，则返回零 (S_OK 或 DD_OK) ;否则，将返回错误代码。
 
 ## <a name="remarks"></a>备注
 
-接收到对其 COPPSequenceStart 函数的调用之前，COPP DirectX VA 设备应为 VMR 提供图形硬件证书。 也就是说，COPPKeyExchange 函数应在 COPPSequenceStart 之前调用。 如果之前 COPPKeyExchange，将调用 COPPSequenceStart，COPPSequenceStart 应返回 E_UNEXPECTED。
+COPP DirectX VA 设备应该先向 VMR 提供图形硬件证书，然后才能接收对其 COPPSequenceStart 函数的调用。 也就是说，应在 COPPSequenceStart 之前调用 COPPKeyExchange 函数。 如果在 COPPKeyExchange 之前调用 COPPSequenceStart，则 COPPSequenceStart 应返回 E_UNEXPECTED。
 
-提供的图形硬件证书之后, COPP DirectX VA 设备应收到对其 COPPSequenceStart 函数只能有一个调用。 如果 COPP DirectX VA 设备收到另一个 COPPSequenceStart 调用，则应返回 E_UNEXPECTED。
+提供图形硬件证书后，COPP DirectX VA 设备应该只接收一次对其 COPPSequenceStart 函数的调用。 如果 COPP DirectX VA 设备收到另一个 COPPSequenceStart 调用，它应返回 E_UNEXPECTED。
 
-COPPSequenceStart 函数接收包含开始序列，其中包括以下各项串联在一起的填充的 DXVA_COPPSignature 结构：
+COPPSequenceStart 函数接收包含开始序列的已填充 DXVA_COPPSignature 结构，其中包含连接在一起的以下项：
 
-* 128 位随机数字生成由驱动程序并通过对驱动程序的 COPPKeyExchange 函数的调用返回
-* 128 位随机数据完整性会话密钥
-* 32 位随机起始状态序列号
-* 32 位随机起始命令序列号
+* 128位随机数字，由驱动程序生成，通过对驱动程序的 COPPKeyExchange 函数的调用返回
+* 128位随机数据完整性会话密钥
+* 32位随机起始状态序列号
+* 32位随机起始命令序列号
 
-使用图形硬件的公钥进行加密开始序列。
+开始序列是使用图形硬件的公钥进行加密的。
 
-## <a name="mapping-rendermocomp-to-coppsequencestart"></a>映射到 COPPSequenceStart RenderMoComp
+## <a name="mapping-rendermocomp-to-coppsequencestart"></a>将 RenderMoComp 映射到 COPPSequenceStart
 
-示例 COPPSequenceStart 函数直接映射到 DD_MOTIONCOMPCALLBACKS 结构的 RenderMoComp 成员调用。 RenderMoComp 成员指向显示驱动程序提供 DdMoCompRender 回调的函数的引用 DD_RENDERMOCOMPDATA 结构。
+示例 COPPSequenceStart 函数直接映射到对 DD_MOTIONCOMPCALLBACKS 结构的 RenderMoComp 成员的调用。 RenderMoComp 成员指向显示驱动程序提供的 DdMoCompRender 回调函数，该函数引用 DD_RENDERMOCOMPDATA 结构。
 
-而无需显示驱动程序提供 BeginMoCompFrame 或 EndMoCompFrame 要调用的函数首先调用 RenderMoComp 回调函数。
+调用 RenderMoComp 回调函数时，不会首先调用显示驱动程序提供的 BeginMoCompFrame 或 EndMoCompFrame 函数。
 
 按如下所示填充 DD_RENDERMOCOMPDATA 结构。
 
-| 成员 | ReplTest1 |
+| 成员 | “值” |
 | -- | -- |
-| dwNumBuffers | 为零。 |
+| dwNumBuffers | Zero。 |
 | lpBufferInfo | NULL。 |
-| dwFunction | DXVA_COPPSequenceStartFnCode 常量 （dxva.h 中定义）。 |
+| dwFunction | DXVA) 中定义 DXVA_COPPSequenceStartFnCode 常量 (。 |
 | lpInputData | 指向 DXVA_COPPSignature 结构的指针。 |
 | lpOutputData | NULL。 |
 
 ## <a name="example-code"></a>示例代码
 
-以下代码举例说明如何实现 COPPSequenceStart 函数：
+下面的代码提供了一个示例，说明如何实现 COPPSequenceStart 函数：
 
 ```cpp
 HRESULT
@@ -128,9 +127,9 @@ COPPSequenceStart(
 }
 ```
 
-**要求**
+**惠?**
 
-| 目标平台 | Version |
+| 目标平台 | 版本 |
 | -- | -- |
-| 桌面设备 | 此函数仅适用于 Windows Server 2003 SP1 和更高版本和 Windows XP SP2 和更高版本。 |
+| 台式机 | 此函数仅适用于 Windows Server 2003 SP1 及更高版本以及 Windows XP SP2 及更高版本。 |
 

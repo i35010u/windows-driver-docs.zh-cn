@@ -1,15 +1,14 @@
 ---
 title: 使用活动标识符
 description: 使用活动标识符
-ms.assetid: 2B70953F-5192-4654-9506-6A84373D20B4
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d10229f897357f5da9b786d003fbc05d2e28a3b4
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: da6643897be2a6c8b013240619014c7a4d88751b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90717460"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96824819"
 ---
 # <a name="using-activity-identifiers"></a>使用活动标识符
 

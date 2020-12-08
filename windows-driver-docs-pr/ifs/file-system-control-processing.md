@@ -1,7 +1,6 @@
 ---
 title: 文件系统控制处理
 description: 文件系统控制处理
-ms.assetid: 95a610c8-b48c-4fff-bf1f-f9fb6abb0fd9
 keywords:
 - 安全 WDK 文件系统，语义模型检查
 - 语义模型检查 WDK 文件系统，控制处理
@@ -10,12 +9,12 @@ keywords:
 - 控制处理 WDK 文件系统
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ca6e30151acc89fbb675ac4ad88e447bcd7399b3
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: a31ef0d69f0777cbfd85dfa2ca6c1f2931ee79fb
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89063672"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96825679"
 ---
 # <a name="file-system-control-processing"></a>文件系统控制处理
 

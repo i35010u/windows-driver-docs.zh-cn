@@ -1,7 +1,6 @@
 ---
 title: hstring
-description: Hstring 扩展显示 HSTRING 的字段。 在显示中的最后一项是字符串本身。
-ms.assetid: 6FB85609-0FB1-457E-A58E-804F69016406
+description: Hstring 扩展显示 HSTRING 的字段。 显示的最后一项是字符串本身。
 keywords:
 - hstring Windows 调试
 ms.date: 05/23/2017
@@ -12,37 +11,37 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 8c41b63cde736165acf39cf9554be488c0bffbb6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 68dcd36b3470d2391510cfd60c6c809eab46ba80
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63336458"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96825813"
 ---
 # <a name="hstring"></a>!hstring
 
 
-**！ Hstring**扩展显示的字段**HSTRING**。 在显示中的最后一项是字符串本身。
+**！ Hstring** 扩展显示 **hstring** 的字段。 显示的最后一项是字符串本身。
 
 ```dbgcmd
 !hstring Address
 ```
 
-## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>参数
+## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>Parameters
 
 
-<span id="Address"></span><span id="address"></span><span id="ADDRESS"></span>*Address*  
-地址**HSTRING**。
+<span id="Address"></span><span id="address"></span><span id="ADDRESS"></span>*地址*  
+**HSTRING** 的地址。
 
 <a name="remarks"></a>备注
 -------
 
-**HSTRING**数据类型支持有嵌入的 NULL 字符的字符串。 但是， **！ hstring**扩展显示仅第一个空字符之前的字符串。 若要查看整个字符串包含嵌入的 NULL 字符，请使用[ **！ hstring2** ](-hstring2.md)扩展。
+**HSTRING** 数据类型支持嵌入了空字符的字符串。 但是， **！ hstring** extension 只显示最多为第一个 NULL 字符的字符串。 若要查看包含嵌入的 NULL 字符的整个字符串，请使用 [**！ hstring2**](-hstring2.md) 扩展名。
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
-[Windows 运行时调试器命令](windows-runtime-debugger-commands.md)
+[Windows 运行时调试程序命令](windows-runtime-debugger-commands.md)
 
 [**!hstring2**](-hstring2.md)
 

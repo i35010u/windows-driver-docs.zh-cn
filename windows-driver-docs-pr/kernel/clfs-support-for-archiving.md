@@ -1,7 +1,6 @@
 ---
 title: 存档的 CLFS 支持
 description: 存档的 CLFS 支持
-ms.assetid: 5a07d7d2-4939-48f8-bd4c-855af61034fb
 keywords:
 - 公用日志文件系统 WDK 内核，存档
 - CLFS WDK 内核，存档
@@ -10,12 +9,12 @@ keywords:
 - 存档结尾 WDK CLFS
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 29bd3900368ac5822d97ef1ee16872c11f0131ff
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 56ecdacb4a649ea36b01ea86e4baaf1ec8c39fe8
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89189839"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96825657"
 ---
 # <a name="clfs-support-for-archiving"></a>存档的 CLFS 支持
 
@@ -23,7 +22,7 @@ ms.locfileid: "89189839"
 
 
 
-公用日志文件系统 (CLFS) 通过保留存档尾部来支持专用日志的存档。 调用[**ClfsCreateLogFile**](/windows-hardware/drivers/ddi/wdm/nf-wdm-clfscreatelogfile)创建专用日志时，可以设置 \_ FFLAGSANDATTRIBUTES 参数的文件属性 \_ 存档标志，以指定 CLFS *fFlagsAndAttributes*应为日志保留存档结尾。 CLFS 维护存档结尾的日志称为 " *不短暂日志*"。
+公用日志文件系统 (CLFS) 通过保留存档尾部来支持专用日志的存档。 调用 [**ClfsCreateLogFile**](/windows-hardware/drivers/ddi/wdm/nf-wdm-clfscreatelogfile)创建专用日志时，可以设置 \_ FFLAGSANDATTRIBUTES 参数的文件属性 \_ 存档标志，以指定 CLFS *fFlagsAndAttributes* 应为日志保留存档结尾。 CLFS 维护存档结尾的日志称为 " *不短暂日志*"。
 
 假设您要对数据库执行事务，并且每个事务都有日志记录描述的多个更新。 在特定事务提交并写入到稳定存储后，你可能不需要描述该事务的日志记录。 也就是说，在发生系统故障时，在重新启动恢复期间不需要日志记录。 但是，如果保存数据库的稳定存储介质出现故障，并且数据库最近未在不同的介质上存档，则数据库更新可能会丢失。
 

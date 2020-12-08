@@ -1,7 +1,6 @@
 ---
 title: DispatchQueryInformation 例程
 description: DispatchQueryInformation 例程
-ms.assetid: dfcb8ad0-ae95-4dd7-b4c8-a2f3ad4b12ef
 keywords:
 - 调度例程 WDK 内核，DispatchQueryInformation 例程
 - DispatchQueryInformation 例程
@@ -9,12 +8,12 @@ keywords:
 - 查询信息发送例程 WDK 内核
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fca27ae13465ce961bb11a4cbf2ccbd64be09fd1
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: e97e0de2736b8e86ce803421a2d436b8b99daeb7
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90717482"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96825933"
 ---
 # <a name="dispatchqueryinformation-routines"></a>DispatchQueryInformation 例程
 

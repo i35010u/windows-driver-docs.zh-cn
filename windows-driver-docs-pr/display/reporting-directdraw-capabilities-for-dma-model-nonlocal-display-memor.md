@@ -1,7 +1,6 @@
 ---
 title: 报告非本地显示内存的 DDraw 功能
 description: DMA 模型驱动程序对非本地显示内存的功能与本地显示内存的功能不同。
-ms.assetid: e503fc8b-db27-486a-8616-a1b88ea77218
 keywords:
 - DMA 样式 AGP WDK DirectDraw
 - 显示内存 WDK DirectDraw，DMA 样式 AGP
@@ -14,12 +13,12 @@ keywords:
 ms.date: 12/06/2018
 ms.localizationpriority: medium
 ms.custom: seodec18
-ms.openlocfilehash: 059d1b27e027bf603cf870032497ed618ca0632d
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 32363cf368986555f18056d471f7d6183eb8bdd2
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90717166"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96825729"
 ---
 # <a name="reporting-directdraw-capabilities-for-nonlocal-display-memory"></a>报告非本地显示内存的 DirectDraw 功能
 

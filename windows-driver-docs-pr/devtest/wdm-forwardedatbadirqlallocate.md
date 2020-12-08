@@ -1,7 +1,6 @@
 ---
 title: 'ForwardedAtBadIrqlAllocate 规则 (wdm) '
 description: ForwardedAtBadIrqlAllocate 规则指定驱动程序应在 IRQL 调度级别调用 IoCallDriver 和 PoCallDriver \_ ，除非要转发的 irp 主要函数代码是以下 irp \_ mj \_ POWERIRP \_ mj \_ READIRP \_ mj \_ WRITEIRP mj \_ \_ DEVICE \_ CONTROLIRP \_ mj \_ INTERNAL \_ device \_ CONTROL。
-ms.assetid: 74BB8358-AE25-4FF8-BBA7-BF108DC2946C
 ms.date: 05/21/2018
 keywords:
 - 'ForwardedAtBadIrqlAllocate 规则 (wdm) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: bc13f5f17ee8bfd514de35b60df053b20fdf7b82
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 9e484615a50b5d1f0b130b87e929810b7b1d57d5
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90101492"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96826079"
 ---
 # <a name="forwardedatbadirqlallocate-rule-wdm"></a>ForwardedAtBadIrqlAllocate 规则 (wdm) 
 
 
-**ForwardedAtBadIrqlAllocate**规则指定驱动程序应在 IRQL 调度级别调用[**IoCallDriver**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iocalldriver)和[**PoCallDriver**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-pocalldriver) &lt; \_ ，除非要转发的 IRP 主要函数代码是以下项之一：
+**ForwardedAtBadIrqlAllocate** 规则指定驱动程序应在 IRQL 调度级别调用 [**IoCallDriver**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iocalldriver)和 [**PoCallDriver**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-pocalldriver) &lt; \_ ，除非要转发的 IRP 主要函数代码是以下项之一：
 
 -   [**IRP \_ MJ \_ POWER**](../kernel/irp-mj-power.md)
 -   [**IRP \_ MJ \_ 读取**](../kernel/irp-mj-read.md)

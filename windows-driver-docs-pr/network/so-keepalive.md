@@ -1,16 +1,15 @@
 ---
 title: SO_KEEPALIVE
 description: SO_KEEPALIVE
-ms.assetid: 47b29218-f227-4d36-b206-d8bf009252c0
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 SO_KEEPALIVE 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: ca6da2a9a1885dbc477bf8e5869d0a4eefccf06b
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: d58ff5bb9b2167ad7ed89b59df68028a20c3be03
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89205959"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96824999"
 ---
 # <a name="so_keepalive"></a>所以 \_ KEEPALIVE
 
@@ -27,7 +26,7 @@ ms.locfileid: "89205959"
 <thead>
 <tr class="header">
 <th>参数</th>
-<th>值</th>
+<th>“值”</th>
 </tr>
 </thead>
 <tbody>
@@ -82,7 +81,7 @@ ms.locfileid: "89205959"
 <thead>
 <tr class="header">
 <th>参数</th>
-<th>值</th>
+<th>“值”</th>
 </tr>
 </thead>
 <tbody>
@@ -134,7 +133,7 @@ WSK 应用程序必须在调用 **WskControlSocket** 函数时指定一个指向
 
 保持活动状态的数据包由基础网络传输来发送。 并非所有网络传输都支持发送保持活动状态的数据包。
 
-有关使用 keep-alive 数据包的详细信息，请参阅 *RFC 1122*4.2.3.6 "TCP 保持连接" 一节。
+有关使用 keep-alive 数据包的详细信息，请参阅 *RFC 1122* 4.2.3.6 "TCP 保持连接" 一节。
 
 <a name="requirements"></a>要求
 ------------

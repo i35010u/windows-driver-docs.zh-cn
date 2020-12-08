@@ -1,7 +1,6 @@
 ---
 title: I/O 编程技术
 description: I/O 编程技术
-ms.assetid: 642746ba-d94e-4ffb-ba58-bb8a5650bea3
 keywords:
 - I/o WDK 内核
 - 内核模式驱动程序 WDK，i/o 技术
@@ -10,12 +9,12 @@ keywords:
 - 数据传输 WDK 内核
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1ba11496c93216195568dacb2a0b5cb21aa9bd9e
-ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
+ms.openlocfilehash: 8abd26a29313deb91f90d12940670d790b25ecb5
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89403520"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96825879"
 ---
 # <a name="io-programming-techniques"></a>I/O 编程技术
 

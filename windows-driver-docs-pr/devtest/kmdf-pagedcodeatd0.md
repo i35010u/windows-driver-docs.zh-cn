@@ -1,7 +1,6 @@
 ---
 title: 'PagedCodeAtD0 规则 (kmdf) '
 description: PagedCodeAtD0 规则指定驱动程序不得将代码标记为可在开机代码路径中的回调函数内进行分页。
-ms.assetid: e3e0ee8f-eebe-4855-be35-3d8b153dd09e
 ms.date: 05/21/2018
 keywords:
 - 'PagedCodeAtD0 规则 (kmdf) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: df281a306fc9884140b48047cdca53e3ba444a89
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: cffba0d84a4fbb9748b6603f2af99828dc05a225
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90103828"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96824617"
 ---
 # <a name="pagedcodeatd0-rule-kmdf"></a>PagedCodeAtD0 规则 (kmdf) 
 
 
-**PagedCodeAtD0**规则指定驱动程序不得将代码标记为可在开机代码路径中的回调函数内进行分页。
+**PagedCodeAtD0** 规则指定驱动程序不得将代码标记为可在开机代码路径中的回调函数内进行分页。
 
 当函数标记为 "可分页" 并且代码部分随后被分页时，该函数将生成页错误，这可能会影响计算机的快速恢复行为。 发生这种情况的原因是客户端驱动程序必须等待系统驱动程序可以为此页错误服务。
 

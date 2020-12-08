@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ 常规 \_ 组件 ID
 description: KSPROPERTY \_ 常规组件 \_ id 属性是一个可选属性，它允许客户端访问存储在 KSCOMPONENTID 结构中的常规组件信息。
-ms.assetid: fbbdf3f6-c71a-4a6d-ba15-ec7b7bdc1e0e
 keywords:
 - KSPROPERTY_GENERAL_COMPONENTID 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1e0b7f2c10a48fb50e278e71b412555e94a47fe9
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 1b2b11c60ddbafd6aebe01504be81d136d7918c0
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90102696"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96824931"
 ---
 # <a name="ksproperty_general_componentid"></a>KSPROPERTY \_ 常规 \_ 组件 ID
 
@@ -64,7 +63,7 @@ KSPROPERTY \_ 常规组件 \_ id 属性是一个可选属性，它允许客户�
 <a name="remarks"></a>备注
 -------
 
-[**KSCOMPONENTID**](/windows-hardware/drivers/ddi/ks/ns-ks-kscomponentid)结构包含**制造商**、**产品**、**组件**和**名称**的 GUID 值。 它包含版本和修订**版本**的**Revision**ULONG 值。
+[**KSCOMPONENTID**](/windows-hardware/drivers/ddi/ks/ns-ks-kscomponentid)结构包含 **制造商**、**产品**、**组件** 和 **名称** 的 GUID 值。 它包含版本和修订 **版本** 的 **Revision** ULONG 值。
 
 <a name="requirements"></a>要求
 ------------
@@ -82,7 +81,7 @@ KSPROPERTY \_ 常规组件 \_ id 属性是一个可选属性，它允许客户�
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSCOMPONENTID**](/windows-hardware/drivers/ddi/ks/ns-ks-kscomponentid)

@@ -1,17 +1,16 @@
 ---
 title: 释放时禁用堆合并
 description: 释放时禁用堆合并
-ms.assetid: 64a68fa2-9270-4b2d-9edc-d54370191dcb
 keywords:
-- 禁用堆 coalesce 上免费 （全局标志）
+- '在可用 (全局标志上禁用堆合并) '
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ef5b8fd7ff3da4569029b3cbcbd46474ce3a6666
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0c2c99ca2ef234c6ea5c35f966c8031f9c6c30cb
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63324604"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96826161"
 ---
 # <a name="disable-heap-coalesce-on-free"></a>释放时禁用堆合并
 
@@ -19,7 +18,7 @@ ms.locfileid: "63324604"
 ## <span id="ddk_disable_heap_coalesce_on_free_dtools"></span><span id="DDK_DISABLE_HEAP_COALESCE_ON_FREE_DTOOLS"></span>
 
 
-**禁用堆上免费 coalesce**标志时，保留的堆内存的相邻块单独则释放。
+在释放时 **禁用堆合并** 会使相邻堆内存块在释放时保持分离。
 
 <table>
 <colgroup>
@@ -41,18 +40,18 @@ ms.locfileid: "63324604"
 </tr>
 <tr class="even">
 <td align="left"><p><strong>目标</strong></p></td>
-<td align="left"><p>整个系统的注册表项、 内核标志和图像文件注册表项</p></td>
+<td align="left"><p>系统范围的注册表项、内核标志、映像文件注册表项</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-### <a name="span-idcommentsspanspan-idcommentsspancomments"></a><span id="comments"></span><span id="COMMENTS"></span>注释
+### <a name="span-idcommentsspanspan-idcommentsspancomments"></a><span id="comments"></span><span id="COMMENTS"></span>提出
 
-默认情况下，Windows 将新释放相邻块 （"将合并"） 合并到单个块。 合并块需要时间，但减少了可能会强制分配更多内存时找不到连续内存堆的碎片。
+默认情况下，Windows 将 ( "合并" ) 新释放的相邻块合并为单个块。 组合块需要时间，但在找不到连续内存时，减少可能强制堆分配更多内存的碎片。
 
-此标志用于保持与旧的应用程序兼容性。
+此标志用于维护与旧应用程序的兼容性。
 
  
 

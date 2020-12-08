@@ -1,15 +1,14 @@
 ---
 title: GpuMmu 模型
 description: 在 GpuMmu 模型中， (GPU) 的图形处理单元 (MMU) 将每个进程的 GPU 虚拟地址转换为物理地址。
-ms.assetid: FFDFD647-2F00-4AC3-A41A-4224562A51ED
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4b98ea5945eb7f63ef175de1e9a7d36d0ce3dd49
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 781fdaab9029d8058177296eeb587491b1f79c34
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89064196"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96825747"
 ---
 # <a name="gpummu-model"></a>GpuMmu 模型
 
@@ -30,7 +29,7 @@ GPU 虚拟地址在逻辑上通过 DDI 接口在固定的4KB 页粒度进行管�
 
 访问无效的 GPU 虚拟地址范围会导致访问冲突和终止导致访问错误的上下文和/或设备。 若要从这种故障中恢复，视频内存管理器将启动一个引擎重置，该重置会升级到适配器范围的超时检测恢复 (TDR) 如果不成功。
 
-*GpuMmu*模型如下所示：
+*GpuMmu* 模型如下所示：
 
 ![gpummu 模型](images/gpummu-model.1.png)
 

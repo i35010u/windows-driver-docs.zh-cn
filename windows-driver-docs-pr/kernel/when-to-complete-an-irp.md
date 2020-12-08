@@ -1,17 +1,16 @@
 ---
 title: 何时完成 IRP
 description: 何时完成 IRP
-ms.assetid: 6986b24c-e7e5-43f2-861d-b84e4c131a8a
 keywords:
 - 完成 Irp WDK 内核，何时完成
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6fadba24ddb1c659b0d3d720bf08f5ac987cfcf7
-ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
+ms.openlocfilehash: 1a0a7d49e1157279917dffa845cb23c71f44db7b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89403498"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96825115"
 ---
 # <a name="when-to-complete-an-irp"></a>何时完成 IRP
 
@@ -31,7 +30,7 @@ ms.locfileid: "89403498"
 
 如果驱动程序完成了请求，因为处理不能进行，或者它通过处理请求的操作（而不实际访问设备）来完成请求，则通常从其一个调度例程调用 **IoCompleteRequest** 。 有关详细信息，请参阅 [在调度例程中完成 irp](how-to-complete-an-irp-in-a-dispatch-routine.md)。
 
-如果驱动程序必须访问设备以满足请求，则通常从[*DpcForIsr*](/windows-hardware/drivers/ddi/wdm/nc-wdm-io_dpc_routine)例程调用**IoCompleteRequest** 。 [服务中断](introduction-to-interrupt-service-routines.md)中广泛讨论了这些例程。
+如果驱动程序必须访问设备以满足请求，则通常从 [*DpcForIsr*](/windows-hardware/drivers/ddi/wdm/nc-wdm-io_dpc_routine)例程调用 **IoCompleteRequest** 。 [服务中断](introduction-to-interrupt-service-routines.md)中广泛讨论了这些例程。
 
  
 

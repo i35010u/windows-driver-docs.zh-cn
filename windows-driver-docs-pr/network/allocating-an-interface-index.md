@@ -1,7 +1,6 @@
 ---
 title: 分配接口索引
 description: 分配接口索引
-ms.assetid: f1315da2-16da-4320-9d0d-1270396af38b
 keywords:
 - NDIS 网络接口 WDK，接口索引分配
 - 网络接口 WDK，接口索引分配
@@ -11,12 +10,12 @@ keywords:
 - 本地唯一标识符 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c630e7b667ee61bf3b550b71ad18e977850c50bb
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: f066ec562e09e5f3cc75bc78b25c333c5539dc4b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90717002"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96825551"
 ---
 # <a name="allocating-an-interface-index"></a>分配接口索引
 

@@ -1,7 +1,6 @@
 ---
 title: 使用注册表项对象的句柄
 description: 使用注册表项对象的句柄
-ms.assetid: 25982249-31dc-4542-9ebb-139991619b40
 keywords:
 - 注册表-密钥对象 WDK 内核的句柄
 - 注册表 WDK 内核，对象例程
@@ -10,12 +9,12 @@ keywords:
 - 注册表-密钥对象 WDK 内核
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6bd6e25352c2d88980b00ba7a9a0cce1704c7c2a
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 9af350e61f83eb1d80d9af0387774cfc3885a573
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90106188"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96825623"
 ---
 # <a name="using-a-handle-to-a-registry-key-object"></a>使用注册表项对象的句柄
 
@@ -72,7 +71,7 @@ ms.locfileid: "90106188"
 
 一旦驱动程序完成其操作，它就必须调用 [**ZwClose**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ntclose) 来关闭句柄，即使它已调用 **ZwDeleteKey** 来删除密钥。  (一旦某个密钥被删除，该密钥的所有打开句柄都将变为无效，但驱动程序仍须关闭该句柄。 ) 
 
-下面的代码示例演示了如何为名为** \\ 注册表 \\ 计算机 \\ Software \\ **<em>MyCompany</em>MyApp 的密钥打开句柄 \\ *MyApp*，然后检索密钥数据并关闭句柄。
+下面的代码示例演示了如何为名为 **\\ 注册表 \\ 计算机 \\ Software \\**<em>MyCompany</em>MyApp 的密钥打开句柄 \\ *MyApp*，然后检索密钥数据并关闭句柄。
 
 ```cpp
 //
@@ -176,5 +175,5 @@ if (NULL != handleRegKey)
 
 系统会将密钥更改缓存在内存中，并每隔几秒将它们写入磁盘。 若要强制更改磁盘的密钥，请调用 [**ZwFlushKey**](/windows-hardware/drivers/ddi/wdm/nf-wdm-zwflushkey)。
 
-若要通过更简单的接口操作注册表，驱动程序还可以调用 **Rtl*Xxx*registry * Xxx*** 例程。 有关详细信息，请参阅 [注册表运行时库例程](registry-run-time-library-routines.md)。
+若要通过更简单的接口操作注册表，驱动程序还可以调用 **Rtl *Xxx* registry * Xxx*** 例程。 有关详细信息，请参阅 [注册表 Run-Time 库例程](registry-run-time-library-routines.md)。
 

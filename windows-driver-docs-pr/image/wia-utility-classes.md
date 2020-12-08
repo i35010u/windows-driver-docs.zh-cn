@@ -1,15 +1,14 @@
 ---
 title: WIA 实用程序类
-ms.assetid: cc20a088-6470-4648-b7d9-999dbd74baf1
 description: 了解详细信息： WIA 实用工具类
 ms.date: 08/25/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: a8ce8c2e718869602aa6b365a5c6edd01bda3141
-ms.sourcegitcommit: f47c072e88dce59daba1231027b60eb56bd2cde9
+ms.openlocfilehash: 2e730a1d4a00a795ef1c72e3e7825f9ee5e8f20a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92689366"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96826367"
 ---
 # <a name="wia-utility-classes"></a>WIA 实用程序类
 

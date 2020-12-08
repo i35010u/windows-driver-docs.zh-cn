@@ -1,21 +1,20 @@
 ---
 title: OID_GEN_TRANSMIT_BUFFER_SPACE
-description: 为查询，OID_GEN_TRANSMIT_BUFFER_SPACE OID 以字节为单位指定的内存量，在适用于缓冲的 NIC 上传输数据。
-ms.assetid: 23d242fc-8447-4660-ab84-b8cbdb638a71
+description: 作为查询，OID_GEN_TRANSMIT_BUFFER_SPACE OID 指定 NIC 上可用于缓冲传输数据的内存量（以字节为单位）。
 ms.date: 08/08/2017
-keywords: -从 Windows Vista 开始 OID_GEN_TRANSMIT_BUFFER_SPACE 网络驱动程序
+keywords: -从 Windows Vista 开始 OID_GEN_TRANSMIT_BUFFER_SPACE 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 3fe56b00adf67686e5c510961039d3245dc54efc
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b4b146961cf64c9190c605e21d09b3b8e57f9c73
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63387872"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96825425"
 ---
-# <a name="oidgentransmitbufferspace"></a>OID\_GEN\_传输\_缓冲区\_空间
+# <a name="oid_gen_transmit_buffer_space"></a>OID \_ 代 \_ 传输 \_ 缓冲区 \_ 空间
 
 
-为查询，OID\_GEN\_传输\_缓冲区\_空间 OID 以字节为单位指定的内存量，在适用于缓冲的 NIC 上传输数据。
+作为查询，OID \_ 代 \_ 传输 \_ 缓冲区 \_ 空间 OID 指定 NIC 上可用于缓冲传输数据的内存量（以字节为单位）。
 
 **版本信息**
 
@@ -37,7 +36,7 @@ ms.locfileid: "63387872"
 <a name="remarks"></a>备注
 -------
 
-一种协议可用于此 OID 作为指南大小调整的量将针对每个发送的数据传输。
+协议可以使用此 OID 作为调整每个发送的传输数据量的指南。
 
 <a name="requirements"></a>要求
 ------------
@@ -49,8 +48,8 @@ ms.locfileid: "63387872"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Header</p></td>
-<td>Ntddndis.h （包括 Ndis.h）</td>
+<td><p>标头</p></td>
+<td>Ntddndis (包含 Ndis .h) </td>
 </tr>
 </tbody>
 </table>

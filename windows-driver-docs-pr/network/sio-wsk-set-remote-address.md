@@ -1,17 +1,16 @@
 ---
 title: SIO_WSK_SET_REMOTE_ADDRESS
 description: SIO_WSK_SET_REMOTE_ADDRESS
-ms.assetid: 1db11c7a-c9ce-428e-b4da-4a49904a9e4c
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 SIO_WSK_SET_REMOTE_ADDRESS 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 3282292f4b3fa7ae0e0a4c9e42ab3b14ddfdb3d7
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: f7adcf4d1ecc97fa6fb81edd58c90a6978c01412
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89212739"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96825025"
 ---
 # <a name="sio_wsk_set_remote_address"></a>SIO \_ WSK \_ 设置 \_ 远程 \_ 地址
 
@@ -20,7 +19,7 @@ SIO \_ WSK \_ SET \_ REMOTE \_ ADDRESS socket I/O control 操作允许 WSK 应�
 
 如果 WSK 应用程序为数据报套接字设置固定远程传输地址，则通过套接字发送的所有数据报都将发送到固定远程传输地址，并只接受从固定远程传输地址接收的数据报。
 
-WSK 应用程序可以在调用[**WskSendTo**](/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_send_to)函数时，通过在*RemoteAddress*参数中指定备用远程传输地址来覆盖固定远程传输地址。 在这种情况下，将数据报发送到备用远程传输地址，而不是固定远程传输地址。 但是，将不会接受从备用远程传输地址发回的任何响应。
+WSK 应用程序可以在调用 [**WskSendTo**](/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_send_to)函数时，通过在 *RemoteAddress* 参数中指定备用远程传输地址来覆盖固定远程传输地址。 在这种情况下，将数据报发送到备用远程传输地址，而不是固定远程传输地址。 但是，将不会接受从备用远程传输地址发回的任何响应。
 
 如果 WSK 应用程序使用此套接字 i/o 控制操作来指定固定远程传输地址，则必须在数据报套接字绑定到本地传输地址后执行此操作。
 
@@ -34,7 +33,7 @@ WSK 应用程序可以在调用[**WskSendTo**](/windows-hardware/drivers/ddi/wsk
 <thead>
 <tr class="header">
 <th>参数</th>
-<th>值</th>
+<th>“值”</th>
 </tr>
 </thead>
 <tbody>
@@ -84,7 +83,7 @@ WSK 应用程序可以在调用[**WskSendTo**](/windows-hardware/drivers/ddi/wsk
 <thead>
 <tr class="header">
 <th>参数</th>
-<th>值</th>
+<th>“值”</th>
 </tr>
 </thead>
 <tbody>

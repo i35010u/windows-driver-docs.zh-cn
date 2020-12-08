@@ -1,15 +1,14 @@
 ---
 title: SRB \_ 意外 \_ 删除
 description: SRB \_ 意外 \_ 删除
-ms.assetid: 81509ddb-0d9a-4f42-b38d-fe8836727b4b
 ms.date: 08/25/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 73f65db036c398840cb0e53ba74ce32071a865b7
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: db2e32e170e1995a4e700f8ae4ceecab6427f7bf
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89188345"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96824885"
 ---
 # <a name="srb_surprise_removal"></a>SRB \_ 意外 \_ 删除
 

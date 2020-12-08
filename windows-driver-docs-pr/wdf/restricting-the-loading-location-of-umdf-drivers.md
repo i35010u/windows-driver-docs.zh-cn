@@ -1,7 +1,6 @@
 ---
 title: 限制 UMDF 驱动程序的加载位置
 description: 限制 UMDF 驱动程序的加载位置
-ms.assetid: eac19fa8-2889-4cc3-9f4b-d11d7d3ed684
 keywords:
 - 位置 WDK UMDF
 - 二进制文件 WDK UMDF
@@ -11,12 +10,12 @@ keywords:
 - INF 文件 WDK UMDF，加载位置
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 31f8a6937e614963383b675dfdf8a078facdb817
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: c0f341fc428a1dfa9a4a2a9443936280ae3089ec
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89192623"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96825283"
 ---
 # <a name="restricting-the-loading-location-of-umdf-drivers"></a>限制 UMDF 驱动程序的加载位置
 
@@ -37,7 +36,7 @@ UMDriverCopy=12,UMDF ; copies to drivers\umdf
 WUDFOsrUsbDriver.dll
 ```
 
-[**CopyFiles 指令**](../install/inf-copyfiles-directive.md)还必须引用**UMDriverCopy**部分，以指示操作系统要从源媒体复制到目标的 UMDF 驱动程序二进制文件列表，如下面的示例中所示。
+[**CopyFiles 指令**](../install/inf-copyfiles-directive.md)还必须引用 **UMDriverCopy** 部分，以指示操作系统要从源媒体复制到目标的 UMDF 驱动程序二进制文件列表，如下面的示例中所示。
 
 ```cpp
 [OsrUsb_Install.NT]

@@ -1,22 +1,21 @@
 ---
 title: WSD 扫描服务文档元素
 description: WSD 扫描服务文档元素
-ms.assetid: 5f0c6604-0fad-4e7a-a7b4-7e0814821a55
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 25decdae8069eac92b15620aa02ebfefb598865c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1c9570782ccd3103b1ac25591be4ac587130334c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63353596"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96826329"
 ---
 # <a name="wsd-scan-service-document-elements"></a>WSD 扫描服务文档元素
 
 
-本部分介绍与文档相关的 WSD 扫描服务架构元素。
+本部分介绍 WSD 扫描服务架构中与文档相关的元素。
 
-架构包含下列文档相关的元素：
+该架构包含以下与文档相关的元素：
 
 [**AutoExposure**](autoexposure.md)
 
@@ -28,7 +27,7 @@ ms.locfileid: "63353596"
 
 [**ContentType**](contenttype.md)
 
-[**Contrast**](contrast.md)
+[**对比度**](contrast.md)
 
 [**文档**](document.md)
 
@@ -44,13 +43,13 @@ ms.locfileid: "63353596"
 
 [**DocumentSizeAutoDetect**](documentsizeautodetect.md)
 
-[**风险**](exposure.md)
+[**隐患**](exposure.md)
 
 [**ExposureSettings**](exposuresettings.md)
 
 [**FilmScanMode**](filmscanmode.md)
 
-[**Format**](format.md)
+[**形式**](format.md)
 
 [**ImagesToTransfer**](imagestotransfer.md)
 

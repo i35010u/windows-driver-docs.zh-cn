@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ VIDEODECODER \_ CAP
 description: KSPROPERTY \_ VIDEODECODER \_ cap 属性描述视频解码器的基本功能。 必须实现此属性。
-ms.assetid: 8b252f36-911b-4f51-894d-3aae9aa9dfde
 keywords:
 - KSPROPERTY_VIDEODECODER_CAPS 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3ef437a4ae23f5bc4c937f260780beda49847cc7
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 6554fd1c59be70f100d1f5d091ad96884f46973a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90104550"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96824907"
 ---
 # <a name="ksproperty_videodecoder_caps"></a>KSPROPERTY \_ VIDEODECODER \_ CAP
 
@@ -79,7 +78,7 @@ KSPROPERTY \_ VIDEODECODER \_ cap 属性描述视频解码器的基本功能。 
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSPROPERTY**](/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)

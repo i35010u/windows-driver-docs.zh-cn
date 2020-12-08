@@ -1,15 +1,14 @@
 ---
 title: WIA 诊断日志宏
 description: WIA 诊断日志宏
-ms.assetid: 8b544045-e9d7-422b-825c-f1a5531e0e11
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fb6a27689077072b5913631d134205eccb7bc5a1
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: ad2afefad1dea8fa04ed9f1fb864ed46c061858a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89189365"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96824535"
 ---
 # <a name="wia-diagnostic-log-macros"></a>WIA 诊断日志宏
 

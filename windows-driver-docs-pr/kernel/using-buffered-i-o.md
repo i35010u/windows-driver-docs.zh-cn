@@ -1,7 +1,6 @@
 ---
 title: 使用缓冲 I/O
 description: 使用缓冲 I/O
-ms.assetid: 69291156-babb-465a-9e80-1766f075768b
 keywords:
 - 缓冲 i/o WDK 内核
 - 缓冲 WDK i/o，缓冲 i/o
@@ -11,12 +10,12 @@ keywords:
 - I/o WDK 内核，缓冲 i/o
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4842d54409d0a729a26721d5e65f8f50b41433e4
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 639f5cb274ac68ea2fc6720df73c4ef9567c6bc9
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89187051"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96825613"
 ---
 # <a name="using-buffered-io"></a>使用缓冲 I/O
 
@@ -28,7 +27,7 @@ ms.locfileid: "89187051"
 
 I/o 管理器按如下方式确定 i/o 操作使用的是缓冲 i/o：
 
--   对于[**IRP \_ mj \_ 读取**](./irp-mj-read.md)和[**irp \_ Mj \_ 写入**](./irp-mj-write.md)请求，请 \_ \_ 在[**设备 \_ 对象**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_device_object)结构的**Flags**成员中设置缓冲 IO。 有关详细信息，请参阅 [初始化设备对象](initializing-a-device-object.md)。
+-   对于 [**IRP \_ mj \_ 读取**](./irp-mj-read.md)和 [**irp \_ Mj \_ 写入**](./irp-mj-write.md)请求，请 \_ \_ 在 [**设备 \_ 对象**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_device_object)结构的 **Flags** 成员中设置缓冲 IO。 有关详细信息，请参阅 [初始化设备对象](initializing-a-device-object.md)。
 
 -   对于 [**IRP \_ mj \_ 设备 \_ 控制**](./irp-mj-device-control.md) 和 [**irp \_ mj \_ 内部 \_ 设备 \_ 控制**](./irp-mj-internal-device-control.md) 请求，Ioctl 代码的值包含 \_ 缓冲为 IOCTL 值中的 *TransferType* 值的方法。 有关详细信息，请参阅 [定义 I/o 控制代码](defining-i-o-control-codes.md)。
 
@@ -36,7 +35,7 @@ I/o 管理器按如下方式确定 i/o 操作使用的是缓冲 i/o：
 
 ![说明用户缓冲区的缓冲 i/o 的关系图](images/3mdlbffr.png)
 
-此图显示了当驱动程序使用 DO 缓冲 IO 运算设备对象的**标志**时，驱动程序如何使用 IRP 中的**SystemBuffer**指针来传输读取请求的数据 \_ \_ ：
+此图显示了当驱动程序使用 DO 缓冲 IO 运算设备对象的 **标志** 时，驱动程序如何使用 IRP 中的 **SystemBuffer** 指针来传输读取请求的数据 \_ \_ ：
 
 1.  某些范围的用户空间虚拟地址表示当前线程的缓冲区，该缓冲区的内容可能存储在一系列基于页面的物理地址中， (上图) 中的暗阴影。
 

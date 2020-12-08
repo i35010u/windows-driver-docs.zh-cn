@@ -1,7 +1,6 @@
 ---
 title: Bug 检查 0x2B PANIC_STACK_SWITCH
 description: PANIC_STACK_SWITCH bug 检查的值为0x0000002B。 这表示内核模式堆栈溢出。
-ms.assetid: 0ab28a16-979d-4b40-812a-a31fac3f6be8
 keywords:
 - Bug 检查 0x2B PANIC_STACK_SWITCH
 - PANIC_STACK_SWITCH
@@ -13,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 7f72d552417809635692772e693f50341a73aecc
-ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
+ms.openlocfilehash: e468b025708defee3798f256490815be5473f57c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84534822"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96824689"
 ---
 # <a name="bug-check-0x2b-panic_stack_switch"></a>Bug 检查0x2B：紧急 \_ 堆栈 \_ 切换
 
@@ -26,7 +25,7 @@ ms.locfileid: "84534822"
 紧急 \_ 情况堆栈 \_ 开关 bug 检查的值为0x0000002B。 这表示内核模式堆栈溢出。
 
 > [!IMPORTANT]
-> 本主题适用于程序员。 如果你是在使用计算机时收到蓝屏错误代码的客户，请参阅[排查蓝屏错误](https://www.windows.com/stopcode)。
+> 本主题面向程序员。 如果您是在使用计算机时收到蓝屏错误代码的客户，请参阅[蓝屏错误疑难解答](https://www.windows.com/stopcode)。
 
 
 ## <a name="panic_stack_switch-parameters"></a>紧急 \_ 堆栈 \_ 开关参数
@@ -40,7 +39,7 @@ ms.locfileid: "84534822"
 <thead>
 <tr class="header">
 <th align="left">参数</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>
@@ -50,15 +49,15 @@ ms.locfileid: "84534822"
 </tr>
 <tr class="even">
 <td align="left"><p>2</p></td>
-<td align="left"><p>保留</p></td>
+<td align="left"><p>预留</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>3</p></td>
-<td align="left"><p>保留</p></td>
+<td align="left"><p>预留</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>4</p></td>
-<td align="left"><p>保留</p></td>
+<td align="left"><p>预留</p></td>
 </tr>
 </tbody>
 </table>

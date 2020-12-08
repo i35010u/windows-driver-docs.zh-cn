@@ -1,7 +1,6 @@
 ---
 title: fxdevice
 description: Fxdevice 扩展显示有关) 已注册设备的所有电源管理框架 (的摘要信息。 此命令只能在内核模式调试过程中使用。
-ms.assetid: 98E34825-467F-46E5-BC29-AF241FF30B90
 keywords:
 - fxdevice Windows 调试
 ms.date: 05/23/2017
@@ -12,12 +11,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: b0b151d6c73ff61b85e2a3f48d9cf0a0f8775598
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: aa8aee24e9d6b9c0f703a1b324b6a4ef09f25150
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89210245"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96824789"
 ---
 # <a name="fxdevice"></a>!fxdevice
 
@@ -35,7 +34,7 @@ ms.locfileid: "89210245"
 ## <a name="span-idddk__thread_dbgspanspan-idddk__thread_dbgspanparameters"></a><span id="ddk__thread_dbg"></span><span id="DDK__THREAD_DBG"></span>参数
 
 
-<span id="___________FxDevice__Address_______"></span><span id="___________fxdevice__address_______"></span><span id="___________FXDEVICE__ADDRESS_______"></span>** &lt; FxDevice 地址 &gt; **   
+<span id="___________FxDevice__Address_______"></span><span id="___________fxdevice__address_______"></span><span id="___________FXDEVICE__ADDRESS_______"></span>**&lt; FxDevice 地址 &gt;**   
 提供要显示的 FxDevice 的地址。
 
 ## <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL

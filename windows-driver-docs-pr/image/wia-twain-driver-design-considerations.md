@@ -1,15 +1,14 @@
 ---
 title: WIA-TWAIN 驱动程序设计注意事项
 description: WIA-TWAIN 驱动程序设计注意事项
-ms.assetid: dd813838-ca00-4233-8257-5d1b84d849a8
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b7e470b138417b79488ee224c585b5584a4aa879
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 52850bcb442823e5b06757f332eafd5309aeb73f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63391496"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96826379"
 ---
 # <a name="wia-twain-driver-design-considerations"></a>WIA-TWAIN 驱动程序设计注意事项
 
@@ -17,17 +16,17 @@ ms.locfileid: "63391496"
 
 
 
-以下各节讨论支持 WIA 和 TWAIN 微型驱动程序开发过程中涉及的问题：
+以下各节讨论开发支持 WIA 和 TWAIN 的微型驱动程序时所涉及的问题：
 
-[WIA TWAIN 兼容性](wia-twain-compatibility.md)
+[WIA-TWAIN 兼容性](wia-twain-compatibility.md)
 
-[WIA TWAIN 锁定](wia-twain-locking.md)
+[WIA-TWAIN 锁定](wia-twain-locking.md)
 
 [多页扫描和 TWAIN](multipage-scanning-and-twain.md)
 
 [TWAIN 和原始 RGB 格式](twain-and-raw-rgb-format.md)
 
-[WIA TWAIN 风险](wia-twain-risks.md)
+[WIA-TWAIN 风险](wia-twain-risks.md)
 
  
 

@@ -1,7 +1,6 @@
 ---
 title: WIA \_ IP \_ 进纸器 \_ 控制
 description: "\"WIA \\_ ip \\_ 进纸器 \\_ 控制\" 属性用于配置对进纸器马达的手动控制。 WIA 微型驱动程序创建并维护此属性。"
-ms.assetid: CA19D573-B461-4D3E-BE2A-CF350E0FA4EA
 keywords:
 - WIA_IPS_FEEDER_CONTROL 图像设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 816147fe871db2b3d2bdeaaa148270254b474459
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 78f79127e89c63c5c5614b5c71e624ecd76a79fe
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90105352"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96825984"
 ---
 # <a name="wia_ips_feeder_control"></a>WIA \_ IP \_ 进纸器 \_ 控制
 
@@ -35,7 +34,7 @@ ms.locfileid: "90105352"
 
 访问权限：读/写
 
-<a name="remarks"></a>注解
+<a name="remarks"></a>备注
 -------
 
 下表描述了 " **WIA \_ ip \_ 进纸器 \_ 控制** " 属性的有效值。
@@ -65,7 +64,7 @@ ms.locfileid: "90105352"
 
  
 
-当设备支持此功能时，WIA 应用程序可以使用它来启动进纸器马达，然后 (第一个 **IWiaTransfer：:D o) ** 调用) ，并在上次扫描作业之后停止进纸器 (当前 WIA 应用程序会话:D 中的最后一个 **IWiaTransfer：) o) ** 调用已完成。 在单独的作业 (**IWiaTransfer：:D o) ** 调用) 时，送纸器会保持其运行速度，并且已准备好继续下一个作业而不延迟。
+当设备支持此功能时，WIA 应用程序可以使用它来启动进纸器马达，然后 (第一个 **IWiaTransfer：:D o)** 调用) ，并在上次扫描作业之后停止进纸器 (当前 WIA 应用程序会话:D 中的最后一个 **IWiaTransfer：) o)** 调用已完成。 在单独的作业 (**IWiaTransfer：:D o)** 调用) 时，送纸器会保持其运行速度，并且已准备好继续下一个作业而不延迟。
 
 如果 wia 微型驱动程序在设置了 WIA 进纸器控制手册时接收到 [**IWiaMiniDrv：:D rvacquireitemdata**](/windows-hardware/drivers/ddi/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvacquireitemdata) 请求，但 \_ \_ \_ 未收到 wia \_ 命令 \_ \_ "启动进纸器命令"，则 \_ 在 \_ \_ 执行扫描作业之前，wia 微型驱动程序必须还原为 wia 进纸器命令 "自动"。
 

@@ -1,24 +1,23 @@
 ---
 title: 一般性丢弃原因
-description: 本部分描述了 Windows 筛选平台标注驱动程序的常规的放弃原因。
-ms.assetid: 8b2d9028-a32e-42bf-b1ba-ab029bf47d71
+description: 本部分介绍 Windows 筛选平台标注驱动程序的一般丢弃原因。
 keywords:
-- 常规的放弃原因网络驱动程序
+- 一般丢弃原因网络驱动程序
 ms.date: 11/09/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cb3fb24d49d5159a4c4b596813cd49c8d9ee08bf
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ef5bf27b82aea02c77de0cfea4f0570ec8910007
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63349946"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96825495"
 ---
 # <a name="general-discard-reasons"></a>一般性丢弃原因
 
-标识符，则会丢弃数据由筛选器引擎的可能原因如下所示。 这些标识符是 Fwpstypes.h 中定义的 FWPS_GENERAL_DISCARD_REASON 枚举中的常量值。
+筛选器引擎丢弃数据的可能原因的标识符如下所示。 这些标识符是 Fwpstypes 中定义的 FWPS_GENERAL_DISCARD_REASON 枚举中的常量值。
 
-| 放弃原因标识符 | 放弃原因说明 |
+| 丢弃原因标识符 | 丢弃原因说明 |
 | --- | --- |
-| FWPS_DISCARD_FIREWALL_POLICY | 从筛选决策返回 FWP_ACTION_BLOCK 操作。 |
+| FWPS_DISCARD_FIREWALL_POLICY | 已从筛选决定返回 FWP_ACTION_BLOCK 操作。 |
 | FWPS_DISCARD_IPSEC | 保留。 |
 

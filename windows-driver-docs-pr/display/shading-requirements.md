@@ -1,7 +1,6 @@
 ---
 title: 着色要求
 description: 着色要求
-ms.assetid: 6c4f3dee-a955-4140-8b64-e9289094f530
 keywords:
 - 底纹 WDK Direct3D
 - 平面底纹 WDK Direct3D
@@ -16,12 +15,12 @@ keywords:
 - D3DPRIMCAPS
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 25ab53aa973a97cc1c6d931a9d4e73e5ee467c33
-ms.sourcegitcommit: f8619f20a0903dd64f8641a5266ecad6df5f1d57
+ms.openlocfilehash: 4d6328bde4c6e477069526bccb18d5f21b2e1972
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91423678"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96826055"
 ---
 # <a name="shading-requirements"></a>着色要求
 
@@ -33,13 +32,13 @@ ms.locfileid: "91423678"
 
 ### <a name="span-idflat_shadingspanspan-idflat_shadingspanflat-shading"></a><span id="flat_shading"></span><span id="FLAT_SHADING"></span>平面底纹
 
-\_ [**D3DPRIMCAPS**](/windows-hardware/drivers/ddi/d3dcaps/ns-d3dcaps-_d3dprimcaps)结构的**DWSHADECAP**成员中的 D3DPSHADECAPS COLORFLATRGB 位必须设置为 (线条或三角形) 的相应基元类型，以便指示该基元类型支持平面底纹。
+\_ [**D3DPRIMCAPS**](/windows-hardware/drivers/ddi/d3dcaps/ns-d3dcaps-_d3dprimcaps)结构的 **DWSHADECAP** 成员中的 D3DPSHADECAPS COLORFLATRGB 位必须设置为 (线条或三角形) 的相应基元类型，以便指示该基元类型支持平面底纹。
 
 对于除三角形风扇以外的所有基元类型，颜色、镜面 (如果支持的) 和 alpha 数据来自每个基元的第一个顶点。 对于三角形风扇，将使用第二个顶点。 这些颜色在整个三角形中保持不变 (也就是说，它们不会) 内插。
 
 ### <a name="span-idgouraud_shadingspanspan-idgouraud_shadingspangouraud-shading"></a><span id="gouraud_shading"></span><span id="GOURAUD_SHADING"></span>Gouraud 底纹
 
-[**D3DPRIMCAPS**](/windows-hardware/drivers/ddi/d3dcaps/ns-d3dcaps-_d3dprimcaps)结构的**dwShadeCaps**成员必须 \_ 为适当的基元类型 (行或三角形) 设置 D3DPSHADECAPS COLORGOURAUDRGB 位，以指示支持 Gouraud 颜色的内插。 颜色和反射组件都在顶点之间进行了线性内插。
+[**D3DPRIMCAPS**](/windows-hardware/drivers/ddi/d3dcaps/ns-d3dcaps-_d3dprimcaps)结构的 **dwShadeCaps** 成员必须 \_ 为适当的基元类型 (行或三角形) 设置 D3DPSHADECAPS COLORGOURAUDRGB 位，以指示支持 Gouraud 颜色的内插。 颜色和反射组件都在顶点之间进行了线性内插。
 
 对于所有基元，颜色数据必须在基元的顶点之间使用线性内插，并且必须符合由引用光栅者生成的图像。 此外，所有颜色和 alpha 组件都必须以相同的方式进行插入（如果存在）。 例如，使用单色的 RGB 组件的 Gouraud 内插法时，将平面底纹用于 alpha 分量。 异常是通过反射颜色的 alpha 分量传输雾化组件，此颜色不应为平面着色。
 
@@ -47,7 +46,7 @@ ms.locfileid: "91423678"
 
 ### <a name="span-idspecular_highlightingspanspan-idspecular_highlightingspanspecular-highlighting"></a><span id="specular_highlighting"></span><span id="SPECULAR_HIGHLIGHTING"></span>镜面突出显示
 
-如果公开了反射突出显示支持，则必须在[**D3DPRIMCAPS**](/windows-hardware/drivers/ddi/d3dcaps/ns-d3dcaps-_d3dprimcaps)结构的**dwShadeCaps**成员中设置以下一个或两个标志，才能 (线条或三角形) ：
+如果公开了反射突出显示支持，则必须在 [**D3DPRIMCAPS**](/windows-hardware/drivers/ddi/d3dcaps/ns-d3dcaps-_d3dprimcaps)结构的 **dwShadeCaps** 成员中设置以下一个或两个标志，才能 (线条或三角形) ：
 
 -   \_如果支持平面底纹，则必须设置 D3DPSHADECAPS SPECULARFLATRGB。
 
@@ -63,7 +62,7 @@ D3DPSHADECAPS \_ SPECULARFLATMONO 和 D3DPSHADECAPS \_ SPECULARGOURAUDMONO 标�
 
 ### <a name="span-idalpha_blendingspanspan-idalpha_blendingspanalpha-blending"></a><span id="alpha_blending"></span><span id="ALPHA_BLENDING"></span>Alpha 混合
 
-若要公开对 alpha 混合的支持，必须在[**D3DPRIMCAPS**](/windows-hardware/drivers/ddi/d3dcaps/ns-d3dcaps-_d3dprimcaps)结构的**dwShadeCaps**成员中为适当的基元类型 (线条或三角形) 设置以下标志：
+若要公开对 alpha 混合的支持，必须在 [**D3DPRIMCAPS**](/windows-hardware/drivers/ddi/d3dcaps/ns-d3dcaps-_d3dprimcaps)结构的 **dwShadeCaps** 成员中为适当的基元类型 (线条或三角形) 设置以下标志：
 
 -   \_如果支持平色着色，则必须设置 D3DPSHADECAPS ALPHAFLATBLEND。
 
@@ -79,19 +78,19 @@ D3DPSHADECAPS \_ SPECULARFLATMONO 和 D3DPSHADECAPS \_ SPECULARGOURAUDMONO 标�
 
 ### <a name="span-idditheringspanspan-idditheringspandithering"></a><span id="dithering"></span><span id="DITHERING"></span>抖动
 
-如果 (线条或三角形) 的特定基元类型支持仿色，则[**D3DPRIMCAPS**](/windows-hardware/drivers/ddi/d3dcaps/ns-d3dcaps-_d3dprimcaps)结构的**dwRasterCaps**成员必须 \_ 设置 D3DPRASTERCAPS 仿色标志。 此功能必须通过 D3DRENDERSTATE \_ DITHERENABLE 呈现状态进行控制。
+如果 (线条或三角形) 的特定基元类型支持仿色，则 [**D3DPRIMCAPS**](/windows-hardware/drivers/ddi/d3dcaps/ns-d3dcaps-_d3dprimcaps)结构的 **dwRasterCaps** 成员必须 \_ 设置 D3DPRASTERCAPS 仿色标志。 此功能必须通过 D3DRENDERSTATE \_ DITHERENABLE 呈现状态进行控制。
 
 如果支持抖动，则它可能不会默认为 "关闭" 或 "始终打开"。
 
 ### <a name="span-idcolor_keyspanspan-idcolor_keyspancolor-key"></a><span id="color_key"></span><span id="COLOR_KEY"></span>颜色键
 
-颜色键与纹理透明度和 D3DPTEXTURECAPS \_ 透明度 cap 相关 (参阅[**D3DPRIMCAPS**](/windows-hardware/drivers/ddi/d3dcaps/ns-d3dcaps-_d3dprimcaps)结构) 的**dwTextureCaps**成员。
+颜色键与纹理透明度和 D3DPTEXTURECAPS \_ 透明度 cap 相关 (参阅 [**D3DPRIMCAPS**](/windows-hardware/drivers/ddi/d3dcaps/ns-d3dcaps-_d3dprimcaps)结构) 的 **dwTextureCaps** 成员。
 
 用于创建 2D sprite 的颜色键透明度将对象的某些颜色替换为帧缓冲区中其下的颜色。 驱动程序应使应用程序能够为整个场景启用颜色键，但仅在特定的表面上使用颜色键，并使用附加的颜色键值，而不是打开和关闭每个图面的颜色键。
 
-如果 D3DRENDERSTATE \_ COLORKEYENABLE render 状态设置为**TRUE** ，并且纹理图面设置了 DDRAWISURF HASCKEYSRCBLT 位，则会启用 Colorkeying。 \_
+如果 D3DRENDERSTATE \_ COLORKEYENABLE render 状态设置为 **TRUE** ，并且纹理图面设置了 DDRAWISURF HASCKEYSRCBLT 位，则会启用 Colorkeying。 \_
 
-如果 D3DRENDERSTATE \_ COLORKEYENABLE render 状态设置为 **TRUE** ，并且纹理图面具有 DDRAWISURF HASCKEYSRCBLT 位集，则启用颜色键 \_ 。  (有关详细信息，请参阅[**DD \_ surface \_ 本地**](/windows/win32/api/ddrawint/ns-ddrawint-dd_surface_local)结构的**DwFlags**成员。 ) 应用程序创建使用 DDSD CKSRCBLT 的纹理图面， \_ 然后使用 SetRenderState D3DRENDERSTATE 和 TRUE 调用**IDirect3DDevice7：： COLORKEYENABLE**方法 \_ 。 **TRUE** 若要发生颜色键，这两种方法都必须为 true，并且必须允许应用程序将呈现状态 **设置** 为 "true"，并且仍有选择性地为帧纹理的子集使用颜色键 (即， \_ 将 DDRAWISURF HASCKEYSRCBLT 位集) 。 驱动程序由驱动程序正确处理此行为。 有关 **IDirect3DDevice7：： SetRenderState**的详细信息，请参阅 Direct3D SDK 文档。
+如果 D3DRENDERSTATE \_ COLORKEYENABLE render 状态设置为 **TRUE** ，并且纹理图面具有 DDRAWISURF HASCKEYSRCBLT 位集，则启用颜色键 \_ 。  (有关详细信息，请参阅 [**DD \_ surface \_ 本地**](/windows/win32/api/ddrawint/ns-ddrawint-dd_surface_local)结构的 **DwFlags** 成员。 ) 应用程序创建使用 DDSD CKSRCBLT 的纹理图面， \_ 然后使用 SetRenderState D3DRENDERSTATE 和 TRUE 调用 **IDirect3DDevice7：： COLORKEYENABLE** 方法 \_ 。 **TRUE** 若要发生颜色键，这两种方法都必须为 true，并且必须允许应用程序将呈现状态 **设置** 为 "true"，并且仍有选择性地为帧纹理的子集使用颜色键 (即， \_ 将 DDRAWISURF HASCKEYSRCBLT 位集) 。 驱动程序由驱动程序正确处理此行为。 有关 **IDirect3DDevice7：： SetRenderState** 的详细信息，请参阅 Direct3D SDK 文档。
 
  
 

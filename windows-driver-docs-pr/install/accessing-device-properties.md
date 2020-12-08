@@ -1,18 +1,17 @@
 ---
 title: 访问设备属性
 description: 访问设备属性
-ms.assetid: 7D3F3164-E530-49fb-BCCD-9C024543FA95
 keywords:
 - 设备属性 WDK 设备安装，访问
 - 访问设备属性 WDK 设备安装
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 06a07f8706c089522f039a7e07d3d421efe6c415
-ms.sourcegitcommit: a44ade167cdfb541cf1818e9f9e3726f23f90b66
+ms.openlocfilehash: 9c675e77951b03d88a37ea1115851533df9477cc
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/07/2020
-ms.locfileid: "94361255"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96826239"
 ---
 # <a name="accessing-device-properties"></a>访问设备属性
 

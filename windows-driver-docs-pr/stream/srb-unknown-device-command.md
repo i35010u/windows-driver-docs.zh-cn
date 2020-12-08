@@ -1,15 +1,14 @@
 ---
 title: SRB \_ UNKNOWN \_ DEVICE \_ 命令
 description: SRB \_ UNKNOWN \_ DEVICE \_ 命令
-ms.assetid: 89bc2176-e384-48bf-82d8-4a8ab2bd5159
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 82faf14ee7c0942badce6266252a3c60025df6b7
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 4df3d91f82ed0faaeeeb152c32ee38472b1466f4
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89187693"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96824869"
 ---
 # <a name="srb_unknown_device_command"></a>SRB \_ UNKNOWN \_ DEVICE \_ 命令
 
@@ -17,7 +16,7 @@ ms.locfileid: "89187693"
 ## <span id="ddk_srb_unknown_device_command_ks"></span><span id="DDK_SRB_UNKNOWN_DEVICE_COMMAND_KS"></span>
 
 
-类驱动程序将发送此请求，以将不知道如何处理的 Irp 传递到微型驱动程序。 *pSrb* - pSrb &gt;**Irp**指向未处理的 irp。 请参阅 [**HW \_ 流 \_ 请求 \_ 块**](/windows-hardware/drivers/ddi/strmini/ns-strmini-_hw_stream_request_block)。
+类驱动程序将发送此请求，以将不知道如何处理的 Irp 传递到微型驱动程序。 *pSrb* - pSrb &gt;**Irp** 指向未处理的 irp。 请参阅 [**HW \_ 流 \_ 请求 \_ 块**](/windows-hardware/drivers/ddi/strmini/ns-strmini-_hw_stream_request_block)。
 
 此请求可用作 stream 类不理解的 irp 的 IRP 传递机制，但微型驱动程序可能。 例如，stream 类不处理的 (PnP) Irp 有多个即插即用，但1394照相机驱动程序会这样做。
 

@@ -1,7 +1,6 @@
 ---
 title: DEVPKEY_Device_Driver
 description: DEVPKEY_Device_Driver
-ms.assetid: c7c54efe-6b9f-4d77-9060-ea57e4cb1463
 keywords:
 - DEVPKEY_Device_Driver 设备和驱动程序安装
 topic_type:
@@ -14,17 +13,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 44f0050d3772680a590cb7f4910d00d678cab84c
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: b7911311fbed1863e82158e6b0aa8fac024e1a36
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90717068"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96825949"
 ---
 # <a name="devpkey_device_driver"></a>DEVPKEY_Device_Driver
 
 
-DEVPKEY_Device_Driver 设备属性表示*设备实例*的*驱动程序密钥*的注册表项名称。
+DEVPKEY_Device_Driver 设备属性表示 *设备实例* 的 *驱动程序密钥* 的注册表项名称。
 
 <table>
 <colgroup>

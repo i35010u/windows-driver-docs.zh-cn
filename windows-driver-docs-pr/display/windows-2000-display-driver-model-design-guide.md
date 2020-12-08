@@ -1,7 +1,6 @@
 ---
 title: Windows 2000 显示驱动程序模型 (XDDM) 设计指南
 description: Windows 2000 显示驱动程序模型 (XDDM) 设计指南
-ms.assetid: 24cb232b-e289-45c8-8d55-42614a4dfd54
 keywords:
 - 显示设备 WDK
 - 显示驱动程序模型 WDK Windows 2000
@@ -9,12 +8,12 @@ keywords:
 - 显示驱动程序 WDK，Windows 2000
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: dba79865a9f365d30c5e844576e284d3ca155fc6
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: 21b0c70cd61789b315b4e3c5269fbeb954aaef52
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91734199"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96826009"
 ---
 # <a name="windows-2000-display-driver-model-xddm-design-guide"></a>Windows 2000 显示驱动程序模型 (XDDM) 设计指南
 
@@ -47,7 +46,7 @@ ms.locfileid: "91734199"
 
 -   [GDI](gdi.md)
 
-**注意**   Windows 2000 显示驱动程序模型的文档不再包括有关如何创建在 Microsoft Windows 98/Me 平台上运行的显示驱动程序的信息。 如果要为 Windows 98/Me 创建显示驱动程序，可以使用随 Windows Vista 一起发布的 WDK 文档。 你可以从 [Microsoft Connect 网站](/collaborate/connect-redirect)获取适用于 WINDOWS Vista RTM 的 WDK。
+**注意**   Windows 2000 显示驱动程序模型的文档不再包括有关如何创建在 Microsoft Windows 98/Me 平台上运行的显示驱动程序的信息。 如果要为 Windows 98/Me 创建显示驱动程序，可以使用随 Windows Vista 一起发布的 WDK 文档。 你可以从 [Microsoft Connect 网站](/collaborate/connect-redirect)获取适用于 WINDOWS Vista RTM 的 WDK。
 
  
 

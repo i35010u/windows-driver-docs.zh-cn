@@ -1,15 +1,14 @@
 ---
 title: 顶点着色器阶段
 description: 顶点着色器阶段
-ms.assetid: 310ef24a-7647-4f5e-b89f-a3ff330d5df4
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0720b8a8d3f49ff8c16c2a2ddd1f0c23cf34d313
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: f7c61815115ce5d23c762ba698e3ba75ec452c8f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89067014"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96825177"
 ---
 # <a name="vertex-shader-stage"></a>顶点着色器阶段
 
@@ -20,7 +19,7 @@ Direct3D 运行时调用以下驱动程序函数来创建、设置和销毁顶�
 
 [**CalcPrivateShaderSize**](/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_calcprivateshadersize)
 
-[**CreateVertexShader (D3D10) **](/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_createvertexshader)
+[**CreateVertexShader (D3D10)**](/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_createvertexshader)
 
 [**DestroyShader**](/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_destroyshader)
 

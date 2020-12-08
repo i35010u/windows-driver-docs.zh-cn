@@ -1,7 +1,6 @@
 ---
 title: gs
-description: Gs 扩展分析 /GS 堆栈溢出。
-ms.assetid: 4c73fd73-e476-4836-80f7-ab9b9c797d8b
+description: Gs 扩展会分析/GS 堆栈溢出。
 keywords:
 - gs Windows 调试
 ms.date: 05/23/2017
@@ -12,23 +11,23 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: f2faf789b94ec85bcc1503bf59329c3076b0cd2c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7b9401ce06e84146b9dbdd3149ee792cb139517d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63336532"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96825279"
 ---
 # <a name="gs"></a>!gs
 
 
-**！ Gs**扩展分析 /GS 堆栈溢出。
+**！ Gs** 扩展会分析/gs 堆栈溢出。
 
 ```dbgcmd
 !gs
 ```
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 <table>
 <colgroup>
@@ -52,7 +51,7 @@ ms.locfileid: "63336532"
 <a name="remarks"></a>备注
 -------
 
-**！ Gs**扩展可帮助调试缓冲区溢出。 运行 **！ gs**当遇到状态\_堆栈\_缓冲区\_溢出错误，如以下示例所示。
+**！ Gs** 扩展有助于调试缓冲区溢出。 如果 **!gs** 遇到状态 \_ 堆栈 \_ 缓冲区 \_ 溢出错误，请运行！ gs，如以下示例所示。
 
 ```dbgcmd
 0:000> !gs

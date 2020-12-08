@@ -1,7 +1,6 @@
 ---
 title: DEVPKEY_DeviceClass_ClassName
 description: DEVPKEY_DeviceClass_ClassName
-ms.assetid: dc085e27-06c7-49ca-808f-3d1952cb8aa9
 keywords:
 - DEVPKEY_DeviceClass_ClassName 设备和驱动程序安装
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: ce1cd4771f134c173c1198db07847aeb25b8e597
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: c3b1eef8ef2970fcb3d43bf03339aed40199dca5
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90716744"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96825673"
 ---
 # <a name="devpkey_deviceclass_classname"></a>DEVPKEY_DeviceClass_ClassName
 
@@ -62,7 +61,7 @@ DEVPKEY_DeviceClass_ClassName 设备属性表示 [设备安装程序类](./overv
 <a name="remarks"></a>备注
 -------
 
-DEVPKEY_DeviceClass_ClassName 的值由安装设备安装程序类的[**INF 版本部分**](./inf-driverver-directive.md)中包含的**类**指令设置。
+DEVPKEY_DeviceClass_ClassName 的值由安装设备安装程序类的 [**INF 版本部分**](./inf-driverver-directive.md)中包含的 **类** 指令设置。
 
 可以调用 [**SetupDiGetClassProperty**](/windows/win32/api/setupapi/nf-setupapi-setupdigetclasspropertyw) 或 [**SetupDiGetClassPropertyEx**](/windows/win32/api/setupapi/nf-setupapi-setupdigetclasspropertyexw) 来检索 DEVPKEY_DeviceClass_ClassName 的值。
 

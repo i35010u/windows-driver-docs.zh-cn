@@ -1,7 +1,6 @@
 ---
 title: DEVPKEY_DeviceClass_ClassInstaller
 description: DEVPKEY_DeviceClass_ClassInstaller
-ms.assetid: 7bde624e-37e5-4603-bf8c-1122b7090ab2
 keywords:
 - DEVPKEY_DeviceClass_ClassInstaller 设备和驱动程序安装
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 84b3a70204bc0ea5c962c427d397c8a98d3fc0a7
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: e95b22b9919f1a935b364add90d89c7b63d78354
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90715576"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96825677"
 ---
 # <a name="devpkey_deviceclass_classinstaller"></a>DEVPKEY_DeviceClass_ClassInstaller
 
@@ -72,7 +71,7 @@ DEVPKEY_DeviceClass_ClassInstaller 设备属性表示 [设备安装程序类](./
 
 DEVPKEY_DeviceClass_ClassInstaller 的值是类注册表项下的 **Installer32** 注册表值的值。 此条目包含类安装程序 DLL 的名称和设备安装程序类的安装程序入口点。
 
-设备安装程序类的**Installer32**注册表值可由安装设备安装程序类的 inf 文件的[**inf ClassInstall32 部分**](./inf-classinstall32-section.md)中包含的[**inf AddReg 指令**](./inf-addreg-directive.md)设置。
+设备安装程序类的 **Installer32** 注册表值可由安装设备安装程序类的 inf 文件的 [**inf ClassInstall32 部分**](./inf-classinstall32-section.md)中包含的 [**inf AddReg 指令**](./inf-addreg-directive.md)设置。
 
 可以调用 [**SetupDiGetClassProperty**](/windows/win32/api/setupapi/nf-setupapi-setupdigetclasspropertyw) 或 [**SetupDiGetClassPropertyEx**](/windows/win32/api/setupapi/nf-setupapi-setupdigetclasspropertyexw) 来检索 DEVPKEY_DeviceClass_ClassInstaller 的值。
 

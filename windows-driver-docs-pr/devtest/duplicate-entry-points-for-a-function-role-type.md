@@ -1,15 +1,14 @@
 ---
 title: 函数角色类型的重复入口点
 description: 函数角色类型的重复入口点
-ms.assetid: cf6604da-bd79-4adf-a08f-9b903aa91133
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3e20a22056bda72fc8d2d97e6f79cc6d5a82c66f
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 2cc327e56360e9dd96c0ab7b8eca9d3a002af628
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89383257"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96826125"
 ---
 # <a name="duplicate-entry-points-for-a-function-role-type"></a>函数角色类型的重复入口点
 
@@ -41,18 +40,18 @@ Static Driver Verifier found more than one entry point for '[role type]'
 #define fun_WDF_IO_QUEUE_IO_DEVICE_CONTROL OsrFxEvtIoDeviceControl
 ```
 
-若要删除重复项，请将第二个完成例程注释掉 (将定义中的** \# d**替换 \# 为两个注释分隔符 (**//**) "。 然后，将 " **已批准** " 设置为 "true" 并运行验证。
+若要删除重复项，请将第二个完成例程注释掉 (将定义中的 **\# d** 替换 \# 为两个注释分隔符 (**//**) "。 然后，将 " **已批准** " 设置为 "true" 并运行验证。
 
 ```
 #define fun_WDF_REQUEST_COMPLETION_ROUTINE EvtRequestReadCompletionRoutine
 //efine fun_WDF_REQUEST_COMPLETION_ROUTINE EvtRequestWriteCompletionRoutine
 ```
 
-使用一个完成例程查看验证结果后，请再次编辑 Sdv 文件，但这一次，注释掉刚刚验证的完成例程并删除注释， (将替换 **//** 例程中的 with ** \# d**) 替换为未验证。 然后再次运行 SDV。
+使用一个完成例程查看验证结果后，请再次编辑 Sdv 文件，但这一次，注释掉刚刚验证的完成例程并删除注释， (将替换 **//** 例程中的 with **\# d**) 替换为未验证。 然后再次运行 SDV。
 
 ### <a name="span-idfunction_role_types_that_support_multiple_entry_pointsspanspan-idfunction_role_types_that_support_multiple_entry_pointsspanfunction-role-types-that-support-multiple-entry-points"></a><span id="function_role_types_that_support_multiple_entry_points"></span><span id="FUNCTION_ROLE_TYPES_THAT_SUPPORT_MULTIPLE_ENTRY_POINTS"></span>支持多个入口点的函数角色类型
 
-某些函数角色类型支持多个条目。 如果条目数超过了支持的最大值，则 SDV 还会将其报告为重复项。 可以通过在 Sdv 文件中选择性地注释掉回调例程的** \# define**语句并进行单独的验证来处理这些附加条目，这与处理重复项的方式相同。 例如，如果你的驱动程序具有八个使用 .EVT \_ WDF \_ dpc role type)  (，则可以执行以下操作：
+某些函数角色类型支持多个条目。 如果条目数超过了支持的最大值，则 SDV 还会将其报告为重复项。 可以通过在 Sdv 文件中选择性地注释掉回调例程的 **\# define** 语句并进行单独的验证来处理这些附加条目，这与处理重复项的方式相同。 例如，如果你的驱动程序具有八个使用 .EVT \_ WDF \_ dpc role type)  (，则可以执行以下操作：
 
 -   编辑 Sdv，并注释掉有趣的 \_ wdf dpc \_ \_ 5 到有趣的 \_ wdf \_ dpc \_ 8 的定义语句。
 

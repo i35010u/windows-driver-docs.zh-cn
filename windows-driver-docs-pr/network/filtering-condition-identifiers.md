@@ -1,23 +1,22 @@
 ---
 title: 筛选条件标识符
 description: 本部分介绍筛选条件标识符。
-ms.assetid: 53321aea-6406-426a-a541-2626faad2232
 keywords:
 - 筛选条件标识符网络驱动程序
 ms.date: 11/08/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b661b19a3bd4d9d912534402a4f17a4541d6d5e3
-ms.sourcegitcommit: a3ccb07628a9cd8936d7f88f4aab8faf9379cae5
+ms.openlocfilehash: 3b4a687f57ce53bbaa5c240f69e33b69f697079c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92088119"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96825537"
 ---
 # <a name="filtering-condition-identifiers"></a>筛选条件标识符
 
 筛选条件标识符由 GUID 表示。 下表对这些标识符进行了说明。
 
-|筛选条件标识符|说明|
+|筛选条件标识符|描述|
 |----|----|
 |FWPM_CONDITION_ARRIVAL_INTERFACE_INDEX|网络堆栈枚举的到达网络接口的索引。</br>WFP 使用到达接口来匹配此条件。 到达接口是在执行弱主机或转发之前，从网络进入 IP 堆栈入站之前，数据包看到的第一个接口。</br>出于重新授权目的，这种情况是不对称的，因为它本身就是入站条件。 这意味着，当延伸响应出站数据包上的入站连接时，WFP 将对此条件使用空值。</br>若要处理重新授权，必须使用第二个筛选器。 此第二个筛选器可以允许或阻止空值，也可以使用在这种情况下具有有效值的不同条件。 如果到达接口条件，接口条件的下一个跃点类将在出站数据包上具有有效接口。</br>请注意，此功能仅在 Windows Server 2008 R2、Windows 7 和更高版本的 Windows 中可用。|
 |FWPM_CONDITION_ARRIVAL_INTERFACE_TYPE|由 Internet 分配的编号颁发机构 (IANA) 定义的到达网络接口的类型。 有关详细信息，请参阅 [IANAifType 定义](https://www.iana.org/assignments/ianaiftype-mib/ianaiftype-mib)。</br>WFP 使用到达接口来匹配此条件。 到达接口是在执行弱主机或转发之前，从网络进入 IP 堆栈入站之前，数据包看到的第一个接口。</br>出于重新授权目的，这种情况是不对称的，因为它本身就是入站条件。 这意味着，当延伸响应出站数据包上的入站连接时，WFP 将对此条件使用空值。</br>若要处理重新授权，必须使用第二个筛选器。 此第二个筛选器可以允许或阻止空值，也可以使用在这种情况下具有有效值的不同条件。 如果到达接口条件，接口条件的下一个跃点类将在出站数据包上具有有效接口。</br>请注意，这只在 Windows Server 2008 R2、Windows 7 和更高版本的 Windows 中 v。|
@@ -25,7 +24,7 @@ ms.locfileid: "92088119"
 |FWPM_CONDITION_IP_ARRIVAL_INTERFACE|与到达 IP 地址关联的网络接口的 [LUID](/windows-hardware/drivers/ddi/igpupvdev/ns-igpupvdev-_luid) 。</br>WFP 使用到达接口来匹配此条件。 到达接口是在执行弱主机或转发之前，从网络进入 IP 堆栈入站之前，数据包看到的第一个接口。</br>出于重新授权目的，这种情况是不对称的，因为它本身就是入站条件。 这意味着，当延伸响应出站数据包上的入站连接时，WFP 将对此条件使用空值。</br>若要处理重新授权，必须使用第二个筛选器。 此第二个筛选器可以允许或阻止空值，也可以使用在这种情况下具有有效值的不同条件。 如果到达接口条件，接口条件的下一个跃点类将在出站数据包上具有有效接口。</br>请注意，此功能仅在 Windows Server 2008 R2、Windows 7 和更高版本的 Windows 中可用。|
 |FWPM_CONDITION_NEXTHOP_INTERFACE_INDEX|网络堆栈枚举的到达网络接口的索引。</br>WFP 使用下一个跃点接口来匹配此条件。 下一个跃点接口是在执行弱主机或转发后，将 IP 堆栈向网络传出之前，数据包所看到的最后一个接口。</br>出于重新授权目的，这种情况是不对称的，因为它是固有的出站条件。 这意味着，当延伸响应入站数据包上的出站连接时，WFP 将对此条件使用空值。</br>若要处理重新授权，必须使用第二个筛选器。 此第二个筛选器可以允许或阻止空值，也可以使用在这种情况下具有有效值的不同条件。 对于下一个跃点接口条件，接口条件的到达类将在入站数据包上具有有效接口。</br>请注意，此功能仅在 Windows Server 2008 R2、Windows 7 和更高版本的 Windows 中可用。|
 |FWPM_CONDITION_NEXTHOP_INTERFACE_TYPE|由 Internet 分配的编号颁发机构 (IANA) 定义的到达网络接口的类型。 有关详细信息，请参阅 [IANAifType 定义](https://www.iana.org/assignments/ianaiftype-mib/ianaiftype-mib)。</br>WFP 使用下一个跃点接口来匹配此条件。 下一个跃点接口是在执行弱主机或转发后，将 IP 堆栈向网络传出之前，数据包所看到的最后一个接口。</br>出于重新授权目的，这种情况是不对称的，因为它是固有的出站条件。 这意味着，当延伸响应入站数据包上的出站连接时，WFP 将对此条件使用空值。</br>若要处理重新授权，必须使用第二个筛选器。 此第二个筛选器可以允许或阻止空值，也可以使用在这种情况下具有有效值的不同条件。 对于下一个跃点接口条件，接口条件的到达类将在入站数据包上具有有效接口。</br>请注意，此功能仅在 Windows Server 2008 R2、Windows 7 和更高版本的 Windows 中可用。|
-|FWPM_CONDITION_NEXTHOP_TUNNEL_TYPE|如果 IF_TYPE_TUNNEL [**IP_ADAPTER_ADDRESSES**](/windows/win32/api/iptypes/ns-iptypes-ip_adapter_addresses_lh)结构的**IfType**成员，则为隧道使用的封装方法。 隧道类型由 IANA 定义。 有关详细信息，请参阅 [IANAifType 定义](https://www.iana.org/assignments/ianaiftype-mib/ianaiftype-mib) 和 Windows SDK [IP 帮助器](./ip-helper.md) 文档。</br>WFP 使用下一个跃点接口来匹配此条件。 下一个跃点接口是在执行弱主机或转发后，将 IP 堆栈向网络传出之前，数据包所看到的最后一个接口。</br>出于重新授权目的，这种情况是不对称的，因为它是固有的出站条件。 这意味着，当延伸响应入站数据包上的出站连接时，WFP 将对此条件使用空值。</br>若要处理重新授权，必须使用第二个筛选器。 此第二个筛选器可以允许或阻止空值，也可以使用在这种情况下具有有效值的不同条件。 对于下一个跃点接口条件，接口条件的到达类将在入站数据包上具有有效接口。</br>请注意，此功能仅在 Windows Server 2008 R2、Windows 7 和更高版本的 Windows 中可用。|
+|FWPM_CONDITION_NEXTHOP_TUNNEL_TYPE|如果 IF_TYPE_TUNNEL [**IP_ADAPTER_ADDRESSES**](/windows/win32/api/iptypes/ns-iptypes-ip_adapter_addresses_lh)结构的 **IfType** 成员，则为隧道使用的封装方法。 隧道类型由 IANA 定义。 有关详细信息，请参阅 [IANAifType 定义](https://www.iana.org/assignments/ianaiftype-mib/ianaiftype-mib) 和 Windows SDK [IP 帮助器](./ip-helper.md) 文档。</br>WFP 使用下一个跃点接口来匹配此条件。 下一个跃点接口是在执行弱主机或转发后，将 IP 堆栈向网络传出之前，数据包所看到的最后一个接口。</br>出于重新授权目的，这种情况是不对称的，因为它是固有的出站条件。 这意味着，当延伸响应入站数据包上的出站连接时，WFP 将对此条件使用空值。</br>若要处理重新授权，必须使用第二个筛选器。 此第二个筛选器可以允许或阻止空值，也可以使用在这种情况下具有有效值的不同条件。 对于下一个跃点接口条件，接口条件的到达类将在入站数据包上具有有效接口。</br>请注意，此功能仅在 Windows Server 2008 R2、Windows 7 和更高版本的 Windows 中可用。|
 |FWPM_CONDITION_IP_NEXTHOP_INTERFACE|与到达 IP 邮件关联的网络接口的[LUID](/windows-hardware/drivers/ddi/igpupvdev/ns-igpupvdev-_luid)</br>WFP 使用下一个跃点接口来匹配此条件。 下一个跃点接口是在执行弱主机或转发后，将 IP 堆栈向网络传出之前，数据包所看到的最后一个接口。</br>出于重新授权目的，这种情况是不对称的，因为它是固有的出站条件。 这意味着，当延伸响应入站数据包上的出站连接时，WFP 将对此条件使用空值。</br>若要处理重新授权，必须使用第二个筛选器。 此第二个筛选器可以允许或阻止空值，也可以使用在这种情况下具有有效值的不同条件。 对于下一个跃点接口条件，接口条件的到达类将在入站数据包上具有有效接口。</br>请注意，此功能仅在 Windows Server 2008 R2、Windows 7 和更高版本的 Windows 中可用。|
 |FWPM_CONDITION_IP_LOCAL_ADDRESS|本地 IP 地址。|
 |FWPM_CONDITION_IP_REMOTE_ADDRESS|远程 IP 地址。|

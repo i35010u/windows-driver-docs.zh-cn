@@ -1,7 +1,6 @@
 ---
 title: 驱动程序管理的 IRP 队列
 description: 驱动程序管理的 IRP 队列
-ms.assetid: b701e4aa-96ba-44af-96a5-b6cecf075bac
 keywords:
 - 设备队列 WDK Irp，对象
 - Irp WDK 内核，队列
@@ -16,12 +15,12 @@ keywords:
 - 设备队列 WDK Irp，关于设备队列
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 954cb7afa5bb7fdb3b0a82ee42eff21ceaf13f27
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 2a3a924b41aa02fe7fc697f77555e4f7345467dc
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89185191"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96825901"
 ---
 # <a name="driver-managed-irp-queues"></a>驱动程序管理的 IRP 队列
 

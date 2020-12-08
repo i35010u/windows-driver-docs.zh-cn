@@ -5,15 +5,14 @@ keywords:
 - NDIS 网络接口 OID
 - WDK NDIS 网络接口 Oid
 - WDK 网络接口 Oid
-ms.assetid: A66B5AC6-9EAF-4234-8614-0EBF179B3DDE
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4191404b7c299ae39a968c8a4dfbc64b6ec189e8
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 70844cb49ff35976deabc2d917c4887ff87f19f8
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89215544"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96825059"
 ---
 # <a name="ndis-network-interface-oids"></a>NDIS 网络接口 OID
 
@@ -21,9 +20,9 @@ ms.locfileid: "89215544"
 
 NDIS 接口提供程序必须支持这些 Oid。 未注册接口提供程序的驱动程序不应支持本节中的 Oid。
 
-NDIS 调用 [ProviderQueryObject](/windows-hardware/drivers/ddi/ndis/nc-ndis-if_query_object) 函数来发出查询请求，以获取接口提供程序的信息。 此函数的 *ObjectId* 参数包含对象标识符。 接口提供程序在调用[NdisIfRegisterProvider](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisifregisterprovider)函数以注册为接口提供程序时注册了*ProviderQueryObject* 。
+NDIS 调用 [ProviderQueryObject](/windows-hardware/drivers/ddi/ndis/nc-ndis-if_query_object) 函数来发出查询请求，以获取接口提供程序的信息。 此函数的 *ObjectId* 参数包含对象标识符。 接口提供程序在调用 [NdisIfRegisterProvider](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisifregisterprovider)函数以注册为接口提供程序时注册了 *ProviderQueryObject* 。
 
-*ProviderQueryObject*函数的*ProviderIfContext*参数处的句柄标识网络接口。 此句柄是在接口提供程序调用 [NdisIfRegisterInterface](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisifregisterinterface) 函数以注册接口时提供给 NDIS 的。 *ProviderQueryObject*函数的*POUTPUTBUFFER*参数包含 OID 请求的结果。
+*ProviderQueryObject* 函数的 *ProviderIfContext* 参数处的句柄标识网络接口。 此句柄是在接口提供程序调用 [NdisIfRegisterInterface](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisifregisterinterface) 函数以注册接口时提供给 NDIS 的。 *ProviderQueryObject* 函数的 *POUTPUTBUFFER* 参数包含 OID 请求的结果。
 
 有关 NDIS 网络接口 Oid 的详细信息，请参阅 [ndis 6.0 网络接口](ndis-network-interfaces2.md)。
 

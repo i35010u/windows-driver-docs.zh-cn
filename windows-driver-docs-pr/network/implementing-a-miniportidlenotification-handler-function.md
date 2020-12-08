@@ -1,15 +1,14 @@
 ---
 title: 实现 MiniportIdleNotification 处理程序函数
 description: 实现 MiniportIdleNotification 处理程序函数
-ms.assetid: F2F8C98F-D8B3-49A6-819D-BC0EC936F41E
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0744d96add191680a96d535ae129942fe33ebdb9
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 78f1bddb99d0918cefadd94afeff10c029d89da6
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89206455"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96825089"
 ---
 # <a name="implementing-a-miniportidlenotification-handler-function"></a>实现 MiniportIdleNotification 处理程序函数
 
@@ -18,7 +17,7 @@ NDIS 调用微型端口驱动程序的 [*MiniportIdleNotification*](/windows-har
 
 如果仍在使用网络适配器，微型端口驱动程序可以拒绝空闲通知。 驱动程序通过 \_ \_ 从 [*MiniportIdleNotification*](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_idle_notification) 处理程序函数返回 NDIS 状态繁忙来实现此功能。
 
-**注意**   如果[*MiniportIdleNotification*](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_idle_notification)处理程序函数的*ForceIdle*参数设置为**TRUE**，则微型端口驱动程序无法否决空闲通知。
+**注意** 如果 [*MiniportIdleNotification*](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_idle_notification)处理程序函数的 *ForceIdle* 参数设置为 **TRUE**，则微型端口驱动程序无法否决空闲通知。
 
  
 
@@ -26,7 +25,7 @@ NDIS 调用微型端口驱动程序的 [*MiniportIdleNotification*](/windows-har
 
 例如，当调用 [*MiniportIdleNotification*](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_idle_notification) 时，usb 微型端口驱动程序会为 usb 空闲请求准备一个 i/o 请求数据包 (IRP)  ([**IOCTL \_ 内部 \_ usb \_ 提交 \_ 空闲 \_ 通知**](/windows-hardware/drivers/ddi/usbioctl/ni-usbioctl-ioctl_internal_usb_submit_idle_notification)) 。 当微型端口驱动程序准备 IRP 时，它必须指定回调函数。 驱动程序还必须调用 [**IoSetCompletionRoutine**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iosetcompletionroutine) 或 [**IOSETCOMPLETIONROUTINEEX**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iosetcompletionroutineex) 来指定 IRP 的完成例程。 然后，微型端口驱动程序调用 [**IoCallDriver**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iocalldriver) 将 IRP 颁发给 USB 总线驱动程序。
 
-**注意**   USB 总线驱动程序不会立即完成 IRP。 IRP 通过低功耗转换保持处于挂起状态。 只有微型端口驱动程序或硬件事件（例如从 USB 集线器中删除网络适配器）取消时，总线驱动程序才会完成 IRP。
+**注意**  USB 总线驱动程序不会立即完成 IRP。 IRP 通过低功耗转换保持处于挂起状态。 只有微型端口驱动程序或硬件事件（例如从 USB 集线器中删除网络适配器）取消时，总线驱动程序才会完成 IRP。
 
  
 

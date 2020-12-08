@@ -1,7 +1,6 @@
 ---
 title: DispatchPower 例程
 description: DispatchPower 例程
-ms.assetid: e385064f-cbdb-432f-951a-743217891333
 keywords:
 - 调度例程 WDK 内核，DispatchPower 例程
 - DispatchPower 例程
@@ -10,12 +9,12 @@ keywords:
 - 可移动设备电源派单例程 WDK 内核
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fa1790c3903509b4add9fc8962410a611cdff7d8
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: b3f6c7d7d89010f2da6f31f8ab5b6b3f93fdea38
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89183911"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96825937"
 ---
 # <a name="dispatchpower-routines"></a>DispatchPower 例程
 
@@ -23,7 +22,7 @@ ms.locfileid: "89183911"
 
 
 
-驱动程序的[*DispatchPower*](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch)例程通过处理[**irp \_ MJ \_ 电源**](./irp-mj-power.md)i/o 函数代码的 irp 来支持[电源管理](./introduction-to-power-management.md)。 与 **IRP \_ MJ \_ power** function 代码关联的是用于电源管理的几个次要 i/o 函数代码。 电源管理器使用这些次要函数代码来指示驱动程序更改电源状态、等待和响应系统唤醒事件，并查询有关其设备的驱动程序。
+驱动程序的 [*DispatchPower*](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch)例程通过处理 [**irp \_ MJ \_ 电源**](./irp-mj-power.md)i/o 函数代码的 irp 来支持 [电源管理](./introduction-to-power-management.md)。 与 **IRP \_ MJ \_ power** function 代码关联的是用于电源管理的几个次要 i/o 函数代码。 电源管理器使用这些次要函数代码来指示驱动程序更改电源状态、等待和响应系统唤醒事件，并查询有关其设备的驱动程序。
 
 每个驱动程序的 *DispatchPower* 例程执行以下任务：
 

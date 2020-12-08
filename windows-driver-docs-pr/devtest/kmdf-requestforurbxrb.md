@@ -1,6 +1,5 @@
 ---
 title: 'RequestForUrbXrb 规则 (kmdf) '
-ms.assetid: 8BFFB73D-106A-4CD0-93F2-D295D969729E
 ms.date: 05/21/2018
 description: '了解详细信息： RequestForUrbXrb 规则 (kmdf) '
 keywords:
@@ -12,12 +11,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 16858d1e3ece6affba797adc04712f0f2ff96853
-ms.sourcegitcommit: f47c072e88dce59daba1231027b60eb56bd2cde9
+ms.openlocfilehash: 82229931410cb64e2d999d16d6ee611f6dabb2b8
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92689351"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96826099"
 ---
 # <a name="requestforurbxrb-rule-kmdf"></a>RequestForUrbXrb 规则 (kmdf) 
 

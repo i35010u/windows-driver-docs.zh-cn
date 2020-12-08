@@ -1,7 +1,6 @@
 ---
 title: Bug 检查 0xCB DRIVER_LEFT_LOCKED_PAGES_IN_PROCESS
-description: DRIVER_LEFT_LOCKED_PAGES_IN_PROCESS bug 检查具有 0x000000CB 值。 这表示，驱动程序或 I/O 管理器无法释放锁定的页执行 I/O 操作后。
-ms.assetid: e97d114e-c6f1-44f1-a2ad-bfa8d03dc3c7
+description: DRIVER_LEFT_LOCKED_PAGES_IN_PROCESS bug 检查的值为0x000000CB。 这表明驱动程序或 i/o 管理器未能在 i/o 操作后释放锁定页。
 keywords:
 - Bug 检查 0xCB DRIVER_LEFT_LOCKED_PAGES_IN_PROCESS
 - DRIVER_LEFT_LOCKED_PAGES_IN_PROCESS
@@ -13,28 +12,28 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 5885aa1b0269e87304ca7c534958e30ecf4dba00
-ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
+ms.openlocfilehash: 6634f11c57588677f51eea86acc46cc3b7b16c9f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67518906"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96825223"
 ---
-# <a name="bug-check-0xcb-driverleftlockedpagesinprocess"></a>Bug 检查 0xCB：驱动程序\_左侧\_已锁定\_页面\_IN\_过程
+# <a name="bug-check-0xcb-driver_left_locked_pages_in_process"></a>Bug 检查0xCB：驱动程序已 \_ \_ 锁定 \_ \_ 正在 \_ 处理的页
 
 
-该驱动程序\_左侧\_已锁定\_页面\_IN\_进程错误检查的值为 0x000000CB。 这表示，驱动程序或 I/O 管理器无法释放锁定的页执行 I/O 操作后。
+" \_ \_ \_ 进程 bug 检查" 中的驱动程序 "已锁定" 页的值为 \_ " \_ 0x000000CB"。 这表明驱动程序或 i/o 管理器未能在 i/o 操作后释放锁定页。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://www.windows.com/stopcode)。
+> 本主题面向程序员。 如果您是在使用计算机时收到蓝屏错误代码的客户，请参阅[蓝屏错误疑难解答](https://www.windows.com/stopcode)。
 
 
-## <a name="driverleftlockedpagesinprocess-parameters"></a>驱动程序\_左侧\_已锁定\_页面\_IN\_过程参数
+## <a name="driver_left_locked_pages_in_process-parameters"></a>驱动 \_ 程序 \_ \_ \_ 在 \_ 进程参数中已锁定页
 
 
-消息中列出的四个参数可以具有两个可能的含义。
+消息中列出的四个参数可以有两个可能的含义。
 
-如果驱动程序锁定这些页面，参数具有以下含义。
+如果驱动程序锁定了这些页面，则这些参数具有以下含义。
 
 <table>
 <colgroup>
@@ -50,28 +49,28 @@ ms.locfileid: "67518906"
 <tbody>
 <tr class="odd">
 <td align="left"><p>1</p></td>
-<td align="left"><p>驱动程序中调用地址锁定页面</p></td>
+<td align="left"><p>在锁定页面的驱动程序中调用地址</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>2</p></td>
-<td align="left"><p>调用方中锁定页面的驱动程序的调用地址</p></td>
+<td align="left"><p>锁定页面的驱动程序中调用地址的调用方</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>3</p></td>
-<td align="left"><p>包含锁定的页 MDL 的地址</p></td>
+<td align="left"><p>包含锁定页面的 MDL 的地址</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>4</p></td>
-<td align="left"><p>锁定的页的数目</p></td>
+<td align="left"><p>锁定页面数</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-如果无法确定导致错误的驱动程序，其名称是蓝色屏幕上输出和位置在内存中存储 (PUNICODE\_字符串) **KiBugCheckDriver**。
+如果能够识别出导致错误的驱动程序，则其名称将打印在蓝屏上，并存储在内存中的 (PUNICODE\_STRING) KiBugCheckDriver  位置。
 
-如果 I/O 管理器锁定这些页面，参数具有以下含义。
+如果 i/o 管理器锁定了这些页面，则这些参数具有以下含义。
 
 <table>
 <colgroup>
@@ -87,19 +86,19 @@ ms.locfileid: "67518906"
 <tbody>
 <tr class="odd">
 <td align="left"><p>1</p></td>
-<td align="left"><p>向其发送 IRP 堆栈顶部的驱动程序的调度例程的地址</p></td>
+<td align="left"><p>将 IRP 发送到的堆栈上顶层驱动程序的调度例程的地址</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>2</p></td>
-<td align="left"><p>向其发送 IRP 堆栈上的顶部驱动程序的设备对象的地址</p></td>
+<td align="left"><p>将 IRP 发送到的堆栈上顶层驱动程序的设备对象的地址</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>3</p></td>
-<td align="left"><p>包含锁定的页 MDL 的地址</p></td>
+<td align="left"><p>包含锁定页面的 MDL 的地址</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>4</p></td>
-<td align="left"><p>锁定的页的数目</p></td>
+<td align="left"><p>锁定页面数</p></td>
 </tr>
 </tbody>
 </table>
@@ -109,9 +108,9 @@ ms.locfileid: "67518906"
 <a name="remarks"></a>备注
 -------
 
-仅当颁发此 bug 检查注册表值 **\\ \\HKEY\_本地\_机\\系统\\CurrentControlSet\\控件\\会话管理器\\内存管理\\TrackLockedPages**为 dword 值 1。 如果未设置此值，则系统将发出信息不太[ **bug 检查 0x76** ](bug-check-0x76--process-has-locked-pages.md) (进程\_HAS\_已锁定\_页面)。
+仅当注册表值 **\\ \\ HKEY \_ 本地 \_ 计算机 \\ 系统 \\ CurrentControlSet \\ 控制 \\ 会话管理器 \\ 内存管理 \\ TrackLockedPages** 等于 DWORD 1 时，才发出此 bug 检查。 如果未设置此值，则系统将发出不太丰富的 [**bug 检查 0x76**](bug-check-0x76--process-has-locked-pages.md) (进程 \_ 已 \_) 锁定 \_ 页面。
 
-从 Windows Vista 开始，此 bug 检查还可以颁发由驱动程序验证程序时启用该池跟踪选项。
+从 Windows Vista 开始，如果启用了池跟踪选项，此错误检查还可以由驱动程序验证程序发出。
 
  
 

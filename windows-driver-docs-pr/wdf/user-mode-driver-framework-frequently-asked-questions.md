@@ -1,20 +1,19 @@
 ---
 title: 用户模式驱动程序框架常见问题解答
 description: Windows 驱动程序框架 (WDF) 是一组可用于编写在 Windows 操作系统上运行的设备驱动程序的库。
-ms.assetid: 0c07e514-73f9-4d24-86ad-8ac036fdbcf4
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1ccb466b541c42bda58e2b819b23f8e4878db786
-ms.sourcegitcommit: 057b72e8a44ba8f4282e072edc7be0b7e9341d2a
+ms.openlocfilehash: 912faca95bbe00363cb0ac276acb830fc9c1dbd6
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/03/2020
-ms.locfileid: "89412471"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96824827"
 ---
 # <a name="user-mode-driver-framework-frequently-asked-questions"></a>用户模式驱动程序框架常见问题解答
 
 
-Windows 驱动程序框架 (WDF) 是一组可用于编写在 Windows 操作系统上运行的设备驱动程序的库。 WDF 定义了两个框架支持的单个驱动程序模型：内核模式驱动程序框架 (KMDF) 和用户模式驱动程序框架 (UMDF) 。 本主题提供有关 UMDF 的常见问题的解答。
+Windows 驱动程序框架 (WDF) 是一组可用于编写在 Windows 操作系统上运行的设备驱动程序的库。 WDF 定义了两个框架支持的单个驱动程序模型： Kernel-Mode Driver Framework (KMDF) 和 User-Mode Driver Framework (UMDF) 。 本主题提供有关 UMDF 的常见问题的解答。
 
 ## <a name="which-operating-systems-can-run-umdf-drivers"></a>哪些操作系统可以运行 UMDF 驱动程序？
 
@@ -22,11 +21,11 @@ Windows 驱动程序框架 (WDF) 是一组可用于编写在 Windows 操作系�
 你可以在以下操作系统上运行 UMDF 驱动程序：
 
 -   Windows 10
--   Windows 8.1
+-   Windows 8.1
 -   Windows 8
 -   Windows 7
--   Windows Vista
--   Windows XP
+-   Windows Vista
+-   Windows XP
 
 ## <a name="what-is-the-most-recent-version-of-umdf"></a>最新版本的 UMDF 是什么？
 
@@ -45,7 +44,7 @@ Windows 驱动程序框架 (WDF) 是一组可用于编写在 Windows 操作系�
 
 UMDF 版本2驱动程序在 Windows 8.1 和更高版本上运行。
 
-## <a name="which-umdf-versions-can-i-build-against-in-windows-driver-kit-wdk10"></a>我可以在 Windows 驱动程序工具包中构建哪些 UMDF 版本 (WDK) 10？
+## <a name="which-umdf-versions-can-i-build-against-in-windows-driver-kit-wdk-10"></a>我可以在 Windows 驱动程序工具包中构建哪些 UMDF 版本 (WDK) 10？
 
 
 你可以使用 Windows 驱动程序工具包，使用 Windows 驱动程序 (工具包生成 UMDF 2.1、2.0、1.11 和1.9 驱动程序) 10 和 Microsoft Visual Studio。 有关哪些版本的 Windows 可以运行使用这些 UMDF 版本生成的驱动程序的信息，请参阅 [UMDF 版本历史记录](umdf-version-history.md)。
@@ -55,7 +54,7 @@ UMDF 版本2驱动程序在 Windows 8.1 和更高版本上运行。
 
 是的。 即使您的驱动程序需要访问某些内核模式资源或功能，您也可以将您的驱动程序拆分为两个部分。 利用此方法，你可以受益于在用户模式下开发和运行驱动程序的一些优点。
 
-UMDF 驱动程序可以接收来自内核模式驱动程序的 i/o 请求。 有关 *内核模式客户端*的详细信息，请参阅 [在 UMDF 2 驱动程序中支持内核模式客户端](supporting-kernel-mode-clients-in-umdf-drivers.md)。
+UMDF 驱动程序可以接收来自内核模式驱动程序的 i/o 请求。 有关 *内核模式客户端* 的详细信息，请参阅 [在 UMDF 2 驱动程序中支持 Kernel-Mode 客户端](supporting-kernel-mode-clients-in-umdf-drivers.md)。
 
 然而，在 KMDF 和 UMDF 之间增加了奇偶校验，你几乎不需要拆分驱动程序。
 
@@ -83,7 +82,7 @@ UMDF 驱动程序在驱动程序主机进程中运行，该进程在 LocalServic
 ## <a name="what-is-the-difference-between-a-user-mode-driver-and-an-application"></a>用户模式驱动程序和应用程序之间的区别是什么？
 
 
-用户模式驱动程序由驱动程序管理器启动，并在驱动程序主机进程中运行。 驱动程序的单个实例可以同时处理来自多个应用程序的请求。 为了与驱动程序通信，应用程序会通过 Win32 API 向驱动程序的设备发出 i/o 请求。 用户模式驱动程序中的主要入口点是 (UMDF 1.11 及更早版本) 或[**DriverEntry**](./driverentry-for-kmdf-drivers.md)例程的[**IDriverEntry**](/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-idriverentry)接口， (从 umdf 2.0) 开始，而不是从**主 ( # B5**函数开始。
+用户模式驱动程序由驱动程序管理器启动，并在驱动程序主机进程中运行。 驱动程序的单个实例可以同时处理来自多个应用程序的请求。 为了与驱动程序通信，应用程序会通过 Win32 API 向驱动程序的设备发出 i/o 请求。 用户模式驱动程序中的主要入口点是 (UMDF 1.11 及更早版本) 或 [**DriverEntry**](./driverentry-for-kmdf-drivers.md)例程的 [**IDriverEntry**](/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-idriverentry)接口， (从 umdf 2.0) 开始，而不是从 **主 ( # B5** 函数开始。
 
 驱动程序还包括为响应 i/o 请求和即插即用和电源通知而调用的附加接口或回调。 由 UMDF 驱动程序管理的设备集成到系统中，并参与即插即用和电源管理。
 

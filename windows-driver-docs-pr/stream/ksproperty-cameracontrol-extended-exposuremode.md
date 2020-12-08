@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ CAMERACONTROL \_ 扩展 \_ EXPOSUREMODE
 description: "\"公开控制\" 属性指定是否进行自动处理以便公开或使用手动时间值。"
-ms.assetid: 54D4F286-09F2-48B5-9A7A-9445999972BD
 keywords:
 - KSPROPERTY_CAMERACONTROL_EXTENDED_EXPOSUREMODE 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 09/10/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 0432251c86a7d43cea044110e8df24eb05f1a949
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 45a035d5a6bbfac06e29e3aabee8a6714c08eaea
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89192639"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96825339"
 ---
 # <a name="ksproperty_cameracontrol_extended_exposuremode"></a>KSPROPERTY \_ CAMERACONTROL \_ 扩展 \_ EXPOSUREMODE
 
@@ -33,11 +32,11 @@ ms.locfileid: "89192639"
 
 属性值 (操作数据) 包含 [**KSCAMERA \_ EXTENDEDPROP \_ 标头**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header) 结构和 [**KSCAMERA \_ EXTENDEDPROP \_ VIDEOPROCSETTING**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_videoprocsetting) 结构。
 
-总属性数据大小为 **sizeof** (KSCAMERA \_ EXTENDEDPROP \_ 标头) + **sizeof** (KSCAMERA \_ EXTENDEDPROP \_ VIDEOPROCSETTING) 。 [**KSCAMERA \_ EXTENDEDPROP \_ 标头**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)的**Size**成员设置为此总属性数据大小。
+总属性数据大小为 **sizeof** (KSCAMERA \_ EXTENDEDPROP \_ 标头) + **sizeof** (KSCAMERA \_ EXTENDEDPROP \_ VIDEOPROCSETTING) 。 [**KSCAMERA \_ EXTENDEDPROP \_ 标头**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)的 **Size** 成员设置为此总属性数据大小。
 
-[**KSCAMERA \_ EXTENDEDPROP \_ 标头**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)的**功能**成员包含以下一个或多个视频处理选项的按位 "或" 组合。
+[**KSCAMERA \_ EXTENDEDPROP \_ 标头**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)的 **功能** 成员包含以下一个或多个视频处理选项的按位 "或" 组合。
 
-| 处理模式                               | 说明                                                                  |
+| 处理模式                               | 描述                                                                  |
 |-----------------------------------------------|------------------------------------------------------------------------------|
 | KSCAMERA \_ EXTENDEDPROP \_ VIDEOPROCFLAG \_ 自动   | 照相机驱动程序使用其自己的视频处理逻辑。                       |
 | KSCAMERA \_ EXTENDEDPROP \_ VIDEOPROCFLAG \_ | 照相机驱动程序使用预设的处理方法。                               |
@@ -45,16 +44,16 @@ ms.locfileid: "89192639"
 
  
 
-[**KSCAMERA \_ EXTENDEDPROP \_ 标头**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)的**Flags**成员包含当前为相机设置的视频处理标志。 KSCAMERA \_ EXTENDEDPROP \_ VIDEOPROCFLAG \_ AUTO 设置可能与 KSCAMERA \_ EXTENDEDPROP \_ VIDEOPROCFLAG LOCK 组合在一起 \_ 。
+[**KSCAMERA \_ EXTENDEDPROP \_ 标头**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)的 **Flags** 成员包含当前为相机设置的视频处理标志。 KSCAMERA \_ EXTENDEDPROP \_ VIDEOPROCFLAG \_ AUTO 设置可能与 KSCAMERA \_ EXTENDEDPROP \_ VIDEOPROCFLAG LOCK 组合在一起 \_ 。
 
 此属性控件是异步的，可取消。
 
-## <a name="remarks"></a>注解
+## <a name="remarks"></a>备注
 
 ### <a name="processing-modes"></a>处理模式
 
 <span id="KSCAMERA_EXTENDEDPROP_VIDEOPROCFLAG_AUTO"></span><span id="kscamera_extendedprop_videoprocflag_auto"></span>KSCAMERA \_ EXTENDEDPROP \_ VIDEOPROCFLAG \_ 自动  
-这表示支持自动处理。 驱动程序将使用其内部逻辑来优化视频处理。 对于 KSPROPERTY \_ 类型 \_ GET 请求， [**KSCAMERA \_ EXTENDEDPROP \_ VIDEOPROCSETTING**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_videoprocsetting)的**VideoProc**成员必须包含当前驱动程序确定的视频处理值。
+这表示支持自动处理。 驱动程序将使用其内部逻辑来优化视频处理。 对于 KSPROPERTY \_ 类型 \_ GET 请求， [**KSCAMERA \_ EXTENDEDPROP \_ VIDEOPROCSETTING**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_videoprocsetting)的 **VideoProc** 成员必须包含当前驱动程序确定的视频处理值。
 
 此标志可以与 KSCAMERA \_ EXTENDEDPROP \_ VIDEOPROCFLAG LOCK 组合 \_ 为按位 "或" 值。
 
@@ -84,7 +83,7 @@ ms.locfileid: "89192639"
 <thead>
 <tr class="header">
 <th>成员</th>
-<th>Value</th>
+<th>“值”</th>
 </tr>
 </thead>
 <tbody>
@@ -117,13 +116,13 @@ ms.locfileid: "89192639"
 
  
 
-如果以前未设置任何曝光模式，则驱动程序会将 **标志** 设置为 KSCAMERA \_ EXTENDEDPROP \_ VIDEOPROCFLAG \_ AUTO (默认) 。 按照处理模式的要求设置[**KSCAMERA \_ EXTENDEDPROP \_ 标头**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)后面的[**KSCAMERA \_ EXTENDEDPROP \_ VIDEOPROCSETTING**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_videoprocsetting)结构的成员。
+如果以前未设置任何曝光模式，则驱动程序会将 **标志** 设置为 KSCAMERA \_ EXTENDEDPROP \_ VIDEOPROCFLAG \_ AUTO (默认) 。 按照处理模式的要求设置 [**KSCAMERA \_ EXTENDEDPROP \_ 标头**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)后面的 [**KSCAMERA \_ EXTENDEDPROP \_ VIDEOPROCSETTING**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_videoprocsetting)结构的成员。
 
-当**VideoProp.Value.ull** MODE 为 KSCAMERA \_ EXTENDEDPROP \_ VIDEOPROCFLAG \_ AUTO 时，VideoProp. u) 值必须包含当前的曝光设置。
+当 **VideoProp.Value.ull** MODE 为 KSCAMERA \_ EXTENDEDPROP \_ VIDEOPROCFLAG \_ AUTO 时，VideoProp. u) 值必须包含当前的曝光设置。
 
 ### <a name="setting-the-property"></a>设置属性
 
-如果设置了属性，则 KSPROPERTY \_ 类型 \_ 集请求， [**KSCAMERA \_ EXTENDEDPROP \_ 标头**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)的**Flags**成员将包含要设置的曝光模式。 当**Flags**包含 KSCAMERA **VideoProc.Value** EXTENDEDPROP VIDEOPROCFLAG AUTO mode 标志时，必须忽略[**KSCAMERA \_ EXTENDEDPROP \_ VIDEOPROCSETTING**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_videoprocsetting)的 VideoProc 成员 \_ \_ \_ 。
+如果设置了属性，则 KSPROPERTY \_ 类型 \_ 集请求， [**KSCAMERA \_ EXTENDEDPROP \_ 标头**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)的 **Flags** 成员将包含要设置的曝光模式。 当 **Flags** 包含 KSCAMERA **VideoProc.Value** EXTENDEDPROP VIDEOPROCFLAG AUTO mode 标志时，必须忽略 [**KSCAMERA \_ EXTENDEDPROP \_ VIDEOPROCSETTING**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_videoprocsetting)的 VideoProc 成员 \_ \_ \_ 。
 
 ## <a name="requirements"></a>要求
 
@@ -138,7 +137,7 @@ ms.locfileid: "89192639"
 <td><p>可从 Windows 8.1 开始。</p></td>
 </tr>
 <tr>
-<td><p>Header</p></td>
+<td><p>标头</p></td>
 <td>Ksmedia (包含 Ksmedia) </td>
 </tr>
 </tbody>

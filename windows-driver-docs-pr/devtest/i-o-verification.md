@@ -1,19 +1,18 @@
 ---
 title: I/O 验证
 description: I/O 验证
-ms.assetid: 41b77bba-fae8-453b-9872-911f5d5be3e6
 keywords:
 - I/o 验证功能 WDK 驱动程序验证程序
 - 1级 i/o 验证 WDK 驱动程序验证程序
 - 级别 2 i/o 验证 WDK 驱动程序验证程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 08aca93e211c790bdd8c2744dd3a32346ed5e956
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 026b9f4cda46e47ebbca5e187a2cf078f2e3342d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89384951"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96824643"
 ---
 # <a name="io-verification"></a>I/O 验证
 
@@ -25,7 +24,7 @@ ms.locfileid: "89384951"
 
 -   *第1级 I/o 验证* 始终处于活动状态，只要选择了 i/o 验证。
 
--   如果在 Windows XP 和更高版本中选择了 i/o 验证，则*第2级 I/o 验证*始终处于活动状态。 在 Windows 2000 中，可以将 i/o 验证配置为同时包含这两个级别，或仅包括1级测试。
+-   如果在 Windows XP 和更高版本中选择了 i/o 验证，则 *第2级 I/o 验证* 始终处于活动状态。 在 Windows 2000 中，可以将 i/o 验证配置为同时包含这两个级别，或仅包括1级测试。
 
 **另请参阅：** windows 7 和更高版本的 windows 操作系统中的 [增强 i/o 验证](enhanced-i-o-verification.md) ，当你选择 "i/o 验证" 时，将自动激活增强的 i/o 验证。 不能将其选择为单独的选项。
 
@@ -39,13 +38,13 @@ ms.locfileid: "89384951"
 
 -   将无效设备对象传递到 **IoCallDriver**
 
--   将 IRP 传递到包含无效状态或仍具有取消例程集的**IoCompleteRequest**
+-   将 IRP 传递到包含无效状态或仍具有取消例程集的 **IoCompleteRequest**
 
 -   通过对驱动程序调度例程的调用来更改 IRQL
 
 -   尝试释放与线程关联的 IRP
 
--   将设备对象传递到已包含已初始化计时器的**IoInitializeTimer**
+-   将设备对象传递到已包含已初始化计时器的 **IoInitializeTimer**
 
 -   将无效缓冲区传递到 **IoBuildAsynchronousFsdRequest** 或 **IoBuildDeviceIoControlRequest**
 
@@ -61,9 +60,9 @@ I/o 验证级别1失败导致发出 bug 检查0xC9。 此错误检查的第一�
 
 I/o 验证级别2错误以不同方式显示：在蓝屏上、崩溃转储文件和内核调试器中。
 
-在蓝屏上，消息 **IO 系统验证错误** 和 String **WDM 驱动程序错误 * * * xxx*记录这些错误，其中 *xxx* 是 i/o 错误代码。
+在蓝屏上，消息 **IO 系统验证错误** 和字符串 **WDM 驱动程序错误**_XXX_ 指出了这些错误，其中 *XXX* 是 i/o 错误代码。
 
-在崩溃转储文件中，其中的大多数错误都记录在消息 **错误检查 0xC9 (DRIVER \_ VERIFIER \_ IOMANAGER \_ 违例) **，以及 i/o 错误代码。 在这种情况下，i/o 错误代码将显示为 bug 检查0xC9 的第一个参数。 其余部分由消息 **错误检查 0xC4 (驱动程序验证程序 \_ \_ 检测到 \_ 冲突) **，以及驱动程序验证程序错误代码。 在这种情况下，驱动程序验证程序错误代码将显示为 bug 检查0xC4 的第一个参数。
+在崩溃转储文件中，其中的大多数错误都记录在消息 **错误检查 0xC9 (DRIVER \_ VERIFIER \_ IOMANAGER \_ 违例)**，以及 i/o 错误代码。 在这种情况下，i/o 错误代码将显示为 bug 检查0xC9 的第一个参数。 其余部分由消息 **错误检查 0xC4 (驱动程序验证程序 \_ \_ 检测到 \_ 冲突)**，以及驱动程序验证程序错误代码。 在这种情况下，驱动程序验证程序错误代码将显示为 bug 检查0xC4 的第一个参数。
 
 在 (KD 或 WinDbg) 的内核调试器中，消息 **WDM 驱动程序错误** 和描述性文本字符串指出了这些错误。 当内核调试器处于活动状态时，可以忽略第2级错误并恢复系统操作。  (在任何其他 bug 检查中都不可能。 ) 
 
@@ -75,7 +74,7 @@ I/o 验证级别2错误以不同方式显示：在蓝屏上、崩溃转储文件
 
 -   正在释放尚未获取的删除锁定。
 
--   使用与相应[**IoAcquireRemoveLock**](/windows-hardware/drivers/ddi/wdm/nf-wdm-ioacquireremovelock)调用中使用的 tag 参数不同的 tag 参数调用[**IoReleaseRemoveLock**](/windows-hardware/drivers/ddi/wdm/nf-wdm-ioreleaseremovelock)或[**IoReleaseRemoveLockAndWait**](/windows-hardware/drivers/ddi/wdm/nf-wdm-ioreleaseremovelockandwait) 。
+-   使用与相应 [**IoAcquireRemoveLock**](/windows-hardware/drivers/ddi/wdm/nf-wdm-ioacquireremovelock)调用中使用的 tag 参数不同的 tag 参数调用 [**IoReleaseRemoveLock**](/windows-hardware/drivers/ddi/wdm/nf-wdm-ioreleaseremovelock)或 [**IoReleaseRemoveLockAndWait**](/windows-hardware/drivers/ddi/wdm/nf-wdm-ioreleaseremovelockandwait) 。
 
 -   调用已禁用中断的 [**IoCallDriver**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iocalldriver) 。
 
@@ -85,7 +84,7 @@ I/o 验证级别2错误以不同方式显示：在蓝屏上、崩溃转储文件
 
 -   从具有更改的 IRQL 的驱动程序调度例程返回。
 
--   从已禁用 Apc 的驱动程序调度例程返回。 在这种情况下，驱动程序的调用次数可能比[**KeLeaveCriticalRegion**](/windows-hardware/drivers/ddi/ntddk/nf-ntddk-keleavecriticalregion)多[**KeEnterCriticalRegion**](/windows-hardware/drivers/ddi/ntddk/nf-ntddk-keentercriticalregion) ，这是在[**Bug Check 0x20**](../debugger/bug-check-0x20--kernel-apc-pending-during-exit.md) \_ \_ \_ \_ EXIT) 和[**bug 检查 0X1**](../debugger/bug-check-0x1--apc-index-mismatch.md) (APC \_ 索引 \_ 不) 匹配时，出现错误检查 (0x20 的主要原因。
+-   从已禁用 Apc 的驱动程序调度例程返回。 在这种情况下，驱动程序的调用次数可能比 [**KeLeaveCriticalRegion**](/windows-hardware/drivers/ddi/ntddk/nf-ntddk-keleavecriticalregion)多 [**KeEnterCriticalRegion**](/windows-hardware/drivers/ddi/ntddk/nf-ntddk-keentercriticalregion) ，这是在 [**Bug Check 0x20**](../debugger/bug-check-0x20--kernel-apc-pending-during-exit.md) \_ \_ \_ \_ EXIT) 和 [**bug 检查 0X1**](../debugger/bug-check-0x1--apc-index-mismatch.md) (APC \_ 索引 \_ 不) 匹配时，出现错误检查 (0x20 的主要原因。
 
 从 Windows 7 开始，i/o 验证选项会检查是否存在以下驱动程序错误：
 
@@ -107,7 +106,7 @@ I/o 验证级别2错误以不同方式显示：在蓝屏上、崩溃转储文件
 
 -   **在命令行中。**
 
-    在命令行中，i/o 验证选项由 **第4个 (0x10) **表示。 若要激活 i/o 验证，请使用值为0x10 的标志值或将0x10 添加到标志值。 例如：
+    在命令行中，i/o 验证选项由 **第4个 (0x10)** 表示。 若要激活 i/o 验证，请使用值为0x10 的标志值或将0x10 添加到标志值。 例如：
 
     ```
     verifier /flags 0x10 /driver MyDriver.sys
@@ -139,7 +138,7 @@ I/o 验证级别2错误以不同方式显示：在蓝屏上、崩溃转储文件
 
 -   **使用驱动程序验证器管理器**
 
-    1.  选择 " **为代码开发人员 (创建自定义设置") ** ，然后单击 " **下一步**"。
+    1.  选择 " **为代码开发人员 (创建自定义设置")** ，然后单击 " **下一步**"。
     2.  选择 " **从完整列表中选择单个设置**"。
     3.  选择 (检查) **i/o 验证**。
 

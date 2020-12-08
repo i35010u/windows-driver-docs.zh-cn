@@ -1,7 +1,6 @@
 ---
 title: 'RequestCompletedLocal 规则 (kmdf) '
 description: RequestCompletedLocal 规则指定，如果未在任何 EvtIoDefault、EvtIoRead、EvtIoWrite、EvtIoDeviceControl 和 EvtIoInternalDeviceControl 回调函数中完成 i/o 请求，并且在回调函数内未对请求调用 WdfRequestMarkCancelable，则驱动程序的代码中可能存在请求完成的问题。
-ms.assetid: bc36da0c-5507-49a1-89d9-046d66c8f831
 ms.date: 05/21/2018
 keywords:
 - 'RequestCompletedLocal 规则 (kmdf) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 2ece965111746e135bf002e30d74973e20342469
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: f940e9168364bd3ced7e4ca913479c4c67a57f04
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90103696"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96826113"
 ---
 # <a name="requestcompletedlocal-rule-kmdf"></a>RequestCompletedLocal 规则 (kmdf) 
 
 
-**RequestCompletedLocal**规则指定，如果未在任何[*EvtIoDefault*](/windows-hardware/drivers/ddi/wdfio/nc-wdfio-evt_wdf_io_queue_io_default)、 [*EvtIoRead*](/windows-hardware/drivers/ddi/wdfio/nc-wdfio-evt_wdf_io_queue_io_read)、 [*EvtIoWrite*](/windows-hardware/drivers/ddi/wdfio/nc-wdfio-evt_wdf_io_queue_io_write)、 [*EvtIoDeviceControl*](/windows-hardware/drivers/ddi/wdfio/nc-wdfio-evt_wdf_io_queue_io_device_control)和[*EvtIoInternalDeviceControl*](/windows-hardware/drivers/ddi/wdfio/nc-wdfio-evt_wdf_io_queue_io_internal_device_control)回调函数中完成 I/o 请求，并且在回调函数内未对请求调用[**WdfRequestMarkCancelable**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestmarkcancelable) ，则驱动程序的代码中可能存在请求完成的问题。
+**RequestCompletedLocal** 规则指定，如果未在任何 [*EvtIoDefault*](/windows-hardware/drivers/ddi/wdfio/nc-wdfio-evt_wdf_io_queue_io_default)、 [*EvtIoRead*](/windows-hardware/drivers/ddi/wdfio/nc-wdfio-evt_wdf_io_queue_io_read)、 [*EvtIoWrite*](/windows-hardware/drivers/ddi/wdfio/nc-wdfio-evt_wdf_io_queue_io_write)、 [*EvtIoDeviceControl*](/windows-hardware/drivers/ddi/wdfio/nc-wdfio-evt_wdf_io_queue_io_device_control)和 [*EvtIoInternalDeviceControl*](/windows-hardware/drivers/ddi/wdfio/nc-wdfio-evt_wdf_io_queue_io_internal_device_control)回调函数中完成 I/o 请求，并且在回调函数内未对请求调用 [**WdfRequestMarkCancelable**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestmarkcancelable) ，则驱动程序的代码中可能存在请求完成的问题。
 
 此规则仅适用于 [context.requestcompleted](kmdf-requestcompleted.md) 规则不适用于的驱动程序。
 

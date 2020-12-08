@@ -1,9 +1,8 @@
 ---
-title: WIA\_IPS\_作业\_分隔符
-description: WIA\_IPS\_作业\_分隔符属性用于启用作业分隔符，检测并配置设备时检测到作业分隔页执行的操作。 WIA 微型驱动程序创建并维护此属性。
-ms.assetid: 2ECD88EB-2B6F-477D-8F37-D4EECA580FAE
+title: WIA \_ IP \_ 作业 \_ 分隔符
+description: "\"WIA \\_ IPS \\_ 作业 \\_ 分隔符\" 属性用于启用作业分隔符的检测，并配置设备在检测到作业分隔符页时执行的操作。 WIA 微型驱动程序创建并维护此属性。"
 keywords:
-- WIA_IPS_JOB_SEPARATORS 成像设备
+- WIA_IPS_JOB_SEPARATORS 图像设备
 topic_type:
 - apiref
 api_name:
@@ -14,31 +13,31 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6c3dfb8a5f462f1374761fe5bea27fd3b6fc64d2
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 37a98d91dc3909716a119bb6b15a227cfb95e997
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56564693"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96825977"
 ---
-# <a name="wiaipsjobseparators"></a>WIA\_IPS\_作业\_分隔符
+# <a name="wia_ips_job_separators"></a>WIA \_ IP \_ 作业 \_ 分隔符
 
 
-**WIA\_IPS\_作业\_分隔符**属性来启用的作业的分隔符，检测并配置设备时检测到作业分隔页执行的操作。 WIA 微型驱动程序创建并维护此属性。
+" **WIA \_ IPS \_ 作业 \_ 分隔符** " 属性用于启用作业分隔符的检测，并配置设备在检测到作业分隔符页时执行的操作。 WIA 微型驱动程序创建并维护此属性。
 
 
 
 
-属性类型：VT\_I4
+属性类型： VT \_ I4
 
-有效值：WIA\_PROP\_列表
+有效值： WIA 内容 \_ \_ 列表
 
 访问权限：读/写
 
 <a name="remarks"></a>备注
 -------
 
-下表描述了的有效值**WIA\_IPS\_作业\_分隔符**属性。
+下表描述了 " **WIA \_ ip \_ 作业 \_ 分隔符** " 属性的有效值。
 
 <table>
 <colgroup>
@@ -54,30 +53,30 @@ ms.locfileid: "56564693"
 <tbody>
 <tr class="odd">
 <td><p>WIA_SEPARATOR_DISABLED</p></td>
-<td><p>禁用作业分隔符检测。 如果支持该属性，这是所需的默认值。</p></td>
+<td><p>已禁用作业分隔符检测。 如果支持该属性，则这是所需的默认值。</p></td>
 </tr>
 <tr class="even">
 <td><p>WIA_SEPARATOR_DETECT_SCAN_CONTINUE</p></td>
-<td><p>检测作业分隔页、 扫描分隔符页上，并继续扫描。</p></td>
+<td><p>"检测作业分隔符" 页，扫描分隔符页，然后继续扫描。</p></td>
 </tr>
 <tr class="odd">
 <td><p>WIA_SEPARATOR_DETECT_SCAN_STOP</p></td>
-<td><p>检测作业分隔页、 扫描分隔符页上，并停止扫描。</p></td>
+<td><p>"检测作业分隔符" 页，扫描分隔符页，然后停止扫描。</p></td>
 </tr>
 <tr class="even">
 <td><p>WIA_SEPARATOR_DETECT_NOSCAN_CONTINUE</p></td>
-<td><p>检测作业分隔页、 不扫描 （跳过） 分隔符页上，并继续扫描。</p></td>
+<td><p>"检测作业分隔符" 页上，不要扫描 (跳过) 分隔符 "页，然后继续扫描。</p></td>
 </tr>
 <tr class="odd">
 <td><p>WIA_SEPARATOR_DETECT_NOSCAN_STOP</p></td>
-<td><p>检测作业分隔页、 不扫描 （跳过） 分隔符页上，并停止扫描。</p></td>
+<td><p>"检测作业分隔符" 页上，不扫描 (跳过) 分隔符 "页，然后停止扫描。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-此属性是可选的并且仅对送纸器数据源项有效 (以表示[ **WIA\_IPA\_项\_类别**](wia-ipa-item-category.md)属性作为 WIA\_类别\_送纸器)。
+此属性是可选的，仅对作为 WIA 类别送纸器) 在 [**wia \_ IPA \_ 项 \_ 类别**](wia-ipa-item-category.md) 属性中表示的送料器数据源 (项有效 \_ \_ 。
 
 <a name="requirements"></a>要求
 ------------
@@ -89,8 +88,8 @@ ms.locfileid: "56564693"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Header</p></td>
-<td>Wiadef.h （包括 Wiadef.h）</td>
+<td><p>标头</p></td>
+<td>Wiadef (包含 Wiadef) </td>
 </tr>
 </tbody>
 </table>

@@ -1,17 +1,16 @@
 ---
 title: 在 AVStream 编解码器中使用硬件媒体
 description: 在 AVStream 编解码器中使用硬件媒体
-ms.assetid: 07c25875-c549-4d47-ac0d-605f2aa9daa4
 keywords:
 - AVStream 硬件编解码器支持 WDK，使用硬件介质
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 046fb7294b14dbf8fdb0bb2dd5b74e1bcff9e714
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: d39105623973a4524a8592521dbd9727890aa594
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89187992"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96825857"
 ---
 # <a name="using-hardware-mediums-in-avstream-codecs"></a>在 AVStream 编解码器中使用硬件媒体
 

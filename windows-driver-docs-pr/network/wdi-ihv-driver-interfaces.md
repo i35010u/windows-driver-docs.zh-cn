@@ -1,20 +1,19 @@
 ---
 title: WDI IHV 驱动程序接口
 description: WDI IHV 小型端口与任何其他 NDIS 微型端口驱动程序类似，它将遵循适用于任何 NDIS 小型端口的开发实践和文档。
-ms.assetid: B4528C70-9FE4-4E00-9D0B-8832CCEC982E
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5cdeeae1efe741a585eadc3575b99a51710f99d4
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: cc2ae8fc8796f32f153892d95bc0e941d8c8cedd
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89211585"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96825417"
 ---
 # <a name="wdi-ihv-driver-interfaces"></a>WDI IHV 驱动程序接口
 
 
-WDI IHV 小型端口与任何其他 NDIS 微型端口驱动程序类似，它将遵循适用于任何 NDIS 小型端口的开发实践和文档。 本机 WLAN 微型端口驱动程序在 MS 组件和 WDI IHV 驱动程序之间拆分了 NDIS 处理程序的责任。 Microsoft WLAN 组件负责处理适用于所有 Wi-fi 微型端口的 NDIS 要求，使每个 IHV 不必重做所有工作。 下面描述了在应用于 WDI IHV 微型端口的情况下，对本机 WLAN IHV 小型端口的 NDIS 处理程序的和行为更改。
+WDI IHV 小型端口与任何其他 NDIS 微型端口驱动程序类似，它将遵循适用于任何 NDIS 小型端口的开发实践和文档。 本机 WLAN 微型端口驱动程序在 MS 组件和 WDI IHV 驱动程序之间拆分了 NDIS 处理程序的责任。 Microsoft WLAN 组件负责处理适用于所有 Wi-Fi 微型端口的 NDIS 要求，使每个 IHV 不必重做所有这些工作。 下面描述了在应用于 WDI IHV 微型端口的情况下，对本机 WLAN IHV 小型端口的 NDIS 处理程序的和行为更改。
 
 -   [驱动程序安装](#driver-installation)
 -   [DriverEntry](#driverentry)
@@ -50,7 +49,7 @@ WDI IHV 微型端口驱动程序在系统上的加载和安装方式没有变化
 
 下面是 [**NdisMRegisterWdiMiniportDriver**](/windows-hardware/drivers/ddi/dot11wdi/nf-dot11wdi-ndismregisterwdiminiportdriver)的关键参数。
 
--   [**NDIS \_微型端口 \_ 驱动程序 \_ 特征**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_miniport_driver_characteristics)：这是本机 wi-fi 微型端口用于注册 NDIS 的原始 NDIS 结构。 对于 WDI 模型，大部分处理程序参数都是可选的。 唯一必需的处理程序是 **微型端口 \_ OID \_ 请求 \_ 处理程序** 和 **微型端口 \_ 驱动程序 \_ 卸载**。 **小型端口 \_OID \_ 请求 \_ 处理程序** 用于向 IHV 驱动程序传递 WDI 消息。 如果指定了其他任何处理程序，则 Microsoft WLAN 组件通常会在对处理程序执行自己的处理后调用该处理程序。
+-   [**NDIS \_微型端口 \_ 驱动程序 \_ 特征**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_miniport_driver_characteristics)：这是本机 Wi-Fi 微型端口用来向 NDIS 注册的原始 NDIS 结构。 对于 WDI 模型，大部分处理程序参数都是可选的。 唯一必需的处理程序是 **微型端口 \_ OID \_ 请求 \_ 处理程序** 和 **微型端口 \_ 驱动程序 \_ 卸载**。 **小型端口 \_OID \_ 请求 \_ 处理程序** 用于向 IHV 驱动程序传递 WDI 消息。 如果指定了其他任何处理程序，则 Microsoft WLAN 组件通常会在对处理程序执行自己的处理后调用该处理程序。
 -   [**NDIS \_微型端口 \_ 驱动程序 \_ WDI \_ 特征**](/windows-hardware/drivers/ddi/dot11wdi/ns-dot11wdi-_ndis_miniport_driver_wdi_characteristics)：这是 WDI 微型端口驱动程序必须实现的一组新的处理程序。 IHV 驱动程序使用它为控制路径注册其他处理程序，并使用数据路径的完整处理程序集。
 
 当 IHV 小型端口调用 NdisMRegisterWdiMiniportDriver 时，Microsoft WLAN 组件会更新 [**ndis \_ 微型端口 \_ 驱动程序 \_ 特征**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_miniport_driver_characteristics) 的处理程序，并调用 ndis 的 [**NdisMRegisterMiniportDriver**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismregisterminiportdriver)。 更新完成后，Microsoft WLAN 组件便可截获可为其提供帮助/简化的处理程序，以 WDI IHV 微型端口驱动程序。
@@ -75,7 +74,7 @@ WDI 模型将 [*MiniportInitializeEx*](/windows-hardware/drivers/ddi/ndis/nc-ndi
 
 1.  调用 [*MiniportWdiAllocateAdapter*](/windows-hardware/drivers/ddi/dot11wdi/nc-dot11wdi-miniport_wdi_allocate_adapter)。
 
-    当操作系统查找 IHV 硬件的实例时，这是第一次调用 WDI IHV 微型端口驱动程序。 在此调用中，WDI 微型端口执行 (**MiniportAdapterContext**) 设备创建软件表示形式所需的操作。 它还确定了有关设备的信息以填充 [**NDIS \_ 微型端口 \_ 适配器 \_ 注册 \_ 属性**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_miniport_adapter_registration_attributes) 结构。 以后，当 Microsoft 组件发送 WDI 命令来执行特定的初始化时，设备和 Wi-fi 堆栈的实际初始化将会完成。
+    当操作系统查找 IHV 硬件的实例时，这是第一次调用 WDI IHV 微型端口驱动程序。 在此调用中，WDI 微型端口执行 (**MiniportAdapterContext**) 设备创建软件表示形式所需的操作。 它还确定了有关设备的信息以填充 [**NDIS \_ 微型端口 \_ 适配器 \_ 注册 \_ 属性**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_miniport_adapter_registration_attributes) 结构。 当 Microsoft 组件向下发送 WDI 命令来执行特定的初始化时，将在以后对设备和 Wi-Fi 堆栈进行实际初始化。
 
     使用从 WDI IHV 微型端口驱动程序获得的数据，Microsoft 组件会调用 [**NdisMSetMiniportAttributes**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismsetminiportattributes) 并在 ndis 上设置 [**ndis \_ 微型端口 \_ 适配器 \_ 注册 \_ 属性**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_miniport_adapter_registration_attributes) 。 Microsoft 组件使用默认值填充了 **NDIS \_ 微型端口 \_ 适配器 \_ 注册 \_ 属性** 的大多数字段。 IHV 驱动程序必须填充 **MiniportAdapterContext** 和 **InterfaceType** 字段。
 
@@ -83,7 +82,7 @@ WDI 模型将 [*MiniportInitializeEx*](/windows-hardware/drivers/ddi/ndis/nc-ndi
 
 2.  调用 [*MiniportWdiOpenAdapter*](/windows-hardware/drivers/ddi/dot11wdi/nc-dot11wdi-miniport_wdi_open_adapter)。
 
-    [*MiniportWdiAllocateAdapter*](/windows-hardware/drivers/ddi/dot11wdi/nc-dot11wdi-miniport_wdi_allocate_adapter)后，Microsoft 组件会调用[*MiniportWdiOpenAdapter*](/windows-hardware/drivers/ddi/dot11wdi/nc-dot11wdi-miniport_wdi_open_adapter)来加载固件并初始化硬件。
+    [*MiniportWdiAllocateAdapter*](/windows-hardware/drivers/ddi/dot11wdi/nc-dot11wdi-miniport_wdi_allocate_adapter)后，Microsoft 组件会调用 [*MiniportWdiOpenAdapter*](/windows-hardware/drivers/ddi/dot11wdi/nc-dot11wdi-miniport_wdi_open_adapter)来加载固件并初始化硬件。
 
 3.  使用 [*MiniportOidRequest*](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_oid_request)的多个 WDI 命令。
 
@@ -98,11 +97,11 @@ WDI 模型将 [*MiniportInitializeEx*](/windows-hardware/drivers/ddi/ndis/nc-ndi
 
     其他命令还可以被发送到 IHV 组件，作为 Microsoft 组件的 MiniportInitializeEx 处理的一部分。 但是，在调用 [*MiniportWdiStartOperation*](/windows-hardware/drivers/ddi/dot11wdi/nc-dot11wdi-miniport_wdi_start_adapter_operation) 之前，Microsoft 组件不会发送任何需要无线通信的任务。 除了 [OID \_ WDI \_ TASK \_ OPEN](./oid-wdi-task-open.md) 外，还可以首先发送其他命令/调用的顺序。
 
-    使用从 WDI IHV 微型端口驱动程序获得的数据，Microsoft 组件会调用 [**NdisMSetMiniportAttributes**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismsetminiportattributes) ，并设置 ndis [** \_ 微型端口 \_ 适配器的 \_ 常规 \_ 属性**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_miniport_adapter_general_attributes) 和 ndis [** \_ 微型端口 \_ 适配器 \_ 本机 \_ 802 \_ 11 \_ 属性**](/previous-versions/windows/hardware/wireless/ff565926(v=vs.85)) 。
+    使用从 WDI IHV 微型端口驱动程序获得的数据，Microsoft 组件会调用 [**NdisMSetMiniportAttributes**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismsetminiportattributes) ，并设置 ndis [**\_ 微型端口 \_ 适配器的 \_ 常规 \_ 属性**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_miniport_adapter_general_attributes) 和 ndis [**\_ 微型端口 \_ 适配器 \_ 本机 \_ 802 \_ 11 \_ 属性**](/previous-versions/windows/hardware/wireless/ff565926(v=vs.85)) 。
 
 4.  调用 [*MiniportWdiStartOperation*](/windows-hardware/drivers/ddi/dot11wdi/nc-dot11wdi-miniport_wdi_start_adapter_operation)。
 
-    这是一种可选的 WDI 微型端口处理程序，可供 IHV 驱动程序用来执行任何其他 MiniportInitializeEx 任务。 [** \_ \_ \_ \_ **](/windows-hardware/drivers/ddi/dot11wdi/ns-dot11wdi-_ndis_miniport_driver_wdi_characteristics) 它还可由 IHV 小型端口使用，作为提示，Microsoft 组件已完成初始化微型端口，并且微型端口可以启动任何所需的后台活动。
+    这是一种可选的 WDI 微型端口处理程序，可供 IHV 驱动程序用来执行任何其他 MiniportInitializeEx 任务。 [**\_ \_ \_ \_**](/windows-hardware/drivers/ddi/dot11wdi/ns-dot11wdi-_ndis_miniport_driver_wdi_characteristics) 它还可由 IHV 小型端口使用，作为提示，Microsoft 组件已完成初始化微型端口，并且微型端口可以启动任何所需的后台活动。
 
     下图显示了 MiniportInitializeEx 的 flow。
 
@@ -113,11 +112,11 @@ WDI 模型将 [*MiniportInitializeEx*](/windows-hardware/drivers/ddi/ndis/nc-ndi
 ## <a name="miniporthaltex"></a>MiniportHaltEx
 
 
-在本机 Wi-fi 小型端口中， [*MiniportHaltEx*](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_halt) 用于指示微型端口停止操作并清理适配器实例。 在 WDI 模型中，Microsoft 组件处理原始 *MiniportHaltEx* 调用并将其拆分为多个 WDI 接口调用。
+在本机 Wi-Fi 微型端口中， [*MiniportHaltEx*](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_halt) 用于指示微型端口停止操作并清理适配器实例。 在 WDI 模型中，Microsoft 组件处理原始 *MiniportHaltEx* 调用并将其拆分为多个 WDI 接口调用。
 
 1.  调用 [*MiniportWdiStopOperation*](/windows-hardware/drivers/ddi/dot11wdi/nc-dot11wdi-miniport_wdi_stop_adapter_operation)。
 
-    这是一个可选的 WDI 微型端口处理程序，可供 IHV 驱动程序用来撤消它在[*MiniportWdiStartOperation*](/windows-hardware/drivers/ddi/dot11wdi/nc-dot11wdi-miniport_wdi_start_adapter_operation)中所执行的操作。 [** \_ \_ \_ \_ **](/windows-hardware/drivers/ddi/dot11wdi/ns-dot11wdi-_ndis_miniport_driver_wdi_characteristics)
+    这是一个可选的 WDI 微型端口处理程序，可供 IHV 驱动程序用来撤消它在 [*MiniportWdiStartOperation*](/windows-hardware/drivers/ddi/dot11wdi/nc-dot11wdi-miniport_wdi_start_adapter_operation)中所执行的操作。 [**\_ \_ \_ \_**](/windows-hardware/drivers/ddi/dot11wdi/ns-dot11wdi-_ndis_miniport_driver_wdi_characteristics)
 
 2.  使用 [*MiniportOidRequest*](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_oid_request)的多个 WDI 命令。
 
@@ -196,13 +195,13 @@ NDIS [*MiniportRestart*](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_res
 
 对于每个 WDI 命令，都有两个可能的字段 \_ 可用于为操作返回 NDIS 状态代码，即 [*MiniportOidRequest*](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_oid_request) 调用中的状态代码 (或 [**NdisMOidRequestComplete**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismoidrequestcomplete)) ，以及 [**WDI \_ 消息 \_ 标头**](/windows-hardware/drivers/ddi/dot11wdi/ns-dot11wdi-_wdi_message_header) 字段中的状态代码 ("OID 完成" 或 "通过 [**NdisMIndicateStatusEx**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismindicatestatusex)) "。 Microsoft 组件始终 \_ 从 OID 完成中查看 NDIS 状态，然后再查看 **WDI \_ MESSAGE \_ HEADERStatus** 字段。 WDI OID 处理的 IHV 组件的预期如下所示。
 
-1.  WDI Oid 使用**NdisRequestMethod****的**的[**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)提交到 IHV 组件，相应的消息和消息长度位于**数据中。方法 \_ 信息 InformationBuffer**和**数据。方法 \_ 信息。InputBufferLength**字段。
-2.  如果处理该命令时出现错误，则 IHV 组件会报告 OID 完成中的错误，并将 [**WDI \_ 消息 \_ 标头**](/windows-hardware/drivers/ddi/dot11wdi/ns-dot11wdi-_wdi_message_header) 的 "状态" 字段设置为 "不成功"。
-3.  对于任务和属性，请求的端口号位于 [**WDI \_ 消息 \_ 标头**](/windows-hardware/drivers/ddi/dot11wdi/ns-dot11wdi-_wdi_message_header)**PortId** 字段中。 [**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)中的**PortNumber**始终设置为0。
+1.  WDI Oid 使用 **NdisRequestMethod****的** 的 [**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)提交到 IHV 组件，相应的消息和消息长度位于 **数据中。方法 \_ 信息 InformationBuffer** 和 **数据。方法 \_ 信息。InputBufferLength** 字段。
+2.  如果处理该命令时出现错误，则 IHV 组件会报告 OID 完成中的错误，如果 [**WDI \_ 消息 \_ 标头**](/windows-hardware/drivers/ddi/dot11wdi/ns-dot11wdi-_wdi_message_header) 的 "状态" 字段 Wi-Fi 级别失败，则将其设置为 "不成功"。
+3.  对于任务和属性，请求的端口号位于 [**WDI \_ 消息 \_ 标头**](/windows-hardware/drivers/ddi/dot11wdi/ns-dot11wdi-_wdi_message_header)**PortId** 字段中。 [**NDIS \_ OID \_ 请求**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)中的 **PortNumber** 始终设置为0。
 4.  完成 OID 后， [*MiniportOidRequest*](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_oid_request) 可以返回 NDIS \_ 状态 " \_ 挂起"，并在以后 (同步或异步) 与 [**NdisMOidRequestComplete**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismoidrequestcomplete)同步。
-5.  如果 IHV 组件完成了具有 NDIS \_ 状态成功的 oid \_ ，则必须用适当的字节数（包括[**WDI \_ 消息 \_ 标头**](/windows-hardware/drivers/ddi/dot11wdi/ns-dot11wdi-_wdi_message_header)的空间）填充 oid 请求的**BytesWritten**字段。
+5.  如果 IHV 组件完成了具有 NDIS \_ 状态成功的 oid \_ ，则必须用适当的字节数（包括 [**WDI \_ 消息 \_ 标头**](/windows-hardware/drivers/ddi/dot11wdi/ns-dot11wdi-_wdi_message_header)的空间）填充 oid 请求的 **BytesWritten** 字段。
 6.  如果 IHV 组件在数据中没有足够的空间 **。方法 \_ 信息。OutputBufferLength** 字段填充响应时，它会完成 OID，使 NDIS \_ 状态 \_ 缓冲区 \_ 太 \_ 短，并填充 **数据。方法 \_ 信息。BytesNeeded** 字段。 Microsoft 组件可能会尝试分配一个请求大小的缓冲区，并向 IHV 提交新的请求。
-7.  如果该任务是任务，则只有在任务报告为 "已成功启动" 时，才会指示任务的 M4 ([**NdisMIndicateStatusEx**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismindicatestatusex)) --oid 完成成功，且 oid 完成的[**WDI \_ 消息 \_ 标头**](/windows-hardware/drivers/ddi/dot11wdi/ns-dot11wdi-_wdi_message_header)中的**状态**为 "成功"。
+7.  如果该任务是任务，则只有在任务报告为 "已成功启动" 时，才会指示任务的 M4 ([**NdisMIndicateStatusEx**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismindicatestatusex)) --oid 完成成功，且 oid 完成的 [**WDI \_ 消息 \_ 标头**](/windows-hardware/drivers/ddi/dot11wdi/ns-dot11wdi-_wdi_message_header)中的 **状态** 为 "成功"。
 
 下图显示了映射到单个 WDI 命令的 NDIS OID 请求的示例。 当由操作系统提交 OID 请求时，Microsoft 组件会将其转换为 WDI OID 请求，并将 WDI OID 请求提交到 IHV 小型端口。 当 IHV 微型端口完成 OID 时，Microsoft 组件会适当地完成原始 OID 请求。
 
@@ -218,7 +217,7 @@ Microsoft 组件不能理解的 Oid 会直接转发到 IHV 组件进行处理。
 
 ![microsoft 组件未处理的 oid 的 wdi 微型端口 oid 请求序列](images/wdi-miniport-oid-request-unknown.png)
 
-与本机 Wi-fi 微型端口) 相比，MiniportOidRequest 的行为与 WDI IHV 微型端口驱动 (程序的行为不相同。 调用将进行序列化，并且 IHV 微型端口可以通过调用 [**NdisMOidRequestComplete**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismoidrequestcomplete)以同步或异步方式完成调用。
+与本机 Wi-Fi 微型端口) 相比，MiniportOidRequest 的行为与 WDI IHV 微型端口驱动 (程序的行为不相同。 调用将进行序列化，并且 IHV 微型端口可以通过调用 [**NdisMOidRequestComplete**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismoidrequestcomplete)以同步或异步方式完成调用。
 
 ## <a name="miniportcanceloidrequest"></a>MiniportCancelOidRequest
 
@@ -228,13 +227,13 @@ Microsoft 组件不能理解的 Oid 会直接转发到 IHV 组件进行处理。
 ## <a name="ndismindicatestatusex"></a>NdisMIndicateStatusEx
 
 
-WDI IHV 微型端口使用[**NdisMIndicateStatusEx**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismindicatestatusex)将指示发送到 Microsoft 组件。 指示可能是未请求的指示（如 TKIP MIC 故障），也可能是任务的完成 (M4) 的请求指示。
+WDI IHV 微型端口使用 [**NdisMIndicateStatusEx**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismindicatestatusex)将指示发送到 Microsoft 组件。 指示可能是未请求的指示（如 TKIP MIC 故障），也可能是任务的完成 (M4) 的请求指示。
 
-下图显示了一个 WDI 指示的示例，该示例具有相应的 NDIS/Native Wi-fi 指示。 当由 IHV 微型端口向 Microsoft 组件提交指示时，Microsoft 组件会将其转换为现有指示，并将其转发到操作系统。
+下图显示了一个 WDI 指示的示例，其中包含相应的 NDIS/Native Wi-Fi 指示。 当由 IHV 微型端口向 Microsoft 组件提交指示时，Microsoft 组件会将其转换为现有指示，并将其转发到操作系统。
 
 ![wdi 微型端口状态指示流](images/wdi-miniport-status-indication-flow.png)
 
-下图显示了一个 WDI 指示的示例，该指示没有相应的 NDIS/本机 Wi-fi 指示。 这由 Microsoft 组件处理。
+下图显示了 WDI 指示的示例，该指示没有相应的 NDIS/本机 Wi-Fi 指示。 这由 Microsoft 组件处理。
 
 ![wdi 状态指示，不直接映射到 ndis](images/wdi-miniport-status-indication-not-ndis.png)
 
@@ -242,12 +241,12 @@ WDI IHV 微型端口使用[**NdisMIndicateStatusEx**](/windows-hardware/drivers/
 
 ![wdi 状态指示无法被 microsoft 组件识别](images/wdi-miniport-status-indication-unknown.png)
 
-与本机 Wi-fi 微型端口) 相比，NdisMIndicateStatusEx 的行为与 WDI IHV 微型端口驱动 (程序的行为不相同。
+与本机 Wi-Fi 微型端口) 相比，NdisMIndicateStatusEx 的行为与 WDI IHV 微型端口驱动 (程序的行为不相同。
 
 ## <a name="miniportdirectoidrequest"></a>MiniportDirectOidRequest
 
 
-如果 WDI IHV 微型端口驱动程序需要处理未映射到 WDI 消息的直接 Oid，则这是一个可选的处理程序。 Wi-fi Direct 的所有现有直接 Oid 都映射到 WDI 消息，因此不需要此处理程序来支持该功能。 不支持的直接 Oid 不由 Microsoft 组件序列化。
+如果 WDI IHV 微型端口驱动程序需要处理未映射到 WDI 消息的直接 Oid，则这是一个可选的处理程序。 所有 Wi-Fi Direct 的现有直接 Oid 都映射到 WDI 消息，因此不需要此处理程序来支持该功能。 不支持的直接 Oid 不由 Microsoft 组件序列化。
 
 ## <a name="miniportcanceldirectoidrequest"></a>MiniportCancelDirectOidRequest
 
@@ -272,12 +271,12 @@ WDI IHV 微型端口使用[**NdisMIndicateStatusEx**](/windows-hardware/drivers/
 ## <a name="wdi-handler-miniportwdiopenadapter"></a>WDI 处理程序： MiniportWdiOpenAdapter
 
 
-Microsoft 组件使用 [*MiniportWdiOpenAdapter*](/windows-hardware/drivers/ddi/dot11wdi/nc-dot11wdi-miniport_wdi_open_adapter) 处理程序在 IHV 驱动程序上启动 "打开任务" 操作。 此调用必须迅速完成，如果打开操作已成功启动，则 IHV 必须 \_ \_ 在此调用上返回 ndis 状态 SUCCESS，并调用传递到[*MiniportWdiAllocateAdapter*](/windows-hardware/drivers/ddi/dot11wdi/nc-dot11wdi-miniport_wdi_allocate_adapter)的[**ndis \_ WDI \_ INIT \_ PARAMETERS**](/windows-hardware/drivers/ddi/dot11wdi/ns-dot11wdi-_ndis_wdi_init_parameters)参数的[**OpenAdapterComplete**](/windows-hardware/drivers/ddi/dot11wdi/nc-dot11wdi-ndis_wdi_open_adapter_complete)处理程序。
+Microsoft 组件使用 [*MiniportWdiOpenAdapter*](/windows-hardware/drivers/ddi/dot11wdi/nc-dot11wdi-miniport_wdi_open_adapter) 处理程序在 IHV 驱动程序上启动 "打开任务" 操作。 此调用必须迅速完成，如果打开操作已成功启动，则 IHV 必须 \_ \_ 在此调用上返回 ndis 状态 SUCCESS，并调用传递到 [*MiniportWdiAllocateAdapter*](/windows-hardware/drivers/ddi/dot11wdi/nc-dot11wdi-miniport_wdi_allocate_adapter)的 [**ndis \_ WDI \_ INIT \_ PARAMETERS**](/windows-hardware/drivers/ddi/dot11wdi/ns-dot11wdi-_ndis_wdi_init_parameters)参数的 [**OpenAdapterComplete**](/windows-hardware/drivers/ddi/dot11wdi/nc-dot11wdi-ndis_wdi_open_adapter_complete)处理程序。
 
 ## <a name="wdi-handler-miniportwdicloseadapter"></a>WDI 处理程序： MiniportWdiCloseAdapter
 
 
-Microsoft 组件使用 [*MiniportWdiCloseAdapter*](/windows-hardware/drivers/ddi/dot11wdi/nc-dot11wdi-miniport_wdi_close_adapter) 处理程序来启动对 IHV 驱动程序的关闭任务操作。 此调用必须迅速完成，如果打开操作已成功启动，则 IHV 必须 \_ \_ 在此调用上返回 ndis 状态 SUCCESS，并调用传递到[*MiniportWdiAllocateAdapter*](/windows-hardware/drivers/ddi/dot11wdi/nc-dot11wdi-miniport_wdi_allocate_adapter)的[**ndis \_ WDI \_ INIT \_ PARAMETERS**](/windows-hardware/drivers/ddi/dot11wdi/ns-dot11wdi-_ndis_wdi_init_parameters)参数的[**CloseAdapterComplete**](/windows-hardware/drivers/ddi/dot11wdi/nc-dot11wdi-ndis_wdi_close_adapter_complete)处理程序。
+Microsoft 组件使用 [*MiniportWdiCloseAdapter*](/windows-hardware/drivers/ddi/dot11wdi/nc-dot11wdi-miniport_wdi_close_adapter) 处理程序来启动对 IHV 驱动程序的关闭任务操作。 此调用必须迅速完成，如果打开操作已成功启动，则 IHV 必须 \_ \_ 在此调用上返回 ndis 状态 SUCCESS，并调用传递到 [*MiniportWdiAllocateAdapter*](/windows-hardware/drivers/ddi/dot11wdi/nc-dot11wdi-miniport_wdi_allocate_adapter)的 [**ndis \_ WDI \_ INIT \_ PARAMETERS**](/windows-hardware/drivers/ddi/dot11wdi/ns-dot11wdi-_ndis_wdi_init_parameters)参数的 [**CloseAdapterComplete**](/windows-hardware/drivers/ddi/dot11wdi/nc-dot11wdi-ndis_wdi_close_adapter_complete)处理程序。
 
  
 

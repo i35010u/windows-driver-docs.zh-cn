@@ -1,17 +1,16 @@
 ---
 title: 处理 AVStream 编解码器中的步幅
 description: 处理 AVStream 编解码器中的步幅
-ms.assetid: 816a0ddc-8ab8-4259-9842-76f5e4dadee0
 keywords:
 - AVStream 硬件编解码器支持 WDK，处理步幅
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3a69f553984b4ee3390f52406e13869f3a3d62a4
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: c79b8f3a6fef5dbc06e0a2afbc5e04aaf0425cd5
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89190571"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96824949"
 ---
 # <a name="handling-stride-in-avstream-codecs"></a>处理 AVStream 编解码器中的步幅
 
@@ -44,7 +43,7 @@ typedef struct KS_FRAME_INFO {
 } KS_FRAME_INFO, *PKS_FRAME_INFO;
 ```
 
-微型驱动程序应使用[**KS \_ BITMAPINFOHEADER**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagks_bitmapinfoheader)结构的**biWidth**成员作为表面宽度。
+微型驱动程序应使用 [**KS \_ BITMAPINFOHEADER**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagks_bitmapinfoheader)结构的 **biWidth** 成员作为表面宽度。
 
  ([**KS \_ VIDEOINFOHEADER**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagks_videoinfoheader)。**bmiHeader** 的类型为 KS \_ BITMAPINFOHEADER。 [**KS \_DATARANGE \_ 视频**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagks_datarange_video)。**VideoInfoHeader** 的类型为 KS \_ VideoInfoHeader。 ) 
 

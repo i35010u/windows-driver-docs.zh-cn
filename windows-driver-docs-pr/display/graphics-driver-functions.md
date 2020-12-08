@@ -1,15 +1,14 @@
 ---
 title: 图形驱动程序函数
 description: 图形驱动程序函数
-ms.assetid: 2e8725a1-2d98-472d-b8ec-8f451272fe77
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 50170d09cf29feb2e035159d4c681eb39f71916e
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: f7bf79a65b91dda499689e2270936780476d9dd3
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90716030"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96825719"
 ---
 # <a name="graphics-driver-functions"></a>图形驱动程序函数
 

@@ -1,15 +1,14 @@
 ---
 title: GPU 虚拟地址
 description: 图形处理单元 (GPU) 虚拟地址在设备驱动程序接口上的逻辑4KB 或 64 KB 页中进行管理 (DDI) 级别。
-ms.assetid: 65BD05FC-06FD-4DC2-977A-7F48E72B4858
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4da5521d95aab988960260d6e283182551eca9ae
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 51ca787617343333e7a4e4614f0e05f86e2f7988
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89064206"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96825753"
 ---
 # <a name="gpu-virtual-address"></a>GPU 虚拟地址
 
@@ -28,7 +27,7 @@ GPU 虚拟地址具有 [**DXGK \_ GPUMMUCAPS**](/windows-hardware/drivers/ddi/d3
 
 低位 \[ 0-11 \] 表示页中的偏移量（以字节为单位）。 下一个 [**DXGK \_ 页 \_ 表 \_ 级别 \_ DESC**](/windows-hardware/drivers/ddi/d3dkmddi/ns-d3dkmddi-_dxgk_page_table_level_desc)：：**PageTableIndexBitCount** 位表示叶级页表中页表项的索引。
 
-页表中的条目数为 2<sup>DXGK \_ 页 \_ 表 \_ 级别 \_ desc：:P agetableindexbitcount</sup> ，页表大小为 [**DXGK \_ 页 \_ 表 \_ 级别 \_ DESC**](/windows-hardware/drivers/ddi/d3dkmddi/ns-d3dkmddi-_dxgk_page_table_level_desc)：：**PageTableSizeInBytes** 字节。
+页表中的条目数为 2 <sup>DXGK \_ 页 \_ 表 \_ 级别 \_ desc：:P agetableindexbitcount</sup> ，页表大小为 [**DXGK \_ 页 \_ 表 \_ 级别 \_ DESC**](/windows-hardware/drivers/ddi/d3dkmddi/ns-d3dkmddi-_dxgk_page_table_level_desc)：：**PageTableSizeInBytes** 字节。
 
 其余位表示根页表中页表项的索引。 根页表的大小可用于2级转换方案，并引入了新的 [*DxgkDdiGetRootPageTableSize*](/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_getrootpagetablesize)DDI 来获取其大小。
 
@@ -39,7 +38,7 @@ GPU 虚拟地址具有 [**DXGK \_ GPUMMUCAPS**](/windows-hardware/drivers/ddi/d3
 
 页表创建为隐式分配，没有用户模式驱动程序或内核模式驱动程序句柄。
 
-为了分配页表，视频内存管理器会从段分配大小 [**DXGK \_ 页 \_ 表 \_ 级别 \_ desc**](/windows-hardware/drivers/ddi/d3dkmddi/ns-d3dkmddi-_dxgk_page_table_level_desc)：：**PageTableSizeInBytes** ，并在 **DXGK \_ 页 \_ 表 \_ 级别 \_ desc**：：**PageTableSegmentId**中指定。 创建后，视频内存管理器使用新的[*UpdatePageTable*](./dxgkddiupdatepagetable.md)分页操作将页表中的每个条目初始化为*无效*。 页表从不更改大小（2级转换方案中的根页表除外）。
+为了分配页表，视频内存管理器会从段分配大小 [**DXGK \_ 页 \_ 表 \_ 级别 \_ desc**](/windows-hardware/drivers/ddi/d3dkmddi/ns-d3dkmddi-_dxgk_page_table_level_desc)：：**PageTableSizeInBytes** ，并在 **DXGK \_ 页 \_ 表 \_ 级别 \_ desc**：：**PageTableSegmentId** 中指定。 创建后，视频内存管理器使用新的 [*UpdatePageTable*](./dxgkddiupdatepagetable.md)分页操作将页表中的每个条目初始化为 *无效*。 页表从不更改大小（2级转换方案中的根页表除外）。
 
 视频内存管理器支持调整2级转换方案中根页表的大小。 在创建包含指定地址空间的根页面表时，视频内存管理器会调用新的 [*DxgkDdiGetRootPageTableSize*](/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_getrootpagetablesize)DDI 来确定所需的分配大小。 然后，视频内存管理器会在段中分配该大小的分配，由 [**DXGK \_ 页 \_ 表 \_ 级别 \_ DESC**](/windows-hardware/drivers/ddi/d3dkmddi/ns-d3dkmddi-_dxgk_page_table_level_desc)：：**PageTableSegmentId** 为根级别指定。 创建后，视频内存管理器使用新的 [*UpdatePageTable*](./dxgkddiupdatepagetable.md) 分页操作将页表中的每个条目初始化为无效。 当进程所需的视频地址空间量扩展和收缩时，根页表可以增大或收缩。 创建根页表后，视频内存管理器会调用新的 [*DxgkDdiSetRootPageTable*](/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_setrootpagetable)DDI 将新创建的根页表与将在中执行的各种上下文相关联。
 

@@ -1,7 +1,6 @@
 ---
 title: IRP_MJ_QUERY_INFORMATION 联合的 FLT_PARAMETERS
 description: 操作的 FLT \_ IO \_ 参数块结构的 MajorFunction 字段 \_ 为 IRP \_ MJ \_ 查询 \_ 信息时使用的联合组件。
-ms.assetid: 7fcd6881-1b6e-46eb-8476-d766f6fea7ef
 keywords:
 - IRP_MJ_QUERY_INFORMATION 联合可安装文件系统驱动程序的 FLT_PARAMETERS
 - FLT_PARAMETERS 联合可安装文件系统驱动程序
@@ -16,30 +15,30 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8a50cf092fc77ed3bca1dbe5e215474556bad0c3
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 5c8e6b4b35cc249661208a13cf63d57e3478c76d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90102986"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96824567"
 ---
 # <a name="flt_parameters-for-irp_mj_query_information-union"></a>\_IRP \_ MJ \_ 查询 \_ 信息联合的 FLT 参数
 
 
-操作的[**FLT \_ IO \_ 参数 \_ 块**](/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_io_parameter_block)结构的**MajorFunction**字段为[**IRP \_ MJ \_ 查询 \_ 信息**](irp-mj-query-information.md)时使用的联合组件。
+操作的 [**FLT \_ IO \_ 参数 \_ 块**](/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_io_parameter_block)结构的 **MajorFunction** 字段为 [**IRP \_ MJ \_ 查询 \_ 信息**](irp-mj-query-information.md)时使用的联合组件。
 
 <a name="syntax"></a>语法
 ------
 
 ```ManagedCPlusPlus
 typedef union _FLT_PARAMETERS {
-  ...    ;
+  ...    ;
   struct {
-    ULONG                                    Length;
+    ULONG                                    Length;
     FILE_INFORMATION_CLASS POINTER_ALIGNMENT FileInformationClass;
-    PVOID                                    InfoBuffer;
-  } QueryFileInformation;
-  ...    ;
+    PVOID                                    InfoBuffer;
+  } QueryFileInformation;
+  ...    ;
 } FLT_PARAMETERS, *PFLT_PARAMETERS;
 ```
 
@@ -50,7 +49,7 @@ typedef union _FLT_PARAMETERS {
 包含以下成员的结构。
 
 **长度**  
-**InfoBuffer**缓冲区的长度（以字节为单位）。
+**InfoBuffer** 缓冲区的长度（以字节为单位）。
 
 **FileInformationClass**  
 要返回的文件信息的类型。 下列类型作之一：
@@ -123,7 +122,7 @@ typedef union _FLT_PARAMETERS {
 **InfoBuffer**  
 一个指针，指向要返回文件信息的输出缓冲区。
 
-<a name="remarks"></a>注解
+<a name="remarks"></a>备注
 -------
 
 IRP MJ 查询信息操作的 [**FLT \_ 参数**](/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_parameters) 结构 \_ \_ \_ 包含由回调数据表示的查询信息操作的参数) 结构中 ([**FLT \_ 回调 \_ 数据**](/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_callback_data) 。 它包含在 FLT \_ IO \_ 参数 \_ 块结构中。
@@ -146,7 +145,7 @@ IRP \_ MJ \_ 查询 \_ 信息可以是基于 IRP 的操作，也可以是快速 
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**文件 \_ 属性 \_ 标记 \_ 信息**](/windows-hardware/drivers/ddi/ntddk/ns-ntddk-_file_attribute_tag_information)

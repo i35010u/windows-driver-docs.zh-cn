@@ -1,7 +1,6 @@
 ---
 title: dg（显示选择器）
 description: Dg 命令显示指定选择器的段说明符。
-ms.assetid: bf680931-f4f9-4b72-bb25-42d095514d2a
 keywords:
 - ) Windows 调试的 dg (显示选择器
 ms.date: 05/23/2017
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: c61d74020b56131dd3b472e077fe86f47b835842
-ms.sourcegitcommit: bb3b62a57ba3aea4a0adeefd2d81993367b7b334
+ms.openlocfilehash: 729c565deeaf4a5e5cb89946b412413d0711b8e8
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88148495"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96826167"
 ---
 # <a name="dg-display-selector"></a>dg（显示选择器）
 
 
-**Dg**命令显示指定选择器的段说明符。
+**Dg** 命令显示指定选择器的段说明符。
 
 ```dbgcmd
 dg FirstSelector [LastSelector]

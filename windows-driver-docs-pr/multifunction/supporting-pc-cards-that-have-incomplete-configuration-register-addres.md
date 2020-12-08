@@ -1,19 +1,18 @@
 ---
 title: 不完整配置注册地址的 PC 卡
 description: 有关支持不完整配置注册地址的 PC 卡的信息
-ms.assetid: 2a708ca5-a119-4ef5-81ee-d9e40e7a5255
 keywords:
 - 不完整的配置注册 WDK 多功能设备
 - 系统提供的多功能总线驱动程序 WDK
 - mf.sys
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 684e7b23201065adc64733b42a1b394041af36ab
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 0a17db301bd54631def71ba68d232a26794adcf3
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89185901"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96825565"
 ---
 # <a name="pc-cards-with-incomplete-configuration-register-addresses"></a>不完整配置注册地址的 PC 卡
 
@@ -24,7 +23,7 @@ ms.locfileid: "89185901"
 
 设备的自定义 INF 必须指定 mf.sys 作为设备的函数驱动程序。 系统提供的 mf.sys 驱动程序将枚举设备的功能。
 
-有关使用系统提供的 mf.sys 驱动程序的详细信息，请参阅 [使用系统提供的多功能总线驱动程序](using-the-system-supplied-multifunction-bus-driver.md) 。
+有关使用系统提供的 mf.sys 驱动程序的详细信息，请参阅 [使用 System-Supplied 多功能总线驱动程序](using-the-system-supplied-multifunction-bus-driver.md) 。
 
 此类设备的供应商必须提供以下各项：
 
@@ -44,7 +43,7 @@ ms.locfileid: "89185901"
 
 INF 必须重述设备指定的所有资源要求，因为如果 INF 中存在替代配置，则 PnP 管理器不会使用设备提供的任何设备资源要求。
 
-使用[**INF LogConfig 指令**](../install/inf-logconfig-directive.md)中描述的语法指定**MfCardConfig**项。
+使用 [**INF LogConfig 指令**](../install/inf-logconfig-directive.md)中描述的语法指定 **MfCardConfig** 项。
 
 例如，请考虑以下针对包含调制解调器和网络适配器的多功能 PC 卡设备的自定义 INF 摘录：
 
@@ -79,11 +78,11 @@ MfCardConfig =    1080:47:1
 <a href="" id="a--attrs-"></a> (*attrs*)   
 指示总线驱动程序为此功能启用 "音频启用"，这是调制解调器的典型功能。
 
-第二个 **MfCardConfig** 项包含有关网络适配器 (设备上的第二个函数的信息，在此示例中) 。 此项指定在偏移0x1080 有另一组配置寄存器。 总线驱动程序会将0x47 的 *ConfigOptions* 值写入此函数的配置选项 register。 *IoConfigIndex*的值指示总线驱动程序使用此部分中的第二个**IOConfig**条目 (**IOConfig** = 10@100-FFFF % FFF0) 为此函数编程和限制寄存器。
+第二个 **MfCardConfig** 项包含有关网络适配器 (设备上的第二个函数的信息，在此示例中) 。 此项指定在偏移0x1080 有另一组配置寄存器。 总线驱动程序会将0x47 的 *ConfigOptions* 值写入此函数的配置选项 register。 *IoConfigIndex* 的值指示总线驱动程序使用此部分中的第二个 **IOConfig** 条目 (**IOConfig** = 10@100-FFFF % FFF0) 为此函数编程和限制寄存器。
 
-在 INF 中包含多个 *DDInstall*. **Override * * N* 节，以指定多个非顺序 i/o 端口范围的选择。
+包含多个 *DDInstall*。**替代** INF 中的 _N_ 节，以指定多个非顺序 i/o 端口范围的选择。
 
-如果设备使用的内存窗口不是基于零的，则 *DDInstall*. **Override * * N* 节 (s) 还必须包含 **PcCardConfig** 项。 如果 override 节同时具有**MfCardConfig**条目和**PcCardConfig**条目，则 PCMCIA 总线驱动程序将忽略**PcCardConfig**条目中的*ConfigIndex*值，只使用*MemoryCardBaseN*信息。 有关**PcCardConfig**条目的详细信息，请参阅[支持不完整的配置注册的 PC 卡](supporting-pc-cards-that-have-incomplete-configuration-registers.md)。
+如果设备使用的内存窗口不是基于零的，则为 *DDInstall*。**重写**_N_ (s) 还必须包含 **PcCardConfig** 项。 如果 override 节同时具有 **MfCardConfig** 条目和 **PcCardConfig** 条目，则 PCMCIA 总线驱动程序将忽略 **PcCardConfig** 条目中的 *ConfigIndex* 值，只使用 *MemoryCardBaseN* 信息。 有关 **PcCardConfig** 条目的详细信息，请参阅 [支持不完整的配置注册的 PC 卡](supporting-pc-cards-that-have-incomplete-configuration-registers.md)。
 
  
 

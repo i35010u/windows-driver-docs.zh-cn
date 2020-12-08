@@ -1,15 +1,14 @@
 ---
 title: 在 Windows Vista 之前访问设备接口属性
 description: 在 Windows Vista 之前访问设备接口属性
-ms.assetid: 48b47d01-ec07-49ca-a03c-c4c387dcfb19
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: dba091b11fd36f1850fe6a9e30d08ef602b6579b
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: db47ddea367140b5c05a6c1db6fc419283ae5185
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91733977"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96826247"
 ---
 # <a name="accessing-device-interface-properties-before-windows-vista"></a>在 Windows Vista 之前访问设备接口属性
 
@@ -52,7 +51,7 @@ Windows Server 2003、Windows XP 和 Windows 2000 支持其中大多数设备接
 
 若要在 Windows Server 2003、Windows XP 和 Windows 2000 上检索有关设备接口的信息，另一种方法是通过调用 [**SetupDiEnumDeviceInterfaces**](/windows/win32/api/setupapi/nf-setupapi-setupdienumdeviceinterfaces) 来检索接口的 [**SP_DEVICE_INTERFACE_DATA**](/windows/win32/api/setupapi/ns-setupapi-sp_device_interface_data) 结构。 SP_DEVICE_INTERFACE_DATA 结构包含以下信息：
 
--   **Flags**成员指示设备接口是否处于活动状态或已删除，以及设备是否为接口类的默认接口。
+-   **Flags** 成员指示设备接口是否处于活动状态或已删除，以及设备是否为接口类的默认接口。
 
--   **InterfaceClassGuild**成员标识接口类 GUID。
+-   **InterfaceClassGuild** 成员标识接口类 GUID。
 

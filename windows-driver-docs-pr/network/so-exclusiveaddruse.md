@@ -1,16 +1,15 @@
 ---
 title: SO_EXCLUSIVEADDRUSE
 description: SO_EXCLUSIVEADDRUSE
-ms.assetid: d281086f-4d8b-4e1e-b2bd-7b0a20338222
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 SO_EXCLUSIVEADDRUSE 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 32517ad416db3cf59b65b34aa9ba938a6985071a
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 84b9218b79f9e9ff5e110e79561f449b43785609
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89205961"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96825005"
 ---
 # <a name="so_exclusiveaddruse"></a>\_EXCLUSIVEADDRUSE
 
@@ -29,7 +28,7 @@ ms.locfileid: "89205961"
 <thead>
 <tr class="header">
 <th>参数</th>
-<th>值</th>
+<th>“值”</th>
 </tr>
 </thead>
 <tbody>
@@ -81,7 +80,7 @@ ms.locfileid: "89205961"
 <thead>
 <tr class="header">
 <th>参数</th>
-<th>值</th>
+<th>“值”</th>
 </tr>
 </thead>
 <tbody>

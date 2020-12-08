@@ -1,7 +1,6 @@
 ---
 title: 将按流上下文与文件流相关联
 description: 将按流上下文与文件流相关联
-ms.assetid: 99c93574-2ba6-417a-89a4-a5b9a350a8da
 keywords:
 - 筛选器驱动程序，WDK 文件系统，每流上下文跟踪
 - 文件系统筛选器驱动程序 WDK，每流上下文跟踪
@@ -10,12 +9,12 @@ keywords:
 - 关联每个流的上下文 WDK 文件系统
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a7e47dc00ff501cae73a611c3aa9e3129d65ac23
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: a8ab938fc77ad914c00632975061f2348832dcd8
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89065406"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96825161"
 ---
 # <a name="associating-a-per-stream-context-with-a-file-stream"></a>将按流上下文与文件流相关联
 

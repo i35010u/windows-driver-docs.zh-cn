@@ -1,17 +1,16 @@
 ---
 title: 面向连接的微型端口驱动程序的常规操作 OID
 description: 本主题介绍面向连接的对象的常规操作 Oid。
-ms.assetid: 38a8a256-b70e-4ba9-bc95-f1a2965493b2
 keywords:
 - 面向操作 Oid 连接的常规小型小型驱动程序
 ms.date: 11/02/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e6390a2ba4afcbffdf9db902b8f0268b74d9c5b5
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 83fef7804eaee8ae60f8e18eb425b4ec0bc12b6b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89207601"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96825491"
 ---
 # <a name="general-operational-oids-for-connection-oriented-miniport-drivers"></a>面向连接的微型端口驱动程序的常规操作 OID
 
@@ -22,7 +21,7 @@ ms.locfileid: "89207601"
 
 在此表中，M 指示 OID 是必需的，而 O 指示它是可选的。
 
-| Length | 查询 | 设置 | 名称 |
+| 长度 | 查询 | 设置 | “属性” |
 | --- | --- | --- | --- |
 | 2 | M |   | [OID_GEN_CO_DRIVER_VERSION](oid-gen-co-driver-version.md) |
 | 8 | O |   | [OID_GEN_CO_GET_NETCARD_TIME](oid-gen-co-get-netcard-time.md) |

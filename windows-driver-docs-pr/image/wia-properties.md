@@ -1,15 +1,14 @@
 ---
 title: WIA 属性
 description: WIA 属性
-ms.assetid: 3b9d4d90-775b-450e-b5d1-646ea45253d7
 ms.date: 05/29/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 2051ddaf448b04294ca3bc10edc2c052e66e04dc
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: f5a9947b0e4adaa4f24cef73a82fcbcb8b0fe310
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89187955"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96826469"
 ---
 # <a name="wia-properties"></a>WIA 属性
 
@@ -73,7 +72,7 @@ WIA 中使用以下类型来指示属性的数据类型：
 
 驱动程序具有读取和写入访问权限。
 
-## <a name="remarks"></a>注解
+## <a name="remarks"></a>备注
 
 前面的列表仅描述了在此部分包含的 WIA 属性中使用的那些类型。 
 

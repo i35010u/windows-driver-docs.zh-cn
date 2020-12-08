@@ -1,19 +1,18 @@
 ---
 title: 为较低级驱动程序创建 IRP
 description: 为较低级驱动程序创建 IRP
-ms.assetid: 2d298eb1-6169-4742-80c1-200223a2d4fa
 keywords:
 - Irp WDK 内核，创建
 - 异步请求 WDK Irp
 - Irp WDK 内核，异步请求
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c48a49bd38a4b09e0105cfa6d5f971ec8ab2dc10
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: ec23ae50afa074866bfb604d95ff9c14d6517603
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89189553"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96825945"
 ---
 # <a name="creating-irps-for-lower-level-drivers"></a>为较低级驱动程序创建 IRP
 
@@ -41,7 +40,7 @@ ms.locfileid: "89189553"
 
     驱动程序很少为关联的 IRP 设置 [*IoCompletion*](/windows-hardware/drivers/ddi/wdm/nc-wdm-io_completion_routine) 例程。 如果最高级别的驱动程序为其创建的关联 IRP 调用 [**IoSetCompletionRoutine**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iosetcompletionroutine) ，则如果驱动程序 \_ \_ \_ 从其 *IoCompletion* 例程返回状态更多处理，则 I/O 管理器不会完成主 IRP。 在这些情况下，驱动程序的 *IoCompletion* 例程必须通过 [**IoCompleteRequest**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iocompleterequest)显式完成 master IRP。
 
-如果驱动程序在新的 IRP 中分配其自己的 i/o 堆栈位置，则调度例程必须先调用 [**IoSetNextIrpStackLocation**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iosetnextirpstacklocation) ，然后再调用 [**IoGetCurrentIrpStackLocation**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetcurrentirpstacklocation) ，以在其自己的 [*IoCompletion*](/windows-hardware/drivers/ddi/wdm/nc-wdm-io_completion_routine) 例程的 i/o 堆栈位置中设置上下文。 有关详细信息，请参阅 [在中间级驱动程序中处理 irp](processing-irps-in-an-intermediate-level-driver.md)。
+如果驱动程序在新的 IRP 中分配其自己的 i/o 堆栈位置，则调度例程必须先调用 [**IoSetNextIrpStackLocation**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iosetnextirpstacklocation) ，然后再调用 [**IoGetCurrentIrpStackLocation**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetcurrentirpstacklocation) ，以在其自己的 [*IoCompletion*](/windows-hardware/drivers/ddi/wdm/nc-wdm-io_completion_routine) 例程的 i/o 堆栈位置中设置上下文。 有关详细信息，请参阅 [处理 Intermediate-Level 驱动程序中的 irp](processing-irps-in-an-intermediate-level-driver.md)。
 
 调度例程必须与原始 IRP 一起调用 [**也**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iomarkirppending) ，但不能调用任何驱动程序分配的 irp，因为 [*IoCompletion*](/windows-hardware/drivers/ddi/wdm/nc-wdm-io_completion_routine) 例程会释放它们。
 
@@ -51,17 +50,17 @@ ms.locfileid: "89189553"
 
 \_将驱动程序分配的所有 irp 发送到更低的驱动程序后，调度例程必须返回 "挂起" 状态。
 
-在为原始 IRP 调用[**IoCompleteRequest**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iocompleterequest)之前，驱动程序的[*IoCompletion*](/windows-hardware/drivers/ddi/wdm/nc-wdm-io_completion_routine)例程应该使用[**IoFreeIrp**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iofreeirp)释放所有驱动程序分配的 irp。 完成原始 IRP 后， *IoCompletion* 例程必须释放所有驱动程序分配的 irp，然后才能返回控制权。
+在为原始 IRP 调用 [**IoCompleteRequest**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iocompleterequest)之前，驱动程序的 [*IoCompletion*](/windows-hardware/drivers/ddi/wdm/nc-wdm-io_completion_routine)例程应该使用 [**IoFreeIrp**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iofreeirp)释放所有驱动程序分配的 irp。 完成原始 IRP 后， *IoCompletion* 例程必须释放所有驱动程序分配的 irp，然后才能返回控制权。
 
 每个更高级别的驱动程序会设置任何驱动程序分配的 (，并为低版本的驱动程序重用) Irp，无论给定请求来自中间驱动程序还是源自任何其他源（如文件系统或用户模式应用程序），都可以将其重要到基础设备驱动程序。
 
 最高级别的驱动程序可以调用 [**IoMakeAssociatedIrp**](/windows-hardware/drivers/ddi/ntddk/nf-ntddk-iomakeassociatedirp) 来分配 irp，并为较低的驱动程序链设置它们。 只要驱动程序不会使用原始 IRP 或它分配的任何关联的 irp 调用 [**IoSetCompletionRoutine**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iosetcompletionroutine) ，i/o 管理器就会自动完成其所有关联的 irp。 然而，最高级别的驱动程序不得为请求缓冲 i/o 操作的任何 IRP 分配关联的 Irp。
 
-中间级别驱动程序无法通过调用 **IoMakeAssociatedIrp**为低级驱动程序分配 irp。 中间驱动程序接收的任何 IRP 都可能已经是关联的 IRP，驱动程序不能将其他 IRP 与此类 IRP 关联。
+中间级别驱动程序无法通过调用 **IoMakeAssociatedIrp** 为低级驱动程序分配 irp。 中间驱动程序接收的任何 IRP 都可能已经是关联的 IRP，驱动程序不能将其他 IRP 与此类 IRP 关联。
 
 相反，如果中间驱动程序为低级驱动程序创建了 Irp，则它应调用 [**IoAllocateIrp**](/windows-hardware/drivers/ddi/wdm/nf-wdm-ioallocateirp)、 [**IoBuildDeviceIoControlRequest**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iobuilddeviceiocontrolrequest)、 [**IoBuildSynchronousFsdRequest**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iobuildsynchronousfsdrequest)或 [**IoBuildAsynchronousFsdRequest**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iobuildasynchronousfsdrequest)。 但是，只能在以下情况下调用 **IoBuildSynchronousFsdRequest** ：
 
--   由驱动程序创建的线程为读取或写入请求构建 Irp，因为此类线程可以在 nonarbitrary 线程上下文中等待，因此在调度程序对象上 (自己的) ，如传递到**IoBuildSynchronousFsdRequest**的驱动程序初始化*事件*。
+-   由驱动程序创建的线程为读取或写入请求构建 Irp，因为此类线程可以在 nonarbitrary 线程上下文中等待，因此在调度程序对象上 (自己的) ，如传递到 **IoBuildSynchronousFsdRequest** 的驱动程序初始化 *事件*。
 
 -   在初始化期间或卸载时在系统线程上下文中
 

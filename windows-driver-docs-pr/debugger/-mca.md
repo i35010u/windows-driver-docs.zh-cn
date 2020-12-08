@@ -1,7 +1,6 @@
 ---
 title: mca
 description: 在 x86 目标计算机上，mca 扩展显示 (MCA) 寄存器的计算机检查体系结构。
-ms.assetid: 452bfbf2-fcab-4a71-bfd0-b02afe30df74
 keywords:
 - '计算机检查体系结构 (MCA) '
 - 'MCA (计算机检查体系结构) '
@@ -14,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 642b4d4ade4e3185d8864b50a622ece5aa4614ae
-ms.sourcegitcommit: bb3b62a57ba3aea4a0adeefd2d81993367b7b334
+ms.openlocfilehash: 476c8b22e629eebbd3a28af0d1c54171201639be
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88148441"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96825275"
 ---
 # <a name="mca"></a>!mca
 
@@ -37,7 +36,7 @@ ms.locfileid: "88148441"
 仅 (Itanium 目标) 指定 MCA 错误记录的地址。
 
 <span id="_______Flags______"></span><span id="_______flags______"></span><span id="_______FLAGS______"></span>*标志*   
-仅 (Itanium 目标) 指定输出级别。 *标志*可以是以下位的任意组合。 默认值为0xFF，这将显示日志中显示的所有部分。
+仅 (Itanium 目标) 指定输出级别。 *标志* 可以是以下位的任意组合。 默认值为0xFF，这将显示日志中显示的所有部分。
 
 <span id="Bit_0__0x1_"></span><span id="bit_0__0x1_"></span><span id="BIT_0__0X1_"></span>位 0 (0x1)   
 显示处理器部分。
@@ -76,7 +75,7 @@ ms.locfileid: "88148441"
 <td align="left"><p>Kdextx86.dll</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>Windows XP 及更高版本</strong></p></td>
+<td align="left"><p><strong>Windows XP 及更高版本</strong></p></td>
 <td align="left"><p>Kdexts.dll</p></td>
 </tr>
 </tbody>
@@ -89,7 +88,7 @@ ms.locfileid: "88148441"
 <a name="remarks"></a>备注
 -------
 
-在 x86 目标上， **！ mca**显示活动处理器支持的计算机检查寄存器。 它还显示基本 CPU 信息 (与显示的) [**！ cpuinfo**](-cpuinfo.md) ）相同。 下面是此扩展的输出示例：
+在 x86 目标上， **！ mca** 显示活动处理器支持的计算机检查寄存器。 它还显示基本 CPU 信息 (与显示的) [**！ cpuinfo**](-cpuinfo.md) ）相同。 下面是此扩展的输出示例：
 
 ```dbgcmd
 0: kd> !mca

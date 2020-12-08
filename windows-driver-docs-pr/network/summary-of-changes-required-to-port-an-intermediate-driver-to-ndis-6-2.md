@@ -1,20 +1,19 @@
 ---
-title: 若要移植到 NDIS 6.20 的中间驱动程序的更改摘要
+title: 将中间驱动程序移植到 NDIS 6.20 的更改摘要
 description: 将中间驱动程序移植到 NDIS 6.20 所要做出的更改摘要
-ms.assetid: 1ed2b2f6-f337-4aaa-9ce8-90adf7d05722
 keywords:
 - NDIS 6.20 WDK，移植中间驱动程序
-- 移植到 NDIS 6.20 WDK 中间驱动程序
+- 将中间驱动程序移植到 NDIS 6.20 WDK
 - 中间驱动程序 WDK
-- 中间驱动程序 WDK，移植到 NDIS 6.20
+- 中级驱动程序 WDK，移植到 NDIS 6.20
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: db041a9df84df68357d18217f1434f69465e2ce9
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: def81cf6b227e6587a346bd1eef8dfba78f34a42
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63376944"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96825409"
 ---
 # <a name="summary-of-changes-required-to-port-an-intermediate-driver-to-ndis-620"></a>将中间驱动程序移植到 NDIS 6.20 所要做出的更改摘要
 
@@ -22,19 +21,19 @@ ms.locfileid: "63376944"
 
 
 
-本主题概述了所需端口 NDIS 6 的更改。*x*中间驱动程序添加到 NDIS 6.20。
+本主题概述了移植 NDIS 6 所需的更改。*x* 中级驱动程序到 NDIS 6.20。
 
-若要更新的中间驱动程序来支持 NDIS 6.20 环境，则必须修改 NDIS 6。*x*中间层驱动程序，如下所示：
+若要更新中间驱动程序以支持 NDIS 6.20 环境，必须修改 NDIS 6。*x* 中间驱动程序，如下所示：
 
-<a href="" id="build-environment-------"></a>**构建环境**   
--   替换为预处理器定义 NDIS60\_微型端口\_驱动程序或 NDIS61\_微型端口\_驱动程序和 NDIS620\_微型端口\_驱动程序。
+<a href="" id="build-environment-------"></a>**生成环境**   
+-   将预处理器定义 NDIS60 \_ 微型端口 \_ 驱动程序或 NDIS61 微型端口驱动程序替换 \_ \_ 为 NDIS620 \_ 微型端口驱动 \_ 程序。
 
--   替换 NDIS620 NDIS61 或 NDIS60 的预处理器定义。
+-   将预处理器定义 NDIS61 或 NDIS60 替换为 NDIS620。
 
-<a href="" id="general-porting-requirements-------"></a>**移植的一般要求**   
--   除外另行，协议驱动程序和微型端口驱动程序的更改也适用于中间驱动程序。 有关移植这些驱动程序的详细信息，请参阅协议驱动程序移植在摘要[摘要的更改所需端口协议驱动程序添加到 NDIS 6.20](summary-of-changes-required-to-port-a-protocol-driver-to-ndis-6-20.md)和微型端口驱动程序移植摘要，[摘要若要移植到 NDIS 6.20 的微型端口驱动程序所需的更改](summary-of-changes-required-to-port-a-miniport-driver-to-ndis-6-20.md)。
+<a href="" id="general-porting-requirements-------"></a>**一般移植要求**   
+-   除非另外注明，否则协议驱动程序和微型端口驱动程序更改也适用于中间驱动程序。 有关移植这些驱动程序的详细信息，请参阅协议驱动程序迁移摘要，其中概述了在将[微型端口驱动程序移植到 ndis 6.20](summary-of-changes-required-to-port-a-miniport-driver-to-ndis-6-20.md)所需的更改所[需的将协议驱动程序移植到 ndis 6.20](summary-of-changes-required-to-port-a-protocol-driver-to-ndis-6-20.md)和微型端口驱动程序的更改摘要。
 
--   NDIS 5.x 筛选器中间驱动程序将不支持在 Microsoft Windows 版本后 Windows 7。 应为所有筛选器驱动程序使用 NDIS 筛选器驱动程序接口。 NDIS 筛选器驱动程序有关的详细信息，请参阅[摘要的更改所需端口筛选器驱动程序到 NDIS 6.20](summary-of-changes-required-to-port-a-filter-driver-to-ndis-6-20.md)。
+-   Windows 7 之后的 Microsoft Windows 版本中不支持 NDIS 1.x 筛选器中间驱动程序。 应为所有筛选器驱动程序使用 NDIS 筛选器驱动程序接口。 有关 NDIS 筛选器驱动程序的详细信息，请参阅 [将筛选器驱动程序移植到 NDIS 6.20 所需的更改摘要](summary-of-changes-required-to-port-a-filter-driver-to-ndis-6-20.md)。
 
  
 

@@ -1,7 +1,6 @@
 ---
 title: SRB \_ 写入 \_ 数据
 description: SRB \_ 写入 \_ 数据
-ms.assetid: f7867185-3f1b-4c83-b23a-5b2b4ce6e484
 keywords:
 - SRB_WRITE_DATA 流媒体设备
 topic_type:
@@ -12,12 +11,12 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: abda3385d4c74c910c48f092a5575f24113790ee
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: c19c166cca66087fa1f4f14ffb4262006c86b6cd
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89188343"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96824863"
 ---
 # <a name="srb_write_data"></a>SRB \_ 写入 \_ 数据
 
@@ -25,7 +24,7 @@ ms.locfileid: "89188343"
 ## <span id="ddk_srb_write_data_ks"></span><span id="DDK_SRB_WRITE_DATA_KS"></span>
 
 
-类驱动程序已收到微型驱动程序的写入请求。 *PSrb* - &gt; **CommandData**的值。**DataBufferArray**指向[**KSSTREAM \_ 标头**](/windows-hardware/drivers/ddi/ks/ns-ks-ksstream_header)结构的数组，它们共同描述了数据缓冲区。 *PSrb* - &gt; **CommandData**的值。**NumberOfBuffers**指定数组的大小。 *PSrb*指针指向[**HW \_ 流 \_ 请求 \_ 块**](/windows-hardware/drivers/ddi/strmini/ns-strmini-_hw_stream_request_block)结构。
+类驱动程序已收到微型驱动程序的写入请求。 *PSrb* - &gt; **CommandData** 的值。**DataBufferArray** 指向 [**KSSTREAM \_ 标头**](/windows-hardware/drivers/ddi/ks/ns-ks-ksstream_header)结构的数组，它们共同描述了数据缓冲区。 *PSrb* - &gt; **CommandData** 的值。**NumberOfBuffers** 指定数组的大小。 *PSrb* 指针指向 [**HW \_ 流 \_ 请求 \_ 块**](/windows-hardware/drivers/ddi/strmini/ns-strmini-_hw_stream_request_block)结构。
 
 ### <a name="span-idreturn_valuespanspan-idreturn_valuespanreturn-value"></a><span id="return_value"></span><span id="RETURN_VALUE"></span>返回值
 

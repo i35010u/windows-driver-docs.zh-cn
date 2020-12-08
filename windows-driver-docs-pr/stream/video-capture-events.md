@@ -1,19 +1,18 @@
 ---
 title: 视频捕获事件
 description: 视频捕获事件
-ms.assetid: 9d40b9f7-41c1-4410-afc7-9b4ff1c2fe7e
 keywords:
 - 事件 WDK 视频捕获
 - KSEVENTSETID_VIDCAPNotify
 - 视频捕获事件 WDK AVStream
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2f99cc2650d7c78ef1cf798ae2c626294bfa3c0e
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 53e2465ad6fd5b9c8b7fdf5783acb4f0cf6d7060
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90107114"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96825315"
 ---
 # <a name="video-capture-events"></a>视频捕获事件
 

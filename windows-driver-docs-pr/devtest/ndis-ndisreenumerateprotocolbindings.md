@@ -1,7 +1,6 @@
 ---
 title: 'NdisReEnumerateProtocolBindings 规则 (ndis) '
 description: 协议驱动程序无法从 ProtocolBindAdapterEx 或 ProtocolUnbindAdapterEx 函数的上下文中调用 NdisReEnumerateProtocolBindings。
-ms.assetid: A6BB5B25-B8F4-4D90-B325-DFEED9C4AA6A
 ms.date: 05/21/2018
 keywords:
 - 'NdisReEnumerateProtocolBindings 规则 (ndis) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: f76cc8edbcb3e8445da092725c9010f1a9f9c19c
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 005ead5eb13e4939f418c496845055100c177f7a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90106218"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96826087"
 ---
 # <a name="ndisreenumerateprotocolbindings-rule-ndis"></a>NdisReEnumerateProtocolBindings 规则 (ndis) 
 
 
-协议驱动程序无法从[*ProtocolBindAdapterEx*](/windows-hardware/drivers/ddi/ndis/nc-ndis-protocol_bind_adapter_ex)或[*ProtocolUnbindAdapterEx*](/windows-hardware/drivers/ddi/ndis/nc-ndis-protocol_unbind_adapter_ex)函数的上下文中调用[**NdisReEnumerateProtocolBindings**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisreenumerateprotocolbindings) 。 此外，如果*ProtocolNetPnPEvent*的*ProtocolBindingContext*参数不为 NULL，则协议驱动程序无法从[*ProtocolNetPnPEvent*](/windows-hardware/drivers/ddi/ndis/nc-ndis-protocol_net_pnp_event)函数的上下文中调用**NdisReEnumerateProtocolBindings** 。 但是，如果*ProtocolBindingContext*为 NULL，则协议驱动程序可以在*ProtocolNetPnPEvent*的上下文中调用**NdisReEnumerateProtocolBindings** 。 空的 *ProtocolBindingContext* 值指示该事件适用于所有绑定。
+协议驱动程序无法从 [*ProtocolBindAdapterEx*](/windows-hardware/drivers/ddi/ndis/nc-ndis-protocol_bind_adapter_ex)或 [*ProtocolUnbindAdapterEx*](/windows-hardware/drivers/ddi/ndis/nc-ndis-protocol_unbind_adapter_ex)函数的上下文中调用 [**NdisReEnumerateProtocolBindings**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisreenumerateprotocolbindings) 。 此外，如果 *ProtocolNetPnPEvent* 的 *ProtocolBindingContext* 参数不为 NULL，则协议驱动程序无法从 [*ProtocolNetPnPEvent*](/windows-hardware/drivers/ddi/ndis/nc-ndis-protocol_net_pnp_event)函数的上下文中调用 **NdisReEnumerateProtocolBindings** 。 但是，如果 *ProtocolBindingContext* 为 NULL，则协议驱动程序可以在 *ProtocolNetPnPEvent* 的上下文中调用 **NdisReEnumerateProtocolBindings** 。 空的 *ProtocolBindingContext* 值指示该事件适用于所有绑定。
 
 **驱动程序模型： NDIS**
 

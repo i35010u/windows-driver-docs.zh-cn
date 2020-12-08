@@ -1,15 +1,14 @@
 ---
 title: PwrTest 热量方案
 description: PwrTest 散热方案监视 ACPI 热量区域信息和统计信息。
-ms.assetid: C6941A50-EA0F-4C46-A290-8CAAD292E156
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d04a3ca0d9b4c4f4d889b62c59251d7ffc55407b
-ms.sourcegitcommit: faff37814159ad224080205ad314cabf412e269f
+ms.openlocfilehash: 2d55244ad158c08b7ab5301b5b3d71f135cd4ef3
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89381933"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96824577"
 ---
 # <a name="pwrtest-thermal-scenario"></a>PwrTest 热量方案
 
@@ -115,7 +114,7 @@ pwrtest /thermal  /t:30 /temp:f
 <thead>
 <tr class="header">
 <th align="left">元素</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>

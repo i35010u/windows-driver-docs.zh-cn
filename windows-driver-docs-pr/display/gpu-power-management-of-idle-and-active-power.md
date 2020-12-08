@@ -1,15 +1,14 @@
 ---
 title: 空闲状态和活动电源的 GPU 电源管理
 description: 一种 GPU 电源管理基础结构，它允许 Windows 显示驱动程序模型 (WDDM) 1.2 及更高版本的驱动程序管理单个设备或一组设备的强大功能。
-ms.assetid: F8096F7E-39EA-45CB-8A1C-60A7A298AFEC
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d8b47a77a2d8b6a4a6e373b74f560a5b4f7d3ae6
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: 2e6805e69c6f4f167b9f35150bfbbe81adee38a0
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89064210"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96825765"
 ---
 # <a name="gpu-power-management-of-idle-states-and-active-power"></a>空闲状态和活动电源的 GPU 电源管理
 
@@ -22,7 +21,7 @@ ms.locfileid: "89064210"
 
 **驱动程序实现**：可选
 
-** [WHCK](/windows-hardware/test/hlk/windows-hardware-lab-kit)要求和测试**：**设备 .。。RuntimePowerMgmt**
+**[WHCK](/windows-hardware/test/hlk/windows-hardware-lab-kit)要求和测试**：**设备 .。。RuntimePowerMgmt**
 
 
  

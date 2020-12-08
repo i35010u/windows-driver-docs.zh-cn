@@ -1,20 +1,19 @@
 ---
 title: Windows 2000 显示体系结构
 description: Windows 2000 显示体系结构
-ms.assetid: c18e1464-13b7-4e55-b3e1-77aaf9270f60
 keywords:
-- VGA WDK Windows 2000 显示
-- 显示器驱动程序模型 WDK Windows 2000 中，体系结构
+- VGA WDK Windows 2000 显示器
+- 显示驱动程序模型 WDK Windows 2000、体系结构
 - Windows 2000 显示器驱动程序模型 WDK，体系结构
 - 体系结构 WDK Windows 2000 显示
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6c9d1bb10a8645cb33cbdcc884d5d195ddd28f60
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8b8e4f2320af3a98facf21005fe680da040d804f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63391179"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96826019"
 ---
 # <a name="windows-2000-display-architecture"></a>Windows 2000 显示体系结构
 
@@ -22,19 +21,19 @@ ms.locfileid: "63391179"
 ## <span id="ddk_display_architecture_gg"></span><span id="DDK_DISPLAY_ARCHITECTURE_GG"></span>
 
 
-下图显示了所需显示在 Windows 2000 及更高版本的组件。
+下图显示了在 Windows 2000 和更高版本上显示的组件。
 
-![说明 windows 2000 及更高版本的关系图显示子系统](images/dpy1.png)
+![说明 windows 2000 和更高版本的显示子系统的关系图](images/dpy1.png)
 
-在上图中的阴影的元素表示 Windows 2000 和更高版本提供的服务。 无阴影的元素指示一个第三方显示驱动程序和视频的微型端口驱动程序所需顺序显示在 Windows 2000 和更高版本系统的图形适配器。
+上图中的阴影元素表示 Windows 2000 和更高版本中提供的服务。 Unshaded 元素指示需要第三方显示器驱动程序和视频微型端口驱动程序，以便在 Windows 2000 和更高版本的系统中显示图形适配器。
 
-对于每种类型的图形卡，可使用基于 NT 的操作系统的系统，必须显示驱动程序和相应的微型端口驱动程序。 微型端口驱动程序是专门针对一个图形适配器 （或系列的适配器） 编写的。 可以为任意数量的共享一个通用的图形界面; 适配器编写显示驱动程序例如，可以通过 VGA 或 ET4000 微型端口驱动程序使用 VGA 显示器驱动程序。 这是因为显示驱动程序绘制而微型端口驱动程序执行操作，如模式集，并提供有关向驱动程序硬件的信息。 还有可能用于多个显示器驱动程序以使用特定的微型端口驱动程序;例如，16 和 256 色 SVGA 显示器驱动程序可以使用相同的微型端口驱动程序。
+对于可用于基于 NT 的操作系统的每种类型的图形卡，都必须有显示驱动程序和相应的视频微型端口驱动程序。 小型端口驱动程序专用于一个图形适配器 (或适配器系列) 。 可以为共享公共绘图接口的任意数量的适配器编写显示驱动程序;例如，VGA 显示器驱动程序可用于 VGA 或 ET4000 微型端口驱动程序。 这是因为显示器驱动程序会绘制，而微型端口驱动程序执行操作（如模式集），并向驱动程序提供有关硬件的信息。 对于一个特定微型端口驱动程序，也可以使用多个显示驱动程序;例如，16和256色 SVGA 显示驱动程序可以使用相同的微型端口驱动程序。
 
-以下各节介绍显示和视频的微型端口驱动程序的主要职责。 中的职责分解不是硬和快速;模块性和性能之间的平衡是关键。 例如，VGA 驱动程序的硬件指针代码驻留在微型端口驱动程序。 这促进了模块化，因此相同的显示驱动程序可以处理视频七个 vram 能够，它具有硬件指针，以及 ET4000，这不会执行。
+以下部分描述了显示和视频微型端口驱动程序的主要职责。 责任的细分不是很难实现;模块化和性能之间的平衡是关键所在。 例如，VGA 驱动程序的硬件指针代码驻留在微型端口驱动程序中。 这会升级模块，因此，同一显示器驱动程序可以处理包含硬件指针的视频七个 VRAM 和 ET4000，而不是。
 
-[Windows 2000 显示驱动程序责任](windows-2000-display-driver-responsibilities.md)
+[Windows 2000 显示驱动程序的责任](windows-2000-display-driver-responsibilities.md)
 
-[Windows 2000 视频微型端口驱动程序责任](windows-2000-video-miniport-driver-responsibilities.md)
+[Windows 2000 视频微型端口驱动程序的责任](windows-2000-video-miniport-driver-responsibilities.md)
 
  
 

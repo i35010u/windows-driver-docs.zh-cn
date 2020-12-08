@@ -1,16 +1,15 @@
 ---
 title: NDIS_STATUS_WWAN_PIN_INFO
 description: 微型端口驱动程序使用 NDIS_STATUS_WWAN_PIN_INFO 通知来响应 OID 查询并设置 OID_WWAN_PIN 的请求。 微型端口驱动程序无法使用此通知发送未经请求的事件。此通知使用 NDIS_WWAN_PIN_INFO 结构。
-ms.assetid: fa3c2467-2240-423b-b91b-f7e19d5be353
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 NDIS_STATUS_WWAN_PIN_INFO 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: b58ba407a04ed09e5af1cec215685adfed7a7622
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: d72940036620fbc86d95941c3d9df342abc66691
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89217278"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96825479"
 ---
 # <a name="ndis_status_wwan_pin_info"></a>NDIS \_ 状态 \_ WWAN \_ PIN \_ 信息
 
@@ -38,21 +37,21 @@ ms.locfileid: "89217278"
 
     -   不支持 PIN：如果 MB 设备不支持给定的 PIN，微型端口驱动程序必须将 **uStatus** 设置为 WWAN \_ 状态 " \_ 无 \_ 设备支持" \_ 。
 
-    -   固定 Retrial：在此模式下，MB 设备需要重新输入 PIN，因为对于此特定类型的 PIN， **AttemptsRemaining** 值仍然为非零。 微型端口驱动程序必须将**PinType**设置为与 NDIS **PinType** \_ WWAN \_ 集 PIN 中的 PinType 相同的值 \_ 。
+    -   固定 Retrial：在此模式下，MB 设备需要重新输入 PIN，因为对于此特定类型的 PIN， **AttemptsRemaining** 值仍然为非零。 微型端口驱动程序必须将 **PinType** 设置为与 NDIS **PinType** \_ WWAN \_ 集 PIN 中的 PinType 相同的值 \_ 。
 
     -   锁定锁定：当 **AttemptsRemaining** 为零时，会阻止 pin。 如果 PIN 解除阻止操作不可用，微型端口驱动程序必须将 **uStatus** 设置为 WWAN \_ 状态 \_ 失败，并将 **PinType** 设置为 **WwanPinTypeNone**。 将忽略所有其他成员。
 
-        **注意**   如果 MB 设备支持 PIN 取消阻止操作，微型端口驱动程序应遵循 PIN 取消阻止步骤来响应请求。
+        **注意**  如果 MB 设备支持 PIN 取消阻止操作，微型端口驱动程序应遵循 PIN 取消阻止步骤来响应请求。
 
          
 
-    -   PIN 解除锁定：当 **AttemptsRemaining** 为零时，会阻止 pin。 为了解除锁定 PIN，MB 设备可能会请求相应的 PIN 解锁密钥 (PUK) （如果适用）。 在这种情况下，微型端口驱动程序必须将 **PinType** 设置为相应的 WwanPinType*Xxx*PUK，并提供相关的详细信息。
+    -   PIN 解除锁定：当 **AttemptsRemaining** 为零时，会阻止 pin。 为了解除锁定 PIN，MB 设备可能会请求相应的 PIN 解锁密钥 (PUK) （如果适用）。 在这种情况下，微型端口驱动程序必须将 **PinType** 设置为相应的 WwanPinType *Xxx* PUK，并提供相关的详细信息。
 
-    -   已阻止的 PUK：如果失败的试用次数超过了输入 WwanPinType*Xxx*PUK 的预设值，则 PUK 将被阻止。 微型端口驱动程序必须通过将 **uStatus** 设置为 WWAN \_ 状态 \_ 失败，并将 **PinType** 设置为 **WwanPinTypeNone**来指示这一点。 如果阻止 PUK1，微型端口驱动程序必须发送 NDIS \_ 状态 \_ WWAN \_ 就绪信息， \_ 并将 **ReadyState** 设置为 **WwanReadyStateBadSim**。
+    -   已阻止的 PUK：如果失败的试用次数超过了输入 WwanPinType *Xxx* PUK 的预设值，则 PUK 将被阻止。 微型端口驱动程序必须通过将 **uStatus** 设置为 WWAN \_ 状态 \_ 失败，并将 **PinType** 设置为 **WwanPinTypeNone** 来指示这一点。 如果阻止 PUK1，微型端口驱动程序必须发送 NDIS \_ 状态 \_ WWAN \_ 就绪信息， \_ 并将 **ReadyState** 设置为 **WwanReadyStateBadSim**。
 
 **响应 WwanPinOperationEnable、WwanPinOperationDisable 或 WwanPinOperationChange 请求**
 
-当微型端口驱动程序使用 \_ NDIS 状态 \_ WWAN \_ PIN \_ 信息通知来响应 **WwanPinOperationEnable**、 **WwanPinOperationDisable**和 **WwanPinOperationChange**时，它们应该实现以下操作：
+当微型端口驱动程序使用 \_ NDIS 状态 \_ WWAN \_ PIN \_ 信息通知来响应 **WwanPinOperationEnable**、 **WwanPinOperationDisable** 和 **WwanPinOperationChange** 时，它们应该实现以下操作：
 
 -   对于成功的请求，微型端口驱动程序必须将 **uStatus** 设置为 WWAN \_ 状态 "成功" \_ 。 有关 WWAN_PIN_INFO 中的其他成员，请参阅下列情况。
 
@@ -66,19 +65,19 @@ ms.locfileid: "89217278"
 
 -   不支持 PIN：如果在 MB 设备上不支持 PIN 操作，微型端口驱动程序必须将 **uStatus** 设置为 WWAN \_ 状态 " \_ 无 \_ 设备支持" \_ 。 例如，启用和禁用 PIN2 通常不支持 MB 设备，因此必须返回上述错误代码。 将忽略所有其他成员。
 
--   必须输入 PIN：如果 PIN 操作要求输入 PIN，微型端口驱动程序必须将 **uStatus** 设置为 \_ REQUIRED，并将 \_ \_ **PinType** 设置为 WwanPinType*Xxx*。 忽略其他成员。
+-   必须输入 PIN：如果 PIN 操作要求输入 PIN，微型端口驱动程序必须将 **uStatus** 设置为 \_ REQUIRED，并将 \_ \_ **PinType** 设置为 WwanPinType *Xxx*。 忽略其他成员。
 
 -   PIN 更改操作：如果仅当 MB 设备处于 "已启用" 状态时，它会限制 PIN 值的更改，则必须在禁用了 WWAN 状态 PIN 的情况下返回 "已禁用" 状态的请求 \_ \_ \_ 。
 
--   PIN Retrial：失败时，微型端口驱动程序必须将 **uStatus** 设置为 WWAN \_ 状态 \_ 失败，并将 **PinType** 设置为 NDIS \_ WWAN \_ 设置 \_ PIN 中指定的相同值。 除 **AttemptsRemaining**之外，还将忽略其他成员。 输入错误的 PIN 时可能会发生这种情况。
+-   PIN Retrial：失败时，微型端口驱动程序必须将 **uStatus** 设置为 WWAN \_ 状态 \_ 失败，并将 **PinType** 设置为 NDIS \_ WWAN \_ 设置 \_ PIN 中指定的相同值。 除 **AttemptsRemaining** 之外，还将忽略其他成员。 输入错误的 PIN 时可能会发生这种情况。
 
--   锁定锁定：当 **AttemptsRemaining** 数为零时，会阻止 pin。 如果 PIN 解除阻止操作不可用，微型端口驱动程序必须将 **uStatus** 设置为 WWAN \_ 状态 \_ 失败，并将 **PinType** 设置为 **WwanPinTypeNone**。 应将**AttemptsRemaining**设置为0，并忽略所有其他成员。
+-   锁定锁定：当 **AttemptsRemaining** 数为零时，会阻止 pin。 如果 PIN 解除阻止操作不可用，微型端口驱动程序必须将 **uStatus** 设置为 WWAN \_ 状态 \_ 失败，并将 **PinType** 设置为 **WwanPinTypeNone**。 应将 **AttemptsRemaining** 设置为0，并忽略所有其他成员。
 
-    **注意**   如果 MB 设备支持 PIN 取消阻止操作，微型端口驱动程序应遵循 PIN 取消阻止步骤来响应请求。
+    **注意**  如果 MB 设备支持 PIN 取消阻止操作，微型端口驱动程序应遵循 PIN 取消阻止步骤来响应请求。
 
      
 
--   解除锁定 PIN：当 **AttemptsRemaining** 为零时，会阻止 pin。 若要解除锁定 PIN，MB 设备可能会请求相应的 PUK （如果适用）。 在这种情况下，微型端口驱动程序必须将 **uStatus** 设置为 WWAN \_ 状态 \_ 失败，将 **PinType** 设置为相应的 WwanPinType*Xxx*PUK，将 **PinState** 设置为 **WwanPinStateEnter**，并且 **AttemptsRemaining** 应具有允许输入有效 PUK 的尝试次数。
+-   解除锁定 PIN：当 **AttemptsRemaining** 为零时，会阻止 pin。 若要解除锁定 PIN，MB 设备可能会请求相应的 PUK （如果适用）。 在这种情况下，微型端口驱动程序必须将 **uStatus** 设置为 WWAN \_ 状态 \_ 失败，将 **PinType** 设置为相应的 WwanPinType *Xxx* PUK，将 **PinState** 设置为 **WwanPinStateEnter**，并且 **AttemptsRemaining** 应具有允许输入有效 PUK 的尝试次数。
 
     如果在 MB 设备或 SIM 被阻止的情况下出现 PIN 阻止结果，微型端口驱动程序必须发送事件通知，并将 **ReadyState** 设置为 **WwanReadyStateDeviceLocked**。
 
@@ -104,7 +103,7 @@ ms.locfileid: "89217278"
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [OID \_ WWAN \_ PIN](oid-wwan-pin.md)

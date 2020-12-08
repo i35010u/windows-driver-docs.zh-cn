@@ -1,7 +1,6 @@
 ---
 title: 'NonPnPDrvPowerPolicyOwnerAPI 规则 (kmdf) '
 description: NonPnPDrvPowerPolicyOwnerAPI 规则指定非 PnP 驱动程序无法调用与电源管理相关的特定 DDIs。
-ms.assetid: d15211d2-cf53-4b60-bd26-a6c82d50bd42
 ms.date: 05/21/2018
 keywords:
 - 'NonPnPDrvPowerPolicyOwnerAPI 规则 (kmdf) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: edeb16b9e61dc1046d8883856cf2af5933a64e64
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 13a549f72a6d34d0723b9e89e16d9123868d7efe
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90106160"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96824621"
 ---
 # <a name="nonpnpdrvpowerpolicyownerapi-rule-kmdf"></a>NonPnPDrvPowerPolicyOwnerAPI 规则 (kmdf) 
 
 
-**NonPnPDrvPowerPolicyOwnerAPI**规则指定非 PnP 驱动程序无法调用与电源管理相关的特定 DDIs。
+**NonPnPDrvPowerPolicyOwnerAPI** 规则指定非 PnP 驱动程序无法调用与电源管理相关的特定 DDIs。
 
 如果驱动程序未注册 [*EvtDriverDeviceAdd*](/windows-hardware/drivers/ddi/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add) 回调函数，则不能调用以下 DDIs：
 

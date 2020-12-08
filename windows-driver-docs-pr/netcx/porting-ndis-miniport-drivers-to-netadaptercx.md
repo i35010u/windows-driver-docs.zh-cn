@@ -1,18 +1,17 @@
 ---
 title: 将 NDIS 微型端口驱动程序移植到 NetAdapterCx
 description: 将 NDIS 微型端口驱动程序移植到 NetAdapterCx
-ms.assetid: F5C798C6-B746-43CB-BF63-DBA7DD0975ED
 keywords:
 - 将微型端口驱动程序移植到网络适配器类扩展，并将其移植到网络适配器 WDF 类扩展，将 NDIS 1.x 移植到 NetAdapterCx
 ms.date: 01/22/2019
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 34b80c1a9593e33dd8159e4278832dcbdaa8911a
-ms.sourcegitcommit: a3ccb07628a9cd8936d7f88f4aab8faf9379cae5
+ms.openlocfilehash: 510238f98bf18ee5bbf513a267b2f2116ba4255a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92088113"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96825557"
 ---
 # <a name="porting-ndis-miniport-drivers-to-netadaptercx"></a>将 NDIS 微型端口驱动程序移植到 NetAdapterCx
 
@@ -57,7 +56,7 @@ ms.locfileid: "92088113"
 
 ## <a name="driver-initialization"></a>驱动程序初始化
 
-从[*DriverEntry*](../wdf/driverentry-for-kmdf-drivers.md)中删除对[**NdisMRegisterMiniportDriver**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismregisterminiportdriver)的调用，并添加以下内容：
+从 [*DriverEntry*](../wdf/driverentry-for-kmdf-drivers.md)中删除对 [**NdisMRegisterMiniportDriver**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismregisterminiportdriver)的调用，并添加以下内容：
 
 ```C++
 WDF_DRIVER_CONFIG_INIT(&config, EvtDriverDeviceAdd);
@@ -67,15 +66,15 @@ if (!NT_SUCCESS(status)) {
 }
 ```
 
-如果已设置，则从对[**WdfDriverCreate**](/windows-hardware/drivers/ddi/wdfdriver/nf-wdfdriver-wdfdrivercreate)的调用中删除**WdfDriverInitNoDispatchOverride**标志。
+如果已设置，则从对 [**WdfDriverCreate**](/windows-hardware/drivers/ddi/wdfdriver/nf-wdfdriver-wdfdrivercreate)的调用中删除 **WdfDriverInitNoDispatchOverride** 标志。
 
-*DriverUnload* 是 WDF 网络客户端驱动程序的可选例程，因此可以根据需要将其删除。 不要从*DriverUnload*调用[**NdisMDeregisterMiniportDriver**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismderegisterminiportdriver) 。
+*DriverUnload* 是 WDF 网络客户端驱动程序的可选例程，因此可以根据需要将其删除。 不要从 *DriverUnload* 调用 [**NdisMDeregisterMiniportDriver**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismderegisterminiportdriver) 。
 
 ## <a name="device-initialization"></a>设备初始化
 
 接下来，你要将 *MiniportInitializeEx* 中的代码分发到适当的 WDF 事件回调处理程序中，其中几个是可选的。 有关回调序列的详细信息，请参阅 [网络适配器 WDF 客户端驱动程序的启动顺序](power-up-sequence-for-a-netadaptercx-client-driver.md)。
 
-当你启动网络适配器时，但在调用[**NetAdapterStart**](/windows-hardware/drivers/ddi/netadapter/nf-netadapter-netadapterstart)之前，你将调用等效于[**NdisMSetMiniportAttributes**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismsetminiportattributes)的方法。 但是，客户端驱动程序将调用不同的功能来设置不同类型的功能，而不是使用泛型 [**NDIS_MINIPORT_ADAPTER_ATTRIBUTES**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_miniport_adapter_attributes) 结构调用一个例程。
+当你启动网络适配器时，但在调用 [**NetAdapterStart**](/windows-hardware/drivers/ddi/netadapter/nf-netadapter-netadapterstart)之前，你将调用等效于 [**NdisMSetMiniportAttributes**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismsetminiportattributes)的方法。 但是，客户端驱动程序将调用不同的功能来设置不同类型的功能，而不是使用泛型 [**NDIS_MINIPORT_ADAPTER_ATTRIBUTES**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_miniport_adapter_attributes) 结构调用一个例程。
 
 有关回调的信息，需要提供和何时启动网络适配器，请参阅 [设备和适配器初始化](device-and-adapter-initialization.md)。
 
@@ -91,7 +90,7 @@ if (!NT_SUCCESS(status)) {
 
 下面是在 WDF 网络客户端驱动程序中执行此操作的两种方法。
 
-最简单的方法是通过从客户端的[*EVT_WDF_DRIVER_DEVICE_ADD*](/windows-hardware/drivers/ddi/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)回调调用[**WdfControlDeviceInitAllocate**](/windows-hardware/drivers/ddi/wdfcontrol/nf-wdfcontrol-wdfcontroldeviceinitallocate)来创建控制设备对象。 有关详细信息，请参阅 [使用控制设备对象](../wdf/using-control-device-objects.md)。
+最简单的方法是通过从客户端的 [*EVT_WDF_DRIVER_DEVICE_ADD*](/windows-hardware/drivers/ddi/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)回调调用 [**WdfControlDeviceInitAllocate**](/windows-hardware/drivers/ddi/wdfcontrol/nf-wdfcontrol-wdfcontroldeviceinitallocate)来创建控制设备对象。 有关详细信息，请参阅 [使用控制设备对象](../wdf/using-control-device-objects.md)。
 
 但是，建议的解决方法是创建设备接口，如 [使用设备接口](../wdf/using-device-interfaces.md)中所述。
 
@@ -139,8 +138,8 @@ WDF 客户端驱动程序不会收到电源状态更改的 [**OID_PNP_SET_POWER*
   * [**NET_PACKET_FRAGMENT**](/windows-hardware/drivers/ddi/netpacket/ns-netpacket-_net_packet_fragment)类似于 (MDL) 的内存描述符列表。 每个 [**NET_PACKET**](/windows-hardware/drivers/ddi/netpacket/ns-netpacket-_net_packet) 都有一个或多个。
   * 有关替换结构以及如何使用它们的详细信息，请参阅 [数据包描述符和扩展](packet-descriptors-and-extensions.md)。
 * 在 NDIS 1.x 中，微型端口需要处理开始和暂停语义。 在 NetAdapterCx 模型中，这种情况并不是这样。
-* [*EVT_RXQUEUE_ADVANCE*](/windows-hardware/drivers/ddi/netrxqueue/nc-netrxqueue-evt_rxqueue_advance)回调类似于 NDIS 1.x 中[**MINIPORT_RETURN_NET_BUFFER_LISTS**](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_return_net_buffer_lists) 。
-* [*EVT_TXQUEUE_ADVANCE*](/windows-hardware/drivers/ddi/nettxqueue/nc-nettxqueue-evt_txqueue_advance)回调类似于 NDIS 1.x 中[**MINIPORT_SEND_NET_BUFFER_LISTS**](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_send_net_buffer_lists) 。
+* [*EVT_RXQUEUE_ADVANCE*](/windows-hardware/drivers/ddi/netrxqueue/nc-netrxqueue-evt_rxqueue_advance)回调类似于 NDIS 1.x 中 [**MINIPORT_RETURN_NET_BUFFER_LISTS**](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_return_net_buffer_lists) 。
+* [*EVT_TXQUEUE_ADVANCE*](/windows-hardware/drivers/ddi/nettxqueue/nc-nettxqueue-evt_txqueue_advance)回调类似于 NDIS 1.x 中 [**MINIPORT_SEND_NET_BUFFER_LISTS**](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_send_net_buffer_lists) 。
 
 ## <a name="device-removal"></a>设备删除
 
@@ -162,8 +161,8 @@ WDF 客户端无需删除它创建的 Get-netadapter 或任何数据路径队列
 
 请参阅 [调试 NetAdapterCx 客户端驱动程序](debugging-a-netadaptercx-client-driver.md)。
 
-[！ Ndiskd get-netadapter](../debugger/-ndiskd-netadapter.md)调试程序扩展显示了与 NDIS 6 驱动程序的结果类似的**结果。**
+[！ Ndiskd get-netadapter](../debugger/-ndiskd-netadapter.md)调试程序扩展显示了与 NDIS 6 驱动程序的结果类似的 **结果。**
 
-## <a name="conclusion"></a>结论
+## <a name="conclusion"></a>结束语
 
 使用本主题中的步骤，应该有一个可启动和停止设备的工作驱动程序。

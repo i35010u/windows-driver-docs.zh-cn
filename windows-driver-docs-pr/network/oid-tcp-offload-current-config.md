@@ -1,17 +1,16 @@
 ---
 title: OID_TCP_OFFLOAD_CURRENT_CONFIG
 description: 本主题介绍) OID_TCP_OFFLOAD_CURRENT_CONFIG 对象标识符 (OID。
-ms.assetid: 8DC81A41-1E4D-4F78-80D1-54C79F974CE3
 keywords:
 - OID_TCP_OFFLOAD_CURRENT_CONFIG，WDK Oid，WDK 网络对象标识符，WDK 网络 Oid
 ms.date: 02/27/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 59508d71818fb784805e8e9d134d93b6f54ebee0
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 7d94abac99621857a01284b4eee51fead2cc08ad
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89213766"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96825413"
 ---
 # <a name="oid_tcp_offload_current_config"></a>OID_TCP_OFFLOAD_CURRENT_CONFIG
 
@@ -23,7 +22,7 @@ ms.locfileid: "89213766"
 
 NDIS 处理微型端口驱动程序的此 OID。 微型端口驱动程序报告微型端口适配器卸载功能到 NDIS。 有关从微型端口驱动程序将任务卸载配置设置传递到 NDIS 以及从 NDIS 传递到过量驱动程序的信息，请参阅 NDIS_OFFLOAD。
 
-[NDIS_OID_REQUEST](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的**InformationBuffer**成员包含[NDIS_OFFLOAD](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_offload)结构。 **NDIS_OFFLOAD**结构包含以下微型端口适配器功能：
+[NDIS_OID_REQUEST](/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的 **InformationBuffer** 成员包含 [NDIS_OFFLOAD](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_offload)结构。 **NDIS_OFFLOAD** 结构包含以下微型端口适配器功能：
 
 - 标头信息，其中包含任务卸载版本。
 - [NDIS_TCP_IP_CHECKSUM_OFFLOAD](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_tcp_ip_checksum_offload)结构中的校验和卸载信息。
@@ -37,7 +36,7 @@ NDIS 处理微型端口驱动程序的此 OID。 微型端口驱动程序报告�
 
 小型端口驱动程序应在初始化期间自动启用所有任务卸载功能。
 
-### <a name="see-also"></a>另请参阅
+### <a name="see-also"></a>请参阅
 
 [NDIS_IPSEC_OFFLOAD_V1](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_ipsec_offload_v1)  
 [NDIS_OFFLOAD](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_offload)  

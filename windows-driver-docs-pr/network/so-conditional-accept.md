@@ -1,16 +1,15 @@
 ---
 title: SO_CONDITIONAL_ACCEPT
 description: SO_CONDITIONAL_ACCEPT
-ms.assetid: 8aaaa08b-b239-4648-8c4f-8db2efbda551
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 SO_CONDITIONAL_ACCEPT 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 0f8c712b5578f63b20186a80e3825db7837a60d9
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: fb0842bce7b3a5b23f82079b5621cf90336e0600
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89213740"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96825009"
 ---
 # <a name="so_conditional_accept"></a>SO \_ 条件 \_ 接受
 
@@ -29,7 +28,7 @@ ms.locfileid: "89213740"
 <thead>
 <tr class="header">
 <th>参数</th>
-<th>值</th>
+<th>“值”</th>
 </tr>
 </thead>
 <tbody>
@@ -81,7 +80,7 @@ ms.locfileid: "89213740"
 <thead>
 <tr class="header">
 <th>参数</th>
-<th>值</th>
+<th>“值”</th>
 </tr>
 </thead>
 <tbody>

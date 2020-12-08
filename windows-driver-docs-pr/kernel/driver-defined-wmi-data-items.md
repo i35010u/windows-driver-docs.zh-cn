@@ -1,7 +1,6 @@
 ---
 title: 驱动程序定义的 WMI 数据项
 description: 驱动程序定义的 WMI 数据项
-ms.assetid: 97b64571-95ff-4d61-9fa0-5690e9f29345
 keywords:
 - 数据类型 WDK WMI
 - embedded 类 WDK WMI
@@ -12,12 +11,12 @@ keywords:
 - WMI WDK 内核，类
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6f5ca4b872661af512d1727bf11fbb8cd2fe3306
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 23fd7cf403da7e6617e5cecb406711b7294b94b4
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89192705"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96825911"
 ---
 # <a name="driver-defined-wmi-data-items"></a>驱动程序定义的 WMI 数据项
 
@@ -33,9 +32,9 @@ WMI 数据或事件块的类定义中的数据项可以是以下项之一：
 
 -   基本数据类型或嵌入类的固定长度或可变长度数组。
 
-将数据块发送到 WMI 时，驱动程序必须将块的开头与8字节边界对齐。 块中的所有后续数据项必须与数据类型的相应对齐方式对齐。 **布尔值**或**uint8**应在1字节边界上对齐。 **Sint16**、 **uint16**或**string**项应在2字节边界上对齐，依此类推。 数组应基于数组的基类型对齐。 字节数组应在字节边界上对齐，uint64 数组应在8字节边界上对齐，依此类推。 嵌入类应根据嵌入类的自然对齐方式对齐，该嵌入类定义为嵌入类中的最大元素。 例如，如果嵌入类具有 **uint64**，则类应在8字节边界上对齐。 WMI 数据项对齐遵循与 Microsoft C 编译器上的 **了/zp8** 开关相同的约定。
+将数据块发送到 WMI 时，驱动程序必须将块的开头与8字节边界对齐。 块中的所有后续数据项必须与数据类型的相应对齐方式对齐。 **布尔值** 或 **uint8** 应在1字节边界上对齐。 **Sint16**、 **uint16** 或 **string** 项应在2字节边界上对齐，依此类推。 数组应基于数组的基类型对齐。 字节数组应在字节边界上对齐，uint64 数组应在8字节边界上对齐，依此类推。 嵌入类应根据嵌入类的自然对齐方式对齐，该嵌入类定义为嵌入类中的最大元素。 例如，如果嵌入类具有 **uint64**，则类应在8字节边界上对齐。 WMI 数据项对齐遵循与 Microsoft C 编译器上的 **了/zp8** 开关相同的约定。
 
-驱动程序编写器不一定必须在所需的项 **InstanceName** 和 **Active**块中定义数据项。 例如，空事件块可以用作事件发生的通知，而无需额外的数据。 或者，数据块可能只是枚举实例名称以响应 [**IRP \_ MN \_ 查询 \_ 所有 \_ 数据**](./irp-mn-query-all-data.md) 请求。
+驱动程序编写器不一定必须在所需的项 **InstanceName** 和 **Active** 块中定义数据项。 例如，空事件块可以用作事件发生的通知，而无需额外的数据。 或者，数据块可能只是枚举实例名称以响应 [**IRP \_ MN \_ 查询 \_ 所有 \_ 数据**](./irp-mn-query-all-data.md) 请求。
 
 下表列出了可用于在 WMI 数据或事件块中定义项的 MOF 数据类型。 有关 MOF 数据类型的详细信息，请参阅 Microsoft Windows SDK。
 
@@ -89,7 +88,7 @@ WMI 数据或事件块的类定义中的数据项可以是以下项之一：
 <td><p>4</p></td>
 </tr>
 <tr class="even">
-<td><p>uint32</p></td>
+<td><p><strong>uint32</strong></p></td>
 <td><p>无符号的 32 位整数</p></td>
 <td><p>4</p></td>
 </tr>
@@ -99,7 +98,7 @@ WMI 数据或事件块的类定义中的数据项可以是以下项之一：
 <td><p>8</p></td>
 </tr>
 <tr class="even">
-<td><p>uint64</p></td>
+<td><p><strong>uint64</strong></p></td>
 <td><p>无符号 64 位整数</p></td>
 <td><p>8</p></td>
 </tr>

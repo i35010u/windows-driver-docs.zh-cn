@@ -1,36 +1,35 @@
 ---
-title: 如何启用调试而无需启动 ETW 跟踪会话
-description: 如何启用调试而无需启动 ETW 跟踪会话
-ms.assetid: d0487973-c66a-4ede-bc94-2e7e2060ab54
+title: 如何实现在不启动 ETW 跟踪会话的情况下启用调试
+description: 如何实现在不启动 ETW 跟踪会话的情况下启用调试
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 072381d0cf6574056d28cb08088db4b944dec515
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 14b259c8c9ab344f7296ae81e56487d6912cea3e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63359473"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96826123"
 ---
 # <a name="how-do-i-enable-debugging-without-starting-an-etw-trace-session"></a>如何在不启动 ETW 跟踪会话的情况下启用调试？
 
 
-若要调试的问题，而无需启动 ETW 跟踪会话，添加**WPP\_调试**对源代码的宏定义。
+若要在不启动 ETW 跟踪会话的情况下调试问题，请在源代码中添加一个 **WPP \_ 调试** 宏定义。
 
-下面是有关 WDK Tracedrv.sys 示例驱动程序示例：
+下面是 WDK Tracedrv.sys 示例驱动程序的示例：
 
 ```
 #define WPP_DEBUG(b) DbgPrint b, DbgPrint("\n")
 ```
 
-可用于大多数格式和参数**WPP\_调试**。 但是，不能使用扩展的格式规范，如 %！HEXDUMP ！ %，此宏。
+大多数格式和参数可与 **WPP \_ 调试** 一起使用。 但是，不能使用扩展格式规范，例如%！此宏的 HEXDUMP！%。
 
-另请参阅[如何将跟踪消息发送给用户模式下调试程序？](how-do-i-send-trace-messages-to-a-user-mode-debugger-.md)。
+另请参阅 [如何实现将跟踪消息发送到用户模式调试器？](how-do-i-send-trace-messages-to-a-user-mode-debugger-.md)。
 
-### <a name="span-idwhenusingthekerneldebuggerspanspan-idwhenusingthekerneldebuggerspanwhen-using-the-kernel-debugger"></a><span id="when_using_the_kernel_debugger"></span><span id="WHEN_USING_THE_KERNEL_DEBUGGER"></span>使用内核调试程序时
+### <a name="span-idwhen_using_the_kernel_debuggerspanspan-idwhen_using_the_kernel_debuggerspanwhen-using-the-kernel-debugger"></a><span id="when_using_the_kernel_debugger"></span><span id="WHEN_USING_THE_KERNEL_DEBUGGER"></span>使用内核调试器时
 
-如果使用的内核调试程序，设置 WPP 控制结构的级别和标志值。
+如果使用的是内核调试器，请为 WPP 控件结构设置级别和标志值。
 
-1.  找到 WPP 控制结构的地址，如下所示：
+1.  找到 WPP 控件结构的地址，如下所示：
     ```
      kd>   x tracedrv!WPP_MAIN_CB    // tracedrv is the WPP instrumented driver
     9fbf3040 tracedrv!WPP_MAIN_CB = union WPP_PROJECT_CONTROL_BLOCK [1]
@@ -46,7 +45,7 @@ ms.locfileid: "63359473"
     +0x020 Flags : [1] 0x0  <--- Set the Flag
     ```
 
-2.  设置为级别的值**5**和到标志**0xf**，按如下所示：
+2.  将级别的值设置为 **5** ，将标志设置为 **0xf**，如下所示：
     ```
     kd>eb 9fbf305d 5    // setting the level value to 5
     ```
@@ -55,7 +54,7 @@ ms.locfileid: "63359473"
     kd>ed 9fbf3060 0xf    // setting the flag value to 0xf
     ```
 
-3.  （Windows Vista 和更高版本的 Windows）启用要接收的消息，如下所示的筛选器掩码：
+3.   (Windows Vista 和更高版本的 Windows) 启用筛选器掩码来接收消息，如下所示：
     ```
     kd>ed nt!Kd_DEFAULT_Mask 0xff
     ```

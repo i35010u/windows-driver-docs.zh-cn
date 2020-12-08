@@ -1,15 +1,14 @@
 ---
 title: WIA 微型驱动程序接口
 description: WIA 微型驱动程序接口
-ms.assetid: 6d069584-f9e1-4312-b8f2-1ef3d518faeb
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 350eff53532c509c19b7385906eec0b5c8263f08
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 247e53432d996afad3c0b99631c71bd43319e3ca
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89187963"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96826481"
 ---
 # <a name="wia-minidriver-interfaces"></a>WIA 微型驱动程序接口
 
@@ -21,7 +20,7 @@ WIA 微型驱动程序是实现标准 **IUnknown** COM 接口 (的 com 对象，
 
 ### <a name="istiusd-interface"></a>IStiUSD 接口
 
-在*Stiusd*中定义的**IStiUSD**接口执行以下操作：
+在 *Stiusd* 中定义的 **IStiUSD** 接口执行以下操作：
 
 -   WIA 服务首次加载时初始化驱动程序。
 
@@ -31,7 +30,7 @@ WIA 微型驱动程序是实现标准 **IUnknown** COM 接口 (的 com 对象，
 
 ### <a name="iwiaminidrv-interface"></a>IWiaMiniDrv 接口
 
-在*Wiamindr*中定义的**IWiaMiniDrv**接口会公开大多数 WIA 微型驱动程序的功能。 此接口执行以下操作：
+在 *Wiamindr* 中定义的 **IWiaMiniDrv** 接口会公开大多数 WIA 微型驱动程序的功能。 此接口执行以下操作：
 
 -   定义静止图像设备的默认设置和当前设置。
 

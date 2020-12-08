@@ -1,31 +1,30 @@
 ---
-title: 若要移植到 NDIS 6.30 中间驱动程序的更改摘要
-description: 若要更新的 NDIS 6.x 中间 (IM) 驱动程序以支持 NDIS 6.30，您必须修改以下各节中所述。
-ms.assetid: 02FAC8B2-16B1-49C2-8B3A-29535A698CEA
+title: 将中间驱动程序移植到 NDIS 6.30 的更改摘要
+description: 若要更新 NDIS 1.x 中间 (IM) 驱动程序以支持 NDIS 6.30，必须按照以下各节中所述修改它。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 006c3baf552407484f36085a8b9c8f53044e61e7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5c753ee540eedbd09fbbf503856d08e3b102cb3f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63376917"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96825405"
 ---
 # <a name="summary-of-changes-required-to-port-an-intermediate-driver-to-ndis-630"></a>将中间驱动程序移植到 NDIS 6.30 所要做出的更改摘要
 
 
-若要更新的 NDIS 6.x 中间 (IM) 驱动程序以支持 NDIS 6.30，您必须修改以下各节中所述。
+若要更新 NDIS 1.x 中间 (IM) 驱动程序以支持 NDIS 6.30，必须按照以下各节中所述修改它。
 
-## <a name="build-environment"></a>构建环境
-
-
--   替换为预处理器定义 NDIS60 或 NDIS61 或 NDIS620，如果存在，NDIS630。
--   更新的主版本号和次的 NDIS 版本编号在 NDIS\_*Xxx*\_驱动程序\_特征结构中所述[实现 NDIS 6.30 驱动程序](implementing-an-ndis-6-30-driver.md).
-
-## <a name="general-porting-requirements"></a>移植的一般要求
+## <a name="build-environment"></a>生成环境
 
 
--   除外另行，协议驱动程序和微型端口驱动程序的更改也适用于中间驱动程序。 有关移植这些驱动程序的详细信息，请参阅[摘要的更改所需端口的协议或筛选器驱动程序添加到 NDIS 6.30](summary-of-changes-required-to-port-a-protocol-or-filter-driver-to-ndis-6-30.md)和[摘要的更改所需移植到 NDIS 6.30微型端口驱动程序](summary-of-changes-required-to-port-a-miniport-driver-to-ndis-6-30.md).
+-   将预处理器定义 NDIS60 或 NDIS61 或 NDIS620 （如果存在）替换为 NDIS630。
+-   \_*Xxx* \_ \_ 如 [实现 ndis 6.30 驱动程序](implementing-an-ndis-6-30-driver.md)中所述，在 ndis Xxx 驱动程序特征结构中更新主要和次要的 ndis 版本号。
+
+## <a name="general-porting-requirements"></a>一般移植要求
+
+
+-   除非另外注明，否则协议驱动程序和微型端口驱动程序更改也适用于中间驱动程序。 有关移植这些驱动程序的详细信息，请参阅将 [协议或筛选器驱动程序移植到 ndis 6.30 所需的更改摘要](summary-of-changes-required-to-port-a-protocol-or-filter-driver-to-ndis-6-30.md) 和将 [微型端口驱动程序移植到 Ndis 6.30 所需的更改摘要](summary-of-changes-required-to-port-a-miniport-driver-to-ndis-6-30.md)。
 
  
 

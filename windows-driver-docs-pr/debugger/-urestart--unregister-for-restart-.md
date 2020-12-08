@@ -1,9 +1,8 @@
 ---
 title: .urestart（取消注册以重启）
-description: .Urestart 命令取消注册在重新启动或应用程序故障情况下重新启动调试会话。
-ms.assetid: B3881CD6-F5F4-40E2-B0E1-BAC7D19E8724
+description: 如果重新启动或应用程序发生故障，则 urestart 命令将取消注册调试会话以进行重新启动。
 keywords:
-- .urestart （重新启动注销） Windows 调试
+- urestart (注销以重新启动) Windows 调试
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 942454edeed08033bfb217a4020ce894f1e52b37
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b26aa820c534a660b91da87b6dc74752d94ed707
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63335676"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96825253"
 ---
 # <a name="urestart-unregister-for-restart"></a>.urestart（取消注册以重启）
 
 
-**.Urestart**命令取消注册在重新启动或应用程序故障情况下重新启动调试会话。
+如果重新启动或应用程序发生故障，则 **urestart** 命令将取消注册调试会话以进行重新启动。
 
 ```dbgcmd
 .urestart
@@ -31,9 +30,9 @@ ms.locfileid: "63335676"
 <a name="remarks"></a>备注
 -------
 
-此命令的提升的调试器会话不起作用。
+此命令不适用于提升的调试器会话。
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
 [**.rrestart**](-rrestart--register-for-restart-.md)

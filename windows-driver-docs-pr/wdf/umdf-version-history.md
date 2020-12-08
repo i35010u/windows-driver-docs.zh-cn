@@ -1,7 +1,6 @@
 ---
 title: UMDF 版本历史记录
-description: 本主题列出了用户模式驱动程序框架的版本 (UMDF) 、相应版本的 Windows 操作系统以及在每个版本中所做的更改。
-ms.assetid: f3e895c6-6801-4033-adaa-d7d04a46db0a
+description: 本主题列出了 User-Mode Driver Framework 的版本 (UMDF) 、相应版本的 Windows 操作系统以及在每个版本中所做的更改。
 keywords:
 - UMDF WDK，修订历史记录
 - UMDF WDK，版本信息
@@ -10,17 +9,17 @@ keywords:
 ms.date: 04/28/2020
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 12a42817590c870ba16c8e99a89324019e3d29ce
-ms.sourcegitcommit: e6d80e33042e15d7f2b2d9868d25d07b927c86a0
+ms.openlocfilehash: b098ae28b63b0c51e16ff97b7209f2070318b063
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91733011"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96824861"
 ---
 # <a name="umdf-version-history"></a>UMDF 版本历史记录
 
 
-本主题列出了用户模式驱动程序框架的版本 (UMDF) 、相应版本的 Windows 操作系统以及在每个版本中所做的更改。
+本主题列出了 User-Mode Driver Framework 的版本 (UMDF) 、相应版本的 Windows 操作系统以及在每个版本中所做的更改。
 
 下表显示了 UMDF 库的发行历史记录：
 
@@ -35,11 +34,11 @@ ms.locfileid: "91733011"
 |2.19|Windows 10，版本 1607 WDK|Windows 10 版本 1607 (周年更新，Redstone 1) |Windows 10，版本1607，Windows Server 2016 及更高版本|
 |2.17|Windows 10，版本 1511 WDK|Windows 10 版本 1511 (11 月更新，阈值 2) |Windows 10，版本1511，Windows Server 2016 及更高版本|
 |2.15|Windows 10 WDK|Windows 10，版本 1507 (阈值 1) |Windows 10，版本1507，Windows Server 2016 及更高版本|
-|2.0|Windows 驱动程序工具包 (WDK) 8。1|Windows 8.1|Windows 8.1 及更高版本|
-|1.11|Windows 驱动程序工具包 (WDK) 8|Windows 8|Windows Vista 及更高版本|
-|1.9|Windows 7 WDK|Windows 7|Windows XP 及更高版本|
-|1.7|Windows Server 2008 WDK|Windows Vista Service Pack 1 (SP1) 、Windows Server 2008|Windows XP 及更高版本|
-|1.5|Windows Vista WDK|Windows Vista|Windows XP 及更高版本|
+|2.0|Windows 驱动程序工具包 (WDK) 8。1|Windows 8.1|Windows 8.1 及更高版本|
+|1.11|Windows 驱动程序工具包 (WDK) 8|Windows 8|Windows Vista 及更高版本|
+|1.9|Windows 7 WDK|Windows 7|Windows XP 及更高版本|
+|1.7|Windows Server 2008 WDK|Windows Vista Service Pack 1 (SP1) 、Windows Server 2008|Windows XP 及更高版本|
+|1.5|Windows Vista WDK|Windows Vista|Windows XP 及更高版本|
 
 
 可以将 Windows 驱动程序工具包与 Microsoft Visual Studio 2017 (WDK) 一起使用，以生成在 Windows 7 和更高版本上运行的驱动程序。
@@ -96,7 +95,7 @@ UMDF 版本2.19 没有更改或添加。
 
 下面是版本2.15 的已更新 DDIs 列表：
 
--   使用新的 [**WdfDeviceOpenDevicemapKey**](/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceopendevicemapkey) 方法，驱动程序可以访问 **HKEY \_ 本地 \_ 计算机 \\ 硬件 \\ DEVICEMAP**下的子项和值。
+-   使用新的 [**WdfDeviceOpenDevicemapKey**](/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceopendevicemapkey) 方法，驱动程序可以访问 **HKEY \_ 本地 \_ 计算机 \\ 硬件 \\ DEVICEMAP** 下的子项和值。
 
 -   UMDF 驱动程序可以调用 [**WdfIoTargetWdmGetTargetFileHandle**](/windows-hardware/drivers/ddi/wdfiotarget/nf-wdfiotarget-wdfiotargetwdmgettargetfilehandle) ，以便在其堆栈中获取下一个较低内核模式驱动程序的文件句柄。 驱动程序可以将数据写入该句柄，绕过框架用于向本地 i/o 目标发送 i/o 的抽象。
 
@@ -125,9 +124,9 @@ UMDF 版本2.19 没有更改或添加。
 
     有关扩展命令和框架适用性的列表，请参阅 [调试器扩展](debugger-extensions-for-kmdf-drivers.md)。
 
--   [框架的事件记录器](using-the-framework-s-event-logger.md)或正在进行的*记录器* (IFR) 已更新为适用于 UMDF 2.0 驱动程序。
+-   [框架的事件记录器](using-the-framework-s-event-logger.md)或正在进行的 *记录器* (IFR) 已更新为适用于 UMDF 2.0 驱动程序。
 -   其他 WDF 调试器扩展已更新为使用 UMDF 2.0 驱动程序。 有关扩展命令的完整列表，包括适用于哪个框架的信息，请参阅适用于 [WDF 驱动程序的调试器扩展](debugger-extensions-for-kmdf-drivers.md)。
--   已将 **WdfIoTargetOpenLocalTargetByFile** 添加到 [**WDF \_ IO \_ 目标 \_ 开放 \_ 类型**](/windows-hardware/drivers/ddi/wdfiotarget/ne-wdfiotarget-_wdf_io_target_open_type) ，以允许 UMDF 驱动程序将驱动程序创建的请求发送到需要关联文件对象的更低目标。 有关详细信息，请参阅 **WDF \_ IO \_ 目标 \_ 开放 \_ 类型**的备注。
+-   已将 **WdfIoTargetOpenLocalTargetByFile** 添加到 [**WDF \_ IO \_ 目标 \_ 开放 \_ 类型**](/windows-hardware/drivers/ddi/wdfiotarget/ne-wdfiotarget-_wdf_io_target_open_type) ，以允许 UMDF 驱动程序将驱动程序创建的请求发送到需要关联文件对象的更低目标。 有关详细信息，请参阅 **WDF \_ IO \_ 目标 \_ 开放 \_ 类型** 的备注。
 -   以下仅 UMDF 例程：
 
     -   [*EvtRequestImpersonate*](/windows-hardware/drivers/ddi/wdfrequest/nc-wdfrequest-evt_wdf_request_impersonate)
@@ -203,17 +202,17 @@ UMDF 版本2.19 没有更改或添加。
 
 -   [在 UMDF 驱动程序中使用设备池](using-device-pooling-in-umdf-drivers.md)
 
--   添加了**UmdfHostProcessSharing**、 **UmdfDirectHardwareAccess**、 **UmdfRegisterAccessMode**、 **UMDFFILEOBJECTPOLICY**和**UMDFFSCONTEXTUSEPOLICY**指令，如在[INF 文件中指定 WDF 指令](specifying-wdf-directives-in-inf-files.md)中所述
+-   添加了 **UmdfHostProcessSharing**、 **UmdfDirectHardwareAccess**、 **UmdfRegisterAccessMode**、 **UMDFFILEOBJECTPOLICY** 和 **UMDFFSCONTEXTUSEPOLICY** 指令，如在 [INF 文件中指定 WDF 指令](specifying-wdf-directives-in-inf-files.md)中所述
 
 -   [适用于 UMDF 驱动程序 (SID) 的已知安全标识符](controlling-device-access.md)
 
 -   统一的属性存储支持，在[基于 UMDF 的驱动程序中使用注册表](./using-the-registry-in-umdf-1-x-drivers.md)中所述
 
--   集成了[**plxntb**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetdeviceobjectpointer) ，可以使用 UMDF。 在以前的版本中，在对设备句柄进行引用后，此例程会关闭设备对象的句柄。 此行为与 UMDF 不兼容，因为在所有 i/o 都完成后才会发生设备对象上的清理请求。
+-   集成了 [**plxntb**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetdeviceobjectpointer) ，可以使用 UMDF。 在以前的版本中，在对设备句柄进行引用后，此例程会关闭设备对象的句柄。 此行为与 UMDF 不兼容，因为在所有 i/o 都完成后才会发生设备对象上的清理请求。
 
 -   [创建基于 UMDF 的 HID 微型驱动程序](creating-umdf-hid-minidrivers.md)
 
--   增强了对 [支持基于 UMDF 的驱动程序中的空闲电源](supporting-idle-power-down-in-umdf-drivers.md)的支持。 此框架现在可以使设备处于空闲超时期限到期时处于 D3cold 电源状态。 当系统恢复到其工作 (S0) 状态时，框架还可能会导致设备返回到其工作 (D0) 状态。
+-   增强了对 [支持基于 UMDF 的驱动程序中的空闲 Power-Down](supporting-idle-power-down-in-umdf-drivers.md)的支持。 此框架现在可以使设备处于空闲超时期限到期时处于 D3cold 电源状态。 当系统恢复到其工作 (S0) 状态时，框架还可能会导致设备返回到其工作 (D0) 状态。
 
 -   以下示例是 UMDF 1.11： [WudfVhidmini](/samples/browse/)， [NetNfpProvider](/samples/browse/)中的新示例。
 

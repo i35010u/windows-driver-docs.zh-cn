@@ -1,15 +1,14 @@
 ---
 title: 通过驱动程序写入 WIA 属性
 description: 通过驱动程序写入 WIA 属性
-ms.assetid: 6d2164ac-0fbc-4ecb-b3bf-a46efbe07f51
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 675192b36a806c1a034831461c46edf66ff55cbf
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 72d629f67afd0106403e744cf97ce24ff02974fd
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89190719"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96826331"
 ---
 # <a name="writing-wia-properties-by-a-driver"></a>通过驱动程序写入 WIA 属性
 

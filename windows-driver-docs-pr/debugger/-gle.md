@@ -1,7 +1,6 @@
 ---
 title: gle
 description: Gle 扩展显示当前线程的最后一个错误值。
-ms.assetid: bed3ce17-6860-421f-ae20-11faa50310ed
 keywords:
 - 线程，错误值
 - 错误值
@@ -14,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 96999935de0da5711fb8a36c647070d015c3a254
-ms.sourcegitcommit: b84d760d4b45795be12e625db1d5a4167dc2c9ee
+ms.openlocfilehash: 3d3e97d500a7c994a0669efd966a8311b2b5a5fe
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90716854"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96824767"
 ---
 # <a name="gle"></a>!gle
 
@@ -50,7 +49,7 @@ ms.locfileid: "90716854"
 Ext.dll Ntsdexts.dll</td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>Windows XP 及更高版本</strong></p></td>
+<td align="left"><p><strong>Windows XP 及更高版本</strong></p></td>
 <td align="left"><p>Ext.dll</p></td>
 </tr>
 </tbody>
@@ -65,7 +64,7 @@ Ext.dll Ntsdexts.dll</td>
 <a name="remarks"></a>备注
 -------
 
-**！ Gle** Extension 显示[**GetLastError**](/windows/win32/api/errhandlingapi/nf-errhandlingapi-getlasterror)的值，并尝试对此值进行解码。
+**！ Gle** Extension 显示 [**GetLastError**](/windows/win32/api/errhandlingapi/nf-errhandlingapi-getlasterror)的值，并尝试对此值进行解码。
 
 在内核模式下，仅当调试器可以读取线程环境块 (TEB) 时， **！ gle** 扩展才有效。
 

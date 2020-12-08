@@ -1,17 +1,16 @@
 ---
 title: GUID_NDIS_GEN_LINK_STATE
 description: 本主题描述了 NDIS WMI 接口的 GUID_NDIS_GEN_LINK_STATE GUID。
-ms.assetid: 0b0ebb57-33fb-4a18-b6e5-3f4300729280
 keywords:
 - GUID_NDIS_GEN_LINK_STATE，WDK GUID_NDIS_GEN_LINK_STATE 网络驱动程序
 ms.date: 11/22/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 48ce1994ee10eee5f4fd4c9ae6980cd17d676159
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: c5f6f66d6a856379e623be70052e68f4a131bea7
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89210781"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96825109"
 ---
 # <a name="guid_ndis_gen_link_state"></a>GUID_NDIS_GEN_LINK_STATE
 

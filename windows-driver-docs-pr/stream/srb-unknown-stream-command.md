@@ -1,9 +1,8 @@
 ---
-title: SRB\_未知\_流\_命令
-description: SRB\_未知\_流\_命令
-ms.assetid: 968a52ab-478e-4efe-ae8a-438ea3f7b71d
+title: SRB \_ UNKNOWN \_ STREAM \_ 命令
+description: SRB \_ UNKNOWN \_ STREAM \_ 命令
 keywords:
-- SRB_UNKNOWN_STREAM_COMMAND 流式处理媒体设备
+- SRB_UNKNOWN_STREAM_COMMAND 流媒体设备
 topic_type:
 - apiref
 api_name:
@@ -12,20 +11,20 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: db6dc736ef8c1d2ae2498b261fec65ac7d62a710
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6ced4a8033dd0d5f67727f60da7d4bddec777410
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63333991"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96824867"
 ---
-# <a name="srbunknownstreamcommand"></a>SRB\_未知\_流\_命令
+# <a name="srb_unknown_stream_command"></a>SRB \_ UNKNOWN \_ STREAM \_ 命令
 
 
 ## <span id="ddk_srb_unknown_stream_command_ks"></span><span id="DDK_SRB_UNKNOWN_STREAM_COMMAND_KS"></span>
 
 
-当类驱动程序收到流的类型不会处理 IRP 时，它将其提交给微型驱动程序与 SRB\_未知\_流\_命令代码。
+当类驱动程序为它不处理的类型的流接收 IRP 时，它会将其交给微型驱动程序，其中包含 SRB \_ 未知 \_ 流 \_ 命令代码。
 
  
 

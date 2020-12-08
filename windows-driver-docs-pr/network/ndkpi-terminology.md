@@ -1,15 +1,14 @@
 ---
 title: NDKPI 术语
 description: NDKPI 文档使用以下术语来描述 NDK 提供者和使用者。
-ms.assetid: 740A78B3-B7AD-4A8C-8097-D49B39BC9F47
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 20fe760f5e88b8a09f9620e52d7bf071ba6fbf24
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 0b7d29b2555e299172ba249bd61c07756f4de0d2
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90103422"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96825455"
 ---
 # <a name="ndkpi-terminology"></a>NDKPI 术语
 
@@ -59,7 +58,7 @@ NDK 对象的函数调度表中的 NDKPI 函数。 提供程序函数由 NDK 提
 ## <a name="parent-object"></a>父对象
 
 
-一个 NDK 对象，其函数调度表包含一个或多个 *NdkCreate*Xxx * * 提供程序函数以创建其他对象。 在 NDKPI 版本1.1 和1.2 中，有2个父对象：
+一个 NDK 对象，其函数调度表包含一个或多个 *NdkCreate* Xxx * * 提供程序函数以创建其他对象。 在 NDKPI 版本1.1 和1.2 中，有2个父对象：
 
 Ndk 适配器对象 ([**ndk \_ 适配器**](/windows-hardware/drivers/ddi/ndkpi/ns-ndkpi-_ndk_adapter)) 是的父级：
 
@@ -80,7 +79,7 @@ Ndk 保护域 (PD) 对象 ([**ndk \_ PD**](/windows-hardware/drivers/ddi/ndkpi/n
 ## <a name="child-object"></a>子对象
 
 
-一个 NDK 对象，该对象通过在父对象的调度表中调用 *NdkCreate*Xxx * * 提供程序函数之一来创建。
+一个 NDK 对象，该对象通过在父对象的调度表中调用 *NdkCreate* Xxx * * 提供程序函数之一来创建。
 
 ## <a name="antecedent-object"></a>前面的对象
 
@@ -140,11 +139,11 @@ Ndk 保护域 (PD) 对象 ([**ndk \_ PD**](/windows-hardware/drivers/ddi/ndkpi/n
 
 本地地址和 NetworkDirect 端口号的隐式或显式表示形式，用于标识可在其上启动或接受连接的本地点，例如，10.1.1.1：445：
 
--   [**Ndk \_ 侦听器**](/windows-hardware/drivers/ddi/ndkpi/ns-ndkpi-_ndk_listener)具有一个隐式终结点 (使用者在调用*NdkListen*时指定 ([*NDK \_ FN \_ 侦听*](/windows-hardware/drivers/ddi/ndkpi/nc-ndkpi-ndk_fn_listen)) # A3。
--   通过调用*NdkConnect*连接的[**Ndk \_ 连接器**](/windows-hardware/drivers/ddi/ndkpi/ns-ndkpi-_ndk_connector) ([*ndk \_ FN \_ CONNECT*](/windows-hardware/drivers/ddi/ndkpi/nc-ndkpi-ndk_fn_connect)) 还具有一个隐式终结点。
+-   [**Ndk \_ 侦听器**](/windows-hardware/drivers/ddi/ndkpi/ns-ndkpi-_ndk_listener)具有一个隐式终结点 (使用者在调用 *NdkListen* 时指定 ([*NDK \_ FN \_ 侦听*](/windows-hardware/drivers/ddi/ndkpi/nc-ndkpi-ndk_fn_listen)) # A3。
+-   通过调用 *NdkConnect* 连接的 [**Ndk \_ 连接器**](/windows-hardware/drivers/ddi/ndkpi/ns-ndkpi-_ndk_connector) ([*ndk \_ FN \_ CONNECT*](/windows-hardware/drivers/ddi/ndkpi/nc-ndkpi-ndk_fn_connect)) 还具有一个隐式终结点。
 -   [**NDK \_ 共享 \_ 终结点**](/windows-hardware/drivers/ddi/ndkpi/ns-ndkpi-_ndk_shared_endpoint)表示显式终结点。 NDK 使用者直接创建终结点，并通过调用 *NdkConnectWithSharedEndpoint* ([*NDK \_ FN \_ CONNECT \_ WITH \_ SHARED \_ endpoint*](/windows-hardware/drivers/ddi/ndkpi/nc-ndkpi-ndk_fn_connect_with_shared_endpoint)) 来显式地使用它来启动一个或多个连接。
 
-**注意**   NDK 终结点与 NDSPI 版本 1 [**INDEndpoint**](/previous-versions/windows/desktop/cc904370(v=vs.85))接口或 NDSPI 版本 2 **INDQueuePair**接口不同。
+**注意**  NDK 终结点与 NDSPI 版本 1 [**INDEndpoint**](/previous-versions/windows/desktop/cc904370(v=vs.85)) 接口或 NDSPI 版本 2 **INDQueuePair** 接口不同。
 
  
 

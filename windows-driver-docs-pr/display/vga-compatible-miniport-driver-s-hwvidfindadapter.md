@@ -1,19 +1,18 @@
 ---
 title: VGA 兼容的微型端口驱动程序的 HwVidFindAdapter
 description: VGA 兼容的微型端口驱动程序的 HwVidFindAdapter
-ms.assetid: 4538e95f-e84d-434c-a674-e1d1d4e9e5a0
 keywords:
 - 视频微型端口驱动程序 WDK Windows 2000、VGA、HwVidFindAdapter
 - VGA WDK 视频微型端口，HwVidFindAdapter
 - HwVidFindAdapter
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: aca6994ad5af365514b88c21d4ca2229e2383b25
-ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
+ms.openlocfilehash: e2636fef3cf694a1badf6335fb79eae451ab83b9
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89067012"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96825169"
 ---
 # <a name="vga-compatible-miniport-drivers-hwvidfindadapter"></a>VGA 兼容的微型端口驱动程序的 HwVidFindAdapter
 
@@ -27,7 +26,7 @@ ms.locfileid: "89067012"
 
 -   **EmulatorAccessEntries**，指向包含给定数目的 [**仿真器 \_ 访问 \_ 入口**](/windows-hardware/drivers/ddi/miniport/ns-miniport-_emulator_access_entry)类型元素的静态数组，其中每个都描述了一系列从 V86 模拟器挂钩的 i/o 端口，并在默认情况下转发到 *SvgaHwIoPortXxx* 函数
 
-    每个条目都包含一个开始 i/o 地址、一个范围长度、要 (UCHAR、USHORT 或 ULONG) 捕获的访问大小、微型端口驱动程序是否支持通过 i/o 端口 (s) 输入或输出字符串数据，以及实际验证和传输数据的微型端口驱动程序的 *SvgaHwIoPortXxx* 函数。 每个 *SvgaHwIoPortXxx* 函数处理读取 ** (** 或 **代表 INSB/INSW/INSD**) 和/或写入 (**OUT** 或 **rep OUTSB/OUTSW/outsb**) 传输 UCHAR、USHORT 或 ULONG 大小的数据。
+    每个条目都包含一个开始 i/o 地址、一个范围长度、要 (UCHAR、USHORT 或 ULONG) 捕获的访问大小、微型端口驱动程序是否支持通过 i/o 端口 (s) 输入或输出字符串数据，以及实际验证和传输数据的微型端口驱动程序的 *SvgaHwIoPortXxx* 函数。 每个 *SvgaHwIoPortXxx* 函数处理读取 **(** 或 **代表 INSB/INSW/INSD**) 和/或写入 (**OUT** 或 **rep OUTSB/OUTSW/outsb**) 传输 UCHAR、USHORT 或 ULONG 大小的数据。
 
 -   **EmulatorAccessEntriesContext**，指向存储的指针（如微型端口驱动程序的设备扩展中的一个区域），其中微型端口驱动程序的 *SvgaHwIoPortXxx* 函数可以对需要验证的应用程序发出指令序列进行批处理
 

@@ -1,21 +1,20 @@
 ---
 title: OID_GEN_TRANSMIT_BLOCK_SIZE
-description: 为查询，OID_GEN_TRANSMIT_BLOCK_SIZE OID 指定最小的单个网络数据包占用的字节数中的 NIC 的传输缓冲区空间
-ms.assetid: 81874999-029a-4e7e-8dbe-fc8e34bcae67
+description: 作为查询，OID_GEN_TRANSMIT_BLOCK_SIZE OID 指定单个网络数据包在 NIC 的传输缓冲区空间中所占的最小字节数。
 ms.date: 08/08/2017
-keywords: -从 Windows Vista 开始 OID_GEN_TRANSMIT_BLOCK_SIZE 网络驱动程序
+keywords: -从 Windows Vista 开始 OID_GEN_TRANSMIT_BLOCK_SIZE 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 128b017418cbc9d1dc7f7d2c6464845acab3f235
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8b645245cd7ce0560c02ef3b31588e674b2b598a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63387888"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96825427"
 ---
-# <a name="oidgentransmitblocksize"></a>OID\_GEN\_传输\_阻止\_大小
+# <a name="oid_gen_transmit_block_size"></a>OID \_ 代 \_ 传输 \_ 块 \_ 大小
 
 
-为查询，OID\_GEN\_传输\_阻止\_大小 OID NIC 的传输缓冲区空间中指定的最小单个 net 数据包占用的字节数
+作为查询，OID \_ 代 \_ 传输 \_ 块 \_ 大小 OID 指定单个网络数据包在 NIC 的传输缓冲区空间中所占用的最小字节数。
 
 **版本信息**
 
@@ -37,9 +36,9 @@ ms.locfileid: "63387888"
 <a name="remarks"></a>备注
 -------
 
-OID\_GEN\_传输\_阻止\_大小 OID NIC 的传输缓冲区空间中指定的最小单个 net 数据包占用的字节数 例如，具有传输空间分割成 256 字节块 NIC 必须的传输块大小为 256 个字节。 若要计算此类 NIC 上的总传输缓冲空间，其驱动程序乘以的 NIC 上的传输缓冲区的数目及其传输块大小。
+OID \_ GEN \_ 传输 \_ 块 \_ 大小 OID 指定单个网络数据包在 NIC 的传输缓冲区空间中所占用的最小字节数。 例如，将传输空间划分为256字节块的 NIC 的传输块大小为256字节。 若要计算这种 NIC 上的总传输缓冲区空间，其驱动程序会按照传输块大小将 NIC 上的传输缓冲区数量相乘。
 
-对于其他的 Nic，传输块大小等同于其最大数据包大小。
+对于其他 Nic，传输块大小与它的最大数据包大小完全相同。
 
 <a name="requirements"></a>要求
 ------------
@@ -51,8 +50,8 @@ OID\_GEN\_传输\_阻止\_大小 OID NIC 的传输缓冲区空间中指定的最
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Header</p></td>
-<td>Ntddndis.h （包括 Ndis.h）</td>
+<td><p>标头</p></td>
+<td>Ntddndis (包含 Ndis .h) </td>
 </tr>
 </tbody>
 </table>

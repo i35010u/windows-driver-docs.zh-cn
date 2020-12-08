@@ -1,7 +1,6 @@
 ---
 title: usb3kd.xhci_resourceusage
 description: Usb3kd.xhci_resourceusage 扩展显示 USB 3.0 主机控制器使用的资源。
-ms.assetid: 6AAB64D6-3CDA-4BA2-BBA8-F2F5AD1DBB6F
 keywords:
 - usb3kd.xhci_resourceusage Windows 调试
 ms.date: 05/23/2017
@@ -12,12 +11,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 15431f2261a6266a4672d9f24874bcbf15d5d0f6
-ms.sourcegitcommit: ec7bebe3f94536455e62b372c2a28fe69d1717f7
+ms.openlocfilehash: 2dadf94376d3584299dfb2cb18b3cf3f10fbf9e6
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93349723"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96824717"
 ---
 # <a name="usb3kdxhci_resourceusage"></a>！ usb3kd. xhci \_ resourceusage
 

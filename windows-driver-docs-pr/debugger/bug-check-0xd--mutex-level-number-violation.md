@@ -1,9 +1,8 @@
 ---
-title: Bug Check 0xD MUTEX_LEVEL_NUMBER_VIOLATION
-description: MUTEX_LEVEL_NUMBER_VIOLATION bug 检查的值为 0x0000000D.This bug 检查极少出现。
-ms.assetid: beffa1ef-7499-44b9-90fb-0c8af7f0f2be
+title: Bug 检查 0xD MUTEX_LEVEL_NUMBER_VIOLATION
+description: MUTEX_LEVEL_NUMBER_VIOLATION bug 检查的值为0x0000000D。此 bug 检查很少出现。
 keywords:
-- Bug Check 0xD MUTEX_LEVEL_NUMBER_VIOLATION
+- Bug 检查 0xD MUTEX_LEVEL_NUMBER_VIOLATION
 - MUTEX_LEVEL_NUMBER_VIOLATION
 ms.date: 05/23/2017
 topic_type:
@@ -13,22 +12,22 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: f00548a37d243a1546a2a0befd9bdd01bc5f6c33
-ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
+ms.openlocfilehash: ef630cc545049f2b657e6a61d6b9629aeb262760
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67518890"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96825195"
 ---
-# <a name="bug-check-0xd-mutexlevelnumberviolation"></a>Bug 检查 0xD：MUTEX\_级别\_数\_冲突
+# <a name="bug-check-0xd-mutex_level_number_violation"></a>Bug 检查0xD：互斥 \_ 级别 \_ 号 \_ 冲突
 
 
-MUTEX\_级别\_数\_冲突错误检查的值为 0x0000000D。
+互斥 \_ 等级 \_ 编号 \_ 冲突检查的值为0x0000000D。
 
-检查此错误极少出现。
+此 bug 检查很少出现。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://www.windows.com/stopcode)。
+> 本主题面向程序员。 如果您是在使用计算机时收到蓝屏错误代码的客户，请参阅[蓝屏错误疑难解答](https://www.windows.com/stopcode)。
 
 
  

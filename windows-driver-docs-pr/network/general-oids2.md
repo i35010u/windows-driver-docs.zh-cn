@@ -1,15 +1,14 @@
 ---
 title: 常规 OID
 description: 常规 OID
-ms.assetid: fcd0e7fe-d1ab-4ec3-9c47-0bfb0ce63572
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 89b89ef11a43669583be3677038322f22981cf99
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 166e4b0986622a62976629889075854dca18c556
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90104422"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96825493"
 ---
 # <a name="general-oids"></a>常规 OID
 
@@ -29,72 +28,72 @@ ms.locfileid: "90104422"
 <tr class="header">
 <th align="left">支持</th>
 <th align="left">OID</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>必需</p></td>
+<td align="left"><p>必须</p></td>
 <td align="left"><p><a href="/windows-hardware/drivers/network/oid-gen-supported-list" data-raw-source="[OID_GEN_SUPPORTED_LIST](./oid-gen-supported-list.md)">OID_GEN_SUPPORTED_LIST</a></p></td>
 <td align="left"><p>支持的 Oid 列表。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>必需</p></td>
+<td align="left"><p>必须</p></td>
 <td align="left"><p><a href="/windows-hardware/drivers/network/oid-gen-hardware-status" data-raw-source="[OID_GEN_HARDWARE_STATUS](./oid-gen-hardware-status.md)">OID_GEN_HARDWARE_STATUS</a></p></td>
 <td align="left"><p>硬件状态。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>必需</p></td>
+<td align="left"><p>必须</p></td>
 <td align="left"><p><a href="/windows-hardware/drivers/network/oid-gen-media-supported" data-raw-source="[OID_GEN_MEDIA_SUPPORTED](./oid-gen-media-supported.md)">OID_GEN_MEDIA_SUPPORTED</a></p></td>
 <td align="left"><p>支持 (编码) 的媒体类型。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>必需</p></td>
+<td align="left"><p>必须</p></td>
 <td align="left"><p><a href="/windows-hardware/drivers/network/oid-gen-media-in-use" data-raw-source="[OID_GEN_MEDIA_IN_USE](./oid-gen-media-in-use.md)">OID_GEN_MEDIA_IN_USE</a></p></td>
 <td align="left"><p> (编码) 使用的媒体类型。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>必需</p></td>
+<td align="left"><p>必须</p></td>
 <td align="left"><p><a href="/windows-hardware/drivers/network/oid-gen-maximum-frame-size" data-raw-source="[OID_GEN_MAXIMUM_FRAME_SIZE](./oid-gen-maximum-frame-size.md)">OID_GEN_MAXIMUM_FRAME_SIZE</a></p></td>
 <td align="left"><p>帧大小的最大值（字节）。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>必需</p></td>
+<td align="left"><p>必须</p></td>
 <td align="left"><p><a href="/windows-hardware/drivers/network/oid-gen-link-speed" data-raw-source="[OID_GEN_LINK_SPEED](./oid-gen-link-speed.md)">OID_GEN_LINK_SPEED</a></p></td>
 <td align="left"><p>以 100 bps 为单位的链接速度。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>必需</p></td>
+<td align="left"><p>必须</p></td>
 <td align="left"><p><a href="/windows-hardware/drivers/network/oid-gen-transmit-block-size" data-raw-source="[OID_GEN_TRANSMIT_BLOCK_SIZE](./oid-gen-transmit-block-size.md)">OID_GEN_TRANSMIT_BLOCK_SIZE</a></p></td>
 <td align="left"><p>单个数据包在 NIC 的传输缓冲区空间中占据的最小存储量（以字节为单位）。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>必需</p></td>
+<td align="left"><p>必须</p></td>
 <td align="left"><p><a href="/windows-hardware/drivers/network/oid-gen-receive-block-size" data-raw-source="[OID_GEN_RECEIVE_BLOCK_SIZE](./oid-gen-receive-block-size.md)">OID_GEN_RECEIVE_BLOCK_SIZE</a></p></td>
 <td align="left"><p>单个数据包在 NIC 的接收缓冲区空间中占据的存储量（以字节为单位）。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>必需</p></td>
+<td align="left"><p>必须</p></td>
 <td align="left"><p><a href="/windows-hardware/drivers/network/oid-gen-vendor-id" data-raw-source="[OID_GEN_VENDOR_ID](./oid-gen-vendor-id.md)">OID_GEN_VENDOR_ID</a></p></td>
 <td align="left"><p>供应商 NIC 代码。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>必需</p></td>
+<td align="left"><p>必须</p></td>
 <td align="left"><p><a href="/windows-hardware/drivers/network/oid-gen-vendor-description" data-raw-source="[OID_GEN_VENDOR_DESCRIPTION](./oid-gen-vendor-description.md)">OID_GEN_VENDOR_DESCRIPTION</a></p></td>
 <td align="left"><p>供应商网卡说明。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>必需</p></td>
+<td align="left"><p>必须</p></td>
 <td align="left"><p><a href="/windows-hardware/drivers/network/oid-gen-vendor-driver-version" data-raw-source="[OID_GEN_VENDOR_DRIVER_VERSION](./oid-gen-vendor-driver-version.md)">OID_GEN_VENDOR_DRIVER_VERSION</a></p></td>
 <td align="left"><p>供应商分配的驱动程序的版本号。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>必需</p></td>
+<td align="left"><p>必须</p></td>
 <td align="left"><p><a href="/windows-hardware/drivers/network/oid-gen-current-packet-filter" data-raw-source="[OID_GEN_CURRENT_PACKET_FILTER](./oid-gen-current-packet-filter.md)">OID_GEN_CURRENT_PACKET_FILTER</a></p></td>
 <td align="left"><p>当前数据包筛选器 (编码) 。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>必需</p></td>
+<td align="left"><p>必须</p></td>
 <td align="left"><p><a href="/windows-hardware/drivers/network/oid-gen-maximum-total-size" data-raw-source="[OID_GEN_MAXIMUM_TOTAL_SIZE](./oid-gen-maximum-total-size.md)">OID_GEN_MAXIMUM_TOTAL_SIZE</a></p></td>
 <td align="left"><p>最大数据包总长度（以字节为单位）。</p></td>
 </tr>
@@ -109,7 +108,7 @@ ms.locfileid: "90104422"
 <td align="left"><p>有关基础物理介质的信息。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>必需</p></td>
+<td align="left"><p>必须</p></td>
 <td align="left"><p><a href="/windows-hardware/drivers/network/oid-gen-media-connect-status" data-raw-source="[OID_GEN_MEDIA_CONNECT_STATUS](./oid-gen-media-connect-status.md)">OID_GEN_MEDIA_CONNECT_STATUS</a></p></td>
 <td align="left"><p>NIC 网络连接的状态。</p></td>
 </tr>

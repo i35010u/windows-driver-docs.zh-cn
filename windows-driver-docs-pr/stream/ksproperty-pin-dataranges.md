@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ PIN \_ DATARANGES
 description: 客户端使用 KSPROPERTY \_ 引脚 \_ DATARANGES 属性来确定 pin 工厂实例化的 pin 支持的数据范围。
-ms.assetid: 90dd82c4-36a2-4fd3-b842-bbd9588a2740
 keywords:
 - KSPROPERTY_PIN_DATARANGES 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 47d0da8fe30f03f4adf6838b3a264ff69fce862c
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: fce00fbd71a22ac812f9a8886867ef792010a954
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90104822"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96825331"
 ---
 # <a name="ksproperty_pin_dataranges"></a>KSPROPERTY \_ PIN \_ DATARANGES
 
@@ -88,7 +87,7 @@ Stream 微型驱动程序不需要直接处理此属性;流类驱动程序使用
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSP \_ PIN**](/windows-hardware/drivers/ddi/ks/ns-ks-ksp_pin)

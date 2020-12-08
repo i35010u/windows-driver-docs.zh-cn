@@ -1,16 +1,15 @@
 ---
 title: OID_GEN_RSS_SET_INDIRECTION_TABLE_ENTRIES
 description: 本主题介绍 OID_GEN_RSS_SET_INDIRECTION_TABLE_ENTRIES
-ms.assetid: F59D861C-B7DB-4C28-8842-4FDBAE1B95F1
 keywords: OID_GEN_RSS_SET_INDIRECTION_TABLE_ENTRIES，OID_GEN_RSS_SET_INDIRECTION_TABLE_ENTRIES RSSv2
 ms.date: 10/11/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: dbde4d54c4542265966c105858324e34fecaa511
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: a92d4f2a91d9544a6fc5e16f31336c4a1b798170
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89206733"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96825451"
 ---
 # <a name="oid_gen_rss_set_indirection_table_entries"></a>OID_GEN_RSS_SET_INDIRECTION_TABLE_ENTRIES
 
@@ -39,7 +38,7 @@ OID_GEN_RSS_SET_INDIRECTION_TABLE_ENTRIES 使用 [NDIS_RSS_SET_INDIRECTION_ENTRI
 
 小型端口驱动程序应准备好处理在 [NDIS_NIC_SWITCH_CAPABILITIES](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_capabilities) 结构中播发时所需的最少数量的间接寻址表项移动操作。 这是在该结构的 **NumberOfIndirectionTableEntriesPerNonDefaultVPort** 或 **NumberOfIndirectionTableEntriesForDefaultVPort** 成员中定义的，或者是在本机 RSS 模式下的 **128** 中定义的。
 
-微型端口驱动程序应尝试执行尽可能多的条目，并将每个[NDIS_RSS_SET_INDIRECTION_ENTRY](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_rss_set_indirection_entry)的**EntryStatus**成员更新为操作结果。
+微型端口驱动程序应尝试执行尽可能多的条目，并将每个 [NDIS_RSS_SET_INDIRECTION_ENTRY](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_rss_set_indirection_entry)的 **EntryStatus** 成员更新为操作结果。
 
 ### <a name="oid-handler-for-oid_gen_rss_set_indirection_table_entries"></a>OID_GEN_RSS_SET_INDIRECTION_TABLE_ENTRIES 的 OID 处理程序
 
@@ -54,7 +53,7 @@ OID_GEN_RSS_SET_INDIRECTION_TABLE_ENTRIES 的 OID 处理程序的行为应如下
     - 每个间接表项索引在配置的范围内。 此范围为0xFFFF 或处于由 [OID_GEN_RECEIVE_SCALE_PARAMETERS_V2](oid-gen-receive-scale-parameters-v2.md) OID 设置的 [0 ... NumberOfIndirectionTableEntries-1] 范围内。 0xFFFF 和0xFFFE 条目索引具有特殊含义：0xFFFF 定义默认的处理器，而0xFFFE 定义主处理器。 出现错误时，处理程序将该项的 **EntryStatus** 字段设置为 NDIS_STATUS_INVALID_PARAMETER。
     - 上层和微型端口驱动程序在移动前，会预计 I) 指向当前处理器 (执行组件 CPU) 。 换句话说，I) 不能远程重定向。 如果不是这种情况，请将条目的 " **EntryStatus** " 字段设置为 NDIS_STATUS_NOT_ACCEPTED。
     - 所有目标处理器都是有效的，并且是小型端口适配器的 RSS 集的一部分。 否则，将条目的 " **EntryStatus** " 字段设置为 "NDIS_STATUS_INVALID_DATA"。
-- 或者作为参数验证传递的一部分，验证资源的情况。 验证在[OID_GEN_RECEIVE_SCALE_PARAMETERS_V2](oid-gen-receive-scale-parameters-v2.md)请求期间 (疏散) 不超过[NDIS_RECEIVE_SCALE_PARAMETERS_V2](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_scale_parameters_v2)结构**中设置的**所有批处理后要使用的队列数。 否则，将返回 NDIS_STATUS_NO_QUEUES。 NDIS_STATUS_NO_QUEUES 应用于表示与配置的队列数冲突的所有条件。 NDIS_STATUS_RESOURCES 应仅用于指定暂时性内存不足的情况。
+- 或者作为参数验证传递的一部分，验证资源的情况。 验证在 [OID_GEN_RECEIVE_SCALE_PARAMETERS_V2](oid-gen-receive-scale-parameters-v2.md)请求期间 (疏散) 不超过 [NDIS_RECEIVE_SCALE_PARAMETERS_V2](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_scale_parameters_v2)结构 **中设置的** 所有批处理后要使用的队列数。 否则，将返回 NDIS_STATUS_NO_QUEUES。 NDIS_STATUS_NO_QUEUES 应用于表示与配置的队列数冲突的所有条件。 NDIS_STATUS_RESOURCES 应仅用于指定暂时性内存不足的情况。
 - 在资源检查过程中，对于每个缩放实体 (例如 VPort) ，如果指向 currrent CPU 的所有 ITEs 都移出，则微型端口驱动程序必须处理某个条件。
 
 如果上述所有检查都通过，微型端口驱动程序应能够无条件地应用新配置，并且必须将每个条目的 **EntryStatus** 字段设置为 NDIS_STATUS_SUCCESS。
@@ -99,7 +98,7 @@ OID_GEN_RSS_SET_INDIRECTION_TABLE_ENTRIES 的 OID 处理程序的行为应如下
 
 **版本**： Windows 10，版本 1709 **头**： Ntddndis (包括 Ndis .h) 
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [接收端缩放版本 2 (RSSv2)](receive-side-scaling-version-2-rssv2-.md)
 - [NDIS_RSS_SET_INDIRECTION_ENTRIES](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_rss_set_indirection_entries)

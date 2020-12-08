@@ -1,9 +1,8 @@
 ---
 title: usb3kd-xhci_findowner
-description: Xhci_findowner usb3kd 命令将查找所有者公用缓冲区。
-ms.assetid: 6AA3E41C-5838-4425-B1CE-37A13E8F755E
+description: Usb3kd.xhci_findowner 命令将查找所有者公用缓冲区。
 keywords:
-- usb3kd xhci_findowner Windows 调试
+- usb3kd.xhci_findowner Windows 调试
 ms.date: 10/18/2018
 topic_type:
 - apiref
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 65955e626e606133bba88785358734a9376082ff
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 2dcc41f8a9a56d165bb0b580ed9e7ee21fdcfcc7
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89216286"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96824729"
 ---
 # <a name="usb3kdxhci_findowner"></a>！ usb3kd. xhci \_ findowner
 
 
-**！ Usb3kd. xhci \_ findowner**命令查找所有者公用缓冲区。
+**！ Usb3kd. xhci \_ findowner** 命令查找所有者公用缓冲区。
 
 ```dbgcmd
 !usb3kd.xhci_findowner Address

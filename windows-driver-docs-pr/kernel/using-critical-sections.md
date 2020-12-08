@@ -1,7 +1,6 @@
 ---
 title: 使用关键节
 description: 使用关键节
-ms.assetid: 439ba7ef-6473-40ca-9daa-a8c61d789d97
 keywords:
 - 中断服务例程 WDK 内核，关键部分
 - Isr WDK 内核，关键部分
@@ -9,12 +8,12 @@ keywords:
 - 同步 WDK 内核，中断
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f1a897e6707ab3dbb57c71e40df8376406a37803
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 625945f5d16e4d93c693621d065817bd7f105024
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89187045"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96825591"
 ---
 # <a name="using-critical-sections"></a>使用关键节
 

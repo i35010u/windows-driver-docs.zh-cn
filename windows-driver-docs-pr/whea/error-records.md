@@ -1,7 +1,6 @@
 ---
 title: 错误记录
 description: 错误记录
-ms.assetid: 080da29a-b5cb-45a5-848d-048d9612ee2a
 keywords:
 - Windows 硬件错误体系结构 WDK，错误记录
 - WHEA WDK，错误记录
@@ -12,12 +11,12 @@ keywords:
 - 错误记录部分 WDK WHEA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a6410d6b31b9f9a657435ed77bb18106e2c029c8
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 11aadad95c380e45f304d55bb899fd2c0bf2a3df
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89215732"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96824821"
 ---
 # <a name="error-records"></a>错误记录
 
@@ -70,7 +69,7 @@ WHEA 使用的错误记录格式基于 *常见平台错误记录* (CPER) ，如 
 <a href="" id="pci-pci-x-device-error"></a>PCI/PCI-X 设备错误  
 此错误记录部分包含 PCI/PCI-X 设备错误数据。 本节中包含的数据由 [**WHEA \_ PCIXDEVICE \_ 错误 \_ 部分**](/windows-hardware/drivers/ddi/ntddk/ns-ntddk-_whea_pcixdevice_error_section) 结构描述。
 
-对于不属于上一列表部分类型的其他硬件错误数据，可以定义特定于平台的错误记录部分来包含数据。 对于定义的每个特定于平台的错误记录部分类型，必须定义标识错误记录部分类型的相应 GUID。 此 GUID 是在描述该类型错误记录部分的任何[**WHEA \_ 错误 \_ 记录 \_ 部分 \_ 描述符**](/windows-hardware/drivers/ddi/ntddk/ns-ntddk-_whea_error_record_section_descriptor)结构的**SectionType**成员中指定的。
+对于不属于上一列表部分类型的其他硬件错误数据，可以定义特定于平台的错误记录部分来包含数据。 对于定义的每个特定于平台的错误记录部分类型，必须定义标识错误记录部分类型的相应 GUID。 此 GUID 是在描述该类型错误记录部分的任何 [**WHEA \_ 错误 \_ 记录 \_ 部分 \_ 描述符**](/windows-hardware/drivers/ddi/ntddk/ns-ntddk-_whea_error_record_section_descriptor)结构的 **SectionType** 成员中指定的。
 
 如果有其他硬件错误数据无法适应上一列表中的一种节类型或定义的特定于平台的错误记录部分，则使用一般错误记录部分来包含数据。
 

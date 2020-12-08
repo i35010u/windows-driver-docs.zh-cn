@@ -1,9 +1,8 @@
 ---
 title: Width 元素
-description: 所需的宽度元素指定扫描设备支持需要宽度的扫描程序配置元素的宽度值。
-ms.assetid: 2e9b6c4a-8180-4c09-8d60-64f8ede7bdfc
+description: 必需的 Width 元素指定扫描设备为需要宽度的扫描程序配置元素支持的宽度值。
 keywords:
-- Width 元素成像设备
+- Width 元素图像处理设备
 topic_type:
 - apiref
 api_name:
@@ -12,19 +11,19 @@ api_type:
 - Schema
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2b1c04f8881864db0ccd034761340bb68f278859
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9195f64dcefc003a72b0d05065d30e284170223b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380276"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96826363"
 ---
 # <a name="width-element"></a>Width 元素
 
 
-所需**宽度**元素指定扫描设备支持需要的扫描程序配置元素的宽度值**宽度**。
+必需的 **width** 元素指定扫描设备为需要 **宽度** 的扫描程序配置元素支持的宽度值。
 
-<a name="usage"></a>用法
+<a name="usage"></a>使用情况
 -----
 
 ```xml
@@ -47,26 +46,26 @@ ms.locfileid: "63380276"
 </colgroup>
 <thead>
 <tr class="header">
-<th>特性</th>
-<th>在任务栏的搜索框中键入</th>
-<th>必需</th>
+<th>属性</th>
+<th>类型</th>
+<th>必须</th>
 <th>描述</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><p><strong><strong>Override</strong></strong></p></td>
+<td><p><strong><strong>忽略</strong></strong></p></td>
 <td><p>xs:string</p></td>
 <td><p>否</p></td>
 <td><p></p>
-<p>可选。 一个布尔值，必须为 0，为 false，1 或 true。<strong>falsetrue</strong></p></td>
+<p>可选。 必须为0、false、1或 true 的布尔值。<strong>falsetrue</strong></p></td>
 </tr>
 <tr class="even">
 <td><p><strong><strong>UsedDefault</strong></strong></p></td>
 <td><p>xs:string</p></td>
 <td><p>否</p></td>
 <td><p></p>
-<p>可选。 一个布尔值，必须为 0，为 false，1 或 true。<strong>falsetrue</strong></p></td>
+<p>可选。 必须为0、false、1或 true 的布尔值。<strong>falsetrue</strong></p></td>
 </tr>
 </tbody>
 </table>
@@ -79,7 +78,7 @@ ms.locfileid: "63380276"
 ## <a name="child-elements"></a>子元素
 
 
-没有子元素。
+没有任何子元素。
 
 ## <a name="parent-elements"></a>父元素
 
@@ -118,9 +117,9 @@ ms.locfileid: "63380276"
 <a name="remarks"></a>备注
 -------
 
-**宽度**元素是其父元素的所有必需的子元素。 值**宽度**取决于其父元素。 有关可能的值，请参阅合适的父元素。
+**Width** 元素是其所有父元素的必需子元素。 **Width** 的值取决于其父元素。 有关可能的值，请参阅相应的父元素。
 
-WSD 扫描服务可以指定可选**重写**并**UsedDefault**属性时，才**宽度**元素包含在**DocumentFinalParameters**层次结构。 有关详细信息**重写**并**UsedDefault**以及有关其使用情况，请参阅[ **DocumentFinalParameters**](documentfinalparameters.md)。
+仅当 **Width** 元素包含在 **DocumentFinalParameters** 层次结构中时，WSD 扫描服务才能指定可选 **Override** 和 **UsedDefault** 属性。 有关 **Override** 和 **UsedDefault** 及其用法的详细信息，请参阅 [**DocumentFinalParameters**](documentfinalparameters.md)。
 
 ## <a name="see-also"></a>请参阅
 
@@ -129,7 +128,7 @@ WSD 扫描服务可以指定可选**重写**并**UsedDefault**属性时，才**�
 
 [**DocumentFinalParameters**](documentfinalparameters.md)
 
-[**Height**](height.md)
+[**高度**](height.md)
 
 [**InputMediaSize**](inputmediasize.md)
 

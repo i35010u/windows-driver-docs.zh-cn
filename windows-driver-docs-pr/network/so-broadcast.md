@@ -1,16 +1,15 @@
 ---
 title: SO_BROADCAST
 description: SO_BROADCAST
-ms.assetid: 24b93d4e-461d-44c3-b721-85cf41a1680a
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 SO_BROADCAST 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 7bbcc4d8b6df13a86c2b03f3b9fe5fd3e065e10d
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 8de3ff5b5d35f7bfd781d6fd3d8c5df7240dfa64
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89205963"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96825013"
 ---
 # <a name="so_broadcast"></a>如此 \_ 广播
 
@@ -27,7 +26,7 @@ SO \_ 广播套接字选项的状态确定是否可以通过数据报套接字�
 <thead>
 <tr class="header">
 <th>参数</th>
-<th>值</th>
+<th>“值”</th>
 </tr>
 </thead>
 <tbody>
@@ -80,7 +79,7 @@ SO \_ 广播套接字选项的状态确定是否可以通过数据报套接字�
 <thead>
 <tr class="header">
 <th>参数</th>
-<th>值</th>
+<th>“值”</th>
 </tr>
 </thead>
 <tbody>

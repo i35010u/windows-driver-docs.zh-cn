@@ -1,15 +1,14 @@
 ---
 title: PwrTest 睡眠方案
 description: PwrTest 睡眠方案有助于自动测试睡眠和恢复转换。
-ms.assetid: 2003ff3e-bc29-4741-a0a6-371948982679
 ms.date: 06/24/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 9012fd4f3ccf85a843276e0b41db6aa72308fcdf
-ms.sourcegitcommit: 0683ff4538df778e6890d073de23fc9e816f7899
+ms.openlocfilehash: f6e5432cdfd06a9a53706f0d87d78ed9323f65c9
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/24/2020
-ms.locfileid: "85334982"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96824581"
 ---
 # <a name="pwrtest-sleep-scenario"></a>PwrTest 睡眠方案
 
@@ -26,16 +25,16 @@ pwrtest /sleep [/c:n] [/d:n] [/p:n] [/h:{y|n}] [/s:{1|3|4|all|rnd|hibernate|stan
 ```
 
 <span id="_c_n"></span><span id="_C_N"></span>**/c：**<em>n</em>  
-指定要运行的周期数（默认值为1）。
+指定要运行的默认)  (1 的周期数。
 
 <span id="_d_n"></span><span id="_D_N"></span>**/d：**<em>n</em>  
-指定延迟时间（以秒为单位）（默认值为90）。
+指定默认)  (90 的延迟时间（以秒为单位）。
 
 <span id="_p_n"></span><span id="_P_N"></span>**/p：**<em>n</em>  
-指定睡眠时间（以秒为单位）（默认值为60）。 如果休眠时不支持唤醒计时器，系统将重新启动并在写入休眠文件后立即恢复。
+以秒为单位指定睡眠时间 (60) 。 如果休眠时不支持唤醒计时器，系统将重新启动并在写入休眠文件) 后立即恢复。
 
 <span id="_h_yn"></span><span id="_H_YN"></span>**/h：**{**y** | **n**}  
-指定是启用（y）还是禁用混合睡眠（n）。 默认值为 "系统策略"。
+指定是应 (y) 还是禁用 (n) 启用混合睡眠。 默认值为 "系统策略"。
 
 <span id="_s_134allrndhibernatestandby"></span><span id="_S_134ALLRNDHIBERNATESTANDBY"></span>**/s：**{**1** | **3** | **4** | **所有** | **rnd** | **休眠** | **备用** | **dozes4**}  
 
@@ -55,22 +54,22 @@ pwrtest /sleep [/c:n] [/d:n] [/p:n] [/h:{y|n}] [/s:{1|3|4|all|rnd|hibernate|stan
 指定随机遍历所有支持的电源状态。
 
 <span id="hibernate"></span><span id="HIBERNATE"></span>**r**  
-指定目标状态始终为 "休眠（S4）"。
+指定目标状态始终处于休眠状态 (S4) 。
 
 <span id="standby"></span><span id="STANDBY"></span>**转入**  
-指定目标状态为任何可用的待机状态（S1 或 S3）。
+指定目标状态为)  (S1 或 S3 可用的任何备用状态。
 
 <span id="standby"></span><span id="STANDBY"></span>**dozes4**  
-指定从新式备用 doze 到 S4 （S0 低功耗空闲）。
+指定从新式备用 (S0 低功耗空闲) doze 到 S4。
 
 <span id="_unattend____"></span><span id="_UNATTEND____"></span>**/unattend**   
 指定在唤醒之后不更改系统执行状态。
 
 <span id="_dt_n"></span><span id="_DT_N"></span>**/dt：**<em>n</em>  
-仅适用于 dozeS4，以秒为单位指定在转换为休眠（S4）之前投入的 doze 超时值（以秒为单位）。
+仅适用于 dozeS4，以秒为单位指定 doze 超时（以秒为单位），以便将其转换为休眠状态 (S4) 。
 
 <span id="_e_n"></span><span id="_E_N"></span>**/e：**<em>n</em>  
-指定等待转换结束事件（默认值为120秒）的超时值（以秒为单位）。
+指定等待转换结束事件的超时时间（秒） (默认) 为120秒。
 
 **示例**
 
@@ -145,7 +144,7 @@ pwrtest /sleep /c:10 /s:dozes4 /dt:100 /p:100
 <thead>
 <tr class="header">
 <th align="left">元素</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>
@@ -163,15 +162,15 @@ pwrtest /sleep /c:10 /s:dozes4 /dt:100 /p:100
 </tr>
 <tr class="even">
 <td align="left"><strong>&lt;StartT&gt;</strong></td>
-<td align="left"><p>指示睡眠周期的开始时间。 （<em>hh</em>：<em>mm</em>：<em>ss</em>）</p></td>
+<td align="left"><p>指示睡眠周期的开始时间。  (<em>hh</em>：<em>mm</em>：<em>ss</em>) </p></td>
 </tr>
 <tr class="odd">
 <td align="left"><strong>&lt;EndT&gt;</strong></td>
-<td align="left"><p>指示睡眠周期的结束时间。 （<em>hh</em>：<em>mm</em>：<em>ss</em>）</p></td>
+<td align="left"><p>指示睡眠周期的结束时间。  (<em>hh</em>：<em>mm</em>：<em>ss</em>) </p></td>
 </tr>
 <tr class="even">
 <td align="left"><strong>&lt;SleepTimeMs&gt;</strong></td>
-<td align="left"><p>指示睡眠周期的持续时间。 （<em>hh</em>：<em>mm</em>：<em>ss</em>）</p></td>
+<td align="left"><p>指示睡眠周期的持续时间。  (<em>hh</em>：<em>mm</em>：<em>ss</em>) </p></td>
 </tr>
 <tr class="odd">
 <td align="left"><strong>&lt;TargetState&gt;</strong></td>
@@ -183,7 +182,7 @@ pwrtest /sleep /c:10 /s:dozes4 /dt:100 /p:100
 </tr>
 <tr class="odd">
 <td align="left"><strong>&lt;BIOSInitTimeMs&gt;</strong></td>
-<td align="left"><p>指示在恢复时（以毫秒为单位）初始化 BIOS 所需的时间（TargetState 必须为3）。</p></td>
+<td align="left"><p>指示初始化 BIOS 所需的时间量 (在恢复时必须为 3) （以毫秒为单位）。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><strong>&lt;DriverWakeTimeMs&gt;</strong></td>
@@ -194,20 +193,20 @@ pwrtest /sleep /c:10 /s:dozes4 /dt:100 /p:100
 <td align="left"><p>指示挂起系统所需的时间（以毫秒为单位）。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><strong>&lt;退出&gt;</strong></td>
+<td align="left"><strong>&lt;恢复&gt;</strong></td>
 <td align="left"><p>指示恢复系统所需的总时间（以毫秒为单位）。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><strong>&lt;HiberReadTimeMs&gt;</strong></td>
-<td align="left"><p>指示读取休眠文件所需的时间（以毫秒为单位）。 （TargetState 必须为4）</p></td>
+<td align="left"><p>指示读取休眠文件所需的时间（以毫秒为单位）。  (TargetState 必须是 4) </p></td>
 </tr>
 <tr class="even">
 <td align="left"><strong>&lt;HiberWriteTimeMs&gt;</strong></td>
-<td align="left"><p>指示写入休眠文件所需的时间（以毫秒为单位）。 （EffectiveState 必须为4）</p></td>
+<td align="left"><p>指示写入休眠文件所需的时间（以毫秒为单位）。  (EffectiveState 必须是 4) </p></td>
 </tr>
 <tr class="odd">
 <td align="left"><strong>&lt;HiberPagesWritten&gt;</strong></td>
-<td align="left"><p>在休眠文件中写入的页数。 （EffectiveState 必须为4）</p></td>
+<td align="left"><p>在休眠文件中写入的页数。  (EffectiveState 必须是 4) </p></td>
 </tr>
 </tbody>
 </table>

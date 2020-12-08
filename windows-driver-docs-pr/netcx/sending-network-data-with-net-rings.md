@@ -1,18 +1,17 @@
 ---
 title: 使用净环发送网络数据
 description: 本主题介绍 NetAdapterCx 客户端驱动程序如何使用净环和网络环迭代器发送网络数据。
-ms.assetid: 2F3DA1A5-D0C1-4928-80B2-AF41F949FF14
 keywords:
 - NetAdapterCx 网络环和网络环迭代器、NetCx 网络环和网络环迭代器、NetAdapterCx PCI 设备网络环、NetAdapterCx 异步 i/o
 ms.date: 11/01/2019
 ms.localizationpriority: medium
 ms.custom: Vib
-ms.openlocfilehash: 01493ffe6ad5ace9df26a2bb3d732add45252688
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 538084796b2d073a056ea4e25ce6a4aa723954f0
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89216008"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96825559"
 ---
 # <a name="sending-network-data-with-net-rings"></a>使用网环发送网络数据
 
@@ -36,7 +35,7 @@ ms.locfileid: "89216008"
     2. 在循环中执行以下操作：
         1. 通过使用数据包索引调用 [**NetRingGetPacketAtIndex**](/windows-hardware/drivers/ddi/ring/nf-ring-netringgetpacketatindex) 来获取数据包。
         2. 检查是否应忽略此数据包。 如果应忽略此循环，请跳到此循环的步骤6。 否则，请继续。
-        3. 获取此数据包的片段。 从环集合中检索传输队列的片段环，从数据包的**FragmentIndex**成员检索数据包片段的开头，并通过使用数据包的**FragmentCount**调用[**NetRingIncrementIndex**](/windows-hardware/drivers/ddi/ring/nf-ring-netringincrementindex)来检索数据包的碎片结尾。
+        3. 获取此数据包的片段。 从环集合中检索传输队列的片段环，从数据包的 **FragmentIndex** 成员检索数据包片段的开头，并通过使用数据包的 **FragmentCount** 调用 [**NetRingIncrementIndex**](/windows-hardware/drivers/ddi/ring/nf-ring-netringincrementindex)来检索数据包的碎片结尾。
         4. 在循环中执行以下操作：
             1. 调用 [**NetRingGetFragmentAtIndex**](/windows-hardware/drivers/ddi/ring/nf-ring-netringgetpacketatindex) 以获取片段。
             2. 将 **NET_FRAGMENT** 描述符转换为关联的硬件片段描述符。
@@ -125,6 +124,6 @@ MyEvtTxQueueAdvance(
 
 ## <a name="sending-data-out-of-order"></a>按顺序发送数据
 
-对于设备可能按顺序完成传输的驱动程序，与按序设备的主要区别在于谁分配传输缓冲区，以及驱动程序如何处理传输完成的测试。 对于具有 DMA 功能的 PCI NIC 的按序传输，操作系统通常会分配、附加并最终拥有片段缓冲区。 然后，在 *EvtPacketQueueAdvance*期间，客户端驱动程序可以测试每个片段的相应硬件所有权标志。
+对于设备可能按顺序完成传输的驱动程序，与按序设备的主要区别在于谁分配传输缓冲区，以及驱动程序如何处理传输完成的测试。 对于具有 DMA 功能的 PCI NIC 的按序传输，操作系统通常会分配、附加并最终拥有片段缓冲区。 然后，在 *EvtPacketQueueAdvance* 期间，客户端驱动程序可以测试每个片段的相应硬件所有权标志。
 
 与此模型不同的是，请考虑使用典型的基于 USB 的 NIC。 在这种情况下，USB 堆栈拥有用于传输的内存缓冲区，这些缓冲区可能位于系统内存中的其他位置。 USB 堆栈按顺序指示客户端驱动程序的完成，因此，客户端驱动程序需要在其完成回调例程期间单独记录数据包的完成状态。 为此，客户端驱动程序可以使用数据包的 **暂存** 字段，也可以使用其他方法，例如在其队列上下文空间中存储信息。 然后，在调用 [*EvtPacketQueueAdvance*](/windows-hardware/drivers/ddi/netpacketqueue/nc-netpacketqueue-evt_packet_queue_advance)时，客户端驱动程序会检查此信息以进行数据包完成测试。

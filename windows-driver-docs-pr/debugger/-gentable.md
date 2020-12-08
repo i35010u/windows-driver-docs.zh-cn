@@ -1,7 +1,6 @@
 ---
 title: gentable
 description: Gentable 扩展显示 RTL_GENERIC_TABLE。
-ms.assetid: acf85ff8-9004-4c8e-b67f-20202c577aab
 keywords:
 - gentable Windows 调试
 ms.date: 05/23/2017
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: cde0ff5119e6eb4848fc825ccbd4aeb1e1857548
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2a53a9137f3eaf7cf50359affeae07797f444570
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63336849"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96824799"
 ---
 # <a name="gentable"></a>!gentable
 
 
-**！ Gentable**扩展插件都会显示是 RTL\_泛型\_表。
+**！ Gentable** EXTENSION 显示 RTL \_ 泛型 \_ 表。
 
 语法
 
@@ -30,16 +29,16 @@ ms.locfileid: "63336849"
 !gentable Address[Flag]
 ```
 
-## <a name="span-idddkgentabledbgspanspan-idddkgentabledbgspanparameters"></a><span id="ddk__gentable_dbg"></span><span id="DDK__GENTABLE_DBG"></span>参数
+## <a name="span-idddk__gentable_dbgspanspan-idddk__gentable_dbgspanparameters"></a><span id="ddk__gentable_dbg"></span><span id="DDK__GENTABLE_DBG"></span>参数
 
 
-<span id="_______Address______"></span><span id="_______address______"></span><span id="_______ADDRESS______"></span> *Address*   
-指定的地址的 RTL\_泛型\_表。
+<span id="_______Address______"></span><span id="_______address______"></span><span id="_______ADDRESS______"></span>*地址*   
+指定 RTL 泛型表的地址 \_ \_ 。
 
-<span id="_______Flag______"></span><span id="_______flag______"></span><span id="_______FLAG______"></span> *Flag*   
-指定表源。 如果*标志*为 1，使用 AVL 表。 如果*标志*为 0 或省略，将使用非 AVL 表。
+<span id="_______Flag______"></span><span id="_______flag______"></span><span id="_______FLAG______"></span>*标志*   
+指定表源。 如果 *标志* 为1，则使用 AVL 表。 如果 *标志* 为0或省略，则使用非 AVL 表。
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 Kdexts.dll
 

@@ -1,15 +1,14 @@
 ---
 title: Windows Me 和 Windows XP 的 WIA 扫描仪项树布局
 description: Windows Me 和 Windows XP 的 WIA 扫描仪项树布局
-ms.assetid: e4824d3a-6439-4ebb-903e-2b592108ddbe
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 136872c780f3c9e4d54a04925f4ba96cab1b4736
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 57cdada5c2aaba0a94243c7e42c1604de168cfe2
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89188881"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96826443"
 ---
 # <a name="wia-scanner-item-tree-layout-for-windows-xp"></a>适用于 Windows XP 的 WIA 扫描器项树布局
 

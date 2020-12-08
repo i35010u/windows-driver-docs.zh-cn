@@ -1,7 +1,6 @@
 ---
 title: 管理设备性能状态
 description: 管理设备性能状态
-ms.assetid: 5a4cc09a-e86e-4e5a-98b2-0351b253b5b6
 keywords:
 - 电源管理 WDK 内核，设备性能状态
 - 设备性能状态 WDK 电源管理
@@ -9,12 +8,12 @@ keywords:
 - 自定义电源设置 WDK 电源管理
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d2d23d696bb73733dc094b9b8bf0602f56a9c98a
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 7e640f4ae012bc7a7866a3c250cd86eaf0b1b2ff
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89184445"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96825123"
 ---
 # <a name="managing-device-performance-states"></a>管理设备性能状态
 
@@ -48,7 +47,7 @@ Windows Vista 的功能增强了电源管理基础结构，使驱动程序堆栈
 <a href="" id="maximum-power-savings"></a>**最大节能**  
 降低性能以最大程度地降低功率消耗。
 
-<a href="" id="automatic--balanced-"></a>**自动 (平衡) **  
+<a href="" id="automatic--balanced-"></a>**自动 (平衡)**  
 允许系统基于整体功率消耗选择最佳电源状态级别。
 
 <a href="" id="maximum-performance-------"></a>**最高性能**   
@@ -74,7 +73,7 @@ Windows Vista 的功能增强了电源管理基础结构，使驱动程序堆栈
 
 -   最 \_ 小 \_ 功率 \_ 节省，对应于 **最大性能** 电源方案及其相应的个性。
 
--   GUID \_ 典型 \_ 节能 \_ ，对应于 **自动 (平衡) ** 电源方案及其相应的个性。
+-   GUID \_ 典型 \_ 节能 \_ ，对应于 **自动 (平衡)** 电源方案及其相应的个性。
 
 当电源发生变化时，电源管理器会调用回调例程，并传递表示 "电源源" 设置的 GUID 和 "电源源" 设置的值，此值指示计算机是否由交流电源、直流电源或短期直流电电源提供支持。
 

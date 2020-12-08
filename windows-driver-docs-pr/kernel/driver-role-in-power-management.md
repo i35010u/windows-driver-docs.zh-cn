@@ -1,7 +1,6 @@
 ---
 title: 电源管理中的驱动程序角色
 description: 电源管理中的驱动程序角色
-ms.assetid: 24b55880-e767-4f18-977e-c4a93332b909
 keywords:
 - 电源管理 WDK 内核，中的驱动程序角色
 - 系统电源状态 WDK 内核，驱动程序角色
@@ -9,12 +8,12 @@ keywords:
 - 驱动程序电源支持角色 WDk 内核
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 18acbe6f3b26c5a23326b96527c8661d9692d117
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 3ca73cfade99357172c399d033ff1ea0747b507c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89190061"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96825899"
 ---
 # <a name="driver-role-in-power-management"></a>电源管理中的驱动程序角色
 
@@ -28,7 +27,7 @@ ms.locfileid: "89190061"
 
 2.  驱动程序管理其各个设备的电源和性能状态。
 
-每个驱动程序都必须有一个 [*DispatchPower*](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch) 例程来处理 [**IRP \_ MJ \_ 电源**](./irp-mj-power.md) 请求。 *DispatchPower*例程必须检查每个电源 IRP，并对其进行处理或将其向下传递到下一个较低的驱动程序。
+每个驱动程序都必须有一个 [*DispatchPower*](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch) 例程来处理 [**IRP \_ MJ \_ 电源**](./irp-mj-power.md) 请求。 *DispatchPower* 例程必须检查每个电源 IRP，并对其进行处理或将其向下传递到下一个较低的驱动程序。
 
 要使设备参与电源管理，设备的设备堆栈中的每个驱动程序都必须适当地响应或传递电源 Irp。 单个驱动程序无法正常运行可能会导致在整个系统中禁用电源管理。
 

@@ -1,7 +1,6 @@
 ---
 title: DIF_ALLOW_INSTALL
 description: DIF_ALLOW_INSTALL
-ms.assetid: 0bcda90e-f9f1-4965-a08b-d884077a2e8b
 keywords:
 - DIF_ALLOW_INSTALL 设备和驱动程序安装
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 112f8374cc5d8d9822311abb0bfd70d420efaa86
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: b6a708cf352b38cb005b08ed5eb94b3d088036eb
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90106962"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96825665"
 ---
 # <a name="dif_allow_install"></a>DIF_ALLOW_INSTALL
 
@@ -64,7 +63,7 @@ DIF_ALLOW_INSTALL 请求要求设备安装程序是否可以继续安装设备�
 提供一个指向 [**SP_DEVINFO_DATA**](/windows/win32/api/setupapi/ns-setupapi-sp_devinfo_data) 结构的指针，该结构在设备信息集中标识设备。
 
 <a href="" id="device-installation-parameters-"></a>设备安装参数   
-与*DeviceInfoData*关联的设备安装参数 ([**SP_DEVINSTALL_PARAMS**](/windows/win32/api/setupapi/ns-setupapi-sp_devinstall_params_a)) 。
+与 *DeviceInfoData* 关联的设备安装参数 ([**SP_DEVINSTALL_PARAMS**](/windows/win32/api/setupapi/ns-setupapi-sp_devinstall_params_a)) 。
 
 <a href="" id="class-installation-parameters"></a>类安装参数  
 无
@@ -81,7 +80,7 @@ DIF_ALLOW_INSTALL 请求要求设备安装程序是否可以继续安装设备�
 
 此 DIF 请求的典型 Win32 错误代码包括 ERROR_DI_DONT_INSTALL 和 ERROR_NON_WINDOWS_NT_DRIVER。
 
-**注意**   类安装程序和共同安装程序不应 freturn ERROR_REQUIRES_INTERACTIVE_WINDOWSTATION 因为这会导致设备安装失败。 如果设备安装需要用户交互，则类安装程序和共同安装程序应支持 " [完成-安装" 操作](./finish-install-actions--windows-vista-and-later-.md)。
+**注意**  类安装程序和共同安装程序不应 freturn ERROR_REQUIRES_INTERACTIVE_WINDOWSTATION 因为这会导致设备安装失败。 如果设备安装需要用户交互，则类安装程序和共同安装程序应支持 " [完成-安装" 操作](./finish-install-actions--windows-vista-and-later-.md)。
 
  
 

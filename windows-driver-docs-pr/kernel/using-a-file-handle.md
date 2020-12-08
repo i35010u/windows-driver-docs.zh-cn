@@ -1,7 +1,6 @@
 ---
 title: 使用文件句柄
 description: 使用文件句柄
-ms.assetid: f5a4d3f6-b74f-411e-9fa9-a41d83152fd7
 keywords:
 - 文件 WDK 内核
 - 文件对象 WDK 内核
@@ -10,12 +9,12 @@ keywords:
 - 文件 WDK 内核的句柄
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f2e3dbce2a6d2e93cd6583132c04b6770fee6c41
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 3c42f0f37dac640bd6398771353471911808323c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90102912"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96825629"
 ---
 # <a name="using-a-file-handle"></a>使用文件句柄
 
@@ -62,7 +61,7 @@ ms.locfileid: "90102912"
 
 如果使用文件追加数据访问打开了句柄 \_ \_ ，则所有数据都将写入到文件的末尾，并且 *ByteOffset* 参数将被忽略。
 
-在某些情况下，i/o 管理器会为该文件保留当前文件位置指针。 可以通过为*ByteOffset*指定**NULL**来在该位置开始读取或写入操作。 有关当前文件位置指针何时存在的详细信息，请参阅本部分后面 [的使用当前文件位置](using-the-current-file-position.md) 。
+在某些情况下，i/o 管理器会为该文件保留当前文件位置指针。 可以通过为 *ByteOffset* 指定 **NULL** 来在该位置开始读取或写入操作。 有关当前文件位置指针何时存在的详细信息，请参阅本部分后面 [的使用当前文件位置](using-the-current-file-position.md) 。
 
-若要检查或更改有关文件的信息，请分别调用 [**ZwQueryInformationFile**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ntqueryinformationfile) 或 [**ZwSetInformationFile**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ntsetinformationfile)。 指定特定类型的信息作为每个例程的 *FileInformationClass* 参数。 例如，将 *FileInformationClass* 设置为 **FileBasicInformation** 时，可以检查或更改 [**文件 \_ 基本 \_ 信息**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_file_basic_information) 结构，其中包含文件创建时间和上次访问时间等的成员。 有关 *FileInformationClass*的所有可能值的信息，请参阅 [**FILE \_ information \_ CLASS**](/windows-hardware/drivers/ddi/wdm/ne-wdm-_file_information_class)。
+若要检查或更改有关文件的信息，请分别调用 [**ZwQueryInformationFile**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ntqueryinformationfile) 或 [**ZwSetInformationFile**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ntsetinformationfile)。 指定特定类型的信息作为每个例程的 *FileInformationClass* 参数。 例如，将 *FileInformationClass* 设置为 **FileBasicInformation** 时，可以检查或更改 [**文件 \_ 基本 \_ 信息**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_file_basic_information) 结构，其中包含文件创建时间和上次访问时间等的成员。 有关 *FileInformationClass* 的所有可能值的信息，请参阅 [**FILE \_ information \_ CLASS**](/windows-hardware/drivers/ddi/wdm/ne-wdm-_file_information_class)。
 

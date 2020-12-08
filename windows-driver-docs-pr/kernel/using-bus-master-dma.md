@@ -1,20 +1,19 @@
 ---
 title: 使用总线主控 DMA
 description: 使用总线主控 DMA
-ms.assetid: 08357a55-aec2-4454-923f-6daaf1583a25
 keywords:
-- AdapterControl 例程，总线 master DMA
-- 主总线 DMA WDK 内核
-- DMA 传输 WDK 内核，总线 master DMA
-- 适配器对象 WDK 内核，总线 master DMA
+- AdapterControl 例程，总线主控 DMA
+- 总线主控 DMA WDK 内核
+- DMA 传输 WDK 内核，总线主机 DMA
+- 适配器对象 WDK 内核，主线-主 DMA
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f83451eeae3184bd7ef0438443ff3a92c95f8a1c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 84b58f5c79605cd76b5e83dc05ccefe17e72a447
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63361080"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96825608"
 ---
 # <a name="using-bus-master-dma"></a>使用总线主控 DMA
 
@@ -22,13 +21,13 @@ ms.locfileid: "63361080"
 
 
 
-主总线 DMA 设备的驱动程序可以使用以下类型的系统提供 DMA 支持：
+总线主控 DMA 设备的驱动程序可以使用以下类型的系统提供的 DMA 支持：
 
--   基于数据包如果主机总线适配器允许驱动程序以确定完成 DMA 传输操作和/或何时开始另一个用于给定 IRP 的传输操作的 DMA。 请参阅[Using Packet-Based 总线 Master DMA](using-packet-based-bus-master-dma.md)有关详细信息。
+-   基于数据包的 DMA，如果总线主适配器允许驱动程序确定 DMA 传输操作的完成时间和/或何时开始另一个针对给定 IRP 的传输操作。 有关详细信息，请参阅 [使用 Packet-Based Bus-Master DMA](using-packet-based-bus-master-dma.md) 。
 
--   常见缓冲区 DMA (也称为*连续 DMA*) 如果主机总线适配器不提供驱动程序来传输操作中将开始时或当传输已完成，轻松地确定一种方法，或使用单个缓冲区区域连续或重复的 DMA 传输。 请参阅[使用常见缓冲区总线 Master DMA](using-common-buffer-bus-master-dma.md)有关详细信息。
+-   公共缓冲区 DMA (也称为 *连续 DMA*) 如果在总线主适配器为驱动程序提供了一种方法来确定传输操作将开始或传输完成的时间，或者如果是连续使用或重复使用单个缓冲区来进行 DMA 传输。 有关详细信息，请参阅 [使用 Common-Buffer Bus-Master DMA](using-common-buffer-bus-master-dma.md) 。
 
-根据主机总线适配器的性质，某些驱动程序以独占方式使用基于数据包的 DMA、 一些以独占方式，使用常见缓冲区 DMA 和一些同时使用。 例如，使用邮箱方案来进行通信的状态信息和命令可能对驱动程序和其适配器，以及基于数据包的 DMA 数据之间共享邮箱使用常见的缓冲区的主机总线适配器的驱动程序将传输。
+根据总线主适配器的性质，某些驱动程序只使用基于数据包的 DMA，某些驱动程序只使用公用缓冲区 DMA，一些使用这两者。 例如，使用邮箱方案传递状态信息和命令的总线主适配器驱动程序可能会将公用缓冲区用于驱动程序和其适配器之间共享的邮箱，同时还会将基于数据包的 DMA 用于数据传输。
 
  
 

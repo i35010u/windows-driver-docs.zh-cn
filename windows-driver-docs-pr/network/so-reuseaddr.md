@@ -1,16 +1,15 @@
 ---
 title: SO_REUSEADDR
 description: SO_REUSEADDR
-ms.assetid: 9436492b-0bfb-4234-bcf3-c44657a846d7
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 SO_REUSEADDR 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 2f019aeb82b66001a1ef3479000436e2de49490b
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 90f6eebf57ce7af48e17e2372d677f33f6763c35
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89205949"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96824985"
 ---
 # <a name="so_reuseaddr"></a>\_REUSEADDR
 
@@ -29,7 +28,7 @@ ms.locfileid: "89205949"
 <thead>
 <tr class="header">
 <th>参数</th>
-<th>值</th>
+<th>“值”</th>
 </tr>
 </thead>
 <tbody>
@@ -82,7 +81,7 @@ ms.locfileid: "89205949"
 <thead>
 <tr class="header">
 <th>参数</th>
-<th>值</th>
+<th>“值”</th>
 </tr>
 </thead>
 <tbody>

@@ -1,7 +1,6 @@
 ---
 title: 'RequestFormattedValid 规则 (kmdf) '
 description: RequestFormattedValid 规则指定，驱动程序设置所有请求的格式，但 WDF \_ 请求 \_ 发送选项 \_ 发送 \_ \_ 和 \_ 遗忘请求除外，然后将其发送到 i/o 目标。
-ms.assetid: b7da37ed-3ca5-472e-a915-82674c9efee3
 ms.date: 05/21/2018
 keywords:
 - 'RequestFormattedValid 规则 (kmdf) '
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: c6edf2b235558c57abfa84e117d50cad979ee5f0
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: e8bc089f89d84b98a2e2dcd7fe15ce889e56d116
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90103700"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96826111"
 ---
 # <a name="requestformattedvalid-rule-kmdf"></a>RequestFormattedValid 规则 (kmdf) 
 
 
-**RequestFormattedValid**规则指定，驱动程序设置所有请求的格式，但 WDF \_ 请求 \_ 发送选项发送 \_ \_ \_ 和 \_ 遗忘请求除外，然后将其发送到 i/o 目标。
+**RequestFormattedValid** 规则指定，驱动程序设置所有请求的格式，但 WDF \_ 请求 \_ 发送选项发送 \_ \_ \_ 和 \_ 遗忘请求除外，然后将其发送到 i/o 目标。
 
 **驱动程序模型： KMDF**
 

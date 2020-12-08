@@ -1,40 +1,39 @@
 ---
 title: 将数据包转发到 Hyper-V 可扩展交换机端口
 description: 将数据包转发到 Hyper-V 可扩展交换机端口
-ms.assetid: C8DA9064-21EE-45F4-BE6D-D24851C5480B
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b2f7e6cf3294f58a4153118e330896949189192e
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 61645422f6a94134e7f2509d4a141e762df81a9d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89212483"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96825517"
 ---
 # <a name="forwarding-packets-to-hyper-v-extensible-switch-ports"></a>将数据包转发到 Hyper-V 可扩展交换机端口
 
 
 本页介绍如何将 Hyper-v 可扩展交换机转发扩展转发到一个或多个端口。 这种类型的扩展还可以将数据包转发到连接到可扩展交换机外部网络适配器的各个网络适配器。
 
-**注意**   只有可扩展交换机转发扩展插件或可扩展交换机本身才能将数据包转发到可扩展交换机端口。
+**注意**  只有可扩展交换机转发扩展插件或可扩展交换机本身才能将数据包转发到可扩展交换机端口。
 
  
 
-**注意**   本页假设你熟悉[Hyper-v 可扩展交换机](overview-of-the-hyper-v-extensible-switch.md)和[混合转发](hybrid-forwarding.md)概述中的信息和关系图。
+**注意**  本页假设你熟悉 [Hyper-v 可扩展交换机](overview-of-the-hyper-v-extensible-switch.md) 和 [混合转发](hybrid-forwarding.md)概述中的信息和关系图。
 
  
 
-**注意**   在可扩展交换机接口中，NDIS 筛选器驱动程序称为*可扩展交换机扩展*，驱动程序堆栈称为*可扩展交换机驱动程序堆栈*。 有关扩展的详细信息，请参阅 [Hyper-v 可扩展交换机扩展](hyper-v-extensible-switch-extensions.md)。
+**注意**  在可扩展交换机接口中，NDIS 筛选器驱动程序称为 *可扩展交换机扩展* ，驱动程序堆栈称为 *可扩展交换机驱动程序堆栈*。 有关扩展的详细信息，请参阅 [Hyper-v 可扩展交换机扩展](hyper-v-extensible-switch-extensions.md)。
 
  
 
 如果在可扩展交换机驱动程序堆栈中安装并启用了转发扩展，则该扩展将负责为它在可扩展交换机入口数据路径上获取的每个数据包做出转发决定。 根据这些转发决策，扩展会将目标端口添加到带外 (OOB 中的目标端口数组，) 数据包的 [**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list) 结构的数据。 数据包完成可扩展交换机数据路径的遍历后，可扩展交换机接口会将数据包传递到指定的目标端口。
 
-**注意**   如果未安装或未启用转发扩展，则可扩展交换机会对从入口数据路径获取的数据包进行转发决策。 此开关将目标端口添加到数据包的 [**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list) 结构的 OOB 数据，然后将数据包上滚到可扩展的交换机传出数据路径。
+**注意**  如果未安装或未启用转发扩展，则可扩展交换机会对从入口数据路径获取的数据包进行转发决策。 此开关将目标端口添加到数据包的 [**网络 \_ 缓冲区 \_ 列表**](/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list) 结构的 OOB 数据，然后将数据包上滚到可扩展的交换机传出数据路径。
 
  
 
-**注意**   如果数据包为 NVGRE 数据包，则转发扩展可以向目标端口数组添加目标端口。 但是，可扩展交换机的 Hyper-v 网络虚拟化 (HNV) 组件负责确定目标端口和转发数据包。 有关详细信息，请参阅 [混合转发](hybrid-forwarding.md)。
+**注意**  如果数据包为 NVGRE 数据包，则转发扩展可以向目标端口数组添加目标端口。 但是，可扩展交换机的 Hyper-v 网络虚拟化 (HNV) 组件负责确定目标端口和转发数据包。 有关详细信息，请参阅 [混合转发](hybrid-forwarding.md)。
 
  
 
@@ -66,25 +65,25 @@ ms.locfileid: "89212483"
 
     -   基于数据包的负载数据的可扩展交换机端口的策略条件。 例如，可扩展交换机端口的策略可能包含一个筛选器，以只允许传送 IP 版本 4 (IPv4) 数据包。
 
-    **注意**   如果数据包为 NVGRE 数据包，则可扩展交换机的 HNV 组件负责转发数据包。 但是，转发扩展可以在入口和出口路径中应用自己的策略条件。 有关详细信息，请参阅 [混合转发](hybrid-forwarding.md)。
+    **注意**  如果数据包为 NVGRE 数据包，则可扩展交换机的 HNV 组件负责转发数据包。 但是，转发扩展可以在入口和出口路径中应用自己的策略条件。 有关详细信息，请参阅 [混合转发](hybrid-forwarding.md)。
 
      
 
 2.  如果扩展确定数据包可以转发到一个或多个可扩展交换机端口，则必须将目标端口添加到数据包的 OOB 数据中。 有关此过程的详细信息，请参阅 [将可扩展交换机目标端口数据添加到数据包](adding-extensible-switch-destination-port-data-to-a-packet.md)。
 
-    **注意**   如果数据包为 NVGRE 数据包，则不需要使用转发扩展添加目标端口。 有关详细信息，请参阅 [混合转发](hybrid-forwarding.md)。
+    **注意**  如果数据包为 NVGRE 数据包，则不需要使用转发扩展添加目标端口。 有关详细信息，请参阅 [混合转发](hybrid-forwarding.md)。
 
      
 
 3.  如果扩展确定无法将数据包转发到任何可扩展交换机端口，则必须删除该数据包。
 
-    **注意**   如果数据包为 NVGRE 数据包，则不是这样。 有关详细信息，请参阅 [混合转发](hybrid-forwarding.md)。
+    **注意**  如果数据包为 NVGRE 数据包，则不是这样。 有关详细信息，请参阅 [混合转发](hybrid-forwarding.md)。
 
      
 
 4.  如果扩展插件为数据包添加了一个或多个目标端口，则必须调用 [**NdisFSendNetBufferLists**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfsendnetbufferlists) 来转发传出数据路径上的数据包。
 
-    **注意**   如果数据包为 NVGRE 数据包，则可扩展交换机的 HNV 组件负责转发数据包。 有关详细信息，请参阅 [混合转发](hybrid-forwarding.md)。
+    **注意**  如果数据包为 NVGRE 数据包，则可扩展交换机的 HNV 组件负责转发数据包。 有关详细信息，请参阅 [混合转发](hybrid-forwarding.md)。
 
      
 

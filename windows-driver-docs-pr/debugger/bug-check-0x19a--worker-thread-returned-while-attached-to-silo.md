@@ -1,7 +1,6 @@
 ---
 title: Bug 检查 0x19A WORKER_THREAD_RETURNED_WHILE_ATTACHED_TO_SILO
-description: WORKER_THREAD_RETURNED_WHILE_ATTACHED_TO_SILO bug 检查具有 0x0000019A 值。 这表示一个工作线程附加到接收器，并返回之前未分离。
-ms.assetid: D947FF20-4C86-4879-A5CA-934A20BE61C9
+description: WORKER_THREAD_RETURNED_WHILE_ATTACHED_TO_SILO bug 检查的值为0x0000019A。 这表示附加到接收器的工作线程未在返回前分离。
 keywords:
 - Bug 检查 0x19A WORKER_THREAD_RETURNED_WHILE_ATTACHED_TO_SILO
 - WORKER_THREAD_RETURNED_WHILE_ATTACHED_TO_SILO
@@ -13,38 +12,38 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: cfb14d551f99ba293e9b2427f2076124d8e8c871
-ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
+ms.openlocfilehash: aed80631d83748e673c7ec532e50fa47628cae92
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67519794"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96825233"
 ---
-# <a name="bug-check-0x19a-workerthreadreturnedwhileattachedtosilo"></a>Bug 检查 0x19A：辅助角色\_线程\_返回\_虽然\_附加\_TO\_接收器
+# <a name="bug-check-0x19a-worker_thread_returned_while_attached_to_silo"></a>Bug 检查0x19A： \_ \_ \_ \_ 附加 \_ 到 \_ 接收器时返回的工作线程
 
 
-辅助角色\_线程\_返回\_虽然\_附加\_TO\_接收器 bug 检查的值为 0x0000019A。 这表示一个工作线程附加到接收器，并返回之前未分离。
+\_ \_ \_ \_ 附加 \_ 到接收器 BUG 检查时返回的工作线程的 \_ 值为0x0000019A。 这表示附加到接收器的工作线程未在返回前分离。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://www.windows.com/stopcode)。
+> 本主题面向程序员。 如果您是在使用计算机时收到蓝屏错误代码的客户，请参阅[蓝屏错误疑难解答](https://www.windows.com/stopcode)。
 
 
-## <a name="workerthreadreturnedwhileattachedtosilo-parameters"></a>辅助角色\_线程\_返回\_虽然\_附加\_TO\_接收器参数
+## <a name="worker_thread_returned_while_attached_to_silo-parameters"></a>\_ \_ \_ \_ 附加 \_ 到 \_ 接收器参数时返回的工作线程
 
 
 | 参数 | 描述               |
 |-----------|---------------------------|
-| 1         | 工作线程例程的地址 |
+| 1         | 辅助角色例程的地址 |
 | 2         | 工作项参数        |
 | 3         | 工作项地址          |
-| 4         | 保留                  |
+| 4         | 预留                  |
 
  
 
 <a name="cause"></a>原因
 -----
 
-若要调查是否可以使用[ **ln （列表最接近符号）** ](ln--list-nearest-symbols-.md)命令参数 1，以帮助确定错误运行正常的驱动程序。
+若要调查使用 [**ln (列出参数1上最接近的符号)**](ln--list-nearest-symbols-.md)命令，帮助确定正常的驱动程序。
 
  
 

@@ -1,15 +1,14 @@
 ---
 title: WDI 信息收集 bug
 description: 任何不重要的软件中的 bug 都是不可避免的。
-ms.assetid: 551CA7DD-EB1A-41FB-A3D7-472DA7020B51
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3d7300b1c96a1548bf597cce950e896f7220d51d
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: c303a91456c5ab16a6adf696f6630fb0f89183ef
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89211547"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96825385"
 ---
 # <a name="wdi-information-collection-for-bugs"></a>WDI 信息收集 bug
 
@@ -60,21 +59,21 @@ WDI 调用 NDIS 将错误事件记录到系统事件日志（在收到重置恢�
 
 ![wdi 事件日志屏幕快照](images/wdi-event-log-screenshot.png)
 
-## <a name="when-wi-fi-malfunctions"></a>Wi-fi 故障时
+## <a name="when-wi-fi-malfunctions"></a>Wi-Fi 故障时
 
 
-如果没有崩溃但 Wi-fi 未按预期工作，请收集和分析跟踪日志。 若要查看问题是否局限于 WDI UE and LE， \_ 应包含 wlan dbg 跟踪来查看上下文的操作系统事件。 Wlan \_ dbg 包含需要操作系统专用符号的 WPP 事件。 原始 etl 跟踪应该保留并包含在通信中。
+如果没有崩溃但 Wi-Fi 未按预期运行，请收集和分析跟踪日志。 若要查看问题是否局限于 WDI UE and LE， \_ 应包含 wlan dbg 跟踪来查看上下文的操作系统事件。 Wlan \_ dbg 包含需要操作系统专用符号的 WPP 事件。 原始 etl 跟踪应该保留并包含在通信中。
 
 ## <a name="connected-standby-issues"></a>连接待机问题
 
 
-有时，Wi-fi NIC 不会转向低功耗 (设备 \_ 电源 \_ 状态 \_ Dx) 。 其他情况下，设备会频繁唤醒。 SleepStudy 报表有助于第一级会审。 SleepStudy 事件始终为 on，但仅当 CS 会话超过10分钟时才收集。 这些事件也是持久性 (例如，您可以检查研究总结) 。 若要生成 SleepStudy，请在管理员命令提示符下运行以下命令行。
+有时，Wi-Fi NIC 不会转向低功耗 (设备 \_ 电源 \_ 状态 \_ Dx) 。 其他情况下，设备会频繁唤醒。 SleepStudy 报表有助于第一级会审。 SleepStudy 事件始终为 on，但仅当 CS 会话超过10分钟时才收集。 这些事件也是持久性 (例如，您可以检查研究总结) 。 若要生成 SleepStudy，请在管理员命令提示符下运行以下命令行。
 
 ```CMD
 Powercfg /SleepStudy
 ```
 
-生成名为 SleepStudy-report.html 的报告文件。 它应该在% windiir% 系统之外打开 \\ 。 该报告分解哪些模块将系统的电源状态降低为非常低， (DRIPS) 。 此外，它还可以进一步细分哪些组件将 Wi-fi NIC 保持 () 。
+生成名为 SleepStudy-report.html 的报告文件。 它应该在% windiir% 系统之外打开 \\ 。 该报告分解哪些模块将系统的电源状态降低为非常低， (DRIPS) 。 此外，它还可以进一步细分哪些组件将 Wi-Fi NIC 保持 () Dx。
 
  
 

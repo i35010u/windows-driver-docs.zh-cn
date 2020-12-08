@@ -1,16 +1,15 @@
 ---
 title: OID_GEN_SUPPORTED_GUIDS
 description: 作为查询，OID_GEN_SUPPORTED_GUIDS OID 请求微型端口驱动程序返回 NDIS_GUID 类型的结构的数组。
-ms.assetid: 6985727e-50f8-4dbf-b8cd-ce31d49e8294
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_GEN_SUPPORTED_GUIDS 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: b80fd0c09315f6c87ccd306f8b1f188521c49f97
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: cac99554de401a6eb0494a4f860f8db377fa2760
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89206729"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96825441"
 ---
 # <a name="oid_gen_supported_guids"></a>OID \_ 生成 \_ 支持的 \_ GUID
 
@@ -91,7 +90,8 @@ typedef struct _NDIS_GUID {
 <a href="" id="fndis-guid-allow-write"></a>fNDIS \_ GUID \_ 允许 \_ 写入  
 如果设置，则表示允许所有用户使用此 GUID 设置信息。
 
-**注意**   默认情况下，只有具有管理员权限的用户才能访问微型端口驱动程序提供的自定义 WMI Guid。 如果微型端口驱动程序支持该 GUID 的读取或写入操作，则具有管理员权限的用户始终可以读取或写入自定义 GUID。 设置 fNDIS \_ guid \_ allow \_ READ 和 fNDIS \_ guid \_ 允许 \_ 写入标志允许所有用户访问自定义 GUID。
+**注意**  
+默认情况下，只有具有管理员权限的用户才能访问微型端口驱动程序提供的自定义 WMI Guid。 如果微型端口驱动程序支持该 GUID 的读取或写入操作，则具有管理员权限的用户始终可以读取或写入自定义 GUID。 设置 fNDIS \_ guid \_ allow \_ READ 和 fNDIS \_ guid \_ 允许 \_ 写入标志允许所有用户访问自定义 GUID。
 
  
 
@@ -130,7 +130,7 @@ NDIS 还会将 NIC 状态的更改转换为 WMI 识别的 Guid。 当微型端�
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**NdisMIndicateStatusEx**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismindicatestatusex)

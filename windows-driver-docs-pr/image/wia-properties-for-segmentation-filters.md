@@ -1,15 +1,14 @@
 ---
 title: 分段筛选器的 WIA 属性
 description: 分段筛选器的 WIA 属性
-ms.assetid: fc61e950-14e5-4bc3-b425-8f22143b76d9
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 14ee893639c0b057fb38681ea85e3855351e4620
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: b7184baa425d37397ef124980df07385f033caa0
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89187957"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96826477"
 ---
 # <a name="wia-properties-for-segmentation-filters"></a>分段筛选器的 WIA 属性
 
@@ -17,7 +16,7 @@ ms.locfileid: "89187957"
 
 
 
-分段筛选器依赖于多个 WIA 属性。 这些方法包括：
+分段筛选器依赖于多个 WIA 属性。 其中包括：
 
 [**WIA \_ IP \_ XPOS**](./wia-ips-xpos.md)
 

@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ 连接 \_ PROPOSEDATAFORMAT
 description: 客户端可以使用 KSPROPERTY \_ 连接 \_ PROPOSEDATAFORMAT 属性为连接建议新的数据格式。
-ms.assetid: f5bc7cd2-0033-4761-962b-33c82925134b
 keywords:
 - KSPROPERTY_CONNECTION_PROPOSEDATAFORMAT 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5f367ae0b49bbe5f31a586a66356ad43e10cf46b
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 27a991a88992fb985aa9e00c26d82f121766b56b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90102764"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96824939"
 ---
 # <a name="ksproperty_connection_proposedataformat"></a>KSPROPERTY \_ 连接 \_ PROPOSEDATAFORMAT
 
@@ -86,7 +85,7 @@ ms.locfileid: "90102764"
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSPROPERTY \_ 连接 \_ DATAFORMAT**](ksproperty-connection-dataformat.md)

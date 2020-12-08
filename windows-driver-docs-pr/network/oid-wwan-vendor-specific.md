@@ -1,16 +1,15 @@
 ---
 title: OID_WWAN_VENDOR_SPECIFIC
 description: OID_WWAN_VENDOR_SPECIFIC 允许微型端口驱动程序实现特定于供应商的对象。
-ms.assetid: 7c1843bc-3d60-437c-a24d-6da82262a468
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_WWAN_VENDOR_SPECIFIC 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 42b9919ec090487e757aa5d5b07200cff2cd36b4
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 20362c3647094df7349e8d685145411468095d9d
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89216982"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96825047"
 ---
 # <a name="oid_wwan_vendor_specific"></a>OID \_ WWAN \_ 供应商 \_ 特定
 
@@ -48,7 +47,7 @@ OID \_ WWAN \_ 供应商 \_ 特定允许微型端口驱动程序实现特定于�
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [WWAN 供应商特定操作](./mb-vendor-specific-operations.md)

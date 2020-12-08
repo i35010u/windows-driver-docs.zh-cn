@@ -1,21 +1,20 @@
 ---
 title: NDIS_STATUS_WWAN_READY_INFO
 description: 微型端口驱动程序使用 NDIS_STATUS_WWAN_READY_INFO 通知来通知 MB 服务设备就绪状态更改，以响应 OID_WWAN_READY_INFO \ 160; 查询请求。
-ms.assetid: 92ddf95f-8829-4259-b53a-c7ce56ee53f0
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 NDIS_STATUS_WWAN_READY_INFO 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 248911b99c2b5d6239f2e7422203b6440a036084
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: f9c29f46ed8689f07c1643c8fd9f9c9237f3fbf8
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89211715"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96825473"
 ---
 # <a name="ndis_status_wwan_ready_info"></a>NDIS \_ 状态 \_ WWAN \_ 就绪 \_ 信息
 
 
-微型端口驱动程序使用 NDIS \_ 状态 \_ WWAN \_ 就绪 \_ 信息通知来通知 MB 服务设备就绪状态更改，以响应[OID \_ WWAN \_ 就绪 \_ 信息](oid-wwan-ready-info.md)   查询请求。
+微型端口驱动程序使用 NDIS \_ 状态 \_ WWAN \_ 就绪 \_ 信息通知来通知 MB 服务设备就绪状态更改，以响应 [OID \_ WWAN \_ 就绪 \_ 信息](oid-wwan-ready-info.md) 查询请求。
 
 小型端口驱动程序还可以通过此通知发送未经请求的事件。
 
@@ -24,7 +23,7 @@ ms.locfileid: "89211715"
 <a name="remarks"></a>备注
 -------
 
-微型端口驱动程序必须将所有设备就绪状态更改报告为一个未经请求的事件。 当微型端口驱动程序初始化 MB 设备时，微型端口驱动程序必须将 WWAN \_ READY \_ INFO **ReadyState** 成员设置为 **WwanReadyStateOff**。 此后，小型端口驱动程序必须通过此通知向 MB 服务报告任何设备就绪状态更改。 例如，微型端口驱动程序必须在 **ReadyState** 成员从 **WwanReadyStateOff** 更改为 **WwanReadyStateDeviceLocked**、 **WwanReadyStateBadSim**或 **WwanReadyStateSimNotInserted**或其他任何其他设备就绪状态时报告设备就绪状态更改。
+微型端口驱动程序必须将所有设备就绪状态更改报告为一个未经请求的事件。 当微型端口驱动程序初始化 MB 设备时，微型端口驱动程序必须将 WWAN \_ READY \_ INFO **ReadyState** 成员设置为 **WwanReadyStateOff**。 此后，小型端口驱动程序必须通过此通知向 MB 服务报告任何设备就绪状态更改。 例如，微型端口驱动程序必须在 **ReadyState** 成员从 **WwanReadyStateOff** 更改为 **WwanReadyStateDeviceLocked**、 **WwanReadyStateBadSim** 或 **WwanReadyStateSimNotInserted** 或其他任何其他设备就绪状态时报告设备就绪状态更改。
 
 大多数设备就绪状态更改发生在设备初始化无线电堆栈和 SIM 卡 (如需要) 时进行。 在 MB 服务和微型端口驱动程序之间的会话过程中，还会发生更改，例如用户更改 SIM 卡。 MB 服务的行为应根据新设备就绪状态进行相应的更改。
 
@@ -48,7 +47,7 @@ ms.locfileid: "89211715"
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**NDIS \_ WWAN \_ 就绪 \_ 信息**](/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_ready_info)

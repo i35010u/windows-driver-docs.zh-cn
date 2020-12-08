@@ -1,7 +1,6 @@
 ---
 title: 通用标识符
 description: 通用标识符
-ms.assetid: 75dab2fc-e897-4bce-b719-98ad89817fca
 keywords:
 - 设备标识字符串 WDK，一般
 - 标识字符串 WDK 设备，通用
@@ -9,12 +8,12 @@ keywords:
 - 一般设备标识符 WDK 设备安装
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4dbf665af3a9a7d76250a7b08ba16966f06cc1f5
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 12c860e781b8f1eaeb89e2443b3fddeaf7f2160c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89095717"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96825137"
 ---
 # <a name="generic-identifiers"></a>通用标识符
 

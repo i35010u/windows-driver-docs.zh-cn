@@ -1,15 +1,14 @@
 ---
 title: Windows 内核模式 HAL 库
 description: Windows 内核模式 HAL 库
-ms.assetid: 5cfdbf1b-b856-4a0c-9f56-3879482819aa
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 4258048ab9027472d4428d1f05196aed0c76c173
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 0d3ebad00786a4428b9701e86a75490f9b8cc508
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89184223"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96825111"
 ---
 # <a name="windows-kernel-mode-hal-library"></a>Windows 内核模式 HAL 库
 

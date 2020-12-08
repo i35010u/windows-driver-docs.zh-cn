@@ -1,24 +1,23 @@
 ---
 title: 使用自定义 WMI 事件
 description: 使用自定义 WMI 事件
-ms.assetid: 00354e0b-a652-44e9-8b2b-fd755cc05fec
 keywords:
-- WMI WDK 内核事件跟踪
-- WDK WMI 事件
+- WMI WDK 内核，事件跟踪
+- 事件 WDK WMI
 - 跟踪 WDK WMI
-- 发送的 WMI 事件
-- 事件阻止 WDK WMI
+- 发送 WMI 事件
+- 事件块 WDK WMI
 - 通知 WDK WMI
 - 事件使用者提供程序 WDK WMI
 - 自定义事件 WDK WMI
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 792beb8c0a4541ef0803eac279e439ea14895d05
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7cb4ec1f55cf94584198a84201aeed3ad6e55d10
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63387408"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96825585"
 ---
 # <a name="using-custom-wmi-events"></a>使用自定义 WMI 事件
 
@@ -26,43 +25,43 @@ ms.locfileid: "63387408"
 
 
 
-支持某些 WMI 事件类所需的驱动程序的一些类。 驱动程序还可以设计自己的自定义 WMI 事件类。 自定义 WMI 事件提供的驱动程序将数据传递回给用户模式组件一种方法。 用户模式组件接收 WMI 事件通过 WMI COM 接口。
+支持某些 WMI 事件类需要某些驱动程序类。 驱动程序还可以设计自己的自定义 WMI 事件类。 自定义 WMI 事件为驱动程序提供了一种将数据传递回用户模式组件的方法。 用户模式组件通过 WMI COM 接口接收 WMI 事件。
 
 应用程序可以接收事件通知，如下所示：
 
--   使用**CoCreateInstance**例程，以获取指向的指针**IWbemLocator**对象。
+-   使用 **CoCreateInstance** 例程获取指向 **IWbemLocator** 对象的指针。
 
--   使用**IWbemLocator**用于连接到 WMI 服务器进程的指针。 **IWBemLocator::ConnectServer**方法调用为您提供一个指向**IWbemServices**对象。
+-   使用 **IWbemLocator** 指针连接到 WMI 服务器进程。 **IWBemLocator：： ConnectServer** 方法调用提供指向 **IWbemServices** 对象的指针。
 
--   使用**IWbemServices**感兴趣的事件类型的查询的对象。 **IWbemServices::ExecNotificationQuery**方法，可指定在 WMI 查询语言 (WQL) 的事件查询。
+-   使用 **IWbemServices** 对象来查询感兴趣的事件类型。 **IWbemServices：： ExecNotificationQuery** 方法允许您在 WMI 查询语言 (WQL) 中指定事件查询。
 
--   应用程序还可以注册以接收 WMI 事件以异步方式，通过实现**IWbemObjectSink**接口。 应用程序使用**iwbemservices:: Execnotificationqueryasync**方法注册的事件的异步通知。 匹配的事件发生时，系统将使用**IWbemObjectSink::Indicate**方法以通知发生的事件的应用程序。
+-   应用程序还可以通过实现 **IWbemObjectSink** 接口，注册以异步接收 WMI 事件。 应用程序使用 **IWbemServices：： ExecNotificationQueryAsync** 方法注册事件的异步通知。 当匹配事件发生时，系统将使用 **IWbemObjectSink：：指示** 方法通知应用程序发生的事件。
 
-您还可以实现用户模式下 WMI*事件使用者提供程序*。 这是 WMI 可以自动加载的指定类型的事件发生时的用户模式组件。
+还可以实现用户模式 WMI *事件使用者提供程序*。 这是一个用户模式组件，在指定类型的事件发生时，WMI 可以自动加载该组件。
 
--   包含的实例 **\_ \_EventConsumerProviderRegistration**用户模式组件的 MOF 数据中的 WMI 类。
+-   在用户模式组件的 MOF 数据中包含 **\_ \_ EventConsumerProviderRegistration** WMI 类的实例。
 
--   实现**IWbemUnboundObjectSink**为每个你想要接收的通知的 WMI 事件类的接口。
+-   为要接收通知的每个 WMI 事件类实现 **IWbemUnboundObjectSink** 接口。
 
--   实现**IWbemEventConsumerProvider**接口来指定事件的类组件接收通知，以及关联**IWbemUnboundObjectSink**实现。
+-   实现 **IWbemEventConsumerProvider** 接口可指定组件接收通知的事件类，以及关联的 **IWbemUnboundObjectSink** 实现。
 
--   实现**IWbemProviderInit**初始化您的组件作为事件使用者的接口。
+-   实现将组件初始化为事件使用者的 **IWbemProviderInit** 接口。
 
-有关接收 WMI 事件的详细信息和**IWbemXxx** Microsoft Windows SDK 文档中找不到 COM 接口。
+Microsoft Windows SDK 文档中可以找到有关接收 WMI 事件和 **IWbemXxx** COM 接口的详细信息。
 
-WMI 事件不是特定情况发生时通知用户模式应用程序的唯一方法。 驱动程序可以实现应用程序可用于轮询通知 IOCTL。 驱动程序和应用程序可以共享通知事件对象 (请参阅[事件对象](event-objects.md)) 以指示已发生的特定的情况。
+WMI 事件不是在发生特定情况时通知用户模式应用程序的唯一方法。 驱动程序可以实现应用程序可用于轮询通知的 IOCTL。 驱动程序和应用程序可以共享通知事件对象 (参阅 [事件对象](event-objects.md)) ，以指示发生了特定情况。
 
-WMI 事件具有超过这些其他方法的一些优势：
+WMI 事件具有与这些其他方法相比的一些优点：
 
--   如果用户模式应用程序不是驱动程序可以响应更快地轮询事件，该驱动程序可能具有许多 Ioctl 挂起。
+-   如果用户模式应用程序轮询事件的速度比驱动程序可以响应的速度更快，则驱动程序可能有很多 IOCTLs 挂起。
 
--   可以通过使用通知事件对象以通知用户模式应用程序，改善上一个问题，但通知事件可以仅发出已发生事件的信号。 应用程序仍必须使用 IOCTL 来获取任何其他数据。 接下来两个问题仍适用。
+-   您可以通过使用通知事件对象通知用户模式应用程序来寻求解决之前的问题，但通知事件只会发出事件已发生的信号。 应用程序仍必须使用 IOCTL 才能获取任何其他数据。 接下来的两个问题仍适用。
 
--   如果多个应用程序会轮询事件的驱动程序，该驱动程序需要维护状态，以确定哪些应用程序以前接收了哪些事件。
+-   如果多个应用程序轮询驱动程序的事件，则驱动程序将需要维护状态以确定哪些应用程序已接收了哪些事件。
 
--   某些驱动程序，如 SCSI 微型端口和 NDIS 微型端口驱动程序，不能接收 Ioctl。
+-   某些驱动程序（如 SCSI 微型端口和 NDIS 微型端口驱动程序）无法接收 IOCTLs。
 
-你必须提供的用户模式代码是复杂得多比其他方法的缺点是会 WMI 事件。
+WMI 事件确实有一个缺点，即必须提供的用户模式代码比其他方法更复杂。
 
  
 

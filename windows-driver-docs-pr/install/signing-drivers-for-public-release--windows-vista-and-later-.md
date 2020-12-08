@@ -1,7 +1,6 @@
 ---
 title: 为驱动程序签名以便公开发布
 description: 为驱动程序签名以便公开发布
-ms.assetid: 29e465b4-42f2-4c41-afa7-3f0adf579b0c
 keywords:
 - 驱动程序签名 WDK，公共版本
 - 对驱动程序进行签名 WDK，公共版本
@@ -14,12 +13,12 @@ keywords:
 - 版本签名 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1d2adaa75c883f566dc432e61924e60438379af2
-ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
+ms.openlocfilehash: 04d1ea08e1398c162df9fbc8e102a508a71fd9dd
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89097111"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96825133"
 ---
 # <a name="signing-drivers-for-public-release"></a>为驱动程序签名以便公开发布
 
@@ -35,7 +34,7 @@ ms.locfileid: "89097111"
 <a href="" id="introduction-to-release-signing"></a>[发布签名简介](introduction-to-release-signing.md)  
 本主题介绍对驱动程序包进行 release 签名的原因，并提供对发布签名过程的高级摘要。
 
-<a href="" id="how-to-release-sign-a-driver-package"></a>[如何对驱动程序包进行发布签名](how-to-release-sign-a-driver-package.md)  
+<a href="" id="how-to-release-sign-a-driver-package"></a>[如何 Release-Sign 驱动程序包](how-to-release-sign-a-driver-package.md)  
 本主题提供对发布签名过程的高级概述，并通过使用 Windows 驱动程序工具包 (WDK) 中的 *toastpkg.inf* 示例驱动程序包来查看发布签名的许多示例。
 
 有关发布签名过程的详细信息，请参阅以下主题：

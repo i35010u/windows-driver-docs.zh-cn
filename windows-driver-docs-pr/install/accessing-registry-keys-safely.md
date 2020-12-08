@@ -1,18 +1,17 @@
 ---
 title: 安全地访问注册表项
 description: 安全地访问注册表项
-ms.assetid: 81203790-66CB-42ee-82F8-2F0FFF04DF10
 keywords:
 - 注册表 WDK 设备安装，安全访问注册表项
 - 在安全的 WDK 设备安装中访问注册表项
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 55aca363bfbdff229622c97ae841ef102bb85a97
-ms.sourcegitcommit: a44ade167cdfb541cf1818e9f9e3726f23f90b66
+ms.openlocfilehash: 743528cd9e894a6dabfeb26f294dffba3d2ed1ee
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/07/2020
-ms.locfileid: "94361531"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96826223"
 ---
 # <a name="accessing-registry-keys-safely"></a>安全地访问注册表项
 

@@ -1,7 +1,6 @@
 ---
 title: 创建可靠的内核模式驱动程序
 description: 创建可靠的内核模式驱动程序
-ms.assetid: 31bbf1fe-dc90-43e0-a53e-eca902ec343e
 keywords:
 - 内核模式驱动程序 WDK、可靠性
 - 可靠性 WDK 内核
@@ -9,12 +8,12 @@ keywords:
 - Irp WDK 内核，可靠性问题
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 41e79107f5834771e31d44299540b17bf0393bb4
-ms.sourcegitcommit: 7ca2d3e360a4ae1d4d3c3092bd34492a2645ef74
+ms.openlocfilehash: 819827bdf0b2d2223e468759017a7fd8c68d68ad
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89402810"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96825943"
 ---
 # <a name="creating-reliable-kernel-mode-drivers"></a>创建可靠的内核模式驱动程序
 

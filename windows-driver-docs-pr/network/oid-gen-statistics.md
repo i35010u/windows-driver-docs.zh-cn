@@ -1,16 +1,15 @@
 ---
 title: OID_GEN_STATISTICS
 description: 作为查询，NDIS 和过量驱动程序使用 OID_GEN_STATISTICS OID 获取适配器或微型端口驱动程序的统计信息。
-ms.assetid: ff81d6b0-806d-4ddf-9da1-a169221be61f
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_GEN_STATISTICS 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 49d4e2dc72c847053b882da0eef109650fd370e0
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 2edd2432953abc3e4d2d9d3d2ca5379b0ce5a617
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89210129"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96825445"
 ---
 # <a name="oid_gen_statistics"></a>OID \_ 生成 \_ 统计信息
 
@@ -58,7 +57,7 @@ NDIS \_ 统计 \_ 信息结构定义如下：
 此结构包含以下成员：
 
 <a href="" id="header"></a>**标头**  
-NDIS 统计信息结构的 [**ndis \_ 对象 \_ 标头**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_object_header) 结构 \_ \_ 。 设置**标头**指定为 ndis 对象类型默认值的结构的**类型**成员 \_ \_ \_ 、Ndis 统计信息修订版本1的**修订**成员， \_ \_ \_ \_ 以及 ndis **Size** \_ SIZEOF \_ 统计 \_ 信息 \_ 修订版 \_ 1 的大小成员。
+NDIS 统计信息结构的 [**ndis \_ 对象 \_ 标头**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_object_header) 结构 \_ \_ 。 设置 **标头** 指定为 ndis 对象类型默认值的结构的 **类型** 成员 \_ \_ \_ 、Ndis 统计信息修订版本1的 **修订** 成员， \_ \_ \_ \_ 以及 ndis **Size** \_ SIZEOF \_ 统计 \_ 信息 \_ 修订版 \_ 1 的大小成员。
 
 <a href="" id="supportedstatistics"></a>**SupportedStatistics**  
 微型端口驱动程序支持的统计信息集。
@@ -70,58 +69,58 @@ NDIS 统计信息结构的 [**ndis \_ 对象 \_ 标头**](/windows-hardware/driv
 该值是以下标志的按位 "或"：
 
 <a href="" id="ndis-statistics-flags-valid-directed-frames-rcv"></a>NDIS \_ 统计信息 \_ 标志 \_ 有效 \_ 定向 \_ 帧 \_ RCV  
-**IfHCInUcastPkts**成员中的数据是有效的。
+**IfHCInUcastPkts** 成员中的数据是有效的。
 
 <a href="" id="ndis-statistics-flags-valid-multicast-frames-rcv"></a>NDIS \_ 统计信息 \_ 标志 \_ 有效的 \_ 多播 \_ 帧 \_ RCV  
-**IfHCInMulticastPkts**成员中的数据是有效的。
+**IfHCInMulticastPkts** 成员中的数据是有效的。
 
 <a href="" id="ndis-statistics-flags-valid-broadcast-frames-rcv"></a>NDIS \_ 统计信息 \_ 标志 \_ 有效的 \_ 广播 \_ 帧 \_ RCV  
-**IfHCInBroadcastPkts**成员中的数据是有效的。
+**IfHCInBroadcastPkts** 成员中的数据是有效的。
 
 <a href="" id="ndis-statistics-flags-valid-bytes-rcv"></a>NDIS \_ STATISTICS \_ 标志 \_ 有效 \_ 字节 \_ RCV  
-**IfHCInOctets**成员中的数据是有效的。
+**IfHCInOctets** 成员中的数据是有效的。
 
 <a href="" id="ndis-statistics-flags-valid-rcv-discards"></a>NDIS \_ STATISTICS \_ 标志 \_ 有效的 \_ RCV \_ 放弃  
-**IfInDiscards**成员中的数据是有效的。
+**IfInDiscards** 成员中的数据是有效的。
 
 <a href="" id="ndis-statistics-flags-valid-rcv-error"></a>NDIS \_ STATISTICS \_ 标志 \_ 有效的 \_ RCV \_ 错误  
-**IfInErrors**成员中的数据是有效的。
+**IfInErrors** 成员中的数据是有效的。
 
 <a href="" id="ndis-statistics-flags-valid-directed-frames-xmit"></a>NDIS \_ 统计信息 \_ 标志 \_ 有效 \_ 定向 \_ 帧 \_ XMIT  
-**IfHCOutUcastPkts**成员中的数据是有效的。
+**IfHCOutUcastPkts** 成员中的数据是有效的。
 
 <a href="" id="ndis-statistics-flags-valid-multicast-frames-xmit"></a>NDIS \_ 统计信息 \_ 标志 \_ 有效的 \_ 多播 \_ 帧 \_ XMIT  
-**IfHCOutMulticastPkts**成员中的数据是有效的。
+**IfHCOutMulticastPkts** 成员中的数据是有效的。
 
 <a href="" id="ndis-statistics-flags-valid-broadcast-frames-xmit"></a>NDIS \_ 统计信息 \_ 标志 \_ 有效的 \_ 广播 \_ 帧 \_ XMIT  
-**IfHCOutBroadcastPkts**成员中的数据是有效的。
+**IfHCOutBroadcastPkts** 成员中的数据是有效的。
 
 <a href="" id="ndis-statistics-flags-valid-bytes-xmit"></a>NDIS \_ STATISTICS \_ 标志 \_ 有效 \_ 字节 \_ XMIT  
-**IfHCOutOctets**成员中的数据是有效的。
+**IfHCOutOctets** 成员中的数据是有效的。
 
 <a href="" id="ndis-statistics-flags-valid-xmit-error"></a>NDIS \_ STATISTICS \_ 标志 \_ 有效的 \_ XMIT \_ 错误  
-**IfOutErrors**成员中的数据是有效的。
+**IfOutErrors** 成员中的数据是有效的。
 
 <a href="" id="ndis-statistics-flags-valid-xmit-discards"></a>NDIS \_ STATISTICS \_ 标志 \_ 有效的 \_ XMIT \_ 放弃  
-**IfOutDiscards**成员中的数据是有效的。
+**IfOutDiscards** 成员中的数据是有效的。
 
 <a href="" id="ndis-statistics-flags-valid-directed-bytes-rcv"></a>NDIS \_ STATISTICS \_ 标志 \_ 有效 \_ 定向 \_ 字节 \_ RCV  
-**IfHCInUcastOctets**成员中的数据是有效的。
+**IfHCInUcastOctets** 成员中的数据是有效的。
 
 <a href="" id="ndis-statistics-flags-valid-multicast-bytes-rcv"></a>NDIS \_ STATISTICS \_ 标志 \_ 有效的 \_ 多播 \_ 字节 \_ RCV  
-**IfHCInMulticastOctets**成员中的数据是有效的。
+**IfHCInMulticastOctets** 成员中的数据是有效的。
 
 <a href="" id="ndis-statistics-flags-valid-broadcast-bytes-rcv"></a>NDIS \_ STATISTICS \_ 标志 \_ 有效的 \_ 广播 \_ 字节 \_ RCV  
-**IfHCInBroadcastOctets**成员中的数据是有效的。
+**IfHCInBroadcastOctets** 成员中的数据是有效的。
 
 <a href="" id="ndis-statistics-flags-valid-directed-bytes-xmit"></a>NDIS \_ STATISTICS \_ 标志 \_ 有效 \_ 定向 \_ 字节 \_ XMIT  
-**IfHCOutUcastOctets**成员中的数据是有效的。
+**IfHCOutUcastOctets** 成员中的数据是有效的。
 
 <a href="" id="ndis-statistics-flags-valid-multicast-bytes-xmit"></a>NDIS \_ STATISTICS \_ 标志 \_ 有效的 \_ 多播 \_ 字节 \_ XMIT  
-**IfHCOutMulticastOctets**成员中的数据是有效的。
+**IfHCOutMulticastOctets** 成员中的数据是有效的。
 
 <a href="" id="ndis-statistics-flags-valid-broadcast-bytes-xmit"></a>NDIS \_ STATISTICS \_ 标志 \_ 有效的 \_ 广播 \_ 字节 \_ XMIT  
-**IfHCOutBroadcastOctets**成员中的数据是有效的。
+**IfHCOutBroadcastOctets** 成员中的数据是有效的。
 
 <a href="" id="ifindiscards"></a>**ifInDiscards**  
 丢弃的接收缓冲区错误计数。 此值与 [OID 生成 \_ \_ RCV \_ 放弃](oid-gen-rcv-discards.md) 的值相同。
@@ -198,7 +197,7 @@ NDIS 统计信息结构的 [**ndis \_ 对象 \_ 标头**](/windows-hardware/driv
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**NDIS \_ 对象 \_ 标头**](/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_object_header)

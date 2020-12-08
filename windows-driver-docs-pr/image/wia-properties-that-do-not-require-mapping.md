@@ -1,44 +1,43 @@
 ---
 title: 不需要映射的 WIA 属性
 description: 不需要映射的 WIA 属性
-ms.assetid: 094c3b3e-17c7-439f-a945-175835bbf4ce
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6854831227ebc3167b46e3377c319b7332a25fd4
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: bcae8cab17eef7e5748944b64ab5bfb88ff6df1f
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63352677"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96826470"
 ---
 # <a name="wia-properties-that-do-not-require-mapping"></a>不需要映射的 WIA 属性
 
 
-以下属性在 Windows Vista 中保留在根项 （或扫描程序项），并且不需要任何映射。 属性以结尾*Xxx*是包括所有具有之前 Xxx 的前缀的属性。 换而言之 WIA\_DIP\_Xxx 是包括 WIA\_DIP\_BAUDRATE、 WIA\_DIP\_适用于开发人员\_DESC、 WIA\_DIP\_开发\_等 ID:
+以下属性保留在 Windows Vista 中的根项 (或扫描器项) ，无需任何映射。 以 *xxx* 结尾的属性包含所有属性，其前缀位于 xxx 之前。 换句话说，WIA \_ dip \_ XXX 包含 wia \_ DIP \_ 波特率、wia \_ dip \_ dev \_ DESC、wia \_ dip \_ dev \_ ID 等：
 
-WIA\_DIP\_*Xxx*
+WIA \_ DIP \_ *Xxx*
 
-WIA\_DPA\_*Xxx*
+WIA \_ DPA \_ *Xxx*
 
-WIA\_DPC\_*Xxx*
+WIA \_ DPC \_ *Xxx*
 
-WIA\_DPF\_*Xxx*
+WIA \_ DPF \_ *Xxx*
 
-WIA\_DPS\_辊\_颜色
+WIA \_ DPS \_ 影印 \_ 颜色
 
-WIA\_DPS\_PAD\_颜色
+WIA \_ DPS \_ PAD \_ 颜色
 
-WIA\_DPS\_文档\_处理\_状态
+WIA \_ DPS \_ 文档 \_ 处理 \_ 状态
 
-WIA\_DPS\_印记签署器\_字符
+WIA \_ DPS \_ ENDORSER \_ 字符
 
-WIA\_DPS\_印记签署器\_字符串
+WIA \_ DPS \_ ENDORSER \_ 字符串
 
-WIA\_DPS\_扫描\_预先\_页
+WIA \_ DPS \_ \_ 提前扫描 \_ 页面
 
-WIA\_DPS\_MAX\_SCAN\_TIME
+WIA \_ DPS \_ 最长 \_ 扫描 \_ 时间
 
-WIA\_IPC\_*Xxx*
+WIA \_ IPC \_ *Xxx*
 
  
 

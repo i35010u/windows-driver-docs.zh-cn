@@ -1,7 +1,6 @@
 ---
 title: NDIS 中间驱动程序指南
 description: NDIS 中间驱动程序指南
-ms.assetid: 773d9711-fdea-4541-bb0d-6b07b50892fc
 keywords:
 - 中间驱动程序 WDK 网络
 - 网络驱动程序 WDK，中间驱动程序
@@ -9,12 +8,12 @@ keywords:
 - NDIS 中间驱动程序 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b1e7f0478a56fccb9ae5ab5417787a891a425efd
-ms.sourcegitcommit: 20eac54e419a594f7cea766ee28f158559dfd79c
+ms.openlocfilehash: 648e62a59abbfbd2de0ae00c56ff56cef3c8e2eb
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91754868"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96825065"
 ---
 # <a name="ndis-intermediate-drivers-guide"></a>NDIS 中间驱动程序指南
 

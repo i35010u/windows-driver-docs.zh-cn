@@ -1,9 +1,8 @@
 ---
-title: usb3kd hub_info_from_fdo
-description: Hub_info_from_fdo usb3kd 命令显示有关 USB 3.0 树中的集线器的信息。
-ms.assetid: 07A1C3EC-76A9-49A5-8467-53FCE3667203
+title: usb3kd.hub_info_from_fdo
+description: Usb3kd.hub_info_from_fdo 命令显示有关 USB 3.0 树中的集线器的信息。
 keywords:
-- usb3kd hub_info_from_fdo Windows 调试
+- usb3kd.hub_info_from_fdo Windows 调试
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,17 +11,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 3f1251aa281e7c32a20b72cd89a6413819e15210
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: 8f1ce6d4266b9690dfa46cbc5b3e7c7db4abff0a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89209877"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96825237"
 ---
 # <a name="usb3kdhub_info_from_fdo"></a>！ usb3kd \_ \_ fdo 中的信息 \_
 
 
-Fdo 命令中的 **！ \_ usb3kd \_ Info \_ ** 显示有关 [USB 3.0 树](usb-3-extensions.md#usb-3-tree)中的集线器的信息。
+Fdo 命令中的 **！ \_ usb3kd \_ Info \_** 显示有关 [USB 3.0 树](usb-3-extensions.md#usb-3-tree)中的集线器的信息。
 
 ```dbgcmd
 !usb3kd.hub_info_from_fdo DeviceObject
@@ -56,7 +55,7 @@ DevNode 0xfffffa8005981730 for PDO 0xfffffa8004ffc550
 ...
 ```
 
-现在，可以通过 FDO 命令将 FDO 的地址传递给 **！ usb3kd \_ 信息 \_ \_ ** 。
+现在，可以通过 FDO 命令将 FDO 的地址传递给 **！ usb3kd \_ 信息 \_ \_** 。
 
 ```dbgcmd
  3: kd> !hub_info_from_fdo fffffa800597a660

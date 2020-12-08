@@ -1,17 +1,16 @@
 ---
 title: 设备电源管理 (DPM) 通知
 description: 每个设备电源管理 (的 DPM) 通知： PEP 的 AcceptDeviceNotification 回调例程收到的通知参数会附带指示通知类型的通知参数，以及指向包含指定通知类型信息的数据结构的数据参数。
-ms.assetid: 47B487A3-2707-4B0F-BD61-8C4A89F99AE1
 keywords:
 - AcceptDeviceNotification
 ms.date: 01/17/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 6531766d5eeeb8678d9662bccee9ea747bcbc180
-ms.sourcegitcommit: d5f99f29e1fa2fad6217948dfe2bcc6268d639fd
+ms.openlocfilehash: 25424b1727baae3a4833ceb1023c5605e5c3d9d1
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92683022"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96825913"
 ---
 # <a name="device-power-management-dpm-notifications"></a>设备电源管理 (DPM) 通知
 
@@ -19,7 +18,7 @@ ms.locfileid: "92683022"
 
 在此调用中，通知参数设置为指示通知类型 PEP_DPM_XXX 常量值。 数据参数指向与此通知类型相关联的 PEP_XXX 结构类型。
 
-|通知 ID|值|关联的结构|
+|通知 ID|“值”|关联的结构|
 |----|----|----|
 |[PEP_DPM_PREPARE_DEVICE](#pep_dpm_prepare_device)|0x01|[PEP_PREPARE_DEVICE](/windows-hardware/drivers/ddi/pepfx/ns-pepfx-_pep_prepare_device)|
 |[PEP_DPM_ABANDON_DEVICE](#pep_dpm_abandon_device)|0x02|[PEP_ABANDON_DEVICE](/windows-hardware/drivers/ddi/pepfx/ns-pepfx-_pep_abandon_device)|

@@ -1,7 +1,6 @@
 ---
 title: WIA \_ DIP \_ 开发 \_ 类型
 description: WIA \_ DIP \_ 开发 \_ 类型属性包含设备类型和设备子类型。
-ms.assetid: 685c1cfa-cc3b-42e6-aef3-359ae7220715
 keywords:
 - WIA_DIP_DEV_TYPE 图像设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f92ce18d339911c43366c9720c7eb042b9b3eb66
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 8b807ebc22960d8ac0e5d09759cc77bc7a0b337e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89192499"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96824523"
 ---
 # <a name="wia_dip_dev_type"></a>WIA \_ DIP \_ 开发 \_ 类型
 
@@ -35,7 +34,7 @@ WIA \_ DIP \_ 开发 \_ 类型属性包含设备类型和设备子类型。 WIA 
 
 访问权限：只读
 
-<a name="remarks"></a>注解
+<a name="remarks"></a>备注
 -------
 
 设备类型和子类型是从设备文件的驱动程序 INF 文件中获取的。 应用程序读取 WIA \_ DIP \_ 开发 \_ 类型属性，以确定它使用的是扫描仪、照相机还是视频设备。
@@ -81,7 +80,7 @@ WIA \_ DIP \_ 开发 \_ 类型属性包含设备类型和设备子类型。 WIA 
 
  
 
-有关 INF 文件的详细信息，请参阅 [WIA 设备的 INF 文件](./inf-files-for-wia-devices.md)。 **StiDeviceType * * Xxx* 常量是在 *Sti*中定义的。
+有关 INF 文件的详细信息，请参阅 [WIA 设备的 INF 文件](./inf-files-for-wia-devices.md)。 **StiDeviceType**_Xxx_ 常量在 *Sti* 中定义。
 
 <a name="requirements"></a>要求
 ------------
@@ -93,7 +92,7 @@ WIA \_ DIP \_ 开发 \_ 类型属性包含设备类型和设备子类型。 WIA 
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Header</p></td>
+<td><p>标头</p></td>
 <td>Wiadef (包含 Wiadef) </td>
 </tr>
 </tbody>

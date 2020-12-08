@@ -1,98 +1,97 @@
 ---
 title: WIA 设备消息
 description: WIA 设备消息
-ms.assetid: b498a75d-1252-4f13-ae62-9a53491c2bde
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4d27a47b4988e4168f9f0e20685a0b4275599ebe
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e485ded82a7ee6ed7f47037a36df8be2ddbbc97b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63355074"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96824539"
 ---
 # <a name="wia-device-messages"></a>WIA 设备消息
 
 
-以下列表显示所有当前定义的 WIA 设备消息。 可以将这些消息发送期间**IWiaTransfer::Download**并**IWiaTransfer::Upload**。 **IWiaTransfer** Microsoft Windows SDK 文档中详细介绍了接口。
+以下列表显示了所有当前定义的 WIA 设备消息。 可以在 IWiaTransfer 期间发送这些消息 **：:D o)** 和 **IWiaTransfer：：上传**。 Microsoft Windows SDK 文档中介绍了 **IWiaTransfer** 接口。
 
-### <a name="device-status-messages"></a>设备的状态消息：
+### <a name="device-status-messages"></a>设备状态消息：
 
--   WIA\_状态\_WARMING\_向上
+-   WIA \_ 状态正在 \_ 预热 \_
 
--   WIA\_状态\_校准
+-   WIA \_ 状态 \_ 校准
 
--   WIA\_STATUS\_RESERVING\_NETWORK\_DEVICE
+-   WIA \_ 状态 \_ 保留 \_ 网络 \_ 设备
 
--   WIA\_STATUS\_NETWORK\_DEVICE\_RESERVED
+-   WIA \_ 状态 \_ 网络 \_ 设备 \_ 保留
 
--   WIA\_状态\_清除
+-   WIA \_ 状态 \_ 清除
 
-### <a name="device-error-messages"></a>设备的错误消息：
+### <a name="device-error-messages"></a>设备错误消息：
 
--   WIA\_ERROR\_GENERAL\_ERROR
+-   WIA \_ 错误 \_ 常规 \_ 错误
 
--   WIA\_ERROR\_PAPER\_JAM
+-   WIA \_ 错误 \_ \_ 卡纸
 
--   WIA\_错误\_纸张\_空
+-   WIA \_ 错误 \_ 纸张 \_ 为空
 
--   WIA\_错误\_纸张\_问题
+-   WIA \_ 错误 \_ 纸张 \_ 问题
 
--   WIA\_错误\_脱机
+-   WIA \_ 错误 \_ 脱机
 
--   WIA\_错误\_忙
+-   WIA \_ 错误 \_ 忙
 
--   WIA\_错误\_WARMING\_向上
+-   WIA \_ 错误 \_ 预热 \_
 
--   WIA\_错误\_用户\_干预
+-   WIA \_ 错误 \_ 用户 \_ 干预
 
--   WIA\_ERROR\_ITEM\_DELETED
+-   WIA \_ 错误 \_ 项 \_ 已删除
 
--   WIA\_错误\_设备\_通信
+-   WIA \_ 错误 \_ 设备 \_ 通信
 
--   WIA\_错误\_无效\_命令
+-   WIA \_ 错误 \_ \_ 命令无效
 
--   WIA\_错误\_不正确\_硬件\_设置
+-   WIA \_ 错误 \_ \_ 硬件 \_ 设置错误
 
--   WIA\_错误\_设备\_已锁定
+-   WIA \_ 错误 \_ 设备 \_ 被锁定
 
--   WIA\_错误\_异常\_IN\_驱动程序
+-   \_ \_ \_ 驱动程序中的 WIA 错误异常 \_
 
--   WIA\_错误\_无效\_驱动程序\_响应
+-   WIA \_ 错误 \_ \_ 驱动程序 \_ 响应无效
 
--   WIA\_错误\_涵盖\_打开
+-   WIA \_ 错误 \_ 护盖 \_ 打开
 
--   WIA\_错误\_LAMP\_OFF
+-   WIA \_ 错误 \_ 灯 \_ 关闭
 
--   WIA\_错误\_目标
+-   WIA \_ 错误 \_ 目标
 
--   WIA\_ERROR\_NETWORK\_RESERVATION\_FAILED
+-   WIA \_ 错误 \_ 网络 \_ 保留 \_ 失败
 
 WIA 默认错误处理程序
 
-目前，WIA 默认错误处理程序支持以下设备的消息：
+当前，WIA 默认错误处理程序支持以下设备消息：
 
--   WIA\_状态\_WARMING\_向上
+-   WIA \_ 状态正在 \_ 预热 \_
 
--   WIA\_状态\_校准
+-   WIA \_ 状态 \_ 校准
 
--   WIA\_STATUS\_RESERVING\_NETWORK\_DEVICE
+-   WIA \_ 状态 \_ 保留 \_ 网络 \_ 设备
 
--   WIA\_STATUS\_NETWORK\_DEVICE\_RESERVED
+-   WIA \_ 状态 \_ 网络 \_ 设备 \_ 保留
 
--   WIA\_ERROR\_PAPER\_JAM
+-   WIA \_ 错误 \_ \_ 卡纸
 
--   WIA\_错误\_设备\_已锁定
+-   WIA \_ 错误 \_ 设备 \_ 被锁定
 
--   WIA\_ERROR\_NETWORK\_RESERVATION\_FAILED
+-   WIA \_ 错误 \_ 网络 \_ 保留 \_ 失败
 
--   WIA\_错误\_涵盖\_打开
+-   WIA \_ 错误 \_ 护盖 \_ 打开
 
--   WIA\_错误\_LAMP\_OFF
+-   WIA \_ 错误 \_ 灯 \_ 关闭
 
--   WIA\_错误\_目标
+-   WIA \_ 错误 \_ 目标
 
--   WIA\_错误\_纸张\_空
+-   WIA \_ 错误 \_ 纸张 \_ 为空
 
  
 

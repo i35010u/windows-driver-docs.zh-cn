@@ -1,7 +1,6 @@
 ---
 title: SRB \_ 设置 \_ 流 \_ 状态
 description: SRB \_ 设置 \_ 流 \_ 状态
-ms.assetid: 8dd1237c-3b3e-4207-96b8-22311968c3a0
 keywords:
 - SRB_SET_STREAM_STATE 流媒体设备
 topic_type:
@@ -12,12 +11,12 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 504830ed4435a110d7dcae7f45db4d30b53d16d6
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 86b412b1a012fbf46ffb7fd5c6bac3d3d51cde59
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89185583"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96824889"
 ---
 # <a name="srb_set_stream_state"></a>SRB \_ 设置 \_ 流 \_ 状态
 
@@ -42,11 +41,11 @@ ms.locfileid: "89185583"
 
 ### <a name="comments"></a>注释
 
-类驱动程序在*pSrb*CommandData 中指定新的流状态 - &gt; **CommandData**。**StreamState**。 *PSrb*指针指向[**HW \_ 流 \_ 请求 \_ 块**](/windows-hardware/drivers/ddi/strmini/ns-strmini-_hw_stream_request_block)结构。 有关流状态的说明，请参阅 [**KSPROPERTY \_ 连接 \_ 状态**](ksproperty-connection-state.md) 。
+类驱动程序在 *pSrb* CommandData 中指定新的流状态 - &gt; **CommandData**。**StreamState**。 *PSrb* 指针指向 [**HW \_ 流 \_ 请求 \_ 块**](/windows-hardware/drivers/ddi/strmini/ns-strmini-_hw_stream_request_block)结构。 有关流状态的说明，请参阅 [**KSPROPERTY \_ 连接 \_ 状态**](ksproperty-connection-state.md) 。
 
 微型驱动程序应将流设置为指定状态，并在 \_ 成功时返回状态 SUCCESS。 如果操作失败，则应返回相应的错误代码。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [SRB \_ 获取 \_ 流 \_ 状态](srb-get-stream-state.md)

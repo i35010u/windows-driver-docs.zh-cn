@@ -1,21 +1,20 @@
 ---
 title: 内核调度程序对象简介
 description: 内核调度程序对象简介
-ms.assetid: acf7b19a-55a3-4d9b-87ff-ca4df9ed3a45
 keywords:
 - 内核调度程序对象 WDK，关于内核调度程序对象
 - 调度程序对象 WDK 内核，关于内核调度程序对象
 - 等待状态 WDK 内核
 - 终止状态 WDK 内核
-- 无信号状态 WDK 内核
+- Not-Signaled 状态 WDK 内核
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 826d032212e9e0f6f0ae8e8f5b4bc650b086f875
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: cd8e787f172a9e9d492dd40a8bb8c4d3882d1761
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89185793"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96825869"
 ---
 # <a name="introduction-to-kernel-dispatcher-objects"></a>内核调度程序对象简介
 
@@ -23,7 +22,7 @@ ms.locfileid: "89185793"
 
 
 
-内核定义一组称为 *内核调度程序对象*的对象类型，或仅定义 *调度程序对象*。 调度程序对象包括 timer 对象、事件对象、信号量对象、互斥体对象和线程对象。
+内核定义一组称为 *内核调度程序对象* 的对象类型，或仅定义 *调度程序对象*。 调度程序对象包括 timer 对象、事件对象、信号量对象、互斥体对象和线程对象。
 
 驱动程序可以在 nonarbitrary 线程上下文中使用发送器对象作为同步机制，同时在 IRQL 被动 \_ 级别执行。
 
@@ -53,7 +52,7 @@ ms.locfileid: "89185793"
 
 根据这些限制，必须使用以下规则：
 
--   任何驱动程序的 **DriverEntry**、 *AddDevice*、重新 *初始化*和 *卸载* 例程都可以等待调度程序对象。
+-   任何驱动程序的 **DriverEntry**、 *AddDevice*、重新 *初始化* 和 *卸载* 例程都可以等待调度程序对象。
 
 -   最高层驱动程序的调度例程可以等待调度程序对象。
 
@@ -73,9 +72,9 @@ ms.locfileid: "89185793"
 
 每个其他标准驱动程序例程都在任意线程上下文中执行：调用驱动程序例程来处理排队操作或处理设备中断时，任何线程都是最新的。 而且，大多数标准驱动程序例程在调度 \_ 级别或设备驱动程序的 DIRQL 上以引发的 IRQL 运行。
 
-如有必要，驱动程序可以创建一个设备专用线程，该线程可以等待除 ISR 或 [*SynchCritSection*](/windows-hardware/drivers/ddi/wdm/nc-wdm-ksynchronize_routine) 例程以外的其他 (例程) 将调度程序对象设置为终止状态并重置为未终止状态。
+如有必要，驱动程序可以创建一个设备专用线程，该线程可以等待除 ISR 或 [*SynchCritSection*](/windows-hardware/drivers/ddi/wdm/nc-wdm-ksynchronize_routine) 例程以外的其他 (例程) 将调度程序对象设置为终止状态并重置为 Not-Signaled 状态。
 
-一般原则是，如果你希望新设备驱动程序在 i/o 操作过程中等待设备状态更改时，通常需要延迟超过50微秒，请考虑使用设备专用线程实现驱动程序。 如果设备驱动程序也是最高级别的驱动程序，请考虑使用 [系统工作线程](system-worker-threads.md) 并实现一个或多个工作线程回调例程。 请参阅 [**PsCreateSystemThread**](/windows-hardware/drivers/ddi/wdm/nf-wdm-pscreatesystemthread) 和 [使用驱动程序创建的线程管理联锁队列](managing-interlocked-queues-with-a-driver-created-thread.md)。
+一般原则是，如果你希望新设备驱动程序在 i/o 操作过程中等待设备状态更改时，通常需要延迟超过50微秒，请考虑使用设备专用线程实现驱动程序。 如果设备驱动程序也是最高级别的驱动程序，请考虑使用 [系统工作线程](system-worker-threads.md) 并实现一个或多个工作线程回调例程。 请参阅 [**PsCreateSystemThread**](/windows-hardware/drivers/ddi/wdm/nf-wdm-pscreatesystemthread) 和 [使用 Driver-Created 线程管理联锁队列](managing-interlocked-queues-with-a-driver-created-thread.md)。
 
  
 

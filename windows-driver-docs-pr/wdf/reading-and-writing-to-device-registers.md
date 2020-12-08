@@ -1,15 +1,14 @@
 ---
 title: 读取设备注册表和写入到设备注册表
 description: 读取设备注册表和写入到设备注册表
-ms.assetid: 58A94C75-94C1-4517-A300-9F04AA7B771A
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c698108f6bf39a778b5d7dc47b84eed7b365206d
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 529a65854aba7f9861bc583911afffa6453268a5
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89191009"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96825301"
 ---
 # <a name="reading-and-writing-to-device-registers"></a>读取设备注册表和写入到设备注册表
 

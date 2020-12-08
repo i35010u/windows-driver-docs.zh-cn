@@ -1,7 +1,6 @@
 ---
 title: KSPROPERTY \_ PIN \_ CONSTRAINEDDATARANGES
 description: KSPROPERTY \_ 引脚 \_ CONSTRAINEDDATARANGES 属性指定在 pin 工厂实例化的 pin 当前支持的数据范围列表。
-ms.assetid: 6328a128-c6f8-4de1-a86a-0a7c8a940e18
 keywords:
 - KSPROPERTY_PIN_CONSTRAINEDDATARANGES 流媒体设备
 topic_type:
@@ -14,12 +13,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bd9645f35549fad8fd086a2ca2dfe808cca61676
-ms.sourcegitcommit: 7500a03d1d57e95377b0b182a06f6c7dcdd4748e
+ms.openlocfilehash: 07450b785ce8904e25a02b2c93fd1284d18a4e9a
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90103736"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96824921"
 ---
 # <a name="ksproperty_pin_constraineddataranges"></a>KSPROPERTY \_ PIN \_ CONSTRAINEDDATARANGES
 
@@ -64,7 +63,7 @@ KSPROPERTY \_ 引脚 \_ CONSTRAINEDDATARANGES 属性指定在 pin 工厂实例�
 <a name="remarks"></a>备注
 -------
 
-[**KSP \_ pin**](/windows-hardware/drivers/ddi/ks/ns-ks-ksp_pin)结构的**PinId**成员指定要查询的 PIN 工厂。
+[**KSP \_ pin**](/windows-hardware/drivers/ddi/ks/ns-ks-ksp_pin)结构的 **PinId** 成员指定要查询的 PIN 工厂。
 
 此属性返回 [**KSMULTIPLE \_ 项**](/windows-hardware/drivers/ddi/ks/ns-ks-ksmultiple_item) 结构，后跟一系列64位对齐的 [**KSDATARANGE**](/previous-versions/ff561658(v=vs.85)) 结构。
 
@@ -90,7 +89,7 @@ Stream 微型驱动程序不需要直接处理此属性;流类驱动程序使用
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**KSMULTIPLE \_ 项**](/windows-hardware/drivers/ddi/ks/ns-ks-ksmultiple_item)

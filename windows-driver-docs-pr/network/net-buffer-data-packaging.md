@@ -1,7 +1,6 @@
 ---
 title: NET_BUFFER 数据打包
 description: NET_BUFFER 数据打包
-ms.assetid: f0d539ab-c6ed-4cd9-9891-ef4235016d50
 keywords:
 - NDIS WDK，发送和接收数据
 - 数据打包 WDK 网络
@@ -11,12 +10,12 @@ keywords:
 - NET_BUFFER 数据打包 WDK 网络
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 21c0b4dba9d136efa366b5bee1b54949019bb555
-ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
+ms.openlocfilehash: b729cf87b0e41d8dc8e4eee43d3c89cf6edccf6e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89210137"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96825449"
 ---
 # <a name="net_buffer-data-packaging"></a>网络 \_ 缓冲区数据打包
 

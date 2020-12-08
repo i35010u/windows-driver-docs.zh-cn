@@ -1,18 +1,17 @@
 ---
 title: 驱动程序线程上下文
 description: 驱动程序线程上下文
-ms.assetid: 8795811d-a5f6-4f90-9fa0-edd4b37fd269
 keywords:
 - 驱动程序线程上下文 WDK 内核
 - 线程上下文 WDK 内核
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 47b0ec4fe390120559a2e76ddf70c1c93167f25d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: dc90ca159030d43459876f6e1ca3f1d511d7475c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63372678"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96825893"
 ---
 # <a name="driver-thread-context"></a>驱动程序线程上下文
 
@@ -20,21 +19,21 @@ ms.locfileid: "63372678"
 
 
 
-如中所示[分层驱动程序中处理 Irp](example-i-o-request---the-details.md#ddk-example-i-o-request---the-details-kg)图，文件系统是由两部分驱动程序：
+如 [处理分层驱动程序中的 irp](example-i-o-request---the-details.md#ddk-example-i-o-request---the-details-kg) 图所示，文件系统是由两部分构成的驱动程序：
 
-1.  文件系统驱动程序 (FSD)，可以调用 I/O 系统服务的用户模式线程的上下文中执行
+1.  文件系统驱动程序 (FSD) ，它在调用 i/o 系统服务的用户模式线程的上下文中执行
 
-    I/O 管理器将相应的 IRP 发送到 FSD。 如果为 IRP，FSD 设置完成例程，其完成例程不一定是原始用户模式线程的上下文中调用。
+    I/o 管理器将相应的 IRP 发送到 FSD。 如果 FSD 为 IRP 设置完成例程，则不一定会在原始用户模式线程的上下文中调用其完成例程。
 
-2.  设置的文件系统线程和可能是一个*FSP （文件系统进程）*
+2.  一组文件系统线程，可能是 *FSP (文件系统进程)*
 
-    FSD 可以创建一组驱动程序专用系统线程，但大多数 FSDs 使用以获取无需占用发出 I/O 请求的用户模式线程完成工作的系统工作线程数。 任何 FSD 可能设置了其自己的进程地址空间，其驱动程序专用的线程执行，但系统提供 FSDs 避免这种做法，以节省系统内存。
+    FSD 可以创建一组由驱动程序专用的系统线程，但大多数 FSDs 使用系统工作线程来完成工作，而无需占用发出 i/o 请求的用户模式线程。 任何 FSD 都可以设置自己的进程地址空间，在该空间中，其驱动程序专用线程执行，但系统提供的 FSDs 避免这种做法来节省系统内存。
 
-文件系统通常使用系统工作线程数来设置和管理其发送到一个或多个较低级别设备的驱动程序，可能是不同的 Irp 的内部工作队列。
+文件系统通常使用系统工作线程来设置和管理其发送到一个或多个低级驱动程序（可能适用于不同设备）的 Irp 的内部工作队列。
 
-尽管最低级别的驱动程序中所示[分层驱动程序中处理 Irp](example-i-o-request---the-details.md#ddk-example-i-o-request---the-details-kg)图通过一系列离散、 驱动程序所提供的例程的阶段中处理每个 IRP，它不使用系统线程，文件系统一样。 最低级别驱动程序不需要其自己的线程上下文，除非其设备设置为 I/O 是这样的较长时间的进程，它具有系统性能产生明显的影响。 几个最低级别或中间驱动程序需要设置其自己的驱动程序专用或设备专用系统线程，以及需要付费引起的上下文切换到其线程对性能产生负面影响。
+虽然 [分层驱动程序中的处理 irp](example-i-o-request---the-details.md#ddk-example-i-o-request---the-details-kg) 中所示的最低级别驱动程序会通过一组独立的驱动程序提供的例程来处理每个 IRP，但它不使用系统线程作为文件系统。 最低级别的驱动程序不需要其自己的线程上下文，除非为 i/o 设置其设备是长时间的进程，这会对系统性能产生显著影响。 较低级别或中间的驱动程序需要设置自己的驱动程序专用或专用于设备的系统线程，而那些确实会导致上下文切换到线程的性能损失。
 
-大多数内核模式驱动程序等中的物理设备驱动程序[分层驱动程序中处理 Irp](example-i-o-request---the-details.md#ddk-example-i-o-request---the-details-kg)图，请在任意线程上下文中执行： 的任何线程恰巧是当前按调用来处理 IRP。 因此，驱动程序通常会维护有关它们的 I/O 操作和在处理其设备对象，称为驱动程序定义部分中的设备的状态*设备扩展*。
+大多数内核模式驱动程序（如 [层次驱动程序中处理 irp](example-i-o-request---the-details.md#ddk-example-i-o-request---the-details-kg) 中的物理设备驱动程序）都在任意线程上下文中执行：调用以处理 IRP 时，任何线程都是最新的。 因此，驱动程序通常会在其设备对象的驱动程序定义部分（称为 *设备扩展*）中维护有关其 i/o 操作和设备所服务的设备的状态。
 
  
 

@@ -1,24 +1,23 @@
 ---
 title: UVC 扩展单元的示例接口
 description: UVC 扩展单元的示例接口
-ms.assetid: 898fdaf7-c3e1-4ef5-be4e-a5f9849ee905
 keywords:
 - 接口 WDK USB 视频类
-- 扩展单位 WDK USB 视频类，示例中，接口
-- 示例代码 WDK USB 视频类、 接口 UVC 扩展单位
+- 扩展单元-WDK USB 视频类，示例，接口
+- 示例代码 WDK USB 视频类，UVC 扩展单元的接口
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ad74a5c6da9bff231e71318b18f52aecb946fbe2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8c7d4df0d7615589ea552063bfc622ddabd2cee1
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63389208"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96825867"
 ---
 # <a name="sample-interface-for-uvc-extension-units"></a>UVC 扩展单元的示例接口
 
 
-本主题包含有关的示例代码*interface.idl*可用于支持扩展单元。
+本主题包含可用于支持扩展单元的示例 *接口 .idl* 的代码。
 
 ```IDL
 // IExtensionUnit interface

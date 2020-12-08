@@ -1,7 +1,6 @@
 ---
 title: 动态硬件分区简介
 description: 动态硬件分区简介
-ms.assetid: 0d909c64-17c4-4f0e-85b7-4e0a6a92eeee
 keywords:
 - 动态硬件分区 WDK，关于动态硬件分区
 - 硬件分区 WDK 动态，关于动态硬件分区
@@ -17,12 +16,12 @@ keywords:
 - 硬件分区 WDK
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5e8ac761d201f38fdf783cf77a6965359bf70c80
-ms.sourcegitcommit: 8739f3683432345092305565815baa68c82bef43
+ms.openlocfilehash: ed898dbd7fe8bbb93af9d3f73e3f1bee15025a8c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96482562"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96825875"
 ---
 # <a name="introduction-to-dynamic-hardware-partitioning"></a>动态硬件分区简介
 

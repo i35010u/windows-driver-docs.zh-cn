@@ -1,9 +1,8 @@
 ---
-title: hidkd.hidppd HID 扩展
-description: Hidkd.hidppd 命令显示 HID preparsed 数据。
-ms.assetid: 049D206D-669D-49F4-81FE-2D8E443F9A9E
+title: hidkd. hidppd HID 扩展
+description: Hidkd. hidppd 命令显示 HID preparsed 数据。
 keywords:
-- hidkd.hidppd Windows 调试
+- hidkd hidppd Windows 调试
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,29 +11,29 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 9a9cceb8130bc5e27a87eedec775aad6c3f0748f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7f4793b84712b24ffb002e5a68cc851d7ca891d1
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63336497"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96825835"
 ---
 # <a name="hidkdhidppd"></a>!hidkd.hidppd
 
 
-**！ Hidkd.hidppd**命令显示 HID preparsed 数据。
+**！ Hidkd. hidppd** 命令显示 HID preparsed 数据。
 
 ```dbgcmd
 !hidkd.hidppd ppd
 ```
 
-## <a name="span-idddkdevobjdbgspanspan-idddkdevobjdbgspanparameters"></a><span id="ddk__devobj_dbg"></span><span id="DDK__DEVOBJ_DBG"></span>参数
+## <a name="span-idddk__devobj_dbgspanspan-idddk__devobj_dbgspanparameters"></a><span id="ddk__devobj_dbg"></span><span id="DDK__DEVOBJ_DBG"></span>参数
 
 
-<span id="_______ppd______"></span><span id="_______PPD______"></span> *ppd*   
-地址**HIDP\_PREPARSED\_数据**结构。 若要获取的地址**HIDP\_PREPARSED\_数据**结构，请使用[ **！ hidfdo** ](-hidkd-hidfdo.md)或[ **！ hidpdo**](-hidkd-hidpdo.md).
+<span id="_______ppd______"></span><span id="_______PPD______"></span>*ppd*   
+**HIDP \_ PREPARSED \_ 数据** 结构的地址。 若要获取 **HIDP \_ PREPARSED \_ 数据** 结构的地址，请使用 [**！ hidfdo**](-hidkd-hidfdo.md) 或 [**！ hidpdo**](-hidkd-hidpdo.md)。
 
-## <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+## <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 
 Hidkd.dll
@@ -42,7 +41,7 @@ Hidkd.dll
 <a name="examples"></a>示例
 --------
 
-此示例演示如何使用[ **！ hidpdo** ](-hidkd-hidpdo.md)跟 **！ hidppd**。 输出 **！ hidpdo**显示的地址**HIDP\_PREPARSED\_数据**结构。
+此示例演示如何使用 [**！ hidpdo**](-hidkd-hidpdo.md) 后跟 **！ hidppd**。 **！ Hidpdo** 的输出显示 **HIDP \_ PREPARSED \_ 数据** 结构的地址。
 
 ```dbgcmd
 
@@ -78,10 +77,10 @@ Preparsed Data at 0xffffe000029d1010
   ...
 ```
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
-[HID 的扩展](hid-extensions.md)
+[HID 扩展](hid-extensions.md)
 
  
 

@@ -1,15 +1,14 @@
 ---
 title: Windows 10 版本 1709 (Redstone 3) 版本16299中的网络内核调试支持的以太网 Nic
 description: 了解当目标计算机运行的是 Windows 10 版本1709时，通过以太网网络电缆进行内核调试。
-ms.assetid: 13CC3084-A223-4CDC-8612-2A3851369FB0
 ms.date: 06/18/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: aac7e833ada6ac29355099cbebdc0e22596317cd
-ms.sourcegitcommit: 372464be981a39781c71049126f36891cb5d0cad
+ms.openlocfilehash: ba217b74b2f0d4c0737b01ed6f5dcf09ef80649e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/02/2020
-ms.locfileid: "91646101"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96825773"
 ---
 # <a name="supported-ethernet-nics-for-network-kernel-debugging-in-windows-10-version-1709-redstone-3-build-16299"></a>Windows 10 版本 1709 (Redstone 3) 版本16299中的网络内核调试支持的以太网 Nic
 

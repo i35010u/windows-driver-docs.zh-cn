@@ -1,24 +1,23 @@
 ---
 title: WDF_DECLARE_CUSTOM_TYPE 宏
 description: WDF_DECLARE_CUSTOM_TYPE 宏为驱动程序的自定义类型创建一个名称和一个访问器方法。
-ms.assetid: DF496E17-B3D4-4983-8506-40810ECAEA3E
 keywords:
 - WDF_DECLARE_CUSTOM_TYPE 宏
 ms.date: 08/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 859ed64d9ba7fb268f24201c2ecdffd5dad03272
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: 7ee0075e041232281e87211fb5e52af205e79e73
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89185699"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96825287"
 ---
 # <a name="wdf_declare_custom_type-macro"></a>WDF_DECLARE_CUSTOM_TYPE 宏
 
 
 \[适用于 KMDF 和 UMDF\]
 
-**WDF_DECLARE_CUSTOM_TYPE**宏为驱动程序的自定义类型创建一个名称和一个访问器方法。
+**WDF_DECLARE_CUSTOM_TYPE** 宏为驱动程序的自定义类型创建一个名称和一个访问器方法。
 
 <a name="syntax"></a>语法
 ------
@@ -43,7 +42,7 @@ void WDF_DECLARE_CUSTOM_TYPE(
 <a name="remarks"></a>备注
 -------
 
-调用 **WDF_DECLARE_CUSTOM_TYPE**时，驱动程序将定义其自己的自定义类型名称。 选择自定义类型名称时，请选择特定于该驱动程序域的名称。 作为约定，不要使用前缀 *Wdf*来启动自定义类型名称。
+调用 **WDF_DECLARE_CUSTOM_TYPE** 时，驱动程序将定义其自己的自定义类型名称。 选择自定义类型名称时，请选择特定于该驱动程序域的名称。 作为约定，不要使用前缀 *Wdf* 来启动自定义类型名称。
 
 有关对象自定义类型的详细信息，请参阅 [框架对象自定义类型](./framework-object-custom-types.md)。
 
@@ -112,7 +111,7 @@ if (!NT_SUCCESS(status)) {
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**WdfObjectAddCustomType**](wdfobjectaddcustomtype.md)

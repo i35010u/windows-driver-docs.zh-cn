@@ -1,15 +1,14 @@
 ---
 title: Windows 10 显示驱动程序和图形驱动程序的新增功能
 description: 描述用于显示驱动程序的 Windows 10 中的新增功能
-ms.assetid: 619175D4-98DA-4B17-8F6F-71B13A31374D
 ms.date: 05/12/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 03651ad5f48d5692286216b07b592ec497a28a0c
-ms.sourcegitcommit: cfd4d8ee889c6a3feed79ae112662f6c095b6a36
+ms.openlocfilehash: 94d62f48ae2289a956e01c4746468b4ac4a6915e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94417463"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96826047"
 ---
 # <a name="whats-new-for-windows-10-display-and-graphics-drivers"></a>Windows 10 显示驱动程序和图形驱动程序的新增功能
 

@@ -1,17 +1,16 @@
 ---
 title: 阅读 LogViewer 显示内容
 description: 阅读 LogViewer 显示内容
-ms.assetid: 425aff5d-780e-4600-a43a-8012d70263f1
 keywords:
-- 日志查看器显示
+- LogViewer，显示
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7edf95aba0116d9326e96e57c388f2f26108ec5e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6d2039e988c880f8ad319d4a6b28310f58a8f67e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63353612"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96825787"
 ---
 # <a name="reading-the-logviewer-display"></a>阅读 LogViewer 显示内容
 
@@ -19,9 +18,9 @@ ms.locfileid: "63353612"
 ## <span id="ddk_reading_the_logviewer_display_dtoolq"></span><span id="DDK_READING_THE_LOGVIEWER_DISPLAY_DTOOLQ"></span>
 
 
-日志查看器中记录的顺序显示所有函数的列表。
+LogViewer 按记录的顺序显示所有函数的列表。
 
-显示的每一行都包含多个列。 每个列的意义是，如下所示。
+显示的每一行都包含多个列。 每个列的重要性如下所示。
 
 <table>
 <colgroup>
@@ -37,20 +36,20 @@ ms.locfileid: "63353612"
 <tbody>
 <tr class="odd">
 <td align="left"><p><strong>+/-</strong></p></td>
-<td align="left"><p>如果此列包含"+"（加号），它指示该函数采用一个或多个参数。 若要查看参数和它们的值，请双击的行或按向右箭头键，行的边框为红色时。 若要再次隐藏，请双击试或按向左的箭头键时行的边框为红色。</p>
-<p>在本专栏中还有一个"d #"值。 这指示的"深度"函数调用的 （换句话说，深度调用嵌套在其他记录的函数调用中）。</p></td>
+<td align="left"><p>如果此列包含 "+" (加号) ，则指示该函数采用一个或多个参数。 若要查看参数及其值，请双击行或按下向右箭头键，然后按红色显示该行。 若要再次隐藏它，请再次双击它，或在以红色勾勒出行时单击向左箭头键。</p>
+<p>此列中也有一个 "d #" 值。 这表示函数调用的 "深度" (，换言之，调用) 的其他已记录函数调用中嵌套的深度。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>#</strong></p></td>
-<td align="left"><p>函数调用的顺序的行数。 这是有用的在将筛选器应用并有兴趣知道距离相隔两个函数调用时，是。</p></td>
+<td align="left"><p>函数调用的顺序行号。 如果应用了筛选器，并且想要了解两个函数调用之间相隔多远，这会很有用。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>Thrd</strong></p></td>
-<td align="left"><p>在其进行函数调用的线程数。 此数字不是一个线程 ID，但而不是分配的数字基于在进程中已创建线程的顺序。</p></td>
+<td align="left"><p>进行函数调用的线程号。 此数字不是线程 ID，而是根据在进程中创建线程的顺序分配的数字。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>Caller</strong></p></td>
-<td align="left"><p>指令地址，进行调用的函数。 这被派生自调用的返回地址。 它是实际的返回地址减去 5 个字节 (典型的大小<strong>调用 dword ptr</strong>指令)。</p></td>
+<td align="left"><p><strong>呼叫</strong></p></td>
+<td align="left"><p>发出函数调用的指令地址。 这是从调用的返回地址派生的。 实际上，返回地址减去5个字节 (<strong>调用 dword ptr</strong> 指令) 的典型大小。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>模块</strong></p></td>
@@ -58,22 +57,22 @@ ms.locfileid: "63353612"
 </tr>
 <tr class="even">
 <td align="left"><p><strong>API 函数</strong></p></td>
-<td align="left"><p>函数的名称。 为简便起见，已省略包含函数的模块的名称。</p></td>
+<td align="left"><p>函数名。 为简洁起见，省略了包含函数的模块的名称。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>返回值</strong></p></td>
-<td align="left"><p>如果不是 void 函数的函数，返回的值。</p></td>
+<td align="left"><p>函数返回的值（如果它不是 void 函数）。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-双击查看器中的行，将展开以显示该函数，它们的值"将"函数的参数的行。 如果它们被指定为输出参数，在右侧显示"推出"其值。
+双击查看器中的某一行将展开该行，以便向函数显示函数的参数及其值 "进入"。 如果将它们指定为 OUT 参数，则其值将显示在右侧。
 
-此外可以使用 ENTER 键或左右箭头键可展开和折叠行。
+你还可以使用 ENTER 键或右箭头键和向左键来展开和折叠行。
 
-返回状态代码的失败的函数调用以粉色突出显示以阴影显示。
+返回失败状态代码的函数调用以粉红色灰显。
 
  
 

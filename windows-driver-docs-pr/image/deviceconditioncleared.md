@@ -1,9 +1,8 @@
 ---
 title: DeviceConditionCleared 元素
-description: 所需的 DeviceConditionCleared 元素包含有关已清除先前报告 DeviceCondition 条件的信息。
-ms.assetid: f4ed3d25-cee0-4532-84aa-d1cdd144ce2a
+description: 必需的 DeviceConditionCleared 元素包含有关以前报告的已清除 DeviceCondition 条件的信息。
 keywords:
-- DeviceConditionCleared 元素成像设备
+- DeviceConditionCleared 元素图像设备
 topic_type:
 - apiref
 api_name:
@@ -12,19 +11,19 @@ api_type:
 - Schema
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e2aab29ddeb8ee49430928f2b4f81dbc8a7c12fa
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1d51521348b097105dbda504926b98d2c8f3e16e
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63364555"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96824551"
 ---
 # <a name="deviceconditioncleared-element"></a>DeviceConditionCleared 元素
 
 
-所需**DeviceConditionCleared**元素包含有关上次报告的信息[ **DeviceCondition** ](devicecondition.md)已清除的条件。
+必需的 **DeviceConditionCleared** 元素包含有关以前报告的已清除 [**DeviceCondition**](devicecondition.md) 条件的信息。
 
-<a name="usage"></a>用法
+<a name="usage"></a>使用情况
 -----
 
 ```xml
@@ -82,7 +81,7 @@ ms.locfileid: "63364555"
 <a name="remarks"></a>备注
 -------
 
-**DeviceConditionCleared**元素包含[ **ConditionId** ](conditionid.md)并[ **ConditionClearTime** ](conditioncleartime.md)元素，用于指定的条件标识符和时间的条件已清除，分别。 WSD 扫描服务发送**DeviceConditionCleared**元素中的客户端[ **ScannerStatusConditionClearedEvent** ](scannerstatusconditionclearedevent.md)事件元素。
+**DeviceConditionCleared** 元素包含 [**ConditionId**](conditionid.md)和 [**ConditionClearTime**](conditioncleartime.md)元素，这些元素分别指定条件标识符和清除条件的时间。 WSD 扫描服务将 **DeviceConditionCleared** 元素发送到 [**ScannerStatusConditionClearedEvent**](scannerstatusconditionclearedevent.md) 事件元素中的客户端。
 
 ## <a name="see-also"></a>请参阅
 

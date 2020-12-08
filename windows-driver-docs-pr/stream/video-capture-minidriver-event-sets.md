@@ -1,15 +1,14 @@
 ---
 title: 视频捕获微型驱动程序事件集
 description: 视频捕获微型驱动程序事件集
-ms.assetid: 85fd6d3c-3f90-427e-b66c-8849d44bad58
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2534fb09b2c47820c8e440ecee7e601f3d668a40
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 391f702de08c73cb21b63fb7d46ad315a5877c62
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380623"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96825307"
 ---
 # <a name="video-capture-minidriver-event-sets"></a>视频捕获微型驱动程序事件集
 
@@ -17,23 +16,23 @@ ms.locfileid: "63380623"
 ## <span id="ddk_video_capture_minidriver_event_sets_ks"></span><span id="DDK_VIDEO_CAPTURE_MINIDRIVER_EVENT_SETS_KS"></span>
 
 
-下面的事件设置为视频捕获微型驱动程序定义：
+以下事件集是为视频捕获微型驱动程序定义的：
 
-[EVENTSETID\_调谐器](eventsetid-tuner.md)
+[EVENTSETID \_ 调谐器](eventsetid-tuner.md)
 
-[EVENTSETID\_VIDEODECODER](eventsetid-videodecoder.md)
+[EVENTSETID \_ VIDEODECODER](eventsetid-videodecoder.md)
 
-[EVENTSETID\_CROSSBAR](eventsetid-crossbar.md)
+[EVENTSETID \_ 横线](eventsetid-crossbar.md)
 
-[KSEVENTSETID\_CameraAsyncControl](kseventsetid-cameraasynccontrol.md)
+[KSEVENTSETID \_ CameraAsyncControl](kseventsetid-cameraasynccontrol.md)
 
-[KSEVENTSETID\_设备](kseventsetid-device.md)
+[KSEVENTSETID \_ 设备](kseventsetid-device.md)
 
-[KSEVENTSETID\_VIDCAP\_TVAUDIO](kseventsetid-vidcap-tvaudio.md)
+[KSEVENTSETID \_ VIDCAP \_ TVAUDIO](kseventsetid-vidcap-tvaudio.md)
 
-[KSEVENTSETID\_VIDCAPNotify](kseventsetid-vidcapnotify.md)
+[KSEVENTSETID \_ VIDCAPNotify](kseventsetid-vidcapnotify.md)
 
-[KSEVENTSETID\_VolumeLimit](kseventsetid-volumelimit.md)
+[KSEVENTSETID \_ VolumeLimit](kseventsetid-volumelimit.md)
 
  
 

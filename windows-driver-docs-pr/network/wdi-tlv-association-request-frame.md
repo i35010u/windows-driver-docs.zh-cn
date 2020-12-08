@@ -1,22 +1,21 @@
 ---
 title: WDI_TLV_ASSOCIATION_REQUEST_FRAME
-description: WDI_TLV_ASSOCIATION_REQUEST_FRAME 是包含关联请求所用的关联 TLV。
-ms.assetid: C2323DFE-2B13-4E35-BF9B-4A0B5F3B2076
+description: WDI_TLV_ASSOCIATION_REQUEST_FRAME 是一种 TLV，其中包含用于关联的关联请求。
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 WDI_TLV_ASSOCIATION_REQUEST_FRAME 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 3ed020c91b3dafcd8490f1a86f850a4d7f21b207
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8bf31a4ef52fc35271ff43fc144a8cc11c38c99b
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63363039"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96824957"
 ---
-# <a name="wditlvassociationrequestframe"></a>WDI\_TLV\_ASSOCIATION\_REQUEST\_FRAME
+# <a name="wdi_tlv_association_request_frame"></a>WDI \_ TLV \_ 关联 \_ 请求 \_ 帧
 
 
-WDI\_TLV\_关联\_请求\_帧是包含关联请求所用的关联 TLV。
+WDI \_ tlv \_ 关联 \_ 请求 \_ 帧是一个 tlv，其中包含用于关联的关联请求。
 
 ## <a name="tlv-type"></a>TLV 类型
 
@@ -26,14 +25,14 @@ WDI\_TLV\_关联\_请求\_帧是包含关联请求所用的关联 TLV。
 ## <a name="length"></a>长度
 
 
-UINT8 元素的数组大小 （以字节为单位）。 该数组必须包含一个或多个元素。
+UINT8 元素数组的大小 (以字节为单位) 。 数组必须包含1个或多个元素。
 
 ## <a name="values"></a>值
 
 
-| 在任务栏的搜索框中键入      | 描述                                                                                                                                       |
+| 类型      | 描述                                                                                                                                       |
 |-----------|---------------------------------------------------------------------------------------------------------------------------------------------------|
-| UINT8\[\] | 指定用于关联的关联请求 UINT8 元素的数组。 这不包括 802.11 MAC 报头。 |
+| UINT8\[\] | UINT8 元素的数组，这些元素指定用于关联的关联请求。 这不包括 802.11 MAC 标头。 |
 
  
 
@@ -52,10 +51,10 @@ UINT8 元素的数组大小 （以字节为单位）。 该数组必须包含一
 </tr>
 <tr class="even">
 <td><p>最低受支持的服务器</p></td>
-<td><p>Windows Server 2016</p></td>
+<td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
-<td><p>Header</p></td>
+<td><p>标头</p></td>
 <td>Wditypes.hpp</td>
 </tr>
 </tbody>

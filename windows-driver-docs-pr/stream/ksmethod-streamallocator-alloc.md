@@ -1,9 +1,8 @@
 ---
-title: KSMETHOD\_STREAMALLOCATOR\_分配
-description: KSMETHOD\_STREAMALLOCATOR\_客户端使用分配方法从给定的分配器分配一个帧。
-ms.assetid: 4104d7df-1cc6-4109-9732-220b1065ee01
+title: KSMETHOD \_ STREAMALLOCATOR \_ 分配
+description: KSMETHOD \_ STREAMALLOCATOR \_ 分配方法供客户端用来从给定分配器分配帧。
 keywords:
-- KSMETHOD_STREAMALLOCATOR_ALLOC 流式处理媒体设备
+- KSMETHOD_STREAMALLOCATOR_ALLOC 流媒体设备
 topic_type:
 - apiref
 api_name:
@@ -12,19 +11,19 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: af231adc4245019e460aed8f19b0b4234dabce3f
-ms.sourcegitcommit: 6dff49ca5880466c396be5b889c44481dfed44ec
+ms.openlocfilehash: 86013e04ba1cdd3e4322c6e80fc65ac4dbcbe77c
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "67161530"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96825341"
 ---
-# <a name="ksmethodstreamallocatoralloc"></a>KSMETHOD\_STREAMALLOCATOR\_分配
+# <a name="ksmethod_streamallocator_alloc"></a>KSMETHOD \_ STREAMALLOCATOR \_ 分配
 
 
-**KSMETHOD\_STREAMALLOCATOR\_ALLOC**方法由客户端用来从给定的分配器分配一个帧。 该方法将返回状态\_PENDING 如果目前没有帧。 否则，该方法返回一个指针，到框架。
+**KSMETHOD \_ STREAMALLOCATOR \_ 分配** 方法供客户端用来从给定分配器分配帧。 \_如果当前没有可用的帧，则方法返回状态 "挂起"。 否则，该方法将返回一个指向帧的指针。
 
-例如，内核模式下客户端可以使用下面的示例代码来分配一个帧：
+例如，内核模式客户端可以使用以下示例代码来分配帧：
 
 <a name="remarks"></a>备注
 -------

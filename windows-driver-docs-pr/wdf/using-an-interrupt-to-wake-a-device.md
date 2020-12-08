@@ -1,15 +1,14 @@
 ---
 title: 使用中断来唤醒设备
 description: 当设备转换为低功耗状态时，框架会将 (或报告作为非活动状态断开，) 用于 i/o 处理的中断。
-ms.assetid: 6A4E62BD-B10F-4F01-B4B4-1FF5086710D4
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: dc32e406774143494f58f211c332724c170388ff
-ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
+ms.openlocfilehash: ebde280f8c326812984284bb73ae2a812e8364d5
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89184575"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96824817"
 ---
 # <a name="using-an-interrupt-to-wake-a-device"></a>使用中断来唤醒设备
 
@@ -26,9 +25,9 @@ ms.locfileid: "89184575"
 
 按照以下步骤在 KMDF 或 UMDF 驱动程序中创建支持唤醒的中断对象：
 
-1.  从[*EvtDriverDeviceAdd*](/windows-hardware/drivers/ddi/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)调用[**WdfDeviceAssignS0IdleSettings**](/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceassigns0idlesettings)，在*IdleCaps*参数中指定**IdleCanWakeFromS0** 。
+1.  从 [*EvtDriverDeviceAdd*](/windows-hardware/drivers/ddi/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)调用 [**WdfDeviceAssignS0IdleSettings**](/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceassigns0idlesettings)，在 *IdleCaps* 参数中指定 **IdleCanWakeFromS0** 。
 2.  也可以调用 [**WdfDeviceInitSetPowerPolicyEventCallbacks**](/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceinitsetpowerpolicyeventcallbacks) 来注册 [支持系统唤醒](supporting-system-wake-up.md)中所述的事件回调函数。
-3.  调用 [**wdf \_ 中断 \_ 配置 \_ 初始化**](/windows-hardware/drivers/ddi/wdfinterrupt/nf-wdfinterrupt-wdf_interrupt_config_init) 以初始化 [**WDF \_ 中断 \_ 配置**](/windows-hardware/drivers/ddi/wdfinterrupt/ns-wdfinterrupt-_wdf_interrupt_config) 结构。 提供要在被动级别调用的 [*EvtInterruptIsr*](/windows-hardware/drivers/ddi/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_isr) 回调函数。 在配置结构中，将 **PassiveHandling** 和 **CanWakeDevice** 设置为 **TRUE**。 然后从驱动程序的[*EvtDevicePrepareHardware*](/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_prepare_hardware)回调函数调用[**WdfInterruptCreate**](/windows-hardware/drivers/ddi/wdfinterrupt/nf-wdfinterrupt-wdfinterruptcreate) ，以创建框架中断对象。
+3.  调用 [**wdf \_ 中断 \_ 配置 \_ 初始化**](/windows-hardware/drivers/ddi/wdfinterrupt/nf-wdfinterrupt-wdf_interrupt_config_init) 以初始化 [**WDF \_ 中断 \_ 配置**](/windows-hardware/drivers/ddi/wdfinterrupt/ns-wdfinterrupt-_wdf_interrupt_config) 结构。 提供要在被动级别调用的 [*EvtInterruptIsr*](/windows-hardware/drivers/ddi/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_isr) 回调函数。 在配置结构中，将 **PassiveHandling** 和 **CanWakeDevice** 设置为 **TRUE**。 然后从驱动程序的 [*EvtDevicePrepareHardware*](/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_prepare_hardware)回调函数调用 [**WdfInterruptCreate**](/windows-hardware/drivers/ddi/wdfinterrupt/nf-wdfinterrupt-wdfinterruptcreate) ，以创建框架中断对象。
 4.  调用 [**WdfDeviceAssignSxWakeSettings**](/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceassignsxwakesettings) 以将设备配置为从低功耗状态唤醒系统。
     ```cpp
     WDF_DEVICE_POWER_POLICY_WAKE_SETTINGS_INIT(&wakeSettings);
@@ -45,7 +44,7 @@ ms.locfileid: "89184575"
 
 5.  当设备转换为低功耗状态时，框架不会为支持唤醒的中断调用 [*EvtInterruptDisable*](/windows-hardware/drivers/ddi/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_disable) 。 如果驱动程序提供了 [*EvtDeviceArmWakeFromS0*](/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_arm_wake_from_s0) ，框架将调用它。
 6.  当设备发出信号表示唤醒中断时，框架会调用驱动程序的 [*EvtDeviceD0Entry*](/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_d0_entry) 回调例程。
-7.  如果驱动程序的 [*EvtDeviceD0Entry*](/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_d0_entry) 回调返回成功，则框架将在被动级别调用驱动程序的 [*EvtInterruptIsr*](/windows-hardware/drivers/ddi/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_isr) 回调。 中断处理程序返回之前，必须在中断控制器中使中断静音。 如果驱动程序从 *EvtDeviceD0Entry*返回失败代码，则框架会断开中断，并调用驱动程序的 [*EvtInterruptDisable*](/windows-hardware/drivers/ddi/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_disable) 回调（如果驱动程序提供了此项）。
+7.  如果驱动程序的 [*EvtDeviceD0Entry*](/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_d0_entry) 回调返回成功，则框架将在被动级别调用驱动程序的 [*EvtInterruptIsr*](/windows-hardware/drivers/ddi/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_isr) 回调。 中断处理程序返回之前，必须在中断控制器中使中断静音。 如果驱动程序从 *EvtDeviceD0Entry* 返回失败代码，则框架会断开中断，并调用驱动程序的 [*EvtInterruptDisable*](/windows-hardware/drivers/ddi/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_disable) 回调（如果驱动程序提供了此项）。
 8.  如果驱动程序提供了以下唤醒事件回调例程，则框架将调用这些例程：
     -   [*EvtDeviceDisarmWakeFromS0*](/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_disarm_wake_from_s0)
     -   [*EvtDeviceDisarmWakeFromSx*](/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_disarm_wake_from_sx)

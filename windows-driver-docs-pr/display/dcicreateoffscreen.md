@@ -1,7 +1,6 @@
 ---
 title: DCICreateOffscreen
 description: DCICreateOffscreen
-ms.assetid: 9df82029-b641-4a3b-a4f4-9b884e8b5512
 keywords:
 - DCICreateOffscreen 显示设备
 topic_type:
@@ -12,12 +11,12 @@ api_type:
 - NA
 ms.date: 01/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 4aefcd475113e3b190a4bb98e562b362c61318ce
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 51ef9914f55d0f32953dfd1ef1e229a7db67f4ad
+ms.sourcegitcommit: 418e6617e2a695c9cb4b37b5b60e264760858acd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63351477"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96826065"
 ---
 # <a name="dcicreateoffscreen"></a>DCICreateOffscreen
 
@@ -25,9 +24,9 @@ ms.locfileid: "63351477"
 ## <span id="ddk_dcicreateoffscreen_gg"></span><span id="DDK_DCICREATEOFFSCREEN_GG"></span>
 
 
-不使用此函数;使用最新的 DirectX 图形接口改为与您 DirectDraw 支持的驱动程序进行通信。
+请勿使用此函数;请改用最新的 DirectX 图形界面与 DirectDraw 支持的驱动程序通信。
 
-**DCICreateOffscreen**函数创建的显示设备的屏幕外图面。
+**DCICreateOffscreen** 函数将为显示设备创建一个屏幕外表面。
 
  
 
